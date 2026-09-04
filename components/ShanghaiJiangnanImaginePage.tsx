@@ -92,14 +92,14 @@ const jiangnanPageCopy: Record<
     routeTitle: "One direction, no backtracking.",
     routeBody:
       "Enter through Shanghai, continue through Suzhou and finish in Hangzhou. Arrival and departure stay unhurried, leaving four complete touring days at the centre of the journey.",
-    serviceEyebrow: "The working standard",
-    serviceTitle: "The route is joined up before you arrive.",
+    serviceEyebrow: "Travel made seamless",
+    serviceTitle: "Hotels, guides and transfers work together.",
     serviceBody:
-      "The hotel level, guided days, transfers and principal admissions are part of one defined product. Exact availability is checked for your dates before payment.",
+      "Your hotel level, guided days, transfers and principal admissions are planned together. We check availability for your dates before payment.",
     hotelTitle: "Stay",
     transportTitle: "Guide, transport and admissions",
     scopeEyebrow: "Clear before payment",
-    scopeTitle: "What is separate—and what your written quote will lock in.",
+    scopeTitle: "What is separate—and what your written quote will confirm.",
     exclusionsTitle: "Not included",
     confirmedTitle: "Confirmed in writing",
     confirmations: [
@@ -107,11 +107,11 @@ const jiangnanPageCopy: Record<
       "The hotel, room arrangement and vehicle for the actual group",
       "Bookable admissions and the final total before payment",
     ],
-    finalEyebrow: "Check the route for your dates",
-    finalTitle: "If the six-day shape fits, let’s verify the real trip.",
+    finalEyebrow: "Make this six-day journey yours",
+    finalTitle: "Ready to shape this route around your trip?",
     finalBody:
-      "Send the dates and group size. We will check the rooms, transport, guide and tickets, then return one written itinerary and final quote.",
-    contact: "Contact Homeground",
+      "Share your dates, group size and what matters most to you. We will start with this route and work from there.",
+    contact: "Request your tailored proposal",
     email: "Email us",
   },
   zh: {
@@ -151,11 +151,11 @@ const jiangnanPageCopy: Record<
       "具体酒店、房型与适合实际人数和行李的车辆",
       "可订门票及付款前的最终总金额",
     ],
-    finalEyebrow: "按你的日期核对",
-    finalTitle: "如果这条六日路线适合你，下一步就是把真实行程核清楚。",
+    finalEyebrow: "把这六天变成你的旅行",
+    finalTitle: "想按你的日期走这条路线吗？",
     finalBody:
-      "告诉我们日期和人数，我们会核对房间、交通、导游与门票，再发出一份写清行程和最终价格的方案。",
-    contact: "联系 Homeground",
+      "告诉我们日期、人数和最在意的体验，我们就从这条路线开始调整。",
+    contact: "获取你的专属方案",
     email: "发送邮件",
   },
   ko: {
@@ -164,7 +164,7 @@ const jiangnanPageCopy: Record<
     breadcrumbLabel: "현재 위치",
     homeLabel: "홈",
     productLabel: "프라이빗 투어",
-    heroMeta: "6일 / 5박 · 프라이빗 투어 · 쇼핑 일정 없음",
+    heroMeta: "5박 6일 · 프라이빗 투어 · 쇼핑 일정 없음",
     heroPromise: "세 도시를 한 방향으로, 서두르지 않게.",
     facts: [
       { label: "동선", value: "상하이 → 쑤저우 → 항저우" },
@@ -173,13 +173,13 @@ const jiangnanPageCopy: Record<
       { label: "공개 가격", value: "2명 또는 4명" },
     ],
     overviewEyebrow: "여정의 구조",
-    overviewTitle: "상하이, 쑤저우, 항저우의 서로 다른 리듬을 지킵니다.",
+    overviewTitle: "세 도시의 매력을 서두르지 않고 이어 갑니다.",
     overviewBody:
-      "한 방향으로 이동하는 동선입니다. 도착일과 출발일에 여유를 두어 네 번의 핵심 관광일을 지키고, 수하물과 도시 간 이동도 하나의 일정으로 연결합니다.",
+      "한 방향으로 이동하며 도착일과 출발일에는 여유를 둡니다. 나머지 4일은 핵심 관광에 집중하고, 도시 간 이동은 실제 일행과 수하물에 맞춰 준비합니다.",
     routeEyebrow: "날짜별 일정",
     routeTitle: "되돌아가지 않는 한 방향 여정.",
     routeBody:
-      "상하이에서 시작해 쑤저우를 거쳐 항저우에서 마칩니다. 도착일과 출발일에는 여유를 두고, 가운데 네 날은 온전히 관광에 사용합니다.",
+      "상하이에서 시작해 쑤저우를 거쳐 항저우에서 마칩니다. 도착일과 출발일에는 여유를 두고, 중간 4일은 온전히 관광에 씁니다.",
     serviceEyebrow: "서비스 기준",
     serviceTitle: "도착 전에 숙박과 이동, 관광을 하나로 연결합니다.",
     serviceBody:
@@ -187,19 +187,19 @@ const jiangnanPageCopy: Record<
     hotelTitle: "숙박",
     transportTitle: "가이드, 이동과 입장권",
     scopeEyebrow: "결제 전 확인",
-    scopeTitle: "별도 항목과 서면 견적에서 확정되는 내용.",
+    scopeTitle: "별도 비용과 결제 전에 확인할 내용을 살펴보세요.",
     exclusionsTitle: "불포함",
-    confirmedTitle: "서면 확정",
+    confirmedTitle: "결제 전 서면 확인",
     confirmations: [
-      "실제 여행 날짜와 도착·출발 항공편 또는 열차",
-      "확정 호텔, 객실 구성과 인원·수하물에 맞는 차량",
+      "실제 여행 날짜와 도착·출발편 정보",
+      "이용 가능한 호텔과 객실 구성, 인원·수하물에 맞는 차량",
       "예약 가능한 입장권과 결제 전 최종 총액",
     ],
-    finalEyebrow: "내 날짜로 확인하기",
-    finalTitle: "이 6일 동선이 맞는다면 실제 여행을 확인해 보세요.",
+    finalEyebrow: "이 6일 여정을 나의 여행으로",
+    finalTitle: "내 날짜에 맞춰 이 여정을 만들어 볼까요?",
     finalBody:
-      "날짜와 인원을 알려 주시면 객실, 이동, 가이드와 입장권을 확인한 뒤 일정과 최종 가격을 서면으로 안내합니다.",
-    contact: "Homeground에 문의하기",
+      "날짜와 인원, 가장 기대하는 경험을 알려 주시면 이 일정을 바탕으로 함께 조정합니다.",
+    contact: "맞춤 제안 요청하기",
     email: "이메일 보내기",
   },
 };
@@ -230,7 +230,7 @@ function buildGenericPageCopy(
       routeEyebrow: "每日安排",
       routeTitle: "每天怎么走，完整写清楚。",
       routeBody:
-        "抵达、核心游览与返程逐日展开。开放时间、实名门票和当地情况可能调整先后顺序，但不会悄悄改变已经写明的核心内容。",
+        "抵达、核心游览与返程逐日展开。开放时间、实名门票和当地情况可能调整先后顺序；重要内容需要调整时，我们会与你沟通。",
       serviceEyebrow: "服务标准",
       serviceTitle: "抵达之前，住宿、用车和游览已经接顺。",
       serviceBody:
@@ -246,11 +246,11 @@ function buildGenericPageCopy(
         "具体酒店、房型与适合实际人数和行李的车辆",
         "可订门票及付款前的最终总金额",
       ],
-      finalEyebrow: "按你的日期核对",
-      finalTitle: "如果这条路线适合你，下一步就是把真实行程核清楚。",
+      finalEyebrow: "把这条路线变成你的旅行",
+      finalTitle: "想按你的日期走这条路线吗？",
       finalBody:
-        "告诉我们日期和人数，我们会核对房间、交通、导游与门票，再发出一份写清行程和最终价格的方案。",
-      contact: "联系 Homeground",
+        "告诉我们日期、人数和最在意的体验，我们就从这条路线开始调整。",
+      contact: "获取你的专属方案",
       email: "发送邮件",
     };
   }
@@ -262,11 +262,11 @@ function buildGenericPageCopy(
       breadcrumbLabel: "현재 위치",
       homeLabel: "홈",
       productLabel: "프라이빗 투어",
-      heroMeta: `${product.days}일 / ${product.nights}박 · 프라이빗 투어 · 쇼핑 일정 없음`,
+      heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 쇼핑 일정 없음`,
       heroPromise: product.eyebrow,
       facts: [
-        { label: "일정", value: `${product.days}일 / ${product.nights}박` },
-        { label: "관광", value: "날짜별 가이드와 차량 일정 명시" },
+        { label: "일정", value: `${product.nights}박 ${product.days}일` },
+        { label: "관광", value: "일자별 가이드와 차량 안내" },
         { label: "숙박", value: `${product.nights}박 · 조식 포함` },
         { label: "공개 가격", value: "2명 또는 4명" },
       ],
@@ -274,9 +274,9 @@ function buildGenericPageCopy(
       overviewTitle: product.eyebrow,
       overviewBody: product.summary,
       routeEyebrow: "날짜별 일정",
-      routeTitle: "하루씩, 실제 동선을 그대로 보여 드립니다.",
+      routeTitle: "날짜별 이동과 관광을 한눈에 보여 드립니다.",
       routeBody:
-        "도착, 핵심 관광과 출발 일정을 날짜별로 확인할 수 있습니다. 운영 시간과 실명 입장권, 현지 상황에 따라 순서는 달라질 수 있지만 명시된 핵심 내용은 임의로 바꾸지 않습니다.",
+        "도착, 핵심 관광과 출발 일정을 날짜별로 확인할 수 있습니다. 운영 시간, 이름을 등록해야 하는 입장권과 현지 상황에 따라 순서는 달라질 수 있습니다. 중요한 내용이 달라져야 할 때는 고객과 상의합니다.",
       serviceEyebrow: "서비스 기준",
       serviceTitle: "도착 전에 숙박과 이동, 관광을 하나로 연결합니다.",
       serviceBody:
@@ -284,19 +284,19 @@ function buildGenericPageCopy(
       hotelTitle: "숙박",
       transportTitle: "가이드, 이동과 입장권",
       scopeEyebrow: "결제 전 확인",
-      scopeTitle: "별도 항목과 서면 견적에서 확정되는 내용.",
+      scopeTitle: "별도 비용과 결제 전에 확인할 내용을 살펴보세요.",
       exclusionsTitle: "불포함",
-      confirmedTitle: "서면 확정",
+      confirmedTitle: "결제 전 서면 확인",
       confirmations: [
-        "실제 여행 날짜와 도착·출발 항공편 또는 열차",
-        "확정 호텔, 객실 구성과 인원·수하물에 맞는 차량",
+        "실제 여행 날짜와 도착·출발편 정보",
+        "이용 가능한 호텔과 객실 구성, 인원·수하물에 맞는 차량",
         "예약 가능한 입장권과 결제 전 최종 총액",
       ],
-      finalEyebrow: "내 날짜로 확인하기",
-      finalTitle: "이 일정이 맞는다면 실제 여행 조건을 확인해 보세요.",
+      finalEyebrow: "이 여정을 나의 여행으로",
+      finalTitle: "내 날짜에 맞춰 이 여정을 만들어 볼까요?",
       finalBody:
-        "날짜와 인원을 알려 주시면 객실, 이동, 가이드와 입장권을 확인한 뒤 일정과 최종 가격을 서면으로 안내합니다.",
-      contact: "Homeground에 문의하기",
+        "날짜와 인원, 가장 기대하는 경험을 알려 주시면 이 일정을 바탕으로 함께 조정합니다.",
+      contact: "맞춤 제안 요청하기",
       email: "이메일 보내기",
     };
   }
@@ -322,17 +322,17 @@ function buildGenericPageCopy(
     overviewTitle: product.eyebrow,
     overviewBody: product.summary,
     routeEyebrow: "Day by day",
-    routeTitle: "Every day, clearly accounted for.",
+    routeTitle: "See how each day unfolds.",
     routeBody:
-      "Arrival, core touring and departure are shown day by day. Opening hours, named tickets and local conditions may change the order, but not the core experiences written into the route.",
-    serviceEyebrow: "The working standard",
-    serviceTitle: "The route is joined up before you arrive.",
+      "Arrival, core touring and departure are shown day by day. Opening hours, named-entry tickets and local conditions may change the order. If anything important needs to change, we discuss it with you.",
+    serviceEyebrow: "Travel made seamless",
+    serviceTitle: "Hotels, guides and transfers work together.",
     serviceBody:
-      "The hotel level, guided days, transfers, route transport and principal admissions form one defined product. Exact availability is checked for your dates before payment.",
+      "Your hotel level, guided days, transfers, route transport and principal admissions are planned together. We check availability for your dates before payment.",
     hotelTitle: "Stay",
     transportTitle: "Guide, transport and admissions",
     scopeEyebrow: "Clear before payment",
-    scopeTitle: "What is separate—and what your written quote will lock in.",
+    scopeTitle: "What is separate—and what your written quote will confirm.",
     exclusionsTitle: "Not included",
     confirmedTitle: "Confirmed in writing",
     confirmations: [
@@ -340,11 +340,11 @@ function buildGenericPageCopy(
       "The hotel, room arrangement and vehicle for the actual group",
       "Bookable admissions and the final total before payment",
     ],
-    finalEyebrow: "Check the route for your dates",
-    finalTitle: "If this route fits, let’s verify the real trip.",
+    finalEyebrow: "Make this journey yours",
+    finalTitle: "Ready to shape this route around your trip?",
     finalBody:
-      "Send the dates and group size. We will check the rooms, transport, guide and tickets, then return one written itinerary and final quote.",
-    contact: "Contact Homeground",
+      "Share your dates, group size and what matters most to you. We will start with this route and work from there.",
+    contact: "Request your tailored proposal",
     email: "Email us",
   };
 }
@@ -357,6 +357,10 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
 
 function schemaLanguage(locale: PrivateTourLocale) {
   return locale === "zh" ? "zh-Hans" : locale;
+}
+
+function displayTourTitle(title: string) {
+  return title.replace(/(\d+)-Day/g, "$1‑Day");
 }
 
 export function ShanghaiJiangnanImaginePage({
@@ -507,7 +511,7 @@ export function ShanghaiJiangnanImaginePage({
                 </ol>
               </nav>
               <p className={styles.heroMeta}>{copy.heroMeta}</p>
-              <h1 id="product-title">{localized.title}</h1>
+              <h1 id="product-title">{displayTourTitle(localized.title)}</h1>
               <p className={styles.heroPromise}>{copy.heroPromise}</p>
               <p className={styles.heroLede}>{localized.lede}</p>
             </div>

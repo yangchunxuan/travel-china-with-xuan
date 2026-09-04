@@ -155,6 +155,7 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     footerStyles,
     searchStyles,
     productStyles,
+    guideRailStyles,
     productShowcase,
   ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
@@ -163,6 +164,7 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     source("components/HomepageFooter.module.css"),
     source("components/HomepageGuideSearch.module.css"),
     source("components/HomepageProductShowcase.module.css"),
+    source("components/HomepageGuideRail.module.css"),
     source("components/HomepageProductShowcase.tsx"),
   ]);
 
@@ -252,6 +254,11 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     /\.hubLink:focus-visible \{[\s\S]{0,100}outline: 3px solid/,
   );
   assert.doesNotMatch(productStyles, /\.featured\s*\{|\.guideGrid\s*\{/);
+  assert.match(
+    guideRailStyles,
+    /:global\(\[data-homeground-locale="ko"\]\) \.card h3 \{[\s\S]*?line-height: 1\.3;[\s\S]*?word-break: keep-all;/,
+    "Korean homepage-card headings need collision-safe leading",
+  );
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
@@ -398,6 +405,11 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     );
     assert.equal(new Set(homepageItems.map((product) => product.href)).size, 6, locale);
     assert.equal(new Set(homepageItems.map((product) => product.image.src)).size, 6, locale);
+    assert.ok(homepageItems.every((product) => product.appeal.length > 20), locale);
+    assert.ok(
+      homepageItems.every((product) => product.startingPrice.formatted.length > 0),
+      locale,
+    );
   }
   assert.match(catalog, /getPublishedPrivateTourCatalog\(locale\)/);
   assert.match(catalog, /homepagePrivateTourSlugs\.map/);
@@ -413,15 +425,15 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(page, /excludedItemIds=\{productShowcaseExcludedItemIds\}/);
   assert.match(page, /homepage_product_card_clicked/);
   assert.match(productShowcase, /products\.map\(\(product, index\)/);
-  assert.match(productShowcase, /copy\.titleNoWrap/);
-  assert.match(productShowcase, /className=\{styles\.keepTogether\}/);
-  assert.match(
-    productShowcaseStyles,
-    /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap/,
-  );
+  assert.doesNotMatch(productShowcase, /copy\.titleNoWrap|styles\.keepTogether/);
   assert.match(productShowcase, /\{copy\.productLabel\}/);
   assert.match(productShowcase, /\{product\.title\}/);
-  assert.match(productShowcase, /\{product\.description\}/);
+  assert.match(productShowcase, /\{product\.appeal\}/);
+  assert.match(productShowcase, /\{product\.startingPrice\.formatted\}/);
+  assert.match(productShowcase, /copy\.groupBasis\(product\.startingPrice\.travelers\)/);
+  assert.match(productShowcase, /className=\{styles\.trustList\}/);
+  assert.match(productShowcase, /className=\{styles\.enquiryStrip\}/);
+  assert.match(productShowcase, /href=\{plannerHref\}/);
   assert.match(productShowcase, /loading="lazy"/);
   assert.match(productShowcase, /sizes=\{homepageProductImageSizes\}/);
   assert.match(productShowcase, /privateTourCardImageSrcSet\(product\.id\)/);
@@ -469,14 +481,15 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     );
     assert.match(copy.durationLabel(5, 4), /5/);
     assert.ok(copy.hubActionLabel.length > 8);
-    assert.equal(copy.titleNoWrap, locale === "zh" ? "付款前" : undefined);
-    if (copy.titleNoWrap) {
-      assert.equal(copy.title.split(copy.titleNoWrap).length, 2);
-    }
     assert.match(
       copy.title,
-      locale === "en" ? /before you pay/i : locale === "zh" ? /付款前/ : /결제 전에/,
+      locale === "en" ? /ancient capitals/i : locale === "zh" ? /古都/ : /옛 수도/,
     );
+    assert.equal(copy.trustItems.length, 3);
+    assert.ok(copy.trustItems.every((item) => item.title.length > 3));
+    assert.ok(copy.trustItems.every((item) => item.body.length > 5));
+    assert.ok(copy.enquiryTitle.length > 8);
+    assert.ok(copy.enquiryAction.length > 4);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].privateBasis);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].sharedTransit);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].lowerCost);
@@ -502,11 +515,11 @@ test("the homepage shows six stable private tours while the hub keeps the comple
 
   assert.equal(
     getHomepageProductShowcaseCopy("en").hubActionLabel,
-    "Compare all our private China tours",
+    "Compare every private China tour",
   );
   assert.equal(
     getHomepageProductShowcaseCopy("zh").hubActionLabel,
-    "查看并比较全部中国私家团",
+    "比较全部中国私家团",
   );
   assert.equal(
     getHomepageProductShowcaseCopy("ko").hubActionLabel,
@@ -620,7 +633,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(styles, /--showcase-section-space: 6rem/);
   assert.match(
     styles,
-    /\.hero \{[\s\S]{0,100}padding: 11\.5rem var\(--showcase-gutter\) 4rem/,
+    /\.hero \{[\s\S]{0,100}padding: 11\.5rem var\(--showcase-gutter\) 2\.75rem/,
   );
   assert.match(
     styles,

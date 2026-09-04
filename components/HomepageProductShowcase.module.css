@@ -3,7 +3,7 @@
 
   background: #fff;
   border-block-end: 1px solid rgb(10 10 10 / 10%);
-  padding: var(--showcase-section-space)
+  padding: 4.5rem
     max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
   padding-block-end: 2rem;
 }
@@ -54,10 +54,6 @@
   margin: 0;
   max-inline-size: 16ch;
   text-wrap: balance;
-}
-
-.keepTogether {
-  white-space: nowrap;
 }
 
 .lead {
@@ -137,6 +133,38 @@
   text-wrap: balance;
 }
 
+.cardPrice {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.55rem;
+  margin: 0.75rem 0 0;
+}
+
+.cardPrice > span,
+.cardPrice > small {
+  color: var(--homepage-product-muted);
+  font-size: 0.68rem;
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+.cardPrice > small {
+  flex-basis: 100%;
+}
+
+.cardPrice > span {
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.cardPrice > strong {
+  font-family: var(--hg-editorial);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
 .cardDescription {
   color: var(--showcase-muted);
   display: -webkit-box;
@@ -211,26 +239,142 @@
   outline-offset: 3px;
 }
 
+.trustList {
+  border-block: 1px solid rgb(10 10 10 / 12%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+}
+
+.trustList li {
+  display: grid;
+  gap: 0.35rem;
+  min-inline-size: 0;
+  padding: 1.2rem 1.5rem;
+}
+
+.trustList li:first-child {
+  padding-inline-start: 0;
+}
+
+.trustList li + li {
+  border-inline-start: 1px solid rgb(10 10 10 / 12%);
+}
+
+.trustList strong {
+  font-size: 0.82rem;
+  font-weight: 720;
+  line-height: 1.35;
+}
+
+.trustList span {
+  color: var(--homepage-product-muted);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.enquiryStrip {
+  align-items: end;
+  background: #111;
+  border-radius: 1.1rem;
+  color: #fff;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-block-start: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.enquiryStrip > div {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.enquiryStrip p {
+  color: #d69a89;
+  font-size: 0.69rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.enquiryStrip h3 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0;
+  max-inline-size: 23ch;
+  text-wrap: balance;
+}
+
+.enquiryStrip > div > span {
+  color: #bdbdbd;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.enquiryStrip > a {
+  align-items: center;
+  background: #fff;
+  border-radius: 999px;
+  color: #111;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 720;
+  gap: 0.65rem;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.enquiryStrip > a svg {
+  transition: transform 180ms ease;
+}
+
+.enquiryStrip > a:hover svg,
+.enquiryStrip > a:focus-visible svg {
+  transform: translateX(0.2rem);
+}
+
+.enquiryStrip > a:focus-visible {
+  outline: 3px solid #d69a89;
+  outline-offset: 3px;
+}
+
 .section[data-homeground-locale="zh"] .eyebrow,
 .section[data-homeground-locale="ko"] .eyebrow,
 .section[data-homeground-locale="zh"] .count,
 .section[data-homeground-locale="ko"] .count,
 .section[data-homeground-locale="zh"] .cardMeta,
-.section[data-homeground-locale="ko"] .cardMeta {
+.section[data-homeground-locale="ko"] .cardMeta,
+.section[data-homeground-locale="zh"] .cardPrice > span,
+.section[data-homeground-locale="ko"] .cardPrice > span,
+.section[data-homeground-locale="zh"] .enquiryStrip p,
+.section[data-homeground-locale="ko"] .enquiryStrip p {
   letter-spacing: 0.02em;
   text-transform: none;
 }
 
 .section[data-homeground-locale="zh"] .intro h2,
 .section[data-homeground-locale="zh"] .cardTitle,
+.section[data-homeground-locale="zh"] .enquiryStrip h3,
 .section[data-homeground-locale="ko"] .intro h2,
-.section[data-homeground-locale="ko"] .cardTitle {
+.section[data-homeground-locale="ko"] .cardTitle,
+.section[data-homeground-locale="ko"] .enquiryStrip h3 {
   letter-spacing: 0;
   line-height: 1.3;
 }
 
 .section[data-homeground-locale="zh"] .intro h2,
-.section[data-homeground-locale="zh"] .cardTitle {
+.section[data-homeground-locale="zh"] .cardTitle,
+.section[data-homeground-locale="zh"] .enquiryStrip h3 {
   font-weight: 500;
   line-break: strict;
   overflow-wrap: normal;
@@ -239,7 +383,9 @@
 
 .section[data-homeground-locale="ko"] .intro h2,
 .section[data-homeground-locale="ko"] .cardTitle,
-.section[data-homeground-locale="ko"] .cardDescription {
+.section[data-homeground-locale="ko"] .cardDescription,
+.section[data-homeground-locale="ko"] .enquiryStrip h3,
+.section[data-homeground-locale="ko"] .enquiryStrip > div > span {
   word-break: keep-all;
 }
 
@@ -262,7 +408,7 @@
   .section {
     padding: var(--showcase-section-space) var(--showcase-gutter);
     padding-block-end: 1rem;
-    padding-block-start: 3.25rem;
+    padding-block-start: 2.5rem;
   }
 
   .sectionMeta {
@@ -350,11 +496,39 @@
     flex-direction: column;
     margin-block-start: 1rem;
   }
+
+  .trustList {
+    grid-template-columns: minmax(0, 1fr);
+    margin-block-start: 1.75rem;
+  }
+
+  .trustList li,
+  .trustList li:first-child {
+    padding: 0.9rem 0;
+  }
+
+  .trustList li + li {
+    border-block-start: 1px solid rgb(10 10 10 / 12%);
+    border-inline-start: 0;
+  }
+
+  .enquiryStrip {
+    align-items: stretch;
+    gap: 1.35rem;
+    grid-template-columns: minmax(0, 1fr);
+    margin-block-start: 1.75rem;
+  }
+
+  .enquiryStrip > a {
+    inline-size: 100%;
+    white-space: normal;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .image,
-  .cardAction svg {
+.image,
+.cardAction svg,
+.enquiryStrip > a svg {
     transition: none;
   }
 }

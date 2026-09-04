@@ -15,7 +15,6 @@
 }
 
 .hero,
-.selection,
 .quickCompare,
 .catalog,
 .finalSection {
@@ -28,7 +27,6 @@
 }
 
 .heroInner,
-.selectionInner,
 .finalInner {
   margin-inline: auto;
   max-width: 1380px;
@@ -93,7 +91,6 @@
 .hero h1,
 .quickIntro h2,
 .quickIdentity h3,
-.selectionHeading h2,
 .catalogIntro h2,
 .tourBody h2,
 .finalInner h2 {
@@ -110,12 +107,44 @@
   max-width: 10ch;
 }
 
-.heroGrid > p {
+.heroAside {
+  align-items: start;
+  display: grid;
+  gap: 1.35rem;
+}
+
+.heroAside > p {
   color: var(--tour-muted);
   font-size: clamp(1.02rem, 1.3vw, 1.18rem);
   line-height: 1.72;
-  margin: 0 0 0.35rem;
+  margin: 0;
   max-width: 36rem;
+}
+
+.heroAction {
+  align-items: center;
+  background: var(--tour-ink);
+  border: 1px solid var(--tour-ink);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 760;
+  gap: 1.5rem;
+  justify-content: space-between;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.heroAction:hover {
+  background: #252525;
+}
+
+.heroAction:focus-visible {
+  outline: 3px solid var(--tour-accent);
+  outline-offset: 3px;
 }
 
 .quickCompare {
@@ -277,69 +306,6 @@
 .quickAction span {
   color: var(--tour-accent);
   font-size: 1rem;
-}
-
-.selection {
-  background: var(--tour-soft);
-  border-block-end: 1px solid var(--tour-line);
-  padding-block: clamp(4.5rem, 8vw, 8rem);
-}
-
-.selectionHeading {
-  align-items: end;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(14rem, 0.4fr) minmax(0, 1fr);
-}
-
-.selectionHeading h2 {
-  font-size: clamp(2.55rem, 5vw, 5.1rem);
-  line-height: 0.96;
-  margin: 0;
-  max-width: 14ch;
-}
-
-.selectionSteps {
-  border-block-start: 1px solid var(--tour-line);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  list-style: none;
-  margin: clamp(3.5rem, 7vw, 7rem) 0 0;
-  padding: 0;
-}
-
-.selectionSteps li {
-  border-inline-end: 1px solid var(--tour-line);
-  min-width: 0;
-  padding: clamp(1.5rem, 3vw, 2.8rem);
-}
-
-.selectionSteps li:first-child {
-  padding-inline-start: 0;
-}
-
-.selectionSteps li:last-child {
-  border-inline-end: 0;
-  padding-inline-end: 0;
-}
-
-.selectionSteps li > span {
-  color: var(--tour-accent);
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.12em;
-}
-
-.selectionSteps h3 {
-  font-size: clamp(1.18rem, 1.6vw, 1.45rem);
-  margin: 2.8rem 0 0;
-}
-
-.selectionSteps p {
-  color: var(--tour-muted);
-  line-height: 1.68;
-  margin: 0.85rem 0 0;
-  max-width: 28rem;
 }
 
 .catalog {
@@ -617,14 +583,19 @@
 
 .finalAction {
   align-items: center;
-  border-block-end: 1px solid #fff;
-  color: #fff;
-  display: flex;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  color: #111;
+  display: inline-flex;
   font-size: 0.86rem;
   font-weight: 760;
+  gap: 2rem;
   justify-content: space-between;
   min-height: 3rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
+  width: min(100%, 21rem);
 }
 
 .finalAction span {
@@ -637,10 +608,18 @@
   transform: translateX(0.25rem);
 }
 
+.finalAction:hover {
+  background: #ededed;
+}
+
+.finalAction:focus-visible {
+  outline: 3px solid #d78974;
+  outline-offset: 3px;
+}
+
 .toursPage[data-homeground-locale="zh"] .hero h1,
 .toursPage[data-homeground-locale="zh"] .quickIntro h2,
 .toursPage[data-homeground-locale="zh"] .quickIdentity h3,
-.toursPage[data-homeground-locale="zh"] .selectionHeading h2,
 .toursPage[data-homeground-locale="zh"] .catalogIntro h2,
 .toursPage[data-homeground-locale="zh"] .tourBody h2,
 .toursPage[data-homeground-locale="zh"] .finalInner h2 {
@@ -650,11 +629,18 @@
 .toursPage[data-homeground-locale="ko"] .hero h1,
 .toursPage[data-homeground-locale="ko"] .quickIntro h2,
 .toursPage[data-homeground-locale="ko"] .quickIdentity h3,
-.toursPage[data-homeground-locale="ko"] .selectionHeading h2,
 .toursPage[data-homeground-locale="ko"] .catalogIntro h2,
 .toursPage[data-homeground-locale="ko"] .tourBody h2,
 .toursPage[data-homeground-locale="ko"] .finalInner h2 {
   letter-spacing: -0.018em;
+  line-height: 1.16;
+}
+
+.toursPage[data-homeground-locale="ko"] .hero h1 {
+  max-width: 12ch;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  word-break: keep-all;
 }
 
 @media (max-width: 64rem) {
@@ -687,7 +673,6 @@
 @media (max-width: 48rem) {
   .heroGrid,
   .quickIntro,
-  .selectionHeading,
   .catalogIntro,
   .finalInner {
     align-items: start;
@@ -696,6 +681,12 @@
 
   .hero h1 {
     font-size: clamp(2.8rem, 14.5vw, 4.6rem);
+  }
+
+  .toursPage[data-homeground-locale="ko"] .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3.75rem);
+    line-height: 1.18;
+    max-width: 100%;
   }
 
   .hero {
@@ -708,6 +699,14 @@
 
   .heroGrid {
     gap: 1.35rem;
+  }
+
+  .heroAside {
+    gap: 1rem;
+  }
+
+  .finalInner h2 {
+    font-size: clamp(2.45rem, 10.5vw, 3.45rem);
   }
 
   .catalog {
@@ -804,26 +803,6 @@
     font-size: clamp(2.15rem, 11vw, 3.35rem);
   }
 
-  .selectionSteps {
-    grid-template-columns: 1fr;
-  }
-
-  .selectionSteps li,
-  .selectionSteps li:first-child,
-  .selectionSteps li:last-child {
-    border-block-end: 1px solid var(--tour-line);
-    border-inline-end: 0;
-    padding: 1.75rem 0;
-  }
-
-  .selectionSteps li:last-child {
-    border-block-end: 0;
-  }
-
-  .selectionSteps h3 {
-    margin-block-start: 1.4rem;
-  }
-
   .catalogGrid {
     grid-template-columns: 1fr;
   }
@@ -836,7 +815,7 @@
 /*
  * On phones the compact comparison is the complete product chooser. Keeping
  * the image-led catalog out of the rendered accessibility tree prevents the
- * same nine destinations and links from being announced twice, while wider
+ * same routes and links from being announced twice, while wider
  * layouts retain both the comparison table and the editorial cards.
  */
 @media (max-width: 40rem) {
@@ -847,7 +826,6 @@
 
 @media (max-width: 22rem) {
   .hero,
-  .selection,
   .quickCompare,
   .catalog,
   .finalSection {
@@ -895,8 +873,6 @@
 
 @media (prefers-contrast: more) {
   .breadcrumb a,
-  .selectionSteps,
-  .selectionSteps li,
   .catalogGrid,
   .catalogItem,
   .comparisonList,

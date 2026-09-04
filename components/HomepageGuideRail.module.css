@@ -237,6 +237,12 @@
   text-wrap: balance;
 }
 
+:global([data-homeground-locale="ko"]) .card h3 {
+  line-height: 1.3;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 .cardDescription {
   color: var(--rail-muted);
   display: -webkit-box;

@@ -6,7 +6,7 @@ import {
 import {
   getPrivateTourHubCopy,
   getPrivateTourHubLanguagePaths,
-  getPrivateTourHubStudioPath,
+  getPrivateTourHubPlannerPath,
 } from "../lib/privateTourHubI18n";
 import {
   getPublishedPrivateTourCatalog,
@@ -147,7 +147,7 @@ function TourComparisonCard({
                 {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
               </small>
             </p>
-            <p className={styles.description}>{product.description}</p>
+            <p className={styles.description}>{product.comparison.appeal}</p>
 
             <dl className={styles.comparisonList}>
               <div>
@@ -277,7 +277,13 @@ export function PrivateToursHubPage({
                 <p className={styles.eyebrow}>{copy.eyebrow}</p>
                 <h1>{copy.title}</h1>
               </div>
-              <p>{copy.introduction}</p>
+              <div className={styles.heroAside}>
+                <p>{copy.introduction}</p>
+                <a className={styles.heroAction} href="#tour-quick-compare-title">
+                  {copy.heroAction}
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
             </div>
           </div>
         </header>
@@ -328,24 +334,6 @@ export function PrivateToursHubPage({
           </ol>
         </section>
 
-        <section className={styles.selection} aria-labelledby="tour-selection-title">
-          <div className={styles.selectionInner}>
-            <div className={styles.selectionHeading}>
-              <p className={styles.eyebrow}>{copy.summaryLabel}</p>
-              <h2 id="tour-selection-title">{copy.summaryTitle}</h2>
-            </div>
-            <ol className={styles.selectionSteps}>
-              {copy.summarySteps.map((step) => (
-                <li key={step.number}>
-                  <span aria-hidden="true">{step.number}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
         <section className={styles.finalSection} aria-labelledby="tour-final-title">
           <div className={styles.finalInner}>
             <div>
@@ -354,7 +342,7 @@ export function PrivateToursHubPage({
             </div>
             <div>
               <p>{copy.finalBody}</p>
-              <Link className={styles.finalAction} href={getPrivateTourHubStudioPath(locale)}>
+              <Link className={styles.finalAction} href={getPrivateTourHubPlannerPath(locale)}>
                 {copy.finalAction}
                 <span aria-hidden="true">→</span>
               </Link>

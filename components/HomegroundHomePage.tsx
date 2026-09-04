@@ -563,6 +563,15 @@ export function HomegroundHomePage({
                 total_nights: item.nights,
               });
             }}
+            plannerHref={plannerTarget}
+            onPlannerClick={(event) => {
+              trackEvent("navigation_clicked", {
+                navigation_item: "homepage-product-enquiry",
+                navigation_surface: "homepage-product-showcase",
+                page_language: locale,
+              });
+              handleHomegroundHashClick(event, plannerTarget);
+            }}
             products={privateTourItems}
           />
         ) : null}

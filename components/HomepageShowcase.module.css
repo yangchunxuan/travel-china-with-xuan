@@ -39,7 +39,7 @@
 
 .hero {
   background: #fff;
-  padding: 11.5rem var(--showcase-gutter) 4rem;
+  padding: 11.5rem var(--showcase-gutter) 2.75rem;
 }
 
 .heroInner {
@@ -405,7 +405,7 @@
   }
 
   .hero {
-    padding-block: 9rem 4.5rem;
+    padding-block: 9rem 3rem;
   }
 
   .heroTitle,
