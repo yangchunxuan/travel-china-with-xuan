@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">칭청산과 두장옌 수리 시스템은 함께 세계유산에 등재되었으며, 이 글은 앞산만 방문 과제로 삼는다</title>
+  <desc id="desc">지리 지도가 아닌 편집 도식으로 두장옌 수리 시스템과 칭청산을 별도 카드에 놓고 2000년 공동 등재 표식으로 연결한다. 앞산은 이 글의 방문 과제일 뿐 유네스코 경계를 뜻하지 않는다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f0e7"/><stop offset="1" stop-color="#e7efe8"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a8b9e"/><stop offset="1" stop-color="#286377"/></linearGradient>
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#698b67"/><stop offset="1" stop-color="#35563d"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#26352d" flood-opacity="0.15"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><path d="M0 825 C250 770 390 890 620 820 S1060 760 1600 840 V1000 H0Z" fill="#d9e5db"/>
+  <g filter="url(#shadow)"><rect x="120" y="180" width="560" height="590" rx="40" fill="#fffdf8" stroke="#bfd0d1" stroke-width="4"/><rect x="920" y="180" width="560" height="590" rx="40" fill="#fffdf8" stroke="#c4d2c0" stroke-width="4"/></g>
+  <g transform="translate(200 270)"><path d="M0 205 C90 120 165 128 245 205 C320 278 390 260 475 190" fill="none" stroke="url(#water)" stroke-width="44" stroke-linecap="round"/><path d="M0 290 C85 220 180 222 252 290 C325 358 397 345 475 278" fill="none" stroke="#70aeb9" stroke-width="26" stroke-linecap="round"/><path d="M233 168 L272 206 L230 244" fill="none" stroke="#fffdf8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><circle cx="252" cy="205" r="16" fill="#e7b05e"/></g>
+  <g transform="translate(1000 260)"><path d="M0 315 L170 98 L260 210 L345 52 L475 315 Z" fill="url(#mountain)"/><path d="M168 98 L205 146 L135 146 Z" fill="#dce8dd" opacity="0.85"/><g transform="translate(185 215)" fill="#fffdf8" stroke="#c98e58" stroke-width="8" stroke-linejoin="round"><path d="M0 45 L85 0 L170 45 Z"/><rect x="30" y="45" width="110" height="72"/><path d="M57 117 V70 H113 V117"/></g></g>
+  <g font-family="Arial, 'Noto Sans KR', sans-serif" text-anchor="middle"><text x="400" y="650" fill="#244b59" font-size="48" font-weight="700">두장옌</text><text x="400" y="708" fill="#244b59" font-size="31" font-weight="700">DUJIANGYAN</text><text x="1200" y="638" fill="#314f38" font-size="47" font-weight="700">칭청산</text><text x="1200" y="692" fill="#314f38" font-size="28" font-weight="700">MOUNT QINGCHENG</text><text x="1200" y="738" fill="#60756b" font-size="24" font-weight="700">이 글의 방문 과제: 앞산</text></g>
+  <g transform="translate(800 470)" text-anchor="middle" font-family="Arial, 'Noto Sans KR', sans-serif"><circle r="112" fill="#263c34" stroke="#e3b766" stroke-width="12"/><text y="-28" fill="#fffdf8" font-size="30" font-weight="700">공동 등재</text><text y="49" fill="#e3b766" font-size="58" font-weight="700">2000</text></g>
+  <g fill="none" stroke="#60756b" stroke-width="6" stroke-dasharray="16 18"><path d="M680 470 H688"/><path d="M912 470 H920"/></g>
+  <g font-family="Arial, 'Noto Sans KR', sans-serif" text-anchor="middle"><text x="800" y="875" fill="#263c34" font-size="35" font-weight="700">하나의 등재 · 별도 입장 · 이동 필요</text><text x="800" y="930" fill="#66776f" font-size="27">유네스코 경계 지도 아님 · 교통 지도 아님 · 축척 아님</text></g>
+</svg>
