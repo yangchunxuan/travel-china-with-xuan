@@ -104,6 +104,7 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.match(form, /TYPEWRITER_TARGET_MS = 620/);
   assert.match(form, /TYPEWRITER_HOLD_MS = 610/);
   assert.match(form, /MAX_ROTATING_PLACEHOLDERS = 3/);
+  assert.match(form, /data-guide-search-surface=\{surface\}/);
   assert.match(form, /type PlaceholderPhase = "typing" \| "holding" \| "clearing"/);
   assert.match(form, /\(current \+ 1\) % placeholderPhrases\.length/);
   assert.match(form, /slice\(0, placeholderCharacterCount\)/);
@@ -123,6 +124,16 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.doesNotMatch(editorial, /searchDemoGuideIds/);
   assert.match(formStyles, /@keyframes typewriter-cursor/);
   assert.match(formStyles, /\.rotatingPlaceholder\[data-phase="clearing"\]/);
+  assert.match(
+    formStyles,
+    /\.searchExperience\[data-guide-search-surface="homepage"\] \.control \{[\s\S]{0,100}border-radius: 0\.75rem;[\s\S]{0,100}overflow: hidden;/,
+  );
+  assert.match(
+    formStyles,
+    /@media \(max-width: 40rem\)[\s\S]*?\.searchExperience\[data-guide-search-surface="homepage"\] \.control \{[\s\S]{0,80}min-height: 3\.25rem;/,
+  );
+  const sharedControlBlock = formStyles.match(/(?:^|\n)\.control \{([^}]*)\}/)?.[1] ?? "";
+  assert.doesNotMatch(sharedControlBlock, /border-radius|overflow/);
   assert.match(formStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
 });

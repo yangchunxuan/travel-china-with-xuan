@@ -391,6 +391,7 @@ export function GuideSearchForm({
     <div
       className={`${styles.searchExperience} ${compact ? styles.compact : ""}`}
       aria-busy={indexState === "loading"}
+      data-guide-search-surface={surface}
       ref={searchExperienceRef}
       onBlurCapture={handleBlurCapture}
       onFocusCapture={handleFocusCapture}

@@ -23,12 +23,15 @@
   align-items: center;
   background: var(--guides-card, var(--hg-color-card));
   border: 1px solid var(--guides-line, var(--hg-color-line));
-  border-radius: 0.75rem;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   min-height: 4rem;
-  overflow: hidden;
   padding-inline-start: 1rem;
+}
+
+.searchExperience[data-guide-search-surface="homepage"] .control {
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .control > svg {
@@ -57,7 +60,7 @@
 
 .rotatingPlaceholder {
   align-items: center;
-  color: #5d6065;
+  color: var(--guides-muted, var(--hg-color-muted));
   display: flex;
   font-size: 1rem;
   grid-column: 2;
@@ -96,8 +99,13 @@
 }
 
 .control input::placeholder {
-  color: #5d6065;
+  color: var(--guides-muted, var(--hg-color-muted));
   opacity: 1;
+}
+
+.searchExperience[data-guide-search-surface="homepage"] .rotatingPlaceholder,
+.searchExperience[data-guide-search-surface="homepage"] .control input::placeholder {
+  color: #5d6065;
 }
 
 .control:focus-within {
@@ -316,7 +324,7 @@
 }
 
 @media (max-width: 40rem) {
-  .control {
+  .searchExperience[data-guide-search-surface="homepage"] .control {
     min-height: 3.25rem;
   }
 
@@ -326,17 +334,23 @@
   }
 
   .control input {
-    min-height: 3.2rem;
     padding-inline: 0.75rem;
+  }
+
+  .searchExperience[data-guide-search-surface="homepage"] .control input {
+    min-height: 3.2rem;
   }
 
   .control button {
     grid-column: 1 / -1;
     grid-row: 2;
     margin-inline-start: -0.85rem;
-    min-height: 3.2rem;
     min-width: 0;
     width: calc(100% + 0.85rem);
+  }
+
+  .searchExperience[data-guide-search-surface="homepage"] .control button {
+    min-height: 3.2rem;
   }
 
   .examples {
