@@ -22,6 +22,13 @@
   font-family: var(--hg-editorial, var(--serif));
 }
 
+.page[data-homeground-locale="ko"] :is(h1, h2, h3) {
+  letter-spacing: -0.018em;
+  line-height: 1.16;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
 .page :focus-visible {
   outline-color: var(--im-ink);
 }
@@ -111,7 +118,7 @@
   letter-spacing: -0.055em;
   line-height: 0.98;
   margin: 1.25rem 0 0;
-  max-width: 11.5ch;
+  max-width: 13ch;
   text-wrap: balance;
 }
 

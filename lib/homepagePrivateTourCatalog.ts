@@ -6,10 +6,14 @@ export interface HomepagePrivateTourItem {
   readonly id: string;
   readonly kind: "tour";
   readonly title: string;
-  readonly description: string;
+  readonly appeal: string;
   readonly days: number;
   readonly nights: number;
   readonly href: string;
+  readonly startingPrice: {
+    readonly formatted: string;
+    readonly travelers: number;
+  };
   readonly image: {
     readonly src: string;
     readonly alt: string;
@@ -59,10 +63,14 @@ export function getHomepagePrivateTourItems(
           id: product.id,
           kind: "tour",
           title: product.title,
-          description: product.description,
+          appeal: product.comparison.appeal,
           days: product.days,
           nights: product.nights,
           href: product.href,
+          startingPrice: {
+            formatted: product.startingPrice.formatted,
+            travelers: product.startingPrice.travelers,
+          },
           image: product.image,
         }) satisfies HomepagePrivateTourItem,
     ),

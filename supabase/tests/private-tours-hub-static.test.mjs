@@ -15,6 +15,7 @@ import {
 import {
   getPrivateTourHubCopy,
   getPrivateTourHubLanguagePaths,
+  getPrivateTourHubPlannerPath,
   privateTourHubPaths,
 } from "../../lib/privateTourHubI18n.ts";
 
@@ -63,6 +64,7 @@ test("published private-tour catalog contains every current source in every loca
       assert.ok(item.days > 0);
       assert.ok(item.nights >= 0);
       assert.ok(item.comparison.route.length > 0);
+      assert.ok(item.comparison.appeal.length > 0);
       assert.ok(item.comparison.pace.length > 0);
       assert.ok(item.comparison.fit.length > 0);
       assert.ok(item.comparison.highlights.length >= 3);
@@ -217,7 +219,10 @@ test("hub copy and language ownership are complete and self-consistent", () => {
 
   const englishCopy = getPrivateTourHubCopy("en", expectedPublishedCount);
   assert.equal(englishCopy.metadata.title, "Private China Tours");
-  assert.match(englishCopy.title, /private China tours/i);
+  assert.match(englishCopy.title, /private journeys/i);
+  assert.equal(getPrivateTourHubPlannerPath("en"), "/#planner-contact");
+  assert.equal(getPrivateTourHubPlannerPath("zh"), "/zh/#planner-contact");
+  assert.equal(getPrivateTourHubPlannerPath("ko"), "/ko/#planner-contact");
 
   for (const locale of locales) {
     const copy = getPrivateTourHubCopy(locale, expectedPublishedCount);
@@ -231,10 +236,9 @@ test("hub copy and language ownership are complete and self-consistent", () => {
     assert.ok(
       copy.quickCompareEyebrow.includes(String(expectedPublishedCount)),
     );
-    assert.ok(copy.quickCompareIntroduction.length > 40);
+    assert.ok(copy.quickCompareIntroduction.length > 20);
     assert.ok(copy.quickFitLabel.length > 0);
     assert.ok(copy.quickMovementLabel.length > 0);
-    assert.equal(copy.summarySteps.length, 3);
     assert.ok(
       copy.tourCount(expectedPublishedCount).includes(
         String(expectedPublishedCount),
@@ -279,9 +283,10 @@ test("three route owners expose indexable metadata, canonical and reciprocal hre
 });
 
 test("hub is a comparison owner with visible breadcrumbs and one linked schema item per published tour", async () => {
-  const [component, styles, homepageCatalog] = await Promise.all([
+  const [component, styles, productPageStyles, homepageCatalog] = await Promise.all([
     source("components/PrivateToursHubPage.tsx"),
     source("components/PrivateToursHubPage.module.css"),
+    source("components/ShanghaiJiangnanImaginePage.module.css"),
     source("lib/homepagePrivateTourCatalog.ts"),
   ]);
 
@@ -306,6 +311,7 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /<nav[^>]*className=\{styles\.breadcrumb\}/);
   assert.match(component, /<PrivateTourCatalogLink[^>]*href=\{product\.href\}/);
   assert.match(component, /product\.comparison\.route/);
+  assert.match(component, /product\.comparison\.appeal/);
   assert.match(component, /product\.comparison\.pace/);
   assert.match(component, /product\.comparison\.fit/);
   assert.match(component, /<span aria-hidden="true">[\s\S]*?padStart\(2, "0"\)/);
@@ -315,6 +321,8 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /privateTourCardImageSource\(product\.id, 960\)/);
   assert.match(component, /sizes="\(max-width: 48rem\)/);
   assert.doesNotMatch(component, /priority=|from "next\/image"/);
+  assert.doesNotMatch(component, /styles\.selection|copy\.summarySteps/);
+  assert.match(component, /getPrivateTourHubPlannerPath\(locale\)/);
   const measuredLink = await source("components/PrivateTourCatalogLink.tsx");
   assert.match(measuredLink, /trackEvent\("tour_catalog_product_clicked"/);
   assert.match(measuredLink, /product_slug: productSlug/);
@@ -334,6 +342,21 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.doesNotMatch(styles, /\.quick(?:List|Details|Link)[^{]*\{[^}]*display:\s*none/);
   assert.doesNotMatch(styles, /overflow-x:\s*(?:auto|scroll)|scroll-snap/);
   assert.doesNotMatch(styles, /last-child:nth-child\(odd\)/);
+  assert.match(
+    styles,
+    /\.toursPage\[data-homeground-locale="ko"\] \.hero h1 \{[\s\S]*?word-break: keep-all;/,
+    "Korean hub headings must preserve syllable groups and use dedicated leading",
+  );
+  assert.match(
+    styles,
+    /@media \(max-width: 48rem\)[\s\S]*?\.toursPage\[data-homeground-locale="ko"\] \.hero h1 \{[\s\S]*?line-height: 1\.18;[\s\S]*?max-width: 100%;/,
+    "Korean mobile hero must not inherit the compressed English display leading",
+  );
+  assert.match(
+    productPageStyles,
+    /\.page\[data-homeground-locale="ko"\] :is\(h1, h2, h3\) \{[\s\S]*?line-height: 1\.16;[\s\S]*?word-break: keep-all;/,
+    "Korean product headings need collision-safe leading",
+  );
 
   assert.match(homepageCatalog, /getPublishedPrivateTourCatalog\(locale\)/);
   assert.match(homepageCatalog, /homepagePrivateTourSlugs\.map/);

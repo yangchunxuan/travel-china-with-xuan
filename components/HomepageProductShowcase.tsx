@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEventHandler } from "react";
 import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
@@ -18,6 +19,8 @@ interface HomepageProductShowcaseProps {
     item: HomepagePrivateTourItem,
     position: number,
   ) => void;
+  readonly plannerHref: string;
+  readonly onPlannerClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
 const homepageProductImageSizes =
@@ -27,11 +30,10 @@ export function HomepageProductShowcase({
   locale,
   products,
   onItemClick,
+  plannerHref,
+  onPlannerClick,
 }: HomepageProductShowcaseProps) {
   const copy = getHomepageProductShowcaseCopy(locale);
-  const titleParts = copy.titleNoWrap
-    ? copy.title.split(copy.titleNoWrap)
-    : undefined;
 
   return (
     <section
@@ -50,17 +52,7 @@ export function HomepageProductShowcase({
           </div>
           <div className={styles.introGrid}>
             <h2 id="homepage-products-title" tabIndex={-1}>
-              {titleParts?.length === 2 && copy.titleNoWrap ? (
-                <>
-                  {titleParts[0]}
-                  <span className={styles.keepTogether}>
-                    {copy.titleNoWrap}
-                  </span>
-                  {titleParts[1]}
-                </>
-              ) : (
-                copy.title
-              )}
+              {copy.title}
             </h2>
             <p className={styles.lead}>{copy.intro(products.length)}</p>
           </div>
@@ -104,8 +96,16 @@ export function HomepageProductShowcase({
                     </span>
                   </div>
                   <h3 className={styles.cardTitle}>{product.title}</h3>
+                  <p className={styles.cardPrice}>
+                    <span>{copy.startingPriceLabel}</span>
+                    <strong>{product.startingPrice.formatted}</strong>
+                    <small>
+                      {copy.perPersonLabel} ·{" "}
+                      {copy.groupBasis(product.startingPrice.travelers)}
+                    </small>
+                  </p>
                   <p className={styles.cardDescription}>
-                    {product.description}
+                    {product.appeal}
                   </p>
                   <span className={styles.cardAction}>
                     <span>{copy.actionLabel}</span>
@@ -123,6 +123,30 @@ export function HomepageProductShowcase({
             <span aria-hidden="true">→</span>
           </a>
         </div>
+
+        <ul aria-label={copy.trustListLabel} className={styles.trustList}>
+          {copy.trustItems.map((item) => (
+            <li key={item.title}>
+              <strong>{item.title}</strong>
+              <span>{item.body}</span>
+            </li>
+          ))}
+        </ul>
+
+        <aside
+          aria-labelledby="homepage-products-enquiry-title"
+          className={styles.enquiryStrip}
+        >
+          <div>
+            <p>{copy.enquiryEyebrow}</p>
+            <h3 id="homepage-products-enquiry-title">{copy.enquiryTitle}</h3>
+            <span>{copy.enquiryBody}</span>
+          </div>
+          <a href={plannerHref} onClick={onPlannerClick}>
+            {copy.enquiryAction}
+            <ArrowRight aria-hidden="true" size={17} />
+          </a>
+        </aside>
       </div>
     </section>
   );
