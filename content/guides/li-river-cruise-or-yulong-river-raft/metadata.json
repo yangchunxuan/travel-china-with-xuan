@@ -1,0 +1,86 @@
+{
+  "id": "li-river-cruise-or-yulong-river-raft",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "water-experience-product-selector",
+  "topics": ["li-river", "yulong-river", "guilin", "yangshuo", "river-cruise", "bamboo-rafting", "weather-recovery"],
+  "destinations": ["guilin", "yangshuo"],
+  "heroImagePath": "/images/guides/li-river-cruise-or-yulong-river-raft/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/li-river-cruise-or-yulong-river-raft/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-04",
+  "dateModified": "2026-09-04",
+  "sourceReviewedDate": "2026-09-04",
+  "search": {
+    "section": "explore",
+    "family": "comparison",
+    "primaryIntent": "plan"
+  },
+  "searchTerms": {
+    "en": ["Li River cruise or Yulong River raft", "Li River cruise vs bamboo raft", "which river trip Guilin Yangshuo", "Yulong River raft route"],
+    "zh": ["漓江游船还是遇龙河竹筏", "桂林阳朔水上项目怎么选", "漓江游船和竹筏区别", "遇龙河竹筏线路怎么选"],
+    "ko": ["리강 유람선 위룽허 대나무 뗏목 비교", "구이린 양숴 강 체험 선택", "리강 크루즈 또는 위룽허", "위룽허 뗏목 노선 선택"]
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/li-river-cruise-or-yulong-river-raft/",
+      "title": "Li River Cruise or Yulong River Raft? Separate Three Experiences",
+      "headline": "Li River Cruise or Yulong River Raft: choose the actual water experience",
+      "description": "Choose among a Li River cruise, a Li River electric sightseeing raft and a Yulong River hand-poled raft by route, comfort, time and failure risk.",
+      "heroAlt": "Large passenger boats on and beside the water below hills at a Li River embarkation area near Guilin",
+      "heroCredit": {
+        "text": "Li River passenger boats in the Guilin area, photographed by Xiquinho Silva on 11 June 2018; Homeground cropped the image to 16:10, resized it and converted it to WebP. It does not identify today's assigned pier, vessel, sailing or water conditions.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Li_River_Cruise_87103-Li-River_(49040880046).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "Li River cruise or Yulong raft",
+      "featuredLinkLabel": "Choose a Guilin–Yangshuo river experience",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guilin", "Yangshuo", "River experiences"]
+    },
+    "zh": {
+      "path": "/zh/guides/li-river-cruise-or-yulong-river-raft/",
+      "title": "漓江游船还是遇龙河竹筏？先分清三种水上体验",
+      "headline": "漓江游船还是遇龙河竹筏：按真实产品做选择",
+      "description": "从线路、舒适度、时间和失败风险，选择漓江大型游船、漓江纯电排筏或遇龙河人工竹筏，不再混淆三种产品。",
+      "heroAlt": "桂林一带漓江登船区域水面上及岸边的大型客船与后方山体",
+      "heroCredit": {
+        "text": "桂林一带的漓江客船，Xiquinho Silva 摄于 2018 年 6 月 11 日；Homeground 裁成 16:10、缩放并转为 WebP。照片不能确认当天分配的码头、船只、航次或水况。",
+        "sourceLabel": "原始照片",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Li_River_Cruise_87103-Li-River_(49040880046).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "漓江游船还是遇龙河竹筏",
+      "featuredLinkLabel": "选择桂林—阳朔水上体验",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["桂林", "阳朔", "水上体验"]
+    },
+    "ko": {
+      "path": "/ko/guides/li-river-cruise-or-yulong-river-raft/",
+      "title": "리강 유람선 vs 위룽허 뗏목: 세 가지 체험부터 구분하기",
+      "headline": "리강 유람선과 위룽허 뗏목: 실제 상품을 기준으로 고르기",
+      "description": "노선, 편안함, 시간과 실패 위험을 기준으로 리강 대형 유람선·리강 전동 관광 뗏목·위룽허 수동 뗏목을 선택합니다.",
+      "heroAlt": "구이린 인근 리강 승선 구역의 수면과 강변에 있는 대형 여객선과 뒤편 산",
+      "heroCredit": {
+        "text": "구이린 일대 리강 여객선. Xiquinho Silva가 2018년 6월 11일 촬영했으며 Homeground가 16:10으로 자르고 크기를 조정해 WebP로 변환했습니다. 당일 배정 선착장·선박·운항편·수상 상태를 확인하는 사진은 아닙니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Li_River_Cruise_87103-Li-River_(49040880046).jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "리강 유람선 또는 위룽허 뗏목",
+      "featuredLinkLabel": "구이린·양숴 수상 체험 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["구이린", "양숴", "수상 체험"]
+    }
+  }
+}
