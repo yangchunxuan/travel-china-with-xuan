@@ -1,9 +1,14 @@
 # Employee 6 SEO batch manifest — 2026-09-01
 
-Status: selected identities approved for draft production; no publication authority  
-Research cut-off: 2026-09-01 (Asia/Shanghai)  
-Repository baseline: `origin/main@c13d83e1abc8f5f25ee2250de11eed8c424a0196`  
+Status: six selected identities drafted, tested and independently reviewed; central editorial review required; no publication authority
+
+Research cut-off: 2026-09-01 (Asia/Shanghai)
+
+Repository baseline: `origin/main@c13d83e1abc8f5f25ee2250de11eed8c424a0196`
+
 Branch: `article/worker-6-seo-batch-20260901`
+
+Candidate research closed on 2026-09-01. Article-level official sources were reopened through 2026-09-04; the `reviewedAt` and source logs inside each article pack control freshness.
 
 ## Method and hard gates
 
@@ -66,4 +71,17 @@ The six selected pages are mutually exclusive at the moment a traveller lands on
 5. `bringing-prescription-medicine-into-china`
 6. `bringing-dog-or-cat-into-china`
 
-The order starts with the most source-ready, time-critical task and leaves the document-heavy pet entry identity last. Its publication gate is a fresh confirmation from the actual arrival port or Customs 12360 because the official 2019 exemption announcement and a 2026 municipal English summary do not describe quarantine in the same way. The discrepancy will be visible, never silently resolved.
+The order starts with the most source-ready, time-critical task and leaves the document-heavy pet entry identity last. For that page, unrepealed GACC Announcement No. 5 is the pet-specific planning framework; incomplete general/local summaries remain disclosed, while dynamic lists, the actual port and on-site inspection still prevent any clearance promise.
+
+## Completion record — 2026-09-04
+
+| Order | Slug | Commit | Traveller blind review | SEO/technical adversarial review | Publication status |
+|---:|---|---|---|---|---|
+| 1 | `animal-bite-rabies-exposure-china` | `5a49ae39` | P1/P2 PASS | P1/P2 PASS | Draft only; central review required |
+| 2 | `china-severe-weather-warning-trip-recovery` | `d420fe41` | P1/P2 PASS | P1/P2 PASS | Draft only; central review required |
+| 3 | `china-tourist-temporary-driving-permit` | `de421216` | P1/P2 PASS | P1/P2 PASS | Draft only; central review required |
+| 4 | `medical-emergency-in-china-for-travellers` | `b020de9d` | P1/P2 PASS | P1/P2 PASS | Draft only; central review required |
+| 5 | `bringing-prescription-medicine-into-china` | `250dcbe0` | P1/P2 PASS | P1/P2 PASS | Draft only; central review required |
+| 6 | `bringing-dog-or-cat-into-china` | `5ffe0377` | P1/P2 PASS | P1/P2 PASS | Draft only; current lists and actual port remain publication gates |
+
+No page, registry, Search Map, homepage, sitemap, template or production setting was published or assigned by this batch.
