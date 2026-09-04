@@ -192,6 +192,11 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.match(titleStyles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(
     titleStyles,
+    /\.root \{[\s\S]*?inline-size: 100%;[\s\S]*?max-inline-size: 100%;/,
+    "the rotating title wrapper must not shrink away from the shared title axis",
+  );
+  assert.match(
+    titleStyles,
     /@media \(max-width: 39\.999rem\)[\s\S]*?\.phraseLayer\[data-phase="entering"\][\s\S]*?phraseFadeIn[\s\S]*?\.phraseLayer\[data-phase="exiting"\][\s\S]*?phraseFadeOut/,
   );
   assert.match(
@@ -201,8 +206,23 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.doesNotMatch(titleStyles, /filter: blur/);
   assert.match(
     showcaseStyles,
-    /\.root\[data-homeground-locale="zh"\] \.heroTitle \{[\s\S]*?inline-size: 6\.1em;[\s\S]*?margin-inline: auto;[\s\S]*?max-inline-size: 100%;[\s\S]*?text-align: start;/,
+    /\.root\[data-homeground-locale="zh"\] \{[\s\S]*?--showcase-zh-hero-measure: clamp\(18\.3rem, 25\.925vw, 22\.265rem\);/,
+    "the Chinese hero must expose one fluid measure for its title group",
+  );
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.heroEyebrow \{[\s\S]*?inline-size: min\(100%, var\(--showcase-zh-hero-measure\)\);[\s\S]*?text-align: start;/,
+    "the Chinese hero eyebrow must use the shared editorial axis",
+  );
+  assert.match(
+    showcaseStyles,
+    /\.root\[data-homeground-locale="zh"\] \.heroTitle \{[\s\S]*?inline-size: min\(100%, var\(--showcase-zh-hero-measure\)\);[\s\S]*?margin-inline: auto;[\s\S]*?max-inline-size: 100%;[\s\S]*?text-align: start;/,
     "Chinese hero lines must share one deliberate left edge at every breakpoint",
+  );
+  assert.match(
+    showcaseStyles,
+    /@media \(max-width: 39\.999rem\)[\s\S]*?\.root\[data-homeground-locale="zh"\] \{[\s\S]*?--showcase-zh-hero-measure: 13\.725rem;/,
+    "the shared Chinese hero axis must track the mobile title size",
   );
   for (const phrase of [
     "一路有我们。",

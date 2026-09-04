@@ -317,12 +317,23 @@
   border-block-start: 1px solid rgb(10 10 10 / 10%);
 }
 
+.root[data-homeground-locale="zh"] {
+  /* Keep the eyebrow and all headline rows on one editorial axis. */
+  --showcase-zh-hero-measure: clamp(18.3rem, 25.925vw, 22.265rem);
+}
+
 .root[data-homeground-locale="zh"] .heroEyebrow,
 .root[data-homeground-locale="ko"] .heroEyebrow,
 .root[data-homeground-locale="zh"] .eyebrow,
 .root[data-homeground-locale="ko"] .eyebrow {
   letter-spacing: 0.02em;
   text-transform: none;
+}
+
+.root[data-homeground-locale="zh"] .heroEyebrow {
+  inline-size: min(100%, var(--showcase-zh-hero-measure));
+  margin-inline: auto;
+  text-align: start;
 }
 
 .root[data-homeground-locale="zh"] .heroTitle,
@@ -348,7 +359,7 @@
 
 .root[data-homeground-locale="zh"] .heroTitle {
   font-size: clamp(3rem, 4.25vw, 3.65rem);
-  inline-size: 6.1em;
+  inline-size: min(100%, var(--showcase-zh-hero-measure));
   margin-inline: auto;
   max-inline-size: 100%;
   text-align: start;
@@ -388,6 +399,10 @@
   .root {
     --showcase-gutter: 1rem;
     --showcase-section-space: 4rem;
+  }
+
+  .root[data-homeground-locale="zh"] {
+    --showcase-zh-hero-measure: 13.725rem;
   }
 
   .hero {
