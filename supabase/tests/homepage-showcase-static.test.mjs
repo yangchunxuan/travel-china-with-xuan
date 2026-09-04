@@ -88,6 +88,8 @@ function contrastRatio(foreground, background) {
 test("the homepage separates tour conversion, destination discovery and three parallel guide paths", async () => {
   const homepage = await source("components/HomegroundHomePage.tsx");
   const expectedIds = ["stay", "transport", "plan"];
+  const heroBodyLengthLimits = { en: 72, zh: 28, ko: 44 };
+  const productIntroLengthLimits = { en: 82, zh: 36, ko: 44 };
 
   assert.match(
     homepage,
@@ -101,13 +103,17 @@ test("the homepage separates tour conversion, destination discovery and three pa
   for (const locale of ["en", "zh", "ko"]) {
     const copy = getHomepageShowcaseCopy(locale);
     const identityCopy = getHomegroundCopy(locale);
+    const productCopy = getHomepageProductShowcaseCopy(locale);
     const headline = copy.heroHeadline;
     assert.deepEqual(
       copy.guidePaths.items.map((item) => item.id),
       expectedIds,
     );
     assert.equal(new Set(copy.guidePaths.items.map((item) => item.title)).size, 3);
-    assert.ok(copy.heroBody.length > 40);
+    assert.ok(copy.heroBody.length >= 18);
+    assert.ok(copy.heroBody.length <= heroBodyLengthLimits[locale]);
+    assert.ok(productCopy.intro(6).length >= 18);
+    assert.ok(productCopy.intro(6).length <= productIntroLengthLimits[locale]);
     assert.equal(headline.phrases.length, 4);
     assert.equal(new Set(headline.phrases).size, headline.phrases.length);
     assert.ok(headline.fixedLines.every((line) => line.trim().length > 0));
@@ -419,29 +425,20 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
   assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
 
-  const trustCopy = {
+  const faqTrustCopy = {
     en: {
-      noShopping: /no shopping stops/i,
-      writtenScope: /final inclusions, exclusions and total in writing before payment/,
-      priorAgreement: /optional upgrade or added service is agreed before it is charged/,
       privateBasis: /published tour and price is for you and your companions/,
       sharedTransit: /public trains, cruises or transport within attractions/,
       lowerCost: /lower-cost alternative, we will explain what could change and quote any suitable option separately/,
       consent: /not add a shared arrangement without your agreement/,
     },
     zh: {
-      noShopping: /不安排购物店/,
-      writtenScope: /付款前书面确认最终包含项、不包含项和总价/,
-      priorAgreement: /任何升级或新增服务，都会在收费前先由你确认/,
       privateBasis: /页面上的行程和价格按你和同行者单独安排/,
       sharedTransit: /高铁、游船或景区交通/,
       lowerCost: /进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价/,
       consent: /未经你同意不会增加共享安排/,
     },
     ko: {
-      noShopping: /쇼핑 일정은 없으며/,
-      writtenScope: /결제 전에 최종 포함·불포함 사항과 총액을 서면으로 안내/,
-      priorAgreement: /선택 업그레이드나 추가 서비스는 비용이 발생하기 전에 먼저 동의를 받습니다/,
       privateBasis: /공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준/,
       sharedTransit: /열차, 유람선 또는 관광지 내부 교통/,
       lowerCost: /비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적/,
@@ -455,7 +452,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     const copy = getHomepageProductShowcaseCopy(locale);
     const homeCopy = getHomegroundCopy(locale);
     assert.ok(copy.title.length > 8);
-    assert.ok(copy.intro(publishedTourCount).length > 60);
+    assert.ok(copy.intro(publishedTourCount).length >= 18);
+    assert.ok(copy.intro(publishedTourCount).length <= 82);
     assert.match(
       copy.countLabel(publishedTourCount),
       new RegExp(String(publishedTourCount)),
@@ -466,13 +464,14 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     if (copy.titleNoWrap) {
       assert.equal(copy.title.split(copy.titleNoWrap).length, 2);
     }
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].noShopping);
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].writtenScope);
-    assert.match(copy.intro(publishedTourCount), trustCopy[locale].priorAgreement);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].privateBasis);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].sharedTransit);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].lowerCost);
-    assert.match(homeCopy.faq.items[0].answer, trustCopy[locale].consent);
+    assert.match(
+      copy.title,
+      locale === "en" ? /before you pay/i : locale === "zh" ? /付款前/ : /결제 전에/,
+    );
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].privateBasis);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].sharedTransit);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].lowerCost);
+    assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].consent);
     assert.doesNotMatch(
       homeCopy.faq.items[0].answer,
       /small-group tours|shared transfers|小团|拼车|소그룹|합승/i,
@@ -513,6 +512,12 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   for (const product of privateTourProducts) {
     assert.equal(product.servicePolicy.shoppingStops, false);
     assert.equal(product.servicePolicy.addedServicesRequirePriorAgreement, true);
+    assert.match(product.bookingNote.en, /starting prices?/i);
+    assert.match(product.bookingNote.en, /quote|before payment|written/i);
+    assert.match(product.bookingNote.zh, /起价/);
+    assert.match(product.bookingNote.zh, /报价|付款前|核价/);
+    assert.match(product.bookingNote.ko, /시작가/);
+    assert.match(product.bookingNote.ko, /견적|결제 전|재견적/);
     const publicPolicyCopy = {
       en: [product.serviceNote.en, ...product.packages.map((item) => item.summary.en)].join(" "),
       zh: [product.serviceNote.zh, ...product.packages.map((item) => item.summary.zh)].join(" "),

@@ -33,7 +33,7 @@ interface HomepageShowcaseCopy {
 const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   en: {
     heroBody:
-      "Compare published private journeys with the pace, hotel moves, transport and day-by-day plan already set out. If none fits as written, talk to a China-based planner about adapting it around your dates.",
+      "Start with a route that fits, then shape it around your dates.",
     heroHeadline: {
       fixedLines: ["China, your", "way."],
       joiner: " ",
@@ -79,7 +79,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   zh: {
     heroBody:
-      "先比较已经写清每天安排的中国私家团：天数、住宿、交通和公开起价都可以直接查看。没有一条完全合适时，再和中国本地旅行规划师讨论怎样按真实日期调整。",
+      "先选一条接近的路线，再按你的日期调整。",
     heroHeadline: {
       fixedLines: ["按你的方式，", "游中国。"],
       joiner: "",
@@ -125,7 +125,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
   },
   ko: {
     heroBody:
-      "일자별 일정과 숙소 변경, 교통, 공개 시작가가 정리된 중국 프라이빗 투어부터 비교해 보세요. 공개된 일정이 맞지 않는다면 중국 현지 플래너와 실제 여행 날짜에 맞춰 어떻게 조정할지 상담할 수 있습니다.",
+      "원하는 여행에 가까운 일정을 고른 뒤, 실제 날짜에 맞춰 조정하세요.",
     heroHeadline: {
       fixedLines: ["중국, 나만의", "방식으로."],
       joiner: " ",
