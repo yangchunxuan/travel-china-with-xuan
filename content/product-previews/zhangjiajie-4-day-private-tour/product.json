@@ -3,7 +3,7 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "published",
   "public_eligible": true,
-  "updated_at": "2026-08-24T04:12:13+08:00",
+  "updated_at": "2026-09-06T03:03:43+08:00",
   "title": {
     "zh-CN": "张家界4天3晚：峰林、玻璃桥与天门山",
     "en": "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
@@ -29,8 +29,8 @@
   "price_display": {
     "mode": "from_price",
     "currency": "CNY",
-    "from_price_per_person": 5390,
-    "approved_decision_id": "approved-public-pricing-20260815",
+    "from_price_per_person": 3445,
+    "approved_decision_id": "approved-public-pricing-20260906",
     "valid_until": "2026-09-30T23:59:59+08:00",
     "pricing_source": "pricing.json"
   },

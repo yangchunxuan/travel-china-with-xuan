@@ -33,7 +33,7 @@ const expectedModifiedDates = {
   "refund-delivery": "2026-07-24",
   studio: "2026-08-22",
   terms: "2026-07-24",
-  "zhangjiajie-4-day-private-tour": "2026-09-05",
+  "zhangjiajie-4-day-private-tour": "2026-09-06",
 };
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;

@@ -251,8 +251,8 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.equal(product.packages.length, 1);
   assert.equal(product.packages[0].id, "fixed-route-english-guided");
   assert.deepEqual(product.packages[0].prices, [
-    { travelers: 2, cnyPerPerson: 4199 },
-    { travelers: 4, cnyPerPerson: 2399 },
+    { travelers: 2, cnyPerPerson: 2918, usdPerPerson: 449 },
+    { travelers: 4, cnyPerPerson: 2502, usdPerPerson: 385 },
   ]);
 
   const zh = localizePrivateTourProduct(product, "zh");

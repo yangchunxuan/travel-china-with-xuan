@@ -45,6 +45,27 @@ const props = (locale = "en", variant = "full") => ({
 const nodes = (node) => [node, ...(node.childNodes ?? []).flatMap(nodes)];
 const textOf = (html) => nodes(parse(html)).filter((node) => node.nodeName === "#text").map((node) => node.value).join("");
 
+test("the September owner-approved classic prices retain exact USD values and synchronized product metadata", () => {
+  assert.equal(approved.approved_decision_id, "approved-public-pricing-20260906");
+  assert.equal(product.price_display.approved_decision_id, approved.approved_decision_id);
+  assert.equal(product.price_display.from_price_per_person, 3445);
+  assert.equal(product.price_display.valid_until, approved.valid_until);
+  assert.equal(approved.valid_from, "2026-09-06");
+  assert.deepEqual(approved.basis.same_rate_adult_group_sizes, [2, 3, 4]);
+  assert.equal(approved.basis.automatic_group_discount, false);
+
+  const cnyPrices = approved.tiers.map((tier) => tier.from_price_per_person ?? tier.price_per_person);
+  assert.deepEqual(cnyPrices, [3445, 4160, 5200]);
+  assert.deepEqual(cnyPrices.map((cny) => formatPrivateTourPrice(cny, "en").amount), [530, 640, 800]);
+  assert.deepEqual(cnyPrices.map((cny) => formatPrivateTourPrice(cny, "ko").amount), [750000, 900000, 1120000]);
+  assert.deepEqual(
+    Array.from(preview.getZhangjiajiePrivateTourPublicPricing("en").tiers, (tier) => tier.formattedPrice),
+    ["USD\u00a0530", "USD\u00a0640", "USD\u00a0800"],
+  );
+  assert.equal(approved.tiers[0].regular_price_per_person, 3640);
+  assert.equal(preview.getZhangjiajiePrivateTourPublicPricing("en").tiers[0].formattedRegularPrice, "USD\u00a0560");
+});
+
 test("static HTML contains dated, localized reference prices and the approved group/stay basis", () => {
   assert.equal(approved.currency, "CNY");
   assert.equal(approved.basis.standard_rooming, "two_adults_sharing_one_room");
@@ -60,7 +81,7 @@ test("static HTML contains dated, localized reference prices and the approved gr
       assert.ok(text.includes(input.pricing.guideLanguageNote));
       assert.ok(text.includes(input.pricing.timeZoneLabel));
       assert.ok(text.includes(input.pricing.tiers[0].name));
-      assert.match(html, /dateTime="2026-08-15T00:00:00\+08:00"/);
+      assert.match(html, /dateTime="2026-09-06T00:00:00\+08:00"/);
       assert.match(html, /dateTime="2026-09-30T23:59:59\+08:00"/);
       assert.doesNotMatch(text, /Checking the current price window|正在核对当前价格|현재 가격 적용 기간을 확인/);
       const tiers = variant === "full" ? approved.tiers : [approved.tiers[0]];
@@ -68,7 +89,7 @@ test("static HTML contains dated, localized reference prices and the approved gr
         const cny = tier.from_price_per_person ?? tier.price_per_person;
         assert.ok(text.includes(formatPrivateTourPrice(cny, locale).formatted));
       }
-      if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(5590, locale).formatted));
+      if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(3640, locale).formatted));
     }
   }
 });
@@ -105,7 +126,7 @@ test("hydration preserves the inclusive China-time price window and removes old 
       assert.ok(mounted.initial.includes(preview.productPreviewCopy.en.checkingPrice));
       const text = mounted.render();
       if (current) {
-        assert.ok(text.includes(formatPrivateTourPrice(5390, "en").formatted));
+        assert.ok(text.includes(formatPrivateTourPrice(3445, "en").formatted));
         assert.ok(!text.includes(preview.productPreviewCopy.en.expiredPrice));
         assert.ok(text.includes(props().pricing.guideLanguageNote));
       } else {
@@ -124,8 +145,9 @@ test("a page left open switches at the start and expiry boundaries and clears it
   assert.equal(upcoming.timer.delay, 1);
   upcoming.clock.now = starts;
   upcoming.timer.callback();
-  assert.ok(upcoming.render().includes(formatPrivateTourPrice(5390, "en").formatted));
-  assert.equal(upcoming.timer.delay, 2_147_483_647, "long windows stay within the browser timer limit");
+  assert.ok(upcoming.render().includes(formatPrivateTourPrice(3445, "en").formatted));
+  assert.equal(upcoming.timer.delay, Math.min(ends + 1 - starts, 2_147_483_647));
+  assert.ok(upcoming.timer.delay <= 2_147_483_647, "windows stay within the browser timer limit");
   upcoming.cleanup();
   assert.equal(upcoming.cleared, true);
 
@@ -134,7 +156,7 @@ test("a page left open switches at the start and expiry boundaries and clears it
   current.clock.now = ends + 1;
   current.timer.callback();
   assert.ok(current.render().includes(preview.productPreviewCopy.en.expiredPrice));
-  assert.ok(!current.render().includes(formatPrivateTourPrice(5390, "en").formatted));
+  assert.ok(!current.render().includes(formatPrivateTourPrice(3445, "en").formatted));
   current.cleanup();
 });
 

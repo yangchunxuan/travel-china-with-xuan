@@ -108,13 +108,13 @@ export const legacySystemContentLifecycle = {
   },
   "zhangjiajie-4-day-private-tour": {
     datePublished: "2026-08-16",
-    dateModified: "2026-09-05",
+    dateModified: "2026-09-06",
     lastReviewed: "2026-08-16",
     evidence: {
-      commit: "edce6726ab00322c2cd4e53446f1d181c4ce4a74",
-      changedAt: "2026-09-05",
+      commit: "ce0f8b725241f446106a54824e1a23ce8bbb1642",
+      changedAt: "2026-09-06",
       summary:
-        "The trilingual introduction now distinguishes the arrival day from three sightseeing days and states the final-day departure check; Korean search copy also clarifies the duration.",
+        "The owner reduced all three classic accommodation tiers by USD 300 per person; localized price sources, the regular reference and the September 6-30 price window now agree across the homepage, catalog and detail page.",
     },
   },
   "entry-requirements": {
