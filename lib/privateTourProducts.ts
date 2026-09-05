@@ -10,6 +10,8 @@ export type LocalizedStringList = LocalizedValue<readonly string[]>;
 export interface PrivateTourPriceTier {
   travelers: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   cnyPerPerson: number;
+  // An explicitly approved USD selling price bypasses the default USD10 rounding.
+  usdPerPerson?: number;
 }
 
 export interface PrivateTourPackage {
@@ -228,13 +230,20 @@ const numberLocales: Record<PrivateTourLocale, string> = {
 export function formatPrivateTourPrice(
   cny: number,
   locale: PrivateTourLocale,
+  usdPerPerson?: number,
 ): FormattedPrivateTourPrice {
   assertValidCny(cny);
+  if (usdPerPerson !== undefined) {
+    if (!Number.isSafeInteger(usdPerPerson)) {
+      throw new RangeError("An explicit USD price must be a whole-dollar safe integer.");
+    }
+    assertConvertedPriceInvariant(cny, usdPerPerson, "USD");
+  }
   const currency: PrivateTourCurrency =
     locale === "en" ? "USD" : locale === "ko" ? "KRW" : "CNY";
   const amount =
     locale === "en"
-      ? convertCnyToUsd(cny)
+      ? (usdPerPerson ?? convertCnyToUsd(cny))
       : locale === "ko"
         ? convertCnyToKrw(cny)
         : cny;
@@ -262,12 +271,20 @@ const lists = (
   ko: readonly string[],
 ): LocalizedStringList => ({ en, zh, ko });
 
-const prices = ([twoTravellers, fourTravellers]: readonly [
-  number,
-  number,
-]): readonly PrivateTourPriceTier[] => [
-  { travelers: 2, cnyPerPerson: twoTravellers },
-  { travelers: 4, cnyPerPerson: fourTravellers },
+const prices = (
+  [twoTravellers, fourTravellers]: readonly [number, number],
+  usdPrices?: readonly [number, number],
+): readonly PrivateTourPriceTier[] => [
+  {
+    travelers: 2,
+    cnyPerPerson: twoTravellers,
+    ...(usdPrices ? { usdPerPerson: usdPrices[0] } : {}),
+  },
+  {
+    travelers: 4,
+    cnyPerPerson: fourTravellers,
+    ...(usdPrices ? { usdPerPerson: usdPrices[1] } : {}),
+  },
 ];
 
 const day = (
@@ -308,12 +325,13 @@ const standardPackage = (
   label: LocalizedText,
   summary: LocalizedText,
   cnyPrices: readonly [number, number],
+  usdPrices?: readonly [number, number],
 ): PrivateTourPackage => ({
   id,
   guideMode: "standard",
   label,
   summary,
-  prices: prices(cnyPrices),
+  prices: prices(cnyPrices, usdPrices),
 });
 
 const guidedPackage = (
@@ -322,12 +340,13 @@ const guidedPackage = (
   label: LocalizedText,
   summary: LocalizedText,
   cnyPrices: readonly [number, number],
+  usdPrices?: readonly [number, number],
 ): PrivateTourPackage => ({
   id,
   guideMode,
   label,
   summary,
-  prices: prices(cnyPrices),
+  prices: prices(cnyPrices, usdPrices),
 });
 
 const standardLabel = l("Private tour", "私家团标准版", "프라이빗 투어");
@@ -1710,11 +1729,13 @@ const guilinYangshuo: PrivateTourProduct = {
       "standard-guided",
       standardLabel,
       standardSummary,
-      [11490, 7190],
+      // Owner-approved TCG 4-star benchmark minus USD20/person, 2026-09-06.
+      [4998, 4088],
+      [769, 629],
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-05",
+  dateModified: "2026-09-06",
 };
 
 const harbinWinter: PrivateTourProduct = {
@@ -2501,7 +2522,9 @@ const beijing: PrivateTourProduct = {
         "D2–D4 英语导游陪同，D1/D5 为司机接送。",
         "D2~D4 영어 가이드 동행, D1·D5는 기사 픽업·샌딩입니다.",
       ),
-      [7302, 4806],
+      // Owner-approved TCG 4-star benchmark minus USD20/person, 2026-09-06.
+      [5453, 4348],
+      [839, 669],
     ),
     guidedPackage(
       "no-guide",
@@ -2516,7 +2539,7 @@ const beijing: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-05",
+  dateModified: "2026-09-06",
 };
 
 const zhangjiajieForestFixedRoute: PrivateTourProduct = {
@@ -2861,7 +2884,7 @@ export function getPrivateTourPriceRows(
   }
   return selectedPackage.prices.map((tier) => ({
     travelers: tier.travelers,
-    ...formatPrivateTourPrice(tier.cnyPerPerson, locale),
+    ...formatPrivateTourPrice(tier.cnyPerPerson, locale, tier.usdPerPerson),
   }));
 }
 
@@ -2962,7 +2985,7 @@ export function assertAllPrivateTourPriceInvariants(): true {
   for (const product of privateTourProducts) {
     for (const tourPackage of product.packages) {
       for (const tier of tourPackage.prices) {
-        const usd = convertCnyToUsd(tier.cnyPerPerson);
+        const usd = formatPrivateTourPrice(tier.cnyPerPerson, "en", tier.usdPerPerson).amount;
         const krw = convertCnyToKrw(tier.cnyPerPerson);
         assertConvertedPriceInvariant(tier.cnyPerPerson, usd, "USD");
         assertConvertedPriceInvariant(tier.cnyPerPerson, krw, "KRW");
