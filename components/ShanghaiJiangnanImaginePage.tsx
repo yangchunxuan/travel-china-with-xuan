@@ -11,7 +11,7 @@ import {
   getLocalizedPrivateTourPhotoCredits,
   privateTourPhotoCreditCopy,
 } from "../lib/privateTourPhotoCredits";
-import { GuideCtaLink } from "./GuideCtaLink";
+import { PrivateTourSelectionProvider, SelectedPrivateTourCta, SelectedPrivateTourEmailLink } from "./PrivateTourSelection";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -475,6 +475,7 @@ export function ShanghaiJiangnanImaginePage({
   };
 
   return (
+    <PrivateTourSelectionProvider slug={inquiryContext.slug} initialPackageId={localized.packages[0].id}>
     <div
       className={`${homeStyles.localeRoot} ${styles.page}`}
       data-homeground-locale={locale}
@@ -729,7 +730,7 @@ export function ShanghaiJiangnanImaginePage({
               <p>{copy.finalBody}</p>
             </div>
             <div className={styles.finalActions}>
-              <GuideCtaLink
+              <SelectedPrivateTourCta
                 className={styles.finalPrimary}
                 guideId={localized.id}
                 href={inquiryHref}
@@ -738,9 +739,11 @@ export function ShanghaiJiangnanImaginePage({
               >
                 {copy.contact}
                 <ArrowRight aria-hidden="true" size={18} />
-              </GuideCtaLink>
-              <a
+              </SelectedPrivateTourCta>
+              <SelectedPrivateTourEmailLink
                 className={styles.finalEmail}
+                email={homegroundBusiness.serviceEmail}
+                locale={locale}
                 href={buildPrivateTourMailtoHref(
                   homegroundBusiness.serviceEmail,
                   locale,
@@ -749,7 +752,7 @@ export function ShanghaiJiangnanImaginePage({
               >
                 <Mail aria-hidden="true" size={16} />
                 {copy.email}
-              </a>
+              </SelectedPrivateTourEmailLink>
             </div>
           </div>
         </aside>
@@ -764,5 +767,6 @@ export function ShanghaiJiangnanImaginePage({
         type="application/ld+json"
       />
     </div>
+    </PrivateTourSelectionProvider>
   );
 }

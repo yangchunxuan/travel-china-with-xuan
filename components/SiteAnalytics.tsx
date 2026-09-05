@@ -22,14 +22,15 @@ import {
 } from "../lib/analyticsConsent";
 import {
   currentAnalyticsLocationKey,
+  googleMeasurementLocationIsSafe,
   metaMeasurementLocationIsSafe,
   subscribeAnalyticsLocationChanges,
-  thirdPartyMeasurementLocationIsSafe,
 } from "../lib/analyticsLocation";
 import {
   consumeAnalyticsPageView,
   createAnalyticsPageViewState,
   resetAnalyticsPageView,
+  resetAnalyticsPageViewsForNewPage,
 } from "../lib/analyticsPageViews";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
@@ -41,6 +42,7 @@ function loadExternalScript(id: string, source: string) {
   const script = document.createElement("script");
   script.id = id;
   script.async = true;
+  script.referrerPolicy = "no-referrer";
   script.src = source;
   document.head.appendChild(script);
 }
@@ -91,13 +93,14 @@ export function SiteAnalytics({
 
   useEffect(() => {
     const disableThirdPartyBeforeUnsafeLocation = (nextHref: string) => {
-      if (thirdPartyMeasurementLocationIsSafe(nextHref)) return;
-      disableGoogleAnalytics();
-      disableMetaPixel();
-      removeExternalScript(googleScriptId);
-      removeExternalScript(metaScriptId);
-      resetAnalyticsPageView(pageViewsRef.current, "google");
-      resetAnalyticsPageView(pageViewsRef.current, "meta");
+      if (!googleMeasurementLocationIsSafe(nextHref)) {
+        disableGoogleAnalytics();
+        removeExternalScript(googleScriptId);
+      }
+      if (!metaMeasurementLocationIsSafe(nextHref)) {
+        disableMetaPixel();
+        removeExternalScript(metaScriptId);
+      }
     };
     const refreshLocation = () => {
       disableThirdPartyBeforeUnsafeLocation(window.location.href);
@@ -124,7 +127,7 @@ export function SiteAnalytics({
       captureEntryAttribution();
       removeAttributionParametersFromAddressBar();
       if (
-        thirdPartyMeasurementLocationIsSafe() &&
+        googleMeasurementLocationIsSafe() &&
         initializeGoogleAnalytics()
       ) {
         loadExternalScript(
@@ -136,7 +139,6 @@ export function SiteAnalytics({
       } else {
         disableGoogleAnalytics();
         removeExternalScript(googleScriptId);
-        resetAnalyticsPageView(pageViewsRef.current, "google");
       }
     } else {
       disableGoogleAnalytics();
@@ -162,7 +164,6 @@ export function SiteAnalytics({
       } else {
         disableMetaPixel();
         removeExternalScript(metaScriptId);
-        resetAnalyticsPageView(pageViewsRef.current, "meta");
       }
     } else {
       disableMetaPixel();
@@ -175,13 +176,18 @@ export function SiteAnalytics({
     if (
       !ANALYTICS_ENABLED ||
       locationKey === undefined ||
-      !pathname
+      !pathname ||
+      pathname !== window.location.pathname
     ) {
       return;
     }
 
     const pageKey = `${locale}:${pathname}`;
-    const thirdPartyLocationSafe = thirdPartyMeasurementLocationIsSafe();
+    // Query/fragment changes stay within one page view, even when a vendor
+    // pauses for private URL text and later resumes on the same pathname.
+    // Visiting a different pathname resets each sink even if it is blocked.
+    resetAnalyticsPageViewsForNewPage(pageViewsRef.current, pageKey);
+    const googleLocationSafe = googleMeasurementLocationIsSafe();
     const metaLocationSafe = metaMeasurementLocationIsSafe();
 
     if (preferences?.analytics) {
@@ -195,7 +201,7 @@ export function SiteAnalytics({
         trackPageView({ path: pathname, locale, target: "first_party" });
       }
       if (
-        thirdPartyLocationSafe &&
+        googleLocationSafe &&
         consumeAnalyticsPageView(
           pageViewsRef.current,
           "google",
@@ -203,8 +209,6 @@ export function SiteAnalytics({
         )
       ) {
         trackPageView({ path: pathname, locale, target: "google" });
-      } else if (!thirdPartyLocationSafe) {
-        resetAnalyticsPageView(pageViewsRef.current, "google");
       }
     } else {
       resetAnalyticsPageView(pageViewsRef.current, "first_party");
@@ -221,7 +225,7 @@ export function SiteAnalytics({
       )
     ) {
       trackPageView({ path: pathname, locale, target: "meta" });
-    } else if (!preferences?.marketing || !metaLocationSafe) {
+    } else if (!preferences?.marketing) {
       resetAnalyticsPageView(pageViewsRef.current, "meta");
     }
   }, [

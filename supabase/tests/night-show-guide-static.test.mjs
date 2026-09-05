@@ -51,7 +51,7 @@ test("night-show copy answers the itinerary decision without a fixed timetable",
   assert.doesNotMatch(english, /(?:Show Time|Ticket Price):|CNY\s*\d/i);
 });
 
-test("night-show CTA opens direct planner contact without the old destination form", async () => {
+test("night-show CTA compares the full tour and keeps direct planner contact", async () => {
   const guide = await source("components/NightShowGuidePage.tsx");
   const [english, chinese, korean] = await Promise.all([
     source("lib/nightShowGuideCopy.en.ts"),
@@ -67,12 +67,21 @@ test("night-show CTA opens direct planner contact without the old destination fo
     guide,
     /utm_|planner=destinations|free-brief|service=/,
   );
-  assert.match(english, /ctaAction: "Talk to a China trip planner"/);
-  assert.match(chinese, /ctaAction: "联系旅行规划师"/);
-  assert.match(korean, /ctaAction: "중국 여행 플래너와 상담하기"/);
+  assert.match(guide, /getPrivateTourPaths\("zhangjiajie-4-day-private-tour"\)\[locale\]/);
+  assert.match(guide, /href=\{tourHref\}[\s\S]*?position="inline"/);
+  assert.match(guide, /href=\{plannerHref\}[\s\S]*?copy\.finalCta\.action/);
+  assert.match(english, /ctaAction: "View the 4-day Zhangjiajie private tour"/);
+  assert.match(chinese, /ctaAction: "查看张家界 4 日私家团"/);
+  assert.match(korean, /ctaAction: "장자제 4일 프라이빗 투어 보기"/);
+  assert.match(english, /Shows are optional extras outside the tour’s base price/);
+  assert.match(chinese, /演出属于基础团费之外的自选项目/);
+  assert.match(korean, /공연은 기본 투어 요금에 포함되지 않는 선택 항목/);
+  assert.match(english, /action: "Talk to a China trip planner"/);
+  assert.match(chinese, /action: "联系旅行规划师"/);
+  assert.match(korean, /action: "중국 여행 플래너와 상담하기"/);
   assert.match(english, /Use WhatsApp or leave your email/);
   assert.match(chinese, /通过 WhatsApp 直接聊，或只留下一个邮箱/);
-  assert.match(korean, /WhatsApp으로 바로 문의하거나 이메일을 남기면/);
+  assert.match(korean, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
   for (const [copy, stalePhrases] of [
     [
       english,

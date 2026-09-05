@@ -55,6 +55,7 @@ import {
 } from "./inquiryVersions.ts";
 import {
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySelection,
   type PrivateTourInquiryContext,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./privateTourInquiryContext.ts";
@@ -393,6 +394,14 @@ export function semanticInquiryPayload(
             productInterest: {
               slug: value.productInterest.slug,
               name: value.productInterest.name,
+              ...(value.productInterest.selection
+                ? {
+                    selection: {
+                      packageId: value.productInterest.selection.packageId,
+                      travelers: value.productInterest.selection.travelers,
+                    },
+                  }
+                : {}),
             },
           }
         : {}),
@@ -580,16 +589,47 @@ function validateAndNormalizeHomepageEmailInquiry(
     } else {
       hasOnlyKeys(
         input.productInterest,
-        ["slug", "name"],
+        ["slug", "name", "selection"],
         "productInterest",
         fieldErrors,
       );
+      let selection = null;
+      const hasSelection = Object.prototype.hasOwnProperty.call(
+        input.productInterest,
+        "selection",
+      );
+      if (hasSelection) {
+        const candidate = input.productInterest.selection;
+        if (!isPlainObject(candidate)) {
+          fieldErrors["productInterest.selection"] = "invalid";
+        } else {
+          hasOnlyKeys(
+            candidate,
+            ["packageId", "travelers"],
+            "productInterest.selection",
+            fieldErrors,
+          );
+          selection =
+            typeof input.productInterest.slug === "string" &&
+            typeof candidate.packageId === "string" &&
+            typeof candidate.travelers === "number"
+              ? getPrivateTourInquirySelection(
+                  input.productInterest.slug,
+                  candidate.packageId,
+                  candidate.travelers,
+                )
+              : null;
+          if (!selection) fieldErrors["productInterest.selection"] = "invalid";
+        }
+      }
       const expected =
         isOneOf(input.locale, inquiryLocales) &&
-        typeof input.productInterest.slug === "string"
+        typeof input.productInterest.slug === "string" &&
+        (!hasSelection || selection !== null)
           ? getPrivateTourInquiryContext(
               input.productInterest.slug,
               input.locale,
+              selection ?? undefined,
             )
           : null;
       if (

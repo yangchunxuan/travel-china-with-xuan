@@ -44,6 +44,7 @@ export interface PublishedPrivateTourCatalogItem {
     readonly currency: "CNY" | "USD" | "KRW";
     readonly formatted: string;
     readonly travelers: number;
+    readonly serviceLabel?: string;
   };
   readonly dateModified: string;
 }
@@ -331,6 +332,9 @@ export function getPublishedPrivateTourCatalog(
       .reduce((lowest, candidate) =>
         candidate.cny < lowest.cny ? candidate : lowest,
       );
+    const startingPackage = localized.packages.find((tourPackage) =>
+      tourPackage.rows.some((row) => row === lowestPrice),
+    );
     const image = chooseDistinctCatalogImage(localized, usedImagePaths);
     usedImagePaths.add(image.src);
 
@@ -361,6 +365,9 @@ export function getPublishedPrivateTourCatalog(
         currency: lowestPrice.currency,
         formatted: lowestPrice.formatted,
         travelers: lowestPrice.travelers,
+        ...(localized.packages.length > 1 && startingPackage
+          ? { serviceLabel: startingPackage.label }
+          : {}),
       },
       dateModified: localized.dateModified,
     } satisfies PublishedPrivateTourCatalogItem;

@@ -31,11 +31,14 @@ import {
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
   isPrivateTourInquirySlug,
+  getPrivateTourInquirySelection,
   privateTourInquiryQueryKey,
+  privateTourInquirySelectionQueryKeys,
 } from "../lib/privateTourInquiryContext";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
+import { useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import styles from "./HomegroundHeader.module.css";
 
 export type HomegroundPageContext =
@@ -119,6 +122,15 @@ function preservedHomeQuery(plannerStatus: PlannerStatus): string {
   }
   if (isPrivateTourInquirySlug(privateTour)) {
     preserved.set(privateTourInquiryQueryKey, privateTour);
+    const selection = getPrivateTourInquirySelection(
+      privateTour,
+      current.searchParams.get(privateTourInquirySelectionQueryKeys.packageId),
+      current.searchParams.get(privateTourInquirySelectionQueryKeys.travelers),
+    );
+    if (selection) {
+      preserved.set(privateTourInquirySelectionQueryKeys.packageId, selection.packageId);
+      preserved.set(privateTourInquirySelectionQueryKeys.travelers, String(selection.travelers));
+    }
   }
 
   const query = preserved.toString();
@@ -185,7 +197,8 @@ export function HomegroundHeader({
         ? "#route-finder"
         : "#planner-contact"
   ) satisfies HomegroundHashTarget;
-  const plannerHref = plannerHrefOverride ?? (
+  const selectedPlannerHref = useSelectedPrivateTourInquiryHref(plannerHrefOverride);
+  const plannerHref = selectedPlannerHref ?? (
     pageContext === "home"
       ? plannerTarget
       : `${copy.path}#planner-contact`

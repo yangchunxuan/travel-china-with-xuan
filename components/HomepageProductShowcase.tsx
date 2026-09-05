@@ -102,6 +102,7 @@ export function HomepageProductShowcase({
                     <small>
                       {copy.perPersonLabel} ·{" "}
                       {copy.groupBasis(product.startingPrice.travelers)}
+                      {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
                     </small>
                   </p>
                   <p className={styles.cardDescription}>

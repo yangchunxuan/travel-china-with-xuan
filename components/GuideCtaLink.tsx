@@ -3,10 +3,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { trackEvent } from "../lib/analytics";
+import { guideCtaTarget } from "../lib/analyticsLocation";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
 /**
- * The planner CTA at the foot of a guide, wrapped so the click is measurable.
+ * A guide's product or planner CTA, wrapped so the click is measurable.
  *
  * Guide pages are server components, so they cannot carry an onClick. This is
  * the smallest possible client boundary: the surrounding article stays static.
@@ -46,6 +47,7 @@ export function GuideCtaLink({
           guide_id: guideId,
           page_language: locale,
           cta_position: position,
+          cta_target: guideCtaTarget(href),
         });
       }}
     >

@@ -6,8 +6,8 @@ import {
   subscribeAnalyticsConsent,
 } from "./analyticsConsent";
 import {
+  googleMeasurementLocationIsSafe,
   metaMeasurementLocationIsSafe,
-  thirdPartyMeasurementLocationIsSafe,
 } from "./analyticsLocation";
 
 export const ANALYTICS_ENABLED =
@@ -133,6 +133,7 @@ const allowedParameterKeys = new Set([
   "content_category",
   "content_kind",
   "cta_position",
+  "cta_target",
   "planning_intent",
   "planning_starter_intent",
   "destination_count",
@@ -238,6 +239,12 @@ function sanitizeEventParameters(parameters: EventParameters) {
 
     if (key === "page_path") {
       sanitized[key] = sanitizePagePath(value);
+      return;
+    }
+    if (key === "cta_target") {
+      if (value === "private_tour" || value === "planner" || value === "other") {
+        sanitized[key] = value;
+      }
       return;
     }
     if (typeof value === "string") {
@@ -603,7 +610,7 @@ export function initializeGoogleAnalytics() {
     !ANALYTICS_ENABLED ||
     !GA_MEASUREMENT_ID ||
     !hasAnalyticsConsent() ||
-    !thirdPartyMeasurementLocationIsSafe() ||
+    !googleMeasurementLocationIsSafe() ||
     typeof window === "undefined"
   ) {
     return false;
@@ -614,6 +621,9 @@ export function initializeGoogleAnalytics() {
     analyticsWindow as unknown as Record<string, unknown>
   )[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
   const gtag = ensureGtagQueue();
+  // Also override vendor defaults before initialization/restoration so
+  // automatic events cannot inherit navigation queries or referrer text.
+  gtag("set", googleEventParameters({}));
   if (analyticsWindow.homegroundGaInitialized) {
     gtag("consent", "update", {
       analytics_storage: "granted",
@@ -1125,7 +1135,7 @@ export function trackEvent(
     captureEntryAttribution();
     if (
       GA_MEASUREMENT_ID &&
-      thirdPartyMeasurementLocationIsSafe() &&
+      googleMeasurementLocationIsSafe() &&
       initializeGoogleAnalytics()
     ) {
       const gtag = ensureGtagQueue();
@@ -1194,7 +1204,7 @@ export function trackPageView({
     target === "google" &&
     GA_MEASUREMENT_ID &&
     hasAnalyticsConsent() &&
-    thirdPartyMeasurementLocationIsSafe() &&
+    googleMeasurementLocationIsSafe() &&
     initializeGoogleAnalytics()
   ) {
     ensureGtagQueue()(

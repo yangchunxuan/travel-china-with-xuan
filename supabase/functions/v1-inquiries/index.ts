@@ -451,7 +451,9 @@ async function handleRequest(request: Request): Promise<Response> {
   try {
     if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
       persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-        "create_homeground_homepage_email_with_traffic_v1",
+        trafficSessionHash
+          ? "create_homeground_homepage_email_with_traffic_v1"
+          : "create_homeground_homepage_email_v1",
         {
           p_schema_version: payload.schemaVersion,
           p_form_version: payload.formVersion,
@@ -464,6 +466,14 @@ async function handleRequest(request: Request): Promise<Response> {
                 productInterest: {
                   slug: payload.productInterest.slug,
                   name: payload.productInterest.name,
+                  ...(payload.productInterest.selection
+                    ? {
+                        selection: {
+                          packageId: payload.productInterest.selection.packageId,
+                          travelers: payload.productInterest.selection.travelers,
+                        },
+                      }
+                    : {}),
                 },
               }
             : {},
@@ -473,7 +483,9 @@ async function handleRequest(request: Request): Promise<Response> {
           p_short_rate_limit: shortRateLimit,
           p_daily_rate_limit: dailyRateLimit,
           p_first_response_due_at: firstResponseDueAt,
-          p_traffic_session_hash: trafficSessionHash,
+          ...(trafficSessionHash
+            ? { p_traffic_session_hash: trafficSessionHash }
+            : {}),
         },
       );
     } else {
@@ -494,11 +506,25 @@ async function handleRequest(request: Request): Promise<Response> {
         isPreviousDestinationInquiry ||
         isBudgetDestinationInquiry ||
         isLegacyDestinationInquiry;
+      // Unattributed inquiries must keep working without the optional traffic
+      // migration. Choose once before persistence; never retry an uncertain
+      // write through a different RPC.
+      const baseRpcName = isCurrentDestinationInquiry
+        ? "create_homeground_destination_inquiry_v4"
+        : isBudgetDestinationInquiry
+          ? "create_homeground_destination_inquiry_v3"
+          : isPreviousDestinationInquiry
+            ? "create_homeground_destination_inquiry_v2"
+            : isLegacyDestinationInquiry
+              ? "create_homeground_destination_inquiry"
+              : "create_homeground_inquiry";
 
       persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
-        isDestinationInquiry
-          ? "create_homeground_destination_inquiry_with_traffic_v1"
-          : "create_homeground_inquiry_with_traffic_v1",
+        trafficSessionHash
+          ? isDestinationInquiry
+            ? "create_homeground_destination_inquiry_with_traffic_v1"
+            : "create_homeground_inquiry_with_traffic_v1"
+          : baseRpcName,
         {
           p_schema_version: payload.schemaVersion,
           p_form_version: payload.formVersion,
@@ -516,7 +542,10 @@ async function handleRequest(request: Request): Promise<Response> {
             payload.contact.channel === "whatsapp"
               ? payload.contact.phoneE164
               : null,
-          ...(isDestinationInquiry
+          ...(isCurrentDestinationInquiry ||
+          isBudgetDestinationInquiry ||
+          isPreviousDestinationInquiry ||
+          (isDestinationInquiry && trafficSessionHash)
             ? {
                 p_departure_country:
                   isCurrentDestinationInquiry ||
@@ -524,6 +553,12 @@ async function handleRequest(request: Request): Promise<Response> {
                     isPreviousDestinationInquiry
                     ? payload.departureCountry
                     : null,
+              }
+            : {}),
+          ...(isCurrentDestinationInquiry ||
+          isBudgetDestinationInquiry ||
+          (isDestinationInquiry && trafficSessionHash)
+            ? {
                 p_rough_budget_per_person:
                   isCurrentDestinationInquiry ||
                     isBudgetDestinationInquiry
@@ -545,7 +580,9 @@ async function handleRequest(request: Request): Promise<Response> {
           p_short_rate_limit: shortRateLimit,
           p_daily_rate_limit: dailyRateLimit,
           p_first_response_due_at: firstResponseDueAt,
-          p_traffic_session_hash: trafficSessionHash,
+          ...(trafficSessionHash
+            ? { p_traffic_session_hash: trafficSessionHash }
+            : {}),
         },
       );
     }

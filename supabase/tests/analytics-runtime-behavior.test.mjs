@@ -273,6 +273,163 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     assert.ok(metaCommands.indexOf("init") < metaCommands.indexOf("trackCustom"));
   });
 
+  await context.test("public inquiry choices restore GA with sanitized defaults and distinct funnel events", () => {
+    installBrowser({
+      href: "https://homegroundchina.com/zh/?tour=beijing-highlights-5-day-private-tour&utm_source=private_tour&utm_medium=website#planner-contact",
+      referrer: "https://homegroundchina.com/tours/beijing-highlights-5-day-private-tour/?email=PRIVATEEMAIL#PRIVATEFRAGMENT",
+    });
+    // The production collector is paused. Exercise the GA fallback without
+    // connecting to a collector or loading any external vendor script.
+    process.env.NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL = "";
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    setAnalyticsEnvironment();
+
+    assert.equal(location.googleMeasurementLocationIsSafe(), false);
+    analytics.captureEntryAttribution();
+    analytics.removeAttributionParametersFromAddressBar();
+    assert.equal(location.googleMeasurementLocationIsSafe(), true);
+    assert.equal(location.metaMeasurementLocationIsSafe(), false);
+    analytics.trackPageView({ path: "/zh/", locale: "zh", target: "google" });
+    analytics.trackEvent("contact_option_clicked", {
+      page_language: "zh",
+      channel: "whatsapp",
+      product_slug: "beijing-highlights-5-day-private-tour",
+    });
+
+    const events = window.dataLayer.filter((command) => command[0] === "event");
+    assert.deepEqual(events.map((command) => command[1]), ["page_view", "contact_option_clicked"]);
+    assert.equal(window.fbq, undefined);
+    assert.equal(analytics.WEB_EVENTS_URL, "");
+    assert.match(window.location.href, /\?tour=beijing-highlights-5-day-private-tour#planner-contact$/u);
+
+    analytics.trackEnquirySubmitted({
+      page_language: "zh",
+      reply_channel: "email",
+      submission_surface: "homepage_email",
+    });
+    assert.equal(window.dataLayer.at(-1)[1], "enquiry_submitted");
+    for (const command of window.dataLayer) {
+      const payload = command[0] === "event" ? command[2] : command[0] === "set" ? command[1] : null;
+      if (!payload) continue;
+      assert.equal(payload.page_location, "https://homegroundchina.com/zh/");
+      assert.equal(payload.page_referrer, "https://homegroundchina.com");
+      assert.doesNotMatch(JSON.stringify(payload), /PRIVATEEMAIL|PRIVATEFRAGMENT|\?|#planner-contact/u);
+    }
+    assert.ok(window.dataLayer.findIndex((command) => command[0] === "set") < window.dataLayer.findIndex((command) => command[0] === "config"));
+  });
+
+  await context.test("GA navigation allowlist covers known tours and service steps in each language", () => {
+    installBrowser();
+    const { location } = loadCompiledModules(outputDirectory);
+    const { privateTourInquirySlugs } = require(join(outputDirectory, "privateTourInquiryContext.js"));
+    const { routeServiceIds } = require(join(outputDirectory, "routeServiceInterest.js"));
+    for (const homePath of ["/", "/zh/", "/ko/"]) {
+      for (const slug of privateTourInquirySlugs) {
+        assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?tour=${slug}#planner-contact`), true);
+        assert.equal(location.metaMeasurementLocationIsSafe(`${homePath}?tour=${slug}#planner-contact`), false);
+      }
+      for (const service of routeServiceIds) {
+        assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?service=${service}#planner-contact`), true);
+        for (const step of ["destinations", "nights", "party", "pace", "result"]) {
+          const query = `planner=${step}`;
+          assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?${query}#route-finder`), true);
+          assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?service=${service}&${query}#route-finder`), true);
+        }
+      }
+      assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?planner=result#planner-handoff`), true);
+      assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}#planner-contact`), true);
+      for (const packageId of ["english-guided", "no-guide"]) {
+        for (const travelers of [2, 4]) {
+          assert.equal(location.googleMeasurementLocationIsSafe(`${homePath}?tour=beijing-highlights-5-day-private-tour&package=${packageId}&travelers=${travelers}#planner-contact`), true);
+        }
+      }
+    }
+  });
+
+  await context.test("unknown, duplicate and private inquiry URL state remains blocked", () => {
+    installBrowser();
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    const unsafeLocations = [
+      "/?q=PRIVATEQUESTION#planner-contact",
+      "/?service=route-build&q=PRIVATEQUESTION#planner-contact",
+      "/?%71=PRIVATEQUESTION#planner-contact",
+      "/?tour=PRIVATEEMAIL#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&tour=PRIVATEEMAIL#planner-contact",
+      "/?service=route-build&service=route-build#planner-contact",
+      "/?service=route-build&%73ervice=route-build#planner-contact",
+      "/?service=PRIVATEQUESTION#planner-contact",
+      "/?service=#planner-contact",
+      "/?planner=PRIVATEQUESTION#route-finder",
+      "/?planner=result&planner=result#planner-handoff",
+      "/?destinations=beijing#route-finder",
+      "/?service=route-build#PRIVATEFRAGMENT",
+      "/?service=route-build#planner-contact%00",
+      "/?service=route-build&note=#planner-contact",
+      "/?package=english-guided&travelers=2#planner-contact",
+      "/?service=route-build&package=english-guided&travelers=2#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&package=english-guided#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&travelers=2#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&package=PRIVATEQUESTION&travelers=2#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&package=english-guided&travelers=99#planner-contact",
+      "/?tour=beijing-highlights-5-day-private-tour&package=english-guided&travelers=2&travelers=2#planner-contact",
+      "/?tour=zhangjiajie-4-day-private-tour&package=english-guided&travelers=2#planner-contact",
+      "/guides/?service=route-build#planner-contact",
+      "https://elsewhere.example/?service=route-build#planner-contact",
+      "https://private-user@homegroundchina.com/?service=route-build#planner-contact",
+    ];
+    for (const href of unsafeLocations) {
+      assert.equal(location.googleMeasurementLocationIsSafe(href), false, href);
+      if (href.startsWith("/")) {
+        window.location = href;
+        assert.equal(analytics.initializeGoogleAnalytics(), false, href);
+        assert.equal(analytics.initializeMetaPixel(), false, href);
+        analytics.trackPageView({ path: window.location.pathname, locale: "en", target: "google" });
+      }
+    }
+    assert.equal(window.dataLayer, undefined);
+    assert.equal(window.fbq, undefined);
+  });
+
+  await context.test("public navigation never overrides denied analytics consent", () => {
+    installBrowser({
+      href: "https://homegroundchina.com/?service=route-build&planner=party#route-finder",
+      consent: preferences({ analytics: false, marketing: true }),
+    });
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    assert.equal(location.googleMeasurementLocationIsSafe(), true);
+    assert.equal(analytics.initializeGoogleAnalytics(), false);
+    analytics.trackEvent("planner_step_completed", { step: "party" });
+    analytics.trackPageView({ path: "/", locale: "en", target: "google" });
+    assert.equal(window.dataLayer, undefined);
+    assert.equal(window.fbq, undefined);
+  });
+
+  await context.test("guide CTA targets distinguish public products from planning without forwarding links", () => {
+    installBrowser();
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    for (const prefix of ["/", "/zh/", "/ko/"]) {
+      assert.equal(location.guideCtaTarget(`${prefix}tours/beijing-highlights-5-day-private-tour/?private=PRIVATEQUESTION`), "private_tour");
+      assert.equal(location.guideCtaTarget(`${prefix}?utm_campaign=article#planner-contact`), "planner");
+      assert.equal(location.guideCtaTarget(`${prefix}?planner=destinations#route-finder`), "planner");
+      assert.equal(location.guideCtaTarget(`${prefix}tours/unknown-private-text/`), "other");
+      assert.equal(location.guideCtaTarget(`${prefix}guides/`), "other");
+    }
+    assert.equal(location.guideCtaTarget("https://elsewhere.example/tours/beijing-highlights-5-day-private-tour/"), "other");
+    assert.equal(location.guideCtaTarget("mailto:private@example.com"), "other");
+    for (const target of ["private_tour", "planner", "other", "PRIVATEQUESTION"]) {
+      analytics.trackEvent("guide_cta_clicked", {
+        guide_id: "china-tour-guide-decision",
+        cta_position: "footer",
+        cta_target: target,
+        href: "/?q=PRIVATEQUESTION",
+      });
+      const payload = window.dataLayer.at(-1)[2];
+      assert.equal(payload.cta_target, target === "PRIVATEQUESTION" ? undefined : target);
+      assert.equal("href" in payload, false);
+      assert.doesNotMatch(JSON.stringify(payload), /PRIVATEQUESTION/u);
+    }
+  });
+
   await context.test("Meta history automation is disabled before init and q suppresses both vendors", () => {
     installBrowser();
     const { analytics, location } = loadCompiledModules(outputDirectory);
@@ -414,6 +571,27 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
       "a Meta revoke and re-grant must send exactly one restored PageView",
     );
     assert.equal(state.google, "en:/guides/");
+  });
+
+  await context.test("query cleanup and planner steps dedupe while real page navigation can count again", () => {
+    installBrowser();
+    const { pageViews } = loadCompiledModules(outputDirectory);
+    const state = pageViews.createAnalyticsPageViewState();
+    const homePage = "en:/";
+    pageViews.resetAnalyticsPageViewsForNewPage(state, homePage);
+    assert.equal(pageViews.consumeAnalyticsPageView(state, "google", homePage), true);
+    for (const _transition of ["tour choice", "UTM cleanup", "planner step", "private query", "clean again"]) {
+      pageViews.resetAnalyticsPageViewsForNewPage(state, homePage);
+      assert.equal(pageViews.consumeAnalyticsPageView(state, "google", homePage), false);
+    }
+    assert.equal(pageViews.consumeAnalyticsPageView(state, "meta", homePage), true, "a previously blocked sink can still send its first page view");
+
+    // A different page can be vendor-ineligible. Observing its pathname must
+    // still allow a fresh page view when the visitor returns to the homepage.
+    pageViews.resetAnalyticsPageViewsForNewPage(state, "en:/guides/search/");
+    pageViews.resetAnalyticsPageViewsForNewPage(state, homePage);
+    assert.equal(pageViews.consumeAnalyticsPageView(state, "google", homePage), true);
+    assert.equal(pageViews.consumeAnalyticsPageView(state, "google", homePage), false);
   });
 
   await context.test("storage events synchronize consent across tabs", () => {
@@ -948,7 +1126,58 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     );
   });
 
-  await context.test("UTM cleanup follows SPA history while free-text q remains vendor-ineligible", () => {
+  await context.test("history privacy guards are synchronous while change notifications batch after the commit", async () => {
+    installBrowser();
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    analytics.initializeGoogleAnalytics();
+    analytics.initializeMetaPixel();
+    const observed = [];
+    const unsubscribe = location.subscribeAnalyticsLocationChanges({
+      beforeChange(nextHref) {
+        observed.push(["before", window.location.href, nextHref]);
+        if (!location.googleMeasurementLocationIsSafe(nextHref)) analytics.disableGoogleAnalytics();
+        if (!location.metaMeasurementLocationIsSafe(nextHref)) analytics.disableMetaPixel();
+      },
+      change() {
+        observed.push(["after", window.location.href]);
+      },
+    });
+
+    window.history.pushState({}, "", "/?q=PRIVATEQUESTION");
+    assert.equal(window["ga-disable-G-TEST1234"], true);
+    assert.deepEqual(window.fbq.queue.at(-1), ["consent", "revoke"]);
+    assert.equal(observed[0][1], "https://homegroundchina.com/guides/", "the privacy guard runs before the URL changes");
+    window.history.replaceState({}, "", "/?service=route-build#planner-contact");
+    window.dispatchEvent({ type: "homeground:locationchange" });
+    assert.equal(observed.filter(([phase]) => phase === "before").length, 3);
+    assert.equal(observed.filter(([phase]) => phase === "after").length, 0, "no React-facing update runs during the history commit");
+
+    await Promise.resolve();
+    assert.deepEqual(observed.filter(([phase]) => phase === "after"), [["after", "https://homegroundchina.com/?service=route-build#planner-contact"]]);
+    unsubscribe();
+  });
+
+  await context.test("location cleanup cancels pending notifications and allows a fresh subscription", async () => {
+    installBrowser();
+    const { location } = loadCompiledModules(outputDirectory);
+    const originalPushState = window.history.pushState;
+    const observed = [];
+    const subscriber = { change: () => observed.push(window.location.href) };
+    const unsubscribe = location.subscribeAnalyticsLocationChanges(subscriber);
+    window.history.pushState({}, "", "/?planner=destinations#route-finder");
+    unsubscribe();
+    assert.equal(window.history.pushState, originalPushState);
+
+    const unsubscribeAgain = location.subscribeAnalyticsLocationChanges(subscriber);
+    await Promise.resolve();
+    assert.deepEqual(observed, [], "the previous mount cannot update the fresh subscription");
+    window.history.replaceState({}, "", "/?planner=nights#route-finder");
+    await Promise.resolve();
+    assert.deepEqual(observed, ["https://homegroundchina.com/?planner=nights#route-finder"]);
+    unsubscribeAgain();
+  });
+
+  await context.test("UTM cleanup follows SPA history while free-text q remains vendor-ineligible", async () => {
     installBrowser({
       href:
         "https://homegroundchina.com/guides/search/?utm_source=facebook&utm_medium=social&utm_campaign=summer&q=PRIVATEQUESTION",
@@ -967,6 +1196,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
 
     analytics.captureEntryAttribution();
     analytics.removeAttributionParametersFromAddressBar();
+    await Promise.resolve();
     const stored = JSON.parse(
       window.sessionStorage.getItem("homeground-entry-attribution"),
     );
@@ -983,6 +1213,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
 
     window.history.pushState({}, "", "/guides/");
     assert.equal(location.thirdPartyMeasurementLocationIsSafe(), true);
+    await Promise.resolve();
     assert.equal(observed.at(-1)[0], "after");
     assert.equal(analytics.initializeGoogleAnalytics(), true);
     const config = window.dataLayer.find((command) => command[0] === "config");

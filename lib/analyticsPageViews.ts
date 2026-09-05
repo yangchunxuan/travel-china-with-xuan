@@ -26,3 +26,12 @@ export function resetAnalyticsPageView(
 ) {
   state[sink] = "";
 }
+
+export function resetAnalyticsPageViewsForNewPage(
+  state: AnalyticsPageViewState,
+  pageKey: string,
+) {
+  for (const sink of ["first_party", "google", "meta"] as const) {
+    if (state[sink] !== pageKey) resetAnalyticsPageView(state, sink);
+  }
+}

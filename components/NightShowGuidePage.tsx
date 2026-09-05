@@ -25,6 +25,7 @@ import {
 } from "../lib/nightShowGuide";
 import { getNightShowGuideCopy } from "../lib/nightShowGuideCopy";
 import type { NightShowGuideCopy } from "../lib/nightShowGuideCopy.types";
+import { getPrivateTourPaths } from "../lib/privateTourProducts";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
@@ -208,6 +209,7 @@ export function NightShowGuidePage({
     locale,
   );
   const plannerHref = `${copy.homePath}#planner-contact`;
+  const tourHref = getPrivateTourPaths("zhangjiajie-4-day-private-tour")[locale];
   const structuredData = createStructuredData(locale, copy);
   const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
 
@@ -508,7 +510,7 @@ export function NightShowGuidePage({
                 </div>
                 <GuideCtaLink
                   guideId={guideId}
-                  href={plannerHref}
+                  href={tourHref}
                   locale={locale}
                   position="inline"
                 >
