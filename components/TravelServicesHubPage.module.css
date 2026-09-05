@@ -16,9 +16,9 @@
 .choices,.method { padding-block:clamp(4rem,8vw,8rem); }
 .sectionIntro { margin-block-end:clamp(2.5rem,5vw,4.5rem); }
 .sectionIntro h2,.method h2 { font-size:clamp(2.65rem,5vw,5.2rem); line-height:.97; margin:1rem 0 0; max-width:12ch; }
-.cardGrid { border-block-start:1px solid var(--line); border-inline-start:1px solid var(--line); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; margin:0 auto; max-width:1380px; padding:0; }
+.cardGrid { border-block-start:1px solid var(--line); border-inline-start:1px solid var(--line); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); list-style:none; margin:0 auto; max-width:1380px; padding:0; }
 .cardGrid li { border-block-end:1px solid var(--line); border-inline-end:1px solid var(--line); min-width:0; }
-.cardGrid a { color:inherit; display:flex; flex-direction:column; height:100%; min-height:25rem; padding:clamp(1.3rem,2.25vw,2.2rem); text-decoration:none; }
+.cardGrid a { color:inherit; display:flex; flex-direction:column; height:100%; min-height:22rem; padding:clamp(1.3rem,2.25vw,2.2rem); text-decoration:none; }
 .cardGrid a:hover,.cardGrid a:focus-visible { background:var(--soft); }
 .cardEyebrow { margin-block-start:2.5rem; }
 .cardGrid h3 { font-size:clamp(2rem,3vw,3.2rem); line-height:1; margin:1rem 0 0; }
@@ -28,6 +28,62 @@
 .methodLinks { display:flex; flex-wrap:wrap; gap:.7rem; margin-block-start:1.8rem; }
 .methodLinks a { align-items:center; border:1px solid var(--ink); border-radius:999px; color:var(--ink); display:inline-flex; font-size:.78rem; font-weight:760; gap:1rem; min-height:3rem; padding:.65rem 1rem; text-decoration:none; }
 .methodLinks a:first-child { background:var(--ink); color:#fff; }
-@media(max-width:70rem){.cardGrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroGrid,
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro,
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method {
+  align-items: start;
+  gap: 1.75rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
+  font-size: clamp(2.3rem, 4.2vw, 3.75rem);
+  letter-spacing: 0;
+  line-height: 1.3;
+  max-width: 22em;
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro h2,
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method h2 {
+  font-size: clamp(2rem, 3.3vw, 2.9rem);
+  letter-spacing: 0;
+  line-height: 1.35;
+  max-width: 24em;
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroGrid > div:last-child,
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro > p,
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method > div:last-child {
+  max-width: 52rem;
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .cardGrid h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.page[data-homeground-locale="zh"] :is(h1, h2, h3) {
+  line-break: strict;
+  word-break: normal;
+}
+
+.page[data-homeground-locale="ko"] :is(h1, h2, h3) {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
 @media(max-width:48rem){.hero{padding-block:1.5rem 3rem}.breadcrumb ol{margin-block-end:2rem}.heroGrid,.sectionIntro,.method{align-items:start;gap:1.6rem;grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,15vw,4.8rem)}.choices{padding-block:3rem 4.5rem}.sectionIntro{margin-block-end:2rem}.sectionIntro h2,.method h2{font-size:clamp(2.25rem,11vw,3.6rem)}.cardGrid{grid-template-columns:1fr}.cardGrid a{min-height:0}.action{margin-block-start:2.5rem}.method{padding-block:4rem}}
 @media(max-width:22rem){.hero,.choices,.method{padding-inline:.75rem}}
+
+@media (max-width: 48rem) {
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
+    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
+    line-height: 1.35;
+  }
+
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro h2,
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method h2 {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    line-height: 1.4;
+  }
+}

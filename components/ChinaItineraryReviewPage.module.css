@@ -55,7 +55,13 @@
 }
 
 .heroInner {
-  padding-block: clamp(1.65rem, 4vw, 3.5rem) clamp(3.5rem, 8vw, 7rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(3.5rem, 6vw, 5.5rem);
+  width: min(100% - 2rem, 58rem);
+}
+
+.heroCopy {
+  min-width: 0;
+  width: 100%;
 }
 
 .breadcrumb ol {
@@ -142,10 +148,21 @@
 }
 
 .heroCopy h1 {
-  font-size: clamp(3rem, 5.65vw, 5.25rem);
-  line-height: 0.96;
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  line-height: 1.12;
   margin: 1.1rem 0 0;
-  max-width: 11ch;
+  max-width: 28ch;
+}
+
+.pageRoot:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroCopy h1 {
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  letter-spacing: 0;
+  line-height: 1.3;
+  max-width: none;
+}
+
+.pageRoot[data-homeground-locale="ko"] .heroCopy h1 {
+  word-break: keep-all;
 }
 
 .heroLead {
@@ -153,7 +170,7 @@
   font-size: clamp(1rem, 1.5vw, 1.17rem);
   line-height: 1.7;
   margin: 1.55rem 0 0;
-  max-width: 39rem;
+  max-width: 46rem;
 }
 
 .heroPrices {
@@ -236,7 +253,7 @@
   font-size: 0.83rem;
   line-height: 1.65;
   margin: 1.65rem 0 0;
-  max-width: 40rem;
+  max-width: 46rem;
   padding-inline-start: 0.9rem;
 }
 
@@ -1394,7 +1411,8 @@
   }
 
   .heroInner {
-    padding-block: 1.6rem 3.75rem;
+    padding-block: 2rem 3.75rem;
+    width: calc(100% - 2rem);
   }
 
   .breadcrumb ol {
@@ -1402,7 +1420,12 @@
   }
 
   .heroCopy h1 {
-    font-size: clamp(2.75rem, 13.5vw, 4.1rem);
+    font-size: clamp(2rem, 8.2vw, 2.75rem);
+  }
+
+  .pageRoot:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroCopy h1 {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    line-height: 1.35;
   }
 
   .heroActions {
