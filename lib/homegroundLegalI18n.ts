@@ -189,14 +189,14 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "Business information | Homeground",
         description:
-          "The registered operator behind Homeground, current service boundaries and how written consultation payments are confirmed.",
+          "The registered operator behind Homeground, current private-tour services and how trip arrangements and payments are confirmed.",
       },
       pageLabel: "Business information",
       hero: {
         eyebrow: "Business information",
         title: "Who operates Homeground",
         intro:
-          "Homeground is a China travel-planning brand operated by a legally registered business in Zhangjiajie, mainland China. From one Homeground entry point, travellers can request a US$69 route review, a US$129 route build or custom full-trip planning and ground support.",
+          "Homeground is a China travel brand operated by a legally registered business in Zhangjiajie, mainland China. Travellers can enquire about private tours and the arrangements their journey needs.",
       },
       callout: {
         label: "A clear way to begin",
@@ -251,31 +251,21 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           title: "What this operator currently offers",
           cards: [
             {
-              title: "Review My Route — US$69",
-              body:
-                "A fixed-scope written consultation reviewing one usable day-by-day route.",
-            },
-            {
-              title: "Build My Route — US$129",
-              body:
-                "A fixed-scope written consultation creating one workable city order, night allocation and day-level route structure.",
-            },
-            {
               title: "Full Trip Planning & Ground Support",
               body:
                 "Bring the whole trip to Homeground. We begin by understanding your dates, travellers, priorities and the support you want, then confirm a workable next step, service scope and proposal.",
             },
           ],
           paragraphs: [
-            "The US$69 and US$129 options are fixed-scope written consultations. Full-trip support is discussed and scoped separately. For accepted work, written service and payment details are sent after the trip brief is reviewed.",
+            "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking.",
           ],
         },
         {
           id: "how-it-starts",
-          title: "How a paid consultation begins",
+          title: "How a trip enquiry moves forward",
           numbered: [
             "You submit a trip brief at no charge.",
-            "Homeground checks whether the request fits the published scope.",
+            "Homeground confirms the trip requirements and the arrangements it can provide.",
             "Before payment, you receive a written confirmation stating the operator, service, price and currency, included work, required materials, delivery date and applicable terms.",
             "Payment instructions are sent separately.",
             "Work begins after payment is confirmed and the required materials are complete.",
@@ -305,14 +295,14 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "经营主体信息 | Homeground",
         description:
-          "查看 Homeground 的登记经营主体、当前服务边界，以及书面咨询服务如何确认与付款。",
+          "查看 Homeground 的登记经营主体、当前私家团服务，以及旅行安排与付款如何确认。",
       },
       pageLabel: "经营主体信息",
       hero: {
         eyebrow: "经营主体信息",
         title: "谁在运营 Homeground",
         intro:
-          "Homeground 是由中国大陆张家界依法登记的经营主体运营的中国旅行规划品牌。通过同一个 Homeground 入口，旅行者可以申请 69 美元路线审核、129 美元路线规划，或按实际行程定制的全程规划与落地支持。",
+          "Homeground 是由中国大陆张家界依法登记的经营主体运营的中国旅行品牌。旅行者可以咨询私家团及实际旅程需要的安排。",
       },
       callout: {
         label: "清楚地开始",
@@ -358,33 +348,24 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           title: "当前提供的服务",
           cards: [
             {
-              title: "审核我的路线 — 69 美元",
-              body: "对一份已经可以阅读的逐日路线进行固定范围书面审核。",
-            },
-            {
-              title: "为我规划路线 — 129 美元",
-              body:
-                "建立一份可执行的城市顺序、住宿夜数分配和每日路线骨架。",
-            },
-            {
               title: "全程规划与落地支持",
               body:
                 "把整趟旅行的需求交给 Homeground。我们先了解日期、同行者、旅行重点与希望获得的支持，再确认可执行的下一步、服务范围和方案。",
             },
           ],
           paragraphs: [
-            "69 美元与 129 美元是固定范围的书面路线咨询；全程支持会根据实际需求另行沟通与确认。旅行简报审核后，我们会为确认承接的服务发送书面服务与付款信息。",
+            "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。",
           ],
         },
         {
           id: "how-it-starts",
-          title: "书面咨询如何开始",
+          title: "旅行询价如何继续",
           numbered: [
             "免费提交旅行简报。",
-            "Homeground 核对是否符合公开标准范围。",
+            "Homeground 确认旅行需求和可提供的具体安排。",
             "付款前，以书面方式确认经营主体、服务项目、价格与币种、包含内容、所需材料、交付日期和适用条款。",
             "另行发送付款方式。",
-            "款项确认且所需材料完整后开始制作。",
+            "款项确认且所需材料完整后，开始约定的旅行安排。",
           ],
         },
         {
@@ -408,14 +389,14 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "사업자 정보 | Homeground",
         description:
-          "Homeground 운영 사업자, 현재 서비스 범위와 서면 컨설팅 결제 절차를 안내합니다.",
+          "Homeground 운영 사업자, 현재 프라이빗 투어 서비스와 여행 준비 및 결제 확인 절차를 안내합니다.",
       },
       pageLabel: "사업자 정보",
       hero: {
         eyebrow: "사업자 정보",
         title: "Homeground 운영 사업자",
         intro:
-          "Homeground는 중국 본토 장자제에 합법적으로 등록된 사업자가 운영하는 중국 여행 설계 브랜드입니다. 하나의 Homeground 창구에서 US$69 일정 검토, US$129 동선 설계 또는 맞춤 전체 여행 설계 및 현지 지원을 요청할 수 있습니다.",
+          "Homeground는 중국 본토 장자제에 합법적으로 등록된 사업자가 운영하는 중국 여행 브랜드입니다. 프라이빗 투어와 여행에 필요한 준비를 문의하실 수 있습니다.",
       },
       callout: {
         label: "명확한 시작",
@@ -461,31 +442,21 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           title: "현재 제공하는 서비스",
           cards: [
             {
-              title: "내 일정 검토 — US$69",
-              body:
-                "사용 가능한 일자별 일정 한 건을 정해진 범위에서 서면 검토합니다.",
-            },
-            {
-              title: "내 동선 설계 — US$129",
-              body:
-                "실행 가능한 도시 순서, 숙박일 배분과 일자별 동선 골격 한 건을 만듭니다.",
-            },
-            {
               title: "전체 여행 설계 및 현지 지원",
               body:
                 "전체 여행에 필요한 내용을 Homeground에 알려 주세요. 날짜, 일행, 우선순위와 원하는 지원을 먼저 파악한 뒤 실행 가능한 다음 단계, 서비스 범위와 제안을 확인합니다.",
             },
           ],
           paragraphs: [
-            "US$69와 US$129는 범위가 정해진 서면 일정 컨설팅이며 전체 여행 지원은 실제 필요에 따라 별도로 논의하고 확정합니다. 브리프를 검토한 뒤 수락한 서비스의 서면 안내와 결제 정보를 보내 드립니다.",
+            "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다.",
           ],
         },
         {
           id: "how-it-starts",
-          title: "유료 서면 컨설팅 진행 절차",
+          title: "여행 문의 진행 절차",
           numbered: [
             "여행 브리프를 무료로 제출합니다.",
-            "Homeground가 공개된 서비스 범위에 맞는지 확인합니다.",
+            "Homeground가 여행 요청과 제공할 수 있는 준비 사항을 확인합니다.",
             "결제 전에 운영 사업자, 서비스, 가격과 통화, 포함 내용, 필요한 자료, 제공 예정일과 적용 조건을 서면으로 확인합니다.",
             "결제 방법은 별도로 안내합니다.",
             "결제가 확인되고 필요한 자료가 모두 준비된 뒤 작업을 시작합니다.",
@@ -541,45 +512,34 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "Terms of service | Homeground",
         description:
-          "Terms for Homeground website use and accepted fixed-scope written China itinerary consultation services.",
+          "Terms for Homeground website use, private-tour enquiries and accepted services.",
       },
       pageLabel: "Terms of service",
       hero: {
         eyebrow: "Service terms",
         title: "Clear scope before payment",
         intro:
-          "These terms apply to use of this website and to fixed-scope written consultation services expressly accepted by the registered operator.",
+          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking.",
       },
       callout: {
         label: "First principle",
         title: "Submitting a trip brief is not an order.",
         body:
-          "A paid consultation begins only after Homeground sends a written service confirmation, you accept it and payment is received as instructed.",
+          "A booking is confirmed only after Homeground sends a written trip confirmation, you accept it and payment is received as instructed. Existing accepted services retain their original written terms.",
       },
       sections: [
         {
           id: "consultation-scope",
-          title: "1. Fixed-price consultation scope",
-          cards: [
-            {
-              title: "Review My Route — US$69",
-              body: "Review of one usable day-by-day route.",
-            },
-            {
-              title: "Build My Route — US$129",
-              body:
-                "Creation of one workable city order, night allocation and day-level route structure.",
-            },
-          ],
+          title: "1. Current services and existing agreements",
           paragraphs: [
-            "The published standard scope is up to 10 travel days, up to four overnight bases and one shared route for 1–4 travellers. Homeground confirms that the request fits this scope before payment.",
+            "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking.",
           ],
         },
         {
           id: "not-included",
           title: "2. What is not included",
           paragraphs: [
-            "Unless a written confirmation expressly says otherwise, the fixed-price services exclude reservations, ticket purchases or holds, live fare and availability monitoring, supplier contact, large hotel or activity shortlists, unlimited revisions, continuous messaging, emergency help and support during travel.",
+            "An enquiry does not include bookings, ticket holds or support during travel. The written trip agreement identifies what Homeground will arrange and what the traveller will arrange.",
           ],
         },
         {
@@ -650,45 +610,34 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "服务条款 | Homeground",
         description:
-          "适用于 Homeground 网站使用及明确接受的固定范围中国路线书面咨询服务。",
+          "适用于 Homeground 网站使用、私家团询价及已接受服务的条款。",
       },
       pageLabel: "服务条款",
       hero: {
         eyebrow: "服务条款",
         title: "付款前先把范围说清楚",
         intro:
-          "本条款适用于网站使用，以及登记经营主体明确接受的固定范围书面咨询服务。",
+          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。",
       },
       callout: {
         label: "首要原则",
         title: "提交旅行简报不等于下单。",
         body:
-          "只有 Homeground 发出书面服务确认、客户接受确认且款项按说明到账后，付费咨询才开始成立。",
+          "只有 Homeground 发出书面旅行确认、客户接受确认且款项按说明到账后，预订才会确认。已经接受的服务保留原书面条款。",
       },
       sections: [
         {
           id: "consultation-scope",
-          title: "1. 固定价格服务范围",
-          cards: [
-            {
-              title: "审核我的路线 — 69 美元",
-              body: "审核一份已经可以阅读的逐日路线。",
-            },
-            {
-              title: "为我规划路线 — 129 美元",
-              body:
-                "建立一份可执行的城市顺序、住宿夜数分配和每日路线骨架。",
-            },
-          ],
+          title: "1. 当前服务与既有约定",
           paragraphs: [
-            "公开标准范围为：最多 10 个旅行日、最多 4 个过夜住宿地、1–4 位同行者共用一条路线。付款前由 Homeground 确认请求是否符合该范围。",
+            "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。",
           ],
         },
         {
           id: "not-included",
           title: "2. 不包含的内容",
           paragraphs: [
-            "除非书面确认另有明确约定，固定价格服务不包含预订或占位、购买票务、实时监控价格与余位、联系供应商、大量酒店或活动候选清单、无限修改、持续聊天、紧急帮助或旅途中支持。",
+            "咨询本身不包含预订、票务占位或旅途中支持。Homeground 与客户分别负责的安排，以书面旅行约定为准。",
           ],
         },
         {
@@ -759,45 +708,34 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "서비스 이용약관 | Homeground",
         description:
-          "Homeground 웹사이트 이용과 수락된 정액 중국 여행 동선 서면 컨설팅에 적용되는 약관입니다.",
+          "Homeground 웹사이트 이용, 프라이빗 투어 문의와 수락된 서비스에 관한 약관입니다.",
       },
       pageLabel: "서비스 이용약관",
       hero: {
         eyebrow: "서비스 이용약관",
         title: "결제 전에 범위를 명확하게",
         intro:
-          "본 약관은 웹사이트 이용과 등록 사업자가 명시적으로 수락한 정액 서면 일정 컨설팅에 적용됩니다.",
+          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다.",
       },
       callout: {
         label: "첫 번째 원칙",
         title: "여행 브리프 제출은 주문이 아닙니다.",
         body:
-          "Homeground가 서면 서비스 확인을 보내고 고객이 이를 수락한 뒤 안내된 결제가 확인되어야 유료 컨설팅이 시작됩니다.",
+          "Homeground가 서면 여행 확인을 보내고 고객이 이를 수락한 뒤 안내된 결제가 확인되어야 예약이 확정됩니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다.",
       },
       sections: [
         {
           id: "consultation-scope",
-          title: "1. 정액 컨설팅 범위",
-          cards: [
-            {
-              title: "내 일정 검토 — US$69",
-              body: "사용할 수 있는 일자별 일정 한 건을 검토합니다.",
-            },
-            {
-              title: "내 동선 설계 — US$129",
-              body:
-                "실행 가능한 도시 순서, 숙박일 배분과 일자별 동선 골격 한 건을 만듭니다.",
-            },
-          ],
+          title: "1. 현재 서비스와 기존 약정",
           paragraphs: [
-            "공개된 표준 범위는 최대 10일, 최대 4개 숙박 거점, 1–4명이 함께 사용하는 한 개의 동선입니다. 결제 전에 Homeground가 표준 범위 적합성을 확인합니다.",
+            "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다.",
           ],
         },
         {
           id: "not-included",
           title: "2. 포함되지 않는 항목",
           paragraphs: [
-            "서면 확인에 별도 명시하지 않는 한 예약·발권·좌석 확보, 실시간 요금 및 재고 확인, 공급업체 연락, 대량의 호텔·활동 후보, 무제한 수정, 지속적인 메시지 상담, 긴급 지원과 여행 중 지원은 포함하지 않습니다.",
+            "문의만으로 예약, 티켓 확보나 여행 중 지원이 포함되지는 않습니다. Homeground와 여행자가 각각 준비할 사항은 서면 여행 약정에서 확인합니다.",
           ],
         },
         {
@@ -901,7 +839,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "Refund & delivery",
         title: "The date and terms come before payment",
         intro:
-          "The website takes no payment. For an accepted US$69 or US$129 consultation, the exact delivery date, required materials and cancellation terms are confirmed in writing before payment.",
+          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking.",
       },
       callout: {
         label: "Current checkout status",
@@ -993,7 +931,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "退款与交付",
         title: "先确认日期和条件，再付款",
         intro:
-          "本网站不收款。对于被确认接受的 69 美元或 129 美元咨询，具体交付日期、所需材料和取消条件会在付款前书面确认。",
+          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。",
       },
       callout: {
         label: "当前付款状态",
@@ -1082,7 +1020,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "환불 및 제공",
         title: "결제 전에 날짜와 조건을 확인합니다",
         intro:
-          "웹사이트에서는 결제를 받지 않습니다. 수락된 US$69 또는 US$129 컨설팅은 결제 전에 제공 예정일, 필요한 자료와 취소 조건을 서면으로 확인합니다.",
+          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다.",
       },
       callout: {
         label: "현재 결제 상태",

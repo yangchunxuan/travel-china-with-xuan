@@ -32,12 +32,12 @@ test("pace article gives a server-readable answer without inventing a city limit
   assert.doesNotMatch(copy, /universal city limit of|exactly [0-9]+ cities/);
 });
 
-test("illustrative example stays inside the fixed-price service boundary", async () => {
+test("illustrative example retains its clearly labelled travel assumptions", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
   const service = await source("lib/chinaItineraryReviewI18n.ts");
 
-  for (const page of [copy, service]) {
+  for (const page of [copy]) {
     assert.match(
       page,
       /ten travel days, four hotel bases and three\s+intercity moves/i,
@@ -48,52 +48,13 @@ test("illustrative example stays inside the fixed-price service boundary", async
   assert.match(article, /copy\.workedExample\.options\.map/);
 });
 
-test("article keeps paid services distinct and sends uncertain travellers to direct planner contact", async () => {
+test("article links to private-tour enquiry after standalone services are withdrawn", async () => {
   const article = await source("components/ChinaItineraryTooRushedPage.tsx");
   const copy = await source("lib/chinaItineraryTooRushedI18n.ts");
-
-  assert.match(article, /href=\{`\$\{copy\.servicePath\}#review-my-route`\}/);
-  assert.match(copy, /Review My Route — US\$69/);
-  assert.match(article, /href=\{`\$\{copy\.servicePath\}#build-my-route`\}/);
-  assert.match(copy, /Build My Route — US\$129/);
-  assert.match(article, /href=\{`\$\{copy\.servicePath\}#full-trip-support`\}/);
-  assert.match(copy, /Ask about Full Trip support/);
-  assert.match(copy, /consultationCta: "Talk to a China trip planner"/);
-  assert.match(copy, /consultationCta: "联系旅行规划师"/);
-  assert.match(copy, /consultationCta: "중국 여행 플래너와 상담하기"/);
-  assert.match(copy, /Use WhatsApp or leave your email/);
-  assert.match(copy, /custom Full Trip scope/);
-  assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
-  assert.match(copy, /定制全程旅行支持/);
-  assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
-  assert.match(copy, /맞춤형 전체 여행 지원/);
-  assert.match(article, /utm_source=china-itinerary-too-rushed/);
-  assert.match(article, /utm_content=planner-contact#planner-contact/);
-  assert.doesNotMatch(article, /planner=destinations|free-brief/);
+  assert.match(article, /service=full-trip-support#planner-contact/);
   assert.match(article, /<GuideCtaLink/);
-  assert.match(article, /guideId="is-your-china-itinerary-too-rushed"/);
-  for (const stalePhrase of [
-    /Use the free Route Finder/iu,
-    /automated starting point/iu,
-    /No human review is included/iu,
-    /Start a free route check/iu,
-    /使用免费路线查找器/u,
-    /自动生成的起点/u,
-    /不包含人工审核/u,
-    /免费旅行简报/u,
-    /免费旅行咨询/u,
-    /무료 Route Finder/iu,
-    /자동으로 만든 출발점/u,
-    /사람이 직접 검토하는 서비스는 포함되지 않습니다/u,
-    /무료 여행 브리프/u,
-    /무료 여행 상담/u,
-  ]) {
-    assert.doesNotMatch(copy, stalePhrase);
-  }
-  assert.doesNotMatch(
-    article,
-    /exploreIntro|exploreCta|exploreNote|article-to-route-finder/,
-  );
+  assert.match(article, /utm_content=planner-contact#planner-contact/);
+  assert.doesNotMatch(`${article}\n${copy}`, /review-my-route|build-my-route|US\$(69|129)|69 美元|129 美元/);
 });
 
 test("article has visible FAQs, Evan attribution and bounded editorial schema", async () => {
@@ -150,10 +111,7 @@ test("metadata, sitemap and contextual links expose the English article", async 
     sitemap,
     /getIndexableManifestEntries\(searchPlatformManifest\)/,
   );
-  assert.match(
-    service,
-    /const rushGuideHref = `\$\{homeCopy\.path\}guides\/is-your-china-itinerary-too-rushed\/`/,
-  );
+  assert.doesNotMatch(service, /review-my-route|build-my-route/);
   assert.match(
     productionExport,
     /guides\/is-your-china-itinerary-too-rushed\/index\.html/,

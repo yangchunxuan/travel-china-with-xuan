@@ -432,7 +432,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           title: "Choose your level of help",
           detail:
-            "Use a route review or route build, or extend the work to full-trip planning and selected local coordination.",
+            "Tell us which private-tour arrangements and local coordination you need; we confirm the scope and trip quotation before booking.",
         },
         {
           title: "One joined-up trip",
@@ -970,7 +970,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
         {
           title: "需要多少帮助由我们决定",
-          detail: "可以只审核或建立路线，也可以选择完整规划、部分具体安排和在地协调。",
+          detail: "告诉我们你需要哪些私家团安排和在地协调，具体范围与旅行报价会在预订前确认。",
         },
         {
           title: "所有安排放在一起考虑",
@@ -1479,7 +1479,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         },
         {
           title: "도움의 범위는 직접 선택",
-          detail: "동선 검토나 설계만 받을 수도 있고, 여행 전체 설계와 일부 현지 조율까지 확장할 수도 있습니다.",
+          detail: "필요한 프라이빗 투어 준비와 현지 조율을 알려 주세요. 구체적인 범위와 여행 견적은 예약 전에 확인합니다.",
         },
         {
           title: "하나로 연결된 여행",

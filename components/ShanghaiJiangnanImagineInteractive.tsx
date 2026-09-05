@@ -265,7 +265,7 @@ export function ShanghaiJiangnanPriceConsole({
           <span>{copy.otherGroupsBody}</span>
           <GuideCtaLink
             guideId={product.id}
-            href={inquiryHref}
+            href={selectedInquiryHref}
             locale={product.locale}
             position="inline"
           >

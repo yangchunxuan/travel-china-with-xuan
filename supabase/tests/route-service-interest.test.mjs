@@ -10,10 +10,10 @@ import {
 test("route-service query uses a strict allow-list", () => {
   assert.equal(routeServiceQueryKey, "service");
   assert.deepEqual(routeServiceIds, [
-    "itinerary-review",
-    "route-build",
     "full-trip-support",
   ]);
+  assert.equal(getRouteServiceInterest("itinerary-review"), null);
+  assert.equal(getRouteServiceInterest("route-build"), null);
   assert.equal(getRouteServiceInterest("review"), null);
   assert.equal(getRouteServiceInterest("utm_content=review"), null);
   assert.equal(getRouteServiceInterest("<script>"), null);

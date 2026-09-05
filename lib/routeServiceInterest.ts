@@ -2,11 +2,10 @@ import type { HomegroundLocale } from "./homegroundI18n";
 
 export const routeServiceQueryKey = "service";
 
-export const routeServiceIds = [
-  "itinerary-review",
-  "route-build",
-  "full-trip-support",
-] as const;
+// Historical service identities remain available to audit existing records.
+export const historicalRouteServiceIds = ["itinerary-review", "route-build", "full-trip-support"] as const;
+
+export const routeServiceIds = ["full-trip-support"] as const;
 
 export type RouteServiceId = (typeof routeServiceIds)[number];
 
@@ -76,26 +75,6 @@ const routeServiceInterestByLocale: Record<
   Record<RouteServiceId, LocalizedServiceFields>
 > = {
   en: {
-    "itinerary-review": {
-      ...commonEnglishFields,
-      label: "Review My Route",
-      priceLabel: "US$69",
-      finderSummary:
-        "Complete the short route questions. We will keep this choice with your enquiry and ask for the working itinerary after the fit check.",
-      handoffSummary:
-        "Your route-review choice will be sent with this enquiry. We ask for the working itinerary only after confirming that the standard scope fits.",
-      note: "Requested service: Review My Route (US$69).",
-    },
-    "route-build": {
-      ...commonEnglishFields,
-      label: "Build My Route",
-      priceLabel: "US$129",
-      finderSummary:
-        "Complete the short route questions. We will keep this choice with your enquiry and confirm the scope and delivery date before payment.",
-      handoffSummary:
-        "Your route-build choice will be sent with this enquiry. We confirm the standard scope and delivery date before asking for payment.",
-      note: "Requested service: Build My Route (US$129).",
-    },
     "full-trip-support": {
       ...commonEnglishFields,
       label: "Full Trip Planning & Ground Support",
@@ -108,22 +87,6 @@ const routeServiceInterestByLocale: Record<
     },
   },
   zh: {
-    "itinerary-review": {
-      ...commonChineseFields,
-      label: "审核我的路线",
-      priceLabel: "US$69",
-      finderSummary: "完成简短的路线问题后，此选择会随咨询一同保存。确认符合标准范围后，我们再向你索取完整工作路线。",
-      handoffSummary: "路线审核选择会随本次咨询发送。只有确认符合标准范围后，我们才会索取完整工作路线。",
-      note: "申请的服务：路线审核（US$69）。",
-    },
-    "route-build": {
-      ...commonChineseFields,
-      label: "为我规划路线",
-      priceLabel: "US$129",
-      finderSummary: "完成简短的路线问题后，此选择会随咨询一同保存。付款前，我们会确认服务范围与交付日期。",
-      handoffSummary: "路线规划选择会随本次咨询发送。在你付款前，我们会确认标准范围与交付日期。",
-      note: "申请的服务：路线规划（US$129）。",
-    },
     "full-trip-support": {
       ...commonChineseFields,
       label: "全程规划与落地支持",
@@ -134,22 +97,6 @@ const routeServiceInterestByLocale: Record<
     },
   },
   ko: {
-    "itinerary-review": {
-      ...commonKoreanFields,
-      label: "내 일정 검토",
-      priceLabel: "US$69",
-      finderSummary: "간단한 동선 질문을 완료하면 이 선택을 상담 요청과 함께 보관합니다. 표준 범위에 맞는지 확인한 뒤 전체 작업 일정을 요청합니다.",
-      handoffSummary: "일정 검토 선택이 상담 요청과 함께 전송됩니다. 표준 범위에 맞는지 확인한 뒤에만 전체 작업 일정을 요청합니다.",
-      note: "요청 서비스: 일정 검토(US$69).",
-    },
-    "route-build": {
-      ...commonKoreanFields,
-      label: "내 동선 설계",
-      priceLabel: "US$129",
-      finderSummary: "간단한 동선 질문을 완료하면 이 선택을 상담 요청과 함께 보관합니다. 결제 전에 범위와 납품일을 확인합니다.",
-      handoffSummary: "동선 설계 선택이 상담 요청과 함께 전송됩니다. 결제를 요청하기 전에 표준 범위와 납품일을 확인합니다.",
-      note: "요청 서비스: 동선 설계(US$129).",
-    },
     "full-trip-support": {
       ...commonKoreanFields,
       label: "전체 여행 설계 및 현지 지원",

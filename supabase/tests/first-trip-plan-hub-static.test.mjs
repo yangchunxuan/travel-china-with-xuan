@@ -68,7 +68,7 @@ test("all first-trip links resolve to the existing locale path, not a synonym pa
   }
 
   assert.equal(firstTripPlanOwnerPaths.paceDiagnostic, "/guides/is-your-china-itinerary-too-rushed/");
-  assert.equal(firstTripPlanOwnerPaths.humanReview, "/china-itinerary-review/");
+  assert.equal(firstTripPlanOwnerPaths.humanReview, "/tours/");
 });
 
 test("independent guide owners expose the same three canonical locale paths", async () => {

@@ -442,22 +442,8 @@ export function ChinaItineraryTooRushedPage({
                   <small>{copy.services.consultationNote}</small>
                 </div>
                 <div>
-                  <p>{copy.services.reviewIntro}</p>
-                  <Link href={`${copy.servicePath}#review-my-route`}>
-                    {copy.services.reviewCta}
-                    <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
-                </div>
-                <div>
-                  <p>{copy.services.buildIntro}</p>
-                  <Link href={`${copy.servicePath}#build-my-route`}>
-                    {copy.services.buildCta}
-                    <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
-                </div>
-                <div>
                   <p>{copy.services.fullTripIntro}</p>
-                  <Link href={`${copy.servicePath}#full-trip-support`}>
+                  <Link href={`${copy.homePath}?service=full-trip-support#planner-contact`}>
                     {copy.services.fullTripCta}
                     <ArrowRight aria-hidden="true" size={18} />
                   </Link>

@@ -13,7 +13,6 @@ import {
 } from "../lib/homegroundLegalI18n";
 import { openAnalyticsConsentPreferences } from "../lib/analyticsConsent";
 import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
-import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
@@ -138,8 +137,7 @@ export function HomegroundFooter({
     "business-information",
     locale,
   );
-  const planningServicesCopy = getChinaItineraryReviewCopy(locale);
-  const planningServicesPath = planningServicesCopy.path;
+  const planningServicesPath = `${copy.path}services/`;
   const guideHubPath = `${copy.path}guides/`;
   const tourHubPath = `${copy.path}tours/`;
   const destinationsHubPath = `${copy.path}explore/`;

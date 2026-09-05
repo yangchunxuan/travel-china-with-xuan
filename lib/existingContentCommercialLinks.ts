@@ -364,14 +364,16 @@ export function getAuthorizedGuideServiceCta(
   ) {
     throw new Error(`Invalid public CTA registry entry: ${guideId}`);
   }
+  // Retired route-review CTAs are hidden; their ownership history stays intact.
+  if (entry.targetServiceId === "itinerary-review") return null;
   const serviceId = entry.targetServiceId;
   const servicePath =
     locale === "en"
-      ? "/china-itinerary-review/"
-      : `/${locale}/china-itinerary-review/`;
+      ? "/"
+      : `/${locale}/`;
   return {
     serviceId,
-    href: `${servicePath}#${ctaOwnershipRegistry.publicCtaTargetAnchors[serviceId]}`,
+    href: `${servicePath}?service=full-trip-support#planner-contact`,
     ...ctaOwnershipRegistry.publicCtaCopy[locale][serviceId],
   };
 }

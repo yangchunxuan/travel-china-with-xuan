@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
@@ -13,15 +12,12 @@ import styles from "./TravelServicesHubPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 
 function serviceHref(
-  id: "tours" | "review" | "build" | "support",
+  id: "tours" | "support",
   locale: HomegroundLocale,
 ) {
   const home = getHomegroundCopy(locale);
   if (id === "tours") return `${home.path}tours/`;
-  const path = getChinaItineraryReviewCopy(locale).path;
-  if (id === "review") return `${path}#review-my-route`;
-  if (id === "build") return `${path}#build-my-route`;
-  return `${path}#full-trip-support`;
+  return `${home.path}?service=full-trip-support#planner-contact`;
 }
 
 function schemaForServices(locale: HomegroundLocale) {

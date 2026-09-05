@@ -59,8 +59,8 @@ export function HomegroundStudioPage({
   const plannerHref = `${homeCopy.path}#planner-contact`;
   const isEnglish = locale === "en";
   const planningServicesHref = isEnglish
-    ? "/china-itinerary-review/#choose-service"
-    : `/${locale}/china-itinerary-review/#choose-service`;
+    ? "/services/"
+    : `/${locale}/services/`;
   const organizationSchema = {
     "@context": "https://schema.org",
     ...editorialOrganizationSchema(),

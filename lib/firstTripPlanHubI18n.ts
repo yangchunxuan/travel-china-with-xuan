@@ -31,7 +31,7 @@ export const firstTripPlanOwnerPaths = {
   departureBuffer:
     "/guides/china-last-night-before-international-flight/",
   paceDiagnostic: "/guides/is-your-china-itinerary-too-rushed/",
-  humanReview: "/china-itinerary-review/",
+  humanReview: "/tours/",
 } as const;
 
 export type FirstTripPlanOwnerId = keyof typeof firstTripPlanOwnerPaths;
@@ -189,11 +189,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
           linkLabel: "Check the route's pace",
         },
         {
-          title: "Human itinerary review",
-          description:
-            "Use the paid service when you want a person to review or build the route with a clearly defined scope.",
+          title: "Private China tours",
+          description: "Compare published routes, or enquire about the arrangements your group needs.",
           ownerId: "humanReview",
-          linkLabel: "See review and route-planning services",
+          linkLabel: "Browse private tours",
         },
       ],
     },
@@ -297,10 +296,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
           linkLabel: "检查路线节奏",
         },
         {
-          title: "真人行程审核",
-          description: "希望真人在明确服务范围内审核或设计路线时，进入付费服务页。",
+          title: "中国私家团",
+          description: "比较已发布路线，或咨询你的同行者需要的具体安排。",
           ownerId: "humanReview",
-          linkLabel: "查看审核与路线设计服务",
+          linkLabel: "查看私家团",
         },
       ],
     },
@@ -403,10 +402,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
           linkLabel: "일정 속도 확인",
         },
         {
-          title: "전문가 일정 검토",
-          description: "명확한 범위 안에서 사람이 동선을 검토하거나 설계하기를 원할 때 유료 서비스를 이용하세요.",
+          title: "중국 프라이빗 투어",
+          description: "공개된 동선을 비교하거나 일행에게 필요한 준비를 문의하세요.",
           ownerId: "humanReview",
-          linkLabel: "검토·동선 설계 서비스 보기",
+          linkLabel: "프라이빗 투어 보기",
         },
       ],
     },

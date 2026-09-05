@@ -373,7 +373,7 @@ export const nightShowGuideChinese: NightShowGuideCopy = {
       "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会结合住宿区域、白天安排和第二天早上的时间继续判断。",
     action: "联系旅行规划师",
     note:
-      "69 美元路线审核、129 美元路线规划和全程旅行支持仍是三项独立付费服务；范围、价格或报价、交付时间和付款确认后才开始工作。",
+      "初次私家团询价免费。具体安排、包含项和报价会根据日期与同行人数在预订前确认。",
   },
   structuredData: {
     homeName: "Homeground China",

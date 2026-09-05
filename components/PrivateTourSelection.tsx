@@ -1,9 +1,11 @@
 "use client";
 
-import { createContext, useContext, useState, type ComponentProps, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ComponentProps, type ReactNode } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   buildPrivateTourMailtoHref,
+  buildPrivateTourDetailHref,
+  getPrivateTourDetailSelectionFromSearchParams,
   getPrivateTourInquiryContext,
   getPrivateTourInquirySelection,
   privateTourInquirySelectionQueryKeys,
@@ -20,21 +22,32 @@ const SelectionContext = createContext<{
 } | null>(null);
 
 export function PrivateTourSelectionProvider({
-  slug, initialPackageId, children,
+  slug, initialSelection, children,
 }: {
   slug: PrivateTourInquirySlug;
-  initialPackageId: string;
+  initialSelection: PrivateTourInquirySelection;
   children: ReactNode;
 }) {
   const [selection, setSelection] = useState<PrivateTourInquirySelection>(() => {
-    const initial = getPrivateTourInquirySelection(slug, initialPackageId, 2);
+    const initial = getPrivateTourInquirySelection(slug, initialSelection.packageId, initialSelection.travelers);
     if (!initial) throw new Error("Missing published private tour selection");
     return initial;
   });
+  useEffect(() => {
+    const syncSelection = () => {
+      const fromUrl = getPrivateTourDetailSelectionFromSearchParams(slug, new URLSearchParams(window.location.search));
+      setSelection(fromUrl ?? initialSelection);
+    };
+    syncSelection();
+    window.addEventListener("popstate", syncSelection);
+    return () => window.removeEventListener("popstate", syncSelection);
+  }, [slug, initialSelection.packageId, initialSelection.travelers]);
   const changeSelection = (candidate: PrivateTourInquirySelection) => {
     const next = getPrivateTourInquirySelection(slug, candidate.packageId, candidate.travelers);
     if (!next || (next.packageId === selection.packageId && next.travelers === selection.travelers)) return;
     setSelection(next);
+    const href = buildPrivateTourDetailHref(window.location.href, slug, next);
+    window.history.replaceState(window.history.state, "", href);
     trackEvent("product_selection_changed", {}, { firstPartyContext: { productSlug: slug, packageId: next.packageId, travelers: next.travelers, surface: "product" } });
   };
   return <SelectionContext.Provider value={{ slug, selection, setSelection: changeSelection }}>{children}</SelectionContext.Provider>;

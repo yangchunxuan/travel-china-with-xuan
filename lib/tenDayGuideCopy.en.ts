@@ -346,7 +346,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
       "Use WhatsApp or leave your email. A planner can then discuss your cities, nights, arrival and departure times, group and must-see list with you.",
     button: "Talk to a China trip planner",
     note:
-      "The planner may recommend the US$69 route review, US$129 route build or Full Trip support. Paid work starts only after scope, price or quote, delivery timing and payment are confirmed.",
+      "The initial private-tour enquiry is free. We confirm the arrangements, inclusions and quotation for your dates and group before booking.",
   },
   source: {
     summary: "Editorial method and source boundary",

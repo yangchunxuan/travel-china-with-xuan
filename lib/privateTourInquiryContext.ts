@@ -62,6 +62,28 @@ export function getPrivateTourInquirySelection(
   return { packageId: packageValue, travelers: Number(travelersValue) as 2 | 4 };
 }
 
+export function getPrivateTourDetailSelectionFromSearchParams(
+  slug: string,
+  parameters: URLSearchParams,
+): PrivateTourInquirySelection | null {
+  const { packageId, travelers } = privateTourInquirySelectionQueryKeys;
+  if (parameters.getAll(packageId).length !== 1 || parameters.getAll(travelers).length !== 1) return null;
+  return getPrivateTourInquirySelection(slug, parameters.get(packageId), parameters.get(travelers));
+}
+
+export function buildPrivateTourDetailHref(
+  path: string,
+  slug: string,
+  selection: PrivateTourInquirySelection,
+): string {
+  const validated = getPrivateTourInquirySelection(slug, selection.packageId, selection.travelers);
+  if (!validated) throw new Error("Invalid private tour selection");
+  const url = new URL(path, "https://homegroundchina.com");
+  url.searchParams.set(privateTourInquirySelectionQueryKeys.packageId, validated.packageId);
+  url.searchParams.set(privateTourInquirySelectionQueryKeys.travelers, String(validated.travelers));
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
 export function privateTourInquirySelectionLabel(
   context: PrivateTourInquiryContext,
   locale: HomegroundLocale,

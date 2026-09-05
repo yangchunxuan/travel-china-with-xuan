@@ -90,8 +90,6 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
   )}`;
   assert.deepEqual(homepagePlanningIntentIds, [
     "conversation",
-    "itinerary-review",
-    "route-build",
     "full-trip-support",
   ]);
   for (const id of homepagePlanningIntentIds) {
@@ -125,8 +123,6 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
 
   assert.equal(routeServiceQueryKey, "service");
   assert.deepEqual(routeServiceIds, [
-    "itinerary-review",
-    "route-build",
     "full-trip-support",
   ]);
   for (const id of routeServiceIds) {
@@ -167,7 +163,7 @@ test("the homepage starts with no intent and only allow-listed paid queries may 
   assert.doesNotMatch(planningModel, /id:\s*["']explore["']/u);
 });
 
-test("English, Chinese and Korean expose the same quick contacts and three paid shortcuts", async () => {
+test("English, Chinese and Korean expose the same quick contacts and the private-tour shortcut", async () => {
   const localizedCopySource = await source("lib/homepagePlanningDesk.ts");
   const locales = [
     {
@@ -182,8 +178,6 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         /Leave your email/u,
         /Your email has been saved\./u,
         /Already know what you need\?/u,
-        /Review My Route/u,
-        /Build My Route/u,
         /Full Trip Planning & Ground Support/u,
         /Free to enquire/u,
         /No payment is taken here/u,
@@ -201,8 +195,6 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         /留下你的邮箱/u,
         /邮箱已保存。/u,
         /已经知道自己需要什么？/u,
-        /审核我的路线/u,
-        /为我规划路线/u,
         /全程规划与落地支持/u,
         /提交需求免费/u,
         /本页不会收款/u,
@@ -220,8 +212,6 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         /이메일 남기기/u,
         /이메일이 저장되었습니다\./u,
         /필요한 서비스를 이미 알고 있나요\?/u,
-        /내 일정 검토/u,
-        /내 동선 설계/u,
         /전체 여행 설계 및 현지 지원/u,
         /문의 제출 무료/u,
         /이 페이지에서는 결제가 진행되지 않습니다/u,
@@ -242,8 +232,8 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         `${locale} homepage copy is missing ${pattern}`,
       );
     }
-    assert.match(localizedCopy, /US\$69/u);
-    assert.match(localizedCopy, /US\$129/u);
+    assert.doesNotMatch(localizedCopy, /US\$69/u);
+    assert.doesNotMatch(localizedCopy, /US\$129/u);
     assert.ok(
       planningDeskCopy.contactStart.emailUse.length > 0 &&
         planningDeskCopy.contactStart.whatsappOpensExternally.length > 0 &&
@@ -266,7 +256,7 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         planningDeskCopy.bookingResponsibility.fixedScopeHint.length > 0,
       `${locale} booking-responsibility validation and scope hint must exist`,
     );
-    assert.equal(planningDeskCopy.options.length, 4);
+    assert.equal(planningDeskCopy.options.length, 2);
     assert.equal(
       planningDeskCopy.options.filter((option) => option.kind === "conversation").length,
       1,
@@ -286,8 +276,6 @@ test("English, Chinese and Korean expose the same quick contacts and three paid 
         .filter((option) => option.kind === "paid")
         .map((option) => option.id),
       [
-        "itinerary-review",
-        "route-build",
         "full-trip-support",
       ],
     );
@@ -430,7 +418,7 @@ test("the planning-desk motion stays purposeful, responsive and reduced-motion s
   assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\)/u);
 });
 
-test("conversation and all three paid paths end at the same human handoff", async () => {
+test("conversation and the full-trip path end at the same human handoff", async () => {
   const [
     home,
     finder,
@@ -551,9 +539,9 @@ test("conversation and all three paid paths end at the same human handoff", asyn
       locale: "en",
       patterns: [
         /No payment has been taken\./u,
-        /confirmed scope/u,
-        /delivery tim(?:e|ing)/u,
-        /payment instructions/u,
+        /written scope/u,
+        /custom quote/u,
+        /payment details/u,
         /email/iu,
       ],
     },
@@ -562,7 +550,7 @@ test("conversation and all three paid paths end at the same human handoff", asyn
       patterns: [
         /(?:尚未|没有|不会)收取(?:任何)?(?:付款|款项)|未付款/u,
         /确认.*范围/u,
-        /交付时间/u,
+        /报价/u,
         /付款/u,
         /邮件|电子邮件/u,
       ],
@@ -572,7 +560,7 @@ test("conversation and all three paid paths end at the same human handoff", asyn
       patterns: [
         /결제(?:된 금액은 없습니다|(?:는|가).*?(?:진행|청구|완료)되지)/u,
         /범위/u,
-        /(?:납품|완료).*?(?:일정|예정일)/u,
+        /견적/u,
         /결제/u,
         /이메일/u,
       ],

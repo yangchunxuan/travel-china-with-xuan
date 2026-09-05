@@ -49,7 +49,7 @@ test("verified business identity is centralized and displayed in the shared foot
   assert.match(footer, /refund-delivery/);
 });
 
-test("legal copy leads with verifiable registered trust and keeps each paid scope explicit", async () => {
+test("legal copy retains verifiable registered trust and explains retired services", async () => {
   const business = await source("lib/homegroundBusiness.ts");
   const legal = await source("lib/homegroundLegalI18n.ts");
   const service = await source("lib/chinaItineraryReviewI18n.ts");
@@ -78,15 +78,25 @@ test("legal copy leads with verifiable registered trust and keeps each paid scop
   assert.match(legal, /Bring the whole trip to Homeground/);
   assert.match(legal, /把整趟旅行的需求交给 Homeground/);
   assert.match(legal, /전체 여행에 필요한 내용을 Homeground에 알려 주세요/);
-  assert.match(legal, /유료 서면 컨설팅 진행 절차/);
+  assert.match(legal, /How a trip enquiry moves forward/);
+  assert.match(legal, /旅行询价如何继续/);
+  assert.match(legal, /여행 문의 진행 절차/);
+  assert.doesNotMatch(legal, /유료 서면 컨설팅 진행 절차|written consultation payments|书面咨询服务如何确认/);
   assert.doesNotMatch(legal, /travel agency licence|旅行社业务经营许可|여행사 업무 허가/);
 
-  assert.match(service, /Choose Review or Build for a written route service/);
-  assert.match(service, /已有路线可选“路线审核”/);
-  assert.match(service, /기존 일정이 있다면 검토를/);
-  assert.match(service, /Bring the whole journey to Homeground/);
-  assert.match(service, /把整趟旅行交给 Homeground/);
-  assert.match(service, /전체 여행을 Homeground에 알려 주세요/);
+  for (const pattern of [
+    /no longer offers standalone paid route reviews or route builds/,
+    /不再提供单独收费的路线审核或路线规划服务/,
+    /더 이상 제공하지 않습니다/,
+    /Existing accepted services remain subject to their written agreement/,
+    /已经接受的服务仍按原书面约定处理/,
+    /이미 수락된 서비스에는 기존 서면 약정이 적용됩니다/,
+  ]) {
+    assert.match(service, pattern);
+  }
+  assert.doesNotMatch(service, /US\$(69|129)|69 美元|129 美元|Choose Review or Build/);
+  assert.match(legal, /value: homegroundBusiness\.registeredName/);
+  assert.match(legal, /Existing accepted services remain subject to their original written agreement/);
 });
 
 test("legal routes have canonical language alternates and appear in the sitemap and export guard", async () => {
@@ -120,17 +130,23 @@ test("legal routes have canonical language alternates and appear in the sitemap 
   }
 });
 
-test("active schemas use the confirmed TravelAgency identity and retain the registered operator", async () => {
-  const [identity, homepage, servicePage] = await Promise.all([
+test("active business identity remains available after the sales page becomes a withdrawal notice", async () => {
+  const [identity, homepage, legalPage, footer, retiredServicePage] = await Promise.all([
     source("lib/editorialIdentity.ts"),
     source("components/HomegroundHomePage.tsx"),
+    source("components/HomegroundLegalPage.tsx"),
+    source("components/HomegroundFooter.tsx"),
     source("components/ChinaItineraryReviewPage.tsx"),
   ]);
 
   assert.match(identity, /"@type": "TravelAgency"/);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
-  assert.match(homepage, /homegroundBusiness\.legalName|legalName:/);
-  assert.match(servicePage, /homegroundBusiness\.registeredName/);
+  assert.match(homepage, /legalName: homegroundBusiness\.registeredName/);
   assert.match(homepage, /editorialOrganizationSchema\(\)/);
-  assert.match(servicePage, /editorialOrganizationSchema\(\)/);
+  assert.match(legalPage, /"@type": pageId === "business-information" \? "AboutPage" : "WebPage"/);
+  assert.match(legalPage, /"@id": `\$\{baseUrl\}\/#organization`/);
+  assert.match(footer, /homegroundBusiness\.publicName/);
+  assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
+  assert.match(retiredServicePage, /<HomegroundFooter locale=\{locale\}/);
+  assert.doesNotMatch(retiredServicePage, /"@type": "(?:Offer|Service)"|review-my-route|build-my-route/);
 });

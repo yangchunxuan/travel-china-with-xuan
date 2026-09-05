@@ -3,7 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { routeServiceIds } from "../lib/routeServiceInterest.ts";
+import { historicalRouteServiceIds as routeServiceIds } from "../lib/routeServiceInterest.ts";
 import { CONSULTATION_INTENTS } from "./internal/consultation-intake-contract.mjs";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");

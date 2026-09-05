@@ -12,6 +12,7 @@ import {
   privateTourPhotoCreditCopy,
 } from "../lib/privateTourPhotoCredits";
 import { PrivateTourSelectionProvider, SelectedPrivateTourCta, SelectedPrivateTourEmailLink } from "./PrivateTourSelection";
+import { getPrivateTourStartingPrice } from "../lib/privateTourStartingPrice";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
@@ -377,6 +378,7 @@ export function ShanghaiJiangnanImaginePage({
   locale: PrivateTourLocale;
 }) {
   const localized = localizePrivateTourProduct(product, locale);
+  const startingPrice = getPrivateTourStartingPrice(localized);
   const copy = getPageCopy(localized);
   const photoCreditCopy = privateTourPhotoCreditCopy[locale];
   const photoCredits = getLocalizedPrivateTourPhotoCredits(
@@ -481,7 +483,7 @@ export function ShanghaiJiangnanImaginePage({
   };
 
   return (
-    <PrivateTourSelectionProvider slug={inquiryContext.slug} initialPackageId={localized.packages[0].id}>
+    <PrivateTourSelectionProvider key={inquiryContext.slug} slug={inquiryContext.slug} initialSelection={startingPrice.selection}>
     <div
       className={`${homeStyles.localeRoot} ${styles.page}`}
       data-homeground-locale={locale}

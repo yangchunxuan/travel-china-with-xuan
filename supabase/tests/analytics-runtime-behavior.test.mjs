@@ -590,7 +590,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
 
   await context.test("public navigation never overrides denied analytics consent", () => {
     installBrowser({
-      href: "https://homegroundchina.com/?service=route-build&planner=party#route-finder",
+      href: "https://homegroundchina.com/?service=full-trip-support&planner=party#route-finder",
       consent: preferences({ analytics: false, marketing: true }),
     });
     const { analytics, location } = loadCompiledModules(outputDirectory);
