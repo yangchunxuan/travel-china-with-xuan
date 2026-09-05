@@ -160,8 +160,9 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       messages.push(body);
       return response({ id: "test-message" });
     }
-    if (path.endsWith("/create_homeground_homepage_email_with_traffic_v1")) {
+    if (path.endsWith("/create_homeground_homepage_email_v1")) {
       persistenceCalls += 1;
+      assert.equal(Object.hasOwn(body, "p_traffic_session_hash"), false);
       attribution = body.p_attribution;
       const previous = saved.get(body.p_idempotency_key_hash);
       if (previous && previous !== body.p_payload_hash) return response({ outcome: "idempotency_conflict" });
