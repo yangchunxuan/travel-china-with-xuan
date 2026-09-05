@@ -709,6 +709,30 @@
   margin: 1rem 0 0;
 }
 
+.sectionHeading.faqHeading {
+  grid-template-columns: 1fr;
+  margin-block-end: 2.5rem;
+}
+
+.faqHeading h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  max-width: none;
+}
+
+.serviceGrid.faqGrid {
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 48rem;
+}
+
+.faqGrid h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.35;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 .scopeSection {
   background: var(--im-white);
 }

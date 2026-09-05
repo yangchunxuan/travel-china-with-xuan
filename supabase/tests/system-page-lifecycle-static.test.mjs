@@ -28,12 +28,12 @@ const expectedModifiedDates = {
   "entry-requirements": "2026-08-22",
   guides: "2026-08-22",
   home: "2026-09-04",
-  "itinerary-review": "2026-08-22",
+  "itinerary-review": "2026-09-05",
   privacy: "2026-08-23",
   "refund-delivery": "2026-07-24",
   studio: "2026-08-22",
   terms: "2026-07-24",
-  "zhangjiajie-4-day-private-tour": "2026-09-01",
+  "zhangjiajie-4-day-private-tour": "2026-09-05",
 };
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
