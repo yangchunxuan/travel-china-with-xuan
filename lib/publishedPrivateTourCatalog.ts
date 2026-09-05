@@ -225,9 +225,9 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "베이징 · 자금성 · 만리장성",
     ),
     appeal: l(
-      "Spend three touring days at the Great Wall, Forbidden City and Beijing’s Shichahai and Houhai area, returning to the same Beijing hotel each night.",
-      "用三个完整游览日看长城、故宫、什刹海与后海，每晚回到同一家北京酒店。",
-      "만리장성, 자금성과 베이징 스차하이·허우하이를 3일 동안 둘러보고 매일 같은 베이징 호텔로 돌아옵니다.",
+      "Explore Badaling Great Wall and the Forbidden City over three touring days, subject to confirmed reservations, and return to the same Beijing hotel each night.",
+      "用三个游览日探访八达岭长城与故宫等地标，游览按预约确认安排，每晚返回同一家北京酒店。",
+      "예약이 확정된 일정에 따라 3일간 팔달령 만리장성과 자금성을 둘러보고, 매일 같은 베이징 호텔로 돌아옵니다.",
     ),
     pace: l(
       "One Beijing base with three touring days and buffered arrival and departure days.",
