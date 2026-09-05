@@ -98,12 +98,12 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
 
   assert.deepEqual(hub?.dates, {
     datePublished: "2026-08-24",
-    dateModified: "2026-09-05",
+    dateModified: "2026-09-06",
     lastReviewed: "2026-08-31",
   });
   assert.deepEqual(forest?.dates, {
     datePublished: "2026-08-31",
-    dateModified: "2026-09-05",
+    dateModified: "2026-09-06",
     lastReviewed: "2026-08-31",
   });
 
@@ -111,7 +111,7 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
     "zhangjiajie-4-day-private-tour",
   );
   assert.equal(classic.datePublished, "2026-08-16");
-  assert.equal(classic.dateModified, "2026-09-05");
+  assert.equal(classic.dateModified, "2026-09-06");
   assert.equal(classic.lastReviewed, "2026-08-16");
-  assert.equal(classic.evidence.commit, "edce6726ab00322c2cd4e53446f1d181c4ce4a74");
+  assert.equal(classic.evidence.commit, "ce0f8b725241f446106a54824e1a23ce8bbb1642");
 });
