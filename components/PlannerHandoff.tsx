@@ -42,8 +42,10 @@ import {
   trackEnquirySubmitted,
   trackEvent,
 } from "../lib/analytics";
+import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
+import { useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -413,21 +415,12 @@ export function PlannerHandoff({
   const localJourneyRevisionRef = useRef(1);
   const routeIdentityRef = useRef("");
   const dispatchingRef = useRef(false);
-  const contactOptionsViewedRef = useRef(false);
+  const contactVisibilityRef = useVisibleAnalyticsEvent<HTMLElement>("contact_options_viewed", { page_language: locale, submission_surface: "full_trip_brief" }, configurationReady);
   const trackedSubmissionReferencesRef = useRef(new Set<string>());
   const previousServiceIdRef = useRef(serviceInterest?.id ?? null);
   const previousServiceContextRevisionRef = useRef(
     serviceContextRevision,
   );
-
-  useEffect(() => {
-    if (!configurationReady || contactOptionsViewedRef.current) return;
-    contactOptionsViewedRef.current = true;
-    trackEvent("contact_options_viewed", {
-      page_language: locale,
-      submission_surface: "full_trip_brief",
-    });
-  }, [configurationReady, locale]);
 
   const idPrefix = useId();
   const responsibilityGroupId = `${idPrefix}-booking-responsibility`;
@@ -762,8 +755,9 @@ export function PlannerHandoff({
       return;
     }
 
+    if (method === contactMethod) return;
     setContactMethod(method);
-    trackEvent("contact_option_clicked", {
+    trackEvent("contact_channel_selected", {
       channel: method,
       page_language: locale,
       submission_surface: "full_trip_brief",
@@ -882,7 +876,12 @@ export function PlannerHandoff({
     };
   };
 
+  const recordSubmissionOutcome = (name: "enquiry_submit_failed" | "enquiry_submit_uncertain", errorCode: "validation" | "network" | "rate_limited" | "service_unavailable" | "server_error" | "unknown_response") => {
+    trackEvent(name, { page_language: locale, submission_surface: "full_trip_brief" }, { firstPartyContext: { surface: "planner", errorCode } });
+  };
+
   const applyServerValidation = (fieldErrors: unknown) => {
+    recordSubmissionOutcome("enquiry_submit_failed", "validation");
     const nextErrors: ValidationErrors = {};
     if (fieldErrors && typeof fieldErrors === "object") {
       const fields = fieldErrors as Record<string, unknown>;
@@ -925,6 +924,7 @@ export function PlannerHandoff({
     retryDelay?: { label: string; retryAt: number },
     overrideMessage = "",
   ) => {
+    recordSubmissionOutcome("enquiry_submit_failed", kind === "offline_before_dispatch" ? "network" : kind === "rate_limited" ? "rate_limited" : "server_error");
     setFailureKind(kind);
     setFailureOverride(overrideMessage);
     if (retryDelay) {
@@ -937,7 +937,7 @@ export function PlannerHandoff({
     setStatus("failed");
   };
 
-  const dispatchSnapshot = async (snapshot: InquirySnapshot) => {
+  const dispatchSnapshot = async (snapshot: InquirySnapshot, recordAttempt = true) => {
     if (dispatchingRef.current) return;
     if (!configurationReady) {
       snapshotRef.current = null;
@@ -946,6 +946,7 @@ export function PlannerHandoff({
     }
     if (routeState !== "current") return;
 
+    if (recordAttempt) trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "full_trip_brief" });
     if (!navigator.onLine) {
       setDefinitiveFailure("offline_before_dispatch");
       return;
@@ -967,7 +968,7 @@ export function PlannerHandoff({
           "Content-Type": "application/json",
           "Idempotency-Key": snapshot.idempotencyKey,
         },
-        body: snapshot.body,
+        body: inquiryBodyWithCurrentTrafficConsent(snapshot.body),
         signal: controller.signal,
       });
       const responseText = await response.text();
@@ -1014,6 +1015,7 @@ export function PlannerHandoff({
           return;
         }
 
+        recordSubmissionOutcome("enquiry_submit_uncertain", "unknown_response");
         setStatus("uncertain");
         return;
       }
@@ -1078,8 +1080,10 @@ export function PlannerHandoff({
         return;
       }
 
+      recordSubmissionOutcome("enquiry_submit_uncertain", "unknown_response");
       setStatus("uncertain");
     } catch {
+      recordSubmissionOutcome("enquiry_submit_uncertain", "network");
       setStatus("uncertain");
     } finally {
       window.clearTimeout(timeout);
@@ -1088,6 +1092,7 @@ export function PlannerHandoff({
   };
 
   const submitCurrentValues = async () => {
+    if (dispatchingRef.current) return;
     if (!configurationReady) {
       snapshotRef.current = null;
       setStatus("disabled");
@@ -1095,8 +1100,10 @@ export function PlannerHandoff({
     }
     if (routeState !== "current") return;
 
+    trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "full_trip_brief" });
     const nextErrors = validate();
     if (Object.keys(nextErrors).length > 0) {
+      recordSubmissionOutcome("enquiry_submit_failed", "validation");
       setErrors(nextErrors);
       setStatus("validation-error");
       focusErrorSummary();
@@ -1138,7 +1145,7 @@ export function PlannerHandoff({
     }
     snapshotRef.current = snapshot;
     setErrors({});
-    await dispatchSnapshot(snapshot);
+    await dispatchSnapshot(snapshot, false);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -1216,6 +1223,7 @@ export function PlannerHandoff({
 
   return (
     <section
+      ref={contactVisibilityRef}
       id="planner-handoff"
       className={`${styles.handoff} ${embedded ? styles.embedded : ""}`}
       aria-labelledby="planner-handoff-title"
@@ -1384,6 +1392,7 @@ export function PlannerHandoff({
                                 <a
                                   className={styles.inlineLink}
                                   href={fallbackMailto}
+                                  onClick={() => trackEvent("contact_option_clicked", { channel: "email", page_language: locale, submission_surface: "full_trip_brief" })}
                                 >
                                   {copy.handoff.emailFallback}
                                 </a>

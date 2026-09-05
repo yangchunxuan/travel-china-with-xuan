@@ -131,7 +131,7 @@ test("first-party writes require a short-lived server credential", async () => {
   );
   assert.match(
     analytics,
-    /sessionCredential: sessionCredential\.credential/u,
+    /sessionCredential: credential\.credential/u,
   );
   assert.match(
     analytics,

@@ -11,6 +11,7 @@ import {
   type PrivateTourInquirySlug,
 } from "../lib/privateTourInquiryContext";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { trackEvent } from "../lib/analytics";
 
 const SelectionContext = createContext<{
   slug: PrivateTourInquirySlug;
@@ -30,7 +31,13 @@ export function PrivateTourSelectionProvider({
     if (!initial) throw new Error("Missing published private tour selection");
     return initial;
   });
-  return <SelectionContext.Provider value={{ slug, selection, setSelection }}>{children}</SelectionContext.Provider>;
+  const changeSelection = (candidate: PrivateTourInquirySelection) => {
+    const next = getPrivateTourInquirySelection(slug, candidate.packageId, candidate.travelers);
+    if (!next || (next.packageId === selection.packageId && next.travelers === selection.travelers)) return;
+    setSelection(next);
+    trackEvent("product_selection_changed", {}, { firstPartyContext: { productSlug: slug, packageId: next.packageId, travelers: next.travelers, surface: "product" } });
+  };
+  return <SelectionContext.Provider value={{ slug, selection, setSelection: changeSelection }}>{children}</SelectionContext.Provider>;
 }
 
 export function usePrivateTourSelection() {
@@ -65,5 +72,5 @@ export function SelectedPrivateTourEmailLink({
   const selectedContext = context
     ? getPrivateTourInquiryContext(context.slug, locale, context.selection)
     : null;
-  return <a className={className} href={selectedContext ? buildPrivateTourMailtoHref(email, locale, selectedContext) : href}>{children}</a>;
+  return <a className={className} href={selectedContext ? buildPrivateTourMailtoHref(email, locale, selectedContext) : href} onClick={() => trackEvent("contact_option_clicked", { channel: "email", page_language: locale }, { firstPartyContext: { productSlug: selectedContext?.slug, packageId: selectedContext?.selection?.packageId, travelers: selectedContext?.selection?.travelers, surface: "product" } })}>{children}</a>;
 }

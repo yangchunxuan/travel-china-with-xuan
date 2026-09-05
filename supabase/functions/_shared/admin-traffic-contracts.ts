@@ -1,7 +1,11 @@
+// @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
+import { isTrafficProductSelection, isTrafficProductSlug } from "./traffic-contracts.ts";
+
 type JsonRecord = Record<string, unknown>;
 
 export const adminTrafficContractVersion =
   "homeground-admin-traffic.v1" as const;
+export const adminTrafficContractVersionV2 = "homeground-admin-traffic.v2" as const;
 
 const minimumVisibleCount = 5;
 const maximumRecentSessions = 12;
@@ -332,7 +336,7 @@ function parseRecentSessions(value: unknown): JsonRecord[] | null {
   return parsed;
 }
 
-export function sanitizeAdminTrafficRpc(
+function sanitizeAdminTrafficV1Rpc(
   data: unknown,
 ): JsonRecord | null {
   if (hasForbiddenKey(data)) return null;
@@ -475,4 +479,59 @@ export function sanitizeAdminTrafficRpc(
       clickMeaning: approvedClickNotice,
     },
   };
+}
+
+function parseProductDimension(value: unknown, selection: boolean): JsonRecord[] | null {
+  if (!Array.isArray(value) || value.length > 30) return null;
+  const seen = new Set<string>();
+  const result: JsonRecord[] = [];
+  for (const candidate of value) {
+    if (!isRecord(candidate) ||
+      !hasOnlyKeys(candidate, ["bucketType", "label", "count", "suppressed"])) return null;
+    const cell = parseCountCell({ count: candidate.count, suppressed: candidate.suppressed });
+    if (!cell) return null;
+    if (candidate.bucketType === "suppressed") {
+      if (candidate.label !== null || !cell.suppressed || seen.has("suppressed")) return null;
+      seen.add("suppressed");
+    } else if (candidate.bucketType === "value") {
+      if (typeof candidate.label !== "string" || cell.suppressed || seen.has(candidate.label)) return null;
+      const parts = candidate.label.split("|");
+      if (selection ? !(parts.length === 3 && (parts[2] === "2" || parts[2] === "4") &&
+        isTrafficProductSelection(parts[0], parts[1], Number(parts[2]))) : !isTrafficProductSlug(candidate.label)) return null;
+      seen.add(candidate.label);
+    } else return null;
+    result.push({ bucketType: candidate.bucketType, label: candidate.label, ...cell });
+  }
+  return result;
+}
+
+export function sanitizeAdminTrafficRpc(data: unknown): JsonRecord | null {
+  const payload = rpcPayload(data);
+  if (payload?.contractVersion !== adminTrafficContractVersionV2) {
+    return sanitizeAdminTrafficV1Rpc(data);
+  }
+  if (hasForbiddenKey(data) || !isRecord(payload.totals) || !isRecord(payload.dimensions)) return null;
+  const extraTotalKeys = ["productViews", "productSelections", "formSubmitAttempts",
+    "formSubmitFailures", "formSubmitUncertain"] as const;
+  const totals = { ...payload.totals };
+  const extraTotals: JsonRecord = {};
+  for (const key of extraTotalKeys) {
+    const cell = parseCountCell(totals[key]);
+    if (!cell) return null;
+    extraTotals[key] = cell;
+    delete totals[key];
+  }
+  const dimensions = { ...payload.dimensions };
+  const products = parseProductDimension(dimensions.products, false);
+  const productSelections = parseProductDimension(dimensions.productSelections, true);
+  if (!products || !productSelections) return null;
+  delete dimensions.products;
+  delete dimensions.productSelections;
+  const base = sanitizeAdminTrafficV1Rpc([{ payload: {
+    ...payload, contractVersion: adminTrafficContractVersion, totals, dimensions,
+  } }]);
+  if (!base) return null;
+  return { ...base, contractVersion: adminTrafficContractVersionV2,
+    totals: { ...(base.totals as JsonRecord), ...extraTotals },
+    dimensions: { ...(base.dimensions as JsonRecord), products, productSelections } };
 }

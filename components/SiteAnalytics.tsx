@@ -34,6 +34,8 @@ import {
 } from "../lib/analyticsPageViews";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
+import { analyticsRuntimeIsAllowed, subscribeAnalyticsRuntime } from "../lib/analyticsRuntime";
+
 const googleScriptId = "homeground-ga4-script";
 const metaScriptId = "homeground-meta-pixel-script";
 
@@ -63,7 +65,25 @@ export function SiteAnalytics({
   const [locationKey, setLocationKey] = useState<string | undefined>(
     undefined,
   );
+  const [runtimeAllowed, setRuntimeAllowed] = useState(false);
   const pageViewsRef = useRef(createAnalyticsPageViewState());
+
+  useEffect(() => {
+    const refresh = () => {
+      const allowed = analyticsRuntimeIsAllowed();
+      if (!allowed) {
+        disableGoogleAnalytics();
+        disableMetaPixel();
+        clearAnalyticsSessionState();
+        removeExternalScript(googleScriptId);
+        removeExternalScript(metaScriptId);
+        pageViewsRef.current = createAnalyticsPageViewState();
+      }
+      setRuntimeAllowed(allowed);
+    };
+    refresh();
+    return subscribeAnalyticsRuntime(refresh);
+  }, []);
 
   useEffect(() => {
     const applyPreferences = (
@@ -117,6 +137,7 @@ export function SiteAnalytics({
   useEffect(() => {
     if (
       !ANALYTICS_ENABLED ||
+      !runtimeAllowed ||
       preferences === undefined ||
       locationKey === undefined
     ) {
@@ -170,11 +191,12 @@ export function SiteAnalytics({
       removeExternalScript(metaScriptId);
       resetAnalyticsPageView(pageViewsRef.current, "meta");
     }
-  }, [locationKey, preferences]);
+  }, [locationKey, preferences, runtimeAllowed]);
 
   useEffect(() => {
     if (
       !ANALYTICS_ENABLED ||
+      !runtimeAllowed ||
       locationKey === undefined ||
       !pathname ||
       pathname !== window.location.pathname
@@ -234,6 +256,7 @@ export function SiteAnalytics({
     pathname,
     preferences?.analytics,
     preferences?.marketing,
+    runtimeAllowed,
   ]);
 
   return null;

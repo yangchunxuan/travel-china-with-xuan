@@ -1,6 +1,8 @@
 export const trafficEventsContractVersion =
   "homeground-traffic-events.v1" as const;
 export const trafficEventsNoticeVersion = "2026-07-31.1" as const;
+export const trafficEventsContractVersionV2 = "homeground-traffic-events.v2" as const;
+export const trafficEventsNoticeVersionV2 = "2026-09-05.1" as const;
 export const trafficSessionStartRequestType = "start_session" as const;
 export const trafficEventBatchRequestType = "events" as const;
 
@@ -10,6 +12,46 @@ export const trafficEventTypes = [
   "contact_channel_clicked",
   "email_form_started",
 ] as const;
+
+export const trafficEventTypesV2 = [
+  ...trafficEventTypes,
+  "product_selection_changed",
+  "contact_channel_selected",
+  "enquiry_submit_attempted",
+  "enquiry_submit_failed",
+  "enquiry_submit_uncertain",
+] as const;
+export const trafficSurfaces = [
+  "product", "homepage_quick_email", "planner", "contact_options",
+] as const;
+export const trafficErrorCodes = [
+  "validation", "network", "rate_limited", "service_unavailable",
+  "server_error", "unknown_response",
+] as const;
+// Keep aligned with the published-product inquiry selection contract.
+export const trafficProductPackages: Readonly<Record<string, readonly string[]>> = {
+  "shanghai-suzhou-hangzhou-6-day-private-tour": ["standard-guided"],
+  "chengdu-pandas-sanxingdui-5-day-private-tour": ["standard-guided"],
+  "xian-terracotta-warriors-5-day-private-tour": ["standard-guided"],
+  "chongqing-wulong-5-day-private-tour": ["standard-guided"],
+  "guilin-yangshuo-5-day-private-tour": ["standard-guided"],
+  "harbin-winter-5-day-private-tour": ["standard-guided-winter"],
+  "shanghai-suzhou-5-day-private-tour": ["standard-guided"],
+  "beijing-highlights-5-day-private-tour": ["english-guided", "no-guide"],
+  "zhangjiajie-forest-4-day-private-tour": ["fixed-route-english-guided"],
+  "zhangjiajie-4-day-private-tour": [],
+};
+export function isTrafficProductSlug(value: unknown): value is string {
+  return typeof value === "string" &&
+    Object.prototype.hasOwnProperty.call(trafficProductPackages, value);
+}
+export function isTrafficProductSelection(
+  slug: unknown, packageId: unknown, travelers: unknown,
+): boolean {
+  return isTrafficProductSlug(slug) && typeof packageId === "string" &&
+    trafficProductPackages[slug].includes(packageId) &&
+    (travelers === 2 || travelers === 4);
+}
 
 export const trafficContactActionCodes = [
   "email",
@@ -26,7 +68,9 @@ const controlledUtmPattern = /^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?$/;
 const controlledPathPattern = /^\/[A-Za-z0-9/_-]*$/;
 
 type TrafficLocale = (typeof trafficLocales)[number];
-type TrafficEventType = (typeof trafficEventTypes)[number];
+type TrafficEventType = (typeof trafficEventTypesV2)[number];
+type TrafficContractVersion = typeof trafficEventsContractVersion | typeof trafficEventsContractVersionV2;
+type TrafficNoticeVersion = typeof trafficEventsNoticeVersion | typeof trafficEventsNoticeVersionV2;
 type TrafficContactActionCode =
   (typeof trafficContactActionCodes)[number];
 
@@ -42,12 +86,18 @@ export interface NormalizedTrafficEvent {
   type: TrafficEventType;
   pagePath: string;
   actionCode: TrafficContactActionCode | null;
+  clientSequence?: number;
+  productSlug?: string | null;
+  packageId?: string | null;
+  travelers?: 2 | 4 | null;
+  surface?: (typeof trafficSurfaces)[number] | null;
+  errorCode?: (typeof trafficErrorCodes)[number] | null;
 }
 
 export interface NormalizedTrafficEventBatch {
   requestType: typeof trafficEventBatchRequestType;
-  contractVersion: typeof trafficEventsContractVersion;
-  noticeVersion: typeof trafficEventsNoticeVersion;
+  contractVersion: TrafficContractVersion;
+  noticeVersion: TrafficNoticeVersion;
   sessionToken: string;
   sessionCredential: string;
   locale: TrafficLocale;
@@ -59,8 +109,8 @@ export interface NormalizedTrafficEventBatch {
 
 export interface NormalizedTrafficSessionStart {
   requestType: typeof trafficSessionStartRequestType;
-  contractVersion: typeof trafficEventsContractVersion;
-  noticeVersion: typeof trafficEventsNoticeVersion;
+  contractVersion: TrafficContractVersion;
+  noticeVersion: TrafficNoticeVersion;
   sessionToken: string;
   locale: TrafficLocale;
   entryPath: string;
@@ -204,10 +254,12 @@ function validateSharedSessionFields(
   input: Record<string, unknown>,
   fieldErrors: Record<string, string>,
 ) {
-  if (input.contractVersion !== trafficEventsContractVersion) {
+  if (input.contractVersion !== trafficEventsContractVersion &&
+    input.contractVersion !== trafficEventsContractVersionV2) {
     fieldErrors.contractVersion = "unsupported";
   }
-  if (input.noticeVersion !== trafficEventsNoticeVersion) {
+  if (input.noticeVersion !== (input.contractVersion === trafficEventsContractVersionV2
+    ? trafficEventsNoticeVersionV2 : trafficEventsNoticeVersion)) {
     fieldErrors.noticeVersion = "unsupported";
   }
   if (
@@ -276,8 +328,8 @@ export function validateAndNormalizeTrafficSessionStart(
     ok: true,
     value: {
       requestType: trafficSessionStartRequestType,
-      contractVersion: trafficEventsContractVersion,
-      noticeVersion: trafficEventsNoticeVersion,
+      contractVersion: input.contractVersion as TrafficContractVersion,
+      noticeVersion: input.noticeVersion as TrafficNoticeVersion,
       sessionToken: (input.sessionToken as string).toLowerCase(),
       locale: input.locale as TrafficLocale,
       entryPath: entryPath as string,
@@ -333,6 +385,8 @@ export function validateAndNormalizeTrafficEventBatch(
     fieldErrors,
   );
 
+  const isV2 = input.contractVersion === trafficEventsContractVersionV2;
+  const allowedTypes = isV2 ? trafficEventTypesV2 : trafficEventTypes;
   const normalizedEvents: NormalizedTrafficEvent[] = [];
   const eventIds = new Set<string>();
   if (
@@ -350,7 +404,9 @@ export function validateAndNormalizeTrafficEventBatch(
       }
       hasOnlyKeys(
         candidate,
-        ["eventId", "type", "pagePath", "actionCode"],
+        isV2 ? ["eventId", "type", "pagePath", "actionCode", "clientSequence",
+          "productSlug", "packageId", "travelers", "surface", "errorCode"]
+          : ["eventId", "type", "pagePath", "actionCode"],
         prefix,
         fieldErrors,
       );
@@ -366,7 +422,7 @@ export function validateAndNormalizeTrafficEventBatch(
         eventIds.add(candidate.eventId.toLowerCase());
       }
 
-      if (!isOneOf(candidate.type, trafficEventTypes)) {
+      if (!isOneOf(candidate.type, allowedTypes)) {
         fieldErrors[`${prefix}.type`] = "invalid";
       }
 
@@ -376,7 +432,8 @@ export function validateAndNormalizeTrafficEventBatch(
       }
 
       let actionCode: TrafficContactActionCode | null = null;
-      if (candidate.type === "contact_channel_clicked") {
+      if (candidate.type === "contact_channel_clicked" ||
+        (isV2 && candidate.type === "contact_channel_selected")) {
         if (!isOneOf(candidate.actionCode, trafficContactActionCodes)) {
           fieldErrors[`${prefix}.actionCode`] = "invalid";
         } else {
@@ -389,10 +446,49 @@ export function validateAndNormalizeTrafficEventBatch(
         fieldErrors[`${prefix}.actionCode`] = "not_allowed";
       }
 
+      let journeyFields: Partial<NormalizedTrafficEvent> = {};
+      if (isV2) {
+        const productSlug = candidate.productSlug ?? null;
+        const packageId = candidate.packageId ?? null;
+        const travelers = candidate.travelers ?? null;
+        const surface = candidate.surface ?? null;
+        const errorCode = candidate.errorCode ?? null;
+        if (!Number.isSafeInteger(candidate.clientSequence) ||
+          (candidate.clientSequence as number) < 1 ||
+          (candidate.clientSequence as number) > 1_000_000) {
+          fieldErrors[`${prefix}.clientSequence`] = "invalid";
+        }
+        if (productSlug !== null && !isTrafficProductSlug(productSlug)) {
+          fieldErrors[`${prefix}.productSlug`] = "invalid";
+        }
+        if ((packageId !== null || travelers !== null ||
+          candidate.type === "product_selection_changed") &&
+          !isTrafficProductSelection(productSlug, packageId, travelers)) {
+          fieldErrors[`${prefix}.packageId`] = "invalid_selection";
+        }
+        if ((surface !== null && !isOneOf(surface, trafficSurfaces)) ||
+          (candidate.type !== "page_view" && surface === null)) {
+          fieldErrors[`${prefix}.surface`] = "invalid";
+        }
+        const isError = candidate.type === "enquiry_submit_failed" ||
+          candidate.type === "enquiry_submit_uncertain";
+        if (isError ? !isOneOf(errorCode, trafficErrorCodes) : errorCode !== null) {
+          fieldErrors[`${prefix}.errorCode`] = "invalid";
+        }
+        journeyFields = {
+          clientSequence: candidate.clientSequence as number,
+          productSlug: productSlug as string | null,
+          packageId: packageId as string | null,
+          travelers: travelers as 2 | 4 | null,
+          surface: surface as NormalizedTrafficEvent["surface"],
+          errorCode: errorCode as NormalizedTrafficEvent["errorCode"],
+        };
+      }
+
       if (
         typeof candidate.eventId === "string" &&
         uuidV4Pattern.test(candidate.eventId) &&
-        isOneOf(candidate.type, trafficEventTypes) &&
+        isOneOf(candidate.type, allowedTypes) &&
         pagePath !== null &&
         !(`${prefix}.eventId` in fieldErrors) &&
         !(`${prefix}.type` in fieldErrors) &&
@@ -404,6 +500,7 @@ export function validateAndNormalizeTrafficEventBatch(
           type: candidate.type,
           pagePath,
           actionCode,
+          ...journeyFields,
         });
       }
     });
@@ -424,8 +521,8 @@ export function validateAndNormalizeTrafficEventBatch(
     ok: true,
     value: {
       requestType: trafficEventBatchRequestType,
-      contractVersion: trafficEventsContractVersion,
-      noticeVersion: trafficEventsNoticeVersion,
+      contractVersion: input.contractVersion as TrafficContractVersion,
+      noticeVersion: input.noticeVersion as TrafficNoticeVersion,
       sessionToken: (input.sessionToken as string).toLowerCase(),
       sessionCredential: (input.sessionCredential as string).toLowerCase(),
       locale: input.locale as TrafficLocale,

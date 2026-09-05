@@ -1,4 +1,4 @@
-export const analyticsConsentVersion = "2026-07-31.1";
+export const analyticsConsentVersion = "2026-09-05.1";
 export const analyticsConsentStorageKey = "homeground-consent.v1";
 export const analyticsConsentChangedEventName =
   "homeground:consent-changed";

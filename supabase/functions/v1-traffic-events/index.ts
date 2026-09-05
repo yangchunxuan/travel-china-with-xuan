@@ -4,7 +4,7 @@ import {
   type NormalizedTrafficSessionStart,
   trafficEventBatchRequestType,
   trafficEventsContractVersion,
-  trafficEventsNoticeVersion,
+  trafficEventsContractVersionV2,
   trafficSessionStartRequestType,
   validateAndNormalizeTrafficEventBatch,
   validateAndNormalizeTrafficSessionStart,
@@ -141,12 +141,16 @@ async function acceptedAttribution({
 }
 
 function credentialMessage({
+  contractVersion,
+  noticeVersion,
   expiresAt,
   sessionToken,
   locale,
   entryPath,
   attribution,
 }: {
+  contractVersion: string;
+  noticeVersion: string;
   expiresAt: number;
   sessionToken: string;
   locale: string;
@@ -155,8 +159,8 @@ function credentialMessage({
 }): string {
   return [
     "homeground-traffic-session.v1",
-    trafficEventsContractVersion,
-    trafficEventsNoticeVersion,
+    contractVersion,
+    noticeVersion,
     String(expiresAt),
     sessionToken,
     locale,
@@ -182,6 +186,8 @@ async function issueSessionCredential(
   const signature = await hmacSha256Hex(
     requiredEnv("TRAFFIC_SESSION_CREDENTIAL_SECRET"),
     credentialMessage({
+      contractVersion: payload.contractVersion,
+      noticeVersion: payload.noticeVersion,
       expiresAt,
       sessionToken: payload.sessionToken,
       locale: payload.locale,
@@ -225,6 +231,8 @@ async function validSessionCredential(
   const expectedSignature = await hmacSha256Hex(
     requiredEnv("TRAFFIC_SESSION_CREDENTIAL_SECRET"),
     credentialMessage({
+      contractVersion: payload.contractVersion,
+      noticeVersion: payload.noticeVersion,
       expiresAt,
       sessionToken: payload.sessionToken,
       locale: payload.locale,
@@ -654,7 +662,7 @@ async function handleRequest(request: Request): Promise<Response> {
       return jsonResponse(
         201,
         {
-          contractVersion: trafficEventsContractVersion,
+          contractVersion: validation.value.contractVersion,
           state: "session_ready",
           sessionCredential: issued.credential,
           expiresAt: new Date(issued.expiresAt * 1_000).toISOString(),
@@ -714,7 +722,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let globalShortRateLimit: number;
   let globalDailyRateLimit: number;
   let attribution: NormalizedTrafficAttribution;
-  let eventsForRpc: Array<Record<string, string | null>>;
+  let eventsForRpc: Array<Record<string, string | number | null>>;
   try {
     attribution = await acceptedAttribution(payload);
     if (!(await validSessionCredential(payload, attribution))) {
@@ -791,6 +799,15 @@ async function handleRequest(request: Request): Promise<Response> {
           type: event.type,
           pagePath: event.pagePath,
           actionCode: event.actionCode,
+          // Preserve the exact v1 key order and hash for old idempotent replays.
+          ...(payload.contractVersion === trafficEventsContractVersionV2 ? {
+            clientSequence: event.clientSequence!,
+            productSlug: event.productSlug ?? null,
+            packageId: event.packageId ?? null,
+            travelers: event.travelers ?? null,
+            surface: event.surface ?? null,
+            errorCode: event.errorCode ?? null,
+          } : {}),
         };
         return {
           ...normalizedEvent,
@@ -815,7 +832,9 @@ async function handleRequest(request: Request): Promise<Response> {
   try {
     persistenceResult =
       await callSupabaseRpc<RecordTrafficEventsRpcResponse>(
-        "record_homeground_traffic_events_v1",
+        payload.contractVersion === trafficEventsContractVersion
+          ? "record_homeground_traffic_events_v1"
+          : "record_homeground_traffic_events_v2",
         {
           p_contract_version: payload.contractVersion,
           p_notice_version: payload.noticeVersion,
@@ -909,7 +928,7 @@ async function handleRequest(request: Request): Promise<Response> {
   return jsonResponse(
     result.outcome === "created" ? 202 : 200,
     {
-      contractVersion: trafficEventsContractVersion,
+      contractVersion: payload.contractVersion,
       state: "accepted",
       acceptedCount: result.acceptedCount,
       replayedCount: result.replayedCount,

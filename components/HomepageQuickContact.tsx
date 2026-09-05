@@ -21,6 +21,7 @@ import {
   trackEnquirySubmitted,
   trackEvent,
 } from "../lib/analytics";
+import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
 import { trustedMessengerUrl } from "../lib/homegroundSocial";
 import {
   currentHomepageEmailFormVersion,
@@ -38,6 +39,7 @@ import {
   type PrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
 import styles from "./HomegroundHomePage.module.css";
+import { useAnalyticsEventOnce, useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -174,8 +176,8 @@ export function HomepageQuickContact({
   const snapshotRef = useRef<SubmissionSnapshot | null>(null);
   const successRef = useRef<HTMLDivElement | null>(null);
   const dispatchingRef = useRef(false);
-  const contactOptionsViewedRef = useRef(false);
-  const emailStartedRef = useRef(false);
+  const contactVisibilityRef = useVisibleAnalyticsEvent<HTMLDivElement>("contact_options_viewed", { page_language: locale, contact_variant: variant });
+  const recordEmailStart = useAnalyticsEventOnce();
   const successfulSubmissionTrackedRef = useRef(false);
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
@@ -248,15 +250,6 @@ export function HomepageQuickContact({
     return () => window.cancelAnimationFrame(frame);
   }, [status]);
 
-  useEffect(() => {
-    if (contactOptionsViewedRef.current) return;
-    contactOptionsViewedRef.current = true;
-    trackEvent("contact_options_viewed", {
-      page_language: locale,
-      contact_variant: variant,
-    });
-  }, [locale, variant]);
-
   const buildPayload = () => ({
     trafficSessionToken: getTrafficSessionToken() ?? null,
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -284,9 +277,15 @@ export function HomepageQuickContact({
     },
   });
 
-  const dispatch = async (snapshot: SubmissionSnapshot) => {
+  const recordSubmissionOutcome = (name: "enquiry_submit_failed" | "enquiry_submit_uncertain", errorCode: "validation" | "network" | "rate_limited" | "service_unavailable" | "server_error" | "unknown_response") => {
+    trackEvent(name, { page_language: locale, submission_surface: "homepage_email" }, { firstPartyContext: { surface: "homepage_quick_email", errorCode } });
+  };
+
+  const dispatch = async (snapshot: SubmissionSnapshot, recordAttempt = true) => {
     if (dispatchingRef.current || !emailIntakeReady) return;
+    if (recordAttempt) trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "homepage_email" });
     if (!navigator.onLine) {
+      recordSubmissionOutcome("enquiry_submit_failed", "network");
       setStatus("failed");
       setError(contactCopy.failed);
       return;
@@ -309,7 +308,7 @@ export function HomepageQuickContact({
           "Content-Type": "application/json",
           "Idempotency-Key": snapshot.idempotencyKey,
         },
-        body: snapshot.body,
+        body: inquiryBodyWithCurrentTrafficConsent(snapshot.body),
         signal: controller.signal,
       });
       const responseData = safeResponseJson(await response.text());
@@ -336,6 +335,7 @@ export function HomepageQuickContact({
           }
           return;
         }
+        recordSubmissionOutcome("enquiry_submit_uncertain", "unknown_response");
         setStatus("uncertain");
         setError(contactCopy.uncertain);
         setShowRetry(true);
@@ -353,6 +353,7 @@ export function HomepageQuickContact({
           ? (envelope.error.fieldErrors as Record<string, unknown>)
           : {};
       if (response.status === 422 && fieldErrors["contact.email"]) {
+        recordSubmissionOutcome("enquiry_submit_failed", "validation");
         snapshotRef.current = null;
         setStatus("failed");
         setError(contactCopy.emailInvalid);
@@ -361,6 +362,7 @@ export function HomepageQuickContact({
         return;
       }
       if (code === "idempotency_conflict") {
+        recordSubmissionOutcome("enquiry_submit_failed", "server_error");
         snapshotRef.current = null;
         setStatus("failed");
         setError(contactCopy.failed);
@@ -368,15 +370,18 @@ export function HomepageQuickContact({
         return;
       }
       if (envelope?.error?.persistenceState === "not_persisted") {
+        recordSubmissionOutcome("enquiry_submit_failed", response.status === 429 ? "rate_limited" : response.status === 503 ? "service_unavailable" : "server_error");
         setStatus("failed");
         setError(contactCopy.failed);
         setShowRetry(false);
         return;
       }
+      recordSubmissionOutcome("enquiry_submit_uncertain", "unknown_response");
       setStatus("uncertain");
       setError(contactCopy.uncertain);
       setShowRetry(true);
     } catch {
+      recordSubmissionOutcome("enquiry_submit_uncertain", "network");
       setStatus("uncertain");
       setError(contactCopy.uncertain);
       setShowRetry(true);
@@ -388,18 +393,16 @@ export function HomepageQuickContact({
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    trackEvent("contact_option_clicked", {
-      channel: "email",
-      contact_variant: variant,
-      page_language: locale,
-    });
+    if (dispatchingRef.current) return;
     if (!emailIntakeReady) {
       setStatus("disabled");
       setError(contactCopy.emailUnavailable);
       setEmailValidationError(false);
       return;
     }
+    trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "homepage_email" });
     if (!isValidEmail(email)) {
+      recordSubmissionOutcome("enquiry_submit_failed", "validation");
       snapshotRef.current = null;
       setStatus("failed");
       setError(contactCopy.emailInvalid);
@@ -416,6 +419,7 @@ export function HomepageQuickContact({
       try {
         snapshot = { body, idempotencyKey: createUuid() };
       } catch {
+        recordSubmissionOutcome("enquiry_submit_failed", "server_error");
         setStatus("failed");
         setError(contactCopy.failed);
         setShowRetry(false);
@@ -423,7 +427,7 @@ export function HomepageQuickContact({
       }
       snapshotRef.current = snapshot;
     }
-    await dispatch(snapshot);
+    await dispatch(snapshot, false);
   };
 
   const liveStatus =
@@ -435,6 +439,7 @@ export function HomepageQuickContact({
 
   return (
     <div
+      ref={contactVisibilityRef}
       className={`${styles.quickContact} ${
         variant === "hero" ? styles.quickContactHero : ""
       }`}
@@ -548,7 +553,7 @@ export function HomepageQuickContact({
               <p className={styles.quickContactUnavailable}>
                 {contactCopy.emailUnavailable}
               </p>
-              <a href={fallbackMailto}>
+              <a href={fallbackMailto} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}>
                 {contactCopy.emailFallbackAction}
                 <ArrowUpRight aria-hidden="true" size={18} />
               </a>
@@ -597,9 +602,7 @@ export function HomepageQuickContact({
                   }
                   disabled={status === "submitting"}
                   onFocus={() => {
-                    if (emailStartedRef.current) return;
-                    emailStartedRef.current = true;
-                    trackEvent("quick_email_started", {
+                    recordEmailStart("quick_email_started", {
                       submission_surface: "homepage_email",
                       contact_variant: variant,
                       page_language: locale,

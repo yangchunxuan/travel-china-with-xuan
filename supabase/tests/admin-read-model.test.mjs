@@ -551,7 +551,7 @@ test("Admin Edge functions expose only three fixed read RPCs", async () => {
   const trafficContracts = await source(trafficContractsPath);
   assert.match(insights, /"get_homeground_admin_insights"/);
   assert.match(health, /"get_homeground_admin_health"/);
-  assert.match(traffic, /"get_homeground_admin_traffic"/);
+  assert.match(traffic, /"get_homeground_admin_traffic_v2"/);
   assert.doesNotMatch(
     `${insights}\n${health}\n${traffic}`,
     /create_|update_|delete_|list_|detail_|search_|export_/,

@@ -41,6 +41,7 @@ import {
   type AdminMetricOption,
   type AdminTrafficCount,
   type AdminTrafficDimensionBucket,
+  type AdminTrafficDimensionKind,
   type AdminTrafficLabelBucket,
   type AdminTrafficResponse,
   createAdminAuthClient,
@@ -51,6 +52,8 @@ import {
 } from "../../lib/adminClient";
 import { selectUnverifiedTotpFactors } from "../../lib/adminMfa";
 import { canCommitAdminResponse } from "../../lib/adminRequestEpoch";
+import { InternalTrafficControl } from "./InternalTrafficControl";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext";
 import styles from "./AdminInsightsPage.module.css";
 
 type AuthStage =
@@ -312,17 +315,26 @@ function trafficCountCopy(value: AdminTrafficCount): string {
 
 function trafficLabelCopy(
   value: AdminTrafficLabelBucket,
-  kind: "source" | "campaign" | "page",
+  kind: AdminTrafficDimensionKind,
 ): string {
   if (value.bucketType === "unknown") {
     return "Unknown（没有可用标签）";
   }
   if (value.bucketType === "suppressed") {
+    if (kind === "product" || kind === "product_selection") return "低量产品或选择（已合并）";
     return kind === "page"
       ? "低量页面（已合并）"
       : kind === "campaign"
         ? "低量活动（已合并）"
         : "低量来源（已合并）";
+  }
+  if (kind === "product" || kind === "product_selection") {
+    const [slug, packageId, travelers] = (value.label ?? "").split("|");
+    const selection = getPrivateTourInquirySelection(slug, packageId, travelers);
+    const context = getPrivateTourInquiryContext(slug, "zh", selection ?? undefined);
+    if (!context) return "产品标签不可用";
+    const selectionLabel = privateTourInquirySelectionLabel(context, "zh");
+    return selectionLabel ? `${context.name} · ${selectionLabel}` : context.name;
   }
   return value.label ?? "标签不可用";
 }
@@ -418,8 +430,8 @@ function PageIntro() {
         <span className={styles.eyebrow}>仅限负责人访问</span>
         <h1>已保存询盘洞察</h1>
         <p>
-          这里汇总网站成功保存且目前仍保留的询盘选择，并检查内部接收链路。
-          它不是访客分析、平台归因或客户跟进系统。
+          这里汇总网站实际保存且仍在保留期内的咨询选择，以及访客允许记录的匿名网站行为。
+          你可以查看产品关注情况和接收链路状态。
         </p>
       </div>
       <div className={styles.boundaryBadge}>
@@ -457,7 +469,7 @@ function ConfigPanel({
       </div>
       <h2 id="config-title">私有后台尚未启用</h2>
       <p>
-        页面本身已经可以使用，但正式认证或两个只读数据地址还没有完整配置。
+        页面本身已经可以使用，但正式认证或必要的只读数据地址还没有完整配置。
         当前不会发出任何业务数据请求。
       </p>
       <div className={styles.notice} role="status">
@@ -1313,7 +1325,7 @@ function TrafficDimensionCard({
 }: {
   title: string;
   description: string;
-  kind: "source" | "campaign" | "page";
+  kind: AdminTrafficDimensionKind;
   buckets: AdminTrafficDimensionBucket[];
 }) {
   return (
@@ -1437,7 +1449,24 @@ function TrafficSection({
                   <dd>{trafficCountCopy(value as AdminTrafficCount)}</dd>
                 </div>
               ))}
+              {([
+                ["产品浏览", traffic.totals.productViews],
+                ["主动更改产品选择", traffic.totals.productSelections],
+                ["尝试提交咨询", traffic.totals.formSubmitAttempts],
+                ["明确提交失败", traffic.totals.formSubmitFailures],
+                ["提交结果待确认", traffic.totals.formSubmitUncertain],
+              ] as const).map(([label, value]) => (
+                <div className={styles.statItem} key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value ? trafficCountCopy(value) : "尚未提供"}</dd>
+                </div>
+              ))}
             </dl>
+            <p className={styles.smallNote}>
+              产品选择统计只计算访客主动更改的公开服务版本与人数，不包含页面默认值。提交次数包含重试；“结果待确认”表示网络等原因使浏览器无法确认保存结果，不等于失败。
+              已关联询盘以服务器实际保存的记录为准。
+              {traffic.contractVersion === "homeground-admin-traffic.v2" ? "已排除标记过的测试咨询与测试访问。" : ""}
+            </p>
             <p className={styles.smallNote}>
               “已关联询盘”只表示询盘在同一浏览器匿名会话中完成了技术关联，不证明首次获客来源，也不能据此计算平台转化率。Unknown
               始终保留，不猜测、不分摊。
@@ -1463,7 +1492,22 @@ function TrafficSection({
               kind="page"
               buckets={traffic.dimensions.pages}
             />
+            {traffic.dimensions.products ? <TrafficDimensionCard
+              title="客户关注的产品"
+              description="公开产品的浏览次数；不是不同客户人数。"
+              kind="product"
+              buckets={traffic.dimensions.products}
+            /> : null}
+            {traffic.dimensions.productSelections ? <TrafficDimensionCard
+              title="客户主动选择的版本与人数"
+              description="只统计主动更改；同一会话可能多次调整。"
+              kind="product_selection"
+              buckets={traffic.dimensions.productSelections}
+            /> : null}
           </div>
+          <p className={styles.smallNote}>
+            每个分类最多显示 30 组，优先保留数量较多的分组，并保留未知来源与低量合并项。上方总量包含完整窗口，不能用这里展示的分组相加核对总量。
+          </p>
 
           <div className={styles.subsection}>
             <div className={styles.subsectionHeading}>
@@ -2170,6 +2214,7 @@ export function AdminInsightsPage() {
       />
       <main id="admin-main" className={styles.main}>
         <PageIntro />
+        <InternalTrafficControl />
         {!configResult.config ? (
           <ConfigPanel
             missing={configResult.missing}
