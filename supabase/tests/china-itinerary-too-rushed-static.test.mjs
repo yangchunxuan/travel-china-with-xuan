@@ -68,7 +68,7 @@ test("article has visible FAQs, Evan attribution and bounded editorial schema", 
   assert.match(article, /"@type": "BreadcrumbList"/);
   assert.match(article, /editorialPersonSchema\(locale\)/);
   assert.match(article, /author: \{ "@id": EDITORIAL_PERSON_ID \}/);
-  assert.match(article, /reviewedBy: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(article, /mainEntityOfPage: editorialReviewedPageSchema\(pageUrl\)/);
   assert.doesNotMatch(article, /FAQPage/);
   assert.match(article, /<LegacyEditorialByline/);
   assert.match(article, /reviewedAt=\{guide\.sourceReviewedDate\}/);

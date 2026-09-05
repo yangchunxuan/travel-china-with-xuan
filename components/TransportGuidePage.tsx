@@ -13,6 +13,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES } from "../lib/beijingZhangjiajieShanghaiTransport";
@@ -143,7 +144,7 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
-        mainEntityOfPage: guide.canonicalUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         image: {
           "@type": "ImageObject",
           url: guide.heroImageUrl,
@@ -152,7 +153,6 @@ function createStructuredData(
         },
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         citation: BEIJING_ZHANGJIAJIE_SHANGHAI_TRANSPORT_SOURCES.map(
           (source, index) => ({

@@ -13,12 +13,20 @@ interface PublicPriceTier {
   fromPrice?: number;
   price?: number;
   regularPrice?: number;
+  formattedPrice: string;
+  formattedRegularPrice?: string;
   featured: boolean;
 }
 
 interface PublicPricing {
   validFrom: string;
   validUntil: string;
+  validFromLabel: string;
+  validUntilLabel: string;
+  timeZoneLabel: string;
+  referenceNote: string;
+  basisLabel: string;
+  guideLanguageNote: string;
   publicNote: string;
   tiers: readonly PublicPriceTier[];
 }
@@ -34,20 +42,7 @@ interface PriceCopy {
   validThrough: string;
 }
 
-function formatPrice(value: number, locale: ProductPreviewLocale) {
-  const numberLocale = {
-    en: "en",
-    zh: "zh-CN",
-    ko: "ko-KR",
-  }[locale];
-
-  return new Intl.NumberFormat(numberLocale, {
-    maximumFractionDigits: 0,
-  }).format(value);
-}
-
 export function ZhangjiajiePrivateTourPriceWindow({
-  locale,
   copy,
   pricing,
   variant = "full",
@@ -60,25 +55,32 @@ export function ZhangjiajiePrivateTourPriceWindow({
   const [status, setStatus] = useState<PriceWindowStatus>("checking");
 
   useEffect(() => {
-    const now = Date.now();
-    setStatus(
-      now >= new Date(`${pricing.validFrom}T00:00:00+08:00`).getTime() &&
-        now <= new Date(pricing.validUntil).getTime()
-        ? "current"
-        : "expired",
-    );
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const checkWindow = () => {
+      const now = Date.now();
+      const startsAt = new Date(`${pricing.validFrom}T00:00:00+08:00`).getTime();
+      const endsAt = new Date(pricing.validUntil).getTime();
+      setStatus(
+        now >= startsAt && now <= endsAt ? "current" : "expired",
+      );
+      // Recheck at the boundary if the visitor leaves the page open.
+      const nextBoundary = now < startsAt ? startsAt : endsAt + 1;
+      if (Number.isFinite(nextBoundary) && nextBoundary > now) {
+        timer = setTimeout(checkWindow, Math.min(nextBoundary - now, 2_147_483_647));
+      }
+    };
+    checkWindow();
+    return () => clearTimeout(timer);
   }, [pricing.validFrom, pricing.validUntil]);
 
-  if (status === "checking") {
-    return (
-      <div
-        aria-live="polite"
-        className={styles.priceStatus}
-      >
-        <span>{copy.checkingPrice}</span>
-      </div>
-    );
-  }
+  const validity = (
+    <p className={styles.priceValidity}>
+      <time dateTime={`${pricing.validFrom}T00:00:00+08:00`}>{pricing.validFromLabel}</time>
+      {" – "}
+      <time dateTime={pricing.validUntil}>{pricing.validUntilLabel}</time>
+      {" · "}{pricing.timeZoneLabel}
+    </p>
+  );
 
   if (status === "expired") {
     return (
@@ -87,6 +89,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
         className={styles.priceStatus}
       >
         <strong>{copy.expiredPrice}</strong>
+        {validity}
       </div>
     );
   }
@@ -97,28 +100,39 @@ export function ZhangjiajiePrivateTourPriceWindow({
       .filter((tier): tier is typeof tier & { displayedPrice: number } =>
         typeof tier.displayedPrice === "number",
       )
-      .reduce((lowest, tier) =>
-        tier.displayedPrice < lowest.displayedPrice ? tier : lowest,
-      );
+      .sort((left, right) => left.displayedPrice - right.displayedPrice)[0];
 
     return (
-      <p aria-live="polite" className={styles.compactPrice}>
-        <span>{copy.fromLabel}</span>
-        <strong>CNY {formatPrice(startingTier.displayedPrice, locale)}</strong>
-        <small>{copy.perPerson}</small>
-      </p>
+      <div aria-live="polite" className={styles.priceSummary}>
+        {status === "checking" ? <strong>{copy.checkingPrice}</strong> : null}
+        <p className={styles.compactPrice}>
+          <span>{copy.fromLabel}</span>
+          <strong>{startingTier?.formattedPrice ?? "—"}</strong>
+          <small>{copy.perPerson}</small>
+        </p>
+        {startingTier ? <p>{startingTier.name}</p> : null}
+        <p>{pricing.basisLabel}</p>
+        {validity}
+        {status === "checking" ? <p>{pricing.referenceNote}</p> : null}
+        <p>{pricing.guideLanguageNote}</p>
+      </div>
     );
   }
 
   return (
     <div aria-live="polite">
-      <p className={styles.priceValidity}>{copy.validThrough}</p>
+      {status === "checking" ? (
+        <div className={styles.priceReference}>
+          <strong>{copy.checkingPrice}</strong>
+          <p>{pricing.referenceNote}</p>
+        </div>
+      ) : null}
+      {validity}
+      <p className={styles.priceBasis}>{pricing.basisLabel}</p>
       <div className={styles.priceGrid}>
         {pricing.tiers.map((tier) => {
           const fromPrice = tier.fromPrice;
-          const price = tier.price;
           const regularPrice = tier.regularPrice;
-          const displayedPrice = fromPrice ?? price;
 
           return (
             <article
@@ -133,14 +147,12 @@ export function ZhangjiajiePrivateTourPriceWindow({
               <h3>{tier.name}</h3>
               <p className={styles.priceValue}>
                 {fromPrice ? <span>{copy.fromLabel}</span> : null}
-                <strong>
-                  CNY {displayedPrice ? formatPrice(displayedPrice, locale) : "—"}
-                </strong>
+                <strong>{tier.formattedPrice}</strong>
                 <small>{copy.perPerson}</small>
               </p>
               {regularPrice ? (
                 <p className={styles.regularPrice}>
-                  {copy.regularLabel}: CNY {formatPrice(regularPrice, locale)}
+                  {copy.regularLabel}: {tier.formattedRegularPrice}
                 </p>
               ) : null}
               <p>{tier.description}</p>
@@ -150,6 +162,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
         })}
       </div>
       <p className={styles.priceFootnote}>{pricing.publicNote}</p>
+      <p className={styles.priceFootnote}>{pricing.guideLanguageNote}</p>
     </div>
   );
 }

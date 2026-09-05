@@ -19,6 +19,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
@@ -94,10 +95,9 @@ function createStructuredData(locale: HomegroundLocale) {
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
-        mainEntityOfPage: pageUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(pageUrl),
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
       },
       {

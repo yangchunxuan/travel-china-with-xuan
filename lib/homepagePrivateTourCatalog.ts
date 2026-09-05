@@ -14,6 +14,7 @@ export interface HomepagePrivateTourItem {
     readonly formatted: string;
     readonly travelers: number;
     readonly serviceLabel: string;
+    readonly validityNote?: string;
   };
   readonly image: {
     readonly src: string;
@@ -72,6 +73,7 @@ export function getHomepagePrivateTourItems(
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,
             serviceLabel: product.startingPrice.serviceLabel,
+            validityNote: product.startingPrice.validityNote,
           },
           image: product.image,
         }) satisfies HomepagePrivateTourItem,

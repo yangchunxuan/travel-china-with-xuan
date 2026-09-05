@@ -128,7 +128,7 @@ test("approved USD20-under-benchmark prices survive localization without USD10 r
   assert.equal(getPrivateTourStartingPrice(beijing).selection.packageId, "no-guide");
   const guilin = getPublishedPrivateTourCatalog("en").find((p) => p.slug === cases[1][0]);
   assert.equal(guilin.startingPrice.amount, 769);
-  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "$769");
+  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0769");
 });
 
 test("explicit USD prices retain conversion and display validation", () => {
@@ -136,7 +136,7 @@ test("explicit USD prices retain conversion and display validation", () => {
     assert.throws(() => formatPrivateTourPrice(5453, "en", invalid), RangeError);
     assert.throws(() => formatPrivateTourPrice(5453, "zh", invalid), RangeError);
   }
-  assert.equal(formatPrivateTourPrice(5453, "en", 839).formatted, "$839");
+  assert.equal(formatPrivateTourPrice(5453, "en", 839).formatted, "USD\u00a0839");
   assert.equal(formatPrivateTourPrice(5453, "en").amount, 840, "default conversion for other products is unchanged");
 });
 

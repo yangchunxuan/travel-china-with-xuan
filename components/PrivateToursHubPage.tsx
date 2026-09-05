@@ -4,6 +4,7 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import {
+  englishMarketPlanning,
   getPrivateTourHubCopy,
   getPrivateTourHubLanguagePaths,
   getPrivateTourHubPlannerPath,
@@ -147,6 +148,7 @@ function TourComparisonCard({
                 {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
                 {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
               </small>
+              {product.startingPrice.validityNote && <small>{product.startingPrice.validityNote}</small>}
             </p>
             <p className={styles.description}>{product.comparison.appeal}</p>
 
@@ -217,6 +219,7 @@ function CompactTourComparison({
               {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
               {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
             </span>
+            {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
           </p>
         </div>
         <dl className={styles.quickDetails}>
@@ -296,7 +299,10 @@ export function PrivateToursHubPage({
               <p className={styles.eyebrow}>{copy.quickCompareEyebrow}</p>
               <h2 id="tour-quick-compare-title">{copy.quickCompareTitle}</h2>
             </div>
-            <p>{copy.quickCompareIntroduction}</p>
+            <div className={styles.priceContext}>
+              <p>{copy.quickCompareIntroduction}</p>
+              <p>{copy.priceBasisNote}</p>
+            </div>
           </div>
           <ol className={styles.quickList}>
             {products.map((product, index) => (
@@ -335,6 +341,32 @@ export function PrivateToursHubPage({
             ))}
           </ol>
         </section>
+
+        {locale === "en" && (
+          <section className={styles.arrivalPlanning} aria-labelledby="tour-arrival-title">
+            <header>
+              <p className={styles.eyebrow}>{englishMarketPlanning.eyebrow}</p>
+              <h2 id="tour-arrival-title">{englishMarketPlanning.title}</h2>
+              <p>{englishMarketPlanning.introduction}</p>
+            </header>
+            <div className={styles.arrivalQuestions}>
+              {englishMarketPlanning.questions.map((item) => (
+                <div key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              ))}
+            </div>
+            <nav aria-label={englishMarketPlanning.preparationLabel} className={styles.arrivalLinks}>
+              <p>{englishMarketPlanning.preparationLabel}</p>
+              <ul>
+                {englishMarketPlanning.links.map((item) => (
+                  <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
+                ))}
+              </ul>
+            </nav>
+          </section>
+        )}
 
         <section className={styles.finalSection} aria-labelledby="tour-final-title">
           <div className={styles.finalInner}>

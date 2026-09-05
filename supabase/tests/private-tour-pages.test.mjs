@@ -284,8 +284,8 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
       ({ travelers, formatted }) => ({ travelers, formatted }),
     ),
     [
-      { travelers: 2, formatted: "$1,930" },
-      { travelers: 4, formatted: "$1,260" },
+      { travelers: 2, formatted: "USD\u00a01,930" },
+      { travelers: 4, formatted: "USD\u00a01,260" },
     ],
   );
   assert.deepEqual(

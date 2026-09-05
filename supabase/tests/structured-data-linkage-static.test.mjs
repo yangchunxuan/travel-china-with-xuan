@@ -84,6 +84,7 @@ test("structured editorial and author pages link back to the website entity", as
       /isPartOf:\s*\{\s*"@id":\s*EDITORIAL_WEBSITE_ID\s*\}/,
     );
   }
+  assert.match(guide, /mainEntityOfPage: editorialReviewedPageSchema\(guide\.canonicalUrl\)/);
 
   assert.match(author, /EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT/);
   assert.match(
@@ -124,6 +125,11 @@ test("all bespoke editorial articles use the same linked identity graph", async 
       component,
       /isPartOf:\s*\{\s*"@id":\s*EDITORIAL_WEBSITE_ID\s*\}/,
       `${articleComponents[index]} must link its Article to the WebSite`,
+    );
+    assert.match(
+      component,
+      /mainEntityOfPage: editorialReviewedPageSchema\(/,
+      `${articleComponents[index]} must retain its reviewer on the associated WebPage`,
     );
   }
 });
