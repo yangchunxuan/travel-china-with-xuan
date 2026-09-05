@@ -14,7 +14,7 @@ import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalo
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
-import { privateTourProducts, localizePrivateTourProduct } from "../../lib/privateTourProducts.ts";
+import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
 
 const locales = ["en", "zh", "ko"];
 const beijingSlug = "beijing-highlights-5-day-private-tour";
@@ -105,8 +105,39 @@ test("every published service/group survives detail links, language changes and 
   }
   const beijing = privateTourProducts.find((p) => p.slug === beijingSlug);
   assert.deepEqual(beijing.packages.map((p) => [p.id, p.prices.map((r) => r.cnyPerPerson)]), [
-    ["english-guided", [7302, 4806]], ["no-guide", [4973, 3974]],
+    ["english-guided", [5453, 4348]], ["no-guide", [4973, 3974]],
   ]);
+});
+
+test("approved USD20-under-benchmark prices survive localization without USD10 rounding", () => {
+  const cases = [
+    [beijingSlug, "english-guided", [839, 669], [5453, 4348], [1180000, 940000]],
+    ["guilin-yangshuo-5-day-private-tour", "standard-guided", [769, 629], [4998, 4088], [1080000, 880000]],
+  ];
+  for (const [slug, packageId, usd, cny, krw] of cases) {
+    const product = privateTourProducts.find((p) => p.slug === slug);
+    for (const [locale, expected] of [["en", usd], ["zh", cny], ["ko", krw]]) {
+      const localized = localizePrivateTourProduct(product, locale);
+      const rows = localized.packages.find((p) => p.id === packageId).rows;
+      assert.deepEqual(rows.map((row) => row.travelers), [2, 4]);
+      assert.deepEqual(rows.map((row) => row.amount), expected, `${slug}:${locale}`);
+    }
+  }
+  const beijing = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === beijingSlug), "en");
+  assert.deepEqual(beijing.packages.find((p) => p.id === "no-guide").rows.map((row) => row.amount), [770, 620]);
+  assert.equal(getPrivateTourStartingPrice(beijing).selection.packageId, "no-guide");
+  const guilin = getPublishedPrivateTourCatalog("en").find((p) => p.slug === cases[1][0]);
+  assert.equal(guilin.startingPrice.amount, 769);
+  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "$769");
+});
+
+test("explicit USD prices retain conversion and display validation", () => {
+  for (const invalid of [0, -1, NaN, Infinity, 839.5, 838]) {
+    assert.throws(() => formatPrivateTourPrice(5453, "en", invalid), RangeError);
+    assert.throws(() => formatPrivateTourPrice(5453, "zh", invalid), RangeError);
+  }
+  assert.equal(formatPrivateTourPrice(5453, "en", 839).formatted, "$839");
+  assert.equal(formatPrivateTourPrice(5453, "en").amount, 840, "default conversion for other products is unchanged");
 });
 
 test("detail parameters reject duplicates, incomplete and cross-product choices", () => {
