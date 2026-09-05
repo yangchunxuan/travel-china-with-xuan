@@ -12,6 +12,9 @@ export const metadata: Metadata = {
       "naver-site-verification":
         "a721e6b305cee6093aa68b45b3826bffdb9aa455",
       "p:domain_verify": "ed1535ad23b359f2d828a60b4c89ba98",
+      "msvalidate.01": "C3B08E57904F7FB8995048D0D0EE1A92",
+      "ahrefs-site-verification":
+        "008826387cc4ee8dba5d2346530e43243b31219c202a9f3bde50bf4dfcd3b5aa",
     },
   },
   title: {
