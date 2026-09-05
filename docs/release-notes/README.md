@@ -6,10 +6,11 @@ evidence.
 
 ## Current production record
 
+- [2026-09-05 private-tour selection backend checkpoint](./private-tour-selection-backend-release-20260905.md) — backend deployed; frontend pending at this recorded checkpoint. For subsequent frontend status, check [PR #125](https://github.com/yangchunxuan/travel-china-with-xuan/pull/125), its [Pages deployment](https://github.com/yangchunxuan/travel-china-with-xuan/actions/workflows/deploy.yml), and any later dated final release record.
+
+## Earlier production records
+
 - [2026-08-23 authority-map and Hub-link production release](./authority-map-and-hub-links-production-release-20260823.md)
-
-## Earlier same-day baseline
-
 - [2026-08-23 homepage city-discovery production release](./homepage-city-discovery-production-release-20260823.md)
 - [2026-08-23 search, analytics and privacy production release](./search-analytics-privacy-production-release-20260823.md)
 

@@ -1,7 +1,13 @@
 # Inquiry navigation measurement — 2026-09-05
 
-Status: local implementation and mocked runtime verification; not a production
-release or account-setting change.
+This is a local implementation and mocked runtime verification record. These
+checks made no production requests or account-setting changes. Frontend release
+status is tracked by [PR #125](https://github.com/yangchunxuan/travel-china-with-xuan/pull/125),
+its automatic [Pages deployment](https://github.com/yangchunxuan/travel-china-with-xuan/actions/workflows/deploy.yml)
+and the latest [production release record](./release-notes/README.md). At the
+[2026-09-05 backend checkpoint](./release-notes/private-tour-selection-backend-release-20260905.md),
+the frontend had not yet been merged or deployed; these local results do not
+establish a later live state or GA/Meta ingestion.
 
 The former query/fragment gate suppressed GA events after ordinary product and
 service links opened the homepage contact section. The GA gate now recognizes
