@@ -136,12 +136,12 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "After the traveller first interacts with the trip brief, the form may keep selected structured answers in this browser’s session storage so progress can be restored. It never stores the free-text “other place”, route note, contact details, optional departure country or rough budget there. This browser copy is cleared after 30 minutes without planner activity, on restart and after a successful enquiry.",
         "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional planning-service choice, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
-        "The homepage quick-email option sends the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. When the contact area was opened from a published private-tour page, it also sends that tour’s allowlisted slug and canonical localised name; a name supplied in the URL is never accepted. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
+        "The homepage quick-email option sends the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. When the contact area was opened from a published private-tour page, it also sends that tour’s allowlisted slug, canonical localised name and any valid service option and 2- or 4-traveller selection shown above the contact choices; a name supplied in the URL is never accepted. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
         "The homepage WhatsApp and Messenger options are direct outbound links. Opening either link does not save the visitor’s phone number or message on Homeground’s website and is not treated as a submitted enquiry. If the visitor then sends a message, WhatsApp or Facebook and Meta process that conversation under their own terms and infrastructure.",
         "If the visitor allows analytics, Homeground creates a temporary anonymous browser-session token. The event service first issues a short-lived signed credential; bare or expired event requests are rejected. A limited first-touch source is recorded only when the landing link contains Homeground-signed UTM source, medium, campaign and content codes. Unsigned, altered or unrecognised UTM values remain Unknown. The website-event record does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer.",
-        "With analytics permission, Homeground may record page views and a small set of fixed actions such as opening the contact area, starting the quick-email field, or clicking Email, WhatsApp or Messenger. A click means only that an option was opened; it does not prove that a message was sent or a booking was made.",
+        "With analytics permission, Homeground records page views and fixed actions: viewing contact options, choosing a channel, opening a contact link, starting the email form, changing a published tour option, and attempting to submit an enquiry. The first-party service may also receive the published product code, service option and displayed group-size choice of 2 or 4 travellers. These product-choice fields are not sent to Google Analytics or Meta Pixel. A click means only that an option was opened; it does not prove that a message was sent or a booking was made. Definite submission failures and results the browser cannot confirm are recorded separately; saved enquiries are counted from server records. Temporary retries keep the same event identifier and are cleared when analytics permission is withdrawn.",
         "When the same browser later submits an enquiry, the saved first-touch labels may be attached to that enquiry so Homeground can understand which page or post led to it. The enquiry still succeeds when no session or source is available, and an unknown source is never guessed.",
-        "Authorised staff may view restricted aggregate counts and, only after the 30-day window contains at least five eligible anonymous sessions that are not linked to enquiries, a day-level recent-session summary without per-session click or event timelines. Contact details, trip answers and message text are kept out of analytics and are not sent to Google Analytics or Meta Pixel.",
+        "Authorised staff may view restricted aggregate counts and, only after the 30-day window contains at least five eligible anonymous sessions that are not linked to enquiries, a day-level recent-session summary without per-session click or event timelines. Contact details, trip-questionnaire answers and message text are kept out of analytics and are not sent to Google Analytics or Meta Pixel.",
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
         "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
@@ -208,7 +208,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "Browser, Homeground first-party event service and optional Google Analytics or Meta Pixel",
           purpose:
-            "After permission, a temporary session token, short-lived signed event credential, page path, language, Homeground-signed first-touch campaign codes and fixed event/action codes help Homeground understand useful pages and contact attempts. Unsigned campaign labels stay Unknown. The event service excludes names, email addresses, phone numbers, trip answers, messages, raw IP addresses, user-agent strings and full referrer URLs.",
+            "After permission, a temporary session token, short-lived signed event credential, page path, language, Homeground-signed first-touch campaign codes and fixed event/action codes help Homeground understand useful pages and contact attempts. Published product, service and group-size choices are sent only to the first-party service. Unsigned campaign labels stay Unknown. The event service excludes names, email addresses, phone numbers, trip-questionnaire answers, messages, raw IP addresses, user-agent strings and full referrer URLs.",
         },
       ],
     },
@@ -386,12 +386,12 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "访客首次操作旅行简报后，表单可能把选定的结构化答案保存在当前浏览器会话中，以便恢复进度；“其他地点”自由文本、路线说明、联系方式、选填出发国家或地区和大致预算永远不会存入这里。连续 30 分钟没有操作、重新开始或咨询保存成功后，这份浏览器副本会被清除。",
         "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
-        "首页“只留邮箱”会发送所填邮箱、页面语言、固定的语言版提交页面代码，以及可靠提交和限流所需的有限技术记录；如果联系区域由已发布私家团页面打开，还会发送该产品经白名单确认的 slug 与正式中文名，网址里自行填写的产品名称不会被接受。该入口不会收集路线、同行者资料、日期、目的地、预算或自由文本。只有 Supabase 确认保存后，页面才会显示成功。",
+        "首页“只留邮箱”会发送所填邮箱、页面语言、固定的语言版提交页面代码，以及可靠提交和限流所需的有限技术记录；如果联系区域由已发布私家团页面打开，还会发送该产品经白名单确认的 slug、正式中文名，以及联系选项上方显示的有效服务版本和 2 人或 4 人选择，网址里自行填写的产品名称不会被接受。该入口不会收集路线、同行者资料、日期、目的地、预算或自由文本。只有 Supabase 确认保存后，页面才会显示成功。",
         "首页 WhatsApp 与 Messenger 是直接跳转到外部服务的链接。打开链接不会在 Homeground 网站保存访客电话号码或消息，也不会被记作已提交咨询；访客随后主动发送消息时，该对话由 WhatsApp 或 Facebook 与 Meta 依据其自身条款和基础设施处理。",
         "访客允许分析统计后，Homeground 会创建临时匿名浏览器会话令牌；事件服务会先签发短时有效的签名凭据，没有凭据或凭据过期的事件请求会被拒绝。只有进入链接带有 Homeground 签名的 UTM 来源、媒介、活动和内容代码时，才会记录有限的首次来源；未签名、被修改或无法识别的 UTM 一律保留为“未知”。网站事件记录不保存完整来源网址、原始 IP、User-Agent、广告点击标识、联系方式或旅行自由文本。",
-        "获得分析许可后，Homeground 可记录页面浏览及少量固定动作，例如打开联系区域、开始填写快速邮箱、点击 Email、WhatsApp 或 Messenger。点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订。",
+        "获得分析许可后，Homeground 可记录页面浏览及固定动作：看到联系选项、选择联系方式、打开联系链接、开始填写邮箱、主动更改公开产品选项，以及尝试提交咨询。第一方事件服务还可接收公开产品编号、服务版本和页面显示的 2 人或 4 人选项；这些产品选择字段不会发送给 Google Analytics 或 Meta Pixel。点击不证明消息已经发出，也不代表已经预订。明确提交失败和浏览器无法确认的提交结果分别记录；已保存咨询以服务器记录为准。临时重试使用同一事件编号，撤回分析许可后会清空待发送记录。",
         "同一浏览器随后提交咨询时，已保存的首次来源标签可附在该咨询上，以判断哪一页或哪条外部内容带来咨询。没有会话或来源时，咨询仍会正常保存；未知来源不会被猜测或分摊。",
-        "获授权的工作人员可查看受限汇总计数；只有当 30 天窗口至少包含 5 个符合展示边界且未关联询盘的匿名会话时，后台才会显示精确到天、且不含逐会话点击或事件时间线的近期会话摘要。联系方式、旅行答案与消息内容不会进入分析事件，也不会发送给 Google Analytics 或 Meta Pixel。",
+        "获授权的工作人员可查看受限汇总计数；只有当 30 天窗口至少包含 5 个符合展示边界且未关联询盘的匿名会话时，后台才会显示精确到天、且不含逐会话点击或事件时间线的近期会话摘要。联系方式、旅行问卷答案与消息内容不会进入分析事件，也不会发送给 Google Analytics 或 Meta Pixel。",
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
         "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
@@ -446,7 +446,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "浏览器、Homeground 第一方事件服务，以及可选的 Google Analytics 或 Meta Pixel",
           purpose:
-            "获得许可后，临时会话令牌、短时签名事件凭据、页面路径、语言、由 Homeground 签名的首次活动代码和固定事件代码，可帮助判断哪些页面和联系入口有用；未签名的活动标签保持为“未知”。事件服务不保存姓名、邮箱、电话、旅行答案、消息、原始 IP、User-Agent 或完整来源网址。",
+            "获得许可后，临时会话令牌、短时签名事件凭据、页面路径、语言、由 Homeground 签名的首次活动代码和固定事件代码，以及仅进入第一方服务的公开产品、服务版本和人数选项，可帮助判断哪些页面和联系入口有用；未签名的活动标签保持为“未知”。事件服务不保存姓名、邮箱、电话、旅行问卷答案、消息、原始 IP、User-Agent 或完整来源网址。",
         },
       ],
     },
@@ -622,12 +622,12 @@ export const homegroundPrivacyCopy: Record<
       paragraphs: [
         "여행자가 여행 브리프를 처음 조작한 뒤 양식은 진행 상태를 복원하기 위해 선택한 구조화 답변을 현재 브라우저 세션에 보관할 수 있습니다. ‘그 밖의 장소’ 자유 입력 문구, 동선 메모, 연락처, 선택 입력한 출발 국가 또는 지역과 대략적인 예산은 여기에 저장하지 않습니다. 30분 동안 조작하지 않거나 다시 시작하거나 문의 저장에 성공하면 이 브라우저 사본을 삭제합니다.",
         "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
-        "홈페이지의 간단 이메일 옵션은 입력한 이메일 주소, 페이지 언어, 고정된 언어별 제출 화면 번호와 안정적인 제출 및 속도 제한에 필요한 최소한의 기술 기록을 전송합니다. 연락 영역이 공개된 프라이빗 투어 페이지에서 열렸다면 허용 목록으로 확인한 상품 slug와 공식 한국어 이름도 전송하며, URL에서 임의로 제공한 상품 이름은 받지 않습니다. 동선, 여행자 정보, 날짜, 목적지, 예산 또는 자유 입력 문구는 수집하지 않으며 Supabase가 저장을 확인한 뒤에만 성공을 표시합니다.",
+        "홈페이지의 간단 이메일 옵션은 입력한 이메일 주소, 페이지 언어, 고정된 언어별 제출 화면 번호와 안정적인 제출 및 속도 제한에 필요한 최소한의 기술 기록을 전송합니다. 연락 영역이 공개된 프라이빗 투어 페이지에서 열렸다면 허용 목록으로 확인한 상품 slug, 공식 한국어 이름, 연락 옵션 위에 표시된 유효한 서비스 유형과 2명 또는 4명 선택도 전송하며, URL에서 임의로 제공한 상품 이름은 받지 않습니다. 동선, 여행자 정보, 날짜, 목적지, 예산 또는 자유 입력 문구는 수집하지 않으며 Supabase가 저장을 확인한 뒤에만 성공을 표시합니다.",
         "홈페이지의 WhatsApp 및 Messenger 옵션은 외부 서비스로 바로 이동하는 링크입니다. 링크를 여는 것만으로는 Homeground 웹사이트가 방문자의 전화번호나 메시지를 저장하지 않으며 제출된 문의로 처리하지 않습니다. 이후 방문자가 메시지를 보내면 WhatsApp 또는 Facebook과 Meta가 자체 약관과 인프라에 따라 대화를 처리합니다.",
         "방문자가 분석을 허용하면 Homeground는 임시 익명 브라우저 세션 토큰을 만듭니다. 이벤트 서비스는 먼저 짧은 유효기간의 서명된 자격 증명을 발급하며 자격 증명이 없거나 만료된 이벤트 요청은 거부합니다. 첫 유입 링크에 Homeground가 서명한 UTM 소스·매체·캠페인·콘텐츠 코드가 있을 때만 제한된 유입 정보를 기록하고, 서명이 없거나 변경되었거나 인식되지 않는 UTM 값은 ‘알 수 없음’으로 둡니다. 웹사이트 이벤트에는 전체 리퍼러 URL, 원본 IP, User-Agent, 광고 클릭 식별자, 연락처 또는 자유 입력 여행 답변을 저장하지 않습니다.",
-        "분석 허용 후에는 페이지 조회와 연락 영역 열기, 간단 이메일 입력 시작, Email·WhatsApp·Messenger 클릭처럼 고정된 소수의 동작을 기록할 수 있습니다. 클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않습니다.",
+        "분석을 허용하면 페이지 조회와 연락 옵션 보기, 연락 수단 선택, 연락 링크 열기, 이메일 입력 시작, 공개 상품 옵션 변경, 문의 제출 시도 등 정해진 동작을 기록할 수 있습니다. 자체 이벤트 서비스에는 공개 상품 코드, 서비스 유형, 화면에서 선택한 2명 또는 4명 옵션도 전송할 수 있으며, 이 상품 선택 항목은 Google Analytics나 Meta Pixel로 보내지 않습니다. 클릭은 메시지 전송이나 예약 완료를 증명하지 않습니다. 명확한 제출 실패와 브라우저가 결과를 확인하지 못한 경우는 구분하며, 저장된 문의는 서버 기록을 기준으로 집계합니다. 임시 재시도는 같은 이벤트 식별자를 사용하고 분석 동의를 철회하면 전송 대기 기록을 지웁니다.",
         "같은 브라우저에서 나중에 문의를 제출하면 저장된 첫 유입 표지를 문의에 연결해 어떤 페이지나 외부 게시물이 문의로 이어졌는지 확인할 수 있습니다. 세션이나 유입 정보가 없어도 문의는 정상 저장되며 알 수 없는 유입은 추정하거나 배분하지 않습니다.",
-        "권한 있는 담당자는 제한된 집계 수치를 볼 수 있습니다. 최근 30일 창에 표시 기준을 충족하고 문의와 연결되지 않은 익명 세션이 5개 이상 있을 때만 날짜 단위의 최근 세션 요약이 표시되며 세션별 클릭 또는 이벤트 타임라인은 포함하지 않습니다. 연락처, 여행 답변 및 메시지 내용은 분석 이벤트에 포함하지 않고 Google Analytics 또는 Meta Pixel로 보내지 않습니다.",
+        "권한 있는 담당자는 제한된 집계 수치를 볼 수 있습니다. 최근 30일 창에 표시 기준을 충족하고 문의와 연결되지 않은 익명 세션이 5개 이상 있을 때만 날짜 단위의 최근 세션 요약이 표시되며 세션별 클릭 또는 이벤트 타임라인은 포함하지 않습니다. 연락처, 여행 설문 답변 및 메시지 내용은 분석 이벤트에 포함하지 않고 Google Analytics 또는 Meta Pixel로 보내지 않습니다.",
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
@@ -687,7 +687,7 @@ export const homegroundPrivacyCopy: Record<
           stage:
             "브라우저, Homeground 퍼스트파티 이벤트 서비스 및 선택적 Google Analytics 또는 Meta Pixel",
           purpose:
-            "허용 후 임시 세션 토큰, 짧은 유효기간의 서명된 이벤트 자격 증명, 페이지 경로, 언어, Homeground가 서명한 첫 캠페인 코드와 고정 이벤트 코드는 유용한 페이지와 연락 시도를 이해하는 데 사용됩니다. 서명되지 않은 캠페인 표지는 ‘알 수 없음’으로 둡니다. 이벤트 서비스는 이름, 이메일, 전화번호, 여행 답변, 메시지, 원본 IP, User-Agent 또는 전체 리퍼러 URL을 저장하지 않습니다.",
+            "허용 후 임시 세션 토큰, 짧은 유효기간의 서명된 이벤트 자격 증명, 페이지 경로, 언어, Homeground가 서명한 첫 캠페인 코드와 고정 이벤트 코드, 자체 서비스에만 전달하는 공개 상품·서비스 유형·인원 옵션은 유용한 페이지와 연락 시도를 이해하는 데 사용됩니다. 서명되지 않은 캠페인 표지는 ‘알 수 없음’으로 둡니다. 이벤트 서비스는 이름, 이메일, 전화번호, 여행 설문 답변, 메시지, 원본 IP, User-Agent 또는 전체 리퍼러 URL을 저장하지 않습니다.",
         },
       ],
     },
