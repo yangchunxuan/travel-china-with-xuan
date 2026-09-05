@@ -347,6 +347,11 @@ const commonExclusions = (
   extraEn: readonly string[],
   extraZh: readonly string[],
   extraKo: readonly string[],
+  additionalServices: LocalizedText = l(
+    "Holiday, late-night, overtime and unlisted services",
+    "节假日、夜间、超时及未列服务",
+    "공휴일, 야간, 초과 시간 및 일정에 없는 서비스",
+  ),
 ): LocalizedStringList =>
   lists(
     [
@@ -354,7 +359,7 @@ const commonExclusions = (
       "Lunches and dinners",
       "Personal travel insurance, visas, tips and personal expenses",
       "Room upgrades or extra single-room requirements",
-      "Holiday, late-night, overtime and unlisted services",
+      additionalServices.en,
       ...extraEn,
     ],
     [
@@ -362,7 +367,7 @@ const commonExclusions = (
       "午餐和晚餐",
       "个人旅游意外险、签证、司导小费及个人消费",
       "房型升级或超出基础房间配置的单住需求",
-      "节假日、夜间、超时及未列服务",
+      additionalServices.zh,
       ...extraZh,
     ],
     [
@@ -370,7 +375,7 @@ const commonExclusions = (
       "중식과 석식",
       "개인 여행자 보험, 비자, 기사·가이드 팁 및 개인 경비",
       "객실 업그레이드 또는 기본 배정 외 1인실",
-      "공휴일, 야간, 초과 시간 및 일정에 없는 서비스",
+      additionalServices.ko,
       ...extraKo,
     ],
   );
@@ -2219,20 +2224,20 @@ const beijing: PrivateTourProduct = {
   highlights: lists(
     [
       "Temple of Heaven and Summer Palace",
-      "Tiananmen Square and the Forbidden City",
-      "Hutong lakes around Shichahai",
+      "Tiananmen Square and the Forbidden City (subject to confirmed real-name reservations)",
+      "Prince Kung's Mansion and Shichahai or Houhai (reservations and pace permitting)",
       "Badaling Great Wall and Olympic Park",
     ],
     [
       "天坛与颐和园",
-      "天安门广场与故宫",
-      "恭王府、什刹海与后海",
+      "天安门广场与故宫（需实名预约成功）",
+      "恭王府及什刹海或后海延伸游览（视预约及节奏安排）",
       "八达岭长城与奥林匹克公园",
     ],
     [
       "천단공원과 이화원",
-      "톈안먼광장과 자금성",
-      "공왕부와 스차하이·허우하이",
+      "톈안먼광장과 자금성 (실명 예약 확정 시)",
+      "공왕부와 스차하이 또는 허우하이 연계 탐방 (예약 시간과 여행 속도가 허용할 때)",
       "팔달령 만리장성과 올림픽공원",
     ],
   ),
@@ -2536,9 +2541,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "장자제 국립삼림공원 3박 4일 고정 코스 프라이빗 투어. 이틀간 도보 관광과 한 빌라 3박으로 구성됩니다. 케이블카·엘리베이터를 이용하지 않으며 유리다리·톈먼산은 포함하지 않습니다.",
   ),
   eyebrow: l(
-    "One villa · Two walking days · No paid mountain transport",
-    "三晚同住别墅 · 两天步行看峰林 · 不坐收费山地交通",
-    "한 빌라 3박 · 이틀간 걷는 산림 코스 · 유료 산악 교통 미이용",
+    "Same designated villa for 3 nights · Two walking forest days · No cable cars or elevators",
+    "三晚连住指定别墅 · 两天徒步森林公园 · 不乘索道与天梯",
+    "지정 빌라 3박 연박 · 이틀간 산림 도보 탐방 · 케이블카 및 엘리베이터 미이용",
   ),
   lede: l(
     "A lower-priced private route for travellers who want Zhangjiajie’s forest landscapes without cable cars, elevators or last-minute add-ons. Stay in the same Country Garden villa for all three nights, use the north gate for the high peaks, then walk the east-gate valleys before an evening at Seventy-Two Wonder Tower.",
@@ -2629,22 +2634,27 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   exclusions: commonExclusions(
     [
       "Bailong Elevator, Tianzi Mountain Cableway and Yangjiajie Cableway",
-      "Ten-Mile Gallery mini-train and any other paid scenic transport",
+      "Ten-Mile Gallery mini-train and other unlisted paid scenic transport (the Wulingyuan admission-and-shuttle package is included)",
       "An on-site guide during the Seventy-Two Wonder Tower evening",
       "Paid museum experiences, shows or any item not listed in the fixed route",
     ],
     [
       "百龙天梯、天子山索道与杨家界索道",
-      "十里画廊小火车及其他收费景区交通",
+      "十里画廊小火车及未列入包含项的其他收费景区交通（武陵源门票与环保车联票已含）",
       "七十二奇楼夜场现场导游",
       "博物馆收费体验、另购演出及固定路线未列项目",
     ],
     [
       "백룡 엘리베이터, 톈쯔산 케이블카와 양자제 케이블카",
-      "십리화랑 미니 열차 및 기타 유료 관광지 교통",
+      "십리화랑 미니 열차 및 포함 항목에 없는 기타 유료 관광지 교통 (우링위안 입장권·셔틀 패키지는 포함)",
       "칠십이기루 야간 현장 가이드",
       "박물관 유료 체험, 별도 공연 및 고정 일정에 명시되지 않은 항목",
     ],
+    l(
+      "Holiday, unlisted night-time, overtime and other unlisted services; Day 3 Seventy-Two Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
+      "节假日、未列夜间、超时及其他未列服务；D3 七十二奇楼普通夜场票及保险、专车往返与远程协助已含",
+      "공휴일, 미기재 야간, 초과 시간 및 기타 미기재 서비스. D3 칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함",
+    ),
   ),
   bookingNote: l(
     "This is a fixed route with no elective attraction swap or last-minute add-on. The exact villa, room plan, vehicle and ticket inventory must be reconfirmed for the selected non-holiday dates before payment. The published per-person starting prices cover groups of 2 and 4 travellers; flights are not included. Other group sizes and all child prices require a manual quote based on age, bed use and vehicle seats.",
