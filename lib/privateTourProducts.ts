@@ -26,6 +26,11 @@ export interface PrivateTourDay {
   description: LocalizedText;
 }
 
+export interface PrivateTourFaqItem {
+  question: LocalizedText;
+  answer: LocalizedText;
+}
+
 export interface PrivateTourImage {
   src: string;
   width: number;
@@ -55,6 +60,9 @@ export interface PrivateTourProduct {
     addedServicesRequirePriorAgreement: true;
   }>;
   title: LocalizedText;
+  // Search copy is separate from the controlled product and inquiry name.
+  metadataTitle?: LocalizedText;
+  metadataDescription?: LocalizedText;
   eyebrow: LocalizedText;
   lede: LocalizedText;
   summary: LocalizedText;
@@ -64,6 +72,7 @@ export interface PrivateTourProduct {
   serviceNote: LocalizedText;
   exclusions: LocalizedStringList;
   bookingNote: LocalizedText;
+  faq?: readonly PrivateTourFaqItem[];
   heroImage: PrivateTourImage;
   gallery: readonly PrivateTourImage[];
   routeMedia?: readonly PrivateTourRouteMediaGroup[];
@@ -131,6 +140,7 @@ export interface LocalizedPrivateTourProduct {
   serviceNote: string;
   exclusions: readonly string[];
   bookingNote: string;
+  faq?: readonly { question: string; answer: string }[];
   heroImage: LocalizedPrivateTourImage;
   gallery: readonly LocalizedPrivateTourImage[];
   routeMedia: readonly LocalizedPrivateTourRouteMediaGroup[];
@@ -1419,6 +1429,11 @@ const guilinYangshuo: PrivateTourProduct = {
     "桂林·阳朔 5 天 4 晚私家团",
     "구이린·양숴 5일 프라이빗 투어",
   ),
+  metadataDescription: l(
+    "Five-day Guilin and Yangshuo private tour with a Li River cruise, two Yangshuo nights, three English-guided days and separate cruise-day luggage transfer.",
+    "桂林阳朔5天4晚私家团，含漓江游船、阳朔连住2晚、D2–D4英语导游、行程内私车及游船日行李单独转运。桂林与阳朔各住2晚。",
+    "구이린·양숴 4박 5일 프라이빗 투어. 리강 유람선, 양숴 연속 2박, D2~D4 영어 가이드와 전용 차량, 유람선 당일 수하물 별도 이동이 포함됩니다.",
+  ),
   eyebrow: l(
     "River landscapes at an unhurried pace",
     "沿漓江慢慢进入山水之间",
@@ -1534,6 +1549,44 @@ const guilinYangshuo: PrivateTourProduct = {
     "수위와 날씨에 따라 유람선 또는 전원 체험이 달라질 수 있습니다. 결제 전 선편, 좌석 등급, 선착장, 수하물 인계와 연령·신장 제한을 확인합니다. " +
       commonBookingNote.ko,
   ),
+  faq: [
+    {
+      question: l(
+        "Is the Li River cruise included, and what happens to our luggage?",
+        "包含漓江游船吗？行李怎么走？",
+        "리강 유람선이 포함되나요? 수하물은 어떻게 이동하나요?",
+      ),
+      answer: l(
+        "The Day 2 cruise from Guilin to Yangshuo is included. Your luggage travels separately by road under a written handover plan. The sailing, cabin class, pier and luggage handover are confirmed before payment.",
+        "包含D2从桂林到阳朔的漓江游船。行李按书面交接方案另车转运；船班、舱等、码头和行李交接安排会在付款前确认。",
+        "D2 구이린에서 양숴로 가는 리강 유람선이 포함됩니다. 수하물은 서면 인계 계획에 따라 별도 차량으로 이동합니다. 선편, 좌석 등급, 선착장과 수하물 인계는 결제 전에 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Why stay two nights in Yangshuo, and does the route include Longji?",
+        "为什么在阳朔连住两晚？包含龙脊梯田吗？",
+        "양숴에서 왜 2박하나요? 룽지 계단식 논도 포함되나요?",
+      ),
+      answer: l(
+        "Two consecutive nights leave Day 3 for the Yulong River countryside without another hotel move. This five-day route returns to Guilin and does not include Longji Rice Terraces. Adding Longji would require a fresh review of the route, time and quote.",
+        "阳朔连住两晚，把D3留给遇龙河沿线乡村，不用当天再换酒店。这条5天路线随后返回桂林，不含龙脊梯田；如想加入龙脊，需要重新评估路线、时间和报价。",
+        "양숴에서 연속 2박하며 D3는 숙소를 옮기지 않고 위룽허 전원 지역을 둘러봅니다. 이 5일 코스는 구이린으로 돌아오며 룽지 계단식 논은 포함하지 않습니다. 룽지를 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are bamboo rafting and both Guilin attractions included?",
+        "竹筏、芦笛岩和象鼻山都包含吗？",
+        "대나무 뗏목과 구이린 관광지 두 곳이 모두 포함되나요?",
+      ),
+      answer: l(
+        "The Li River cruise is included; bamboo-raft upgrades are separate. Day 3 includes one simple family activity or gentle-cycling arrangement selected for your group. Day 4 includes only the confirmed choice of Reed Flute Cave or Elephant Trunk Hill, not both.",
+        "包含的是漓江游船，竹筏升级另计。D3含一项按同行者情况确认的基础家庭体验或轻骑行；D4只包含书面确认的芦笛岩或象鼻山其中一项，不是两项都含。",
+        "리강 유람선은 포함되지만 대나무 뗏목 업그레이드는 별도입니다. D3에는 일행에 맞춰 정한 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. D4는 서면으로 확정한 노적암 또는 상비산 중 한 곳만 포함됩니다.",
+      ),
+    },
+  ],
   heroImage: image(
     "/images/guides/yangshuo-town-or-yulong-river-where-to-stay/hero-1600.webp",
     l(
@@ -1656,7 +1709,7 @@ const guilinYangshuo: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-05",
 };
 
 const harbinWinter: PrivateTourProduct = {
@@ -2138,15 +2191,25 @@ const beijing: PrivateTourProduct = {
     "北京经典 5 天 4 晚私家团",
     "베이징 핵심 5일 프라이빗 투어",
   ),
+  metadataTitle: l(
+    "5-Day Beijing Private Tour: Badaling & Forbidden City",
+    "北京5天4晚私家团：八达岭长城与故宫",
+    "베이징 4박 5일 프라이빗 투어: 팔달령·자금성",
+  ),
+  metadataDescription: l(
+    "Five-day Beijing private tour with the Forbidden City, Badaling Great Wall, four hotel nights and private transfers. Guided or no-guide options.",
+    "北京5天4晚私家团，游览故宫与八达岭长城，含4晚住宿、接送机和3个游览日私车。可选D2–D4英语导游，或无现场导游、提供远程支持的版本。预约与可订情况付款前确认。",
+    "자금성과 팔달령 만리장성을 보는 베이징 4박 5일 프라이빗 투어. 호텔 4박과 전용 차량이 포함되며, D2~D4 영어 가이드 또는 현장 가이드 없이 원격 지원을 받는 버전을 선택합니다.",
+  ),
   eyebrow: l(
     "One itinerary, two ways to travel",
     "同一条路线，两种服务方式",
     "하나의 일정, 두 가지 여행 방식",
   ),
   lede: l(
-    "Cover Beijing's imperial landmarks and the Great Wall with private transport, choosing either an English-guided package or a lower-touch version with remote support and no on-site guide.",
-    "用私车串联北京皇城地标与八达岭长城，并在“D2–D4 英语导游”与“现场无导游、提供远程支持”两种版本之间选择。",
-    "전용 차량으로 베이징의 황실 유적과 만리장성을 둘러보며, D2~D4 영어 가이드 포함 또는 현장 가이드 없이 원격 지원을 받는 버전 중 선택합니다.",
+    "With private transport and four hotel nights, visit the Forbidden City and Badaling Great Wall over three touring days. Choose an English guide on Days 2–4 or a version with remote support and no on-site guide.",
+    "北京5天4晚，用私车串联故宫、八达岭长城等地标，把D2–D4留作三个游览日。可选择英语导游版，或现场无导游、提供远程支持的版本。",
+    "호텔 4박과 전용 차량으로 자금성, 팔달령 만리장성 등 베이징 명소를 둘러봅니다. D2~D4가 관광일이며, 영어 가이드 포함 또는 현장 가이드 없이 원격 지원을 받는 버전 중 선택합니다.",
   ),
   summary: l(
     "Four nights in a breakfast-included Ctrip 4-Diamond–rated hotel, private airport transfers, three private touring days and listed adult admission tickets. Choose the guided or no-guide package.",
@@ -2253,6 +2316,44 @@ const beijing: PrivateTourProduct = {
     "영어 가이드 포함 또는 무가이드 버전을 먼저 선택해 주세요. 톈안먼·자금성 예약, 호텔, 차량, 도착 공항과 수하물 적재량은 결제 전 날짜별로 재확인합니다. " +
       commonBookingNote.ko,
   ),
+  faq: [
+    {
+      question: l(
+        "What changes between the guided and no-guide versions?",
+        "英语导游版和无导游版有什么区别？",
+        "영어 가이드 포함 버전과 미포함 버전은 어떻게 다른가요?",
+      ),
+      answer: l(
+        "The guided version includes an English-speaking guide on Days 2–4. The no-guide version keeps private transport, listed adult admissions, reservations and remote support, with no on-site guide or interpretation. Days 1 and 5 are private driver transfers in both versions.",
+        "英语导游版在D2–D4由英语导游陪同；无导游版保留私车、所列成人基础门票、预约和远程支持，但没有现场导游或讲解。两个版本的D1和D5均为司机接送。",
+        "영어 가이드 포함 버전은 D2~D4에 영어 가이드가 동행합니다. 미포함 버전도 전용 차량, 명시된 성인 기본 입장권, 예약과 원격 지원은 포함하지만 현장 가이드나 해설은 없습니다. 두 버전 모두 D1과 D5는 기사 픽업·샌딩입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which Great Wall section is included, and are cable cars covered?",
+        "去八达岭还是慕田峪？包含长城索道吗？",
+        "어느 만리장성 구간을 방문하나요? 케이블카도 포함되나요?",
+      ),
+      answer: l(
+        "The published route visits Badaling, not Mutianyu. Great Wall cable cars, slide rail and shuttle buses are excluded from the base price. Any optional wall transport must be written into the confirmation to be included.",
+        "这条路线去八达岭，不去慕田峪。长城索道、滑车和摆渡车不在基础价格内；可选长城交通只有写入确认方案后才计入服务。",
+        "이 코스는 무톈위가 아닌 팔달령 만리장성을 방문합니다. 만리장성 케이블카, 슬라이드 레일과 셔틀버스는 기본 요금에서 제외됩니다. 선택 교통편은 서면 확인에 명시된 경우에만 포함됩니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are the Forbidden City and Tiananmen Square reservations guaranteed?",
+        "故宫和天安门广场一定能预约上吗？",
+        "자금성과 톈안먼광장 예약이 보장되나요?",
+      ),
+      answer: l(
+        "No. Visits depend on successful real-name reservations. We reconfirm availability for your dates before payment; the confirmed reservation windows and your group's pace determine which other stops can fit on that day.",
+        "不能保证，参观以实名预约成功为前提。付款前会按实际日期再次确认可订情况；当天还能衔接哪些其他景点，要看已确认的预约时段和同行者节奏。",
+        "보장되지는 않습니다. 실명 예약에 성공해야 방문할 수 있으며, 결제 전에 실제 날짜의 예약 가능 여부를 다시 확인합니다. 같은 날 다른 명소를 얼마나 둘러볼지는 확정된 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
+      ),
+    },
+  ],
   heroImage: image(
     "/images/destinations/beijing/hero-1600.webp",
     l(
@@ -2410,7 +2511,7 @@ const beijing: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-05",
 };
 
 const zhangjiajieForestFixedRoute: PrivateTourProduct = {
@@ -2423,6 +2524,16 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     "张家界森林公园 4 天 3 晚固定路线私家团",
     "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+  ),
+  metadataTitle: l(
+    "Zhangjiajie National Forest Park: 4-Day Private Tour",
+    "张家界森林公园4天私家团：固定徒步路线",
+    "장자제 국립삼림공원 3박 4일 프라이빗 투어",
+  ),
+  metadataDescription: l(
+    "Four-day fixed-route private tour of Zhangjiajie National Forest Park, with two walking days and one villa base. No cable cars or elevators.",
+    "张家界森林公园4天3晚固定路线私家团：两个步行游览日、三晚同住一处指定别墅，含行程私车、D2全天和D3白天英语导游。不乘索道和电梯，不含玻璃桥与天门山。",
+    "장자제 국립삼림공원 3박 4일 고정 코스 프라이빗 투어. 이틀간 도보 관광과 한 빌라 3박으로 구성됩니다. 케이블카·엘리베이터를 이용하지 않으며 유리다리·톈먼산은 포함하지 않습니다.",
   ),
   eyebrow: l(
     "One villa · Two walking days · No paid mountain transport",
@@ -2675,7 +2786,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-01",
+  dateModified: "2026-09-05",
   lastReviewed: "2026-08-31",
 };
 
@@ -2699,14 +2810,8 @@ const englishMetadataDescriptions: Readonly<Record<string, string>> =
       "Six-day private tour linking Shanghai, Suzhou and Hangzhou, with Ctrip 4-Diamond stays, four guided days and private transfers.",
     "harbin-winter-5-day-private-tour":
       "Five-day private Harbin winter tour with Ctrip 4-Diamond stays, a heated vehicle and three guided days. Date-window and peak-period conditions apply.",
-    "guilin-yangshuo-5-day-private-tour":
-      "Five-day private Guilin and Yangshuo tour with the Li River cruise, three guided days, private transfers and four Ctrip 4-Diamond hotel nights.",
     "shanghai-suzhou-5-day-private-tour":
       "Five-day private Shanghai and Suzhou tour with a Ctrip 4-Diamond stay, guided sightseeing, private transfers and return high-speed rail.",
-    "beijing-highlights-5-day-private-tour":
-      "Five-day private Beijing tour with a Ctrip 4-Diamond stay, airport transfers, three touring days and listed admissions. Guided and no-guide options.",
-    "zhangjiajie-forest-4-day-private-tour":
-      "Four-day fixed-route Zhangjiajie forest tour with one villa base, private transport, two guided sightseeing days and listed adult admissions.",
   });
 
 export const privateTourProductsBySlug: Readonly<
@@ -2784,11 +2889,11 @@ export function localizePrivateTourProduct(
     paths,
     title: product.title[locale],
     // The locale layouts already append the Homeground China title template.
-    metadataTitle: product.title[locale],
+    metadataTitle: product.metadataTitle?.[locale] ?? product.title[locale],
     metadataDescription:
-      locale === "en"
+      product.metadataDescription?.[locale] ?? (locale === "en"
         ? (englishMetadataDescriptions[product.slug] ?? product.summary.en)
-        : product.summary[locale],
+        : product.summary[locale]),
     openGraphLocale:
       locale === "en" ? "en_US" : locale === "zh" ? "zh_CN" : "ko_KR",
     eyebrow: product.eyebrow[locale],
@@ -2807,6 +2912,10 @@ export function localizePrivateTourProduct(
     serviceNote: product.serviceNote[locale],
     exclusions: product.exclusions[locale],
     bookingNote: product.bookingNote[locale],
+    faq: product.faq?.map((item) => ({
+      question: item.question[locale],
+      answer: item.answer[locale],
+    })),
     heroImage: localizeImage(product.heroImage, locale),
     gallery: product.gallery.map((item) => localizeImage(item, locale)),
     routeMedia: (product.routeMedia ?? []).map((group) => ({

@@ -11,19 +11,19 @@ const copy = {
     htmlLang: "en",
     path: privateTourHubPaths.en,
     metadata: {
-      title: "Private China Tours",
+      title: "Private China Tours: Compare Itineraries & Prices",
       description: (count: number) =>
-        `Compare ${count} published private China tours by route, trip length, pace and traveller fit, from Beijing and Xi’an to Zhangjiajie and Jiangnan.`,
+        `Compare ${count} private China tours by itinerary, price, pace and inclusions. Choose a published route, then confirm dates, service options and any changes.`,
       openGraphTitle: (count: number) =>
-        `Private China Tours — Compare ${count} Published Routes`,
+        `Private China Tours — ${count} Itineraries & Starting Prices`,
     },
     breadcrumbLabel: "Breadcrumb",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Private tours",
     eyebrow: (count: number) => `${count} private China tours`,
-    title: "Private journeys across China.",
+    title: "Private China tours, planned around you.",
     introduction:
-      "Choose between mountain landscapes, imperial cities and canal towns, with day-by-day routes and published starting prices ready to compare.",
+      "Compare day-by-day itineraries, starting prices and what each private tour includes. Start with a published route, then ask us to confirm it for your dates and group.",
     heroAction: (count: number) => `Compare all ${count} routes`,
     quickCompareEyebrow: (count: number) => `${count}-route overview`,
     quickCompareTitle: "Find the journey that feels like yours.",
@@ -48,26 +48,26 @@ const copy = {
     finalEyebrow: "Have a route in mind?",
     finalTitle: "When are you travelling, and where do you want to go?",
     finalBody:
-      "Start with the closest journey, then tell us what you would change.",
+      "Tell us your dates, group size and the route you like. We will confirm possible changes and a written quote; fixed-route packages keep their stated scope.",
     finalAction: "Plan this trip with us",
   },
   zh: {
     htmlLang: "zh-Hans",
     path: privateTourHubPaths.zh,
     metadata: {
-      title: "中国私家团",
+      title: "中国私家团：行程、价格与包含项",
       description: (count: number) =>
-        `按路线、天数、节奏和适合人群比较 Homeground ${count} 条已发布中国私家团，从北京、西安到张家界与江南多城。`,
+        `比较 Homeground ${count} 条中国私家团的每日行程、公开起价、包含项和旅行节奏。先选接近需求的路线，再确认日期、服务版本和可调整的安排。`,
       openGraphTitle: (count: number) =>
-        `中国私家团｜比较 ${count} 条正式路线`,
+        `中国私家团｜${count} 条行程与公开起价`,
     },
     breadcrumbLabel: "面包屑导航",
     breadcrumbHome: "首页",
     breadcrumbCurrent: "私家团",
     eyebrow: (count: number) => `${count} 条中国私家路线`,
-    title: "选一条你想走的中国。",
+    title: "比较适合你的中国私家团。",
     introduction:
-      "每天怎么走、旅行节奏和公开起价放在一起比较，先找到最接近你的路线。",
+      "按每日安排、公开起价、包含项和旅行节奏比较路线，再按你的日期与同行人数确认方案。",
     heroAction: (count: number) => `比较全部 ${count} 条路线`,
     quickCompareEyebrow: (count: number) => `${count} 条路线总览`,
     quickCompareTitle: "先找到最像你想走的那一条。",
@@ -92,26 +92,26 @@ const copy = {
     finalEyebrow: "已经有接近的路线？",
     finalTitle: "哪天出发，想去哪里？",
     finalBody:
-      "先选最接近的一条，再告诉我们想怎么改。",
+      "告诉我们日期、同行人数和喜欢的路线。我们会确认哪些安排可以调整，并给出书面报价；固定路线套餐按页面写明的范围执行。",
     finalAction: "和我们一起规划",
   },
   ko: {
     htmlLang: "ko",
     path: privateTourHubPaths.ko,
     metadata: {
-      title: "중국 프라이빗 투어",
+      title: "중국 프라이빗 투어: 일정·가격·포함 사항 비교",
       description: (count: number) =>
-        `베이징과 시안부터 장자제와 중국 강남 지역의 여러 도시까지, 중국 프라이빗 투어 ${count}개를 일정, 기간, 여행 속도와 추천 여행자별로 비교하세요.`,
+        `중국 프라이빗 투어 ${count}개의 일별 일정, 시작가, 포함 사항과 여행 속도를 비교하세요. 마음에 드는 코스를 고른 뒤 날짜, 서비스 유형과 조정 가능한 내용을 확인합니다.`,
       openGraphTitle: (count: number) =>
-        `중국 프라이빗 투어 ${count}개 비교`,
+        `중국 프라이빗 투어 ${count}개 일정·시작가 비교`,
     },
     breadcrumbLabel: "현재 위치",
     breadcrumbHome: "홈",
     breadcrumbCurrent: "프라이빗 투어",
     eyebrow: (count: number) => `중국 프라이빗 투어 ${count}개`,
-    title: "중국 곳곳을 잇는 프라이빗 여정.",
+    title: "나에게 맞는 중국 프라이빗 투어.",
     introduction:
-      "산악 풍경, 옛 수도와 수향마을을 잇는 일자별 일정과 시작가를 한곳에서 비교하세요.",
+      "일별 일정, 시작가, 포함 사항과 여행 속도를 비교한 뒤, 원하는 날짜와 인원에 맞는 계획을 확인하세요.",
     heroAction: (count: number) => `${count}개 여정 모두 비교하기`,
     quickCompareEyebrow: (count: number) => `${count}개 여행 한눈에 보기`,
     quickCompareTitle: "나에게 맞는 여정을 찾아보세요.",
@@ -137,7 +137,7 @@ const copy = {
     finalEyebrow: "마음에 드는 여정이 있나요?",
     finalTitle: "언제 떠나고, 어디로 가고 싶으신가요?",
     finalBody:
-      "가장 마음에 드는 여정을 고른 뒤 바꾸고 싶은 부분을 알려 주세요.",
+      "날짜, 인원과 마음에 드는 코스를 알려 주세요. 조정 가능한 내용을 확인한 뒤 서면 견적을 드립니다. 고정 코스 상품은 페이지에 안내된 범위로 진행합니다.",
     finalAction: "함께 여행 계획하기",
   },
 } as const;

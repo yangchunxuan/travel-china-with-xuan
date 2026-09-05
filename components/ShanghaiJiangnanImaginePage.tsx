@@ -36,6 +36,12 @@ import {
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
 
+const beforeYouChooseTitle: Record<PrivateTourLocale, string> = {
+  en: "Before you choose",
+  zh: "选择这条路线前",
+  ko: "이 일정을 선택하기 전에",
+};
+
 const jiangnanPageCopy: Record<
   PrivateTourLocale,
   {
@@ -588,6 +594,27 @@ export function ShanghaiJiangnanImaginePage({
             </div>
           </div>
         </section>
+
+        {localized.faq?.length ? (
+          <section
+            className={styles.section}
+            aria-labelledby="tour-choice-title"
+          >
+            <div className={styles.sectionInner}>
+              <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
+                <h2 id="tour-choice-title">{beforeYouChooseTitle[locale]}</h2>
+              </div>
+              <div className={`${styles.serviceGrid} ${styles.faqGrid}`}>
+                {localized.faq.map((item) => (
+                  <article key={item.question}>
+                    <h3>{item.question}</h3>
+                    <p>{item.answer}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section
           className={`${styles.section} ${styles.scopeSection}`}

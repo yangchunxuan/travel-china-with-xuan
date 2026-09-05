@@ -39,7 +39,7 @@ export const productPreviewCopy = {
     heroTitle:
       "Zhangjiajie in 4 Days: Stone Peaks, Glass Bridge and Tianmen Mountain",
     heroLede:
-      "Four carefully paced days through Zhangjiajie's sandstone peaks, the Grand Canyon Glass Bridge and Tianmen Mountain—with an unhurried arrival, three distinct sightseeing days and a stay that can change the mood of the journey.",
+      "A 4-day private Zhangjiajie tour covering the National Forest Park, Grand Canyon Glass Bridge and Tianmen Mountain. Day 1 is for arrival; Days 2–4 are sightseeing days, with the final day's ticket slot and departure time checked before booking.",
     secondaryCta: "Start with the four-day route",
     validThrough: "Price window: 15 August–30 September 2026",
     checkingPrice: "Checking the current price window…",
@@ -407,7 +407,7 @@ export const productPreviewCopy = {
     eyebrow: "4天 · 3晚 · 张家界私家路线",
     heroTitle: "张家界4天3晚：走进峰林、玻璃桥与天门山",
     heroLede:
-      "用四天走进张家界最有层次的三种风景：砂岩峰林、大峡谷玻璃桥与天门山；抵达日不赶路，三天游览各有自己的高潮，住宿也成为旅程气质的一部分。",
+      "这条4天3晚私家路线包含张家界国家森林公园、大峡谷玻璃桥与天门山。第1天抵达，第2–4天游览；预订前先核对最后一天的入场时段与离开时间。",
     secondaryCta: "先看四天怎么走",
     validThrough: "价格期：2026年8月15日至9月30日",
     checkingPrice: "正在核对当前价格有效期…",
@@ -747,9 +747,9 @@ export const productPreviewCopy = {
   },
   ko: {
     htmlLang: "ko",
-    metadataTitle: "장자제(장가계) 4일 3박 프라이빗 여행: 일정·2026년 가격",
+    metadataTitle: "장자제(장가계) 3박 4일 프라이빗 투어: 가격·포함 사항",
     metadataDescription:
-      "장자제 국가삼림공원, 대협곡 유리다리와 톈먼산을 잇는 4일 3박 프라이빗 일정입니다. 숙소 선택과 실제 날짜를 확인한 서면 견적을 안내합니다.",
+      "장자제 국가삼림공원, 대협곡 유리다리와 톈먼산을 잇는 3박 4일 프라이빗 일정입니다. 숙소 선택과 실제 날짜를 확인한 서면 견적을 안내합니다.",
     previewLabel: "로컬 편집 미리보기 · 현재 예약 불가",
     skipLink: "본문으로 바로가기",
     breadcrumbLabel: "현재 위치",
@@ -758,7 +758,7 @@ export const productPreviewCopy = {
     eyebrow: "4일 · 3박 · 장자제 프라이빗 일정",
     heroTitle: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
     heroLede:
-      "나흘 동안 장자제의 사암 봉우리와 대협곡 유리다리, 톈먼산을 차례로 만납니다. 첫날은 서두르지 않고 도착하며, 이후 사흘은 서로 다른 풍경에 집중합니다. 같은 일정도 숙소 선택에 따라 여행의 분위기가 달라집니다.",
+      "장자제 국가삼림공원, 대협곡 유리다리와 톈먼산을 둘러보는 3박 4일 프라이빗 투어입니다. 1일차는 도착, 2~4일차는 관광 일정이며 마지막 날의 입장 시간과 출발 시각을 예약 전에 확인합니다.",
     secondaryCta: "4일 일정부터 보기",
     validThrough: "가격 적용 기간: 2026년 8월 15일–9월 30일",
     checkingPrice: "현재 가격 적용 기간을 확인하고 있습니다…",

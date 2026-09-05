@@ -174,7 +174,7 @@ const en: ChinaItineraryReviewCopy = {
     eyebrow: "China itinerary review & route planning",
     title: "Get the route right before you book the rest.",
     lead:
-      "Not sure whether you need a route review, a new route or full-trip support? Talk to a planner by WhatsApp or leave your email. If you already know what you need, the three paid services remain available below.",
+      "Have your day-by-day China itinerary checked for city order, transfers, hotel bases and pace, or ask us to build a route from your dates and priorities. Compare the paid services below, or contact a planner to confirm which scope fits your trip.",
     pricesAriaLabel: "Route planning prices",
     prices: [
       { price: "US$69", label: "route review" },
@@ -457,7 +457,7 @@ const zh: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "中国旅行路线审核与规划",
     title: "先把路线理顺，再继续预订。",
-    lead: "不确定需要路线审核、重新规划，还是全程支持？可以通过 WhatsApp 联系规划师，或只留下一个邮箱。如果你已经知道自己需要什么，下方仍可直接选择三项付费服务。",
+    lead: "已有逐日行程，我们帮你检查城市顺序、转场、住宿地和每天节奏；只有日期和想法，可以先搭建路线结构。比较下方付费服务，或联系规划师确认适合的范围。",
     pricesAriaLabel: "路线规划价格",
     prices: [
       { price: "US$69", label: "路线审核" },
@@ -674,7 +674,7 @@ const ko: ChinaItineraryReviewCopy = {
   hero: {
     eyebrow: "중국 여행 일정 검토 및 동선 설계",
     title: "예약을 더 하기 전에 동선부터 제대로 잡으세요.",
-    lead: "일정 검토, 새 동선 설계, 전체 여행 지원 중 무엇이 필요한지 확실하지 않나요? WhatsApp으로 플래너에게 문의하거나 이메일을 남겨 주세요. 이미 필요한 서비스를 안다면 아래의 세 가지 유료 서비스를 바로 선택할 수 있습니다.",
+    lead: "이미 일별 중국 여행 일정이 있다면 도시 순서, 이동, 숙박 거점과 여행 속도를 검토합니다. 날짜와 우선순위만 있다면 동선 구조를 설계합니다. 아래 유료 서비스를 비교하거나 플래너와 범위를 먼저 확인하세요.",
     pricesAriaLabel: "일정 설계 서비스 가격",
     prices: [
       { price: "US$69", label: "일정 검토" },
