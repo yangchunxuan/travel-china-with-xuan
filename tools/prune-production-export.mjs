@@ -33,6 +33,7 @@ const sourceOnlyAssetRoots = [
 const forbiddenProductionMarkers = [
   ["internal product id", "zjj-4d3n-private-2026"],
   ["internal pricing decision id", "approved-public-pricing-20260815"],
+  ["current internal pricing decision id", "approved-public-pricing-20260906"],
   ["English local-preview ribbon", "Local editorial preview"],
   ["Chinese local-preview ribbon", "本地文章预览"],
   ["Korean local-preview ribbon", "로컬 편집 미리보기"],

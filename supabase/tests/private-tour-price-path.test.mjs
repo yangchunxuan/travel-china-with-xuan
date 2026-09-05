@@ -20,6 +20,7 @@ const locales = ["en", "zh", "ko"];
 const beijingSlug = "beijing-highlights-5-day-private-tour";
 const require = createRequire(import.meta.url);
 const readSource = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
+const classicPricing = JSON.parse(await readSource("content/product-previews/zhangjiajie-4-day-private-tour/pricing.json"));
 const normalize = (value) => JSON.parse(JSON.stringify(value));
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const nodes = (node) => [node, ...(node.childNodes ?? []).flatMap(nodes)];
@@ -76,6 +77,7 @@ test("all three-language catalog price links land on the exact published service
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
+    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].from_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
     assert.equal(legacy.startingPriceHref, legacy.href);
     assert.equal(legacy.startingPrice.selection, undefined, "do not invent a package for the fixed legacy contract");
     assert.ok(legacy.startingPrice.serviceLabel.length > 0);
@@ -109,10 +111,11 @@ test("every published service/group survives detail links, language changes and 
   ]);
 });
 
-test("approved USD20-under-benchmark prices survive localization without USD10 rounding", () => {
+test("owner-approved USD prices survive localization without USD10 rounding", () => {
   const cases = [
     [beijingSlug, "english-guided", [839, 669], [5453, 4348], [1180000, 940000]],
     ["guilin-yangshuo-5-day-private-tour", "standard-guided", [769, 629], [4998, 4088], [1080000, 880000]],
+    ["zhangjiajie-forest-4-day-private-tour", "fixed-route-english-guided", [449, 385], [2918, 2502], [630000, 540000]],
   ];
   for (const [slug, packageId, usd, cny, krw] of cases) {
     const product = privateTourProducts.find((p) => p.slug === slug);

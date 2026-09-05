@@ -46,13 +46,14 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   assert.ok(product.route.every((day) => day.title_ko));
   assert.equal(pricing.status, "approved_price_decision");
   assert.equal(pricing.public_eligible, true);
-  assert.equal(pricing.valid_from, "2026-08-15");
+  assert.equal(pricing.valid_from, "2026-09-06");
   assert.equal(pricing.valid_until, "2026-09-30T23:59:59+08:00");
   assert.equal(
     new Date(pricing.valid_until).toISOString(),
     "2026-09-30T15:59:59.000Z",
   );
   assert.equal(product.price_display.valid_until, pricing.valid_until);
+  assert.equal(product.price_display.from_price_per_person, pricing.tiers[0].from_price_per_person);
   assert.equal(
     pricing.approved_decision_id,
     product.price_display.approved_decision_id,
@@ -380,9 +381,10 @@ test("approved prices cross the client boundary as a public projection only", as
     pricing.tiers.map(
       (tier) => tier.from_price_per_person ?? tier.price_per_person,
     ),
-    [5390, 6090, 7090],
+    [3445, 4160, 5200],
   );
-  assert.equal(pricing.tiers[0].regular_price_per_person, 5590);
+  assert.equal(pricing.tiers[0].regular_price_per_person, 3640);
+  assert.equal(pricing.approved_decision_id, "approved-public-pricing-20260906");
   assert.doesNotMatch(
     JSON.stringify(pricing),
     /Ni Hao|你好酒店|Ziwu|子午路|Western Grand|韦斯特|Country Garden|碧桂园|Jianai|简爱/,
@@ -390,9 +392,9 @@ test("approved prices cross the client boundary as a public projection only", as
   assert.match(helper, /getZhangjiajiePrivateTourPublicPricing/);
   assert.match(helper, /validFrom: pricing\.valid_from/);
   assert.match(helper, /validUntil: pricing\.valid_until/);
-  assert.match(helper, /Price window: 15 August–30 September 2026/);
-  assert.match(helper, /价格期：2026年8月15日至9月30日/);
-  assert.match(helper, /가격 적용 기간: 2026년 8월 15일–9월 30일/);
+  assert.match(helper, /Price window: 6–30 September 2026/);
+  assert.match(helper, /价格期：2026年9月6日至9月30日/);
+  assert.match(helper, /가격 적용 기간: 2026년 9월 6일–9월 30일/);
   assert.match(page, /getZhangjiajiePrivateTourPublicPricing\(locale\)/);
   assert.match(priceWindow, /pricing: PublicPricing/);
   assert.match(priceWindow, /Date\.now\(\)/);
@@ -411,12 +413,12 @@ test("approved prices cross the client boundary as a public projection only", as
   );
   assert.doesNotMatch(
     helper,
-    /CNY 5,390|CNY 6,090|CNY 7,090|¥5,390|¥6,090|¥7,090/,
+    /CNY 3,445|CNY 4,160|CNY 5,200|¥3,445|¥4,160|¥5,200/,
   );
   assert.doesNotMatch(page, /^"use client";/m);
   assert.doesNotMatch(
     priceWindow,
-    /product\.json|pricing\.json|approved_decision_id|approved-public-pricing-20260815|zhangjiajiePrivateTourProduct|zhangjiajiePrivateTourPricing/,
+    /product\.json|pricing\.json|approved_decision_id|approved-public-pricing-\d{8}|zhangjiajiePrivateTourProduct|zhangjiajiePrivateTourPricing/,
   );
   assert.doesNotMatch(
     page,
@@ -430,6 +432,7 @@ test("post-prune scan rejects preview labels and internal product markers across
   for (const marker of [
     "zjj-4d3n-private-2026",
     "approved-public-pricing-20260815",
+    "approved-public-pricing-20260906",
     "Local editorial preview",
     "本地文章预览",
     "로컬 편집 미리보기",

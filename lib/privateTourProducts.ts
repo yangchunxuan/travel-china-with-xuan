@@ -2815,11 +2815,13 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
         "D2 종일과 D3 주간 일정에는 영어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
       ),
-      [4199, 2399],
+      // Owner-approved USD selling prices, 2026-09-06; CNY follows the existing conversion basis.
+      [2918, 2502],
+      [449, 385],
     ),
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-05",
+  dateModified: "2026-09-06",
   lastReviewed: "2026-08-31",
 };
 
