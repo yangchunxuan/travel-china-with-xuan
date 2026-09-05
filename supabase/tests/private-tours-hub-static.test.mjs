@@ -309,7 +309,7 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /<dt>\{copy\.quickFitLabel\}<\/dt>/);
   assert.match(component, /<dt>\{copy\.quickMovementLabel\}<\/dt>/);
   assert.match(component, /<nav[^>]*className=\{styles\.breadcrumb\}/);
-  assert.match(component, /<PrivateTourCatalogLink[^>]*href=\{product\.href\}/);
+  assert.match(component, /<PrivateTourCatalogLink[^>]*href=\{product\.startingPriceHref\}/);
   assert.match(component, /product\.comparison\.route/);
   assert.match(component, /product\.comparison\.appeal/);
   assert.match(component, /product\.comparison\.pace/);

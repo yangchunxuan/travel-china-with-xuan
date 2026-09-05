@@ -105,10 +105,7 @@ export interface ItineraryRushGuideCopy {
     nextTitle: string;
   };
   services: {
-    reviewIntro: string;
-    reviewCta: string;
-    buildIntro: string;
-    buildCta: string;
+
     fullTripIntro: string;
     fullTripCta: string;
     consultationIntro: string;
@@ -145,7 +142,7 @@ const en: ItineraryRushGuideCopy = {
   pagePath: "/guides/is-your-china-itinerary-too-rushed/",
   homePath: "/",
   studioPath: "/studio/",
-  servicePath: "/china-itinerary-review/",
+  servicePath: "/services/",
   transportGuidePath: "/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
     title: "Is Your China Itinerary Too Rushed? 5 Checks Before Booking",
@@ -377,18 +374,15 @@ const en: ItineraryRushGuideCopy = {
     nextTitle: "Talk it through with a planner before choosing a service.",
   },
   services: {
-    reviewIntro: "I have a usable day-by-day draft.",
-    reviewCta: "Review My Route — US$69",
-    buildIntro: "I have dates and priorities, but no workable route yet.",
-    buildCta: "Build My Route — US$129",
+
     fullTripIntro:
       "I want planning carried into selected arrangements or local coordination.",
     fullTripCta: "Ask about Full Trip support",
     consultationIntro:
-      "Use WhatsApp or leave your email. A Homeground planner can help you decide whether the US$69 review, US$129 route build or a custom Full Trip scope fits.",
+      "Use WhatsApp or leave your email to enquire about a private China tour. We confirm the arrangements, inclusions and quotation before booking.",
     consultationCta: "Talk to a China trip planner",
     consultationNote:
-      "We confirm the service, scope, price or quote and delivery timing before sending payment instructions. Paid work begins after payment is confirmed.",
+      "The initial enquiry is free. Trip arrangements, inclusions, the quotation and payment conditions are confirmed in writing before booking.",
   },
   faq: {
     label: "Common planning questions",
@@ -417,7 +411,7 @@ const en: ItineraryRushGuideCopy = {
       {
         question: "What if I am not sure which planning service I need?",
         answer:
-          "Talk to a China trip planner by WhatsApp or leave your email. You do not need to choose the service yourself: the planner can recommend a route review, route build or Full Trip support. No paid work starts until scope, price or quote, delivery timing and payment are confirmed.",
+          "Use WhatsApp or leave your email to enquire about a private China tour. We confirm the arrangements, inclusions and quotation before booking.",
       },
     ],
   },
@@ -436,7 +430,7 @@ const zh: ItineraryRushGuideCopy = {
   pagePath: "/zh/guides/is-your-china-itinerary-too-rushed/",
   homePath: "/zh/",
   studioPath: "/zh/studio/",
-  servicePath: "/zh/china-itinerary-review/",
+  servicePath: "/zh/services/",
   transportGuidePath: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
     title: "中国行程太赶吗？预订前用 5 项检查判断",
@@ -636,17 +630,14 @@ const zh: ItineraryRushGuideCopy = {
     nextTitle: "先和规划师聊一聊，再决定需要哪一种帮助。",
   },
   services: {
-    reviewIntro: "我已经有一份可以阅读的逐日行程。",
-    reviewCta: "审核我的路线 — 69 美元",
-    buildIntro: "我有日期和优先事项，但还没有一条可执行的路线。",
-    buildCta: "帮我规划路线 — 129 美元",
+
     fullTripIntro: "我希望规划继续延伸到部分预订安排或当地协调。",
     fullTripCta: "咨询全程旅行支持",
     consultationIntro:
-      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。Homeground 真人规划师会帮助你判断更适合 69 美元路线审核、129 美元路线规划，还是定制全程旅行支持。",
+      "可以通过 WhatsApp 直接聊，或留下邮箱咨询中国私家团。具体安排、包含项和报价会在预订前确认。",
     consultationCta: "联系旅行规划师",
     consultationNote:
-      "我们会先确认服务、范围、固定价格或报价与交付时间，再发送付款方式；确认付款后才开始付费工作。",
+      "初次询价免费。具体旅行安排、包含项、报价与付款条件会在预订前书面确认。",
   },
   faq: {
     label: "常见规划问题",
@@ -694,7 +685,7 @@ const ko: ItineraryRushGuideCopy = {
   pagePath: "/ko/guides/is-your-china-itinerary-too-rushed/",
   homePath: "/ko/",
   studioPath: "/ko/studio/",
-  servicePath: "/ko/china-itinerary-review/",
+  servicePath: "/ko/services/",
   transportGuidePath: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
   metadata: {
     title: "중국 일정이 너무 빠듯한가요? 예약 전 5가지 점검",
@@ -894,17 +885,14 @@ const ko: ItineraryRushGuideCopy = {
     nextTitle: "플래너와 먼저 이야기한 뒤 필요한 서비스를 정하세요.",
   },
   services: {
-    reviewIntro: "이미 활용 가능한 일자별 일정 초안이 있습니다.",
-    reviewCta: "내 일정 검토 — US$69",
-    buildIntro: "날짜와 우선순위는 있지만 실행 가능한 일정은 아직 없습니다.",
-    buildCta: "내 일정 설계 — US$129",
+
     fullTripIntro: "일부 예약 준비나 현지 조율까지 이어지는 여행 설계를 원합니다.",
     fullTripCta: "전체 여행 지원 문의하기",
     consultationIntro:
-      "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. Homeground 플래너가 US$69 일정 검토, US$129 동선 설계 또는 맞춤형 전체 여행 지원 중 어떤 도움이 맞는지 함께 판단합니다.",
+      "WhatsApp으로 바로 문의하거나 이메일을 남겨 중국 프라이빗 투어를 문의하세요. 여행 준비, 포함 사항과 견적은 예약 전에 확인합니다.",
     consultationCta: "중국 여행 플래너와 상담하기",
     consultationNote:
-      "서비스, 범위, 고정 가격 또는 견적과 납기를 먼저 확인한 뒤 결제 방법을 안내합니다. 결제가 확인된 후 유료 작업을 시작합니다.",
+      "첫 문의는 무료입니다. 구체적인 여행 준비, 포함 사항, 견적과 결제 조건은 예약 전에 서면으로 확인합니다.",
   },
   faq: {
     label: "자주 묻는 일정 질문",
@@ -933,7 +921,7 @@ const ko: ItineraryRushGuideCopy = {
       {
         question: "어떤 여행 설계 서비스가 필요한지 아직 모르겠다면 어떻게 하나요?",
         answer:
-          "WhatsApp으로 중국 여행 플래너에게 문의하거나 이메일을 남겨 주세요. 서비스를 먼저 고를 필요는 없습니다. 플래너가 일정 검토, 동선 설계 또는 전체 여행 지원 중 알맞은 다음 단계를 안내합니다. 범위, 가격 또는 견적, 납기와 결제가 확인되기 전에는 유료 작업을 시작하지 않습니다.",
+          "WhatsApp으로 바로 문의하거나 이메일을 남겨 중국 프라이빗 투어를 문의하세요. 여행 준비, 포함 사항과 견적은 예약 전에 확인합니다.",
       },
     ],
   },

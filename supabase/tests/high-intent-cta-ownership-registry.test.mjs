@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-import { routeServiceIds } from "../../lib/routeServiceInterest.ts";
+import { historicalRouteServiceIds as routeServiceIds } from "../../lib/routeServiceInterest.ts";
 import {
   loadGuideMetadata,
   loadHighIntentCtaOwnershipRegistry,
@@ -85,10 +85,10 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(commercialLinkSource, /const serviceCtaCopy/u);
   assert.match(
     commercialLinkSource,
-    /publicCtaTargetAnchors\[serviceId\]/u,
+    /service=full-trip-support#planner-contact/u,
   );
-  assert.match(itineraryReviewSource, /id: "review-my-route"/u);
-  assert.match(itineraryReviewSource, /id="full-trip-support"/u);
+  assert.match(commercialLinkSource, /entry.targetServiceId === "itinerary-review"\) return null/u);
+  assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
 test("commercial links keep the approved 8 hub, 21 guide and 10 product owners", () => {

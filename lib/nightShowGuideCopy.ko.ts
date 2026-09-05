@@ -372,7 +372,7 @@ export const nightShowGuideKorean: NightShowGuideCopy = {
       "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 숙박 거점, 낮 일정과 다음 날 아침 시간을 함께 확인합니다.",
     action: "중국 여행 플래너와 상담하기",
     note:
-      "US$69 일정 검토, US$129 동선 설계와 전체 여행 지원은 각각 별도 유료 서비스입니다. 범위, 가격 또는 견적, 납기와 결제가 확인된 뒤 작업을 시작합니다.",
+      "첫 프라이빗 투어 문의는 무료입니다. 여행 날짜와 인원에 따른 준비, 포함 사항과 견적은 예약 전에 확인합니다.",
   },
   structuredData: {
     homeName: "Homeground China",

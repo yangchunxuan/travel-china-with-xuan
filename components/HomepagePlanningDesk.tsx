@@ -2,9 +2,7 @@
 
 import {
   ArrowRight,
-  FileCheck2,
   Handshake,
-  MapPinned,
   MessageCircleMore,
 } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
@@ -19,8 +17,6 @@ import { HomepageQuickContact } from "./HomepageQuickContact";
 
 const intentIcons = {
   conversation: MessageCircleMore,
-  "itinerary-review": FileCheck2,
-  "route-build": MapPinned,
   "full-trip-support": Handshake,
 } as const;
 

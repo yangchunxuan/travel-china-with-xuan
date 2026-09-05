@@ -373,7 +373,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       "Use WhatsApp or leave your email. A planner can look at how the evening fits your hotel base, daytime plan and next morning.",
     action: "Talk to a China trip planner",
     note:
-      "The US$69 review, US$129 route build and Full Trip support remain separate paid services. Work starts only after scope, price or quote, delivery timing and payment are confirmed.",
+      "The initial private-tour enquiry is free. We confirm the arrangements, inclusions and quotation for your dates and group before booking.",
   },
   structuredData: {
     homeName: "Homeground China",

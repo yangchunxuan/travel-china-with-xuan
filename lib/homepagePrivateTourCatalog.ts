@@ -13,7 +13,7 @@ export interface HomepagePrivateTourItem {
   readonly startingPrice: {
     readonly formatted: string;
     readonly travelers: number;
-    readonly serviceLabel?: string;
+    readonly serviceLabel: string;
   };
   readonly image: {
     readonly src: string;
@@ -67,13 +67,11 @@ export function getHomepagePrivateTourItems(
           appeal: product.comparison.appeal,
           days: product.days,
           nights: product.nights,
-          href: product.href,
+          href: product.startingPriceHref,
           startingPrice: {
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,
-            ...(product.startingPrice.serviceLabel
-              ? { serviceLabel: product.startingPrice.serviceLabel }
-              : {}),
+            serviceLabel: product.startingPrice.serviceLabel,
           },
           image: product.image,
         }) satisfies HomepagePrivateTourItem,

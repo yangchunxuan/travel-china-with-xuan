@@ -112,7 +112,7 @@ function TourComparisonCard({
       <article className={styles.tourCard}>
         <PrivateTourCatalogLink
           className={styles.tourLink}
-          href={product.href}
+          href={product.startingPriceHref}
           locale={locale}
           position={index + 1}
           productSlug={product.slug}
@@ -198,7 +198,7 @@ function CompactTourComparison({
     <li data-tour-id={product.id}>
       <PrivateTourCatalogLink
         className={styles.quickLink}
-        href={product.href}
+        href={product.startingPriceHref}
         locale={locale}
         position={index + 1}
         productSlug={product.slug}

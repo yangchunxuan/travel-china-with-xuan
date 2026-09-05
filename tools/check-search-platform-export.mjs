@@ -207,6 +207,35 @@ function assertSameStringSet(actualValues, expectedValues, context) {
   }
 }
 
+function assertPrivateTourPriceLinks(html, products, context) {
+  const actualHrefs = [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/giu)]
+    .map((match) => match[1].replaceAll("&amp;", "&"))
+    .filter((href) => /^\/(?:zh\/|ko\/)?tours\/[^/?#]+\/(?:\?[^#]*)?(?:#.*)?$/u.test(href));
+
+  for (const product of products) {
+    const target = new URL(product.startingPriceHref, siteUrl);
+    const selection = product.startingPrice.selection;
+    if (target.pathname !== product.href || target.hash) {
+      throw new Error(`${context}: price entry changed the canonical route for ${product.slug}`);
+    }
+    if (selection) {
+      if (target.searchParams.size !== 2 ||
+          target.searchParams.get("package") !== selection.packageId ||
+          target.searchParams.get("travelers") !== String(selection.travelers)) {
+        throw new Error(`${context}: price entry does not identify its published service/group for ${product.slug}`);
+      }
+    } else if (target.search) {
+      throw new Error(`${context}: fixed legacy tour acquired an unsupported selection for ${product.slug}`);
+    }
+  }
+
+  assertSameStringSet(
+    actualHrefs,
+    products.map((product) => product.startingPriceHref),
+    `${context} exact published-price detail links`,
+  );
+}
+
 const sitemapPath = path.join(outputRoot, "sitemap.xml");
 const sitemap = await readFile(sitemapPath, "utf8");
 const phase0Baseline = JSON.parse(
@@ -297,13 +326,10 @@ for (const locale of locales) {
     }
   }
 
-  for (const slug of homepagePublishedTourSlugs) {
-    assertIncludes(
-      homepageHtml,
-      `href="/${locale.prefix}tours/${slug}/"`,
-      `${context} homepage published-tour discovery: ${slug}`,
-    );
-  }
+  const homepageProducts = getPublishedPrivateTourCatalog(locale.runtime).filter(
+    (product) => homepagePublishedTourSlugs.includes(product.slug),
+  );
+  assertPrivateTourPriceLinks(homepageHtml, homepageProducts, `${context} homepage published-tour discovery`);
   assertIncludes(
     homepageHtml,
     `data-homepage-product-count="${homepagePublishedTourSlugs.length}"`,
@@ -391,19 +417,7 @@ for (const locale of locales) {
     `${context} structured private-tour details`,
   );
 
-  const visibleDetailHrefs = [...html.matchAll(/\bhref="([^"]+)"/giu)]
-    .map((match) => match[1])
-    .filter((href) =>
-      /^\/(?:zh\/|ko\/)?tours\/[^/]+\/$/u.test(href),
-    );
-  const expectedDetailHrefs = publishedTourSlugs.map(
-    (slug) => `/${tourDetailRoute(slug, locale)}`,
-  );
-  assertSameStringSet(
-    visibleDetailHrefs,
-    expectedDetailHrefs,
-    `${context} visible private-tour detail links`,
-  );
+  assertPrivateTourPriceLinks(html, getPublishedPrivateTourCatalog(locale.runtime), context);
 
   for (const slug of publishedTourSlugs) {
     const detailRoute = tourDetailRoute(slug, locale);
@@ -412,6 +426,11 @@ for (const locale of locales) {
     const detailHtml = await readFile(
       path.join(outputRoot, detailRoute, "index.html"),
       "utf8",
+    );
+    assertIncludes(
+      detailHtml,
+      `<link rel="canonical" href="${detailCanonical}"/>`,
+      `${detailContext} query-free canonical metadata`,
     );
     assertIncludes(
       detailHtml,

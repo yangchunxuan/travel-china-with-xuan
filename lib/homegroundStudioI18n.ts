@@ -144,7 +144,7 @@ export const homegroundStudioCopy: Record<
         },
         {
           label: "03 / Deliverables",
-          title: "A review, route structure or full-trip scope",
+          title: "Your private-tour scope and arrangements",
           detail:
             "You receive the written output agreed for the service, not a generic attraction list.",
         },
@@ -241,7 +241,7 @@ export const homegroundStudioCopy: Record<
       eyebrow: "The working method",
       title: "What happens after you share the trip basics.",
       body:
-        "You keep one clear conversation with a lead planner who knows the journey from beginning to end. The fixed-price services cover written route work; booking and support during travel require a separately agreed full-trip scope.",
+        "You keep one clear conversation with a lead planner who knows the whole journey. The trip agreement confirms the arrangements Homeground will handle and the support included during travel.",
       inputsTitle: "What to send",
       inputs: [
         "Travel dates and arrival or departure points",
@@ -264,18 +264,16 @@ export const homegroundStudioCopy: Record<
         {
           title: "Confirm before paid work",
           detail:
-            "We reply with the suitable service, written scope, fixed fee or custom quote and expected delivery date.",
+            "We reply with the suitable service, written scope, trip quotation and next steps.",
         },
       ],
       deliverablesTitle: "What you receive",
       deliverables: [
-        "Review My Route: a written day-by-day workable, tight or fragile assessment",
-        "Build My Route: city order, night allocation, transfer logic and booking priorities",
         "Full Trip: a trip-specific written scope for planning, arrangements and ground support",
         "Clear assumptions, trade-offs and next decisions for the agreed service",
       ],
       boundary:
-        "This first brief is free to send and this page does not take payment. The published US$69 and US$129 fees apply only after Homeground confirms the standard scope.",
+        "The initial private-tour enquiry is free. We confirm the arrangements, inclusions and quotation for your dates and group before booking.",
     },
     cta: {
       label: "Next step",
@@ -314,7 +312,7 @@ export const homegroundStudioCopy: Record<
         },
         {
           label: "03 / 交付成果",
-          title: "路线审核、路线结构或全程服务范围",
+          title: "私家团范围与具体安排",
           detail: "你收到的是双方确认过的书面成果，不是一份通用景点清单。",
         },
       ],
@@ -409,7 +407,7 @@ export const homegroundStudioCopy: Record<
       eyebrow: "具体工作方式",
       title: "发来旅行基本信息后，会发生什么。",
       body:
-        "你始终和一位了解全程的主规划师沟通。固定价格服务提供书面路线成果；预订安排和旅行中支持需要另行确认全程服务范围。",
+        "你始终和一位了解全程的主规划师沟通。Homeground 负责的具体安排及旅行中包含的支持，以旅行约定为准。",
       inputsTitle: "你需要提供什么",
       inputs: [
         "旅行日期、抵达与离开地点",
@@ -429,18 +427,16 @@ export const homegroundStudioCopy: Record<
         },
         {
           title: "付费工作前先确认",
-          detail: "我们会回复合适的服务、书面范围、固定费用或单独报价，以及预计交付日期。",
+          detail: "我们会回复合适的服务、书面范围、旅行报价和下一步。",
         },
       ],
       deliverablesTitle: "你会收到什么",
       deliverables: [
-        "路线审核：按天标出可执行、偏紧或脆弱，并说明原因",
-        "路线规划：城市顺序、住宿晚数、交通逻辑与预订优先级",
         "全程服务：针对实际旅程书面确认规划、安排与落地支持范围",
         "在约定服务内清楚标出假设、取舍与下一步决定",
       ],
       boundary:
-        "发送第一份简报不收费，本页也不会收款。公开的 US$69 与 US$129 费用只在 Homeground 人工确认符合标准范围后适用。",
+        "初次私家团询价免费。具体安排、包含项和报价会根据日期与同行人数在预订前确认。",
     },
     cta: {
       label: "下一步",
@@ -479,7 +475,7 @@ export const homegroundStudioCopy: Record<
         },
         {
           label: "03 / 결과물",
-          title: "일정 검토, 동선 구조 또는 전체 여행 범위",
+          title: "프라이빗 투어 범위와 준비 사항",
           detail: "일반적인 명소 목록이 아니라 합의한 서비스에 맞는 서면 결과물을 받습니다.",
         },
       ],
@@ -574,7 +570,7 @@ export const homegroundStudioCopy: Record<
       eyebrow: "실제 진행 방식",
       title: "여행 기본 정보를 보낸 다음 진행되는 일.",
       body:
-        "처음부터 끝까지 전체 여정을 아는 전담 플래너와 한 흐름으로 소통합니다. 고정 요금 서비스는 서면 동선 작업이며, 예약과 여행 중 지원은 별도로 합의한 전체 여행 범위가 필요합니다.",
+        "전체 여정을 아는 전담 플래너와 한 흐름으로 소통합니다. Homeground가 맡을 준비와 여행 중 포함되는 지원은 여행 약정에서 확인합니다.",
       inputsTitle: "보내 주실 정보",
       inputs: [
         "여행 날짜와 도착·출발 지점",
@@ -594,18 +590,16 @@ export const homegroundStudioCopy: Record<
         },
         {
           title: "유료 작업 전 확인",
-          detail: "알맞은 서비스, 서면 범위, 고정 요금 또는 맞춤 견적과 예상 납품일을 안내합니다.",
+          detail: "알맞은 서비스, 서면 범위, 여행 견적과 다음 단계을 안내합니다.",
         },
       ],
       deliverablesTitle: "받게 되는 결과물",
       deliverables: [
-        "일정 검토: 날짜별 실행 가능·빠듯함·취약함 판단과 이유",
-        "동선 설계: 도시 순서, 숙박 일수, 이동 논리와 예약 우선순위",
         "전체 여행: 실제 여정에 맞춘 계획·준비·현지 지원의 서면 범위",
         "합의한 서비스 안에서 명확히 표시한 가정, 선택의 영향과 다음 결정",
       ],
       boundary:
-        "첫 브리프는 무료로 보낼 수 있으며 이 페이지에서는 결제하지 않습니다. 공개된 US$69와 US$129 요금은 Homeground가 표준 범위를 확인한 뒤에만 적용됩니다.",
+        "첫 프라이빗 투어 문의는 무료입니다. 여행 날짜와 인원에 따른 준비, 포함 사항과 견적은 예약 전에 확인합니다.",
     },
     cta: {
       label: "다음 단계",

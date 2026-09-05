@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("Home planning desk leads with quick contacts and keeps three paid shortcuts", async () => {
+test("Home planning desk leads with quick contacts and keeps the private-tour shortcut", async () => {
   const [home, homeCopy, planningDesk, quickContact, planningCopy, services] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("lib/homegroundI18n.ts"),
@@ -54,8 +54,8 @@ test("Home planning desk leads with quick contacts and keeps three paid shortcut
   assert.doesNotMatch(planningCopy, /freeTool(?:Label|Meta)/);
   assert.match(planningCopy, /id: "conversation"/);
   assert.match(planningCopy, /kind: "conversation"/);
-  assert.match(planningCopy, /id: "itinerary-review"/);
-  assert.match(planningCopy, /id: "route-build"/);
+  assert.doesNotMatch(planningCopy, /id: "itinerary-review"/);
+  assert.doesNotMatch(planningCopy, /id: "route-build"/);
   assert.match(planningCopy, /id: "full-trip-support"/);
   assert.match(planningCopy, /planningIntent: "conversation"/);
   assert.match(planningCopy, /label: "Trip conversation"/);
@@ -63,8 +63,8 @@ test("Home planning desk leads with quick contacts and keeps three paid shortcut
     planningCopy,
     /A Homeground planner reviews the brief and confirms the appropriate next step\./,
   );
-  assert.match(services, /label: "Review My Route"/);
-  assert.match(services, /label: "Build My Route"/);
+  assert.doesNotMatch(services, /label: "Review My Route"/);
+  assert.doesNotMatch(services, /label: "Build My Route"/);
   assert.match(services, /label: "Full Trip Planning & Ground Support"/);
   assert.doesNotMatch(planningCopy, /id: "explore"/);
   assert.doesNotMatch(planningCopy, /Free route timing check/);
@@ -76,35 +76,18 @@ test("Home planning desk leads with quick contacts and keeps three paid shortcut
   assert.doesNotMatch(planningCopy, /사람이 직접 검토.*포함되지/);
 });
 
-test("Planning Services presents all three paths before education and links to localized Studio", async () => {
-  const [page, copy] = await Promise.all([
-    source("components/ChinaItineraryReviewPage.tsx"),
-    source("lib/chinaItineraryReviewI18n.ts"),
-  ]);
-
-  assert.match(page, /id="choose-service"/);
-  assert.match(page, /id: "review-my-route"/);
-  assert.match(page, /id: "build-my-route"/);
-  assert.match(page, /href="#full-trip-support"/);
-  assert.match(page, /const studioHref = `\$\{homeCopy\.path\}studio\/`/);
-  assert.match(page, /href=\{studioHref\}/);
-  assert.match(
-    page,
-    /const plannerContactHref = `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
-  );
-  assert.match(copy, /Review My Route/);
-  assert.match(copy, /Build My Route/);
-  assert.match(copy, /Full Trip Planning & Ground Support/);
-  assert.match(copy, /A China travel agency, with one clear planning thread\./);
-  assert.match(copy, /一家中国旅行社/);
-  assert.match(copy, /중국 전문 여행사/);
+test("retired service page retains a clear route to enquiries and private tours", async () => {
+  const page = await source("components/ChinaItineraryReviewPage.tsx");
+  assert.match(page, /#planner-contact/);
+  assert.match(page, /tours\//);
+  assert.doesNotMatch(page, /review-my-route|build-my-route|price: "69"|price: "129"/);
 });
 
 test("English Studio keeps its service comparison and uses the unified planner contact", async () => {
   const page = await source("components/HomegroundStudioPage.tsx");
 
   assert.match(page, /const planningServicesHref\s*=/);
-  assert.match(page, /\/china-itinerary-review\/[\s\S]*#choose-service/);
+  assert.match(page, /\/services\//);
   assert.match(
     page,
     /const plannerHref = `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
@@ -135,11 +118,11 @@ test("global navigation keeps services behind the planning state and CTA", async
   assert.doesNotMatch(header, /services: "Trip planning services"/);
   assert.match(header, /className=\{styles\.headerCta\}/);
   assert.match(header, /allowedServiceHashes/);
-  assert.match(header, /"#review-my-route"/);
-  assert.match(header, /"#build-my-route"/);
+  assert.doesNotMatch(header, /"#review-my-route"/);
+  assert.doesNotMatch(header, /"#build-my-route"/);
   assert.match(header, /"#full-trip-support"/);
 
-  assert.match(footer, /getChinaItineraryReviewCopy\(locale\)/);
+  assert.match(footer, /planningServicesPath = `\$\{copy.path\}services\//);
   assert.match(footer, /services: "Trip planning services"/);
   assert.match(footer, /services: "旅行规划服务"/);
   assert.match(footer, /services: "여행 설계 서비스"/);
@@ -177,7 +160,7 @@ test("commercial surfaces do not introduce checkout or file upload", async () =>
     /(?:\?|&)service=(?:itinerary-review|route-build|full-trip-support)/,
   );
   assert.doesNotMatch(packageJson, /"(?:@stripe\/[^"\s]+|stripe|@paypal\/[^"\s]+|paypal)"\s*:/i);
-  assert.match(serviceCopy, /does not take payment/i);
-  assert.match(serviceCopy, /本网站不直接收款/);
-  assert.match(serviceCopy, /이 웹사이트에서는 직접 결제하지 않습니다/);
+  assert.match(serviceCopy, /initial enquiry is free/i);
+  assert.match(serviceCopy, /初次询价免费/);
+  assert.match(serviceCopy, /첫 문의는 무료/);
 });

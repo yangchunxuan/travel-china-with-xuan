@@ -4,6 +4,10 @@ import type { HomegroundLocale } from "./homegroundI18n";
 import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getPrivateTourStartingPrice } from "./privateTourStartingPrice.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./privateTourInquiryContext.ts";
 
 type LocalizedText = Readonly<Record<HomegroundLocale, string>>;
 
@@ -23,6 +27,7 @@ export interface PublishedPrivateTourCatalogItem {
   readonly days: number;
   readonly nights: number;
   readonly href: string;
+  readonly startingPriceHref: string;
   readonly paths: LocalizedValue<string>;
   readonly image: {
     readonly src: string;
@@ -44,7 +49,8 @@ export interface PublishedPrivateTourCatalogItem {
     readonly currency: "CNY" | "USD" | "KRW";
     readonly formatted: string;
     readonly travelers: number;
-    readonly serviceLabel?: string;
+    readonly serviceLabel: string;
+    readonly selection?: PrivateTourInquirySelection;
   };
   readonly dateModified: string;
 }
@@ -326,15 +332,7 @@ export function getPublishedPrivateTourCatalog(
   const usedImagePaths = new Set<string>();
   const structuredItems = privateTourProducts.map((product) => {
     const localized = localizePrivateTourProduct(product, locale);
-    const lowestPrice = localized.packages
-      .flatMap((tourPackage) => tourPackage.rows)
-      .filter((row) => row.travelers === 2)
-      .reduce((lowest, candidate) =>
-        candidate.cny < lowest.cny ? candidate : lowest,
-      );
-    const startingPackage = localized.packages.find((tourPackage) =>
-      tourPackage.rows.some((row) => row === lowestPrice),
-    );
+    const startingPrice = getPrivateTourStartingPrice(localized);
     const image = chooseDistinctCatalogImage(localized, usedImagePaths);
     usedImagePaths.add(image.src);
 
@@ -347,6 +345,7 @@ export function getPublishedPrivateTourCatalog(
       days: localized.days,
       nights: localized.nights,
       href: localized.path,
+      startingPriceHref: buildPrivateTourDetailHref(localized.path, localized.slug, startingPrice.selection),
       paths: localized.paths,
       image: {
         src: image.src,
@@ -359,16 +358,7 @@ export function getPublishedPrivateTourCatalog(
         ...localizedProfile(localized.slug, locale),
         highlights: localized.highlights.slice(0, 3),
       },
-      startingPrice: {
-        cny: lowestPrice.cny,
-        amount: lowestPrice.amount,
-        currency: lowestPrice.currency,
-        formatted: lowestPrice.formatted,
-        travelers: lowestPrice.travelers,
-        ...(localized.packages.length > 1 && startingPackage
-          ? { serviceLabel: startingPackage.label }
-          : {}),
-      },
+      startingPrice,
       dateModified: localized.dateModified,
     } satisfies PublishedPrivateTourCatalogItem;
   });
@@ -381,6 +371,9 @@ export function getPublishedPrivateTourCatalog(
     zhangjiajieProduct.price_display.from_price_per_person,
     locale,
   );
+  const zhangjiajieGuidedDays = zhangjiajieProduct.route
+    .filter((day) => day.guide_planned)
+    .map((day) => day.day);
 
   return Object.freeze([
     ...structuredItems,
@@ -393,6 +386,7 @@ export function getPublishedPrivateTourCatalog(
       days: zhangjiajieProduct.duration.days,
       nights: zhangjiajieProduct.duration.nights,
       href: zhangjiajieCard.canonicalPath,
+      startingPriceHref: zhangjiajieCard.canonicalPath,
       paths: zhangjiajiePaths,
       image: {
         src: zhangjiajieCard.cardImagePath,
@@ -413,6 +407,11 @@ export function getPublishedPrivateTourCatalog(
       startingPrice: {
         ...zhangjiajieStartingPrice,
         travelers: zhangjiajieProduct.group_basis.minimum_adults,
+        serviceLabel: {
+          en: `Private guide: days ${zhangjiajieGuidedDays.join(", ")}`,
+          zh: `第 ${zhangjiajieGuidedDays.join("、")} 天含私人导游`,
+          ko: `${zhangjiajieGuidedDays.join("·")}일차 전용 가이드 포함`,
+        }[locale],
       },
       dateModified: zhangjiajieCard.dateModified,
     } satisfies PublishedPrivateTourCatalogItem,

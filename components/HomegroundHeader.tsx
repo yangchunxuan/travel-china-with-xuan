@@ -32,13 +32,14 @@ import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
   isPrivateTourInquirySlug,
   getPrivateTourInquirySelection,
+  buildPrivateTourDetailHref,
   privateTourInquiryQueryKey,
   privateTourInquirySelectionQueryKeys,
 } from "../lib/privateTourInquiryContext";
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
-import { useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
+import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import styles from "./HomegroundHeader.module.css";
 
 export type HomegroundPageContext =
@@ -93,8 +94,6 @@ const allowedHeaderHashes = new Set([
   "#studio",
   "#faq",
   "#choose-service",
-  "#review-my-route",
-  "#build-my-route",
   "#full-trip-support",
 ]);
 const allowedPlannerQueries = new Set([
@@ -198,6 +197,7 @@ export function HomegroundHeader({
         : "#planner-contact"
   ) satisfies HomegroundHashTarget;
   const selectedPlannerHref = useSelectedPrivateTourInquiryHref(plannerHrefOverride);
+  const tourSelection = usePrivateTourSelection();
   const plannerHref = selectedPlannerHref ?? (
     pageContext === "home"
       ? plannerTarget
@@ -258,7 +258,9 @@ export function HomegroundHeader({
   const languageHrefFor = (targetLocale: HomegroundLocale) => {
     const overriddenPath = overriddenLanguagePathFor(targetLocale);
     if (overriddenPath) {
-      return overriddenPath;
+      return pageContext === "tour" && tourSelection
+        ? buildPrivateTourDetailHref(overriddenPath, tourSelection.slug, tourSelection.selection)
+        : overriddenPath;
     }
 
     const target = getHomegroundCopy(targetLocale);
@@ -305,8 +307,6 @@ export function HomegroundHeader({
 
     const allowedServiceHashes = new Set([
       "#choose-service",
-      "#review-my-route",
-      "#build-my-route",
       "#full-trip-support",
     ]);
     const hash = window.location.hash;

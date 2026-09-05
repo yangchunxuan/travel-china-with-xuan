@@ -145,7 +145,7 @@ export const homegroundPrivacyCopy: Record<
         "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
         "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
-        "Online checkout is not enabled. If a US$69 or US$129 written consultation is accepted, the scope and delivery date are confirmed first and payment instructions are sent separately. Do not submit card, bank or payment QR information through the enquiry form.",
+        "Online checkout is not enabled. Accepted trip arrangements and payment conditions are confirmed in writing. Do not submit card, bank or payment QR information through the enquiry form.",
         "When the quick-email form is unavailable, the contact card offers a prepared mailto link to the same monitored inbox. Opening an email app is never described as a saved or successful website submission.",
       ],
     },
@@ -292,7 +292,7 @@ export const homegroundPrivacyCopy: Record<
           label: "Transaction and service records",
           value: "Kept under the applicable business-record period",
           detail:
-            "If a written consultation is accepted, Homeground may keep the service confirmation, agreed scope, price and currency, payment confirmation, delivery correspondence and correction or refund record for service, accounting, dispute and legal obligations. These records do not use the website enquiry’s 12-month deletion period.",
+            "For accepted services, Homeground may keep the service confirmation, agreed scope, price and currency, payment confirmation, delivery correspondence and correction or refund record for service, accounting, dispute and legal obligations. These records do not use the website enquiry’s 12-month deletion period.",
         },
         {
           label: "Rate-limit retention",
@@ -395,7 +395,7 @@ export const homegroundPrivacyCopy: Record<
         "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
         "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
-        "本网站目前没有在线收银台。如 69 美元或 129 美元书面咨询被接受，会先确认范围和交付日期，再另行发送付款方式。请勿通过咨询表单提交银行卡、银行账户或付款二维码信息。",
+        "本网站目前没有在线收银台。确认承接的旅行安排与付款条件会书面确认。请勿通过咨询表单提交银行卡、银行账户或付款二维码信息。",
         "快速邮箱表单不可用时，联系卡会提供一封发往同一持续查看邮箱的预填邮件。打开邮件应用绝不能被描述成网站已保存或提交成功。",
       ],
     },
@@ -528,7 +528,7 @@ export const homegroundPrivacyCopy: Record<
           label: "交易与服务记录",
           value: "按适用的业务记录期限保留",
           detail:
-            "如书面咨询被接受，可能保存服务确认、约定范围、价格与币种、付款确认、交付往来及更正或退款记录，用于履行服务、财务记录、争议处理和法律义务。这类记录不适用网站咨询记录的 12 个月删除期限。",
+            "对于已经接受的服务，可能保存服务确认、约定范围、价格与币种、付款确认、交付往来及更正或退款记录，用于履行服务、财务记录、争议处理和法律义务。这类记录不适用网站咨询记录的 12 个月删除期限。",
         },
         {
           label: "限流数据保留",
@@ -631,7 +631,7 @@ export const homegroundPrivacyCopy: Record<
         "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
-        "현재 웹사이트에는 온라인 결제가 없습니다. US$69 또는 US$129 서면 컨설팅이 수락되면 범위와 제공 예정일을 먼저 확인하고 결제 방법을 별도로 안내합니다. 문의 양식에 카드, 계좌 또는 결제 QR 정보를 제출하지 마세요.",
+        "현재 웹사이트에는 온라인 결제가 없습니다. 수락된 여행 준비와 결제 조건은 서면으로 확인합니다. 문의 양식에 카드, 계좌 또는 결제 QR 정보를 제출하지 마세요.",
         "간단 이메일 양식을 사용할 수 없을 때 연락 카드가 같은 모니터링 메일함으로 보내는 미리 작성된 이메일 링크를 제공합니다. 이메일 앱을 여는 것을 웹사이트 저장 또는 제출 성공으로 표시하지 않습니다.",
       ],
     },
@@ -770,7 +770,7 @@ export const homegroundPrivacyCopy: Record<
           label: "거래 및 서비스 기록",
           value: "적용되는 업무 기록 보관 기준에 따라 보관",
           detail:
-            "서면 컨설팅이 수락되면 서비스 확인, 합의 범위, 가격과 통화, 결제 확인, 제공 관련 대화, 수정 또는 환불 기록을 서비스 이행, 회계, 분쟁 및 법적 의무를 위해 보관할 수 있습니다. 해당 기록에는 웹사이트 문의의 12개월 삭제 기간이 적용되지 않습니다.",
+            "이미 수락된 서비스의 확인, 합의 범위, 가격과 통화, 결제 확인, 제공 관련 대화, 수정 또는 환불 기록을 서비스 이행, 회계, 분쟁 및 법적 의무를 위해 보관할 수 있습니다. 해당 기록에는 웹사이트 문의의 12개월 삭제 기간이 적용되지 않습니다.",
         },
         {
           label: "속도 제한 정보 보관",

@@ -318,7 +318,7 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
     /isPartOf: \{ "@id": EDITORIAL_WEBSITE_ID \}/,
   );
   assert.match(component, /<GuideCtaLink/);
-  assert.match(component, /US\$69 human route review/);
+  assert.match(component, /Enquire about a private China tour/);
   assert.match(component, new RegExp(`${filePrefix}\\.zip`));
   assert.match(component, new RegExp(`${filePrefix}\\.json`));
   assert.match(component, new RegExp(`${filePrefix}-LICENSE\\.txt`));
@@ -363,7 +363,7 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.ok(downloadSection >= 0 && commercialCta >= 0);
   assert.ok(
     downloadSection < commercialCta,
-    "free reuse terms and downloads must be visible before the commercial route-review CTA",
+    "free reuse terms and downloads must be visible before the private-tour enquiry CTA",
   );
   assert.match(component, /id="licence"/);
   assert.match(component, /including commercially/);

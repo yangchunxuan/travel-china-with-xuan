@@ -52,7 +52,7 @@ test("all Studio openings expose inputs, deliverables and timing without price o
     assert.equal(copy.overview.terms.length, 1);
     assert.equal(copy.trust.inputs.length, 4);
     assert.equal(copy.trust.points.length, 3);
-    assert.equal(copy.trust.deliverables.length, 4);
+    assert.equal(copy.trust.deliverables.length, 2);
 
     const opening = JSON.stringify(copy.overview);
     assert.doesNotMatch(opening, /US\$(?:69|129)/);

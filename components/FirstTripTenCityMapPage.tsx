@@ -240,7 +240,7 @@ export function FirstTripTenCityMapPage() {
   const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
   const citation = `Homeground China (2026), “First Trip to China: 10-City Airport, Station and Stay Map,” version ${assetData.version}, reviewed 23 August 2026. ${guide.canonicalUrl}`;
   const ctaHref =
-    "/china-itinerary-review/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=route_review&utm_content=matrix_cta#choose-service";
+    "/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=matrix_cta#planner-contact";
   const briefHref =
     "/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=footer_cta#planner-contact";
   const schema = structuredData();
@@ -407,11 +407,11 @@ export function FirstTripTenCityMapPage() {
           <aside className={styles.commercialCta}>
             <div>
               <p className={styles.miniLabel}>Protect the bookings</p>
-              <h2>Have us check your airport–station–hotel chain.</h2>
-              <p>A US$69 human route review checks city order, gateway names, hotel bases, transfer logic and pace before the remaining bookings become expensive to change.</p>
+              <h2>Need help arranging this journey?</h2>
+              <p>Enquire about a private China tour with the city order, gateways and hotel bases your group needs. Arrangements and the quotation are confirmed before booking.</p>
             </div>
             <GuideCtaLink href={ctaHref} guideId={guide.id} locale="en" position="inline">
-              Request a route review — US$69
+              Enquire about a private tour
               <ArrowRight aria-hidden="true" size={18} />
             </GuideCtaLink>
           </aside>
