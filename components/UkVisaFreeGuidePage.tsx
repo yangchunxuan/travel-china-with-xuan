@@ -7,6 +7,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
@@ -53,9 +54,8 @@ function createStructuredData() {
         inLanguage: "en-GB",
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
-        mainEntityOfPage: guide.canonicalUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         citation: UK_VISA_GUIDE_SOURCES.map((source) => source.url),
         about: [
           "China visa-free entry",

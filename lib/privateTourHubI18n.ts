@@ -13,7 +13,7 @@ const copy = {
     metadata: {
       title: "Private China Tours: Compare Itineraries & Prices",
       description: (count: number) =>
-        `Compare ${count} private China tours by itinerary, price, pace and inclusions. Choose a published route, then confirm dates, service options and any changes.`,
+        `Compare ${count} private China tours, USD prices and guide options. Plan your arrival from Malaysia, Singapore, Australia or elsewhere.`,
       openGraphTitle: (count: number) =>
         `Private China Tours — ${count} Itineraries & Starting Prices`,
     },
@@ -29,6 +29,8 @@ const copy = {
     quickCompareTitle: "Find the journey that feels like yours.",
     quickCompareIntroduction:
       "Compare trip length, starting price, pace and the places each route brings together.",
+    priceBasisNote:
+      "Prices in US dollars · per person for 2 travellers · international flights excluded. Open each route for room arrangements and guide options.",
     quickFitLabel: "Best for",
     quickMovementLabel: "Stay and travel pattern",
     quickAction: "View journey",
@@ -73,6 +75,8 @@ const copy = {
     quickCompareTitle: "先找到最像你想走的那一条。",
     quickCompareIntroduction:
       "比较天数、起价、节奏，以及每条路线真正连接的地方。",
+    priceBasisNote:
+      "以下为人民币每人起价，按 2 人同行，不含国际机票。房型安排和导游服务以各路线说明为准。",
     quickFitLabel: "更适合",
     quickMovementLabel: "住宿与换城",
     quickAction: "查看路线",
@@ -117,6 +121,8 @@ const copy = {
     quickCompareTitle: "나에게 맞는 여정을 찾아보세요.",
     quickCompareIntroduction:
       "기간, 시작가, 일정 여유도와 각 여정에 포함된 지역을 비교하세요.",
+    priceBasisNote:
+      "표시 가격은 2인 여행 기준 1인당 원화 시작가이며 국제선 항공권은 제외됩니다. 객실 구성과 가이드 옵션은 각 일정에서 확인하세요.",
     quickFitLabel: "추천 여행자",
     quickMovementLabel: "숙박지와 이동 방식",
     quickAction: "이 일정 보기",
@@ -166,6 +172,37 @@ export function getPrivateTourHubCopy(
 }
 
 export type PrivateTourHubCopy = ReturnType<typeof getPrivateTourHubCopy>;
+
+export const englishMarketPlanning = {
+  eyebrow: "Before you book",
+  title: "Starting from Malaysia, Singapore or Australia?",
+  introduction:
+    "Choose your route in China first, then check how your arrival and departure fit. You can plan with us in English wherever you are travelling from.",
+  questions: [
+    {
+      title: "Does the price include my flights?",
+      body: "International flights are not included. Send your departure city and any flights you are considering; we will confirm the meeting point, arrival transfer and first day in your written quote before you book.",
+    },
+    {
+      title: "Which currency and room basis should I compare?",
+      body: "The prices above are in US dollars, not Singapore or Australian dollars. Starting prices are per person for two travellers. Check each route’s accommodation and room basis; children, extra rooms and different group sizes need their own quote.",
+    },
+    {
+      title: "Will I have an English-speaking guide?",
+      body: "Check the named service option and guided days on each route. Beijing offers English-guided and no-onsite-guide options. For the classic Zhangjiajie tour, guide language and any language-related price difference are confirmed in your quote.",
+    },
+    {
+      title: "Can we travel with children or older family members?",
+      body: "Tell us children’s ages, walking comfort, stairs you want to avoid and room preferences. We will check which route fits your group and what can change. Fixed routes keep their published attractions and transport arrangements.",
+    },
+  ],
+  preparationLabel: "Useful before choosing flights",
+  links: [
+    { href: "/guides/zhangjiajie-from-malaysia/", label: "Planning Zhangjiajie from Malaysia" },
+    { href: "/guides/do-singaporeans-need-visa-china/", label: "China entry guidance for Singaporeans" },
+    { href: "/guides/china-entry-requirements/", label: "Check entry requirements for your passport" },
+  ],
+} as const;
 
 export function getPrivateTourHubLanguagePaths() {
   return {

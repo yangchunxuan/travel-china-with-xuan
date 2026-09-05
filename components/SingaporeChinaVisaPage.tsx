@@ -9,6 +9,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
@@ -48,7 +49,7 @@ function createStructuredData(locale: HomegroundLocale) {
         headline: copy.title,
         description: copy.metadataDescription,
         inLanguage: copy.htmlLang,
-        mainEntityOfPage: guide.canonicalUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         datePublished: guide.datePublished,
         dateModified: copy.sourceReviewedAt,
         image: {
@@ -60,7 +61,6 @@ function createStructuredData(locale: HomegroundLocale) {
         },
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         about: copy.schemaAbout.map((name) => ({ "@type": "Thing", name })),
         citation: copy.sources.map((source) => ({

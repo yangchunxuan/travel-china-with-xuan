@@ -150,3 +150,13 @@ export function editorialWebsiteSchema() {
     publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
   };
 }
+
+// Schema.org reviewedBy belongs to WebPage, not Article.
+// Keep the existing reviewer on the page identified by mainEntityOfPage.
+export function editorialReviewedPageSchema(canonicalUrl: string) {
+  return {
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+    reviewedBy: { "@id": EDITORIAL_PERSON_ID },
+  };
+}

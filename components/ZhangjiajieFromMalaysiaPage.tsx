@@ -17,6 +17,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
@@ -29,6 +30,7 @@ import {
 } from "../lib/zhangjiajieFromMalaysiaGuide";
 import { getMalaysiaZhangjiajieGuideCopy } from "../lib/zhangjiajieFromMalaysiaGuideI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -78,7 +80,7 @@ function createStructuredData(
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         inLanguage: copy.htmlLang,
-        mainEntityOfPage: guide.canonicalUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         image: {
           "@type": "ImageObject",
           url: guide.heroImageUrl,
@@ -88,7 +90,6 @@ function createStructuredData(
         },
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         audience: {
           "@type": "Audience",
@@ -762,6 +763,13 @@ export function ZhangjiajieFromMalaysiaPage({
                 <h2 id="related-title">{copy.related.title}</h2>
               </header>
               <div>
+                <Link href={privateTourHubPaths[locale]}>
+                  <span>
+                    <strong>{{ en: "Compare published private tours and prices", zh: "比较已发布的私家团与价格", ko: "프라이빗 투어 일정과 요금 비교" }[locale]}</strong>
+                    <small>{{ en: "See Zhangjiajie’s classic and forest routes, included transport, guide options and the price basis before choosing.", zh: "先看张家界经典线与森林线的安排、已含交通、导游选项和价格口径，再选适合的路线。", ko: "장자제 클래식·산림 코스의 일정, 포함 교통, 가이드 옵션과 요금 기준을 먼저 확인하세요." }[locale]}</small>
+                  </span>
+                  <ArrowRight aria-hidden="true" size={17} />
+                </Link>
                 {copy.related.items.map((item) => {
                   const relatedGuide = getGuideEntry(item.guideId, locale);
                   return (

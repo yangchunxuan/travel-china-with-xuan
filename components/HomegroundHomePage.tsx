@@ -146,7 +146,6 @@ export function HomegroundHomePage({
     legalName: homegroundBusiness.registeredName,
     email: homegroundBusiness.serviceEmail,
     description: copy.schemaDescription,
-    inLanguage: copy.htmlLang,
     identifier: {
       "@type": "PropertyValue",
       propertyID: "Unified Social Credit Code",

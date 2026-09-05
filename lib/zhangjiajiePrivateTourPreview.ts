@@ -1,5 +1,6 @@
 import product from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json";
 import pricing from "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
+import { formatPrivateTourPrice } from "./privateTourProducts";
 
 export type ProductPreviewLocale = "en" | "zh" | "ko";
 
@@ -42,9 +43,9 @@ export const productPreviewCopy = {
       "A 4-day private Zhangjiajie tour covering the National Forest Park, Grand Canyon Glass Bridge and Tianmen Mountain. Day 1 is for arrival; Days 2–4 are sightseeing days, with the final day's ticket slot and departure time checked before booking.",
     secondaryCta: "Start with the four-day route",
     validThrough: "Price window: 15 August–30 September 2026",
-    checkingPrice: "Checking the current price window…",
+    checkingPrice: "Published reference prices",
     expiredPrice:
-      "The fixed-price window has ended. Ask for a fresh quote before relying on these figures.",
+      "The published price window does not apply today. Ask for a fresh quote for your travel dates.",
     fromLabel: "From",
     regularLabel: "Regular",
     perPerson: "per person",
@@ -292,7 +293,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "4-day private tour price",
     pricesTitle: "One route, three ways to stay",
     pricesIntro:
-      "The current price cards below are checked against their dated validity window. When that window ends, the page will ask you to request a fresh quote; the core sightseeing structure remains the same.",
+      "Choose the stay that suits your group. Reference prices are valid for the period shown; room availability, guide language and your final total are confirmed in writing before booking. All three stays follow the same four-day sightseeing route.",
     tierDescriptions: {
       "selected-city-stay":
         "A practical city base matched from the properties and rooms available for the actual dates.",
@@ -410,8 +411,8 @@ export const productPreviewCopy = {
       "这条4天3晚私家路线包含张家界国家森林公园、大峡谷玻璃桥与天门山。第1天抵达，第2–4天游览；预订前先核对最后一天的入场时段与离开时间。",
     secondaryCta: "先看四天怎么走",
     validThrough: "价格期：2026年8月15日至9月30日",
-    checkingPrice: "正在核对当前价格有效期…",
-    expiredPrice: "固定价格有效期已结束，请在参考这些数字前重新询价。",
+    checkingPrice: "已公布的参考价格",
+    expiredPrice: "今天不在已公布的价格有效期内，请按实际出行日期重新询价。",
     fromLabel: "起价",
     regularLabel: "常规价",
     perPerson: "每人",
@@ -644,7 +645,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "张家界4天3晚私家游价格",
     pricesTitle: "同一条路线，三种住宿质感",
     pricesIntro:
-      "下方当期价格卡会按有效期自动核对；价格窗口结束后，页面会提示重新询价。住宿档位会改变停留体验，但不改变四日核心游览结构。",
+      "选择适合同行人的住宿档位。参考价适用于标明的有效期；房间是否可订、导游语种与最终总价会在预订前书面确认。三个住宿档位均沿用同一条四日核心游览路线。",
     tierDescriptions: {
       "selected-city-stay":
         "按真实日期可订情况，从两家市区候选中匹配准确酒店与房型。",
@@ -761,9 +762,9 @@ export const productPreviewCopy = {
       "장자제 국가삼림공원, 대협곡 유리다리와 톈먼산을 둘러보는 3박 4일 프라이빗 투어입니다. 1일차는 도착, 2~4일차는 관광 일정이며 마지막 날의 입장 시간과 출발 시각을 예약 전에 확인합니다.",
     secondaryCta: "4일 일정부터 보기",
     validThrough: "가격 적용 기간: 2026년 8월 15일–9월 30일",
-    checkingPrice: "현재 가격 적용 기간을 확인하고 있습니다…",
+    checkingPrice: "공개된 참고 가격",
     expiredPrice:
-      "고정 가격의 유효기간이 지났습니다. 이 금액을 참고하기 전에 새 견적을 요청해 주세요.",
+      "오늘은 공개된 가격의 적용 기간에 해당하지 않습니다. 여행 날짜에 맞는 새 견적을 요청해 주세요.",
     fromLabel: "최저",
     regularLabel: "일반가",
     perPerson: "1인 기준",
@@ -1005,7 +1006,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "장자제 4일 3박 프라이빗 여행 가격",
     pricesTitle: "같은 일정, 세 가지 숙소 선택",
     pricesIntro:
-      "아래 가격 카드는 표시된 유효기간과 현재 날짜를 대조합니다. 유효기간이 지나면 새 견적을 요청하도록 안내하며, 숙소 등급이 달라져도 4일 핵심 관광 동선은 유지됩니다.",
+      "일행에게 맞는 숙소 등급을 선택하세요. 참고 요금은 표시된 기간에 적용되며, 객실 예약 가능 여부와 가이드 언어, 최종 총액은 예약 전에 서면으로 확인합니다. 세 숙소 등급 모두 같은 4일 핵심 관광 일정을 따릅니다.",
     tierDescriptions: {
       "selected-city-stay":
         "실제 날짜에 예약 가능한 숙소와 객실 가운데 실용적인 시내 숙소를 맞춥니다.",
@@ -1113,10 +1114,33 @@ export function getZhangjiajiePrivateTourPublicPricing(
   locale: ProductPreviewLocale,
 ) {
   const copy = productPreviewCopy[locale];
+  const dateFormatter = new Intl.DateTimeFormat(
+    { en: "en-GB", zh: "zh-CN", ko: "ko-KR" }[locale],
+    { year: "numeric", month: "short", day: "numeric", timeZone: "Asia/Shanghai" },
+  );
+  const basis = pricing.basis;
 
   return {
     validFrom: pricing.valid_from,
     validUntil: pricing.valid_until,
+    validFromLabel: dateFormatter.format(new Date(`${pricing.valid_from}T00:00:00+08:00`)),
+    validUntilLabel: dateFormatter.format(new Date(pricing.valid_until)),
+    timeZoneLabel: { en: "China time (UTC+8)", zh: "中国时间（UTC+8）", ko: "중국 시간 (UTC+8)" }[locale],
+    referenceNote: {
+      en: "Published prices for the dates shown, provided as a reference. Current availability and your final quote must be confirmed.",
+      zh: "以下为所示有效期内已公布的参考价格，不代表当前可订。可订状态与最终报价需另行确认。",
+      ko: "표시된 적용 기간의 공개 가격이며 참고용입니다. 현재 예약 가능 여부와 최종 견적은 별도로 확인해야 합니다.",
+    }[locale],
+    basisLabel: {
+      en: `Per person · minimum ${basis.minimum_adults} adults · ${basis.duration_days} days / ${basis.nights} nights · two adults sharing one room`,
+      zh: `每人价格 · 至少${basis.minimum_adults}位成人 · ${basis.duration_days}天${basis.nights}晚 · 两位成人同住一间房`,
+      ko: `1인 기준 · 성인 ${basis.minimum_adults}명 이상 · ${basis.nights}박 ${basis.duration_days}일 · 성인 2명 1실 기준`,
+    }[locale],
+    guideLanguageNote: {
+      en: "Guide language, including English, and any related price difference are confirmed in your written quote.",
+      zh: "导游语种（包括英语）及相关差价，以书面报价确认为准。",
+      ko: "영어를 포함한 가이드 언어와 관련 요금 차이는 서면 견적에서 확인합니다.",
+    }[locale],
     publicNote: {
       en: pricing.public_notes.en,
       zh: pricing.public_notes["zh-CN"],
@@ -1134,12 +1158,19 @@ export function getZhangjiajiePrivateTourPublicPricing(
           tier.tier_id as keyof typeof copy.tierDescriptions
         ],
       ...(tier.featured ? { featured: true } : { featured: false }),
+      formattedPrice: formatPrivateTourPrice(
+        "from_price_per_person" in tier ? tier.from_price_per_person : tier.price_per_person,
+        locale,
+      ).formatted,
       ...("from_price_per_person" in tier
         ? { fromPrice: tier.from_price_per_person }
         : {}),
       ...("price_per_person" in tier ? { price: tier.price_per_person } : {}),
       ...("regular_price_per_person" in tier
-        ? { regularPrice: tier.regular_price_per_person }
+        ? {
+            regularPrice: tier.regular_price_per_person,
+            formattedRegularPrice: formatPrivateTourPrice(tier.regular_price_per_person, locale).formatted,
+          }
         : {}),
     })),
   };

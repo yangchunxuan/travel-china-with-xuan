@@ -18,6 +18,7 @@ import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
   editorialPersonSchema,
+  editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
 import {
@@ -142,13 +143,12 @@ function createStructuredData(
         headline: guide.headline,
         description: guide.description,
         inLanguage: copy.htmlLang,
-        mainEntityOfPage: guide.canonicalUrl,
+        mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         image: guide.heroImageUrl,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        reviewedBy: { "@id": EDITORIAL_PERSON_ID },
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         about: copy.hero.places.map((name) => ({ "@type": "Place", name })),
       },

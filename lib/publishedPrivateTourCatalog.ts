@@ -50,6 +50,7 @@ export interface PublishedPrivateTourCatalogItem {
     readonly formatted: string;
     readonly travelers: number;
     readonly serviceLabel: string;
+    readonly validityNote?: string;
     readonly selection?: PrivateTourInquirySelection;
   };
   readonly dateModified: string;
@@ -374,6 +375,10 @@ export function getPublishedPrivateTourCatalog(
   const zhangjiajieGuidedDays = zhangjiajieProduct.route
     .filter((day) => day.guide_planned)
     .map((day) => day.day);
+  const zhangjiajiePriceEnd = new Intl.DateTimeFormat(
+    { en: "en-GB", zh: "zh-CN", ko: "ko-KR" }[locale],
+    { year: "numeric", month: "short", day: "numeric", timeZone: "Asia/Shanghai" },
+  ).format(new Date(zhangjiajieProduct.price_display.valid_until));
 
   return Object.freeze([
     ...structuredItems,
@@ -411,6 +416,11 @@ export function getPublishedPrivateTourCatalog(
           en: `Private guide: days ${zhangjiajieGuidedDays.join(", ")}`,
           zh: `第 ${zhangjiajieGuidedDays.join("、")} 天含私人导游`,
           ko: `${zhangjiajieGuidedDays.join("·")}일차 전용 가이드 포함`,
+        }[locale],
+        validityNote: {
+          en: `Reference price through ${zhangjiajiePriceEnd}; other dates need a new quote.`,
+          zh: `参考价适用至 ${zhangjiajiePriceEnd}，其他日期需重新报价。`,
+          ko: `${zhangjiajiePriceEnd}까지의 참고 요금이며, 다른 날짜는 새 견적이 필요합니다.`,
         }[locale],
       },
       dateModified: zhangjiajieCard.dateModified,

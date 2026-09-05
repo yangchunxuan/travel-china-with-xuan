@@ -82,7 +82,7 @@ test("guide answers full-day counting and park-order intent without inventing at
   assert.match(sources, /zjjdaxiagu\.com\/guide\.html/);
   assert.match(guide, /editorialPersonSchema\(locale\)/);
   assert.match(guide, /author: \{ "@id": EDITORIAL_PERSON_ID \}/);
-  assert.match(guide, /reviewedBy: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(guide, /mainEntityOfPage: editorialReviewedPageSchema\(guide\.canonicalUrl\)/);
   assert.match(guide, /<LegacyEditorialByline/);
   assert.match(guide, /utm_content=planner-contact#planner-contact/);
   assert.doesNotMatch(guide, /planner=destinations|free-brief|service=/);

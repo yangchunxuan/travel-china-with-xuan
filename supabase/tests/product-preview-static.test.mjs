@@ -398,11 +398,13 @@ test("approved prices cross the client boundary as a public projection only", as
   assert.match(priceWindow, /Date\.now\(\)/);
   assert.match(
     priceWindow,
-    /now <= new Date\(pricing\.validUntil\)\.getTime\(\)/,
+    /now >= startsAt && now <= endsAt/,
   );
   assert.match(priceWindow, /useState<PriceWindowStatus>\("checking"\)/);
   assert.match(priceWindow, /copy\.expiredPrice/);
-  assert.match(priceWindow, /copy\.validThrough/);
+  assert.match(priceWindow, /dateTime=\{pricing\.validUntil\}/);
+  assert.match(priceWindow, /pricing\.referenceNote/);
+  assert.match(priceWindow, /tier\.formattedPrice/);
   assert.doesNotMatch(
     [helper, page].join("\n"),
     /AggregateOffer|lowPrice|highPrice/,

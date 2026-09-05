@@ -254,7 +254,7 @@ export function formatPrivateTourPrice(
     formatted: new Intl.NumberFormat(numberLocales[locale], {
       style: "currency",
       currency,
-      currencyDisplay: "symbol",
+      currencyDisplay: locale === "en" ? "code" : "symbol",
       maximumFractionDigits: 0,
     }).format(amount),
   };

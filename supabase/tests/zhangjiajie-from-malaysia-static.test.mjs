@@ -174,7 +174,7 @@ test("Malaysia guide schema stays within Article and BreadcrumbList boundaries",
   assert.match(page, /"@type": "BreadcrumbList"/);
   assert.match(page, /editorialPersonSchema\(locale\)/);
   assert.match(page, /author: \{ "@id": EDITORIAL_PERSON_ID \}/);
-  assert.match(page, /reviewedBy: \{ "@id": EDITORIAL_PERSON_ID \}/);
+  assert.match(page, /mainEntityOfPage: editorialReviewedPageSchema\(guide\.canonicalUrl\)/);
   assert.match(page, /<LegacyEditorialByline/);
   assert.match(page, /position: 1/);
   assert.match(page, /position: 2/);
