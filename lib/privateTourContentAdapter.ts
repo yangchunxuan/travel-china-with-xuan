@@ -79,7 +79,7 @@ function buildPrivateTourHubNode(): ContentNode {
     legacyAliases: [],
     dates: {
       datePublished: "2026-08-24",
-      dateModified: "2026-08-31",
+      dateModified: "2026-09-05",
       lastReviewed: "2026-08-31",
     },
     updatePolicy: {

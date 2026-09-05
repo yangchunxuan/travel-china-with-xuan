@@ -97,24 +97,24 @@ export const legacySystemContentLifecycle = {
   },
   "itinerary-review": {
     datePublished: "2026-07-22",
-    dateModified: "2026-08-22",
+    dateModified: "2026-09-05",
     lastReviewed: "2026-07-22",
     evidence: {
-      commit: "e7a0d19e320adc3dc3ce88eb9283f9765ea1d22f",
-      changedAt: "2026-08-22",
+      commit: "edce6726ab00322c2cd4e53446f1d181c4ce4a74",
+      changedAt: "2026-09-05",
       summary:
-        "PR #88 materially changed the service page from studio language to the confirmed travel-agency identity.",
+        "The trilingual service introduction now states the route-review deliverables and separates review from building a new route.",
     },
   },
   "zhangjiajie-4-day-private-tour": {
     datePublished: "2026-08-16",
-    dateModified: "2026-09-01",
+    dateModified: "2026-09-05",
     lastReviewed: "2026-08-16",
     evidence: {
-      commit: "d3ffdf16b272b76e0dfc5848ac2fcde7bc37b0e3",
-      changedAt: "2026-09-01",
+      commit: "edce6726ab00322c2cd4e53446f1d181c4ce4a74",
+      changedAt: "2026-09-05",
       summary:
-        "The product page added a direct comparison with the forest-first fixed route and completed its WebPage lifecycle markup.",
+        "The trilingual introduction now distinguishes the arrival day from three sightseeing days and states the final-day departure check; Korean search copy also clarifies the duration.",
     },
   },
   "entry-requirements": {
