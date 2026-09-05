@@ -145,6 +145,7 @@ function TourComparisonCard({
               <strong>{product.startingPrice.formatted}</strong>
               <small>
                 {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+                {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
               </small>
             </p>
             <p className={styles.description}>{product.comparison.appeal}</p>
@@ -214,6 +215,7 @@ function CompactTourComparison({
               <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
               <strong>{product.startingPrice.formatted}</strong>{" "}
               {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+              {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
             </span>
           </p>
         </div>

@@ -3,6 +3,9 @@ import { once } from "node:events";
 import { spawn } from "node:child_process";
 import test from "node:test";
 import {
+  currentHomepageEmailFormVersion,
+  homepageEmailInquirySchemaVersion,
+  homepageEmailPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
@@ -166,7 +169,7 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
       "Content-Type": "application/json",
       "Idempotency-Key": idempotencyKey,
     },
-    body: JSON.stringify(payload()),
+    body: JSON.stringify({ ...payload(), trafficSessionToken: null }),
   });
   assert.equal(first.status, 201);
   const firstBody = await first.json();
@@ -284,6 +287,31 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
     (await whatsappConflict.json()).error.code,
     "idempotency_conflict",
   );
+
+  const selectedTour = {
+    schemaVersion: homepageEmailInquirySchemaVersion,
+    formVersion: currentHomepageEmailFormVersion,
+    entryPath: "homepage_email",
+    locale: "en",
+    trafficSessionToken: null,
+    contact: { channel: "email", email: "homeground-local-qa@example.invalid" },
+    productInterest: {
+      slug: "beijing-highlights-5-day-private-tour",
+      name: "Beijing Highlights: 5-Day Private Tour",
+      selection: { packageId: "no-guide", travelers: 4 },
+    },
+    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    attribution: { landingPath: "/" },
+    experiment: null,
+    antiAbuse: { companyWebsite: "" },
+  };
+  const selectedResponse = await fetch(endpoint, {
+    method: "POST",
+    headers: { Origin: origin, "Content-Type": "application/json", "Idempotency-Key": "8a02e4ec-d2fb-4f94-9f01-157c5d1a92fd" },
+    body: JSON.stringify(selectedTour),
+  });
+  assert.equal(selectedResponse.status, 201);
+  assert.equal((await selectedResponse.json()).state, "submitted");
 
   const forbidden = await fetch(endpoint, {
     method: "POST",

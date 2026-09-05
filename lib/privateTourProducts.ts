@@ -2400,7 +2400,7 @@ const beijing: PrivateTourProduct = {
     guidedPackage(
       "no-guide",
       "self-guided",
-      l("No on-site guide", "无导游版", "현장 가이드 없음"),
+      l("No on-site guide", "无现场导游", "현장 가이드 없음"),
       l(
         "Private transport, listed adult admission tickets, reservations and remote support are included, but there is no on-site guide or interpretation. No shopping stops.",
         "含私车、行程所列成人基础门票、预约与远程支持；现场无导游，也不含讲解服务，全程无购物店安排。",

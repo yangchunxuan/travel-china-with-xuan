@@ -258,12 +258,12 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     formula: "The actual evening + tomorrow’s start time = the real decision",
     conclusion:
       "A less distinctive show can be the better choice because it fits the correct base and protects the next day. Sometimes the best calculation ends with no ticket.",
-    ctaTitle: "Does an evening show still fit your route?",
+    ctaTitle: "Start with the daytime route",
     ctaBody:
-      "Tell us what is already fixed about Zhangjiajie. Use WhatsApp or leave your email; the date, hotel base and next-morning plan can be discussed with a planner.",
-    ctaAction: "Talk to a China trip planner",
+      "Compare our four-day Forest Park, Glass Bridge and Tianmen Mountain itinerary, then check whether an evening still fits your hotel base and next morning.",
+    ctaAction: "View the 4-day Zhangjiajie private tour",
     ctaNote:
-      "Live sessions, seats and transfers are confirmed for your dates. Paid work begins only after scope, price or quote, delivery timing and payment are confirmed.",
+      "Shows are optional extras outside the tour’s base price. Any added evening needs its own availability, transport and cost confirmation.",
   },
   checklist: {
     sectionLabel: "What changes by date",

@@ -92,8 +92,10 @@ test("homepage email has a dedicated private persistence path with no free-text 
   );
   assert.match(
     homepageBranch,
-    /p_attribution:\s*payload\.productInterest[\s\S]{0,220}slug: payload\.productInterest\.slug[\s\S]{0,120}name: payload\.productInterest\.name[\s\S]{0,100}: \{\}/u,
+    /p_attribution:\s*payload\.productInterest[\s\S]{0,220}slug: payload\.productInterest\.slug[\s\S]{0,120}name: payload\.productInterest\.name/u,
   );
+  assert.match(homepageBranch, /packageId: payload\.productInterest\.selection\.packageId/u);
+  assert.match(homepageBranch, /travelers: payload\.productInterest\.selection\.travelers/u);
   for (const forbidden of [
     /payload\.journey/u,
     /payload\.routeSnapshot/u,

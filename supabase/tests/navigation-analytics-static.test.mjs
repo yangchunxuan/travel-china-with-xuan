@@ -30,3 +30,9 @@ test("global navigation records only controlled anonymous dimensions", async () 
     /trackEvent\("navigation_clicked", \{[^}]*?(?:href|query|hash|title|description):/s,
   );
 });
+
+test("guide CTA events attach only a controlled destination category", async () => {
+  const component = await source("components/GuideCtaLink.tsx");
+  assert.match(component, /cta_target: guideCtaTarget\(href\)/u);
+  assert.doesNotMatch(component, /trackEvent\("guide_cta_clicked", \{[^}]*?(?:href|query|hash|title|description):/su);
+});

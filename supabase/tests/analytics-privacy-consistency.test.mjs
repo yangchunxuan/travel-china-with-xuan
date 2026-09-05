@@ -88,7 +88,7 @@ test("free-text guide searches stay out of third-party measurement URLs", async 
   assert.match(
     location,
     /thirdPartyMeasurementLocationIsSafe[\s\S]{0,500}url\.search === "" && url\.hash === ""/u,
-    "Every query- or fragment-bearing route must be ineligible for third-party measurement",
+    "The strict gate used by Meta must reject every query- or fragment-bearing route",
   );
   assert.match(
     location,
@@ -100,6 +100,8 @@ test("free-text guide searches stay out of third-party measurement URLs", async 
     /page_location: safeLocation,[\s\S]{0,80}page_referrer: safeReferrer/u,
     "GA events on guide search must override URL and referrer with query-free values",
   );
+  assert.match(analytics, /!googleMeasurementLocationIsSafe\(\)/u);
+  assert.match(analytics, /gtag\("set", googleEventParameters\(\{\}\)\)/u);
   assert.match(
     analytics,
     /marketingAllowed &&[\s\S]{0,120}metaMeasurementLocationIsSafe\(\)/u,

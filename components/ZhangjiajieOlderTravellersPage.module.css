@@ -295,7 +295,7 @@
   width: min(100%, 60rem);
 }
 
-.finalCta p:first-child {
+.finalCta > div:first-child > p {
   color: var(--guide-rust);
   font-size: 0.78rem;
   font-weight: 720;
@@ -385,6 +385,10 @@
 .related a:hover {
   border-color: var(--guide-rust);
   transform: translateY(-2px);
+}
+
+.related a + a {
+  margin-block-start: 1rem;
 }
 
 .related a:focus-visible {

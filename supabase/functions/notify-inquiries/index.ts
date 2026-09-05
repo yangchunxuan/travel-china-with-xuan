@@ -11,6 +11,8 @@ import {
 } from "../_shared/runtime.ts";
 import {
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySelection,
+  privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../../../lib/privateTourInquiryContext.ts";
@@ -94,14 +96,44 @@ function homepageProductInterest(
     throw new Error("invalid_job:homepage_product_interest");
   }
   const record = value as Record<string, unknown>;
+  const hasSelection = Object.prototype.hasOwnProperty.call(record, "selection");
   if (
-    Object.keys(record).length !== 2 ||
+    Object.keys(record).length !== (hasSelection ? 3 : 2) ||
     typeof record.slug !== "string" ||
     typeof record.name !== "string"
   ) {
     throw new Error("invalid_job:homepage_product_interest");
   }
-  const expected = getPrivateTourInquiryContext(record.slug, job.locale);
+  let selection = null;
+  if (hasSelection) {
+    const candidate = record.selection;
+    if (
+      typeof candidate !== "object" ||
+      candidate === null ||
+      Array.isArray(candidate)
+    ) {
+      throw new Error("invalid_job:homepage_product_selection");
+    }
+    const fields = candidate as Record<string, unknown>;
+    if (
+      Object.keys(fields).length !== 2 ||
+      typeof fields.packageId !== "string" ||
+      typeof fields.travelers !== "number"
+    ) {
+      throw new Error("invalid_job:homepage_product_selection");
+    }
+    selection = getPrivateTourInquirySelection(
+      record.slug,
+      fields.packageId,
+      fields.travelers,
+    );
+    if (!selection) throw new Error("invalid_job:homepage_product_selection");
+  }
+  const expected = getPrivateTourInquiryContext(
+    record.slug,
+    job.locale,
+    selection ?? undefined,
+  );
   if (!expected || record.name !== expected.name) {
     throw new Error("invalid_job:homepage_product_interest");
   }
@@ -529,6 +561,12 @@ async function sendThroughResend(
     const homepageAnswerKeys = Object.keys(job.answers);
     const homepageSnapshotKeys = Object.keys(job.route_snapshot);
     const productInterest = homepageProductInterest(job);
+    const selectionLabel = productInterest
+      ? privateTourInquirySelectionLabel(productInterest, job.locale)
+      : null;
+    const informationNote = selectionLabel
+      ? "Selected service version and group size are recorded below. Travel dates, traveller identities, budget and free-text details were not collected."
+      : "No itinerary, traveller, date, destination, budget or free-text details were collected.";
     if (
       job.reply_channel !== "email" ||
       job.contact_phone_e164 !== null ||
@@ -556,7 +594,7 @@ async function sendThroughResend(
       productInterest
         ? "A visitor left an email address and asked about a published private tour."
         : "A visitor left an email address on the Homeground homepage and asked for a human reply.",
-      "No itinerary, traveller, date, destination, budget or free-text details were collected.",
+      informationNote,
       "",
       `Reference: ${job.public_reference}`,
       `Language: ${locale}`,
@@ -564,6 +602,7 @@ async function sendThroughResend(
         ? [
             `Published tour: ${productInterest.name}`,
             `Product reference: ${productInterest.slug}`,
+            ...(selectionLabel ? [`Tour selection: ${selectionLabel}`] : []),
           ]
         : []),
       `Traveller contact: ${contact.display}`,
@@ -579,7 +618,7 @@ async function sendThroughResend(
           ? "A visitor left an email address and asked about a published private tour."
           : "A visitor left an email address on the Homeground homepage and asked for a human reply."
       }</p>
-      <p><strong>No itinerary details were collected.</strong></p>
+      <p><strong>${escapeHtml(selectionLabel ? informationNote : "No itinerary details were collected.")}</strong></p>
       <dl>
         <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
         <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
@@ -589,6 +628,7 @@ async function sendThroughResend(
         <dt>Product reference</dt><dd>${escapeHtml(productInterest.slug)}</dd>`
             : ""
         }
+        ${selectionLabel ? `<dt>Tour selection</dt><dd>${escapeHtml(selectionLabel)}</dd>` : ""}
         <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
         <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
         <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>

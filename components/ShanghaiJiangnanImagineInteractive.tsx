@@ -15,6 +15,7 @@ import type {
   PrivateTourLocale,
 } from "../lib/privateTourProducts";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const interactionCopy: Record<
@@ -178,8 +179,12 @@ export function ShanghaiJiangnanPriceConsole({
   product: LocalizedPrivateTourProduct;
   inquiryHref: string;
 }) {
-  const [packageId, setPackageId] = useState(product.packages[0].id);
-  const [travellers, setTravellers] = useState(2);
+  const selectionContext = usePrivateTourSelection();
+  if (!selectionContext) throw new Error("Private tour price needs selection context");
+  const { selection, setSelection } = selectionContext;
+  const packageId = selection.packageId;
+  const travellers = selection.travelers;
+  const selectedInquiryHref = useSelectedPrivateTourInquiryHref(inquiryHref) ?? inquiryHref;
   const copy = interactionCopy[product.locale];
   const tourPackage =
     product.packages.find((candidate) => candidate.id === packageId) ??
@@ -204,7 +209,7 @@ export function ShanghaiJiangnanPriceConsole({
                   aria-pressed={candidate.id === tourPackage.id}
                   key={candidate.id}
                   type="button"
-                  onClick={() => setPackageId(candidate.id)}
+                  onClick={() => setSelection({ ...selection, packageId: candidate.id })}
                 >
                   {candidate.label}
                 </button>
@@ -224,7 +229,7 @@ export function ShanghaiJiangnanPriceConsole({
               aria-pressed={row.travelers === travellers}
               key={row.travelers}
               type="button"
-              onClick={() => setTravellers(row.travelers)}
+              onClick={() => setSelection({ ...selection, travelers: row.travelers as 2 | 4 })}
             >
               <span>{copy.group(row.travelers)}</span>
               <strong>{row.formatted}</strong>
@@ -248,7 +253,7 @@ export function ShanghaiJiangnanPriceConsole({
         <GuideCtaLink
           className={styles.primaryAction}
           guideId={product.id}
-          href={inquiryHref}
+          href={selectedInquiryHref}
           locale={product.locale}
           position="header"
         >

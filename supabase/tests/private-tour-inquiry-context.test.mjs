@@ -5,11 +5,15 @@ import {
   buildPrivateTourInquiryHref,
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContext,
+  getPrivateTourInquiryContextFromSearchParams,
+  getPrivateTourInquirySelection,
+  privateTourInquirySelectionLabel,
   privateTourInquiryQueryKey,
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { buildRouteServiceContactHref } from "../../lib/routeServiceInterest.ts";
+import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 
@@ -70,6 +74,52 @@ test("product and service contact links carry only controlled identifiers", () =
     buildRouteServiceContactHref("/", "full-trip-support"),
     "/?service=full-trip-support#planner-contact",
   );
+});
+
+test("published package and group choices survive contact links in every language", () => {
+  for (const product of privateTourProducts) {
+    for (const tourPackage of product.packages) {
+      for (const row of tourPackage.prices) {
+        const selection = getPrivateTourInquirySelection(product.slug, tourPackage.id, row.travelers);
+        assert.deepEqual(selection, { packageId: tourPackage.id, travelers: row.travelers });
+        for (const locale of ["en", "zh", "ko"]) {
+          const context = getPrivateTourInquiryContext(product.slug, locale, selection);
+          const path = locale === "en" ? "/" : `/${locale}/`;
+          const href = buildPrivateTourInquiryHref(path, product.slug, "private_tour_product", selection);
+          const params = new URL(href, "https://homegroundchina.com").searchParams;
+          assert.deepEqual(getPrivateTourInquiryContextFromSearchParams(params, locale), context);
+          const label = privateTourInquirySelectionLabel(context, locale);
+          assert.ok(label.includes(String(row.travelers)));
+          assert.ok(decodeURIComponent(buildPrivateTourMailtoHref("test@example.invalid", locale, context)).includes(label));
+        }
+      }
+    }
+  }
+});
+
+test("a query cannot invent packages, groups or ambiguous duplicate selections", () => {
+  const tour = "beijing-highlights-5-day-private-tour";
+  for (const query of [
+    `tour=${tour}&package=no-guide`,
+    `tour=${tour}&travelers=4`,
+    `tour=${tour}&package=no-guide&travelers=04`,
+    `tour=${tour}&package=no-guide&travelers=3`,
+    `tour=${tour}&package=free-upgrade&travelers=2`,
+    `tour=${tour}&package=no-guide&package=english-guided&travelers=4`,
+    `tour=${tour}&package=no-guide&travelers=2&travelers=4`,
+    `tour=${tour}&tour=${tour}`,
+    "tour=chengdu-pandas-sanxingdui-5-day-private-tour&package=no-guide&travelers=2",
+  ]) assert.equal(getPrivateTourInquiryContextFromSearchParams(new URLSearchParams(query), "en"), null, query);
+  assert.deepEqual(getPrivateTourInquiryContextFromSearchParams(new URLSearchParams({tour}), "en"), getPrivateTourInquiryContext(tour, "en"));
+});
+
+test("Beijing card starting prices name the exact package in all languages", () => {
+  for (const locale of ["en", "zh", "ko"]) {
+    const item = getPublishedPrivateTourCatalog(locale).find((tour) => tour.slug === "beijing-highlights-5-day-private-tour");
+    const noGuide = privateTourProducts.find((tour) => tour.slug === item.slug).packages.find((option) => option.id === "no-guide");
+    assert.equal(item.startingPrice.serviceLabel, noGuide.label[locale]);
+    assert.equal(item.startingPrice.cny, noGuide.prices.find((row) => row.travelers === 2).cnyPerPerson);
+  }
 });
 
 test("tour CTAs, quick contacts and backend keep the canonical context end to end", async () => {

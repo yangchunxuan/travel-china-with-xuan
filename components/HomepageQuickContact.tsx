@@ -32,9 +32,9 @@ import type { HomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import {
   buildPrivateTourMailtoHref,
-  getPrivateTourInquiryContext,
+  getPrivateTourInquiryContextFromSearchParams,
   privateTourInquiryContactCopy,
-  privateTourInquiryQueryKey,
+  privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
 import styles from "./HomegroundHomePage.module.css";
@@ -143,7 +143,7 @@ function whatsappMessage(
   privateTourInterest: PrivateTourInquiryContext | null,
 ): string {
   const productLine = privateTourInterest
-    ? `\n${privateTourInquiryContactCopy[locale].whatsappLine}: ${privateTourInterest.name}\n${privateTourInquiryContactCopy[locale].referenceLabel}: ${privateTourInterest.slug}`
+    ? `\n${privateTourInquiryContactCopy[locale].whatsappLine}: ${privateTourInterest.name}\n${privateTourInquiryContactCopy[locale].referenceLabel}: ${privateTourInterest.slug}${privateTourInquirySelectionLabel(privateTourInterest, locale) ? `\n${privateTourInquirySelectionLabel(privateTourInterest, locale)}` : ""}`
     : "";
   if (locale === "zh") {
     return `你好 Homeground，我正在计划中国旅行，想先和你们聊聊。${productLine}`;
@@ -222,10 +222,7 @@ export function HomepageQuickContact({
     const syncPrivateTourInterest = () => {
       const parameters = new URL(window.location.href).searchParams;
       setPrivateTourInterest(
-        getPrivateTourInquiryContext(
-          parameters.get(privateTourInquiryQueryKey),
-          locale,
-        ),
+        getPrivateTourInquiryContextFromSearchParams(parameters, locale),
       );
     };
 
@@ -275,6 +272,7 @@ export function HomepageQuickContact({
       ? {
           slug: privateTourInterest.slug,
           name: privateTourInterest.name,
+          ...(privateTourInterest.selection ? { selection: privateTourInterest.selection } : {}),
         }
       : null,
     attribution: {
@@ -448,6 +446,9 @@ export function HomepageQuickContact({
         >
           <span>{privateTourInquiryContactCopy[locale].surfaceLabel}</span>
           <strong>{privateTourInterest.name}</strong>
+          {privateTourInquirySelectionLabel(privateTourInterest, locale) && (
+            <p>{privateTourInquirySelectionLabel(privateTourInterest, locale)}</p>
+          )}
         </aside>
       )}
       <div className={styles.quickContactGrid}>
@@ -563,7 +564,9 @@ export function HomepageQuickContact({
               <CheckCircle2 aria-hidden="true" size={22} />
               <div>
                 <strong>{contactCopy.emailSuccessTitle}</strong>
-                <p>{contactCopy.emailSuccessBody}</p>
+                <p>{privateTourInterest?.selection
+                  ? privateTourInquiryContactCopy[locale].emailSelectionSuccessBody
+                  : contactCopy.emailSuccessBody}</p>
                 <small>
                   {contactCopy.referenceLabel}: {publicReference}
                 </small>

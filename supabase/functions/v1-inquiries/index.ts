@@ -464,6 +464,14 @@ async function handleRequest(request: Request): Promise<Response> {
                 productInterest: {
                   slug: payload.productInterest.slug,
                   name: payload.productInterest.name,
+                  ...(payload.productInterest.selection
+                    ? {
+                        selection: {
+                          packageId: payload.productInterest.selection.packageId,
+                          travelers: payload.productInterest.selection.travelers,
+                        },
+                      }
+                    : {}),
                 },
               }
             : {},
