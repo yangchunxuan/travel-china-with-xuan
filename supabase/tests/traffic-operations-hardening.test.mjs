@@ -223,7 +223,7 @@ test("Admin traffic has a second default-off kill switch", async () => {
   const trafficSwitch = endpoint.indexOf(
     'booleanEnv(\n      "ADMIN_TRAFFIC_API_ENABLED",\n      false,',
   );
-  const trafficRpc = endpoint.indexOf('"get_homeground_admin_traffic"');
+  const trafficRpc = endpoint.indexOf('"get_homeground_admin_traffic_v2"');
 
   assert.ok(authorization >= 0);
   assert.ok(trafficSwitch > authorization);

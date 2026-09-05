@@ -29,7 +29,7 @@ const expectedModifiedDates = {
   guides: "2026-08-22",
   home: "2026-09-04",
   "itinerary-review": "2026-09-05",
-  privacy: "2026-08-23",
+  privacy: "2026-09-05",
   "refund-delivery": "2026-07-24",
   studio: "2026-08-22",
   terms: "2026-07-24",

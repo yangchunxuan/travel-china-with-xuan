@@ -27,6 +27,7 @@ import {
   type DestinationPaceId,
 } from "../lib/destinationPlanner";
 import { trackEvent, type HomegroundEventName } from "../lib/analytics";
+import { useAnalyticsEventOnce } from "./useAnalyticsEvent";
 import {
   getDestinationNames,
   getDestinationPlannerCopy,
@@ -446,7 +447,7 @@ export function RouteFinder({
   const resultHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const otherPlaceRef = useRef<HTMLInputElement | null>(null);
   const customNightsRef = useRef<HTMLInputElement | null>(null);
-  const hasTrackedStart = useRef(false);
+  const recordPlannerStart = useAnalyticsEventOnce();
   const hasMounted = useRef(false);
   const hasInitializedPlanner = useRef(false);
   const planningIntentRef = useRef(planningIntent);
@@ -511,13 +512,8 @@ export function RouteFinder({
             ? "paid_brief_ready_viewed"
             : eventName,
         {
-        page_language: locale,
-        planning_intent: activeIntent ?? "unselected",
-        destination_count: answers.destinationIds.length,
-        has_other_place: Boolean(answers.otherPlace),
-        destination_mode: answers.destinationMode,
-        timing_status: nextMatch.timing.status,
-        total_nights: answers.totalNights,
+          page_language: locale,
+          planning_intent: activeIntent ?? "unselected",
         },
       );
     },
@@ -827,10 +823,7 @@ export function RouteFinder({
   const updateDraft = (next: PlannerDraft) => {
     setDraft(next);
     setQuestionError("");
-    if (!hasTrackedStart.current) {
-      hasTrackedStart.current = true;
-      trackPlannerEvent("planner_started", { page_language: locale });
-    }
+    recordPlannerStart("planner_started", { page_language: locale });
     onStatusChange?.("in-progress");
   };
 
@@ -1054,7 +1047,6 @@ export function RouteFinder({
     setView("questions");
     setStepIndex(0);
     setQuestionError("");
-    hasTrackedStart.current = false;
     window.sessionStorage.removeItem(sessionStorageKey);
     onRouteCleared?.();
     onStatusChange?.("new");

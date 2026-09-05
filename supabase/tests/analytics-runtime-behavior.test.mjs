@@ -19,6 +19,9 @@ const compiledModuleNames = [
   "analyticsConsent.js",
   "analyticsLocation.js",
   "analyticsPageViews.js",
+  "analyticsRuntime.js",
+  "analyticsVisibility.js",
+  "inquiryTrafficConsent.js",
 ];
 
 function preferences({
@@ -27,7 +30,7 @@ function preferences({
   updatedAt = "2026-08-23T00:00:00.000Z",
 }) {
   return {
-    version: "2026-07-31.1",
+    version: "2026-09-05.1",
     necessary: true,
     analytics,
     marketing,
@@ -115,7 +118,7 @@ function installBrowser({
   };
 
   globalThis.window = window;
-  globalThis.document = { cookie: "", referrer };
+  globalThis.document = { cookie: "", referrer, visibilityState: "visible", addEventListener: window.addEventListener, removeEventListener: window.removeEventListener };
 
   return {
     emitStorage(nextConsent) {
@@ -154,6 +157,9 @@ function loadCompiledModules(outputDirectory) {
     delete require.cache[require.resolve(path)];
   }
   return {
+    inquiryTraffic: require(join(outputDirectory, "inquiryTrafficConsent.js")),
+    runtime: require(join(outputDirectory, "analyticsRuntime.js")),
+    visibility: require(join(outputDirectory, "analyticsVisibility.js")),
     analytics: require(join(outputDirectory, "analytics.js")),
     consent: require(join(outputDirectory, "analyticsConsent.js")),
     location: require(join(outputDirectory, "analyticsLocation.js")),
@@ -183,16 +189,48 @@ async function settleAsyncTurns(turns = 10) {
   }
 }
 
+function installQueueClock(context) {
+  const originalNow = Date.now;
+  const originalSetTimeout = globalThis.setTimeout;
+  const originalClearTimeout = globalThis.clearTimeout;
+  let now = Date.parse("2026-09-05T00:00:00Z");
+  let nextId = 0;
+  const timers = new Map();
+  Date.now = () => now;
+  globalThis.setTimeout = (callback, delay = 0) => {
+    const id = ++nextId;
+    timers.set(id, { callback, at: now + delay });
+    return id;
+  };
+  globalThis.clearTimeout = (id) => timers.delete(id);
+  context.after(() => { Date.now = originalNow; globalThis.setTimeout = originalSetTimeout; globalThis.clearTimeout = originalClearTimeout; });
+  return { advance(milliseconds) {
+    now += milliseconds;
+    for (const [id, timer] of Array.from(timers)) {
+      if (timer.at <= now) { timers.delete(id); timer.callback(); }
+    }
+  } };
+}
+
 function sessionReadyResponse(fill = "a") {
   return new Response(
     JSON.stringify({
-      contractVersion: "homeground-traffic-events.v1",
+      contractVersion: "homeground-traffic-events.v2",
       state: "session_ready",
       sessionCredential: `v1.1999999999.${fill.repeat(64)}`,
       expiresAt: "2033-05-18T03:33:19.000Z",
     }),
     { status: 200, headers: { "Content-Type": "application/json" } },
   );
+}
+
+function stalledTrafficResponse(signal, status = 200, headers = {}) {
+  return new Response(new ReadableStream({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode("{"));
+      signal.addEventListener("abort", () => controller.error(signal.reason), { once: true });
+    },
+  }), { status, headers });
 }
 
 test("analytics runtime honors consent, query privacy and vendor queue contracts", async (context) => {
@@ -212,6 +250,9 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     "lib/analyticsConsent.ts",
     "lib/analyticsLocation.ts",
     "lib/analyticsPageViews.ts",
+    "lib/analyticsRuntime.ts",
+    "lib/analyticsVisibility.ts",
+    "lib/inquiryTrafficConsent.ts",
     "--outDir",
     outputDirectory,
     "--module",
@@ -224,6 +265,163 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     "es2022,dom",
     "--skipLibCheck",
   ], { cwd: repositoryRoot });
+
+  await context.test("internal mode and noncanonical previews block every sink and session token", async () => {
+    for (const href of ["http://localhost:3000/", "https://preview.example.com/", "https://www.homegroundchina.com/"]) {
+      installBrowser({ href });
+      const { analytics } = loadCompiledModules(outputDirectory);
+      let calls = 0;
+      globalThis.fetch = async () => { calls += 1; throw new Error("unexpected network"); };
+      assert.equal(analytics.initializeGoogleAnalytics(), false);
+      assert.equal(analytics.initializeMetaPixel(), false);
+      assert.equal(analytics.getTrafficSessionToken(), undefined);
+      assert.deepEqual(analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" }), []);
+      analytics.trackPageView({ path: "/", locale: "en", target: "first_party" });
+      await settleAsyncTurns();
+      assert.equal(calls, 0);
+      assert.equal(window.dataLayer, undefined);
+      assert.equal(window.fbq, undefined);
+    }
+    const browser = installBrowser();
+    const { analytics, runtime } = loadCompiledModules(outputDirectory);
+    assert.equal(analytics.initializeGoogleAnalytics(), true);
+    assert.equal(analytics.initializeMetaPixel(), true);
+    analytics.getTrafficSessionToken();
+    const changes = [];
+    const unsubscribe = runtime.subscribeInternalTrafficExcluded((value) => changes.push(value));
+    runtime.setInternalTrafficExcluded(true);
+    assert.equal(runtime.isInternalTrafficExcluded(), true);
+    assert.equal(window["ga-disable-G-TEST1234"], true);
+    assert.equal(analytics.getTrafficSessionToken(), undefined);
+    assert.equal(browser.sessionStorage.getItem("homeground-analytics-session"), null);
+    assert.deepEqual(analytics.trackEvent("contact_option_clicked", { channel: "email" }), []);
+    runtime.setInternalTrafficExcluded(false);
+    assert.deepEqual(changes, [true, false]);
+    unsubscribe();
+  });
+
+  await context.test("inquiry retries remove stale optional linkage while preserving the business snapshot", () => {
+    const browser = installBrowser();
+    const { analytics, inquiryTraffic, runtime } = loadCompiledModules(outputDirectory);
+    const token = analytics.getTrafficSessionToken();
+    const body = JSON.stringify({ trafficSessionToken: token, schemaVersion: "example", contact: { channel: "email", email: "fixture@example.test" } });
+    assert.equal(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body), body);
+    runtime.setInternalTrafficExcluded(true);
+    const redacted = JSON.parse(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body));
+    assert.equal(redacted.trafficSessionToken, null);
+    assert.deepEqual(redacted.contact, JSON.parse(body).contact);
+    runtime.setInternalTrafficExcluded(false);
+    browser.emitStorage(preferences({ analytics: false, marketing: false }));
+    assert.equal(JSON.parse(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body)).trafficSessionToken, null);
+  });
+
+  await context.test("new consent version refuses legacy consent until a fresh choice", () => {
+    installBrowser({ consent: { ...preferences({ analytics: true, marketing: true }), version: "2026-07-31.1" } });
+    const { analytics, consent } = loadCompiledModules(outputDirectory);
+    assert.equal(consent.readAnalyticsConsent(), null);
+    assert.equal(analytics.initializeGoogleAnalytics(), false);
+    assert.equal(analytics.initializeMetaPixel(), false);
+    assert.equal(analytics.getTrafficSessionToken(), undefined);
+  });
+
+  await context.test("first uses are counted independently per sink only on a new consented interaction", async () => {
+    const browser = installBrowser({ consent: preferences({ analytics: false, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    globalThis.fetch = async (_url, init) => JSON.parse(init.body).requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    const delivered = new Set();
+    const focus = () => analytics.trackEventOnce(delivered, "quick_email_started", { submission_surface: "homepage_email" });
+    focus();
+    assert.equal(delivered.size, 0);
+    browser.emitStorage(preferences({ analytics: false, marketing: true }));
+    assert.equal(delivered.size, 0, "a new grant does not replay a prior input focus");
+    focus();
+    assert.deepEqual([...delivered], ["meta"]);
+    browser.emitStorage(preferences({ analytics: true, marketing: true, updatedAt: "2026-09-05T00:00:01Z" }));
+    focus(); focus();
+    await settleAsyncTurns();
+    assert.deepEqual([...delivered].sort(), ["first_party", "google", "meta"]);
+    const google = window.dataLayer.filter((item) => item[0] === "event" && item[1] === "quick_email_started");
+    const meta = window.fbq.queue.filter((item) => item[0] === "trackCustom" && item[1] === "quick_email_started");
+    assert.equal(google.length, 1);
+    assert.equal(meta.length, 1);
+  });
+
+  await context.test("product choices are validated and sent exclusively to first-party v2", async () => {
+    installBrowser({ href: "https://homegroundchina.com/tours/beijing-highlights-5-day-private-tour/" });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    const context = { productSlug: "beijing-highlights-5-day-private-tour", packageId: "no-guide", travelers: 4, surface: "product" };
+    analytics.trackEvent("product_selection_changed", { package_id: "do-not-send", travelers: 4 }, { firstPartyContext: context });
+    await waitForTurns(() => requests.length === 2);
+    assert.equal(requests[1].contractVersion, "homeground-traffic-events.v2");
+    assert.equal(requests[1].noticeVersion, "2026-09-05.1");
+    assert.deepEqual(requests[1].events[0], { eventId: requests[1].events[0].eventId, type: "product_selection_changed", pagePath: "/tours/beijing-highlights-5-day-private-tour/", actionCode: null, clientSequence: 1, ...context, errorCode: null });
+    assert.equal(window.dataLayer, undefined);
+    assert.equal(window.fbq, undefined);
+    analytics.trackEvent("product_selection_changed", {}, { firstPartyContext: { ...context, packageId: "standard-guided" } });
+    analytics.trackEvent("product_selection_changed", {}, { firstPartyContext: { ...context, travelers: 99 } });
+    analytics.trackEvent("product_selection_changed", {}, { firstPartyContext: { ...context, productSlug: "private@email.test" } });
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    analytics.trackEvent("contact_option_clicked", { channel: "email", package_id: "no-guide", travelers: 4 }, { firstPartyContext: context });
+    await waitForTurns(() => requests.length === 3);
+    const googleEvent = window.dataLayer.find((item) => item[0] === "event");
+    assert.equal(googleEvent[2].package_id, undefined);
+    assert.equal(googleEvent[2].travelers, undefined);
+    assert.equal(requests[2].events[0].clientSequence, 2);
+  });
+
+  await context.test("questionnaire answers and derived profiles never reach any measurement sink", async () => {
+    installBrowser();
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    const privateFields = { destination_count: 3, has_other_place: true, destination_mode: "selected", timing_status: "custom", total_nights: 12, route_id: "derived-route", rule_version: "derived-rule", route_family: "derived-family", route_profile: "derived-profile" };
+    analytics.trackEvent("contact_options_viewed", { page_language: "en", ...privateFields });
+    analytics.trackEvent("planner_result_viewed", { page_language: "en", ...privateFields });
+    await waitForTurns(() => requests.length === 2);
+    const measurement = JSON.stringify({ requests, google: window.dataLayer.map((item) => Array.from(item)), meta: window.fbq.queue });
+    for (const key of Object.keys(privateFields)) assert.equal(measurement.includes(`"${key}"`), false, key);
+    assert.equal(measurement.includes("derived-profile"), false);
+    assert.equal(measurement.includes("planner_result_viewed"), true);
+  });
+
+  await context.test("contact exposure requires the current surface to be visible", () => {
+    const browser = installBrowser();
+    const { visibility } = loadCompiledModules(outputDirectory);
+    let hidden = true;
+    let top = 20;
+    let inspect;
+    let count = 0;
+    browser.window.innerHeight = 600;
+    browser.window.innerWidth = 400;
+    browser.window.getComputedStyle = () => ({ visibility: "visible", display: "block" });
+    globalThis.IntersectionObserver = class { constructor(callback) { inspect = callback; } observe() {} disconnect() {} };
+    globalThis.MutationObserver = class { observe() {} disconnect() {} };
+    const element = { closest: () => hidden ? {} : null, getBoundingClientRect: () => ({ width: 200, height: 100, bottom: top + 100, top, right: 200, left: 0 }), parentElement: null };
+    const observer = visibility.observeAnalyticsVisibility(element, () => { count += 1; });
+    assert.equal(count, 0);
+    hidden = false;
+    top = 650;
+    observer.inspect();
+    assert.equal(count, 0);
+    top = 20;
+    inspect();
+    assert.equal(count, 1);
+    document.visibilityState = "hidden";
+    observer.inspect();
+    assert.equal(count, 1);
+    observer.disconnect();
+    delete globalThis.IntersectionObserver;
+    delete globalThis.MutationObserver;
+  });
 
   await context.test("gtag queues real Arguments and manual URLs are query-free", () => {
     installBrowser({
@@ -666,7 +864,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     resolveSessionStart(
       new Response(
         JSON.stringify({
-          contractVersion: "homeground-traffic-events.v1",
+          contractVersion: "homeground-traffic-events.v2",
           state: "session_ready",
           sessionCredential:
             "v1.1999999999.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -759,7 +957,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     assert.equal(requests[1].events[0].eventId, requests[3].events[0].eventId);
   });
 
-  await context.test("concurrent 401 responses share one credential refresh", async () => {
+  await context.test("queued events preserve attempt order and share the refreshed credential", async () => {
     installBrowser({
       consent: preferences({ analytics: true, marketing: false }),
     });
@@ -779,7 +977,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
         });
       }
       eventNumber += 1;
-      return new Response("{}", { status: eventNumber <= 2 ? 401 : 202 });
+      return new Response("{}", { status: eventNumber === 1 ? 401 : 202 });
     };
 
     analytics.trackPageView({
@@ -804,125 +1002,262 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     await waitFor(
       () =>
         requests.filter((request) => request.requestType === "events").length ===
-        4,
+        3,
     );
     const eventIds = requests
       .filter((request) => request.requestType === "events")
       .map((request) => request.events[0].eventId);
     assert.equal(new Set(eventIds).size, 2);
-    for (const eventId of new Set(eventIds)) {
-      assert.equal(eventIds.filter((candidate) => candidate === eventId).length, 2);
-    }
+    assert.equal(eventIds[0], eventIds[1]);
+    assert.notEqual(eventIds[1], eventIds[2]);
   });
 
-  await context.test("429 suppression clamps Retry-After and never schedules a resend", async (testContext) => {
-    const originalNow = Date.now;
-    let now = Date.parse("2026-08-23T00:00:00.000Z");
-    Date.now = () => now;
-    testContext.after(() => {
-      Date.now = originalNow;
-    });
-    installBrowser({
-      consent: preferences({ analytics: true, marketing: false }),
-    });
+  await context.test("a stalled bootstrap body times out and releases later queued events", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
     const { analytics } = loadCompiledModules(outputDirectory);
     const requests = [];
-    let eventNumber = 0;
+    let stalledSignal;
     globalThis.fetch = async (_url, init) => {
-      const body = JSON.parse(init.body);
-      requests.push(body);
-      if (body.requestType === "start_session") return sessionReadyResponse();
-      eventNumber += 1;
-      if (eventNumber === 1) {
-        return new Response("{}", {
-          status: 429,
-          headers: { "Retry-After": "999999" },
-        });
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      if (requests.length === 1) {
+        stalledSignal = init.signal;
+        return stalledTrafficResponse(init.signal);
       }
-      if (eventNumber === 2) {
-        return new Response("{}", {
-          status: 429,
-          headers: { "Retry-After": "0" },
-        });
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" });
+    analytics.trackEvent("contact_option_clicked", { channel: "email" });
+    await settleAsyncTurns();
+    clock.advance(9_999);
+    assert.equal(stalledSignal.aborted, false);
+    clock.advance(1);
+    await settleAsyncTurns();
+    assert.equal(stalledSignal.aborted, true);
+    clock.advance(1_000);
+    await waitForTurns(() => requests.filter((request) => request.events).length === 2);
+    assert.deepEqual(requests.filter((request) => request.events).map((request) => [request.events[0].actionCode, request.events[0].clientSequence]), [["whatsapp", 1], ["email", 2]]);
+    assert.equal(new Set(requests.map((request) => request.sessionToken)).size, 1);
+    await settleAsyncTurns();
+  });
+
+  await context.test("a stalled event body times out and retries with the original identity", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const eventRequests = [];
+    let stalledSignal;
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      if (payload.requestType === "start_session") return sessionReadyResponse();
+      eventRequests.push(payload);
+      if (eventRequests.length === 1) {
+        stalledSignal = init.signal;
+        return stalledTrafficResponse(init.signal, 202);
       }
       return new Response("{}", { status: 202 });
     };
-    const track = () =>
-      analytics.trackPageView({
-        path: "/guides/",
-        locale: "en",
-        target: "first_party",
-      });
-
-    track();
-    await waitForTurns(() => requests.length === 2);
-    track();
+    analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" });
+    analytics.trackEvent("contact_option_clicked", { channel: "email" });
+    await waitForTurns(() => eventRequests.length === 1);
     await settleAsyncTurns();
-    assert.equal(requests.length, 2);
-    now += 86_399_999;
-    track();
+    clock.advance(10_000);
     await settleAsyncTurns();
-    assert.equal(requests.length, 2, "Retry-After must clamp to 86400 seconds");
-    now += 1;
+    assert.equal(stalledSignal.aborted, true);
+    clock.advance(1_000);
+    await waitForTurns(() => eventRequests.length === 3);
+    assert.deepEqual(eventRequests[0].events, eventRequests[1].events);
+    assert.equal(eventRequests[2].events[0].actionCode, "email");
+    assert.equal(eventRequests[2].events[0].clientSequence, 2);
     await settleAsyncTurns();
-    assert.equal(requests.length, 2, "elapsed suppression must not auto-resend");
-    track();
-    await waitForTurns(() => requests.length === 3);
-    now += 999;
-    track();
-    await settleAsyncTurns();
-    assert.equal(requests.length, 3, "Retry-After zero must clamp to one second");
-    now += 1;
-    track();
-    await waitForTurns(() => requests.length === 4);
-    assert.deepEqual(
-      requests.map((request) => request.requestType),
-      ["start_session", "events", "events", "events"],
-    );
   });
 
-  await context.test("503 creates a short memory-only suppression without a retry loop", async (testContext) => {
-    const originalNow = Date.now;
-    let now = Date.parse("2026-08-23T00:00:00.000Z");
-    Date.now = () => now;
-    testContext.after(() => {
-      Date.now = originalNow;
+  await context.test("a stalled rate-limit body preserves Retry-After from its headers", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const eventRequests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      if (payload.requestType === "start_session") return sessionReadyResponse();
+      eventRequests.push(payload);
+      return eventRequests.length === 1
+        ? stalledTrafficResponse(init.signal, 429, { "Retry-After": "30" })
+        : new Response("{}", { status: 202 });
+    };
+    analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" });
+    await waitForTurns(() => eventRequests.length === 1);
+    await settleAsyncTurns();
+    clock.advance(10_000);
+    await settleAsyncTurns();
+    clock.advance(19_999);
+    await settleAsyncTurns();
+    assert.equal(eventRequests.length, 1);
+    clock.advance(1);
+    await waitForTurns(() => eventRequests.length === 2);
+    assert.deepEqual(eventRequests[0].events, eventRequests[1].events);
+    await settleAsyncTurns();
+  });
+
+  for (const stalledStage of ["start_session", "events"]) {
+    await context.test(`withdrawal cancels a stalled ${stalledStage} body and fresh consent unlocks the queue`, async () => {
+      const browser = installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+      const { analytics } = loadCompiledModules(outputDirectory);
+      const requests = [];
+      let stalledSignal;
+      globalThis.fetch = async (_url, init) => {
+        const payload = JSON.parse(init.body);
+        requests.push(payload);
+        if (payload.requestType === stalledStage && !stalledSignal) {
+          stalledSignal = init.signal;
+          return stalledTrafficResponse(init.signal, stalledStage === "events" ? 202 : 200);
+        }
+        return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+      };
+      analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" });
+      await waitForTurns(() => Boolean(stalledSignal));
+      await settleAsyncTurns();
+      browser.emitStorage(preferences({ analytics: false, marketing: false, updatedAt: "2026-09-05T00:00:01Z" }));
+      assert.equal(stalledSignal.aborted, true);
+      const requestsAtWithdrawal = requests.length;
+      analytics.trackEvent("contact_option_clicked", { channel: "messenger" });
+      browser.emitStorage(preferences({ analytics: true, marketing: false, updatedAt: "2026-09-05T00:00:02Z" }));
+      analytics.trackEvent("contact_option_clicked", { channel: "email" });
+      await waitForTurns(() => requests.some((request) => request.events?.[0].actionCode === "email"));
+      await settleAsyncTurns();
+      const freshRequests = requests.slice(requestsAtWithdrawal);
+      assert.deepEqual(freshRequests.map((request) => request.requestType), ["start_session", "events"]);
+      assert.deepEqual(freshRequests[1].events.map((event) => event.actionCode), ["email"]);
+      assert.notEqual(freshRequests[0].sessionToken, requests[0].sessionToken);
+      assert.equal(freshRequests[1].events[0].clientSequence, 1);
     });
-    installBrowser({
-      consent: preferences({ analytics: true, marketing: false }),
-    });
+  }
+
+  await context.test("marketing-only consent changes preserve a pending first-party click", async () => {
+    const browser = installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
     const { analytics } = loadCompiledModules(outputDirectory);
     const requests = [];
-    let eventNumber = 0;
+    let resolveBootstrap;
     globalThis.fetch = async (_url, init) => {
-      const body = JSON.parse(init.body);
-      requests.push(body);
-      if (body.requestType === "start_session") return sessionReadyResponse();
-      eventNumber += 1;
-      return new Response("{}", { status: eventNumber === 1 ? 503 : 202 });
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      if (payload.requestType === "start_session") return new Promise((resolve) => { resolveBootstrap = resolve; });
+      return new Response("{}", { status: 202 });
     };
-    const track = () =>
-      analytics.trackPageView({
-        path: "/guides/",
-        locale: "en",
-        target: "first_party",
-      });
+    analytics.trackEvent("contact_option_clicked", { channel: "whatsapp" });
+    await waitForTurns(() => typeof resolveBootstrap === "function");
+    browser.emitStorage(preferences({ analytics: true, marketing: true, updatedAt: "2026-09-05T00:00:01Z" }));
+    browser.emitStorage(preferences({ analytics: true, marketing: false, updatedAt: "2026-09-05T00:00:02Z" }));
+    resolveBootstrap(sessionReadyResponse());
+    await waitForTurns(() => requests.some((request) => request.events));
+    await settleAsyncTurns();
+    assert.deepEqual(requests.map((request) => request.requestType), ["start_session", "events"]);
+    assert.equal(requests[1].events[0].actionCode, "whatsapp");
+    assert.equal(requests[1].sessionToken, requests[0].sessionToken);
+    assert.equal(requests[1].events[0].clientSequence, 1);
+  });
 
-    track();
+  await context.test("429 retry honors Retry-After and preserves event identity and sequence", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    let events = 0;
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      if (payload.requestType === "start_session") return sessionReadyResponse();
+      events += 1;
+      return new Response("{}", { status: events === 1 ? 429 : 202, headers: { "Retry-After": "5" } });
+    };
+    analytics.trackPageView({ path: "/guides/", locale: "en", target: "first_party" });
     await waitForTurns(() => requests.length === 2);
-    now += 29_999;
-    track();
+    await settleAsyncTurns();
+    clock.advance(4_999);
     await settleAsyncTurns();
     assert.equal(requests.length, 2);
-    now += 1;
-    await settleAsyncTurns();
-    assert.equal(requests.length, 2, "503 recovery must not auto-resend");
-    track();
+    clock.advance(1);
     await waitForTurns(() => requests.length === 3);
-    assert.deepEqual(
-      requests.map((request) => request.requestType),
-      ["start_session", "events", "events"],
-    );
+    assert.deepEqual(requests[1].events, requests[2].events);
+    assert.equal(requests[2].events[0].clientSequence, 1);
+  });
+
+  await context.test("503 respects a longer Retry-After than its default suppression", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse()
+        : new Response("{}", { status: requests.length === 2 ? 503 : 202, headers: { "Retry-After": "60" } });
+    };
+    analytics.trackPageView({ path: "/guides/", locale: "en", target: "first_party" });
+    await waitForTurns(() => requests.length === 2);
+    await settleAsyncTurns();
+    clock.advance(59_999);
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    clock.advance(1);
+    await waitForTurns(() => requests.length === 3);
+    assert.deepEqual(requests[1].events, requests[2].events);
+  });
+
+  await context.test("long Retry-After expires the bounded queue and withdrawal cancels retries", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    const browser = installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 429, headers: { "Retry-After": "999999" } });
+    };
+    analytics.trackPageView({ path: "/guides/", locale: "en", target: "first_party" });
+    await waitForTurns(() => requests.length === 2);
+    await settleAsyncTurns();
+    clock.advance(120_000);
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2, "expired events cannot be replayed after a long cooldown");
+    browser.emitStorage(preferences({ analytics: false, marketing: false }));
+    clock.advance(86_400_000);
+    await settleAsyncTurns();
+    assert.equal(requests.length, 2);
+    assert.equal(browser.sessionStorage.getItem("homeground-analytics-session"), null);
+  });
+
+  await context.test("503 retries at most three times and clears on internal mode", async (testContext) => {
+    const clock = installQueueClock(testContext);
+    installBrowser({ consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics, runtime } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body);
+      requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 503 });
+    };
+    analytics.trackPageView({ path: "/guides/", locale: "en", target: "first_party" });
+    await waitForTurns(() => requests.length === 2);
+    await settleAsyncTurns();
+    clock.advance(30_000);
+    await waitForTurns(() => requests.length === 3);
+    await settleAsyncTurns();
+    clock.advance(30_000);
+    await waitForTurns(() => requests.length === 4);
+    await settleAsyncTurns();
+    clock.advance(60_000);
+    await settleAsyncTurns();
+    assert.equal(requests.length, 4);
+    assert.equal(new Set(requests.filter((r) => r.events).map((r) => r.events[0].eventId)).size, 1);
+    analytics.trackPageView({ path: "/guides/", locale: "en", target: "first_party" });
+    await settleAsyncTurns();
+    const count = requests.length;
+    runtime.setInternalTrafficExcluded(true);
+    clock.advance(60_000);
+    await settleAsyncTurns();
+    assert.equal(requests.length, count);
   });
 
   await context.test("other 4xx responses do not retry or suppress later events", async () => {
@@ -1027,7 +1362,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
       if (body.requestType === "start_session") {
         return new Response(
           JSON.stringify({
-            contractVersion: "homeground-traffic-events.v1",
+            contractVersion: "homeground-traffic-events.v2",
             state: "session_ready",
             sessionCredential:
               "v1.1999999999.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",

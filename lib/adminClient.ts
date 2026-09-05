@@ -1,10 +1,14 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+// @ts-ignore Explicit extension also supports the Node contract-test runner.
+import { getPrivateTourInquirySelection, isPrivateTourInquirySlug } from "./privateTourInquiryContext.ts";
 
 export const adminInsightsContractVersion =
   "homeground-admin-insights.v1" as const;
 export const adminHealthContractVersion = "homeground-admin-health.v1" as const;
 export const adminTrafficContractVersion =
   "homeground-admin-traffic.v1" as const;
+export const adminJourneyContractVersion = "homeground-admin-traffic.v2" as const;
+export type AdminTrafficDimensionKind = "source" | "campaign" | "page" | "product" | "product_selection";
 
 export type AdminHealthStatus =
   | "ok"
@@ -167,7 +171,7 @@ export interface AdminTrafficSession {
 }
 
 export interface AdminTrafficResponse {
-  contractVersion: typeof adminTrafficContractVersion;
+  contractVersion: typeof adminTrafficContractVersion | typeof adminJourneyContractVersion;
   generatedAt: string;
   timezone: "Asia/Shanghai";
   window: {
@@ -182,11 +186,18 @@ export interface AdminTrafficResponse {
     emailFormStarts: AdminTrafficCount;
     attributedEnquiries: AdminTrafficCount;
     unknownSourceSessions: AdminTrafficCount;
+    productViews?: AdminTrafficCount;
+    productSelections?: AdminTrafficCount;
+    formSubmitAttempts?: AdminTrafficCount;
+    formSubmitFailures?: AdminTrafficCount;
+    formSubmitUncertain?: AdminTrafficCount;
   };
   dimensions: {
     sources: AdminTrafficDimensionBucket[];
     campaigns: AdminTrafficDimensionBucket[];
     pages: AdminTrafficDimensionBucket[];
+    products?: AdminTrafficDimensionBucket[];
+    productSelections?: AdminTrafficDimensionBucket[];
   };
   recentSessions: AdminTrafficSession[];
   limits: {
@@ -956,7 +967,7 @@ function trafficCountAt(
 function controlledTrafficValueAt(
   value: unknown,
   path: string,
-  kind: "source" | "campaign" | "page",
+  kind: AdminTrafficDimensionKind,
 ): string {
   const label = stringAt(value, path, {
     maxLength: kind === "source" ? 64 : kind === "campaign" ? 96 : 180,
@@ -966,6 +977,14 @@ function controlledTrafficValueAt(
       "contract",
       `${path} is not an approved traffic label.`,
     );
+  }
+  if (kind === "product" || kind === "product_selection") {
+    const parts = label.split("|");
+    const valid = kind === "product"
+      ? isPrivateTourInquirySlug(label)
+      : parts.length === 3 && getPrivateTourInquirySelection(parts[0], parts[1], parts[2]) !== null;
+    if (!valid) throw new AdminApiError("contract", `${path} is not an approved published product label.`);
+    return label;
   }
   if (kind === "page") {
     if (
@@ -994,7 +1013,7 @@ function controlledTrafficValueAt(
 function trafficDimensionAt(
   value: unknown,
   path: string,
-  kind: "source" | "campaign" | "page",
+  kind: AdminTrafficDimensionKind,
 ): AdminTrafficDimensionBucket[] {
   const values = arrayAt(value, path);
   if (values.length > 30) {
@@ -1020,7 +1039,7 @@ function trafficDimensionAt(
     if (
       bucketType === null ||
       !["value", "unknown", "suppressed"].includes(bucketType) ||
-      (kind === "page" && bucketType === "unknown")
+      ((kind === "page" || kind === "product" || kind === "product_selection") && bucketType === "unknown")
     ) {
       throw new AdminApiError(
         "contract",
@@ -1140,6 +1159,7 @@ export function parseAdminTraffic(
 ): AdminTrafficResponse {
   assertNoForbiddenResponseFields(value);
   const root = objectAt(value, "response");
+  const isJourney = root.contractVersion === adminJourneyContractVersion;
   assertExactKeys(
     root,
     [
@@ -1156,7 +1176,7 @@ export function parseAdminTraffic(
     "response",
   );
   if (
-    root.contractVersion !== adminTrafficContractVersion ||
+    (!isJourney && root.contractVersion !== adminTrafficContractVersion) ||
     root.timezone !== "Asia/Shanghai"
   ) {
     throw new AdminApiError(
@@ -1209,10 +1229,11 @@ export function parseAdminTraffic(
       "emailFormStarts",
       "attributedEnquiries",
       "unknownSourceSessions",
+      ...(isJourney ? ["productViews", "productSelections", "formSubmitAttempts", "formSubmitFailures", "formSubmitUncertain"] : []),
     ],
     "response.totals",
   );
-  const parsedTotals = {
+  const parsedTotals: AdminTrafficResponse["totals"] = {
     sessions: trafficCountAt(
       totals.sessions,
       "response.totals.sessions",
@@ -1237,6 +1258,13 @@ export function parseAdminTraffic(
       totals.unknownSourceSessions,
       "response.totals.unknownSourceSessions",
     ),
+    ...(isJourney ? {
+      productViews: trafficCountAt(totals.productViews, "response.totals.productViews"),
+      productSelections: trafficCountAt(totals.productSelections, "response.totals.productSelections"),
+      formSubmitAttempts: trafficCountAt(totals.formSubmitAttempts, "response.totals.formSubmitAttempts"),
+      formSubmitFailures: trafficCountAt(totals.formSubmitFailures, "response.totals.formSubmitFailures"),
+      formSubmitUncertain: trafficCountAt(totals.formSubmitUncertain, "response.totals.formSubmitUncertain"),
+    } : {}),
   };
 
   const dimensions = objectAt(
@@ -1245,7 +1273,7 @@ export function parseAdminTraffic(
   );
   assertExactKeys(
     dimensions,
-    ["sources", "campaigns", "pages"],
+    ["sources", "campaigns", "pages", ...(isJourney ? ["products", "productSelections"] : [])],
     "response.dimensions",
   );
   const sources = trafficDimensionAt(
@@ -1432,12 +1460,15 @@ export function parseAdminTraffic(
   }
 
   return {
-    contractVersion: adminTrafficContractVersion,
+    contractVersion: isJourney ? adminJourneyContractVersion : adminTrafficContractVersion,
     generatedAt,
     timezone: "Asia/Shanghai",
     window: { days: 30, startsAt, endsAt },
     totals: parsedTotals,
-    dimensions: { sources, campaigns, pages },
+    dimensions: { sources, campaigns, pages, ...(isJourney ? {
+      products: trafficDimensionAt(dimensions.products, "response.dimensions.products", "product"),
+      productSelections: trafficDimensionAt(dimensions.productSelections, "response.dimensions.productSelections", "product_selection"),
+    } : {}) },
     recentSessions,
     limits: {
       minimumVisibleCount: 5,

@@ -70,7 +70,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let rpcResult;
   try {
     rpcResult = await callSupabaseRpc<unknown>(
-      "get_homeground_admin_traffic",
+      "get_homeground_admin_traffic_v2",
       {},
     );
   } catch {

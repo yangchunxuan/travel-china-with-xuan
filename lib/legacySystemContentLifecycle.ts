@@ -130,13 +130,13 @@ export const legacySystemContentLifecycle = {
   },
   privacy: {
     datePublished: "2026-07-24",
-    dateModified: "2026-08-23",
+    dateModified: "2026-09-05",
     lastReviewed: "2026-07-31",
     evidence: {
-      commit: "607ec5619471346d0f05de8818075c90c1081b6c",
-      changedAt: "2026-08-23",
+      commit: "5f909b6488e729a30b017c122b27737e0428d4f5",
+      changedAt: "2026-09-05",
       summary:
-        "The privacy notice now records deployed Cloudflare edge processing and disabled browser RUM, and distinguishes bootstrap-request limits from accepted-event retention; the separate full-review date remains 2026-07-31.",
+        "The privacy notice explains consented first-party published product and group choices, separate submit outcomes, bounded retries and withdrawal. Inquiry selection wording matches the saved product handoff. The separate full-review date remains unchanged.",
     },
   },
   "business-information": {

@@ -255,7 +255,7 @@ test("traffic RPC is read-only, k-suppressed and excludes linked inquiry session
     /grant execute on function public\.get_homeground_admin_traffic\(\)[\s\S]*to authenticated/,
   );
 
-  assert.match(edge, /"get_homeground_admin_traffic"/);
+  assert.match(edge, /"get_homeground_admin_traffic_v2"/);
   assert.match(edge, /"admin-traffic"/);
   assert.match(edge, /invalid_traffic_contract/);
   assert.match(edge, /admin_audit_unavailable/);
