@@ -130,13 +130,19 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
       <h2 id={`${id}-title`}>{state === "pending" ? text.pendingTitle : text.title}</h2>
       {state === "pending" ? <p className={styles.intro} role="status">{text.pendingBody}</p> : <>
         <p className={styles.intro}>{text.invitation}</p>
-        <button className={styles.invite} type="button" hidden={expanded}
-          aria-expanded={expanded} aria-controls={`${id}-form`}
-          onClick={() => { focusEmailRequested.current = true; setExpanded(true); }}>
-          {text.openForm}
-        </button>
+        <div className={styles.invitationPanel} aria-hidden={expanded} inert={expanded}>
+          <div className={styles.panelClip}>
+            <button className={styles.invite} type="button"
+              aria-expanded={expanded} aria-controls={`${id}-form`}
+              onClick={() => { focusEmailRequested.current = true; setExpanded(true); }}>
+              {text.openForm}
+            </button>
+          </div>
+        </div>
       </>}
-      {state !== "pending" ? <form id={`${id}-form`} className={styles.form} hidden={!expanded} aria-busy={state === "sending"}
+      {state !== "pending" ? <div className={styles.formPanel} aria-hidden={!expanded} inert={!expanded}>
+        <div className={styles.panelClip}>
+        <form id={`${id}-form`} className={styles.form} aria-busy={state === "sending"}
         onSubmit={async (event) => {
           event.preventDefault();
           if (submittingRef.current) return;
@@ -170,7 +176,9 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
         </label>
         <p className={styles.consent}>{text.consent} <a href={privacyHref} target="_blank" rel="noopener noreferrer">{text.privacy}</a></p>
         {error ? <p className={styles.error} role="alert">{error}</p> : null}
-      </form> : null}
+        </form>
+        </div>
+      </div> : null}
     </aside>
   );
 }
