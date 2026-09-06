@@ -83,7 +83,7 @@ export function SiteAnalytics({
     };
     refresh();
     return subscribeAnalyticsRuntime(refresh);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const applyPreferences = (

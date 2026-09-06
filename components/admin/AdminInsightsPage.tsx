@@ -53,6 +53,7 @@ import {
 import { selectUnverifiedTotpFactors } from "../../lib/adminMfa";
 import { canCommitAdminResponse } from "../../lib/adminRequestEpoch";
 import { InternalTrafficControl } from "./InternalTrafficControl";
+import { AdminNewsletterSection } from "./AdminNewsletterSection";
 import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext";
 import styles from "./AdminInsightsPage.module.css";
 
@@ -2268,6 +2269,8 @@ export function AdminInsightsPage() {
             onRefresh={() => void loadData()}
           />
         )}
+        {stage === "ready" && session && configResult.config && !accessDenied ?
+          <AdminNewsletterSection key={session.user.id} session={session} supabaseUrl={configResult.config.supabaseUrl} /> : null}
       </main>
       <footer className={styles.footer}>
         <p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AnalyticsConsent } from "../../../components/AnalyticsConsent";
+import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import {
   getHomegroundCopy,
@@ -103,6 +104,7 @@ export default async function LocalizedRootLayout({
         <SiteAnalytics locale={locale} />
         {children}
         <AnalyticsConsent locale={locale} />
+        <NewsletterPopup locale={locale} />
       </body>
     </html>
   );
