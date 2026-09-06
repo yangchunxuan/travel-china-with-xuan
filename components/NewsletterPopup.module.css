@@ -1,4 +1,6 @@
 .card {
+  --expand-duration: 360ms;
+  --expand-easing: cubic-bezier(.22, 1, .36, 1);
   position: fixed;
   z-index: 65;
   inset-inline-start: 1.5rem;
@@ -19,6 +21,7 @@
   font-family: var(--sans, system-ui, sans-serif);
   text-align: start;
   animation: enter 240ms cubic-bezier(.2, .7, .2, 1) both;
+  transition: padding-block-end var(--expand-duration) var(--expand-easing);
 }
 .card[hidden], .card [hidden] { display: none; }
 .card:lang(ko) { word-break: keep-all; overflow-wrap: break-word; }
@@ -67,10 +70,35 @@
   text-underline-offset: .3em;
   text-decoration-thickness: 1px;
   cursor: pointer;
+  transition: opacity 110ms ease-out, transform 160ms ease-out;
 }
 .invite:hover { text-decoration-color: #fff; }
+.invitationPanel, .formPanel {
+  display: grid;
+  transition: grid-template-rows var(--expand-duration) var(--expand-easing);
+}
+.invitationPanel { grid-template-rows: 1fr; }
+.formPanel { grid-template-rows: 0fr; }
+/* Natural content height keeps the same motion across languages and text sizes.
+   Clip (rather than a scroll container) prevents focus from shifting hidden content. */
+.panelClip { min-block-size: 0; overflow: clip; display: flow-root; }
+.invitationPanel .panelClip { overflow: visible; }
+.card[data-expanded="true"] .formPanel .panelClip { overflow: visible; }
+.card[data-expanded="true"] .invitationPanel { grid-template-rows: 0fr; }
+.card[data-expanded="true"] .invite { opacity: 0; transform: translateY(-3px); }
+.card[data-expanded="true"] .formPanel { grid-template-rows: 1fr; }
 .card[data-expanded="true"] { padding-block-end: 1.25rem; }
-.form { margin-block-start: 1rem; animation: reveal 180ms ease-out; }
+.form {
+  margin-block-start: 1rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease-out, transform 280ms var(--expand-easing);
+}
+.card[data-expanded="true"] .form {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 30ms;
+}
 .label { display: block; margin-block-end: .375rem; color: #d3d3d3; font-size: .75rem; line-height: 1.4; }
 .inputRow { display: flex; align-items: stretch; gap: .375rem; padding: .25rem; border: 1px solid #767676; border-radius: .625rem; background: rgb(0 0 0 / 12%); }
 .input {
@@ -105,16 +133,17 @@
 }
 .submit[aria-disabled="true"] { opacity: .65; cursor: wait; }
 .submit:hover { background: #fff; }
-.consent { margin: .75rem 0 0; color: #bcbcbc; font-size: .75rem; line-height: 1.5; }
+.consent { margin: .75rem 0 0; color: #bcbcbc; font-size: .75rem; line-height: 1.5; opacity: 0; transition: opacity 140ms ease-out; }
+.card[data-expanded="true"] .consent { opacity: 1; transition-delay: 240ms; }
 .consent a { color: inherit; text-underline-offset: .2em; white-space: nowrap; }
 .close:hover { background: rgb(255 255 255 / 8%); color: #fff; }
 .card :focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .input:focus-visible { outline-offset: -2px; }
+.submit:focus-visible { outline-color: #171717; outline-offset: -4px; }
 .error { margin: .75rem 0 0; color: #ffc7c0; font-size: .8125rem; line-height: 1.5; }
 .honeypot { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
 .footerButton { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
 @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 36rem) {
   .card { inset-inline-start: 1rem; inset-block-end: max(1rem, env(safe-area-inset-bottom)); inline-size: calc(100vw - 2rem); padding: 1rem 1rem .5rem; }
   .card h2 { font-size: 1.375rem; }
@@ -122,7 +151,11 @@
   .card[data-expanded="true"] { padding-block-end: 1rem; }
 }
 @media (prefers-reduced-transparency: reduce) { .card { background: #181818; -webkit-backdrop-filter: none; backdrop-filter: none; } }
-@media (prefers-reduced-motion: reduce) { .card, .form { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+  .card, .invitationPanel, .formPanel, .invite, .form, .consent { transition: none; }
+  .form, .card[data-expanded="true"] .invite { transform: none; }
+}
 @media (forced-colors: active) {
   .card { background: Canvas; color: CanvasText; border-color: CanvasText; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .intro, .label, .consent, .close, .invite, .input, .error { color: CanvasText; }
