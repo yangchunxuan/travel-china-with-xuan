@@ -23,12 +23,15 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
   const cardRef = useRef<HTMLElement>(null);
   const [ready, setReady] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [busyElsewhere, setBusyElsewhere] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "pending" | "error">("idle");
   const [error, setError] = useState("");
   const requestRef = useRef<{ fingerprint: string; id: string } | null>(null);
   const submittingRef = useRef(false);
   const previousFocus = useRef<HTMLElement | null>(null);
+  const focusEmailRequested = useRef(false);
+  const emailRef = useRef<HTMLInputElement>(null);
   const privacyOpen = useSyncExternalStore(subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen);
   const menuOpen = useSyncExternalStore(subscribeNavigationMenu, getNavigationMenuOpen, getServerPrivacyManagerOpen);
   const enabled = Boolean(getNewsletterConfig());
@@ -44,7 +47,7 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
       if (remaining === null) return;
       timeout = setTimeout(() => setReady(true), remaining);
     };
-    const open = () => setReady(true);
+    const open = () => { setExpanded(true); setReady(true); };
     schedule();
     window.addEventListener(newsletterPromptChangedEvent, schedule);
     window.addEventListener(newsletterOpenEvent, open);
@@ -55,7 +58,15 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
     };
   }, [enabled, pathname]);
 
-  useEffect(() => { setVisible(false); setReady(false); }, [pathname]);
+  useEffect(() => { setVisible(false); setReady(false); setExpanded(false); }, [pathname]);
+
+  // Focus only after the reader chooses the invitation; automatic prompts stay passive.
+  useEffect(() => {
+    if (expanded && focusEmailRequested.current) {
+      focusEmailRequested.current = false;
+      emailRef.current?.focus({ preventScroll: true });
+    }
+  }, [expanded]);
 
   useEffect(() => {
     if (!enabled) return;
@@ -111,15 +122,21 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
   if (!enabled || !visible) return null;
   const privacyHref = locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
   return (
-    <aside className={styles.card} data-homeground-newsletter="true" lang={locale}
+    <aside className={styles.card} data-homeground-newsletter="true" data-expanded={expanded} lang={locale}
       hidden={blocked} aria-labelledby={`${id}-title`} ref={cardRef}>
       <button className={styles.close} type="button" aria-label={text.close} onClick={close}>
         <X aria-hidden="true" size={18} strokeWidth={1.5} />
       </button>
-      <p className={styles.brand}>Homeground China</p>
       <h2 id={`${id}-title`}>{state === "pending" ? text.pendingTitle : text.title}</h2>
-      {state === "pending" ? <p className={styles.intro} role="status">{text.pendingBody}</p> : null}
-      {state !== "pending" ? <form className={styles.form} aria-busy={state === "sending"}
+      {state === "pending" ? <p className={styles.intro} role="status">{text.pendingBody}</p> : <>
+        <p className={styles.intro}>{text.invitation}</p>
+        <button className={styles.invite} type="button" hidden={expanded}
+          aria-expanded={expanded} aria-controls={`${id}-form`}
+          onClick={() => { focusEmailRequested.current = true; setExpanded(true); }}>
+          {text.openForm}
+        </button>
+      </>}
+      {state !== "pending" ? <form id={`${id}-form`} className={styles.form} hidden={!expanded} aria-busy={state === "sending"}
         onSubmit={async (event) => {
           event.preventDefault();
           if (submittingRef.current) return;
@@ -140,11 +157,10 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
             setError(reason instanceof Error && reason.message === "rate-limit" ? text.rateLimit : text.error);
           } finally { submittingRef.current = false; }
         }}>
+        <label className={styles.label} htmlFor={`${id}-email`}>{text.email}</label>
         <div className={styles.inputRow}>
-          <label className={styles.field}>
-          <span>{text.email}</span>
-          <input name="email" type="email" autoComplete="email" maxLength={254} required placeholder="you@mail.com" />
-          </label>
+          <input className={styles.input} id={`${id}-email`} ref={emailRef} name="email" type="email"
+            autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} required placeholder="you@example.com" />
           <button className={styles.submit} type="submit" aria-disabled={state === "sending"}>
             {state === "sending" ? text.submitting : text.subscribe}
           </button>
