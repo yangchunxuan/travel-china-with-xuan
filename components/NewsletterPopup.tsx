@@ -9,6 +9,8 @@ import { newsletterCopy } from "../lib/newsletterI18n";
 import {
   markNewsletterJoined, markNewsletterPromptHandled, newsletterDelayRemaining,
   newsletterOpenEvent, newsletterPageEligible, newsletterPromptChangedEvent,
+  clearNewsletterLanguageTransfer, consumeNewsletterLanguageTransfer,
+  newsletterLanguageTransferEvent, saveNewsletterLanguageTransfer,
 } from "../lib/newsletterPrompt";
 import {
   getNavigationMenuOpen, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
@@ -32,6 +34,7 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
   const previousFocus = useRef<HTMLElement | null>(null);
   const focusEmailRequested = useRef(false);
   const emailRef = useRef<HTMLInputElement>(null);
+  const initializedPath = useRef<string | null | undefined>(undefined);
   const privacyOpen = useSyncExternalStore(subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen);
   const menuOpen = useSyncExternalStore(subscribeNavigationMenu, getNavigationMenuOpen, getServerPrivacyManagerOpen);
   const enabled = Boolean(getNewsletterConfig());
@@ -39,6 +42,17 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
 
   useEffect(() => {
     if (!enabled) return;
+    // Keep route reset and one-time arrival consumption together. The ref also
+    // prevents StrictMode's effect replay from clearing an already restored card.
+    if (initializedPath.current !== pathname) {
+      initializedPath.current = pathname;
+      const transfer = consumeNewsletterLanguageTransfer(pathname);
+      setVisible(false);
+      setReady(Boolean(transfer));
+      setExpanded(transfer?.expanded ?? false);
+      setError("");
+      focusEmailRequested.current = false;
+    }
     let timeout: ReturnType<typeof setTimeout>;
     const schedule = () => {
       clearTimeout(timeout);
@@ -48,17 +62,40 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
       timeout = setTimeout(() => setReady(true), remaining);
     };
     const open = () => { setExpanded(true); setReady(true); };
+    const restoreHistory = (event: PageTransitionEvent) => {
+      if (!event.persisted) return;
+      // A browser-history snapshot must not revive a card dismissed on a later page.
+      clearNewsletterLanguageTransfer();
+      setVisible(false);
+      setReady(false);
+      setExpanded(false);
+      focusEmailRequested.current = false;
+      schedule();
+    };
     schedule();
     window.addEventListener(newsletterPromptChangedEvent, schedule);
     window.addEventListener(newsletterOpenEvent, open);
+    window.addEventListener("pageshow", restoreHistory);
     return () => {
       clearTimeout(timeout);
       window.removeEventListener(newsletterPromptChangedEvent, schedule);
       window.removeEventListener(newsletterOpenEvent, open);
+      window.removeEventListener("pageshow", restoreHistory);
     };
   }, [enabled, pathname]);
 
-  useEffect(() => { setVisible(false); setReady(false); setExpanded(false); }, [pathname]);
+  useEffect(() => {
+    if (!enabled) return;
+    const transfer = (event: Event) => {
+      // The mobile language menu temporarily hides the card. Logical visibility
+      // still represents the reader's open card, including its collapsed state.
+      if (!visible || !newsletterPageEligible(pathname) || state === "sending" || state === "pending") return;
+      const target = (event as CustomEvent<{ pathname?: unknown }>).detail?.pathname;
+      if (typeof target === "string") saveNewsletterLanguageTransfer(target, expanded);
+    };
+    window.addEventListener(newsletterLanguageTransferEvent, transfer);
+    return () => window.removeEventListener(newsletterLanguageTransferEvent, transfer);
+  }, [enabled, visible, expanded, pathname, state]);
 
   // Focus only after the reader chooses the invitation; automatic prompts stay passive.
   useEffect(() => {
@@ -110,6 +147,7 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
   }, [visible, blocked]);
 
   function close() {
+    clearNewsletterLanguageTransfer();
     if (cardRef.current?.contains(document.activeElement)) {
       const target = previousFocus.current;
       if (target?.isConnected && target.getClientRects().length && target !== document.body) target.focus({ preventScroll: true });

@@ -1,6 +1,7 @@
 "use client";
 
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
+import { requestNewsletterLanguageTransfer } from "../lib/newsletterPrompt";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -475,6 +476,10 @@ export function HomegroundHeader({
       return;
     }
 
+    if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
+        event.currentTarget.origin === window.location.origin) {
+      requestNewsletterLanguageTransfer(event.currentTarget.pathname);
+    }
     close();
   };
 
