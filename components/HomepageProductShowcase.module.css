@@ -6,6 +6,7 @@
   padding: 4.5rem
     max(var(--showcase-gutter), calc((100% - var(--showcase-content)) / 2));
   padding-block-end: 2rem;
+  scroll-margin-top: 5.75rem;
 }
 
 .inner {

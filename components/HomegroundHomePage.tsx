@@ -432,6 +432,7 @@ export function HomegroundHomePage({
       "#planner-contact",
       "#route-finder",
       "#planner-handoff",
+      "#travel-products",
       "#destinations",
       "#planning-proof",
       "#studio",
