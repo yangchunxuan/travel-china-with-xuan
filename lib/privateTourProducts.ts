@@ -404,7 +404,7 @@ const standardServicePolicy = Object.freeze({
   shoppingStops: false,
   addedServicesRequirePriorAgreement: true,
 } as const);
-const MODIFIED = "2026-08-24";
+const MODIFIED = "2026-09-06";
 
 const shanghaiSuzhouHangzhou: PrivateTourProduct = {
   id: "private-tour-shanghai-suzhou-hangzhou-6d5n",
@@ -709,8 +709,8 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
       label: standardLabel,
       summary: standardSummary,
       prices: [
-        { travelers: 2, cnyPerPerson: 12490 },
-        { travelers: 4, cnyPerPerson: 8190 },
+        { travelers: 2, cnyPerPerson: 7436, usdPerPerson: 1144 },
+        { travelers: 4, cnyPerPerson: 5421, usdPerPerson: 834 },
       ],
     },
   ],
@@ -954,7 +954,8 @@ const chengdu: PrivateTourProduct = {
       "standard-guided",
       standardLabel,
       standardSummary,
-      [9990, 6290],
+      [6168, 4933],
+      [949, 759],
     ),
   ],
   datePublished: PUBLISHED,
@@ -1186,11 +1187,12 @@ const xian: PrivateTourProduct = {
       "standard-guided",
       standardLabel,
       standardSummary,
-      [9590, 6290],
+      [3887, 3042],
+      [598, 468],
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-08-31",
+  dateModified: "2026-09-06",
 };
 
 const chongqingWulong: PrivateTourProduct = {
@@ -1435,11 +1437,12 @@ const chongqingWulong: PrivateTourProduct = {
       "standard-guided",
       standardLabel,
       standardSummary,
-      [11590, 7190],
+      [4543, 3308],
+      [699, 509],
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-08-31",
+  dateModified: "2026-09-06",
 };
 
 const guilinYangshuo: PrivateTourProduct = {
@@ -1933,11 +1936,12 @@ const harbinWinter: PrivateTourProduct = {
       "standard-guided-winter",
       standardLabel,
       standardSummary,
-      [12990, 9290],
+      [9483, 7670],
+      [1459, 1180],
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-08-31",
+  dateModified: "2026-09-06",
 };
 
 const shanghaiSuzhou: PrivateTourProduct = {
@@ -2199,11 +2203,12 @@ const shanghaiSuzhou: PrivateTourProduct = {
       "standard-guided",
       standardLabel,
       standardSummary,
-      [9490, 6490],
+      [4998, 4218],
+      [769, 649],
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-08-31",
+  dateModified: "2026-09-06",
 };
 
 const beijing: PrivateTourProduct = {
