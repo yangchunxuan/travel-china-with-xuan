@@ -1,5 +1,14 @@
 project_id = "homeground-local"
 
+[functions.v1-newsletter]
+# Public intake validates Origin, consent and rate limits; retry authenticates
+# with its separate server-only worker secret.
+verify_jwt = false
+
+[functions.admin-newsletter]
+# Existing signed-in user, aal2 MFA, fixed allowlist and exact Origin checks.
+verify_jwt = true
+
 [functions.v1-inquiries]
 # The public function performs its own strict Origin, method, content-type,
 # schema, idempotency, and rate-limit checks. It never trusts a browser JWT.

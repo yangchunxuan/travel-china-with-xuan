@@ -13,7 +13,9 @@ export function isInternalTrafficExcluded() {
 /** All optional sinks share this gate. Local previews never use production sinks. */
 export function analyticsRuntimeIsAllowed() {
   if (typeof window === "undefined") return false;
-  return window.location.origin === "https://homegroundchina.com" && !isInternalTrafficExcluded();
+  return window.location.origin === "https://homegroundchina.com" &&
+    !/^\/(?:zh\/|ko\/)?newsletter(?:\/|$)/.test(window.location.pathname) &&
+    !isInternalTrafficExcluded();
 }
 
 export function setInternalTrafficExcluded(excluded: boolean) {

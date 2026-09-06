@@ -5,6 +5,7 @@ import {
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./HomegroundPrivacyPage.module.css";
+import { NewsletterPrivacyNotice } from "./NewsletterPrivacyNotice";
 
 export function HomegroundPrivacyPage({
   locale = "en",
@@ -60,6 +61,7 @@ export function HomegroundPrivacyPage({
         </section>
 
         <article className={styles.notice}>
+          <NewsletterPrivacyNotice locale={locale} />
           <section
             className={styles.currentFlow}
             aria-labelledby="current-flow-title"

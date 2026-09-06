@@ -19,6 +19,8 @@ import {
   subscribePrivacyManager,
 } from "../lib/siteOverlayState";
 import styles from "./AnalyticsConsent.module.css";
+import { armNewsletterPrompt } from "../lib/newsletterPrompt";
+import { getNewsletterConfig } from "../lib/newsletter";
 
 const storedConsentAttribute = "data-homeground-consent-stored";
 const storedConsentBootstrap = `(()=>{try{const raw=localStorage.getItem(${JSON.stringify(
@@ -156,6 +158,7 @@ export function AnalyticsConsent({
     setDraftAnalytics(next.analytics);
     setDraftMarketing(next.marketing);
     setPrivacyManagerOpen(false);
+    if (getNewsletterConfig()) armNewsletterPrompt();
   };
 
   const openManager = () => {

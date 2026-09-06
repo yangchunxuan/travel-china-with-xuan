@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AnalyticsConsent } from "../../components/AnalyticsConsent";
+import { NewsletterPopup } from "../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
 import "../globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         <SiteAnalytics locale="en" />
         {children}
         <AnalyticsConsent locale="en" />
+        <NewsletterPopup locale="en" />
       </body>
     </html>
   );

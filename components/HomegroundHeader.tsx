@@ -1,5 +1,7 @@
 "use client";
 
+import { setNavigationMenuOpen } from "../lib/siteOverlayState";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -183,6 +185,10 @@ export function HomegroundHeader({
 }: HomegroundHeaderProps) {
   const articleId = guideTourEntryId(usePathname());
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    setNavigationMenuOpen(open);
+    return () => setNavigationMenuOpen(false);
+  }, [open]);
   const [activeHash, setActiveHash] = useState("");
   const [languageQuery, setLanguageQuery] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);

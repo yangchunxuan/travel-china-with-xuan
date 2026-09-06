@@ -27,6 +27,8 @@ import type { HomegroundPageContext } from "./HomegroundHeader";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import styles from "./HomegroundHomePage.module.css";
 import homepageStyles from "./HomepageFooter.module.css";
+import { NewsletterFooterLink } from "./NewsletterFooterLink";
+import { getNewsletterConfig } from "../lib/newsletter";
 
 const footerSections: Record<
   HomegroundLocale,
@@ -269,6 +271,7 @@ export function HomegroundFooter({
                 <li>
                   <a href={privacyPath}>{legalCopy.related.privacy}</a>
                 </li>
+                {getNewsletterConfig() ? <li><NewsletterFooterLink locale={locale} /></li> : null}
                 <li>
                   <button
                     type="button"
@@ -400,6 +403,7 @@ export function HomegroundFooter({
           <a href={businessPath}>{legalCopy.related.business}</a>
           <a href={termsPath}>{legalCopy.related.terms}</a>
           <a href={privacyPath}>{legalCopy.related.privacy}</a>
+          <NewsletterFooterLink locale={locale} className={styles.footerPrivacyButton} />
           <button
             className={styles.footerPrivacyButton}
             type="button"

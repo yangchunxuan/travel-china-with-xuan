@@ -1,0 +1,13 @@
+.page { min-block-size: 100dvh; box-sizing: border-box; padding: 2rem; background: #f6f6f4; color: #171717; font-family: Arial, "PingFang SC", sans-serif; }
+.brand { display: inline-flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; font-family: Georgia, serif; font-size: 1.25rem; }
+.brand svg { inline-size: 2rem; block-size: 2rem; }
+.panel { max-inline-size: 34rem; margin: clamp(3rem, 12vh, 8rem) auto; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 1.25rem; background: #fff; }
+.eyebrow { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.panel h1 { font-family: Georgia, "PingFang SC", serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; font-weight: 400; letter-spacing: -.035em; }
+.panel p { line-height: 1.65; }
+.action { display: block; margin-block: 2rem; border: 1px solid #111; border-radius: .2rem; padding: .8rem 1.3rem; background: #111; color: #fff; font: inherit; cursor: pointer; min-block-size: 2.75rem; }
+.action[aria-disabled="true"] { opacity: .65; cursor: wait; }
+.home { display: inline-block; margin-block-start: 1rem; color: inherit; text-underline-offset: .2em; line-height: 1.5; }
+.error { color: #a12424; }
+.page :focus-visible { outline: 2px solid #111; outline-offset: 4px; }
+@media (max-width: 35rem) { .page { padding: 1.25rem; } }

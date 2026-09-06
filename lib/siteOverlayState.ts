@@ -21,3 +21,16 @@ export function setPrivacyManagerOpen(open: boolean) {
   privacyManagerOpen = open;
   privacyManagerListeners.forEach((listener) => listener());
 }
+
+let navigationMenuOpen = false;
+const navigationMenuListeners = new Set<() => void>();
+export function getNavigationMenuOpen() { return navigationMenuOpen; }
+export function subscribeNavigationMenu(listener: () => void) {
+  navigationMenuListeners.add(listener);
+  return () => { navigationMenuListeners.delete(listener); };
+}
+export function setNavigationMenuOpen(open: boolean) {
+  if (navigationMenuOpen === open) return;
+  navigationMenuOpen = open;
+  navigationMenuListeners.forEach((listener) => listener());
+}
