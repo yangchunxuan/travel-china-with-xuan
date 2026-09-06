@@ -384,7 +384,7 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     ...homepageSelectionSource[1].matchAll(/"([^"]+)"/g),
   ].map((match) => match[1]);
   assert.deepEqual(homepageTourSlugs, [
-    "zhangjiajie-4-day-private-tour",
+    "zhangjiajie-forest-4-day-private-tour",
     "beijing-highlights-5-day-private-tour",
     "shanghai-suzhou-hangzhou-6-day-private-tour",
     "chengdu-pandas-sanxingdui-5-day-private-tour",

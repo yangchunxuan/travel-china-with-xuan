@@ -1,6 +1,6 @@
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
-import { homepagePrivateTourSlugs } from "../lib/homepagePrivateTourCatalog.ts";
+import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../lib/homepagePrivateTourCatalog.ts";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle.ts";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
 import { isIsoDateTimeWithTimezone } from "./lib/iso-date-time.mjs";
@@ -326,9 +326,12 @@ for (const locale of locales) {
     }
   }
 
-  const homepageProducts = getPublishedPrivateTourCatalog(locale.runtime).filter(
-    (product) => homepagePublishedTourSlugs.includes(product.slug),
-  );
+  const publishedBySlug = new Map(getPublishedPrivateTourCatalog(locale.runtime).map(product => [product.slug, product]));
+  const homepageProducts = getHomepagePrivateTourItems(locale.runtime).map(item => ({
+    ...publishedBySlug.get(item.id),
+    startingPriceHref: item.href,
+    startingPrice: item.startingPrice,
+  }));
   assertPrivateTourPriceLinks(homepageHtml, homepageProducts, `${context} homepage published-tour discovery`);
   assertIncludes(
     homepageHtml,

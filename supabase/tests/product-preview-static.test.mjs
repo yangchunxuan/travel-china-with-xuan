@@ -152,7 +152,7 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(homepageEditorial, /\.\.\.orderedGuides\.map/);
   assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
   assert.match(homepageCatalog, /getPublishedPrivateTourCatalog\(locale\)/);
-  assert.match(homepageCatalog, /"zhangjiajie-4-day-private-tour"/);
+  assert.match(homepageCatalog, /"zhangjiajie-forest-4-day-private-tour"/);
   assert.doesNotMatch(homepageCatalog, /getZhangjiajiePrivateTourHomeCard/);
   assert.match(publishedCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
   assert.match(publishedCatalog, /zhangjiajieProduct\.duration\.days/);

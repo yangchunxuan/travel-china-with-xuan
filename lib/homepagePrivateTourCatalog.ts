@@ -1,6 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: export checks execute this module via type stripping.
-import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
+import { getPublishedPrivateTourCatalog, selectPublishedPrivateTourPrice } from "./publishedPrivateTourCatalog.ts";
+import type { PrivateTourInquirySelection } from "./privateTourInquiryContext";
 
 export interface HomepagePrivateTourItem {
   readonly id: string;
@@ -14,6 +15,7 @@ export interface HomepagePrivateTourItem {
     readonly formatted: string;
     readonly travelers: number;
     readonly serviceLabel: string;
+    readonly selection?: PrivateTourInquirySelection;
     readonly validityNote?: string;
   };
   readonly image: {
@@ -30,7 +32,7 @@ export interface HomepagePrivateTourItem {
  * The complete published catalog remains available on the tours hub.
  */
 export const homepagePrivateTourSlugs = [
-  "zhangjiajie-4-day-private-tour",
+  "zhangjiajie-forest-4-day-private-tour",
   "beijing-highlights-5-day-private-tour",
   "shanghai-suzhou-hangzhou-6-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",
@@ -55,6 +57,14 @@ export function getHomepagePrivateTourItems(
     if (!product) {
       throw new Error(`Missing homepage private tour: ${slug}`);
     }
+    // The owner selected the forest tour's four-person offer for the homepage.
+    // Resolve its price from the published row; the full catalog keeps its two-person basis.
+    if (slug === "zhangjiajie-forest-4-day-private-tour") {
+      return selectPublishedPrivateTourPrice(product, locale, {
+        packageId: "fixed-route-english-guided",
+        travelers: 4,
+      });
+    }
     return product;
   });
 
@@ -73,6 +83,7 @@ export function getHomepagePrivateTourItems(
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,
             serviceLabel: product.startingPrice.serviceLabel,
+            selection: product.startingPrice.selection,
             validityNote: product.startingPrice.validityNote,
           },
           image: product.image,
