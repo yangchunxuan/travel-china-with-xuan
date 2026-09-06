@@ -438,7 +438,7 @@ function PageIntro() {
       </div>
       <div className={styles.boundaryBadge}>
         <ShieldCheck size={20} aria-hidden="true" />
-        不显示单条客户资料
+        咨询只显示汇总
       </div>
     </div>
   );
@@ -2274,7 +2274,7 @@ export function AdminInsightsPage() {
       </main>
       <footer className={styles.footer}>
         <p>
-          私有汇总页 · 不含客户名单、联系方式、自由文本、原始标识符、导出或跨窗口追踪
+          私有后台 · 咨询只显示汇总，简报订阅单独管理；无导出或跨窗口追踪。
         </p>
       </footer>
     </div>
