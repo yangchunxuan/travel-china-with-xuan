@@ -16,6 +16,8 @@ export const metadata: Metadata = {
       "msvalidate.01": "C3B08E57904F7FB8995048D0D0EE1A92",
       "ahrefs-site-verification":
         "008826387cc4ee8dba5d2346530e43243b31219c202a9f3bde50bf4dfcd3b5aa",
+      "trustpilot-one-time-domain-verification-id":
+        "2a0c7d9c-ac2a-4114-af7b-f1e6668bc378",
     },
   },
   title: {
