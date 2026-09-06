@@ -126,6 +126,12 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
     [beijingSlug, "english-guided", [839, 669], [5453, 4348], [1180000, 940000]],
     ["guilin-yangshuo-5-day-private-tour", "standard-guided", [769, 629], [4998, 4088], [1080000, 880000]],
     ["zhangjiajie-forest-4-day-private-tour", "fixed-route-english-guided", [449, 385], [2918, 2502], [630000, 540000]],
+    ["shanghai-suzhou-hangzhou-6-day-private-tour", "standard-guided", [1144, 834], [7436, 5421], [1600000, 1170000]],
+    ["chengdu-pandas-sanxingdui-5-day-private-tour", "standard-guided", [949, 759], [6168, 4933], [1330000, 1070000]],
+    ["xian-terracotta-warriors-5-day-private-tour", "standard-guided", [598, 468], [3887, 3042], [840000, 660000]],
+    ["chongqing-wulong-5-day-private-tour", "standard-guided", [699, 509], [4543, 3308], [980000, 720000]],
+    ["harbin-winter-5-day-private-tour", "standard-guided-winter", [1459, 1180], [9483, 7670], [2040000, 1650000]],
+    ["shanghai-suzhou-5-day-private-tour", "standard-guided", [769, 649], [4998, 4218], [1080000, 910000]],
   ];
   for (const [slug, packageId, usd, cny, krw] of cases) {
     const product = privateTourProducts.find((p) => p.slug === slug);

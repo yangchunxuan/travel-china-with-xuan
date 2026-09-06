@@ -271,12 +271,12 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.doesNotMatch(zh.bookingNote, /二选一/);
 });
 
-test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices", () => {
+test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller prices", () => {
   const product = getPrivateTourProduct(shanghaiJiangnanSlug);
   assert.ok(product);
   assert.deepEqual(product.packages[0].prices, [
-    { travelers: 2, cnyPerPerson: 12490 },
-    { travelers: 4, cnyPerPerson: 8190 },
+    { travelers: 2, cnyPerPerson: 7436, usdPerPerson: 1144 },
+    { travelers: 4, cnyPerPerson: 5421, usdPerPerson: 834 },
   ]);
 
   assert.deepEqual(
@@ -284,8 +284,8 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
       ({ travelers, formatted }) => ({ travelers, formatted }),
     ),
     [
-      { travelers: 2, formatted: "USD\u00a01,930" },
-      { travelers: 4, formatted: "USD\u00a01,260" },
+      { travelers: 2, formatted: "USD\u00a01,144" },
+      { travelers: 4, formatted: "USD\u00a0834" },
     ],
   );
   assert.deepEqual(
@@ -293,8 +293,8 @@ test("Shanghai Suzhou Hangzhou publishes only verified 2- and 4-traveller prices
       ({ travelers, formatted }) => ({ travelers, formatted }),
     ),
     [
-      { travelers: 2, formatted: "₩2,690,000" },
-      { travelers: 4, formatted: "₩1,770,000" },
+      { travelers: 2, formatted: "₩1,600,000" },
+      { travelers: 4, formatted: "₩1,170,000" },
     ],
   );
 });
@@ -303,7 +303,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
   const product = (slug) => {
     const result = getPrivateTourProduct(slug);
     assert.ok(result, slug);
-    assert.equal(result.dateModified, "2026-08-31", `${slug} freshness`);
+    assert.equal(result.dateModified, "2026-09-06", `${slug} freshness`);
     return result;
   };
   const requireFragments = (value, fragments, context) => {
