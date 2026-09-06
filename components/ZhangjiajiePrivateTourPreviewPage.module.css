@@ -32,6 +32,35 @@
   align-items: start;
 }
 
+.inquiryAction {
+  align-items: center;
+  background: #17191c;
+  border: 1px solid #17191c;
+  border-radius: 0.4rem;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 650;
+  gap: 0.6rem;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+.inquiryAction:hover {
+  background: #34383d;
+}
+
+.inquiryAction:focus-visible {
+  outline: 2px solid #17191c;
+  outline-offset: 3px;
+}
+
+.inquiryAction svg {
+  flex-shrink: 0;
+}
+
 .hero h1 {
   max-width: 15ch;
 }

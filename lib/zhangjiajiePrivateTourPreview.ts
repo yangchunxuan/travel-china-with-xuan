@@ -340,7 +340,7 @@ export const productPreviewCopy = {
     excludedTitle: "Kept outside the base price",
     excludedItems: [
       "Travel to and from Zhangjiajie",
-      "Meals and personal spending",
+      "Lunches, dinners and personal spending; breakfast is confirmed with your stay",
       "VIP access, bungee jumping, zip lines, shows and other optional activities",
       "Single-room, child, guide-language and vehicle-upgrade differences",
       "Comprehensive travel insurance bought in the traveller's home country",
@@ -691,7 +691,7 @@ export const productPreviewCopy = {
     excludedTitle: "不放进基础价格",
     excludedItems: [
       "往返张家界的大交通",
-      "正餐与个人消费",
+      "午晚餐与个人消费；早餐随住宿方案确认",
       "VIP通道、高空弹跳、滑索、演出等自选项目",
       "单房、儿童、导游语种与车型升级差价",
       "客人在本国购买的综合旅行保险",
@@ -1053,7 +1053,7 @@ export const productPreviewCopy = {
     excludedTitle: "기본 가격에 포함하지 않는 항목",
     excludedItems: [
       "장자제까지 오고 가는 교통편",
-      "식사와 개인 경비",
+      "중식·석식과 개인 경비; 조식은 숙소와 함께 확인",
       "VIP 통로, 번지점프, 집라인, 공연 등 선택 활동",
       "1인실, 어린이 요금, 가이드 언어와 차량 업그레이드에 따른 차액",
       "여행자가 거주국에서 구입하는 종합 여행자보험",

@@ -5,6 +5,7 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { TourPriceScope } from "./TourPriceScope";
 import { ZhangjiajiePrivateTourPriceWindow } from "./ZhangjiajiePrivateTourPriceWindow";
 import editorialStyles from "./content/EditorialGuidePage.module.css";
 import {
@@ -350,6 +351,12 @@ export function ZhangjiajiePrivateTourPreviewPage({
                 />
               </div>
               <div>
+                {published ? (
+                  <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="header">
+                    {isZh ? "咨询日期与住宿" : isKo ? "날짜와 숙소 문의" : "Ask about dates & stays"}
+                    <ArrowRight aria-hidden="true" size={18} />
+                  </GuideCtaLink>
+                ) : null}
                 <a className={styles.priceJump} href="#prices-title">
                   {copy.pricesTitle}
                   <ArrowDown aria-hidden="true" size={18} />
@@ -552,6 +559,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
               locale={locale}
               pricing={publicPricing}
             />
+            <TourPriceScope route="zhangjiajie" locale={locale} detailsHref="#scope-title" />
+            {published ? (
+              <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="inline">
+                {isZh ? "咨询日期与住宿" : isKo ? "날짜와 숙소 문의" : "Ask about dates & stays"}
+                <ArrowRight aria-hidden="true" size={18} />
+              </GuideCtaLink>
+            ) : null}
           </section>
 
           <section
