@@ -327,6 +327,25 @@ function localizedProfile(slug: string, locale: HomegroundLocale) {
   };
 }
 
+/** Select a published offer for a featured placement without changing the catalog entry price. */
+export function selectPublishedPrivateTourPrice(
+  product: PublishedPrivateTourCatalogItem,
+  locale: HomegroundLocale,
+  selection: PrivateTourInquirySelection,
+): PublishedPrivateTourCatalogItem {
+  const source = privateTourProducts.find((candidate) => candidate.slug === product.slug);
+  const service = source && localizePrivateTourProduct(source, locale).packages.find(
+    (candidate) => candidate.id === selection.packageId,
+  );
+  const row = service?.rows.find((candidate) => candidate.travelers === selection.travelers);
+  if (!service || !row) throw new Error(`Missing published offer: ${product.slug}`);
+  return {
+    ...product,
+    startingPriceHref: buildPrivateTourDetailHref(product.href, product.slug, selection),
+    startingPrice: { ...row, serviceLabel: service.label, selection },
+  };
+}
+
 export function getPublishedPrivateTourCatalog(
   locale: HomegroundLocale,
 ): readonly PublishedPrivateTourCatalogItem[] {

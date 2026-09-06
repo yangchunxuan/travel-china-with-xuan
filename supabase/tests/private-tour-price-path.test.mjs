@@ -72,6 +72,16 @@ test("all three-language catalog price links land on the exact published service
     }
     for (const item of getHomepagePrivateTourItems(locale)) {
       const published = catalog.find((candidate) => candidate.slug === item.id);
+      if (item.id === "zhangjiajie-forest-4-day-private-tour") {
+        const selection = { packageId: "fixed-route-english-guided", travelers: 4 };
+        assert.equal(item.href, inquiry.buildPrivateTourDetailHref(published.href, item.id, selection));
+        assert.equal(item.startingPrice.travelers, 4);
+        assert.equal(item.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
+        assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
+        assert.equal(published.startingPrice.travelers, 2, "homepage promotion does not change the catalog entry basis");
+        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0449", zh: "¥2,918", ko: "₩630,000" }[locale]);
+        continue;
+      }
       assert.equal(item.href, published.startingPriceHref);
       assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
@@ -165,12 +175,20 @@ test("server-rendered homepage labels and detail price controls share the starti
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);
+    assert.equal(products[0].id, "zhangjiajie-forest-4-day-private-tour");
     const homepageDom = parse(renderToStaticMarkup(React.createElement(homepage.HomepageProductShowcase, { locale, products, plannerHref: "/#planner-contact" })));
     for (const item of products) {
       const link = nodes(homepageDom).find((node) => node.tagName === "a" && attr(node, "href") === item.href);
       assert.ok(link);
       assert.ok(text(link).includes(item.startingPrice.serviceLabel), `${locale}:${item.id} service basis is server-rendered`);
       assert.ok(text(link).includes(item.startingPrice.formatted));
+      assert.ok(text(link).includes(getHomepageProductShowcaseCopy(locale).groupBasis(item.startingPrice.travelers)), `${locale}:${item.id} group basis stays beside the promoted price`);
+      if (item.id === "zhangjiajie-forest-4-day-private-tour") {
+        const image = nodes(link).find((node) => node.tagName === "img");
+        assert.ok(image);
+        assert.match(attr(image, "src"), /zhangjiajie-forest-4-day-private-tour-/);
+        assert.match(attr(image, "srcset"), /zhangjiajie-forest-4-day-private-tour-/);
+      }
     }
     const product = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === beijingSlug), locale);
     const starting = getPrivateTourStartingPrice(product);

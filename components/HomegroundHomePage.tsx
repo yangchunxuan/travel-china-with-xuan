@@ -112,7 +112,7 @@ export function HomegroundHomePage({
   const copy = getHomegroundCopy(locale);
   const showcase = getHomepageShowcaseCopy(locale);
   const productShowcaseExcludedItemIds = useMemo(
-    () => privateTourItems.map((item) => item.id),
+    () => [...privateTourItems.map((item) => item.id), "zhangjiajie-4-day-private-tour"],
     [privateTourItems],
   );
   const guidesIndexPath =
