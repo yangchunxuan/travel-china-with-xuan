@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import {
   analyticsConsentOpenEventName,
   analyticsConsentStorageKey,
@@ -12,6 +12,12 @@ import {
 } from "../lib/analyticsConsent";
 import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import {
+  getPrivacyManagerOpen,
+  getServerPrivacyManagerOpen,
+  setPrivacyManagerOpen,
+  subscribePrivacyManager,
+} from "../lib/siteOverlayState";
 import styles from "./AnalyticsConsent.module.css";
 
 const storedConsentAttribute = "data-homeground-consent-stored";
@@ -60,7 +66,11 @@ export function AnalyticsConsent({
   const returnFocusRef = useRef<HTMLElement | null>(null);
   const [preferences, setPreferences] =
     useState<AnalyticsConsentPreferences | null>(null);
-  const [managerOpen, setManagerOpen] = useState(false);
+  const managerOpen = useSyncExternalStore(
+    subscribePrivacyManager,
+    getPrivacyManagerOpen,
+    getServerPrivacyManagerOpen,
+  );
   const [draftAnalytics, setDraftAnalytics] = useState(false);
   const [draftMarketing, setDraftMarketing] = useState(false);
 
@@ -73,7 +83,7 @@ export function AnalyticsConsent({
       const current = readAnalyticsConsent();
       setDraftAnalytics(current?.analytics ?? false);
       setDraftMarketing(current?.marketing ?? false);
-      setManagerOpen(true);
+      setPrivacyManagerOpen(true);
     };
 
     const unsubscribeConsent = subscribeAnalyticsConsent((next) => {
@@ -84,6 +94,7 @@ export function AnalyticsConsent({
     return () => {
       unsubscribeConsent();
       window.removeEventListener(analyticsConsentOpenEventName, handleOpen);
+      setPrivacyManagerOpen(false);
     };
   }, []);
 
@@ -106,7 +117,7 @@ export function AnalyticsConsent({
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        setManagerOpen(false);
+        setPrivacyManagerOpen(false);
         return;
       }
       if (event.key !== "Tab" || !dialogRef.current) return;
@@ -144,13 +155,13 @@ export function AnalyticsConsent({
     setPreferences(next);
     setDraftAnalytics(next.analytics);
     setDraftMarketing(next.marketing);
-    setManagerOpen(false);
+    setPrivacyManagerOpen(false);
   };
 
   const openManager = () => {
     setDraftAnalytics(preferences?.analytics ?? false);
     setDraftMarketing(preferences?.marketing ?? false);
-    setManagerOpen(true);
+    setPrivacyManagerOpen(true);
   };
 
   return (
@@ -162,6 +173,7 @@ export function AnalyticsConsent({
       {!preferences && !managerOpen ? (
         <section
           className={styles.banner}
+          data-homeground-consent-banner="true"
           aria-labelledby={`${titleId}-banner`}
         >
           <div className={styles.bannerCopy}>
@@ -171,18 +183,18 @@ export function AnalyticsConsent({
           </div>
           <div className={styles.bannerActions}>
             <button
-              className={styles.primaryButton}
-              type="button"
-              onClick={() => choose(true, true)}
-            >
-              {copy.acceptAll}
-            </button>
-            <button
-              className={styles.secondaryButton}
+              className={styles.bannerButton}
               type="button"
               onClick={() => choose(false, false)}
             >
               {copy.necessaryOnly}
+            </button>
+            <button
+              className={styles.bannerButton}
+              type="button"
+              onClick={() => choose(true, true)}
+            >
+              {copy.acceptAll}
             </button>
             <button
               className={styles.textButton}
@@ -196,7 +208,7 @@ export function AnalyticsConsent({
       ) : null}
 
       {managerOpen ? (
-        <div className={styles.backdrop}>
+        <div className={styles.backdrop} data-homeground-privacy-manager="true">
           <div
             className={styles.dialog}
             ref={dialogRef}
@@ -213,13 +225,14 @@ export function AnalyticsConsent({
               <button
                 className={styles.closeButton}
                 type="button"
-                onClick={() => setManagerOpen(false)}
+                onClick={() => setPrivacyManagerOpen(false)}
               >
                 {copy.close}
               </button>
             </div>
 
             <div className={styles.choiceList}>
+              <p className={styles.dialogDetails}>{copy.dialogDetails}</p>
               <div className={styles.choice}>
                 <div>
                   <strong>{copy.necessaryTitle}</strong>

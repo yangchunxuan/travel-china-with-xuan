@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import {
   useEffect,
@@ -40,6 +41,8 @@ import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
+import { GuideTourEntry } from "./GuideTourEntry";
+import { guideTourEntryId } from "../lib/guideTourEntry";
 import styles from "./HomegroundHeader.module.css";
 
 export type HomegroundPageContext =
@@ -178,6 +181,7 @@ export function HomegroundHeader({
   languagePaths,
   navigationIsExact = false,
 }: HomegroundHeaderProps) {
+  const articleId = guideTourEntryId(usePathname());
   const [open, setOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("");
   const [languageQuery, setLanguageQuery] = useState("");
@@ -469,6 +473,7 @@ export function HomegroundHeader({
   };
 
   return (
+    <>
     <header
       className={styles.siteHeader}
       data-homeground-header-context={pageContext}
@@ -716,5 +721,7 @@ export function HomegroundHeader({
         </nav>
       </div>
     </header>
+    {articleId ? <GuideTourEntry locale={locale} guideId={articleId} menuOpen={open} /> : null}
+    </>
   );
 }
