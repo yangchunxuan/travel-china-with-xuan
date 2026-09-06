@@ -1,28 +1,44 @@
 .banner {
-  align-items: end;
-  background: var(--hg-color-card);
-  border: 1px solid var(--hg-color-line);
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d3d3d3;
   border-radius: 1rem;
-  bottom: 1rem;
-  box-shadow: 0 1rem 3rem rgb(20 20 19 / 18%);
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  box-shadow: 0 0.5rem 1.75rem rgb(0 0 0 / 8%);
   display: grid;
-  gap: 1.25rem;
+  font-family: var(--sans, system-ui, sans-serif);
+  gap: 1.5rem;
   grid-template-columns: minmax(0, 1fr) auto;
-  inset-inline: max(1rem, calc((100vw - 72rem) / 2));
-  padding: 1.25rem;
+  grid-template-rows: minmax(0, 1fr);
+  inset-inline: max(1rem, calc((100vw - 60rem) / 2));
+  max-block-size: calc(100dvh - 5rem - env(safe-area-inset-bottom));
+  overflow: hidden;
+  padding: 1.125rem;
   position: fixed;
   z-index: 1200;
 }
 
-:global(html[data-homeground-consent-stored="true"]) .banner {
+:global(html[data-homeground-consent-stored="true"]) .banner,
+:global(body:has(header[data-menu-open="true"])) .banner {
   display: none;
 }
 
 .bannerCopy {
-  max-inline-size: 50rem;
+  min-block-size: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-inline-end: 0.25rem;
 }
 
-.banner h2,
+.banner h2 {
+  color: #161616;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
 .dialog h2 {
   color: var(--hg-color-ink);
   font-family: var(--hg-font-editorial);
@@ -32,7 +48,6 @@
   margin: 0;
 }
 
-.banner p,
 .dialog p,
 .choiceBody {
   color: var(--hg-color-muted);
@@ -41,10 +56,21 @@
 }
 
 .banner p {
-  margin: 0.45rem 0 0.35rem;
+  color: #656565;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  margin: 0.5rem 0 0.25rem;
 }
 
-.banner a,
+.banner a {
+  align-items: center;
+  color: #555;
+  display: inline-flex;
+  font-size: 0.75rem;
+  min-block-size: 2rem;
+  text-underline-offset: 0.2rem;
+}
+
 .dialog a {
   color: var(--hg-color-dark-rust);
   font-size: 0.86rem;
@@ -52,7 +78,13 @@
   text-underline-offset: 0.2rem;
 }
 
-.bannerActions,
+.bannerActions {
+  display: grid;
+  gap: 0 0.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  inline-size: 18rem;
+}
+
 .dialogActions {
   align-items: center;
   display: flex;
@@ -61,7 +93,7 @@
 }
 
 .primaryButton,
-.secondaryButton,
+.bannerButton,
 .textButton,
 .closeButton {
   align-items: center;
@@ -80,10 +112,15 @@
   color: var(--hg-color-on-dark);
 }
 
-.secondaryButton {
-  background: transparent;
-  border: 1px solid var(--hg-color-line);
-  color: var(--hg-color-ink);
+.bannerButton {
+  background: #f7f7f7;
+  border: 1px solid #d5d5d5;
+  border-radius: 0.5rem;
+  color: #191919;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  padding: 0.5rem 0.375rem;
 }
 
 .textButton,
@@ -93,15 +130,27 @@
   color: var(--hg-color-dark-rust);
 }
 
+.banner .textButton {
+  color: #555;
+  font-size: 0.75rem;
+  font-weight: 500;
+  grid-column: 1 / -1;
+  padding: 0.5rem;
+}
+
 .primaryButton:hover,
 .primaryButton:focus-visible {
   background: var(--hg-color-dark-rust);
   border-color: var(--hg-color-dark-rust);
 }
 
-.secondaryButton:hover,
-.secondaryButton:focus-visible {
-  border-color: var(--hg-color-ink);
+.bannerButton:hover {
+  background: #eee;
+}
+
+.banner :where(a, button):focus-visible {
+  outline: 2px solid #161616;
+  outline-offset: 2px;
 }
 
 .textButton:hover,
@@ -118,7 +167,8 @@
   display: flex;
   inset: 0;
   justify-content: center;
-  padding: 1rem;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem
+    max(1rem, env(safe-area-inset-bottom));
   position: fixed;
   z-index: 1300;
 }
@@ -129,7 +179,10 @@
   box-shadow: 0 1.5rem 4rem rgb(20 20 19 / 28%);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  max-block-size: calc(100dvh - 2rem);
+  max-block-size: calc(
+    100dvh - max(1rem, env(safe-area-inset-top)) -
+      max(1rem, env(safe-area-inset-bottom))
+  );
   max-inline-size: 46rem;
   overflow: hidden;
   padding: clamp(1.15rem, 3vw, 1.75rem);
@@ -162,6 +215,12 @@
   overscroll-behavior: contain;
   padding-inline-end: 1rem;
   scrollbar-gutter: stable;
+}
+
+.dialogDetails {
+  border-block-end: 1px solid var(--hg-color-line);
+  margin: 0;
+  padding-block: 1rem;
 }
 
 .choice {
@@ -224,16 +283,13 @@
 @media (max-width: 48rem) {
   .banner {
     align-items: stretch;
+    gap: 0.5rem;
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
   }
 
   .bannerActions {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-
-  .textButton {
-    grid-column: 1 / -1;
+    inline-size: 100%;
   }
 }
 
@@ -243,9 +299,10 @@
     border-end-start-radius: 0;
     bottom: 0;
     inset-inline: 0;
+    max-block-size: calc(100dvh - 5rem);
+    padding: 1.125rem 1.125rem max(0.5rem, env(safe-area-inset-bottom));
   }
 
-  .bannerActions,
   .choice {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -267,6 +324,19 @@
 
   .dialogActions .primaryButton {
     inline-size: 100%;
+  }
+}
+
+@media (max-height: 36rem) {
+  .dialog {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .choiceList {
+    overflow: visible;
+    padding-inline-end: 0;
   }
 }
 
