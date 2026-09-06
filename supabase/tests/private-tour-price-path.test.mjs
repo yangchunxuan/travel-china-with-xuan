@@ -153,7 +153,11 @@ test("detail parameters reject duplicates, incomplete and cross-product choices"
 
 test("server-rendered homepage labels and detail price controls share the starting selection in every language", async () => {
   const selection = await loadComponent("components/PrivateTourSelection.tsx");
-  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", { "./PrivateTourSelection": selection });
+  const priceScope = await loadComponent("components/TourPriceScope.tsx");
+  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", {
+    "./PrivateTourSelection": selection,
+    "./TourPriceScope": priceScope,
+  });
   const homepage = await loadComponent("components/HomepageProductShowcase.tsx", {
     "../lib/homepageProductShowcaseI18n": { getHomepageProductShowcaseCopy },
     "../lib/privateTourHubI18n": { privateTourHubPaths },
@@ -177,6 +181,7 @@ test("server-rendered homepage labels and detail price controls share the starti
     assert.ok(selectedService, `${locale}: the initial service is the displayed card basis`);
     assert.ok(detailNodes.some((node) => attr(node, "class") === "priceResult" && text(node).includes(starting.formatted)));
     for (const link of detailNodes.filter((node) => node.tagName === "a")) {
+      if (attr(link, "href") === "#tour-price-details") continue;
       assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(new URL(attr(link, "href"), "https://homegroundchina.com").searchParams, locale).selection, starting.selection);
     }
   }

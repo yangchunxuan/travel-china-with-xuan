@@ -620,6 +620,7 @@ export function ShanghaiJiangnanImaginePage({
 
         <section
           className={`${styles.section} ${styles.scopeSection}`}
+          id="tour-price-details"
           data-tour-reveal
         >
           <div className={styles.sectionInner}>

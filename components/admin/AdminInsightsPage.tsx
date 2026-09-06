@@ -308,7 +308,8 @@ function formatDuration(seconds: number | null): string {
   return `${numberFormatter.format(Math.floor(hours / 24))} 天`;
 }
 
-function trafficCountCopy(value: AdminTrafficCount): string {
+function trafficCountCopy(value: AdminTrafficCount | AdminTrafficDimensionBucket): string {
+  if ("bucketType" in value && value.bucketType === "suppressed") return "已隐藏";
   if (value.suppressed || value.count === null) return "少于 5（已隐藏）";
   return numberFormatter.format(value.count);
 }
@@ -1409,7 +1410,7 @@ function TrafficSection({
         <>
           <div className={styles.coveragePanel}>
             <div>
-              <span>实际覆盖日期</span>
+              <span>查询窗口</span>
               <strong>
                 <time dateTime={traffic.window.startsAt}>
                   {formatDate(traffic.window.startsAt, true)}
@@ -1424,6 +1425,9 @@ function TrafficSection({
               小于 5 的动态分组不显示精确值
             </span>
           </div>
+          <p className={styles.smallNote}>
+            新指标从上线后开始记录；旧版访问不会补记为产品浏览、产品选择或提交记录。
+          </p>
 
           <div className={styles.subsection}>
             <div className={styles.subsectionHeading}>

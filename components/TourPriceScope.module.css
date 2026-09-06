@@ -1,0 +1,41 @@
+.scope {
+  color: #34383d;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding: 1.15rem;
+  text-transform: none;
+}
+
+.scope dl {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.scope dl > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.scope dt {
+  color: #16191d;
+  font-weight: 700;
+}
+
+.scope dd {
+  margin: 0;
+}
+
+.scope a {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  margin-block-start: 0.5rem;
+  min-block-size: 2.75rem;
+  text-underline-offset: 0.2em;
+}
+
+.scope a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

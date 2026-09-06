@@ -15,6 +15,7 @@ import type {
   PrivateTourLocale,
 } from "../lib/privateTourProducts";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { TourPriceScope } from "./TourPriceScope";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
@@ -248,6 +249,10 @@ export function ShanghaiJiangnanPriceConsole({
           {copy.privateTour} · {tourPackage.label} · {copy.flightsSeparate}
         </small>
       </div>
+
+      {product.slug === "beijing-highlights-5-day-private-tour" ? (
+        <TourPriceScope route="beijing" locale={product.locale} detailsHref="#tour-price-details" />
+      ) : null}
 
       <div className={styles.priceConsoleActions}>
         <GuideCtaLink
