@@ -3,6 +3,8 @@ import type { HomegroundLocale } from "./homegroundI18n";
 export const newsletterCopy = {
   en: {
     title: "China, in your inbox.",
+    invitation: "Local travel advice and private journeys from Homeground China.",
+    openForm: "Get the newsletter",
     intro: "Travel ideas, local advice and private journeys.",
     name: "First name", optional: "optional", email: "Email address",
     subscribe: "Sign me up", submitting: "Sending…", close: "Close newsletter",
@@ -17,7 +19,9 @@ export const newsletterCopy = {
     invalidLink: "This link is missing or no longer works. You can sign up again from our website, or contact us for help.", home: "Back to Homeground China",
   },
   zh: {
-    title: "把中国旅行灵感，寄给你。",
+    title: "寄给你的中国旅行灵感",
+    invitation: "Homeground China 的旅行建议与私人线路。",
+    openForm: "订阅旅行简报",
     intro: "当地建议、旅行攻略，还有值得出发的私人线路。",
     name: "称呼", optional: "选填", email: "电子邮箱",
     subscribe: "订阅简报", submitting: "正在发送…", close: "关闭简报订阅",
@@ -33,6 +37,8 @@ export const newsletterCopy = {
   },
   ko: {
     title: "메일로 만나는 중국 여행",
+    invitation: "Homeground China의 현지 여행 팁과 프라이빗 여행 소식.",
+    openForm: "뉴스레터 받아보기",
     intro: "현지 여행 팁과 새로운 영감, 프라이빗 여행 소식.",
     name: "이름", optional: "선택", email: "이메일 주소",
     subscribe: "구독하기", submitting: "전송 중…", close: "뉴스레터 닫기",
