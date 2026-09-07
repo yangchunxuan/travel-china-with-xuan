@@ -391,9 +391,6 @@ export function getPublishedPrivateTourCatalog(
     zhangjiajieProduct.price_display.from_price_per_person,
     locale,
   );
-  const zhangjiajieGuidedDays = zhangjiajieProduct.route
-    .filter((day) => day.guide_planned)
-    .map((day) => day.day);
   const zhangjiajiePriceEnd = new Intl.DateTimeFormat(
     { en: "en-GB", zh: "zh-CN", ko: "ko-KR" }[locale],
     { year: "numeric", month: "short", day: "numeric", timeZone: "Asia/Shanghai" },
@@ -432,9 +429,9 @@ export function getPublishedPrivateTourCatalog(
         ...zhangjiajieStartingPrice,
         travelers: zhangjiajieProduct.group_basis.minimum_adults,
         serviceLabel: {
-          en: `Private guide: days ${zhangjiajieGuidedDays.join(", ")}`,
-          zh: `第 ${zhangjiajieGuidedDays.join("、")} 天含私人导游`,
-          ko: `${zhangjiajieGuidedDays.join("·")}일차 전용 가이드 포함`,
+          en: "Two days of English-speaking guide service included",
+          zh: "已含两天英文导游服务",
+          ko: "이틀간의 영어 가이드 서비스 포함",
         }[locale],
         validityNote: {
           en: `Reference price through ${zhangjiajiePriceEnd}; other dates need a new quote.`,

@@ -29,19 +29,19 @@ const scope = {
   },
   zhangjiajie: {
     en: {
-      included: "3 nights in your chosen stay tier · private local transport and agreed transfers · guide on Days 2–4 · adult admissions and standard scenic transport listed in the confirmation.",
-      separate: "Travel to and from Zhangjiajie, lunches and dinners, optional activities · single-room, child, guide-language and vehicle-upgrade differences.",
-      confirm: "Exact property and room, breakfast, vehicle and guide language—including any English-guide supplement. Stay photos show candidates; your room is confirmed for your dates.",
+      included: "3 nights in your chosen stay tier · private local transport and agreed transfers · two days of English-speaking guide service · adult admissions and standard scenic transport listed in the confirmation.",
+      separate: "Travel to and from Zhangjiajie, lunches and dinners, optional activities · single-room, child and vehicle-upgrade differences.",
+      confirm: "Exact property and room, breakfast, vehicle and guide arrangements. Stay photos show candidates; your room is confirmed for your dates.",
     },
     zh: {
-      included: "所选档位住宿 3 晚；当地私车及约定接送；D2–D4 导游；确认单列明的成人门票与标准景交。",
-      separate: "往返张家界大交通、午晚餐、自选项目；单房、儿童、导游语种和车型升级差价。",
-      confirm: "具体住宿、房型、早餐、车辆和导游语种（含英语服务差价）。照片为候选住宿参考，实际房间按日期确认。",
+      included: "所选档位住宿 3 晚；当地私车及约定接送；两天英文导游服务；确认单列明的成人门票与标准景交。",
+      separate: "往返张家界大交通、午晚餐、自选项目；单房、儿童和车型升级差价。",
+      confirm: "具体住宿、房型、早餐、车辆和导游安排。照片为候选住宿参考，实际房间按日期确认。",
     },
     ko: {
-      included: "선택한 숙소 등급 3박 · 현지 전용 차량과 합의된 이동 · D2~D4 가이드 · 확인서에 명시된 성인 입장권과 기본 관광지 교통.",
-      separate: "장자제 왕복 교통, 중식·석식, 선택 활동 · 1인실·아동·가이드 언어·차량 업그레이드 차액.",
-      confirm: "실제 숙소·객실·조식·차량·가이드 언어와 영어 가이드 추가금. 사진은 후보 숙소 참고용이며 객실은 여행 날짜에 맞춰 확정합니다.",
+      included: "선택한 숙소 등급 3박 · 현지 전용 차량과 합의된 이동 · 이틀간의 영어 가이드 서비스 · 확인서에 명시된 성인 입장권과 기본 관광지 교통.",
+      separate: "장자제 왕복 교통, 중식·석식, 선택 활동 · 1인실·아동·차량 업그레이드 차액.",
+      confirm: "실제 숙소·객실·조식·차량·가이드 일정. 사진은 후보 숙소 참고용이며 객실은 여행 날짜에 맞춰 확정합니다.",
     },
   },
 } as const;
