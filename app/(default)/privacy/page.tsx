@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildHomegroundSocialMetadata } from "../../../lib/homegroundSocialMetadata";
 import { HomegroundPrivacyPage } from "../../../components/HomegroundPrivacyPage";
 import { getHomegroundPrivacyCopy } from "../../../lib/homegroundPrivacyI18n";
 
@@ -9,6 +10,12 @@ export const metadata: Metadata = {
     absolute: copy.metadata.title,
   },
   description: copy.metadata.description,
+  ...buildHomegroundSocialMetadata({
+    locale: "en",
+    title: copy.metadata.title,
+    description: copy.metadata.description,
+    url: "/privacy/",
+  }),
   alternates: {
     canonical: "/privacy/",
     languages: {

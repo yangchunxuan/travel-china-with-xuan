@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildHomegroundSocialMetadata } from "../../../../lib/homegroundSocialMetadata";
 import { notFound } from "next/navigation";
 import { HomegroundLegalPage } from "../../../../components/HomegroundLegalPage";
 import {
@@ -31,13 +32,12 @@ export async function generateMetadata({
       languages: getHomegroundLegalLanguagePaths("business-information"),
     },
     robots: { index: true, follow: true },
-    openGraph: {
+    ...buildHomegroundSocialMetadata({
+      locale,
       title: copy.metadata.title,
       description: copy.metadata.description,
-      type: "website",
-      locale: locale === "zh" ? "zh_CN" : "ko_KR",
       url: copy.pagePath,
-    },
+    }),
   };
 }
 

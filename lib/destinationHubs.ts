@@ -130,7 +130,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("beijing", "en"),
-        title: "Beijing Travel Guide: Nights, Areas, Stations, Next City",
+        title: "Beijing Travel Guide: Stays, Transport & Routes",
         h1: "Beijing: build the city around complete days, not a landmark list",
         description:
           "How many nights Beijing really needs, which area should be your base, how PEK, PKX and eight railway stations reshape the first and last day, and which city should follow.",
@@ -345,7 +345,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("shanghai", "en"),
-        title: "Shanghai Travel Guide: Days, Areas, Airports, Next City",
+        title: "Shanghai Travel Guide: Stays, Airports & Routes",
         h1: "Shanghai: how many complete days, which bank, which gateway",
         description:
           "Decide how many complete Shanghai days you have, whether to base in Puxi or Pudong, how PVG, SHA and the Airport Link change arrival, and whether Suzhou or Hangzhou is a day trip or the next hotel.",
@@ -539,7 +539,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("xian", "en"),
-        title: "Xi'an Travel Guide: Nights, Base, Stations and Next City",
+        title: "Xi'an Travel Guide: Stays, Trains & Routes",
         h1: "Xi'an: how many nights, which base, and what comes next",
         description:
           "Three nights is the balanced Xi'an stay. Compare bases inside and south of the City Wall, read XIY and three railway stations correctly, and decide whether Mount Hua earns another day.",
@@ -715,7 +715,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("chengdu", "en"),
-        title: "Chengdu Travel Guide: Nights, Base, Airports, Sichuan Next",
+        title: "Chengdu Travel Guide: Stays & Sichuan Routes",
         h1: "Chengdu: settle the city first, then build the Sichuan route",
         description:
           "How many complete days Chengdu itself needs, which base protects them, why TFU and CTU are separate decisions, and which Sichuan trips are branches rather than half-days.",
@@ -896,7 +896,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("guangzhou", "en"),
-        title: "Guangzhou Travel Guide: Nights, Base, Terminal, Station",
+        title: "Guangzhou Travel Guide: Stays & Transport",
         h1: "Guangzhou: decide whether the city gets nights, then pick the terminal and the station",
         description:
           "Whether Guangzhou deserves its own nights, which district to base in, how Baiyun's terminals and five railway stations change the plan, and what Foshan, Shunde or Chimelong really cost.",
@@ -1072,7 +1072,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("hangzhou", "en"),
-        title: "Hangzhou Travel Guide: Day Trip, Nights, Areas and Routes",
+        title: "Hangzhou Travel Guide: Day Trips & Stays",
         h1: "Hangzhou: decide whether the city is a day trip or a real stay",
         description:
           "Choose a Shanghai day trip or two- to three-night Hangzhou stay, then match the hotel area, station, West Lake cluster, western hills, Grand Canal and Liangzhu.",
@@ -1231,7 +1231,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("zhangjiajie", "en"),
-        title: "Zhangjiajie Travel Guide: Days, Bases, Parks and Routes",
+        title: "Zhangjiajie Travel Guide: Parks, Stays & Routes",
         h1: "Zhangjiajie: separate the city, Wulingyuan and the mountain systems",
         description:
           "Choose 2, 3 or 4 full days, Zhangjiajie city or Wulingyuan as a base, then connect the National Forest Park, Tianmen Mountain, Grand Canyon and the next city.",
@@ -1385,7 +1385,7 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("chongqing", "en"),
-        title: "Chongqing Travel Guide: Nights, Areas, Stations and Routes",
+        title: "Chongqing Travel Guide: Stays, Transport & Routes",
         h1: "Chongqing: choose the right base, station and number of nights",
         description:
           "Decide how many nights Chongqing needs, where to stay, which airport or railway station is on the ticket, and whether Wulong, Dazu, Chengdu or a cruise belongs next.",

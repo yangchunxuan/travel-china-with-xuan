@@ -59,7 +59,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: `${copy.metadata.title} | ${pageLabel}`,
+    title: `${copy.title} | ${pageLabel}`,
     description,
     alternates: {
       canonical: canonicalPath,
