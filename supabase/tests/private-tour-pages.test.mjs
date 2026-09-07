@@ -303,7 +303,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
   const product = (slug) => {
     const result = getPrivateTourProduct(slug);
     assert.ok(result, slug);
-    assert.equal(result.dateModified, "2026-09-06", `${slug} freshness`);
+    assert.equal(result.dateModified, "2026-09-07", `${slug} freshness`);
     return result;
   };
   const requireFragments = (value, fragments, context) => {

@@ -12,17 +12,17 @@ const labels = {
 const scope = {
   beijing: {
     en: {
-      included: "4 hotel nights, twin sharing and breakfast · Ctrip 4-Diamond rating · airport transfers and private vehicles on Days 2–4.",
+      included: "4 hotel nights, twin sharing and breakfast · Ctrip 4-Diamond rating · airport or railway-station transfers and air-conditioned private vehicles on Days 2–4.",
       separate: "Flights, lunches and dinners · Great Wall cable car, slide rail and shuttle · Daxing Airport (PKX) transfer difference.",
       confirm: "Exact hotel, rooms, vehicle and luggage capacity · successful real-name reservations for Tiananmen and the Forbidden City.",
     },
     zh: {
-      included: "4 晚携程 4 钻酒店，两人一间含早；接送机及 D2–D4 私车。",
+      included: "4 晚携程 4 钻酒店，两人一间含早；机场或车站接送及 D2–D4 空调私车。",
       separate: "机票、午晚餐；长城缆车、滑车与摆渡车；大兴机场（PKX）接送差价。",
       confirm: "具体酒店、房间、车型与行李容量；天安门和故宫须实名预约成功。",
     },
     ko: {
-      included: "씨트립 4다이아 호텔 4박, 2인 1실·조식 · 공항 이동과 D2~D4 전용 차량.",
+      included: "씨트립 4다이아 호텔 4박, 2인 1실·조식 · 공항 또는 기차역 이동과 D2~D4 에어컨 전용 차량.",
       separate: "항공권, 중식·석식 · 만리장성 케이블카·슬라이드 레일·셔틀 · 다싱공항(PKX) 이동 차액.",
       confirm: "숙소·객실·차량·수하물 적재량 · 톈안먼광장과 자금성 실명 예약 확정 여부.",
     },
