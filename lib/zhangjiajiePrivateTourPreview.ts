@@ -73,7 +73,7 @@ export const productPreviewCopy = {
       ],
       [
         "Details that follow your dates",
-        "Rooms, vehicle, tickets and guide language are matched to the people travelling before the plan becomes a booking.",
+        "Rooms, vehicle, tickets and guide arrangements are matched to the people travelling before the plan becomes a booking.",
       ],
     ],
     routeEyebrow: "The 4-day Zhangjiajie itinerary",
@@ -293,7 +293,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "4-day private tour price",
     pricesTitle: "One route, three ways to stay",
     pricesIntro:
-      "Choose the stay that suits your group. Reference prices are valid for the period shown; room availability, guide language and your final total are confirmed in writing before booking. All three stays follow the same four-day sightseeing route.",
+      "Choose the stay that suits your group. Reference prices are valid for the period shown; room availability, guide arrangements and your final total are confirmed in writing before booking. All three stays follow the same four-day sightseeing route.",
     tierDescriptions: {
       "selected-city-stay":
         "A practical city base matched from the properties and rooms available for the actual dates.",
@@ -332,7 +332,7 @@ export const productPreviewCopy = {
     plannedTitle: "Designed into the quote",
     plannedItems: [
       "Private local transport and agreed arrival and departure transfers",
-      "Private guide on sightseeing Days 2–4",
+      "Two days of private English-speaking guide service",
       "Three nights in the selected accommodation tier",
       "Adult admission and standard scenic transport named in the confirmation",
       "No shopping stops; optional upgrades or added services require your agreement before they are charged",
@@ -342,7 +342,7 @@ export const productPreviewCopy = {
       "Travel to and from Zhangjiajie",
       "Lunches, dinners and personal spending; breakfast is confirmed with your stay",
       "VIP access, bungee jumping, zip lines, shows and other optional activities",
-      "Single-room, child, guide-language and vehicle-upgrade differences",
+      "Single-room, child and vehicle-upgrade differences",
       "Comprehensive travel insurance bought in the traveller's home country",
     ],
     confirmationNote:
@@ -358,7 +358,7 @@ export const productPreviewCopy = {
       [
         "02",
         "Match the moving pieces",
-        "Check the exact room, breakfast, vehicle, tickets and guide language against the real dates.",
+        "Check the exact room, breakfast, vehicle, tickets and guide arrangements against the real dates.",
       ],
       [
         "03",
@@ -438,7 +438,7 @@ export const productPreviewCopy = {
       ],
       [
         "细节跟着真实日期走",
-        "房型、车辆、门票与导游语种按真正出行的人和日期匹配，再把计划变成订单。",
+        "房型、车辆、门票与导游安排按真正出行的人和日期匹配，再把计划变成订单。",
       ],
     ],
     routeEyebrow: "张家界4天3晚行程",
@@ -645,7 +645,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "张家界4天3晚私家游价格",
     pricesTitle: "同一条路线，三种住宿质感",
     pricesIntro:
-      "选择适合同行人的住宿档位。参考价适用于标明的有效期；房间是否可订、导游语种与最终总价会在预订前书面确认。三个住宿档位均沿用同一条四日核心游览路线。",
+      "选择适合同行人的住宿档位。参考价适用于标明的有效期；房间是否可订、导游安排与最终总价会在预订前书面确认。三个住宿档位均沿用同一条四日核心游览路线。",
     tierDescriptions: {
       "selected-city-stay":
         "按真实日期可订情况，从两家市区候选中匹配准确酒店与房型。",
@@ -683,7 +683,7 @@ export const productPreviewCopy = {
     plannedTitle: "计划写入报价",
     plannedItems: [
       "当地私人车辆与约定范围内的抵达、离开接送",
-      "第2至第4天私人导游",
+      "两天私人英语导游服务",
       "所选住宿档位的3晚住宿",
       "确认单中逐项列明的成人门票与标准景交",
       "不安排购物店；任何升级或新增服务都须在收费前由你确认",
@@ -693,7 +693,7 @@ export const productPreviewCopy = {
       "往返张家界的大交通",
       "午晚餐与个人消费；早餐随住宿方案确认",
       "VIP通道、高空弹跳、滑索、演出等自选项目",
-      "单房、儿童、导游语种与车型升级差价",
+      "单房、儿童与车型升级差价",
       "客人在本国购买的综合旅行保险",
     ],
     confirmationNote:
@@ -709,7 +709,7 @@ export const productPreviewCopy = {
       [
         "02",
         "匹配会变化的环节",
-        "按真实日期核对准确房型、早餐、车辆、门票与导游语种。",
+        "按真实日期核对准确房型、早餐、车辆、门票与导游安排。",
       ],
       [
         "03",
@@ -792,7 +792,7 @@ export const productPreviewCopy = {
       ],
       [
         "실제 날짜에 맞추는 세부사항",
-        "객실, 차량, 입장권과 가이드 언어를 실제 여행 인원과 날짜에 맞춘 뒤 예약 단계로 넘어갑니다.",
+        "객실, 차량, 입장권과 가이드 일정을 실제 여행 인원과 날짜에 맞춘 뒤 예약 단계로 넘어갑니다.",
       ],
     ],
     routeEyebrow: "장자제 4일 3박 일정",
@@ -1006,7 +1006,7 @@ export const productPreviewCopy = {
     pricesEyebrow: "장자제 4일 3박 프라이빗 여행 가격",
     pricesTitle: "같은 일정, 세 가지 숙소 선택",
     pricesIntro:
-      "일행에게 맞는 숙소 등급을 선택하세요. 참고 요금은 표시된 기간에 적용되며, 객실 예약 가능 여부와 가이드 언어, 최종 총액은 예약 전에 서면으로 확인합니다. 세 숙소 등급 모두 같은 4일 핵심 관광 일정을 따릅니다.",
+      "일행에게 맞는 숙소 등급을 선택하세요. 참고 요금은 표시된 기간에 적용되며, 객실 예약 가능 여부와 가이드 일정, 최종 총액은 예약 전에 서면으로 확인합니다. 세 숙소 등급 모두 같은 4일 핵심 관광 일정을 따릅니다.",
     tierDescriptions: {
       "selected-city-stay":
         "실제 날짜에 예약 가능한 숙소와 객실 가운데 실용적인 시내 숙소를 맞춥니다.",
@@ -1045,7 +1045,7 @@ export const productPreviewCopy = {
     plannedTitle: "견적에 포함해 설계하는 항목",
     plannedItems: [
       "현지 전용 차량과 합의된 범위의 도착·출발 이동",
-      "관광일인 2–4일 차 전담 가이드",
+      "이틀간의 전담 영어 가이드 서비스",
       "선택한 숙소 등급의 3박",
       "확인서에 명시한 성인 입장권과 기본 관광지 내 교통",
       "쇼핑 일정 없음; 선택 업그레이드나 추가 서비스는 비용 청구 전에 동의를 받음",
@@ -1055,7 +1055,7 @@ export const productPreviewCopy = {
       "장자제까지 오고 가는 교통편",
       "중식·석식과 개인 경비; 조식은 숙소와 함께 확인",
       "VIP 통로, 번지점프, 집라인, 공연 등 선택 활동",
-      "1인실, 어린이 요금, 가이드 언어와 차량 업그레이드에 따른 차액",
+      "1인실, 어린이 요금과 차량 업그레이드에 따른 차액",
       "여행자가 거주국에서 구입하는 종합 여행자보험",
     ],
     confirmationNote:
@@ -1071,7 +1071,7 @@ export const productPreviewCopy = {
       [
         "02",
         "날짜별 예약 조건 확인하기",
-        "실제 날짜에 맞춰 객실 유형, 조식, 차량, 입장권과 가이드 언어를 확인합니다.",
+        "실제 날짜에 맞춰 객실 유형, 조식, 차량, 입장권과 가이드 일정을 확인합니다.",
       ],
       [
         "03",
@@ -1137,9 +1137,9 @@ export function getZhangjiajiePrivateTourPublicPricing(
       ko: `1인 기준 · 성인 ${basis.minimum_adults}명 이상 · ${basis.nights}박 ${basis.duration_days}일 · 성인 2명 1실 기준`,
     }[locale],
     guideLanguageNote: {
-      en: "Guide language, including English, and any related price difference are confirmed in your written quote.",
-      zh: "导游语种（包括英语）及相关差价，以书面报价确认为准。",
-      ko: "영어를 포함한 가이드 언어와 관련 요금 차이는 서면 견적에서 확인합니다.",
+      en: "The price includes two days of English-speaking guide service.",
+      zh: "价格已含两天英文导游服务。",
+      ko: "요금에 이틀간의 영어 가이드 서비스가 포함되어 있습니다.",
     }[locale],
     publicNote: {
       en: pricing.public_notes.en,

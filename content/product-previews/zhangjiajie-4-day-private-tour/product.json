@@ -87,7 +87,7 @@
       "claim_status": "needs_confirmation"
     },
     {
-      "label_zh": "第2至第4天私人导游",
+      "label_zh": "第2至第4天私人导游，其中已含两天英文导游服务",
       "fact_id": "guide-three-days",
       "claim_status": "working_standard"
     },
@@ -111,7 +111,7 @@
     "往返张家界的大交通",
     "正餐和个人消费",
     "VIP通道、高空弹跳、滑索和演出等自选项目",
-    "单房差、儿童差价、外语导游差价和车型升级",
+    "单房差、儿童差价和车型升级",
     "客人在本国购买的综合旅行保险"
   ],
   "primary_cta": {
