@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildHomegroundSocialMetadata } from "../../../../lib/homegroundSocialMetadata";
 import { notFound } from "next/navigation";
 import { HomegroundPrivacyPage } from "../../../../components/HomegroundPrivacyPage";
 import {
@@ -28,6 +29,12 @@ export async function generateMetadata({
       absolute: copy.metadata.title,
     },
     description: copy.metadata.description,
+    ...buildHomegroundSocialMetadata({
+      locale,
+      title: copy.metadata.title,
+      description: copy.metadata.description,
+      url: canonical,
+    }),
     alternates: {
       canonical,
       languages: {

@@ -84,7 +84,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
   en: {
     path: "/guides/",
     metadata: {
-      title: "Practical China Travel Guides | Entry, Transport & Stays",
+      title: "China Travel Guides: Entry, Transport & Stays",
       description:
         "Search practical China travel guides for clear answers on entry, transport, stays, timing and realistic first-trip planning.",
       openGraphTitle: "Practical China Travel Guides from Homeground",

@@ -286,7 +286,7 @@ export function TenDayChinaRouteGuidePage({
                         decoding="async"
                         fetchPriority="high"
                         height="1024"
-                        src={`${guideAssetPath}/planning-method-1536.png`}
+                        src={`${guideAssetPath}/planning-method-1536.webp`}
                         width="1536"
                       />
                     </picture>

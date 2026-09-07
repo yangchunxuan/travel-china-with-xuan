@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildHomegroundSocialMetadata } from "../../../lib/homegroundSocialMetadata";
 import { HomegroundLegalPage } from "../../../components/HomegroundLegalPage";
 import {
   getHomegroundLegalCopy,
@@ -15,13 +16,12 @@ export const metadata: Metadata = {
     languages: getHomegroundLegalLanguagePaths("terms"),
   },
   robots: { index: true, follow: true },
-  openGraph: {
+  ...buildHomegroundSocialMetadata({
+    locale: "en",
     title: copy.metadata.title,
     description: copy.metadata.description,
-    type: "website",
-    locale: "en_US",
     url: copy.pagePath,
-  },
+  }),
 };
 
 export default function TermsPage() {
