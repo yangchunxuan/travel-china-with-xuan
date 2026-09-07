@@ -320,7 +320,7 @@ const en: ChinaTripCostCopy = {
   howWeQuote: {
     title: "How Homeground quotes",
     paragraphs: [
-      "We do not publish a fixed price for a trip, because the same route costs different money in April and October, at two people and at six.",
+      "Our published tours show starting prices for the stated group size and service option. For a custom trip, we check your dates, route and group before preparing a written quote.",
       "We first give a realistic range. If the trip moves forward, the written quote shows one total, what is included, what is excluded and which party is responsible for each part.",
     ],
     listLabel: "A quote from us is built from:",
@@ -585,7 +585,7 @@ const zh: ChinaTripCostCopy = {
   howWeQuote: {
     title: "Homeground 怎么报价",
     paragraphs: [
-      "我们不公布固定价格，因为同一条路线在四月和十月不是一个价，两个人和六个人也不是一个价。",
+      "已发布路线会列出对应人数和服务版本的起价。定制行程则先核对日期、路线与同行人数，再提供书面报价。",
       "我们会先给出现实区间。确定继续后，书面报价会写清一个总价、包含与不包含的项目，以及每个环节由哪一方负责。",
     ],
     listLabel: "一份可比较的报价会写清：",
@@ -843,7 +843,7 @@ const ko: ChinaTripCostCopy = {
   howWeQuote: {
     title: "Homeground는 어떻게 견적을 내는가",
     paragraphs: [
-      "저희는 고정 가격을 공개하지 않습니다. 같은 동선이 4월과 10월에 다르고, 2명일 때와 6명일 때 다르기 때문입니다.",
+      "공개된 코스에는 명시된 인원과 서비스 유형 기준의 시작가가 표시됩니다. 맞춤 여행은 날짜, 동선과 인원을 확인한 뒤 서면 견적을 제공합니다.",
       "먼저 현실적인 범위를 드립니다. 계속 진행하면 서면 견적에 하나의 총액, 포함·불포함 항목과 각 부분의 책임 주체를 적습니다.",
     ],
     listLabel: "비교 가능한 견적에는 다음이 적혀야 합니다:",
