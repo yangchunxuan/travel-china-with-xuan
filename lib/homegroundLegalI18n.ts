@@ -241,7 +241,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "Official public registry",
               value: "National Enterprise Credit Information Publicity System",
-              detail: `Open the official registry and search ${homegroundBusiness.unifiedSocialCreditCode}. A direct authorised electronic-licence display link has not yet been connected to this website.`,
+              detail: `Search credit code ${homegroundBusiness.unifiedSocialCreditCode} (Chinese website).`,
               href: homegroundBusiness.registryUrl,
               external: true,
             },
@@ -338,7 +338,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "官方公示系统",
               value: "国家企业信用信息公示系统",
-              detail: `打开官方系统并搜索统一社会信用代码 ${homegroundBusiness.unifiedSocialCreditCode}。本网站尚未接入经授权的电子营业执照“亮照”直达链接。`,
+              detail: `输入代码 ${homegroundBusiness.unifiedSocialCreditCode} 查询。`,
               href: homegroundBusiness.registryUrl,
               external: true,
             },
@@ -432,7 +432,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               label: "공식 공시 시스템",
               value: "중국 국가기업신용정보공시시스템",
-              detail: `공식 시스템에서 통일사회신용코드 ${homegroundBusiness.unifiedSocialCreditCode}를 검색하세요. 승인된 전자 사업자등록증 직접 표시 링크는 아직 이 웹사이트에 연결되지 않았습니다.`,
+              detail: `신용코드 ${homegroundBusiness.unifiedSocialCreditCode}로 검색하세요. 중국어 사이트입니다.`,
               href: homegroundBusiness.registryUrl,
               external: true,
             },
