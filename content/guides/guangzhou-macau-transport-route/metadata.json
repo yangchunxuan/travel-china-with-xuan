@@ -11,18 +11,18 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-13",
+  "dateModified": "2026-09-08",
   "sourceReviewedDate": "2026-08-13",
   "search": { "section": "transport", "family": "comparison", "primaryIntent": "plan" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
   "locales": {
     "en": {
       "path": "/guides/guangzhou-macau-transport-route/",
-      "title": "Guangzhou and Macau: Rail, Zhuhai Border and Baggage",
-      "headline": "Guangzhou and Macau: Rail, Zhuhai Border and Baggage",
-      "description": "Choose Guangzhou South to Zhuhai/Gongbei or Hengqin by your Guangzhou starting point, Macau hotel, luggage, border hours and required spare time.",
+      "title": "Guangzhou to Macau: Train via Gongbei or Hengqin?",
+      "headline": "Guangzhou to Macau: Train via Gongbei or Hengqin?",
+      "description": "For Macau Peninsula, compare rail via Zhuhai and Gongbei; for Cotai, consider Hengqin. Check the full route from Guangzhou to your hotel.",
       "heroAlt": "Exterior of Hengqin Port between Zhuhai and Macao, photographed in 2021.",
-      "navTitle": "Guangzhou to Macau border chains",
+      "navTitle": "Guangzhou to Macau routes",
       "featuredLinkLabel": "Compare Zhuhai and Hengqin for Macau",
       "openGraphLocale": "en_US",
       "cardTags": ["Guangzhou", "Macau", "Border transfer"]

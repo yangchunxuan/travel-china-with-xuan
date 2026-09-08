@@ -114,7 +114,7 @@ test("transport guide copy does not regress to the audited internal jargon", asy
 
   assert.equal(
     airportMetadata.locales.en.title,
-    "Beijing South to PEK or PKX: Transfer Guide",
+    "Beijing South to Daxing or Capital Airport: How to Get There",
   );
   assert.equal(
     mutianyuMetadata.locales.en.title,

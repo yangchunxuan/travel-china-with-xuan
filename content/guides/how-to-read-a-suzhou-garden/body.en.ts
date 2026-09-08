@@ -7,7 +7,49 @@ const body: StructuredPageBody = {
       id: "answer-first",
       type: "lead",
       text:
-        "A Suzhou garden is designed to resist the single glance. Walls conceal, openings crop, corridors turn and water makes a small distance feel larger. Rocks stand in for mountains; a pond can suggest a lake or river; a plaque can connect one view to a poem. The useful first-visit question is therefore not “How many famous objects did I see?” but “What did the garden allow me to see next?” Learn that sequence and one carefully chosen garden can explain more than a rushed checklist of three.",
+        "Choose Humble Administrator's Garden for broad water views, Lingering Garden for corridors and courtyards, Master-of-Nets for an intimate garden and residence, or Lion Forest Garden for its winding rockery. Once inside, slow down: windows frame views, paths reveal one scene at a time, and rocks suggest a much larger mountain landscape.",
+    },
+    {
+      id: "four-gardens-heading",
+      type: "heading",
+      level: 2,
+      text: "Which Suzhou garden should you visit?",
+    },
+    {
+      id: "four-gardens",
+      type: "table",
+      caption: "Choose by the design question you want to understand",
+      columns: ["Garden", "Documented feature", "A useful way to read it"],
+      rows: [
+        [
+          "Humble Administrator's Garden — 拙政园",
+          "Suzhou's official account calls water the garden's soul and says water occupies roughly one third of its large, three-part site.",
+          "Choose it to study broad water composition: how shores, islands, bridges and pavilions divide a large surface into changing distances.",
+        ],
+        [
+          "Lingering Garden — 留园",
+          "The city highlights its architectural space and long turning corridor, which links distinct parts and repeatedly presents new views.",
+          "Choose it to study compression and release: corridor versus courtyard, wall versus opening, interior room versus outdoor scene.",
+        ],
+        [
+          "Master-of-Nets Garden — 网师园",
+          "At about 0.6 hectare, it is a compact garden-residence ensemble. A courtyard and studio there inspired the Astor Court and Ming Room at The Met.",
+          "Choose it to see how domestic rooms and a small central landscape can feel complete without monumental scale.",
+        ],
+        [
+          "Lion Forest Garden — 狮子林",
+          "Founded in 1342 with a Buddhist context, it is known for a layered limestone rockery with caves and winding routes.",
+          "Choose it to experience the rockery as navigable mountain terrain rather than as a distant ornament.",
+        ],
+      ],
+    },
+    {
+      id: "not-ranking",
+      type: "callout",
+      title: "These are signatures, not a ranking",
+      body:
+        "The largest or most photographed garden is not automatically the best match. Current crowd levels, conservation work, entry arrangements, weather and mobility needs can alter a visit. Check the garden authority's current information, then choose the spatial question that interests you most.",
+      tone: "decision",
     },
     {
       id: "not-flower-garden-heading",
@@ -167,48 +209,6 @@ const body: StructuredPageBody = {
             "Walls, planting and turns conceal one scene and release another as you move. “Changing views with each step” is a helpful modern summary, but the actual sequence differs from garden to garden.",
         },
       ],
-    },
-    {
-      id: "four-gardens-heading",
-      type: "heading",
-      level: 2,
-      text: "Four gardens, four different spatial grammars",
-    },
-    {
-      id: "four-gardens",
-      type: "table",
-      caption: "Choose by the design question you want to understand",
-      columns: ["Garden", "Documented feature", "A useful way to read it"],
-      rows: [
-        [
-          "Humble Administrator's Garden — 拙政园",
-          "Suzhou's official account calls water the garden's soul and says water occupies roughly one third of its large, three-part site.",
-          "Choose it to study broad water composition: how shores, islands, bridges and pavilions divide a large surface into changing distances.",
-        ],
-        [
-          "Lingering Garden — 留园",
-          "The city highlights its architectural space and long turning corridor, which links distinct parts and repeatedly presents new views.",
-          "Choose it to study compression and release: corridor versus courtyard, wall versus opening, interior room versus outdoor scene.",
-        ],
-        [
-          "Master-of-Nets Garden — 网师园",
-          "At about 0.6 hectare, it is a compact garden-residence ensemble. A courtyard and studio there inspired the Astor Court and Ming Room at The Met.",
-          "Choose it to see how domestic rooms and a small central landscape can feel complete without monumental scale.",
-        ],
-        [
-          "Lion Forest Garden — 狮子林",
-          "Founded in 1342 with a Buddhist context, it is known for a layered limestone rockery with caves and winding routes.",
-          "Choose it to experience the rockery as navigable mountain terrain rather than as a distant ornament.",
-        ],
-      ],
-    },
-    {
-      id: "not-ranking",
-      type: "callout",
-      title: "These are signatures, not a ranking",
-      body:
-        "The largest or most photographed garden is not automatically the best match. Current crowd levels, conservation work, entry arrangements, weather and mobility needs can alter a visit. Check the garden authority's current information, then choose the spatial question that interests you most.",
-      tone: "decision",
     },
     {
       id: "walking-heading",
