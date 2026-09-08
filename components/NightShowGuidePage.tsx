@@ -162,7 +162,13 @@ function createStructuredData(
   };
 }
 
-function ComparisonTable({ copy }: { copy: NightShowGuideCopy["comparison"] }) {
+function ComparisonTable({
+  copy,
+  showProfiles,
+}: {
+  copy: NightShowGuideCopy["comparison"];
+  showProfiles: NightShowGuideCopy["shows"]["items"];
+}) {
   const rows = [
     { label: copy.rowLabels.format, key: "format" as const },
     { label: copy.rowLabels.base, key: "base" as const },
@@ -176,8 +182,10 @@ function ComparisonTable({ copy }: { copy: NightShowGuideCopy["comparison"] }) {
         <thead>
           <tr>
             <th scope="col" />
-            {copy.shows.map((show) => (
-              <th scope="col" key={show.name}>{show.name}</th>
+            {copy.shows.map((show, index) => (
+              <th scope="col" key={show.name}>
+                <a href={`#${showProfiles[index].id}`}>{show.name}</a>
+              </th>
             ))}
           </tr>
         </thead>
@@ -314,7 +322,17 @@ export function NightShowGuidePage({
                 </div>
                 <p>{copy.comparison.intro}</p>
               </div>
-              <ComparisonTable copy={copy.comparison} />
+              <nav className={styles.showJumpLinks} aria-labelledby="show-jump-label">
+                <span id="show-jump-label">{copy.comparison.jumpLabel}</span>
+                <div>
+                  {copy.comparison.shows.map((show, index) => (
+                    <a href={`#${copy.shows.items[index].id}`} key={show.name}>
+                      {show.name}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+              <ComparisonTable copy={copy.comparison} showProfiles={copy.shows.items} />
               <p className={styles.boundaryNote}>{copy.comparison.boundary}</p>
             </section>
 

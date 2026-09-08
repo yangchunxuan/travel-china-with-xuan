@@ -356,6 +356,10 @@
   margin: 0;
 }
 
+.showJumpLinks {
+  display: none;
+}
+
 .tableScroller {
   max-width: 100%;
   overflow-x: auto;
@@ -1216,6 +1220,30 @@
 }
 
 @media (max-width: 42rem) {
+  .showJumpLinks {
+    display: block;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    margin-block-end: 1rem;
+  }
+
+  .showJumpLinks > span {
+    display: block;
+    margin-block-end: 0.25rem;
+  }
+
+  .showJumpLinks > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+
+  .showJumpLinks a {
+    color: var(--rust-dark);
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+  }
+
   .heroInner,
   .articleBody {
     padding-inline: 1rem;
