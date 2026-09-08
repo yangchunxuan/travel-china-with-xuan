@@ -46,8 +46,9 @@ export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
  * Publication dates preserve the repository's established public lifecycle.
  * PR #88 materially updated Homeground China identity, visible copy, metadata,
  * or structured data on the affected system identities. Shared header chrome
- * alone does not advance the three legal documents: their substantive content,
- * metadata and review date remain at the evidenced 2026-07-24 lifecycle event.
+ * alone does not advance legal documents. Business information separately
+ * records the owner-supplied certificate addition on 2026-09-08; terms and
+ * refund information retain their original substantive lifecycle event.
  * Review dates remain independent where a change did not re-review a full page.
  */
 export const legacySystemContentLifecycle = {
@@ -141,13 +142,13 @@ export const legacySystemContentLifecycle = {
   },
   "business-information": {
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
+    dateModified: "2026-09-08",
     lastReviewed: "2026-07-24",
     evidence: {
-      commit: "6c4295d77bce295a4a546d8c4dc6818e9626cf42",
-      changedAt: "2026-07-24",
+      commit: "10b5f5fb73273d7b8020ddcfb292167ecaf7539d",
+      changedAt: "2026-09-08",
       summary:
-        "The registered-business trust release published this legal document; later shared-header branding did not alter its substantive copy or metadata.",
+        "Added owner-supplied travel-agency certificate copies, their named holder and licensed domestic/inbound scope in three languages. The website operator and full-page review date remain unchanged; no live registry verification is claimed.",
     },
   },
   terms: {

@@ -1,4 +1,5 @@
 import { homegroundBusiness } from "./homegroundBusiness";
+import { travelAgencyCredentials } from "./homegroundTravelAgencyCredentials";
 import type { HomegroundLocale } from "./homegroundI18n";
 
 export const homegroundLegalPageIds = [
@@ -189,7 +190,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "Business information | Homeground",
         description:
-          "The registered operator behind Homeground, current private-tour services and how trip arrangements and payments are confirmed.",
+          "Homeground's registered operator, travel agency credentials and certificate copies, plus how travel services and payments are confirmed.",
       },
       pageLabel: "Business information",
       hero: {
@@ -295,7 +296,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "经营主体信息 | Homeground",
         description:
-          "查看 Homeground 的登记经营主体、当前私家团服务，以及旅行安排与付款如何确认。",
+          "查看 Homeground 的登记经营主体、旅行社资质及证照原图，以及旅行安排与付款如何确认。",
       },
       pageLabel: "经营主体信息",
       hero: {
@@ -389,7 +390,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "사업자 정보 | Homeground",
         description:
-          "Homeground 운영 사업자, 현재 프라이빗 투어 서비스와 여행 준비 및 결제 확인 절차를 안내합니다.",
+          "Homeground 운영 사업자, 여행사 등록·허가 정보와 증서 원본, 여행 서비스 및 결제 확인 절차를 안내합니다.",
       },
       pageLabel: "사업자 정보",
       hero: {
@@ -501,7 +502,11 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       reviewedValue: reviewed[locale],
     },
     callout: copy[locale].callout,
-    sections: copy[locale].sections,
+    sections: [
+      copy[locale].sections[0],
+      travelAgencyCredentials[locale],
+      ...copy[locale].sections.slice(1),
+    ],
   };
 }
 
