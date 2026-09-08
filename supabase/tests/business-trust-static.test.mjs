@@ -82,7 +82,7 @@ test("legal copy retains verifiable registered trust and explains retired servic
   assert.match(legal, /旅行询价如何继续/);
   assert.match(legal, /여행 문의 진행 절차/);
   assert.doesNotMatch(legal, /유료 서면 컨설팅 진행 절차|written consultation payments|书面咨询服务如何确认/);
-  assert.doesNotMatch(legal, /travel agency licence|旅行社业务经营许可|여행사 업무 허가/);
+  assert.doesNotMatch(business, /travelAgencyLicenceNumber|L-BJ10587/);
 
   for (const pattern of [
     /no longer offers standalone paid route reviews or route builds/,
@@ -97,6 +97,28 @@ test("legal copy retains verifiable registered trust and explains retired servic
   assert.doesNotMatch(service, /US\$(69|129)|69 美元|129 美元|Choose Review or Build/);
   assert.match(legal, /value: homegroundBusiness\.registeredName/);
   assert.match(legal, /Existing accepted services remain subject to their original written agreement/);
+});
+
+test("travel agency certificates retain their own holder and original public files", async () => {
+  const [{ homegroundBusiness }, { travelAgencyCertificateHolder: holder, travelAgencyCredentials: copies }] = await Promise.all([
+    import("../../lib/homegroundBusiness.ts"),
+    import("../../lib/homegroundTravelAgencyCredentials.ts"),
+  ]);
+  assert.notEqual(holder.registeredName, homegroundBusiness.registeredName);
+  assert.notEqual(holder.unifiedSocialCreditCode, homegroundBusiness.unifiedSocialCreditCode);
+  assert.equal(holder.registeredName, "盛世美达（北京）国际旅行社有限公司");
+  assert.equal(holder.unifiedSocialCreditCode, "91110114MAE9HHGYX0");
+  assert.equal(holder.travelAgencyLicenceNumber, "L-BJ10587");
+  for (const locale of ["en", "zh", "ko"]) {
+    const section = copies[locale];
+    assert.ok(section.facts.some((fact) => fact.value === holder.registeredName));
+    assert.ok(section.facts.some((fact) => fact.value === holder.travelAgencyLicenceNumber));
+    assert.equal(section.facts.some((fact) => fact.value === homegroundBusiness.registeredName), false);
+    for (const documentPath of [holder.travelAgencyLicencePath, holder.businessLicencePath]) {
+      assert.ok(section.facts.some((fact) => fact.href === documentPath));
+      await access(new URL(`../../public${documentPath}`, import.meta.url));
+    }
+  }
 });
 
 test("legal routes have canonical language alternates and appear in the sitemap and export guard", async () => {
