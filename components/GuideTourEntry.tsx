@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { X } from "lucide-react";
 import { trackEvent } from "../lib/analytics";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
@@ -19,25 +19,25 @@ import styles from "./GuideTourEntry.module.css";
 
 const copy = {
   en: {
-    title: "China, your way.",
-    detail: "Private itineraries, planned around you.",
-    action: "Explore our private tours",
+    title: "Private tours in China",
+    detail: "Browse our itineraries and find a trip for your group.",
+    action: "View itineraries & prices",
     label: "China private tours",
     close: "Close tour suggestion",
     href: "/#travel-products",
   },
   zh: {
-    title: "按你的方式，游中国。",
-    detail: "和同行的人一起，选择适合自己的私人线路。",
-    action: "查看私人旅行线路",
+    title: "中国私人旅行团",
+    detail: "看看我们有哪些行程，选一条适合你和同行人的路线。",
+    action: "查看行程与价格",
     label: "中国私人旅行线路",
     close: "关闭线路推荐",
     href: "/zh/#travel-products",
   },
   ko: {
-    title: "나만의 방식으로 만나는 중국",
-    detail: "일행과 여행 취향에 맞는 프라이빗 일정.",
-    action: "프라이빗 여행 상품 보기",
+    title: "중국 프라이빗 여행",
+    detail: "여행 일정을 살펴보고 일행에게 맞는 상품을 찾아보세요.",
+    action: "일정과 가격 보기",
     label: "중국 프라이빗 여행",
     close: "여행 추천 닫기",
     href: "/ko/#travel-products",
@@ -53,8 +53,6 @@ export function GuideTourEntry({ locale, guideId, menuOpen }: {
 }) {
   const text = copy[locale];
   const [dismissed, setDismissed] = useState(false);
-  const [articleVisible, setArticleVisible] = useState(true);
-  const placementRef = useRef<HTMLDivElement>(null);
   const privacyManagerOpen = useSyncExternalStore(
     subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
   );
@@ -62,14 +60,6 @@ export function GuideTourEntry({ locale, guideId, menuOpen }: {
   useEffect(() => {
     setDismissed(readGuideTourEntryDismissed());
     markGuideTourEntrySeen();
-  }, [guideId]);
-
-  useEffect(() => {
-    const article = placementRef.current?.parentElement?.querySelector(":scope > main");
-    if (!article) return;
-    const observer = new IntersectionObserver(([entry]) => setArticleVisible(entry.isIntersecting));
-    observer.observe(article);
-    return () => observer.disconnect();
   }, [guideId]);
 
   return (
@@ -80,8 +70,6 @@ export function GuideTourEntry({ locale, guideId, menuOpen }: {
         data-homeground-tour-entry="true"
         data-dismissed={dismissed ? "true" : undefined}
         data-overlay-hidden={menuOpen || privacyManagerOpen ? "true" : undefined}
-        data-article-visible={articleVisible ? "true" : "false"}
-        ref={placementRef}
       >
         <aside className={styles.card} aria-label={text.label}>
           <div className={styles.copy}>
