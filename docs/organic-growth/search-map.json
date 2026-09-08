@@ -419,18 +419,18 @@
     "currentRepositoryInventory": {
       "status": "available-from-audited-current-main-runtime-baseline",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "generatedGuideIdentities": 178,
+      "generatedGuideIdentities": 180,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 197,
-      "generatedGuideLocaleUrls": 532,
+      "publishedGuideIdentities": 199,
+      "generatedGuideLocaleUrls": 538,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 583,
+      "guideLocaleUrls": 589,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 206,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 608,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 208,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 614,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -443,7 +443,7 @@
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
       "repositoryIncrementRef": "coverage.publishedInventory.repositoryIncrements",
-      "currentCountsScope": "Counts include the five trilingual 2026-09-08 repository additions recorded below. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
+      "currentCountsScope": "Counts include the recorded September 8 additions and two trilingual September 9 itinerary additions. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
       "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
       "checkedAt": "2026-08-23T13:24:58+08:00"
     },
@@ -1128,9 +1128,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 197,
-      "localeUrlCount": 583,
-      "generatedIdentityCount": 178,
+      "identityCount": 199,
+      "localeUrlCount": 589,
+      "generatedIdentityCount": 180,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1224,7 +1224,11 @@
               "pageFamily": "combined-decision",
               "targetIntent": "plan",
               "primaryCollectionId": "plan-trip-length-city-order",
-              "destinations": ["china", "chengdu", "zhangjiajie"],
+              "destinations": [
+                "china",
+                "chengdu",
+                "zhangjiajie"
+              ],
               "boundary": "Two-destination 7–9-day route and direct-rail planning without a Chongqing sightseeing stay."
             },
             {
@@ -1246,7 +1250,10 @@
               "pageFamily": "combined-decision",
               "targetIntent": "plan",
               "primaryCollectionId": "plan-trip-length-city-order",
-              "destinations": ["china", "guilin"],
+              "destinations": [
+                "china",
+                "guilin"
+              ],
               "boundary": "Whole-trip Guilin, Yangshuo and Longji order, hotel nights and entry/exit planning; existing single-leg and lodging decisions remain separate."
             },
             {
@@ -1268,8 +1275,75 @@
               "pageFamily": "combined-decision",
               "targetIntent": "plan",
               "primaryCollectionId": "plan-traveller-theme-itineraries",
-              "destinations": ["china", "zhangjiajie"],
+              "destinations": [
+                "china",
+                "zhangjiajie"
+              ],
               "boundary": "Singapore departure and return connections with 5/7-day Zhangjiajie hotel-night plans; passport rules remain owned by the entry guide."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-09-09",
+          "sourceCommit": "679e87b883a766c26e55b2117131fbce1f1802e0",
+          "status": "repository-content-integrated-release-verification-pending",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "china-7-day-itinerary",
+              "title": "China 7-Day Itinerary: Beijing and Shanghai in One Week",
+              "metadataPath": "content/guides/china-7-day-itinerary/metadata.json",
+              "canonicalPath": "/guides/china-7-day-itinerary/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-7-day-itinerary/",
+                "/zh/guides/china-7-day-itinerary/",
+                "/ko/guides/china-7-day-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": [
+                "china",
+                "beijing",
+                "shanghai",
+                "xian"
+              ],
+              "boundary": "One week / six nights in two cities, with four full sightseeing days and one transfer; excludes a rushed three-city plan."
+            },
+            {
+              "id": "china-14-day-itinerary",
+              "title": "China 14-Day Itinerary: Beijing, Xi’an, Chengdu & Shanghai",
+              "metadataPath": "content/guides/china-14-day-itinerary/metadata.json",
+              "canonicalPath": "/guides/china-14-day-itinerary/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-14-day-itinerary/",
+                "/zh/guides/china-14-day-itinerary/",
+                "/ko/guides/china-14-day-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": [
+                "china",
+                "beijing",
+                "xian",
+                "chengdu",
+                "shanghai"
+              ],
+              "boundary": "Two weeks / thirteen nights adding Chengdu to the classic route; three transfers and a complete three-city alternative. Existing ten-day and older-parent routes retain their owners."
             }
           ]
         }
@@ -1295,9 +1369,11 @@
         "chengdu-panda-base-or-dujiangyan-panda-valley",
         "chengdu-zhangjiajie-itinerary",
         "china-10-day-itinerary",
+        "china-14-day-itinerary",
         "china-15-minute-neighbourhoods",
         "china-24-solar-terms-weather-food-daily-life",
         "china-240-hour-visa-free-transit-route-check",
+        "china-7-day-itinerary",
         "china-accessible-hotel-room-verification",
         "china-arrival-day-booked-anchor-or-flexible-block",
         "china-atm-cash-not-dispensed",

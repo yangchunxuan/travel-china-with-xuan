@@ -27,6 +27,21 @@ const body = {
       "body": "The example has 9 hotel nights: Beijing on nights 1–4, Xi’an on nights 5–6 and Shanghai on nights 7–9. Day 1 is arrival and day 10 is departure, not two full touring days. International flights can add calendar days outside China. If your entire door-to-door holiday is ten days, count the days actually available in China before using this plan."
     },
     {
+      "id": "duration-options",
+      "type": "internal-links",
+      "title": "Have a different amount of time?",
+      "items": [
+        {
+          "label": "One week in China: Beijing and Shanghai",
+          "href": "/guides/china-7-day-itinerary/"
+        },
+        {
+          "label": "Two weeks in China: add Xi’an and Chengdu",
+          "href": "/guides/china-14-day-itinerary/"
+        }
+      ]
+    },
+    {
       "id": "classic-heading",
       "type": "heading",
       "level": 2,

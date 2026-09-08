@@ -27,6 +27,21 @@ const body = {
       "body": "第1–4晚住北京，第5–6晚住西安，第7–9晚住上海。第1天抵达，第10天离开，都不能默认当作完整游览日。国际飞行可能在中国行程前后另占日历日。如果你从出家门到回家总共只有10天，请先数清实际能在中国停留几天，再使用这份安排。"
     },
     {
+      "id": "duration-options",
+      "type": "internal-links",
+      "title": "假期不是十天？",
+      "items": [
+        {
+          "label": "中国7天：北京与上海双城路线",
+          "href": "/zh/guides/china-7-day-itinerary/"
+        },
+        {
+          "label": "中国14天：加入西安和成都",
+          "href": "/zh/guides/china-14-day-itinerary/"
+        }
+      ]
+    },
+    {
       "id": "classic-heading",
       "type": "heading",
       "level": 2,

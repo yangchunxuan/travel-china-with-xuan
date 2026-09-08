@@ -1,0 +1,106 @@
+{
+  "id": "china-14-day-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "first-trip",
+    "trip-planning",
+    "route-design",
+    "trip-pace",
+    "rail-travel"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/beijing-highlights-5-day-private-tour/forbidden-city-corridor-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-highlights-5-day-private-tour/forbidden-city-corridor-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-09",
+  "dateModified": "2026-09-09",
+  "sourceReviewedDate": "2026-09-09",
+  "searchTerms": {
+    "en": [
+      "china itinerary 14 days",
+      "china itinerary 2 weeks",
+      "china 2 week itinerary",
+      "china travel itinerary 2 weeks",
+      "two week itinerary china",
+      "china in 2 weeks"
+    ],
+    "zh": [
+      "中国14天行程",
+      "中国两周自由行",
+      "北京西安成都上海行程"
+    ],
+    "ko": [
+      "중국 13박 14일 일정",
+      "중국 2주 여행 코스",
+      "베이징 시안 청두 상하이 여행"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-14-day-itinerary/",
+      "title": "China 14-Day Itinerary: Beijing, Xi’an, Chengdu & Shanghai",
+      "headline": "14 Days in China: Four Cities, 13 Nights",
+      "description": "Plan 14 days and 13 nights in Beijing, Xi’an, Chengdu and Shanghai, with three transfer days, pandas and a slower three-city alternative.",
+      "heroAlt": "Red columns and painted blue-green beams along a corridor in the Forbidden City",
+      "navTitle": "China in 14 days",
+      "featuredLinkLabel": "Plan a two-week China itinerary",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "14 days / 13 nights",
+        "Four cities",
+        "Three-city alternative"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-14-day-itinerary/",
+      "title": "中国14天行程：北京、西安、成都、上海四城13晚",
+      "headline": "中国14天行程：四城13晚",
+      "description": "用14天13晚安排北京、西安、成都和上海，给三次转场各留一天，看长城、兵马俑和熊猫；也可少去西安，换更慢的三城旅行。",
+      "heroAlt": "故宫宫廊中的红色立柱与蓝绿色彩绘横梁",
+      "navTitle": "中国14天行程",
+      "featuredLinkLabel": "安排中国两周行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "14天13晚",
+        "四城路线",
+        "三城替代"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-14-day-itinerary/",
+      "title": "중국 13박 14일 일정: 베이징·시안·청두·상하이",
+      "headline": "중국 13박 14일, 네 도시를 잇는 여행",
+      "description": "베이징·시안·청두·상하이 13박 14일 코스. 도시 간 이동에 3일을 두고 만리장성, 병마용, 판다를 만납니다. 더 여유로운 세 도시 대안도 확인하세요.",
+      "heroAlt": "자금성 회랑을 따라 이어지는 붉은 기둥과 청록색 단청 들보",
+      "navTitle": "중국 13박 14일",
+      "featuredLinkLabel": "중국 2주 일정 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "13박 14일",
+        "네 도시",
+        "세 도시 대안"
+      ]
+    }
+  }
+}
