@@ -75,6 +75,17 @@ const body = {
       "type": "paragraph",
       "text": "왕복 교통을 준비하고 일행에게 맞는 입구와 선택 가능한 상행 교통수단을 확인하세요. 결제 전에 예약에 입장권만 포함되는지, 교통과 케이블카도 포함되는지 살펴보세요. 베이징으로 돌아와 저녁을 먹고 다음 날 이동을 위해 짐을 정리합니다. 베이징 3박 중 마지막 밤입니다."
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "이 관람일의 이동과 예약",
+    "items": [
+      {
+        "label": "바다링: 교통과 입구 선택",
+        "href": "/ko/guides/beijing-to-badaling-great-wall-transfer/"
+      }
+    ]
+  },
     {
       "id": "day-4-heading",
       "type": "heading",

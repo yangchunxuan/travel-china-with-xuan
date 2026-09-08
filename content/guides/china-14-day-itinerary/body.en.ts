@@ -60,6 +60,21 @@ const body = {
         "Day 6 — Visit the Terracotta Warriors, giving the site and return journey the main share of your day. Decide whether guided interpretation would help you enjoy the details. This is your only full Xi’an day; a complete city-wall visit or another major museum needs time taken from elsewhere. Xi’an night 2."
       ]
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "Plan these sightseeing days",
+    "items": [
+      {
+        "label": "Badaling: transport and the right entrance",
+        "href": "/guides/beijing-to-badaling-great-wall-transfer/"
+      },
+      {
+        "label": "Terracotta Warriors: tickets and getting there",
+        "href": "/guides/terracotta-warriors-without-tour/"
+      }
+    ]
+  },
     {
       "id": "chengdu-heading",
       "type": "heading",
@@ -176,10 +191,21 @@ const body = {
       "text": "Can I add Zhangjiajie or Guilin?"
     },
     {
-      "id": "faq-nature",
-      "type": "paragraph",
-      "text": "Replace a city and rebuild the transport and nights, or extend the trip. Neither fits as a spare-day addition. Start with the dedicated destination guides before fixing that change."
-    },
+    "id": "faq-nature",
+    "type": "paragraph",
+    "text": "Yes—replace both Xi’an and Chengdu if nature is the priority. One three-base outline is Beijing 4 nights, Zhangjiajie 5 and Shanghai 4: 13 nights in total. Keep day 5 for reaching Zhangjiajie and day 10 for reaching Shanghai. Days 6–9 then allow two forest-park days, a separately booked Tianmen Mountain day and one flexible day. You give up the Terracotta Warriors and pandas. Confirm the dated transport first; this outline does not assume a direct flight is operating. Prefer Guilin and Yangshuo? Use that region instead of Zhangjiajie, with the same five-night allowance, and decide the Guilin/Yangshuo hotel split before booking. Do not add both nature regions to this two-week plan."
+  },
+  {
+    "id": "three-weeks-heading",
+    "type": "heading",
+    "level": 3,
+    "text": "How would I extend this route to three weeks?"
+  },
+  {
+    "id": "three-weeks-answer",
+    "type": "paragraph",
+    "text": "Keep the same four bases and use Beijing 5 nights, Xi’an 3, Chengdu 6 and Shanghai 6: 21 days and 20 nights. Arrive on day 1; transfer to Xi’an on day 6, Chengdu on day 9 and Shanghai on day 15; fly home on day 21. The extra local days let you add a proper Xi’an city day, separate Chengdu outings and rest days, plus an optional Suzhou day trip from Shanghai. Keep new attractions subject to their own reservations and the dated transport. This version adds breathing room without another hotel base."
+  },
     {
       "id": "faq-package-heading",
       "type": "heading",

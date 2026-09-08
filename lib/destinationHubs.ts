@@ -692,7 +692,7 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-17",
-    dateModified: "2026-08-22",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "chengdu-chongqing-zhangjiajie-itinerary",
@@ -1368,7 +1368,7 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-21",
-    dateModified: "2026-08-21",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-08-21",
     supportGuideIds: [
       "chengdu-chongqing-zhangjiajie-itinerary",

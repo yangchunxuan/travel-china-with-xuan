@@ -4,10 +4,10 @@ const body = {
   "schemaVersion": "1.0.0",
   "blocks": [
     {
-      "id": "lead",
-      "type": "lead",
-      "text": "For a Singapore-to-Zhangjiajie trip, compare Changsha (CSX) flights and the onward train before booking. Seven days and six nights allows railway transfers and two full forest days. Five days needs a comfortable arrival-day connection. Also compare flights ending at Zhangjiajie Hehua Airport (DYG): a good connection may suit your dates better."
-    },
+    "id": "lead",
+    "type": "lead",
+    "text": "For a Singapore-to-Zhangjiajie trip, compare Changsha (CSX) flights with itineraries ending at Zhangjiajie Hehua Airport (DYG). Via Changsha, use six days for two full forest days or seven days to add a possible Tianmen Mountain day. A five-day version with an overnight after landing gives you one full forest day. Match the travel days to bookable flights and trains before reserving hotels."
+  },
     {
       "id": "airport-heading",
       "type": "heading",
@@ -53,10 +53,10 @@ const body = {
       "text": "Recommended: seven days and six nights via Changsha"
     },
     {
-      "id": "seven-count",
-      "type": "paragraph",
-      "text": "Both examples count arrival in China as day 1 and departure from China as the last day. This seven-day plan has six hotel nights: Changsha on nights 1 and 6, Wulingyuan on nights 2–4, and Zhangjiajie city on night 5. Check the Singapore departure and return dates too: overnight flights can use another calendar day."
-    },
+    "id": "seven-count",
+    "type": "paragraph",
+    "text": "All examples count arrival in China as day 1 and departure from China as the last day. The seven-day plan has six hotel nights: Changsha on nights 1 and 6, Wulingyuan on nights 2–4, and Zhangjiajie city on night 5. Check the Singapore departure and return dates too: overnight flights can use another calendar day."
+  },
     {
       "id": "seven-days",
       "type": "list",
@@ -72,33 +72,44 @@ const body = {
       ]
     },
     {
-      "id": "five-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Compact alternative: five days and four nights"
-    },
+    "id": "five-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "Only five days? Keep one full forest day"
+  },
     {
-      "id": "five-condition",
-      "type": "paragraph",
-      "text": "Use this only with a comfortable, confirmed arrival-day connection from Changsha Airport to Zhangjiajie. It protects two forest days but has a demanding first day and no separate Tianmen day."
-    },
+    "id": "five-condition",
+    "type": "paragraph",
+    "text": "Use a Changsha night after landing and another before flying home. This leaves one full sightseeing day in Zhangjiajie. It is a short trip with two rail transfers, so compare a suitably timed DYG flight itinerary before choosing it."
+  },
     {
-      "id": "five-days",
-      "type": "list",
-      "ordered": false,
-      "items": [
-        "Day 1 — Singapore → Changsha Airport → the ticketed Changsha railway station → Zhangjiajie West → Wulingyuan. No timed sightseeing. Wulingyuan night 1.",
-        "Day 2 — First full forest-park day. Stay in Wulingyuan, night 2.",
-        "Day 3 — Second full forest-park day. Stay in Wulingyuan, night 3.",
-        "Day 4 — Return by rail to Changsha and settle near your chosen airport connection. Changsha night 1.",
-        "Day 5 — Travel to the airport and fly to Singapore."
-      ]
-    },
+    "id": "five-days",
+    "type": "list",
+    "ordered": false,
+    "items": [
+      "Day 1 — Fly to Changsha, complete arrival formalities and stay overnight. No onward train is required after landing.",
+      "Day 2 — Take the booked train to Zhangjiajie West, transfer to Wulingyuan and settle in. Wulingyuan night 1.",
+      "Day 3 — One full forest-park day. Choose the area you most want to see and return to Wulingyuan for night 2.",
+      "Day 4 — Return by rail to Changsha. Stay in a hotel suited to tomorrow’s airport transfer.",
+      "Day 5 — Travel to the airport and fly back to Singapore."
+    ]
+  },
     {
-      "id": "five-fallback",
-      "type": "paragraph",
-      "text": "If arrival-day rail does not fit, add a night and make this six days, or accept only one full forest day. Do not describe two days of leave as two full days in the park. A DYG flight option deserves comparison before cutting the sightseeing you most want."
-    },
+    "id": "five-fallback",
+    "type": "paragraph",
+    "text": "Want two full forest days? Add one Wulingyuan night: arrive Changsha on day 1, transfer on day 2, visit the park on days 3–4, return to Changsha on day 5 and fly home on day 6. That is six days and five nights, with no flight-to-rail rush on arrival."
+  },
+  {
+    "id": "arrival-shortcut-heading",
+    "type": "heading",
+    "level": 3,
+    "text": "Could an arrival-day train shorten the trip?"
+  },
+  {
+    "id": "arrival-shortcut",
+    "type": "paragraph",
+    "text": "Possibly, but it is an optional shortcut to verify for your own date. Put the flight’s scheduled landing, immigration and baggage time, transport to the exact train station, station-entry cutoff and a delay allowance on one timeline. Buy the onward train only when that timeline leaves a comfortable margin. If it does not, use the overnight plan above; do not remove the arrival night from a fare-calendar screenshot alone."
+  },
     {
       "id": "return-heading",
       "type": "heading",
@@ -133,10 +144,10 @@ const body = {
       "text": "Can I fit all the famous Zhangjiajie sights into five days?"
     },
     {
-      "id": "faq-five",
-      "type": "paragraph",
-      "text": "Not in this rail-based example. It protects two forest days and leaves Tianmen Mountain and the Glass Bridge out. The seven-day example adds a possible Tianmen day; fitting the Glass Bridge means replacing an activity or extending the trip."
-    },
+    "id": "faq-five",
+    "type": "paragraph",
+    "text": "The five-day Changsha version above leaves one full forest day, so choose a focused park route. Six days allows two forest days; seven can add Tianmen Mountain if its reservation fits. The Glass Bridge needs another day or replaces an outing."
+  },
     {
       "id": "faq-base-heading",
       "type": "heading",

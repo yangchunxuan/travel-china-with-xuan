@@ -2,10 +2,23 @@
   "id": "china-10-day-itinerary",
   "type": "planning",
   "pillar": "routes-and-pace",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "decision-guide",
-  "topics": ["first-trip", "trip-planning", "route-design", "trip-pace"],
-  "destinations": ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
+  "topics": [
+    "first-trip",
+    "trip-planning",
+    "route-design",
+    "trip-pace"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "shanghai",
+    "zhangjiajie"
+  ],
   "heroImagePath": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
   "imageWidth": 1600,
@@ -14,12 +27,33 @@
   "dateModified": "2026-09-09",
   "sourceReviewedDate": "2026-09-08",
   "searchTerms": {
-    "en": ["china itinerary 10 days", "10 day china itinerary", "china 10 day itinerary", "10 day itinerary china", "china trip itinerary 10 days"],
-    "zh": ["中国10天行程", "中国十天自由行路线", "第一次去中国十天怎么安排"],
-    "ko": ["중국 10일 여행 일정", "중국 열흘 여행 코스", "중국 첫 여행 10일 일정"]
+    "en": [
+      "china itinerary 10 days",
+      "10 day china itinerary",
+      "china 10 day itinerary",
+      "10 day itinerary china",
+      "china trip itinerary 10 days"
+    ],
+    "zh": [
+      "中国10天行程",
+      "中国十天自由行路线",
+      "第一次去中国十天怎么安排"
+    ],
+    "ko": [
+      "중국 10일 여행 일정",
+      "중국 열흘 여행 코스",
+      "중국 첫 여행 10일 일정"
+    ]
   },
-  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/china-10-day-itinerary/",
@@ -30,7 +64,11 @@
       "navTitle": "China in 10 days",
       "featuredLinkLabel": "Choose a 10-day China route",
       "openGraphLocale": "en_US",
-      "cardTags": ["10 days / 9 nights", "First China trip", "Route choices"]
+      "cardTags": [
+        "10 days / 9 nights",
+        "First China trip",
+        "Route choices"
+      ]
     },
     "zh": {
       "path": "/zh/guides/china-10-day-itinerary/",
@@ -41,7 +79,11 @@
       "navTitle": "中国10天行程",
       "featuredLinkLabel": "选择中国10天路线",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["10天9晚", "首次中国旅行", "路线选择"]
+      "cardTags": [
+        "10天9晚",
+        "首次中国旅行",
+        "路线选择"
+      ]
     },
     "ko": {
       "path": "/ko/guides/china-10-day-itinerary/",
@@ -52,7 +94,11 @@
       "navTitle": "중국 10일 여행",
       "featuredLinkLabel": "중국 10일 코스 고르기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["9박 10일", "첫 중국 여행", "코스 선택"]
+      "cardTags": [
+        "9박 10일",
+        "첫 중국 여행",
+        "코스 선택"
+      ]
     }
   }
 }

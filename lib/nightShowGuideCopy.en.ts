@@ -184,7 +184,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
           "English text is essential but the current screen and seat view are unknown.",
         ],
         verify:
-          "Confirm the operating date, weather rule, covered sections and the current subtitle-screen position before choosing a seat category.",
+          "For seat and English-screen checks, use the published venue booking contact +86 744 8956666 and the practical questions below. Request the map for your actual session; confirm weather rules and covered sections before selecting a category.",
         routeView:
           "Choose it for the outdoor setting and story—not because it is automatically the “best” or because Tianmen appears in its name.",
       },
@@ -313,6 +313,11 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     title: "Zhangjiajie night-show FAQ",
     items: [
       {
+        question: "How can I check Fox Fairy seats with the venue before buying?",
+        answer:
+          "The venue booking number published by Yongding District’s official media is 0744-8956666 inside China, or +86 744 8956666 from abroad; the linked notice is from 2023, so first confirm that you have reached the current theatre ticket desk. Give your date and session, then ask: “请发当场座位图，标出英文字幕屏；这个区域能看清英文吗？能选具体排座，还是只选区域？” This means: please send the seating plan for this session, mark the English subtitle screen, confirm whether it is readable from this section, and say whether you can select a row and seat or only a zone. Also ask about covered seats, steps to your row and the weather refund rule. Keep the dated reply and map before paying. If neither a map nor a clear screen-view answer is available, English-dependent travellers should keep the evening optional.",
+      },
+      {
         question: "Which Zhangjiajie show is best?",
         answer:
           "There is no universal best. Fox Fairy is the outdoor-story choice, Charming Xiangxi the folk-variety choice, and Eternal Love the large-theatre choice. The right answer changes with the hotel base, whole-evening cost and next morning.",
@@ -325,7 +330,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       {
         question: "Does Tianmen Fox Fairy have English subtitles?",
         answer:
-          "Current seller and traveller reports commonly mention English screens, but they do not establish a permanent side or best section. Confirm the current screen and seat map for the actual session.",
+          "English subtitle screens are reported, but we could not confirm a current operator seat map or screen position for the next session. If English is essential, use the published venue booking contact, +86 744 8956666, to request the dated seating plan with the English screen marked and a view from your proposed section. Ask whether the whole story or only selected passages are translated. Do not choose a row solely because an old review calls it the best.",
       },
       {
         question: "Is Eternal Love indoors?",
@@ -345,7 +350,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       {
         question: "Are VIP seats automatically better?",
         answer:
-          "No. A higher category may improve comfort, shelter or proximity but not the full-stage or subtitle view. Use the current seat map and the traveller’s actual needs, not the label alone.",
+          "No. Ask for the stage direction, English-screen location, your proposed block and row, any roof supports or other obstructions, and the steps from the entrance. A VIP label alone establishes none of these. Compare the usable view and access on the current map before paying more; we have not verified a universally best Fox Fairy row.",
       },
     ],
   },
@@ -355,7 +360,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     summary:
       "Official sources for stable facts; live booking details deliberately left date-specific.",
     intro:
-      "Official sources establish the venues, formats and current operating notices. Session times, subtitle screens, seats, transfers and ticket rules remain date-specific. Traveller discussions were used to identify recurring questions, not to establish operating facts.",
+      "Official sources establish the venues, formats and current operating notices. Session times, subtitle screens, seats, transfers and ticket rules remain date-specific. Seat-contact guidance was checked on 9 September 2026; a current operator seating chart and English-screen layout were not available for confirmation.",
     boundary:
       "Homeground does not present this as a first-hand review of all three productions and has not invented customer preferences or a “tested best seat.”",
     sourceNames: [
@@ -365,6 +370,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       "Zhangjiajie Municipal Government: 2025 Fox Fairy season conclusion",
       "Wulingyuan District Media Center: Charming Xiangxi 2026 peak scheduling",
       "Songcheng official: Zhangjiajie Eternal Love",
+      "Yongding District official media: published Fox Fairy booking contact (2023 notice)",
     ],
   },
   finalCta: {

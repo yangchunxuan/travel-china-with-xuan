@@ -35,10 +35,19 @@
 }
 
 .decisionIndex,
+.stayExample,
 .ownerLinks {
   border-block-start: 1px solid var(--hg-color-line);
   margin-block-start: clamp(3rem, 7vw, 6rem);
   padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.stayExample {
+  min-width: 0;
+}
+
+.stayExample > div > h2:first-child {
+  margin-block-start: 0;
 }
 
 .decisionIntro {
@@ -317,6 +326,7 @@
   }
 
   .decisionIndex,
+  .stayExample,
   .ownerLinks {
     margin-block-start: 2rem;
     padding-block-start: 1.65rem;

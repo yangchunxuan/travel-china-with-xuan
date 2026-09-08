@@ -250,7 +250,7 @@ test("batch two hubs keep their own truthful publication and review dates", asyn
     registry.indexOf('id: "hangzhou"'),
   );
   assert.match(chengduHeader, /datePublished: "2026-08-17"/);
-  assert.match(chengduHeader, /dateModified: "2026-08-22"/);
+  assert.match(chengduHeader, /dateModified: "2026-09-09"/);
   assert.match(chengduHeader, /sourceReviewedDate: "2026-08-22"/);
   assert.match(guangzhouHeader, /datePublished: "2026-08-17"/);
   assert.match(guangzhouHeader, /dateModified: "2026-08-21"/);

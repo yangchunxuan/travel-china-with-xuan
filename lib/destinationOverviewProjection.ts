@@ -222,14 +222,42 @@ export function projectDestinationOverview(
   );
 }
 
+/** Selected stay examples supplement the overview without exposing its research body. */
+export function projectDestinationStayExample(
+  body: StructuredPageBody,
+  hubId: DestinationHubId,
+): StructuredPageBody {
+  const exampleIds: Partial<Record<DestinationHubId, readonly string[]>> = {
+    chengdu: [
+      "first-stay-plan-heading",
+      "first-stay-plan-intro",
+      "first-stay-plan",
+      "first-stay-plan-extra-night",
+    ],
+    chongqing: [
+      "two-complete-days-heading",
+      "two-complete-days-context",
+      "two-complete-days-plan",
+      "two-complete-days-terrain",
+    ],
+  };
+  const ids = exampleIds[hubId] ?? [];
+  const blocks = ids.map((id): PageBlock => {
+    const block = body.blocks.find((candidate) => candidate.id === id);
+    if (!block) throw new Error(`Destination stay example is missing ${id}.`);
+    return block.type === "heading" ? { ...block, level: 2 } : block;
+  });
+  return { schemaVersion: body.schemaVersion, blocks };
+}
+
 /**
  * The opening argument is also projected. It keeps the lead and at most two
  * explanatory blocks from the first city-level section. A single coarse fit
  * table or decision list is permitted only when that source section has no
  * prose, and it is capped at four rows/items. A section already used by one
  * of the four signals is skipped here so the same decision cannot appear
- * twice. Nothing else from the long research body enters the city overview
- * DOM.
+ * twice. Further public stay examples are selected separately; the remaining
+ * long research body stays outside the city overview DOM.
  */
 export function projectDestinationOpening(
   body: StructuredPageBody,

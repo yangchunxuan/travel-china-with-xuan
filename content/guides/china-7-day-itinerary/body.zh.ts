@@ -75,6 +75,17 @@ const body = {
       "type": "paragraph",
       "text": "提前安排去程与返程，并核对适合一行人的入口和可选上山方式。付款前看清订单只含景区门票，还是也包含交通和缆车。回北京吃晚饭，再整理第二天转场所需的行李。住北京，第3晚，共3晚。"
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "把这几天的游览接好",
+    "items": [
+      {
+        "label": "八达岭：交通与入园衔接",
+        "href": "/zh/guides/beijing-to-badaling-great-wall-transfer/"
+      }
+    ]
+  },
     {
       "id": "day-4-heading",
       "type": "heading",

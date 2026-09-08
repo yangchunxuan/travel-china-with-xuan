@@ -23,6 +23,10 @@ export const NIGHT_SHOW_GUIDE_SOURCES = [
     id: "eternal-love-official",
     url: "https://www.songcn.com/show/9",
   },
+  {
+    id: "fox-fairy-booking-contact",
+    url: "https://m.voc.com.cn/rmt/article/5921014.html",
+  },
 ] as const;
 
 export type NightShowSourceId =

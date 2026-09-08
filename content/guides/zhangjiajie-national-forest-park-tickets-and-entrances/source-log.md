@@ -77,3 +77,11 @@ Before release and every booking, verify the official purchase channel, supporte
 - Output SHA-256: `C7F5FA0EC990DA6FC8ED14C92EC6C709444E8823E4CB467C2E45109EE887EC61`
 - Metadata: EXIF removed from output
 - Accuracy boundary: the image documents the park's sandstone landscape in 2016. It does not document a particular gate, current crowd, ticket validity, transport operation or weather.
+
+## Targeted map-answer supplement — 2026-09-09
+
+- Added `map-heading`, `map-intro`, `official-map-links`, `map-reading` in EN/ZH/KO. This supplements the existing entrance/transport owner with actual clickable map resources and an entrance-to-exit reading method; it does not replace the full itinerary owner.
+- Actually opened [official maps directory](https://www.zhangjiajieuggp.org.cn/txtpic_list.php?nt_id=53), which lists four maps; [official visitor-map page](https://www.zhangjiajieuggp.org.cn/html/2026/2026063021423894489.html); and [official eco-bus diagram page](https://www.zhangjiajieuggp.org.cn/html/2026/2026032221531727580.html). Linked the source pages, without copying the images. The visitor-map page displays 2024-06-30 even though its URL contains 2026; do not describe it as a newly published 2026 map. The source-page contents and image targets were obtained; one direct visitor-map image fetch timed out, so this review does not claim a full visual inspection of that image or that every depicted segment is currently open.
+- Re-read [Hunan official gate/transport guidance](https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html): named East/South/West/North/Zimugang entrances and distinct modes. Old fares and service intervals were not copied.
+- [Official one-day route](https://www.zhangjiajieuggp.org.cn/html/2026/2026032620071642379.html), dated 2026-03-26, supports the sample East Gate → Tianzi cableway → Tianzi → shuttle → Yuanjiajie → Bailong descent sequence. The sample is explicitly conditional on current operations; additional evening/timing promises in the source were not adopted.
+- Live ticket products, prices, capacity, last departures and weather operations were outside this limited supplement; the previous review dates remain. Local implementation does not prove deployment, indexing or clicks.

@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "Do not use ‘sealed’, ‘cooked’, ‘vacuum-packed’, ‘a gift’ or ‘for personal use’ as proof that food can enter China. China's current quarantine list prohibits broad categories including raw or cooked meat and meat products, animal-origin milk and dairy products, eggs and egg products, fresh fruit and vegetables, seeds and planting material, and soil. Screen the exact ingredients and product form before packing; if an item is prohibited, declaring it does not turn it into an allowed item." },
+  { id: "lead", type: "lead", text: "Some foods may be eligible to enter mainland China, but there is no blanket permission for food in personal luggage. Meat, animal-origin dairy, eggs and fresh fruit are among the prohibited categories. Start with what the food contains and how it was processed: sealed packaging, cooking, vacuum packing, a small quantity or a gift label does not create an exception. Check the item before packing; declaration is not permission to bring a prohibited product through." },
   { id: "answer", type: "callout", title: "The safest packing rule", tone: "decision", body: "Leave fresh produce, meat, dairy, eggs, seeds, live plants and soil at home unless you have verified a specific lawful exception and completed any approval and certificate requirements before travel. For a processed snack, read the full ingredients instead of relying on the front label. If you cannot identify the contents or prove an exception, do not pack it." },
   { id: "screen-heading", type: "heading", level: 2, text: "Run every uncertain item through this screen" },
   { id: "screen-table", type: "table", caption: "The product name is only the start", columns: ["What is inside", "Default travel decision", "Why it needs attention"], rows: [
@@ -13,15 +13,19 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Soil or organic growing medium", "Do not pack", "Soil and related quarantine material are specifically controlled"],
     ["Commercially packaged plant-based snack", "Check every ingredient and current rule", "Packaging alone does not reveal an animal ingredient or origin-specific restriction"]
   ] },
-  { id: "ingredients-heading", type: "heading", level: 2, text: "Read the ingredient panel, not the souvenir story" },
-  { id: "ingredients-list", type: "list", items: [
-    "Jerky, sausage, pâté, meat floss, meat stock, bouillon, gravy powder and filled pastries remain meat products even when cooked or shelf-stable.",
-    "Mooncakes, buns, biscuits and instant meals can hide meat, egg yolk, mayonnaise, milk powder or cheese behind a broad product name.",
-    "Chocolate, nutrition powders, coffee mixes and confectionery may contain animal-origin milk ingredients. Do not infer an exception from a small percentage.",
-    "Fresh fruit taken from an aircraft, lounge, cruise, hotel breakfast or another country is still fresh fruit at the border. Eat it before arrival or leave it behind where instructed.",
-    "Dried flowers, seeds in jewellery, herbal mixtures, unprocessed grains and natural craft items need an exact material check; ‘decorative’ does not remove quarantine risk.",
-    "A label you cannot read is not a safe item. Obtain a reliable translation of the ingredients, origin and product form before deciding."
+  { id: "ingredients-heading", type: "heading", level: 2, text: "Can I bring cheese, beef jerky, fruit or canned food into China?" },
+  { id: "food-questions-table", type: "table", caption: "Common foods: the answer depends on the contents, not the packaging", columns: ["Food or question", "Packing answer", "What matters"], rows: [
+    ["Cheese, including hard cheese or labneh", "Leave animal-origin cheese and other dairy products out unless a verified lawful exception applies.", "Hard, soft, chilled and vacuum-sealed forms do not create a general dairy exemption. Labneh made from animal milk falls within the dairy category."],
+    ["Meat, beef jerky, salami or meat floss", "Do not pack these as ordinary food souvenirs.", "The prohibition covers raw or cooked meat and meat products. Drying, curing or commercial packaging does not create a general meat exception."],
+    ["Canned food", "Check the contents; a can is not a permission category.", "Canned meat remains a meat product, and canned animal milk remains dairy. The named exception for commercially sterile canned bird’s nest below does not apply to all canned foods."],
+    ["Vacuum-sealed food in checked or cabin baggage", "Vacuum sealing does not change the item’s quarantine category.", "These rules apply to both carried and separately transported baggage. Changing bags does not make meat, cheese or fresh fruit eligible."],
+    ["Fresh fruit, including fruit from the flight", "Do not take it through the border.", "Fresh fruit and vegetables are expressly listed. Finish it before arrival or use the airline’s instructed collection route."],
+    ["Dried fruit, preserved plums or guava paste (goiabada)", "Identify the exact processed product; do not treat either “fruit” or “dried” as the whole answer.", "These names do not automatically mean fresh fruit, but processing, any viable seeds, added animal ingredients and origin restrictions still need checking. No blanket permission for every dried or preserved fruit is established by the fresh-fruit rule."],
+    ["Sambal and other sauces", "Check whether it contains meat, shrimp, fish or dairy, and identify the finished form.", "A sauce name does not establish its ingredients. For aquatic ingredients, compare the narrow sauce wording in the official list below rather than assuming every seafood sauce qualifies."],
+    ["Milk sold under a brand such as Leche Gloria", "Read the product type and ingredients, not just the brand.", "Animal-origin milk, sterilised milk and condensed milk are listed dairy products. A sealed carton or can is not a general exception; a brand may sell different formulations."],
+    ["Gravy powder, peanut-butter pretzels, biscuits or mixed snacks", "Read all ingredients and identify which category the finished food falls into.", "Meat-based gravy differs from a plant-based powder. Pretzels and biscuits may include milk, butter or egg. Do not classify every gravy powder as meat or every packaged snack as permitted; ask Customs about an uncertain mixed product."]
   ] },
+  { id: "ingredients-list", type: "list", items: ["Mooncakes, buns, chocolate, coffee mixes and instant meals need the same ingredient check: fillings, milk powder and animal-derived flavourings may matter even when the front label says only “snack”.", "Dried flowers, seeds in jewellery, herbal mixtures, unprocessed grains and natural craft items need an exact material check; “decorative” does not remove quarantine risk.", "For an uncertain product, photograph the complete label and ask Customs with the ingredients, processing method, origin, amount and arrival port. A translated label helps the enquiry but is not an approval."] },
   { id: "official-list-heading", type: "heading", level: 2, text: "The official list has detail—and narrow exceptions" },
   { id: "official-list-table", type: "table", caption: "Examples from Announcement No. 470", columns: ["Category in the list", "Important detail", "Planning implication"], rows: [
     ["Aquatic animal products", "The list states an exception for dried, cooked or fermented edible sauce products", "That wording is not a blanket exception for every seafood snack; identify the exact form"],
@@ -66,9 +70,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Power bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "Finish the other high-friction baggage check." }
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
-    { label: "Announcement No. 470 and the prohibited quarantine-items list", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-08-12" },
-    { label: "Official gazette copy of the prohibited list", url: "https://www.moa.gov.cn/nybgb/2022/202202/202204/P020220401365957599038.pdf", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-08-12" },
-    { label: "Customs baggage declaration Announcement No. 43 of 2025", url: "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html", publisher: "General Administration of Customs", reviewedAt: "2026-08-12" }
+    { label: "Announcement No. 470 and the prohibited quarantine-items list", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-09-09" },
+    { label: "Announcement No. 470 prohibited list in the passenger declaration portal", url: "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html", publisher: "China Electronic Port / General Administration of Customs", reviewedAt: "2026-09-09" },
+    { label: "Customs baggage declaration Announcement No. 43 of 2025", url: "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html", publisher: "General Administration of Customs", reviewedAt: "2026-09-09" }
   ] }
 ] } as const satisfies StructuredPageBody;
 

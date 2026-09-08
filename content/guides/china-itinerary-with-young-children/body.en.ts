@@ -35,6 +35,31 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "example-heading", type: "heading", level: 2, text: "Planning example: the “short” train that adds a hotel" },
   { id: "example", type: "callout", tone: "neutral", title: "A planning example, not a fixed itinerary", body: "A family sees a short rail segment and adds another city for one famous attraction. The real move requires checkout, a large station, two suitcases, a stroller and a room that may not be ready. If the new city offers only that one activity, the family can lose more usable time than it gains. A focused day visit from a stable base—or removing the stop—may protect the activity without adding a full transfer day." },
+  {
+    "id": "family-ten-days-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "A ten-day example with young children: Beijing and Shanghai"
+  },
+  {
+    "id": "family-ten-days-intro",
+    "type": "paragraph",
+    "text": "Use Beijing for nights 1–5 and Shanghai for nights 6–9: ten days, nine nights and one hotel change. Compare arriving in Beijing and flying home from Shanghai. This is a pacing example, not a promise of stroller access or a fixed package."
+  },
+  {
+    "id": "family-ten-days-plan",
+    "type": "list",
+    "items": [
+      "Day 1: arrive in Beijing, reach the hotel and keep the rest of the day open. Beijing night 1.",
+      "Day 2: a short Temple of Heaven park visit, then lunch and the usual rest window. Beijing night 2.",
+      "Day 3: the Forbidden City in a confirmed entry period, with a short agreed route and no second major attraction. Swap days around closure or unavailable tickets. Beijing night 3.",
+      "Day 4: a neighbourhood walk or nearby park; protect a recovery day. Beijing night 4.",
+      "Day 5: a Great Wall outing only if the full road/rail journey and walking suit your child; otherwise stay local. Keep the evening easy. Beijing night 5.",
+      "Day 6: transfer to Shanghai on the booked train or flight, then settle in. No timed attraction. Shanghai night 1, trip night 6.",
+      "Days 7–9: use one day for a short Bund visit, another for a nearby park or neighbourhood, and keep one flexible day. Return for naps when needed; stay in the same Shanghai hotel, trip nights 7–9.",
+      "Day 10: leave for the airport and fly home. If arrival, sleep or transport becomes difficult, drop an outing instead of adding a late hotel move."
+    ]
+  },
   { id: "failure-heading", type: "heading", level: 2, text: "Common failures and recovery" },
   { id: "failure", type: "table", caption: "Make the plan recoverable", columns: ["Failure", "Immediate response", "Next design change"], rows: [
     ["Child sleeps through a timed booking", "Let one adult attend only if the family agreed beforehand; otherwise release the booking", "Do not place irreplaceable anchors in the usual nap or arrival window"],

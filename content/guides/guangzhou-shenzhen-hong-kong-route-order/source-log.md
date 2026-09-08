@@ -39,3 +39,8 @@ This page owns the three-city order and whether Shenzhen merits an overnight. Th
 
 - No visa, immigration-eligibility, live timetable, fare or operating-hour claim.
 - No prescribed night allocation or guaranteed crossing time.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Re-read https://www.highspeed.mtr.com.hk/en/guide/process-departure.html on 2026-09-09. EN/ZH/KO now distinguish usual 30–45-minute processing, earliest start 90 minutes before departure, identity/ticket cutoff 30 minutes, boarding cutoff 5 minutes, and additional margin for passport/busy/last-train travellers. The 90-minute earliest-start figure is NOT presented as a universal guaranteed arrival target.

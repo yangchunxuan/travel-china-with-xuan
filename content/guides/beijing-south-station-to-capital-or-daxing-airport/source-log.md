@@ -34,3 +34,13 @@ Searches reviewed: `Beijing South to PEK`, `Beijing South to Daxing airport`, an
 - `crop`: centre crop from 3:2 to 16:10; resized to 1600 × 1000 and converted to WebP
 
 The image identifies the railway terminal, not current airport transport.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Added an actionable PEK route in EN/ZH/KO. Actually opened Beijing MTR Line 4 timetable (https://www.mtr.bj.cn/service/line/timetable/line-4), Line 2 sequence (https://www.mtr.bj.cn/service/line/timetable/line-2.html), and Beijing station authority Capital Airport Express page (https://zdzqgw.beijing.gov.cn/zqfw/bjsdgjjc/bjsdgjjcjb/202410/t20241012_3917833.html). These establish northbound Line 4 to Xuanwumen, Line 2 via Hepingmen to Dongzhimen, and the airport interchange/terminal stops. No fastest-route, dated last-service connection or total journey-time guarantee was added. The bjsubway Line 2 URL failed in web; the official Beijing MTR page was then read successfully.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Final parity review: translated the existing, source-backed Daxing rail steps and three-hour connection explanation into ZH/KO. No new timing or service availability claim.

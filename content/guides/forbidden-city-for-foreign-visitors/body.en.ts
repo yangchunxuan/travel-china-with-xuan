@@ -13,6 +13,32 @@ export default {
       body: "1. Check the visit date against the Palace Museum calendar and latest notices. 2. Reserve the museum through an official channel with the document each person will carry. 3. Treat Tiananmen Square as a separate access decision and verify its current rule. 4. Choose the square route or an East/West Tongzihe approach. 5. Budget for walking and security before the Meridian Gate. 6. Walk the central axis with at most one side focus. 7. Leave through a planned exit and connection. Do not let an unconfirmed ticket, a generic map pin or an improvised pickup control the day.",
       tone: "decision",
     },
+  {
+    "id": "square-rostrum-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "Tiananmen Square, the Rostrum and the Forbidden City: which reservation applies?"
+  },
+  {
+    "id": "square-rostrum-answer",
+    "type": "paragraph",
+    "text": "The Tiananmen Square booking is for the open square, not a ticket to climb Tiananmen Rostrum (天安门城楼). The square’s official platform explicitly directs rostrum visitors to the separate “天安门城楼参观预约” WeChat account. Book the Palace Museum separately for the Forbidden City. Before booking, write down which of the three you want to visit, then check each official channel and confirmed time. Do not assume that entering the square includes the rostrum or the museum. Separate channels do not always mean three bookings: see the Square-access section below for the published exception for a valid same-day Palace Museum reservation and the current-control checks."
+  },
+  {
+    "id": "square-rostrum-official",
+    "type": "sources",
+    "title": "Official reservation channels",
+    "items": [
+      {
+        "label": "Official Tiananmen Square reservation platform",
+        "url": "https://yuyue2026.tamgw.beijing.gov.cn/web/"
+      },
+      {
+        "label": "Beijing government: official Rostrum reservation channels",
+        "url": "https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html"
+      }
+    ]
+  },
     {
       id: "official-check-heading",
       type: "heading",

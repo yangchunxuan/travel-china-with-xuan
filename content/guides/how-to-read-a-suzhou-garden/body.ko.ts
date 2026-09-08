@@ -211,6 +211,51 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "half-day-garden-heading",
+      type: "heading",
+      level: 2,
+      text: "반나절이라면 정원 한 곳으로 충분할까?",
+    },
+    {
+      id: "half-day-garden-choice",
+      type: "paragraph",
+      text:
+        "반나절 방문이라면 정원 한 곳을 중심 일정으로 삼는다. 가장 크거나 유명한 이름보다 자신이 관심 있는 경험을 기준으로 고른다. 사진을 찍고, 물가에 앉고, 방금 지나온 회랑을 돌아볼 시간을 남긴다. 두 번째 정원은 더 살펴보고 싶은 다른 경험을 줄 때만 추가한다.",
+    },
+    {
+      id: "half-day-garden-flexibility",
+      type: "list",
+      items: [
+        "예약 전에 정원 관리 기관의 방문일 관련 최신 공지를 확인한다. 특히 일부 구역 폐쇄나 보존 공사가 동선을 바꿀 수 있는지 살핀다.",
+        "붐빌 때 멈추거나 다음 방문지를 바꿀 여유를 둔다. 대기 줄에서도 정해진 속도를 유지하려 애쓰기보다 앉을 곳이나 개방 중인 조용한 구역을 찾는다.",
+        "하루의 나머지 일정도 무리 없이 유지한다. 박물관, 또 다른 정원과 여러 옛 거리를 한꺼번에 넣으면 느긋한 방문이 연속으로 시간을 맞춰야 하는 일정이 된다. 정원에서 예상보다 오래 머물렀다면 경치를 서둘러 지나치지 말고 다음 방문지를 줄인다.",
+      ],
+    },
+  {
+    "id": "garden-visit-check",
+    "type": "paragraph",
+    "text": "기차표를 고르기 전에 아래 공식 입장 규정과 개방 시간에서 방문할 정원의 이름을 찾으세요. 입장 마감과 폐장 시각은 다릅니다. 출발 전에 날짜가 있는 공지를 다시 확인하고, 예전 휴원 공지를 오늘의 상태로 해석하지 마세요. 공식 위챗 계정 苏州园林旅游에서도 정원 공지를 확인할 수 있습니다."
+  },
+  {
+    "id": "garden-visit-official",
+    "type": "sources",
+    "title": "공식 정원 관람 정보",
+    "items": [
+      {
+        "label": "정원별 입장 규정",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/ryxz/nav_list.shtml"
+      },
+      {
+        "label": "개방 및 입장 마감 시간",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/kfsj/wztt.shtml"
+      },
+      {
+        "label": "정원 관리 당국 공지(중국어)",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/tzgg/list.shtml"
+      }
+    ]
+  },
+    {
       id: "walking-heading",
       type: "heading",
       level: 2,

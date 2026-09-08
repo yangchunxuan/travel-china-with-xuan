@@ -9,8 +9,76 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["北京南→地铁/机场线→PEK", "铁路运营且换乘适合同伴", "跨城换乘与提行李穿站", "实时路线、运营时段与航站楼"],
     ["合规出租车/网约车→任一机场", "多人、大件行李或铁路关闭", "道路波动、上车区和道路费用", "机场代码、航站楼、合规上车与缓冲"],
   ]},
+  {
+    "id": "capital-rail-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "北京南站到首都机场（PEK）：一条可照着走的地铁路线"
+  },
+  {
+    "id": "capital-rail-intro",
+    "type": "paragraph",
+    "text": "可以按4号线→2号线→首都机场线换乘。出发前分别确认三条线当天的运营通知。"
+  },
+  {
+    "id": "capital-rail-steps",
+    "type": "list",
+    "ordered": true,
+    "items": [
+      "从北京南站铁路站台出站后，跟随地铁4号线标识，乘安河桥北方向，经陶然亭、菜市口，在宣武门下车。",
+      "在宣武门换乘2号线，选择下一站是和平门的方向，一直乘到东直门。",
+      "在东直门按“首都机场线”标识换乘开往机场的列车。根据航班确认在3号航站楼还是2号航站楼下车，不要见到第一个机场站就下。",
+      "离开机场列车后，再按出发层和航空公司标识前往值机区域。换乘步行、候车与机场手续都要单独计入；赶上第一段地铁，不代表后续线路仍在运营。"
+    ]
+  },
+  {
+    "id": "capital-rail-official",
+    "type": "sources",
+    "title": "出发前核对线路",
+    "items": [
+      {
+        "label": "4号线站序与运营时间",
+        "url": "https://www.mtr.bj.cn/service/line/timetable/line-4"
+      },
+      {
+        "label": "2号线站序",
+        "url": "https://www.mtr.bj.cn/service/line/timetable/line-2.html"
+      },
+      {
+        "label": "首都机场线换乘站与航站楼",
+        "url": "https://zdzqgw.beijing.gov.cn/zqfw/bjsdgjjc/bjsdgjjcjb/202410/t20241012_3917833.html"
+      }
+    ]
+  },
+  {
+    "id": "daxing-rail-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "北京南站去大兴机场的一条地铁路线"
+  },
+  {
+    "id": "daxing-rail-intro",
+    "type": "paragraph",
+    "text": "按下面的站名找指示牌，出发前确认各线路在你的抵达时段运营。"
+  },
+  {
+    "id": "daxing-rail-steps",
+    "type": "list",
+    "ordered": true,
+    "items": [
+      "离开北京南站火车站台后，跟随地铁4号线标识。乘坐开往天宫院方向的列车，经过马家堡，在角门西下车。",
+      "在角门西换乘10号线，选择下一站为草桥的方向，乘坐一站到草桥。",
+      "沿换乘标识进入大兴机场线，乘坐开往大兴机场方向的列车，经过大兴新城后到机场。",
+      "抵达机场后，按航空公司的指引前往出发区域。站内步行、换乘与每次候车都要单独计入，不能只算车上时间。"
+    ]
+  },
   { id: "warning", type: "callout", title: "不要只跟着“北京机场”走", tone: "warning", body: "给司机看PEK或PKX以及航站楼。大兴不是首都机场的新航站楼，首都也不是大兴的一座航站楼。去错机场意味着还要跨城赶往另一座机场，不是小绕路。" },
   { id: "clock-heading", type: "heading", level: 2, text: "从航空公司截止倒推" },
+  {
+    "id": "three-hour-gap",
+    "type": "paragraph",
+    "text": "如果火车计划到站与飞机起飞之间只有3小时，这是整段衔接的总时间，不是你已经到机场后还有3小时。先核对该航班国内或国际值机、托运行李的截止时间，再扣除出站、每次换乘与候车、延误缓冲和机场步行。"
+  },
   { id: "clock", type: "list", ordered: true, items: ["值机/托运行李与登机截止。", "正确航站楼步行和安检/出境。", "道路或铁路行程及延误余量。", "北京南站站台到出口与上车/换乘。", "火车晚点余量与放弃原方案的决策点。"] },
   { id: "groups", type: "comparison", title: "旅客条件如何改变方案", columns: [
     { heading: "轻装、白天", items: ["铁路结构较可预测", "保存每个换乘名", "仍核对末班"] },

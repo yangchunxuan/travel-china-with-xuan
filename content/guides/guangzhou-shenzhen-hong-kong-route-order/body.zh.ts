@@ -23,6 +23,12 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "统计退房、行李、过境和新入住；一晚住宿必须创造足够本地可用时间才能偿还这些成本。",
     "如果深圳一晚迫使第二次过境，或削弱最后国际离境，应优先删除。"
   ] },
+  { id: "one-base-heading", type: "heading", level: 2, text: "保留广州同一家酒店，还是在深圳过夜？" },
+  { id: "one-base-choice", type: "list", ordered: false, items: [
+    "如果深圳是临时决定的日游，而且最希望避免再次退房，就保留广州酒店，把主要行李留在那里。但若接着去香港，也要算上当天返回广州，以及第二天从酒店再去车站的额外路程。",
+    "如果深圳游览与之后的香港段一起规划，可以在深圳过夜。广州→深圳、住一晚→香港，能省去中间折返广州的一段。比较增加一次酒店和行李搬运，与省下交通的得失；深圳住宿区应围绕实际游览地点和所选口岸决定。",
+    "如果香港需要玩几天，就比较住在香港与从内地酒店反复往返香港日游的总成本。预算要计入过关手续和交通，并在预订前确认每次再次进入内地的资格。只看房价较低，不能说明整趟旅行更便宜或更轻松。"
+  ] },
   { id: "crossing-heading", type: "heading", level: 2, text: "从两边酒店门口选择口岸" },
   { id: "crossing", type: "table", caption: "城市顺序确定后再执行交通方式", columns: ["因素", "比较内容", "不要假设"], rows: [
     ["香港一侧", "酒店到西九龙或对应管制站", "香港所有区域距离相同"],
@@ -31,6 +37,28 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["行李", "楼梯、步行、安检和谁拿每件行李", "快车会消除搬运"],
     ["运营信息", "当前官方开放、列车及服务公告", "旧时间或博客截图仍有效"]
   ] },
+  {
+    "id": "hong-kong-return-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "西九龙返程：提前多久到站？"
+  },
+  {
+    "id": "hong-kong-return",
+    "type": "paragraph",
+    "text": "从香港西九龙返内地，登车前还要实名核验、安检及两地出入境手续。港铁给出的通常手续时间约为30–45分钟，护照旅客、繁忙日期或末班车乘客应再多留时间。最早可在发车前90分钟开始办理；实名与车票核验在发车前30分钟截止，登车闸门在前5分钟关闭。三者不是同一个时间点，还须另加去车站和排队的余量。"
+  },
+  {
+    "id": "hong-kong-return-official",
+    "type": "sources",
+    "title": "西九龙官方乘车流程",
+    "items": [
+      {
+        "label": "港铁：办理流程及截止时间",
+        "url": "https://www.highspeed.mtr.com.hk/en/guide/process-departure.html"
+      }
+    ]
+  },
   { id: "workflow-heading", type: "heading", level: 2, text: "用七个决定搭路线" },
   { id: "workflow", type: "list", ordered: true, items: [
     "分配住宿夜数前，先确定国际抵达与离境机场。",

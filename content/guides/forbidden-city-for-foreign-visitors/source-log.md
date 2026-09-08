@@ -68,3 +68,8 @@ The article instructs travellers to recheck at booking, 24–48 hours before the
 - English, Chinese and Korean use the same 51 block IDs in the same order.
 - All recovery advice avoids collecting or exposing passport numbers, payment data or booking records. Screenshots are suggested only with sensitive details hidden.
 - Service language remains editorial and optional; no paid-service weight was added.
+
+
+## 2026-09-09 independent-audit follow-up
+
+2026-09-09 GSC tail question: whether Tiananmen Rostrum and Square reservations differ. Actually opened the live official Square platform in Chrome: its notice explicitly says this booking is for the Square and directs Rostrum visitors to the Rostrum account. https://yuyue2026.tamgw.beijing.gov.cn/web/ . Beijing government 2025-09-06 Rostrum notice independently read: https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html . Direct Rostrum website returned 403 GeoBL in Chrome and web; not claimed fully read, available stock or current hours not asserted. Old 2022 cross-admission shortcut is not generalized to current visits. Existing Palace Museum policy review dates retained.

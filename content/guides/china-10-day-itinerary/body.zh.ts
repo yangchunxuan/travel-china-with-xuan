@@ -8,6 +8,21 @@ const body = {
       "type": "lead",
       "text": "第一次来中国，只有10天，如果你最想看皇家历史、兵马俑，并以现代城市收尾，可以先考虑北京—西安—上海。想少换酒店，或把更多时间留给自然，就选两地。真正需要先决定的是舍弃什么：10天足够走一条有收获的路线，但每加一座城市，都会分走原本留给游览的时间。"
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "把这几天的游览接好",
+    "items": [
+      {
+        "label": "八达岭：交通与入园衔接",
+        "href": "/zh/guides/beijing-to-badaling-great-wall-transfer/"
+      },
+      {
+        "label": "兵马俑：预约与交通",
+        "href": "/zh/guides/terracotta-warriors-without-tour/"
+      }
+    ]
+  },
     {
       "id": "choose-heading",
       "type": "heading",

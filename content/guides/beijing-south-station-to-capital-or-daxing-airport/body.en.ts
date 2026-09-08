@@ -9,6 +9,47 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Beijing South → subway/Airport Express → PEK", "Rail is running and transfers suit the group", "Cross-city interchange and luggage through stations", "Live route, operating window and terminal"],
     ["Authorised taxi/ride-hail → either airport", "Several people, large bags or rail is closed", "Road variability, pickup-zone confusion and toll/traffic", "Airport code, terminal, legal pickup and realistic buffer"],
   ]},
+  {
+    "id": "capital-rail-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "One rail route from Beijing South to Capital Airport (PEK)"
+  },
+  {
+    "id": "capital-rail-intro",
+    "type": "paragraph",
+    "text": "A practical option is Line 4 → Line 2 → Capital Airport Express. Check the operating notices for all three lines before travelling."
+  },
+  {
+    "id": "capital-rail-steps",
+    "type": "list",
+    "ordered": true,
+    "items": [
+      "At Beijing South (北京南站), follow Subway Line 4 signs. Take the train towards Anheqiao Bei (安河桥北), passing Taoranting and Caishikou, and leave at Xuanwumen (宣武门).",
+      "Change to Line 2. Choose the platform whose next stop is Hepingmen (和平门), and stay on the train to Dongzhimen (东直门).",
+      "At Dongzhimen, follow Capital Airport Express (首都机场线) signs and take an airport-bound train. Match your flight to Terminal 3 (3号航站楼) or Terminal 2 (2号航站楼), rather than leaving at the first airport stop automatically.",
+      "Follow departures and your airline signs after leaving the airport train. Include interchange walks, waiting and airport procedures in the connection; reaching a station before its last train does not guarantee the later lines are still running."
+    ]
+  },
+  {
+    "id": "capital-rail-official",
+    "type": "sources",
+    "title": "Check the route before travelling",
+    "items": [
+      {
+        "label": "Line 4 stations and operating times",
+        "url": "https://www.mtr.bj.cn/service/line/timetable/line-4"
+      },
+      {
+        "label": "Line 2 station sequence",
+        "url": "https://www.mtr.bj.cn/service/line/timetable/line-2.html"
+      },
+      {
+        "label": "Capital Airport Express interchanges and terminals",
+        "url": "https://zdzqgw.beijing.gov.cn/zqfw/bjsdgjjc/bjsdgjjcjb/202410/t20241012_3917833.html"
+      }
+    ]
+  },
   { id: "daxing-rail-heading", type: "heading", level: 2, text: "One rail route from Beijing South to Daxing Airport" },
   { id: "daxing-rail-intro", type: "paragraph", text: "Use these station names on the signs and check that the lines are running for your arrival." },
   { id: "daxing-rail-steps", type: "list", ordered: true, items: [
