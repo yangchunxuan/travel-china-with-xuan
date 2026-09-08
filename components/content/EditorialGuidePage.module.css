@@ -41,7 +41,7 @@
 .hero[data-hero-kind="information"] {
   gap: clamp(2rem, 3vw, 3rem);
   grid-template-columns: minmax(0, 32.5rem) minmax(0, 26.25rem);
-  justify-content: start;
+  justify-content: center;
 }
 
 .heroCopy {
