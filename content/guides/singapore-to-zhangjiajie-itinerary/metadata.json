@@ -1,0 +1,102 @@
+{
+  "id": "singapore-to-zhangjiajie-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "singapore"
+  ],
+  "format": "arrival-and-itinerary-guide",
+  "topics": [
+    "singapore",
+    "zhangjiajie",
+    "changsha",
+    "wulingyuan",
+    "international-arrival",
+    "rail-transfer",
+    "trip-pace"
+  ],
+  "destinations": [
+    "china",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/zhangjiajie-national-forest-park-tickets-and-entrances/hero-1600.jpg",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "sourceReviewedDate": "2026-09-08",
+  "searchTerms": {
+    "en": [
+      "singapore to zhangjiajie itinerary",
+      "singapore to zhangjiajie",
+      "zhangjiajie from singapore"
+    ],
+    "zh": [
+      "新加坡去张家界行程",
+      "新加坡长沙张家界路线",
+      "新加坡张家界七天"
+    ],
+    "ko": [
+      "싱가포르 출발 장자제 여행",
+      "싱가포르 창사 장자제 일정",
+      "싱가포르 장자제 7일"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/singapore-to-zhangjiajie-itinerary/",
+      "title": "Singapore to Zhangjiajie: 5- and 7-Day Itineraries",
+      "headline": "Singapore to Zhangjiajie: 5 or 7 Days",
+      "description": "Plan Zhangjiajie from Singapore via Changsha or DYG. Compare 5-day and 7-day routes, railway stations, hotel nights and the flight home.",
+      "heroAlt": "Sandstone pillars and green valleys in Zhangjiajie National Forest Park, photographed in August 2016",
+      "navTitle": "Singapore to Zhangjiajie",
+      "featuredLinkLabel": "Plan Zhangjiajie from Singapore",
+      "openGraphLocale": "en_SG",
+      "cardTags": [
+        "Singapore departure",
+        "5 or 7 days",
+        "Flights and rail"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/singapore-to-zhangjiajie-itinerary/",
+      "title": "新加坡去张家界：5天与7天行程怎么安排",
+      "headline": "新加坡去张家界，先接好交通与每一晚",
+      "description": "从新加坡经长沙或张家界荷花机场抵离，比较5天与7天行程。分清长沙站和长沙南站，算好铁路转场、酒店晚数与返程航班。",
+      "heroAlt": "2016年8月拍摄的张家界国家森林公园砂岩峰林与绿色山谷",
+      "navTitle": "新加坡去张家界",
+      "featuredLinkLabel": "规划新加坡出发的张家界行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "新加坡出发",
+        "5天或7天",
+        "航班与铁路"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/singapore-to-zhangjiajie-itinerary/",
+      "title": "싱가포르에서 장자제: 4박 5일·6박 7일 일정",
+      "headline": "싱가포르에서 장자제, 교통과 숙박부터 맞추세요",
+      "description": "싱가포르에서 창사 또는 장자제 허화공항으로 가는 방법. 4박 5일과 6박 7일의 열차 이동, 정확한 역 이름, 호텔 숙박과 귀국편을 비교하세요.",
+      "heroAlt": "2016년 8월 촬영한 장자제 국가삼림공원의 사암 봉우리와 초록빛 계곡",
+      "navTitle": "싱가포르에서 장자제",
+      "featuredLinkLabel": "싱가포르 출발 장자제 일정 계획",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "싱가포르 출발",
+        "4박 5일·6박 7일",
+        "항공편과 철도"
+      ]
+    }
+  }
+}

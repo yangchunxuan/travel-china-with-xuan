@@ -55,7 +55,7 @@
     "automaticBackfillAllowed": false,
     "rule": "The current round is frozen to these six mapped tickets. Do not add a seventh article, page or ticket, and do not automatically replace a rejected or delayed ticket with a runner-up.",
     "branchOrWorktreeObservationChangesApproval": false,
-    "coverageSemantics": "This object preserves the 2026-08-11 frozen six-ticket round. Published inventory is in coverage.publishedInventory; the closed PR #74 batch is in currentBatchExecutionControl; 60 newer unpublished reservations are in remoteDurableDraftBatches; the First 24 Hours durable collection draft remains in coverage.candidates; and Route Reality's merged internal specification plus rejected public-product decision remain in routeRealityCheckerReviewGate.",
+    "coverageSemantics": "This object preserves the 2026-08-11 frozen six-ticket round. Published inventory is in coverage.publishedInventory; the closed PR #74 batch is in currentBatchExecutionControl; the historical 60-guide reservation batch and its separate promotion record are in remoteDurableDraftBatches; the First 24 Hours durable collection draft remains in coverage.candidates; and Route Reality's merged internal specification plus rejected public-product decision remain in routeRealityCheckerReviewGate.",
     "observedTicketStates": [
       {
         "candidateId": "transport-20260811-01",
@@ -419,18 +419,18 @@
     "currentRepositoryInventory": {
       "status": "available-from-audited-current-main-runtime-baseline",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "generatedGuideIdentities": 175,
+      "generatedGuideIdentities": 178,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 194,
-      "generatedGuideLocaleUrls": 523,
+      "publishedGuideIdentities": 197,
+      "generatedGuideLocaleUrls": 532,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 574,
+      "guideLocaleUrls": 583,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 203,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 599,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 206,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 608,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -443,7 +443,7 @@
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
       "repositoryIncrementRef": "coverage.publishedInventory.repositoryIncrements",
-      "currentCountsScope": "Counts include the two trilingual 2026-09-08 repository additions recorded below. baseCommit, checkedAt and liveVerificationStatus retain the historical audited baseline; the new additions do not inherit its production verification.",
+      "currentCountsScope": "Counts include the five trilingual 2026-09-08 repository additions recorded below. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
       "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
       "checkedAt": "2026-08-23T13:24:58+08:00"
     },
@@ -926,17 +926,19 @@
     "note": "Assignments below are Search Map ownership assignments. They do not create public collection/entity URLs, runtime entity records or change indexability."
   },
   "currentUnpublishedInventorySummary": {
-    "checkedAt": "2026-08-23",
-    "remoteDurableGuideDraftIdentities": 60,
-    "remoteDurableGuideDraftLocaleUrls": 180,
+    "checkedAt": "2026-09-08",
+    "remoteDurableGuideDraftIdentities": 59,
+    "remoteDurableGuideDraftLocaleUrls": 177,
     "internalCollectionDraftIdentities": 1,
     "releaseAuthorizedProductionQueueIdentities": 0,
     "internalNonIdentitySpecifications": 1,
-    "interpretation": "The 60 guide drafts and the First 24 Hours collection draft are reserved work, not published inventory. Route Reality is an internal non-identity specification. None of these records authorizes a merge, deployment, public route or additional topic."
+    "interpretation": "The historical 60-guide batch is preserved. One identity has been revised and integrated separately as recorded in repositoryPromotions, leaving 59 reserved guide drafts. The First 24 Hours collection and Route Reality specification remain outside the release queue. No remaining draft inherits publication authorization."
   },
   "remoteDurableDraftBatches": [
     {
       "batchId": "content-scale-20260822",
+      "reservationSnapshotDate": "2026-08-23",
+      "repositoryPromotions": [{ "id": "guilin-yangshuo-longji-route-order", "checkedAt": "2026-09-08", "status": "revised-and-integrated-separately-release-verification-pending", "scope": "this-identity-only" }],
       "inventoryClass": "remote-durable-draft-reservation",
       "identityCount": 60,
       "localeUrlCount": 180,
@@ -1126,9 +1128,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 194,
-      "localeUrlCount": 574,
-      "generatedIdentityCount": 175,
+      "identityCount": 197,
+      "localeUrlCount": 583,
+      "generatedIdentityCount": 178,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1145,7 +1147,11 @@
               "title": "Chengdu, Chongqing & Zhangjiajie Itinerary: 12 Days",
               "metadataPath": "content/guides/chengdu-chongqing-zhangjiajie-itinerary/metadata.json",
               "canonicalPath": "/guides/chengdu-chongqing-zhangjiajie-itinerary/",
-              "locales": ["en", "zh", "ko"],
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
               "localePaths": [
                 "/guides/chengdu-chongqing-zhangjiajie-itinerary/",
                 "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/",
@@ -1155,7 +1161,11 @@
               "pageFamily": "combined-decision",
               "targetIntent": "plan",
               "primaryCollectionId": "plan-trip-length-city-order",
-              "destinations": ["chengdu", "chongqing", "zhangjiajie"],
+              "destinations": [
+                "chengdu",
+                "chongqing",
+                "zhangjiajie"
+              ],
               "boundary": "Twelve-day, eleven-night three-city planning example with Wulong overnight and two forest days; linked local products remain separately scoped and quoted."
             },
             {
@@ -1163,7 +1173,11 @@
               "title": "China 10-Day Itinerary: Choose Your First-Trip Route",
               "metadataPath": "content/guides/china-10-day-itinerary/metadata.json",
               "canonicalPath": "/guides/china-10-day-itinerary/",
-              "locales": ["en", "zh", "ko"],
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
               "localePaths": [
                 "/guides/china-10-day-itinerary/",
                 "/zh/guides/china-10-day-itinerary/",
@@ -1173,8 +1187,89 @@
               "pageFamily": "combined-decision",
               "targetIntent": "plan",
               "primaryCollectionId": "plan-trip-length-city-order",
-              "destinations": ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
+              "destinations": [
+                "china",
+                "beijing",
+                "xian",
+                "shanghai",
+                "zhangjiajie"
+              ],
               "boundary": "Ten-day, nine-night first-trip route selection; the existing Beijing-Zhangjiajie-Shanghai guide retains its distinct detailed route and longer worked example."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-09-08",
+          "sourceCommit": "24cbd684416502c5326f90d723d40d5254e60b6a",
+          "status": "repository-content-integrated-release-verification-pending",
+          "identityDelta": 3,
+          "localeUrlDelta": 9,
+          "identities": [
+            {
+              "id": "chengdu-zhangjiajie-itinerary",
+              "title": "Chengdu & Zhangjiajie Itinerary: 7–9 Days by Train",
+              "metadataPath": "content/guides/chengdu-zhangjiajie-itinerary/metadata.json",
+              "canonicalPath": "/guides/chengdu-zhangjiajie-itinerary/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/chengdu-zhangjiajie-itinerary/",
+                "/zh/guides/chengdu-zhangjiajie-itinerary/",
+                "/ko/guides/chengdu-zhangjiajie-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": ["china", "chengdu", "zhangjiajie"],
+              "boundary": "Two-destination 7–9-day route and direct-rail planning without a Chongqing sightseeing stay."
+            },
+            {
+              "id": "guilin-yangshuo-longji-route-order",
+              "title": "Guilin, Yangshuo & Longji Itinerary: 5 or 6 Days",
+              "metadataPath": "content/guides/guilin-yangshuo-longji-route-order/metadata.json",
+              "canonicalPath": "/guides/guilin-yangshuo-longji-route-order/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/guilin-yangshuo-longji-route-order/",
+                "/zh/guides/guilin-yangshuo-longji-route-order/",
+                "/ko/guides/guilin-yangshuo-longji-route-order/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": ["china", "guilin"],
+              "boundary": "Whole-trip Guilin, Yangshuo and Longji order, hotel nights and entry/exit planning; existing single-leg and lodging decisions remain separate."
+            },
+            {
+              "id": "singapore-to-zhangjiajie-itinerary",
+              "title": "Singapore to Zhangjiajie: 5- and 7-Day Itineraries",
+              "metadataPath": "content/guides/singapore-to-zhangjiajie-itinerary/metadata.json",
+              "canonicalPath": "/guides/singapore-to-zhangjiajie-itinerary/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/singapore-to-zhangjiajie-itinerary/",
+                "/zh/guides/singapore-to-zhangjiajie-itinerary/",
+                "/ko/guides/singapore-to-zhangjiajie-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "destinations": ["china", "zhangjiajie"],
+              "boundary": "Singapore departure and return connections with 5/7-day Zhangjiajie hotel-night plans; passport rules remain owned by the entry guide."
             }
           ]
         }
@@ -1198,6 +1293,7 @@
         "chengdu-greenway-city-ring",
         "chengdu-jiuzhaigou-transport-route",
         "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "chengdu-zhangjiajie-itinerary",
         "china-10-day-itinerary",
         "china-15-minute-neighbourhoods",
         "china-24-solar-terms-weather-food-daily-life",
@@ -1265,6 +1361,7 @@
         "guangzhou-macau-transport-route",
         "guangzhou-shenzhen-hong-kong-route-order",
         "guilin-airport-or-railway-station-arrival-guide",
+        "guilin-yangshuo-longji-route-order",
         "guilin-yangshuo-transport-route",
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
@@ -1336,6 +1433,7 @@
         "shenzhen-where-to-stay-futian-luohu-nanshan",
         "shilin-ashima-landscape-story",
         "sichuan-opera-face-changing-with-context",
+        "singapore-to-zhangjiajie-itinerary",
         "summer-palace-gates-route-and-boat-plan",
         "tea-landscape-regions-of-china",
         "temple-of-heaven-gates-and-ritual-sequence",

@@ -1,0 +1,101 @@
+{
+  "id": "chengdu-zhangjiajie-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "trip-planning",
+    "route-design",
+    "trip-pace",
+    "rail-travel"
+  ],
+  "destinations": [
+    "china",
+    "chengdu",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "sourceReviewedDate": "2026-09-08",
+  "searchTerms": {
+    "en": [
+      "chengdu zhangjiajie itinerary",
+      "chengdu and zhangjiajie itinerary",
+      "chengdu to zhangjiajie train",
+      "chengdu zhangjiajie 7 days"
+    ],
+    "zh": [
+      "成都张家界行程",
+      "成都张家界7天6晚",
+      "成都到张家界动车"
+    ],
+    "ko": [
+      "청두 장자제 여행 일정",
+      "청두 장자제 6박 7일",
+      "청두 장자제 직통 열차"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "title": "Chengdu & Zhangjiajie Itinerary: 7–9 Days by Train",
+      "headline": "Chengdu and Zhangjiajie in 7–9 Days",
+      "description": "Plan 7–9 days in Chengdu and Zhangjiajie: direct trains, hotel bases, two forest-park days and time for Tianmen Mountain.",
+      "heroAlt": "Golden giant-panda sculpture in the landscaped grounds of Chengdu Panda Base",
+      "navTitle": "Chengdu and Zhangjiajie",
+      "featuredLinkLabel": "Plan Chengdu and Zhangjiajie",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "7–9 days",
+        "Direct rail",
+        "Two destinations"
+      ],
+      "path": "/guides/chengdu-zhangjiajie-itinerary/"
+    },
+    "zh": {
+      "title": "成都张家界行程：7—9天动车串联两地",
+      "headline": "成都与张家界7—9天行程",
+      "description": "成都与张家界7天6晚怎么安排？从直达动车、两地住宿到两个森林公园游览日，说明8天加入天门山和9天放慢节奏的方法。",
+      "heroAlt": "成都熊猫基地园林中的金色大熊猫雕塑",
+      "navTitle": "成都与张家界",
+      "featuredLinkLabel": "安排成都与张家界行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "7—9天",
+        "动车直达",
+        "两地行程"
+      ],
+      "path": "/zh/guides/chengdu-zhangjiajie-itinerary/"
+    },
+    "ko": {
+      "title": "청두·장자제 여행 일정: 직통 열차로 6~8박",
+      "headline": "청두와 장자제: 판다와 봉우리를 만나는 7~9일",
+      "description": "청두와 장자제 6박 7일 일정, 직통 열차와 숙소 선택, 삼림공원 이틀을 정리했습니다. 톈먼산을 더하는 7박과 여유로운 8박도 비교하세요.",
+      "heroAlt": "청두 판다기지 정원에 있는 금색 자이언트판다 조각상",
+      "navTitle": "청두와 장자제",
+      "featuredLinkLabel": "청두·장자제 일정 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "6~8박",
+        "직통 열차",
+        "두 지역 여행"
+      ],
+      "path": "/ko/guides/chengdu-zhangjiajie-itinerary/"
+    }
+  }
+}

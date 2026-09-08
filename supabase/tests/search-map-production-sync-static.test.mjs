@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 175);
+  assert.equal(inventory.generatedIdentityCount, 178);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 194);
-  assert.equal(inventory.localeUrlCount, 574);
+  assert.equal(inventory.identityCount, 197);
+  assert.equal(inventory.localeUrlCount, 583);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
@@ -130,7 +130,7 @@ test("published PR 74 candidates and the durable First 24 Hours draft stay disti
   }
 });
 
-test("the 60-guide remote batch is reserved but excluded from published inventory", async () => {
+test("the historical 60-guide reservation retains only its explicitly promoted identity in the repository", async () => {
   const searchMap = await loadSearchMap();
   assert.equal(searchMap.remoteDurableDraftBatches.length, 1);
   const batch = searchMap.remoteDurableDraftBatches[0];
@@ -172,16 +172,20 @@ test("the 60-guide remote batch is reserved but excluded from published inventor
   assert.equal(employee3?.draftDatePlaceholder, "2026-08-20");
 
   const publishedIds = new Set(searchMap.coverage.publishedInventory.identityIds);
-  assert.deepEqual(allIds.filter((id) => publishedIds.has(id)), []);
+  const promotedIds = batch.repositoryPromotions.map((entry) => entry.id);
+  assert.deepEqual(promotedIds, ["guilin-yangshuo-longji-route-order"]);
+  assert.ok(batch.repositoryPromotions.every((entry) => entry.scope === "this-identity-only"));
+  assert.deepEqual(allIds.filter((id) => publishedIds.has(id)), promotedIds);
   const currentGuideDirectories = new Set((await readdir(
     path.join(projectRoot, "content/guides"),
     { withFileTypes: true },
   )).filter((entry) => entry.isDirectory()).map((entry) => entry.name));
-  assert.deepEqual(allIds.filter((id) => currentGuideDirectories.has(id)), []);
+  assert.deepEqual(allIds.filter((id) => currentGuideDirectories.has(id)), promotedIds);
+  assert.equal(allIds.filter((id) => !promotedIds.includes(id)).length, 59);
   assert.deepEqual(searchMap.currentUnpublishedInventorySummary, {
-    checkedAt: "2026-08-23",
-    remoteDurableGuideDraftIdentities: 60,
-    remoteDurableGuideDraftLocaleUrls: 180,
+    checkedAt: "2026-09-08",
+    remoteDurableGuideDraftIdentities: 59,
+    remoteDurableGuideDraftLocaleUrls: 177,
     internalCollectionDraftIdentities: 1,
     releaseAuthorizedProductionQueueIdentities: 0,
     internalNonIdentitySpecifications: 1,
