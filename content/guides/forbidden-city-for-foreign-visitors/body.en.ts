@@ -82,8 +82,8 @@ export default {
     {
       id: "no-same-day",
       type: "callout",
-      title: "Ignore anecdotal promises of a foreigner walk-up ticket",
-      body: "Current search results still contain traveller reports about buying a ticket at the gate. The standing Palace Museum rule reviewed for this guide says it does not sell same-day tickets. Plan from the official rule, not from a past visitor's exception or an unofficial seller's promise.",
+      title: "Confirm your reservation before visiting",
+      body: "The Palace Museum does not sell same-day tickets. Confirm every visitor's reservation before travelling to the entrance. If your booking is incomplete or unclear, contact the museum through its official channels before making the trip.",
       tone: "warning",
     },
     {
