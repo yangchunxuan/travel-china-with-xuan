@@ -27,6 +27,21 @@ const body = {
       "body": "1–4일째 밤은 베이징, 5–6일째 밤은 시안, 7–9일째 밤은 상하이에서 묵습니다. 1일차는 도착, 10일차는 출국일이므로 두 날을 온전한 관광일로 계산하지 않습니다. 국제선 이동으로 중국 체류 전후에 날짜가 더 필요할 수 있습니다. 집을 나서서 돌아올 때까지 총 10일이라면, 실제 중국에서 보낼 수 있는 날부터 세어보세요."
     },
     {
+      "id": "duration-options",
+      "type": "internal-links",
+      "title": "여행 기간이 열흘이 아니라면",
+      "items": [
+        {
+          "label": "중국 7일: 베이징과 상하이 두 도시",
+          "href": "/ko/guides/china-7-day-itinerary/"
+        },
+        {
+          "label": "중국 14일: 시안과 청두까지",
+          "href": "/ko/guides/china-14-day-itinerary/"
+        }
+      ]
+    },
+    {
       "id": "classic-heading",
       "type": "heading",
       "level": 2,

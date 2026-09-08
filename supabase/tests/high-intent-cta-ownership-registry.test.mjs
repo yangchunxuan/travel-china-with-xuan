@@ -61,12 +61,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 25,
-    plan: 22,
+    plan: 24,
     "purchase-ticket": 2,
   });
-  assert.equal(report.uniqueContentIds, 69);
+  assert.equal(report.uniqueContentIds, 71);
   assert.equal(report.authorizedExistingService, 25);
-  assert.equal(report.authorizedGenericConversation, 7);
+  assert.equal(report.authorizedGenericConversation, 9);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.blockedPendingAuthorization, 37);
   assert.equal(registry.publicCtaChangesAuthorized, true);

@@ -229,6 +229,8 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "first-trip-china-airport-station-stay-map": "transport-airports-rail-hubs",
   "zhangjiajie-itinerary": "plan-trip-length-city-order",
   "china-10-day-itinerary": "plan-trip-length-city-order",
+  "china-7-day-itinerary": "plan-trip-length-city-order",
+  "china-14-day-itinerary": "plan-trip-length-city-order",
   "chengdu-zhangjiajie-itinerary": "plan-trip-length-city-order",
   "guilin-yangshuo-longji-route-order": "plan-trip-length-city-order",
   "singapore-to-zhangjiajie-itinerary": "plan-traveller-theme-itineraries",
