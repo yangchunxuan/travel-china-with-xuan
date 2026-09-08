@@ -1,0 +1,58 @@
+{
+  "id": "china-10-day-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["first-trip", "trip-planning", "route-design", "trip-pace"],
+  "destinations": ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
+  "heroImagePath": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "sourceReviewedDate": "2026-09-08",
+  "searchTerms": {
+    "en": ["china itinerary 10 days", "10 day china itinerary", "china 10 day itinerary", "10 day itinerary china", "china trip itinerary 10 days"],
+    "zh": ["中国10天行程", "中国十天自由行路线", "第一次去中国十天怎么安排"],
+    "ko": ["중국 10일 여행 일정", "중국 열흘 여행 코스", "중국 첫 여행 10일 일정"]
+  },
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/china-10-day-itinerary/",
+      "title": "China 10-Day Itinerary: Choose Your First-Trip Route",
+      "headline": "10 Days in China: Choose a Route You Can Enjoy",
+      "description": "Plan 10 days and 9 nights in China: Beijing, Xi’an and Shanghai, or a slower two-city trip. Compare the trade-offs before booking transfers and hotels.",
+      "heroAlt": "The Bund clock tower and historic rooftops facing Shanghai’s Lujiazui skyline",
+      "navTitle": "China in 10 days",
+      "featuredLinkLabel": "Choose a 10-day China route",
+      "openGraphLocale": "en_US",
+      "cardTags": ["10 days / 9 nights", "First China trip", "Route choices"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-10-day-itinerary/",
+      "title": "中国10天行程：第一次来，怎样选路线",
+      "headline": "中国10天行程：先选对路线",
+      "description": "用10天9晚安排北京、西安、上海，或选择更慢的两地旅行。看清城市取舍、转场日和住宿晚数，再订交通与酒店。",
+      "heroAlt": "外滩钟楼与老建筑屋顶，对岸是上海陆家嘴天际线",
+      "navTitle": "中国10天行程",
+      "featuredLinkLabel": "选择中国10天路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["10天9晚", "首次中国旅行", "路线选择"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-10-day-itinerary/",
+      "title": "중국 10일 여행 일정: 첫 여행에 맞는 코스 고르기",
+      "headline": "중국에서 10일, 여유 있게 즐길 수 있는 코스부터",
+      "description": "9박 10일로 베이징·시안·상하이를 둘러보거나 두 도시에서 천천히 머무는 방법. 도시별 숙박과 이동일을 정한 뒤 교통과 호텔을 예약하세요.",
+      "heroAlt": "와이탄 시계탑과 오래된 건물 지붕 너머로 보이는 상하이 루자쭈이 스카이라인",
+      "navTitle": "중국 10일 여행",
+      "featuredLinkLabel": "중국 10일 코스 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["9박 10일", "첫 중국 여행", "코스 선택"]
+    }
+  }
+}

@@ -61,6 +61,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "What this guide covers", body: "This guide compares one returning base, multiple forward bases and a hybrid. Use the rushed-itinerary guide to test overall overload, city transport guides for exact stations and modes, and accommodation guides for neighbourhood choice." },
   { id: "help-cta", type: "callout", tone: "decision", title: "Need the returns counted?", body: "Send candidate bases, hotel areas, important activities, luggage and arrival/departure gateways. A useful review should expose the full travel blocks before assigning nights." },
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
+    { label: "Compare 10-day China itineraries", href: "/guides/china-10-day-itinerary/", description: "Choose a first-trip route with a clear 9-night plan and time for transfers." },
+    { label: "Plan Chengdu, Chongqing and Zhangjiajie", href: "/guides/chengdu-chongqing-zhangjiajie-itinerary/", description: "See a 12-day route that keeps Chengdu excursions, an overnight in Wulong and two forest walking days." },
     { label: "Check whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test the final architecture against usable days." },
     { label: "Choose a useful transport hotel", href: "/guides/china-hotel-near-metro/", description: "A hub works only if daily departures are easy." },
     { label: "Test different entry and exit cities", href: "/guides/china-open-jaw-flights-route-planning/", description: "Open-jaw gateways can turn spokes into a forward chain." },

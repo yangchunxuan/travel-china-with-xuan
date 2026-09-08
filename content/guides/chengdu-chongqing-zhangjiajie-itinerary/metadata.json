@@ -1,0 +1,102 @@
+{
+  "id": "chengdu-chongqing-zhangjiajie-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "chengdu",
+    "chongqing",
+    "zhangjiajie",
+    "wulong",
+    "itinerary",
+    "transfer-days"
+  ],
+  "destinations": [
+    "chengdu",
+    "chongqing",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/tours/chongqing-wulong-5-day-private-tour/gallery-hongyadong-qiansimen-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/chongqing-wulong-5-day-private-tour/gallery-hongyadong-qiansimen-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "sourceReviewedDate": "2026-09-08",
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "chengdu chongqing zhangjiajie itinerary",
+      "chengdu chongqing zhangjiajie 12 days",
+      "chengdu to chongqing to zhangjiajie"
+    ],
+    "zh": [
+      "成都重庆张家界行程",
+      "成都重庆张家界12天",
+      "成都武隆张家界路线"
+    ],
+    "ko": [
+      "청두 충칭 장자제 여행",
+      "청두 충칭 장자제 12일",
+      "청두 우룽 장자제 일정"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+      "title": "Chengdu, Chongqing & Zhangjiajie Itinerary: 12 Days",
+      "headline": "Chengdu, Chongqing & Zhangjiajie: A 12-Day Itinerary",
+      "description": "Plan 12 days from Chengdu’s pandas to Chongqing, an overnight in Wulong and two Zhangjiajie forest days, with 11 nights and two proper transfer days.",
+      "heroAlt": "Illuminated Hongya Cave buildings and Qiansimen Bridge above a busy Chongqing street at night.",
+      "navTitle": "Chengdu–Chongqing–Zhangjiajie",
+      "featuredLinkLabel": "Plan 12 days from Chengdu to Zhangjiajie",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "12 days",
+        "Wulong overnight",
+        "Forest walks"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+      "title": "成都重庆张家界12天行程：武隆过夜与森林徒步",
+      "headline": "成都—重庆—张家界：12天11晚怎么安排",
+      "description": "从成都熊猫与三星堆，到重庆山城、武隆过夜，再用两天步行游览张家界森林公园。列清12天11晚、两次转场，以及缩短到10或11天的取舍。",
+      "heroAlt": "重庆夜晚，亮灯的洪崖洞建筑旁可见跨江大桥和繁忙街道。",
+      "navTitle": "成都—重庆—张家界",
+      "featuredLinkLabel": "安排成都到张家界的12天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "12天11晚",
+        "武隆过夜",
+        "森林步行"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+      "title": "청두·충칭·장자제 12일 일정: 우룽 1박과 삼림공원",
+      "headline": "청두·충칭·장자제: 11박 12일 여행 일정",
+      "description": "청두의 판다와 싼싱두이, 충칭 도심과 우룽 1박, 장자제 삼림공원 도보 이틀을 연결합니다. 두 이동일과 11박을 배정하고 10~11일로 줄일 때의 선택을 살펴보세요.",
+      "heroAlt": "밤의 충칭 거리 위로 불이 켜진 훙야둥 건물과 첸쓰먼대교가 보입니다.",
+      "navTitle": "청두–충칭–장자제",
+      "featuredLinkLabel": "청두에서 장자제까지 12일 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "11박 12일",
+        "우룽 1박",
+        "삼림 도보"
+      ]
+    }
+  }
+}

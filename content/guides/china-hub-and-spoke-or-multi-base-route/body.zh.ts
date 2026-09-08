@@ -61,6 +61,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责单基地往返、多基地前移与混合结构的选择。整体是否过度拥挤由紧凑度指南负责；准确车站与交通方式由城市交通指南负责；住宿区域由住宿指南负责。" },
   { id: "help-cta", type: "callout", tone: "decision", title: "需要计算折返吗？", body: "请提供候选基地、酒店区域、核心活动、行李，以及抵达与离境口岸。有效审核应在分配夜数前算清每次门到门移动的总时间。" },
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
+    { label: "选择适合自己的中国 10 天行程", href: "/zh/guides/china-10-day-itinerary/", description: "按 9 晚住宿、转场时间和想看的景点，选择第一次来中国的路线。" },
+    { label: "安排成都—重庆—张家界三城路线", href: "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/", description: "参考 12 天安排，保留成都周边游、武隆过夜和两天森林徒步。" },
     { label: "检查路线是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "用可用旅行日测试最终结构。" },
     { label: "选择真正有用的交通型酒店", href: "/zh/guides/china-hotel-near-metro/", description: "只有每天容易出发，基地才有价值。" },
     { label: "测试不同入境和离境城市", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "开口程可能把折返支线变成前移路线。" },

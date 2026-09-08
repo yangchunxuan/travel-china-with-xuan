@@ -127,15 +127,15 @@ const productContexts = {
   },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {
     destinations: ["chengdu"],
-    guides: ["chengdu-panda-base-or-dujiangyan-panda-valley", "sanxingdui-museum-booking-and-gallery-order"],
+    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "chengdu-panda-base-or-dujiangyan-panda-valley", "sanxingdui-museum-booking-and-gallery-order"],
   },
   "xian-terracotta-warriors-5-day-private-tour": {
     destinations: ["xian"],
-    guides: ["terracotta-warriors-without-tour", "xian-where-to-stay-city-wall-or-dayanta"],
+    guides: ["china-10-day-itinerary", "terracotta-warriors-without-tour", "xian-where-to-stay-city-wall-or-dayanta"],
   },
   "chongqing-wulong-5-day-private-tour": {
     destinations: ["chongqing"],
-    guides: ["chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba", "chongqing-railway-station-selector"],
+    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba", "chongqing-railway-station-selector"],
   },
   "guilin-yangshuo-5-day-private-tour": {
     destinations: [],
@@ -147,16 +147,16 @@ const productContexts = {
   },
   "shanghai-suzhou-5-day-private-tour": {
     destinations: ["shanghai"],
-    guides: ["shanghai-where-to-stay-first-trip", "how-to-read-a-suzhou-garden"],
+    guides: ["china-10-day-itinerary", "shanghai-where-to-stay-first-trip", "how-to-read-a-suzhou-garden"],
     relatedProducts: [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
   },
   "beijing-highlights-5-day-private-tour": {
     destinations: ["beijing"],
-    guides: ["great-wall-section-selector-from-beijing", "beijing-where-to-stay-first-trip"],
+    guides: ["china-10-day-itinerary", "great-wall-section-selector-from-beijing", "beijing-where-to-stay-first-trip"],
   },
   "zhangjiajie-forest-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
+    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
   },
   "zhangjiajie-4-day-private-tour": {
     destinations: ["zhangjiajie"],
