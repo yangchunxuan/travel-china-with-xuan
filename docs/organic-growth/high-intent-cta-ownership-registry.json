@@ -80,9 +80,9 @@
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 25,
-    "plan": 17,
+    "plan": 19,
     "purchase-ticket": 2,
-    "uniqueContentIds": 64
+    "uniqueContentIds": 66
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1043,6 +1043,34 @@
         "booking-entry-guarantee",
         "reseller-official-equivalence",
         "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-10-day-itinerary",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "chengdu-chongqing-zhangjiajie-itinerary",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "chengdu-chongqing-zhangjiajie-itinerary",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
       ]
     }
   ]

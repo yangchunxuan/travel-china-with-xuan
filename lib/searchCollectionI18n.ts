@@ -228,6 +228,8 @@ const byId = new Map(searchCollections.map((collection) => [collection.id, colle
 const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "first-trip-china-airport-station-stay-map": "transport-airports-rail-hubs",
   "zhangjiajie-itinerary": "plan-trip-length-city-order",
+  "china-10-day-itinerary": "plan-trip-length-city-order",
+  "chengdu-chongqing-zhangjiajie-itinerary": "plan-trip-length-city-order",
   "zhangjiajie-from-malaysia": "plan-traveller-theme-itineraries",
   "zhangjiajie-glass-bridge-vs-skywalk": "explore-attractions-nature-heritage",
   "zhangjiajie-national-forest-park-tickets-and-entrances": "explore-attractions-nature-heritage",

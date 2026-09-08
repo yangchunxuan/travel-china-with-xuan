@@ -61,6 +61,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 한 거점 왕복, 여러 전진 거점과 혼합형 선택만 다룹니다. 전체 과밀은 빡빡한 일정 가이드가, 정확한 역과 수단은 도시 교통 가이드가, 숙박 지역은 숙소 가이드가 담당합니다." },
   { id: "help-cta", type: "callout", tone: "decision", title: "되돌아가기를 계산할까요?", body: "후보 거점, 숙소 지역, 핵심 활동, 짐, 도착·출국 관문을 알려 주세요. 좋은 검토는 숙박 일수를 배정하기 전에 각 문간 이동의 총시간을 계산합니다." },
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "중국 10일 여행 코스 고르기", href: "/ko/guides/china-10-day-itinerary/", description: "9박 배분과 도시 간 이동, 보고 싶은 장소를 기준으로 첫 중국 여행을 계획하세요." },
+    { label: "청두·충칭·장자제 12일 일정 보기", href: "/ko/guides/chengdu-chongqing-zhangjiajie-itinerary/", description: "청두 근교, 우룽 1박과 이틀간의 산림 도보 일정을 포함한 동선을 확인하세요." },
     { label: "동선이 너무 빡빡한지 확인", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "실제로 쓸 수 있는 날짜로 최종 구조를 검사하세요." },
     { label: "쓸모 있는 교통형 숙소 선택", href: "/ko/guides/china-hotel-near-metro/", description: "매일 출발이 쉬워야 거점이 작동합니다." },
     { label: "서로 다른 입출국 도시 시험", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "오픈조 관문이 왕복 구간을 전진 동선으로 바꿀 수 있습니다." },

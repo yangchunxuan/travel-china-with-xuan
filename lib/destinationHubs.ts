@@ -104,6 +104,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-22",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
+      "china-10-day-itinerary",
       "beijing-where-to-stay-first-trip",
       "beijing-courtyard-hotel-or-modern-hotel",
       "which-beijing-railway-station",
@@ -323,6 +324,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-22",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
+      "china-10-day-itinerary",
       "shanghai-where-to-stay-first-trip",
       "shanghai-pudong-or-hongqiao-airport",
       "pudong-airport-to-shanghai-disneyland",
@@ -520,6 +522,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-21",
     sourceReviewedDate: "2026-08-16",
     supportGuideIds: [
+      "china-10-day-itinerary",
       "terracotta-warriors-without-tour",
       "shaanxi-history-museum-booking-and-collection-plan",
       "xian-where-to-stay-city-wall-or-dayanta",
@@ -692,6 +695,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-22",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
+      "chengdu-chongqing-zhangjiajie-itinerary",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
       "sanxingdui-museum-booking-and-gallery-order",
       "chengdu-jiuzhaigou-transport-route",
@@ -1207,6 +1211,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-21",
     sourceReviewedDate: "2026-08-20",
     supportGuideIds: [
+      "chengdu-chongqing-zhangjiajie-itinerary",
       "zhangjiajie-itinerary",
       "zhangjiajie-national-forest-park-tickets-and-entrances",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
@@ -1366,6 +1371,7 @@ export const destinationHubRegistry = [
     dateModified: "2026-08-21",
     sourceReviewedDate: "2026-08-21",
     supportGuideIds: [
+      "chengdu-chongqing-zhangjiajie-itinerary",
       "chongqing-upper-lower-city-orientation",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "china-tiankeng-sinkholes-explained",
