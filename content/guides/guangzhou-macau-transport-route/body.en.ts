@@ -9,6 +9,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Guangzhou South → 横琴站 → 横琴口岸 → 橫琴口岸澳門口岸區", "Cotai, Taipa or a hotel with a verified Hengqin/LRT connection", "Navigate the integrated hub, immigration and then LRT/bus/taxi/hotel pickup", "A 24-hour port means the train, LRT and hotel shuttle also run 24 hours"],
     ["Guangzhou address → direct licensed road service → a named port", "A group whose Guangzhou start makes Guangzhou South a major detour", "Operator check-in, luggage loading, road traffic and the same immigration process", "A through vehicle removes immigration, entry eligibility or border queues"]
   ]},
+  { id: "hengqin-lrt-heading", type: "heading", level: 2, text: "After Hengqin immigration: how to use the LRT" },
+  { id: "hengqin-lrt-connection", type: "paragraph", text: "On the Macau side, follow signs to the LRT Hengqin station. Take the Hengqin Line to Lotus, then change to the Taipa Line for the station nearest your hotel or first stop. Save that final station and the walk to your destination; reaching Lotus does not finish the hotel transfer. Compare this with a confirmed hotel pickup or taxi if several suitcases make another change awkward." },
+  { id: "hengqin-lrt-ticket", type: "paragraph", text: "Buying a ticket with a payment app is different from using a ride code at the gate. The LRT operator's ticket guide, checked on 8 September 2026, lists single-journey tokens sold at machines or service counters. Counters accept several payment methods, including cards, Alipay and WeChat Pay; ticket machines accept cash and LRT Cards. Check whether your particular card or wallet works, and use the staffed counter if unsure rather than assuming a mainland transport code will open the gate." },
   { id: "origin-heading", type: "heading", level: 2, text: "Start with the real Guangzhou address" },
   { id: "origin", type: "comparison", title: "Getting to the train can dominate the choice", columns: [
     { heading: "Near Guangzhou South", items: ["Rail is the clean default", "Compare both destination stations in 12306", "Keep station-entry and baggage margin"] },
@@ -32,6 +35,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Late departure from a Tianhe hotel", "Choose the route with the largest combined margin, not automatically the 24-hour port", "The trip to Guangzhou South, last useful train and Macau onward service can end before immigration hours do"],
     ["One traveller cannot manage repeated lifting", "Book a vehicle with known luggage capacity at both city ends and choose fewer curbs/changes", "Station and border proximity on a map does not show vertical circulation or queues"]
   ]},
+  { id: "day-return-heading", type: "heading", level: 2, text: "A day trip from Guangzhou: plan the return first" },
+  { id: "day-return-plan", type: "paragraph", text: "Choose your last Macau stop before booking the return train. A Cotai-first, peninsula-last day can make Hengqin entry and Gongbei exit worth comparing; finishing in Cotai may favour returning through Hengqin. After Gongbei, search return trains from Zhuhai (珠海站); after Hengqin, search from Hengqin (横琴站). Leave time to reach the port, clear immigration and board the train. A cheap outbound journey does not solve an awkward return." },
+  { id: "day-return-pace", type: "paragraph", text: "With children, older travellers or a late start, choose the peninsula or Cotai as the main outing and keep the other optional. Indoor breaks can help in hot weather, but changing districts still uses time. If your must-see list includes an evening show or several distant stops, compare an overnight stay with the pressure of catching the final useful train. Neither port choice guarantees a short queue." },
   { id: "eligibility-heading", type: "heading", level: 2, text: "Confirm that every traveller can complete both immigration checks" },
   { id: "eligibility", type: "callout", title: "This page does not decide immigration eligibility", tone: "neutral", body: "Check each passport, Macau admission basis and any mainland re-entry needed later against current official rules. The National Immigration Administration advises checking document and visa validity and provides the 12367 service line. A foreign passport holder should not copy a resident-only e-channel instruction. Keep enough time for staffed inspection." },
   { id: "recovery-heading", type: "heading", level: 2, text: "What to do when the chosen route no longer works" },
@@ -61,6 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare for the rail process without duplicating it here." }
   ]},
   { id: "sources", type: "sources", title: "Official sources", items: [
+    { label: "LRT Hengqin Line and Lotus interchange", url: "https://www.mlm.com.mo/en/route.html", publisher: "Macao Light Rapid Transit Corporation", reviewedAt: "2026-09-08" },
+    { label: "LRT single-journey tokens and payment methods", url: "https://www.mlm.com.mo/en/general_ticket.html", publisher: "Macao Light Rapid Transit Corporation", reviewedAt: "2026-09-08" },
     { label: "Hengqin Port current transport guide", url: "https://www.hengqin.gov.cn/macao_zh_hans/ztjh/qyh/mlhq/content/post_3825001.html", publisher: "Hengqin Guangdong–Macao In-Depth Cooperation Zone", reviewedAt: "2026-08-13" },
     { label: "July 2026 Hengqin passenger-hall works and live-status notice", url: "https://www.hengqin.gov.cn/macao_zh_hans/zwgk/tzgg/gg/content/post_3925145.html", publisher: "Hengqin Cooperation Zone", reviewedAt: "2026-08-13" },
     { label: "Macau passenger port operating hours", url: "https://www.customs.gov.mo/cn/notice_passengers_item4.html", publisher: "Macao Customs Service", reviewedAt: "2026-08-13" },
@@ -69,7 +77,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China Railway live journey search", url: "https://www.12306.cn/en/index.html", publisher: "China Railway 12306", reviewedAt: "2026-08-13" },
     { label: "Hero photograph: Hengqin Port exterior — Charlie fong (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Hengqin_Port2021.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" },
     { label: "Hero photograph licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0", publisher: "Creative Commons", reviewedAt: "2026-08-13" }
-  ]}
+  ]},
 ] } as const satisfies StructuredPageBody;
 
 export default body;

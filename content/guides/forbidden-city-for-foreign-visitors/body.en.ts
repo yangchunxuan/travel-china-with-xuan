@@ -63,6 +63,23 @@ export default {
       tone: "warning",
     },
     {
+      id: "family-booking-heading",
+      type: "heading",
+      level: 2,
+      text: "Booking for a family with different passports or IDs",
+    },
+    {
+      id: "family-booking-checklist",
+      type: "list",
+      items: [
+        "Match each person's full name, document type and number to the original they will carry, including a child using a foreign passport alongside a parent using a Chinese ID.",
+        "Check age on the visit date and concession eligibility separately. The current Chinese policy limits under-18 free admission to Chinese citizens, including Hong Kong, Macao and Taiwan residents, and foreign nationals holding Chinese permanent residence.",
+        "A foreign passport and school attendance alone do not establish the right ticket category. If the booking form is unclear, contact the museum before paying to confirm the category that applies to your child.",
+        "Confirm a reservation for every person, including any child admitted free. Accompanying parents need their own valid reservations; a child's concession does not grant an adult free admission or entry.",
+        "Save each confirmed date, period and booking record, and bring the matching original documents plus any required concession proof. Resolve missing reservations before the visit instead of relying on same-day tickets.",
+      ],
+    },
+    {
       id: "no-same-day",
       type: "callout",
       title: "Ignore anecdotal promises of a foreigner walk-up ticket",
@@ -198,12 +215,19 @@ export default {
       text: "The Palace Museum publishes two-hour, half-day and one-day visitor trails. The plan below is Homeground's three-hour option between the first two official route lengths: it protects the south-to-north central sequence, leaves room for one side interest and finishes at the north gate. The three hours begin after passport inspection at the Meridian Gate. They do not include travel from the hotel, Tiananmen-area security, ticket troubleshooting or transport after exit.",
     },
     {
+      id: "taihemen-route-notice",
+      type: "callout",
+      title: "Check the open route around Taihemen",
+      body: "A Palace Museum notice dated 31 July 2026 announced that the Gate of Supreme Harmony (Taihemen) would close for conservation work from 3 August, without giving a reopening date. The notice concerns Taihemen; it does not announce a closure of the Meridian Gate entrance. Check subsequent notices for your visit date and follow the signed open route around any restricted area.",
+      tone: "warning",
+    },
+    {
       id: "route-table",
       type: "table",
       caption: "A realistic three-hour route from the Meridian Gate to the north exit",
       columns: ["Elapsed time", "Route", "Decision rule"],
       rows: [
-        ["0:00–0:20", "Meridian Gate → Inner Golden Water Bridges → Gate of Supreme Harmony", "Orient yourself and keep moving; this is not yet the place for the longest stop"],
+        ["0:00–0:20", "Meridian Gate → Inner Golden Water Bridges → Taihemen area, using the open visitor route", "Follow current signs around any restricted section and adjust the timing if a detour is required"],
         ["0:20–1:05", "Hall of Supreme Harmony → Hall of Central Harmony → Hall of Preserving Harmony", "Protect this central Outer Court sequence on a first visit"],
         ["1:05–1:45", "Take one side branch at its actual junction: an east-side gallery after the Hall of Preserving Harmony, or one open palace cluster around the Gate of Heavenly Purity", "Choose one branch and return to the central route; do not save every detour for the far north"],
         ["1:45–2:15", "Gate of Heavenly Purity → Palace of Heavenly Purity → Hall of Union → Palace of Earthly Tranquillity", "Resume the Inner Court central axis after the chosen branch"],
@@ -442,6 +466,18 @@ export default {
           url: "https://www.dpm.org.cn/subject_booking/",
           publisher: "The Palace Museum",
           reviewedAt: "2026-08-22",
+        },
+        {
+          label: "Palace Museum current Chinese ticket policy and concession eligibility",
+          url: "https://www.dpm.org.cn/singles_detail/257830.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-09-08",
+        },
+        {
+          label: "Palace Museum Taihemen conservation notice, dated 31 July 2026",
+          url: "https://www.dpm.org.cn/announce_detail/379422.html",
+          publisher: "The Palace Museum",
+          reviewedAt: "2026-09-08",
         },
         {
           label: "Palace Museum opening hours, visitor trails, gates and transport",

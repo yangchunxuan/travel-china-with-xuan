@@ -23,6 +23,12 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Count the checkout, luggage, border process and new check-in. A night must create enough usable local time to repay them.",
     "If the Shenzhen night forces a second border crossing or weakens the final international departure, remove it first."
   ] },
+  { id: "one-base-heading", type: "heading", level: 2, text: "Keep one Guangzhou hotel, or sleep in Shenzhen?" },
+  { id: "one-base-choice", type: "list", ordered: false, items: [
+    "Keep the Guangzhou hotel if Shenzhen is a spontaneous day trip and avoiding another checkout matters most. Leave the main luggage there, but count the extra journey back to Guangzhou and the next morning's trip to the station if Hong Kong follows.",
+    "Sleep in Shenzhen if its visit and the onward Hong Kong leg are planned together. Guangzhou → Shenzhen, overnight → Hong Kong removes that intermediate return to Guangzhou. Compare the extra hotel and luggage move with the travel you save; choose the Shenzhen area around your actual visit and crossing.",
+    "If Hong Kong needs several days, compare staying there with repeated day trips to Hong Kong from a mainland hotel. Include border processing and transport in the budget, and verify every mainland re-entry before booking. A lower room rate alone does not establish the cheaper or easier trip."
+  ] },
   { id: "crossing-heading", type: "heading", level: 2, text: "Choose the crossing from both hotel doors" },
   { id: "crossing", type: "table", caption: "Mode and route execution belong after city order", columns: ["Factor", "What to compare", "Do not assume"], rows: [
     ["Hong Kong side", "Hotel to West Kowloon or the relevant control point", "Every Hong Kong district is equally close"],
@@ -31,6 +37,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Baggage", "Stairs, walking, security and who carries each piece", "Fast rail removes handling"],
     ["Operating information", "Current official opening, train and service notices", "Old hours or a blog screenshot remain valid"]
   ] },
+  { id: "hong-kong-return-heading", type: "heading", level: 2, text: "Returning from Hong Kong the same evening" },
+  { id: "hong-kong-return", type: "paragraph", text: "Set a time to leave your final Hong Kong stop, not just a train departure time. At West Kowloon, the return to the mainland includes ticket/identity verification, security and both immigration formalities before boarding. MTR's departure guide, checked on 8 September 2026, says identity and ticket verification stops 30 minutes before departure; that is a cutoff, not a sensible station-arrival target. MTR asks passport holders and passengers on busy days or the final train to allow extra processing time. Leave room for the trip to West Kowloon as well." },
   { id: "workflow-heading", type: "heading", level: 2, text: "Build the route in seven decisions" },
   { id: "workflow", type: "list", ordered: true, items: [
     "Fix the international arrival and departure airports before assigning nights.",
@@ -42,7 +50,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Only then search current tickets and operating notices through the named official sources."
   ] },
   { id: "example-heading", type: "heading", level: 2, text: "Planning example: Shenzhen without a hotel" },
-  { id: "example", type: "callout", tone: "neutral", title: "An example, not a prescribed itinerary", body: "A traveller has strong food and heritage priorities in Guangzhou and several full days of Hong Kong priorities, but only one Shenzhen architecture stop. A separate Shenzhen hotel adds two check-ins and moves the luggage through another stage. If current transport and storage make a focused visit workable, keeping Guangzhou and Hong Kong as the two bases may deliver the Shenzhen priority with less friction. If the Shenzhen activity needs an evening or a second district, the overnight can earn its place." },
+  { id: "example", type: "callout", tone: "neutral", title: "An example, not a prescribed itinerary", body: "A traveller has strong food and heritage priorities in Guangzhou and several full days of Hong Kong priorities, but only one Shenzhen architecture stop. A separate Shenzhen hotel adds another check-in and checkout, and moves the luggage through another stage. If current transport and storage make a focused visit workable, keeping Guangzhou and Hong Kong as the two bases may deliver the Shenzhen priority with less friction. If the Shenzhen activity needs an evening or a second district, the overnight can earn its place." },
   { id: "failure-heading", type: "heading", level: 2, text: "Border-day failures and recovery" },
   { id: "failure", type: "table", caption: "Protect the onward plan", columns: ["Failure", "Immediate response", "Design lesson"], rows: [
     ["Wrong control point for the hotel", "Recalculate using current official transport; do not race an unrealistic route", "Choose from both doors before booking"],
@@ -70,8 +78,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Compare Shenzhen stay areas", href: "/guides/shenzhen-where-to-stay-futian-luohu-nanshan/", description: "Compare Futian, Luohu and Nanshan by arrival hub, Hong Kong crossing, business addresses, attractions, evenings and luggage." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
+    { label: "West Kowloon departure checks, immigration and boarding cutoffs", url: "https://www.highspeed.mtr.com.hk/en/guide/process-departure.html", publisher: "MTR High Speed Rail", reviewedAt: "2026-09-08" },
     { label: "Cross-boundary high-speed rail trip planning", url: "https://www.highspeed.mtr.com.hk/en/latest-news/trip-planner.html", publisher: "MTR High Speed Rail", reviewedAt: "2026-08-12" },
     { label: "Hong Kong land control-point information", url: "https://www.sb.gov.hk/eng/special/bound/control.html", publisher: "Hong Kong Security Bureau", reviewedAt: "2026-08-12" }
-  ] }
+  ] },
 ]} satisfies StructuredPageBody;
 export default body;

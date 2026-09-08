@@ -9,8 +9,17 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Beijing South → subway/Airport Express → PEK", "Rail is running and transfers suit the group", "Cross-city interchange and luggage through stations", "Live route, operating window and terminal"],
     ["Authorised taxi/ride-hail → either airport", "Several people, large bags or rail is closed", "Road variability, pickup-zone confusion and toll/traffic", "Airport code, terminal, legal pickup and realistic buffer"],
   ]},
+  { id: "daxing-rail-heading", type: "heading", level: 2, text: "One rail route from Beijing South to Daxing Airport" },
+  { id: "daxing-rail-intro", type: "paragraph", text: "Use these station names on the signs and check that the lines are running for your arrival." },
+  { id: "daxing-rail-steps", type: "list", ordered: true, items: [
+    "After leaving the railway platforms at Beijing South (北京南站), follow signs for Subway Line 4. Take the southbound train towards Tiangongyuan (天宫院), pass Majiabao (马家堡), and get off at Jiaomen Xi (角门西).",
+    "Change to Line 10 and choose the direction whose next station is Caoqiao (草桥). Travel one stop and get off at Caoqiao.",
+    "Follow the interchange signs for Daxing Airport Express (大兴机场线), then board towards Daxing Airport (大兴机场). Stay on past Daxing Xincheng (大兴新城) to the airport.",
+    "At the airport, follow signs to your airline's departure area. Count interchange walks and waiting for each train separately from time on board."
+  ]},
   { id: "warning", type: "callout", title: "Do not follow the words 'Beijing Airport'", tone: "warning", body: "Show the driver PEK or PKX plus the terminal. Daxing is not a new terminal at Capital Airport, and Capital is not a terminal at Daxing. Reaching the wrong airport means another major transfer, not a small detour." },
   { id: "clock-heading", type: "heading", level: 2, text: "Work backward from the airline cutoff" },
+  { id: "three-hour-gap", type: "paragraph", text: "A three-hour gap from scheduled train arrival to flight departure is the whole connection, not three hours at the airport. Judge it against your flight's own domestic or international check-in and bag-drop deadlines, including every interchange. Allow for station exits, transfer walks, waiting and delays as well as the Airport Express ride." },
   { id: "clock", type: "list", ordered: true, items: ["Airline check-in/bag-drop and boarding deadline.", "Correct airport terminal walk and security/exit procedures.", "Road or rail journey plus extra time for delays.", "Beijing South platform-to-exit walk and pickup/transfer.", "Train-delay allowance and a decision point for abandoning the connection."] },
   { id: "groups", type: "comparison", title: "What the traveller changes", columns: [
     { heading: "Light, daytime", items: ["Rail gives a predictable structure", "Keep every transfer name", "Check last service anyway"] },
@@ -48,6 +57,10 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "April 2026 airport-bus route changes", url: "https://english.beijing.gov.cn/latest/news/202603/t20260330_4569792.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "July 2026 airport-bus update", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202607/t20260727_4792045.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "Rail links to seven stations and two airports", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
+    { label: "Line 4 southbound direction and Beijing South–Majiabao–Jiaomen Xi station sequence", url: "https://www.mtr.bj.cn/service/line/timetable/line-4", publisher: "Beijing MTR", reviewedAt: "2026-09-08" },
+    { label: "Line 10 adjacent stations: Jiaomen Xi and Caoqiao", url: "https://www.mtr.bj.cn/service/line/distable/line-10.html", publisher: "Beijing MTR", reviewedAt: "2026-09-08" },
+    { label: "Daxing Airport Express station sequence: Caoqiao, Daxing Xincheng and Daxing Airport", url: "https://www.bjmoa.cn/metroLineList.html?sline=26", publisher: "北京市轨道交通运营管理有限公司", reviewedAt: "2026-09-08" },
+    { label: "Daxing Airport Express operating information and Line 10 interchange at Caoqiao", url: "https://www.bjmoa.cn/stationList_346.html?sline=26", publisher: "北京市轨道交通运营管理有限公司", reviewedAt: "2026-09-08" },
     { label: "Hero: Beijing South by N509FZ, CC BY-SA 4.0; cropped", url: "https://commons.wikimedia.org/wiki/File:North_square_of_Beijing_South_Railway_Station_(20180722170459).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
     { label: "Hero derivative licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},

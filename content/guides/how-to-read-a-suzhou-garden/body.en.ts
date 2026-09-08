@@ -52,6 +52,27 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "half-day-garden-heading",
+      type: "heading",
+      level: 2,
+      text: "Is one garden enough for half a day?",
+    },
+    {
+      id: "half-day-garden-choice",
+      type: "paragraph",
+      text:
+        "For a half-day visit, make one garden the main event. Choose the experience that interests you, rather than the biggest or most popular name. Leave time for photographs, sitting by the water and looking back along a corridor. Add a second garden only if it offers something different that you want to explore.",
+    },
+    {
+      id: "half-day-garden-flexibility",
+      type: "list",
+      items: [
+        "Before booking, check the garden authority's current notices for your visit date, including closed areas or conservation work that may change your route.",
+        "Leave room to pause or change the next stop if the garden is crowded. Choose somewhere to sit or a quieter open section rather than trying to keep a fixed pace through a queue.",
+        "Keep the rest of the day manageable. A museum, another garden and several old streets can turn a slow visit into a sequence of deadlines. If the garden takes longer, shorten the next stop instead of rushing through the views.",
+      ],
+    },
+    {
       id: "not-flower-garden-heading",
       type: "heading",
       level: 2,
