@@ -107,6 +107,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Respect for working fields, irrigation paths, homes and village privacy."
   ]},
   { id: "links", type: "internal-links", title: "Connect Longji to the rest of the route", items: [
+        {"label":"Plan the order of Guilin, Yangshuo and Longji","href":"/guides/guilin-yangshuo-longji-route-order/"},
     { label: "Guilin to Yangshuo: train, road or river", href: "/guides/guilin-yangshuo-transport-route/", description: "Keep the separate Guilin–Yangshuo transport decision with its existing owner." },
     { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Test whether Longji creates a one-night hotel move or a fragile fixed connection." },
     { label: "China itinerary with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Design the walking, rest and vehicle plan around the least mobile traveller." },

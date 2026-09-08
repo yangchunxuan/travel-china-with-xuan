@@ -107,6 +107,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "尊重耕作中的田地、水渠小路、民居与村寨隐私。"
   ]},
   { id: "links", type: "internal-links", title: "把龙脊接回完整路线", items: [
+        {"label":"桂林、阳朔、龙脊先后顺序与住宿","href":"/zh/guides/guilin-yangshuo-longji-route-order/"},
     { label: "桂林到阳朔：火车、公路还是游船", href: "/zh/guides/guilin-yangshuo-transport-route/", description: "桂林—阳朔交通选择继续由现有页面负责。" },
     { label: "你的中国行程是不是太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "检查龙脊是否制造了一次不值的搬酒店或脆弱衔接。" },
     { label: "带父母游中国怎么规划", href: "/zh/guides/china-itinerary-with-older-parents/", description: "按全组行动最不便的人设计步行、休息与车辆。" },

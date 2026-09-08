@@ -188,6 +188,7 @@ const body = {
       "type": "internal-links",
       "title": "이 동선을 결정하는 세부 사항",
       "items": [
+        {"label":"청두·장자제 7~9일 두 지역 일정","href":"/ko/guides/chengdu-zhangjiajie-itinerary/"},
         {
           "label": "올바른 충칭 기차역 선택하기",
           "href": "/ko/guides/chongqing-railway-station-selector/"

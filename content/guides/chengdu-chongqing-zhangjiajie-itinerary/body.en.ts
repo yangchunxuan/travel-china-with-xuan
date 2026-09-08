@@ -188,6 +188,7 @@ const body = {
       "type": "internal-links",
       "title": "Plan the details that shape this route",
       "items": [
+        {"label":"Chengdu and Zhangjiajie in 7–9 days","href":"/guides/chengdu-zhangjiajie-itinerary/"},
         {
           "label": "Choose the right Chongqing railway station",
           "href": "/guides/chongqing-railway-station-selector/"

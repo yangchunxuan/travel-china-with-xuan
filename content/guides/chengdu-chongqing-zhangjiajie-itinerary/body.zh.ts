@@ -188,6 +188,7 @@ const body = {
       "type": "internal-links",
       "title": "继续安排影响这条路线的细节",
       "items": [
+        {"label":"成都与张家界7—9天双城行程","href":"/zh/guides/chengdu-zhangjiajie-itinerary/"},
         {
           "label": "选对重庆火车站",
           "href": "/zh/guides/chongqing-railway-station-selector/"
