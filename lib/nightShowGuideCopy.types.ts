@@ -27,6 +27,7 @@ export interface NightShowGuideCopy {
     sectionLabel: string;
     title: string;
     intro: string;
+    jumpLabel: string;
     rowLabels: {
       format: string;
       base: string;

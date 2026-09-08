@@ -45,6 +45,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     title: "Compare the format and route consequence.",
     intro:
       "The table deliberately excludes fixed prices and times. Those are booking facts for your exact date, not reliable evergreen advice.",
+    jumpLabel: "Jump to a show",
     rowLabels: {
       format: "Main format",
       base: "Cleanest hotel base",

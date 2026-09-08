@@ -18,9 +18,9 @@ const body = {
     {
       id: "scope-callout",
       type: "callout",
-      title: "One airport-choice page, not five new guides",
+      title: "Compare the ground transfer before booking",
       tone: "neutral",
-      body: "This article stops at the pre-booking PVG-versus-SHA decision. The detailed PVG-to-Disney route, China open-jaw strategy, final-night flight buffer, national high-speed-rail process and hotel-near-metro method remain in their existing Homeground guides. It does not create terminal, airline, hotel-list or ‘airport closest to downtown’ spin-offs.",
+      body: "Compare each workable flight together with the transfer to your hotel, railway station or Disney-area destination before booking.",
     },
     {
       id: "flight-heading",
@@ -193,7 +193,7 @@ const body = {
       type: "callout",
       title: "The hotel pin needs a street-level test",
       tone: "neutral",
-      body: "Save the exact hotel name and entrance in Chinese. Test the route at the arrival or departure hour, including the useful station exit, lift, road crossing and whether a vehicle can legally stop. Homeground's hotel-near-metro guide owns that entrance-level method; this page uses its result only to compare PVG and SHA.",
+      body: "Save the exact hotel name and entrance in Chinese. Test the route at the arrival or departure hour, including the useful station exit, lift, road crossing and whether a vehicle can legally stop.",
     },
     {
       id: "rail-heading",
@@ -242,7 +242,7 @@ const body = {
       type: "callout",
       title: "A train ticket can remove the airport choice",
       tone: "warning",
-      body: "If a fixed Shanghai Hongqiao train departs soon after the flight, SHA may be the only sensible airport—but the train must still have a safe flight-to-platform margin. If the flight lands at PVG, do not use the Airport Link's roughly 40-minute scheduled ride as proof the connection works. Nationwide 12306, passport, baggage, security and boarding details belong in Homeground's first-time high-speed-train guide.",
+      body: "If a fixed Shanghai Hongqiao train departs soon after the flight, SHA may be the only sensible airport—but the train must still have a safe flight-to-platform margin. If the flight lands at PVG, do not use the Airport Link's roughly 40-minute scheduled ride as proof the connection works. For 12306, passport, baggage, security and boarding details, use Homeground's first-time high-speed-train guide.",
     },
     {
       id: "disney-heading",
@@ -258,9 +258,9 @@ const body = {
     {
       id: "disney-callout",
       type: "callout",
-      title: "Keep the detailed Disney transfer on its own canonical page",
+      title: "Plan the Disney transfer after choosing PVG",
       tone: "neutral",
-      body: "Once PVG is selected, use Homeground's PVG-to-Shanghai-Disney guide for the Airport Link, Bus 50, taxi, luggage and exact endpoint. This comparison does not repeat those instructions or claim that choosing PVG completes the transfer.",
+      body: "Once PVG is selected, use Homeground's PVG-to-Shanghai-Disney guide for the Airport Link, Bus 50, taxi, luggage and exact endpoint.",
     },
     {
       id: "flight-pattern-heading",
@@ -297,7 +297,7 @@ const body = {
         [
           "China arrival city and departure city differ",
           "Quote the whole open-jaw journey",
-          "Gateway strategy, visa or transit conditions and backtracking belong in the open-jaw guide",
+          "Check the arrival and departure cities, visa or transit conditions and backtracking across the whole route",
         ],
       ],
     },
@@ -504,7 +504,7 @@ const body = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "Continue the part of the plan that owns the next decision",
+      title: "Continue planning your Shanghai trip",
       items: [ { label: "Shanghai destination hub", href: "/destinations/shanghai/", description: "Decide complete days, which bank to stay on and the gateway before fixing this detail." },
         {
           label: "Plan the detailed PVG-to-Shanghai-Disney transfer",

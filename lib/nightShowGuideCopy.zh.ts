@@ -46,6 +46,7 @@ export const nightShowGuideChinese: NightShowGuideCopy = {
     title: "比较演出形式，也比较它对路线的影响。",
     intro:
       "表格刻意不列固定价格和场次。这些都应按实际旅行日期核实，不适合作为长期不变的建议。",
+    jumpLabel: "查看演出详情",
     rowLabels: {
       format: "主要形式",
       base: "衔接最顺的住宿区域",

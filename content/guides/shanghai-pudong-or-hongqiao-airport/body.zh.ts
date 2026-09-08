@@ -18,9 +18,9 @@ const body = {
     {
       id: "scope-callout",
       type: "callout",
-      title: "这里只负责一次机场选择，不继续拆页",
+      title: "订票前，把地面接驳一起比较",
       tone: "neutral",
-      body: "本文止于订票前的PVG与SHA选择。浦东机场到迪士尼的详细路线、中国开口程策略、国际航班前一晚缓冲、全国高铁乘车流程和酒店真实地铁距离，继续由Homeground既有文章负责。不新增航站楼、航空公司、酒店榜单或“哪个机场离市区近”等近义页面。",
+      body: "订票前，把每个可用航班与酒店、火车站或迪士尼目的地之间的接驳一起比较。",
     },
     {
       id: "flight-heading",
@@ -193,7 +193,7 @@ const body = {
       type: "callout",
       title: "酒店位置必须落到街面入口",
       tone: "neutral",
-      body: "保存酒店的准确中文名称和入口，按抵达或出发时段检查有用的地铁出入口、电梯、过街方式和车辆能否合法停靠。Homeground的酒店近地铁指南负责这套入口级判断；本文只把判断结果用于PVG与SHA比较。",
+      body: "保存酒店的准确中文名称和入口，按抵达或出发时段检查有用的地铁出入口、电梯、过街方式和车辆能否合法停靠。",
     },
     {
       id: "rail-heading",
@@ -258,9 +258,9 @@ const body = {
     {
       id: "disney-callout",
       type: "callout",
-      title: "迪士尼详细接驳保留在既有canonical页面",
+      title: "选定浦东后，再核对迪士尼接驳",
       tone: "neutral",
-      body: "确定使用PVG后，再到Homeground浦东机场到上海迪士尼指南比较机场联络线、浦东50路、车辆、行李和真实终点。本文不重复这些步骤，也不会声称选择PVG就已经完成接驳。",
+      body: "确定使用PVG后，再到Homeground浦东机场到上海迪士尼指南比较机场联络线、浦东50路、车辆、行李和真实终点。",
     },
     {
       id: "flight-pattern-heading",
@@ -297,7 +297,7 @@ const body = {
         [
           "从一座中国城市入境、另一座离境",
           "比较完整开口程",
-          "国际门户策略、签证或过境条件和回头路由开口程指南负责",
+          "按完整路线核对入境与离境城市、签证或过境条件，以及是否需要走回头路",
         ],
       ],
     },
@@ -504,7 +504,7 @@ const body = {
     {
       id: "internal-links",
       type: "internal-links",
-      title: "继续处理真正属于下一步的问题",
+      title: "继续规划上海行程",
       items: [ { label: "上海城市总览", href: "/zh/destinations/shanghai/", description: "在敲定这类细节之前，先决定几个完整游览日、住哪一岸和走哪个门户。" },
         {
           label: "规划PVG到上海迪士尼的详细接驳",

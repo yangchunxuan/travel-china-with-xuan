@@ -45,6 +45,7 @@ export const nightShowGuideKorean: NightShowGuideCopy = {
     title: "공연 형식과 동선에 미치는 영향을 비교하세요.",
     intro:
       "이 표에는 고정된 가격과 시간을 넣지 않았습니다. 두 정보는 오래 유지되는 여행 조언이 아니라 실제 여행 날짜에 다시 확인해야 할 예약 정보입니다.",
+    jumpLabel: "공연 상세 보기",
     rowLabels: {
       format: "주요 형식",
       base: "동선이 가장 자연스러운 숙박 거점",
