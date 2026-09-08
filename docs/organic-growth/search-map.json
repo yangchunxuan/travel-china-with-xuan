@@ -419,18 +419,18 @@
     "currentRepositoryInventory": {
       "status": "available-from-audited-current-main-runtime-baseline",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "generatedGuideIdentities": 173,
+      "generatedGuideIdentities": 175,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 192,
-      "generatedGuideLocaleUrls": 517,
+      "publishedGuideIdentities": 194,
+      "generatedGuideLocaleUrls": 523,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 568,
+      "guideLocaleUrls": 574,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 201,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 593,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 203,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 599,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -442,6 +442,8 @@
         "destination-chongqing"
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
+      "repositoryIncrementRef": "coverage.publishedInventory.repositoryIncrements",
+      "currentCountsScope": "Counts include the two trilingual 2026-09-08 repository additions recorded below. baseCommit, checkedAt and liveVerificationStatus retain the historical audited baseline; the new additions do not inherit its production verification.",
       "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
       "checkedAt": "2026-08-23T13:24:58+08:00"
     },
@@ -1124,12 +1126,59 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 192,
-      "localeUrlCount": 568,
-      "generatedIdentityCount": 173,
+      "identityCount": 194,
+      "localeUrlCount": 574,
+      "generatedIdentityCount": 175,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
-      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds is the complete audited guide inventory at current main commit c0020bf after the nine-guide central release and the PR #96 authority-map release.",
+      "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
+      "repositoryIncrements": [
+        {
+          "checkedAt": "2026-09-08",
+          "sourceCommit": "6ab37d2b588a6b00fd56e00275ef02ee2ed047a1",
+          "status": "repository-content-integrated-release-verification-pending",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "chengdu-chongqing-zhangjiajie-itinerary",
+              "title": "Chengdu, Chongqing & Zhangjiajie Itinerary: 12 Days",
+              "metadataPath": "content/guides/chengdu-chongqing-zhangjiajie-itinerary/metadata.json",
+              "canonicalPath": "/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+                "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+                "/ko/guides/chengdu-chongqing-zhangjiajie-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": ["chengdu", "chongqing", "zhangjiajie"],
+              "boundary": "Twelve-day, eleven-night three-city planning example with Wulong overnight and two forest days; linked local products remain separately scoped and quoted."
+            },
+            {
+              "id": "china-10-day-itinerary",
+              "title": "China 10-Day Itinerary: Choose Your First-Trip Route",
+              "metadataPath": "content/guides/china-10-day-itinerary/metadata.json",
+              "canonicalPath": "/guides/china-10-day-itinerary/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/china-10-day-itinerary/",
+                "/zh/guides/china-10-day-itinerary/",
+                "/ko/guides/china-10-day-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": ["china", "beijing", "xian", "shanghai", "zhangjiajie"],
+              "boundary": "Ten-day, nine-night first-trip route selection; the existing Beijing-Zhangjiajie-Shanghai guide retains its distinct detailed route and longer worked example."
+            }
+          ]
+        }
+      ],
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
         "beijing-copper-pot-mutton-ordering-workflow",
@@ -1145,9 +1194,11 @@
         "border-town-fenghuang-chadong-shen-congwen",
         "changbai-mountain-hubs-to-park-gates",
         "chaozhou-ancient-city-gates-bridge-lanes-route",
+        "chengdu-chongqing-zhangjiajie-itinerary",
         "chengdu-greenway-city-ring",
         "chengdu-jiuzhaigou-transport-route",
         "chengdu-panda-base-or-dujiangyan-panda-valley",
+        "china-10-day-itinerary",
         "china-15-minute-neighbourhoods",
         "china-24-solar-terms-weather-food-daily-life",
         "china-240-hour-visa-free-transit-route-check",
