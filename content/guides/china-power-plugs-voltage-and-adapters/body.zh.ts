@@ -13,6 +13,17 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "socket-heading", type: "heading", level: 2, text: "常见 A、C、I 型，但不能赌酒店一定有某一种插座" },
   { id: "socket-copy", type: "paragraph", text: "上海市政府的出行资料列出 A、C、I 型插头，民航局访客指南则介绍了平行两扁脚和斜三脚插座。实际酒店、交通枢纽可能安装万能插座、USB 插座或不同组合。北美、日本常见的 A 型两扁脚即使能插进去，也不代表电压兼容；欧洲 C 型充电器通常较省事，但较重的插头可能在磨损的万能插座里松动；澳大利亚、新西兰的 I 型外形相近，但有接地需求的电器仍须确保接触牢固、额定规格正确。" },
+  {
+    "id": "singapore-malaysia-plug-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "从新加坡或马来西亚带英标G型插头来怎么办？"
+  },
+  {
+    "id": "singapore-malaysia-plug-answer",
+    "type": "paragraph",
+    "text": "带一个能接住三根矩形G型插脚、另一端适合中国大陆实际插座的转换头，不要依赖每家酒店都有万能插座。再看充电器本身：INPUT写100–240V、50/60Hz，就涵盖中国的供电范围，这类兼容充电器只需要转换插头形状。出发国家或看起来熟悉的插头，不能证明所有电器都兼容。需要接地的电器要保留接地，负载不超过转换头额定值，也不要硬插。"
+  },
   { id: "socket-warning", type: "callout", title: "万能插座不等于万能安全", tone: "warning", body: "如果转换头向外滑、金属脚外露，或者出现火花、异响、焦味、明显发热，应立即停用，换插座并请住宿方检查。不要掰插脚、塞纸固定，也不要叠接多个松动的转换头。" },
   { id: "label-heading", type: "heading", level: 2, text: "看懂充电器标签：别把 INPUT 和 OUTPUT 混为一谈" },
   { id: "label-list", type: "list", ordered: true, items: [

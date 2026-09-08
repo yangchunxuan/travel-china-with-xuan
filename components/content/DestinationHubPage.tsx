@@ -22,6 +22,7 @@ import type { StructuredPageBody } from "../../lib/content-system/page-body";
 import {
   projectDestinationOpening,
   projectDestinationOverview,
+  projectDestinationStayExample,
 } from "../../lib/destinationOverviewProjection";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
@@ -234,6 +235,7 @@ export function DestinationHubPage({
   const explorePath = getSearchSectionPath("explore", locale);
   const openingBody = projectDestinationOpening(body, hubId);
   const overviewSignals = projectDestinationOverview(body, hubId, locale);
+  const stayExample = projectDestinationStayExample(body, hubId);
   const ownerGuideIds = hub.supportGuideIds.slice(0, 6);
   const visibleSources = getVisibleHubSources(body);
   const date = new Intl.DateTimeFormat(
@@ -356,6 +358,15 @@ export function DestinationHubPage({
               ))}
             </div>
           </section>
+
+          {stayExample.blocks.length > 0 ? (
+            <section
+              className={destinationStyles.stayExample}
+              aria-labelledby={stayExample.blocks[0].id}
+            >
+              <PageFamilyRenderer body={stayExample} />
+            </section>
+          ) : null}
 
           <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
             <div>

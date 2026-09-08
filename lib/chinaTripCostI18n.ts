@@ -337,6 +337,26 @@ const en: ChinaTripCostCopy = {
     title: "Frequently asked questions",
     items: [
       {
+        question: "Is a private China expedition the same as a private sightseeing tour?",
+        answer:
+          "No. The word expedition does not establish the route’s difficulty, permits, remote-area logistics or emergency support. Describe what you actually need: multi-day trekking, daily distance, altitude, camping, equipment, luggage support and an exit plan. Ask for the written route, inclusions, guide capabilities, any applicable permissions and the arrangements if someone cannot continue. An ordinary fixed sightseeing tour booked privately for your party does not automatically include those services.",
+      },
+      {
+        question: "How should I budget Malaysia–China return flights?",
+        answer:
+          "Price international flights separately from the China land itinerary. Search the same dates, travellers and cabin from your actual Malaysian departure airport, then compare returning from the same Chinese city with arriving in one city and flying home from another. Use the final total in MYR for both directions, including taxes, your required baggage, seats or meals and payment fees, rather than a one-way headline fare. Check each flight’s baggage allowance, whether a connection is on one through booking or requires self-transfer, and any extra airport transfer or overnight hotel. A cheaper return airport may add a domestic journey and a lost sightseeing day. Save the quote time and fare conditions, then add the chosen flight total to land costs, insurance and a contingency; fares must be rechecked before booking.",
+      },
+      {
+        question: "How much should I tip a private tour guide in China?",
+        answer:
+          "Tipping is optional appreciation: check the gratuity and service-charge terms in your booking first. A budgeting reference for the guide is CNY 120 per day for a two-person party, or CNY 150 per day for a three- or four-person party. Each amount is the total from the whole party, not per traveller, and is a suggestion rather than a required charge or a national standard. Decide according to the service received and confirm any driver gratuity separately; the guide reference does not include the driver.",
+      },
+      {
+        question: "Is a private China tour worth it compared with a group tour?",
+        answer:
+          "A private tour is worth comparing when your party needs a particular pace, private transfers, or more attention for children, older parents or a focused interest. A shared group can be better value when its dates, hotel basis, sightseeing pace and language already suit you, especially if you want company. Compare the whole quote: party size, single supplement, transport, guide hours, admissions, meals, shopping stops and change terms. Private means the booked services are for your party; it does not automatically mean unlimited customisation or queue-free entry. A fixed private route still has a fixed scope. Pay the premium only for differences that improve your actual trip.",
+      },
+      {
         question: "Is China expensive to travel in?",
         answer:
           "A simple stay in one city and a privately arranged multi-city journey are different products, so one label is not very useful. Hotel choice, transport between cities and the amount of private support usually matter more than the country-wide average.",
@@ -400,7 +420,7 @@ const en: ChinaTripCostCopy = {
     },
   ],
   sourceNote:
-    "Listing prices and inclusions were checked on 9 August 2026. Viator and Wendy Wu figures are current “from,” low-season or promotional examples and require exact dates, traveller count and departure details. They remain in their original currencies and are not Homeground offers. Prices and availability can change.",
+    "Listing prices and inclusions were checked on 9 August 2026. Viator and Wendy Wu figures are current “from,” low-season or promotional examples and require exact dates, traveller count and departure details. They remain in their original currencies and are not Homeground offers. Prices and availability can change. Tipping references were checked on 9 September 2026.",
 };
 
 const zh: ChinaTripCostCopy = {
@@ -602,6 +622,26 @@ const zh: ChinaTripCostCopy = {
     title: "常见问题",
     items: [
       {
+        question: "中国私人探险旅行和私人观光团一样吗？",
+        answer:
+          "不一样。“探险”这个名称不能说明路线难度、许可、野外后勤或紧急支援。先讲清真正需要的是几天徒步、每天距离、海拔、露营、装备、行李支持和中途退出方案，再要求书面路线、包含项、向导能力、适用时的许可安排，以及有人无法继续时怎样处理。把普通固定景点行程包成私人团，不会自动包含这些服务。",
+      },
+      {
+        question: "马来西亚往返中国的国际机票怎样做预算？",
+        answer:
+          "国际机票与中国境内地面行程分开列预算。从你实际使用的马来西亚机场出发，用相同日期、人数和舱等查询，再比较同一中国城市往返与不同城市进出的开口程。比较马币计价的双程结算总额，计入税费、所需行李、选座或餐食及付款费用，不只看单程宣传价。逐段核对行李额度、转机是否为同一联程订单还是需要自行中转，以及额外机场交通和过夜酒店。便宜的返程机场可能增加一段中国境内交通并占用一天游览。保存查询时间与退改条件，再把选定机票总额加到地面费用、保险和预备金中；付款前重新核价。",
+      },
+      {
+        question: "在中国参加私人游，导游小费应该给多少？",
+        answer:
+          "小费是自愿表达感谢，先看订单中的小费和服务费约定。导游小费可按两人同行每团每天 120 元、三至四人同行每团每天 150 元作预算参考。这是整组客人合计，不是每人各付一次；属于建议金额，不是强制收费或全国统一标准。是否给、给多少按实际服务决定，司机部分另行确认，导游参考额不包含司机。",
+      },
+      {
+        question: "中国私人团比拼团更值得吗？",
+        answer:
+          "如果同行者需要特定节奏、专车接驳，或儿童、父母和专项兴趣需要更多照顾，私人团值得比较。若拼团的日期、酒店、游览速度和讲解语言本来就合适，尤其你也希望结识同行者，拼团可能更划算。把人数、单房差、交通、导游服务时间、门票、餐食、购物停留和修改条款放在同一张报价里比较。“私人”表示约定服务只接待你们这组，不自动等于无限定制或免排队；固定私人路线仍有固定范围。只为真正改善这趟旅行的差别多付钱。",
+      },
+      {
         question: "在中国旅行贵吗？",
         answer:
           "只住一个城市的简单行程，和有人安排的多城市私人旅行，是两种不同产品，所以很难用一个“贵”或“不贵”概括。酒店选择、城际交通和需要多少私人支持，通常比全国平均数字更有用。",
@@ -658,7 +698,7 @@ const zh: ChinaTripCostCopy = {
     { label: "文化和旅游部 · 2025 年星级饭店统计", url: SOURCE_URLS.mctHotels },
   ],
   sourceNote:
-    "在售价格与包含项核对于 2026 年 8 月 9 日。Viator 与 Wendy Wu 的数字是当时的“起”价、低季价或促销案例，实际金额要看日期、人数和出发信息。本文保留原币，不是 Homeground 的报价；价格与可售情况可能变化。",
+    "在售价格与包含项核对于 2026 年 8 月 9 日。Viator 与 Wendy Wu 的数字是当时的“起”价、低季价或促销案例，实际金额要看日期、人数和出发信息。本文保留原币，不是 Homeground 的报价；价格与可售情况可能变化。 小费参考核对于 2026 年 9 月 9 日。",
 };
 
 const ko: ChinaTripCostCopy = {
@@ -860,6 +900,26 @@ const ko: ChinaTripCostCopy = {
     title: "자주 묻는 질문",
     items: [
       {
+        question: "중국 프라이빗 탐험 여행은 프라이빗 관광 투어와 같은가요?",
+        answer:
+          "아닙니다. 탐험이라는 이름만으로 난도, 허가, 외진 지역의 물류나 비상 지원을 알 수는 없습니다. 여러 날의 트레킹, 하루 이동 거리, 고도, 캠핑, 장비, 짐 운반과 중도 이탈 계획 등 실제 필요를 설명하세요. 서면 경로와 포함 항목, 가이드 역량, 해당하는 허가 절차, 누군가 계속할 수 없을 때의 대응을 요청해야 합니다. 일반적인 고정 관광 일정을 일행만의 프라이빗 투어로 예약한다고 이런 서비스가 자동으로 포함되지는 않습니다.",
+      },
+      {
+        question: "말레이시아와 중국 왕복 항공권 예산은 어떻게 잡나요?",
+        answer:
+          "국제선 항공권과 중국 현지 일정 비용을 따로 계산하세요. 실제 이용할 말레이시아 출발 공항에서 같은 날짜, 인원, 좌석 등급으로 조회한 뒤 중국의 같은 도시로 왕복하는 방법과 서로 다른 도시로 입출국하는 방법을 비교합니다. 편도 광고 가격 대신 세금, 필요한 수하물, 좌석이나 기내식, 결제 수수료를 포함한 왕복 최종 금액을 MYR로 비교하세요. 구간별 수하물 한도, 하나의 연결 예약인지 직접 환승해야 하는지, 추가 공항 교통비와 환승 숙박도 확인합니다. 저렴한 귀국 공항 때문에 중국 국내 이동과 관광 하루가 더 필요할 수 있습니다. 조회 시각과 변경·환불 조건을 저장한 다음 선택한 항공료를 현지 비용, 보험과 예비비에 더하고, 결제 전에 다시 조회하세요.",
+      },
+      {
+        question: "중국 프라이빗 투어 가이드에게 팁을 얼마나 주면 되나요?",
+        answer:
+          "팁은 자발적인 감사 표시입니다. 먼저 예약의 팁과 서비스 요금 조건을 확인하세요. 가이드 팁 예산의 참고액은 2인 일행 하루 총 CNY 120, 3~4인 일행 하루 총 CNY 150입니다. 한 명당 금액이 아니라 일행 전체가 합쳐 주는 금액이며, 의무 요금이나 전국 공통 기준이 아닌 제안입니다. 실제 서비스에 따라 결정하고 기사 팁은 별도로 확인하세요. 가이드 참고액에 기사 팁은 포함되지 않습니다.",
+      },
+      {
+        question: "중국 프라이빗 투어는 단체 합류 투어보다 값어치가 있나요?",
+        answer:
+          "일행에게 특정 속도, 전용 이동, 어린이·부모님·특정 관심사에 대한 추가 배려가 필요하면 프라이빗 투어를 비교할 만합니다. 합류 투어의 날짜, 호텔, 관광 속도와 안내 언어가 이미 맞고 다른 여행자와 어울리고 싶다면 합류 투어가 더 나은 선택일 수 있습니다. 인원, 1인실 추가금, 교통, 가이드 서비스 시간, 입장료, 식사, 쇼핑 방문과 변경 조건까지 전체 견적을 비교하세요. 프라이빗은 약정 서비스를 일행끼리 이용한다는 뜻이며 무제한 맞춤 변경이나 줄 없는 입장을 뜻하지 않습니다. 고정 프라이빗 코스에는 정해진 범위가 있습니다. 실제 여행을 개선하는 차이에만 추가 비용을 쓰세요.",
+      },
+      {
         question: "중국 여행은 비싼가요?",
         answer:
           "한 도시에 머무는 단순한 여행과 여러 도시를 프라이빗하게 연결하는 여행은 서로 다른 상품이어서 ‘비싸다’ 한마디로 정리하기 어렵습니다. 숙소 선택, 도시 간 이동과 필요한 지원 수준이 전국 평균보다 더 중요한 기준입니다.",
@@ -916,7 +976,7 @@ const ko: ChinaTripCostCopy = {
     { label: "문화여유부 · 2025년 별등급 호텔 통계", url: SOURCE_URLS.mctHotels },
   ],
   sourceNote:
-    "판매 가격과 포함 항목은 2026년 8월 9일에 확인했습니다. Viator와 Wendy Wu 금액은 당시의 ‘최저’, 비수기 또는 프로모션 사례이며 실제 금액은 날짜, 인원과 출발 정보에 따라 달라집니다. 원화폐로 표시했고 Homeground 견적이 아닙니다. 가격과 예약 가능 여부는 바뀔 수 있습니다.",
+    "판매 가격과 포함 항목은 2026년 8월 9일에 확인했습니다. Viator와 Wendy Wu 금액은 당시의 ‘최저’, 비수기 또는 프로모션 사례이며 실제 금액은 날짜, 인원과 출발 정보에 따라 달라집니다. 원화폐로 표시했고 Homeground 견적이 아닙니다. 가격과 예약 가능 여부는 바뀔 수 있습니다. 팁 참고액은 2026년 9월 9일에 확인했습니다.",
 };
 
 const copy: Record<HomegroundLocale, ChinaTripCostCopy> = { en, zh, ko };

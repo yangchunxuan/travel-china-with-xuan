@@ -126,6 +126,38 @@ const body: StructuredPageBody = {
         "There is no evidence-based reason to promise that Alipay always works better than Weixin Pay, or the reverse, for every nationality and card. Make the app that binds and completes a test payment your primary wallet. If both work, keep both available; they are useful backups for each other, but neither removes the need for a physical card and cash.",
     },
     {
+      id: "google-wallet-heading",
+      type: "heading",
+      level: 2,
+      text: "Can I use Google Pay or Google Wallet in mainland China?"
+    },
+    {
+      id: "google-wallet-answer",
+      type: "paragraph",
+      text: "Prepare Alipay or Weixin Pay, a physical card and RMB cash for daily payments. At the 9 September 2026 check, Google’s supported bank-and-card market list did not include mainland China; Hong Kong and Macao were listed separately. A card already set up in another supported market is a different case: Google’s tap-to-pay instructions require a supported payment method, NFC and a compatible contactless terminal. Confirm the merchant’s accepted card network and your issuer’s support before relying on that transaction."
+    },
+    {
+      id: "google-wallet-qr-boundary",
+      type: "paragraph",
+      text: "An Alipay or Weixin merchant QR code alone does not establish Google Pay acceptance. Likewise, a Google Pay button on a participating website or app applies to that checkout, not automatically to payments at shops during the trip. Keep the physical card available if a contactless transaction fails."
+    },
+    {
+      id: "wechat-top-up-heading",
+      type: "heading",
+      level: 2,
+      text: "Do I need to top up my WeChat wallet before paying with a foreign card?"
+    },
+    {
+      id: "wechat-top-up-answer",
+      type: "paragraph",
+      text: "No top-up is needed for an eligible merchant purchase charged to your linked international card. Select that card on the payment screen; a zero Weixin “Balance” (零钱) is separate from the card’s available funds. Topping up moves money into the wallet balance and is a different service."
+    },
+    {
+      id: "wechat-top-up-eligibility",
+      type: "paragraph",
+      text: "Tenpay’s 30 March 2026 agreement specifically restricts balance, top-up and transfer functions when a user has only linked international cards and has not completed real-name verification. Do not extend that condition to every verified account, or assume verification unlocks every feature. Follow the options and eligibility shown in your own account. Alipay similarly limits its international-card route to supported purchases rather than person-to-person transfers. For a failed merchant payment, use the other prepared wallet, physical card or cash instead of making a personal transfer your fallback."
+    },
+    {
       id: "binding-failures",
       type: "heading",
       level: 2,
@@ -408,8 +440,32 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "Official sources checked on 10 August 2026",
+      title: "Official sources and individual review dates",
       items: [
+        {
+          label: "Google Wallet — supported bank and card markets",
+          url: "https://support.google.com/wallet/answer/12059326?co=GENIE.CountryCode%3DHK&hl=en-GB",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Wallet — requirements for contactless payments",
+          url: "https://support.google.com/wallet/answer/12060043?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Pay — country and feature availability",
+          url: "https://support.google.com/googlepay/answer/12429287?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Weixin Pay User Service Agreement, 30 March 2026 — international-card appendix",
+          url: "https://posts.tenpay.com/posts/cbddf0af6088c4080432b952163ea238.html",
+          publisher: "Tenpay / Weixin Pay",
+          reviewedAt: "2026-09-09"
+        },
         {
           label: "State Council of China — Guide to Working and Living in China: mobile payment, cash, exchange, hotels and transport",
           url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",

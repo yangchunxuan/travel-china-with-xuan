@@ -193,6 +193,54 @@ const body = {
       text: "Two urban nights work for a concentrated stop in a wider route, not a representative municipality trip. Three nights are the best minimum for most first visitors. Adding Wulong changes the trip into city plus landscape: station access, local transfer, shuttles, weather and walking still make a full operational day. Adding Dazu creates a culture-and-heritage day. Build that excursion from transport and opening information verified for the travel date; this Hub does not rely on proposed future infrastructure."
     },
     {
+      "id": "two-complete-days-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "A first visit across two complete days"
+    },
+    {
+      "id": "two-complete-days-context",
+      "type": "paragraph",
+      "text": "Use this as a city-only plan with a Jiefangbei hotel base and two days free of arrival or departure transfers. Day 1 stays in Yuzhong; Day 2 crosses to one Nan’an cluster. The meals and rest stops are part of the plan, so Wulong, Dazu and a second cross-city photo circuit need another day."
+    },
+    {
+      "id": "two-complete-days-plan",
+      "type": "table",
+      "caption": "A first visit across two complete days",
+      "columns": [
+        "Part of the day",
+        "Day 1: Yuzhong, finishing in Jiefangbei",
+        "Day 2: Danzishi and Nanbin Road, finishing in Nan’an"
+      ],
+      "rows": [
+        [
+          "Morning",
+          "Start at the Liberation Monument in Jiefangbei. Continue to Shibati’s upper entrance and explore downhill towards the lower part of the old street. Arrange a car from the lower area if returning uphill would be tiring.",
+          "Start at the upper entrance of Danzishi Old Street after a car transfer from your hotel. Follow the courtyards and lanes downhill towards the Nanbin Road side; choose this direction before setting the drop-off point."
+        ],
+        [
+          "Lunch and early afternoon",
+          "Eat near Shibati or return by car to Jiefangbei for lunch and a hotel rest. In hot or wet weather, make this a proper indoor break.",
+          "Lunch in the Danzishi area, then visit Chongqing Planning Exhibition Gallery at Danzishi Square if it is open. Its city and landscape displays add context to the skyline; check the day’s admission arrangements before leaving the hotel."
+        ],
+        [
+          "Late afternoon",
+          "Take a car to Chaotianmen for the river confluence and a short waterfront visit. Choose an actual entrance or road pickup point with the driver; a pin at the tip of the peninsula is not a vehicle meeting point.",
+          "Keep the rest of the afternoon on the Nan’an bank: a short Nanbin Road waterfront walk followed by a seated café break. If you want a higher viewpoint within Danzishi, make the extra uphill section an explicit choice."
+        ],
+        [
+          "Evening and finish",
+          "Have dinner, then visit Hongyadong’s exterior for one night view. Confirm whether your entrance and exit are on the upper or river-road level. Return to Jiefangbei by car from a permitted pickup point; if crowds close the approach, finish with dinner instead of waiting for a specific photo.",
+          "Have dinner overlooking the river in the Danzishi/Nanbin Road area. Finish on this same bank at a pre-agreed roadside pickup point and return to the hotel by car. A river cruise or Nanshan detour is not needed to complete the day."
+        ]
+      ]
+    },
+    {
+      "id": "two-complete-days-terrain",
+      "type": "paragraph",
+      "text": "Downhill saves climbing but still means steps and knee strain. If stairs are difficult, skip Shibati’s full descent and Danzishi’s full hill route: use short visits on a confirmed accessible level, cars between areas and seated river views. Do not assume a lift shown on a map is open or connects your two entrances. On Monday, when the planning gallery is normally closed, keep Danzishi, a longer lunch and the waterfront; in persistent rain or extreme heat, shorten the outdoor sections. Swap the two days if that gives the gallery an open day."
+    },
+    {
       id: "heading-017",
       type: "heading",
       level: 2,

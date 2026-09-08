@@ -31,3 +31,8 @@ Completed against the final assigned files: the existing metadata validator, `as
 The scoped Chinese editorial-font check passed 475 distinct Han characters; both Korean fonts passed 355 distinct Hangul characters. Initial missing glyphs were resolved with natural copy changes (`疲劳`, `前一天`, `기대감`), without changing facts or fonts. Day/night totals were independently read through in all three languages.
 
 No shared file or registry generation, whole-site build, commit or release was performed by this subtask. Rendered visual review, shared integration and live verification remain with the root task.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Added localized direct links to the existing Badaling execution guide, and (where Xi’an is included) Terracotta Warriors booking/transport guide. This exposes existing practical answers at the itinerary instead of requiring a separate search. No new attraction availability, price or inclusion claim.

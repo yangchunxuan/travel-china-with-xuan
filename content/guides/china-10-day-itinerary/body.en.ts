@@ -8,6 +8,21 @@ const body = {
       "type": "lead",
       "text": "For a first 10-day China trip, start with Beijing, Xi’an and Shanghai if imperial history, the Terracotta Warriors and a modern city finish are your priorities. Choose two places if you want fewer hotel moves or more time outdoors. The useful decision is what to leave out: ten days can hold a satisfying route, but every extra city takes time from the places you came to see."
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "Plan these sightseeing days",
+    "items": [
+      {
+        "label": "Badaling: transport and the right entrance",
+        "href": "/guides/beijing-to-badaling-great-wall-transfer/"
+      },
+      {
+        "label": "Terracotta Warriors: tickets and getting there",
+        "href": "/guides/terracotta-warriors-without-tour/"
+      }
+    ]
+  },
     {
       "id": "choose-heading",
       "type": "heading",

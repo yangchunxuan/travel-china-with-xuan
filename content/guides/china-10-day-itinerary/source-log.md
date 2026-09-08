@@ -28,3 +28,8 @@ All three public pages were independently opened in this task. No direct quotati
 ## Refresh triggers
 
 Recheck official visitor rules when they change or before a booking is confirmed. Recheck product lengths, service boundaries and linked route recommendations when those pages change. This review date is not a guarantee of future ticket availability.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Added localized direct links to the existing Badaling execution guide, and (where Xi’an is included) Terracotta Warriors booking/transport guide. This exposes existing practical answers at the itinerary instead of requiring a separate search. No new attraction availability, price or inclusion claim.

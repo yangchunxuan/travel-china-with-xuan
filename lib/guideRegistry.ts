@@ -133,7 +133,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1600,
     imageHeight: 954,
     datePublished: "2026-07-20",
-    dateModified: "2026-07-22",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {
@@ -424,7 +424,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1536,
     imageHeight: 1024,
     datePublished: "2026-07-22",
-    dateModified: "2026-07-22",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-07-22",
     locales: {
       en: {
@@ -715,7 +715,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1200,
     imageHeight: 800,
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-07-24",
     locales: {
       en: {
@@ -1124,7 +1124,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-08-05",
-    dateModified: "2026-09-07",
+    dateModified: "2026-09-09",
     sourceReviewedDate: "2026-08-09",
     locales: {
       en: {

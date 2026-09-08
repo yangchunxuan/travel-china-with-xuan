@@ -12,3 +12,8 @@ Official context: https://english.beijing.gov.cn/travellinginbeijing/citytours/2
 Expanded the building-type decision without entering the Beijing-area canonical. Added assigned-room, curb-to-room, noise, season, mobility, late-arrival, registration and failure-recovery tests. The official sources establish siheyuan/hutong context and the hotel/non-hotel registration boundary; they do not certify any property's heritage or comfort.
 
 Image: original editorial diagram, `public/images/guides/beijing-courtyard-hotel-or-modern-hotel/hero-1600.webp`; no real-property likeness, people or logos; 1600 × 1000 WebP; final SHA-256 `a526014fc2e828a9dd70d3bf2cb75f3602fa91e8dc22586514cba52f2abca2dc`.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Answered the existing corner-vs-standard query with an exact-category comparison of usable area, window direction/privacy, blackout and noise. Conditional evaluation criteria, not a claim every corner room has a particular benefit or price.

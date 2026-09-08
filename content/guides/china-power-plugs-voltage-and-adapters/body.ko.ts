@@ -13,6 +13,17 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "socket-heading", type: "heading", level: 2, text: "A·C·I형이 흔하지만 특정 호텔 소켓에 기대지는 마세요" },
   { id: "socket-copy", type: "paragraph", text: "상하이시 안내는 A·C·I형 플러그를 열거하고, 중국민용항공국 방문자 안내는 평행한 두 개의 납작 핀과 비스듬한 세 핀 소켓을 설명합니다. 실제 호텔과 교통시설에는 멀티 소켓, USB 소켓 또는 서로 다른 조합이 설치될 수 있습니다. 북미·일본식 A형이 물리적으로 들어가도 전압 호환을 뜻하지 않습니다. 유럽식 C형 충전기는 비교적 간단하지만 무거운 플러그가 낡은 멀티 소켓에서 빠질 수 있습니다. 호주·뉴질랜드식 I형도 모양이 비슷할 뿐, 접지가 필요한 기기는 접촉과 정격까지 맞아야 합니다." },
+  {
+    "id": "singapore-malaysia-plug-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "싱가포르·말레이시아에서 Type G 플러그를 가져오나요?"
+  },
+  {
+    "id": "singapore-malaysia-plug-answer",
+    "type": "paragraph",
+    "text": "직사각형 핀 세 개가 있는 Type G 플러그를 받고 중국 본토의 실제 콘센트에 맞는 어댑터를 준비하세요. 모든 호텔에 멀티 콘센트가 있다고 기대하지 마세요. 충전기 INPUT이 100–240V, 50/60Hz이면 중국 전원을 지원하므로 호환 충전기에는 모양 변환만 필요합니다. 출발 국가나 익숙한 플러그 모양만으로 모든 기기의 호환성을 판단하지 마세요. 필요한 접지를 유지하고 어댑터 정격을 넘지 않으며 핀을 억지로 끼우지 마세요."
+  },
   { id: "socket-warning", type: "callout", title: "멀티 소켓이 모든 조합의 안전을 보장하지는 않습니다", tone: "warning", body: "어댑터가 빠지거나 금속 핀이 드러나고, 불꽃·지직거림·탄 냄새·비정상적인 열이 생기면 즉시 사용을 멈추세요. 다른 소켓으로 옮기고 숙소에 점검을 요청하세요. 핀을 구부리거나 종이를 끼우거나 헐거운 어댑터를 여러 개 겹치면 안 됩니다." },
   { id: "label-heading", type: "heading", level: 2, text: "INPUT과 OUTPUT을 혼동하지 않고 충전기 표시 읽기" },
   { id: "label-list", type: "list", ordered: true, items: [

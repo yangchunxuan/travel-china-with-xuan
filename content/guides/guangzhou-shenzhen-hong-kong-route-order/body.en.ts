@@ -38,7 +38,22 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Operating information", "Current official opening, train and service notices", "Old hours or a blog screenshot remain valid"]
   ] },
   { id: "hong-kong-return-heading", type: "heading", level: 2, text: "Returning from Hong Kong the same evening" },
-  { id: "hong-kong-return", type: "paragraph", text: "Set a time to leave your final Hong Kong stop, not just a train departure time. At West Kowloon, the return to the mainland includes ticket/identity verification, security and both immigration formalities before boarding. MTR's departure guide, checked on 8 September 2026, says identity and ticket verification stops 30 minutes before departure; that is a cutoff, not a sensible station-arrival target. MTR asks passport holders and passengers on busy days or the final train to allow extra processing time. Leave room for the trip to West Kowloon as well." },
+  {
+    "id": "hong-kong-return",
+    "type": "paragraph",
+    "text": "At West Kowloon, allow for document checks, security and both immigration controls before boarding. MTR gives a usual processing time of about 30–45 minutes; passport holders and busy-day or last-train passengers need extra time. Procedures can start 90 minutes before departure. Identity and ticket checks close 30 minutes before departure, and boarding gates close five minutes before. These are different deadlines: add your journey to the station and a queue buffer."
+  },
+  {
+    "id": "hong-kong-return-official",
+    "type": "sources",
+    "title": "West Kowloon departure guide",
+    "items": [
+      {
+        "label": "MTR: departure procedures and deadlines",
+        "url": "https://www.highspeed.mtr.com.hk/en/guide/process-departure.html"
+      }
+    ]
+  },
   { id: "workflow-heading", type: "heading", level: 2, text: "Build the route in seven decisions" },
   { id: "workflow", type: "list", ordered: true, items: [
     "Fix the international arrival and departure airports before assigning nights.",

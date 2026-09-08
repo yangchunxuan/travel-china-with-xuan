@@ -75,6 +75,17 @@ const body = {
       "type": "paragraph",
       "text": "Arrange the journey both ways and check which entrance and optional uphill transport suit your group. Before paying, check whether your booking covers admission alone or also transport and a cable car. Return to Beijing for dinner and pack for the move tomorrow. Sleep in Beijing, night 3 of 3."
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "Plan these sightseeing days",
+    "items": [
+      {
+        "label": "Badaling: transport and the right entrance",
+        "href": "/guides/beijing-to-badaling-great-wall-transfer/"
+      }
+    ]
+  },
     {
       "id": "day-4-heading",
       "type": "heading",

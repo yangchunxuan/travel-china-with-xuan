@@ -6,7 +6,7 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "在广州白云国际机场，T2 还是 T3 不是看地图后由旅客任选，而是要看具体航班当日安排在哪个航站楼。先按航班号和日期确认实际承运航司与最新航站楼信息，再从真正服务该航站楼的地铁、城际铁路、公路接送和楼间交通中选择。",
+      text: "广州白云机场 T3 就是广州白云国际机场（机场代码 CAN）的 3 号航站楼，与 T2 属于同一机场。具体航班决定你该去哪个航站楼。先按航班号和日期核对，再选择服务该航站楼的地铁、城际、公路接送或楼间交通。",
     },
     {
       id: "current-state",
@@ -82,6 +82,11 @@ const body = {
         "出行当天再到实际承运航司或白云机场航班动态页面复核一次。",
         "确认后才搜索前往 T2 或 T3 的路线，并保存航站楼中文名称，供司机或地图应用识别。",
       ],
+    },
+    {
+      "id": "airline-directory-example",
+      "type": "paragraph",
+      "text": "一个有日期边界的例子：2026 年 9 月 9 日复核的机场航司目录将九元航空（9 Air，AQ）列在 T2。可以先按实际承运航司及代码在目录查询，再核对具体航班和日期；目录是查询起点，不能代替单个航班的航站楼确认。"
     },
     {
       id: "codeshare-warning",
@@ -263,7 +268,7 @@ const body = {
       id: "wrong-terminal-heading",
       type: "heading",
       level: 2,
-      text: "到了错误航站楼，先核实，再补救",
+      text: "白云机场 T2 到 T3、T3 到 T2 怎么走？",
     },
     {
       id: "wrong-terminal-copy",
@@ -285,7 +290,51 @@ const body = {
     {
       id: "terminal-transfer-copy",
       type: "paragraph",
-      text: "白云机场当前航站楼指南列有往返 T2、T3 的 24 小时安检前公共区域跨航站楼接驳巴士，停靠各航站楼综合交通中心，实际发车由现场调度。广东城际在运营时段内，也可通过白云机场北与白云机场东之间的一站行程换楼。这两种方式都不同于高增—T3 空港2线支线。但“城际只坐一站”仍未包含找站、候车、购票或验票，以及抵达后继续走到下一家航司柜台的时间。",
+      text: "2026 年 9 月 9 日复核的机场“往返航站楼”页面，列有 T2 东客运站—T3 东客运站循环运行的 24 小时航站楼穿梭巴士。按下表找到卡位，上车前向工作人员确认目的航站楼。这是安检前公共区域的换楼方式：国际到达旅客须具备进入公共区域的条件，并先完成适用的入境和行李手续；航司安排的联程中转可能采用不同流程。",
+    },
+    {
+      "id": "terminal-shuttle-stops",
+      "type": "table",
+      "caption": "T2 ↔ T3 穿梭巴士：保存对应方向的乘车点",
+      "columns": [
+        "方向",
+        "在哪里上车",
+        "下车后去哪里"
+      ],
+      "rows": [
+        [
+          "T2 → T3",
+          "T2 航站楼交通中心东客运站，30 号卡位；寻找“航站楼穿梭巴士”标识。",
+          "乘车到 T3 东客运站，再按航站楼标识前往下一程航司的值机或中转柜台。"
+        ],
+        [
+          "T3 → T2",
+          "T3 航站楼交通中心旅游巴士乘车点（东客运站），60 号卡位。",
+          "乘车到 T2 东客运站，再寻找下一程航司柜台；航班信息和证件随身携带。"
+        ]
+      ]
+    },
+    {
+      "id": "terminal-shuttle-timing",
+      "type": "paragraph",
+      "text": "同一官方页面还列有 T2 的 21 号卡位、T3 的 71 号卡位，但它们属于跨区取车接驳专线，不是上表的 T2—T3 航站楼穿梭巴士。官网标示穿梭巴士 24 小时运行，并注明实际运营以现场为准；该页面没有给出固定的完整换楼耗时。应分别留出到卡位、候车、乘车、走到下一家柜台，以及仍需办理的值机和安检时间。"
+    },
+    {
+      "id": "terminal-intercity-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "T2 和 T3 之间能坐火车吗？"
+    },
+    {
+      "id": "terminal-intercity-steps",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "T2 → T3：按广东城际标识找到白云机场北站，目的站选择白云机场东。T3 → T2：将这两个站名反过来选择。",
+        "购票或进站前确认下一班车确实停靠目的站。把购票所用证件放在便于取用的位置；自助设备不支持你的证件或支付方式时，向人工窗口询问。",
+        "到白云机场东后，从 T3 交通中心按标识走向航站楼；到白云机场北后，按标识走向 T2。这里坐的是城际铁路，不是地铁 3 号线，地铁机场北不能直接把你送到 T3。",
+        "城际只适合在运营时段内使用，要把进出站步行和候车一起与巴士比较；下一班车不合适或铁路已收车时，返回正确的穿梭巴士卡位，或向机场工作人员询问替代方式。"
+      ]
     },
     {
       id: "airside-callout",
@@ -438,9 +487,9 @@ const body = {
     {
       id: "fact-check-box",
       type: "callout",
-      title: "动态信息核查日期：2026 年 8 月 11 日",
+      title: "复核日期：8 月 11 日交通总览；9 月 9 日穿梭巴士与航司目录",
       tone: "neutral",
-      body: "截至本次核查，T1 客运业务、地铁机场南站和城际白云机场南站均处于暂停状态；T2 可由地铁和城际直接抵达；T3 可由城际直接抵达，但尚无地铁直达。机场公布的安检前公共区域 T2—T3 跨航站楼接驳巴士为 24 小时服务；高增—T3 空港2线支线则配合地铁运营，并非 24 小时服务。航站楼分配、代码共享、铁路时刻、两类巴士的站位与运营安排、车辆上客区、行李处理和边检流程，仍须按出行日期复核。白云机场公布的 24 小时客服电话为 020-96158；中国境内拨 020-96158，境外拨 +86 20 96158（按当地运营商国际拨号方式）。",
+      body: "截至 8 月 11 日交通总览核查，T1 客运业务、地铁机场南站和城际白云机场南站均处于暂停状态；T2 可由地铁和城际直接抵达；T3 可由城际直接抵达，但尚无地铁直达。机场公布的安检前公共区域 T2—T3 跨航站楼接驳巴士为 24 小时服务；高增—T3 空港2线支线则配合地铁运营，并非 24 小时服务。航站楼分配、代码共享、铁路时刻、两类巴士的站位与运营安排、车辆上客区、行李处理和边检流程，仍须按出行日期复核。白云机场公布的 24 小时客服电话为 020-96158；中国境内拨 020-96158，境外拨 +86 20 96158（按当地运营商国际拨号方式）。",
     },
     {
       id: "help-callout",
@@ -495,27 +544,27 @@ const body = {
         },
         {
           label: "白云机场当前航站楼间交通指南",
-          url: "https://www.baiyunairport.com/byairport-web/guide/terminals?urlKey=terminals",
+          url: "https://www.baiyunairport.com/guide/terminals?urlKey=terminals",
           publisher: "广州白云国际机场",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "白云机场当前地面交通指南",
-          url: "https://www.baiyunairport.com/byairport-web/traffic/index?urlKey=to-from-airport",
+          url: "https://www.baiyunairport.com/traffic/tfa?urlKey=to-from-airport",
           publisher: "广州白云国际机场",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "白云机场当前航空公司及所在航站楼目录",
-          url: "https://www.baiyunairport.com/byairport-web/flight/airlines?urlKey=airlines",
+          url: "https://www.baiyunairport.com/flight/airline?type=&urlKey=",
           publisher: "广州白云国际机场",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "白云机场当日航班查询",
-          url: "https://www.baiyunairport.com/byairport-web/index",
+          url: "https://www.baiyunairport.com/",
           publisher: "广州白云国际机场",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "2026 年 2 月 T3 与城际白云机场东站交通说明——其中 T1、地铁机场南相关安排已被 5 月官方通知取代",

@@ -6,7 +6,7 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "You do not choose between T2 and T3 at Guangzhou Baiyun International Airport: your exact flight determines the terminal. Confirm it first, then choose the metro, intercity railway, road transfer or terminal connection that serves it.",
+      text: "Guangzhou Baiyun Airport Terminal 3 (T3) is part of Guangzhou Baiyun International Airport, airport code CAN, alongside T2. Your exact flight determines which terminal to use. Confirm it first, then choose the metro, intercity railway, road transfer or terminal connection that serves it.",
     },
     {
       id: "current-state",
@@ -82,6 +82,11 @@ const body = {
         "Recheck the flight on the airline or Baiyun Airport flight-status page on the travel day.",
         "Only then search the route to T2 or T3 and save the terminal name in Chinese for the driver or map app.",
       ],
+    },
+    {
+      "id": "airline-directory-example",
+      "type": "paragraph",
+      "text": "As a dated example, the airport’s directory checked September 9, 2026 lists 9 Air (九元航空, AQ) at T2. Search the operating airline and its code in that directory, then verify the particular flight and date; the directory is a starting point, not a substitute for a flight-specific terminal check."
     },
     {
       id: "codeshare-warning",
@@ -263,7 +268,7 @@ const body = {
       id: "wrong-terminal-heading",
       type: "heading",
       level: 2,
-      text: "If you reach the wrong terminal, recover before you rush",
+      text: "How to get from Guangzhou Airport T2 to T3—or T3 to T2",
     },
     {
       id: "wrong-terminal-copy",
@@ -285,7 +290,51 @@ const body = {
     {
       id: "terminal-transfer-copy",
       type: "paragraph",
-      text: "Baiyun Airport's current terminal guide lists a 24-hour landside inter-terminal shuttle between T2 and T3, with stops in each terminal's transport centre and actual departure times managed on site. Guangdong Intercity provides a rail alternative between Baiyun Airport North and Baiyun Airport East during its operating hours. The short rail ride does not include finding the station, waiting, entering and leaving the fare gates, or reaching the next airline counter.",
+      text: "The airport’s terminal-to-terminal guide, checked September 9, 2026, lists a 24-hour shuttle on the T2 East Coach Station–T3 East Coach Station loop. Use the boarding points below and confirm the destination with staff before boarding. This is a landside terminal transfer: arriving international passengers must be able to enter the public area and complete the applicable entry and baggage steps first. Airline-managed connections may follow a different process.",
+    },
+    {
+      "id": "terminal-shuttle-stops",
+      "type": "table",
+      "caption": "T2 ↔ T3 shuttle boarding points: save the Chinese names",
+      "columns": [
+        "Direction",
+        "Where to board",
+        "Where to go next"
+      ],
+      "rows": [
+        [
+          "T2 → T3",
+          "T2 transport centre, East Coach Station (东客运站), Bay 30 (30号卡位). Follow signs for 航站楼穿梭巴士.",
+          "Take the shuttle to T3 East Coach Station, then follow the terminal signs to the onward airline’s check-in or transfer desk."
+        ],
+        [
+          "T3 → T2",
+          "T3 transport centre, tourist-bus boarding area in the East Coach Station (旅游巴士乘车点／东客运站), Bay 60 (60号卡位).",
+          "Take the shuttle to T2 East Coach Station, then locate the onward airline’s counter. Keep your flight details and documents with you."
+        ]
+      ]
+    },
+    {
+      "id": "terminal-shuttle-timing",
+      "type": "paragraph",
+      "text": "The same official page lists separate car-park retrieval buses at T2 Bay 21 and T3 Bay 71. Those are not the T2–T3 terminal shuttle above. The airport lists the terminal shuttle as operating 24 hours, with actual operation subject to on-site arrangements; it does not publish a fixed end-to-end transfer time on that page. Leave time to reach the bay, wait, ride and walk to the next counter, as well as any check-in and security still needed."
+    },
+    {
+      "id": "terminal-intercity-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "Can I use a train between T2 and T3?"
+    },
+    {
+      "id": "terminal-intercity-steps",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "For T2 → T3, follow Guangdong Intercity signs to Baiyun Airport North (白云机场北), then select Baiyun Airport East (白云机场东) as the destination. For T3 → T2, reverse that station pair.",
+        "Check the next departure actually stops at your destination before buying or entering the platform. Keep the travel document required for your ticket accessible; ask the staffed counter if your document or payment is not accepted by the self-service option.",
+        "At Baiyun Airport East, follow signs from the T3 transport centre to the terminal; at Baiyun Airport North, follow signs to T2. This is the intercity railway, not Metro Line 3: Metro Airport North cannot take you directly to T3.",
+        "Use rail only during its operating hours and compare the complete station walk and wait with the shuttle. If the next train is unsuitable or rail has finished, return to the correct shuttle boarding point or ask airport staff for an alternative."
+      ]
     },
     {
       id: "airside-callout",
@@ -438,9 +487,9 @@ const body = {
     {
       id: "fact-check-box",
       type: "callout",
-      title: "Dynamic information reviewed August 11, 2026",
+      title: "Review dates: August 11 overview; September 9 shuttle and airline-directory check",
       tone: "neutral",
-      body: "At this review, T1 passenger operations, Metro Airport South and intercity Baiyun Airport South were suspended; T2 had direct metro and intercity access; T3 had direct intercity access but no direct metro; and the airport published a 24-hour landside T2–T3 inter-terminal shuttle. Airline allocation, codeshares, rail timetables, bus stops and hours, pickup areas, baggage handling and border procedures remain travel-date checks. The airport lists its 24-hour service number as 020-96158. Within China, dial 020-96158; from outside China, use +86 20 96158, subject to your carrier's international-dialling format.",
+      body: "At the August 11 overview review, T1 passenger operations, Metro Airport South and intercity Baiyun Airport South were suspended; T2 had direct metro and intercity access; T3 had direct intercity access but no direct metro; and the airport published a 24-hour landside T2–T3 inter-terminal shuttle. Airline allocation, codeshares, rail timetables, bus stops and hours, pickup areas, baggage handling and border procedures remain travel-date checks. The airport lists its 24-hour service number as 020-96158. Within China, dial 020-96158; from outside China, use +86 20 96158, subject to your carrier's international-dialling format.",
     },
     {
       id: "help-callout",
@@ -495,27 +544,27 @@ const body = {
         },
         {
           label: "Current Baiyun Airport terminal-to-terminal transport guide",
-          url: "https://www.baiyunairport.com/byairport-web/guide/terminals?urlKey=terminals",
+          url: "https://www.baiyunairport.com/guide/terminals?urlKey=terminals",
           publisher: "Guangzhou Baiyun International Airport",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "Current Baiyun Airport ground transport guide",
-          url: "https://www.baiyunairport.com/byairport-web/traffic/index?urlKey=to-from-airport",
+          url: "https://www.baiyunairport.com/traffic/tfa?urlKey=to-from-airport",
           publisher: "Guangzhou Baiyun International Airport",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "Current Baiyun Airport airline and terminal directory",
-          url: "https://www.baiyunairport.com/byairport-web/flight/airlines?urlKey=airlines",
+          url: "https://www.baiyunairport.com/flight/airline?type=&urlKey=",
           publisher: "Guangzhou Baiyun International Airport",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "Current Baiyun Airport same-day flight search",
-          url: "https://www.baiyunairport.com/byairport-web/index",
+          url: "https://www.baiyunairport.com/",
           publisher: "Guangzhou Baiyun International Airport",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-09",
         },
         {
           label: "Official T3 transport guide from February 13; Airport South references superseded May 7",

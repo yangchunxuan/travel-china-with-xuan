@@ -137,6 +137,32 @@ const body = {
       text: "Four nights should not mean three day trips. Two city days plus one branch is a stronger shape. Five or six allow Chengdu plus an overnight at Leshan or Dujiangyan, or an independent Jiuzhaigou segment. The honest measure is where the luggage sleeps, not what a package calls Chengdu.",
     },
     {
+      id: "first-stay-plan-heading",
+      type: "heading",
+      level: 2,
+      text: "A first Chengdu stay: four calendar days, three nights"
+    },
+    {
+      id: "first-stay-plan-intro",
+      type: "paragraph",
+      text: "This example leaves two complete sightseeing days between arrival and departure. It suits a first visit focused on pandas, neighbourhood life and one substantial cultural visit."
+    },
+    {
+      id: "first-stay-plan",
+      type: "list",
+      items: [
+        "Day 1 — Arrive, reach your central hotel and have dinner nearby. An evening landing is a transport day; do not make a prepaid show depend on it.",
+        "Day 2 — Visit Chengdu Panda Base in your reserved morning session, then return to town for lunch and a lighter afternoon. Keep a short neighbourhood walk optional; the base visit and transfers are the main commitment.",
+        "Day 3 — Begin with tea at People's Park, then give Wuhou Shrine the main cultural block and time to understand its Three Kingdoms story. Have a Sichuan meal at a spice level the party enjoys. An opera evening is an optional addition after checking the day’s energy and travel time.",
+        "Day 4 — Check out and travel onward. Add breakfast or a nearby walk only after protecting the transfer to the exact airport or railway station on the ticket."
+      ]
+    },
+    {
+      id: "first-stay-plan-extra-night",
+      type: "paragraph",
+      text: "With one extra night, this becomes five calendar days and three complete sightseeing days: keep the two city days and choose one branch to Sanxingdui, Dujiangyan or Leshan. Compare the branch guides below before reserving it. For a two-night visit, keep the panda morning and one city block, and leave the regional excursion for another trip. If the panda morning session is unavailable, move the city day rather than squeezing both into the same afternoon."
+    },
+    {
       id: "stay-heading",
       type: "heading",
       level: 2,
@@ -682,6 +708,12 @@ const body = {
       type: "sources",
       title: "Official sources and review record",
       items: [
+        {
+          label: "Wuhou Shrine Museum — the shrine and its Three Kingdoms context",
+          url: "https://www.wuhouci.net.cn/about",
+          publisher: "Chengdu Wuhou Shrine Museum",
+          reviewedAt: "2026-09-09"
+        },
         {
           label: "Chengdu Research Base of Giant Panda Breeding — tickets, entry windows and document rules",
           url: "https://www.panda.org.cn/en/service/ticket/",

@@ -126,6 +126,38 @@ const body: StructuredPageBody = {
         "모든 국적과 카드에 알리페이가 위챗페이보다 항상 낫다고 말할 근거는 없고, 반대도 마찬가지입니다. 카드 연결과 테스트 결제가 먼저 성공한 앱을 주 지갑으로 삼으세요. 둘 다 작동하면 모두 유지하는 것이 좋습니다. 두 앱은 서로의 백업이 되지만 실물 카드와 현금의 필요성까지 없애지는 않습니다.",
     },
     {
+      id: "google-wallet-heading",
+      type: "heading",
+      level: 2,
+      text: "중국 본토에서 Google Pay나 Google Wallet을 사용할 수 있나요?"
+    },
+    {
+      id: "google-wallet-answer",
+      type: "paragraph",
+      text: "일상 결제용으로 알리페이 또는 위챗페이, 실물 카드와 위안화 현금을 준비하세요. 2026년 9월 9일 확인한 Google의 지원 은행·카드 시장 목록에는 중국 본토가 없고 홍콩과 마카오는 별도로 있습니다. 다른 지원 시장에서 이미 설정한 해외 카드는 실제 거래 조건을 따져야 합니다. Google의 터치 결제 안내는 지원 결제 수단, NFC와 호환되는 비접촉 단말기를 요구합니다. 해당 결제에 의존하기 전에 매장이 받는 카드 네트워크와 발급사의 지원을 확인하세요."
+    },
+    {
+      id: "google-wallet-qr-boundary",
+      type: "paragraph",
+      text: "매장에 알리페이나 위챗 결제 QR 코드가 있다는 것만으로 Google Pay도 받는다는 뜻은 아닙니다. 웹사이트나 앱의 Google Pay 버튼도 그 결제 화면에 적용될 뿐, 여행 중 다른 매장의 결제까지 지원한다는 뜻은 아닙니다. 터치 결제가 실패할 때 사용할 실물 카드를 남겨 두세요."
+    },
+    {
+      id: "wechat-top-up-heading",
+      type: "heading",
+      level: 2,
+      text: "해외 카드를 연결한 뒤 위챗 잔액을 먼저 충전해야 하나요?"
+    },
+    {
+      id: "wechat-top-up-answer",
+      type: "paragraph",
+      text: "연결한 해외 카드로 결제할 수 있는 가맹점 구매에는 잔액 충전이 필요하지 않습니다. 결제 화면에서 해당 카드를 선택하세요. 위챗 잔액인 零钱이 0인 것과 카드에서 쓸 수 있는 금액은 별개입니다. 충전은 돈을 지갑 잔액으로 옮기는 다른 서비스입니다."
+    },
+    {
+      id: "wechat-top-up-eligibility",
+      type: "paragraph",
+      text: "Tenpay의 2026년 3월 30일 약관은 해외 카드만 연결하고 실명 인증을 마치지 않은 계정에 잔액·충전·송금 기능 제한을 명시합니다. 이를 모든 인증 계정에 확대하거나, 인증만 하면 모든 기능이 열린다고 가정하지 마세요. 본인 계정에 표시되는 자격과 선택지를 따릅니다. 알리페이의 해외 카드 경로도 지원되는 구매용이며 개인 간 송금에 쓰는 경로가 아닙니다. 가맹점 결제 실패 시 준비한 다른 지갑, 실물 카드나 현금을 사용하세요."
+    },
+    {
       id: "binding-failures",
       type: "heading",
       level: 2,
@@ -408,8 +440,32 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "2026년 8월 10일 확인한 공식 자료",
+      title: "공식 출처와 항목별 확인일",
       items: [
+        {
+          label: "Google Wallet: 지원 은행·카드 시장",
+          url: "https://support.google.com/wallet/answer/12059326?co=GENIE.CountryCode%3DHK&hl=en-GB",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Wallet: 비접촉 결제 요건",
+          url: "https://support.google.com/wallet/answer/12060043?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Pay: 국가·지역별 기능 지원",
+          url: "https://support.google.com/googlepay/answer/12429287?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "위챗페이 사용자 약관(2026년 3월 30일): 해외 카드 사용자 부록",
+          url: "https://posts.tenpay.com/posts/cbddf0af6088c4080432b952163ea238.html",
+          publisher: "Tenpay / Weixin Pay",
+          reviewedAt: "2026-09-09"
+        },
         {
           label: "중국 국무원: 중국에서 일하고 생활하기 — 모바일 결제, 현금, 환전, 호텔과 교통",
           url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",

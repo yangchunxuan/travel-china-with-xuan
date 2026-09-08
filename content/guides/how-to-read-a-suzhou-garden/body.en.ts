@@ -72,6 +72,30 @@ const body: StructuredPageBody = {
         "Keep the rest of the day manageable. A museum, another garden and several old streets can turn a slow visit into a sequence of deadlines. If the garden takes longer, shorten the next stop instead of rushing through the views.",
       ],
     },
+  {
+    "id": "garden-visit-check",
+    "type": "paragraph",
+    "text": "Before choosing your train, open the official garden visiting rules and opening-hours pages below. Find the exact garden name and distinguish last admission from closing time. Check dated notices again before departure; an older closure notice does not establish today’s status. The official Suzhou Garden Tourism account (苏州园林旅游) also carries garden notices."
+  },
+  {
+    "id": "garden-visit-official",
+    "type": "sources",
+    "title": "Official garden visitor information",
+    "items": [
+      {
+        "label": "Garden-specific visiting rules",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/ryxz/nav_list.shtml"
+      },
+      {
+        "label": "Opening hours and last admission",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/kfsj/wztt.shtml"
+      },
+      {
+        "label": "Garden authority notices (Chinese)",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/tzgg/list.shtml"
+      }
+    ]
+  },
     {
       id: "not-flower-garden-heading",
       type: "heading",

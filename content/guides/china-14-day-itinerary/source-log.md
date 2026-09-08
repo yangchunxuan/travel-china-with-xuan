@@ -32,3 +32,18 @@ Read against current `china-10-day-itinerary`, the English section of `lib/china
 - All examples count arrival in China, not the international departure from home, as day 1. Same-city international returns require a visible added return sector or removed sightseeing.
 
 All three language bodies preserve these counts and conditions. They contain no keyword-tool narrative, quoted comments, first-person visit claims, public research notes or third-party booking promises. The existing authorized photograph and its boundary are recorded in `image-plan.md`.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Added localized direct links to the existing Badaling execution guide, and (where Xi’an is included) Terracotta Warriors booking/transport guide. This exposes existing practical answers at the itinerary instead of requiring a separate search. No new attraction availability, price or inclusion claim.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Expanded the existing nature-swap question into a concrete 4/5/4-night planning example in all languages. This is editorial allocation, not a dated flight availability claim. Names the removed cities and foregone attractions; retains transport days.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Existing 3-weeks query is now answered with a 5/3/6/6-night extension (20 nights; transfer days 6,9,15; departure21), in all languages. No duplicate new page and no dated availability claim.

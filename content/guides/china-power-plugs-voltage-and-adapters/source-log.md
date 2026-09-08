@@ -23,3 +23,8 @@
 ## Image provenance
 
 Original Homeground editorial illustration created for this article on 2026-08-12. No external image, logo, document scan, identifiable person, QR code or third-party license is used. The WebP is documentary-neutral and must not be read as evidence of a real venue or device.
+
+
+## 2026-09-09 independent-audit follow-up
+
+SG/MY Type G example added in three languages. Official sources actually opened 2026-09-09: Singapore CPSO https://www.consumerproductsafety.gov.sg/consumers/product-safety-tips/home-appliances-furniture-and-indoor-product-safety/types-of-mains-plugs-suitable-for-use-in-singapore/ (TypeG/common-country/earthing); Malaysia Energy Commission https://www.st.gov.my/what-types-plug-tops-are-permitted-use-malaysia (13A BS1363 family); Beijing https://english.beijing.gov.cn/contactus/faqs/list/202006/t20200627_1932965.html (220V/physical fit not sufficient). Preserves existing label-first advice and avoids country-wide appliance compatibility assumptions.

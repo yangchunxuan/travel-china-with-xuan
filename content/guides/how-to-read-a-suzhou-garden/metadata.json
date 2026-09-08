@@ -2,7 +2,9 @@
   "id": "how-to-read-a-suzhou-garden",
   "type": "planning",
   "pillar": "culture-festivals-arts-contemporary",
-  "audienceMarkets": ["global"],
+  "audienceMarkets": [
+    "global"
+  ],
   "format": "cultural-explainer",
   "topics": [
     "suzhou-classical-gardens",
@@ -12,20 +14,27 @@
     "architecture",
     "world-heritage"
   ],
-  "destinations": ["suzhou", "jiangsu", "china"],
+  "destinations": [
+    "suzhou",
+    "jiangsu",
+    "china"
+  ],
   "heroImagePath": "/images/guides/how-to-read-a-suzhou-garden/hero-1600.webp",
   "heroImageUrl": "https://homegroundchina.com/images/guides/how-to-read-a-suzhou-garden/hero-1600.webp",
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-11",
-  "dateModified": "2026-09-08",
+  "dateModified": "2026-09-09",
   "sourceReviewedDate": "2026-08-11",
   "search": {
     "section": "culture",
     "family": "entity",
     "primaryIntent": "understand"
   },
-  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
   "locales": {
     "en": {
       "path": "/guides/how-to-read-a-suzhou-garden/",
@@ -36,7 +45,11 @@
       "navTitle": "Choose and explore a Suzhou garden",
       "featuredLinkLabel": "Choose a Suzhou garden and know what to look for",
       "openGraphLocale": "en_US",
-      "cardTags": ["Suzhou", "Garden design", "Cultural heritage"]
+      "cardTags": [
+        "Suzhou",
+        "Garden design",
+        "Cultural heritage"
+      ]
     },
     "zh": {
       "path": "/zh/guides/how-to-read-a-suzhou-garden/",
@@ -47,7 +60,11 @@
       "navTitle": "怎么看懂苏州园林",
       "featuredLinkLabel": "学会看懂一座苏州园林",
       "openGraphLocale": "zh_CN",
-      "cardTags": ["苏州", "园林艺术", "文化遗产"]
+      "cardTags": [
+        "苏州",
+        "园林艺术",
+        "文化遗产"
+      ]
     },
     "ko": {
       "path": "/ko/guides/how-to-read-a-suzhou-garden/",
@@ -58,7 +75,11 @@
       "navTitle": "쑤저우 정원 읽는 법",
       "featuredLinkLabel": "쑤저우 정원 읽는 법 배우기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["쑤저우", "정원 예술", "문화유산"]
+      "cardTags": [
+        "쑤저우",
+        "정원 예술",
+        "문화유산"
+      ]
     }
   }
 }

@@ -79,7 +79,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [forbiddenCity.datePublished, forbiddenCity.dateModified, forbiddenCity.sourceReviewedDate],
-    ["2026-08-11", "2026-09-08", "2026-08-22"],
+    ["2026-08-11", "2026-09-09", "2026-08-22"],
   );
   assert.match(forbiddenCity.locales.en.title, /Forbidden City Tickets for Foreign Visitors/u);
   assert.match(forbiddenCity.locales.en.description, /Tiananmen Square access/u);
@@ -174,7 +174,7 @@ test("shared discovery and governance expose the release without paid-service am
     const start = destinationRegistry.indexOf(`id: "${city}"`);
     const end = destinationRegistry.indexOf("\n  {\n    id:", start + 1);
     const entry = destinationRegistry.slice(start, end < 0 ? undefined : end);
-    assert.match(entry, /dateModified: "2026-08-22"/u, `${city} modified`);
+    assert.match(entry, city === "chengdu" ? /dateModified: "2026-09-09"/u : /dateModified: "2026-08-22"/u, `${city} modified`);
     assert.match(entry, /sourceReviewedDate: "2026-08-22"/u, `${city} reviewed`);
   }
 

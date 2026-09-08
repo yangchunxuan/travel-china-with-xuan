@@ -562,6 +562,25 @@ const english: ZhangjiajieGuideCopy = {
     title: "Zhangjiajie planning questions",
     items: [
       {
+        "question": "When is the best time to visit Zhangjiajie?",
+        "answer": "For a first walking-focused visit, start by comparing April and October outside the public-holiday peaks. Spring offers green valleys, while autumn is a useful alternative to summer heat; neither guarantees clear viewpoints. Summer brings showers, slippery paths and busy school-holiday dates. Winter can bring snow and cold at mountain level, so build in more flexibility and follow current opening notices. Rain or fog can hide the pillars in any season. Check the holiday dates before booking and leave a spare local day where possible; choose by your tolerance for crowds and weather rather than a promise of a perfect month."
+      },
+      {
+        question: "Where is Zhangjiajie on a map, and which place should I pin?",
+        answer:
+          "Zhangjiajie is in northwestern Hunan, China. Separate the downtown/Yongding area used for Tianmen Mountain from Wulingyuan and the National Forest Park; the Grand Canyon is another attraction, not a park gate. Save your arrival terminal, hotel and exact first-entry gate as separate pins. A search for Zhangjiajie alone may locate the city instead of the attraction. Use the route schematic above for the trip’s overall shape and a park visitor map for the paths inside.",
+      },
+      {
+        question: "How do I get to Zhangjiajie by train or plane?",
+        answer:
+          "Compare trains to Zhangjiajie West (张家界西站) with flights to Zhangjiajie Hehua International Airport (张家界荷花国际机场) for your actual travel date. Zhangjiajie Railway Station (张家界站) is a separate station: keep the full name on the ticket. Then price and time the transfer to your first hotel. A park-first trip usually starts with a Wulingyuan stay; a Tianmen-first trip can start downtown. Count an evening arrival as transport time, and verify any direct service before building the itinerary around it.",
+      },
+      {
+        question: "What order should I follow when planning a Zhangjiajie trip?",
+        answer:
+          "Write down arrival and departure times first, then count complete sightseeing days and choose the two-, three- or four-day plan above. Assign a hotel base to each night, an exact gate to each park day and a return transfer to each exit. Check dated transport and available attraction entry slots before paying. Finally choose what to remove if weather, queues or mobility slow the day; an unused wishlist stop is easier to manage than a missed onward train.",
+      },
+      {
         question: "Is two days enough for Zhangjiajie?",
         answer:
           "Yes for a first look: one compact day in the national park and one day at Tianmen Mountain. If the national park is the main reason for visiting, use both days there instead. Two days cannot also hold the Grand Canyon, cave and westbound towns.",
@@ -591,7 +610,7 @@ const english: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "Sources and live checks",
     disclosureTitle: "Sources & live checks",
-    summary: "10 official references · checked 21 July 2026",
+    summary: "10 route references checked 21 July 2026 · geography and arrival reference added 9 September 2026",
     intro:
       "We use official destination and transport sources, then recheck entry times, operating conditions and transfers before booking.",
     names: [
@@ -605,6 +624,7 @@ const english: ZhangjiajieGuideCopy = {
       "Zhangjiajie Grand Canyon: official visitor routes and estimated duration",
       "Hunan Road Transport Administration: Zhangjiajie Grand Canyon corridor",
       "Hunan Department of Culture and Tourism: Huanglong Cave overview",
+      "Hunan Government: Zhangjiajie location, airport and railway stations",
     ],
   },
   finalCta: {
@@ -986,6 +1006,25 @@ const chinese: ZhangjiajieGuideCopy = {
     title: "张家界路线常见问题",
     items: [
       {
+        "question": "张家界几月份去比较合适？",
+        "answer": "第一次以步行为主，可以先比较避开公共假日高峰的4月和10月。春天适合看绿色溪谷，秋天可避开夏季炎热，但两季都不能保证观景台晴朗。夏季有阵雨、湿滑山路和暑假客流；冬季山上可能有雪且更冷，要增加机动时间并按最新开放通知安排。任何季节的雨雾都可能遮住峰林。订票前核对假期，条件允许就多留一个当地机动日，按自己对人流和天气的接受程度选，不要把某个月当成好天气保证。"
+      },
+      {
+        question: "张家界在中国地图的哪里，导航应该定位哪一个地方？",
+        answer:
+          "张家界位于湖南省西北部。先分清天门山所在的市区／永定区，以及武陵源和国家森林公园；大峡谷是另一处景区，不是森林公园的入口。把抵达的机场或车站、酒店、第一天实际入园的门票站分别收藏。只搜“张家界”可能定位到城市，而不是要去的景区。上方示意图用来安排整段路线，园内道路则看景区导览图。",
+      },
+      {
+        question: "坐飞机还是火车去张家界，抵达后怎么接上行程？",
+        answer:
+          "按实际出行日期，对比到张家界西站的列车和到张家界荷花国际机场的航班。张家界站与张家界西站是两个车站，务必保留车票上的完整站名。随后把到第一晚酒店的接驳费用和时间一起算入。先玩森林公园通常先住武陵源，先玩天门山可以从市区开始。晚上抵达按交通日处理，任何直达航班或列车都先查到，再围绕它安排。",
+      },
+      {
+        question: "自己规划张家界行程，应该先确定什么？",
+        answer:
+          "先写下抵达和离开时间，数清完整游览日，再选上方的两天、三天或四天方案。给每一晚指定住宿区域、每个公园日指定准确门票站，并安排出园后的回程接驳。付款前核对日期对应的交通和可预约入园时段。最后决定天气、排队或体力拖慢时先删哪一项；少去一个备选景点，比错过下一程火车容易处理。",
+      },
+      {
         question: "张家界两天够吗？",
         answer:
           "如果只是第一次看重点，可以：国家森林公园精简一天，天门山一天。如果国家森林公园才是此行重点，就把两天都留在园内。两天无法同时容纳大峡谷、黄龙洞和向西的古镇。",
@@ -1015,7 +1054,7 @@ const chinese: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "信息来源与实时核对",
     disclosureTitle: "信息来源与实时核对",
-    summary: "10 条官方参考 · 核对于 2026年7月21日",
+    summary: "10 条路线参考核对于 2026年7月21日 · 地理与抵达参考补核于 2026年9月9日",
     intro: "我们先使用目的地和交通官方信息，预订前再核对入园时段、运营情况与接驳。",
     names: [
       "武陵源区：2025 年暑期分时预约通知（历史背景）",
@@ -1028,6 +1067,7 @@ const chinese: ZhangjiajieGuideCopy = {
       "张家界大峡谷：官方游览路线与参考时长",
       "湖南省道路运输管理局：张家界大峡谷景区交通走廊",
       "湖南省文化和旅游厅：黄龙洞介绍",
+      "湖南省政府：张家界地理、机场与火车站",
     ],
   },
   finalCta: {
@@ -1402,6 +1442,25 @@ const korean: ZhangjiajieGuideCopy = {
     title: "장자제 일정에서 자주 묻는 질문",
     items: [
       {
+        "question": "장자제는 몇 월에 가는 것이 좋나요?",
+        "answer": "첫 도보 중심 여행이라면 공휴일 성수기를 피한 4월과 10월부터 비교하세요. 봄에는 초록 계곡을 즐길 수 있고 가을은 여름 더위를 피하는 선택이지만, 어느 쪽도 맑은 전망을 보장하지 않습니다. 여름에는 소나기와 미끄러운 길, 방학 인파를 고려하세요. 겨울 산 위는 춥고 눈이 올 수 있어 여유 일정과 최신 개방 안내가 중요합니다. 어느 계절이든 비와 안개가 봉우리를 가릴 수 있습니다. 예약 전에 휴일을 확인하고 가능하면 현지 여유일을 남기세요. 완벽한 달을 기대하기보다 날씨와 인파를 얼마나 감수할지로 고르세요."
+      },
+      {
+        question: "장자제는 중국 지도에서 어디에 있고, 어느 지점을 저장해야 하나요?",
+        answer:
+          "장자제는 중국 후난성 북서부에 있습니다. 톈먼산을 방문할 때 이용하는 시내·융딩구와 우링위안·국가삼림공원을 구분하세요. 대협곡은 별도 명소이며 삼림공원 입구가 아닙니다. 도착 공항이나 역, 호텔, 첫 입장 매표소를 각각 저장하세요. 장자제만 검색하면 원하는 명소 대신 도시 중심이 나올 수 있습니다. 위의 구성도는 전체 여행 순서를 잡는 데, 공원 안내도는 내부 경로를 확인하는 데 사용합니다.",
+      },
+      {
+        question: "장자제에는 기차와 비행기 중 무엇으로 가고, 도착 후에는 어떻게 이동하나요?",
+        answer:
+          "실제 여행 날짜의 장자제 서역(张家界西站)행 열차와 장자제 허화국제공항(张家界荷花国际机场)행 항공편을 비교하세요. 장자제역(张家界站)은 서역과 다른 역이므로 표에 적힌 전체 역명을 확인해야 합니다. 첫날 호텔까지의 이동 시간과 비용도 함께 계산합니다. 삼림공원을 먼저 보면 보통 우링위안 숙박부터, 톈먼산을 먼저 보면 시내 숙박부터 시작할 수 있습니다. 저녁 도착은 이동일로 잡고, 직항이나 직통열차는 실제 운행편을 확인한 뒤 일정에 반영하세요.",
+      },
+      {
+        question: "장자제 여행 계획은 어떤 순서로 세우면 되나요?",
+        answer:
+          "도착과 출발 시각을 먼저 적고 온전한 관광일을 센 뒤, 위의 2일·3일·4일 일정 중 하나를 선택하세요. 매일 밤의 숙박 지역, 공원 방문일의 정확한 입구, 출구에서 숙소까지의 이동을 정합니다. 결제 전에 해당 날짜의 교통편과 예약 가능한 입장 시간을 확인하세요. 마지막으로 날씨, 대기나 체력 때문에 늦어질 때 뺄 일정을 정합니다. 후보 명소 하나를 남겨 두는 편이 다음 기차를 놓치는 것보다 낫습니다.",
+      },
+      {
         question: "장자제는 이틀이면 충분한가요?",
         answer: "처음 핵심을 보는 일정이라면 가능합니다. 국가삼림공원 핵심 하루와 톈먼산 하루로 구성하세요. 국가삼림공원이 여행의 주목적이라면 이틀 모두 공원에 쓰는 편이 낫습니다. 이틀 안에 대협곡, 황룽동, 서쪽 옛 마을까지 함께 넣을 수는 없습니다.",
       },
@@ -1426,7 +1485,7 @@ const korean: ZhangjiajieGuideCopy = {
   sources: {
     hiddenTitle: "출처와 최신 정보 확인",
     disclosureTitle: "출처와 최신 정보 확인",
-    summary: "공식 자료 10건 · 2026년 7월 21일 확인",
+    summary: "일정 자료 10건: 2026년 7월 21일 확인 · 위치·도착 자료: 2026년 9월 9일 추가 확인",
     intro: "공식 관광·교통 자료를 사용하고, 예약 전 입장 시간, 운영 상황, 차량 이동을 다시 확인합니다.",
     names: [
       "우링위안구: 2025년 여름 시간대별 입장 안내(과거 운영 참고)",
@@ -1439,6 +1498,7 @@ const korean: ZhangjiajieGuideCopy = {
       "장자제 대협곡: 공식 관광 코스와 예상 소요 시간",
       "후난성 도로운수관리국: 장자제 대협곡 관광 교통 구간",
       "후난성 문화관광청: 황룽동 안내",
+      "후난성 정부: 장자제 위치·공항·기차역",
     ],
   },
   finalCta: {

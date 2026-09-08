@@ -46,4 +46,8 @@ export const ZHANGJIAJIE_GUIDE_SOURCES = [
     name: "Hunan Department of Culture and Tourism: Huanglong Cave overview",
     url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhjqjd/202208/t20220816_27583725.html",
   },
+  {
+    name: "Hunan Government: Zhangjiajie location, airport and railway stations",
+    url: "https://www.enghunan.gov.cn/hneng/AboutHunan/HunanFacts/AdministrativeDivisions/201508/t20150804_1814333.html",
+  },
 ] as const;

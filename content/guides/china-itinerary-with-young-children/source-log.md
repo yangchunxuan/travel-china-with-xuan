@@ -32,3 +32,8 @@ This page owns family route pacing, transfer workload and recovery design. It do
 - No medical, medication-import or accessibility guarantee.
 - No nationwide stroller-access promise.
 - No personalised day-by-day itinerary.
+
+
+## 2026-09-09 independent-audit follow-up
+
+Added a closed 10-day/9-night planning example: Beijing nights1–5, Shanghai nights6–9; arrival1, transfer6, departure10. Each day has at most one anchor; attractions remain conditional and no stroller-access claim. This is original editorial pacing, not researched inventory or a new product.

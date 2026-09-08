@@ -68,12 +68,16 @@ const sharedSources: SourceLink[] = [
   },
   {
     label: "Chinese Embassy in the United States — tourist (L) visa",
-    url: "https://us.china-embassy.gov.cn/eng./lsfw/zj/qz2021/202509/t20250920_11712385.htm",
+    url: "https://us.china-embassy.gov.cn/eng/lsfw/zj/notice/202509/t20250920_11712385.htm",
   },
   {
     label:
       "National Immigration Administration — regional visa-free entry policies",
     url: "https://en.nia.gov.cn/n147418/n147463/c180637/content.html",
+  },
+  {
+    label: "Chinese Ministry of Foreign Affairs — official online visa application portal",
+    url: "https://consular.mfa.gov.cn/VISA/",
   },
 ];
 
@@ -96,7 +100,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "This page covers ordinary US passports travelling to mainland China for tourism. It is not immigration advice, and we do not process visa applications.",
     updatedLabel: "Updated",
-    updatedDate: "24 July 2026",
+    updatedDate: "9 September 2026",
     heroAlt:
       "Arrivals concourse at Shanghai Pudong International Airport, with bilingual wayfinding signs overhead.",
     heroCaption:
@@ -134,11 +138,16 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book.",
+      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book. The tour-company assistance FAQ and US application procedure were checked on 9 September 2026; this limited update does not represent a new review of every transit or regional exemption on this page.",
     sourcesLabel: "Official sources",
     sources: sharedSources,
     faqTitle: "Common questions",
     faq: [
+      {
+        question: "Do private tour companies get Chinese visas for US travellers?",
+        answer:
+          "A tour booking does not obtain or guarantee a visa. A company may separately offer document help or an authorised filing agent, so ask exactly what is included. US applicants should use the official China Online Visa Application system and the Chinese embassy or consulate responsible for where they live. The embassy’s process allows the applicant or an agent to submit the passport after online review. Its US tourist-visa guidance does not routinely require an itinerary or tour-company invitation letter; individual cases may need extra documents. Consular authorities decide the application. Homeground plans trips and can explain the route context, but does not file visa applications or collect passports.",
+      },
       {
         question: "Is China visa-free for Americans now?",
         answer:
@@ -196,7 +205,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "本页针对持普通美国护照、以旅游目的前往中国大陆的情况。这不是移民建议,我们也不代办签证。",
     updatedLabel: "最近更新",
-    updatedDate: "2026 年 7 月 24 日",
+    updatedDate: "2026 年 9 月 9 日",
     heroAlt: "上海浦东国际机场到达层,头顶是中英双语指示牌。",
     heroCaption: "走到这个大厅之前,护照、旅行目的和航线都需要核对。",
     sectionOne: {
@@ -232,11 +241,16 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分;我们至少每 90 天复核本页,并为改动标注日期。订票前,请对照下列来源确认你自己的航线。",
+      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分;我们至少每 90 天复核本页,并为改动标注日期。订票前,请对照下列来源确认你自己的航线。 旅行公司协助签证的问题与美国申请流程另于 2026 年 9 月 9 日核对；此次局部更新不表示重新复核了本页每项过境或区域免签政策。",
     sourcesLabel: "官方来源",
     sources: sharedSources,
     faqTitle: "常见问题",
     faq: [
+      {
+        question: "中国私人旅行公司会帮美国游客办好签证吗？",
+        answer:
+          "订了旅行并不等于已经取得签证，也不能保证获批。部分公司可能另提供材料协助或委托代理递交，先问清楚服务到底包括什么。在美国申请时，应通过官方中国签证在线办理系统，并按居住地对应的中国使领馆要求办理。使馆流程允许申请人或代理人在网上审核通过后递交护照；其美国旅游签证指引通常不要求行程单或旅行社邀请函，个案仍可能要求补充材料。审批由领事机关决定。Homeground 可以讨论路线和适用入境方式，但不代交签证申请，也不收取护照。",
+      },
       {
         question: "现在美国人去中国免签了吗?",
         answer:
@@ -287,7 +301,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "이 페이지는 일반 미국 여권으로 관광 목적의 중국 본토 방문을 다룹니다. 이민 관련 조언이 아니며, 저희는 비자를 대행하지 않습니다.",
     updatedLabel: "최종 업데이트",
-    updatedDate: "2026년 7월 24일",
+    updatedDate: "2026년 9월 9일",
     heroAlt: "상하이 푸둥 국제공항 도착층, 머리 위로 중국어·영어 안내 표지판이 보인다.",
     heroCaption: "이 홀에 닿기 전에 여권, 방문 목적과 경로를 모두 확인해야 합니다.",
     sectionOne: {
@@ -323,11 +337,16 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "작성과 확인",
     reviewBody:
-      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요.",
+      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요. 여행사의 비자 지원 범위와 미국 내 신청 절차는 2026년 9월 9일에 별도로 확인했습니다. 이번 부분 업데이트가 모든 환승·지역 무비자 정책의 재검토를 뜻하지는 않습니다.",
     sourcesLabel: "공식 출처",
     sources: sharedSources,
     faqTitle: "자주 묻는 질문",
     faq: [
+      {
+        question: "중국 프라이빗 여행사가 미국 여행자의 비자를 받아 주나요?",
+        answer:
+          "여행 예약만으로 비자를 받거나 승인을 보장받는 것은 아닙니다. 업체가 서류 안내나 대리 제출을 별도 제공할 수 있으므로 포함 범위를 먼저 확인하세요. 미국에서 신청할 때는 공식 중국 온라인 비자 신청 시스템과 거주지 관할 중국 대사관·총영사관 절차를 따릅니다. 대사관 절차상 온라인 심사 후 신청인 또는 대리인이 여권을 제출할 수 있습니다. 미국 내 관광비자 지침은 일반적으로 일정표나 여행사 초청장을 요구하지 않지만 개별 추가 서류는 요청될 수 있습니다. 승인은 영사기관이 결정합니다. Homeground는 여행 경로를 설명하지만 비자 신청을 제출하거나 여권을 받지 않습니다.",
+      },
       {
         question: "이제 미국인은 중국에 무비자로 갈 수 있나요?",
         answer:

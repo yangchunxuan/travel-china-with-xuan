@@ -126,6 +126,38 @@ const body: StructuredPageBody = {
         "没有足够依据保证支付宝对每个国籍和每张卡都比微信支付更好，反过来也一样。哪个 App 能顺利绑卡并完成测试付款，就把哪个作为主钱包；如果两个都能用，就都保留。两个钱包可以互相备用，但仍然不能消除实体卡和现金的必要性。",
     },
     {
+      id: "google-wallet-heading",
+      type: "heading",
+      level: 2,
+      text: "Google Pay 或 Google Wallet 在中国大陆能用吗？"
+    },
+    {
+      id: "google-wallet-answer",
+      type: "paragraph",
+      text: "日常付款先准备支付宝或微信支付、实体银行卡和人民币现金。2026 年 9 月 9 日核对时，Google 支持的银行与卡片市场列表没有中国大陆，香港和澳门分别列出。已经在其他受支持市场配置好的境外卡，要另看实际交易条件：Google 的碰触付款说明要求受支持的付款方式、NFC 和兼容的非接触终端。依赖这笔付款前，确认商户接受的卡组织以及发卡行支持情况。"
+    },
+    {
+      id: "google-wallet-qr-boundary",
+      type: "paragraph",
+      text: "商户摆着支付宝或微信收款码，不能据此认定它接受 Google Pay。某个网站或应用出现 Google Pay 结账按钮，也只说明那个结账入口支持，不自动延伸为旅途中街边商店的付款能力。碰触付款失败时，仍要有实体卡可用。"
+    },
+    {
+      id: "wechat-top-up-heading",
+      type: "heading",
+      level: 2,
+      text: "绑定境外卡后，微信支付还需要先充值零钱吗？"
+    },
+    {
+      id: "wechat-top-up-answer",
+      type: "paragraph",
+      text: "通过已绑定的国际卡支付符合条件的商户消费，不需要先充值零钱。在付款页面选这张卡即可；微信“零钱”为零，与银行卡本身可用的资金是两回事。充值是把资金转入钱包余额，属于另一种服务。"
+    },
+    {
+      id: "wechat-top-up-eligibility",
+      type: "paragraph",
+      text: "财付通 2026 年 3 月 30 日协议对“仅绑定国际卡且未完成实名认证”的账户明确限制余额、充值和转账功能。不要把这个条件扩大成所有已实名账户都不行，也不要以为实名就会自动开放每项功能，以自己账户当前显示的资格和选项为准。支付宝的国际卡途径同样用于支持的消费场景，不能据此进行个人转账。商户付款失败时，换用已准备好的另一钱包、实体卡或现金，不把个人转账当作备用方案。"
+    },
+    {
       id: "binding-failures",
       type: "heading",
       level: 2,
@@ -408,8 +440,32 @@ const body: StructuredPageBody = {
     {
       id: "official-sources",
       type: "sources",
-      title: "2026 年 8 月 10 日核对的官方资料",
+      title: "官方来源与各项复核日期",
       items: [
+        {
+          label: "Google Wallet：支持的银行与卡片市场",
+          url: "https://support.google.com/wallet/answer/12059326?co=GENIE.CountryCode%3DHK&hl=en-GB",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Wallet：非接触付款要求",
+          url: "https://support.google.com/wallet/answer/12060043?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Google Pay：国家／地区与功能支持范围",
+          url: "https://support.google.com/googlepay/answer/12429287?hl=en",
+          publisher: "Google",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "微信支付用户服务协议（20260330 版）：国际卡用户附录",
+          url: "https://posts.tenpay.com/posts/cbddf0af6088c4080432b952163ea238.html",
+          publisher: "Tenpay / Weixin Pay",
+          reviewedAt: "2026-09-09"
+        },
         {
           label: "中国国务院：在华工作和生活指引——移动支付、现金、换汇、酒店与交通",
           url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",

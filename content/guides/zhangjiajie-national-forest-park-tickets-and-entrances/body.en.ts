@@ -34,6 +34,47 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "map-heading",
+      type: "heading",
+      level: 2,
+      text: "How to use a Zhangjiajie National Forest Park map"
+    },
+    {
+      id: "map-intro",
+      type: "paragraph",
+      text: "Use a road map to reach the booked gate, then switch to the park visitor map and eco-bus route diagram below. A scenic drawing explains the landscape; it does not make two nearby-looking viewpoints a short walk or confirm that a shuttle, lift or cableway is running today."
+    },
+    {
+      id: "official-map-links",
+      type: "sources",
+      title: "Official park maps to open before your visit",
+      items: [
+        {
+          label: "Park visitor map — locate the named scenic areas and entrances",
+          url: "https://www.zhangjiajieuggp.org.cn/html/2026/2026063021423894489.html",
+          publisher: "Zhangjiajie UNESCO Global Geopark",
+          reviewedAt: "2026-09-09"
+        },
+        {
+          label: "Eco-bus route diagram — trace the shuttle part of the day",
+          url: "https://www.zhangjiajieuggp.org.cn/html/2026/2026032221531727580.html",
+          publisher: "Zhangjiajie UNESCO Global Geopark",
+          reviewedAt: "2026-09-09"
+        }
+      ]
+    },
+    {
+      id: "map-reading",
+      type: "list",
+      ordered: true,
+      items: [
+        "First save the Chinese name of your booked entrance from the gate table below. For an East Gate start from Wulingyuan, use 武陵源标志门; for a South Gate start, use 森林公园门票站. A generic National Forest Park pin is not enough for the driver.",
+        "Then follow one complete chain: gate → eco-bus boarding point → elevator, cableway or walking ascent → sightseeing area → descent → exit gate. Mark which legs are walking and which require transport, and check them against the product you bought.",
+        "For the official high-viewpoint example, trace East Gate → Tianzi Mountain cableway → Tianzi Mountain → eco-bus → Yuanjiajie → Bailong Elevator down. This is an orientation example to compare with current operations, not a promise that all legs will be available on your date.",
+        "Save the return chain separately. If you leave by another gate, check the road transfer back to your hotel and the final operating times before setting off. Keep the map available offline and follow current signs and staff instructions if they differ."
+      ]
+    },
+    {
       id: "ticket-heading",
       type: "heading",
       level: 2,

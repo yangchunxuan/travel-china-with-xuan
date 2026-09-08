@@ -8,6 +8,21 @@ const body = {
       "type": "lead",
       "text": "첫 중국 여행이 10일이라면, 황실의 역사와 병마용을 보고 현대적인 도시에서 마무리하고 싶은 분께 베이징–시안–상하이를 출발점으로 권합니다. 숙소 이동을 줄이거나 자연에서 더 오래 머물고 싶다면 두 지역을 고르세요. 먼저 정할 것은 무엇을 덜어낼지입니다. 열흘이면 충분히 만족스러운 여행을 만들 수 있지만, 도시를 하나 추가할 때마다 그곳을 즐길 시간도 나눠 써야 합니다."
     },
+  {
+    "id": "sightseeing-execution-links",
+    "type": "internal-links",
+    "title": "이 관람일의 이동과 예약",
+    "items": [
+      {
+        "label": "바다링: 교통과 입구 선택",
+        "href": "/ko/guides/beijing-to-badaling-great-wall-transfer/"
+      },
+      {
+        "label": "병마용: 예약과 찾아가는 길",
+        "href": "/ko/guides/terracotta-warriors-without-tour/"
+      }
+    ]
+  },
     {
       "id": "choose-heading",
       "type": "heading",

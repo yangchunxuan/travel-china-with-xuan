@@ -13,6 +13,17 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "socket-heading", type: "heading", level: 2, text: "Expect Type A, C and I—but do not plan around one hotel socket" },
   { id: "socket-copy", type: "paragraph", text: "Shanghai government guidance lists Type A, C and I plugs, while CAAC visitor guidance describes flat two-pin and angled three-pin sockets. In practice, hotels and transport hubs may use multi-standard outlets, USB outlets or a different mix. A North American or Japanese Type A plug may fit a flat two-pin socket, but physical fit says nothing about voltage. A European Type C charger is often straightforward, yet a heavy plug can sit loosely in a worn universal socket. Australian and New Zealand Type I plugs resemble the angled format, but a grounded appliance still needs secure contact and the correct rating." },
+  {
+    "id": "singapore-malaysia-plug-heading",
+    "type": "heading",
+    "level": 2,
+    "text": "Coming from Singapore or Malaysia with a Type G plug?"
+  },
+  {
+    "id": "singapore-malaysia-plug-answer",
+    "type": "paragraph",
+    "text": "Pack an adapter that accepts your three rectangular Type G pins and fits the mainland Chinese socket you will use; do not rely on every hotel having a universal socket. Check the charger itself: INPUT 100–240V, 50/60Hz covers China’s supply, so a compatible charger needs only the shape adapter. The home country or a familiar-looking plug is not proof for every appliance. Preserve any required earth connection, stay within the adapter’s rating and do not force the pins."
+  },
   { id: "socket-warning", type: "callout", title: "A universal socket is not a universal safety guarantee", tone: "warning", body: "Stop using an outlet if the adapter hangs out, pins remain exposed, it sparks, crackles, smells hot or cannot hold the plug without pressure. Move to another outlet and ask the accommodation to inspect it. Never bend pins, wedge paper around a plug or stack several loose adapters." },
   { id: "label-heading", type: "heading", level: 2, text: "How to read a charger without confusing input and output" },
   { id: "label-list", type: "list", ordered: true, items: [

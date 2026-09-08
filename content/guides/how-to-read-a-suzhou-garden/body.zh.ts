@@ -211,6 +211,51 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "half-day-garden-heading",
+      type: "heading",
+      level: 2,
+      text: "只有半天，看一座园林够不够？",
+    },
+    {
+      id: "half-day-garden-choice",
+      type: "paragraph",
+      text:
+        "只有半天时，把一座园林作为主要安排。按最感兴趣的体验选择，不必追求最大或最热门的名字。留时间拍照、在水边坐一会儿，也回头看看刚走过的游廊。只有第二座确实提供了你想进一步探索的不同体验，才把它加进来。",
+    },
+    {
+      id: "half-day-garden-flexibility",
+      type: "list",
+      items: [
+        "预订前查看园林主管部门针对到访日期的最新通知，尤其留意局部关闭或保护维修是否影响游线。",
+        "留出暂停或调整下一站的余量。人多时，找地方坐下，或去仍开放且较安静的区域，不要为了维持固定速度而硬挤进队伍。",
+        "让当天剩余安排保持轻松。博物馆、第二座园林和几条老街叠在一起，会把慢游变成连续赶点。如果园林比预计逛得久，就缩短下一站，不要匆忙掠过眼前的景。",
+      ],
+    },
+  {
+    "id": "garden-visit-check",
+    "type": "paragraph",
+    "text": "订车票前，先打开下方官方入园须知与开放时间，找到要去的具体园林，并分清停止检票和闭园时间。出发前再看带日期的通知，不要把旧闭园通告当成今天的状态；也可查看官方“苏州园林旅游”公众号的园林通知。"
+  },
+  {
+    "id": "garden-visit-official",
+    "type": "sources",
+    "title": "官方园林游览信息",
+    "items": [
+      {
+        "label": "各园入园须知",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/ryxz/nav_list.shtml"
+      },
+      {
+        "label": "开放与停止检票时间",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/kfsj/wztt.shtml"
+      },
+      {
+        "label": "园林主管部门通知公告",
+        "url": "https://ylj.suzhou.gov.cn/szsylj/tzgg/list.shtml"
+      }
+    ]
+  },
+    {
       id: "walking-heading",
       type: "heading",
       level: 2,

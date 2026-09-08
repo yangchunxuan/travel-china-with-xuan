@@ -163,11 +163,11 @@ test("the destination registry retains eight published Hubs and truthful dates",
     beijing: { modified: "2026-08-22", reviewed: "2026-08-22" },
     shanghai: { modified: "2026-08-22", reviewed: "2026-08-22" },
     xian: { modified: "2026-08-21", reviewed: "2026-08-16" },
-    chengdu: { modified: "2026-08-22", reviewed: "2026-08-22" },
+    chengdu: { modified: "2026-09-09", reviewed: "2026-08-22" },
     guangzhou: { modified: "2026-08-21", reviewed: "2026-08-17" },
     hangzhou: { modified: "2026-08-21", reviewed: "2026-08-20" },
     zhangjiajie: { modified: "2026-08-21", reviewed: "2026-08-20" },
-    chongqing: { modified: "2026-08-21", reviewed: "2026-08-21" },
+    chongqing: { modified: "2026-09-09", reviewed: "2026-08-21" },
   };
   assert.match(
     registry,
