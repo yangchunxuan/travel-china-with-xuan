@@ -1,14 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead-answer", type: "lead", text: "For most first trips, arrange Guangzhou, Shenzhen and Hong Kong as a one-way chain that follows the international gateways: Guangzhou → Shenzhen → Hong Kong, or the reverse. Do not give Shenzhen an overnight merely because it sits between the other two. It earns a base only when you have a specific Shenzhen priority that justifies another hotel and border-sensitive move." },
-  { id: "quick-choice", type: "comparison", title: "Choose the route shape", columns: [
+  { id: "lead-answer", type: "lead", text: "If you arrive in Guangzhou and leave from Hong Kong, travel Guangzhou → Shenzhen → Hong Kong; reverse the order when your flights run the other way. Add a Shenzhen hotel only when the places you want to visit justify an overnight stop. Choose the Hong Kong crossing using both hotel locations and your luggage, and allow time for the border move." },
+  { id: "quick-choice", type: "comparison", title: "Choose where to stay overnight", columns: [
     { heading: "Three bases", body: "Use when each city has at least one full local priority and both border-side hotels support the chosen crossing." },
     { heading: "Guangzhou + Hong Kong", body: "Use when Shenzhen has no protected anchor; pass through or make a focused visit rather than adding a hotel." },
     { heading: "Shenzhen + Hong Kong", body: "Use when Guangzhou is not central to the trip and Shenzhen priorities are geographically coherent." }
   ] },
   { id: "official-heading", type: "heading", level: 2, text: "The border is a process, not a line on the rail map" },
   { id: "official", type: "paragraph", text: "Hong Kong Security Bureau lists multiple land control points, including railway and road-based crossings, each with its own transport and operating information. MTR High Speed Rail provides official cross-boundary planning for Hong Kong West Kowloon. These sources establish options, not one universally best crossing. Your passport, immigration eligibility, hotels, baggage and onward plan determine the useful one; verify current official requirements before travel." },
-  { id: "gateway-heading", type: "heading", level: 2, text: "Let the real gateways set the direction" },
+  { id: "gateway-heading", type: "heading", level: 2, text: "Let your arrival and departure cities set the direction" },
   { id: "gateway", type: "table", caption: "Start with arrival and departure, then fit the cities", columns: ["Gateway pattern", "Likely order", "Question that can reverse it"], rows: [
     ["Arrive Guangzhou area; depart Hong Kong", "Guangzhou → Shenzhen → Hong Kong", "Does Shenzhen have enough value for a night?"],
     ["Arrive Hong Kong; depart Guangzhou area", "Hong Kong → Shenzhen → Guangzhou", "Which crossing works from the Hong Kong hotel?"],

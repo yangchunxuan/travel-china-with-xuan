@@ -79,9 +79,10 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [forbiddenCity.datePublished, forbiddenCity.dateModified, forbiddenCity.sourceReviewedDate],
-    ["2026-08-11", "2026-08-22", "2026-08-22"],
+    ["2026-08-11", "2026-09-08", "2026-08-22"],
   );
-  assert.match(forbiddenCity.locales.en.title, /Tiananmen Square and Forbidden City/u);
+  assert.match(forbiddenCity.locales.en.title, /Forbidden City Tickets for Foreign Visitors/u);
+  assert.match(forbiddenCity.locales.en.description, /Tiananmen Square access/u);
 });
 
 test("six trilingual owners retain one localized editorial structure", async () => {

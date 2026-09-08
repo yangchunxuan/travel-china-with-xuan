@@ -4,7 +4,7 @@ export default {
     {
       id: "direct-answer",
       type: "lead",
-      text: "Tiananmen Square and the Palace Museum are adjacent, but they are not one ticket or one planning task. Secure the Palace Museum reservation with the exact passport details of every visitor, decide separately whether the square is part of the morning, carry the original booked documents, and reach the Meridian Gate (Wumen) from the south. Only then does the museum visit begin: keep a south-to-north route, protect the central axis, choose at most one side focus, and leave through the Gate of Divine Prowess (Shenwumen) or the East Prosperity Gate with the next journey already planned.",
+      text: "To visit the Forbidden City, book a Palace Museum ticket in advance with the passport details of each traveller and bring the original documents used for the reservation. Enter through the Meridian Gate (Wumen) on the south side, then explore towards the north exit. If you also want to visit Tiananmen Square, check its access arrangements separately. This guide explains the booking steps, how to reach the entrance and what to do if your reservation is not confirmed.",
     },
     {
       id: "execution-summary",
@@ -17,7 +17,7 @@ export default {
       id: "official-check-heading",
       type: "heading",
       level: 2,
-      text: "What the official rules say this week",
+      text: "Palace Museum booking and entry rules",
     },
     {
       id: "official-check-table",
