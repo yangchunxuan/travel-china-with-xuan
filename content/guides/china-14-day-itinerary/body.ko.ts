@@ -222,6 +222,8 @@ const body = {
       "type": "internal-links",
       "title": "선택한 코스의 세부 계획",
       "items": [
+        {"label": "겨울 여행지 선택: 빙설·도시·해변", "href": "/ko/guides/china-in-winter/"},
+        {"label": "중국 여행 준비물 정리하기", "href": "/ko/guides/china-packing-list/"},
         {
           "label": "10일뿐이라면 더 짧은 중국 코스",
           "href": "/ko/guides/china-10-day-itinerary/"

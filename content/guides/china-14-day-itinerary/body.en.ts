@@ -222,6 +222,8 @@ const body = {
       "type": "internal-links",
       "title": "Plan the details of your chosen route",
       "items": [
+        {"label": "Choose a winter destination: snow, cities or coast", "href": "/guides/china-in-winter/"},
+        {"label": "Build your China packing list", "href": "/guides/china-packing-list/"},
         {
           "label": "Only ten days? Choose a shorter China route",
           "href": "/guides/china-10-day-itinerary/"

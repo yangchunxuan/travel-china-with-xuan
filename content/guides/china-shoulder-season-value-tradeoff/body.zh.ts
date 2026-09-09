@@ -63,6 +63,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责旺季、平季和深淡季之间的价值取舍。气候分区指南负责跨区域天气筛选；节假日日历负责年度明确日期；目的地指南负责地方季节体验。" },
   { id: "help-cta", type: "callout", tone: "decision", title: "需要比较两个日期窗口？", body: "请提供候选日期、地区、核心体验，以及弹性与不可退预订选项。有效比较应说明保护了什么价值、接受了什么风险。" },
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
+        {"label": "冬季去哪：冰雪、城市或海滨", "href": "/zh/guides/china-in-winter/"},
+        {"label": "整理中国旅行行李清单", "href": "/zh/guides/china-packing-list/"},
     { label: "按气候分区筛选路线", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "检查一个日期窗口能否保护最难一站。" },
     { label: "核对中国法定节假日", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "全国性假期可能推翻淡季标签。" },
     { label: "把时间选择放回总预算", href: "/zh/guides/how-much-does-a-china-trip-cost/", description: "同时比较交通、酒店与灵活性。" },

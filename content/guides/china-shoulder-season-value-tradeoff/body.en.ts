@@ -63,6 +63,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "What this guide covers", body: "This guide compares the value trade-off between peak, shoulder and deeper off-season dates. Use the climate-region guide for multi-region weather screening, the holiday calendar for named annual dates, and destination guides for local seasonal experiences." },
   { id: "help-cta", type: "callout", tone: "decision", title: "Want two date windows compared?", body: "Send candidate dates, regions, core experience and the flexible versus non-refundable booking options. A useful comparison should show what value is protected and what risk is being accepted." },
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
+        {"label": "Choose a winter destination: snow, cities or coast", "href": "/guides/china-in-winter/"},
+        {"label": "Build your China packing list", "href": "/guides/china-packing-list/"},
     { label: "Screen the route by climate region", href: "/guides/china-climate-regions-for-trip-timing/", description: "Check whether one date window fits the hardest stop." },
     { label: "Check official public holidays", href: "/guides/china-public-holidays-travel-calendar/", description: "A low-season label can be overturned by a national holiday." },
     { label: "Place timing inside the full budget", href: "/guides/how-much-does-a-china-trip-cost/", description: "Compare transport, hotels and flexibility together." },

@@ -419,18 +419,18 @@
     "currentRepositoryInventory": {
       "status": "available-from-audited-current-main-runtime-baseline",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "generatedGuideIdentities": 180,
+      "generatedGuideIdentities": 182,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 199,
-      "generatedGuideLocaleUrls": 538,
+      "publishedGuideIdentities": 201,
+      "generatedGuideLocaleUrls": 544,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 589,
+      "guideLocaleUrls": 595,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 208,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 614,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 210,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 620,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -443,7 +443,7 @@
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
       "repositoryIncrementRef": "coverage.publishedInventory.repositoryIncrements",
-      "currentCountsScope": "Counts include the recorded September 8 additions and two trilingual September 9 itinerary additions. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
+      "currentCountsScope": "Counts cover repository identities, including the recorded September 8 additions, two trilingual September 9 itinerary additions and two trilingual September 10 local guide additions. The September 10 status is a pre-release snapshot; final release evidence is recorded separately in the round folder. Fields retaining published in their names are compatibility inventory totals, not publication evidence. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
       "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
       "checkedAt": "2026-08-23T13:24:58+08:00"
     },
@@ -1128,9 +1128,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 199,
-      "localeUrlCount": 589,
-      "generatedIdentityCount": 180,
+      "identityCount": 201,
+      "localeUrlCount": 595,
+      "generatedIdentityCount": 182,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1346,6 +1346,70 @@
               "boundary": "Two weeks / thirteen nights adding Chengdu to the classic route; three transfers and a complete three-city alternative. Existing ten-day and older-parent routes retain their owners."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-10",
+          "sourceCommit": null,
+          "sourceState": "uncommitted-worktree",
+          "status": "local-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "At pre-release snapshot; final release evidence is recorded separately in the round folder.",
+          "finalReleaseEvidenceDirectory": "Desktop/Homeground-SEO/refresh-2026-09-10/",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "china-in-winter",
+              "title": "China in Winter: Where to Go, Weather & What to Wear",
+              "metadataPath": "content/guides/china-in-winter/metadata.json",
+              "canonicalPath": "/guides/china-in-winter/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-in-winter/",
+                "/zh/guides/china-in-winter/",
+                "/ko/guides/china-in-winter/"
+              ],
+              "section": "when-to-go",
+              "pageFamily": "time",
+              "targetIntent": "plan",
+              "primaryCollectionId": "timing-months-seasons",
+              "destinations": [
+                "china",
+                "harbin",
+                "beijing",
+                "shanghai"
+              ],
+              "boundary": "Winter route choice across Harbin ice and snow, Beijing and Shanghai city travel, and a Sanya coastal break, with low-altitude Yunnan as a comparison. Does not establish 2026–27 attraction opening dates or replace the detailed destination and climate owners."
+            },
+            {
+              "id": "china-packing-list",
+              "title": "China Packing List: What to Bring for 7–14 Days",
+              "metadataPath": "content/guides/china-packing-list/metadata.json",
+              "canonicalPath": "/guides/china-packing-list/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-packing-list/",
+                "/zh/guides/china-packing-list/",
+                "/ko/guides/china-packing-list/"
+              ],
+              "section": "essentials",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "essentials-payments-connectivity",
+              "destinations": [
+                "china"
+              ],
+              "boundary": "Practical 7–14-day bag-by-bag packing checklist with laundry, luggage weight and summer, winter and mountain additions. Power-bank, electrical, customs and medicine rules remain owned by their detailed guides."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1389,6 +1453,7 @@
         "china-hotel-near-metro",
         "china-hub-and-spoke-or-multi-base-route",
         "china-in-october-golden-week-or-later",
+        "china-in-winter",
         "china-itinerary-with-older-parents",
         "china-itinerary-with-young-children",
         "china-last-night-before-international-flight",
@@ -1396,6 +1461,7 @@
         "china-night-train-or-daytime-high-speed-rail",
         "china-online-arrival-card",
         "china-open-jaw-flights-route-planning",
+        "china-packing-list",
         "china-passport-validity-and-blank-pages",
         "china-power-bank-rules-flights-trains",
         "china-power-plugs-voltage-and-adapters",
