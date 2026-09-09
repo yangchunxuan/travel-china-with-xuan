@@ -228,6 +228,8 @@ const body = {
       "type": "internal-links",
       "title": "Plan your next step",
       "items": [
+        {"label": "Choose a winter destination: snow, cities or coast", "href": "/guides/china-in-winter/"},
+        {"label": "Build your China packing list", "href": "/guides/china-packing-list/"},
         {
           "label": "China private tours: itineraries and prices",
           "href": "/#travel-products"

@@ -1,0 +1,102 @@
+{
+  "id": "china-in-winter",
+  "type": "planning",
+  "pillar": "timing-holidays-crowds",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "climate-regions",
+    "trip-timing",
+    "weather",
+    "route-design"
+  ],
+  "destinations": [
+    "china",
+    "harbin",
+    "beijing",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "sourceReviewedDate": "2026-09-10",
+  "search": {
+    "section": "when-to-go",
+    "family": "time",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-in-winter/",
+      "title": "China in Winter: Where to Go, Weather & What to Wear",
+      "headline": "China in Winter: Snow, City Trips or a Warm Coast?",
+      "description": "Choose a winter China trip: Harbin for ice and snow, Beijing and Shanghai for culture, or Sanya for a coastal break. Compare months, routes and clothing.",
+      "heroAlt": "Illuminated ice buildings and an ice train at Harbin Ice and Snow World during the 2025–26 season",
+      "navTitle": "China in winter",
+      "featuredLinkLabel": "Choose a winter route",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Winter destinations",
+        "December–February",
+        "What to wear"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-in-winter/",
+      "title": "中国冬季旅游：去哪玩、怎么安排、穿什么",
+      "headline": "中国冬天去哪玩：冰雪、城市文化，还是海边度假？",
+      "description": "想去哈尔滨看冰雪、北京上海逛城市，还是到三亚避寒？按冬季月份、户外活动和穿衣需要，选一条适合自己的中国路线。",
+      "heroAlt": "2025—26雪季哈尔滨冰雪大世界亮灯后的冰建筑与冰雕火车",
+      "navTitle": "中国冬季旅游",
+      "featuredLinkLabel": "选一条冬季路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "冬季目的地",
+        "12月至2月",
+        "穿衣准备"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-in-winter/",
+      "title": "중국 겨울 여행: 추천 여행지·일정·옷차림",
+      "headline": "중국 겨울 여행: 눈과 얼음, 도시 여행, 따뜻한 해변",
+      "description": "하얼빈의 빙설, 베이징·상하이의 도시 문화, 싼야의 해변 중 내게 맞는 겨울 여행을 고르세요. 시기별 일정과 옷차림도 함께 정리했습니다.",
+      "heroAlt": "2025–26 겨울 시즌 하얼빈 빙설대세계의 조명이 켜진 얼음 건물과 기차 조형물",
+      "navTitle": "중국 겨울 여행",
+      "featuredLinkLabel": "겨울 여행지 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "겨울 여행지",
+        "12월–2월",
+        "옷차림"
+      ]
+    }
+  },
+  "searchTerms": {
+    "en": [
+      "china in winter",
+      "winter in china",
+      "where to go in china in winter",
+      "what to wear during winter in china"
+    ],
+    "zh": [
+      "中国冬季旅游",
+      "中国冬天去哪玩",
+      "中国冬季穿什么"
+    ],
+    "ko": [
+      "중국 겨울 여행",
+      "중국 겨울 여행지",
+      "중국 겨울 옷차림"
+    ]
+  }
+}

@@ -61,6 +61,8 @@ const body = {
     { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 중국 다지역 여행의 기후 선별 방법만 다룹니다. 도시별 계절 가이드, 실시간 예보, 고도 관련 의료 판단 또는 공식 공휴일 달력을 대신하지 않습니다." },
     { id: "help-cta", type: "callout", tone: "decision", title: "기후에 맞춰 동선을 검토할까요?", body: "고정 또는 유동 날짜, 여행자, 후보 지역, 가장 보호하고 싶은 야외 경험을 알려 주세요. 좋은 검토는 완벽한 날씨를 약속하지 않고 기후상 이질적인 구간과 대안을 찾아냅니다." },
     { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+        {"label": "겨울 여행지 선택: 빙설·도시·해변", "href": "/ko/guides/china-in-winter/"},
+        {"label": "중국 여행 준비물 정리하기", "href": "/ko/guides/china-packing-list/"},
       { label: "10월 황금연휴와 그 이후 비교", href: "/ko/guides/china-in-october-golden-week-or-later/", description: "국경절과 지역 날씨를 함께 판단하세요." },
       { label: "중국 공식 공휴일 달력 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "기후가 좋아도 연휴 혼잡은 남습니다." },
       { label: "숄더 시즌의 가치와 대가 비교", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "기후 검토 뒤 가격, 일조 시간과 운영 제한을 더하세요." },

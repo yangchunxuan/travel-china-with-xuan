@@ -61,6 +61,8 @@ const body = {
     { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责跨区域中国旅行的气候筛选方法，不替代单个城市的季节指南、实时预报、高海拔医疗评估或法定节假日日历。" },
     { id: "help-cta", type: "callout", tone: "decision", title: "需要按气候筛选路线？", body: "请提供固定或弹性日期、同行者、候选地区，以及最想保护的户外体验。有效审核应指出气候离群点和备用方案，而不是承诺完美天气。" },
     { id: "more-planning", type: "internal-links", title: "继续规划", items: [
+        {"label": "冬季去哪：冰雪、城市或海滨", "href": "/zh/guides/china-in-winter/"},
+        {"label": "整理中国旅行行李清单", "href": "/zh/guides/china-packing-list/"},
       { label: "判断十月是黄金周还是节后出行", href: "/zh/guides/china-in-october-golden-week-or-later/", description: "结合国庆假期和区域天气做月份级判断。" },
       { label: "查看中国法定节假日日历", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "气候合适并不代表没有假期压力。" },
       { label: "比较平季旅行的价值与代价", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "完成气候筛选后，再加入价格、日照和运营限制。" },

@@ -72,6 +72,28 @@ const body = {
       ]
     },
     {
+      "id": "tianmen-booking-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "Adding Tianmen Mountain on day 5? Check these before paying"
+    },
+    {
+      "id": "tianmen-booking-checklist",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Date and time slot — Online or at a ticket office, confirm availability for your exact visit date and what the booked time applies to: ticket collection, entry or boarding. Do not build the day around assumed walk-up availability.",
+        "The actual route — Read the ascent and descent separately, including each cable-car section, shuttle and escalator connection. Save the starting point and return point; an A, B or C label alone does not describe the whole journey.",
+        "The full package price — Get the total for your chosen route and traveller category. Check which admission, cable-car, shuttle and escalator charges are included, and what costs extra; an admission-only figure is not a complete trip budget.",
+        "Foreign-passport booking and entry — Before paying, confirm that the seller can book with your passport, how to enter your name and document number, and how you enter with the original document. If ticket exchange is required, get the exact collection point and opening hours. Save those instructions with the booking."
+      ]
+    },
+    {
+      "id": "tianmen-dated-notices",
+      "type": "paragraph",
+      "text": "Routes and walkway access can change. Hunan's 7 March 2026 notice described an adjusted A-line route during Express Cableway maintenance on 9–20 March. Its 13 May notice announced East Line Glass Walkway maintenance from 12 May. These dated notices do not establish the route or walkway access on your visit date; check the latest notice alongside the ticket details."
+    },
+    {
     "id": "five-heading",
     "type": "heading",
     "level": 2,
@@ -207,6 +229,18 @@ const body = {
       "type": "sources",
       "title": "Sources and photograph",
       "items": [
+        {
+          "label": "Tianmen cableway adjustment: notice of 7 March 2026",
+          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202603/t20260307_33928100.html",
+          "publisher": "Hunan Provincial Government",
+          "reviewedAt": "2026-09-10"
+        },
+        {
+          "label": "East Line Glass Walkway maintenance: notice of 13 May 2026",
+          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202605/t20260513_33976257.html",
+          "publisher": "Hunan Provincial Government",
+          "reviewedAt": "2026-09-10"
+        },
         {
           "label": "Singapore–Changsha flight search",
           "url": "https://www.flyscoot.com/flights/en-sg/flights-from-singapore-to-changsha",

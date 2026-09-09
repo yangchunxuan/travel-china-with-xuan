@@ -168,6 +168,8 @@ const body = {
       type: "internal-links",
       title: "Continue planning",
       items: [
+        {"label": "Choose a winter destination: snow, cities or coast", "href": "/guides/china-in-winter/"},
+        {"label": "Build your China packing list", "href": "/guides/china-packing-list/"},
         { label: "Make the October timing decision", href: "/guides/china-in-october-golden-week-or-later/", description: "Use the month-specific guide for National Day and regional weather." },
         { label: "Check the official holiday calendar", href: "/guides/china-public-holidays-travel-calendar/", description: "Climate suitability does not remove holiday pressure." },
         { label: "Compare shoulder-season value", href: "/guides/china-shoulder-season-value-tradeoff/", description: "Add price, daylight and operating limits after the climate screen." },

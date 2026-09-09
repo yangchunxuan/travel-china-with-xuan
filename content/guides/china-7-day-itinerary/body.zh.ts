@@ -228,6 +228,8 @@ const body = {
       "type": "internal-links",
       "title": "继续安排这次旅行",
       "items": [
+        {"label": "冬季去哪：冰雪、城市或海滨", "href": "/zh/guides/china-in-winter/"},
+        {"label": "整理中国旅行行李清单", "href": "/zh/guides/china-packing-list/"},
         {
           "label": "中国私人旅行路线与价格",
           "href": "/zh/#travel-products"

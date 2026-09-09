@@ -222,6 +222,8 @@ const body = {
       "type": "internal-links",
       "title": "继续安排路线细节",
       "items": [
+        {"label": "冬季去哪：冰雪、城市或海滨", "href": "/zh/guides/china-in-winter/"},
+        {"label": "整理中国旅行行李清单", "href": "/zh/guides/china-packing-list/"},
         {
           "label": "只有十天？选择更短的中国路线",
           "href": "/zh/guides/china-10-day-itinerary/"

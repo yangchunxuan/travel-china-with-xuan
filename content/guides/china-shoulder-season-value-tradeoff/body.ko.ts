@@ -63,6 +63,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "scope", type: "callout", tone: "neutral", title: "이 글의 범위", body: "이 글은 성수기, 숄더 시즌과 깊은 비수기 사이의 가치 교환만 다룹니다. 기후 지역 가이드는 다지역 날씨 검사, 공휴일 달력은 특정 연도 날짜, 목적지 가이드는 지역 계절 경험을 담당합니다." },
   { id: "help-cta", type: "callout", tone: "decision", title: "두 날짜 범위를 비교할까요?", body: "후보 날짜, 지역, 핵심 경험과 유연·환불 불가 예약 선택을 알려 주세요. 좋은 비교는 어떤 가치를 보호하고 어떤 위험을 받아들이는지 보여 줍니다." },
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
+        {"label": "겨울 여행지 선택: 빙설·도시·해변", "href": "/ko/guides/china-in-winter/"},
+        {"label": "중국 여행 준비물 정리하기", "href": "/ko/guides/china-packing-list/"},
     { label: "기후 지역으로 동선 검사", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "한 날짜 범위가 가장 까다로운 지역을 지키는지 확인하세요." },
     { label: "중국 공식 공휴일 확인", href: "/ko/guides/china-public-holidays-travel-calendar/", description: "전국 공휴일이 비수기 이름을 뒤집을 수 있습니다." },
     { label: "시기를 전체 예산 안에 배치", href: "/ko/guides/how-much-does-a-china-trip-cost/", description: "교통, 숙소와 유연성을 함께 비교하세요." },

@@ -72,6 +72,28 @@ const body = {
       ]
     },
     {
+      "id": "tianmen-booking-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "第5天想去天门山？付款前核对这四项"
+    },
+    {
+      "id": "tianmen-booking-checklist",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "日期与时段——无论在线购买还是到售票处，都要确认实际游览日期的余票，并看清预约时间指取票、入园还是乘坐交通设施。不要以为当天到场一定买得到合适的票。",
+        "实际上下山顺序——把上山和下山分别看一遍，逐段核对索道、接驳车和扶梯，以及出发点和返回点。保存完整路线，不能只凭A、B、C线路名称判断走法。",
+        "完整套票总价——按所选路线和每位游客的票种确认总额，逐项看清门票、索道、接驳车和扶梯哪些已包含、哪些另付。只标景区入园费的数字，不能作为整趟游览预算。",
+        "外国护照购票与入园——付款前问清卖方能否用你的护照预订，姓名与证件号码怎样填写，现场如何持原件入园。若需换票，取得准确的取票地点和营业时间，将说明与订单一起保存。"
+      ]
+    },
+    {
+      "id": "tianmen-dated-notices",
+      "type": "paragraph",
+      "text": "路线和栈道通行安排可能变化。湖南省政府英文网2026年3月7日的通知说明了3月9–20日快线索道检修期间调整后的A线；5月13日的通知说明东线玻璃栈道从5月12日起检修。这两条有明确日期的通知，不能证明你游览当天的路线或栈道开放情况；应把最新通知与所购票的说明一起核对。"
+    },
+    {
     "id": "five-heading",
     "type": "heading",
     "level": 2,
@@ -207,6 +229,18 @@ const body = {
       "type": "sources",
       "title": "资料与照片来源",
       "items": [
+        {
+          "label": "天门山索道调整：2026年3月7日通知",
+          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202603/t20260307_33928100.html",
+          "publisher": "湖南省政府英文网",
+          "reviewedAt": "2026-09-10"
+        },
+        {
+          "label": "东线玻璃栈道检修：2026年5月13日通知",
+          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202605/t20260513_33976257.html",
+          "publisher": "湖南省政府英文网",
+          "reviewedAt": "2026-09-10"
+        },
         {
           "label": "新加坡—长沙航班查询",
           "url": "https://www.flyscoot.com/flights/en-sg/flights-from-singapore-to-changsha",

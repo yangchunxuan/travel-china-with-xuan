@@ -1,0 +1,58 @@
+{
+  "id": "china-packing-list",
+  "type": "planning",
+  "pillar": "essentials-payments-connectivity",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["first-trip", "trip-planning", "flight", "train"],
+  "destinations": ["china"],
+  "heroImagePath": "/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-high-speed-train-first-time-guide/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-10",
+  "dateModified": "2026-09-10",
+  "sourceReviewedDate": "2026-09-10",
+  "searchTerms": {
+    "en": ["china packing list", "packing list for china", "china packing list summer", "china travel packing list"],
+    "zh": ["中国旅行行李清单", "中国旅游带什么", "中国夏季旅行准备"],
+    "ko": ["중국 여행 준비물", "중국 여행 짐 싸기", "중국 여름 여행 준비물"]
+  },
+  "search": {"section": "essentials", "family": "task", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/china-packing-list/",
+      "title": "China Packing List: What to Bring for 7–14 Days",
+      "headline": "China Packing List: What Goes in Each Bag",
+      "description": "Pack for 7–14 days in China with a carry-on checklist, a small clothing rotation, laundry timing and summer, winter and mountain additions.",
+      "heroAlt": "Travellers with bags in a large railway-station concourse in Hangzhou",
+      "navTitle": "China packing list",
+      "featuredLinkLabel": "Pack for your China trip",
+      "openGraphLocale": "en_US",
+      "cardTags": ["7–14 days", "Seasonal additions", "Carry less"]
+    },
+    "zh": {
+      "path": "/zh/guides/china-packing-list/",
+      "title": "中国旅行行李清单：7–14天带什么、怎么装",
+      "headline": "中国旅行行李清单：随身包与行李箱怎么分",
+      "description": "准备7–14天中国旅行：按清单分装证件、衣物与充电设备，安排途中洗衣，再补上夏季、冬季或山地所需物品。",
+      "heroAlt": "杭州一座铁路车站的宽阔候车大厅，旅客带着行李等候出行",
+      "navTitle": "中国旅行行李清单",
+      "featuredLinkLabel": "准备中国旅行行李",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["7–14天", "按季节增减", "减轻行李"]
+    },
+    "ko": {
+      "path": "/ko/guides/china-packing-list/",
+      "title": "중국 여행 준비물: 7~14일 여행 짐 싸기",
+      "headline": "중국 여행 준비물: 기내 가방과 캐리어 나누기",
+      "description": "7~14일 중국 여행을 위한 기내 가방, 옷과 세면도구 목록을 확인하세요. 중간 세탁 일정과 여름·겨울·산악 여행에 더할 물품도 정리했습니다.",
+      "heroAlt": "가방을 든 여행객들이 기다리는 항저우의 넓은 철도역 대합실",
+      "navTitle": "중국 여행 준비물",
+      "featuredLinkLabel": "중국 여행 짐 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["7~14일", "계절별 추가 물품", "가볍게 이동"]
+    }
+  }
+}

@@ -228,6 +228,8 @@ const body = {
       "type": "internal-links",
       "title": "다음 여행 준비",
       "items": [
+        {"label": "겨울 여행지 선택: 빙설·도시·해변", "href": "/ko/guides/china-in-winter/"},
+        {"label": "중국 여행 준비물 정리하기", "href": "/ko/guides/china-packing-list/"},
         {
           "label": "중국 프라이빗 여행 일정과 가격",
           "href": "/ko/#travel-products"
