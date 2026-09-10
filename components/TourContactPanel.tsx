@@ -195,14 +195,14 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
               <p className={styles.consent}>{text.consent} <a href={privacyHref} target="_blank" rel="noopener noreferrer">{text.privacy}</a></p>
               {status === "failed" || status === "uncertain" ? <p className={styles.error} role="alert">{status === "failed" ? fieldError || text.failed : text.uncertain}</p> : null}
               {status === "uncertain" ? <button className={styles.primary} type="button" onClick={() => snapshotRef.current && void send(snapshotRef.current)}>{text.retry}<ArrowRight size={18} aria-hidden="true" /></button> : <button className={styles.primary} type="submit" disabled={status === "sending"}>{status === "sending" ? text.sending : text.submit}{status !== "sending" ? <ArrowRight size={18} aria-hidden="true" /> : null}</button>}
+              {whatsappEnabled ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={20} aria-hidden="true" />{text.whatsapp}</a> : null}
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
-            <div className={styles.direct}>
-              {context && enabled ? <p>{text.fallback}</p> : null}
-              {whatsappEnabled ? <a className={context && enabled ? styles.directLink : styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
+            {(!context || !enabled || status === "failed" || status === "uncertain") ? <div className={styles.direct}>
+              {whatsappEnabled && (!context || !enabled) ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               {(!context || !enabled || status === "failed" || status === "uncertain") ? <a className={styles.directLink} href={emailHref} onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a> : null}
               {!context ? <a className={styles.catalog} href={`${locale === "en" ? "/" : `/${locale}/`}#travel-products`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
-            </div>
+            </div> : null}
           </>}
         </div>
       </div>

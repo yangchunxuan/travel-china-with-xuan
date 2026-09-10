@@ -22,7 +22,7 @@ Independent first visual review received only two rendered screenshots and their
 
 External review evidence: Desktop/Homeground-SEO/conversion-benchmarks-2026-09-10/visual-blind-review.md and implementation-supervision.md. These are review evidence, not proof of production deployment.
 
-## Verification
+## Initial verification (before the WhatsApp emphasis revision)
 
 - TypeScript checks pass.
 - 878 inquiry/UI/contract regression tests pass, with zero failures or skips (including newsletter geometry, prompt state, price-selection links and new contact logic).
@@ -40,3 +40,9 @@ New build flag: NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED. CI/deploy rea
 Follow docs/private-tour-quote-backend-2026-09-10.md for the staged backend rollout. The existing GitHub Pages workflow does not deploy the Supabase migration or functions. Do not equate static-site deployment with a working new intake. Real notification delivery and production receipt persistence need separate evidence.
 
 Final local review: the supervisor closed F01–F06 and found no known local delivery blocker. Its review covered source, logs and screenshots; interactive checks are attributed to the primary task, not an independent replay. Both reviewers’ records preserve the production-deployment boundary.
+
+## WhatsApp emphasis revision — 10 September
+
+The product quote form now places a 48px full-width outlined WhatsApp link directly after the quote/retry action, followed by the availability note. The previous footer text-link section is removed from normal form state. This remains a native link outside the disabled fieldset: it does not require form validation or submit the inquiry. The contextual URL, number and tracking are unchanged. Failed/uncertain states retain email fallback; guide and disabled-form states retain their existing primary WhatsApp action; saved receipts are unchanged.
+
+Short desktop windows use slightly reduced vertical spacing. Browser QA at actual 1448×724 confirmed body scrollHeight equals clientHeight (619px) for the default English form; both buttons and the availability note fit. At 390×844 the WhatsApp button is 348×48px and fully visible. Longer/error/date states may scroll normally. Independent image review found the initial desktop note clipping, then signed off the corrected image; the code supervisor found no state/behavior regression. Typecheck and the 7 existing contact-link tests passed. This small revision was inspected in development and was not followed by another complete static build or production deployment.

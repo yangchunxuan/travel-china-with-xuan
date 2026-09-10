@@ -51,6 +51,9 @@
 .primary:disabled { cursor: progress; opacity: .7; }
 .primary svg:last-child { margin-inline-start: auto; }
 .primary:has(svg:first-child) svg { margin-inline-start: 0; }
+.whatsappButton { box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; margin-top: 10px; padding: 12px 18px; border: 1px solid #333; border-radius: 999px; background: #fff; color: #111; font: 550 14px/1.4 var(--sans,system-ui,sans-serif); text-decoration: none; transition: background 120ms, border-color 120ms; }
+.whatsappButton:hover { background: #f3f3f3; border-color: #111; }
+.whatsappButton svg { flex-shrink: 0; }
 .manual { margin: 9px 0 0; font-size: 12px; line-height: 1.5; color: #555; text-align: center; }
 .direct { margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; display: grid; gap: 4px; }
 .direct > p { margin: 0 0 3px; font-size: 12px; color: #666; text-align: center; }
@@ -73,6 +76,13 @@
 @keyframes enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes leave { to { opacity: 0; transform: translateX(12px); } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@media (min-width: 601px) and (max-height: 820px) {
+  .body { padding-block: 20px; }
+  .body h2 { margin-bottom: 8px; }
+  .intro { margin-bottom: 16px; }
+  .context { padding-block: 12px; margin-bottom: 16px; }
+  .form label:not(.checkbox):not(.honeypot) { margin-bottom: 12px; }
+}
 @media (max-width: 600px) {
   .dialog { inset: auto 0 0; margin: 0; width: 100%; height: auto; max-height: calc(100dvh - 24px); border-radius: 20px 20px 0 0; border-bottom: 0; }
   .sheet { max-height: calc(100dvh - 24px); }
@@ -87,4 +97,4 @@
   @keyframes leave { to { opacity: 0; transform: translateY(16px); } }
 }
 @media (prefers-reduced-motion: reduce) { .dialog[open], .dialog[open]::backdrop, .dialog[data-closing="true"], .dialog[data-closing="true"]::backdrop, .launcher { animation: none; } }
-@media (forced-colors: active) { .primary, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
+@media (forced-colors: active) { .primary, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
