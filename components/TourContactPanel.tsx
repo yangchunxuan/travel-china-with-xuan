@@ -18,6 +18,7 @@ import {
   getServerNewsletterDockSide, subscribeNewsletterDock,
 } from "../lib/siteOverlayState";
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
+import { TourDateField } from "./TourDateField";
 import styles from "./TourContactPanel.module.css";
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
@@ -187,7 +188,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             {context && enabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
-                {!undecided ? <label htmlFor={`${id}-date`}>{text.date}<input id={`${id}-date`} name="travelDate" type="date" required disabled={locked} value={date} onInput={event => setDate(event.currentTarget.value)} onChange={event => setDate(event.target.value)} /></label> : null}
+                {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
                 <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={1000} value={note} placeholder={text.placeholder} onChange={event => setNote(event.target.value)} /></label>
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
