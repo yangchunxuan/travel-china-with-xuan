@@ -65,6 +65,12 @@ const contactSchemaCompatibilitySets = [
     formVersion: "2026-07-26.1",
     ruleVersion: "2026-07-26.1",
   },
+  {
+    schemaVersion: "4",
+    entryPath: "private_tour_quote",
+    formVersion: "2026-09-10.1",
+    ruleVersion: "2026-09-10.1",
+  },
 ] as const;
 
 const metricContracts = {
@@ -268,7 +274,8 @@ function parseCompatibilitySets(
 ): JsonRecord[] | null {
   if (
     !Array.isArray(value) ||
-    value.length !== expected.length ||
+    (value.length !== expected.length &&
+      !(expected.at(-1)?.schemaVersion === "4" && value.length === expected.length - 1)) ||
     value.length < 1 ||
     value.length > 8
   ) {
@@ -276,7 +283,8 @@ function parseCompatibilitySets(
   }
 
   const parsed: JsonRecord[] = [];
-  for (let index = 0; index < expected.length; index += 1) {
+  // Accept the pre-quote database contract during the staged rollout.
+  for (let index = 0; index < value.length; index += 1) {
     const candidate = value[index];
     const approved = expected[index];
     if (

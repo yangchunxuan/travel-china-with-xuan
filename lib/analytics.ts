@@ -1354,8 +1354,9 @@ export function trackPageView({
 
 export function trackEnquirySubmitted(
   parameters: EventParameters = {},
+  options: EventDispatchOptions = {},
 ) {
-  trackEvent("enquiry_submitted", parameters);
+  trackEvent("enquiry_submitted", parameters, options);
 }
 
 export function currentConsentAllowsMeasurement() {

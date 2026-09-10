@@ -389,6 +389,12 @@ const contactSchemaCompatibilitySets = [
     formVersion: "2026-07-26.1",
     ruleVersion: "2026-07-26.1",
   },
+  {
+    schemaVersion: "4",
+    entryPath: "private_tour_quote",
+    formVersion: "2026-09-10.1",
+    ruleVersion: "2026-09-10.1",
+  },
 ] as const satisfies readonly AdminMetricCompatibilitySet[];
 
 const knownCompatibilitySetsByMetric: Record<
@@ -616,7 +622,8 @@ function compatibilitySetsAt(
   if (
     values.length < 1 ||
     values.length > 8 ||
-    values.length !== expected.length
+    (values.length !== expected.length &&
+      !(expected.at(-1)?.schemaVersion === "4" && values.length === expected.length - 1))
   ) {
     throw new AdminApiError(
       "contract",

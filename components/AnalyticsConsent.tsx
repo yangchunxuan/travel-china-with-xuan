@@ -13,7 +13,7 @@ import {
 import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
-  getPrivacyManagerOpen,
+  getPrivacyManagerOpen, getInquiryOpen, subscribeInquiry, setConsentBannerPending,
   getServerPrivacyManagerOpen,
   setPrivacyManagerOpen,
   subscribePrivacyManager,
@@ -73,6 +73,8 @@ export function AnalyticsConsent({
     getPrivacyManagerOpen,
     getServerPrivacyManagerOpen,
   );
+  const inquiryOpen = useSyncExternalStore(subscribeInquiry, getInquiryOpen, getServerPrivacyManagerOpen);
+  useEffect(() => { setConsentBannerPending(preferences === null); }, [preferences]);
   const [draftAnalytics, setDraftAnalytics] = useState(false);
   const [draftMarketing, setDraftMarketing] = useState(false);
 
@@ -173,7 +175,7 @@ export function AnalyticsConsent({
         data-homeground-consent-bootstrap="true"
         dangerouslySetInnerHTML={{ __html: storedConsentBootstrap }}
       />
-      {!preferences && !managerOpen ? (
+      {!preferences && !managerOpen && !inquiryOpen ? (
         <section
           className={styles.banner}
           data-homeground-consent-banner="true"

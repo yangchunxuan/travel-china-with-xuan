@@ -1,5 +1,7 @@
 "use client";
 
+import { TourWhatsAppLink } from "./TourWhatsAppLink";
+
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import {
@@ -48,7 +50,7 @@ const interactionCopy: Record<
     group: (count) => `${count} travellers`,
     privateTour: "private tour",
     flightsSeparate: "flights not included",
-    checkDates: "Check dates & pricing",
+    checkDates: "Request a quote",
     otherGroups: "A different group size?",
     otherGroupsBody:
       "We confirm room needs, luggage count and a suitable vehicle before sending a written quote.",
@@ -66,7 +68,7 @@ const interactionCopy: Record<
     group: (count) => `${count} 人同行`,
     privateTour: "私家团",
     flightsSeparate: "往返机票另计",
-    checkDates: "核对日期与价格",
+    checkDates: "获取专属报价",
     otherGroups: "不是 2 人或 4 人？",
     otherGroupsBody: "我们会确认房间需求、行李数量和适用车型，再发出书面报价。",
     requestQuote: "规划这条路线",
@@ -83,7 +85,7 @@ const interactionCopy: Record<
     group: (count) => `${count}명 기준`,
     privateTour: "프라이빗 투어",
     flightsSeparate: "항공권 별도",
-    checkDates: "날짜와 요금 확인하기",
+    checkDates: "맞춤 견적 요청",
     otherGroups: "2명 또는 4명이 아닌가요?",
     otherGroupsBody:
       "객실 조건, 수하물 수량과 알맞은 차량을 확인한 뒤 서면 견적을 드립니다.",
@@ -265,6 +267,7 @@ export function ShanghaiJiangnanPriceConsole({
           {copy.checkDates}
           <ArrowRight aria-hidden="true" size={17} />
         </GuideCtaLink>
+        <TourWhatsAppLink locale={product.locale} slug={product.slug} />
         <div className={styles.otherGroupCopy}>
           <strong>{copy.otherGroups}</strong>
           <span>{copy.otherGroupsBody}</span>

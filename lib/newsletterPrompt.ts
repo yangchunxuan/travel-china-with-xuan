@@ -10,6 +10,7 @@ const languageTransferLifetimeMs = 30_000;
 type PromptState = { dueAt: number; handled: boolean };
 let memoryState: PromptState | null = null;
 let memoryJoined = false;
+let returningVisitChecked = false;
 type LanguageTransfer = { pathname: string; expanded: boolean; expiresAt: number };
 let memoryLanguageTransfer: LanguageTransfer | null = null;
 let languageTransferCleared = false;
@@ -43,6 +44,17 @@ function savePrompt(state: PromptState): void {
   if (typeof window !== "undefined") window.dispatchEvent(new Event(newsletterPromptChangedEvent));
 }
 
+/** Check once on arrival, using the existing Consent reader's validated result.
+ * An in-progress first-choice countdown always wins over returning-visitor UI. */
+export function restoreReturningNewsletterLauncher(hasStoredConsent: boolean, now = Date.now()): void {
+  if (returningVisitChecked) return;
+  returningVisitChecked = true;
+  if ((!hasStoredConsent && !newsletterAlreadyJoined()) || readNewsletterPrompt()) return;
+  // This is only tab-local UI state. It neither creates a Cookie choice nor
+  // starts a timer, changes consent, or implies a confirmed subscription.
+  savePrompt({ dueAt: Math.max(1, now), handled: true });
+}
+
 /** Called only by an explicit Cookie choice, never by reading old preferences. */
 export function armNewsletterPrompt(now = Date.now()): void {
   if (newsletterAlreadyJoined() || readNewsletterPrompt()) return;
@@ -68,6 +80,11 @@ export function newsletterDelayRemaining(now = Date.now()): number | null {
   const state = readNewsletterPrompt();
   if (!state || state.handled || newsletterAlreadyJoined()) return null;
   return Math.max(0, state.dueAt - now);
+}
+
+/** Manual entry stays available after joining; joining suppresses only automatic prompts. */
+export function newsletterLauncherAvailable(pathname: string | null): boolean {
+  return newsletterPageEligible(pathname) && readNewsletterPrompt()?.handled === true;
 }
 
 function languageTransferPath(pathname: unknown): string | null {

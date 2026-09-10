@@ -4,6 +4,7 @@ import {
   currentDestinationInquiryFormVersion,
   destinationInquirySchemaVersion,
   homepageEmailInquirySchemaVersion,
+  privateTourQuoteSchemaVersion,
   legacyDestinationInquiryFormVersion,
   previousDestinationInquiryFormVersion,
   semanticInquiryPayload,
@@ -449,7 +450,33 @@ async function handleRequest(request: Request): Promise<Response> {
 
   let persistenceResult;
   try {
-    if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
+    if (payload.schemaVersion === privateTourQuoteSchemaVersion) {
+      // One atomic write path, including auxiliary attribution when present.
+      // An uncertain write must never fall back through a different RPC.
+      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+        trafficSessionHash
+          ? "create_homeground_private_tour_quote_with_traffic_v1"
+          : "create_homeground_private_tour_quote_v1",
+        {
+          p_schema_version: payload.schemaVersion,
+          p_form_version: payload.formVersion,
+          p_locale: payload.locale,
+          p_contact_email: payload.contact.email,
+          p_product_interest: payload.productInterest,
+          p_travel_date: payload.travelDate,
+          p_note: payload.note,
+          p_privacy_notice_version: payload.privacyNoticeVersion,
+          p_landing_path: payload.attribution.landingPath,
+          p_idempotency_key_hash: idempotencyKeyHash,
+          p_payload_hash: payloadHash,
+          p_rate_limit_subject_hash: rateLimitSubjectHash,
+          p_short_rate_limit: shortRateLimit,
+          p_daily_rate_limit: dailyRateLimit,
+          p_first_response_due_at: firstResponseDueAt,
+          ...(trafficSessionHash ? { p_traffic_session_hash: trafficSessionHash } : {}),
+        },
+      );
+    } else if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
       persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
         trafficSessionHash
           ? "create_homeground_homepage_email_with_traffic_v1"
