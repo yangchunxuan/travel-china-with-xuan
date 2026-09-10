@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { openTourContactFromLink } from "../lib/tourContact";
 import type { ReactNode } from "react";
 import { trackEvent } from "../lib/analytics";
 import { guideCtaTarget } from "../lib/analyticsLocation";
@@ -42,7 +43,8 @@ export function GuideCtaLink({
     <Link
       className={className}
       href={href}
-      onClick={() => {
+      onClick={(event) => {
+        openTourContactFromLink(event, href, locale);
         trackEvent("guide_cta_clicked", {
           guide_id: guideId,
           page_language: locale,

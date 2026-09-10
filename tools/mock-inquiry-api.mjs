@@ -17,6 +17,7 @@ import {
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   currentHomepageEmailFormVersion,
+  currentPrivateTourQuoteFormVersion,
   homepageEmailPrivacyNoticeVersion,
   supportedDestinationInquiryFormVersions,
 } from "../lib/inquiryVersions.ts";
@@ -260,6 +261,7 @@ const server = createServer(async (request, response) => {
     allowedFormVersions: [
       currentInquiryFormVersion,
       currentHomepageEmailFormVersion,
+      currentPrivateTourQuoteFormVersion,
       ...supportedDestinationInquiryFormVersions,
     ],
     allowedPrivacyNoticeVersions: privacyNoticeVersions,

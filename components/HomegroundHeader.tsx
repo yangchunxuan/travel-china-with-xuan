@@ -1,5 +1,7 @@
 "use client";
 
+import { openTourContactFromLink } from "../lib/tourContact";
+
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { requestNewsletterLanguageTransfer } from "../lib/newsletterPrompt";
 
@@ -589,6 +591,7 @@ export function HomegroundHeader({
             aria-label={plannerCtaAccessibleLabel}
             onClick={(event) => {
               trackPlannerClick();
+              openTourContactFromLink(event, plannerHref, locale);
               if (pageContext === "home") {
                 handleHomegroundHashClick(event, plannerTarget);
               }
@@ -720,6 +723,7 @@ export function HomegroundHeader({
               href={plannerHref}
               onClick={(event) => {
                 trackPlannerClick();
+              openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
                 close();
                 if (pageContext === "home") {
                   handleHomegroundHashClick(event, plannerTarget);

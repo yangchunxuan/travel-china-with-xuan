@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AnalyticsConsent } from "../../components/AnalyticsConsent";
+import { TourContactPanel } from "../../components/TourContactPanel";
 import { NewsletterPopup } from "../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
 import "../globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
         <SiteAnalytics locale="en" />
         {children}
         <AnalyticsConsent locale="en" />
+        <TourContactPanel locale="en" />
         <NewsletterPopup locale="en" />
       </body>
     </html>

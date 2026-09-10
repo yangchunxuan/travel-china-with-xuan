@@ -38,7 +38,8 @@
     "lucide-react": "^0.468.0",
     "next": "^15.5.24",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-draggable": "4.7.1"
   },
   "devDependencies": {
     "@types/node": "20.17.6",

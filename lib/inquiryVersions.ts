@@ -12,6 +12,8 @@ export const currentDestinationInquiryFormVersion = "2026-07-21.1";
 export const homepageEmailInquirySchemaVersion = 3 as const;
 export const currentHomepageEmailFormVersion = "2026-07-26.1";
 export const homepageEmailPrivacyNoticeVersion = "2026-07-26.1";
+export const privateTourQuoteSchemaVersion = 4 as const;
+export const currentPrivateTourQuoteFormVersion = "2026-09-10.1";
 export const supportedDestinationInquiryFormVersions = [
   legacyDestinationInquiryFormVersion,
   previousDestinationInquiryFormVersion,

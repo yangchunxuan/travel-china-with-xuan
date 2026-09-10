@@ -4,6 +4,8 @@ import { spawn } from "node:child_process";
 import test from "node:test";
 import {
   currentHomepageEmailFormVersion,
+  currentPrivateTourQuoteFormVersion,
+  privateTourQuoteSchemaVersion,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
@@ -15,6 +17,7 @@ import {
 import {
   destinationTimingRuleVersion,
 } from "../../lib/destinationTiming.ts";
+import { getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContext.ts";
 
 const hostname = "127.0.0.1";
 const port = 19_000 + Math.floor(Math.random() * 1_000);
@@ -150,6 +153,29 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
     }
   });
   await waitUntilReady(child);
+
+  const quoteKey = "d6354b81-ce16-473a-8c77-8e0c5b8fc413";
+  const slug = "beijing-highlights-5-day-private-tour";
+  const quote = {
+    schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
+    entryPath: "private_tour_quote", locale: "en",
+    contact: { channel: "email", email: "traveller@example.invalid" },
+    productInterest: getPrivateTourInquiryContext(slug, "en", { packageId: "no-guide", travelers: 4 }),
+    travelDate: "2026-12-15", note: "Two rooms, please.",
+    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    attribution: { landingPath: `/tours/${slug}/` }, experiment: null, antiAbuse: { companyWebsite: "" },
+  };
+  const sendQuote = (value) => fetch(endpoint, { method: "POST", headers: {
+    Origin: origin, "Content-Type": "application/json", "Idempotency-Key": quoteKey,
+  }, body: JSON.stringify(value) });
+  const quoteFirst = await sendQuote(quote);
+  assert.equal(quoteFirst.status, 201);
+  const quoteReference = (await quoteFirst.json()).publicReference;
+  const quoteReplay = await sendQuote({ ...quote, trafficSessionToken: "139c6cc5-a518-48e8-87ee-944598947f42" });
+  assert.equal(quoteReplay.status, 200); assert.equal((await quoteReplay.json()).publicReference, quoteReference);
+  assert.equal((await sendQuote({ ...quote, travelDate: null })).status, 409);
+  assert.equal((await sendQuote({ ...quote, note: "Changed request" })).status, 409);
+  assert.equal((await sendQuote({ ...quote, attribution: { landingPath: "/" } })).status, 422);
 
   const preflight = await fetch(endpoint, {
     method: "OPTIONS",

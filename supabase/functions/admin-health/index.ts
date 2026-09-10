@@ -73,7 +73,8 @@ function productionConfigurationCheck(checkedAt: string): HealthCheck {
       privacyVersions.includes(version)
     );
   const transitionalVersionsEnabled =
-    forms.some((version) => !currentForms.has(version)) ||
+    // The quote form is an optional, independently staged intake surface.
+    forms.some((version) => !currentForms.has(version) && version !== "2026-09-10.1") ||
     privacyVersions.some((version) => !currentPrivacyVersions.has(version));
 
   if (

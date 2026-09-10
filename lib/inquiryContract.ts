@@ -39,11 +39,13 @@ import {
   budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
   currentHomepageEmailFormVersion,
+  currentPrivateTourQuoteFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
+  privateTourQuoteSchemaVersion,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -65,11 +67,13 @@ export {
   budgetPrivacyNoticeVersion,
   currentDestinationInquiryFormVersion,
   currentHomepageEmailFormVersion,
+  currentPrivateTourQuoteFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
+  privateTourQuoteSchemaVersion,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -206,7 +210,20 @@ export interface NormalizedHomepageEmailInquiryPayload {
 export type NormalizedInquiryPayload =
   | NormalizedRouteInquiryPayload
   | NormalizedDestinationInquiryPayload
-  | NormalizedHomepageEmailInquiryPayload;
+  | NormalizedHomepageEmailInquiryPayload
+  | NormalizedPrivateTourQuotePayload;
+
+export interface NormalizedPrivateTourQuotePayload extends Omit<
+  NormalizedHomepageEmailInquiryPayload,
+  "schemaVersion" | "formVersion" | "entryPath" | "productInterest"
+> {
+  schemaVersion: typeof privateTourQuoteSchemaVersion;
+  formVersion: typeof currentPrivateTourQuoteFormVersion;
+  entryPath: "private_tour_quote";
+  productInterest: PrivateTourInquiryContext;
+  travelDate: string | null;
+  note: string | null;
+}
 
 export interface InquiryValidationConfig {
   allowedFormVersions: readonly string[];
@@ -382,13 +399,17 @@ export function semanticInquiryPayload(
       ? { channel: "email", email: value.contact.email }
       : { channel: "whatsapp", phoneE164: value.contact.phoneE164 };
 
-  if (value.schemaVersion === homepageEmailInquirySchemaVersion) {
+  if (value.schemaVersion === homepageEmailInquirySchemaVersion ||
+      value.schemaVersion === privateTourQuoteSchemaVersion) {
     return {
       schemaVersion: value.schemaVersion,
       formVersion: value.formVersion,
       entryPath: value.entryPath,
       locale: value.locale,
       contact,
+      ...(value.schemaVersion === privateTourQuoteSchemaVersion
+        ? { travelDate: value.travelDate, note: value.note }
+        : {}),
       ...(value.productInterest
         ? {
             productInterest: {
@@ -511,11 +532,20 @@ function classicStartTimingSnapshot(
   };
 }
 
-function validateAndNormalizeHomepageEmailInquiry(
+export function isValidPrivateTourTravelDate(value: unknown): value is string {
+  if (typeof value !== "string" || !/^(?!0000)\d{4}-\d{2}-\d{2}$/u.test(value)) return false;
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
+
+function validateAndNormalizeEmailInquiry(
   input: Record<string, unknown>,
   config: InquiryValidationConfig,
 ): InquiryValidationResult {
   const fieldErrors: Record<string, string> = {};
+  const isQuote = input.schemaVersion === privateTourQuoteSchemaVersion;
+  const schemaVersion = isQuote ? privateTourQuoteSchemaVersion : homepageEmailInquirySchemaVersion;
+  const formVersion = isQuote ? currentPrivateTourQuoteFormVersion : currentHomepageEmailFormVersion;
   hasOnlyKeys(
     input,
     [
@@ -525,6 +555,7 @@ function validateAndNormalizeHomepageEmailInquiry(
       "locale",
       "contact",
       "productInterest",
+      ...(isQuote ? ["travelDate", "note"] : []),
       "privacyNoticeVersion",
       "attribution",
       "experiment",
@@ -534,16 +565,16 @@ function validateAndNormalizeHomepageEmailInquiry(
     fieldErrors,
   );
 
-  if (input.schemaVersion !== homepageEmailInquirySchemaVersion) {
+  if (input.schemaVersion !== schemaVersion) {
     fieldErrors.schemaVersion = "unsupported";
   }
   if (
-    input.formVersion !== currentHomepageEmailFormVersion ||
-    !config.allowedFormVersions.includes(currentHomepageEmailFormVersion)
+    input.formVersion !== formVersion ||
+    !config.allowedFormVersions.includes(formVersion)
   ) {
     fieldErrors.formVersion = "unsupported";
   }
-  if (input.entryPath !== "homepage_email") {
+  if (input.entryPath !== (isQuote ? "private_tour_quote" : "homepage_email")) {
     fieldErrors.entryPath = "invalid";
   }
   if (!isOneOf(input.locale, inquiryLocales)) {
@@ -644,6 +675,26 @@ function validateAndNormalizeHomepageEmailInquiry(
     }
   }
 
+  if (isQuote && !productInterest) fieldErrors.productInterest = "required";
+
+  let travelDate: string | null = null;
+  let note: string | null = null;
+  if (isQuote) {
+    if (input.travelDate !== null) {
+      if (isValidPrivateTourTravelDate(input.travelDate)) travelDate = input.travelDate;
+      else fieldErrors.travelDate = "invalid";
+    }
+    if (input.note !== null) {
+      if (typeof input.note !== "string") fieldErrors.note = "invalid";
+      else {
+        const normalizedNote = normalizeText(input.note).trim();
+        if (unicodeLength(normalizedNote) > 1000) fieldErrors.note = "too_long";
+        else if (disallowedControlCharacters.test(normalizedNote)) fieldErrors.note = "invalid_control_character";
+        else note = normalizedNote || null;
+      }
+    }
+  }
+
   let normalizedAttribution: NormalizedInquiryAttribution | null = null;
   const attribution = input.attribution;
   if (!isPlainObject(attribution)) {
@@ -656,7 +707,9 @@ function validateAndNormalizeHomepageEmailInquiry(
       fieldErrors,
     );
     const expectedSubmitSurface = isOneOf(input.locale, inquiryLocales)
-      ? inquirySubmitSurfaceByLocale[input.locale]
+      ? isQuote
+        ? productInterest ? `${inquirySubmitSurfaceByLocale[input.locale]}tours/${productInterest.slug}/` : null
+        : inquirySubmitSurfaceByLocale[input.locale]
       : null;
     if (
       typeof attribution.landingPath !== "string" ||
@@ -701,6 +754,23 @@ function validateAndNormalizeHomepageEmailInquiry(
     }
     return { ok: false, code, fieldErrors };
   }
+
+  if (isQuote && productInterest) return {
+    ok: true,
+    value: {
+      schemaVersion: privateTourQuoteSchemaVersion,
+      formVersion: currentPrivateTourQuoteFormVersion,
+      entryPath: "private_tour_quote",
+      locale: input.locale,
+      contact: { channel: "email", email },
+      productInterest,
+      travelDate,
+      note,
+      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      attribution: normalizedAttribution,
+      experiment: null,
+    },
+  };
 
   return {
     ok: true,
@@ -1318,8 +1388,9 @@ export function validateAndNormalizeInquiry(
       fieldErrors: { request: "invalid" },
     };
   }
-  if (input.schemaVersion === homepageEmailInquirySchemaVersion) {
-    return validateAndNormalizeHomepageEmailInquiry(input, config);
+  if (input.schemaVersion === homepageEmailInquirySchemaVersion ||
+      input.schemaVersion === privateTourQuoteSchemaVersion) {
+    return validateAndNormalizeEmailInquiry(input, config);
   }
   if (input.schemaVersion === destinationInquirySchemaVersion) {
     return validateAndNormalizeDestinationInquiry(input, config);

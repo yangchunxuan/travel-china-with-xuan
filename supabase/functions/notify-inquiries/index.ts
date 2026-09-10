@@ -16,6 +16,13 @@ import {
   type PrivateTourInquiryContext,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../../../lib/privateTourInquiryContext.ts";
+import {
+  currentPrivateTourQuoteFormVersion,
+  homepageEmailPrivacyNoticeVersion,
+  privateTourQuoteSchemaVersion,
+  validateAndNormalizeInquiry,
+  // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
+} from "../../../lib/inquiryContract.ts";
 
 declare const Deno: {
   serve(handler: (request: Request) => Response | Promise<Response>): void;
@@ -557,7 +564,75 @@ async function sendThroughResend(
   let text: string;
   let html: string;
 
-  if (job.route_id === "homepage-email") {
+  if (job.route_id === "private-tour-quote") {
+    const validation = validateAndNormalizeInquiry({
+      schemaVersion: privateTourQuoteSchemaVersion,
+      formVersion: currentPrivateTourQuoteFormVersion,
+      entryPath: "private_tour_quote",
+      locale: job.locale,
+      contact: { channel: job.reply_channel, email: job.contact_email },
+      productInterest: job.answers.productInterest,
+      travelDate: job.answers.travelDate,
+      note: job.note,
+      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      attribution: { landingPath: job.answers.landingPath },
+      experiment: null,
+      antiAbuse: { companyWebsite: "" },
+    }, {
+      allowedFormVersions: [currentPrivateTourQuoteFormVersion],
+      allowedPrivacyNoticeVersions: [homepageEmailPrivacyNoticeVersion],
+    });
+    if (!validation.ok || validation.value.schemaVersion !== privateTourQuoteSchemaVersion ||
+        job.contact_phone_e164 !== null || job.departure_country !== null ||
+        job.rough_budget_per_person !== null ||
+        Object.keys(job.answers).length !== 3 ||
+        Object.keys(job.route_snapshot).length !== 2 ||
+        job.route_snapshot.kind !== "private-tour-quote" ||
+        job.route_snapshot.ruleVersion !== currentPrivateTourQuoteFormVersion) {
+      throw new Error("invalid_job:private_tour_quote_shape");
+    }
+    const quote = validation.value;
+    const selectionLabel = privateTourInquirySelectionLabel(quote.productInterest, job.locale);
+    const travelDate = quote.travelDate ?? "(Date undecided)";
+    const note = quote.note ?? "(No note provided)";
+    const productUrl = `https://homegroundchina.com${quote.attribution.landingPath}`;
+    subject = `[Homeground][Private tour quote] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(quote.productInterest.name, "product_name")}`;
+    text = [
+      "A visitor requested a quote for this published private tour.",
+      "The requested date and notes are traveller input, not a confirmed booking or supplier availability.",
+      "",
+      `Reference: ${job.public_reference}`,
+      `Language: ${locale}`,
+      `Published tour: ${quote.productInterest.name}`,
+      `Product reference: ${quote.productInterest.slug}`,
+      `Product page: ${productUrl}`,
+      ...(selectionLabel ? [`Tour selection: ${selectionLabel}`] : []),
+      `Requested travel date: ${travelDate}`,
+      "Traveller note:", note,
+      `Traveller contact: ${contact.display}`,
+      `Received: ${job.inquiry_created_at}`,
+      `First response due: ${job.first_response_due_at}`,
+      "", "Reply directly to this message; Reply-To is already set to the traveller.",
+      "The Gmail thread and its Sent message are the handling record.",
+    ].join("\n");
+    html = `<p>A visitor requested a quote for this published private tour.</p>
+      <p>The requested date and notes are traveller input, not a confirmed booking or supplier availability.</p>
+      <dl>
+        <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
+        <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        <dt>Published tour</dt><dd>${escapeHtml(quote.productInterest.name)}</dd>
+        <dt>Product reference</dt><dd>${escapeHtml(quote.productInterest.slug)}</dd>
+        <dt>Product page</dt><dd><a href="${escapeHtml(productUrl)}">${escapeHtml(productUrl)}</a></dd>
+        ${selectionLabel ? `<dt>Tour selection</dt><dd>${escapeHtml(selectionLabel)}</dd>` : ""}
+        <dt>Requested travel date</dt><dd>${escapeHtml(travelDate)}</dd>
+        <dt>Traveller note</dt><dd style="white-space:pre-wrap">${escapeHtml(note)}</dd>
+        <dt>Traveller contact</dt><dd>${escapeHtml(contact.display)}</dd>
+        <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
+        <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
+      </dl>
+      <p>Reply directly to this message; Reply-To is already set to the traveller.</p>
+      <p>The Gmail thread and its Sent message are the handling record.</p>`;
+  } else if (job.route_id === "homepage-email") {
     const homepageAnswerKeys = Object.keys(job.answers);
     const homepageSnapshotKeys = Object.keys(job.route_snapshot);
     const productInterest = homepageProductInterest(job);

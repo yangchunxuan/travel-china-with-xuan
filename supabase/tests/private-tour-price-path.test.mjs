@@ -15,6 +15,7 @@ import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcas
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
 import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
+import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 
 const locales = ["en", "zh", "ko"];
 const beijingSlug = "beijing-highlights-5-day-private-tour";
@@ -37,6 +38,11 @@ async function loadComponent(path, overrides = {}, window) {
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/analytics": { trackEvent() {} },
     "./GuideCtaLink": { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) },
+    "./TourWhatsAppLink": { TourWhatsAppLink: ({ locale, slug }) => {
+      const selected = overrides["./PrivateTourSelection"]?.usePrivateTourSelection();
+      const context = inquiry.getPrivateTourInquiryContext(slug, locale, selected?.slug === slug ? selected.selection : undefined);
+      return React.createElement("a", { href: tourWhatsAppHref(locale, context) }, tourContactCopy[locale].alternative);
+    } },
     "lucide-react": { ArrowRight: () => null },
     "next/image": () => null,
     ...overrides,
@@ -204,10 +210,23 @@ test("server-rendered homepage labels and detail price controls share the starti
     const selectedService = detailNodes.find((node) => node.tagName === "button" && attr(node, "aria-pressed") === "true" && text(node) === starting.serviceLabel);
     assert.ok(selectedService, `${locale}: the initial service is the displayed card basis`);
     assert.ok(detailNodes.some((node) => attr(node, "class") === "priceResult" && text(node).includes(starting.formatted)));
+    let inquiryLinks = 0;
+    let whatsappLinks = 0;
     for (const link of detailNodes.filter((node) => node.tagName === "a")) {
       if (attr(link, "href") === "#tour-price-details") continue;
-      assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(new URL(attr(link, "href"), "https://homegroundchina.com").searchParams, locale).selection, starting.selection);
+      const url = new URL(attr(link, "href"), "https://homegroundchina.com");
+      if (url.origin === "https://wa.me") {
+        const context = inquiry.getPrivateTourInquiryContext(beijingSlug, locale, starting.selection);
+        assert.ok(url.searchParams.get("text").includes(inquiry.privateTourInquirySelectionLabel(context, locale)));
+        assert.ok(url.searchParams.get("text").includes(context.name));
+        whatsappLinks += 1;
+      } else {
+        assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale).selection, starting.selection);
+        inquiryLinks += 1;
+      }
     }
+    assert.ok(inquiryLinks >= 2, "both existing inquiry actions must retain the starting selection");
+    assert.equal(whatsappLinks, 1, "the mocked secondary contact remains a real contextual link");
   }
 });
 

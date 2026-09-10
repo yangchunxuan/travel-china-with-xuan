@@ -1,3 +1,4 @@
+import { TourWhatsAppLink } from "./TourWhatsAppLink";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Check, CircleAlert } from "lucide-react";
@@ -357,6 +358,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                     <ArrowRight aria-hidden="true" size={18} />
                   </GuideCtaLink>
                 ) : null}
+                {published ? <TourWhatsAppLink locale={locale} slug="zhangjiajie-4-day-private-tour" /> : null}
                 <a className={styles.priceJump} href="#prices-title">
                   {copy.pricesTitle}
                   <ArrowDown aria-hidden="true" size={18} />
