@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { resolvePageTitle } from "./pageTitle";
+import { resolvePageTitle } from "./pageTitle.ts";
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { localizePrivateTourProduct, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";

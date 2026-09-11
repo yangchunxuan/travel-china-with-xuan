@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { resolvePageTitle } from "./pageTitle";
+import { resolvePageTitle } from "./pageTitle.ts";
 import {
   getGuideEntry,
   getGuideLanguagePaths,

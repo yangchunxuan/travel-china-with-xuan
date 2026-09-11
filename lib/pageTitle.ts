@@ -1,4 +1,4 @@
-import type { HomegroundLocale } from "./homegroundI18n";
+import type { HomegroundLocale } from "./homegroundI18n.ts";
 
 const BRAND_SUFFIX = " — Homeground China";
 
