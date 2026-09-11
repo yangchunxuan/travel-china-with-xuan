@@ -67,8 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "你的中国行程是不是太赶？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "避免把第一晚再次压满。" }
   ]},
   { id: "sources", type: "sources", title: "官方与权威来源", items: [
-    { label: "丽香铁路开通与车站海拔", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
-    { label: "丽香铁路运营与车站到景区接驳", url: "https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
+    { label: "丽香铁路开通与车站海拔", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
+    { label: "丽香铁路运营与车站到景区接驳", url: "https://web.archive.org/web/20251022175952/https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
     { label: "香格里拉景区直通车官方信息", url: "https://www.diqing.gov.cn/xwzx/xsqkx/202408/20240830_215419.html", publisher: "迪庆藏族自治州人民政府", reviewedAt: "2026-08-13" },
     { label: "高原旅游健康专家建议", url: "https://www.nhc.gov.cn/xcs/c100122/202507/7dfe2bbc60604ed2bd15bec34f7ada64.shtml", publisher: "国家卫生健康委员会", reviewedAt: "2026-08-13" },
     { label: "香格里拉天气预报", url: "https://www.weather.com.cn/weather/101291301.shtml", publisher: "中国天气网/中国气象局", reviewedAt: "2026-08-13" },

@@ -115,7 +115,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
 
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "《旅馆业治安管理办法》现行全文（修订至2022年3月29日）", url: "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=694", publisher: "司法部国家行政法规库", reviewedAt: "2026-08-23" },
-    { label: "关于住宿业经营者以“无涉外资质”为由拒绝接待境外人员的回应", url: "https://www.gov.cn/hudong/202405/content_6952770.htm", publisher: "中国政府网；公安部、国家移民管理局回应", reviewedAt: "2026-08-23" },
+    { label: "关于住宿业经营者以“无涉外资质”为由拒绝接待境外人员的回应", url: "https://web.archive.org/web/20250905070908/https://www.gov.cn/hudong/202405/content_6952770.htm", publisher: "中国政府网；公安部、国家移民管理局回应", reviewedAt: "2026-08-23" },
     { label: "关于便利境外人员住宿若干措施的通知", url: "https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2024/art_6e5fd351d24c460cad01512ce52d3f83.html", publisher: "商务部等七部门", reviewedAt: "2026-08-23" },
     { label: "题图：龙海市一家旅馆前台的旅客登记须知告示牌，摄影 Vmenkov，CC BY-SA 3.0；已裁切并转换为WebP", url: "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG", publisher: "维基共享资源", reviewedAt: "2026-08-22" },
     { label: "题图衍生作品许可：CC BY-SA 3.0", url: "https://creativecommons.org/licenses/by-sa/3.0/", publisher: "Creative Commons", reviewedAt: "2026-08-22" },

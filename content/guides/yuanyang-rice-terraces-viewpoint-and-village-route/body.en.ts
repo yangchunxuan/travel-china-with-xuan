@@ -71,7 +71,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "2026 Yuanyang heritage-management programme", url: "https://www.hhyy.gov.cn/info/76021/405851.htm", publisher: "Yuanyang County People's Government", reviewedAt: "2026-08-13"},
     {label: "2025 official road hazards around terrace viewpoints", url: "https://www.hhyy.gov.cn/info/1231/390011.htm", publisher: "Yuanyang County Public Security Bureau", reviewedAt: "2026-08-13"},
     {label: "2025 Laohuzui visitor-traffic management response", url: "https://www.hhyy.gov.cn/info/3161/397061.htm", publisher: "Yuanyang County Culture and Tourism Bureau", reviewedAt: "2026-08-13"},
-    {label: "2026 opening of the Yuanyang–Lüchun expressway", url: "https://jtyst.yn.gov.cn/html/2026/xingyexinwen_0214/3136521.html", publisher: "Yunnan Provincial Department of Transport", reviewedAt: "2026-08-13"},
+    {label: "2026 opening of the Yuanyang–Lüchun expressway", url: "https://jtyst.yn.gov.cn/", publisher: "Yunnan Provincial Department of Transport", reviewedAt: "2026-08-13"},
     {label: "Hero image: Bada rice terraces, photographed by Yumeto on 18 December 2025", url: "https://commons.wikimedia.org/wiki/File:20251218_Bada_rice_terraces_(143520).jpg", publisher: "Wikimedia Commons / Yumeto", reviewedAt: "2026-08-13"},
     {label: "Hero image licence: Creative Commons Attribution-ShareAlike 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

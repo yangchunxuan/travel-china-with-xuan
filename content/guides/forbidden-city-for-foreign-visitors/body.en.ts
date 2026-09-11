@@ -477,7 +477,7 @@ export default {
       items: [
         {
           label: "Palace Museum official English ticket and international-visitor booking instructions",
-          url: "https://intl.dpm.org.cn/ticket_details.html",
+          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
           publisher: "The Palace Museum",
           reviewedAt: "2026-08-22",
         },

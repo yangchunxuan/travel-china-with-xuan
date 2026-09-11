@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { resolvePageTitle } from "./pageTitle.ts";
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { localizePrivateTourProduct, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";
@@ -42,7 +43,7 @@ export function buildPrivateTourMetadata(
     );
 
   return {
-    title: localized.metadataTitle,
+    title: resolvePageTitle(localized.metadataTitle, locale),
     description: localized.metadataDescription,
     alternates: {
       canonical: localized.path,

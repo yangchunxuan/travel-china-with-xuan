@@ -74,7 +74,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Lijiang–Shangri-La railway opening", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "National Railway Administration", reviewedAt: "2026-08-12" },
-    { label: "Yunnan transport authority overview of the Lijiang–Shangri-La railway", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-12" }
+    { label: "Yunnan transport authority overview of the Lijiang–Shangri-La railway", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-12" }
   ] }
 ]} satisfies StructuredPageBody;
 export default body;

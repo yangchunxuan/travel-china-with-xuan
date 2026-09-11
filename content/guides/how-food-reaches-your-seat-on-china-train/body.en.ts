@@ -33,7 +33,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "How to order food on high-speed trains", url: "https://english.shanghai.gov.cn/en-Transportation/20241213/1a3e604aa23140619e06d90e8d3004f4.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-13"},
     {label: "Beijing South internet-meal service update", url: "https://www.bjwmb.gov.cn/yw/10119254.html", publisher: "Beijing Civilization Office", reviewedAt: "2026-08-13"},
     {label: "Railway meal delivery chain", url: "https://www.ndrc.gov.cn/xwdt/ztzl/cjsjyth1/xwzx/202111/t20211115_1303935_ext.html", publisher: "National Development and Reform Commission", reviewedAt: "2026-08-13"},
-    {label: "Optimization of on-demand meal ordering on high-speed railway", url: "https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "Hangzhou Normal University repository", reviewedAt: "2026-08-13"},
+    {label: "Optimization of on-demand meal ordering on high-speed railway", url: "https://web.archive.org/web/20230921091858/https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "Hangzhou Normal University repository", reviewedAt: "2026-08-13"},
     {label: "Hero photograph: 12306 meal-delivery centre at Nanjing South — N509FZ, 24 February 2019 (cropped)", url: "https://commons.wikimedia.org/wiki/File:12306_network_ordering_delivery_center_at_Nanjingnan_Railway_Station_(20190224181934).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
     {label: "CC BY-SA 4.0 licence for the cropped hero photograph", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

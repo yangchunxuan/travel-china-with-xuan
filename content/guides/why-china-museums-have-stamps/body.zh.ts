@@ -183,7 +183,7 @@ const body = {
       title: "已复核的官方与独立来源",
       items: [
         {"label": "北京地区博物馆集章热报道", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "北京日报／北京市人民政府", "reviewedAt": "2026-08-13"},
-        {"label": "2024年4月北京地区博物馆社教活动及徐悲鸿纪念馆印章", "url": "https://wwj.beijing.gov.cn/bjww/wwjzz/wwjapp/zzbsy/zxhd/436421368/index.html", "publisher": "北京市文物局", "reviewedAt": "2026-08-13"},
+        {"label": "2024年4月北京地区博物馆社教活动及徐悲鸿纪念馆印章", "url": "https://wwj.beijing.gov.cn/", "publisher": "北京市文物局", "reviewedAt": "2026-08-13"},
         {"label": "南京博物院2022年度报告", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "南京博物院", "reviewedAt": "2026-08-13"},
         {"label": "济宁市博物馆集章通知", "url": "https://www.jining.gov.cn/art/2024/9/25/art_65757_2895180.html", "publisher": "济宁市文化和旅游局", "reviewedAt": "2026-08-13"},
         {"label": "益阳市博物馆2024年工作及自助印章机", "url": "https://www.yiyang.gov.cn/wlgt/uploadfiles/202505/2025050610251159177.pdf", "publisher": "益阳市文化旅游广电体育局", "reviewedAt": "2026-08-13"},

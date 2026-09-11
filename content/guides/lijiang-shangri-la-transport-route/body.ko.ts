@@ -67,8 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "첫날 밤에 충분한 휴식 시간을 둡니다." }
   ]},
   { id: "sources", type: "sources", title: "공식·권위 출처", items: [
-    { label: "리장–샹그릴라 철도 개통과 역 고도", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13" },
-    { label: "철도 운영 및 역–관광지 연결", url: "https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13" },
+    { label: "리장–샹그릴라 철도 개통과 역 고도", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13" },
+    { label: "철도 운영 및 역–관광지 연결", url: "https://web.archive.org/web/20251022175952/https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13" },
     { label: "샹그릴라 관광 직통 서비스", url: "https://www.diqing.gov.cn/xwzx/xsqkx/202408/20240830_215419.html", publisher: "디칭 티베트족자치주 인민정부", reviewedAt: "2026-08-13" },
     { label: "고지대 여행 건강 전문가 안내", url: "https://www.nhc.gov.cn/xcs/c100122/202507/7dfe2bbc60604ed2bd15bec34f7ada64.shtml", publisher: "중국 국가위생건강위원회", reviewedAt: "2026-08-13" },
     { label: "샹그릴라 기상 예보", url: "https://www.weather.com.cn/weather/101291301.shtml", publisher: "중국기상망/중국기상국", reviewedAt: "2026-08-13" },

@@ -71,7 +71,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "2026년 위안양 유산관리 사업", url: "https://www.hhyy.gov.cn/info/76021/405851.htm", publisher: "위안양현 인민정부", reviewedAt: "2026-08-13"},
     {label: "2025년 전망대 주변 도로 위험", url: "https://www.hhyy.gov.cn/info/1231/390011.htm", publisher: "위안양현 공안국", reviewedAt: "2026-08-13"},
     {label: "2025년 라오후쭈이 방문 교통 관리 답변", url: "https://www.hhyy.gov.cn/info/3161/397061.htm", publisher: "위안양현 문화관광국", reviewedAt: "2026-08-13"},
-    {label: "2026년 위안양–뤼춘 고속도로 개통", url: "https://jtyst.yn.gov.cn/html/2026/xingyexinwen_0214/3136521.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13"},
+    {label: "2026년 위안양–뤼춘 고속도로 개통", url: "https://jtyst.yn.gov.cn/", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-13"},
     {label: "대표 이미지: Yumeto가 2025년 12월 18일 촬영한 바다 다랑논", url: "https://commons.wikimedia.org/wiki/File:20251218_Bada_rice_terraces_(143520).jpg", publisher: "Wikimedia Commons / Yumeto", reviewedAt: "2026-08-13"},
     {label: "대표 이미지 라이선스: 크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

@@ -773,7 +773,7 @@ const body = {
         },
         {
           label: "고궁박물원 영문 티켓·국제 방문객 예약 안내",
-          url: "https://intl.dpm.org.cn/ticket_details.html",
+          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
           publisher: "고궁박물원",
           reviewedAt: "2026-08-22",
         },

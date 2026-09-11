@@ -163,7 +163,7 @@ const body = {
         {"label": "青岛啤酒博物馆工业遗产活化案例", "url": "https://www.qingdao.gov.cn/ywdt/zwzl/cjzl2026/dxal2026/202607/t20260703_10650841.shtml", "publisher": "青岛市人民政府", "reviewedAt": "2026-08-13"},
         {"label": "海尔发展历程", "url": "https://www.haier.com/about-haier/history/", "publisher": "海尔集团", "reviewedAt": "2026-08-13"},
         {"label": "海尔游学与公开展馆信息", "url": "https://www.haier.com/press-events/interview/", "publisher": "海尔集团", "reviewedAt": "2026-08-13"},
-        {"label": "中车青岛四方公司简介", "url": "https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "中车青岛四方", "reviewedAt": "2026-08-13"},
+        {"label": "中车青岛四方公司简介", "url": "https://web.archive.org/web/20250209085907/https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "中车青岛四方", "reviewedAt": "2026-08-13"},
         {"label": "中车青岛四方历史沿革", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "中车青岛四方", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic：青岛啤酒、生态与城市化（1900—1950）", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "青岛外商投资集聚与地方经济发展研究", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},

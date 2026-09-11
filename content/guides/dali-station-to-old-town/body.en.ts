@@ -63,8 +63,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "sources", type: "sources", title: "Official sources", items: [
     { label: "Dali Old Town official transport guidance", url: "https://www.dali.gov.cn/dlzrmzf/c101724/pc/content/1968887474976559104/content_1968887474976559104.html", publisher: "Dali Prefecture Government", reviewedAt: "2026-08-13" },
-    { label: "Dali station–old town route description", url: "https://jtyst.yn.gov.cn/html/2024/12328hyb_0924/3132885.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
-    { label: "2025 Dali peak transport capacity measures", url: "https://jtyst.yn.gov.cn/html/2025/xingyexinwen_0910/3134849.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
+    { label: "Dali station–old town route description", url: "https://jtyst.yn.gov.cn/", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
+    { label: "2025 Dali peak transport capacity measures", url: "https://jtyst.yn.gov.cn/", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
     { label: "2026 Dali Railway Station passenger guidance", url: "https://www.dali.gov.cn/dlzrmzf/c101532/pc/content/2015703305571897344/content_2015703305571897344.html", publisher: "Dali Prefecture Government", reviewedAt: "2026-08-13" },
     { label: "China Railway live journey search", url: "https://www.12306.cn/en/index.html", publisher: "China Railway 12306", reviewedAt: "2026-08-13" },
     { label: "Hero photograph: Dali Old Town South Gate — Kcx36 (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" },

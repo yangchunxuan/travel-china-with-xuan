@@ -334,7 +334,7 @@ const body = {
       items: [
         {
           label: "云南省推动咖啡精品率和精深加工率提升的政策措施",
-          url: "https://www.yn.gov.cn/zcwjk/html/2022/wjkformal_1123/10373.html",
+          url: "https://www.yn.gov.cn/",
           publisher: "云南省人民政府",
           reviewedAt: "2026-08-13"
         },

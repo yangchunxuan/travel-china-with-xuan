@@ -1,9 +1,9 @@
 5c80794c17e1aee69d1afbda80e8c9f50fffcae55d1d7d60c17d553877e2d634  homeground-china-10-city-arrival-stay-departure-v1-ATTRIBUTION-AND-EMBED.txt
 4960bbcf7b8fcc4c635a3dbe6004866657c5fa9fb92d19dd1a557093cfa81101  homeground-china-10-city-arrival-stay-departure-v1-LICENSE.txt
 5490824396464895c298f9a22086bfe062b34b34a6d77a50c7ed93926c4bbbb9  homeground-china-10-city-arrival-stay-departure-v1-README.txt
-456731e639d5c86b3f1aac612feae0ed295e8e3c8a033e37b73ba670edfedfe3  homeground-china-10-city-arrival-stay-departure-v1-SOURCES.txt
+99e4b480166f60e7fd753ba8fc7606b764e1b96d2c04aed88a09aafb6ceec505  homeground-china-10-city-arrival-stay-departure-v1-SOURCES.txt
 f3ef436f4f30a4919c83ff6319e4fc6df659ca8b18b27c75f5041d43863a03d8  homeground-china-10-city-arrival-stay-departure-v1.csv
-bb4ff07696c3a48922805c308a22b75d2566ad3ba8d76bf70f605ed7d519783f  homeground-china-10-city-arrival-stay-departure-v1.json
+81024351f797eeeb8b7133990b510e4c6c84f301dbb6038e5d9a1baf4d8dee9c  homeground-china-10-city-arrival-stay-departure-v1.json
 5831332226d449a50139c084506ae9ed0eb095378c6e27c07c782d807f37ab7b  homeground-china-10-city-arrival-stay-departure-v1.png
 3020790273f1eda536a21f32ef381bbdeba455323ada244296e3805a821884ce  homeground-china-10-city-arrival-stay-departure-v1.svg
 a4a3b1096dc7e6b1bf7e6f4793bfa989078586ab1c54c6a86e7b62829c693ff9  homeground-china-10-city-arrival-stay-departure-v1@2x.png

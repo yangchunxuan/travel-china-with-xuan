@@ -67,8 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Leave enough time to rest on the first night." }
   ]},
   { id: "sources", type: "sources", title: "Official and authoritative sources", items: [
-    { label: "Lijiang–Shangri-La railway opening and station elevations", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
-    { label: "Railway anniversary and station-to-scenic connections", url: "https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
+    { label: "Lijiang–Shangri-La railway opening and station elevations", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
+    { label: "Railway anniversary and station-to-scenic connections", url: "https://web.archive.org/web/20251022175952/https://jtyst.yn.gov.cn/html/2024/jiaotongyaowen_1128/3133261.html", publisher: "Yunnan Department of Transport", reviewedAt: "2026-08-13" },
     { label: "Shangri-La official scenic direct-service information", url: "https://www.diqing.gov.cn/xwzx/xsqkx/202408/20240830_215419.html", publisher: "Diqing Prefecture Government", reviewedAt: "2026-08-13" },
     { label: "NHC high-altitude travel expert guidance", url: "https://www.nhc.gov.cn/xcs/c100122/202507/7dfe2bbc60604ed2bd15bec34f7ada64.shtml", publisher: "National Health Commission", reviewedAt: "2026-08-13" },
     { label: "Shangri-La forecast", url: "https://www.weather.com.cn/weather/101291301.shtml", publisher: "China Weather / CMA", reviewedAt: "2026-08-13" },

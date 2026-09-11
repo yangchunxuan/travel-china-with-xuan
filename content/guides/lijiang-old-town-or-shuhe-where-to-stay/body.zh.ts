@@ -339,13 +339,13 @@ export default {
         },
         {
           label: "丽江旅游客运与火车站连接",
-          url: "https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
+          url: "https://web.archive.org/web/20260520044053/https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
           publisher: "云南省交通运输厅",
           reviewedAt: "2026-08-10",
         },
         {
           label: "带日期的火车站至束河线路资料",
-          url: "https://jtyst.yn.gov.cn/html/2024/xingyexinwen_0307/131376.html",
+          url: "https://jtyst.yn.gov.cn/",
           publisher: "云南省交通运输厅",
           reviewedAt: "2026-08-10",
         },

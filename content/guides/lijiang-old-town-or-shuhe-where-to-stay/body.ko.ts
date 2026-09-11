@@ -339,13 +339,13 @@ export default {
         },
         {
           label: "리장 관광 교통과 기차역 연결",
-          url: "https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
+          url: "https://web.archive.org/web/20260520044053/https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
           publisher: "윈난성 교통운수청",
           reviewedAt: "2026-08-10",
         },
         {
           label: "날짜가 명시된 기차역–수허 노선 자료",
-          url: "https://jtyst.yn.gov.cn/html/2024/xingyexinwen_0307/131376.html",
+          url: "https://jtyst.yn.gov.cn/",
           publisher: "윈난성 교통운수청",
           reviewedAt: "2026-08-10",
         },
