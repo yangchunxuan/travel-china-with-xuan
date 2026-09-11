@@ -9,6 +9,6 @@ export const homegroundBusiness = {
   registrationAuthority: "张家界市永定区市场监督管理局",
   registrationDate: "2024-09-13",
   licenceIssueDate: "2026-07-24",
-  serviceEmail: "yangchunxuan1@gmail.com",
+  serviceEmail: "hello@homegroundchina.com",
   registryUrl: "https://www.gsxt.gov.cn/index.html",
 } as const;
