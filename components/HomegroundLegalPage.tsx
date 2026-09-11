@@ -219,7 +219,7 @@ export function HomegroundLegalPage({
                 );
               })}
               <Link href={privacyPath}>{copy.related.privacy}</Link>
-              <a href="mailto:yangchunxuan1@gmail.com">
+              <a href="mailto:hello@homegroundchina.com">
                 {copy.related.contact}
               </a>
             </div>

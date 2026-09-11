@@ -10,7 +10,7 @@ import { HomegroundBrandMark } from "./HomegroundBrandMark";
 export function openSiteChat() {
   const w = window as Window & { Tawk_API?: { maximize?: () => void } };
   if (w.Tawk_API?.maximize) w.Tawk_API.maximize();
-  else window.location.href = "mailto:yangchunxuan1@gmail.com";
+  else window.location.href = "mailto:hello@homegroundchina.com";
 }
 
 export function Brand() {
@@ -162,8 +162,8 @@ export function SiteFooter({ t, lang }: { t: Dict; lang: Lang }) {
           >
             <MessageCircle size={15} /> {t.footer.messenger}
           </a>
-          <a href="mailto:yangchunxuan1@gmail.com">
-            <Mail size={15} /> yangchunxuan1@gmail.com
+          <a href="mailto:hello@homegroundchina.com">
+            <Mail size={15} /> hello@homegroundchina.com
           </a>
           <p className="footer-response">{t.footer.langsSpoken}</p>
         </div>

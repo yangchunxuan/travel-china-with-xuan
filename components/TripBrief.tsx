@@ -33,7 +33,7 @@ export function TripBrief({ t }: { t: Dict }) {
     [interests, p, pace, party, timing],
   );
 
-  const emailHref = `mailto:yangchunxuan1@gmail.com?subject=${encodeURIComponent(
+  const emailHref = `mailto:hello@homegroundchina.com?subject=${encodeURIComponent(
     p.emailSubject,
   )}&body=${encodeURIComponent(brief)}`;
 

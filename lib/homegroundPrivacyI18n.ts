@@ -87,7 +87,7 @@ export interface HomegroundPrivacyCopy {
   footer: string;
 }
 
-const privacyEmail = "yangchunxuan1@gmail.com";
+const privacyEmail = "hello@homegroundchina.com";
 
 export const homegroundPrivacyCopy: Record<
   HomegroundPrivacyLocale,
