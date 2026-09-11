@@ -352,7 +352,7 @@ const body: StructuredPageBody = {
         },
         {
           label: "GB/T 39609-2020 지명·주소 지오코딩 규칙",
-          url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=TFB%2FwAU5XAs%3D&mode=p",
+          url: "https://std.samr.gov.cn/",
           publisher: "중국 국가표준정보 공공서비스 플랫폼",
           reviewedAt: "2026-08-13",
         },

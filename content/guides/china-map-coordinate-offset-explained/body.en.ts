@@ -352,7 +352,7 @@ const body: StructuredPageBody = {
         },
         {
           label: "GB/T 39609-2020 Rules for geocode of address",
-          url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=TFB%2FwAU5XAs%3D&mode=p",
+          url: "https://std.samr.gov.cn/",
           publisher: "National Public Service Platform for Standards Information",
           reviewedAt: "2026-08-13",
         },

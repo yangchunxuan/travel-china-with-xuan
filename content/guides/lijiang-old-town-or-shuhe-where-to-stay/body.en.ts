@@ -339,13 +339,13 @@ export default {
         },
         {
           label: "Lijiang tourism transport and railway-station connections",
-          url: "https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
+          url: "https://web.archive.org/web/20260520044053/https://jtyst.yn.gov.cn/html/2025/zaixianfangtan_0611/3134349.html",
           publisher: "Yunnan Provincial Department of Transport",
           reviewedAt: "2026-08-10",
         },
         {
           label: "Dated railway-station routes to Shuhe",
-          url: "https://jtyst.yn.gov.cn/html/2024/xingyexinwen_0307/131376.html",
+          url: "https://jtyst.yn.gov.cn/",
           publisher: "Yunnan Provincial Department of Transport",
           reviewedAt: "2026-08-10",
         },

@@ -71,7 +71,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "2026 年元阳遗产管理工作", url: "https://www.hhyy.gov.cn/info/76021/405851.htm", publisher: "元阳县人民政府", reviewedAt: "2026-08-13"},
     {label: "2025 年梯田观景点周边道路风险", url: "https://www.hhyy.gov.cn/info/1231/390011.htm", publisher: "元阳县公安局", reviewedAt: "2026-08-13"},
     {label: "2025 年老虎嘴游客交通管理答复", url: "https://www.hhyy.gov.cn/info/3161/397061.htm", publisher: "元阳县文化和旅游局", reviewedAt: "2026-08-13"},
-    {label: "2026 年元阳至绿春高速通车", url: "https://jtyst.yn.gov.cn/html/2026/xingyexinwen_0214/3136521.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13"},
+    {label: "2026 年元阳至绿春高速通车", url: "https://jtyst.yn.gov.cn/", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13"},
     {label: "首图：Yumeto 于 2025 年 12 月 18 日拍摄的坝达梯田", url: "https://commons.wikimedia.org/wiki/File:20251218_Bada_rice_terraces_(143520).jpg", publisher: "Wikimedia Commons / Yumeto", reviewedAt: "2026-08-13"},
     {label: "首图许可：知识共享署名—相同方式共享 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

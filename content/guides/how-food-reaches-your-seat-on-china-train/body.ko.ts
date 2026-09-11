@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "고속열차 음식 주문 방법", url: "https://english.shanghai.gov.cn/en-Transportation/20241213/1a3e604aa23140619e06d90e8d3004f4.html", publisher: "상하이시 인민정부", reviewedAt: "2026-08-13"},
     {label: "베이징남역 온라인 음식 서비스 현황", url: "https://www.bjwmb.gov.cn/yw/10119254.html", publisher: "베이징시 정신문명건설판공실", reviewedAt: "2026-08-13"},
     {label: "철도 음식 배송 체계", url: "https://www.ndrc.gov.cn/xwdt/ztzl/cjsjyth1/xwzx/202111/t20211115_1303935_ext.html", publisher: "중국 국가발전개혁위원회", reviewedAt: "2026-08-13"},
-    {label: "고속철도 주문형 음식 배달 최적화 연구", url: "https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "항저우사범대학교 리포지터리", reviewedAt: "2026-08-13"},
+    {label: "고속철도 주문형 음식 배달 최적화 연구", url: "https://web.archive.org/web/20230921091858/https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "항저우사범대학교 리포지터리", reviewedAt: "2026-08-13"},
     {label: "대표 사진: N509FZ가 2019년 2월 24일 촬영한 난징남역 12306 온라인 배식센터(크롭)", url: "https://commons.wikimedia.org/wiki/File:12306_network_ordering_delivery_center_at_Nanjingnan_Railway_Station_(20190224181934).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
     {label: "크롭한 대표 사진의 CC BY-SA 4.0 라이선스", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

@@ -334,7 +334,7 @@ const body = {
       items: [
         {
           label: "윈난 커피 精品率과 정밀·심층 가공률 제고 정책",
-          url: "https://www.yn.gov.cn/zcwjk/html/2022/wjkformal_1123/10373.html",
+          url: "https://www.yn.gov.cn/",
           publisher: "윈난성 인민정부",
           reviewedAt: "2026-08-13"
         },

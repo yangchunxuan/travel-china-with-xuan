@@ -74,7 +74,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "丽江至香格里拉铁路开通运营", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "国家铁路局", reviewedAt: "2026-08-12" },
-    { label: "云南省交通运输厅丽香铁路概览", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-12" }
+    { label: "云南省交通运输厅丽香铁路概览", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-12" }
   ] }
 ]} satisfies StructuredPageBody;
 export default body;

@@ -115,7 +115,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
 
   { id: "sources", type: "sources", title: "공식 출처와 사진 제공", items: [
     { label: "《여관업 치안관리 방법》 현행 전문 (2022년 3월 29일까지 개정)", url: "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=694", publisher: "사법부 국가 행정법규 데이터베이스", reviewedAt: "2026-08-23" },
-    { label: "숙박업자가 ‘외국인 접대 자격이 없다’는 이유로 해외 투숙객을 거부하는 문제에 관한 답변", url: "https://www.gov.cn/hudong/202405/content_6952770.htm", publisher: "중국 정부망; 공안부·국가이민관리국 답변", reviewedAt: "2026-08-23" },
+    { label: "숙박업자가 ‘외국인 접대 자격이 없다’는 이유로 해외 투숙객을 거부하는 문제에 관한 답변", url: "https://web.archive.org/web/20250905070908/https://www.gov.cn/hudong/202405/content_6952770.htm", publisher: "중국 정부망; 공안부·국가이민관리국 답변", reviewedAt: "2026-08-23" },
     { label: "해외 방문객의 숙박 편의를 높이기 위한 조치에 관한 통지", url: "https://www.mofcom.gov.cn/xwfb/rcxwfb/art/2024/art_6e5fd351d24c460cad01512ce52d3f83.html", publisher: "상무부 등 7개 부처", reviewedAt: "2026-08-23" },
     { label: "대표 이미지: 룽하이시 한 여관 프런트의 숙박객 등록 안내판, 촬영 Vmenkov, CC BY-SA 3.0, 자르기 후 WebP 변환", url: "https://commons.wikimedia.org/wiki/File:Longhai_-_Hotel_reception_-_P1260519.JPG", publisher: "위키미디어 공용", reviewedAt: "2026-08-22" },
     { label: "대표 이미지 2차 저작물 라이선스: CC BY-SA 3.0", url: "https://creativecommons.org/licenses/by-sa/3.0/", publisher: "Creative Commons", reviewedAt: "2026-08-22" },

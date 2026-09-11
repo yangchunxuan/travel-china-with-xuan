@@ -28,9 +28,10 @@
     "test:guide-search": "node --experimental-strip-types --test tools/tests/guide-search.test.mjs",
     "test:homepage-search": "node --test supabase/tests/homepage-guide-search-static.test.mjs",
     "typecheck": "npm run guide:generate && tsc --noEmit",
-    "prebuild": "npm run guide:generate && npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines",
+    "generate:image-variants": "node tools/generate-image-variants.mjs",
+    "prebuild": "npm run guide:generate && npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
     "build": "next build",
-    "postbuild": "node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export",
+    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export",
     "start": "next start"
   },
   "dependencies": {
@@ -48,6 +49,7 @@
     "ajv": "8.20.0",
     "fontkit": "^2.0.4",
     "parse5": "7.3.0",
+    "sharp": "0.35.4",
     "typescript": "5.8.2"
   },
   "overrides": {

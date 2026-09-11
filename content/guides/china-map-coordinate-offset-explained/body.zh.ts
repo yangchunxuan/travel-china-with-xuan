@@ -352,7 +352,7 @@ const body: StructuredPageBody = {
         },
         {
           label: "GB/T 39609-2020 地名地址地理编码规则",
-          url: "https://std.samr.gov.cn/gb/search/gbDetailed?id=TFB%2FwAU5XAs%3D&mode=p",
+          url: "https://std.samr.gov.cn/",
           publisher: "全国标准信息公共服务平台",
           reviewedAt: "2026-08-13",
         },

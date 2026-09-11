@@ -163,7 +163,7 @@ const body = {
         {"label": "Industrial heritage reuse at Tsingtao Beer Museum", "url": "https://www.qingdao.gov.cn/ywdt/zwzl/cjzl2026/dxal2026/202607/t20260703_10650841.shtml", "publisher": "Qingdao Municipal People's Government", "reviewedAt": "2026-08-13"},
         {"label": "Haier development history", "url": "https://www.haier.com/about-haier/history/", "publisher": "Haier Group", "reviewedAt": "2026-08-13"},
         {"label": "Haier public learning and museum venues", "url": "https://www.haier.com/press-events/interview/", "publisher": "Haier Group", "reviewedAt": "2026-08-13"},
-        {"label": "CRRC Qingdao Sifang company profile", "url": "https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "CRRC Qingdao Sifang", "reviewedAt": "2026-08-13"},
+        {"label": "CRRC Qingdao Sifang company profile", "url": "https://web.archive.org/web/20250209085907/https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "CRRC Qingdao Sifang", "reviewedAt": "2026-08-13"},
         {"label": "CRRC Qingdao Sifang history", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "CRRC Qingdao Sifang", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic: Beer, Ecology, and Urbanization in a Chinese City, 1900–50", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "Formation of Foreign Direct Investment Clustering: The Case of Qingdao", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},

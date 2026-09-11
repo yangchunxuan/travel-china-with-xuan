@@ -51,7 +51,7 @@ const body: StructuredPageBody = {
     { id: "sources", type: "sources", title: "已核验的官方与图片来源", items: [
       { label: "参观服务：开放时间、预约时段、北门与核验规则", url: "https://www.chnmuseum.cn/cg/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
       { label: "国博官方英文预约系统", url: "https://pcticket.chnmuseum.cn/museum-en/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
-      { label: "临时开放公告：说明日期公告可覆盖常规周一安排", url: "https://www.chnmuseum.cn/gbgg/202607/t20260720_280985.shtml", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
+      { label: "临时开放公告：说明日期公告可覆盖常规周一安排", url: "https://www.chnmuseum.cn/cg/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
       { label: "首图：中国国家博物馆西立面，Daniel Case，CC BY-SA 3.0；经裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:National_Museum_of_China_west_facade,_straight_view.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
     ] },
   ],

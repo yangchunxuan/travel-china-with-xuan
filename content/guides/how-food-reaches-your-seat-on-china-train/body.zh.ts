@@ -44,7 +44,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "高铁列车餐食预订说明", url: "https://english.shanghai.gov.cn/en-Transportation/20241213/1a3e604aa23140619e06d90e8d3004f4.html", publisher: "上海市人民政府", reviewedAt: "2026-08-13"},
     {label: "北京南站网络订餐服务动态", url: "https://www.bjwmb.gov.cn/yw/10119254.html", publisher: "首都文明网", reviewedAt: "2026-08-13"},
     {label: "铁路餐食配送链", url: "https://www.ndrc.gov.cn/xwdt/ztzl/cjsjyth1/xwzx/202111/t20211115_1303935_ext.html", publisher: "国家发展和改革委员会", reviewedAt: "2026-08-13"},
-    {label: "高铁按需订餐优化研究", url: "https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "杭州师范大学机构知识库", reviewedAt: "2026-08-13"},
+    {label: "高铁按需订餐优化研究", url: "https://web.archive.org/web/20230921091858/https://www.hznu.edu.cn/upload/resources/file/2023/05/06/7774953.pdf", publisher: "杭州师范大学机构知识库", reviewedAt: "2026-08-13"},
     {label: "封面照片：N509FZ 于 2019 年 2 月 24 日拍摄的南京南站 12306 网络配餐中心（已裁切）", url: "https://commons.wikimedia.org/wiki/File:12306_network_ordering_delivery_center_at_Nanjingnan_Railway_Station_(20190224181934).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13"},
     {label: "裁切后封面照片的 CC BY-SA 4.0 许可证", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}

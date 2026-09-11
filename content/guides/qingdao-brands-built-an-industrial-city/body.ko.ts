@@ -163,7 +163,7 @@ const body = {
         {"label": "칭다오맥주 박물관 산업유산 재활용 사례", "url": "https://www.qingdao.gov.cn/ywdt/zwzl/cjzl2026/dxal2026/202607/t20260703_10650841.shtml", "publisher": "칭다오시 인민정부", "reviewedAt": "2026-08-13"},
         {"label": "하이얼 발전 연혁", "url": "https://www.haier.com/about-haier/history/", "publisher": "하이얼그룹", "reviewedAt": "2026-08-13"},
         {"label": "하이얼 견학·공공 전시 공간", "url": "https://www.haier.com/press-events/interview/", "publisher": "하이얼그룹", "reviewedAt": "2026-08-13"},
-        {"label": "CRRC 칭다오 쓰팡 회사 소개", "url": "https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "CRRC 칭다오 쓰팡", "reviewedAt": "2026-08-13"},
+        {"label": "CRRC 칭다오 쓰팡 회사 소개", "url": "https://web.archive.org/web/20250209085907/https://www.crrcgc.cc/sfgf/36_2134/36_2144/index.html", "publisher": "CRRC 칭다오 쓰팡", "reviewedAt": "2026-08-13"},
         {"label": "CRRC 칭다오 쓰팡 연혁", "url": "https://www.crrcgc.cc/sfgfen/53_3341/53_4020/index.html", "publisher": "CRRC 칭다오 쓰팡", "reviewedAt": "2026-08-13"},
         {"label": "Nature's Tonic: 칭다오 맥주, 생태와 도시화(1900–50)", "url": "https://www.journals.uchicago.edu/doi/full/10.1093/envhis/emy136", "publisher": "Environmental History", "reviewedAt": "2026-08-13"},
         {"label": "칭다오 외국인직접투자 집적과 지역 발전 연구", "url": "https://www.tandfonline.com/doi/full/10.1080/00343400601145186", "publisher": "Regional Studies", "reviewedAt": "2026-08-13"},

@@ -183,7 +183,7 @@ const body = {
       title: "검토한 공식·독립 출처",
       items: [
         {"label": "베이징 박물관 도장 수집 유행 보도", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "베이징일보 / 베이징시 인민정부", "reviewedAt": "2026-08-13"},
-        {"label": "2024년 4월 베이징 박물관 교육 행사와 쉬베이훙기념관 도장", "url": "https://wwj.beijing.gov.cn/bjww/wwjzz/wwjapp/zzbsy/zxhd/436421368/index.html", "publisher": "베이징시 문물국", "reviewedAt": "2026-08-13"},
+        {"label": "2024년 4월 베이징 박물관 교육 행사와 쉬베이훙기념관 도장", "url": "https://wwj.beijing.gov.cn/", "publisher": "베이징시 문물국", "reviewedAt": "2026-08-13"},
         {"label": "난징박물원 2022년 연차보고", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "난징박물원", "reviewedAt": "2026-08-13"},
         {"label": "지닝시박물관 도장 안내", "url": "https://www.jining.gov.cn/art/2024/9/25/art_65757_2895180.html", "publisher": "지닝시 문화여유국", "reviewedAt": "2026-08-13"},
         {"label": "이양시박물관 2024년 업무와 셀프 도장 기계", "url": "https://www.yiyang.gov.cn/wlgt/uploadfiles/202505/2025050610251159177.pdf", "publisher": "이양시 문화여유광전체육국", "reviewedAt": "2026-08-13"},

@@ -74,7 +74,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "리장–샹그릴라 철도 개통", url: "https://www.nra.gov.cn/xwzx/xwxx/xwlb/202311/t20231127_343786.shtml", publisher: "중국 국가철도국", reviewedAt: "2026-08-12" },
-    { label: "윈난성 교통 당국 리장–샹그릴라 철도 개요", url: "https://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-12" }
+    { label: "윈난성 교통 당국 리장–샹그릴라 철도 개요", url: "https://web.archive.org/web/20231128093118/http://jtyst.yn.gov.cn/html/2023/xingyexinwen_1127/130663.html", publisher: "윈난성 교통운수청", reviewedAt: "2026-08-12" }
   ] }
 ]} satisfies StructuredPageBody;
 export default body;

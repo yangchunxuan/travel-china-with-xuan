@@ -773,7 +773,7 @@ const body = {
         },
         {
           label: "故宫英文票务与国际游客预约指引",
-          url: "https://intl.dpm.org.cn/ticket_details.html",
+          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
           publisher: "故宫博物院",
           reviewedAt: "2026-08-22",
         },

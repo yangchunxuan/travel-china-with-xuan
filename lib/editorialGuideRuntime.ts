@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { resolvePageTitle } from "./pageTitle";
 import {
   getGuideEntry,
   getGuideLanguagePaths,
@@ -65,7 +66,7 @@ export function buildEditorialGuideMetadata(
     .map(([, entry]) => entry!.openGraphLocale);
 
   return {
-    title: localized.title,
+    title: resolvePageTitle(localized.title, locale),
     description: localized.description,
     alternates: {
       canonical: localized.canonicalPath,

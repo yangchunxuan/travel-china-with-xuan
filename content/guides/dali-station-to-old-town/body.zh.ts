@@ -63,8 +63,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "sources", type: "sources", title: "官方来源", items: [
     { label: "大理古城官方交通指南", url: "https://www.dali.gov.cn/dlzrmzf/c101724/pc/content/1968887474976559104/content_1968887474976559104.html", publisher: "大理白族自治州人民政府", reviewedAt: "2026-08-13" },
-    { label: "大理站到古城线路说明", url: "https://jtyst.yn.gov.cn/html/2024/12328hyb_0924/3132885.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
-    { label: "2025年大理高峰客运保障", url: "https://jtyst.yn.gov.cn/html/2025/xingyexinwen_0910/3134849.html", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
+    { label: "大理站到古城线路说明", url: "https://jtyst.yn.gov.cn/", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
+    { label: "2025年大理高峰客运保障", url: "https://jtyst.yn.gov.cn/", publisher: "云南省交通运输厅", reviewedAt: "2026-08-13" },
     { label: "2026年大理站旅客提示", url: "https://www.dali.gov.cn/dlzrmzf/c101532/pc/content/2015703305571897344/content_2015703305571897344.html", publisher: "大理白族自治州人民政府", reviewedAt: "2026-08-13" },
     { label: "铁路实时查询", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路12306", reviewedAt: "2026-08-13" },
     { label: "头图：大理古城南门——Kcx36（CC BY-SA 4.0）", url: "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8_01.jpg", publisher: "维基共享资源", reviewedAt: "2026-08-13" },

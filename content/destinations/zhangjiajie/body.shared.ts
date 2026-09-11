@@ -282,7 +282,7 @@ const sourceUrls = [
   ["https://whc.unesco.org/en/list/640/", "UNESCO World Heritage Centre"],
   ["https://www.zjj.gov.cn/", "People's Government of Zhangjiajie Municipality"],
   ["https://www.12306.cn/en/index.html", "China Railway 12306"],
-  ["https://www.caac.gov.cn/GYMH/MHGK/JCJSDT/201511/t20151130_11065.html", "Civil Aviation Administration of China"],
+  ["https://www.caac.gov.cn/", "Civil Aviation Administration of China"],
   ["https://homegroundchina.com/guides/zhangjiajie-itinerary/", "Homeground field editorial record"],
 ] as const;
 

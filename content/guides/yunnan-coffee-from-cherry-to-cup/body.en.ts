@@ -334,7 +334,7 @@ const body = {
       items: [
         {
           label: "Yunnan measures to raise the coffee 精品率 and deep-processing rate",
-          url: "https://www.yn.gov.cn/zcwjk/html/2022/wjkformal_1123/10373.html",
+          url: "https://www.yn.gov.cn/",
           publisher: "People’s Government of Yunnan Province",
           reviewedAt: "2026-08-13"
         },

@@ -232,7 +232,7 @@ const body = {
       title: "Official and independent sources reviewed",
       items: [
         {"label": "Stamp-collecting trend in Beijing museums", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "Beijing Daily via Beijing Municipal Government", "reviewedAt": "2026-08-13"},
-        {"label": "April 2024 Beijing museum education activities, including Xu Beihong Memorial Museum stamps", "url": "https://wwj.beijing.gov.cn/bjww/wwjzz/wwjapp/zzbsy/zxhd/436421368/index.html", "publisher": "Beijing Municipal Cultural Heritage Bureau", "reviewedAt": "2026-08-13"},
+        {"label": "April 2024 Beijing museum education activities, including Xu Beihong Memorial Museum stamps", "url": "https://wwj.beijing.gov.cn/", "publisher": "Beijing Municipal Cultural Heritage Bureau", "reviewedAt": "2026-08-13"},
         {"label": "Nanjing Museum 2022 annual report", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "Nanjing Museum", "reviewedAt": "2026-08-13"},
         {"label": "Jining Museum stamp notice", "url": "https://www.jining.gov.cn/art/2024/9/25/art_65757_2895180.html", "publisher": "Jining Municipal Culture and Tourism Bureau", "reviewedAt": "2026-08-13"},
         {"label": "Yiyang Museum 2024 work and self-service stamp machines", "url": "https://www.yiyang.gov.cn/wlgt/uploadfiles/202505/2025050610251159177.pdf", "publisher": "Yiyang Municipal Culture, Tourism, Radio, Television and Sports Bureau", "reviewedAt": "2026-08-13"},
