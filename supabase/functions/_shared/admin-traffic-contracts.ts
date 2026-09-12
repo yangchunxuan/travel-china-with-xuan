@@ -1,3 +1,5 @@
+// @ts-ignore Deno resolves explicit TypeScript extensions.
+import { parseContactReport } from "./admin-contact-contracts.ts";
 // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 import { isTrafficProductSelection, isTrafficProductSlug } from "./traffic-contracts.ts";
 
@@ -507,6 +509,15 @@ function parseProductDimension(value: unknown, selection: boolean): JsonRecord[]
 
 export function sanitizeAdminTrafficRpc(data: unknown): JsonRecord | null {
   const payload = rpcPayload(data);
+  if (payload?.contractVersion === "homeground-admin-traffic.v3") {
+    const { contacts, ...legacy } = payload;
+    const base = sanitizeAdminTrafficRpc([{ payload: { ...legacy, contractVersion: adminTrafficContractVersionV2 } }]);
+    if (!base) return null;
+    try {
+      return { ...base, contractVersion: "homeground-admin-traffic.v3",
+        contacts: parseContactReport(contacts, base.generatedAt as string) };
+    } catch { return null; }
+  }
   if (payload?.contractVersion !== adminTrafficContractVersionV2) {
     return sanitizeAdminTrafficV1Rpc(data);
   }

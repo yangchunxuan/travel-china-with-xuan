@@ -1,3 +1,5 @@
+// @ts-ignore Shared strict aggregate contract for browser and Edge.
+import { parseContactReport, type ContactReport } from "../supabase/functions/_shared/admin-contact-contracts.ts";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 // @ts-ignore Explicit extension also supports the Node contract-test runner.
 import { getPrivateTourInquirySelection, isPrivateTourInquirySlug } from "./privateTourInquiryContext.ts";
@@ -171,7 +173,8 @@ export interface AdminTrafficSession {
 }
 
 export interface AdminTrafficResponse {
-  contractVersion: typeof adminTrafficContractVersion | typeof adminJourneyContractVersion;
+  contacts?: ContactReport;
+  contractVersion: typeof adminTrafficContractVersion | typeof adminJourneyContractVersion | "homeground-admin-traffic.v3";
   generatedAt: string;
   timezone: "Asia/Shanghai";
   window: {
@@ -1164,8 +1167,18 @@ function trafficSessionBucketAt(
 export function parseAdminTraffic(
   value: unknown,
 ): AdminTrafficResponse {
-  assertNoForbiddenResponseFields(value);
   const root = objectAt(value, "response");
+  if (root.contractVersion === "homeground-admin-traffic.v3") {
+    const { contacts, ...legacy } = root;
+    const base = parseAdminTraffic({ ...legacy, contractVersion: adminJourneyContractVersion });
+    try {
+      return { ...base, contractVersion: "homeground-admin-traffic.v3",
+        contacts: parseContactReport(contacts, base.generatedAt) };
+    } catch (cause) {
+      throw new AdminApiError("contract", "The contact report is invalid.", { cause });
+    }
+  }
+  assertNoForbiddenResponseFields(value);
   const isJourney = root.contractVersion === adminJourneyContractVersion;
   assertExactKeys(
     root,

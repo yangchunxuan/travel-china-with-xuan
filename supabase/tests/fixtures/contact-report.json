@@ -1,0 +1,500 @@
+{
+  "periods": [
+    {
+      "days": 7,
+      "startsAt": "2026-09-06T11:00:00+09:00",
+      "endsAt": "2026-09-13T11:00:00+09:00",
+      "eligibleSessions": 2,
+      "channels": [
+        {
+          "channel": "all",
+          "clicks": 4,
+          "sessions": 2,
+          "unknownSourceClicks": 1,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 3, "sessions": 2},
+                {"key": "/tours/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/guides/example/", "clicks": 3, "sessions": 1},
+                {"key": "/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "google", "clicks": 3, "sessions": 1},
+                {"key": "Unknown", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 3, "sessions": 2},
+                {"key": "example-private-tour", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "contact_options", "clicks": 2, "sessions": 1},
+                {"key": "Unknown", "clicks": 1, "sessions": 1},
+                {"key": "product", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-09-06", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-13", "clicks": 2, "sessions": 1}
+          ]
+        },
+        {
+          "channel": "email",
+          "clicks": 1,
+          "sessions": 1,
+          "unknownSourceClicks": 0,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/guides/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "google", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "contact_options", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-09-06", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-13", "clicks": 1, "sessions": 1}
+          ]
+        },
+        {
+          "channel": "messenger",
+          "clicks": 0,
+          "sessions": 0,
+          "unknownSourceClicks": 0,
+          "dimensions": {
+            "pages": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-09-06", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-13", "clicks": 0, "sessions": 0}
+          ]
+        },
+        {
+          "channel": "whatsapp",
+          "clicks": 3,
+          "sessions": 2,
+          "unknownSourceClicks": 1,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 2, "sessions": 2},
+                {"key": "/tours/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/guides/example/", "clicks": 2, "sessions": 1},
+                {"key": "/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "google", "clicks": 2, "sessions": 1},
+                {"key": "Unknown", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 2, "sessions": 2},
+                {"key": "example-private-tour", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "Unknown", "clicks": 1, "sessions": 1},
+                {"key": "contact_options", "clicks": 1, "sessions": 1},
+                {"key": "product", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-09-06", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-13", "clicks": 1, "sessions": 1}
+          ]
+        }
+      ]
+    },
+    {
+      "days": 30,
+      "startsAt": "2026-08-14T11:00:00+09:00",
+      "endsAt": "2026-09-13T11:00:00+09:00",
+      "eligibleSessions": 3,
+      "channels": [
+        {
+          "channel": "all",
+          "clicks": 5,
+          "sessions": 3,
+          "unknownSourceClicks": 2,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 4, "sessions": 3},
+                {"key": "/tours/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/guides/example/", "clicks": 3, "sessions": 1},
+                {"key": "/", "clicks": 2, "sessions": 2}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "google", "clicks": 3, "sessions": 1},
+                {"key": "Unknown", "clicks": 2, "sessions": 2}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 4, "sessions": 3},
+                {"key": "example-private-tour", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "Unknown", "clicks": 2, "sessions": 2},
+                {"key": "contact_options", "clicks": 2, "sessions": 1},
+                {"key": "product", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-08-14", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-15", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-16", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-17", "clicks": 1, "sessions": 1},
+            {"day": "2026-08-18", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-19", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-20", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-21", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-22", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-23", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-24", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-25", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-26", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-27", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-28", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-29", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-30", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-31", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-01", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-02", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-03", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-04", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-05", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-06", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-13", "clicks": 2, "sessions": 1}
+          ]
+        },
+        {
+          "channel": "email",
+          "clicks": 1,
+          "sessions": 1,
+          "unknownSourceClicks": 0,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/guides/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "google", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "contact_options", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-08-14", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-15", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-16", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-17", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-18", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-19", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-20", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-21", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-22", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-23", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-24", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-25", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-26", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-27", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-28", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-29", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-30", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-31", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-01", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-02", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-03", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-04", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-05", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-06", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-13", "clicks": 1, "sessions": 1}
+          ]
+        },
+        {
+          "channel": "messenger",
+          "clicks": 0,
+          "sessions": 0,
+          "unknownSourceClicks": 0,
+          "dimensions": {
+            "pages": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-08-14", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-15", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-16", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-17", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-18", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-19", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-20", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-21", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-22", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-23", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-24", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-25", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-26", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-27", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-28", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-29", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-30", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-31", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-01", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-02", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-03", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-04", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-05", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-06", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-13", "clicks": 0, "sessions": 0}
+          ]
+        },
+        {
+          "channel": "whatsapp",
+          "clicks": 4,
+          "sessions": 3,
+          "unknownSourceClicks": 2,
+          "dimensions": {
+            "pages": {
+              "rows": [
+                {"key": "/", "clicks": 3, "sessions": 3},
+                {"key": "/tours/example/", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "entryPages": {
+              "rows": [
+                {"key": "/", "clicks": 2, "sessions": 2},
+                {"key": "/guides/example/", "clicks": 2, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "sources": {
+              "rows": [
+                {"key": "Unknown", "clicks": 2, "sessions": 2},
+                {"key": "google", "clicks": 2, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "products": {
+              "rows": [
+                {"key": "Unknown", "clicks": 3, "sessions": 3},
+                {"key": "example-private-tour", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            },
+            "surfaces": {
+              "rows": [
+                {"key": "Unknown", "clicks": 2, "sessions": 2},
+                {"key": "contact_options", "clicks": 1, "sessions": 1},
+                {"key": "product", "clicks": 1, "sessions": 1}
+              ],
+              "remainingClicks": 0
+            }
+          },
+          "daily": [
+            {"day": "2026-08-14", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-15", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-16", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-17", "clicks": 1, "sessions": 1},
+            {"day": "2026-08-18", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-19", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-20", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-21", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-22", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-23", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-24", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-25", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-26", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-27", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-28", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-29", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-30", "clicks": 0, "sessions": 0},
+            {"day": "2026-08-31", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-01", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-02", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-03", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-04", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-05", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-06", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-07", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-08", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-09", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-10", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-11", "clicks": 0, "sessions": 0},
+            {"day": "2026-09-12", "clicks": 1, "sessions": 1},
+            {"day": "2026-09-13", "clicks": 1, "sessions": 1}
+          ]
+        }
+      ]
+    }
+  ]
+}
