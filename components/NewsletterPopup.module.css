@@ -89,6 +89,7 @@
   transition: transform var(--dock-duration) var(--expand-easing);
 }
 .widget[data-dragging="true"] .launcher { transition: none; cursor: grabbing; }
+.widget[data-pressed="true"] .launcher, .widget[data-pressed="true"] .card { transition: none; }
 .widget[data-repositioning="true"] .launcher { transition: none; }
 .widget[data-dragging="true"] .card, .widget[data-repositioning="true"] .card { transition: none; }
 .widget[data-dragging="true"] .dragHandle { cursor: grabbing; }
