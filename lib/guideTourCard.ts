@@ -5,6 +5,7 @@ import type { GuideId } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
 import { getHomepageProductShowcaseCopy } from "./homepageProductShowcaseI18n.ts";
 import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
+import { privateTourCardImageSource, privateTourCardImageSrcSet } from "../components/privateTourCardImages.ts";
 
 /**
  * The in-article private-tour card: the guide has just helped the reader with
@@ -21,6 +22,7 @@ export interface GuideTourCardData {
   readonly appeal: string;
   readonly priceFrom: string;
   readonly priceBasis: string;
+  readonly priceValidityNote?: string;
   readonly action: string;
   readonly href: string;
   readonly image: { readonly src: string; readonly srcSet: string; readonly alt: string; readonly width: number; readonly height: number; readonly objectPosition?: string };
@@ -74,7 +76,6 @@ export function getGuideTourCard(
   if (!product) return null;
   const copy = getHomepageProductShowcaseCopy(locale);
   const text = ui[locale];
-  const widths = [640, 960, 1280] as const;
   return {
     productId: product.id,
     hook: hooks[locale][hookKey(section)],
@@ -87,11 +88,12 @@ export function getGuideTourCard(
       copy.groupBasis(product.startingPrice.travelers),
       product.startingPrice.serviceLabel,
     ].filter(Boolean).join(" · "),
+    priceValidityNote: product.startingPrice.validityNote,
     action: text.action,
     href: product.startingPriceHref,
     image: {
-      src: `/images/private-tour-cards/${product.id}-640.webp`,
-      srcSet: widths.map((w) => `/images/private-tour-cards/${product.id}-${w}.webp ${w}w`).join(", "),
+      src: privateTourCardImageSource(product.id, 640),
+      srcSet: privateTourCardImageSrcSet(product.id),
       alt: product.image.alt,
       width: product.image.width,
       height: product.image.height,
