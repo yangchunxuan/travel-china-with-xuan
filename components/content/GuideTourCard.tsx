@@ -21,7 +21,8 @@ export function GuideTourCard({
           decoding="async"
           height={card.image.height}
           loading="lazy"
-          sizes="(max-width: 700px) 100vw, 320px"
+          // Allow for the landscape image's cover crop in the taller two-column card.
+          sizes="(min-width: 44rem) 32rem, 90vw"
           src={card.image.src}
           srcSet={card.image.srcSet}
           style={card.image.objectPosition ? { objectPosition: card.image.objectPosition } : undefined}
@@ -37,6 +38,7 @@ export function GuideTourCard({
           <strong>{card.priceFrom}</strong>
           <span>{card.priceBasis}</span>
         </p>
+        {card.priceValidityNote ? <p className={styles.validity}>{card.priceValidityNote}</p> : null}
         <GuideCtaLink className={styles.action} guideId={guideId} href={card.href} locale={locale} position="inline">
           {card.action}
           <ArrowRight aria-hidden="true" size={18} />
