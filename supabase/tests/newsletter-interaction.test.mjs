@@ -387,3 +387,32 @@ test("a fresh real mouse and keyboard remain usable during compatibility suppres
   assert.equal(app.click().defaultPrevented, false);
   assert.equal(app.opens, 4, "mouse devices without source metadata resume after the fallback window");
 });
+
+test("touch-sourced mouse events work without a handled touch and recover after its suppression window", t => {
+  const app = fixture(t);
+  const sourceCapabilities = { firesTouchEvents: true };
+  const mouse = { input: "mouse", sourceCapabilities };
+  const clickProperties = { nativeEvent: { sourceCapabilities } };
+
+  // Some browsers deliver only this mouse sequence to the hook. Its touch
+  // source metadata alone must not cause the first activation to be discarded.
+  assert.notEqual(app.gesture("Start", undefined, undefined, mouse).result, false);
+  app.gesture("Stop", undefined, undefined, mouse);
+  assert.equal(app.click(1, clickProperties).defaultPrevented, false);
+  assert.equal(app.opens, 1);
+
+  app.gesture("Start");
+  app.gesture("Stop");
+  assert.equal(app.opens, 2);
+  app.advance(749);
+  assert.equal(app.gesture("Start", undefined, undefined, mouse).result, false);
+  app.gesture("Stop", undefined, undefined, mouse);
+  assert.equal(app.click(1, clickProperties).defaultPrevented, true);
+  assert.equal(app.opens, 2, "a recently handled touch still consumes its duplicate mouse sequence");
+
+  app.advance(2);
+  assert.notEqual(app.gesture("Start", undefined, undefined, mouse).result, false);
+  app.gesture("Stop", undefined, undefined, mouse);
+  assert.equal(app.click(1, clickProperties).defaultPrevented, false);
+  assert.equal(app.opens, 3, "touch source metadata must not extend the suppression window");
+});

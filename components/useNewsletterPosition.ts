@@ -285,12 +285,14 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
 
   function isCompatibilityMouse(event: DraggableEvent | MouseEvent<HTMLButtonElement>) {
     if (event.type !== "mousedown" && event.type !== "mouseup" && event.type !== "click") return false;
+    // Some browsers deliver only mouse events for a touch. Suppress those only
+    // after we actually handled its touch sequence, never merely for its source.
+    if (Date.now() >= compatibilityTouchUntil.current) return false;
     const native = "nativeEvent" in event ? event.nativeEvent : event;
     const capabilities = (native as { sourceCapabilities?: { firesTouchEvents?: boolean } | null }).sourceCapabilities;
     // Chromium identifies compatibility events. WebKit may omit this field;
     // limit its fallback to the short compatibility sequence after a touch.
-    return typeof capabilities?.firesTouchEvents === "boolean"
-      ? capabilities.firesTouchEvents : Date.now() < compatibilityTouchUntil.current;
+    return capabilities?.firesTouchEvents !== false;
   }
 
   function startDrag(kind: DragKind, data: DraggableData, touch: boolean): false | void {
