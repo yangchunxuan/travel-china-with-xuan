@@ -91,7 +91,7 @@ const body = {
     {
       "id": "tianmen-dated-notices",
       "type": "paragraph",
-      "text": "Routes and walkway access can change. Hunan's 7 March 2026 notice described an adjusted A-line route during Express Cableway maintenance on 9–20 March. Its 13 May notice announced East Line Glass Walkway maintenance from 12 May. These dated notices do not establish the route or walkway access on your visit date; check the latest notice alongside the ticket details."
+      "text": "Under the scenic area's 31 August 2026 notice, the upper cableway section remains closed for upgrading. Route A requires a bus transfer at the middle station to Tianmen Cave. Check your ticket’s actual entry and exit before arranging a ride; use the Tianmen Mountain ticket guide below for prices and A/B/C routes."
     },
     {
     "id": "five-heading",
@@ -197,6 +197,7 @@ const body = {
       "type": "internal-links",
       "title": "Continue planning",
       "items": [
+        { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "Choose your Zhangjiajie sightseeing days",
           "href": "/guides/zhangjiajie-itinerary/",
@@ -230,16 +231,10 @@ const body = {
       "title": "Sources and photograph",
       "items": [
         {
-          "label": "Tianmen cableway adjustment: notice of 7 March 2026",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202603/t20260307_33928100.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-09-10"
-        },
-        {
-          "label": "East Line Glass Walkway maintenance: notice of 13 May 2026",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202605/t20260513_33976257.html",
-          "publisher": "Hunan Provincial Government",
-          "reviewedAt": "2026-09-10"
+          "label": "Tianmen Mountain operating routes: 31 August 2026 notice",
+          "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+          "publisher": "Rednet; source: Tianmen Mountain scenic area",
+          "reviewedAt": "2026-09-13"
         },
         {
           "label": "Singapore–Changsha flight search",

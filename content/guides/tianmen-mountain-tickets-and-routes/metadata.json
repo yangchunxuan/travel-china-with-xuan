@@ -1,0 +1,104 @@
+{
+  "id": "tianmen-mountain-tickets-and-routes",
+  "type": "planning",
+  "pillar": "destination-ticketing-and-navigation",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "ticket-route-decision-guide",
+  "topics": [
+    "zhangjiajie",
+    "tianmen-mountain",
+    "tickets",
+    "cableway",
+    "passport-booking"
+  ],
+  "destinations": [
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/zhangjiajie/tianmen-cave-ticket-guide.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/zhangjiajie/tianmen-cave-ticket-guide.webp",
+  "imageWidth": 1280,
+  "imageHeight": 1600,
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "sourceReviewedDate": "2026-09-13",
+  "searchTerms": {
+    "en": [
+      "tianmen mountain tickets",
+      "tianmen mountain ticket price",
+      "tianmen mountain cableway tickets",
+      "tianmen mountain ticket office",
+      "tianmen mountain tickets online",
+      "tianmen mountain A B C routes"
+    ],
+    "zh": [
+      "天门山门票",
+      "天门山套票价格",
+      "天门山ABC线怎么选",
+      "天门山护照预约"
+    ],
+    "ko": [
+      "천문산 입장권",
+      "톈먼산 입장료",
+      "천문산 A B C 코스",
+      "천문산 여권 예약"
+    ]
+  },
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "purchase"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/tianmen-mountain-tickets-and-routes/",
+      "title": "Tianmen Mountain Tickets: Prices, A/B/C Routes & Booking",
+      "headline": "Tianmen Mountain Tickets: Choose Your Route and Entrance",
+      "description": "Compare Tianmen Mountain admission and package prices, the A/B/C cableway routes during construction, entry points and foreign-passport booking checks.",
+      "heroAlt": "Stone stairways climbing toward Tianmen Cave between steep mountain cliffs",
+      "navTitle": "Tianmen Mountain tickets",
+      "featuredLinkLabel": "Choose a Tianmen Mountain ticket",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Ticket prices",
+        "A/B/C routes",
+        "Entry points"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/tianmen-mountain-tickets-and-routes/",
+      "title": "天门山门票：套票价格、A/B/C线路与预约须知",
+      "headline": "天门山门票：选好线路，再确认入园地点",
+      "description": "分清天门山72元门票与含交通套票，比较索道改造期间A/B/C线路和入园地点，核对外国护照预约、支付与检票说明。",
+      "heroAlt": "陡峭山壁之间通往天门洞的石阶",
+      "navTitle": "天门山门票与线路",
+      "featuredLinkLabel": "选择天门山门票",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "套票价格",
+        "A/B/C线",
+        "入园地点"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/tianmen-mountain-tickets-and-routes/",
+      "title": "천문산 입장권: 가격·A/B/C 코스·여권 예약 확인",
+      "headline": "톈먼산 입장권: 코스와 입구부터 고르세요",
+      "description": "톈먼산 입장료와 교통 포함 패키지 가격을 구분하고, 공사 중 A/B/C 케이블카 코스와 출발 지점, 외국 여권 예약·결제·입장 사항을 확인하세요.",
+      "heroAlt": "가파른 절벽 사이로 톈먼둥을 향해 이어지는 돌계단",
+      "navTitle": "톈먼산 입장권과 코스",
+      "featuredLinkLabel": "톈먼산 입장권 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "입장권 가격",
+        "A/B/C 코스",
+        "입구"
+      ]
+    }
+  }
+}

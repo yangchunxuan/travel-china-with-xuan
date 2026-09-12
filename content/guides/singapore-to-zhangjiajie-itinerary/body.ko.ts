@@ -91,7 +91,7 @@ const body = {
     {
       "id": "tianmen-dated-notices",
       "type": "paragraph",
-      "text": "운영 동선과 유리 보행로의 개방 여부는 달라질 수 있습니다. 후난성 정부의 2026년 3월 7일 공지는 3월 9–20일 급행 케이블카 점검 중 변경된 A 노선을 안내했습니다. 5월 13일 공지는 동쪽 코스 유리 보행로가 5월 12일부터 보수에 들어간다고 알렸습니다. 이 공지들로 방문 당일의 동선이나 개방 여부를 판단할 수는 없습니다. 최신 공지와 구매할 표의 설명을 함께 확인하세요."
+      "text": "관광지의 2026년 8월 31일 공고에 따르면 대형 케이블카 상부 구간은 개량 공사로 계속 운행이 중단됩니다. A코스는 중간역에서 관광버스로 갈아타 톈먼둥으로 이동합니다. 차량을 예약하기 전에 표에 지정된 입구와 출구를 확인하세요. 가격과 A/B/C 비교는 아래 톈먼산 입장권 가이드를 참고하세요."
     },
     {
     "id": "five-heading",
@@ -197,6 +197,7 @@ const body = {
       "type": "internal-links",
       "title": "이어서 계획하기",
       "items": [
+        { label: "톈먼산 입장권과 A/B/C 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "장자제 관광일 고르기",
           "href": "/ko/guides/zhangjiajie-itinerary/",
@@ -230,16 +231,10 @@ const body = {
       "title": "자료 및 사진 출처",
       "items": [
         {
-          "label": "톈먼산 케이블카 운영 조정: 2026년 3월 7일 공지",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202603/t20260307_33928100.html",
-          "publisher": "후난성 정부",
-          "reviewedAt": "2026-09-10"
-        },
-        {
-          "label": "동쪽 코스 유리 보행로 보수: 2026년 5월 13일 공지",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202605/t20260513_33976257.html",
-          "publisher": "후난성 정부",
-          "reviewedAt": "2026-09-10"
+          "label": "톈먼산 운행 경로: 2026년 8월 31일 공고",
+          "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+          "publisher": "홍왕; 출처: 톈먼산 관광지",
+          "reviewedAt": "2026-09-13"
         },
         {
           "label": "싱가포르–창사 항공편 검색",

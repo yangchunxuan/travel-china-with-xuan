@@ -109,6 +109,12 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 }
 
+@media (min-width: 681px) and (max-width: 959px) {
+  .comparison[data-comparison="tianmen-route-cards"] > div {
+    grid-template-columns: 1fr;
+  }
+}
+
 .comparison article {
   border-block-end: 1px solid var(--hg-color-line);
   border-inline-end: 1px solid var(--hg-color-line);

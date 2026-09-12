@@ -91,7 +91,7 @@ const body = {
     {
       "id": "tianmen-dated-notices",
       "type": "paragraph",
-      "text": "路线和栈道通行安排可能变化。湖南省政府英文网2026年3月7日的通知说明了3月9–20日快线索道检修期间调整后的A线；5月13日的通知说明东线玻璃栈道从5月12日起检修。这两条有明确日期的通知，不能证明你游览当天的路线或栈道开放情况；应把最新通知与所购票的说明一起核对。"
+      "text": "按景区2026年8月31日公告，大索道上段仍因升级改造停运，A线需在中站换乘景区车前往天门洞。安排接送前核对票面实际出入口；套票价格与A/B/C线比较见下方天门山票务指南。"
     },
     {
     "id": "five-heading",
@@ -197,6 +197,7 @@ const body = {
       "type": "internal-links",
       "title": "继续规划",
       "items": [
+        { label: "天门山门票与A/B/C线路", href: "/zh/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "安排张家界游览日",
           "href": "/zh/guides/zhangjiajie-itinerary/",
@@ -230,16 +231,10 @@ const body = {
       "title": "资料与照片来源",
       "items": [
         {
-          "label": "天门山索道调整：2026年3月7日通知",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202603/t20260307_33928100.html",
-          "publisher": "湖南省政府英文网",
-          "reviewedAt": "2026-09-10"
-        },
-        {
-          "label": "东线玻璃栈道检修：2026年5月13日通知",
-          "url": "https://www.enghunan.gov.cn/hneng/Tourism/WhatGoingon/202605/t20260513_33976257.html",
-          "publisher": "湖南省政府英文网",
-          "reviewedAt": "2026-09-10"
+          "label": "天门山运营路线：2026年8月31日公告",
+          "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+          "publisher": "红网；来源：张家界天门山景区",
+          "reviewedAt": "2026-09-13"
         },
         {
           "label": "新加坡—长沙航班查询",

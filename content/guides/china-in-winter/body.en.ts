@@ -205,6 +205,7 @@ const body = {
       "type": "internal-links",
       "title": "If you prefer mountain scenery",
       "items": [
+        { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "Zhangjiajie forest park: tickets and entrances",
           "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
