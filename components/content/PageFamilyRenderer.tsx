@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import type {
   PageBodyBlock,
@@ -151,11 +152,21 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
  * during Phase 0; independent guides can use it without editing a central
  * route or article list.
  */
-export function PageFamilyRenderer({ body }: { body: StructuredPageBody }) {
+export function PageFamilyRenderer({
+  body,
+  interstitial,
+}: {
+  body: StructuredPageBody;
+  /** One extra node rendered after the block at `afterIndex` (e.g. the matching tour card). */
+  interstitial?: { afterIndex: number; node: ReactNode };
+}) {
   return (
     <div className={styles.body}>
-      {body.blocks.map((block) => (
-        <BodyBlock block={block} key={block.id} />
+      {body.blocks.map((block, index) => (
+        <Fragment key={block.id}>
+          <BodyBlock block={block} />
+          {interstitial && interstitial.afterIndex === index ? interstitial.node : null}
+        </Fragment>
       ))}
     </div>
   );

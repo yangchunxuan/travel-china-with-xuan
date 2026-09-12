@@ -1,0 +1,113 @@
+.card {
+  background: var(--hg-color-surface, #fff);
+  border: 1px solid var(--hg-color-line);
+  border-inline-start: 4px solid var(--hg-color-rust);
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr);
+  margin: clamp(2rem, 5vw, 3.5rem) 0;
+  overflow: hidden;
+}
+
+@media (min-width: 44rem) {
+  .card {
+    grid-template-columns: 18rem minmax(0, 1fr);
+  }
+}
+
+.media {
+  aspect-ratio: 16 / 10;
+  background: var(--hg-color-soft);
+}
+
+@media (min-width: 44rem) {
+  .media {
+    aspect-ratio: auto;
+    min-block-size: 100%;
+  }
+}
+
+.media img {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.copy {
+  display: grid;
+  gap: 0.45rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem) clamp(1.1rem, 3vw, 1.75rem);
+}
+
+.eyebrow {
+  color: var(--hg-color-rust);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hook {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.45rem, 3.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.title {
+  font-weight: 720;
+  margin: 0.15rem 0 0;
+}
+
+.appeal {
+  color: var(--hg-color-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.price {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.6rem;
+  margin: 0.35rem 0 0.2rem;
+}
+
+.price strong {
+  font-size: 1.15rem;
+  font-weight: 760;
+}
+
+.price span {
+  color: var(--hg-color-muted);
+  font-size: 0.82rem;
+}
+
+.action {
+  align-items: center;
+  background: var(--hg-color-ink);
+  border-radius: 999px;
+  color: var(--hg-color-on-dark);
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  justify-self: start;
+  padding: 0.7rem 1.15rem;
+  text-decoration: none;
+}
+
+.action:hover {
+  background: var(--hg-color-charcoal-hover, #2a2a29);
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--hg-color-focus, var(--hg-color-rust));
+  outline-offset: 3px;
+}
