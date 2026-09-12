@@ -62,13 +62,13 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
     stay: 20,
     "high-intent-transport": 25,
     plan: 24,
-    "purchase-ticket": 2,
+    "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 71);
+  assert.equal(report.uniqueContentIds, 72);
   assert.equal(report.authorizedExistingService, 25);
   assert.equal(report.authorizedGenericConversation, 9);
   assert.equal(report.authorizedPublicCtas, 10);
-  assert.equal(report.blockedPendingAuthorization, 37);
+  assert.equal(report.blockedPendingAuthorization, 38);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
   assert.deepEqual(
@@ -91,7 +91,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 21 guide and 10 product owners", () => {
+test("commercial links keep the approved 8 hub, 22 guide and 10 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -134,6 +134,7 @@ test("commercial links keep the approved 8 hub, 21 guide and 10 product owners",
       "shanghai-pudong-or-hongqiao-airport",
       "shanghai-where-to-stay-first-trip",
       "temple-of-heaven-gates-and-ritual-sequence",
+      "tianmen-mountain-tickets-and-routes",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
