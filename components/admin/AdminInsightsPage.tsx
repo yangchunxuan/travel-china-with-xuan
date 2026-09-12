@@ -53,6 +53,7 @@ import {
 import { selectUnverifiedTotpFactors } from "../../lib/adminMfa";
 import { canCommitAdminResponse } from "../../lib/adminRequestEpoch";
 import { InternalTrafficControl } from "./InternalTrafficControl";
+import { AdminContactAnalytics } from "./AdminContactAnalytics";
 import { AdminNewsletterSection } from "./AdminNewsletterSection";
 import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext";
 import styles from "./AdminInsightsPage.module.css";
@@ -1775,6 +1776,7 @@ function Dashboard({
       <div className={styles.liveStatus} role="status" aria-live="polite">
         {refreshing ? "正在刷新私有后台数据……" : ""}
       </div>
+      <AdminContactAnalytics report={trafficState.data?.contacts} loading={trafficState.loading} error={trafficState.error} />
       <SystemHealthSection state={healthState} />
       <TrafficSection state={trafficState} />
       <SummarySection
