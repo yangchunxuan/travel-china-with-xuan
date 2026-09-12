@@ -64,8 +64,10 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
 
   useEffect(() => {
     setNewsletterExpanded(enabled && visible && (!minimized || placement.dragging || placement.docking) && !blocked);
-    return () => setNewsletterExpanded(false);
   }, [enabled, visible, minimized, blocked, placement.dragging, placement.docking]);
+  // Updates publish only the final state. Resetting in every effect cleanup
+  // briefly remounted the planner button between dragging, docking and opening.
+  useEffect(() => () => setNewsletterExpanded(false), []);
 
   useEffect(() => { setNewsletterDockSide(placement.side); }, [placement.side]);
 
@@ -226,7 +228,7 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
   const privacyHref = locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
   return (
     <div className={styles.widget} data-homeground-newsletter-widget="true" data-minimized={minimized}
-      data-dragging={placement.dragging} data-docking={placement.docking}
+      data-dragging={placement.dragging} data-pressed={placement.pressed} data-docking={placement.docking}
       data-repositioning={placement.repositioning} data-side={placement.side}
       data-contact-space={/^\/(?:zh\/|ko\/)?guides\/[a-z0-9-]+\/$/.test(pathname || "")}
       lang={locale} hidden={blocked}>

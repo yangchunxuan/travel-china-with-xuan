@@ -2,7 +2,7 @@
 
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent, MouseEvent, RefObject } from "react";
-import type { DraggableCoreProps, DraggableData, DraggableEventHandler } from "react-draggable";
+import type { DraggableCoreProps, DraggableData, DraggableEvent, DraggableEventHandler } from "react-draggable";
 import {
   clampNewsletterPoint, moveNewsletterPosition, newsletterCardPlacement,
   newsletterDefaultPosition, newsletterDockDuration, newsletterDragStarted, newsletterLauncherBounds,
@@ -25,6 +25,7 @@ type Measurement = { area: NewsletterArea; bounds: NewsletterBounds; launcher: N
 type DragKind = "launcher" | "card";
 type Gesture = {
   kind: DragKind;
+  touch: boolean;
   startX: number;
   startY: number;
   lastX: number;
@@ -43,10 +44,17 @@ function movementBounds(kind: DragKind, measurement: Measurement): NewsletterBou
     : newsletterCardPlacement(measurement.area, newsletterDefaultPosition, measurement.launcher, measurement.card).bounds;
 }
 
+function isTouchInput(event: DraggableEvent): event is Extract<DraggableEvent, { touches: unknown }> {
+  // DraggableCore's callback declaration says MouseEvent even though its
+  // touch listeners pass native TouchEvents at runtime.
+  return "touches" in event && "changedTouches" in event;
+}
+
 export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef, onOpen }: Options) {
   const [preference, setPreference] = useState<NewsletterPosition>({ ...newsletterDefaultPosition });
   const [measurement, setMeasurement] = useState<Measurement | null>(null);
   const [dragging, setDragging] = useState(false);
+  const [pressed, setPressed] = useState(false);
   const [docking, setDocking] = useState(false);
   const [repositioning, setRepositioning] = useState(false);
   const dockingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -54,6 +62,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
   const measurementRef = useRef<Measurement | null>(null);
   const gestureRef = useRef<Gesture | null>(null);
   const suppressPointerClick = useRef(false);
+  const compatibilityTouchUntil = useRef(0);
   const loaded = useRef(false);
   const initiallyDocked = useRef(false);
   const enabledRef = useRef(enabled);
@@ -96,11 +105,12 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
     }
   }, [cancelDocking, remember]);
 
-  const finishGesture = useCallback((animate = true) => {
+  const finishGesture = useCallback((animate = true, cancelled = true) => {
     const gesture = gestureRef.current;
     gestureRef.current = null;
     if (gesture) {
-      if (gesture.moved && gesture.kind === "launcher") suppressPointerClick.current = true;
+      if ((gesture.moved || cancelled) && gesture.kind === "launcher") suppressPointerClick.current = true;
+      if (cancelled && gesture.touch && gesture.kind === "launcher") compatibilityTouchUntil.current = Date.now() + 750;
       const current = measurementRef.current;
       const position = current ? newsletterPositionForPoint(gesture.point, movementBounds(gesture.kind, current), preferenceRef.current)
         : preferenceRef.current;
@@ -108,6 +118,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
       // release height. Only the docked x = 0/1 preference reaches session storage.
       dockPosition(position, gesture.kind, animate);
     }
+    setPressed(false);
     setDragging(false);
   }, [dockPosition]);
 
@@ -218,6 +229,9 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
       if (!frame && !disposed) frame = window.requestAnimationFrame(() => { frame = 0; measure(); });
     }
     const cancel = () => finishGesture();
+    const multipleTouches = (event: TouchEvent) => {
+      if (event.touches.length > 1) finishGesture();
+    };
     const visibility = () => { if (document.visibilityState === "hidden") cancel(); else schedule(); };
     [parent, launcher, card].forEach(observe);
     const mutationObserver = new MutationObserver(schedule);
@@ -233,6 +247,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
     window.addEventListener("pagehide", cancel);
     document.addEventListener("visibilitychange", visibility);
     document.addEventListener("touchcancel", cancel);
+    document.addEventListener("touchstart", multipleTouches, { capture: true, passive: true });
     window.visualViewport?.addEventListener("resize", schedule);
     window.visualViewport?.addEventListener("scroll", schedule);
     return () => {
@@ -249,6 +264,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
       window.removeEventListener("pagehide", cancel);
       document.removeEventListener("visibilitychange", visibility);
       document.removeEventListener("touchcancel", cancel);
+      document.removeEventListener("touchstart", multipleTouches, true);
       window.visualViewport?.removeEventListener("resize", schedule);
       window.visualViewport?.removeEventListener("scroll", schedule);
       finishGesture(false);
@@ -267,7 +283,17 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
     dockPosition(moveNewsletterPosition(preferenceRef.current, direction, bounds), kind, true);
   }, [finishGesture, dockPosition]);
 
-  function startDrag(kind: DragKind, data: DraggableData): false | void {
+  function isCompatibilityMouse(event: DraggableEvent | MouseEvent<HTMLButtonElement>) {
+    if (event.type !== "mousedown" && event.type !== "mouseup" && event.type !== "click") return false;
+    const native = "nativeEvent" in event ? event.nativeEvent : event;
+    const capabilities = (native as { sourceCapabilities?: { firesTouchEvents?: boolean } | null }).sourceCapabilities;
+    // Chromium identifies compatibility events. WebKit may omit this field;
+    // limit its fallback to the short compatibility sequence after a touch.
+    return typeof capabilities?.firesTouchEvents === "boolean"
+      ? capabilities.firesTouchEvents : Date.now() < compatibilityTouchUntil.current;
+  }
+
+  function startDrag(kind: DragKind, data: DraggableData, touch: boolean): false | void {
     if (!enabledRef.current || (kind === "launcher") !== minimizedRef.current) return false;
     if (!Number.isFinite(data.x) || !Number.isFinite(data.y)) return false;
     finishGesture(false);
@@ -276,17 +302,21 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
     const parent = data.node.parentElement;
     if (!current || !parent || parent.hidden) return false;
     if (kind === "launcher") suppressPointerClick.current = false;
+    if (touch) compatibilityTouchUntil.current = 0;
     const rect = data.node.getBoundingClientRect();
     const parentRect = parent.getBoundingClientRect();
     const bounds = movementBounds(kind, current);
     const anchor = clampNewsletterPoint({ x: rect.left - parentRect.left, y: rect.top - parentRect.top }, bounds);
-    cancelDocking();
+    // Hold a snap at its painted position without publishing a new drag or
+    // briefly restoring the contact launcher underneath the finger.
+    if (dockingTimer.current !== null) clearTimeout(dockingTimer.current);
+    dockingTimer.current = null;
     // Freeze an in-flight snap at its currently painted position before waiting
     // for the movement threshold. A press must not jump to the old snap target.
     applyPreference(newsletterPositionForPoint(anchor, bounds, preferenceRef.current));
-    setDragging(true);
+    setPressed(true);
     gestureRef.current = {
-      kind, startX: data.x, startY: data.y, lastX: data.x, lastY: data.y,
+      kind, touch, startX: data.x, startY: data.y, lastX: data.x, lastY: data.y,
       anchor, point: anchor, moved: false,
     };
   }
@@ -305,6 +335,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
     const dx = data.x - gesture.startX;
     const dy = data.y - gesture.startY;
     if (!gesture.moved && !newsletterDragStarted(dx, dy)) return;
+    if (!gesture.moved) cancelDocking();
     gesture.moved = true;
     const bounds = movementBounds(kind, current);
     gesture.point = clampNewsletterPoint({ x: gesture.anchor.x + dx, y: gesture.anchor.y + dy }, bounds);
@@ -313,12 +344,35 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
   }
 
   function coreHandlers(kind: DragKind): Pick<DraggableCoreProps, "onStart" | "onDrag" | "onStop"> {
-    const onStart: DraggableEventHandler = (_event, data) => startDrag(kind, data);
+    const onStart: DraggableEventHandler = (event, data) => {
+      if (isCompatibilityMouse(event)) return false;
+      if (isTouchInput(event) && event.touches.length !== 1) {
+        finishGesture();
+        return false;
+      }
+      return startDrag(kind, data, isTouchInput(event));
+    };
     const onDrag: DraggableEventHandler = (_event, data) => updateDrag(kind, data);
-    const onStop: DraggableEventHandler = (_event, data) => {
+    const onStop: DraggableEventHandler = (event, data) => {
       if (gestureRef.current?.kind === kind) {
         updateDrag(kind, data);
-        finishGesture();
+        const gesture = gestureRef.current;
+        const touchRelease = event.type === "touchend" && isTouchInput(event);
+        const touch = touchRelease ? event.changedTouches[0] : null;
+        const rect = data.node.getBoundingClientRect();
+        const releasedInside = touch && touch.clientX >= rect.left && touch.clientX <= rect.right &&
+          touch.clientY >= rect.top && touch.clientY <= rect.bottom;
+        const touchTap = touchRelease && event.touches.length === 0 && gesture && !gesture.moved &&
+          releasedInside && kind === "launcher" && enabledRef.current && minimizedRef.current;
+        finishGesture(true, event.type !== "mouseup" && !touchRelease);
+        if (touchRelease && kind === "launcher") {
+          // Mobile webviews need not emit a compatibility click after a touch.
+          // Complete a tap here and consume that optional click if it does arrive.
+          suppressPointerClick.current = true;
+          compatibilityTouchUntil.current = Date.now() + 750;
+          if (event.cancelable) event.preventDefault();
+          if (touchTap) openRef.current();
+        }
       }
       // Returning false here would ask DraggableCore to keep its listeners alive.
     };
@@ -326,7 +380,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
   }
 
   function onClick(event: MouseEvent<HTMLButtonElement>) {
-    if (event.detail !== 0 && suppressPointerClick.current) {
+    if (event.detail !== 0 && (suppressPointerClick.current || isCompatibilityMouse(event))) {
       suppressPointerClick.current = false;
       event.preventDefault();
       event.stopPropagation();
@@ -364,7 +418,7 @@ export function useNewsletterPosition({ enabled, minimized, cardRef, launcherRef
   }
 
   return {
-    cardStyle, launcherStyle, dragging, docking, repositioning, side: newsletterSideForPosition(preference), move,
+    cardStyle, launcherStyle, dragging, pressed, docking, repositioning, side: newsletterSideForPosition(preference), move,
     launcherDragHandlers: coreHandlers("launcher"), cardDragHandlers: coreHandlers("card"),
     launcherHandlers: { onClick, onKeyDown }, cardHandleHandlers: { onKeyDown },
   };
