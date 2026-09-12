@@ -24,6 +24,8 @@ import {
   getSearchSectionPath,
 } from "../../lib/searchPlatformI18n";
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
+import { getGuideTourCard, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
+import { GuideTourCard } from "./GuideTourCard";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
@@ -237,6 +239,7 @@ export function EditorialGuidePage({
   const plannerHref = `${homeCopy.path}?utm_source=editorial_guide&utm_medium=owned&utm_campaign=trip_conversation&utm_content=${guide.id}#planner-contact`;
   const relatedDestinations = getDestinationHubsForGuide(guide.id, locale);
   const publishedRouteLinks = getGuidePublishedRouteLinks(guide.id, locale);
+  const tourCard = getGuideTourCard(guide.id, locale, entry.search?.section);
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
   const relatedDestinationCopy =
@@ -332,7 +335,17 @@ export function EditorialGuidePage({
           data-content-body
           id="editorial-guide-body"
         >
-          <PageFamilyRenderer body={body} />
+          <PageFamilyRenderer
+            body={body}
+            interstitial={
+              tourCard
+                ? {
+                    afterIndex: guideTourCardBlockIndex(body),
+                    node: <GuideTourCard card={tourCard} guideId={guide.id} locale={locale} />,
+                  }
+                : undefined
+            }
+          />
         </article>
 
         {relatedDestinations.length > 0 ? (
