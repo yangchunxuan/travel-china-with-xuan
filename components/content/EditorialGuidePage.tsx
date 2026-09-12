@@ -239,7 +239,7 @@ export function EditorialGuidePage({
   const plannerHref = `${homeCopy.path}?utm_source=editorial_guide&utm_medium=owned&utm_campaign=trip_conversation&utm_content=${guide.id}#planner-contact`;
   const relatedDestinations = getDestinationHubsForGuide(guide.id, locale);
   const publishedRouteLinks = getGuidePublishedRouteLinks(guide.id, locale);
-  const tourCard = getGuideTourCard(guide.id, locale, entry.search?.section);
+  const tourCard = getGuideTourCard(guide.id, locale);
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
   const relatedDestinationCopy =
