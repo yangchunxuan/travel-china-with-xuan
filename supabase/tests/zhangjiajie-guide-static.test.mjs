@@ -146,7 +146,7 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(homeRail, /href=\{item\.href\}/);
   assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
-  assert.match(header, /getGuideEntry\([\s\S]*targetLocale[\s\S]*\)\.canonicalPath/);
+  assert.match(header, /getGuidePath\(guideId, targetLocale\)/);
 });
 
 test("guide locales have independent URLs, copy and language metadata", async () => {

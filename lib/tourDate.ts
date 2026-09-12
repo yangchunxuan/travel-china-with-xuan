@@ -8,6 +8,8 @@ export const tourDateCopy = {
     openCalendar: "Open calendar",
     closeCalendar: "Close calendar",
     title: "Choose a travel date",
+    loadingCalendar: "Loading calendar…",
+    calendarUnavailable: "The calendar could not load. Close it to type your date, or reopen it to try again.",
   },
   zh: {
     placeholder: "YYYY/MM/DD",
@@ -16,6 +18,8 @@ export const tourDateCopy = {
     openCalendar: "打开日历",
     closeCalendar: "关闭日历",
     title: "选择出行日期",
+    loadingCalendar: "正在加载日历…",
+    calendarUnavailable: "日历暂时无法加载。请关闭后直接输入日期，或重新打开重试。",
   },
   ko: {
     placeholder: "YYYY/MM/DD",
@@ -24,6 +28,8 @@ export const tourDateCopy = {
     openCalendar: "달력 열기",
     closeCalendar: "달력 닫기",
     title: "여행 날짜 선택",
+    loadingCalendar: "달력을 불러오는 중…",
+    calendarUnavailable: "달력을 불러오지 못했습니다. 닫고 날짜를 직접 입력하거나 다시 열어 주세요.",
   },
 } as const;
 

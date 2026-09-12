@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { CalendarDays, X } from "lucide-react";
-import { DayPicker } from "@daypicker/react";
-import { enGB, zhCN, ko } from "@daypicker/react/locale";
+import type { TourCalendarProps } from "./TourCalendar";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { dateFromIso, dateToIso, formatTourDate, parseTourDate, tourDateCopy } from "../lib/tourDate";
-import "@daypicker/react/style.css";
 import styles from "./TourDateField.module.css";
-
-const calendarLocales = { en: enGB, zh: zhCN, ko };
 
 /** A visible, editable field; neither its text nor its calendar uses the OS locale. */
 export function TourDateField({ id, label, locale, value, onChange, disabled, active }: {
@@ -20,12 +16,28 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
   const [raw, setRaw] = useState(() => formatTourDate(value, locale));
   const [touched, setTouched] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [Calendar, setCalendar] = useState<ComponentType<TourCalendarProps> | null>(null);
+  const [calendarLoadFailed, setCalendarLoadFailed] = useState(false);
   const [month, setMonth] = useState(() => dateFromIso(value) || new Date());
   const inputRef = useRef<HTMLInputElement>(null);
   const calendarRef = useRef<HTMLDialogElement>(null);
   const lastEmitted = useRef(value);
   const lastLocale = useRef(locale);
   const iso = parseTourDate(raw, locale);
+
+  useEffect(() => {
+    if (!calendarOpen || Calendar || disabled || !active) return;
+    let cancelled = false;
+    setCalendarLoadFailed(false);
+    // Keep the date library and its locale data off the initial page load.
+    // A failed download leaves manual date entry available; reopening retries.
+    import("./TourCalendar").then(module => {
+      if (!cancelled) setCalendar(() => module.default);
+    }).catch(() => {
+      if (!cancelled) setCalendarLoadFailed(true);
+    });
+    return () => { cancelled = true; };
+  }, [calendarOpen, Calendar, disabled, active]);
 
   useEffect(() => {
     // Do not erase partially typed text when our own onChange emits an empty ISO.
@@ -103,12 +115,11 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
       <div className={styles.heading}><strong id={`${id}-calendar-title`}>{copy.title}</strong>
         <button type="button" className={styles.close} aria-label={copy.closeCalendar} onClick={closeCalendar}><X size={19} aria-hidden="true" /></button>
       </div>
-      {calendarOpen ? <DayPicker className={styles.days} mode="single" required locale={calendarLocales[locale]}
-        selected={dateFromIso(value)} onSelect={chooseDate} month={month} onMonthChange={setMonth}
-        captionLayout="dropdown" navLayout="after"
-        startMonth={dateFromIso(`${String(Math.min(2000, month.getFullYear())).padStart(4, "0")}-01-01`)}
-        endMonth={new Date(Math.max(new Date().getFullYear() + 10, month.getFullYear()), 11)}
-        autoFocus role="application" aria-label={copy.title} disabled={disabled} showOutsideDays /> : null}
+      {calendarOpen ? Calendar ? <Calendar locale={locale} value={value} onSelect={chooseDate}
+        month={month} onMonthChange={setMonth} disabled={disabled} />
+        : <p className={styles.calendarStatus} role={calendarLoadFailed ? "alert" : "status"}>
+          {calendarLoadFailed ? copy.calendarUnavailable : copy.loadingCalendar}
+        </p> : null}
     </dialog>
   </div>;
 }

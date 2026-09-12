@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   useCallback,
   useEffect,
@@ -11,6 +12,9 @@ import {
 import styles from "./HomepageGuideRail.module.css";
 
 const noExcludedItemIds: readonly string[] = [];
+// Match the rail's 1.15 / 2 / 4-card columns, gutters and 77rem content cap.
+const guideRailImageSizes =
+  "(max-width: 43.999rem) calc((100vw - 3.45rem) / 1.15), (max-width: 63.999rem) calc((100vw - 3.7rem) / 2), (max-width: 69.999rem) calc((100vw - 4.7rem) / 2), (max-width: 80rem) calc((100vw - 6.7rem) / 4), 18.325rem";
 
 export interface HomepageGuideRailImage {
   src: string;
@@ -320,12 +324,13 @@ export function HomepageGuideRail<Category extends string = string>({
                 onClick={() => onItemClick?.(item)}
               >
                 <span className={styles.imageFrame}>
-                  <img
+                  <Image
                     alt={item.image.alt}
                     className={styles.image}
                     decoding="async"
                     height={item.image.height}
                     loading="lazy"
+                    sizes={guideRailImageSizes}
                     src={item.image.src}
                     width={item.image.width}
                   />

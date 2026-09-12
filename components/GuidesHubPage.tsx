@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getAllGuides } from "../lib/guideRegistry";
 import {
@@ -149,13 +150,27 @@ function GuideCard({
   locale,
   labels,
   slotClassName,
+  isLastOddCard,
 }: {
   guide: HubGuide;
   index: number;
   locale: HomegroundLocale;
   labels: ReturnType<typeof getGuidesHubCopy>;
   slotClassName?: string;
+  isLastOddCard: boolean;
 }) {
+  const isWide = slotClassName === styles.guideSlotWide;
+  const desktopFraction = slotClassName === styles.guideSlotLead
+    ? 7 / 12
+    : index === 1
+      ? 5 / 12
+      : isWide
+        ? 0.94 / 1.66
+        : slotClassName === styles.guideSlotHalf ? 1 / 2 : 1 / 3;
+  const tabletFraction = isWide || isLastOddCard ? 0.94 / 1.66 : 1 / 2;
+  // The narrow list uses 80/88px thumbnails; wider layouts follow the card columns.
+  const imageSizes =
+    `(max-width: 22rem) 5rem, (max-width: 26.25rem) 5.5rem, (max-width: 48rem) calc(100vw - 2rem), (max-width: 64rem) calc((100vw - 2rem) * ${tabletFraction}), (max-width: 88.25rem) calc((100vw - 2rem) * ${desktopFraction}), ${1380 * desktopFraction}px`;
   const sectionLabel = guide.search
     ? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
     : labels.formatLabels[guide.format] ?? guide.format.replaceAll("-", " ");
@@ -179,7 +194,7 @@ function GuideCard({
       <article className={styles.guideCard}>
         <Link className={styles.guideLink} href={guide.canonicalPath}>
           <figure className={styles.guideImage}>
-            <img
+            <Image
               src={guide.cardImagePath}
               alt={guide.cardImageAlt}
               width={guide.cardImageWidth}
@@ -187,6 +202,7 @@ function GuideCard({
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "auto"}
               decoding="async"
+              sizes={imageSizes}
             />
           </figure>
 
@@ -402,6 +418,7 @@ export function GuidesHubPage({
                 key={guide.id}
                 labels={copy}
                 locale={locale}
+                isLastOddCard={pageGuides.length % 2 === 1 && index === pageGuides.length - 1}
                 slotClassName={
                   index === 0
                     ? styles.guideSlotLead
