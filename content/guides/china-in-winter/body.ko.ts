@@ -205,6 +205,7 @@ const body = {
       "type": "internal-links",
       "title": "산 경치를 더 좋아한다면",
       "items": [
+        { label: "톈먼산 입장권과 A/B/C 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "장자제 삼림공원 입장권과 입구",
           "href": "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"

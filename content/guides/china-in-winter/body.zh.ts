@@ -205,6 +205,7 @@ const body = {
       "type": "internal-links",
       "title": "如果更喜欢山景",
       "items": [
+        { label: "天门山门票与A/B/C线路", href: "/zh/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "张家界森林公园门票与入口",
           "href": "/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"

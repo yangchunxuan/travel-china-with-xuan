@@ -81,8 +81,8 @@
     "stay": 20,
     "high-intent-transport": 25,
     "plan": 24,
-    "purchase-ticket": 2,
-    "uniqueContentIds": 71
+    "purchase-ticket": 3,
+    "uniqueContentIds": 72
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1141,6 +1141,21 @@
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
         "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "tianmen-mountain-tickets-and-routes",
+      "ownerClass": "purchase-ticket",
+      "intentCode": "ticket_workflow",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "tianmen-mountain-tickets-and-routes",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "ticket-availability-price-guarantee",
+        "booking-entry-guarantee",
+        "reseller-official-equivalence",
+        "sensitive-data-first-contact"
       ]
     }
   ]

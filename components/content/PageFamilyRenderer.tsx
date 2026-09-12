@@ -54,6 +54,7 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
       return (
         <section
           className={styles.comparison}
+          data-comparison={block.id}
           aria-labelledby={block.title ? block.id : undefined}
         >
           {block.title ? <h2 id={block.id}>{block.title}</h2> : null}

@@ -57,6 +57,7 @@ const destinationTargets = {
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const guideTargets = {
+  "tianmen-mountain-tickets-and-routes": [classicZhangjiajie],
   "beijing-courtyard-hotel-or-modern-hotel": [p("beijing-highlights-5-day-private-tour")],
   "beijing-where-to-stay-first-trip": [p("beijing-highlights-5-day-private-tour")],
   "beijing-to-badaling-great-wall-transfer": [p("beijing-highlights-5-day-private-tour")],
@@ -90,6 +91,7 @@ const guideTargets = {
 } as const satisfies Partial<Record<GuideId, readonly ProductTarget[]>>;
 
 const approvedCommercialGuideIds = [
+  "tianmen-mountain-tickets-and-routes",
   "beijing-courtyard-hotel-or-modern-hotel",
   "beijing-where-to-stay-first-trip",
   "beijing-to-badaling-great-wall-transfer",
@@ -160,7 +162,7 @@ const productContexts = {
   },
   "zhangjiajie-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
+    guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
   },
 } as const satisfies Record<string, ProductContextDefinition>;
 

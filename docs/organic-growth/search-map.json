@@ -419,18 +419,18 @@
     "currentRepositoryInventory": {
       "status": "available-from-audited-current-main-runtime-baseline",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "generatedGuideIdentities": 182,
+      "generatedGuideIdentities": 183,
       "protectedLegacyGuideIdentities": 19,
-      "publishedGuideIdentities": 201,
-      "generatedGuideLocaleUrls": 544,
+      "publishedGuideIdentities": 202,
+      "generatedGuideLocaleUrls": 547,
       "legacyGuideLocaleUrls": 51,
-      "guideLocaleUrls": 595,
+      "guideLocaleUrls": 598,
       "publishedDestinationHubIdentities": 8,
       "publishedDestinationHubLocaleUrls": 24,
       "publishedSystemEntryCollectionIdentities": 1,
       "publishedSystemEntryCollectionLocaleUrls": 1,
-      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 210,
-      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 620,
+      "publishedEditorialDetailIdentitiesIncludingHubsAndEntryCollection": 211,
+      "publishedEditorialDetailLocaleUrlsIncludingHubsAndEntryCollection": 623,
       "publishedDestinationHubIds": [
         "destination-beijing",
         "destination-shanghai",
@@ -443,7 +443,7 @@
       ],
       "localeCountingRule": "en, zh and ko variants count as one content identity.",
       "repositoryIncrementRef": "coverage.publishedInventory.repositoryIncrements",
-      "currentCountsScope": "Counts cover repository identities, including the recorded September 8 additions, two trilingual September 9 itinerary additions and two trilingual September 10 local guide additions. The September 10 status is a pre-release snapshot; final release evidence is recorded separately in the round folder. Fields retaining published in their names are compatibility inventory totals, not publication evidence. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
+      "currentCountsScope": "Counts cover repository identities, including the recorded September 8 additions, two trilingual September 9 itinerary additions two trilingual September 10 local guide additions and one trilingual September 13 Tianmen ticket guide addition. The September 10 and September 13 status records are pre-release snapshots; final release evidence is recorded separately in the round folder. Fields retaining published in their names are compatibility inventory totals, not publication evidence. Historical baseCommit, checkedAt and liveVerificationStatus do not establish release verification of later additions.",
       "liveVerificationStatus": "repository inventory reconciled at baseCommit c0020bf; live sitemap independently verified as 698 unique URLs with 0 duplicates; PR #96 map links remain present after the later PR #95 deployment",
       "checkedAt": "2026-08-23T13:24:58+08:00"
     },
@@ -1128,9 +1128,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 201,
-      "localeUrlCount": 595,
-      "generatedIdentityCount": 182,
+      "identityCount": 202,
+      "localeUrlCount": 598,
+      "generatedIdentityCount": 183,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1410,6 +1410,41 @@
               "boundary": "Practical 7–14-day bag-by-bag packing checklist with laundry, luggage weight and summer, winter and mountain additions. Power-bank, electrical, customs and medicine rules remain owned by their detailed guides."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-13",
+          "sourceCommit": "3730326a774a9d2415446090ee416e38250e256f",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Pre-release repository snapshot; deployment and live verification are recorded separately.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "tianmen-mountain-tickets-and-routes",
+              "title": "Tianmen Mountain Tickets: Prices, A/B/C Routes & Booking",
+              "metadataPath": "content/guides/tianmen-mountain-tickets-and-routes/metadata.json",
+              "canonicalPath": "/guides/tianmen-mountain-tickets-and-routes/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/tianmen-mountain-tickets-and-routes/",
+                "/zh/guides/tianmen-mountain-tickets-and-routes/",
+                "/ko/guides/tianmen-mountain-tickets-and-routes/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "purchase",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "destinations": [
+                "zhangjiajie"
+              ],
+              "boundary": "Tianmen Mountain admission versus transport packages, construction-period A/B/C routes, ticket-dependent entrances and foreign-passport booking checks. Does not sell standalone tickets or replace the separate national forest park guide."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1581,6 +1616,7 @@
         "temple-of-heaven-gates-and-ritual-sequence",
         "terracotta-warriors-without-tour",
         "three-literary-towers-comparison",
+        "tianmen-mountain-tickets-and-routes",
         "wenchang-commercial-space-city",
         "wheelchair-accessible-china-route-planning",
         "when-metro-construction-meets-archaeology",
