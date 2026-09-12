@@ -17,7 +17,8 @@
 .calendar::backdrop { background: rgb(0 0 0 / 12%); }
 .heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 .heading strong { font-size: 15px; font-weight: 550; }
-.days { --rdp-accent-color: #111; --rdp-accent-background-color: #f3f3f3; --rdp-day-width: min(44px, calc((100vw - 60px) / 7)); --rdp-day-height: 44px; --rdp-day_button-width: var(--rdp-day-width); --rdp-day_button-height: 44px; --rdp-nav_button-height: 44px; --rdp-nav_button-width: 44px; --rdp-dropdown-gap: 5px; --rdp-selected-border: 1px solid #111; margin: 0 auto; width: max-content; max-width: 100%; }
+.calendarStatus { min-height: 80px; margin: 16px 0; color: #666; line-height: 1.6; }
+.calendar .days { --rdp-accent-color: #111; --rdp-accent-background-color: #f3f3f3; --rdp-day-width: min(44px, calc((100vw - 60px) / 7)); --rdp-day-height: 44px; --rdp-day_button-width: var(--rdp-day-width); --rdp-day_button-height: 44px; --rdp-nav_button-height: 44px; --rdp-nav_button-width: 44px; --rdp-dropdown-gap: 5px; --rdp-selected-border: 1px solid #111; margin: 0 auto; width: max-content; max-width: 100%; }
 .days :global(.rdp-month_grid) { width: auto; margin: 0; border: 0; }
 .days :global(.rdp-day_button) { font: inherit; }
 .days :global(.rdp-outside):not(:global(.rdp-selected)) { color: #767676; opacity: 1; }

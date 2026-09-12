@@ -22,10 +22,8 @@ import {
 } from "../lib/homegroundI18n";
 import { getChinaItineraryReviewCopy } from "../lib/chinaItineraryReviewI18n";
 import { trackEvent } from "../lib/analytics";
-import {
-  getGuideEntry,
-  type GuideId,
-} from "../lib/guideRegistry";
+import type { GuideId } from "../lib/guideRegistry";
+import { getGuidePath } from "../lib/guidePath";
 import {
   handleHomegroundHashClick,
   type HomegroundHashTarget,
@@ -278,7 +276,7 @@ export function HomegroundHeader({
 
     const target = getHomegroundCopy(targetLocale);
     return pageContext === "guide"
-      ? getGuideEntry(guideId, targetLocale).canonicalPath
+      ? getGuidePath(guideId, targetLocale)
       : pageContext === "guides"
         ? `${target.path}guides/`
         : pageContext === "plan"
