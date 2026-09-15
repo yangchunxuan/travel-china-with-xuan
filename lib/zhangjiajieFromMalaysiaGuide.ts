@@ -287,7 +287,6 @@ export interface MalaysiaZhangjiajieGuideCopy {
   };
   images: {
     heroAlt: string;
-    heroCaption: string;
     entranceAlt: string;
     entranceCaption: string;
   };

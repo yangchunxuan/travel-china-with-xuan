@@ -51,48 +51,32 @@
 }
 
 .hero {
-  color: #fff;
-  min-height: clamp(34rem, 65vw, 45rem);
-  overflow: hidden;
-  position: relative;
+  align-items: center;
+  color: var(--guide-ink);
+  display: grid;
+  gap: clamp(2.25rem, 5vw, 5rem);
+  grid-template-areas: "copy image";
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  margin-inline: auto;
+  max-width: 90rem;
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 5vw, 5rem);
 }
 
-.heroPicture,
-.heroPicture img,
-.heroShade {
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  width: 100%;
+.heroPicture {
+  display: block;
+  grid-area: image;
+  min-width: 0;
 }
 
 .heroPicture img {
-  object-fit: cover;
-  object-position: 52% 50%;
-}
-
-.heroShade {
-  background:
-    linear-gradient(
-      90deg,
-      rgb(20 20 19 / 90%) 0%,
-      rgb(20 20 19 / 74%) 43%,
-      rgb(20 20 19 / 25%) 78%
-    ),
-    linear-gradient(0deg, rgb(20 20 19 / 80%) 0%, transparent 58%);
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .heroContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-inline: auto;
-  min-height: clamp(34rem, 65vw, 45rem);
-  padding:
-    clamp(3.5rem, 8vw, 6.5rem)
-    max(1rem, calc((100vw - 76rem) / 2));
-  position: relative;
-  z-index: 1;
+  grid-area: copy;
+  min-width: 0;
 }
 
 .breadcrumb ol {
@@ -106,7 +90,7 @@
 }
 
 .breadcrumb li {
-  color: rgb(255 255 255 / 70%);
+  color: var(--guide-muted);
   font-size: 0.75rem;
   font-weight: 650;
 }
@@ -118,7 +102,7 @@
 
 .breadcrumb a {
   align-items: center;
-  color: var(--hg-color-on-dark);
+  color: inherit;
   display: inline-flex;
   min-height: 2.75rem;
 }
@@ -133,7 +117,7 @@
 }
 
 .eyebrow {
-  color: var(--hg-color-on-dark);
+  color: var(--guide-dark-rust);
   margin: 0 0 1rem;
 }
 
@@ -156,7 +140,7 @@
 }
 
 .heroLead {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--guide-muted);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.65;
   margin: 1.5rem 0 0;
@@ -164,11 +148,10 @@
 }
 
 .reviewed {
-  color: var(--hg-color-on-dark-muted);
+  color: var(--guide-muted);
   font-size: 0.78rem;
   line-height: 1.5;
   margin: 1.5rem 0 0;
-  text-shadow: 0 1px 2px rgb(20 20 19 / 28%);
 }
 
 .articleBody {
@@ -192,7 +175,7 @@
   border: 1px solid var(--guide-line);
   border-radius: 1.35rem;
   box-shadow: 0 22px 55px rgb(20 20 19 / 7%);
-  margin-block-start: clamp(-3rem, -4vw, -1.5rem);
+  margin-block-start: clamp(1.75rem, 4vw, 3rem);
   padding: clamp(1.5rem, 4vw, 3rem);
   position: relative;
   z-index: 2;
@@ -749,24 +732,17 @@
 }
 
 .guideFigure picture {
-  aspect-ratio: 3 / 2;
   background: #dfe5e0;
-  border-radius: 1.15rem;
-  overflow: hidden;
 }
 
 .guideFigure img {
-  height: 100%;
-  object-fit: cover;
+  border-radius: 1.15rem;
+  height: auto;
 }
 
 .fenghuangFigure {
   margin-block-start: 2rem;
   max-width: none;
-}
-
-.fenghuangFigure picture {
-  aspect-ratio: 16 / 9;
 }
 
 .guideFigure figcaption {
@@ -1326,6 +1302,13 @@
 }
 
 @media (max-width: 56rem) {
+  .hero {
+    grid-template-areas:
+      "copy"
+      "image";
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .quickAnswerCopy,
   .sectionHeadingSplit,
   .ruleColumns {
@@ -1358,15 +1341,6 @@
 }
 
 @media (max-width: 48rem) {
-  .hero,
-  .heroContent {
-    min-height: 36rem;
-  }
-
-  .heroContent {
-    padding-block-end: 4rem;
-  }
-
   .quickDecision {
     padding-block: 1.4rem 1.2rem;
   }
@@ -1430,11 +1404,6 @@
 
   .guideFigure figcaption {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .tianmenFigure picture,
-  .fenghuangFigure picture {
-    aspect-ratio: 16 / 9;
   }
 
   .evidenceSection,
@@ -1671,7 +1640,6 @@
     padding-inline: 0.75rem;
   }
 
-  .heroContent,
   .finalCta {
     padding-inline: 0.75rem;
   }

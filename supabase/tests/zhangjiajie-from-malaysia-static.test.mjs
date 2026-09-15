@@ -133,10 +133,11 @@ test("Malaysia guide uses stable source IDs with complete labels in every locale
 });
 
 test("Malaysia guide uses only the two newly supplied photographs and accessible diagrams", async () => {
-  const [page, registry, css, provenance] = await Promise.all([
+  const [page, registry, css, tourCardCss, provenance] = await Promise.all([
     source("components/ZhangjiajieFromMalaysiaPage.tsx"),
     source("lib/guideRegistry.ts"),
     source("components/ZhangjiajieFromMalaysiaPage.module.css"),
+    source("components/content/GuideTourCard.module.css"),
     source("docs/homeground-photo-provenance.md"),
   ]);
 
@@ -147,6 +148,10 @@ test("Malaysia guide uses only the two newly supplied photographs and accessible
   assert.match(page, /height=\{704\}/);
   assert.match(page, /fetchPriority=\{priority \? "high" : undefined\}/);
   assert.match(page, /loading=\{priority \? "eager" : "lazy"\}/);
+  assert.doesNotMatch(page, /copy\.images\.heroCaption/);
+  assert.doesNotMatch(css, /\.heroVisual img\s*\{[^}]*object-fit:\s*cover/s);
+  assert.doesNotMatch(css, /\.entrancePhoto img\s*\{[^}]*object-fit:\s*cover/s);
+  assert.doesNotMatch(tourCardCss, /object-fit:\s*cover|aspect-ratio:\s*1/);
   assert.match(registry, /malaysia-zhangjiajie-card-1200\.webp/);
   assert.match(registry, /malaysia-zhangjiajie-og-1200\.jpg/);
   assert.match(provenance, /IMG_5010\.jpg/);

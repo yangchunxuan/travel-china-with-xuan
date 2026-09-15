@@ -593,8 +593,6 @@ export const malaysiaZhangjiajieGuideCopyKo = {
   images: {
     heroAlt:
       "장자제의 숲 위로 솟은 안개 낀 사암 봉우리를 바라보는 여행자들.",
-    heroCaption:
-      "중요한 것은 일정표에 몇 곳을 넣는지가 아니라, 온전한 관광일을 남긴 채 알맞은 숙박 거점까지 어떻게 도착하느냐입니다.",
     entranceAlt:
       "장자제 국가삼림공원 입구의 짙은 초록 나무 아래에 모여 있는 여행자들.",
     entranceCaption:

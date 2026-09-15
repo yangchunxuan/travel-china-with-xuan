@@ -88,7 +88,6 @@ function createStructuredData(
           url: guide.heroImageUrl,
           width: guide.imageWidth,
           height: guide.imageHeight,
-          caption: copy.images.heroCaption,
         },
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
@@ -303,7 +302,6 @@ export function ZhangjiajieFromMalaysiaPage({
                 sizes="(max-width: 820px) 100vw, 45vw"
                 priority
               />
-              <figcaption>{copy.images.heroCaption}</figcaption>
             </figure>
           </header>
 

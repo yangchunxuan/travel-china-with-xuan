@@ -21,11 +21,9 @@ export function GuideTourCard({
           decoding="async"
           height={card.image.height}
           loading="lazy"
-          // Account for cropping the landscape source into a square thumbnail.
           sizes="(min-width: 39rem) 11rem, (min-width: 30rem) 28vw, 8rem"
           src={card.image.src}
           srcSet={card.image.srcSet}
-          style={card.image.objectPosition ? { objectPosition: card.image.objectPosition } : undefined}
           width={card.image.width}
         />
       </div>

@@ -8,6 +8,7 @@ async function source(path) {
 
 test("night-show guide keeps one server-readable decision path", async () => {
   const guide = await source("components/NightShowGuidePage.tsx");
+  const styles = await source("components/NightShowGuidePage.module.css");
 
   assert.match(guide, /<main id="article-content" tabIndex=\{-1\}>/);
   assert.equal(guide.match(/<h1>/g)?.length, 1);
@@ -34,6 +35,8 @@ test("night-show guide keeps one server-readable decision path", async () => {
     guide,
     /"@type": "(?:FAQPage|Review|AggregateRating|Product)"/,
   );
+  assert.doesNotMatch(styles, /\.heroFigure img\s*\{[^}]*object-fit:\s*cover/s);
+  assert.doesNotMatch(styles, /\.heroFigure img\s*\{[^}]*aspect-ratio/s);
 });
 
 test("night-show copy answers the itinerary decision without a fixed timetable", async () => {
