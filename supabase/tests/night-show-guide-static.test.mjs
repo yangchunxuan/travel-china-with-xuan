@@ -67,8 +67,12 @@ test("night-show CTA compares the full tour and keeps direct planner contact", a
     guide,
     /utm_|planner=destinations|free-brief|service=/,
   );
-  assert.match(guide, /getPrivateTourPaths\("zhangjiajie-4-day-private-tour"\)\[locale\]/);
-  assert.match(guide, /href=\{tourHref\}[\s\S]*?position="inline"/);
+  assert.match(guide, /getGuideTourCard\(guideId, locale\)/);
+  assert.match(
+    guide,
+    /<GuideTourCard card=\{tourCard\} guideId=\{guideId\} locale=\{locale\} \/>/,
+  );
+  assert.doesNotMatch(guide, /getPrivateTourPaths|tourHref/);
   assert.match(guide, /href=\{plannerHref\}[\s\S]*?copy\.finalCta\.action/);
   assert.match(english, /ctaAction: "View the 4-day Zhangjiajie private tour"/);
   assert.match(chinese, /ctaAction: "查看张家界 4 日私家团"/);

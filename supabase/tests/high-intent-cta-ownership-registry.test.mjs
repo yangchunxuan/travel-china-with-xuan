@@ -91,7 +91,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 22 guide and 10 product owners", () => {
+test("commercial links keep the approved 8 hub, 27 guide and 10 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -119,7 +119,9 @@ test("commercial links keep the approved 8 hub, 22 guide and 10 product owners",
       "beijing-courtyard-hotel-or-modern-hotel",
       "beijing-to-badaling-great-wall-transfer",
       "beijing-where-to-stay-first-trip",
+      "best-zhangjiajie-night-show",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "chengdu-zhangjiajie-itinerary",
       "china-climate-regions-for-trip-timing",
       "china-private-transfer-or-public-transport",
       "chongqing-railway-station-selector",
@@ -133,11 +135,14 @@ test("commercial links keep the approved 8 hub, 22 guide and 10 product owners",
       "shanghai-hangzhou-transport-route",
       "shanghai-pudong-or-hongqiao-airport",
       "shanghai-where-to-stay-first-trip",
+      "singapore-to-zhangjiajie-itinerary",
       "temple-of-heaven-gates-and-ritual-sequence",
       "tianmen-mountain-tickets-and-routes",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
+      "zhangjiajie-from-malaysia",
+      "zhangjiajie-itinerary",
     ],
   );
   assert.deepEqual(
