@@ -146,17 +146,18 @@ export function HomegroundHomePage({
     legalName: homegroundBusiness.registeredName,
     email: homegroundBusiness.serviceEmail,
     description: copy.schemaDescription,
-    identifier: {
-      "@type": "PropertyValue",
-      propertyID: "Unified Social Credit Code",
-      value: homegroundBusiness.unifiedSocialCreditCode,
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Beijing",
-      addressRegion: "Beijing",
-      addressCountry: "CN",
-    },
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "Unified Social Credit Code",
+        value: homegroundBusiness.unifiedSocialCreditCode,
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "Travel Agency Licence No.",
+        value: homegroundBusiness.travelAgencyLicenceNumber,
+      },
+    ],
   };
   const identitySchema = {
     "@context": "https://schema.org",

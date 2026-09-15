@@ -73,7 +73,7 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
     );
   }
 
-  assert.equal(records.privacy.lastReviewed, "2026-07-31");
+  assert.equal(records.privacy.lastReviewed, "2026-08-24");
   assert.equal(records["business-information"].dateModified, "2026-09-15");
   assert.equal(records["business-information"].lastReviewed, "2026-09-15");
   assert.equal(records["business-information"].evidence.commit, "9ff9d3de0d254821d3b8cff33e9049f4da19b38b");

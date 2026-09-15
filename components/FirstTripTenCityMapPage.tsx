@@ -16,6 +16,7 @@ import {
   editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { EditorialByline } from "./EditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -154,11 +155,27 @@ function assetMimeType(href: string) {
 
 function structuredData() {
   const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
+  const currentPublisher = {
+    ...editorialOrganizationSchema(),
+    legalName: homegroundBusiness.registeredName,
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "Unified Social Credit Code",
+        value: homegroundBusiness.unifiedSocialCreditCode,
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "Travel Agency Licence No.",
+        value: homegroundBusiness.travelAgencyLicenceNumber,
+      },
+    ],
+  };
   return {
     "@context": "https://schema.org",
     "@graph": [
       editorialWebsiteSchema(),
-      editorialOrganizationSchema(),
+      currentPublisher,
       {
         "@type": "Organization",
         "@id": ASSET_CREATOR_ID,

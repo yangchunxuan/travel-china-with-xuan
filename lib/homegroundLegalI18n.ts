@@ -229,7 +229,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               value: homegroundBusiness.legalRepresentative,
             },
             {
-              label: "Registered place of business",
+              label: "Registered address",
               value: homegroundBusiness.registeredAddress,
             },
             {
@@ -325,7 +325,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             },
             { label: "法定代表人", value: homegroundBusiness.legalRepresentative },
             {
-              label: "经营场所",
+              label: "登记地址",
               value: homegroundBusiness.registeredAddress,
             },
             {
@@ -415,7 +415,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             },
             { label: "법정대표자", value: homegroundBusiness.legalRepresentative },
             {
-              label: "등록 사업장 주소",
+              label: "등록 주소",
               value: homegroundBusiness.registeredAddress,
             },
             {

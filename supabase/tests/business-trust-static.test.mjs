@@ -97,6 +97,10 @@ test("legal copy retains verifiable registered trust and explains retired servic
   assert.match(business, /travelAgencyLicenceNumber: "L-BJ10587"/);
   assert.match(business, /travelAgencyPermitDocumentNumber: "京文旅审〔2025〕276号"/);
   assert.match(legal, /homegroundBusiness\.legalRepresentative/);
+  assert.doesNotMatch(legal, /Registered place of business|经营场所|등록 사업장 주소/);
+  assert.match(legal, /Registered address/);
+  assert.match(legal, /登记地址/);
+  assert.match(legal, /등록 주소/);
 
   for (const pattern of [
     /no longer offers standalone paid route reviews or route builds/,
@@ -178,10 +182,9 @@ test("active business identity remains available after the sales page becomes a 
   assert.match(identity, /"@type": "TravelAgency"/);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
   assert.match(homepage, /legalName: homegroundBusiness\.registeredName/);
-  assert.match(homepage, /addressLocality: "Beijing"/);
-  assert.match(homepage, /addressRegion: "Beijing"/);
-  assert.doesNotMatch(homepage, /addressLocality: "Zhangjiajie"/);
-  assert.doesNotMatch(homepage, /addressRegion: "Hunan"/);
+  assert.match(homepage, /Travel Agency Licence No\./);
+  assert.match(homepage, /homegroundBusiness\.travelAgencyLicenceNumber/);
+  assert.doesNotMatch(homepage, /PostalAddress|addressLocality|addressRegion/);
   assert.match(homepage, /editorialOrganizationSchema\(\)/);
   assert.match(legalPage, /"@type": pageId === "business-information" \? "AboutPage" : "WebPage"/);
   assert.match(legalPage, /"@id": `\$\{baseUrl\}\/#organization`/);

@@ -61,7 +61,7 @@ export const legacySystemContentLifecycle = {
       commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
       changedAt: "2026-09-15",
       summary:
-        "The owner-alignment change replaced the homepage footer and Organization identity with the licensed Beijing travel agency's registered name, code and region.",
+        "The owner-alignment change replaced the homepage footer and Organization identity with the licensed Beijing travel agency's registered name, credit code and licence number.",
     },
   },
   studio: {
@@ -133,7 +133,7 @@ export const legacySystemContentLifecycle = {
   privacy: {
     datePublished: "2026-07-24",
     dateModified: "2026-09-15",
-    lastReviewed: "2026-07-31",
+    lastReviewed: "2026-08-24",
     evidence: {
       commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
       changedAt: "2026-09-15",
