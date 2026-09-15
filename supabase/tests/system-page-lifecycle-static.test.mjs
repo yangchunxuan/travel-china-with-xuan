@@ -24,12 +24,12 @@ const expectedSystemIds = [
 
 const expectedModifiedDates = {
   "author-evan": "2026-08-22",
-  "business-information": "2026-09-08",
+  "business-information": "2026-09-15",
   "entry-requirements": "2026-08-22",
   guides: "2026-08-22",
-  home: "2026-09-04",
+  home: "2026-09-15",
   "itinerary-review": "2026-09-05",
-  privacy: "2026-09-05",
+  privacy: "2026-09-15",
   "refund-delivery": "2026-07-24",
   studio: "2026-08-22",
   terms: "2026-07-24",
@@ -73,10 +73,10 @@ test("legacy system pages have a complete, evidenced lifecycle registry", async 
     );
   }
 
-  assert.equal(records.privacy.lastReviewed, "2026-07-31");
-  assert.equal(records["business-information"].dateModified, "2026-09-08");
-  assert.equal(records["business-information"].lastReviewed, "2026-07-24");
-  assert.equal(records["business-information"].evidence.commit, "10b5f5fb73273d7b8020ddcfb292167ecaf7539d");
+  assert.equal(records.privacy.lastReviewed, "2026-08-24");
+  assert.equal(records["business-information"].dateModified, "2026-09-15");
+  assert.equal(records["business-information"].lastReviewed, "2026-09-15");
+  assert.equal(records["business-information"].evidence.commit, "9ff9d3de0d254821d3b8cff33e9049f4da19b38b");
   for (const id of ["terms", "refund-delivery"]) {
     assert.equal(records[id].dateModified, "2026-07-24");
     assert.equal(records[id].lastReviewed, "2026-07-24");

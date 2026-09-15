@@ -146,19 +146,18 @@ export function HomegroundHomePage({
     legalName: homegroundBusiness.registeredName,
     email: homegroundBusiness.serviceEmail,
     description: copy.schemaDescription,
-    identifier: {
-      "@type": "PropertyValue",
-      propertyID: "Unified Social Credit Code",
-      value: homegroundBusiness.unifiedSocialCreditCode,
-    },
-    // City-level only: the registered street address is a residence and is
-    // still disclosed as text on the business-information and legal pages.
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Zhangjiajie",
-      addressRegion: "Hunan",
-      addressCountry: "CN",
-    },
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "Unified Social Credit Code",
+        value: homegroundBusiness.unifiedSocialCreditCode,
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "Travel Agency Licence No.",
+        value: homegroundBusiness.travelAgencyLicenceNumber,
+      },
+    ],
   };
   const identitySchema = {
     "@context": "https://schema.org",

@@ -338,7 +338,7 @@ export const homegroundPrivacyCopy: Record<
         "Use the monitored email below for an access, correction or deletion request. Send it from the same address used for the enquiry when possible. After reasonable identity verification, Homeground normally responds within 30 days.",
       emailLabel: "Privacy email",
       emailPlaceholder: privacyEmail,
-      addressLabel: "Postal contact",
+      addressLabel: "Registered address",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
@@ -573,7 +573,7 @@ export const homegroundPrivacyCopy: Record<
         "如需访问、更正或删除，请使用下方有人查看的邮箱；可行时请用提交咨询时的同一邮箱发送。合理核验身份后，Homeground 原则上会在 30 天内处理。",
       emailLabel: "隐私邮箱",
       emailPlaceholder: privacyEmail,
-      addressLabel: "通信地址",
+      addressLabel: "登记地址",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
@@ -815,7 +815,7 @@ export const homegroundPrivacyCopy: Record<
         "열람, 수정 또는 삭제 요청은 아래 이메일로 보내 주세요. 가능하면 문의에 사용한 같은 주소에서 보내 주세요. 합리적인 본인 확인 후 Homeground는 원칙적으로 30일 이내에 처리합니다.",
       emailLabel: "개인정보 문의 이메일",
       emailPlaceholder: privacyEmail,
-      addressLabel: "우편 연락처",
+      addressLabel: "등록 주소",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:

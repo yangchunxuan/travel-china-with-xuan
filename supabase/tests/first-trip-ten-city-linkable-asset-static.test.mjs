@@ -9,10 +9,14 @@ const source = (relativePath) =>
 
 const dataPath =
   "content/guides/first-trip-china-airport-station-stay-map/asset-data.en.json";
+const metadataPath =
+  "content/guides/first-trip-china-airport-station-stay-map/metadata.json";
 const filePrefix = "homeground-china-10-city-arrival-stay-departure-v1";
 const downloadsRoot = "public/downloads/";
 const imageRoot =
   "public/images/guides/first-trip-china-airport-station-stay-map/";
+const historicalLicensor = "张家界市永定区本境文化交流工作室";
+const currentOperator = "盛世美达（北京）国际旅行社有限公司";
 
 function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
@@ -50,7 +54,10 @@ function storedZipEntries(buffer) {
 }
 
 test("the linkable asset has ten unique cities, 54 gateways and 39 stay areas", async () => {
-  const data = JSON.parse(await source(dataPath));
+  const [data, metadata] = await Promise.all([
+    source(dataPath).then(JSON.parse),
+    source(metadataPath).then(JSON.parse),
+  ]);
   const cityIds = data.cities.map((city) => city.id);
   const gatewayIds = data.cities.flatMap((city) => city.gatewayNodes);
   const stayAreaIds = data.cities.flatMap((city) => city.stayAreas);
@@ -64,6 +71,10 @@ test("the linkable asset has ten unique cities, 54 gateways and 39 stay areas", 
   assert.equal(data.reviewedGatewayNodeCount, 54);
   assert.equal(data.reviewedStayAreaCount, 39);
   assert.equal(data.reviewedAt, "2026-08-23");
+  assert.deepEqual(
+    [metadata.datePublished, metadata.dateModified, metadata.sourceReviewedDate],
+    ["2026-08-23", "2026-09-15", "2026-08-23"],
+  );
 });
 
 test("Guilin and Shenzhen use live guide owners instead of missing destination hubs", async () => {
@@ -95,6 +106,8 @@ test("the asset builder derives review text from data and normalizes cross-platf
   assert.match(builder, /\.\.\.\[\.\.\.originalCityCards\]\.map/);
   assert.match(builder, /const packageNames = \[[\s\S]*?\]\.sort\(\)/);
   assert.match(builder, /storedZip\(packageEntries\)/);
+  assert.match(builder, new RegExp(historicalLicensor));
+  assert.doesNotMatch(builder, new RegExp(currentOperator));
 });
 
 test("all ten city cards and the national downloads exist as self-contained licensed assets", async () => {
@@ -239,12 +252,23 @@ test("the complete downloadable pack is deterministic, checksummed and contains 
 });
 
 test("the reuse pack explains attribution, adaptation and third-party exclusions", async () => {
-  const [readme, licence, attribution, sources] = await Promise.all([
+  const [readme, licence, attribution, sources, portableJson] = await Promise.all([
     source(`${downloadsRoot}${filePrefix}-README.txt`),
     source(`${downloadsRoot}${filePrefix}-LICENSE.txt`),
     source(`${downloadsRoot}${filePrefix}-ATTRIBUTION-AND-EMBED.txt`),
     source(`${downloadsRoot}${filePrefix}-SOURCES.txt`),
+    source(`${downloadsRoot}${filePrefix}.json`),
   ]);
+
+  for (const [label, value] of [
+    ["README", readme],
+    ["licence", licence],
+    ["attribution", attribution],
+    ["portable JSON", portableJson],
+  ]) {
+    assert.match(value, new RegExp(historicalLicensor), `${label} must keep the v1 licensor`);
+    assert.doesNotMatch(value, new RegExp(currentOperator), `${label} must not rewrite the v1 licensor`);
+  }
 
   assert.match(readme, /schematic, not a geographic map/i);
   assert.match(
@@ -311,8 +335,17 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.match(component, /acquireLicensePage:/);
   assert.match(component, /creditText:/);
   assert.match(component, /copyrightNotice:/);
+  assert.match(component, /ASSET_CREATOR_REGISTERED_NAME/);
+  assert.equal(
+    [...component.matchAll(/creator: \{ "@id": ASSET_CREATOR_ID \}/g)].length,
+    2,
+    "the original image and dataset creator must remain separate from the current website operator",
+  );
   assert.match(component, /editorialWebsiteSchema\(\)/);
   assert.match(component, /editorialOrganizationSchema\(\)/);
+  assert.match(component, /legalName: homegroundBusiness\.registeredName/);
+  assert.match(component, /homegroundBusiness\.unifiedSocialCreditCode/);
+  assert.match(component, /homegroundBusiness\.travelAgencyLicenceNumber/);
   assert.match(
     component,
     /isPartOf: \{ "@id": EDITORIAL_WEBSITE_ID \}/,
@@ -338,6 +371,11 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
     component.slice(articleStart, imageStart),
     /\blicense:/,
     "CC BY must apply to the original asset, not silently relicense the entire article",
+  );
+  assert.match(
+    component.slice(articleStart, imageStart),
+    /publisher: \{ "@id": EDITORIAL_ORGANIZATION_ID \}/,
+    "the updated article uses the current site publisher while the v1 asset keeps its historical creator",
   );
   for (const schemaSlice of [
     component.slice(imageStart, datasetStart),

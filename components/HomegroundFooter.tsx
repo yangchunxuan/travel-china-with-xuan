@@ -46,6 +46,7 @@ const footerSections: Record<
     operatorPrefix: string;
     operatorSuffix: string;
     codeLabel: string;
+    licenceLabel: string;
   }
 > = {
   en: {
@@ -62,6 +63,7 @@ const footerSections: Record<
     operatorPrefix: "Homeground is operated by",
     operatorSuffix: ".",
     codeLabel: "Unified Social Credit Code",
+    licenceLabel: "Travel Agency Licence No.",
   },
   zh: {
     guides: "实用指南",
@@ -77,6 +79,7 @@ const footerSections: Record<
     operatorPrefix: "Homeground 由",
     operatorSuffix: "运营。",
     codeLabel: "统一社会信用代码",
+    licenceLabel: "旅行社业务经营许可证编号",
   },
   ko: {
     guides: "실용 가이드",
@@ -92,6 +95,7 @@ const footerSections: Record<
     operatorPrefix: "Homeground는",
     operatorSuffix: "에서 운영합니다.",
     codeLabel: "통일사회신용코드",
+    licenceLabel: "여행사 영업허가번호",
   },
 };
 
@@ -327,6 +331,10 @@ export function HomegroundFooter({
                 {sectionLabels.codeLabel}: {" "}
                 {homegroundBusiness.unifiedSocialCreditCode}
               </span>
+              <span>
+                {sectionLabels.licenceLabel}: {" "}
+                {homegroundBusiness.travelAgencyLicenceNumber}
+              </span>
             </p>
           </div>
         </div>
@@ -397,6 +405,10 @@ export function HomegroundFooter({
           <span>
             {sectionLabels.codeLabel}:{" "}
             {homegroundBusiness.unifiedSocialCreditCode}
+          </span>
+          <span>
+            {sectionLabels.licenceLabel}:{" "}
+            {homegroundBusiness.travelAgencyLicenceNumber}
           </span>
         </p>
         <nav aria-label={sectionLabels.legalLabel}>
