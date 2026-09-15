@@ -84,15 +84,15 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
   en: {
     path: "/guides/",
     metadata: {
-      title: "China Travel Guides: Entry, Transport & Stays",
+      title: "China Travel Tips & Guides: Entry, Apps, Transport",
       description:
-        "Search practical China travel guides for clear answers on entry, transport, stays, timing and realistic first-trip planning.",
-      openGraphTitle: "Practical China Travel Guides from Homeground",
+        "Practical China travel tips for entry, payments, mobile apps, transport, hotels, timing and realistic route planning.",
+      openGraphTitle: "Practical China Travel Tips & Guides",
     },
-    eyebrow: "Searchable travel advice",
-    title: "Practical China Travel Guides",
+    eyebrow: "Practical answers for your trip",
+    title: "China Travel Tips",
     introduction:
-      "Start with the question you need to solve. Search clear answers on entry, route pace, transport, hotel decisions, timing and the practical tasks that shape a China trip.",
+      "Start with the task in front of you: entry, payments, mobile setup, transport, hotels, timing or route pace. Each section leads to the guide with the full answer.",
     languageLabel: "Guide language",
     destinationAction: "Choose a destination instead",
     catalogEyebrow: "Browse the library",
@@ -115,40 +115,40 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       entry: "Entry & visa-free rules",
     },
     countryGuide: {
-      eyebrow: "Browse by travel problem",
-      title: "Choose the problem you need to solve.",
+      eyebrow: "Six tips that save time",
+      title: "Start with the decision in front of you.",
       introduction:
-        "These six question groups lead to the page that owns the answer. If you are choosing a place rather than solving a travel problem, use Destinations instead.",
+        "Use the tip that matches your next decision. If you are choosing where to go, compare Destinations instead.",
       decisions: {
         plan: {
-          title: "How many places fit your time?",
+          title: "Count usable days before adding cities.",
           body:
-            "Work from usable days, city order and recovery time before locking hotels or non-refundable transport.",
+            "Set aside time for arrival, departure and long transfers; then choose a city order with room to recover.",
         },
         "when-to-go": {
-          title: "What changes on your dates?",
+          title: "Check your dates before booking.",
           body:
-            "Check public holidays, weather, seasonal scenery and crowd pressure only where they change a real choice.",
+            "Public holidays, weather, seasonal scenery and crowds matter only when they change a real choice.",
         },
         transport: {
-          title: "What does each move really cost?",
+          title: "Compare every transfer door to door.",
           body:
-            "Compare airports, railway stations and city pairs by the full door-to-door transfer, not the timetable headline.",
+            "Include the trip to the airport or station, security, waiting and the final ride—not only the train or flight time.",
         },
         stay: {
-          title: "Which area makes the days easier?",
+          title: "Choose the area before the hotel.",
           body:
-            "Choose the right city or scenic-area base first, then verify the hotel details that matter to an international traveller.",
+            "Pick the base that reduces travel time on sightseeing days, then check the room and foreign-passport details.",
         },
         essentials: {
-          title: "What must work before arrival?",
+          title: "Confirm entry, payments and mobile access.",
           body:
-            "Resolve entry, payment, mobile connectivity, booking and registration questions with current, source-backed guidance.",
+            "Confirm your entry path, payment fallback, internet access and essential bookings before arrival.",
         },
         culture: {
-          title: "What makes the place mean more?",
+          title: "Give each city one local thread.",
           body:
-            "Connect food, history, belief and living traditions to places you can actually visit instead of treating culture as trivia.",
+            "Follow one food, history or living-tradition thread through places you can actually visit.",
         },
       },
     },
@@ -197,15 +197,15 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
   zh: {
     path: "/zh/guides/",
     metadata: {
-      title: "中国旅行实用指南｜入境、交通、住宿与规划",
+      title: "中国旅行实用攻略｜入境、支付、交通与住宿",
       description:
-        "搜索 Homeground 中国旅行实用指南：入境、交通、住宿、出行时间与第一次旅行规划的明确答案。",
-      openGraphTitle: "Homeground 中国旅行实用指南",
+        "中国旅行实用攻略：入境、支付、手机网络、交通、住宿、出行时间与路线规划。",
+      openGraphTitle: "Homeground 中国旅行实用攻略",
     },
-    eyebrow: "可搜索的旅行答案库",
-    title: "中国旅行实用指南",
+    eyebrow: "按问题找旅行答案",
+    title: "中国旅行实用建议",
     introduction:
-      "从你正在解决的问题开始：搜索入境、路线节奏、交通、住宿、出行时间，以及第一次来中国会遇到的实际操作。",
+      "从眼前要处理的事情开始：入境、支付、手机网络、交通、住宿、出行时间或路线节奏。每个栏目都会带你进入提供完整答案的指南。",
     languageLabel: "指南语言",
     destinationAction: "改为选择目的地",
     catalogEyebrow: "浏览全部指南",
@@ -228,34 +228,34 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       entry: "入境与免签规则",
     },
     countryGuide: {
-      eyebrow: "按旅行问题浏览",
-      title: "选择你现在需要解决的问题。",
+      eyebrow: "六条省时间的建议",
+      title: "先处理眼前这项旅行决定。",
       introduction:
-        "下面六类问题会直接进入负责答案的栏目。如果你是在选择地点，而不是解决旅行问题，请使用“目的地”。",
+        "选择与你下一项决定最接近的一条；如果你正在挑选去哪里，请进入“目的地”比较。",
       decisions: {
         plan: {
-          title: "你的时间能放下几座城市？",
-          body: "先计算真正可用的游玩日、城市顺序和恢复时间，再锁定酒店和不可退交通。",
+          title: "先算可用游玩日，再增加城市。",
+          body: "先扣除抵达、离开和长距离转场，再安排城市顺序与休息余量。",
         },
         "when-to-go": {
-          title: "你的日期会改变什么？",
-          body: "只在公共假期、天气、季节景观和人流会改变真实选择时，把时间因素单独拿出来判断。",
+          title: "订票前先核对日期。",
+          body: "公共假期、天气、季节景观与人流，只有会改变真实选择时才需要单独处理。",
         },
         transport: {
-          title: "每次转场真正花掉什么？",
-          body: "比较机场、火车站和城市之间的完整门到门时间，而不只看时刻表上的飞行或列车时间。",
+          title: "所有转场都按门到门比较。",
+          body: "把去机场或车站、安检、候机或候车和最后一段接驳算进去，不只看列车或航班时间。",
         },
         stay: {
-          title: "住在哪个区域会更省力？",
-          body: "先选对城市或景区住宿基地，再核实国际旅客真正需要确认的酒店条件。",
+          title: "先选住宿区域，再选酒店。",
+          body: "先选能减少游览日通勤时间的基地，再核实房型和持外国护照办理入住所需信息。",
         },
         essentials: {
-          title: "落地前必须解决什么？",
-          body: "用有来源、会更新的指南处理入境、支付、手机网络、预约和住宿登记等实际问题。",
+          title: "落地前准备好入境、支付和网络。",
+          body: "提前确认入境路径、备用支付方式、手机网络和必须预约的项目。",
         },
         culture: {
-          title: "怎样看懂景点背后的中国？",
-          body: "把饮食、历史、信仰和仍在延续的传统连接到可以亲自抵达的地方，而不是只罗列文化知识。",
+          title: "每座城市选一条本地线索。",
+          body: "沿着饮食、历史或仍在延续的传统，把看得见的地方连起来。",
         },
       },
     },
@@ -304,15 +304,15 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
   ko: {
     path: "/ko/guides/",
     metadata: {
-      title: "중국 여행 실용 가이드｜입국·교통·숙소·일정",
+      title: "중국 여행 팁과 실용 가이드｜입국·결제·교통·숙소",
       description:
-        "입국, 교통, 숙소, 여행 시기와 첫 중국 여행 계획에 관한 명확한 답을 Homeground 실용 가이드에서 검색하세요.",
-      openGraphTitle: "Homeground 중국 여행 실용 가이드",
+        "입국, 결제, 모바일 연결, 교통, 숙소, 여행 시기와 동선을 위한 실용적인 중국 여행 팁입니다.",
+      openGraphTitle: "Homeground 중국 여행 팁과 실용 가이드",
     },
-    eyebrow: "검색 가능한 여행 답변",
-    title: "중국 여행 실용 가이드",
+    eyebrow: "여행 문제별 실용 답변",
+    title: "중국 여행 팁",
     introduction:
-      "지금 풀어야 할 질문에서 시작하세요. 입국, 동선 속도, 교통, 숙소, 여행 시기와 중국 현지 실무에 관한 답을 검색할 수 있습니다.",
+      "입국, 결제, 모바일 연결, 교통, 숙소, 여행 시기와 동선 중 지금 필요한 일부터 시작하세요. 각 섹션에서 자세한 답변이 담긴 가이드로 이동할 수 있습니다.",
     languageLabel: "가이드 언어",
     destinationAction: "여행지 선택하기",
     catalogEyebrow: "전체 가이드",
@@ -335,34 +335,34 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       entry: "입국 및 무비자 규정",
     },
     countryGuide: {
-      eyebrow: "여행 문제별 탐색",
-      title: "지금 해결할 문제를 선택하세요.",
+      eyebrow: "시간을 아끼는 여섯 가지 팁",
+      title: "지금 필요한 결정부터 확인하세요.",
       introduction:
-        "아래 여섯 가지 질문 그룹에서 답을 맡은 섹션으로 이동하세요. 여행 문제보다 장소를 고르는 중이라면 여행지 페이지를 이용하세요.",
+        "다음 결정에 맞는 팁을 고르세요. 어디로 갈지 정하는 중이라면 여행지 페이지에서 비교할 수 있습니다.",
       decisions: {
         plan: {
-          title: "주어진 시간에 몇 도시가 맞을까요?",
-          body: "호텔과 환불 불가 교통편을 확정하기 전에 실제 관광일, 도시 순서와 회복 시간을 먼저 계산하세요.",
+          title: "도시를 늘리기 전에 실제 여행일을 세세요.",
+          body: "도착일, 출발일과 장거리 이동 시간을 뺀 뒤 도시 순서와 휴식 여유를 정하세요.",
         },
         "when-to-go": {
-          title: "여행 날짜가 무엇을 바꿀까요?",
-          body: "공휴일, 날씨, 계절 풍경과 혼잡도가 실제 선택을 바꾸는 경우에만 시기를 따로 판단하세요.",
+          title: "예약 전에 날짜를 확인하세요.",
+          body: "공휴일, 날씨, 계절 풍경과 혼잡도가 실제 선택을 바꿀 때만 따로 판단하세요.",
         },
         transport: {
-          title: "한 번의 이동에 실제로 무엇이 들까요?",
-          body: "시간표의 비행·열차 시간만 보지 말고 공항, 역과 도시 사이의 전체 문전 이동을 비교하세요.",
+          title: "이동은 출발지부터 도착지까지 비교하세요.",
+          body: "공항이나 역까지 가는 시간, 보안 검색, 대기와 마지막 구간까지 포함하고 열차나 비행시간만 보지 마세요.",
         },
         stay: {
-          title: "어느 지역에 묵어야 하루가 쉬워질까요?",
-          body: "도시나 관광지의 숙박 거점을 먼저 정한 뒤 해외 여행자에게 필요한 호텔 조건을 확인하세요.",
+          title: "호텔보다 숙박 지역을 먼저 고르세요.",
+          body: "실제 관광일의 이동을 줄이는 거점을 고른 뒤 객실 조건과 외국 여권 체크인에 필요한 사항을 확인하세요.",
         },
         essentials: {
-          title: "도착 전에 무엇을 해결해야 할까요?",
-          body: "출처가 있고 갱신되는 안내로 입국, 결제, 모바일 연결, 예약과 숙박 등록 문제를 해결하세요.",
+          title: "입국, 결제와 모바일 연결을 준비하세요.",
+          body: "입국 경로, 결제 대안, 인터넷 연결과 꼭 필요한 예약을 출발 전에 확인하세요.",
         },
         culture: {
-          title: "장소의 의미를 어떻게 더 깊이 볼까요?",
-          body: "음식, 역사, 믿음과 살아 있는 전통을 실제로 방문할 수 있는 장소와 연결해 이해하세요.",
+          title: "도시마다 한 가지 현지 이야기를 따라가세요.",
+          body: "음식, 역사나 살아 있는 전통 하나를 실제로 방문할 수 있는 장소와 연결해 보세요.",
         },
       },
     },
