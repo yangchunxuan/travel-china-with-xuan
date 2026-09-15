@@ -180,6 +180,8 @@ function structuredData() {
         inLanguage: "en",
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
+        // The current site publisher republished this existing article after
+        // the operator change; the v1 map asset keeps its historical creator.
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         citation: assetData.sources.map((source) => source.url),

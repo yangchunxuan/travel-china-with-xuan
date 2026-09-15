@@ -46,21 +46,22 @@ export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
  * Publication dates preserve the repository's established public lifecycle.
  * PR #88 materially updated Homeground China identity, visible copy, metadata,
  * or structured data on the affected system identities. Shared header chrome
- * alone does not advance legal documents. Business information separately
- * records the owner-supplied certificate addition on 2026-09-08; terms and
- * refund information retain their original substantive lifecycle event.
- * Review dates remain independent where a change did not re-review a full page.
+ * alone does not advance legal documents. The 2026-09-15 operator alignment
+ * updates the homepage identity, business information and privacy controller;
+ * terms and refund information retain their original substantive lifecycle
+ * event. Review dates remain independent where a change did not re-review a
+ * full page.
  */
 export const legacySystemContentLifecycle = {
   home: {
     datePublished: "2026-07-24",
-    dateModified: "2026-09-04",
+    dateModified: "2026-09-15",
     lastReviewed: "2026-07-24",
     evidence: {
-      commit: "3112cc762123cddbeb20d8bdca349356d481f1ad",
-      changedAt: "2026-09-04",
+      commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
+      changedAt: "2026-09-15",
       summary:
-        "PR #120 clarified the homepage's distinct guide-search, private-tour and planning paths and materially rebalanced the visible hero.",
+        "The owner-alignment change replaced the homepage footer and Organization identity with the licensed Beijing travel agency's registered name, code and region.",
     },
   },
   studio: {
@@ -131,24 +132,24 @@ export const legacySystemContentLifecycle = {
   },
   privacy: {
     datePublished: "2026-07-24",
-    dateModified: "2026-09-05",
+    dateModified: "2026-09-15",
     lastReviewed: "2026-07-31",
     evidence: {
-      commit: "5f909b6488e729a30b017c122b27737e0428d4f5",
-      changedAt: "2026-09-05",
+      commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
+      changedAt: "2026-09-15",
       summary:
-        "The privacy notice explains consented first-party published product and group choices, separate submit outcomes, bounded retries and withdrawal. Inquiry selection wording matches the saved product handoff. The separate full-review date remains unchanged.",
+        "The privacy notice now uses the licensed Beijing travel agency's registered address for the Homeground data controller; the separate full-review date remains unchanged.",
     },
   },
   "business-information": {
     datePublished: "2026-07-24",
-    dateModified: "2026-09-08",
-    lastReviewed: "2026-07-24",
+    dateModified: "2026-09-15",
+    lastReviewed: "2026-09-15",
     evidence: {
-      commit: "10b5f5fb73273d7b8020ddcfb292167ecaf7539d",
-      changedAt: "2026-09-08",
+      commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
+      changedAt: "2026-09-15",
       summary:
-        "Added owner-supplied travel-agency certificate copies, their named holder and licensed domestic/inbound scope in three languages. The website operator and full-page review date remain unchanged; no live registry verification is claimed.",
+        "The operating entity, registration details and three-language licence facts now match the owner-supplied Beijing business and travel-agency certificates.",
     },
   },
   terms: {
