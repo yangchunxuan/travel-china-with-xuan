@@ -14,7 +14,7 @@ export interface GuideTourCardData {
   readonly title: string;
   readonly action: string;
   readonly href: string;
-  readonly image: { readonly src: string; readonly srcSet: string; readonly alt: string; readonly width: number; readonly height: number; readonly objectPosition?: string };
+  readonly image: { readonly src: string; readonly srcSet: string; readonly alt: string; readonly width: number; readonly height: number };
   readonly label: string;
 }
 
@@ -46,7 +46,6 @@ export function getGuideTourCard(
       alt: product.image.alt,
       width: product.image.width,
       height: product.image.height,
-      objectPosition: product.image.objectPosition,
     },
     label: text.label,
   };

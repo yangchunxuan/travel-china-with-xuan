@@ -374,26 +374,6 @@ export function ZhangjiajieGuidePage({
       <main id="guide-content" tabIndex={-1}>
         <article>
           <header className={styles.hero}>
-            <picture className={styles.heroPicture}>
-              <source
-                type="image/avif"
-                srcSet="/images/guides/zhangjiajie/hero-640.avif 640w, /images/guides/zhangjiajie/hero-960.avif 960w, /images/guides/zhangjiajie/hero-1280.avif 1280w, /images/guides/zhangjiajie/hero-1600.avif 1600w"
-                sizes="100vw"
-              />
-              <source
-                type="image/webp"
-                srcSet="/images/guides/zhangjiajie/hero-640.webp 640w, /images/guides/zhangjiajie/hero-960.webp 960w, /images/guides/zhangjiajie/hero-1280.webp 1280w, /images/guides/zhangjiajie/hero-1600.webp 1600w"
-                sizes="100vw"
-              />
-              <img
-                src={guide.heroImagePath}
-                alt={guide.heroAlt}
-                width="1600"
-                height="954"
-                fetchPriority="high"
-              />
-            </picture>
-            <div className={styles.heroShade} aria-hidden="true" />
             <div className={styles.heroContent}>
               <nav className={styles.breadcrumb} aria-label={copy.breadcrumbLabel}>
                 <ol>
@@ -424,6 +404,25 @@ export function ZhangjiajieGuidePage({
                 · {copy.hero.liveCheck}
               </p>
             </div>
+            <picture className={styles.heroPicture}>
+              <source
+                type="image/avif"
+                srcSet="/images/guides/zhangjiajie/hero-640.avif 640w, /images/guides/zhangjiajie/hero-960.avif 960w, /images/guides/zhangjiajie/hero-1280.avif 1280w, /images/guides/zhangjiajie/hero-1600.avif 1600w"
+                sizes="(max-width: 56rem) calc(100vw - 2rem), (max-width: 100rem) 42vw, 42rem"
+              />
+              <source
+                type="image/webp"
+                srcSet="/images/guides/zhangjiajie/hero-640.webp 640w, /images/guides/zhangjiajie/hero-960.webp 960w, /images/guides/zhangjiajie/hero-1280.webp 1280w, /images/guides/zhangjiajie/hero-1600.webp 1600w"
+                sizes="(max-width: 56rem) calc(100vw - 2rem), (max-width: 100rem) 42vw, 42rem"
+              />
+              <img
+                src={guide.heroImagePath}
+                alt={guide.heroAlt}
+                width="1600"
+                height="954"
+                fetchPriority="high"
+              />
+            </picture>
           </header>
 
           <div className={styles.articleBody}>

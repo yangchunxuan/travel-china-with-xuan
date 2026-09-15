@@ -592,8 +592,6 @@ export const malaysiaZhangjiajieGuideCopyEn = {
   images: {
     heroAlt:
       "Visitors look toward misty sandstone pillars rising above the forest in Zhangjiajie.",
-    heroCaption:
-      "The useful question is not how many sights fit on paper, but how the journey reaches the right base with enough complete days.",
     entranceAlt:
       "Travellers gather beneath dense green trees at an entrance to Zhangjiajie National Forest Park.",
     entranceCaption:

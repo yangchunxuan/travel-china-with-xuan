@@ -167,6 +167,7 @@ test("guide locales have independent URLs, copy and language metadata", async ()
 
 test("guide images have responsive sources and explicit fallback dimensions", async () => {
   const guide = await source("components/ZhangjiajieGuidePage.tsx");
+  const styles = await source("components/ZhangjiajieGuidePage.module.css");
   const productionPruner = await source(
     "tools/prune-production-export.mjs",
   );
@@ -178,6 +179,9 @@ test("guide images have responsive sources and explicit fallback dimensions", as
   assert.match(guide, /width="1200"\s+height="780"/);
   assert.match(guide, /width="1200"\s+height="620"/);
   assert.equal(guide.match(/loading="lazy"/g)?.length, 2);
+  assert.doesNotMatch(guide, /heroShade/);
+  assert.doesNotMatch(styles, /object-fit:\s*cover/);
+  assert.doesNotMatch(styles, /\.guideFigure picture\s*\{[^}]*aspect-ratio/s);
   assert.match(
     productionPruner,
     /images\/guides\/zhangjiajie\/restored/,

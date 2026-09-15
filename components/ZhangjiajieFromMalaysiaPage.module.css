@@ -197,33 +197,15 @@
 }
 
 .heroVisual {
-  align-self: stretch;
+  align-self: center;
   margin: 0;
-  min-height: 43rem;
-  overflow: hidden;
-  position: relative;
 }
 
 .heroVisual picture,
 .heroVisual img {
-  height: 100%;
+  display: block;
+  height: auto;
   width: 100%;
-}
-
-.heroVisual img {
-  object-fit: cover;
-  object-position: 48% 50%;
-}
-
-.heroVisual figcaption {
-  background: rgb(20 20 19 / 88%);
-  bottom: 1rem;
-  color: var(--hg-color-on-dark);
-  font-size: 0.72rem;
-  inset-inline: 1rem;
-  line-height: 1.5;
-  padding: 0.7rem 0.8rem;
-  position: absolute;
 }
 
 .directAnswer {
@@ -690,9 +672,7 @@
 }
 
 .entrancePhoto img {
-  aspect-ratio: 1200 / 704;
   height: auto;
-  object-fit: cover;
 }
 
 .entrancePhoto figcaption {
@@ -1402,14 +1382,6 @@
       3.5rem;
   }
 
-  .heroVisual {
-    min-height: 28rem;
-  }
-
-  .heroVisual figcaption {
-    inset-inline: 0.75rem;
-  }
-
   .directAnswer {
     padding-inline: 1rem;
   }
@@ -1598,10 +1570,6 @@
   .pageRoot[data-homeground-locale="ko"] .hero h1 {
     font-size: clamp(2.55rem, 11.5vw, 3rem);
     line-height: 0.98;
-  }
-
-  .heroVisual {
-    min-height: 21rem;
   }
 
   .directAnswer,

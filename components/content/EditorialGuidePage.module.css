@@ -118,8 +118,6 @@
   block-size: auto;
   display: block;
   inline-size: 100%;
-  max-block-size: 45rem;
-  object-fit: cover;
 }
 
 .heroCredit {

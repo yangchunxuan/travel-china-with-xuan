@@ -208,13 +208,10 @@
 .heroFigure picture {
   background: var(--night);
   border: 1px solid #cfc6ba;
-  overflow: hidden;
 }
 
 .heroFigure img {
-  aspect-ratio: 3 / 2;
   height: auto;
-  object-fit: cover;
 }
 
 .heroFigure figcaption {

@@ -579,8 +579,6 @@ export const malaysiaZhangjiajieGuideCopyZh = {
   },
   images: {
     heroAlt: "游客望向云雾中从森林上方升起的张家界砂岩峰林。",
-    heroCaption:
-      "真正有用的问题不是纸面能塞多少景点，而是怎样抵达正确的住宿区域，并保留足够的完整游览日。",
     entranceAlt: "旅客聚集在张家界国家森林公园一处绿树浓密的入口。",
     entranceCaption:
       "景区日不只有景点名称，还包括入口、排队、内部交通与步行节奏。",
