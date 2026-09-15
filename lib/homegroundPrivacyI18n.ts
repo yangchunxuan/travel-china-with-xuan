@@ -129,7 +129,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "15 September 2026",
+      reviewedValue: "24 August 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -379,7 +379,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 9 月 15 日",
+      reviewedValue: "2026 年 8 月 24 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -615,7 +615,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 9월 15일",
+      reviewedValue: "2026년 8월 24일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
