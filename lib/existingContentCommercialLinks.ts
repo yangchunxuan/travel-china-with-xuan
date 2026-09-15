@@ -57,6 +57,11 @@ const destinationTargets = {
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const guideTargets = {
+  "singapore-to-zhangjiajie-itinerary": [classicZhangjiajie],
+  "chengdu-zhangjiajie-itinerary": [classicZhangjiajie],
+  "best-zhangjiajie-night-show": [classicZhangjiajie],
+  "zhangjiajie-from-malaysia": [classicZhangjiajie],
+  "zhangjiajie-itinerary": [classicZhangjiajie],
   "tianmen-mountain-tickets-and-routes": [classicZhangjiajie],
   "beijing-courtyard-hotel-or-modern-hotel": [p("beijing-highlights-5-day-private-tour")],
   "beijing-where-to-stay-first-trip": [p("beijing-highlights-5-day-private-tour")],
@@ -91,6 +96,11 @@ const guideTargets = {
 } as const satisfies Partial<Record<GuideId, readonly ProductTarget[]>>;
 
 const approvedCommercialGuideIds = [
+  "singapore-to-zhangjiajie-itinerary",
+  "chengdu-zhangjiajie-itinerary",
+  "best-zhangjiajie-night-show",
+  "zhangjiajie-from-malaysia",
+  "zhangjiajie-itinerary",
   "tianmen-mountain-tickets-and-routes",
   "beijing-courtyard-hotel-or-modern-hotel",
   "beijing-where-to-stay-first-trip",
