@@ -163,6 +163,7 @@ export function DestinationsHubPage({
           <ol className={styles.cityGrid}>
             {destinationHubRegistry.map((hub, index) => {
               const city = hub.locales[locale];
+              const comparison = copy.cityComparisons[hub.id];
               return (
                 <li key={hub.id}>
                   <Link href={city.path}>
@@ -170,7 +171,20 @@ export function DestinationsHubPage({
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <h3>{city.navTitle}</h3>
-                    <p>{city.description}</p>
+                    <dl className={styles.cityFacts}>
+                      <div>
+                        <dt>{copy.bestForLabel}</dt>
+                        <dd>{comparison.bestFor}</dd>
+                      </div>
+                      <div>
+                        <dt>{copy.stayLabel}</dt>
+                        <dd>{comparison.stay}</dd>
+                      </div>
+                      <div>
+                        <dt>{copy.routeRoleLabel}</dt>
+                        <dd>{comparison.routeRole}</dd>
+                      </div>
+                    </dl>
                     <span className={styles.action}>
                       {copy.openCity}
                       <span aria-hidden="true">→</span>
@@ -180,6 +194,11 @@ export function DestinationsHubPage({
               );
             })}
           </ol>
+
+          <Link className={styles.seasonalLink} href={copy.winterGuidePath}>
+            {copy.winterGuideLabel}
+            <span aria-hidden="true">→</span>
+          </Link>
         </section>
 
         <section className={styles.scales} aria-labelledby="place-scales-title">

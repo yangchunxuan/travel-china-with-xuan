@@ -236,6 +236,36 @@
   margin: 1.25rem 0 0;
 }
 
+.cityFacts {
+  display: grid;
+  gap: 0;
+  margin: 1.25rem 0 0;
+}
+
+.cityFacts > div {
+  border-block-start: 1px solid var(--destination-line);
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  padding-block: 0.78rem;
+}
+
+.cityFacts dt {
+  color: var(--destination-ink);
+  font-size: 0.66rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.cityFacts dd {
+  color: var(--destination-muted);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  margin: 0;
+}
+
 .action {
   align-items: center;
   border-block-start: 1px solid var(--destination-line);
@@ -245,6 +275,28 @@
   justify-content: space-between;
   margin-block-start: auto;
   padding-block-start: 1rem;
+}
+
+.seasonalLink {
+  align-items: center;
+  border-block-end: 1px solid var(--destination-ink);
+  color: var(--destination-ink);
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 760;
+  gap: 1.25rem;
+  justify-content: space-between;
+  margin-block-start: 1.5rem;
+  margin-inline-start: auto;
+  max-width: 34rem;
+  padding-block: 0.85rem;
+  text-decoration: none;
+}
+
+.seasonalLink:hover,
+.seasonalLink:focus-visible {
+  border-color: var(--destination-rust);
+  color: var(--destination-rust);
 }
 
 .scales {
@@ -306,6 +358,20 @@
 @media (max-width: 70rem) {
   .cityGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 40.01rem) {
+  .cityFacts > div:nth-child(1) {
+    min-block-size: 5.5rem;
+  }
+
+  .cityFacts > div:nth-child(2) {
+    min-block-size: 4.25rem;
+  }
+
+  .cityFacts > div:nth-child(3) {
+    min-block-size: 5.5rem;
   }
 }
 
@@ -384,7 +450,6 @@
     margin-block-start: 0.65rem;
   }
 
-  .cityGrid,
   .scaleGrid {
     grid-template-columns: 1fr;
   }
@@ -408,9 +473,34 @@
     margin-block-start: 0.75rem;
   }
 
+  .cityFacts {
+    margin-block-start: 0.75rem;
+  }
+
+  .cityFacts > div {
+    grid-template-columns: 5.2rem minmax(0, 1fr);
+    padding-block: 0.65rem;
+  }
+
+  .cityFacts dd {
+    font-size: 0.84rem;
+  }
+
+  .seasonalLink {
+    font-size: 0.8rem;
+    margin-block-start: 1rem;
+    max-width: none;
+  }
+
   .action {
     margin-block-start: 1.15rem;
     padding-block-start: 0.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .cityGrid {
+    grid-template-columns: 1fr;
   }
 }
 

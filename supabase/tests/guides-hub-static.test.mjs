@@ -108,9 +108,9 @@ test("three hub routes publish localized canonical and hreflang metadata", async
   assert.match(localizedRoute, /canonical: copy\.path/);
   assert.match(localizedRoute, /languages: getGuidesHubLanguagePaths\(\)/);
   assert.match(localizedRoute, /value === "zh" \|\| value === "ko"/);
-  assert.match(copy, /title: "Practical China Travel Guides"/);
-  assert.match(copy, /title: "中国旅行实用指南"/);
-  assert.match(copy, /title: "중국 여행 실용 가이드"/);
+  assert.match(copy, /title: "China Travel Tips"/);
+  assert.match(copy, /title: "中国旅行实用建议"/);
+  assert.match(copy, /title: "중국 여행 팁"/);
   assert.match(copy, /path: "\/guides\/"/);
   assert.match(copy, /path: "\/zh\/guides\/"/);
   assert.match(copy, /path: "\/ko\/guides\/"/);
@@ -138,9 +138,9 @@ test("the guides owner groups answer-seeking tasks without duplicating destinati
   assert.match(hub, /copy\.countryGuide\.decisions\[section\]/);
   assert.match(hub, /getSearchSectionPath\(section, locale\)/);
   assert.match(hub, /id="china-travel-guide-title"/);
-  assert.match(copy, /title: "Choose the problem you need to solve\."/);
-  assert.match(copy, /title: "选择你现在需要解决的问题。"/);
-  assert.match(copy, /title: "지금 해결할 문제를 선택하세요\."/);
+  assert.match(copy, /title: "Start with the decision in front of you\."/);
+  assert.match(copy, /title: "先处理眼前这项旅行决定。"/);
+  assert.match(copy, /title: "지금 필요한 결정부터 확인하세요\."/);
   assert.doesNotMatch(hub, /\/china-travel-guide\//);
   assert.doesNotMatch(copy, /\/china-travel-guide\//);
   assert.doesNotMatch(hub, /\/china-itinerary-review\//);

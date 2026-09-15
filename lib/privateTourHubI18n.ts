@@ -175,13 +175,13 @@ export type PrivateTourHubCopy = ReturnType<typeof getPrivateTourHubCopy>;
 
 export const englishMarketPlanning = {
   eyebrow: "Before you book",
-  title: "Starting from Malaysia, Singapore or Australia?",
+  title: "Looking for a private China tour package from Singapore, Malaysia or Australia?",
   introduction:
-    "Choose your route in China first, then check how your arrival and departure fit. You can plan with us in English wherever you are travelling from.",
+    "Homeground arranges private land journeys beginning in China. Choose a published route first; before you book, we confirm its meeting point and transfer scope in writing for your dates and group.",
   questions: [
     {
-      title: "Does the price include my flights?",
-      body: "International flights are not included. Send your departure city and any flights you are considering; we will confirm the meeting point, arrival transfer and first day in your written quote before you book.",
+      title: "Where does the package begin?",
+      body: "International flights are excluded. Send your departure city and any flights you are considering; we will confirm the meeting point, arrival transfer and first day in writing before you book.",
     },
     {
       title: "Which currency and room basis should I compare?",

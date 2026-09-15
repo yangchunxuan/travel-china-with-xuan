@@ -77,12 +77,12 @@ const copies: Record<HomegroundLocale, SearchPlatformCopy> = {
     sections: {
       explore: {
         navLabel: "Destinations",
-        metadataTitle: "China Destinations: Cities, Regions & Places",
+        metadataTitle: "Best Places to Visit in China: Cities & Regions",
         shortLabel: "Places",
-        eyebrow: "Choose by place",
-        title: "Choose a place. See how it fits the trip.",
+        eyebrow: "Compare China destinations",
+        title: "Best places to visit in China.",
         description:
-          "Compare cities by nights, stay areas, arrival points, major sights and the next places that connect without forcing the route.",
+          "Compare eight city bases by what each is best for, how long to allow and the role it can play in a wider route.",
         scopeTitle: "What do you need to decide?",
         scope: ["Which city earns a place in my trip?", "How many nights and which base make sense?", "Where should I arrive, depart and go next?"],
       },
@@ -196,11 +196,11 @@ const copies: Record<HomegroundLocale, SearchPlatformCopy> = {
     sections: {
       explore: {
         navLabel: "目的地",
-        metadataTitle: "中国目的地：城市、地区与景点",
+        metadataTitle: "中国值得去的地方：城市与路线选择",
         shortLabel: "目的地",
-        eyebrow: "按地点选择",
-        title: "先选目的地，再看它怎样接入整趟旅行。",
-        description: "按停留晚数、住宿区域、进出门户、主要景点和顺路的下一站比较城市，不让单个地点打乱整条路线。",
+        eyebrow: "比较中国目的地",
+        title: "中国哪些地方值得去？",
+        description: "比较八座城市各自适合的旅行、建议停留时间，以及它们在整条路线中的作用。",
         scopeTitle: "你现在需要决定什么？",
         scope: ["哪座城市值得放进行程？", "住几晚、以哪个区域为基地？", "从哪里进入、离开，再去哪里？"],
       },
@@ -306,11 +306,11 @@ const copies: Record<HomegroundLocale, SearchPlatformCopy> = {
     sections: {
       explore: {
         navLabel: "여행지",
-        metadataTitle: "중국 여행지: 도시·지역·명소",
+        metadataTitle: "중국 가볼 만한 곳: 도시와 지역 비교",
         shortLabel: "여행지",
-        eyebrow: "장소로 선택",
-        title: "여행지를 고르고, 전체 동선에서 어떤 역할을 하는지 보세요.",
-        description: "숙박일, 숙소 지역, 도착 지점, 주요 명소와 자연스럽게 이어지는 다음 여행지를 기준으로 도시를 비교하세요.",
+        eyebrow: "중국 여행지 비교",
+        title: "중국 가볼 만한 곳.",
+        description: "여덟 도시가 어떤 여행에 맞는지, 얼마나 머물지, 전체 동선에서 어떤 역할을 하는지 비교하세요.",
         scopeTitle: "지금 무엇을 결정해야 하나요?",
         scope: ["어느 도시를 일정에 넣을까요?", "몇 박, 어느 지역을 거점으로 할까요?", "어디로 도착하고 출발해 다음에는 어디로 갈까요?"],
       },

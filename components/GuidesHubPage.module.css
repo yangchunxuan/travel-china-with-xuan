@@ -1037,7 +1037,7 @@ a.paginationStep:focus-visible {
   }
 
   .decisionGrid li {
-    grid-column: span 4;
+    grid-column: span 6;
   }
 
   .decisionGrid a {

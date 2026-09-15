@@ -265,7 +265,7 @@ test("the mobile first guide stays close while search and all six problem handof
   assert.match(page, /className=\{styles\.searchFormCompact\}[\s\S]*?<GuideSearchForm/);
   assert.match(compact, /\.heroGrid > p\s*\{\s*display:\s*none/);
   assert.match(compact, /\.searchFormCompact[\s\S]*?grid-template-columns:\s*auto minmax\(0, 1fr\) 3rem/);
-  assert.match(compact, /\.decisionGrid li\s*\{[\s\S]*?grid-column:\s*span 4/);
+  assert.match(compact, /\.decisionGrid li\s*\{[\s\S]*?grid-column:\s*span 6/);
   assert.match(compact, /\.decisionGrid a\s*\{[\s\S]*?min-height:\s*5\.25rem/);
   assert.match(compact, /\.entryHandoff\s*\{[\s\S]*?min-height:\s*3\.25rem/);
   assert.match(compact, /\.catalog\s*\{[\s\S]*?padding-block:\s*1\.5rem 4rem/);
