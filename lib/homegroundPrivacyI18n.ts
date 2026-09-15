@@ -129,7 +129,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "24 August 2026",
+      reviewedValue: "15 September 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -338,7 +338,7 @@ export const homegroundPrivacyCopy: Record<
         "Use the monitored email below for an access, correction or deletion request. Send it from the same address used for the enquiry when possible. After reasonable identity verification, Homeground normally responds within 30 days.",
       emailLabel: "Privacy email",
       emailPlaceholder: privacyEmail,
-      addressLabel: "Postal contact",
+      addressLabel: "Registered address",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
@@ -379,7 +379,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 8 月 24 日",
+      reviewedValue: "2026 年 9 月 15 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -573,7 +573,7 @@ export const homegroundPrivacyCopy: Record<
         "如需访问、更正或删除，请使用下方有人查看的邮箱；可行时请用提交咨询时的同一邮箱发送。合理核验身份后，Homeground 原则上会在 30 天内处理。",
       emailLabel: "隐私邮箱",
       emailPlaceholder: privacyEmail,
-      addressLabel: "通信地址",
+      addressLabel: "登记地址",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:
@@ -615,7 +615,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 8월 24일",
+      reviewedValue: "2026년 9월 15일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -815,7 +815,7 @@ export const homegroundPrivacyCopy: Record<
         "열람, 수정 또는 삭제 요청은 아래 이메일로 보내 주세요. 가능하면 문의에 사용한 같은 주소에서 보내 주세요. 합리적인 본인 확인 후 Homeground는 원칙적으로 30일 이내에 처리합니다.",
       emailLabel: "개인정보 문의 이메일",
       emailPlaceholder: privacyEmail,
-      addressLabel: "우편 연락처",
+      addressLabel: "등록 주소",
       addressPlaceholder: homegroundBusiness.registeredAddress,
     },
     footer:

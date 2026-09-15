@@ -81,6 +81,12 @@ const reviewed = {
   ko: "2026년 7월 24일",
 } as const;
 
+const businessReviewed = {
+  en: "15 September 2026",
+  zh: "2026 年 9 月 15 日",
+  ko: "2026년 9월 15일",
+} as const;
+
 const languageShort = {
   en: "EN",
   zh: "中文",
@@ -190,14 +196,14 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       metadata: {
         title: "Business information | Homeground",
         description:
-          "Homeground's registered operator, travel agency credentials and certificate copies, plus how travel services and payments are confirmed.",
+          "Homeground's registered operating company, travel agency credentials and certificate copies, plus how travel services and payments are confirmed.",
       },
       pageLabel: "Business information",
       hero: {
         eyebrow: "Business information",
         title: "Who operates Homeground",
         intro:
-          "Homeground is a China travel brand operated by a legally registered business in Zhangjiajie, mainland China. Travellers can enquire about private tours and the arrangements their journey needs.",
+          "Homeground is a China travel brand operated by a legally registered travel agency in Beijing, mainland China. Its licence covers domestic and inbound tourism.",
       },
       callout: {
         label: "A clear way to begin",
@@ -219,8 +225,8 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               value: homegroundBusiness.unifiedSocialCreditCode,
             },
             {
-              label: "Registered operator",
-              value: homegroundBusiness.operator,
+              label: "Legal representative",
+              value: homegroundBusiness.legalRepresentative,
             },
             {
               label: "Registered place of business",
@@ -231,12 +237,8 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               value: homegroundBusiness.registrationAuthority,
             },
             {
-              label: "Registration date",
+              label: "Date established",
               value: homegroundBusiness.registrationDate,
-            },
-            {
-              label: "Licence issue date",
-              value: homegroundBusiness.licenceIssueDate,
             },
             {
               label: "Official public registry",
@@ -249,7 +251,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         },
         {
           id: "current-services",
-          title: "What this operator currently offers",
+          title: "What Homeground currently offers",
           cards: [
             {
               title: "Full Trip Planning & Ground Support",
@@ -285,7 +287,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               href: `mailto:${homegroundBusiness.serviceEmail}`,
             },
             {
-              label: "Postal contact",
+              label: "Registered address",
               value: homegroundBusiness.registeredAddress,
             },
           ],
@@ -303,7 +305,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "经营主体信息",
         title: "谁在运营 Homeground",
         intro:
-          "Homeground 是由中国大陆张家界依法登记的经营主体运营的中国旅行品牌。旅行者可以咨询私家团及实际旅程需要的安排。",
+          "Homeground 是由中国大陆北京依法登记，并取得境内旅游、入境旅游业务许可的旅行社运营的中国旅行品牌。",
       },
       callout: {
         label: "清楚地开始",
@@ -321,7 +323,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "统一社会信用代码",
               value: homegroundBusiness.unifiedSocialCreditCode,
             },
-            { label: "经营者", value: homegroundBusiness.operator },
+            { label: "法定代表人", value: homegroundBusiness.legalRepresentative },
             {
               label: "经营场所",
               value: homegroundBusiness.registeredAddress,
@@ -330,11 +332,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "登记机关",
               value: homegroundBusiness.registrationAuthority,
             },
-            { label: "注册日期", value: homegroundBusiness.registrationDate },
-            {
-              label: "发照日期",
-              value: homegroundBusiness.licenceIssueDate,
-            },
+            { label: "成立日期", value: homegroundBusiness.registrationDate },
             {
               label: "官方公示系统",
               value: "国家企业信用信息公示系统",
@@ -381,7 +379,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               value: homegroundBusiness.serviceEmail,
               href: `mailto:${homegroundBusiness.serviceEmail}`,
             },
-            { label: "通信地址", value: homegroundBusiness.registeredAddress },
+            { label: "登记地址", value: homegroundBusiness.registeredAddress },
           ],
         },
       ],
@@ -397,7 +395,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "사업자 정보",
         title: "Homeground 운영 사업자",
         intro:
-          "Homeground는 중국 본토 장자제에 합법적으로 등록된 사업자가 운영하는 중국 여행 브랜드입니다. 프라이빗 투어와 여행에 필요한 준비를 문의하실 수 있습니다.",
+          "Homeground는 중국 베이징에 합법적으로 등록되어 중국 국내 관광 및 외국인 방중 관광 허가를 받은 여행사가 운영하는 중국 여행 브랜드입니다.",
       },
       callout: {
         label: "명확한 시작",
@@ -415,7 +413,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "통일사회신용코드",
               value: homegroundBusiness.unifiedSocialCreditCode,
             },
-            { label: "경영자", value: homegroundBusiness.operator },
+            { label: "법정대표자", value: homegroundBusiness.legalRepresentative },
             {
               label: "등록 사업장 주소",
               value: homegroundBusiness.registeredAddress,
@@ -424,11 +422,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               label: "등록 기관",
               value: homegroundBusiness.registrationAuthority,
             },
-            { label: "등록일", value: homegroundBusiness.registrationDate },
-            {
-              label: "등록증 발급일",
-              value: homegroundBusiness.licenceIssueDate,
-            },
+            { label: "설립일", value: homegroundBusiness.registrationDate },
             {
               label: "공식 공시 시스템",
               value: "중국 국가기업신용정보공시시스템",
@@ -476,7 +470,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
               href: `mailto:${homegroundBusiness.serviceEmail}`,
             },
             {
-              label: "우편 연락처",
+              label: "등록 주소",
               value: homegroundBusiness.registeredAddress,
             },
           ],
@@ -499,7 +493,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         zh: "最近复核",
         ko: "최근 검토",
       }[locale],
-      reviewedValue: reviewed[locale],
+      reviewedValue: businessReviewed[locale],
     },
     callout: copy[locale].callout,
     sections: [

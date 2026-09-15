@@ -29,13 +29,22 @@ test("verified business identity is centralized and displayed in the shared foot
 
   assert.match(
     business,
-    /registeredName: "张家界市永定区本境文化交流工作室"/,
+    /registeredName: "盛世美达（北京）国际旅行社有限公司"/,
   );
   assert.match(
     business,
-    /publicName: "张家界市永定区本境文化交流工作室"/,
+    /publicName: "盛世美达（北京）国际旅行社有限公司"/,
   );
-  assert.match(business, /92430802MAE0TE500J/);
+  assert.match(business, /91110114MAE9HHGYX0/);
+  assert.match(business, /legalRepresentative: "李启忠"/);
+  assert.match(
+    business,
+    /registeredAddress:[\s\S]*北京市昌平区景兴街18号院2号楼3层303-2471（集群注册）/,
+  );
+  assert.match(business, /registrationAuthority: "北京市昌平区市场监督管理局"/);
+  assert.match(business, /registrationDate: "2025-01-15"/);
+  assert.match(business, /travelAgencyLicenceNumber: "L-BJ10587"/);
+  assert.match(business, /licensedBusinessScope: "境内旅游业务、入境旅游业务"/);
   assert.match(business, /https:\/\/www\.gsxt\.gov\.cn\/index\.html/);
   assert.match(footer, /homegroundBusiness\.publicName/);
   for (const retiredLabel of [
@@ -45,8 +54,11 @@ test("verified business identity is centralized and displayed in the shared foot
     assert.equal(footer.includes(retiredLabel), false);
   }
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
+  assert.match(footer, /homegroundBusiness\.travelAgencyLicenceNumber/);
   assert.match(footer, /business-information/);
   assert.match(footer, /refund-delivery/);
+  assert.doesNotMatch(business, /92430802MAE0TE500J/);
+  assert.doesNotMatch(business, /湖南省张家界市永定区/);
 });
 
 test("legal copy retains verifiable registered trust and explains retired services", async () => {
@@ -82,7 +94,9 @@ test("legal copy retains verifiable registered trust and explains retired servic
   assert.match(legal, /旅行询价如何继续/);
   assert.match(legal, /여행 문의 진행 절차/);
   assert.doesNotMatch(legal, /유료 서면 컨설팅 진행 절차|written consultation payments|书面咨询服务如何确认/);
-  assert.doesNotMatch(business, /travelAgencyLicenceNumber|L-BJ10587/);
+  assert.match(business, /travelAgencyLicenceNumber: "L-BJ10587"/);
+  assert.match(business, /travelAgencyPermitDocumentNumber: "京文旅审〔2025〕276号"/);
+  assert.match(legal, /homegroundBusiness\.legalRepresentative/);
 
   for (const pattern of [
     /no longer offers standalone paid route reviews or route builds/,
@@ -99,13 +113,13 @@ test("legal copy retains verifiable registered trust and explains retired servic
   assert.match(legal, /Existing accepted services remain subject to their original written agreement/);
 });
 
-test("travel agency certificates retain their own holder and original public files", async () => {
+test("travel agency certificates match the operating company and retain their original public files", async () => {
   const [{ homegroundBusiness }, { travelAgencyCertificateHolder: holder, travelAgencyCredentials: copies }] = await Promise.all([
     import("../../lib/homegroundBusiness.ts"),
     import("../../lib/homegroundTravelAgencyCredentials.ts"),
   ]);
-  assert.notEqual(holder.registeredName, homegroundBusiness.registeredName);
-  assert.notEqual(holder.unifiedSocialCreditCode, homegroundBusiness.unifiedSocialCreditCode);
+  assert.equal(holder.registeredName, homegroundBusiness.registeredName);
+  assert.equal(holder.unifiedSocialCreditCode, homegroundBusiness.unifiedSocialCreditCode);
   assert.equal(holder.registeredName, "盛世美达（北京）国际旅行社有限公司");
   assert.equal(holder.unifiedSocialCreditCode, "91110114MAE9HHGYX0");
   assert.equal(holder.travelAgencyLicenceNumber, "L-BJ10587");
@@ -113,7 +127,7 @@ test("travel agency certificates retain their own holder and original public fil
     const section = copies[locale];
     assert.ok(section.facts.some((fact) => fact.value === holder.registeredName));
     assert.ok(section.facts.some((fact) => fact.value === holder.travelAgencyLicenceNumber));
-    assert.equal(section.facts.some((fact) => fact.value === homegroundBusiness.registeredName), false);
+    assert.ok(section.facts.some((fact) => fact.value === homegroundBusiness.registeredName));
     for (const documentPath of [holder.travelAgencyLicencePath, holder.businessLicencePath]) {
       assert.ok(section.facts.some((fact) => fact.href === documentPath));
       await access(new URL(`../../public${documentPath}`, import.meta.url));
@@ -164,11 +178,16 @@ test("active business identity remains available after the sales page becomes a 
   assert.match(identity, /"@type": "TravelAgency"/);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
   assert.match(homepage, /legalName: homegroundBusiness\.registeredName/);
+  assert.match(homepage, /addressLocality: "Beijing"/);
+  assert.match(homepage, /addressRegion: "Beijing"/);
+  assert.doesNotMatch(homepage, /addressLocality: "Zhangjiajie"/);
+  assert.doesNotMatch(homepage, /addressRegion: "Hunan"/);
   assert.match(homepage, /editorialOrganizationSchema\(\)/);
   assert.match(legalPage, /"@type": pageId === "business-information" \? "AboutPage" : "WebPage"/);
   assert.match(legalPage, /"@id": `\$\{baseUrl\}\/#organization`/);
   assert.match(footer, /homegroundBusiness\.publicName/);
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
+  assert.match(footer, /homegroundBusiness\.travelAgencyLicenceNumber/);
   assert.match(retiredServicePage, /<HomegroundFooter locale=\{locale\}/);
   assert.doesNotMatch(retiredServicePage, /"@type": "(?:Offer|Service)"|review-my-route|build-my-route/);
 });

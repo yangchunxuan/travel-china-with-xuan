@@ -151,12 +151,10 @@ export function HomegroundHomePage({
       propertyID: "Unified Social Credit Code",
       value: homegroundBusiness.unifiedSocialCreditCode,
     },
-    // City-level only: the registered street address is a residence and is
-    // still disclosed as text on the business-information and legal pages.
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Zhangjiajie",
-      addressRegion: "Hunan",
+      addressLocality: "Beijing",
+      addressRegion: "Beijing",
       addressCountry: "CN",
     },
   };

@@ -311,6 +311,12 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.match(component, /acquireLicensePage:/);
   assert.match(component, /creditText:/);
   assert.match(component, /copyrightNotice:/);
+  assert.match(component, /ASSET_CREATOR_REGISTERED_NAME/);
+  assert.equal(
+    [...component.matchAll(/creator: \{ "@id": ASSET_CREATOR_ID \}/g)].length,
+    2,
+    "the original image and dataset creator must remain separate from the current website operator",
+  );
   assert.match(component, /editorialWebsiteSchema\(\)/);
   assert.match(component, /editorialOrganizationSchema\(\)/);
   assert.match(

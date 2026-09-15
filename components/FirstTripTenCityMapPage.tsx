@@ -16,7 +16,6 @@ import {
   editorialReviewedPageSchema,
   editorialWebsiteSchema,
 } from "../lib/editorialIdentity";
-import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { EditorialByline } from "./EditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -30,9 +29,15 @@ import styles from "./FirstTripTenCityMapPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 const ASSET_LICENCE_URL = "https://creativecommons.org/licenses/by/4.0/";
+const ASSET_CREATOR_ID = `${SITE_URL}/#first-trip-map-v1-creator`;
+const ASSET_CREATOR_REGISTERED_NAME =
+  "张家界市永定区本境文化交流工作室";
 const ASSET_CREDIT_TEXT =
   "Homeground China, First Trip to China: 10-City Airport, Station and Stay Map, CC BY 4.0.";
-const ASSET_COPYRIGHT_NOTICE = `© 2026 ${homegroundBusiness.registeredName}, operating as Homeground China.`;
+// This attribution belongs to the already published CC BY 4.0 asset release.
+// Keep it stable even if the website's current operating entity changes.
+const ASSET_COPYRIGHT_NOTICE =
+  `© 2026 ${ASSET_CREATOR_REGISTERED_NAME}, operating as Homeground China.`;
 export const FIRST_TRIP_TEN_CITY_GUIDE_ID =
   "first-trip-china-airport-station-stay-map" as GuideId;
 
@@ -154,6 +159,12 @@ function structuredData() {
     "@graph": [
       editorialWebsiteSchema(),
       editorialOrganizationSchema(),
+      {
+        "@type": "Organization",
+        "@id": ASSET_CREATOR_ID,
+        name: "Homeground China",
+        legalName: ASSET_CREATOR_REGISTERED_NAME,
+      },
       editorialPersonSchema("en"),
       {
         "@type": "Article",
@@ -182,7 +193,7 @@ function structuredData() {
         width: guide.imageWidth,
         height: guide.imageHeight,
         caption: "Ten-city arrive, stay and depart schematic by Homeground China",
-        creator: { "@id": EDITORIAL_ORGANIZATION_ID },
+        creator: { "@id": ASSET_CREATOR_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
         creditText: ASSET_CREDIT_TEXT,
@@ -199,7 +210,7 @@ function structuredData() {
         dateModified: assetData.reviewedAt,
         inLanguage: "en",
         isAccessibleForFree: true,
-        creator: { "@id": EDITORIAL_ORGANIZATION_ID },
+        creator: { "@id": ASSET_CREATOR_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
         creditText: ASSET_CREDIT_TEXT,
