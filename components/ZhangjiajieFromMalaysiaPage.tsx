@@ -29,11 +29,13 @@ import {
   type MalaysiaZhangjiajieSourceId,
 } from "../lib/zhangjiajieFromMalaysiaGuide";
 import { getMalaysiaZhangjiajieGuideCopy } from "../lib/zhangjiajieFromMalaysiaGuideI18n";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideTourCard } from "./content/GuideTourCard";
 import styles from "./ZhangjiajieFromMalaysiaPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -227,6 +229,7 @@ export function ZhangjiajieFromMalaysiaPage({
 }) {
   const copy = getMalaysiaZhangjiajieGuideCopy(locale);
   const guide = getGuideEntry(malaysiaZhangjiajieGuideId, locale);
+  const tourCard = getGuideTourCard(malaysiaZhangjiajieGuideId, locale);
   const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-from-malaysia&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -663,6 +666,14 @@ export function ZhangjiajieFromMalaysiaPage({
               </section>
             </div>
           </div>
+
+          {tourCard ? (
+            <GuideTourCard
+              card={tourCard}
+              guideId={malaysiaZhangjiajieGuideId}
+              locale={locale}
+            />
+          ) : null}
 
           <section
             id="quote-checklist"

@@ -26,12 +26,13 @@ import {
 } from "../lib/nightShowGuide";
 import { getNightShowGuideCopy } from "../lib/nightShowGuideCopy";
 import type { NightShowGuideCopy } from "../lib/nightShowGuideCopy.types";
-import { getPrivateTourPaths } from "../lib/privateTourProducts";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideTourCard } from "./content/GuideTourCard";
 import styles from "./NightShowGuidePage.module.css";
 
 const guideId = "best-zhangjiajie-night-show" as const;
@@ -217,7 +218,7 @@ export function NightShowGuidePage({
     locale,
   );
   const plannerHref = `${copy.homePath}#planner-contact`;
-  const tourHref = getPrivateTourPaths("zhangjiajie-4-day-private-tour")[locale];
+  const tourCard = getGuideTourCard(guideId, locale);
   const structuredData = createStructuredData(locale, copy);
   const structuredDataJson = JSON.stringify(structuredData).replaceAll("<", "\\u003c");
 
@@ -526,17 +527,12 @@ export function NightShowGuidePage({
                   <p>{copy.evening.ctaBody}</p>
                   <small>{copy.evening.ctaNote}</small>
                 </div>
-                <GuideCtaLink
-                  guideId={guideId}
-                  href={tourHref}
-                  locale={locale}
-                  position="inline"
-                >
-                  {copy.evening.ctaAction}
-                  <ArrowRight aria-hidden="true" size={18} />
-                </GuideCtaLink>
               </aside>
             </section>
+
+            {tourCard ? (
+              <GuideTourCard card={tourCard} guideId={guideId} locale={locale} />
+            ) : null}
 
             <section id="live-checks" aria-labelledby="checklist-title">
               <div className={styles.sectionHeading}>

@@ -3,6 +3,7 @@
   background: var(--hg-color-surface, #fff);
   border: 1px solid var(--hg-color-line);
   border-inline-start: 3px solid var(--hg-color-rust);
+  color: var(--hg-color-ink);
   display: grid;
   gap: clamp(0.9rem, 2.5vw, 1.5rem);
   grid-template-columns: clamp(5rem, 18vw, 7rem) minmax(0, 1fr);

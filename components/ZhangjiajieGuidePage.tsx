@@ -19,35 +19,19 @@ import {
   type GuideTimelineStop,
   type ZhangjiajieGuideCopy,
 } from "../lib/zhangjiajieGuideI18n";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideTourCard } from "./content/GuideTourCard";
 import styles from "./ZhangjiajieGuidePage.module.css";
 
 const guideHubLabels: Record<HomegroundLocale, string> = {
   en: "Travel guides",
   zh: "旅行指南",
   ko: "실용 가이드",
-};
-
-const privateTourRelatedCopy: Record<
-  HomegroundLocale,
-  { action: string; path: string }
-> = {
-  en: {
-    action: "See the ready 4-day, 3-night private route",
-    path: "/tours/zhangjiajie-4-day-private-tour/",
-  },
-  zh: {
-    action: "查看已排好的4天3晚私家路线",
-    path: "/zh/tours/zhangjiajie-4-day-private-tour/",
-  },
-  ko: {
-    action: "4일 3박 프라이빗 일정 보기",
-    path: "/ko/tours/zhangjiajie-4-day-private-tour/",
-  },
 };
 
 function guideHubPath(locale: HomegroundLocale) {
@@ -368,7 +352,7 @@ export function ZhangjiajieGuidePage({
     locale,
   );
   const malaysiaCopy = malaysiaRelatedCopy[locale];
-  const privateTourCopy = privateTourRelatedCopy[locale];
+  const tourCard = getGuideTourCard("zhangjiajie-itinerary", locale);
   const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -478,15 +462,6 @@ export function ZhangjiajieGuidePage({
                   </p>
                 </div>
               </div>
-              {privateTourCopy ? (
-                <Link
-                  className={styles.privateTourLink}
-                  href={privateTourCopy.path}
-                >
-                  {privateTourCopy.action}
-                  <ArrowRight aria-hidden="true" size={17} />
-                </Link>
-              ) : null}
               <GuideCtaLink
                 className={styles.quickPlannerLink}
                 guideId="zhangjiajie-itinerary"
@@ -528,6 +503,14 @@ export function ZhangjiajieGuidePage({
                 </ol>
               </figure>
             </section>
+
+            {tourCard ? (
+              <GuideTourCard
+                card={tourCard}
+                guideId="zhangjiajie-itinerary"
+                locale={locale}
+              />
+            ) : null}
 
             <div className={styles.relatedGuideStack}>
               <aside className={styles.nightShowRelated} aria-labelledby="malaysia-related-title">

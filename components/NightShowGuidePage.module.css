@@ -849,7 +849,7 @@
   color: var(--ink);
   display: grid;
   gap: 1.5rem 2.5rem;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   margin-block-start: 2.5rem;
   padding: clamp(1.4rem, 3vw, 2.1rem);
 }
