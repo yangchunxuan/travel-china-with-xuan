@@ -42,9 +42,9 @@ test("Travel Advice owns searchable questions without a destination directory", 
   )?.[1];
   assert.ok(decisionIds);
   assert.doesNotMatch(decisionIds, /"explore"/);
-  assert.match(copy, /title: "Practical China Travel Guides"/);
-  assert.match(copy, /title: "中国旅行实用指南"/);
-  assert.match(copy, /title: "중국 여행 실용 가이드"/);
+  assert.match(copy, /title: "China Travel Tips"/);
+  assert.match(copy, /title: "中国旅行实用建议"/);
+  assert.match(copy, /title: "중국 여행 팁"/);
 });
 
 test("destination hierarchy never passes through the guide library", async () => {
