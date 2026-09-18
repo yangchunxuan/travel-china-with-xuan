@@ -20,6 +20,7 @@ import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./ChinaTourGuideDecisionPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -455,6 +456,8 @@ export function ChinaTourGuideDecisionPage({
               </div>
             </div>
           </section>
+
+          <LegacyGuideTourCard guideId={tourGuideDecisionGuideId} locale={locale} />
 
           <section className={styles.section}>
             <p className={styles.sectionEyebrow}>{ui.related}</p>

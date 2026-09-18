@@ -22,6 +22,7 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./NzVisaFreeGuidePage.module.css";
 
 const guide = getGuideEntry("china-visa-free-new-zealand-citizens-2026", "en");
@@ -485,6 +486,11 @@ export function NzVisaFreeGuidePage() {
                   the local Public Security Bureau.
                 </p>
               </section>
+
+              <LegacyGuideTourCard
+                guideId="china-visa-free-new-zealand-citizens-2026"
+                locale="en"
+              />
 
               <section
                 className={styles.planningCta}

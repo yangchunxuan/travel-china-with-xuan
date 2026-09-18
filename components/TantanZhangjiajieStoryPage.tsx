@@ -21,6 +21,7 @@ import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { TantanStoryContentsNav } from "./TantanStoryContentsNav";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./TantanZhangjiajieStoryPage.module.css";
 
 const guideId = "zhangjiajie-glass-bridge-vs-skywalk" as const;
@@ -295,6 +296,8 @@ export function TantanZhangjiajieStoryPage({
               </section>
             </div>
           </div>
+
+          <LegacyGuideTourCard guideId={guideId} locale={locale} />
 
           <AuthorityHubLinks kind="zhangjiajie" locale={locale} />
 

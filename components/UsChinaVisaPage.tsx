@@ -17,6 +17,7 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./UsChinaVisaPage.module.css";
 
 const guideId = "do-us-citizens-need-visa-china-2026" as const;
@@ -246,6 +247,8 @@ export function UsChinaVisaPage({
                 <time dateTime={guide.dateModified}>{copy.updatedDate}</time>
               </p>
             </section>
+
+            <LegacyGuideTourCard guideId={guideId} locale={locale} />
 
             <section className={styles.faq} aria-labelledby="guide-faq-title">
               <h2 id="guide-faq-title">{copy.faqTitle}</h2>

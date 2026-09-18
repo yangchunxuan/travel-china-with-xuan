@@ -29,6 +29,7 @@ import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { KevinStoryContentsNav } from "./KevinStoryContentsNav";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./KevinPreparationStoryPage.module.css";
 
 const guideId = "kevin-before-the-hotel-pickup" as const;
@@ -519,6 +520,8 @@ export function KevinPreparationStoryPage({
               </section>
             </div>
           </div>
+
+          <LegacyGuideTourCard guideId={guideId} locale={locale} />
 
           <section className={styles.finalCta} aria-labelledby="kevin-cta-title">
             <div className={styles.finalCtaInner}>

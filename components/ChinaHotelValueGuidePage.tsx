@@ -20,6 +20,7 @@ import {
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./ChinaHotelValueGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -436,6 +437,8 @@ export function ChinaHotelValueGuidePage({
             <p className={styles.closing}>{copy.audience.closing}</p>
           </div>
         </section>
+
+        <LegacyGuideTourCard guideId={chinaHotelValueGuideId} locale={locale} />
 
         {/* ---------------- FAQ ---------------- */}
         <section className={styles.section}>

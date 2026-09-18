@@ -49,8 +49,6 @@ export interface ZhangjiajieOlderTravellersCopy {
   ctaBoundary: string;
   ctaAction: string;
   relatedTitle: string;
-  relatedTourLabel: string;
-  relatedTourDescription: string;
   relatedLinkLabel: string;
   relatedLinkDescription: string;
   schemaAbout: string[];
@@ -155,9 +153,6 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     ctaBoundary: "Before there is any question of payment.",
     ctaAction: "Start a trip conversation",
     relatedTitle: "Continue planning",
-    relatedTourLabel: "Compare the 4-day Zhangjiajie private tour",
-    relatedTourDescription:
-      "Use the Forest Park, Glass Bridge and Tianmen Mountain route as a starting point. Before choosing it, check walking, steps, mobility-aid access and departure timing against the needs of the person travelling.",
     relatedLinkLabel: "How many days does Zhangjiajie take?",
     relatedLinkDescription:
       "The base timing behind a Zhangjiajie trip, before you add margin for a slower pace.",
@@ -257,9 +252,6 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     ctaBoundary: "在谈到付款之前。",
     ctaAction: "开始一次行程沟通",
     relatedTitle: "继续规划",
-    relatedTourLabel: "对照张家界 4 日私家团路线",
-    relatedTourDescription:
-      "以森林公园、玻璃桥与天门山路线为讨论起点。选择前，按同行者的实际情况核对步行量、台阶、辅助器具准入和返程时间。",
     relatedLinkLabel: "张家界到底需要几天?",
     relatedLinkDescription: "在为慢节奏留出余量之前,先看一趟张家界的基础时间账。",
     schemaAbout: ["张家界", "张家界国家森林公园", "无障碍旅行", "年长旅客"],
@@ -354,9 +346,6 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     ctaBoundary: "결제 이야기가 나오기 전에요.",
     ctaAction: "여행 상담 시작하기",
     relatedTitle: "계속 준비하기",
-    relatedTourLabel: "장자제 4일 프라이빗 투어 비교하기",
-    relatedTourDescription:
-      "삼림공원·유리다리·톈먼산 코스를 상담의 출발점으로 삼아 보세요. 선택하기 전에 동행자의 실제 필요에 맞춰 보행량, 계단, 보행 보조기구 이용 규정과 출발 시간을 확인하세요.",
     relatedLinkLabel: "장자제는 며칠이 필요한가요?",
     relatedLinkDescription:
       "느린 속도를 위한 여유를 더하기 전, 장자제 여행의 기본 일정 계산.",

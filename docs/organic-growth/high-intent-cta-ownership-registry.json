@@ -98,8 +98,86 @@
     "ticket-availability-price-guarantee": "Do not claim live ticket inventory or a guaranteed ticket price.",
     "booking-entry-guarantee": "Do not promise successful booking or entry.",
     "reseller-official-equivalence": "Do not describe a reseller as equivalent to an official issuer or channel.",
-    "sensitive-data-first-contact": "Do not request passport images, payment data or unredacted booking references in the first contact."
+    "sensitive-data-first-contact": "Do not request passport images, payment data or unredacted booking references in the first contact.",
+    "fit-verification-claim": "Do not imply that a route, site, vehicle or room has already been checked for access, children or older travellers."
   },
+  "guideInlineSalesCards": [
+    {
+      "contentId": "zhangjiajie-older-travellers",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "zhangjiajie-4-day-private-tour",
+      "placement": "guide-inline",
+      "image": "product",
+      "forbiddenClaims": [
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "china-itinerary-with-older-parents",
+      "ctaKind": "private-tour-collection",
+      "ctaTarget": "private-tours",
+      "placement": "guide-inline",
+      "image": "beijing-tour-photo",
+      "forbiddenClaims": [
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "china-itinerary-with-young-children",
+      "ctaKind": "private-tour-collection",
+      "ctaTarget": "private-tours",
+      "placement": "guide-inline",
+      "image": "beijing-tour-photo",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "do-singaporeans-need-visa-china",
+      "ctaKind": "private-tour-collection",
+      "ctaTarget": "private-tours",
+      "placement": "guide-inline",
+      "image": "beijing-tour-photo",
+      "forbiddenClaims": [
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "wheelchair-accessible-china-route-planning",
+      "ctaKind": "trip-consultation",
+      "ctaTarget": "full-trip-support",
+      "placement": "guide-inline",
+      "image": "wheelchair-guide-photo",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability",
+        "unscoped-ground-support",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "china-accessible-hotel-room-verification",
+      "ctaKind": "trip-consultation",
+      "ctaTarget": "full-trip-support",
+      "placement": "guide-inline",
+      "image": "hotel-guide-photo",
+      "forbiddenClaims": [
+        "hotel-real-time-availability",
+        "hotel-guest-acceptance-guarantee",
+        "hotel-price-room-guarantee",
+        "sensitive-data-first-contact",
+        "unscoped-ground-support",
+        "fit-verification-claim"
+      ]
+    }
+  ],
   "entries": [
     {
       "contentId": "beijing-courtyard-hotel-or-modern-hotel",
@@ -135,15 +213,17 @@
       "contentId": "china-accessible-hotel-room-verification",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": null,
-      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "guide-inline-card",
       "originContentId": "china-accessible-hotel-room-verification",
-      "authorizationStatus": "blocked-pending-central-authorization",
+      "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
         "hotel-price-room-guarantee",
-        "sensitive-data-first-contact"
+        "sensitive-data-first-contact",
+        "unscoped-ground-support",
+        "fit-verification-claim"
       ]
     },
     {
@@ -836,14 +916,15 @@
       "contentId": "china-itinerary-with-young-children",
       "ownerClass": "plan",
       "intentCode": "route_shape",
-      "targetServiceId": "route-build",
-      "ctaPlacement": "existing-guide-footer",
+      "targetServiceId": null,
+      "ctaPlacement": "guide-inline-card",
       "originContentId": "china-itinerary-with-young-children",
-      "authorizationStatus": "authorized-existing-service",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
-        "guaranteed-booking-or-availability"
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
       ]
     },
     {
@@ -991,14 +1072,16 @@
       "contentId": "wheelchair-accessible-china-route-planning",
       "ownerClass": "plan",
       "intentCode": "route_shape",
-      "targetServiceId": "route-build",
-      "ctaPlacement": "existing-guide-footer",
+      "targetServiceId": "full-trip-support",
+      "ctaPlacement": "guide-inline-card",
       "originContentId": "wheelchair-accessible-china-route-planning",
       "authorizationStatus": "authorized-existing-service",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
-        "guaranteed-booking-or-availability"
+        "guaranteed-booking-or-availability",
+        "unscoped-ground-support",
+        "fit-verification-claim"
       ]
     },
     {

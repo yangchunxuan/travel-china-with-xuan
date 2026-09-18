@@ -4,51 +4,58 @@ import type { GuideId } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
 import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
 import { privateTourCardImageSource, privateTourCardImageSrcSet } from "../components/privateTourCardImages.ts";
+import {
+  getDefaultGuideSalesCard,
+  getGuideSalesCard,
+  hasGuideSalesCardPlan,
+  type GuideSalesCardData,
+} from "./guideSalesCards.ts";
 
 /**
- * A brief in-article link to a curated matching tour. The catalog title
- * includes the duration; pricing and service details stay on the product page.
+ * A brief in-article sales card. Guides with an explicit plan in
+ * `guideSalesCards` get exactly that card (a named route, the tour collection
+ * or the planner). Every other commercial guide keeps its curated product.
+ * Guides without a reviewed mapping get the neutral private-tour collection,
+ * so current and future articles always have a truthful next step.
  */
-export interface GuideTourCardData {
-  readonly productId: string;
-  readonly title: string;
-  readonly action: string;
-  readonly href: string;
-  readonly image: { readonly src: string; readonly srcSet: string; readonly alt: string; readonly width: number; readonly height: number };
-  readonly label: string;
-}
+export type GuideTourCardData = GuideSalesCardData;
 
 const ui: Record<HomegroundLocale, { action: string; label: string }> = {
-  en: { action: "View itinerary", label: "Matching private tour" },
-  zh: { action: "查看行程", label: "对应的私家团" },
-  ko: { action: "일정 보기", label: "관련 프라이빗 투어" },
+  en: { action: "View itinerary", label: "Related private route" },
+  zh: { action: "查看行程", label: "相关私家路线" },
+  ko: { action: "일정 보기", label: "관련 프라이빗 일정" },
 };
 
 export function getGuideTourCard(
   guideId: GuideId,
   locale: HomegroundLocale,
-): GuideTourCardData | null {
+): GuideTourCardData {
+  if (hasGuideSalesCardPlan(guideId)) return getGuideSalesCard(guideId, locale);
   const target = getGuidePublishedRouteLinks(guideId, locale)[0];
-  if (!target) return null;
-  const product = getPublishedPrivateTourCatalog(locale).find(
-    (item) => item.id === target.id || item.slug === target.id,
-  );
-  if (!product) return null;
-  const text = ui[locale];
-  return {
-    productId: product.id,
-    title: product.title,
-    action: text.action,
-    href: product.href,
-    image: {
-      src: privateTourCardImageSource(product.id, 640),
-      srcSet: privateTourCardImageSrcSet(product.id),
-      alt: product.image.alt,
-      width: product.image.width,
-      height: product.image.height,
-    },
-    label: text.label,
-  };
+  if (target) {
+    const product = getPublishedPrivateTourCatalog(locale).find(
+      (item) => item.id === target.id || item.slug === target.id,
+    );
+    if (product) {
+      const text = ui[locale];
+      return {
+        kind: "private-tour-product",
+        ctaId: product.id,
+        title: product.title,
+        action: text.action,
+        href: product.href,
+        image: {
+          src: privateTourCardImageSource(product.id, 640),
+          srcSet: privateTourCardImageSrcSet(product.id),
+          alt: product.image.alt,
+          width: product.image.width,
+          height: product.image.height,
+        },
+        label: text.label,
+      };
+    }
+  }
+  return getDefaultGuideSalesCard(guideId, locale);
 }
 
 /**

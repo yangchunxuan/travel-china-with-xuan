@@ -27,6 +27,7 @@ import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { TenCityMapFeature } from "./TenCityMapFeature";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./TransportGuidePage.module.css";
 
 const GUIDE_ID = "beijing-zhangjiajie-shanghai-transport" as const;
@@ -618,6 +619,8 @@ export function TransportGuidePage({
                 ))}
               </div>
             </section>
+
+            <LegacyGuideTourCard guideId={GUIDE_ID} locale={locale} />
 
             <section className={styles.faqSection} id="faq" aria-labelledby="transport-faq-title">
               <div className={styles.sectionHeading}>

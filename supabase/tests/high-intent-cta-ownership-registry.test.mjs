@@ -66,9 +66,10 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   });
   assert.equal(report.uniqueContentIds, 72);
   assert.equal(report.authorizedExistingService, 25);
-  assert.equal(report.authorizedGenericConversation, 9);
+  assert.equal(report.authorizedGenericConversation, 10);
   assert.equal(report.authorizedPublicCtas, 10);
-  assert.equal(report.blockedPendingAuthorization, 38);
+  assert.equal(report.guideInlineSalesCards, 6);
+  assert.equal(report.blockedPendingAuthorization, 37);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
   assert.deepEqual(
@@ -291,5 +292,163 @@ test("a missing high-intent owner fails closed", () => {
   assert.throws(
     () => validateHighIntentCtaOwnershipRegistry(missing, guides),
     /MISSING_HIGH_INTENT_OWNER/u,
+  );
+});
+
+function inlineCard(copy, contentId) {
+  return copy.guideInlineSalesCards.find((card) => card.contentId === contentId);
+}
+
+function ownerEntry(copy, contentId) {
+  return copy.entries.find((entry) => entry.contentId === contentId);
+}
+
+test("inline sales cards record the six guide owners and their exact CTA kinds", () => {
+  assert.deepEqual(
+    registry.guideInlineSalesCards.map((card) => [
+      card.contentId,
+      card.ctaKind,
+      card.ctaTarget,
+      card.placement,
+      card.image,
+    ]),
+    [
+      ["zhangjiajie-older-travellers", "private-tour-product", "zhangjiajie-4-day-private-tour", "guide-inline", "product"],
+      ["china-itinerary-with-older-parents", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
+      ["china-itinerary-with-young-children", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
+      ["do-singaporeans-need-visa-china", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
+      ["wheelchair-accessible-china-route-planning", "trip-consultation", "full-trip-support", "guide-inline", "wheelchair-guide-photo"],
+      ["china-accessible-hotel-room-verification", "trip-consultation", "full-trip-support", "guide-inline", "hotel-guide-photo"],
+    ],
+  );
+  for (const card of registry.guideInlineSalesCards) {
+    assert.ok(card.forbiddenClaims.includes("fit-verification-claim"), card.contentId);
+  }
+
+  const hotel = ownerEntry(registry, "china-accessible-hotel-room-verification");
+  assert.equal(hotel.ctaPlacement, "guide-inline-card");
+  assert.equal(hotel.targetServiceId, "full-trip-support");
+  assert.equal(hotel.authorizationStatus, "authorized-existing-service");
+  for (const claim of [
+    "hotel-real-time-availability",
+    "hotel-guest-acceptance-guarantee",
+    "hotel-price-room-guarantee",
+    "sensitive-data-first-contact",
+  ]) {
+    assert.ok(hotel.forbiddenClaims.includes(claim), claim);
+  }
+  assert.ok(!registry.authorizedPublicCtaContentIds.includes(hotel.contentId));
+
+  const wheelchair = ownerEntry(registry, "wheelchair-accessible-china-route-planning");
+  assert.equal(wheelchair.ctaPlacement, "guide-inline-card");
+  assert.equal(wheelchair.targetServiceId, "full-trip-support");
+
+  const children = ownerEntry(registry, "china-itinerary-with-young-children");
+  assert.equal(children.ctaPlacement, "guide-inline-card");
+  assert.equal(children.targetServiceId, null);
+  assert.equal(children.authorizationStatus, "authorized-generic-conversation");
+});
+
+test("an inline card cannot point at an unknown guide or kind", () => {
+  const unknownGuide = mutateRegistry((copy) => {
+    inlineCard(copy, "do-singaporeans-need-visa-china").contentId = "not-a-guide";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(unknownGuide, guides),
+    /UNKNOWN_GUIDE_INLINE_CONTENT_ID/u,
+  );
+
+  const unknownKind = mutateRegistry((copy) => {
+    inlineCard(copy, "do-singaporeans-need-visa-china").ctaKind = "matching-product";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(unknownKind, guides),
+    /UNKNOWN_GUIDE_INLINE_CTA_KIND/u,
+  );
+});
+
+test("a consultation card cannot be quietly turned into a product card", () => {
+  const productOnAccessPage = mutateRegistry((copy) => {
+    const card = inlineCard(copy, "wheelchair-accessible-china-route-planning");
+    card.ctaKind = "private-tour-product";
+    card.ctaTarget = "beijing-highlights-5-day-private-tour";
+    card.image = "product";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(productOnAccessPage, guides),
+    /GUIDE_INLINE_SERVICE_MISMATCH/u,
+  );
+
+  const productOnHotelPage = mutateRegistry((copy) => {
+    const card = inlineCard(copy, "china-accessible-hotel-room-verification");
+    card.ctaKind = "private-tour-product";
+    card.ctaTarget = "shanghai-suzhou-5-day-private-tour";
+    card.image = "product";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(productOnHotelPage, guides),
+    /UNAUTHORIZED_SERVICE_MAPPING/u,
+  );
+});
+
+test("inline cards cannot drop the fit-verification or hotel boundaries", () => {
+  const noFitBoundary = mutateRegistry((copy) => {
+    const card = inlineCard(copy, "china-itinerary-with-young-children");
+    card.forbiddenClaims = card.forbiddenClaims.filter(
+      (claim) => claim !== "fit-verification-claim",
+    );
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(noFitBoundary, guides),
+    /GUIDE_INLINE_FIT_CLAIM_BOUNDARY_MISSING/u,
+  );
+
+  const noRoomBoundary = mutateRegistry((copy) => {
+    const entry = ownerEntry(copy, "china-accessible-hotel-room-verification");
+    entry.forbiddenClaims = entry.forbiddenClaims.filter(
+      (claim) => claim !== "hotel-price-room-guarantee",
+    );
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(noRoomBoundary, guides),
+    /PUBLIC_CTA_FORBIDDEN_CLAIMS_DRIFT/u,
+  );
+});
+
+test("inline cards only use the reviewed non-generated photographs", () => {
+  const newImage = mutateRegistry((copy) => {
+    inlineCard(copy, "china-itinerary-with-older-parents").image = "ai-family-hero";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(newImage, guides),
+    /GUIDE_INLINE_IMAGE_NOT_ALLOWED/u,
+  );
+});
+
+test("registry placement and inline cards must agree in both directions", () => {
+  const cardWithoutOwner = mutateRegistry((copy) => {
+    ownerEntry(copy, "china-itinerary-with-young-children").ctaPlacement = "existing-guide-footer";
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(cardWithoutOwner, guides),
+    /GUIDE_INLINE_OWNER_PLACEMENT_MISMATCH/u,
+  );
+
+  const ownerWithoutCard = mutateRegistry((copy) => {
+    copy.guideInlineSalesCards = copy.guideInlineSalesCards.filter(
+      (card) => card.contentId !== "wheelchair-accessible-china-route-planning",
+    );
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(ownerWithoutCard, guides),
+    /GUIDE_INLINE_CARD_MISSING/u,
+  );
+
+  const duplicate = mutateRegistry((copy) => {
+    copy.guideInlineSalesCards.push(structuredClone(copy.guideInlineSalesCards[0]));
+  });
+  assert.throws(
+    () => validateHighIntentCtaOwnershipRegistry(duplicate, guides),
+    /DUPLICATE_GUIDE_INLINE_SALES_CARD/u,
   );
 });

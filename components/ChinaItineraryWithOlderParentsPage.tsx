@@ -8,6 +8,7 @@ import {
   MoveRight,
 } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   EDITORIAL_ORGANIZATION_ID,
@@ -23,6 +24,7 @@ import {
   type ChinaItineraryWithOlderParentsCopy,
 } from "../lib/chinaItineraryWithOlderParentsI18n";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { GuideTourCard } from "./content/GuideTourCard";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -146,6 +148,7 @@ export function ChinaItineraryWithOlderParentsPage({
   const copy = getChinaItineraryWithOlderParentsCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const plannerHref = `${copy.homePath}?utm_source=${guideId}&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
+  const tourCard = getGuideTourCard(guideId, locale);
   const emailHref = `${copy.homePath}?utm_source=${guideId}&utm_medium=owned&utm_campaign=trip-conversation&utm_content=email-option#planner-contact`;
   const structuredData = createStructuredData(locale);
 
@@ -312,6 +315,10 @@ export function ChinaItineraryWithOlderParentsPage({
               </ol>
               <p className={styles.note}>{copy.abilityQuestions.boundary}</p>
             </section>
+
+            {tourCard ? (
+              <GuideTourCard card={tourCard} guideId={guideId} locale={locale} />
+            ) : null}
 
             <section
               className={styles.timelineSection}
