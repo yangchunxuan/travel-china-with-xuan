@@ -37,6 +37,21 @@
   text-wrap: balance;
 }
 
+.note {
+  color: var(--hg-color-muted, var(--hg-color-ink));
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Korean breaks between 어절, not inside them, whatever the host page sets. */
+.card:lang(ko) .title,
+.card:lang(ko) .note {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
 .action {
   align-items: center;
   background: var(--hg-color-ink);

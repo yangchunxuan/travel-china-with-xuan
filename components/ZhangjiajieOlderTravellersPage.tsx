@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getZhangjiajieOlderTravellersCopy } from "../lib/zhangjiajieOlderTravellersI18n";
-import { getPrivateTourPaths } from "../lib/privateTourProducts";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
@@ -15,6 +15,7 @@ import {
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { GuideTourCard } from "./content/GuideTourCard";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -152,7 +153,7 @@ export function ZhangjiajieOlderTravellersPage({
   const copy = getZhangjiajieOlderTravellersCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const routeGuide = getGuideEntry("zhangjiajie-itinerary", locale);
-  const tourHref = getPrivateTourPaths("zhangjiajie-4-day-private-tour")[locale];
+  const tourCard = getGuideTourCard(guideId, locale);
   const plannerHref = `${copy.homePath}?utm_source=older-travellers-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
   const structuredData = createStructuredData(locale);
 
@@ -265,6 +266,12 @@ export function ZhangjiajieOlderTravellersPage({
               caption={copy.shuttleCaption}
             />
 
+            {tourCard ? (
+              <div className={styles.tourCardSlot}>
+                <GuideTourCard card={tourCard} guideId={guideId} locale={locale} />
+              </div>
+            ) : null}
+
             <section
               className={styles.section}
               id={copy.sectionThree.id}
@@ -339,11 +346,6 @@ export function ZhangjiajieOlderTravellersPage({
             <header>
               <h2 id="guide-related-title">{copy.relatedTitle}</h2>
             </header>
-            <GuideCtaLink guideId={guideId} href={tourHref} locale={locale}>
-              <strong>{copy.relatedTourLabel}</strong>
-              <p>{copy.relatedTourDescription}</p>
-              <ArrowRight aria-hidden="true" size={18} />
-            </GuideCtaLink>
             <Link href={routeGuide.canonicalPath}>
               <strong>{copy.relatedLinkLabel}</strong>
               <p>{copy.relatedLinkDescription}</p>

@@ -160,6 +160,13 @@
   width: min(100%, calc(var(--guide-measure) + 2rem));
 }
 
+/* The sales card sits in the same reading column as the sections. */
+.tourCardSlot {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  width: min(100%, calc(var(--guide-measure) + 2rem));
+}
+
 .section + .section {
   margin-block-start: clamp(2.5rem, 5vw, 3.75rem);
 }

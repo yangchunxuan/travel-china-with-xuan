@@ -19,6 +19,7 @@
     "check:high-intent-cta-ownership": "node --experimental-strip-types --no-warnings tools/check-high-intent-cta-ownership.mjs",
     "check:search-platform-export": "node tools/check-search-platform-export.mjs",
     "check:ten-day-guide-export": "node tools/check-ten-day-guide-export.mjs",
+    "check:guide-sales-card-export": "node tools/check-guide-sales-card-export.mjs",
     "content:generate": "node tools/generate-content-manifest.mjs",
     "content:check": "node tools/generate-content-manifest.mjs --check",
     "sign:traffic-link": "node tools/sign-traffic-link.mjs",
@@ -31,7 +32,7 @@
     "generate:image-variants": "node tools/generate-image-variants.mjs",
     "prebuild": "npm run guide:generate && npm run content:check && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
     "build": "next build",
-    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export",
+    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:guide-sales-card-export",
     "start": "next start"
   },
   "dependencies": {

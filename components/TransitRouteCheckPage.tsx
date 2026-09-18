@@ -17,6 +17,7 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./TransitRouteCheckPage.module.css";
 
 const guideId = "china-240-hour-visa-free-transit-route-check" as const;
@@ -337,6 +338,8 @@ export function TransitRouteCheckPage({
                 <time dateTime={guide.dateModified}>{copy.updatedDate}</time>
               </p>
             </section>
+
+            <LegacyGuideTourCard guideId={guideId} locale={locale} />
 
             <section className={styles.faq} aria-labelledby="guide-faq-title">
               <h2 id="guide-faq-title">{copy.faqTitle}</h2>

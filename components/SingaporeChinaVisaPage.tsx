@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideTourCard } from "../lib/guideTourCard";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { getSingaporeChinaVisaCopy } from "../lib/singaporeChinaVisaI18n";
 import {
@@ -14,6 +15,7 @@ import {
 } from "../lib/editorialIdentity";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { GuideTourCard } from "./content/GuideTourCard";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -114,6 +116,7 @@ export function SingaporeChinaVisaPage({
   const copy = getSingaporeChinaVisaCopy(locale);
   const guide = getGuideEntry(guideId, locale);
   const plannerHref = `${copy.homePath}?utm_source=singapore-visa-guide&utm_medium=owned&utm_campaign=trip-conversation&utm_content=article-cta#route-finder`;
+  const tourCard = getGuideTourCard(guideId, locale);
   const structuredData = createStructuredData(locale);
 
   return (
@@ -198,6 +201,12 @@ export function SingaporeChinaVisaPage({
                 ))}
               </section>
             ))}
+
+            {tourCard ? (
+              <div className={styles.tourCardSlot}>
+                <GuideTourCard card={tourCard} guideId={guideId} locale={locale} />
+              </div>
+            ) : null}
 
             <section
               className={styles.review}

@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -50,6 +51,33 @@ const requiredPublicForbiddenClaimsByOwnerClass = {
     "sensitive-data-first-contact",
   ],
 };
+
+const guideInlineCardKinds = new Set([
+  "private-tour-product",
+  "private-tour-collection",
+  "trip-consultation",
+]);
+const guideInlineSharedImages = new Set([
+  "beijing-tour-photo",
+  "wheelchair-guide-photo",
+  "hotel-guide-photo",
+]);
+const guideInlineCollectionTarget = "private-tours";
+const guideInlineConsultationTarget = "full-trip-support";
+const guideInlineFitClaim = "fit-verification-claim";
+
+/**
+ * Hand-built guides are not folders under content/guides, but they can still
+ * carry an inline sales card. Read their ids from the source list so a card
+ * cannot point at a guide that does not exist.
+ */
+export function readLegacyGuideIds(
+  source = readFileSync(resolve(repoRoot, "lib/guideRegistry.ts"), "utf8"),
+) {
+  const block = source.match(/legacyGuideIds = \[([\s\S]*?)\] as const/u);
+  invariant(block, "LEGACY_GUIDE_IDS_NOT_FOUND");
+  return [...block[1].matchAll(/"([a-z0-9-]+)"/gu)].map((match) => match[1]);
+}
 
 const reviewedPublicCtaCopySha256 =
   "03414a108cbd7ef5c5626968b4368d11fd3fffbb7e130298bd0ada6805d27935";
@@ -164,6 +192,7 @@ export function validateHighIntentCtaOwnershipRegistry(
   registry,
   guides,
   approvedServiceIds = routeServiceIds,
+  legacyGuideIds = readLegacyGuideIds(),
 ) {
   invariant(
     registry.status === "internal-only",
@@ -255,6 +284,60 @@ export function validateHighIntentCtaOwnershipRegistry(
     `COVERAGE_COUNT_DRIFT: uniqueContentIds expected ${requiredOwners.size}`,
   );
 
+  invariant(
+    Array.isArray(registry.guideInlineSalesCards),
+    "GUIDE_INLINE_SALES_CARDS_REQUIRED",
+  );
+  const knownGuideIds = new Set([...guideIds, ...legacyGuideIds]);
+  const inlineCards = new Map();
+  for (const card of registry.guideInlineSalesCards) {
+    invariant(
+      typeof card.contentId === "string" && knownGuideIds.has(card.contentId),
+      `UNKNOWN_GUIDE_INLINE_CONTENT_ID: ${card.contentId}`,
+    );
+    invariant(
+      !inlineCards.has(card.contentId),
+      `DUPLICATE_GUIDE_INLINE_SALES_CARD: ${card.contentId}`,
+    );
+    inlineCards.set(card.contentId, card);
+    invariant(
+      guideInlineCardKinds.has(card.ctaKind),
+      `UNKNOWN_GUIDE_INLINE_CTA_KIND: ${card.contentId} -> ${card.ctaKind}`,
+    );
+    invariant(
+      card.placement === "guide-inline",
+      `GUIDE_INLINE_PLACEMENT_MISMATCH: ${card.contentId}`,
+    );
+    if (card.ctaKind === "private-tour-product") {
+      invariant(
+        /^[a-z0-9-]+-private-tour$/u.test(card.ctaTarget) && card.image === "product",
+        `GUIDE_INLINE_TARGET_MISMATCH: ${card.contentId}`,
+      );
+    } else {
+      invariant(
+        card.ctaTarget === (card.ctaKind === "trip-consultation"
+          ? guideInlineConsultationTarget
+          : guideInlineCollectionTarget),
+        `GUIDE_INLINE_TARGET_MISMATCH: ${card.contentId}`,
+      );
+      invariant(
+        guideInlineSharedImages.has(card.image),
+        `GUIDE_INLINE_IMAGE_NOT_ALLOWED: ${card.contentId} -> ${card.image}`,
+      );
+    }
+    invariant(
+      Array.isArray(card.forbiddenClaims)
+        && card.forbiddenClaims.includes(guideInlineFitClaim),
+      `GUIDE_INLINE_FIT_CLAIM_BOUNDARY_MISSING: ${card.contentId}`,
+    );
+    for (const claim of card.forbiddenClaims) {
+      invariant(
+        Object.hasOwn(registry.forbiddenClaimDefinitions ?? {}, claim),
+        `UNKNOWN_FORBIDDEN_CLAIM: ${card.contentId} -> ${claim}`,
+      );
+    }
+  }
+
   const seenContentIds = new Set();
   for (const entry of registry.entries) {
     invariant(
@@ -325,7 +408,8 @@ export function validateHighIntentCtaOwnershipRegistry(
         `PLAN_AUTHORIZATION_MISMATCH: ${entry.contentId}`,
       );
       invariant(
-        entry.ctaPlacement === "existing-guide-footer",
+        entry.ctaPlacement === "existing-guide-footer"
+          || entry.ctaPlacement === "guide-inline-card",
         `PLAN_CTA_PLACEMENT_MISMATCH: ${entry.contentId}`,
       );
       continue;
@@ -363,6 +447,25 @@ export function validateHighIntentCtaOwnershipRegistry(
           ),
         `PUBLIC_CTA_FORBIDDEN_CLAIMS_DRIFT: ${entry.contentId}`,
       );
+    } else if (entry.ctaPlacement === "guide-inline-card") {
+      // An inline planner card is the only way a blocked stay, ticket or
+      // transfer page may carry a specialised CTA outside the footer list.
+      invariant(
+        inlineCards.get(entry.contentId)?.ctaKind === "trip-consultation"
+          && explicitlyAuthorizedService
+          && entry.targetServiceId === explicitlyAuthorizedService,
+        `UNAUTHORIZED_SERVICE_MAPPING: ${entry.contentId}`,
+      );
+      invariant(
+        entry.authorizationStatus === "authorized-existing-service",
+        `AUTHORIZED_STATUS_MISMATCH: ${entry.contentId}`,
+      );
+      for (const claim of requiredPublicForbiddenClaimsByOwnerClass[entry.ownerClass]) {
+        invariant(
+          entry.forbiddenClaims.includes(claim),
+          `PUBLIC_CTA_FORBIDDEN_CLAIMS_DRIFT: ${entry.contentId}`,
+        );
+      }
     } else {
       invariant(
         entry.targetServiceId === null,
@@ -375,6 +478,26 @@ export function validateHighIntentCtaOwnershipRegistry(
       invariant(
         entry.ctaPlacement === "specialized-cta-blocked-generic-footer-only",
         `BLOCKED_CTA_PLACEMENT_MISMATCH: ${entry.contentId}`,
+      );
+    }
+  }
+
+  for (const entry of registry.entries) {
+    const card = inlineCards.get(entry.contentId);
+    if (entry.ctaPlacement !== "guide-inline-card") {
+      invariant(!card, `GUIDE_INLINE_OWNER_PLACEMENT_MISMATCH: ${entry.contentId}`);
+      continue;
+    }
+    invariant(card, `GUIDE_INLINE_CARD_MISSING: ${entry.contentId}`);
+    const expectedService = card.ctaKind === "trip-consultation" ? card.ctaTarget : null;
+    invariant(
+      entry.targetServiceId === expectedService,
+      `GUIDE_INLINE_SERVICE_MISMATCH: ${entry.contentId}`,
+    );
+    for (const claim of entry.forbiddenClaims) {
+      invariant(
+        card.forbiddenClaims.includes(claim),
+        `GUIDE_INLINE_FORBIDDEN_CLAIMS_DRIFT: ${entry.contentId} -> ${claim}`,
       );
     }
   }
@@ -407,6 +530,7 @@ export function validateHighIntentCtaOwnershipRegistry(
       (entry) => entry.authorizationStatus === "authorized-generic-conversation",
     ).length,
     authorizedPublicCtas: publicCtaIds.size,
+    guideInlineSalesCards: inlineCards.size,
     blockedPendingAuthorization: registry.entries.filter(
       (entry) => entry.authorizationStatus === "blocked-pending-central-authorization",
     ).length,

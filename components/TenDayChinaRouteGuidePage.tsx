@@ -33,6 +33,7 @@ import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 
 const guideId = "beijing-zhangjiajie-shanghai-10-days" as const;
 
@@ -630,6 +631,8 @@ export function TenDayChinaRouteGuidePage({
 
               <p className={styles.boundaryStatement}>{copy.trust.boundary}</p>
             </section>
+
+            <LegacyGuideTourCard guideId={guideId} locale={locale} />
 
             <section className={styles.faqSection} aria-labelledby="faq-title">
               <div className={styles.sectionHeading}>

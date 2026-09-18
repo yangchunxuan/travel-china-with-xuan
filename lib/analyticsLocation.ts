@@ -184,6 +184,7 @@ export function guideCtaTarget(href: string): GuideCtaTarget {
     }
     const tourPath = url.pathname.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u);
     if (tourPath && isPrivateTourInquirySlug(tourPath[1])) return "private_tour";
+    if (/^\/(?:zh\/|ko\/)?tours\/$/u.test(url.pathname)) return "private_tour";
     if (
       publicHomePaths.has(url.pathname) &&
       ((url.hash !== "" && publicHomeFragments.has(url.hash)) ||

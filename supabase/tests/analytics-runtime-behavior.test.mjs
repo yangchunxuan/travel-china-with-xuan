@@ -606,6 +606,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     installBrowser();
     const { analytics, location } = loadCompiledModules(outputDirectory);
     for (const prefix of ["/", "/zh/", "/ko/"]) {
+      assert.equal(location.guideCtaTarget(`${prefix}tours/`), "private_tour");
       assert.equal(location.guideCtaTarget(`${prefix}tours/beijing-highlights-5-day-private-tour/?private=PRIVATEQUESTION`), "private_tour");
       assert.equal(location.guideCtaTarget(`${prefix}?utm_campaign=article#planner-contact`), "planner");
       assert.equal(location.guideCtaTarget(`${prefix}?planner=destinations#route-finder`), "planner");

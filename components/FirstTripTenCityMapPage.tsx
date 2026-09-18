@@ -21,6 +21,7 @@ import { EditorialByline } from "./EditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import {
   LinkableAssetActions,
   type LinkableAssetDownload,
@@ -269,8 +270,6 @@ function structuredData() {
 export function FirstTripTenCityMapPage() {
   const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
   const citation = `Homeground China (2026), “First Trip to China: 10-City Airport, Station and Stay Map,” version ${assetData.version}, reviewed 23 August 2026. ${guide.canonicalUrl}`;
-  const ctaHref =
-    "/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=matrix_cta#planner-contact";
   const briefHref =
     "/?utm_source=ten_city_gateway_map&utm_medium=owned&utm_campaign=trip_conversation&utm_content=footer_cta#planner-contact";
   const schema = structuredData();
@@ -434,17 +433,7 @@ export function FirstTripTenCityMapPage() {
             </div>
           </section>
 
-          <aside className={styles.commercialCta}>
-            <div>
-              <p className={styles.miniLabel}>Protect the bookings</p>
-              <h2>Need help arranging this journey?</h2>
-              <p>Enquire about a private China tour with the city order, gateways and hotel bases your group needs. Arrangements and the quotation are confirmed before booking.</p>
-            </div>
-            <GuideCtaLink href={ctaHref} guideId={guide.id} locale="en" position="inline">
-              Enquire about a private tour
-              <ArrowRight aria-hidden="true" size={18} />
-            </GuideCtaLink>
-          </aside>
+          <LegacyGuideTourCard guideId={guide.id} locale="en" />
 
           <section className={styles.section} aria-labelledby="cards-title">
             <div className={styles.sectionHeader}>

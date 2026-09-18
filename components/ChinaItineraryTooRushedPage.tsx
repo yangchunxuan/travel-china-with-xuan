@@ -26,6 +26,7 @@ import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import homeStyles from "./HomegroundHomePage.module.css";
 import styles from "./ChinaItineraryTooRushedPage.module.css";
 
@@ -450,6 +451,8 @@ export function ChinaItineraryTooRushedPage({
                 </div>
               </div>
             </section>
+
+            <LegacyGuideTourCard guideId={itineraryRushGuideId} locale={locale} />
 
             <section className={styles.faqSection} aria-labelledby="article-faq-title">
               <div className={styles.faqHeading}>

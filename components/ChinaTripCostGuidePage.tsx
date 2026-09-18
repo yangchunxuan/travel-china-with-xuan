@@ -20,6 +20,7 @@ import {
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./ChinaTripCostGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -352,6 +353,8 @@ export function ChinaTripCostGuidePage({
             <p className={styles.noPromise}>{copy.howWeQuote.noPricePromise}</p>
           </div>
         </section>
+
+        <LegacyGuideTourCard guideId={chinaTripCostGuideId} locale={locale} />
 
         {/* ---------------- FAQ ---------------- */}
         <section className={styles.section}>

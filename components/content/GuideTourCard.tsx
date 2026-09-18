@@ -14,7 +14,13 @@ export function GuideTourCard({
   locale: HomegroundLocale;
 }) {
   return (
-    <aside className={styles.card} aria-label={card.label} data-guide-tour-card={card.productId} data-similarity-ignore>
+    <aside
+      aria-label={card.label}
+      className={styles.card}
+      data-guide-cta-kind={card.kind}
+      data-guide-tour-card={card.ctaId}
+      data-similarity-ignore
+    >
       <div className={styles.media}>
         <img
           alt={card.image.alt}
@@ -29,6 +35,7 @@ export function GuideTourCard({
       </div>
       <div className={styles.copy}>
         <p className={styles.title}>{card.title}</p>
+        {card.note ? <p className={styles.note}>{card.note}</p> : null}
         <GuideCtaLink className={styles.action} guideId={guideId} href={card.href} locale={locale} position="inline">
           {card.action}
           <ArrowRight aria-hidden="true" size={18} />
