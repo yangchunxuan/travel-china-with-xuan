@@ -6,10 +6,11 @@ import {
 } from "../../../../lib/guideRegistry";
 import { malaysiaZhangjiajieGuideId } from "../../../../lib/zhangjiajieFromMalaysiaGuide";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry(malaysiaZhangjiajieGuideId, "en");
 
 export const metadata: Metadata = {
-  title: guide.title,
+  title: resolvePageTitle(guide.title, "en"),
   description: guide.description,
   alternates: {
     canonical: guide.canonicalPath,

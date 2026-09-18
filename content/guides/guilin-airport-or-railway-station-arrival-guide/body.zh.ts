@@ -384,6 +384,16 @@ const body = {
           href: "/zh/guides/china-hotel-near-metro/",
           description: "不要只信距离标签，继续检查真实入口、最后步行和行李路线。",
         },
+        {
+          label: "龙脊梯田一日游还是住一晚",
+          href: "/zh/guides/longji-rice-terraces-day-trip-or-overnight/",
+          description: "先决定梯田是从桂林当天往返，还是要住一晚。",
+        },
+        {
+          label: "第一次去阳朔住哪里",
+          href: "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+          description: "订后续接送前，先定阳朔住在镇上还是遇龙河。",
+        },
       ],
     },
     {

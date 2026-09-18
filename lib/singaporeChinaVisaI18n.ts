@@ -28,6 +28,7 @@ export interface SingaporeChinaVisaCopy {
   breadcrumbCurrent: string;
   eyebrow: string;
   title: string;
+  metadataTitle: string;
   metadataDescription: string;
   directAnswer: string;
   directAnswerTail: string;
@@ -84,6 +85,7 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   breadcrumbCurrent: "Singapore passport: China visa",
   eyebrow: "Entry guide · Singapore",
   title: "Do Singaporeans Need a Visa for China? The 30-Day Rule",
+  metadataTitle: "Do Singaporeans Need a Visa for China? The 30-Day Rule",
   metadataDescription:
     "Singapore ordinary-passport holders can visit China visa-free for up to 30 days. Check the passport scope, arrival card, stay boundary and when a visa is still needed.",
   directAnswer:
@@ -196,6 +198,7 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   breadcrumbCurrent: "新加坡护照：中国签证",
   eyebrow: "入境指南 · 新加坡",
   title: "新加坡护照去中国需要签证吗？30 天互免签证规则",
+  metadataTitle: "新加坡护照去中国需要签证吗？30 天互免签证规则",
   metadataDescription:
     "持新加坡普通护照可免签访问中国，单次停留不超过 30 天。核对护照范围、入境卡、停留边界，以及哪些情况仍需申请签证。",
   directAnswer:
@@ -318,6 +321,7 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
   breadcrumbCurrent: "싱가포르 여권: 중국 비자",
   eyebrow: "입국 가이드 · 싱가포르",
   title: "싱가포르 여권으로 중국 비자가 필요할까? 30일 무비자 규정",
+  metadataTitle: "싱가포르 여권 중국 비자: 30일 무비자 규정",
   metadataDescription:
     "싱가포르 일반 여권 소지자는 중국을 최대 30일까지 무비자로 방문할 수 있습니다. 여권 범위, 입국카드, 체류 한도와 비자가 필요한 경우를 확인하세요.",
   directAnswer:

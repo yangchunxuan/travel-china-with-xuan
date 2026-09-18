@@ -33,6 +33,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "facts", type: "callout", title: "변경 가능 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "리강 공식 안내는 핵심 유람선을 약 60km, 약 4시간의 편도 일정으로 설명하며 3성급과 4성급 유람선의 출발항이 다르고 도착지는 양숴 룽터우산 선착장이라고 안내한다. 공식 안내는 성수기에는 적어도 하루 전 구매를 권하며, 선착장까지 가는 교통과 양숴에서 돌아오는 교통은 포함되지 않고 편도 유람선에 짐 보관 서비스가 없다고 밝힌다. 열차 정차는 날짜별로 12306에서 확인해야 한다. 양숴역에서 숙소까지의 현재 공식 고정 시간표나 요금은 찾지 못했으므로 오래된 가격이나 시간에 기대지 말고 따로 확인한다." },
   { id: "help", type: "callout", title: "양쪽 목적지를 비교할까요?", tone: "decision", body: "날짜, 구이린 도착 지점, 양숴 호텔, 인원, 짐과 강 이동이 교통인지 경험인지 보내 주세요. Homeground는 각 이동 구간을 비교하고 출발 전에 다시 확인할 정보를 정리해 드릴 수 있습니다." },
   { id: "links", type: "internal-links", title: "계속 계획하기", items: [
+    { label: "구이린 공항·기차역 도착 안내", href: "/ko/guides/guilin-airport-or-railway-station-arrival-guide/", description: "다음 구간을 비교하기 전에 알맞은 구이린 도착 허브를 고르세요." },
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역을 고른 뒤 철도를 준비합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "강이나 도로 하루에 충분한 공간을 둡니다." },
     { label: "중국 여행자 결제", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "마지막 구간의 결제 대안을 둡니다." },

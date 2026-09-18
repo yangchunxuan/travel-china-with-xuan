@@ -67,7 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "Complete the arrival check", items: [
     { label: "China customs red and green channels", href: "/guides/china-customs-red-green-channels/", description: "Choose the correct arrival channel after screening every bag." },
     { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Keep immigration documents separate from Customs and quarantine." },
-    { label: "Power bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "Finish the other high-friction baggage check." }
+    { label: "Power bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "Finish the other high-friction baggage check." },
+    { label: "China online arrival card", href: "/guides/china-online-arrival-card/", description: "Pre-fill the free official form before you land, and know the paper backup." }
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Announcement No. 470 and the prohibited quarantine-items list", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-09-09" },

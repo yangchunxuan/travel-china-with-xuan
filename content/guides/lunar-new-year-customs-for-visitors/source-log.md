@@ -2,7 +2,7 @@
 
 Status: `INTEGRATED OWNER UPGRADE — CENTRAL REVIEW, MERGE AND DEPLOY DECISION REQUIRED`
 
-Checked at: 2026-08-22 (Asia/Shanghai)
+Checked at: 2026-09-18 (Asia/Shanghai)
 
 Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
 
@@ -13,7 +13,14 @@ Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
 - This page owns the travel decision: whether Spring Festival fits, which phases affect transport and business, why quiet streets coexist with crowded attractions, how to choose public events, and how to recover.
 - Live ticket inventory, business hours and event admission remain with the named operator.
 
-## Upcoming date and unpublished mainland fields
+## 2027 statutory dates and unpublished annual fields
+
+### State Council — amended national holiday regulation
+
+- URL: https://www.gov.cn/zhengce/zhengceku/202411/content_6986381.htm
+- Checked: 2026-09-18
+- Fact used: Spring Festival has four statutory days, from Lunar New Year's Eve through the third day of the first lunar month. Combined with the verified 2027 lunar date, these fall on 5–8 February 2027.
+- Boundary: the regulation fixes statutory days only. The annual State Council notice owns any longer bridged break and compensatory workdays.
 
 ### Hong Kong Observatory — 2027 Gregorian–lunar calendar
 
@@ -29,10 +36,10 @@ Canonical owner: `/guides/lunar-new-year-customs-for-visitors/`
 - Fact used: gazetted Lunar New Year's Day is Saturday, 6 February 2027.
 - Boundary: this confirms the lunar festival date. Hong Kong's holiday arrangement does **not** govern mainland China.
 
-### Mainland China — 2027 state at review time
+### Mainland China — annual 2027 fields at review time
 
-- On 2026-08-22, no State Council 2027 holiday arrangement and no 2027 integrated Chunyun plan were found.
-- The body says “not yet published” rather than predicting dates or copying 2026.
+- On 2026-09-18, no State Council 2027 annual holiday arrangement and no 2027 integrated Chunyun plan were found.
+- The body publishes the four statutory dates fixed by the regulation, while leaving the longer bridged break, compensatory workdays and Chunyun period pending.
 - Update trigger: the State Council or Ministry of Transport publishes the relevant 2027 arrangement. Annual details must be entered on the public-holiday owner and linked from here.
 
 ## 2026 mainland evidence — labelled as historical operating evidence

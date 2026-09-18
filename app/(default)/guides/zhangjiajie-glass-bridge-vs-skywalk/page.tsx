@@ -9,11 +9,12 @@ import {
   ZHANGJIAJIE_GLASS_BRIDGE_HERO,
 } from "../../../../lib/tantanZhangjiajieStoryI18n";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry("zhangjiajie-glass-bridge-vs-skywalk", "en");
 const copy = getTantanZhangjiajieStoryCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.title,
+  title: resolvePageTitle(copy.metadataTitle, "en"),
   description: copy.dek,
   alternates: {
     canonical: guide.canonicalPath,

@@ -18,8 +18,8 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-11",
-  "dateModified": "2026-08-31",
-  "sourceReviewedDate": "2026-08-11",
+  "dateModified": "2026-09-18",
+  "sourceReviewedDate": "2026-09-18",
   "search": {
     "section": "when-to-go",
     "family": "time",
@@ -32,9 +32,9 @@
   "locales": {
     "en": {
       "path": "/guides/china-public-holidays-travel-calendar/",
-      "title": "China Public Holidays 2026: Dates, Workdays and Travel Crowds",
+      "title": "China Public Holidays 2026–2027: Dates and Travel Crowds",
       "headline": "China Public Holidays and Travel Crowds: The Annual Planning Calendar",
-      "description": "Use China's official 2026 holiday dates and compensatory workdays to plan trains, attractions, hotels and opening-hour checks without guessing future schedules.",
+      "description": "Official 2026 holiday dates and compensatory workdays, the statutory 2027 holidays, and how to plan trains, attractions and hotels around each peak.",
       "heroAlt": "Editorial calendar infographic showing China's official 2026 public holidays and compensatory workdays.",
       "navTitle": "China public holidays",
       "featuredLinkLabel": "Check holiday dates and travel effects",
@@ -43,9 +43,9 @@
     },
     "zh": {
       "path": "/zh/guides/china-public-holidays-travel-calendar/",
-      "title": "2026年中国公众假期、调休与旅行影响日历",
+      "title": "中国公众假期2026—2027：法定日期与出行影响",
       "headline": "中国公众假期与旅行人流：年度规划日历",
-      "description": "依据中国官方公布的2026年放假日期和调休工作日，判断跨城交通、景点、酒店与营业安排；不猜测尚未公布的年份。",
+      "description": "汇总2026年官方放假与调休，以及2027年已确定的法定节日日期；长假和调休尚待国务院通知，并说明交通、景点和酒店如何规划。",
       "heroAlt": "标出中国2026年官方公众假期和调休工作日的原创日历信息图。",
       "navTitle": "中国公众假期",
       "featuredLinkLabel": "查看假期日期与旅行影响",
@@ -54,9 +54,9 @@
     },
     "ko": {
       "path": "/ko/guides/china-public-holidays-travel-calendar/",
-      "title": "2026년 중국 공휴일·대체 근무일·여행 영향 달력",
+      "title": "중국 공휴일 2026·2027: 법정 날짜와 여행",
       "headline": "중국 공휴일과 여행 혼잡: 연간 여행 계획 달력",
-      "description": "중국이 공식 발표한 2026년 공휴일과 대체 근무일을 바탕으로 도시 간 교통, 관광지, 숙소와 영업시간을 계획하고 미발표 연도는 추측하지 않습니다.",
+      "description": "2026년 공식 연휴·대체 근무일과 2027년 법정 공휴일 날짜를 정리합니다. 2027년 연휴 조정은 국무원 통지 전까지 미확정이며 교통·관광지·숙소 계획 기준도 함께 설명합니다.",
       "heroAlt": "중국의 2026년 공식 공휴일과 대체 근무일을 표시한 오리지널 달력 인포그래픽.",
       "navTitle": "중국 공휴일",
       "featuredLinkLabel": "공휴일 날짜와 여행 영향 확인",

@@ -384,6 +384,16 @@ const body = {
           href: "/guides/china-hotel-near-metro/",
           description: "Check the real entrance, final walk and luggage route instead of trusting a distance label.",
         },
+        {
+          label: "Longji Rice Terraces: day trip or overnight?",
+          href: "/guides/longji-rice-terraces-day-trip-or-overnight/",
+          description: "Decide whether the terraces fit as a day trip from Guilin or need a night.",
+        },
+        {
+          label: "Where to stay in Yangshuo: town or the Yulong River?",
+          href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+          description: "Choose the Yangshuo base before booking the onward transfer.",
+        },
       ],
     },
     {

@@ -20,7 +20,7 @@ Status: `CENTRAL COPY, FACT, ASSET AND METADATA REVIEW COMPLETE — RELEASE CAND
 ## Canonical title and boundary
 
 - **Slug:** `wukong-nezha-games-animation-myth-guide`
-- **EN title:** `Wukong and Nezha: Myth in Games and Animation`
+- **EN title:** `Wukong and Nezha: What Games and Films Kept or Changed`
 - **ZH title:** `从悟空到哪吒：游戏与动画里的神话改编怎么看`
 - **KO title:** `손오공과 나타: 게임·애니메이션 속 신화 각색 읽기`
 - **Canonical promise:** identify the layer of evidence first, then describe what a selected modern work retains, combines, omits, invents or reframes.

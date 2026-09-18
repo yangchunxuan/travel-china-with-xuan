@@ -523,6 +523,8 @@ const body = {
           href: "/zh/guides/do-you-need-a-tour-guide-in-china/",
           description: "只在真正需要的节点加入本地支持，不必覆盖每一步。",
         },
+    { label: "深圳机场、火车站和口岸怎么选", href: "/zh/guides/shenzhen-airport-railway-station-border-port-selector/", description: "按下一站目的地选深圳的进出点。" },
+    { label: "广州到香港怎么走", href: "/zh/guides/guangzhou-hong-kong-transport-route/", description: "加香港之前，先比较门到门的完整行程。" },
       ],
     },
     {

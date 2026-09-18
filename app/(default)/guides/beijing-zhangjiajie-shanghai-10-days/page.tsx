@@ -5,13 +5,14 @@ import {
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry(
   "beijing-zhangjiajie-shanghai-10-days",
   "en",
 );
 
 export const metadata: Metadata = {
-  title: guide.title,
+  title: resolvePageTitle(guide.title, "en"),
   description: guide.description,
   alternates: {
     canonical: guide.canonicalPath,

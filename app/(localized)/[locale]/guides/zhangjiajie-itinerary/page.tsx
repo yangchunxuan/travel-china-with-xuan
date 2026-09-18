@@ -8,6 +8,7 @@ import {
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 import { getZhangjiajieGuideCopy } from "../../../../../lib/zhangjiajieGuideI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -26,7 +27,7 @@ export async function generateMetadata({
   const copy = getZhangjiajieGuideCopy(locale);
 
   return {
-    title: copy.metadata.title,
+    title: resolvePageTitle(copy.metadata.title, locale),
     description: copy.metadata.description,
     alternates: {
       canonical: guide.canonicalPath,

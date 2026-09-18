@@ -1709,7 +1709,7 @@
       },
       {
         "id": "kevin-before-the-hotel-pickup",
-        "title": "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
+        "title": "Before the Pickup: How Kevin Prepares a Guided Day in China",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/kevin-before-the-hotel-pickup/",
@@ -2137,7 +2137,7 @@
       },
       {
         "id": "how-guangzhou-morning-tea-works",
-        "title": "Guangzhou Morning Tea: How Yum Cha, Dim Sum and Teahouse Etiquette Work",
+        "title": "Guangzhou Morning Tea: How Yum Cha and Dim Sum Ordering Work",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/how-guangzhou-morning-tea-works/",
@@ -2157,7 +2157,7 @@
       },
       {
         "id": "how-to-read-a-suzhou-garden",
-        "title": "How to Read a Suzhou Garden: Rocks, Water and Borrowed Scenery",
+        "title": "Suzhou Gardens: Which to Visit and What to Look For",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/how-to-read-a-suzhou-garden/",
@@ -2266,7 +2266,7 @@
       },
       {
         "id": "china-open-jaw-flights-route-planning",
-        "title": "China Open-Jaw Flights: Arrive in One City, Leave From Another?",
+        "title": "Open-Jaw Flights to China: Fly Into One City, Out of Another",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/china-open-jaw-flights-route-planning/",
@@ -2423,7 +2423,7 @@
       },
       {
         "id": "china-community-canteens-explained",
-        "title": "Can Tourists Eat at China's Community Canteens? Check Access First",
+        "title": "Can Tourists Eat at China's Community Canteens? Check First",
         "kind": "article",
         "locales": [
           "en",
@@ -2485,7 +2485,7 @@
       },
       {
         "id": "guizhou-village-basketball-culture",
-        "title": "Guizhou Village Basketball: Why One Game Can Become a Late-Night Festival",
+        "title": "Village BA in Guizhou: Why One Game Becomes a Night Festival",
         "kind": "article",
         "locales": [
           "en",
@@ -2549,7 +2549,7 @@
       },
       {
         "id": "how-to-read-heritage-sites-in-china",
-        "title": "Original, Restored, Rebuilt or Relocated? How to Read Heritage Sites in China",
+        "title": "China Heritage Sites: Original, Restored, Rebuilt or Moved?",
         "kind": "article",
         "locales": [
           "en",
@@ -2610,7 +2610,7 @@
       },
       {
         "id": "lunar-new-year-customs-for-visitors",
-        "title": "Chinese New Year in China: Should Foreign Travellers Visit?",
+        "title": "Chinese New Year in China: Is It a Good Time to Visit?",
         "kind": "article",
         "locales": [
           "en",
@@ -2645,7 +2645,7 @@
       },
       {
         "id": "qingdao-brands-built-an-industrial-city",
-        "title": "Beer, Appliances and Trains: Three Lenses on Industrial Qingdao",
+        "title": "Industrial Qingdao Through Beer, Appliances and Trains",
         "kind": "article",
         "locales": [
           "en",
@@ -2678,7 +2678,7 @@
       },
       {
         "id": "qinling-huaihe-transition-zone",
-        "title": "Qinling–Huaihe: Read China's Invisible North–South Divide",
+        "title": "Qinling–Huaihe: China's North–South Divide Is Not a Line",
         "kind": "article",
         "locales": [
           "en",
@@ -2742,7 +2742,7 @@
       },
       {
         "id": "shenzhen-low-altitude-city-infrastructure",
-        "title": "Shenzhen's Low-Altitude Economy: How Drones Become City Infrastructure",
+        "title": "Shenzhen Low-Altitude Economy: How Drones Serve the City",
         "kind": "article",
         "locales": [
           "en",
@@ -2835,7 +2835,7 @@
       },
       {
         "id": "yangshan-automated-port-explained",
-        "title": "Yangshan Automated Port Explained: Containers, Software and People",
+        "title": "Yangshan Automated Port: How a Container Moves Through It",
         "kind": "article",
         "locales": [
           "en",
@@ -2868,7 +2868,7 @@
       },
       {
         "id": "yunnan-coffee-from-cherry-to-cup",
-        "title": "Yunnan Coffee From Cherry to Cup: Processing, Traceability and Value",
+        "title": "Yunnan Coffee, Cherry to Cup: Processing and Traceability",
         "kind": "article",
         "locales": [
           "en",
@@ -2932,7 +2932,7 @@
       },
       {
         "id": "kaifeng-song-dynasty-urban-landscape",
-        "title": "Kaifeng's Song-Dynasty Landscape: What Is Historic, Rebuilt or Themed?",
+        "title": "Kaifeng's Song-Dynasty Sights: Historic, Rebuilt or Themed?",
         "kind": "article",
         "locales": [
           "en",
@@ -2999,7 +2999,7 @@
       },
       {
         "id": "anshun-dixi-mask-performance-guide",
-        "title": "Anshun Dixi: Why the Mask Sits Above the Face and What to Watch",
+        "title": "Anshun Dixi: Forehead Masks and What to Watch For",
         "kind": "article",
         "locales": [
           "en",
@@ -3032,7 +3032,7 @@
       },
       {
         "id": "liaozhai-zibo-former-residence-liqu-liaozhai-city",
-        "title": "Zibo Liaozhai: Former Residence, Liaozhai Liqu and Liaozhai City",
+        "title": "Liaozhai in Zibo: Pu Songling's Home, Liqu and Liaozhai City",
         "kind": "article",
         "locales": [
           "en",
@@ -3532,7 +3532,7 @@
       },
       {
         "candidateId": "destination-20260811-02",
-        "workingTitle": "Which Great Wall Section? Badaling, Mutianyu, Jinshanling or Simatai",
+        "workingTitle": "Best Great Wall Section from Beijing? 4 Compared by Effort",
         "action": "new-page",
         "section": "explore",
         "primaryCollectionId": "explore-attractions-nature-heritage",

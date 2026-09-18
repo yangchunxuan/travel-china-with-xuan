@@ -19,6 +19,7 @@ test("Singapore visa owner gives the bounded 30-day answer in all locales", asyn
   assert.match(copy, /Do Singaporeans Need a Visa for China\? The 30-Day Rule/);
   assert.match(copy, /新加坡护照去中国需要签证吗？30 天互免签证规则/);
   assert.match(copy, /싱가포르 여권으로 중국 비자가 필요할까\? 30일 무비자 규정/);
+  assert.match(copy, /metadataTitle: "싱가포르 여권 중국 비자: 30일 무비자 규정"/);
   assert.match(copy, /ordinary Singapore passport may enter China visa-free for a stay of up to 30 days/);
   assert.match(copy, /n147418\/n147463\/c181470\/content\.html/);
   assert.match(copy, /n147418\/n147463\/c156110\/content\.html/);
@@ -27,9 +28,13 @@ test("Singapore visa owner gives the bounded 30-day answer in all locales", asyn
   assert.doesNotMatch(copy, /每次入境都会重新获得30天|多次入境没有累计天数上限/u);
   assert.doesNotMatch(copy, /입국할 때마다 새로운 30일|누적 체류일수 상한은 없습니다/u);
   assert.match(page, /reviewedAt=\{copy\.sourceReviewedAt\}/);
-  assert.match(route, /title: copy\.title/);
+  assert.match(page, /<h1>\{copy\.title\}<\/h1>/);
+  assert.match(route, /title: resolvePageTitle\(copy\.metadataTitle, "en"\)/);
+  assert.match(route, /openGraph: \{[\s\S]*title: copy\.title/u);
   assert.match(route, /description: copy\.metadataDescription/);
   assert.match(localizedRoute, /getSingaporeChinaVisaCopy\(locale\)/);
+  assert.match(localizedRoute, /title: resolvePageTitle\(copy\.metadataTitle, locale\)/);
+  assert.match(localizedRoute, /openGraph: \{[\s\S]*title: copy\.title/u);
 });
 
 test("foreign-passport hotel owner keeps the FAQ and receives contextual links", async () => {

@@ -1,4 +1,4 @@
-# How to Read Chinese City Walls: Gates, Defense, Ritual and Urban Form
+# How to Read a Chinese City Wall: Gates, Defense and Ritual
 
 A Chinese city wall is rarely one object with one date. The earthen core may survive from one rebuilding, its brick skin may come from later repairs, a gate tower may be a modern reconstruction, and the road through it may be newer still. The wall’s line can nevertheless preserve how a city met terrain, controlled movement and organized important routes.
 

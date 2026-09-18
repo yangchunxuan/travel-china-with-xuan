@@ -1,8 +1,8 @@
 # Source log — China public holidays and travel crowds
 
-Status: `RELEASE REVIEW COMPLETE — SPRING FESTIVAL SOURCE RECHECKED 2026-08-31`
+Status: `RELEASE REVIEW COMPLETE — STATUTORY 2027 DATES ADDED 2026-09-18`
 
-Checked at: 2026-08-31 (Asia/Shanghai). The Spring Festival transport-period source was replaced on this date; the per-source dates below preserve the earlier checks for unaffected facts.
+Checked at: 2026-09-18 (Asia/Shanghai). The 2027 statutory dates and their boundary were reviewed on this date; the per-source dates below preserve the earlier checks for unaffected facts.
 
 Canonical owner: `/guides/china-public-holidays-travel-calendar/`
 
@@ -13,6 +13,23 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 `/guides/china-in-october-golden-week-or-later/` remains the owner for the separate decision of travelling during the October National Day holiday versus later October, including route shape and weather. This page links there rather than duplicating that analysis.
 
 ## Dynamic-source register
+
+### state-council-holiday-regulation-2024-amendment
+
+- Publisher: State Council of the People's Republic of China
+- Title: 国务院关于修改《全国年节及纪念日放假办法》的决定（国务院令）
+- Effective: 2025-01-01
+- URL: https://www.gov.cn/zhengce/zhengceku/202411/content_6986381.htm
+- Used for: the 13 statutory days per year (New Year's Day 1; Spring Festival 4 from Lunar New Year's Eve; Qingming 1; Labour Day 2; Dragon Boat 1; Mid-Autumn 1; National Day 3) and the general authority to join statutory holidays into longer breaks. Not used to infer any specific 2027 bridged days off, break length or compensatory workdays.
+- Checked at: 2026-09-18
+
+### hk-gov-2027-general-holidays
+
+- Publisher: Government of the Hong Kong Special Administrative Region
+- Title: General holidays for 2027
+- URL: https://www.gov.hk/en/about/abouthk/holiday/2027.htm
+- Used for: the 2027 Gregorian dates of Lunar New Year's Day (6 February), Ching Ming (5 April), Tuen Ng (9 June) and Mid-Autumn (15 September, from the gazetted "day following" on 16 September). Hong Kong's own holiday arrangement is not applied to the mainland calendar.
+- Checked at: 2026-09-18
 
 ### state-council-2026-holidays
 
@@ -30,11 +47,11 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 ### state-council-2027-status
 
 - Publisher/source pool: State Council policy database and official government search
-- Version: availability check at 2026-08-11
+- Version: statutory-date and annual-arrangement availability check at 2026-09-18
 - URL: not applicable because no 2027 annual schedule has been published
-- Checked at: 2026-08-11
-- Fact used: the 2027 official schedule is **not yet published / 尚未发布 / 아직 발표되지 않음**.
-- Boundary: no dates may be inferred from the lunar calendar, prior-year arrangements, media forecasts, or booking platforms.
+- Checked at: 2026-09-18
+- Fact used: the amended Regulation fixes the number and placement of statutory days; the verified lunar dates therefore support the seven 2027 statutory entries now listed. The longer annual arrangement is **not yet published / 尚未发布 / 아직 발표되지 않음**.
+- Boundary: bridged days off and compensatory workdays may not be inferred from the lunar calendar, prior-year arrangements, media forecasts, or booking platforms.
 - Update trigger: publication of an official General Office of the State Council notice for 2027.
 
 ### ndrc-2026-spring-festival-schedule
@@ -113,6 +130,6 @@ This guide owns the nationwide annual calendar: official public-holiday periods,
 ## Explicit exclusions
 
 - No invented “crowd index,” colour-coded intensity score, universal hotel-price increase or empty-day promise.
-- No 2027 dates until an official notice is published.
+- No inferred 2027 bridged days off or compensatory workdays before the annual State Council notice; statutory dates may be listed only from the standing Regulation after the applicable lunar dates are verified.
 - No live train or flight inventory and no complete custom itinerary.
 - No city × month, city × holiday, year × traveller, or year-specific indexable URL variants.

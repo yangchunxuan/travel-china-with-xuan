@@ -8,6 +8,7 @@ import {
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 import { malaysiaZhangjiajieGuideId } from "../../../../../lib/zhangjiajieFromMalaysiaGuide";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -25,7 +26,7 @@ export async function generateMetadata({
   const guide = getGuideEntry(malaysiaZhangjiajieGuideId, locale);
 
   return {
-    title: guide.title,
+    title: resolvePageTitle(guide.title, locale),
     description: guide.description,
     alternates: {
       canonical: guide.canonicalPath,

@@ -8,6 +8,7 @@ import {
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 import { getItineraryRushGuideCopy } from "../../../../../lib/chinaItineraryTooRushedI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -26,7 +27,7 @@ export async function generateMetadata({
   const copy = getItineraryRushGuideCopy(locale);
 
   return {
-    title: copy.metadata.title,
+    title: resolvePageTitle(copy.metadata.title, locale),
     description: copy.metadata.description,
     alternates: {
       canonical: guide.canonicalPath,

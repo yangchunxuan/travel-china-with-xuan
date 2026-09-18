@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "ownerId": "china-public-holidays-travel-calendar",
   "canonicalPath": "/guides/china-public-holidays-travel-calendar/",
-  "checkedAt": "2026-08-11",
+  "checkedAt": "2026-09-18",
   "definitions": {
     "holidayPeriod": "The nationwide days off stated in the General Office of the State Council notice.",
     "compensatoryWorkday": "A Saturday or Sunday designated as a working day by that notice.",
@@ -10,9 +10,9 @@
   },
   "updatePolicy": {
     "authority": "General Office of the State Council of the People's Republic of China",
-    "futureYearRule": "not_published_until_official_notice",
+    "futureYearRule": "statutory_dates_only_until_official_notice",
     "noForecast": true,
-    "updateTrigger": "Publish a new year only after the State Council schedule is available; then verify transport and venue notices as they are issued.",
+    "updateTrigger": "Statutory days may be listed from the Regulation once the lunar dates are verified; bridged days off, compensatory workdays and transport periods are added only after the State Council notice and dated official notices are published.",
     "reviewCadence": "annual-and-on-source-change"
   },
   "years": [
@@ -106,18 +106,84 @@
     },
     {
       "year": 2027,
-      "status": "not_published",
+      "status": "statutory_dates_only",
       "labels": {
-        "en": "Not yet published",
-        "zh": "尚未发布",
-        "ko": "아직 발표되지 않음"
+        "en": "Statutory dates only — arrangement pending",
+        "zh": "仅法定日期——调休安排待发布",
+        "ko": "법정 날짜만 확정 — 연휴 조정 미발표"
       },
-      "checkedAt": "2026-08-11",
-      "sourceId": null,
-      "sourceUrl": null,
-      "holidays": [],
+      "checkedAt": "2026-09-18",
+      "sourceId": "state-council-holiday-regulation-2024-amendment",
+      "sourceUrl": "https://www.gov.cn/zhengce/zhengceku/202411/content_6986381.htm",
+      "lunarDateSourceId": "hk-gov-2027-general-holidays",
+      "lunarDateSourceUrl": "https://www.gov.hk/en/about/abouthk/holiday/2027.htm",
+      "holidays": [
+        {
+          "id": "new-year",
+          "names": { "en": "New Year's Day", "zh": "元旦", "ko": "신정" },
+          "startDate": "2027-01-01",
+          "endDate": "2027-01-01",
+          "dayCount": 1,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "spring-festival",
+          "names": { "en": "Spring Festival", "zh": "春节", "ko": "춘절" },
+          "startDate": "2027-02-05",
+          "endDate": "2027-02-08",
+          "dayCount": 4,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "qingming-festival",
+          "names": { "en": "Qingming Festival", "zh": "清明节", "ko": "청명절" },
+          "startDate": "2027-04-05",
+          "endDate": "2027-04-05",
+          "dayCount": 1,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "labour-day",
+          "names": { "en": "Labour Day", "zh": "劳动节", "ko": "노동절" },
+          "startDate": "2027-05-01",
+          "endDate": "2027-05-02",
+          "dayCount": 2,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "dragon-boat-festival",
+          "names": { "en": "Dragon Boat Festival", "zh": "端午节", "ko": "단오절" },
+          "startDate": "2027-06-09",
+          "endDate": "2027-06-09",
+          "dayCount": 1,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "mid-autumn-festival",
+          "names": { "en": "Mid-Autumn Festival", "zh": "中秋节", "ko": "중추절" },
+          "startDate": "2027-09-15",
+          "endDate": "2027-09-15",
+          "dayCount": 1,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        },
+        {
+          "id": "national-day",
+          "names": { "en": "National Day", "zh": "国庆节", "ko": "국경절" },
+          "startDate": "2027-10-01",
+          "endDate": "2027-10-03",
+          "dayCount": 3,
+          "basis": "statutory",
+          "compensatoryWorkdays": []
+        }
+      ],
       "compensatoryWorkdays": [],
-      "boundary": "No dates are inferred from lunar calendars, previous years or travel-platform forecasts."
+      "boundary": "Only the statutory days fixed by the amended Regulation are listed; lunar dates are cross-checked against Hong Kong's gazetted 2027 holiday list. Bridged days off and compensatory workdays are set by the State Council's annual notice, usually published in November or December, and are not inferred here."
     }
   ]
 }

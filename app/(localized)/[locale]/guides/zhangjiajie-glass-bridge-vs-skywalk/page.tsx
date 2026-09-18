@@ -11,6 +11,7 @@ import {
   ZHANGJIAJIE_GLASS_BRIDGE_HERO,
 } from "../../../../../lib/tantanZhangjiajieStoryI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -29,7 +30,7 @@ export async function generateMetadata({
   const copy = getTantanZhangjiajieStoryCopy(locale);
 
   return {
-    title: copy.title,
+    title: resolvePageTitle(copy.metadataTitle, locale),
     description: copy.dek,
     alternates: {
       canonical: guide.canonicalPath,

@@ -315,7 +315,7 @@ export const legacyGuideRegistry = [
       en: {
         path: "/guides/kevin-before-the-hotel-pickup/",
         title:
-          "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
+          "Before the Pickup: How Kevin Prepares a Guided Day in China",
         headline:
           "Before the Hotel Pickup: How Kevin Prepares a Guided Day in China",
         description:
@@ -338,7 +338,7 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/kevin-before-the-hotel-pickup/",
-        title: "호텔 픽업 전부터 시작되는 하루: Kevin의 중국 일정 준비",
+        title: "호텔 픽업 전: Kevin의 중국 하루 준비법",
         headline:
           "손님에게는 하루 일정이지만, Kevin의 준비는 만나기 전부터 시작됩니다",
         description:
@@ -743,7 +743,7 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/do-us-citizens-need-visa-china-2026/",
-        title: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
+        title: "미국 여권 중국 비자 2026: 필요할까?",
         headline: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
         description:
           "미국 여권의 일반적인 중국 본토 여행에는 대체로 L 비자가 필요합니다. 240시간 무비자 환승, 하이난 30일 지역 무비자와 일반 왕복 일정을 비교합니다.",
@@ -915,7 +915,7 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/china-240-hour-visa-free-transit-route-check/",
-        title: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
+        title: "중국 240시간 무비자 환승: 내 경로도 될까?",
         headline: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
         description:
           "규칙은 하나입니다. 중국을 떠나 향하는 곳이 들어오기 전과 달라야 합니다. 실제 경로 예시와 허용 지역, 다음 날 기산 규칙으로 확인하세요.",

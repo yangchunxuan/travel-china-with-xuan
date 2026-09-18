@@ -35,7 +35,7 @@
   "locales": {
     "en": {
       "path": "/guides/yangshan-automated-port-explained/",
-      "title": "Yangshan Automated Port Explained: Containers, Software and People",
+      "title": "Yangshan Automated Port: How a Container Moves Through It",
       "headline": "How a Container Moves Through Yangshan Phase IV",
       "description": "Follow one container through Yangshan Phase IV and understand what TOS, ECS, automated equipment and human operators each do—and why the terminal is not a walk-in attraction.",
       "heroAlt": "Container cranes, stacked containers and a service road at Yangshan Port in 2013.",
@@ -65,7 +65,7 @@
     },
     "ko": {
       "path": "/ko/guides/yangshan-automated-port-explained/",
-      "title": "양산 자동화 항만의 작동 원리: 컨테이너·소프트웨어·사람",
+      "title": "양산 자동화 항만: 컨테이너·소프트웨어·사람",
       "headline": "컨테이너 하나로 이해하는 양산항 4단계 터미널",
       "description": "양산항 4단계에서 컨테이너가 이동하는 과정을 따라가며 TOS, ECS, 자동화 장비와 사람이 맡는 역할, 그리고 이곳이 자유 관람지가 아닌 이유를 설명합니다.",
       "heroAlt": "2013년 양산항의 컨테이너 크레인, 적재 컨테이너와 항만 도로.",

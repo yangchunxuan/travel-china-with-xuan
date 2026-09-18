@@ -226,6 +226,7 @@ const body: StructuredPageBody = {
         { label: "中国入境要求（英文专题页）", href: "/guides/china-entry-requirements/", description: "把签证、免签与过境资格和入境卡分开核对。" },
         { label: "护照有效期与空白页", href: "/zh/guides/china-passport-validity-and-blank-pages/", description: "检查实体护照，并区分航空公司、签证和边检规则。" },
         { label: "中国海关红色或绿色通道", href: "/zh/guides/china-customs-red-green-channels/", description: "通过边检后判断行李是否需要向海关申报。" },
+        { label: "携带食品、植物与动物产品入境中国", href: "/zh/guides/food-plants-and-animal-products-into-china/", description: "打包前确认哪些物品需要申报、放弃携带或留在家中。" },
         { label: "抵达中国当天能否安排限时预约", href: "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "保护抵达日，不假设网上填卡能消除边检耗时的不确定性。" },
         { label: "外国旅客酒店入住", href: "/zh/guides/foreigners-china-hotel/", description: "把酒店接待与住宿登记作为下一项独立任务。" },
       ],

@@ -5,10 +5,11 @@ import {
   getGuideLanguagePaths,
 } from "../../../../lib/guideRegistry";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry("kevin-before-the-hotel-pickup", "en");
 
 export const metadata: Metadata = {
-  title: guide.title,
+  title: resolvePageTitle(guide.title, "en"),
   description: guide.description,
   alternates: {
     canonical: guide.canonicalPath,

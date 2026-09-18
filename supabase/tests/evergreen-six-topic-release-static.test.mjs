@@ -69,9 +69,9 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [springFestival.datePublished, springFestival.dateModified, springFestival.sourceReviewedDate],
-    ["2026-08-13", "2026-08-22", "2026-08-22"],
+    ["2026-08-13", "2026-09-18", "2026-09-18"],
   );
-  assert.equal(springFestival.locales.en.title, "Chinese New Year in China: Should Foreign Travellers Visit?");
+  assert.equal(springFestival.locales.en.title, "Chinese New Year in China: Is It a Good Time to Visit?");
   assert.equal(springFestival.search.primaryIntent, "plan");
 
   const forbiddenCity = JSON.parse(await source(
@@ -147,7 +147,8 @@ test("Spring Festival keeps annual dates with the calendar owner and resolves ev
     assert.match(bodies[locale], new RegExp(`"?href"?:\\s*"${prefix}/plan/"`, "u"));
     assert.doesNotMatch(bodies[locale], /first-trip-to-china/u);
   }
-  assert.match(bodies.en, /mainland China's 2027 days off[\s\S]*had not yet been published/iu);
+  assert.match(bodies.en, /2027 statutory dates are 5–8 February/iu);
+  assert.match(bodies.en, /bridged break, compensatory workdays and Chunyun period[\s\S]*annual notices/iu);
   assert.match(bodies.en, /A planning pattern, not the 2027 official calendar/u);
 });
 
@@ -191,7 +192,7 @@ test("shared discovery and governance expose the release without paid-service am
   const cny = searchMap.coverage.published.find((entry) =>
     entry.id === "lunar-new-year-customs-for-visitors"
   );
-  assert.equal(cny.title, "Chinese New Year in China: Should Foreign Travellers Visit?");
+  assert.equal(cny.title, "Chinese New Year in China: Is It a Good Time to Visit?");
   assert.equal(cny.targetIntent, "plan");
   const wallCandidate = searchMap.coverage.candidates
     .find((entry) => entry.candidateId === "destination-20260811-02");
