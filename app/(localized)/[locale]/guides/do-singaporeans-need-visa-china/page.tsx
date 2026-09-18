@@ -8,6 +8,7 @@ import {
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 import { getSingaporeChinaVisaCopy } from "../../../../../lib/singaporeChinaVisaI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -26,7 +27,7 @@ export async function generateMetadata({
   const copy = getSingaporeChinaVisaCopy(locale);
 
   return {
-    title: copy.title,
+    title: resolvePageTitle(copy.metadataTitle, locale),
     description: copy.metadataDescription,
     alternates: {
       canonical: guide.canonicalPath,

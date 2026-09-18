@@ -384,6 +384,16 @@ const body = {
           href: "/ko/guides/china-hotel-near-metro/",
           description: "거리 표현만 믿지 말고 실제 입구, 마지막 도보와 짐 동선을 확인하세요.",
         },
+        {
+          label: "룽지 다랑논 당일치기 vs 1박",
+          href: "/ko/guides/longji-rice-terraces-day-trip-or-overnight/",
+          description: "구이린에서 당일치기로 갈지, 하룻밤 묵을지를 먼저 정하세요.",
+        },
+        {
+          label: "양숴 숙소: 시내와 위룽허",
+          href: "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+          description: "이후 이동을 예약하기 전에 양숴 숙소 거점을 정하세요.",
+        },
       ],
     },
     {

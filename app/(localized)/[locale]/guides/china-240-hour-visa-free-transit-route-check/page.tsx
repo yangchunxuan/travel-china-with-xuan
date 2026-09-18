@@ -7,6 +7,7 @@ import {
 } from "../../../../../lib/guideRegistry";
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -24,7 +25,7 @@ export async function generateMetadata({
   const guide = getGuideEntry("china-240-hour-visa-free-transit-route-check", locale);
 
   return {
-    title: guide.title,
+    title: resolvePageTitle(guide.title, locale),
     description: guide.description,
     alternates: {
       canonical: guide.canonicalPath,

@@ -361,6 +361,11 @@ const body = {
           description: "返回Homeground中立的住宿决策集合。",
         },
         {
+          label: "抵达桂林机场或火车站",
+          href: "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
+          description: "先选对抵达枢纽，再确定前往阳朔住宿区的接驳。",
+        },
+        {
           label: "桂林到阳朔：火车、公路还是游船",
           href: "/zh/guides/guilin-yangshuo-transport-route/",
           description: "基地选好后，再匹配准确车站、机场、码头与酒店端点。",

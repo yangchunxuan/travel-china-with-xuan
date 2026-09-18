@@ -112,7 +112,7 @@ const checks = [
     alternates: languageUrls.singaporeVisa,
     linkedFrom: "ko/guides/index.html",
     mustContain:
-      "싱가포르 여권으로 중국 비자가 필요할까? 30일 무비자 규정",
+      "싱가포르 여권 중국 비자: 30일 무비자 규정",
     mustNotContain:
       "Do Singaporeans Need a Visa for China? The 30-Day Rule",
   },

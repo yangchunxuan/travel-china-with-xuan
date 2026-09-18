@@ -523,6 +523,8 @@ const body = {
           href: "/ko/guides/do-you-need-a-tour-guide-in-china/",
           description: "모든 단계에 도움을 붙이기보다 필요한 곳에만 현지 지원을 활용하세요.",
         },
+    { label: "선전 공항·기차역·출입경 지점 고르기", href: "/ko/guides/shenzhen-airport-railway-station-border-port-selector/", description: "다음 목적지에 맞는 선전 진입 지점을 고르세요." },
+    { label: "광저우에서 홍콩까지 전체 이동 비교", href: "/ko/guides/guangzhou-hong-kong-transport-route/", description: "홍콩을 추가하기 전에 문에서 문까지 전체 이동을 비교하세요." },
       ],
     },
     {

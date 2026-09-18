@@ -19,8 +19,8 @@ const body = {
       id: "next-date",
       type: "callout",
       tone: "warning",
-      title: "Next festival date known; mainland holiday arrangement not yet published",
-      body: "Reviewed 22 August 2026: Lunar New Year's Day falls on Saturday, 6 February 2027, as shown by the Hong Kong Observatory's official calendar and Hong Kong's gazetted holiday list. That establishes the lunar date only. Mainland China's 2027 days off, compensatory workdays and Chunyun period had not yet been published at review time. Do not copy Hong Kong's holiday arrangement or the 2026 mainland break into a 2027 China itinerary. Use the Homeground public-holiday calendar when the State Council publishes the annual arrangement."
+      title: "Four statutory days are fixed; the full 2027 arrangement is not",
+      body: "Reviewed 18 September 2026: Lunar New Year's Day falls on Saturday, 6 February 2027. Mainland regulations fix four statutory Spring Festival days from New Year's Eve through the third day of the lunar year, so the 2027 statutory dates are 5–8 February. The longer bridged break, compensatory workdays and Chunyun period still require separate annual notices. Do not copy Hong Kong's holiday arrangement or the 2026 mainland break into a 2027 itinerary; check the Homeground public-holiday calendar after the State Council publishes the annual arrangement."
     },
     {
       id: "pressure-heading",

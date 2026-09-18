@@ -67,7 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "입국 점검을 마무리하세요", items: [
     { label: "중국 세관 적색·녹색 통로", href: "/ko/guides/china-customs-red-green-channels/", description: "모든 가방을 선별한 뒤 올바른 도착 통로를 고르세요." },
     { label: "중국 입국 요건(영문 허브)", href: "/guides/china-entry-requirements/", description: "출입국 서류와 세관·검역 문제를 분리하세요." },
-    { label: "항공·열차 보조배터리 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "마찰이 잦은 다른 수하물 점검도 끝내세요." }
+    { label: "항공·열차 보조배터리 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "마찰이 잦은 다른 수하물 점검도 끝내세요." },
+    { label: "중국 온라인 입국카드", href: "/ko/guides/china-online-arrival-card/", description: "착륙 전에 무료 공식 양식을 미리 작성하고 현장 대안도 알아 두세요." }
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "공고 제470호와 반입·배송 금지 검역물 목록", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "중국 농업농촌부·해관총서", reviewedAt: "2026-09-09" },

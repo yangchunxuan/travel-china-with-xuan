@@ -523,6 +523,8 @@ const body = {
           href: "/guides/do-you-need-a-tour-guide-in-china/",
           description: "Use local support selectively instead of adding it to every step.",
         },
+    { label: "Shenzhen airport, railway station or border port?", href: "/guides/shenzhen-airport-railway-station-border-port-selector/", description: "Pick the Shenzhen entry point that matches where you are actually going next." },
+    { label: "Guangzhou to Hong Kong: compare the whole trip", href: "/guides/guangzhou-hong-kong-transport-route/", description: "Compare rail, road and ferry door to door before adding Hong Kong." },
       ],
     },
     {

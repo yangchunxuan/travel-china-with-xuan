@@ -108,6 +108,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "links", type: "internal-links", title: "룽지를 전체 여정에 연결하기", items: [
         {"label":"구이린·양숴·룽지 순서와 숙박 계획","href":"/ko/guides/guilin-yangshuo-longji-route-order/"},
+    { label: "구이린 공항 또는 기차역 도착", href: "/ko/guides/guilin-airport-or-railway-station-arrival-guide/", description: "산악 이동을 확정하기 전에 알맞은 도착 허브를 고르세요." },
     { label: "구이린에서 양숴까지: 열차, 도로, 유람선", href: "/ko/guides/guilin-yangshuo-transport-route/", description: "별도의 구이린–양숴 교통 선택은 기존 페이지에서 결정하세요." },
     { label: "중국 일정이 너무 빡빡한지 확인하기", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "룽지가 가치 없는 1박 이동이나 취약한 연결을 만드는지 검사하세요." },
     { label: "부모님과 함께하는 중국 일정", href: "/ko/guides/china-itinerary-with-older-parents/", description: "가장 이동이 어려운 여행자 기준으로 걷기, 휴식과 차량을 설계하세요." },

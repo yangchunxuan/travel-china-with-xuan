@@ -33,6 +33,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "漓江景区官方资料把精华游写为约60公里、约4小时的单程行程，三星船与四星船使用不同出发港，均到阳朔龙头山码头。官方提示建议旺季至少提前一天购票，并明确前往码头和从阳朔返回的交通费不包含在船票中，单程游船也不提供行李寄存。列车须按日期查12306。未找到可验证的阳朔站到住宿的当前官方固定班线时刻或票价，因此这一段必须另行确认，不能引用旧价格或旧时刻。" },
   { id: "help", type: "callout", title: "需要比较两端？", tone: "decision", body: "提供日期、桂林抵达点、阳朔酒店、人数、行李，以及水路是交通还是体验。Homeground可比较各段接驳，并列出出发前需要再次确认的信息。" },
   { id: "links", type: "internal-links", title: "继续规划", items: [
+    { label: "桂林机场或火车站抵达指南", href: "/zh/guides/guilin-airport-or-railway-station-arrival-guide/", description: "比较后续路线前，先选对桂林抵达枢纽。" },
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选定车站后再准备乘车。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给水路或公路日足够空间。" },
     { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为最后一段保留付款备选。" },

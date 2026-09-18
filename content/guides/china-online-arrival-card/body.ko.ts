@@ -226,6 +226,7 @@ const body: StructuredPageBody = {
         { label: "중국 입국 요건(영문 허브)", href: "/guides/china-entry-requirements/", description: "비자, 무비자, 환승 자격을 입국카드와 분리해 확인하세요." },
         { label: "여권 유효기간과 빈 페이지", href: "/ko/guides/china-passport-validity-and-blank-pages/", description: "실물 여권을 점검하고 항공사·비자·국경 규칙을 구분하세요." },
         { label: "중국 세관 적색·녹색 통로", href: "/ko/guides/china-customs-red-green-channels/", description: "출입국 심사 뒤 수하물 세관 신고가 필요한지 결정하세요." },
+        { label: "식품·식물·동물성 제품 중국 반입", href: "/ko/guides/food-plants-and-animal-products-into-china/", description: "짐을 싸기 전에 신고하거나 포기해야 할 물품과 가져오지 말아야 할 물품을 확인하세요." },
         { label: "중국 도착일 시간 지정 예약 판단", href: "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "온라인 카드가 심사시간의 불확실성을 없앤다고 가정하지 말고 첫날을 보호하세요." },
         { label: "외국인 여행자의 중국 호텔 체크인", href: "/ko/guides/foreigners-china-hotel/", description: "호텔 수용과 숙박 등록을 다음 독립 업무로 처리하세요." },
       ],

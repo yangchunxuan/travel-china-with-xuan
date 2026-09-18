@@ -12,6 +12,7 @@ test("Tantan field note is one server-readable, seven-check article", async () =
 
   assert.match(page, /<main id="story-content" tabIndex=\{-1\}>/);
   assert.equal(page.match(/<h1>/g)?.length, 1);
+  assert.match(page, /<h1>\{copy\.title\}<\/h1>/);
   assert.match(page, /copy\.sections\.map/);
   assert.match(page, /id=\{`check-\$\{index \+ 1\}`\}/);
   assert.match(page, /"@type": "Article"/);
@@ -19,8 +20,10 @@ test("Tantan field note is one server-readable, seven-check article", async () =
   assert.match(page, /const personId = `\$\{studioPageUrl\}#tantan`/);
   assert.doesNotMatch(page, /\$\{studioProfileUrl\}#person/);
   assert.match(copy, /Glass Bridge, Tianmen Skywalk or National Forest Park/);
+  assert.match(copy, /metadataTitle:\s*\n?\s*"Zhangjiajie Glass Bridge vs Tianmen Skywalk vs Forest Park"/);
   assert.match(copy, /大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分/);
   assert.match(copy, /대협곡 유리다리·톈먼산 유리잔도·국가삼림공원 구분하기/);
+  assert.match(copy, /metadataTitle: "장자제 유리다리 vs 톈먼산 잔도 vs 삼림공원"/);
   assert.match(copy, /Use WhatsApp or leave your email/);
   assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
   assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);
@@ -49,6 +52,10 @@ test("Tantan field note uses its own localized registry routes and metadata", as
     localizedPage,
     /getGuideEntry\("zhangjiajie-glass-bridge-vs-skywalk", locale\)/,
   );
+  assert.match(page, /title: resolvePageTitle\(copy\.metadataTitle, "en"\)/);
+  assert.match(page, /openGraph: \{[\s\S]*title: copy\.title/u);
+  assert.match(localizedPage, /title: resolvePageTitle\(copy\.metadataTitle, locale\)/);
+  assert.match(localizedPage, /openGraph: \{[\s\S]*title: copy\.title/u);
   assert.match(registry, /path: "\/guides\/zhangjiajie-glass-bridge-vs-skywalk\/"/);
   assert.match(registry, /path: "\/zh\/guides\/zhangjiajie-glass-bridge-vs-skywalk\/"/);
   assert.match(registry, /path: "\/ko\/guides\/zhangjiajie-glass-bridge-vs-skywalk\/"/);

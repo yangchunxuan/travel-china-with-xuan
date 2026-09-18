@@ -91,12 +91,12 @@ const svg = `
   <text x="60" y="48" class="eyebrow">HOMEGROUND CHINA · ANNUAL PLANNING CALENDAR</text>
   <text x="60" y="116" class="title">China public holidays · 2026</text>
   <text x="60" y="158" class="subtitle">Seven official breaks and the weekend workdays connected to them</text>
-  <g transform="translate(1090 44)">
+  <g transform="translate(1050 44)">
     <rect width="210" height="50" rx="25" fill="#20373f"/>
     <text x="105" y="32" class="status" style="fill:#fffdf8" text-anchor="middle">2026 OFFICIAL</text>
-    <rect x="225" width="265" height="50" rx="25" fill="#fffdf8" stroke="#20373f" stroke-width="2"/>
-    <text x="358" y="21" class="status" text-anchor="middle">2027 NOT PUBLISHED</text>
-    <text x="358" y="40" font-size="13" text-anchor="middle">尚未发布 · 아직 발표되지 않음</text>
+    <rect x="225" width="300" height="50" rx="25" fill="#fffdf8" stroke="#20373f" stroke-width="2"/>
+    <text x="375" y="21" class="status" text-anchor="middle">2027 STATUTORY DATES</text>
+    <text x="375" y="40" font-size="13" text-anchor="middle">调休待发布 · 연휴 조정 미발표</text>
   </g>
   <text x="60" y="205" class="eyebrow">OFFICIAL DAYS OFF</text>
   ${holidayRows}

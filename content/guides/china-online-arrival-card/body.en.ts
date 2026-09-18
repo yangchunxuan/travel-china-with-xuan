@@ -226,6 +226,7 @@ const body: StructuredPageBody = {
         { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Check visa, visa-free and transit owners separately from the arrival card." },
         { label: "Passport validity and blank pages", href: "/guides/china-passport-validity-and-blank-pages/", description: "Audit the physical passport and separate airline, visa and border rules." },
         { label: "China Customs red or green channel", href: "/guides/china-customs-red-green-channels/", description: "Decide whether baggage needs a Customs declaration after immigration." },
+        { label: "Food, plants and animal products at China Customs", href: "/guides/food-plants-and-animal-products-into-china/", description: "Check what must be declared, surrendered or left at home before packing." },
         { label: "Can a China arrival day support a timed booking?", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Protect the first day without assuming the online card removes border-processing uncertainty." },
         { label: "Hotel check-in for foreign travellers", href: "/guides/foreigners-china-hotel/", description: "Keep hotel acceptance and accommodation registration as the next task." },
       ],

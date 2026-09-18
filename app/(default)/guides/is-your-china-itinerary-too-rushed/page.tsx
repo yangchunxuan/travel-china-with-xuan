@@ -6,11 +6,12 @@ import {
 } from "../../../../lib/guideRegistry";
 import { getItineraryRushGuideCopy } from "../../../../lib/chinaItineraryTooRushedI18n";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry("is-your-china-itinerary-too-rushed", "en");
 const copy = getItineraryRushGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.metadata.title,
+  title: resolvePageTitle(copy.metadata.title, "en"),
   description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,

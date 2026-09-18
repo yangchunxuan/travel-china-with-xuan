@@ -361,6 +361,11 @@ const body = {
           description: "Homeground의 중립적인 숙소 결정 모음으로 돌아갑니다.",
         },
         {
+          label: "구이린 공항 또는 기차역 도착",
+          href: "/ko/guides/guilin-airport-or-railway-station-arrival-guide/",
+          description: "알맞은 도착 허브를 고른 뒤 양숴 숙소까지의 이동을 확정하세요.",
+        },
+        {
           label: "구이린에서 양숴까지: 열차, 도로, 유람선",
           href: "/ko/guides/guilin-yangshuo-transport-route/",
           description: "거점을 고른 뒤 정확한 역, 공항, 부두와 호텔 목적지를 맞춥니다.",

@@ -468,6 +468,11 @@ export default {
         { label: "중국 관광지 입장권 확인하기", href: "/ko/guides/official-or-reseller-china-tickets/", description: "관광지의 실제 발권 주체를 찾고 재판매처의 지원·재고·실명 정보·환불 조건을 비교한 뒤 입장 가능한 예약인지 확인하세요." },
         { label: "이화원 입구와 동선 선택하기", href: "/ko/guides/summer-palace-gates-route-and-boat-plan/", description: "동궁문·북궁문·신건궁문을 우선순위에 맞추고, 기본표와 통합표를 구분하며, 배가 멈춰도 실행 가능한 동선을 만듭니다." },
         { label: "천단 방문 계획하기", href: "/ko/guides/temple-of-heaven-gates-and-ritual-sequence/", description: "베이징의 또 다른 핵심 유산을 위해 입구, 표와 의례 순서를 별도로 설계하세요." },
+        {
+          label: "중국 국가박물관 예약과 핵심 동선",
+          href: "/ko/guides/national-museum-of-china-booking-and-route/",
+          description: "광장 맞은편 박물관을 같은 여권으로 예약하고, 전체가 아닌 핵심 동선만 걸으세요.",
+        },
       ],
     },
     {

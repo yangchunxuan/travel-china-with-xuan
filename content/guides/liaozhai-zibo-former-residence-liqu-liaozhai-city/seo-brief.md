@@ -51,9 +51,9 @@ The page therefore wins by answering a classification-and-choice question rather
 
 ## Metadata intent
 
-- EN title: `Zibo Liaozhai: Former Residence, Liaozhai Liqu and Liaozhai City`
+- EN title: `Liaozhai in Zibo: Pu Songling's Home, Liqu and Liaozhai City`
 - ZH title: `淄博聊斋怎么看：蒲松龄故居、聊斋俚曲与聊斋城`
-- KO title: `쯔보 랴오자이 읽기: 포송령 옛집, 랴오자이 리취, 랴오자이청`
+- KO title: `쯔보 랴오자이: 포송령 옛집·리취·랴오자이청`
 - Descriptions state all four layers and avoid hours, ticketing and performance promises.
 - Hero alt identifies the former-residence gate and protection plaque; it does not use supernatural marketing language.
 

@@ -468,6 +468,11 @@ export default {
         { label: "核验中国景点门票", href: "/zh/guides/official-or-reseller-china-tickets/", description: "先识别景点票务运营方，再比较经销商支持、库存状态、实名传递与退改条款，最后核验真正可入园的订单。" },
         { label: "选择颐和园入口和路线", href: "/zh/guides/summer-palace-gates-route-and-boat-plan/", description: "按东宫门、北宫门或新建宫门选择实际路线，分清门票与联票，并准备一条即使游船停航也能完成的步行方案。" },
         { label: "规划天坛参观", href: "/zh/guides/temple-of-heaven-gates-and-ritual-sequence/", description: "为另一处北京核心遗产单独安排入口、票务与礼制顺序。" },
+        {
+          label: "中国国家博物馆怎么预约",
+          href: "/zh/guides/national-museum-of-china-booking-and-route/",
+          description: "用同一本护照预约广场对面的国博，只走精简路线。",
+        },
       ],
     },
     {

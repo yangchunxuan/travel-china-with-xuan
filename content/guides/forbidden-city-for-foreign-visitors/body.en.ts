@@ -468,6 +468,11 @@ export default {
         { label: "Verify a China attraction ticket", href: "/guides/official-or-reseller-china-tickets/", description: "Identify the attraction’s ticket owner, compare reseller support and terms, and verify the booking state before trusting a China attraction ticket." },
         { label: "Choose a Summer Palace gate and route", href: "/guides/summer-palace-gates-route-and-boat-plan/", description: "Match the East, North or New Palace Gate to your priorities, understand base versus combined tickets and build a route that still works if boats stop." },
         { label: "Plan a Temple of Heaven visit", href: "/guides/temple-of-heaven-gates-and-ritual-sequence/", description: "Use a separate gate, ticket and ritual-sequence plan for another major Beijing heritage site." },
+        {
+          label: "National Museum of China: booking and a focused route",
+          href: "/guides/national-museum-of-china-booking-and-route/",
+          description: "Book the museum across the square on the same passport, then walk a short route instead of the whole building.",
+        },
       ],
     },
     {

@@ -6,11 +6,12 @@ import {
 } from "../../../../lib/guideRegistry";
 import { getSingaporeChinaVisaCopy } from "../../../../lib/singaporeChinaVisaI18n";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry("do-singaporeans-need-visa-china", "en");
 const copy = getSingaporeChinaVisaCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.title,
+  title: resolvePageTitle(copy.metadataTitle, "en"),
   description: copy.metadataDescription,
   alternates: {
     canonical: guide.canonicalPath,

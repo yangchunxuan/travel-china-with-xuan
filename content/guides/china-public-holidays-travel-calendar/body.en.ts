@@ -6,20 +6,20 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "China's public-holiday calendar changes by year, and the days off are only the first layer of travel planning. Use the official dates below to find exposed intercity moves, timed attractions and hotel changes; then check each operator's live rules. The 2026 schedule is official. The 2027 schedule has not yet been published.",
+      text: "China's public-holiday calendar changes by year, and the days off are only the first layer of travel planning. Use the official dates below to find exposed intercity moves, timed attractions and hotel changes; then check each operator's live rules. The 2026 schedule is official. For 2027, the statutory holidays are fixed by regulation; the bridged days off and compensatory workdays have not yet been published.",
     },
     {
       id: "status-summary",
       type: "comparison",
-      title: "Calendar status checked August 11, 2026",
+      title: "Calendar status checked September 18, 2026",
       columns: [
         {
           heading: "2026 — official",
           body: "The State Council notice lists seven holiday periods and six compensatory workdays. The complete dates appear below.",
         },
         {
-          heading: "2027 — not yet published",
-          body: "No dates on this page are guessed from lunar dates, previous years or travel-platform forecasts. This page will update after the official notice appears.",
+          heading: "2027 — statutory dates only",
+          body: "The amended National Holidays Regulation fixes 13 statutory days, listed below. The State Council's annual notice, usually issued in November or December, adds the bridged days off and compensatory workdays. Those are not guessed here.",
         },
       ],
     },
@@ -55,6 +55,32 @@ const body = {
       tone: "warning",
       title: "Official holiday does not mean universal opening hours",
       body: "The State Council calendar tells you the nationwide days off and compensatory workdays. It does not promise that a museum opens, a restaurant closes, a hotel has rooms or a particular train has seats. Those are separate operator decisions.",
+    },
+    {
+      id: "statutory-2027-heading",
+      type: "heading",
+      level: 2,
+      text: "Statutory 2027 holidays: bridging days and workdays pending",
+    },
+    {
+      id: "statutory-2027-intro",
+      type: "paragraph",
+      text: "These are the days the amended National Holidays Regulation makes statutory holidays; the lunar dates are cross-checked against Hong Kong's gazetted 2027 holiday list. The Regulation allows statutory holidays to be joined into longer breaks, but the actual bridged days off and compensatory workdays exist only once the State Council notice is published. Treat every 2027 long weekend as unconfirmed until then.",
+    },
+    {
+      id: "statutory-2027-calendar",
+      type: "table",
+      caption: "Statutory 2027 holidays (State Council notice pending)",
+      columns: ["Holiday", "Statutory day(s) off", "Length", "Bridged days off / workdays"],
+      rows: [
+        ["New Year's Day", "Friday, January 1", "1 day", "Pending State Council notice"],
+        ["Spring Festival", "February 5–8 (Lunar New Year's Eve to the third day)", "4 days", "Pending"],
+        ["Qingming Festival", "Monday, April 5", "1 day", "Pending"],
+        ["Labour Day", "May 1–2", "2 days", "Pending"],
+        ["Dragon Boat Festival", "Wednesday, June 9", "1 day", "Pending"],
+        ["Mid-Autumn Festival", "Wednesday, September 15", "1 day", "Pending"],
+        ["National Day", "October 1–3", "3 days", "Pending"],
+      ],
     },
     {
       id: "different-effects-heading",
@@ -228,8 +254,8 @@ const body = {
       id: "future-boundary",
       type: "callout",
       tone: "warning",
-      title: "2027: not yet published",
-      body: "As of August 11, 2026, the official 2027 public-holiday and compensatory-workday schedule has not yet been published. Keep the annual calendar as an unresolved planning dependency. Do not convert festival dates or last year's workdays into a booking promise.",
+      title: "2027: statutory dates fixed, arrangement pending",
+      body: "Reviewed 18 September 2026: the 2027 statutory holidays come from the amended National Holidays Regulation, with lunar dates checked against Hong Kong's gazetted 2027 list. The State Council's bridged days off, compensatory workdays and the Spring Festival travel season had not been published. Do not book around a guessed long weekend; this page updates when the notice appears.",
     },
     {
       id: "update-mechanism",

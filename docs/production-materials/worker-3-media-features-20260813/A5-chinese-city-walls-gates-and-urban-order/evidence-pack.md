@@ -4,7 +4,7 @@
 - Action: `update-existing`
 - Canonical owner: `chinese-city-walls-gates-and-urban-order`
 - Working title (ZH): 如何读懂中国城墙：城门、防御、礼制与城市形态
-- Working title (EN): How to Read Chinese City Walls: Gates, Defense, Ritual and Urban Form
+- Working title (EN): How to Read a Chinese City Wall: Gates, Defense and Ritual
 - Research review date: 2026-08-13 (Asia/Shanghai)
 - Production status: exact-owner update material; no page, slug or metadata created
 

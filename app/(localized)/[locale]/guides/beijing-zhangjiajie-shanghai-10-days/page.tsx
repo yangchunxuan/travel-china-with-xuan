@@ -7,6 +7,7 @@ import {
 } from "../../../../../lib/guideRegistry";
 import type { HomegroundLocale } from "../../../../../lib/homegroundI18n";
 
+import { resolvePageTitle } from "../../../../../lib/pageTitle";
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
 function localizedLocale(value: string): LocalizedLocale {
@@ -27,7 +28,7 @@ export async function generateMetadata({
   );
 
   return {
-    title: guide.title,
+    title: resolvePageTitle(guide.title, locale),
     description: guide.description,
     alternates: {
       canonical: guide.canonicalPath,

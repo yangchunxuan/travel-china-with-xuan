@@ -6,6 +6,7 @@ import {
 } from "../../../../lib/guideRegistry";
 import { getTransportGuideCopy } from "../../../../lib/beijingZhangjiajieShanghaiTransportI18n";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry(
   "beijing-zhangjiajie-shanghai-transport",
   "en",
@@ -13,7 +14,7 @@ const guide = getGuideEntry(
 const copy = getTransportGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.metadata.title,
+  title: resolvePageTitle(copy.metadata.title, "en"),
   description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,

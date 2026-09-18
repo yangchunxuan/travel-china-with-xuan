@@ -67,7 +67,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "links", type: "internal-links", title: "继续完成入境检查", items: [
     { label: "中国海关红绿通道", href: "/zh/guides/china-customs-red-green-channels/", description: "检查完所有行李后选择正确入境通道。" },
     { label: "中国入境要求（英文专题页）", href: "/guides/china-entry-requirements/", description: "把移民证件与海关、检疫问题分开处理。" },
-    { label: "充电宝乘机与乘火车规则", href: "/zh/guides/china-power-bank-rules-flights-trains/", description: "完成另一个容易卡住的行李检查。" }
+    { label: "充电宝乘机与乘火车规则", href: "/zh/guides/china-power-bank-rules-flights-trains/", description: "完成另一个容易卡住的行李检查。" },
+    { label: "外国人来华网上入境卡", href: "/zh/guides/china-online-arrival-card/", description: "落地前先填官方免费入境卡，并了解纸质兜底。" }
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "第 470 号公告及禁止携带、寄递进境检疫物名录", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "农业农村部、海关总署", reviewedAt: "2026-09-09" },

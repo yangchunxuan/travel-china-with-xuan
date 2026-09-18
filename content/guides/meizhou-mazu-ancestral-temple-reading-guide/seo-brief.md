@@ -46,7 +46,7 @@ It does not compete for ferry schedules, island itineraries, ticketing, fixed op
 
 - EN title: `How to Read the Meizhou Mazu Ancestral Temple`
 - ZH title: `湄洲妈祖祖庙怎么读：建筑、信俗与现代展示`
-- KO title: `메이저우 마쭈 조묘 읽기: 건축, 신앙 관습, 현대 전시`
+- KO title: `메이저우 마쭈 조묘: 건축·신앙·현대 전시 읽기`
 - EN description: `A low-interference cultural reading guide to the Meizhou Mazu Ancestral Temple—not an opening-hours, ferry or ritual schedule.`
 - ZH description: `给非信众的低干扰文化观察指南；不是开放时间、船班、仪式或摄影许可攻略。`
 - KO description: `비신자가 방해를 최소화하며 문화를 관찰하도록 돕는 안내입니다. 운영 시간, 배편, 의례나 촬영 허가를 보장하지 않습니다.`

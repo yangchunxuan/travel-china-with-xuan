@@ -89,7 +89,8 @@ test("metadata, sitemap and contextual links expose the English article", async 
   const service = await source("components/ChinaItineraryReviewPage.tsx");
   const productionExport = await source("tools/prune-production-export.mjs");
 
-  assert.match(route, /title: copy\.metadata\.title/);
+  assert.match(route, /title: resolvePageTitle\(copy\.metadata\.title, "en"\)/);
+  assert.match(localizedRoute, /title: resolvePageTitle\(copy\.metadata\.title, locale\)/);
   assert.match(route, /description: copy\.metadata\.description/);
   assert.match(
     await source("lib/chinaItineraryTooRushedI18n.ts"),

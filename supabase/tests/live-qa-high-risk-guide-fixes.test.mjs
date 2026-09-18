@@ -66,16 +66,38 @@ test("holiday guide removes the dead MOT citation from body, source log, data an
   assert.doesNotMatch(allText, new RegExp(oldUrl.replaceAll(".", "\\."), "u"));
   for (const body of [en, zh, ko]) assert.match(body, new RegExp(replacement, "u"));
   const calendarData = JSON.parse(calendar);
+  const year2027 = calendarData.years.find((year) => year.year === 2027);
   const springPressure = calendarData.years
     .flatMap((year) => year.documentedPressurePeriods ?? [])
     .find((period) => period.id === "spring-festival-travel-season");
-  assert.equal(calendarData.checkedAt, "2026-08-11", "root freshness remains the last whole-calendar review");
+  assert.equal(calendarData.checkedAt, "2026-09-18", "root freshness includes the 2027 statutory-date review");
+  assert.equal(year2027?.status, "statutory_dates_only");
+  assert.deepEqual(
+    year2027?.holidays.map(({ id, startDate, endDate, dayCount, basis }) => ({ id, startDate, endDate, dayCount, basis })),
+    [
+      { id: "new-year", startDate: "2027-01-01", endDate: "2027-01-01", dayCount: 1, basis: "statutory" },
+      { id: "spring-festival", startDate: "2027-02-05", endDate: "2027-02-08", dayCount: 4, basis: "statutory" },
+      { id: "qingming-festival", startDate: "2027-04-05", endDate: "2027-04-05", dayCount: 1, basis: "statutory" },
+      { id: "labour-day", startDate: "2027-05-01", endDate: "2027-05-02", dayCount: 2, basis: "statutory" },
+      { id: "dragon-boat-festival", startDate: "2027-06-09", endDate: "2027-06-09", dayCount: 1, basis: "statutory" },
+      { id: "mid-autumn-festival", startDate: "2027-09-15", endDate: "2027-09-15", dayCount: 1, basis: "statutory" },
+      { id: "national-day", startDate: "2027-10-01", endDate: "2027-10-03", dayCount: 3, basis: "statutory" },
+    ],
+  );
+  assert.deepEqual(year2027?.compensatoryWorkdays, []);
+  assert.match(year2027?.boundary ?? "", /Only the statutory days[\s\S]*not inferred here/u);
+  assert.match(en, /For 2027, the statutory holidays are fixed by regulation/iu);
+  assert.match(en, /bridged days off and compensatory workdays have not yet been published/iu);
+  assert.match(zh, /2027年的法定节假日日期由法规确定/u);
+  assert.match(zh, /调休和连休安排尚未发布/u);
+  assert.match(ko, /2027년은 법정 공휴일 날짜만 법규로 정해져/u);
+  assert.match(ko, /연휴 조정과 대체 근무일은 아직 발표되지/u);
   assert.equal(springPressure?.checkedAt, "2026-08-31", "only the replacement Spring Festival source was rechecked");
   assert.match(calendar, /"sourceId": "ndrc-2026-spring-festival-schedule"/u);
-  assert.match(log, /Checked at: 2026-08-31/u);
+  assert.match(log, /Checked at: 2026-09-18/u);
   assert.match(render, /National Development and Reform Commission/u);
-  assert.equal(meta.dateModified, "2026-08-31");
-  assert.equal(meta.sourceReviewedDate, "2026-08-11");
+  assert.equal(meta.dateModified, "2026-09-18");
+  assert.equal(meta.sourceReviewedDate, "2026-09-18");
 
   const digest = createHash("sha256").update(hero).digest("hex");
   assert.match(plan, new RegExp("Final SHA-256: `" + digest + "`", "u"));

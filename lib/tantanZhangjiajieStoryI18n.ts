@@ -17,6 +17,7 @@ export interface TantanZhangjiajieStoryCopy {
   breadcrumbCurrent: string;
   eyebrow: string;
   title: string;
+  metadataTitle: string;
   dek: string;
   authorLabel: string;
   authorName: string;
@@ -74,6 +75,8 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     eyebrow: "Attraction decision · Zhangjiajie",
     title:
       "Zhangjiajie Glass Bridge, Tianmen Skywalk or National Forest Park?",
+    metadataTitle:
+      "Zhangjiajie Glass Bridge vs Tianmen Skywalk vs Forest Park",
     dek:
       "They are three different places: the Glass Bridge is at Zhangjiajie Grand Canyon, the glass skywalks are on Tianmen Mountain, and the pillar landscape is in Zhangjiajie National Forest Park.",
     authorLabel: "On-the-ground notes by",
@@ -223,6 +226,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     breadcrumbCurrent: "玻璃桥、玻璃栈道还是森林公园",
     eyebrow: "景点判断 · 张家界",
     title: "张家界大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分？",
+    metadataTitle: "张家界大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分？",
     dek:
       "这是三个不同地点：玻璃桥在张家界大峡谷，玻璃栈道在天门山，石英砂岩峰林主景区则是张家界国家森林公园。",
     authorLabel: "现场经验来自",
@@ -365,6 +369,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     breadcrumbCurrent: "유리다리·유리잔도·국가삼림공원",
     eyebrow: "관광지 선택 · 장자제",
     title: "장자제 대협곡 유리다리·톈먼산 유리잔도·국가삼림공원 구분하기",
+    metadataTitle: "장자제 유리다리 vs 톈먼산 잔도 vs 삼림공원",
     dek:
       "서로 다른 세 곳입니다. 유리다리는 장자제 대협곡, 유리잔도는 톈먼산, 사암 봉우리 풍경은 장자제 국가삼림공원에 있습니다.",
     authorLabel: "현장 경험",

@@ -1045,7 +1045,7 @@ const korean: TransportGuideCopy = {
   breadcrumbHome: "홈",
   breadcrumbCurrent: "베이징–장자제–상하이 교통",
   metadata: {
-    title: "베이징에서 장자제까지 비행기와 기차 비교, 이어서 상하이",
+    title: "베이징에서 장자제: 비행기 vs 기차, 다음은 상하이",
     description:
       "베이징에서 장자제까지는 알맞은 직항편이 대체로 유리합니다. 장자제에서 상하이 구간은 실제 출발 시각과 호텔까지의 총이동 시간으로 따로 비교하세요.",
   },

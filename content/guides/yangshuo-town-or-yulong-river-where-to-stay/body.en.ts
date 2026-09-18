@@ -361,6 +361,11 @@ const body = {
           description: "Return to Homeground's neutral accommodation decision collection.",
         },
         {
+          label: "Arriving at Guilin Airport or railway station",
+          href: "/guides/guilin-airport-or-railway-station-arrival-guide/",
+          description: "Choose the right arrival hub before fixing the transfer to your Yangshuo base.",
+        },
+        {
           label: "Guilin to Yangshuo: train, road or river",
           href: "/guides/guilin-yangshuo-transport-route/",
           description: "After choosing the base, match the exact station, airport, pier and hotel endpoints.",

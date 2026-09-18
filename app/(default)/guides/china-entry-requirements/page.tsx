@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ChinaEntryGuidesPage } from "../../../../components/ChinaEntryGuidesPage";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const title = "China Entry Guides: Visa-Free Rules by Passport & Route";
 const description =
   "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry, US visa guidance and a 240-hour transit route check.";
@@ -9,7 +10,7 @@ const socialImage =
   "https://homegroundchina.com/images/guides/china-visa-free-uk-citizens-2026/great-wall-og-1200.jpg";
 
 export const metadata: Metadata = {
-  title,
+  title: resolvePageTitle(title, "en"),
   description,
   alternates: {
     canonical: path,

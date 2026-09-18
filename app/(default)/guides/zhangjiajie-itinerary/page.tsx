@@ -6,11 +6,12 @@ import {
 } from "../../../../lib/guideRegistry";
 import { getZhangjiajieGuideCopy } from "../../../../lib/zhangjiajieGuideI18n";
 
+import { resolvePageTitle } from "../../../../lib/pageTitle";
 const guide = getGuideEntry("zhangjiajie-itinerary", "en");
 const copy = getZhangjiajieGuideCopy("en");
 
 export const metadata: Metadata = {
-  title: copy.metadata.title,
+  title: resolvePageTitle(copy.metadata.title, "en"),
   description: copy.metadata.description,
   alternates: {
     canonical: guide.canonicalPath,

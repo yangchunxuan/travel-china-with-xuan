@@ -105,7 +105,7 @@ For rail, search the travel date in China Railway 12306 and save the complete st
 
 This is the old-city orientation cluster. Use it to understand the wall, gates and central avenues, then let the evening finish near food and the hotel. The Bell Tower is a navigation node, not the whole old city. The Drum Tower and Muslim Quarter approaches can be combined on foot, but the busiest commercial lane is not a complete account of Xi’an’s Muslim communities or food culture.
 
-A focused wall section often teaches more than racing the complete circuit. Choose the gate that fits the day, check current access and distinguish historic fabric, conservation repair and modern visitor additions. The interpretive method belongs in **How to Read Chinese City Walls: Gates, Defense, Ritual and Urban Form** (`chinese-city-walls-gates-and-urban-order`). Entrances, cycling, night access, performances and maintenance are dynamic.
+A focused wall section often teaches more than racing the complete circuit. Choose the gate that fits the day, check current access and distinguish historic fabric, conservation repair and modern visitor additions. The interpretive method belongs in **How to Read a Chinese City Wall: Gates, Defense and Ritual** (`chinese-city-walls-gates-and-urban-order`). Entrances, cycling, night access, performances and maintenance are dynamic.
 
 ### Cluster 2: Shaanxi History Museum – Giant Wild Goose Pagoda – Tang culture zone
 
