@@ -87,6 +87,11 @@ begin
       when 'zh' then '张家界森林公园 4 天 3 晚固定路线私家团'
       when 'ko' then '장자제 국립삼림공원 4일 고정 코스 프라이빗 투어'
       else null end
+    when 'zhangjiajie-furong-fenghuang-7-day-private-tour' then case p_locale
+      when 'en' then 'Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour'
+      when 'zh' then '张家界、芙蓉镇与凤凰 7 天 6 晚私家团'
+      when 'ko' then '장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어'
+      else null end
     when 'zhangjiajie-4-day-private-tour' then case p_locale
       when 'en' then 'Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain'
       when 'zh' then '张家界4天3晚：峰林、玻璃桥与天门山'

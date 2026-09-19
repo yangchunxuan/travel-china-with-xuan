@@ -2830,6 +2830,423 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   lastReviewed: "2026-08-31",
 };
 
+const zhangjiajieFurongFenghuang: PrivateTourProduct = {
+  id: "private-tour-zhangjiajie-furong-fenghuang-7d6n",
+  slug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
+  days: 7,
+  nights: 6,
+  servicePolicy: standardServicePolicy,
+  title: l(
+    "Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour",
+    "张家界、芙蓉镇与凤凰 7 天 6 晚私家团",
+    "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+  ),
+  metadataTitle: l(
+    "7-Day Zhangjiajie, Furong & Fenghuang Private Tour",
+    "张家界芙蓉镇凤凰古城7天6晚私家团",
+    "장자제·푸룽전·펑황 6박 7일 프라이빗 투어",
+  ),
+  metadataDescription: l(
+    "A 7-day private route through Wulingyuan, Furong Town and Fenghuang, with six hotel nights, private transport and an English guide on Days 2–5.",
+    "张家界、芙蓉镇、凤凰古城7天6晚私家团：武陵源3晚、芙蓉镇1晚、凤凰2晚，D2–D5英语导游，含行程私车及明确列出的基础门票。",
+    "우링위안 3박, 푸룽전 1박, 펑황고성 2박의 6박 7일 프라이빗 투어. D2~D5 영어 가이드와 일정 내 전용 차량이 포함됩니다.",
+  ),
+  eyebrow: l(
+    "7 days · 6 nights · Wulingyuan 3 nights · Furong Town 1 night · Fenghuang 2 nights",
+    "7 天 6 晚 · 武陵源 3 晚 · 芙蓉镇 1 晚 · 凤凰 2 晚",
+    "6박 7일 · 우링위안 3박 · 푸룽전 1박 · 펑황고성 2박",
+  ),
+  lede: l(
+    "Spend two full days among Wulingyuan’s sandstone peaks and forest valleys, then continue west to Furong Town and Fenghuang Ancient Town. Four English-guided touring days are balanced by a free day in Fenghuang.",
+    "先用两个完整游览日走进武陵源峰林与溪谷，再向西前往芙蓉镇和凤凰古城。D2–D5 由英语导游陪同，D6 留给你按自己的节奏游凤凰。",
+    "우링위안의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 푸룽전과 펑황고성으로 이어갑니다. D2~D5는 영어 가이드와 여행하고 D6는 펑황에서 자유롭게 보냅니다.",
+  ),
+  summary: l(
+    "Six hotel nights, private transport for the transfers and touring periods listed in the itinerary, and an English-speaking guide on Days 2–5. Base admissions include Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "含 6 晚住宿、逐日行程所列接送与游览时段内的私人用车，以及 D2–D5 英语导游。基础门票明确包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
+    "6박 숙박, 일정에 명시된 이동·관광 시간대의 전용 차량, D2~D5 영어 가이드가 포함됩니다. 기본 입장권은 우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+  ),
+  highlights: lists(
+    [
+      "Tianzi Mountain, Yangjiajie and Yuanjiajie in one guided Wulingyuan day",
+      "Ten-Mile Gallery, Golden Whip Stream and Seventy-Two Wonder Tower",
+      "One night in Furong Town, followed by two nights in Fenghuang",
+      "Four English-guided touring days, plus a free day in Fenghuang",
+    ],
+    [
+      "一天串联天子山、杨家界与袁家界",
+      "十里画廊小火车、金鞭溪与七十二奇楼夜景",
+      "芙蓉镇住 1 晚，再到凤凰古城连住 2 晚",
+      "D2–D5 四天英语导游，D6 在凤凰自由活动",
+    ],
+    [
+      "톈쯔산·양자제·위안자제를 하루에 연결하는 가이드 일정",
+      "십리화랑 미니 열차, 금편계 산책과 칠십이기루 야경",
+      "푸룽전 1박 후 펑황고성에서 2박",
+      "D2~D5 영어 가이드 관광과 D6 펑황 자유 일정",
+    ],
+  ),
+  itinerary: [
+    day(
+      1,
+      l(
+        "Arrive in Zhangjiajie and settle in Wulingyuan",
+        "抵达张家界，入住武陵源",
+        "장자제 도착 후 우링위안 체크인",
+      ),
+      l(
+        "Meet the driver at the confirmed Zhangjiajie airport or railway station and travel with your luggage by private vehicle to the confirmed Wulingyuan hotel. Day 1 is a driver-only transfer with no guide or fixed sightseeing. Stay in Wulingyuan for the first of three nights.",
+        "司机在已确认的张家界机场或车站接客，行李随行，乘专车前往已确认的武陵源酒店。当天仅含司机接送，不含导游和固定游览；入住武陵源第一晚，共连住三晚。",
+        "확정된 장자제 공항 또는 기차역에서 기사를 만나 수하물과 함께 전용 차량으로 확정된 우링위안 호텔에 이동합니다. 이날은 기사 이동만 포함되며 가이드와 고정 관광은 없습니다. 우링위안에서 총 3박 중 첫날을 보냅니다.",
+      ),
+    ),
+    day(
+      2,
+      l(
+        "Tianzi Mountain, Yangjiajie and Yuanjiajie",
+        "天子山、杨家界与袁家界",
+        "톈쯔산·양자제·위안자제",
+      ),
+      l(
+        "Leave the hotel with the English-speaking guide and private driver for the confirmed Wulingyuan entrance. Use the included park eco-shuttles and walking routes to connect Tianzi Mountain, Yangjiajie and Yuanjiajie. The operating order may change for official closures, weather, safety or crowd control. Cable cars and the Bailong Elevator are not included unless named in the written confirmation.",
+        "从酒店出发，由英语导游和私人司机送往已确认的武陵源入口。进入景区后使用已含的环保车并结合步行，游览天子山、杨家界和袁家界；如遇官方关闭、天气、安全或限流，实际顺序按当天可执行方案调整。未列索道和百龙天梯不在基础包含项内。",
+        "영어 가이드와 전용 기사가 호텔에서 확정된 우링위안 입구까지 동행합니다. 포함된 관광 셔틀과 도보 구간으로 톈쯔산, 양자제와 위안자제를 둘러봅니다. 공식 폐쇄, 날씨, 안전 또는 혼잡 통제가 있으면 순서를 조정하며, 확인서에 없는 케이블카와 백룡 엘리베이터는 별도입니다.",
+      ),
+    ),
+    day(
+      3,
+      l(
+        "Ten-Mile Gallery, Golden Whip Stream and the night lights",
+        "十里画廊、金鞭溪与七十二奇楼夜景",
+        "십리화랑·금편계·칠십이기루 야경",
+      ),
+      l(
+        "Travel from the hotel with the guide and private vehicle for Ten-Mile Gallery, including the mini-train, and the confirmed walking section of Golden Whip Stream. Later, continue to the standard evening session at Seventy-Two Wonder Tower and return to the Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are separate unless confirmed in writing.",
+        "从酒店乘专车出发，由英语导游陪同游览十里画廊，含小火车，并步行游览书面确认的金鞭溪路段。之后前往七十二奇楼普通夜场，结束后乘专车返回武陵源酒店。升级夜场及其他收费体验只有写入确认方案后才包含。",
+        "호텔에서 영어 가이드와 전용 차량으로 출발해 미니 열차가 포함된 십리화랑과 서면으로 확정된 금편계 구간을 둘러봅니다. 이후 칠십이기루 일반 야간 회차를 관람하고 전용 차량으로 우링위안 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면으로 확정된 경우에만 포함됩니다.",
+      ),
+    ),
+    day(
+      4,
+      l(
+        "Travel to Furong Town and stay overnight",
+        "前往芙蓉镇并住一晚",
+        "푸룽전 이동 및 1박",
+      ),
+      l(
+        "Check out with your luggage and travel by private vehicle with the English-speaking guide to Furong Town. Explore the included first-entry area at a practical pace, then check in for one night in Furong Town. Paid experiences beyond the included admission are separate.",
+        "退房后行李随车，由英语导游陪同乘专车前往芙蓉镇。使用已含的芙蓉镇首道门票游览，并按现场情况安排合理节奏；当晚入住芙蓉镇。首道门票之外的收费体验另计。",
+        "체크아웃 후 수하물을 싣고 영어 가이드와 전용 차량으로 푸룽전에 이동합니다. 포함된 첫 입장권 구역을 무리 없는 속도로 둘러본 뒤 푸룽전에서 1박합니다. 기본 입장권 이외의 유료 체험은 별도입니다.",
+      ),
+    ),
+    day(
+      5,
+      l(
+        "Continue to Fenghuang Ancient Town",
+        "前往凤凰古城",
+        "펑황고성으로 이동",
+      ),
+      l(
+        "Check out and travel with your luggage by private vehicle and English-speaking guide to Fenghuang. After check-in, explore the public lanes and riverside areas of the ancient town with the guide. Fenghuang’s public streets do not require a first-entry gate ticket; boat rides and paid smaller attractions are separate. Stay for the first of two nights.",
+        "退房后行李随车，由英语导游陪同乘专车前往凤凰。入住后，在导游陪同下游览古城公共街巷与沱江沿岸。凤凰古城公共街区没有首道大门票；游船及收费小景点另计。当晚入住凤凰第一晚，共住两晚。",
+        "체크아웃 후 수하물과 함께 영어 가이드와 전용 차량으로 펑황에 이동합니다. 체크인 후 가이드와 고성의 공공 골목과 강변을 둘러봅니다. 펑황고성 공공 구역에는 첫 입장권이 없으며 유람선과 유료 소규모 명소는 별도입니다. 펑황에서 총 2박 중 첫날을 보냅니다.",
+      ),
+    ),
+    day(
+      6,
+      l(
+        "A free day in Fenghuang",
+        "凤凰古城自由活动",
+        "펑황고성 자유 일정",
+      ),
+      l(
+        "Explore Fenghuang Ancient Town independently and stay for the second night. No private vehicle or English-speaking guide is included on Day 6. Boat rides, paid smaller attractions and any added transport or guiding are arranged only when agreed in writing.",
+        "全天自由安排凤凰古城公共街区，并入住凤凰第二晚。当天不含私人车辆和英语导游；如需游船、收费小景点、额外用车或导游服务，须另行书面确认。",
+        "펑황고성 공공 구역을 자유롭게 둘러보고 두 번째 밤을 보냅니다. 이날은 전용 차량과 영어 가이드가 포함되지 않습니다. 유람선, 유료 소규모 명소, 추가 차량이나 가이드가 필요하면 서면으로 별도 확정합니다.",
+      ),
+    ),
+    day(
+      7,
+      l("Depart from Fenghuang", "从凤凰离开", "펑황 출발"),
+      l(
+        "Check out and take the driver-only private transfer to Fenghuanggucheng Railway Station. If the written confirmation instead specifies a return transfer to Zhangjiajie, follow that agreed plan. No guide or sightseeing is included on departure day.",
+        "退房后由司机专车送往凤凰古城站。若最终书面方案明确约定送回张家界，则按该方案执行。离开日不含导游和固定游览。",
+        "체크아웃 후 기사 전용 차량으로 펑황고성역에 이동합니다. 최종 서면 확인서에 장자제 귀환 이동이 명시된 경우에는 해당 계획을 따릅니다. 출발일에는 가이드와 관광 일정이 포함되지 않습니다.",
+      ),
+    ),
+  ],
+  hotelNote: l(
+    "Six hotel nights are arranged as three nights in Wulingyuan, one night in Furong Town and two nights in Fenghuang. The final hotels, room types, bed arrangement, breakfast basis, foreign-guest registration and any upgrade or single-room difference are stated in the written confirmation before payment.",
+    "全程 6 晚住宿：武陵源 3 晚、芙蓉镇 1 晚、凤凰 2 晚。具体酒店、房型、床型、早餐口径、外宾接待条件，以及升级或单房差，均在付款前写入最终确认方案。",
+    "총 6박은 우링위안 3박, 푸룽전 1박, 펑황 2박으로 구성됩니다. 최종 호텔, 객실 유형, 침대 구성, 조식 포함 여부, 외국인 투숙 가능 여부와 업그레이드 또는 1인실 차액은 결제 전에 서면 확인서에 명시합니다.",
+  ),
+  serviceNote: l(
+    "Private vehicle service covers only the pickups, transfers and touring periods described in the itinerary and confirmed in writing; it is not an outside-hours standby vehicle. An English-speaking guide is included on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time without a guide or vehicle. Base admissions include Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "私人用车只覆盖逐日行程所列并经书面确认的接送和游览服务时段，不代表确认时段之外全天候候车。D2–D5 含英语导游；D1 与 D7 为司机接送，D6 为不含车导的自由活动。基础门票明确包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
+    "전용 차량은 일정과 서면 확인서에 명시된 픽업, 이동 및 관광 시간에만 제공되며 그 외 시간의 상시 대기 차량은 아닙니다. 영어 가이드는 D2~D5에 포함됩니다. D1과 D7은 기사 이동만 제공하고 D6는 차량과 가이드가 없는 자유 일정입니다. 기본 입장권은 우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+  ),
+  exclusions: lists(
+    [
+      "International and domestic flights, and high-speed rail tickets",
+      "Lunches and dinners",
+      "Personal travel insurance, visas, tips and personal expenses",
+      "Hotel, room, vehicle, admission or activity upgrades",
+      "Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions",
+      "Night-time, overtime, extra transfers or other services outside the confirmed itinerary",
+    ],
+    [
+      "国际及国内航班、高铁票",
+      "午餐和晚餐",
+      "个人旅游保险、签证、司导小费及个人消费",
+      "酒店、房型、车型、门票或活动升级",
+      "未列索道、百龙天梯、游船及收费小景点",
+      "确认行程之外的夜间、超时、额外接送及其他服务",
+    ],
+    [
+      "국제선·국내선 항공권과 고속철도 승차권",
+      "점심과 저녁 식사",
+      "개인 여행자 보험, 비자, 기사·가이드 팁과 개인 비용",
+      "호텔, 객실, 차량, 입장권 또는 체험 업그레이드",
+      "명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소",
+      "확정 일정 밖의 야간, 초과 시간, 추가 이동과 기타 서비스",
+    ],
+  ),
+  bookingNote: l(
+    "The published per-person starting prices cover groups of 2 and 4 travellers; flights and rail tickets are not included. Other group sizes require manual confirmation. Before payment, send your dates, room and bed requirements, arrival details, departure plan and luggage count. The final written confirmation names the hotels, daily vehicle periods, guide coverage, included admissions, Day 7 destination and final total.",
+    "网页仅公开 2 人和 4 人的每人起价，不含航班与高铁票；其他人数须人工确认。付款前请提供日期、房间与床型需求、抵达信息、离开方案和行李数量。最终书面确认会列明酒店、逐日用车时段、导游服务范围、已含门票、D7 送达地点与最终总价。",
+    "공개된 1인 시작가는 2명과 4명 기준이며 항공권과 고속철도 승차권은 포함되지 않습니다. 그 외 인원은 수동 확인이 필요합니다. 결제 전에 날짜, 객실과 침대 구성, 도착 정보, 출발 계획과 수하물 수량을 알려 주세요. 최종 확인서에 호텔, 차량 시간, 가이드 범위, 포함 입장권, D7 도착지와 총액을 명시합니다.",
+  ),
+  faq: [
+    {
+      question: l(
+        "Which admission tickets are included?",
+        "基础价格具体包含哪些门票？",
+        "어떤 입장권이 기본 요금에 포함되나요?",
+      ),
+      answer: l(
+        "Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town are included. Fenghuang’s public streets have no first-entry gate ticket. Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions are separate.",
+        "包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。凤凰古城公共街区没有首道大门票。未列索道、百龙天梯、游船和收费小景点另计。",
+        "우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권이 포함됩니다. 펑황고성 공공 구역에는 첫 입장권이 없습니다. 명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소는 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "When are the guide and private vehicle included?",
+        "英语导游和私人用车分别覆盖哪些天？",
+        "영어 가이드와 전용 차량은 언제 포함되나요?",
+      ),
+      answer: l(
+        "The English-speaking guide covers the listed touring programme on Days 2–5. Day 1 and Day 7 are driver-only transfers, while Day 6 is independent free time with no guide or vehicle. Private vehicle service follows the periods written into the final confirmation rather than providing 24-hour standby service.",
+        "英语导游覆盖 D2–D5 所列游览。D1 与 D7 仅含司机接送，D6 为不含车导的自由活动。私人用车按最终确认方案列明的接送和游览时段提供，不是 24 小时全天候待命车辆。",
+        "영어 가이드는 D2~D5의 명시된 관광 일정에 동행합니다. D1과 D7은 기사 이동만 포함되며 D6는 차량과 가이드가 없는 자유 일정입니다. 전용 차량은 확인서에 적힌 시간에 제공되며 24시간 대기 서비스가 아닙니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay, and where does the tour end?",
+        "六晚分别住哪里？D7 在哪里结束？",
+        "어디에서 숙박하고 D7 일정은 어디에서 끝나나요?",
+      ),
+      answer: l(
+        "The route includes three nights in Wulingyuan, one in Furong Town and two in Fenghuang. The standard Day 7 transfer ends at Fenghuanggucheng Railway Station. A return to Zhangjiajie is possible only when that route and quote are agreed in writing before payment.",
+        "武陵源住 3 晚、芙蓉镇住 1 晚、凤凰住 2 晚。标准 D7 送至凤凰古城站；如需送回张家界，必须在付款前把具体路线和对应报价写入确认方案。",
+        "우링위안 3박, 푸룽전 1박, 펑황 2박입니다. 기본 D7 이동은 펑황고성역에서 끝납니다. 장자제 귀환은 결제 전에 구체적인 이동 계획과 견적을 서면으로 확정한 경우에만 제공됩니다.",
+      ),
+    },
+  ],
+  heroImage: image(
+    "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+    l(
+      "Sandstone pillars in Wulingyuan, Zhangjiajie.",
+      "张家界武陵源的砂岩峰林。",
+      "장자제 우링위안의 사암 봉우리.",
+    ),
+    l(
+      "The sandstone landscape at the start of the seven-day route.",
+      "七天路线从张家界砂岩峰林开始。",
+      "7일 여정은 장자제 사암 봉우리에서 시작합니다.",
+    ),
+    1600,
+    1000,
+    "50% 50%",
+  ),
+  gallery: [
+    image(
+      "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+      l(
+        "Furong Town buildings above the waterfall and river.",
+        "芙蓉镇河流与沿岸建筑。",
+        "폭포와 강 위에 자리한 푸룽전 건물들.",
+      ),
+      l(
+        "Furong Town, where the route pauses for one night.",
+        "芙蓉镇安排一晚住宿。",
+        "푸룽전에서 1박합니다.",
+      ),
+      1280,
+      742,
+      "50% 52%",
+    ),
+  ],
+  routeMedia: [
+    routeGroup(
+      1,
+      routeVariant(
+        l(
+          "Arrival in Zhangjiajie",
+          "抵达张家界",
+          "장자제 도착",
+        ),
+        "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+        l(
+          "Zhangjiajie Hehua Airport with Tianmen Mountain behind the terminal.",
+          "张家界荷花机场，航站楼后方可见天门山。",
+          "터미널 뒤로 톈먼산이 보이는 장자제 허화공항.",
+        ),
+        l(
+          "Hehua Airport is one standard arrival point; rail arrivals are met at Zhangjiajie West Station.",
+          "荷花机场是标准抵达点之一；乘高铁抵达则在张家界西站接站。",
+          "허화공항 도착 시 공항에서, 고속철 도착 시 장자제서역에서 맞이합니다.",
+        ),
+        1600,
+        1000,
+      ),
+    ),
+    routeGroup(
+      2,
+      routeVariant(
+        l("Tianzi Mountain panorama", "天子山峰林全景", "톈쯔산 봉우리 전경"),
+        "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
+        l(
+          "A panoramic view across the sandstone pillars of Tianzi Mountain.",
+          "俯瞰天子山层叠的砂岩峰林。",
+          "톈쯔산의 겹겹이 이어진 사암 봉우리 전경.",
+        ),
+        l(
+          "Tianzi Mountain, Yangjiajie and Yuanjiajie form the first full touring day.",
+          "天子山、杨家界与袁家界组成第一个完整游览日。",
+          "톈쯔산, 양자제와 위안자제가 첫 종일 관광을 이룹니다.",
+        ),
+        1600,
+        1000,
+      ),
+    ),
+    routeGroup(
+      3,
+      routeVariant(
+        l("Forest valleys", "森林溪谷", "산림 계곡"),
+        "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp",
+        l(
+          "A clear stream winding through dense forest at Golden Whip Stream.",
+          "金鞭溪的溪流穿过茂密山林。",
+          "금편계의 울창한 숲 사이로 흐르는 맑은 계류.",
+        ),
+        l(
+          "The second park day combines Ten-Mile Gallery and Golden Whip Stream.",
+          "第二个公园日串联十里画廊与金鞭溪。",
+          "둘째 공원 일정은 십리화랑과 금편계를 잇습니다.",
+        ),
+        1600,
+        1000,
+      ),
+    ),
+    routeGroup(
+      4,
+      routeVariant(
+        l("Furong Town overnight", "芙蓉镇住一晚", "푸룽전 1박"),
+        "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-night-960.webp",
+        l(
+          "Furong Town waterfall and buildings illuminated at night.",
+          "夜间亮灯的芙蓉镇水景与临崖建筑。",
+          "밤에 불이 켜진 푸룽전 폭포와 절벽 건물.",
+        ),
+        l(
+          "Staying overnight leaves time to see Furong Town after the day visitors thin out.",
+          "住一晚，可以等白天游客减少后再看芙蓉镇。",
+          "1박하면 당일 방문객이 줄어든 뒤 푸룽전을 볼 수 있습니다.",
+        ),
+        960,
+        1707,
+        "50% 48%",
+      ),
+    ),
+    routeGroup(
+      5,
+      routeVariant(
+        l("Arrive in Fenghuang", "抵达凤凰古城", "펑황고성 도착"),
+        "/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp",
+        l(
+          "Hongqiao entrance in Fenghuang Ancient Town.",
+          "凤凰古城虹桥入口。",
+          "펑황고성 훙차오 입구.",
+        ),
+        l(
+          "The guide introduces Fenghuang’s public lanes and riverside on Day 5.",
+          "D5 由导游陪同走凤凰公共街巷与沱江沿岸。",
+          "D5에는 가이드와 펑황 골목과 강변을 둘러봅니다.",
+        ),
+        1600,
+        1000,
+      ),
+    ),
+    routeGroup(
+      6,
+      routeVariant(
+        l("Fenghuang at your own pace", "按自己的节奏游凤凰", "내 속도로 보는 펑황"),
+        "/images/guides/border-town-fenghuang-chadong-shen-congwen/shen-congwen-former-residence-1600.webp",
+        l(
+          "The street entrance to Shen Congwen's former residence in Fenghuang.",
+          "凤凰古城沈从文故居的沿街入口。",
+          "펑황고성 선충원 옛집의 길가 출입구.",
+        ),
+        l(
+          "The former residence is an optional independent visit on Day 6; admission, guide and vehicle are not included in the base package.",
+          "D6 可自行选择参观沈从文故居；基础价格不含该处门票、车辆与导游。",
+          "D6에 선충원 옛집을 개별 방문할 수 있으며, 기본 요금에는 입장권·차량·가이드가 포함되지 않습니다.",
+        ),
+        1600,
+        1186,
+      ),
+    ),
+    routeGroup(
+      7,
+      routeVariant(
+        l("A final Fenghuang morning", "凤凰最后一个早晨", "펑황의 마지막 아침"),
+        "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
+        l(
+          "Visitors crossing stepping stones on the Tuojiang in Fenghuang.",
+          "游客从凤凰沱江跳岩上过河。",
+          "펑황 퉈장의 징검다리를 건너는 방문객들.",
+        ),
+        l(
+          "Departure timing follows the confirmed train or return-transfer plan.",
+          "离开时间按已确认车次或返程接送方案安排。",
+          "출발 시간은 확정된 열차 또는 귀환 이동 계획에 맞춥니다.",
+        ),
+        1126,
+        819,
+      ),
+    ),
+  ],
+  packages: [
+    standardPackage(
+      "standard-guided",
+      standardLabel,
+      l(
+        "Six hotel nights with breakfast, private transport during the listed service periods, an English-speaking guide on Days 2–5 and the named base admissions. No shopping stops.",
+        "含 6 晚住宿及早餐、行程所列时段私车、D2–D5 英语导游与明确列出的基础门票，全程无购物店。",
+        "6박 조식 포함 숙박, 일정에 명시된 시간의 전용 차량, D2~D5 영어 가이드와 기본 입장권이 포함되며 쇼핑 일정은 없습니다.",
+      ),
+      // Owner-approved public base prices for 2- and 4-traveller groups.
+      [5840, 4860],
+      [899, 749],
+    ),
+  ],
+  datePublished: "2026-09-19",
+  dateModified: "2026-09-19",
+  lastReviewed: "2026-09-19",
+};
+
 export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
   [
     shanghaiSuzhouHangzhou,
@@ -2841,6 +3258,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     shanghaiSuzhou,
     beijing,
     zhangjiajieForestFixedRoute,
+    zhangjiajieFurongFenghuang,
   ],
 );
 

@@ -39,6 +39,7 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "shanghai-suzhou-5-day-private-tour": ["standard-guided"],
   "beijing-highlights-5-day-private-tour": ["english-guided", "no-guide"],
   "zhangjiajie-forest-4-day-private-tour": ["fixed-route-english-guided"],
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": ["standard-guided"],
   "zhangjiajie-4-day-private-tour": [],
 };
 export function isTrafficProductSlug(value: unknown): value is string {

@@ -92,7 +92,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 27 guide and 10 product owners", () => {
+test("commercial links keep the approved 8 hub, 27 guide and 11 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -163,6 +163,7 @@ test("commercial links keep the approved 8 hub, 27 guide and 10 product owners",
       "xian-terracotta-warriors-5-day-private-tour",
       "zhangjiajie-4-day-private-tour",
       "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
     ],
   );
 });

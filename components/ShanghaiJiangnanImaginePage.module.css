@@ -122,6 +122,10 @@
   text-wrap: balance;
 }
 
+.titleUnit {
+  white-space: nowrap;
+}
+
 .heroPromise {
   color: var(--im-muted);
   font-size: clamp(1.75rem, 2.65vw, 2.35rem);

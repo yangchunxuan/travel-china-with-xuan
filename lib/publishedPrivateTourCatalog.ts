@@ -263,6 +263,28 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "예산을 아끼고 많이 걸을 수 있으며, 케이블카·엘리베이터·추가 옵션 없이 삼림공원을 둘러보고 싶은 여행자.",
     ),
   },
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": {
+    route: l(
+      "Zhangjiajie · Furong Town · Fenghuang",
+      "张家界 · 芙蓉镇 · 凤凰古城",
+      "장자제 · 푸룽전 · 펑황고성",
+    ),
+    appeal: l(
+      "Spend two full days in Wulingyuan, stay overnight in waterfall-side Furong Town, then slow down for two nights beside Fenghuang’s Tuojiang River.",
+      "用两个完整游览日走武陵源峰林与溪谷，在临水的芙蓉镇住一晚，再到凤凰沱江边连住两晚。",
+      "우링위안에서 이틀을 온전히 보내고 폭포 마을 푸룽전에서 1박한 뒤, 펑황 퉈장 강변에서 2박하며 속도를 늦춥니다.",
+    ),
+    pace: l(
+      "Three hotel bases across seven days, with four guided touring days and a free day in Fenghuang.",
+      "7 天住三地，D2–D5 为四个导游游览日，D6 在凤凰自由活动。",
+      "6박 7일 동안 세 곳에 머물며 D2~D5는 가이드 관광, D6는 펑황 자유 일정입니다.",
+    ),
+    fit: l(
+      "Travellers who want Zhangjiajie’s forest landscapes and two western Hunan ancient towns in one unhurried private route.",
+      "想把张家界峰林与湘西两座古镇连成一条从容私家路线的旅客。",
+      "장자제 산림 풍경과 후난 서부의 두 고성을 한 번의 여유로운 프라이빗 여정으로 보고 싶은 여행자.",
+    ),
+  },
   "zhangjiajie-4-day-private-tour": {
     route: l(
       "Zhangjiajie · Wulingyuan · Glass Bridge · Tianmen Mountain",

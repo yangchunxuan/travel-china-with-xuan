@@ -50,7 +50,7 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  assert.equal(Object.keys(trafficProductPackages).length, 10);
+  assert.equal(Object.keys(trafficProductPackages).length, 11);
   for (const [productSlug, packages] of Object.entries(trafficProductPackages)) {
     assert.equal(validateAndNormalizeTrafficEventBatch(batch({ ...event(), productSlug })).ok, true);
     for (const packageId of packages) for (const travelers of [2, 4]) {

@@ -366,7 +366,25 @@ function schemaLanguage(locale: PrivateTourLocale) {
   return locale === "zh" ? "zh-Hans" : locale;
 }
 
-function displayTourTitle(title: string) {
+function displayTourTitle(
+  title: string,
+  locale: PrivateTourLocale,
+  slug: string,
+) {
+  if (
+    locale === "zh" &&
+    slug === "zhangjiajie-furong-fenghuang-7-day-private-tour"
+  ) {
+    return (
+      <>
+        <span className={styles.titleUnit}>张家界</span>、
+        <span className={styles.titleUnit}>芙蓉镇</span>与
+        <span className={styles.titleUnit}>凤凰</span>{" "}
+        <span className={styles.titleUnit}>7 天 6 晚</span>
+        <span className={styles.titleUnit}>私家团</span>
+      </>
+    );
+  }
   return title.replace(/(\d+)-Day/g, "$1‑Day");
 }
 
@@ -536,7 +554,9 @@ export function ShanghaiJiangnanImaginePage({
                 </ol>
               </nav>
               <p className={styles.heroMeta}>{copy.heroMeta}</p>
-              <h1 id="product-title">{displayTourTitle(localized.title)}</h1>
+              <h1 id="product-title">
+                {displayTourTitle(localized.title, locale, product.slug)}
+              </h1>
               <p className={styles.heroPromise}>{copy.heroPromise}</p>
               <p className={styles.heroLede}>{localized.lede}</p>
             </div>

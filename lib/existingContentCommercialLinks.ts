@@ -52,16 +52,29 @@ const destinationTargets = {
   zhangjiajie: [
     classicZhangjiajie,
     p("zhangjiajie-forest-4-day-private-tour"),
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
   chongqing: [p("chongqing-wulong-5-day-private-tour")],
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const guideTargets = {
-  "singapore-to-zhangjiajie-itinerary": [classicZhangjiajie],
-  "chengdu-zhangjiajie-itinerary": [classicZhangjiajie],
+  "singapore-to-zhangjiajie-itinerary": [
+    classicZhangjiajie,
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
+  "chengdu-zhangjiajie-itinerary": [
+    classicZhangjiajie,
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
   "best-zhangjiajie-night-show": [classicZhangjiajie],
-  "zhangjiajie-from-malaysia": [classicZhangjiajie],
-  "zhangjiajie-itinerary": [classicZhangjiajie],
+  "zhangjiajie-from-malaysia": [
+    classicZhangjiajie,
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
+  "zhangjiajie-itinerary": [
+    classicZhangjiajie,
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
   "tianmen-mountain-tickets-and-routes": [classicZhangjiajie],
   "beijing-courtyard-hotel-or-modern-hotel": [p("beijing-highlights-5-day-private-tour")],
   "beijing-where-to-stay-first-trip": [p("beijing-highlights-5-day-private-tour")],
@@ -170,6 +183,14 @@ const productContexts = {
     destinations: ["zhangjiajie"],
     guides: ["chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
   },
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": {
+    destinations: ["zhangjiajie"],
+    guides: ["zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-from-malaysia"],
+    relatedProducts: [
+      classicZhangjiajie,
+      p("zhangjiajie-forest-4-day-private-tour"),
+    ],
+  },
   "zhangjiajie-4-day-private-tour": {
     destinations: ["zhangjiajie"],
     guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
@@ -186,6 +207,7 @@ const approvedCommercialProductSlugs = [
   "shanghai-suzhou-5-day-private-tour",
   "beijing-highlights-5-day-private-tour",
   "zhangjiajie-forest-4-day-private-tour",
+  "zhangjiajie-furong-fenghuang-7-day-private-tour",
   "zhangjiajie-4-day-private-tour",
 ] as const;
 
