@@ -40,12 +40,12 @@ test("homepage guide search is followed by the localized guide rail", async () =
   );
   assert.match(finder, /<h2 id="homepage-guide-search-title">/);
   assert.match(finder, /className=\{styles\.guidePaths\}/);
-  assert.match(finder, /<nav[\s\S]*?<ul>[\s\S]*?<li[\s\S]*?<a href=/);
+  assert.match(finder, /<nav[\s\S]*?<ul>[\s\S]*?<li[\s\S]*?<Link href=/);
   assert.doesNotMatch(finder, /<ol|decisionNumber/);
   assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
   assert.match(finder, /showExamples=\{false\}/);
   assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
-  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
+  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<Link/);
 });
 
 test("homepage finder lazy-loads one same-language static index", async () => {

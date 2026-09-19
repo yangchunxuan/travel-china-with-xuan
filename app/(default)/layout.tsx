@@ -3,6 +3,7 @@ import { AnalyticsConsent } from "../../components/AnalyticsConsent";
 import { TourContactPanel } from "../../components/TourContactPanel";
 import { NewsletterPopup } from "../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
+import { homegroundInternalRouteBootstrap } from "../../lib/homegroundRouteSession";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -40,6 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+      </head>
       <body>
         <SiteAnalytics locale="en" />
         {children}

@@ -4,6 +4,7 @@ import { AnalyticsConsent } from "../../../components/AnalyticsConsent";
 import { TourContactPanel } from "../../../components/TourContactPanel";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
+import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -74,6 +75,7 @@ export default async function LocalizedRootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
         {locale === "zh" ? (
           <link
             rel="preload"

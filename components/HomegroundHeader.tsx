@@ -46,6 +46,7 @@ import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
+import { markHomegroundInternalReload } from "../lib/homegroundRouteSession";
 import styles from "./HomegroundHeader.module.css";
 
 export type HomegroundPageContext =
@@ -504,8 +505,52 @@ export function HomegroundHeader({
     if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
       requestNewsletterLanguageTransfer(event.currentTarget.pathname);
+      if ((locale === "en") !== (targetLocale === "en")) {
+        markHomegroundInternalReload(event.currentTarget.href);
+      }
     }
     close();
+  };
+  const renderLanguageChoice = (targetLocale: HomegroundLocale) => {
+    const target = getHomegroundCopy(targetLocale);
+    const languageHref = languageHrefFor(targetLocale);
+    const ariaCurrent =
+      targetLocale === locale
+        ? pageContext === "home"
+          ? "page"
+          : "true"
+        : undefined;
+    const crossesRootLayout =
+      (locale === "en") !== (targetLocale === "en");
+    const handleClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
+      handleLanguageChange(event, targetLocale);
+
+    // English and localized pages use different root layouts. A plain anchor
+    // lets the browser perform that required document navigation reliably;
+    // zh <-> ko stays inside the localized root and keeps client navigation.
+    return crossesRootLayout ? (
+      <a
+        aria-current={ariaCurrent}
+        href={languageHref}
+        hrefLang={target.htmlLang}
+        key={targetLocale}
+        lang={target.htmlLang}
+        onClick={handleClick}
+      >
+        {target.languageShort}
+      </a>
+    ) : (
+      <Link
+        aria-current={ariaCurrent}
+        href={languageHref}
+        hrefLang={target.htmlLang}
+        key={targetLocale}
+        lang={target.htmlLang}
+        onClick={handleClick}
+      >
+        {target.languageShort}
+      </Link>
+    );
   };
 
   return (
@@ -543,7 +588,7 @@ export function HomegroundHeader({
           {primaryNavigation.items.map((item) => {
             const state = navItemState(item.id);
             return (
-              <a
+              <Link
                 aria-current={
                   state.exact ? "page" : state.active ? "location" : undefined
                 }
@@ -553,13 +598,13 @@ export function HomegroundHeader({
                 onClick={() => trackNavigationClick(item.id, "desktop-primary")}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
 
         <div className={styles.headerActions}>
-          <a
+          <Link
             aria-current={
               pageContext === "home" && activeHash === "#faq"
                 ? "location"
@@ -575,39 +620,16 @@ export function HomegroundHeader({
             }}
           >
             {copy.navigation.faq}
-          </a>
+          </Link>
           <nav
             className={styles.languageNav}
             aria-label={copy.navigation.languageLabel}
             hidden={!showLanguageNav}
             style={showLanguageNav ? undefined : { display: "none" }}
           >
-            {availableLanguageLocales.map((targetLocale) => {
-              const target = getHomegroundCopy(targetLocale);
-              const languageHref = languageHrefFor(targetLocale);
-              return (
-                <a
-                  aria-current={
-                    targetLocale === locale
-                      ? pageContext === "home"
-                        ? "page"
-                        : "true"
-                      : undefined
-                  }
-                  href={languageHref}
-                  hrefLang={target.htmlLang}
-                  key={targetLocale}
-                  lang={target.htmlLang}
-                  onClick={(event) =>
-                    handleLanguageChange(event, targetLocale)
-                  }
-                >
-                  {target.languageShort}
-                </a>
-              );
-            })}
+            {availableLanguageLocales.map(renderLanguageChoice)}
           </nav>
-          <a
+          <Link
             className={styles.headerCta}
             data-label-mode={plannerStatus === "new" ? "full" : "compact"}
             href={plannerHref}
@@ -626,7 +648,7 @@ export function HomegroundHeader({
             <span className={styles.headerCtaShort} aria-hidden="true">
               {primaryNavigation.mobileCta}
             </span>
-          </a>
+          </Link>
           <button
             ref={menuButtonRef}
             className={styles.menuButton}
@@ -666,7 +688,7 @@ export function HomegroundHeader({
             {primaryNavigation.items.map((item) => {
               const state = navItemState(item.id);
               return (
-                <a
+                <Link
                   aria-current={
                     state.exact ? "page" : state.active ? "location" : undefined
                   }
@@ -683,13 +705,13 @@ export function HomegroundHeader({
                     <small>{item.description}</small>
                   </span>
                   <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               );
             })}
           </div>
           <div className={styles.mobileUtility}>
             <div className={styles.mobileUtilityRow}>
-              <a
+              <Link
                 aria-current={
                   pageContext === "home" && activeHash === "#faq"
                     ? "location"
@@ -707,7 +729,7 @@ export function HomegroundHeader({
               >
                 <span>{copy.navigation.faq}</span>
                 <span aria-hidden="true">→</span>
-              </a>
+              </Link>
               <div
                 className={styles.mobileLanguageNav}
                 role="group"
@@ -715,33 +737,10 @@ export function HomegroundHeader({
                 hidden={!showLanguageNav}
                 style={showLanguageNav ? undefined : { display: "none" }}
               >
-                {availableLanguageLocales.map((targetLocale) => {
-                  const target = getHomegroundCopy(targetLocale);
-                  const languageHref = languageHrefFor(targetLocale);
-                  return (
-                    <a
-                      aria-current={
-                        targetLocale === locale
-                          ? pageContext === "home"
-                            ? "page"
-                            : "true"
-                          : undefined
-                      }
-                      href={languageHref}
-                      hrefLang={target.htmlLang}
-                      key={targetLocale}
-                      lang={target.htmlLang}
-                      onClick={(event) =>
-                        handleLanguageChange(event, targetLocale)
-                      }
-                    >
-                      {target.languageShort}
-                    </a>
-                  );
-                })}
+                {availableLanguageLocales.map(renderLanguageChoice)}
               </div>
             </div>
-            <a
+            <Link
               className={styles.mobileCta}
               href={plannerHref}
               onClick={(event) => {
@@ -754,7 +753,7 @@ export function HomegroundHeader({
               }}
             >
               {plannerCta}
-            </a>
+            </Link>
           </div>
         </nav>
       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { MouseEventHandler } from "react";
 import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
@@ -65,7 +66,7 @@ export function HomepageProductShowcase({
               data-homepage-product-slug={product.id}
               key={product.id}
             >
-              <a
+              <Link
                 className={styles.productCard}
                 href={product.href}
                 onClick={() => onItemClick?.(product, index + 1)}
@@ -114,16 +115,16 @@ export function HomepageProductShowcase({
                     <ArrowRight aria-hidden="true" size={18} />
                   </span>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className={styles.showcaseFooter}>
-          <a className={styles.hubLink} href={privateTourHubPaths[locale]}>
+          <Link className={styles.hubLink} href={privateTourHubPaths[locale]}>
             <span>{copy.hubActionLabel}</span>
             <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
 
         <ul aria-label={copy.trustListLabel} className={styles.trustList}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   getHomegroundCopy,
@@ -191,7 +192,7 @@ export function HomegroundFooter({
         data-homeground-homepage-footer="structured-dark"
       >
         <div className={homepageStyles.inner}>
-          <a
+          <Link
             className={homepageStyles.brand}
             href={copy.path}
           >
@@ -200,22 +201,22 @@ export function HomegroundFooter({
               <strong lang="en">Homeground China</strong>
               <small>{copy.businessDescriptor}</small>
             </span>
-          </a>
+          </Link>
 
           <div className={homepageStyles.navGrid}>
             <nav aria-label={sectionLabels.exploreHeading}>
               <h2>{sectionLabels.exploreHeading}</h2>
               <ul>
                 <li>
-                  <a href={guideHubPath}>{sectionLabels.guides}</a>
+                  <Link href={guideHubPath}>{sectionLabels.guides}</Link>
                 </li>
                 <li>
-                  <a href={tourHubPath}>
+                  <Link href={tourHubPath}>
                     {sectionLabels.privateTours}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href={planningServicesPath}>{sectionLabels.services}</a>
+                  <Link href={planningServicesPath}>{sectionLabels.services}</Link>
                 </li>
               </ul>
             </nav>
@@ -226,11 +227,11 @@ export function HomegroundFooter({
               </h2>
               <ul>
                 <li>
-                  <a href={destinationsHubPath}>{sectionLabels.allDestinations}</a>
+                  <Link href={destinationsHubPath}>{sectionLabels.allDestinations}</Link>
                 </li>
                 {destinationHubItems.map((city) => (
                   <li key={city.id}>
-                    <a href={city.href}>{city.label}</a>
+                    <Link href={city.href}>{city.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -242,10 +243,10 @@ export function HomegroundFooter({
               </h2>
               <ul>
                 <li>
-                  <a href={studioPath}>{copy.navigation.studio}</a>
+                  <Link href={studioPath}>{copy.navigation.studio}</Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     aria-current={
                       activeHash === "#faq" ? "location" : undefined
                     }
@@ -253,10 +254,10 @@ export function HomegroundFooter({
                     onClick={(event) => handleSectionClick(event, "#faq")}
                   >
                     {copy.navigation.faq}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href={businessPath}>{legalCopy.related.business}</a>
+                  <Link href={businessPath}>{legalCopy.related.business}</Link>
                 </li>
                 <li>
                   <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
@@ -270,10 +271,10 @@ export function HomegroundFooter({
               <h2>{sectionLabels.legalHeading}</h2>
               <ul>
                 <li>
-                  <a href={termsPath}>{legalCopy.related.terms}</a>
+                  <Link href={termsPath}>{legalCopy.related.terms}</Link>
                 </li>
                 <li>
-                  <a href={privacyPath}>{legalCopy.related.privacy}</a>
+                  <Link href={privacyPath}>{legalCopy.related.privacy}</Link>
                 </li>
                 {getNewsletterConfig() ? <li><NewsletterFooterLink locale={locale} /></li> : null}
                 <li>
@@ -285,13 +286,13 @@ export function HomegroundFooter({
                   </button>
                 </li>
                 <li>
-                  <a href={refundPath}>{legalCopy.related.refund}</a>
+                  <Link href={refundPath}>{legalCopy.related.refund}</Link>
                 </li>
                 {locale === "en" ? (
                   <li>
-                    <a href="/guides/china-entry-requirements/">
+                    <Link href="/guides/china-entry-requirements/">
                       {copy.navigation.visa}
-                    </a>
+                    </Link>
                   </li>
                 ) : null}
               </ul>
@@ -323,9 +324,9 @@ export function HomegroundFooter({
 
             <p className={homepageStyles.operator}>
               {sectionLabels.operatorPrefix}{" "}
-              <a href={businessPath} lang="zh-Hans">
+              <Link href={businessPath} lang="zh-Hans">
                 {homegroundBusiness.publicName}
-              </a>
+              </Link>
               {sectionLabels.operatorSuffix}
               <span>
                 {sectionLabels.codeLabel}: {" "}
@@ -353,38 +354,38 @@ export function HomegroundFooter({
           {pageContext === "destinations" ? (
             <span aria-current="page">{sectionLabels.allDestinations}</span>
           ) : (
-            <a href={destinationsHubPath}>{sectionLabels.allDestinations}</a>
+            <Link href={destinationsHubPath}>{sectionLabels.allDestinations}</Link>
           )}
           {pageContext === "guides" ? (
             <span aria-current="page">{sectionLabels.guides}</span>
           ) : (
-            <a href={guideHubPath}>{sectionLabels.guides}</a>
+            <Link href={guideHubPath}>{sectionLabels.guides}</Link>
           )}
           {pageContext === "tours" ? (
             <span aria-current="page">{sectionLabels.privateTours}</span>
           ) : (
-            <a href={tourHubPath}>{sectionLabels.privateTours}</a>
+            <Link href={tourHubPath}>{sectionLabels.privateTours}</Link>
           )}
           {locale === "en" ? (
-            <a href="/guides/china-entry-requirements/">
+            <Link href="/guides/china-entry-requirements/">
               {copy.navigation.visa}
-            </a>
+            </Link>
           ) : null}
           {pageContext === "services" ? (
             <span aria-current="page">
               {sectionLabels.services}
             </span>
           ) : (
-            <a href={planningServicesPath}>
+            <Link href={planningServicesPath}>
               {sectionLabels.services}
-            </a>
+            </Link>
           )}
           {pageContext === "studio" ? (
             <span aria-current="page">{copy.navigation.studio}</span>
           ) : (
-            <a href={studioPath}>{copy.navigation.studio}</a>
+            <Link href={studioPath}>{copy.navigation.studio}</Link>
           )}
-          <a
+          <Link
             aria-current={
               activeHash === "#faq" ? "location" : undefined
             }
@@ -392,15 +393,15 @@ export function HomegroundFooter({
             onClick={(event) => handleSectionClick(event, "#faq")}
           >
             {copy.navigation.faq}
-          </a>
+          </Link>
         </nav>
       </div>
       <div className={styles.footerLegal}>
         <p>
           {sectionLabels.operatorPrefix}{" "}
-          <a href={businessPath} lang="zh-Hans">
+          <Link href={businessPath} lang="zh-Hans">
             {homegroundBusiness.publicName}
-          </a>
+          </Link>
           {sectionLabels.operatorSuffix}
           <span>
             {sectionLabels.codeLabel}:{" "}
@@ -412,9 +413,9 @@ export function HomegroundFooter({
           </span>
         </p>
         <nav aria-label={sectionLabels.legalLabel}>
-          <a href={businessPath}>{legalCopy.related.business}</a>
-          <a href={termsPath}>{legalCopy.related.terms}</a>
-          <a href={privacyPath}>{legalCopy.related.privacy}</a>
+          <Link href={businessPath}>{legalCopy.related.business}</Link>
+          <Link href={termsPath}>{legalCopy.related.terms}</Link>
+          <Link href={privacyPath}>{legalCopy.related.privacy}</Link>
           <NewsletterFooterLink locale={locale} className={styles.footerPrivacyButton} />
           <button
             className={styles.footerPrivacyButton}
@@ -423,7 +424,7 @@ export function HomegroundFooter({
           >
             {consentCopy.manage}
           </button>
-          <a href={refundPath}>{legalCopy.related.refund}</a>
+          <Link href={refundPath}>{legalCopy.related.refund}</Link>
           <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
             {legalCopy.related.contact}
           </a>
