@@ -231,6 +231,12 @@
   margin-block-start: 1.25rem;
 }
 
+.faqAlias {
+  display: block;
+  block-size: 0;
+  scroll-margin-top: 6rem;
+}
+
 .faqItem {
   border-block-end: 1px solid var(--hg-color-line);
 }

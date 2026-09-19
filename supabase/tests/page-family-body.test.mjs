@@ -19,7 +19,7 @@ const validBody = {
       id: "faq",
       type: "faq",
       title: "Questions",
-      items: [{ id: "faq-day-trip", question: "Is a day trip enough?", answer: "For the terraces alone, yes." }],
+      items: [{ id: "faq-day-trip", legacyIds: ["faq-day-trip-answer"], question: "Is a day trip enough?", answer: "For the terraces alone, yes." }],
     },
     {
       id: "sources",
@@ -64,6 +64,20 @@ test("structured page family body rejects duplicate FAQ questions and anchor ids
   assert.throws(
     () => assertStructuredPageBody(duplicateAnchor),
     /Duplicate body block id/u,
+  );
+
+  const duplicateLegacyAnchor = structuredClone(validBody);
+  duplicateLegacyAnchor.blocks[3].items[0].legacyIds = ["decision"];
+  assert.throws(
+    () => assertStructuredPageBody(duplicateLegacyAnchor),
+    /Duplicate body block id/u,
+  );
+
+  const aliasWithoutCurrentId = structuredClone(validBody);
+  delete aliasWithoutCurrentId.blocks[3].items[0].id;
+  assert.throws(
+    () => assertStructuredPageBody(aliasWithoutCurrentId),
+    /legacy FAQ anchors require a current item id/u,
   );
 });
 

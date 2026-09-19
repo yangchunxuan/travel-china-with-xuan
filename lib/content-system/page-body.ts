@@ -70,6 +70,7 @@ export type PageBodyBlock =
       readonly title: string;
       readonly items: readonly {
         readonly id?: string;
+        readonly legacyIds?: readonly string[];
         readonly question: string;
         readonly answer: string;
       }[];
@@ -291,8 +292,12 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
           !candidate.items.every(
             (item) =>
               isRecord(item) &&
-              hasOnlyKeys(item, ["id", "question", "answer"]) &&
+              hasOnlyKeys(item, ["id", "legacyIds", "question", "answer"]) &&
               optionalNonEmpty(item.id) &&
+              (item.legacyIds === undefined ||
+                (Array.isArray(item.legacyIds) &&
+                  item.legacyIds.length > 0 &&
+                  item.legacyIds.every(nonEmpty))) &&
               nonEmpty(item.question) &&
               nonEmpty(item.answer),
           )
@@ -306,11 +311,15 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
               throw new Error(`${candidate.id} contains a duplicate FAQ question.`);
             }
             seenQuestions.add(item.question);
-            if (item.id) {
-              if (seenIds.has(item.id)) {
-                throw new Error(`Duplicate body block id: ${item.id}.`);
+            if (item.legacyIds && !item.id) {
+              throw new Error(`${candidate.id} legacy FAQ anchors require a current item id.`);
+            }
+            for (const anchorId of [item.id, ...(item.legacyIds ?? [])]) {
+              if (!anchorId) continue;
+              if (seenIds.has(anchorId)) {
+                throw new Error(`Duplicate body block id: ${anchorId}.`);
               }
-              seenIds.add(item.id);
+              seenIds.add(anchorId);
             }
           }
         }

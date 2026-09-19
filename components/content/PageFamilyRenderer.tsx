@@ -134,10 +134,21 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
           </h2>
           <div className={styles.faqList}>
             {block.items.map((item) => (
-              <details className={styles.faqItem} id={item.id} key={item.id ?? item.question}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
+              <Fragment key={item.id ?? item.question}>
+                {item.legacyIds?.map((legacyId) => (
+                  <span
+                    aria-hidden="true"
+                    className={styles.faqAlias}
+                    data-faq-disclosure={item.id}
+                    id={legacyId}
+                    key={legacyId}
+                  />
+                ))}
+                <details className={styles.faqItem} id={item.id}>
+                  <summary>{item.question}</summary>
+                  <p>{item.answer}</p>
+                </details>
+              </Fragment>
             ))}
           </div>
         </section>

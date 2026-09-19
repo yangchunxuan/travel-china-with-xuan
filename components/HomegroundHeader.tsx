@@ -342,9 +342,13 @@ export function HomegroundHeader({
         frames.delete(firstFrame);
         const secondFrame = window.requestAnimationFrame(() => {
           frames.delete(secondFrame);
-          document
-            .getElementById(hash.slice(1))
-            ?.scrollIntoView({ block: "start" });
+          const target = document.getElementById(hash.slice(1));
+          const disclosureId = target?.dataset.faqDisclosure;
+          if (disclosureId) {
+            const disclosure = document.getElementById(disclosureId);
+            if (disclosure instanceof HTMLDetailsElement) disclosure.open = true;
+          }
+          target?.scrollIntoView({ block: "start" });
         });
         frames.add(secondFrame);
       });
