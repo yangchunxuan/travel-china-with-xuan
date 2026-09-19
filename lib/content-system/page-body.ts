@@ -66,6 +66,16 @@ export type PageBodyBlock =
     }
   | {
       readonly id: string;
+      readonly type: "faq";
+      readonly title: string;
+      readonly items: readonly {
+        readonly id?: string;
+        readonly question: string;
+        readonly answer: string;
+      }[];
+    }
+  | {
+      readonly id: string;
       readonly type: "sources";
       readonly title: string;
       readonly items: readonly {
@@ -155,6 +165,7 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       comparison: ["id", "type", "title", "columns"],
       table: ["id", "type", "caption", "columns", "rows"],
       "internal-links": ["id", "type", "title", "items"],
+      faq: ["id", "type", "title", "items"],
       sources: ["id", "type", "title", "items"],
     };
     const allowedKeys = allowedBlockKeys[candidate.type];
@@ -267,6 +278,41 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
           )
         ) {
           throw new Error(`${candidate.id} needs at least one valid internal link.`);
+        }
+        break;
+      case "faq":
+        // Each pair is emitted verbatim as FAQPage schema, so it must read as a
+        // complete question and a complete answer on its own.
+        if (!nonEmpty(candidate.title)) throw new Error(`${candidate.id} needs a title.`);
+        if (
+          !Array.isArray(candidate.items) ||
+          candidate.items.length === 0 ||
+          candidate.items.length > 12 ||
+          !candidate.items.every(
+            (item) =>
+              isRecord(item) &&
+              hasOnlyKeys(item, ["id", "question", "answer"]) &&
+              optionalNonEmpty(item.id) &&
+              nonEmpty(item.question) &&
+              nonEmpty(item.answer),
+          )
+        ) {
+          throw new Error(`${candidate.id} needs 1–12 items with a non-empty question and answer.`);
+        }
+        {
+          const seenQuestions = new Set<string>();
+          for (const item of candidate.items) {
+            if (seenQuestions.has(item.question)) {
+              throw new Error(`${candidate.id} contains a duplicate FAQ question.`);
+            }
+            seenQuestions.add(item.question);
+            if (item.id) {
+              if (seenIds.has(item.id)) {
+                throw new Error(`Duplicate body block id: ${item.id}.`);
+              }
+              seenIds.add(item.id);
+            }
+          }
         }
         break;
       case "sources":

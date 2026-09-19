@@ -219,6 +219,33 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Arrival card questions answered",
+      items: [
+        {
+          question: "Is China's online arrival card free?",
+          answer: "Yes. The National Immigration Administration's official service at s.nia.gov.cn costs nothing. A website that charges an arrival-card fee, sells urgent approval or asks for card payment is not the official service: stop before paying and reopen the government address yourself.",
+        },
+        {
+          question: "What if the official arrival-card website will not load before my flight?",
+          answer: "The NIA says you may fill in the information at the Chinese port using the official QR code or a port device, or complete a paper arrival card. Keep your passport, operating itinerary and first China address available offline so you can enter them on arrival.",
+        },
+        {
+          question: "Who does not need to fill in a China arrival card?",
+          answer: "The 2025 NIA announcement listed exemptions including holders of a PRC Foreign Permanent Resident ID Card, holders of a Mainland Travel Permit for Hong Kong and Macao Residents (Non-Chinese Citizens), group-visa or group visa-free travellers, and direct transit within 24 hours without leaving the port's restricted area. Check each traveller separately against the live official list.",
+        },
+        {
+          question: "Does a completed arrival card mean I am approved to enter China?",
+          answer: "No. The card only records entry information. Visa or visa-free eligibility, passport validity, the carrier's boarding check and the border officer's admission decision are separate questions, and a successful submission screen is not approval of your entry basis.",
+        },
+        {
+          question: "What should I do if my flight or first hotel changes after I submitted the card?",
+          answer: "Use the current official service to see whether the submission can be corrected or replaced with the final confirmed record. If the page shows no clear correction route, carry the correct details and ask the 12367 immigration hotline or the port's border officers.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the arrival plan without duplicating the rules",

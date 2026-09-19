@@ -16,6 +16,12 @@ const validBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions",
+      items: [{ id: "faq-day-trip", question: "Is a day trip enough?", answer: "For the terraces alone, yes." }],
+    },
+    {
       id: "sources",
       type: "sources",
       title: "Sources",
@@ -25,7 +31,40 @@ const validBody = {
 };
 
 test("structured page family body accepts supported semantic blocks", () => {
-  assert.equal(assertStructuredPageBody(validBody).blocks.length, 4);
+  assert.equal(assertStructuredPageBody(validBody).blocks.length, 5);
+});
+
+test("structured page family body rejects incomplete FAQ pairs", () => {
+  const withoutAnswer = structuredClone(validBody);
+  withoutAnswer.blocks[3].items = [{ question: "Only a question?" }];
+  assert.throws(() => assertStructuredPageBody(withoutAnswer), /question and answer/u);
+
+  const extraKey = structuredClone(validBody);
+  extraKey.blocks[3].items = [{ question: "Q", answer: "A", href: "/guides/x/" }];
+  assert.throws(() => assertStructuredPageBody(extraKey), /question and answer/u);
+
+  const untitled = structuredClone(validBody);
+  delete untitled.blocks[3].title;
+  assert.throws(() => assertStructuredPageBody(untitled), /needs a title/u);
+});
+
+test("structured page family body rejects duplicate FAQ questions and anchor ids", () => {
+  const duplicateQuestion = structuredClone(validBody);
+  duplicateQuestion.blocks[3].items.push({
+    question: "Is a day trip enough?",
+    answer: "A second answer must not shadow the first.",
+  });
+  assert.throws(
+    () => assertStructuredPageBody(duplicateQuestion),
+    /duplicate FAQ question/u,
+  );
+
+  const duplicateAnchor = structuredClone(validBody);
+  duplicateAnchor.blocks[3].items[0].id = "decision";
+  assert.throws(
+    () => assertStructuredPageBody(duplicateAnchor),
+    /Duplicate body block id/u,
+  );
 });
 
 test("structured page family body rejects an empty article", () => {

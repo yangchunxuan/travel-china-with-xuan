@@ -314,34 +314,55 @@ export function HomegroundHeader({
   }, [plannerStatus]);
 
   useEffect(() => {
-    if (pageContext !== "services") return;
-
     const allowedServiceHashes = new Set([
       "#choose-service",
       "#full-trip-support",
     ]);
     const hash = window.location.hash;
-    if (!allowedServiceHashes.has(hash)) return;
+    if (!hash) return;
+    const supportsContentAnchor =
+      pageContext === "guide" ||
+      pageContext === "content" ||
+      pageContext === "destination" ||
+      pageContext === "tour";
+    if (
+      !(pageContext === "services" && allowedServiceHashes.has(hash)) &&
+      !supportsContentAnchor
+    ) {
+      return;
+    }
+    if (!document.getElementById(hash.slice(1))) return;
 
     let cancelled = false;
-    let firstFrame = 0;
-    let secondFrame = 0;
+    let settleTimer = 0;
+    const frames = new Set<number>();
     const alignAnchorAfterFonts = () => {
-      if (cancelled) return;
-      firstFrame = window.requestAnimationFrame(() => {
-        secondFrame = window.requestAnimationFrame(() => {
+      if (cancelled || window.location.hash !== hash) return;
+      const firstFrame = window.requestAnimationFrame(() => {
+        frames.delete(firstFrame);
+        const secondFrame = window.requestAnimationFrame(() => {
+          frames.delete(secondFrame);
           document
             .getElementById(hash.slice(1))
             ?.scrollIntoView({ block: "start" });
         });
+        frames.add(secondFrame);
       });
+      frames.add(firstFrame);
     };
 
     void document.fonts.ready.then(alignAnchorAfterFonts);
+    if (document.readyState === "complete") {
+      alignAnchorAfterFonts();
+    } else {
+      window.addEventListener("load", alignAnchorAfterFonts, { once: true });
+    }
+    settleTimer = window.setTimeout(alignAnchorAfterFonts, 600);
     return () => {
       cancelled = true;
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
+      window.removeEventListener("load", alignAnchorAfterFonts);
+      window.clearTimeout(settleTimer);
+      for (const frame of frames) window.cancelAnimationFrame(frame);
     };
   }, [pageContext]);
 

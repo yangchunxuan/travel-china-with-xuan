@@ -79,7 +79,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [forbiddenCity.datePublished, forbiddenCity.dateModified, forbiddenCity.sourceReviewedDate],
-    ["2026-08-11", "2026-09-09", "2026-08-22"],
+    ["2026-08-11", "2026-09-19", "2026-08-22"],
   );
   assert.match(forbiddenCity.locales.en.title, /Forbidden City Tickets for Foreign Visitors/u);
   assert.match(forbiddenCity.locales.en.description, /Tiananmen Square access/u);

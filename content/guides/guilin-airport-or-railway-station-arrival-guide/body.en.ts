@@ -294,65 +294,36 @@ const body = {
       ],
     },
     {
-      id: "faq-heading",
-      type: "heading",
-      level: 2,
-      text: "Frequently asked questions",
-    },
-    {
-      id: "faq-central",
-      type: "heading",
-      level: 3,
-      text: "Which railway station is best for central Guilin?",
-    },
-    {
-      id: "faq-central-answer",
-      type: "paragraph",
-      text: "Guilin Railway Station is usually the first one to test for a central hotel because it can reduce the city-side transfer. It wins only when a suitable live train calls there and the exact hotel chain works. A materially better train at Guilin North or West can still be the better door-to-door choice.",
-    },
-    {
-      id: "faq-north",
-      type: "heading",
-      level: 3,
-      text: "Are Guilin Station and Guilin North the same place?",
-    },
-    {
-      id: "faq-north-answer",
-      type: "paragraph",
-      text: "No. 桂林站 and 桂林北站 are separate railway stations. The suffix is part of the ticketed name, not an entrance direction.",
-    },
-    {
-      id: "faq-west-street",
-      type: "heading",
-      level: 3,
-      text: "Is Guilin West close to Yangshuo West Street?",
-    },
-    {
-      id: "faq-west-street-answer",
-      type: "paragraph",
-      text: "No. 桂林西站 is a Guilin-area railway station on the Lingchuan side. ‘West Street’ is a place in Yangshuo. Treat the station and hotel as separate endpoints and use the Guilin–Yangshuo guide for the route between them.",
-    },
-    {
-      id: "faq-yangshuo",
-      type: "heading",
-      level: 3,
-      text: "Should I use KWL or a railway station for a Yangshuo hotel?",
-    },
-    {
-      id: "faq-yangshuo-answer",
-      type: "paragraph",
-      text: "Start with the flight or train choices that work for the intercity journey, then compare their complete transfer to the exact Yangshuo property. KWL has current official Yangshuo transport channels, but availability is dated; rail still needs the correct Guilin or Yangshuo station and a final road leg. There is no universal winner.",
-    },
-    {
-      id: "faq-late",
-      type: "heading",
-      level: 3,
-      text: "What if I arrive after the planned bus or pickup?",
-    },
-    {
-      id: "faq-late-answer",
-      type: "paragraph",
-      text: "Contact the named property or operator, check the official current alternative and use an authorised road vehicle only from a confirmed pickup area. If the long or rural handoff cannot be verified, sleep at a staffed, verified address and continue in daylight.",
+      id: "faq",
+      type: "faq",
+      title: "Frequently asked questions",
+      items: [
+        {
+          id: "faq-central",
+          question: "Which railway station is best for central Guilin?",
+          answer: "Guilin Railway Station is usually the first one to test for a central hotel because it can reduce the city-side transfer. It wins only when a suitable live train calls there and the exact hotel chain works. A materially better train at Guilin North or West can still be the better door-to-door choice.",
+        },
+        {
+          id: "faq-north",
+          question: "Are Guilin Station and Guilin North the same place?",
+          answer: "No. 桂林站 and 桂林北站 are separate railway stations. The suffix is part of the ticketed name, not an entrance direction.",
+        },
+        {
+          id: "faq-west-street",
+          question: "Is Guilin West close to Yangshuo West Street?",
+          answer: "No. 桂林西站 is a Guilin-area railway station on the Lingchuan side. ‘West Street’ is a place in Yangshuo. Treat the station and hotel as separate endpoints and use the Guilin–Yangshuo guide for the route between them.",
+        },
+        {
+          id: "faq-yangshuo",
+          question: "Should I use KWL or a railway station for a Yangshuo hotel?",
+          answer: "Start with the flight or train choices that work for the intercity journey, then compare their complete transfer to the exact Yangshuo property. KWL has current official Yangshuo transport channels, but availability is dated; rail still needs the correct Guilin or Yangshuo station and a final road leg. There is no universal winner.",
+        },
+        {
+          id: "faq-late",
+          question: "What if I arrive after the planned bus or pickup?",
+          answer: "Contact the named property or operator, check the official current alternative and use an authorised road vehicle only from a confirmed pickup area. If the long or rural handoff cannot be verified, sleep at a staffed, verified address and continue in daylight.",
+        },
+      ],
     },
     {
       id: "internal-links",

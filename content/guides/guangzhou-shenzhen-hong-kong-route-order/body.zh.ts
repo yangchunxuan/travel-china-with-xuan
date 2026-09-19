@@ -91,6 +91,13 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "dynamic-boundary", type: "callout", tone: "warning", title: "口岸信息会变化", body: "管制站开放时间、交通、票务和入境要求会变化。临近出行查询香港与内地责任机关及具体运营方。本文不判断签证或入境资格。" },
   { id: "scope", type: "callout", tone: "neutral", title: "本文范围", body: "本文只负责三城顺序和深圳是否值得住一晚。广州—香港与深圳—香港指南分别负责准确交通方式、车站与口岸执行。" },
   { id: "help-cta", type: "callout", tone: "decision", title: "需要检查受口岸影响的路线？", body: "请提供航班口岸、护照国籍、酒店区域、行李和每城一个重点。不要发送护照号码或证件图片。" },
+  { id: "faq", type: "faq", title: "三城路线常见问题", items: [
+    { question: "广州、深圳、香港应该按什么顺序玩？", answer: "按航班单向走：广州进、香港出就是广州→深圳→香港，航班反过来就反向。避免重复走同一段跨境路程。" },
+    { question: "广州和香港之间值得在深圳住一晚吗？", answer: "只有当一个具体的深圳重点经得起删减时才值得，“顺路”不是体验。要算上退房、行李、口岸流程和再次入住；如果这一晚迫使你二次过境或削弱最后的国际航班衔接，就把它去掉。" },
+    { question: "不换酒店也能去深圳吗？", answer: "可以。如果深圳只是一次有重点的一日游、而且最在意少一次退房，就保留广州酒店，并确认行李寄存。只有把深圳的参观和接下来的香港段一起规划时，才在深圳过夜。" },
+    { question: "在香港西九龙坐高铁要提前多久到站？", answer: "港铁给出证件核查、安检和两地边检的通常处理时间约 30–45 分钟；手续最早可在开车前 90 分钟开始，身份与车票核查在开车前 30 分钟截止，登车闸口在开车前 5 分钟关闭。持护照旅客、繁忙日或末班车旅客需要更多时间。" },
+    { question: "该走哪个香港口岸？", answer: "从两边酒店门口出发来选，不要只看铁路分钟数：比较香港酒店到西九龙或相关口岸、内地抵达点到深圳或广州酒店、现行证件要求，以及每件行李由谁拿。香港保安局列出多个陆路口岸，各有自己的交通和运营信息。" },
+  ] },
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [ { label: "广州城市总览", href: "/zh/destinations/guangzhou/", description: "先决定要不要住，再把航站楼、车站和住宿区当成一条链一起选。" },
     { label: "比较广州—香港交通", href: "/zh/guides/guangzhou-hong-kong-transport-route/", description: "路线顺序确定后再选择车站和方式。" },
     { label: "选择深圳—香港口岸", href: "/zh/guides/shenzhen-hong-kong-transport-route/", description: "按两侧酒店和后续安排匹配管制站。" },

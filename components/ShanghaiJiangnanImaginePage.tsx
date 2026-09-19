@@ -455,6 +455,22 @@ export function ShanghaiJiangnanImaginePage({
           url: pageUrl,
         },
       },
+      ...(localized.faq?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${pageUrl}#faq`,
+              url: pageUrl,
+              inLanguage: schemaLanguage(locale),
+              isPartOf: { "@id": `${pageUrl}#webpage` },
+              mainEntity: localized.faq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
+          ]
+        : []),
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}#breadcrumb`,

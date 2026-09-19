@@ -446,6 +446,33 @@ const body = {
       body: "Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds check-out, luggage storage and another arrival without solving enough. Pick the area that wins the repeated journeys, then visit the other neighbourhoods. Split the stay only when a late airport night or a genuinely different second half earns the move.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Beijing stay questions answered",
+      items: [
+        {
+          question: "Where is the best area to stay in Beijing for a first visit?",
+          answer: "There is no single best area. Wangfujing is the most balanced default for a short, classic first visit; Qianmen is strongest when the southern Central Axis, Temple of Heaven or Beijing Railway Station shape the trip; Sanlitun earns the stay for repeated late evenings or Beijing Chaoyang Railway Station; a northern hutong base suits travellers who value courtyard mornings and accept the inconvenience.",
+        },
+        {
+          question: "Is Wangfujing within walking distance of the Forbidden City?",
+          answer: "Not in the way maps suggest. The Palace Museum's own directions describe an 800-metre walk from Wangfujing to Donghuamen, and Donghuamen is an exit, not the entrance; visitors enter at Wumen (the Meridian Gate) on the south side and walk almost a kilometre through the complex. Add the route to Wumen and security before calling a hotel walkable to the Forbidden City.",
+        },
+        {
+          question: "Do I need a hotel with a special licence for foreign guests in Beijing?",
+          answer: "No. Chinese policy does not require a special foreign-guest licence: hotels register foreign guests at check-in when they present valid passports or other accepted travel documents, and platforms or operators should not advertise that they refuse foreign guests. Still confirm that the exact property and the staff on duty can complete your check-in at your arrival hour, and note that a non-hotel stay follows a separate 24-hour registration process.",
+        },
+        {
+          question: "Which Beijing area is best for the Temple of Heaven?",
+          answer: "Qianmen. Tiantandongmen Station on Line 5 serves the east gate and Tianqiao Station on Line 8 the west side; from Qianmen station the Line 8 ride is the shortest, though Wangfujing and the northern hutong cluster's Line 8 stations also give a direct ride. The park covers 273 hectares, so choose the entry and exit gates before judging the hotel journey.",
+        },
+        {
+          question: "Should I split my Beijing stay between two areas?",
+          answer: "For most first trips, keep one base. Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds check-out, luggage storage and another arrival without solving enough. Split the stay only when a late airport night or a genuinely different second half earns the move.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning the parts that affect the stay",

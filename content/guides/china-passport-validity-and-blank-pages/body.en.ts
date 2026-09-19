@@ -162,6 +162,33 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Passport validity questions answered",
+      items: [
+        {
+          question: "Does my passport need six months of validity to enter China?",
+          answer: "Not under every route. Many Chinese visa offices publish a six-month and two-blank-page baseline for visa applications, but China's unilateral visa-free FAQ says an eligible ordinary passport must be valid for at least the intended stay, and the 240-hour visa-free transit notice requires a travel document valid for at least three months. Identify your route first, then check its authority and your airline.",
+        },
+        {
+          question: "How many blank pages do I need for a China visa?",
+          answer: "It depends on the office. The Toronto visa centre asks for two blank visa pages, while the Chinese Embassy in Azerbaijan publishes four; open your own office's current page rather than choosing the smaller number. A visa-free traveller should not import a blank-page rule from a visa checklist but should still resolve a nearly full passport before travel.",
+        },
+        {
+          question: "Can I travel to China visa-free with five months left on my passport?",
+          answer: "The Foreign Ministry FAQ for unilateral visa-free entry requires an ordinary passport valid for at least the intended stay, but the operating airline and any transit country apply their own document checks. Ask the carrier in writing and consider renewal if the buffer is tight.",
+        },
+        {
+          question: "What if I renewed my passport after my Chinese visa was issued?",
+          answer: "Ask the visa-issuing authority whether both passports can be used together or whether a transfer or new visa is needed. Compare the passport name, date of birth, nationality and number with the visa and all bookings before travelling.",
+        },
+        {
+          question: "Does a valid Chinese visa mean I will be admitted?",
+          answer: "No. Consular authorities decide issuance, carriers decide transport under their rules, and Chinese border inspection decides admission under law. A damaged passport, exhausted entries or an expired Enter Before date can still stop the trip, so inspect the document and its dates before non-refundable travel.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the entry and document plan",

@@ -22,6 +22,13 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "failure-copy", type: "paragraph", text: "入口、房间或登记方式与书面承诺明显不符时，搬入前先留证。明确要求一次按订单提供房间或可用替代方案，并给出处理截止时间。解决门禁时，让孩子、老人和行李留在有人值守的公共场所。没有负责人、房间不安全、卫浴或床型不可用，或者经营者要求隐瞒住宿时，转住常规酒店。" },
   { id: "switch", type: "callout", title: "何时改变方案", tone: "decision", body: "民宿无法证明具体房间、合规入住、行李路线和夜间支持时，抵达夜、离开夜或整个行程都换成酒店。只有这些基础已经清楚，而且民宿环境真的改变旅行体验，而不只是图片看起来更“当地”，民宿才值得选。" },
   { id: "dynamic", type: "paragraph", text: "国家民宿标准、2025年度官方等级公告及住宿登记政策复核于2026年8月13日。等级和单个物业经营都会变化，请按中文全称核验当前情况。Homeground不会从预订平台徽章推定官方等级。" },
+  { id: "faq", type: "faq", title: "民宿与酒店常见问题", items: [
+    { question: "中国的“民宿”是什么？", answer: "民宿是一种小型旅游住宿的身份或营销标签，不是服务规格。标注 homestay 的房源可能是专业团队经营、房东并不住在现场的一组客房，而小酒店也可能很有人情味；应按真实运营方式选，不要看英文翻译。" },
+    { question: "到中国的第一晚该订酒店还是民宿？", answer: "酒店。需要有人值守的抵达、可预期的房间、电梯、早餐或快速补救时选常规酒店，第一次入境或深夜航班通常属于这种情况。只有当具体环境真的让旅行更好，而且运营方能核实护照登记、车辆到房间的路径、卫生间、冷暖设备和抵达协助时，才选民宿。" },
+    { question: "民宿会为外国客人办理登记吗？", answer: "请直接问运营方适用哪条路径。按国家移民管理局指引，旅馆为外国客人办理登记；在非旅馆住宿，外国旅客或提供住宿的人必须在 24 小时内办理登记。国家移民管理局的线上登记目前在河北、辽宁、浙江、湖北、广西、重庆、四川试点；“民宿”这个词本身并不能说明适用哪条路径。" },
+    { question: "“五星”或“精品”民宿是官方评级吗？", answer: "光看名称不算。国家标准 GB/T 41648-2022 于 2023 年 2 月 1 日实施，文化和旅游部公布全国甲级、乙级旅游民宿名单。如果等级重要，请用房源的完整中文名称和所在地对照官方公布名单。" },
+    { question: "付款前要向民宿确认什么？", answer: "把答案写下来：是哪种运营、运营方是谁，护照怎么登记，谁负责入住和值守时段，具体是哪间房（房型、楼层、窗户、卫生间、床型），带行李从车辆到房间的路线，深夜抵达的备案，冷暖设备，以及钥匙失灵或没有热水时怎么办。" },
+  ] },
   { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "商业公寓酒店还是住宅短租", href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/", description: "房源是公寓时，先区分运营模式。" }, { label: "北京住四合院酒店还是现代酒店", href: "/zh/guides/beijing-courtyard-hotel-or-modern-hotel/", description: "把物业核验用于传统建筑住宿。" }, { label: "如何判断酒店靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "核验完整的最后步行。" }, { label: "选择黄山住宿基地", href: "/zh/guides/huangshan-summit-or-gateway-base/", description: "从日出、换乘入口、行李、天气和后续铁路比较山顶、汤口、温泉区与黄山市区。" }, { label: "选择厦门住宿基地", href: "/zh/guides/xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan/", description: "从轮渡、行李、清晨与夜晚、海边活动和后续交通比较中山路、鼓浪屿过夜与曾厝垵。" }] },
   { id: "sources", type: "sources", title: "官方来源", items: [{ label: "GB/T 41648-2022旅游民宿国家标准记录", url: "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=2E96A4B6C7B13B97FC67FD71736EAF01", publisher: "国家市场监督管理总局", reviewedAt: "2026-08-13" }, { label: "2025年度全国甲级、乙级旅游民宿公告", url: "https://zwgk.mct.gov.cn/zfxxgkml/scgl/202601/t20260126_964398.html", publisher: "文化和旅游部", reviewedAt: "2026-08-13" }, { label: "旅馆以外住宿登记网上办理政策解读", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" }] }
 ] } as const satisfies StructuredPageBody;

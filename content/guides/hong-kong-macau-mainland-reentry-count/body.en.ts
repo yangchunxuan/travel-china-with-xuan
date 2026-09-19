@@ -233,6 +233,33 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Re-entry questions answered",
+      items: [
+        {
+          question: "Does a day trip to Hong Kong or Macao use up my China visa entry?",
+          answer: "For mainland immigration purposes, leaving the mainland for Hong Kong or Macao ends that mainland stay, and coming back through mainland border inspection is a new mainland entry, even after a same-day visit. On a single-entry visa the used entry does not revive when you return.",
+        },
+        {
+          question: "Can I return to mainland China from Hong Kong on a single-entry visa?",
+          answer: "Not on the same entry. Once you clear mainland exit inspection for Hong Kong or Macao, that stay has ended, and remaining days from the earlier stay are not a return ticket. The new mainland arrival needs its own valid entry basis, such as another visa entry or an eligible visa-free policy.",
+        },
+        {
+          question: "Does a Chinese mainland visa let me enter Hong Kong or Macao?",
+          answer: "No. The mainland, Hong Kong and Macao do not share one visitor-admission record. Hong Kong's visa or entry-permit requirement depends on nationality and travel-document type, and Macao has its own passport-validity, visa, onward-ticket and admission rules; check each separately for the same passport.",
+        },
+        {
+          question: "How do I count mainland entries for a route like Beijing → Hong Kong → Shanghai?",
+          answer: "Two. The first mainland stay ends when you depart for Hong Kong, and the second begins at Shanghai border inspection. Write every place in order and mark each point where immigration control changes; a direct Hong Kong → Macao ferry or bridge shuttle adds no mainland entry.",
+        },
+        {
+          question: "Can I use China's 240-hour visa-free transit for a Hong Kong side trip?",
+          answer: "Only when the route is genuinely eligible. The transit policies require movement through the mainland to a third country or region, with live conditions on passports, ports, tickets and permitted areas; Hong Kong or Macao can be the onward region in a qualifying itinerary, but that does not make every short mainland visit a transit. Ask the operating carrier and the border-inspection authority when the route is unusual.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",

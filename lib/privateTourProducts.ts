@@ -1738,7 +1738,7 @@ const guilinYangshuo: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-19",
 };
 
 const harbinWinter: PrivateTourProduct = {
@@ -2544,7 +2544,7 @@ const beijing: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-19",
 };
 
 const zhangjiajieForestFixedRoute: PrivateTourProduct = {

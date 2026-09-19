@@ -238,6 +238,33 @@ const body = {
       "tone": "decision"
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Wukong and Nezha questions answered",
+      "items": [
+        {
+          "question": "Is Black Myth: Wukong based on Journey to the West?",
+          "answer": "Game Science's launch material says the game is inspired by Journey to the West and Chinese mythology. That first-party statement supports inspiration; it does not turn the game's world, plot or character design into a literal copy of the sixteenth-century novel."
+        },
+        {
+          "question": "Which version of Sun Wukong is the original?",
+          "answer": "There is no single original to find. Journey to the West is a major literary anchor, but scholarship follows Wukong through narrative, drama, opera, film, graphic and international reinterpretations, so the same figure can be trickster, disciplined pilgrim, rebel, stage role or modern protagonist. Name the version you are discussing: a novel edition, opera role, animation, game or museum object."
+        },
+        {
+          "question": "Is Nezha in the animated films the same as the Nezha worshipped in temples?",
+          "answer": "They share a name and attributes but occupy different institutions and make different claims. Research traces Nezha through Buddhist, Daoist, popular-religious, literary, theatrical and cinematic settings; Fengshen yanyi is an important literary version, and the 1979, 2019 and 2021 animations each rework fate, family and character for their audiences. At a temple, use the deity title and explanation supplied by that institution."
+        },
+        {
+          "question": "Can I visit the real locations from Black Myth: Wukong?",
+          "answer": "Keep four claims separate: a production confirming it scanned or referenced a building, a government body linking sites to a work in a dated campaign, a place with an older documented association, and a fan-spotted resemblance. A 2025 Ministry of Culture and Tourism article confirms that Shanxi ran a Wukong-themed tourism campaign involving heritage attractions, but that does not create a developer-authored location catalogue or confirm current access; verify with the site's own management before adding it to an itinerary."
+        },
+        {
+          "question": "Can I use game screenshots or film stills in a travel post?",
+          "answer": "Not without a licence. Screenshots, stills, posters, trailers and fan art can contain protected expression, and an official website is a factual source, not an image licence. For publication, use a public-domain or open-licence historical object, a separately licensed photograph, or an original comparison built only from sourced facts, with credit and a licence link."
+        }
+      ]
+    },
+    {
       "id": "links",
       "type": "internal-links",
       "title": "Keep reading living culture and visual evidence",

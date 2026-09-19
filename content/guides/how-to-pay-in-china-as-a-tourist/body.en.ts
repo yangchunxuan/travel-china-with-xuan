@@ -414,6 +414,33 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Payment questions answered before you fly",
+      items: [
+        {
+          question: "Can I pay in China with only Alipay or WeChat Pay?",
+          answer: "Not safely as your only method. Make one wallet with a successfully linked and tested international card your primary route, and keep a physical international card plus a small amount of RMB cash as backups. A family should have two adults with independent payment paths.",
+        },
+        {
+          question: "Does Google Pay work in mainland China?",
+          answer: "At the 9 September 2026 check, Google's supported bank-and-card market list did not include mainland China; Hong Kong and Macao were listed separately. That does not prove a card already set up in another supported market will fail at every compatible mainland NFC terminal, and online or in-app Google Pay is a separate question. Do not rely on it as your only method: prepare Alipay or Weixin Pay, a physical card and RMB cash.",
+        },
+        {
+          question: "Do I need to top up my WeChat balance before paying with a foreign card?",
+          answer: "No. An eligible merchant purchase is charged to the linked international card you select on the payment screen; a zero Weixin balance (零钱) is separate from the card's funds. Balance, top-up and transfer functions can be restricted for accounts that have only linked international cards without real-name verification.",
+        },
+        {
+          question: "What fees do Alipay and WeChat Pay charge on foreign cards?",
+          answer: "Tenpay's 15 January 2026 notice says Weixin Pay transactions of RMB 200 or less are fee-free and larger ones carry a 3% fee on the full amount. Eligible first-time international-card users may see the current 90-day waiver on qualifying daily spending up to RMB 1,000; confirm the offer in your own account because the promotion is scheduled only through 31 December 2026. For Alipay, read the live payment screen because its fee and promotions can change, and your bank may add its own costs.",
+        },
+        {
+          question: "How much cash can I withdraw from a Chinese ATM with a foreign card?",
+          answer: "Shanghai's official visitor page and UnionPay both state a usual limit of RMB 3,000 per withdrawal for cards issued outside mainland China. Your issuing bank's daily limit and the ATM's own rules apply separately, and each visitor may take up to RMB 20,000 in cash into or out of China each time.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Read next: entry, arrival and route planning",

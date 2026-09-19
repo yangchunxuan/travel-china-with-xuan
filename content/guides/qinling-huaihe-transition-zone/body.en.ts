@@ -228,6 +228,33 @@ const body = {
       body: "Leave your travel dates, party size and rough budget. A Homeground planner can help choose a practical north–south segment and observation stops without turning the journey into a geography checklist.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Qinling–Huaihe questions answered",
+      items: [
+        {
+          question: "What is the Qinling–Huaihe line?",
+          answer: "A useful shorthand for China's north–south geographic transition. Textbook summaries place the January 0°C isotherm, roughly 800 millimetres of annual precipitation, the warm-temperate/subtropical divide and the humid/semi-humid transition near it, but these are long-term statistical or ecological indicators, not a painted border.",
+        },
+        {
+          question: "Can I see the north–south divide from a train?",
+          answer: "Not as a single moment. Fast trains and tunnels reduce a broad landscape transition to a few glimpses, and a tunnel or night can hide the mountain section entirely. Treat the journey as a transect: compare terrain, winter conditions, moisture, vegetation, water management and cultivated land across distance rather than claiming the divide passed at an invented minute.",
+        },
+        {
+          question: "Is it true that northern China grows wheat and the south grows rice?",
+          answer: "Only as a broad historical landscape tendency. Dry-field and wheat-associated landscapes are more common northward and paddy landscapes southward, but irrigation supports rice north of the simplified line, dry fields occur to the south, and orchards, rapeseed, maize, tea and vegetables complicate any field. Read fields as land use, not as a food itinerary.",
+        },
+        {
+          question: "Do the western and eastern sections of the zone look the same?",
+          answer: "No. The Qinling and Qinling–Daba west is a high, complex east–west mountain system where relief, slope aspect and elevation can compress change; the Huai and Jianghuai east is a lowland of rivers, plains, canals, lakes and heavily managed farmland where change spreads across distance.",
+        },
+        {
+          question: "Where is the best place to observe the transition?",
+          answer: "Choose a genuinely north–south segment, such as Xi'an toward Hanzhong through the Qinling or a north–south crossing of the Huai plain. Mark observation windows north of, inside and south of the zone, keep altitude comparable, record at least three indicators at each window, and write the conclusion as a pattern with exceptions.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning the journey",

@@ -151,6 +151,18 @@ export function ZhangjiajiePrivateTourPreviewPage({
               })),
             },
           },
+          {
+            "@type": "FAQPage",
+            "@id": `${pageUrl}#faq`,
+            url: pageUrl,
+            inLanguage: copy.htmlLang,
+            isPartOf: { "@id": `${pageUrl}#webpage` },
+            mainEntity: copy.faqItems.map(([question, answer]) => ({
+              "@type": "Question",
+              name: question,
+              acceptedAnswer: { "@type": "Answer", text: answer },
+            })),
+          },
           editorialWebsiteSchema(),
           editorialOrganizationSchema(),
           {

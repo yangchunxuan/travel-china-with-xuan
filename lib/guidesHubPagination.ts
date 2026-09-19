@@ -15,6 +15,13 @@ const SITE_URL = "https://homegroundchina.com";
  */
 const guidesHubMembershipChanges = [
   {
+    date: "2026-09-19",
+    locales: homegroundLocales,
+    firstPage: 1,
+    lastPage: 8,
+    reason: "33 FAQ-enriched guides moved across pages 1 through 8",
+  },
+  {
     date: "2026-09-04",
     locales: homegroundLocales,
     firstPage: 1,
