@@ -6,7 +6,7 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "Guangzhou Baiyun Airport Terminal 3 (T3) is part of Guangzhou Baiyun International Airport, airport code CAN, alongside T2. Your exact flight determines which terminal to use. Confirm it first, then choose the metro, intercity railway, road transfer or terminal connection that serves it.",
+      text: "As of this review, Guangzhou Baiyun Airport (CAN) handles passenger flights through T2 and T3; T1 stopped passenger operations on 7 May 2026. Check the exact flight and date first because the terminal assignment belongs to the operating flight and can change. Then use only the metro, intercity railway, road transfer or terminal connection serving the confirmed T2 or T3.",
     },
     {
       id: "current-state",

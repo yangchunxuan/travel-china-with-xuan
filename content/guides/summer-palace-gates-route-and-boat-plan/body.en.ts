@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
-  { id: "answer-first", type: "lead", text: "There is no universally best Summer Palace entrance. East Palace Gate gives the clearest palace-to-lake sequence; North Palace Gate is convenient from Metro Line 4 and starts with Suzhou Street and a hill crossing; New Palace Gate places you near the Seventeen-Arch Bridge and broad lake views. Choose the gate from your priority and intended exit. Treat a boat as an optional connector, because wind, rain, weather alerts, season and queues can remove it from the plan." },
+  { id: "answer-first", type: "lead", text: "Foreign visitors can reserve the Summer Palace with a passport through the official channel, or use a gate service counter with the original passport if the online flow does not work. Choose the base or combined ticket from the route you will actually walk. East Palace Gate suits a palace-to-lake sequence, North Palace Gate gives Metro Line 4 access but an immediate hill decision, and New Palace Gate starts by the Seventeen-Arch Bridge and lake views; treat the boat as optional." },
   { id: "gate-heading", type: "heading", level: 2, text: "Choose among three useful gates" },
   { id: "gate-table", type: "table", caption: "Gate choice for a first visit", columns: ["Gate", "Best for", "Trade-off"], rows: [
     ["East Palace Gate — 东宫门", "A legible first visit through the administrative-palace area toward Long Corridor, Longevity Hill and the lake.", "Metro Line 4 Xiyuan station still leaves an approach walk; returning to the same gate can create backtracking."],

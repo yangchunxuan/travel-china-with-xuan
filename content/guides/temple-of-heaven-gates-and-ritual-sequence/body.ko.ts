@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
-  { id: "answer-first", type: "lead", text: "천단을 처음 본다면 남문으로 들어가 원구단, 황궁우와 회음벽, 단폐교, 기년전 순서로 북쪽을 향해 걷는 동선이 가장 명확합니다. 남쪽 제단에서 북쪽 기곡 건축군으로 이어지는 공간 논리를 따릅니다. 지하철 5호선 편의가 더 중요하면 동문으로 들어가 기년전을 먼저 보고 중심축을 거꾸로 내려가 남문으로 나가세요. 어느 방향이든 세 핵심 유료 구역이 포함된 입장권이 필요하며 공원 입장권만으로는 들어갈 수 없습니다." },
+  { id: "answer-first", type: "lead", text: "외국인은 공식 채널에서 여권으로 천단을 예약할 수 있습니다. 해외 전화번호 인증이 되지 않으면 원본 여권을 가지고 종합 서비스 창구를 이용하세요. 첫 방문에는 세 핵심 유료 구역이 포함된 표가 필요하며 공원 입장권만으로는 들어갈 수 없습니다. 제례 공간을 남쪽에서 북쪽으로 읽으려면 남문, 지하철 5호선 접근을 우선하면 동문에서 시작해 중심축을 거꾸로 걸으세요." },
   { id: "ticket-heading", type: "heading", level: 2, text: "공원 입장권과 핵심 제례 구역 입장권은 다릅니다" },
   { id: "tickets", type: "comparison", columns: [
     { heading: "공원 입장권", body: "넓은 외부 공원과 고목, 공공 녹지에 들어가지만 기년전·회음벽·원구단 입장은 포함하지 않습니다." },

@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "베이징의 두 주요 공항은 방향이 다르다. 베이징남역에서 항공편을 이을 때 공항 코드와 터미널부터 읽고 항공사 마감에서 역 출구, 시내 이동, 공항 도보와 수속을 거꾸로 계산한다." },
+  { id: "lead", type: "lead", text: "먼저 항공편이 서우두공항(PEK)인지 다싱공항(PKX)인지 확인하세요. 두 공항은 서로 바꿀 수 없습니다. 낮 시간, 감당할 수 있는 짐, 정상 철도 운행 조건이라면 PKX의 일반적인 대중교통 경로는 4호선을 타고 자오먼시에서 10호선으로 갈아탄 뒤 차오차오에서 다싱공항선으로 환승하는 것입니다. PEK는 한 가지 기본 답이 없으므로 정확한 시각·터미널·짐·항공사 마감에 맞춰 공항버스, 4호선·2호선·서우두공항선, 차량 이동을 비교하세요." },
   { id: "answer", type: "callout", title: "PEK와 PKX는 서로 다른 공항이다", tone: "decision", body: "PKX는 지하철로 차오차오(草桥)에서 다싱공항선으로 갈아타는 방법과 도로 이동을 비교한다. PEK는 현재 베이징남역 공항버스, 지하철·공항철도와 도로 이동을 비교한다. 정확한 시각, 짐, 인원, 운행 중단에 대비한 여유에 따라 답이 달라진다." },
   { id: "matrix-heading", type: "heading", level: 2, text: "공항을 먼저 고르고 교통을 고른다" },
   { id: "matrix", type: "table", caption: "모든 선택은 열차에서 실제로 나온 뒤 시작한다", columns: ["연결", "잘 맞음", "부담", "확인"], rows: [

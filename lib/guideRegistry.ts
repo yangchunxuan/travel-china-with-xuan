@@ -366,7 +366,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
+    dateModified: "2026-09-20",
     sourceReviewedDate: "2026-07-23",
     locales: {
       en: {
@@ -480,7 +480,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1800,
     imageHeight: 1200,
     datePublished: "2026-07-21",
-    dateModified: "2026-07-22",
+    dateModified: "2026-09-20",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {
@@ -886,15 +886,15 @@ export const legacyGuideRegistry = [
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
-    sourceReviewedDate: "2026-07-24",
+    dateModified: "2026-09-20",
+    sourceReviewedDate: "2026-09-20",
     locales: {
       en: {
         path: "/guides/china-240-hour-visa-free-transit-route-check/",
         title: "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
         headline: "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
         description:
-          "One rule decides it: where you fly after China must differ from where you flew in from. Check your route against worked examples, port limits and the next-day clock.",
+          "Check the A–China–C route, eligible passport, confirmed onward ticket, designated ports and permitted stay areas for 240-hour visa-free transit.",
         heroAlt:
           "Diagram of the transit rule: country or region A, then mainland China, then a different country or region C.",
         navTitle: "240-hour transit route check",
@@ -906,7 +906,7 @@ export const legacyGuideRegistry = [
         title: "中国 240 小时过境免签:你的路线符合条件吗？",
         headline: "中国 240 小时过境免签:你的路线符合条件吗？",
         description:
-          "只有一条规则决定:离开中国后飞往的地方,必须和你飞进来之前的不同。对照真实航线例子、口岸范围与次日起算规则核一遍。",
+          "核对 A—中国—C 路线、适用普通护照、已确认续程票、指定口岸与许可停留区域,判断 240 小时过境免签条件。",
         heroAlt:
           "过境规则示意图:国家或地区 A,中国大陆,另一个不同的国家或地区 C。",
         navTitle: "240 小时过境路线判断",
@@ -918,7 +918,7 @@ export const legacyGuideRegistry = [
         title: "중국 240시간 무비자 환승: 내 경로도 될까?",
         headline: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
         description:
-          "규칙은 하나입니다. 중국을 떠나 향하는 곳이 들어오기 전과 달라야 합니다. 실제 경로 예시와 허용 지역, 다음 날 기산 규칙으로 확인하세요.",
+          "A–중국–C 경로, 대상국 일반 여권, 확정된 다음 구간 항공권, 지정 출입국장과 허용 체류 지역을 함께 확인하세요.",
         heroAlt:
           "환승 규칙 다이어그램: 국가 또는 지역 A, 중국 본토, 그리고 다른 국가 또는 지역 C.",
         navTitle: "240시간 환승 경로 확인",

@@ -1,7 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 
 const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
-  { id: "answer-first", type: "lead", text: "颐和园没有对所有人都最好的入口。东宫门适合从宫廷建筑走向长廊与湖面；北宫门靠近地铁4号线，通常从苏州街和万寿山一侧进入；新建宫门则最接近十七孔桥与开阔湖景。入口应由你的重点和出口决定。游船只当可选连接，因为季节、风雨、预警和排队都可能让它无法使用。" },
+  { id: "answer-first", type: "lead", text: "外籍游客可以用护照通过颐和园官方渠道预约；线上流程无法完成时，也可持护照原件到门区综合服务窗口办理。门票或联票应按实际路线选择。东宫门适合从宫廷区走向湖面，北宫门方便接地铁 4 号线但要立刻决定翻山或绕行，新建宫门最接近十七孔桥与湖景；游船只作为可选连接。" },
   { id: "gate-heading", type: "heading", level: 2, text: "三个最实用的入口怎么选" },
   { id: "gate-table", type: "table", caption: "第一次参观的入口选择", columns: ["入口", "适合什么", "代价"], rows: [
     ["东宫门", "按宫廷区—长廊—万寿山—昆明湖的顺序理解颐和园。", "从地铁4号线西苑站还要步行；若原路返回会产生较多折返。"],
