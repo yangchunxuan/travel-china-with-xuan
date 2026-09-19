@@ -97,7 +97,7 @@ test("the homepage separates tour conversion, destination discovery and three pa
   );
   assert.match(
     homepage,
-    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<a href=\{destinationsIndexPath\}>/,
+    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<Link href=\{destinationsIndexPath\}>/,
   );
 
   for (const locale of ["en", "zh", "ko"]) {
@@ -707,7 +707,7 @@ test("homepage guide paths are parallel, compact and remain ordinary discoverabl
   assert.match(page, /guidePaths=\{showcase\.guidePaths\}/);
   assert.match(
     finder,
-    /<nav className=\{styles\.guidePaths\} aria-label=\{guidePaths\.listLabel\}>[\s\S]*?<ul>[\s\S]*?<li key=\{item\.id\}>[\s\S]*?<a href=\{getHomepageGuidePath\(locale, item\.id\)\}>/,
+    /<nav className=\{styles\.guidePaths\} aria-label=\{guidePaths\.listLabel\}>[\s\S]*?<ul>[\s\S]*?<li key=\{item\.id\}>[\s\S]*?<Link href=\{getHomepageGuidePath\(locale, item\.id\)\}>/,
   );
   assert.doesNotMatch(finder, /<ol|decisionNumber|String\(index \+ 1\)/);
   assert.match(finderStyles, /\.guidePaths ul \{[\s\S]{0,140}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
@@ -718,5 +718,5 @@ test("homepage guide paths are parallel, compact and remain ordinary discoverabl
   assert.doesNotMatch(pageStyles, /\.travelGuides(?:Section)?\s*\{[^}]*overflow:\s*hidden/);
   assert.doesNotMatch(showcaseStyles, /\.searchSection\s*\{[^}]*overflow:\s*hidden/);
   assert.match(finder, /<strong>\{item\.title\}<\/strong>[\s\S]{0,80}<small>\{item\.body\}<\/small>/);
-  assert.doesNotMatch(finder, /<a[^>]*aria-label=/);
+  assert.doesNotMatch(finder, /<Link[^>]*aria-label=/);
 });

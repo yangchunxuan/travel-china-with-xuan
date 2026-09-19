@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -296,10 +297,10 @@ export function HomepageGuideRail<Category extends string = string>({
 
             <div className={styles.actions}>
               {viewAllHref && viewAllLabel ? (
-                <a className={styles.viewAll} href={viewAllHref}>
+                <Link className={styles.viewAll} href={viewAllHref}>
                   {viewAllLabel}
                   <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               ) : null}
             </div>
           </div>
@@ -318,7 +319,7 @@ export function HomepageGuideRail<Category extends string = string>({
               data-kind={item.kind}
               key={`${item.kind}:${item.id}`}
             >
-              <a
+              <Link
                 className={styles.card}
                 href={item.href}
                 onClick={() => onItemClick?.(item)}
@@ -344,7 +345,7 @@ export function HomepageGuideRail<Category extends string = string>({
                     <span aria-hidden="true">→</span>
                   </span>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
         </ol>

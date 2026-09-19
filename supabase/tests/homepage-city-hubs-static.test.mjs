@@ -67,7 +67,7 @@ test("the homepage footer consumes the complete published hub registry", async (
   assert.doesNotMatch(homepage, /destinationHubItems\.map\(\(city\) =>/);
   assert.doesNotMatch(homepage, /<section[\s\S]{0,160}id="destinations"/);
   assert.match(footer, /destinationHubItems\.map\(\(city\) =>/);
-  assert.match(footer, /<a href=\{city\.href\}>\{city\.label\}<\/a>/);
+  assert.match(footer, /<Link href=\{city\.href\}>\{city\.label\}<\/Link>/);
   assert.match(footer, /aria-label=\{copy\.cities\.listLabel\}/);
   assert.match(footer, /id="destinations"/);
   assert.match(footer, /id="homepage-city-hubs-title"/);

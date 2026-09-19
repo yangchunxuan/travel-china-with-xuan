@@ -72,7 +72,7 @@ test("homepage guide rail exposes the tour and complete localized guide catalog"
   assert.match(localizedIndex, /getHomepageGuideRailItems\(locale\)/);
   assert.match(localizedIndex, /value === "zh" \|\| value === "ko"/);
   assert.match(rail, /fetch\(catalogUrl/);
-  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<a/);
+  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<Link/);
   assert.match(rail, /data-category=\{item\.category\}/);
   assert.match(rail, /data-kind=\{item\.kind\}/);
   assert.match(railCss, /scroll-snap-type:\s*x mandatory/);

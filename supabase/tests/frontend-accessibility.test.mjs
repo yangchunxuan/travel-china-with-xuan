@@ -285,7 +285,11 @@ test("language changes preserve a completed planner result", async () => {
     )?.length,
     1,
   );
-  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 2);
+  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 1);
+  assert.equal(
+    header.match(/availableLanguageLocales\.map\(renderLanguageChoice\)/g)?.length,
+    2,
+  );
 });
 
 test("the sticky header is opaque over mobile hero text", async () => {

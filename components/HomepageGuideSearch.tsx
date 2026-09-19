@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
   getGuideSearchCopy,
@@ -56,13 +57,13 @@ export function HomepageGuideSearch({
         <ul>
           {guidePaths.items.map((item) => (
             <li key={item.id}>
-              <a href={getHomepageGuidePath(locale, item.id)}>
+              <Link href={getHomepageGuidePath(locale, item.id)}>
                 <span>
                   <strong>{item.title}</strong>
                   <small>{item.body}</small>
                 </span>
                 <ArrowUpRight aria-hidden="true" size={17} />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

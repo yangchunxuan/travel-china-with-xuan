@@ -1,6 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   ArrowRight,
   BedDouble,
@@ -39,6 +47,11 @@ import {
   type HomepagePlanningIntentId,
   type HomepageStarterIntentId,
 } from "../lib/homepagePlanningDesk";
+import {
+  arrivedViaHomegroundInternalReload,
+  clearHomegroundInternalReloadFlag,
+  hasMountedHomegroundRoute,
+} from "../lib/homegroundRouteSession";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
@@ -92,6 +105,17 @@ export function HomegroundHomePage({
   privateTourItems: readonly HomepagePrivateTourItem[];
   searchDemos: readonly HomepageSearchDemo[];
 }) {
+  const [playHomepageIntro, setPlayHomepageIntro] = useState(
+    () => !hasMountedHomegroundRoute(),
+  );
+  useLayoutEffect(() => {
+    if (!arrivedViaHomegroundInternalReload()) return;
+    setPlayHomepageIntro(false);
+    const frame = window.requestAnimationFrame(() => {
+      clearHomegroundInternalReloadFlag();
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
   const [plannerStatus, setPlannerStatus] = useState<PlannerStatus>("new");
   const [routeMatch, setRouteMatch] = useState<DestinationPlan | null>(
     null,
@@ -478,6 +502,7 @@ export function HomegroundHomePage({
       className={`${styles.localeRoot} ${showcaseStyles.root}`}
       lang={copy.htmlLang}
       data-homeground-locale={locale}
+      data-homeground-home-intro={playHomepageIntro ? "play" : "settled"}
     >
       <a
         className={styles.skipLink}
@@ -523,13 +548,13 @@ export function HomegroundHomePage({
                 {showcase.heroBody}
               </p>
               <div className={showcaseStyles.heroActions}>
-                <a
+                <Link
                   className={showcaseStyles.primaryAction}
                   href={privateTourHubPaths[locale]}
                 >
                   {showcase.heroPrimary}
                   <ArrowRight aria-hidden="true" size={16} />
-                </a>
+                </Link>
                 <a
                   className={showcaseStyles.secondaryAction}
                   href={plannerTarget}
@@ -542,10 +567,10 @@ export function HomegroundHomePage({
               </div>
               <p className={showcaseStyles.heroDestinationPrompt}>
                 <span>{showcase.heroDestinationPrompt}</span>
-                <a href={destinationsIndexPath}>
+                <Link href={destinationsIndexPath}>
                   {showcase.heroDestinationAction}
                   <ArrowRight aria-hidden="true" size={15} />
-                </a>
+                </Link>
               </p>
             </div>
           </div>
@@ -703,13 +728,13 @@ export function HomegroundHomePage({
                 {showcase.planning.title}
               </h2>
               <p>{showcase.planning.body}</p>
-              <a
+              <Link
                 className={showcaseStyles.planningTeamLink}
                 href={studioPath}
               >
                 {showcase.planning.teamAction}
                 <ArrowRight aria-hidden="true" size={16} />
-              </a>
+              </Link>
             </div>
 
             <div className={showcaseStyles.planningPanel}>
