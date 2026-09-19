@@ -1,4 +1,4 @@
-# Image plan — Planning a Wheelchair-Accessible China Route
+# Image plan — Wheelchair Travel in China: How to Plan an Accessible Route
 
 Status: **ASSET SELECTED — CENTRAL LOCATION AND RIGHTS REVIEW COMPLETE**
 
