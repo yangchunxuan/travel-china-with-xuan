@@ -29,7 +29,7 @@ const expectedSlugs = [
 ].sort();
 const expectedPublishedCount = expectedSlugs.length;
 const reviewedDerivativeRightsSha256 =
-  "2fc40d80d3f115d041587f69b56c403b71b619c7d18f6deea711e58aa8fa64de";
+  "8560b24d1b0dbb1b4de48a1b7f61975a09428064ff7dbd73aeba4946f557c8e1";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);
@@ -140,7 +140,10 @@ test("responsive card derivatives are locked to documented sources, dimensions a
       ),
     )
     .sort();
-  assert.equal(expectedDerivativeFiles.length, 40);
+  assert.equal(
+    expectedDerivativeFiles.length,
+    expectedPublishedCount * privateTourCardImageWidths.length,
+  );
   assert.deepEqual(
     // The build may add ignored size variants; the reviewed source allowlist stays exact.
     (await readdir(derivativeDirectory)).filter(file => {
@@ -148,7 +151,7 @@ test("responsive card derivatives are locked to documented sources, dimensions a
       return original === file || !expectedDerivativeFiles.includes(original);
     }).sort(),
     expectedDerivativeFiles,
-    "responsive card image directory must contain the exact 10 x 4 allowlist",
+    "responsive card image directory must contain the exact product x width allowlist",
   );
 
   for (const product of catalog) {

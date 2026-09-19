@@ -203,13 +203,102 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       ccBy2,
     ),
   ],
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": [
+    credit(
+      text(
+        "Wulingyuan sandstone pillars",
+        "武陵源砂岩峰林",
+        "우링위안 사암 봉우리",
+      ),
+      "颐园居",
+      "https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text(
+        "Tianzi Mountain panorama",
+        "天子山峰林全景",
+        "톈쯔산 봉우리 전경",
+      ),
+      "Chensiyuan",
+      "https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text(
+        "Golden Whip Stream",
+        "张家界金鞭溪",
+        "장자제 금편계",
+      ),
+      "Levaby",
+      "https://commons.wikimedia.org/wiki/File:%E5%BC%A0%E5%AE%B6%E7%95%8C%E9%87%91%E9%9E%AD%E6%BA%AA.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text(
+        "Zhangjiajie Hehua Airport with Tianmen Mountain",
+        "张家界荷花机场与天门山",
+        "장자제 허화공항과 톈먼산",
+      ),
+      "Martin Lewison",
+      "https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg",
+      "CC BY-SA 2.0",
+      ccBySa2,
+    ),
+    credit(
+      text("Furong Town waterfall", "芙蓉镇水景", "푸룽전 폭포"),
+      "Chensiyuan",
+      "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text("Furong Town at night", "芙蓉镇夜景", "푸룽전 야경"),
+      "Popolon",
+      "https://commons.wikimedia.org/wiki/File:Furongzhen_nuit.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text("Hongqiao, Fenghuang", "凤凰古城虹桥", "펑황고성 훙차오"),
+      "xiquinhosilva",
+      "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg",
+      "CC BY 4.0",
+      ccBy4,
+    ),
+    credit(
+      text(
+        "Shen Congwen's former residence, Fenghuang",
+        "凤凰沈从文故居",
+        "펑황 선충원 옛집",
+      ),
+      "Kurgenera",
+      "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text(
+        "Tuojiang stepping stones, Fenghuang",
+        "凤凰沱江跳岩",
+        "펑황 퉈장 징검다리",
+      ),
+      "Yu Hui (于回)",
+      "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg",
+      "CC BY-SA 2.0",
+      ccBySa2,
+    ),
+  ],
 });
 
 export const privateTourPhotoCreditCopy = {
   en: {
     title: "Photo credits",
     intro:
-      "The location-specific external photographs are credited below. They were cropped, resized and converted to WebP; no generative edits were made.",
+      "The location-specific external photographs are credited below. Only conventional cropping, resizing and web-format optimisation were applied; no generative edits were made.",
     by: "Photo by",
     localNote:
       "All remaining photographs were selected from the Homeground project library and authorised by the site owner for this website. Only routine cropping, resizing and format conversion were applied.",
@@ -217,7 +306,7 @@ export const privateTourPhotoCreditCopy = {
   zh: {
     title: "图片来源与授权",
     intro:
-      "地点明确的外部照片在下方逐张标注。本站只做裁切、缩放与 WebP 格式转换，没有生成式修改。",
+      "地点明确的外部照片在下方逐张标注。本站只做常规裁切、缩放与网页格式优化，没有生成式修改。",
     by: "摄影",
     localNote:
       "其余照片由网站负责人从 Homeground 项目素材库选用并授权用于本站，仅做常规裁切、缩放和格式转换。",
@@ -225,7 +314,7 @@ export const privateTourPhotoCreditCopy = {
   ko: {
     title: "사진 출처 및 라이선스",
     intro:
-      "장소가 확인된 외부 사진의 출처를 아래에 표시했습니다. 자르기, 크기 조정과 WebP 변환만 했으며 생성형 편집은 사용하지 않았습니다.",
+      "장소가 확인된 외부 사진의 출처를 아래에 표시했습니다. 일반적인 자르기, 크기 조정과 웹 형식 최적화만 했으며 생성형 편집은 사용하지 않았습니다.",
     by: "촬영",
     localNote:
       "나머지 사진은 사이트 소유자가 Homeground 프로젝트 자료실에서 선택해 이 웹사이트 사용을 승인했습니다. 일반적인 자르기, 크기 조정과 형식 변환만 적용했습니다.",

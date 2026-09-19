@@ -18,6 +18,7 @@ as $$
       'shanghai-suzhou-5-day-private-tour',
       'beijing-highlights-5-day-private-tour',
       'zhangjiajie-forest-4-day-private-tour',
+      'zhangjiajie-furong-fenghuang-7-day-private-tour',
       'zhangjiajie-4-day-private-tour'
     ) then (p_package_id is null and p_travelers is null) or
       (p_package_id is not null and p_travelers in (2, 4) and

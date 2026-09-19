@@ -271,6 +271,41 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.doesNotMatch(zh.bookingNote, /二选一/);
 });
 
+test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days and ticket boundary", () => {
+  const product = getPrivateTourProduct(
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+  );
+  assert.ok(product);
+  assert.equal(product.id, "private-tour-zhangjiajie-furong-fenghuang-7d6n");
+  assert.equal(product.days, 7);
+  assert.equal(product.nights, 6);
+  assert.deepEqual(
+    product.itinerary.map(({ day }) => day),
+    [1, 2, 3, 4, 5, 6, 7],
+  );
+  assert.equal(product.packages.length, 1);
+  assert.equal(product.packages[0].id, "standard-guided");
+  assert.deepEqual(product.packages[0].prices, [
+    { travelers: 2, cnyPerPerson: 5840, usdPerPerson: 899 },
+    { travelers: 4, cnyPerPerson: 4860, usdPerPerson: 749 },
+  ]);
+
+  const zh = localizePrivateTourProduct(product, "zh");
+  assert.match(zh.hotelNote, /武陵源 3 晚、芙蓉镇 1 晚、凤凰 2 晚/);
+  assert.match(zh.serviceNote, /D2–D5 含英语导游/);
+  assert.match(zh.serviceNote, /D6 为不含车导的自由活动/);
+  assert.match(zh.serviceNote, /十里画廊小火车/);
+  assert.match(zh.serviceNote, /七十二奇楼普通夜场/);
+  assert.match(zh.serviceNote, /芙蓉镇首道门票/);
+  assert.match(zh.exclusions.join("\n"), /未列索道、百龙天梯、游船及收费小景点/);
+  assert.match(zh.itinerary[6].description, /凤凰古城站/);
+  assert.match(zh.itinerary[6].description, /送回张家界/);
+  assert.doesNotMatch(
+    localizePrivateTourProduct(product, "en").summary,
+    /all (?:scenic )?(?:area )?(?:admissions|tickets)/i,
+  );
+});
+
 test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller prices", () => {
   const product = getPrivateTourProduct(shanghaiJiangnanSlug);
   assert.ok(product);

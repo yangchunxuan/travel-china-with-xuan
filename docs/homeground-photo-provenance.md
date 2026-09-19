@@ -1,7 +1,7 @@
 # Homeground production photo provenance
 
 Responsive private-tour catalog card derivatives created on September 4, 2026
-are locked to their ten already recorded source images in
+are locked to their eleven already recorded source images in
 `docs/homeground-private-tour-card-derivatives.json`. That machine-readable
 ledger records each source path and SHA-256, the four output dimensions, and a
 family SHA-256 over the 320/640/960/1380 WebP byte streams. It also points back
@@ -158,6 +158,73 @@ This note records how the files entered the project; it does not independently
 establish third-party copyright ownership. Before using the photographs in
 paid advertising, print, resale, or partner distribution, the studio should
 retain the original license or photographer permission where applicable.
+
+For the Zhangjiajie–Furong Town–Fenghuang seven-day private-tour page, the
+project reuses four location-verified Fenghuang derivatives recorded in
+`content/guides/border-town-fenghuang-chadong-shen-congwen/image-plan.md`. It
+adds six real, location-verified photographs from Wikimedia Commons:
+
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp`
+  derives from [Wulingyuan, Zhangjiajie, Hunan 20230702](https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg),
+  photographed by 颐园居 in Wulingyuan and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The source
+  was centre-cropped, resized and converted to WebP without generative
+  alteration. Published derivative SHA-256:
+  `2e2988a45acf4c8da9e805951aa9c44cb38b144b6d4ee5692aac48fa6d87e565`.
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp`
+  derives from [1 tianzishan wulingyuan zhangjiajie 2012](https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg),
+  photographed by Chensiyuan at Tianzi Mountain and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The source
+  was centre-cropped, resized and converted to WebP without generative
+  alteration. Published derivative SHA-256:
+  `67bd244a597874357f58561fee2daead17db11e631e1760ef6e786bf0158fba2`.
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp`
+  derives from [张家界金鞭溪](https://commons.wikimedia.org/wiki/File:%E5%BC%A0%E5%AE%B6%E7%95%8C%E9%87%91%E9%9E%AD%E6%BA%AA.jpg),
+  photographed by Levaby at Golden Whip Stream and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The source
+  was orientation-corrected, centre-cropped, resized and converted to WebP
+  without generative alteration. Published derivative SHA-256:
+  `b3dc0ff4ac51e28921c1e38eaf024b7a060b217c8671d1591041f420213a9eb1`.
+
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp`
+  derives from [Zhangjiajie Airport (27796134377)](https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg),
+  photographed by Martin Lewison at Zhangjiajie Hehua Airport and licensed
+  under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). The
+  source was centre-cropped, resized and converted to WebP without generative
+  alteration. Published derivative SHA-256:
+  `6385827bfb3746b4454a29510547d31882748e5ef33f8ee9eb9e10ca80dcd0e5`.
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp`
+  derives from [1 furong panorama 2012](https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg),
+  photographed by Chensiyuan and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The source
+  was resized and converted to WebP without generative alteration. Published
+  derivative SHA-256: `5934cb96f3aa91f4f5b30b678ff57b4f9881e1b2dc69b959560d71290f44f6e7`.
+- `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-night-960.webp`
+  derives from [Furongzhen nuit](https://commons.wikimedia.org/wiki/File:Furongzhen_nuit.jpg),
+  photographed by Popolon and licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The source
+  was converted to WebP without generative alteration. Published derivative
+  SHA-256: `68b34e59c04f34a4f77423993c141cac445c7f69200b72f77b888a9d7026b89a`.
+
+Exact page-image mapping:
+
+| Page role | Published file | Source / licence | Published SHA-256 |
+| --- | --- | --- | --- |
+| Hero | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp` | 颐园居; CC BY-SA 4.0 | `2e2988a45acf4c8da9e805951aa9c44cb38b144b6d4ee5692aac48fa6d87e565` |
+| Gallery — Furong Town | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp` | Chensiyuan; CC BY-SA 4.0 | `5934cb96f3aa91f4f5b30b678ff57b4f9881e1b2dc69b959560d71290f44f6e7` |
+| D1 — Hehua Airport | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp` | Martin Lewison; CC BY-SA 2.0 | `6385827bfb3746b4454a29510547d31882748e5ef33f8ee9eb9e10ca80dcd0e5` |
+| D2 — Tianzi Mountain | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp` | Chensiyuan; CC BY-SA 4.0 | `67bd244a597874357f58561fee2daead17db11e631e1760ef6e786bf0158fba2` |
+| D3 — Golden Whip Stream | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp` | Levaby; CC BY-SA 4.0 | `b3dc0ff4ac51e28921c1e38eaf024b7a060b217c8671d1591041f420213a9eb1` |
+| D4 — Furong Town | `public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-night-960.webp` | Popolon; CC BY-SA 4.0 | `68b34e59c04f34a4f77423993c141cac445c7f69200b72f77b888a9d7026b89a` |
+| D5 — Fenghuang | `public/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp` | xiquinhosilva; CC BY 4.0 | `b06636b56ae6db09be1793abefed047d382877429abb30dfb51dba192b3d0bf6` |
+| D6 — Fenghuang | `public/images/guides/border-town-fenghuang-chadong-shen-congwen/shen-congwen-former-residence-1600.webp` | Kurgenera; CC BY-SA 4.0 | `630c091799678d8b9f608753adbc6cd5715e71efdd9ef7f88e8205afea27e5aa` |
+| D7 — Fenghuang | `public/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp` | Yu Hui (于回); CC BY-SA 2.0 | `53c1dce69f7ee5b6e2c9bf51579bcc5d69571a3d657b2a8ffe2505aebbd55b43` |
+
+The nine page photographs have nine different base files and nine different
+SHA-256 values. Responsive and card derivatives are delivery sizes of those
+photographs, not additional scenes. These images identify the documented
+destination only. They do not establish future lighting, water level, weather,
+admission, crowd or access conditions.
 
 For Kevin's trip-preparation field note, the project owner supplied five
 photographs on July 23, 2026 for the Homeground website and identified Kevin as

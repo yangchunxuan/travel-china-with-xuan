@@ -103,6 +103,17 @@
       "familySha256": "dbfa7ff726e7d8c5d381baba80ab639af6aac24aec1fae4f9e1dfe45fdda663d"
     },
     {
+      "productId": "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "sourcePath": "public/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+      "sourceSha256": "2e2988a45acf4c8da9e805951aa9c44cb38b144b6d4ee5692aac48fa6d87e565",
+      "rightsBasis": "Wikimedia Commons, 颐园居, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "2e2988a45acf4c8da9e805951aa9c44cb38b144b6d4ee5692aac48fa6d87e565",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "1e59831635f1b2c5a4427ac455897d7b88a9ace6b07f39650d0ad4fd08ad3fe3"
+    },
+    {
       "productId": "zhangjiajie-4-day-private-tour",
       "sourcePath": "public/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
       "sourceSha256": "6c7471aeb35cab0c74971778d75e9a519b27648eba0d6ebe85a08ae9e7e67f39",
