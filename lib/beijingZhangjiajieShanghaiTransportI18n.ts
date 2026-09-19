@@ -201,7 +201,7 @@ const english: TransportGuideCopy = {
   metadata: {
     title: "Beijing to Zhangjiajie: Flight or Train? Then Shanghai",
     description:
-      "Beijing to Zhangjiajie usually favours a sensible nonstop flight. Compare that leg and the onward Zhangjiajie-to-Shanghai trip by real door-to-door time.",
+      "Beijing to Zhangjiajie: a nonstop flight usually wins. Zhangjiajie to Shanghai depends on the exact station, airport and hotel\u2014compare it door to door.",
   },
   hero: {
     eyebrow: "Transport decision · Door to door",

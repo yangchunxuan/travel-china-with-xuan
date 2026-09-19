@@ -371,7 +371,7 @@ export const legacyGuideRegistry = [
     locales: {
       en: {
         path: "/guides/zhangjiajie-older-travellers/",
-        title: "Zhangjiajie with Older Travellers: What Still Works",
+        title: "Is Zhangjiajie Elderly-Friendly? Walking and Access Limits",
         headline:
           "Zhangjiajie with Older Travellers: The Mountain Carries You, but the Questions Need Answering",
         description:
@@ -545,7 +545,7 @@ export const legacyGuideRegistry = [
         headline:
           "Beijing → Zhangjiajie → Shanghai: What the Travel Days Actually Cost",
         description:
-          "Compare the real door-to-door time from Beijing to Zhangjiajie to Shanghai by train and plane, including station and airport transfers and late arrivals.",
+          "Beijing to Zhangjiajie: a nonstop flight usually wins. Zhangjiajie to Shanghai depends on the exact station, airport and hotel\u2014compare it door to door.",
         heroAlt:
           "Wide view of Zhangjiajie West Railway Station and its forecourt.",
         navTitle: "Beijing–Zhangjiajie–Shanghai transport guide",
@@ -661,7 +661,7 @@ export const legacyGuideRegistry = [
     locales: {
       en: {
         path: "/guides/china-itinerary-with-older-parents/",
-        title: "China With Older Parents: A Realistic 12–14 Day Itinerary",
+        title: "China Travel for Seniors: A Realistic 12–14 Day Route",
         headline:
           "Taking Your Parents to China? Build the Route Around Energy, Not Just Cities",
         description:
