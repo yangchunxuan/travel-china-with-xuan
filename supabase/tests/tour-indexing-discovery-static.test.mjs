@@ -111,7 +111,7 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
     "zhangjiajie-4-day-private-tour",
   );
   assert.equal(classic.datePublished, "2026-08-16");
-  assert.equal(classic.dateModified, "2026-09-06");
+  assert.equal(classic.dateModified, "2026-09-19");
   assert.equal(classic.lastReviewed, "2026-08-16");
-  assert.equal(classic.evidence.commit, "ce0f8b725241f446106a54824e1a23ce8bbb1642");
+  assert.equal(classic.evidence.commit, "f4ad5ce65f710e97a2363850b20dc58c1689bca1");
 });
