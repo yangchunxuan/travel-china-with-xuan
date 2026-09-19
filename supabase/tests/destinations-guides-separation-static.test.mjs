@@ -110,7 +110,7 @@ test("homepage keeps destination discovery distinct from private tours", async (
   );
   assert.match(
     homePage,
-    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<a href=\{destinationsIndexPath\}>/,
+    /className=\{showcaseStyles\.heroDestinationPrompt\}[\s\S]{0,180}<Link href=\{destinationsIndexPath\}>/,
   );
   assert.doesNotMatch(
     homePage,

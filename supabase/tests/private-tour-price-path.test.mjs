@@ -45,6 +45,7 @@ async function loadComponent(path, overrides = {}, window) {
     } },
     "lucide-react": { ArrowRight: () => null },
     "next/image": () => null,
+    "next/link": ({ children, href, ...props }) => React.createElement("a", { ...props, href }, children),
     ...overrides,
   };
   vm.runInNewContext(code, {

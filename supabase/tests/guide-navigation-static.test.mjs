@@ -79,7 +79,11 @@ test("global navigation keeps one distinct four-item information architecture", 
       ?.length,
     1,
   );
-  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 2);
+  assert.equal(header.match(/languageHrefFor\(targetLocale\)/g)?.length, 1);
+  assert.equal(
+    header.match(/availableLanguageLocales\.map\(renderLanguageChoice\)/g)?.length,
+    2,
+  );
   assert.match(
     header,
     /pageContext === "tours" \|\| pageContext === "tour"[\s\S]{0,80}`\$\{target\.path\}tours\/`/,
