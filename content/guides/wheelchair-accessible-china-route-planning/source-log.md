@@ -1,4 +1,4 @@
-# Source log — Planning a Wheelchair-Accessible China Route
+# Source log — Wheelchair Travel in China: How to Plan an Accessible Route
 
 Status: `CENTRAL COPY AND FACT REVIEW COMPLETE — ASSET QA PENDING`
 
