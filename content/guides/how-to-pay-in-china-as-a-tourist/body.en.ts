@@ -7,7 +7,7 @@ const body: StructuredPageBody = {
       id: "answer-first",
       type: "lead",
       text:
-        "The short answer is no: do not arrive with only one payment method. As checked on 10 August 2026, the least fragile setup for a foreign visitor is one mobile wallet with an eligible international card successfully linked and, where possible, tested (Alipay or Weixin Pay), one physical international card, and a small amount of RMB cash. For a family, two adults should each have an independent payment route.",
+        "Foreign visitors can use Alipay or Weixin Pay for merchant purchases when an eligible international card links successfully, but not every card, merchant, mini-program or account feature will work. As checked on 10 August 2026, the safer setup is one linked and, where possible, tested wallet, one physical international card and a small amount of RMB cash. For a family, two adults should each have an independent payment route.",
     },
     {
       id: "three-rails",

@@ -23,13 +23,13 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     title: "Beijing–Zhangjiajie–Shanghai in 10 Days:",
     accent: " Is It Actually Realistic?",
     lead:
-      "The route can fit. Your exact trip may not. The answer changes with what “10 days” means, when you land, where you sleep and what your group is willing to leave out.",
+      "If ‘10 days’ means arriving on Day 1 and leaving on Day 10, this is a tight trip with about six full sightseeing days. The 3/2/2 split shown below actually uses 10 hotel nights—arrival on Day 1 and departure on Day 11—and creates about seven full sightseeing days. Late arrival, early departure, weather and group pace can reduce that further.",
     quickLabel: "Quick answer",
-    quickTitle: "Yes—but as a compact highlights trip.",
+    quickTitle: "Ten calendar days are very tight; the worked route below uses 10 hotel nights.",
     hotelNights: "hotel nights",
     fullSightseeingDays: "full sightseeing days",
     quickBody:
-      "Both intercity moves count as transfer days—not bonus sightseeing days.",
+      "The example below is an 11-calendar-day journey: both intercity moves are transfer days, not extra sightseeing days.",
     routeLabel: "Route overview",
     planLabel: "A realistic 10-night split",
     planUnit: "full days",

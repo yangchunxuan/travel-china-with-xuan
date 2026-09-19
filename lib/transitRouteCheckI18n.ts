@@ -117,31 +117,31 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     eyebrow: "Entry guide · Route check",
     title: "China 240-Hour Visa-Free Transit: Does Your Route Qualify?",
     directAnswer:
-      "Only one thing decides it: where you fly after China must be a different country or region from where you flew in from.",
+      "An A → mainland China → C route is necessary, but route direction alone does not make you eligible for 240-hour visa-free transit.",
     directAnswerTail:
-      "Not your nationality. Not where you live. Not where the trip eventually ends. Just the two international flights either side of mainland China — and whether they point at two different places.",
+      "You must also hold an ordinary passport from one of the 57 eligible countries, have at least three months of passport validity, use designated ports, stay within permitted areas and carry a confirmed onward ticket to a different country or region within 240 hours.",
     directAnswerClose:
-      "Get that right and you have ten days in China with no visa, no application, no fee. Get it wrong and you find out at the departure gate.",
+      "Check every condition against the current National Immigration Administration rules and your airline before departure. Homeground can screen the route; the airline and Chinese immigration make the final decision.",
     heroAlt:
       "Diagram of the transit rule: country or region A, then mainland China, then a different country or region C.",
     heroCaption:
-      "The two international sectors either side of mainland China are what the rule looks at.",
+      "This diagram tests only the A → China → C route direction; it does not establish full eligibility.",
     ruleSection: {
       id: "the-rule",
-      title: "The rule, in two examples",
+      title: "The route-direction test, in two examples",
       paragraphs: [
-        "New York → Shanghai → Tokyo qualifies. You arrived from the US, you leave for Japan. Two different places.",
-        "New York → Shanghai → Los Angeles does not. You arrived from the US and you leave for the US. A round trip is still a round trip, even when the two American cities are three thousand miles apart.",
-        "That is the whole test. Everything below is about the cases where it gets less obvious.",
+        "New York → Shanghai → Tokyo passes the route-direction test. You arrived from the US and leave for Japan: two different places.",
+        "New York → Shanghai → Los Angeles fails the route-direction test. You arrived from the US and leave for the US. A round trip is still a round trip, even when the two American cities are three thousand miles apart.",
+        "These examples test route direction only. Nationality, passport, ticket, port and permitted-area conditions still apply.",
       ],
     },
-    tableTitle: "Does your route qualify?",
+    tableTitle: "Does the route direction pass?",
     tableColumnRoute: "Your route",
     tableColumnVerdict: "Verdict",
     tableColumnWhy: "Why",
     verdictLabels: {
-      yes: "Qualifies",
-      no: "No",
+      yes: "Route passes",
+      no: "Route fails",
       ask: "Ask the airline",
     },
     routes: [
@@ -197,20 +197,20 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       },
     ],
     tableNote:
-      "Long itineraries are judged on the sectors immediately either side of China. Shanghai treats London → Tokyo → Shanghai → London as Tokyo → Shanghai → London, and it qualifies.",
+      "This table checks route direction only. Long itineraries are judged on the sectors immediately either side of China: Shanghai treats London → Tokyo → Shanghai → London as Tokyo → Shanghai → London, so its direction passes.",
     needSection: {
       id: "do-you-need-it",
       title: "First — do you even need this?",
       lead: "If you hold a UK, Irish, Canadian, Australian or New Zealand passport, probably not.",
       paragraphs: [
         "Those passports currently get 30 days visa-free for tourism with no third-country requirement at all. No A-to-C puzzle, no onward ticket to prove. Check your own end date, then stop reading this page and go plan the trip.",
-        "This page is for everyone else — most notably US passports, which are not on that 30-day list. For Americans, a round trip means an L tourist visa; the transit policy is the only way in without one.",
+        "This page is for everyone else — most notably US passports, which are not on that 30-day list. For many ordinary US mainland round trips, an L tourist visa is still required; this transit policy helps only when every condition above is met.",
       ],
     },
     breakSection: {
       id: "where-routes-break",
       title: "Where routes actually break",
-      lead: "Three things trip people up, and none of them are the A-to-C rule.",
+      lead: "Even when the A-to-C direction works, three practical ticketing checks can still break the plan.",
       paragraphs: [
         "Connections versus through-flights. A stop in Hong Kong on a single through-flight is not the same as connecting through Hong Kong on separate sectors — and it can change what counts as your A. Only the airline can tell you how your ticket is written.",
         "Separate tickets. Not disqualifying in themselves. But you need both carriers to actually see and verify your onward journey, and separately-booked flights have a way of not talking to each other at check-in.",
@@ -253,7 +253,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. Every figure on this page comes from the National Immigration Administration and official municipal guidance, checked 24 July 2026. We re-check monthly, because ports and country lists change.",
+      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. The policy conditions on this page come from the National Immigration Administration and official municipal guidance, checked 20 September 2026. We re-check because ports and country lists change.",
     reviewBoundary:
       "We screen route structure. We do not decide immigration eligibility, file visa applications, or guarantee entry — the airline and Chinese immigration make those calls.",
     sourcesLabel: "Official sources",
@@ -275,7 +275,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       {
         question: "What do I need to show?",
         answer:
-          "A passport with at least three months left, a confirmed onward ticket to your third country within 240 hours, and the right to enter that country. That's the list — ignore blogs telling you to bring bank statements.",
+          "An ordinary passport from an eligible country with at least three months left, a confirmed onward ticket to your third country or region within 240 hours, and the right to enter that destination. Immigration may also require the temporary-entry arrival card and its normal inspection.",
       },
       {
         question: "Is this a visa?",
@@ -293,7 +293,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     relatedLinkDescription:
       "The same routing question, answered for an American passport.",
     updatedLabel: "Updated",
-    updatedDate: "24 July 2026",
+    updatedDate: "20 September 2026",
     schemaAbout: [
       "China 240-hour visa-free transit",
       "Transit route qualification",
@@ -312,29 +312,29 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     eyebrow: "入境指南 · 路线判断",
     title: "中国 240 小时过境免签:你的路线符合条件吗?",
     directAnswer:
-      "只有一件事决定它:你离开中国后飞往的国家或地区,必须和你飞进来之前所在的不同。",
+      "A → 中国大陆 → C 的路线方向是必要条件,但路线方向正确,不等于整个人已经符合 240 小时过境免签。",
     directAnswerTail:
-      "跟国籍无关,跟你住哪无关,也跟整趟旅行最终在哪结束无关。只看中国大陆两侧那两段国际航班 —— 它们指向的是不是两个不同的地方。",
+      "你还必须持 57 个适用国家之一的普通护照,护照剩余有效期至少三个月,经指定口岸进出,只在许可区域内停留,并持有 240 小时内前往不同国家或地区、日期和座位已确认的续程票。",
     directAnswerClose:
-      "对了,你就有十天免签的中国,不用申请、不用交费。错了,你会在登机口才知道。",
+      "出发前请同时核对国家移民管理局最新规则与承运航空公司的要求。Homeground 可以帮你检查路线结构;最终是否承运和准予入境,由航空公司与中国边检决定。",
     heroAlt: "过境规则示意图:国家或地区 A,中国大陆,另一个不同的国家或地区 C。",
-    heroCaption: "规则看的,是中国大陆两侧那两段国际航班。",
+    heroCaption: "这张图只判断 A → 中国 → C 的路线方向,不能单独证明整个人符合政策。",
     ruleSection: {
       id: "the-rule",
-      title: "规则,两个例子说完",
+      title: "路线方向判断,两个例子说清",
       paragraphs: [
-        "纽约 → 上海 → 东京,符合。你从美国来,往日本去。两个不同的地方。",
-        "纽约 → 上海 → 洛杉矶,不符合。你从美国来,往美国去。往返就是往返,哪怕这两座美国城市相隔三千英里。",
-        "整个判断就这一条。下面讲的,都是它不那么明显的时候。",
+        "纽约 → 上海 → 东京,通过路线方向检查。你从美国来,往日本去:两个不同的地方。",
+        "纽约 → 上海 → 洛杉矶,没有通过路线方向检查。你从美国来,往美国去。往返就是往返,哪怕这两座美国城市相隔三千英里。",
+        "这些例子只判断路线方向。国籍、护照、票据、口岸和许可停留区域仍需逐项符合。",
       ],
     },
-    tableTitle: "你的路线符合吗?",
+    tableTitle: "路线方向能通过吗?",
     tableColumnRoute: "路线",
     tableColumnVerdict: "判断",
     tableColumnWhy: "原因",
     verdictLabels: {
-      yes: "符合",
-      no: "不符合",
+      yes: "方向通过",
+      no: "方向不通过",
       ask: "问航空公司",
     },
     routes: [
@@ -374,20 +374,20 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       },
     ],
     tableNote:
-      "长行程只看中国两侧紧邻的那两段。上海把伦敦 → 东京 → 上海 → 伦敦视作东京 → 上海 → 伦敦,符合条件。",
+      "这张表只判断路线方向。长行程看中国两侧紧邻的两段:上海把伦敦 → 东京 → 上海 → 伦敦视作东京 → 上海 → 伦敦,因此方向通过。",
     needSection: {
       id: "do-you-need-it",
       title: "先问一句 —— 你真的需要这条政策吗?",
       lead: "如果你持英国、爱尔兰、加拿大、澳大利亚或新西兰护照,大概率不需要。",
       paragraphs: [
         "这些护照目前可以免签停留 30 天用于旅游,完全没有第三国要求。不用解 A 到 C 的题,也不用证明续程票。确认一下你那本的政策截止日期,然后就别读这页了,去规划旅行吧。",
-        "这一页是给其他人的 —— 尤其是美国护照,它不在那份 30 天名单里。对美国人来说,往返行程意味着 L 旅游签;过境政策是不办签证进中国的唯一途径。",
+        "这一页是给其他人的 —— 尤其是美国护照,它不在那份 30 天名单里。对许多普通的美国护照中国大陆往返行程,仍需办理 L 旅游签;只有每项条件都符合时,这项过境政策才适用。",
       ],
     },
     breakSection: {
       id: "where-routes-break",
       title: "路线真正出问题的地方",
-      lead: "有三件事会绊倒人,而且没有一件是 A 到 C 这条规则。",
+      lead: "即使 A 到 C 的方向正确,仍有三项票务核验可能让计划失效。",
       paragraphs: [
         "中转与经停的区别。同一趟直飞航班在香港经停,和分成两段中转香港,不是一回事 —— 而这会改变哪里算你的 A。你的票是怎么开的,只有航空公司能告诉你。",
         "分开买的票。本身不影响资格。但你需要两家航司都真的看到并核验你的续程行程,而分开订的航班在值机时经常互相不认。",
@@ -422,7 +422,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页每一个数字都来自国家移民管理局与官方地方指引,核实于 2026 年 7 月 24 日。我们每月复核,因为口岸和国家名单会变。",
+      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页政策条件来自国家移民管理局与官方地方指引,核实于 2026 年 9 月 20 日。口岸和适用国家名单可能变化,我们会持续复核。",
     reviewBoundary:
       "我们判断路线结构。我们不认定入境资格、不代办签证、不保证入境 —— 这些由航空公司和中国边检决定。",
     sourcesLabel: "官方来源",
@@ -442,7 +442,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       {
         question: "需要出示什么?",
         answer:
-          "剩余有效期三个月以上的护照、240 小时内前往第三国已确认的续程票,以及进入该国的资格。就这些 —— 让你带银行流水的攻略可以忽略。",
+          "适用国家签发、剩余有效期三个月以上的普通护照,240 小时内前往第三国或地区且日期和座位已确认的续程票,以及进入该目的地的资格。边检还会要求填写临时入境卡并配合正常查验。",
       },
       {
         question: "这算签证吗?",
@@ -458,7 +458,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     relatedLinkLabel: "2026 年,美国护照去中国还需要签证吗?",
     relatedLinkDescription: "同一个路线问题,针对美国护照的答案。",
     updatedLabel: "最近更新",
-    updatedDate: "2026 年 7 月 24 日",
+    updatedDate: "2026 年 9 月 20 日",
     schemaAbout: ["240 小时过境免签", "过境路线判断", "中国旅行规划"],
   },
   ko: {
@@ -473,30 +473,30 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     eyebrow: "입국 가이드 · 경로 확인",
     title: "중국 240시간 무비자 환승: 내 경로는 조건을 만족할까요?",
     directAnswer:
-      "결정하는 것은 하나뿐입니다. 중국을 떠나 향하는 국가·지역이, 중국에 들어오기 직전에 있던 곳과 달라야 합니다.",
+      "A → 중국 본토 → C라는 경로 방향은 필수 조건이지만, 방향만 맞는다고 240시간 무비자 환승 자격이 확정되는 것은 아닙니다.",
     directAnswerTail:
-      "국적과는 무관합니다. 어디에 사는지도, 여행이 최종적으로 어디서 끝나는지도 상관없습니다. 오직 중국 본토 양쪽의 두 국제선 구간이 서로 다른 곳을 향하는지만 봅니다.",
+      "57개 대상국 중 하나의 일반 여권, 3개월 이상의 여권 잔여 유효기간, 지정 출입국장, 허용 체류 지역, 그리고 240시간 안에 다른 국가·지역으로 출발하는 날짜와 좌석이 확정된 다음 구간 항공권도 필요합니다.",
     directAnswerClose:
-      "맞으면 비자도 신청도 수수료도 없이 중국에서 열흘입니다. 틀리면 탑승 게이트에서 알게 됩니다.",
+      "출발 전 국가이민관리국의 최신 규정과 이용 항공사의 확인 기준을 함께 확인하세요. Homeground는 경로 구조를 점검해 드릴 수 있지만, 탑승 허용과 입국 최종 판단은 항공사와 중국 출입국 당국이 합니다.",
     heroAlt:
       "환승 규칙 다이어그램: 국가 또는 지역 A, 중국 본토, 그리고 다른 국가 또는 지역 C.",
-    heroCaption: "규칙이 보는 것은 중국 본토 양쪽의 두 국제선 구간입니다.",
+    heroCaption: "이 그림은 A → 중국 → C의 경로 방향만 확인하며, 전체 자격을 증명하지는 않습니다.",
     ruleSection: {
       id: "the-rule",
-      title: "규칙, 예시 두 개면 끝납니다",
+      title: "경로 방향 판단, 두 가지 예시",
       paragraphs: [
-        "뉴욕 → 상하이 → 도쿄는 됩니다. 미국에서 왔고 일본으로 떠납니다. 서로 다른 두 곳입니다.",
-        "뉴욕 → 상하이 → 로스앤젤레스는 안 됩니다. 미국에서 왔고 미국으로 떠납니다. 두 미국 도시가 5천 킬로미터 떨어져 있어도 왕복은 왕복입니다.",
-        "판단은 이게 전부입니다. 아래는 이것이 덜 분명해지는 경우들입니다.",
+        "뉴욕 → 상하이 → 도쿄는 경로 방향 검사를 통과합니다. 미국에서 와서 일본으로 떠나므로 서로 다른 두 곳입니다.",
+        "뉴욕 → 상하이 → 로스앤젤레스는 경로 방향 검사를 통과하지 못합니다. 미국에서 와서 미국으로 떠납니다. 두 미국 도시가 5천 킬로미터 떨어져 있어도 왕복은 왕복입니다.",
+        "이 예시는 경로 방향만 판단합니다. 국적, 여권, 항공권, 출입국장과 허용 체류 지역 조건도 모두 충족해야 합니다.",
       ],
     },
-    tableTitle: "내 경로는 될까요?",
+    tableTitle: "경로 방향은 통과할까요?",
     tableColumnRoute: "경로",
     tableColumnVerdict: "판정",
     tableColumnWhy: "이유",
     verdictLabels: {
-      yes: "가능",
-      no: "불가",
+      yes: "방향 통과",
+      no: "방향 불통과",
       ask: "항공사에 확인",
     },
     routes: [
@@ -536,20 +536,20 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       },
     ],
     tableNote:
-      "긴 일정은 중국 바로 양쪽 구간으로 판단합니다. 상하이는 런던 → 도쿄 → 상하이 → 런던을 도쿄 → 상하이 → 런던으로 보고 조건을 만족한다고 안내합니다.",
+      "이 표는 경로 방향만 확인합니다. 긴 일정은 중국 바로 양쪽 구간으로 판단합니다. 상하이는 런던 → 도쿄 → 상하이 → 런던을 도쿄 → 상하이 → 런던으로 보므로 방향 검사를 통과합니다.",
     needSection: {
       id: "do-you-need-it",
       title: "먼저 — 이 정책이 정말 필요하신가요?",
       lead: "영국·아일랜드·캐나다·호주·뉴질랜드 여권이라면 아마 필요 없습니다.",
       paragraphs: [
         "이 여권들은 현재 관광 목적으로 30일 무비자 입국이 가능하며 제3국 요건이 전혀 없습니다. A에서 C로 이어지는 퍼즐도, 증명해야 할 다음 구간 항공권도 없습니다. 본인 여권의 정책 종료일만 확인하고, 이 페이지는 닫고 여행 계획으로 넘어가세요.",
-        "이 페이지는 그 외의 분들을 위한 것입니다. 특히 그 30일 명단에 없는 미국 여권이 그렇습니다. 미국인에게 왕복 일정은 곧 L 관광비자를 뜻하며, 환승 정책은 비자 없이 들어가는 유일한 길입니다.",
+        "이 페이지는 그 외의 분들을 위한 것입니다. 특히 그 30일 명단에 없는 미국 여권이 그렇습니다. 일반적인 미국 여권의 중국 본토 왕복 일정에는 여전히 L 관광비자가 필요하며, 이 환승 정책은 위의 모든 조건을 충족할 때만 적용됩니다.",
       ],
     },
     breakSection: {
       id: "where-routes-break",
       title: "경로가 실제로 무너지는 지점",
-      lead: "사람들이 걸려 넘어지는 것은 세 가지이고, A–C 규칙은 그중 하나도 아닙니다.",
+      lead: "A–C 방향이 맞더라도 세 가지 실무 항공권 확인에서 계획이 어긋날 수 있습니다.",
       paragraphs: [
         "환승과 경유의 차이. 같은 항공편이 홍콩에 경유하는 것과, 구간을 나누어 홍콩에서 환승하는 것은 다릅니다. 그리고 이것이 어디를 A로 볼지를 바꿀 수 있습니다. 항공권이 어떻게 발권되었는지는 항공사만 알려 줄 수 있습니다.",
         "따로 구매한 항공권. 그 자체로 자격을 잃는 것은 아닙니다. 다만 두 항공사가 실제로 다음 구간을 확인해 줘야 하는데, 따로 예약된 항공편은 체크인에서 서로를 인식하지 못하는 일이 잦습니다.",
@@ -584,7 +584,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     },
     reviewTitle: "작성과 확인",
     reviewBody:
-      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지의 모든 수치는 국가이민관리국과 공식 지방 안내에서 가져왔으며 2026년 7월 24일에 확인했습니다. 항구와 국가 명단이 바뀌기 때문에 매월 다시 확인합니다.",
+      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지의 정책 조건은 국가이민관리국과 공식 지방 안내를 바탕으로 하며 2026년 9월 20일에 확인했습니다. 출입국장과 대상 국가 명단이 바뀔 수 있어 계속 재확인합니다.",
     reviewBoundary:
       "저희는 경로 구조를 확인합니다. 입국 자격을 판정하거나 비자를 대행하거나 입국을 보장하지 않습니다. 그 판단은 항공사와 중국 출입국 당국이 합니다.",
     sourcesLabel: "공식 출처",
@@ -606,7 +606,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       {
         question: "무엇을 제시해야 하나요?",
         answer:
-          "잔여 유효기간 3개월 이상의 여권, 240시간 안에 제3국으로 향하는 확정된 다음 구간 항공권, 그리고 그 나라에 입국할 자격입니다. 이게 전부입니다. 잔고 증명을 챙기라는 블로그는 무시하세요.",
+          "대상국이 발급한 잔여 유효기간 3개월 이상의 일반 여권, 240시간 안에 제3국·지역으로 출발하는 날짜와 좌석이 확정된 다음 구간 항공권, 그리고 그 목적지에 입국할 자격이 필요합니다. 임시 입국카드 작성과 일반적인 출입국 심사에도 협조해야 합니다.",
       },
       {
         question: "이건 비자인가요?",
@@ -623,7 +623,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     relatedLinkLabel: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",
     relatedLinkDescription: "같은 경로 문제를, 미국 여권 기준으로 답한 글입니다.",
     updatedLabel: "최종 업데이트",
-    updatedDate: "2026년 7월 24일",
+    updatedDate: "2026년 9월 20일",
     schemaAbout: ["중국 240시간 무비자 환승", "환승 경로 판단", "중국 여행 설계"],
   },
 };

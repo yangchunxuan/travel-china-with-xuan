@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
- {id:"answer-first",type:"lead",text:"三星堆可以自助参观，但不能把它当成成都城区随时可进的小博物馆。先通过三星堆博物馆链接的官方渠道实名购票，为每位旅客准确填写当天携带的护照；再给广汉馆内留出连续时间。参观顺序应先看遗址、年代和考古发掘，再看生活与信仰，最后到大型青铜器。面具不是孤立的拍照奖杯，而是考古证据的一部分。"},
+ {id:"answer-first",type:"lead",text:"参观三星堆博物馆需要先实名预约购票。外籍游客应从博物馆链接的官方渠道开始，逐字填写每位旅客的护照资料，并在当天携带护照原件。有选择地看主线约需 2 小时，想读说明、休息并从容看热门文物可留约 3 小时；先看遗址与发掘，再进入大型青铜器展区。"},
  {id:"booking-heading",type:"heading",level:2,text:"从博物馆官方渠道开始，而不是从相似名称开始"},
  {id:"booking",type:"table",caption:"三星堆预约决策",columns:["问题","可靠答案","边界"],rows:[
   ["外国护照能否预约？","广汉市人民政府发布的入境游客服务信息显示，博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。","实际日期仍要测试当期页面、支付方式与库存。"],

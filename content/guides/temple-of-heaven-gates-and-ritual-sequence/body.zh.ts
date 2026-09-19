@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
-  { id: "answer-first", type: "lead", text: "第一次参观天坛，最清晰的方式是从南门进入，依次走圜丘、皇穹宇与回音壁、丹陛桥，最后到祈年殿。这条路从南侧祭坛走向北侧祈谷建筑，能读懂空间逻辑。若更重视地铁5号线的便利，就从东门进，先看祈年殿，再沿中轴反向走到南门。无论哪条线，第一次参观都要买到三个核心收费景点的权限；单独公园门票并不包含它们。" },
+  { id: "answer-first", type: "lead", text: "外籍游客可以用护照通过天坛官方渠道预约；境外手机号无法完成验证时，可持护照原件到综合服务窗口办理。第一次参观应买到三个核心收费景点的权限，单独公园门票并不包含它们。从南门进最适合按祭祀空间顺序由南向北走；更重视地铁 5 号线便利时，可从东门进并反向游览中轴。" },
   { id: "ticket-heading", type: "heading", level: 2, text: "公园门票与核心坛庙不是一张权限" },
   { id: "tickets", type: "comparison", columns: [
     { heading: "公园门票", body: "进入面积很大的外坛公园、古树与公共园林空间，但不单独包含祈年殿、回音壁和圜丘。" },

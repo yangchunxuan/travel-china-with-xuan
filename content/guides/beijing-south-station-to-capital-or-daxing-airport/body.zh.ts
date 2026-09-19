@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "北京两座主要机场方向不同。从北京南站接航班，要先读机场代码与航站楼，再从航班截止倒减铁路出站、市内接驳、机场步行与航空公司手续。" },
+  { id: "lead", type: "lead", text: "先确认航班在首都机场（PEK）还是大兴机场（PKX），两者不能互换。白天、行李可控且铁路正常运营时，去 PKX 通常可从北京南站坐 4 号线，在角门西换 10 号线，再到草桥换大兴机场线。去 PEK 没有唯一默认方案，要按具体时间、航站楼、行李和航班截止，在机场巴士、4 号线转 2 号线再转首都机场线，以及公路车辆之间比较。" },
   { id: "answer", type: "callout", title: "PEK与PKX不能互换", tone: "decision", body: "去PKX可比较地铁接到草桥大兴机场线与公路车辆；去PEK可比较当前北京南站机场巴士、地铁/机场线与公路车辆。准确时间、行李、人数和中断缓冲会改变答案。" },
   { id: "matrix-heading", type: "heading", level: 2, text: "先选机场，再选方式" },
   { id: "matrix", type: "table", caption: "所有方案都从真正走出火车后开始", columns: ["路线", "合适", "实际负担", "核对"], rows: [
