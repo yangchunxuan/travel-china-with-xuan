@@ -189,7 +189,7 @@ const english: ChinaItineraryWithOlderParentsCopy = {
   guidesPath: "/guides/",
   plannerContactHref: "/#planner-contact",
   metadata: {
-    title: "China With Older Parents: A Realistic 12–14 Day Itinerary",
+    title: "China Travel for Seniors: A Realistic 12–14 Day Route",
     description:
       "Planning China with older parents? Compare realistic 12- and 14-day routes, with hotel changes, walking, transfer days and recovery time built in.",
     headline: "Taking Your Parents to China?",
