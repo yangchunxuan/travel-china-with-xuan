@@ -21,6 +21,10 @@ const itineraryReviewSource = await readFile(
   new URL("../../components/ChinaItineraryReviewPage.tsx", import.meta.url),
   "utf8",
 );
+const singaporeVisaSource = await readFile(
+  new URL("../../lib/singaporeChinaVisaI18n.ts", import.meta.url),
+  "utf8",
+);
 
 const expectedPublicCtaContentIds = [
   "beijing-courtyard-hotel-or-modern-hotel",
@@ -92,7 +96,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 27 guide and 11 product owners", () => {
+test("commercial links keep the approved 8 hub, 28 guide and 11 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -143,6 +147,7 @@ test("commercial links keep the approved 8 hub, 27 guide and 11 product owners",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
+      "zhangjiajie-glass-bridge-vs-skywalk",
       "zhangjiajie-itinerary",
     ],
   );
@@ -165,6 +170,25 @@ test("commercial links keep the approved 8 hub, 27 guide and 11 product owners",
       "zhangjiajie-forest-4-day-private-tour",
       "zhangjiajie-furong-fenghuang-7-day-private-tour",
     ],
+  );
+});
+
+test("Zhangjiajie commercial routes and Singapore planning links stay distinct", () => {
+  assert.match(
+    commercialLinkSource,
+    /"best-zhangjiajie-night-show": \[classicZhangjiajie\]/u,
+  );
+  assert.match(
+    commercialLinkSource,
+    /"zhangjiajie-glass-bridge-vs-skywalk": \[classicZhangjiajie\]/u,
+  );
+  assert.match(
+    commercialLinkSource,
+    /"zhangjiajie-itinerary": \[\s*p\("zhangjiajie-furong-fenghuang-7-day-private-tour"\),\s*classicZhangjiajie,\s*\]/u,
+  );
+  assert.equal(
+    [...singaporeVisaSource.matchAll(/id: "singapore-to-zhangjiajie-itinerary"/gu)].length,
+    3,
   );
 });
 

@@ -67,13 +67,14 @@ const guideTargets = {
     p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
   "best-zhangjiajie-night-show": [classicZhangjiajie],
+  "zhangjiajie-glass-bridge-vs-skywalk": [classicZhangjiajie],
   "zhangjiajie-from-malaysia": [
     classicZhangjiajie,
     p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
   "zhangjiajie-itinerary": [
-    classicZhangjiajie,
     p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+    classicZhangjiajie,
   ],
   "tianmen-mountain-tickets-and-routes": [classicZhangjiajie],
   "beijing-courtyard-hotel-or-modern-hotel": [p("beijing-highlights-5-day-private-tour")],
@@ -112,6 +113,7 @@ const approvedCommercialGuideIds = [
   "singapore-to-zhangjiajie-itinerary",
   "chengdu-zhangjiajie-itinerary",
   "best-zhangjiajie-night-show",
+  "zhangjiajie-glass-bridge-vs-skywalk",
   "zhangjiajie-from-malaysia",
   "zhangjiajie-itinerary",
   "tianmen-mountain-tickets-and-routes",

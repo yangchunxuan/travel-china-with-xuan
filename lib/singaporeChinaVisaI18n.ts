@@ -164,9 +164,9 @@ const englishCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   relatedTitle: "Where to start planning",
   relatedLinks: [
     {
-      id: "beijing-zhangjiajie-shanghai-10-days",
-      label: "Beijing, Zhangjiajie and Shanghai in 10 days",
-      description: "Whether three signature places really fit into one trip.",
+      id: "singapore-to-zhangjiajie-itinerary",
+      label: "Plan Zhangjiajie from Singapore",
+      description: "Compare five, six and seven-day routes after the entry question is settled.",
     },
     {
       id: "is-your-china-itinerary-too-rushed",
@@ -292,9 +292,9 @@ const chineseCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guide
   relatedTitle: "从哪里开始规划",
   relatedLinks: [
     {
-      id: "beijing-zhangjiajie-shanghai-10-days",
-      label: "10天游北京、张家界和上海",
-      description: "三处代表性目的地是否真的能放进一次旅行。",
+      id: "singapore-to-zhangjiajie-itinerary",
+      label: "从新加坡出发规划张家界行程",
+      description: "入境问题确认后，比较五天、六天和七天的路线。",
     },
     {
       id: "is-your-china-itinerary-too-rushed",
@@ -415,9 +415,9 @@ const koreanCopy: Omit<SingaporeChinaVisaCopy, "htmlLang" | "homePath" | "guides
   relatedTitle: "여행 계획, 여기서 시작하세요",
   relatedLinks: [
     {
-      id: "beijing-zhangjiajie-shanghai-10-days",
-      label: "10일 동안 베이징·장자제·상하이 여행하기",
-      description: "대표 여행지 세 곳을 한 번의 여행에 정말 담을 수 있는지 살펴봅니다.",
+      id: "singapore-to-zhangjiajie-itinerary",
+      label: "싱가포르 출발 장자제 일정 계획",
+      description: "입국 조건을 확인한 뒤 5일·6일·7일 코스를 비교하세요.",
     },
     {
       id: "is-your-china-itinerary-too-rushed",
