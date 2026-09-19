@@ -254,25 +254,42 @@ const body = {
       ],
     },
     {
-      id: "faq-heading",
-      type: "heading",
-      level: 2,
-      text: "Frequently asked questions",
-    },
-    {
       id: "faq",
-      type: "table",
-      caption: "Fast answers to the questions that cause wrong-hub trips",
-      columns: ["Question", "Answer"],
-      rows: [
-        ["Which Shenzhen railway station is the default?", "There is no universal default. Shenzhen North is a sensible first principal hub to search, but a live Futian or Shenzhen Station train may produce the better complete journey. The issued ticket decides."],
-        ["Is Futian Station the same as Futian Checkpoint?", "No. 福田站 is a CBD railway/metro complex; 福田口岸 is a separate land-border complex connecting to Hong Kong's Lok Ma Chau and East Rail."],
-        ["Are Shenzhen Station and Shenzhen North the same?", "No. 深圳站 is the specific Luohu station; 深圳北 is the major Longhua hub. Tickets and map pins are not interchangeable."],
-        ["Is Shenzhen Railway Station next to Luohu Checkpoint?", "They sit in the same wider Luohu transport area, but remain separate facilities. Add the signed walk, border processing and Hong Kong onward route rather than treating them as one platform."],
-        ["Can I take a train from Futian to Hong Kong?", "Only when a live cross-boundary high-speed-rail ticket names Futian and Hong Kong West Kowloon. That is different from using Futian Checkpoint to Lok Ma Chau/East Rail."],
-        ["Is Airport Station the same as the SZX terminal?", "Airport Station serves the airport transport complex, but the airline's current terminal and airport signs control the flight. Airport North is another transport node, not a substitute flight terminal."],
-        ["Can I land at SZX and catch a train the same day?", "Sometimes, but a separate ticket is unprotected. Budget for flight delay, immigration when applicable, baggage, terminal exit, the complete city transfer and station entry; use a later train or overnight when the chain is fragile."],
-        ["Why are there no fixed travel times, fares or last trains here?", "They change with the travel date, operating diagram, traffic, disruption and checkpoint status. Publishing one number would create false confidence; use the current official channels listed below."],
+      type: "faq",
+      title: "Frequently asked questions",
+      items: [
+        {
+          question: "Which Shenzhen railway station is the default?",
+          answer: "There is no universal default. Shenzhen North is a sensible first principal hub to search, but a live Futian or Shenzhen Station train may produce the better complete journey. The issued ticket decides.",
+        },
+        {
+          question: "Is Futian Station the same as Futian Checkpoint?",
+          answer: "No. 福田站 is a CBD railway/metro complex; 福田口岸 is a separate land-border complex connecting to Hong Kong's Lok Ma Chau and East Rail.",
+        },
+        {
+          question: "Are Shenzhen Station and Shenzhen North the same?",
+          answer: "No. 深圳站 is the specific Luohu station; 深圳北 is the major Longhua hub. Tickets and map pins are not interchangeable.",
+        },
+        {
+          question: "Is Shenzhen Railway Station next to Luohu Checkpoint?",
+          answer: "They sit in the same wider Luohu transport area, but remain separate facilities. Add the signed walk, border processing and Hong Kong onward route rather than treating them as one platform.",
+        },
+        {
+          question: "Can I take a train from Futian to Hong Kong?",
+          answer: "Only when a live cross-boundary high-speed-rail ticket names Futian and Hong Kong West Kowloon. That is different from using Futian Checkpoint to Lok Ma Chau/East Rail.",
+        },
+        {
+          question: "Is Airport Station the same as the SZX terminal?",
+          answer: "Airport Station serves the airport transport complex, but the airline's current terminal and airport signs control the flight. Airport North is another transport node, not a substitute flight terminal.",
+        },
+        {
+          question: "Can I land at SZX and catch a train the same day?",
+          answer: "Sometimes, but a separate ticket is unprotected. Budget for flight delay, immigration when applicable, baggage, terminal exit, the complete city transfer and station entry; use a later train or overnight when the chain is fragile.",
+        },
+        {
+          question: "Why are there no fixed travel times, fares or last trains here?",
+          answer: "They change with the travel date, operating diagram, traffic, disruption and checkpoint status. Publishing one number would create false confidence; use the current official channels listed below.",
+        },
       ],
     },
     {

@@ -124,6 +124,35 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
           </table>
         </div>
       );
+    case "faq":
+      // Native <details> keeps every answer in the HTML (crawlers and the
+      // FAQPage schema read the full text) while readers see a folded list.
+      return (
+        <section className={styles.faq} aria-labelledby={block.id}>
+          <h2 id={block.id}>
+            <span id={`${block.id}-heading`}>{block.title}</span>
+          </h2>
+          <div className={styles.faqList}>
+            {block.items.map((item) => (
+              <Fragment key={item.id ?? item.question}>
+                {item.legacyIds?.map((legacyId) => (
+                  <span
+                    aria-hidden="true"
+                    className={styles.faqAlias}
+                    data-faq-disclosure={item.id}
+                    id={legacyId}
+                    key={legacyId}
+                  />
+                ))}
+                <details className={styles.faqItem} id={item.id}>
+                  <summary>{item.question}</summary>
+                  <p>{item.answer}</p>
+                </details>
+              </Fragment>
+            ))}
+          </div>
+        </section>
+      );
     case "sources":
       return (
         <details className={styles.sources}>

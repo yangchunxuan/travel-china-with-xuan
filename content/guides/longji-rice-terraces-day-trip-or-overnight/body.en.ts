@@ -86,15 +86,14 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["A traveller cannot manage the path", "Turn back to the last safe rest point and use the most accessible confirmed viewpoint.", "Do not split the group without a named meeting plan and communication."],
     ["The return is running late", "Drop the final viewpoint and leave on the agreed route.", "Do not protect a sunset at the expense of the next fixed booking."],
   ]},
-  { id: "faq-heading", type: "heading", level: 2, text: "Questions travellers actually ask" },
-  { id: "faq", type: "table", caption: "Short answers before you book", columns: ["Question", "Answer"], rows: [
-    ["Can I visit Longji from Guilin in one day?", "Yes, if you leave early, choose one terrace area and keep the evening free. The plan must include entrance, internal movement, walking and the road return—not only the headline drive."],
-    ["Can I do it from Yangshuo?", "It can be physically possible, but it is a different and more fragile door-to-door day. An overnight or a through-route that does not return to Yangshuo is often more coherent."],
-    ["Is sunrise worth staying overnight?", "Only if you also value the slower visit and second weather window. Sunrise itself is never guaranteed, and the pre-dawn path must fit the group."],
-    ["Should I choose Ping'an or Dazhai?", "Choose only after deciding duration, walking tolerance, vehicle endpoint and accommodation last mile. This page deliberately does not pretend that one area is universally best."],
-    ["Can I bring a large suitcase?", "Not without checking the exact drop-off and final path. Store it in Guilin or obtain written luggage-help details before choosing a mountain stay."],
-    ["Is Longji still worth it in rain or outside the famous colours?", "It can be, if you value a living cultivated landscape and villages rather than one guaranteed photograph. Active road or weather warnings still override the plan."],
-  ]},
+  { id: "faq", type: "faq", title: "Questions travellers actually ask", items: [
+    { question: "Can I visit Longji from Guilin in one day?", answer: "Yes, if you leave early, choose one terrace area and keep the evening free. The plan must include entrance, internal movement, walking and the road return—not only the headline drive." },
+    { question: "Can I do it from Yangshuo?", answer: "It can be physically possible, but it is a different and more fragile door-to-door day. An overnight or a through-route that does not return to Yangshuo is often more coherent." },
+    { question: "Is sunrise worth staying overnight?", answer: "Only if you also value the slower visit and second weather window. Sunrise itself is never guaranteed, and the pre-dawn path must fit the group." },
+    { question: "Should I choose Ping'an or Dazhai?", answer: "Choose only after deciding duration, walking tolerance, vehicle endpoint and accommodation last mile. This page deliberately does not pretend that one area is universally best." },
+    { question: "Can I bring a large suitcase?", answer: "Not without checking the exact drop-off and final path. Store it in Guilin or obtain written luggage-help details before choosing a mountain stay." },
+    { question: "Is Longji still worth it in rain or outside the famous colours?", answer: "It can be, if you value a living cultivated landscape and villages rather than one guaranteed photograph. Active road or weather warnings still override the plan." },
+  ] },
   { id: "facts", type: "callout", title: "Evidence boundary, reviewed 21 August 2026", tone: "neutral", body: "Official sources support Longji's location, multiple terrace/village areas, 4A status and living agricultural-heritage role. They do not establish a universal current transfer time, ticket, shuttle, opening hour, field colour or hotel last mile. The day-trip and overnight recommendations are Homeground planning judgments built around those verified geographic constraints. Recheck live operations before travel." },
   { id: "checklist", type: "list", items: [
     "One named terrace area, entrance and Chinese endpoint—not only ‘Longji’.",

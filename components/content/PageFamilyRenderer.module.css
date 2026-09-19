@@ -212,6 +212,89 @@
   margin: 0.5rem 0 0;
 }
 
+/* FAQ: folded by default, but every answer stays in the HTML, so crawlers
+   and the FAQPage schema see the full text. Same "+" marker as sources. */
+.faq {
+  border-block-start: 1px solid var(--hg-color-line);
+  margin-inline: auto;
+  margin-block-start: 3.5rem;
+  max-width: 52rem;
+  padding-block-start: 2rem;
+}
+
+.faq h2 {
+  margin-block-start: 0;
+}
+
+.faqList {
+  border-block-start: 1px solid var(--hg-color-line);
+  margin-block-start: 1.25rem;
+}
+
+.faqAlias {
+  display: block;
+  block-size: 0;
+  scroll-margin-top: 6rem;
+}
+
+.faqItem {
+  border-block-end: 1px solid var(--hg-color-line);
+}
+
+.faqItem summary {
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  font-weight: 720;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) 1.8rem;
+  line-height: 1.4;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  border: 1px solid var(--hg-color-line);
+  border-radius: 999px;
+  content: "+";
+  display: grid;
+  font-size: 1rem;
+  font-weight: 500;
+  inline-size: 1.8rem;
+  line-height: 1;
+  min-block-size: 1.8rem;
+  place-items: center;
+  transition: transform 160ms ease;
+}
+
+.faqItem[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faqItem summary:hover::after {
+  border-color: var(--hg-color-rust);
+}
+
+.faqItem summary:focus-visible {
+  outline: 2px solid var(--hg-color-focus, var(--hg-color-rust));
+  outline-offset: 3px;
+}
+
+.faqItem > p {
+  margin: 0 0 1.15rem;
+  padding-inline-end: 2.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqItem summary::after {
+    transition: none;
+  }
+}
+
 .sources {
   border-block-start: 1px solid var(--hg-color-line);
   margin-block-start: 5rem;

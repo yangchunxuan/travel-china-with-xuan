@@ -215,11 +215,11 @@ test("Hangzhou and Zhangjiajie shared bodies carry three localized stay handoffs
 test("five city stay owners keep locale parity, links and factual review dates", async () => {
   const owners = {
     "shanghai-where-to-stay-first-trip": {
-      modified: "2026-08-21",
+      modified: "2026-09-19",
       reviewed: "2026-08-12",
     },
     "xian-where-to-stay-city-wall-or-dayanta": {
-      modified: "2026-09-01",
+      modified: "2026-09-19",
       reviewed: "2026-08-12",
     },
     "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": {

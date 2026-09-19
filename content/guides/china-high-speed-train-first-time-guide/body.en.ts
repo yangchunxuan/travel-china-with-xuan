@@ -259,6 +259,37 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "High-speed train questions answered",
+      items: [
+        {
+          question: "How far in advance can I book China high-speed train tickets?",
+          answer: "Most domestic tickets use a 15-day advance-sale period that includes the departure date, so a ticket for 15 August normally opens on 1 August at the departure station's release time. A separate 2026 pilot on the Beijing–Shanghai corridor lets passengers submit requests 17–60 days ahead in the Railway 12306 app, but a fulfilled request is not a ticket until it is paid.",
+        },
+        {
+          question: "Do I need a paper ticket to board a train in China?",
+          answer: "Normally no. Your electronic booking and the same original passport used to book replace a paper boarding ticket, though a passport may need a staffed lane at the ticket gate. A booking screenshot or reimbursement receipt is a reference, not the travel document.",
+        },
+        {
+          question: "How early should I arrive at a Chinese railway station?",
+          answer: "China Railway publishes no universal rule, and ticket checks stop before departure according to station arrangements. As practical planning advice, many first-time visitors should allow about 45–60 minutes after reaching the correct station, and more for a huge unfamiliar station, holiday crowds, passport assistance, children, older travellers or bulky luggage.",
+        },
+        {
+          question: "What is the luggage allowance on China's high-speed trains?",
+          answer: "Current China Railway guidance allows free carry-on luggage of 20 kg for most passengers and 10 kg for children, with the sum of length, width and height of each item limited to 130 cm on EMU high-speed trains and no single item over 20 kg. You usually lift and move bags yourself through screening, concourses and the carriage.",
+        },
+        {
+          question: "Do children need a train ticket in China?",
+          answer: "It depends on age on the travel date: a child aged 6 or older but under 14 needs a child discount ticket, and a child aged 14 or over needs a full-price ticket. Each ticketed adult may declare one child under 6 to travel free without a separate seat; additional under-6 children or any child needing a seat require a child ticket.",
+        },
+        {
+          question: "What is the refund fee for a Chinese train ticket?",
+          answer: "Refund fees are time-based. Under the rules reviewed on 10 August 2026, ordinary advance-sale tickets carry no fee 8 days or more before departure, then 5%, 10% or 20% as departure gets closer. A ticket can normally be changed once, subject to seats being available.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Plan the journey around the train",

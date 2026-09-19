@@ -400,6 +400,37 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Group meal questions answered",
+      items: [
+        {
+          question: "Where should I sit at a group meal in China?",
+          answer: "Let the organiser indicate seats. Formal etiquette guides document honour seats and hosts, and those conventions can matter at a visibly formal table, but an ordinary family or friends' meal may simply make space for a child or the person handling staff. A short pause and a simple question are more respectful than applying a seating diagram.",
+        },
+        {
+          question: "Should I use serving chopsticks (公筷) at a shared meal?",
+          answer: "Yes, when they are provided, and ask for them when useful. China's current separate-dining standard and many local rules support public chopsticks and serving spoons, though actual provision still differs by restaurant and household. Do not leave chopsticks standing vertically in rice.",
+        },
+        {
+          question: "How do I tell a Chinese restaurant about a food allergy?",
+          answer: "Show the ingredient in written Chinese, describe it as an allergy rather than a preference, and ask before the group order is sent: 我对___过敏 (Wǒ duì ___ guòmǐn). If the restaurant cannot answer clearly about ingredients or cross-contact, choose another dish or venue.",
+        },
+        {
+          question: "Should I leave food on the plate to be polite in China?",
+          answer: "No. Older etiquette lists sometimes say guests should leave food so a host appears generous, but China's Anti-Food Waste Law and current public guidance promote appropriate ordering and packing leftovers. You do not need to clear every communal plate, and you do not need to manufacture leftovers as a compliment.",
+        },
+        {
+          question: "Do I tip at restaurants in China?",
+          answer: "Tipping is not generally expected at an ordinary mainland Chinese restaurant. A hotel, premium venue or particular restaurant may list a service charge, which should be disclosed as part of the price; review the itemised bill and follow the venue's stated charge.",
+        },
+        {
+          question: "Who pays at a group meal in China?",
+          answer: "Decide who is paying before worrying about how. Someone who invited you and said wǒ qǐng (my treat) will often expect to pay; a group of peers may split the total (我们AA吧), and friends who eat together repeatedly may take turns. If it is unclear, ask 怎么分？ (Zěnme fēn?) rather than assuming.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue from one table",

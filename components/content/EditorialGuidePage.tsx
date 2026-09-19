@@ -109,6 +109,9 @@ function structuredData(
   const sources = body.blocks.flatMap((block) =>
     block.type === "sources" ? block.items.map((item) => item.url) : [],
   );
+  const faqItems = body.blocks.flatMap((block) =>
+    block.type === "faq" ? block.items : [],
+  );
   const homePath = getHomegroundCopy(locale).path;
   const homeCopy = getHomegroundCopy(locale);
   const navigation = getHomegroundNavigationModel(locale, homePath);
@@ -169,6 +172,22 @@ function structuredData(
         mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         ...(sources.length > 0 ? { citation: sources } : {}),
       },
+      ...(faqItems.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${guide.canonicalUrl}#faq`,
+              url: guide.canonicalUrl,
+              inLanguage,
+              isPartOf: { "@id": `${guide.canonicalUrl}#article` },
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
+          ]
+        : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [

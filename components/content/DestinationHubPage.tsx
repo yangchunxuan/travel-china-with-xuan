@@ -146,6 +146,9 @@ function structuredData(
   const sources = body.blocks.flatMap((block) =>
     block.type === "sources" ? block.items.map((item) => item.url) : [],
   );
+  const faqItems = body.blocks.flatMap((block) =>
+    block.type === "faq" ? block.items : [],
+  );
   const inLanguage = locale === "zh" ? "zh-Hans" : locale;
 
   return {
@@ -179,6 +182,22 @@ function structuredData(
         },
         ...(sources.length > 0 ? { citation: sources } : {}),
       },
+      ...(faqItems.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${hub.canonicalUrl}#faq`,
+              url: hub.canonicalUrl,
+              inLanguage,
+              isPartOf: { "@id": `${hub.canonicalUrl}#page` },
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
+          ]
+        : []),
       {
         "@type": "ItemList",
         "@id": `${hub.canonicalUrl}#owners`,

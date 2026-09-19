@@ -26,7 +26,7 @@ test("Yangshuo stay-base guide publishes complete localized metadata", async () 
   assert.deepEqual(metadata.destinations, ["guilin", "yangshuo"]);
   assert.deepEqual(
     [metadata.datePublished, metadata.dateModified, metadata.sourceReviewedDate],
-    ["2026-08-21", "2026-08-21", "2026-08-21"],
+    ["2026-08-21", "2026-09-19", "2026-08-21"],
   );
   assert.deepEqual(metadata.search, {
     section: "stay",

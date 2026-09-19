@@ -502,6 +502,33 @@ const body = {
       body: "Send the travel date, proposed flight or route, number of travellers, rough needs, hotel area, train or Disney plan, luggage and any fixed deadline. Homeground can flag which airport-to-door handoffs need checking; live flight inventory and transport still need a date-specific recheck.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Shanghai airport questions answered",
+      items: [
+        {
+          question: "Which Shanghai airport is better, Pudong or Hongqiao?",
+          answer: "Start with the flight: if the useful nonstop, protected connection or fare exists at only one airport, that fact decides. When both airports work, compare Hongqiao (SHA) first for western Shanghai and a Shanghai Hongqiao Railway Station connection, and Pudong (PVG) first for eastern Pudong, many long-haul international journeys and a Disney-area start or finish.",
+        },
+        {
+          question: "Is Hongqiao Airport the same as Shanghai Hongqiao Railway Station?",
+          answer: "No. Shanghai Hongqiao Railway Station is not airport code SHA, and Hongqiao Airport Terminal 1, Terminal 2 and the railway station are different endpoints inside the wider Hongqiao hub. Official guidance describes a signed connection corridor between the railway station and Terminal 2; Terminal 1 needs its own transfer.",
+        },
+        {
+          question: "How do I get between Pudong and Hongqiao airports?",
+          answer: "There is no airside transfer; moving between them is a landside Shanghai journey. At the August 2026 review the Airport Link took about 40 minutes between PVG and Hongqiao Airport T2, with first and last trains of 05:45 and 22:00 from Hongqiao T2 and 06:00 and 22:15 from PVG at 15-minute intervals. A traveller on 24-hour visa-free transit who leaves the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection.",
+        },
+        {
+          question: "Which metro lines serve PVG and SHA?",
+          answer: "At the August 2026 review, PVG connected to Metro Line 2, the Maglev and the Airport Link; SHA Terminal 1 used Line 10, while Terminal 2 used Lines 2 and 10 plus the Airport Link. First and last usable trains depend on direction and every transfer, so check the travel date.",
+        },
+        {
+          question: "Which airport is closer to Shanghai Disney?",
+          answer: "PVG is usually the first airport to compare because both sit in eastern Pudong, and the Airport Link's Shanghai International Resort Station lies between PVG and SHA. That station is not the park entrance, and a clearly better SHA flight can still be the better whole-trip choice.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning your Shanghai trip",

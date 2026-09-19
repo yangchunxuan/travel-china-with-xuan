@@ -110,13 +110,13 @@ export const legacySystemContentLifecycle = {
   },
   "zhangjiajie-4-day-private-tour": {
     datePublished: "2026-08-16",
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-19",
     lastReviewed: "2026-08-16",
     evidence: {
-      commit: "ce0f8b725241f446106a54824e1a23ce8bbb1642",
-      changedAt: "2026-09-06",
+      commit: "f4ad5ce65f710e97a2363850b20dc58c1689bca1",
+      changedAt: "2026-09-19",
       summary:
-        "The owner reduced all three classic accommodation tiers by USD 300 per person; localized price sources, the regular reference and the September 6-30 price window now agree across the homepage, catalog and detail page.",
+        "The public tour page now publishes its visible FAQ as linked FAQPage structured data in all three supported languages.",
     },
   },
   "entry-requirements": {

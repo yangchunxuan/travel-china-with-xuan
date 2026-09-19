@@ -349,6 +349,33 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Suzhou garden questions answered",
+      items: [
+        {
+          question: "Which Suzhou garden is best for a first visit?",
+          answer: "It depends on what you want to see: Humble Administrator's Garden for broad water composition, Lingering Garden for corridors and courtyards, Master-of-Nets for an intimate garden-residence, or Lion Forest Garden for its navigable limestone rockery. These are signatures, not a ranking.",
+        },
+        {
+          question: "Is one Suzhou garden enough for half a day?",
+          answer: "Yes. Make one garden the main event, leave time to sit by the water and look back along a corridor, and add a second only if it offers something different that you want to explore. Check the garden authority's current notices for closed areas before booking.",
+        },
+        {
+          question: "How many gardens are in the UNESCO Classical Gardens of Suzhou listing?",
+          answer: "Nine. Four were inscribed in 1997 and five added in 2000: the Humble Administrator's Garden, Lingering Garden, Master-of-Nets Garden, Mountain Villa with Embracing Beauty, Canglang Pavilion, Lion Forest Garden, Garden of Cultivation, Couple's Retreat and Retreat & Reflection Garden.",
+        },
+        {
+          question: "What does borrowed scenery (jiejing) mean?",
+          answer: "An element beyond the garden boundary, such as a distant pagoda, a neighbouring tree line, sky or sound, made to take part in the composition inside. It is often confused with a framed view (框景), which is a scene cut by a doorway or window within the garden.",
+        },
+        {
+          question: "Why are Suzhou garden rockeries meant to look like mountains?",
+          answer: "The Chinese garden works as a microcosm: rock compositions stand in for mountain ranges, small ponds for great waters and miniature trees for forests. A deliberately assembled rockery is not pretending to be untouched geology; the point is how convincingly it creates mass, depth and changing viewpoints.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Keep planning the visit",

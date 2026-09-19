@@ -499,6 +499,29 @@ const body = {
       body: "Send the travel date, exact flight numbers, party size, luggage, onward hotel or train and approximate budget. Homeground can help identify where the terminal-to-hotel or terminal-to-train chain becomes risky, with live transport still rechecked for the date.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Quick answers before you set off",
+      items: [
+        {
+          question: "Does my flight use Guangzhou Baiyun T2 or T3?",
+          answer: "The exact flight on your latest booking decides it. T1 stopped passenger operations on 7 May 2026, so confirm T2 or T3 with the operating airline or the airport's flight-status page on the travel day.",
+        },
+        {
+          question: "Is there a direct metro to T3?",
+          answer: "At the August 2026 network review, T3 had direct intercity rail and the Gaozeng feeder bus but no direct metro. Metro Line 3 serves T2 at the Airport North station.",
+        },
+        {
+          question: "How do I get between T2 and T3?",
+          answer: "Use the airport's 24-hour landside inter-terminal shuttle or a road transfer. The airport's published passenger information confirms landside shuttle and intercity options, not an airside train. Ask the operating airline whether your exact itinerary has a protected airside or escorted connection; otherwise plan the landside transfer.",
+        },
+        {
+          question: "Are Airport North and Baiyun Airport North the same station?",
+          answer: "No. Airport North (T2) is the Metro Line 3 station; Baiyun Airport North (T2) is the Guangdong Intercity station. Search the full name, because the missing word changes the rail system.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning the whole transfer day",

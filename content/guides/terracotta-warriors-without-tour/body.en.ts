@@ -313,38 +313,31 @@ export default {
       tone: "neutral",
     },
     {
-      id: "faq-heading",
-      type: "heading",
-      level: 2,
-      text: "Questions that can break an independent visit",
-    },
-    {
-      id: "faq-passport",
-      type: "callout",
-      title: "Can a foreign visitor book with a passport?",
-      body: "Yes. The museum includes foreign visitors in its real-name reservation system and lists passports as accepted documents. Use the same original valid passport for entry.",
-      tone: "neutral",
-    },
-    {
-      id: "faq-lishan",
-      type: "callout",
-      title: "Is Lishan Garden included in the Terracotta Warriors ticket?",
-      body: "Yes under the current one-ticket arrangement, and the shuttle between the two visitor areas is included. Paid electric sightseeing vehicles inside the areas are separate.",
-      tone: "neutral",
-    },
-    {
-      id: "faq-order",
-      type: "callout",
-      title: "Must everyone visit Pit 1, then Pit 3, then Pit 2?",
-      body: "No. The museum publishes that sequence as a suggested two-hour route, but your priority and the day's crowd controls matter. Follow current one-way directions and choose the permitted sequence that protects what you came to understand.",
-      tone: "neutral",
-    },
-    {
-      id: "faq-time",
-      type: "callout",
-      title: "How long should the whole day take?",
-      body: "The museum's own planning figure is about 1.5 hours in each of its two areas. Once travel from Xi'an, inspection, shuttle waits and the return are added, protect a full day. Do not convert that judgment into a guaranteed door-to-door duration.",
-      tone: "neutral",
+      id: "faq",
+      type: "faq",
+      title: "Questions that can break an independent visit",
+      items: [
+        {
+          id: "faq-passport",
+          question: "Can a foreign visitor book with a passport?",
+          answer: "Yes. The museum includes foreign visitors in its real-name reservation system and lists passports as accepted documents. Use the same original valid passport for entry.",
+        },
+        {
+          id: "faq-lishan",
+          question: "Is Lishan Garden included in the Terracotta Warriors ticket?",
+          answer: "Yes under the current one-ticket arrangement, and the shuttle between the two visitor areas is included. Paid electric sightseeing vehicles inside the areas are separate.",
+        },
+        {
+          id: "faq-order",
+          question: "Must everyone visit Pit 1, then Pit 3, then Pit 2?",
+          answer: "No. The museum publishes that sequence as a suggested two-hour route, but your priority and the day's crowd controls matter. Follow current one-way directions and choose the permitted sequence that protects what you came to understand.",
+        },
+        {
+          id: "faq-time",
+          question: "How long should the whole day take?",
+          answer: "The museum's own planning figure is about 1.5 hours in each of its two areas. Once travel from Xi'an, inspection, shuttle waits and the return are added, protect a full day. Do not convert that judgment into a guaranteed door-to-door duration.",
+        },
+      ],
     },
     {
       id: "fact-boundary",

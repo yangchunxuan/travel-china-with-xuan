@@ -206,6 +206,33 @@ const body = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Chongqing station questions answered",
+      items: [
+        {
+          question: "Which railway station should I use in Chongqing?",
+          answer: "If your ticket is issued, the exact station printed on it, matched character for character: 重庆北, 重庆西, 重庆东 or 沙坪坝. If you have not booked, search trains that actually run on your date first, then compare the hotel-door-to-platform journey and the arrival-side transfer; a closer station with no suitable train is not useful.",
+        },
+        {
+          question: "Is Chongqing Station (重庆站) the main station?",
+          answer: "No. 重庆站 is a specific station at Caiyuanba that stopped passenger service in 2022 and was still under reconstruction in the official July 2026 update, so it is not one of the four current urban hubs. 重庆汽车站 is a bus station, not a railway terminal.",
+        },
+        {
+          question: "Which Chongqing station is for Chengdu trains?",
+          answer: "There is no fixed answer. Shapingba (沙坪坝) is most naturally considered when a suitable Chengdu–Chongqing high-speed or regional train is offered on your date, but not every Chengdu train stops there; trains also use North and West, and the July 2026 adjustment moved some services between them. Let the issued ticket decide.",
+        },
+        {
+          question: "Are Chongqing North's north square and south square different stations?",
+          answer: "No. The railway station's north and south sides have been internally connected since the 2021 upgrade, so there are no separate departure stations; the metro still uses the names 重庆北站北广场 (Lines 4 and 10) and 重庆北站南广场 (Lines 3, 10 and the Loop Line). Stay within the complex and follow signs rather than starting a cross-city recovery.",
+        },
+        {
+          question: "What do I do if I go to the wrong Chongqing station?",
+          answer: "Stop and recheck the Chinese station name, train, date and time on the ticket. Work out whether it is the right station but the wrong entrance or level, or a genuinely different station; if the transfer to the correct station is not clearly safe in time, handle the ticket first through current change or refund options or station staff, and only then use the live metro or a legal taxi.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",
