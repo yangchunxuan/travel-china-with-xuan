@@ -629,6 +629,60 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     }
   });
 
+  await context.test("guide CTA product attribution uses only known same-origin product paths", () => {
+    installBrowser();
+    const { analytics, location } = loadCompiledModules(outputDirectory);
+    const { privateTourInquirySlugs } = require(join(outputDirectory, "privateTourInquiryContext.js"));
+    for (const prefix of ["/", "/zh/", "/ko/"]) {
+      for (const slug of privateTourInquirySlugs) {
+        for (const href of [
+          `${prefix}tours/${slug}/`,
+          `https://homegroundchina.com${prefix}tours/${slug}/?email=PRIVATEEMAIL&tour=PRIVATEQUESTION#PRIVATEFRAGMENT`,
+        ]) {
+          assert.equal(location.guideCtaProductSlug(href), slug);
+          assert.equal(location.guideCtaTarget(href), "private_tour");
+          analytics.trackEvent("guide_cta_clicked", {
+            guide_id: "china-tour-guide-decision",
+            cta_position: "inline",
+            cta_target: location.guideCtaTarget(href),
+            product_slug: location.guideCtaProductSlug(href),
+          });
+          const payload = window.dataLayer.at(-1)[2];
+          assert.equal(payload.cta_target, "private_tour");
+          assert.equal(payload.product_slug, slug);
+          assert.doesNotMatch(JSON.stringify(payload), /PRIVATEEMAIL|PRIVATEQUESTION|PRIVATEFRAGMENT|[?#]/u);
+        }
+      }
+      const knownSlug = "beijing-highlights-5-day-private-tour";
+      for (const href of [
+        `${prefix}tours/`,
+        `${prefix}tours/?tour=${knownSlug}#${knownSlug}`,
+        `${prefix}tours/unknown-private-text/?tour=${knownSlug}`,
+        `${prefix}?tour=${knownSlug}#planner-contact`,
+        `${prefix}guides/${knownSlug}/`,
+      ]) {
+        assert.equal(location.guideCtaProductSlug(href), undefined);
+        analytics.trackEvent("guide_cta_clicked", {
+          guide_id: "china-tour-guide-decision",
+          cta_target: location.guideCtaTarget(href),
+          product_slug: location.guideCtaProductSlug(href),
+        });
+        assert.equal("product_slug" in window.dataLayer.at(-1)[2], false);
+      }
+    }
+    for (const href of [
+      "https://elsewhere.example/tours/beijing-highlights-5-day-private-tour/",
+      "//elsewhere.example/ko/tours/beijing-highlights-5-day-private-tour/",
+      "http://homegroundchina.com/tours/beijing-highlights-5-day-private-tour/",
+      "https://private:secret@homegroundchina.com/tours/beijing-highlights-5-day-private-tour/",
+      "mailto:private@example.com?tour=beijing-highlights-5-day-private-tour",
+      "https://[",
+    ]) {
+      assert.equal(location.guideCtaProductSlug(href), undefined);
+      assert.equal(location.guideCtaTarget(href), "other");
+    }
+  });
+
   await context.test("Meta history automation is disabled before init and q suppresses both vendors", () => {
     installBrowser();
     const { analytics, location } = loadCompiledModules(outputDirectory);

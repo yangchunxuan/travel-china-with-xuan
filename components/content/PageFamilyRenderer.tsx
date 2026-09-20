@@ -1,13 +1,27 @@
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
+import type { HomegroundLocale } from "../../lib/homegroundI18n";
+import { isPrivateTourInquirySlug } from "../../lib/privateTourInquiryContext";
+import { GuideCtaLink } from "../GuideCtaLink";
 import type {
   PageBodyBlock,
   StructuredPageBody,
 } from "../../lib/content-system/page-body";
 import styles from "./PageFamilyRenderer.module.css";
 
-function BodyBlock({ block }: { block: PageBodyBlock }) {
+interface GuideTracking {
+  guideId: string;
+  locale: HomegroundLocale;
+}
+
+function isPublishedTourLink(href: string) {
+  if (/^\/(?:zh\/|ko\/)?tours\/$/u.test(href)) return true;
+  const slug = href.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u)?.[1];
+  return isPrivateTourInquirySlug(slug);
+}
+
+function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracking?: GuideTracking }) {
   switch (block.type) {
     case "lead":
       return <p className={styles.lead}>{block.text}</p>;
@@ -85,7 +99,11 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
           <ul>
             {block.items.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
+                {guideTracking && isPublishedTourLink(item.href) ? (
+                  <GuideCtaLink href={item.href} {...guideTracking} position="inline">{item.label}</GuideCtaLink>
+                ) : (
+                  <Link href={item.href}>{item.label}</Link>
+                )}
                 {item.description ? <p>{item.description}</p> : null}
               </li>
             ))}
@@ -185,8 +203,10 @@ function BodyBlock({ block }: { block: PageBodyBlock }) {
 export function PageFamilyRenderer({
   body,
   interstitial,
+  guideTracking,
 }: {
   body: StructuredPageBody;
+  guideTracking?: GuideTracking;
   /** One extra node rendered after the block at `afterIndex` (e.g. the matching tour card). */
   interstitial?: { afterIndex: number; node: ReactNode };
 }) {
@@ -194,7 +214,7 @@ export function PageFamilyRenderer({
     <div className={styles.body}>
       {body.blocks.map((block, index) => (
         <Fragment key={block.id}>
-          <BodyBlock block={block} />
+          <BodyBlock block={block} guideTracking={guideTracking} />
           {interstitial && interstitial.afterIndex === index ? interstitial.node : null}
         </Fragment>
       ))}

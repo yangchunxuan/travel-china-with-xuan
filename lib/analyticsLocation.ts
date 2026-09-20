@@ -2,6 +2,7 @@ import {
   getPrivateTourInquirySelection,
   isPrivateTourInquirySlug,
   privateTourInquiryQueryKey,
+  type PrivateTourInquirySlug,
 } from "./privateTourInquiryContext";
 import { routeServiceIds, routeServiceQueryKey } from "./routeServiceInterest";
 
@@ -170,6 +171,28 @@ const publicHomeFragments = new Set([
 ]);
 
 export type GuideCtaTarget = "private_tour" | "planner" | "other";
+
+export function guideCtaProductSlug(
+  href: string,
+): PrivateTourInquirySlug | undefined {
+  if (typeof window === "undefined") return undefined;
+  try {
+    const url = new URL(href, window.location.href);
+    if (
+      url.origin !== window.location.origin ||
+      url.username ||
+      url.password
+    ) {
+      return undefined;
+    }
+    // Only an allowlisted product path can identify the product. Ignore all
+    // query and fragment text, including a tour parameter on a collection.
+    const slug = url.pathname.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u)?.[1];
+    return isPrivateTourInquirySlug(slug) ? slug : undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 export function guideCtaTarget(href: string): GuideCtaTarget {
   if (typeof window === "undefined") return "other";
