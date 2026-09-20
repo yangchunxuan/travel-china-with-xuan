@@ -105,6 +105,16 @@ const guideTargets = {
     classicZhangjiajie,
     p("zhangjiajie-forest-4-day-private-tour"),
   ],
+  "zhangjiajie-furong-fenghuang-route-order": [
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
+  "zhangjiajie-arrival-departure-stations": [
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+    p("zhangjiajie-forest-4-day-private-tour"),
+  ],
+  "border-town-fenghuang-chadong-shen-congwen": [
+    p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
   "china-private-transfer-or-public-transport": [toursWithTransport],
   "china-climate-regions-for-trip-timing": [p("harbin-winter-5-day-private-tour")],
 } as const satisfies Partial<Record<GuideId, readonly ProductTarget[]>>;
@@ -136,6 +146,9 @@ const approvedCommercialGuideIds = [
   "guilin-yangshuo-transport-route",
   "yangshuo-town-or-yulong-river-where-to-stay",
   "zhangjiajie-city-or-wulingyuan-hotel-base",
+  "zhangjiajie-furong-fenghuang-route-order",
+  "zhangjiajie-arrival-departure-stations",
+  "border-town-fenghuang-chadong-shen-congwen",
   "china-private-transfer-or-public-transport",
   "china-climate-regions-for-trip-timing",
 ] as const satisfies readonly GuideId[];
@@ -183,11 +196,11 @@ const productContexts = {
   },
   "zhangjiajie-forest-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
+    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "zhangjiajie-arrival-departure-stations"],
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-from-malaysia"],
+    guides: ["zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-from-malaysia", "zhangjiajie-furong-fenghuang-route-order", "zhangjiajie-arrival-departure-stations", "border-town-fenghuang-chadong-shen-congwen"],
     relatedProducts: [
       classicZhangjiajie,
       p("zhangjiajie-forest-4-day-private-tour"),

@@ -1,0 +1,107 @@
+{
+  "id": "zhangjiajie-arrival-departure-stations",
+  "type": "planning",
+  "pillar": "transport-airports-rail-hubs",
+  "audienceMarkets": [
+    "global",
+    "malaysia",
+    "singapore",
+    "australia"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "zhangjiajie",
+    "hehua-airport",
+    "zhangjiajie-west",
+    "furong-town-station",
+    "fenghuang-station",
+    "private-transfer"
+  ],
+  "destinations": [
+    "china",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-20",
+  "dateModified": "2026-09-20",
+  "sourceReviewedDate": "2026-09-20",
+  "searchTerms": {
+    "en": [
+      "zhangjiajie airport or train station",
+      "zhangjiajie west station to wulingyuan",
+      "furong town railway station to scenic area",
+      "fenghuang ancient city railway station to old town"
+    ],
+    "zh": [
+      "张家界机场还是张家界西站",
+      "张家界西站到武陵源",
+      "凤凰古城站到古城",
+      "芙蓉镇站到景区"
+    ],
+    "ko": [
+      "장자제 공항 장자제서역",
+      "장자제서역 우링위안",
+      "펑황고성역 고성 이동",
+      "푸룽전역 관광지 이동"
+    ]
+  },
+  "search": {
+    "section": "transport",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/zhangjiajie-arrival-departure-stations/",
+      "title": "Zhangjiajie Airport or Station: Tour Start & Finish",
+      "headline": "Choose the Right Start and Finish for Zhangjiajie",
+      "description": "Match Zhangjiajie Hehua Airport, Zhangjiajie West, Furong Town and Fenghuang Ancient City stations to your hotel, route and final ticket.",
+      "heroAlt": "Zhangjiajie Hehua International Airport with Tianmen Mountain behind the terminal",
+      "navTitle": "Zhangjiajie tour start and finish",
+      "featuredLinkLabel": "Choose Zhangjiajie arrival and departure points",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Airport or rail",
+        "Exact station",
+        "Last transfer"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/zhangjiajie-arrival-departure-stations/",
+      "title": "张家界机场或车站：私家团起终点",
+      "headline": "张家界行程从哪里开始、在哪里结束",
+      "description": "分清张家界荷花国际机场、张家界西站、芙蓉镇站与凤凰古城站，把准确车站、住宿和最后一张交通票接起来。",
+      "heroAlt": "航站楼后方可见天门山的张家界荷花国际机场",
+      "navTitle": "张家界行程起终点",
+      "featuredLinkLabel": "选择张家界抵达与离开节点",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "机场或高铁",
+        "准确站名",
+        "最后接送"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/zhangjiajie-arrival-departure-stations/",
+      "title": "장자제 공항·기차역: 투어 시작과 종료",
+      "headline": "장자제 여행의 시작점과 종료점을 고르는 법",
+      "description": "장자제 허화 국제공항, 장자제서역, 푸룽전역, 펑황고성역을 호텔·여행 순서·마지막 교통편에 맞추세요.",
+      "heroAlt": "터미널 뒤로 톈먼산이 보이는 장자제 허화 국제공항",
+      "navTitle": "장자제 여행 시작과 종료",
+      "featuredLinkLabel": "장자제 도착·출발 지점 고르기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "공항 또는 철도",
+        "정확한 역명",
+        "마지막 이동"
+      ]
+    }
+  }
+}

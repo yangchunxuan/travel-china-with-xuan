@@ -233,6 +233,8 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "china-14-day-itinerary": "plan-trip-length-city-order",
   "chengdu-zhangjiajie-itinerary": "plan-trip-length-city-order",
   "guilin-yangshuo-longji-route-order": "plan-trip-length-city-order",
+  "zhangjiajie-furong-fenghuang-route-order": "plan-trip-length-city-order",
+  "zhangjiajie-arrival-departure-stations": "transport-city-pair-routes",
   "singapore-to-zhangjiajie-itinerary": "plan-traveller-theme-itineraries",
   "chengdu-chongqing-zhangjiajie-itinerary": "plan-trip-length-city-order",
   "zhangjiajie-from-malaysia": "plan-traveller-theme-itineraries",
