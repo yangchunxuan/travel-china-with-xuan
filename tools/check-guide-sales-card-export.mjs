@@ -17,6 +17,18 @@ const productLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/([a-z0-9-]+)\/$/u;
 const collectionLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/$/u;
 
 const explicitPlans = {
+  "summer-palace-gates-route-and-boat-plan": {
+    kind: "private-tour-product",
+    ctaId: "beijing-highlights-5-day-private-tour",
+  },
+  "terracotta-warriors-without-tour": {
+    kind: "private-tour-product",
+    ctaId: "xian-terracotta-warriors-5-day-private-tour",
+  },
+  "zhangjiajie-national-forest-park-tickets-and-entrances": {
+    kind: "private-tour-product",
+    ctaId: "zhangjiajie-forest-4-day-private-tour",
+  },
   "zhangjiajie-older-travellers": {
     kind: "private-tour-product",
     ctaId: "zhangjiajie-4-day-private-tour",
@@ -138,6 +150,12 @@ for (const guideId of guideIds) {
     }
 
     const explicit = explicitPlans[guideId];
+    if (guideId === "zhangjiajie-from-malaysia") {
+      const sevenDayHref = `${prefix[locale]}/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/`;
+      if (!anchors(main).includes(sevenDayHref)) {
+        failures.push(`${where}: seven-day route is configured but missing from the reader-visible page`);
+      }
+    }
     if (explicit && (kind !== explicit.kind || ctaId !== explicit.ctaId)) {
       failures.push(`${where}: explicit plan drifted to ${kind}/${ctaId}`);
     }

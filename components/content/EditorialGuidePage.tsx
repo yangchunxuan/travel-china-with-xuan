@@ -359,6 +359,7 @@ export function EditorialGuidePage({
         >
           <PageFamilyRenderer
             body={body}
+            guideTracking={{ guideId: guide.id, locale }}
             interstitial={
               tourCard
                 ? {
@@ -386,9 +387,9 @@ export function EditorialGuidePage({
             <ul>
               {publishedRouteLinks.map((route) => (
                 <li key={route.id}>
-                  <Link href={route.href}>
+                  <GuideCtaLink href={route.href} guideId={guide.id} locale={locale} position="footer">
                     {route.label}<span aria-hidden="true">→</span>
-                  </Link>
+                  </GuideCtaLink>
                 </li>
               ))}
             </ul>

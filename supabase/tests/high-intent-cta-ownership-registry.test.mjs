@@ -96,7 +96,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 31 guide and 11 product owners", () => {
+test("commercial links keep the approved 8 hub, 34 guide and 11 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -142,7 +142,9 @@ test("commercial links keep the approved 8 hub, 31 guide and 11 product owners",
       "shanghai-pudong-or-hongqiao-airport",
       "shanghai-where-to-stay-first-trip",
       "singapore-to-zhangjiajie-itinerary",
+      "summer-palace-gates-route-and-boat-plan",
       "temple-of-heaven-gates-and-ritual-sequence",
+      "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
@@ -152,6 +154,7 @@ test("commercial links keep the approved 8 hub, 31 guide and 11 product owners",
       "zhangjiajie-furong-fenghuang-route-order",
       "zhangjiajie-glass-bridge-vs-skywalk",
       "zhangjiajie-itinerary",
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
     ],
   );
   assert.deepEqual(

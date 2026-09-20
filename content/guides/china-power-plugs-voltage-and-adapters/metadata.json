@@ -21,7 +21,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-12",
-  "dateModified": "2026-09-19",
+  "dateModified": "2026-09-20",
   "sourceReviewedDate": "2026-08-12",
   "search": {
     "section": "essentials",
@@ -50,9 +50,9 @@
     },
     "zh": {
       "path": "/zh/guides/china-power-plugs-voltage-and-adapters/",
-      "title": "中国插头、电压与旅行转换插头指南",
-      "headline": "中国电源插头和 220V 电压：需要转换插头还是变压器？",
-      "description": "区分插头形状与电压：中国为 220V/50Hz，常见插座可见 A、C、I 型。",
+      "title": "去中国要带转换插头吗？220V电压与插座类型",
+      "headline": "去中国要带什么转换插头？先看插座类型和设备电压",
+      "description": "先看充电器INPUT：覆盖220V、50Hz，才只需处理插头形状。中国大陆常见A、C、I型；英标G型应准备转换头，转换插头不会变压。",
       "heroAlt": "三种插头形状、220 伏标签和旅行转换插头的编辑插画。",
       "navTitle": "中国插头与电压",
       "featuredLinkLabel": "带对电源转换设备",

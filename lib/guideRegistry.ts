@@ -192,44 +192,44 @@ export const legacyGuideRegistry = [
     imageWidth: 1200,
     imageHeight: 630,
     datePublished: "2026-07-28",
-    dateModified: "2026-07-28",
+    dateModified: "2026-09-20",
     sourceReviewedDate: "2026-07-28",
     locales: {
       en: {
         path: "/guides/zhangjiajie-from-malaysia/",
-        title: "Zhangjiajie From Malaysia: Private Trip Guide (2026)",
+        title: "Zhangjiajie From Malaysia: Flights, Hotels & How Many Days",
         headline:
-          "Zhangjiajie From Malaysia: Choose the Gateway, Hotel Base and Support",
+          "Zhangjiajie From Malaysia: Flights, Hotels and How Many Days",
         description:
-          "Compare flight gateways, complete sightseeing days, hotel bases, tickets, payment setup and private-trip support for Zhangjiajie from Malaysia.",
+          "Fly into Zhangjiajie or travel via Changsha? Compare hotel bases, transfer days and four- or seven-day local tours before booking from Malaysia.",
         heroAlt:
           "Visitors look toward misty sandstone pillars rising above the forest in Zhangjiajie.",
         navTitle: "Zhangjiajie from Malaysia",
         featuredLinkLabel:
-          "Choose the gateway and hotel base for Zhangjiajie from Malaysia",
+          "Plan flights, hotels and sightseeing days from Malaysia",
         openGraphLocale: "en_MY",
       },
       zh: {
         path: "/zh/guides/zhangjiajie-from-malaysia/",
-        title: "马来西亚到张家界自由行：航班、住宿与私人协助",
-        headline: "从马来西亚去张家界：先选入境点、住宿区域与协助方式",
+        title: "马来西亚去张家界：航班、住哪里与玩几天",
+        headline: "从马来西亚去张家界：航班、住宿与行程天数怎么选",
         description:
-          "比较马来西亚到张家界的航班门户、完整游览日、武陵源与市区住宿、门票、支付准备，以及自由行需要多少当地协助。",
+          "飞张家界还是经长沙转车？比较航班、到酒店的接驳和住宿区域，再选四日或七日当地行程。首末日与航班对时，是否加住按实际衔接决定。",
         heroAlt: "游客在张家界仰望从森林和云雾间升起的砂岩峰林。",
         navTitle: "马来西亚出发张家界指南",
-        featuredLinkLabel: "选对马来西亚到张家界的航班门户与住宿基地",
+        featuredLinkLabel: "从马来西亚去张家界，怎么飞、住哪、玩几天",
         openGraphLocale: "zh_MY",
       },
       ko: {
         path: "/ko/guides/zhangjiajie-from-malaysia/",
-        title: "말레이시아 출발 장자제 여행: 항공·숙소·현지 지원",
-        headline: "말레이시아에서 장자제까지: 관문·숙박 거점·지원 범위 고르기",
+        title: "말레이시아 출발 장자제: 항공·숙소·여행 일수",
+        headline: "말레이시아에서 장자제까지: 항공편·숙소·여행 일수 고르기",
         description:
-          "말레이시아 출발 장자제 여행의 항공 관문, 온전한 관광일, 우링위안·시내 숙소, 입장권, 결제 준비와 현지 지원 범위를 비교합니다.",
+          "장자제 도착편과 창사 경유편, 숙소 위치와 이동일을 비교하세요. 현지 4일·7일 투어의 첫날과 마지막 날을 항공편에 맞추고 추가 숙박이 필요한지 확인하세요.",
         heroAlt:
           "여행자들이 장자제의 숲과 안개 사이로 솟은 사암 봉우리를 바라보는 모습.",
         navTitle: "말레이시아 출발 장자제 가이드",
-        featuredLinkLabel: "말레이시아 출발 장자제의 관문과 숙박 거점 선택하기",
+        featuredLinkLabel: "말레이시아 출발 장자제 항공편·숙소·여행 일수 비교",
         openGraphLocale: "ko_KR",
       },
     },

@@ -30,12 +30,12 @@ export const malaysiaZhangjiajieGuideCopyEn = {
     titleParts: [
       "Zhangjiajie ",
       "From Malaysia: ",
-      "Choose the Gateway, ",
-      "Hotel Base ",
-      "and Support",
+      "Flights, ",
+      "Hotels ",
+      "and How Many Days",
     ],
     lead:
-      "Search the journey to your Zhangjiajie hotel—not only the cheapest flight. The right route depends on your Malaysian departure city, exact travel date, complete sightseeing days and how much you want to arrange yourself.",
+      "Compare flights to Zhangjiajie (DYG) with arrival via Changsha (CSX), then count the nights and transfers needed to reach your hotel. Stay near your forest-park entrance for consecutive park days; use a city hotel when Tianmen Mountain or your departure makes it more convenient.",
     anchor: "Compare the three gateway patterns",
     byLabel: "Prepared by",
     authorName: "Evan · Homeground planning desk",
@@ -46,9 +46,9 @@ export const malaysiaZhangjiajieGuideCopyEn = {
   },
   direct: {
     label: "The short answer",
-    title: "Start with the departure city and date—not a 7D5N label.",
+    title: "Fly into Zhangjiajie or continue from Changsha?",
     body:
-      "A workable private trip joins three decisions. First choose the gateway that creates the best hotel arrival. Then count the complete Zhangjiajie days. Finally decide which bookings remain yours and which require local responsibility.",
+      "An available flight to Zhangjiajie Hehua Airport (DYG) avoids the onward journey from Changsha. If Changsha Huanghua Airport (CSX) works better for your dates, allow time for arrival formalities, the transfer to your booked railway station and the train to Zhangjiajie West. A late flight may mean a night in Changsha before continuing.",
     journeys: [
       {
         title: "Compare gateways",
@@ -67,7 +67,7 @@ export const malaysiaZhangjiajieGuideCopyEn = {
       },
     ],
     conclusion:
-      "A private journey is not automatically a luxury package or the opposite of independent travel. It is a route whose handoffs and responsibilities have been made explicit.",
+      "For two consecutive forest-park days, plan your hotel around the entrance you will use. The seven-day local tour adds Furong and Fenghuang, with arrival and departure on its first and last days. Check your flights and any Changsha connections to see whether you need extra nights before or after it.",
   },
   journey: {
     label: "Gateway and door-to-door route",

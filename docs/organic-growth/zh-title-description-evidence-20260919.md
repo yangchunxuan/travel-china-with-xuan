@@ -2,9 +2,11 @@
 
 Owner decision (2026-09-19): rewrite the Simplified Chinese `title` and `description` of the `/zh/` guides that rank on page one with almost no clicks. Titles now lead with the words people actually type (外国人 / 护照 / 门票 / 预约 / 需要预约吗 / 怎么去) and descriptions open with the answer. Headlines, H1s, bodies and the English and Korean copy are untouched.
 
-## Search Console, web search, last 28 days (2026-08-22 → 2026-09-18)
+## Search Console evidence: confirmed country window and unverified page-table window
 
-Site-wide impressions by country in this window include Singapore 1,031, Hong Kong 825, Malaysia 505 and mainland China 1,800 — the Chinese pages are found by overseas Chinese-language searchers on Google.
+The original note labelled the page table below as web search, last 28 days, 2026-08-22 → 2026-09-18. That table's exact window remains unverified: no matching page-level raw export has been located. Its values are retained as originally recorded, not relabelled as a different period or treated as current performance.
+
+The country figures belong to a different, confirmed all-site web-search export: 2026-08-14 → 2026-09-10, exported on 2026-09-13. That export records Singapore 1,031 impressions, Hong Kong 825, Malaysia 505 and mainland China 1,800. These are site-wide country totals, not a country breakdown of the Chinese pages; they do not establish which countries generated the impressions in the page table below. The archived CSV checks and source paths are retained in the internal 2026-09-20 SEO/GEO audit.
 
 | Page | Clicks | Impressions | CTR | Position |
 | --- | --- | --- | --- | --- |

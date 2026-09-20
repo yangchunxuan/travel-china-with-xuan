@@ -30,6 +30,7 @@ import {
 } from "../lib/zhangjiajieFromMalaysiaGuide";
 import { getMalaysiaZhangjiajieGuideCopy } from "../lib/zhangjiajieFromMalaysiaGuideI18n";
 import { getGuideTourCard } from "../lib/guideTourCard";
+import { getGuidePublishedRouteLinks } from "../lib/existingContentCommercialLinks";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
@@ -229,6 +230,7 @@ export function ZhangjiajieFromMalaysiaPage({
   const copy = getMalaysiaZhangjiajieGuideCopy(locale);
   const guide = getGuideEntry(malaysiaZhangjiajieGuideId, locale);
   const tourCard = getGuideTourCard(malaysiaZhangjiajieGuideId, locale);
+  const publishedRoutes = getGuidePublishedRouteLinks(malaysiaZhangjiajieGuideId, locale);
   const plannerHref = `${copy.homePath}?utm_source=zhangjiajie-from-malaysia&utm_medium=owned&utm_campaign=trip-conversation&utm_content=planner-contact#planner-contact`;
   const structuredData = createStructuredData(locale, copy);
 
@@ -770,8 +772,25 @@ export function ZhangjiajieFromMalaysiaPage({
               <header>
                 <p className={styles.sectionLabel}>{copy.related.label}</p>
                 <h2 id="related-title">{copy.related.title}</h2>
+                <p>{{
+                  en: "Compare four days in Zhangjiajie with seven days through Zhangjiajie, Furong and Fenghuang. Match the arrival and departure days to your flights and any Changsha connections; extra nights depend on those timings.",
+                  zh: "只游张家界可比较四日团；想加芙蓉镇和凤凰，可比较七日团。行程首末日需与航班、长沙接驳对好时间，是否前后加住按实际衔接决定。",
+                  ko: "장자제만 둘러보는 4일 투어와 푸룽진·펑황까지 가는 7일 투어를 비교하세요. 첫날과 마지막 날을 국제선·창사 연결편 시간에 맞추고, 필요할 때만 전후 숙박을 추가하세요.",
+                }[locale]}</p>
               </header>
               <div>
+                {publishedRoutes.map((route) => (
+                  <GuideCtaLink
+                    key={route.id}
+                    guideId={malaysiaZhangjiajieGuideId}
+                    href={route.href}
+                    locale={locale}
+                    position="footer"
+                  >
+                    <strong>{route.label}</strong>
+                    <ArrowRight aria-hidden="true" size={17} />
+                  </GuideCtaLink>
+                ))}
                 <Link href={privateTourHubPaths[locale]}>
                   <span>
                     <strong>{{ en: "Compare published private tours and prices", zh: "比较已发布的私家团与价格", ko: "프라이빗 투어 일정과 요금 비교" }[locale]}</strong>
