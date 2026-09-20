@@ -269,6 +269,18 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.match(zh.bookingNote, /固定路线/);
   assert.match(zh.bookingNote, /不设置自选景点，也不在现场临时加项/);
   assert.doesNotMatch(zh.bookingNote, /二选一/);
+
+  const ko = localizePrivateTourProduct(product, "ko");
+  assert.equal(ko.packages[0].label, "한국어 가이드 포함 고정 코스");
+  assert.match(ko.metadataDescription, /한국어 가이드/);
+  assert.match(ko.metadataDescription, /유리다리·톈먼산 불포함/);
+  assert.match(ko.summary, /D2 종일과 D3 주간 한국어 가이드/);
+  assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
+  assert.doesNotMatch(ko.summary, /영어 가이드/);
+  assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
+  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-06");
+  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-06");
+  assert.equal(ko.dateModified, "2026-09-06");
 });
 
 test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days and ticket boundary", () => {
@@ -304,6 +316,16 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
     localizePrivateTourProduct(product, "en").summary,
     /all (?:scenic )?(?:area )?(?:admissions|tickets)/i,
   );
+
+  const ko = localizePrivateTourProduct(product, "ko");
+  assert.equal(ko.packages[0].label, "한국어 가이드 포함");
+  assert.match(ko.metadataDescription, /D2~D5 한국어 가이드/);
+  assert.match(ko.serviceNote, /한국어 가이드는 D2~D5/);
+  assert.match(ko.serviceNote, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  assert.match(ko.faq[1].question, /한국어 가이드/);
+  assert.match(ko.faq[1].answer, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  assert.doesNotMatch(ko.summary, /영어 가이드/);
+  assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
 });
 
 test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller prices", () => {

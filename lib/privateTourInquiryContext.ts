@@ -40,7 +40,7 @@ const packageLabels = {
   "standard-guided-winter": { en: "Private tour", zh: "私家团标准版", ko: "프라이빗 투어" },
   "english-guided": { en: "English-guided", zh: "含英语导游", ko: "영어 가이드 포함" },
   "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음" },
-  "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "영어 가이드 포함 고정 코스" },
+  "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스" },
 } as const;
 
 export function getPrivateTourInquirySelection(
@@ -91,12 +91,37 @@ export function privateTourInquirySelectionLabel(
 ): string | null {
   const selection = context.selection;
   if (!selection) return null;
-  const packageLabel = packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
+  const packageLabel =
+    locale === "ko" &&
+    context.slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" &&
+    selection.packageId === "standard-guided"
+      ? "한국어 가이드 포함"
+      : packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
   if (!packageLabel) return null;
   const group = locale === "zh" ? `${selection.travelers} 人同行`
     : locale === "ko" ? `${selection.travelers}명 기준`
       : `${selection.travelers} travellers`;
   return `${packageLabel} · ${group}`;
+}
+
+/**
+ * Traffic summaries combine all page languages into one package bucket, so
+ * the forest tour's legacy package identifier cannot safely be displayed as
+ * an English-guide promise in the admin view. Individual enquiries still use
+ * their recorded locale and the precise label above.
+ */
+export function privateTourAggregateSelectionLabel(
+  context: PrivateTourInquiryContext,
+): string | null {
+  const selection = context.selection;
+  if (!selection) return null;
+  if (
+    context.slug === "zhangjiajie-forest-4-day-private-tour" &&
+    selection.packageId === "fixed-route-english-guided"
+  ) {
+    return `固定路线导游版（语种按页面） · ${selection.travelers} 人同行`;
+  }
+  return privateTourInquirySelectionLabel(context, "zh");
 }
 
 const privateTourInquiryNames: Readonly<

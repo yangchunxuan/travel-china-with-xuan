@@ -55,7 +55,7 @@ import { canCommitAdminResponse } from "../../lib/adminRequestEpoch";
 import { InternalTrafficControl } from "./InternalTrafficControl";
 import { AdminContactAnalytics } from "./AdminContactAnalytics";
 import { AdminNewsletterSection } from "./AdminNewsletterSection";
-import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourAggregateSelectionLabel } from "../../lib/privateTourInquiryContext";
 import styles from "./AdminInsightsPage.module.css";
 
 type AuthStage =
@@ -336,7 +336,7 @@ function trafficLabelCopy(
     const selection = getPrivateTourInquirySelection(slug, packageId, travelers);
     const context = getPrivateTourInquiryContext(slug, "zh", selection ?? undefined);
     if (!context) return "产品标签不可用";
-    const selectionLabel = privateTourInquirySelectionLabel(context, "zh");
+    const selectionLabel = privateTourAggregateSelectionLabel(context);
     return selectionLabel ? `${context.name} · ${selectionLabel}` : context.name;
   }
   return value.label ?? "标签不可用";
