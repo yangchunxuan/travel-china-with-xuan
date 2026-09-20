@@ -2858,7 +2858,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
   ),
   lede: l(
     "Spend two full days among Wulingyuan’s sandstone peaks and forest valleys, then continue through western Hunan to Furong Town and Fenghuang Ancient Town. Four English-guided touring days are balanced by a free day in Fenghuang.",
-    "先用两个完整游览日走进武陵源峰林与溪谷，再向西前往芙蓉镇和凤凰古城。D2–D5 由英语导游陪同，D6 留给你按自己的节奏游凤凰。",
+    "先用两个完整游览日走进武陵源峰林与溪谷，再沿湘西路线前往芙蓉镇和凤凰古城。D2–D5 由英语导游陪同，D6 留给你按自己的节奏游凤凰。",
     "우링위안의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 푸룽전과 펑황고성으로 이어갑니다. D2~D5는 영어 가이드와 여행하고 D6는 펑황에서 자유롭게 보냅니다.",
   ),
   summary: l(
@@ -2923,7 +2923,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Travel from the hotel with the guide and private vehicle for Ten-Mile Gallery, including the mini-train, and the confirmed walking section of Golden Whip Stream. Later, continue to the standard evening session at Seventy-Two Wonder Tower and return to the Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are separate unless confirmed in writing.",
         "从酒店乘专车出发，由英语导游陪同游览十里画廊，含小火车，并步行游览书面确认的金鞭溪路段。之后前往七十二奇楼普通夜场，结束后乘专车返回武陵源酒店。升级夜场及其他收费体验只有写入确认方案后才包含。",
-        "호텔에서 영어 가이드와 전용 차량으로 출발해 미니 열차가 포함된 십리화랑과 서면으로 확정된 금편계 구간을 둘러봅니다. 이후 칠십이기루 일반 야간 회차를 관람하고 전용 차량으로 우링위안 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면으로 확정된 경우에만 포함됩니다.",
+        "호텔에서 영어 가이드와 전용 차량으로 출발해 미니 열차가 포함된 십리화랑과 서면으로 확정된 금편계 구간을 둘러봅니다. 이후 칠십이기루 일반 야간 관람을 하고 전용 차량으로 우링위안 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면으로 확정된 경우에만 포함됩니다.",
       ),
     ),
     day(
@@ -2936,7 +2936,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Check out with your luggage and travel by private vehicle with the English-speaking guide to Furong Town. Explore the included first-entry area at a practical pace, then check in for one night in Furong Town. Paid experiences beyond the included admission are separate.",
         "退房后行李随车，由英语导游陪同乘专车前往芙蓉镇。使用已含的芙蓉镇首道门票游览，并按现场情况安排合理节奏；当晚入住芙蓉镇。首道门票之外的收费体验另计。",
-        "체크아웃 후 수하물을 싣고 영어 가이드와 전용 차량으로 푸룽전에 이동합니다. 포함된 첫 입장권 구역을 무리 없는 속도로 둘러본 뒤 푸룽전에서 1박합니다. 기본 입장권 이외의 유료 체험은 별도입니다.",
+        "체크아웃 후 수하물을 싣고 영어 가이드와 전용 차량으로 푸룽전에 이동합니다. 포함된 기본 입장권으로 관람할 수 있는 구역을 무리 없는 속도로 둘러본 뒤 푸룽전에서 1박합니다. 기본 입장권 이외의 유료 체험은 별도입니다.",
       ),
     ),
     day(

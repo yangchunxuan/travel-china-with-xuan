@@ -1,12 +1,6 @@
 # Source log — Zhangjiajie tour start and finish
 
-Reviewed: 2026-09-20. Status: internal editorial record. This file is not rendered on the public page.
-
-## Editorial purpose
-
-Opened Chinese traveller posts and comments repeatedly treated the final station, luggage, hotel access and pickup handoff as part of the itinerary rather than an afterthought. Those human accounts were used only to select the questions this page answers. Dynamic transport facts and official names were verified separately.
-
-The internal human-research set is the same five opened Xiaohongshu originals recorded in the companion `zhangjiajie-furong-fenghuang-route-order/source-log.md`. The public page does not expose or attribute that internal research.
+Reviewed: 2026-09-20. This file records the official and repository facts used by the page and is not rendered on the public page.
 
 ## Official sources and fact boundaries
 

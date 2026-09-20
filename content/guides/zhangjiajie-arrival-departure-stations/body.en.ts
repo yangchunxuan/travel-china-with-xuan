@@ -6,13 +6,13 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "Start a Zhangjiajie private tour from the exact airport or railway station on your ticket: usually Zhangjiajie Hehua International Airport (DYG) or Zhangjiajie West Railway Station. A seven-day route through Furong Town and Fenghuang normally finishes at Fenghuang Ancient City Railway Station (凤凰古城站); a Zhangjiajie-only route normally returns to a confirmed Zhangjiajie departure point. Do not book the final ticket until the written itinerary names that point."
+      "text": "Match the pickup point to the exact airport or railway station on your booking. The four-day forest route starts and finishes at Zhangjiajie Hehua International Airport (DYG) or Zhangjiajie West Railway Station. The seven-day route may start at Hehua Airport or the exact Zhangjiajie railway station named in the written confirmation, then normally finishes at Fenghuang Ancient City Railway Station (凤凰古城站). Do not make the final non-changeable transport booking until the itinerary names that point."
     },
     {
       "id": "names-heading",
       "type": "heading",
       "level": 2,
-      "text": "Four names that should not be shortened too early"
+      "text": "Four transport names to confirm before booking"
     },
     {
       "id": "names-table",
@@ -85,7 +85,7 @@ const body = {
       "columns": [
         {
           "heading": "Zhangjiajie-only route",
-          "body": "The final transfer returns to the exact Zhangjiajie airport or railway station agreed in writing. This is the cleaner pattern when the next flight or train leaves from Zhangjiajie."
+          "body": "The included final transfer is to Zhangjiajie Hehua International Airport or Zhangjiajie West Railway Station. Any other departure point needs separate written confirmation."
         },
         {
           "heading": "Zhangjiajie–Furong–Fenghuang route",
@@ -115,7 +115,7 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "The exact Chinese airport or station name, not just the destination city.",
+        "For a flight, the formal airport name and IATA code; for rail, the exact Chinese station name.",
         "The train or flight number, date and scheduled departure time.",
         "The hotel address and where a vehicle can legally stop.",
         "The number and size of suitcases, plus any mobility equipment.",
@@ -140,7 +140,7 @@ const body = {
         },
         {
           "question": "Can the driver collect us from either the airport or Zhangjiajie West?",
-          "answer": "The published routes allow a pickup from the confirmed Zhangjiajie airport or railway station. The exact point, arrival and luggage must be written into the final confirmation."
+          "answer": "The four-day forest route includes pickup at Zhangjiajie Hehua International Airport or Zhangjiajie West Railway Station. The seven-day route may start at Hehua Airport or the exact Zhangjiajie railway station named in the final confirmation. Any other pickup point needs separate confirmation; always send the arrival and luggage details."
         },
         {
           "question": "Does the seven-day tour return to Zhangjiajie on Day 7?",
@@ -163,9 +163,9 @@ const body = {
           "description": "The standard route starts in Zhangjiajie and finishes at Fenghuang Ancient City Railway Station."
         },
         {
-          "label": "4-day Zhangjiajie private tour",
+          "label": "4-day Zhangjiajie forest private tour",
           "href": "/tours/zhangjiajie-forest-4-day-private-tour/",
-          "description": "A Zhangjiajie-focused route with the final transfer matched to the confirmed local departure."
+          "description": "Its included arrival and departure transfers use Hehua Airport or Zhangjiajie West Railway Station."
         },
         {
           "label": "Why the seven-day route uses this order",

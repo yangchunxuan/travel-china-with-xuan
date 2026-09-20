@@ -1,18 +1,6 @@
 # Source log — Zhangjiajie, Furong Town and Fenghuang route order
 
-Reviewed: 2026-09-20. Status: internal editorial record. This file is not rendered on the public page.
-
-## Human-experience inputs
-
-The root task opened and read the original Xiaohongshu posts and visible comments below. They were used to identify recurring planning questions, not as authority for ticket prices, timetables, official rules or guaranteed walking conditions.
-
-1. 招招昭昭🍓 — “带80➕老人勇闯张家界”: https://www.xiaohongshu.com/explore/69e0bc8f000000002102d0d0
-2. 肥猪计划 — “带60岁爸妈逛张家界3天｜真实体力测评！”: https://www.xiaohongshu.com/explore/6aa2289f00000000270098b0
-3. 被捞起的小月亮 — “张家界-芙蓉镇-凤凰古城-长沙自由行旅游”: https://www.xiaohongshu.com/explore/6a4fc154000000002201adb0
-4. 疯狂的狮子 — “湘西 7 天自由行｜张家界➕茶峒➕芙蓉镇➕凤凰”: https://www.xiaohongshu.com/explore/69edfb0600000000230065bb
-5. 40间隔年 — “芙蓉镇还是凤凰古城：成年人不做选择”: https://www.xiaohongshu.com/explore/6a64a523000000001d00eb9f
-
-Repeated questions supported the page's editorial emphasis on hotel-night allocation, luggage handoffs, the difference between Furong Town and Fenghuang, and why vehicle logistics matter. The public copy does not cite, quote or name these posts.
+Reviewed: 2026-09-20. This file records the official and repository facts used by the page and is not rendered on the public page.
 
 ## Official and repository facts
 
