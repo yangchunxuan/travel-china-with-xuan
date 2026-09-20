@@ -1128,9 +1128,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 202,
-      "localeUrlCount": 598,
-      "generatedIdentityCount": 183,
+      "identityCount": 204,
+      "localeUrlCount": 604,
+      "generatedIdentityCount": 185,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1445,6 +1445,67 @@
               "boundary": "Tianmen Mountain admission versus transport packages, construction-period A/B/C routes, ticket-dependent entrances and foreign-passport booking checks. Does not sell standalone tickets or replace the separate national forest park guide."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-20",
+          "sourceCommit": "54471ac8830bb4789a0bcd1b872f3dae213daf8e",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Pre-release repository snapshot; deployment, live URL verification, indexing and traffic evidence remain separate states.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "zhangjiajie-furong-fenghuang-route-order",
+              "title": "Zhangjiajie, Furong & Fenghuang: 7-Day Route Order",
+              "metadataPath": "content/guides/zhangjiajie-furong-fenghuang-route-order/metadata.json",
+              "canonicalPath": "/guides/zhangjiajie-furong-fenghuang-route-order/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/zhangjiajie-furong-fenghuang-route-order/",
+                "/zh/guides/zhangjiajie-furong-fenghuang-route-order/",
+                "/ko/guides/zhangjiajie-furong-fenghuang-route-order/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": [
+                "china",
+                "zhangjiajie"
+              ],
+              "boundary": "Seven-day Zhangjiajie, Furong Town and Fenghuang route order, 3+1+2 hotel nights, luggage handoffs and the Fenghuang finish. It does not own live timetables, rail fares, standalone ticket sales or a different product inclusion set."
+            },
+            {
+              "id": "zhangjiajie-arrival-departure-stations",
+              "title": "Zhangjiajie Airport or Station: Tour Start & Finish",
+              "metadataPath": "content/guides/zhangjiajie-arrival-departure-stations/metadata.json",
+              "canonicalPath": "/guides/zhangjiajie-arrival-departure-stations/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/zhangjiajie-arrival-departure-stations/",
+                "/zh/guides/zhangjiajie-arrival-departure-stations/",
+                "/ko/guides/zhangjiajie-arrival-departure-stations/"
+              ],
+              "section": "transport",
+              "pageFamily": "task",
+              "targetIntent": "plan",
+              "primaryCollectionId": "transport-city-pair-routes",
+              "destinations": [
+                "china",
+                "zhangjiajie"
+              ],
+              "boundary": "Exact Zhangjiajie, Furong Town and Fenghuang airport/station names, last-mile transfer logic and the different four-day versus seven-day endpoints. Date-specific services, fares, seats, traffic and pickup details remain confirmation tasks."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1642,8 +1703,10 @@
         "yuanyang-rice-terraces-viewpoint-and-village-route",
         "yungang-grottoes-cave-order-and-museum",
         "yunnan-coffee-from-cherry-to-cup",
+        "zhangjiajie-arrival-departure-stations",
         "zhangjiajie-city-or-wulingyuan-hotel-base",
         "zhangjiajie-from-malaysia",
+        "zhangjiajie-furong-fenghuang-route-order",
         "zhangjiajie-glass-bridge-vs-skywalk",
         "zhangjiajie-itinerary",
         "zhangjiajie-national-forest-park-tickets-and-entrances",
