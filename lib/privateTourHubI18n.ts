@@ -11,7 +11,7 @@ const copy = {
     htmlLang: "en",
     path: privateTourHubPaths.en,
     metadata: {
-      title: "Private China Tours: Compare Itineraries & Prices",
+      title: "Private China Tours: Routes & Prices",
       description: (count: number) =>
         `Compare ${count} private China tours, USD prices and guide options. Plan your arrival from Malaysia, Singapore, Australia or elsewhere.`,
       openGraphTitle: (count: number) =>

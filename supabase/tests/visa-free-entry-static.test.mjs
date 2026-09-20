@@ -94,7 +94,7 @@ test("China entry hub is a bounded editorial collection, not a visa service", as
   assert.match(hub, /getGuidesByPillar\("entry-rules", "en"\)/);
   assert.match(hub, /does not file[\s\S]*visa applications/);
   assert.match(hub, /does not[\s\S]*decide personal eligibility/);
-  assert.match(hub, /Start my free trip brief/);
+  assert.match(hub, /Talk to a trip planner/);
   assert.match(registry, /export type GuidePillar/);
   assert.match(registry, /export function getGuidesByPillar/);
 });

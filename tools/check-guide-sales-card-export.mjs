@@ -17,6 +17,14 @@ const productLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/([a-z0-9-]+)\/$/u;
 const collectionLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/$/u;
 
 const explicitPlans = {
+  "shaanxi-history-museum-booking-and-collection-plan": {
+    kind: "private-tour-product",
+    ctaId: "xian-terracotta-warriors-5-day-private-tour",
+  },
+  "national-museum-of-china-booking-and-route": {
+    kind: "private-tour-product",
+    ctaId: "beijing-highlights-5-day-private-tour",
+  },
   "summer-palace-gates-route-and-boat-plan": {
     kind: "private-tour-product",
     ctaId: "beijing-highlights-5-day-private-tour",

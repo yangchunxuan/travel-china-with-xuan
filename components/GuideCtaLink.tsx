@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { openTourContactFromLink } from "../lib/tourContact";
+import { openTourContactFromLink, openGuideContactFromLink } from "../lib/tourContact";
 import type { ReactNode } from "react";
 import { trackEvent } from "../lib/analytics";
 import { guideCtaProductSlug, guideCtaTarget } from "../lib/analyticsLocation";
@@ -44,7 +44,7 @@ export function GuideCtaLink({
       className={className}
       href={href}
       onClick={(event) => {
-        openTourContactFromLink(event, href, locale);
+        if (!openTourContactFromLink(event, href, locale)) openGuideContactFromLink(event, href, locale);
         const productSlug = guideCtaProductSlug(href);
         trackEvent("guide_cta_clicked", {
           guide_id: guideId,

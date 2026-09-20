@@ -8,6 +8,28 @@ let returnFocusTarget: HTMLElement | null = null;
 export function consumeTourContactReturnFocus() { const target = returnFocusTarget; returnFocusTarget = null; return target; }
 
 export const tourContactOpenEvent = "homeground:open-tour-contact";
+export const guideContactOpenEvent = "homeground:open-guide-contact";
+
+type ContactLinkEvent = { preventDefault: () => void; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; button?: number; currentTarget?: EventTarget | null };
+
+/** Open only a guide's generic consultation link, not product or service navigation. */
+export function openGuideContactFromLink(event: ContactLinkEvent, href: string, locale: HomegroundLocale) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
+  const prefix = locale === "en" ? "" : `/${locale}`;
+  if (!new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(window.location.pathname)) return false;
+  let url: URL;
+  try { url = new URL(href, window.location.origin); } catch { return false; }
+  if (url.origin !== window.location.origin || url.pathname !== `${prefix}/` || !["#planner-contact", "#route-finder"].includes(url.hash)) return false;
+  for (const [key, value] of url.searchParams) {
+    // This old value selected the homepage's first step, not a traveller's itinerary.
+    if (!key.startsWith("utm_") && !(key === "planner" && value === "destinations")) return false;
+  }
+  if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;
+  event.preventDefault();
+  returnFocusTarget = typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
+  window.dispatchEvent(new CustomEvent(guideContactOpenEvent, { detail: { path: window.location.pathname } }));
+  return true;
+}
 export const tourContactCopy = {
   en: { title: "Let’s plan your trip.", intro: "Tell us when you’d like to travel. We’ll email you a personal quote.", ask: "Ask a trip planner", close: "Close enquiry", whatsapp: "Chat on WhatsApp", email: "Email address", date: "Preferred arrival date", undecided: "Dates not decided yet", note: "Anything you’d like us to know?", optional: "Optional", placeholder: "Your group, interests or a change to this itinerary…", submit: "Request my quote", sending: "Sending…", privacy: "Privacy notice", consent: "We’ll use these details to reply to your enquiry.", manual: "Your planner will confirm availability and the final price.", success: "Your enquiry is saved.", successBody: "We’ll review your plans and reply by email.", reference: "Reference", done: "Back to the itinerary", failed: "We couldn’t save your enquiry. Please try again, or contact us below.", uncertain: "We couldn’t confirm whether your enquiry was saved. Check again to safely retry the same request.", retry: "Check & retry", fallback: "Prefer to get in touch directly?", unavailable: "Send us a message about this trip. Your itinerary will be included.", guideBody: "Planning a trip to China? Talk to our team about routes, stays and private tours.", guideEmail: "Send us an email", tours: "Browse itineraries & prices", selected: "Your itinerary", alternative: "Or chat on WhatsApp" },
   zh: { title: "聊聊你的旅行计划。", intro: "告诉我们你想什么时候出发，我们会通过邮件回复你的专属报价。", ask: "咨询旅行规划师", close: "关闭咨询", whatsapp: "通过 WhatsApp 咨询", email: "邮箱地址", date: "预计抵达日期", undecided: "日期还没确定", note: "还有什么想告诉我们？", optional: "选填", placeholder: "同行人数、旅行偏好，或想调整的行程……", submit: "获取我的报价", sending: "正在发送……", privacy: "隐私说明", consent: "这些信息将用于回复你的旅行咨询。", manual: "具体可订情况与最终价格由规划师确认。", success: "已收到你的咨询。", successBody: "我们会查看你的计划，并通过邮件回复。", reference: "咨询编号", done: "继续查看行程", failed: "暂时没能保存你的咨询，请重试或通过下方方式联系我们。", uncertain: "暂时无法确认是否保存成功。请点击下方按钮，安全地重试同一份咨询。", retry: "检查并重试", fallback: "也可以直接联系我们", unavailable: "直接聊聊这趟旅行，消息中会带上你选择的行程。", guideBody: "准备来中国旅行？和我们的团队聊聊路线、住宿与私人团安排。", guideEmail: "发送邮件", tours: "查看行程与价格", selected: "你选择的行程", alternative: "或通过 WhatsApp 咨询" },
@@ -26,9 +48,10 @@ export function tourWhatsAppHref(locale: HomegroundLocale, context: PrivateTourI
 }
 
 /** Retain a real link for no-JS / modifier-key navigation. Only tour pages open a quote. */
-export function openTourContactFromLink(event: { preventDefault: () => void; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; currentTarget?: EventTarget | null }, href: string, locale: HomegroundLocale, returnFocus?: HTMLElement | null) {
-  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || typeof window === "undefined") return false;
+export function openTourContactFromLink(event: ContactLinkEvent, href: string, locale: HomegroundLocale, returnFocus?: HTMLElement | null) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
   const url = new URL(href, window.location.origin);
+  if (url.origin !== window.location.origin) return false;
   const context = getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
   if (!context || window.location.pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`) return false;
   if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;

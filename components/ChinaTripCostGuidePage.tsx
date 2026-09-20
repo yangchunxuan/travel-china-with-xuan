@@ -20,6 +20,7 @@ import {
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideCtaLink } from "./GuideCtaLink";
 import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
 import styles from "./ChinaTripCostGuidePage.module.css";
 
@@ -99,12 +100,17 @@ function createStructuredData(
   };
 }
 
-function PlannerButton({ href, label }: { href: string; label: string }) {
+function PlannerButton({ href, label, locale, position }: {
+  href: string;
+  label: string;
+  locale: HomegroundLocale;
+  position: "inline" | "footer";
+}) {
   return (
-    <Link className={styles.ctaPrimary} href={href}>
+    <GuideCtaLink className={styles.ctaPrimary} href={href} guideId={chinaTripCostGuideId} locale={locale} position={position}>
       {label}
       <ArrowRight aria-hidden="true" size={17} />
-    </Link>
+    </GuideCtaLink>
   );
 }
 
@@ -217,7 +223,7 @@ export function ChinaTripCostGuidePage({
               <h2 className={styles.ctaTitle}>{copy.earlyCta.title}</h2>
               <p className={styles.ctaDetail}>{copy.earlyCta.detail}</p>
             </div>
-            <PlannerButton href={copy.plannerHref} label={copy.earlyCta.button} />
+            <PlannerButton href={copy.plannerHref} label={copy.earlyCta.button} locale={locale} position="inline" />
           </div>
         </section>
 
@@ -383,7 +389,7 @@ export function ChinaTripCostGuidePage({
               ))}
             </ul>
             <p className={styles.finalCtaDetail}>{copy.finalCta.detail}</p>
-            <PlannerButton href={copy.plannerHref} label={copy.finalCta.button} />
+            <PlannerButton href={copy.plannerHref} label={copy.finalCta.button} locale={locale} position="footer" />
           </div>
         </section>
 

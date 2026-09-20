@@ -72,7 +72,7 @@ const ui = {
     ctaTitle: "Tell us the trip you are considering.",
     ctaBody:
       "Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.",
-    ctaButton: "Start my trip brief",
+    ctaButton: "Talk to a trip planner",
   },
   zh: {
     skip: "跳到文章正文",
@@ -84,7 +84,7 @@ const ui = {
     ctaTitle: "告诉我们你正在考虑的旅行。",
     ctaBody:
       "留下日期、人数和大致预算。真人规划师会帮你判断合理路线，以及这趟旅行真正需要哪些支持。",
-    ctaButton: "开始填写旅行简报",
+    ctaButton: "咨询旅行规划师",
   },
   ko: {
     skip: "본문으로 이동",
@@ -96,7 +96,7 @@ const ui = {
     ctaTitle: "생각 중인 중국 여행을 알려 주세요.",
     ctaBody:
       "여행 날짜, 인원, 대략적인 예산을 남기면 실제 담당자가 무리 없는 동선과 필요한 지원 범위를 함께 정리합니다.",
-    ctaButton: "여행 브리프 시작하기",
+    ctaButton: "여행 플래너에게 문의",
   },
 } as const;
 

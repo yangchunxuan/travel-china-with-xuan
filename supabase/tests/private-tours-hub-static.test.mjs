@@ -225,7 +225,7 @@ test("hub copy and language ownership are complete and self-consistent", () => {
   });
 
   const englishCopy = getPrivateTourHubCopy("en", expectedPublishedCount);
-  assert.equal(englishCopy.metadata.title, "Private China Tours: Compare Itineraries & Prices");
+  assert.equal(englishCopy.metadata.title, "Private China Tours: Routes & Prices");
   assert.match(englishCopy.title, /private China tours/i);
   assert.equal(getPrivateTourHubPlannerPath("en"), "/#planner-contact");
   assert.equal(getPrivateTourHubPlannerPath("zh"), "/zh/#planner-contact");
