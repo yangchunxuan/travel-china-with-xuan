@@ -1,5 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { getPrivateTourInquiryContextFromSearchParams, privateTourInquirySelectionLabel, type PrivateTourInquiryContext } from "./privateTourInquiryContext.ts";
 
 let returnFocusTarget: HTMLElement | null = null;
@@ -12,14 +14,14 @@ export const tourContactCopy = {
   ko: { title: "여행 계획을 들려주세요.", intro: "희망 여행 날짜를 알려주시면 이메일로 맞춤 견적을 보내드립니다.", ask: "여행 플래너에게 문의", close: "문의 닫기", whatsapp: "WhatsApp으로 문의", email: "이메일 주소", date: "희망 도착일", undecided: "날짜는 아직 미정이에요", note: "추가로 알려주실 내용이 있나요?", optional: "선택", placeholder: "여행 인원, 관심사 또는 변경하고 싶은 일정…", submit: "맞춤 견적 요청", sending: "전송 중…", privacy: "개인정보 안내", consent: "입력하신 정보는 여행 문의에 답변하기 위해 사용합니다.", manual: "예약 가능 여부와 최종 가격은 플래너가 확인해 드립니다.", success: "문의가 저장되었습니다.", successBody: "여행 계획을 검토한 뒤 이메일로 답변드리겠습니다.", reference: "문의 번호", done: "일정 계속 보기", failed: "문의를 저장하지 못했습니다. 다시 시도하거나 아래 방법으로 연락해 주세요.", uncertain: "문의가 저장되었는지 확인하지 못했습니다. 아래 버튼으로 동일한 요청을 안전하게 다시 확인해 주세요.", retry: "확인 후 재시도", fallback: "직접 연락하셔도 좋아요", unavailable: "선택하신 일정이 포함된 메시지로 여행에 대해 문의해 주세요.", guideBody: "중국 여행을 준비하시나요? 여행 동선, 숙소와 프라이빗 투어를 저희 팀과 상의해 보세요.", guideEmail: "이메일 보내기", tours: "일정과 가격 살펴보기", selected: "선택하신 일정", alternative: "또는 WhatsApp으로 문의" },
 } as const;
 
-export function tourWhatsAppHref(locale: HomegroundLocale, context: PrivateTourInquiryContext | null, path?: string) {
+export function tourWhatsAppHref(locale: HomegroundLocale, context: PrivateTourInquiryContext | null, path?: string, draft?: TourContactDraft) {
   const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
   const number = /^\d{7,15}$/.test(configured) ? configured : "8613174215999";
   const opening = locale === "zh" ? "你好，我想咨询中国私人旅行。" : locale === "ko" ? "안녕하세요. 중국 프라이빗 여행을 문의하고 싶습니다." : "Hi, I’d like to plan a private trip to China.";
   const publicPath = context ? `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` : path;
   const safePath = publicPath && /^\/(?:zh\/|ko\/)?(?:guides|tours)\/[a-z0-9-]+\/$/.test(publicPath) ? publicPath : null;
   const text = [opening, context?.name, context ? privateTourInquirySelectionLabel(context, locale) : null,
-    safePath ? `https://homegroundchina.com${safePath}` : null].filter(Boolean).join("\n");
+    safePath ? `https://homegroundchina.com${safePath}` : null, tourContactDraftText(locale, draft)].filter(Boolean).join("\n");
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 

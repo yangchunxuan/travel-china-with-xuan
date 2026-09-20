@@ -17,6 +17,12 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "住上海市中心", items: ["比较上海站余票", "稍长车程可能节省市内交通", "看完整站名"] },
     { heading: "很晚到杭州", items: ["按酒店最后一段选择", "单独核对末班地铁", "保留合法出租与酒店接待备选"] },
   ]},
+
+  {"id": "arranged-transport-heading", "type": "heading", "level": 2, "text": "三城旅行，选高铁还是门到门车辆？"},
+  {"id": "arranged-transport-context", "type": "paragraph", "text": "Homeground 上海·苏州·杭州6日线按同行人数安排跨城交通，不默认全程坐同一辆车。它会在苏州住一晚，再前往杭州并在那里结束，不是上海到杭州的直达一日游。"},
+  {"id": "arranged-transport-options", "type": "table", "caption": "六日线的通常交通方案：按实际人数和行李确认", "columns": ["同行人数", "通常的跨城安排", "实际好处"], "rows": [["2–3人", "高铁加两端私人接送", "车站与酒店的衔接纳入同一份安排，不必自己分别拼接。"], ["4–9人", "适合全组与行李的合规车辆，门到门跨城", "通常可省去进出站和搬行李上火车；仍要按实际人数、行李确认车种与容量。"]]},
+  {"id": "arranged-transport-scope", "type": "paragraph", "text": "把交通版本、涉及的完整站名和行李容量写进确认行程。私人游不等于搬运员服务或车辆全天待命。若需要从上海机场离开，杭州返沪不属于这条路线的标准送行范围。"},
+  {"id": "arranged-transport-product", "type": "internal-links", "title": "查看完整三城安排", "items": [{"label": "上海·苏州·杭州6天5晚私人游", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "把接送、住宿与游览日一起比较，再决定跨城方式。"}]},
   { id: "search-heading", type: "heading", level: 2, text: "按可控顺序查询站对" },
   { id: "search-plan", type: "list", ordered: true, items: ["固定准确的上海起点和杭州终点，包括机场航站楼或酒店入口。", "只列全组能在清晨留出合理余量到达的上海车站。", "按真实日期在12306逐一查询站对，保存车次、完整站名和时间。", "给每个可用结果加入进站、安检和杭州末端交通。", "在选择最便宜或最快列车前，比较门到门总时间、交接次数和失败后果。"] },
   { id: "ticket", type: "callout", title: "查询结果不是已经锁定的座位", tone: "warning", body: "通过官方票务渠道完成订单，并核对每位旅客的护照姓名和证件号。时刻表、代售页面或保存的候选都不会占座。首选站对售罄时，应先比较其他时间或站对，再接受复杂换乘。进站时准备好已确认订单与身份文件。" },

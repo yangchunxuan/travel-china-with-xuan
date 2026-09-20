@@ -37,9 +37,9 @@
 .context p { margin: 6px 0 0; color: #616161; font-size: 12px; line-height: 1.5; }
 .form fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
 .form fieldset > label:not(.checkbox):not(.honeypot) { display: block; margin-bottom: 15px; font-size: 12px; font-weight: 550; line-height: 1.5; }
-.form fieldset > label > input:not([type="checkbox"]), .form textarea { display: block; appearance: none; box-sizing: border-box; width: 100%; min-width: 0; min-height: 46px; margin-top: 7px; padding: 11px 13px; font: 400 16px/1.4 var(--sans,system-ui,sans-serif); color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 10px; transition: border-color 120ms; }
+.form fieldset > label > input:not([type="checkbox"]), .form textarea, .form select { display: block; appearance: none; box-sizing: border-box; width: 100%; min-width: 0; min-height: 46px; margin-top: 7px; padding: 11px 13px; font: 400 16px/1.4 var(--sans,system-ui,sans-serif); color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 10px; transition: border-color 120ms; }
 .form input::placeholder, .form textarea::placeholder { color: #777; font-size: 14px; }
-.form input:disabled, .form textarea:disabled { background: #f5f5f5; color: #767676; }
+.form input:disabled, .form textarea:disabled, .form select:disabled { background: #f5f5f5; color: #767676; }
 .form textarea { resize: vertical; max-height: 160px; }
 .checkbox { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: 12px; color: #555; margin-top: -13px; margin-bottom: 8px; cursor: pointer; }
 .checkbox input { width: 17px; height: 17px; accent-color: #111; margin: 0; }
@@ -72,7 +72,7 @@
 .launcher[data-newsletter-side="right"] { inset-inline-start: max(24px, env(safe-area-inset-left)); inset-inline-end: auto; }
 .launcher { max-width: calc(100vw - 112px); }
 .launcher:hover { background: #333; }
-.dialog button:focus-visible, .dialog a:focus-visible, .dialog input:focus-visible, .dialog textarea:focus-visible, .launcher:focus-visible, .secondaryLink:focus-visible { outline: 2px solid #555; outline-offset: 3px; }
+.dialog button:focus-visible, .dialog a:focus-visible, .dialog input:focus-visible, .dialog textarea:focus-visible, .dialog select:focus-visible, .launcher:focus-visible, .secondaryLink:focus-visible { outline: 2px solid #555; outline-offset: 3px; }
 @keyframes enter { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes leave { to { opacity: 0; transform: translateX(12px); } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
@@ -98,3 +98,5 @@
 }
 @media (prefers-reduced-motion: reduce) { .dialog[open], .dialog[open]::backdrop, .dialog[data-closing="true"], .dialog[data-closing="true"]::backdrop, .launcher { animation: none; } }
 @media (forced-colors: active) { .primary, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
+
+.form select { appearance: auto; }

@@ -308,6 +308,10 @@ const body = {
       tone: "decision",
       body: "같은 여행일, 수하물, 운임 유연성, 연결 보호와 현실적인 도착 시각을 놓고 비교한다. 지상 이동의 편리함은 비슷한 선택의 우열을 가릴 수 있지만, 밤샘 대기·보호되지 않는 분리 발권·부적합한 항공편을 자동으로 구해 주지는 않는다.",
     },
+
+  {"id": "tour-gateway-heading", "type": "heading", "level": 2, "text": "PVG와 SHA를 고르기 전에 출발 도시부터 확인하세요"},
+  {"id": "tour-gateway-choice", "type": "paragraph", "text": "항저우까지 여행한다면 공항 선택도 달라집니다. Homeground 상하이·쑤저우 5일 일정은 확인된 상하이 공항과 호텔 간 도착·출발 차량 이동을 포함하며, 5일차에는 영어 가이드의 출발 지원이 있습니다. 상하이·쑤저우·항저우 6일 일정은 상하이에서 시작해 확인된 항저우 공항 또는 역에서 끝나고, 6일차에는 가이드 없이 기사만 동행합니다. PVG나 SHA로 돌아가는 이동은 포함하지 않습니다. 상하이 왕복 항공권이 확정됐다면 추가 복귀 이동과 마지막 상하이 숙박 필요 여부를 먼저 확인하세요. 늦게 도착한다면 착륙 시각을 알려 픽업·체크인·시간 외 서비스 조건을 함께 확인하세요."},
+  {"id": "tour-gateway-products", "type": "internal-links", "title": "예약한 입출국 도시에 일정 맞추기", "items": [{"label": "상하이 공항 왕복 4박 5일 프라이빗 투어", "href": "/ko/tours/shanghai-suzhou-5-day-private-tour/", "description": "같은 상하이 호텔에 머물며 쑤저우는 당일 방문합니다."}, {"label": "항저우에서 끝나는 5박 6일 프라이빗 투어", "href": "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "항공편이 서로 다른 입출국 도시를 허용할 때 비교하세요."}]},
     {
       id: "late-heading",
       type: "heading",

@@ -308,6 +308,10 @@ const body = {
       tone: "decision",
       body: "必须用同一出行日、行李、票价灵活性、联程保障和真实抵达时间比较。地面便利可以打破接近的平局，但无法自动解决过夜转机、无保障分票或明显不合适的航班。",
     },
+
+  {"id": "tour-gateway-heading", "type": "heading", "level": 2, "text": "先核对离境城市，再选浦东还是虹桥"},
+  {"id": "tour-gateway-choice", "type": "paragraph", "text": "如果行程继续到杭州，机场选择就不只是浦东和虹桥二选一。Homeground 上海·苏州5日线包含确认的上海机场与酒店之间的到离接送，第5天有英语导游送行协助。上海·苏州·杭州6日线从上海开始，在确认的杭州机场或车站结束，第6天是司机接送，不含导游，也不含返回浦东或虹桥。上海往返机票已经固定时，先确认额外返沪交通以及是否需要最后一晚住上海，再决定六日线。晚到旅客应提供落地时间，让接机、入住和可能的非正常时段服务一起确认。"},
+  {"id": "tour-gateway-products", "type": "internal-links", "title": "让路线匹配已选到离城市", "items": [{"label": "上海机场到离：5天4晚私人游", "href": "/zh/tours/shanghai-suzhou-5-day-private-tour/", "description": "同一家上海酒店，苏州当天往返。"}, {"label": "杭州结束：6天5晚私人游", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "航班允许不同城市进出时，比较这条三城路线。"}]},
     {
       id: "late-heading",
       type: "heading",

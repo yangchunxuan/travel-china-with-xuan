@@ -1,4 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { shanghaiSuzhouAnswers, shanghaiSuzhouHangzhouAnswers } from "./jiangnanTourAnswers.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -408,6 +410,7 @@ const MODIFIED = "2026-09-06";
 
 const shanghaiSuzhouHangzhou: PrivateTourProduct = {
   id: "private-tour-shanghai-suzhou-hangzhou-6d5n",
+  faq: shanghaiSuzhouHangzhouAnswers,
   slug: "shanghai-suzhou-hangzhou-6-day-private-tour",
   days: 6,
   nights: 5,
@@ -715,7 +718,7 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     },
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-20",
 };
 
 const chengdu: PrivateTourProduct = {
@@ -1946,6 +1949,7 @@ const harbinWinter: PrivateTourProduct = {
 
 const shanghaiSuzhou: PrivateTourProduct = {
   id: "private-tour-shanghai-suzhou-5d4n",
+  faq: shanghaiSuzhouAnswers,
   slug: "shanghai-suzhou-5-day-private-tour",
   days: 5,
   nights: 4,
@@ -2208,7 +2212,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-20",
 };
 
 const beijing: PrivateTourProduct = {

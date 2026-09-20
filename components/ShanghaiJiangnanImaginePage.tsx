@@ -29,6 +29,8 @@ import {
   ShanghaiJiangnanRouteExplorer,
 } from "./ShanghaiJiangnanImagineInteractive";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
+import { JiangnanTourComparison, JiangnanBookingTrust } from "./JiangnanTourComparison";
+import { isJiangnanTour } from "../lib/tourContactDraft";
 import {
   getExistingContentCommercialCopy,
   getProductPlanningContext,
@@ -98,7 +100,7 @@ const jiangnanPageCopy: Record<
     routeEyebrow: "Day by day",
     routeTitle: "One direction, no backtracking.",
     routeBody:
-      "Enter through Shanghai, continue through Suzhou and finish in Hangzhou. Arrival and departure stay unhurried, leaving four complete touring days at the centre of the journey.",
+      "Enter through Shanghai, continue through Suzhou and finish in Hangzhou. Arrival and departure stay unhurried, leaving four guided touring days, including the moves between cities.",
     serviceEyebrow: "Travel made seamless",
     serviceTitle: "Hotels, guides and transfers work together.",
     serviceBody:
@@ -142,7 +144,7 @@ const jiangnanPageCopy: Record<
     routeEyebrow: "每日安排",
     routeTitle: "一路向前，不走回头路。",
     routeBody:
-      "从上海进入，经苏州一路前往杭州。抵达与返程日留出余量，把四个完整游览日留在旅程中间。",
+      "从上海进入，经苏州一路前往杭州。抵达与返程日留出余量，中间四天由导游串联游览与跨城衔接。",
     serviceEyebrow: "服务标准",
     serviceTitle: "抵达之前，住宿、用车和游览已经接顺。",
     serviceBody:
@@ -186,7 +188,7 @@ const jiangnanPageCopy: Record<
     routeEyebrow: "날짜별 일정",
     routeTitle: "되돌아가지 않는 한 방향 여정.",
     routeBody:
-      "상하이에서 시작해 쑤저우를 거쳐 항저우에서 마칩니다. 도착일과 출발일에는 여유를 두고, 중간 4일은 온전히 관광에 씁니다.",
+      "상하이에서 시작해 쑤저우를 거쳐 항저우에서 마칩니다. 도착일과 출발일에는 여유를 두고, 중간 4일에는 가이드와 관광하며 도시 간 이동도 진행합니다.",
     serviceEyebrow: "서비스 기준",
     serviceTitle: "도착 전에 숙박과 이동, 관광을 하나로 연결합니다.",
     serviceBody:
@@ -633,6 +635,8 @@ export function ShanghaiJiangnanImaginePage({
           </div>
         </section>
 
+        {isJiangnanTour(product.slug) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} /> : null}
+
         {localized.faq?.length ? (
           <section
             className={styles.section}
@@ -644,7 +648,10 @@ export function ShanghaiJiangnanImaginePage({
               </div>
               <div className={`${styles.serviceGrid} ${styles.faqGrid}`}>
                 {localized.faq.map((item) => (
-                  <article key={item.question}>
+                  isJiangnanTour(product.slug) ? <details className={styles.answerItem} key={item.question}>
+                    <summary>{item.question}</summary>
+                    <p>{item.answer}</p>
+                  </details> : <article key={item.question}>
                     <h3>{item.question}</h3>
                     <p>{item.answer}</p>
                   </article>
@@ -697,6 +704,7 @@ export function ShanghaiJiangnanImaginePage({
                 </ul>
               </section>
             </div>
+            {isJiangnanTour(product.slug) ? <JiangnanBookingTrust locale={locale} /> : null}
           </div>
         </section>
 

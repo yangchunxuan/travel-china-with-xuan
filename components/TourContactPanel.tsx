@@ -19,6 +19,7 @@ import {
 } from "../lib/siteOverlayState";
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { TourDateField } from "./TourDateField";
+import { isJiangnanTour, jiangnanContactCopy, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
 import styles from "./TourContactPanel.module.css";
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
@@ -42,6 +43,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const [date, setDate] = useState("");
   const [undecided, setUndecided] = useState(true);
   const [note, setNote] = useState("");
+  const [referralSource, setReferralSource] = useState<ReferralSource>("");
   const [status, setStatus] = useState<Status>("idle");
   const [reference, setReference] = useState("");
   const [fieldError, setFieldError] = useState("");
@@ -57,6 +59,9 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const enabled = Boolean(apiUrl) && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true";
   const whatsappEnabled = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
   const locked = status === "sending" || status === "uncertain" || status === "saved";
+  const jiangnan = isJiangnanTour(context?.slug);
+  const jiangnanText = jiangnanContactCopy[locale];
+  const draft = { travelDate: undecided ? null : date, note, referralSource: jiangnan ? referralSource : "" as const };
   const privacyHref = `${locale === "en" ? "" : `/${locale}`}/privacy/`;
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
 
@@ -66,7 +71,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     // An unresolved dispatch owns its immutable context and retry key, even after closing.
     if (!dispatching.current && statusRef.current !== "uncertain") {
       setContext(next);
-      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReference(""); setNote(""); }
+      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReference(""); setNote(""); setReferralSource(""); }
     }
     triggerRef.current = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     markNewsletterPromptHandled();
@@ -163,7 +168,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     const data = new FormData(event.currentTarget);
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: context,
-      travelDate: undecided ? null : date, note: note.trim() || null, privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource), privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
       experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: getTrafficSessionToken() ?? null });
     snapshotRef.current = { body, key: crypto.randomUUID() };
@@ -173,7 +178,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   function trackContact(channel: "email" | "whatsapp") {
     trackEvent("contact_option_clicked", { channel, page_language: locale }, { firstPartyContext: { productSlug: context?.slug, packageId: context?.selection?.packageId, travelers: context?.selection?.travelers, surface: context ? "product" : "contact_options" } });
   }
-  const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent(`https://homegroundchina.com${pathname}`)}`;
+  const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent(`https://homegroundchina.com${pathname}`)}`;
 
   return <div data-homeground-contact-ready={isTour || isGuide ? "true" : undefined}>
     {isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} ref={launcherRef} onClick={() => show(null)} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
@@ -190,13 +195,14 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
                 {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
-                <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={1000} value={note} placeholder={text.placeholder} onChange={event => setNote(event.target.value)} /></label>
+                <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={jiangnan ? 900 : 1000} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => setNote(event.target.value)} /></label>
+                {jiangnan ? <label htmlFor={`${id}-source`}>{jiangnanText.source} <span className={styles.optional}>{text.optional}</span><select id={`${id}-source`} value={referralSource} onChange={event => setReferralSource(event.target.value as ReferralSource)}><option value="">{jiangnanText.blank}</option>{referralSources.map(source => <option key={source} value={source}>{source === "friend" || source === "other" ? jiangnanText[source] : source}</option>)}</select></label> : null}
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>
               <p className={styles.consent}>{text.consent} <a href={privacyHref} target="_blank" rel="noopener noreferrer">{text.privacy}</a></p>
               {status === "failed" || status === "uncertain" ? <p className={styles.error} role="alert">{status === "failed" ? fieldError || text.failed : text.uncertain}</p> : null}
               {status === "uncertain" ? <button className={styles.primary} type="button" onClick={() => snapshotRef.current && void send(snapshotRef.current)}>{text.retry}<ArrowRight size={18} aria-hidden="true" /></button> : <button className={styles.primary} type="submit" disabled={status === "sending"}>{status === "sending" ? text.sending : text.submit}{status !== "sending" ? <ArrowRight size={18} aria-hidden="true" /> : null}</button>}
-              {whatsappEnabled ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={20} aria-hidden="true" />{text.whatsapp}</a> : null}
+              {whatsappEnabled ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={20} aria-hidden="true" />{text.whatsapp}</a> : null}
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
             {(!context || !enabled || status === "failed" || status === "uncertain") ? <div className={styles.direct}>
