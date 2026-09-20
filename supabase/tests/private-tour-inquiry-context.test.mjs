@@ -7,6 +7,7 @@ import {
   getPrivateTourInquiryContext,
   getPrivateTourInquiryContextFromSearchParams,
   getPrivateTourInquirySelection,
+  privateTourAggregateSelectionLabel,
   privateTourInquirySelectionLabel,
   privateTourInquiryQueryKey,
   privateTourInquirySlugs,
@@ -120,6 +121,39 @@ test("Beijing card starting prices name the exact package in all languages", () 
     assert.equal(item.startingPrice.serviceLabel, noGuide.label[locale]);
     assert.equal(item.startingPrice.cny, noGuide.prices.find((row) => row.travelers === 2).cnyPerPerson);
   }
+});
+
+test("Korean Zhangjiajie selections preserve the Korean-guide offer in contact copy", () => {
+  const forest = getPrivateTourInquiryContext(
+    "zhangjiajie-forest-4-day-private-tour",
+    "ko",
+    { packageId: "fixed-route-english-guided", travelers: 4 },
+  );
+  const sevenDay = getPrivateTourInquiryContext(
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+    "ko",
+    { packageId: "standard-guided", travelers: 4 },
+  );
+  assert.equal(
+    privateTourInquirySelectionLabel(forest, "ko"),
+    "한국어 가이드 포함 고정 코스 · 4명 기준",
+  );
+  assert.equal(
+    privateTourInquirySelectionLabel(sevenDay, "ko"),
+    "한국어 가이드 포함 · 4명 기준",
+  );
+  assert.match(
+    decodeURIComponent(buildPrivateTourMailtoHref("planner@example.com", "ko", forest)),
+    /한국어 가이드 포함 고정 코스 · 4명 기준/u,
+  );
+  assert.match(
+    decodeURIComponent(buildPrivateTourMailtoHref("planner@example.com", "ko", sevenDay)),
+    /한국어 가이드 포함 · 4명 기준/u,
+  );
+  assert.equal(
+    privateTourAggregateSelectionLabel(forest),
+    "固定路线导游版（语种按页面） · 4 人同行",
+  );
 });
 
 test("tour CTAs, quick contacts and backend keep the canonical context end to end", async () => {
