@@ -33,7 +33,9 @@ test("older-parents guide is registered as a localized planning guide", async ()
   );
   assert.match(entry, /imageWidth: 1200/);
   assert.match(entry, /imageHeight: 630/);
-  assert.equal((entry.match(/2026-07-31/g) ?? []).length, 3);
+  assert.match(entry, /datePublished: "2026-07-31"/);
+  assert.match(entry, /sourceReviewedDate: "2026-07-31"/);
+  assert.match(entry, /dateModified: "2026-09-20"/);
 
   for (const path of [
     "/guides/china-itinerary-with-older-parents/",

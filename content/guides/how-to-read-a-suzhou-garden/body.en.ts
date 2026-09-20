@@ -72,6 +72,12 @@ const body: StructuredPageBody = {
         "Keep the rest of the day manageable. A museum, another garden and several old streets can turn a slow visit into a sequence of deadlines. If the garden takes longer, shorten the next stop instead of rushing through the views.",
       ],
     },
+
+  {"id": "garden-route-heading", "type": "heading", "level": 2, "text": "A garden day from Shanghai, or a night in Suzhou?"},
+  {"id": "garden-guide-value", "type": "paragraph", "text": "A guide can help you connect a framed view, a plaque and the route through the garden; tell them whether architecture, literature or a slower walk matters most. For a self-guided visit, the seven-stop exercise below gives you a way to look closely. The next decision is how much of Suzhou belongs around that garden."},
+  {"id": "garden-route-options", "type": "comparison", "title": "Two ways to place Humble Administrator’s Garden in a wider trip", "columns": [{"heading": "Keep the Shanghai hotel", "body": "Homeground’s 5-day Shanghai–Suzhou route visits Humble Administrator’s Garden, Hanshan Temple and Pingjiang Road on a high-speed-rail day trip. It suits a focused Suzhou visit without changing hotels. Suzhou Museum is not included."}, {"heading": "Stay one night in Suzhou", "body": "The 6-day Shanghai–Suzhou–Hangzhou route includes a Suzhou night, Shantang Street, Humble Administrator’s Garden, Pingjiang Road and Suzhou Museum, subject to reservation. Choose it for more Suzhou time and an onward Hangzhou stay, not merely another garden."}]},
+  {"id": "garden-route-scope", "type": "paragraph", "text": "Both include English-speaking guides on their touring days. A slower visit or fewer stops can be discussed before booking; the confirmed route and any changes to tickets or price should be clear."},
+  {"id": "garden-route-products", "type": "internal-links", "title": "Compare the Suzhou portions", "items": [{"label": "Shanghai-based 5-day private route", "href": "/tours/shanghai-suzhou-5-day-private-tour/", "description": "A garden, temple and old-street day, then back to the same Shanghai hotel."}, {"label": "Three-city 6-day private route", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "A Suzhou overnight and museum visit, subject to reservation, before Hangzhou."}]},
   {
     "id": "garden-visit-check",
     "type": "paragraph",

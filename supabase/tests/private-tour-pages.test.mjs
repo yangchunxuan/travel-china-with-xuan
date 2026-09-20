@@ -357,10 +357,10 @@ test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller p
 });
 
 test("live-QA tour fact and safety corrections stay complete in all three locales", () => {
-  const product = (slug) => {
+  const product = (slug, modified = "2026-09-07") => {
     const result = getPrivateTourProduct(slug);
     assert.ok(result, slug);
-    assert.equal(result.dateModified, "2026-09-07", `${slug} freshness`);
+    assert.equal(result.dateModified, modified, `${slug} freshness`);
     return result;
   };
   const requireFragments = (value, fragments, context) => {
@@ -430,7 +430,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
   }
 
-  const shanghai = product("shanghai-suzhou-5-day-private-tour");
+  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-20");
   const shanghaiRules = {
     en: {
       common: [

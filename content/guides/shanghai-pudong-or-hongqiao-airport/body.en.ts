@@ -308,6 +308,10 @@ const body = {
       tone: "decision",
       body: "Compare like with like: same travel date, baggage, fare flexibility, connection protection and realistic arrival time. Ground convenience breaks a close tie; it does not automatically rescue an overnight layover, unprotected ticket or unsuitable flight.",
     },
+
+  {"id": "tour-gateway-heading", "type": "heading", "level": 2, "text": "Check the departure city before choosing between PVG and SHA"},
+  {"id": "tour-gateway-choice", "type": "paragraph", "text": "The airport decision changes if the trip continues to Hangzhou. Homeground’s 5-day Shanghai–Suzhou private route starts and ends with transfers between the confirmed Shanghai airport and hotel; Day 5 includes English-speaking guide departure assistance. The 6-day Shanghai–Suzhou–Hangzhou route arrives in Shanghai but finishes at the confirmed Hangzhou airport or railway station, with a driver-only transfer on Day 6. It does not include a return to PVG or SHA. If Shanghai return flights are already fixed, confirm the extra return leg and any final Shanghai night before choosing the six-day route. For a late arrival, share the landing time so pickup, check-in and any out-of-hours service can be confirmed."},
+  {"id": "tour-gateway-products", "type": "internal-links", "title": "Match the route to the booked gateways", "items": [{"label": "5-day route with Shanghai airport arrival and departure", "href": "/tours/shanghai-suzhou-5-day-private-tour/", "description": "Stay in the same Shanghai hotel and visit Suzhou for the day."}, {"label": "6-day route ending in Hangzhou", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "Use a different departure city when the flight plan supports it."}]},
     {
       id: "late-heading",
       type: "heading",

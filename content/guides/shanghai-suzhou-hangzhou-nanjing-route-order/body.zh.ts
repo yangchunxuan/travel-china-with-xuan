@@ -6,6 +6,11 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "上海基地", body: "酒店稳定很重要、周边访问集中，且重复进站仍可接受时最好。" },
     { heading: "双基地混合", body: "一次移动能消除最长折返，又不制造四次入住时往往最强。" }
   ] },
+
+  {"id": "short-trip-heading", "type": "heading", "level": 2, "text": "只有五六天，先决定舍掉什么"},
+  {"id": "short-trip-routes", "type": "table", "caption": "用两条现有私人路线看清取舍", "columns": ["路线", "住宿与实际游览时间", "这项选择带来什么"], "rows": [["上海·苏州5天4晚", "上海同一家酒店4晚；到离日之间有3个完整游览日", "苏州当天往返，另含朱家角与上海中心118层。适合上海往返、不想搬酒店；这条路线不含杭州。"], ["上海·苏州·杭州6天5晚", "上海2晚、苏州1晚、杭州2晚；4个导游游览日，其中两天含跨城", "多一些苏州时间，加杭州的西湖、寺院与茶文化，代价是两次换酒店，并在杭州结束。不含朱家角与上海中心登塔。"]]},
+  {"id": "short-trip-choice", "type": "paragraph", "text": "更在意同一家酒店，就先看五日线；杭州是必去，而且能在杭州结束，就先看六日线。六日线是另一套行程，不是五日线再加一天。两条都不含南京；增加第四城、反向走或从杭州返回上海，需要另行确认路线。"},
+  {"id": "short-trip-products", "type": "internal-links", "title": "比较两种路线安排", "items": [{"label": "住在上海：5天4晚私人游", "href": "/zh/tours/shanghai-suzhou-5-day-private-tour/", "description": "同一家酒店，苏州高铁当天往返。"}, {"label": "继续到杭州：6天5晚私人游", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "三城住宿，在确认的杭州机场或车站结束。"}]},
   { id: "official-heading", type: "heading", level: 2, text: "车站地理可以推翻路线" },
   { id: "official", type: "paragraph", text: "上海市政府指南列出分布在全市的多个主要和较小铁路车站，并提醒旅客出发前核对准确车站。苏州市交通运输局记录苏州南站与盛泽站随沪苏湖高铁启用，增加了传统苏州站、苏州北站之外的路线可能。正因如此，只写城市到城市不够；应按出行日期在12306搜索准确车次和车站。" },
   { id: "roles-heading", type: "heading", level: 2, text: "给每座城市不同角色" },

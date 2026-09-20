@@ -231,6 +231,12 @@ const body: StructuredPageBody = {
         "让当天剩余安排保持轻松。博物馆、第二座园林和几条老街叠在一起，会把慢游变成连续赶点。如果园林比预计逛得久，就缩短下一站，不要匆忙掠过眼前的景。",
       ],
     },
+
+  {"id": "garden-route-heading", "type": "heading", "level": 2, "text": "从上海看一天，还是在苏州住一晚？"},
+  {"id": "garden-guide-value", "type": "paragraph", "text": "导游的价值可以是把一处框景、一块匾额和脚下游线连起来；提前说清你更关心建筑、诗文，还是想慢慢走。自己参观也可以用下文的“七次停留”练习仔细看。接下来要决定的是：园林之外，还给苏州多少时间。"},
+  {"id": "garden-route-options", "type": "comparison", "title": "把拙政园放进整段旅行的两种方式", "columns": [{"heading": "保留上海酒店", "body": "Homeground 上海·苏州5日线用高铁当天往返，游览拙政园、寒山寺和平江路。适合集中看苏州，又不想搬酒店；不含苏州博物馆。"}, {"heading": "苏州住一晚", "body": "上海·苏州·杭州6日线含苏州1晚、山塘街、拙政园、平江路及须确认预约的苏州博物馆。选择它是为了多一些苏州时间，并继续去杭州，不只是多看一座园林。"}]},
+  {"id": "garden-route-scope", "type": "paragraph", "text": "两条路线的游览日都配英语导游。希望放慢速度或减少景点，可以在预订前商议；最终游线以及门票、价格如何变化应确认清楚。"},
+  {"id": "garden-route-products", "type": "internal-links", "title": "比较两条路线的苏州部分", "items": [{"label": "上海单基地5日私人游", "href": "/zh/tours/shanghai-suzhou-5-day-private-tour/", "description": "园林、寺院与老街一天，晚上回同一家上海酒店。"}, {"label": "三城6日私人游", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "苏州住一晚，博物馆预约确认后参观，再继续前往杭州。"}]},
   {
     "id": "garden-visit-check",
     "type": "paragraph",

@@ -259,6 +259,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     "commonjs",
     "--moduleResolution",
     "node",
+    "--rewriteRelativeImportExtensions",
     "--target",
     "es2022",
     "--lib",

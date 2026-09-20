@@ -1,4 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 
 export const privateTourInquiryQueryKey = "tour";
 
@@ -287,6 +289,7 @@ export function buildPrivateTourMailtoHref(
   email: string,
   locale: HomegroundLocale,
   context: PrivateTourInquiryContext | null,
+  draft?: TourContactDraft,
 ): string {
   const copy = privateTourInquiryContactCopy[locale];
   const subject = context
@@ -295,5 +298,6 @@ export function buildPrivateTourMailtoHref(
   const body = context
     ? `${copy.emailBody}: ${context.name}\n${copy.referenceLabel}: ${context.slug}${privateTourInquirySelectionLabel(context, locale) ? `\n${privateTourInquirySelectionLabel(context, locale)}` : ""}`
     : copy.genericEmailBody;
-  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const completeBody = [body, tourContactDraftText(locale, draft)].filter(Boolean).join("\n\n");
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(completeBody)}`;
 }

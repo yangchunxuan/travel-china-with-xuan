@@ -471,6 +471,8 @@ const english: ChinaItineraryWithOlderParentsCopy = {
           "Is the hotel practical for the correct railway station or airport?",
           "Would changing hotels reduce real effort, or only create another check-out?",
         ],
+        closing:
+          "For a shorter Jiangnan trip, Homeground’s 5-day Shanghai–Suzhou route keeps all four nights in the same Shanghai hotel, reducing repacking and check-ins. The Suzhou day still uses return high-speed rail and involves station walking; it does not provide a midday return to the Shanghai room. The 6-day route adds Hangzhou with Shanghai 2 nights, Suzhou 1 and Hangzhou 2, so compare the extra local time with two hotel changes. Both have English-speaking guides on touring days. Neither is a guaranteed step-free itinerary: confirm the longest walking sections, planned seated breaks and any reduced sightseeing before booking.",
       },
       {
         id: "effort",
@@ -679,6 +681,8 @@ const english: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "Continue planning",
     items: [
+      {"title": "5-day Shanghai–Suzhou private tour", "description": "One Shanghai hotel for four nights, with a Suzhou rail day trip. Compare the actual walking and rest arrangements.", "href": "/tours/shanghai-suzhou-5-day-private-tour/"},
+      {"title": "6-day Shanghai–Suzhou–Hangzhou private tour", "description": "Add Hangzhou and a Suzhou overnight if two hotel changes fit the family; the route ends in Hangzhou.", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {
         title: "Is Your China Itinerary Too Rushed?",
         description:
@@ -990,6 +994,8 @@ const chinese: ChinaItineraryWithOlderParentsCopy = {
           "酒店是否方便前往正确的火车站或机场？",
           "换酒店真的减少了体力负担，还是只增加一次退房？",
         ],
+        closing:
+          "如果只安排一段较短的江南旅行，Homeground 上海·苏州5日线在同一家上海酒店住4晚，可以少收拾行李、少办入住。苏州一日仍是高铁往返，需要走车站，也不能默认午间回上海房间休息。6日线增加杭州，住宿为上海2晚、苏州1晚、杭州2晚；要把多出的本地时间与两次换酒店一起比较。两条路线的游览日均配英语导游，都不是保证全程无台阶的路线。预订前确认最长步行段、坐下休息的安排，以及需要减少哪些景点。",
       },
       {
         id: "effort",
@@ -1195,6 +1201,8 @@ const chinese: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "继续规划",
     items: [
+      {"title": "上海·苏州5天4晚私人游", "description": "同一家上海酒店住4晚，苏州高铁当天往返；结合实际步行与休息安排判断。", "href": "/zh/tours/shanghai-suzhou-5-day-private-tour/"},
+      {"title": "上海·苏州·杭州6天5晚私人游", "description": "家人能够接受两次换酒店时，再考虑苏州过夜与杭州；路线在杭州结束。", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {
         title: "你的中国行程是不是太赶了？",
         description: "用住宿基地、完整转场日、固定预约和恢复时间检查任何路线草稿。",
@@ -1507,6 +1515,8 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
           "정확한 기차역이나 공항으로 가기 편한가요?",
           "숙소 변경이 실제 수고를 줄이나요, 아니면 체크아웃만 하나 더 만드나요?",
         ],
+        closing:
+          "짧은 장강삼각주 여행이라면 Homeground 상하이·쑤저우 5일 일정은 같은 상하이 호텔에서 4박해 짐 싸기와 체크인을 줄입니다. 쑤저우 당일 일정은 고속철도 왕복이므로 역 내 이동이 있고, 점심에 상하이 객실로 돌아와 쉰다고 가정할 수는 없습니다. 6일 일정은 항저우를 더해 상하이 2박·쑤저우 1박·항저우 2박을 하므로, 현지에서 얻는 시간과 두 번의 숙소 변경을 함께 비교하세요. 두 상품의 관광일에는 영어 가이드가 포함됩니다. 전 구간 무단차를 보장하는 일정은 아니므로 예약 전에 가장 긴 보행 구간, 앉아서 쉬는 시간과 줄일 방문지를 확인하세요.",
       },
       {
         id: "effort",
@@ -1714,6 +1724,8 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "계속 계획하기",
     items: [
+      {"title": "상하이·쑤저우 4박 5일 프라이빗 투어", "description": "같은 상하이 호텔 4박과 쑤저우 고속철도 당일치기. 실제 보행·휴식 구성을 비교하세요.", "href": "/ko/tours/shanghai-suzhou-5-day-private-tour/"},
+      {"title": "상하이·쑤저우·항저우 5박 6일 프라이빗 투어", "description": "호텔을 두 번 옮길 수 있는 가족이라면 쑤저우 1박과 항저우를 비교하세요. 일정은 항저우에서 끝납니다.", "href": "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {
         title: "내 중국 일정은 너무 빠듯한가요?",
         description:
