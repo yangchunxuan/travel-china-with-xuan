@@ -169,6 +169,56 @@ const body = {
       text: "只有两天时，选择反差而不是覆盖：一天主要留在黄浦江西岸，另一天按兴趣给公共上海、街区上海或浦东。第三天最有价值的用法是把某一层放慢。第四天提升的是质量——它吸收天气、闭馆日、晚到和疲劳，而不是再加远处的景点。",
     },
     {
+      id: "five-day-heading",
+      type: "heading",
+      level: 2,
+      text: "上海5天怎么安排：先算抵离日",
+    },
+    {
+      id: "five-day-intro",
+      type: "paragraph",
+      text: "把抵达和返程算进5天时，可按3个完整游览日规划：2天留给上海，另1天选一次周边游或迪士尼，再按航班和预约调整顺序。",
+    },
+    {
+      id: "five-day-plan",
+      type: "list",
+      ordered: true,
+      items: [
+        "抵达、入住、休息，附近晚间散步作为可选项。",
+        "游览老城厢、豫园和外滩，主要留在浦西；提前核对门票和预约。",
+        "再留一个上海城市日：选博物馆与街区路线，或陆家嘴与黄浦江；先确认具体馆址。",
+        "三选一：苏州园林与老街，算上两端车站接驳；朱家角，时间允许再加一个市区点；或迪士尼一整天。",
+        "退房、返程，按实际机场或车站留足路上时间。",
+      ],
+    },
+    {
+      id: "five-full-days",
+      type: "paragraph",
+      text: "如果有5个完整游览日，抵达和返程另算：上海3天、一次周边游1天，再留1天慢游或缓冲，迪士尼也可以占用这额外一天。如果苏州和杭州都很重要，可比较在上海以外过夜的江南路线。",
+    },
+    {
+      id: "five-day-next-steps",
+      type: "internal-links",
+      title: "继续规划江南，或比较安排好的私家团",
+      items: [
+        {
+          label: "一起安排上海、苏州和杭州",
+          href: "/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/",
+          description: "比较以上海为基地，还是在多座城市住宿。",
+        },
+        {
+          label: "上海—苏州5日私家团",
+          href: "/zh/tours/shanghai-suzhou-5-day-private-tour/",
+          description: "这套已公布产品有自己的日程：上海同一家酒店连住4晚，游览朱家角，苏州高铁当天往返。",
+        },
+        {
+          label: "上海—苏州—杭州6日私家团",
+          href: "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+          description: "分别住三座城市，标准行程在杭州结束。",
+        },
+      ],
+    },
+    {
       id: "short-stay-rule",
       type: "callout",
       title: "短停原则：把稀缺的完整日留给上海",

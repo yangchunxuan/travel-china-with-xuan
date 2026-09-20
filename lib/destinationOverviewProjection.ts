@@ -228,6 +228,13 @@ export function projectDestinationStayExample(
   hubId: DestinationHubId,
 ): StructuredPageBody {
   const exampleIds: Partial<Record<DestinationHubId, readonly string[]>> = {
+    shanghai: [
+      "five-day-heading",
+      "five-day-intro",
+      "five-day-plan",
+      "five-full-days",
+      "five-day-next-steps",
+    ],
     chengdu: [
       "first-stay-plan-heading",
       "first-stay-plan-intro",

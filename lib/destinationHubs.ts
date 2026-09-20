@@ -321,7 +321,7 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
-    dateModified: "2026-08-22",
+    dateModified: "2026-09-21",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "china-10-day-itinerary",
@@ -361,6 +361,7 @@ export const destinationHubRegistry = [
         openGraphLocale: "en_US",
         searchTerms: [
           "Shanghai travel guide first time",
+          "Shanghai itinerary 5 days",
           "how many days in Shanghai",
           "where to stay in Shanghai first time",
           "Pudong or Hongqiao airport",
@@ -421,6 +422,7 @@ export const destinationHubRegistry = [
         openGraphLocale: "zh_CN",
         searchTerms: [
           "第一次去上海旅行攻略",
+          "上海5天行程",
           "上海需要玩几天",
           "第一次去上海住哪里",
           "浦东机场还是虹桥机场",
@@ -472,6 +474,7 @@ export const destinationHubRegistry = [
         openGraphLocale: "ko_KR",
         searchTerms: [
           "상하이 첫 여행 가이드",
+          "상하이 4박 5일 일정",
           "상하이 며칠",
           "상하이 첫 여행 숙소",
           "푸둥공항 훙차오공항 차이",

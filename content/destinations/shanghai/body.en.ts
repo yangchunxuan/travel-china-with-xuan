@@ -169,6 +169,56 @@ const body = {
       text: "With two days, choose contrast over coverage. Keep one day mainly west of the river and use the second for civic Shanghai, neighbourhood Shanghai or Pudong according to interest. A third day is most valuable when it slows one layer down. A fourth improves quality by absorbing weather, closure days, a late arrival or fatigue rather than by adding distant sights.",
     },
     {
+      id: "five-day-heading",
+      type: "heading",
+      level: 2,
+      text: "Shanghai itinerary: a practical five-day plan",
+    },
+    {
+      id: "five-day-intro",
+      type: "paragraph",
+      text: "When arrival and departure count toward your five days, three complete sightseeing days are a useful starting plan. Give Shanghai two days, then choose one excursion or Disneyland. Adjust the order to your flights and reservations.",
+    },
+    {
+      id: "five-day-plan",
+      type: "list",
+      ordered: true,
+      items: [
+        "Arrive and settle into the hotel. Keep a nearby evening walk optional.",
+        "Visit the Old City, Yu Garden and the Bund, staying mainly in Puxi. Check admission and reservations.",
+        "Spend another day in Shanghai: choose a museum and neighbourhood route, or Lujiazui and the river. Confirm the museum branch.",
+        "Choose one: Suzhou for a garden and old streets, allowing for both station transfers; Zhujiajiao, with one city stop if time permits; or a full day at Disneyland.",
+        "Check out and depart, allowing for the actual airport or station journey.",
+      ],
+    },
+    {
+      id: "five-full-days",
+      type: "paragraph",
+      text: "If you have five complete sightseeing days, count arrival and departure separately: keep three city days, one excursion and one slower day or buffer. Disneyland can take that extra day. If Suzhou and Hangzhou both matter, compare a regional route with an overnight away from Shanghai.",
+    },
+    {
+      id: "five-day-next-steps",
+      type: "internal-links",
+      title: "Explore the region or compare an arranged tour",
+      items: [
+        {
+          label: "Plan Shanghai, Suzhou and Hangzhou together",
+          href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/",
+          description: "Choose a Shanghai base or stays in more than one city.",
+        },
+        {
+          label: "5-day Shanghai–Suzhou private tour",
+          href: "/tours/shanghai-suzhou-5-day-private-tour/",
+          description: "This published tour has its own schedule: four nights in one Shanghai hotel, Zhujiajiao and a Suzhou rail day trip.",
+        },
+        {
+          label: "6-day Shanghai–Suzhou–Hangzhou private tour",
+          href: "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+          description: "Stay in all three cities and finish in Hangzhou.",
+        },
+      ],
+    },
+    {
       id: "short-stay-rule",
       type: "callout",
       title: "The short-stay rule: spend the scarce day in Shanghai",
