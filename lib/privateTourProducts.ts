@@ -2857,7 +2857,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     "6박 7일 · 우링위안 3박 · 푸룽전 1박 · 펑황고성 2박",
   ),
   lede: l(
-    "Spend two full days among Wulingyuan’s sandstone peaks and forest valleys, then continue west to Furong Town and Fenghuang Ancient Town. Four English-guided touring days are balanced by a free day in Fenghuang.",
+    "Spend two full days among Wulingyuan’s sandstone peaks and forest valleys, then continue through western Hunan to Furong Town and Fenghuang Ancient Town. Four English-guided touring days are balanced by a free day in Fenghuang.",
     "先用两个完整游览日走进武陵源峰林与溪谷，再向西前往芙蓉镇和凤凰古城。D2–D5 由英语导游陪同，D6 留给你按自己的节奏游凤凰。",
     "우링위안의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 푸룽전과 펑황고성으로 이어갑니다. D2~D5는 영어 가이드와 여행하고 D6는 펑황에서 자유롭게 보냅니다.",
   ),
@@ -2895,7 +2895,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "장자제 도착 후 우링위안 체크인",
       ),
       l(
-        "Meet the driver at the confirmed Zhangjiajie airport or railway station and travel with your luggage by private vehicle to the confirmed Wulingyuan hotel. Day 1 is a driver-only transfer with no guide or fixed sightseeing. Stay in Wulingyuan for the first of three nights.",
+        "Meet the driver at Zhangjiajie Hehua International Airport or the exact Zhangjiajie railway station named in the written confirmation, then travel with your luggage by private vehicle to the confirmed Wulingyuan hotel. Day 1 is a driver-only transfer with no guide or fixed sightseeing. Stay in Wulingyuan for the first of three nights.",
         "司机在已确认的张家界机场或车站接客，行李随行，乘专车前往已确认的武陵源酒店。当天仅含司机接送，不含导游和固定游览；入住武陵源第一晚，共连住三晚。",
         "확정된 장자제 공항 또는 기차역에서 기사를 만나 수하물과 함께 전용 차량으로 확정된 우링위안 호텔에 이동합니다. 이날은 기사 이동만 포함되며 가이드와 고정 관광은 없습니다. 우링위안에서 총 3박 중 첫날을 보냅니다.",
       ),
@@ -2969,7 +2969,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       7,
       l("Depart from Fenghuang", "从凤凰离开", "펑황 출발"),
       l(
-        "Check out and take the driver-only private transfer to Fenghuanggucheng Railway Station. If the written confirmation instead specifies a return transfer to Zhangjiajie, follow that agreed plan. No guide or sightseeing is included on departure day.",
+        "Check out and take the driver-only private transfer to Fenghuang Ancient City Railway Station (凤凰古城站). If the written confirmation instead specifies a return transfer to Zhangjiajie, follow that agreed plan. No guide or sightseeing is included on departure day.",
         "退房后由司机专车送往凤凰古城站。若最终书面方案明确约定送回张家界，则按该方案执行。离开日不含导游和固定游览。",
         "체크아웃 후 기사 전용 차량으로 펑황고성역에 이동합니다. 최종 서면 확인서에 장자제 귀환 이동이 명시된 경우에는 해당 계획을 따릅니다. 출발일에는 가이드와 관광 일정이 포함되지 않습니다.",
       ),
@@ -3048,7 +3048,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "어디에서 숙박하고 D7 일정은 어디에서 끝나나요?",
       ),
       answer: l(
-        "The route includes three nights in Wulingyuan, one in Furong Town and two in Fenghuang. The standard Day 7 transfer ends at Fenghuanggucheng Railway Station. A return to Zhangjiajie is possible only when that route and quote are agreed in writing before payment.",
+        "The route includes three nights in Wulingyuan, one in Furong Town and two in Fenghuang. The standard Day 7 transfer ends at Fenghuang Ancient City Railway Station (凤凰古城站). A return to Zhangjiajie is possible only when that route and quote are agreed in writing before payment.",
         "武陵源住 3 晚、芙蓉镇住 1 晚、凤凰住 2 晚。标准 D7 送至凤凰古城站；如需送回张家界，必须在付款前把具体路线和对应报价写入确认方案。",
         "우링위안 3박, 푸룽전 1박, 펑황 2박입니다. 기본 D7 이동은 펑황고성역에서 끝납니다. 장자제 귀환은 결제 전에 구체적인 이동 계획과 견적을 서면으로 확정한 경우에만 제공됩니다.",
       ),
@@ -3243,8 +3243,8 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-19",
-  lastReviewed: "2026-09-19",
+  dateModified: "2026-09-20",
+  lastReviewed: "2026-09-20",
 };
 
 export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(

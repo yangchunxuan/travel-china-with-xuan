@@ -1,0 +1,105 @@
+{
+  "id": "zhangjiajie-furong-fenghuang-route-order",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global",
+    "malaysia",
+    "singapore",
+    "australia"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "zhangjiajie",
+    "furong-town",
+    "fenghuang",
+    "route-order",
+    "hotel-nights",
+    "luggage"
+  ],
+  "destinations": [
+    "china",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+  "imageWidth": 1280,
+  "imageHeight": 742,
+  "datePublished": "2026-09-20",
+  "dateModified": "2026-09-20",
+  "sourceReviewedDate": "2026-09-20",
+  "searchTerms": {
+    "en": [
+      "zhangjiajie furong town fenghuang itinerary",
+      "zhangjiajie furong fenghuang 7 days",
+      "zhangjiajie to furong town to fenghuang route",
+      "how many nights furong town fenghuang"
+    ],
+    "zh": [
+      "张家界芙蓉镇凤凰古城7天行程",
+      "张家界芙蓉镇凤凰顺序",
+      "芙蓉镇和凤凰住几晚"
+    ],
+    "ko": [
+      "장자제 푸룽전 펑황 7일 일정",
+      "장자제 푸룽전 펑황 순서",
+      "푸룽전 펑황 숙박"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/zhangjiajie-furong-fenghuang-route-order/",
+      "title": "Zhangjiajie, Furong & Fenghuang: 7-Day Route Order",
+      "headline": "Zhangjiajie, Furong & Fenghuang: Put 7 Days in the Right Order",
+      "description": "Plan a 7-day Zhangjiajie, Furong Town and Fenghuang route: use 3+1+2 hotel nights, move south without backtracking and choose the correct final station.",
+      "heroAlt": "Furong Town buildings and waterfall beside the river in western Hunan",
+      "navTitle": "Zhangjiajie, Furong & Fenghuang order",
+      "featuredLinkLabel": "Plan Zhangjiajie, Furong and Fenghuang",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "7 days",
+        "3+1+2 nights",
+        "Route order"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/zhangjiajie-furong-fenghuang-route-order/",
+      "title": "张家界、芙蓉镇、凤凰7天路线顺序",
+      "headline": "张家界、芙蓉镇、凤凰：7天怎样排才顺",
+      "description": "用7天串联张家界、芙蓉镇和凤凰古城：按3晚、1晚、2晚分配住宿，顺路向南走，并选对最后离开的车站。",
+      "heroAlt": "湘西芙蓉镇临河建筑与层叠水景",
+      "navTitle": "张家界芙蓉镇凤凰顺序",
+      "featuredLinkLabel": "安排张家界、芙蓉镇与凤凰",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "7天",
+        "3+1+2晚",
+        "路线顺序"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/zhangjiajie-furong-fenghuang-route-order/",
+      "title": "장자제·푸룽전·펑황 7일 일정 순서",
+      "headline": "장자제·푸룽전·펑황: 7일을 순서대로 짜는 법",
+      "description": "장자제·푸룽전·펑황 6박 7일 일정. 3박+1박+2박으로 나누고 되돌아가지 않는 순서와 마지막 기차역을 확인하세요.",
+      "heroAlt": "후난성 서부 푸룽전의 강변 건물과 폭포",
+      "navTitle": "장자제·푸룽전·펑황 순서",
+      "featuredLinkLabel": "장자제·푸룽전·펑황 일정 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "7일",
+        "3+1+2박",
+        "여행 순서"
+      ]
+    }
+  }
+}
