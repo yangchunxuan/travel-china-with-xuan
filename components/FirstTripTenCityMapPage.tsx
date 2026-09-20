@@ -511,7 +511,7 @@ export function FirstTripTenCityMapPage() {
             <p>Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.</p>
           </div>
           <GuideCtaLink href={briefHref} guideId={guide.id} locale="en" position="footer">
-            Start my trip brief <ArrowRight aria-hidden="true" size={18} />
+            Talk to a trip planner <ArrowRight aria-hidden="true" size={18} />
           </GuideCtaLink>
         </aside>
       </main>

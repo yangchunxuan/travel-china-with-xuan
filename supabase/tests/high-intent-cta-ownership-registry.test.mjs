@@ -96,7 +96,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 34 guide and 11 product owners", () => {
+test("commercial links keep the approved 8 hub, 36 guide and 11 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -137,7 +137,9 @@ test("commercial links keep the approved 8 hub, 34 guide and 11 product owners",
       "guilin-airport-or-railway-station-arrival-guide",
       "guilin-yangshuo-transport-route",
       "how-to-read-a-suzhou-garden",
+      "national-museum-of-china-booking-and-route",
       "sanxingdui-museum-booking-and-gallery-order",
+      "shaanxi-history-museum-booking-and-collection-plan",
       "shanghai-hangzhou-transport-route",
       "shanghai-pudong-or-hongqiao-airport",
       "shanghai-where-to-stay-first-trip",

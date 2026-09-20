@@ -6,7 +6,7 @@ import { ArrowRight, Check, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, privateTourInquirySelectionLabel, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
-import { tourContactCopy, tourContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, privateTourQuoteApiUrl } from "../lib/tourContact";
+import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, privateTourQuoteApiUrl } from "../lib/tourContact";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
 import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, homepageEmailPrivacyNoticeVersion } from "../lib/inquiryVersions";
@@ -39,6 +39,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
   const [context, setContext] = useState<PrivateTourInquiryContext | null>(null);
+  const [guideTitle, setGuideTitle] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [undecided, setUndecided] = useState(true);
@@ -71,6 +72,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     // An unresolved dispatch owns its immutable context and retry key, even after closing.
     if (!dispatching.current && statusRef.current !== "uncertain") {
       setContext(next);
+      setGuideTitle(!next && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "");
       if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReference(""); setNote(""); setReferralSource(""); }
     }
     triggerRef.current = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
@@ -87,9 +89,17 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       if (!valid || pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${valid.slug}/`) return;
       show(valid, consumeTourContactReturnFocus());
     };
+    const receiveGuide = (event: Event) => {
+      if (!isGuide || (event as CustomEvent<{ path?: string }>).detail?.path !== pathname) return;
+      show(null, consumeTourContactReturnFocus());
+    };
     window.addEventListener(tourContactOpenEvent, receive);
-    return () => window.removeEventListener(tourContactOpenEvent, receive);
-  }, [pathname, locale]);
+    window.addEventListener(guideContactOpenEvent, receiveGuide);
+    return () => {
+      window.removeEventListener(tourContactOpenEvent, receive);
+      window.removeEventListener(guideContactOpenEvent, receiveGuide);
+    };
+  }, [pathname, locale, isGuide]);
 
   useEffect(() => {
     setOpen(false); setClosing(false); setInquiryOpen(false);
@@ -178,7 +188,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   function trackContact(channel: "email" | "whatsapp") {
     trackEvent("contact_option_clicked", { channel, page_language: locale }, { firstPartyContext: { productSlug: context?.slug, packageId: context?.selection?.packageId, travelers: context?.selection?.travelers, surface: context ? "product" : "contact_options" } });
   }
-  const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent(`https://homegroundchina.com${pathname}`)}`;
+  const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent([guideTitle, `https://homegroundchina.com${pathname}`].filter(Boolean).join("\n"))}`;
 
   return <div data-homeground-contact-ready={isTour || isGuide ? "true" : undefined}>
     {isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} ref={launcherRef} onClick={() => show(null)} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
@@ -190,6 +200,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.title}</h2>
             <p className={styles.intro}>{context ? enabled ? text.intro : text.unavailable : text.guideBody}</p>
             {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{privateTourInquirySelectionLabel(context, locale) ? <p>{privateTourInquirySelectionLabel(context, locale)}</p> : null}</div> : null}
+            {!context && guideTitle ? <div className={styles.context}><span>{locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide"}</span><strong>{guideTitle}</strong></div> : null}
             {context && enabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
@@ -208,7 +219,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             {(!context || !enabled || status === "failed" || status === "uncertain") ? <div className={styles.direct}>
               {whatsappEnabled && (!context || !enabled) ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               {(!context || !enabled || status === "failed" || status === "uncertain") ? <a className={styles.directLink} href={emailHref} onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a> : null}
-              {!context ? <a className={styles.catalog} href={`${locale === "en" ? "/" : `/${locale}/`}#travel-products`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
+              {!context ? <a className={styles.catalog} href={`${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
             </div> : null}
           </>}
         </div>

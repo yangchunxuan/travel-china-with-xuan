@@ -508,11 +508,11 @@ export function CanadaVisaFreeGuidePage() {
                     href={plannerHref}
                     locale="en"
                   >
-                    Start my China trip brief
+                    Talk to a trip planner
                     <ArrowRight aria-hidden="true" size={18} />
                   </GuideCtaLink>
                   <small>
-                    The trip brief is free. It does not provide a visa
+                    The initial trip enquiry is free. It does not provide a visa
                     eligibility decision.
                   </small>
                 </div>

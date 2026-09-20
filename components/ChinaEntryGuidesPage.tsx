@@ -8,6 +8,7 @@ import {
 } from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { GuideCtaLink } from "./GuideCtaLink";
 import styles from "./ChinaEntryGuidesPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -313,10 +314,10 @@ export function ChinaEntryGuidesPage() {
                 have. A Homeground planner will help determine the right
                 planning scope before any paid work begins.
               </p>
-              <a href={plannerHref}>
-                Start my free trip brief
+              <GuideCtaLink href={plannerHref} guideId="china-entry-requirements" locale="en">
+                Talk to a trip planner
                 <ArrowRight aria-hidden="true" size={18} />
-              </a>
+              </GuideCtaLink>
             </div>
           </div>
         </section>

@@ -375,7 +375,7 @@ export const legacyGuideRegistry = [
         headline:
           "Zhangjiajie with Older Travellers: The Mountain Carries You, but the Questions Need Answering",
         description:
-          "Most of Zhangjiajie is ridden, not walked. What decides an older traveller's day is the people on the mountain, not the itinerary — the Tianmen cable car change, the glass bridge rule and the buses with no timetable.",
+          "Plan Zhangjiajie with older travellers: compare walking, stairs, cableways and Bailong Elevator, check access limits, and leave time for queues and rest.",
         heroAlt:
           "The Bailong Elevator rising against a sandstone cliff under a blue sky in Zhangjiajie.",
         navTitle: "Zhangjiajie with older travellers",
@@ -387,7 +387,7 @@ export const legacyGuideRegistry = [
         title: "带长辈游张家界:哪些还走得动",
         headline: "带长辈游张家界:山替你爬,话得有人替你问",
         description:
-          "张家界大部分地方是坐上去的,不是走上去的。决定长辈这一天的,是山上那些人,不是行程表——天门山索道之变、玻璃桥的规定,和没有时刻表的摆渡车。",
+          "带长辈游张家界，比较步行、台阶、索道和百龙天梯的安排，核对通行限制，为排队、休息和返程留出余量。",
         heroAlt: "蓝天下,百龙天梯沿张家界砂岩崖壁升起。",
         navTitle: "带长辈游张家界",
         featuredLinkLabel: "看看慢节奏还走得动哪些",
@@ -399,7 +399,7 @@ export const legacyGuideRegistry = [
         headline:
           "부모님과 함께 가는 장자제: 산은 태워 주지만, 물어볼 사람은 있어야 합니다",
         description:
-          "장자제는 대부분 타고 오릅니다. 연세 있는 분의 하루를 정하는 것은 일정표가 아니라 산에 있는 사람들입니다 — 톈먼산 케이블카 변경, 유리다리 규정, 시간표 없는 셔틀버스.",
+          "부모님과 장자제 여행을 계획할 때 도보, 계단, 케이블카와 바이룽 엘리베이터 동선을 비교하세요. 접근성 제한을 확인하고 대기와 휴식 시간을 확보하세요.",
         heroAlt:
           "파란 하늘 아래 장자제 사암 절벽을 따라 솟아오른 바이룽 엘리베이터.",
         navTitle: "부모님과 함께 가는 장자제",

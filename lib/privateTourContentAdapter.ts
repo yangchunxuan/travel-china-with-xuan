@@ -135,7 +135,7 @@ export function buildPrivateTourContentNodes(): ContentNode[] {
         factIds: [],
         sourceIds: [],
         mediaIds: [],
-        schemaTypes: ["WebPage", "TouristTrip", "Product"],
+        schemaTypes: ["WebPage", "TouristTrip"],
         legacyAliases: [],
         dates: {
           datePublished: product.datePublished,

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { afterEach, test } from "node:test";
-import { tourWhatsAppHref, openTourContactFromLink, privateTourQuoteApiUrl, tourContactOpenEvent } from "../../lib/tourContact.ts";
+import { tourWhatsAppHref, openTourContactFromLink, openGuideContactFromLink, privateTourQuoteApiUrl, tourContactOpenEvent, guideContactOpenEvent } from "../../lib/tourContact.ts";
 import { buildPrivateTourInquiryHref, getPrivateTourInquiryContext, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
@@ -124,6 +124,50 @@ test("modifier clicks and server/no-window execution preserve normal link behavi
   delete globalThis.window; delete globalThis.document;
   const press = click();
   assert.equal(openTourContactFromLink(press.event, href, "en"), false);
+  assert.equal(press.wasPrevented(), false);
+});
+
+test("guide consultation stays on the article and passes only its clean path in all locales", () => {
+  for (const locale of locales) for (const target of ["#planner-contact", "?utm_source=guide&utm_content=article#planner-contact", "?planner=destinations#route-finder"]) {
+    const path = `${prefix(locale)}/guides/shaanxi-history-museum-booking-and-collection-plan/`;
+    const { events, window } = page(`${path}?email=private@example.invalid#private-note`);
+    const originalLocation = window.location.href;
+    const press = click();
+    assert.equal(openGuideContactFromLink(press.event, `${prefix(locale)}/${target}`, locale), true);
+    assert.equal(press.wasPrevented(), true);
+    assert.equal(window.location.href, originalLocation);
+    assert.equal(events.length, 1);
+    assert.equal(events[0].type, guideContactOpenEvent);
+    assert.deepEqual(events[0].detail, { path });
+  }
+});
+
+test("guide consultation does not intercept product, service, foreign-origin or unknown navigation", () => {
+  const guide = "/guides/shaanxi-history-museum-booking-and-collection-plan/";
+  for (const target of ["https://evil.invalid/#planner-contact", "/tours/", `/tours/${beijing}/`, "/zh/#planner-contact", "/#travel-products", "/?service=full-trip-support#planner-contact", `/?tour=${beijing}#planner-contact`, "/?planner=hotels#route-finder", "/?email=private#planner-contact", "http://[invalid"]) {
+    const { events } = page(guide); const press = click();
+    assert.equal(openGuideContactFromLink(press.event, target, "en"), false, target);
+    assert.equal(press.wasPrevented(), false); assert.equal(events.length, 0);
+  }
+  for (const path of ["/", "/guides/", pathFor("en", beijing), `/zh${guide}`]) {
+    const { events } = page(path); const press = click();
+    assert.equal(openGuideContactFromLink(press.event, "/#planner-contact", "en"), false, path);
+    assert.equal(press.wasPrevented(), false); assert.equal(events.length, 0);
+  }
+  const { events } = page(guide, false); const press = click();
+  assert.equal(openGuideContactFromLink(press.event, "/#planner-contact", "en"), false);
+  assert.equal(press.wasPrevented(), false); assert.equal(events.length, 0);
+});
+
+test("guide consultation preserves modifier and middle clicks and the no-JavaScript fallback", () => {
+  for (const modifier of [{ metaKey: true }, { ctrlKey: true }, { shiftKey: true }, { altKey: true }, { button: 1 }]) {
+    const { events } = page("/guides/china-travel-guide/"); const press = click(modifier);
+    assert.equal(openGuideContactFromLink(press.event, "/#planner-contact", "en"), false);
+    assert.equal(press.wasPrevented(), false); assert.equal(events.length, 0);
+  }
+  delete globalThis.window; delete globalThis.document;
+  const press = click();
+  assert.equal(openGuideContactFromLink(press.event, "/#planner-contact", "en"), false);
   assert.equal(press.wasPrevented(), false);
 });
 
