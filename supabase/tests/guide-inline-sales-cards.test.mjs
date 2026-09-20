@@ -139,9 +139,9 @@ test("every registered guide can use the localized safe collection fallback", ()
       }
     }
   }
-  assert.equal(guideIds.length, 202);
+  assert.equal(guideIds.length, 204);
   assert.equal(legacyGuideIds.length, 19);
-  assert.equal(combinations, 606);
+  assert.equal(combinations, 612);
 });
 
 test("unmapped and non-product targets end in the safe collection fallback", () => {

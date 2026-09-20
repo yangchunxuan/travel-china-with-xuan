@@ -64,16 +64,16 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
 
   assert.deepEqual(report.counts, {
     stay: 20,
-    "high-intent-transport": 25,
-    plan: 24,
+    "high-intent-transport": 26,
+    plan: 25,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 72);
+  assert.equal(report.uniqueContentIds, 74);
   assert.equal(report.authorizedExistingService, 25);
-  assert.equal(report.authorizedGenericConversation, 10);
+  assert.equal(report.authorizedGenericConversation, 11);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
-  assert.equal(report.blockedPendingAuthorization, 37);
+  assert.equal(report.blockedPendingAuthorization, 38);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
   assert.deepEqual(
@@ -96,7 +96,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 28 guide and 11 product owners", () => {
+test("commercial links keep the approved 8 hub, 31 guide and 11 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -125,6 +125,7 @@ test("commercial links keep the approved 8 hub, 28 guide and 11 product owners",
       "beijing-to-badaling-great-wall-transfer",
       "beijing-where-to-stay-first-trip",
       "best-zhangjiajie-night-show",
+      "border-town-fenghuang-chadong-shen-congwen",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
       "chengdu-zhangjiajie-itinerary",
       "china-climate-regions-for-trip-timing",
@@ -145,8 +146,10 @@ test("commercial links keep the approved 8 hub, 28 guide and 11 product owners",
       "tianmen-mountain-tickets-and-routes",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
+      "zhangjiajie-arrival-departure-stations",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
+      "zhangjiajie-furong-fenghuang-route-order",
       "zhangjiajie-glass-bridge-vs-skywalk",
       "zhangjiajie-itinerary",
     ],
