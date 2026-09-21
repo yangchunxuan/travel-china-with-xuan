@@ -27,6 +27,18 @@ const config = {
 };
 const beijing = "beijing-highlights-5-day-private-tour";
 const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided"];
+const phaseTwoSlugs = [
+  "shanghai-disneyland-5-day-private-tour",
+  "luoyang-dengfeng-kaifeng-6-day-private-tour",
+  "datong-pingyao-6-day-private-tour",
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour",
+  "chongqing-yangtze-cruise-6-day-private-tour",
+  "xinjiang-ili-sayram-8-day-private-tour",
+  "hulunbuir-7-day-private-tour",
+  "kunming-jianshui-yuanyang-6-day-private-tour",
+  "shenzhen-family-tech-4-day-private-tour",
+  "beijing-xian-shanghai-12-day-private-tour",
+];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -109,9 +121,9 @@ test("legacy email-only and identity-only payloads retain their original semanti
   }
 });
 
-test("new migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
+test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8");
-  for (const slug of privateTourInquirySlugs) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const name = getPrivateTourInquiryContext(slug, locale).name.replaceAll("'", "''");
@@ -156,6 +168,48 @@ test("new migration keeps canonical names, narrow JSON, atomic persistence and s
   assert.match(sql, /answers_json = homepage_answers/);
   assert.match(sql, /from public, anon, authenticated/);
   assert.match(sql, /to service_role/);
+});
+
+test("phase-two migration extends canonical identities and exact priced selections", async () => {
+  const sql = await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8");
+  for (const slug of privateTourInquirySlugs) {
+    assert.ok(sql.includes(`when '${slug}'`), slug);
+    for (const locale of ["en", "zh", "ko"]) {
+      const name = getPrivateTourInquiryContext(slug, locale).name.replaceAll("'", "''");
+      assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
+    }
+  }
+  const selectionCase = sql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase);
+  const pricedRows = {
+    "luoyang-dengfeng-kaifeng-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "zhangye-jiayuguan-dunhuang-7-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "kunming-jianshui-yuanyang-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4\)/u,
+    "shenzhen-family-tech-4-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-shanghai-12-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+  };
+  for (const [slug, condition] of Object.entries(pricedRows)) {
+    const branch = selectionCase.match(
+      new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"),
+    )?.[1];
+    assert.ok(branch && condition.test(branch), `SQL selection drift: ${slug}`);
+  }
+  for (const slug of [
+    "shanghai-disneyland-5-day-private-tour",
+    "datong-pingyao-6-day-private-tour",
+    "chongqing-yangtze-cruise-6-day-private-tour",
+    "xinjiang-ili-sayram-8-day-private-tour",
+    "hulunbuir-7-day-private-tour",
+  ]) {
+    assert.doesNotMatch(selectionCase, new RegExp(slug, "u"), `quote-only selection branch: ${slug}`);
+  }
+  assert.match(sql, /begin;[\s\S]*commit;/u);
+  assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
+  assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
+  assert.doesNotMatch(sql, /create or replace function public\./u);
+  assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_traffic_event_v2/u);
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {
@@ -241,6 +295,47 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       assert.doesNotMatch(message.text, /No itinerary, traveller/);
       assert.equal(message.reply_to, "traveller@example.com");
       }
+    }
+    for (const slug of phaseTwoSlugs) {
+      const travelers = trafficProductTravelerCounts[slug][0];
+      if (!travelers) {
+        const context = getPrivateTourInquiryContext(slug, "ko");
+        currentJob = {
+          ...baseJob,
+          locale: "ko",
+          answers: { informationStatus: "not_provided", productInterest: context },
+        };
+        assert.equal((await (await runWorker()).json()).accepted, 1, slug);
+        const message = messages.at(-1);
+        assert.ok(message.text.includes("Tour selection: 한국어 가이드 포함"), slug);
+        assert.ok(message.html.includes("한국어 가이드 포함"), slug);
+        assert.ok(
+          message.text.includes("The published service scope is recorded below."),
+          slug,
+        );
+        assert.doesNotMatch(message.text, /group size are recorded below/u, slug);
+        continue;
+      }
+      const context = getPrivateTourInquiryContext(
+        slug,
+        "ko",
+        { packageId: "standard-guided", travelers },
+      );
+      const normalized = validateAndNormalizeInquiry(payload(context, "ko"), config);
+      assert.equal(normalized.ok, true, slug);
+      assert.equal(normalized.value.locale, "ko", slug);
+      assert.deepEqual(normalized.value.productInterest, context, slug);
+
+      currentJob = {
+        ...baseJob,
+        locale: "ko",
+        answers: { informationStatus: "not_provided", productInterest: context },
+      };
+      assert.equal((await (await runWorker()).json()).accepted, 1, slug);
+      const message = messages.at(-1);
+      const label = `한국어 가이드 포함 · ${travelers}명 기준`;
+      assert.ok(message.text.includes(label), slug);
+      assert.ok(message.html.includes(label), slug);
     }
     for (const context of [null, getPrivateTourInquiryContext(beijing, "en")]) {
       currentJob = { ...baseJob, answers: { informationStatus: "not_provided", ...(context ? { productInterest: context } : {}) } };

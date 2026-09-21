@@ -40,12 +40,20 @@ const toursHubNoLocalRoute: ProductTarget = {
 };
 
 const destinationTargets = {
-  beijing: [p("beijing-highlights-5-day-private-tour")],
+  beijing: [
+    p("beijing-highlights-5-day-private-tour"),
+    p("beijing-xian-shanghai-12-day-private-tour"),
+  ],
   shanghai: [
     p("shanghai-suzhou-5-day-private-tour"),
     p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    p("shanghai-disneyland-5-day-private-tour"),
+    p("beijing-xian-shanghai-12-day-private-tour"),
   ],
-  xian: [p("xian-terracotta-warriors-5-day-private-tour")],
+  xian: [
+    p("xian-terracotta-warriors-5-day-private-tour"),
+    p("beijing-xian-shanghai-12-day-private-tour"),
+  ],
   chengdu: [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
   guangzhou: [toursHubNoLocalRoute],
   hangzhou: [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
@@ -54,10 +62,18 @@ const destinationTargets = {
     p("zhangjiajie-forest-4-day-private-tour"),
     p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
-  chongqing: [p("chongqing-wulong-5-day-private-tour")],
+  chongqing: [
+    p("chongqing-wulong-5-day-private-tour"),
+    p("chongqing-yangtze-cruise-6-day-private-tour"),
+  ],
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const guideTargets = {
+  "china-10-day-itinerary": [
+    p("beijing-xian-shanghai-12-day-private-tour"),
+    p("beijing-highlights-5-day-private-tour"),
+    p("xian-terracotta-warriors-5-day-private-tour"),
+  ],
   "singapore-to-zhangjiajie-itinerary": [
     classicZhangjiajie,
     p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
@@ -92,11 +108,15 @@ const guideTargets = {
   "shanghai-where-to-stay-first-trip": [
     p("shanghai-suzhou-5-day-private-tour"),
     p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    p("shanghai-disneyland-5-day-private-tour"),
   ],
   "xian-where-to-stay-city-wall-or-dayanta": [p("xian-terracotta-warriors-5-day-private-tour")],
   "terracotta-warriors-without-tour": [p("xian-terracotta-warriors-5-day-private-tour")],
   "shaanxi-history-museum-booking-and-collection-plan": [p("xian-terracotta-warriors-5-day-private-tour")],
-  "shanghai-pudong-or-hongqiao-airport": [p("shanghai-suzhou-5-day-private-tour")],
+  "shanghai-pudong-or-hongqiao-airport": [
+    p("shanghai-suzhou-5-day-private-tour"),
+    p("shanghai-disneyland-5-day-private-tour"),
+  ],
   "shanghai-hangzhou-transport-route": [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
   "how-to-read-a-suzhou-garden": [
     p("shanghai-suzhou-5-day-private-tour"),
@@ -104,8 +124,14 @@ const guideTargets = {
   ],
   "chengdu-panda-base-or-dujiangyan-panda-valley": [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
   "sanxingdui-museum-booking-and-gallery-order": [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
-  "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": [p("chongqing-wulong-5-day-private-tour")],
-  "chongqing-railway-station-selector": [p("chongqing-wulong-5-day-private-tour")],
+  "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": [
+    p("chongqing-wulong-5-day-private-tour"),
+    p("chongqing-yangtze-cruise-6-day-private-tour"),
+  ],
+  "chongqing-railway-station-selector": [
+    p("chongqing-wulong-5-day-private-tour"),
+    p("chongqing-yangtze-cruise-6-day-private-tour"),
+  ],
   "guilin-airport-or-railway-station-arrival-guide": [p("guilin-yangshuo-5-day-private-tour")],
   "guilin-yangshuo-transport-route": [p("guilin-yangshuo-5-day-private-tour")],
   "yangshuo-town-or-yulong-river-where-to-stay": [p("guilin-yangshuo-5-day-private-tour")],
@@ -128,6 +154,7 @@ const guideTargets = {
 } as const satisfies Partial<Record<GuideId, readonly ProductTarget[]>>;
 
 const approvedCommercialGuideIds = [
+  "china-10-day-itinerary",
   "singapore-to-zhangjiajie-itinerary",
   "chengdu-zhangjiajie-itinerary",
   "best-zhangjiajie-night-show",
@@ -273,6 +300,68 @@ const productContexts = {
     guides: ["china-climate-regions-for-trip-timing"],
     relatedProducts: [p("harbin-winter-5-day-private-tour")],
   },
+  "shanghai-disneyland-5-day-private-tour": {
+    destinations: ["shanghai"],
+    guides: [
+      "shanghai-where-to-stay-first-trip",
+      "shanghai-pudong-or-hongqiao-airport",
+    ],
+    relatedProducts: [
+      p("shanghai-suzhou-5-day-private-tour"),
+      p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    ],
+  },
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "datong-pingyao-6-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "chongqing-yangtze-cruise-6-day-private-tour": {
+    destinations: ["chongqing"],
+    guides: [
+      "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "chongqing-railway-station-selector",
+    ],
+    relatedProducts: [p("chongqing-wulong-5-day-private-tour")],
+  },
+  "xinjiang-ili-sayram-8-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "hulunbuir-7-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "kunming-jianshui-yuanyang-6-day-private-tour": {
+    destinations: [],
+    guides: [],
+    relatedProducts: [p("kunming-dali-lijiang-8-day-private-tour")],
+  },
+  "shenzhen-family-tech-4-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "beijing-xian-shanghai-12-day-private-tour": {
+    destinations: ["beijing", "xian", "shanghai"],
+    guides: [
+      "china-10-day-itinerary",
+      "forbidden-city-for-foreign-visitors",
+      "terracotta-warriors-without-tour",
+      "shanghai-where-to-stay-first-trip",
+    ],
+    relatedProducts: [
+      p("beijing-highlights-5-day-private-tour"),
+      p("xian-terracotta-warriors-5-day-private-tour"),
+      p("shanghai-suzhou-5-day-private-tour"),
+    ],
+  },
 } as const satisfies Record<string, ProductContextDefinition>;
 
 const approvedCommercialProductSlugs = [
@@ -297,6 +386,16 @@ const approvedCommercialProductSlugs = [
   "huangshan-hongcun-huizhou-5-day-private-tour",
   "jingdezhen-wuyuan-wangxian-6-day-private-tour",
   "changbaishan-yanji-winter-6-day-private-tour",
+  "shanghai-disneyland-5-day-private-tour",
+  "luoyang-dengfeng-kaifeng-6-day-private-tour",
+  "datong-pingyao-6-day-private-tour",
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour",
+  "chongqing-yangtze-cruise-6-day-private-tour",
+  "xinjiang-ili-sayram-8-day-private-tour",
+  "hulunbuir-7-day-private-tour",
+  "kunming-jianshui-yuanyang-6-day-private-tour",
+  "shenzhen-family-tech-4-day-private-tour",
+  "beijing-xian-shanghai-12-day-private-tour",
 ] as const;
 
 function assertExactKeys(

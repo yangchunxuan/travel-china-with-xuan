@@ -11,7 +11,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/destinations/shanghai/hero-1600.webp",
       "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "f68ac3ee3eded48da08982be5a11d37eafd20e7672286275fd814fd90fb94048"
     },
     {
@@ -22,7 +27,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "5d0237c4981997802243d3730b547dc579d5118bb186063ebe8fda13c641bff6",
       "rightsEvidenceNeedle": "CC BY 2.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "cf3ec2fd3a5a385283d7cd25d9e6431cf9574a3e3e3002d5cc2aa597c90f6edd"
     },
     {
@@ -33,7 +43,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/destinations/xian/hero-1600.webp",
       "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "5c5f0773c465293bd777ae7145df23ec0f40c1dd7d758875da7ed07b0dfd8de0"
     },
     {
@@ -44,7 +59,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "5012d18e483d49550a0f156486fee3325c46bc0dcca84751c7e37d736581d6c8",
       "rightsEvidenceNeedle": "The project owner authorised selecting real photographs from the organised",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "56b0cd561981ec60e757a91b7e7ad68f9439a682314ccbc6a78f4c0b91a44bb6"
     },
     {
@@ -55,7 +75,12 @@
       "provenancePath": "content/guides/yangshuo-town-or-yulong-river-where-to-stay/source-log.md",
       "provenanceNeedle": "9c22593ff64729770349a5cd10164d4daed1aa18efaa9ab39f68a1a1ceafaff6",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "d87f8f61beec44e0d400630a203366d565678cf0116283a8ad262e7067bdb746"
     },
     {
@@ -66,7 +91,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "fcccd7b780e4dfa0c490387738a8ab85496b3e7155189fda397b8653cae2691e",
       "rightsEvidenceNeedle": "CC0 1.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "0618b7d45318428b3fc7ce35960a2ba08f887f45a08e4841002ef2995ba42e25"
     },
     {
@@ -77,7 +107,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "a6c5b39c96a98a7f4732138f97b55d96d402f15349f857cb94dccddf8dea2e23",
       "rightsEvidenceNeedle": "The project owner authorised selecting real photographs from the organised",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "950854ba52dafb93ad829806726d78413a51779df56fd44521575fd781046298"
     },
     {
@@ -88,7 +123,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/destinations/beijing/hero-1600.webp",
       "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "dbb0bf4c8319d05a663e527be8de966c8036d683f6fcc2fe1f97cfaaff470f56"
     },
     {
@@ -99,7 +139,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "b6e31b217206d92090e20f7c5ee1245304500b2ecec24d361be4cbf825200245",
       "rightsEvidenceNeedle": "The owner authorised these organised libraries for Homeground",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x863"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
       "familySha256": "dbfa7ff726e7d8c5d381baba80ab639af6aac24aec1fae4f9e1dfe45fdda663d"
     },
     {
@@ -110,7 +155,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "2e2988a45acf4c8da9e805951aa9c44cb38b144b6d4ee5692aac48fa6d87e565",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "1e59831635f1b2c5a4427ac455897d7b88a9ace6b07f39650d0ad4fd08ad3fe3"
     },
     {
@@ -121,7 +171,12 @@
       "provenancePath": "content/product-previews/zhangjiajie-4-day-private-tour/image-preview-plan.md",
       "provenanceNeedle": "hero/sunlit-forest-pillars-174.jpg",
       "rightsEvidenceNeedle": "The site owner selected the organized-library images",
-      "dimensions": ["320x213", "640x427", "960x640", "1380x920"],
+      "dimensions": [
+        "320x213",
+        "640x427",
+        "960x640",
+        "1380x920"
+      ],
       "familySha256": "674f8b3e90713a002213252f27c1008966284a185f7699283219e95019c2de13"
     },
     {
@@ -132,7 +187,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "d90a798e0ae861bc6c160d9d904e1a75461c2e4b923c9885802a3e1624e278bb"
     },
     {
@@ -143,7 +203,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/kunming-dali-lijiang-8-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 3.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "86513558f4805ed40ffbf7920275564e21aacf689b5826308b94374c41571755"
     },
     {
@@ -154,7 +219,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/guizhou-huangguoshu-libo-miao-7-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "02b25073534d8f44a70efafcdc9a64c22e0e924b6e9aef2fb4a6e39259ea31a4"
     },
     {
@@ -165,7 +235,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/xiamen-tulou-quanzhou-6-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY 2.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "2a9fa50aa83b58cbefa56112d7f6d16040758e4c1b4c097cac40aac7a436aae5"
     },
     {
@@ -176,7 +251,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/chaozhou-shantou-nanao-5-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "4d694d9ebecafea3cbc4e5708cc6e85f0e2f724bcabc25211f378e4015bf0a93"
     },
     {
@@ -187,7 +267,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/chengdu-chongqing-8-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "665399df4e815f88a7ee1df32b87345d2ac1a68070e76e33b350c4e8c782a478"
     },
     {
@@ -198,7 +283,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/guangzhou-shunde-foshan-5-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "1b1a5aae60a51a5b4efac722467fe39226a3261168423263c25602170aef951a"
     },
     {
@@ -209,7 +299,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/huangshan-hongcun-huizhou-5-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 3.0 IGO",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "b78ab2ead92c4174c40b658d21ada367084d69c3da25a324e2b11c61f205ba71"
     },
     {
@@ -220,7 +315,12 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/jingdezhen-wuyuan-wangxian-6-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 4.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "0dc384090b810d6d0366fd7fc22fbb618b31d9369717ae0a39ddc27dfa1275dc"
     },
     {
@@ -231,8 +331,173 @@
       "provenancePath": "docs/homeground-photo-provenance.md",
       "provenanceNeedle": "public/images/tours/changbaishan-yanji-winter-6-day-private-tour/hero.webp",
       "rightsEvidenceNeedle": "CC BY-SA 3.0",
-      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
       "familySha256": "eb0fe159c74133f1d2debe0569b01576b206b4c89897e9833fd968b85849d560"
+    },
+    {
+      "productId": "shanghai-disneyland-5-day-private-tour",
+      "sourcePath": "public/images/tours/shanghai-disneyland-5-day-private-tour/hero.webp",
+      "sourceSha256": "aee5bb7c434cab67232b51c2b7f9a64043af8b44c153bc1d4eb3c0e1e5003042",
+      "rightsBasis": "Wikimedia Commons, Josh Grenier, CC BY 2.0; Flickr license reviewed by FlickreviewR 2",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/shanghai-disneyland-5-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY 2.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "4913fb50145b25a2cd9ea151365264bbeab452de9ab8ed024b3172cb1db0d719"
+    },
+    {
+      "productId": "luoyang-dengfeng-kaifeng-6-day-private-tour",
+      "sourcePath": "public/images/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/hero.webp",
+      "sourceSha256": "f18563af935f2dae7548c13d639f75d959d019c71e52927d07e640e704a27f68",
+      "rightsBasis": "Wikimedia Commons, Hiroooooo, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "5ef08e5cb5a65e909e2d543eaa3d1a494fa315cfb0036829f13951fb7b2a73b1"
+    },
+    {
+      "productId": "datong-pingyao-6-day-private-tour",
+      "sourcePath": "public/images/tours/datong-pingyao-6-day-private-tour/hero.webp",
+      "sourceSha256": "2d17945e436005d762430153f8a3b2ce100c992af84e629b1e9975660580f0b3",
+      "rightsBasis": "Wikimedia Commons, Dudva, CC0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/datong-pingyao-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "0b40f8c49b1d11be352094780b5686c7138ee449174ca245f9121541937c2764"
+    },
+    {
+      "productId": "zhangye-jiayuguan-dunhuang-7-day-private-tour",
+      "sourcePath": "public/images/tours/zhangye-jiayuguan-dunhuang-7-day-private-tour/hero.webp",
+      "sourceSha256": "0e59639809b9280799e8f8f112c3cf379111270bb4a7c58f2efcf2bf042cc497",
+      "rightsBasis": "Wikimedia Commons, Marcus Hsu, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/zhangye-jiayuguan-dunhuang-7-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "4a14658104e2b9215942888a5617bdc86845d3b5514062c2db3657d667c2cece"
+    },
+    {
+      "productId": "chongqing-yangtze-cruise-6-day-private-tour",
+      "sourcePath": "public/images/tours/chongqing-yangtze-cruise-6-day-private-tour/hero.webp",
+      "sourceSha256": "81f445d90337cef71c2af80ba383da4be2bd00ac470f6ed201b4769993e778c2",
+      "rightsBasis": "Wikimedia Commons, Tan Wei Liang Byorn, CC BY 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/chongqing-yangtze-cruise-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "5a2463ec84c23ee6e5bcdc530b13d80c8dba646cd3d2ea4d1523849b959f9186"
+    },
+    {
+      "productId": "xinjiang-ili-sayram-8-day-private-tour",
+      "sourcePath": "public/images/tours/xinjiang-ili-sayram-8-day-private-tour/hero.webp",
+      "sourceSha256": "9c8778599fed2fde0b42b8e9be0101846c118e5d8d6260fe63fa1c7c446b5154",
+      "rightsBasis": "Wikimedia Commons, Tomskyhaha, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/xinjiang-ili-sayram-8-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "e50facc9431bcd833d61edac7a79314d4783cb2446655f8f009e25ca128a50d7"
+    },
+    {
+      "productId": "hulunbuir-7-day-private-tour",
+      "sourcePath": "public/images/tours/hulunbuir-7-day-private-tour/hero.webp",
+      "sourceSha256": "018b0a7741f570ac4d25a0ac5996e89781851a142a4066185bb314ec78ef388f",
+      "rightsBasis": "Wikimedia Commons, Sergio Tittarini, CC BY 2.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/hulunbuir-7-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY 2.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "ea05351f3d585a662fea59c2ba0d79efa5fcea754d5dc781b8a2152c06a26c47"
+    },
+    {
+      "productId": "kunming-jianshui-yuanyang-6-day-private-tour",
+      "sourcePath": "public/images/tours/kunming-jianshui-yuanyang-6-day-private-tour/hero.webp",
+      "sourceSha256": "12a61436dee06bd2a5ab2d816a4243a69ccd3db080b2818eff1ed6f6478e768a",
+      "rightsBasis": "Wikimedia Commons, Takeaway, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/kunming-jianshui-yuanyang-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "840d3658cbb386ff5ba43bb6005a318936c2bef632fa80904562ec191249c45b"
+    },
+    {
+      "productId": "shenzhen-family-tech-4-day-private-tour",
+      "sourcePath": "public/images/tours/shenzhen-family-tech-4-day-private-tour/hero.webp",
+      "sourceSha256": "13f3d32f468fbc06fd19c4bdd1d2a32eb487685f8678ea19bc9894b672e30f99",
+      "rightsBasis": "Wikimedia Commons, Vikarna, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/shenzhen-family-tech-4-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "804a14be77148c47570784bedd31ed6e23399a4aa09d5d4ee72bb447d4e13429"
+    },
+    {
+      "productId": "beijing-xian-shanghai-12-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-shanghai-12-day-private-tour/hero.webp",
+      "sourceSha256": "e766c372be487e3f7d3b1add000d540eb16f54e20e20865d6e01e26422be70e7",
+      "rightsBasis": "Wikimedia Commons, Pixelflake, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-shanghai-12-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "ece5f5becde8dd6015af31d2071508d3f42088d4d68d135f17ce423456a9d607"
     }
   ]
 }

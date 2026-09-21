@@ -3,6 +3,8 @@ import type { HomegroundLocale } from "./homegroundI18n";
 import { shanghaiSuzhouAnswers, shanghaiSuzhouHangzhouAnswers } from "./jiangnanTourAnswers.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhaseTwoProducts.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -3294,6 +3296,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     zhangjiajieForestFixedRoute,
     zhangjiajieFurongFenghuang,
     ...privateTourExpansionProducts,
+    ...privateTourExpansionPhaseTwoProducts,
   ],
 );
 

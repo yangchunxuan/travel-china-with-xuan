@@ -640,7 +640,9 @@ async function sendThroughResend(
       ? privateTourInquirySelectionLabel(productInterest, job.locale)
       : null;
     const informationNote = selectionLabel
-      ? "Selected service version and group size are recorded below. Travel dates, traveller identities, budget and free-text details were not collected."
+      ? productInterest?.selection
+        ? "Selected service version and group size are recorded below. Travel dates, traveller identities, budget and free-text details were not collected."
+        : "The published service scope is recorded below. Travel dates, traveller identities, group size, budget and free-text details were not collected."
       : "No itinerary, traveller, date, destination, budget or free-text details were collected.";
     if (
       job.reply_channel !== "email" ||
