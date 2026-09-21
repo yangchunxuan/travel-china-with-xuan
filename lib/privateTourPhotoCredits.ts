@@ -1,4 +1,5 @@
 import type { LocalizedText, PrivateTourLocale } from "./privateTourProducts";
+import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPhotoCredits";
 
 export interface PrivateTourPhotoCredit {
   subject: LocalizedText;
@@ -46,6 +47,7 @@ const publicDomain = "https://creativecommons.org/publicdomain/mark/1.0/";
 export const privateTourPhotoCreditsBySlug: Readonly<
   Record<string, readonly PrivateTourPhotoCredit[]>
 > = Object.freeze({
+  ...privateTourExpansionPhotoCreditsBySlug,
   "shanghai-suzhou-hangzhou-6-day-private-tour": [
     credit(
       text("Pan Men, Suzhou", "苏州盘门", "쑤저우 판먼"),

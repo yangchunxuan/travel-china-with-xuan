@@ -29,7 +29,7 @@ const expectedSlugs = [
 ].sort();
 const expectedPublishedCount = expectedSlugs.length;
 const reviewedDerivativeRightsSha256 =
-  "8560b24d1b0dbb1b4de48a1b7f61975a09428064ff7dbd73aeba4946f557c8e1";
+  "dfb322e8499c2d4438999459cc53a32774c86fd3cab9a363ec08cb21cf3e715f";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);

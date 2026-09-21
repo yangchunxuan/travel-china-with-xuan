@@ -41,6 +41,41 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "zhangjiajie-forest-4-day-private-tour": ["fixed-route-english-guided"],
   "zhangjiajie-furong-fenghuang-7-day-private-tour": ["standard-guided"],
   "zhangjiajie-4-day-private-tour": [],
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour": ["standard-guided"],
+  "kunming-dali-lijiang-8-day-private-tour": ["standard-guided"],
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour": ["standard-guided"],
+  "xiamen-tulou-quanzhou-6-day-private-tour": ["standard-guided"],
+  "chaozhou-shantou-nanao-5-day-private-tour": ["standard-guided"],
+  "chengdu-chongqing-8-day-private-tour": ["standard-guided"],
+  "guangzhou-shunde-foshan-5-day-private-tour": ["standard-guided"],
+  "huangshan-hongcun-huizhou-5-day-private-tour": ["standard-guided"],
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour": ["standard-guided"],
+  "changbaishan-yanji-winter-6-day-private-tour": ["standard-guided-winter"],
+};
+export const trafficProductTravelerCounts: Readonly<
+  Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
+> = {
+  "shanghai-suzhou-hangzhou-6-day-private-tour": [2, 4],
+  "chengdu-pandas-sanxingdui-5-day-private-tour": [2, 4],
+  "xian-terracotta-warriors-5-day-private-tour": [2, 4],
+  "chongqing-wulong-5-day-private-tour": [2, 4],
+  "guilin-yangshuo-5-day-private-tour": [2, 4],
+  "harbin-winter-5-day-private-tour": [2, 4],
+  "shanghai-suzhou-5-day-private-tour": [2, 4],
+  "beijing-highlights-5-day-private-tour": [2, 4],
+  "zhangjiajie-forest-4-day-private-tour": [2, 4],
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": [2, 4],
+  "zhangjiajie-4-day-private-tour": [],
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour": [2],
+  "kunming-dali-lijiang-8-day-private-tour": [6],
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour": [2],
+  "xiamen-tulou-quanzhou-6-day-private-tour": [2],
+  "chaozhou-shantou-nanao-5-day-private-tour": [2, 4, 6],
+  "chengdu-chongqing-8-day-private-tour": [2],
+  "guangzhou-shunde-foshan-5-day-private-tour": [2, 4, 6],
+  "huangshan-hongcun-huizhou-5-day-private-tour": [4],
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour": [],
+  "changbaishan-yanji-winter-6-day-private-tour": [],
 };
 export function isTrafficProductSlug(value: unknown): value is string {
   return typeof value === "string" &&
@@ -51,7 +86,10 @@ export function isTrafficProductSelection(
 ): boolean {
   return isTrafficProductSlug(slug) && typeof packageId === "string" &&
     trafficProductPackages[slug].includes(packageId) &&
-    (travelers === 2 || travelers === 4);
+    typeof travelers === "number" && Number.isInteger(travelers) &&
+    trafficProductTravelerCounts[slug].includes(
+      travelers as 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9,
+    );
 }
 
 export const trafficContactActionCodes = [
@@ -90,7 +128,7 @@ export interface NormalizedTrafficEvent {
   clientSequence?: number;
   productSlug?: string | null;
   packageId?: string | null;
-  travelers?: 2 | 4 | null;
+  travelers?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | null;
   surface?: (typeof trafficSurfaces)[number] | null;
   errorCode?: (typeof trafficErrorCodes)[number] | null;
 }
@@ -480,7 +518,7 @@ export function validateAndNormalizeTrafficEventBatch(
           clientSequence: candidate.clientSequence as number,
           productSlug: productSlug as string | null,
           packageId: packageId as string | null,
-          travelers: travelers as 2 | 4 | null,
+          travelers: travelers as 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | null,
           surface: surface as NormalizedTrafficEvent["surface"],
           errorCode: errorCode as NormalizedTrafficEvent["errorCode"],
         };

@@ -936,11 +936,9 @@
 }
 
 :global(html[data-tour-motion="ready"]) .page [data-tour-reveal] {
-  opacity: 0;
-  transform: translateY(1.75rem);
-  transition:
-    opacity 620ms ease,
-    transform 620ms cubic-bezier(0.2, 0.72, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0.7rem);
+  transition: transform 420ms cubic-bezier(0.2, 0.72, 0.2, 1);
 }
 
 :global(html[data-tour-motion="ready"])

@@ -119,7 +119,10 @@ test("Beijing card starting prices name the exact package in all languages", () 
     const item = getPublishedPrivateTourCatalog(locale).find((tour) => tour.slug === "beijing-highlights-5-day-private-tour");
     const noGuide = privateTourProducts.find((tour) => tour.slug === item.slug).packages.find((option) => option.id === "no-guide");
     assert.equal(item.startingPrice.serviceLabel, noGuide.label[locale]);
-    assert.equal(item.startingPrice.cny, noGuide.prices.find((row) => row.travelers === 2).cnyPerPerson);
+    assert.equal(
+      item.startingPrice.cny,
+      noGuide.prices.find((row) => row.travelers === item.startingPrice.travelers).cnyPerPerson,
+    );
   }
 });
 

@@ -59,7 +59,7 @@ async function loadComponent(path, overrides = {}, window) {
   return module.exports;
 }
 
-test("all three-language catalog price links land on the exact published service and two-person row", () => {
+test("all three-language catalog price links land on the exact lowest published service/group row", () => {
   for (const locale of locales) {
     const catalog = getPublishedPrivateTourCatalog(locale);
     for (const product of privateTourProducts) {
@@ -67,6 +67,13 @@ test("all three-language catalog price links land on the exact published service
       const starting = getPrivateTourStartingPrice(localized);
       const item = catalog.find((candidate) => candidate.slug === product.slug);
       const url = new URL(item.startingPriceHref, "https://homegroundchina.com");
+      if (!starting) {
+        assert.equal(item.startingPrice, null);
+        assert.equal(item.startingPriceHref, localized.path);
+        assert.equal(url.pathname, localized.path);
+        assert.equal(url.search, "");
+        continue;
+      }
       const selection = inquiry.getPrivateTourDetailSelectionFromSearchParams(product.slug, url.searchParams);
       assert.deepEqual(selection, starting.selection);
       assert.equal(url.pathname, localized.path);
@@ -75,7 +82,12 @@ test("all three-language catalog price links land on the exact published service
       assert.equal(item.startingPrice.serviceLabel, localized.packages.find((p) => p.id === selection.packageId).label);
       const row = product.packages.find((p) => p.id === selection.packageId).prices.find((p) => p.travelers === selection.travelers);
       assert.equal(item.startingPrice.cny, row.cnyPerPerson);
-      assert.equal(selection.travelers, 2);
+      assert.equal(
+        product.packages
+          .find((option) => option.id === selection.packageId)
+          .prices.some((row) => row.travelers === selection.travelers),
+        true,
+      );
     }
     for (const item of getHomepagePrivateTourItems(locale)) {
       const published = catalog.find((candidate) => candidate.slug === item.id);
@@ -85,8 +97,8 @@ test("all three-language catalog price links land on the exact published service
         assert.equal(item.startingPrice.travelers, 4);
         assert.equal(item.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
         assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
-        assert.equal(published.startingPrice.travelers, 2, "homepage promotion does not change the catalog entry basis");
-        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0449", zh: "¥2,918", ko: "₩630,000" }[locale]);
+        assert.equal(published.startingPrice.travelers, 4, "catalog uses the lowest published per-person tier and states its group basis");
+        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
         continue;
       }
       assert.equal(item.href, published.startingPriceHref);
@@ -153,8 +165,38 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
   assert.deepEqual(beijing.packages.find((p) => p.id === "no-guide").rows.map((row) => row.amount), [770, 620]);
   assert.equal(getPrivateTourStartingPrice(beijing).selection.packageId, "no-guide");
   const guilin = getPublishedPrivateTourCatalog("en").find((p) => p.slug === cases[1][0]);
-  assert.equal(guilin.startingPrice.amount, 769);
-  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0769");
+  assert.equal(guilin.startingPrice.amount, 629);
+  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0629");
+});
+
+test("source-currency product prices remain exact in every locale", () => {
+  const publishedTiers = privateTourProducts.flatMap((product) =>
+    product.packages.flatMap((tourPackage) =>
+      tourPackage.prices
+        .filter((tier) => tier.publishedPrice)
+        .map((tier) => ({
+          slug: product.slug,
+          packageId: tourPackage.id,
+          travelers: tier.travelers,
+          publishedPrice: tier.publishedPrice,
+        })),
+    ),
+  );
+
+  assert.equal(publishedTiers.length, 12);
+  for (const locale of locales) {
+    for (const expected of publishedTiers) {
+      const localized = localizePrivateTourProduct(
+        privateTourProducts.find((product) => product.slug === expected.slug),
+        locale,
+      );
+      const row = localized.packages
+        .find((tourPackage) => tourPackage.id === expected.packageId)
+        .rows.find((candidate) => candidate.travelers === expected.travelers);
+      assert.equal(row.currency, expected.publishedPrice.currency, `${expected.slug}:${locale}`);
+      assert.equal(row.amount, expected.publishedPrice.amountPerPerson, `${expected.slug}:${locale}`);
+    }
+  }
 });
 
 test("explicit USD prices retain conversion and display validation", () => {

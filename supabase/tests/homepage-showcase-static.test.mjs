@@ -534,11 +534,20 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   for (const product of privateTourProducts) {
     assert.equal(product.servicePolicy.shoppingStops, false);
     assert.equal(product.servicePolicy.addedServicesRequirePriorAgreement, true);
-    assert.match(product.bookingNote.en, /starting prices?/i);
+    const quoteOnly = product.packages.every(
+      (tourPackage) => tourPackage.quoteOnly === true,
+    );
+    if (quoteOnly) {
+      assert.match(product.bookingNote.en, /enquiry-only|quote/i);
+      assert.match(product.bookingNote.zh, /询价|报价/);
+      assert.match(product.bookingNote.ko, /견적/);
+    } else {
+      assert.match(product.bookingNote.en, /starting prices?/i);
+      assert.match(product.bookingNote.zh, /起价/);
+      assert.match(product.bookingNote.ko, /시작가/);
+    }
     assert.match(product.bookingNote.en, /quote|before payment|written/i);
-    assert.match(product.bookingNote.zh, /起价/);
     assert.match(product.bookingNote.zh, /报价|付款前|核价/);
-    assert.match(product.bookingNote.ko, /시작가/);
     assert.match(product.bookingNote.ko, /견적|결제 전|재견적/);
     const publicPolicyCopy = {
       en: [product.serviceNote.en, ...product.packages.map((item) => item.summary.en)].join(" "),

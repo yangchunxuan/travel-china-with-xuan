@@ -1,5 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourProducts, type PrivateTourPriceTier } from "./privateTourProducts.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 
 export const privateTourInquiryQueryKey = "tour";
@@ -16,6 +18,16 @@ export const privateTourInquirySlugs = [
   "zhangjiajie-forest-4-day-private-tour",
   "zhangjiajie-furong-fenghuang-7-day-private-tour",
   "zhangjiajie-4-day-private-tour",
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+  "kunming-dali-lijiang-8-day-private-tour",
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+  "xiamen-tulou-quanzhou-6-day-private-tour",
+  "chaozhou-shantou-nanao-5-day-private-tour",
+  "chengdu-chongqing-8-day-private-tour",
+  "guangzhou-shunde-foshan-5-day-private-tour",
+  "huangshan-hongcun-huizhou-5-day-private-tour",
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour",
+  "changbaishan-yanji-winter-6-day-private-tour",
 ] as const;
 
 export type PrivateTourInquirySlug =
@@ -29,7 +41,7 @@ export interface PrivateTourInquiryContext {
 
 export interface PrivateTourInquirySelection {
   readonly packageId: string;
-  readonly travelers: 2 | 4;
+  readonly travelers: PrivateTourPriceTier["travelers"];
 }
 
 export const privateTourInquirySelectionQueryKeys = {
@@ -51,18 +63,23 @@ export function getPrivateTourInquirySelection(
   travelersValue: string | number | null | undefined,
 ): PrivateTourInquirySelection | null {
   if (!isPrivateTourInquirySlug(slug) || !packageValue) return null;
-  const allowedPackages = slug === "beijing-highlights-5-day-private-tour"
-    ? ["english-guided", "no-guide"]
-    : slug === "harbin-winter-5-day-private-tour"
-      ? ["standard-guided-winter"]
-      : slug === "zhangjiajie-forest-4-day-private-tour"
-        ? ["fixed-route-english-guided"]
-        : slug === "zhangjiajie-4-day-private-tour"
-          ? []
-          : ["standard-guided"];
-  if (!allowedPackages.includes(packageValue)) return null;
-  if (travelersValue !== 2 && travelersValue !== 4 && travelersValue !== "2" && travelersValue !== "4") return null;
-  return { packageId: packageValue, travelers: Number(travelersValue) as 2 | 4 };
+  const travelers = Number(travelersValue);
+  if (!Number.isInteger(travelers) || travelers < 2 || travelers > 9) return null;
+  if (
+    typeof travelersValue === "string" &&
+    travelersValue !== String(travelers)
+  ) return null;
+  const product = privateTourProducts.find((candidate) => candidate.slug === slug);
+  const tourPackage = product?.packages.find(
+    (candidate) => candidate.id === packageValue,
+  );
+  if (
+    !tourPackage?.prices.some((row) => row.travelers === travelers)
+  ) return null;
+  return {
+    packageId: packageValue,
+    travelers: travelers as PrivateTourPriceTier["travelers"],
+  };
 }
 
 export function getPrivateTourDetailSelectionFromSearchParams(
@@ -184,6 +201,56 @@ const privateTourInquiryNames: Readonly<
     zh: "张家界4天3晚：峰林、玻璃桥与天门山",
     ko: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
   },
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
+    en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour",
+    zh: "成都·九寨沟·黄龙 6 天 5 晚私家团",
+    ko: "청두·주자이거우·황룽 6일 프라이빗 투어",
+  },
+  "kunming-dali-lijiang-8-day-private-tour": {
+    en: "Kunming, Dali & Lijiang: 8-Day Private Tour",
+    zh: "昆明·大理·丽江 8 天 7 晚私家团",
+    ko: "쿤밍·다리·리장 8일 프라이빗 투어",
+  },
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour": {
+    en: "Guiyang, Huangguoshu, Libo, Xijiang & Zhenyuan: 7-Day Private Tour",
+    zh: "贵阳·黄果树·荔波·西江苗寨·镇远 7 天 6 晚私家团",
+    ko: "구이양·황궈수·리보·시장·전위안 7일 프라이빗 투어",
+  },
+  "xiamen-tulou-quanzhou-6-day-private-tour": {
+    en: "Xiamen, Fujian Tulou, Anxi & Quanzhou: 6-Day Private Tour",
+    zh: "厦门·福建土楼·安溪·泉州 6 天 5 晚私家团",
+    ko: "샤먼·푸젠 토루·안시·취안저우 6일 프라이빗 투어",
+  },
+  "chaozhou-shantou-nanao-5-day-private-tour": {
+    en: "Shantou, Nan'ao & Chaozhou: 5-Day Private Tour",
+    zh: "汕头·南澳·潮州 5 天 4 晚私家团",
+    ko: "산터우·난아오·차오저우 5일 프라이빗 투어",
+  },
+  "chengdu-chongqing-8-day-private-tour": {
+    en: "Chengdu, Leshan, Chongqing, Wulong & Dazu: 8-Day Private Tour",
+    zh: "成都·乐山·重庆·武隆·大足 8 天 7 晚私家团",
+    ko: "청두·러산·충칭·우룽·대족 8일 프라이빗 투어",
+  },
+  "guangzhou-shunde-foshan-5-day-private-tour": {
+    en: "Guangzhou, Shunde & Foshan: 5-Day Private Tour",
+    zh: "广州·顺德·佛山 5 天 4 晚私家团",
+    ko: "광저우·순더·포산 5일 프라이빗 투어",
+  },
+  "huangshan-hongcun-huizhou-5-day-private-tour": {
+    en: "Huangshan, Hongcun & Huizhou: 5-Day Private Tour",
+    zh: "黄山·宏村·徽州 5 天 4 晚私家团",
+    ko: "황산·홍춘·후이저우 5일 프라이빗 투어",
+  },
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour": {
+    en: "Jingdezhen, Wuyuan, Sanqingshan & Wangxian Valley: 6-Day Private Tour",
+    zh: "景德镇·婺源·三清山·望仙谷 6 天 5 晚私家团",
+    ko: "징더전·우위안·삼청산·왕셴구 6일 프라이빗 투어",
+  },
+  "changbaishan-yanji-winter-6-day-private-tour": {
+    en: "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour",
+    zh: "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团",
+    ko: "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
+  },
 };
 
 export const privateTourInquiryContactCopy = {
@@ -243,9 +310,12 @@ export function getPrivateTourInquiryContext(
     ? getPrivateTourInquirySelection(value, selection.packageId, selection.travelers)
     : null;
   if (selection && !validatedSelection) return null;
+  const structuredProduct = privateTourProducts.find(
+    (candidate) => candidate.slug === value,
+  );
   return {
     slug: value,
-    name: privateTourInquiryNames[value][locale],
+    name: structuredProduct?.title[locale] ?? privateTourInquiryNames[value][locale],
     ...(validatedSelection ? { selection: validatedSelection } : {}),
   };
 }

@@ -214,7 +214,7 @@ function assertPrivateTourPriceLinks(html, products, context) {
 
   for (const product of products) {
     const target = new URL(product.startingPriceHref, siteUrl);
-    const selection = product.startingPrice.selection;
+    const selection = product.startingPrice?.selection;
     if (target.pathname !== product.href || target.hash) {
       throw new Error(`${context}: price entry changed the canonical route for ${product.slug}`);
     }
@@ -225,14 +225,14 @@ function assertPrivateTourPriceLinks(html, products, context) {
         throw new Error(`${context}: price entry does not identify its published service/group for ${product.slug}`);
       }
     } else if (target.search) {
-      throw new Error(`${context}: fixed legacy tour acquired an unsupported selection for ${product.slug}`);
+      throw new Error(`${context}: quote-only or fixed legacy tour acquired an unsupported selection for ${product.slug}`);
     }
   }
 
   assertSameStringSet(
     actualHrefs,
     products.map((product) => product.startingPriceHref),
-    `${context} exact published-price detail links`,
+    `${context} exact published-price or quote detail links`,
   );
 }
 

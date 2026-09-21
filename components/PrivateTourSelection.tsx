@@ -53,6 +53,27 @@ export function PrivateTourSelectionProvider({
   return <SelectionContext.Provider value={{ slug, selection, setSelection: changeSelection }}>{children}</SelectionContext.Provider>;
 }
 
+/** Quote-only tours have no published traveller/price row to initialise. */
+export function PrivateTourSelectionBoundary({
+  slug,
+  initialSelection,
+  children,
+}: {
+  slug: PrivateTourInquirySlug;
+  initialSelection: PrivateTourInquirySelection | null;
+  children: ReactNode;
+}) {
+  if (!initialSelection) return children;
+  return (
+    <PrivateTourSelectionProvider
+      slug={slug}
+      initialSelection={initialSelection}
+    >
+      {children}
+    </PrivateTourSelectionProvider>
+  );
+}
+
 export function usePrivateTourSelection() {
   return useContext(SelectionContext);
 }

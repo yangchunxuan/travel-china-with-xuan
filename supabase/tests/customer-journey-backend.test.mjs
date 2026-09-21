@@ -3,7 +3,7 @@ import { createHash, createHmac } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
-  trafficEventTypesV2, trafficProductPackages,
+  trafficEventTypesV2, trafficProductPackages, trafficProductTravelerCounts,
   validateAndNormalizeTrafficEventBatch, validateAndNormalizeTrafficSessionStart,
 } from "../functions/_shared/traffic-contracts.ts";
 import { sanitizeAdminTrafficRpc } from "../functions/_shared/admin-traffic-contracts.ts";
@@ -50,13 +50,23 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  assert.equal(Object.keys(trafficProductPackages).length, 11);
+  assert.equal(Object.keys(trafficProductPackages).length, 21);
+  assert.deepEqual(
+    Object.keys(trafficProductTravelerCounts).sort(),
+    Object.keys(trafficProductPackages).sort(),
+  );
   for (const [productSlug, packages] of Object.entries(trafficProductPackages)) {
     assert.equal(validateAndNormalizeTrafficEventBatch(batch({ ...event(), productSlug })).ok, true);
-    for (const packageId of packages) for (const travelers of [2, 4]) {
+    for (const packageId of packages) for (const travelers of trafficProductTravelerCounts[productSlug]) {
       assert.equal(validateAndNormalizeTrafficEventBatch(batch({
         ...event("product_selection_changed"), productSlug, packageId, travelers,
       })).ok, true);
+    }
+    for (const packageId of packages) for (const travelers of [2, 3, 4, 5, 6, 7, 8, 9]) {
+      if (trafficProductTravelerCounts[productSlug].includes(travelers)) continue;
+      assert.equal(validateAndNormalizeTrafficEventBatch(batch({
+        ...event("product_selection_changed"), productSlug, packageId, travelers,
+      })).ok, false, `${productSlug}:${packageId}:${travelers}`);
     }
   }
   for (const change of [

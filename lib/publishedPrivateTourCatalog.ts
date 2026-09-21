@@ -8,6 +8,8 @@ import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeC
 import { getPrivateTourStartingPrice } from "./privateTourStartingPrice.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./privateTourInquiryContext.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { privateTourExpansionProfiles } from "./privateTourExpansionProfiles.ts";
 
 type LocalizedText = Readonly<Record<HomegroundLocale, string>>;
 
@@ -52,7 +54,7 @@ export interface PublishedPrivateTourCatalogItem {
     readonly serviceLabel: string;
     readonly validityNote?: string;
     readonly selection?: PrivateTourInquirySelection;
-  };
+  } | null;
   readonly dateModified: string;
 }
 
@@ -307,6 +309,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "장자제의 대표 산악 풍경을 하나의 프라이빗 일정으로 보고 싶은 여행자.",
     ),
   },
+  ...privateTourExpansionProfiles,
 };
 
 const zhangjiajieContentLocale = {
@@ -387,7 +390,13 @@ export function getPublishedPrivateTourCatalog(
       days: localized.days,
       nights: localized.nights,
       href: localized.path,
-      startingPriceHref: buildPrivateTourDetailHref(localized.path, localized.slug, startingPrice.selection),
+      startingPriceHref: startingPrice
+        ? buildPrivateTourDetailHref(
+            localized.path,
+            localized.slug,
+            startingPrice.selection,
+          )
+        : localized.path,
       paths: localized.paths,
       image: {
         src: image.src,
@@ -508,7 +517,7 @@ export function assertPublishedPrivateTourCatalogIntegrity(): true {
         item.comparison.route,
         item.comparison.pace,
         item.comparison.fit,
-        item.startingPrice.formatted,
+        ...(item.startingPrice ? [item.startingPrice.formatted] : []),
       ];
       if (required.some((value) => value.trim().length === 0)) {
         throw new Error(`Incomplete ${locale} copy for ${item.slug}.`);
@@ -516,11 +525,10 @@ export function assertPublishedPrivateTourCatalogIntegrity(): true {
       if (item.comparison.highlights.length < 3) {
         throw new Error(`At least three highlights are required for ${item.slug}.`);
       }
-      if (item.startingPrice.travelers !== 2) {
-        throw new Error(
-          `Catalog prices must use the shared two-traveller basis: ${item.slug}.`,
-        );
-      }
+      if (
+        item.startingPrice &&
+        (item.startingPrice.travelers < 2 || item.startingPrice.travelers > 9)
+      ) throw new Error(`Invalid catalog group basis: ${item.slug}.`);
     }
   }
 

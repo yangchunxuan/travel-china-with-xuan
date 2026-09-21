@@ -11,7 +11,7 @@ import {
   getLocalizedPrivateTourPhotoCredits,
   privateTourPhotoCreditCopy,
 } from "../lib/privateTourPhotoCredits";
-import { PrivateTourSelectionProvider, SelectedPrivateTourCta, SelectedPrivateTourEmailLink } from "./PrivateTourSelection";
+import { PrivateTourSelectionBoundary, SelectedPrivateTourCta, SelectedPrivateTourEmailLink } from "./PrivateTourSelection";
 import { getPrivateTourStartingPrice } from "../lib/privateTourStartingPrice";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -218,6 +218,24 @@ type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
 function buildGenericPageCopy(
   product: LocalizedPrivateTourProduct,
 ): ImaginePageCopy {
+  const publishedGroups = [
+    ...new Set(
+      product.packages.flatMap((tourPackage) =>
+        tourPackage.rows.map((row) => row.travelers),
+      ),
+    ),
+  ].sort((left, right) => left - right);
+  const priceFact = product.locale === "zh"
+    ? (publishedGroups.length
+        ? `${publishedGroups.join("、")} 人公开价`
+        : "按日期与人数报价")
+    : product.locale === "ko"
+      ? (publishedGroups.length
+          ? `${publishedGroups.join("·")}명 공개 가격`
+          : "날짜와 인원별 견적")
+      : (publishedGroups.length
+          ? `Published for ${publishedGroups.join(", ")} travellers`
+          : "Quoted for your dates and group");
   if (product.locale === "zh") {
     return {
       htmlLang: "zh-Hans",
@@ -229,9 +247,9 @@ function buildGenericPageCopy(
       heroPromise: product.eyebrow,
       facts: [
         { label: "行程", value: `${product.days} 天 ${product.nights} 晚` },
-        { label: "游览", value: "逐日写明导游与用车安排" },
-        { label: "住宿", value: `${product.nights} 晚 · 含早餐` },
-        { label: "公开报价", value: "2 人或 4 人" },
+        { label: "游览", value: "导游与用车服务日书面确认" },
+        { label: "住宿", value: `${product.nights} 晚 · 范围书面确认` },
+        { label: "价格", value: priceFact },
       ],
       overviewEyebrow: "这条路线的价值",
       overviewTitle: product.eyebrow,
@@ -275,9 +293,9 @@ function buildGenericPageCopy(
       heroPromise: product.eyebrow,
       facts: [
         { label: "일정", value: `${product.nights}박 ${product.days}일` },
-        { label: "관광", value: "일자별 가이드와 차량 안내" },
-        { label: "숙박", value: `${product.nights}박 · 조식 포함` },
-        { label: "공개 가격", value: "2명 또는 4명" },
+        { label: "관광", value: "가이드·차량 서비스일 서면 확인" },
+        { label: "숙박", value: `${product.nights}박 · 범위 서면 확인` },
+        { label: "가격", value: priceFact },
       ],
       overviewEyebrow: "여정의 가치",
       overviewTitle: product.eyebrow,
@@ -323,9 +341,9 @@ function buildGenericPageCopy(
         label: "Journey",
         value: `${product.days} days / ${product.nights} nights`,
       },
-      { label: "Touring", value: "Guide and vehicle details shown day by day" },
-      { label: "Stay", value: `${product.nights} nights · breakfast included` },
-      { label: "Public prices", value: "2 or 4 travellers" },
+      { label: "Touring", value: "Guide and vehicle days confirmed in writing" },
+      { label: "Stay", value: `${product.nights} nights · scope confirmed in writing` },
+      { label: "Price", value: priceFact },
     ],
     overviewEyebrow: "The shape of the journey",
     overviewTitle: product.eyebrow,
@@ -423,12 +441,16 @@ export function ShanghaiJiangnanImaginePage({
     "private_tour_product",
   );
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
-  const lowestRow = rows.reduce((lowest, row) =>
-    row.amount < lowest.amount ? row : lowest,
-  );
-  const highestRow = rows.reduce((highest, row) =>
-    row.amount > highest.amount ? row : highest,
-  );
+  const lowestRow = rows.length
+    ? rows.reduce((lowest, row) =>
+        row.amount < lowest.amount ? row : lowest,
+      )
+    : null;
+  const highestRow = rows.length
+    ? rows.reduce((highest, row) =>
+        row.amount > highest.amount ? row : highest,
+      )
+    : null;
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -466,14 +488,18 @@ export function ShanghaiJiangnanImaginePage({
             description: day.description,
           })),
         },
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: lowestRow.currency,
-          lowPrice: lowestRow.amount,
-          highPrice: highestRow.amount,
-          offerCount: rows.length,
-          url: pageUrl,
-        },
+        ...(lowestRow && highestRow
+          ? {
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: lowestRow.currency,
+                lowPrice: lowestRow.amount,
+                highPrice: highestRow.amount,
+                offerCount: rows.length,
+                url: pageUrl,
+              },
+            }
+          : {}),
       },
       ...(localized.faq?.length
         ? [
@@ -519,7 +545,11 @@ export function ShanghaiJiangnanImaginePage({
   };
 
   return (
-    <PrivateTourSelectionProvider key={inquiryContext.slug} slug={inquiryContext.slug} initialSelection={startingPrice.selection}>
+    <PrivateTourSelectionBoundary
+      key={inquiryContext.slug}
+      slug={inquiryContext.slug}
+      initialSelection={startingPrice?.selection ?? null}
+    >
     <div
       className={`${homeStyles.localeRoot} ${styles.page}`}
       data-homeground-locale={locale}
@@ -841,6 +871,6 @@ export function ShanghaiJiangnanImaginePage({
         type="application/ld+json"
       />
     </div>
-    </PrivateTourSelectionProvider>
+    </PrivateTourSelectionBoundary>
   );
 }
