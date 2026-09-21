@@ -24,8 +24,8 @@ async function load(path, dependencies = {}) {
 test("lightweight navigation preserves every published guide language URL", async () => {
   const generated = await load("lib/generated/guideRegistry.generated.ts");
   const { guideRegistry } = await load("lib/guideRegistry.ts", {
-    "./homegroundI18n": { homegroundLocales: ["en", "zh", "ko"] },
-    "./generated/guideRegistry.generated": generated,
+    "./homegroundI18n.ts": { homegroundLocales: ["en", "zh", "ko"] },
+    "./generated/guideRegistry.generated.ts": generated,
   });
   assert.ok(guideRegistry.length > 100);
   for (const guide of guideRegistry) {

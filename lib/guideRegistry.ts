@@ -1,13 +1,15 @@
-import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore TS5097: focused Node tests execute the registry via type stripping.
+import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n.ts";
 import type {
   ContentFamily,
   ContentIntent,
   ContentSection,
 } from "./content-system/types";
+// @ts-ignore TS5097: focused Node tests execute the registry via type stripping.
 import {
   generatedGuideIds,
   generatedGuideRegistry,
-} from "./generated/guideRegistry.generated";
+} from "./generated/guideRegistry.generated.ts";
 
 const SITE_URL = "https://homegroundchina.com";
 

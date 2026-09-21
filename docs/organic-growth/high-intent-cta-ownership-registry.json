@@ -115,10 +115,10 @@
     },
     {
       "contentId": "china-itinerary-with-older-parents",
-      "ctaKind": "private-tour-collection",
-      "ctaTarget": "private-tours",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "shanghai-suzhou-hangzhou-6-day-private-tour",
       "placement": "guide-inline",
-      "image": "beijing-tour-photo",
+      "image": "product",
       "forbiddenClaims": [
         "guaranteed-booking-or-availability",
         "fit-verification-claim"
@@ -126,10 +126,10 @@
     },
     {
       "contentId": "china-itinerary-with-young-children",
-      "ctaKind": "private-tour-collection",
-      "ctaTarget": "private-tours",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "chengdu-pandas-sanxingdui-5-day-private-tour",
       "placement": "guide-inline",
-      "image": "beijing-tour-photo",
+      "image": "product",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
@@ -139,10 +139,10 @@
     },
     {
       "contentId": "do-singaporeans-need-visa-china",
-      "ctaKind": "private-tour-collection",
-      "ctaTarget": "private-tours",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "shanghai-suzhou-hangzhou-6-day-private-tour",
       "placement": "guide-inline",
-      "image": "beijing-tour-photo",
+      "image": "product",
       "forbiddenClaims": [
         "guaranteed-booking-or-availability",
         "fit-verification-claim"
@@ -150,10 +150,10 @@
     },
     {
       "contentId": "wheelchair-accessible-china-route-planning",
-      "ctaKind": "trip-consultation",
-      "ctaTarget": "full-trip-support",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "shanghai-suzhou-5-day-private-tour",
       "placement": "guide-inline",
-      "image": "wheelchair-guide-photo",
+      "image": "product",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
@@ -164,10 +164,10 @@
     },
     {
       "contentId": "china-accessible-hotel-room-verification",
-      "ctaKind": "trip-consultation",
-      "ctaTarget": "full-trip-support",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "shanghai-suzhou-5-day-private-tour",
       "placement": "guide-inline",
-      "image": "hotel-guide-photo",
+      "image": "product",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -213,10 +213,10 @@
       "contentId": "china-accessible-hotel-room-verification",
       "ownerClass": "stay",
       "intentCode": "hotel_fit",
-      "targetServiceId": "full-trip-support",
+      "targetServiceId": null,
       "ctaPlacement": "guide-inline-card",
       "originContentId": "china-accessible-hotel-room-verification",
-      "authorizationStatus": "authorized-existing-service",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "hotel-real-time-availability",
         "hotel-guest-acceptance-guarantee",
@@ -1072,10 +1072,10 @@
       "contentId": "wheelchair-accessible-china-route-planning",
       "ownerClass": "plan",
       "intentCode": "route_shape",
-      "targetServiceId": "full-trip-support",
+      "targetServiceId": null,
       "ctaPlacement": "guide-inline-card",
       "originContentId": "wheelchair-accessible-china-route-planning",
-      "authorizationStatus": "authorized-existing-service",
+      "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
         "paid-work-before-scope-payment",
