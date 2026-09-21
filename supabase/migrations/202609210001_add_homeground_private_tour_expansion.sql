@@ -522,4 +522,66 @@ $$;
 revoke all on function homeground_private.is_valid_traffic_product_v2(text, text, integer)
   from public, anon, authenticated, service_role;
 
+-- The original v2 event validator accepted only two- and four-person
+-- selections. Expansion products also publish six-person prices, so keep the
+-- primitive numeric guard broad and leave the exact product/package/group
+-- decision to is_valid_traffic_product_v2 above.
+create or replace function homeground_private.is_valid_traffic_event_v2(candidate jsonb)
+returns boolean language plpgsql immutable set search_path = pg_catalog, homeground_private
+as $$
+declare sequence_value integer; travelers_value integer;
+begin
+  if jsonb_typeof(candidate) is distinct from 'object' then return false; end if;
+  if exists (select 1 from jsonb_object_keys(candidate) supplied(key)
+    where key not in ('eventId', 'type', 'pagePath', 'actionCode', 'payloadHash',
+      'clientSequence', 'productSlug', 'packageId', 'travelers', 'surface', 'errorCode'))
+    or (candidate ->> 'eventId') is null
+    or (candidate ->> 'eventId') !~* '^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+    or (candidate ->> 'payloadHash') is null
+    or (candidate ->> 'payloadHash') !~ '^[0-9a-f]{64}$'
+    or not homeground_private.is_valid_traffic_path(candidate ->> 'pagePath')
+    or (candidate ->> 'type') is null
+    or (candidate ->> 'type') not in ('page_view', 'contact_options_viewed', 'contact_channel_clicked',
+      'email_form_started', 'product_selection_changed', 'contact_channel_selected',
+      'enquiry_submit_attempted', 'enquiry_submit_failed', 'enquiry_submit_uncertain')
+  then return false; end if;
+  if jsonb_typeof(candidate -> 'clientSequence') is distinct from 'number'
+    or (candidate ->> 'clientSequence') !~ '^[1-9][0-9]{0,6}$'
+  then return false; end if;
+  sequence_value := (candidate ->> 'clientSequence')::integer;
+  if sequence_value not between 1 and 1000000 then return false; end if;
+  if (candidate ->> 'travelers') is not null then
+    if (candidate -> 'travelers') not in (
+      '2'::jsonb, '3'::jsonb, '4'::jsonb, '5'::jsonb,
+      '6'::jsonb, '7'::jsonb, '8'::jsonb, '9'::jsonb
+    ) then return false; end if;
+    travelers_value := (candidate ->> 'travelers')::integer;
+  end if;
+  if not homeground_private.is_valid_traffic_product_v2(candidate ->> 'productSlug',
+    candidate ->> 'packageId', travelers_value) then return false; end if;
+  if (candidate ->> 'type') = 'product_selection_changed' and
+    ((candidate ->> 'productSlug') is null or (candidate ->> 'packageId') is null or travelers_value is null)
+  then return false; end if;
+  if (candidate ->> 'type') in ('contact_channel_clicked', 'contact_channel_selected') then
+    if (candidate ->> 'actionCode') is null or (candidate ->> 'actionCode') not in ('email', 'whatsapp', 'messenger')
+    then return false; end if;
+  elsif (candidate ->> 'actionCode') is not null then return false;
+  end if;
+  if ((candidate ->> 'surface') is not null and
+    (candidate ->> 'surface') not in ('product', 'homepage_quick_email', 'planner', 'contact_options')) or
+    ((candidate ->> 'type') <> 'page_view' and (candidate ->> 'surface') is null)
+  then return false; end if;
+  if (candidate ->> 'type') in ('enquiry_submit_failed', 'enquiry_submit_uncertain') then
+    if (candidate ->> 'errorCode') is null or (candidate ->> 'errorCode') not in
+      ('validation', 'network', 'rate_limited', 'service_unavailable', 'server_error', 'unknown_response')
+    then return false; end if;
+  elsif (candidate ->> 'errorCode') is not null then return false;
+  end if;
+  return true;
+end;
+$$;
+
+revoke all on function homeground_private.is_valid_traffic_event_v2(jsonb)
+  from public, anon, authenticated, service_role;
+
 commit;

@@ -69,7 +69,7 @@ export const trafficProductTravelerCounts: Readonly<
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": [2],
   "kunming-dali-lijiang-8-day-private-tour": [6],
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": [2],
-  "xiamen-tulou-quanzhou-6-day-private-tour": [2, 4],
+  "xiamen-tulou-quanzhou-6-day-private-tour": [2],
   "chaozhou-shantou-nanao-5-day-private-tour": [2, 4, 6],
   "chengdu-chongqing-8-day-private-tour": [2],
   "guangzhou-shunde-foshan-5-day-private-tour": [2, 4, 6],

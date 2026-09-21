@@ -16,6 +16,9 @@ import {
   privateTourInquirySelectionLabel,
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
+import {
+  trafficProductTravelerCounts,
+} from "../functions/_shared/traffic-contracts.ts";
 
 const config = {
   allowedFormVersions: [currentHomepageEmailFormVersion],
@@ -75,6 +78,17 @@ test("selection rejects partial, forged and freely supplied values", () => {
   }
 });
 
+test("traffic selection metadata matches every published inquiry price row", () => {
+  for (const slug of privateTourInquirySlugs) {
+    const expectedTravelers = [2, 3, 4, 5, 6, 7, 8, 9].filter((travelers) =>
+      packages.some((packageId) =>
+        getPrivateTourInquirySelection(slug, packageId, travelers),
+      ),
+    );
+    assert.deepEqual(trafficProductTravelerCounts[slug], expectedTravelers, `travelers:${slug}`);
+  }
+});
+
 test("legacy email-only and identity-only payloads retain their original semantic representation", () => {
   for (const context of [null, getPrivateTourInquiryContext(beijing, "en")]) {
     const input = payload(context);
@@ -129,6 +143,12 @@ test("new migration keeps canonical names, narrow JSON, atomic persistence and s
   assert.match(sql, /when '2'::jsonb then 2/);
   assert.match(sql, /when '4'::jsonb then 4/);
   assert.match(sql, /when '6'::jsonb then 6/);
+  const trafficEventValidator = sql.match(
+    /create or replace function homeground_private\.is_valid_traffic_event_v2[\s\S]*?return true;\s+end;\s+\$\$;/u,
+  )?.[0];
+  assert.ok(trafficEventValidator);
+  assert.match(trafficEventValidator, /'6'::jsonb/);
+  assert.match(trafficEventValidator, /is_valid_traffic_product_v2/);
   assert.match(sql, /product_selection is distinct from expected_selection/);
   assert.match(sql, /p_attribution is distinct from expected_attribution/);
   assert.match(sql, /homepage_answers :=[\s\S]+\|\| expected_attribution/);
