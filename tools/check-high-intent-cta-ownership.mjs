@@ -448,18 +448,28 @@ export function validateHighIntentCtaOwnershipRegistry(
         `PUBLIC_CTA_FORBIDDEN_CLAIMS_DRIFT: ${entry.contentId}`,
       );
     } else if (entry.ctaPlacement === "guide-inline-card") {
-      // An inline planner card is the only way a blocked stay, ticket or
-      // transfer page may carry a specialised CTA outside the footer list.
-      invariant(
-        inlineCards.get(entry.contentId)?.ctaKind === "trip-consultation"
-          && explicitlyAuthorizedService
-          && entry.targetServiceId === explicitlyAuthorizedService,
-        `UNAUTHORIZED_SERVICE_MAPPING: ${entry.contentId}`,
-      );
-      invariant(
-        entry.authorizationStatus === "authorized-existing-service",
-        `AUTHORIZED_STATUS_MISMATCH: ${entry.contentId}`,
-      );
+      const inlineCard = inlineCards.get(entry.contentId);
+      invariant(inlineCard, `GUIDE_INLINE_CARD_MISSING: ${entry.contentId}`);
+      if (inlineCard.ctaKind === "private-tour-product") {
+        // A product card is a route to inspect, not a promise that the route,
+        // room, vehicle or site has already been checked for this reader.
+        invariant(
+          entry.targetServiceId === null
+            && entry.authorizationStatus === "authorized-generic-conversation",
+          `UNAUTHORIZED_PRODUCT_MAPPING: ${entry.contentId}`,
+        );
+      } else {
+        invariant(
+          inlineCard.ctaKind === "trip-consultation"
+            && explicitlyAuthorizedService
+            && entry.targetServiceId === explicitlyAuthorizedService,
+          `UNAUTHORIZED_SERVICE_MAPPING: ${entry.contentId}`,
+        );
+        invariant(
+          entry.authorizationStatus === "authorized-existing-service",
+          `AUTHORIZED_STATUS_MISMATCH: ${entry.contentId}`,
+        );
+      }
       for (const claim of requiredPublicForbiddenClaimsByOwnerClass[entry.ownerClass]) {
         invariant(
           entry.forbiddenClaims.includes(claim),

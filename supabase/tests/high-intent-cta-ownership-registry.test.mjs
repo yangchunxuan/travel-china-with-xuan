@@ -17,6 +17,10 @@ const commercialLinkSource = await readFile(
   new URL("../../lib/existingContentCommercialLinks.ts", import.meta.url),
   "utf8",
 );
+const commercialTargetSource = await readFile(
+  new URL("../../lib/guideCommercialTargets.ts", import.meta.url),
+  "utf8",
+);
 const itineraryReviewSource = await readFile(
   new URL("../../components/ChinaItineraryReviewPage.tsx", import.meta.url),
   "utf8",
@@ -39,12 +43,12 @@ const expectedPublicCtaContentIds = [
   "zhangjiajie-city-or-wulingyuan-hotel-base",
 ];
 
-function keysFromCommercialBlock(startMarker, endMarker, pattern) {
-  const start = commercialLinkSource.indexOf(startMarker);
-  const end = commercialLinkSource.indexOf(endMarker, start);
+function keysFromCommercialBlock(startMarker, endMarker, pattern, source = commercialLinkSource) {
+  const start = source.indexOf(startMarker);
+  const end = source.indexOf(endMarker, start);
   assert.notEqual(start, -1, `missing ${startMarker}`);
   assert.notEqual(end, -1, `missing ${endMarker}`);
-  return [...commercialLinkSource.slice(start, end).matchAll(pattern)]
+  return [...source.slice(start, end).matchAll(pattern)]
     .map((match) => match[1])
     .sort();
 }
@@ -69,8 +73,8 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
     "purchase-ticket": 3,
   });
   assert.equal(report.uniqueContentIds, 74);
-  assert.equal(report.authorizedExistingService, 25);
-  assert.equal(report.authorizedGenericConversation, 11);
+  assert.equal(report.authorizedExistingService, 23);
+  assert.equal(report.authorizedGenericConversation, 13);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 38);
@@ -119,6 +123,7 @@ test("commercial links keep the approved 8 hub, 36 guide and 21 product owners",
       "const guideTargets = {",
       "} as const satisfies Partial<Record<GuideId",
       /^  "([^"]+)":/gmu,
+      commercialTargetSource,
     ),
     [
       "beijing-courtyard-hotel-or-modern-hotel",
@@ -193,16 +198,16 @@ test("commercial links keep the approved 8 hub, 36 guide and 21 product owners",
 
 test("Zhangjiajie commercial routes and Singapore planning links stay distinct", () => {
   assert.match(
-    commercialLinkSource,
+    commercialTargetSource,
     /"best-zhangjiajie-night-show": \[classicZhangjiajie\]/u,
   );
   assert.match(
-    commercialLinkSource,
+    commercialTargetSource,
     /"zhangjiajie-glass-bridge-vs-skywalk": \[classicZhangjiajie\]/u,
   );
   assert.match(
-    commercialLinkSource,
-    /"zhangjiajie-itinerary": \[\s*p\("zhangjiajie-furong-fenghuang-7-day-private-tour"\),\s*classicZhangjiajie,\s*\]/u,
+    commercialTargetSource,
+    /"zhangjiajie-itinerary": \[\s*productTarget\("zhangjiajie-furong-fenghuang-7-day-private-tour"\),\s*classicZhangjiajie,\s*\]/u,
   );
   assert.equal(
     [...singaporeVisaSource.matchAll(/id: "singapore-to-zhangjiajie-itinerary"/gu)].length,
@@ -357,11 +362,11 @@ test("inline sales cards record the six guide owners and their exact CTA kinds",
     ]),
     [
       ["zhangjiajie-older-travellers", "private-tour-product", "zhangjiajie-4-day-private-tour", "guide-inline", "product"],
-      ["china-itinerary-with-older-parents", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
-      ["china-itinerary-with-young-children", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
-      ["do-singaporeans-need-visa-china", "private-tour-collection", "private-tours", "guide-inline", "beijing-tour-photo"],
-      ["wheelchair-accessible-china-route-planning", "trip-consultation", "full-trip-support", "guide-inline", "wheelchair-guide-photo"],
-      ["china-accessible-hotel-room-verification", "trip-consultation", "full-trip-support", "guide-inline", "hotel-guide-photo"],
+      ["china-itinerary-with-older-parents", "private-tour-product", "shanghai-suzhou-hangzhou-6-day-private-tour", "guide-inline", "product"],
+      ["china-itinerary-with-young-children", "private-tour-product", "chengdu-pandas-sanxingdui-5-day-private-tour", "guide-inline", "product"],
+      ["do-singaporeans-need-visa-china", "private-tour-product", "shanghai-suzhou-hangzhou-6-day-private-tour", "guide-inline", "product"],
+      ["wheelchair-accessible-china-route-planning", "private-tour-product", "shanghai-suzhou-5-day-private-tour", "guide-inline", "product"],
+      ["china-accessible-hotel-room-verification", "private-tour-product", "shanghai-suzhou-5-day-private-tour", "guide-inline", "product"],
     ],
   );
   for (const card of registry.guideInlineSalesCards) {
@@ -370,8 +375,8 @@ test("inline sales cards record the six guide owners and their exact CTA kinds",
 
   const hotel = ownerEntry(registry, "china-accessible-hotel-room-verification");
   assert.equal(hotel.ctaPlacement, "guide-inline-card");
-  assert.equal(hotel.targetServiceId, "full-trip-support");
-  assert.equal(hotel.authorizationStatus, "authorized-existing-service");
+  assert.equal(hotel.targetServiceId, null);
+  assert.equal(hotel.authorizationStatus, "authorized-generic-conversation");
   for (const claim of [
     "hotel-real-time-availability",
     "hotel-guest-acceptance-guarantee",
@@ -384,7 +389,8 @@ test("inline sales cards record the six guide owners and their exact CTA kinds",
 
   const wheelchair = ownerEntry(registry, "wheelchair-accessible-china-route-planning");
   assert.equal(wheelchair.ctaPlacement, "guide-inline-card");
-  assert.equal(wheelchair.targetServiceId, "full-trip-support");
+  assert.equal(wheelchair.targetServiceId, null);
+  assert.equal(wheelchair.authorizationStatus, "authorized-generic-conversation");
 
   const children = ownerEntry(registry, "china-itinerary-with-young-children");
   assert.equal(children.ctaPlacement, "guide-inline-card");
@@ -410,27 +416,26 @@ test("an inline card cannot point at an unknown guide or kind", () => {
   );
 });
 
-test("a consultation card cannot be quietly turned into a product card", () => {
-  const productOnAccessPage = mutateRegistry((copy) => {
+test("reviewed product cards cannot be quietly turned into service claims", () => {
+  const consultationOnAccessPage = mutateRegistry((copy) => {
     const card = inlineCard(copy, "wheelchair-accessible-china-route-planning");
-    card.ctaKind = "private-tour-product";
-    card.ctaTarget = "beijing-highlights-5-day-private-tour";
-    card.image = "product";
+    card.ctaKind = "trip-consultation";
+    card.ctaTarget = "full-trip-support";
+    card.image = "wheelchair-guide-photo";
   });
   assert.throws(
-    () => validateHighIntentCtaOwnershipRegistry(productOnAccessPage, guides),
+    () => validateHighIntentCtaOwnershipRegistry(consultationOnAccessPage, guides),
     /GUIDE_INLINE_SERVICE_MISMATCH/u,
   );
 
-  const productOnHotelPage = mutateRegistry((copy) => {
-    const card = inlineCard(copy, "china-accessible-hotel-room-verification");
-    card.ctaKind = "private-tour-product";
-    card.ctaTarget = "shanghai-suzhou-5-day-private-tour";
-    card.image = "product";
+  const serviceOwnerOnProduct = mutateRegistry((copy) => {
+    const entry = ownerEntry(copy, "china-accessible-hotel-room-verification");
+    entry.targetServiceId = "full-trip-support";
+    entry.authorizationStatus = "authorized-existing-service";
   });
   assert.throws(
-    () => validateHighIntentCtaOwnershipRegistry(productOnHotelPage, guides),
-    /UNAUTHORIZED_SERVICE_MAPPING/u,
+    () => validateHighIntentCtaOwnershipRegistry(serviceOwnerOnProduct, guides),
+    /UNAUTHORIZED_PRODUCT_MAPPING/u,
   );
 });
 
@@ -458,13 +463,13 @@ test("inline cards cannot drop the fit-verification or hotel boundaries", () => 
   );
 });
 
-test("inline cards only use the reviewed non-generated photographs", () => {
+test("product cards only use their product photograph", () => {
   const newImage = mutateRegistry((copy) => {
     inlineCard(copy, "china-itinerary-with-older-parents").image = "ai-family-hero";
   });
   assert.throws(
     () => validateHighIntentCtaOwnershipRegistry(newImage, guides),
-    /GUIDE_INLINE_IMAGE_NOT_ALLOWED/u,
+    /GUIDE_INLINE_TARGET_MISMATCH/u,
   );
 });
 

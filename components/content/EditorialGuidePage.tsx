@@ -261,9 +261,6 @@ export function EditorialGuidePage({
   const tourCard = getGuideTourCard(guide.id, locale);
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
-  // A planner card in the article already is this page's contact entry; a
-  // second planner button at the end would sell the same thing twice.
-  const showFooterCta = tourCard?.kind !== "trip-consultation";
   const relatedDestinationCopy =
     locale === "zh"
       ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
@@ -396,26 +393,24 @@ export function EditorialGuidePage({
           </aside>
         ) : null}
 
-        {showFooterCta ? (
-          <aside className={styles.cta} data-similarity-ignore>
-            <div>
-              <p className={styles.ctaLabel}>
-                {serviceCta?.label ?? copy.ctaLabel}
-              </p>
-              <h2>{serviceCta?.title ?? copy.ctaTitle}</h2>
-              <p>{serviceCta?.body ?? copy.ctaBody}</p>
-            </div>
-            <GuideCtaLink
-              guideId={guide.id}
-              href={serviceCta?.href ?? plannerHref}
-              locale={locale}
-              position="footer"
-            >
-              {serviceCta?.button ?? copy.ctaButton}
-              <ArrowRight aria-hidden="true" size={18} />
-            </GuideCtaLink>
-          </aside>
-        ) : null}
+        <aside className={styles.cta} data-similarity-ignore>
+          <div>
+            <p className={styles.ctaLabel}>
+              {serviceCta?.label ?? copy.ctaLabel}
+            </p>
+            <h2>{serviceCta?.title ?? copy.ctaTitle}</h2>
+            <p>{serviceCta?.body ?? copy.ctaBody}</p>
+          </div>
+          <GuideCtaLink
+            guideId={guide.id}
+            href={serviceCta?.href ?? plannerHref}
+            locale={locale}
+            position="footer"
+          >
+            {serviceCta?.button ?? copy.ctaButton}
+            <ArrowRight aria-hidden="true" size={18} />
+          </GuideCtaLink>
+        </aside>
       </main>
 
       <HomegroundFooter locale={locale} pageContext={pageContext} />

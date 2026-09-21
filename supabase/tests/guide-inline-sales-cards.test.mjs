@@ -5,10 +5,15 @@ import test from "node:test";
 
 import {
   getDefaultGuideSalesCard,
+  getDefaultGuideProductAssignment,
+  getDefaultGuideProductDistributionSummary,
+  guideProductFallbackGuideIds,
   getGuideSalesCard,
   guideSalesCardGuideIds,
-  privateTourCollectionCtaId,
 } from "../../lib/guideSalesCards.ts";
+import {
+  guideProductMarketForecast,
+} from "../../lib/guideProductDistribution.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 
 const locales = ["en", "zh", "ko"];
@@ -26,7 +31,7 @@ const [
   olderTravellersPage,
   olderParentsPage,
   singaporeVisaPage,
-  commercialLinks,
+  commercialTargets,
   guideTourCardSource,
   guideRegistrySource,
   generatedRegistrySource,
@@ -36,7 +41,7 @@ const [
   source("components/ZhangjiajieOlderTravellersPage.tsx"),
   source("components/ChinaItineraryWithOlderParentsPage.tsx"),
   source("components/SingaporeChinaVisaPage.tsx"),
-  source("lib/existingContentCommercialLinks.ts"),
+  source("lib/guideCommercialTargets.ts"),
   source("lib/guideTourCard.ts"),
   source("lib/guideRegistry.ts"),
   source("lib/generated/guideRegistry.generated.ts"),
@@ -69,34 +74,29 @@ const expected = {
     href: (locale) => `${localePrefix[locale]}/tours/zhangjiajie-4-day-private-tour/`,
   },
   "china-itinerary-with-older-parents": {
-    kind: "private-tour-collection",
-    ctaId: privateTourCollectionCtaId,
-    image: "beijing-tour-photo",
-    href: (locale) => `${localePrefix[locale]}/tours/`,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-hangzhou-6-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/shanghai-suzhou-hangzhou-6-day-private-tour/`,
   },
   "china-itinerary-with-young-children": {
-    kind: "private-tour-collection",
-    ctaId: privateTourCollectionCtaId,
-    image: "beijing-tour-photo",
-    href: (locale) => `${localePrefix[locale]}/tours/`,
+    kind: "private-tour-product",
+    ctaId: "chengdu-pandas-sanxingdui-5-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/chengdu-pandas-sanxingdui-5-day-private-tour/`,
   },
   "do-singaporeans-need-visa-china": {
-    kind: "private-tour-collection",
-    ctaId: privateTourCollectionCtaId,
-    image: "beijing-tour-photo",
-    href: (locale) => `${localePrefix[locale]}/tours/`,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-hangzhou-6-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/shanghai-suzhou-hangzhou-6-day-private-tour/`,
   },
   "wheelchair-accessible-china-route-planning": {
-    kind: "trip-consultation",
-    ctaId: "full-trip-support",
-    image: "wheelchair-guide-photo",
-    href: (locale) => `${localePrefix[locale]}/?service=full-trip-support#planner-contact`,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-5-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/shanghai-suzhou-5-day-private-tour/`,
   },
   "china-accessible-hotel-room-verification": {
-    kind: "trip-consultation",
-    ctaId: "full-trip-support",
-    image: "hotel-guide-photo",
-    href: (locale) => `${localePrefix[locale]}/?service=full-trip-support#planner-contact`,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-5-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/shanghai-suzhou-5-day-private-tour/`,
   },
 };
 
@@ -113,38 +113,63 @@ const fitClaims = [
   /\bsenior[- ]friendly\b/iu,
   /\bkid[- ]friendly\b/iu,
   /\bchild[- ]friendly\b/iu,
+  /\badjust(?:ed|ment|ing|s)?\b/iu,
   /对应的私家团/u,
-  /已核实|已核验|已验证|保证|无障碍房|无障碍路线|适合长辈|适合老人|适合儿童|适合孩子/u,
+  /已核实|已核验|已验证|保证|调整|无障碍房|无障碍路线|适合长辈|适合老人|适合儿童|适合孩子/u,
   /관련 프라이빗 투어/u,
-  /보장|검증된|확인된 객실|휠체어 전용|어르신에게 적합|아이에게 적합/u,
+  /보장|검증된|조정|확인된 객실|휠체어 전용|어르신에게 적합|아이에게 적합/u,
 ];
 
 test("the six guides resolve to exactly one planned sales card each", () => {
   assert.deepEqual([...guideSalesCardGuideIds].sort(), Object.keys(expected).sort());
 });
 
-test("every registered guide can use the localized safe collection fallback", () => {
+test("every guide in the final fallback cohort gets one stable localized product", () => {
   let combinations = 0;
-  for (const guideId of guideIds) {
+  for (const guideId of guideProductFallbackGuideIds) {
+    const assignedIds = new Set();
     for (const locale of locales) {
       combinations += 1;
       const card = getDefaultGuideSalesCard(guideId, locale);
       assert.ok(card.title && card.action && card.image.alt, `${guideId}/${locale}`);
       assert.ok(card.image.src && card.image.srcSet, `${guideId}/${locale} image`);
-      assert.equal(card.kind, "private-tour-collection");
-      assert.equal(card.ctaId, privateTourCollectionCtaId, `${guideId}/${locale}`);
-      assert.equal(card.href, `${localePrefix[locale]}/tours/`);
+      assert.equal(card.kind, "private-tour-product");
+      assert.ok(productIds.includes(card.ctaId), `${guideId}/${locale} product`);
+      assert.equal(card.href, `${localePrefix[locale]}/tours/${card.ctaId}/`);
+      assignedIds.add(card.ctaId);
       for (const text of [card.label, card.title, card.note ?? "", card.action]) {
         assert.doesNotMatch(text, /Matching private tour|对应的私家团|관련 프라이빗 투어/u);
       }
     }
+    assert.equal(assignedIds.size, 1, `${guideId} must keep the same product across locales`);
+    assert.deepEqual(
+      getDefaultGuideProductAssignment(guideId),
+      getDefaultGuideProductAssignment(guideId),
+    );
   }
   assert.equal(guideIds.length, 204);
   assert.equal(legacyGuideIds.length, 19);
-  assert.equal(combinations, 612);
+  assert.equal(combinations, guideProductFallbackGuideIds.length * locales.length);
+  assert.equal(Object.values(guideProductMarketForecast).reduce((sum, value) => sum + value, 0), 100);
+  const summary = getDefaultGuideProductDistributionSummary();
+  assert.equal(summary.total, guideProductFallbackGuideIds.length);
+  assert.equal(summary.related + summary.forecast, guideProductFallbackGuideIds.length);
+  const forecastCounts = new Map();
+  for (const guideId of guideProductFallbackGuideIds) {
+    const assignment = getDefaultGuideProductAssignment(guideId);
+    if (assignment.relevance !== "market-forecast") continue;
+    forecastCounts.set(assignment.productId, (forecastCounts.get(assignment.productId) ?? 0) + 1);
+  }
+  for (const [productId, percent] of Object.entries(guideProductMarketForecast)) {
+    const exact = (summary.forecast * percent) / 100;
+    assert.ok(
+      Math.abs((forecastCounts.get(productId) ?? 0) - exact) < 1,
+      `${productId}: forecast quota drift`,
+    );
+  }
 });
 
-test("unmapped and non-product targets end in the safe collection fallback", () => {
+test("unmapped and non-product targets end in the stable product fallback", () => {
   assert.match(guideTourCardSource, /return getDefaultGuideSalesCard\(guideId, locale\);/u);
   assert.doesNotMatch(guideTourCardSource, /if \(!target\) return null/u);
   assert.doesNotMatch(guideTourCardSource, /if \(!product\) return null/u);
@@ -159,22 +184,10 @@ for (const [guideId, want] of Object.entries(expected)) {
       assert.equal(card.href, want.href(locale), `${locale} href`);
       if (locale !== "en") assert.ok(card.href.startsWith(`/${locale}/`), `${locale} path`);
       else assert.ok(!/^\/(?:zh|ko)\//u.test(card.href), "en path");
-      if (want.image) {
-        if (want.image === "beijing-tour-photo") {
-          assert.match(card.image.src, /^\/images\/private-tour-cards\/beijing-highlights-5-day-private-tour-/u);
-        } else {
-          const expectedImage = {
-            "wheelchair-guide-photo": "/images/guides/wheelchair-accessible-china-route-planning/hero-1600.webp",
-            "hotel-guide-photo": "/images/guides/china-accessible-hotel-room-verification/hero-1600.webp",
-          }[want.image];
-          assert.equal(card.image.src, expectedImage, `${locale} image`);
-        }
-        for (const candidate of card.image.srcSet.split(", ")) {
-          const path = candidate.split(" ")[0];
-          assert.ok(existsSync(new URL(`../../public${path}`, import.meta.url)), path);
-        }
-      } else {
-        assert.match(card.image.src, /^\/images\/private-tour-cards\/zhangjiajie-4-day-private-tour-/u);
+      assert.match(card.image.src, new RegExp(`^/images/private-tour-cards/${want.ctaId}-`, "u"));
+      for (const candidate of card.image.srcSet.split(", ")) {
+        const path = candidate.split(" ")[0];
+        assert.ok(existsSync(new URL(`../../public${path}`, import.meta.url)), path);
       }
       assert.ok(card.title.length > 0 && card.action.length > 0 && card.image.alt.length > 0);
       for (const text of [card.label, card.title, card.note ?? "", card.action]) {
@@ -184,17 +197,15 @@ for (const [guideId, want] of Object.entries(expected)) {
   });
 }
 
-test("access and hotel pages never carry a fixed product", () => {
+test("access and hotel pages carry a product without promising verified fit", () => {
   for (const guideId of [
     "wheelchair-accessible-china-route-planning",
     "china-accessible-hotel-room-verification",
   ]) {
     for (const locale of locales) {
       const card = getGuideSalesCard(guideId, locale);
-      const serialised = JSON.stringify(card);
-      for (const productId of productIds) {
-        assert.ok(!serialised.includes(productId), `${guideId}/${locale} -> ${productId}`);
-      }
+      assert.equal(card.kind, "private-tour-product");
+      assert.equal(card.ctaId, "shanghai-suzhou-5-day-private-tour");
       assert.ok(card.note, `${guideId}/${locale} must state what is checked before quoting`);
     }
   }
@@ -219,8 +230,8 @@ test("the Singapore visa guide does not steer readers to a Zhangjiajie product",
     const card = getGuideSalesCard("do-singaporeans-need-visa-china", locale);
     const serialised = JSON.stringify(card);
     assert.doesNotMatch(serialised, /zhangjiajie|张家界|장자제/iu);
-    assert.equal(card.kind, "private-tour-collection");
-    assert.equal(card.href, `${localePrefix[locale]}/tours/`);
+    assert.equal(card.kind, "private-tour-product");
+    assert.equal(card.ctaId, "shanghai-suzhou-hangzhou-6-day-private-tour");
   }
 });
 
@@ -229,16 +240,20 @@ test("the Zhangjiajie older-travellers guide links only the classic 4-day route"
     const card = getGuideSalesCard("zhangjiajie-older-travellers", locale);
     assert.equal(card.ctaId, "zhangjiajie-4-day-private-tour");
     assert.doesNotMatch(JSON.stringify(card), /zhangjiajie-forest-4-day-private-tour/u);
-    assert.ok(card.note, `${locale} must say walking and pace are adjusted after confirmation`);
+    assert.ok(card.note, `${locale} must say walking and pace require pre-quote checking`);
   }
   assert.doesNotMatch(olderTravellersPage, /tourHref|getPrivateTourPaths|relatedTour/u);
 });
 
 test("the planned guides are not also product-mapped, so no route list repeats the card", () => {
-  const block = commercialLinks.slice(
-    commercialLinks.indexOf("const guideTargets = {"),
-    commercialLinks.indexOf("const approvedCommercialGuideIds"),
+  const start = commercialTargets.indexOf("export const guideTargets = {");
+  const end = commercialTargets.indexOf(
+    "} as const satisfies Partial<Record<GuideId",
+    start,
   );
+  assert.notEqual(start, -1, "missing guideTargets start marker");
+  assert.notEqual(end, -1, "missing guideTargets end marker");
+  const block = commercialTargets.slice(start, end);
   for (const guideId of guideSalesCardGuideIds) {
     assert.ok(!block.includes(`"${guideId}"`), guideId);
   }
@@ -250,8 +265,7 @@ test("pages render the card inline, tracked, and never twice with the same plann
   assert.match(cardComponent, /data-guide-cta-kind=\{card\.kind\}/u);
   assert.match(cardComponent, /data-guide-tour-card=\{card\.ctaId\}/u);
   assert.match(editorialPage, /getGuideTourCard\(guide\.id, locale\)/u);
-  assert.match(editorialPage, /const showFooterCta = tourCard\?\.kind !== "trip-consultation";/u);
-  assert.match(editorialPage, /\{showFooterCta \? \(/u);
+  assert.doesNotMatch(editorialPage, /showFooterCta|trip-consultation/u);
   for (const page of [olderTravellersPage, olderParentsPage, singaporeVisaPage]) {
     assert.match(page, /getGuideTourCard\(guideId, locale\)/u);
     assert.equal(page.match(/<GuideTourCard /gu)?.length, 1);
@@ -267,15 +281,11 @@ test("the ownership registry matches every rendered card kind, target and placem
     assert.equal(record.ctaKind, card.kind, guideId);
     assert.equal(record.ctaTarget, card.ctaId, guideId);
     assert.equal(record.placement, "guide-inline", guideId);
-    assert.equal(
-      record.image,
-      card.kind === "private-tour-product" ? "product" : expected[guideId].image,
-      guideId,
-    );
+    assert.equal(record.image, "product", guideId);
     const owner = registry.entries.find((entry) => entry.contentId === guideId);
     if (owner) {
       assert.equal(owner.ctaPlacement, "guide-inline-card", guideId);
-      assert.equal(owner.targetServiceId, card.kind === "trip-consultation" ? card.ctaId : null, guideId);
+      assert.equal(owner.targetServiceId, null, guideId);
     }
   }
 });
