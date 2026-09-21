@@ -223,6 +223,56 @@ const productContexts = {
     destinations: ["zhangjiajie"],
     guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
   },
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
+    destinations: ["chengdu"],
+    guides: ["chengdu-panda-base-or-dujiangyan-panda-valley"],
+    relatedProducts: [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
+  },
+  "kunming-dali-lijiang-8-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "xiamen-tulou-quanzhou-6-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "chaozhou-shantou-nanao-5-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "chengdu-chongqing-8-day-private-tour": {
+    destinations: ["chengdu", "chongqing"],
+    guides: [
+      "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "chongqing-railway-station-selector",
+    ],
+    relatedProducts: [
+      p("chengdu-pandas-sanxingdui-5-day-private-tour"),
+      p("chongqing-wulong-5-day-private-tour"),
+    ],
+  },
+  "guangzhou-shunde-foshan-5-day-private-tour": {
+    destinations: ["guangzhou"],
+    guides: [],
+  },
+  "huangshan-hongcun-huizhou-5-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour": {
+    destinations: [],
+    guides: [],
+  },
+  "changbaishan-yanji-winter-6-day-private-tour": {
+    destinations: [],
+    guides: ["china-climate-regions-for-trip-timing"],
+    relatedProducts: [p("harbin-winter-5-day-private-tour")],
+  },
 } as const satisfies Record<string, ProductContextDefinition>;
 
 const approvedCommercialProductSlugs = [
@@ -237,6 +287,16 @@ const approvedCommercialProductSlugs = [
   "zhangjiajie-forest-4-day-private-tour",
   "zhangjiajie-furong-fenghuang-7-day-private-tour",
   "zhangjiajie-4-day-private-tour",
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+  "kunming-dali-lijiang-8-day-private-tour",
+  "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+  "xiamen-tulou-quanzhou-6-day-private-tour",
+  "chaozhou-shantou-nanao-5-day-private-tour",
+  "chengdu-chongqing-8-day-private-tour",
+  "guangzhou-shunde-foshan-5-day-private-tour",
+  "huangshan-hongcun-huizhou-5-day-private-tour",
+  "jingdezhen-wuyuan-wangxian-6-day-private-tour",
+  "changbaishan-yanji-winter-6-day-private-tour",
 ] as const;
 
 function assertExactKeys(

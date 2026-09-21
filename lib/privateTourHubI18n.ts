@@ -13,7 +13,7 @@ const copy = {
     metadata: {
       title: "Private China Tours: Routes & Prices",
       description: (count: number) =>
-        `Compare ${count} private China tours, USD prices and guide options. Plan your arrival from Malaysia, Singapore, Australia or elsewhere.`,
+        `Compare ${count} private China tours, published starting prices, group-size terms and guide options. Choose a route, then confirm it for your dates.`,
       openGraphTitle: (count: number) =>
         `Private China Tours — ${count} Itineraries & Starting Prices`,
     },
@@ -30,7 +30,7 @@ const copy = {
     quickCompareIntroduction:
       "Compare trip length, starting price, pace and the places each route brings together.",
     priceBasisNote:
-      "Prices in US dollars · per person for 2 travellers · international flights excluded. Open each route for room arrangements and guide options.",
+      "Published prices keep the group basis shown on each card; international flights are excluded. Routes without a stable public price are quoted for your dates and group.",
     quickFitLabel: "Best for",
     quickMovementLabel: "Stay and travel pattern",
     quickAction: "View journey",
@@ -41,6 +41,8 @@ const copy = {
     tourCount: (count: number) => `${count} published private tours`,
     duration: (days: number, nights: number) => `${days} days · ${nights} nights`,
     startingPriceLabel: "Published starting price",
+    quoteOnlyLabel: "Price on request",
+    quoteOnlyBody: "Confirmed for your dates, rooms and group size",
     perPersonLabel: "per person",
     groupBasis: (travelers: number) => `based on ${travelers} travellers`,
     paceLabel: "Pace and bases",
@@ -76,7 +78,7 @@ const copy = {
     quickCompareIntroduction:
       "比较天数、起价、节奏，以及每条路线真正连接的地方。",
     priceBasisNote:
-      "以下为人民币每人起价，按 2 人同行，不含国际机票。房型安排和导游服务以各路线说明为准。",
+      "公开价格保留每张卡片所写的人数条件，国际机票另计；没有稳定公开价的路线会按日期、房间和人数报价。",
     quickFitLabel: "更适合",
     quickMovementLabel: "住宿与换城",
     quickAction: "查看路线",
@@ -87,6 +89,8 @@ const copy = {
     tourCount: (count: number) => `${count} 条已发布私家团`,
     duration: (days: number, nights: number) => `${days} 天 · ${nights} 晚`,
     startingPriceLabel: "公开起价",
+    quoteOnlyLabel: "按需报价",
+    quoteOnlyBody: "按日期、房间和同行人数确认",
     perPersonLabel: "每人",
     groupBasis: (travelers: number) => `按 ${travelers} 人同行`,
     paceLabel: "节奏与住宿地",
@@ -122,7 +126,7 @@ const copy = {
     quickCompareIntroduction:
       "기간, 시작가, 일정 여유도와 각 여정에 포함된 지역을 비교하세요.",
     priceBasisNote:
-      "표시 가격은 2인 여행 기준 1인당 원화 시작가이며 국제선 항공권은 제외됩니다. 객실 구성과 가이드 옵션은 각 일정에서 확인하세요.",
+      "공개 가격은 카드에 표시된 인원 기준을 따르며 국제선 항공권은 제외됩니다. 고정 공개가가 없는 일정은 날짜, 객실과 인원에 맞춰 견적을 드립니다.",
     quickFitLabel: "추천 여행자",
     quickMovementLabel: "숙박지와 이동 방식",
     quickAction: "이 일정 보기",
@@ -134,6 +138,8 @@ const copy = {
     tourCount: (count: number) => `프라이빗 투어 ${count}개`,
     duration: (days: number, nights: number) => `${nights}박 ${days}일`,
     startingPriceLabel: "시작가",
+    quoteOnlyLabel: "견적 문의",
+    quoteOnlyBody: "날짜, 객실과 인원에 맞춰 확인",
     perPersonLabel: "1인",
     groupBasis: (travelers: number) => `${travelers}인 기준`,
     paceLabel: "숙박지와 일정 여유도",
@@ -185,7 +191,7 @@ export const englishMarketPlanning = {
     },
     {
       title: "Which currency and room basis should I compare?",
-      body: "The prices above are in US dollars, not Singapore or Australian dollars. Starting prices are per person for two travellers. Check each route’s accommodation and room basis; children, extra rooms and different group sizes need their own quote.",
+      body: "Each card keeps its published currency and group-size basis, so compare the conditions shown beside the price rather than treating every route as a two-person USD package. Children, extra rooms and different group sizes need their own quote.",
     },
     {
       title: "Will I have an English-speaking guide?",

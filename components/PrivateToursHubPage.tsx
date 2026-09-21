@@ -142,13 +142,23 @@ function TourComparisonCard({
             <p className={styles.routeLine}>{product.comparison.route}</p>
             <h2>{product.title}</h2>
             <p className={styles.startingPrice}>
-              <span>{copy.startingPriceLabel}</span>
-              <strong>{product.startingPrice.formatted}</strong>
-              <small>
-                {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
-                {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
-              </small>
-              {product.startingPrice.validityNote && <small>{product.startingPrice.validityNote}</small>}
+              {product.startingPrice ? (
+                <>
+                  <span>{copy.startingPriceLabel}</span>
+                  <strong>{product.startingPrice.formatted}</strong>
+                  <small>
+                    {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+                    {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
+                  </small>
+                  {product.startingPrice.validityNote && <small>{product.startingPrice.validityNote}</small>}
+                </>
+              ) : (
+                <>
+                  <span>{copy.quoteOnlyLabel}</span>
+                  <strong>{copy.quoteOnlyLabel}</strong>
+                  <small>{copy.quoteOnlyBody}</small>
+                </>
+              )}
             </p>
             <p className={styles.description}>{product.comparison.appeal}</p>
 
@@ -213,13 +223,21 @@ function CompactTourComparison({
           <h3>{product.title}</h3>
           <p className={styles.quickFacts}>
             <span>{copy.duration(product.days, product.nights)}</span>
-            <span>
-              <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
-              <strong>{product.startingPrice.formatted}</strong>{" "}
-              {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
-              {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
-            </span>
-            {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
+            {product.startingPrice ? (
+              <>
+                <span>
+                  <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
+                  <strong>{product.startingPrice.formatted}</strong>{" "}
+                  {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+                  {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
+                </span>
+                {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
+              </>
+            ) : (
+              <span>
+                <strong>{copy.quoteOnlyLabel}</strong> · {copy.quoteOnlyBody}
+              </span>
+            )}
           </p>
         </div>
         <dl className={styles.quickDetails}>

@@ -59,13 +59,16 @@ export function getHomepagePrivateTourItems(
     }
     // The owner selected the forest tour's four-person offer for the homepage.
     // Resolve its price from the published row; the full catalog keeps its two-person basis.
-    if (slug === "zhangjiajie-forest-4-day-private-tour") {
-      return selectPublishedPrivateTourPrice(product, locale, {
+    const selected = slug === "zhangjiajie-forest-4-day-private-tour"
+      ? selectPublishedPrivateTourPrice(product, locale, {
         packageId: "fixed-route-english-guided",
         travelers: 4,
-      });
+      })
+      : product;
+    if (!selected.startingPrice) {
+      throw new Error(`Homepage tour requires a published price: ${slug}`);
     }
-    return product;
+    return { ...selected, startingPrice: selected.startingPrice };
   });
 
   return Object.freeze(

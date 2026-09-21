@@ -43,7 +43,7 @@ test("intake preserves every allowed tour selection in every locale and its sema
   for (const locale of ["en", "zh", "ko"]) {
     for (const slug of privateTourInquirySlugs) {
       for (const packageId of packages) {
-        for (const travelers of [2, 4]) {
+        for (const travelers of [2, 3, 4, 5, 6, 7, 8, 9]) {
           const selection = getPrivateTourInquirySelection(slug, packageId, travelers);
           const context = { ...getPrivateTourInquiryContext(slug, locale), selection: { packageId, travelers } };
           const result = validateAndNormalizeInquiry(payload(context, locale), config);
@@ -96,7 +96,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 });
 
 test("new migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
-  const sql = await readFile(new URL("../migrations/202609050001_homeground_private_tour_selection.sql", import.meta.url), "utf8");
+  const sql = await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8");
   for (const slug of privateTourInquirySlugs) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
@@ -104,22 +104,31 @@ test("new migration keeps canonical names, narrow JSON, atomic persistence and s
       assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
     }
   }
-  const packageCase = sql.match(/allowed_packages := case product_slug([\s\S]*?)end;/)?.[1];
-  assert.ok(packageCase);
-  const sqlPackages = new Map([...packageCase.matchAll(/when '([^']+)' then array\[([^\]]*)\]/g)]
-    .map(([, slug, values]) => [slug, [...values.matchAll(/'([^']+)'/g)].map((match) => match[1])]));
-  assert.match(packageCase, /else array\['standard-guided'\]/);
-  for (const slug of privateTourInquirySlugs) {
-    for (const packageId of packages) {
-      assert.equal(
-        (sqlPackages.get(slug) ?? ["standard-guided"]).includes(packageId),
-        Boolean(getPrivateTourInquirySelection(slug, packageId, 2)),
-        `SQL package enum drift: ${slug}:${packageId}`,
-      );
-    }
+  const selectionCase = sql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase);
+  const expansionRows = {
+    "chengdu-jiuzhaigou-huanglong-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 2/u,
+    "kunming-dali-lijiang-8-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 6/u,
+    "guizhou-huangguoshu-libo-miao-7-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 2/u,
+    "xiamen-tulou-quanzhou-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 2/u,
+    "chaozhou-shantou-nanao-5-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "chengdu-chongqing-8-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 2/u,
+    "guangzhou-shunde-foshan-5-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "huangshan-hongcun-huizhou-5-day-private-tour": /p_package_id = 'standard-guided' and p_travelers = 4/u,
+  };
+  for (const [slug, condition] of Object.entries(expansionRows)) {
+    const branch = selectionCase.match(
+      new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"),
+    )?.[1];
+    assert.ok(branch && condition.test(branch), `SQL selection drift: ${slug}`);
   }
+  assert.doesNotMatch(selectionCase, /jingdezhen-wuyuan-wangxian|changbaishan-yanji-winter/u);
   assert.match(sql, /jsonb_typeof\(product_selection -> 'travelers'\) is distinct from 'number'/);
-  assert.match(sql, /in \('2'::jsonb, '4'::jsonb\)/);
+  assert.match(sql, /when '2'::jsonb then 2/);
+  assert.match(sql, /when '4'::jsonb then 4/);
+  assert.match(sql, /when '6'::jsonb then 6/);
   assert.match(sql, /product_selection is distinct from expected_selection/);
   assert.match(sql, /p_attribution is distinct from expected_attribution/);
   assert.match(sql, /homepage_answers :=[\s\S]+\|\| expected_attribution/);

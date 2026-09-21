@@ -14,6 +14,7 @@ import {
 } from "react";
 import type {
   LocalizedPrivateTourProduct,
+  PrivateTourPriceTier,
   PrivateTourLocale,
 } from "../lib/privateTourProducts";
 import { GuideCtaLink } from "./GuideCtaLink";
@@ -36,6 +37,8 @@ const interactionCopy: Record<
     otherGroups: string;
     otherGroupsBody: string;
     requestQuote: string;
+    quoteOnlyTitle: string;
+    quoteOnlyBody: string;
     routeLabel: string;
     routeScenes: string;
     dayLabel: (day: number) => string;
@@ -51,10 +54,13 @@ const interactionCopy: Record<
     privateTour: "private tour",
     flightsSeparate: "flights not included",
     checkDates: "Request a quote",
-    otherGroups: "A different group size?",
+    otherGroups: "Need a different group size?",
     otherGroupsBody:
       "We confirm room needs, luggage count and a suitable vehicle before sending a written quote.",
     requestQuote: "Plan this journey",
+    quoteOnlyTitle: "Price confirmed for your dates and group",
+    quoteOnlyBody:
+      "This route has no stable public price. Share your dates, group size and room needs for one written total before payment.",
     routeLabel: "Choose a day to change the journey photograph",
     routeScenes: "Journey scenes",
     dayLabel: (day) => `Day ${day}`,
@@ -69,9 +75,12 @@ const interactionCopy: Record<
     privateTour: "私家团",
     flightsSeparate: "往返机票另计",
     checkDates: "获取专属报价",
-    otherGroups: "不是 2 人或 4 人？",
+    otherGroups: "需要其他同行人数？",
     otherGroupsBody: "我们会确认房间需求、行李数量和适用车型，再发出书面报价。",
     requestQuote: "规划这条路线",
+    quoteOnlyTitle: "按日期和人数确认价格",
+    quoteOnlyBody:
+      "这条路线没有稳定公开价。请提供日期、人数和房间需求，我们会在付款前给出一份书面总价。",
     routeLabel: "选择一天，切换对应的行程照片",
     routeScenes: "当天场景",
     dayLabel: (day) => `第 ${day} 天`,
@@ -86,10 +95,13 @@ const interactionCopy: Record<
     privateTour: "프라이빗 투어",
     flightsSeparate: "항공권 별도",
     checkDates: "맞춤 견적 요청",
-    otherGroups: "2명 또는 4명이 아닌가요?",
+    otherGroups: "다른 인원으로 여행하나요?",
     otherGroupsBody:
       "객실 조건, 수하물 수량과 알맞은 차량을 확인한 뒤 서면 견적을 드립니다.",
     requestQuote: "이 여정 계획하기",
+    quoteOnlyTitle: "날짜와 인원에 맞춰 가격을 확인합니다",
+    quoteOnlyBody:
+      "이 일정은 고정 공개가가 없습니다. 날짜, 인원과 객실 조건을 알려 주시면 결제 전 서면 총액을 안내합니다.",
     routeLabel: "일자를 선택해 해당 여행 사진을 보세요",
     routeScenes: "선택한 날의 장면",
     dayLabel: (day) => `${day}일차`,
@@ -182,6 +194,46 @@ export function ShanghaiJiangnanPriceConsole({
   product: LocalizedPrivateTourProduct;
   inquiryHref: string;
 }) {
+  const hasPublishedPrice = product.packages.some(
+    (tourPackage) => tourPackage.rows.length > 0,
+  );
+  if (!hasPublishedPrice) {
+    return (
+      <div className={styles.priceConsole}>
+        <div className={styles.priceResult}>
+          <span>{interactionCopy[product.locale].quoteOnlyTitle}</span>
+          <p>{interactionCopy[product.locale].quoteOnlyBody}</p>
+        </div>
+        <div className={styles.priceConsoleActions}>
+          <GuideCtaLink
+            className={styles.primaryAction}
+            guideId={product.id}
+            href={inquiryHref}
+            locale={product.locale}
+            position="header"
+          >
+            {interactionCopy[product.locale].requestQuote}
+            <ArrowRight aria-hidden="true" size={18} />
+          </GuideCtaLink>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <PublishedPrivateTourPriceConsole
+      inquiryHref={inquiryHref}
+      product={product}
+    />
+  );
+}
+
+function PublishedPrivateTourPriceConsole({
+  product,
+  inquiryHref,
+}: {
+  product: LocalizedPrivateTourProduct;
+  inquiryHref: string;
+}) {
   const selectionContext = usePrivateTourSelection();
   if (!selectionContext) throw new Error("Private tour price needs selection context");
   const { selection, setSelection } = selectionContext;
@@ -232,7 +284,12 @@ export function ShanghaiJiangnanPriceConsole({
               aria-pressed={row.travelers === travellers}
               key={row.travelers}
               type="button"
-              onClick={() => setSelection({ ...selection, travelers: row.travelers as 2 | 4 })}
+              onClick={() =>
+                setSelection({
+                  ...selection,
+                  travelers: row.travelers as PrivateTourPriceTier["travelers"],
+                })
+              }
             >
               <span>{copy.group(row.travelers)}</span>
               <strong>{row.formatted}</strong>

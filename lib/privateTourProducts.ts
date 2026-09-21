@@ -1,6 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { shanghaiSuzhouAnswers, shanghaiSuzhouHangzhouAnswers } from "./jiangnanTourAnswers.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -14,6 +16,12 @@ export interface PrivateTourPriceTier {
   cnyPerPerson: number;
   // An explicitly approved USD selling price bypasses the default USD10 rounding.
   usdPerPerson?: number;
+  // Keep an externally published benchmark in its original currency instead of
+  // presenting a temporary FX conversion as though it were a selling price.
+  publishedPrice?: Readonly<{
+    currency: PrivateTourCurrency;
+    amountPerPerson: number;
+  }>;
 }
 
 export interface PrivateTourPackage {
@@ -21,6 +29,8 @@ export interface PrivateTourPackage {
   guideMode: PrivateTourGuideMode;
   label: LocalizedText;
   summary: LocalizedText;
+  /** True only when the supplier publishes no stable per-person price. */
+  quoteOnly?: boolean;
   prices: readonly PrivateTourPriceTier[];
 }
 
@@ -111,7 +121,7 @@ export interface FormattedPrivateTourPrice {
 }
 
 export interface LocalizedPrivateTourPriceRow extends FormattedPrivateTourPrice {
-  travelers: number;
+  travelers: PrivateTourPriceTier["travelers"];
 }
 
 export interface LocalizedPrivateTourPackage {
@@ -119,6 +129,7 @@ export interface LocalizedPrivateTourPackage {
   guideMode: PrivateTourGuideMode;
   label: string;
   summary: string;
+  quoteOnly: boolean;
   rows: readonly LocalizedPrivateTourPriceRow[];
 }
 
@@ -233,8 +244,25 @@ export function formatPrivateTourPrice(
   cny: number,
   locale: PrivateTourLocale,
   usdPerPerson?: number,
+  publishedPrice?: PrivateTourPriceTier["publishedPrice"],
 ): FormattedPrivateTourPrice {
   assertValidCny(cny);
+  if (publishedPrice) {
+    if (!Number.isSafeInteger(publishedPrice.amountPerPerson) || publishedPrice.amountPerPerson <= 0) {
+      throw new RangeError("A published source-currency price must be a positive safe integer.");
+    }
+    return {
+      cny,
+      amount: publishedPrice.amountPerPerson,
+      currency: publishedPrice.currency,
+      formatted: new Intl.NumberFormat(numberLocales[locale], {
+        style: "currency",
+        currency: publishedPrice.currency,
+        currencyDisplay: "code",
+        maximumFractionDigits: 0,
+      }).format(publishedPrice.amountPerPerson),
+    };
+  }
   if (usdPerPerson !== undefined) {
     if (!Number.isSafeInteger(usdPerPerson)) {
       throw new RangeError("An explicit USD price must be a whole-dollar safe integer.");
@@ -3265,6 +3293,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     beijing,
     zhangjiajieForestFixedRoute,
     zhangjiajieFurongFenghuang,
+    ...privateTourExpansionProducts,
   ],
 );
 
@@ -3315,7 +3344,12 @@ export function getPrivateTourPriceRows(
   }
   return selectedPackage.prices.map((tier) => ({
     travelers: tier.travelers,
-    ...formatPrivateTourPrice(tier.cnyPerPerson, locale, tier.usdPerPerson),
+    ...formatPrivateTourPrice(
+      tier.cnyPerPerson,
+      locale,
+      tier.usdPerPerson,
+      tier.publishedPrice,
+    ),
   }));
 }
 
@@ -3343,6 +3377,7 @@ export function localizePrivateTourProduct(
     guideMode: tourPackage.guideMode,
     label: tourPackage.label[locale],
     summary: tourPackage.summary[locale],
+    quoteOnly: tourPackage.quoteOnly === true,
     rows: getPrivateTourPriceRows(product, tourPackage.id, locale),
   }));
   return {
@@ -3416,6 +3451,15 @@ export function assertAllPrivateTourPriceInvariants(): true {
   for (const product of privateTourProducts) {
     for (const tourPackage of product.packages) {
       for (const tier of tourPackage.prices) {
+        if (tier.publishedPrice) {
+          formatPrivateTourPrice(
+            tier.cnyPerPerson,
+            "en",
+            tier.usdPerPerson,
+            tier.publishedPrice,
+          );
+          continue;
+        }
         const usd = formatPrivateTourPrice(tier.cnyPerPerson, "en", tier.usdPerPerson).amount;
         const krw = convertCnyToKrw(tier.cnyPerPerson);
         assertConvertedPriceInvariant(tier.cnyPerPerson, usd, "USD");

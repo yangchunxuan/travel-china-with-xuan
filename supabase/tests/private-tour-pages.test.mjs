@@ -198,10 +198,20 @@ test("public price tiers stay complete, positive and conversion-safe", () => {
   for (const product of privateTourProducts) {
     assert.ok(product.packages.length > 0, product.slug);
     for (const tourPackage of product.packages) {
+      const travelers = tourPackage.prices.map((tier) => tier.travelers);
+      assert.equal(
+        tourPackage.quoteOnly === true,
+        travelers.length === 0,
+        `${product.slug}/${tourPackage.id} quote-only state`,
+      );
       assert.deepEqual(
-        tourPackage.prices.map((tier) => tier.travelers),
-        [2, 4],
-        `${product.slug}/${tourPackage.id}`,
+        travelers,
+        [...new Set(travelers)].sort((left, right) => left - right),
+        `${product.slug}/${tourPackage.id} group rows`,
+      );
+      assert.ok(
+        travelers.every((count) => Number.isInteger(count) && count >= 2 && count <= 9),
+        `${product.slug}/${tourPackage.id} supported group sizes`,
       );
       for (const tier of tourPackage.prices) {
         assert.ok(Number.isFinite(tier.cnyPerPerson) && tier.cnyPerPerson > 0);
@@ -821,9 +831,18 @@ test("traveler-facing product data does not expose internal commercial terms", (
         `${product.slug}/${locale}`,
       );
     }
-    assert.match(product.bookingNote.en, /starting price/i);
-    assert.match(product.bookingNote.zh, /起价/);
-    assert.match(product.bookingNote.ko, /시작가/);
+    const quoteOnly = product.packages.every(
+      (tourPackage) => tourPackage.quoteOnly === true,
+    );
+    if (quoteOnly) {
+      assert.match(product.bookingNote.en, /enquiry-only|quote/i);
+      assert.match(product.bookingNote.zh, /询价|报价/);
+      assert.match(product.bookingNote.ko, /견적/);
+    } else {
+      assert.match(product.bookingNote.en, /starting price/i);
+      assert.match(product.bookingNote.zh, /起价/);
+      assert.match(product.bookingNote.ko, /시작가/);
+    }
   }
 });
 

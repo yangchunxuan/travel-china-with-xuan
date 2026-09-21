@@ -34,7 +34,7 @@ function click(modifiers = {}) {
   return { event: { preventDefault() { prevented = true; }, metaKey: false, ctrlKey: false, shiftKey: false, altKey: false, ...modifiers }, wasPrevented: () => prevented };
 }
 
-test("WhatsApp carries every published product/service and 2-or-4-person choice in EN/ZH/KO", () => {
+test("WhatsApp carries every published product/service/group choice in EN/ZH/KO", () => {
   process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER = "12025550123";
   const openings = { en: "Hi, I’d like to plan a private trip to China.", zh: "你好，我想咨询中国私人旅行。", ko: "안녕하세요. 중국 프라이빗 여행을 문의하고 싶습니다." };
   for (const locale of locales) for (const product of privateTourProducts) for (const option of product.packages) for (const row of option.prices) {
@@ -46,7 +46,11 @@ test("WhatsApp carries every published product/service and 2-or-4-person choice 
     const message = url.searchParams.get("text");
     assert.deepEqual(message.split("\n"), [openings[locale], context.name, privateTourInquirySelectionLabel(context, locale), `https://homegroundchina.com${pathFor(locale, product.slug)}`]);
     assert.doesNotMatch(message, /private@example|secret-source|private-note|utm_source|email=/);
-    assert.ok([2, 4].includes(context.selection.travelers));
+    assert.ok(
+      Number.isInteger(context.selection.travelers) &&
+      context.selection.travelers >= 2 &&
+      context.selection.travelers <= 9,
+    );
   }
 });
 

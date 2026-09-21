@@ -123,6 +123,116 @@
       "rightsEvidenceNeedle": "The site owner selected the organized-library images",
       "dimensions": ["320x213", "640x427", "960x640", "1380x920"],
       "familySha256": "674f8b3e90713a002213252f27c1008966284a185f7699283219e95019c2de13"
+    },
+    {
+      "productId": "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+      "sourcePath": "public/images/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/hero.webp",
+      "sourceSha256": "cc6113046b5e5208a08971d43c5bcac569e28a569cdae5a372102f684a0eb37b",
+      "rightsBasis": "Wikimedia Commons, Chensiyuan, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "d90a798e0ae861bc6c160d9d904e1a75461c2e4b923c9885802a3e1624e278bb"
+    },
+    {
+      "productId": "kunming-dali-lijiang-8-day-private-tour",
+      "sourcePath": "public/images/tours/kunming-dali-lijiang-8-day-private-tour/hero.webp",
+      "sourceSha256": "f78c722db969bd5606ca6d0538aab59c8a35253ee02a583aa3e633d8dc4039b1",
+      "rightsBasis": "Wikimedia Commons, CEphoto, Uwe Aranas, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/kunming-dali-lijiang-8-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "86513558f4805ed40ffbf7920275564e21aacf689b5826308b94374c41571755"
+    },
+    {
+      "productId": "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+      "sourcePath": "public/images/tours/guizhou-huangguoshu-libo-miao-7-day-private-tour/hero.webp",
+      "sourceSha256": "2fd4d8618c23b736fb84f4697a5bb996541a05a53a3ea9b6ff32c456f957d230",
+      "rightsBasis": "Wikimedia Commons, SONG1907, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/guizhou-huangguoshu-libo-miao-7-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "02b25073534d8f44a70efafcdc9a64c22e0e924b6e9aef2fb4a6e39259ea31a4"
+    },
+    {
+      "productId": "xiamen-tulou-quanzhou-6-day-private-tour",
+      "sourcePath": "public/images/tours/xiamen-tulou-quanzhou-6-day-private-tour/hero.webp",
+      "sourceSha256": "16d4f9d3340c163339f71a0f918750d0f07890b2f41c78c952a08eea203317a1",
+      "rightsBasis": "Wikimedia Commons, Jakob Montrasio, CC BY 2.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/xiamen-tulou-quanzhou-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY 2.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "2a9fa50aa83b58cbefa56112d7f6d16040758e4c1b4c097cac40aac7a436aae5"
+    },
+    {
+      "productId": "chaozhou-shantou-nanao-5-day-private-tour",
+      "sourcePath": "public/images/tours/chaozhou-shantou-nanao-5-day-private-tour/hero.webp",
+      "sourceSha256": "ef2cae329cd817e9f64b06e244dcf1dfa6968c8ea1a54091d8ece394eb524ccd",
+      "rightsBasis": "Wikimedia Commons, Akira CA, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/chaozhou-shantou-nanao-5-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "4d694d9ebecafea3cbc4e5708cc6e85f0e2f724bcabc25211f378e4015bf0a93"
+    },
+    {
+      "productId": "chengdu-chongqing-8-day-private-tour",
+      "sourcePath": "public/images/tours/chengdu-chongqing-8-day-private-tour/hero.webp",
+      "sourceSha256": "8791b12c3e437f86ee45444aec41ff6855cb6f331d55c175931aa8b201eef1be",
+      "rightsBasis": "Wikimedia Commons, Jonashtand, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/chengdu-chongqing-8-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "665399df4e815f88a7ee1df32b87345d2ac1a68070e76e33b350c4e8c782a478"
+    },
+    {
+      "productId": "guangzhou-shunde-foshan-5-day-private-tour",
+      "sourcePath": "public/images/tours/guangzhou-shunde-foshan-5-day-private-tour/hero.webp",
+      "sourceSha256": "c86498f193b7b7f2e072a8b9b67ea47bc0d470e4732f398e40e6879ee0bcb16c",
+      "rightsBasis": "Wikimedia Commons, Daniel Lu（User:dllu）, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/guangzhou-shunde-foshan-5-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "1b1a5aae60a51a5b4efac722467fe39226a3261168423263c25602170aef951a"
+    },
+    {
+      "productId": "huangshan-hongcun-huizhou-5-day-private-tour",
+      "sourcePath": "public/images/tours/huangshan-hongcun-huizhou-5-day-private-tour/hero.webp",
+      "sourceSha256": "b59401deb5b25217787dac90d12f802ad20b14768ee0549e0010032bc615edb2",
+      "rightsBasis": "Wikimedia Commons, Francesco Bandarin, CC BY-SA 3.0 IGO",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/huangshan-hongcun-huizhou-5-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0 IGO",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "b78ab2ead92c4174c40b658d21ada367084d69c3da25a324e2b11c61f205ba71"
+    },
+    {
+      "productId": "jingdezhen-wuyuan-wangxian-6-day-private-tour",
+      "sourcePath": "public/images/tours/jingdezhen-wuyuan-wangxian-6-day-private-tour/hero.webp",
+      "sourceSha256": "c038142666997a34b76449527a5adc3cead1f44f620c57515d9caa4d98fc133f",
+      "rightsBasis": "Wikimedia Commons, 茅野ふたば, CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/jingdezhen-wuyuan-wangxian-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "0dc384090b810d6d0366fd7fc22fbb618b31d9369717ae0a39ddc27dfa1275dc"
+    },
+    {
+      "productId": "changbaishan-yanji-winter-6-day-private-tour",
+      "sourcePath": "public/images/tours/changbaishan-yanji-winter-6-day-private-tour/hero.webp",
+      "sourceSha256": "4d271b23b7eb16396f030867f9b146cc5246c294871fd2b136eb8f933ba975da",
+      "rightsBasis": "Wikimedia Commons, Wang65, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/changbaishan-yanji-winter-6-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": ["320x200", "640x400", "960x600", "1380x862"],
+      "familySha256": "eb0fe159c74133f1d2debe0569b01576b206b4c89897e9833fd968b85849d560"
     }
   ]
 }
