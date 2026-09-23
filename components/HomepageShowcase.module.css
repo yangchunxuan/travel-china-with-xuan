@@ -280,11 +280,9 @@
 
 .eyebrow {
   color: var(--showcase-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
   margin: 0;
-  text-transform: uppercase;
 }
 
 .planningIntro h2 {
@@ -382,9 +380,9 @@
   align-items: center;
   color: var(--showcase-ink);
   display: inline-flex;
-  font-size: 0.84rem;
-  font-weight: 650;
-  gap: 0.55rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.35rem;
   margin-block-start: 1.5rem;
   min-block-size: 2.75rem;
   text-underline-offset: 0.2em;

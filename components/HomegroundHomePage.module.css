@@ -614,11 +614,12 @@
   border-color: var(--hg-color-charcoal);
   border-radius: 999px;
   color: var(--hg-color-on-dark);
-  font-size: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   justify-content: space-between;
   margin-block-start: 0;
   min-block-size: 2.75rem;
-  padding: 0.65rem 1rem;
+  padding: 0 1.25rem;
 }
 
 .quickContactHero .quickContactPrimaryLink:hover {
@@ -634,23 +635,24 @@
   padding: 0;
 }
 
+/* On the #f9f8f6 card the secondary action is a borderless white pill. */
 .quickContactHero .quickContactMessenger a {
   align-items: center;
   background: #fff;
-  border: 1px solid var(--hg-color-line);
+  border: 0;
   border-radius: 999px;
   color: var(--hg-color-ink);
   display: flex;
-  font-size: 0.88rem;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 0.55rem;
   min-block-size: 2.75rem;
-  padding: 0.65rem 1rem;
+  padding: 0 1.25rem;
   text-decoration: none;
 }
 
 .quickContactHero .quickContactMessenger a:hover {
-  background: var(--hg-color-canvas);
-  border-color: #aaa397;
+  background: #f2f1ef;
 }
 
 .quickContactHero .quickContactEmail {
@@ -3018,4 +3020,18 @@
   .quickContactCancel {
     border: 1px solid ButtonText;
   }
+}
+
+/* Homepage contact card: every action shares the 14px/500, 44px pill scale. */
+.quickContactHero .quickContactEmailRow button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-inline: 1.25rem;
+}
+
+.quickContactHero .quickContactEmailFallback > a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-block: 0;
+  padding-inline: 1.25rem;
 }

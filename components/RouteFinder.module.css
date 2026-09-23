@@ -28,6 +28,12 @@
 .heroVariant[data-planning-view="intent"] {
   background: #fff;
   border-color: var(--rf-line);
+}
+
+/* Homepage contact card: the x.ai tile surface, no outline. */
+.heroVariant[data-contact-only] {
+  background: #f9f8f6;
+  border-color: transparent;
   border-radius: 1rem;
   box-shadow: none;
 }

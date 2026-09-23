@@ -1168,6 +1168,9 @@ export function RouteFinder({
       data-planning-view={
         intentPickerOpen || !planningIntent ? "intent" : view
       }
+      data-contact-only={
+        variant === "hero" && !planningIntent ? "" : undefined
+      }
     >
       <p className={styles.srOnly} aria-live="polite" aria-atomic="true">
         {intentAnnouncement}
