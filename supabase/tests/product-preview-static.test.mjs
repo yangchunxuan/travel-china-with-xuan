@@ -41,7 +41,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   assert.equal(product.status, "published");
   assert.equal(product.public_eligible, true);
   assert.equal(product.seo.indexable, true);
-  assert.match(product.title.ko, /장자제/);
+  assert.match(product.title.ko, /장가계/);
   assert.equal(product.route.length, 4);
   assert.ok(product.route.every((day) => day.title_ko));
   assert.equal(pricing.status, "approved_price_decision");

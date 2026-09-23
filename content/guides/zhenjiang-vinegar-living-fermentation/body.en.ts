@@ -145,6 +145,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before a Zhenjiang vinegar visit",
+      items: [
+        {
+          question: "Is Zhenjiang vinegar made straight from rice?",
+          answer: "Not directly. The grain first becomes alcohol: enzymes and microorganisms make fermentable sugars and then alcohol, and only after that does a solid vinegar mash support acetic-acid bacteria and other microorganisms. Sourness does not appear straight from cooked rice, and the jars, starter displays and on-site explanation are showing you that wine-like stage.",
+        },
+        {
+          question: "Can I just turn up at the China Vinegar Culture Museum?",
+          answer: "Check the museum's official notice before you travel: address, reservation channel, photography policy, tasting content and whether any live demonstration is running. Access and event information for the museum was reviewed on 13 August 2026, and no opening hour, ticket price or festival date is treated as permanent. If it is closed, do not enter an industrial area or follow delivery vehicles.",
+        },
+        {
+          question: "The vinegar smell is very strong — what if it bothers me?",
+          answer: "Move to fresh air and skip the active-fermentation and tasting spaces. The strongest smell sits around the solid vinegar mash, where layers of mash, bran or husk and warmth produce a strong changing aroma. You can contact the venue in advance about ventilation, steps and an early exit. This is not medical advice.",
+        },
+        {
+          question: "Does the national heritage listing cover every bottle that says Zhenjiang vinegar?",
+          answer: "No. The national ICH item is specifically named Hengshun's Zhenjiang aromatic-vinegar brewing technique, so the listing cannot certify every producer or bottle bearing the city name. A geographical-indication standard concerns defined product requirements and origin; it is not a taste award, and the words on a bottle should still be checked against the current label and applicable standard.",
+        },
+        {
+          question: "Is an older Zhenjiang vinegar always the better one?",
+          answer: "Not automatically. Researchers have measured changes across brewing and aging, including acids, sugars, phenolics and aroma compounds, so time matters chemically. But an age printed on one premium bottle cannot be generalized to the entire category, and one duration does not apply to every Zhenjiang vinegar. Compare producer, ingredient list, product standard and age claim rather than dark colour alone.",
+        },
+        {
+          question: "Does drinking Zhenjiang vinegar prevent illness?",
+          answer: "No. Papers on phenolics, antioxidant capacity or microbial metabolites describe samples and laboratory measurements; they do not prove that drinking vinegar prevents or treats disease. If you have grain, gluten, alcohol or sodium concerns, read the current ingredient and allergen information for the exact product and ask the venue rather than inferring suitability from the word vinegar.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning craft and food culture",

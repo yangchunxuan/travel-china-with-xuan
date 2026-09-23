@@ -12,6 +12,7 @@ import {
 import {
   getPrivateTourInquiryContext,
   getPrivateTourInquirySelection,
+  isPrivateTourInquiryNameForSlug,
   privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
@@ -141,7 +142,11 @@ function homepageProductInterest(
     job.locale,
     selection ?? undefined,
   );
-  if (!expected || record.name !== expected.name) {
+  if (!expected || !isPrivateTourInquiryNameForSlug(
+    expected,
+    job.locale,
+    record.name,
+  )) {
     throw new Error("invalid_job:homepage_product_interest");
   }
   return expected;

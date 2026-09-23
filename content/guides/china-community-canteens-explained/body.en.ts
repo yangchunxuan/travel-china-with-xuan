@@ -226,6 +226,37 @@ const body = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about community canteens",
+      items: [
+        {
+          question: "Can foreign tourists eat at a community canteen in China?",
+          answer: "It depends on the venue. China has no single visitor-access, price or discount rule for this label. Some venues serve the public at ordinary prices while prioritising eligible older residents; others are senior meal halls, collection points or resident facilities. Identify the specific venue, ask whether non-residents may eat, and pay the ordinary price if you are admitted.",
+        },
+        {
+          question: "If they let me in, do I get the discounted price older residents pay?",
+          answer: "No. A subsidy or discount normally follows a locally eligible person or service arrangement; it is not automatically attached to every plate. If a venue admits you, ask for the ordinary charge and pay through a method the property confirms. Do not pressure staff to apply an older resident's entitlement, and do not photograph another person's card to reproduce it.",
+        },
+        {
+          question: "Does a sign saying 食堂 mean the public can walk in?",
+          answer: "Not by itself. 食堂 is a generic word also used by workplaces, universities and institutions, so the sign alone does not show that the public may enter. 助餐点 or 助餐服务点 describes a collection, reheating, serving or delivery node that may have no public seats and may not accept walk-ins. Treat the sign as a clue, not permission.",
+        },
+        {
+          question: "What exactly should I ask before sitting down?",
+          answer: "Ask four things. 您好，请问这里对非本社区居民开放吗？ asks whether the place is open to people who do not live in this community; 我不享受居民或老年优惠，按普通价格可以吗？ settles price and eligibility; 需要本地证件或饭卡吗？ covers documents and a meal card; and 今天几点停止供餐？现在还有餐吗？ covers the meal window and sold-out risk. Show the Chinese text if spoken communication is difficult.",
+        },
+        {
+          question: "The building was still open but staff said there was no food left — why?",
+          answer: "Because the prepared allocation had sold out. A canteen may stop serving once the day's portions run out, before the building closes, so posted opening hours are not a meal window. Ask when service stops and how much food remains, and keep a previously checked restaurant or supermarket prepared-food counter as your backup.",
+        },
+        {
+          question: "Can I pay with a mobile wallet, or should I bring cash?",
+          answer: "Check at the counter before you order. A meal card, app, cash or mobile payment may be required, so you need a method your group can actually use plus a cash, card or payment fallback. Do not infer nationwide payment support from one city's guidance, and if a payment fails, ask whether cash or another accepted method is possible.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Prepare for an ordinary meal in China",

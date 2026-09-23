@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, Check, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { getPrivateTourInquiryContext, privateTourInquirySelectionLabel, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
 import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, privateTourQuoteApiUrl } from "../lib/tourContact";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
@@ -177,7 +177,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     if (!context || locked || !enabled) return;
     const data = new FormData(event.currentTarget);
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
-      entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: context,
+      entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: getPrivateTourInquirySubmissionContext(context, locale),
       travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource), privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
       experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: getTrafficSessionToken() ?? null });

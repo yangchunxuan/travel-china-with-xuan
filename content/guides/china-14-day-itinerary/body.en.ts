@@ -61,6 +61,37 @@ const body = {
       ]
     },
   {
+    "id": "faq",
+    "type": "faq",
+    "title": "Questions about this two-week route",
+    "items": [
+      {
+        "question": "How many nights do I spend in each city?",
+        "answer": "Thirteen nights: Beijing on nights 1–4, Xi'an on nights 5–6, Chengdu on nights 7–10 and Shanghai on nights 11–13. Day 1 means arrival in China and day 14 means departure from China, so neither is a full sightseeing day. Overnight international flights may use another date at home, so compare flights into Beijing and out of Shanghai."
+      },
+      {
+        "question": "How much of the two weeks is spent travelling between cities?",
+        "answer": "Three days. Days 5, 7 and 11 are travel days, which leaves nine full local days plus arrival and departure. An earlier arrival can create a useful evening, but do not book a must-see museum on that assumption. For rail, check the exact stations and carry the passport used to book."
+      },
+      {
+        "question": "Which day should I keep for the Forbidden City?",
+        "answer": "Day 2 in this plan, with day 4 kept free as a swap. The Forbidden City normally closes on Mondays, except statutory holidays, so the visit may have to move. Take time with the courtyards and palace details instead of rushing through for photographs, and add Tiananmen Square only after checking its separate entry arrangements."
+      },
+      {
+        "question": "Do I need to book the Terracotta Warriors before travelling out there?",
+        "answer": "Yes. Book before travelling out to the museum, and match the reservation to the passport you will carry. Day 6 is your only full Xi'an day, with the site and the return journey taking its main share, so a complete city-wall visit or another major museum would need time taken from elsewhere."
+      },
+      {
+        "question": "Can I do this in two weeks with three cities instead of four?",
+        "answer": "You can, by dropping Xi'an: Beijing five nights, Chengdu four and Shanghai four. That is still 13 nights, but two hotel changes instead of three, one more full local day and a longer stay in each city. You still need to compare the actual Beijing to Chengdu transport before fixing the dates."
+      },
+      {
+        "question": "Which Chengdu panda site does this plan use?",
+        "answer": "The city base, Chengdu Research Base of Giant Panda Breeding, on day 8 within your reserved entry period. It is not Dujiangyan Panda Valley, so book and navigate to the same place. Leave time to watch rather than racing between enclosures, because animal activity varies, and keep the afternoon easy over tea or back at the hotel."
+      }
+    ]
+  },
+  {
     "id": "sightseeing-execution-links",
     "type": "internal-links",
     "title": "Plan these sightseeing days",

@@ -36,7 +36,7 @@ export async function generateMetadata({
   const socialImageAlt =
     locale === "zh"
       ? "阳光照亮张家界国家森林公园的砂岩峰柱。"
-      : "햇살이 비치는 장자제 국가삼림공원의 사암 봉우리.";
+      : "햇살이 비치는 장가계 국가삼림공원의 사암 봉우리.";
 
   return {
     title: copy.metadataTitle,

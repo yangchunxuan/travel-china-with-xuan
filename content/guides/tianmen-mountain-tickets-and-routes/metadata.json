@@ -21,7 +21,7 @@
   "imageWidth": 1280,
   "imageHeight": 1600,
   "datePublished": "2026-09-13",
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-09-22",
   "sourceReviewedDate": "2026-09-13",
   "searchTerms": {
     "en": [
@@ -40,9 +40,10 @@
     ],
     "ko": [
       "천문산 입장권",
-      "톈먼산 입장료",
+      "천문산 입장료",
       "천문산 A B C 코스",
-      "천문산 여권 예약"
+      "천문산 여권 예약",
+      "톈먼산 입장권"
     ]
   },
   "search": {
@@ -88,11 +89,11 @@
     "ko": {
       "path": "/ko/guides/tianmen-mountain-tickets-and-routes/",
       "title": "천문산 입장권: 가격·A/B/C 코스·여권 예약 확인",
-      "headline": "톈먼산 입장권: 코스와 입구부터 고르세요",
-      "description": "톈먼산 입장료와 교통 포함 패키지 가격을 구분하고, 공사 중 A/B/C 케이블카 코스와 출발 지점, 외국 여권 예약·결제·입장 사항을 확인하세요.",
-      "heroAlt": "가파른 절벽 사이로 톈먼둥을 향해 이어지는 돌계단",
-      "navTitle": "톈먼산 입장권과 코스",
-      "featuredLinkLabel": "톈먼산 입장권 고르기",
+      "headline": "천문산 입장권: 코스와 입구부터 고르세요",
+      "description": "천문산 입장료와 교통 포함 패키지 가격을 구분하고, 공사 중 A/B/C 케이블카 코스와 출발 지점, 외국 여권 예약·결제·입장 사항을 확인하세요.",
+      "heroAlt": "가파른 절벽 사이로 천문동을 향해 이어지는 돌계단",
+      "navTitle": "천문산 입장권과 코스",
+      "featuredLinkLabel": "천문산 입장권 고르기",
       "openGraphLocale": "ko_KR",
       "cardTags": [
         "입장권 가격",

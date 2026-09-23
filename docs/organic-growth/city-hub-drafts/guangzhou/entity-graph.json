@@ -165,7 +165,7 @@
       "names": {
         "en": "Zhangjiajie",
         "zh-Hans": "张家界",
-        "ko": "장자제"
+        "ko": "장가계"
       },
       "registryStatus": "existing",
       "parentEntityIds": [
@@ -808,7 +808,7 @@
       "names": {
         "en": "Guangzhou–Zhangjiajie rail direction",
         "zh-Hans": "广州—张家界铁路方向",
-        "ko": "광저우–장자제 철도 방향"
+        "ko": "광저우–장가계 철도 방향"
       },
       "registryStatus": "proposed",
       "volatility": "high"

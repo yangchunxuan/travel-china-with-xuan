@@ -189,17 +189,17 @@ const privateTourInquiryNames: Readonly<
   "zhangjiajie-forest-4-day-private-tour": {
     en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     zh: "张家界森林公园 4 天 3 晚固定路线私家团",
-    ko: "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+    ko: "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어",
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     en: "Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour",
     zh: "张家界、芙蓉镇与凤凰 7 天 6 晚私家团",
-    ko: "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+    ko: "장가계, 부용진, 봉황 6박 7일 프라이빗 투어",
   },
   "zhangjiajie-4-day-private-tour": {
     en: "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
     zh: "张家界4天3晚：峰林、玻璃桥与天门山",
-    ko: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+    ko: "장가계 4일 3박: 사암 봉우리와 유리다리, 천문산",
   },
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
     en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour",
@@ -252,6 +252,38 @@ const privateTourInquiryNames: Readonly<
     ko: "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
   },
 };
+
+// The existing intake/SQL contract uses these exact Korean names. Keep the
+// published name on screen and translate only the submitted payload.
+const previousKoreanZhangjiajieNames: Partial<
+  Record<PrivateTourInquirySlug, string>
+> = {
+  "zhangjiajie-forest-4-day-private-tour":
+    "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+  "zhangjiajie-furong-fenghuang-7-day-private-tour":
+    "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+  "zhangjiajie-4-day-private-tour":
+    "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+};
+
+export function getPrivateTourInquirySubmissionContext(
+  context: PrivateTourInquiryContext,
+  locale: HomegroundLocale,
+): PrivateTourInquiryContext {
+  const previousName = locale === "ko"
+    ? previousKoreanZhangjiajieNames[context.slug]
+    : undefined;
+  return previousName ? { ...context, name: previousName } : context;
+}
+
+export function isPrivateTourInquiryNameForSlug(
+  context: PrivateTourInquiryContext,
+  locale: HomegroundLocale,
+  name: string,
+): boolean {
+  return name === context.name ||
+    name === getPrivateTourInquirySubmissionContext(context, locale).name;
+}
 
 export const privateTourInquiryContactCopy = {
   en: {

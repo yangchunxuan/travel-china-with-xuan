@@ -252,6 +252,37 @@ const body = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions readers ask about Yangshan Phase IV",
+      items: [
+        {
+          question: "Can travellers visit Yangshan Phase IV?",
+          answer: "Not as a walk-in. As of 13 August 2026 we found no current official public ticket, reservation or walk-in page for Phase IV, and it is an operating, access-controlled international port. Officially organized and invited delegations do sometimes visit, but that is not evidence of general tourist access. A viewpoint, a bridge crossing, an exhibition or a photograph does not grant terminal-yard entry.",
+        },
+        {
+          question: "Does an automated port mean there are no workers?",
+          answer: "No — automation moved where people work rather than removing them. Automated and remotely controlled equipment performs much of the repetitive container movement, while planners, remote operators, safety staff, technicians and exception handlers remain part of the operation. China's official technical standard for automated container terminals explicitly includes monitoring, alarms, fault handling and manual or remote intervention. A photograph with nobody in frame only shows who was out of frame.",
+        },
+        {
+          question: "What is the difference between the TOS and the ECS?",
+          answer: "The TOS decides the work and the ECS makes the machines fit together. The terminal operating system holds the container-task information, builds vessel, berth and yard plans and replans when operating conditions change. The equipment control system breaks that work into tasks equipment can execute, matches the quayside, horizontal-transport and yard interfaces, and manages AGV routes, conflicts, queues and charging constraints.",
+        },
+        {
+          question: "Are the AGVs the same thing as self-driving trucks?",
+          answer: "They are not the same thing. An AGV is specialized equipment for the port's controlled transport network, not a driverless truck licensed for Shanghai's public roads. It receives a transport task inside the terminal, and the ECS matches its arrival with the yard crane so that one machine does not wait unnecessarily for another. Routes can be recalculated when traffic, equipment state or a conflict changes.",
+        },
+        {
+          question: "How big is Phase IV?",
+          answer: "The operator records trial operation from 10 December 2017, seven berths, a 2,350-metre quay and a currently published design capacity of 6.3 million TEU a year. It also announced more than 8 million TEU handled in 2025 and described 155 AGVs in an August 2025 article; those are dated operating snapshots, not permanent specifications. Reviewed on 13 August 2026.",
+        },
+        {
+          question: "If I cannot get in, how do I learn how the terminal works?",
+          answer: "Start with the operator's own Phase IV overview and the transport ministry's design standard for automated container terminals, then draw the five handoffs and mark what the TOS, the ECS, the equipment and the people each do. Use dated Phase IV images whose location is confirmed rather than generic Yangshan pictures, and check Shanghai's current official exhibitions or public programmes.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Plan the Shanghai context around the port story",

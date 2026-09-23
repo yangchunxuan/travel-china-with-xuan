@@ -1257,7 +1257,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
     eyebrow: "중국 일정 · 부모님 동행",
     title: "부모님과 중국을 여행한다면 도시 수보다 체력을 기준으로 일정을 짜세요",
     lead:
-      "지도에서는 자연스러워 보이는 일정도 실제로 이동하면 일행을 지치게 할 수 있습니다. 이 가이드는 베이징·시안·상하이를 12–14일 첫 중국 여행의 기본 틀로 삼고, 장자제를 네 번째 숙박 거점으로 더할 가치가 있는지 판단합니다.",
+      "지도에서는 자연스러워 보이는 일정도 실제로 이동하면 일행을 지치게 할 수 있습니다. 이 가이드는 베이징·시안·상하이를 12–14일 첫 중국 여행의 기본 틀로 삼고, 장가계를 네 번째 숙박 거점으로 더할 가치가 있는지 판단합니다.",
     scopeNote:
       "이 글은 여행 설계의 출발점이지 모든 사람에게 맞는 고정 답이나 의료 평가가 아닙니다. 실제 일정은 여행자, 날짜, 확정된 교통편과 현장 운영 조건에 따라 달라집니다.",
     reviewedLabel: "사실 확인",
@@ -1301,7 +1301,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
       {
         id: "nature-extension",
         title: "14일 자연 확장형",
-        nights: "베이징 4박 · 시안 3박 · 장자제 3박 · 상하이 3박",
+        nights: "베이징 4박 · 시안 3박 · 장가계 3박 · 상하이 3박",
         hotelChanges: "3회",
         designedFor:
           "독립적으로 걸을 수 있고 산악 풍경을 매우 중요하게 생각하는 여행자.",
@@ -1453,8 +1453,8 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
       },
       {
         id: "zhangjiajie",
-        title: "14일: 장자제 추가",
-        nights: "베이징 4박 · 시안 3박 · 장자제 3박 · 상하이 3박",
+        title: "14일: 장가계 추가",
+        nights: "베이징 4박 · 시안 3박 · 장가계 3박 · 상하이 3박",
         hotelChanges: "3회",
         pace: "적합한 가족에게는 가능하지만 느긋하지 않음",
         summary:
@@ -1462,9 +1462,9 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
         outline: [
           "1–4일차: 베이징",
           "5–7일차: 시안",
-          "8일차: 이동 후 판단한 장자제 숙박 거점에 체크인",
+          "8일차: 이동 후 판단한 장가계 숙박 거점에 체크인",
           "9일차: 국가삼림공원 동선 한 개",
-          "10일차: 현재 동선과 운행 상황을 확인한 톈먼산",
+          "10일차: 현재 동선과 운행 상황을 확인한 천문산",
           "11–13일차: 상하이",
           "14일차: 출국",
         ],
@@ -1546,7 +1546,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
       "수하물을 동반한 기차역 또는 공항 이동",
       "고궁의 고정 입구와 서로 다른 퇴장문",
       "만리장성과 병마용",
-      "장자제 입구, 셔틀, 승강기와 케이블카",
+      "장가계 입구, 셔틀, 승강기와 케이블카",
       "숙소 변경과 시간 지정 예약이 같은 날",
     ],
     body:
@@ -1596,7 +1596,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
           "무톈위는 셔틀과 케이블카로 일부 오르막을 줄일 수 있지만 성벽에는 여전히 고르지 않은 구간과 계단이 있습니다. 개인의 능력, 당일 운행과 탑승 적합 조건을 함께 확인하세요.",
       },
       {
-        question: "장자제는 고령 여행자에게 적합한가요?",
+        question: "장가계는 고령 여행자에게 적합한가요?",
         answer:
           "여러 환승, 줄 서기와 일부 고르지 않은 지형을 감당하며 독립적으로 걸을 수 있다면 가능할 수 있습니다. 엘리베이터나 케이블카가 전 구간 무단차를 뜻하지 않으므로 보조기구 사용자는 동선별 확인이 필요합니다.",
       },
@@ -1733,13 +1733,13 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
         href: "/ko/guides/is-your-china-itinerary-too-rushed/",
       },
       {
-        title: "베이징–장자제–상하이: 이동일의 실제 비용",
+        title: "베이징–장가계–상하이: 이동일의 실제 비용",
         description:
           "단순한 노선도에서 보이지 않는 장거리 이동을 숙소에서 숙소까지 비교합니다.",
         href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
       },
       {
-        title: "고령 여행자와 장자제",
+        title: "고령 여행자와 장가계",
         description:
           "산악 지역을 더하기 전에 내부 교통, 동선 조건과 확인할 질문을 자세히 살펴봅니다.",
         href: "/ko/guides/zhangjiajie-older-travellers/",
@@ -1753,7 +1753,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
     "베이징",
     "시안",
     "상하이",
-    "장자제",
+    "장가계",
   ],
 };
 

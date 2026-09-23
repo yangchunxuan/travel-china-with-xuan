@@ -267,6 +267,41 @@ const body = {
       text: "Leave your travel dates, number of travellers, the cities you are considering and a rough total budget. A Homeground trip planner can help compare the workable route shapes without pretending that one airport pattern fits every China trip.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about open-jaw routes",
+      items: [
+        {
+          question: "Can I fly into one Chinese city and out of another?",
+          answer: "Nothing in China's general exit-entry law requires leaving through the airport used for arrival; it requires travellers to use ports open to foreign traffic and complete border inspection. What decides the route is the specific visa, visa-free arrangement or port-issued document you travel on, which may restrict the entry port, stay area or exit port.",
+        },
+        {
+          question: "Does flying in to one city and out of another make me eligible for 240-hour visa-free transit?",
+          answer: "No. Home country to China to home country does not meet the third-country logic of the policy, and changing the Chinese arrival and departure cities does not fix that. The official rule requires an eligible traveller, an eligible port, a confirmed onward arrangement to a third country or region, and travel within the permitted area.",
+        },
+        {
+          question: "Is booking two separate one-way tickets the same as an open jaw?",
+          answer: "They are not equivalent. Two unrelated bookings lack the automatic protection between them that a single ticket or order can carry, and each has its own change, refund and baggage rules. Treat a self-transfer between separate tickets as your own responsibility unless written ticket conditions say otherwise, and label the option as separate-ticket risk when comparing totals.",
+        },
+        {
+          question: "The cheapest fare says Beijing. Is that PEK or PKX?",
+          answer: "Read the code on the ticket. Beijing may appear as PEK or PKX, Shanghai as PVG or SHA, and Chengdu as CTU or TFU, and the cheaper fare can be attached to the airport that adds the harder hotel transfer, an inter-airport move or a less useful departure time. Search the exact airport code, not the city name alone.",
+        },
+        {
+          question: "If my route changes airports, do I have to collect my bags and check in again?",
+          answer: "Assume you do. Unless the airline confirms otherwise for that specific itinerary, plan on reclaiming and re-checking baggage whenever the route moves between airports. Estimate the hotel-to-terminal time for the hour you actually travel and add the check-in cut-off; Shanghai's own airport information treats Pudong and Hongqiao as two separate airports.",
+        },
+        {
+          question: "The open-jaw fare is higher. How much higher is still worth paying?",
+          answer: "Only up to the cost it removes: the return-to-start transport, transfers, possible hotel, lost usable time and added disruption risk. Do not apply one hourly value to everybody. Mark the backtrack as a quarter day, half day or a full usable day for your party first, then decide what that lost time is worth.",
+        },
+        {
+          question: "Which Chinese city should I arrive in first?",
+          answer: "There is no universal rule that a particular Chinese city belongs at the beginning or the end. Test both directions in the multi-city search: arrive A and leave B, then arrive B and leave A. A route can look geographically neat and still work badly, for example when a late-night arrival sits in front of a fixed early start.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning",

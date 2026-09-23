@@ -144,6 +144,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Qingdao industry questions answered",
+      items: [
+        {
+          question: "Can I visit the Tsingtao brewery site in Qingdao?",
+          answer: "The public venue is the museum, which occupies the brewery's 1903 industrial complex on Dengzhou Road and presents old motors, kettles and archival material beside a view of contemporary production. The interpretation there is produced by the brewery itself. On the day, check the official notice, the reservation method, accepted identity documents and photography rules.",
+        },
+        {
+          question: "Why is Qingdao known for beer?",
+          answer: "Because an early brewery grew inside a port-and-rail city being remade at the start of the twentieth century, where buildings, wells, tracks, workshops, capital and labour had to be assembled in one place. Environmental historian Shen Hou shows early beer production was tied to groundwater, industrial water use and claims about Qingdao's natural qualities, so the link joins ecology, marketing and urbanization, not taste alone.",
+        },
+        {
+          question: "Can I tour Haier in Qingdao?",
+          answer: "Treat it as a venue to check rather than a walk-in. If a Haier visit takes only group bookings, switch to a space clearly open to the public, or skip it; a telephone number on the official page is a way to check, not same-day entry. What you would see is the company's own framing, not a neutral market comparison.",
+        },
+        {
+          question: "Can I tour the CRRC Sifang train factory?",
+          answer: "No. Even an operator-confirmed public exhibition would not make a working factory open to casual visitors. If the culture-and-technology exhibition has no first-party booking notice, do not rely on a reseller listing: read the company's history and current profile, then observe trains in ordinary passenger service without claiming to identify their factory by appearance alone.",
+        },
+        {
+          question: "How far back do Qingdao's three industrial stories go?",
+          answer: "CRRC's history dates Sifang Locomotive Works to October 1900, initially focused on repairing and assembling locomotives and rolling stock. The museum occupies the brewery's 1903 industrial complex on Dengzhou Road. Haier's official history describes the decisive phase beginning in 1984 at the Qingdao Refrigerator General Factory, with Haier Group formed in 1991 after combining other local appliance factories.",
+        },
+        {
+          question: "Can I see all three brand sites in one day?",
+          answer: "You can attempt it, but treat the travel time between dispersed sites as part of the lesson: modern industrial Qingdao is not one compact heritage quarter. With half a day, use one deep anchor instead, and understand Haier and Sifang as different industrial periods through city signage or a general museum rather than crossing the city for two unconfirmed corporate visits.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning Qingdao and industrial travel",

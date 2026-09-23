@@ -282,6 +282,37 @@ const body = {
       body: "Send your dates, travellers, wheelchair dimensions and transfer limits, plus the cities you are considering and an approximate budget. A useful review identifies the weakest link and a fallback to verify against the traveller's requirements; it does not promise universal accessibility."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask when planning an accessible route",
+      items: [
+        {
+          question: "How early do I have to request wheelchair assistance on a Chinese train?",
+          answer: "At least 6 hours before departure online. China Railway 12306 says an approved special key-passenger request can include guided entry, priority processing, boarding help and a station wheelchair. With less than 6 hours left, ask at the station no later than 60 minutes before departure, apply separately for every connecting train, and still check the carriage toilet, seat transfer and station lift route.",
+        },
+        {
+          question: "When do I need to tell the airline about a powered wheelchair?",
+          answer: "When you book, and no later than 48 hours before departure. That deadline in the current CAAC rules covers services such as checking a powered wheelchair, using an onboard aisle chair, medical oxygen or travelling with a service dog. A passenger who needs boarding or disembarkation help should currently complete check-in no later than 2 hours before the ordinary check-in deadline.",
+        },
+        {
+          question: "Is booking a room labelled accessible enough?",
+          answer: "No. A label identifies features, not measurements, room assignment or transfer fit. Ask for current photos and measurements: the clear width with the door fully open, bed height and approach side, shower or tub with rail positions and side-transfer clearance, toilet and basin heights. Get written confirmation of the exact measured room, and record what the hotel will do if the room is changed.",
+        },
+        {
+          question: "If a site has an accessible entrance, can I reach the main highlights?",
+          answer: "Not necessarily. A ramp can reach the gate rather than the highlights, so ask which parts of the site the internal route reaches and where it comes out. The Palace Museum publishes an accessible route and a south-to-north one-way flow, and Shanghai Museum lists an accessible lane, lifts and loan wheelchairs, but whether the side halls and lifting equipment suit this traveller on that date is still unknown.",
+        },
+        {
+          question: "What do I do if the station lift is out of service?",
+          answer: "Call station assistance and take a confirmed alternative entrance or staff-guided route, but only if it fits the traveller. At route level, switch to surface transport or another station instead of forcing the original connection. Plan this before you travel: recovery must not depend on unsafe manual lifting, and having a companion does not make a missing lift acceptable.",
+        },
+        {
+          question: "How do I handle toilets across a long day out?",
+          answer: "Mark the last confirmed usable toilet before every long transfer or outdoor block. Check its hours, the transfer side, how the door works, the clear space and whether a companion can come in. An accessible-toilet sign does not prove adult changing facilities, hoist space or a layout that fits every chair, so shorten the block or keep an already-checked indoor fallback nearby.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Continue planning",

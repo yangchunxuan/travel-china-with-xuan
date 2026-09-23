@@ -22,6 +22,14 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "failure", type: "table", caption: "条件变化时怎么做", columns: ["变化", "立即决定", "更安全备选"], rows: [["山顶能见度预报变差", "只有拆分路线仍有价值才保留房间", "汤口基地加一日路线"], ["索道或区段关闭", "按官方通知重画路线", "不要超出能力自行发明步道替代"], ["晚到错过已确认接驳", "住有人值守的铁路／城市物业", "次日从已核实入口进入"], ["旅客提前疲劳", "使用预先约定折返点", "不要只为山顶订单勉强继续"], ["下山延误", "联系后续酒店／交通", "牺牲灵活城市安排，不牺牲固定车次／航班"]] },
   { id: "registration", type: "paragraph", text: "无论山顶、门户还是市区，都应确认护照入住流程和实际前台时段。位置偏远不会取消正常住宿登记义务。" },
   { id: "dynamic", type: "paragraph", text: "黄山风景区管委会服务、换乘与住宿资料复核于2026年8月12日。开放区、索道、车辆和物业会因检修与天气变化；出发前须查看官方现时公告，实时通知优先于本文框架。" },
+  { id: "faq", type: "faq", title: "出发前常见问题", items: [
+    { question: "住山顶就一定能看到日出吗？", answer: "不能。住山顶能免去当天下山，也能让你在一日客流之前就在山中，但云、雨、风和能见度都不受控制。即使看不到日出，这条路线仍有价值，才值得订；再问酒店从当前开放的哪条步道或索道进入、还要走多久、早晚餐怎么解决。" },
+    { question: "住山顶时，大件行李放在哪里？", answer: "只带山顶一晚的必需品：药物、防雨保暖、电源和贵重物品。大箱放在哪里、什么时段能取，都要书面确认；不要以为门户酒店都会为不连续的订单寄存。下一班火车的证件和关键药品随身带着。索道能减少爬升，但下了轿厢到客房那段路还得自己走。" },
+    { question: "晚上很晚才到黄山北站，还能进山门吗？", answer: "别指望深夜还能到山门。晚到黄山北站或其他具名车站时，本文的起点是城市或铁路可达的基地，或者已经书面确认的晚间接驳；否则就住进铁路链，第二天早上再进山。车站按票面搜索完整名称，再把道路接驳接到所选入口。" },
+    { question: "汤口和温泉区是一回事吗？", answer: "是两个不同的基地。汤口在南大门换乘体系旁边，只有当它缩短酒店到换乘中心那段链条时才值得订。温泉区在景区内部交通逻辑里，会多出一段交接，必须和当前车辆、物业入口以及你的路线配合。别只因为地图上的点看着更靠近山峰就订。" },
+    { question: "父母走不了太多台阶，坐索道就行了吗？", answer: "光有索道不够。每个基地都要把整条路线核对一遍：车辆换乘、排队、进索道轿厢、石阶、坡度，还有到客房的那段步行。向景区和物业问这位旅客要走的具体线路，而不是问“黄山有没有缆车”。步行能力不确定时，本文的建议是汤口，或核实准确路线后再选无障碍景区酒店。" },
+    { question: "订好之后天气变差或索道关闭，怎么办？", answer: "按官方通知重画路线：只有拆分路线仍有价值，才保留山顶的房间，否则退回汤口基地加一日路线。不要超出自己的能力，自行发明一条步道替代。下山延误时，联系后续酒店和交通，宁可牺牲灵活的城市安排，也不要牺牲固定的车次或航班。" },
+  ] },
   { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "民宿、homestay还是酒店", href: "/zh/guides/minsu-homestay-or-hotel-china/", description: "核验山门物业服务与登记。" }, { label: "中国平季旅行值不值", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "保护受天气影响的游山体验。" }, { label: "中国全铁路行程规划", href: "/zh/guides/china-rail-only-route/", description: "判断道路最后一程是否破坏铁路计划。" }] },
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [{ label: "黄山风景区管委会", url: "https://hsgwh.huangshan.gov.cn/", publisher: "黄山风景区管理委员会", reviewedAt: "2026-08-12" }, { label: "景区换乘官方信息", url: "https://hsgwh.huangshan.gov.cn/lyfw/lyfw/jqhc/9197913.html", publisher: "黄山风景区管理委员会", reviewedAt: "2026-08-12" }, { label: "住宿与禁止露营官方问答", url: "https://hsgwh.huangshan.gov.cn/zwgk/public/6617641/11062588.html", publisher: "黄山风景区管理委员会", reviewedAt: "2026-08-12" }, { label: "首图：Politizer拍摄黄山日出，CC BY 3.0，已裁切转换", url: "https://commons.wikimedia.org/wiki/File:Huangshan_sunrise.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" }] }
 ] } as const satisfies StructuredPageBody;

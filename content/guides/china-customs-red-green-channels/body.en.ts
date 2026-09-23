@@ -298,6 +298,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask at the customs hall",
+      items: [
+        {
+          question: "Which channel do I use if I am not sure whether an item must be declared?",
+          answer: "Stop before the channel split and ask Customs. Uncertainty is a reason to clarify, not to test whether the green lane is faster. Use the red channel when your baggage contains anything that must be declared, and green only when you have checked that you have no declarable goods.",
+        },
+        {
+          question: "Does the green channel mean my bags will not be inspected?",
+          answer: "No. Customs may inspect baggage from either channel, and an inspection is not evidence that you chose wrongly. Keep answers short and factual, open bags only when directed, and use a translation tool or request language help if a technical term is unclear. Do not sign a document you have not tried to understand.",
+        },
+        {
+          question: "Can I bring my prescription medicine into China?",
+          answer: "Bring it with its supporting documents, and settle three questions first: whether the ingredient is controlled, whether the quantity is consistent with personal treatment, and whether documentation is required. Record the generic name, dose, quantity and purpose, and keep the original packaging with the relevant prescription or letter. Use the red channel when a declaration, permit or clarification is needed.",
+        },
+        {
+          question: "Can I declare on my phone instead of filling in a paper form?",
+          answer: "Yes. Under Customs Announcement No. 43 of 2025 a required declaration may be filed on paper or electronically, and the announcement names the Customs passenger-service mini-program in WeChat or Alipay and an internet form as pre-filing channels. At arrival, go to the declaration desk to confirm the electronic data. A screenshot of a draft is not proof the port received it.",
+        },
+        {
+          question: "If I declare something, will Customs take it away?",
+          answer: "Not necessarily. Declaration is a process, and the possible outcomes depend on the item: release, duty or tax treatment, permit checking, quarantine review, temporary-import registration, surrender, return or detention under formal procedure. Describe the item accurately, and ask for official paperwork if Customs keeps it or requires another step.",
+        },
+        {
+          question: "I went through the green channel and then remembered something — what should I do?",
+          answer: "Tell a Customs officer immediately, before you leave the Customs-controlled area. Explain what you forgot and where it is. Voluntary clarification is safer than concealment or disposal. If the item is retained, taxed, surrendered or returned, request the official record and the exact next step; do not pay an unofficial intermediary.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Resolve the item before you reach Customs",

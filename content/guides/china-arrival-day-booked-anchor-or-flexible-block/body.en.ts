@@ -159,6 +159,37 @@ const body = {
       body: "Leave your travel date, party size, arrival service and time, hotel area and approximate budget. We can identify the weak node and decide whether the first-day booking should stay or move."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about the arrival day",
+      items: [
+        {
+          question: "Should I book a timed ticket for my arrival day in China?",
+          answer: "Keep an international arrival day flexible by default. Add a hard-to-replace timed reservation only when entry formalities, baggage, ground transport, hotel handling and venue admission are all known well enough, and when missing it would be acceptable. If one critical input is unknown, choose a replaceable block instead of treating the scheduled landing or train arrival as sightseeing time.",
+        },
+        {
+          question: "What counts as a timed booking rather than a flexible block?",
+          answer: "A timed booking is a hard-to-replace reservation tied to a named person, date or entry window, with late-arrival, cancellation or no-show consequences; it cannot simply slide two hours. A flexible block is a nearby meal, rest, neighbourhood walk or ordinary shop visit that can start late, shorten or disappear without damaging the trip.",
+        },
+        {
+          question: "Does an early arrival time mean the rest of the day is free for sightseeing?",
+          answer: "An early landing clears only the first node in the risk tree. Actual gate or platform time can differ from the schedule, foreign travellers still present documents and undergo frontier inspection, baggage delivery can take time, and a remote gate or terminal change can move your starting point. The room may not be ready either, and luggage storage is not automatic.",
+        },
+        {
+          question: "Can we book the Forbidden City for the day we land in Beijing?",
+          answer: "Not on a long-haul international arrival in the afternoon with a checked bag. The flight, frontier inspection, baggage, transfer, hotel and museum security form one serial chain, and the ticket cannot absorb an unknown delay. Keep a nearby meal, walk or rest block on the arrival day and visit the Palace Museum on a full local day instead.",
+        },
+        {
+          question: "Is it different if I arrive by high-speed train instead of flying in?",
+          answer: "Yes, but not automatically easier. On a domestic railway arrival the station, identification flow and exit still matter, and a carry-on-only passenger may remove the baggage branch. A later timed visit stays conditional on live 12306 options, hotel storage and venue rules, so the decision follows same-day checks rather than the timetable.",
+        },
+        {
+          question: "My flight is delayed and I already hold a timed ticket. What now?",
+          answer: "Use the venue's official cancellation channel before its deadline, then activate the flexible hotel-area module. If a checked bag does not arrive, request the carrier's baggage incident record and agree collection or delivery under the applicable terms, rather than dragging an unresolved bag case to a timed venue.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning",

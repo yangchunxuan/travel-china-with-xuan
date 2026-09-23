@@ -34,6 +34,14 @@ const body={schemaVersion:"1.0.0",blocks:[
 ["司机临时建议增加远处楼群","索要真实车程；会破坏日照或回程余量就拒绝"],
 ]},
 {id:"final-check",type:"list",items:["订单写明准确县、楼群与建筑。","车程与村内时间分开。","景交车和门票逐项列出。","现场遵守上楼与拍照规定。","返程不依赖未核实的末班公交。"]},
+{ id: "faq", type: "faq", title: "出发前常见问题", items: [
+  { question: "一天能看完所有福建土楼吗？", answer: "不能。世界遗产包含永定、南靖、华安三地的六群四楼，共46座土楼，并不是一座包含46楼的单一公园。一天通常只留在一个地理组：增加第二个县，常常只是增加隔着车窗的时间，而不是提高参观质量。" },
+  { question: "田螺坑和云水谣有什么区别？", answer: "田螺坑能看五楼组合的上下观景台，并按景区路线连接裕昌楼和塔下村。云水谣则是把和贵楼、怀远楼与古村道一起慢走的一天；它区域分散、商业化更明显，应为完整村落步行而选，不只为一座圆楼。" },
+  { question: "田螺坑和云水谣是同一张票吗？", answer: "不是。福建省官方价格文件把田螺坑、云水谣和河坑列为独立景区产品，并明确景区交通自愿选择、单独销售。票价与范围会变化，应以实时运营方页面为准；这份文件用于说明产品边界，不用于保证2026年价格永久不变。" },
+  { question: "可以进土楼并上楼参观吗？", answer: "不是每座都可以。部分土楼仍是住宅或社区公共空间，买票不等于可以进入所有楼梯、房间或居民区域。遵守现场限制，拍人先征得同意，没有明确许可不要飞无人机。上层限制进入时，就使用院落、外部结构和官方解说。" },
+  { question: "从厦门出发是轻松的一日游吗？", answer: "要看山路时间有没有写清楚。厦门城市住宿简单，私人或组织交通选择较多；没有写清楚，就不能把所有土楼都叫作轻松一日游。坐铁路要保存准确车站名和车站后的道路接驳：南靖站不是田螺坑村。" },
+  { question: "土楼村落里要走多少路？", answer: "比看上去要多。观景台和老村巷道可能有坡、台阶、不平路面，以及从下车点开始的长距离步行，应以行动最受限者评估。雨水和炎热会改变山路速度、院落地面和远景观赏价值，所以要在同一楼群内保留一个更短的方案。" },
+] },
 {id:"internal-links",type:"internal-links",title:"连接土楼这一天",items:[{label:"厦门枢纽到鼓浪屿码头",href:"/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/",description:"把乡村土楼日与厦门轮渡流程分开。"},{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"道路接驳前先核对车站全名和护照记录。"},{label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"判断讲解与乡村交通是否值得支持。"}, { label: "选择元阳梯田路线", href: "/zh/guides/yuanyang-rice-terraces-viewpoint-and-village-route/", description: "在多依树、坝达与老虎嘴之间选择，把一个观景台与尊重居民的村寨访问配对，并为云雾天气准备仍值得去的替代安排。" }]},
 {id:"consultation",type:"callout",title:"需要把一个楼群匹配到真实路线？",body:"Homeground 真人旅行顾问可以按日期比较道路链、村落重点与返程。请提供基地、可用时长、行动限制，以及你更重视建筑、地景还是社区背景。",tone:"neutral"},
 {id:"sources",type:"sources",title:"已核验的官方、遗产与图片来源",items:[{label:"福建土楼世界遗产",url:"https://whc.unesco.org/en/list/1113/",publisher:"联合国教科文组织世界遗产中心",reviewedAt:"2026-08-12"},{label:"六群四楼官方福建遗产清单",url:"https://fgw.fujian.gov.cn/ztzl/fjys/fjys/202311/t20231109_6293087.htm",publisher:"福建省发展和改革委员会",reviewedAt:"2026-08-12"},{label:"南靖景区产品与景交价格边界",url:"https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/yzdgkdqtxx/202009/t20200914_5385798.htm",publisher:"福建省发展和改革委员会",reviewedAt:"2026-08-12"},{label:"首图：Windmemories拍摄的田螺坑，CC BY-SA 4.0；经裁切转换",url:"https://commons.wikimedia.org/wiki/File:20121101_Tianluokeng_Tulou_01.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}]}

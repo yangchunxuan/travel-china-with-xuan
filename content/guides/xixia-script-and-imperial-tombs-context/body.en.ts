@@ -136,6 +136,37 @@ const body = {
       tone: "decision"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask before going",
+      items: [
+        {
+          question: "Is the Xixia script still undeciphered?",
+          answer: "No. Specialists can read substantial Xixia texts, so this is not an undeciphered writing system. The difficulty at the tombs is usually fragment survival and context: a fragment supports only the legible passage and its documented find context, and a translated museum label is an interpretation rather than the original surface.",
+        },
+        {
+          question: "What is actually inside the World Heritage property?",
+          answer: "Nine imperial mausoleums, 271 subordinate tombs, a northern architectural complex and 32 flood-control works, inscribed by UNESCO in 2025. Their distribution demonstrates planned use of the Helan foothills, but a plan alone cannot name every user or event. Start from the site map rather than the most photogenic mound.",
+        },
+        {
+          question: "Do we know who is buried in each mausoleum?",
+          answer: "Not in every case, and the wording matters. Mausoleum No. 6 was excavated in 1972–1975 and 2007–2008, and inscription evidence has been used to infer an association with Li Deming, which should be described as inferred or attributed rather than as an undisputed identification. Where the surviving record does not resolve it, say 'not securely identified'.",
+        },
+        {
+          question: "I only have two hours — what should I see first?",
+          answer: "Start in the museum, not on the horizon. Learn one script fragment and one securely provenanced object with a clear tomb or structure number, then visit one mausoleum zone and a viewpoint that shows the Helan setting. Ask staff which areas or galleries are open that day; the operational details in this guide were last checked on 13 August 2026.",
+        },
+        {
+          question: "Is everything I see outdoors original Xixia fabric?",
+          answer: "Not all of it. Outdoors, separate the surviving remains from protective additions and visitor paths: a clean edge, stair or platform may be modern site management rather than Xixia fabric. Drawings, models and restored silhouettes should stay labelled as reconstructions, and you can ask which elements follow excavated foundations, which rest on comparison and which are illustrative choices.",
+        },
+        {
+          question: "Is there one object in the museum worth finding?",
+          answer: "The gilded bronze ox is the usual answer. It came from subordinate tomb MIII-107 and demonstrates sophisticated metalworking within a specific burial context. One elite object does not describe ordinary Xixia households or prove a single ethnic style, so record its material, its find context and whether what you see is the original, a replica or a reconstruction.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue with evidence-led heritage visits",

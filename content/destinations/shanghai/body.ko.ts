@@ -52,7 +52,7 @@ const body = {
         [
           "황실 유적이나 자연 경관이 우선인 여행자",
           "더 큰 중국 동선 안에서 유용",
-          "베이징·시안·장자제에 대한 현대적 대비",
+          "베이징·시안·장가계에 대한 현대적 대비",
           "상하이가 그것들을 대체하리라 기대하는 것",
         ],
       ],
@@ -645,12 +645,12 @@ const body = {
       title: "내륙 이동 비교",
       items: [
         {
-          label: "베이징 → 장자제 → 상하이: 이동일의 실제 비용",
+          label: "베이징 → 장가계 → 상하이: 이동일의 실제 비용",
           href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "티켓 소요 시간이 아니라 도어투도어 계산.",
         },
         {
-          label: "베이징–장자제–상하이 10일, 현실적인가?",
+          label: "베이징–장가계–상하이 10일, 현실적인가?",
           href: "/ko/guides/beijing-zhangjiajie-shanghai-10-days/",
           description: "여행 길이가 이미 고정되어 있을 때 읽으세요.",
         },

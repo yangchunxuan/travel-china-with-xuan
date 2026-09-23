@@ -161,7 +161,7 @@ test("guide locales have independent URLs, copy and language metadata", async ()
   assert.match(copy, /第一次来，建议留 3 个完整游览日/);
   assert.match(copy, /첫 방문은 온전한 관광일 3일을 권합니다/);
   assert.match(registry, /张家界玩 2、3 或 4 天/);
-  assert.match(registry, /장자제 2일, 3일, 4일/);
+  assert.match(registry, /장가계 2일, 3일, 4일/);
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
 });
 

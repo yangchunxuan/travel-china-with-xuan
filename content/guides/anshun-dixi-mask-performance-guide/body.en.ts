@@ -335,6 +335,37 @@ const body = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions first-time Dixi audiences ask",
+      items: [
+        {
+          question: "Is the mask being worn wrong when it sits on the performer's forehead?",
+          answer: "No. The performer covers their own head and face with a qingjin head cloth, and the carved lianzi sits above it on the forehead. Character emerges only when carving, voice, group response, gong, drum, weapon and full-body movement work together. The arrangement is easy to see, but why it first developed is not settled historical fact, so treat any single origin story with care.",
+        },
+        {
+          question: "How long is the Dixi excerpt at Tianlong?",
+          answer: "About ten minutes. A National Ethnic Affairs Commission feature dated 3 July 2026 reported that Tianlong's Yanwutang gave timed daily Dixi excerpts of about ten minutes, as checked on 15 August 2026. It published no clock times, cancellation rule or language support, so check the same day's programme and exact venue with the current operator.",
+        },
+        {
+          question: "Is the ten-minute tourist excerpt the same as Dixi in a village?",
+          answer: "Not the same social event, and the difference is not a real-versus-fake ranking. Peer-reviewed research at Tianlong documents how tourism moved performance through different spaces and changed relationships among performers, community and operator. A visitor excerpt can be a legitimate point of access while still differing from a village ritual sequence, so record the place, duration, audience and institutional setting.",
+        },
+        {
+          question: "Can I tell which character a mask shows from its colour?",
+          answer: "Not from a colour chart. Research and practitioner descriptions group many Dixi faces into role families such as civil, martial, older, younger and female generals, which gives you a question rather than a lookup table, and Peking-opera face-paint rules do not transfer to a wooden lianzi. Ask for the work title, role name and the troupe's own explanation when a precise identification matters.",
+        },
+        {
+          question: "Are the Dixi stories real history?",
+          answer: "They are heroic-war literature, not primary historical records. The national heritage record names heroic-war traditions associated with the Three Kingdoms and the Yang and Yue generals among the repertoire. One performed character may draw on history, legend, popular fiction and local transmission at once, so do not cite stage action as evidence that an event occurred exactly as performed.",
+        },
+        {
+          question: "Can I photograph the performance or handle the masks?",
+          answer: "Ask first. Do not handle a lianzi, weapon, costume chest or ritual object unless the responsible practitioner explicitly invites it, and do not enter a village event merely because it is visible from a public path. Ask again before making an identifiable portrait, recording a full performance or reproducing a programme: venue rules, participant consent and copyright are separate permissions.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue with another evidence-led performance guide",

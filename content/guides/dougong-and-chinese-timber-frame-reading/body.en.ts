@@ -171,6 +171,37 @@ const body = {
       "tone": "decision"
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions visitors ask about dougong",
+      "items": [
+        {
+          "question": "Does dougong hold up the roof on its own?",
+          "answer": "No. A bracket set transfers, spreads or projects load at one junction, but purlins and rafters carry the roof above it, and the platform, column grid, beams and ties carry the frame below. Trace one path from platform to roof and the bracket zone turns out to be a single step in that sequence."
+        },
+        {
+          "question": "Are these buildings really made without a single nail?",
+          "answer": "“No nails” is not a sufficient explanation. Traditional joinery is central to the craft, but a real building may also contain metal fasteners, later reinforcement and repaired components. Read the label for the construction phase and repair history stated on site rather than assuming that every visible member is original."
+        },
+        {
+          "question": "Does dougong make a building earthquake-proof?",
+          "answer": "It is not proof of that. UNESCO describes flexible, earthquake-resistant qualities in the wider timber-framing craft, which supports explaining a system rather than certifying an individual building's condition today. Survival through earthquakes does not isolate one cause: overall geometry, joinery, material condition, foundations, maintenance, prior damage and the specific motion all matter."
+        },
+        {
+          "question": "Is the bright paint on the brackets original?",
+          "answer": "Not necessarily. Bright paint does not reveal structural importance: decoration may cross load-bearing and non-load-bearing surfaces, and repainting can be recent. A difference in colour or condition between parts of a building is an observation, not a date; the construction phase and repair history come from the label on site."
+        },
+        {
+          "question": "Why do the corner bracket sets look denser than the ones in the middle?",
+          "answer": "Because a corner has to resolve different geometry: members turn there and the eave projects in two directions. Compare a central bay with a corner and note what changes in direction, projection and density. A museum section drawing or restoration diagram is more reliable than guessing the hidden structure from the façade."
+        },
+        {
+          "question": "Is the Yingxian Wooden Pagoda a World Heritage Site?",
+          "answer": "Not an inscribed one. It is part of China's UNESCO Tentative List submission for Liao wooden structures, and Tentative List status does not equal World Heritage inscription. The pagoda was completed in 1056, and the submission describes an octagonal, multi-level frame with many bracket types and a double-barrel structural arrangement, which makes it useful for comparing repeated layers and corners."
+        }
+      ]
+    },
+    {
       "id": "links",
       "type": "internal-links",
       "title": "Read more built heritage",

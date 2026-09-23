@@ -260,6 +260,37 @@ export default {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before visiting",
+      items: [
+        {
+          question: "Is Panda Valley the same place as the Dujiangyan panda base I have seen online?",
+          answer: "Not necessarily. Panda Valley is the affiliated field research centre in Yutang, run by the same organisation as Chengdu Panda Base. The China Conservation and Research Center for the Giant Panda also has a Dujiangyan Base near Qingcheng Mountain, once promoted as Dujiangyan Panda Park. It belongs to a different institution, so check the Chinese name and the map pin before paying for a ticket or a transfer.",
+        },
+        {
+          question: "Does one ticket cover both Chengdu Panda Base and Panda Valley?",
+          answer: "No. Each venue sells its own separate real-name ticket, and the city-base ticket is not valid at Panda Valley. Official booking information reviewed on 11 August 2026 lists current adult admission at CNY 55 for each site, with no combined ticket. Book the two visits through their own official channels.",
+        },
+        {
+          question: "What are Chengdu Panda Base's opening hours, and how far ahead can I book?",
+          answer: "Morning entry runs 07:30–12:00 and afternoon entry 12:00–17:00, with clearing from 18:00, under a 19 February adjustment notice covering 16 March–31 October 2026. Booking is online and real-name, currently up to 14 days ahead and subject to availability, as reviewed on 11 August 2026. Panda Valley's Chinese and English pages show inconsistent seasonal times, so check its official WeChat account.",
+        },
+        {
+          question: "Can I book and enter with my passport?",
+          answer: "Yes, at both venues, and you should carry the same original document. Use the passport number exactly as it appears in the document; even when a booking QR code is issued, the gate may still need to verify the document or its details. Recheck names, numbers and any discount or free-admission eligibility before paying.",
+        },
+        {
+          question: "How do I reach Chengdu Panda Base by metro?",
+          answer: "Take Metro Line 3. The operator currently lists Panda Avenue station plus shuttle bus 408 for the South Gate, with a bus alternative from Zoo station, and Chengdu Junqu General Hospital station plus shuttle bus 409 for the West Gate. Routes and shuttles can change with traffic and operations, so recheck the official transit page and pick the gate that matches the zone you want first.",
+        },
+        {
+          question: "How much time should I allow at Chengdu Panda Base?",
+          answer: "At least half a day, as a Homeground planning judgment, rather than a quick stop. The official plan divides the complex into four themed zones, with panda enclosures, indoor spaces, the Chengdu Giant Panda Museum and visitor services spread across the site, so moving between areas takes time. The paid internal sightseeing bus shortens some walking but does not remove queues.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Keep planning your China trip",

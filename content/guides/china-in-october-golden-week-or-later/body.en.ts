@@ -351,6 +351,37 @@ const body = {
       text: "Golden Week is not a universal cancellation notice, and later October is not a universal promise of empty sights and perfect weather. The better choice is the one whose transport, reservations, climate and fallback options fit your actual route.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about October dates",
+      items: [
+        {
+          question: "When exactly is Golden Week in 2026?",
+          answer: "October 1-7 is the official seven-day National Day holiday. Mid-Autumn Festival is a separate three-day break on September 25-27, with three ordinary working days between the two, so September 28-30 are not part of an extended national holiday. Sunday 20 September and Saturday 10 October are make-up working days in the official schedule.",
+        },
+        {
+          question: "Will everything be sold out and more expensive during Golden Week?",
+          answer: "Not everything, and no nationwide figure applies. Do not assume that every train, flight, hotel and attraction sells out, or that prices rise by one national percentage: what is left depends on the route, the hotel, the venue and the date. The reliable conclusion is that during Golden Week, once a first choice disappears, easy replacements are fewer.",
+        },
+        {
+          question: "How early can I buy a train ticket for 1 October?",
+          answer: "For most trains the window opens on Thursday 17 September. China Railway's standard advance-sale window is 15 days including the travel date, so 1 October enters it then. Tickets do not all appear at midnight: the on-sale time is set by the departure station and can be adjusted. Foreign-passport users can buy through 12306, but complete identity verification and passenger details before the window opens.",
+        },
+        {
+          question: "Can I reserve a Beijing–Shanghai train more than 15 days ahead?",
+          answer: "For some trains, yes. Since 20 July 2026 more than 200 trains on the Beijing-Shanghai High-Speed Railway and Beijing-Shanghai Railway have joined a ticket-reservation pilot: for covered trains shown in the 12306 app, requests can be submitted 17-60 days before departure and the system attempts fulfillment 16-20 days before. A request is not a confirmed ticket, and payment is due by 23:00 on the day you are notified.",
+        },
+        {
+          question: "When do Palace Museum tickets for 1 October open?",
+          answer: "Normally at 20:00 seven days before the visit, which calculates to 20:00 on 24 September for a 1 October visit. That is a calculation from the standing rule, not a special 2026 holiday notice. There are no same-day tickets and passport booking is supported; recheck the official notice as the reservation window approaches.",
+        },
+        {
+          question: "Our international flight lands during Golden Week. Should we cancel?",
+          answer: "No, redesign the route instead. Keep one arrival-city hotel through the official holiday rather than changing every one or two nights, give each day one reservation-dependent anchor rather than three, and place the first major intercity move after 7 October. Book a cancellable room before the rail and attraction windows open.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Continue planning the route",

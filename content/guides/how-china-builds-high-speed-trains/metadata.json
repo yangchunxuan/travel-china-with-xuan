@@ -2,7 +2,7 @@
   "id": "how-china-builds-high-speed-trains", "type": "planning", "pillar": "transport-airports-rail-hubs", "audienceMarkets": ["global"], "format": "explainer",
   "topics": ["high-speed-rail", "train-manufacturing", "rail-testing", "china-industry"], "destinations": ["china"],
   "heroImagePath": "/images/guides/how-china-builds-high-speed-trains/hero-1600.webp", "heroImageUrl": "https://homegroundchina.com/images/guides/how-china-builds-high-speed-trains/hero-1600.webp", "imageWidth": 1600, "imageHeight": 1000,
-  "datePublished": "2026-08-13", "dateModified": "2026-08-13", "sourceReviewedDate": "2026-08-13",
+  "datePublished": "2026-08-13", "dateModified": "2026-09-22", "sourceReviewedDate": "2026-08-13",
   "search": {"section": "transport", "family": "entity", "primaryIntent": "understand"}, "layout": {"mode": "template", "templateId": "editorial-v1"},
   "locales": {
     "en": {"path": "/guides/how-china-builds-high-speed-trains/", "title": "How China Builds and Tests High-Speed Trains", "headline": "How China Builds High-Speed Trains: From Aluminium Carbody to Test Track", "description": "Follow a representative aluminium-bodied train from carbody fabrication to systems integration, commissioning, laboratory and track tests.", "heroAlt": "A CRH6 rail vehicle body being transported at CRRC Qingdao Sifang in 2019.", "navTitle": "How China builds high-speed trains", "featuredLinkLabel": "See how a high-speed train is built", "openGraphLocale": "en_US", "cardTags": ["China", "High-speed rail", "Engineering"]},

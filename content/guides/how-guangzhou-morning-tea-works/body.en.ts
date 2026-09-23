@@ -355,6 +355,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions first-time diners ask",
+      items: [
+        {
+          question: "Is there a tea charge, and is it per person?",
+          answer: "Usually yes, and usually per person. A tea fee, or chaweifei, is commonly charged for each person rather than once per pot, so ask what it includes before ordering. Under Guangzhou's 2026 regulation, a venue that charges a tea-seat fee must offer tea choices such as black, green, oolong, Pu'er or chrysanthemum tea and provide the related tea service. The law does not set one citywide price.",
+        },
+        {
+          question: "Are yum cha and dim sum the same thing?",
+          answer: "No. Yum cha is the Cantonese reading of “drink tea”, and in everyday use it can mean going out for the entire tea-and-dim-sum occasion. Dim sum is the food: the small savoury or sweet dishes served with tea, steamed, baked, fried or prepared as rice rolls, congee and other forms. Dim sum is one component of yum cha.",
+        },
+        {
+          question: "Will dishes come round on a trolley?",
+          answer: "Not necessarily. Servers circulating with ready dishes and marking a bill card is a recognisable historic service form and still exists in some rooms, but do not assume every restaurant has it. Many restaurants now use a paper checklist you mark yourself, a QR or app menu, or ordering through a server. Ask which system is in use that day.",
+        },
+        {
+          question: "How much should two people order the first time?",
+          answer: "Homeground's cautious starting point for two diners is tea plus three or four small dishes, then adding more gradually. Steamers and plates often contain two to four pieces, but size and count vary too much for a universal formula. This is an ordering heuristic, not the meaning of yizhong liangjian.",
+        },
+        {
+          question: "Do I have to tap the table with my fingers when someone pours my tea?",
+          answer: "It is optional. The finger-tapping thanks, kouzhi chali, is recorded as part of Guangfu tea custom, so a small tap is fine if others at the table use it, and a spoken thank-you is equally fine — tourists are not tested on the gesture. The popular story that it began with the Qianlong emperor travelling incognito is a legend, not documented proof of origin.",
+        },
+        {
+          question: "Can I tell from the wrapper whether a dumpling is vegetarian or shellfish-free?",
+          answer: "No. Pork fat, dried seafood, shrimp, oyster sauce, stock and shared preparation can appear where an overseas diner may not expect them, and a translucent wrapper does not make a dish gluten-free or pork-free by default. For an allergy, show the ingredient in written Chinese and ask about both the dish and cross-contact.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Keep planning Guangzhou and your wider China trip",

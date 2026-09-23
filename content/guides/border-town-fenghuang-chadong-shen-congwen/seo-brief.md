@@ -36,7 +36,7 @@ No search-volume, CPC, keyword-difficulty or ranking claim is made. Result compo
 | --- | --- | --- |
 | `Border Town Fenghuang or Chadong` / `Where is Border Town set` | EN title, lead and direct answer | Do not reduce “setting” to one tourist pin. |
 | `边城 原型 凤凰 茶峒` / `碧溪岨` | ZH title, literary-geography section and terminology note | Treat “原型” as a query to clarify, not as the page's factual assertion. |
-| `변성 차둥 펑황` / `선충원 고향` | KO title, lead and choice matrix | Keep literary geography and author biography separate. |
+| `변성 차둥 봉황` / `선충원 고향` | KO title, lead and choice matrix | Keep literary geography and author biography separate. |
 | `Shen Congwen former residence` | Fenghuang section | Heritage status does not make every furnishing original. |
 | `Chadong ferry` / `拉拉渡` | dynamic warning and travel-day recheck | Publish no fixed timetable, fare or guaranteed operation without a current operator notice. |
 

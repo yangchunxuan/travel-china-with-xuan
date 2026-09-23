@@ -302,6 +302,37 @@ const body = {
       ]
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before a Liaozhai visit in Zibo",
+      items: [
+        {
+          question: "Where is Pu Songling's former residence?",
+          answer: "In Pujiazhuang, Hongshan Town, Zichuan District, according to Zibo's official account. It says the residence was restored to its former appearance in 1954 and expanded into the Pu Songling Memorial Museum in 1980. ‘Former residence’ names the protected place, while ‘museum’ names the institution, collections and later exhibition spaces around it.",
+        },
+        {
+          question: "Can I see a Liaozhai liqu performance while I am in Zibo?",
+          answer: "Only if a named organiser has published a dated notice for your visit. Liaozhai liqu is a nationally listed traditional-music project with the Zichuan District Liaozhai Liqu Art Troupe as the safeguarding unit, but a record of one event, such as the excerpt performed at the National Museum of China's exhibition opening on 28 May 2026, is not a recurring Zibo show.",
+        },
+        {
+          question: "Is the furniture in the Liaozhai room Pu Songling's own?",
+          answer: "Not unless an object label says so. One room can hold architecture, a room name, a portrait, furniture and an exhibition barrier in the same frame, and physical proximity does not give them one date or provenance. Read the room label and the object caption separately, and keep the words replica, reproduction, restoration or scene setting wherever a caption uses them.",
+        },
+        {
+          question: "Is Liaozhai City a substitute for the former residence and museum?",
+          answer: "It cannot replace them. The Zibo Culture and Tourism Bureau's A-level list current through April 2026 includes Liaozhai City Scenic Area as a 4A attraction in Zichuan District, and a 2024 bureau response describes the memorial museum and Liaozhai Garden as two cores in a wider cultural-tourism project with upgraded infrastructure, themed experiences and immersive products. That is evidence of how Liaozhai is interpreted and commercialised now, not a second historical source for Pu Songling's domestic life.",
+        },
+        {
+          question: "Did the events in Liaozhai Zhiyi really happen in Zibo?",
+          answer: "No. The work can illuminate how a writer transformed local language, stories and experience into literature, but it cannot establish that a fox spirit occupied a room, that a modern garden reproduces a story's exact landscape or that every local legend belongs to the written collection. The National Museum of China's curatorial text emphasizes attention to human feeling, social life and moral choice.",
+        },
+        {
+          question: "Can I take photographs inside the former residence and museum?",
+          answer: "Ask first, for each interior, object or performance. This guide does not publish a photography permission, and the existence of visitor images online is not permission either. Where the rules are unclear, ask before photographing rather than assuming, and check the direct operator and the on-site rule on the day of your visit.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue with another evidence-led cultural visit",

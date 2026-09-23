@@ -277,6 +277,37 @@ const body = {
       body: "If the section is chosen but the day still feels fragile, send the date, approximate Beijing stay area, group size and any fixed evening plan. For a first enquiry, do not send passport, payment, medical or detailed mobility information. Homeground can flag the transfer and recheck points without promising weather, live inventory or an empty wall."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions before choosing a Great Wall section",
+      items: [
+        {
+          question: "Which Great Wall section should I choose for a first visit from Beijing?",
+          answer: "Mutianyu is the safest default for most first trips, not because it is universally quiet, but because it balances scenery, restored walking, uphill options and a manageable Beijing day. Choose Badaling when simple public transport and extensive visitor infrastructure matter most, Jinshanling when the walk and the ridge are the point, and Simatai when a dated night visit or a Gubei Water Town overnight is part of the plan.",
+        },
+        {
+          question: "Can I hike from Jinshanling to Simatai?",
+          answer: "Do not assume the through-route is open. Gates, conservation controls, temporary damage and open sections change, so an old blog describing a continuous Gubeikou–Jinshanling–Simatai walk is not a current permission. Use the current scenic-area entrance, stay on the marked public route, and ask the named operator which exit is open that day. A remote wall is cultural heritage, not an unrestricted trail network.",
+        },
+        {
+          question: "Does a cable car make the Great Wall suitable for someone with limited mobility?",
+          answer: "Not by itself. A cable car can remove a large ascent but usually cannot remove the distance from the drop-off, the attraction's internal shuttle, the queue, the platform or the wall itself. 'Senior-friendly' and 'wheelchair-accessible' are not safe conclusions from the presence of a lift. Ask the attraction about the exact route the least mobile traveller needs, then shorten the wall plan before shortening the safety margin.",
+        },
+        {
+          question: "How far is Jinshanling from Beijing, and can I do it as a day trip?",
+          answer: "Jinshanling sits roughly 130 kilometres from central Beijing on the Hebei side of the municipal boundary, and it is the farthest and least forgiving of the four as a casual day trip. The exposed ridge walking is longer, so fix the return transport before the hike and treat it as a full hiking day. For sunrise or sunset, a night nearby is usually more sensible than forcing a same-day return from Beijing.",
+        },
+        {
+          question: "Can I visit the Great Wall at night?",
+          answer: "On dated programmes only. In 2026 Badaling published a seasonal night programme through early October, Mutianyu published separate short-holiday and summer night dates, and Simatai continued to sell a defined night product through Gubei Water Town. These are not permanent opening hours, and night access may cover only a small section of wall.",
+        },
+        {
+          question: "My car and driver are booked — does that mean the wall is open?",
+          answer: "No. In August 2026 Mutianyu posted a temporary closure during a red rainstorm warning and a separate reopening notice. A driver, hotel or reseller may still have a valid transport booking when the heritage site has stopped admission, so check the attraction's own notice after severe weather and again before departure.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the Beijing plan",

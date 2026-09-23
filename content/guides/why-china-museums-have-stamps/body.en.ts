@@ -216,6 +216,37 @@ const body = {
       body: "It does not rank museums by stamps, treat collecting as an ancient rite, guarantee availability or tell visitors to alter official documents. It treats stamp collecting as an optional visitor practice that should support, not displace, the museum collection."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask about museum stamps",
+      items: [
+        {
+          question: "Are museum stamps in China free?",
+          answer: "It depends on the venue, because there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or paused today. Some institutions label a free mechanism clearly, while a self-service machine can be a retail terminal rather than a free ink pad. Check the venue's current notice before making collecting a mission.",
+        },
+        {
+          question: "I saw a stamp point in a post from last year — will it still be there?",
+          answer: "Treat it as evidence that a mechanism existed, not that it runs today. The documented cases come from past exhibitions, work reports and event notices, and without a new notice from the venue they are not a 2026 stamp map. A temporary or exhibition stamp can be withdrawn while the old social post stays online.",
+        },
+        {
+          question: "Can I stamp my passport or my entry ticket?",
+          answer: "Never stamp a passport, visa, residence card or identity document — ink, damage or an unofficial mark can create problems on an important document. For a ticket with a barcode, QR code or re-entry section, ask first whether a blank detachable area is designated, and use only a clearly permitted area, because the stamp must not block scanning or re-entry.",
+        },
+        {
+          question: "How do I ask where the stamps are?",
+          answer: "At the service desk, ask 请问现在有集章活动吗？在哪里？需要购买盖章本吗？ — “Is there a stamp activity now; where is it; must I buy the booklet?” Before the visit, search the museum's current website or official account for 集章, 印章, 文创 or 活动. Then confirm whether the point is free, purchase-linked, temporary or inside a shop, and whether your own notebook is accepted.",
+        },
+        {
+          question: "Is stamp collecting an ancient Chinese tradition?",
+          answer: "No. Shanghai Museum separates seals used mainly as credentials from seal carving as an art form, which explains why an inked impression feels culturally familiar and suits a museum page. It does not prove that today's stamp rally descends from an ancient ritual. A 2026 cross-case study instead describes stamp passports as low-tech tools for movement, attention and motivation.",
+        },
+        {
+          question: "The stamp has moved or the ink is dry — what should I do?",
+          answer: "Ask the service desk once and do not search staff-only areas, and do not press repeatedly or add your own ink. Keep the imperfect print as the real record of the visit, or write the gallery and object name in the space you left for it. If the queue starts to replace the visit, pause collecting and go back to the next object you chose.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Plan the museum visit around the collection",

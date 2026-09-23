@@ -204,6 +204,37 @@ const body = {
       ]
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about Shenzhen's low-altitude services",
+      items: [
+        {
+          question: "Can I order a drone delivery in Shenzhen as a visitor?",
+          answer: "Possibly, to a fixed collection point. An immediate-delivery network links merchants to a locker or landing point in a park, office district, library or community. It is collection-point delivery, not flight to any bench or hotel room. Merchants, app access, delivery windows and weather status change, so check the current operating notice and the exact collection point first.",
+        },
+        {
+          question: "Shenzhen promotes low-altitude flight, so can I fly my own drone there?",
+          answer: "No. China's CAAC identifies UOM as the official platform for registration, airspace information and flight processes, and Shenzhen's local system sits inside national aviation and public-safety rules. A blue area on a map, a city slogan or a delivery drone overhead is not permission to copy an operator's route. This guide gives no takeoff point, altitude or filing shortcut.",
+        },
+        {
+          question: "Can I ride a passenger eVTOL in Shenzhen?",
+          answer: "Not on the strength of a display. A passenger aircraft shown at an operation site is not a service: do not travel for a ride until the named operator publishes public ticketing, passenger eligibility, insurance disclosure and cancellation rules for that location. Official reports call cargo delivery the most mature segment, so keep it separate from passenger ambition.",
+        },
+        {
+          question: "Is any of this visible yet, or is it still mostly plans?",
+          answer: "Cargo and selected public-service uses are visible; many passenger and coverage claims remain plans or targets. What a traveller notices is a marked cabinet or fenced area in a park, campus or commercial complex, and aircraft arriving at the same endpoint rather than choosing an address freely. Check the operating state before putting one in a trip.",
+        },
+        {
+          question: "I saw a drone nest near a public facility. What is it?",
+          answer: "Treat it as managed equipment, not an attraction. It may support medical transfers, inspection or emergency response, and it may be inactive as you pass. Keep clear of the marked area, do not photograph sensitive screens or labels, and identify its purpose from the responsible agency's public explanation rather than from how it looks.",
+        },
+        {
+          question: "What happens if the drone leg of my order is cancelled?",
+          answer: "The operator cancels, delays or substitutes a ground leg under its current service terms. That follows from the aircraft, route, weather or node being unavailable. Keep the order reference, read the substitution or cancellation message, and choose pickup or ordinary ground delivery instead of placing duplicate orders.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning Shenzhen and city movement",

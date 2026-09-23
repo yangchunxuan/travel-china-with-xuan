@@ -116,6 +116,37 @@ const body = {
       body: "Send Homeground your route, month and whether landscape, craft or tasting matters most. A human planner can recheck the current institution or producer without turning the day into a shopping obligation. Harvests, demonstrations, access and prices were reviewed on 13 August 2026 and must be confirmed for the travel date.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about visiting tea country",
+      items: [
+        {
+          question: "I have one spare day in Hangzhou — is Longjing worth it?",
+          answer: "Yes, for the compact city-to-garden contrast. Dense urban fabric gives way to hills, gardens and tea villages within one day, and that proximity is itself part of the evidence. Confirm one institution or producer first and keep West Lake or a museum as a no-production fallback; the day should still work without buying tea.",
+        },
+        {
+          question: "Will I see tea actually being made?",
+          answer: "Not on any fixed schedule, and no region guarantees a harvest or live production on your date. Spring work depends on cultivar, elevation and weather, and production takes priority over performing for visitors. When something is running, ask which exact stage you are seeing, where the leaves came from and whether this is saleable production or a demonstration with practice material.",
+        },
+        {
+          question: "I want a trip built around tea — how many regions should I fit in?",
+          answer: "Two contrasting systems, rather than rushing all four tea regions. Wuyi plus Jingmai compares intensive processing with forest land use; Longjing plus Anhua compares city-adjacent green tea with compressed dark tea and the transport infrastructure around it. Choose by the relationship you want to see, not by which tea is considered best.",
+        },
+        {
+          question: "Does an 'ancient tree' or Jingmai label prove where a cake came from?",
+          answer: "No. Pu'er is a large production region and Jingmai Mountain is one bounded World Heritage cultural landscape within it, so not all Pu'er comes from Jingmai. A heritage plaque can establish location but cannot authenticate a cake from an unrelated seller, and 'ancient tree' is not a complete provenance record. Record the producer, product name, date and batch before buying.",
+        },
+        {
+          question: "Is Anhua dark tea just another kind of Pu'er?",
+          answer: "They are not interchangeable. The materials, named products, process histories and landscapes differ. Anhua is easiest to read as a chain: gardens supply leaf, primary processing creates dark raw tea, further work creates forms such as Qianliang tea, and compression and storage connect the product to factories, shops, markets, mountain paths and former wharves.",
+        },
+        {
+          question: "What if the visit turns into a sales pitch?",
+          answer: "Return to the five-step sequence and ask for the garden identity and the process stage. If staff cannot answer, enjoy the tasting as hospitality but do not use the sales language as provenance evidence. A cup beside a heritage site does not acquire heritage provenance automatically.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning and reading food culture",

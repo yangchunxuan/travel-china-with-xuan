@@ -288,6 +288,37 @@ const body = {
       body: "If your dates overlap Spring Festival, send the cities, necessary transfers and two or three non-negotiable experiences. Homeground can point out which assumptions need a current source and where a simple fallback is enough, without turning the holiday into a sales script."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Spring Festival questions travellers ask",
+      items: [
+        {
+          question: "When is Chinese New Year in 2027?",
+          answer: "Lunar New Year's Day falls on Saturday, 6 February 2027, as reviewed on 18 September 2026. Mainland regulations fix four statutory Spring Festival days from New Year's Eve through the third day of the lunar year, so the 2027 statutory dates are 5-8 February. The longer bridged break, compensatory workdays and Chunyun period still require separate annual notices.",
+        },
+        {
+          question: "Will the sights be empty because everyone has gone home?",
+          answer: "No, that is a poor plan. Shanghai reported 21.67 million tourist visits and more than 2,570 cultural and tourism activities during its nine-day 2026 Spring Festival holiday, and the Ministry of Culture and Tourism reported 596 million domestic trips nationally. Those are visit and trip measures, not unique-person counts, and they do not forecast another year, but they do show that the holiday redistributes crowds rather than removing them.",
+        },
+        {
+          question: "Will restaurants and shops be closed during Spring Festival?",
+          answer: "Some will, and there is no useful national list. Government offices follow the published holiday and workday arrangement, while restaurants, shops, museums and attractions make separate decisions. Large hotels, transport facilities, malls and chain businesses often maintain some holiday service; a small family-run restaurant, laundry, workshop or guesthouse may close, shorten hours or reopen later than the formal holiday.",
+        },
+        {
+          question: "Are train tickets hard to get during Spring Festival?",
+          answer: "Plan as if the seat you want may never come through. Treat a 12306 waitlist as attempted fulfilment, not as a held seat, and keep a route that works if it never clears. Chunyun, the separately announced transport operation, begins before the statutory break and ends after it: 40 days in 2026 against a nine-day mainland holiday, so the difficult ticket may sit outside the holiday box on your calendar.",
+        },
+        {
+          question: "Can I join a Chinese family's reunion dinner?",
+          answer: "Only as a specifically invited guest. A restaurant festive menu makes you a customer, and the booking covers the meal, not access to a household tradition; an invitation to dinner does not transfer to companions, filming or every family activity. If you are invited, ask when to arrive, who knows you are coming, food limits, gift expectations and when to leave.",
+        },
+        {
+          question: "Will the temple fairs and lantern shows be running when I visit?",
+          answer: "Check a dated notice from the city, park, museum, temple or named organiser rather than a copied listicle. Beijing's 2026 programme listed different fairs running on different subsets of the holiday, while several lantern displays continued towards the Lantern Festival. The event name does not prove admission, so confirm ticket, reservation, passport, capacity, bag and photography rules, and keep a second public activity nearby.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",

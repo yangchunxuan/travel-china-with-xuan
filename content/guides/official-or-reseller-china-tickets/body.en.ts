@@ -230,6 +230,37 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions before you pay for a ticket",
+      items: [
+        {
+          question: "How do I tell whether a ticket channel is actually official?",
+          answer: "Start at the attraction's institutional website or verified service account and follow its ticket link. A different ticket domain can be official if the owner links it. A familiar marketplace, a high search result or a licensed agency is not proof of standalone-ticket authorisation, and a seller's own ‘official’ claim proves nothing. Save the link path.",
+        },
+        {
+          question: "Can I buy a Forbidden City ticket from a third-party seller?",
+          answer: "No, not a standalone third-party ticket. The Palace Museum names its official mini program and says it has not authorised third parties to act as ticket or exhibition-reservation agents, and it applies real-name document checks including passports for eligible non-mainland visitors. Recheck live document, release and cancellation rules in the official flow. Rules observed on 13 August 2026.",
+        },
+        {
+          question: "I paid and received a voucher. Does that mean I can enter?",
+          answer: "Not on its own, because payment success is not owner-confirmed admission. The states run from listed, to request submitted, to paid, to supplier or owner confirmed, to identity matched, to ready for entry. Ask for an owner or supplier reference and check that visitor, document, date and time slot match the originals.",
+        },
+        {
+          question: "A seller wants payment for a museum booking. Isn't entry free?",
+          answer: "Check what is actually being sold. General admission to the National Museum of China is an official real-name reservation, and the museum warns against other reservation routes because of fraud and personal-data risks. If a seller charges money, identify whether it is selling admission, booking assistance, a guide, transport or another service.",
+        },
+        {
+          question: "A seller is asking for my passport photo over a chat app. Is that normal?",
+          answer: "Stop and request its formal secure input route and legal entity. Passport scans, booking QR codes, payment credentials and one-time codes should not go to a personal social account, and a passport image requested through personal messaging is listed here as a stop signal. Book direct or use another accountable service.",
+        },
+        {
+          question: "My payment went through but the order is still pending. Should I pay again?",
+          answer: "Do not pay again. Ask for the supplier decision time and preserve the current terms. Trip.com's published terms likewise say not to repeat payment while a payment problem is unresolved. Cancel only under the live rule, or use confirmed official inventory rather than buying the same uncertainty twice.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Plan the attraction booking around the rest of the trip",

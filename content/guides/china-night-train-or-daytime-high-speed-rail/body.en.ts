@@ -293,6 +293,37 @@ const body = {
       text: "Leave your travel dates, number and ages of travellers, the two cities or regions you need to connect, and a rough total budget. A Homeground trip planner can help compare the workable travel windows without turning a changing rail timetable into a fixed private itinerary online.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking a night train",
+      items: [
+        {
+          question: "If a night train is a D or G service, does that mean I get a bed?",
+          answer: "No. Railways may add late-night high-speed trains during peak travel periods, and those extra trains can be seat-only services. Do not infer a sleeper from the departure hour or the D/G prefix. Confirm that the inventory label says sleeper or berth, not second-class seat, hard seat or standing/no-seat.",
+        },
+        {
+          question: "My train leaves at 00:30. Which calendar date do I book?",
+          answer: "The new calendar day. A 00:30 train belongs to the new date even if you leave the hotel the previous evening, so read the departure date carefully when the clock is after midnight. Put the hotel checkout, station arrival, train departure and destination arrival on one timeline so both sides of midnight line up.",
+        },
+        {
+          question: "What is the difference between a hard sleeper and a soft sleeper?",
+          answer: "A hard sleeper is usually the cheapest real berth and has the least privacy; a soft sleeper usually has fewer berths per compartment, more privacy and a higher fare. Before paying, check the open or closed layout, the upper, middle or lower position, luggage space and the actual trainset, and whether the soft-sleeper premium still beats the hotel option.",
+        },
+        {
+          question: "Is there a shower on a Chinese overnight train?",
+          answer: "There may not be one. Facilities depend on the trainset and class, so a shower, private toilet, large luggage bay, a charging point at every berth or hotel-style soundproofing may all be missing. Use official layout information when it is available, then pack as if the overnight wash will be basic unless the operator confirms more.",
+        },
+        {
+          question: "Do children need their own berth on a sleeper?",
+          answer: "A free child fare is not a free bed. China Railway's rules distinguish travel without a separately occupied place from buying a child ticket or a berth, and current EMU child discounts vary by class. Enter every child in 12306 with the correct age and document, then price the berth actually needed; sharing one berth with an adult is a deliberate overnight decision, not a default.",
+        },
+        {
+          question: "I arrive at 06:00. Can I go straight to my hotel?",
+          answer: "Do not count on it; test that morning before booking. Ask whether the hotel will store bags, provide a wash option or offer paid early check-in, and whether the metro, a bus or a practical taxi runs at that hour. An early arrival helps only when the whole party has a realistic place to eat and wait if the room is not ready.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning",

@@ -65,33 +65,33 @@ export const shanghaiSuzhouHangzhouAnswers: readonly PrivateTourFaqItem[] = [
   {
     question: l("Is every intercity journey by private car?", "跨城全程都是包车吗？", "도시 간 이동은 모두 전용 차량인가요?"),
     answer: l(
-      "For two or three travellers, the usual arrangement is high-speed rail with private transfers at both ends. For four to nine, a door-to-door vehicle is usually planned around the group's luggage. We confirm the actual transport in writing; the benefit is having each connection coordinated, not having to piece it together yourself.",
+      "For two or three travellers, the usual arrangement is high-speed rail with private transfers at both ends. For four to nine, a door-to-door vehicle is usually planned around the group's luggage. We confirm the actual transport in writing, and each connection is coordinated for you, so you do not have to piece it together yourself.",
       "2–3 人通常采用高铁加两端私车接送；4–9 人通常按人数与行李安排门到门车辆。实际方式会写进确认单。你不用自己把各段交通拼起来，但并非所有人数都默认全程包车。",
-      "2–3명은 보통 고속철도와 양쪽 도시의 전용 픽업을, 4–9명은 수하물을 고려한 문 앞까지의 차량 이동을 계획합니다. 실제 방식은 서면으로 확정합니다. 모든 인원에게 전 구간 차량을 약속하는 것이 아니라, 각 이동을 직접 따로 맞출 필요가 없도록 연결하는 것이 장점입니다.",
+      "2–3명은 보통 고속철도와 양쪽 도시의 전용 픽업을, 4–9명은 수하물을 고려한 문 앞까지의 차량 이동을 계획합니다. 실제 방식은 서면으로 확정해 드립니다. 모든 인원이 전 구간을 차량으로 이동하는 것은 아니지만, 구간마다 따로 알아보실 필요 없이 저희가 연결해 드립니다.",
     ),
   },
   {
     question: l("Does the tour return to Shanghai for my flight?", "最后包含送回上海赶飞机吗？", "마지막 날 상하이로 돌아가는 이동도 포함되나요?"),
     answer: l(
-      "The standard route starts at a confirmed Shanghai airport or station and ends at a Hangzhou airport or station. If your flight home leaves Shanghai, share its details before booking: the return journey, timing and any extra night need to be planned and quoted separately. You do not need to change an already-booked flight before speaking with us.",
-      "标准路线从已确认的上海机场或车站开始，在杭州机场或车站结束。如果回程航班从上海出发，预订前告诉我们航班信息，再核算返沪交通、时间和是否需要加住，单独确认报价。沟通前不需要先改掉已订航班。",
-      "기본 일정은 확정된 상하이 공항 또는 역에서 시작해 항저우 공항 또는 역에서 끝납니다. 귀국편이 상하이 출발이라면 예약 전 항공편을 알려주세요. 복귀 이동, 시간과 추가 숙박 필요 여부를 따로 계획해 견적에 반영합니다. 상담 전에 이미 예약한 항공편을 변경할 필요는 없습니다.",
+      "The standard route starts at a Shanghai airport or station and ends at a Hangzhou airport or station. If your flight home leaves from Shanghai, send us the details before booking, and we will plan and quote the return journey, timing and any extra night separately. There is no need to change a flight you have already booked before talking to us.",
+      "标准路线从上海机场或车站开始，到杭州机场或车站结束。如果回程航班从上海出发，预订前把航班信息告诉我们，我们再核算返沪交通、时间和是否需要加住，单独报价。已经订好的航班，不用在沟通前先改。",
+      "기본 일정은 상하이 공항이나 역에서 시작해 항저우 공항이나 역에서 끝납니다. 귀국편이 상하이 출발이라면 예약 전에 항공편을 알려 주세요. 상하이로 돌아가는 이동과 시간, 추가 숙박 필요 여부를 따로 계획해 견적에 반영해 드립니다. 이미 예약한 항공편은 상담 전에 바꾸지 않으셔도 됩니다.",
     ),
   },
   {
     question: l("Can we travel with older parents or children?", "带长辈或孩子可以怎么安排？", "부모님이나 어린이와 함께라면 어떻게 준비하나요?"),
     answer: l(
-      "As a private party, you can discuss rest stops and priorities with Homeground before booking. Tell us the children's ages, room needs and how long each traveller can comfortably walk. Gardens, temple grounds and old lanes still have steps and uneven paths; we check the practical route and any changes to cost rather than promise a step-free trip.",
-      "私家团可以提前和 Homeground 沟通休息与游览重点。告诉我们孩子年龄、房型需求，以及同行者大致能连续走多久。园林、寺院和老街仍有台阶与不平路面，我们会核对可行路线及费用变化，不将这条路线宣传成无障碍行程。",
-      "우리 일행만의 투어라 예약 전에 Homeground와 휴식과 우선순위를 상의할 수 있습니다. 어린이 나이, 객실 구성과 무리 없이 걸을 수 있는 시간을 알려주세요. 정원, 사찰과 옛 골목에는 계단과 고르지 않은 길이 있어 가능한 동선과 비용 변화를 확인하며, 무단차 여행을 보장하지는 않습니다.",
+      "Because it is just your party, you can talk through rest stops and priorities with Homeground before booking. Tell us the children's ages, room needs and how long each traveller can comfortably walk. Gardens, temple grounds and old lanes still have steps and uneven paths, so this is not a step-free trip; we check a workable route and any change in cost.",
+      "私家团可以在预订前和 Homeground 商量休息和游览重点。告诉我们孩子年龄、房型需求，以及同行的人大概能连续走多久。园林、寺院和老街仍有台阶和不平的路面，这条路线不是无障碍行程；我们会为你核对可行路线和费用变化。",
+      "우리 일행만 다니는 투어라 예약 전에 쉬는 시간과 우선순위를 Homeground와 상의하실 수 있습니다. 어린이 나이, 객실 구성과 무리 없이 걸을 수 있는 시간을 알려 주세요. 정원, 사찰, 옛 골목에는 계단과 고르지 않은 길이 있어 단차 없는 여행은 아닙니다. 가능한 동선과 비용 변화는 저희가 확인해 드립니다.",
     ),
   },
   {
     question: l("What is included in the price, and what is confirmed separately?", "报价包含什么，还需要确认什么？", "요금에는 무엇이 포함되고 무엇을 별도로 확인하나요?"),
     answer: l(
-      "The package covers five nights with breakfast at Ctrip 4-Diamond-rated hotels, the confirmed transport, English-speaking guiding on Days 2–5, arrival assistance and listed admissions including a West Lake cruise. Day 6 is a driver-only transfer. Suzhou Museum depends on reservations. Lunch, dinner and travel into or out of the tour are separate; the written quote confirms rooms, availability, total price and cancellation terms before payment.",
-      "方案含携程 4 钻酒店 5 晚含早住宿、已确认交通、第 2–5 天英语导游、抵达协助及列明门票，其中有西湖游船。第 6 天由司机送行，苏州博物馆须以预约为准。午晚餐及抵达或离开行程的机票、火车票另计；付款前书面确认房型、库存、总价与取消条件。",
-      "씨트립 기준 4다이아 호텔 조식 포함 5박, 확정된 이동, 2–5일차 영어 가이드, 도착 지원과 서호 유람선을 포함한 명시된 입장권이 포함됩니다. 6일차는 기사만 동행하며 쑤저우박물관은 예약이 필요합니다. 점심·저녁과 투어 시작 전·종료 후 항공권·열차표는 별도이며, 결제 전 객실, 예약 가능 여부, 총액과 취소 조건을 서면으로 확인합니다.",
+      "The package covers five nights with breakfast at Ctrip 4-Diamond-rated hotels, your agreed transport, English-speaking guiding on Days 2–5, arrival assistance and the listed admissions, including a West Lake cruise. Day 6 is a driver-only transfer, and Suzhou Museum depends on reservations. Lunch, dinner and travel to the start or from the end of the tour are separate. Before you pay, your written quote sets out rooms, availability, total price and cancellation terms.",
+      "方案含携程 4 钻酒店 5 晚含早住宿、行程内交通、第 2–5 天英语导游、抵达协助和列明的门票（含西湖游船）。第 6 天由司机送行，苏州博物馆要看预约情况。午晚餐，以及抵达和离开时的机票、火车票另计；房型、能否预订、总价和取消条件，付款前都会书面发给你确认。",
+      "씨트립 기준 4다이아 호텔 조식 포함 5박, 일정 내 이동, 2–5일차 영어 가이드, 도착 지원과 서호 유람선을 포함한 명시된 입장권이 포함됩니다. 6일차는 기사만 동행하며, 쑤저우박물관은 예약이 필요합니다. 점심·저녁과 투어 시작 전·종료 후 항공권·열차표는 별도입니다. 객실, 예약 가능 여부, 총액과 취소 조건은 결제 전에 서면으로 보내 드립니다.",
     ),
   },
 ];

@@ -210,7 +210,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Wulingyuan sandstone pillars",
         "武陵源砂岩峰林",
-        "우링위안 사암 봉우리",
+        "무릉원 사암 봉우리",
       ),
       "颐园居",
       "https://commons.wikimedia.org/wiki/File:Wulingyuan,_Zhangjiajie,_Hunan_20230702.jpg",
@@ -221,7 +221,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Tianzi Mountain panorama",
         "天子山峰林全景",
-        "톈쯔산 봉우리 전경",
+        "천자산 봉우리 전경",
       ),
       "Chensiyuan",
       "https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg",
@@ -232,7 +232,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Golden Whip Stream",
         "张家界金鞭溪",
-        "장자제 금편계",
+        "장가계 금편계",
       ),
       "Levaby",
       "https://commons.wikimedia.org/wiki/File:%E5%BC%A0%E5%AE%B6%E7%95%8C%E9%87%91%E9%9E%AD%E6%BA%AA.jpg",
@@ -243,7 +243,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Zhangjiajie Hehua Airport with Tianmen Mountain",
         "张家界荷花机场与天门山",
-        "장자제 허화공항과 톈먼산",
+        "장가계 허화공항과 천문산",
       ),
       "Martin Lewison",
       "https://commons.wikimedia.org/wiki/File:Zhangjiajie_Airport_(27796134377).jpg",
@@ -251,21 +251,21 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       ccBySa2,
     ),
     credit(
-      text("Furong Town waterfall", "芙蓉镇水景", "푸룽전 폭포"),
+      text("Furong Town waterfall", "芙蓉镇水景", "부용진 폭포"),
       "Chensiyuan",
       "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
       "CC BY-SA 4.0",
       ccBySa4,
     ),
     credit(
-      text("Furong Town at night", "芙蓉镇夜景", "푸룽전 야경"),
+      text("Furong Town at night", "芙蓉镇夜景", "부용진 야경"),
       "Popolon",
       "https://commons.wikimedia.org/wiki/File:Furongzhen_nuit.jpg",
       "CC BY-SA 4.0",
       ccBySa4,
     ),
     credit(
-      text("Hongqiao, Fenghuang", "凤凰古城虹桥", "펑황고성 훙차오"),
+      text("Hongqiao, Fenghuang", "凤凰古城虹桥", "봉황고성 훙차오"),
       "xiquinhosilva",
       "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg",
       "CC BY 4.0",
@@ -275,7 +275,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Shen Congwen's former residence, Fenghuang",
         "凤凰沈从文故居",
-        "펑황 선충원 옛집",
+        "봉황 선충원 옛집",
       ),
       "Kurgenera",
       "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg",
@@ -286,7 +286,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Tuojiang stepping stones, Fenghuang",
         "凤凰沱江跳岩",
-        "펑황 퉈장 징검다리",
+        "봉황 퉈장 징검다리",
       ),
       "Yu Hui (于回)",
       "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg",

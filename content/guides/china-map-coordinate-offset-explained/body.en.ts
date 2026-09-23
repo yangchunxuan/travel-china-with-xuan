@@ -268,6 +268,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about a wrong map pin",
+      items: [
+        {
+          question: "My booking page's hotel pin is across the street from the hotel's Chinese address. Which one do I trust?",
+          answer: "The Chinese address. Treat the booking pin as unverified, search the Chinese branch name and street number in a China-local map, then ask reception for a same-app link and the usable entrance. Incomplete text may resolve only to a city, road, district or approximate centre, and a romanised or translated name can match the wrong branch.",
+        },
+        {
+          question: "Can I fix a wrong pin by subtracting a fixed offset from the coordinates?",
+          answer: "No. Official documentation distinguishes several coordinate inputs, but establishes no fixed China-wide direction or distance to subtract. A manual offset may move a pin between wrong places without revealing a duplicate name, old branch or closed gate. Match the address and entrance instead of an undisclosed algorithm.",
+        },
+        {
+          question: "What should I show a taxi driver instead of an English screenshot?",
+          answer: "Show the Chinese destination card and the POI in the driver's own map. Point out the district, branch and entrance, and ask the driver to confirm the district before the vehicle moves. If the route targets a property centre, search the named vehicle gate or pickup point instead, and do not edit the destination while the driver is driving.",
+        },
+        {
+          question: "My blue dot keeps jumping inside a station or mall. Is the destination pin wrong?",
+          answer: "Not necessarily. A jumping blue dot points to a live device positioning, permission or indoor-signal problem, while the fixed destination POI has not moved. Follow floor and exit signs to a known anchor, then reacquire the dot outside or near an entrance before deciding the pin itself is wrong.",
+        },
+        {
+          question: "One map marks the scenic-area centre and another marks the east gate. Which one do I use?",
+          answer: "Both may describe the same property. A large site can have a centre point, child POIs and separate navigation entrances, and the usable gate can change by time, ticket type, vehicle access or construction. Use the gate that the attraction currently assigns to your ticket and arrival mode, and search that gate as a separate place.",
+        },
+        {
+          question: "The walking route wants me to cross a fence or an express road. Should I follow it?",
+          answer: "Do not follow it. Stop before crossing a barrier, express road, railway, waterway, construction area or private entrance, and compare the Chinese street sign, building number, gate name and nearby landmark with your destination card. Then return to a clear anchor such as a staffed metro exit, main-road junction, station information desk or hotel reception, and search the gate by name.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Prepare the rest of the arrival toolkit",

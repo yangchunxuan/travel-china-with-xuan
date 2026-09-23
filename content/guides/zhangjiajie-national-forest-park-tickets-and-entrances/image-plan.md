@@ -23,6 +23,6 @@ The photograph proves that the depicted sandstone landscape is in Zhangjiajie Na
 
 - EN: Quartz-sandstone pillars in Zhangjiajie National Forest Park, photographed in August 2016.
 - ZH: 2016年8月拍摄的张家界国家森林公园石英砂岩峰林。
-- KO: 2016년 8월 촬영한 장자제 국가삼림공원의 석영사암 봉우리 숲.
+- KO: 2016년 8월 촬영한 장가계 국가삼림공원의 석영사암 봉우리 숲.
 
 Attribution and the CC BY 2.0 licence link must remain in the article sources. A later supporting image of a gate may be added only when the exact gate, date, creator and commercial-use rights are documented; it must not replace one gate with another.

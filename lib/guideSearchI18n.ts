@@ -156,11 +156,11 @@ const copies: Record<HomegroundLocale, GuideSearchCopy> = {
     introduction:
       "어디에 머물지, 어떻게 이동할지, 며칠이 적당할지 궁금하신가요? 지금 고민 중인 내용을 검색해 보세요.",
     label: "궁금한 여행 정보를 검색하세요",
-    placeholder: "예: ‘장자제 숙소는 어디가 좋을까?’",
+    placeholder: "예: ‘장가계 숙소는 어디가 좋을까?’",
     action: "가이드 검색",
     examplesLabel: "추천 검색어",
     examples: [
-      "장자제 시내와 우링위안 중 어디에 머물까",
+      "장가계 시내와 무릉원 중 어디에 머물까",
       "베이징남역에서 서우두공항 또는 다싱공항까지",
       "부모님과 중국 여행 일정",
     ],
