@@ -79,10 +79,10 @@
   },
   "requiredCoverage": {
     "stay": 20,
-    "high-intent-transport": 26,
+    "high-intent-transport": 27,
     "plan": 25,
     "purchase-ticket": 3,
-    "uniqueContentIds": 74
+    "uniqueContentIds": 75
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -759,6 +759,21 @@
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "shanghai-hangzhou-transport-route",
       "authorizationStatus": "authorized-existing-service",
+      "forbiddenClaims": [
+        "vehicle-driver-availability-guarantee",
+        "fixed-transfer-price-or-pickup-guarantee",
+        "transport-includes-entry-tickets",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "shanghai-to-suzhou-day-trip",
+      "ownerClass": "high-intent-transport",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "shanghai-to-suzhou-day-trip",
+      "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "vehicle-driver-availability-guarantee",
         "fixed-transfer-price-or-pickup-guarantee",

@@ -629,6 +629,15 @@ const body = {
       text: "쑤저우는 첫 방문의 우선순위가 비교적 모여 있어 당일치기가 성립합니다. 항저우는 주요 경험이 역 하나 옆에 붙어 있지 않아 1박이 값을 하는 경우가 많습니다. 난징은 넣을 만큼 중요하다면 대개 자기 거점을 가져야 합니다. 두 거점으로 짠 삼각주 계획이 반복 왕복이나 잦은 호텔 이동보다 나을 때가 많습니다.",
     },
     {
+      id: "delta-day-trip-links",
+      type: "internal-links",
+      title: "실제 왕복 동선 계획하기",
+      items: [
+        { label: "상하이 출발 쑤저우 당일치기", href: "/ko/guides/shanghai-to-suzhou-day-trip/", description: "역, 하루의 우선순위와 돌아오는 열차를 함께 고릅니다." },
+        { label: "상하이에서 항저우까지 열차", href: "/ko/guides/shanghai-hangzhou-transport-route/", description: "당일치기와 1박을 고르기 전에 역 조합을 비교합니다." },
+      ],
+    },
+    {
       id: "order-heading",
       type: "heading",
       level: 2,

@@ -629,6 +629,15 @@ const body = {
       text: "苏州第一次到访的优先项相对紧凑，能撑起一次当日往返。杭州常常值得住一晚，因为它的主要体验并不集中在某一个车站旁边。南京如果重要到要放进行程，通常就该给它自己的基地。双基地的长三角安排，往往比反复往返或频繁换酒店都更好。",
     },
     {
+      id: "delta-day-trip-links",
+      type: "internal-links",
+      title: "把实际往返安排清楚",
+      items: [
+        { label: "上海去苏州一日游", href: "/zh/guides/shanghai-to-suzhou-day-trip/", description: "选择车站、当天游览重点和可行的返程。" },
+        { label: "上海到杭州怎么坐车", href: "/zh/guides/shanghai-hangzhou-transport-route/", description: "先比较车站，再决定当天往返或住一晚。" },
+      ],
+    },
+    {
       id: "order-heading",
       type: "heading",
       level: 2,
