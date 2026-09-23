@@ -14,9 +14,9 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
   {
     question: l("What do you arrange for the Suzhou day trip?", "苏州一日游的交通怎么安排？", "쑤저우 당일 여행의 이동은 어떻게 준비하나요?"),
     answer: l(
-      "The published tour includes return second-class high-speed rail, private transfers at both ends and the guided Suzhou visit. Homeground coordinates these as one itinerary, so you do not need to book the train and local transfers separately. This rail arrangement applies to both the two- and four-person packages.",
-      "公开行程包含高铁二等座往返、两端私车接驳和苏州导游游览。Homeground 将这些安排在同一份行程中，你不用分别预订火车和市内接送。2 人和 4 人方案都按这套高铁安排执行。",
-      "공개 일정에는 왕복 고속철도 2등석, 양쪽 도시의 전용 차량 연결과 쑤저우 가이드 관광이 포함됩니다. Homeground가 하나의 일정으로 조율하므로 열차와 현지 이동을 따로 예약할 필요가 없습니다. 2명과 4명 상품 모두 이 철도 이동 방식입니다.",
+      "The published tour includes return second-class high-speed rail, private transfers at both ends and the guided Suzhou visit. Homeground coordinates these as one itinerary, so you do not need to book the train and local transfers separately. This rail arrangement applies to both the two-, four- and six-person packages.",
+      "公开行程包含高铁二等座往返、两端私车接驳和苏州导游游览。Homeground 将这些安排在同一份行程中，你不用分别预订火车和市内接送。2 人、4 人和 6 人方案都按这套高铁安排执行。",
+      "공개 일정에는 왕복 고속철도 2등석, 양쪽 도시의 전용 차량 연결과 쑤저우 가이드 관광이 포함됩니다. Homeground가 하나의 일정으로 조율하므로 열차와 현지 이동을 따로 예약할 필요가 없습니다. 2명·4명·6명 상품 모두 이 철도 이동 방식입니다.",
     ),
   },
   {
@@ -38,9 +38,9 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
   {
     question: l("Are the guide, hotel and price confirmed when I enquire?", "咨询时就能确认导游、酒店和价格吗？", "문의하면 가이드, 호텔과 가격이 바로 확정되나요?"),
     answer: l(
-      "The published package includes English-speaking guide service and four nights with breakfast at a Ctrip 4-Diamond-rated hotel. We check your dates, room arrangement and availability before confirming the hotel and total in writing. Public two- and four-person prices are a starting point; children, other group sizes and changes need a personal quote. Enquiring does not reserve rooms or tickets.",
-      "公开方案含英语导游和携程 4 钻酒店 4 晚含早住宿。我们按你的日期、房型和库存核对，再书面确认酒店与总价。公开的 2 人和 4 人价格用于参考，儿童、其他人数及行程调整另行报价；提交咨询不会自动占房或锁票。",
-      "공개 상품은 영어 가이드와 씨트립 기준 4다이아 호텔의 조식 포함 4박을 제공합니다. 날짜, 객실 구성과 예약 가능 여부를 확인한 뒤 호텔과 총액을 서면으로 확정합니다. 공개된 2명·4명 가격을 기준으로 어린이, 다른 인원과 일정 변경은 개별 견적을 드립니다. 문의만으로 객실이나 표가 확보되지는 않습니다.",
+      "The published package includes English-speaking guide service and four nights with breakfast at a Ctrip 4-Diamond-rated hotel. We check your dates, room arrangement and availability before confirming the hotel and total in writing. Public two-, four- and six-person prices are a starting point; children, other group sizes and changes need a personal quote. Enquiring does not reserve rooms or tickets.",
+      "公开方案含英语导游和携程 4 钻酒店 4 晚含早住宿。我们按你的日期、房型和库存核对，再书面确认酒店与总价。公开的 2 人、4 人和 6 人价格用于参考，儿童、其他人数及行程调整另行报价；提交咨询不会自动占房或锁票。",
+      "공개 상품은 영어 가이드와 씨트립 기준 4다이아 호텔의 조식 포함 4박을 제공합니다. 날짜, 객실 구성과 예약 가능 여부를 확인한 뒤 호텔과 총액을 서면으로 확정합니다. 공개된 2명·4명·6명 가격을 기준으로 어린이, 다른 인원과 일정 변경은 개별 견적을 드립니다. 문의만으로 객실이나 표가 확보되지는 않습니다.",
     ),
   },
 ];

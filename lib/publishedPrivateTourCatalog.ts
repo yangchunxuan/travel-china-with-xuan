@@ -458,7 +458,7 @@ export function getPublishedPrivateTourCatalog(
       },
       startingPrice: {
         ...zhangjiajieStartingPrice,
-        travelers: zhangjiajieProduct.group_basis.minimum_adults,
+        travelers: zhangjiajieProduct.price_display.starting_group_size,
         serviceLabel: {
           en: "Two days of English-speaking guide service included",
           zh: "已含两天英文导游服务",

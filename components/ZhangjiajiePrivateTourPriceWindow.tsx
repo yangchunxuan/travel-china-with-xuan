@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { ProductPreviewLocale } from "../lib/zhangjiajiePrivateTourPreview";
+import { GuideCtaLink } from "./GuideCtaLink";
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 
 export type PriceWindowStatus = "checking" | "current" | "expired";
@@ -14,6 +15,9 @@ interface PublicPriceTier {
   price?: number;
   regularPrice?: number;
   formattedPrice: string;
+  sixPersonPrice: number;
+  formattedSixPersonPrice: string;
+  sixPersonInquiryHref?: string;
   formattedRegularPrice?: string;
   featured: boolean;
 }
@@ -38,11 +42,15 @@ interface PriceCopy {
   fromLabel: string;
   perPerson: string;
   regularLabel: string;
+  baseGroupLabel: string;
+  sixPersonLabel: string;
+  sixPersonInquiryLabel: string;
   exactStayNote: string;
   validThrough: string;
 }
 
 export function ZhangjiajiePrivateTourPriceWindow({
+  locale,
   copy,
   pricing,
   variant = "full",
@@ -96,7 +104,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
 
   if (variant === "summary") {
     const startingTier = pricing.tiers
-      .map((tier) => ({ ...tier, displayedPrice: tier.fromPrice ?? tier.price }))
+      .map((tier) => ({ ...tier, displayedPrice: Math.min(tier.fromPrice ?? tier.price ?? Infinity, tier.sixPersonPrice) }))
       .filter((tier): tier is typeof tier & { displayedPrice: number } =>
         typeof tier.displayedPrice === "number",
       )
@@ -107,10 +115,10 @@ export function ZhangjiajiePrivateTourPriceWindow({
         {status === "checking" ? <strong>{copy.checkingPrice}</strong> : null}
         <p className={styles.compactPrice}>
           <span>{copy.fromLabel}</span>
-          <strong>{startingTier?.formattedPrice ?? "—"}</strong>
+          <strong>{startingTier?.formattedSixPersonPrice ?? "—"}</strong>
           <small>{copy.perPerson}</small>
         </p>
-        {startingTier ? <p>{startingTier.name}</p> : null}
+        {startingTier ? <p>{startingTier.name} · {copy.sixPersonLabel}</p> : null}
         <p>{pricing.basisLabel}</p>
         {validity}
         {status === "checking" ? <p>{pricing.referenceNote}</p> : null}
@@ -150,10 +158,27 @@ export function ZhangjiajiePrivateTourPriceWindow({
                 <strong>{tier.formattedPrice}</strong>
                 <small>{copy.perPerson}</small>
               </p>
+              <p className={styles.priceGroup}>{copy.baseGroupLabel}</p>
               {regularPrice ? (
                 <p className={styles.regularPrice}>
                   {copy.regularLabel}: {tier.formattedRegularPrice}
                 </p>
+              ) : null}
+              <p className={styles.sixPersonRate}>
+                <span>{copy.sixPersonLabel}</span>
+                <strong>{tier.formattedSixPersonPrice}</strong>
+                <small>{copy.perPerson}</small>
+              </p>
+              {tier.sixPersonInquiryHref ? (
+                <GuideCtaLink
+                  className={styles.sixPersonInquiry}
+                  guideId="zhangjiajie-4-day-private-tour"
+                  href={tier.sixPersonInquiryHref}
+                  locale={locale}
+                  position="inline"
+                >
+                  {copy.sixPersonInquiryLabel}
+                </GuideCtaLink>
               ) : null}
               <p>{tier.description}</p>
               <p className={styles.confirmationLine}>{copy.exactStayNote}</p>

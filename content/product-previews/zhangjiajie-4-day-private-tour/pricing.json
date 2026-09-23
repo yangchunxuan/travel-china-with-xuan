@@ -3,7 +3,7 @@
   "product_id": "zjj-4d3n-private-2026",
   "status": "approved_price_decision",
   "public_eligible": true,
-  "updated_at": "2026-09-06T03:03:43+08:00",
+  "updated_at": "2026-09-23T19:58:16+09:00",
   "currency": "CNY",
   "approved_decision_id": "approved-public-pricing-20260906",
   "valid_from": "2026-09-06",
@@ -16,7 +16,7 @@
     "standard_rooming": "two_adults_sharing_one_room",
     "same_rate_adult_group_sizes": [2, 3, 4],
     "automatic_group_discount": false,
-    "five_plus_rule": "Keep the listed per-person rate as the starting rule; confirm room count, luggage and vehicle capacity before booking.",
+    "five_plus_rule": "Six adults use the listed six-person rate. Quote five or seven or more adults separately after confirming room count, luggage and vehicle capacity.",
     "children_rule": "Quote separately according to age, height, ticket eligibility, breakfast and bedding requirements."
   },
   "tiers": [
@@ -26,6 +26,7 @@
       "name_en": "Selected City Stay",
       "name_ko": "엄선한 시내 숙소",
       "from_price_per_person": 3445,
+      "six_person_price_per_person": 3245,
       "regular_price_per_person": 3640,
       "positioning_zh": "按实际日期最终确认的市区住宿",
       "featured": true
@@ -36,6 +37,7 @@
       "name_en": "Spacious Premium Stay",
       "name_ko": "넉넉한 프리미엄 숙소",
       "price_per_person": 4160,
+      "six_person_price_per_person": 3960,
       "positioning_zh": "适合重视更舒展空间与完整住宿体验的客人",
       "featured": false
     },
@@ -45,13 +47,14 @@
       "name_en": "Distinctive Mountain Stay",
       "name_ko": "특색 있는 산악 숙소",
       "price_per_person": 5200,
+      "six_person_price_per_person": 5000,
       "positioning_zh": "高端设计感与特色山景住宿选项",
       "featured": false
     }
   ],
   "public_notes": {
-    "zh-CN": "以上价格按至少2位成人同行、4天3晚计算。3人及以上不自动享受人数折扣。具体住宿、房型、房间数、早餐、车辆及可订状态以付款前的书面确认单为准；价格过期后请重新询价。",
-    "en": "Prices are per person for a minimum of two adults on a 4-day, 3-night itinerary. There is no automatic group discount for three or more travelers. The exact accommodation, room type, room count, breakfast, vehicle and availability must be confirmed in writing before payment. Request a new quote after the validity date.",
-    "ko": "표시 가격은 성인 2명 이상이 함께 이용하는 4일 3박 일정의 1인 기준입니다. 3명 이상이라고 자동으로 인원 할인이 적용되지는 않습니다. 정확한 숙소, 객실 유형, 객실 수, 조식, 차량과 예약 가능 여부는 결제 전 서면 확인서를 기준으로 합니다. 유효기간이 지나면 새 견적을 요청해 주세요."
+    "zh-CN": "以上价格按4天3晚、每人计算；基础价适用于2至4位成人，六人价适用于6位成人。5位或7位及以上成人请另行询价。具体住宿、房型、房间数、早餐、车辆及可订状态以付款前的书面确认单为准；价格过期后请重新询价。",
+    "en": "Prices are per person for a 4-day, 3-night itinerary. The base rates cover two to four adults; six-person rates apply to six adults. Ask for a separate quote for five or seven or more adults. The exact accommodation, room type, room count, breakfast, vehicle and availability must be confirmed in writing before payment. Request a new quote after the validity date.",
+    "ko": "표시 가격은 3박 4일 일정의 1인 기준입니다. 기본 요금은 성인 2~4명, 6인 요금은 성인 6명에게 적용됩니다. 성인 5명 또는 7명 이상은 별도 견적을 요청해 주세요. 정확한 숙소, 객실 유형, 객실 수, 조식, 차량과 예약 가능 여부는 결제 전 서면 확인서를 기준으로 합니다. 유효기간이 지나면 새 견적을 요청해 주세요."
   }
 }

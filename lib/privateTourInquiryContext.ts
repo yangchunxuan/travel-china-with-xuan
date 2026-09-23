@@ -57,6 +57,14 @@ const packageLabels = {
   "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스" },
 } as const;
 
+// Keep this small public selection contract in TypeScript: analytics' focused
+// CommonJS build cannot import pricing.json. The pricing test checks parity.
+const legacyZhangjiajieStayLabels = {
+  "selected-city-stay": { en: "Selected City Stay", zh: "精选市区酒店", ko: "엄선한 시내 숙소" },
+  "spacious-premium-stay": { en: "Spacious Premium Stay", zh: "宽敞高级住宿", ko: "넉넉한 프리미엄 숙소" },
+  "distinctive-mountain-stay": { en: "Distinctive Mountain Stay", zh: "精品山景住宿", ko: "특색 있는 산악 숙소" },
+} as const;
+
 export function getPrivateTourInquirySelection(
   slug: string | null | undefined,
   packageValue: string | null | undefined,
@@ -69,6 +77,11 @@ export function getPrivateTourInquirySelection(
     typeof travelersValue === "string" &&
     travelersValue !== String(travelers)
   ) return null;
+  if (slug === "zhangjiajie-4-day-private-tour") {
+    return travelers === 6 && Object.hasOwn(legacyZhangjiajieStayLabels, packageValue)
+      ? { packageId: packageValue, travelers: 6 }
+      : null;
+  }
   const product = privateTourProducts.find((candidate) => candidate.slug === slug);
   const tourPackage = product?.packages.find(
     (candidate) => candidate.id === packageValue,
@@ -110,10 +123,14 @@ export function privateTourInquirySelectionLabel(
 ): string | null {
   const selection = context.selection;
   if (!selection) return null;
-  const packageLabel =
-    locale === "ko" &&
-    context.slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" &&
-    selection.packageId === "standard-guided"
+  const legacyTier = context.slug === "zhangjiajie-4-day-private-tour"
+    ? legacyZhangjiajieStayLabels[selection.packageId as keyof typeof legacyZhangjiajieStayLabels]
+    : null;
+  const packageLabel = legacyTier
+    ? legacyTier[locale]
+    : locale === "ko" &&
+        context.slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" &&
+        selection.packageId === "standard-guided"
       ? "한국어 가이드 포함"
       : packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
   if (!packageLabel) return null;

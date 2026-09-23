@@ -38,7 +38,8 @@ const preview = await loadModule("lib/zhangjiajiePrivateTourPreview.ts", {
   "./privateTourProducts": { formatPrivateTourPrice },
 });
 const jsx = require("react/jsx-runtime");
-const { ZhangjiajiePrivateTourPriceWindow } = await loadModule(componentPath, { react: React, "react/jsx-runtime": jsx });
+const guideCta = { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) };
+const { ZhangjiajiePrivateTourPriceWindow } = await loadModule(componentPath, { react: React, "react/jsx-runtime": jsx, "./GuideCtaLink": guideCta });
 const props = (locale = "en", variant = "full") => ({
   locale, variant, copy: preview.productPreviewCopy[locale], pricing: preview.getZhangjiajiePrivateTourPublicPricing(locale),
 });
@@ -48,7 +49,8 @@ const textOf = (html) => nodes(parse(html)).filter((node) => node.nodeName === "
 test("the September owner-approved classic prices retain exact USD values and synchronized product metadata", () => {
   assert.equal(approved.approved_decision_id, "approved-public-pricing-20260906");
   assert.equal(product.price_display.approved_decision_id, approved.approved_decision_id);
-  assert.equal(product.price_display.from_price_per_person, 3445);
+  assert.equal(product.price_display.from_price_per_person, 3245);
+  assert.equal(product.price_display.starting_group_size, 6);
   assert.equal(product.price_display.valid_until, approved.valid_until);
   assert.equal(approved.valid_from, "2026-09-06");
   assert.deepEqual(approved.basis.same_rate_adult_group_sizes, [2, 3, 4]);
@@ -56,6 +58,8 @@ test("the September owner-approved classic prices retain exact USD values and sy
 
   const cnyPrices = approved.tiers.map((tier) => tier.from_price_per_person ?? tier.price_per_person);
   assert.deepEqual(cnyPrices, [3445, 4160, 5200]);
+  assert.deepEqual(approved.tiers.map((tier) => tier.six_person_price_per_person), [3245, 3960, 5000]);
+  assert.deepEqual(approved.tiers.map((tier) => (tier.from_price_per_person ?? tier.price_per_person) - tier.six_person_price_per_person), [200, 200, 200]);
   assert.deepEqual(cnyPrices.map((cny) => formatPrivateTourPrice(cny, "en").amount), [530, 640, 800]);
   assert.deepEqual(cnyPrices.map((cny) => formatPrivateTourPrice(cny, "ko").amount), [750000, 900000, 1120000]);
   assert.deepEqual(
@@ -87,7 +91,9 @@ test("static HTML contains dated, localized reference prices and the approved gr
       const tiers = variant === "full" ? approved.tiers : [approved.tiers[0]];
       for (const tier of tiers) {
         const cny = tier.from_price_per_person ?? tier.price_per_person;
-        assert.ok(text.includes(formatPrivateTourPrice(cny, locale).formatted));
+        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(cny, locale).formatted));
+        else assert.ok(text.includes(formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted));
+        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted));
       }
       if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(3640, locale).formatted));
     }
@@ -102,6 +108,7 @@ async function mountAt(now, variant = "full") {
   const clock = { now };
   const { ZhangjiajiePrivateTourPriceWindow: Component } = await loadModule(componentPath, {
     "react/jsx-runtime": jsx,
+    "./GuideCtaLink": guideCta,
     react: {
       useState: (initial) => [state ?? initial, (next) => { state = next; }],
       useEffect: (callback) => { effect = callback; },
@@ -126,12 +133,13 @@ test("hydration preserves the inclusive China-time price window and removes old 
       assert.ok(mounted.initial.includes(preview.productPreviewCopy.en.checkingPrice));
       const text = mounted.render();
       if (current) {
-        assert.ok(text.includes(formatPrivateTourPrice(3445, "en").formatted));
+        assert.ok(text.includes(formatPrivateTourPrice(variant === "summary" ? 3245 : 3445, "en").formatted));
         assert.ok(!text.includes(preview.productPreviewCopy.en.expiredPrice));
         assert.ok(text.includes(props().pricing.guideLanguageNote));
       } else {
         assert.ok(text.includes(preview.productPreviewCopy.en.expiredPrice));
         for (const tier of props().pricing.tiers) assert.ok(!text.includes(tier.formattedPrice));
+        for (const tier of props().pricing.tiers) assert.ok(!text.includes(tier.formattedSixPersonPrice));
       }
       mounted.cleanup();
     }
@@ -169,6 +177,17 @@ test("the browser receives formatted public prices without a runtime import of t
     for (const [index, tier] of pricing.tiers.entries()) {
       const approvedTier = approved.tiers[index];
       assert.equal(tier.formattedPrice, formatPrivateTourPrice(approvedTier.from_price_per_person ?? approvedTier.price_per_person, locale).formatted);
+      assert.equal(tier.formattedSixPersonPrice, formatPrivateTourPrice(approvedTier.six_person_price_per_person, locale).formatted);
     }
+  }
+});
+
+test("each published stay links its six-person price to its exact inquiry selection", () => {
+  const pricing = preview.getZhangjiajiePrivateTourPublicPricing("en");
+  const selected = { ...pricing, tiers: pricing.tiers.map((tier) => ({ ...tier, sixPersonInquiryHref: `/?tour=zhangjiajie-4-day-private-tour&package=${tier.id}&travelers=6#planner-contact` })) };
+  const html = renderToStaticMarkup(React.createElement(ZhangjiajiePrivateTourPriceWindow, { ...props(), pricing: selected }));
+  for (const tier of pricing.tiers) {
+    assert.ok(html.includes(`package=${tier.id}&amp;travelers=6`), tier.id);
+    assert.ok(textOf(html).includes(tier.formattedSixPersonPrice), tier.id);
   }
 });

@@ -99,6 +99,37 @@ test("published package and group choices survive contact links in every languag
   }
 });
 
+test("classic Zhangjiajie stay choices carry only the three published six-person tiers", () => {
+  const slug = "zhangjiajie-4-day-private-tour";
+  for (const packageId of ["selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"]) {
+    const selection = getPrivateTourInquirySelection(slug, packageId, 6);
+    assert.deepEqual(selection, { packageId, travelers: 6 });
+    for (const locale of ["en", "zh", "ko"]) {
+      const context = getPrivateTourInquiryContext(slug, locale, selection);
+      const href = buildPrivateTourInquiryHref(locale === "en" ? "/" : `/${locale}/`, slug, "private_tour", selection);
+      assert.deepEqual(getPrivateTourInquiryContextFromSearchParams(new URL(href, "https://homegroundchina.com").searchParams, locale), context);
+      const label = privateTourInquirySelectionLabel(context, locale);
+      assert.ok(label.includes("6"));
+      assert.ok(decodeURIComponent(buildPrivateTourMailtoHref("test@example.invalid", locale, context)).includes(label));
+    }
+  }
+  for (const [packageId, travelers] of [["selected-city-stay", 5], ["selected-city-stay", 4], ["no-guide", 6], ["spacious-premium-stay", "06"]]) {
+    assert.equal(getPrivateTourInquirySelection(slug, packageId, travelers), null);
+  }
+});
+
+test("classic selection labels stay aligned with the approved lodging tiers", async () => {
+  const pricing = JSON.parse(await source("content/product-previews/zhangjiajie-4-day-private-tour/pricing.json"));
+  for (const tier of pricing.tiers) {
+    const selection = getPrivateTourInquirySelection("zhangjiajie-4-day-private-tour", tier.tier_id, 6);
+    assert.ok(selection, tier.tier_id);
+    for (const [locale, nameKey] of [["en", "name_en"], ["zh", "name_zh"], ["ko", "name_ko"]]) {
+      const context = getPrivateTourInquiryContext("zhangjiajie-4-day-private-tour", locale, selection);
+      assert.ok(privateTourInquirySelectionLabel(context, locale).includes(tier[nameKey]));
+    }
+  }
+});
+
 test("a query cannot invent packages, groups or ambiguous duplicate selections", () => {
   const tour = "beijing-highlights-5-day-private-tour";
   for (const query of [
