@@ -91,6 +91,36 @@ test("traffic selection metadata matches every published inquiry price row", () 
   }
 });
 
+test("six-traveller database whitelist includes the newly published choices", async () => {
+  const sql = await readFile(new URL("../migrations/202609230001_add_six_traveller_private_tour_prices.sql", import.meta.url), "utf8");
+  assert.match(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
+  const selectionCase = sql.match(/select case p_slug([\s\S]*?)else false\s+end is true;/u)?.[1];
+  assert.ok(selectionCase);
+  const newSixPersonSlugs = [
+    "shanghai-suzhou-hangzhou-6-day-private-tour",
+    "chengdu-pandas-sanxingdui-5-day-private-tour",
+    "xian-terracotta-warriors-5-day-private-tour",
+    "chongqing-wulong-5-day-private-tour",
+    "guilin-yangshuo-5-day-private-tour",
+    "harbin-winter-5-day-private-tour",
+    "shanghai-suzhou-5-day-private-tour",
+    "beijing-highlights-5-day-private-tour",
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+    "huangshan-hongcun-huizhou-5-day-private-tour",
+  ];
+  for (const slug of newSixPersonSlugs) {
+    const condition = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
+    assert.ok(condition?.includes("p_travelers in"), `missing six-person SQL branch: ${slug}`);
+    assert.match(condition, /\(\d+(?:, \d+)*, 6\)/u, `missing six-person SQL choice: ${slug}`);
+  }
+  for (const slug of ["chengdu-jiuzhaigou-huanglong-6-day-private-tour", "guizhou-huangguoshu-libo-miao-7-day-private-tour", "xiamen-tulou-quanzhou-6-day-private-tour", "chengdu-chongqing-8-day-private-tour"]) {
+    const condition = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
+    assert.match(condition, /p_travelers = 2/u, `unpriced six-person choice must remain unavailable: ${slug}`);
+  }
+  assert.doesNotMatch(selectionCase, /jingdezhen-wuyuan-wangxian|changbaishan-yanji-winter/u);
+});
+
 test("legacy email-only and identity-only payloads retain their original semantic representation", () => {
   for (const context of [null, getPrivateTourInquiryContext(beijing, "en")]) {
     const input = payload(context);

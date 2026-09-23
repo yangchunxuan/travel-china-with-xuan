@@ -1063,9 +1063,9 @@ const chaoshan: PrivateTourProduct = {
     ["모든 음식 구매와 식당 비용", "확인서에 없는 출항·양식장·공연 체험"],
   ),
   bookingNote: pricingBookingNote(
-    "The published starting price is USD 420 per person for groups under four and USD 280 per person for groups of four or more. The 6-traveller selector uses that same public 4+ bracket; the exact total still depends on rooms and vehicle class.",
-    "页面所示起价为 4 人以下 USD 420/人、4 人及以上 USD 280/人。6 人选项沿用同一公开 4+ 档，准确总价仍按房间数与车型确认。",
-    "공개 시작가는 4명 미만 1인 USD 420, 4명 이상 1인 USD 280입니다. 6명 선택은 같은 4명 이상 공개 구간을 사용하며 정확한 총액은 객실 수와 차량에 따라 확정합니다.",
+    "The prices shown above are per person for groups of 2, 4 or 6 travellers. We still confirm the room plan and vehicle class before sending the final total.",
+    "上方分别列出 2 人、4 人和 6 人同行的每人起价；最终总价仍按房间数与车型确认。",
+    "위 가격은 2명·4명·6명 그룹의 1인 시작가입니다. 최종 총액은 객실 구성과 차량 등급을 확인한 뒤 안내합니다.",
   ),
   heroImage: image(
     chaoshanSlug,
@@ -1139,11 +1139,11 @@ const chaoshan: PrivateTourProduct = {
     standardPackage([
       { travelers: 2, cnyPerPerson: 2730, usdPerPerson: 420, publishedPrice: { currency: "USD", amountPerPerson: 420 } },
       { travelers: 4, cnyPerPerson: 1820, usdPerPerson: 280, publishedPrice: { currency: "USD", amountPerPerson: 280 } },
-      { travelers: 6, cnyPerPerson: 1820, usdPerPerson: 280, publishedPrice: { currency: "USD", amountPerPerson: 280 } },
+      { travelers: 6, cnyPerPerson: 1620, publishedPrice: { currency: "USD", amountPerPerson: 250 } },
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const chengduChongqingSlug = "chengdu-chongqing-8-day-private-tour";
@@ -1491,9 +1491,9 @@ const guangzhou: PrivateTourProduct = {
     ["모든 식당 비용과 음식 구매", "예약에 명시되지 않은 광저우타워 입장과 주강 유람선"],
   ),
   bookingNote: pricingBookingNote(
-    "The published starting price is USD 630 per person for groups under 4 and USD 490 per person for groups of 4 or more. The 6-traveller selector uses the same public 4+ bracket rather than a separate 6-person price; rooming and vehicle class are reconfirmed.",
-    "页面所示起价为 4 人以下 USD 630/人，4 人及以上 USD 490/人。6 人选项沿用公开的“4 人及以上”档，并非独立的 6 人定价；房间与车型仍须重新确认。",
-    "표시된 시작가는 4명 미만 1인 USD 630, 4명 이상 1인 USD 490입니다. 6명 선택은 별도 6인 가격이 아니라 공개된 4명 이상 구간을 사용하며 객실과 차량 등급을 다시 확인합니다.",
+    "The prices shown above are per person for groups of 2, 4 or 6 travellers. We still confirm rooms and vehicle class before sending the final total.",
+    "上方分别列出 2 人、4 人和 6 人同行的每人起价；最终总价仍按房间与车型确认。",
+    "위 가격은 2명·4명·6명 그룹의 1인 시작가입니다. 최종 총액은 객실과 차량 등급을 확인한 뒤 안내합니다.",
   ),
   heroImage: image(
     guangzhouSlug,
@@ -1560,11 +1560,11 @@ const guangzhou: PrivateTourProduct = {
     standardPackage([
       { travelers: 2, cnyPerPerson: 4095, usdPerPerson: 630, publishedPrice: { currency: "USD", amountPerPerson: 630 } },
       { travelers: 4, cnyPerPerson: 3185, usdPerPerson: 490, publishedPrice: { currency: "USD", amountPerPerson: 490 } },
-      { travelers: 6, cnyPerPerson: 3185, usdPerPerson: 490, publishedPrice: { currency: "USD", amountPerPerson: 490 } },
+      { travelers: 6, cnyPerPerson: 2985, publishedPrice: { currency: "USD", amountPerPerson: 460 } },
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const huangshanSlug = "huangshan-hongcun-huizhou-5-day-private-tour";
@@ -1701,9 +1701,9 @@ const huangshan: PrivateTourProduct = {
     ["확인서에 없는 짐 운반 서비스", "석식과 명시되지 않은 식사"],
   ),
   bookingNote: pricingBookingNote(
-    "The published USD 769 per-person starting price is the verified 4-traveller bracket. Other group sizes require a separate quote; exact rooming, travel date and vehicle are reconfirmed before booking.",
-    "页面所示 USD 769/人起价是已核实的 4 人档。其他人数需单独询价；预订前仍须重新确认房间、日期与车型。",
-    "표시된 1인 USD 769 시작가는 확인된 4명 기준입니다. 다른 인원은 별도 견적이며 예약 전 객실, 날짜와 차량을 다시 확인합니다.",
+    "The 4- and 6-traveller per-person starting prices are shown above. Other group sizes need a quote; we reconfirm rooms, dates and vehicle before booking.",
+    "上方列出 4 人和 6 人同行的每人起价。其他人数需单独询价；预订前仍须重新确认房间、日期与车型。",
+    "위에는 4명과 6명 기준 1인 시작가가 표시됩니다. 다른 인원은 별도 견적이며 예약 전 객실, 날짜와 차량을 다시 확인합니다.",
   ),
   heroImage: image(
     huangshanSlug,
@@ -1754,10 +1754,13 @@ const huangshan: PrivateTourProduct = {
     ),
   ],
   packages: [
-    standardPackage([{ travelers: 4, cnyPerPerson: 4998, usdPerPerson: 769, publishedPrice: { currency: "USD", amountPerPerson: 769 } }]),
+    standardPackage([
+      { travelers: 4, cnyPerPerson: 4998, usdPerPerson: 769, publishedPrice: { currency: "USD", amountPerPerson: 769 } },
+      { travelers: 6, cnyPerPerson: 4798, publishedPrice: { currency: "USD", amountPerPerson: 740 } },
+    ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const jiangxiSlug = "jingdezhen-wuyuan-wangxian-6-day-private-tour";

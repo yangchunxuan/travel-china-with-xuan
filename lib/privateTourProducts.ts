@@ -315,6 +315,10 @@ const prices = (
     cnyPerPerson: fourTravellers,
     ...(usdPrices ? { usdPerPerson: usdPrices[1] } : {}),
   },
+  {
+    travelers: 6,
+    cnyPerPerson: fourTravellers - 200,
+  },
 ];
 
 const day = (
@@ -387,9 +391,9 @@ const standardSummary = l(
 );
 
 const commonBookingNote = l(
-  "The per-person starting prices shown are for groups of 2 and 4 travellers, flights not included; we confirm other group sizes individually. Send us your dates, room needs, arrival details and luggage count, and we will confirm availability and send your final quote before you pay.",
-  "网页只列出 2 人和 4 人的每人起价，不含往返机票；其他人数我们会单独确认。把日期、房间需求、到离信息和行李数量发给我们，我们先核对酒店、车辆和景点预约情况，再在你付款前发出最终报价。",
-  "표시된 1인 시작가는 2명과 4명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 따로 확인해 드립니다. 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 예약 가능 여부를 확인한 뒤 결제 전에 최종 견적을 보내 드립니다.",
+  "The per-person starting prices shown are for groups of 2, 4 and 6 travellers, flights not included; we confirm other group sizes individually. Send us your dates, room needs, arrival details and luggage count, and we will confirm availability and send your final quote before you pay.",
+  "网页只列出 2 人、4 人和 6 人的每人起价，不含往返机票；其他人数我们会单独确认。把日期、房间需求、到离信息和行李数量发给我们，我们先核对酒店、车辆和景点预约情况，再在你付款前发出最终报价。",
+  "표시된 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 따로 확인해 드립니다. 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 예약 가능 여부를 확인한 뒤 결제 전에 최종 견적을 보내 드립니다.",
 );
 
 const commonExclusions = (
@@ -579,9 +583,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     ["일정표에 없는 관광지, 입장권 또는 체험"],
   ),
   bookingNote: l(
-    "Per-person starting prices are shown for groups of 2 and 4 travellers; flights are not included. For any other group size, send us your dates, room needs, arrival details and luggage count, and we will check the actual rooms and vehicle before sending you a written quote.",
-    "页面只列出 2 人和 4 人的每人起价，往返机票另计。其他人数，请把日期、房间需求、到离信息和行李数量发给我们；我们会按实际房间和车型重新核对，付款前给你发书面报价。",
-    "공개된 1인 시작가는 2명과 4명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 실제 객실과 차량을 다시 확인해 결제 전 서면 견적을 드립니다.",
+    "Per-person starting prices are shown for groups of 2, 4 and 6 travellers; flights are not included. For any other group size, send us your dates, room needs, arrival details and luggage count, and we will check the actual rooms and vehicle before sending you a written quote.",
+    "页面只列出 2 人、4 人和 6 人的每人起价，往返机票另计。其他人数，请把日期、房间需求、到离信息和行李数量发给我们；我们会按实际房间和车型重新核对，付款前给你发书面报价。",
+    "공개된 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 실제 객실과 차량을 다시 확인해 결제 전 서면 견적을 드립니다.",
   ),
   heroImage: image(
     "/images/destinations/shanghai/hero-1600.webp",
@@ -742,11 +746,12 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
       prices: [
         { travelers: 2, cnyPerPerson: 7436, usdPerPerson: 1144 },
         { travelers: 4, cnyPerPerson: 5421, usdPerPerson: 834 },
+        { travelers: 6, cnyPerPerson: 5221 },
       ],
     },
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
 };
 
 const chengdu: PrivateTourProduct = {
@@ -843,9 +848,9 @@ const chengdu: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Four nights in a Ctrip 4-Diamond–rated Chengdu hotel with breakfast, based on twin sharing. For group sizes other than the published 2- and 4-traveller prices, we confirm the room arrangement for your group individually.",
-    "成都 4 晚携程 4 钻酒店双标含早，页面公开的 2 人和 4 人价按两人一间计；其他人数的房间安排，我们会人工单独为你确认。",
-    "청두의 중국 씨트립 기준 4다이아 등급 호텔에서 조식 포함 4박합니다. 공개된 2명·4명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 저희가 직접 확인해 드립니다.",
+    "Four nights in a Ctrip 4-Diamond–rated Chengdu hotel with breakfast, based on twin sharing. For group sizes other than the published 2-, 4- and 6-traveller prices, we confirm the room arrangement for your group individually.",
+    "成都 4 晚携程 4 钻酒店双标含早，页面公开的 2 人、4 人和 6 人价按两人一间计；其他人数的房间安排，我们会人工单独为你确认。",
+    "청두의 중국 씨트립 기준 4다이아 등급 호텔에서 조식 포함 4박합니다. 공개된 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 저희가 직접 확인해 드립니다.",
   ),
   serviceNote: l(
     "Private driver and air-conditioned vehicle transfers on Days 1 and 5, with an English-speaking guide for arrival and departure assistance; English guide and private air-conditioned vehicle on Days 2–4. Listed adult admission tickets and attraction transport are included. No shopping stops.",
@@ -990,7 +995,7 @@ const chengdu: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const xian: PrivateTourProduct = {
@@ -1091,9 +1096,9 @@ const xian: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Xi'an hotel, based on twin sharing. For group sizes other than the published 2- and 4-traveller tiers, we confirm room arrangements individually.",
-    "西安 4 晚携程 4 钻酒店双标含早，公开的 2 人和 4 人价按两人一间；其他人数怎么分房，我们会单独为你确认。",
-    "시안에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
+    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Xi'an hotel, based on twin sharing. For group sizes other than the published 2-, 4- and 6-traveller tiers, we confirm room arrangements individually.",
+    "西安 4 晚携程 4 钻酒店双标含早，公开的 2 人、4 人和 6 人价按两人一间；其他人数怎么分房，我们会单独为你确认。",
+    "시안에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Private driver transfers on arrival and departure, plus an English guide and private air-conditioned vehicle on Days 2–4. Listed adult admission tickets and attraction transport are included. No shopping stops.",
@@ -1223,7 +1228,7 @@ const xian: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const chongqingWulong: PrivateTourProduct = {
@@ -1324,9 +1329,9 @@ const chongqingWulong: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Three nights in Chongqing and one in Wulong, in Ctrip 4-Diamond–rated rooms with breakfast. The published 2- and 4-traveller prices are based on twin sharing; we confirm other room arrangements with you individually.",
-    "重庆 3 晚、武隆 1 晚，均住携程 4 钻双床房，含早餐；页面上的 2 人和 4 人价按两人一间计算，其他人数的分房我们单独帮你确认。",
-    "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔에 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 밖의 인원은 객실 구성을 따로 확인해 드립니다.",
+    "Three nights in Chongqing and one in Wulong, in Ctrip 4-Diamond–rated rooms with breakfast. The published 2-, 4- and 6-traveller prices are based on twin sharing; we confirm other room arrangements with you individually.",
+    "重庆 3 晚、武隆 1 晚，均住携程 4 钻双床房，含早餐；页面上的 2 人、4 人和 6 人价按两人一间计算，其他人数的分房我们单独帮你确认。",
+    "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔에 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 밖의 인원은 객실 구성을 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "On Days 1 and 5, a private driver and air-conditioned vehicle handle your transfers, with an English-speaking guide to help you arrive and depart; on Days 2–4 you have an English guide and private air-conditioned vehicle. The current Three Natural Bridges standard admission includes the official transfer bus and Tianlong revolving elevator; the exit battery car and glass viewing platform are included only when written in your confirmation. Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, as named in your confirmation. No shopping stops.",
@@ -1473,7 +1478,7 @@ const chongqingWulong: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const guilinYangshuo: PrivateTourProduct = {
@@ -1579,9 +1584,9 @@ const guilinYangshuo: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Two nights in Guilin and two in Yangshuo, all in Ctrip 4-Diamond–rated hotels with breakfast. The 2- and 4-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
-    "桂林 2 晚 + 阳朔 2 晚，均为携程 4 钻酒店双床房，含早餐。页面上的 2 人和 4 人价格按两人一间计算；其他人数怎么分房，我们会单独确认。",
-    "구이린 2박과 양숴 2박 모두 중국 씨트립 기준 4다이아 등급 호텔이며 조식이 포함됩니다. 페이지의 2명·4명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
+    "Two nights in Guilin and two in Yangshuo, all in Ctrip 4-Diamond–rated hotels with breakfast. The 2-, 4- and 6-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
+    "桂林 2 晚 + 阳朔 2 晚，均为携程 4 钻酒店双床房，含早餐。页面上的 2 人、4 人和 6 人价格按两人一间计算；其他人数怎么分房，我们会单独确认。",
+    "구이린 2박과 양숴 2박 모두 중국 씨트립 기준 4다이아 등급 호텔이며 조식이 포함됩니다. 페이지의 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Included: private arrival and departure transfers with English-speaking guide assistance on Days 1 and 5; English-guided sightseeing on Days 2–4; the Li River cruise, with your luggage moved separately that day; air-conditioned private road transport; and the listed adult admission for one Day 4 sight. Day 3 includes one simple family activity or gentle cycling, chosen to suit your group—a basic local experience rather than a named premium programme, and bamboo rafting is not a given. No shopping stops.",
@@ -1769,7 +1774,7 @@ const guilinYangshuo: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-19",
+  dateModified: "2026-09-23",
 };
 
 const harbinWinter: PrivateTourProduct = {
@@ -1874,9 +1879,9 @@ const harbinWinter: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Four nights with breakfast in a Ctrip 4-Diamond–rated Harbin hotel during the stated ice-and-snow window. The 2- and 4-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
-    "标明的冰雪季日期内，哈尔滨住 4 晚携程 4 钻双床房，含早。2 人和 4 人的公开价按两人一间计算；其他人数的分房方式，我们会单独确认。",
-    "명시된 빙설 기간 동안 하얼빈의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함됩니다. 페이지에 나온 2명·4명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
+    "Four nights with breakfast in a Ctrip 4-Diamond–rated Harbin hotel during the stated ice-and-snow window. The 2-, 4- and 6-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
+    "标明的冰雪季日期内，哈尔滨住 4 晚携程 4 钻双床房，含早。2 人、4 人和 6 人的公开价按两人一间计算；其他人数的分房方式，我们会单独确认。",
+    "명시된 빙설 기간 동안 하얼빈의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함됩니다. 페이지에 나온 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "On Day 1, your English-speaking guide meets you on arrival with a private winter-ready vehicle and helps you check in at the hotel; on Day 5, a private driver takes you to the airport or station in a winter-ready vehicle. A heated private vehicle and English guide on Days 2–4 are included, along with adult admission to the listed sights (including the Sun Island Snow Sculpture Expo and Ice and Snow World when operating), hot water, headsets and basic heat patches. These aids do not replace professional cold-weather clothing, insulated snow boots, gloves and face protection. No shopping stops.",
@@ -1901,9 +1906,9 @@ const harbinWinter: PrivateTourProduct = {
     ],
   ),
   bookingNote: l(
-    "Harbin winter temperatures can fall below −20°C, so wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches supplement that gear; they do not replace it. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The per-person starting prices shown are for groups of 2 and 4 travellers, exclude flights and apply only to Sunday–Thursday check-ins from 6 January to 5 February 2027, on non-holiday dates after the main ice attractions have opened. For other group sizes, we confirm the price with you individually. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates need a new quote.",
-    "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面上是 2 人和 4 人的每人起价，不含往返机票；其他人数的价格我们会单独确认。这个价格只适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期有变，我们会重新给你报价。",
-    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 페이지의 1인 시작가는 2명과 4명 기준이며 항공권은 포함되지 않습니다. 그 외 인원의 요금은 따로 확인해 드립니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박이나 크리스마스, 신정, 춘절, 빙설제 핵심 주말, 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다.",
+    "Harbin winter temperatures can fall below −20°C, so wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches supplement that gear; they do not replace it. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The per-person starting prices shown are for groups of 2, 4 and 6 travellers, exclude flights and apply only to Sunday–Thursday check-ins from 6 January to 5 February 2027, on non-holiday dates after the main ice attractions have opened. For other group sizes, we confirm the price with you individually. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates need a new quote.",
+    "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面上是 2 人、4 人和 6 人的每人起价，不含往返机票；其他人数的价格我们会单独确认。这个价格只适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期有变，我们会重新给你报价。",
+    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 페이지의 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원의 요금은 따로 확인해 드립니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박이나 크리스마스, 신정, 춘절, 빙설제 핵심 주말, 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다.",
   ),
   heroImage: image(
     "/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
@@ -1972,7 +1977,7 @@ const harbinWinter: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const shanghaiSuzhou: PrivateTourProduct = {
@@ -2073,9 +2078,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Four nights with breakfast in one Ctrip 4-Diamond–rated Shanghai hotel. The 2- and 4-traveller prices shown are for twin sharing; we confirm other room arrangements with you individually.",
-    "上海 4 晚住同一家携程 4 钻酒店，双床房含早；页面上的 2 人和 4 人价格按两人一间算，其他人数怎么分房，我们单独跟你确认。",
-    "상하이의 중국 씨트립 기준 4다이아 등급 호텔 한 곳에 조식 포함 4박으로 머뭅니다. 공개된 2명·4명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
+    "Four nights with breakfast in one Ctrip 4-Diamond–rated Shanghai hotel. The 2-, 4- and 6-traveller prices shown are for twin sharing; we confirm other room arrangements with you individually.",
+    "上海 4 晚住同一家携程 4 钻酒店，双床房含早；页面上的 2 人、4 人和 6 人价格按两人一间算，其他人数怎么分房，我们单独跟你确认。",
+    "상하이의 중국 씨트립 기준 4다이아 등급 호텔 한 곳에 조식 포함 4박으로 머뭅니다. 공개된 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Arrival pickup with a half-day English guide, guided touring on Days 2–4, departure transfer with English-speaking guide assistance on Day 5, private air-conditioned road transport, station transfers, second-class rail and listed adult admission tickets are included. No shopping stops.",
@@ -2240,7 +2245,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
 };
 
 const beijing: PrivateTourProduct = {
@@ -2576,7 +2581,7 @@ const beijing: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-19",
+  dateModified: "2026-09-23",
 };
 
 const zhangjiajieForestFixedRoute: PrivateTourProduct = {
@@ -2717,9 +2722,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ),
   bookingNote: l(
-    "The route is fixed, with no optional attraction swaps or last-minute add-ons. Before you pay, we reconfirm the exact villa, room plan, vehicle and ticket availability for your non-holiday dates. The per-person starting prices shown are for groups of 2 and 4 travellers; flights are not included. For other group sizes and all child prices, we work out a quote based on age, bed use and vehicle seats.",
-    "这是一条固定路线，不设置自选景点，也不在现场临时加项。付款前，我们会按你的非节假日出行日期，再次确认别墅、房间分配、车型和票源。网页只公开 2 人和 4 人的每人起价，往返机票另计；其他人数和所有儿童价格，我们会按年龄、占床和车辆座位单独核价。",
-    "관광지를 골라 바꾸거나 현장에서 옵션을 추가하지 않는 고정 코스입니다. 결제 전에 선택하신 비공휴일 날짜의 빌라, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 공개된 항공권 제외 1인 시작가는 2명·4명 기준입니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
+    "The route is fixed, with no optional attraction swaps or last-minute add-ons. Before you pay, we reconfirm the exact villa, room plan, vehicle and ticket availability for your non-holiday dates. The per-person starting prices shown are for groups of 2, 4 and 6 travellers; flights are not included. For other group sizes and all child prices, we work out a quote based on age, bed use and vehicle seats.",
+    "这是一条固定路线，不设置自选景点，也不在现场临时加项。付款前，我们会按你的非节假日出行日期，再次确认别墅、房间分配、车型和票源。网页只公开 2 人、4 人和 6 人的每人起价，往返机票另计；其他人数和所有儿童价格，我们会按年龄、占床和车辆座位单独核价。",
+    "관광지를 골라 바꾸거나 현장에서 옵션을 추가하지 않는 고정 코스입니다. 결제 전에 선택하신 비공휴일 날짜의 빌라, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 공개된 항공권 제외 1인 시작가는 2명·4명·6명 기준입니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
   ),
   heroImage: image(
     "/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg",
@@ -2860,7 +2865,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-06",
+  dateModified: "2026-09-23",
   lastReviewed: "2026-08-31",
 };
 
@@ -3046,9 +3051,9 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ],
   ),
   bookingNote: l(
-    "Per-person starting prices are shown for groups of 2 and 4 travellers; flights and rail tickets are not included. Other group sizes are confirmed with you individually. Before payment, send us your dates, room and bed needs, arrival details, departure plan and number of bags. Your final written confirmation then sets out the hotels, daily vehicle times, guide coverage, included tickets, Day 7 drop-off point and final total.",
-    "页面只列出 2 人和 4 人的每人起价，不含机票和高铁票；其他人数请联系我们单独确认。付款前，请把出行日期、房间和床型需求、抵达信息、离开安排和行李件数发给我们。最终书面确认会写明酒店、每天用车时段、导游服务范围、已含门票、D7 送达地点和最终总价。",
-    "1인 시작가는 2명과 4명 기준으로 안내하며, 항공권과 고속철도 승차권은 포함되지 않습니다. 다른 인원은 따로 확인해 드립니다. 결제 전에 여행 날짜, 객실과 침대 구성, 도착 정보, 출발 계획, 짐 개수를 알려 주세요. 최종 확인서에 호텔, 차량 시간, 가이드 범위, 포함 입장권, D7 도착지와 총액을 적어 보내 드립니다.",
+    "Per-person starting prices are shown for groups of 2, 4 and 6 travellers; flights and rail tickets are not included. Other group sizes are confirmed with you individually. Before payment, send us your dates, room and bed needs, arrival details, departure plan and number of bags. Your final written confirmation then sets out the hotels, daily vehicle times, guide coverage, included tickets, Day 7 drop-off point and final total.",
+    "页面只列出 2 人、4 人和 6 人的每人起价，不含机票和高铁票；其他人数请联系我们单独确认。付款前，请把出行日期、房间和床型需求、抵达信息、离开安排和行李件数发给我们。最终书面确认会写明酒店、每天用车时段、导游服务范围、已含门票、D7 送达地点和最终总价。",
+    "1인 시작가는 2명·4명·6명 기준으로 안내하며, 항공권과 고속철도 승차권은 포함되지 않습니다. 다른 인원은 따로 확인해 드립니다. 결제 전에 여행 날짜, 객실과 침대 구성, 도착 정보, 출발 계획, 짐 개수를 알려 주세요. 최종 확인서에 호텔, 차량 시간, 가이드 범위, 포함 입장권, D7 도착지와 총액을 적어 보내 드립니다.",
   ),
   faq: [
     {
@@ -3271,13 +3276,13 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "含 6 晚住宿及早餐、行程所列时段的专车、D2–D5 英语导游和列明的基础门票，全程无购物店。",
         "6박 조식 포함 숙박, 일정에 명시된 시간의 전용 차량, D2~D5 한국어 가이드와 기본 입장권이 포함되며 쇼핑 일정은 없습니다.",
       ),
-      // Owner-approved public base prices for 2- and 4-traveller groups.
+      // Owner-approved public base prices for 2-, 4- and 6-traveller groups.
       [5840, 4860],
       [899, 749],
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
   lastReviewed: "2026-09-20",
 };
 
