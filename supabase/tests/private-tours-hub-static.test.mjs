@@ -9,6 +9,10 @@ import { privateTourCardImageWidths } from "../../components/privateTourCardImag
 import zhangjiajieProduct from "../../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 import {
+  getPrivateTourFacets,
+  getPrivateTourHubStats,
+} from "../../lib/privateTourCatalogFacets.ts";
+import {
   assertPublishedPrivateTourCatalogIntegrity,
   getPublishedPrivateTourCatalog,
 } from "../../lib/publishedPrivateTourCatalog.ts";
@@ -28,6 +32,32 @@ const expectedSlugs = [
   zhangjiajieProduct.seo.slug,
 ].sort();
 const expectedPublishedCount = expectedSlugs.length;
+
+test("every published tour has a region in each localized catalog", () => {
+  for (const locale of locales) {
+    const catalog = getPublishedPrivateTourCatalog(locale);
+    const facets = getPrivateTourFacets(
+      catalog,
+      locale,
+      getPrivateTourHubCopy(locale, catalog.length).quoteOnlyLabel,
+    );
+    assert.equal(facets.items.length, catalog.length, locale);
+    const stats = getPrivateTourHubStats(catalog);
+    assert.equal(stats.routes, catalog.length, locale);
+    assert.equal(stats.regions, 6, locale);
+    assert.deepEqual(
+      facets.items.map((item) => item.id).sort(),
+      catalog.map((item) => item.id).sort(),
+      locale,
+    );
+    for (const slug of [
+      "chongqing-yangtze-cruise-6-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
+    ]) {
+      assert.equal(facets.items.find((item) => item.id === slug)?.region, "multi");
+    }
+  }
+});
 const reviewedDerivativeRightsSha256 =
   "1db11585196941e5dd00029f70fd45a0543c27a36dafaefb236801d778bfb96c";
 
@@ -304,13 +334,28 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /itemListElement: products\.map/);
   assert.match(component, /products\.map\(\(product, index\)/);
   assert.match(component, /<section className=\{styles\.quickCompare\} aria-labelledby="tour-quick-compare-title">/);
-  assert.match(component, /<ol className=\{styles\.quickList\}>/);
   assert.match(component, /function CompactTourComparison/);
-  assert.ok(
-    component.indexOf("className={styles.quickCompare}") <
-      component.indexOf("className={styles.catalog}"),
-    "the compact comparison must precede the long product cards",
+  // One grid lists every published tour exactly once; the old duplicate
+  // image catalog is gone, so nothing is announced or linked twice.
+  assert.match(component, /<PrivateTourCatalogFilter/);
+  assert.equal(
+    component.match(/<CompactTourComparison/g)?.length,
+    1,
+    "every published tour is listed exactly once on the hub",
   );
+  assert.doesNotMatch(component, /function TourComparisonCard|styles\.catalogGrid|styles\.catalog\b/);
+  // Filtering is front-end only: the list is server-rendered and passed
+  // through as children, and the filter never touches the URL.
+  const catalogFilter = await source("components/PrivateTourCatalogFilter.tsx");
+  assert.match(catalogFilter, /"use client"/);
+  assert.match(catalogFilter, /<ol\s+className=\{styles\.quickList\}/);
+  assert.match(catalogFilter, /\{children\}/);
+  assert.doesNotMatch(catalogFilter, /window\.location|searchParams|history\.|pushState|replaceState|trackEvent/);
+  // Every stat is computed from the catalog, never typed by hand.
+  assert.match(component, /getPrivateTourHubStats\(products\)/);
+  assert.match(component, /\{stats\.routes\}/);
+  assert.match(component, /\{stats\.shoppingStops\}/);
+  assert.doesNotMatch(component, /<dd>\s*\d+\s*<\/dd>/);
   assert.match(component, /product\.startingPrice\.formatted/);
   assert.match(component, /copy\.groupBasis\(product\.startingPrice\.travelers\)/);
   assert.match(component, /<dt>\{copy\.quickFitLabel\}<\/dt>/);
@@ -321,7 +366,6 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(component, /product\.comparison\.appeal/);
   assert.match(component, /product\.comparison\.pace/);
   assert.match(component, /product\.comparison\.fit/);
-  assert.match(component, /<span aria-hidden="true">[\s\S]*?padStart\(2, "0"\)/);
   assert.match(component, /loading="lazy"/);
   assert.doesNotMatch(component, /fetchPriority=/);
   assert.match(component, /privateTourCardImageSrcSet\(product\.id\)/);
@@ -336,17 +380,24 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
   assert.match(measuredLink, /search_surface: "tours-hub"/);
   assert.doesNotMatch(measuredLink, /window\.location|searchParams|query|hash/);
 
-  assert.match(styles, /grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /@media \(max-width: 48rem\)/);
-  assert.match(styles, /\.catalogGrid \{[\s\S]*?grid-template-columns: 1fr/);
+  assert.match(styles, /\.quickList \{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 64rem\)[\s\S]*?\.quickList \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickList \{[\s\S]*?grid-template-columns: 1fr/);
   assert.match(styles, /\.quickLink \{[\s\S]*?grid-template-columns:/);
-  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickLink \{[\s\S]*?grid-template-columns: 1\.6rem minmax\(0, 1fr\)/);
-  assert.match(
-    styles,
-    /@media \(max-width: 40rem\)\s*\{[\s\S]*?\.catalog\s*\{[\s\S]*?display:\s*none;/,
-    "phones must expose the compact list as the only accessible tour catalog",
-  );
-  assert.doesNotMatch(styles, /\.quick(?:List|Details|Link)[^{]*\{[^}]*display:\s*none/);
+  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickLink \{[\s\S]*?grid-template-columns: 6\.5rem minmax\(0, 1fr\)/);
+  // The single grid is the accessible catalog on every viewport: nothing
+  // hides the list, its details or its links by default. Only filter chrome
+  // (the phone toggle and its folded panel), the phone-only teaser sentence,
+  // and an active facet selection may use display: none.
+  assert.doesNotMatch(styles, /\.catalog\b/);
+  assert.doesNotMatch(styles, /\.quick(?:List|Details|Link|Item)\s*\{[^}]*display:\s*none/);
+  for (const rule of styles.split("}").filter((block) => /display:\s*none/.test(block))) {
+    assert.match(
+      rule,
+      /\.quickList\[data-(?:region|length|price)="[a-z]+"\] > li:not\(\[data-(?:region|length|price)="[a-z]+"\]\)|\.filterGroups\[data-open="false"\]|\.filterToggle\s*\{|\.quickAppeal\s*\{/,
+      "only an active filter (or the folded phone filter panel) may hide anything",
+    );
+  }
   assert.doesNotMatch(styles, /overflow-x:\s*(?:auto|scroll)|scroll-snap/);
   assert.doesNotMatch(styles, /last-child:nth-child\(odd\)/);
   assert.match(
