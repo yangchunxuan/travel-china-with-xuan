@@ -35,6 +35,37 @@ const body = {
       ]
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions travellers ask while packing",
+      "items": [
+        {
+          "question": "How many clothes do I need for a two-week China trip?",
+          "answer": "About five days of clothing plus a laundry plan. The starting quantities for one adult on a city-focused trip are 4-5 everyday tops, 2 bottoms, 5-7 underwear changes, 4-5 pairs of socks and one sleepwear set, including what you wear on the flight. For fourteen days, plan two or three washes, roughly every four days."
+        },
+        {
+          "question": "Can I take my power bank on a domestic flight in China?",
+          "answer": "Keep a permitted power bank in your cabin bag, accessible for inspection. China domestic flights prohibit units without a clear CCC mark and recalled models or batches under the rule effective from 28 June 2025. An international itinerary can still include a domestic flight, so check the exact unit and current carrier rules; railway limits are separate."
+        },
+        {
+          "question": "Will my Singapore or Australian plug fit a Chinese socket?",
+          "answer": "Check the fit and the device label, not just the pin shape. For a three-rectangular-pin Type G plug, bring an adapter that accepts it and fits mainland sockets. Australian Type I pins resemble the angled Chinese format, but check fit, grounding and the device rating. Each charger's INPUT range must cover 220V and 50Hz; a plug-shape adapter does not change voltage."
+        },
+        {
+          "question": "What should I keep in my carry-on in case the checked bag is late?",
+          "answer": "One change of underwear, a light top and the outer layer you will wear on arrival. Add the passport you booked with, your phone, cable and charger, a payment card and some cash kept apart from the phone, and medicines you have already checked, in their labelled packaging. Then you can charge the phone and change into clean clothes even if the case arrives late."
+        },
+        {
+          "question": "Can I bring food gifts, supplements and medicines into China?",
+          "answer": "Make a separate review pile before packing them. Keep full ingredient or active-ingredient names and original labels available, and check the product's entry requirements. Sealed packaging, personal use or a prescription does not give every item permission to enter. Seek the relevant official medication guidance before carrying a medicine whose status is unclear."
+        },
+        {
+          "question": "Is my day bag free in addition to the suitcase?",
+          "answer": "Not automatically. Pack the day bag inside your cabin allowance, and read the cabin and checked-baggage allowance on each ticket, including separate domestic flights. Some international fares do not include free checked baggage. Weigh the packed case and cabin bag rather than choosing a suitcase from an assumed China allowance."
+        }
+      ]
+    },
+    {
       "id": "documents-links",
       "type": "internal-links",
       "title": "Prepare the things you cannot replace with a spare shirt",

@@ -784,7 +784,7 @@ const ko: ItineraryRushGuideCopy = {
       { label: "첫 번째 실제 활동", detail: "그날 꼭 넣을 가치가 여전히 있는지 다시 판단하세요." },
     ],
     sourcePrefix: "구체적인 계획 예시는",
-    transportLinkLabel: "베이징–장자제–상하이 전체 이동 비교",
+    transportLinkLabel: "베이징–장가계–상하이 전체 이동 비교",
     sourceBridge: "에서 확인하고, 현재 공식 철도 안내는",
     railLinkLabel: "중국철도 영문 FAQ",
     sourceSuffix: "를 참고하세요. 역별 절차와 승차권 규정은 변경될 수 있습니다.",

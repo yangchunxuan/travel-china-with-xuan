@@ -12,9 +12,7 @@ const outRoot = resolve(repoRoot, process.argv[2] ?? "out");
 const locales = ["en", "zh", "ko"];
 const prefix = { en: "", zh: "/zh", ko: "/ko" };
 
-const plannerPattern = /^(?:\/(?:zh|ko))?\/(?:\?[^#]*)?#planner-contact$/u;
 const productLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/([a-z0-9-]+)\/$/u;
-const collectionLinkPattern = /^(?:\/(?:zh|ko))?\/tours\/$/u;
 
 const explicitPlans = {
   "shaanxi-history-museum-booking-and-collection-plan": {
@@ -42,27 +40,24 @@ const explicitPlans = {
     ctaId: "zhangjiajie-4-day-private-tour",
   },
   "china-itinerary-with-older-parents": {
-    kind: "private-tour-collection",
-    ctaId: "private-tours",
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-hangzhou-6-day-private-tour",
   },
   "china-itinerary-with-young-children": {
-    kind: "private-tour-collection",
-    ctaId: "private-tours",
+    kind: "private-tour-product",
+    ctaId: "chengdu-pandas-sanxingdui-5-day-private-tour",
   },
   "do-singaporeans-need-visa-china": {
-    kind: "private-tour-collection",
-    ctaId: "private-tours",
-    noZhangjiajieProducts: true,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-hangzhou-6-day-private-tour",
   },
   "wheelchair-accessible-china-route-planning": {
-    kind: "trip-consultation",
-    ctaId: "full-trip-support",
-    noProducts: true,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-5-day-private-tour",
   },
   "china-accessible-hotel-room-verification": {
-    kind: "trip-consultation",
-    ctaId: "full-trip-support",
-    noProducts: true,
+    kind: "private-tour-product",
+    ctaId: "shanghai-suzhou-5-day-private-tour",
   },
 };
 
@@ -92,8 +87,7 @@ function anchors(html) {
 
 function expectedHref(kind, ctaId, locale) {
   if (kind === "private-tour-product") return `${prefix[locale]}/tours/${ctaId}/`;
-  if (kind === "private-tour-collection") return `${prefix[locale]}/tours/`;
-  return `${prefix[locale]}/?service=${ctaId}#planner-contact`;
+  return "";
 }
 
 async function exists(path) {
@@ -111,6 +105,7 @@ const checkedGuideIds = new Set();
 
 for (const guideId of guideIds) {
   let availableLocales = 0;
+  const localizedProductIds = new Set();
   for (const locale of locales) {
     const path = resolve(outRoot, prefix[locale].slice(1), "guides", guideId, "index.html");
     if (!(await exists(path))) continue;
@@ -137,8 +132,8 @@ for (const guideId of guideIds) {
     const cardLinks = anchors(cardInner);
     const href = cardLinks[0];
     if (cardLinks.length !== 1) failures.push(`${where}: expected 1 card link, found ${cardLinks.length}`);
-    if (!["private-tour-product", "private-tour-collection", "trip-consultation"].includes(kind)) {
-      failures.push(`${where}: unknown card kind ${kind}`);
+    if (kind !== "private-tour-product") {
+      failures.push(`${where}: every guide must open one product, found ${kind}`);
       continue;
     }
     if (href !== expectedHref(kind, ctaId, locale)) {
@@ -147,12 +142,9 @@ for (const guideId of guideIds) {
     if (kind === "private-tour-product" && productLinkPattern.exec(href)?.[1] !== ctaId) {
       failures.push(`${where}: product id and href disagree`);
     }
-    if (kind === "private-tour-collection" && (ctaId !== "private-tours" || !collectionLinkPattern.test(href))) {
-      failures.push(`${where}: collection target is not the localized tours hub`);
-    }
-    if (kind === "trip-consultation" && !plannerPattern.test(href)) {
-      failures.push(`${where}: consultation target is not the planner`);
-    }
+    localizedProductIds.add(ctaId);
+    const productPath = resolve(outRoot, prefix[locale].slice(1), "tours", ctaId, "index.html");
+    if (!(await exists(productPath))) failures.push(`${where}: product export missing for ${ctaId}`);
     if (/Matching private tour|对应的私家团|관련 프라이빗 투어/u.test(cardInner)) {
       failures.push(`${where}: deprecated matching claim rendered`);
     }
@@ -167,16 +159,11 @@ for (const guideId of guideIds) {
     if (explicit && (kind !== explicit.kind || ctaId !== explicit.ctaId)) {
       failures.push(`${where}: explicit plan drifted to ${kind}/${ctaId}`);
     }
-    if (explicit?.noProducts) {
-      const products = anchors(main).filter((candidate) => productLinkPattern.test(candidate));
-      if (products.length > 0) failures.push(`${where}: product links on an access page: ${products.join(", ")}`);
-    }
-    if (explicit?.noZhangjiajieProducts) {
-      const zjj = anchors(main).filter((candidate) => /\/tours\/zhangjiajie-/u.test(candidate));
-      if (zjj.length > 0) failures.push(`${where}: Zhangjiajie product links: ${zjj.join(", ")}`);
-    }
   }
   if (availableLocales === 0) failures.push(`${guideId}: no exported locale found`);
+  if (localizedProductIds.size > 1) {
+    failures.push(`${guideId}: localized cards disagree: ${[...localizedProductIds].join(", ")}`);
+  }
 }
 
 if (checkedGuideIds.size !== guideIds.length) {

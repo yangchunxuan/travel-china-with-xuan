@@ -266,6 +266,37 @@ const body = {
       type: "list",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions first-time nanyin listeners ask",
+      items: [
+        {
+          question: "Where do I find the real dates for a nanyin performance in Quanzhou?",
+          answer: "Two places the city publishes: the culture bureau's schedule for a named month, and the municipal government's city-calendar entries. Start with the current month's official schedule to see whether anything is on, then open the dated entry for the programme you want. The current official listing, not any historical example, controls its venue, start time, stated duration and price.",
+        },
+        {
+          question: "How long does a nanyin performance last?",
+          answer: "The dated official examples in this guide's source list, spanning July 2025 to June 2026, listed seventy minutes. That is a historical sample rather than a standard or a prediction, so use the duration in your own current listing. Those same examples included afternoon and evening starts, and one special-event entry offered six time slots in a single day.",
+        },
+        {
+          question: "Do I need to understand the Quanzhou dialect to enjoy nanyin?",
+          answer: "No. The sung ballads are in the Quanzhou dialect and no amount of Mandarin will get you through them, but the purely instrumental scores carry titles about seasons, flowers, birds and horses and ask nothing of your language. Read the programme's item list before it starts rather than during: knowing that the opening is ensemble playing and the closing an instrumental score gives you the arc.",
+        },
+        {
+          question: "Is nanyin really Tang dynasty music that survived unchanged?",
+          answer: "Not as usually stated. The Fujian provincial account reports that scholars generally hold nanyin to be closely related to Tang and Song music and among the oldest surviving Chinese genres, and that the dongxiao is described as following the Tang chiba system. Those are attributed positions and observations about instruments, not a claim that a Tang repertoire survives unchanged.",
+        },
+        {
+          question: "What will I actually hear at a nanyin performance?",
+          answer: "Slow, simple and elegant melodies from a small ensemble. UNESCO, which inscribed nanyin on the Representative List in 2009, singles out two instruments as distinctive: a bamboo flute called the dongxiao, and a crooked-neck pipa played horizontally rather than upright. More ordinary wind, string and percussion instruments sit around them. The character UNESCO emphasises is measured rather than hurried.",
+        },
+        {
+          question: "What if nothing is scheduled while I am in Quanzhou?",
+          answer: "Widen from the theatre to the ecosystem. The city has hundreds of amateur societies and dozens of transmission sites, and the provincial account names the municipal intangible heritage museum and a cultural salon among the places nanyin is heard. Ask at the venue or the museum rather than concluding there is nothing to hear that week.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Read next",

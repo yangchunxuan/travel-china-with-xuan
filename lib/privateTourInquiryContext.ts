@@ -89,6 +89,14 @@ function usesKoreanGuideStandardPackage(slug: PrivateTourInquirySlug): boolean {
     phaseTwoKoreanGuideSlugs.has(slug);
 }
 
+// Keep this small public selection contract in TypeScript: analytics' focused
+// CommonJS build cannot import pricing.json. The pricing test checks parity.
+const legacyZhangjiajieStayLabels = {
+  "selected-city-stay": { en: "Selected City Stay", zh: "精选市区酒店", ko: "엄선한 시내 숙소" },
+  "spacious-premium-stay": { en: "Spacious Premium Stay", zh: "宽敞高级住宿", ko: "넉넉한 프리미엄 숙소" },
+  "distinctive-mountain-stay": { en: "Distinctive Mountain Stay", zh: "精品山景住宿", ko: "특색 있는 산악 숙소" },
+} as const;
+
 export function getPrivateTourInquirySelection(
   slug: string | null | undefined,
   packageValue: string | null | undefined,
@@ -101,6 +109,11 @@ export function getPrivateTourInquirySelection(
     typeof travelersValue === "string" &&
     travelersValue !== String(travelers)
   ) return null;
+  if (slug === "zhangjiajie-4-day-private-tour") {
+    return travelers === 6 && Object.hasOwn(legacyZhangjiajieStayLabels, packageValue)
+      ? { packageId: packageValue, travelers: 6 }
+      : null;
+  }
   const product = privateTourProducts.find((candidate) => candidate.slug === slug);
   const tourPackage = product?.packages.find(
     (candidate) => candidate.id === packageValue,
@@ -146,10 +159,14 @@ export function privateTourInquirySelectionLabel(
       ? "한국어 가이드 포함"
       : null;
   }
-  const packageLabel =
-    locale === "ko" &&
-    usesKoreanGuideStandardPackage(context.slug) &&
-    selection.packageId === "standard-guided"
+  const legacyTier = context.slug === "zhangjiajie-4-day-private-tour"
+    ? legacyZhangjiajieStayLabels[selection.packageId as keyof typeof legacyZhangjiajieStayLabels]
+    : null;
+  const packageLabel = legacyTier
+    ? legacyTier[locale]
+    : locale === "ko" &&
+        usesKoreanGuideStandardPackage(context.slug) &&
+        selection.packageId === "standard-guided"
       ? "한국어 가이드 포함"
       : packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
   if (!packageLabel) return null;
@@ -225,17 +242,17 @@ const privateTourInquiryNames: Readonly<
   "zhangjiajie-forest-4-day-private-tour": {
     en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     zh: "张家界森林公园 4 天 3 晚固定路线私家团",
-    ko: "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+    ko: "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어",
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     en: "Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour",
     zh: "张家界、芙蓉镇与凤凰 7 天 6 晚私家团",
-    ko: "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+    ko: "장가계, 부용진, 봉황 6박 7일 프라이빗 투어",
   },
   "zhangjiajie-4-day-private-tour": {
     en: "Zhangjiajie in 4 Days: Peaks, Glass Bridge and Tianmen Mountain",
     zh: "张家界4天3晚：峰林、玻璃桥与天门山",
-    ko: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+    ko: "장가계 4일 3박: 사암 봉우리와 유리다리, 천문산",
   },
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
     en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour",
@@ -338,6 +355,38 @@ const privateTourInquiryNames: Readonly<
     ko: "베이징·시안·상하이 12일 프라이빗 투어",
   },
 };
+
+// The existing intake/SQL contract uses these exact Korean names. Keep the
+// published name on screen and translate only the submitted payload.
+const previousKoreanZhangjiajieNames: Partial<
+  Record<PrivateTourInquirySlug, string>
+> = {
+  "zhangjiajie-forest-4-day-private-tour":
+    "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+  "zhangjiajie-furong-fenghuang-7-day-private-tour":
+    "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+  "zhangjiajie-4-day-private-tour":
+    "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+};
+
+export function getPrivateTourInquirySubmissionContext(
+  context: PrivateTourInquiryContext,
+  locale: HomegroundLocale,
+): PrivateTourInquiryContext {
+  const previousName = locale === "ko"
+    ? previousKoreanZhangjiajieNames[context.slug]
+    : undefined;
+  return previousName ? { ...context, name: previousName } : context;
+}
+
+export function isPrivateTourInquiryNameForSlug(
+  context: PrivateTourInquiryContext,
+  locale: HomegroundLocale,
+  name: string,
+): boolean {
+  return name === context.name ||
+    name === getPrivateTourInquirySubmissionContext(context, locale).name;
+}
 
 export const privateTourInquiryContactCopy = {
   en: {

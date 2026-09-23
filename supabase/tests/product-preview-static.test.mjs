@@ -41,7 +41,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   assert.equal(product.status, "published");
   assert.equal(product.public_eligible, true);
   assert.equal(product.seo.indexable, true);
-  assert.match(product.title.ko, /장자제/);
+  assert.match(product.title.ko, /장가계/);
   assert.equal(product.route.length, 4);
   assert.ok(product.route.every((day) => day.title_ko));
   assert.equal(pricing.status, "approved_price_decision");
@@ -53,7 +53,8 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
     "2026-09-30T15:59:59.000Z",
   );
   assert.equal(product.price_display.valid_until, pricing.valid_until);
-  assert.equal(product.price_display.from_price_per_person, pricing.tiers[0].from_price_per_person);
+  assert.equal(product.price_display.from_price_per_person, pricing.tiers[0].six_person_price_per_person);
+  assert.equal(product.price_display.starting_group_size, 6);
   assert.equal(
     pricing.approved_decision_id,
     product.price_display.approved_decision_id,

@@ -1,0 +1,74 @@
+{
+  "id": "shanghai-to-suzhou-day-trip",
+  "type": "planning",
+  "pillar": "transport-city-pair-routes",
+  "audienceMarkets": ["singapore", "malaysia", "australia", "global"],
+  "format": "day-trip-decision",
+  "topics": ["suzhou-day-trip", "high-speed-rail", "route-planning", "garden-visits"],
+  "destinations": ["shanghai", "suzhou"],
+  "heroImagePath": "/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/pingjiang-road-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/pingjiang-road-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "sourceReviewedDate": "2026-09-23",
+  "search": { "section": "transport", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-to-suzhou-day-trip/",
+      "title": "Shanghai to Suzhou Day Trip: Train, Route & Return",
+      "headline": "Shanghai to Suzhou for a Day: Make the Return Work",
+      "description": "Can you visit Suzhou from Shanghai in a day? Choose the right stations, fit one garden and Pingjiang Road, and plan the return before booking.",
+      "heroAlt": "Stone bridge and canal along Pingjiang Road in Suzhou, photographed in 2012.",
+      "navTitle": "Suzhou day trip from Shanghai",
+      "featuredLinkLabel": "Plan a Suzhou day trip from Shanghai",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Suzhou", "Day trip", "Shanghai"],
+      "heroCredit": {
+        "text": "Pingjiang Road, Suzhou, by kevinmcgill (2012); cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-to-suzhou-day-trip/",
+      "title": "上海去苏州一日游：车站、路线与返程",
+      "headline": "上海出发去苏州一天：先把返程安排好",
+      "description": "上海去苏州当天往返怎么排？先选对车站和返程车次，再决定一座园林、平江路及其他景点是否放得下。",
+      "heroAlt": "2012年拍摄的苏州平江路石桥与河道。",
+      "navTitle": "上海到苏州一日游",
+      "featuredLinkLabel": "安排上海往返苏州的一天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["苏州", "一日游", "上海"],
+      "heroCredit": {
+        "text": "苏州平江路，摄影 kevinmcgill（2012年）；已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-to-suzhou-day-trip/",
+      "title": "상하이 출발 쑤저우 당일치기: 역과 돌아오는 길",
+      "headline": "상하이에서 쑤저우 당일치기: 돌아오는 길부터 정하세요",
+      "description": "상하이에서 쑤저우를 하루에 다녀올 수 있을까요? 역과 돌아올 열차를 먼저 정하고 정원 한 곳과 핑장루를 묶는 방법을 살펴봅니다.",
+      "heroAlt": "2012년에 촬영한 쑤저우 핑장루의 돌다리와 운하.",
+      "navTitle": "상하이 출발 쑤저우 당일치기",
+      "featuredLinkLabel": "상하이에서 쑤저우 하루 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["쑤저우", "당일치기", "상하이"],
+      "heroCredit": {
+        "text": "쑤저우 핑장루, kevinmcgill 촬영(2012); 크롭 및 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg",
+        "licenseLabel": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+      }
+    }
+  }
+}

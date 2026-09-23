@@ -116,6 +116,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before visiting Jingxian",
+      items: [
+        {
+          question: "Can I make Xuan paper from raw materials in a short workshop?",
+          answer: "No. Official descriptions divide the craft into more than one hundred operations, and raw-material preparation takes months; official local material says the complete production cycle can reach about two years. A short class may let you form a sheet from prepared pulp, print, make a rubbing or decorate — real participation in one step, not completion of the full traditional craft.",
+        },
+        {
+          question: "If I only have one afternoon, should I choose the museum or the production area?",
+          answer: "Begin in the museum, then use the production area to locate one or two stages you have just learned. Skip a vague craft add-on unless the exact task fits the time you have left. If you have time for only one format, choose the museum for context, live production for movement and skill, or the workshop for participation.",
+        },
+        {
+          question: "The class description only says 造纸体验 — what should I ask?",
+          answer: "Ask 我会亲手做哪一步？ — “Which step will I do myself?” If the answer is 拓印 or 印刷, treat it as making a rubbing or printing rather than sheet forming, and decide whether that still suits you. Before paying, ask whether the sheet will be dried, posted, substituted or collected later.",
+        },
+        {
+          question: "Does a shop label saying 宣纸 prove what I am buying?",
+          answer: "No. That is the seller's product claim, and the visit alone does not verify geographic origin, recipe or grade. The official Jingxian definition ties Xuan paper to blue sandalwood bark, Shatian rice straw, local water, place and traditional production, so “Chinese handmade paper” is not automatically Xuan paper.",
+        },
+        {
+          question: "My parents cannot stand for long and it is hot and humid — how should we plan the Jingxian visit?",
+          answer: "Make the museum the core of the visit and ask the production area about stairs, wet floors and how long you stand. If you add a workshop, plan for wet work, waiting and a result that may need to be collected later, and let children take part in one safe step while adults watch fibre distribution and drying quality.",
+        },
+        {
+          question: "What if paper production is paused on the day I visit?",
+          answer: "Ask which station is active later that day; the visitor route and the factory rhythm are not the same thing. Before travel, recheck the museum's current notice page, same-day operating status, production-area access and the reservation channel, because temporary closures and production changes are dynamic. The visitor information in this guide was checked on 13 August 2026.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning culture and craft visits",

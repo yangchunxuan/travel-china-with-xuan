@@ -1,13 +1,15 @@
-import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore TS5097: focused Node tests execute the registry via type stripping.
+import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n.ts";
 import type {
   ContentFamily,
   ContentIntent,
   ContentSection,
 } from "./content-system/types";
+// @ts-ignore TS5097: focused Node tests execute the registry via type stripping.
 import {
   generatedGuideIds,
   generatedGuideRegistry,
-} from "./generated/guideRegistry.generated";
+} from "./generated/guideRegistry.generated.ts";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -161,13 +163,13 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/zhangjiajie-itinerary/",
-        title: "장자제 2·3·4일 일정: 실제로 어디까지 가능할까",
-        headline: "장자제 2일, 3일, 4일—실제로 가능한 일정",
+        title: "장가계 2·3·4일 일정: 실제로 어디까지 가능할까",
+        headline: "장가계 2일, 3일, 4일—실제로 가능한 일정",
         description:
-          "장자제 2~4일의 공원 순서, 온전한 관광일과 숙박일 계산, 제외할 곳과 펑황고성을 다음 목적지로 넣는 조건을 현실적으로 정리했습니다.",
-        heroAlt: "안개 사이로 솟아오른 장자제 국가삼림공원의 사암 봉우리.",
-        navTitle: "장자제 일정 가이드",
-        featuredLinkLabel: "장자제에서 2~4일 동안 가능한 일정 보기",
+          "장가계 2~4일의 공원 순서, 온전한 관광일과 숙박일 계산, 제외할 곳과 봉황고성을 다음 목적지로 넣는 조건을 현실적으로 정리했습니다.",
+        heroAlt: "안개 사이로 솟아오른 장가계 국가삼림공원의 사암 봉우리.",
+        navTitle: "장가계 일정 가이드",
+        featuredLinkLabel: "장가계에서 2~4일 동안 가능한 일정 보기",
         openGraphLocale: "ko_KR",
       },
     },
@@ -222,14 +224,14 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/zhangjiajie-from-malaysia/",
-        title: "말레이시아 출발 장자제: 항공·숙소·여행 일수",
-        headline: "말레이시아에서 장자제까지: 항공편·숙소·여행 일수 고르기",
+        title: "말레이시아 출발 장가계: 항공·숙소·여행 일수",
+        headline: "말레이시아에서 장가계까지: 항공편·숙소·여행 일수 고르기",
         description:
-          "장자제 도착편과 창사 경유편, 숙소 위치와 이동일을 비교하세요. 현지 4일·7일 투어의 첫날과 마지막 날을 항공편에 맞추고 추가 숙박이 필요한지 확인하세요.",
+          "장가계 도착편과 창사 경유편, 숙소 위치와 이동일을 비교하세요. 현지 4일·7일 투어의 첫날과 마지막 날을 항공편에 맞추고 추가 숙박이 필요한지 확인하세요.",
         heroAlt:
-          "여행자들이 장자제의 숲과 안개 사이로 솟은 사암 봉우리를 바라보는 모습.",
-        navTitle: "말레이시아 출발 장자제 가이드",
-        featuredLinkLabel: "말레이시아 출발 장자제 항공편·숙소·여행 일수 비교",
+          "여행자들이 장가계의 숲과 안개 사이로 솟은 사암 봉우리를 바라보는 모습.",
+        navTitle: "말레이시아 출발 장가계 가이드",
+        featuredLinkLabel: "말레이시아 출발 장가계 항공편·숙소·여행 일수 비교",
         openGraphLocale: "ko_KR",
       },
     },
@@ -395,14 +397,14 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/zhangjiajie-older-travellers/",
-        title: "부모님과 함께 가는 장자제: 어디까지 가능할까",
+        title: "부모님과 함께 가는 장가계: 어디까지 가능할까",
         headline:
-          "부모님과 함께 가는 장자제: 산은 태워 주지만, 물어볼 사람은 있어야 합니다",
+          "부모님과 함께 가는 장가계: 산은 태워 주지만, 물어볼 사람은 있어야 합니다",
         description:
-          "부모님과 장자제 여행을 계획할 때 도보, 계단, 케이블카와 바이룽 엘리베이터 동선을 비교하세요. 접근성 제한을 확인하고 대기와 휴식 시간을 확보하세요.",
+          "부모님과 장가계 여행을 계획할 때 도보, 계단, 케이블카와 백룡엘리베이터 동선을 비교하세요. 접근성 제한을 확인하고 대기와 휴식 시간을 확보하세요.",
         heroAlt:
-          "파란 하늘 아래 장자제 사암 절벽을 따라 솟아오른 바이룽 엘리베이터.",
-        navTitle: "부모님과 함께 가는 장자제",
+          "파란 하늘 아래 장가계 사암 절벽을 따라 솟아오른 백룡엘리베이터.",
+        navTitle: "부모님과 함께 가는 장가계",
         featuredLinkLabel: "느린 속도로도 가능한 것 보기",
         openGraphLocale: "ko_KR",
       },
@@ -452,13 +454,13 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/best-zhangjiajie-night-show/",
-        title: "장자제 야간 공연 비교: 천문호선·매력상서·천고정",
-        headline: "어떤 장자제 야간 공연이 내 일정에 맞을까요?",
+        title: "장가계 야간 공연 비교: 천문호선·매력상서·천고정",
+        headline: "어떤 장가계 야간 공연이 내 일정에 맞을까요?",
         description:
-          "숙소 위치, 날씨, 영어 지원, 다음 날 일정으로 천문호선·매력상서·장자제 천고정을 비교하고, 세 공연을 모두 건너뛰는 편이 나은 경우도 확인하세요.",
+          "숙소 위치, 날씨, 영어 지원, 다음 날 일정으로 천문호선·매력상서·장가계 천고정을 비교하고, 세 공연을 모두 건너뛰는 편이 나은 경우도 확인하세요.",
         heroAlt:
           "야외 협곡 무대, 민속 공연 소품, 실내 극장을 비교하는 편집 일러스트.",
-        navTitle: "장자제 야간 공연 가이드",
+        navTitle: "장가계 야간 공연 가이드",
         featuredLinkLabel: "세 공연을 저녁 전체 일정과 함께 비교하기",
         openGraphLocale: "ko_KR",
       },
@@ -509,12 +511,12 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/beijing-zhangjiajie-shanghai-10-days/",
-        title: "베이징·장자제·상하이 10일 일정, 현실적으로 가능할까",
-        headline: "베이징·장자제·상하이 10일 여행, 현실적으로 가능할까요?",
+        title: "베이징·장가계·상하이 10일 일정, 현실적으로 가능할까",
+        headline: "베이징·장가계·상하이 10일 여행, 현실적으로 가능할까요?",
         description:
-          "베이징·장자제·상하이를 10일 안에 여행할 수 있을까요? 실제 관광일을 계산하고, 도시별로 무엇을 포기해야 하는지, 내 일정도 가능한지 확인해 보세요.",
-        heroAlt: "강 건너 장자제 시내와 그 뒤로 이어지는 산봉우리.",
-        navTitle: "베이징·장자제·상하이 10일 가이드",
+          "베이징·장가계·상하이를 10일 안에 여행할 수 있을까요? 실제 관광일을 계산하고, 도시별로 무엇을 포기해야 하는지, 내 일정도 가능한지 확인해 보세요.",
+        heroAlt: "강 건너 장가계 시내와 그 뒤로 이어지는 산봉우리.",
+        navTitle: "베이징·장가계·상하이 10일 가이드",
         featuredLinkLabel: "세 도시를 10일에 넣을 수 있는지 확인하기",
         openGraphLocale: "ko_KR",
       },
@@ -565,12 +567,12 @@ export const legacyGuideRegistry = [
       },
       ko: {
         path: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
-        title: "베이징–장자제–상하이: 기차와 비행기 중 무엇이 나을까?",
-        headline: "베이징 → 장자제 → 상하이: 이동일에 실제로 드는 시간",
+        title: "베이징–장가계–상하이: 기차와 비행기 중 무엇이 나을까?",
+        headline: "베이징 → 장가계 → 상하이: 이동일에 실제로 드는 시간",
         description:
-          "비행시간만 보면 항공편이 빠르지만 공항 이동과 늦은 도착까지 계산하면 답이 달라집니다. 베이징–장자제–상하이 구간의 출발지부터 목적지까지 실제 총이동 시간을 비교합니다.",
-        heroAlt: "장자제서역과 역 앞 광장의 넓은 전경.",
-        navTitle: "베이징–장자제–상하이 교통 가이드",
+          "비행시간만 보면 항공편이 빠르지만 공항 이동과 늦은 도착까지 계산하면 답이 달라집니다. 베이징–장가계–상하이 구간의 출발지부터 목적지까지 실제 총이동 시간을 비교합니다.",
+        heroAlt: "장가계서역과 역 앞 광장의 넓은 전경.",
+        navTitle: "베이징–장가계–상하이 교통 가이드",
         featuredLinkLabel: "기차와 항공편의 실제 시간 비교",
         openGraphLocale: "ko_KR",
       },
@@ -976,7 +978,7 @@ export const legacyGuideRegistry = [
         description:
           "싱가포르 일반 여권은 중국 본토에 30일까지 무비자로 입국할 수 있습니다. 입국 규정과 입국카드 작성 방법, 실제 가능한 중국 동선을 함께 확인하세요.",
         heroAlt:
-          "장자제 국가삼림공원의 짙푸른 계곡 위로 겹겹이 솟은 사암 기둥.",
+          "장가계 국가삼림공원의 짙푸른 계곡 위로 겹겹이 솟은 사암 기둥.",
         navTitle: "싱가포르 여권 중국 무비자 가이드",
         featuredLinkLabel: "30일 무비자 이후의 여행 동선 짜기",
         openGraphLocale: "ko_KR",
@@ -1038,7 +1040,7 @@ export const legacyGuideRegistry = [
         description:
           "중국에서 싼 호텔과 민박을 찾기는 쉽습니다. 어려운 건 위치, 최근 후기, 외국 여권 체크인, 그리고 진짜 비교 가능한 가격입니다. Homeground가 후보를 좁혀 드립니다.",
         heroAlt:
-          "해질 무렵 불이 켜진 장자제의 숙소·식당 거리에 사람들이 모여 있다.",
+          "해질 무렵 불이 켜진 장가계의 숙소·식당 거리에 사람들이 모여 있다.",
         navTitle: "중국 숙소 가성비 가이드",
         featuredLinkLabel: "어떤 저가 숙소가 실제로 예약할 만한지 보기",
         openGraphLocale: "ko_KR",

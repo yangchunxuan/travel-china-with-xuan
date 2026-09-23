@@ -309,6 +309,37 @@ const body = {
       body: "Send your dates, party size and approximate budget if you want a human to verify which one fits without sacrificing a usable sightseeing day. Current access, ticketing, lift, display and photography information was treated as dynamic on 14 August 2026 and should be checked again for the travel date.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions readers ask about the three towers",
+      items: [
+        {
+          question: "If I can only visit one, which should I choose?",
+          answer: "Choose by the question you want answered. Yellow Crane Tower for a modern Wuhan city-and-river landmark carrying an older literary identity; Yueyang Tower for surviving and repaired timber you can read piece by piece; Tengwang Pavilion for Wang Bo's text turned into a modern Song-style idea. Reputation alone does not justify a three-city detour.",
+        },
+        {
+          question: "Which of the three towers is the oldest building standing today?",
+          answer: "Yueyang Tower. Its present main tower is a Qing timber building whose form and location date to 1880, conserved through later dismantling repair. Wuhan's Yellow Crane Tower is a reinforced-concrete reconstruction opened on a new site in 1985, and Nanchang's Tengwang Pavilion is a reinforced-concrete, faux-timber complex completed in 1989.",
+        },
+        {
+          question: "Is today's Yellow Crane Tower the original tower from the poems?",
+          answer: "No. Towers of this name were lost and rebuilt repeatedly: the Qing tower erected in 1868 burned in 1884, bridge works left the old footprint unavailable, and the new-site building opened in June 1985. Wuhan's park authority starts the lineage in 223 while the design institute's project page prints 233, and this guide keeps that official conflict rather than smoothing it over.",
+        },
+        {
+          question: "Does 55 percent of Yueyang Tower date from 1880?",
+          answer: "No, that is not what the figure means. Dismantling conservation began in 1983 and the tower reopened in 1984. A 2025 provincial cultural-authority account says components were assessed one by one and more than 55 percent of the pre-repair material was kept. Retention does not date each member, and the repairs and replacements are themselves part of the conservation evidence.",
+        },
+        {
+          question: "Which tower has the strongest connection to the poetry?",
+          answer: "Each carries a different text. Cui Hao and Li Bai carried the Yellow Crane Tower's name beyond Wuhan; Fan Zhongyan tied Yueyang Tower and Lake Dongting to public duty; Wang Bo made Tengwang Pavilion familiar even to readers who never saw it. None of these works froze a set of architectural drawings, but they kept giving later builders a reason to restore the name and stage the view again.",
+        },
+        {
+          question: "What if the upper floors or a famous object are closed when I visit?",
+          answer: "Stay with the evidence still visible at that tower. An exterior circuit, one construction detail, one literary object and one outward view already make a coherent half-day, so if queues or mobility rule out the upper levels, read the ground-level evidence instead. Do not wait for an object nobody has confirmed, and do not race through every floor.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue reading buildings and landscapes",

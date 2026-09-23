@@ -377,6 +377,37 @@ const body = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask at Shilin Stone Forest",
+      items: [
+        {
+          question: "Is Ashima Rock a carved statue, and where is it?",
+          answer: "It is a natural formation, and the scenic-area institution places it in the Minor Stone Forest. Nothing was carved. Read the rock itself among the denser formations of the Major Stone Forest first, then use the Minor Stone Forest to test how viewpoint, story and naming together make a cultural landmark.",
+        },
+        {
+          question: "Why does the human profile disappear when I move?",
+          answer: "You are not standing in the wrong place. Recognition depends on a favorable public viewing angle: from one position the upper outline can suggest a human profile, headdress, posture and a load on the back; from another it returns to an irregular pillar among other rock. That change is not a failure of the attraction, so compare two safe viewpoints from the permitted path.",
+        },
+        {
+          question: "Was Ashima a real historical woman?",
+          answer: "There is no civil record proving one identifiable historical woman. The national intangible-cultural-heritage record identifies Ashima as a narrative tradition of the Sani, a branch of the Yi people associated with Shilin, created in the Sani language and transmitted through spoken and sung performance. Heritage recognition concerns a continuing tradition, not an eyewitness biography.",
+        },
+        {
+          question: "Does the 1964 film tell the original story?",
+          answer: "No, it is one adaptation. Chinese-language collection and edited publication began in the early 1950s, and the 1964 film adapted again. A scholarly comparison documents that representative oral and edited texts in its sample treat Ahei as Ashima's brother, while the film makes him her lover; the Hong Kong Film Archive independently confirms the 1964 production details and the romance plot.",
+        },
+        {
+          question: "Is Shilin Stone Forest a UNESCO World Heritage site?",
+          answer: "Two different designations overlap here. Shilin UNESCO Global Geopark provides the broad geological framework, while the South China Karst World Heritage property is a separate serial property whose mapped components in Shilin are Naigu Stone Forest and Suyishan/Suogeyi. Do not assume that every named rock, Ashima Rock included, is an individually listed World Heritage component.",
+        },
+        {
+          question: "My time and energy are limited — what is the minimum that still works?",
+          answer: "One geological comparison and the Ashima viewpoint, rather than collecting every named formation. For most visitors the exercise works without adding a museum, performance or long lecture, and if there is no performance nothing essential has failed. Confirm the current accessible route with the operator; no step-free path is promised here.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the Yunnan and landscape planning",

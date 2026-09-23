@@ -645,6 +645,47 @@
   margin: 0.65rem 0 0;
 }
 
+.priceGroup {
+  color: var(--hg-color-muted);
+  font-size: 0.76rem;
+  margin: 0.45rem 0 0;
+}
+
+.sixPersonRate {
+  align-items: baseline;
+  border-block-start: 1px solid var(--hg-color-line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+  margin: 1rem 0 0;
+  padding-block-start: 1rem;
+}
+
+.sixPersonRate > span,
+.sixPersonRate > small {
+  color: var(--hg-color-muted);
+  font-size: 0.76rem;
+}
+
+.sixPersonRate > strong {
+  font-family: var(--hg-editorial);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.sixPersonInquiry {
+  color: var(--hg-color-dark-rust);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-block: 0.65rem 1rem;
+  text-underline-offset: 0.2em;
+}
+
+.sixPersonInquiry:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 .confirmationLine {
   border-block-start: 1px solid var(--hg-color-line);
   font-size: 0.78rem;

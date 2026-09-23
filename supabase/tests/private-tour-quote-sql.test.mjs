@@ -5,7 +5,7 @@ import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, realpat
 import { dirname, join, relative } from "node:path";
 import test from "node:test";
 import { promisify } from "node:util";
-import { getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContext.ts";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySubmissionContext } from "../../lib/privateTourInquiryContext.ts";
 import { sanitizeAdminInsightsRpc } from "../functions/_shared/admin-contracts.ts";
 
 const digest = (value) => createHash("sha256").update(value).digest("hex");
@@ -70,12 +70,16 @@ test("quote migration persists real fields with atomic outbox, attribution, comp
     try { sql(migration); } catch (error) { throw new Error(`Migration ${filename}: ${String(error.stderr).slice(-1600)}`); }
   }
   sql(readFileSync(new URL("202609100001_homeground_private_tour_quote.sql", migrations), "utf8"));
+  sql(readFileSync(new URL("202609210001_add_homeground_private_tour_expansion.sql", migrations), "utf8"));
+  sql(readFileSync(new URL("202609210002_add_homeground_private_tour_expansion_phase_two.sql", migrations), "utf8"));
+  sql(readFileSync(new URL("202609230001_add_six_traveller_private_tour_prices.sql", migrations), "utf8"));
+  sql(readFileSync(new URL("202609230002_preserve_private_tour_selection_after_phase_two.sql", migrations), "utf8"));
   const quoted = (value) => value === null ? "null" : `'${String(typeof value === "object" ? JSON.stringify(value) : value).replaceAll("'", "''")}'`;
   const rpc = (name, args) => JSON.parse(sql(`select coalesce(to_jsonb(public.${name}(${Object.entries(args).map(([key, value]) => `${key} => ${quoted(value)}`).join(",")})), 'null'::jsonb);`));
   const makeArgs = (locale = "en", classic = false) => {
     const slug = classic ? "zhangjiajie-4-day-private-tour" : "beijing-highlights-5-day-private-tour";
     return { p_schema_version: 4, p_form_version: "2026-09-10.1", p_locale: locale,
-      p_contact_email: "traveller@example.invalid", p_product_interest: getPrivateTourInquiryContext(slug, locale, classic ? undefined : { packageId: "no-guide", travelers: 4 }),
+      p_contact_email: "traveller@example.invalid", p_product_interest: getPrivateTourInquirySubmissionContext(getPrivateTourInquiryContext(slug, locale, classic ? undefined : { packageId: "no-guide", travelers: 4 }), locale),
       p_travel_date: classic ? null : "2026-12-15", p_note: classic ? null : "Two rooms.\nQuiet pace <please>.",
       p_privacy_notice_version: "2026-07-26.1", p_landing_path: `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`,
       p_idempotency_key_hash: digest(randomUUID()), p_payload_hash: digest(randomUUID()), p_rate_limit_subject_hash: digest(randomUUID()),
@@ -84,6 +88,25 @@ test("quote migration persists real fields with atomic outbox, attribution, comp
   const submit = (args) => rpc("create_homeground_private_tour_quote_v1", args);
   const count = (table) => Number(sql(`select count(*) from homeground_private.${table};`));
   const reset = () => sql("truncate homeground_private.inquiries, homeground_private.inquiry_rate_limit_buckets cascade;");
+
+  await t.test("new products and prior six-person prices both save after the final migration", () => {
+    reset();
+    for (const slug of [
+      "luoyang-dengfeng-kaifeng-6-day-private-tour",
+      "kunming-jianshui-yuanyang-6-day-private-tour",
+      "shanghai-suzhou-5-day-private-tour",
+    ]) {
+      for (const locale of ["en", "zh", "ko"]) {
+        const context = getPrivateTourInquiryContext(slug, locale, { packageId: "standard-guided", travelers: 6 });
+        assert.ok(context, `${slug}:${locale}`);
+        const args = makeArgs(locale);
+        args.p_product_interest = getPrivateTourInquirySubmissionContext(context, locale);
+        args.p_landing_path = `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
+        assert.equal(submit(args).outcome, "created", `${slug}:${locale}`);
+      }
+    }
+    assert.equal(count("inquiries"), 9);
+  });
 
   await t.test("real records retain date, multiline notes, page, language and service/group; replay does not duplicate or mutate", () => {
     reset();
@@ -179,6 +202,41 @@ test("quote migration persists real fields with atomic outbox, attribution, comp
     for (const name of ["create_homeground_private_tour_quote_v1", "create_homeground_private_tour_quote_with_traffic_v1"]) {
       const access = JSON.parse(sql(`select jsonb_build_object('anon', has_function_privilege('anon', oid, 'EXECUTE'), 'authenticated', has_function_privilege('authenticated', oid, 'EXECUTE'), 'service', has_function_privilege('service_role', oid, 'EXECUTE')) from pg_proc where proname=${quoted(name)}`));
       assert.deepEqual(access, { anon: false, authenticated: false, service: true });
+    }
+  });
+
+  await t.test("the three Korean display names submit under stable slugs through the existing SQL name contract", () => {
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      reset();
+      const displayed = getPrivateTourInquiryContext(slug, "ko");
+      const submitted = getPrivateTourInquirySubmissionContext(displayed, "ko");
+      const args = { ...makeArgs("ko", true), p_product_interest: submitted, p_landing_path: `/ko/tours/${slug}/` };
+      const quote = submit(args);
+      assert.equal(quote.outcome, "created", slug);
+      const quoteRow = JSON.parse(sql(`select to_jsonb(i) from homeground_private.inquiries i where inquiry_id=${quoted(quote.inquiryId)};`));
+      assert.deepEqual(quoteRow.answers_json.productInterest, submitted);
+      assert.throws(() => submit({ ...args, p_product_interest: displayed, p_idempotency_key_hash: digest(randomUUID()) }));
+
+      const homepageArgs = {
+        p_schema_version: 3, p_form_version: "2026-07-26.1", p_locale: "ko",
+        p_contact_email: "homepage@example.invalid", p_privacy_notice_version: "2026-07-26.1",
+        p_landing_path: "/ko/", p_attribution: { productInterest: submitted },
+        p_idempotency_key_hash: digest(randomUUID()), p_payload_hash: digest(randomUUID()),
+        p_rate_limit_subject_hash: digest(randomUUID()), p_short_rate_limit: 5,
+        p_daily_rate_limit: 20, p_first_response_due_at: args.p_first_response_due_at,
+      };
+      const homepage = rpc("create_homeground_homepage_email_v1", homepageArgs);
+      assert.equal(homepage.outcome, "created", slug);
+      const homepageRow = JSON.parse(sql(`select to_jsonb(i) from homeground_private.inquiries i where inquiry_id=${quoted(homepage.inquiryId)};`));
+      assert.deepEqual(homepageRow.answers_json.productInterest, submitted);
+      assert.throws(() => rpc("create_homeground_homepage_email_v1", {
+        ...homepageArgs, p_attribution: { productInterest: displayed },
+        p_idempotency_key_hash: digest(randomUUID()),
+      }));
     }
   });
 });

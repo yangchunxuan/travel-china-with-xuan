@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { buildPrivateTourDetailHref, getPrivateTourInquirySelection, type PrivateTourInquirySlug } from "../lib/privateTourInquiryContext";
+import { usePrivateTourSelection } from "./PrivateTourSelection";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const copy = {
@@ -50,11 +55,18 @@ const copy = {
   },
 } as const;
 
-const slugs = ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"];
+const slugs = ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"] as const;
+
+function ComparisonTourLink({ locale, slug, children }: { locale: HomegroundLocale; slug: PrivateTourInquirySlug; children: ReactNode }) {
+  const current = usePrivateTourSelection();
+  const path = `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
+  const targetSelection = current && getPrivateTourInquirySelection(slug, current.selection.packageId, current.selection.travelers);
+  const href = targetSelection ? buildPrivateTourDetailHref(path, slug, targetSelection) : path;
+  return <Link href={href}>{children}</Link>;
+}
 
 export function JiangnanTourComparison({ locale, currentSlug }: { locale: HomegroundLocale; currentSlug: string }) {
   const text = copy[locale];
-  const prefix = locale === "en" ? "" : `/${locale}`;
   return <section className={styles.section} aria-labelledby="jiangnan-comparison-title">
     <div className={styles.sectionInner}>
       <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
@@ -65,7 +77,7 @@ export function JiangnanTourComparison({ locale, currentSlug }: { locale: Homegr
         <caption className={styles.visuallyHidden}>{text.title}</caption>
         <thead><tr>{text.headings.map(heading => <th scope="col" key={heading}>{heading}</th>)}</tr></thead>
         <tbody>{text.rows.map(([label, five, six]) => <tr key={label}><th scope="row">{label}</th><td>{five}</td><td>{six}</td></tr>)}</tbody>
-        <tfoot><tr><td /><td>{currentSlug === slugs[0] ? text.current : <Link href={`${prefix}/tours/${slugs[0]}/`}>{text.view}</Link>}</td><td>{currentSlug === slugs[1] ? text.current : <Link href={`${prefix}/tours/${slugs[1]}/`}>{text.view}</Link>}</td></tr></tfoot>
+        <tfoot><tr><td /><td>{currentSlug === slugs[0] ? text.current : <ComparisonTourLink locale={locale} slug={slugs[0]}>{text.view}</ComparisonTourLink>}</td><td>{currentSlug === slugs[1] ? text.current : <ComparisonTourLink locale={locale} slug={slugs[1]}>{text.view}</ComparisonTourLink>}</td></tr></tfoot>
       </table>
     </div>
   </section>;

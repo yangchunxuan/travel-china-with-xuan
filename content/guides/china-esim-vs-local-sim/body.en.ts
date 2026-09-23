@@ -314,6 +314,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about staying connected",
+      items: [
+        {
+          question: "Do I need a Chinese phone number to travel in China?",
+          answer: "Not as a universal prerequisite. A local number helps when a delivery, venue, account or person requires mainland voice or SMS. Official mobile-payment guidance says major payment apps can accept foreign or Chinese phone numbers, although an individual bank, merchant or verification flow may still behave differently. Write down the exact task that needs the number first.",
+        },
+        {
+          question: "Can I use an eSIM in China if my iPhone was bought outside mainland China?",
+          answer: "Possibly, but only as a travel eSIM. A worldwide provider can sell a travel data eSIM for use in mainland China even when the phone cannot activate an eSIM issued by a mainland operator. Apple currently documents mainland-carrier eSIM only for particular mainland-market iPhone models and says an iPhone bought outside mainland China cannot install a mainland-carrier profile.",
+        },
+        {
+          question: "Do I need my passport to buy a SIM card in China?",
+          answer: "Yes, and bring the original. Real-name registration is part of opening the line, and a photocopy alone may not complete identity verification. Use a directly operated China Mobile, China Unicom or China Telecom service hall that confirms it handles foreign passports; Beijing's official guide also lists airport service counters, but locations and hours must be rechecked.",
+        },
+        {
+          question: "Does a travel eSIM give me a +86 number and text messages?",
+          answer: "Often not. Travel eSIMs are commonly data-only and may not provide a +86 number, voice or SMS; activation, routing, hotspot use and app behaviour depend on the product. A mainland operator SIM normally supplies a local number and ordinary operator service. Do not infer a number or voice service from a data allowance.",
+        },
+        {
+          question: "What should I do if the eSIM does not connect when I land?",
+          answer: "Work through the layers instead of reinstalling repeatedly. Check the correct data line, any roaming the provider requires, the APN, automatic or manual network selection and the activation time, then use Wi-Fi to contact provider support with screenshots and the order number. Keep one arrival fallback — airport Wi-Fi instructions, a roaming day pass, a companion's hotspot or an offline address — so failed activation does not block the first transfer.",
+        },
+        {
+          question: "How do I stop my home line running up roaming charges?",
+          answer: "Label both lines and review four settings: cellular data, data switching, default voice and default SMS. Turn off automatic cellular-data switching if it could move traffic to the expensive home line. Ask your home carrier whether receiving SMS abroad is chargeable, and remember that answering or returning a call may use a different tariff.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Build the rest of the phone setup",

@@ -13,6 +13,14 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {id:"weather",type:"list",items:["预约结束后不要立刻衔接不可更改的航班或长途火车。","参观当天早晨检查敦煌研究院与官方预约号。","保持预约账号和原支付方式可用，以便按官方方案改签、退款或调整。","2026 年 6 月的一次降雨停开说明，沙漠目的地也不等于完全不受天气影响；7 月下旬另一次停开随后有明确日期的恢复开放公告。关闭只适用于公告写明的日期与条件。","不要把一次停开的处理方式推广到未来所有情况，必须执行当次有日期的公告。"]},
 {id:"guide",type:"paragraph",text:"“自由行”不等于能独自进入每个洞窟。实体洞窟本来就按景区的受控讲解和保护制度参观。私人旅行导游可以补充敦煌背景、语言和交通，但不能随意选择保护洞窟，也不能绕过票务分配。"},
 {id:"final-check",type:"list",items:["Ticket Booking 订单与每本护照一致。","付款前已理解正常或应急模式。","第一站保存为数字展示中心，而不是窟区。","至少提前 30 分钟抵达。","当天对天气和返程交通有调整空间。"]},
+{ id: "faq", type: "faq", title: "预约前常见问题", items: [
+  { question: "莫高窟可以自由行吗？", answer: "可以，但它不是随到随逛的普通景点，而是一条受控流程：从官方外籍护照入口实名预约，提前至少 30 分钟到莫高窟数字展示中心，办理对应票务，再按所购票型完成影片、官方接驳和实体洞窟讲解。“自由行”不等于能独自进入每个洞窟。" },
+  { question: "外籍护照怎么预约莫高窟门票？", answer: "关注官方“莫高窟参观预约网”微信服务号，外籍护照及港澳台通行证从“预约购票”下的 Ticket Booking 进入。按每位游客真实证件填写，并携带同一本有效原件，票、证、人必须一致。2026 年官方公告明确未授权任何第三方机构或个人代理门票。" },
+  { question: "能自己挑参观哪几个洞窟吗？", answer: "不能。2026 年公告规定，正常参观包含数字电影与 8 个实体洞窟，应急参观是 4 个；开放哪些实体洞窟由保护要求和当天分配决定，不是游客自由点单。私人导游可以补充敦煌背景、语言和交通，但不能随意选择保护洞窟，也不能绕过票务分配。" },
+  { question: "可以直接开车去窟区吗？", answer: "不要。官方公告明确，窟区没有售票处，也没有游客停车场。请导航到敦煌市阳关东路 8899 号“莫高窟数字展示中心”，并把这个中文名存好给司机看。只在地图上选崖壁作终点，可能直接错过真正的报到地点。" },
+  { question: "莫高窟几点开放？", answer: "2026 年官方时段为：4 月 1 日至 11 月 30 日 08:00—18:00，16:10 停止检票；12 月 1 日至次年 3 月 31 日 09:00—17:00，15:10 停止检票。遇到天气、维护或参观模式变化，仍要看最新公告。" },
+  { question: "参观当天下雨会怎样？", answer: "可能停止开放，所以当天要留余地。2026 年 6 月的一次降雨停开说明，沙漠目的地也不等于完全不受天气影响；7 月下旬另一次停开之后，才有带日期的恢复开放公告。停开只适用于公告写明的日期和条件。当天早晨先看敦煌研究院和官方预约号，结束后不要紧接不可更改的航班。" },
+] },
 {id:"internal-links",type:"internal-links",title:"衔接敦煌行程",items:[{label:"第一次坐中国高铁",href:"/zh/guides/china-high-speed-train-first-time-guide/",description:"使用准确车站名，并给参观后的交通留缓冲。"},{label:"中国节假日旅行",href:"/zh/guides/china-public-holidays-travel-calendar/",description:"理解限量票为何需要更早决策。"},{label:"你的中国行程是否太赶",href:"/zh/guides/is-your-china-itinerary-too-rushed/",description:"避免一个受文保控制的参观打乱整条路线。"},{label:"在中国旅行要不要请导游",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"区分景区受控讲解与私人行程支持。"}]},
 {id:"consultation",type:"callout",title:"需要把莫高窟嵌入敦煌停留？",body:"Homeground 真人旅行顾问可以按日期核对官方流程，并保护预约时段前后的接驳。请提供护照类型、日期、已购票型（如有）、酒店和固定离开时间。",tone:"neutral"},
 {id:"sources",type:"sources",title:"已核验的官方与图片来源",items:[{label:"2026 年莫高窟旅游开放公告",url:"https://www.dunhuangcaves.org/info/1020/7498.htm",publisher:"敦煌研究院",reviewedAt:"2026-08-12"},{label:"2026 年 6 月 24 日降雨暂停开放公告",url:"https://www.dunhuangcaves.org/info/1020/7731.htm",publisher:"敦煌研究院",reviewedAt:"2026-08-12"},{label:"另一次天气停开后于 2026 年 7 月 30 日发布的恢复开放公告",url:"https://www.dunhuangcaves.org/info/1020/7811.htm",publisher:"敦煌研究院",reviewedAt:"2026-08-12"},{label:"首图：eviltomthai 拍摄，CC BY 2.0；裁切并转换格式",url:"https://commons.wikimedia.org/wiki/File:Mogao_Caves_Exterior_And_Chambers.jpeg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"}]}

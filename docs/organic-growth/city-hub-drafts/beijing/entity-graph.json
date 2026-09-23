@@ -429,7 +429,7 @@
       "labels": {
         "en": "Zhangjiajie",
         "zh": "张家界",
-        "ko": "장자제"
+        "ko": "장가계"
       },
       "centralRegistryStatus": "existing"
     },
@@ -488,7 +488,7 @@
       "labels": {
         "en": "Beijing → Zhangjiajie",
         "zh": "北京 → 张家界",
-        "ko": "베이징 → 장자제"
+        "ko": "베이징 → 장가계"
       },
       "fromNode": "city-beijing",
       "toNode": "city-zhangjiajie",

@@ -11,8 +11,13 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-20",
-  "dateModified": "2026-09-20",
+  "dateModified": "2026-09-22",
   "sourceReviewedDate": "2026-08-20",
+  "searchTerms": {
+    "en": ["zhangjiajie national forest park tickets entrances"],
+    "zh": ["张家界国家森林公园 门票 入口"],
+    "ko": ["장자제 국가삼림공원 입장권", "우링위안 공원 입구"]
+  },
   "search": {
     "section": "explore",
     "family": "task",
@@ -44,14 +49,14 @@
     },
     "ko": {
       "path": "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
-      "title": "장자제 국가삼림공원 입장권·입구·공원 교통 선택법",
-      "headline": "장자제 국가삼림공원: 입장권과 첫 입구를 고르고 셔틀·케이블카·엘리베이터를 연결하세요",
-      "description": "장자제 공원 입장권을 첫 입장 게이트와 시간대에 맞추고 여권 예매 문제를 해결하며 셔틀, 바이룽 엘리베이터, 케이블카와 도보 동선을 연결합니다.",
-      "heroAlt": "2016년 8월 촬영한 장자제 국가삼림공원의 석영사암 봉우리 숲.",
-      "navTitle": "장자제 입장권·입구·교통",
+      "title": "장가계 국가삼림공원 입장권·입구·공원 교통 선택법",
+      "headline": "장가계 국가삼림공원: 입장권과 첫 입구를 고르고 셔틀·케이블카·엘리베이터를 연결하세요",
+      "description": "장가계 공원 입장권을 첫 입장 게이트와 시간대에 맞추고 여권 예매 문제를 해결하며 셔틀, 백룡엘리베이터, 케이블카와 도보 동선을 연결합니다.",
+      "heroAlt": "2016년 8월 촬영한 장가계 국가삼림공원의 석영사암 봉우리 숲.",
+      "navTitle": "장가계 입장권·입구·교통",
       "featuredLinkLabel": "공원 입장권과 입구 계획하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["장자제", "공원 입장권", "입구"]
+      "cardTags": ["장가계", "공원 입장권", "입구"]
     }
   }
 }

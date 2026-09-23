@@ -138,7 +138,7 @@ test("the shared authority component resolves locale-correct destination, transp
     "查看张家界旅行指南",
     "浏览中国交通指南",
     "查看中国入境与过境指南",
-    "장자제 여행 가이드 보기",
+    "장가계 여행 가이드 보기",
     "중국 교통 가이드 보기",
     "중국 입국·경유 가이드 보기",
   ]) {

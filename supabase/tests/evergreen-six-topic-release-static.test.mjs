@@ -49,7 +49,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
   assert.deepEqual(greatWall.destinations, ["china", "beijing"]);
   assert.deepEqual(
     [greatWall.datePublished, greatWall.dateModified, greatWall.sourceReviewedDate],
-    ["2026-08-22", "2026-08-22", "2026-08-22"],
+    ["2026-08-22", "2026-09-22", "2026-08-22"],
   );
   assert.deepEqual(greatWall.search, {
     section: "explore",
@@ -69,7 +69,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
   ));
   assert.deepEqual(
     [springFestival.datePublished, springFestival.dateModified, springFestival.sourceReviewedDate],
-    ["2026-08-13", "2026-09-18", "2026-09-18"],
+    ["2026-08-13", "2026-09-22", "2026-09-18"],
   );
   assert.equal(springFestival.locales.en.title, "Chinese New Year in China: Is It a Good Time to Visit?");
   assert.equal(springFestival.search.primaryIntent, "plan");
@@ -171,7 +171,7 @@ test("shared discovery and governance expose the release without paid-service am
   const destinationRegistry = await source("lib/destinationHubs.ts");
   assert.match(destinationRegistry, /"great-wall-section-selector-from-beijing"/u);
   assert.match(destinationRegistry, /"leshan-giant-buddha-land-or-boat-visit"/u);
-  const modifiedDates = { beijing: "2026-08-22", shanghai: "2026-09-21", chengdu: "2026-09-09" };
+  const modifiedDates = { beijing: "2026-08-22", shanghai: "2026-09-23", chengdu: "2026-09-09" };
   for (const city of Object.keys(modifiedDates)) {
     const start = destinationRegistry.indexOf(`id: "${city}"`);
     const end = destinationRegistry.indexOf("\n  {\n    id:", start + 1);

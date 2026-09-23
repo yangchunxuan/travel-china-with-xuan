@@ -498,7 +498,7 @@ const body = {
           description: "목적지를 더 추가하기 전에 호텔 이동, 문 앞에서 문 앞까지의 교통과 회복 시간을 계산하세요.",
         },
         {
-          label: "베이징–장자제–상하이 교통",
+          label: "베이징–장가계–상하이 교통",
           href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "정확한 베이징역이나 공항을 다음 호텔 도착 동선과 맞추세요.",
         },

@@ -92,6 +92,37 @@ const body = {
       "text": "China does not have one school “winter break” date that applies to every school, city and year. For a visitor, use your own holiday dates and China’s official public-holiday calendar; do not treat a school calendar as the national travel calendar. Winter also does not mean cheap hotels everywhere: snow destinations, Hainan and holiday dates can have strong demand."
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions travellers ask about a winter trip",
+      "items": [
+        {
+          "question": "When does Harbin’s Ice and Snow World open for the 2026–27 season?",
+          "answer": "We cannot tell you yet. As checked on 10 September 2026, we have not confirmed the 2026-27 Ice and Snow World opening date or programme. The previous season's announcement and photographs do not confirm this season's dates, structures or ticket prices. Check the new announcement before making a visit to that attraction the fixed centre of your trip."
+        },
+        {
+          "question": "Can we fit Harbin, Beijing and Sanya into one week?",
+          "answer": "One week is not enough for all three. Moving between Harbin, Beijing and Hainan leaves less time in each place and requires two very different wardrobes. Pick one main experience, whether that is ice and snow, city sights and food, or a warmer coastal stay, and add a second region only when you have enough nights to make the transfer worthwhile."
+        },
+        {
+          "question": "Will we see snow in Shanghai?",
+          "answer": "Shanghai is not a reliable snow destination, so treat snow as a bonus rather than the reason to book. Choose Beijing and Shanghai for the Great Wall, major historic sights, neighbourhood walks and food, and put a museum or gallery option beside each outdoor day, checking its opening and reservation rules. Note that the Forbidden City is largely an outdoor visit, not a substitute for a warm indoor afternoon."
+        },
+        {
+          "question": "Will the cable car be running at the Great Wall in winter?",
+          "answer": "Do not count on it. Winter visits are possible at managed sections and Badaling publishes a winter operating schedule, but that does not mean every path, cable car or ride will operate on your date. Check that section's same-day notices, allow a shorter walk if steps are icy, and change the day or activity if access is restricted."
+        },
+        {
+          "question": "We are booking a beach hotel in Sanya. Can we swim every day?",
+          "answer": "Booking a beach hotel does not settle that. It does not mean every day suits swimming or that the sky will be clear, so confirm the hotel's exact location, how you reach the beach and any pool arrangements that matter to you. A five-day, four-night stay can use the arrival and departure days for travel, two days around the hotel and beach, and one optional local outing."
+        },
+        {
+          "question": "Is winter a cheap time to travel in China?",
+          "answer": "Not everywhere. Winter does not mean cheap hotels across the country: snow destinations, Hainan and holiday dates can all have strong demand. Use your own holiday dates and China's official public-holiday calendar rather than treating a school calendar as the national travel calendar, and remember that Spring Festival dates vary by year."
+        }
+      ]
+    },
+    {
       "id": "timing-links",
       "type": "internal-links",
       "title": "Check your dates",

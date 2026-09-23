@@ -325,6 +325,37 @@ const body = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about walking Lu Xun's Shaoxing",
+      items: [
+        {
+          question: "How long does the Lu Xun walk in Shaoxing take?",
+          answer: "Let the duration expand or contract. No current official source reviewed through 14 August 2026 supports a fixed two-to-three-hour circuit that works for every visitor, and the operator's one-, two- and three-hour route page is dated orientation rather than a current timetable. Keep the evidence order - family, school, home, remembered garden, museum, then fiction and commerce - even when queues or closures change your physical path.",
+        },
+        {
+          question: "Can I see the famous '早' desk at Sanwei Study?",
+          answer: "Check on the day. A 2024 Zhejiang culture report and a museum-staff interview said the institutionally attributed original had been withdrawn from Sanwei Study for conservation, stored and then displayed in the memorial museum, and later descriptions do not consistently distinguish the status of a desk shown at Sanwei. If a desk is present, read the exact label wording rather than assuming provenance.",
+        },
+        {
+          question: "Is the Xianheng Hotel the tavern from Kong Yiji?",
+          answer: "No. Kong Yiji, first published in 1919, is a short story, and its Lu Town tavern belongs to fiction. The hotel's own 2025 chronology says it reopened in 1981 and that later redevelopment retained what it calls the '堂吃' dining area while other parts were demolished and rebuilt. The present building and statue show how strongly the story was received, not an unchanged late-Qing scene.",
+        },
+        {
+          question: "Is Zhou Family New Taimen the original house Lu Xun grew up in?",
+          answer: "Partly. It is the documented residence associated with his birth and youth, but a Shaoxing CPPCC historical account records the family's 1918 sale and extensive redevelopment in 1920-1922, while identifying specified residential rooms and the kitchen as surviving. A later institutional history records a 2003 intervention that removed an older exhibition hall, restored the New Taimen environment and created a new memorial museum.",
+        },
+        {
+          question: "Is Baicao Garden the garden from the essay?",
+          answer: "It is both a real place and a literary memory. The garden belongs to the family-site landscape behind the former residence, while 'From Baicao Garden to Sanwei Study' is a retrospective essay in Dawn Blossoms Plucked at Dusk, written in 1926 by an adult author shaping childhood attention through prose. It is neither a contemporaneous diary nor a conservation survey, so current planting need not match the sentences.",
+        },
+        {
+          question: "I have not read any Lu Xun. Which parts are worth my time?",
+          answer: "Zhou Family New Taimen, Sanwei Study and the memorial museum. Read one short essay before or after rather than hunting quotations or turning the day into a long biography detour; the museum is where a life chronology, editions, photographs and publication history become legible without prior reading. Whichever parts you choose, carry passport identification and leave time for a question at a staffed counter.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue the evidence-first trip",

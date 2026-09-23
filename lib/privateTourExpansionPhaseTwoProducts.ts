@@ -203,7 +203,7 @@ const henan: PrivateTourProduct = {
   heroImage: image(henanSlug, "hero.webp", 1600, 1200, l("Buddhist carvings at Longmen Grottoes", "龙门石窟佛教造像", "용문석굴 불상"), l("Longmen receives the main part of Day 4 rather than a short photo stop.", "第 4 天把主要时间留给龙门石窟，而不是匆匆打卡。", "4일 차에는 용문석굴을 짧은 사진 정류장이 아니라 핵심 일정으로 봅니다.")),
   gallery: [image(henanSlug, "gallery-1.webp", 800, 1200, l("Shaolin Temple complex", "少林寺建筑", "소림사 경내"), l("Shaolin Temple and Pagoda Forest are visited while crossing Dengfeng.", "经登封前往洛阳时游览少林寺与塔林。", "덩펑을 지나며 소림사와 탑림을 방문합니다."))],
   routeMedia: [{ day: 2, variants: [{ label: l("Kaifeng", "开封", "카이펑"), image: image(henanSlug, "route-day-5.webp", 1600, 1067, l("Historic gate in Kaifeng", "开封古城门", "카이펑 옛 성문"), l("Kaifeng is given a full touring day and one overnight stay.", "开封安排完整游览日并住一晚。", "카이펑에는 종일 관광과 1박을 배정합니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 8980, usdPerPerson: 1390 }, { travelers: 4, cnyPerPerson: 6480, usdPerPerson: 1000 }, { travelers: 6, cnyPerPerson: 5580, usdPerPerson: 860 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 8980, usdPerPerson: 1390 }, { travelers: 4, cnyPerPerson: 6480, usdPerPerson: 1000 }, { travelers: 6, cnyPerPerson: 6280 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -272,7 +272,7 @@ const silkRoad: PrivateTourProduct = {
   heroImage: image(silkRoadSlug, "hero.webp", 1600, 1067, l("Colourful landforms at Zhangye Danxia", "张掖七彩丹霞", "장예 칠채단하"), l("The route begins in Zhangye and continues west through the Hexi Corridor.", "路线从张掖开始，沿河西走廊一路向西。", "장예에서 시작해 허시회랑을 따라 서쪽으로 이동합니다.")),
   gallery: [image(silkRoadSlug, "gallery-1.webp", 1600, 994, l("Jiayuguan Fort", "嘉峪关关城", "자위관성"), l("Jiayuguan is an overnight stop rather than a rushed roadside visit.", "嘉峪关安排住宿，不作为匆忙路过的打卡点。", "자위관에서 숙박하며 급하게 지나가는 정류장으로 만들지 않습니다."))],
   routeMedia: [{ day: 6, variants: [{ label: l("Mingsha Mountain", "鸣沙山月牙泉", "명사산 월아천"), image: image(silkRoadSlug, "route-day-6.webp", 1600, 1067, l("Mingsha Mountain and Crescent Moon Spring", "鸣沙山与月牙泉", "명사산과 월아천"), l("The desert visit is timed around weather and temperature.", "沙漠游览时段按天气与温度调整。", "사막 방문 시간은 날씨와 기온에 맞춰 조정합니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 9620, usdPerPerson: 1480 }, { travelers: 4, cnyPerPerson: 8580, usdPerPerson: 1320 }, { travelers: 6, cnyPerPerson: 7280, usdPerPerson: 1120 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 9620, usdPerPerson: 1480 }, { travelers: 4, cnyPerPerson: 8580, usdPerPerson: 1320 }, { travelers: 6, cnyPerPerson: 8380 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -411,7 +411,7 @@ const yuanyang: PrivateTourProduct = {
   heroImage: image(yuanyangSlug, "hero.webp", 1598, 946, l("Yuanyang rice terraces photographed in December 2007", "2007 年 12 月拍摄的元阳梯田", "2007년 12월에 촬영한 위안양 계단식 논"), l("This photograph was taken in December. Terrace water and colour change by season; two nights create more than one weather window, but no reflection or sunrise is guaranteed.", "这张照片拍摄于 12 月。梯田水面与颜色随季节变化；连住两晚增加天气窗口，但不保证倒影或日出。", "이 사진은 12월에 촬영했습니다. 계단식 논의 물과 색은 계절에 따라 달라지며, 2박으로 날씨 기회를 늘리지만 반영이나 일출을 보장하지 않습니다.")),
   gallery: [image(yuanyangSlug, "gallery-1.webp", 1600, 1200, l("Jianshui Confucian Temple", "建水文庙", "젠수이 문묘"), l("Jianshui gives the route a cultural stop between Kunming and Yuanyang.", "建水为昆明与元阳之间增加人文停留。", "젠수이는 쿤밍과 위안양 사이에 문화 일정을 더합니다."))],
   routeMedia: [{ day: 1, variants: [{ label: l("Kunming", "昆明", "쿤밍"), image: image(yuanyangSlug, "route-day-1.webp", 1600, 1200, l("Green Lake in Kunming", "昆明翠湖", "쿤밍 취호"), l("Kunming is used as the arrival and departure base.", "昆明承担抵达与返程住宿。", "쿤밍은 도착과 출발 거점입니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 7280, usdPerPerson: 1120 }, { travelers: 4, cnyPerPerson: 6880, usdPerPerson: 1060 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 7280, usdPerPerson: 1120 }, { travelers: 4, cnyPerPerson: 6880, usdPerPerson: 1060 }, { travelers: 6, cnyPerPerson: 6680 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -443,7 +443,7 @@ const shenzhen: PrivateTourProduct = {
   heroImage: image(shenzhenSlug, "hero.webp", 1600, 1200, l("Futian skyline in Shenzhen", "深圳福田天际线", "선전 푸톈 스카이라인"), l("The family route uses central Shenzhen as one hotel base.", "亲子路线以深圳市区同一家酒店为基地。", "가족 일정은 선전 도심 한 호텔을 거점으로 합니다.")),
   gallery: [image(shenzhenSlug, "gallery-1.webp", 1600, 1200, l("Inside Shenzhen Science and Technology Museum", "深圳科学技术馆内部", "선전과학기술관 내부"), l("The museum day is built around confirmed reservations and the children's ages.", "科学馆一天按预约与孩子年龄安排。", "과학관 일정은 예약과 아이 나이에 맞춰 구성합니다."))],
   routeMedia: [{ day: 3, variants: [{ label: l("Huaqiangbei", "华强北", "화창베이"), image: image(shenzhenSlug, "route-day-2.webp", 899, 1200, l("Huaqiangbei and central Shenzhen", "华强北与深圳市区", "화창베이와 선전 도심"), l("Huaqiangbei is presented as an urban technology district, not a compulsory shopping stop.", "华强北以城市科技街区游览，不安排强制购物。", "화창베이는 의무 쇼핑이 아닌 도시 기술 상권으로 소개합니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 3980, usdPerPerson: 620 }, { travelers: 4, cnyPerPerson: 2880, usdPerPerson: 450 }, { travelers: 6, cnyPerPerson: 2580, usdPerPerson: 400 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 3980, usdPerPerson: 620 }, { travelers: 4, cnyPerPerson: 2880, usdPerPerson: 450 }, { travelers: 6, cnyPerPerson: 2680 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -483,7 +483,7 @@ const classicChina: PrivateTourProduct = {
   heroImage: image(classicChinaSlug, "hero.webp", 1600, 800, l("Forbidden City seen from Jingshan", "从景山看故宫", "경산에서 본 자금성"), l("Four Beijing nights protect three full touring days and a light arrival day.", "北京连住 4 晚，保留 3 个完整游览日与轻松抵达日。", "베이징 4박으로 종일 관광 3일과 가벼운 도착일을 확보합니다.")),
   gallery: [image(classicChinaSlug, "gallery-1.webp", 1600, 1200, l("Terracotta Warriors in Xi'an", "西安兵马俑", "시안 병마용"), l("Xi'an receives three nights and a full Terracotta Warriors day.", "西安住 3 晚，并把完整一天留给兵马俑。", "시안에서 3박하고 병마용에 하루를 온전히 씁니다."))],
   routeMedia: [{ day: 9, variants: [{ label: l("Shanghai", "上海", "상하이"), image: image(classicChinaSlug, "route-day-9.webp", 1600, 901, l("Shanghai skyline from the Bund", "从外滩看上海天际线", "와이탄에서 본 상하이 스카이라인"), l("Four Shanghai nights leave one flexible day after the core city route.", "上海连住 4 晚，核心城市游览后仍保留一个弹性日。", "상하이 4박으로 핵심 도심 일정 뒤 선택 하루를 남깁니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 18720, usdPerPerson: 2880 }, { travelers: 4, cnyPerPerson: 14300, usdPerPerson: 2200 }, { travelers: 6, cnyPerPerson: 12350, usdPerPerson: 1900 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 18720, usdPerPerson: 2880 }, { travelers: 4, cnyPerPerson: 14300, usdPerPerson: 2200 }, { travelers: 6, cnyPerPerson: 14100 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };

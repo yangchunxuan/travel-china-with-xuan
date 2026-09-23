@@ -263,6 +263,7 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.deepEqual(product.packages[0].prices, [
     { travelers: 2, cnyPerPerson: 2918, usdPerPerson: 449 },
     { travelers: 4, cnyPerPerson: 2502, usdPerPerson: 385 },
+    { travelers: 6, cnyPerPerson: 2302 },
   ]);
 
   const zh = localizePrivateTourProduct(product, "zh");
@@ -283,14 +284,14 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   const ko = localizePrivateTourProduct(product, "ko");
   assert.equal(ko.packages[0].label, "한국어 가이드 포함 고정 코스");
   assert.match(ko.metadataDescription, /한국어 가이드/);
-  assert.match(ko.metadataDescription, /유리다리·톈먼산 불포함/);
+  assert.match(ko.metadataDescription, /유리다리·천문산 불포함/);
   assert.match(ko.summary, /D2 종일과 D3 주간 한국어 가이드/);
   assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
   assert.doesNotMatch(ko.summary, /영어 가이드/);
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
-  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-06");
-  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-06");
-  assert.equal(ko.dateModified, "2026-09-06");
+  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-23");
+  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-23");
+  assert.equal(ko.dateModified, "2026-09-23");
 });
 
 test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days and ticket boundary", () => {
@@ -310,6 +311,7 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
   assert.deepEqual(product.packages[0].prices, [
     { travelers: 2, cnyPerPerson: 5840, usdPerPerson: 899 },
     { travelers: 4, cnyPerPerson: 4860, usdPerPerson: 749 },
+    { travelers: 6, cnyPerPerson: 4660 },
   ]);
 
   const zh = localizePrivateTourProduct(product, "zh");
@@ -338,12 +340,13 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
 });
 
-test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller prices", () => {
+test("Shanghai Suzhou Hangzhou publishes the existing tiers and the six-traveller discount", () => {
   const product = getPrivateTourProduct(shanghaiJiangnanSlug);
   assert.ok(product);
   assert.deepEqual(product.packages[0].prices, [
     { travelers: 2, cnyPerPerson: 7436, usdPerPerson: 1144 },
     { travelers: 4, cnyPerPerson: 5421, usdPerPerson: 834 },
+    { travelers: 6, cnyPerPerson: 5221 },
   ]);
 
   assert.deepEqual(
@@ -353,6 +356,7 @@ test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller p
     [
       { travelers: 2, formatted: "USD\u00a01,144" },
       { travelers: 4, formatted: "USD\u00a0834" },
+      { travelers: 6, formatted: "USD\u00a0810" },
     ],
   );
   assert.deepEqual(
@@ -362,12 +366,13 @@ test("Shanghai Suzhou Hangzhou publishes the owner-approved 2- and 4-traveller p
     [
       { travelers: 2, formatted: "₩1,600,000" },
       { travelers: 4, formatted: "₩1,170,000" },
+      { travelers: 6, formatted: "₩1,130,000" },
     ],
   );
 });
 
 test("live-QA tour fact and safety corrections stay complete in all three locales", () => {
-  const product = (slug, modified = "2026-09-07") => {
+  const product = (slug, modified = "2026-09-23") => {
     const result = getPrivateTourProduct(slug);
     assert.ok(result, slug);
     assert.equal(result.dateModified, modified, `${slug} freshness`);
@@ -440,7 +445,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
   }
 
-  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-20");
+  const shanghai = product("shanghai-suzhou-5-day-private-tour");
   const shanghaiRules = {
     en: {
       common: [

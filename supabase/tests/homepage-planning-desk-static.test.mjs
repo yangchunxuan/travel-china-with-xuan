@@ -783,7 +783,7 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
   }
   assert.match(
     payloadBuilder,
-    /productInterest:\s*privateTourInterest[\s\S]{0,140}slug: privateTourInterest\.slug[\s\S]{0,100}name: privateTourInterest\.name/u,
+    /productInterest:\s*privateTourInterest\s*\? getPrivateTourInquirySubmissionContext\(privateTourInterest, locale\)\s*: null/u,
   );
   assert.match(
     quickContact,

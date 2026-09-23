@@ -193,6 +193,37 @@ const body = {
       "text": "Only by replacing something or adding time. Passing a station does not give you a visit. Keep the transfer days intact until the train, local transport and extra hotel nights are planned."
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "More questions before you book",
+      "items": [
+        {
+          "question": "Is there a direct flight from Singapore to Zhangjiajie?",
+          "answer": "Do not assume either way. Search SIN–DYG for your own dates, including connecting itineraries, and do not rule a direct flight out from an old timetable. Compare terminal changes and overnight waits, and ask the airline about connection protection and baggage collection. Arriving at DYG still requires a hotel transfer."
+        },
+        {
+          "question": "Does the airport maglev take me to my Zhangjiajie train?",
+          "answer": "Only if your ticket departs from Changsha South, which is the station the airport Maglev Express connects with Huanghua Airport. If your ticket starts at Changsha Railway Station on Chezhan Middle Road, that is a different station from Changsha South on Huahou Road, and reaching the maglev terminus does not mean you have reached your train."
+        },
+        {
+          "question": "How many days do I need from Singapore?",
+          "answer": "Six days via Changsha for two full forest days, or seven to add a Tianmen Mountain day when its reservation fits. A five-day version with a Changsha night after landing leaves one full forest day. All examples count arrival in China as day 1 and departure as the last day, so settle the travel days against flights and trains you can actually book before reserving hotels."
+        },
+        {
+          "question": "Is the Tianmen Mountain cable car running all the way up?",
+          "answer": "Not the whole way. Under the scenic area's 31 August 2026 notice, the upper cableway section remains closed for upgrading, and Route A requires a bus transfer at the middle station to Tianmen Cave. Check your ticket's actual entry and exit before arranging a ride; the Tianmen Mountain ticket guide covers prices and the A/B/C routes."
+        },
+        {
+          "question": "I live in Singapore on a PR or work pass — does the visa exemption cover me?",
+          "answer": "Not necessarily. Singapore residency is not Singapore citizenship: ICA's reciprocal arrangement covers ordinary Singapore passports, so PRs or work-pass holders travelling on another country's passport must check that document's rules. The Singapore–China visa guide explains the scope, and you should also confirm any documents needed to return to Singapore."
+        },
+        {
+          "question": "Do I need to submit anything before flying back to Singapore?",
+          "answer": "Yes, ICA's SG Arrival Card with health declaration, within three days including arrival day. This includes returning Singapore citizens, PRs and long-term pass holders entering by air, and the resident exemption at the Woodlands and Tuas land checkpoints does not apply. Submission through ICA or MyICA is free, and SGAC is not a visa."
+        }
+      ]
+    },
+    {
       "id": "links",
       "type": "internal-links",
       "title": "Continue planning",

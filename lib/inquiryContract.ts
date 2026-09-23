@@ -58,6 +58,8 @@ import {
 import {
   getPrivateTourInquiryContext,
   getPrivateTourInquirySelection,
+  getPrivateTourInquirySubmissionContext,
+  isPrivateTourInquiryNameForSlug,
   type PrivateTourInquiryContext,
   // @ts-ignore Source-TypeScript runtimes require the explicit extension.
 } from "./privateTourInquiryContext.ts";
@@ -653,24 +655,32 @@ function validateAndNormalizeEmailInquiry(
           if (!selection) fieldErrors["productInterest.selection"] = "invalid";
         }
       }
+      const expectedLocale = isOneOf(input.locale, inquiryLocales)
+        ? input.locale
+        : null;
       const expected =
-        isOneOf(input.locale, inquiryLocales) &&
+        expectedLocale !== null &&
         typeof input.productInterest.slug === "string" &&
         (!hasSelection || selection !== null)
           ? getPrivateTourInquiryContext(
               input.productInterest.slug,
-              input.locale,
+              expectedLocale,
               selection ?? undefined,
             )
           : null;
       if (
         !expected ||
+        !expectedLocale ||
         typeof input.productInterest.name !== "string" ||
-        input.productInterest.name !== expected.name
+        !isPrivateTourInquiryNameForSlug(
+          expected,
+          expectedLocale,
+          input.productInterest.name,
+        )
       ) {
         fieldErrors.productInterest = "invalid";
       } else {
-        productInterest = expected;
+        productInterest = getPrivateTourInquirySubmissionContext(expected, expectedLocale);
       }
     }
   }

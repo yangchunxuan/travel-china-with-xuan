@@ -5,6 +5,7 @@ import {
   buildPrivateTourInquiryHref,
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySubmissionContext,
   getPrivateTourInquiryContextFromSearchParams,
   getPrivateTourInquirySelection,
   privateTourAggregateSelectionLabel,
@@ -95,6 +96,37 @@ test("published package and group choices survive contact links in every languag
           assert.ok(decodeURIComponent(buildPrivateTourMailtoHref("test@example.invalid", locale, context)).includes(label));
         }
       }
+    }
+  }
+});
+
+test("classic Zhangjiajie stay choices carry only the three published six-person tiers", () => {
+  const slug = "zhangjiajie-4-day-private-tour";
+  for (const packageId of ["selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"]) {
+    const selection = getPrivateTourInquirySelection(slug, packageId, 6);
+    assert.deepEqual(selection, { packageId, travelers: 6 });
+    for (const locale of ["en", "zh", "ko"]) {
+      const context = getPrivateTourInquiryContext(slug, locale, selection);
+      const href = buildPrivateTourInquiryHref(locale === "en" ? "/" : `/${locale}/`, slug, "private_tour", selection);
+      assert.deepEqual(getPrivateTourInquiryContextFromSearchParams(new URL(href, "https://homegroundchina.com").searchParams, locale), context);
+      const label = privateTourInquirySelectionLabel(context, locale);
+      assert.ok(label.includes("6"));
+      assert.ok(decodeURIComponent(buildPrivateTourMailtoHref("test@example.invalid", locale, context)).includes(label));
+    }
+  }
+  for (const [packageId, travelers] of [["selected-city-stay", 5], ["selected-city-stay", 4], ["no-guide", 6], ["spacious-premium-stay", "06"]]) {
+    assert.equal(getPrivateTourInquirySelection(slug, packageId, travelers), null);
+  }
+});
+
+test("classic selection labels stay aligned with the approved lodging tiers", async () => {
+  const pricing = JSON.parse(await source("content/product-previews/zhangjiajie-4-day-private-tour/pricing.json"));
+  for (const tier of pricing.tiers) {
+    const selection = getPrivateTourInquirySelection("zhangjiajie-4-day-private-tour", tier.tier_id, 6);
+    assert.ok(selection, tier.tier_id);
+    for (const [locale, nameKey] of [["en", "name_en"], ["zh", "name_zh"], ["ko", "name_ko"]]) {
+      const context = getPrivateTourInquiryContext("zhangjiajie-4-day-private-tour", locale, selection);
+      assert.ok(privateTourInquirySelectionLabel(context, locale).includes(tier[nameKey]));
     }
   }
 });
@@ -232,6 +264,7 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
     structuredTour,
     zhangjiajieTour,
     quickContact,
+    tourContact,
     header,
     contract,
     endpoint,
@@ -241,6 +274,7 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
     source("components/ShanghaiJiangnanImaginePage.tsx"),
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
     source("components/HomepageQuickContact.tsx"),
+    source("components/TourContactPanel.tsx"),
     source("components/HomegroundHeader.tsx"),
     source("lib/inquiryContract.ts"),
     source("supabase/functions/v1-inquiries/index.ts"),
@@ -261,13 +295,27 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
   assert.match(quickContact, /getPrivateTourInquiryContext/u);
   assert.match(quickContact, /privateTourInterest\.name/u);
   assert.match(quickContact, /whatsappMessage\(locale, privateTourInterest\)/u);
-  assert.match(quickContact, /productInterest:\s*privateTourInterest/u);
+  assert.match(quickContact, /getPrivateTourInquirySubmissionContext\(privateTourInterest, locale\)/u);
+  assert.match(tourContact, /productInterest: getPrivateTourInquirySubmissionContext\(context, locale\)/u);
   assert.match(quickContact, /href=\{fallbackMailto\}/u);
   assert.match(header, /isPrivateTourInquirySlug\(privateTour\)/u);
-  assert.match(contract, /input\.productInterest\.name !== expected\.name/u);
+  assert.match(contract, /isPrivateTourInquiryNameForSlug/u);
   assert.match(endpoint, /p_attribution:\s*payload\.productInterest/u);
   assert.match(notification, /homepageProductInterest\(job\)/u);
   assert.match(migration, /p_attribution is distinct from expected_attribution/u);
+
+  for (const slug of [
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+    "zhangjiajie-4-day-private-tour",
+  ]) {
+    const displayed = getPrivateTourInquiryContext(slug, "ko");
+    const submitted = getPrivateTourInquirySubmissionContext(displayed, "ko");
+    assert.match(displayed.name, /^장가계/u);
+    assert.match(submitted.name, /^장자제/u);
+    assert.equal(submitted.slug, displayed.slug);
+    assert.deepEqual(getPrivateTourInquirySubmissionContext(displayed, "en"), displayed);
+  }
 
   const context = getPrivateTourInquiryContext(
     "beijing-highlights-5-day-private-tour",

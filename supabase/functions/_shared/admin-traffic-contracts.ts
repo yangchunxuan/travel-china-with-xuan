@@ -498,7 +498,7 @@ function parseProductDimension(value: unknown, selection: boolean): JsonRecord[]
     } else if (candidate.bucketType === "value") {
       if (typeof candidate.label !== "string" || cell.suppressed || seen.has(candidate.label)) return null;
       const parts = candidate.label.split("|");
-      if (selection ? !(parts.length === 3 && (parts[2] === "2" || parts[2] === "4") &&
+      if (selection ? !(parts.length === 3 && parts[2] !== undefined && /^[2-9]$/.test(parts[2]) &&
         isTrafficProductSelection(parts[0], parts[1], Number(parts[2]))) : !isTrafficProductSlug(candidate.label)) return null;
       seen.add(candidate.label);
     } else return null;

@@ -294,6 +294,37 @@ const body = {
       tone: "warning",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about Chinese city walls",
+      items: [
+        {
+          question: "Is the Xi'an city wall original or a modern rebuild?",
+          answer: "Neither label fits. Xi'an's protection ordinance covers the Ming wall body, gates, ancillary buildings, moat and sites or remains, and official accounts describe major repairs beginning in 1983 and later preventive monitoring. The accurate description is a major historic wall system maintained and materially changed over time, rather than a circuit that is either fully original or entirely fake.",
+        },
+        {
+          question: "Is Beijing's Yongdingmen gate tower an old building?",
+          answer: "No. The Yongdingmen gate tower was demolished in 1957 and reconstructed on its former site in 2004 using survey drawings and photographs. It is a documented modern reconstruction of a lost component, and it now helps explain the southern end of the Beijing Central Axis; the present upper structure is not surviving 1553 material.",
+        },
+        {
+          question: "How much of Nanjing's city wall is still standing?",
+          answer: "More than 25 kilometres. China's UNESCO Tentative List dossier records that length of the Nanjing wall standing and distinguishes original gates from later conserved or newly built ones, and a 2025 municipal report documents minimum-intervention repair for cracking, weathering, drainage and water damage. The accurate description is substantial survival alongside continuing documented conservation, not an untouched Ming wall.",
+        },
+        {
+          question: "What does a sign that says “restored” actually mean?",
+          answer: "It can mean several different things: stabilised fabric, replaced facing, a rebuilt tower, or broad urban renewal. Check the Chinese wording on the board — 原存 or 遗存, 修缮, 复建 or 重建, and 遗址 — then note which component and which date the label is attached to, and look for the conservation record behind it.",
+        },
+        {
+          question: "Is a rebuilt city wall still worth visiting?",
+          answer: "Yes, if you read it as a record rather than as ancient material. Ask what loss the reconstruction records, what evidence guided it and which urban relationship it makes legible. Interpretive value does not turn new material into ancient fabric, so the clearest visit pairs a place with substantial survival, such as Nanjing, with a documented reconstruction such as Yongdingmen or Datong.",
+        },
+        {
+          question: "I only have one evening in Xi'an — what should I do at the wall?",
+          answer: "Walk one short outside–gate–inside sequence instead of racing the full circuit. Compare the defensive form, the modern access arrangements and the street behind a single gate. Cycling, lighting and opening hours are current services rather than historical evidence, and entrances and maintenance closures change, so confirm current access with the wall's management body.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Connect the wall to a real itinerary",

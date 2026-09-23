@@ -218,7 +218,7 @@ as $$
     when 'zhangye-jiayuguan-dunhuang-7-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'kunming-jianshui-yuanyang-6-day-private-tour' then
-      p_package_id = 'standard-guided' and p_travelers in (2, 4)
+      p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'shenzhen-family-tech-4-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'beijing-xian-shanghai-12-day-private-tour' then

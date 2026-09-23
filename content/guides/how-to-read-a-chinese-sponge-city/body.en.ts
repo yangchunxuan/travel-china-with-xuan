@@ -208,6 +208,37 @@ const body = {
       body: "Send your dates, traveller count and rough budget. A human planner can help place a responsible public-space visit inside the trip without treating it as a flood-safety promise."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask after the rain",
+      items: [
+        {
+          question: "What makes a place a sponge city?",
+          answer: "Connected green infrastructure working with conventional drainage. Together they slow, store, infiltrate and reuse runoff, then carry overflow away when capacity is exceeded. After rain, read one as a water route rather than a collection of green objects: find where runoff enters, where it slows or sinks, where excess water can overflow, and how the route reconnects to pipes or a receiving waterbody.",
+        },
+        {
+          question: "Does a sponge city mean the area will not flood?",
+          answer: "No. A rain garden, porous path or wetland can reduce and delay runoff within its design conditions, but none of them proves that a district is flood-safe. One visit can reveal the intended mechanism and signs of upkeep; it cannot certify engineering performance. Visible drainage also does not replace an official warning, an engineering inspection or a site's emergency rules.",
+        },
+        {
+          question: "There was water sitting in the planted basin after rain. Does that mean it failed?",
+          answer: "Not necessarily. Shallow temporary ponding in a sunken green space or rain garden may be intentional, and visible water cannot by itself be labelled either correct storage or failure. Ponding depth, duration and prior wetness are not knowable from the path. Without rainfall data, design drawings, monitoring and downstream conditions, a visitor cannot diagnose the system.",
+        },
+        {
+          question: "Is 70% of rainfall really absorbed locally in Chinese cities?",
+          answer: "That figure is a policy objective, not a nationwide field result. The 2015 State Council guidance used the sequence infiltrate, retain, store, cleanse, use and drain, and set a policy objective for 70% of rainfall to be absorbed and used locally. That is a planning direction with staged coverage goals, not proof that every city, park or storm now achieves 70%.",
+        },
+        {
+          question: "Where can I actually see this? Is there a public example?",
+          answer: "Suzhou's municipal government describes Jinxi Park in Suzhou Industrial Park as using terrain differences, rain gardens, sunken green space, permeable paving and roof-runoff planters. That makes it a useful place to look for a connected vocabulary rather than one isolated object. The official project description explains intent; it does not supply current monitoring data or turn the park into a flood refuge.",
+        },
+        {
+          question: "There is a grate standing higher than the soil in the planted bed. What is it for?",
+          answer: "That is the overflow. A raised grate, spillway or second channel is the designed route for excess water once the basin is full, and a designed escape route is evidence of capacity limits rather than a contradiction of the sponge idea. Follow it downstream: green measures usually work with street drains, pipes, pumps, rivers or lakes rather than replacing them. Look from the open path.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue exploring",

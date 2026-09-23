@@ -6,7 +6,7 @@ import {
   currentHomepageEmailFormVersion, homepageEmailPrivacyNoticeVersion,
   validateAndNormalizeInquiry, semanticInquiryPayload, canonicalizeJson,
 } from "../../lib/inquiryContract.ts";
-import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourInquirySlugs } from "../../lib/privateTourInquiryContext.ts";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, privateTourInquirySlugs } from "../../lib/privateTourInquiryContext.ts";
 
 const config = { allowedFormVersions: [currentPrivateTourQuoteFormVersion, currentHomepageEmailFormVersion], allowedPrivacyNoticeVersions: [homepageEmailPrivacyNoticeVersion] };
 export const quotePayload = (locale = "en", slug = "beijing-highlights-5-day-private-tour", selection = { packageId: "no-guide", travelers: 4 }) => ({
@@ -28,6 +28,11 @@ test("quote contract retains every valid localized product selection and classic
       if (slug === "zhangjiajie-4-day-private-tour") {
         const value = normalized(quotePayload(locale, slug, null));
         assert.equal(Object.hasOwn(value.productInterest, "selection"), false);
+        for (const packageId of ["selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"]) {
+          const selection = { packageId, travelers: 6 };
+          const selected = normalized(quotePayload(locale, slug, selection));
+          assert.deepEqual(selected.productInterest.selection, selection);
+        }
       }
       for (const packageId of ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided"]) {
         for (const travelers of [2, 4]) {
@@ -35,7 +40,7 @@ test("quote contract retains every valid localized product selection and classic
           if (!selection) continue;
           const input = quotePayload(locale, slug, selection);
           const result = normalized(input);
-          assert.deepEqual(result.productInterest, input.productInterest);
+          assert.deepEqual(result.productInterest, getPrivateTourInquirySubmissionContext(input.productInterest, locale));
           assert.equal(result.travelDate, input.travelDate);
           assert.equal(result.note, input.note);
           assert.equal(result.attribution.landingPath, input.attribution.landingPath);
@@ -68,6 +73,13 @@ test("quote rejects impossible dates, forged context, cross-locale paths and exc
     { contact: { channel: "whatsapp", phoneE164: "+12025550123" } },
     { antiAbuse: { companyWebsite: "robot" } }, { travelers: 6 },
   ]) assert.equal(validateAndNormalizeInquiry({ ...base, ...change }, config).ok, false, JSON.stringify(change));
+
+  const korean = quotePayload("ko", "zhangjiajie-4-day-private-tour", null);
+  const previous = getPrivateTourInquirySubmissionContext(korean.productInterest, "ko");
+  assert.equal(validateAndNormalizeInquiry({ ...korean, productInterest: previous }, config).ok, true);
+  assert.equal(validateAndNormalizeInquiry({ ...korean, productInterest: { ...previous, slug: "beijing-highlights-5-day-private-tour" } }, config).ok, false);
+  assert.equal(validateAndNormalizeInquiry({ ...korean, productInterest: { ...previous, name: "장자제 임의 투어" } }, config).ok, false);
+  assert.equal(validateAndNormalizeInquiry({ ...quotePayload("en", "zhangjiajie-4-day-private-tour", null), productInterest: previous }, config).ok, false);
 });
 
 test("date, notes, product and group participate in retry identity while homepage shape remains unchanged", () => {
@@ -129,11 +141,25 @@ test("actual intake and notification handlers preserve quote fields, replay iden
     assert.equal((await intake(request({ ...base, travelDate: "2026-02-30" }, randomUUID()))).status, 422);
     assert.equal(writes.length, invalidBefore);
 
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const fresh = quotePayload("ko", slug, null);
+      const previous = { ...fresh, productInterest: getPrivateTourInquirySubmissionContext(fresh.productInterest, "ko") };
+      const sameKey = randomUUID();
+      assert.equal((await intake(request(previous, sameKey))).status, 201, `${slug}:old`);
+      assert.deepEqual(writes.at(-1).body.p_product_interest, previous.productInterest);
+      assert.equal((await intake(request(fresh, sameKey))).status, 200, `${slug}:new`);
+      assert.deepEqual(writes.at(-1).body.p_product_interest, previous.productInterest);
+    }
+
     await import(`../functions/notify-inquiries/index.ts?quote=${Date.now()}`); const worker = handler;
     const runWorker = () => worker(new Request("https://project.supabase.co/functions/v1/notify-inquiries", { method: "POST", headers: { "x-worker-secret": env.get("NOTIFICATION_WORKER_SECRET") } }));
     for (const locale of ["en", "zh", "ko"]) {
       for (const isClassic of [false, true]) {
-        const input = isClassic ? quotePayload(locale, "zhangjiajie-4-day-private-tour", null) : quotePayload(locale);
+        const input = isClassic ? quotePayload(locale, "zhangjiajie-4-day-private-tour", { packageId: "selected-city-stay", travelers: 6 }) : quotePayload(locale);
         currentJob = { job_id: randomUUID(), inquiry_id: randomUUID(), public_reference: "HG-TEST", locale, route_id: "private-tour-quote",
           answers: { productInterest: input.productInterest, travelDate: isClassic ? null : input.travelDate, landingPath: input.attribution.landingPath },
           route_snapshot: { kind: "private-tour-quote", ruleVersion: currentPrivateTourQuoteFormVersion },
@@ -142,9 +168,25 @@ test("actual intake and notification handlers preserve quote fields, replay iden
           inquiry_created_at: new Date().toISOString(), first_response_due_at: new Date().toISOString(), lease_token: randomUUID(), row_version: 1, attempt_count: 1 };
         assert.equal((await (await runWorker()).json()).accepted, 1);
         const mail = messages.at(-1); assert.equal(mail.reply_to, currentJob.contact_email);
-        assert.ok(mail.text.includes(input.productInterest.name)); assert.ok(mail.text.includes(input.attribution.landingPath));
-        if (isClassic) { assert.match(mail.text, /Date undecided/); assert.doesNotMatch(mail.text, /Tour selection:/); }
+        assert.ok(mail.text.includes(getPrivateTourInquirySubmissionContext(input.productInterest, locale).name)); assert.ok(mail.text.includes(input.attribution.landingPath));
+        if (isClassic) { assert.match(mail.text, /Date undecided/); assert.ok(mail.text.includes(privateTourInquirySelectionLabel(input.productInterest, locale))); }
         else { assert.ok(mail.text.includes(input.travelDate)); assert.match(mail.html, /Pace &lt;slow&gt; &amp; steady/); assert.doesNotMatch(mail.html, /Pace <slow>/); }
+      }
+    }
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const input = quotePayload("ko", slug, null);
+      for (const productInterest of [
+        getPrivateTourInquirySubmissionContext(input.productInterest, "ko"),
+        input.productInterest,
+      ]) {
+        currentJob = { ...currentJob, job_id: randomUUID(), locale: "ko", answers: {
+          productInterest, travelDate: input.travelDate, landingPath: input.attribution.landingPath,
+        }, note: input.note };
+        assert.equal((await (await runWorker()).json()).accepted, 1, `${slug}:${productInterest.name}`);
       }
     }
     const beforeInvalid = messages.length;

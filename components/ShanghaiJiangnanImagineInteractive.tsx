@@ -20,6 +20,7 @@ import type {
 import { GuideCtaLink } from "./GuideCtaLink";
 import { TourPriceScope } from "./TourPriceScope";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
+import { isJiangnanTour } from "../lib/tourContactDraft";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const interactionCopy: Record<
@@ -330,7 +331,7 @@ function PublishedPrivateTourPriceConsole({
           <span>{copy.otherGroupsBody}</span>
           <GuideCtaLink
             guideId={product.id}
-            href={selectedInquiryHref}
+            href={isJiangnanTour(product.slug) ? inquiryHref : selectedInquiryHref}
             locale={product.locale}
             position="inline"
           >

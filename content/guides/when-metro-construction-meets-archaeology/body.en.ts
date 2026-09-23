@@ -209,6 +209,37 @@ const body = {
       body: "This guide explains an urban process for travellers. It does not give construction instructions, invite access to worksites, evaluate an unannounced discovery, or predict the legal, engineering or timetable outcome of a live project."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about metro archaeology",
+      items: [
+        {
+          question: "Does an archaeological find delay or reroute a metro line?",
+          answer: "Not automatically. Article 46 requires anyone who encounters relics during construction to protect the scene and report immediately, and the heritage authority then attends and issues an opinion through the statutory process. Protecting one work face is not a network shutdown. For service impacts, read the metro operator's live notice rather than inferring a delay from an excavation photograph.",
+        },
+        {
+          question: "Does the law require archaeology before the digging starts?",
+          answer: "Yes, in designated areas. The Cultural Relics Protection Law revised in 2024 and effective from 1 March 2025 requires the provincial heritage authority to organise investigation and exploration in areas designated as potentially containing underground relics, before a local government transfers or allocates the land. A large project that did not go through that step must ask for it first, and the developer budgets for the construction archaeology.",
+        },
+        {
+          question: "Can I go and watch a metro excavation?",
+          answer: "No, and never enter a fenced construction or excavation area. Record the exact line, station and exit named in the report, then look for the heritage authority, archaeology institute or project report rather than a reposted photograph. For somewhere you can actually visit, confirm a museum, park or formal display page, and read on site whether objects are original, relocated, reproduced or shown only through graphics.",
+        },
+        {
+          question: "Will what was found end up on display at the station?",
+          answer: "Not by default. Objects may first go through recording, conservation, research and museum allocation, and in-situ display, a station exhibit or public access is a separate decision from the excavation. What is underground, what the project must do and what the public will see are three different decisions, so a discovery report answers only the first.",
+        },
+        {
+          question: "The station has archaeological imagery - is it a real site?",
+          answer: "Not until the label says so. Ask four things: was the material found here; is it original or a replica; is it still in the position it was excavated from; and which museum or institute interpreted it? If the label is absent or ambiguous, enjoy the design as interpretation and check the archaeological claim later with the named heritage institution.",
+        },
+        {
+          question: "What was found during work on Guangzhou Line 12?",
+          answer: "At the Line 12 Hengfu Road station A entrance, a 150-square-metre excavation found five features - one Western Han tomb, three Southern Dynasties tombs and one Song ash pit - plus 24 artefacts or sets. A June 2025 letter let the excavated area proceed with other procedures while the stop, protect and report duty stayed in force; this bounded hand-back did not clear all of Line 12 at once.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Keep reading the city carefully",

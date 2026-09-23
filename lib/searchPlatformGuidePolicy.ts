@@ -4,6 +4,8 @@ export const destinationEntityIds = {
   xian: "city-xian",
   zhangjiajie: "city-zhangjiajie",
   shanghai: "city-shanghai",
+  jiangsu: "province-jiangsu",
+  suzhou: "city-suzhou",
   chengdu: "city-chengdu",
   guilin: "city-guilin",
   guangzhou: "city-guangzhou",

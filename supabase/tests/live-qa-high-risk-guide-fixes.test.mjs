@@ -96,7 +96,7 @@ test("holiday guide removes the dead MOT citation from body, source log, data an
   assert.match(calendar, /"sourceId": "ndrc-2026-spring-festival-schedule"/u);
   assert.match(log, /Checked at: 2026-09-18/u);
   assert.match(render, /National Development and Reform Commission/u);
-  assert.equal(meta.dateModified, "2026-09-18");
+  assert.equal(meta.dateModified, "2026-09-22");
   assert.equal(meta.sourceReviewedDate, "2026-09-18");
 
   const digest = createHash("sha256").update(hero).digest("hex");
@@ -130,7 +130,7 @@ test("hotel fire guide calls 119 before any non-delaying staff notification", as
     }
   }
   assert.match(log, /call 119 immediately; notify hotel staff only when/u);
-  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-08-31", "2026-08-31"]);
+  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-09-22", "2026-08-31"]);
 });
 
 test("Xiamen guide sends unverified passport numbers to the manual ticket counter", async () => {
@@ -155,7 +155,7 @@ test("Xiamen guide sends unverified passport numbers to the manual ticket counte
     assert.match(body, /xwzx\/zxgg\/32338\.htm"[^\n]{0,160}reviewedAt: "2026-08-13"/u);
     assert.match(body, /wshlk\/chch\/index\.htm"[^\n]{0,160}reviewedAt: "2026-08-13"/u);
   }
-  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-08-31", "2026-08-13"]);
+  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-09-22", "2026-08-13"]);
 });
 
 test("flight complaint guide separates first-line cases from CAAC Consumer Affairs Center clocks", async () => {
@@ -181,7 +181,7 @@ test("flight complaint guide separates first-line cases from CAAC Consumer Affai
   assert.match(log, /Center's seven-working-day clock is not assigned to the first-line airline or issuer case/u);
   assert.doesNotMatch([en, zh, ko, dynamic, log].join("\n"), FIRST_LINE_SEVEN_DAY_CLAIM,
     "a first-line airline or issuer must never inherit the Center's seven-working-day acceptance clock");
-  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-08-31", "2026-08-31"]);
+  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-09-22", "2026-08-31"]);
 });
 
 test("Xi'an–Chengdu guide freezes the full 12306 exception and Chengdu airport exception", async () => {
@@ -255,7 +255,7 @@ test("Xi'an–Chengdu guide freezes the full 12306 exception and Chengdu airport
   assert.match(ko, /환불·지역 항공편 수정은 2026년 8월 31일 재검토, 나머지 출처는 2026년 8월 22~23일 확인/u);
   assert.match(dynamic, /The mistaken-purchase refund and Chengdu regional-flight rows were rechecked 2026-08-31,[\s\S]*unaffected rows retain their earlier review basis/u);
   assert.match(log, /All retrieval timestamps are 2026-08-22[\s\S]*two[\s\S]*correction sources below were retrieved 2026-08-31/u);
-  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-08-31", "2026-08-23"]);
+  assert.deepEqual([meta.dateModified, meta.sourceReviewedDate], ["2026-09-22", "2026-08-23"]);
 });
 
 function fingerprintFailures(samples) {

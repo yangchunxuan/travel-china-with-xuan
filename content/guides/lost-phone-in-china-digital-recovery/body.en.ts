@@ -268,6 +268,37 @@ const body: StructuredPageBody = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Lost-phone questions travellers ask",
+      items: [
+        {
+          question: "My phone was stolen in China. Who do I call?",
+          answer: "Call police on 110 and give the exact event location and facts; China's official visitor guidance directs property-crime reports there. If the phone was simply left in a taxi, train, hotel or attraction, use that operator's official lost-property route instead and keep the trip receipt or booking. A police report preserves a record for an insurer or carrier, but police, the venue, the platform company and the insurer each control a different part of the case.",
+        },
+        {
+          question: "Should I erase my phone remotely right away?",
+          answer: "No. Remote erasure is a later risk decision, not an automatic first tap. Apple says erasure cannot be undone, and after an Android factory reset the device location is no longer shown in Find Hub. Try Lost Mode and safe recovery first, and erase when the data risk outweighs the remaining recovery value.",
+        },
+        {
+          question: "My Alipay and Weixin Pay were on the stolen phone. What should I do?",
+          answer: "Review recent bank, card, Alipay and Weixin Pay activity from official apps or websites on a trusted device, and save evidence of unfamiliar transactions before the view changes. Then freeze or report the underlying cards through the issuer's own risk process: a wallet lock and a card freeze are separate controls, so ask both providers. Use only help links inside the official service or the number printed on the physical card.",
+        },
+        {
+          question: "Someone contacted me saying they found my stolen iPhone. Is that genuine?",
+          answer: "Treat it as a second attack. Apple states that it will never contact you to say a stolen iPhone was found. Do not open a link, share a device passcode, password, backup code or SMS code, or remove a device from Find My because a caller asks. Verify any return through the police or the official lost-property desk.",
+        },
+        {
+          question: "My two-factor codes were only on the lost phone. How long will recovery take?",
+          answer: "Longer than a trip usually allows. Apple says account recovery may take several days or longer and Support cannot shorten the waiting period; Google's 2-Step Verification help says ownership review can take 3-5 business days in the described no-backup situation. Try another signed-in device, another registered number, a saved backup code or a security key first.",
+        },
+        {
+          question: "Can I get my Chinese mobile number back?",
+          answer: "Ask the provider. For a mainland China physical SIM, ask it to suspend the missing SIM and whether the same number can be reissued at an authorised service hall, taking the identity document used for registration. Store location, identity checks, fees and reissue eligibility are provider-specific, so do not permanently cancel the number before checking every account that depends on it.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the recovery",

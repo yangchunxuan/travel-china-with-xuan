@@ -317,6 +317,10 @@ const prices = (
     cnyPerPerson: fourTravellers,
     ...(usdPrices ? { usdPerPerson: usdPrices[1] } : {}),
   },
+  {
+    travelers: 6,
+    cnyPerPerson: fourTravellers - 200,
+  },
 ];
 
 const day = (
@@ -383,15 +387,15 @@ const guidedPackage = (
 
 const standardLabel = l("Private tour", "私家团标准版", "프라이빗 투어");
 const standardSummary = l(
-  "Private vehicle, English-guided sightseeing, arrival and departure transfers, listed adult admission tickets and breakfast-included accommodation. No shopping stops.",
+  "Your private vehicle, English-guided sightseeing, arrival and departure transfers, listed adult admission tickets and accommodation with breakfast. No shopping stops.",
   "包含行程所列私车、英语导游游览、抵达与离开接送、成人基础门票及含早住宿，全程无购物店安排。",
-  "일정에 명시된 전용 차량, 영어 가이드 관광, 도착·출발 이동, 성인 기본 입장권과 조식 포함 숙박이 포함되며 쇼핑 일정은 없습니다.",
+  "일정에 명시된 전용 차량, 영어 가이드 관광, 도착·출발 이동, 성인 기본 입장권, 조식 포함 숙박이 들어 있습니다. 쇼핑 일정은 없습니다.",
 );
 
 const commonBookingNote = l(
-  "The published per-person starting prices cover groups of 2 and 4 travellers; flights are not included. Any other group size requires manual confirmation. Send us your dates, room needs, arrival details and luggage count; we will confirm availability and issue the final quote before payment.",
-  "网页仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数须人工确认。请提供日期、房间需求、到离信息和行李数量；我们会核对酒店、车辆和景点预约情况，再在付款前发出最终报价。",
-  "공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 그 외 인원은 수동 확인이 필요합니다. 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 예약 가능 여부를 확인한 뒤 결제 전 최종 견적을 드립니다.",
+  "The per-person starting prices shown are for groups of 2, 4 and 6 travellers, flights not included; we confirm other group sizes individually. Send us your dates, room needs, arrival details and luggage count, and we will confirm availability and send your final quote before you pay.",
+  "网页只列出 2 人、4 人和 6 人的每人起价，不含往返机票；其他人数我们会单独确认。把日期、房间需求、到离信息和行李数量发给我们，我们先核对酒店、车辆和景点预约情况，再在你付款前发出最终报价。",
+  "표시된 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 따로 확인해 드립니다. 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 예약 가능 여부를 확인한 뒤 결제 전에 최종 견적을 보내 드립니다.",
 );
 
 const commonExclusions = (
@@ -399,9 +403,9 @@ const commonExclusions = (
   extraZh: readonly string[],
   extraKo: readonly string[],
   additionalServices: LocalizedText = l(
-    "Holiday surcharges; late-night, overtime and other services outside the confirmed itinerary",
-    "节假日附加费；确认行程以外的夜间、超时及其他服务",
-    "공휴일 추가금 및 확정 일정에 없는 야간·초과 시간·기타 서비스",
+    "Holiday surcharges; late-night, overtime and other services not in your booked itinerary",
+    "节假日附加费；所订行程以外的夜间、超时及其他服务",
+    "공휴일 추가금, 예약한 일정에 없는 야간·초과 시간·기타 서비스",
   ),
 ): LocalizedStringList =>
   lists(
@@ -409,7 +413,7 @@ const commonExclusions = (
       "International and domestic flights",
       "Lunches and dinners",
       "Personal travel insurance, visas, tips and personal expenses",
-      "Room upgrades or extra single-room requirements",
+      "Room upgrades or extra single rooms",
       additionalServices.en,
       ...extraEn,
     ],
@@ -417,7 +421,7 @@ const commonExclusions = (
       "国际及国内往返机票",
       "午餐和晚餐",
       "个人旅游意外险、签证、司导小费及个人消费",
-      "房型升级或超出基础房间配置的单住需求",
+      "房型升级，或基础房间安排之外的单住需求",
       additionalServices.zh,
       ...extraZh,
     ],
@@ -461,9 +465,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     "상하이의 스카이라인에서 쑤저우 정원과 항저우 서호까지, 전용 이동과 영어 가이드 일정으로 여유 있게 이어갑니다.",
   ),
   summary: l(
-    "A five-night private journey with four guided touring days, breakfast-included Ctrip 4-Diamond–rated accommodation and arrival in Shanghai with departure from Hangzhou.",
+    "Five nights, four guided touring days and breakfast-included Ctrip 4-Diamond–rated hotels, on a private journey that starts in Shanghai and ends in Hangzhou.",
     "5 晚 4 钻含早住宿，D2–D5 英语导游；上海进、杭州出，适合希望一次看完三城又不想频繁自行转车的客人。",
-    "중국 씨트립 기준 4다이아 등급 · 조식 포함 5박, D2~D5 영어 가이드, 상하이 도착·항저우 출발로 구성된 항공권 제외 프라이빗 일정입니다.",
+    "상하이에 도착해 항저우에서 출발하는 프라이빗 일정입니다. 중국 씨트립 기준 4다이아 등급 호텔 조식 포함 5박, D2~D5 영어 가이드가 포함되며 항공권은 별도입니다.",
   ),
   highlights: lists(
     [
@@ -489,14 +493,14 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     day(
       1,
       l(
-        "Arrival buffer in Shanghai",
+        "Arrive in Shanghai and settle in",
         "抵达上海｜把第一天留给落地与适应",
         "상하이 도착｜이동과 적응을 위한 여유",
       ),
       l(
-        "Meet your English-speaking guide and private driver at the confirmed Shanghai airport or railway station and travel directly to the Shanghai hotel with your luggage. The guide assists with arrival and hotel check-in. Day 1 has no fixed sightseeing, leaving room for arrival delays, the transfer into the city and check-in; settle in and stay overnight in Shanghai.",
-        "在已确认的上海机场或车站与英语导游和司机会合，行李随行，私车直接送往上海酒店，由导游协助抵达衔接与入住。D1 不安排固定景点，为航班或列车波动、进城与入住留出余量；安顿后入住上海。",
-        "확정된 상하이 공항 또는 기차역에서 영어 가이드와 기사를 만나 수하물과 함께 전용 차량으로 상하이 호텔에 바로 이동합니다. 가이드가 도착 후 이동과 호텔 체크인을 돕습니다. D1에는 고정 관광을 넣지 않아 도착 지연, 시내 이동과 체크인에 여유를 두며, 이날은 상하이에서 숙박합니다.",
+        "Your English-speaking guide and private driver meet you at Shanghai airport or railway station and take you and your luggage straight to your Shanghai hotel; the guide helps with your arrival and check-in. Day 1 has no fixed sightseeing, leaving room for arrival delays, the drive into the city and check-in; settle in and stay overnight in Shanghai.",
+        "英语导游和司机在上海机场或车站接你，连人带行李，私车直接送到上海酒店，导游协助抵达和入住。D1 不安排固定景点，给航班或列车变动、进城和入住留出余量；安顿好后在上海住下。",
+        "영어 가이드와 기사가 상하이 공항이나 기차역에서 맞이해, 짐과 함께 전용 차량으로 상하이 호텔까지 바로 모셔다 드립니다. 가이드가 도착 후 이동과 호텔 체크인을 도와 드립니다. D1에는 고정 관광을 넣지 않아 도착 지연, 시내 이동과 체크인에 여유를 두며, 이날은 상하이에서 숙박합니다.",
       ),
     ),
     day(
@@ -507,9 +511,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "옛 상하이에서 스카이라인까지",
       ),
       l(
-        "Start from the Shanghai hotel with the English-speaking guide and private vehicle. Visit Yu Garden or the Old City, continue to Lujiazui and finish along the Bund, adjusting the order only for confirmed reservations and local conditions; return to the same Shanghai hotel for the night.",
-        "从上海酒店出发，由英语导游和私车衔接游览。先看豫园或老城厢，再前往陆家嘴，最后走到外滩；具体先后仅按已确认预约和现场情况调整，当晚返回同一家上海酒店。",
-        "상하이 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 예원 또는 구시가지를 본 뒤 루자쭈이로 이동하고 와이탄에서 일정을 마치며, 확정된 예약과 현지 상황에 따라서만 순서를 조정합니다. 관광 후 같은 상하이 호텔로 돌아와 숙박합니다.",
+        "Your English-speaking guide and private vehicle start the day from your Shanghai hotel. Visit Yu Garden or the Old City, continue to Lujiazui and finish along the Bund; the order changes only to suit reservations and local conditions. Back to the same Shanghai hotel for the night.",
+        "英语导游和专车从上海酒店接你出发。先看豫园或老城厢，再去陆家嘴，最后走到外滩；先后顺序只会因预约和现场情况变动。当晚回到同一家上海酒店。",
+        "영어 가이드와 전용 차량으로 상하이 호텔에서 출발합니다. 예원 또는 구시가지를 둘러보고 루자쭈이를 거쳐 와이탄에서 일정을 마칩니다. 순서는 예약과 현지 상황에 따라서만 바뀔 수 있습니다. 관광 후 같은 상하이 호텔로 돌아와 숙박합니다.",
       ),
     ),
     day(
@@ -520,9 +524,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "상하이 반일 후 여유 있게 쑤저우로",
       ),
       l(
-        "Check out of the Shanghai hotel and begin with the confirmed half-day Shanghai visit. Your luggage stays with the agreed intercity arrangement as you continue to Suzhou by the confirmed rail-and-transfer plan or door-to-door vehicle; after arrival, visit either Panmen or Tiger Hill, then Shantang Street, and check in for the night in Suzhou.",
-        "从上海酒店退房后，先完成已确认的上海半日游览。行李按最终书面确认的跨城方案随团衔接，再以高铁加两端接送或门到门车辆前往苏州；抵达后在盘门与虎丘中选择一项，再游览山塘街，当晚入住苏州。",
-        "상하이 호텔에서 체크아웃한 뒤 확정된 상하이 반일 관광부터 진행합니다. 수하물은 최종 서면 확정된 도시 간 이동 계획에 따라 함께 연결하고, 열차와 양쪽 픽업 또는 문 앞까지 가는 차량 중 확정된 방식으로 쑤저우에 이동합니다. 도착 후 판먼과 후추 중 한 곳, 이어 산탕제를 둘러보고 쑤저우에서 숙박합니다.",
+        "Check out of your Shanghai hotel and start with a half-day visit in Shanghai. Then continue to Suzhou with your luggage, by rail with transfers at both ends or by door-to-door vehicle, as agreed for your group. After arrival, visit either Panmen or Tiger Hill, then Shantang Street, and check in for the night in Suzhou.",
+        "上海酒店退房后，先在上海游览半天。之后行李随行，按书面确认的跨城方案前往苏州：高铁加两端接送，或门到门用车。到苏州后，在盘门和虎丘中选一处游览，再逛山塘街，当晚入住苏州。",
+        "상하이 호텔에서 체크아웃하고 먼저 상하이 반일 관광을 합니다. 이어 서면으로 확정된 도시 간 이동 방식(열차와 양쪽 픽업, 또는 문 앞까지 가는 차량)으로 짐과 함께 쑤저우에 갑니다. 도착 후 판먼과 후추 중 한 곳을 보고, 산탕제를 둘러본 뒤 쑤저우에서 숙박합니다.",
       ),
     ),
     day(
@@ -533,9 +537,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "쑤저우 정원과 골목, 이어서 항저우",
       ),
       l(
-        "Check out of the Suzhou hotel and keep your luggage with the confirmed transfer arrangement. Visit the Humble Administrator's Garden, Suzhou Museum and Pingjiang Road in the reservation-compatible order, then continue to Hangzhou by the confirmed intercity plan and check in there for the night.",
-        "从苏州酒店退房，行李按已确认的跨城接驳方案随团处理。拙政园、苏州博物馆和平江路按预约可执行的顺序游览，完成苏州核心内容后再前往杭州，当晚入住杭州。",
-        "쑤저우 호텔에서 체크아웃하고 수하물은 확정된 도시 간 이동 방식에 따라 함께 처리합니다. 졸정원, 쑤저우박물관과 핑장루를 예약 가능한 순서로 둘러본 뒤 확정된 이동 계획으로 항저우에 가서 숙박합니다.",
+        "Check out of your Suzhou hotel; your luggage travels with the transfer arranged for you. Visit the Humble Administrator's Garden, Suzhou Museum and Pingjiang Road in the order the reservations allow, then continue to Hangzhou as planned and check in there for the night.",
+        "苏州酒店退房，行李按跨城接驳方案随行。拙政园、苏州博物馆和平江路按预约情况安排先后，看完苏州的重点再去杭州，当晚入住杭州。",
+        "쑤저우 호텔에서 체크아웃하고, 짐은 정해진 이동 방식에 따라 함께 이동합니다. 졸정원, 쑤저우박물관, 핑장루를 예약에 따라 가능한 순서로 둘러본 뒤 항저우로 이동해 숙박합니다.",
       ),
     ),
     day(
@@ -546,9 +550,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "링인사·차 문화·서호",
       ),
       l(
-        "Leave the Hangzhou hotel with the guide and private vehicle for Lingyin–Feilai Peak and Lingyin Temple. Continue to the confirmed choice of Longjing Village or the China National Tea Museum, then finish at the West Lake shore and with the listed cruise before returning to the same Hangzhou hotel.",
-        "从杭州酒店出发，由导游和私车前往灵隐飞来峰与灵隐寺；随后游览已确认的龙井村或中国茶叶博物馆其中一项，再到西湖湖岸并乘坐行程所列游船，当晚返回同一家杭州酒店。",
-        "항저우 호텔에서 가이드와 전용 차량으로 출발해 링인 페이라이펑과 링인사를 둘러봅니다. 이어 확정된 룽징촌 또는 중국차엽박물관 중 한 곳을 방문하고, 서호 호숫가와 일정에 포함된 유람선으로 마친 뒤 같은 항저우 호텔로 돌아갑니다.",
+        "Your guide and private vehicle take you from your Hangzhou hotel to Lingyin–Feilai Peak and Lingyin Temple. Next is Longjing Village or the China National Tea Museum—one of the two, as set out in your written confirmation—then the West Lake shore and the listed cruise, before returning to the same Hangzhou hotel.",
+        "导游和专车从杭州酒店出发，带你去灵隐飞来峰和灵隐寺；之后游览龙井村或中国茶叶博物馆其中一处（以书面确认单为准），再到西湖边乘坐行程所列游船，当晚回同一家杭州酒店。",
+        "가이드와 전용 차량으로 항저우 호텔에서 출발해 링인 페이라이펑과 링인사를 둘러봅니다. 이어 룽징촌과 중국차엽박물관 중 서면 확인서에 적힌 한 곳을 방문하고, 서호 호숫가와 일정에 포함된 유람선으로 하루를 마친 뒤 같은 항저우 호텔로 돌아갑니다.",
       ),
     ),
     day(
@@ -559,31 +563,31 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "여유 있게 항저우 출발",
       ),
       l(
-        "Check out of the Hangzhou hotel and travel with your luggage by private vehicle to the confirmed Hangzhou airport or railway station. There is no fixed sightseeing on departure day, preserving a practical buffer for check-out, city traffic and the confirmed flight or train.",
-        "从杭州酒店退房，行李随行，由私车送往已确认的杭州机场或车站。返程日不安排固定景点，为退房、城市交通以及已确认的航班或列车保留实际缓冲。",
-        "항저우 호텔에서 체크아웃하고 수하물과 함께 전용 차량으로 확정된 항저우 공항 또는 기차역에 이동합니다. 출발일에는 고정 관광을 넣지 않아 체크아웃, 도심 교통과 확정된 항공편 또는 열차에 필요한 여유를 둡니다.",
+        "Check out and travel with your luggage by private vehicle to Hangzhou airport or railway station. There is no fixed sightseeing on departure day, leaving room for check-out, city traffic and your flight or train.",
+        "杭州酒店退房后，连人带行李由专车送到杭州机场或车站。返程日不安排固定景点，给退房、市区交通和你的航班或列车留出余量。",
+        "항저우 호텔에서 체크아웃한 뒤 짐과 함께 전용 차량으로 항저우 공항이나 기차역까지 이동합니다. 출발일에는 고정 관광을 넣지 않아 체크아웃, 도심 교통, 항공편이나 열차에 필요한 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Five nights in breakfast-included Ctrip 4-Diamond–rated rooms, based on twin sharing. For an odd-numbered group, the listed base arrangement includes one single-occupancy room.",
-    "5 晚携程 4 钻酒店双标含早，默认两人一间；奇数人数的基础配置含 1 间单住。具体酒店与房型将在预订前确认。",
+    "Five nights with breakfast at Ctrip 4-Diamond–rated hotels, based on two people sharing a room. For an odd-numbered group, the listed base arrangement includes one room for one person.",
+    "5 晚携程 4 钻酒店双标含早，默认两人一间；人数为单数时，基础安排含 1 间单住。具体酒店和房型，预订前会和你确认。",
     "중국 씨트립 기준 4다이아 등급 호텔 5박과 조식이 포함되며 2인 1실 기준입니다. 홀수 인원은 기본 배정에 1인 사용 객실 1실이 포함됩니다.",
   ),
   serviceNote: l(
-    "Day 1 includes private arrival pickup with English-speaking guide assistance and hotel check-in support; Day 6 includes a private driver departure transfer. Days 2–5 include an English-speaking guide, private air-conditioned vehicles, listed adult admission tickets, cross-city transport and bottled water on each touring day. Groups of 2–3 usually use rail with private transfers at both ends; groups of 4–9 usually use a compliant door-to-door vehicle, confirmed for the actual luggage.",
+    "On Day 1, your English-speaking guide meets you on arrival with a private vehicle and helps you check in; Day 6 is a private driver transfer for your departure. Days 2–5 include an English-speaking guide, private air-conditioned vehicles, listed adult admission tickets, cross-city transport and bottled water on each touring day. Groups of 2–3 usually travel by rail with private transfers at both ends; groups of 4–9 usually take a compliant door-to-door vehicle, planned around your luggage.",
     "含 D1 私车接机/站及英语导游迎接、协助入住，D6 由司机私车送机/站；D2–D5 含英语导游、行程内空调私车、跨城交通、行程所列成人基础门票与预约，以及各游览日的瓶装饮用水。2–3 人通常采用高铁加两端私车接送；4–9 人通常采用门到门合规车辆，最终按人数和行李确认。",
     "D1 전용 차량 픽업과 영어 가이드의 도착·호텔 체크인 지원, D6 기사의 전용 차량 샌딩이 포함됩니다. D2~D5에는 영어 가이드, 일정 내 에어컨이 있는 전용 차량, 도시 간 이동, 성인 기본 입장권과 관광일마다 제공되는 생수가 포함됩니다. 2~3명은 보통 열차와 양쪽 전용 픽업을, 4~9명은 인원과 수하물에 맞춘 합법적인 전용 차량을 이용합니다.",
   ),
   exclusions: commonExclusions(
-    ["Any attraction or ticket not listed in the confirmed itinerary"],
-    ["确认行程之外的景点、门票或体验"],
-    ["확정 일정에 명시되지 않은 관광지, 입장권 또는 체험"],
+    ["Any attraction or ticket not listed in your written itinerary"],
+    ["行程单上没有列出的景点、门票或体验"],
+    ["일정표에 없는 관광지, 입장권 또는 체험"],
   ),
   bookingNote: l(
-    "The published per-person starting prices cover groups of 2 and 4 travellers; flights are not included. For any other group size, send us your dates, room needs, arrival details and luggage count so we can check the actual rooms and vehicle before issuing a written quote.",
-    "网页仅公开 2 人和 4 人的每人起价，往返机票另计。其他人数请提供日期、房间需求、到离信息和行李数量；我们会按实际房间与车型重新核对，并在付款前发出书面报价。",
-    "공개된 1인 시작가는 2명과 4명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 실제 객실과 차량을 다시 확인해 결제 전 서면 견적을 드립니다.",
+    "Per-person starting prices are shown for groups of 2, 4 and 6 travellers; flights are not included. For any other group size, send us your dates, room needs, arrival details and luggage count, and we will check the actual rooms and vehicle before sending you a written quote.",
+    "页面只列出 2 人、4 人和 6 人的每人起价，往返机票另计。其他人数，请把日期、房间需求、到离信息和行李数量发给我们；我们会按实际房间和车型重新核对，付款前给你发书面报价。",
+    "공개된 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원은 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 실제 객실과 차량을 다시 확인해 결제 전 서면 견적을 드립니다.",
   ),
   heroImage: image(
     "/images/destinations/shanghai/hero-1600.webp",
@@ -623,9 +627,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
         "메이지아우 차밭의 오래된 나무 아래 돌길과 차나무 밭",
       ),
       l(
-        "The Hangzhou day includes one confirmed tea stop before West Lake.",
-        "杭州游览日在西湖之前安排一处已确认的茶文化停留。",
-        "항저우 관광일에는 서호에 앞서 확정된 차 문화 장소 한 곳을 방문합니다.",
+        "The Hangzhou day includes one tea stop before West Lake.",
+        "杭州游览日，去西湖之前会先到一处茶文化地点。",
+        "항저우 관광일에는 서호에 가기 전 차 문화 장소 한 곳을 방문합니다.",
       ),
     ),
   ],
@@ -641,9 +645,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
           "이른 아침 조용한 와이탄 수변 산책로와 황푸강",
         ),
         l(
-          "The photograph introduces the Shanghai arrival city; the actual airport or station transfer follows the confirmed booking.",
-          "照片用于呈现抵达城市上海；实际机场或车站接送按订单确认。",
-          "사진은 도착 도시 상하이를 보여 주며 실제 공항·역 이동은 예약에 따라 확정합니다.",
+          "Shanghai, your arrival city; the airport or station pickup follows your booking.",
+          "抵达城市上海；接机或接站按你的订单安排。",
+          "도착 도시 상하이. 공항·역 픽업은 예약 내용에 따라 진행합니다.",
         ),
       ),
     ),
@@ -677,9 +681,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
           "쑤저우 판먼 성벽과 수로",
         ),
         l(
-          "Panmen is one of the confirmed first-look choices after arriving in Suzhou.",
-          "盘门是抵达苏州后可确认选择的首站之一。",
-          "판먼은 쑤저우 도착 후 확정할 수 있는 첫 방문지 중 하나입니다.",
+          "Panmen is one of the first-stop options after you arrive in Suzhou.",
+          "盘门是抵达苏州后的首站选项之一。",
+          "판먼은 쑤저우 도착 후 첫 방문지 후보 중 하나입니다.",
         ),
       ),
     ),
@@ -711,9 +715,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
           "페이라이펑 석회암 벽면의 불교 조각",
         ),
         l(
-          "The Hangzhou sightseeing day begins at Feilai Peak and Lingyin Temple before the confirmed tea stop and West Lake.",
-          "杭州游览日从飞来峰与灵隐寺开始，再前往已确认的茶文化地点和西湖。",
-          "항저우 관광일은 페이라이펑과 링인사에서 시작해 확정된 차 문화 장소와 서호로 이어집니다.",
+          "The Hangzhou sightseeing day begins at Feilai Peak and Lingyin Temple, then moves on to a tea stop and West Lake.",
+          "杭州游览日从飞来峰和灵隐寺开始，再去茶文化地点和西湖。",
+          "항저우 관광일은 페이라이펑과 링인사에서 시작해 차 문화 장소와 서호로 이어집니다.",
         ),
       ),
     ),
@@ -728,9 +732,9 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
           "항저우동역 대합실",
         ),
         l(
-          "Rail departures use the confirmed station; airport transfers follow the confirmed flight instead.",
-          "乘高铁按确认车站送站；乘飞机则按确认航班送往机场。",
-          "열차는 확정된 역으로, 항공편은 확정된 항공편에 맞춰 공항으로 이동합니다.",
+          "By train, we take you to your station; by air, the airport transfer follows your flight.",
+          "坐高铁就送到你的车站，坐飞机就按你的航班送机。",
+          "열차는 해당 역으로, 항공편은 비행 시간에 맞춰 공항으로 모셔다 드립니다.",
         ),
       ),
     ),
@@ -744,11 +748,12 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
       prices: [
         { travelers: 2, cnyPerPerson: 7436, usdPerPerson: 1144 },
         { travelers: 4, cnyPerPerson: 5421, usdPerPerson: 834 },
+        { travelers: 6, cnyPerPerson: 5221 },
       ],
     },
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
 };
 
 const chengdu: PrivateTourProduct = {
@@ -802,17 +807,17 @@ const chengdu: PrivateTourProduct = {
       1,
       l("Arrive in Chengdu", "抵达成都", "청두 도착"),
       l(
-        "Meet the English-speaking guide and driver at the confirmed Chengdu airport or railway station and travel with your luggage in a private air-conditioned vehicle directly to the Chengdu hotel. The guide assists with pickup and hotel check-in. No fixed sightseeing is planned, leaving arrival and check-in unhurried; stay overnight in Chengdu.",
-        "在已确认的成都机场或车站与英语导游和司机会合，行李随行，乘空调私车直接前往成都酒店。导游协助接机或接站及酒店入住。当天不安排固定景点，为抵达与入住留出余量；当晚入住成都。",
-        "확정된 청두 공항 또는 기차역에서 영어 가이드와 기사를 만나 수하물과 함께 에어컨을 갖춘 전용 차량으로 청두 호텔에 바로 이동합니다. 가이드가 공항 또는 역 픽업과 호텔 체크인을 돕습니다. 이날은 고정 관광을 넣지 않아 도착과 체크인에 여유를 두며, 청두에서 숙박합니다.",
+        "Your English-speaking guide and driver meet you at Chengdu airport or railway station and take you and your luggage straight to your Chengdu hotel in a private air-conditioned vehicle. The guide helps with pickup and hotel check-in. There is no set sightseeing today, so arrival and check-in are unhurried; touring starts tomorrow with the pandas.",
+        "英语导游和司机在成都机场或车站接你，连人带行李乘空调专车直接送到成都酒店，导游协助接机或接站，以及酒店入住。当天不安排固定景点，从容抵达、入住休息，第2天再去看熊猫。",
+        "영어 가이드와 기사가 청두 공항이나 기차역에서 맞이해 짐과 함께 에어컨을 갖춘 전용 차량으로 청두 호텔까지 바로 모셔다 드립니다. 가이드가 픽업과 호텔 체크인을 도와 드립니다. 이날은 정해진 관광 일정이 없으니 여유 있게 도착하고 체크인하세요. 본격적인 일정은 다음 날 판다기지에서 시작합니다.",
       ),
     ),
     day(
       2,
       l("Pandas and People's Park", "熊猫与人民公园", "판다와 인민공원"),
       l(
-        "Start from the Chengdu hotel with the English-speaking guide and private vehicle for an early visit to Chengdu Research Base of Giant Panda Breeding. Continue to People's Park and its teahouse setting, then return to the same Chengdu hotel for the night.",
-        "从成都酒店出发，由英语导游和私车前往成都大熊猫繁育研究基地安排早场游览；随后回到市区游览人民公园并体验茶馆，当晚返回同一家成都酒店。",
+        "Your English-speaking guide and private vehicle take you from the hotel to Chengdu Research Base of Giant Panda Breeding for an early visit. Afterwards, continue to People's Park and its teahouse, then return to the same Chengdu hotel for the night.",
+        "英语导游和专车从成都酒店出发，带你早场游览成都大熊猫繁育研究基地；随后回到市区，逛人民公园、体验茶馆，当晚回到同一家成都酒店。",
         "청두 호텔에서 영어 가이드와 전용 차량으로 출발해 이른 시간 청두 판다번식연구기지를 둘러봅니다. 이어 인민공원과 찻집을 경험한 뒤 같은 청두 호텔로 돌아와 숙박합니다.",
       ),
     ),
@@ -820,34 +825,34 @@ const chengdu: PrivateTourProduct = {
       3,
       l("Sanxingdui Museum", "三星堆博物馆", "싼싱두이박물관"),
       l(
-        "Leave the Chengdu hotel with the guide and private vehicle for Sanxingdui Museum. Give the confirmed museum visit the main part of the day, then travel back to Chengdu and stay at the same hotel.",
-        "从成都酒店出发，由导游和私车前往三星堆博物馆，把当天主要时间留给已确认的博物馆游览；结束后乘车返回成都，继续入住同一家酒店。",
-        "청두 호텔에서 가이드와 전용 차량으로 싼싱두이박물관에 이동해 확정된 박물관 관람에 이날의 주요 시간을 사용합니다. 관람 후 청두로 돌아와 같은 호텔에서 숙박합니다.",
+        "Your guide and private vehicle take you from your Chengdu hotel to Sanxingdui Museum, where you spend the main part of the day. Afterwards, travel back to Chengdu and the same hotel.",
+        "导游和专车从成都酒店带你去三星堆博物馆，当天的主要时间都留给博物馆；参观结束后返回成都，继续住同一家酒店。",
+        "가이드와 전용 차량으로 청두 호텔에서 싼싱두이박물관에 가서, 이날의 주요 시간을 박물관 관람에 씁니다. 관람 후 청두로 돌아와 같은 호텔에서 숙박합니다.",
       ),
     ),
     day(
       4,
       l("Dujiangyan", "都江堰", "두장옌"),
       l(
-        "Start at the Chengdu hotel and travel by private vehicle to Dujiangyan. Visit the irrigation system and then Guanxian Ancient Town in the confirmed order, before returning to the same Chengdu hotel for the final night.",
-        "从成都酒店出发，乘私车前往都江堰；按已确认顺序游览都江堰水利工程与灌县古城，结束后返回同一家成都酒店，入住最后一晚。",
-        "청두 호텔에서 전용 차량으로 두장옌에 이동합니다. 확정된 순서에 따라 두장옌 수리시설과 관현고성을 둘러본 뒤 같은 청두 호텔로 돌아와 마지막 밤을 보냅니다.",
+        "A private vehicle takes you from your Chengdu hotel to Dujiangyan. See the irrigation system, then Guanxian Ancient Town, in the order set out in your written confirmation, and return to the same Chengdu hotel for your final night.",
+        "专车从成都酒店送你去都江堰，按书面确认的顺序游览都江堰水利工程和灌县古城，之后回到同一家成都酒店，住最后一晚。",
+        "전용 차량으로 청두 호텔에서 두장옌으로 갑니다. 서면 확인서에 적힌 순서대로 두장옌 수리시설과 관현고성을 둘러본 뒤, 같은 청두 호텔로 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
       l("Depart Chengdu", "成都返程", "청두 출발"),
       l(
-        "Check out of the Chengdu hotel and travel with your luggage by private air-conditioned vehicle to the confirmed airport or railway station, with an English-speaking guide to assist with the departure transfer. No fixed sightseeing is planned, preserving the departure buffer.",
-        "从成都酒店退房，行李随行，由司机驾驶空调私车送往已确认的机场或车站，英语导游随行协助返程接送。当天不安排固定景点，为返程保留必要余量。",
-        "청두 호텔에서 체크아웃하고 수하물과 함께 에어컨을 갖춘 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 영어 가이드가 동행하며 출발을 위한 이동을 돕습니다. 이날은 고정 관광을 넣지 않아 출발에 필요한 여유를 둡니다.",
+        "Check out of your Chengdu hotel and travel with your luggage by private air-conditioned vehicle to the airport or railway station, with an English-speaking guide to help with the transfer. There is no set sightseeing today, leaving time in hand for your departure.",
+        "从成都酒店退房，行李随车，司机开空调专车送你去机场或车站，英语导游随行协助送机或送站。当天不安排固定景点，为返程留出余量。",
+        "청두 호텔에서 체크아웃한 뒤 짐과 함께 에어컨을 갖춘 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드가 동행해 출발 이동을 도와 드립니다. 이날은 정해진 관광 일정을 넣지 않아 출발에 필요한 시간 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Chengdu hotel, based on twin sharing. Room arrangements for group sizes other than the published 2- and 4-traveller tiers are confirmed manually.",
-    "成都 4 晚携程 4 钻酒店双标含早，页面公开的 2 人和 4 人档默认两人一间；其他人数的房间配置须人工确认。",
-    "청두에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Four nights in a Ctrip 4-Diamond–rated Chengdu hotel with breakfast, based on twin sharing. For group sizes other than the published 2-, 4- and 6-traveller prices, we confirm the room arrangement for your group individually.",
+    "成都 4 晚携程 4 钻酒店双标含早，页面公开的 2 人、4 人和 6 人价按两人一间计；其他人数的房间安排，我们会人工单独为你确认。",
+    "청두의 중국 씨트립 기준 4다이아 등급 호텔에서 조식 포함 4박합니다. 공개된 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 저희가 직접 확인해 드립니다.",
   ),
   serviceNote: l(
     "Private driver and air-conditioned vehicle transfers on Days 1 and 5, with an English-speaking guide for arrival and departure assistance; English guide and private air-conditioned vehicle on Days 2–4. Listed adult admission tickets and attraction transport are included. No shopping stops.",
@@ -868,9 +873,9 @@ const chengdu: PrivateTourProduct = {
       "청두 자이언트판다 번식연구기지의 자이언트판다",
     ),
     l(
-      "The real base photograph identifies the Day 2 venue; animal visibility and viewing conditions are never guaranteed.",
-      "真实照片确认的是 D2 所到的成都熊猫基地；不承诺看到特定熊猫或固定观赏状态。",
-      "실제 사진은 D2에 방문하는 청두 판다기지를 보여 주며, 특정 판다나 관람 상태를 보장하지 않습니다.",
+      "A real photo of Chengdu Panda Base, where you go on Day 2. Panda sightings and viewing conditions vary from day to day.",
+      "真实照片：D2 要去的成都熊猫基地。能看到哪只熊猫、观赏状态如何，要看当天情况。",
+      "D2에 방문하는 청두 판다기지의 실제 사진입니다. 볼 수 있는 판다와 관람 상태는 그날 상황에 따라 다릅니다.",
     ),
     1600,
     1000,
@@ -886,8 +891,8 @@ const chengdu: PrivateTourProduct = {
       ),
       l(
         "Tea-house time shows the slower everyday rhythm that makes Chengdu a comfortable base.",
-        "茶馆时间呈现成都适合作为旅行基地的日常慢节奏。",
-        "찻집 시간은 청두를 편안한 여행 거점으로 만드는 느린 일상을 보여 줍니다.",
+        "茶馆里的日常慢节奏，让成都很适合做旅行落脚点。",
+        "찻집에서 보내는 느긋한 일상이 청두를 편안한 여행 거점으로 만들어 줍니다.",
       ),
     ),
   ],
@@ -903,9 +908,9 @@ const chengdu: PrivateTourProduct = {
           "청두 도심의 지붕 있는 다리와 강 풍경",
         ),
         l(
-          "A central Chengdu river view introduces the overnight base; the exact airport or station transfer is confirmed for the booking.",
-          "用成都中心城区河景认识住宿基地；实际机场或车站接送按订单确认。",
-          "청두 도심의 강 풍경으로 숙박 거점을 소개하며, 실제 공항 또는 역 이동은 예약별로 확정합니다.",
+          "A river view in central Chengdu, your base for the stay. Your exact airport or station transfer is confirmed with your booking.",
+          "成都中心城区河景，这几晚都住在成都；具体从哪个机场或车站接送，按你的订单确认。",
+          "이번 여행의 숙박 거점, 청두 도심의 강 풍경입니다. 공항 또는 역 이동은 예약 내용에 맞춰 확정합니다.",
         ),
         1200,
         750,
@@ -922,9 +927,9 @@ const chengdu: PrivateTourProduct = {
           "청두 판다기지 조경 구역의 황금색 판다 조형물",
         ),
         l(
-          "This photograph shows a sculpture, not a live panda; the itinerary visits the real-animal enclosures early in the day.",
-          "照片展示的是园区雕塑，不是真熊猫；当天早场游览真实动物展区。",
-          "사진은 실제 판다가 아닌 기지의 조형물이며, 일정은 이른 시간 실제 판다 방사장을 방문합니다.",
+          "A sculpture, not a live panda—you visit the real panda enclosures early in the day.",
+          "照片里是园区雕塑，不是真熊猫；当天早场去真熊猫的展区参观。",
+          "사진은 실제 판다가 아닌 기지의 조형물입니다. 실제 판다 방사장은 이른 시간에 둘러봅니다.",
         ),
       ),
     ),
@@ -939,9 +944,9 @@ const chengdu: PrivateTourProduct = {
           "싼싱두이 신관 외관과 입장 광장",
         ),
         l(
-          "The photograph identifies the new museum arrival setting; admission inventory and gallery order are confirmed separately.",
-          "照片确认的是三星堆新馆到达环境；门票库存与展厅顺序另行确认。",
-          "사진은 싼싱두이 신관의 도착 공간을 보여 주며, 입장권 재고와 전시 동선은 별도로 확인합니다.",
+          "Where you arrive at the new Sanxingdui Museum. Ticket availability and the gallery order are confirmed separately.",
+          "三星堆新馆的到达区域。门票能否订到、展厅参观顺序另行确认。",
+          "싼싱두이 신관에 도착하면 보이는 공간입니다. 입장권 예약 가능 여부와 전시 관람 순서는 별도로 확인합니다.",
         ),
       ),
     ),
@@ -956,9 +961,9 @@ const chengdu: PrivateTourProduct = {
           "두장옌 수리시설과 강 계곡 전경",
         ),
         l(
-          "The landscape view establishes Dujiangyan's river-valley scale; internal routes and attraction transport are confirmed for the visit.",
-          "全景用于呈现都江堰河谷尺度；景区内部路线与景交按实际游览确认。",
-          "전경은 두장옌 강 계곡의 규모를 보여 주며, 내부 동선과 관광지 이동은 방문 조건에 맞춰 확정합니다.",
+          "Dujiangyan's river valley, to give a sense of its scale. Routes within the site and attraction transport are confirmed for your visit.",
+          "都江堰河谷全景，感受一下它的规模。景区内的游览路线和景交按实际游览确认。",
+          "두장옌 강 계곡의 규모를 한눈에 보여 주는 전경입니다. 내부 동선과 관광지 내 이동은 방문 조건에 맞춰 확정합니다.",
         ),
         1200,
         750,
@@ -975,8 +980,8 @@ const chengdu: PrivateTourProduct = {
           "청두 IFS와 도심 야간 교통",
         ),
         l(
-          "A final city view closes the stay before the confirmed airport or railway-station transfer; it does not identify the departure node.",
-          "用成都城市夜景为旅程收尾，再按订单送往机场或车站；画面不代表具体出发节点。",
+          "One last look at Chengdu before your transfer to the airport or railway station. The photo does not show your departure point.",
+          "用这张成都夜景为旅程收尾，之后按订单送你去机场或车站；照片并非实际出发地点。",
           "청두 도심 야경으로 여정을 마친 뒤 예약에 맞춰 공항 또는 기차역으로 이동합니다. 사진은 실제 출발 지점을 뜻하지 않습니다.",
         ),
       ),
@@ -992,7 +997,7 @@ const chengdu: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const xian: PrivateTourProduct = {
@@ -1046,27 +1051,27 @@ const xian: PrivateTourProduct = {
       1,
       l("Arrive in Xi'an", "抵达西安", "시안 도착"),
       l(
-        "Meet the driver at the confirmed Xi'an airport or railway station and take your luggage directly to the central Xi'an hotel by private vehicle. No guide or fixed sightseeing is planned; settle in and stay overnight in Xi'an.",
-        "在已确认的西安机场或车站与司机会合，行李随行，乘私车直接前往西安市区酒店。当天不安排导游和固定景点；安顿后入住西安。",
-        "확정된 시안 공항 또는 기차역에서 기사를 만나 수하물과 함께 전용 차량으로 시안 도심 호텔에 바로 이동합니다. 이날은 가이드와 고정 관광을 넣지 않으며 시안에서 숙박합니다.",
+        "Day 1 is yours. Our driver meets you at Xi'an airport or railway station and takes you and your luggage straight to your hotel in central Xi'an. No guide or sightseeing today, so you can settle in.",
+        "第1天轻松抵达：司机在西安机场或车站接你，连人带行李直接送到市区酒店。当天不安排导游和景点，好好安顿休息。",
+        "첫날은 쉬어 가는 날입니다. 기사가 시안 공항이나 기차역에서 맞이해 짐과 함께 시안 도심 호텔까지 바로 모셔다 드립니다. 이날은 가이드와 관광 일정이 없으니 편하게 체크인하세요.",
       ),
     ),
     day(
       2,
       l("City Wall and Tang Xi'an", "城墙与盛唐西安", "성벽과 당나라 시안"),
       l(
-        "Start from the Xi'an hotel with the English-speaking guide and private vehicle. Visit Xi'an City Wall, continue to the Giant Wild Goose Pagoda square and then Grand Tang Mall in the reservation-compatible order, before returning to the same Xi'an hotel.",
-        "从西安酒店出发，由英语导游和私车衔接游览西安城墙，再前往大雁塔广场与大唐不夜城；具体先后按预约可执行情况确认，当晚返回同一家西安酒店。",
-        "시안 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 시안 성벽, 대안탑 광장과 대당불야성을 예약 가능한 순서로 둘러본 뒤 같은 시안 호텔로 돌아옵니다.",
+        "Your English-speaking guide and private vehicle take you to Xi'an City Wall, the Giant Wild Goose Pagoda square and Grand Tang Mall, in the order your reservations allow. Back to the same Xi'an hotel afterwards.",
+        "英语导游和专车带你游览西安城墙，再去大雁塔广场和大唐不夜城；具体先后看预约情况安排，当晚回到同一家西安酒店。",
+        "영어 가이드와 전용 차량으로 시안 성벽을 둘러보고 대안탑 광장과 대당불야성으로 이어갑니다. 순서는 예약 상황에 따라 정하며, 일정을 마치면 같은 시안 호텔로 돌아옵니다.",
       ),
     ),
     day(
       3,
       l("Terracotta Warriors", "兵马俑完整日", "병마용 종일 일정"),
       l(
-        "Leave the Xi'an hotel by private vehicle for Lintong. Visit the Terracotta Warriors and Huaqing Palace in the order supported by the confirmed reservations, then travel back to Xi'an and stay at the same hotel.",
-        "从西安酒店乘私车前往临潼，兵马俑与华清宫按已确认预约可执行的顺序游览；结束后乘车返回西安，继续入住同一家酒店。",
-        "시안 호텔에서 전용 차량으로 린퉁에 이동합니다. 병마용과 화청궁을 확정된 예약에 맞는 순서로 둘러본 뒤 시안으로 돌아와 같은 호텔에서 숙박합니다.",
+        "Your private vehicle takes you from the hotel to Lintong for the Terracotta Warriors and Huaqing Palace, visited in the order your reservations allow. Afterwards, back to Xi'an and the same hotel.",
+        "专车送你去临潼游览兵马俑和华清宫，先后顺序按预约情况安排；结束后回到西安，继续住同一家酒店。",
+        "전용 차량으로 린퉁에 가서 병마용과 화청궁을 둘러봅니다. 순서는 예약 상황에 따라 정하며, 관람 후 시안으로 돌아와 같은 호텔에서 숙박합니다.",
       ),
     ),
     day(
@@ -1077,25 +1082,25 @@ const xian: PrivateTourProduct = {
         "회민거리와 시안박물원 단지",
       ),
       l(
-        "Begin at the Xi'an hotel and use the guide, walking sections and private vehicle to connect the Great Mosque and Muslim Quarter. Continue to the Xi'an Museum complex, whose grounds include the museum building, Jianfu Temple site and Small Wild Goose Pagoda heritage area. The written confirmation will state which areas are open and included on the visit date, before the return to the same hotel for the final night.",
-        "从西安酒店出发，由导游带领步行游览大清真寺与回民街，需要用车的路段由私车衔接；随后游览西安博物院景区，该院区由博物馆展馆、荐福寺遗址和小雁塔历史文化片区组成。书面确认会写明出行当天开放并纳入行程的具体区域，游览后返回同一家酒店。",
-        "시안 호텔에서 출발해 가이드와 함께 대청진사와 회민거리를 걷고, 차량이 필요한 구간은 전용 차량으로 연결합니다. 이어 박물관 전시관, 젠푸사 유적과 소안탑 역사문화 구역으로 구성된 시안박물원 단지를 방문합니다. 방문일에 개방되고 일정에 포함되는 구역은 서면 확인서에 명시하며, 관람 후 같은 호텔로 돌아와 마지막 밤을 보냅니다.",
+        "Your guide takes you on foot through the Great Mosque and Muslim Quarter, with the private vehicle for the stretches that need it. Then on to the Xi'an Museum complex, whose grounds include the museum building, Jianfu Temple site and Small Wild Goose Pagoda heritage area; your written confirmation lists which areas are open and included on your visit date. Back to the same hotel for your final night.",
+        "导游带你步行游览大清真寺和回民街，需要用车的路段由专车衔接；随后去西安博物院景区，院内有博物馆展馆、荐福寺遗址和小雁塔历史文化片区。出行当天开放并纳入行程的区域，会写在书面确认单里。游览后回到同一家酒店。",
+        "가이드와 함께 대청진사와 회민거리를 걸어서 둘러보고, 차량이 필요한 구간은 전용 차량으로 이동합니다. 이어 박물관 전시관, 젠푸사 유적, 소안탑 역사문화 구역이 있는 시안박물원 단지를 방문합니다. 방문일에 개방되고 일정에 포함되는 구역은 서면 확인서에 적어 드리며, 관람 후 같은 호텔로 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
       l("Depart Xi'an", "西安返程", "시안 출발"),
       l(
-        "Check out of the Xi'an hotel and take your luggage by private vehicle to the confirmed airport or railway station. No guide or fixed sightseeing is planned, leaving room for the confirmed departure.",
-        "从西安酒店退房，行李随行，由私车送往已确认的机场或车站。当天不安排导游和固定景点，为已确认的返程时间留出余量。",
-        "시안 호텔에서 체크아웃하고 수하물과 함께 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 이날은 가이드와 고정 관광을 넣지 않아 확정된 출발 일정에 여유를 둡니다.",
+        "Check out and travel with your luggage by private vehicle to the airport or railway station. No guide or sightseeing is planned today, leaving the day clear for your departure.",
+        "退房后，专车连人带行李送你去机场或车站。当天不安排导游和景点，给返程留出余地。",
+        "체크아웃 후 짐과 함께 전용 차량으로 공항이나 기차역에 갑니다. 이날은 가이드와 관광 일정이 없어 출발 일정에 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Xi'an hotel, based on twin sharing. Room arrangements for group sizes other than the published 2- and 4-traveller tiers are confirmed manually.",
-    "西安 4 晚携程 4 钻酒店双标含早，页面公开的 2 人和 4 人档默认两人一间；其他人数的房间配置须人工确认。",
-    "시안에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Xi'an hotel, based on twin sharing. For group sizes other than the published 2-, 4- and 6-traveller tiers, we confirm room arrangements individually.",
+    "西安 4 晚携程 4 钻酒店双标含早，公开的 2 人、4 人和 6 人价按两人一间；其他人数怎么分房，我们会单独为你确认。",
+    "시안에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Private driver transfers on arrival and departure, plus an English guide and private air-conditioned vehicle on Days 2–4. Listed adult admission tickets and attraction transport are included. No shopping stops.",
@@ -1135,9 +1140,9 @@ const xian: PrivateTourProduct = {
         "시안 회민거리의 상점과 보행자, 골목 풍경",
       ),
       l(
-        "The old-city day ends at street level around the Great Mosque and Muslim Quarter.",
-        "古城中心日最后落到大清真寺与回民街的街巷尺度。",
-        "구시가 일정은 대청진사와 회민거리의 생활감 있는 골목에서 마무리됩니다.",
+        "On the old-city day, you walk the lanes around the Great Mosque and Muslim Quarter.",
+        "古城这一天，走进大清真寺和回民街的街巷。",
+        "구시가 일정에서는 대청진사와 회민거리의 생활감 있는 골목을 걸어 봅니다.",
       ),
     ),
   ],
@@ -1153,9 +1158,9 @@ const xian: PrivateTourProduct = {
           "시안 성벽 위의 탁 트인 보행 풍경",
         ),
         l(
-          "The wall introduces the scale of the old city; the exact airport or railway-station pickup is confirmed for the booking.",
-          "用城墙尺度认识西安古城；实际机场或车站接送按订单确认。",
-          "성벽 풍경으로 시안 구시가의 규모를 소개하며, 실제 공항 또는 역 픽업은 예약별로 확정합니다.",
+          "The wall shows the scale of the old city; we confirm your exact airport or railway-station pickup for your booking.",
+          "从城墙看古城的尺度；具体在哪个机场或车站接你，按你的订单确认。",
+          "성벽으로 보는 시안 구시가의 규모입니다. 픽업할 공항이나 역은 예약에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -1189,9 +1194,9 @@ const xian: PrivateTourProduct = {
           "린퉁 병마용 1호갱 내부의 도용 군진",
         ),
         l(
-          "A full day is reserved for the eastern heritage sites; reservation availability is confirmed separately.",
-          "为城东遗址留出完整一天；实名预约与余票另行确认。",
-          "동쪽 유적을 위해 하루를 배정하며, 실명 예약과 잔여 입장권은 별도로 확인합니다.",
+          "A full day set aside for the heritage sites east of the city; we confirm reservation availability separately.",
+          "整整一天留给城东的遗址；实名预约和余票，我们另外帮你确认。",
+          "시안 동쪽 유적에 하루를 온전히 씁니다. 실명 예약과 잔여 입장권은 따로 확인해 드립니다.",
         ),
         1200,
         750,
@@ -1208,9 +1213,9 @@ const xian: PrivateTourProduct = {
           "시안북역 대합실",
         ),
         l(
-          "For a confirmed rail departure, the driver can take you to Xi'an North; airport transfers follow the confirmed flight instead.",
-          "如确认从西安北站乘高铁返程，司机送至该站；乘飞机则按确认航班送往机场。",
-          "확정된 고속철도 출발이 시안북역이면 기사 차량으로 이동하며, 항공편 이용 시에는 확정된 항공편에 맞춰 공항으로 이동합니다.",
+          "If you leave by train from Xi'an North, the driver can take you there; if you fly, the transfer follows your flight to the airport.",
+          "如果从西安北站坐高铁返程，司机送你到车站；坐飞机的话，按你的航班送往机场。",
+          "시안북역에서 고속철도로 출발하시면 기사가 역까지 모셔다 드리고, 항공편을 이용하시면 항공편 일정에 맞춰 공항으로 모십니다.",
         ),
       ),
     ),
@@ -1225,7 +1230,7 @@ const xian: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const chongqingWulong: PrivateTourProduct = {
@@ -1279,27 +1284,27 @@ const chongqingWulong: PrivateTourProduct = {
       1,
       l("Arrive in Chongqing", "抵达重庆", "충칭 도착"),
       l(
-        "Meet the English-speaking guide and driver at the confirmed Chongqing airport or railway station and travel with your luggage by private air-conditioned vehicle to the Chongqing hotel. The guide assists with pickup and hotel check-in. No fixed sightseeing is planned; settle in and stay overnight in Chongqing.",
-        "在已确认的重庆机场或车站与英语导游和司机会合，行李随行，乘空调私车前往重庆酒店。导游协助接机或接站及酒店入住。当天不安排固定景点；安顿后入住重庆。",
-        "확정된 충칭 공항 또는 기차역에서 영어 가이드와 기사를 만나 수하물과 함께 에어컨을 갖춘 전용 차량으로 충칭 호텔에 이동합니다. 가이드가 공항 또는 역 픽업과 호텔 체크인을 돕습니다. 이날은 고정 관광을 넣지 않으며 충칭에서 숙박합니다.",
+        "Your English-speaking guide and driver meet you at Chongqing airport or railway station and take you and your luggage by private air-conditioned vehicle to your Chongqing hotel. The guide helps with pickup and hotel check-in. There is no fixed sightseeing today, so you can settle in; overnight in Chongqing.",
+        "英语导游和司机在重庆机场或车站接你，连人带行李乘空调专车送到重庆酒店，导游协助接机或接站和办理入住。当天不安排固定景点，安顿好后在重庆住下。",
+        "영어 가이드와 기사가 충칭 공항이나 기차역에서 맞이해 짐과 함께 에어컨을 갖춘 전용 차량으로 충칭 호텔까지 모셔다 드립니다. 가이드가 공항 또는 역 픽업과 호텔 체크인을 도와 드립니다. 이날은 고정 관광 일정이 없으니 편하게 짐을 푸시고 충칭에서 숙박합니다.",
       ),
     ),
     day(
       2,
       l("Chongqing city", "重庆城市日", "충칭 도심"),
       l(
-        "Start from the Chongqing hotel with the English-speaking guide and private vehicle. Visit Liziba, continue through the river and city viewpoints, then add either Three Gorges Museum or the exterior of Hongya Cave according to the confirmed operating plan; return to the same Chongqing hotel.",
-        "从重庆酒店出发，由英语导游和私车先前往李子坝，再衔接两江与城市观景点；最后按已确认的开放与执行方案安排三峡博物馆或洪崖洞外观其中一项，当晚返回同一家重庆酒店。",
-        "충칭 호텔에서 영어 가이드와 전용 차량으로 출발해 리쯔바를 먼저 보고 두 강과 도심 전망 지점으로 이어갑니다. 확정된 운영 계획에 따라 삼협박물관 또는 홍야동 외관 중 한 곳을 더한 뒤 같은 충칭 호텔로 돌아옵니다.",
+        "Your English-speaking guide and private vehicle pick you up at your Chongqing hotel. Visit Liziba, continue through the river and city viewpoints, then add either Three Gorges Museum or the exterior of Hongya Cave, in line with the confirmed operating plan. Back to the same Chongqing hotel afterwards.",
+        "英语导游和专车从重庆酒店出发，先去李子坝，再到两江和城市观景点；最后按确认好的开放和执行安排，去三峡博物馆或看洪崖洞外观其中一处，当晚回到同一家重庆酒店。",
+        "영어 가이드와 전용 차량으로 충칭 호텔에서 출발해 리쯔바를 먼저 보고 두 강과 도심 전망 지점으로 이어갑니다. 이어서 확정된 운영 계획에 따라 삼협박물관 또는 홍야동 외관 중 한 곳을 더합니다. 일정을 마치면 같은 충칭 호텔로 돌아옵니다.",
       ),
     ),
     day(
       3,
       l("Chongqing to Wulong", "重庆前往武隆", "충칭에서 우룽으로"),
       l(
-        "Check out of the Chongqing hotel and keep your luggage in the private vehicle for the journey to Wulong. At the Three Natural Bridges, the current standard admission includes the official transfer bus and Tianlong revolving elevator; follow the attraction's operating route and walking sections. Continue to the confirmed hotel in the Fairy Mountain resort area for the night.",
-        "从重庆酒店退房，行李随私车前往武隆。天生三桥当前标准票包含官方中转车和天龙旋梯，抵达后按景区实际运营路线及步行路段游览；随后前往已确认的仙女山度假区酒店入住。",
-        "충칭 호텔에서 체크아웃하고 수하물을 전용 차량에 실어 우룽으로 이동합니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 현장 운영 동선과 도보 구간에 따라 관람합니다. 이후 확정된 선녀산 리조트 지역 호텔에서 숙박합니다.",
+        "Check out of your Chongqing hotel and head to Wulong with your luggage in the private vehicle. At the Three Natural Bridges, the current standard admission includes the official transfer bus and Tianlong revolving elevator; you follow the site's operating route and its walking sections. Then on to your hotel in the Fairy Mountain resort area for the night.",
+        "从重庆酒店退房，行李放在专车上一起去武隆。天生三桥当前标准票包含官方中转车和天龙旋梯，到了按景区实际运营路线和步行路段游览；之后去仙女山度假区的酒店入住。",
+        "충칭 호텔에서 체크아웃하고 짐은 전용 차량에 실어 우룽으로 갑니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 현장 운영 동선과 도보 구간을 따라 둘러봅니다. 이후 선녀산 리조트 지역 호텔로 이동해 숙박합니다.",
       ),
     ),
     day(
@@ -1310,30 +1315,30 @@ const chongqingWulong: PrivateTourProduct = {
         "우룽 선택 일정 후 귀환",
       ),
       l(
-        "Check out of the Wulong hotel and keep your luggage with the private vehicle. Visit only the confirmed Day 4 choice; the written confirmation must state whether it includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package. Only one is included, not both. Then return by road to Chongqing and check in there for the final night.",
-        "从武隆酒店退房，行李随私车同行。D4 仅游览书面确认的一项，确认单须明确写出包含仙女山门票，还是芙蓉洞门票及索道套票；两者仅含其一，不同时包含。结束后乘车返回重庆，当晚入住重庆。",
-        "우룽 호텔에서 체크아웃하고 수하물은 전용 차량에 싣습니다. D4에는 서면으로 확정된 한 곳만 방문하며, 확인서에 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 무엇이 포함되는지 명시합니다. 둘 중 하나만 포함하며 두 항목을 모두 포함하지 않습니다. 이후 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
+        "Check out of the Wulong hotel with your luggage in the private vehicle. Today includes just one visit, and your written confirmation names which: either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package. Only one is included, not both. Then return by road to Chongqing and check in for your final night.",
+        "从武隆酒店退房，行李放在专车上。今天只游览一项，书面确认单上会写明是仙女山门票，还是芙蓉洞门票及索道套票；两者仅含其一，不同时包含。结束后乘车回重庆，当晚住重庆。",
+        "우룽 호텔에서 체크아웃하고 짐은 전용 차량에 싣습니다. 이날은 한 곳만 방문하며, 선녀산 입장권과 부용동 입장권·케이블카 패키지 중 어느 쪽인지 서면 확인서에 적어 드립니다. 둘 중 하나만 포함하며 두 항목을 모두 포함하지 않습니다. 이후 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
       l("Depart Chongqing", "重庆返程", "충칭 출발"),
       l(
-        "Check out of the Chongqing hotel and travel with your luggage by private air-conditioned vehicle to the confirmed airport or railway station, with an English-speaking guide to assist with the departure transfer. No fixed sightseeing is planned, preserving a practical departure buffer.",
-        "从重庆酒店退房，行李随行，由司机驾驶空调私车送往已确认的机场或车站，英语导游随行协助返程接送。当天不安排固定景点，为返程保留实际缓冲。",
-        "충칭 호텔에서 체크아웃하고 수하물과 함께 에어컨을 갖춘 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 영어 가이드가 동행하며 출발을 위한 이동을 돕습니다. 이날은 고정 관광을 넣지 않아 출발에 필요한 여유를 둡니다.",
+        "Check out of your Chongqing hotel and travel with your luggage by private air-conditioned vehicle to the airport or railway station, with an English-speaking guide to help with the departure transfer. There is no fixed sightseeing today, which leaves a practical buffer before you leave.",
+        "从重庆酒店退房，司机开空调专车连人带行李送你去机场或车站，英语导游随行协助。当天不安排固定景点，给返程留出缓冲。",
+        "충칭 호텔에서 체크아웃한 뒤 짐과 함께 에어컨을 갖춘 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드가 동행해 출발 이동을 도와 드립니다. 이날은 고정 관광 일정이 없어 출발 전에 필요한 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Three nights in Chongqing and one in Wulong, in breakfast-included Ctrip 4-Diamond–rated rooms. The published 2- and 4-traveller tiers are based on twin sharing; other room arrangements are confirmed manually.",
-    "重庆 3 晚 + 武隆 1 晚，均为携程 4 钻双标含早；页面公开的 2 人和 4 人档默认两人一间，其他人数的房间配置须人工确认。",
-    "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Three nights in Chongqing and one in Wulong, in Ctrip 4-Diamond–rated rooms with breakfast. The published 2-, 4- and 6-traveller prices are based on twin sharing; we confirm other room arrangements with you individually.",
+    "重庆 3 晚、武隆 1 晚，均住携程 4 钻双床房，含早餐；页面上的 2 人、4 人和 6 人价按两人一间计算，其他人数的分房我们单独帮你确认。",
+    "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔에 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 밖의 인원은 객실 구성을 따로 확인해 드립니다.",
   ),
   serviceNote: l(
-    "Private driver and air-conditioned vehicle transfers on Days 1 and 5, with an English-speaking guide for arrival and departure assistance; English guide and private air-conditioned vehicle on Days 2–4. The current Three Natural Bridges standard admission includes the official transfer bus and Tianlong revolving elevator. The exit battery car and glass viewing platform are included only when written in the confirmation. Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, as named in the confirmation. No shopping stops.",
-    "D1/D5 含司机、空调私车接送及英语导游抵达和返程协助，D2–D4 含英语导游与行程内空调私车，包括重庆—武隆段。天生三桥当前标准票包含官方中转车和天龙旋梯；出口电瓶车、玻璃眺台仅在确认单写明时包含。D4 确认单须明确包含仙女山门票，还是芙蓉洞门票及索道套票。全程无购物店安排。",
-    "D1·D5에는 기사와 에어컨을 갖춘 전용 차량으로 픽업·샌딩하며 영어 가이드가 도착·출발을 돕습니다. D2~D4에는 영어 가이드와 에어컨을 갖춘 전용 차량이 포함되며, 충칭~우룽 구간도 포함됩니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함됩니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다. D4 확인서에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 무엇이 포함되는지 명시합니다. 쇼핑 일정은 없습니다.",
+    "On Days 1 and 5, a private driver and air-conditioned vehicle handle your transfers, with an English-speaking guide to help you arrive and depart; on Days 2–4 you have an English guide and private air-conditioned vehicle. The current Three Natural Bridges standard admission includes the official transfer bus and Tianlong revolving elevator; the exit battery car and glass viewing platform are included only when written in your confirmation. Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, as named in your confirmation. No shopping stops.",
+    "D1 和 D5 由司机开空调专车接送，英语导游协助你抵达和返程；D2–D4 有英语导游和行程内空调专车，包括重庆—武隆段。天生三桥当前标准票包含官方中转车和天龙旋梯；出口电瓶车、玻璃眺台仅在确认单写明时包含。D4 含仙女山门票或芙蓉洞门票及索道套票其中一项，确认单上会写明是哪一项。全程无购物店安排。",
+    "D1·D5에는 기사가 에어컨을 갖춘 전용 차량으로 픽업·샌딩하며, 영어 가이드가 도착과 출발을 도와 드립니다. D2~D4에는 영어 가이드와 에어컨을 갖춘 전용 차량이 포함되며, 충칭~우룽 구간도 포함됩니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함됩니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다. D4에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 하나가 포함되며, 어느 쪽인지 확인서에 적어 드립니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1386,7 +1391,7 @@ const chongqingWulong: PrivateTourProduct = {
       ),
       l(
         "Wulong adds a quieter natural chapter after Chongqing's dense urban layers.",
-        "离开重庆密集的立体城市后，用武隆峡谷进入更安静的自然段落。",
+        "离开重庆密集的立体城市，走进武隆峡谷，换一段更安静的自然风景。",
         "충칭의 빽빽한 수직 도시를 떠나 우룽 협곡의 조용한 자연으로 이어집니다.",
       ),
     ),
@@ -1403,9 +1408,9 @@ const chongqingWulong: PrivateTourProduct = {
           "충칭 장베이국제공항 셀프 체크인 구역",
         ),
         l(
-          "The photograph identifies one common arrival gateway; the actual airport or railway-station pickup is confirmed for the booking.",
-          "照片展示一个常见到达口；实际机场或车站接送按订单确认。",
-          "사진은 대표적인 도착 관문 하나를 보여 주며, 실제 공항 또는 역 픽업은 예약별로 확정합니다.",
+          "One common arrival gateway; your airport or railway-station pickup is confirmed for your booking.",
+          "常见的到达口之一；具体在哪个机场或车站接你，按你的订单确认。",
+          "대표적인 도착 관문 중 한 곳입니다. 공항 또는 역 픽업은 예약에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -1420,9 +1425,9 @@ const chongqingWulong: PrivateTourProduct = {
           "충칭 2호선 열차가 리쯔바역 건물을 통과하고 위쪽에는 산비탈 건물, 아래에는 도로가 보이는 장면",
         ),
         l(
-          "The photograph makes the train-through-building relationship and Chongqing's vertical street levels visible; it does not prove a current timetable or viewing-platform access.",
-          "照片清楚呈现轻轨穿楼与重庆的立体街道高差；不代表当前班次或观景平台开放情况。",
-          "사진은 열차가 건물을 통과하는 구조와 충칭의 입체적인 도로 높이 차를 보여 주며, 현재 시간표나 전망대 이용 가능 여부를 증명하지 않습니다.",
+          "A train passing through the building at Liziba, with Chongqing's street levels above and below. Timetables and viewing-platform access can vary.",
+          "李子坝轻轨穿楼而过，重庆街道高低错落；班次和观景平台是否开放，以当天实际情况为准。",
+          "리쯔바에서 열차가 건물을 통과하고, 충칭의 도로가 위아래로 층층이 이어집니다. 열차 시간과 전망대 이용 여부는 당일 상황에 따라 다를 수 있습니다.",
         ),
       ),
     ),
@@ -1437,9 +1442,9 @@ const chongqingWulong: PrivateTourProduct = {
           "우룽 천생삼교 카르스트 풍경",
         ),
         l(
-          "The photograph identifies Wulong's natural-bridge landscape; weather, shuttle and walking conditions are confirmed for the visit.",
-          "照片确认的是武隆天生三桥地貌；天气、景交与步行条件按实际游览确认。",
-          "사진은 우룽 천생삼교 지형을 보여 주며, 날씨와 셔틀, 보행 조건은 방문 시점에 확인합니다.",
+          "Wulong's natural-bridge landscape. We check weather, shuttle and walking conditions for your visit.",
+          "武隆天生三桥地貌；天气、景区交通和步行条件，按实际游览时确认。",
+          "우룽 천생삼교 지형입니다. 날씨와 셔틀, 보행 조건은 방문 시점에 확인해 드립니다.",
         ),
         1200,
         800,
@@ -1456,9 +1461,9 @@ const chongqingWulong: PrivateTourProduct = {
           "충칭동역 건물과 도로 진입 구역",
         ),
         l(
-          "Chongqing East is one possible rail gateway; the actual station or airport transfer is confirmed for each booking.",
-          "重庆东站只是可能的铁路返程节点之一；实际车站或机场接送按订单确认。",
-          "충칭동역은 가능한 철도 출발 관문 중 하나이며, 실제 역 또는 공항 이동은 예약별로 확정합니다.",
+          "Chongqing East is one possible departure station; your station or airport transfer is confirmed for your booking.",
+          "重庆东站是可能的返程车站之一；具体送到哪个车站或机场，按你的订单确认。",
+          "충칭동역은 출발 가능한 기차역 중 하나입니다. 실제 역 또는 공항 이동은 예약에 맞춰 확정합니다.",
         ),
         1200,
         750,
@@ -1475,7 +1480,7 @@ const chongqingWulong: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const guilinYangshuo: PrivateTourProduct = {
@@ -1534,9 +1539,9 @@ const guilinYangshuo: PrivateTourProduct = {
       1,
       l("Arrive in Guilin", "抵达桂林", "구이린 도착"),
       l(
-        "Meet the English-speaking guide and private driver at the confirmed Guilin airport or railway station and travel with your luggage to the Guilin hotel. The guide assists with the transfer and check-in; no fixed sightseeing is planned. Settle in and stay overnight in Guilin.",
-        "在已确认的桂林机场或车站与英语导游和私人司机会合，行李随行前往桂林酒店。导游协助接送与入住，当天不安排固定景点；安顿后入住桂林。",
-        "확정된 구이린 공항 또는 기차역에서 영어 가이드와 전용 차량 기사를 만나 수하물과 함께 구이린 호텔로 이동합니다. 가이드가 이동과 체크인을 도우며 고정 관광은 넣지 않습니다. 여유롭게 정리하고 구이린에서 숙박합니다.",
+        "Your English-speaking guide and private driver meet you at Guilin airport or railway station and take you and your luggage to your Guilin hotel. The guide helps with the transfer and check-in; there is no sightseeing today, so you can settle in. Overnight in Guilin.",
+        "英语导游和司机在桂林机场或车站接你，连人带行李送到桂林酒店，导游协助接送和入住。当天不安排景点，安顿下来好好休息，当晚住桂林。",
+        "영어 가이드와 전용 차량 기사가 구이린 공항이나 기차역에서 맞이해 짐과 함께 구이린 호텔까지 모셔다 드립니다. 가이드가 이동과 체크인을 도와 드리며, 이날은 관광 일정이 없으니 편하게 쉬세요. 구이린에서 숙박합니다.",
       ),
     ),
     day(
@@ -1547,48 +1552,48 @@ const guilinYangshuo: PrivateTourProduct = {
         "리강 유람선으로 양숴 이동",
       ),
       l(
-        "Check out of the Guilin hotel and take the confirmed transfer to the confirmed Li River pier. Board the cruise to Yangshuo while your luggage travels separately by road under the written handover plan; after disembarking, continue to the confirmed Yangshuo hotel and stay there overnight.",
-        "从桂林酒店退房，按已确认接驳前往已确认的漓江码头并乘船前往阳朔。行李按书面交接方案另车转运；下船后继续前往已确认的阳朔酒店，当晚入住阳朔。",
-        "구이린 호텔에서 체크아웃하고 확정된 차량으로 확정된 리강 선착장에 이동해 양숴행 유람선에 탑승합니다. 수하물은 서면 인계 계획에 따라 별도 차량으로 운송하며, 하선 후 확정된 양숴 호텔로 이동해 숙박합니다.",
+        "After checking out of your Guilin hotel, you are driven to the Li River pier to board the cruise to Yangshuo. Your luggage goes separately by road under the written handover plan; once you step off the boat, continue to your Yangshuo hotel for the night.",
+        "桂林酒店退房后，乘车前往漓江码头，登船去阳朔。行李按书面交接方案另车转运；下船后前往阳朔酒店，当晚住阳朔。",
+        "구이린 호텔에서 체크아웃한 뒤 차량으로 리강 선착장에 가서 양숴행 유람선에 오릅니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮기며, 배에서 내리면 양숴 호텔로 이동해 숙박합니다.",
       ),
     ),
     day(
       3,
       l("Yangshuo countryside", "阳朔乡村慢游", "양숴 전원 풍경"),
       l(
-        "Start from the Yangshuo hotel with the guide and local private transport for the Yulong River countryside. Follow the confirmed gentle route and include either the selected simple family activity or light cycling arrangement, then return to the same Yangshuo hotel for the second night.",
-        "从阳朔酒店出发，由导游和当地私车衔接遇龙河沿线乡村路线；按已确认的轻松节奏安排一项基础家庭体验或轻骑行，结束后返回同一家阳朔酒店，入住第二晚。",
-        "양숴 호텔에서 가이드와 현지 전용 차량으로 위룽허 전원 지역에 이동합니다. 확정된 여유로운 동선에 따라 간단한 가족 체험 또는 가벼운 자전거 일정 중 선택된 한 가지를 진행하고, 같은 양숴 호텔로 돌아와 두 번째 밤을 보냅니다.",
+        "Your guide and local private transport take you from your Yangshuo hotel into the Yulong River countryside. Follow a gentle route and do one simple family activity or some light cycling, whichever has been arranged for your group, then head back to the same Yangshuo hotel for your second night.",
+        "导游和当地专车从阳朔酒店出发，带你去遇龙河沿线乡村。节奏轻松，安排一项基础家庭体验或轻骑行，结束后回到同一家阳朔酒店，住第二晚。",
+        "가이드와 현지 전용 차량으로 양숴 호텔을 출발해 위룽허 전원 지역을 둘러봅니다. 여유로운 동선으로 간단한 가족 체험 또는 가벼운 자전거 중 정해진 한 가지를 진행한 뒤, 같은 양숴 호텔로 돌아와 두 번째 밤을 보냅니다.",
       ),
     ),
     day(
       4,
       l("Return to Guilin", "返回桂林", "구이린 귀환"),
       l(
-        "Check out of the Yangshuo hotel and keep your luggage in the private vehicle for the road journey back to Guilin. Visit the confirmed choice of Reed Flute Cave or Elephant Trunk Hill—only one is included—then check in at the Guilin hotel for the final night.",
-        "从阳朔酒店退房，行李随私车返回桂林。游览已书面确认的芦笛岩或象鼻山其中一项，仅包含一项；之后入住桂林酒店，住最后一晚。",
-        "양숴 호텔에서 체크아웃하고 수하물을 전용 차량에 실어 구이린으로 돌아갑니다. 서면으로 확정된 노적암 또는 상비산 중 한 곳만 방문한 뒤 구이린 호텔에 체크인해 마지막 밤을 보냅니다.",
+        "Check out with your luggage in the private vehicle and drive back to Guilin. Visit Reed Flute Cave or Elephant Trunk Hill—only one of the two is included, as set out in your written confirmation—then check in at your Guilin hotel for the final night.",
+        "阳朔酒店退房后，行李放在专车上，一路返回桂林。游览芦笛岩或象鼻山其中一处（只含一项，以书面确认单为准），之后入住桂林酒店，住最后一晚。",
+        "양숴 호텔에서 체크아웃하고 짐은 전용 차량에 실은 채 구이린으로 돌아갑니다. 노적암과 상비산 중 한 곳을 둘러봅니다. 포함되는 곳은 한 곳뿐이며, 서면 확인서에 적힌 곳으로 갑니다. 이후 구이린 호텔에 체크인해 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
       l("Depart Guilin", "桂林返程", "구이린 출발"),
       l(
-        "Check out of the Guilin hotel and travel with your luggage by private vehicle to the confirmed airport or railway station. The English-speaking guide assists with the departure transfer. No fixed sightseeing is planned, leaving room for the confirmed departure.",
-        "从桂林酒店退房，行李随行，由私车送往已确认的机场或车站，英语导游协助返程接送。当天不安排固定景点，为已确认的返程时间留出余量。",
-        "구이린 호텔에서 체크아웃하고 수하물과 함께 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 영어 가이드가 출발 이동을 도우며, 고정 관광 없이 확정된 출발 일정에 여유를 둡니다.",
+        "Check out and travel with your luggage by private vehicle to the airport or railway station, with your English-speaking guide assisting on the transfer. There is no sightseeing today, so the day is kept clear for your departure.",
+        "桂林酒店退房后，专车连人带行李送你去机场或车站，英语导游协助送机或送站。当天不安排景点，时间留给返程。",
+        "구이린 호텔에서 체크아웃한 뒤 짐과 함께 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드가 출발 이동을 도와 드립니다. 이날은 관광 일정 없이 출발에 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Two breakfast-included Ctrip 4-Diamond–rated nights in Guilin and two in Yangshuo. The published 2- and 4-traveller tiers are based on twin sharing; other room arrangements are confirmed manually.",
-    "桂林 2 晚 + 阳朔 2 晚，均为携程 4 钻双标含早；页面公开的 2 人和 4 人档默认两人一间，其他人数的房间配置须人工确认。",
-    "구이린 2박과 양숴 2박 모두 중국 씨트립 기준 4다이아 등급 호텔과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Two nights in Guilin and two in Yangshuo, all in Ctrip 4-Diamond–rated hotels with breakfast. The 2-, 4- and 6-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
+    "桂林 2 晚 + 阳朔 2 晚，均为携程 4 钻酒店双床房，含早餐。页面上的 2 人、4 人和 6 人价格按两人一间计算；其他人数怎么分房，我们会单独确认。",
+    "구이린 2박과 양숴 2박 모두 중국 씨트립 기준 4다이아 등급 호텔이며 조식이 포함됩니다. 페이지의 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
-    "Private arrival and departure transfers with English-speaking guide assistance on Days 1 and 5, and English-guided sightseeing on Days 2–4 are included, together with the Li River cruise, separate cruise-day luggage transfer, air-conditioned private road transport and the listed adult admission for one Day 4 choice. Day 3 includes one simple family activity or gentle-cycling arrangement selected for the group; it is a basic local experience, not a named premium programme or an unconditional bamboo-rafting promise. No shopping stops.",
-    "含 D1/D5 私人接送及英语导游协助、D2–D4 英语导游游览、漓江游船、D2 行李转运、行程内空调私车及 D4 二选一项目中的一项成人基础门票。D3 含一项按客人情况确认的基础家庭体验或轻骑行，属于基础当地体验，不承诺指定品牌、高阶项目或无条件竹筏。全程无购物店安排。",
-    "D1·D5 전용 차량 픽업·샌딩과 영어 가이드 지원, D2~D4 영어 가이드 관광, 리강 유람선, D2 수하물 별도 이동, 에어컨 전용 차량과 D4 선택 관광지 한 곳의 성인 기본 입장권이 포함됩니다. D3에는 구성원에 맞춰 정하는 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함되며, 이는 기본 현지 체험으로 특정 프리미엄 프로그램이나 대나무 뗏목을 무조건 보장하지 않습니다. 쇼핑 일정은 없습니다.",
+    "Included: private arrival and departure transfers with English-speaking guide assistance on Days 1 and 5; English-guided sightseeing on Days 2–4; the Li River cruise, with your luggage moved separately that day; air-conditioned private road transport; and the listed adult admission for one Day 4 sight. Day 3 includes one simple family activity or gentle cycling, chosen to suit your group—a basic local experience rather than a named premium programme, and bamboo rafting is not a given. No shopping stops.",
+    "含 D1/D5 私人接送及英语导游协助、D2–D4 英语导游游览、漓江游船、D2 行李另车转运、行程内空调私车，以及 D4 两处景点中一处的成人基础门票。D3 含一项基础家庭体验或轻骑行，按同行人的情况确认；这是简单的当地体验，不是指定品牌或高阶项目，竹筏也不一定能安排。全程不进购物店。",
+    "D1·D5 전용 차량 픽업·샌딩과 영어 가이드 지원, D2~D4 영어 가이드 관광, 리강 유람선, D2 수하물 별도 이동, 에어컨 전용 차량과 D4 선택 관광지 한 곳의 성인 기본 입장권이 포함됩니다. D3에는 일행에 맞춰 정하는 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. 기본적인 현지 체험이며 특정 프리미엄 프로그램은 아니고, 대나무 뗏목은 항상 가능한 것은 아닙니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1617,9 +1622,9 @@ const guilinYangshuo: PrivateTourProduct = {
         "리강 유람선이 포함되나요? 수하물은 어떻게 이동하나요?",
       ),
       answer: l(
-        "The Day 2 cruise from Guilin to Yangshuo is included. Your luggage travels separately by road under a written handover plan. The sailing, cabin class, pier and luggage handover are confirmed before payment.",
-        "包含D2从桂林到阳朔的漓江游船。行李按书面交接方案另车转运；船班、舱等、码头和行李交接安排会在付款前确认。",
-        "D2 구이린에서 양숴로 가는 리강 유람선이 포함됩니다. 수하물은 서면 인계 계획에 따라 별도 차량으로 이동합니다. 선편, 좌석 등급, 선착장과 수하물 인계는 결제 전에 확인합니다.",
+        "Yes—the Day 2 cruise from Guilin to Yangshuo is included, and your luggage goes separately by road under a written handover plan. Before you pay, we confirm the sailing, cabin class, pier and luggage handover with you.",
+        "包含。D2 从桂林乘漓江游船到阳朔，行李按书面交接方案另车转运；船班、舱等、码头和行李交接，付款前都会跟你确认。",
+        "네, D2 구이린에서 양숴로 가는 리강 유람선이 포함됩니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮깁니다. 선편, 좌석 등급, 선착장과 수하물 인계는 결제 전에 확인해 드립니다.",
       ),
     },
     {
@@ -1629,7 +1634,7 @@ const guilinYangshuo: PrivateTourProduct = {
         "양숴에서 왜 2박하나요? 룽지 계단식 논도 포함되나요?",
       ),
       answer: l(
-        "Two consecutive nights leave Day 3 for the Yulong River countryside without another hotel move. This five-day route returns to Guilin and does not include Longji Rice Terraces. Adding Longji would require a fresh review of the route, time and quote.",
+        "Two nights in a row free up Day 3 for the Yulong River countryside, with no hotel change. This five-day route then returns to Guilin and does not include the Longji Rice Terraces. If you'd like to add Longji, we would need to look again at the route, timing and quote.",
         "阳朔连住两晚，把D3留给遇龙河沿线乡村，不用当天再换酒店。这条5天路线随后返回桂林，不含龙脊梯田；如想加入龙脊，需要重新评估路线、时间和报价。",
         "양숴에서 연속 2박하며 D3는 숙소를 옮기지 않고 위룽허 전원 지역을 둘러봅니다. 이 5일 코스는 구이린으로 돌아오며 룽지 계단식 논은 포함하지 않습니다. 룽지를 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
       ),
@@ -1641,9 +1646,9 @@ const guilinYangshuo: PrivateTourProduct = {
         "대나무 뗏목과 구이린 관광지 두 곳이 모두 포함되나요?",
       ),
       answer: l(
-        "The Li River cruise is included; bamboo-raft upgrades are separate. Day 3 includes one simple family activity or gentle-cycling arrangement selected for your group. Day 4 includes only the confirmed choice of Reed Flute Cave or Elephant Trunk Hill, not both.",
-        "包含的是漓江游船，竹筏升级另计。D3含一项按同行者情况确认的基础家庭体验或轻骑行；D4只包含书面确认的芦笛岩或象鼻山其中一项，不是两项都含。",
-        "리강 유람선은 포함되지만 대나무 뗏목 업그레이드는 별도입니다. D3에는 일행에 맞춰 정한 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. D4는 서면으로 확정한 노적암 또는 상비산 중 한 곳만 포함됩니다.",
+        "The Li River cruise is included; bamboo-raft upgrades are extra. Day 3 includes one simple family activity or gentle cycling, chosen to suit your group. Day 4 includes Reed Flute Cave or Elephant Trunk Hill—only one, as set out in your written confirmation, not both.",
+        "包含的是漓江游船，竹筏升级另计。D3 含一项基础家庭体验或轻骑行，按同行人的情况确认；D4 游览芦笛岩或象鼻山其中一处，以书面确认单为准，不是两处都含。",
+        "리강 유람선은 포함되며, 대나무 뗏목 업그레이드는 별도입니다. D3에는 일행에 맞춰 정한 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. D4는 노적암과 상비산 중 서면 확인서에 적힌 한 곳만 포함되며, 두 곳 모두는 아닙니다.",
       ),
     },
   ],
@@ -1655,9 +1660,9 @@ const guilinYangshuo: PrivateTourProduct = {
       "양숴 카르스트 산과 대나무 숲 아래 위룽허 풍경",
     ),
     l(
-      "A real Yulong River countryside scene introduces the slower Yangshuo portion of the route; it does not depict the Li River cruise or promise current rafting operations.",
-      "用真实的遇龙河乡村风景呈现阳朔段的慢节奏；这不是漓江游船画面，也不代表当前竹筏一定运营。",
-      "실제 위룽허 전원 풍경으로 양숴 일정의 느린 리듬을 보여 줍니다. 리강 유람선 사진이 아니며 현재 뗏목 운항을 보장하지 않습니다.",
+      "A real Yulong River scene from the slower Yangshuo part of the route. It is not the Li River cruise, and rafts may not be running when you travel.",
+      "遇龙河乡村实景，看看阳朔这一段的慢节奏。这不是漓江游船画面，竹筏也不一定在运营。",
+      "실제 위룽허 전원 풍경으로 양숴 일정의 느긋한 리듬을 보여 드립니다. 리강 유람선 사진은 아니며, 뗏목 운항 여부는 시기에 따라 다를 수 있습니다.",
     ),
     1600,
     1000,
@@ -1671,9 +1676,9 @@ const guilinYangshuo: PrivateTourProduct = {
         "양숴 카르스트 봉우리 사이를 흐르는 리강",
       ),
       l(
-        "The aerial view explains why the route travels one way by river from Guilin into Yangshuo.",
-        "航拍视角直观说明行程为何从桂林沿水路单向进入阳朔。",
-        "항공 시점은 왜 구이린에서 양숴까지 한 방향으로 강을 따라 이동하는지 보여 줍니다.",
+        "From the air, you can see why the route follows the river one way from Guilin into Yangshuo.",
+        "从空中看，就能明白行程为何从桂林走水路单程进入阳朔。",
+        "하늘에서 보면 왜 구이린에서 양숴까지 강을 따라 한 방향으로 가는지 알 수 있습니다.",
       ),
     ),
     image(
@@ -1685,8 +1690,8 @@ const guilinYangshuo: PrivateTourProduct = {
       ),
       l(
         "A Guilin evening scene bookends the two-night Yangshuo stay.",
-        "桂林的湖畔傍晚为阳朔两晚住宿前后形成首尾呼应。",
-        "구이린의 호숫가 저녁 풍경이 양숴 2박 일정의 앞뒤를 연결합니다.",
+        "桂林湖畔的傍晚，阳朔两晚的前后都住在桂林。",
+        "구이린의 호숫가 저녁 풍경. 양숴 2박의 앞뒤로 구이린에서 묵습니다.",
       ),
     ),
   ],
@@ -1702,9 +1707,9 @@ const guilinYangshuo: PrivateTourProduct = {
           "구이린역 앞 광장과 출입구",
         ),
         l(
-          "This photograph identifies Guilin Railway Station only. It is one possible arrival gateway; airport and other-station pickups are confirmed separately.",
-          "照片只展示桂林站。它是可能的到达节点之一；机场或其他车站接送另行确认。",
-          "사진은 구이린역만 보여 줍니다. 가능한 도착 관문 중 하나이며, 공항이나 다른 역 픽업은 별도로 확정합니다.",
+          "Guilin Railway Station, one possible arrival point; we confirm airport and other-station pickups separately.",
+          "桂林站，你可能到达的地点之一；机场或其他车站的接送另行确认。",
+          "구이린역 · 가능한 도착지 중 한 곳. 공항이나 다른 역 픽업은 따로 확정해 드립니다.",
         ),
       ),
     ),
@@ -1719,9 +1724,9 @@ const guilinYangshuo: PrivateTourProduct = {
           "리강 카르스트 봉우리 사이를 지나는 유람선",
         ),
         l(
-          "The photograph shows the river journey toward Yangshuo; sailing, pier and cabin details are confirmed for the travel date.",
-          "照片展示前往阳朔的水路旅程；船班、码头与舱等按实际日期确认。",
-          "사진은 양숴로 향하는 강 여정을 보여 주며, 운항편, 선착장과 좌석 등급은 여행 날짜별로 확정합니다.",
+          "On the river towards Yangshuo; the sailing, pier and cabin details are confirmed for your travel date.",
+          "前往阳朔的水路。船班、码头和舱等按你的出行日期确认。",
+          "양숴로 향하는 강 여정. 운항편, 선착장과 좌석 등급은 여행 날짜에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -1736,9 +1741,9 @@ const guilinYangshuo: PrivateTourProduct = {
           "양숴 카르스트 산 아래의 대나무 뗏목과 들판",
         ),
         l(
-          "Day 3 uses this countryside setting for one simple family activity or gentle-cycling arrangement; the photograph does not promise bamboo-raft operation.",
-          "D3 在这样的乡村环境中安排一项基础家庭体验或轻骑行；照片不代表竹筏一定运营。",
-          "D3에는 이런 전원 환경에서 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지를 진행하며, 사진이 뗏목 운항을 보장하지는 않습니다.",
+          "Day 3 takes you into countryside like this for one simple family activity or gentle cycling; the rafts in the photo may not be running when you visit.",
+          "D3 就在这样的乡村里安排一项基础家庭体验或轻骑行；照片里的竹筏，出行时不一定在运营。",
+          "D3에는 이런 전원 풍경 속에서 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지를 진행합니다. 사진 속 뗏목은 여행 시기에 운항하지 않을 수 있습니다.",
         ),
       ),
     ),
@@ -1753,9 +1758,9 @@ const guilinYangshuo: PrivateTourProduct = {
           "구이린 강변의 상비산",
         ),
         l(
-          "This photograph illustrates the Elephant Trunk Hill option only. Day 4 includes Reed Flute Cave or Elephant Trunk Hill, and the final choice is written into the confirmation.",
-          "照片只展示象鼻山选项。D4 包含芦笛岩或象鼻山其中一项，最终选择会写入确认单。",
-          "이 사진은 상비산 선택지를 보여 줍니다. D4에는 노적암 또는 상비산 중 한 곳이 포함되며, 최종 선택은 확인서에 명시합니다.",
+          "Elephant Trunk Hill, one of two Day 4 options. Only one—Reed Flute Cave or Elephant Trunk Hill—is included, as set out in your written confirmation.",
+          "象鼻山，D4 两个选项之一。D4 含芦笛岩或象鼻山其中一项，以确认单为准。",
+          "상비산 · D4 선택지 중 하나. D4에는 노적암과 상비산 중 한 곳만 포함되며, 확인서에 적힌 곳으로 갑니다.",
         ),
       ),
     ),
@@ -1771,7 +1776,7 @@ const guilinYangshuo: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-19",
+  dateModified: "2026-09-23",
 };
 
 const harbinWinter: PrivateTourProduct = {
@@ -1787,30 +1792,30 @@ const harbinWinter: PrivateTourProduct = {
   ),
   eyebrow: l(
     "A date-specific winter journey",
-    "只在明确冰雪窗口内安排",
+    "只在冰雪季指定日期内安排",
     "기간이 정해진 겨울 여행",
   ),
   lede: l(
     "Experience Harbin's winter architecture, frozen river activities and Ice and Snow World with heated private transport and an itinerary timed for daylight and the night display.",
-    "在明确冰雪季窗口内，用暖风车辆衔接城市建筑、松花江冰雪体验与冰雪大世界夜景。",
-    "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축, 쑹화강 체험과 빙설대세계 야경을 연결합니다.",
+    "在标明的冰雪季日期内，坐暖风车辆串起哈尔滨城市建筑、松花江冰雪体验和冰雪大世界夜景。",
+    "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축과 쑹화강 체험, 빙설대세계 야경까지 둘러봅니다.",
   ),
   summary: l(
-    "Four breakfast-included nights, heated private transport and three English-guided touring days. The displayed price applies only to Sunday–Thursday check-ins within the stated date window, excluding holidays and peak Ice Festival weekends.",
-    "哈尔滨冰雪季携程 4 钻含早住宿 4 晚，D2–D4 英语导游与暖风车辆。基础价仅适用于下方日期窗口内周日至周四入住的非节假日。",
-    "하얼빈에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식, D2~D4 영어 가이드와 난방 차량이 포함됩니다. 기본가는 아래 기간 중 일~목요일 체크인과 비공휴일에만 적용됩니다.",
+    "Four nights with breakfast, heated private transport and three touring days with an English-speaking guide. The price shown is for Sunday–Thursday check-ins within the stated dates only, excluding holidays and peak Ice Festival weekends.",
+    "冰雪季在哈尔滨住 4 晚携程 4 钻酒店，含早餐；D2–D4 有英语导游和暖风车辆。基础价只适用于下方日期范围内、周日至周四入住的非节假日。",
+    "하얼빈에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식, D2~D4 영어 가이드와 난방 차량이 포함됩니다. 기본가는 아래 기간 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다.",
   ),
   highlights: lists(
     [
       "Central Street and Saint Sophia exterior",
       "Frozen Songhua River experiences",
-      "Volga Manor or one specifically named alternative, confirmed before payment",
+      "Volga Manor or one specific alternative, named before payment",
       "Ice and Snow World from afternoon into evening",
     ],
     [
       "中央大街与圣索菲亚教堂外观",
       "松花江冰雪体验",
-      "伏尔加庄园或另一项付款前书面列名的冬季文化项目",
+      "伏尔加庄园，或付款前书面写明的另一项冬季文化项目",
       "冰雪大世界下午至夜间时段",
     ],
     [
@@ -1825,9 +1830,9 @@ const harbinWinter: PrivateTourProduct = {
       1,
       l("Arrive in Harbin", "抵达哈尔滨", "하얼빈 도착"),
       l(
-        "Meet the English-speaking guide and driver at the confirmed Harbin airport or railway station and travel with your luggage in the winter-ready private vehicle to the Harbin hotel. The guide assists with arrival and hotel check-in. No fixed sightseeing is planned; use the remaining time to settle in and stay overnight in Harbin.",
-        "在已确认的哈尔滨机场或车站与英语导游和司机会合，行李随行，乘冬季车辆前往哈尔滨酒店，由导游协助抵达衔接与入住。当天不安排固定景点，余下时间用于安顿与适应；当晚入住哈尔滨。",
-        "확정된 하얼빈 공항 또는 기차역에서 영어 가이드와 기사를 만나 수하물과 함께 겨울 운행 전용 차량으로 하얼빈 호텔에 이동합니다. 가이드가 도착 후 이동과 호텔 체크인을 돕습니다. 이날은 고정 관광을 넣지 않고 남은 시간에 쉬며 적응한 뒤 하얼빈에서 숙박합니다.",
+        "Your English-speaking guide and driver meet you at Harbin airport or railway station and take you and your luggage to your hotel in a winter-ready private vehicle, with the guide helping with arrival and check-in. There is no fixed sightseeing today, so use the rest of the day to settle in; overnight in Harbin.",
+        "英语导游和司机在哈尔滨机场或车站接你，连人带行李坐冬季车辆去酒店，导游协助你抵达和入住。当天不安排固定景点，余下时间好好安顿、适应一下；当晚住哈尔滨。",
+        "영어 가이드와 기사가 하얼빈 공항이나 기차역에서 맞이해 짐과 함께 겨울 운행 전용 차량으로 호텔까지 모셔다 드리고, 가이드가 도착 후 이동과 호텔 체크인을 도와 드립니다. 이날은 정해진 관광 일정이 없으니 남은 시간에는 편하게 쉬며 적응하세요. 숙박은 하얼빈에서 합니다.",
       ),
     ),
     day(
@@ -1838,18 +1843,18 @@ const harbinWinter: PrivateTourProduct = {
         "하얼빈 구도심과 쑹화강",
       ),
       l(
-        "Start from the Harbin hotel with the English-speaking guide and heated private vehicle. Visit the exterior of Saint Sophia Cathedral and Central Street, then use only a named, managed Songhua River ice-and-snow activity that its operator confirms open that day. Never enter unmanaged river ice. Return to the same Harbin hotel.",
-        "从哈尔滨酒店出发，由英语导游和暖风车辆先游览圣索菲亚教堂外观与中央大街，随后只参加书面列名、由正规机构管理且经运营方确认当天开放的松花江冰雪项目；不得自行进入未管理冰面。结束后返回同一家哈尔滨酒店。",
-        "하얼빈 호텔에서 영어 가이드와 난방 전용 차량으로 출발해 성 소피아 성당 외관과 중앙대가를 둘러봅니다. 이후 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 쑹화강 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다. 일정 후 같은 하얼빈 호텔로 돌아옵니다.",
+        "Your English-speaking guide and heated private vehicle take you to the exterior of Saint Sophia Cathedral and Central Street. On the Songhua River, you then join only a named, managed ice-and-snow activity that its operator confirms open that day. Never enter unmanaged river ice. Back to the same Harbin hotel afterwards.",
+        "英语导游和暖风车辆带你先看圣索菲亚教堂外观、逛中央大街。之后到松花江，只参加书面列名、由正规机构管理且经运营方确认当天开放的冰雪项目；不得自行进入未管理冰面。结束后回到同一家哈尔滨酒店。",
+        "영어 가이드와 난방 전용 차량으로 성 소피아 성당 외관과 중앙대가를 둘러봅니다. 이어서 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다. 일정을 마치면 같은 하얼빈 호텔로 돌아옵니다.",
       ),
     ),
     day(
       3,
       l("Winter culture day", "冬季文化项目", "겨울 문화 일정"),
       l(
-        "Start from the Harbin hotel and travel by heated private vehicle. Day 3 is not sold as an unnamed 'comparable programme': before payment, the written confirmation must name Volga Manor and one specific alternative winter-culture programme, and you choose one of those two. After the confirmed visit, return to the same Harbin hotel.",
-        "从哈尔滨酒店出发，乘暖风车辆前往当天项目。D3 不以未列名的“同等级项目”作为已售内容：付款前的书面确认必须列明“伏尔加庄园”和另一项具体冬季文化项目，客人从这两项中选择一项；游览后返回同一家哈尔滨酒店。",
-        "하얼빈 호텔에서 난방 전용 차량으로 출발합니다. D3는 이름 없는 '동급 프로그램'으로 판매하지 않습니다. 결제 전 서면 확인서에 볼가장원과 다른 하나의 구체적인 겨울 문화 프로그램을 모두 명시하고, 두 항목 중 하나를 선택합니다. 확정된 방문 후 같은 하얼빈 호텔로 돌아옵니다.",
+        "A heated private vehicle takes you from your Harbin hotel to the day's winter-culture visit. We don't sell Day 3 as an unnamed 'comparable programme': before you pay, your written confirmation names Volga Manor and one specific alternative winter-culture programme, and you choose one of the two. Back to the same Harbin hotel afterwards.",
+        "从哈尔滨酒店出发，坐暖风车辆前往当天的项目。D3 不会只写一句笼统的“同等级项目”：付款前的书面确认会写明“伏尔加庄园”和另一项具体的冬季文化项目，你从这两项里选一项。游览后回到同一家哈尔滨酒店。",
+        "하얼빈 호텔에서 난방 전용 차량으로 출발합니다. D3는 이름 없는 '동급 프로그램'으로 판매하지 않습니다. 결제 전 서면 확인서에 볼가장원과 구체적인 다른 겨울 문화 프로그램 한 곳을 함께 적어 드리며, 그중 한 곳을 고르시면 됩니다. 방문을 마치면 같은 하얼빈 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -1860,30 +1865,30 @@ const harbinWinter: PrivateTourProduct = {
         "눈 조각과 빙설대세계",
       ),
       l(
-        "Leave the Harbin hotel with the guide and heated private vehicle. Visit the Sun Island Snow Sculpture Expo, then continue to the confirmed Ice and Snow World visit from afternoon into evening; standard adult admission to both attractions is included when operating. The expo visit may be shortened or replaced with a relaxed morning only if it is closed, or weather or the group's pace requires an adjustment. Return by vehicle to the same hotel for the final night.",
-        "从哈尔滨酒店出发，由导游和暖风车辆衔接当天安排。先游览太阳岛雪博会，再于下午至夜间游览已确认开放的冰雪大世界，两处景点在开放期间的成人基础门票均包含。仅在雪博会未开放，或天气、团队节奏需要调整时，缩短雪博会游览或改为轻松上午。结束后乘车返回同一家酒店，入住最后一晚。",
-        "하얼빈 호텔에서 가이드와 난방 전용 차량으로 출발합니다. 타이양다오 눈조각박람회를 관람한 뒤 오후부터 저녁까지 개장이 확인된 빙설대세계를 둘러보며, 두 관광지의 개장 기간 성인 기본 입장권이 모두 포함됩니다. 눈조각박람회가 개장하지 않거나 날씨 또는 일행의 여행 속도에 따라 조정이 필요한 경우에만 박람회 관람을 줄이거나 여유로운 오전으로 대체합니다. 관광 후 차량으로 같은 호텔에 돌아와 마지막 밤을 보냅니다.",
+        "Your guide and heated private vehicle take you to the Sun Island Snow Sculpture Expo, then on to Ice and Snow World from afternoon into evening; standard adult admission to both is included when they are operating. The expo visit may be shortened or swapped for a relaxed morning, but only if it is closed, or the weather or your group's pace calls for it. Back to the same hotel by vehicle for your final night.",
+        "导游和暖风车辆带你先去太阳岛雪博会，下午到夜间再游览确认开放的冰雪大世界；两处景点开放期间的成人基础门票都已包含。只有在雪博会未开放，或天气、团队节奏需要时，才会缩短雪博会游览或改成轻松的上午。结束后乘车回同一家酒店，住最后一晚。",
+        "가이드와 난방 전용 차량으로 타이양다오 눈조각박람회에 간 뒤, 오후부터 저녁까지 개장이 확인된 빙설대세계를 둘러봅니다. 두 곳 모두 개장 기간의 성인 기본 입장권이 포함됩니다. 박람회가 개장하지 않았거나 날씨 또는 일행의 여행 속도상 필요할 때에만 박람회 관람을 줄이거나 여유로운 오전으로 바꿉니다. 일정을 마치면 차량으로 같은 호텔에 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
       l("Depart Harbin", "哈尔滨返程", "하얼빈 출발"),
       l(
-        "Check out of the Harbin hotel and travel with your luggage in the winter-ready private vehicle to the confirmed airport or railway station. No guide or fixed sightseeing is planned, preserving the departure buffer.",
-        "从哈尔滨酒店退房，行李随行，乘冬季车辆前往已确认的机场或车站。当天不安排导游和固定景点，为返程保留实际缓冲。",
-        "하얼빈 호텔에서 체크아웃하고 수하물과 함께 겨울 운행 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 이날은 가이드와 고정 관광을 넣지 않아 출발에 필요한 여유를 둡니다.",
+        "Check out of your Harbin hotel; a winter-ready private vehicle takes you and your luggage to the airport or railway station. No guide or sightseeing is planned today, so you keep a buffer before departure.",
+        "从哈尔滨酒店退房后，冬季车辆连人带行李送你去机场或车站。当天不安排导游和景点，给返程留出余量。",
+        "하얼빈 호텔에서 체크아웃한 뒤 짐과 함께 겨울 운행 전용 차량으로 공항이나 기차역에 갑니다. 이날은 가이드와 관광 일정이 없어 출발 전까지 여유를 둘 수 있습니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Harbin hotel during the stated ice-and-snow window. The published 2- and 4-traveller tiers are based on twin sharing; other room arrangements are confirmed manually.",
-    "明确冰雪窗口内哈尔滨 4 晚携程 4 钻双标含早；页面公开的 2 人和 4 人档默认两人一间，其他人数的房间配置须人工确认。",
-    "명시된 빙설 기간 동안 하얼빈의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Four nights with breakfast in a Ctrip 4-Diamond–rated Harbin hotel during the stated ice-and-snow window. The 2-, 4- and 6-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
+    "标明的冰雪季日期内，哈尔滨住 4 晚携程 4 钻双床房，含早。2 人、4 人和 6 人的公开价按两人一间计算；其他人数的分房方式，我们会单独确认。",
+    "명시된 빙설 기간 동안 하얼빈의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함됩니다. 페이지에 나온 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
-    "Day 1 includes private arrival pickup in a winter-ready vehicle with English-speaking guide assistance and hotel check-in support; Day 5 includes a private driver departure transfer in a winter-ready vehicle. A heated private vehicle and English guide on Days 2–4, listed adult admission tickets including the Sun Island Snow Sculpture Expo and Ice and Snow World when operating, hot water, headsets and basic heat patches are included. These aids do not replace professional cold-weather clothing, insulated snow boots, gloves and face protection. No shopping stops.",
-    "含 D1 冬季私车接机/站及英语导游迎接、协助入住，D5 由司机冬季私车送机/站；D2–D4 英语导游与暖风车辆，行程所列成人基础门票与预约（含开放期间的太阳岛雪博会及冰雪大世界）、热水、耳麦与基础暖贴；这些用品不能替代专业防寒服、保暖雪地靴、手套和面部防护。全程无购物店安排。",
-    "D1 겨울 운행 전용 차량 픽업과 영어 가이드의 도착·호텔 체크인 지원, D5 기사의 겨울 운행 전용 차량 샌딩이 포함됩니다. D2~D4 영어 가이드와 난방 차량, 개장 기간의 타이양다오 눈조각박람회와 빙설대세계 입장권을 포함한 일정 내 성인 기본 입장권, 온수, 수신기와 기본 핫팩이 포함됩니다. 이러한 보조품은 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 대신하지 않습니다. 쇼핑 일정은 없습니다.",
+    "On Day 1, your English-speaking guide meets you on arrival with a private winter-ready vehicle and helps you check in at the hotel; on Day 5, a private driver takes you to the airport or station in a winter-ready vehicle. A heated private vehicle and English guide on Days 2–4 are included, along with adult admission to the listed sights (including the Sun Island Snow Sculpture Expo and Ice and Snow World when operating), hot water, headsets and basic heat patches. These aids do not replace professional cold-weather clothing, insulated snow boots, gloves and face protection. No shopping stops.",
+    "D1 英语导游和冬季私车接机/站，并协助你入住酒店；D5 由司机开冬季私车送机/站。D2–D4 有英语导游和暖风车辆；行程所列成人基础门票与预约（含开放期间的太阳岛雪博会和冰雪大世界）、热水、耳麦和基础暖贴都已包含。这些用品不能替代专业防寒服、保暖雪地靴、手套和面部防护。全程无购物店安排。",
+    "D1에는 영어 가이드가 겨울 운행 전용 차량으로 마중 나가 호텔 체크인까지 도와 드리고, D5에는 기사가 겨울 운행 전용 차량으로 공항이나 기차역까지 모셔다 드립니다. D2~D4 영어 가이드와 난방 차량, 일정에 있는 성인 기본 입장권(개장 기간의 타이양다오 눈조각박람회와 빙설대세계 포함), 온수, 수신기와 기본 핫팩이 포함됩니다. 이러한 보조품은 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 대신하지 않습니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1903,9 +1908,9 @@ const harbinWinter: PrivateTourProduct = {
     ],
   ),
   bookingNote: l(
-    "Harbin winter temperatures can fall below −20°C. Wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches are supplements, not replacements. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The published per-person starting prices cover groups of 2 and 4 travellers, exclude flights and apply only to check-ins from 6 January to 5 February 2027, Sunday through Thursday, on non-holiday dates after the main ice attractions have opened. Other group sizes require manual confirmation. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates require a new quote.",
-    "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数须人工确认。该价格仅适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期变化，均须重新报价。",
-    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 그 외 인원은 수동 확인이 필요합니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일, 일~목요일 체크인, 비공휴일에만 적용됩니다. 금·토요일 숙박, 크리스마스, 신정, 춘절, 빙설제 핵심 주말 또는 개장일 변경 시 반드시 재견적이 필요합니다.",
+    "Harbin winter temperatures can fall below −20°C, so wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches supplement that gear; they do not replace it. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The per-person starting prices shown are for groups of 2, 4 and 6 travellers, exclude flights and apply only to Sunday–Thursday check-ins from 6 January to 5 February 2027, on non-holiday dates after the main ice attractions have opened. For other group sizes, we confirm the price with you individually. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates need a new quote.",
+    "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面上是 2 人、4 人和 6 人的每人起价，不含往返机票；其他人数的价格我们会单独确认。这个价格只适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期有变，我们会重新给你报价。",
+    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 페이지의 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원의 요금은 따로 확인해 드립니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박이나 크리스마스, 신정, 춘절, 빙설제 핵심 주말, 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다.",
   ),
   heroImage: image(
     "/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
@@ -1915,8 +1920,8 @@ const harbinWinter: PrivateTourProduct = {
       "2026년 하얼빈 빙설대세계의 화려한 얼음 기차와 조명 건축",
     ),
     l(
-      "Harbin's winter program is built around confirmed attraction opening dates.",
-      "哈尔滨冰雪行程必须以景区实际开放为前提。",
+      "We plan Harbin's winter itinerary around the attractions' actual opening dates.",
+      "哈尔滨冰雪行程按景区实际开放日期来安排。",
       "하얼빈 겨울 일정은 관광지의 실제 개장일을 기준으로 확정합니다.",
     ),
     1600,
@@ -1940,9 +1945,9 @@ const harbinWinter: PrivateTourProduct = {
           "하얼빈 도심에서 온전히 보이는 성 소피아 성당 외관",
         ),
         l(
-          "The itinerary visits the exterior; snow, lighting and interior access are not promised for the travel date.",
-          "行程游览教堂外观；不承诺出行日期一定有积雪、亮灯或开放内部。",
-          "일정은 성당 외관을 둘러보며 여행일의 적설, 조명이나 내부 개방은 보장하지 않습니다.",
+          "The visit is to the exterior; snow, lighting and interior access can vary on your travel date.",
+          "行程游览教堂外观；有没有雪、是否亮灯、内部是否开放，要看出行当天情况。",
+          "일정은 성당 외관을 둘러봅니다. 눈, 조명, 내부 개방 여부는 여행 당일 상황에 따라 다를 수 있습니다.",
         ),
       ),
     ),
@@ -1957,9 +1962,9 @@ const harbinWinter: PrivateTourProduct = {
           "하얼빈역 내부의 대칭형 승강장과 아치형 지붕",
         ),
         l(
-          "The photograph identifies Harbin Railway Station; an airport departure follows the confirmed flight instead.",
-          "照片展示哈尔滨站；如乘飞机返程，则按确认航班送往机场。",
-          "사진은 하얼빈역을 보여 주며 항공편 이용 시에는 확정된 항공편에 맞춰 공항으로 이동합니다.",
+          "Harbin Railway Station; if you are flying out, the transfer goes to the airport for your flight instead.",
+          "照片为哈尔滨站；如果坐飞机返程，就按你的航班送去机场。",
+          "사진은 하얼빈역입니다. 항공편으로 떠나시면 해당 항공편에 맞춰 공항으로 모셔다 드립니다.",
         ),
       ),
     ),
@@ -1974,7 +1979,7 @@ const harbinWinter: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-07",
+  dateModified: "2026-09-23",
 };
 
 const shanghaiSuzhou: PrivateTourProduct = {
@@ -2024,31 +2029,31 @@ const shanghaiSuzhou: PrivateTourProduct = {
       1,
       l("Arrive in Shanghai", "抵达上海", "상하이 도착"),
       l(
-        "Meet the English-speaking guide and private driver at the confirmed Shanghai airport and travel with your luggage to the Shanghai hotel. If the arrival leaves a usable half-day, the guide provides only the arrival assistance or orientation written into the confirmation; after a late arrival, pickup and check-in take priority and no fixed sightseeing is forced in. Stay at the same Shanghai hotel for all four nights.",
-        "在已确认的上海机场与英语导游和司机会合，行李随行，乘私车前往上海酒店。如果抵达后仍有可用半天，仅执行确认单写明的抵达协助或导览；如抵达较晚，则以接机和协助入住为主，不强行加入固定景点。全程 4 晚入住同一家上海酒店。",
-        "확정된 상하이 공항에서 영어 가이드와 기사를 만나 수하물과 함께 전용 차량으로 상하이 호텔에 이동합니다. 도착 후 반나절을 사용할 수 있을 때에만 확인서에 적힌 도착 지원 또는 안내를 진행하며, 늦게 도착하면 픽업과 체크인을 우선하고 고정 관광을 억지로 넣지 않습니다. 4박 모두 같은 상하이 호텔에 머뭅니다.",
+        "Your English-speaking guide and private driver meet you at the Shanghai airport and take you and your luggage to the hotel. If your arrival leaves a usable half-day, the guide provides only the arrival help or orientation set out in your written confirmation; after a late arrival, pickup and check-in come first and no fixed sightseeing is squeezed in. You stay at the same Shanghai hotel for all four nights.",
+        "英语导游和司机在上海机场接你，连人带行李乘私车送到酒店。如果抵达后还有可用的半天，导游只按确认单写明的内容做抵达协助或导览；如果到得较晚，就以接机和协助入住为主，不硬塞固定景点。4 晚都住同一家上海酒店。",
+        "영어 가이드와 기사가 상하이 공항에서 맞이해 짐과 함께 전용 차량으로 호텔까지 모셔다 드립니다. 도착 후 반나절을 쓸 수 있을 때에만 확인서에 적힌 도착 지원이나 안내를 진행하고, 늦게 도착하시면 픽업과 체크인을 먼저 챙기며 고정 관광은 억지로 넣지 않습니다. 4박 모두 같은 상하이 호텔에 머뭅니다.",
       ),
     ),
     day(
       2,
       l("Essential Shanghai", "上海经典城市日", "상하이 핵심 명소"),
       l(
-        "Start from the Shanghai hotel with the English-speaking guide and private vehicle. Visit the Bund, continue along Nanjing Road and to Yu Garden, then finish with the confirmed Shanghai Tower 118th-floor observation-deck visit before returning to the same hotel.",
-        "从上海酒店出发，由英语导游和私车先游览外滩，再前往南京路与豫园，最后完成已确认的上海中心 118 层“上海之巅”游览；结束后返回同一家酒店。",
-        "상하이 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 와이탄, 난징루와 예원을 차례로 둘러보고, 확정된 상하이타워 118층 전망대 방문으로 마친 뒤 같은 호텔로 돌아옵니다.",
+        "Your English-speaking guide and private vehicle collect you from the Shanghai hotel. See the Bund, continue to Nanjing Road and Yu Garden, then finish at the Shanghai Tower 118th-floor observation deck before returning to the same hotel.",
+        "英语导游和私车从上海酒店接你出发，先游览外滩，再去南京路和豫园，最后登上上海中心 118 层“上海之巅”；结束后回到同一家酒店。",
+        "상하이 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 와이탄, 난징루와 예원을 차례로 둘러보고, 마지막으로 상하이타워 118층 전망대에 오른 뒤 같은 호텔로 돌아옵니다.",
       ),
     ),
     day(
       3,
       l(
-        "Zhujiajiao and a city choice",
-        "朱家角与市区二选一",
-        "주자자오와 도심 선택 일정",
+        "Zhujiajiao and one city stop",
+        "朱家角与市区一处景点",
+        "주자자오와 도심 명소 한 곳",
       ),
       l(
-        "Leave the Shanghai hotel by private vehicle for Zhujiajiao water town. After the confirmed visit, return to central Shanghai for either Tianzifang or, when its exhibition period, opening day, advance reservation and ticket purchase are confirmed, the Shanghai Museum People's Square branch. From 9 July 2026 to 14 November 2027, that branch hosts only the ticketed Ancient Civilizations of the Americas exhibition; the permanent collection is at the East Museum. Only one option is included, then return to the same hotel.",
-        "从上海酒店乘私车前往朱家角水乡，完成已确认游览后返回上海市区；再在田子坊与上海博物馆人民广场馆二选一。2026 年 7 月 9 日至 2027 年 11 月 14 日期间，人民广场馆仅开放需购票的“世界树之巅：美洲古代文明大展”，常设展在东馆；须确认展期与开放日并提前预约购票，仅包含一项，结束后返回同一家酒店。",
-        "상하이 호텔에서 전용 차량으로 주자자오 수향마을에 이동합니다. 확정된 관람 후 도심으로 돌아와 톈쯔팡과 상하이박물관 인민광장관 중 한 곳을 선택합니다. 2026년 7월 9일부터 2027년 11월 14일까지 인민광장관은 유료 ‘아메리카 고대문명 대전’만 운영하고 상설전시는 동관에서 열립니다. 전시 기간과 개관일을 확인하고 사전 예약 및 입장권 구매를 완료해야 하며, 한 곳만 포함한 뒤 같은 호텔로 돌아옵니다.",
+        "A private vehicle takes you from the hotel to Zhujiajiao water town, then back to central Shanghai for either Tianzifang or the Shanghai Museum People's Square branch. The museum is an option when its exhibition period, opening day, advance reservation and ticket purchase are confirmed. From 9 July 2026 to 14 November 2027, that branch hosts only the ticketed Ancient Civilizations of the Americas exhibition; the permanent collection is at the East Museum. Only one option is included, as set out in your written confirmation; then it's back to the same hotel.",
+        "私车从上海酒店送你去朱家角水乡，游览后回到市区，再去田子坊或上海博物馆人民广场馆其中一处。2026 年 7 月 9 日至 2027 年 11 月 14 日期间，人民广场馆仅开放需购票的“世界树之巅：美洲古代文明大展”，常设展在东馆；去博物馆须先确认展期与开放日，并提前预约购票。仅包含一项，以书面确认单为准，结束后回到同一家酒店。",
+        "전용 차량으로 호텔을 나서 주자자오 수향마을을 둘러본 뒤, 도심으로 돌아와 톈쯔팡과 상하이박물관 인민광장관 중 한 곳에 갑니다. 2026년 7월 9일부터 2027년 11월 14일까지 인민광장관은 유료 ‘아메리카 고대문명 대전’만 운영하고 상설전시는 동관에서 열립니다. 박물관은 전시 기간과 개관일을 확인하고 사전 예약 및 입장권 구매를 마쳐야 갈 수 있습니다. 한 곳만 포함되며 서면 확인서에 적힌 곳으로 갑니다. 이후 같은 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -2059,25 +2064,25 @@ const shanghaiSuzhou: PrivateTourProduct = {
         "고속철도로 쑤저우 당일치기",
       ),
       l(
-        "Start from the Shanghai hotel with a private transfer to the confirmed station, then take the confirmed second-class high-speed train to Suzhou. Use the Suzhou transfer to connect the Humble Administrator's Garden, Hanshan Temple and Pingjiang Road in the reservation-compatible order, then return by the confirmed train and private transfer to the same Shanghai hotel.",
-        "从上海酒店出发，乘私车前往已确认车站，再乘已确认的高铁二等座前往苏州。抵达后由苏州接驳串联拙政园、寒山寺和平江路，具体先后按预约可执行情况确认；随后乘已确认车次返沪，并由私车接回同一家上海酒店。",
-        "상하이 호텔에서 전용 차량으로 확정된 역에 이동한 뒤 확정된 2등석 고속열차로 쑤저우에 갑니다. 현지 차량으로 졸정원, 한산사와 핑장루를 예약 가능한 순서로 연결하고, 확정된 열차와 상하이 전용 차량으로 같은 호텔에 돌아옵니다.",
+        "A private transfer takes you from the Shanghai hotel to the station for your second-class high-speed train to Suzhou. In Suzhou, the local transfer links the Humble Administrator's Garden, Hanshan Temple and Pingjiang Road in the order the reservations allow; then the train and a private transfer bring you back to the same Shanghai hotel.",
+        "私车从上海酒店送你到车站，乘高铁二等座去苏州。到苏州后由苏州接驳串起拙政园、寒山寺和平江路，先后顺序按预约情况安排；之后乘高铁回上海，私车接回同一家酒店。",
+        "상하이 호텔에서 전용 차량으로 역까지 이동해 2등석 고속열차로 쑤저우에 갑니다. 쑤저우에서는 현지 차량으로 졸정원, 한산사, 핑장루를 예약 가능한 순서대로 둘러보고, 열차와 전용 차량으로 같은 상하이 호텔에 돌아옵니다.",
       ),
     ),
     day(
       5,
       l("Depart Shanghai", "上海返程", "상하이 출발"),
       l(
-        "Check out of the Shanghai hotel and travel with your luggage by private air-conditioned vehicle to the confirmed airport, with an English-speaking guide to assist with the departure transfer. No fixed sightseeing is planned, leaving room for check-out, city traffic and the confirmed flight.",
-        "从上海酒店退房，行李随行，由司机驾驶空调私车送往已确认的机场，英语导游随行协助返程接送。当天不安排固定景点，为退房、城市交通和已确认航班保留余量。",
-        "상하이 호텔에서 체크아웃하고 수하물과 함께 에어컨을 갖춘 전용 차량으로 확정된 공항에 이동합니다. 영어 가이드가 동행하며 출발을 위한 이동을 돕습니다. 이날은 고정 관광을 넣지 않아 체크아웃, 도심 교통과 확정된 항공편에 여유를 둡니다.",
+        "Check out and travel with your luggage by private air-conditioned vehicle to the airport, with an English-speaking guide helping with the departure transfer. There is no fixed sightseeing today, which leaves room for check-out, city traffic and your flight.",
+        "退房后，司机开空调私车连人带行李送你去机场，英语导游随行协助送机。当天不安排固定景点，给退房、市内交通和航班留出余量。",
+        "체크아웃 후 짐과 함께 에어컨을 갖춘 전용 차량으로 공항에 갑니다. 영어 가이드가 동행해 공항 이동을 돕습니다. 이날은 고정 관광이 없어 체크아웃과 도심 교통, 항공편 시간에 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Four nights in one breakfast-included Ctrip 4-Diamond–rated Shanghai hotel. The published 2- and 4-traveller tiers are based on twin sharing; other room arrangements are confirmed manually.",
-    "上海 4 晚同一家携程 4 钻酒店双标含早；页面公开的 2 人和 4 人档默认两人一间，其他人数的房间配置须人工确认。",
-    "상하이 한 곳의 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며, 공개된 2명·4명 요금은 2인 1실 기준입니다. 그 외 인원의 객실 구성은 수동으로 확인합니다.",
+    "Four nights with breakfast in one Ctrip 4-Diamond–rated Shanghai hotel. The 2-, 4- and 6-traveller prices shown are for twin sharing; we confirm other room arrangements with you individually.",
+    "上海 4 晚住同一家携程 4 钻酒店，双床房含早；页面上的 2 人、4 人和 6 人价格按两人一间算，其他人数怎么分房，我们单独跟你确认。",
+    "상하이의 중국 씨트립 기준 4다이아 등급 호텔 한 곳에 조식 포함 4박으로 머뭅니다. 공개된 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Arrival pickup with a half-day English guide, guided touring on Days 2–4, departure transfer with English-speaking guide assistance on Day 5, private air-conditioned road transport, station transfers, second-class rail and listed adult admission tickets are included. No shopping stops.",
@@ -2124,9 +2129,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
         "황푸강 건너 불이 켜진 상하이 스카이라인",
       ),
       l(
-        "Shanghai's night view is shown as atmosphere, not as a promised cruise or fixed lighting schedule.",
-        "上海夜景只用于呈现城市氛围，不代表承诺游船或固定亮灯时间。",
-        "상하이 야경은 도시 분위기를 보여 주며, 유람선이나 고정 조명 시간을 보장하지 않습니다.",
+        "Shanghai at night, for a feel of the city; it doesn't promise a cruise, and lighting times may vary.",
+        "上海夜景，呈现城市氛围；照片不代表含游船，亮灯时间以当天为准。",
+        "도시 분위기를 담은 상하이 야경입니다. 유람선 포함을 뜻하지는 않으며, 조명 시간은 달라질 수 있습니다.",
       ),
     ),
     image(
@@ -2137,9 +2142,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
         "쑤저우박물관의 기하학적 지붕선",
       ),
       l(
-        "Suzhou Museum is not part of the published route; this licensed photograph introduces Suzhou's contemporary architectural language.",
-        "苏州博物馆不在公开行程内；这张有许可的照片只用于呈现苏州的当代建筑语言。",
-        "쑤저우박물관은 공개 일정에 포함되지 않으며, 이 라이선스 사진은 쑤저우의 현대 건축 언어를 보여 줍니다.",
+        "Suzhou Museum is not on this route; this photo shows the modern side of Suzhou's architecture.",
+        "苏州博物馆不在本行程内；这张照片让你看看苏州的当代建筑。",
+        "쑤저우박물관은 이번 일정에 포함되지 않으며, 이 사진은 쑤저우의 현대 건축을 보여 줍니다.",
       ),
     ),
   ],
@@ -2155,9 +2160,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
           "저녁빛 속 상하이 강변 스카이라인",
         ),
         l(
-          "The city view introduces the Shanghai base; the actual airport, arrival time and half-day route are confirmed for each booking.",
-          "城市画面用于认识上海住宿基地；实际机场、到达时间与半日路线按订单确认。",
-          "도시 풍경은 상하이 숙박 거점을 소개하며, 실제 공항, 도착 시간과 반일 동선은 예약별로 확정합니다.",
+          "Shanghai, your base for the trip. The airport, arrival time and half-day route are confirmed for your booking.",
+          "上海是这趟旅程的住宿基地；机场、到达时间和半日路线按你的订单确认。",
+          "상하이는 이번 여행의 숙박 거점입니다. 공항, 도착 시간과 반일 동선은 예약에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -2172,9 +2177,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
           "노을 속 상하이타워와 세계금융센터",
         ),
         l(
-          "The skyline gives context to the Day 2 route linking the historic Bund with present-day Pudong.",
-          "这幅天际线为 D2 从历史外滩走向当代浦东的路线提供城市背景。",
-          "이 스카이라인은 D2의 역사적 와이탄과 현대 푸둥을 잇는 동선에 도시 맥락을 더합니다.",
+          "Day 2 links the historic Bund with present-day Pudong.",
+          "D2 的路线，从历史外滩走到当代浦东。",
+          "D2 동선은 역사적인 와이탄에서 현대의 푸둥까지 이어집니다.",
         ),
       ),
     ),
@@ -2189,9 +2194,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
           "주자자오의 수로, 돌다리와 흰 벽의 집들",
         ),
         l(
-          "The real canal scene establishes Zhujiajiao's water-town setting; boat operation and water conditions are not inferred.",
-          "真实河道画面用于呈现朱家角水乡环境，不据此承诺游船运营或水位条件。",
-          "실제 수로 사진은 주자자오 수향마을의 분위기를 보여 주며, 유람선 운항이나 수위 조건을 보장하지 않습니다.",
+          "A real canal scene in Zhujiajiao water town; boat services and water levels are subject to the day.",
+          "朱家角水乡的真实河道；游船是否运营、水位高低以当天为准。",
+          "주자자오 수향마을의 실제 수로 모습입니다. 유람선 운항과 수위는 당일 상황에 따라 다를 수 있습니다.",
         ),
         1920,
         1280,
@@ -2208,9 +2213,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
           "쑤저우 졸정원의 정자, 연못과 정원 풍경",
         ),
         l(
-          "The garden anchors the Suzhou rail day trip; weather, seasonal planting and ticket inventory vary.",
-          "拙政园是苏州高铁一日游的核心；天气、时令景观与门票库存会变化。",
-          "졸정원은 쑤저우 고속철도 당일 일정의 중심이며, 날씨, 계절 풍경과 입장권 재고는 달라질 수 있습니다.",
+          "The garden anchors the Suzhou rail day trip; weather, seasonal planting and ticket availability vary.",
+          "拙政园是苏州高铁一日游的重点；天气、时令景观和门票余量都会变化。",
+          "졸정원은 쑤저우 고속철도 당일 일정의 중심입니다. 날씨, 계절 풍경과 입장권 예약 상황은 달라질 수 있습니다.",
         ),
       ),
     ),
@@ -2225,9 +2230,9 @@ const shanghaiSuzhou: PrivateTourProduct = {
           "상하이 스카이라인을 바라보는 강변 플랫폼",
         ),
         l(
-          "The calm city view closes the stay; the actual airport and transfer time are confirmed from the booked flight.",
-          "用安静的城市画面收尾；实际机场与送机时间按已订航班确认。",
-          "차분한 도시 풍경으로 여정을 마치며, 실제 공항과 이동 시간은 예약된 항공편에 맞춰 확정합니다.",
+          "A calm last look at Shanghai; the airport and transfer time are set from your booked flight.",
+          "以安静的城市画面收尾；机场和送机时间按你订好的航班确认。",
+          "차분한 도시 풍경으로 여정을 마무리합니다. 공항과 이동 시간은 예약하신 항공편에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -2242,7 +2247,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
 };
 
 const beijing: PrivateTourProduct = {
@@ -2284,7 +2289,7 @@ const beijing: PrivateTourProduct = {
   highlights: lists(
     [
       "Temple of Heaven and Summer Palace",
-      "Tiananmen Square and the Forbidden City (subject to confirmed real-name reservations)",
+      "Tiananmen Square and the Forbidden City (entry needs a successful real-name reservation)",
       "Prince Kung's Mansion and Shichahai or Houhai (reservations and pace permitting)",
       "Badaling Great Wall and Olympic Park",
     ],
@@ -2306,9 +2311,9 @@ const beijing: PrivateTourProduct = {
       1,
       l("Arrive in Beijing", "抵达北京", "베이징 도착"),
       l(
-        "Meet your private driver at the confirmed Beijing airport or railway station and travel with your luggage to the Beijing hotel. The English-guided version also includes guide assistance with the arrival transfer and hotel check-in; the no-guide version uses driver pickup and remote support. No fixed sightseeing is planned, leaving time to settle in and stay overnight in Beijing.",
-        "在已确认的北京机场或车站与私人司机会合，行李随行前往北京酒店。英语导游版包含抵达接送与入住时的导游协助；无导游版由司机接站并提供远程支持。当天不安排固定景点，留出安顿与休息时间，当晚入住北京。",
-        "확정된 베이징 공항 또는 기차역에서 전용 차량 기사를 만나 수하물과 함께 베이징 호텔로 이동합니다. 영어 가이드 버전은 도착 이동과 호텔 체크인 시 가이드 지원을 포함하고, 무가이드 버전은 기사 픽업과 원격 지원을 제공합니다. 고정 관광 없이 적응하고 쉬는 시간을 두며 베이징에서 숙박합니다.",
+        "Your private driver meets you at the Beijing airport or railway station and takes you and your luggage to your hotel. On the English-guided version, your guide also helps with the arrival transfer and hotel check-in; the no-guide version has driver pickup and remote support. No sightseeing is planned today, so you have time to settle in for your first night in Beijing.",
+        "司机在北京机场或车站接你，连人带行李送到酒店。英语导游版在接站和办理入住时有导游协助；无导游版由司机接站，并提供远程支持。当天不安排景点，留出时间安顿休息，当晚住在北京。",
+        "기사가 베이징 공항이나 기차역에서 맞이해 짐과 함께 전용 차량으로 호텔까지 모셔다 드립니다. 영어 가이드 버전은 도착 이동과 호텔 체크인 때 가이드가 함께 돕고, 무가이드 버전은 기사 픽업과 원격 지원을 제공합니다. 이날은 관광 일정 없이 편하게 쉬며 베이징에서 숙박합니다.",
       ),
     ),
     day(
@@ -2319,43 +2324,43 @@ const beijing: PrivateTourProduct = {
         "천단공원과 이화원",
       ),
       l(
-        "Start from the Beijing hotel by private vehicle. Visit the Temple of Heaven and then the Summer Palace in the confirmed reservation-compatible order, with the selected guided or no-guide service applying throughout; return to the same Beijing hotel.",
-        "从北京酒店乘私车出发，按已确认预约可执行的顺序游览天坛公园与颐和园；全日按客人选择的含英语导游或无导游版本执行，结束后返回同一家北京酒店。",
-        "베이징 호텔에서 전용 차량으로 출발합니다. 확정된 예약에 맞는 순서로 천단공원과 이화원을 둘러보며, 선택한 영어 가이드 포함 또는 무가이드 서비스가 이날 전체에 적용됩니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
+        "Your private vehicle takes you from the hotel to the Temple of Heaven and the Summer Palace, visited in the order your reservations allow. Your chosen version, guided or no-guide, applies throughout; afterwards, back to the same Beijing hotel.",
+        "专车从酒店出发，游览天坛公园和颐和园，先后顺序按预约情况安排；全天按你选的英语导游版或无导游版进行，结束后回到同一家北京酒店。",
+        "전용 차량으로 호텔을 출발해 천단공원과 이화원을 둘러봅니다. 방문 순서는 예약에 맞춰 정하며, 이날 일정 전체를 선택하신 영어 가이드 포함 또는 무가이드 방식으로 진행합니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
       ),
     ),
     day(
       3,
       l("Imperial Beijing", "皇城北京", "황실 베이징"),
       l(
-        "Begin from the Beijing hotel before dawn only when the flag-raising plan and required access arrangements are confirmed. After the flag-raising, continue to Tiananmen Square and the Forbidden City only with successful real-name reservations; Prince Kung's Mansion and Shichahai or Houhai follow only when the confirmed reservation windows and the group's pace allow, rather than forcing every stop into the day. Return to the same Beijing hotel.",
-        "仅在升旗安排与所需通行条件确认后，才从北京酒店超早出发观看天安门升旗；随后须以实名预约成功为前提游览天安门广场与故宫。恭王府及什刹海或后海仅在已确认预约时段与客人节奏允许时继续安排，不为凑满清单强行赶场；当晚返回同一家北京酒店。",
-        "국기 게양 관람 계획과 필요한 출입 조건이 확정된 경우에만 베이징 호텔에서 새벽 전에 출발합니다. 게양식 후 톈안먼광장과 자금성은 실명 예약이 성공한 경우에만 진행하며, 공왕부와 스차하이 또는 허우하이는 확정된 예약 시간과 여행 속도가 허용할 때만 이어가 모든 장소를 억지로 채우지 않습니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
+        "The day starts before dawn with the flag-raising, but only if the plan and the access it requires are confirmed. Tiananmen Square and the Forbidden City follow, with entry depending on successful real-name reservations. Prince Kung's Mansion and Shichahai or Houhai come next only when your reservation windows and your group's pace allow—we won't force every stop into the day. Back to the same Beijing hotel afterwards.",
+        "只有升旗安排和所需通行条件都确认了，才会一大早从酒店出发，去看天安门升旗；之后游览天安门广场和故宫，前提是实名预约成功。恭王府及什刹海或后海，只有预约时段和你们的节奏允许时才继续安排，不为凑满清单赶场。当晚回到同一家北京酒店。",
+        "국기 게양식 관람 계획과 필요한 출입 조건이 확정된 경우에만 동트기 전에 호텔을 출발합니다. 이어서 톈안먼광장과 자금성을 둘러보며, 실명 예약에 성공해야 입장할 수 있습니다. 공왕부와 스차하이 또는 허우하이는 예약 시간과 일행의 여행 속도가 허락할 때만 이어서 가고, 모든 곳을 무리하게 채우지 않습니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
       ),
     ),
     day(
       4,
       l("Great Wall", "八达岭长城", "만리장성"),
       l(
-        "Leave the Beijing hotel by private vehicle for the confirmed Badaling Great Wall visit. After the wall, return toward the city for Olympic Park and exterior views of the Bird's Nest and Water Cube, then continue to the same Beijing hotel for the final night; optional wall transport remains separate unless written into the confirmation.",
-        "从北京酒店乘私车前往已确认的八达岭长城，完成长城游览后返回市区方向，再到奥林匹克公园观看鸟巢与水立方外观；随后返回同一家北京酒店，入住最后一晚。长城可选交通除非写入确认单，否则仍为另计。",
-        "베이징 호텔에서 전용 차량으로 출발해 확정된 팔달령 만리장성을 둘러봅니다. 이후 도심 방향으로 돌아와 올림픽공원에서 냐오차오와 수이리팡 외관을 본 뒤 같은 베이징 호텔로 돌아와 마지막 밤을 보냅니다. 만리장성의 선택 교통은 확인서에 포함하지 않은 경우 별도입니다.",
+        "Your private vehicle takes you from the hotel to the Badaling Great Wall. Afterwards, head back towards the city for Olympic Park and outside views of the Bird's Nest and Water Cube, then return to the same Beijing hotel for your last night. Optional wall transport is not included unless it is written into your confirmation.",
+        "专车从酒店出发，前往八达岭长城。游览长城后返回市区方向，到奥林匹克公园看鸟巢和水立方外观，再回到同一家北京酒店，住最后一晚。长城可选交通除非写进确认单，否则另外计费。",
+        "전용 차량으로 호텔을 출발해 팔달령 만리장성을 둘러봅니다. 이후 도심 방향으로 돌아와 올림픽공원에서 냐오차오와 수이리팡 외관을 보고, 같은 베이징 호텔로 돌아와 마지막 밤을 보냅니다. 만리장성의 선택 교통은 확인서에 적혀 있지 않으면 별도입니다.",
       ),
     ),
     day(
       5,
       l("Depart Beijing", "北京返程", "베이징 출발"),
       l(
-        "Check out of the Beijing hotel and travel with your luggage by private vehicle to the confirmed airport or railway station. The English-guided version includes guide assistance with the departure transfer; the no-guide version uses the driver and remote support. No fixed sightseeing is planned, preserving time for check-out, city traffic and the confirmed flight or train.",
-        "从北京酒店退房，行李随行，由私车送往已确认的机场或车站。英语导游版包含返程接送时的导游协助；无导游版由司机接送并提供远程支持。当天不安排固定景点，为退房、城市交通和已确认的航班或列车保留余量。",
-        "베이징 호텔에서 체크아웃하고 수하물과 함께 전용 차량으로 확정된 공항 또는 기차역에 이동합니다. 영어 가이드 버전은 출발 이동 시 가이드 지원을 포함하고, 무가이드 버전은 기사 이동과 원격 지원을 제공합니다. 고정 관광 없이 체크아웃, 도심 교통과 확정된 항공편 또는 열차에 여유를 둡니다.",
+        "Check out and travel with your luggage by private vehicle to the airport or railway station. On the English-guided version, your guide also helps with the departure transfer; the no-guide version has your driver and remote support. No sightseeing is planned today, leaving time for check-out, city traffic and your flight or train.",
+        "退房后，行李随车，专车送你去机场或车站。英语导游版在送站时有导游协助；无导游版由司机送站，并提供远程支持。当天不安排景点，给退房、市区交通和你的航班或火车留出余量。",
+        "체크아웃 후 짐과 함께 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드 버전은 출발 이동 때 가이드가 함께 돕고, 무가이드 버전은 기사 이동과 원격 지원을 제공합니다. 이날은 관광 일정 없이 체크아웃, 시내 교통과 항공편·열차 시간에 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Beijing hotel, based on twin sharing. Final hotel, room arrangement and any single supplement are confirmed for each booking.",
-    "北京 4 晚携程 4 钻酒店双标含早，基础口径为两人一间；具体酒店、房间配置与单房差按订单确认。",
-    "베이징에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며 2인 1실 기준입니다. 최종 호텔, 객실 구성과 1인실 추가금은 예약별로 확정합니다.",
+    "Four nights in a breakfast-included Ctrip 4-Diamond–rated Beijing hotel, based on twin sharing. We confirm the exact hotel, room arrangement and any single supplement for your booking.",
+    "北京 4 晚携程 4 钻酒店，双标含早，按两人一间计；具体酒店、房间安排和单房差，按你的订单确认。",
+    "베이징에서 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식이 포함되며 2인 1실 기준입니다. 정확한 호텔, 객실 구성과 1인실 추가금은 예약에 맞춰 확정해 드립니다.",
   ),
   serviceNote: l(
     "Both versions include private airport or railway-station transfers, air-conditioned private vehicles on the three touring days, listed adult admission tickets, booking support, liability cover and drinking water. The English-guided version includes an English-speaking guide on Days 2–4 and guide assistance during arrival and departure transfers. The no-guide version has driver transfers and remote support, with no on-site guide or interpretation. No shopping stops.",
@@ -2401,8 +2406,8 @@ const beijing: PrivateTourProduct = {
         "어느 만리장성 구간을 방문하나요? 케이블카도 포함되나요?",
       ),
       answer: l(
-        "The published route visits Badaling, not Mutianyu. Great Wall cable cars, slide rail and shuttle buses are excluded from the base price. Any optional wall transport must be written into the confirmation to be included.",
-        "这条路线去八达岭，不去慕田峪。长城索道、滑车和摆渡车不在基础价格内；可选长城交通只有写入确认方案后才计入服务。",
+        "This route visits Badaling, not Mutianyu. Great Wall cable cars, slide rail and shuttle buses are not in the base price; optional wall transport is included only when it is written into your confirmation.",
+        "这条路线去八达岭，不去慕田峪。长城索道、滑车和摆渡车不在基础价格内；可选的长城交通，只有写进确认单才包含在内。",
         "이 코스는 무톈위가 아닌 팔달령 만리장성을 방문합니다. 만리장성 케이블카, 슬라이드 레일과 셔틀버스는 기본 요금에서 제외됩니다. 선택 교통편은 서면 확인에 명시된 경우에만 포함됩니다.",
       ),
     },
@@ -2413,9 +2418,9 @@ const beijing: PrivateTourProduct = {
         "자금성과 톈안먼광장 예약이 보장되나요?",
       ),
       answer: l(
-        "No. Visits depend on successful real-name reservations. We reconfirm availability for your dates before payment; the confirmed reservation windows and your group's pace determine which other stops can fit on that day.",
-        "不能保证，参观以实名预约成功为前提。付款前会按实际日期再次确认可订情况；当天还能衔接哪些其他景点，要看已确认的预约时段和同行者节奏。",
-        "보장되지는 않습니다. 실명 예약에 성공해야 방문할 수 있으며, 결제 전에 실제 날짜의 예약 가능 여부를 다시 확인합니다. 같은 날 다른 명소를 얼마나 둘러볼지는 확정된 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
+        "No—visits depend on successful real-name reservations. We reconfirm availability for your dates before payment, and your reservation times and your group's pace decide which other stops can fit into that day.",
+        "不能保证，参观要以实名预约成功为前提。付款前，我们会按你的日期再确认一次能否预约；当天还能接上哪些其他景点，要看预约时段和你们的节奏。",
+        "보장되지는 않습니다. 실명 예약에 성공해야 방문할 수 있으며, 결제 전에 여행 날짜의 예약 가능 여부를 다시 확인해 드립니다. 같은 날 다른 명소를 얼마나 둘러볼지는 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
       ),
     },
   ],
@@ -2429,7 +2434,7 @@ const beijing: PrivateTourProduct = {
     l(
       "Five days for Beijing's imperial landmarks and the Great Wall.",
       "用五天游览北京皇城地标与长城。",
-      "베이징의 황실 유적과 만리장성을 위한 5일.",
+      "베이징 황실 유적과 만리장성을 둘러보는 5일.",
     ),
     1600,
     1000,
@@ -2443,9 +2448,9 @@ const beijing: PrivateTourProduct = {
         "해 질 무렵 해자에 비친 자금성 각루",
       ),
       l(
-        "The palace photograph sets the imperial-city context; entry still depends on successful real-name reservation.",
-        "故宫画面用于呈现皇城环境；入内仍须以实名预约成功为前提。",
-        "궁궐 사진은 황실 도시의 맥락을 보여 주며, 입장은 실명 예약 성공을 전제로 합니다.",
+        "Forbidden City corner tower · entry needs a successful real-name reservation",
+        "故宫角楼 · 入内需实名预约成功",
+        "자금성 각루 · 입장은 실명 예약에 성공해야 가능",
       ),
     ),
     image(
@@ -2456,9 +2461,9 @@ const beijing: PrivateTourProduct = {
         "생활의 흔적이 남아 있는 베이징 후퉁 골목",
       ),
       l(
-        "A street-level view complements the capital's monumental architecture without claiming a specific booked stop.",
-        "街巷尺度补充北京宏大地标之外的城市生活，不把画面标成某个已预订景点。",
-        "골목의 시선은 베이징의 거대한 유적과 다른 도시 생활을 보여 주며, 특정 예약 장소로 단정하지 않습니다.",
+        "Everyday Beijing in a hutong lane · shown for atmosphere, not a specific booked stop",
+        "胡同里的北京日常 · 展示城市生活，并非某个已预订景点",
+        "후퉁 골목 속 베이징의 일상 · 특정 예약 장소는 아님",
       ),
     ),
   ],
@@ -2474,9 +2479,9 @@ const beijing: PrivateTourProduct = {
           "밤의 베이징 고가도로와 현대 스카이라인",
         ),
         l(
-          "The city view introduces the arrival night; the actual airport and hotel transfer are confirmed for each booking.",
-          "城市夜景用于呈现抵达北京的第一晚；实际机场与酒店接送按订单确认。",
-          "도시 야경은 베이징 도착 첫날을 보여 주며, 실제 공항과 호텔 이동은 예약별로 확정합니다.",
+          "Your first night in Beijing · airport and hotel transfer confirmed for your booking",
+          "抵达北京的第一晚 · 机场与酒店接送按你的订单确认",
+          "베이징 도착 첫날 · 공항과 호텔 이동은 예약에 맞춰 확정",
         ),
       ),
     ),
@@ -2491,9 +2496,9 @@ const beijing: PrivateTourProduct = {
           "2024년 9월 푸른 하늘 아래 온전히 보이는 베이징 천단공원 기년전",
         ),
         l(
-          "The photograph identifies the Hall of Prayer for Good Harvests, not an entrance gate or a guaranteed internal route.",
-          "照片展示的是天坛祈年殿，不代表具体入园门或保证固定内部路线。",
-          "사진은 천단공원 기년전을 보여 주며, 입장 문이나 고정 내부 동선을 보장하지 않습니다.",
+          "Hall of Prayer for Good Harvests · entrance gate and route inside the park can vary",
+          "天坛祈年殿 · 入园门和园内路线可能会变",
+          "천단공원 기년전 · 입장 문과 공원 안 동선은 달라질 수 있음",
         ),
       ),
     ),
@@ -2508,9 +2513,9 @@ const beijing: PrivateTourProduct = {
           "베이징 자금성 안의 붉은 회랑",
         ),
         l(
-          "The corridor shows the palace at walking scale; Tiananmen and Forbidden City admission still depend on successful advance reservation.",
-          "宫廊画面呈现步行游览时的故宫尺度；天安门与故宫仍须以实名预约成功为前提。",
-          "회랑은 걸어서 마주하는 궁궐의 규모를 보여 주며, 톈안먼과 자금성 입장은 사전 실명 예약 성공을 전제로 합니다.",
+          "The palace as you see it on foot · Tiananmen and Forbidden City entry depends on a successful advance reservation",
+          "步行所见的故宫宫廊 · 天安门和故宫须实名预约成功才能进入",
+          "걸으며 만나는 자금성 회랑 · 톈안먼과 자금성은 사전 실명 예약에 성공해야 입장 가능",
         ),
       ),
     ),
@@ -2525,9 +2530,9 @@ const beijing: PrivateTourProduct = {
           "베이징 북부 산등성이의 복원된 만리장성 구간",
         ),
         l(
-          "The photograph does not identify this section as Badaling. The itinerary's Badaling reservation, access and attraction transport are confirmed separately.",
-          "照片不把这段长城标成八达岭；行程中的八达岭预约、入园与景交另行确认。",
-          "사진 속 구간을 팔달령으로 특정하지 않습니다. 일정의 팔달령 예약, 입장과 관광지 이동은 별도로 확정합니다.",
+          "A Great Wall ridge, not identified as Badaling · your Badaling reservation, entry and attraction transport are confirmed separately",
+          "山脊上的长城，未标明为八达岭 · 行程中的八达岭预约、入园和景交另行确认",
+          "산등성이의 만리장성, 팔달령으로 특정하지 않음 · 일정의 팔달령 예약, 입장과 관광지 이동은 별도 확정",
         ),
         1200,
         750,
@@ -2544,9 +2549,9 @@ const beijing: PrivateTourProduct = {
           "베이징의 역사적 지붕과 멀리 보이는 현대 CBD",
         ),
         l(
-          "Historic and modern Beijing share the final frame; the actual airport and transfer time follow the booked flight.",
-          "用古今北京同框为行程收尾；实际机场与送机时间按已订航班确认。",
-          "역사와 현대의 베이징이 한 장면에 담기며, 실제 공항과 이동 시간은 예약된 항공편에 맞춥니다.",
+          "Old and new Beijing in one view · airport and transfer time follow your booked flight",
+          "古今北京同框，为行程收尾 · 机场与送机时间按已订航班确认",
+          "역사와 현대의 베이징이 한 장면에 · 공항과 이동 시간은 예약된 항공편에 맞춤",
         ),
       ),
     ),
@@ -2578,7 +2583,7 @@ const beijing: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-19",
+  dateModified: "2026-09-23",
 };
 
 const zhangjiajieForestFixedRoute: PrivateTourProduct = {
@@ -2590,17 +2595,17 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   title: l(
     "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     "张家界森林公园 4 天 3 晚固定路线私家团",
-    "장자제 국립삼림공원 4일 고정 코스 프라이빗 투어",
+    "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어",
   ),
   metadataTitle: l(
     "Zhangjiajie National Forest Park: 4-Day Private Tour",
     "张家界森林公园4天私家团：固定徒步路线",
-    "장자제 국립삼림공원 3박 4일 프라이빗 투어",
+    "장가계 국립삼림공원 3박 4일 프라이빗 투어",
   ),
   metadataDescription: l(
     "Four-day fixed-route private tour of Zhangjiajie National Forest Park, with two walking days and one villa base. No cable cars or elevators.",
     "张家界森林公园4天3晚固定路线私家团：两个步行游览日、三晚同住一处指定别墅，含行程私车、D2全天和D3白天英语导游。不乘索道和电梯，不含玻璃桥与天门山。",
-    "장자제 국립삼림공원 3박 4일 고정 코스. 한 빌라 3박, D2 종일·D3 주간 한국어 가이드 포함. 케이블카·엘리베이터 미이용, 유리다리·톈먼산 불포함.",
+    "장가계 국립삼림공원 3박 4일 고정 코스. 한 빌라 3박, D2 종일·D3 주간 한국어 가이드 포함. 케이블카·엘리베이터 미이용, 유리다리·천문산 불포함.",
   ),
   eyebrow: l(
     "Same designated villa for 3 nights · Two walking forest days · No cable cars or elevators",
@@ -2610,7 +2615,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   lede: l(
     "A lower-priced private route for travellers who want Zhangjiajie’s forest landscapes without cable cars, elevators or last-minute add-ons. Stay in the same Country Garden villa for all three nights, use the north gate for the high peaks, then walk the east-gate valleys before an evening at Seventy-Two Wonder Tower.",
     "这是一条不坐索道、电梯，也不靠临时加项抬价的张家界低价私家路线。三晚固定入住同一处碧桂园别墅；第二天从北门看高山峰林，第三天从东门步行溪谷，再夜游七十二奇楼。",
-    "케이블카와 엘리베이터, 현장 추가 옵션 없이 장자제의 산림 풍경을 보는 합리적인 프라이빗 코스입니다. 3박 모두 같은 컨트리 가든 빌라에 머물고, 둘째 날은 북문 산악 코스, 셋째 날은 동문 계곡 산책과 칠십이기루 야경을 이어갑니다.",
+    "케이블카와 엘리베이터, 현장 추가 옵션 없이 장가계의 산림 풍경을 보는 합리적인 프라이빗 코스입니다. 3박 모두 같은 컨트리 가든 빌라에 머물고, 둘째 날은 북문 산악 코스, 셋째 날은 동문 계곡 산책과 칠십이기루 야경을 이어갑니다.",
   ),
   summary: l(
     "Three nights in a designated Country Garden family villa with breakfast, private station or airport transfers, private transport on the fixed route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
@@ -2631,7 +2636,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       "三晚固定入住同一处指定碧桂园别墅",
     ],
     [
-      "북문에서 톈쯔산·양자제·위안자제를 연결",
+      "북문에서 천자산·양가계·원가계를 잇는 코스",
       "십리화랑을 걸어서 왕복하고 금편계 동쪽 구간 산책",
       "전용 차량 왕복이 포함된 칠십이기루 자유 야간 관람",
       "3박 모두 같은 지정 컨트리 가든 빌라 이용",
@@ -2640,11 +2645,11 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   itinerary: [
     day(
       1,
-      l("Arrive and settle in", "抵达张家界并入住", "장자제 도착 및 체크인"),
+      l("Arrive and settle in", "抵达张家界并入住", "장가계 도착 및 체크인"),
       l(
-        "Meet the driver at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station and travel by private vehicle to the designated Country Garden villa. Check in and rest; no scenic-area visit is scheduled. This villa remains the group’s base for all three nights.",
-        "司机在张家界荷花机场或张家界西站接客，乘专车前往指定碧桂园别墅。办理入住后休息，当天不安排景区；三晚均以这处别墅为固定住宿，不中途换酒店。",
-        "장자제 허화공항 또는 장자제서역에서 기사를 만나 전용 차량으로 지정 컨트리 가든 빌라로 이동합니다. 체크인 후 쉬며 관광지는 넣지 않습니다. 3박 모두 같은 빌라를 거점으로 이용합니다.",
+        "Our driver meets you at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station and takes you by private vehicle to the designated Country Garden villa. There is no sightseeing today, so you can check in and rest. This villa is your base for all three nights.",
+        "司机在张家界荷花机场或张家界西站接你，乘专车前往指定碧桂园别墅。当天不安排景区，入住后好好休息；三晚都住这处别墅，中途不换酒店。",
+        "기사가 장가계 허화공항이나 장가계서역에서 맞이해 전용 차량으로 지정 컨트리 가든 빌라까지 모셔다 드립니다. 이날은 관광 일정이 없으니 체크인 후 편히 쉬세요. 3박 모두 이 빌라에 머뭅니다.",
       ),
     ),
     day(
@@ -2652,12 +2657,12 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       l(
         "Tianzi Mountain, Yangjiajie and Yuanjiajie",
         "天子山、杨家界与袁家界",
-        "톈쯔산·양자제·위안자제",
+        "천자산·양가계·원가계",
       ),
       l(
-        "Leave the villa at about 07:45 for Tianzi Mountain North Gate. Use the included scenic shuttles via Sancha Junction to visit Dianjiangtai, the Tianzi Mountain core area, the short Natural Great Wall walk in Yangjiajie, and Yuanjiajie’s main viewpoints before returning by shuttle to the north gate and then by private vehicle to the villa at about 18:30. Allow roughly 10–11 hours door to door and 4–7 km of walking. No cable car or elevator is used; the operating order may change for official closures, last-shuttle times, weather, safety or crowd control without casually removing the listed core stops.",
-        "约 07:45 从别墅出发前往天子山北门，使用已含的景区环保车，经三岔口游览点将台、天子山核心区域、杨家界天然长城短线和袁家界主要观景点；随后乘环保车返回北门，再乘专车回别墅，正常约 18:30 抵达。门到门约 10–11 小时，步行约 4–7 公里。当天不乘索道或电梯；如遇官方关闭、末班环保车、天气、安全或限流，执行顺序可以调整，但不会为普通进度随意删减已列核心内容。",
-        "07:45경 빌라에서 출발해 톈쯔산 북문으로 이동합니다. 포함된 관광 셔틀을 이용해 싼차 교차점, 뎬장타이, 톈쯔산 핵심 구역, 양자제 천연장성 짧은 산책로와 위안자제 주요 전망대를 둘러본 뒤 북문으로 돌아와 전용 차량으로 18:30경 빌라에 도착합니다. 총 10~11시간, 도보 약 4~7km의 일정입니다. 케이블카와 엘리베이터는 이용하지 않으며, 공식 폐쇄·막차·날씨·안전·혼잡 통제 시 핵심 장소를 임의로 빼지 않는 범위에서 순서를 조정할 수 있습니다.",
+        "Leave the villa at about 07:45 for Tianzi Mountain North Gate. Use the included scenic shuttles via Sancha Junction to visit Dianjiangtai, the Tianzi Mountain core area, the short Natural Great Wall walk in Yangjiajie and Yuanjiajie’s main viewpoints, then take the shuttle back to the north gate and your private vehicle to the villa, arriving at about 18:30. Allow roughly 10–11 hours door to door and 4–7 km of walking. No cable cars or elevators today. Official closures, last-shuttle times, weather, safety or crowd control may change the order, but we won’t casually drop the listed core stops.",
+        "约 07:45 从别墅出发前往天子山北门，使用已含的景区环保车，经三岔口游览点将台、天子山核心区域、杨家界天然长城短线和袁家界主要观景点；随后乘环保车返回北门，再乘专车回别墅，正常约 18:30 抵达。门到门约 10–11 小时，步行约 4–7 公里。当天不乘索道或电梯；如遇官方关闭、末班环保车、天气、安全或限流，游览顺序可能会变，但不会因为一般进度随意删减已列的核心景点。",
+        "07:45경 빌라에서 출발해 천자산 북문으로 이동합니다. 포함된 관광 셔틀을 이용해 싼차 교차점, 뎬장타이, 천자산 핵심 구역, 양가계 천연장성 짧은 산책로와 원가계 주요 전망대를 둘러본 뒤 북문으로 돌아와 전용 차량으로 18:30경 빌라에 도착합니다. 총 10~11시간, 도보 약 4~7km의 일정입니다. 케이블카와 엘리베이터는 이용하지 않습니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있지만, 명시된 핵심 장소를 임의로 빼지는 않습니다.",
       ),
     ),
     day(
@@ -2668,30 +2673,30 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         "십리화랑·금편계·칠십이기루 야경",
       ),
       l(
-        "Leave at about 07:30 for the east gate. Walk the open section of Ten-Mile Gallery out and back, take the included shuttle to Water Winding Four Gates, and walk the eastern Golden Whip Stream out and back toward the Tiaoyutan area. After a simple lunch break, visit the World Geopark Museum when open, then return to the villa at about 15:00. At about 17:30, the driver takes the group to Seventy-Two Wonder Tower; explore the regular evening session independently and meet the driver at the agreed point at about 20:30. The English-speaking guide covers the daytime route only; the evening includes private drop-off, pickup and remote assistance. The Ten-Mile Gallery mini-train is not used.",
+        "Leave at about 07:30 for the east gate. Walk the open section of Ten-Mile Gallery out and back, take the included shuttle to Water Winding Four Gates, then walk the eastern Golden Whip Stream out and back toward the Tiaoyutan area. After a simple lunch break, visit the World Geopark Museum when open, then return to the villa at about 15:00. At about 17:30, the driver takes you to Seventy-Two Wonder Tower; explore the regular evening session on your own and meet the driver at the agreed point at about 20:30. Your English-speaking guide is with you for the daytime route only; the evening includes private drop-off, pickup and remote assistance. The Ten-Mile Gallery mini-train is not used.",
         "约 07:30 从别墅出发前往东门。十里画廊开放游览段步行往返，再乘已含的环保车前往水绕四门，沿金鞭溪东段步行至跳鱼潭附近后原路返回。简单午餐休息后，在开放时参观世界地质公园博物馆，正常约 15:00 回别墅休息。约 17:30 由司机送往七十二奇楼，普通夜场由客人自由游览，约 20:30 在约定地点会合返回。英语导游只陪同白天路线；夜场含专车送达、接回和远程协助，但没有现场导游。当天不乘十里画廊小火车。",
-        "07:30경 동문으로 출발합니다. 십리화랑의 개방 구간을 걸어서 왕복한 뒤 포함된 셔틀로 수요사문에 이동하고, 금편계 동쪽 구간을 도약담 부근까지 왕복 산책합니다. 간단한 점심 휴식 후 운영 중이면 세계지질공원박물관을 관람하고 15:00경 빌라에서 쉽니다. 17:30경 기사가 칠십이기루로 이동시키며, 일반 야간 회차는 자유 관람 후 20:30경 약속 장소에서 다시 만나 돌아옵니다. 한국어 가이드는 주간 일정까지만 동행하고 야간에는 전용 차량 왕복과 원격 지원만 제공됩니다. 십리화랑 미니 열차는 이용하지 않습니다.",
+        "07:30경 동문으로 출발합니다. 십리화랑의 개방 구간을 걸어서 왕복한 뒤 포함된 셔틀로 수요사문에 이동하고, 금편계 동쪽 구간을 도약담 부근까지 왕복 산책합니다. 간단한 점심 휴식 후 운영 중이면 세계지질공원박물관을 관람하고, 15:00경 빌라로 돌아와 쉽니다. 17:30경 기사가 칠십이기루까지 모셔다 드리며, 일반 야간 회차를 자유롭게 관람한 뒤 20:30경 약속 장소에서 기사와 만나 돌아옵니다. 한국어 가이드는 주간 일정까지만 동행하고, 야간에는 전용 차량 왕복과 원격 지원만 제공합니다. 십리화랑 미니 열차는 이용하지 않습니다.",
       ),
     ),
     day(
       4,
       l("Breakfast and departure", "早餐后从容离开", "조식 후 출발"),
       l(
-        "Have breakfast at the villa and rest until the confirmed pickup time. Check out and travel by private vehicle to Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station. No attraction is added on departure day, reducing the risk of a rushed connection.",
-        "在别墅用早餐，并按已确认的接送时间自由休息。退房后乘专车前往张家界荷花机场或张家界西站。离开日不再增加景区，避免因游览造成赶车或赶飞机风险。",
-        "빌라에서 조식 후 확정된 픽업 시간까지 쉬고 체크아웃합니다. 전용 차량으로 장자제 허화공항 또는 장자제서역에 이동하며, 항공편이나 열차 연결을 서두르지 않도록 출발일에는 관광지를 추가하지 않습니다.",
+        "Breakfast at the villa, then rest until your pickup time. Check out and travel by private vehicle to Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station. No sightseeing is added on departure day, so there is less risk of rushing for your flight or train.",
+        "在别墅吃早餐，休息到约好的接送时间。退房后乘专车前往张家界荷花机场或张家界西站。离开日不再安排景区，免得因为游览赶车、赶飞机。",
+        "빌라에서 조식을 드시고 픽업 시간까지 편히 쉬다가 체크아웃합니다. 전용 차량으로 장가계 허화공항이나 장가계서역에 갑니다. 항공편이나 열차 시간에 서두르지 않도록 출발일에는 관광지를 넣지 않습니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Three nights in the same designated Country Garden family villa, with breakfast and twin sharing as the base arrangement; the accommodation is not changed during the route. The exact villa unit, bedroom allocation, foreign-guest registration, breakfast arrangement and any single-room difference are confirmed before payment.",
-    "三晚固定入住同一处指定碧桂园家庭别墅，基础口径为两人一间并含早餐，行程中不更换住宿。具体别墅单元、卧室分配、外宾登记、早餐安排和单房差均在付款前确认。",
-    "3박 모두 같은 지정 컨트리 가든 패밀리 빌라에 머물며 기본은 2인 1실과 조식 포함입니다. 일정 중 숙소를 바꾸지 않으며, 정확한 빌라 동·객실 배정·외국인 숙박 등록·조식과 1인실 차액은 결제 전에 확정합니다.",
+    "Three nights in the same designated Country Garden family villa, on a twin-sharing basis with breakfast, and no hotel changes along the way. Before you pay, we confirm the exact villa unit, bedroom allocation, foreign-guest registration, breakfast arrangement and any single-room difference.",
+    "三晚固定入住同一处指定碧桂园家庭别墅，按两人一间、含早餐计，中途不换住处。付款前，我们会和你确认具体别墅单元、卧室分配、外宾登记、早餐安排和单房差。",
+    "3박 모두 같은 지정 컨트리 가든 패밀리 빌라에 머물며, 2인 1실·조식 포함이 기본입니다. 중간에 숙소를 옮기지 않습니다. 정확한 빌라 동, 객실 배정, 외국인 숙박 등록, 조식과 1인실 차액은 결제 전에 확정해 드립니다.",
   ),
   serviceNote: l(
     "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, and standard evening admission to Seventy-Two Wonder Tower with insurance. The Day 3 evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
     "含 D1/D4 司机接送、行程所列私车、D2 全天及 D3 白天英语导游、成人武陵源门票与环保车联票及必买保险、七十二奇楼普通夜场票及保险。D3 夜场为自由活动，含专车送达、接回和远程协助。全程无购物店安排。",
-    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 우링위안 입장권·셔틀 패키지, 보험이 포함된 칠십이기루 일반 야간 입장권이 포함됩니다. D3 야간은 자유 관람이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
+    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 무릉원 입장권·셔틀 패키지, 보험이 포함된 칠십이기루 일반 야간 입장권이 포함됩니다. D3 야간은 자유 관람이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -2707,33 +2712,33 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       "博物馆收费体验、另购演出及固定路线未列项目",
     ],
     [
-      "백룡 엘리베이터, 톈쯔산 케이블카와 양자제 케이블카",
-      "십리화랑 미니 열차 및 포함 항목에 없는 기타 유료 관광지 교통 (우링위안 입장권·셔틀 패키지는 포함)",
+      "백룡 엘리베이터, 천자산 케이블카와 양가계 케이블카",
+      "십리화랑 미니 열차 및 포함 항목에 없는 기타 유료 관광지 교통 (무릉원 입장권·셔틀 패키지는 포함)",
       "칠십이기루 야간 현장 가이드",
       "박물관 유료 체험, 별도 공연 및 고정 일정에 명시되지 않은 항목",
     ],
     l(
       "Holiday, unlisted night-time, overtime and other unlisted services; Day 3 Seventy-Two Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
-      "节假日、未列夜间、超时及其他未列服务；D3 七十二奇楼普通夜场票及保险、专车往返与远程协助已含",
-      "공휴일, 미기재 야간, 초과 시간 및 기타 미기재 서비스. D3 칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함",
+      "节假日、未列出的夜间服务、超时及其他未列服务（D3 七十二奇楼普通夜场票及保险、专车往返与远程协助已含）",
+      "공휴일, 일정 외 야간 서비스, 초과 시간 및 기타 일정 외 서비스 (D3 칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함)",
     ),
   ),
   bookingNote: l(
-    "This is a fixed route with no elective attraction swap or last-minute add-on. The exact villa, room plan, vehicle and ticket inventory must be reconfirmed for the selected non-holiday dates before payment. The published per-person starting prices cover groups of 2 and 4 travellers; flights are not included. Other group sizes and all child prices require a manual quote based on age, bed use and vehicle seats.",
-    "本产品为固定路线，不设置自选景点，也不在现场临时加项。指定非节假日的别墅、房间分配、车型与票务库存须在付款前再次确认。网页仅公开 2 人和 4 人的每人起价，往返机票另计；其他人数及所有儿童价格均须按年龄、占床和车辆座位人工核价。",
-    "이 상품은 관광지 선택 교체나 현장 추가 옵션이 없는 고정 코스입니다. 선택한 비공휴일의 빌라·객실 구성·차량과 입장권 재고는 결제 전에 다시 확인합니다. 공개된 항공권 제외 1인 시작가는 2명과 4명 기준이며, 다른 인원과 모든 아동 요금은 나이·침대 사용·차량 좌석에 따라 별도 견적이 필요합니다.",
+    "The route is fixed, with no optional attraction swaps or last-minute add-ons. Before you pay, we reconfirm the exact villa, room plan, vehicle and ticket availability for your non-holiday dates. The per-person starting prices shown are for groups of 2, 4 and 6 travellers; flights are not included. For other group sizes and all child prices, we work out a quote based on age, bed use and vehicle seats.",
+    "这是一条固定路线，不设置自选景点，也不在现场临时加项。付款前，我们会按你的非节假日出行日期，再次确认别墅、房间分配、车型和票源。网页只公开 2 人、4 人和 6 人的每人起价，往返机票另计；其他人数和所有儿童价格，我们会按年龄、占床和车辆座位单独核价。",
+    "관광지를 골라 바꾸거나 현장에서 옵션을 추가하지 않는 고정 코스입니다. 결제 전에 선택하신 비공휴일 날짜의 빌라, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 공개된 항공권 제외 1인 시작가는 2명·4명·6명 기준입니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
   ),
   heroImage: image(
     "/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg",
     l(
       "Layered sandstone pillars in Zhangjiajie National Forest Park",
       "张家界国家森林公园层叠的砂岩峰柱",
-      "장자제 국립삼림공원의 겹겹이 이어진 사암 봉우리",
+      "장가계 국립삼림공원의 겹겹이 이어진 사암 봉우리",
     ),
     l(
-      "The fixed route spends its first full touring day among the high forest pillars.",
+      "Your first full touring day on this fixed route is spent among the high forest pillars.",
       "固定路线的第一个完整游览日深入高山峰林。",
-      "고정 일정의 첫 종일 관광은 높은 산림 봉우리 지대에서 진행됩니다.",
+      "고정 코스의 첫 종일 관광일에는 높은 산림 봉우리 사이를 둘러봅니다.",
     ),
     1600,
     1000,
@@ -2744,12 +2749,12 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       l(
         "Mist moving between Zhangjiajie’s forest pillars",
         "云雾穿行于张家界峰林之间",
-        "장자제 봉우리 사이로 흐르는 안개",
+        "장가계 봉우리 사이로 흐르는 안개",
       ),
       l(
-        "Visibility and weather change quickly in the mountains; the photograph describes the landscape, not a guaranteed view.",
-        "山区能见度与天气变化较快；照片用于呈现地貌，不代表保证出现同样景观。",
-        "산악 지역의 날씨와 시야는 빠르게 변하므로 사진은 지형을 보여 줄 뿐 동일한 전망을 보장하지 않습니다.",
+        "Zhangjiajie’s forest landscape. Weather and visibility change quickly in the mountains, so the view on your day may differ.",
+        "照片展示的是这里的地貌；山里天气和能见度变化快，你当天看到的景色可能不同。",
+        "사진은 이곳의 지형을 보여 줍니다. 산은 날씨와 시야가 빠르게 바뀌어, 당일 풍경은 사진과 다를 수 있습니다.",
       ),
       1600,
       1000,
@@ -2762,9 +2767,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         "지정 컨트리 가든 빌라 객실군의 거실",
       ),
       l(
-        "A villa reference image; the exact unit and bedroom allocation are written into the booking confirmation.",
-        "此图为别墅资源实拍参考；具体单元与卧室分配以订单确认单为准。",
-        "빌라 실제 참고 사진이며 정확한 동과 객실 배정은 예약 확인서에 기재합니다.",
+        "A living room in the villa collection; your exact unit and bedroom allocation appear in your booking confirmation.",
+        "别墅房源实拍客厅；你住哪个单元、卧室怎么分，写在订单确认单里。",
+        "빌라 객실군의 실제 거실 사진이며, 정확한 동과 객실 배정은 예약 확인서에 적어 드립니다.",
       ),
       1600,
       1000,
@@ -2782,9 +2787,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "지정 컨트리 가든 빌라 객실군의 트윈룸",
         ),
         l(
-          "The same villa base is used for all three nights; the exact room split is confirmed before payment.",
-          "三晚均使用同一处别墅住宿；具体房间分配在付款前确认。",
-          "3박 모두 같은 빌라를 사용하며 정확한 객실 배정은 결제 전에 확정합니다.",
+          "The same villa is your base for all three nights; we confirm the exact room split before you pay.",
+          "三晚都住同一处别墅；具体怎么分房，付款前和你确认。",
+          "3박 모두 같은 빌라에 머물며, 정확한 객실 배정은 결제 전에 확정해 드립니다.",
         ),
       ),
     ),
@@ -2796,11 +2801,11 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         l(
           "A steep forest pillar rising above the Zhangjiajie valley",
           "从张家界山谷中拔地而起的峰柱",
-          "장자제 계곡 위로 솟은 가파른 사암 봉우리",
+          "장가계 계곡 위로 솟은 가파른 사암 봉우리",
         ),
         l(
-          "The photograph represents Day 2’s peak terrain and does not claim a particular viewpoint or viewing order.",
-          "照片用于呈现 D2 的峰林地貌，不把画面标成某个具体观景台或固定观看顺序。",
+          "Day 2’s peak terrain in general—not a particular viewpoint or viewing order.",
+          "D2 一带的峰林地貌，并非某个具体观景台，也不代表观看顺序。",
           "사진은 D2의 봉우리 지형을 보여 주며 특정 전망대나 관람 순서를 뜻하지 않습니다.",
         ),
       ),
@@ -2813,12 +2818,12 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         l(
           "A forest stream and footbridge in Zhangjiajie’s valley landscape",
           "张家界溪谷中的森林、溪流与步道桥",
-          "장자제 계곡의 숲과 물길, 산책로 다리",
+          "장가계 계곡의 숲과 물길, 산책로 다리",
         ),
         l(
-          "The valley scene introduces the eastern Golden Whip Stream walk; water levels and visibility vary with weather.",
-          "溪谷画面用于呈现金鞭溪东段步行环境；水量与能见度会随天气变化。",
-          "계곡 풍경은 금편계 동쪽 산책 환경을 보여 주며 수량과 시야는 날씨에 따라 달라집니다.",
+          "Setting the scene for the eastern Golden Whip Stream walk; water levels and visibility vary with the weather.",
+          "金鞭溪东段步行一带的溪谷环境；水量和能见度会随天气变化。",
+          "금편계 동쪽 산책로의 계곡 분위기를 보여 주는 사진이며, 수량과 시야는 날씨에 따라 달라집니다.",
         ),
       ),
     ),
@@ -2833,9 +2838,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "지정 컨트리 가든 빌라 객실군의 정원 테라스",
         ),
         l(
-          "Departure day is left free of sightseeing so the transfer can follow the confirmed flight or train.",
-          "离开日不再加景点，接送时间按已确认航班或高铁安排。",
-          "출발일에는 관광지를 넣지 않고 확정된 항공편이나 열차에 맞춰 이동합니다.",
+          "No sightseeing on departure day, so your transfer can follow your flight or train.",
+          "离开日不再加景点，接送时间按你的航班或高铁来安排。",
+          "출발일에는 관광 일정 없이 항공편이나 열차 시간에 맞춰 이동합니다.",
         ),
       ),
     ),
@@ -2862,7 +2867,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-06",
+  dateModified: "2026-09-23",
   lastReviewed: "2026-08-31",
 };
 
@@ -2875,32 +2880,32 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
   title: l(
     "Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour",
     "张家界、芙蓉镇与凤凰 7 天 6 晚私家团",
-    "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
+    "장가계, 부용진, 봉황 6박 7일 프라이빗 투어",
   ),
   metadataTitle: l(
     "7-Day Zhangjiajie, Furong & Fenghuang Private Tour",
     "张家界芙蓉镇凤凰古城7天6晚私家团",
-    "장자제·푸룽전·펑황 6박 7일 프라이빗 투어",
+    "장가계·부용진·봉황 6박 7일 프라이빗 투어",
   ),
   metadataDescription: l(
     "A 7-day private route through Wulingyuan, Furong Town and Fenghuang, with six hotel nights, private transport and an English guide on Days 2–5.",
     "张家界、芙蓉镇、凤凰古城7天6晚私家团：武陵源3晚、芙蓉镇1晚、凤凰2晚，D2–D5英语导游，含行程私车及明确列出的基础门票。",
-    "우링위안 3박, 푸룽전 1박, 펑황고성 2박의 6박 7일 프라이빗 투어. D2~D5 한국어 가이드와 일정 내 전용 차량이 포함됩니다.",
+    "무릉원 3박, 부용진 1박, 봉황고성 2박의 6박 7일 프라이빗 투어. D2~D5 한국어 가이드와 일정 내 전용 차량이 포함됩니다.",
   ),
   eyebrow: l(
     "7 days · 6 nights · Wulingyuan 3 nights · Furong Town 1 night · Fenghuang 2 nights",
     "7 天 6 晚 · 武陵源 3 晚 · 芙蓉镇 1 晚 · 凤凰 2 晚",
-    "6박 7일 · 우링위안 3박 · 푸룽전 1박 · 펑황고성 2박",
+    "6박 7일 · 무릉원 3박 · 부용진 1박 · 봉황고성 2박",
   ),
   lede: l(
     "Spend two full days among Wulingyuan’s sandstone peaks and forest valleys, then continue through western Hunan to Furong Town and Fenghuang Ancient Town. Four English-guided touring days are balanced by a free day in Fenghuang.",
     "先用两个完整游览日走进武陵源峰林与溪谷，再沿湘西路线前往芙蓉镇和凤凰古城。D2–D5 由英语导游陪同，D6 留给你按自己的节奏游凤凰。",
-    "우링위안의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 푸룽전과 펑황고성으로 이어갑니다. D2~D5는 한국어 가이드와 여행하고 D6는 펑황에서 자유롭게 보냅니다.",
+    "무릉원의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 부용진과 봉황고성으로 이어갑니다. D2~D5는 한국어 가이드와 여행하고 D6는 봉황에서 자유롭게 보냅니다.",
   ),
   summary: l(
-    "Six hotel nights, private transport for the transfers and touring periods listed in the itinerary, and an English-speaking guide on Days 2–5. Base admissions include Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
-    "含 6 晚住宿、逐日行程所列接送与游览时段内的私人用车，以及 D2–D5 英语导游。基础门票明确包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
-    "6박 숙박, 일정에 명시된 이동·관광 시간대의 전용 차량, D2~D5 한국어 가이드가 포함됩니다. 기본 입장권은 우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+    "Six hotel nights, a private vehicle for the transfers and touring times listed in the itinerary, and an English-speaking guide on Days 2–5. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "含 6 晚住宿、行程逐日列出的接送和游览时段专车，以及 D2–D5 英语导游。基础门票包括武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
+    "6박 숙박, 일정에 명시된 이동·관광 시간대의 전용 차량, D2~D5 한국어 가이드가 포함됩니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
   ),
   highlights: lists(
     [
@@ -2916,10 +2921,10 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       "D2–D5 四天英语导游，D6 在凤凰自由活动",
     ],
     [
-      "톈쯔산·양자제·위안자제를 하루에 연결하는 가이드 일정",
+      "천자산·양가계·원가계를 하루에 연결하는 가이드 일정",
       "십리화랑 미니 열차, 금편계 산책과 칠십이기루 야경",
-      "푸룽전 1박 후 펑황고성에서 2박",
-      "D2~D5 한국어 가이드 관광과 D6 펑황 자유 일정",
+      "부용진 1박 후 봉황고성에서 2박",
+      "D2~D5 한국어 가이드 관광과 D6 봉황 자유 일정",
     ],
   ),
   itinerary: [
@@ -2928,12 +2933,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Arrive in Zhangjiajie and settle in Wulingyuan",
         "抵达张家界，入住武陵源",
-        "장자제 도착 후 우링위안 체크인",
+        "장가계 도착 후 무릉원 체크인",
       ),
       l(
-        "Meet the driver at Zhangjiajie Hehua International Airport or the exact Zhangjiajie railway station named in the written confirmation, then travel with your luggage by private vehicle to the confirmed Wulingyuan hotel. Day 1 is a driver-only transfer with no guide or fixed sightseeing. Stay in Wulingyuan for the first of three nights.",
-        "司机在已确认的张家界机场或车站接客，行李随行，乘专车前往已确认的武陵源酒店。当天仅含司机接送，不含导游和固定游览；入住武陵源第一晚，共连住三晚。",
-        "확정된 장자제 공항 또는 기차역에서 기사를 만나 수하물과 함께 전용 차량으로 확정된 우링위안 호텔에 이동합니다. 이날은 가이드 없이 전용 차량 픽업만 제공되며 고정 관광은 없습니다. 우링위안에서 총 3박 중 첫날을 보냅니다.",
+        "Our driver meets you at Zhangjiajie Hehua International Airport or the Zhangjiajie railway station named in your written confirmation, and takes you and your luggage by private vehicle to your Wulingyuan hotel. Day 1 is a driver-only transfer with no guide or sightseeing, so you can settle in for the first of three nights here.",
+        "司机在张家界机场或车站接你，连人带行李用专车直接送到武陵源酒店。当天只含司机接送，不安排导游和景点，好好入住休息；武陵源共连住三晚，这是第一晚。",
+        "기사가 장가계 공항이나 기차역에서 맞이해 짐과 함께 전용 차량으로 무릉원 호텔까지 모셔다 드립니다. 이날은 가이드 없이 전용 차량 픽업만 제공되며 관광 일정은 없으니 편하게 체크인하세요. 무릉원 3박 중 첫날입니다.",
       ),
     ),
     day(
@@ -2941,12 +2946,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Tianzi Mountain, Yangjiajie and Yuanjiajie",
         "天子山、杨家界与袁家界",
-        "톈쯔산·양자제·위안자제",
+        "천자산·양가계·원가계",
       ),
       l(
-        "Leave the hotel with the English-speaking guide and private driver for the confirmed Wulingyuan entrance. Use the included park eco-shuttles and walking routes to connect Tianzi Mountain, Yangjiajie and Yuanjiajie. The operating order may change for official closures, weather, safety or crowd control. Cable cars and the Bailong Elevator are not included unless named in the written confirmation.",
-        "从酒店出发，由英语导游和私人司机送往已确认的武陵源入口。进入景区后使用已含的环保车并结合步行，游览天子山、杨家界和袁家界；如遇官方关闭、天气、安全或限流，实际顺序按当天可执行方案调整。未列索道和百龙天梯不在基础包含项内。",
-        "한국어 가이드와 전용 기사가 호텔에서 확정된 우링위안 입구까지 동행합니다. 포함된 관광 셔틀과 도보 구간으로 톈쯔산, 양자제와 위안자제를 둘러봅니다. 공식 폐쇄, 날씨, 안전 또는 혼잡 통제가 있으면 순서를 조정하며, 확인서에 없는 케이블카와 백룡 엘리베이터는 별도입니다.",
+        "Your English-speaking guide and private driver take you from the hotel to the Wulingyuan entrance. Inside, the included park eco-shuttles and walking routes link Tianzi Mountain, Yangjiajie and Yuanjiajie. The order may change for official closures, weather, safety or crowd control. Cable cars and the Bailong Elevator are extra unless named in your written confirmation.",
+        "英语导游和专车司机从酒店出发，带你前往武陵源入口。进园后乘已含的环保车，再结合步行，串起天子山、杨家界和袁家界。如遇官方关闭、天气、安全或限流，游览顺序以当天实际可行的方案为准。未列出的索道和百龙天梯不含在基础价格内。",
+        "한국어 가이드와 전용 기사가 호텔에서 무릉원 입구까지 함께 갑니다. 포함된 관광 셔틀과 도보로 천자산, 양가계, 원가계를 이어서 둘러봅니다. 공식 폐쇄, 날씨, 안전 문제나 혼잡 통제가 있으면 순서가 바뀔 수 있습니다. 확인서에 없는 케이블카와 백룡 엘리베이터는 별도입니다.",
       ),
     ),
     day(
@@ -2957,9 +2962,9 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "십리화랑·금편계·칠십이기루 야경",
       ),
       l(
-        "Travel from the hotel with the guide and private vehicle for Ten-Mile Gallery, including the mini-train, and the confirmed walking section of Golden Whip Stream. Later, continue to the standard evening session at Seventy-Two Wonder Tower and return to the Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are separate unless confirmed in writing.",
-        "从酒店乘专车出发，由英语导游陪同游览十里画廊，含小火车，并步行游览书面确认的金鞭溪路段。之后前往七十二奇楼普通夜场，结束后乘专车返回武陵源酒店。升级夜场及其他收费体验只有写入确认方案后才包含。",
-        "호텔에서 한국어 가이드와 전용 차량으로 출발해 미니 열차가 포함된 십리화랑과 서면으로 확정된 금편계 구간을 둘러봅니다. 이후 칠십이기루 일반 야간 관람을 하고 전용 차량으로 우링위안 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면으로 확정된 경우에만 포함됩니다.",
+        "Your guide and private vehicle take you to Ten-Mile Gallery, mini-train included, and to the walking section of Golden Whip Stream set out in your written confirmation. Then on to the standard evening session at Seventy-Two Wonder Tower, and back to your Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are extra unless confirmed in writing.",
+        "英语导游陪你乘专车从酒店出发，游览十里画廊（含小火车），再步行走书面确认单上的金鞭溪路段。之后去七十二奇楼普通夜场，结束后专车送回武陵源酒店。升级夜场和其他收费体验，写进确认方案才包含。",
+        "한국어 가이드와 전용 차량으로 호텔을 나서 미니 열차가 포함된 십리화랑을 둘러보고, 서면 확인서에 적힌 금편계 구간을 걷습니다. 이어서 칠십이기루 일반 야간 관람을 하고 전용 차량으로 무릉원 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면 확인서에 있을 때만 포함됩니다.",
       ),
     ),
     day(
@@ -2967,12 +2972,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Travel to Furong Town and stay overnight",
         "前往芙蓉镇并住一晚",
-        "푸룽전 이동 및 1박",
+        "부용진 이동 및 1박",
       ),
       l(
-        "Check out with your luggage and travel by private vehicle with the English-speaking guide to Furong Town. Explore the included first-entry area at a practical pace, then check in for one night in Furong Town. Paid experiences beyond the included admission are separate.",
-        "退房后行李随车，由英语导游陪同乘专车前往芙蓉镇。使用已含的芙蓉镇首道门票游览，并按现场情况安排合理节奏；当晚入住芙蓉镇。首道门票之外的收费体验另计。",
-        "체크아웃 후 수하물을 싣고 한국어 가이드와 전용 차량으로 푸룽전에 이동합니다. 포함된 기본 입장권으로 관람할 수 있는 구역을 무리 없는 속도로 둘러본 뒤 푸룽전에서 1박합니다. 기본 입장권 이외의 유료 체험은 별도입니다.",
+        "Check out and head to Furong Town by private vehicle with your English-speaking guide and luggage. Explore the area covered by the included first-entry ticket at a sensible pace, then check in for one night in Furong Town. Paid experiences beyond that ticket are extra.",
+        "退房后行李随车，英语导游陪你乘专车前往芙蓉镇。用已含的芙蓉镇首道门票游览，节奏看现场情况安排；当晚入住芙蓉镇。首道门票之外的收费体验另计。",
+        "체크아웃 후 수하물을 싣고 한국어 가이드와 전용 차량으로 부용진에 이동합니다. 포함된 기본 입장권으로 관람할 수 있는 구역을 무리 없는 속도로 둘러본 뒤 부용진에서 1박합니다. 기본 입장권 이외의 유료 체험은 별도입니다.",
       ),
     ),
     day(
@@ -2980,12 +2985,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Continue to Fenghuang Ancient Town",
         "前往凤凰古城",
-        "펑황고성으로 이동",
+        "봉황고성으로 이동",
       ),
       l(
-        "Check out and travel with your luggage by private vehicle and English-speaking guide to Fenghuang. After check-in, explore the public lanes and riverside areas of the ancient town with the guide. Fenghuang’s public streets do not require a first-entry gate ticket; boat rides and paid smaller attractions are separate. Stay for the first of two nights.",
-        "退房后行李随车，由英语导游陪同乘专车前往凤凰。入住后，在导游陪同下游览古城公共街巷与沱江沿岸。凤凰古城公共街区没有首道大门票；游船及收费小景点另计。当晚入住凤凰第一晚，共住两晚。",
-        "체크아웃 후 수하물과 함께 한국어 가이드와 전용 차량으로 펑황에 이동합니다. 체크인 후 가이드와 고성의 공공 골목과 강변을 둘러봅니다. 펑황고성 공공 구역에는 첫 입장권이 없으며 유람선과 유료 소규모 명소는 별도입니다. 펑황에서 총 2박 중 첫날을 보냅니다.",
+        "Check out and continue to Fenghuang by private vehicle with your English-speaking guide and luggage. After check-in, your guide takes you through the public lanes and riverside of the ancient town. Fenghuang’s public streets need no first-entry gate ticket; boat rides and paid smaller attractions are extra. This is the first of two nights here.",
+        "退房后行李随车，英语导游陪你乘专车前往凤凰。入住后，导游带你走古城的公共街巷和沱江沿岸。凤凰古城公共街区没有首道大门票；游船及收费小景点另计。在凤凰共住两晚，这是第一晚。",
+        "체크아웃 후 수하물과 함께 한국어 가이드와 전용 차량으로 봉황에 이동합니다. 체크인 후 가이드와 고성의 공공 골목과 강변을 둘러봅니다. 봉황고성 공공 구역에는 첫 입장권이 없으며 유람선과 유료 소규모 명소는 별도입니다. 봉황에서 총 2박 중 첫날을 보냅니다.",
       ),
     ),
     day(
@@ -2993,33 +2998,33 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "A free day in Fenghuang",
         "凤凰古城自由活动",
-        "펑황고성 자유 일정",
+        "봉황고성 자유 일정",
       ),
       l(
-        "Explore Fenghuang Ancient Town independently and stay for the second night. No private vehicle or English-speaking guide is included on Day 6. Boat rides, paid smaller attractions and any added transport or guiding are arranged only when agreed in writing.",
-        "全天自由安排凤凰古城公共街区，并入住凤凰第二晚。当天不含私人车辆和英语导游；如需游船、收费小景点、额外用车或导游服务，须另行书面确认。",
-        "펑황고성 공공 구역을 자유롭게 둘러보고 두 번째 밤을 보냅니다. 이날은 전용 차량과 한국어 가이드가 포함되지 않습니다. 유람선, 유료 소규모 명소, 추가 차량이나 가이드가 필요하면 서면으로 별도 확정합니다.",
+        "A free day to explore Fenghuang Ancient Town on your own, with a second night here. Day 6 includes no private vehicle or English-speaking guide. Boat rides, paid smaller attractions and any extra transport or guiding are arranged only once agreed in writing.",
+        "这一天自由逛凤凰古城公共街区，继续入住凤凰第二晚。当天不含专车和英语导游；如想坐游船、去收费小景点，或需要额外用车、导游，都要先和我们另行书面确认。",
+        "봉황고성 공공 구역을 자유롭게 둘러보고 두 번째 밤을 보냅니다. 이날은 전용 차량과 한국어 가이드가 포함되지 않습니다. 유람선, 유료 소규모 명소, 추가 차량이나 가이드가 필요하면 서면으로 별도 확정합니다.",
       ),
     ),
     day(
       7,
-      l("Depart from Fenghuang", "从凤凰离开", "펑황 출발"),
+      l("Depart from Fenghuang", "从凤凰离开", "봉황 출발"),
       l(
-        "Check out and take the driver-only private transfer to Fenghuang Ancient City Railway Station (凤凰古城站). If the written confirmation instead specifies a return transfer to Zhangjiajie, follow that agreed plan. No guide or sightseeing is included on departure day.",
-        "退房后由司机专车送往凤凰古城站。若最终书面方案明确约定送回张家界，则按该方案执行。离开日不含导游和固定游览。",
-        "체크아웃 후 가이드 없이 전용 차량으로 펑황고성역까지 이동합니다. 최종 서면 확인서에 장자제 귀환 이동이 명시된 경우에는 해당 계획을 따릅니다. 출발일에는 가이드와 관광 일정이 포함되지 않습니다.",
+        "After check-out, a driver-only private transfer takes you to Fenghuang Ancient City Railway Station (凤凰古城站). If your written confirmation includes a return to Zhangjiajie instead, we follow that plan. There is no guide or sightseeing on departure day.",
+        "退房后，司机用专车送你到凤凰古城站。如果最终书面方案里约定送回张家界，就按那个方案走。离开当天不含导游和游览。",
+        "체크아웃 후 기사가 가이드 없이 전용 차량으로 봉황고성역까지 모셔다 드립니다. 최종 서면 확인서에 장가계로 돌아가는 이동이 있으면 그 계획대로 진행합니다. 출발일에는 가이드와 관광 일정이 없습니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Six hotel nights are arranged as three nights in Wulingyuan, one night in Furong Town and two nights in Fenghuang. The final hotels, room types, bed arrangement, breakfast basis, foreign-guest registration and any upgrade or single-room difference are stated in the written confirmation before payment.",
-    "全程 6 晚住宿：武陵源 3 晚、芙蓉镇 1 晚、凤凰 2 晚。具体酒店、房型、床型、早餐口径、外宾接待条件，以及升级或单房差，均在付款前写入最终确认方案。",
-    "총 6박은 우링위안 3박, 푸룽전 1박, 펑황 2박으로 구성됩니다. 최종 호텔, 객실 유형, 침대 구성, 조식 포함 여부, 외국인 투숙 가능 여부와 업그레이드 또는 1인실 차액은 결제 전에 서면 확인서에 명시합니다.",
+    "Your six nights: three in Wulingyuan, one in Furong Town and two in Fenghuang. Before you pay, you get the final hotels, room types, beds, breakfast, foreign-guest registration and any upgrade or single-room supplement in writing.",
+    "全程 6 晚住宿：武陵源 3 晚、芙蓉镇 1 晚、凤凰 2 晚。付款前，具体酒店、房型、床型、早餐安排、能否接待外宾，以及升级或单房差，都会写进最终确认方案发给你。",
+    "6박은 무릉원 3박, 부용진 1박, 봉황 2박입니다. 결제 전에 최종 호텔, 객실 유형, 침대 구성, 조식 포함 여부, 외국인 투숙 가능 여부, 업그레이드나 1인실 차액을 서면 확인서로 보내 드립니다.",
   ),
   serviceNote: l(
-    "Private vehicle service covers only the pickups, transfers and touring periods described in the itinerary and confirmed in writing; it is not an outside-hours standby vehicle. An English-speaking guide is included on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time without a guide or vehicle. Base admissions include Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
-    "私人用车只覆盖逐日行程所列并经书面确认的接送和游览服务时段，不代表确认时段之外全天候候车。D2–D5 含英语导游；D1 与 D7 为司机接送，D6 为不含车导的自由活动。基础门票明确包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
-    "전용 차량은 일정과 서면 확인서에 명시된 픽업, 이동 및 관광 시간에만 제공되며 그 외 시간의 상시 대기 차량은 아닙니다. 한국어 가이드는 D2~D5에 포함됩니다. D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만 제공하고 D6는 차량과 가이드가 없는 자유 일정입니다. 기본 입장권은 우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+    "Your private vehicle covers only the pickups, transfers and touring times set out in the itinerary and your written confirmation; it is not on standby outside those hours. An English-speaking guide joins you on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time without a guide or vehicle. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "专车只负责逐日行程和书面确认中列明的接送与游览时段，这些时段之外不安排候车。D2–D5 含英语导游；D1 与 D7 为司机接送，D6 为不含车导的自由活动。基础门票包括武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
+    "전용 차량은 일정과 서면 확인서에 적힌 픽업, 이동, 관광 시간에만 운행하며, 그 밖의 시간에는 대기하지 않습니다. 한국어 가이드는 D2~D5에 포함됩니다. D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만 제공하고 D6는 차량과 가이드가 없는 자유 일정입니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: lists(
     [
@@ -3028,7 +3033,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       "Personal travel insurance, visas, tips and personal expenses",
       "Hotel, room, vehicle, admission or activity upgrades",
       "Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions",
-      "Night-time, overtime, extra transfers or other services outside the confirmed itinerary",
+      "Night-time, overtime, extra transfers or other services outside your agreed itinerary",
     ],
     [
       "国际及国内航班、高铁票",
@@ -3036,7 +3041,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       "个人旅游保险、签证、司导小费及个人消费",
       "酒店、房型、车型、门票或活动升级",
       "未列索道、百龙天梯、游船及收费小景点",
-      "确认行程之外的夜间、超时、额外接送及其他服务",
+      "约定行程之外的夜间、超时、额外接送及其他服务",
     ],
     [
       "국제선·국내선 항공권과 고속철도 승차권",
@@ -3044,13 +3049,13 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       "개인 여행자 보험, 비자, 기사·가이드 팁과 개인 비용",
       "호텔, 객실, 차량, 입장권 또는 체험 업그레이드",
       "명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소",
-      "확정 일정 밖의 야간, 초과 시간, 추가 이동과 기타 서비스",
+      "최종 일정에 없는 야간, 초과 시간, 추가 이동과 기타 서비스",
     ],
   ),
   bookingNote: l(
-    "The published per-person starting prices cover groups of 2 and 4 travellers; flights and rail tickets are not included. Other group sizes require manual confirmation. Before payment, send your dates, room and bed requirements, arrival details, departure plan and luggage count. The final written confirmation names the hotels, daily vehicle periods, guide coverage, included admissions, Day 7 destination and final total.",
-    "网页仅公开 2 人和 4 人的每人起价，不含航班与高铁票；其他人数须人工确认。付款前请提供日期、房间与床型需求、抵达信息、离开方案和行李数量。最终书面确认会列明酒店、逐日用车时段、导游服务范围、已含门票、D7 送达地点与最终总价。",
-    "공개된 1인 시작가는 2명과 4명 기준이며 항공권과 고속철도 승차권은 포함되지 않습니다. 그 외 인원은 수동 확인이 필요합니다. 결제 전에 날짜, 객실과 침대 구성, 도착 정보, 출발 계획과 수하물 수량을 알려 주세요. 최종 확인서에 호텔, 차량 시간, 가이드 범위, 포함 입장권, D7 도착지와 총액을 명시합니다.",
+    "Per-person starting prices are shown for groups of 2, 4 and 6 travellers; flights and rail tickets are not included. Other group sizes are confirmed with you individually. Before payment, send us your dates, room and bed needs, arrival details, departure plan and number of bags. Your final written confirmation then sets out the hotels, daily vehicle times, guide coverage, included tickets, Day 7 drop-off point and final total.",
+    "页面只列出 2 人、4 人和 6 人的每人起价，不含机票和高铁票；其他人数请联系我们单独确认。付款前，请把出行日期、房间和床型需求、抵达信息、离开安排和行李件数发给我们。最终书面确认会写明酒店、每天用车时段、导游服务范围、已含门票、D7 送达地点和最终总价。",
+    "1인 시작가는 2명·4명·6명 기준으로 안내하며, 항공권과 고속철도 승차권은 포함되지 않습니다. 다른 인원은 따로 확인해 드립니다. 결제 전에 여행 날짜, 객실과 침대 구성, 도착 정보, 출발 계획, 짐 개수를 알려 주세요. 최종 확인서에 호텔, 차량 시간, 가이드 범위, 포함 입장권, D7 도착지와 총액을 적어 보내 드립니다.",
   ),
   faq: [
     {
@@ -3062,7 +3067,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       answer: l(
         "Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town are included. Fenghuang’s public streets have no first-entry gate ticket. Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions are separate.",
         "包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。凤凰古城公共街区没有首道大门票。未列索道、百龙天梯、游船和收费小景点另计。",
-        "우링위안 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 푸룽전 첫 입장권이 포함됩니다. 펑황고성 공공 구역에는 첫 입장권이 없습니다. 명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소는 별도입니다.",
+        "무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권이 포함됩니다. 봉황고성 공공 구역에는 첫 입장권이 없습니다. 명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소는 별도입니다.",
       ),
     },
     {
@@ -3072,8 +3077,8 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "한국어 가이드와 전용 차량은 언제 포함되나요?",
       ),
       answer: l(
-        "The English-speaking guide covers the listed touring programme on Days 2–5. Day 1 and Day 7 are driver-only transfers, while Day 6 is independent free time with no guide or vehicle. Private vehicle service follows the periods written into the final confirmation rather than providing 24-hour standby service.",
-        "英语导游覆盖 D2–D5 所列游览。D1 与 D7 仅含司机接送，D6 为不含车导的自由活动。私人用车按最终确认方案列明的接送和游览时段提供，不是 24 小时全天候待命车辆。",
+        "Your English-speaking guide is with you for the listed touring on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time on your own, with no guide or vehicle. The private vehicle runs during the times set out in your final confirmation; it is not on 24-hour standby.",
+        "D2–D5 所列游览由英语导游陪同。D1 与 D7 只含司机接送，D6 为不含车导的自由活动。专车按最终确认方案里写明的接送和游览时段提供，不是 24 小时待命。",
         "한국어 가이드는 D2~D5의 명시된 관광 일정에 동행합니다. D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만 포함되며 D6는 차량과 가이드가 없는 자유 일정입니다. 전용 차량은 확인서에 적힌 시간에 제공되며 24시간 대기 서비스가 아닙니다.",
       ),
     },
@@ -3084,9 +3089,9 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "어디에서 숙박하고 D7 일정은 어디에서 끝나나요?",
       ),
       answer: l(
-        "The route includes three nights in Wulingyuan, one in Furong Town and two in Fenghuang. The standard Day 7 transfer ends at Fenghuang Ancient City Railway Station (凤凰古城站). A return to Zhangjiajie is possible only when that route and quote are agreed in writing before payment.",
-        "武陵源住 3 晚、芙蓉镇住 1 晚、凤凰住 2 晚。标准 D7 送至凤凰古城站；如需送回张家界，必须在付款前把具体路线和对应报价写入确认方案。",
-        "우링위안 3박, 푸룽전 1박, 펑황 2박입니다. 기본 D7 이동은 펑황고성역에서 끝납니다. 장자제 귀환은 결제 전에 구체적인 이동 계획과 견적을 서면으로 확정한 경우에만 제공됩니다.",
+        "Three nights in Wulingyuan, one in Furong Town and two in Fenghuang. On Day 7, the standard transfer ends at Fenghuang Ancient City Railway Station (凤凰古城站). Returning to Zhangjiajie instead is possible, but only once the route and quote are agreed in writing before payment.",
+        "武陵源住 3 晚、芙蓉镇住 1 晚、凤凰住 2 晚。D7 标准送站到凤凰古城站；如果想送回张家界也可以，但要在付款前把具体路线和报价写进确认方案。",
+        "무릉원 3박, 부용진 1박, 봉황 2박입니다. 기본 D7 이동은 봉황고성역에서 끝납니다. 장가계로 돌아가고 싶으시면 가능하지만, 결제 전에 구체적인 이동 계획과 견적을 서면으로 확정해야 합니다.",
       ),
     },
   ],
@@ -3095,12 +3100,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     l(
       "Sandstone pillars in Wulingyuan, Zhangjiajie.",
       "张家界武陵源的砂岩峰林。",
-      "장자제 우링위안의 사암 봉우리.",
+      "장가계 무릉원의 사암 봉우리.",
     ),
     l(
       "The sandstone landscape at the start of the seven-day route.",
       "七天路线从张家界砂岩峰林开始。",
-      "7일 여정은 장자제 사암 봉우리에서 시작합니다.",
+      "7일 여정은 장가계 사암 봉우리에서 시작합니다.",
     ),
     1600,
     1000,
@@ -3112,12 +3117,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Furong Town buildings above the waterfall and river.",
         "芙蓉镇河流与沿岸建筑。",
-        "폭포와 강 위에 자리한 푸룽전 건물들.",
+        "폭포와 강 위에 자리한 부용진 건물들.",
       ),
       l(
         "Furong Town, where the route pauses for one night.",
         "芙蓉镇安排一晚住宿。",
-        "푸룽전에서 1박합니다.",
+        "부용진에서 1박합니다.",
       ),
       1280,
       742,
@@ -3131,18 +3136,18 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         l(
           "Arrival in Zhangjiajie",
           "抵达张家界",
-          "장자제 도착",
+          "장가계 도착",
         ),
         "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
         l(
           "Zhangjiajie Hehua Airport with Tianmen Mountain behind the terminal.",
           "张家界荷花机场，航站楼后方可见天门山。",
-          "터미널 뒤로 톈먼산이 보이는 장자제 허화공항.",
+          "터미널 뒤로 천문산이 보이는 장가계 허화공항.",
         ),
         l(
           "Hehua Airport is one standard arrival point; rail arrivals are met at Zhangjiajie West Station.",
           "荷花机场是标准抵达点之一；乘高铁抵达则在张家界西站接站。",
-          "허화공항 도착 시 공항에서, 고속철 도착 시 장자제서역에서 맞이합니다.",
+          "허화공항 도착 시 공항에서, 고속철 도착 시 장가계서역에서 맞이합니다.",
         ),
         1600,
         1000,
@@ -3151,17 +3156,17 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     routeGroup(
       2,
       routeVariant(
-        l("Tianzi Mountain panorama", "天子山峰林全景", "톈쯔산 봉우리 전경"),
+        l("Tianzi Mountain panorama", "天子山峰林全景", "천자산 봉우리 전경"),
         "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
         l(
           "A panoramic view across the sandstone pillars of Tianzi Mountain.",
           "俯瞰天子山层叠的砂岩峰林。",
-          "톈쯔산의 겹겹이 이어진 사암 봉우리 전경.",
+          "천자산의 겹겹이 이어진 사암 봉우리 전경.",
         ),
         l(
           "Tianzi Mountain, Yangjiajie and Yuanjiajie form the first full touring day.",
           "天子山、杨家界与袁家界组成第一个完整游览日。",
-          "톈쯔산, 양자제와 위안자제가 첫 종일 관광을 이룹니다.",
+          "첫 종일 관광에서 천자산, 양가계와 원가계를 둘러봅니다.",
         ),
         1600,
         1000,
@@ -3189,17 +3194,17 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     routeGroup(
       4,
       routeVariant(
-        l("Furong Town overnight", "芙蓉镇住一晚", "푸룽전 1박"),
+        l("Furong Town overnight", "芙蓉镇住一晚", "부용진 1박"),
         "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-night-960.webp",
         l(
           "Furong Town waterfall and buildings illuminated at night.",
           "夜间亮灯的芙蓉镇水景与临崖建筑。",
-          "밤에 불이 켜진 푸룽전 폭포와 절벽 건물.",
+          "밤에 불이 켜진 부용진 폭포와 절벽 건물.",
         ),
         l(
           "Staying overnight leaves time to see Furong Town after the day visitors thin out.",
           "住一晚，可以等白天游客减少后再看芙蓉镇。",
-          "1박하면 당일 방문객이 줄어든 뒤 푸룽전을 볼 수 있습니다.",
+          "1박하면 당일 방문객이 줄어든 뒤 부용진을 볼 수 있습니다.",
         ),
         960,
         1707,
@@ -3209,17 +3214,17 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     routeGroup(
       5,
       routeVariant(
-        l("Arrive in Fenghuang", "抵达凤凰古城", "펑황고성 도착"),
+        l("Arrive in Fenghuang", "抵达凤凰古城", "봉황고성 도착"),
         "/images/guides/border-town-fenghuang-chadong-shen-congwen/hero-1600.webp",
         l(
           "Hongqiao entrance in Fenghuang Ancient Town.",
           "凤凰古城虹桥入口。",
-          "펑황고성 훙차오 입구.",
+          "봉황고성 훙차오 입구.",
         ),
         l(
           "The guide introduces Fenghuang’s public lanes and riverside on Day 5.",
           "D5 由导游陪同走凤凰公共街巷与沱江沿岸。",
-          "D5에는 가이드와 펑황 골목과 강변을 둘러봅니다.",
+          "D5에는 가이드와 봉황 골목과 강변을 둘러봅니다.",
         ),
         1600,
         1000,
@@ -3228,16 +3233,16 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     routeGroup(
       6,
       routeVariant(
-        l("Fenghuang at your own pace", "按自己的节奏游凤凰", "내 속도로 보는 펑황"),
+        l("Fenghuang at your own pace", "按自己的节奏游凤凰", "내 속도로 보는 봉황"),
         "/images/guides/border-town-fenghuang-chadong-shen-congwen/shen-congwen-former-residence-1600.webp",
         l(
           "The street entrance to Shen Congwen's former residence in Fenghuang.",
           "凤凰古城沈从文故居的沿街入口。",
-          "펑황고성 선충원 옛집의 길가 출입구.",
+          "봉황고성 선충원 옛집의 길가 출입구.",
         ),
         l(
-          "The former residence is an optional independent visit on Day 6; admission, guide and vehicle are not included in the base package.",
-          "D6 可自行选择参观沈从文故居；基础价格不含该处门票、车辆与导游。",
+          "On Day 6 you can visit the former residence on your own; its admission, a guide and a vehicle are not in the base package.",
+          "D6 想去的话，可以自行参观沈从文故居；该处门票、车辆和导游不含在基础价格里。",
           "D6에 선충원 옛집을 개별 방문할 수 있으며, 기본 요금에는 입장권·차량·가이드가 포함되지 않습니다.",
         ),
         1600,
@@ -3247,17 +3252,17 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     routeGroup(
       7,
       routeVariant(
-        l("A final Fenghuang morning", "凤凰最后一个早晨", "펑황의 마지막 아침"),
+        l("A final Fenghuang morning", "凤凰最后一个早晨", "봉황의 마지막 아침"),
         "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
         l(
           "Visitors crossing stepping stones on the Tuojiang in Fenghuang.",
           "游客从凤凰沱江跳岩上过河。",
-          "펑황 퉈장의 징검다리를 건너는 방문객들.",
+          "봉황 퉈장의 징검다리를 건너는 방문객들.",
         ),
         l(
-          "Departure timing follows the confirmed train or return-transfer plan.",
-          "离开时间按已确认车次或返程接送方案安排。",
-          "출발 시간은 확정된 열차 또는 귀환 이동 계획에 맞춥니다.",
+          "Departure time follows your train or return-transfer plan.",
+          "离开时间按你的车次或返程接送方案安排。",
+          "출발 시간은 이용하실 열차나 귀환 이동 계획에 맞춥니다.",
         ),
         1126,
         819,
@@ -3269,17 +3274,17 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       "standard-guided",
       l("Private tour", "私家团标准版", "한국어 가이드 포함"),
       l(
-        "Six hotel nights with breakfast, private transport during the listed service periods, an English-speaking guide on Days 2–5 and the named base admissions. No shopping stops.",
-        "含 6 晚住宿及早餐、行程所列时段私车、D2–D5 英语导游与明确列出的基础门票，全程无购物店。",
+        "Six hotel nights with breakfast, a private vehicle for the service times in the itinerary, an English-speaking guide on Days 2–5 and the listed base admissions. No shopping stops.",
+        "含 6 晚住宿及早餐、行程所列时段的专车、D2–D5 英语导游和列明的基础门票，全程无购物店。",
         "6박 조식 포함 숙박, 일정에 명시된 시간의 전용 차량, D2~D5 한국어 가이드와 기본 입장권이 포함되며 쇼핑 일정은 없습니다.",
       ),
-      // Owner-approved public base prices for 2- and 4-traveller groups.
+      // Owner-approved public base prices for 2-, 4- and 6-traveller groups.
       [5840, 4860],
       [899, 749],
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-20",
+  dateModified: "2026-09-23",
   lastReviewed: "2026-09-20",
 };
 

@@ -33,6 +33,7 @@ const publishedDates = {
 const cityParents = {
   "city-beijing": "country-china",
   "city-shanghai": "country-china",
+  "city-suzhou": "province-jiangsu",
   "city-xian": "province-shaanxi",
   "city-chengdu": "province-sichuan",
   "city-guangzhou": "province-guangdong",
@@ -49,7 +50,7 @@ test("the canonical entity registry gives all ten cities one valid administrativ
   const byId = new Map(entities.map((entity) => [entity.id, entity]));
 
   assert.equal(new Set(entities.map((entity) => entity.id)).size, entities.length);
-  assert.equal(entities.length, 17, "China, six province-level nodes and ten cities");
+  assert.equal(entities.length, 19, "China, seven province-level nodes and eleven cities");
 
   for (const [cityId, parentId] of Object.entries(cityParents)) {
     assert.deepEqual(byId.get(cityId)?.parentEntityIds, [parentId], cityId);
@@ -61,6 +62,7 @@ test("the canonical entity registry gives all ten cities one valid administrativ
     "province-guangdong",
     "province-hunan",
     "province-zhejiang",
+    "province-jiangsu",
     "province-guangxi",
   ]) {
     assert.equal(byId.get(provinceId)?.entityType, "province", provinceId);

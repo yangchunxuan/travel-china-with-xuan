@@ -1,0 +1,12 @@
+# Source log — Shanghai to Suzhou day trip
+
+Reviewed 2026-09-23. Public facts on the page are limited to these official references and the already-published Homeground product definitions.
+
+- [China Railway 12306](https://www.12306.cn/en/index.html): live date, train, fare and complete departure/arrival station names must be checked before booking. No fixed service or journey duration is claimed.
+- [Suzhou Station onward travel guide](https://www.suzhou.gov.cn/szsrmzf/mszx/202604/568a4eac0636443c968cfc195b9a3e29.shtml), Suzhou Municipal Government, 2026-04-02: identifies Suzhou Station metro connections toward the Humble Administrator's Garden area and Pingjiang Road. It does not establish that Suzhou Station suits every visitor or every train.
+- [Garden visiting rules](https://ylj.suzhou.gov.cn/szsylj/ryxz/nav_list.shtml), [opening and last-admission index](https://ylj.suzhou.gov.cn/szsylj/kfsj/wztt.shtml), and [dated notices](https://ylj.suzhou.gov.cn/szsylj/tzgg/list.shtml), Suzhou Gardens and Greening Administration: consult the named garden and the actual visit date; no admission time is hard-coded. These URLs returned HTTP 200 on 2026-09-23.
+- [Suzhou Museum's 2026-09-16 notice](https://www.suzhou.gov.cn/szsrmzf/mszx/202609/2d1a50ec4496485d9f5c332de585dfdc.shtml), published by Suzhou Municipal Government on 2026-09-20: the main building currently uses timed reservations; other museum sites may have different entry rules. The guide directs travellers to check the current notice rather than treating all buildings alike.
+- Product scope checked against `lib/privateTourProducts.ts` and `lib/jiangnanTourAnswers.ts` on 2026-09-23. The five-day route returns to its Shanghai hotel; the six-day route stays in Suzhou and continues to Hangzhou. No standalone day-tour price is inferred.
+- Existing real hero photograph: [Pingjiang Road by kevinmcgill](https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg), CC BY-SA 2.0, photographed 2012-01-04. Existing WebP path and SHA-256 are recorded in `docs/homeground-photo-provenance.md`. Reused without generating or changing the asset. Image shows one historic canal scene, not current crowding, operators or access conditions.
+
+First-person local travel accounts informed the question set and pacing judgment only. Their private research record is kept outside the website repository. It is not used as proof of current rail inventory, ticket prices or garden policy.

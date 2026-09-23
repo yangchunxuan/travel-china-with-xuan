@@ -324,6 +324,37 @@ const body = {
       tone: "decision",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions readers ask about these sites",
+      items: [
+        {
+          question: "Does Broken Bridge prove that Bai Suzhen and Xu Xian met there?",
+          answer: "No. It proves that a named, repaired bridge belongs to West Lake's long-developed landscape, at the eastern end of Bai Causeway. The association with meeting or reunion belongs to folklore and later literature. UNESCO status does not authenticate the characters, and it does not mean every visible stone is ancient.",
+        },
+        {
+          question: "Is the Leifeng Pagoda I can walk into the original tower?",
+          answer: "It is a modern building. The damaged historic tower collapsed on 25 September 1924, and what visitors enter today was built over the protected site in the early twenty-first century. Beneath it are remains of a late-Wuyue Buddhist pagoda, whose foundation, underground chamber and Buddhist deposits were documented in the 2000–2001 excavation. The old-looking silhouette cannot carry the Wuyue date over to the new tower.",
+        },
+        {
+          question: "Is the version I know from film and television the original story?",
+          answer: "The story you know was assembled in stages. National intangible-heritage material treats Feng Menglong's seventeenth-century telling as an early fuller written version; later opera kept changing motives and places; the Qing stage expanded the flooding of Jinshan and the Broken Bridge reunion; film and television selected again. Ask which version a scene belongs to, rather than where the original event happened.",
+        },
+        {
+          question: "Is Jinshan still an island in the river?",
+          answer: "No, the hill is now joined to land. A scholarly temple history and historical-geography research support a cautious statement that nineteenth-century channel change and sedimentation progressively altered Jinshan's island–shore relationship. The sources do not justify turning one precise joining year into an evergreen fact, and physical change cannot prove the literary flood.",
+        },
+        {
+          question: "Can I go inside Fahai Cave at Jinshan?",
+          answer: "Do not count on it; this guide does not promise entry. Access, wording and photography rules for 2026 have not been confirmed. Research traces how Peigong Cave and Fahai Cave were named differently over time, which shows how landscape storytelling formed rather than anything about Fahai's life. If it is closed or unclear, use public temple buildings, Cishou Pagoda and a lawful water–hill viewpoint instead.",
+        },
+        {
+          question: "How hard is the walk at Jinshan Temple?",
+          answer: "The route goes uphill, and that creates a real mobility cost a flat story map hides. Look at the stairs before committing to the upper areas, and keep a lower public-space fallback for limited mobility, heat, rain or crowd control. Jinshan is formally Jiangtian Chan Temple, so temple activity, worshippers and restricted areas come before its White Snake role.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Keep the transport and pace questions with their existing owners",

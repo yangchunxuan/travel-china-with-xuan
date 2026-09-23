@@ -204,6 +204,37 @@ const body = {
       text: "National accommodation, registration and consumer-service sources and the example property pages were reviewed on August 13, 2026. Property staffing, room configuration, payment terminals, group participation and published page wording can change. Recheck the exact branch shortly before arrival; Homeground does not certify either example property or any brand.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking a hotel in China",
+      items: [
+        {
+          question: "Is an international chain automatically safer for foreign guests?",
+          answer: "Not on its own. A brand or group record can establish reservation, loyalty or service channels, but not that this branch has your room or can execute check-in. Ask the exact property who handles passport check-in at your arrival time and save the reply; a website or platform label is not law.",
+        },
+        {
+          question: "What does 内宾 on a hotel page mean for me?",
+          answer: "It is a page or platform guest label, not law. On August 13, 2026 a Huazhu page for Crystal Orange Beijing Qianmen listed its phone, address and payment methods and showed 内宾 in the title. A label like that only means you need current confirmation from that branch, and the separate foreign-guest guide if you need it.",
+        },
+        {
+          question: "What exactly should I ask the hotel before booking?",
+          answer: "Record the exact Chinese branch name, address, telephone and map pin, then contact the property itself, not only the group, with your dates, arrival time and group size. Name the room category and confirm beds, occupancy, smoking status and window; ask who registers every foreign guest and who is on duty at your arrival time.",
+        },
+        {
+          question: "We arrive at 00:30 with children — which hotel should we choose?",
+          answer: "Whichever one proves a staffed desk at that hour, a written booking hold and a duty contact. In this guide's example the international branch confirmed staffing, passports, family bedding, payment and a late hold while the local property gave a generic reply, so the documented branch won — because responsibility for that arrival was written down, not because chains are safer.",
+        },
+        {
+          question: "The front desk cannot find my reservation — what do I do first?",
+          answer: "Check branch, date, guest name and channel, then contact the duty manager and the seller's support before you cancel anything yourself, keeping the confirmation, the Chinese branch name, the case number and the stated reason. With children, an older traveller or a late hour, set yourself a deadline and move to a property that has confirmed check-in for your real arrival time.",
+        },
+        {
+          question: "Will my overseas card work, and how much deposit will the hotel take?",
+          answer: "Ask the branch itself which card networks, cash and mobile payments it accepts and how large the deposit is; a card icon on a page does not prove an overseas card will be authorised. Confirm a second payment method before you travel, and if a payment fails, separate the room charge from the deposit and keep a receipt for each one.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue the accommodation decision",

@@ -22,8 +22,8 @@ test("Tantan field note is one server-readable, seven-check article", async () =
   assert.match(copy, /Glass Bridge, Tianmen Skywalk or National Forest Park/);
   assert.match(copy, /metadataTitle:\s*\n?\s*"Zhangjiajie Glass Bridge vs Tianmen Skywalk vs Forest Park"/);
   assert.match(copy, /大峡谷玻璃桥、天门山玻璃栈道和森林公园怎么区分/);
-  assert.match(copy, /대협곡 유리다리·톈먼산 유리잔도·국가삼림공원 구분하기/);
-  assert.match(copy, /metadataTitle: "장자제 유리다리 vs 톈먼산 잔도 vs 삼림공원"/);
+  assert.match(copy, /대협곡 유리다리·천문산 유리잔도·국가삼림공원 구분하기/);
+  assert.match(copy, /metadataTitle: "장가계 유리다리 vs 천문산 잔도 vs 삼림공원"/);
   assert.match(copy, /Use WhatsApp or leave your email/);
   assert.match(copy, /可以通过 WhatsApp 直接聊，或只留下一个邮箱/);
   assert.match(copy, /WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요/);

@@ -302,6 +302,37 @@ const body: StructuredPageBody = {
       tone: "warning",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Passport name questions before you book",
+      items: [
+        {
+          question: "Does my name have to look identical on my flight, train and hotel bookings?",
+          answer: "They do not have to be identical. An airline, China Railway 12306, a hotel and an attraction can display the name differently, and each provider has its own field instructions to follow. What must stay consistent is the underlying person, document type, document number and name source, which is the valid passport you will physically carry.",
+        },
+        {
+          question: "How does 12306 want a foreign passport name entered?",
+          answer: "Read the labels printed on the passport first. If it prints Surname and Given Names, enter Surname, one space, then Given Names. If it prints First Name, Middle Name and Last Name, enter them in that printed First–Middle–Last order with spaces. For foreign-passport names 12306 accepts the Latin letters A–Z or a–z. If another platform asks for family name first, follow that platform.",
+        },
+        {
+          question: "Can I correct a misspelled passenger name on a 12306 ticket?",
+          answer: "No. 12306's current purchase FAQ says the passenger name cannot be changed after purchase. When the passenger identity information is wrong, the stated route is to refund and buy again, with the applicable refund fee. Changing the date or the train does not repair an identity error, so check the official process and current seats first.",
+        },
+        {
+          question: "My name is longer than the booking form allows. Which parts do I leave out?",
+          answer: "Do not decide that yourself. 12306 currently lets you fill 64 characters and does not carry over the rest, so follow the platform's written limit and keep the rule and your entry as evidence. If the truncated result could point to more than one person, raise it with the provider instead of inventing a shorter spelling.",
+        },
+        {
+          question: "The hotel booking is not in my exact passport name. Can I still check in?",
+          answer: "The reservation name and the legal check-in identity are two different things. The reservation name helps the property find and hold the room; at check-in, foreign guests must present a valid passport, foreign permanent resident ID or another accepted document for accommodation registration. If the payer, the booker and the actual guest differ, add the guest's passport name through the booking channel and ask the property before arrival.",
+        },
+        {
+          question: "I renewed my passport after booking. Do the bookings update automatically?",
+          answer: "Nothing updates by itself. A new passport number does not reach existing bookings automatically, and official evidence of a name change does not rewrite a ticket on its own. Airlines, China Railway, hotels and attractions share neither one correction database nor one rule, so keep the old and new document details and lawful evidence of the change, then contact each provider separately.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",

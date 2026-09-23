@@ -9,6 +9,37 @@ const body = {
       "text": "For a first 10-day China trip, start with Beijing, Xi’an and Shanghai if imperial history, the Terracotta Warriors and a modern city finish are your priorities. Choose two places if you want fewer hotel moves or more time outdoors. The useful decision is what to leave out: ten days can hold a satisfying route, but every extra city takes time from the places you came to see."
     },
   {
+    "id": "faq",
+    "type": "faq",
+    "title": "Questions about this ten-day route",
+    "items": [
+      {
+        "question": "Is 10 days enough for Beijing, Xi'an and Shanghai?",
+        "answer": "Yes. Beijing–Xi'an–Shanghai gives Beijing three full sightseeing days, Xi'an one and Shanghai two, with the last day flexible. The clear reason to include Xi'an is the Terracotta Warriors; if that visit is not a priority, put the two Xi'an nights into Beijing or Shanghai instead. Every extra city takes time from the places you came to see."
+      },
+      {
+        "question": "Are these ten full sightseeing days?",
+        "answer": "No. Day 1 is arrival and day 10 is departure, and the example has nine hotel nights: Beijing on nights 1–4, Xi'an on nights 5–6 and Shanghai on nights 7–9. International flights can add calendar days outside China, so if your entire door-to-door holiday is ten days, count the days actually available in China first."
+      },
+      {
+        "question": "Can I buy Forbidden City tickets on the day?",
+        "answer": "No. The Palace Museum has no same-day ticket sales and normally closes on Mondays, so the reservation has to be arranged in advance and this day may need swapping with another Beijing day. Check Tiananmen's current access rules separately against your booking rather than assuming the two share one arrangement."
+      },
+      {
+        "question": "Can I fit a Suzhou day trip into this ten-day plan?",
+        "answer": "Yes, in place of the flexible Shanghai day. The default is to stay in Shanghai for anything missed, slower sightseeing or rest; swapping in Suzhou means separately confirming return transport, local travel and the attractions you choose. Either way, keep the same Shanghai hotel, return there for night 9 and be ready for departure the next day."
+      },
+      {
+        "question": "Which document do I need to book train tickets?",
+        "answer": "Your own passport, the one you will actually carry on the trip. Book with it and bring that original document, as China Railway requires the booking ID for travel. Check what transport actually runs on your dates before ticketing too, comparing station or airport access and hotel arrival time rather than only the scheduled journey length."
+      },
+      {
+        "question": "What if I do not want to visit Xi'an?",
+        "answer": "Use the slower two-city version: Beijing five nights and Shanghai four. You give up Xi'an and the Terracotta Warriors in exchange for one intercity move. Keep the first and last days for arrival and departure, and reserve a full transfer day between the cities. The extra nights make it easier to adjust the pace; they do not need to become new day trips."
+      }
+    ]
+  },
+  {
     "id": "sightseeing-execution-links",
     "type": "internal-links",
     "title": "Plan these sightseeing days",

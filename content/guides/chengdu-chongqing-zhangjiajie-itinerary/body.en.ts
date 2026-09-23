@@ -57,6 +57,37 @@ const body = {
       "text": "Chengdu earns four nights because its three touring days have different moods. The panda morning leads back into everyday city life at People’s Park. Sanxingdui gets a day centred on the museum rather than a rushed stop between distant sights. Dujiangyan adds waterworks and an old-town walk before one last night in the same Chengdu hotel. Keeping that base means unpacking once while still seeing beyond the city."
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions about this three-stop route",
+      "items": [
+        {
+          "question": "How many days do I need for Chengdu, Chongqing and Zhangjiajie?",
+          "answer": "Eleven to twelve days, with twelve for the version described in this guide. It moves from pandas and teahouses to Chongqing's river city, then into Wulong's karst landscapes and Zhangjiajie's forest pillars. The example keeps three proper days around Chengdu, an overnight in Wulong and two walking days in the forest, and two separate days belong to the journeys between cities."
+        },
+        {
+          "question": "How many nights do we spend in each place?",
+          "answer": "Four nights in Chengdu, four nights between Chongqing and Wulong, and three nights at one Zhangjiajie villa base. That is 12 calendar days and 11 nights, and the count already includes the arrival day, the departure day and both intercity moves, so nothing extra has to be added later for travelling time."
+        },
+        {
+          "question": "How do I travel between Chongqing and Zhangjiajie?",
+          "answer": "By rail: the operating Chongqing–Zhangjiajie corridor is what makes this sequence possible. Choose available trains for your dates, then build the hotel transfers around the exact station names — Chongqing East, North, West and Shapingba are different places. Checkout, station access, security, luggage and the next hotel still take time, even when the train ride looks short."
+        },
+        {
+          "question": "Can Wulong be done as a day trip from Chongqing?",
+          "answer": "No — this itinerary treats it as a two-day mountain chapter with one night. You visit the Three Natural Bridges and sleep in the Fairy Mountain resort area; the next day holds either Fairy Mountain or Furong Cave, not both, and then returns to Chongqing for the night. The standard Three Natural Bridges access here includes the official transfer bus and Tianlong elevator."
+        },
+        {
+          "question": "Does the Zhangjiajie section include Tianmen Mountain or the Glass Bridge?",
+          "answer": "No. Tianmen Mountain and the Glass Bridge are not part of this route, and cable cars, elevators and the Ten-Mile Gallery mini-train are not used. It is an active finish, not a cable-car sightseeing circuit. The English-speaking guide accompanies the full highland day and the daytime valley route, while the evening is self-guided, with private drop-off, pickup and remote assistance."
+        },
+        {
+          "question": "How much walking do the two Zhangjiajie days involve?",
+          "answer": "Allow roughly 10–11 hours door to door and 4–7 km on foot for the highland day, which reaches Tianzi Mountain, Yangjiajie and Yuanjiajie using scenic shuttles and walking. The valley day walks Ten-Mile Gallery and the eastern Golden Whip Stream before a rest at the villa and the evening visit to Seventy-Two Wonder Tower."
+        }
+      ]
+    },
+    {
       "id": "chengdu-product",
       "type": "internal-links",
       "title": "See the Chengdu stay in detail",

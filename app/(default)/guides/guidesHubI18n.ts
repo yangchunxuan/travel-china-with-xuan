@@ -397,7 +397,7 @@ const copies: Record<HomegroundLocale, GuidesHubCopy> = {
       china: "중국",
       beijing: "베이징",
       xian: "시안",
-      zhangjiajie: "장자제(장가계)",
+      zhangjiajie: "장가계(장자제)",
       shanghai: "상하이",
     },
     cta: {

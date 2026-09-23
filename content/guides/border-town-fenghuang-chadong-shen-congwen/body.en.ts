@@ -299,6 +299,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions readers ask about Chadong and Fenghuang",
+      items: [
+        {
+          question: "Is Fenghuang the real-life setting of Border Town?",
+          answer: "No. Fenghuang is Shen Congwen's birthplace, with his protected former residence and later memorial culture, while the novella's principal ferry space is associated in scholarship with Bixiju (碧溪岨), near Chadong. Fenghuang belongs to the author's biography and the work's reception, and neither place is a life-size set preserved unchanged from the book.",
+        },
+        {
+          question: "Is Chadong the same place as Biancheng?",
+          answer: "Yes, they are the same town. The administrative town formerly called Chadong was renamed Biancheng in 2005. That change demonstrates the modern public association between the town and the novella; it does not prove that today's boundaries, streets and attractions duplicate the fictional space.",
+        },
+        {
+          question: "Can I cross the river by ferry at Chadong?",
+          answer: "Treat it as unconfirmed. No stable official notice reviewed for this article establishes a daily tourist-ferry timetable, fare or performance schedule, so recheck the town or venue's same-day notice. If a crossing is unavailable, the protected wharf, the riverbanks, the orientation signs and the reconstruction labels still carry the literary reading.",
+        },
+        {
+          question: "Is the Cuicui residence in Chadong a real historical house?",
+          answer: "No. A 2024 Hunan government feature explicitly describes the Cuicui residence as a reconstructed scene simulating the novella, so read character-themed spaces as interpretation rather than evidence. They show how tourism materializes a character into a place you can walk into; they cannot make Cuicui historical.",
+        },
+        {
+          question: "Do I need to read the novella before I go?",
+          answer: "It helps, but it is not required. A summary of the ferry family, Cuicui and the border-town setting will make Chadong more legible, and the town rewards a reader willing to compare text, terrain and labels even when a ferry or performance is unavailable. A summary still will not turn the town into proof of the fiction.",
+        },
+        {
+          question: "Is everything inside Shen Congwen's former residence in Fenghuang original?",
+          answer: "Not all of it. National protection status supports the age and significance of the site as a heritage property, but it does not make every beam, household object, photograph or display case original to Shen's childhood. Read three things in order: the official protection plaque, any room or conservation label, and the exhibit caption. If a label says replica or restored, preserve that wording.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning in western Hunan",

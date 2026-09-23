@@ -255,6 +255,13 @@ export function DestinationHubPage({
   const openingBody = projectDestinationOpening(body, hubId);
   const overviewSignals = projectDestinationOverview(body, hubId, locale);
   const stayExample = projectDestinationStayExample(body, hubId);
+  const dayTripLinks =
+    hubId === "shanghai"
+      ? body.blocks.find((block) => block.id === "delta-day-trip-links")
+      : undefined;
+  if (hubId === "shanghai" && dayTripLinks?.type !== "internal-links") {
+    throw new Error("Shanghai destination day-trip links are missing.");
+  }
   const ownerGuideIds = hub.supportGuideIds.slice(0, 6);
   const visibleSources = getVisibleHubSources(body);
   const date = new Intl.DateTimeFormat(
@@ -377,6 +384,14 @@ export function DestinationHubPage({
               ))}
             </div>
           </section>
+
+          {dayTripLinks ? (
+            <div className={destinationStyles.dayTripLinks}>
+              <PageFamilyRenderer
+                body={{ schemaVersion: body.schemaVersion, blocks: [dayTripLinks] }}
+              />
+            </div>
+          ) : null}
 
           {stayExample.blocks.length > 0 ? (
             <section

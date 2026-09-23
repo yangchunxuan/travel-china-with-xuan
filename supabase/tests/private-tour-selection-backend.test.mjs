@@ -12,6 +12,7 @@ import {
 } from "../../lib/inquiryContract.ts";
 import {
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySubmissionContext,
   getPrivateTourInquirySelection,
   privateTourInquirySelectionLabel,
   privateTourInquirySlugs,
@@ -19,6 +20,7 @@ import {
 import {
   trafficProductTravelerCounts,
 } from "../functions/_shared/traffic-contracts.ts";
+import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
 const config = {
   allowedFormVersions: [currentHomepageEmailFormVersion],
@@ -26,7 +28,7 @@ const config = {
   whatsappEnabled: false,
 };
 const beijing = "beijing-highlights-5-day-private-tour";
-const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided"];
+const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"];
 const phaseTwoSlugs = [
   "shanghai-disneyland-5-day-private-tour",
   "luoyang-dengfeng-kaifeng-6-day-private-tour",
@@ -64,8 +66,9 @@ test("intake preserves every allowed tour selection in every locale and its sema
           const result = validateAndNormalizeInquiry(payload(context, locale), config);
           assert.equal(result.ok, Boolean(selection), `${locale}:${slug}:${packageId}:${travelers}`);
           if (result.ok) {
-            assert.deepEqual(result.value.productInterest, context);
-            assert.deepEqual(semanticInquiryPayload(result.value).productInterest, context);
+            const submitted = getPrivateTourInquirySubmissionContext(context, locale);
+            assert.deepEqual(result.value.productInterest, submitted);
+            assert.deepEqual(semanticInquiryPayload(result.value).productInterest, submitted);
           }
         }
       }
@@ -101,6 +104,55 @@ test("traffic selection metadata matches every published inquiry price row", () 
   }
 });
 
+test("six-traveller prices for two-person-only expansion tours are exactly CNY 200 lower per person", () => {
+  for (const slug of [
+    "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+    "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+    "xiamen-tulou-quanzhou-6-day-private-tour",
+    "chengdu-chongqing-8-day-private-tour",
+  ]) {
+    const product = privateTourProducts.find((candidate) => candidate.slug === slug);
+    assert.ok(product, slug);
+    const rows = product.packages[0].prices;
+    assert.deepEqual(rows.map((row) => row.travelers), [2, 6], slug);
+    assert.equal(rows[1].cnyPerPerson, rows[0].cnyPerPerson - 200, slug);
+    assert.deepEqual(getPrivateTourInquirySelection(slug, "standard-guided", 6), { packageId: "standard-guided", travelers: 6 });
+  }
+});
+
+test("six-traveller database whitelist includes the newly published choices", async () => {
+  const sql = await readFile(new URL("../migrations/202609230001_add_six_traveller_private_tour_prices.sql", import.meta.url), "utf8");
+  assert.match(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
+  const selectionCase = sql.match(/select case p_slug([\s\S]*?)else false\s+end is true;/u)?.[1];
+  assert.ok(selectionCase);
+  const newSixPersonSlugs = [
+    "shanghai-suzhou-hangzhou-6-day-private-tour",
+    "chengdu-pandas-sanxingdui-5-day-private-tour",
+    "xian-terracotta-warriors-5-day-private-tour",
+    "chongqing-wulong-5-day-private-tour",
+    "guilin-yangshuo-5-day-private-tour",
+    "harbin-winter-5-day-private-tour",
+    "shanghai-suzhou-5-day-private-tour",
+    "beijing-highlights-5-day-private-tour",
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+    "huangshan-hongcun-huizhou-5-day-private-tour",
+    "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+    "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+    "xiamen-tulou-quanzhou-6-day-private-tour",
+    "chengdu-chongqing-8-day-private-tour",
+  ];
+  for (const slug of newSixPersonSlugs) {
+    const condition = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
+    assert.ok(condition?.includes("p_travelers in"), `missing six-person SQL branch: ${slug}`);
+    assert.match(condition, /\(\d+(?:, \d+)*, 6\)/u, `missing six-person SQL choice: ${slug}`);
+  }
+  const legacy = selectionCase.match(/when 'zhangjiajie-4-day-private-tour' then\s+([^\n]+)/u)?.[1];
+  assert.ok(legacy?.includes("selected-city-stay") && legacy.includes("spacious-premium-stay") && legacy.includes("distinctive-mountain-stay"));
+  assert.match(legacy, /p_travelers = 6/u);
+  assert.doesNotMatch(selectionCase, /jingdezhen-wuyuan-wangxian|changbaishan-yanji-winter/u);
+});
+
 test("legacy email-only and identity-only payloads retain their original semantic representation", () => {
   for (const context of [null, getPrivateTourInquiryContext(beijing, "en")]) {
     const input = payload(context);
@@ -126,7 +178,8 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
   for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
-      const name = getPrivateTourInquiryContext(slug, locale).name.replaceAll("'", "''");
+      const context = getPrivateTourInquiryContext(slug, locale);
+      const name = getPrivateTourInquirySubmissionContext(context, locale).name.replaceAll("'", "''");
       assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
     }
   }
@@ -175,7 +228,8 @@ test("phase-two migration extends canonical identities and exact priced selectio
   for (const slug of privateTourInquirySlugs) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
-      const name = getPrivateTourInquiryContext(slug, locale).name.replaceAll("'", "''");
+      const context = getPrivateTourInquiryContext(slug, locale);
+      const name = getPrivateTourInquirySubmissionContext(context, locale).name.replaceAll("'", "''");
       assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
     }
   }
@@ -186,7 +240,7 @@ test("phase-two migration extends canonical identities and exact priced selectio
   const pricedRows = {
     "luoyang-dengfeng-kaifeng-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
     "zhangye-jiayuguan-dunhuang-7-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
-    "kunming-jianshui-yuanyang-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4\)/u,
+    "kunming-jianshui-yuanyang-6-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
     "shenzhen-family-tech-4-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
     "beijing-xian-shanghai-12-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
   };
@@ -210,6 +264,32 @@ test("phase-two migration extends canonical identities and exact priced selectio
   assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
   assert.doesNotMatch(sql, /create or replace function public\./u);
   assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_traffic_event_v2/u);
+});
+
+test("final selection migration preserves every published price row after both releases", async () => {
+  const sql = await readFile(new URL("../migrations/202609230002_preserve_private_tour_selection_after_phase_two.sql", import.meta.url), "utf8");
+  const selectionCase = sql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase);
+  for (const product of privateTourProducts) {
+    const branch = selectionCase.match(
+      new RegExp(`when '${product.slug}' then\\s+([^\\n]+)`, "u"),
+    )?.[1];
+    const pricedPackages = product.packages.filter((tourPackage) => tourPackage.prices.length > 0);
+    if (pricedPackages.length === 0) {
+      assert.equal(branch, undefined, `quote-only product must not accept a priced selection: ${product.slug}`);
+      continue;
+    }
+    assert.ok(branch, `missing selection rule: ${product.slug}`);
+    for (const tourPackage of pricedPackages) {
+      assert.ok(branch.includes(`'${tourPackage.id}'`), `${product.slug}:${tourPackage.id}`);
+    }
+    const publishedTravelers = [...new Set(pricedPackages.flatMap((tourPackage) => tourPackage.prices.map((row) => row.travelers)))].sort();
+    const acceptedTravelers = [...new Set([...branch.matchAll(/\b[246]\b/gu)].map((match) => Number(match[0])))].sort();
+    assert.deepEqual(acceptedTravelers, publishedTravelers, `selection price rows drift: ${product.slug}`);
+  }
+  assert.match(selectionCase, /when 'zhangjiajie-4-day-private-tour' then\s+p_package_id in \('selected-city-stay', 'spacious-premium-stay', 'distinctive-mountain-stay'\) and p_travelers = 6/u);
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {
@@ -271,6 +351,20 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
     const beforeInvalid = persistenceCalls;
     assert.equal((await intake(request(payload({ ...selected, selection: { ...selected.selection, price: 1 } }), randomUUID()))).status, 422);
     assert.equal(persistenceCalls, beforeInvalid);
+
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const displayed = getPrivateTourInquiryContext(slug, "ko");
+      const submitted = getPrivateTourInquirySubmissionContext(displayed, "ko");
+      const sameKey = randomUUID();
+      assert.equal((await intake(request(payload(submitted, "ko"), sameKey))).status, 201);
+      assert.deepEqual(attribution, { productInterest: submitted });
+      assert.equal((await intake(request(payload(displayed, "ko"), sameKey))).status, 200);
+      assert.deepEqual(attribution, { productInterest: submitted });
+    }
 
     await import(new URL(`../functions/notify-inquiries/index.ts?selection=${Date.now()}`, import.meta.url));
     const worker = handler;
@@ -341,6 +435,17 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       currentJob = { ...baseJob, answers: { informationStatus: "not_provided", ...(context ? { productInterest: context } : {}) } };
       assert.equal((await (await runWorker()).json()).accepted, 1);
       assert.doesNotMatch(messages.at(-1).text, /Tour selection/);
+    }
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const displayed = getPrivateTourInquiryContext(slug, "ko");
+      for (const context of [getPrivateTourInquirySubmissionContext(displayed, "ko"), displayed]) {
+        currentJob = { ...baseJob, locale: "ko", answers: { informationStatus: "not_provided", productInterest: context } };
+        assert.equal((await (await runWorker()).json()).accepted, 1, `${slug}:${context.name}`);
+      }
     }
     const beforeInvalidJob = messages.length;
     currentJob = { ...baseJob, answers: { informationStatus: "not_provided", productInterest: { ...selected, selection: { ...selected.selection, price: 1 } } } };

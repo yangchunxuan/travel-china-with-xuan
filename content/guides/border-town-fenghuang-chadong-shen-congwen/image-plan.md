@@ -16,7 +16,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Crop:** centre crop from the 2560×1707 source, retaining the Hongqiao entrance and enough contemporary visitor context; no generative fill or object removal
 - **EN alt:** `Hongqiao in Fenghuang, a real part of Shen Congwen's hometown but not proof of a scene in Border Town.`
 - **ZH alt:** `凤凰古城虹桥；这里属于沈从文故乡的真实城市空间，但不能据此认定为《边城》小说场景。`
-- **KO alt:** `펑황 고성의 훙차오. 선충원 고향의 실제 도시 공간이지만 『변성』 속 장면의 증거는 아니다.`
+- **KO alt:** `봉황 고성의 훙차오. 선충원 고향의 실제 도시 공간이지만 『변성』 속 장면의 증거는 아니다.`
 - **Caption function:** establishes the real author-hometown destination while the text immediately rejects a one-to-one novel map
 
 ## Body 1 — Shen Congwen Former Residence
@@ -29,7 +29,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Edit:** resize only, preserving the full street entrance, nameboard and visible visitor signs
 - **EN alt:** `Street entrance to Shen Congwen's protected former residence in Fenghuang, with its nameboard and visitor signs.`
 - **ZH alt:** `凤凰沈从文故居沿街入口，可见故居匾额和游客提示牌。`
-- **KO alt:** `옛집 현판과 관람 안내가 보이는 펑황 선충원 옛집의 길가 출입구.`
+- **KO alt:** `옛집 현판과 관람 안내가 보이는 봉황 선충원 옛집의 길가 출입구.`
 - **Caption function:** identifies the entrance while prompting the reader to distinguish building fabric from later exhibits; it does not certify every visible component as original
 
 ## Body 2 — Tuojiang rooftops and waterwheel
@@ -42,7 +42,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Edit:** proportional resize; retain visible modern infrastructure rather than creating a false “timeless” view
 - **EN alt:** `Roofs, riverfront buildings and a waterwheel beside the Tuojiang in Fenghuang.`
 - **ZH alt:** `凤凰沱江边的屋顶、临水建筑和水车。`
-- **KO alt:** `펑황 퉈장 변의 지붕과 수변 건물, 물레방아.`
+- **KO alt:** `봉황 퉈장 변의 지붕과 수변 건물, 물레방아.`
 - **Caption function:** author-hometown urban context, never a direct illustration of the fictional ferry
 
 ## Body 3 — modern Jiangtian Plaza gateway
@@ -55,7 +55,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Edit:** proportional resize
 - **EN alt:** `A modern commercial gateway marked Jiangtian Plaza in Fenghuang Ancient Town.`
 - **ZH alt:** `凤凰古城内写有“江天广场”的现代商业入口。`
-- **KO alt:** `펑황 고성 안에 ‘장톈광장(江天廣場)’이라고 적힌 현대 상업 공간 입구.`
+- **KO alt:** `봉황 고성 안에 ‘장톈광장(江天廣場)’이라고 적힌 현대 상업 공간 입구.`
 - **Caption function:** makes the tourism-presentation layer visible and warns that old-looking design is not an age label
 
 ## Body 4 — Tuojiang stepping stones
@@ -68,7 +68,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Edit:** WebP conversion at native dimensions; no upscaling
 - **EN alt:** `Visitors crossing stepping stones on the Tuojiang in Fenghuang—not Chadong—with riverfront buildings behind them.`
 - **ZH alt:** `游客从凤凰而非茶峒的沱江跳岩上过河，后方是沿江建筑。`
-- **KO alt:** `차둥이 아닌 펑황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
+- **KO alt:** `차둥이 아닌 봉황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.`
 - **Caption function:** demonstrates why a picturesque real crossing must not be mistaken for the novella's ferry
 - **People/privacy:** distant public-place figures are incidental and not identified; do not crop to create recognisable portraits
 
@@ -82,7 +82,7 @@ No AI-generated documentary image, film/television still, modern illustration or
 - **Edit:** proportional resize; no removal of setting
 - **EN alt:** `Stone memorial at Shen Congwen's grave in Fenghuang County.`
 - **ZH alt:** `凤凰县沈从文墓地的石质纪念物。`
-- **KO alt:** `펑황현 선충원 묘의 석제 기념물.`
+- **KO alt:** `봉황현 선충원 묘의 석제 기념물.`
 - **Caption function:** locates the optional memorial layer and explicitly keeps it outside the fictional world
 
 ## Chadong asset gap

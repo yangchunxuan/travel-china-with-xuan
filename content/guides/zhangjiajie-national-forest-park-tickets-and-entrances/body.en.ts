@@ -286,6 +286,37 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking Zhangjiajie park tickets",
+      items: [
+        {
+          question: "How much is the Zhangjiajie National Forest Park ticket?",
+          answer: "RMB 165 for admission, or RMB 236 for admission plus eco-bus, as checked on the official page on 20 August 2026. Each had optional RMB 3 insurance and four consecutive days of validity, and neither product included cableways or elevators. Recheck the live order before paying, because products and prices can change.",
+        },
+        {
+          question: "Does the ticket include the Bailong Elevator and the cableways?",
+          answer: "Neither product includes them. Both the RMB 165 admission and the RMB 236 admission-plus-eco-bus exclude cableways and elevators. The 2023 framework named the Tianzi Mountain, Huangshi Village and Yangjiajie cableways plus Bailong Elevator as separately purchasable or combinable transport, so check the direction, number of rides and validity for each segment you want.",
+        },
+        {
+          question: "Which gate should I enter from?",
+          answer: "Choose it from your first planned area. East Gate usually suits Wulingyuan stays, South Gate a Golden Whip Stream or Huangshi Village start, and West Gate a deliberate Yangjiajie start. North Gate suits a confirmed high-side Tianzi Mountain start with suitable road transport, and Zimugang only when the current official map and shuttle operation specifically use that check-in.",
+        },
+        {
+          question: "Is my Zhangjiajie park ticket also valid for Tianmen Mountain?",
+          answer: "No, they are separate attractions. Zhangjiajie National Forest Park and the Wulingyuan core scenic area are the multi-gate sandstone-forest park covered by this guide, while Tianmen Mountain is a separate mountain attraction reached from Zhangjiajie city, with its own A/B/C route labels, cableway and entry appointment. The Grand Canyon and Glass Bridge, Huanglong Cave and Baofeng Lake are separate attractions too.",
+        },
+        {
+          question: "The booking site will not accept my passport. What do I do?",
+          answer: "Save the official error, the time, the selected product and the partially redacted document type. Then contact the selected gate's official ticket-consultation number or the scenic-area service desk and ask which current official channel handles that passport. Do not use a false Chinese ID number or pay an unverified person to bind the passport.",
+        },
+        {
+          question: "Is the park manageable with limited mobility if I use the elevator and cableways?",
+          answer: "Not step-free. Cableways, the elevator, shuttles and the sightseeing train can remove particular climbs or distances, but transfers can still include stairs, steep paths, queue standing and gaps between stops and viewpoints. For a wheelchair, walking aid, young child or limited endurance, ask the scenic-area service desk about the exact gate-to-attraction chain. A generic 'elevator included' label is not an accessibility guarantee.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning without mixing up separate decisions",

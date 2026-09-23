@@ -22,7 +22,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-09-08",
-  "dateModified": "2026-09-08",
+  "dateModified": "2026-09-22",
   "sourceReviewedDate": "2026-09-08",
   "searchTerms": {
     "en": [
@@ -37,9 +37,10 @@
       "成都到张家界动车"
     ],
     "ko": [
-      "청두 장자제 여행 일정",
-      "청두 장자제 6박 7일",
-      "청두 장자제 직통 열차"
+      "청두 장가계 여행 일정",
+      "청두 장가계 6박 7일",
+      "청두 장가계 직통 열차",
+      "청두 장자제 여행 일정"
     ]
   },
   "search": {
@@ -83,12 +84,12 @@
       "path": "/zh/guides/chengdu-zhangjiajie-itinerary/"
     },
     "ko": {
-      "title": "청두·장자제 여행 일정: 직통 열차로 6~8박",
-      "headline": "청두와 장자제: 판다와 봉우리를 만나는 7~9일",
-      "description": "청두와 장자제 6박 7일 일정, 직통 열차와 숙소 선택, 삼림공원 이틀을 정리했습니다. 톈먼산을 더하는 7박과 여유로운 8박도 비교하세요.",
+      "title": "청두·장가계 여행 일정: 직통 열차로 6~8박",
+      "headline": "청두와 장가계: 판다와 봉우리를 만나는 7~9일",
+      "description": "청두와 장가계 6박 7일 일정, 직통 열차와 숙소 선택, 삼림공원 이틀을 정리했습니다. 천문산을 더하는 7박과 여유로운 8박도 비교하세요.",
       "heroAlt": "청두 판다기지 정원에 있는 금색 자이언트판다 조각상",
-      "navTitle": "청두와 장자제",
-      "featuredLinkLabel": "청두·장자제 일정 짜기",
+      "navTitle": "청두와 장가계",
+      "featuredLinkLabel": "청두·장가계 일정 짜기",
       "openGraphLocale": "ko_KR",
       "cardTags": [
         "6~8박",

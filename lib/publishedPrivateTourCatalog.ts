@@ -249,12 +249,12 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Zhangjiajie · Tianzi Mountain · Yuanjiajie · Golden Whip Stream",
       "张家界 · 天子山 · 袁家界 · 金鞭溪",
-      "장자제 · 톈쯔산 · 위안자제 · 금편계",
+      "장가계 · 천자산 · 원가계 · 금편계",
     ),
     appeal: l(
       "Stay in one Zhangjiajie villa, reach Yuanjiajie’s main viewpoints, walk the eastern Golden Whip Stream, and visit Seventy-Two Wonder Tower in the evening—without cable cars or elevators.",
       "同一处张家界别墅连住，去袁家界主要观景点、步行金鞭溪东段，晚上再看七十二奇楼；路线不乘索道和电梯。",
-      "장자제 빌라 한 곳에 머물며 위안자제 주요 전망대와 금편계 동쪽 구간을 걷고, 저녁에는 칠십이기루를 찾습니다. 케이블카와 엘리베이터는 이용하지 않습니다.",
+      "장가계 빌라 한 곳에 머물며 원가계 주요 전망대와 금편계 동쪽 구간을 걷고, 저녁에는 칠십이기루를 찾습니다. 케이블카와 엘리베이터는 이용하지 않습니다.",
     ),
     pace: l(
       "One villa base with two walking-focused sightseeing days and buffered arrival and departure days.",
@@ -271,44 +271,44 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Zhangjiajie · Furong Town · Fenghuang",
       "张家界 · 芙蓉镇 · 凤凰古城",
-      "장자제 · 푸룽전 · 펑황고성",
+      "장가계 · 부용진 · 봉황고성",
     ),
     appeal: l(
       "Spend two full days in Wulingyuan, stay overnight in waterfall-side Furong Town, then slow down for two nights beside Fenghuang’s Tuojiang River.",
       "用两个完整游览日走武陵源峰林与溪谷，在临水的芙蓉镇住一晚，再到凤凰沱江边连住两晚。",
-      "우링위안에서 이틀을 온전히 보내고 폭포 마을 푸룽전에서 1박한 뒤, 펑황 퉈장 강변에서 2박하며 속도를 늦춥니다.",
+      "무릉원에서 이틀을 온전히 보내고 폭포 마을 부용진에서 1박한 뒤, 봉황 퉈장 강변에서 2박하며 속도를 늦춥니다.",
     ),
     pace: l(
       "Three hotel bases across seven days, with four guided touring days and a free day in Fenghuang.",
       "7 天住三地，D2–D5 为四个导游游览日，D6 在凤凰自由活动。",
-      "6박 7일 동안 세 곳에 머물며 D2~D5는 가이드 관광, D6는 펑황 자유 일정입니다.",
+      "6박 7일 동안 세 곳에 머물며 D2~D5는 가이드 관광, D6는 봉황 자유 일정입니다.",
     ),
     fit: l(
       "Travellers who want Zhangjiajie’s forest landscapes and two western Hunan ancient towns in one unhurried private route.",
       "想把张家界峰林与湘西两座古镇连成一条从容私家路线的旅客。",
-      "장자제 산림 풍경과 후난 서부의 두 고성을 한 번의 여유로운 프라이빗 여정으로 보고 싶은 여행자.",
+      "장가계 산림 풍경과 후난 서부의 두 고성을 한 번의 여유로운 프라이빗 여정으로 보고 싶은 여행자.",
     ),
   },
   "zhangjiajie-4-day-private-tour": {
     route: l(
       "Zhangjiajie · Wulingyuan · Glass Bridge · Tianmen Mountain",
       "张家界 · 武陵源 · 玻璃桥 · 天门山",
-      "장자제 · 우링위안 · 유리다리 · 톈먼산",
+      "장가계 · 무릉원 · 유리다리 · 천문산",
     ),
     appeal: l(
       "Give the Forest Park, Grand Canyon Glass Bridge and Tianmen Mountain their own day, with an unhurried arrival before three sightseeing days.",
       "抵达日先放慢脚步，再把森林公园、大峡谷玻璃桥与天门山分别放进三个游览日。",
-      "도착일은 여유롭게 보내고, 이후 3일 동안 국가삼림공원, 대협곡 유리다리와 톈먼산을 하루에 한 곳씩 둘러봅니다.",
+      "도착일은 여유롭게 보내고, 이후 3일 동안 국가삼림공원, 대협곡 유리다리와 천문산을 하루에 한 곳씩 둘러봅니다.",
     ),
     pace: l(
       "An easy arrival day followed by three sightseeing days; we check whether Tianmen Mountain and departure can fit safely on the same day.",
       "抵达日不赶景点，随后 3 天游览；天门山与返程能否同日须按票务和班次核对。",
-      "도착일에는 여유를 두고 3일간 관광하며, 톈먼산 관람과 출발을 같은 날에 배치할 수 있는지 따로 확인합니다.",
+      "도착일에는 여유를 두고 3일간 관광하며, 천문산 관람과 출발을 같은 날에 배치할 수 있는지 따로 확인합니다.",
     ),
     fit: l(
       "Travellers who want Zhangjiajie’s best-known mountain landscapes in one private route.",
       "希望用一条私家路线集中看完张家界代表性山岳景观的旅客。",
-      "장자제의 대표 산악 풍경을 하나의 프라이빗 일정으로 보고 싶은 여행자.",
+      "장가계의 대표 산악 풍경을 하나의 프라이빗 일정으로 보고 싶은 여행자.",
     ),
   },
   ...privateTourExpansionProfiles,
@@ -461,7 +461,7 @@ export function getPublishedPrivateTourCatalog(
       },
       startingPrice: {
         ...zhangjiajieStartingPrice,
-        travelers: zhangjiajieProduct.group_basis.minimum_adults,
+        travelers: zhangjiajieProduct.price_display.starting_group_size,
         serviceLabel: {
           en: "Two days of English-speaking guide service included",
           zh: "已含两天英文导游服务",

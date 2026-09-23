@@ -27,7 +27,7 @@ import {
   tripPaceIds,
   validateAndNormalizeInquiry,
 } from "../../lib/inquiryContract.ts";
-import { getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContext.ts";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySubmissionContext } from "../../lib/privateTourInquiryContext.ts";
 
 const validationConfig = {
   allowedFormVersions: [
@@ -219,7 +219,7 @@ test("homepage email accepts only a canonical published-tour identity", () => {
     const result = validateAndNormalizeInquiry(payload, validationConfig);
     assert.equal(result.ok, true, locale);
     if (!result.ok) continue;
-    assert.deepEqual(result.value.productInterest, expected);
+    assert.deepEqual(result.value.productInterest, getPrivateTourInquirySubmissionContext(expected, locale));
     assert.match(
       canonicalizeJson(semanticInquiryPayload(result.value)),
       /productInterest/u,
