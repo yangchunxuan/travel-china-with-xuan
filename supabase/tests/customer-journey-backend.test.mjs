@@ -125,7 +125,7 @@ test("admin v2 validates product dimensions while preserving suppression and no-
     (p) => { p.dimensions.productSelections[0].label = `${slug}|standard-guided|4`; },
     (p) => { p.dimensions.productSelections[0].label = `${slug}|no-guide|04`; },
     (p) => { p.dimensions.productSelections[0].label = `${slug}|no-guide|06`; },
-    (p) => { p.dimensions.productSelections[0].label = "chengdu-jiuzhaigou-huanglong-6-day-private-tour|standard-guided|6"; },
+    (p) => { p.dimensions.productSelections[0].label = "chengdu-jiuzhaigou-huanglong-6-day-private-tour|standard-guided|4"; },
     (p) => { p.dimensions.products.push(p.dimensions.products[0]); },
     (p) => { p.dimensions.products[0].sessionHash = "a".repeat(64); },
     (p) => { p.limits.perSessionEventsIncluded = true; },

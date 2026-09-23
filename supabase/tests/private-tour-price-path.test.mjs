@@ -108,9 +108,10 @@ test("all three-language catalog price links land on the exact lowest published 
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
-    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].from_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].six_person_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.travelers, 6);
     assert.equal(legacy.startingPriceHref, legacy.href);
-    assert.equal(legacy.startingPrice.selection, undefined, "do not invent a package for the fixed legacy contract");
+    assert.equal(legacy.startingPrice.selection, undefined, "the detail card links to the tier choices");
     assert.ok(legacy.startingPrice.serviceLabel.length > 0);
   }
 });
@@ -200,7 +201,7 @@ test("source-currency product prices remain exact in every locale", () => {
     ),
   );
 
-  assert.equal(publishedTiers.length, 13);
+  assert.equal(publishedTiers.length, 17);
   for (const locale of locales) {
     for (const expected of publishedTiers) {
       const localized = localizePrivateTourProduct(

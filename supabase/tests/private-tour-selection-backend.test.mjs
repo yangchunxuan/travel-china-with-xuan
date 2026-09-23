@@ -20,6 +20,7 @@ import {
 import {
   trafficProductTravelerCounts,
 } from "../functions/_shared/traffic-contracts.ts";
+import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 
 const config = {
   allowedFormVersions: [currentHomepageEmailFormVersion],
@@ -27,7 +28,7 @@ const config = {
   whatsappEnabled: false,
 };
 const beijing = "beijing-highlights-5-day-private-tour";
-const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided"];
+const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -91,6 +92,22 @@ test("traffic selection metadata matches every published inquiry price row", () 
   }
 });
 
+test("six-traveller prices for two-person-only expansion tours are exactly CNY 200 lower per person", () => {
+  for (const slug of [
+    "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+    "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+    "xiamen-tulou-quanzhou-6-day-private-tour",
+    "chengdu-chongqing-8-day-private-tour",
+  ]) {
+    const product = privateTourProducts.find((candidate) => candidate.slug === slug);
+    assert.ok(product, slug);
+    const rows = product.packages[0].prices;
+    assert.deepEqual(rows.map((row) => row.travelers), [2, 6], slug);
+    assert.equal(rows[1].cnyPerPerson, rows[0].cnyPerPerson - 200, slug);
+    assert.deepEqual(getPrivateTourInquirySelection(slug, "standard-guided", 6), { packageId: "standard-guided", travelers: 6 });
+  }
+});
+
 test("six-traveller database whitelist includes the newly published choices", async () => {
   const sql = await readFile(new URL("../migrations/202609230001_add_six_traveller_private_tour_prices.sql", import.meta.url), "utf8");
   assert.match(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
@@ -108,16 +125,19 @@ test("six-traveller database whitelist includes the newly published choices", as
     "zhangjiajie-forest-4-day-private-tour",
     "zhangjiajie-furong-fenghuang-7-day-private-tour",
     "huangshan-hongcun-huizhou-5-day-private-tour",
+    "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+    "guizhou-huangguoshu-libo-miao-7-day-private-tour",
+    "xiamen-tulou-quanzhou-6-day-private-tour",
+    "chengdu-chongqing-8-day-private-tour",
   ];
   for (const slug of newSixPersonSlugs) {
     const condition = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
     assert.ok(condition?.includes("p_travelers in"), `missing six-person SQL branch: ${slug}`);
     assert.match(condition, /\(\d+(?:, \d+)*, 6\)/u, `missing six-person SQL choice: ${slug}`);
   }
-  for (const slug of ["chengdu-jiuzhaigou-huanglong-6-day-private-tour", "guizhou-huangguoshu-libo-miao-7-day-private-tour", "xiamen-tulou-quanzhou-6-day-private-tour", "chengdu-chongqing-8-day-private-tour"]) {
-    const condition = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
-    assert.match(condition, /p_travelers = 2/u, `unpriced six-person choice must remain unavailable: ${slug}`);
-  }
+  const legacy = selectionCase.match(/when 'zhangjiajie-4-day-private-tour' then\s+([^\n]+)/u)?.[1];
+  assert.ok(legacy?.includes("selected-city-stay") && legacy.includes("spacious-premium-stay") && legacy.includes("distinctive-mountain-stay"));
+  assert.match(legacy, /p_travelers = 6/u);
   assert.doesNotMatch(selectionCase, /jingdezhen-wuyuan-wangxian|changbaishan-yanji-winter/u);
 });
 

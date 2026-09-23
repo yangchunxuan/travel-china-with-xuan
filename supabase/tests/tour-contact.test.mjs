@@ -99,6 +99,13 @@ test("an ordinary click on the matching product opens exactly one contextual quo
   const press = click();
   assert.equal(openTourContactFromLink(press.event, buildPrivateTourInquiryHref("/", classic, "private_tour"), "en"), true);
   assert.equal(Object.hasOwn(events[0].detail, "selection"), false);
+  for (const locale of locales) {
+    const { events: selectedEvents } = page(pathFor(locale, classic));
+    const selection = { packageId: "distinctive-mountain-stay", travelers: 6 };
+    const selectedPress = click();
+    assert.equal(openTourContactFromLink(selectedPress.event, buildPrivateTourInquiryHref(`${prefix(locale)}/`, classic, "private_tour", selection), locale), true);
+    assert.deepEqual(selectedEvents[0].detail.selection, selection);
+  }
 });
 
 test("guide/home/other-product pages, unknown slugs and an unready panel retain the original link", () => {

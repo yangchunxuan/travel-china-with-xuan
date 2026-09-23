@@ -92,7 +92,23 @@ export function ZhangjiajiePrivateTourPreviewPage({
     inquiryContext.slug,
     published ? "private_tour" : "product_preview",
   );
-  const publicPricing = getZhangjiajiePrivateTourPublicPricing(locale);
+  const publishedPricing = getZhangjiajiePrivateTourPublicPricing(locale);
+  const publicPricing = {
+    ...publishedPricing,
+    tiers: publishedPricing.tiers.map((tier) => ({
+      ...tier,
+      ...(published
+        ? {
+            sixPersonInquiryHref: buildPrivateTourInquiryHref(
+              homePath,
+              inquiryContext.slug,
+              "private_tour",
+              { packageId: tier.id, travelers: 6 },
+            ),
+          }
+        : {}),
+    })),
+  };
   const publicPriceCopy = {
     checkingPrice: copy.checkingPrice,
     expiredPrice: copy.expiredPrice,
@@ -100,6 +116,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
     fromLabel: copy.fromLabel,
     perPerson: copy.perPerson,
     regularLabel: copy.regularLabel,
+    baseGroupLabel: copy.baseGroupLabel,
+    sixPersonLabel: copy.sixPersonLabel,
+    sixPersonInquiryLabel: copy.sixPersonInquiryLabel,
     exactStayNote: copy.exactStayNote,
     validThrough: copy.validThrough,
   };

@@ -49,6 +49,9 @@ export const productPreviewCopy = {
     fromLabel: "From",
     regularLabel: "Regular",
     perPerson: "per person",
+    baseGroupLabel: "2–4 adults",
+    sixPersonLabel: "6 adults",
+    sixPersonInquiryLabel: "Ask about this stay for 6",
     featured: "Starting option",
     exactStayNote:
       "Before you pay, you get the exact hotel, room, breakfast, number of rooms and availability in writing.",
@@ -416,6 +419,9 @@ export const productPreviewCopy = {
     fromLabel: "起价",
     regularLabel: "常规价",
     perPerson: "每人",
+    baseGroupLabel: "2–4 位成人",
+    sixPersonLabel: "6 位成人",
+    sixPersonInquiryLabel: "询问这一住宿档的六人行程",
     featured: "起步选择",
     exactStayNote: "付款前，具体酒店、房型、早餐、房间数和能否预订，都会书面发给你确认。",
     heroImageCaption: "晨光越过张家界砂岩峰林，也是这套四日路线展开的尺度。",
@@ -768,6 +774,9 @@ export const productPreviewCopy = {
     fromLabel: "최저",
     regularLabel: "일반가",
     perPerson: "1인 기준",
+    baseGroupLabel: "성인 2~4명",
+    sixPersonLabel: "성인 6명",
+    sixPersonInquiryLabel: "이 숙소의 6인 여행 문의하기",
     featured: "기본 옵션",
     exactStayNote:
       "결제 전에 정확한 숙소, 객실 유형, 조식, 객실 수와 예약 가능 여부를 서면으로 보내 드립니다.",
@@ -1166,6 +1175,8 @@ export function getZhangjiajiePrivateTourPublicPricing(
         ? { fromPrice: tier.from_price_per_person }
         : {}),
       ...("price_per_person" in tier ? { price: tier.price_per_person } : {}),
+      sixPersonPrice: tier.six_person_price_per_person,
+      formattedSixPersonPrice: formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted,
       ...("regular_price_per_person" in tier
         ? {
             regularPrice: tier.regular_price_per_person,

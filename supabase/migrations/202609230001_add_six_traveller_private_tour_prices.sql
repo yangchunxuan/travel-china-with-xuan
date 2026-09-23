@@ -26,18 +26,20 @@ as $$
       p_package_id = 'fixed-route-english-guided' and p_travelers in (2, 4, 6)
     when 'zhangjiajie-furong-fenghuang-7-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
+    when 'zhangjiajie-4-day-private-tour' then
+      p_package_id in ('selected-city-stay', 'spacious-premium-stay', 'distinctive-mountain-stay') and p_travelers = 6
     when 'chengdu-jiuzhaigou-huanglong-6-day-private-tour' then
-      p_package_id = 'standard-guided' and p_travelers = 2
+      p_package_id = 'standard-guided' and p_travelers in (2, 6)
     when 'kunming-dali-lijiang-8-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers = 6
     when 'guizhou-huangguoshu-libo-miao-7-day-private-tour' then
-      p_package_id = 'standard-guided' and p_travelers = 2
+      p_package_id = 'standard-guided' and p_travelers in (2, 6)
     when 'xiamen-tulou-quanzhou-6-day-private-tour' then
-      p_package_id = 'standard-guided' and p_travelers = 2
+      p_package_id = 'standard-guided' and p_travelers in (2, 6)
     when 'chaozhou-shantou-nanao-5-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'chengdu-chongqing-8-day-private-tour' then
-      p_package_id = 'standard-guided' and p_travelers = 2
+      p_package_id = 'standard-guided' and p_travelers in (2, 6)
     when 'guangzhou-shunde-foshan-5-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'huangshan-hongcun-huizhou-5-day-private-tour' then

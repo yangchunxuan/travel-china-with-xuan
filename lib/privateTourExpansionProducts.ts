@@ -271,9 +271,9 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ],
   ),
   bookingNote: pricingBookingNote(
-    "The published USD 1,395 starting price applies to 2 travellers sharing a twin room in the stated low-season conditions.",
-    "页面所示 USD 1,395/人起价适用于 2 位成人淡季双人同住。",
-    "표시된 1인 USD 1,395 시작가는 성인 2명 비수기 2인 1실 조건에 적용됩니다.",
+    "The published per-person starting prices apply to 2 or 6 travellers sharing twin rooms in the stated low-season conditions.",
+    "页面所示每人起价分别适用于 2 人或 6 人同行、淡季双人同住。",
+    "표시된 1인 시작가는 비수기 2인 1실 조건에서 2명 또는 6명 여행에 적용됩니다.",
   ),
   heroImage: image(
     chengduJiuzhaigouSlug,
@@ -324,10 +324,13 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ),
   ],
   packages: [
-    standardPackage([{ travelers: 2, cnyPerPerson: 9067, usdPerPerson: 1395, publishedPrice: { currency: "USD", amountPerPerson: 1395 } }]),
+    standardPackage([
+      { travelers: 2, cnyPerPerson: 9067, usdPerPerson: 1395, publishedPrice: { currency: "USD", amountPerPerson: 1395 } },
+      { travelers: 6, cnyPerPerson: 8867, publishedPrice: { currency: "USD", amountPerPerson: 1365 } },
+    ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const yunnanSlug = "kunming-dali-lijiang-8-day-private-tour";
@@ -675,9 +678,9 @@ const guizhou: PrivateTourProduct = {
     ],
   ),
   bookingNote: pricingBookingNote(
-    "The published USD 1,888 starting price applies to 2 adults sharing a twin room in the stated low-season conditions.",
-    "页面所示 USD 1,888/人起价适用于 2 位成人淡季双人同住。",
-    "표시된 1인 USD 1,888 시작가는 성인 2명 비수기 2인 1실 조건에 적용됩니다.",
+    "The published per-person starting prices apply to 2 or 6 adults sharing twin rooms in the stated low-season conditions.",
+    "页面所示每人起价分别适用于 2 人或 6 人同行、淡季双人同住。",
+    "표시된 1인 시작가는 비수기 2인 1실 조건에서 2명 또는 6명 여행에 적용됩니다.",
   ),
   heroImage: image(
     guizhouSlug,
@@ -735,10 +738,11 @@ const guizhou: PrivateTourProduct = {
   packages: [
     standardPackage([
       { travelers: 2, cnyPerPerson: 12272, usdPerPerson: 1888, publishedPrice: { currency: "USD", amountPerPerson: 1888 } },
+      { travelers: 6, cnyPerPerson: 12072, publishedPrice: { currency: "USD", amountPerPerson: 1858 } },
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const fujianSlug = "xiamen-tulou-quanzhou-6-day-private-tour";
@@ -872,9 +876,9 @@ const fujian: PrivateTourProduct = {
     ["일정에 적히지 않은 토루 내부와 선택 체험", "최종 일정에 적히지 않은 식사"],
   ),
   bookingNote: pricingBookingNote(
-    "The published USD 1,499 per-person reference uses double occupancy. The exact total for any group size is confirmed before payment; the single-room supplement is separate.",
-    "页面所示 USD 1,499/人以双人同住为基础。任何人数的准确总价须在付款前确认，单房差另计。",
-    "표시된 1인 USD 1,499는 2인 1실 기준입니다. 인원별 정확한 총액은 결제 전에 확인하며 1인실 추가금은 별도입니다.",
+    "The published 2- and 6-traveller per-person starting prices use twin sharing. We confirm the exact total before payment; any single-room supplement is separate.",
+    "页面列出的 2 人和 6 人每人起价按双人同住计算；准确总价会在付款前确认，单房差另计。",
+    "표시된 2명·6명 기준 1인 시작가는 2인 1실 조건입니다. 정확한 총액은 결제 전 확인하며 1인실 추가금은 별도입니다.",
   ),
   heroImage: image(
     fujianSlug,
@@ -935,10 +939,11 @@ const fujian: PrivateTourProduct = {
   packages: [
     standardPackage([
       { travelers: 2, cnyPerPerson: 9743, usdPerPerson: 1499, publishedPrice: { currency: "USD", amountPerPerson: 1499 } },
+      { travelers: 6, cnyPerPerson: 9543, publishedPrice: { currency: "USD", amountPerPerson: 1469 } },
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const chaoshanSlug = "chaozhou-shantou-nanao-5-day-private-tour";
@@ -1283,9 +1288,9 @@ const chengduChongqing: PrivateTourProduct = {
     ["명시되지 않은 우룽 관광지와 충칭 유료 체험"],
   ),
   bookingNote: pricingBookingNote(
-    "The published USD 1,520 starting price applies to 2 travellers; the single-room supplement and other group sizes require a separate quote.",
-    "页面所示 USD 1,520/人起价适用于 2 人同行；单房差与其他人数需单独询价。",
-    "표시된 1인 USD 1,520 시작가는 2명 기준이며 1인실 추가금과 다른 인원은 별도 견적입니다.",
+    "The published per-person starting prices apply to 2 or 6 travellers; the single-room supplement and other group sizes require a separate quote.",
+    "页面所示每人起价适用于 2 人或 6 人同行；单房差与其他人数需单独询价。",
+    "표시된 1인 시작가는 2명 또는 6명 기준이며 1인실 추가금과 다른 인원은 별도 견적입니다.",
   ),
   heroImage: image(
     chengduChongqingSlug,
@@ -1356,10 +1361,13 @@ const chengduChongqing: PrivateTourProduct = {
     ),
   ],
   packages: [
-    standardPackage([{ travelers: 2, cnyPerPerson: 9880, usdPerPerson: 1520, publishedPrice: { currency: "USD", amountPerPerson: 1520 } }]),
+    standardPackage([
+      { travelers: 2, cnyPerPerson: 9880, usdPerPerson: 1520, publishedPrice: { currency: "USD", amountPerPerson: 1520 } },
+      { travelers: 6, cnyPerPerson: 9680, publishedPrice: { currency: "USD", amountPerPerson: 1490 } },
+    ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-23",
 };
 
 const guangzhouSlug = "guangzhou-shunde-foshan-5-day-private-tour";
