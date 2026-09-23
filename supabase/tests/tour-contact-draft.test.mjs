@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { tourContactDraftText, tourContactNote, referralSources } from "../../lib/tourContactDraft.ts";
+import { tourContactDraftText, tourContactNote, parseRequestedTravelers, referralSources } from "../../lib/tourContactDraft.ts";
 import { tourWhatsAppHref } from "../../lib/tourContact.ts";
-import { buildPrivateTourMailtoHref, getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContext.ts";
+import { buildPrivateTourDetailHref, buildPrivateTourMailtoHref, getPrivateTourDetailSelectionFromSearchParams, getPrivateTourInquiryContext, getPrivateTourInquirySelection } from "../../lib/privateTourInquiryContext.ts";
 import { currentPrivateTourQuoteFormVersion, privateTourQuoteSchemaVersion, homepageEmailPrivacyNoticeVersion, validateAndNormalizeInquiry } from "../../lib/inquiryContract.ts";
 
 const slug = "shanghai-suzhou-hangzhou-6-day-private-tour";
@@ -48,5 +48,48 @@ test("self-reported discovery survives the quote contract in notes without chang
     assert.equal(result.value.note, note);
     assert.deepEqual(result.value.attribution, { ...input.attribution, utmSource: null, utmMedium: null, utmCampaign: null });
     assert.ok(result.value.note.includes(`[Traveller-reported discovery: ${source}]`));
+  }
+});
+
+test("a custom Jiangnan party size reaches the quote and direct messages without a four-person price tier", () => {
+  for (const value of ["1", "3", "5", "7", "99"]) assert.equal(parseRequestedTravelers(value), Number(value));
+  for (const value of ["", "0", "100", "1.5", "-2", "abc"]) assert.equal(parseRequestedTravelers(value), null);
+  for (const locale of ["en", "zh", "ko"]) {
+    for (const tourSlug of ["shanghai-suzhou-5-day-private-tour", slug]) {
+      const context = getPrivateTourInquiryContext(tourSlug, locale);
+      assert.equal(context.selection, undefined);
+      const draft = { travelDate: null, note: "Quiet rooms, please.", referralSource: "ChatGPT", requestedTravelers: 7 };
+      const whatsapp = new URL(tourWhatsAppHref(locale, context, undefined, draft)).searchParams.get("text");
+      const email = new URL(buildPrivateTourMailtoHref("test@example.invalid", locale, context, draft)).searchParams.get("body");
+      const group = tourContactDraftText(locale, draft).split("\n")[1];
+      for (const message of [whatsapp, email]) {
+        assert.ok(message.includes(context.name));
+        assert.ok(message.includes(group));
+        assert.ok(!message.includes("4 travellers"));
+      }
+      const note = tourContactNote(draft.note, draft.referralSource, draft.requestedTravelers);
+      const input = {
+        schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
+        entryPath: "private_tour_quote", locale, contact: { channel: "email", email: "test@example.invalid" },
+        productInterest: context, travelDate: null, note, privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+        attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${tourSlug}/` }, experiment: null,
+        antiAbuse: { companyWebsite: "" },
+      };
+      const result = validateAndNormalizeInquiry(input, config);
+      assert.equal(result.ok, true, JSON.stringify(result));
+      assert.equal(result.value.productInterest.selection, undefined);
+      assert.ok(result.value.note.includes("[Requested group size: 7 travellers]"));
+    }
+  }
+});
+
+test("the Jiangnan comparison can carry a published 2- or 4-person selection in both directions", () => {
+  const tours = ["shanghai-suzhou-5-day-private-tour", slug];
+  for (const travelers of [2, 4]) for (const origin of tours) {
+    const target = tours.find(candidate => candidate !== origin);
+    const selection = getPrivateTourInquirySelection(origin, "standard-guided", travelers);
+    const targetSelection = getPrivateTourInquirySelection(target, selection.packageId, selection.travelers);
+    const href = buildPrivateTourDetailHref(`/tours/${target}/`, target, targetSelection);
+    assert.equal(getPrivateTourDetailSelectionFromSearchParams(target, new URL(href, "https://homegroundchina.com").searchParams)?.travelers, travelers);
   }
 });
