@@ -1,18 +1,27 @@
 .marquee {
   block-size: 2.25rem;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  cursor: default;
+  margin-block-start: 0.75rem;
+  mask-image: linear-gradient(90deg, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
   overflow: hidden;
   position: relative;
 }
 
 .track {
-  animation: placeMarquee 90s linear infinite;
+  animation: placeMarquee 170s linear infinite;
   display: flex;
   inline-size: max-content;
 }
 
-.marquee:hover .track {
+.marquee[data-state="paused"] .track {
   animation-play-state: paused;
+}
+
+/* Hover pauses only on devices that really hover; on touch a tap toggles. */
+@media (hover: hover) {
+  .marquee:hover .track {
+    animation-play-state: paused;
+  }
 }
 
 .list {
@@ -50,7 +59,12 @@
   }
 }
 
+/* Reduced motion: the marquee never mounts, so collapse its box entirely. */
 @media (prefers-reduced-motion: reduce) {
+  .marquee {
+    display: none;
+  }
+
   .track {
     animation: none;
   }

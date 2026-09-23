@@ -609,7 +609,7 @@
     .destinationRoot .signalCard,
     .destinationRoot .evidencePanel {
       animation: destinationRise linear both;
-      animation-range: entry 0% entry 180px;
+      animation-range: entry 0% entry 120px;
       animation-timeline: view();
     }
   }
@@ -617,8 +617,8 @@
 
 @keyframes destinationRise {
   from {
-    opacity: 0.02;
-    transform: translateY(18px);
+    opacity: 0.5;
+    transform: translateY(14px);
   }
 
   to {

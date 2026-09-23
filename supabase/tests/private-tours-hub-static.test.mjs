@@ -352,9 +352,10 @@ test("hub is a comparison owner with visible breadcrumbs and one linked schema i
 
   assert.match(styles, /\.quickList \{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
   assert.match(styles, /@media \(max-width: 64rem\)[\s\S]*?\.quickList \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickList \{[\s\S]*?grid-template-columns: 1fr/);
+  // Phones (≤40rem) get one column; portrait tablets keep the two-column grid.
+  assert.match(styles, /@media \(max-width: 40rem\)[\s\S]*?\.quickList \{[\s\S]*?grid-template-columns: 1fr/);
   assert.match(styles, /\.quickLink \{[\s\S]*?grid-template-columns:/);
-  assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.quickLink \{[\s\S]*?grid-template-columns: 6\.5rem minmax\(0, 1fr\)/);
+  assert.match(styles, /@media \(max-width: 40rem\)[\s\S]*?\.quickLink \{[\s\S]*?grid-template-columns: 6\.5rem minmax\(0, 1fr\)/);
   // The single grid is the accessible catalog on every viewport: nothing
   // hides the list, its details or its links by default. Only filter chrome
   // (the phone toggle and its folded panel), the phone-only teaser sentence,

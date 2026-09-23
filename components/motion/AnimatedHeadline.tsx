@@ -72,21 +72,51 @@ export function AnimatedHeadline({
     );
   }
 
-  const units = splitHeadline(text, locale);
+  const units = mergeShortLastWord(splitHeadline(text, locale), locale);
   const lastWordIndex = units.length - 1;
   return (
     <>
-      {units.map((unit, index) => (
-        <Fragment key={`${unit.text}-${index}`}>
-          <span
-            className={`${styles.word} ${shimmer && index === lastWordIndex ? styles.shimmerWord : ""}`}
-            style={{ "--word-index": index } as CSSProperties}
-          >
-            {unit.text}
-          </span>
-          {unit.space ? " " : null}
-        </Fragment>
-      ))}
+      {units.map((unit, index) => {
+        const isShimmer = shimmer && index === lastWordIndex;
+        // The underline sits under the word itself, not its trailing punctuation.
+        const [, core, trail] = isShimmer
+          ? (unit.text.match(/^(.*?)(\p{P}*)$/u) ?? ["", unit.text, ""])
+          : ["", unit.text, ""];
+        return (
+          <Fragment key={`${unit.text}-${index}`}>
+            <span
+              className={styles.word}
+              style={{ "--word-index": index } as CSSProperties}
+            >
+              {isShimmer && core ? (
+                <>
+                  <span className={styles.shimmerWord}>{core}</span>
+                  {trail}
+                </>
+              ) : (
+                unit.text
+              )}
+            </span>
+            {unit.space ? " " : null}
+          </Fragment>
+        );
+      })}
     </>
   );
+}
+
+/**
+ * Chinese segmentation can leave a one-character last word (私家|团。);
+ * join it with the word before so the underlined unit reads as a word.
+ */
+function mergeShortLastWord(units: Unit[], locale: Locale): Unit[] {
+  if (locale !== "zh" || units.length < 2) return units;
+  const last = units[units.length - 1];
+  const previous = units[units.length - 2];
+  const core = last.text.replace(/\p{P}+$/u, "");
+  if ([...core].length > 1 || previous.space) return units;
+  return [
+    ...units.slice(0, -2),
+    { text: previous.text + last.text, space: last.space },
+  ];
 }

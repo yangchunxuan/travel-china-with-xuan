@@ -29,7 +29,7 @@
   block-size: 1em;
   display: inline-block;
   line-height: 1;
-  mask-image: linear-gradient(transparent 0, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(transparent 0, #000 6%, #000 94%, transparent 100%);
   overflow: hidden;
   vertical-align: top;
 }
@@ -47,10 +47,22 @@
   line-height: 1;
 }
 
+.strip > span::before {
+  content: attr(data-digit);
+}
+
+.track {
+  user-select: none;
+}
+
 .static {
   display: inline-block;
   line-height: 1;
   vertical-align: top;
+}
+
+.static::before {
+  content: attr(data-digit);
 }
 
 @media (prefers-reduced-motion: reduce) {

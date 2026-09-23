@@ -27,34 +27,40 @@
   position: relative;
 }
 
+/* On x.ai the underlined word rotates every few seconds and each new word
+   replays the sweep. Our headline does not rotate, so the sweep repeats
+   three times (a 2.5s pass, then a rest, on a 7s loop that starts once the
+   words have landed) and then stays still, so nothing moves for longer
+   than it needs to. */
 .shimmerWord::after {
-  animation: headlineShimmer 3s linear 0.9s both;
+  animation: headlineShimmer 7s cubic-bezier(0.4, 0, 0.2, 1) 1.1s 3 both;
   background: linear-gradient(
       90deg,
-      rgb(10 10 10 / 16%) 0%,
-      rgb(10 10 10 / 16%) 38%,
-      #a84731 46%,
-      #e0a58f 50%,
-      #a84731 54%,
-      rgb(10 10 10 / 16%) 62%,
-      rgb(10 10 10 / 16%) 100%
+      rgb(10 10 10 / 18%) 0%,
+      rgb(10 10 10 / 18%) 36%,
+      #a84731 44%,
+      #f2c1ad 50%,
+      #a84731 56%,
+      rgb(10 10 10 / 18%) 64%,
+      rgb(10 10 10 / 18%) 100%
     )
     no-repeat;
   background-size: 300% 100%;
   block-size: 3px;
   border-radius: 999px;
   content: "";
-  inset-block-end: -0.08em;
+  inset-block-end: -0.13em;
   inset-inline: 0.02em;
   position: absolute;
 }
 
 @keyframes headlineShimmer {
-  from {
+  0% {
     background-position: 100% 0;
   }
 
-  to {
+  36%,
+  100% {
     background-position: 0% 0;
   }
 }

@@ -223,6 +223,18 @@ export interface PrivateTourHubStats {
   readonly shoppingStops: number;
 }
 
+/**
+ * Route lines sometimes qualify a stop ("Suzhou day trip", "苏州一日往返",
+ * "쑤저우 당일치기"); the place itself is the same, so it is counted once.
+ */
+function normalizeStop(stop: string): string {
+  return stop
+    .replace(/\s+day trip$/iu, "")
+    .replace(/一日往返$/u, "")
+    .replace(/\s*당일치기$/u, "")
+    .trim();
+}
+
 /** Unique places named in the published route lines, in catalog order. */
 export function getPrivateTourPlaces(
   products: readonly PublishedPrivateTourCatalogItem[],
@@ -232,7 +244,7 @@ export function getPrivateTourPlaces(
       products.flatMap((product) =>
         product.comparison.route
           .split("·")
-          .map((stop) => stop.trim())
+          .map((stop) => normalizeStop(stop))
           .filter(Boolean),
       ),
     ),
@@ -243,18 +255,10 @@ export function getPrivateTourPlaces(
 export function getPrivateTourHubStats(
   products: readonly PublishedPrivateTourCatalogItem[],
 ): PrivateTourHubStats {
-  const places = new Set(
-    products.flatMap((product) =>
-      product.comparison.route
-        .split("·")
-        .map((stop) => stop.trim())
-        .filter(Boolean),
-    ),
-  );
   const days = products.map((product) => product.days);
   return {
     routes: products.length,
-    places: places.size,
+    places: getPrivateTourPlaces(products).length,
     shortestDays: Math.min(...days),
     longestDays: Math.max(...days),
     shoppingStops: products.filter((product) => product.shoppingStops).length,

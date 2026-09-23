@@ -4,6 +4,10 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import styles from "./RollingNumber.module.css";
 
 const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// Two turns of 0–9: a column starts on its real digit in the first turn and
+// rolls one full turn to the same digit in the second, so the number never
+// flashes "00" on the way in.
+const STRIP = [...DIGITS, ...DIGITS];
 
 /**
  * number-flow style digits (x.ai uses number-flow for its stats): each digit
@@ -56,9 +60,7 @@ export function RollingNumber({ value, className }: { value: string | number; cl
           const digit = DIGITS.indexOf(char);
           if (digit < 0) {
             return (
-              <span className={styles.static} key={`s-${chars.length - index}`}>
-                {char}
-              </span>
+              <span className={styles.static} data-digit={char} key={`s-${chars.length - index}`} />
             );
           }
           return (
@@ -67,13 +69,15 @@ export function RollingNumber({ value, className }: { value: string | number; cl
                 className={styles.strip}
                 style={
                   {
-                    "--digit": settled ? digit : 0,
+                    "--digit": settled ? digit + 10 : digit,
                     "--column-index": chars.length - index,
                   } as CSSProperties
                 }
               >
-                {DIGITS.map((d) => (
-                  <span key={d}>{d}</span>
+                {/* Drawn with CSS content, so copy and find-in-page only see
+                    the real number in the screen-reader span. */}
+                {STRIP.map((d, stripIndex) => (
+                  <span data-digit={d} key={`${d}-${stripIndex}`} />
                 ))}
               </span>
             </span>
