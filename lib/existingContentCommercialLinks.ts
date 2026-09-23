@@ -72,6 +72,7 @@ const approvedCommercialGuideIds = [
   "terracotta-warriors-without-tour",
   "shaanxi-history-museum-booking-and-collection-plan",
   "shanghai-pudong-or-hongqiao-airport",
+  "shanghai-to-suzhou-day-trip",
   "shanghai-hangzhou-transport-route",
   "how-to-read-a-suzhou-garden",
   "chengdu-panda-base-or-dujiangyan-panda-valley",
@@ -123,7 +124,7 @@ const productContexts = {
   },
   "shanghai-suzhou-5-day-private-tour": {
     destinations: ["shanghai"],
-    guides: ["china-10-day-itinerary", "shanghai-where-to-stay-first-trip", "how-to-read-a-suzhou-garden"],
+    guides: ["china-10-day-itinerary", "shanghai-where-to-stay-first-trip", "shanghai-to-suzhou-day-trip", "how-to-read-a-suzhou-garden"],
     relatedProducts: [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
   },
   "beijing-highlights-5-day-private-tour": {
