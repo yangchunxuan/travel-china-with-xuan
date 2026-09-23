@@ -102,7 +102,7 @@
   display: block;
   inline-size: 100%;
   object-fit: cover;
-  transition: transform 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cardCopy {
@@ -191,17 +191,52 @@
 
 .cardAction svg {
   flex: 0 0 auto;
-  transition: transform 180ms ease;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.productCard:hover .image,
+/* x.ai card hover: a slow 0.7s zoom on the photo and an arrow nudge; only on
+   devices that really hover, so a tap never leaves a card stuck zoomed. */
 .productCard:focus-visible .image {
-  transform: scale(1.025);
+  transform: scale(1.04);
 }
 
-.productCard:hover .cardAction svg,
 .productCard:focus-visible .cardAction svg {
-  transform: translateX(0.2rem);
+  transform: translateX(4px);
+}
+
+@media (hover: hover) {
+  .productCard:hover .image {
+    transform: scale(1.04);
+  }
+
+  .productCard:hover .cardAction svg {
+    transform: translateX(4px);
+  }
+}
+
+/* Cards rise as they scroll into view; they start half-visible and finish
+   within 120px, so nothing ever rests faded. Browsers without scroll-driven
+   animations show the cards statically. */
+@keyframes productCardRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .productCard {
+      animation: productCardRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
 }
 
 .productCard:focus-visible {

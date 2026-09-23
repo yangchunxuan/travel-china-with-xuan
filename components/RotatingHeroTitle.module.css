@@ -64,6 +64,58 @@
   display: block;
 }
 
+/*
+ * x.ai hero: under the rotating word sits a 3px rounded line that a light
+ * band sweeps across once each time a new word arrives. Each phrase mounts a
+ * fresh layer, so the sweep replays on every rotation. A phrase here is on
+ * screen for about 1.4s before it exits (2s step: 760ms enter, 680ms hold,
+ * 560ms exit), so the sweep takes 1.2s to finish while the phrase is still
+ * fully visible. Brand terracotta instead of Grok's rainbow; the line fades
+ * with the outgoing word and stays a quiet grey when motion is reduced.
+ */
+.phraseLayer {
+  justify-self: start;
+  position: relative;
+}
+
+.phraseLayer::after {
+  animation: heroPhraseShimmer 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  background: linear-gradient(
+      90deg,
+      rgb(10 10 10 / 16%) 0%,
+      rgb(10 10 10 / 16%) 36%,
+      #a84731 44%,
+      #f2c1ad 50%,
+      #a84731 56%,
+      rgb(10 10 10 / 16%) 64%,
+      rgb(10 10 10 / 16%) 100%
+    )
+    no-repeat;
+  background-size: 300% 100%;
+  block-size: 3px;
+  border-radius: 999px;
+  content: "";
+  inset-block-end: -0.08em;
+  inset-inline: 0.02em;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 260ms ease;
+}
+
+.phraseLayer[data-phase="exiting"]::after {
+  opacity: 0;
+}
+
+@keyframes heroPhraseShimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0% 0;
+  }
+}
+
 .word {
   display: inline-block;
   white-space: nowrap;
@@ -115,6 +167,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .phraseLayer::after {
+    animation: none;
+    background: rgb(10 10 10 / 16%);
+    transition: none;
+  }
+
   .phraseLayer,
   .phraseLayer[data-phase="entering"],
   .phraseLayer[data-phase="exiting"],

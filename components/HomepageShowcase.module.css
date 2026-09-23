@@ -140,6 +140,56 @@
   background: var(--showcase-hover);
 }
 
+/* Small feedback: arrows nudge on hover, pills press in on tap/click. */
+.primaryAction svg,
+.heroDestinationPrompt a svg {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .primaryAction:hover svg,
+  .heroDestinationPrompt a:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.primaryAction:focus-visible svg,
+.heroDestinationPrompt a:focus-visible svg {
+  transform: translateX(4px);
+}
+
+.primaryAction:active,
+.secondaryAction:active {
+  transform: scale(0.97);
+}
+
+.primaryAction,
+.secondaryAction {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction svg,
+  .heroDestinationPrompt a svg,
+  .primaryAction,
+  .secondaryAction {
+    transition: none;
+  }
+
+  .primaryAction:hover svg,
+  .heroDestinationPrompt a:hover svg,
+  .primaryAction:focus-visible svg,
+  .heroDestinationPrompt a:focus-visible svg,
+  .primaryAction:active,
+  .secondaryAction:active {
+    transform: none;
+  }
+}
+
 .primaryAction:focus-visible,
 .secondaryAction:focus-visible,
 .heroDestinationPrompt a:focus-visible {
