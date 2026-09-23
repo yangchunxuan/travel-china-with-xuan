@@ -19,6 +19,7 @@
   --tour-gutter: 1.5rem;
   --tour-section: 6rem;
   --tour-pill: 2.75rem;
+  --tour-ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--tour-paper);
   color: var(--tour-ink);
   min-height: 100vh;
@@ -257,7 +258,13 @@
 
 .filterGroups {
   display: grid;
+  grid-template-rows: 1fr;
+}
+
+.filterGroupsInner {
+  display: grid;
   gap: 0.75rem;
+  min-height: 0;
 }
 
 .filterToggle {
@@ -282,6 +289,16 @@
 .filterToggle[aria-expanded="true"] {
   background: var(--tour-ink);
   color: #fff;
+}
+
+.filterToggle > span {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.filterToggle[aria-expanded="true"] > span {
+  transform: rotate(45deg);
 }
 
 .filterGroup {
@@ -427,13 +444,13 @@
   display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms ease-out;
+  transition: transform 700ms var(--tour-ease);
   width: 100%;
 }
 
 .quickLink:hover .quickImage img,
 .quickLink:focus-visible .quickImage img {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
 .quickIdentity {
@@ -532,6 +549,107 @@
 
 .quickAction > span:last-child {
   white-space: nowrap;
+}
+
+.quickAction > span:last-child > span {
+  display: inline-block;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.quickLink:hover .quickAction > span:last-child > span,
+.quickLink:focus-visible .quickAction > span:last-child > span {
+  transform: translateX(4px);
+}
+
+/* Filter feedback: pills press in; after each change the remaining cards
+   replay a short staggered entrance (data-pass flips between a and b so the
+   animation restarts). */
+.filterPill:active,
+.filterToggle:active {
+  transform: scale(0.96);
+}
+
+.filterPill,
+.filterToggle {
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.quickList[data-pass="a"] > li {
+  animation: cardSettleA 480ms var(--tour-ease) both;
+  animation-delay: calc(min(var(--card-index, 0), 8) * 35ms);
+}
+
+.quickList[data-pass="b"] > li {
+  animation: cardSettleB 480ms var(--tour-ease) both;
+  animation-delay: calc(min(var(--card-index, 0), 8) * 35ms);
+}
+
+@keyframes cardSettleA {
+  from {
+    opacity: 0.02;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cardSettleB {
+  from {
+    opacity: 0.02;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cards rise as they scroll into view (scroll-driven: on-screen cards are
+   always fully shown, and unsupported browsers show them statically). */
+@keyframes cardRise {
+  from {
+    opacity: 0.02;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .quickList:not([data-pass]) > li,
+    .stats > div,
+    .arrivalQuestions > div,
+    .finalInner {
+      animation: cardRise linear both;
+      animation-range: entry 0% entry 200px;
+      animation-timeline: view();
+    }
+  }
+}
+
+.heroAction > span {
+  display: inline-block;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.heroAction:hover > span,
+.heroAction:focus-visible > span {
+  transform: translateY(3px);
+}
+
+.stats + div {
+  margin-block-start: 0.75rem;
 }
 
 /* ---------- Before you book (English market) ---------- */
@@ -742,9 +860,28 @@
     display: inline-flex;
   }
 
-  /* Folded by default on phones; the toggle above expands the groups. */
+  /* Folded by default on phones; the toggle above expands the groups with a
+     height animation (grid rows 0fr → 1fr). Closed groups are invisible and
+     unfocusable. */
+  .filterGroups {
+    transition:
+      grid-template-rows 360ms var(--tour-ease),
+      opacity 240ms ease,
+      visibility 0s linear 0s;
+  }
+
   .filterGroups[data-open="false"] {
-    display: none;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 360ms var(--tour-ease),
+      opacity 200ms ease,
+      visibility 0s linear 360ms;
+    visibility: hidden;
+  }
+
+  .filterGroupsInner {
+    overflow: hidden;
   }
 
   .filterGroup > span {
@@ -844,13 +981,28 @@
   .quickImage img,
   .finalAction span,
   .filterPill,
+  .filterToggle,
+  .filterToggle > span,
+  .filterGroups,
+  .filterGroups[data-open="false"],
+  .quickAction > span:last-child > span,
   .heroAction,
+  .heroAction > span,
   .finalAction {
     transition: none;
   }
 
+  .quickList[data-pass="a"] > li,
+  .quickList[data-pass="b"] > li {
+    animation: none;
+  }
+
   .quickLink:hover .quickImage img,
   .quickLink:focus-visible .quickImage img,
+  .quickLink:hover .quickAction > span:last-child > span,
+  .heroAction:hover > span,
+  .filterPill:active,
+  .filterToggle:active,
   .finalAction:hover span,
   .finalAction:focus-visible span {
     transform: none;

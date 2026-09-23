@@ -3,10 +3,12 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import type { CSSProperties } from "react";
 import {
   getPrivateTourFacetItem,
   getPrivateTourFacets,
   getPrivateTourHubStats,
+  getPrivateTourPlaces,
 } from "../lib/privateTourCatalogFacets";
 import {
   englishMarketPlanning,
@@ -23,6 +25,9 @@ import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { PrivateTourCatalogFilter } from "./PrivateTourCatalogFilter";
 import { PrivateTourCatalogLink } from "./PrivateTourCatalogLink";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PlaceMarquee } from "./motion/PlaceMarquee";
+import { RollingNumber } from "./motion/RollingNumber";
 import {
   privateTourCardImageSource,
   privateTourCardImageSrcSet,
@@ -123,6 +128,7 @@ function CompactTourComparison({
   return (
     <li
       className={styles.quickItem}
+      style={{ "--card-index": index } as CSSProperties}
       data-tour-id={product.id}
       data-region={facet.region}
       data-length={facet.length}
@@ -234,7 +240,7 @@ export function PrivateToursHubPage({
           <div className={styles.heroGrid}>
             <div>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1>{copy.title}</h1>
+              <h1><AnimatedHeadline locale={locale} text={copy.title} /></h1>
             </div>
             <div className={styles.heroAside}>
               <p>{copy.introduction}</p>
@@ -248,21 +254,22 @@ export function PrivateToursHubPage({
           <dl className={styles.stats}>
             <div>
               <dt>{copy.statsRoutes}</dt>
-              <dd>{stats.routes}</dd>
+              <dd><RollingNumber value={stats.routes} /></dd>
             </div>
             <div>
               <dt>{copy.statsPlaces}</dt>
-              <dd>{stats.places}</dd>
+              <dd><RollingNumber value={stats.places} /></dd>
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>
-              <dd>{stats.shortestDays}–{stats.longestDays}</dd>
+              <dd><RollingNumber value={`${stats.shortestDays}–${stats.longestDays}`} /></dd>
             </div>
             <div>
               <dt>{copy.statsShopping}</dt>
-              <dd>{stats.shoppingStops}</dd>
+              <dd><RollingNumber value={stats.shoppingStops} /></dd>
             </div>
           </dl>
+          <PlaceMarquee places={getPrivateTourPlaces(products)} />
         </header>
 
         <section className={styles.quickCompare} aria-labelledby="tour-quick-compare-title">

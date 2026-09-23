@@ -1,0 +1,60 @@
+.root {
+  display: inline-block;
+  position: relative;
+}
+
+.srOnly {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.track {
+  display: inline-flex;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Each column is exactly one line box tall and clips the strip, so resting
+   digits never show a neighbour. The soft fade sits in the empty band above
+   and below the glyph (digits fill roughly the middle 72% of the line box),
+   so rolling digits fade at the edges while the resting digit stays inked. */
+.column {
+  block-size: 1em;
+  display: inline-block;
+  line-height: 1;
+  mask-image: linear-gradient(transparent 0, #000 12%, #000 88%, transparent 100%);
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.strip {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--digit, 0) * -1em));
+  transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--column-index, 1) * 70ms);
+}
+
+.strip > span {
+  block-size: 1em;
+  line-height: 1;
+}
+
+.static {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip {
+    transition: none;
+  }
+}

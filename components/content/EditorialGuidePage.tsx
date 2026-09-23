@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import {
   getGuideEntry,
@@ -30,6 +31,8 @@ import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
 import { EditorialByline } from "../EditorialByline";
+import { AnimatedHeadline } from "../motion/AnimatedHeadline";
+import { ReadingProgress } from "../motion/ReadingProgress";
 import { GuideCtaLink } from "../GuideCtaLink";
 import homeStyles from "../HomegroundHomePage.module.css";
 import {
@@ -270,13 +273,14 @@ export function EditorialGuidePage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot}`}
+      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${styles.grokGuide}`}
       data-homeground-locale={locale}
       lang={homeCopy.htmlLang}
     >
       <a className={styles.skipLink} href="#editorial-guide-body">
         {copy.skip}
       </a>
+      <ReadingProgress />
 
       <HomegroundHeader
         guideId={guide.id}
@@ -318,11 +322,12 @@ export function EditorialGuidePage({
                     <span
                       className={styles.keepTogether}
                       key={`${segment}-${index}`}
+                      style={{ "--word-index": index } as CSSProperties}
                     >
                       {segment}
                     </span>
                   ))
-                : guide.headline}
+                : <AnimatedHeadline locale={locale} text={guide.headline} />}
             </h1>
             <p className={styles.dek}>{guide.description}</p>
             <EditorialByline locale={locale} reviewedAt={guide.sourceReviewedDate} />

@@ -223,6 +223,22 @@ export interface PrivateTourHubStats {
   readonly shoppingStops: number;
 }
 
+/** Unique places named in the published route lines, in catalog order. */
+export function getPrivateTourPlaces(
+  products: readonly PublishedPrivateTourCatalogItem[],
+): string[] {
+  return [
+    ...new Set(
+      products.flatMap((product) =>
+        product.comparison.route
+          .split("·")
+          .map((stop) => stop.trim())
+          .filter(Boolean),
+      ),
+    ),
+  ];
+}
+
 /** Every figure is derived from the published catalog; nothing is hand-typed. */
 export function getPrivateTourHubStats(
   products: readonly PublishedPrivateTourCatalogItem[],

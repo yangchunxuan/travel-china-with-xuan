@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import {
   getDestinationHubEntry,
@@ -28,6 +29,8 @@ import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
 import { EditorialByline } from "../EditorialByline";
+import { AnimatedHeadline } from "../motion/AnimatedHeadline";
+import { ReadingProgress } from "../motion/ReadingProgress";
 import homeStyles from "../HomegroundHomePage.module.css";
 import styles from "./EditorialGuidePage.module.css";
 import destinationStyles from "./DestinationHubPage.module.css";
@@ -268,13 +271,14 @@ export function DestinationHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${destinationStyles.destinationRoot}`}
+      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${styles.grokGuide} ${destinationStyles.destinationRoot}`}
       data-homeground-locale={locale}
       lang={homeCopy.htmlLang}
     >
       <a className={styles.skipLink} href="#destination-hub-body">
         {copy.skip}
       </a>
+      <ReadingProgress />
 
       <HomegroundHeader
         languagePaths={getDestinationHubLanguagePaths(hubId)}
@@ -311,12 +315,12 @@ export function DestinationHubPage({
             <h1>
               {titleSegments ? (
                 titleSegments.map((segment, index) => (
-                  <span className={styles.keepTogether} key={`${segment}-${index}`}>
+                  <span className={styles.keepTogether} key={`${segment}-${index}`} style={{ "--word-index": index } as CSSProperties}>
                     {segment}
                   </span>
                 ))
               ) : (
-                hub.h1
+                <AnimatedHeadline locale={locale} text={hub.h1} />
               )}
             </h1>
             <p className={styles.dek}>{hub.summary}</p>

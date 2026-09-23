@@ -1,10 +1,11 @@
 "use client";
 
-import { useId, useState, type ReactNode } from "react";
+import { Fragment, useId, useState, type ReactNode } from "react";
 import type {
   PrivateTourFacetOption,
   PrivateTourFacets,
 } from "../lib/privateTourCatalogFacets";
+import { RollingNumber } from "./motion/RollingNumber";
 import styles from "./PrivateToursHubPage.module.css";
 
 export interface PrivateTourCatalogFilterLabels {
@@ -68,12 +69,33 @@ function FacetGroup({
   );
 }
 
+/** "Showing {shown} of {total} routes" with the shown number rolling. */
+function CountLine({ template, shown, total }: { template: string; shown: number; total: number }) {
+  const parts = template.split(/(\{shown\}|\{total\})/u);
+  return (
+    <span>
+      {parts.map((part, index) => (
+        <Fragment key={`${part}-${index}`}>
+          {part === "{shown}" ? (
+            <RollingNumber value={shown} />
+          ) : part === "{total}" ? (
+            String(total)
+          ) : (
+            part
+          )}
+        </Fragment>
+      ))}
+    </span>
+  );
+}
+
 /**
  * Pure front-end narrowing of the tour list. The list itself is rendered on
  * the server and passed in as children, so every card, link and price is in
  * the static HTML; this component only toggles data attributes that the
  * stylesheet uses to hide non-matching cards. Nothing here reads or writes
- * the URL.
+ * the URL. Each change flips `data-pass` so the remaining cards replay a
+ * short staggered entrance.
  */
 export function PrivateTourCatalogFilter({
   children,
@@ -85,6 +107,7 @@ export function PrivateTourCatalogFilter({
   labels: PrivateTourCatalogFilterLabels;
 }) {
   const [selection, setSelection] = useState<Selection>(emptySelection);
+  const [pass, setPass] = useState<"a" | "b" | null>(null);
   const [open, setOpen] = useState(false);
   const groupsId = useId();
   const total = facets.items.length;
@@ -98,12 +121,13 @@ export function PrivateTourCatalogFilter({
     selection.region !== null ||
     selection.length !== null ||
     selection.price !== null;
-  const countText = labels.count
-    .replace("{shown}", String(shown))
-    .replace("{total}", String(total));
 
-  const update = (key: FacetKey) => (next: string | null) =>
-    setSelection((current) => ({ ...current, [key]: next }));
+  const apply = (next: Selection) => {
+    setSelection(next);
+    setPass((current) => (current === "a" ? "b" : "a"));
+  };
+  const update = (key: FacetKey) => (value: string | null) =>
+    apply({ ...selection, [key]: value });
 
   return (
     <>
@@ -117,41 +141,43 @@ export function PrivateTourCatalogFilter({
           onClick={() => setOpen((current) => !current)}
         >
           {labels.group}
-          <span aria-hidden="true">{open ? "−" : "+"}</span>
+          <span aria-hidden="true">+</span>
         </button>
         <div id={groupsId} className={styles.filterGroups} data-open={open ? "true" : "false"}>
-        <FacetGroup
-          label={labels.region}
-          allLabel={labels.all}
-          options={facets.regions}
-          total={total}
-          value={selection.region}
-          onChange={update("region")}
-        />
-        <FacetGroup
-          label={labels.length}
-          allLabel={labels.all}
-          options={facets.lengths}
-          total={total}
-          value={selection.length}
-          onChange={update("length")}
-        />
-        <FacetGroup
-          label={labels.price}
-          allLabel={labels.all}
-          options={facets.prices}
-          total={total}
-          value={selection.price}
-          onChange={update("price")}
-        />
+          <div className={styles.filterGroupsInner}>
+            <FacetGroup
+              label={labels.region}
+              allLabel={labels.all}
+              options={facets.regions}
+              total={total}
+              value={selection.region}
+              onChange={update("region")}
+            />
+            <FacetGroup
+              label={labels.length}
+              allLabel={labels.all}
+              options={facets.lengths}
+              total={total}
+              value={selection.length}
+              onChange={update("length")}
+            />
+            <FacetGroup
+              label={labels.price}
+              allLabel={labels.all}
+              options={facets.prices}
+              total={total}
+              value={selection.price}
+              onChange={update("price")}
+            />
+          </div>
         </div>
         <p className={styles.filterCount} aria-live="polite">
-          <span>{countText}</span>
+          <CountLine template={labels.count} shown={shown} total={total} />
           {isFiltered && (
             <button
               type="button"
               className={styles.filterReset}
-              onClick={() => setSelection(emptySelection)}
+              onClick={() => apply(emptySelection)}
             >
               {labels.reset}
             </button>
@@ -160,6 +186,7 @@ export function PrivateTourCatalogFilter({
       </div>
       <ol
         className={styles.quickList}
+        data-pass={pass ?? undefined}
         data-region={selection.region ?? undefined}
         data-length={selection.length ?? undefined}
         data-price={selection.price ?? undefined}

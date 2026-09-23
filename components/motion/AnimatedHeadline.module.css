@@ -1,0 +1,71 @@
+/*
+ * Measured on x.ai (2026-09-23): headline words enter from
+ * translateY(45%) rotateX(-40deg), staggered, and the last word carries a 3px
+ * rounded underline that a light band sweeps across once (3s linear, 0.4s
+ * delay). Here the band uses the brand terracotta instead of Grok's rainbow.
+ */
+.word {
+  animation: headlineRise 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--word-index, 0) * 55ms + 80ms);
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+@keyframes headlineRise {
+  from {
+    opacity: 0.02;
+    transform: perspective(600px) translateY(45%) rotateX(-40deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.shimmerWord {
+  position: relative;
+}
+
+.shimmerWord::after {
+  animation: headlineShimmer 3s linear 0.9s both;
+  background: linear-gradient(
+      90deg,
+      rgb(10 10 10 / 16%) 0%,
+      rgb(10 10 10 / 16%) 38%,
+      #a84731 46%,
+      #e0a58f 50%,
+      #a84731 54%,
+      rgb(10 10 10 / 16%) 62%,
+      rgb(10 10 10 / 16%) 100%
+    )
+    no-repeat;
+  background-size: 300% 100%;
+  block-size: 3px;
+  border-radius: 999px;
+  content: "";
+  inset-block-end: -0.08em;
+  inset-inline: 0.02em;
+  position: absolute;
+}
+
+@keyframes headlineShimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word,
+  .shimmerWord::after {
+    animation: none;
+  }
+
+  .shimmerWord::after {
+    background: rgb(10 10 10 / 16%);
+  }
+}

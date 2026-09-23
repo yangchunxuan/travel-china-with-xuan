@@ -1,0 +1,57 @@
+.marquee {
+  block-size: 2.25rem;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  animation: placeMarquee 90s linear infinite;
+  display: flex;
+  inline-size: max-content;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+.list {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  align-items: center;
+  color: rgb(10 10 10 / 55%);
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 2.25rem;
+  white-space: nowrap;
+}
+
+.list li::after {
+  color: rgb(10 10 10 / 22%);
+  content: "·";
+  padding-inline: 0.9rem;
+}
+
+/* x.ai keyframes: translate(0) → translate(-50%) over two identical copies. */
+@keyframes placeMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
