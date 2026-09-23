@@ -55,6 +55,8 @@ export interface PublishedPrivateTourCatalogItem {
     readonly validityNote?: string;
     readonly selection?: PrivateTourInquirySelection;
   } | null;
+  /** Published service policy: true only if a route includes shopping stops. */
+  readonly shoppingStops: boolean;
   readonly dateModified: string;
 }
 
@@ -410,6 +412,7 @@ export function getPublishedPrivateTourCatalog(
         highlights: localized.highlights.slice(0, 3),
       },
       startingPrice,
+      shoppingStops: localized.servicePolicy.shoppingStops,
       dateModified: localized.dateModified,
     } satisfies PublishedPrivateTourCatalogItem;
   });
@@ -470,6 +473,7 @@ export function getPublishedPrivateTourCatalog(
           ko: `${zhangjiajiePriceEnd}까지의 참고 요금이며, 다른 날짜는 새 견적이 필요합니다.`,
         }[locale],
       },
+      shoppingStops: zhangjiajieProduct.service_policy.shopping_stops,
       dateModified: zhangjiajieCard.dateModified,
     } satisfies PublishedPrivateTourCatalogItem,
   ]);
