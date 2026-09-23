@@ -9,6 +9,10 @@ import { privateTourCardImageWidths } from "../../components/privateTourCardImag
 import zhangjiajieProduct from "../../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
 import {
+  getPrivateTourFacets,
+  getPrivateTourHubStats,
+} from "../../lib/privateTourCatalogFacets.ts";
+import {
   assertPublishedPrivateTourCatalogIntegrity,
   getPublishedPrivateTourCatalog,
 } from "../../lib/publishedPrivateTourCatalog.ts";
@@ -28,6 +32,32 @@ const expectedSlugs = [
   zhangjiajieProduct.seo.slug,
 ].sort();
 const expectedPublishedCount = expectedSlugs.length;
+
+test("every published tour has a region in each localized catalog", () => {
+  for (const locale of locales) {
+    const catalog = getPublishedPrivateTourCatalog(locale);
+    const facets = getPrivateTourFacets(
+      catalog,
+      locale,
+      getPrivateTourHubCopy(locale, catalog.length).quoteOnlyLabel,
+    );
+    assert.equal(facets.items.length, catalog.length, locale);
+    const stats = getPrivateTourHubStats(catalog);
+    assert.equal(stats.routes, catalog.length, locale);
+    assert.equal(stats.regions, 6, locale);
+    assert.deepEqual(
+      facets.items.map((item) => item.id).sort(),
+      catalog.map((item) => item.id).sort(),
+      locale,
+    );
+    for (const slug of [
+      "chongqing-yangtze-cruise-6-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
+    ]) {
+      assert.equal(facets.items.find((item) => item.id === slug)?.region, "multi");
+    }
+  }
+});
 const reviewedDerivativeRightsSha256 =
   "1db11585196941e5dd00029f70fd45a0543c27a36dafaefb236801d778bfb96c";
 

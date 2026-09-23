@@ -251,8 +251,8 @@ export function PrivateToursHubPage({
               <dd>{stats.routes}</dd>
             </div>
             <div>
-              <dt>{copy.statsPlaces}</dt>
-              <dd>{stats.places}</dd>
+              <dt>{copy.statsRegions}</dt>
+              <dd>{stats.regions}</dd>
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>
