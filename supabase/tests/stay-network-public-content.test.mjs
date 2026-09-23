@@ -161,7 +161,7 @@ test("the destination registry retains eight published Hubs and truthful dates",
   const registry = await read("lib/destinationHubs.ts");
   const expected = {
     beijing: { modified: "2026-08-22", reviewed: "2026-08-22" },
-    shanghai: { modified: "2026-09-21", reviewed: "2026-08-22" },
+    shanghai: { modified: "2026-09-23", reviewed: "2026-08-22" },
     xian: { modified: "2026-08-21", reviewed: "2026-08-16" },
     chengdu: { modified: "2026-09-09", reviewed: "2026-08-22" },
     guangzhou: { modified: "2026-08-21", reviewed: "2026-08-17" },
