@@ -4,6 +4,11 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import {
+  getPrivateTourFacetItem,
+  getPrivateTourFacets,
+  getPrivateTourHubStats,
+} from "../lib/privateTourCatalogFacets";
+import {
   englishMarketPlanning,
   getPrivateTourHubCopy,
   getPrivateTourHubLanguagePaths,
@@ -16,6 +21,7 @@ import {
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
+import { PrivateTourCatalogFilter } from "./PrivateTourCatalogFilter";
 import { PrivateTourCatalogLink } from "./PrivateTourCatalogLink";
 import {
   privateTourCardImageSource,
@@ -95,104 +101,11 @@ export function buildPrivateToursHubJsonLd(locale: HomegroundLocale) {
   };
 }
 
-function TourComparisonCard({
-  product,
-  index,
-  locale,
-  publishedTourCount,
-}: {
-  product: PublishedPrivateTourCatalogItem;
-  index: number;
-  locale: HomegroundLocale;
-  publishedTourCount: number;
-}) {
-  const copy = getPrivateTourHubCopy(locale, publishedTourCount);
-
-  return (
-    <li className={styles.catalogItem} data-tour-id={product.id}>
-      <article className={styles.tourCard}>
-        <PrivateTourCatalogLink
-          className={styles.tourLink}
-          href={product.startingPriceHref}
-          locale={locale}
-          position={index + 1}
-          productSlug={product.slug}
-        >
-          <figure className={styles.tourImage}>
-            <img
-              alt={product.image.alt}
-              decoding="async"
-              height={product.image.height}
-              loading="lazy"
-              sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 88.25rem) calc((100vw - 2rem) / 2), 43.125rem"
-              src={privateTourCardImageSource(product.id, 960)}
-              srcSet={privateTourCardImageSrcSet(product.id)}
-              style={{ objectPosition: product.image.objectPosition }}
-              width={product.image.width}
-            />
-            <figcaption>
-              <span aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span>{copy.duration(product.days, product.nights)}</span>
-            </figcaption>
-          </figure>
-
-          <div className={styles.tourBody}>
-            <p className={styles.routeLine}>{product.comparison.route}</p>
-            <h2>{product.title}</h2>
-            <p className={styles.startingPrice}>
-              {product.startingPrice ? (
-                <>
-                  <span>{copy.startingPriceLabel}</span>
-                  <strong>{product.startingPrice.formatted}</strong>
-                  <small>
-                    {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
-                    {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
-                  </small>
-                  {product.startingPrice.validityNote && <small>{product.startingPrice.validityNote}</small>}
-                </>
-              ) : (
-                <>
-                  <span>{copy.quoteOnlyLabel}</span>
-                  <strong>{copy.quoteOnlyLabel}</strong>
-                  <small>{copy.quoteOnlyBody}</small>
-                </>
-              )}
-            </p>
-            <p className={styles.description}>{product.comparison.appeal}</p>
-
-            <dl className={styles.comparisonList}>
-              <div>
-                <dt>{copy.paceLabel}</dt>
-                <dd>{product.comparison.pace}</dd>
-              </div>
-              <div>
-                <dt>{copy.fitLabel}</dt>
-                <dd>{product.comparison.fit}</dd>
-              </div>
-            </dl>
-
-            <div className={styles.highlights}>
-              <p>{copy.highlightsLabel}</p>
-              <ul>
-                {product.comparison.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-            </div>
-
-            <span className={styles.viewTour}>
-              {copy.viewLabel}
-              <span aria-hidden="true">→</span>
-            </span>
-          </div>
-        </PrivateTourCatalogLink>
-      </article>
-    </li>
-  );
-}
-
+/**
+ * One tour, one card. The whole card is the single measured link to the
+ * published starting-price entry, and every price is shown together with its
+ * per-person, group-size and service basis exactly as the catalog publishes it.
+ */
 function CompactTourComparison({
   product,
   index,
@@ -205,9 +118,16 @@ function CompactTourComparison({
   publishedTourCount: number;
 }) {
   const copy = getPrivateTourHubCopy(locale, publishedTourCount);
+  const facet = getPrivateTourFacetItem(product, locale);
 
   return (
-    <li data-tour-id={product.id}>
+    <li
+      className={styles.quickItem}
+      data-tour-id={product.id}
+      data-region={facet.region}
+      data-length={facet.length}
+      data-price={facet.price}
+    >
       <PrivateTourCatalogLink
         className={styles.quickLink}
         href={product.startingPriceHref}
@@ -215,31 +135,42 @@ function CompactTourComparison({
         position={index + 1}
         productSlug={product.slug}
       >
-        <span className={styles.quickNumber} aria-hidden="true">
-          {String(index + 1).padStart(2, "0")}
-        </span>
+        <figure className={styles.quickImage}>
+          <img
+            alt={product.image.alt}
+            decoding="async"
+            height={product.image.height}
+            loading="lazy"
+            sizes="(max-width: 48rem) 6.5rem, (max-width: 64rem) calc((100vw - 2.75rem) / 2), 25rem"
+            src={privateTourCardImageSource(product.id, 960)}
+            srcSet={privateTourCardImageSrcSet(product.id)}
+            style={{ objectPosition: product.image.objectPosition }}
+            width={product.image.width}
+          />
+        </figure>
         <div className={styles.quickIdentity}>
           <p>{product.comparison.route}</p>
           <h3>{product.title}</h3>
-          <p className={styles.quickFacts}>
-            <span>{copy.duration(product.days, product.nights)}</span>
-            {product.startingPrice ? (
-              <>
-                <span>
-                  <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
-                  <strong>{product.startingPrice.formatted}</strong>{" "}
-                  {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
-                  {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
-                </span>
-                {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
-              </>
-            ) : (
-              <span>
-                <strong>{copy.quoteOnlyLabel}</strong> · {copy.quoteOnlyBody}
-              </span>
-            )}
-          </p>
+          <p className={styles.quickAppeal}>{product.comparison.appeal}</p>
         </div>
+        <p className={styles.quickFacts}>
+          {product.startingPrice ? (
+            <>
+              <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
+              <strong>{product.startingPrice.formatted}</strong>
+              <span>
+                {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
+                {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
+              </span>
+              {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
+            </>
+          ) : (
+            <>
+              <strong>{copy.quoteOnlyLabel}</strong>
+              <span>{copy.quoteOnlyBody}</span>
+            </>
+          )}
+        </p>
         <dl className={styles.quickDetails}>
           <div>
             <dt>{copy.quickFitLabel}</dt>
@@ -251,7 +182,11 @@ function CompactTourComparison({
           </div>
         </dl>
         <span className={styles.quickAction}>
-          <span>{copy.quickAction}</span><span aria-hidden="true">→</span>
+          <span>{copy.duration(product.days, product.nights)}</span>
+          <span>
+            {copy.quickAction}
+            <span aria-hidden="true"> →</span>
+          </span>
         </span>
       </PrivateTourCatalogLink>
     </li>
@@ -267,6 +202,8 @@ export function PrivateToursHubPage({
   const copy = getPrivateTourHubCopy(locale, products.length);
   const home = getHomegroundCopy(locale);
   const schema = buildPrivateToursHubJsonLd(locale);
+  const facets = getPrivateTourFacets(products, locale, copy.quoteOnlyLabel);
+  const stats = getPrivateTourHubStats(products);
 
   return (
     <div
@@ -285,30 +222,47 @@ export function PrivateToursHubPage({
 
       <main id="private-tours-main" tabIndex={-1}>
         <header className={styles.hero}>
-          <div className={styles.heroInner}>
-            <nav aria-label={copy.breadcrumbLabel} className={styles.breadcrumb}>
-              <ol>
-                <li>
-                  <Link href={home.path}>{copy.breadcrumbHome}</Link>
-                </li>
-                <li aria-current="page">{copy.breadcrumbCurrent}</li>
-              </ol>
-            </nav>
+          <nav aria-label={copy.breadcrumbLabel} className={styles.breadcrumb}>
+            <ol>
+              <li>
+                <Link href={home.path}>{copy.breadcrumbHome}</Link>
+              </li>
+              <li aria-current="page">{copy.breadcrumbCurrent}</li>
+            </ol>
+          </nav>
 
-            <div className={styles.heroGrid}>
-              <div>
-                <p className={styles.eyebrow}>{copy.eyebrow}</p>
-                <h1>{copy.title}</h1>
-              </div>
-              <div className={styles.heroAside}>
-                <p>{copy.introduction}</p>
-                <a className={styles.heroAction} href="#tour-quick-compare-title">
-                  {copy.heroAction}
-                  <span aria-hidden="true">↓</span>
-                </a>
-              </div>
+          <div className={styles.heroGrid}>
+            <div>
+              <p className={styles.eyebrow}>{copy.eyebrow}</p>
+              <h1>{copy.title}</h1>
+            </div>
+            <div className={styles.heroAside}>
+              <p>{copy.introduction}</p>
+              <a className={styles.heroAction} href="#tour-quick-compare-title">
+                {copy.heroAction}
+                <span aria-hidden="true">↓</span>
+              </a>
             </div>
           </div>
+
+          <dl className={styles.stats}>
+            <div>
+              <dt>{copy.statsRoutes}</dt>
+              <dd>{stats.routes}</dd>
+            </div>
+            <div>
+              <dt>{copy.statsPlaces}</dt>
+              <dd>{stats.places}</dd>
+            </div>
+            <div>
+              <dt>{copy.statsLengths}</dt>
+              <dd>{stats.shortestDays}–{stats.longestDays}</dd>
+            </div>
+            <div>
+              <dt>{copy.statsShopping}</dt>
+              <dd>{stats.shoppingStops}</dd>
+            </div>
+          </dl>
         </header>
 
         <section className={styles.quickCompare} aria-labelledby="tour-quick-compare-title">
@@ -322,7 +276,19 @@ export function PrivateToursHubPage({
               <p>{copy.priceBasisNote}</p>
             </div>
           </div>
-          <ol className={styles.quickList}>
+          <PrivateTourCatalogFilter
+            facets={facets}
+            labels={{
+              group: copy.filterGroupLabel,
+              region: copy.filterRegionLabel,
+              length: copy.filterLengthLabel,
+              price: copy.filterPriceLabel,
+              all: copy.filterAll,
+              reset: copy.filterReset,
+              count: copy.filterCount,
+              empty: copy.filterEmpty,
+            }}
+          >
             {products.map((product, index) => (
               <CompactTourComparison
                 key={product.id}
@@ -332,32 +298,7 @@ export function PrivateToursHubPage({
                 publishedTourCount={products.length}
               />
             ))}
-          </ol>
-        </section>
-
-        <section className={styles.catalog} aria-labelledby="tour-catalog-title">
-          <div className={styles.catalogIntro}>
-            <div>
-              <p className={styles.eyebrow}>{copy.catalogEyebrow}</p>
-              <h2 id="tour-catalog-title">{copy.catalogTitle}</h2>
-            </div>
-            <div className={styles.catalogNote}>
-              <p>{copy.catalogIntroduction}</p>
-              <p>{copy.tourCount(products.length)}</p>
-            </div>
-          </div>
-
-          <ol className={styles.catalogGrid}>
-            {products.map((product, index) => (
-              <TourComparisonCard
-                key={product.id}
-                product={product}
-                index={index}
-                locale={locale}
-                publishedTourCount={products.length}
-              />
-            ))}
-          </ol>
+          </PrivateTourCatalogFilter>
         </section>
 
         {locale === "en" && (
