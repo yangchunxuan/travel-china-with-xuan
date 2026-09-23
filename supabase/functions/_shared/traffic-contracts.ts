@@ -51,6 +51,16 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "huangshan-hongcun-huizhou-5-day-private-tour": ["standard-guided"],
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": ["standard-guided"],
   "changbaishan-yanji-winter-6-day-private-tour": ["standard-guided-winter"],
+  "shanghai-disneyland-5-day-private-tour": ["standard-guided"],
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": ["standard-guided"],
+  "datong-pingyao-6-day-private-tour": ["standard-guided"],
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": ["standard-guided"],
+  "chongqing-yangtze-cruise-6-day-private-tour": ["standard-guided"],
+  "xinjiang-ili-sayram-8-day-private-tour": ["standard-guided"],
+  "hulunbuir-7-day-private-tour": ["standard-guided"],
+  "kunming-jianshui-yuanyang-6-day-private-tour": ["standard-guided"],
+  "shenzhen-family-tech-4-day-private-tour": ["standard-guided"],
+  "beijing-xian-shanghai-12-day-private-tour": ["standard-guided"],
 };
 export const trafficProductTravelerCounts: Readonly<
   Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
@@ -76,6 +86,16 @@ export const trafficProductTravelerCounts: Readonly<
   "huangshan-hongcun-huizhou-5-day-private-tour": [4, 6],
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": [],
   "changbaishan-yanji-winter-6-day-private-tour": [],
+  "shanghai-disneyland-5-day-private-tour": [],
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": [2, 4, 6],
+  "datong-pingyao-6-day-private-tour": [],
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": [2, 4, 6],
+  "chongqing-yangtze-cruise-6-day-private-tour": [],
+  "xinjiang-ili-sayram-8-day-private-tour": [],
+  "hulunbuir-7-day-private-tour": [],
+  "kunming-jianshui-yuanyang-6-day-private-tour": [2, 4, 6],
+  "shenzhen-family-tech-4-day-private-tour": [2, 4, 6],
+  "beijing-xian-shanghai-12-day-private-tour": [2, 4, 6],
 };
 export function isTrafficProductSlug(value: unknown): value is string {
   return typeof value === "string" &&

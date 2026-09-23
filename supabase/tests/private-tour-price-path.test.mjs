@@ -153,7 +153,7 @@ test("six-traveller prices are exactly CNY 200 per person below each published f
     assert.equal(six.cnyPerPerson, four.cnyPerPerson - 200, `${product.slug}:${tourPackage.id}`);
     sixPersonPackages += 1;
   }
-  assert.equal(sixPersonPackages, 14);
+  assert.equal(sixPersonPackages, 19);
 });
 
 test("owner-approved USD prices survive localization without USD10 rounding", () => {

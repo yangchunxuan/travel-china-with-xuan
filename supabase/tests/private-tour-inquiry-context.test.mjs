@@ -16,6 +16,7 @@ import {
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { buildRouteServiceContactHref } from "../../lib/routeServiceInterest.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { privateTourExpansionPhaseTwoProducts } from "../../lib/privateTourExpansionPhaseTwoProducts.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
 
@@ -189,6 +190,73 @@ test("Korean Zhangjiajie selections preserve the Korean-guide offer in contact c
     privateTourAggregateSelectionLabel(forest),
     "固定路线导游版（语种按页面） · 4 人同行",
   );
+});
+
+test("phase-two Korean guide scope stays explicit from product package through inquiry copy", () => {
+  for (const product of privateTourExpansionPhaseTwoProducts) {
+    const tourPackage = product.packages[0];
+    assert.equal(tourPackage.id, "standard-guided", product.slug);
+    assert.equal(tourPackage.label.en, "Private tour package", `en:${product.slug}`);
+    assert.equal(tourPackage.label.zh, "私家团标准版", `zh:${product.slug}`);
+    assert.equal(tourPackage.label.ko, "한국어 가이드 포함", `ko:${product.slug}`);
+
+    const koreanProductContext = getPrivateTourInquiryContext(product.slug, "ko");
+    assert.ok(koreanProductContext, product.slug);
+    assert.equal(koreanProductContext.selection, undefined, product.slug);
+    assert.equal(
+      privateTourInquirySelectionLabel(koreanProductContext, "ko"),
+      "한국어 가이드 포함",
+      product.slug,
+    );
+    assert.equal(
+      privateTourInquirySelectionLabel(
+        getPrivateTourInquiryContext(product.slug, "en"),
+        "en",
+      ),
+      null,
+      `en:${product.slug}`,
+    );
+    assert.equal(
+      privateTourInquirySelectionLabel(
+        getPrivateTourInquiryContext(product.slug, "zh"),
+        "zh",
+      ),
+      null,
+      `zh:${product.slug}`,
+    );
+
+    for (const row of tourPackage.prices) {
+      const selection = { packageId: tourPackage.id, travelers: row.travelers };
+      const koreanContext = getPrivateTourInquiryContext(product.slug, "ko", selection);
+      assert.ok(koreanContext, product.slug);
+      assert.deepEqual(koreanContext.selection, selection, product.slug);
+      assert.equal(
+        privateTourInquirySelectionLabel(koreanContext, "ko"),
+        `한국어 가이드 포함 · ${row.travelers}명 기준`,
+        product.slug,
+      );
+      assert.match(
+        decodeURIComponent(
+          buildPrivateTourMailtoHref("planner@example.com", "ko", koreanContext),
+        ),
+        new RegExp(`한국어 가이드 포함 · ${row.travelers}명 기준`, "u"),
+        product.slug,
+      );
+
+      const englishContext = getPrivateTourInquiryContext(product.slug, "en", selection);
+      const chineseContext = getPrivateTourInquiryContext(product.slug, "zh", selection);
+      assert.equal(
+        privateTourInquirySelectionLabel(englishContext, "en"),
+        `Private tour · ${row.travelers} travellers`,
+        `en:${product.slug}`,
+      );
+      assert.equal(
+        privateTourInquirySelectionLabel(chineseContext, "zh"),
+        `私家团标准版 · ${row.travelers} 人同行`,
+        `zh:${product.slug}`,
+      );
+    }
+  }
 });
 
 test("tour CTAs, quick contacts and backend keep the canonical context end to end", async () => {

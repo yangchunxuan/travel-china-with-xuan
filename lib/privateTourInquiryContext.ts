@@ -28,6 +28,16 @@ export const privateTourInquirySlugs = [
   "huangshan-hongcun-huizhou-5-day-private-tour",
   "jingdezhen-wuyuan-wangxian-6-day-private-tour",
   "changbaishan-yanji-winter-6-day-private-tour",
+  "shanghai-disneyland-5-day-private-tour",
+  "luoyang-dengfeng-kaifeng-6-day-private-tour",
+  "datong-pingyao-6-day-private-tour",
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour",
+  "chongqing-yangtze-cruise-6-day-private-tour",
+  "xinjiang-ili-sayram-8-day-private-tour",
+  "hulunbuir-7-day-private-tour",
+  "kunming-jianshui-yuanyang-6-day-private-tour",
+  "shenzhen-family-tech-4-day-private-tour",
+  "beijing-xian-shanghai-12-day-private-tour",
 ] as const;
 
 export type PrivateTourInquirySlug =
@@ -56,6 +66,28 @@ const packageLabels = {
   "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음" },
   "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스" },
 } as const;
+
+const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
+  new Set([
+    // Phase-two Korean pages publish a Korean-speaking guide at the same base
+    // price. The locale is persisted with the controlled slug and package id,
+    // so the customer and notification labels must preserve that exact scope.
+    "shanghai-disneyland-5-day-private-tour",
+    "luoyang-dengfeng-kaifeng-6-day-private-tour",
+    "datong-pingyao-6-day-private-tour",
+    "zhangye-jiayuguan-dunhuang-7-day-private-tour",
+    "chongqing-yangtze-cruise-6-day-private-tour",
+    "xinjiang-ili-sayram-8-day-private-tour",
+    "hulunbuir-7-day-private-tour",
+    "kunming-jianshui-yuanyang-6-day-private-tour",
+    "shenzhen-family-tech-4-day-private-tour",
+    "beijing-xian-shanghai-12-day-private-tour",
+  ] satisfies readonly PrivateTourInquirySlug[]);
+
+function usesKoreanGuideStandardPackage(slug: PrivateTourInquirySlug): boolean {
+  return slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" ||
+    phaseTwoKoreanGuideSlugs.has(slug);
+}
 
 // Keep this small public selection contract in TypeScript: analytics' focused
 // CommonJS build cannot import pricing.json. The pricing test checks parity.
@@ -122,14 +154,18 @@ export function privateTourInquirySelectionLabel(
   locale: HomegroundLocale,
 ): string | null {
   const selection = context.selection;
-  if (!selection) return null;
+  if (!selection) {
+    return locale === "ko" && phaseTwoKoreanGuideSlugs.has(context.slug)
+      ? "한국어 가이드 포함"
+      : null;
+  }
   const legacyTier = context.slug === "zhangjiajie-4-day-private-tour"
     ? legacyZhangjiajieStayLabels[selection.packageId as keyof typeof legacyZhangjiajieStayLabels]
     : null;
   const packageLabel = legacyTier
     ? legacyTier[locale]
     : locale === "ko" &&
-        context.slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" &&
+        usesKoreanGuideStandardPackage(context.slug) &&
         selection.packageId === "standard-guided"
       ? "한국어 가이드 포함"
       : packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
@@ -267,6 +303,56 @@ const privateTourInquiryNames: Readonly<
     en: "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour",
     zh: "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团",
     ko: "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
+  },
+  "shanghai-disneyland-5-day-private-tour": {
+    en: "Shanghai & Disneyland: 5-Day Private Tour",
+    zh: "上海与迪士尼 5 天 4 晚私家团",
+    ko: "상하이·디즈니랜드 5일 프라이빗 투어",
+  },
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": {
+    en: "Luoyang, Dengfeng & Kaifeng: 6-Day Private Tour",
+    zh: "洛阳·登封·开封 6 天 5 晚私家团",
+    ko: "뤄양·덩펑·카이펑 6일 프라이빗 투어",
+  },
+  "datong-pingyao-6-day-private-tour": {
+    en: "Datong & Pingyao: 6-Day Private Tour",
+    zh: "大同·平遥 6 天 5 晚私家团",
+    ko: "다퉁·핑야오 6일 프라이빗 투어",
+  },
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": {
+    en: "Zhangye, Jiayuguan & Dunhuang: 7-Day Private Tour",
+    zh: "张掖·嘉峪关·敦煌 7 天 6 晚私家团",
+    ko: "장예·자위관·둔황 7일 프라이빗 투어",
+  },
+  "chongqing-yangtze-cruise-6-day-private-tour": {
+    en: "Chongqing & Yangtze Three Gorges: 6-Day Private Tour",
+    zh: "重庆与长江三峡游轮 6 天 5 晚私家团",
+    ko: "충칭·창장삼협 크루즈 6일 프라이빗 투어",
+  },
+  "xinjiang-ili-sayram-8-day-private-tour": {
+    en: "Ili, Sayram Lake & Nalati: 8-Day Private Tour",
+    zh: "伊犁·赛里木湖·那拉提 8 天 7 晚私家团",
+    ko: "이리·싸이리무호·나라티 8일 프라이빗 투어",
+  },
+  "hulunbuir-7-day-private-tour": {
+    en: "Hulunbuir Grassland & Forest: 7-Day Private Tour",
+    zh: "呼伦贝尔草原与森林 7 天 6 晚私家团",
+    ko: "후룬베이얼 초원·숲 7일 프라이빗 투어",
+  },
+  "kunming-jianshui-yuanyang-6-day-private-tour": {
+    en: "Kunming, Jianshui & Yuanyang: 6-Day Private Tour",
+    zh: "昆明·建水·元阳 6 天 5 晚私家团",
+    ko: "쿤밍·젠수이·위안양 6일 프라이빗 투어",
+  },
+  "shenzhen-family-tech-4-day-private-tour": {
+    en: "Shenzhen Family Science & Technology: 4-Day Private Tour",
+    zh: "深圳亲子科技 4 天 3 晚私家团",
+    ko: "선전 가족 과학·기술 4일 프라이빗 투어",
+  },
+  "beijing-xian-shanghai-12-day-private-tour": {
+    en: "Beijing, Xi'an & Shanghai: 12-Day Private Tour",
+    zh: "北京·西安·上海 12 天 11 晚私家团",
+    ko: "베이징·시안·상하이 12일 프라이빗 투어",
   },
 };
 
