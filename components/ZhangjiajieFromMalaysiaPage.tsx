@@ -775,7 +775,7 @@ export function ZhangjiajieFromMalaysiaPage({
                 <p>{{
                   en: "Compare four days in Zhangjiajie with seven days through Zhangjiajie, Furong and Fenghuang. Match the arrival and departure days to your flights and any Changsha connections; extra nights depend on those timings.",
                   zh: "只游张家界可比较四日团；想加芙蓉镇和凤凰，可比较七日团。行程首末日需与航班、长沙接驳对好时间，是否前后加住按实际衔接决定。",
-                  ko: "장자제만 둘러보는 4일 투어와 푸룽진·펑황까지 가는 7일 투어를 비교하세요. 첫날과 마지막 날을 국제선·창사 연결편 시간에 맞추고, 필요할 때만 전후 숙박을 추가하세요.",
+                  ko: "장가계만 둘러보는 4일 투어와 부용진·봉황까지 가는 7일 투어를 비교하세요. 첫날과 마지막 날을 국제선·창사 연결편 시간에 맞추고, 필요할 때만 전후 숙박을 추가하세요.",
                 }[locale]}</p>
               </header>
               <div>
@@ -794,7 +794,7 @@ export function ZhangjiajieFromMalaysiaPage({
                 <Link href={privateTourHubPaths[locale]}>
                   <span>
                     <strong>{{ en: "Compare published private tours and prices", zh: "比较已发布的私家团与价格", ko: "프라이빗 투어 일정과 요금 비교" }[locale]}</strong>
-                    <small>{{ en: "See Zhangjiajie’s classic and forest routes, included transport, guide options and the price basis before choosing.", zh: "先看张家界经典线与森林线的安排、已含交通、导游选项和价格口径，再选适合的路线。", ko: "장자제 클래식·산림 코스의 일정, 포함 교통, 가이드 옵션과 요금 기준을 먼저 확인하세요." }[locale]}</small>
+                    <small>{{ en: "See Zhangjiajie’s classic and forest routes, included transport, guide options and the price basis before choosing.", zh: "先看张家界经典线与森林线的安排、已含交通、导游选项和价格口径，再选适合的路线。", ko: "장가계 클래식·산림 코스의 일정, 포함 교통, 가이드 옵션과 요금 기준을 먼저 확인하세요." }[locale]}</small>
                   </span>
                   <ArrowRight aria-hidden="true" size={17} />
                 </Link>

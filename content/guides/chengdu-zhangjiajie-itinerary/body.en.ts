@@ -169,6 +169,37 @@ const body = {
       "text": "Start with entry and exit transport, then confirm the intercity journey and the matching hotel nights. Reserve attractions for the right dates, identities and entry options. This is a travel-planning outline, not an inclusive package quotation. If you want local help, use the private-tour collection to compare the available Chengdu and Zhangjiajie arrangements and ask about joining the two stays into your own trip."
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions travellers ask before booking",
+      "items": [
+        {
+          "question": "How many days do I need for Chengdu and Zhangjiajie?",
+          "answer": "Seven days and six nights, if your priorities are pandas, a little Sichuan culture and two full days in the forest park. Spend three nights in Chengdu and three in Wulingyuan with a transfer day between them, remembering that day 1 is arrival and day 7 is departure. Add an eighth day for Tianmen Mountain. You can travel between the two destinations without a Chongqing hotel stay."
+        },
+        {
+          "question": "Do I have to start in Chengdu, or can I go to Zhangjiajie first?",
+          "answer": "Either order works. This plan runs Chengdu in and Zhangjiajie out, which suits a longer trip inside China or flights that already open and close at those two ends. Reversed, you sleep in Wulingyuan first and keep the easy city day for after the walking. Let the transport you can actually book decide, not the idea that pandas come first."
+        },
+        {
+          "question": "Is there a direct train from Chengdu to Zhangjiajie?",
+          "answer": "Yes, on the Chengdu East (成都东) to Zhangjiajie West (张家界西) route: a January 2026 railway announcement confirmed a direct service between the two stations. Check your own date on 12306 for the current trains, duration and seats, because the published launch timetable is not today's departure time. A train passing through the Chongqing region does not mean you need to get off and stay there."
+        },
+        {
+          "question": "Is flying faster than the train?",
+          "answer": "Not necessarily. Compare flights only after checking the airport and the whole journey: Chengdu has Tianfu (TFU) and Shuangliu (CTU), Zhangjiajie's airport code is DYG, and your date may be nonstop or a connection. Add travel to the airport, check-in, baggage collection and the trip to Wulingyuan. A short flight on paper can still consume most of this day."
+        },
+        {
+          "question": "Where should I sleep for the two forest-park days?",
+          "answer": "In Wulingyuan, choosing the hotel against the entrance you plan to use and keeping large luggage at that same hotel on both forest days. A hotel with Zhangjiajie in its name is not necessarily beside that gate. Only add a Zhangjiajie city hotel when Tianmen Mountain or your departure makes the move useful."
+        },
+        {
+          "question": "Is Tianmen Mountain included in the forest-park ticket?",
+          "answer": "No. Tianmen is a separate attraction and ticket from the forest park, and the Glass Bridge is another separate outing that is not automatically part of the same day. With 8 days and 7 nights, use day 7 for Tianmen, transfer from Wulingyuan with enough time for your booked entry slot, confirm luggage storage, and sleep in Zhangjiajie city."
+        }
+      ]
+    },
+    {
       "id": "related",
       "type": "internal-links",
       "title": "Plan the details",

@@ -455,6 +455,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before visiting Kaifeng",
+      items: [
+        {
+          question: "How much is the park ticket, and does it include the shows?",
+          answer: "No reliable current price could be established from the official 2026 sources we could access — nor a foreign-passport process, what each ticket includes, or how day and night products relate — so verify the current operator sales channel before paying. The park fits visitors who want a large-scale translation of the scroll, family-accessible space or performance.",
+        },
+        {
+          question: "Can I see Zhang Zeduan's original painting in Kaifeng?",
+          answer: "No. Do not expect the original in Kaifeng, and do not assume it is on view at the Palace Museum, which records a Northern Song handscroll by Zhang Zeduan, silk, 24.8 by 528 centimetres, but does not say it is displayed on your dates. The relief in the park is a modern copy, never the Palace Museum original.",
+        },
+        {
+          question: "Can ordinary visitors go into the Zhouqiao excavation site?",
+          answer: "Do not assume it is open to ordinary visitors. Archaeological reports establish Zhouqiao's significance, but they do not establish a reliable 2026 process for general admission, booking, tickets or foreign-passport handling, so confirm with the operating or protection unit. If you cannot enter, stay in lawful public space, use Kaifeng Museum for broader material history and never cross the barriers.",
+        },
+        {
+          question: "What are the park's performances actually like?",
+          answer: "They are a contemporary entertainment system, not recorded Northern Song life: the current programme mixes historical-personality scenes, acrobatics, wuxia, technology, rides and night products. Choose one form that interests you, check the operator's current programme rather than an old blog timetable, confirm that day's venue and inclusion, and stay into the night only for a night product you genuinely want.",
+        },
+        {
+          question: "I have less than two hours — what should I do?",
+          answer: "Inside the park, walk relief–Hongqiao–gate only, or choose one confirmed evidence-first stop, and do not race between unrelated evidence types. The full sequence allows 15–20 minutes for orientation at the relief, 25–35 at Hongqiao and 40–50 at the gate and street, so shorten the expanded area first.",
+        },
+        {
+          question: "Can I photograph the performers and post the pictures?",
+          answer: "Not automatically — permission to photograph and permission to publish are different. Follow the current signs and ask before featuring identifiable performers or children; a public show does not grant publication rights for close-ups. Caption your own images with the date and place, and never label a park relief, replica or later bridge as an original.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning with Homeground",

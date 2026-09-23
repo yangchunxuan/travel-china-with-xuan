@@ -238,6 +238,37 @@ const body = {
       ]
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask before a temple visit",
+      items: [
+        {
+          question: "Is the Meizhou Mazu Ancestral Temple a thousand-year-old building?",
+          answer: "Not the complex you walk through today. The institution's own historical account says the west-axis complex seen today is principally the result of rebuilding that began in the 1980s and was completed in 1994, and that work on the new south-axis group began in 1998 and was completed in 2002. Those dates do not erase the site's earlier history.",
+        },
+        {
+          question: "Will there be a ceremony at the temple when I visit?",
+          answer: "Treat that as unknown until a dated organiser notice says so. UNESCO describes temple fairs, smaller worship ceremonies, offerings and processions, but those examples explain the breadth of Mazu belief and customs rather than giving a 2026 event calendar for this site. A hall can also shift from visitor circulation to active devotional use.",
+        },
+        {
+          question: "Can I take photographs inside the ancestral temple?",
+          answer: "Ask the responsible authority on the day. No complete, current site-specific rule for ordinary movement, interior photography, video, flash, tripods, drones or ritual observation was located in the official pages reviewed on 15 August 2026. Silence online is not permission, and a Commons licence for an old photograph is not venue approval for a new one.",
+        },
+        {
+          question: "People are queueing with incense and offerings. Can I join them?",
+          answer: "Stay outside the line unless an attendant clearly directs you. Do not read the queue as a visitor attraction or as open participation; participation should follow a clear invitation or a site instruction, never imitation. If the space becomes crowded, quiet or processional, step back, because community use takes priority over an editorial checklist.",
+        },
+        {
+          question: "Is the ancestral temple one hall, or a whole complex?",
+          answer: "A whole complex, and the name covers more than buildings. The temple's own introduction locates it in Gongxia Village in the north of Meizhou Island and describes both a west-axis and a south-axis group, so ‘Meizhou Mazu Ancestral Temple’ can mean the institution, its worshipping community and the wider complex it manages.",
+        },
+        {
+          question: "Was Mazu a real person?",
+          answer: "The sources put that in belief tradition rather than verified biography. UNESCO writes that Mazu is believed to have lived on Meizhou Island in the tenth century, and Chinese ICH and temple accounts narrate help, rescue, death and commemoration. Phrases such as ‘believers hold’ or ‘the tradition recounts’ show whose knowledge is being presented.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue with another evidence-led cultural guide",

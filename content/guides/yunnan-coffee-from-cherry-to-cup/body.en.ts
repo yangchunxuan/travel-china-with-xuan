@@ -306,6 +306,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions people ask when buying Yunnan coffee",
+      items: [
+        {
+          question: "Does 'Yunnan' on the bag tell me where the coffee is from?",
+          answer: "Only roughly. Coffee grows in warm parts of Pu'er, Baoshan, Lincang, Dehong, Xishuangbanna and elsewhere in mountainous Yunnan, and conditions vary within each area. A lot may be one estate, several smallholders delivering to a station, or a regional blend. A narrower name helps only when the seller connects it to the batch.",
+        },
+        {
+          question: "Does 'roasted in Yunnan' mean the beans were grown in Yunnan?",
+          answer: "No. A Yunnan company with unstated bean origin proves processing or roasting, not growing. Identify the form first, whether green, roasted, ground, drip bag, instant, extract or ready-to-drink, then separate grower, processor, trader, brand and roaster, even when one company has several roles.",
+        },
+        {
+          question: "Does washed, natural or honey tell me how the coffee will taste?",
+          answer: "Not on its own. A controlled Yunnan Arabica study found chemical and sensory differences among six processes applied to the same variety and ripe fruit. Processing matters, but method names are not universal flavour formulas. For an unusual fermentation or honey term, request a plain description of the physical process rather than the branded phrase.",
+        },
+        {
+          question: "Is instant, drip-bag or extract Yunnan coffee worth buying?",
+          answer: "Yes, for what it is. Extracts, instant, freeze-dried and drip bags keep different skills and value at origin, and they form no taste hierarchy: a traceable green lot and a sophisticated instant product serve different purposes. For instant or extract, ingredient origin, manufacturer and format may matter more than farm detail.",
+        },
+        {
+          question: "What should I check on the label before buying?",
+          answer: "Five linked facts: a location narrower than the province, the producer or station, the variety, harvest and process, and the roaster with a roast date. Strong versions read as a county plus estate, village or station, a lot code tied to harvest and process, and a named cultivar or an honest 'not specified'.",
+        },
+        {
+          question: "The bag and the website say different things. What now?",
+          answer: "Photograph both and ask which matches the batch. Identify the batch from the package received, then have any added origin claims clarified in writing. If the farm cannot be located, request the county, the Chinese name and whether it is a property, cooperative, village, processor or brand, and do not repeat a vague estate claim.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Connect the coffee story to a real Yunnan trip",

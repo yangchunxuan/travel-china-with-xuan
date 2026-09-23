@@ -24,6 +24,13 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "failure", type: "table", caption: "需要之前先决定如何补救", columns: ["问题", "要求经营者做什么", "何时换住宿"], rows: [["洗衣或厨房坏了", "在明确时限内维修或提供同等设施", "该设施是刚需且没有可用替代"], ["漏打扫", "重排并先补新布草和用品", "反复失误让长住无法维持"], ["噪音无法工作或睡眠", "实地检查并换到已证明安静的单元", "只提供未核实的口头保证"], ["网络故障", "给维修时点与工作备份", "联网是刚需却没有任何备用"], ["押金条款变化", "按书面订单执行", "未提供记录就要求额外付款才开门"]] },
   { id: "switch", type: "callout", title: "一种实用的分段住法", tone: "decision", body: "晚班国际航班后先住一晚常规酒店，白天看清路线和单元后再搬。若早班航班可能被查房、楼栋门禁或车辆接驳耽误，离开前反向操作。一次有意安排的搬家，可能比坚持全程住同一家更能降风险。" },
   { id: "dynamic", type: "paragraph", text: "全国住宿登记政策和企业信息渠道复核于2026年8月13日。物业服务、费用和单个经营者状态会变化，必须以订单书面条款再次确认。本文不认证任何品牌或楼宇。" },
+  { id: "faq", type: "faq", title: "住宿选择常见问题", items: [
+    { question: "长住中国，选服务式公寓还是酒店？", answer: "要看你希望物业替你承担哪些日常事务。短住、频繁换城市、需要稳定的每日服务，或者抵达那一段不能出错，就选酒店。住得足够久、厨房洗衣和起居空间确实会用上，而且经营者把清洁、水电、押金、访客、护照登记和夜间支持都写清楚了，就选商业运营的服务式公寓。" },
+    { question: "带小孩的话，公寓是不是一定更省事？", answer: "不一定。带孩子或行动不便的同行者，要先看阳台锁、低窗、室内台阶、松动地毯、淋浴入口，以及每个睡眠区是否有安全温控。有电梯、有早餐、能立刻得到帮助的小酒店房间，可能比另一栋楼里的大公寓更好用。" },
+    { question: "页面上有厨房图标，是不是就能做饭？", answer: "不一定。先问加热方式：电磁炉、微波炉、烤箱，还是根本没有烹饪热源——水槽和水壶做不出一顿晚饭。再问锅、刀、案板、盘碗和餐具是否齐全，冰箱多大、有没有冷冻格，抽风、烟感灵敏度和禁止的烹饪方式，以及商店和外卖能不能送到你住的那一栋楼。" },
+    { question: "付款前，押金和账单要确认什么？", answer: "先把押金金额、支付方式、扣款规则和退回时间问清楚——离境之后还没退回来，是常见的意外。同时确认电、水、供暖、网络是否有用量上限，哪些晚数变成不可退，访客登记与最大入住人数，开票主体和公司信息，以及续住能不能留在同一房间。" },
+    { question: "航班深夜到，第一晚也住公寓吗？", answer: "分段住往往更稳。晚班国际航班落地后，第一晚先住常规酒店，白天看清路线和单元再搬一次。如果早班航班可能被查房、楼栋门禁或车辆接驳耽误，就反过来，把最后一晚放回酒店。一次有意安排的搬家，比死守一家更能降低风险。" },
+  ] },
   { id: "links", type: "internal-links", title: "继续规划", items: [{ label: "商业公寓酒店还是住宅短租", href: "/zh/guides/commercial-aparthotel-or-residential-rental-china/", description: "先确认公寓是否为商业住宿。" }, { label: "如何判断酒店靠近地铁", href: "/zh/guides/china-hotel-near-metro/", description: "从实际大堂测试反复通勤。" }, { label: "民宿、homestay还是酒店", href: "/zh/guides/minsu-homestay-or-hotel-china/", description: "理解另一组住宿标签。" }, { label: "比较国际连锁与本地酒店", href: "/zh/guides/international-chain-or-local-hotel-china/", description: "从房型、外籍住客登记、付款、实际位置和问题处理比较中国的国际连锁与本地酒店。" }] },
   { id: "sources", type: "sources", title: "官方来源", items: [{ label: "旅馆以外住宿登记网上办理政策解读", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" }, { label: "非旅馆住宿登记英文政策解读", url: "https://english.www.gov.cn/services/visitchina/202603/21/content_WS69ce124cc6d00ca5f9a0a368.html", publisher: "中国政府网", reviewedAt: "2026-08-13" }, { label: "国家企业信用信息公示系统", url: "https://www.gsxt.gov.cn/", publisher: "国家市场监督管理总局", reviewedAt: "2026-08-13" }] }
 ] } as const satisfies StructuredPageBody;

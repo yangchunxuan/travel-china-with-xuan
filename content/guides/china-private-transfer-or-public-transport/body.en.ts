@@ -148,6 +148,37 @@ const body = {
       body: "Leave your date, party size, actual bags, mobility needs, arrival or departure node, hotel area and approximate budget. We can compare the complete public, private and hybrid chains without choosing from a generic supplier ranking."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about transfers",
+      items: [
+        {
+          question: "Will the driver meet me in the arrivals hall?",
+          answer: "Do not assume that. Beijing Capital International Airport publishes specific ride-hailing pickup locations by terminal and parking level, so “the driver meets me at arrivals” is not a safe assumption. Before paying, settle which exact terminal, exit, parking building and level is the meeting point, and who contacts whom after landing.",
+        },
+        {
+          question: "When does the included waiting time start?",
+          answer: "Ask before paying, because it can be measured from scheduled arrival, actual arrival, landing, baggage delivery or driver contact. Those start points produce very different amounts of free waiting. Get the answer in writing, along with the terms for a flight delay, a driver no-show, cancellation and refund.",
+        },
+        {
+          question: "My flight lands late, close to the end of metro service. Should I book a car?",
+          answer: "Decide it on operating hours, not on speed. If the arrival falls close to or outside the hours the public route actually runs, a booked car or the airport's official taxi rank is the sensible choice, once the driver's terms and an official taxi fallback are both settled. If public transport has already stopped, use the current official bus, taxi or an airport hotel and drop the non-essential plans that follow.",
+        },
+        {
+          question: "The driver is not there. What should I do?",
+          answer: "Stay at the official pickup area, preserve the order record and switch to the airport's official taxi or ride-hailing point. Do not follow an unsolicited tout away from the signed transport area, and do not enter an unverified vehicle just because an app has stopped working.",
+        },
+        {
+          question: "Is a private car more accessible for a wheelchair user?",
+          answer: "Not automatically. A private car is not automatically accessible, and a lift symbol is not proof of a complete public chain. Compare public lifts and station assistance with vehicle door width, chair dimensions, transfer requirement, securement and driver help, then choose the chain the operators confirm end to end.",
+        },
+        {
+          question: "I have a train shortly after landing. Does booking a car protect the connection?",
+          answer: "No. A reserved car cannot turn an unprotected separate connection into a protected one, so redesign the segment first. If the planned arrival leaves no tested recovery before a separately booked train, flight or timed event, change the hotel, protect a buffer night or divide the trip at an airport or station hotel.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue planning",

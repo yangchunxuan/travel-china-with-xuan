@@ -11,8 +11,13 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-13",
-  "dateModified": "2026-08-21",
+  "dateModified": "2026-09-22",
   "sourceReviewedDate": "2026-08-13",
+  "searchTerms": {
+    "en": ["zhangjiajie city wulingyuan hotel base"],
+    "zh": ["张家界市区 武陵源 住宿"],
+    "ko": ["장자제 시내 우링위안 숙소"]
+  },
   "search": {
     "section": "stay",
     "family": "combined-decision",
@@ -44,14 +49,14 @@
     },
     "ko": {
       "path": "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
-      "title": "장자제 시내 vs 우링위안 숙소: 관광 순서로 결정",
-      "headline": "장자제 시내와 우링위안, 확정한 관광 순서에 맞춰 숙박 거점을 정하세요",
+      "title": "장가계 시내 vs 무릉원 숙소: 관광 순서로 결정",
+      "headline": "장가계 시내와 무릉원, 확정한 관광 순서에 맞춰 숙박 거점을 정하세요",
       "description": "각 숙박일을 다음 확정 명소·도착·출발 지점과 맞춘 뒤 한 번의 호텔 이동이 반복 이동을 충분히 줄이는지 판단합니다.",
-      "heroAlt": "우링위안 시부제 진입부의 실제 모습으로, 장자제 시내가 아닌 우링위안 숙박권의 한 사례다.",
-      "navTitle": "장자제 숙박 거점",
+      "heroAlt": "무릉원 시부제 진입부의 실제 모습으로, 장가계 시내가 아닌 무릉원 숙박권의 한 사례다.",
+      "navTitle": "장가계 숙박 거점",
       "featuredLinkLabel": "관광 순서에 맞춰 숙박일 배치하기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["장자제", "우링위안", "숙박 거점"]
+      "cardTags": ["장가계", "무릉원", "숙박 거점"]
     }
   }
 }

@@ -135,6 +135,37 @@ const body = {
       ]
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions readers ask about Qiaopi",
+      items: [
+        {
+          question: "What is a Qiaopi, and is Yinxin the same thing?",
+          answer: "A Qiaopi, also called Yinxin in the Wuyi area, is best read as a small packet of relationships: a message from an emigrant, money or evidence of money, and the marks left by the people and institutions that carried both to a family in China. UNESCO's registered collection includes letters, reports, account books and remittance receipts, so there is no single format.",
+        },
+        {
+          question: "Do I need a ticket to see the Qiaopi collection in Shantou?",
+          answer: "Free entry with valid ID is what the Shantou venue's direct notice listed when it was last checked on 13 August 2026, and current rules can change. Before visiting, check the current exhibition, accepted identity documents, opening notice and photography policy with the holding institution itself rather than with a third-party listing.",
+        },
+        {
+          question: "Can I photograph the letters on display?",
+          answer: "Follow the holding institution's photography rule rather than a general assumption. Quote only the minimum needed, prefer the institution's own transcription, and do not publish full addresses or information about potentially living descendants. Archival, privacy and intellectual-property rules can apply together, so a photograph's licence does not automatically clear the underlying text for reuse.",
+        },
+        {
+          question: "I only have ten minutes. How should I read one Qiaopi?",
+          answer: "Choose one clearly labelled Qiaopi and spend the ten minutes on sender, recipient, amount, agent and route. Then compare it with one account book or delivery record. That is more useful than photographing a wall of letters without reading a single chain through from the overseas sender to the household that received it.",
+        },
+        {
+          question: "I am researching my own family. How should I work with these letters?",
+          answer: "Record the institution, collection name, catalogue number, document date and any related items before you transcribe anything. Then check whether the item in front of you is an original, a reproduction or a digital image, and note which it is. When you need to read closely at high resolution, go through the archive's formal access procedure.",
+        },
+        {
+          question: "Does a bureau's stamp mean it carried the letter the whole way?",
+          answer: "No. A Qiaopi bureau, bank or post-office name identifies one institution in the handling chain, and its stamp does not prove it carried every leg. Put the dated stamps in order instead: sea, air and wartime detours changed routes, so a neat straight line on a map is an editorial diagram rather than proof of a direct voyage.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue reading archives and migration evidence",

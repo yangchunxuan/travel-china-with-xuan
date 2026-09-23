@@ -304,6 +304,37 @@ const body = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions diners ask before ordering",
+      items: [
+        {
+          question: "How much should two people order to start?",
+          answer: "One plate of meat. For two people start with one copper pot and the house broth, one plate labelled leg or upper shoulder, one leaf vegetable, one absorbent item such as frozen tofu, and one sesame-paste dip each. Order starch later. Once you have seen the portion size and finished most of the first round, add meat one plate at a time.",
+        },
+        {
+          question: "What is the difference between hand-cut mutton and a mutton roll?",
+          answer: "Hand-cut (shou qie) is a claim about knife work, while a roll (yang rou juan) is frozen into a block and sliced from it, and that label alone does not establish what was in the block. Shape does not prove the method either. Before ordering, ask how today's plate was cut and prepared, and whether it is whole-cut mutton.",
+        },
+        {
+          question: "How long do I cook the mutton slices?",
+          answer: "No official source used here gives a number. None of them provides a validated number of seconds, colour test or temperature endpoint for thin mutton slices in a copper pot. Keep the broth boiling, add only a few slices at a time and follow the restaurant's cooking instructions. Children, older adults, pregnant people and immunocompromised diners should ask staff to handle or confirm thorough cooking, or choose a fully cooked dish.",
+        },
+        {
+          question: "Can I go to a copper-pot restaurant on my own?",
+          answer: "Yes, but the portions are sized for sharing, so a solo diner over-orders by default. Ask for a half portion, take one vegetable and skip the starch. If the house cannot split a portion, order one plate and one vegetable, then add a second plate later rather than filling the table at the start.",
+        },
+        {
+          question: "What goes into the Beijing sesame dip?",
+          answer: "Sesame paste, fermented bean curd and chive-flower sauce, the classic combination named by the city's market regulator. Sesame paste is the body, fermented bean curd brings salt and savoury depth, and chive-flower sauce, made from fermented garlic-chive buds, brings the sharp edge that keeps a fatty mouthful from flattening out. It is a reference point rather than the only version.",
+        },
+        {
+          question: "Can I drink the hotpot broth?",
+          answer: "Be careful if you have gout or high blood lipids. Beijing's market regulator warns that hotpot broth boiled for a long time is relatively high in purines and fat, and advises those groups to be cautious about drinking it. If that applies to you, do not treat the broth as a drink and follow your clinician's dietary advice.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Read next",

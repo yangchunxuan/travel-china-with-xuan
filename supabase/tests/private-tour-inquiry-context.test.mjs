@@ -5,6 +5,7 @@ import {
   buildPrivateTourInquiryHref,
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySubmissionContext,
   getPrivateTourInquiryContextFromSearchParams,
   getPrivateTourInquirySelection,
   privateTourAggregateSelectionLabel,
@@ -164,6 +165,7 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
     structuredTour,
     zhangjiajieTour,
     quickContact,
+    tourContact,
     header,
     contract,
     endpoint,
@@ -173,6 +175,7 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
     source("components/ShanghaiJiangnanImaginePage.tsx"),
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
     source("components/HomepageQuickContact.tsx"),
+    source("components/TourContactPanel.tsx"),
     source("components/HomegroundHeader.tsx"),
     source("lib/inquiryContract.ts"),
     source("supabase/functions/v1-inquiries/index.ts"),
@@ -193,13 +196,27 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
   assert.match(quickContact, /getPrivateTourInquiryContext/u);
   assert.match(quickContact, /privateTourInterest\.name/u);
   assert.match(quickContact, /whatsappMessage\(locale, privateTourInterest\)/u);
-  assert.match(quickContact, /productInterest:\s*privateTourInterest/u);
+  assert.match(quickContact, /getPrivateTourInquirySubmissionContext\(privateTourInterest, locale\)/u);
+  assert.match(tourContact, /productInterest: getPrivateTourInquirySubmissionContext\(context, locale\)/u);
   assert.match(quickContact, /href=\{fallbackMailto\}/u);
   assert.match(header, /isPrivateTourInquirySlug\(privateTour\)/u);
-  assert.match(contract, /input\.productInterest\.name !== expected\.name/u);
+  assert.match(contract, /isPrivateTourInquiryNameForSlug/u);
   assert.match(endpoint, /p_attribution:\s*payload\.productInterest/u);
   assert.match(notification, /homepageProductInterest\(job\)/u);
   assert.match(migration, /p_attribution is distinct from expected_attribution/u);
+
+  for (const slug of [
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+    "zhangjiajie-4-day-private-tour",
+  ]) {
+    const displayed = getPrivateTourInquiryContext(slug, "ko");
+    const submitted = getPrivateTourInquirySubmissionContext(displayed, "ko");
+    assert.match(displayed.name, /^장가계/u);
+    assert.match(submitted.name, /^장자제/u);
+    assert.equal(submitted.slug, displayed.slug);
+    assert.deepEqual(getPrivateTourInquirySubmissionContext(displayed, "en"), displayed);
+  }
 
   const context = getPrivateTourInquiryContext(
     "beijing-highlights-5-day-private-tour",

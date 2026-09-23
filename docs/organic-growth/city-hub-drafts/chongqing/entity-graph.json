@@ -125,7 +125,7 @@
       "names": {
         "en": "Jiefangbei–Hongyadong–Chaotianmen cluster",
         "zh": "解放碑—洪崖洞—朝天门组团",
-        "ko": "제팡베이–훙야둥–차오톈먼 구역"
+        "ko": "제팡베이–훙야둥–차오천문 구역"
       }
     },
     {
@@ -138,7 +138,7 @@
       "id": "place-chaotianmen",
       "type": "river-confluence-area",
       "status": "proposed",
-      "names": {"en": "Chaotianmen", "zh": "朝天门", "ko": "차오톈먼"}
+      "names": {"en": "Chaotianmen", "zh": "朝天门", "ko": "차오천문"}
     },
     {
       "id": "cluster-shibati-mountain-city-trail",
@@ -259,19 +259,19 @@
       "id": "city-zhangjiajie",
       "type": "city",
       "status": "existing-reference",
-      "names": {"en": "Zhangjiajie", "zh": "张家界", "ko": "장자제"}
+      "names": {"en": "Zhangjiajie", "zh": "张家界", "ko": "장가계"}
     },
     {
       "id": "place-furong-town",
       "type": "town-destination",
       "status": "reference-pending-central-id-check",
-      "names": {"en": "Furong Town", "zh": "芙蓉镇", "ko": "푸룽전"}
+      "names": {"en": "Furong Town", "zh": "芙蓉镇", "ko": "부용진"}
     },
     {
       "id": "city-fenghuang",
       "type": "historic-town-destination",
       "status": "reference-pending-central-id-check",
-      "names": {"en": "Fenghuang", "zh": "凤凰古城", "ko": "펑황고성"}
+      "names": {"en": "Fenghuang", "zh": "凤凰古城", "ko": "봉황고성"}
     },
     {
       "id": "route-yangtze-cruise-chongqing-yichang",

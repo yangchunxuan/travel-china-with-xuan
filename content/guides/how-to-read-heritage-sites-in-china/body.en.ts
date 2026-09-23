@@ -366,6 +366,37 @@ const body = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions visitors ask at the site",
+      items: [
+        {
+          question: "If a building has been rebuilt or repaired, does that make it fake?",
+          answer: "No. Old material is not the only carrier of authenticity, and repair does not make a place false. Ask what value is expressed; whether the evidence concerns material, design, use, technique, location or setting; what changed; and who documented it. Traditional craft can be an important attribute while the resulting fabric remains new.",
+        },
+        {
+          question: "Does World Heritage status mean everything inside the site is ancient?",
+          answer: "Inscription recognizes a property and its stated values, not every stone, roof tile or visible building as ancient. A property-level claim establishes recognized Outstanding Universal Value, boundaries, attributes and an overall integrity and authenticity assessment; it cannot establish the age or material status of every building and visitor feature within the boundary.",
+        },
+        {
+          question: "Is the Yongdingmen gate tower in Beijing the original Ming gate?",
+          answer: "The present tower is a twenty-first-century reconstruction. The historic complex at the southern end of Beijing's Central Axis was dismantled in the 1950s, and UNESCO and ICOMOS records commonly use 1957 for the gate's demolition. Work formally began in 2004, Dongcheng District records completion in October 2005, and State Party information hosted by UNESCO records that completion-acceptance filing began on 15 June 2007.",
+        },
+        {
+          question: "Can I hike the Jiankou Great Wall?",
+          answer: "Treat Jiankou as a conservation case rather than a walking route. A Huairou government report dated 27 April 2026 says phases one to four were complete, phase five remained in progress with completion planned for the end of 2026, and phase-six design had begun; no formal phase-five completion and acceptance notice was found by 15 August 2026. Use an officially open Great Wall section for ordinary sightseeing.",
+        },
+        {
+          question: "The excavation at Yinxu is backfilled and there is little to see. Has something gone wrong?",
+          answer: "That is a conservation decision. UNESCO's authenticity statement says remains and excavated relics are conserved in situ as far as possible; after excavation, sites may be backfilled for protection and represented with vegetation at ground level, while important objects receive museum care. Protection can make evidence less visually dramatic rather than less real.",
+        },
+        {
+          question: "At a repaired wall, can I tell old brick from new just by looking?",
+          answer: "No. Never sort masonry by colour alone; check a component drawing, material schedule or management explanation, and record the material boundary as unconfirmed until evidence identifies it. At Jiankou, official accounts say old bricks are cleaned and reused and compatible material may be added where needed, so a weathered face proves neither age nor replacement.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue with a site-specific reading method",

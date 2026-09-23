@@ -234,6 +234,37 @@ const body = {
       body: "Send your dates, group size and approximate budget. Homeground can help identify which park, facility and return-transport fields still need direct confirmation."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before a late park visit",
+      items: [
+        {
+          question: "Does a 24-hour park in Shanghai really stay open all night?",
+          answer: "Only in part. The city guideline lets a 24-hour park keep its barriers and split night-open from closed zones, particularly near homes, ecological areas or wildlife habitat. A lake loop, playground, toilet or indoor venue can run shorter hours, and lighting and the journey home are separate questions again. Verify one named park for one intended time.",
+        },
+        {
+          question: "Where do I check whether a Shanghai park is 24-hour right now?",
+          answer: "Check Suishenban or the Green Shanghai WeChat park service, the channels the bureau points residents to for the current list. Then look for the newest notice from the named park, its operator, the district or the city covering works, weather, events or temporary closure, and check again on the day itself. An old screenshot is supporting evidence at most.",
+        },
+        {
+          question: "Can I run the lake loop at Minhang Culture Park at 04:30?",
+          answer: "No. A Shanghai culture and tourism page reviewed on August 13, 2026 lists Minhang Culture Park as 24-hour all year, while the lake loop area shows 05:00–21:00. A 05:15 run can be considered after a same-day recheck; a 04:30 plan cannot use the whole-park label to override that zone restriction.",
+        },
+        {
+          question: "Will a toilet be open inside the park at night?",
+          answer: "Not automatically. Under the city guideline only suitable park toilets open 24 hours, so check which building or cubicle opens, by which entrance, and with what night sign. If that stays unresolved, use a verified toilet outside the park before you go in and keep the visit short. Staff facilities are not a fallback.",
+        },
+        {
+          question: "Can we take the children to a park playground after 22:00?",
+          answer: "Plan it before the posted closing time instead. The visit depends on the play area, not the park boundary, so check that facility's hours, lighting, toilet and the return trip. Under the city guideline, do not expect powered rides at night. If those points stay unresolved, keep only a later walk on a lit public route, or skip it.",
+        },
+        {
+          question: "How do I plan the way back after a late park visit?",
+          answer: "Verify the journey home before the journey in. Check the official metro first and last train and transfer timetable for the exact line, direction and interchange, then add the walk from the night exit and a delay margin. If rail will have ended, pick a visible legal pickup point outside the park before you go in; a ride-hail estimate does not mean a car will arrive.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning Shanghai",

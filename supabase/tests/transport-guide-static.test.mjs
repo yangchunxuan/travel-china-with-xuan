@@ -134,7 +134,7 @@ test("transport article uses its own responsive, localized travel-day photos", a
   assert.match(guide, /className=\{styles\.routeGallery\}/);
   assert.match(styles, /\.routeGallery/);
   assert.match(copy, /北京西站南进站口外的出租车与旅客/);
-  assert.match(copy, /장자제서역과 역 앞 광장의 넓은 전경/);
+  assert.match(copy, /장가계서역과 역 앞 광장의 넓은 전경/);
   assert.match(
     registry,
     /id: "beijing-zhangjiajie-shanghai-transport",[\s\S]*?heroImagePath:[\s\S]*?zhangjiajie-west-1600\.jpg/,

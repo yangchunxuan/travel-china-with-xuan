@@ -228,6 +228,37 @@ const body: StructuredPageBody = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Passport-loss questions travellers ask",
+      items: [
+        {
+          question: "Can I leave China using a photocopy of my lost passport?",
+          answer: "No. A photocopy cannot replace a lost passport, but it can help prove identity. The recovery order is: report the loss and obtain the document the local public-security exit-entry authority requires; apply to your own embassy or consulate for a new passport or temporary travel document; then return to the exit-entry authority for the visa, stay, residence or exit document required before departure. Start now, even if the flight is several days away.",
+        },
+        {
+          question: "I lost my passport in Beijing. Where do I report it first?",
+          answer: "The local police station. Beijing's official instructions require an incident report from it before you apply for the city's confirmation of loss, and that page explicitly applies only in Beijing. Elsewhere, ask the local exit-entry office or the China Immigration Service Hotline on 12367 which office takes the first report where the loss occurred or where you are staying. Do not copy Beijing's address or photo size into another city.",
+        },
+        {
+          question: "Does a new passport bring back my Chinese visa?",
+          answer: "No, not automatically. The new passport or temporary travel document does not recreate the Chinese visa or residence status printed in the lost passport. NIA instructions require a foreigner with a replacement document to apply to the competent local public-security exit-entry authority for visa renewal or reissuance. A lost stay permit or residence permit has its own reissuance route.",
+        },
+        {
+          question: "How long does the China-side application take?",
+          answer: "Seven working days for a visa or stay permit, and 15 working days for a residence permit. NIA publishes those as decision times after acceptance, so the clock starts when the application is accepted, not when the passport disappeared. An applicant with justified reasons may request a shorter examination period, but convenience is case-specific, so bring proof of the departure or emergency.",
+        },
+        {
+          question: "My flight is in two days. Who should I contact first?",
+          answer: "Call the local exit-entry authority or 12367 and your own embassy now, then the operating airline. Give the exact departure time, route and transit points, and ask each one what can realistically be issued in that window. Obtain written booking-change terms before cancelling anything. An embassy emergency document alone does not show the China-side chain is complete, and an airline's willingness to check you in is not border approval.",
+        },
+        {
+          question: "I found my passport after reporting it lost. Can I still use it?",
+          answer: "Do not use it until you have told both the issuing mission and the local exit-entry authority. A reported-lost document does not remain valid merely because it is back in your hand. Your own embassy decides which national travel document it can issue and border inspection decides departure, so get that answer before you travel to the airport.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the recovery",

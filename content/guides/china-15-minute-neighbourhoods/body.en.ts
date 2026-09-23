@@ -231,6 +231,37 @@ const body = {
       tone: "neutral"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before the walk",
+      items: [
+        {
+          question: "Does a 15-minute neighbourhood mean everything is within a 15-minute walk?",
+          answer: "No. It is a planning and service-organisation idea, and it does not mean every resident reaches every need in exactly 15 minutes. One official framework concentrates everyday commerce and convenience services near residents; the broader community life circle also covers education, health, care, culture, parks and employment. Use it to read ordinary city life, but test the real route, hours and public access yourself.",
+        },
+        {
+          question: "Has China finished building these across the whole country?",
+          answer: "No. National plans use pilots, assessment and staged expansion. The 2023 plan addressed eligible prefecture-level cities and called for one circle, one policy, and a July 2026 notice still placed pilot batches at different stages, setting 10,000 circles during 2026 as a target rather than an achieved count. It favoured gradual improvements over one-size-fits-all redevelopment.",
+        },
+        {
+          question: "Is there a specific neighbourhood I can go and look at?",
+          answer: "Three named examples are Caoyang in Shanghai, Minzhu Village in Chongqing and Wenhua Community in Xiong'an. Treat them as examples, not national templates. Caoyang is a mature neighbourhood combining public-space renewal, age-group services and a local digital map; Minzhu Village used micro-renovation; Wenhua was planned from the start with education, health, culture, care and daily commerce.",
+        },
+        {
+          question: "Is it rude to walk around a residential neighbourhood as a visitor?",
+          answer: "Not if you stay in public space. Start at a public anchor such as a metro exit, park, ordinary street or market entrance rather than trying to enter a residents' compound. Photograph buildings or public signs only where permitted, avoid identifiable residents, especially children and care recipients, and stop when ordinary observation has answered your question.",
+        },
+        {
+          question: "Can a visitor eat at a community canteen?",
+          answer: "Do not assume you can. A community canteen may not be open to the public or offer visitor prices, so the question to ask is whether a non-resident can eat there at the ordinary price. Street shops and public markets are different: use them as an ordinary customer if they are open and the entrance and payment method work.",
+        },
+        {
+          question: "What if I use a wheelchair or I am walking with an older relative?",
+          answer: "Measure the route, not the radius. Research on Chinese cities finds that access differs between central and suburban areas, between cities and between groups, so what matters is a continuously usable path and how long this particular person needs. Slopes, kerbs and detoured crossings can break a walk that looks short on a map; verify shorter step-free public segments and keep ordinary nearby shops as the fallback.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Connect the neighbourhood walk to practical planning",

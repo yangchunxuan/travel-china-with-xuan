@@ -12,6 +12,7 @@ import {
 } from "../../lib/inquiryContract.ts";
 import {
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySubmissionContext,
   getPrivateTourInquirySelection,
   privateTourInquirySelectionLabel,
   privateTourInquirySlugs,
@@ -52,8 +53,9 @@ test("intake preserves every allowed tour selection in every locale and its sema
           const result = validateAndNormalizeInquiry(payload(context, locale), config);
           assert.equal(result.ok, Boolean(selection), `${locale}:${slug}:${packageId}:${travelers}`);
           if (result.ok) {
-            assert.deepEqual(result.value.productInterest, context);
-            assert.deepEqual(semanticInquiryPayload(result.value).productInterest, context);
+            const submitted = getPrivateTourInquirySubmissionContext(context, locale);
+            assert.deepEqual(result.value.productInterest, submitted);
+            assert.deepEqual(semanticInquiryPayload(result.value).productInterest, submitted);
           }
         }
       }
@@ -109,12 +111,13 @@ test("legacy email-only and identity-only payloads retain their original semanti
   }
 });
 
-test("new migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
+test("deployed migration keeps wire names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8");
   for (const slug of privateTourInquirySlugs) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
-      const name = getPrivateTourInquiryContext(slug, locale).name.replaceAll("'", "''");
+      const context = getPrivateTourInquiryContext(slug, locale);
+      const name = getPrivateTourInquirySubmissionContext(context, locale).name.replaceAll("'", "''");
       assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
     }
   }
@@ -218,6 +221,20 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
     assert.equal((await intake(request(payload({ ...selected, selection: { ...selected.selection, price: 1 } }), randomUUID()))).status, 422);
     assert.equal(persistenceCalls, beforeInvalid);
 
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const displayed = getPrivateTourInquiryContext(slug, "ko");
+      const submitted = getPrivateTourInquirySubmissionContext(displayed, "ko");
+      const sameKey = randomUUID();
+      assert.equal((await intake(request(payload(submitted, "ko"), sameKey))).status, 201);
+      assert.deepEqual(attribution, { productInterest: submitted });
+      assert.equal((await intake(request(payload(displayed, "ko"), sameKey))).status, 200);
+      assert.deepEqual(attribution, { productInterest: submitted });
+    }
+
     await import(new URL(`../functions/notify-inquiries/index.ts?selection=${Date.now()}`, import.meta.url));
     const worker = handler;
     const baseJob = {
@@ -246,6 +263,17 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       currentJob = { ...baseJob, answers: { informationStatus: "not_provided", ...(context ? { productInterest: context } : {}) } };
       assert.equal((await (await runWorker()).json()).accepted, 1);
       assert.doesNotMatch(messages.at(-1).text, /Tour selection/);
+    }
+    for (const slug of [
+      "zhangjiajie-forest-4-day-private-tour",
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangjiajie-4-day-private-tour",
+    ]) {
+      const displayed = getPrivateTourInquiryContext(slug, "ko");
+      for (const context of [getPrivateTourInquirySubmissionContext(displayed, "ko"), displayed]) {
+        currentJob = { ...baseJob, locale: "ko", answers: { informationStatus: "not_provided", productInterest: context } };
+        assert.equal((await (await runWorker()).json()).accepted, 1, `${slug}:${context.name}`);
+      }
     }
     const beforeInvalidJob = messages.length;
     currentJob = { ...baseJob, answers: { informationStatus: "not_provided", productInterest: { ...selected, selection: { ...selected.selection, price: 1 } } } };

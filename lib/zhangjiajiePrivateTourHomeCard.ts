@@ -36,12 +36,12 @@ const cards = {
   ko: {
     id: "zhangjiajie-4-day-private-tour",
     canonicalPath: "/ko/tours/zhangjiajie-4-day-private-tour/",
-    headline: "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+    headline: "장가계 4일 3박: 사암 봉우리와 유리다리, 천문산",
     featuredLinkLabel: "4일 3박 프라이빗 일정 보기",
     cardImagePath:
       "/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg",
     cardImageAlt:
-      "햇살이 비치는 장자제 국가삼림공원의 사암 봉우리와 숲이 우거진 깊은 계곡.",
+      "햇살이 비치는 장가계 국가삼림공원의 사암 봉우리와 숲이 우거진 깊은 계곡.",
     cardImageWidth: 1920,
     cardImageHeight: 1280,
     dateModified,

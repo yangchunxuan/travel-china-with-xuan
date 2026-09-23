@@ -235,6 +235,37 @@ const body = {
       text: "Share your travel dates, number of travellers, planned cities and rough nightly budget. A Homeground planner can help compare the areas and transport fit, especially when children, older travellers or a tight arrival day make the last mile important.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking",
+      items: [
+        {
+          question: "How close to the metro should my hotel actually be?",
+          answer: "Five to ten minutes on foot, measured from the hotel lobby to the entrance you will actually use on a current walking route rather than taken from the listing. Under five minutes is especially valuable with children, older travellers, heavy luggage or several metro trips a day. Ten to fifteen minutes can still be sensible for a better direct line, a more walkable evening area or a much better room.",
+        },
+        {
+          question: "We land late at night — is a hotel beside the metro enough?",
+          answer: "Only if the transport actually runs at your hour. A late arrival or an early departure is decided by metro operating hours, luggage and the final walk, so look for a staffed arrival plan and transport that operates at that exact time rather than assuming daytime metro convenience solves the airport or railway transfer. Recheck any listing that promises airport metro access without naming the line and operating window.",
+        },
+        {
+          question: "The hotel page says “300 m from X Station”. Can I trust that?",
+          answer: "Not on its own. The distance may point to the station centre or to a different side of the road, so find a current walking route from the lobby to a named entrance yourself. Start the clock at the hotel lobby, not the edge of the property, and stop at the street entrance you plan to use, not the station name or the platform.",
+        },
+        {
+          question: "The station has a lift — is that enough for a wheelchair or a stroller?",
+          answer: "No. Beijing MTR’s current Xidan station page lists several entrance groups but identifies the street elevator at Entrance J1, and Guangzhou Metro’s official accessibility guide records ground-to-concourse access by specific exit, which varies by station. Verify all three links: street to concourse, concourse to platform, and the walk between the hotel and that street entrance.",
+        },
+        {
+          question: "Are two metro lines nearby better than one?",
+          answer: "Not automatically. Two unhelpful lines do not beat one direct useful line, so check the line and transfer sequence for the days you will actually travel. A very close station that needs a transfer for every major sight accumulates repeated stairs, platforms and crowding, and a slightly longer flat walk to the right line often beats it.",
+        },
+        {
+          question: "Can I take a very large suitcase on the metro?",
+          answer: "Only within that city’s own limits. Check the current operator rule for the city you are in, and do not copy one city’s metro baggage rule to another. Shanghai, for example, publishes specific size and weight limits in guidance updated on 3 July 2026. If you carry very large cases, sports equipment or several bags, keep a road-transfer fallback.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning",

@@ -283,7 +283,7 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   const ko = localizePrivateTourProduct(product, "ko");
   assert.equal(ko.packages[0].label, "한국어 가이드 포함 고정 코스");
   assert.match(ko.metadataDescription, /한국어 가이드/);
-  assert.match(ko.metadataDescription, /유리다리·톈먼산 불포함/);
+  assert.match(ko.metadataDescription, /유리다리·천문산 불포함/);
   assert.match(ko.summary, /D2 종일과 D3 주간 한국어 가이드/);
   assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
   assert.doesNotMatch(ko.summary, /영어 가이드/);

@@ -34,6 +34,7 @@ import { homegroundBusiness } from "../lib/homegroundBusiness";
 import {
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContextFromSearchParams,
+  getPrivateTourInquirySubmissionContext,
   privateTourInquiryContactCopy,
   privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
@@ -262,11 +263,7 @@ export function HomepageQuickContact({
     },
     privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
     productInterest: privateTourInterest
-      ? {
-          slug: privateTourInterest.slug,
-          name: privateTourInterest.name,
-          ...(privateTourInterest.selection ? { selection: privateTourInterest.selection } : {}),
-        }
+      ? getPrivateTourInquirySubmissionContext(privateTourInterest, locale)
       : null,
     attribution: {
       landingPath: inquirySubmitSurfaceByLocale[locale],

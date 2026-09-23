@@ -265,6 +265,37 @@ const body = {
       body: "Send your dates, traveller count and rough budget. A human planner can check whether a legitimate public observation point fits the route without promising access to an operating or protected zone."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about dryland projects",
+      items: [
+        {
+          question: "Can I visit a straw checkerboard site or a desert solar farm as a tourist?",
+          answer: "Only through an operator or local authority's designated visitor route. A power field, protection belt or research plot is not a public attraction, and a fence, gate, warning sign or staff instruction ends the visit. Do not stop on a highway shoulder, cross a railway boundary, fly a drone, climb a dune control grid or assume that a distant view authorizes access.",
+        },
+        {
+          question: "What do the straw squares in the desert actually do?",
+          answer: "Partly buried straw forms cells that roughen the surface, disrupt near-ground airflow and encourage moving sand to settle. Sand stabilization comes first; vegetation recovery is separate and slower. Size, height, slope, wind, material decay and repairs all change the result, so read a grid as sand-control work rather than as proof that the surrounding land has recovered.",
+        },
+        {
+          question: "Do solar panels in the desert restore the land?",
+          answer: "Not by themselves. China's 2024 energy and forestry notice requires photovoltaic desert-control projects to plan control work, manage and inspect facilities, recycle production water and protect necessary ecological water, treating power generation and sand control as coupled tasks. Shade, reduced wind and redistributed rain may help vegetation, while grading, roads, compaction and cleaning water create other effects.",
+        },
+        {
+          question: "Does a greener desert mean the restoration is working?",
+          answer: "No. Greener is not automatically healthier. A peer-reviewed synthesis of China's drylands finds that conservation and restoration can deliver benefits while afforestation can also impose substantial water pressure, and the national plan likewise uses water-resource capacity to separate priorities. Read species, density and water source together; do not score a project by canopy cover alone.",
+        },
+        {
+          question: "Why are there rows of trees and shrubs along desert roads and farmland?",
+          answer: "To protect a defined edge or asset. A farm network, oasis margin, transport corridor and natural-desert boundary each need a different belt layout, so judge a shelterbelt by what lies downwind. Then ask which plants and how dense, since locally adapted grasses and shrubs may fit a dry site better than tall trees, where the water comes from, and what persists after establishment.",
+        },
+        {
+          question: "Can I see the straw checkerboards at Shapotou?",
+          answer: "From marked public viewpoints only. On a legal public visit to the Shapotou visitor area, those viewpoints connect the checkerboards with the history of protecting the Baotou-Lanzhou railway and separate mechanical stabilization from later vegetation and crust development. If a route approaches railway land, a reserve boundary or a research plot, turn back and use the public interpretation centre or official display.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue exploring",

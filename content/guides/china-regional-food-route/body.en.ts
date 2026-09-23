@@ -220,6 +220,37 @@ const body = {
       body: "Send your dates, travellers, gateways, dietary limits and approximate budget. Homeground can identify duplicated roles, transfer-heavy detours and experiences needing a confirmed fallback."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about planning a food route",
+      items: [
+        {
+          question: "How many regions should a China food route cover?",
+          answer: "Two or three connected regions, each with a different job, perhaps a social breakfast, seasonal market, cooking-technique contrast or shared evening meal. Then test whether the transport direction leaves real meal windows. Every important role needs a same-region substitute; if one closure breaks the route, it is a restaurant list, not a resilient food journey.",
+        },
+        {
+          question: "Should I reserve every meal in advance?",
+          answer: "Reserve only the scarce core experiences and leave ordinary meals flexible. When every meal is a reservation, delays and appetite changes have nowhere to go. Before committing, check that no non-refundable restaurant booking is carrying more risk than the experience is worth, and that every core experience still has a same-region substitute.",
+        },
+        {
+          question: "Can I plan a food experience on a transfer day?",
+          answer: "Only after counting the movement. A timetable shows that two cities connect, not that the move creates a useful food day, so count hotel exit, terminal access, security, waiting, travel, new-hotel access and recovery. A lunchtime arrival may miss a market's active morning; a late train may remove dinner.",
+        },
+        {
+          question: "Is it worth taking a separate flight for one famous meal?",
+          answer: "Not on that argument alone. A separate flight for one meal costs airport access, security, baggage and disruption exposure, so the region needs a broader role or the detour comes out. Cut a stop whose only argument is one famous restaurant, that repeats an existing role, or that consumes the very meal the detour was meant to create.",
+        },
+        {
+          question: "The famous place I wanted is closed. What do I do?",
+          answer: "Replace the role, not the postcode. If a famous breakfast venue closes, look for the same morning format nearby; otherwise keep the regional chapter through a market, tea session or ordinary local breakfast. Do not cross, or add, another city to preserve a restaurant name. The cultural purpose can survive the original pin.",
+        },
+        {
+          question: "Can a food route be made safe for a severe food allergy?",
+          answer: "No route can guarantee an allergen-safe kitchen. State Administration for Market Regulation guidance advises people with food allergies to read packaged labels, ask when uncertain and explain needs when dining out; that reduces uncertainty but does not prove a kitchen prevents cross-contact. For a severe allergy, seek direct confirmation, carry prescribed emergency medication and leave when answers are unclear.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Continue planning",

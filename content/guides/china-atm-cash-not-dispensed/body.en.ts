@@ -165,6 +165,37 @@ const body: StructuredPageBody = {
       tone: "neutral",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about a failed ATM withdrawal",
+      items: [
+        {
+          question: "The ATM gave no cash but my app shows a withdrawal. Should I try again?",
+          answer: "No. A second attempt can create another authorization or debit and make the evidence harder to separate. Let the transaction finish, read the final screen, keep the printed receipt even if it says declined, and photograph the ATM bank name, machine or terminal number, branch or venue, and the on-screen error when safe.",
+        },
+        {
+          question: "Who do I call first, the ATM's bank or my own bank?",
+          answer: "The ATM-owning bank first, through a verified official number, asking it to log the incident so you obtain an incident reference. Then ask your card issuer whether the entry is pending or posted and open the correct cash-not-received dispute. Keep both case numbers; neither an alert nor a machine report settles the outcome on its own.",
+        },
+        {
+          question: "The machine kept my card as well. What do I report?",
+          answer: "Report the retained card to the ATM bank and tell your issuer the card is no longer in your possession. Follow the issuer's lock or replacement guidance, and never accept a stranger's offer to retrieve it. Keep this separate from the cash-not-received case so the two records stay distinguishable.",
+        },
+        {
+          question: "Only part of the cash came out. What amount do I claim?",
+          answer: "State the requested, received and missing amounts separately; Visa and Mastercard materials recognise partial-cash problems. Count once in private, retain the notes and receipt, and dispute only the missing amount unless the issuer directs otherwise. List any later attempt as its own time, amount and reference rather than merging them into one number.",
+        },
+        {
+          question: "How do I get cash while the case is open?",
+          answer: "Use a mobile-payment method you already set up and tested, rather than configuring a sensitive account over an unknown network during the incident. If cash is essential, record the failure first, then choose a staffed bank or a clearly supported different ATM. Foreign cash can be exchanged at a commercial bank, qualified exchange counter or self-service machine showing the official Exchange sign; accepted currencies and hours vary.",
+        },
+        {
+          question: "How long will it take to get the money back?",
+          answer: "No date or outcome can be stated here. Official materials were reviewed on 13 August 2026, and pending or posted status, partial cash, issuer, network, product, ATM records, country of issue and law all change the route. Complaint rules describe complaint handling rather than a cash-return date, so follow the issuer's live deadline and evidence instructions.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Keep the rest of the payment plan working",

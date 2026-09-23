@@ -158,6 +158,37 @@ const body = {
       tone: "warning"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking a long-song performance",
+      items: [
+        {
+          question: "How do I know a performance really includes long song?",
+          answer: "Find the exact words 长调, 长调民歌 or Urtiin Duu on the organizer's own programme page, together with at least the singer or one song title. If only 马头琴 (Morin Khuur) appears, you have confirmed an instrument, not long song. If no title is published, ask whether a long-song item is definitely in that performance.",
+        },
+        {
+          question: "Is Mongolian throat singing the same as long song?",
+          answer: "No. Khoomei is a separate vocal practice in which overtone effects are central; it may share a concert with long song, but an overtone passage does not prove that the item is Urtiin Duu. Short song (Bogino Duu) is another major named form — its more compact melodic and textual movement is not a shortened long song.",
+        },
+        {
+          question: "Is Qian Gu Ma Song a long-song concert?",
+          answer: "It is a variety production, not a recital. Inner Mongolia Art Theatre describes Qian Gu Ma Song (《千古马颂》) as a panoramic production combining horsemanship, Mongolian song, dance, music, acrobatics and stage technology. That first-party description establishes a mixed production; treat a long-song segment as an introduction only when the programme for your exact performance names it.",
+        },
+        {
+          question: "I do not read Mongolian — do I need translated lyrics?",
+          answer: "Only if you need it. Translated lyrics can help, but long song can be followed through breath, contour and ornament without a full surtitled text. Where no translation is offered, follow phrase length, register, ornament, pauses and accompaniment, then look for an official text afterward rather than relying on auto-captioning of Mongolian lyrics.",
+        },
+        {
+          question: "What should I listen for in the first long phrase?",
+          answer: "Sustained breath, melodic expansion and the ornamental turns often called 诺古拉 in Chinese. Before the first phrase, note the song title, the singer and the regional context; in the middle, listen for changes of register, tension and release, and for the relationship with Morin Khuur if one is playing. Do not conclude that every ornament follows one national template.",
+        },
+        {
+          question: "The advertised singer has been replaced — what should I do?",
+          answer: "Ask for the revised running order and decide whether the remaining programme still meets your purpose. If the event is cancelled, use the official theatre or cultural-agency calendar to find another named event and avoid an unverified reseller's replacement promise. The day before travel, recheck date, venue, start time, seat, refund terms and any real-name ticket rule.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Plan other live cultural encounters",

@@ -135,7 +135,7 @@ const manifest = {
       contentId: "guide-zhangjiajie-base",
       locale: "ko",
       title: "장자제 숙소 거점",
-      h1: "장자제 시내와 우링위안 중 어디에 머물까",
+      h1: "장자제 시내와 무릉원 중 어디에 머물까",
       description: "공원 입장 시간과 이동을 기준으로 숙소를 고릅니다.",
       entityIds: ["city-zhangjiajie"],
       section: "stay",

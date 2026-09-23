@@ -270,6 +270,37 @@ const body = {
       body: "Leave your travel dates, number of travellers and approximate budget, plus the cities you are considering. A planner can help identify the holiday-sensitive transfers and buffers without pretending that future inventory is guaranteed.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about China's holiday calendar",
+      items: [
+        {
+          question: "When is Chinese New Year 2026 and how many days off are there?",
+          answer: "February 15 to 23, nine days off in the official 2026 arrangement. The same State Council notice designates Saturday, February 14 and Saturday, February 28 as compensatory workdays, which are weekend days moved into the working week rather than extra holiday. Qingming, Dragon Boat and Mid-Autumn each get three days, Labour Day five and National Day seven.",
+        },
+        {
+          question: "Can I book around the 2027 Chinese holiday dates yet?",
+          answer: "Only the statutory dates. Reviewed 18 September 2026, the 2027 statutory holidays are fixed by the amended National Holidays Regulation, including Spring Festival February 5 to 8 and National Day October 1 to 3, but the State Council's bridged days off and compensatory workdays had not been published. Treat every 2027 long weekend as unconfirmed.",
+        },
+        {
+          question: "How far ahead can I buy China train tickets for a holiday trip?",
+          answer: "Fifteen days, counting the travel date itself, under China Railway's current standing rule, which also says the railway may adjust that period with an announcement. Count back from the actual journey date rather than the booking date, confirm the release details in official 12306 and prepare acceptable alternatives. This page does not read live inventory.",
+        },
+        {
+          question: "Is the Palace Museum open during the Spring Festival holiday?",
+          answer: "It depends on the date and that year's notice. The Palace Museum's 2026 Spring Festival notice closed the museum on February 16 but listed opening arrangements for the other holiday dates, while its Labour Day notice opened May 1 to 5 with stated hours. One venue issued two date-specific rules, so read that venue's own notice for your dates.",
+        },
+        {
+          question: "Do hotels cost more during Labour Day and National Day?",
+          answer: "The calendar cannot tell you that. Five days at Labour Day and seven at National Day make long leisure trips structurally easier, so a multi-city visitor should expect fewer comfortable alternatives on popular dates. That does not support a universal hotel markup, or a promise that the day after a holiday will be quiet. Location, route, room type, cancellation rule and local events still matter.",
+        },
+        {
+          question: "Should I avoid the whole 40-day Spring Festival travel season?",
+          answer: "No. China's national 2026 Spring Festival transport period ran from February 2 to March 13, much longer than the February 15 to 23 public holiday, because family-reunion journeys spread around the official break. It is evidence to widen the dates you check for long-distance travel, not a claim that every route is equally busy for 40 days.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Continue planning",

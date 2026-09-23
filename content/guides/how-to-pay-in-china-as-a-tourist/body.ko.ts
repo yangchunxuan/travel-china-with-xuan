@@ -451,12 +451,12 @@ const body: StructuredPageBody = {
           description: "현재 영문으로 제공되는 종합 안내입니다. 입국 자격과 결제 준비를 별도로 확인하세요.",
         },
         {
-          label: "말레이시아에서 장자제로: 입국 관문, 숙박 지역과 지원 선택",
+          label: "말레이시아에서 장가계로: 입국 관문, 숙박 지역과 지원 선택",
           href: "/ko/guides/zhangjiajie-from-malaysia/",
           description: "결제, 휴대전화 데이터와 백업을 다루는 목적지별 출발 전 안내가 있습니다.",
         },
         {
-          label: "베이징·장자제·상하이 교통 계획",
+          label: "베이징·장가계·상하이 교통 계획",
           href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",
           description: "교통 결제 방식은 실제 티켓과 역을 정한 뒤 한 번 더 확인하세요.",
         },

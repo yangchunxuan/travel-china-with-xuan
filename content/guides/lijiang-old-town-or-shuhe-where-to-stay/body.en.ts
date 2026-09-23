@@ -280,6 +280,37 @@ export default {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before booking a Lijiang base",
+      items: [
+        {
+          question: "Should I stay in Lijiang Old Town (Dayan) or Shuhe?",
+          answer: "Choose Dayan Old Town if this is a short first stay and you want Lijiang's main historic centre, central-city access and a wider choice of evening activity within one base. Choose Shuhe if you deliberately want a smaller historic cluster on the north-west side of town and do not mind making a separate trip to Dayan. Book the address, not the label.",
+        },
+        {
+          question: "Is Shuhe part of the Lijiang Old Town World Heritage site?",
+          answer: "Yes. The formal UNESCO property called the Old Town of Lijiang is wider than the Dayan centre that booking sites usually mean: it comprises Dayan Old Town, including Black Dragon Pond, plus the Baisha and Shuhe housing clusters. Shuhe is a separate component of the same serial property, so a hotel marketed simply as being in the World Heritage old town is not necessarily in Dayan.",
+        },
+        {
+          question: "Can a car drop me at my hotel inside Dayan Old Town?",
+          answer: "Usually not. Provincial heritage rules restrict ordinary motor vehicles inside Dayan unless approved, so a hotel can look central on a map yet require luggage to cross stone lanes, bridges, slopes or steps. Ask for the exact legal drop-off point and walking route before choosing an atmospheric interior address.",
+        },
+        {
+          question: "Is Shuhe quieter than Dayan?",
+          answer: "No base is reliably quiet, and conditions vary by street, room and date. Recent local-government material describes traffic management, organised bus and taxi drop-offs, visitor services and extensive commercial activity in Shuhe, so it is a functioning tourism district rather than an undiscovered one. Ask the hotel what happens outside the exact room between 20:00 and midnight.",
+        },
+        {
+          question: "Which base is better for Lijiang airport and the railway station?",
+          answer: "Neither is uniquely convenient. A 2026 summer-flight-season update says the airport express added both Lijiang Old Town North Gate (Dayan) and Shuhe Ancient Town pickup points, and a 2024 provincial transport article listed three station-to-Shuhe routes. These are dated records, so match the hotel entrance to a current stop rather than relying on an old route number.",
+        },
+        {
+          question: "Do I need a ticket to enter Lijiang Old Town?",
+          answer: "No town-wide rule can be quoted here. Dayan and Shuhe are historic settlement areas rather than two museums with one shared opening schedule, so this guide publishes no single permanent town-wide ticket, reservation or closing-time rule. Individual courtyards, museums, performances, events, transport services and any applicable heritage-fee arrangements follow separate rules, so check the official Lijiang Old Town channel and the named venue shortly before travel.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Keep planning your China trip",

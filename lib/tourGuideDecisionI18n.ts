@@ -1125,7 +1125,7 @@ const ko: TourGuideDecisionCopy = {
     title: "다음 선택도 함께 확인하세요",
     items: [
       {
-        title: "베이징–장자제–상하이: 기차와 비행기 중 무엇이 나을까?",
+        title: "베이징–장가계–상하이: 기차와 비행기 중 무엇이 나을까?",
         description:
           "두 구간의 실제 출발지부터 목적지까지 걸리는 시간을 비교한 뒤 이동을 중심으로 일정을 정하세요.",
         href: "/ko/guides/beijing-zhangjiajie-shanghai-transport/",

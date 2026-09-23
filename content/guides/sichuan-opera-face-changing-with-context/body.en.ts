@@ -129,6 +129,37 @@ const body = {
       body: "Send Homeground your date, city, language needs and tolerance for a longer theatre evening. A human planner can verify a first-party listing without promising that one spectacular act represents the whole form. Programmes, casts, times, language support, ticket terms and photography rules were reviewed on 13 August 2026 and must be rechecked for the performance date.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before a Sichuan opera night",
+      items: [
+        {
+          question: "Is face-changing the same thing as Sichuan opera?",
+          answer: "No. Bianlian is one special technique inside a larger performance vocabulary, and its dramatic value depends on the character and scene rather than the number of changes. A useful first performance lets you notice how an actor speaks, sings, moves and builds a character, with or without rapid mask changes.",
+        },
+        {
+          question: "Will every Sichuan opera performance include face-changing?",
+          answer: "Not necessarily. In a full play or substantial production face-changing may not appear, and if you are willing to prepare for a theatre evening the strongest choice may not include it either. A visitor-oriented mixed programme combines short opera scenes or techniques with music, puppetry, acrobatics or other acts, so check the current running order.",
+        },
+        {
+          question: "There are no English surtitles — will I follow anything?",
+          answer: "Yes, with a little preparation. Request a Chinese programme or permitted synopsis and identify the character names and the basic conflict before switching the screen off; machine translation is orientation, not an authoritative script. Spoken delivery carries plot and social position, singing shapes a character's emotional turn, and percussion marks entrances, movement, tension and comic timing.",
+        },
+        {
+          question: "Is a visitor-oriented show less authentic than a theatre production?",
+          answer: "These are formats, not authenticity rankings. Skilled performers may work in more than one, and a tourism setting does not prove a lack of training; equally, ornate décor and an 'authentic face-changing' label do not identify a work. What a mixed programme cannot do is serve as evidence that you have seen a complete Sichuan opera.",
+        },
+        {
+          question: "What if the advertised face-changing act is removed on the night?",
+          answer: "Ask whether the change was announced and whether the seller's stated exchange or refund terms apply. If you stay, follow one named excerpt closely instead. A programme change does not discredit the other performers or the form, and live substitution is normal, which is why the running order is worth checking at the entrance.",
+        },
+        {
+          question: "Can I film the face-changing act?",
+          answer: "Only where the venue and the performers allow it. Follow their rules; other audience members filming do not create permission, and an authorized programme or approved media link is a safer source of images. This guide does not explain guarded mechanics or invite frame-by-frame filming of the technique.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue reading live performance in context",

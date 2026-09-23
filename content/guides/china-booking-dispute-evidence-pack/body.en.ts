@@ -205,6 +205,37 @@ const body: StructuredPageBody = {
       ],
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about a booking dispute",
+      items: [
+        {
+          question: "The venue cannot find my booking. What do I do first?",
+          answer: "Stop retrying payment, cancellation or rebooking until you know whether the first action is pending, complete or failed, because a second attempt can create another booking or charge. Then capture the full order page - URL or app route, seller and supplier names, order status, product, date, traveller count, amount, currency and the device time - and save the listing with its refund, change, no-show and delivery terms.",
+        },
+        {
+          question: "Should I complain to the booking platform or to my bank?",
+          answer: "Both, as two separate channels. Booking performance goes to the seller or supplier and then the platform case system, while the money side goes to the wallet or payment institution for its own transaction, or to the issuing bank for an overseas card. Update both if a merchant refund arrives later. This does not mean copying one complaint to several regulators at once.",
+        },
+        {
+          question: "Can I just tell my bank the charge was unauthorised?",
+          answer: "Not when you authorised the purchase yourself. Describe it accurately as an authorised service dispute, because calling one fraud for leverage is listed among the things to avoid. If the issuer asks for more, send the indexed contract, the non-delivery evidence, the merchant contact record and the amount requested.",
+        },
+        {
+          question: "The seller says it refunded me but nothing has arrived.",
+          answer: "Save the cancellation, approved amount, refund date and refund reference, then check whether the original transaction and the refund are pending or posted. Give the payment provider the merchant and refund reference, not just a seller screenshot. Do not assume an arrival date; posting depends on the route and the account provider.",
+        },
+        {
+          question: "Can I just file with 12315 and get my money back?",
+          answer: "No - regulatory intake is not an instant refund mechanism. Current SAMR rules require a real complainant, identifiable respondent, specific request and factual basis, and PBOC consumer-protection rules similarly require identity, contact details, a clear institution, request and reasons. Both have jurisdiction and prior-proceeding limits, and intake, transfer or mediation periods are procedural.",
+        },
+        {
+          question: "How much personal information should I send with the complaint?",
+          answer: "Only what the recipient needs. Never share a PIN, CVV, password, one-time code, wallet recovery phrase or full card image, even with someone claiming to process a refund. Cover full passport and card numbers, birth date, address, phone, email, QR or barcode, precise itinerary and unrelated companion data in ordinary case copies.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Prepare the surrounding booking and payment setup",

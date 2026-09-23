@@ -223,15 +223,15 @@ test("five city stay owners keep locale parity, links and factual review dates",
       reviewed: "2026-08-12",
     },
     "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": {
-      modified: "2026-08-21",
+      modified: "2026-09-22",
       reviewed: "2026-08-12",
     },
     "shenzhen-where-to-stay-futian-luohu-nanshan": {
-      modified: "2026-08-21",
+      modified: "2026-09-22",
       reviewed: "2026-08-13",
     },
     "zhangjiajie-city-or-wulingyuan-hotel-base": {
-      modified: "2026-08-21",
+      modified: "2026-09-22",
       reviewed: "2026-08-13",
     },
   };
@@ -263,9 +263,9 @@ test("nationwide owners preserve complete versus partial source reviews", async 
   const lastNight = JSON.parse(await read("content/guides/china-last-night-before-international-flight/metadata.json"));
   const lastNightLog = await read("content/guides/china-last-night-before-international-flight/source-log.md");
 
-  assert.deepEqual([foreigners.dateModified, foreigners.sourceReviewedDate], ["2026-08-21", "2026-08-20"]);
-  assert.deepEqual([accessible.dateModified, accessible.sourceReviewedDate], ["2026-08-21", "2026-08-20"]);
-  assert.deepEqual([lastNight.dateModified, lastNight.sourceReviewedDate], ["2026-08-21", "2026-08-11"]);
+  assert.deepEqual([foreigners.dateModified, foreigners.sourceReviewedDate], ["2026-09-22", "2026-08-20"]);
+  assert.deepEqual([accessible.dateModified, accessible.sourceReviewedDate], ["2026-09-22", "2026-08-20"]);
+  assert.deepEqual([lastNight.dateModified, lastNight.sourceReviewedDate], ["2026-09-22", "2026-08-11"]);
   assert.match(lastNightLog, /not a page-complete factual re-review/u);
 });
 

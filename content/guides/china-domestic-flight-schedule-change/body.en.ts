@@ -490,6 +490,37 @@ const body: StructuredPageBody = {
       body: "One task: deciding what to do when a China domestic flight you already hold changes, delays, cancels, strands you en route or breaks a connection — who handles what, evidence, hotels versus rail, and escalation. It does not compare fares before purchase, judge whether separate tickets are worth buying, plan ordinary transfers, handle lost baggage, cover international-flight regimes, rank airlines or predict punctuality.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about fees, windows and escalation",
+      items: [
+        {
+          question: "My flight was cancelled — can I just tap the refund button in the app?",
+          answer: "Not yet. Check how the change is coded first. Coded involuntary, it triggers fee-free changes and refunds under the carrier's conditions, and regulations add that involuntary refunds carry no refund fee at all. Coded voluntary, your fare's own rules apply and fees follow. Ask the app, hotline or counter to confirm in writing that your case is processed as involuntary.",
+        },
+        {
+          question: "My refund was approved but the money has not arrived — how long should it take?",
+          answer: "Regulations require a valid refund application to be processed within seven working days, excluding the financial institution's own processing time. Record when you filed and what was promised, and chase the issuer's written status. Trip.com's general guide separately gives a seven-to-fifteen-business-day card-refund range; treat that as a reference, not a second clock to add mechanically to the regulatory period.",
+        },
+        {
+          question: "Can I be rebooked onto a flight a few days later without a fee?",
+          answer: "It depends on the carrier's published window. China Eastern normally uses three days on either side of the original flight; China Southern normally uses seven days on either side for domestic flights. Both state that when their window holds no seat, the change to their own nearest available flight is still free. Air China grants one free involuntary change without publishing a day window, so ask staff which rule applies.",
+        },
+        {
+          question: "Should I give up on the flight and take the high-speed train instead?",
+          answer: "There is no universal under-N-hours rule that says take the train. Compare complete alternatives door to door, with your bags and your next commitment attached: new flight departure plus airport transfers versus train plus city-centre station, seats that exist now on 12306, distance to the station, whether the fee-free involuntary refund has been confirmed, and the last usable connection tonight.",
+        },
+        {
+          question: "How long can the airline keep us waiting on board?",
+          answer: "Tarmac-delay duties start once passengers wait onboard beyond the aircraft taxiing time limits published by the airport, not when the doors close. From that point the crew must update passengers roughly every 30 minutes, provide food and water when the hold reaches two hours, and arrange disembarkation at three hours with no definite take-off time and safety permitting.",
+        },
+        {
+          question: "The airline and the agency are both stalling — where do I complain?",
+          answer: "Escalate to CAAC's Consumer Affairs Center via www.12326.cn or hotline 12326. Real name is required, within six months of the event, with a specific request. Acceptance is decided within seven working days, and respondents post results within ten working days of referral. If unsatisfied, request mediation within ten working days; it completes within twenty.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Related planning guides",

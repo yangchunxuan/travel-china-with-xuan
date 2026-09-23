@@ -564,7 +564,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     areas: [
       { where: "베이징 · 상하이 · 충칭", open: "직할시 전역" },
       { where: "시안", open: "산시성 전역" },
-      { where: "장자제", open: "후난성 전역" },
+      { where: "장가계", open: "후난성 전역" },
       { where: "광저우 · 선전", open: "광둥성 전역" },
       { where: "청두", open: "쓰촨 지정 11개 도시만", restricted: true },
       { where: "구이린", open: "광시 지정 12개 도시만", restricted: true },
@@ -617,7 +617,7 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
     ctaEyebrow: "입국 경로가 정해지면",
     ctaTitle: "그때 진짜 질문이 시작됩니다. 그 일수가 실제로 되는가.",
     ctaBody:
-      "열흘은 넉넉해 보입니다. 베이징에서 장자제로 가는 비행, 호텔을 옮기느라 사라지는 오후, 그리고 마지막 날이 공항에서 끝난다는 사실을 계산에 넣기 전까지는요. 고민 중인 경로를 보내 주세요. 도시, 대략의 시기, 그리고 다음에 어디로 향하는지를요. 이 정책이 주는 시간 안에 무엇이 들어가고 무엇을 빼야 하는지 알려 드리겠습니다.",
+      "열흘은 넉넉해 보입니다. 베이징에서 장가계로 가는 비행, 호텔을 옮기느라 사라지는 오후, 그리고 마지막 날이 공항에서 끝난다는 사실을 계산에 넣기 전까지는요. 고민 중인 경로를 보내 주세요. 도시, 대략의 시기, 그리고 다음에 어디로 향하는지를요. 이 정책이 주는 시간 안에 무엇이 들어가고 무엇을 빼야 하는지 알려 드리겠습니다.",
     ctaAction: "여행 상담 시작하기",
     relatedTitle: "관련 가이드",
     relatedLinkLabel: "2026년, 미국 여권으로 중국에 가려면 비자가 필요할까요?",

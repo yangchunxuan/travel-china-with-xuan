@@ -193,7 +193,7 @@
       "names": {
         "en": { "name": "Zhangjiajie" },
         "zh-Hans": { "name": "张家界" },
-        "ko": { "name": "장자제", "aliases": ["장가계"] }
+        "ko": { "name": "장가계", "aliases": ["장자제"] }
       },
       "parentEntityIds": ["province-hunan"],
       "sourceIds": [],

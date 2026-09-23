@@ -76,6 +76,37 @@ const body = {
       "text": "Arrange the journey both ways and check which entrance and optional uphill transport suit your group. Before paying, check whether your booking covers admission alone or also transport and a cable car. Return to Beijing for dinner and pack for the move tomorrow. Sleep in Beijing, night 3 of 3."
     },
   {
+    "id": "faq",
+    "type": "faq",
+    "title": "Questions about the seven-day route",
+    "items": [
+      {
+        "question": "How many full sightseeing days do I actually get on a 7-day China trip?",
+        "answer": "Four. The plan starts with arrival in Beijing on day 1 and ends with departure from Shanghai on day 7, and day 4 is the intercity move, so days 2, 3, 5 and 6 are the four full sightseeing days. You sleep in Beijing on nights 1-3 and in Shanghai on nights 4-6."
+      },
+      {
+        "question": "Is the Forbidden City closed on Mondays?",
+        "answer": "Normally yes, with holiday exceptions, and the museum does not sell same-day tickets either, so day 2 depends on a confirmed booking. Swap days 2 and 3 when the calendar and reservations allow, which brings the Great Wall day forward. If you also want Tiananmen Square, check its current access arrangements before adding it."
+      },
+      {
+        "question": "Should we take the train or fly from Beijing to Shanghai on day 4?",
+        "answer": "Start by comparing daytime trains from Beijing South to Shanghai Hongqiao, and check the exact stations, travel date and arrival time before buying. A flight can also work if its full hotel-to-hotel journey fits better; include airport travel, check-in and baggage time in that comparison. Treat checkout, travel and reaching the next hotel as the day's main job."
+      },
+      {
+        "question": "Can we add Suzhou as a day trip?",
+        "answer": "Swap it in for the day 6 Shanghai plan. Choose one garden, such as the Humble Administrator's Garden, and a walk around Pingjiang Road, then confirm the garden entry, outward and return trains, exact stations and local transfers before committing. The extra travel uses time you would otherwise spend in Shanghai, so keep the same hotel, leave your main luggage there and return for night 3 of 3."
+      },
+      {
+        "question": "Our international flight home leaves from Beijing, not Shanghai. Does this route still work?",
+        "answer": "Add that journey explicitly. A return to Beijing will take sightseeing time or require another day, so build day 7 around your confirmed flight and its departure airport. A late flight may allow a nearby breakfast or short walk, but keep this as the departure day. There is no seventh hotel night in this example."
+      },
+      {
+        "question": "Can we swap Shanghai for Xi'an?",
+        "answer": "Yes, and it stays a two-city trip. Keep Beijing on days 1-3, travel to Xi'an on day 4 and spend nights 4-6 there. Day 5 goes to the Terracotta Warriors including the return journey, and day 6 to the city wall area, food and old-city streets. Depart from Xi'an on day 7, subject to a workable onward flight, and confirm the Beijing-Xi'an transport and departure connection before choosing it."
+      }
+    ]
+  },
+  {
     "id": "sightseeing-execution-links",
     "type": "internal-links",
     "title": "Plan these sightseeing days",

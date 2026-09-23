@@ -229,7 +229,7 @@ test("the Singapore visa guide does not steer readers to a Zhangjiajie product",
   for (const locale of locales) {
     const card = getGuideSalesCard("do-singaporeans-need-visa-china", locale);
     const serialised = JSON.stringify(card);
-    assert.doesNotMatch(serialised, /zhangjiajie|张家界|장자제/iu);
+    assert.doesNotMatch(serialised, /zhangjiajie|张家界|장자제|장가계/iu);
     assert.equal(card.kind, "private-tour-product");
     assert.equal(card.ctaId, "shanghai-suzhou-hangzhou-6-day-private-tour");
   }

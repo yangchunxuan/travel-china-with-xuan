@@ -81,7 +81,7 @@ export const guideSalesCardPlans = {
         action: "查看行程",
       },
       ko: {
-        label: "검토할 장자제 프라이빗 일정",
+        label: "검토할 장가계 프라이빗 일정",
         note: "실제 도보 거리, 계단과 하루 일정 속도는 견적 전에 일행 기준으로 확인해야 합니다.",
         action: "일정 보기",
       },

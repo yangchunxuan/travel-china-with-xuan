@@ -236,6 +236,37 @@ const body = {
       body: "Leave your travel dates, party size and rough budget. A Homeground planner can help identify which local practice is current and fit one evidence-based seasonal experience into the route.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about solar terms",
+      items: [
+        {
+          question: "What are China's twenty-four solar terms?",
+          answer: "They are fixed markers in the annual solar cycle and a living framework for remembering seasonal change, farm work and community practice. For a traveller, a term name is a clue to ask what this place notices or does at this time. It is not a statement that rain, frost, snow or warmth will appear on your visit.",
+        },
+        {
+          question: "What if the solar-term event I planned around does not happen?",
+          answer: "A heritage listing is documentation, not an operating calendar. When an announced event does not take place, switch to a museum or a documented exhibition and recheck the community's official notice. If the seasonal dish has sold out, that is what a solar term is: ask a local to explain another ingredient now in season instead of hunting for a national equivalent.",
+        },
+        {
+          question: "Can I use the solar term to decide what to pack?",
+          answer: "No. Use a current city-level forecast for your dates instead. China spans large differences in latitude, elevation, continentality and monsoon exposure, and the China Meteorological Administration explicitly warns that seasonal conditions differ greatly by region. A peer-reviewed study using observations from 549 stations also found changes in climatic thresholds and timing over 1960–2008.",
+        },
+        {
+          question: "Is there one national dish for each solar term?",
+          answer: "No. Official CMA material on Winter Solstice records different foods across regions, which is evidence of plurality rather than one national menu. A dish carrying a term name may be a seasonal ingredient, a local community custom or a restaurant's limited theme menu, so enjoy it without presenting a marketing label as proof of an old or universal practice.",
+        },
+        {
+          question: "Can a visitor attend a solar-term festival?",
+          answer: "Ask the named host for the current year first. UNESCO's record cites examples including a Beginning of Spring ritual in Jiuhua and the Zhuang First Frost Festival, and China's national intangible-heritage database documents Anren's Spring Equinox community practice. These do not establish a daily tourist show, open access or an identical event in another town, so check the responsible cultural bureau, museum, community organisation or venue, and respect restrictions on ritual space and photography.",
+        },
+        {
+          question: "Is solar-term food good for my health?",
+          answer: "Treat it as cultural language. Phrases such as nourishing, dispelling dampness or preventing illness may appear in menus and local explanations, and this guide records them only as cultural language. It does not recommend a food, herb or routine to treat or prevent a medical condition; use appropriate clinical advice for health decisions.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning with context",

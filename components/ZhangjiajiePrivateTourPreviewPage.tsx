@@ -135,7 +135,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             touristType: isZh
               ? "张家界首次到访旅客"
               : isKo
-                ? "장자제를 처음 찾는 여행자"
+                ? "장가계를 처음 찾는 여행자"
                 : "First-time Zhangjiajie visitors",
             provider: {
               "@id": EDITORIAL_ORGANIZATION_ID,
@@ -212,66 +212,66 @@ export function ZhangjiajiePrivateTourPreviewPage({
       alt: isZh
         ? "百龙天梯沿张家界国家森林公园的砂岩崖壁升起"
         : isKo
-          ? "장자제 국가삼림공원의 사암 절벽을 따라 솟은 바이룽 엘리베이터"
+          ? "장가계 국가삼림공원의 사암 절벽을 따라 솟은 백룡엘리베이터"
           : "The Bailong Elevator rising against a sandstone cliff in Zhangjiajie National Forest Park",
       caption: isZh
-        ? "百龙天梯 · 第2天进山路线实景参考"
+        ? "百龙天梯 · 第2天"
         : isKo
-          ? "바이룽 엘리베이터 · 2일 차 산악 일정 현장 참고"
-          : "Bailong Elevator · Day 2 route reference",
+          ? "백룡엘리베이터 · 2일 차"
+          : "Bailong Elevator · Day 2",
       src: "/product-previews/zhangjiajie-4-day-private-tour/route/day-2-bailong-elevator.jpg",
     },
     3: {
       alt: isZh
         ? "游客正在跨越张家界大峡谷玻璃桥"
         : isKo
-          ? "장자제 대협곡 유리다리를 건너는 방문객들"
+          ? "장가계 대협곡 유리다리를 건너는 방문객들"
           : "Visitors crossing the Zhangjiajie Grand Canyon Glass Bridge",
       caption: isZh
-        ? "张家界大峡谷玻璃桥 · 第3天实景参考"
+        ? "张家界大峡谷玻璃桥 · 第3天"
         : isKo
-          ? "장자제 대협곡 유리다리 · 3일 차 현장 참고"
-          : "Zhangjiajie Grand Canyon Glass Bridge · Day 3 reference",
+          ? "장가계 대협곡 유리다리 · 3일 차"
+          : "Zhangjiajie Grand Canyon Glass Bridge · Day 3",
       src: "/product-previews/zhangjiajie-4-day-private-tour/hero/grand-canyon-glass-bridge.jpg",
     },
     4: {
       alt: isZh
         ? "天门山上天梯尽头的天门洞"
         : isKo
-          ? "톈먼산 계단 위쪽의 톈먼동"
+          ? "천문산 계단 위쪽의 천문동"
           : "Tianmen Cave above the stairway at Tianmen Mountain",
       caption: isZh
-        ? "天门洞与上天梯 · 第4天实景参考"
+        ? "天门洞与上天梯 · 第4天"
         : isKo
-          ? "톈먼동과 이어지는 계단 · 4일 차 현장 참고"
-          : "Tianmen Cave and its stairway approach · Day 4 reference",
+          ? "천문동과 이어지는 계단 · 4일 차"
+          : "Tianmen Cave and its stairway · Day 4",
       src: "/product-previews/zhangjiajie-4-day-private-tour/hero/tianmen-cave-and-stairs.jpg",
     },
   };
   const accommodationSummaries = {
     en: {
       "city-candidate-01":
-        "A bright twin-room reference for the practical city-stay tier. The exact property, room and outlook are confirmed for the travel dates.",
+        "A bright twin room in a practical city stay. The exact property, room and view are confirmed for your dates.",
       "premium-villa":
-        "One strong living-room reference shows the extra space expected from this tier. The exact accommodation and room allocation are confirmed for the travel dates.",
+        "Chosen for extra space to unwind after the mountains; this living room shows the feel. The exact accommodation and room allocation are confirmed for your dates.",
       "signature-villa":
-        "A selected set of room, bathroom and shared-space references conveys the character of this more distinctive stay without implying that every feature belongs to one bookable room.",
+        "These candidate photos show design-led rooms, a glass dining terrace and lounge spaces. The exact property and room are confirmed for your dates; tell us which features matter most to you.",
     },
     zh: {
       "city-candidate-01":
-        "这张明亮的双床房照片用于说明实用型市区住宿档；具体酒店、房型和窗景会按实际日期确认。",
+        "实用的市区住宿，照片是其中一间明亮的双床房。具体酒店、房型和窗景按你的日期确认。",
       "premium-villa":
-        "保留一张质感较好的客厅照片，用于说明这一档应有的空间感；具体住宿和房间分配按实际日期确认。",
+        "看完山回来想要更宽敞的空间放松，就选这一档；照片里的客厅展示的就是这种空间感。具体住处和分房按你的日期确认。",
       "signature-villa":
-        "精选的客房、浴室与公共空间照片用于呈现更具特色的住宿氛围，不代表所有设施都属于同一间可预订客房。",
+        "这组候选住宿照片展示了设计感客房、玻璃景观餐厅和休息区。具体住处和房型按你的日期确认；告诉我们你最在意哪些。",
     },
     ko: {
       "city-candidate-01":
-        "밝은 트윈룸 사진 한 장으로 실용적인 시내 숙박 등급을 보여 줍니다. 실제 숙소, 객실과 전망은 여행 날짜에 맞춰 확정합니다.",
+        "밝은 트윈룸 사진으로 보여 드리는 실용적인 시내 숙소입니다. 정확한 숙소, 객실과 전망은 여행 날짜에 맞춰 확정합니다.",
       "premium-villa":
-        "공간감이 잘 드러나는 거실 사진 한 장만 남겼습니다. 실제 숙소와 객실 배정은 여행 날짜에 맞춰 확정합니다.",
+        "산에서 돌아와 넉넉한 공간에서 쉬고 싶은 분께 맞는 숙소로, 사진은 그 공간감을 보여 주는 거실입니다. 정확한 숙소와 객실 배정은 여행 날짜에 맞춰 확정합니다.",
       "signature-villa":
-        "선별한 객실, 욕실과 공용 공간 사진으로 개성 있는 숙박 분위기를 보여 주되, 모든 요소가 하나의 예약 가능한 객실에 속한다고 의미하지는 않습니다.",
+        "이 후보 숙소 사진은 디자인이 돋보이는 객실, 유리 다이닝 테라스와 휴식 공간을 보여 줍니다. 실제 숙소와 객실은 여행 날짜에 맞춰 확정하니, 중요하게 생각하는 요소를 알려 주세요.",
     },
   } as const;
   const safeAccommodationImages = new Set([
@@ -366,7 +366,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <div>
                 {published ? (
                   <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="header">
-                    {isZh ? "咨询日期与住宿" : isKo ? "날짜와 숙소 문의" : "Ask about dates & stays"}
+                    {isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates"}
                     <ArrowRight aria-hidden="true" size={18} />
                   </GuideCtaLink>
                 ) : null}
@@ -392,7 +392,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                   isZh
                     ? "阳光照亮张家界国家森林公园的砂岩峰柱与深谷"
                     : isKo
-                      ? "햇빛을 받은 장자제 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
+                      ? "햇빛을 받은 장가계 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
                       : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
                 }
                 fill
@@ -550,7 +550,15 @@ export function ZhangjiajiePrivateTourPreviewPage({
                           src={photo.src}
                           width={photo.width}
                         />
-                        <figcaption>{photo.caption}</figcaption>
+                        <figcaption>
+                          {locale === "zh"
+                            ? "住宿参考照片"
+                            : locale === "ko"
+                              ? "숙소 참고 사진"
+                              : "Accommodation reference"}
+                          {" · "}
+                          {photo.caption}
+                        </figcaption>
                       </figure>
                     ))}
                   </div>
@@ -576,7 +584,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             <TourPriceScope route="zhangjiajie" locale={locale} detailsHref="#scope-title" />
             {published ? (
               <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="inline">
-                {isZh ? "咨询日期与住宿" : isKo ? "날짜와 숙소 문의" : "Ask about dates & stays"}
+                {isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates"}
                 <ArrowRight aria-hidden="true" size={18} />
               </GuideCtaLink>
             ) : null}

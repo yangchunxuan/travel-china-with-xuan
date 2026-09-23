@@ -179,6 +179,37 @@ const body = {
       tone: "decision"
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before going to Taipan",
+      items: [
+        {
+          question: "Where is Village BA actually played?",
+          answer: "On the open-air court in Taipan Village, Taijiang County, Guizhou — the best-known home of the event, not central Guiyang. Save the Chinese place name 台江县台盘乡台盘村, identify your actual pickup or parking point, and protect a return option that still works if you leave late.",
+        },
+        {
+          question: "Do the games really go on all night?",
+          answer: "Not necessarily. ‘All-night’ describes the atmosphere around some long programmes; it is not a promise that every match runs past midnight. Choose an exit threshold before the atmosphere peaks and leave while your transport back, companion energy and safe walking route still align. Missing the final score is better than losing the way home.",
+        },
+        {
+          question: "Village BA happens every year — can I just build a trip around it?",
+          answer: "Only after you find a dated organiser or Taijiang authority notice for the exact event. There are different Taipan events, organisers and competition cycles, so an official notice for one of them does not prove a match on your date, free admission, a nightly programme or the same arrangements next year.",
+        },
+        {
+          question: "Did Village BA start with the 2022 videos?",
+          answer: "No. Taipan's village leadership dates its basketball tradition to 1936, and basketball became a major activity around the local sixth-day-of-the-sixth-lunar-month Eating New Festival. Videos of Taipan's summer games circulated widely in 2022 and internet users popularised the name ‘Village BA’, but social media did not invent the local basketball culture.",
+        },
+        {
+          question: "Can I film the players and the crowd?",
+          answer: "Ask first for anything close-up. A public event is not blanket consent for a face-led travel video, so ask before making a close portrait of a player, child, vendor, performer or resident, and lower the camera when safety announcements or crowd movement require attention.",
+        },
+        {
+          question: "What should I do if I arrive and there is no match that day?",
+          answer: "Enjoy only the public, open parts of the village and describe the visit accurately as a no-match day. Do not pressure residents to create an experience, stage cheering, interrupt practice or ask anyone to perform for content. Use the businesses that are open to the public and leave without claiming you saw Village BA live.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Connect the festival to the rest of the trip",

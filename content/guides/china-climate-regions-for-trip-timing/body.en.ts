@@ -164,6 +164,37 @@ const body = {
       body: "Send your fixed or flexible dates, travellers, candidate regions and the outdoor experience you most want to protect. A useful review should identify the climate outlier and fallback, not promise perfect weather."
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions about timing a China trip",
+      items: [
+        {
+          question: "When is the best time of year to visit China?",
+          answer: "There is no single best-weather month for all of China. On a multi-region trip, protect the stop whose experience is easiest to lose to heat, rain, cold, visibility or elevation, then check that the other stops are workable in the same window. This method chooses a date window; it does not predict the weather on your travel days.",
+        },
+        {
+          question: "My leave dates cannot move. What should I change instead?",
+          answer: "Keep the dates and change the route. That is the move when leave, school or event dates are fixed, when one outlier region creates most of the packing and recovery burden, or when the group cannot tolerate the hardest exposure. Move the dates instead when the trip is built around one seasonal outdoor experience and the rest of the route can follow.",
+        },
+        {
+          question: "Can I pick my dates from China's monthly averages?",
+          answer: "Only as a screen, never as a forecast. A national monthly average smooths out the regional and elevation differences travellers actually feel, and long-term averages cannot confirm one week's rain or visibility. Compare your route's specific exposures and hardest activity, then recheck official forecasts close to departure and retain movable days.",
+        },
+        {
+          question: "We want to add a high-altitude leg. How does that change the timing?",
+          answer: "Let the weather-critical stop claim the broad window first, then ask whether the plateau conditions and recovery margin suit the group. Elevation belongs in the itinerary as its own planning constraint rather than on the packing list, so protect a flexible day at height and know the lower-elevation fallback. If the group does not suit it, remove the extension rather than forcing one date to serve three incompatible exposures.",
+        },
+        {
+          question: "The weather looks right, so can I book now?",
+          answer: "Not until two more checks. Choose two or three candidate windows for the hardest stop using long-term official climate context, then test the other stops for acceptable conditions. After that, check the official holiday calendar and named attraction or transport notices and choose the window with the fewest severe conflicts. Reject a window only when it breaks a core activity or traveller limit.",
+        },
+        {
+          question: "Where should I check conditions closer to the trip?",
+          answer: "Use the China Meteorological Administration and the relevant local meteorological bureau for current forecasts and warnings, and the named attraction or operator for closures. This guide deliberately avoids city-by-month forecasts. A forecast update can change day order even when the regional strategy remains sound.",
+        },
+      ],
+    },
+    {
       id: "more-planning",
       type: "internal-links",
       title: "Continue planning",

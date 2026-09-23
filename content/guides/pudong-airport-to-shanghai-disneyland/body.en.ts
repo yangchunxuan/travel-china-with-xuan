@@ -279,6 +279,37 @@ const body = {
       body: "Send the travel date, flight and terminal, number and ages of travellers, suitcase and stroller count, exact hotel or park plan, and approximate transfer budget. Homeground can flag which handoffs need checking; live transport still needs a date-specific recheck.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Pudong to Disneyland questions answered",
+      items: [
+        {
+          question: "How do I get from Pudong Airport to Shanghai Disneyland by public transport?",
+          answer: "Take the Airport Link one stop from Pudong Airport T1 & T2 Station toward Hongqiao to Shanghai International Resort Station, then leave through Exit 3. From Chuanzhan Road / Tanghuang Road take Pudong Bus 50 to its Disney Metro Station stop, which sits beside Metro Line 11's Disney Resort Station. From there walk, or use Resort Shuttle Bus No. 1 or No. 2 as currently directed.",
+        },
+        {
+          question: "Does the Airport Link go to the park entrance?",
+          answer: "No, it does not reach the park gate. Shanghai International Resort Station is the Airport Link station serving the wider resort area, while Disney Resort Station is the Metro Line 11 station beside the park area. A search result that says the Airport Link is one stop from PVG has not yet described the bus and the final walk to the park.",
+        },
+        {
+          question: "What time is the last Airport Link train from Pudong Airport?",
+          answer: "The Shanghai municipal Airport Link page reviewed August 11, 2026 lists a final departure at 22:15, with departures from Pudong Airport from 06:00 at roughly 15-minute intervals. Shanghai Disney's rail page still showed 22:00 at that review, so use the newer operator or municipal timetable and check it live. The last train is not held for a late flight.",
+        },
+        {
+          question: "Can I take my suitcase into Shanghai Disneyland?",
+          answer: "No. Wheeled luggage is prohibited, as are bags, boxes or containers larger than 56 × 36 × 23 cm. The official storage facility is opposite the West Gate of Wishing Star Park, and the current page lists RMB 80 per ordinary item per day and RMB 10 for a small item whose three dimensions total no more than 60 cm. Recheck price and hours.",
+        },
+        {
+          question: "How long does a taxi take from PVG to the Disney resort area?",
+          answer: "Shanghai Disney's current estimate is about 30–50 minutes by taxi, and that is not a promise for every hotel or entrance, because a road journey depends on traffic. Use the signed taxi rank or the airport's current designated ride-hailing pickup area, and choose a vehicle category that actually fits every passenger and bag.",
+        },
+        {
+          question: "Where should I tell a taxi driver to drop me at Shanghai Disney?",
+          answer: "For the park, Shanghai Disney directs taxis to the West Public Transportation Hub, so set that rather than a general Disneyland pin. For a hotel, save the property's exact Chinese name and address before you fly, because resort hotels and hotels outside the resort are different drop-offs. For ride-hailing, follow the app and the airport's current on-site signs.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning the arrival day",

@@ -443,6 +443,37 @@ const body = {
       body: "Send the travel date, train number or proposed route, full ticket station names, hotel name, party size, luggage and any fixed deadline after the train. Homeground can flag which station-to-hotel handoffs need checking; live railway inventory and city transport still need a date-specific recheck.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask before the train",
+      items: [
+        {
+          question: "My ticket just says Beijing — which station is that?",
+          answer: "Read the complete station name off the issued itinerary and do not shorten it to “Beijing.” Match the Chinese name: 北京站, 北京西站, 北京南站, 北京北站, 清河站, 北京朝阳站, 北京丰台站 or 北京通州站. English screens can write Beijing South as “Beijing South” or “Beijingnan,” so check the train number and the date at the same time.",
+        },
+        {
+          question: "Which Beijing station do trains to Shanghai use?",
+          answer: "Beijing South is the usual first comparison for Tianjin and the Shanghai corridor, and Beijing Railway Station also has some trains toward Nanjing and Shanghai. That is an orientation pattern, not a booking rule. Railway operating plans change and one destination can leave from more than one Beijing station, so match the exact Chinese station name in the live itinerary before paying.",
+        },
+        {
+          question: "My train leaves very early — can I count on the metro?",
+          answer: "Check the first-train times before you count on the metro. Work out the first service at the metro station your hotel actually uses, whether the interchange is open by then, the walking inside the railway station and a normal entry margin. If any link is tight, arrange road transport to an entrance you have checked rather than building the plan on running. Holiday extensions are dated exceptions, not the everyday timetable.",
+        },
+        {
+          question: "Which station should I use for Badaling and the Great Wall?",
+          answer: "Either Beijing North or Qinghe — they are the main northwest pair, and Badaling and Zhangjiakou are common patterns at both. Beijing North sits beside Xizhimen; Qinghe is in northwestern Haidian near Shangdi, where Line 13 and the Changping Line run into the station itself. Similar northwest destinations may use either station, so a Great Wall plan still has to use the train and station shown for that date.",
+        },
+        {
+          question: "Which subway line goes to Beijing Chaoyang Railway Station?",
+          answer: "Line 3. At the station review of August 11, 2026, Chaoyang used Line 3, which runs into the transport hub and its B1 railway entrance, so it suits a Sanlitun or Workers' Stadium hotel best. From central-west or southern Beijing the cross-city approach can still be long. Do not confuse Chaoyang Railway Station with the huge Chaoyang District or Chaoyangmen.",
+        },
+        {
+          question: "I am at the wrong Beijing station — what do I do first?",
+          answer: "Stop moving and open the issued ticket, then check the Chinese departure station, train number, date and departure time. Show the station name to railway or metro staff and ask whether you are inside the correct railway complex at an inconvenient entrance, or at a completely different station. Those are two different problems, and at a different station there is no airside-style transfer.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the right part of the plan",

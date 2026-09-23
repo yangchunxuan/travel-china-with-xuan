@@ -318,6 +318,37 @@ const body = {
       text: "Use the general planner only for a first contact. In the initial form, share travel dates, the city before departure, the airport and approximate departure time band if known, traveller and room counts, and a rough accommodation budget if useful. You may say that you want to discuss family or accessibility arrangements later, but do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent. This is not live inventory and does not guarantee price, availability, foreign-guest acceptance, room type or accessibility.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions travellers ask about the last night",
+      items: [
+        {
+          question: "How many hours should I leave between the train and an international flight?",
+          answer: "There is no universal safe number. A four-hour gap can be comfortable inside one protected terminal transfer and unusable between an arriving train, a distant airport and a separate international ticket. Build the day backward from the operating airline's current check-in, bag-drop and boarding-gate deadlines, then add station exit, baggage, the city transfer and a separate disruption margin.",
+        },
+        {
+          question: "Should we return to the departure city the night before?",
+          answer: "Return the day before if any of five things is true: the positioning journey is on a separate ticket, the outbound flight is early, the train or domestic flight has no useful fallback, the arrival point is not the departure airport, or one disruption would be hard for your party to absorb. A timetable gap alone does not prove the connection works.",
+        },
+        {
+          question: "My domestic and international flights are in one booking — is the connection protected?",
+          answer: "One screen is not proof. A travel agency can display separate tickets together, and an airline may through-check a bag as a courtesy without accepting responsibility for the next flight. Cathay Pacific states that it cannot rebook a missed onward flight held on a separate ticket. Ask the ticketing carrier in writing about your exact ticket and save the answer.",
+        },
+        {
+          question: "If my train is delayed, can I just take the next one?",
+          answer: "Treat that as an inventory claim, not a fallback plan. China Railway's official rules allow ticket changes only when there is available capacity, and a ticket can normally be changed once; some after-departure changes are limited to trains on the same day. Check the exact date in 12306 and judge the next service that still clears every airport deadline.",
+        },
+        {
+          question: "Is one extra hotel night really worth paying for?",
+          answer: "Compare the room against what a failed connection costs. Positioning the night before usually costs one hotel night and some leisure time. A same-day failure may require a new long-haul ticket, hotel, meals and visa or entry arrangements, and every additional traveller multiplies rebooking and care costs. Price both sides for the whole party before choosing.",
+        },
+        {
+          question: "Is arriving in Beijing or Shanghai the same as reaching the departure airport?",
+          answer: "No. Beijing Capital (PEK) and Beijing Daxing (PKX) are separate airports, Shanghai Pudong (PVG) and Shanghai Hongqiao (SHA) are separate airports, and high-speed trains may arrive at Hongqiao Railway Station rather than either flight terminal you need. Shanghai's official Airport Link Line connects Hongqiao Airport Terminal 2 and Pudong Airport, but the published service has operating hours.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue planning",

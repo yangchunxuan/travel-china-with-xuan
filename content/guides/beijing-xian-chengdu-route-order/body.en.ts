@@ -268,6 +268,37 @@ const body = {
       body: "Leave your dates, number of travellers and rough budget, plus the actual arrival and departure airports. Homeground can help identify the weak transfer and the condition that would change the route order.",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Route-order questions answered",
+      items: [
+        {
+          question: "In what order should I visit Beijing, Xi'an and Chengdu?",
+          answer: "Beijing to Xi'an to Chengdu, or the exact reverse. Choose the direction from the international gateways: the forward chain suits arriving in Beijing and leaving from Chengdu, and the reverse suits arriving in Chengdu and leaving from Beijing. Then give nights to protected sightseeing days rather than splitting them evenly between the three cities.",
+        },
+        {
+          question: "Can I start in Xi'an and visit Beijing and Chengdu from there?",
+          answer: "It usually repeats a long segment. Starting in Xi'an and visiting both ends only works cleanly when one of the outer cities is also the departure gateway. Use it when a better flight or a fixed event justifies the backtrack, and otherwise keep Xi'an as the middle stop on a chain that keeps moving forward.",
+        },
+        {
+          question: "How many nights should I give each city?",
+          answer: "Not an even split. Fix the international airports and the final overnight city that protects the outbound flight, mark every attraction with a date, closure day or timed-entry dependency, then give each non-substitutable priority a protected full day or a genuinely usable half-day. Enter the two intercity moves at 0 half-days and upgrade them only once the services are known.",
+        },
+        {
+          question: "Does the Beijing to Xi'an train day count as a sightseeing day?",
+          answer: "Start it at 0. A protected day equals 2 usable half-days, while arrivals, departures and intercity moves begin at 0 and earn 1 only if a stable morning or afternoon survives the full hotel-to-hotel transfer. Never award 2 to a hotel-change day.",
+        },
+        {
+          question: "Which Xi'an station will my train use?",
+          answer: "Record the station shown on the service you select. Xi'an East began operation on June 30, 2026, Xi'an North and other stations also exist, and Beijing and Chengdu likewise have multiple passenger hubs. Search the date in 12306 and copy the station from the chosen train rather than reusing an older transfer instruction.",
+        },
+        {
+          question: "Can I fly in and out of Beijing and still do all three cities?",
+          answer: "It costs days. A family with a child flying in and out of Beijing over 8 nights has 9 calendar days containing an arrival, a departure, 2 forward moves and a Chengdu to Beijing return, leaving 4 full sightseeing-day equivalents on the conservative baseline. Even 1 earned half-day does not cure the exposure; a Chengdu exit, fewer cities or more nights changes the answer.",
+        },
+      ],
+    },
+    {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",

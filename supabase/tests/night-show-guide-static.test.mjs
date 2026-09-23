@@ -79,7 +79,7 @@ test("night-show CTA compares the full tour and keeps direct planner contact", a
   assert.match(guide, /href=\{plannerHref\}[\s\S]*?copy\.finalCta\.action/);
   assert.match(english, /ctaAction: "View the 4-day Zhangjiajie private tour"/);
   assert.match(chinese, /ctaAction: "查看张家界 4 日私家团"/);
-  assert.match(korean, /ctaAction: "장자제 4일 프라이빗 투어 보기"/);
+  assert.match(korean, /ctaAction: "장가계 4일 프라이빗 투어 보기"/);
   assert.match(english, /Shows are optional extras outside the tour’s base price/);
   assert.match(chinese, /演出属于基础团费之外的自选项目/);
   assert.match(korean, /공연은 기본 투어 요금에 포함되지 않는 선택 항목/);

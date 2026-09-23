@@ -143,6 +143,37 @@ const body = {
       ]
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "Questions at the breakfast counter",
+      items: [
+        {
+          question: "What is a classic Nanchang breakfast?",
+          answer: "Two separate orders on one table. Nanchang Banfen (南昌拌粉) is cooked rice noodles tossed with seasonings and garnishes, and Waguan Tang (瓦罐汤) is soup slowly cooked in a small earthenware crock and served in it. Nanchang government food introductions repeatedly present the pair as a representative local breakfast. That establishes the pairing, not one compulsory recipe, shop or soup.",
+        },
+        {
+          question: "Is 拌粉 the same as 炒粉 or 汤粉?",
+          answer: "No, and the three names sit close together on the board. 拌粉 is rice noodles drained and mixed with a seasoned dressing; 炒粉 is stir-fried in a wok; 汤粉 arrives in broth as one bowl. Point at 南昌拌粉 or 拌粉 rather than saying only ‘noodles’, which could produce either of the other two.",
+        },
+        {
+          question: "How do I order the noodles less spicy?",
+          answer: "Say it before the server tosses the bowl: 少辣 for less, 不要辣椒 for none, or 辣椒另外放 to keep chilli on the side. Also ask whether chilli oil or sauce is already in the base. Mix the noodles thoroughly from the bottom before deciding they are bland, and add side chilli gradually.",
+        },
+        {
+          question: "How much should two people order?",
+          answer: "One Banfen and one crock soup per hungry adult is the straightforward order, and two light eaters can share one complete set as a lower-risk tasting order. Ask whether a noodle portion comes in different sizes rather than assuming, and add a second noodle only after you have seen how large the first one is.",
+        },
+        {
+          question: "What if the soup I wanted is sold out?",
+          answer: "Ask which crocks are physically available. Soup can be sold out even while its permanent board or online product page remains visible. Switch within a known family, such as another rib soup or another meat-patty soup, only after confirming its added ingredient. If every crock is gone, keep the Banfen if you still want it and try the pair another morning.",
+        },
+        {
+          question: "How do I check whether a soup contains peanuts, egg or pork?",
+          answer: "Put the question to staff rather than guessing from a photo: 这个汤里有什么？有花生、蛋或者猪肉吗？ For a dietary restriction, ask about the full base, garnish and soup, not only the ingredient visible in the title. Kitchens and shared utensils may still involve cross-contact, so a clearly labelled alternative is the safer choice.",
+        },
+      ],
+    },
+    {
       id: "links",
       type: "internal-links",
       title: "Continue with regional breakfast and table skills",

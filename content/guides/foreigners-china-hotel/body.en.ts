@@ -298,6 +298,33 @@ const body = {
       tone: "decision",
     },
     {
+      id: "faq",
+      type: "faq",
+      title: "More questions about checking in with a foreign passport",
+      items: [
+        {
+          question: "Do I need a hotel with a special foreign-guest licence in China?",
+          answer: "No. Current national measures say qualification requirements should not be used to block accommodation operators from receiving overseas guests, and a hotel should not refuse you solely because it claims to lack ‘foreign-related qualifications.’ It does not mean every hotel will work out for you: a valid reservation, an accepted travel document, ordinary check-in conditions and the property's ability to complete registration still matter.",
+        },
+        {
+          question: "What should I ask a hotel before booking as a foreign traveller?",
+          answer: "Ask whether that exact property completes hotel accommodation registration at check-in. State that every foreign guest will carry an original valid passport or other accepted travel document, give the arrival date and time, and ask whether reception will be staffed and the room held after a late check-in. Keep the reply in the booking chat and save a screenshot showing the branch name and time.",
+        },
+        {
+          question: "Is a passport photo or photocopy enough at the front desk?",
+          answer: "No. Each foreign guest presents the original valid passport or other accepted international travel document, and staff inspect it and record the information required for hotel accommodation registration. Also check that any spelling or document details the platform collected do not point to a different guest, and ask for the duty manager if the desk confuses this with the private-residence process.",
+        },
+        {
+          question: "My apartment booking only sent a door code. Is that a problem?",
+          answer: "It means the operating and registration model is unclear. First establish whether the place operates as hotel or non-hotel accommodation, then ask who registers the stay. Do not assume that a door code or a platform label completes registration; if the answer stays vague, move to a property with staffed reception instead.",
+        },
+        {
+          question: "What should I keep as evidence if a hotel refuses me?",
+          answer: "Keep the confirmation and terms, a dated screenshot of the listing, a note or chat of the refusal with the time and the reason stated, the platform case number and its outcome, and itemised replacement accommodation and transport receipts. Mask payment details outside customer support, and give the receipts only to the platform or a competent complaints channel.",
+        },
+      ],
+    },
+    {
       id: "related-guides",
       type: "internal-links",
       title: "Continue the stay decision",

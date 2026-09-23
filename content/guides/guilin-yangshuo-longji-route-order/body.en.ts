@@ -128,6 +128,37 @@ const body = {
       "text": "Finish the details after choosing the route"
     },
     {
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions travellers ask before booking this route",
+      "items": [
+        {
+          "question": "How many days do I need for Guilin, Yangshuo and Longji?",
+          "answer": "Five days can work with two hotel bases and a Longji day trip. Six days gives the terraces an overnight while preserving two Yangshuo nights. The examples count calendar days in the region, including arrival and departure, so choose the arrival and departure points first: they decide where the mountain visit belongs."
+        },
+        {
+          "question": "Can I take my luggage on the Li River cruise?",
+          "answer": "Ask the cruise operator first. The Li River visitor notice states that the main cruise does not return and offers no luggage-storage service, so check whether your bags can come onboard, what sizes are accepted and how boarding and disembarking work. If they cannot travel with you, agree hotel storage or delivery by a named provider."
+        },
+        {
+          "question": "Should my last night be in Yangshuo or back in Guilin?",
+          "answer": "Let the final ticket decide. The examples finish in Yangshuo only when the departure timing leaves enough room for that journey, and an early Guilin flight or train is a good reason to return the previous afternoon. Moving the last night to Guilin turns the five-day example into Guilin 3 nights plus Yangshuo 1."
+        },
+        {
+          "question": "Can I go straight from Longji to Yangshuo instead of returning to Guilin?",
+          "answer": "That is a different version of the plan. The six-day example deliberately returns to Guilin between the terraces and the river — three accommodation places but four stay segments — because that reset makes a next-day cruise easier to organise than rushing to its pier from a mountain hotel. If you prefer a confirmed road transfer straight to Yangshuo, rebuild the transfer day and the river plan rather than assuming the cruise still fits."
+        },
+        {
+          "question": "Is a night at Longji worth it, or is a day trip enough?",
+          "answer": "A Longji night creates a second chance to enjoy the landscape; it cannot ensure a clear sunrise. The five-day version keeps one hotel move and a complete Yangshuo day, but the Longji day needs the return road journey. If that day feels too demanding for the group, use the six-day option."
+        },
+        {
+          "question": "Which Longji village should I stay in?",
+          "answer": "Settle the exact village and property before arranging the drive. Longji is a cultivated mountain landscape with village stays, not one viewpoint, and Dazhai is one documented village within the terrace area. Check the vehicle drop-off, steps, meals and any luggage assistance, and take a small overnight bag if the Guilin hotel agrees to store the rest."
+        }
+      ]
+    },
+    {
       "id": "planning-links",
       "type": "internal-links",
       "title": "Plan each part of the journey",

@@ -173,7 +173,7 @@ const koDestinations: Record<DestinationId, string> = {
   xian: "시안",
   chengdu: "청두",
   chongqing: "충칭",
-  zhangjiajie: "장자제",
+  zhangjiajie: "장가계",
   "guilin-yangshuo": "구이린 & 양숴",
   "hangzhou-suzhou": "항저우 & 쑤저우",
   "yunnan-dali-lijiang": "윈난 · 다리 & 리장",
