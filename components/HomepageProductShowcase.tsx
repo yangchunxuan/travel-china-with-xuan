@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import type { MouseEventHandler } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import { KeepWords } from "./text/KeepWords";
+import { CharReveal } from "./motion/CharReveal";
+import { PointerSpotlight } from "./motion/PointerSpotlight";
+import { ScrollWords } from "./motion/ScrollWords";
 import {
   privateTourCardImageSource,
   privateTourCardImageSrcSet,
@@ -46,6 +49,7 @@ export function HomepageProductShowcase({
       data-homepage-product-showcase="true"
       id="travel-products"
     >
+      <PointerSpotlight />
       <div className={styles.inner}>
         <header className={styles.intro}>
           <div className={styles.sectionMeta}>
@@ -54,7 +58,7 @@ export function HomepageProductShowcase({
           </div>
           <div className={styles.introGrid}>
             <h2 id="homepage-products-title" tabIndex={-1}>
-              {copy.title}
+              <ScrollWords locale={locale} text={copy.title} />
             </h2>
             <p className={styles.lead}>{copy.intro(products.length)}</p>
           </div>
@@ -72,7 +76,7 @@ export function HomepageProductShowcase({
                 href={product.href}
                 onClick={() => onItemClick?.(product, index + 1)}
               >
-                <span className={styles.imageFrame}>
+                <span className={styles.imageFrame} data-spotlight="">
                   <img
                     alt={product.image.alt}
                     className={styles.image}
@@ -89,6 +93,10 @@ export function HomepageProductShowcase({
                     }
                     width={product.image.width}
                   />
+                  {/* Follows the pointer across the photo (Cuberto's cursor). */}
+                  <span aria-hidden="true" className={styles.imageCursor}>
+                    <ArrowUpRight size={22} strokeWidth={1.8} />
+                  </span>
                 </span>
                 <div className={styles.cardCopy}>
                   <div className={styles.cardMeta}>
@@ -102,7 +110,9 @@ export function HomepageProductShowcase({
                   </h3>
                   <p className={styles.cardPrice}>
                     <span>{copy.startingPriceLabel}</span>
-                    <strong>{product.startingPrice.formatted}</strong>
+                    <strong>
+                      <CharReveal text={product.startingPrice.formatted} />
+                    </strong>
                     <small>
                       {copy.perPersonLabel} ·{" "}
                       {copy.groupBasis(product.startingPrice.travelers)}
@@ -120,7 +130,10 @@ export function HomepageProductShowcase({
                     {product.appeal}
                   </p>
                   <span className={styles.cardAction}>
-                    <span>{copy.actionLabel}</span>
+                    <span className={styles.actionRoll}>
+                      <span>{copy.actionLabel}</span>
+                      <span aria-hidden="true">{copy.actionLabel}</span>
+                    </span>
                     <ArrowRight aria-hidden="true" size={18} />
                   </span>
                 </div>
@@ -148,6 +161,7 @@ export function HomepageProductShowcase({
         <aside
           aria-labelledby="homepage-products-enquiry-title"
           className={styles.enquiryStrip}
+          data-spotlight=""
         >
           <div>
             <p>{copy.enquiryEyebrow}</p>

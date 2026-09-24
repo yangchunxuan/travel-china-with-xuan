@@ -573,7 +573,13 @@
 @media (prefers-reduced-motion: reduce) {
 .image,
 .cardAction svg,
-.enquiryStrip > a svg {
+.enquiryStrip > a svg,
+  .imageFrame::after,
+  .cardTitle::after,
+  .actionRoll > span,
+  .imageCursor,
+  .imageFrame,
+  .cardCopy {
     transition: none;
   }
 }
@@ -582,5 +588,271 @@
   .imageFrame,
   .productCard {
     border: 1px solid CanvasText;
+  }
+}
+
+/*
+ * Scroll choreography, studied on Cuberto and Instrument (Awwwards Sites of
+ * the Day) and Apple's product rails, kept to the card layout the page
+ * already has so every route, price and description stays where it was:
+ *   - each photo is unveiled from the bottom edge while it settles from a
+ *     slight zoom, columns a beat apart on wide screens;
+ *   - the middle column drifts against the others, giving the grid depth;
+ *   - prices settle in glyph by glyph (motion/CharReveal);
+ *   - on hover a light follows the pointer across the photo, a terracotta
+ *     rule draws under the title and the action label rolls over;
+ *   - the three promises fill their top rule, and the enquiry strip gets the
+ *     site's faint grid and a warm light that follows the pointer.
+ * All scroll-linked; browsers without scroll-driven animation, and readers
+ * who prefer reduced motion, see the finished layout.
+ */
+.imageFrame {
+  --frame-radius: 1rem;
+  isolation: isolate;
+  position: relative;
+}
+
+.imageFrame::after {
+  background: radial-gradient(
+    22rem circle at var(--spot-x, 50%) var(--spot-y, 40%),
+    rgb(255 255 255 / 24%),
+    transparent 62%
+  );
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 400ms ease;
+}
+
+.imageCursor {
+  align-items: center;
+  background: #0a0a0a;
+  border-radius: 50%;
+  block-size: 4.5rem;
+  color: #fff;
+  display: none;
+  inline-size: 4.5rem;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  scale: 0;
+  translate: calc(var(--spot-x, 50%) - 50%) calc(var(--spot-y, 50%) - 50%);
+  z-index: 1;
+}
+
+.cardTitle {
+  position: relative;
+}
+
+.cardTitle::after {
+  background: #a84731;
+  block-size: 1px;
+  content: "";
+  inline-size: 2.75rem;
+  inset-block-end: -0.5rem;
+  inset-inline-start: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.actionRoll {
+  display: inline-grid;
+  overflow: hidden;
+}
+
+.actionRoll > span {
+  grid-area: 1 / 1;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.actionRoll > span:last-child {
+  transform: translateY(110%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .imageCursor {
+    display: flex;
+    transition: scale 360ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .productCard:hover .imageCursor {
+    scale: 1;
+  }
+
+  /* The card under the pointer comes forward; the rest step back. (The
+     card itself carries the scroll rise, so its parts fade instead.) */
+  .productGrid:has(.productCard:hover) .productCard:not(:hover) .imageFrame,
+  .productGrid:has(.productCard:hover) .productCard:not(:hover) .cardCopy {
+    filter: grayscale(0.45);
+    opacity: 0.5;
+  }
+
+  .imageFrame,
+  .cardCopy {
+    transition: opacity 420ms ease, filter 420ms ease;
+  }
+}
+
+@media (hover: hover) {
+  .productCard:hover .imageFrame::after {
+    opacity: 1;
+  }
+
+  .productCard:hover .cardTitle::after {
+    transform: scaleX(1);
+  }
+
+  .productCard:hover .actionRoll > span:first-child {
+    transform: translateY(-110%);
+  }
+
+  .productCard:hover .actionRoll > span:last-child {
+    transform: none;
+  }
+}
+
+.productCard:focus-visible .cardTitle::after {
+  transform: scaleX(1);
+}
+
+.trustList li {
+  position: relative;
+}
+
+.trustList li::before {
+  background: #0a0a0a;
+  block-size: 1px;
+  content: "";
+  inset-block-start: -1px;
+  inset-inline: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.enquiryStrip {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.enquiryStrip::before {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 7%) 1px, transparent 1px);
+  background-size: 60px 60px;
+  content: "";
+  inset: 0;
+  -webkit-mask-image: radial-gradient(70% 90% at 88% 100%, #000 30%, transparent);
+  mask-image: radial-gradient(70% 90% at 88% 100%, #000 30%, transparent);
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.enquiryStrip::after {
+  background: radial-gradient(
+    30rem circle at var(--spot-x, 88%) var(--spot-y, 110%),
+    rgb(242 193 173 / 18%),
+    transparent 65%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes productImageUnveil {
+  from {
+    clip-path: inset(24% 0 0 0 round var(--frame-radius));
+  }
+
+  to {
+    clip-path: inset(0 round var(--frame-radius));
+  }
+}
+
+@keyframes productImageSettle {
+  from {
+    scale: 1.18;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes productColumnDrift {
+  from {
+    translate: 0 1.5rem;
+  }
+
+  to {
+    translate: 0 -1.5rem;
+  }
+}
+
+@keyframes productRuleFill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .imageFrame {
+      animation: productImageUnveil linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+
+    .image {
+      animation: productImageSettle linear both;
+      animation-range: entry 0% cover 50%;
+      animation-timeline: view();
+    }
+
+    .trustList li::before {
+      animation: productRuleFill linear both;
+      animation-range: entry 30% cover 40%;
+      animation-timeline: view();
+    }
+
+    .trustList li:nth-child(2)::before {
+      animation-range: entry 45% cover 45%;
+    }
+
+    .trustList li:nth-child(3)::before {
+      animation-range: entry 60% cover 50%;
+    }
+
+    @media (min-width: 64rem) {
+      .productGrid li:nth-child(3n + 2) .imageFrame {
+        animation-range: entry 10% entry 100%;
+      }
+
+      .productGrid li:nth-child(3n + 3) .imageFrame {
+        animation-range: entry 20% entry 100%;
+      }
+
+      .productGrid li:nth-child(3n + 2) {
+        animation: productColumnDrift linear both;
+        animation-range: cover;
+        animation-timeline: view();
+      }
+    }
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .imageFrame {
+    --frame-radius: 0.75rem;
   }
 }

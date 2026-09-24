@@ -242,11 +242,18 @@ test("server-rendered homepage labels and detail price controls share the starti
     "./TourPriceScope": priceScope,
   });
   const keepWords = await loadComponent("components/text/KeepWords.tsx");
+  // The real price reveal, so the rendered text is checked as shipped; the
+  // heading reveal and pointer light only decorate and are stubbed.
+  const charReveal = await loadComponent("components/motion/CharReveal.tsx");
   const homepage = await loadComponent("components/HomepageProductShowcase.tsx", {
     "../lib/homepageProductShowcaseI18n": { getHomepageProductShowcaseCopy },
     "../lib/privateTourHubI18n": { privateTourHubPaths },
     "./privateTourCardImages": cardImages,
     "./text/KeepWords": keepWords,
+    "./motion/CharReveal": charReveal,
+    "./motion/PointerSpotlight": { PointerSpotlight: () => null },
+    "./motion/ScrollWords": { ScrollWords: ({ text }) => text },
+    "lucide-react": { ArrowRight: () => null, ArrowUpRight: () => null },
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);
