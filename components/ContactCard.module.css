@@ -769,6 +769,29 @@
     animation: thread 700ms 520ms var(--card-ease) both;
   }
 
+  /* A tab the reader picks on the homepage board replays the reveal. */
+  :global([data-contact-reveal]:not([hidden])) .scanInline .qrCode svg {
+    -webkit-mask-image: radial-gradient(closest-side at 50% 50%, #000 calc(var(--qr-reveal) - 28%), transparent var(--qr-reveal));
+    mask-image: radial-gradient(closest-side at 50% 50%, #000 calc(var(--qr-reveal) - 28%), transparent var(--qr-reveal));
+    animation: qrReveal 1000ms 80ms var(--card-ease) both;
+    animation-timeline: auto;
+  }
+
+  :global([data-contact-reveal]:not([hidden])) .scanInline .qrFrame::before {
+    animation: focusIn 700ms 120ms var(--card-ease) both;
+    animation-timeline: auto;
+  }
+
+  :global([data-contact-reveal]:not([hidden])) .scanInline .qrLogo {
+    animation: logoIn 520ms 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-timeline: auto;
+  }
+
+  :global([data-contact-reveal]:not([hidden])) .scanInline .scanBeam {
+    animation: beam 1200ms 760ms var(--card-ease) both;
+    animation-timeline: auto;
+  }
+
   .copy[data-done] .copyCheck path {
     --dash: 16;
     stroke-dasharray: var(--dash);

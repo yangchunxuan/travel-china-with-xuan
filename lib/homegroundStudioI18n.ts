@@ -654,6 +654,14 @@ export function getHomegroundStudioCopy(
   return homegroundStudioCopy[locale];
 }
 
+/** Small square crops of each planner's photo, for the homepage contact section. */
+export function getHomepageTeamFaces(locale: HomegroundLocale) {
+  return getHomegroundStudioCopy(locale).members.map((member) => ({
+    id: member.id,
+    src: `/images/studio/avatars/${member.id}.webp`,
+  }));
+}
+
 export function getStudioLanguagePaths() {
   return {
     en: "/studio/",

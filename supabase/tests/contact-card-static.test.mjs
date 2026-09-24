@@ -92,6 +92,44 @@ test("the homepage contact panel shows the card's scan block on desktop and keep
   assert.match(styles, /\.quickContactScan \{[\s\S]*?min-block-size: 15rem;/);
 });
 
+test("on desktop the homepage panel shows one way in at a time, as real tabs, keeping every link", async () => {
+  const [panel, styles] = await Promise.all([
+    source("components/HomepageQuickContact.tsx"),
+    source("components/HomegroundHomePage.module.css"),
+  ]);
+  assert.match(panel, /const board = desktopCard;/);
+  assert.match(panel, /role="tablist"/);
+  assert.match(panel, /role="tab"[\s\S]*?aria-controls=\{`\$\{boardId\}-\$\{tab\}`\}[\s\S]*?aria-selected=\{boardTab === tab\}/);
+  assert.match(panel, /role: "tabpanel",[\s\S]*?hidden: boardTab !== tab,/);
+  assert.match(panel, /event\.key === "ArrowRight"[\s\S]*?event\.key === "ArrowLeft"/);
+  // Panels share one grid cell (no jump on switching); a hidden one is invisible and unfocusable.
+  assert.match(styles, /\.quickContactBoard \.quickContactGrid > \[role="tabpanel"\] \{\s*grid-area: 1 \/ 1;/);
+  assert.match(styles, /\.quickContactBoard \[role="tabpanel"\]\[hidden\] \{\s*visibility: hidden;/);
+  // Messenger keeps its link and its analytics; phones keep the stacked panel.
+  assert.match(panel, /className=\{board \? styles\.boardMessengerLink : undefined\}\s*href=\{messengerUrl\}[\s\S]*?channel: "messenger",/);
+  assert.match(panel, /\{messengerUrl && !board && \(/);
+  // Motion only when it is welcome.
+  assert.match(styles, /@media \(prefers-reduced-motion: no-preference\) \{\s*\.boardKnob \{\s*transition:/);
+});
+
+test("every planner has a small avatar, shown beside Meet the team on wide screens only", async () => {
+  const { getHomepageTeamFaces } = await import("../../lib/homegroundStudioI18n.ts");
+  const { stat } = await import("node:fs/promises");
+  for (const locale of locales) {
+    const faces = getHomepageTeamFaces(locale);
+    assert.ok(faces.length >= 5, locale);
+    for (const face of faces) {
+      const file = await stat(new URL(`../../public${face.src}`, import.meta.url));
+      assert.ok(file.size < 8_000, `${face.src} is ${file.size} bytes`);
+    }
+  }
+  const showcase = await source("components/HomepageShowcase.module.css");
+  assert.match(showcase, /\.planningFaces \{\s*display: none;\s*\}\s*@media \(min-width: 64rem\) \{\s*\.planningFaces \{\s*display: inline-flex;/);
+  const home = await source("components/HomegroundHomePage.tsx");
+  assert.match(home, /className=\{showcaseStyles\.planningFaces\} aria-hidden="true"/);
+  assert.match(home, /alt=""/);
+});
+
 test("the contact card mounts on every page next to the tour contact panel", async () => {
   for (const path of ["app/(default)/layout.tsx", "app/(localized)/[locale]/layout.tsx"]) {
     const layout = await source(path);

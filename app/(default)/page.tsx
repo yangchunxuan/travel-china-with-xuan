@@ -7,6 +7,7 @@ import {
   getHomepageSearchDemos,
 } from "../../lib/homepageEditorial";
 import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog";
+import { getHomepageTeamFaces } from "../../lib/homegroundStudioI18n";
 
 const copy = getHomegroundCopy("en");
 
@@ -54,6 +55,7 @@ export default function Home() {
       locale="en"
       privateTourItems={getHomepagePrivateTourItems("en")}
       searchDemos={getHomepageSearchDemos("en")}
+      teamFaces={getHomepageTeamFaces("en")}
     />
   );
 }

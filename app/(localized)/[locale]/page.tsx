@@ -11,6 +11,7 @@ import {
   getHomepageSearchDemos,
 } from "../../../lib/homepageEditorial";
 import { getHomepagePrivateTourItems } from "../../../lib/homepagePrivateTourCatalog";
+import { getHomepageTeamFaces } from "../../../lib/homegroundStudioI18n";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
 
@@ -80,6 +81,7 @@ export default async function LocalizedHome({
       locale={locale}
       privateTourItems={getHomepagePrivateTourItems(locale)}
       searchDemos={getHomepageSearchDemos(locale)}
+      teamFaces={getHomepageTeamFaces(locale)}
     />
   );
 }

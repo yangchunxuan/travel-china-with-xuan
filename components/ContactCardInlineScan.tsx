@@ -23,21 +23,23 @@ export function useContactCardDesktop() {
 
 /**
  * The contact card's scan-to-chat block, embedded in a page (the homepage
- * contact panel). Its code loads only when rendered, which callers do on
+ * contact board). Its code loads only when rendered, which callers do on
  * desktop; phones keep the one-tap WhatsApp button.
  */
 export function ContactCardInlineScan({
   locale,
   href,
   headingId,
+  app = "whatsapp",
 }: {
   locale: HomegroundLocale;
   href: string;
   headingId: string;
+  app?: "whatsapp" | "messenger";
 }) {
   return (
     <Suspense fallback={null}>
-      <ContactCardScan locale={locale} href={href} headingId={headingId} inline />
+      <ContactCardScan locale={locale} href={href} headingId={headingId} app={app} inline />
     </Suspense>
   );
 }

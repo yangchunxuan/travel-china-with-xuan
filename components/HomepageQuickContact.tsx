@@ -13,7 +13,9 @@ import {
   useId,
   useRef,
   useState,
+  type CSSProperties,
   type FormEvent,
+  type KeyboardEvent,
 } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
@@ -159,6 +161,25 @@ function whatsappMessage(
   return `Hello Homeground, I’m planning a trip to China and would like to talk.${productLine}`;
 }
 
+type BoardTab = "whatsapp" | "email" | "messenger";
+
+function chinaTime(locale: HomegroundLocale): string {
+  return new Intl.DateTimeFormat(
+    locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
+    { timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hourCycle: "h23" },
+  ).format(new Date());
+}
+
+/** Button text that rolls up to a copy of itself on hover (Cuberto's CTA). */
+function RollText({ children }: { children: string }) {
+  return (
+    <span className={styles.rollText}>
+      <span>{children}</span>
+      <span aria-hidden="true">{children}</span>
+    </span>
+  );
+}
+
 export function HomepageQuickContact({
   locale,
   copy,
@@ -182,6 +203,11 @@ export function HomepageQuickContact({
   const contactVisibilityRef = useVisibleAnalyticsEvent<HTMLDivElement>("contact_options_viewed", { page_language: locale, contact_variant: variant });
   const recordEmailStart = useAnalyticsEventOnce();
   const desktopCard = useContactCardDesktop();
+  const boardId = useId();
+  const [boardTab, setBoardTab] = useState<BoardTab>("whatsapp");
+  // Only a tab the reader picks replays the code's reveal, not the first view.
+  const [boardSwitched, setBoardSwitched] = useState(false);
+  const [clock, setClock] = useState("");
   const successfulSubmissionTrackedRef = useRef(false);
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
@@ -253,6 +279,13 @@ export function HomepageQuickContact({
     });
     return () => window.cancelAnimationFrame(frame);
   }, [status]);
+
+  useEffect(() => {
+    if (!desktopCard) return;
+    setClock(chinaTime(locale));
+    const tick = window.setInterval(() => setClock(chinaTime(locale)), 20_000);
+    return () => window.clearInterval(tick);
+  }, [desktopCard, locale]);
 
   const buildPayload = () => ({
     trafficSessionToken: getTrafficSessionToken() ?? null,
@@ -430,6 +463,81 @@ export function HomepageQuickContact({
     await dispatch(snapshot, false);
   };
 
+  // Desktop: one way in at a time, chosen from a tab bar.
+  const board = desktopCard;
+  const boardTabs: BoardTab[] = messengerUrl
+    ? ["whatsapp", "email", "messenger"]
+    : ["whatsapp", "email"];
+  const boardLabels: Record<BoardTab, string> = {
+    whatsapp: contactCardCopy[locale].tabWhatsApp,
+    email: contactCardCopy[locale].tabEmail,
+    messenger: contactCardCopy[locale].tabMessenger,
+  };
+  const chooseBoardTab = (tab: BoardTab) => {
+    setBoardSwitched(true);
+    setBoardTab(tab);
+  };
+  const handleBoardKey = (event: KeyboardEvent<HTMLButtonElement>) => {
+    const index = boardTabs.indexOf(boardTab);
+    const next =
+      event.key === "ArrowRight"
+        ? boardTabs[(index + 1) % boardTabs.length]
+        : event.key === "ArrowLeft"
+          ? boardTabs[(index - 1 + boardTabs.length) % boardTabs.length]
+          : event.key === "Home"
+            ? boardTabs[0]
+            : event.key === "End"
+              ? boardTabs[boardTabs.length - 1]
+              : null;
+    if (!next) return;
+    event.preventDefault();
+    chooseBoardTab(next);
+    document.getElementById(`${boardId}-${next}-tab`)?.focus();
+  };
+  const boardPanel = (tab: BoardTab) =>
+    board
+      ? {
+          role: "tabpanel",
+          id: `${boardId}-${tab}`,
+          "aria-labelledby": `${boardId}-${tab}-tab`,
+          hidden: boardTab !== tab,
+          "data-contact-reveal": boardSwitched ? "" : undefined,
+        }
+      : {};
+  // One Messenger link for both layouts; the board only restyles it.
+  const messengerLink = messengerUrl ? (
+    <a
+      className={board ? styles.boardMessengerLink : undefined}
+      href={messengerUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-describedby={messengerExternalNoteId}
+      data-contact-card-direct={board ? "" : undefined}
+      onClick={() => {
+        trackEvent("contact_option_clicked", {
+          channel: "messenger",
+          contact_variant: variant,
+          page_language: locale,
+        });
+      }}
+    >
+      <MessagesSquare aria-hidden="true" size={15} />
+      {board ? (
+        <RollText>{contactCopy.messengerAction}</RollText>
+      ) : (
+        contactCopy.messengerAction
+      )}
+    </a>
+  ) : null;
+  const messengerNote = (
+    <span
+      className={styles.quickContactSrOnly}
+      id={messengerExternalNoteId}
+    >
+      {contactCopy.messengerOpensExternally}
+    </span>
+  );
+
   const liveStatus =
     status === "submitting"
       ? contactCopy.emailSubmitting
@@ -442,7 +550,8 @@ export function HomepageQuickContact({
       ref={contactVisibilityRef}
       className={`${styles.quickContact} ${
         variant === "hero" ? styles.quickContactHero : ""
-      }`}
+      }${board ? ` ${styles.quickContactBoard}` : ""}`}
+      data-contact-board={board ? "" : undefined}
     >
       {privateTourInterest && (
         <aside
@@ -456,9 +565,42 @@ export function HomepageQuickContact({
           )}
         </aside>
       )}
+      {board && (
+        <div className={styles.boardBar}>
+          <div
+            className={styles.boardTabs}
+            role="tablist"
+            aria-label={contactCardCopy[locale].tabsLabel}
+            style={{ "--board-tab": boardTabs.indexOf(boardTab), "--board-tabs": boardTabs.length } as CSSProperties}
+          >
+            {boardTabs.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                role="tab"
+                id={`${boardId}-${tab}-tab`}
+                aria-controls={`${boardId}-${tab}`}
+                aria-selected={boardTab === tab}
+                tabIndex={boardTab === tab ? 0 : -1}
+                onClick={() => chooseBoardTab(tab)}
+                onKeyDown={handleBoardKey}
+              >
+                {boardLabels[tab]}
+              </button>
+            ))}
+            <span className={styles.boardKnob} aria-hidden="true" />
+          </div>
+          {clock && (
+            <p className={styles.boardClock}>
+              {contactCardCopy[locale].chinaTime} <time>{clock}</time>
+            </p>
+          )}
+        </div>
+      )}
       <div className={styles.quickContactGrid}>
         <article
           className={`${styles.quickContactCard} ${styles.quickContactWhatsapp}`}
+          {...boardPanel("whatsapp")}
         >
           <div className={styles.quickContactIcon} aria-hidden="true">
             <MessageCircle size={22} strokeWidth={1.8} />
@@ -524,39 +666,20 @@ export function HomepageQuickContact({
               {contactCopy.whatsappOpensExternally}
             </small>
           )}
-          {messengerUrl && (
+          {messengerUrl && !board && (
             <p className={styles.quickContactMessenger}>
               {variant === "default" && (
                 <span>{contactCopy.messengerLead}</span>
               )}{" "}
-              <a
-                href={messengerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-describedby={messengerExternalNoteId}
-                onClick={() => {
-                  trackEvent("contact_option_clicked", {
-                    channel: "messenger",
-                    contact_variant: variant,
-                    page_language: locale,
-                  });
-                }}
-              >
-                <MessagesSquare aria-hidden="true" size={15} />
-                {contactCopy.messengerAction}
-              </a>
-              <span
-                className={styles.quickContactSrOnly}
-                id={messengerExternalNoteId}
-              >
-                {contactCopy.messengerOpensExternally}
-              </span>
+              {messengerLink}
+              {messengerNote}
             </p>
           )}
         </article>
 
         <article
           className={`${styles.quickContactCard} ${styles.quickContactEmail}`}
+          {...boardPanel("email")}
         >
           <div className={styles.quickContactIcon} aria-hidden="true">
             <Mail size={22} strokeWidth={1.8} />
@@ -567,13 +690,19 @@ export function HomepageQuickContact({
             </p>
           )}
           <h3>{contactCopy.emailTitle}</h3>
+          {board && (
+            <p className={styles.boardReplyFrom}>
+              {contactCardCopy[locale].replyFrom}{" "}
+              <strong>{homegroundBusiness.serviceEmail}</strong>
+            </p>
+          )}
 
           {!emailIntakeReady ? (
             <div className={styles.quickContactEmailFallback}>
               <p className={styles.quickContactUnavailable}>
                 {contactCopy.emailUnavailable}
               </p>
-              <a href={fallbackMailto} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}>
+              <a href={fallbackMailto} data-contact-card-direct={board ? "" : undefined} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}>
                 {contactCopy.emailFallbackAction}
                 <ArrowUpRight aria-hidden="true" size={18} />
               </a>
@@ -652,7 +781,11 @@ export function HomepageQuickContact({
                     </>
                   ) : (
                     <>
-                      {contactCopy.emailAction}
+                      {board ? (
+                        <RollText>{contactCopy.emailAction}</RollText>
+                      ) : (
+                        contactCopy.emailAction
+                      )}
                       <ArrowUpRight aria-hidden="true" size={18} />
                     </>
                   )}
@@ -708,7 +841,36 @@ export function HomepageQuickContact({
           >
             {liveStatus}
           </p>
+          {board && emailIntakeReady && (
+            <a
+              className={styles.boardMailApp}
+              href={fallbackMailto}
+              data-contact-card-direct=""
+              onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
+            >
+              {contactCardCopy[locale].openMailApp}
+              <ArrowUpRight aria-hidden="true" size={16} />
+            </a>
+          )}
         </article>
+
+        {board && messengerUrl && (
+          <article
+            className={`${styles.quickContactCard} ${styles.quickContactMessengerPanel}`}
+            {...boardPanel("messenger")}
+          >
+            <div className={styles.quickContactScan}>
+              <ContactCardInlineScan
+                locale={locale}
+                href={messengerUrl}
+                headingId={`${emailId}-messenger-scan`}
+                app="messenger"
+              />
+            </div>
+            {messengerLink}
+            {messengerNote}
+          </article>
+        )}
       </div>
 
       {onCancel && (
