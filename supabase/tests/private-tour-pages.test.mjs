@@ -267,25 +267,36 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
     { travelers: 6, cnyPerPerson: 2980 },
   ]);
 
+  // 2026-09-24 route follows the owner's 4D3N card: tower on Day 1, full Forest Park day,
+  // Tianmen Mountain with a free Baofeng Lake weather backup, villa or 4-star hotel.
   const zh = localizePrivateTourProduct(product, "zh");
-  assert.match(zh.hotelNote, /三晚固定入住同一处指定碧桂园家庭别墅/);
-  assert.match(zh.itinerary[1].description, /天子山北门/);
-  assert.match(zh.itinerary[1].description, /不乘索道或电梯/);
-  assert.match(zh.itinerary[2].description, /十里画廊开放游览段步行往返/);
-  assert.match(zh.itinerary[2].description, /普通夜场由客人自由游览/);
-  assert.match(zh.itinerary[2].description, /没有现场导游/);
+  assert.match(zh.hotelNote, /三晚都住武陵源同一处/);
+  assert.match(zh.hotelNote, /碧桂园家庭别墅/);
+  assert.match(zh.hotelNote, /四星酒店/);
+  assert.match(zh.itinerary[0].description, /七十二奇楼/);
+  assert.match(zh.itinerary[0].description, /自由游览/);
+  assert.match(zh.itinerary[1].description, /天子山/);
+  assert.match(zh.itinerary[1].description, /金鞭溪/);
+  assert.match(zh.itinerary[1].description, /十里画廊/);
+  assert.match(zh.itinerary[1].description, /百龙天梯、索道和十里画廊小火车为自选项目/);
+  assert.match(zh.itinerary[2].description, /天门山/);
+  assert.match(zh.itinerary[2].description, /宝峰湖/);
+  assert.match(zh.itinerary[2].description, /不另外收费/);
   assert.match(zh.serviceNote, /D2 全天及 D3 白天英语导游/);
   assert.match(zh.serviceNote, /必买保险/);
+  assert.match(zh.serviceNote, /天门山门票与索道/);
   assert.match(zh.exclusions.join("\n"), /百龙天梯/);
   assert.match(zh.exclusions.join("\n"), /十里画廊小火车/);
+  assert.match(zh.exclusions.join("\n"), /七十二奇楼夜场现场导游/);
   assert.match(zh.bookingNote, /固定路线/);
-  assert.match(zh.bookingNote, /不设置自选景点，也不在现场临时加项/);
+  assert.match(zh.bookingNote, /现场不临时加项/);
   assert.doesNotMatch(zh.bookingNote, /二选一/);
 
   const ko = localizePrivateTourProduct(product, "ko");
   assert.equal(ko.packages[0].label, "한국어 가이드 포함 고정 코스");
   assert.match(ko.metadataDescription, /한국어 가이드/);
-  assert.match(ko.metadataDescription, /유리다리·천문산 불포함/);
+  assert.match(ko.metadataDescription, /천문산/);
+  assert.match(ko.metadataDescription, /보봉호/);
   assert.match(ko.summary, /D2 종일과 D3 주간 한국어 가이드/);
   assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
   assert.doesNotMatch(ko.summary, /영어 가이드/);

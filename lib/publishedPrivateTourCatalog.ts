@@ -249,24 +249,24 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
   },
   "zhangjiajie-forest-4-day-private-tour": {
     route: l(
-      "Zhangjiajie · Tianzi Mountain · Yuanjiajie · Golden Whip Stream",
-      "张家界 · 天子山 · 袁家界 · 金鞭溪",
-      "장가계 · 천자산 · 원가계 · 금편계",
+      "Zhangjiajie · Yuanjiajie · Golden Whip Stream · Tianmen Mountain",
+      "张家界 · 袁家界 · 金鞭溪 · 天门山",
+      "장가계 · 원가계 · 금편계 · 천문산",
     ),
     appeal: l(
-      "Stay in one Zhangjiajie villa, reach Yuanjiajie’s main viewpoints, walk the eastern Golden Whip Stream, and visit Seventy-Two Wonder Tower in the evening—without cable cars or elevators.",
-      "同一处张家界别墅连住，去袁家界主要观景点、步行金鞭溪东段，晚上再看七十二奇楼；路线不乘索道和电梯。",
-      "장가계 빌라 한 곳에 머물며 원가계 주요 전망대와 금편계 동쪽 구간을 걷고, 저녁에는 칠십이기루를 찾습니다. 케이블카와 엘리베이터는 이용하지 않습니다.",
+      "See Seventy-Two Wonder Tower lit up on arrival, spend a full day in the Forest Park, then ride up Tianmen Mountain, with Baofeng Lake as a free weather backup.",
+      "抵达当晚看七十二奇楼夜景，森林公园玩一整天，再乘索道上天门山；天气不好免费改游宝峰湖。",
+      "도착한 밤 칠십이기루 야경을 보고, 국립삼림공원에서 하루를 보낸 뒤 케이블카로 천문산에 오릅니다. 악천후 시에는 보봉호로 무료 변경합니다.",
     ),
     pace: l(
-      "One villa base with two walking-focused sightseeing days and buffered arrival and departure days.",
-      "同一处别墅连住 3 晚，中间安排两个以步行为主的完整游览日，抵达与离开日保留缓冲。",
-      "한 빌라에서 3박하며 가운데 이틀은 걷기 중심으로 관광하고 도착일과 출발일에는 여유를 둡니다.",
+      "Three nights in one villa or 4-star hotel, two full sightseeing days, and an easy arrival and departure.",
+      "同一处别墅或四星酒店连住 3 晚，中间两个完整游览日，抵达与离开日轻松安排。",
+      "빌라 또는 4성급 호텔 한 곳에서 3박하며, 가운데 이틀은 종일 관광하고 도착일과 출발일은 여유롭게 보냅니다.",
     ),
     fit: l(
-      "Budget-conscious walkers who want the forest park without cable cars, elevators or optional extras.",
-      "希望控制预算、能够多走路，并接受这条路线不含索道、电梯和自选加项的旅客。",
-      "예산을 아끼고 많이 걸을 수 있으며, 케이블카·엘리베이터·추가 옵션 없이 삼림공원을 둘러보고 싶은 여행자.",
+      "Travellers who want the Forest Park and Tianmen Mountain in a short private trip, from one base.",
+      "想在一趟短途私家团里，住同一处就玩到森林公园和天门山的旅客。",
+      "짧은 프라이빗 일정으로 한 숙소에 머물며 국립삼림공원과 천문산을 모두 보고 싶은 여행자.",
     ),
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {

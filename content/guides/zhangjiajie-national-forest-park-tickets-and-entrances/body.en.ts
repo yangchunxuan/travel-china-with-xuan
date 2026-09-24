@@ -322,7 +322,7 @@ const body: StructuredPageBody = {
       title: "Continue planning without mixing up separate decisions",
       items: [
         { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
-        { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "Use the north gate for high peaks, the east gate for valley walks and one villa for all three nights, without cable cars or elevators." },
+        { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "A full Forest Park day from the high peaks to Golden Whip Stream, Tianmen Mountain on Day 3, and one villa or 4-star hotel for all three nights." },
         { label: "Compare the classic 4-day private tour", href: "/tours/zhangjiajie-4-day-private-tour/", description: "Choose the broader route with Bailong Elevator, the Glass Bridge and Tianmen Mountain." },
         { label: "How many days in Zhangjiajie?", href: "/guides/zhangjiajie-itinerary/", description: "Use the itinerary owner to distribute park chains across the trip." },
         { label: "Stay in Zhangjiajie city or Wulingyuan?", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "Choose the hotel base separately from the park transaction." },

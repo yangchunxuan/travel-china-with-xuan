@@ -6,14 +6,14 @@ const body = {
     {
       "id": "route-answer",
       "type": "lead",
-      "text": "A Chengdu–Chongqing–Zhangjiajie itinerary works best as an 11–12-day trip, with 12 days for the version below. It moves from pandas and teahouses to Chongqing’s river city, then into Wulong’s karst landscapes and Zhangjiajie’s forest pillars. This example keeps three proper days around Chengdu, an overnight in Wulong and two walking days in the forest. Two separate days belong to the journeys between cities."
+      "text": "A Chengdu–Chongqing–Zhangjiajie itinerary works best as an 11–12-day trip, with 12 days for the version below. It moves from pandas and teahouses to Chongqing’s river city, then into Wulong’s karst landscapes and Zhangjiajie’s forest pillars. This example keeps three proper days around Chengdu, an overnight in Wulong, a full Forest Park day and a Tianmen Mountain day. Two separate days belong to the journeys between cities."
     },
     {
       "id": "quick-route",
       "type": "callout",
       "tone": "decision",
       "title": "The 12-day shape",
-      "body": "Arrive in Chengdu, spend four nights there, then give Chongqing and Wulong four nights between them. Finish with three nights at one Zhangjiajie villa base. That is 12 calendar days and 11 nights, including arrival, departure and both intercity moves."
+      "body": "Arrive in Chengdu, spend four nights there, then give Chongqing and Wulong four nights between them. Finish with three nights at one Zhangjiajie base, a villa or a 4-star hotel. That is 12 calendar days and 11 nights, including arrival, departure and both intercity moves."
     },
     {
       "id": "twelve-day-itinerary",
@@ -24,7 +24,7 @@ const body = {
     {
       "id": "night-count",
       "type": "paragraph",
-      "text": "The Chengdu nights are Days 1–4. Stay in Chongqing on Days 5, 6 and 8, with Wulong on Day 7. The Zhangjiajie villa covers Days 9–11. Day 12 is departure only. Returning from Wulong to Chongqing protects the next transfer and follows the local route described here."
+      "text": "The Chengdu nights are Days 1–4. Stay in Chongqing on Days 5, 6 and 8, with Wulong on Day 7. The Zhangjiajie base covers Days 9–11. Day 12 is departure only. Returning from Wulong to Chongqing protects the next transfer and follows the local route described here."
     },
     {
       "id": "twelve-day-plan",
@@ -39,9 +39,9 @@ const body = {
         "Day 6 — Liziba and river-city viewpoints; the confirmed museum or Hongya Cave exterior option. Overnight: Chongqing.",
         "Day 7 — Travel to Wulong, visit the Three Natural Bridges and stay overnight. Overnight: Wulong.",
         "Day 8 — Fairy Mountain or Furong Cave, then return by road to Chongqing. Overnight: Chongqing.",
-        "Day 9 — Transfer day: Chongqing hotel → rail journey → Zhangjiajie villa. Overnight: Zhangjiajie villa.",
-        "Day 10 — Forest highlands: Tianzi Mountain, Yangjiajie and Yuanjiajie. Overnight: Same villa.",
-        "Day 11 — Ten-Mile Gallery and Golden Whip Stream; evening at Seventy-Two Wonder Tower. Overnight: Same villa.",
+        "Day 9 — Transfer day: Chongqing hotel → rail journey → Zhangjiajie; evening at Seventy-Two Wonder Tower. Overnight: Zhangjiajie villa or 4-star hotel.",
+        "Day 10 — Forest Park full day: Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery. Overnight: Same base.",
+        "Day 11 — Tianmen Mountain, or Baofeng Lake in bad weather. Overnight: Same base.",
         "Day 12 — Breakfast, checkout and the confirmed airport or railway-station transfer."
       ]
     },
@@ -63,11 +63,11 @@ const body = {
       "items": [
         {
           "question": "How many days do I need for Chengdu, Chongqing and Zhangjiajie?",
-          "answer": "Eleven to twelve days, with twelve for the version described in this guide. It moves from pandas and teahouses to Chongqing's river city, then into Wulong's karst landscapes and Zhangjiajie's forest pillars. The example keeps three proper days around Chengdu, an overnight in Wulong and two walking days in the forest, and two separate days belong to the journeys between cities."
+          "answer": "Eleven to twelve days, with twelve for the version described in this guide. It moves from pandas and teahouses to Chongqing's river city, then into Wulong's karst landscapes and Zhangjiajie's forest pillars. The example keeps three proper days around Chengdu, an overnight in Wulong, a full Forest Park day and a Tianmen Mountain day, and two separate days belong to the journeys between cities."
         },
         {
           "question": "How many nights do we spend in each place?",
-          "answer": "Four nights in Chengdu, four nights between Chongqing and Wulong, and three nights at one Zhangjiajie villa base. That is 12 calendar days and 11 nights, and the count already includes the arrival day, the departure day and both intercity moves, so nothing extra has to be added later for travelling time."
+          "answer": "Four nights in Chengdu, four nights between Chongqing and Wulong, and three nights at one Zhangjiajie base. That is 12 calendar days and 11 nights, and the count already includes the arrival day, the departure day and both intercity moves, so nothing extra has to be added later for travelling time."
         },
         {
           "question": "How do I travel between Chongqing and Zhangjiajie?",
@@ -79,11 +79,11 @@ const body = {
         },
         {
           "question": "Does the Zhangjiajie section include Tianmen Mountain or the Glass Bridge?",
-          "answer": "No. Tianmen Mountain and the Glass Bridge are not part of this route, and cable cars, elevators and the Ten-Mile Gallery mini-train are not used. It is an active finish, not a cable-car sightseeing circuit. The English-speaking guide accompanies the full highland day and the daytime valley route, while the evening is self-guided, with private drop-off, pickup and remote assistance."
+          "answer": "Tianmen Mountain, yes; the Glass Bridge, no. Day 11 rides the cable car up Tianmen Mountain, and if the mountain is closed or fogged in, the day switches to a boat on Baofeng Lake at no extra charge. The English-speaking guide accompanies all of Day 10 and the daytime on Day 11, while the Seventy-Two Wonder Tower evening is self-guided, with private drop-off, pickup and remote assistance."
         },
         {
           "question": "How much walking do the two Zhangjiajie days involve?",
-          "answer": "Allow roughly 10–11 hours door to door and 4–7 km on foot for the highland day, which reaches Tianzi Mountain, Yangjiajie and Yuanjiajie using scenic shuttles and walking. The valley day walks Ten-Mile Gallery and the eastern Golden Whip Stream before a rest at the villa and the evening visit to Seventy-Two Wonder Tower."
+          "answer": "Day 10 is the long one: allow roughly 10–11 hours door to door in the Forest Park, from Tianzi Mountain, Yangjiajie and Yuanjiajie down to Golden Whip Stream and Ten-Mile Gallery. Scenic shuttles are included; the Bailong Elevator, cableways and the Ten-Mile Gallery mini-train are optional and paid on the spot if you want to walk less. Day 11 is easier, with the cable car up Tianmen Mountain."
         }
       ]
     },
@@ -131,17 +131,17 @@ const body = {
       "id": "forest-finish",
       "type": "heading",
       "level": 2,
-      "text": "Zhangjiajie: two forest days from one villa"
+      "text": "Zhangjiajie: the Forest Park and Tianmen Mountain from one base"
     },
     {
       "id": "forest-copy",
       "type": "paragraph",
-      "text": "This version finishes with the forest route: three nights in the same designated Country Garden family villa, one highland day and one valley day. The highland route reaches Tianzi Mountain, Yangjiajie and Yuanjiajie using scenic shuttles and walking. Allow roughly 10–11 hours door to door and 4–7 km on foot. The valley day walks Ten-Mile Gallery and the eastern Golden Whip Stream before a rest and the evening visit to Seventy-Two Wonder Tower."
+      "text": "This version finishes with the Zhangjiajie private route: three nights in one villa or 4-star hotel, Seventy-Two Wonder Tower lit up on arrival, a full Forest Park day, then Tianmen Mountain. The Forest Park day links Tianzi Mountain, Yangjiajie and Yuanjiajie by scenic shuttle before heading down to Golden Whip Stream and Ten-Mile Gallery. Allow roughly 10–11 hours door to door."
     },
     {
       "id": "forest-scope",
       "type": "paragraph",
-      "text": "It is an active finish, not a cable-car sightseeing circuit. Cable cars, elevators and the Ten-Mile Gallery mini-train are not used; Tianmen Mountain and the Glass Bridge are not part of this route. The English-speaking guide accompanies the full highland day and the daytime valley route. The evening is self-guided, with private drop-off, pickup and remote assistance."
+      "text": "Day 11 rides the cable car up Tianmen Mountain. If the mountain is closed or fogged in, the day switches to a boat on Baofeng Lake at no extra charge; the Glass Bridge is not included. The English-speaking guide accompanies all of Day 10 and the daytime on Day 11. The tower evening is self-guided, with private drop-off, pickup and remote assistance."
     },
     {
       "id": "forest-product",
@@ -151,7 +151,7 @@ const body = {
         {
           "label": "Zhangjiajie Forest: 4-day private tour",
           "href": "/tours/zhangjiajie-forest-4-day-private-tour/",
-          "description": "Read the walking schedule, villa arrangement and included services before choosing this finish."
+          "description": "Read the day-by-day route, stay options and included services before choosing this finish."
         }
       ]
     },
