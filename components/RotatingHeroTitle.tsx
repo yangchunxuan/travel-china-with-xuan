@@ -150,6 +150,8 @@ export function RotatingHeroTitle({
   const previousPhraseSignature = useRef(phraseSignature);
   const previousReducedMotion = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const phraseLayerRef = useRef<HTMLSpanElement>(null);
+  const phraseInkRef = useRef<HTMLSpanElement>(null);
 
   const currentPhraseIndex =
     availablePhrases.length > 0 ? phraseIndex % availablePhrases.length : 0;
@@ -191,6 +193,46 @@ export function RotatingHeroTitle({
     observer.observe(root);
     return () => observer.disconnect();
   }, []);
+
+  // The underline follows the last line of the current phrase (see
+  // .phraseLayer::after). Its box is measured after layout, again when the
+  // layer resizes and once the web fonts have loaded.
+  useEffect(() => {
+    const layer = phraseLayerRef.current;
+    const ink = phraseInkRef.current;
+    if (!layer || !ink) return;
+
+    let cancelled = false;
+    const placeUnderline = () => {
+      if (cancelled) return;
+      const lineBoxes = ink.getClientRects();
+      const lastLine = lineBoxes[lineBoxes.length - 1];
+      if (!lastLine) return;
+      const layerBox = layer.getBoundingClientRect();
+      layer.style.setProperty(
+        "--hero-line-x",
+        `${(lastLine.left - layerBox.left).toFixed(2)}px`,
+      );
+      layer.style.setProperty(
+        "--hero-line-y",
+        `${(lastLine.bottom - layerBox.top).toFixed(2)}px`,
+      );
+      layer.style.setProperty("--hero-line-w", `${lastLine.width.toFixed(2)}px`);
+    };
+
+    placeUnderline();
+    const resizeObserver =
+      typeof ResizeObserver === "undefined"
+        ? null
+        : new ResizeObserver(placeUnderline);
+    resizeObserver?.observe(layer);
+    document.fonts?.ready.then(placeUnderline).catch(() => undefined);
+
+    return () => {
+      cancelled = true;
+      resizeObserver?.disconnect();
+    };
+  }, [currentPhrase, currentPhraseIndex, cycleVersion]);
 
   useEffect(() => {
     const updateVisibility = () =>
@@ -286,8 +328,11 @@ export function RotatingHeroTitle({
                 className={styles.phraseLayer}
                 data-phase={phase}
                 key={`${cycleVersion}-${currentPhraseIndex}-${currentPhrase}`}
+                ref={phraseLayerRef}
               >
-                <AnimatedPhrase phrase={currentPhrase} />
+                <span className={styles.phraseInk} ref={phraseInkRef}>
+                  <AnimatedPhrase phrase={currentPhrase} />
+                </span>
               </span>
             </span>
           ) : null}
