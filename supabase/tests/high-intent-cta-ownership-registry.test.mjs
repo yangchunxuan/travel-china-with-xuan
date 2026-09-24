@@ -68,16 +68,16 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
 
   assert.deepEqual(report.counts, {
     stay: 20,
-    "high-intent-transport": 26,
+    "high-intent-transport": 27,
     plan: 25,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 74);
+  assert.equal(report.uniqueContentIds, 75);
   assert.equal(report.authorizedExistingService, 23);
   assert.equal(report.authorizedGenericConversation, 13);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
-  assert.equal(report.blockedPendingAuthorization, 38);
+  assert.equal(report.blockedPendingAuthorization, 39);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
   assert.deepEqual(
@@ -100,7 +100,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 36 guide and 21 product owners", () => {
+test("commercial links keep the approved 8 hub, 36 curated guide and 31 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -147,6 +147,7 @@ test("commercial links keep the approved 8 hub, 36 guide and 21 product owners",
       "shaanxi-history-museum-booking-and-collection-plan",
       "shanghai-hangzhou-transport-route",
       "shanghai-pudong-or-hongqiao-airport",
+      "shanghai-to-suzhou-day-trip",
       "shanghai-where-to-stay-first-trip",
       "singapore-to-zhangjiajie-itinerary",
       "summer-palace-gates-route-and-boat-plan",
@@ -172,26 +173,36 @@ test("commercial links keep the approved 8 hub, 36 guide and 21 product owners",
     ),
     [
       "beijing-highlights-5-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
       "changbaishan-yanji-winter-6-day-private-tour",
       "chaozhou-shantou-nanao-5-day-private-tour",
       "chengdu-chongqing-8-day-private-tour",
       "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
       "chengdu-pandas-sanxingdui-5-day-private-tour",
       "chongqing-wulong-5-day-private-tour",
+      "chongqing-yangtze-cruise-6-day-private-tour",
+      "datong-pingyao-6-day-private-tour",
       "guangzhou-shunde-foshan-5-day-private-tour",
       "guilin-yangshuo-5-day-private-tour",
       "guizhou-huangguoshu-libo-miao-7-day-private-tour",
       "harbin-winter-5-day-private-tour",
       "huangshan-hongcun-huizhou-5-day-private-tour",
+      "hulunbuir-7-day-private-tour",
       "jingdezhen-wuyuan-wangxian-6-day-private-tour",
       "kunming-dali-lijiang-8-day-private-tour",
+      "kunming-jianshui-yuanyang-6-day-private-tour",
+      "luoyang-dengfeng-kaifeng-6-day-private-tour",
+      "shanghai-disneyland-5-day-private-tour",
       "shanghai-suzhou-5-day-private-tour",
       "shanghai-suzhou-hangzhou-6-day-private-tour",
+      "shenzhen-family-tech-4-day-private-tour",
       "xiamen-tulou-quanzhou-6-day-private-tour",
       "xian-terracotta-warriors-5-day-private-tour",
+      "xinjiang-ili-sayram-8-day-private-tour",
       "zhangjiajie-4-day-private-tour",
       "zhangjiajie-forest-4-day-private-tour",
       "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "zhangye-jiayuguan-dunhuang-7-day-private-tour",
     ],
   );
 });

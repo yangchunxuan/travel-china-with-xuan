@@ -321,7 +321,7 @@ export const destinationHubRegistry = [
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-23",
     sourceReviewedDate: "2026-08-22",
     supportGuideIds: [
       "china-10-day-itinerary",
@@ -330,6 +330,7 @@ export const destinationHubRegistry = [
       "pudong-airport-to-shanghai-disneyland",
       "shanghai-hangzhou-transport-route",
       "shanghai-suzhou-hangzhou-nanjing-route-order",
+      "shanghai-to-suzhou-day-trip",
       "shanghai-24-hour-parks-reality-check",
       "yangshan-automated-port-explained",
       "how-to-read-a-chinese-sponge-city",

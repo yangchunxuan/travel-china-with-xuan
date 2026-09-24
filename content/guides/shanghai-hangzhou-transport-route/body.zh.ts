@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "上海到杭州的列车可以很多、很快，但错误车站组合仍会让全程很慢。票面要同时适合上海机场或酒店、正确上海车站、正确杭州车站与最终酒店。" },
+  { id: "lead", type: "lead", text: "上海去杭州当天往返，若只看一个重点、完整进出景点的交通和返程车次都留得出时间，就可以安排。若想把西湖、茶区和灵隐放在一起，住一晚通常更从容。不要只看列车时长，先核对上海和杭州两端的具体车站。" },
   { id: "answer", type: "callout", title: "搜索多个车站组合，再比较两端地址", tone: "decision", body: "从虹桥机场或上海西侧出发，通常先查上海虹桥；其他市区地址若有合适直达车，上海站或上海南站可能更好。杭州端应按准确日期分别查询杭州东、杭州站、杭州南和杭州西，再只比较12306当天实际提供的站点组合。" },
   { id: "matrix-heading", type: "heading", level: 2, text: "路线是一对车站，不是两个城市名" },
   { id: "matrix", type: "table", caption: "最短列车可能带来最长首尾接驳", columns: ["车站选择", "合适", "实际不便", "核对"], rows: [

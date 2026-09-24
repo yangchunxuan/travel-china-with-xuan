@@ -269,8 +269,8 @@ export function PrivateToursHubPage({
               <dd><RollingNumber value={stats.routes} /></dd>
             </div>
             <div>
-              <dt>{copy.statsPlaces}</dt>
-              <dd><RollingNumber value={stats.places} /></dd>
+              <dt>{copy.statsRegions}</dt>
+              <dd><RollingNumber value={stats.regions} /></dd>
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>

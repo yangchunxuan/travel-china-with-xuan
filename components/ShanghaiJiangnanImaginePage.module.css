@@ -10,6 +10,16 @@
   overflow: clip;
 }
 
+/*
+ * The page root also carries the homepage's .localeRoot class, which sets a
+ * warm canvas and ink at the same specificity. Keep this page's own white
+ * paper and ink whichever of the two stylesheets the bundler loads last.
+ */
+.page.page {
+  background: var(--im-white);
+  color: var(--im-ink);
+}
+
 .page > header {
   background: var(--im-white);
 }
@@ -240,7 +250,7 @@
 .priceChoices {
   display: grid;
   gap: 0.55rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
 }
 
 .priceChoices button {
@@ -971,6 +981,10 @@
 }
 
 @media (max-width: 980px) {
+  .priceChoices {
+    grid-template-columns: 1fr;
+  }
+
   .heroGrid {
     gap: 2.4rem 3.5rem;
     grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
@@ -1003,6 +1017,10 @@
 }
 
 @media (max-width: 760px) {
+  .priceChoices {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
+
   .hero {
     padding: 2.75rem 1rem 4.5rem;
   }
@@ -1220,6 +1238,12 @@
 
   .finalActions {
     min-width: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .priceChoices {
+    grid-template-columns: 1fr;
   }
 }
 

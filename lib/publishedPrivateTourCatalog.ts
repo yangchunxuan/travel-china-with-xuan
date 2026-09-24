@@ -10,6 +10,8 @@ import { getPrivateTourStartingPrice } from "./privateTourStartingPrice.ts";
 import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./privateTourInquiryContext.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { privateTourExpansionProfiles } from "./privateTourExpansionProfiles.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { privateTourExpansionPhaseTwoProfiles } from "./privateTourExpansionPhaseTwoProfiles.ts";
 
 type LocalizedText = Readonly<Record<HomegroundLocale, string>>;
 
@@ -312,6 +314,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     ),
   },
   ...privateTourExpansionProfiles,
+  ...privateTourExpansionPhaseTwoProfiles,
 };
 
 const zhangjiajieContentLocale = {
@@ -461,7 +464,7 @@ export function getPublishedPrivateTourCatalog(
       },
       startingPrice: {
         ...zhangjiajieStartingPrice,
-        travelers: zhangjiajieProduct.group_basis.minimum_adults,
+        travelers: zhangjiajieProduct.price_display.starting_group_size,
         serviceLabel: {
           en: "Two days of English-speaking guide service included",
           zh: "已含两天英文导游服务",

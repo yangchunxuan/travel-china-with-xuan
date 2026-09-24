@@ -99,8 +99,8 @@ test("all three-language catalog price links land on the exact lowest published 
         assert.equal(item.startingPrice.travelers, 4);
         assert.equal(item.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
         assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
-        assert.equal(published.startingPrice.travelers, 4, "catalog uses the lowest published per-person tier and states its group basis");
-        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
+        assert.equal(published.startingPrice.travelers, 6, "catalog uses the lowest published per-person tier and states its group basis");
+        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0360", zh: "¥2,302", ko: "₩500,000" }[locale]);
         continue;
       }
       assert.equal(item.href, published.startingPriceHref);
@@ -108,9 +108,10 @@ test("all three-language catalog price links land on the exact lowest published 
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
-    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].from_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].six_person_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.travelers, 6);
     assert.equal(legacy.startingPriceHref, legacy.href);
-    assert.equal(legacy.startingPrice.selection, undefined, "do not invent a package for the fixed legacy contract");
+    assert.equal(legacy.startingPrice.selection, undefined, "the detail card links to the tier choices");
     assert.ok(legacy.startingPrice.serviceLabel.length > 0);
   }
 });
@@ -138,8 +139,21 @@ test("every published service/group survives detail links, language changes and 
   }
   const beijing = privateTourProducts.find((p) => p.slug === beijingSlug);
   assert.deepEqual(beijing.packages.map((p) => [p.id, p.prices.map((r) => r.cnyPerPerson)]), [
-    ["english-guided", [5453, 4348]], ["no-guide", [4973, 3974]],
+    ["english-guided", [5453, 4348, 4148]], ["no-guide", [4973, 3974, 3774]],
   ]);
+});
+
+test("six-traveller prices are exactly CNY 200 per person below each published four-traveller tier", () => {
+  let sixPersonPackages = 0;
+  for (const product of privateTourProducts) for (const tourPackage of product.packages) {
+    const four = tourPackage.prices.find((row) => row.travelers === 4);
+    if (!four) continue;
+    const six = tourPackage.prices.find((row) => row.travelers === 6);
+    assert.ok(six, `${product.slug}:${tourPackage.id} needs a six-person tier`);
+    assert.equal(six.cnyPerPerson, four.cnyPerPerson - 200, `${product.slug}:${tourPackage.id}`);
+    sixPersonPackages += 1;
+  }
+  assert.equal(sixPersonPackages, 19);
 });
 
 test("owner-approved USD prices survive localization without USD10 rounding", () => {
@@ -159,16 +173,18 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
     for (const [locale, expected] of [["en", usd], ["zh", cny], ["ko", krw]]) {
       const localized = localizePrivateTourProduct(product, locale);
       const rows = localized.packages.find((p) => p.id === packageId).rows;
-      assert.deepEqual(rows.map((row) => row.travelers), [2, 4]);
-      assert.deepEqual(rows.map((row) => row.amount), expected, `${slug}:${locale}`);
+      assert.deepEqual(rows.map((row) => row.travelers), [2, 4, 6]);
+      assert.deepEqual(rows.slice(0, 2).map((row) => row.amount), expected, `${slug}:${locale} existing tiers`);
+      assert.equal(rows[2].cny, cny[1] - 200);
+      assert.equal(rows[2].amount, formatPrivateTourPrice(cny[1] - 200, locale).amount, `${slug}:${locale} six-person price`);
     }
   }
   const beijing = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === beijingSlug), "en");
-  assert.deepEqual(beijing.packages.find((p) => p.id === "no-guide").rows.map((row) => row.amount), [770, 620]);
+  assert.deepEqual(beijing.packages.find((p) => p.id === "no-guide").rows.map((row) => row.amount), [770, 620, 590]);
   assert.equal(getPrivateTourStartingPrice(beijing).selection.packageId, "no-guide");
   const guilin = getPublishedPrivateTourCatalog("en").find((p) => p.slug === cases[1][0]);
-  assert.equal(guilin.startingPrice.amount, 629);
-  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0629");
+  assert.equal(guilin.startingPrice.amount, 600);
+  assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0600");
 });
 
 test("source-currency product prices remain exact in every locale", () => {
@@ -185,7 +201,7 @@ test("source-currency product prices remain exact in every locale", () => {
     ),
   );
 
-  assert.equal(publishedTiers.length, 12);
+  assert.equal(publishedTiers.length, 17);
   for (const locale of locales) {
     for (const expected of publishedTiers) {
       const localized = localizePrivateTourProduct(
@@ -283,7 +299,7 @@ test("Jiangnan comparison preserves the selected party and the other-size quote 
     "./PrivateTourSelection": selection, "./TourPriceScope": priceScope,
   });
   const tours = ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"];
-  for (const locale of locales) for (const origin of tours) for (const travelers of [2, 4]) {
+  for (const locale of locales) for (const origin of tours) for (const travelers of [2, 4, 6]) {
     const target = tours.find(candidate => candidate !== origin);
     const chosen = inquiry.getPrivateTourInquirySelection(origin, "standard-guided", travelers);
     const prefix = locale === "en" ? "" : `/${locale}`;

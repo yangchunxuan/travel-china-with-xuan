@@ -40,7 +40,7 @@
 /* ---------- Hero ---------- */
 
 .hero {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem) var(--tour-section);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 4vw, 4rem);
 }
 
 .breadcrumb ol {
@@ -213,7 +213,7 @@
   display: grid;
   gap: 2rem 2.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: var(--tour-section) 0 0;
+  margin: clamp(2rem, 3vw, 3rem) 0 0;
   padding-block: 2.5rem;
 }
 
@@ -250,7 +250,7 @@
 /* ---------- Route grid ---------- */
 
 .quickCompare {
-  padding-block: var(--tour-section);
+  padding-block: clamp(2.5rem, 4vw, 4rem) var(--tour-section);
 }
 
 .quickIntro {
@@ -367,14 +367,17 @@
   align-items: start;
   display: grid;
   gap: 0.5rem 1rem;
-  grid-template-columns: 6.5rem minmax(0, 1fr);
+  grid-template-columns: 7.5rem minmax(0, 1fr);
 }
 
+/* The first label line sits on the centre of the first pill row; a longer
+   label such as "Starting price (approx. USD)" wraps tightly beneath it. */
 .filterGroup > span {
   color: var(--tour-muted);
   font-size: 0.8125rem;
   font-weight: 500;
-  line-height: var(--tour-pill);
+  line-height: 1.35;
+  padding-block-start: calc((var(--tour-pill) - 1.35em) / 2);
 }
 
 .filterPills {
@@ -532,6 +535,7 @@
 .quickList[data-region="north"] > li:not([data-region="north"]),
 .quickList[data-region="northeast"] > li:not([data-region="northeast"]),
 .quickList[data-region="central"] > li:not([data-region="central"]),
+.quickList[data-region="multi"] > li:not([data-region="multi"]),
 .quickList[data-length="short"] > li:not([data-length="short"]),
 .quickList[data-length="medium"] > li:not([data-length="medium"]),
 .quickList[data-length="long"] > li:not([data-length="long"]),
@@ -1057,7 +1061,7 @@
   }
 
   .hero {
-    padding-block: 1rem var(--tour-section);
+    padding-block: 1rem 2rem;
   }
 
   .breadcrumb ol {
@@ -1074,8 +1078,12 @@
 
   .stats {
     gap: 1.5rem;
-    margin-block-start: 3rem;
+    margin-block-start: 2rem;
     padding-block: 1.5rem;
+  }
+
+  .quickCompare {
+    padding-block-start: 2.5rem;
   }
 
   .stats > div + div {
@@ -1157,6 +1165,7 @@
 
   .filterGroup > span {
     line-height: 1.4;
+    padding-block-start: 0;
   }
 
   .quickList {

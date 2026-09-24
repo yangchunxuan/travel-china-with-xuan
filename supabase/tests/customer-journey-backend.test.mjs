@@ -50,7 +50,7 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  assert.equal(Object.keys(trafficProductPackages).length, 21);
+  assert.equal(Object.keys(trafficProductPackages).length, 31);
   assert.deepEqual(
     Object.keys(trafficProductTravelerCounts).sort(),
     Object.keys(trafficProductPackages).sort(),
@@ -117,11 +117,15 @@ function adminPayload() {
 test("admin v2 validates product dimensions while preserving suppression and no-timeline boundaries", () => {
   const input = adminPayload();
   assert.deepEqual(sanitizeAdminTrafficRpc([{ payload: input }]), input);
+  input.dimensions.productSelections[0].label = `${slug}|no-guide|6`;
+  assert.deepEqual(sanitizeAdminTrafficRpc([{ payload: input }]), input);
   for (const mutate of [
     (p) => { p.totals.productSelections = cell(1); },
     (p) => { p.dimensions.products[0].label = "person@example.com"; },
     (p) => { p.dimensions.productSelections[0].label = `${slug}|standard-guided|4`; },
     (p) => { p.dimensions.productSelections[0].label = `${slug}|no-guide|04`; },
+    (p) => { p.dimensions.productSelections[0].label = `${slug}|no-guide|06`; },
+    (p) => { p.dimensions.productSelections[0].label = "chengdu-jiuzhaigou-huanglong-6-day-private-tour|standard-guided|4"; },
     (p) => { p.dimensions.products.push(p.dimensions.products[0]); },
     (p) => { p.dimensions.products[0].sessionHash = "a".repeat(64); },
     (p) => { p.limits.perSessionEventsIncluded = true; },

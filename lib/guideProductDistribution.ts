@@ -11,25 +11,35 @@ import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts
 export const guideProductMarketForecast = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": 10,
   "shanghai-suzhou-5-day-private-tour": 8,
-  "beijing-highlights-5-day-private-tour": 11,
-  "xian-terracotta-warriors-5-day-private-tour": 6,
-  "chengdu-pandas-sanxingdui-5-day-private-tour": 4,
+  "beijing-highlights-5-day-private-tour": 9,
+  "xian-terracotta-warriors-5-day-private-tour": 5,
+  "chengdu-pandas-sanxingdui-5-day-private-tour": 3,
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": 2,
-  "chengdu-chongqing-8-day-private-tour": 5,
-  "chongqing-wulong-5-day-private-tour": 3,
-  "guilin-yangshuo-5-day-private-tour": 7,
-  "kunming-dali-lijiang-8-day-private-tour": 5,
-  "zhangjiajie-furong-fenghuang-7-day-private-tour": 7,
-  "zhangjiajie-forest-4-day-private-tour": 5,
-  "zhangjiajie-4-day-private-tour": 5,
-  "harbin-winter-5-day-private-tour": 3,
+  "chengdu-chongqing-8-day-private-tour": 4,
+  "chongqing-wulong-5-day-private-tour": 2,
+  "guilin-yangshuo-5-day-private-tour": 6,
+  "kunming-dali-lijiang-8-day-private-tour": 4,
+  "zhangjiajie-furong-fenghuang-7-day-private-tour": 6,
+  "zhangjiajie-forest-4-day-private-tour": 4,
+  "zhangjiajie-4-day-private-tour": 4,
+  "harbin-winter-5-day-private-tour": 2,
   "changbaishan-yanji-winter-6-day-private-tour": 2,
-  "guangzhou-shunde-foshan-5-day-private-tour": 4,
-  "xiamen-tulou-quanzhou-6-day-private-tour": 4,
+  "guangzhou-shunde-foshan-5-day-private-tour": 3,
+  "xiamen-tulou-quanzhou-6-day-private-tour": 3,
   "chaozhou-shantou-nanao-5-day-private-tour": 2,
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": 2,
-  "huangshan-hongcun-huizhou-5-day-private-tour": 3,
+  "huangshan-hongcun-huizhou-5-day-private-tour": 2,
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": 2,
+  "shanghai-disneyland-5-day-private-tour": 2,
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": 1,
+  "datong-pingyao-6-day-private-tour": 1,
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": 1,
+  "chongqing-yangtze-cruise-6-day-private-tour": 2,
+  "xinjiang-ili-sayram-8-day-private-tour": 2,
+  "hulunbuir-7-day-private-tour": 1,
+  "kunming-jianshui-yuanyang-6-day-private-tour": 1,
+  "shenzhen-family-tech-4-day-private-tour": 1,
+  "beijing-xian-shanghai-12-day-private-tour": 3,
 } as const;
 
 export type GuideProductId = keyof typeof guideProductMarketForecast;
@@ -147,9 +157,49 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
     destinations: ["jiangxi", "nanchang", "jingdezhen", "wuyuan", "sanqingshan", "wangxian"],
     topics: ["ceramics", "porcelain", "village"],
   },
+  "shanghai-disneyland-5-day-private-tour": {
+    destinations: ["shanghai", "shanghai-disneyland"],
+    topics: ["disneyland", "theme-park", "family"],
+  },
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": {
+    destinations: ["henan", "luoyang", "dengfeng", "kaifeng", "shaolin-temple", "longmen-grottoes"],
+    topics: ["heritage", "buddhist-art"],
+  },
+  "datong-pingyao-6-day-private-tour": {
+    destinations: ["shanxi", "datong", "pingyao", "taiyuan", "yungang-grottoes", "hanging-temple"],
+    topics: ["heritage", "old-town"],
+  },
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": {
+    destinations: ["gansu", "zhangye", "jiayuguan", "dunhuang", "mogao-caves", "hexi-corridor"],
+    topics: ["silk-road", "desert"],
+  },
+  "chongqing-yangtze-cruise-6-day-private-tour": {
+    destinations: ["chongqing", "yangtze", "yichang", "three-gorges"],
+    topics: ["cruise", "river"],
+  },
+  "xinjiang-ili-sayram-8-day-private-tour": {
+    destinations: ["xinjiang", "ili", "sayram", "yining", "nalati"],
+    topics: ["grassland", "lake", "road-trip"],
+  },
+  "hulunbuir-7-day-private-tour": {
+    destinations: ["hulunbuir", "inner-mongolia", "hailar", "ergun", "manzhouli"],
+    topics: ["grassland", "family", "road-trip"],
+  },
+  "kunming-jianshui-yuanyang-6-day-private-tour": {
+    destinations: ["yunnan", "kunming", "jianshui", "yuanyang", "honghe"],
+    topics: ["rice-terraces", "old-town"],
+  },
+  "shenzhen-family-tech-4-day-private-tour": {
+    destinations: ["shenzhen", "guangdong", "huaqiangbei"],
+    topics: ["family", "technology", "science"],
+  },
+  "beijing-xian-shanghai-12-day-private-tour": {
+    destinations: ["beijing", "xian", "shanghai", "forbidden-city", "terracotta-warriors"],
+    topics: ["first-trip", "multi-city"],
+  },
 };
 
-export const guideProductMappingVersion = "2026-09-21-v1";
+export const guideProductMappingVersion = "2026-09-23-v2";
 
 function signalTokens(values: readonly string[]) {
   const tokens = new Set<string>();

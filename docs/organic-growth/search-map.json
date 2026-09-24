@@ -847,11 +847,12 @@
     },
     "entityAssignments": {
       "repositoryRegistryPath": "content/entities/core-places.json",
-      "repositoryEntityIds": ["country-china", "province-shaanxi", "province-sichuan", "province-guangdong", "province-hunan", "province-zhejiang", "province-guangxi", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai", "city-chengdu", "city-guilin", "city-guangzhou", "city-hangzhou", "city-chongqing", "city-shenzhen"],
+      "repositoryEntityIds": ["country-china", "province-shaanxi", "province-sichuan", "province-guangdong", "province-hunan", "province-zhejiang", "province-jiangsu", "province-guangxi", "city-beijing", "city-xian", "city-zhangjiajie", "city-shanghai", "city-suzhou", "city-chengdu", "city-guilin", "city-guangzhou", "city-hangzhou", "city-chongqing", "city-shenzhen"],
       "repositoryEntityEvidence": {
         "city-guangzhou": ["lib/destinationHubs.ts", "content/guides/guangzhou-baiyun-airport-t2-t3/metadata.json", "content/guides/guangzhou-hong-kong-transport-route/metadata.json"],
         "city-zhangjiajie": ["lib/destinationHubs.ts", "content/guides/zhangjiajie-city-or-wulingyuan-hotel-base/metadata.json", "content/guides/zhangjiajie-national-forest-park-tickets-and-entrances/metadata.json"],
         "city-hangzhou": ["lib/destinationHubs.ts", "content/guides/liangzhu-ruins-park-and-museum-sequence/metadata.json", "content/guides/shanghai-hangzhou-transport-route/metadata.json"],
+        "city-suzhou": ["content/guides/shanghai-to-suzhou-day-trip/metadata.json", "content/guides/how-to-read-a-suzhou-garden/metadata.json"],
         "city-chongqing": ["lib/destinationHubs.ts", "content/guides/chongqing-railway-station-selector/metadata.json", "content/guides/chongqing-upper-lower-city-orientation/metadata.json", "content/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/metadata.json"],
         "city-shenzhen": ["content/guides/shenzhen-airport-railway-station-border-port-selector/metadata.json", "content/guides/shenzhen-where-to-stay-futian-luohu-nanshan/metadata.json", "content/guides/shenzhen-hong-kong-transport-route/metadata.json"]
       },
@@ -883,7 +884,7 @@
         "pudong-airport-to-shanghai-disneyland": ["city-shanghai"],
         "lijiang-old-town-or-shuhe-where-to-stay": ["country-china"],
         "how-guangzhou-morning-tea-works": ["country-china", "city-guangzhou"],
-        "how-to-read-a-suzhou-garden": ["country-china"],
+        "how-to-read-a-suzhou-garden": ["country-china", "city-suzhou", "province-jiangsu"],
         "chengdu-panda-base-or-dujiangyan-panda-valley": ["city-chengdu"],
         "china-last-night-before-international-flight": ["country-china"],
         "china-night-train-or-daytime-high-speed-rail": ["country-china"],
@@ -897,7 +898,7 @@
         "china-community-canteens-explained": ["country-china"],
         "desert-restoration-travellers-can-see": ["country-china"],
         "guizhou-village-basketball-culture": ["country-china"],
-        "how-to-read-a-chinese-sponge-city": ["country-china", "city-shanghai"],
+        "how-to-read-a-chinese-sponge-city": ["country-china", "city-shanghai", "city-suzhou"],
         "how-to-read-heritage-sites-in-china": ["country-china", "city-beijing"],
         "how-to-visit-an-archaeological-site-museum": ["country-china"],
         "lunar-new-year-customs-for-visitors": ["country-china"],
@@ -909,7 +910,7 @@
         "why-china-museums-have-stamps": ["country-china"],
         "yangshan-automated-port-explained": ["city-shanghai"],
         "yunnan-coffee-from-cherry-to-cup": ["country-china"],
-        "zhenjiang-vinegar-living-fermentation": ["country-china"],
+        "zhenjiang-vinegar-living-fermentation": ["province-jiangsu"],
         "kaifeng-song-dynasty-urban-landscape": ["country-china"],
         "shilin-ashima-landscape-story": ["country-china"],
         "anshun-dixi-mask-performance-guide": ["country-china"],
@@ -1128,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 204,
-      "localeUrlCount": 604,
-      "generatedIdentityCount": 185,
+      "identityCount": 205,
+      "localeUrlCount": 607,
+      "generatedIdentityCount": 186,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1506,6 +1507,35 @@
               "boundary": "Exact Zhangjiajie, Furong Town and Fenghuang airport/station names, last-mile transfer logic and the different four-day versus seven-day endpoints. Date-specific services, fares, seats, traffic and pickup details remain confirmation tasks."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-23",
+          "sourceBranch": "agent/free-seo-keywords-20260923",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Pre-release repository snapshot; deployment, live URL verification, indexing and traffic evidence remain separate states.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "shanghai-to-suzhou-day-trip",
+              "title": "Shanghai to Suzhou Day Trip: Train, Route & Return",
+              "metadataPath": "content/guides/shanghai-to-suzhou-day-trip/metadata.json",
+              "canonicalPath": "/guides/shanghai-to-suzhou-day-trip/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/shanghai-to-suzhou-day-trip/",
+                "/zh/guides/shanghai-to-suzhou-day-trip/",
+                "/ko/guides/shanghai-to-suzhou-day-trip/"
+              ],
+              "section": "transport",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "transport-city-pair-routes",
+              "destinations": ["shanghai", "suzhou"],
+              "boundary": "Shanghai-to-Suzhou day-trip viability, station selection and the one-garden versus overnight decision. Date-specific train services, seats, fares, garden entry and standalone day-tour pricing remain unconfirmed."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1664,6 +1694,7 @@
         "shanghai-hangzhou-transport-route",
         "shanghai-pudong-or-hongqiao-airport",
         "shanghai-suzhou-hangzhou-nanjing-route-order",
+        "shanghai-to-suzhou-day-trip",
         "shanghai-where-to-stay-first-trip",
         "shenzhen-airport-railway-station-border-port-selector",
         "shenzhen-hong-kong-transport-route",

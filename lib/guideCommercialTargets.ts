@@ -63,6 +63,10 @@ export const guideTargets = {
   "terracotta-warriors-without-tour": [productTarget("xian-terracotta-warriors-5-day-private-tour")],
   "shaanxi-history-museum-booking-and-collection-plan": [productTarget("xian-terracotta-warriors-5-day-private-tour")],
   "shanghai-pudong-or-hongqiao-airport": [productTarget("shanghai-suzhou-5-day-private-tour")],
+  "shanghai-to-suzhou-day-trip": [
+    productTarget("shanghai-suzhou-5-day-private-tour"),
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+  ],
   "shanghai-hangzhou-transport-route": [productTarget("shanghai-suzhou-hangzhou-6-day-private-tour")],
   "how-to-read-a-suzhou-garden": [
     productTarget("shanghai-suzhou-5-day-private-tour"),

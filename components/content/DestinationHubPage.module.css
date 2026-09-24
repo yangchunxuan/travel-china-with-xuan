@@ -46,6 +46,10 @@
   min-width: 0;
 }
 
+.dayTripLinks nav {
+  border-block-end: 0;
+}
+
 .stayExample > div > h2:first-child {
   margin-block-start: 0;
 }

@@ -32,14 +32,14 @@ function legacyRegistrySource(destinations) {
 test("entity coverage includes the complete generated plus legacy runtime ledger", async () => {
   const report = await generateGuideEntityCoverage();
   assert.deepEqual(report.scope, {
-    runtimeGuideCount: 204,
-    independentGuideCount: 185,
+    runtimeGuideCount: 205,
+    independentGuideCount: 186,
     legacyGuideCount: 19,
   });
-  assert.equal(report.guideCount, 204);
-  assert.equal(report.guideWithUnmappedTokenCount, 95);
-  assert.equal(report.countryFallbackGuideCount, 44);
-  assert.equal(report.unmappedTokenCount, 149);
+  assert.equal(report.guideCount, 205);
+  assert.equal(report.guideWithUnmappedTokenCount, 93);
+  assert.equal(report.countryFallbackGuideCount, 42);
+  assert.equal(report.unmappedTokenCount, 147);
   assert.equal(strictModeExitCode(report), 1);
   assert.equal(report.rows.filter((row) => row.scope === "legacy").length, 19);
   assert.ok(report.rows.some((row) =>

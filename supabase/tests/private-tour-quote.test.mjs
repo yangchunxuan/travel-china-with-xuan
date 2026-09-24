@@ -6,7 +6,7 @@ import {
   currentHomepageEmailFormVersion, homepageEmailPrivacyNoticeVersion,
   validateAndNormalizeInquiry, semanticInquiryPayload, canonicalizeJson,
 } from "../../lib/inquiryContract.ts";
-import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, getPrivateTourInquirySubmissionContext, privateTourInquirySlugs } from "../../lib/privateTourInquiryContext.ts";
+import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, privateTourInquirySlugs } from "../../lib/privateTourInquiryContext.ts";
 
 const config = { allowedFormVersions: [currentPrivateTourQuoteFormVersion, currentHomepageEmailFormVersion], allowedPrivacyNoticeVersions: [homepageEmailPrivacyNoticeVersion] };
 export const quotePayload = (locale = "en", slug = "beijing-highlights-5-day-private-tour", selection = { packageId: "no-guide", travelers: 4 }) => ({
@@ -28,6 +28,11 @@ test("quote contract retains every valid localized product selection and classic
       if (slug === "zhangjiajie-4-day-private-tour") {
         const value = normalized(quotePayload(locale, slug, null));
         assert.equal(Object.hasOwn(value.productInterest, "selection"), false);
+        for (const packageId of ["selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"]) {
+          const selection = { packageId, travelers: 6 };
+          const selected = normalized(quotePayload(locale, slug, selection));
+          assert.deepEqual(selected.productInterest.selection, selection);
+        }
       }
       for (const packageId of ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided"]) {
         for (const travelers of [2, 4]) {
@@ -154,7 +159,7 @@ test("actual intake and notification handlers preserve quote fields, replay iden
     const runWorker = () => worker(new Request("https://project.supabase.co/functions/v1/notify-inquiries", { method: "POST", headers: { "x-worker-secret": env.get("NOTIFICATION_WORKER_SECRET") } }));
     for (const locale of ["en", "zh", "ko"]) {
       for (const isClassic of [false, true]) {
-        const input = isClassic ? quotePayload(locale, "zhangjiajie-4-day-private-tour", null) : quotePayload(locale);
+        const input = isClassic ? quotePayload(locale, "zhangjiajie-4-day-private-tour", { packageId: "selected-city-stay", travelers: 6 }) : quotePayload(locale);
         currentJob = { job_id: randomUUID(), inquiry_id: randomUUID(), public_reference: "HG-TEST", locale, route_id: "private-tour-quote",
           answers: { productInterest: input.productInterest, travelDate: isClassic ? null : input.travelDate, landingPath: input.attribution.landingPath },
           route_snapshot: { kind: "private-tour-quote", ruleVersion: currentPrivateTourQuoteFormVersion },
@@ -164,7 +169,7 @@ test("actual intake and notification handlers preserve quote fields, replay iden
         assert.equal((await (await runWorker()).json()).accepted, 1);
         const mail = messages.at(-1); assert.equal(mail.reply_to, currentJob.contact_email);
         assert.ok(mail.text.includes(getPrivateTourInquirySubmissionContext(input.productInterest, locale).name)); assert.ok(mail.text.includes(input.attribution.landingPath));
-        if (isClassic) { assert.match(mail.text, /Date undecided/); assert.doesNotMatch(mail.text, /Tour selection:/); }
+        if (isClassic) { assert.match(mail.text, /Date undecided/); assert.ok(mail.text.includes(privateTourInquirySelectionLabel(input.productInterest, locale))); }
         else { assert.ok(mail.text.includes(input.travelDate)); assert.match(mail.html, /Pace &lt;slow&gt; &amp; steady/); assert.doesNotMatch(mail.html, /Pace <slow>/); }
       }
     }

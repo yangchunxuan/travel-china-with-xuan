@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "상하이-항저우 열차는 많고 빠를 수 있지만 틀린 역 조합은 전체를 느리게 만든다. 표는 상하이 공항이나 호텔, 정확한 상하이역, 정확한 항저우역과 최종 호텔에 모두 맞아야 한다." },
+  { id: "lead", type: "lead", text: "상하이에서 항저우 당일치기는 한 가지 목적에 집중하고 역에서 명소까지의 이동과 귀환 열차에 충분한 여유가 있을 때 가능합니다. 서호와 차 산지, 링인을 함께 보고 싶다면 1박이 대개 더 편합니다. 열차 시간만으로 판단하지 말고 상하이와 항저우의 정확한 역을 먼저 확인하세요." },
   { id: "answer", type: "callout", title: "여러 역 조합을 검색하고 양쪽 주소를 비교", tone: "decision", body: "홍차오공항이나 상하이 서부에서 시작하면 상하이홍차오를 먼저 본다. 다른 시내 주소에는 쓸 수 있는 직통편이 있을 때 상하이역이나 상하이남역이 나을 수 있다. 항저우에서는 날짜별로 항저우동역·항저우역·항저우남역·항저우서역을 각각 검색하고, 12306에 실제 표시되는 역 조합만 비교한다." },
   { id: "matrix-heading", type: "heading", level: 2, text: "노선은 두 도시명이 아니라 역 조합이다" },
   { id: "matrix", type: "table", caption: "가장 짧은 열차에 가장 긴 접근이 붙을 수 있다", columns: ["역 선택", "잘 맞음", "부담", "확인"], rows: [

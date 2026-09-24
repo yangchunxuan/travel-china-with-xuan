@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "Shanghai–Hangzhou trains can be frequent and fast while the wrong station pair still makes the trip slow. The ticket must fit the Shanghai airport or hotel, the correct Shanghai terminal, the correct Hangzhou terminal and the final hotel." },
+  { id: "lead", type: "lead", text: "A Hangzhou day trip from Shanghai can work for one focused priority if the complete station-to-sight journey and return train leave enough time there. For West Lake plus tea areas or Lingyin, an overnight stay is usually calmer. Check the exact Shanghai and Hangzhou stations before judging the trip by the train time alone." },
   { id: "answer", type: "callout", title: "Search more than one station pair, then compare the doors", tone: "decision", body: "Shanghai Hongqiao often deserves the first check for a Hongqiao airport or west-side start. Shanghai Station or Shanghai South can be better for other city addresses when a usable direct train exists. In Hangzhou, search the exact date across Hangzhou East, Hangzhou Station, Hangzhou South and Hangzhou West, then compare only station pairs that 12306 actually offers for that date." },
   { id: "matrix-heading", type: "heading", level: 2, text: "A route is a pair, not two city names" },
   { id: "matrix", type: "table", caption: "The shortest train may carry the longest access legs", columns: ["Station choice", "Good fit", "Practical drawback", "Verify"], rows: [

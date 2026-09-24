@@ -15,7 +15,8 @@ export type PrivateTourRegionId =
   | "south"
   | "north"
   | "northeast"
-  | "central";
+  | "central"
+  | "multi";
 export type PrivateTourLengthId = "short" | "medium" | "long";
 export type PrivateTourPriceTierId = "low" | "mid" | "high" | "quote";
 
@@ -30,6 +31,7 @@ export const privateTourRegionOrder: readonly PrivateTourRegionId[] = [
   "north",
   "northeast",
   "central",
+  "multi",
 ];
 
 const regionLabels: Readonly<Record<PrivateTourRegionId, LocalizedText>> = {
@@ -39,6 +41,7 @@ const regionLabels: Readonly<Record<PrivateTourRegionId, LocalizedText>> = {
   north: l("North & Northwest", "华北与西北", "북부와 서북부"),
   northeast: l("Northeast", "东北", "동북부"),
   central: l("Central China", "华中", "중부"),
+  multi: l("Multi-region", "跨地区", "여러 지역"),
 };
 
 /**
@@ -68,6 +71,16 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "zhangjiajie-forest-4-day-private-tour": "central",
   "zhangjiajie-furong-fenghuang-7-day-private-tour": "central",
   "zhangjiajie-4-day-private-tour": "central",
+  "shanghai-disneyland-5-day-private-tour": "east",
+  "luoyang-dengfeng-kaifeng-6-day-private-tour": "central",
+  "datong-pingyao-6-day-private-tour": "north",
+  "zhangye-jiayuguan-dunhuang-7-day-private-tour": "north",
+  "chongqing-yangtze-cruise-6-day-private-tour": "multi",
+  "xinjiang-ili-sayram-8-day-private-tour": "north",
+  "hulunbuir-7-day-private-tour": "northeast",
+  "kunming-jianshui-yuanyang-6-day-private-tour": "southwest",
+  "shenzhen-family-tech-4-day-private-tour": "south",
+  "beijing-xian-shanghai-12-day-private-tour": "multi",
 };
 
 export function getPrivateTourRegion(slug: string): PrivateTourRegionId {
@@ -100,8 +113,8 @@ const priceTierLabels: Readonly<
   Record<HomegroundLocale, Readonly<Record<Exclude<PrivateTourPriceTierId, "quote">, string>>>
 > = {
   en: { low: "Under USD 550", mid: "USD 550–1,000", high: "Over USD 1,000" },
-  zh: { low: "¥3,500 以下", mid: "¥3,500–6,500", high: "¥6,500 以上" },
-  ko: { low: "₩800,000 이하", mid: "₩800,000–1,400,000", high: "₩1,400,000 이상" },
+  zh: { low: "低于 ¥3,500", mid: "¥3,500–6,500", high: "高于 ¥6,500" },
+  ko: { low: "₩800,000 미만", mid: "₩800,000–1,400,000", high: "₩1,400,000 초과" },
 };
 
 function localeCurrency(locale: HomegroundLocale): "USD" | "CNY" | "KRW" {
@@ -217,7 +230,7 @@ export function getPrivateTourFacets(
 
 export interface PrivateTourHubStats {
   readonly routes: number;
-  readonly places: number;
+  readonly regions: number;
   readonly shortestDays: number;
   readonly longestDays: number;
   readonly shoppingStops: number;
@@ -255,10 +268,13 @@ export function getPrivateTourPlaces(
 export function getPrivateTourHubStats(
   products: readonly PublishedPrivateTourCatalogItem[],
 ): PrivateTourHubStats {
+  const regions = new Set(
+    products.map((product) => getPrivateTourRegion(product.slug)).filter((region) => region !== "multi"),
+  );
   const days = products.map((product) => product.days);
   return {
     routes: products.length,
-    places: getPrivateTourPlaces(products).length,
+    regions: regions.size,
     shortestDays: Math.min(...days),
     longestDays: Math.max(...days),
     shoppingStops: products.filter((product) => product.shoppingStops).length,

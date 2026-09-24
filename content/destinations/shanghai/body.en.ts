@@ -637,6 +637,15 @@ const body = {
       text: "Suzhou's compact first-visit priorities can justify a day visit. Hangzhou often rewards a local night because its major experiences do not sit beside one station. Nanjing normally deserves its own base if it matters enough to include. A two-base delta plan can outperform both repeated returns and constant hotel changes.",
     },
     {
+      id: "delta-day-trip-links",
+      type: "internal-links",
+      title: "Plan the actual return journey",
+      items: [
+        { label: "Shanghai to Suzhou day trip", href: "/guides/shanghai-to-suzhou-day-trip/", description: "Choose the stations, one focused Suzhou day and a workable return." },
+        { label: "Shanghai to Hangzhou by train", href: "/guides/shanghai-hangzhou-transport-route/", description: "Compare station pairs before choosing a day trip or overnight stay." },
+      ],
+    },
+    {
       id: "order-heading",
       type: "heading",
       level: 2,
