@@ -80,3 +80,61 @@
   outline: 2px solid var(--hg-color-focus, var(--hg-color-rust));
   outline-offset: 3px;
 }
+
+/*
+ * Grok tile, used only by the redesigned guide template (EditorialGuidePage
+ * passes variant="grok"). Hand-built guides sit on a warm canvas where this
+ * #f9f8f6 tile would vanish, so they keep the original card until they are
+ * redesigned themselves. No outline, the photo inset 4px with a 12px radius,
+ * a slow 0.7s zoom and an arrow nudge on hover.
+ */
+.card.grok {
+  background: #f9f8f6;
+  border: 0;
+  border-radius: 1rem;
+  grid-template-columns: clamp(5rem, 18vw, 7.5rem) minmax(0, 1fr);
+  max-inline-size: 44rem;
+  padding: 4px clamp(0.875rem, 2.5vw, 1.25rem) 4px 4px;
+}
+
+.grok .media {
+  background: #f2f1ef;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.grok .media img {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.grok:hover .media img,
+.grok:focus-within .media img {
+  transform: scale(1.04);
+}
+
+.grok .title {
+  font-weight: 500;
+}
+
+.grok .action {
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.grok .action svg {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.grok .action:hover svg,
+.grok .action:focus-visible svg {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grok .media img,
+  .grok .action,
+  .grok .action svg {
+    transition: none;
+  }
+}

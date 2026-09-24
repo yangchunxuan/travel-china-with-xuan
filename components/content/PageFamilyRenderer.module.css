@@ -1,101 +1,205 @@
+/*
+ * Structured article body for guide articles and destination hubs (the only
+ * two users of PageFamilyRenderer). Grok reading layout: 17px ink body on a
+ * ~40rem measure, #f9f8f6 tiles without outlines instead of ruled boxes,
+ * 60% muted secondary text, and blocks that rise into place as they enter
+ * the viewport (scroll-driven, so no JavaScript and no hidden resting state).
+ */
 .body {
+  --body-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --body-measure: 40rem;
+  --body-muted: rgb(10 10 10 / 60%);
+  --body-line: rgb(10 10 10 / 10%);
+  --body-tile: #f9f8f6;
+  --body-warm: #f2f1ef;
   color: var(--hg-color-ink);
-  font-size: clamp(1rem, 1.2vw, 1.08rem);
-  line-height: 1.78;
+  font-size: 1.0625rem;
+  line-height: 1.75;
   margin-inline: auto;
-  max-width: 76rem;
+  max-width: 64rem;
 }
 
 .body > p,
 .body > h2,
 .body > h3,
-.body > .list {
+.body > .list,
+.body > .lead {
   margin-inline: auto;
-  max-width: 46rem;
+  max-width: var(--body-measure);
 }
 
 .body h2,
 .body h3 {
   font-family: var(--hg-editorial);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 .body h2 {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
-  line-height: 1;
-  margin-block: 5rem 1.5rem;
+  font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+  line-height: 1.12;
+  margin-block: 4.5rem 1.25rem;
   scroll-margin-top: 6rem;
 }
 
 .body h3 {
-  font-size: clamp(1.55rem, 2.5vw, 2.25rem);
-  line-height: 1.08;
-  margin-block: 3.25rem 1.1rem;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.25;
+  margin-block: 2.75rem 0.9rem;
   scroll-margin-top: 6rem;
 }
 
+:lang(zh) .body :is(h2, h3) {
+  letter-spacing: 0;
+}
+
 .lead {
-  color: var(--hg-color-muted);
-  font-family: var(--hg-editorial);
-  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
-  letter-spacing: -0.025em;
-  line-height: 1.35;
+  color: var(--hg-color-ink);
+  font-size: clamp(1.125rem, 1.4vw, 1.3125rem);
+  line-height: 1.65;
+  margin-block: 0 2rem;
+  text-wrap: pretty;
 }
 
 .list {
-  padding-inline-start: 1.4rem;
+  padding-inline-start: 1.3rem;
+}
+
+.list li::marker {
+  color: var(--body-muted);
 }
 
 .list li + li {
-  margin-block-start: 0.65rem;
+  margin-block-start: 0.6rem;
 }
 
 .figure {
-  margin: 3.5rem auto;
-  max-width: 60rem;
+  margin: 3rem auto;
+  max-width: 52rem;
 }
 
 .figure img {
   block-size: auto;
+  border-radius: 0.75rem;
   display: block;
   inline-size: 100%;
 }
 
 .figure figcaption {
-  color: var(--hg-color-muted);
-  font-size: 0.82rem;
+  color: var(--body-muted);
+  font-size: 0.8125rem;
   line-height: 1.5;
-  margin-block-start: 0.65rem;
+  margin-block-start: 0.6rem;
+}
+
+/* Callouts: a quiet tile. A thin light beam runs round the border on hover,
+   and once on load for the first callout (usually "The short answer"). */
+@property --beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .callout {
-  background: var(--hg-color-soft);
-  border-inline-start: 4px solid var(--hg-color-rust);
-  margin: 3rem auto;
-  max-width: 52rem;
-  padding: clamp(1.4rem, 3vw, 2.4rem);
+  background: var(--body-tile);
+  border-radius: 1rem;
+  isolation: isolate;
+  margin: 2.5rem auto;
+  max-width: 44rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  position: relative;
+}
+
+.callout::before {
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0 70%,
+    rgb(168 71 49 / 0%) 72%,
+    rgb(168 71 49 / 75%) 86%,
+    rgb(224 165 143 / 90%) 90%,
+    transparent 96%
+  );
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  padding: 1.5px;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 400ms ease;
+}
+
+.callout:hover::before {
+  animation: calloutBeam 3.2s linear infinite;
+  opacity: 1;
+}
+
+.body > aside.callout:first-of-type::before {
+  animation: calloutBeamOnce 4.2s linear 1.4s both;
+}
+
+.body > aside.callout:first-of-type:hover::before {
+  animation: calloutBeam 3.2s linear infinite;
+  opacity: 1;
 }
 
 .callout strong {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  margin-block-end: 0.7rem;
-  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  letter-spacing: 0;
+  margin-block-end: 0.5rem;
+  text-transform: none;
+}
+
+.callout strong::before {
+  background: var(--hg-color-ink);
+  border-radius: 999px;
+  block-size: 6px;
+  content: "";
+  flex: none;
+  inline-size: 6px;
 }
 
 .callout p {
   margin: 0;
 }
 
-.callout[data-tone="warning"] {
-  border-inline-start-color: var(--hg-color-error);
+.callout[data-tone="warning"] strong::before {
+  background: var(--hg-color-rust);
+}
+
+@keyframes calloutBeam {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+
+@keyframes calloutBeamOnce {
+  0% {
+    --beam-angle: 0deg;
+    opacity: 0;
+  }
+
+  12%,
+  86% {
+    opacity: 1;
+  }
+
+  100% {
+    --beam-angle: 720deg;
+    opacity: 0;
+  }
 }
 
 .comparison {
-  margin-block: 5rem;
+  margin-block: 4rem;
 }
 
 .comparison > h2 {
@@ -103,10 +207,9 @@
 }
 
 .comparison > div {
-  border-block-start: 1px solid var(--hg-color-line);
-  border-inline-start: 1px solid var(--hg-color-line);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 @media (min-width: 681px) and (max-width: 959px) {
@@ -116,69 +219,88 @@
 }
 
 .comparison article {
-  border-block-end: 1px solid var(--hg-color-line);
-  border-inline-end: 1px solid var(--hg-color-line);
-  padding: clamp(1.4rem, 3vw, 2.5rem);
+  background: var(--body-tile);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .comparison article h2,
 .comparison article h3 {
-  margin: 0;
+  font-size: clamp(1.2rem, 1.6vw, 1.375rem);
+  margin: 0 0 0.5rem;
 }
 
 .comparison article p,
 .comparison article li {
-  color: var(--hg-color-muted);
+  color: var(--body-muted);
+  font-size: 0.9375rem;
 }
 
 .comparison article ul {
   margin-block-end: 0;
-  padding-inline-start: 1.2rem;
+  padding-inline-start: 1.1rem;
 }
 
 .tableScroll {
-  margin-block: 4rem;
+  margin-block: 3.5rem;
   overflow-x: auto;
 }
 
 .tableScroll table {
   border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.55;
   min-width: 42rem;
   width: 100%;
 }
 
 .tableScroll caption {
   font-family: var(--hg-editorial);
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  line-height: 1.1;
-  padding-block-end: 1.25rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  padding-block-end: 1rem;
   text-align: start;
 }
 
 .tableScroll th,
 .tableScroll td {
-  border-block: 1px solid var(--hg-color-line);
-  padding: 0.9rem 1rem;
+  border-block-end: 1px solid var(--body-line);
+  padding: 0.85rem 0.9rem;
   text-align: start;
   vertical-align: top;
 }
 
 .tableScroll thead th {
-  background: var(--hg-color-soft);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  border-block-end-color: rgb(10 10 10 / 20%);
+  color: var(--body-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .tableScroll tbody th {
-  font-weight: 720;
+  font-weight: 500;
+}
+
+.tableScroll tbody tr {
+  transition: background-color 150ms ease;
+}
+
+.tableScroll tbody tr:hover {
+  background: var(--body-tile);
+}
+
+.tableScroll:focus-visible {
+  border-radius: 0.5rem;
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 4px;
 }
 
 .internalLinks {
-  border-block: 1px solid var(--hg-color-line);
-  margin: 5rem auto 0;
-  max-width: 60rem;
-  padding-block: 2.25rem;
+  margin: 4.5rem auto 0;
+  max-width: 52rem;
 }
 
 .internalLinks > h2 {
@@ -187,39 +309,60 @@
 
 .internalLinks ul {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .internalLinks li {
-  background: var(--hg-color-soft);
-  padding: 1.2rem;
+  background: var(--body-tile);
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.2rem;
+  transition: background-color 200ms ease;
+}
+
+.internalLinks li:hover {
+  background: var(--body-warm);
 }
 
 .internalLinks a {
   color: var(--hg-color-ink);
-  font-weight: 760;
-  text-underline-offset: 0.2em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.internalLinks a::after {
+  content: " →";
+  display: inline-block;
+  transition: transform 300ms var(--body-ease);
+}
+
+.internalLinks li:hover a::after,
+.internalLinks a:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.internalLinks a:focus-visible {
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 3px;
 }
 
 .internalLinks p {
-  color: var(--hg-color-muted);
-  font-size: 0.9rem;
+  color: var(--body-muted);
+  font-size: 0.875rem;
   line-height: 1.55;
-  margin: 0.5rem 0 0;
+  margin: 0.4rem 0 0;
 }
 
 /* FAQ: folded by default, but every answer stays in the HTML, so crawlers
    and the FAQPage schema see the full text. Same "+" marker as sources. */
 .faq {
-  border-block-start: 1px solid var(--hg-color-line);
   margin-inline: auto;
-  margin-block-start: 3.5rem;
-  max-width: 52rem;
-  padding-block-start: 2rem;
+  margin-block-start: 4rem;
+  max-width: 44rem;
 }
 
 .faq h2 {
@@ -227,7 +370,7 @@
 }
 
 .faqList {
-  border-block-start: 1px solid var(--hg-color-line);
+  border-block-start: 1px solid var(--body-line);
   margin-block-start: 1.25rem;
 }
 
@@ -238,19 +381,20 @@
 }
 
 .faqItem {
-  border-block-end: 1px solid var(--hg-color-line);
+  border-block-end: 1px solid var(--body-line);
+  interpolate-size: allow-keywords;
 }
 
 .faqItem summary {
   align-items: center;
   cursor: pointer;
   display: grid;
-  font-weight: 720;
+  font-weight: 500;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) 1.8rem;
-  line-height: 1.4;
+  grid-template-columns: minmax(0, 1fr) 1.9rem;
+  line-height: 1.45;
   list-style: none;
-  padding: 1rem 0;
+  padding: 1.05rem 0;
 }
 
 .faqItem summary::-webkit-details-marker {
@@ -258,47 +402,69 @@
 }
 
 .faqItem summary::after {
-  border: 1px solid var(--hg-color-line);
+  background: var(--body-warm);
   border-radius: 999px;
   content: "+";
   display: grid;
-  font-size: 1rem;
-  font-weight: 500;
-  inline-size: 1.8rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  inline-size: 1.9rem;
   line-height: 1;
-  min-block-size: 1.8rem;
+  min-block-size: 1.9rem;
   place-items: center;
-  transition: transform 160ms ease;
+  transition:
+    transform 300ms var(--body-ease),
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
 .faqItem[open] summary::after {
+  background: var(--hg-color-ink);
+  color: #fff;
   transform: rotate(45deg);
 }
 
 .faqItem summary:hover::after {
-  border-color: var(--hg-color-rust);
+  background: var(--grok-warm-hover, #e9e7e3);
+}
+
+.faqItem[open] summary:hover::after {
+  background: #242424;
 }
 
 .faqItem summary:focus-visible {
-  outline: 2px solid var(--hg-color-focus, var(--hg-color-rust));
+  outline: 2px solid var(--hg-color-focus, #b14f37);
   outline-offset: 3px;
 }
 
 .faqItem > p {
+  color: rgb(10 10 10 / 78%);
   margin: 0 0 1.15rem;
-  padding-inline-end: 2.8rem;
+  padding-inline-end: 2.9rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .faqItem summary::after {
-    transition: none;
+.faqItem[open] > p {
+  animation: bodyFadeUp 420ms var(--body-ease) both;
+}
+
+@supports selector(::details-content) {
+  .faqItem::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 380ms var(--body-ease),
+      content-visibility 380ms allow-discrete;
+  }
+
+  .faqItem[open]::details-content {
+    block-size: auto;
   }
 }
 
 .sources {
-  border-block-start: 1px solid var(--hg-color-line);
-  margin-block-start: 5rem;
-  padding-block-start: 2rem;
+  border-block-start: 1px solid var(--body-line);
+  margin-block-start: 4.5rem;
+  padding-block-start: 1.5rem;
 }
 
 .sources summary {
@@ -306,12 +472,12 @@
   cursor: pointer;
   display: flex;
   font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 780;
-  gap: 0.55rem;
-  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  letter-spacing: 0;
   list-style: none;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .sources summary::-webkit-details-marker {
@@ -319,32 +485,43 @@
 }
 
 .sources summary::after {
-  border: 1px solid var(--hg-color-line);
+  background: var(--body-warm);
+  border-radius: 999px;
   content: "+";
   display: grid;
   font-size: 1rem;
-  font-weight: 500;
-  inline-size: 1.8rem;
+  font-weight: 400;
+  inline-size: 1.9rem;
   line-height: 1;
   margin-inline-start: auto;
-  min-block-size: 1.8rem;
+  min-block-size: 1.9rem;
   place-items: center;
+  transition: background-color 150ms ease;
 }
 
 .sources[open] summary::after {
   content: "−";
 }
 
+.sources summary:hover::after {
+  background: var(--grok-warm-hover, #e9e7e3);
+}
+
 .sourceCount {
-  color: var(--hg-color-muted);
-  font-size: 0.72rem;
-  font-weight: 650;
+  color: var(--body-muted);
+  font-size: 0.8125rem;
+  font-weight: 400;
   letter-spacing: 0;
 }
 
 .sources ol {
-  margin: 1.4rem 0 0;
+  font-size: 0.9375rem;
+  margin: 1.25rem 0 0;
   padding-inline-start: 1.4rem;
+}
+
+.sources[open] ol {
+  animation: bodyFadeUp 420ms var(--body-ease) both;
 }
 
 .sources li {
@@ -353,23 +530,157 @@
 
 .sources span,
 .sources time {
-  color: var(--hg-color-muted);
-  font-size: 0.82rem;
+  color: var(--body-muted);
+  font-size: 0.8125rem;
   margin-inline-start: 0.55rem;
 }
 
+@keyframes bodyFadeUp {
+  from {
+    opacity: 0.02;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Blocks rise in as they enter the viewport. Tied to scroll position, so a
+   block on screen is always fully shown, and browsers without scroll-driven
+   animations show everything statically. */
+@keyframes blockRise {
+  from {
+    opacity: 0.5;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .body > h2,
+    .figure,
+    .callout,
+    .comparison article,
+    .tableScroll,
+    .internalLinks li,
+    .faq {
+      animation: blockRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
 @media (max-width: 680px) {
+  .body {
+    font-size: 1rem;
+  }
+
   .body h2 {
-    margin-block-start: 4rem;
+    margin-block-start: 3.5rem;
   }
 
   .comparison {
-    margin-block: 4rem;
+    margin-block: 3rem;
   }
 
   .sources span,
   .sources time {
     display: block;
     margin-inline-start: 0;
+  }
+
+  /* Phones: each table row becomes a small card, with the column name above
+     each value, so nothing is cut off or needs sideways scrolling. */
+  .tableScroll {
+    overflow: visible;
+  }
+
+  .tableScroll table,
+  .tableScroll tbody,
+  .tableScroll tr,
+  .tableScroll th,
+  .tableScroll td,
+  .tableScroll caption {
+    display: block;
+  }
+
+  .tableScroll table {
+    min-width: 0;
+  }
+
+  .tableScroll thead {
+    block-size: 1px;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .tableScroll tbody {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .tableScroll tbody tr {
+    background: var(--body-tile);
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .tableScroll tbody th {
+    border: 0;
+    font-size: 1rem;
+    padding: 0 0 0.35rem;
+  }
+
+  .tableScroll td {
+    border-block-end: 0;
+    border-block-start: 1px solid var(--body-line);
+    font-size: 0.9375rem;
+    padding: 0.55rem 0 0;
+  }
+
+  .tableScroll td + td {
+    margin-block-start: 0.5rem;
+  }
+
+  .tableScroll td[data-label]::before {
+    color: var(--body-muted);
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-block-end: 0.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faqItem summary::after,
+  .internalLinks a::after,
+  .internalLinks li,
+  .tableScroll tbody tr {
+    transition: none;
+  }
+
+  .callout::before,
+  .callout:hover::before,
+  .body > aside.callout:first-of-type::before,
+  .faqItem[open] > p,
+  .sources[open] ol {
+    animation: none;
+  }
+
+  .faqItem::details-content {
+    transition: none;
   }
 }

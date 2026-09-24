@@ -236,6 +236,34 @@ export interface PrivateTourHubStats {
   readonly shoppingStops: number;
 }
 
+/**
+ * Route lines sometimes qualify a stop ("Suzhou day trip", "苏州一日往返",
+ * "쑤저우 당일치기"); the place itself is the same, so it is counted once.
+ */
+function normalizeStop(stop: string): string {
+  return stop
+    .replace(/\s+day trip$/iu, "")
+    .replace(/一日往返$/u, "")
+    .replace(/\s*당일치기$/u, "")
+    .trim();
+}
+
+/** Unique places named in the published route lines, in catalog order. */
+export function getPrivateTourPlaces(
+  products: readonly PublishedPrivateTourCatalogItem[],
+): string[] {
+  return [
+    ...new Set(
+      products.flatMap((product) =>
+        product.comparison.route
+          .split("·")
+          .map((stop) => normalizeStop(stop))
+          .filter(Boolean),
+      ),
+    ),
+  ];
+}
+
 /** Every figure is derived from the published catalog; nothing is hand-typed. */
 export function getPrivateTourHubStats(
   products: readonly PublishedPrivateTourCatalogItem[],

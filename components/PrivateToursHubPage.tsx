@@ -3,10 +3,12 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import type { CSSProperties } from "react";
 import {
   getPrivateTourFacetItem,
   getPrivateTourFacets,
   getPrivateTourHubStats,
+  getPrivateTourPlaces,
 } from "../lib/privateTourCatalogFacets";
 import {
   englishMarketPlanning,
@@ -23,6 +25,10 @@ import { HomegroundHeader } from "./HomegroundHeader";
 import homeStyles from "./HomegroundHomePage.module.css";
 import { PrivateTourCatalogFilter } from "./PrivateTourCatalogFilter";
 import { PrivateTourCatalogLink } from "./PrivateTourCatalogLink";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PlaceMarquee } from "./motion/PlaceMarquee";
+import { RollingNumber } from "./motion/RollingNumber";
+import { KeepStops, KeepWords } from "./text/KeepWords";
 import {
   privateTourCardImageSource,
   privateTourCardImageSrcSet,
@@ -123,6 +129,7 @@ function CompactTourComparison({
   return (
     <li
       className={styles.quickItem}
+      style={{ "--card-index": index } as CSSProperties}
       data-tour-id={product.id}
       data-region={facet.region}
       data-length={facet.length}
@@ -131,6 +138,7 @@ function CompactTourComparison({
       <PrivateTourCatalogLink
         className={styles.quickLink}
         href={product.startingPriceHref}
+        ariaLabelledBy={`tour-title-${product.id} tour-price-${product.id}${product.startingPrice?.validityNote ? ` tour-note-${product.id}` : ""}`}
         locale={locale}
         position={index + 1}
         productSlug={product.slug}
@@ -149,20 +157,23 @@ function CompactTourComparison({
           />
         </figure>
         <div className={styles.quickIdentity}>
-          <p>{product.comparison.route}</p>
-          <h3>{product.title}</h3>
-          <p className={styles.quickAppeal}>{product.comparison.appeal}</p>
+          <p><KeepStops route={product.comparison.route} /></p>
+          <h3 id={`tour-title-${product.id}`}><KeepWords locale={locale} text={product.title} /></h3>
+          <p className={styles.quickAppeal}><KeepWords locale={locale} text={product.comparison.appeal} /></p>
         </div>
-        <p className={styles.quickFacts}>
+        <p className={styles.quickFacts} id={`tour-price-${product.id}`}>
           {product.startingPrice ? (
             <>
-              <span className={styles.visuallyHidden}>{copy.startingPriceLabel}: </span>
+              <span className={styles.priceLabel}>{copy.startingPriceLabel}</span>
               <strong>{product.startingPrice.formatted}</strong>
               <span>
-                {copy.perPersonLabel} · {copy.groupBasis(product.startingPrice.travelers)}
-                {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
+                <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={copy.groupBasis(product.startingPrice.travelers)} />
               </span>
-              {product.startingPrice.validityNote && <span>{product.startingPrice.validityNote}</span>}
+              {product.startingPrice.serviceLabel && (
+                <span className={styles.priceService}>
+                  <KeepWords locale={locale} text={product.startingPrice.serviceLabel} />
+                </span>
+              )}
             </>
           ) : (
             <>
@@ -171,21 +182,28 @@ function CompactTourComparison({
             </>
           )}
         </p>
-        <dl className={styles.quickDetails}>
-          <div>
-            <dt>{copy.quickFitLabel}</dt>
-            <dd>{product.comparison.fit}</dd>
-          </div>
-          <div>
-            <dt>{copy.quickMovementLabel}</dt>
-            <dd>{product.comparison.pace}</dd>
-          </div>
-        </dl>
+        <div className={styles.quickMeta}>
+          <dl className={styles.quickDetails}>
+            <div>
+              <dt>{copy.quickFitLabel}</dt>
+              <dd><KeepWords locale={locale} text={product.comparison.fit} /></dd>
+            </div>
+            <div>
+              <dt>{copy.quickMovementLabel}</dt>
+              <dd><KeepWords locale={locale} text={product.comparison.pace} /></dd>
+            </div>
+          </dl>
+          {product.startingPrice?.validityNote && (
+            <p className={styles.quickNote} id={`tour-note-${product.id}`}>
+              {product.startingPrice.validityNote}
+            </p>
+          )}
+        </div>
         <span className={styles.quickAction}>
           <span>{copy.duration(product.days, product.nights)}</span>
           <span>
             {copy.quickAction}
-            <span aria-hidden="true"> →</span>
+            <span aria-hidden="true">→</span>
           </span>
         </span>
       </PrivateTourCatalogLink>
@@ -234,10 +252,10 @@ export function PrivateToursHubPage({
           <div className={styles.heroGrid}>
             <div>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1>{copy.title}</h1>
+              <h1><AnimatedHeadline locale={locale} text={copy.title} /></h1>
             </div>
             <div className={styles.heroAside}>
-              <p>{copy.introduction}</p>
+              <p><KeepWords locale={locale} text={copy.introduction} /></p>
               <a className={styles.heroAction} href="#tour-quick-compare-title">
                 {copy.heroAction}
                 <span aria-hidden="true">↓</span>
@@ -248,21 +266,22 @@ export function PrivateToursHubPage({
           <dl className={styles.stats}>
             <div>
               <dt>{copy.statsRoutes}</dt>
-              <dd>{stats.routes}</dd>
+              <dd><RollingNumber value={stats.routes} /></dd>
             </div>
             <div>
               <dt>{copy.statsRegions}</dt>
-              <dd>{stats.regions}</dd>
+              <dd><RollingNumber value={stats.regions} /></dd>
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>
-              <dd>{stats.shortestDays}–{stats.longestDays}</dd>
+              <dd><RollingNumber value={`${stats.shortestDays}–${stats.longestDays}`} /></dd>
             </div>
             <div>
               <dt>{copy.statsShopping}</dt>
-              <dd>{stats.shoppingStops}</dd>
+              <dd><RollingNumber value={stats.shoppingStops} /></dd>
             </div>
           </dl>
+          <PlaceMarquee places={getPrivateTourPlaces(products)} />
         </header>
 
         <section className={styles.quickCompare} aria-labelledby="tour-quick-compare-title">
@@ -272,8 +291,8 @@ export function PrivateToursHubPage({
               <h2 id="tour-quick-compare-title">{copy.quickCompareTitle}</h2>
             </div>
             <div className={styles.priceContext}>
-              <p>{copy.quickCompareIntroduction}</p>
-              <p>{copy.priceBasisNote}</p>
+              <p><KeepWords locale={locale} text={copy.quickCompareIntroduction} /></p>
+              <p><KeepWords locale={locale} text={copy.priceBasisNote} /></p>
             </div>
           </div>
           <PrivateTourCatalogFilter
@@ -306,13 +325,13 @@ export function PrivateToursHubPage({
             <header>
               <p className={styles.eyebrow}>{englishMarketPlanning.eyebrow}</p>
               <h2 id="tour-arrival-title">{englishMarketPlanning.title}</h2>
-              <p>{englishMarketPlanning.introduction}</p>
+              <p><KeepWords locale="en" text={englishMarketPlanning.introduction} /></p>
             </header>
             <div className={styles.arrivalQuestions}>
               {englishMarketPlanning.questions.map((item) => (
                 <div key={item.title}>
                   <h3>{item.title}</h3>
-                  <p>{item.body}</p>
+                  <p><KeepWords locale="en" text={item.body} /></p>
                 </div>
               ))}
             </div>
@@ -334,7 +353,7 @@ export function PrivateToursHubPage({
               <h2 id="tour-final-title">{copy.finalTitle}</h2>
             </div>
             <div>
-              <p>{copy.finalBody}</p>
+              <p><KeepWords locale={locale} text={copy.finalBody} /></p>
               <Link className={styles.finalAction} href={getPrivateTourHubPlannerPath(locale)}>
                 {copy.finalAction}
                 <span aria-hidden="true">→</span>

@@ -238,7 +238,7 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   );
   assert.match(
     titleStyles,
-    /\.phraseStage \{[\s\S]*?box-sizing: content-box;[\s\S]*?margin-block-end: -0\.12em;[\s\S]*?overflow: hidden;[\s\S]*?padding-block-end: 0\.12em;/,
+    /\.phraseStage \{[\s\S]*?box-sizing: content-box;[\s\S]*?margin-block-end: -0\.3em;[\s\S]*?overflow: hidden;[\s\S]*?padding-block-end: 0\.3em;/,
     "the animated phrase clip must leave room for serif descenders without changing line rhythm",
   );
   assert.match(

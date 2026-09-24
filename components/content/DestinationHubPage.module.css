@@ -464,3 +464,220 @@
     font-size: 1.8rem;
   }
 }
+
+/* ==========================================================================
+ * Grok layer for destination hubs (paired with `.grokGuide` from
+ * EditorialGuidePage.module.css). `[class]` lifts these rules above the base
+ * `.destinationRoot` tokens above without editing them. Labels become 14px /
+ * 500 muted text instead of tiny rust capitals, decision cards become
+ * #f9f8f6 tiles, and the smallest phone sizes move up to readable ones.
+ * ======================================================================= */
+.destinationRoot[class] {
+  --hg-color-soft: #f9f8f6;
+  --hg-color-line: rgb(10 10 10 / 10%);
+  --hg-color-muted: rgb(10 10 10 / 60%);
+}
+
+.destinationRoot .decisionIntro > div > p:first-child,
+.destinationRoot .ownerLinks > div > p:first-child,
+.destinationRoot .signalCard > p:first-child {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.destinationRoot .decisionIntro h2,
+.destinationRoot .ownerLinks h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+}
+
+.destinationRoot[data-homeground-locale="zh"] :is(.decisionIntro h2, .ownerLinks h2) {
+  letter-spacing: 0;
+}
+
+.destinationRoot .decisionIntro > a {
+  background: #f2f1ef;
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+  width: fit-content;
+}
+
+.destinationRoot .decisionIntro > a:hover,
+.destinationRoot .decisionIntro > a:focus-visible {
+  background: #e9e7e3;
+  color: var(--hg-color-ink);
+}
+
+.destinationRoot .signalGrid {
+  border: 0;
+  gap: 0.75rem;
+}
+
+.destinationRoot .signalCard,
+.destinationRoot .signalCard:nth-child(odd) {
+  background: var(--hg-color-soft);
+  border: 0;
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  transition: background-color 200ms ease;
+}
+
+.destinationRoot .signalCard:hover {
+  background: #f2f1ef;
+}
+
+.destinationRoot .signalCard h3 {
+  font-size: clamp(1.25rem, 1.9vw, 1.625rem);
+  letter-spacing: -0.01em;
+}
+
+.destinationRoot .signalCard strong {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.destinationRoot .ownerLinks ul {
+  border-block-start: 1px solid var(--hg-color-line);
+}
+
+.destinationRoot .ownerLinks a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.destinationRoot .ownerLinks a > :last-child,
+.destinationRoot .decisionIntro > a > :last-child {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.destinationRoot .ownerLinks a:hover,
+.destinationRoot .ownerLinks a:focus-visible {
+  color: var(--hg-color-ink);
+}
+
+.destinationRoot .ownerLinks a:hover > :last-child,
+.destinationRoot .ownerLinks a:focus-visible > :last-child,
+.destinationRoot .decisionIntro > a:hover > :last-child {
+  transform: translateX(4px);
+}
+
+.destinationRoot .evidencePanel {
+  background: var(--hg-color-soft);
+  border: 0;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.destinationRoot .evidenceHeader h2,
+.destinationRoot .evidenceHeader p,
+.destinationRoot .evidenceBody p,
+.destinationRoot .evidenceBody a {
+  font-size: 0.875rem;
+}
+
+.destinationRoot .evidenceHeader h2 {
+  font-weight: 500;
+}
+
+.destinationRoot .evidenceBody a:hover,
+.destinationRoot .evidenceBody a:focus-visible {
+  color: var(--hg-color-ink);
+  text-decoration-color: currentColor;
+}
+
+.destinationRoot .destinationCta {
+  border: 0;
+}
+
+.destinationRoot .destinationCta > div > p:first-child {
+  color: var(--hg-color-muted);
+}
+
+.destinationRoot .destinationCta > a:hover,
+.destinationRoot .destinationCta > a:focus-visible {
+  background: #242424;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .destinationRoot .signalCard,
+    .destinationRoot .evidencePanel {
+      animation: destinationRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
+@keyframes destinationRise {
+  from {
+    opacity: 0.5;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .destinationRoot .destinationHeroCopy nav ol {
+    font-size: 0.8125rem;
+  }
+
+  .destinationRoot .destinationHeroCopy > p:first-of-type {
+    font-size: 0.8125rem;
+  }
+
+  .destinationRoot .destinationArticle .destinationOpening {
+    font-size: 1rem;
+  }
+
+  .destinationRoot .decisionIntro h2,
+  .destinationRoot .ownerLinks h2 {
+    font-size: 1.75rem;
+  }
+
+  .destinationRoot .decisionIntro > div > p:last-child,
+  .destinationRoot .ownerLinks > div > p:last-child,
+  .destinationRoot .signalCard > p:last-child {
+    font-size: 0.9375rem;
+  }
+
+  .destinationRoot .signalCard > p:first-child,
+  .destinationRoot .decisionIntro > a,
+  .destinationRoot .ownerLinks a {
+    font-size: 0.875rem;
+  }
+
+  .destinationRoot .evidenceHeader h2,
+  .destinationRoot .evidenceHeader p,
+  .destinationRoot .evidenceBody p,
+  .destinationRoot .evidenceBody a {
+    font-size: 0.8125rem;
+  }
+
+  .destinationRoot .destinationCta > a {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destinationRoot .signalCard,
+  .destinationRoot .decisionIntro > a,
+  .destinationRoot .ownerLinks a > :last-child,
+  .destinationRoot .decisionIntro > a > :last-child {
+    transition: none;
+  }
+}

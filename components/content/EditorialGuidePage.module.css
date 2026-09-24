@@ -6,6 +6,17 @@
   overflow: clip;
 }
 
+/*
+ * The root also carries the homepage's .localeRoot, which sets the English
+ * editorial stack to Georgia, "Times New Roman", serif at the same
+ * specificity. That is the font the live site shows; keep it whichever
+ * stylesheet the bundler loads last. Chinese and Korean use their own
+ * locale rules.
+ */
+.pageRoot.pageRoot[data-homeground-locale="en"] {
+  --hg-editorial: var(--hg-font-editorial);
+}
+
 .pageRoot:lang(ko) {
   overflow-wrap: break-word;
   word-break: keep-all;
@@ -293,6 +304,257 @@
 
 @media (prefers-reduced-motion: reduce) {
   .skipLink {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+ * Grok layer — guide articles and destination hubs only.
+ * Both pages add `.grokGuide` to their root; the single-product preview page
+ * reuses `.hero`, `.article` and `.cta` from this file without that class, so
+ * everything below leaves it untouched. Measured on x.ai 2026-09-23: white
+ * page, #f9f8f6 tiles without outlines, ink #0a0a0a with 60% muted text,
+ * 14px/500/44px pills, images inset 4px in a 16px tile, transform
+ * transitions on cubic-bezier(0.22, 1, 0.36, 1).
+ * ======================================================================= */
+.grokGuide {
+  --hg-color-canvas: #fff;
+  --hg-color-soft: #f9f8f6;
+  --hg-color-line: rgb(10 10 10 / 10%);
+  --hg-color-muted: rgb(10 10 10 / 60%);
+  --hg-color-ink: #0a0a0a;
+  --grok-warm: #f2f1ef;
+  --grok-warm-hover: #e9e7e3;
+  --grok-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --measure: 40rem;
+  background: #fff;
+}
+
+.grokGuide .hero {
+  padding-block: clamp(2rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.grokGuide .breadcrumb ol {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.grokGuide .breadcrumb a,
+.grokGuide .relatedDestinations a {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  text-decoration: none;
+  transition: background-size 300ms var(--grok-ease), color 150ms ease;
+}
+
+.grokGuide .breadcrumb a:hover,
+.grokGuide .breadcrumb a:focus-visible {
+  background-size: 100% 1px;
+  color: var(--hg-color-ink);
+}
+
+.grokGuide .eyebrow {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.grokGuide .eyebrow span:first-child {
+  color: var(--hg-color-ink);
+}
+
+.grokGuide .eyebrow span + span::before {
+  color: rgb(10 10 10 / 30%);
+  content: "·";
+  margin-inline-end: 0.5rem;
+}
+
+.grokGuide .hero h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+.grokGuide[data-homeground-locale="zh"] .hero h1 {
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+.grokGuide[data-homeground-locale="ko"] .hero h1 {
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+}
+
+/* Pre-split titles (kept together on one line) enter segment by segment. */
+.grokGuide .hero h1 .keepTogether {
+  animation: guideHeadlineRise 760ms var(--grok-ease) both;
+  animation-delay: calc(var(--word-index, 0) * 70ms + 80ms);
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+
+.grokGuide .dek {
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.6;
+  margin-block-start: 1.5rem;
+  max-width: 38rem;
+}
+
+.grokGuide .heroFigure {
+  background: var(--hg-color-soft);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.grokGuide .heroFigure img {
+  animation: guideHeroReveal 1400ms var(--grok-ease) 120ms both;
+  border-radius: 0.75rem;
+}
+
+.grokGuide .heroCredit {
+  font-size: 0.75rem;
+  margin: 0.5rem 0.5rem 0.25rem;
+}
+
+.grokGuide .article {
+  border-block-start: 0;
+  padding-block: clamp(1rem, 3vw, 2.5rem) clamp(3rem, 6vw, 6rem);
+}
+
+.grokGuide .relatedDestinations {
+  border-block-start: 1px solid var(--hg-color-line);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding-block: clamp(3rem, 6vw, 6rem);
+}
+
+.grokGuide .relatedDestinations > div > p,
+.grokGuide .ctaLabel {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.grokGuide .relatedDestinations h2,
+.grokGuide .cta h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  max-width: 18ch;
+}
+
+.grokGuide[data-homeground-locale="zh"] :is(.relatedDestinations h2, .cta h2) {
+  letter-spacing: 0;
+}
+
+.grokGuide .relatedDestinations ul {
+  border-block-start: 1px solid var(--hg-color-line);
+}
+
+.grokGuide .relatedDestinations a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  gap: 1rem;
+  width: 100%;
+}
+
+.grokGuide .relatedDestinations a:hover,
+.grokGuide .relatedDestinations a:focus-visible {
+  background-size: 100% 1px;
+  color: var(--hg-color-ink);
+}
+
+.grokGuide .relatedDestinations a > span,
+.grokGuide .cta > a svg {
+  transition: transform 300ms var(--grok-ease);
+}
+
+.grokGuide .relatedDestinations a:hover > span,
+.grokGuide .relatedDestinations a:focus-visible > span,
+.grokGuide .cta > a:hover svg,
+.grokGuide .cta > a:focus-visible svg {
+  transform: translateX(4px);
+}
+
+.grokGuide .cta {
+  background: var(--hg-color-soft);
+  border-radius: 1rem;
+  color: var(--hg-color-ink);
+  margin-inline: max(1rem, calc((100% - 80rem) / 2));
+}
+
+.grokGuide .cta div > p:last-child {
+  color: var(--hg-color-muted);
+}
+
+.grokGuide .cta > a {
+  background: var(--hg-color-ink);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-block-size: 2.75rem;
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.grokGuide .cta > a:hover,
+.grokGuide .cta > a:focus-visible {
+  background: #242424;
+}
+
+.grokGuide .cta > a:focus-visible,
+.grokGuide .breadcrumb a:focus-visible,
+.grokGuide .relatedDestinations a:focus-visible {
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 3px;
+}
+
+@keyframes guideHeadlineRise {
+  from {
+    opacity: 0.02;
+    transform: perspective(600px) translateY(45%) rotateX(-40deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes guideHeroReveal {
+  from {
+    opacity: 0.02;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .grokGuide .heroFigure {
+    margin-inline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grokGuide .hero h1 .keepTogether,
+  .grokGuide .heroFigure img {
+    animation: none;
+  }
+
+  .grokGuide .breadcrumb a,
+  .grokGuide .relatedDestinations a,
+  .grokGuide .relatedDestinations a > span,
+  .grokGuide .cta > a svg {
     transition: none;
   }
 }

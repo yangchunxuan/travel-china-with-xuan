@@ -10,6 +10,16 @@
   overflow: clip;
 }
 
+/*
+ * The page root also carries the homepage's .localeRoot class, which sets a
+ * warm canvas and ink at the same specificity. Keep this page's own white
+ * paper and ink whichever of the two stylesheets the bundler loads last.
+ */
+.page.page {
+  background: var(--im-white);
+  color: var(--im-ink);
+}
+
 .page > header {
   background: var(--im-white);
 }

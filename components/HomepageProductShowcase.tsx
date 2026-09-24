@@ -103,9 +103,15 @@ export function HomepageProductShowcase({
                     <small>
                       {copy.perPersonLabel} ·{" "}
                       {copy.groupBasis(product.startingPrice.travelers)}
-                      {product.startingPrice.serviceLabel && <> · {product.startingPrice.serviceLabel}</>}
                     </small>
-                    {product.startingPrice.validityNote && <small>{product.startingPrice.validityNote}</small>}
+                    {product.startingPrice.serviceLabel && (
+                      <small>{product.startingPrice.serviceLabel}</small>
+                    )}
+                    {product.startingPrice.validityNote && (
+                      <small className={styles.cardValidity}>
+                        {product.startingPrice.validityNote}
+                      </small>
+                    )}
                   </p>
                   <p className={styles.cardDescription}>
                     {product.appeal}

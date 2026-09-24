@@ -32,12 +32,12 @@
 
 .eyebrow {
   color: var(--hg-color-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0;
   line-height: 1.4;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .introduction h2 {
@@ -73,12 +73,12 @@
 
 .guidePaths > p {
   color: var(--guides-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0;
   line-height: 1.4;
   margin: 0 0 0.75rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .guidePaths ul {
@@ -177,7 +177,6 @@
 :global([data-homeground-locale="ko"]) .eyebrow,
 :global([data-homeground-locale="zh"]) .guidePaths > p,
 :global([data-homeground-locale="ko"]) .guidePaths > p {
-  font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: none;
 }

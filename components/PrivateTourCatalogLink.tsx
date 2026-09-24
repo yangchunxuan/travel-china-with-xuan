@@ -6,6 +6,7 @@ import { trackEvent } from "../lib/analytics";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
 export function PrivateTourCatalogLink({
+  ariaLabelledBy,
   children,
   className,
   href,
@@ -13,6 +14,8 @@ export function PrivateTourCatalogLink({
   position,
   productSlug,
 }: {
+  /** Short accessible name (title + price) instead of the whole card text. */
+  ariaLabelledBy?: string;
   children: ReactNode;
   className?: string;
   href: string;
@@ -22,6 +25,7 @@ export function PrivateTourCatalogLink({
 }) {
   return (
     <Link
+      aria-labelledby={ariaLabelledBy}
       className={className}
       href={href}
       data-tour-card-source="tours_hub"

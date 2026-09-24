@@ -11,6 +11,18 @@
   min-height: 100vh;
 }
 
+/*
+ * The root also carries the homepage's .localeRoot class (canvas + ink) at
+ * the same specificity. On the live site that class is loaded last and wins,
+ * so /guides/ shows the warm canvas and #141413 ink. Pin that result so the
+ * page no longer depends on stylesheet order; the /guides/ redesign will
+ * choose its own paper deliberately.
+ */
+.guidesPage.guidesPage {
+  background: var(--hg-color-canvas);
+  color: var(--hg-color-ink);
+}
+
 .guidesPage main {
   display: block;
 }

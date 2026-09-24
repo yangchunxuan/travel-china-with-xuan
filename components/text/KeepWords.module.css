@@ -1,0 +1,11 @@
+.keep {
+  white-space: nowrap;
+}
+
+/* Chinese: break only at the <wbr> word boundaries (and punctuation), never
+   inside a word; very long runs may still break anywhere so nothing
+   overflows. */
+.phrases {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}

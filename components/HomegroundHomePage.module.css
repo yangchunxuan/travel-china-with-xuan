@@ -2259,11 +2259,18 @@
   font-size: 1.1rem;
   height: 2rem;
   justify-content: center;
-  transition: transform 160ms ease;
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
   width: 2rem;
 }
 
 .faqList details[open] summary span {
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  color: #fff;
   transform: rotate(45deg);
 }
 
@@ -2271,6 +2278,81 @@
   color: var(--hg-color-muted);
   line-height: 1.7;
   margin: -0.25rem 3.5rem 1.4rem 0;
+}
+
+/* FAQ answers slide open (browsers with ::details-content) and fade up; the
+   answers stay in the HTML either way. */
+.faqList details {
+  interpolate-size: allow-keywords;
+}
+
+@supports selector(::details-content) {
+  .faqList details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 380ms cubic-bezier(0.22, 1, 0.36, 1),
+      content-visibility 380ms allow-discrete;
+  }
+
+  .faqList details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+.faqList details[open] > p {
+  animation: homeFaqFadeUp 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes homeFaqFadeUp {
+  from {
+    opacity: 0.02;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* "What we handle" rows rise in turn as the card scrolls into view. */
+@keyframes homeRowRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .handledCard li {
+    animation: homeRowRise linear both;
+    animation-range: entry 0% entry 90px;
+    animation-timeline: view();
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .handledCard li {
+    animation: none;
+  }
+
+  .faqList summary span {
+    transition: none;
+  }
+
+  .faqList details::details-content {
+    transition: none;
+  }
+
+  .faqList details[open] > p {
+    animation: none;
+  }
 }
 
 .finalCta {

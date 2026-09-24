@@ -14,11 +14,13 @@
   --tour-faint: rgb(10 10 10 / 30%);
   --tour-line: rgb(10 10 10 / 10%);
   --tour-accent: #a84731;
-  --tour-focus: #2563eb;
+  /* Same terracotta focus ring as the site header and breadcrumb. */
+  --tour-focus: var(--hg-color-focus, #b14f37);
   --tour-content: 77rem;
   --tour-gutter: 1.5rem;
   --tour-section: 6rem;
   --tour-pill: 2.75rem;
+  --tour-ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--tour-paper);
   color: var(--tour-ink);
   min-height: 100vh;
@@ -67,7 +69,9 @@
   align-items: center;
   color: var(--tour-ink);
   display: inline-flex;
+  margin-inline: -0.75rem;
   min-height: var(--tour-pill);
+  padding-inline: 0.75rem;
   text-decoration-color: transparent;
   text-underline-offset: 0.25rem;
 }
@@ -112,6 +116,16 @@
   max-width: 14ch;
 }
 
+/* English breaks as "Private China tours, / planned around you." */
+.toursPage[data-homeground-locale="en"] .hero h1 {
+  max-width: 11.5em;
+}
+
+/* The skip link lands on <main>; keep the breadcrumb clear of the header. */
+.toursPage main {
+  scroll-margin-top: var(--homeground-header-height, 4.25rem);
+}
+
 .heroAside {
   align-items: start;
   display: grid;
@@ -123,6 +137,13 @@
   line-height: 1.6;
   margin: 0;
   max-width: 36rem;
+}
+
+.heroAside > p,
+.priceContext p,
+.finalInner p,
+.arrivalPlanning p {
+  text-wrap: pretty;
 }
 
 /* One pill scale for every action on the page. */
@@ -151,9 +172,11 @@
   color: #fff;
 }
 
-.heroAction:hover,
-.finalAction:hover {
-  background: #242424;
+@media (hover: hover) {
+  .heroAction:hover,
+  .finalAction:hover {
+    background: #242424;
+  }
 }
 
 .arrivalLinks a {
@@ -161,8 +184,15 @@
   color: var(--tour-ink);
 }
 
-.arrivalLinks a:hover {
-  background: var(--tour-warm-hover);
+@media (hover: hover) {
+  .arrivalLinks a:hover {
+    background: var(--tour-warm-hover);
+  }
+}
+
+/* Keyboard focus never lands under the sticky site header. */
+.toursPage :is(a, button) {
+  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 0.75rem);
 }
 
 .heroAction:focus-visible,
@@ -187,10 +217,12 @@
   padding-block: 2.5rem;
 }
 
+/* Numbers stay top-aligned across columns even when a label wraps. */
 .stats > div {
   display: flex;
   flex-direction: column-reverse;
   gap: 0.5rem;
+  justify-content: flex-end;
   min-width: 0;
 }
 
@@ -222,6 +254,7 @@
 }
 
 .quickIntro {
+  align-items: start;
   margin: 0;
 }
 
@@ -231,10 +264,13 @@
   line-height: 1.1;
   margin: 0.75rem 0 0;
   max-width: 16ch;
+  /* "Compare all routes" jumps here; clear the sticky site header and leave
+     room for the eyebrow above the heading. */
+  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 4.5rem);
 }
 
 .priceContext {
-  color: var(--tour-muted);
+  color: var(--tour-ink);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -244,7 +280,7 @@
 }
 
 .priceContext p + p {
-  color: var(--tour-ink);
+  color: var(--tour-muted);
   font-size: 0.875rem;
   margin-block-start: 0.75rem;
 }
@@ -257,7 +293,13 @@
 
 .filterGroups {
   display: grid;
+  grid-template-rows: 1fr;
+}
+
+.filterGroupsInner {
+  display: grid;
   gap: 0.75rem;
+  min-height: 0;
 }
 
 .filterToggle {
@@ -284,18 +326,65 @@
   color: #fff;
 }
 
-.filterGroup {
+.filterToggleLabel {
   align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
   gap: 0.5rem;
 }
 
+.filterBadge {
+  align-items: center;
+  background: var(--tour-ink);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1;
+  min-block-size: 1.25rem;
+  min-inline-size: 1.25rem;
+  padding: 0 0.35rem;
+}
+
+.filterToggle[aria-expanded="true"] .filterBadge {
+  background: #fff;
+  color: var(--tour-ink);
+}
+
+.filterToggleIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.filterToggle[aria-expanded="true"] .filterToggleIcon {
+  transform: rotate(45deg);
+}
+
+/* Label in its own column so wrapped pills stay aligned under the pills. */
+.filterGroup {
+  align-items: start;
+  display: grid;
+  gap: 0.5rem 1rem;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+}
+
+/* The first label line sits on the centre of the first pill row; a longer
+   label such as "Starting price (approx. USD)" wraps tightly beneath it. */
 .filterGroup > span {
   color: var(--tour-muted);
   font-size: 0.8125rem;
   font-weight: 500;
-  min-width: 6.5rem;
+  line-height: 1.35;
+  padding-block-start: calc((var(--tour-pill) - 1.35em) / 2);
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
 }
 
 .filterPill {
@@ -311,7 +400,7 @@
   font-weight: 500;
   gap: 0.4rem;
   line-height: 1.25;
-  min-height: 2.5rem;
+  min-height: var(--tour-pill);
   padding: 0 1rem;
   transition:
     background-color 150ms ease,
@@ -321,16 +410,36 @@
 .filterPill small {
   font-size: 0.75rem;
   font-weight: 500;
-  opacity: 0.55;
+  opacity: 0.7;
 }
 
-.filterPill:hover {
-  background: var(--tour-warm-hover);
+@media (hover: hover) {
+  .filterPill:hover {
+    background: var(--tour-warm-hover);
+  }
 }
 
 .filterPill[aria-pressed="true"] {
   background: var(--tour-ink);
   color: #fff;
+}
+
+/* A pressed "All" is the resting state, so it stays quiet; only a real
+   choice turns black. */
+.filterPill[data-all][aria-pressed="true"] {
+  background: #e4e2dd;
+  color: var(--tour-ink);
+}
+
+.filterPill[aria-disabled="true"] {
+  color: rgb(10 10 10 / 38%);
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .filterPill[aria-disabled="true"]:hover {
+    background: var(--tour-warm);
+  }
 }
 
 .filterCount {
@@ -341,30 +450,70 @@
   font-size: 0.875rem;
   gap: 0.5rem 1rem;
   margin: 0.5rem 0 0;
-  min-height: 1.5rem;
+  /* Reserve the Clear pill's height so the grid never jumps when it appears. */
+  min-height: var(--tour-pill);
 }
 
 .filterReset {
-  background: none;
+  align-items: center;
+  background: var(--tour-warm);
   border: 0;
+  border-radius: 999px;
   color: var(--tour-ink);
   cursor: pointer;
+  display: inline-flex;
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25;
-  padding: 0;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  min-height: var(--tour-pill);
+  padding: 0 1.1rem;
+  transition: background-color 150ms ease;
+}
+
+@media (hover: hover) {
+  .filterReset:hover,
+  .filterEmptyReset:hover {
+    background: var(--tour-warm-hover);
+  }
 }
 
 .filterEmpty {
+  align-items: center;
   background: var(--tour-subtle);
   border-radius: 1rem;
   color: var(--tour-muted);
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
   margin: 0.75rem 0 0;
   padding: 2rem 1.5rem;
   text-align: center;
+}
+
+.filterEmpty p {
+  margin: 0;
+}
+
+.filterEmptyReset {
+  align-items: center;
+  background: var(--tour-warm);
+  border: 0;
+  border-radius: 999px;
+  color: var(--tour-ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-height: var(--tour-pill);
+  padding: 0 1.25rem;
+}
+
+.filterReset:focus-visible,
+.filterEmptyReset:focus-visible {
+  outline: 2px solid var(--tour-focus);
+  outline-offset: 2px;
 }
 
 .quickList {
@@ -397,9 +546,18 @@
   display: none;
 }
 
+/*
+ * Desktop and tablet: every card in a row shares the same five row tracks
+ * (image, identity, price, details, action) through subgrid, so prices,
+ * details and "View journey" line up across a row.
+ */
 .quickItem {
   background: var(--tour-subtle);
   border-radius: 1rem;
+  display: grid;
+  grid-row: span 7;
+  grid-template-rows: subgrid;
+  margin-block-end: 0.75rem;
   min-width: 0;
 }
 
@@ -407,12 +565,18 @@
   border-radius: 1rem;
   color: var(--tour-ink);
   display: grid;
-  gap: 0.75rem;
+  gap: 0;
+  grid-row: span 7;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto auto 1fr auto;
-  height: 100%;
+  grid-template-rows: subgrid;
   padding: 0.25rem 0.25rem 0.75rem;
   text-decoration: none;
+}
+
+/* Row gaps come from each card's bottom margin; subgrid rows inside a card
+   use the card's own 0.75rem gap. */
+.quickList {
+  row-gap: 0;
 }
 
 .quickImage {
@@ -428,18 +592,33 @@
   display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms ease-out;
+  transition: transform 700ms var(--tour-ease);
   width: 100%;
 }
 
-.quickLink:hover .quickImage img,
 .quickLink:focus-visible .quickImage img {
-  transform: scale(1.02);
+  transform: scale(1.04);
 }
 
+@media (hover: hover) {
+  .quickLink:hover .quickImage img {
+    transform: scale(1.04);
+  }
+}
+
+/*
+ * Desktop and tablet: the route line, title and teaser each take their own
+ * subgrid row (display: contents on the wrapper), so a route line that wraps
+ * in one card no longer pushes that card's title below its neighbours'.
+ * Spacing between rows comes from margins; the shared row gap is 0.
+ */
 .quickIdentity {
+  display: contents;
   min-width: 0;
-  padding-block-start: 0.5rem;
+}
+
+.quickIdentity > * {
+  min-width: 0;
   padding-inline: 0.75rem;
 }
 
@@ -448,7 +627,7 @@
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.4;
-  margin: 0;
+  margin: 1rem 0 0;
 }
 
 .quickIdentity h3 {
@@ -463,9 +642,11 @@
   font-size: 0.9375rem;
   line-height: 1.55;
   margin: 0.6rem 0 0;
+  text-wrap: pretty;
 }
 
 .quickFacts {
+  align-content: start;
   color: var(--tour-muted);
   display: grid;
   font-size: 0.8125rem;
@@ -473,6 +654,14 @@
   line-height: 1.45;
   margin: 0;
   padding-inline: 0.75rem;
+  text-wrap: pretty;
+}
+
+.priceLabel {
+  color: var(--tour-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .quickFacts strong {
@@ -495,11 +684,33 @@
   width: 1px;
 }
 
+/* Details plus the occasional price-validity note share one row track, so a
+   note no longer stretches the price row of every card beside it. */
+.quickMeta {
+  align-content: start;
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+  padding-inline: 0.75rem;
+}
+
 .quickDetails {
+  align-content: start;
   display: grid;
   gap: 0.6rem;
   margin: 0;
-  padding-inline: 0.75rem;
+}
+
+.quickNote {
+  color: var(--tour-muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.priceService {
+  color: var(--tour-muted);
 }
 
 .quickDetails > div {
@@ -517,6 +728,7 @@
   font-size: 0.8125rem;
   line-height: 1.45;
   margin: 0.15rem 0 0;
+  text-wrap: pretty;
 }
 
 .quickAction {
@@ -527,12 +739,151 @@
   gap: 1rem;
   justify-content: space-between;
   line-height: 1.25;
-  margin-block-start: 0.25rem;
+  margin-block-start: 1rem;
   padding-inline: 0.75rem;
+}
+
+.quickFacts,
+.quickMeta {
+  margin-block-start: 0.75rem;
 }
 
 .quickAction > span:last-child {
   white-space: nowrap;
+}
+
+.quickAction > span:first-child {
+  white-space: nowrap;
+}
+
+.quickAction > span:last-child > span {
+  display: inline-block;
+  margin-inline-start: 0.35em;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.quickLink:focus-visible .quickAction > span:last-child > span {
+  transform: translateX(4px);
+}
+
+@media (hover: hover) {
+  .quickLink:hover .quickAction > span:last-child > span {
+    transform: translateX(4px);
+  }
+}
+
+.filterPill[aria-disabled="true"]:active {
+  transform: none;
+}
+
+/* Filter feedback: pills press in; after each change the remaining cards
+   replay a short staggered entrance (data-pass flips between a and b so the
+   animation restarts). */
+.filterPill:active,
+.filterToggle:active {
+  transform: scale(0.96);
+}
+
+.filterPill,
+.filterToggle {
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+/* Staggered by position among the visible cards (set by the filter), short
+   cap, and starting half-visible so the grid never looks empty. */
+.quickList[data-pass="a"] > li {
+  animation: cardSettleA 420ms var(--tour-ease) both;
+  animation-delay: calc(min(var(--pass-index, 0), 4) * 35ms);
+}
+
+.quickList[data-pass="b"] > li {
+  animation: cardSettleB 420ms var(--tour-ease) both;
+  animation-delay: calc(min(var(--pass-index, 0), 4) * 35ms);
+}
+
+@keyframes cardSettleA {
+  from {
+    opacity: 0.45;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cardSettleB {
+  from {
+    opacity: 0.45;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cards rise as they scroll into view (scroll-driven: on-screen cards are
+   always fully shown, and unsupported browsers show them statically). */
+/* Starts half-visible and finishes within 120px of entering, so a card that
+   stops near the bottom edge never looks disabled. */
+@keyframes cardRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .quickList:not([data-pass]) > li,
+    .arrivalQuestions > div,
+    .finalInner {
+      animation: cardRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
+.heroAction > span {
+  display: inline-block;
+  transition: transform 300ms var(--tour-ease);
+}
+
+.heroAction:focus-visible > span {
+  transform: translateY(3px);
+}
+
+@media (hover: hover) {
+  .heroAction:hover > span {
+    transform: translateY(3px);
+  }
+}
+
+/* The hero's bottom padding already provides the 96px section gap, and each
+   card's 0.75rem bottom margin is taken out of the section's end padding. */
+.quickCompare {
+  padding-block: 0 calc(var(--tour-section) - 0.75rem);
+}
+
+/* CJK text runs denser; give card details and captions a step more size. */
+.toursPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .quickDetails dd {
+  font-size: 0.875rem;
+}
+
+.toursPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.priceLabel, .quickNote) {
+  font-size: 0.8125rem;
 }
 
 /* ---------- Before you book (English market) ---------- */
@@ -631,9 +982,14 @@
   transition: transform 180ms ease;
 }
 
-.finalAction:hover span,
 .finalAction:focus-visible span {
   transform: translateX(0.2rem);
+}
+
+@media (hover: hover) {
+  .finalAction:hover span {
+    transform: translateX(0.2rem);
+  }
 }
 
 /* ---------- Locale typography ---------- */
@@ -667,6 +1023,11 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .heroGrid,
+  .quickIntro {
+    align-items: start;
+  }
+
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -679,7 +1040,6 @@
 
 @media (max-width: 48rem) {
   .toursPage {
-    --tour-gutter: 1rem;
     --tour-section: 4rem;
   }
 
@@ -743,18 +1103,69 @@
     margin-block: 1.75rem 1rem;
   }
 
+  .arrivalQuestions {
+    grid-template-columns: 1fr;
+  }
+
+  .finalInner {
+    padding: 1.5rem;
+  }
+}
+
+/* Phones (up to 640px). Portrait tablets keep the two-column card grid. */
+@media (max-width: 40rem) {
+  .toursPage {
+    --tour-gutter: 1rem;
+  }
+
   .filterToggle {
     display: inline-flex;
   }
 
-  /* Folded by default on phones; the toggle above expands the groups. */
+  /* Folded by default on phones; the toggle above expands the groups with a
+     height animation (grid rows 0fr → 1fr). Closed groups are invisible and
+     unfocusable. */
+  .filterGroups {
+    transition:
+      grid-template-rows 360ms var(--tour-ease),
+      opacity 240ms ease,
+      visibility 0s linear 0s;
+  }
+
   .filterGroups[data-open="false"] {
-    display: none;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 360ms var(--tour-ease),
+      opacity 200ms ease,
+      visibility 0s linear 360ms;
+    visibility: hidden;
+  }
+
+  /* Clip for the height animation, with room so focus rings are not cut. */
+  .filterGroupsInner {
+    margin: -0.25rem;
+    overflow: hidden;
+    padding: 0.25rem;
+  }
+
+  /* Phones: the count line and Clear sit right under the toggle, above the
+     open filter panel, so every tap shows its result. */
+  .filterCount {
+    order: 1;
+  }
+
+  .filterGroups {
+    order: 2;
+  }
+
+  .filterGroup {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .filterGroup > span {
-    flex-basis: 100%;
-    min-width: 0;
+    line-height: 1.4;
+    padding-block-start: 0;
   }
 
   .quickList {
@@ -762,12 +1173,20 @@
     grid-template-columns: 1fr;
   }
 
-  /* Phones: a thumbnail row instead of a tall card, so the list stays short. */
+  /* Phones: a thumbnail row instead of a tall card, so the list stays short.
+     Rows no longer need to line up across cards, so subgrid is dropped. */
+  .quickItem {
+    display: block;
+    grid-row: auto;
+    margin-block-end: 0.5rem;
+  }
+
   .quickLink {
     column-gap: 0.85rem;
+    grid-row: auto;
     grid-template-columns: 6.5rem minmax(0, 1fr);
     grid-template-rows: auto auto auto auto;
-    padding: 0.25rem 0.5rem 0.5rem 0.25rem;
+    padding: 0.25rem 0.25rem 0.5rem;
     row-gap: 0.5rem;
   }
 
@@ -778,9 +1197,18 @@
   }
 
   .quickIdentity {
+    display: block;
     grid-column: 2;
     grid-row: 1;
-    padding: 0.25rem 0 0;
+    padding: 0.25rem 0.5rem 0 0;
+  }
+
+  .quickIdentity > * {
+    padding-inline: 0;
+  }
+
+  .quickIdentity > p:first-child {
+    margin-block-start: 0;
   }
 
   .quickIdentity h3 {
@@ -798,9 +1226,10 @@
   }
 
   .quickFacts,
-  .quickDetails,
+  .quickMeta,
   .quickAction {
     grid-column: 1 / -1;
+    margin-block-start: 0;
     padding-inline: 0.5rem;
   }
 
@@ -808,30 +1237,17 @@
     gap: 0.1rem;
   }
 
+  /* Full text on phones: these lines carry limitations ("no luggage moves",
+     "without cable cars"), so nothing is clamped. */
   .quickDetails {
-    gap: 0.5rem 0.75rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .quickDetails dt,
   .quickDetails dd {
-    font-size: 0.78125rem;
-    line-height: 1.4;
-  }
-
-  .quickDetails dd {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-
-  .arrivalQuestions {
-    grid-template-columns: 1fr;
-  }
-
-  .finalInner {
-    padding: 1.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.45;
   }
 }
 
@@ -849,13 +1265,28 @@
   .quickImage img,
   .finalAction span,
   .filterPill,
+  .filterToggle,
+  .filterToggle > span,
+  .filterGroups,
+  .filterGroups[data-open="false"],
+  .quickAction > span:last-child > span,
   .heroAction,
+  .heroAction > span,
   .finalAction {
     transition: none;
   }
 
+  .quickList[data-pass="a"] > li,
+  .quickList[data-pass="b"] > li {
+    animation: none;
+  }
+
   .quickLink:hover .quickImage img,
   .quickLink:focus-visible .quickImage img,
+  .quickLink:hover .quickAction > span:last-child > span,
+  .heroAction:hover > span,
+  .filterPill:active,
+  .filterToggle:active,
   .finalAction:hover span,
   .finalAction:focus-visible span {
     transform: none;

@@ -112,28 +112,36 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
       );
     case "table":
       return (
+        // Explicit roles keep table semantics when phones restyle each row as
+        // a card; data-label lets that card show the column name per value.
         <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={block.caption}>
-          <table>
+          <table role="table">
             <caption>{block.caption}</caption>
-            <thead>
-              <tr>
+            <thead role="rowgroup">
+              <tr role="row">
                 {block.columns.map((column) => (
-                  <th key={column} scope="col">
+                  <th key={column} scope="col" role="columnheader">
                     {column}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody role="rowgroup">
               {block.rows.map((row, rowIndex) => (
-                <tr key={`${block.id}-${rowIndex}`}>
+                <tr key={`${block.id}-${rowIndex}`} role="row">
                   {row.map((cell, cellIndex) =>
                     cellIndex === 0 ? (
-                      <th key={`${block.id}-${rowIndex}-${cellIndex}`} scope="row">
+                      <th key={`${block.id}-${rowIndex}-${cellIndex}`} scope="row" role="rowheader">
                         {cell}
                       </th>
                     ) : (
-                      <td key={`${block.id}-${rowIndex}-${cellIndex}`}>{cell}</td>
+                      <td
+                        data-label={block.columns[cellIndex]}
+                        key={`${block.id}-${rowIndex}-${cellIndex}`}
+                        role="cell"
+                      >
+                        {cell}
+                      </td>
                     ),
                   )}
                 </tr>
