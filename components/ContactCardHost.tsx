@@ -52,7 +52,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       if (!desktop.matches || event.defaultPrevented || event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const anchor = event.target instanceof Element ? event.target.closest("a[href]") : null;
-      if (!(anchor instanceof HTMLAnchorElement) || anchor.closest("[data-contact-card-dialog]")) return;
+      if (!(anchor instanceof HTMLAnchorElement) || anchor.closest("[data-contact-card-dialog], [data-contact-card-direct]")) return;
       const next = contactCardRequestForLink(anchor, locale);
       if (!next) return;
       // The link's own click handlers (analytics) still run; only the navigation is replaced.

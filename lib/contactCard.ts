@@ -60,9 +60,9 @@ function localePrefix(locale: HomegroundLocale) {
 /**
  * What a clicked link should open on desktop, or null to leave the link alone:
  * WhatsApp chats, the studio mailbox, and plain "talk to a planner" links that
- * would otherwise leave the page for the homepage contact section. Links that
- * carry a chosen service or package keep their own flow (a tour's quote form),
- * and so does the homepage, where the contact section is already on the page.
+ * would otherwise leave the page or jump down it to the homepage contact
+ * section. Links that carry a chosen service or package keep their own flow
+ * (a tour's quote form, the homepage planner).
  */
 export function contactCardRequestForLink(
   anchor: HTMLAnchorElement,
@@ -99,7 +99,6 @@ export function contactCardRequestForLink(
       return null;
     }
   }
-  if (window.location.pathname === `${prefix}/`) return null;
   return { trigger: "planner" };
 }
 

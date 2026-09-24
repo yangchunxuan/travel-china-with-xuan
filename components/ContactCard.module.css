@@ -12,7 +12,8 @@
   initial-value: 160%;
 }
 
-.dialog {
+.dialog,
+.scanInline {
   --card-ink: #0a0a0a;
   --card-muted: rgb(10 10 10 / 62%);
   --card-faint: rgb(10 10 10 / 12%);
@@ -26,6 +27,9 @@
   --card-focus: var(--hg-color-focus, #b14f37);
   --card-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --card-qr: 15rem;
+}
+
+.dialog {
   box-sizing: border-box;
   position: fixed;
   inset: 0;
@@ -53,7 +57,11 @@
 
 .dialog *,
 .dialog *::before,
-.dialog *::after {
+.dialog *::after,
+.scanInline,
+.scanInline *,
+.scanInline *::before,
+.scanInline *::after {
   box-sizing: border-box;
 }
 
@@ -297,6 +305,19 @@
   border-top: 1px solid var(--card-faint);
 }
 
+/* In the homepage contact panel, which is already the tile. */
+.scanInline {
+  gap: 20px 24px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--card-ink);
+}
+
+.scanInline .scanFoot {
+  padding-top: 16px;
+}
+
 .scan h3,
 .mail h3 {
   margin: 0;
@@ -306,6 +327,10 @@
   letter-spacing: -0.02em;
   line-height: 1.12;
   text-wrap: balance;
+}
+
+.scanInline h3 {
+  font-size: 1.375rem;
 }
 
 .steps {
@@ -680,6 +705,7 @@
 
 .dialog a:focus-visible,
 .dialog button:focus-visible,
+.scanInline button:focus-visible,
 .dialog input:focus-visible,
 .success:focus-visible {
   outline: 2px solid var(--card-focus);
@@ -763,6 +789,51 @@
     --dash: 20;
     stroke-dasharray: var(--dash);
     animation: draw 320ms 380ms var(--card-ease) both;
+  }
+}
+
+/*
+ * On the homepage the code resolves as the panel scrolls in and is complete
+ * by the time the whole code is on screen, so a code at rest is never partly
+ * drawn. Browsers without scroll-driven animation show it as it is.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scanInline .qrFrame {
+      view-timeline-name: --scan-qr;
+    }
+
+    .scanInline .qrCode svg {
+      -webkit-mask-image: radial-gradient(closest-side at 50% 50%, #000 calc(var(--qr-reveal) - 28%), transparent var(--qr-reveal));
+      mask-image: radial-gradient(closest-side at 50% 50%, #000 calc(var(--qr-reveal) - 28%), transparent var(--qr-reveal));
+      animation: qrReveal linear both;
+      animation-timeline: --scan-qr;
+      animation-range: entry 0% entry 100%;
+    }
+
+    .scanInline .qrFrame::before {
+      animation: focusIn linear both;
+      animation-timeline: --scan-qr;
+      animation-range: entry 0% entry 80%;
+    }
+
+    .scanInline .qrLogo {
+      animation: logoIn linear both;
+      animation-timeline: --scan-qr;
+      animation-range: entry 70% entry 100%;
+    }
+
+    .scanInline .scanBeam {
+      animation: beam linear both;
+      animation-timeline: --scan-qr;
+      animation-range: entry 25% entry 100%;
+    }
+
+    .scanInline .steps li:not(:last-child)::after {
+      animation: thread linear both;
+      animation-timeline: view();
+      animation-range: entry 30% entry 100%;
+    }
   }
 }
 

@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
-import { whatsappDisplayNumber, type ContactCardRequest } from "../lib/contactCard";
+import type { ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
 import { privateTourQuoteApiUrl, tourWhatsAppHref } from "../lib/tourContact";
 import {
@@ -24,7 +24,7 @@ import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../li
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { setInquiryOpen } from "../lib/siteOverlayState";
-import { WhatsAppQr } from "./WhatsAppQr";
+import { ContactCardScan, CopyButton } from "./ContactCardScan";
 import styles from "./ContactCard.module.css";
 
 type EmailStatus = "idle" | "submitting" | "success" | "failed" | "uncertain";
@@ -61,51 +61,6 @@ function pageContext(locale: HomegroundLocale) {
   const isGuide = new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(path);
   const guideTitle = !tour && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "";
   return { path, tour, guideTitle };
-}
-
-function CopyButton({ value, label, copied, idle }: { value: string; label: string; copied: string; idle: string }) {
-  const [done, setDone] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const textRef = useRef<HTMLSpanElement>(null);
-  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
-  const confirm = () => {
-    setDone(true);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setDone(false), 1800);
-  };
-  return (
-    <>
-      <button
-        type="button"
-        className={styles.copy}
-        data-done={done || undefined}
-        aria-label={label}
-        onClick={() => {
-          const selectValue = () => {
-            // Clipboard refused: select the value so Ctrl+C still works.
-            const node = textRef.current;
-            if (!node) return;
-            const range = document.createRange();
-            range.selectNodeContents(node);
-            const selection = window.getSelection();
-            selection?.removeAllRanges();
-            selection?.addRange(range);
-          };
-          try {
-            navigator.clipboard.writeText(value).then(confirm, selectValue);
-          } catch {
-            selectValue();
-          }
-        }}
-      >
-        <svg className={styles.copyCheck} viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2.5 7.5 5.5 10.5 11.5 3.5" />
-        </svg>
-        <span>{done ? copied : idle}</span>
-      </button>
-      <span className={styles.copySource} ref={textRef} aria-hidden="true">{value}</span>
-    </>
-  );
 }
 
 export function ContactCardDialog({
@@ -151,7 +106,6 @@ export function ContactCardDialog({
   );
   const directWhatsApp = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
   const whatsappHref = request.whatsappHref ?? (directWhatsApp ? tourWhatsAppHref(locale, tour, context.path) : "");
-  const whatsappNumber = whatsappDisplayNumber(whatsappHref);
   const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
 
   useEffect(() => {
@@ -355,29 +309,12 @@ export function ContactCardDialog({
 
         <div className={styles.columns} data-single={!whatsappHref || undefined}>
           {whatsappHref ? (
-            <section className={styles.scan} aria-labelledby={`${id}-scan`}>
-              <div className={styles.qrFrame}>
-                <WhatsAppQr href={whatsappHref} label={copy.qrLabel} />
-                <span className={styles.scanBeam} aria-hidden="true" />
-              </div>
-              <div className={styles.scanText}>
-                <h3 id={`${id}-scan`}>{copy.scanTitle}</h3>
-                <ol className={styles.steps}>
-                  {copy.scanSteps.map((step) => <li key={step}>{step}</li>)}
-                </ol>
-              </div>
-              <div className={styles.scanFoot}>
-                <div className={styles.number}>
-                  <span>{copy.numberLabel}</span>
-                  <strong>{whatsappNumber}</strong>
-                  <CopyButton value={whatsappNumber} label={copy.copyNumber} copied={copy.copied} idle={copy.copy} />
-                </div>
-                <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                  {copy.useHere}
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              </div>
-            </section>
+            <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`}>
+              <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                {copy.useHere}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            </ContactCardScan>
           ) : null}
 
           {whatsappHref ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}

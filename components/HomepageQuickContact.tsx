@@ -41,6 +41,8 @@ import {
 } from "../lib/privateTourInquiryContext";
 import styles from "./HomegroundHomePage.module.css";
 import { useAnalyticsEventOnce, useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
+import { ContactCardInlineScan, useContactCardDesktop } from "./ContactCardInlineScan";
+import { contactCardCopy } from "../lib/contactCardCopy";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -179,6 +181,7 @@ export function HomepageQuickContact({
   const dispatchingRef = useRef(false);
   const contactVisibilityRef = useVisibleAnalyticsEvent<HTMLDivElement>("contact_options_viewed", { page_language: locale, contact_variant: variant });
   const recordEmailStart = useAnalyticsEventOnce();
+  const desktopCard = useContactCardDesktop();
   const successfulSubmissionTrackedRef = useRef(false);
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
@@ -467,23 +470,43 @@ export function HomepageQuickContact({
           )}
           <h3>{contactCopy.whatsappTitle}</h3>
           {whatsappUrl ? (
-            <a
-              className={styles.quickContactPrimaryLink}
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-describedby={whatsappExternalNoteId}
-              onClick={() => {
-                trackEvent("contact_option_clicked", {
-                  channel: "whatsapp",
-                  contact_variant: variant,
-                  page_language: locale,
-                });
-              }}
-            >
-              {contactCopy.whatsappAction}
-              <ArrowUpRight aria-hidden="true" size={18} />
-            </a>
+            <>
+              {desktopCard && (
+                // Desktop: the same scan-to-chat block as the contact card.
+                <div className={styles.quickContactScan}>
+                  <ContactCardInlineScan
+                    locale={locale}
+                    href={whatsappUrl}
+                    headingId={`${emailId}-scan`}
+                  />
+                </div>
+              )}
+              <a
+                className={
+                  desktopCard
+                    ? `${styles.quickContactPrimaryLink} ${styles.quickContactDirectLink}`
+                    : styles.quickContactPrimaryLink
+                }
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-describedby={whatsappExternalNoteId}
+                // The code is already on the page, so this link opens WhatsApp itself.
+                data-contact-card-direct={desktopCard ? "" : undefined}
+                onClick={() => {
+                  trackEvent("contact_option_clicked", {
+                    channel: "whatsapp",
+                    contact_variant: variant,
+                    page_language: locale,
+                  });
+                }}
+              >
+                {desktopCard
+                  ? contactCardCopy[locale].useHere
+                  : contactCopy.whatsappAction}
+                <ArrowUpRight aria-hidden="true" size={18} />
+              </a>
+            </>
           ) : (
             <p className={styles.quickContactUnavailable}>
               {contactCopy.whatsappUnavailable}

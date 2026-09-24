@@ -629,6 +629,41 @@
   border-color: var(--hg-color-charcoal-hover);
 }
 
+/*
+ * Desktop: the contact card's scan-to-chat block sits in the panel, and the
+ * WhatsApp link below it becomes a quiet text link for people with WhatsApp
+ * on their computer. Phones keep the one-tap button above.
+ */
+.quickContactScan {
+  margin-block-end: 0.35rem;
+  min-block-size: 15rem;
+}
+
+.quickContactPrimaryLink.quickContactDirectLink,
+.quickContactHero .quickContactPrimaryLink.quickContactDirectLink {
+  align-self: flex-start;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--hg-color-ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  margin-block-start: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgb(10 10 10 / 18%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.quickContactPrimaryLink.quickContactDirectLink:hover,
+.quickContactHero .quickContactPrimaryLink.quickContactDirectLink:hover {
+  background: none;
+  text-decoration-color: currentColor;
+}
+
 .quickContactHero .quickContactMessenger {
   border: 0;
   color: var(--hg-color-ink);
