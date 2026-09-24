@@ -1,0 +1,34 @@
+/*
+ * Measured on cosmos.so (Awwwards Site of the Day): section headings split
+ * into inline-block words that start at opacity 0 with a 6px blur and settle
+ * in reading order. Here the reveal is tied to scroll position instead of a
+ * timer, and each word starts faintly visible so nothing ever reads as blank.
+ */
+.word {
+  display: inline-block;
+}
+
+@keyframes scrollWordIn {
+  from {
+    filter: blur(6px);
+    opacity: 0.12;
+    translate: 0 0.18em;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .word {
+      animation: scrollWordIn linear both;
+      animation-range: entry calc(10% + var(--scroll-word, 0) * 7%) cover
+        calc(20% + var(--scroll-word, 0) * 2%);
+      animation-timeline: view();
+    }
+  }
+}

@@ -70,15 +70,18 @@ test("studio, service, product and utility pages keep dark color to actions and 
     source("components/EditorialAuthorPage.module.css"),
   ]);
 
+  // The method sits on the white page in #f9f8f6 tiles, never a dark band.
   assert.match(
     studio,
-    /\.trustSection \{[\s\S]{0,160}background: var\(--studio-warm\)[\s\S]{0,160}color: var\(--studio-ink\)/,
+    /\.trustSection \{[\s\S]{0,160}background: var\(--studio-paper\)[\s\S]{0,160}color: var\(--studio-ink\)/,
   );
+  assert.match(studio, /\.methodPanel \{[\s\S]{0,80}background: var\(--studio-tile\)/);
   assert.match(
     studio,
     /\.ctaSection \{[\s\S]{0,160}background: #fff/,
   );
-  assert.match(studio, /\.ctaGrid \.ctaSecondary \{[\s\S]{0,100}border: 1px solid var\(--studio-muted\)/);
+  // Secondary action: a white pill inside the CTA tile, never ink.
+  assert.match(studio, /\.ctaGrid \.ctaSecondary \{[\s\S]{0,100}background: var\(--studio-paper\)/);
   assert.match(
     review,
     /\.finalCta \{[\s\S]{0,160}background: var\(--review-sand\)[\s\S]{0,160}color: var\(--review-ink\)/,

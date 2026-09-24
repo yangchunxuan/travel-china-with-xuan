@@ -1,5 +1,11 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 
+/**
+ * Everyone at Homeground, not only the five planners shown on /studio/.
+ * Confirmed by the owner on 2026-09-24; update here when the team changes.
+ */
+export const HOMEGROUND_TEAM_SIZE = 16;
+
 export interface StudioMember {
   id: string;
   name: string;
@@ -45,6 +51,14 @@ export interface HomegroundStudioCopy {
   peopleTitle: string;
   peopleIntro: string;
   peopleDetailsLabel: string;
+  /** Labels for the counts row (team size is HOMEGROUND_TEAM_SIZE; the rest is counted from site data). */
+  proof: {
+    label: string;
+    people: string;
+    guides: string;
+    tours: string;
+    languages: string;
+  };
   members: readonly StudioMember[];
   trust: {
     eyebrow: string;
@@ -164,6 +178,13 @@ export const homegroundStudioCopy: Record<
     peopleIntro:
       "Your lead planner keeps one conversation moving. The wider team contributes route, destination, operations and guest-care experience when the trip needs it.",
     peopleDetailsLabel: "Read background and experience",
+    proof: {
+      label: "Homeground in numbers",
+      people: "people on the Homeground team",
+      guides: "published China travel guides",
+      tours: "published private tours",
+      languages: "site languages: English, Chinese and Korean",
+    },
     members: [
       {
         id: "evan",
@@ -331,6 +352,13 @@ export const homegroundStudioCopy: Record<
     peopleIntro:
       "主规划师负责一条清楚的沟通主线；路线、目的地、执行与客户关怀经验会在行程需要时进入同一份方案。",
     peopleDetailsLabel: "查看背景与经验",
+    proof: {
+      label: "Homeground 的数字",
+      people: "位 Homeground 团队成员",
+      guides: "篇已发布的中国旅行指南",
+      tours: "条已发布的私家团路线",
+      languages: "种网站语言：英文、中文和韩文",
+    },
     members: [
       {
         id: "evan",
@@ -494,6 +522,13 @@ export const homegroundStudioCopy: Record<
     peopleIntro:
       "전담 플래너가 하나의 명확한 대화를 이어 갑니다. 필요할 때 동선, 목적지, 운영과 고객 케어 경험이 같은 계획에 더해집니다.",
     peopleDetailsLabel: "배경과 경험 보기",
+    proof: {
+      label: "숫자로 보는 Homeground",
+      people: "명의 Homeground 팀원",
+      guides: "편의 중국 여행 가이드",
+      tours: "개의 프라이빗 투어",
+      languages: "개 사이트 언어: 영어, 중국어, 한국어",
+    },
     members: [
       {
         id: "evan",

@@ -9,12 +9,14 @@ import {
   getEditorialAuthor,
   getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
-import { guideRegistry } from "../lib/guideRegistry";
+import { getGuideEntry, guideRegistry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./EditorialAuthorPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -26,7 +28,7 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
     .filter((guide) => Boolean(guide.locales[locale]))
     .sort((a, b) => b.dateModified.localeCompare(a.dateModified))
     .slice(0, 6)
-    .map((guide) => guide.locales[locale]!);
+    .map((guide) => getGuideEntry(guide.id, locale));
   const canonicalUrl = `${SITE_URL}${author.path}`;
   const schema = {
     "@context": "https://schema.org",
@@ -70,7 +72,7 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
           </div>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>{author.copy.eyebrow}</p>
-            <h1>{author.copy.h1}</h1>
+            <h1><AnimatedHeadline locale={locale} text={author.copy.h1} /></h1>
             <p className={styles.role}>{author.role}</p>
             <p className={styles.intro}>{author.copy.introduction}</p>
             <p>{author.bio}</p>
@@ -80,27 +82,49 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
         <section className={styles.method} aria-labelledby="author-method-title">
           <div>
             <p className={styles.eyebrow}>Homeground editorial</p>
-            <h2 id="author-method-title">{author.copy.methodTitle}</h2>
+            <h2 id="author-method-title"><KeepWords locale={locale} text={author.copy.methodTitle} /></h2>
           </div>
-          <ol>{author.copy.method.map((item) => <li key={item}>{item}</li>)}</ol>
+          <ol>
+            {author.copy.method.map((item, index) => (
+              <li key={item}>
+                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <p>{item}</p>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className={styles.focus} aria-labelledby="author-focus-title">
-          <h2 id="author-focus-title">{author.copy.focusTitle}</h2>
+          <h2 id="author-focus-title"><KeepWords locale={locale} text={author.copy.focusTitle} /></h2>
           <ul>{author.copy.focus.map((item) => <li key={item}>{item}</li>)}</ul>
         </section>
 
         <section className={styles.articles} aria-labelledby="author-articles-title">
           <div className={styles.articlesHeading}>
-            <h2 id="author-articles-title">{author.copy.articlesTitle}</h2>
-            <Link href={`${home.path}studio/`}>{author.copy.studioLink}</Link>
+            <h2 id="author-articles-title"><KeepWords locale={locale} text={author.copy.articlesTitle} /></h2>
+            <Link href={`${home.path}studio/`}>
+              {author.copy.studioLink}
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
           <ul>
             {recent.map((article) => (
               <li key={article.path}>
                 <Link href={article.path}>
-                  <span>{article.headline}</span>
-                  <small>{article.description}</small>
+                  <span className={styles.articleCopy}>
+                    <span>{article.headline}</span>
+                    <small>{article.description}</small>
+                  </span>
+                  <span className={styles.articleImage}>
+                    <Image
+                      alt={article.cardImageAlt}
+                      height={article.cardImageHeight}
+                      loading="lazy"
+                      sizes="(max-width: 760px) 6rem, 8rem"
+                      src={article.cardImagePath}
+                      width={article.cardImageWidth}
+                    />
+                  </span>
                 </Link>
               </li>
             ))}

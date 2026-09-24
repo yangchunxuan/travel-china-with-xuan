@@ -1,67 +1,461 @@
+/*
+ * /studio/evan/ (author profile). Same system as /studio/ and /guides/:
+ * white page, #f9f8f6 tiles, ink #0a0a0a with muted ink at 60%, Georgia
+ * headings at -2% (the page used to fall back to a heavy sans), white
+ * number discs and a list of reviewed guides with thumbnails.
+ */
 .page {
   --ink: #0a0a0a;
-  --muted: #686b70;
+  --muted: rgb(10 10 10 / 60%);
   --line: #d5d9e2;
+  --rule: rgb(10 10 10 / 10%);
   --paper: #fff;
+  --tile: #f9f8f6;
+  --warm: #f2f1ef;
+  --soft: #f5f5f4;
   --rust: #a84731;
+  --focus: var(--hg-color-focus, #b14f37);
+  --content: 77rem;
+  --gutter: 1.5rem;
+  --section: 6rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
 }
 
 .page main {
-  margin-inline: auto;
-  max-width: 1380px;
-  padding: clamp(2rem, 6vw, 6rem) clamp(1.1rem, 4vw, 4rem) 7rem;
+  display: block;
+  padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) var(--section);
 }
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none;
+}
+
+.hero h1,
+.intro,
+.method h2,
+.focus h2,
+.articles h2,
+.articles ul a > span > span {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* ---------- Hero ---------- */
 
 .hero {
   align-items: center;
-  border-block-end: 1px solid var(--line);
   display: grid;
-  gap: clamp(2rem, 6vw, 6rem);
-  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
-  padding-block-end: clamp(3rem, 7vw, 7rem);
+  gap: 2rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(14rem, 22rem) minmax(0, 1fr);
 }
 
 .portrait {
   aspect-ratio: 3 / 4;
-  background: #dfd7cc;
+  background: var(--soft);
+  border-radius: 1rem;
   overflow: hidden;
 }
 
-.portrait img { height: 100%; object-fit: cover; width: 100%; }
-.eyebrow { color: var(--rust); font-size: 0.72rem; font-weight: 780; letter-spacing: 0.12em; text-transform: uppercase; }
-.hero h1 { font-size: clamp(4.5rem, 11vw, 10rem); line-height: 0.82; margin: 1rem 0 0; }
-.role { font-size: clamp(1.15rem, 2.5vw, 1.8rem); font-weight: 720; margin: 2rem 0 0; }
-.intro { font-size: clamp(1.25rem, 2.5vw, 2rem); line-height: 1.35; max-width: 34ch; }
-.heroCopy > p:last-child { color: var(--muted); line-height: 1.75; max-width: 67ch; }
+.portrait img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
 
-.method { border-block-end: 1px solid var(--line); display: grid; gap: 3rem; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); padding-block: clamp(3rem, 7vw, 7rem); }
-.method h2, .focus h2, .articles h2 { font-size: clamp(2.3rem, 5vw, 5rem); line-height: .98; margin: .75rem 0 0; }
-.method ol { counter-reset: method; list-style: none; margin: 0; padding: 0; }
-.method li { border-block-start: 1px solid var(--line); color: var(--muted); font-size: 1.08rem; line-height: 1.65; padding: 1.4rem 0 1.4rem 3.5rem; position: relative; }
-.method li::before { color: var(--rust); content: counter(method, decimal-leading-zero); counter-increment: method; font-weight: 800; inset-inline-start: 0; position: absolute; }
-.focus { border-block-end: 1px solid var(--line); padding-block: clamp(3rem, 7vw, 7rem); }
-.focus ul { display: flex; flex-wrap: wrap; gap: .7rem; list-style: none; margin: 2rem 0 0; padding: 0; }
-.focus li { border: 1px solid var(--line); border-radius: 999px; padding: .7rem 1rem; }
-.articles { padding-block-start: clamp(3rem, 7vw, 7rem); }
-.articlesHeading { align-items: flex-end; display: flex; justify-content: space-between; gap: 1rem; }
-.articlesHeading > a { color: var(--rust); font-weight: 750; }
-.articles ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 3rem 0 0; padding: 0; }
-.articles li { border-block-start: 1px solid var(--line); }
-.articles li:nth-child(odd) { border-inline-end: 1px solid var(--line); }
-.articles a { display: flex; flex-direction: column; gap: .75rem; min-height: 12rem; padding: 1.5rem; text-decoration: none; }
-.articles span { font-size: 1.25rem; font-weight: 780; line-height: 1.25; }
-.articles small { color: var(--muted); line-height: 1.55; }
-.articles a:hover, .articles a:focus-visible { background: #f5f5f4; }
-.articles a:focus-visible { outline: 2px solid var(--rust); outline-offset: -2px; }
+.hero h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1;
+  margin: 1rem 0 0;
+}
+
+.role {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 1.5rem 0 0;
+}
+
+.intro {
+  font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+  line-height: 1.3;
+  margin: 1.5rem 0 0;
+  max-width: 32ch;
+}
+
+.heroCopy > p:last-child {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 1.25rem 0 0;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+/* ---------- How Evan reviews: numbered tile ---------- */
+
+.method {
+  align-items: start;
+  background: var(--tile);
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  margin-block-start: var(--section);
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.method h2,
+.focus h2,
+.articles h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
+}
+
+.method ol {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.method li {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+}
+
+.method li > span {
+  align-items: center;
+  background: var(--paper);
+  border-radius: 999px;
+  display: flex;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.method li > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.35rem 0 0;
+  text-wrap: pretty;
+}
+
+/* ---------- Editorial focus: pills ---------- */
+
+.focus {
+  padding-block-start: var(--section);
+}
+
+.focus ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.focus li {
+  align-items: center;
+  background: var(--tile);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+}
+
+/* ---------- Recently reviewed guides: rows with thumbnails ---------- */
+
+.articles {
+  padding-block-start: var(--section);
+}
+
+.articlesHeading {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.articlesHeading > a {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
+}
+
+.articlesHeading > a > span {
+  transition: transform 300ms var(--ease);
+}
+
+.articles ul {
+  display: grid;
+  gap: 0.5rem 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.articles li {
+  min-width: 0;
+}
+
+.articles ul a {
+  align-items: start;
+  border-radius: 1rem;
+  color: var(--ink);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 8rem;
+  margin-inline: -1rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.articleCopy {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.articles ul a > span > span {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  font-size: 1.25rem;
+  justify-self: start;
+  line-height: 1.25;
+  transition: background-size 550ms var(--ease);
+}
+
+.articles small {
+  -webkit-box-orient: vertical;
+  color: var(--muted);
+  display: -webkit-box;
+  font-size: 0.9375rem;
+  -webkit-line-clamp: 2;
+  line-height: 1.55;
+  overflow: hidden;
+}
+
+.articleImage {
+  aspect-ratio: 4 / 3;
+  background: var(--soft);
+  border-radius: 0.75rem;
+  display: block;
+  overflow: hidden;
+}
+
+.articleImage img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease);
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .articles ul a:hover {
+    background: var(--tile);
+  }
+
+  .articles a:hover > span > span {
+    background-size: 100% 1px;
+  }
+
+  .articles ul a:hover .articleImage img {
+    transform: scale(1.04);
+  }
+
+  .articlesHeading > a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .articlesHeading > a:hover > span {
+    transform: translateX(4px);
+  }
+}
+
+.articles ul a:focus-visible,
+.articlesHeading > a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.articles a:focus-visible > span > span {
+  background-size: 100% 1px;
+}
+
+/* ---------- Chinese and Korean ---------- */
+
+.page[data-homeground-locale="zh"] :is(.intro, .method h2, .focus h2, .articles h2, .articles ul a > span > span) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.page[data-homeground-locale="ko"] :is(.intro, .method h2, .focus h2, .articles h2, .articles ul a > span > span) {
+  letter-spacing: 0;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.page[data-homeground-locale="ko"] :is(.heroCopy p, .method li > p, .articles small) {
+  word-break: keep-all;
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.method h2, .focus h2, .articles h2) {
+  max-width: 14em;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes authorEnter {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    translate: 0 14px;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes authorPortrait {
+  from {
+    clip-path: inset(12% 0 0 0 round 1rem);
+    scale: 1.04;
+  }
+
+  to {
+    clip-path: inset(0 round 1rem);
+    scale: 1;
+  }
+}
+
+@keyframes authorRise {
+  from {
+    opacity: 0.55;
+    translate: 0 16px;
+  }
+
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portrait {
+    animation: authorPortrait 1100ms var(--ease) both;
+  }
+
+  .role,
+  .intro {
+    animation: authorEnter 900ms var(--ease) 320ms both;
+  }
+
+  .heroCopy > p:last-child {
+    animation: authorEnter 900ms var(--ease) 460ms both;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .method,
+    .articles li {
+      animation: authorRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* ---------- Phone ---------- */
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; }
-  .portrait { max-width: 18rem; }
-  .method { grid-template-columns: 1fr; }
-  .articlesHeading { align-items: flex-start; flex-direction: column; }
-  .articles ul { grid-template-columns: 1fr; }
-  .articles li:nth-child(odd) { border-inline-end: 0; }
+  .page {
+    --gutter: 1rem;
+    --section: 4rem;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portrait {
+    max-width: 16rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 3.75rem);
+  }
+
+  .method {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .articles ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .articles ul a {
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) 6rem;
+    margin-inline: 0;
+    padding: 0.75rem 0;
+  }
+
+  .articles ul a > span > span {
+    font-size: 1.0625rem;
+  }
+
+  .articles small {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .articles ul a > span > span,
+  .articleImage img,
+  .articlesHeading > a > span {
+    transition: none;
+  }
 }

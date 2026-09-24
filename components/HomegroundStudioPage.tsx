@@ -1,16 +1,27 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { destinationHubRegistry, type DestinationHubId } from "../lib/destinationHubs";
 import {
   getHomegroundCopy,
+  homegroundLocales,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import { getGuideEntry } from "../lib/guideRegistry";
-import { getHomegroundStudioCopy } from "../lib/homegroundStudioI18n";
+import { getAllGuides, getGuideEntry } from "../lib/guideRegistry";
+import {
+  getHomegroundStudioCopy,
+  HOMEGROUND_TEAM_SIZE,
+} from "../lib/homegroundStudioI18n";
 import { editorialOrganizationSchema } from "../lib/editorialIdentity";
+import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import { HomegroundStudioMotion } from "./HomegroundStudioMotion";
 import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PointerParallax } from "./motion/PointerParallax";
+import { RollingNumber } from "./motion/RollingNumber";
+import { ScrollWords } from "./motion/ScrollWords";
+import { StudioPlanThread } from "./StudioPlanThread";
 import styles from "./HomegroundStudioPage.module.css";
 
 function photoSources(
@@ -46,7 +57,30 @@ function MemberStoryLink({
   );
 }
 
-const overviewStageIds = ["inputs", "steps", "deliverables"] as const;
+/*
+ * The hero constellation (after cosmos.so): the five people and six of the
+ * cities they plan around float at different depths around the headline.
+ * x / y are percentages of the hero, z is depth (1 = nearest: larger,
+ * sharper, moves most with the pointer). Decorative only: aria-hidden,
+ * empty alt text, no links.
+ */
+const memberTiles: Record<string, { x: number; y: number; z: number }> = {
+  evan: { x: 9, y: 30, z: 1 },
+  yoyo: { x: 91, y: 25, z: 0.9 },
+  tantan: { x: 89, y: 74, z: 1 },
+  kevin: { x: 11, y: 77, z: 0.85 },
+  vivi: { x: 69, y: 14, z: 0.6 },
+};
+const placeTiles: readonly { id: DestinationHubId; x: number; y: number; z: number }[] = [
+  { id: "beijing", x: 30, y: 8, z: 0.5 },
+  { id: "zhangjiajie", x: 80, y: 49, z: 0.45 },
+  { id: "shanghai", x: 20, y: 53, z: 0.4 },
+  { id: "chengdu", x: 38, y: 93, z: 0.45 },
+  { id: "xian", x: 62, y: 93, z: 0.5 },
+  { id: "hangzhou", x: 4, y: 8, z: 0.35 },
+];
+
+const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w640.webp");
 
 export function HomegroundStudioPage({
   locale = "en",
@@ -55,12 +89,19 @@ export function HomegroundStudioPage({
 }) {
   const homeCopy = getHomegroundCopy(locale);
   const copy = getHomegroundStudioCopy(locale);
-  const motionRootId = `homeground-studio-${locale}`;
   const plannerHref = `${homeCopy.path}#planner-contact`;
   const isEnglish = locale === "en";
   const planningServicesHref = isEnglish
     ? "/services/"
     : `/${locale}/services/`;
+  const heroId = `studio-hero-${locale}`;
+  const proof = [
+    { value: HOMEGROUND_TEAM_SIZE, label: copy.proof.people },
+    { value: getAllGuides(locale).length, label: copy.proof.guides },
+    { value: getPublishedPrivateTourCatalog(locale).length, label: copy.proof.tours },
+    { value: homegroundLocales.length, label: copy.proof.languages },
+  ];
+  const specialties = copy.members.flatMap((member) => member.tags);
   const organizationSchema = {
     "@context": "https://schema.org",
     ...editorialOrganizationSchema(),
@@ -76,8 +117,6 @@ export function HomegroundStudioPage({
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.studioPage}`}
       data-homeground-locale={locale}
-      data-studio-motion-root
-      id={motionRootId}
       lang={homeCopy.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#studio-main">
@@ -86,75 +125,121 @@ export function HomegroundStudioPage({
       <HomegroundHeader locale={locale} pageContext="studio" />
 
       <main id="studio-main" tabIndex={-1}>
-        <section className={styles.hero} aria-labelledby="studio-page-title">
-          <div className={styles.heroLayout}>
-            <header className={styles.heroIntro}>
-              <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1 id="studio-page-title">{copy.title}</h1>
-              <p className={styles.heroBody}>{copy.intro}</p>
-              <div className={styles.heroActions}>
-                <a className={styles.primaryAction} href={plannerHref}>
-                  {isEnglish ? "Talk to a China trip planner" : copy.cta.button}
-                  <ArrowRight aria-hidden="true" size={18} />
-                </a>
-                <a className={styles.secondaryAction} href={planningServicesHref}>
-                  {isEnglish
-                    ? "Compare planning services"
-                    : copy.cta.secondaryButton}
-                </a>
-              </div>
-            </header>
-
-            <section
-              className={styles.planOverview}
-              aria-labelledby="planning-overview-title"
-            >
-              <h2 id="planning-overview-title">{copy.overview.title}</h2>
-              <ol className={styles.overviewList}>
-                {copy.overview.stages.map((stage, index) => (
-                  <li
-                    data-plan-stage={overviewStageIds[index]}
-                    key={stage.label}
-                  >
-                    <p>{stage.label}</p>
-                    <div>
-                      <h3>{stage.title}</h3>
-                      <p>{stage.detail}</p>
-                    </div>
-                  </li>
-                ))}
-                <li className={styles.termsStage} data-plan-stage="terms">
-                  <p>{copy.overview.termsLabel}</p>
-                  <div>
-                    <h3>{copy.overview.termsTitle}</h3>
-                    <dl className={styles.termsList}>
-                      {copy.overview.terms.map((term) => (
-                        <div key={term.label}>
-                          <dt>{term.label}</dt>
-                          <dd>{term.value}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-                </li>
-              </ol>
-            </section>
+        <section
+          aria-labelledby="studio-page-title"
+          className={styles.hero}
+          id={heroId}
+        >
+          <div aria-hidden="true" className={styles.constellation}>
+            {copy.members.map((member, index) => {
+              const tile = memberTiles[member.id] ?? { x: 50, y: 50, z: 0.5 };
+              return (
+                <span
+                  className={styles.tile}
+                  data-kind="person"
+                  key={member.id}
+                  style={
+                    {
+                      "--x": tile.x,
+                      "--y": tile.y,
+                      "--z": tile.z,
+                      "--i": index,
+                    } as CSSProperties
+                  }
+                >
+                  <img
+                    alt=""
+                    decoding="async"
+                    height={member.image.smallHeight}
+                    src={member.image.smallSrc}
+                    style={{ objectPosition: member.image.position }}
+                    width={member.image.smallWidth}
+                  />
+                </span>
+              );
+            })}
+            {placeTiles.map((tile, index) => {
+              const hub = destinationHubRegistry.find((entry) => entry.id === tile.id);
+              if (!hub) return null;
+              return (
+                <span
+                  className={styles.tile}
+                  data-kind="place"
+                  key={tile.id}
+                  style={
+                    {
+                      "--x": tile.x,
+                      "--y": tile.y,
+                      "--z": tile.z,
+                      "--i": index + copy.members.length,
+                    } as CSSProperties
+                  }
+                >
+                  <img
+                    alt=""
+                    decoding="async"
+                    height={480}
+                    loading="lazy"
+                    src={smallVariant(hub.heroImagePath)}
+                    width={640}
+                  />
+                </span>
+              );
+            })}
           </div>
+
+          <header className={styles.heroIntro}>
+            <p className={styles.eyebrow}>{copy.eyebrow}</p>
+            <h1 id="studio-page-title">
+              <AnimatedHeadline locale={locale} text={copy.title} />
+            </h1>
+            <p className={styles.heroBody}>{copy.intro}</p>
+            <div className={styles.heroActions}>
+              <a className={styles.primaryAction} href={plannerHref}>
+                {isEnglish ? "Talk to a China trip planner" : copy.cta.button}
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+              <a className={styles.secondaryAction} href={planningServicesHref}>
+                {isEnglish
+                  ? "Compare planning services"
+                  : copy.cta.secondaryButton}
+              </a>
+            </div>
+          </header>
+          <PointerParallax targetId={heroId} />
         </section>
+
+        <div className={styles.threadBand}>
+          <StudioPlanThread locale={locale} overview={copy.overview} />
+
+          <section aria-label={copy.proof.label} className={styles.proof}>
+            <ul>
+              {proof.map((item) => (
+                <li key={item.label}>
+                  <b><RollingNumber value={item.value} /></b>
+                  <span>{item.label}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
 
         <section
           className={styles.trustSection}
           aria-labelledby="planning-method-title"
         >
-          <div className={styles.trustIntro} data-studio-reveal>
+          <div className={styles.trustIntro}>
             <p className={styles.eyebrowLight}>{copy.trust.eyebrow}</p>
-            <h2 id="planning-method-title">{copy.trust.title}</h2>
+            <h2 id="planning-method-title">
+              <ScrollWords locale={locale} text={copy.trust.title} />
+            </h2>
             <p>{copy.trust.body}</p>
             <p className={styles.boundary}>{copy.trust.boundary}</p>
           </div>
 
+          {/* Three cards that stack as they scroll: send → do → receive. */}
           <div className={styles.methodGrid}>
-            <section className={styles.methodPanel} data-studio-reveal>
+            <section className={styles.methodPanel}>
               <p className={styles.methodNumber} aria-hidden="true">
                 01
               </p>
@@ -162,14 +247,14 @@ export function HomegroundStudioPage({
               <ul className={styles.checkList}>
                 {copy.trust.inputs.map((item) => (
                   <li key={item}>
-                    <Check aria-hidden="true" size={17} />
+                    <Check aria-hidden="true" size={15} />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className={styles.methodPanel} data-studio-reveal>
+            <section className={styles.methodPanel}>
               <p className={styles.methodNumber} aria-hidden="true">
                 02
               </p>
@@ -187,7 +272,7 @@ export function HomegroundStudioPage({
               </ol>
             </section>
 
-            <section className={styles.methodPanel} data-studio-reveal>
+            <section className={styles.methodPanel}>
               <p className={styles.methodNumber} aria-hidden="true">
                 03
               </p>
@@ -195,7 +280,7 @@ export function HomegroundStudioPage({
               <ul className={styles.checkList}>
                 {copy.trust.deliverables.map((item) => (
                   <li key={item}>
-                    <Check aria-hidden="true" size={17} />
+                    <Check aria-hidden="true" size={15} />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -205,115 +290,98 @@ export function HomegroundStudioPage({
         </section>
 
         <section className={styles.peopleSection} aria-labelledby="people-title">
-          <header className={styles.sectionIntro} data-studio-reveal>
-            <p className={styles.eyebrow}>{copy.peopleEyebrow}</p>
-            <h2 id="people-title">{copy.peopleTitle}</h2>
+          <header className={styles.sectionIntro}>
+            <div>
+              <p className={styles.eyebrow}>{copy.peopleEyebrow}</p>
+              <h2 id="people-title">
+                <ScrollWords locale={locale} text={copy.peopleTitle} />
+              </h2>
+            </div>
             <p>{copy.peopleIntro}</p>
           </header>
 
-          <div className={styles.collageScene} data-studio-collage-scene>
-            <div className={styles.collage} aria-label={copy.collageLabel}>
-              {copy.members.map((member, index) => (
-                <figure
-                  className={styles.collagePortrait}
-                  data-studio-collage-item
-                  key={member.id}
-                >
-                  <img
-                    src={member.image.smallSrc}
-                    srcSet={photoSources(member.image)}
-                    sizes="(max-width: 680px) 31vw, 18vw"
-                    alt=""
-                    width={member.image.smallWidth}
-                    height={member.image.smallHeight}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ objectPosition: member.image.position }}
-                  />
-                  <figcaption>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    {member.name}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
+          {/* One row of five; pointing at one person puts the others in grey. */}
+          <ul className={styles.memberList} aria-label={copy.collageLabel}>
+            {copy.members.map((member) => (
+              <li key={member.id}>
+                <article className={styles.member} id={`team-${member.id}`}>
+                  <figure className={styles.memberPhoto}>
+                    <img
+                      src={member.image.smallSrc}
+                      srcSet={photoSources(member.image)}
+                      sizes="(max-width: 680px) 7.5rem, (max-width: 1180px) 30vw, 15rem"
+                      alt={member.image.alt}
+                      width={member.image.smallWidth}
+                      height={member.image.smallHeight}
+                      loading="lazy"
+                      decoding="async"
+                      style={{ objectPosition: member.image.position }}
+                    />
+                  </figure>
 
-          <div className={styles.memberList}>
-            {copy.members.map((member, index) => (
-              <article
-                className={styles.member}
-                data-studio-member
-                id={`team-${member.id}`}
-                key={member.id}
-                data-side={index % 2 === 0 ? "left" : "right"}
-              >
-                <div className={styles.memberRail} data-studio-member-part>
-                  <span className={styles.memberNumber} aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
+                  <div className={styles.memberStory}>
+                    <h3>{member.name}</h3>
+                    <p className={styles.memberRole}>{member.role}</p>
+                    <p className={styles.memberValue}>{member.value}</p>
+                    <details className={styles.memberDetails}>
+                      <summary>{copy.peopleDetailsLabel}</summary>
+                      <p className={styles.memberBio}>{member.bio}</p>
+                      <ul className={styles.memberTags} aria-label={member.role}>
+                        {member.tags.map((tag) => (
+                          <li key={tag}>{tag}</li>
+                        ))}
+                      </ul>
+                    </details>
+                    <MemberStoryLink memberId={member.id} locale={locale} />
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+
+          {/* What the team brings, drifting in two opposite rows. The same
+              tags are listed in each person's background, so this is
+              decorative. */}
+          <div aria-hidden="true" className={styles.marquee}>
+            {[0, 1].map((row) => (
+              <div className={styles.marqueeRow} data-row={row} key={row}>
+                {[0, 1].map((copyIndex) => (
+                  <span className={styles.marqueeTrack} key={copyIndex}>
+                    {(row === 0 ? specialties : [...specialties].reverse()).map((tag, index) => (
+                      <span className={styles.marqueeItem} key={`${tag}-${index}`}>
+                        {tag}
+                      </span>
+                    ))}
                   </span>
-                  <p>{member.role}</p>
-                </div>
-
-                <figure className={styles.memberPhoto} data-studio-member-part>
-                  <img
-                    src={member.image.smallSrc}
-                    srcSet={photoSources(member.image)}
-                    sizes="(max-width: 680px) calc(100vw - 2rem), (max-width: 1180px) 44vw, 25vw"
-                    alt={member.image.alt}
-                    width={member.image.smallWidth}
-                    height={member.image.smallHeight}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ objectPosition: member.image.position }}
-                  />
-                </figure>
-
-                <div className={styles.memberStory} data-studio-member-part>
-                  <h3>{member.name}</h3>
-                  <p className={styles.memberValue}>{member.value}</p>
-                  <details className={styles.memberDetails}>
-                    <summary>{copy.peopleDetailsLabel}</summary>
-                    <p className={styles.memberBio}>{member.bio}</p>
-                    <ul className={styles.memberTags} aria-label={member.role}>
-                      {member.tags.map((tag) => (
-                        <li key={tag}>{tag}</li>
-                      ))}
-                    </ul>
-                  </details>
-                  <MemberStoryLink memberId={member.id} locale={locale} />
-                </div>
-              </article>
+                ))}
+              </div>
             ))}
           </div>
         </section>
 
         <section className={styles.ctaSection} aria-labelledby="studio-cta-title">
-          <p className={styles.eyebrow} data-studio-reveal>
-            {copy.cta.label}
-          </p>
-          <div className={styles.ctaGrid} data-studio-reveal>
-            <h2 id="studio-cta-title">{copy.cta.title}</h2>
-            <div>
-              <p>{copy.cta.body}</p>
-              <div className={styles.ctaActions}>
-                <a className={styles.ctaPrimary} href={plannerHref}>
-                  {isEnglish ? "Talk to a China trip planner" : copy.cta.button}
-                  <ArrowRight aria-hidden="true" size={18} />
-                </a>
-                <a className={styles.ctaSecondary} href={planningServicesHref}>
-                  {isEnglish
-                    ? "Compare planning services"
-                    : copy.cta.secondaryButton}
-                </a>
-              </div>
+          <div className={styles.ctaGrid}>
+            <p className={styles.eyebrow}>{copy.cta.label}</p>
+            <h2 id="studio-cta-title">
+              <ScrollWords locale={locale} text={copy.cta.title} />
+            </h2>
+            <p className={styles.ctaBody}>{copy.cta.body}</p>
+            <div className={styles.ctaActions}>
+              <a className={styles.ctaPrimary} href={plannerHref}>
+                {isEnglish ? "Talk to a China trip planner" : copy.cta.button}
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+              <a className={styles.ctaSecondary} href={planningServicesHref}>
+                {isEnglish
+                  ? "Compare planning services"
+                  : copy.cta.secondaryButton}
+              </a>
             </div>
           </div>
         </section>
       </main>
 
       <HomegroundFooter locale={locale} pageContext="studio" />
-      <HomegroundStudioMotion rootId={motionRootId} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
