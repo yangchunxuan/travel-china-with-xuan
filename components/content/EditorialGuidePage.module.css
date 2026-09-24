@@ -338,7 +338,15 @@
   font-weight: 500;
 }
 
-.grokGuide .breadcrumb a,
+.grokGuide .breadcrumb a {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 300ms ease, color 150ms ease;
+}
+
 .grokGuide .relatedDestinations a {
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
   text-decoration: none;
@@ -347,7 +355,7 @@
 
 .grokGuide .breadcrumb a:hover,
 .grokGuide .breadcrumb a:focus-visible {
-  background-size: 100% 1px;
+  text-decoration-color: currentColor;
   color: var(--hg-color-ink);
 }
 

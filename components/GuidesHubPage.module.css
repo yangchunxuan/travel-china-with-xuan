@@ -933,24 +933,22 @@ a.paginationStep > span {
   transform: none;
 }
 
-/* Guide titles draw an underline from the left on hover, line by line. */
+/* Let the browser clear descenders in wrapped guide titles. */
 .titleInk {
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: background-size 550ms var(--guides-ease);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 300ms ease;
 }
 
 .guideSlotLead .titleInk {
-  background-size: 0 2px;
+  text-decoration-thickness: 2px;
 }
 
 .guideLink:focus-visible .titleInk {
-  background-size: 100% 1px;
-}
-
-.guideSlotLead .guideLink:focus-visible .titleInk {
-  background-size: 100% 2px;
+  text-decoration-color: currentColor;
 }
 
 @media (hover: hover) {
@@ -975,11 +973,7 @@ a.paginationStep > span {
   }
 
   .guideLink:hover .titleInk {
-    background-size: 100% 1px;
-  }
-
-  .guideSlotLead .guideLink:hover .titleInk {
-    background-size: 100% 2px;
+    text-decoration-color: currentColor;
   }
 }
 
