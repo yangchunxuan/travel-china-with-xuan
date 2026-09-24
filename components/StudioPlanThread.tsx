@@ -109,7 +109,7 @@ export function StudioPlanThread({
       style={{ "--thread-progress": active / (stageCount - 1) } as CSSProperties}
     >
       <noscript>
-        <style>{`.${styles.overviewList} > li { opacity: 1 !important; position: static !important; translate: none !important; }
+        <style>{`.${styles.overviewList} > li { opacity: 1 !important; grid-area: auto !important; pointer-events: auto !important; position: static !important; translate: none !important; }
 .${styles.overviewList} { display: grid !important; gap: 2rem !important; }
 .${styles.threadTrack}, .${styles.threadCounter} { display: none !important; }`}</style>
       </noscript>
@@ -129,6 +129,7 @@ export function StudioPlanThread({
         <span aria-hidden="true" className={styles.threadFill} />
         {labels.map((label, index) => (
           <button
+            aria-label={label}
             aria-pressed={index === active}
             className={styles.threadNode}
             data-passed={index < active ? "true" : undefined}

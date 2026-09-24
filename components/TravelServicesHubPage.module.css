@@ -599,6 +599,15 @@
     margin-block-end: 2rem;
   }
 
+  .breadcrumb li > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    color: var(--muted);
+    content: "/";
+  }
+
   .hero h1 {
     font-size: clamp(2.25rem, 10vw, 2.75rem);
     line-height: 1.05;
