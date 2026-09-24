@@ -1,12 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
+import { destinationHubRegistry } from "../lib/destinationHubs";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
+import { getKevinPreparationStoryCopy } from "../lib/kevinPreparationStoryI18n";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PointerSpotlight } from "./motion/PointerSpotlight";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./TravelServicesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -18,6 +24,32 @@ function serviceHref(
   const home = getHomegroundCopy(locale);
   if (id === "tours") return `${home.path}tours/`;
   return `${home.path}?service=full-trip-support#planner-contact`;
+}
+
+/*
+ * One photograph per kind of help, reused from pages that already publish
+ * it with the same alt text: the Zhangjiajie city-guide cover for published
+ * routes, and Kevin with guests (faces blurred) for on-the-ground support.
+ */
+function serviceImage(id: "tours" | "support", locale: HomegroundLocale) {
+  if (id === "tours") {
+    const hub = destinationHubRegistry.find((entry) => entry.id === "zhangjiajie");
+    if (!hub) throw new Error("Missing Zhangjiajie destination hub.");
+    return {
+      src: hub.heroImagePath,
+      width: hub.imageWidth,
+      height: hub.imageHeight,
+      alt: hub.locales[locale].heroAlt,
+      position: "50% 50%",
+    };
+  }
+  return {
+    src: "/images/guides/kevin-preparation/kevin-guiding-1080.jpg",
+    width: 1080,
+    height: 1440,
+    alt: getKevinPreparationStoryCopy(locale).images.action.alt,
+    position: "50% 38%",
+  };
 }
 
 function schemaForServices(locale: HomegroundLocale) {
@@ -72,6 +104,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
   const section = getSearchPlatformCopy(locale).sections.services;
   const copy = getTravelServicesHubCopy(locale);
   const schema = schemaForServices(locale);
+  // Chinese title: break only between its three phrases (kept from #206).
   const zhTitleParts = locale === "zh"
     ? section.title.match(/^(只在真正改变)(旅行体验的地方)(加入本地协助。)$/)?.slice(1)
     : null;
@@ -81,6 +114,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
       <a className={localeStyles.skipLink} href="#services-main">{home.skipLink}</a>
       <HomegroundHeader locale={locale} pageContext="services" languagePaths={getSearchHubLanguagePaths("services")} />
       <main id="services-main" tabIndex={-1}>
+        <PointerSpotlight />
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
@@ -91,34 +125,73 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
               </ol>
             </nav>
             <div className={styles.heroGrid}>
-              <div><p className={styles.eyebrow}>{section.eyebrow}</p><h1>{zhTitleParts ? zhTitleParts.map((part) => <span className={styles.zhTitlePart} key={part}>{part}</span>) : section.title}</h1></div>
-              <div><p>{section.description}</p><ul>{section.scope.map((item) => <li key={item}>{item}</li>)}</ul></div>
+              <div>
+                <p className={styles.eyebrow}>{section.eyebrow}</p>
+                <h1><AnimatedHeadline locale={locale} segments={zhTitleParts} text={section.title} /></h1>
+                <p className={styles.lede}>{section.description}</p>
+              </div>
+              <aside className={styles.scope} aria-labelledby="services-scope-title">
+                <p id="services-scope-title">{section.scopeTitle}</p>
+                <ul>{section.scope.map((item) => <li key={item}>{item}</li>)}</ul>
+              </aside>
             </div>
           </div>
         </header>
 
         <section className={styles.choices} aria-labelledby="service-choices-title">
           <div className={styles.sectionIntro}>
-            <div><p className={styles.eyebrow}>{copy.choicesEyebrow}</p><h2 id="service-choices-title">{copy.choicesTitle}</h2></div>
+            <div>
+              <p className={styles.eyebrow}>{copy.choicesEyebrow}</p>
+              <h2 id="service-choices-title"><KeepWords locale={locale} text={copy.choicesTitle} /></h2>
+            </div>
             <p>{copy.choicesBody}</p>
           </div>
           <ol className={styles.cardGrid}>
-            {copy.cards.map((card, index) => (
-              <li key={card.id}>
-                <Link href={serviceHref(card.id, locale)}>
-                  <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                  <p className={styles.cardEyebrow}>{card.eyebrow}</p>
-                  <h3>{card.title}</h3><p>{card.body}</p>
-                  <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
-                </Link>
-              </li>
-            ))}
+            {copy.cards.map((card, index) => {
+              const image = serviceImage(card.id, locale);
+              return (
+                <li key={card.id}>
+                  <Link data-spotlight href={serviceHref(card.id, locale)}>
+                    <figure className={styles.cardImage}>
+                      <Image
+                        alt={image.alt}
+                        decoding="async"
+                        height={image.height}
+                        loading="lazy"
+                        sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 80rem) calc((100vw - 4rem) / 2), 38rem"
+                        src={image.src}
+                        style={{ objectPosition: image.position }}
+                        width={image.width}
+                      />
+                    </figure>
+                    <div className={styles.cardBody}>
+                      <span className={styles.number} aria-hidden="true">
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                      </span>
+                      <p className={styles.cardEyebrow}>{card.eyebrow}</p>
+                      <h3><KeepWords locale={locale} text={card.title} /></h3>
+                      <p className={styles.cardText}>{card.body}</p>
+                      <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
           </ol>
         </section>
 
         <section className={styles.method} aria-labelledby="service-method-title">
-          <div><p className={styles.eyebrow}>{copy.methodEyebrow}</p><h2 id="service-method-title">{copy.methodTitle}</h2></div>
-          <div><p>{copy.methodBody}</p><div className={styles.methodLinks}><Link href={planning.href}>{copy.methodAction}<span aria-hidden="true">→</span></Link><Link href={`${home.path}guides/`}>{copy.adviceAction}</Link></div></div>
+          <div>
+            <p className={styles.eyebrow}>{copy.methodEyebrow}</p>
+            <h2 id="service-method-title"><KeepWords locale={locale} text={copy.methodTitle} /></h2>
+          </div>
+          <div>
+            <p>{copy.methodBody}</p>
+            <div className={styles.methodLinks}>
+              <Link href={planning.href}>{copy.methodAction}<span aria-hidden="true">→</span></Link>
+              <Link href={`${home.path}guides/`}>{copy.adviceAction}</Link>
+            </div>
+          </div>
         </section>
       </main>
       <HomegroundFooter locale={locale} pageContext="services" />

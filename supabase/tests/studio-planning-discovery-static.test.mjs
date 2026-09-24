@@ -7,24 +7,25 @@ const source = (path) => readFile(new URL(path, repositoryRoot), "utf8");
 
 test("Studio leads with the traveler planning thread and moves the team later", async () => {
   const page = await source("components/HomegroundStudioPage.tsx");
+  const thread = await source("components/StudioPlanThread.tsx");
 
   assert.match(
-    page,
+    thread,
     /const overviewStageIds = \["inputs", "steps", "deliverables"\] as const/,
   );
-  assert.match(page, /data-plan-stage=\{overviewStageIds\[index\]\}/);
-  assert.match(page, /data-plan-stage="terms"/);
+  assert.match(thread, /data-plan-stage=\{overviewStageIds\[index\]\}/);
+  assert.match(thread, /data-plan-stage="terms"/);
+  assert.match(thread, /<dl className=\{styles\.termsList\}>/);
+  assert.match(thread, /aria-labelledby="planning-overview-title"/);
   assert.ok(
-    page.indexOf("styles.planOverview") < page.indexOf("styles.trustSection"),
+    page.indexOf("<StudioPlanThread") < page.indexOf("styles.trustSection"),
     "the at-a-glance plan should precede the detailed method",
   );
   assert.ok(
     page.indexOf("styles.trustSection") < page.indexOf("styles.peopleSection"),
     "the planning method should precede the team story",
   );
-  assert.match(page, /<dl className=\{styles\.termsList\}>/);
   assert.match(page, /<details className=\{styles\.memberDetails\}>/);
-  assert.match(page, /aria-labelledby="planning-overview-title"/);
   assert.match(page, /aria-labelledby="planning-method-title"/);
 });
 

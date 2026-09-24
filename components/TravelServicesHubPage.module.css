@@ -1,96 +1,40 @@
-/* /services/ follows the restrained visual system used by /tours/ and the hubs. */
+/*
+ * /services/ (Travel Services). Same system as /tours/, /guides/ and the
+ * hubs: white page, #f9f8f6 tiles without outlines, ink #0a0a0a with muted
+ * ink at 60%, 14px / 500 / 44px pills and Georgia headlines at -2%. The two
+ * kinds of help are two photo tiles with a cursor light; motion is CSS
+ * (plus the shared PointerSpotlight) and turns off for reduced motion.
+ */
 .page {
-  --service-paper: #fff;
-  --service-tile: #f9f8f6;
-  --service-warm: #f2f1ef;
-  --service-warm-hover: #e9e7e3;
-  --service-ink: #0a0a0a;
-  --service-muted: rgb(10 10 10 / 60%);
-  --service-rule: rgb(10 10 10 / 10%);
-  --service-focus: var(--hg-color-focus, #b14f37);
-  --service-content: 77rem;
-  --service-gutter: 1.5rem;
-  --service-pill: 2.75rem;
-  --service-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  background: var(--service-paper);
-  color: var(--service-ink);
+  --ink: #0a0a0a;
+  --muted: rgb(10 10 10 / 60%);
+  --line: #d5d9e2;
+  --rule: rgb(10 10 10 / 10%);
+  --soft: #f5f5f4;
+  --tile: #f9f8f6;
+  --warm: #f2f1ef;
+  --warm-hover: #e9e7e3;
+  --paper: #fff;
+  --accent: #a84731;
+  --focus: var(--hg-color-focus, #b14f37);
+  --content: 77rem;
+  --gutter: 1.5rem;
+  --section: 6rem;
+  --pill: 2.75rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--paper);
+  color: var(--ink);
   min-height: 100vh;
 }
 
-.page main {
-  display: block;
-  scroll-margin-top: var(--homeground-header-height, 4.25rem);
-}
-
-.page :is(a, button) {
-  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 0.75rem);
-}
-
 .hero,
-.choices,
-.method {
-  padding-inline: max(var(--service-gutter), calc((100% - var(--service-content)) / 2));
-}
-
-.hero {
-  border-block-end: 1px solid var(--service-rule);
-  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3.5rem, 5vw, 5rem);
-}
-
-.breadcrumb ol {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
-  padding: 0;
-}
-
-.breadcrumb li {
-  align-items: center;
-  color: var(--service-muted);
-  display: flex;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  gap: 0.5rem;
-  line-height: 1.45;
-}
-
-.breadcrumb a {
-  align-items: center;
-  color: var(--service-ink);
-  display: inline-flex;
-  min-height: var(--service-pill);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.25rem;
-  transition: text-decoration-color 150ms ease;
-}
-
-.breadcrumb a:hover,
-.breadcrumb a:focus-visible {
-  text-decoration-color: currentColor;
-}
-
-.heroGrid,
-.sectionIntro,
-.method {
-  align-items: end;
-  display: grid;
-  gap: clamp(2rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
-}
-
-.heroGrid > div,
-.sectionIntro > div,
-.method > div {
-  min-width: 0;
+.choices {
+  padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
 }
 
 .eyebrow,
 .cardEyebrow {
-  color: var(--service-muted);
+  color: var(--muted);
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -109,6 +53,47 @@
   text-wrap: balance;
 }
 
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.8125rem;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.breadcrumb a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
+}
+
+.heroGrid,
+.sectionIntro,
+.method {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+}
+
 .hero h1 {
   font-size: clamp(2.75rem, 5.2vw, 4.5rem);
   line-height: 1.02;
@@ -116,44 +101,56 @@
   max-width: 14ch;
 }
 
-.heroGrid > div:last-child {
-  background: var(--service-tile);
-  border-radius: 1rem;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-}
-
-.heroGrid > div:last-child > p {
+.lede {
+  color: var(--muted);
   font-size: 1.0625rem;
   line-height: 1.6;
-  margin: 0;
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
   text-wrap: pretty;
 }
 
-.heroGrid ul {
+/* "Where would local help matter?" in one quiet tile beside the title. */
+.scope {
+  background: var(--tile);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.scope > p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.scope ul {
   list-style: none;
-  margin: 1.25rem 0 0;
+  margin: 0.75rem 0 0;
   padding: 0;
 }
 
-.heroGrid li {
-  border-block-start: 1px solid var(--service-rule);
-  color: var(--service-muted);
+.scope li {
+  border-block-start: 1px solid var(--rule);
+  color: var(--muted);
   font-size: 0.9375rem;
   line-height: 1.5;
   padding-block: 0.75rem;
   text-wrap: pretty;
 }
 
-.heroGrid li:last-child {
+.scope li:last-child {
   padding-block-end: 0;
 }
 
+/* ---------- Two kinds of help ---------- */
+
 .choices {
-  padding-block: clamp(4rem, 7vw, 6rem);
+  padding-block: var(--section) 0;
 }
 
 .sectionIntro {
-  margin-block-end: clamp(2rem, 3vw, 2.5rem);
+  margin-block-end: 2.5rem;
 }
 
 .sectionIntro h2,
@@ -161,16 +158,15 @@
   font-size: clamp(2rem, 3.6vw, 2.75rem);
   line-height: 1.08;
   margin: 0.75rem 0 0;
-  max-width: 18ch;
+  max-width: 16ch;
 }
 
 .sectionIntro > p,
 .method > div:last-child > p {
-  color: var(--service-muted);
+  color: var(--muted);
   font-size: 1.0625rem;
   line-height: 1.6;
   margin: 0;
-  max-width: 36rem;
   text-wrap: pretty;
 }
 
@@ -187,193 +183,416 @@
   min-width: 0;
 }
 
+/* Grok tile: the photo inset 4px with a 12px radius inside a 16px tile. */
 .cardGrid a {
-  background: var(--service-tile);
+  background: var(--tile);
   border-radius: 1rem;
-  color: var(--service-ink);
+  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 21rem;
-  padding: clamp(1.5rem, 2.5vw, 2rem);
+  isolation: isolate;
+  padding: 4px;
+  position: relative;
   text-decoration: none;
-  transition: background-color 150ms ease, transform 250ms var(--service-ease);
+  transition:
+    background-color 150ms ease,
+    scale 150ms ease;
 }
 
+.cardImage {
+  aspect-ratio: 16 / 10;
+  background: var(--soft);
+  border-radius: 0.75rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cardImage img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease);
+  width: 100%;
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem 1.25rem;
+}
+
+/* The number sits on the photo as a white disc and rolls into an arrow. */
 .number {
   align-items: center;
-  background: var(--service-paper);
-  border-radius: 50%;
-  color: var(--service-ink);
-  display: inline-flex;
-  flex: none;
+  background: var(--paper);
+  border-radius: 999px;
+  display: flex;
   font-size: 0.8125rem;
   font-variant-numeric: tabular-nums;
   font-weight: 500;
   height: 2.25rem;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
   justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  transition:
+    background-color 300ms var(--ease),
+    color 300ms var(--ease);
   width: 2.25rem;
+  z-index: 1;
 }
 
-.cardEyebrow {
-  margin-block-start: 1.5rem;
+.number > span {
+  display: inline-block;
+}
+
+.number > span,
+.number::after {
+  transition: transform 450ms var(--ease);
+}
+
+.number::after {
+  align-items: center;
+  content: "→";
+  display: flex;
+  font-size: 0.9375rem;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  transform: translateY(110%);
 }
 
 .cardGrid h3 {
-  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
   line-height: 1.1;
   margin: 0.5rem 0 0;
 }
 
-.cardGrid h3 + p {
-  color: var(--service-muted);
+.cardText {
+  color: var(--muted);
   font-size: 0.9375rem;
-  line-height: 1.6;
-  margin: 0.85rem 0 1.5rem;
-  max-width: 38rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 34rem;
   text-wrap: pretty;
 }
 
 .action {
   align-items: center;
-  align-self: flex-start;
-  background: var(--service-paper);
+  align-self: start;
+  background: var(--paper);
   border-radius: 999px;
   display: inline-flex;
   font-size: 0.875rem;
   font-weight: 500;
-  gap: 1.25rem;
-  justify-content: space-between;
-  line-height: 1.25;
+  gap: 0.6rem;
   margin-block-start: auto;
-  min-height: var(--service-pill);
-  padding-inline: 1.25rem;
+  min-height: var(--pill);
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.cardText + .action {
+  margin-block-start: 1.5rem;
 }
 
 .action > span {
-  transition: transform 250ms var(--service-ease);
+  transition: transform 300ms var(--ease);
 }
 
+/* Cursor light (PointerSpotlight writes --spot-x / --spot-y). */
+.cardGrid a::before,
+.cardGrid a::after {
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+
+.cardGrid a::before {
+  background: radial-gradient(22rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(255 255 255 / 90%), transparent 65%);
+  z-index: -1;
+}
+
+.cardGrid a::after {
+  background: radial-gradient(14rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(10 10 10 / 34%), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  padding: 1px;
+}
+
+/* ---------- Method: one tile ---------- */
+
 .method {
-  border-block-start: 1px solid var(--service-rule);
-  padding-block: clamp(4rem, 7vw, 6rem);
+  align-items: start;
+  background: var(--tile);
+  border-radius: 1rem;
+  margin-block: var(--section);
+  margin-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .methodLinks {
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-block-start: 1.75rem;
+  margin-block-start: 1.5rem;
 }
 
 .methodLinks a {
   align-items: center;
-  background: var(--service-warm);
+  background: var(--paper);
+  border: 1px solid transparent;
   border-radius: 999px;
-  color: var(--service-ink);
+  color: var(--ink);
   display: inline-flex;
   font-size: 0.875rem;
   font-weight: 500;
-  gap: 0.75rem;
-  justify-content: center;
-  line-height: 1.3;
-  min-height: var(--service-pill);
-  padding: 0.625rem 1.25rem;
+  gap: 0.6rem;
+  min-height: var(--pill);
+  padding: 0 1.25rem;
   text-decoration: none;
-  transition: background-color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    scale 150ms ease;
 }
 
 .methodLinks a:first-child {
-  background: var(--service-ink);
-  color: var(--service-paper);
+  background: var(--ink);
+  color: var(--hg-color-on-dark, #fff);
 }
 
+.methodLinks a > span {
+  transition: transform 300ms var(--ease);
+}
+
+/* ---------- Hover, focus and press ---------- */
+
 @media (hover: hover) {
+  .breadcrumb a:hover {
+    text-decoration-color: currentColor;
+  }
+
   .cardGrid a:hover {
-    background: var(--service-warm);
-    transform: translateY(-2px);
+    background: var(--warm);
   }
 
-  .cardGrid a:hover .action > span {
-    transform: translateX(3px);
+  .cardGrid a:hover::before,
+  .cardGrid a:hover::after {
+    opacity: 1;
   }
 
-  .methodLinks a:hover {
-    background: var(--service-warm-hover);
+  .cardGrid a:hover .cardImage img {
+    transform: scale(1.04);
+  }
+
+  .cardGrid a:hover .number {
+    background: var(--ink);
+    color: var(--hg-color-on-dark, #fff);
+  }
+
+  .cardGrid a:hover .number > span {
+    transform: translateY(-160%);
+  }
+
+  .cardGrid a:hover .number::after {
+    transform: none;
+  }
+
+  .cardGrid a:hover .action > span,
+  .methodLinks a:hover > span {
+    transform: translateX(4px);
   }
 
   .methodLinks a:first-child:hover {
     background: #242424;
   }
+
+  .methodLinks a:not(:first-child):hover {
+    background: var(--warm);
+  }
 }
 
-.breadcrumb a:focus-visible,
+.cardGrid a:active,
+.methodLinks a:active {
+  scale: 0.98;
+}
+
 .cardGrid a:focus-visible,
-.methodLinks a:focus-visible {
-  outline: 2px solid var(--service-focus);
+.methodLinks a:focus-visible,
+.breadcrumb a:focus-visible {
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
-.cardGrid a:focus-visible .action > span {
-  transform: translateX(3px);
+.cardGrid a:focus-visible .number {
+  background: var(--ink);
+  color: var(--hg-color-on-dark, #fff);
 }
 
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.hero h1, .sectionIntro h2, .cardGrid h3, .method h2) {
+.cardGrid a:focus-visible .number > span {
+  transform: translateY(-160%);
+}
+
+.cardGrid a:focus-visible .number::after {
+  transform: none;
+}
+
+/* ---------- Chinese and Korean ---------- */
+
+.page[data-homeground-locale="zh"] .hero h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+  max-width: 13em;
+}
+
+.page[data-homeground-locale="ko"] .hero h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  max-width: 13em;
+  word-break: keep-all;
+}
+
+.page[data-homeground-locale="zh"] :is(.sectionIntro h2, .cardGrid h3, .method h2) {
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1.3;
 }
 
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
-  font-size: clamp(2.4rem, 4.2vw, 3.75rem);
-  max-width: 18em;
-}
-
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .method h2) {
-  font-size: clamp(2rem, 3.3vw, 2.9rem);
-  max-width: 24em;
-}
-
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .cardGrid h3 {
-  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
-}
-
-.page[data-homeground-locale="zh"] :is(h1, h2, h3) {
-  line-break: strict;
-  word-break: normal;
-}
-
-.page[data-homeground-locale="ko"] :is(h1, h2, h3) {
-  overflow-wrap: normal;
+.page[data-homeground-locale="ko"] :is(.sectionIntro h2, .cardGrid h3, .method h2) {
+  letter-spacing: 0;
+  line-height: 1.3;
   word-break: keep-all;
 }
 
-@media (max-width: 56.25rem) {
-  .heroGrid,
-  .sectionIntro,
-  .method {
-    align-items: start;
-    gap: 1.75rem;
-    grid-template-columns: minmax(0, 1fr);
+.page[data-homeground-locale="ko"] :is(.lede, .scope li, .sectionIntro p, .cardText, .method p) {
+  word-break: keep-all;
+}
+
+/* "ch" is half an ideograph wide, so CJK headings measure in em instead. */
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .method h2) {
+  max-width: 16em;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes servicesEnter {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    translate: 0 14px;
   }
 
-  .heroGrid > div:last-child {
-    max-width: 46rem;
-  }
-
-  .sectionIntro > p,
-  .method > div:last-child {
-    max-width: 46rem;
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
   }
 }
 
-@media (max-width: 42.5rem) {
-  .page {
-    --service-gutter: 1rem;
+@keyframes servicesImageReveal {
+  from {
+    clip-path: inset(16% 0 0 0 round 0.75rem);
   }
 
-  .hero {
-    padding-block-end: 3.5rem;
+  to {
+    clip-path: inset(0 round 0.75rem);
+  }
+}
+
+@keyframes servicesImageSettle {
+  from {
+    scale: 1.12;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes servicesHeadingIn {
+  from {
+    filter: blur(6px);
+    opacity: 0.25;
+    translate: 0 12px;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .breadcrumb {
+    animation: servicesEnter 700ms var(--ease) both;
+  }
+
+  .hero .eyebrow {
+    animation: servicesEnter 700ms var(--ease) 60ms both;
+  }
+
+  .lede {
+    animation: servicesEnter 900ms var(--ease) 320ms both;
+  }
+
+  .scope {
+    animation: servicesEnter 900ms var(--ease) 460ms both;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cardImage {
+      animation: servicesImageReveal linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+
+    .cardImage img {
+      animation: servicesImageSettle linear both;
+      animation-range: entry 0% cover 60%;
+      animation-timeline: view();
+    }
+
+    .sectionIntro h2,
+    .method h2 {
+      animation: servicesHeadingIn linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* ---------- Tablet and phone ---------- */
+
+@media (max-width: 61.25rem) {
+  .heroGrid,
+  .sectionIntro,
+  .method {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scope {
+    max-width: 36rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .page {
+    --gutter: 1rem;
+    --section: 4rem;
   }
 
   .breadcrumb ol {
@@ -385,7 +604,7 @@
   }
 
   .breadcrumb li:not(:last-child)::after {
-    color: var(--service-muted);
+    color: var(--muted);
     content: "/";
   }
 
@@ -399,63 +618,61 @@
     max-width: 100%;
   }
 
-  .zhTitlePart {
-    display: block;
-  }
-
-  .heroGrid > div:last-child {
-    padding: 1.25rem;
-  }
-
-  .heroGrid > div:last-child > p,
+  .lede,
   .sectionIntro > p,
   .method > div:last-child > p {
     font-size: 1rem;
   }
 
-  .choices,
-  .method {
-    padding-block: 4rem;
-  }
-
-  .sectionIntro h2,
-  .method h2 {
-    font-size: clamp(2rem, 8vw, 2.5rem);
-  }
-
-  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .method h2) {
-    font-size: clamp(1.85rem, 7.2vw, 2.25rem);
+  .scope {
+    padding: 1.25rem;
   }
 
   .cardGrid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .cardGrid a {
-    min-height: 19rem;
-    padding: 1.5rem;
+  .cardBody {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .method {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .methodLinks {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 22rem) {
+  .page {
+    --gutter: 0.75rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .breadcrumb a,
-  .cardGrid a,
+  .cardImage img,
+  .number,
+  .number > span,
+  .number::after,
   .action > span,
-  .methodLinks a {
+  .methodLinks a > span,
+  .cardGrid a::before,
+  .cardGrid a::after {
     transition: none;
   }
 
-  .cardGrid a:hover,
-  .cardGrid a:hover .action > span,
-  .cardGrid a:focus-visible .action > span {
+  .cardGrid a:hover .cardImage img {
     transform: none;
   }
 }
 
 @media (forced-colors: active) {
-  .heroGrid > div:last-child,
+  .scope,
   .cardGrid a,
-  .methodLinks a {
+  .method {
     border: 1px solid CanvasText;
   }
 }

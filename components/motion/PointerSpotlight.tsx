@@ -13,6 +13,8 @@ import { useEffect } from "react";
 export function PointerSpotlight() {
   useEffect(() => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
 
     let frame = 0;
     let pending: { tile: HTMLElement; x: number; y: number } | null = null;
@@ -27,6 +29,7 @@ export function PointerSpotlight() {
     };
 
     const onMove = (event: PointerEvent) => {
+      if (reducedMotion.matches) return;
       if (event.pointerType === "touch") return;
       const target = event.target;
       if (!(target instanceof Element)) return;

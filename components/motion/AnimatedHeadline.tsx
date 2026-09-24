@@ -15,7 +15,7 @@ interface Unit {
  * follows. Whitespace is kept as plain text between units, which keeps the
  * heading's textContent identical to the source string.
  */
-function splitHeadline(text: string, locale: Locale): Unit[] {
+export function splitHeadline(text: string, locale: Locale): Unit[] {
   const segmenter = new Intl.Segmenter(locale === "zh" ? "zh-Hans" : locale, {
     granularity: "word",
   });
