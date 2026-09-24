@@ -2846,28 +2846,37 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ),
   ],
   packages: [
-    guidedPackage(
-      // Stable backend identifier retained for existing links and enquiries.
-      // The customer-facing guide language follows the page locale.
-      "fixed-route-english-guided",
-      "guided",
-      l(
-        "Fixed route with English guide",
-        "固定路线英语导游版",
-        "한국어 가이드 포함 고정 코스",
+    {
+      ...guidedPackage(
+        // Stable backend identifier retained for existing links and enquiries.
+        // The customer-facing guide language follows the page locale.
+        "fixed-route-english-guided",
+        "guided",
+        l(
+          "Fixed route with English guide",
+          "固定路线英语导游版",
+          "한국어 가이드 포함 고정 코스",
+        ),
+        l(
+          "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+          "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
+          "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
+        ),
+        [3980, 3280],
       ),
-      l(
-        "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
-        "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
-        "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
-      ),
-      // Owner-approved USD selling prices, 2026-09-06; CNY follows the existing conversion basis.
-      [2918, 2502],
-      [449, 385],
-    ),
+      // Owner-approved CNY selling prices, 2026-09-24, matching the 4D3N price card
+      // (2 / 4 / 6 travellers = 3,980 / 3,280 / 2,980). The six-traveller rate is set
+      // explicitly because it is CNY 300 below the four-traveller rate, not the usual 200.
+      // USD and KRW follow the standard conservative conversion (USD 620 / 510 / 460).
+      prices: [
+        { travelers: 2, cnyPerPerson: 3980 },
+        { travelers: 4, cnyPerPerson: 3280 },
+        { travelers: 6, cnyPerPerson: 2980 },
+      ],
+    },
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-24",
   lastReviewed: "2026-08-31",
 };
 

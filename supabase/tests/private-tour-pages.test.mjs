@@ -261,9 +261,10 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.equal(product.packages.length, 1);
   assert.equal(product.packages[0].id, "fixed-route-english-guided");
   assert.deepEqual(product.packages[0].prices, [
-    { travelers: 2, cnyPerPerson: 2918, usdPerPerson: 449 },
-    { travelers: 4, cnyPerPerson: 2502, usdPerPerson: 385 },
-    { travelers: 6, cnyPerPerson: 2302 },
+    // Owner-approved CNY prices, 2026-09-24 (4D3N price card); USD/KRW use the standard conversion.
+    { travelers: 2, cnyPerPerson: 3980 },
+    { travelers: 4, cnyPerPerson: 3280 },
+    { travelers: 6, cnyPerPerson: 2980 },
   ]);
 
   const zh = localizePrivateTourProduct(product, "zh");
@@ -289,9 +290,9 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
   assert.doesNotMatch(ko.summary, /영어 가이드/);
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
-  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-23");
-  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-23");
-  assert.equal(ko.dateModified, "2026-09-23");
+  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-24");
+  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-24");
+  assert.equal(ko.dateModified, "2026-09-24");
 });
 
 test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days and ticket boundary", () => {

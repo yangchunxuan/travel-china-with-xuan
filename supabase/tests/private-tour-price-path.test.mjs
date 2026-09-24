@@ -97,10 +97,10 @@ test("all three-language catalog price links land on the exact lowest published 
         const selection = { packageId: "fixed-route-english-guided", travelers: 4 };
         assert.equal(item.href, inquiry.buildPrivateTourDetailHref(published.href, item.id, selection));
         assert.equal(item.startingPrice.travelers, 4);
-        assert.equal(item.startingPrice.formatted, { en: "USD\u00a0385", zh: "¥2,502", ko: "₩540,000" }[locale]);
+        assert.equal(item.startingPrice.formatted, { en: "USD\u00a0510", zh: "¥3,280", ko: "₩710,000" }[locale]);
         assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
         assert.equal(published.startingPrice.travelers, 6, "catalog uses the lowest published per-person tier and states its group basis");
-        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0360", zh: "¥2,302", ko: "₩500,000" }[locale]);
+        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0460", zh: "¥2,980", ko: "₩650,000" }[locale]);
         continue;
       }
       assert.equal(item.href, published.startingPriceHref);
@@ -144,13 +144,17 @@ test("every published service/group survives detail links, language changes and 
 });
 
 test("six-traveller prices are exactly CNY 200 per person below each published four-traveller tier", () => {
+  // Owner-approved exception (2026-09-24): the forest fixed-route 4D3N card sets 6 travellers
+  // at CNY 2,980, which is CNY 300 below the CNY 3,280 four-traveller rate.
+  const sixPersonGapExceptions = { "zhangjiajie-forest-4-day-private-tour:fixed-route-english-guided": 300 };
   let sixPersonPackages = 0;
   for (const product of privateTourProducts) for (const tourPackage of product.packages) {
     const four = tourPackage.prices.find((row) => row.travelers === 4);
     if (!four) continue;
     const six = tourPackage.prices.find((row) => row.travelers === 6);
     assert.ok(six, `${product.slug}:${tourPackage.id} needs a six-person tier`);
-    assert.equal(six.cnyPerPerson, four.cnyPerPerson - 200, `${product.slug}:${tourPackage.id}`);
+    const gap = sixPersonGapExceptions[`${product.slug}:${tourPackage.id}`] ?? 200;
+    assert.equal(six.cnyPerPerson, four.cnyPerPerson - gap, `${product.slug}:${tourPackage.id}`);
     sixPersonPackages += 1;
   }
   assert.equal(sixPersonPackages, 19);
@@ -160,7 +164,6 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
   const cases = [
     [beijingSlug, "english-guided", [839, 669], [5453, 4348], [1180000, 940000]],
     ["guilin-yangshuo-5-day-private-tour", "standard-guided", [769, 629], [4998, 4088], [1080000, 880000]],
-    ["zhangjiajie-forest-4-day-private-tour", "fixed-route-english-guided", [449, 385], [2918, 2502], [630000, 540000]],
     ["shanghai-suzhou-hangzhou-6-day-private-tour", "standard-guided", [1144, 834], [7436, 5421], [1600000, 1170000]],
     ["chengdu-pandas-sanxingdui-5-day-private-tour", "standard-guided", [949, 759], [6168, 4933], [1330000, 1070000]],
     ["xian-terracotta-warriors-5-day-private-tour", "standard-guided", [598, 468], [3887, 3042], [840000, 660000]],
@@ -178,6 +181,13 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
       assert.equal(rows[2].cny, cny[1] - 200);
       assert.equal(rows[2].amount, formatPrivateTourPrice(cny[1] - 200, locale).amount, `${slug}:${locale} six-person price`);
     }
+  }
+  // The forest fixed route now uses owner-approved CNY prices (2026-09-24) with the standard
+  // conservative USD/KRW conversion, so check all three tiers in every locale.
+  const forest = privateTourProducts.find((p) => p.slug === "zhangjiajie-forest-4-day-private-tour");
+  for (const [locale, expected] of [["en", [620, 510, 460]], ["zh", [3980, 3280, 2980]], ["ko", [860000, 710000, 650000]]]) {
+    const rows = localizePrivateTourProduct(forest, locale).packages.find((p) => p.id === "fixed-route-english-guided").rows;
+    assert.deepEqual(rows.map((row) => [row.travelers, row.amount]), [[2, expected[0]], [4, expected[1]], [6, expected[2]]], `forest:${locale}`);
   }
   const beijing = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === beijingSlug), "en");
   assert.deepEqual(beijing.packages.find((p) => p.id === "no-guide").rows.map((row) => row.amount), [770, 620, 590]);
