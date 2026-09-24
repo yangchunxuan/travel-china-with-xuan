@@ -29,11 +29,11 @@
 .eyebrow,
 .count {
   color: var(--showcase-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .count {
@@ -116,12 +116,12 @@
   align-items: center;
   color: var(--homepage-product-muted);
   display: flex;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 0.75rem;
   justify-content: space-between;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .cardTitle {
@@ -134,36 +134,39 @@
   text-wrap: balance;
 }
 
+/*
+ * Price block, as on /tours/: a small label, the price on its own line, then
+ * "per person · N-traveller basis", then the package, each on its own line.
+ */
 .cardPrice {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.55rem;
-  margin: 0.75rem 0 0;
-}
-
-.cardPrice > span,
-.cardPrice > small {
   color: var(--homepage-product-muted);
-  font-size: 0.68rem;
-  font-weight: 620;
-  line-height: 1.4;
-}
-
-.cardPrice > small {
-  flex-basis: 100%;
+  display: grid;
+  font-size: 0.8125rem;
+  gap: 0.15rem;
+  line-height: 1.45;
+  margin: 0.9rem 0 0;
 }
 
 .cardPrice > span {
-  letter-spacing: 0.045em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .cardPrice > strong {
-  font-family: var(--hg-editorial);
-  font-size: 1.05rem;
+  color: var(--showcase-ink);
+  font-size: 1.0625rem;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.cardPrice > small {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.cardPrice > .cardValidity {
+  font-size: 0.75rem;
 }
 
 .cardDescription {
@@ -181,8 +184,8 @@
   align-items: center;
   border-block-start: 1px solid rgb(10 10 10 / 11%);
   display: flex;
-  font-size: 0.82rem;
-  font-weight: 650;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 1rem;
   justify-content: space-between;
   margin-block-start: auto;
@@ -256,8 +259,8 @@
   color: var(--showcase-ink);
   display: inline-flex;
   flex: 0 0 auto;
-  font-size: 0.78rem;
-  font-weight: 750;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 0.55rem;
   min-block-size: 2.75rem;
   padding-inline: 0.45rem;
@@ -285,10 +288,11 @@
 }
 
 .trustList li {
+  align-content: start;
   display: grid;
   gap: 0.35rem;
   min-inline-size: 0;
-  padding: 1.2rem 1.5rem;
+  padding: 1.35rem 1.5rem;
 }
 
 .trustList li:first-child {
@@ -300,15 +304,16 @@
 }
 
 .trustList strong {
-  font-size: 0.82rem;
-  font-weight: 720;
+  font-size: 1rem;
+  font-weight: 600;
   line-height: 1.35;
 }
 
 .trustList span {
   color: var(--homepage-product-muted);
-  font-size: 0.76rem;
+  font-size: 0.9375rem;
   line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .enquiryStrip {
@@ -329,12 +334,12 @@
 }
 
 .enquiryStrip p {
-  color: #d69a89;
-  font-size: 0.69rem;
-  font-weight: 720;
-  letter-spacing: 0.08em;
+  color: #bdbdbd;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .enquiryStrip h3 {
@@ -357,15 +362,16 @@
 .enquiryStrip > a {
   align-items: center;
   background: #fff;
+  border: 1px solid transparent;
   border-radius: 999px;
   color: #111;
   display: inline-flex;
-  font-size: 0.82rem;
-  font-weight: 720;
-  gap: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
   justify-content: center;
   min-block-size: 2.75rem;
-  padding: 0.75rem 1rem;
+  padding: 0 1.25rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -390,8 +396,6 @@
 .section[data-homeground-locale="ko"] .count,
 .section[data-homeground-locale="zh"] .cardMeta,
 .section[data-homeground-locale="ko"] .cardMeta,
-.section[data-homeground-locale="zh"] .cardPrice > span,
-.section[data-homeground-locale="ko"] .cardPrice > span,
 .section[data-homeground-locale="zh"] .enquiryStrip p,
 .section[data-homeground-locale="ko"] .enquiryStrip p {
   letter-spacing: 0.02em;
@@ -495,7 +499,12 @@
   .cardMeta {
     align-items: center;
     flex-direction: row;
+    font-size: 0.8125rem;
     gap: 0.5rem;
+  }
+
+  .cardPrice {
+    margin-block-start: 0.5rem;
   }
 
   .cardTitle {
@@ -516,7 +525,7 @@
   }
 
   .cardAction {
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
     margin-block-start: 0.35rem;
     padding-block-start: 0.4rem;
   }

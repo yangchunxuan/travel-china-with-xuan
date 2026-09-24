@@ -150,6 +150,38 @@
   background: var(--guides-rust, var(--hg-color-rust));
 }
 
+/*
+ * Homepage only: the label and the search button follow the homepage's one
+ * action style (14px / 500, 44px ink pill). The button sits inside the field
+ * with a small inset instead of filling its right edge.
+ */
+.searchExperience[data-guide-search-surface="homepage"] .form > label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.searchExperience[data-guide-search-surface="homepage"] .control button {
+  align-self: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  margin-inline-end: 0.5rem;
+  min-height: 2.75rem;
+  min-width: 0;
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.searchExperience[data-guide-search-surface="homepage"] .control button:hover,
+.searchExperience[data-guide-search-surface="homepage"]
+  .control
+  button:focus-visible {
+  background: #242424;
+}
+
 .suggestions {
   background: var(--guides-card, var(--hg-color-card));
   border: 1px solid var(--guides-ink, var(--hg-color-ink));
@@ -350,7 +382,9 @@
   }
 
   .searchExperience[data-guide-search-surface="homepage"] .control button {
-    min-height: 3.2rem;
+    margin: 0 0.5rem 0.5rem -0.35rem;
+    min-height: 2.75rem;
+    width: calc(100% - 0.15rem);
   }
 
   .examples {

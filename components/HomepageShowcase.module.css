@@ -58,13 +58,14 @@
   text-align: center;
 }
 
+/* Labels read as quiet 14px muted text, not tracked-out capitals. */
 .heroEyebrow {
   color: var(--showcase-muted);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0;
   margin: 0 0 1rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .heroEyebrowShort {
@@ -75,7 +76,7 @@
   font-family: var(--hg-editorial);
   font-size: clamp(3.4rem, 4.45vw, 3.75rem);
   font-weight: 400;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
   margin-inline: auto;
@@ -102,10 +103,15 @@
   margin-block-start: 2rem;
 }
 
+/*
+ * One pill for every homepage action, as in the contact section and /tours/:
+ * 14px / 500 / 44px, no outline. Primary is ink, secondary a warm grey fill.
+ * The transparent border only shows in forced-colors mode.
+ */
 .primaryAction,
 .secondaryAction {
   align-items: center;
-  border: 1px solid rgb(10 10 10 / 15%);
+  border: 1px solid transparent;
   border-radius: 999px;
   display: inline-flex;
   font-size: 0.875rem;
@@ -113,7 +119,7 @@
   gap: 0.7rem;
   justify-content: center;
   min-block-size: var(--showcase-button-height);
-  padding: 0.75rem 1.25rem;
+  padding: 0 1.25rem;
   text-decoration: none;
   transition:
     background-color 150ms ease,
@@ -128,7 +134,7 @@
 }
 
 .secondaryAction {
-  background: transparent;
+  background: #f2f1ef;
   color: var(--showcase-ink);
 }
 
@@ -137,7 +143,7 @@
 }
 
 .secondaryAction:hover {
-  background: var(--showcase-hover);
+  background: #e9e7e3;
 }
 
 /* Small feedback: arrows nudge on hover, pills press in on tap/click. */
@@ -388,8 +394,10 @@
 
 .faqSection > div:first-child > p:first-child {
   color: var(--showcase-muted);
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .planningSection {

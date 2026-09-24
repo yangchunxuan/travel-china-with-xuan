@@ -243,7 +243,7 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(productStyles, /\.availabilityNote/);
   assert.match(
     productStyles,
-    /\.hubLink \{[\s\S]{0,240}font-size: 0\.78rem;[\s\S]{0,80}font-weight: 750/,
+    /\.hubLink \{[\s\S]{0,240}font-size: 0\.875rem;[\s\S]{0,80}font-weight: 500/,
   );
   assert.match(
     productStyles,
