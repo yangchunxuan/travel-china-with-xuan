@@ -1,5 +1,11 @@
 # Source log — china-online-arrival-card
 
+## 2026-09-25 release correction
+
+- The English guide's accommodation-registration aside was updated against the [NIA's 21 September 2026 nationwide notice](https://www.nia.gov.cn/n897453/c1806111/content.html). The earlier seven-region pilot is no longer the current scope. This is a targeted correction, not a fresh review of the Chinese or Korean guide.
+- The official free form is linked directly from the warning callout in all three languages. This changes presentation, not the underlying entry-card advice.
+- The English source set was reviewed on 24 September 2026 as recorded in its individual citations. Chinese and Korean retain the prior 20 August whole-page review date; the 25 September modification date records the visible link addition and English correction.
+
 - Status: CENTRAL FACT REVIEW FIXED — RELEASE REVIEW REQUIRED
 - Canonical owner: employee 6 / entry and practical
 - Checked at: 2026-08-20

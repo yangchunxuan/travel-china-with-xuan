@@ -62,6 +62,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
         <aside className={styles.callout} data-tone={block.tone ?? "neutral"}>
           {block.title ? <strong>{block.title}</strong> : null}
           <p>{block.body}</p>
+          {block.link ? <a className={styles.calloutLink} href={block.link.href}>{block.link.label}</a> : null}
         </aside>
       );
     case "comparison":
