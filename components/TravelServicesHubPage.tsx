@@ -104,6 +104,10 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
   const section = getSearchPlatformCopy(locale).sections.services;
   const copy = getTravelServicesHubCopy(locale);
   const schema = schemaForServices(locale);
+  // Chinese title: break only between its three phrases (kept from #206).
+  const zhTitleParts = locale === "zh"
+    ? section.title.match(/^(只在真正改变)(旅行体验的地方)(加入本地协助。)$/)?.slice(1)
+    : null;
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
@@ -123,7 +127,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
             <div className={styles.heroGrid}>
               <div>
                 <p className={styles.eyebrow}>{section.eyebrow}</p>
-                <h1><AnimatedHeadline locale={locale} text={section.title} /></h1>
+                <h1><AnimatedHeadline locale={locale} segments={zhTitleParts} text={section.title} /></h1>
                 <p className={styles.lede}>{section.description}</p>
               </div>
               <aside className={styles.scope} aria-labelledby="services-scope-title">

@@ -83,6 +83,10 @@ test("studio, service, product and utility pages keep dark color to actions and 
   // Secondary action: a white pill inside the CTA tile, never ink.
   assert.match(studio, /\.ctaGrid \.ctaSecondary \{[\s\S]{0,100}background: var\(--studio-paper\)/);
   assert.match(
+    studio,
+    /\.ctaGrid \.ctaSecondary \{[\s\S]{0,180}color: var\(--studio-ink\)/,
+  );
+  assert.match(
     review,
     /\.finalCta \{[\s\S]{0,160}background: var\(--review-sand\)[\s\S]{0,160}color: var\(--review-ink\)/,
   );
