@@ -427,7 +427,7 @@
   }
 }
 
-/* The large photo and the row numbers belong to the wide-screen index. */
+/* The photo beside the list and the route numbers are for wide screens. */
 .preview,
 .rowIndex {
   display: none;
@@ -459,60 +459,55 @@
 }
 
 /*
- * Wide screens: a route index, after Locomotive's numbered project list. The six
- * routes run down the right as numbered rows (photo, days, title, text,
- * price, action - everything the cards showed); the left column holds one
- * large photo that stays in view and changes to whichever route the reader
- * is on, by pointer, keyboard focus or scroll position.
+ * Wide screens, after the feature list on x.ai's Grok page: the routes run down the left,
+ * one to about half a screen, and a photo holds still in the middle of the
+ * screen on the right. Scrolling alone picks the route: the one crossing the
+ * middle is at full strength, the others fade back, and the photo cross-fades
+ * to it. Photos keep their own 16:10, so nothing is cropped; a strip of all
+ * six sits under the large one.
  */
 @media (min-width: 64rem) {
   .showcaseBody {
     align-items: start;
     display: grid;
-    gap: clamp(2rem, 3.5vw, 3.5rem);
-    grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.26fr);
-    margin-block-start: 3.5rem;
+    gap: 4rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    margin-block-start: 1.5rem;
   }
 
+  /* Held in the middle of the screen while the routes go by. */
   .preview {
     display: grid;
     gap: 1rem;
-    inset-block-start: 6.5rem;
+    inset-block-start: max(5.5rem, calc(50vh - 15.5rem));
     position: sticky;
   }
 
   .previewFrame {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
     background: #f5f5f3;
     border-radius: 1rem;
-    max-block-size: calc(100vh - 10.5rem);
     overflow: hidden;
     position: relative;
   }
 
-  /* The next photo wipes up over the last one; the last one stays whole
-     underneath until the wipe has finished. */
+  /* The next photo fades in over the last one, which stays whole
+     underneath until the fade has finished. */
   .previewFrame img {
     block-size: 100%;
-    clip-path: inset(100% 0 0 0);
     display: block;
     inline-size: 100%;
     inset: 0;
     object-fit: cover;
+    opacity: 0;
     position: absolute;
-    scale: 1.08;
-    transition:
-      clip-path 0s linear 760ms,
-      scale 0s linear 760ms;
+    transition: opacity 0s linear 600ms;
     z-index: 0;
   }
 
   .previewFrame img[data-active] {
-    clip-path: inset(0);
-    scale: 1;
-    transition:
-      clip-path 760ms cubic-bezier(0.65, 0, 0.35, 1),
-      scale 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 1;
+    transition: opacity 600ms ease;
     z-index: 1;
   }
 
@@ -531,19 +526,50 @@
     color: var(--showcase-ink);
   }
 
-  .previewTrack {
-    background: rgb(10 10 10 / 12%);
-    block-size: 1px;
-    display: block;
-    overflow: hidden;
+  /* All six photos, whole, between the counter's numbers; the lit route's
+     photo is at full strength with a rule drawn under it. */
+  .filmstrip {
+    display: grid;
+    gap: 0.4rem;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
   }
 
-  .previewTrack > span {
-    background: var(--showcase-ink);
-    block-size: 100%;
+  .filmstrip > span {
     display: block;
+    opacity: 0.42;
+    padding-block-end: 0.45rem;
+    position: relative;
+    transition: opacity 500ms ease;
+  }
+
+  .filmstrip > span::after {
+    background: var(--showcase-ink);
+    block-size: 1px;
+    content: "";
+    inset-block-end: 0;
+    inset-inline: 0;
+    position: absolute;
+    transform: scaleX(0);
     transform-origin: left;
-    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .filmstrip > span[data-active] {
+    opacity: 1;
+  }
+
+  .filmstrip > span[data-active]::after {
+    transform: none;
+  }
+
+  .filmstrip img {
+    aspect-ratio: 16 / 10;
+    block-size: auto;
+    border-radius: 0.375rem;
+    display: block;
+    inline-size: 100%;
+    object-fit: cover;
   }
 
   .productGrid {
@@ -552,61 +578,42 @@
     margin: 0;
   }
 
+  /* About half a screen per route, its text centred in it. */
   .productGrid li {
-    border-block-start: 1px solid rgb(10 10 10 / 10%);
-    transition: border-color 300ms ease;
+    align-content: center;
+    display: grid;
+    min-block-size: 46vh;
+    transition: opacity 500ms ease;
   }
 
-  .productGrid li:last-child {
-    border-block-end: 1px solid rgb(10 10 10 / 10%);
-  }
-
-  /* The lines on either side of the lit row step aside for its tile. */
-  .productGrid li[data-active],
-  .productGrid li[data-active] + li {
-    border-block-start-color: transparent;
-  }
-
-  .productGrid li[data-active]:last-child {
-    border-block-end-color: transparent;
+  .productGrid[data-index-live] li:not([data-active]) {
+    opacity: 0.25;
   }
 
   .productCard {
     align-items: start;
-    border-radius: 1rem;
     column-gap: 1.25rem;
     display: grid;
-    grid-template-columns: 2rem 7rem minmax(0, 1fr);
-    padding: 1.35rem 1.25rem;
-    transition: background-color 300ms ease;
-  }
-
-  .productGrid li[data-active] .productCard {
-    background: #f9f8f6;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    padding-block: 2.5rem;
   }
 
   .rowIndex {
-    color: #9a9a9a;
+    color: #a84731;
     display: block;
     font-family: var(--hg-editorial);
     font-size: 1.375rem;
     font-variant-numeric: tabular-nums;
     line-height: 1;
     padding-block-start: 0.1rem;
-    transition: color 300ms ease;
   }
 
-  .productGrid li[data-active] .rowIndex {
-    color: #a84731;
-  }
-
+  /* The photos live, uncropped, beside the list instead. */
   .imageFrame {
-    aspect-ratio: 1;
-    border-radius: 0.75rem;
+    display: none;
   }
 
   .cardCopy {
-    min-block-size: 100%;
     padding: 0;
   }
 
@@ -620,18 +627,12 @@
   }
 
   .cardTitle {
-    font-size: clamp(1.25rem, 1.6vw, 1.5rem);
-    margin-block-start: 0.45rem;
-  }
-
-  .cardDescription {
-    margin-block-start: 0.55rem;
-    -webkit-line-clamp: 2;
+    font-size: clamp(1.5rem, 2.1vw, 1.875rem);
+    margin-block-start: 0.6rem;
   }
 
   .cardPrice {
-    align-content: start;
-    margin-block-start: 0.7rem;
+    margin-block-start: 1rem;
   }
 
   .cardPrice > strong {
@@ -639,13 +640,21 @@
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: -0.02em;
-    margin-block: 0.2rem 0.3rem;
+    margin-block: 0.15rem 0.3rem;
+  }
+
+  /* The whole text: each route has room for it here. */
+  .cardDescription {
+    display: block;
+    margin-block-start: 1rem;
+    max-inline-size: 34rem;
+    overflow: visible;
   }
 
   .cardAction {
     border: 0;
     justify-content: flex-start;
-    margin-block-start: 0.9rem;
+    margin-block-start: 1.25rem;
     padding: 0;
   }
 
@@ -654,59 +663,16 @@
   }
 }
 
-/* Where the index has room, the price gets its own column: text on the
-   left, price on the right; the action sits under the text and a tall
-   price block only adds room below it. Narrower wide screens keep the
-   price under the title, as on the cards. */
-@media (min-width: 80rem) {
-  .cardCopy {
-    column-gap: 1.75rem;
-    display: grid;
-    grid-template-areas:
-      "meta price"
-      "title price"
-      "desc price"
-      "action price";
-    grid-template-columns: minmax(0, 1fr) minmax(10rem, 12.5rem);
-    grid-template-rows: auto auto auto 1fr;
-  }
-
-  .cardMeta {
-    grid-area: meta;
-  }
-
-  .cardTitle {
-    grid-area: title;
-  }
-
-  .cardDescription {
-    grid-area: desc;
-  }
-
-  .cardPrice {
-    border-inline-start: 1px solid rgb(10 10 10 / 10%);
-    grid-area: price;
-    margin: 0;
-    padding-inline-start: 1.5rem;
-  }
-
-  .cardAction {
-    align-self: end;
-    grid-area: action;
-  }
-}
-
 /* Last, so it also stops the wide-screen transitions above. */
 @media (prefers-reduced-motion: reduce) {
   .image,
   .cardAction svg,
   .actionRoll > span,
-  .productCard,
   .productGrid li,
-  .rowIndex,
   .previewFrame img,
   .previewFrame img[data-active],
-  .previewTrack > span {
+  .filmstrip > span,
+  .filmstrip > span::after {
     transition: none;
   }
 }

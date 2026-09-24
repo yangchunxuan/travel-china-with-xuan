@@ -25,12 +25,12 @@ interface HomepageProductShowcaseProps {
 }
 
 /* Phones: a square thumbnail beside each row. Tablets: a two-column card
-   grid. Wide screens: a small thumbnail in each index row, with the large
-   photo beside the list. That photo is a 4:5 crop of a 16:10 image, so it
-   draws at about twice the width of its frame. */
+   grid. Wide screens: the routes are text; the photos show whole, at their
+   own 16:10, in the large frame beside the list and the strip under it. */
 const homepageProductImageSizes =
-  "(max-width: 39.999rem) 6.5rem, (max-width: 63.999rem) calc((100vw - 3.5rem) / 2), 7rem";
-const homepageProductPreviewSizes = "(max-width: 79.999rem) 72vw, 55rem";
+  "(max-width: 39.999rem) 6.5rem, (max-width: 63.999rem) calc((100vw - 3.5rem) / 2), 5rem";
+const homepageProductPreviewSizes = "(max-width: 79.999rem) 52vw, 42rem";
+const homepageProductStripSizes = "5rem";
 const wideIndexQuery = "(min-width: 64rem)";
 
 export function HomepageProductShowcase({
@@ -41,6 +41,9 @@ export function HomepageProductShowcase({
   const copy = getHomepageProductShowcaseCopy(locale);
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
+  // Rows dim only once the scroll watcher runs, so without it every route
+  // stays at full strength.
+  const [live, setLive] = useState(false);
   // Large photos load only once their route (or the one before it) has been
   // reached, not all six at once.
   const [warm, setWarm] = useState<ReadonlySet<number>>(() => new Set([0, 1]));
@@ -53,38 +56,60 @@ export function HomepageProductShowcase({
     );
   }, []);
 
-  // Wide screens: the route crossing the middle of the viewport becomes the
-  // active one, so the large photo follows the reader down the list. The
-  // watcher follows the window across the wide-screen breakpoint.
+  // Wide screens, as on x.ai's Grok page: scrolling alone picks the route. The one
+  // across the middle of the viewport (or nearest to it) is lit and the
+  // photo beside the list changes to it; measured on every scrolled frame,
+  // so a fast scroll never skips a route. The watcher follows the window
+  // across the breakpoint.
   useEffect(() => {
     const list = listRef.current;
     if (!list) return;
     const wide = window.matchMedia(wideIndexQuery);
-    let observer: IntersectionObserver | undefined;
-    const sync = () => {
-      observer?.disconnect();
-      observer = undefined;
-      if (!wide.matches) return;
-      const next = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            const index = Number(
-              (entry.target as HTMLElement).dataset.homepageProductIndex,
-            );
-            if (Number.isInteger(index)) activate(index);
+    let frame = 0;
+    const pick = () => {
+      frame = 0;
+      const middle = window.innerHeight / 2;
+      let nearest = 0;
+      let nearestDistance = Infinity;
+      list
+        .querySelectorAll<HTMLElement>(":scope > li")
+        .forEach((row, index) => {
+          const box = row.getBoundingClientRect();
+          const distance =
+            box.top > middle
+              ? box.top - middle
+              : box.bottom < middle
+                ? middle - box.bottom
+                : 0;
+          if (distance < nearestDistance) {
+            nearest = index;
+            nearestDistance = distance;
           }
-        },
-        { rootMargin: "-45% 0px -50% 0px" },
-      );
-      list.querySelectorAll(":scope > li").forEach((row) => next.observe(row));
-      observer = next;
+        });
+      activate(nearest);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(pick);
+    };
+    const stop = () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+    };
+    const sync = () => {
+      stop();
+      setLive(wide.matches);
+      if (!wide.matches) return;
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+      pick();
     };
     sync();
     wide.addEventListener("change", sync);
     return () => {
       wide.removeEventListener("change", sync);
-      observer?.disconnect();
+      stop();
     };
   }, [activate, products.length]);
 
@@ -112,48 +137,10 @@ export function HomepageProductShowcase({
         </header>
 
         <div className={styles.showcaseBody}>
-          {/* Wide screens: the active route's photo, beside the index. Each
-              row keeps its own thumbnail and alt text, so this is decoration. */}
-          <div aria-hidden="true" className={styles.preview}>
-            <div className={styles.previewFrame}>
-              {products.map((product, index) =>
-                warm.has(index) ? (
-                  <img
-                    alt=""
-                    data-active={index === active || undefined}
-                    decoding="async"
-                    height={product.image.height}
-                    key={product.id}
-                    loading="lazy"
-                    sizes={homepageProductPreviewSizes}
-                    src={privateTourCardImageSource(product.id, 640)}
-                    srcSet={privateTourCardImageSrcSet(product.id)}
-                    style={
-                      product.image.objectPosition
-                        ? { objectPosition: product.image.objectPosition }
-                        : undefined
-                    }
-                    width={product.image.width}
-                  />
-                ) : null,
-              )}
-            </div>
-            <div className={styles.previewCount}>
-              <span>{String(active + 1).padStart(2, "0")}</span>
-              <span className={styles.previewTrack}>
-                <span
-                  style={{
-                    transform: `scaleX(${(active + 1) / products.length})`,
-                  }}
-                />
-              </span>
-              <span>{String(products.length).padStart(2, "0")}</span>
-            </div>
-          </div>
-
           <ul
             aria-label={copy.productListLabel}
             className={styles.productGrid}
+            data-index-live={live || undefined}
             ref={listRef}
           >
             {products.map((product, index) => (
@@ -164,7 +151,6 @@ export function HomepageProductShowcase({
                 data-homepage-product-slug={product.id}
                 key={product.id}
                 onFocus={() => activate(index)}
-                onPointerEnter={() => activate(index)}
               >
                 <Link
                   className={styles.productCard}
@@ -235,6 +221,57 @@ export function HomepageProductShowcase({
               </li>
             ))}
           </ul>
+
+          {/* Wide screens: the lit route's photo beside the list, and all six
+              in a strip under it. The rows carry the route names, so the
+              photos here are decoration. */}
+          <div aria-hidden="true" className={styles.preview}>
+            <div className={styles.previewFrame}>
+              {products.map((product, index) =>
+                warm.has(index) ? (
+                  <img
+                    alt=""
+                    data-active={index === active || undefined}
+                    decoding="async"
+                    height={product.image.height}
+                    key={product.id}
+                    loading="lazy"
+                    sizes={homepageProductPreviewSizes}
+                    src={privateTourCardImageSource(product.id, 640)}
+                    srcSet={privateTourCardImageSrcSet(product.id)}
+                    style={
+                      product.image.objectPosition
+                        ? { objectPosition: product.image.objectPosition }
+                        : undefined
+                    }
+                    width={product.image.width}
+                  />
+                ) : null,
+              )}
+            </div>
+            <div className={styles.previewCount}>
+              <span>{String(active + 1).padStart(2, "0")}</span>
+              <span className={styles.filmstrip}>
+                {products.map((product, index) => (
+                  <span
+                    data-active={index === active || undefined}
+                    key={product.id}
+                  >
+                    <img
+                      alt=""
+                      decoding="async"
+                      height={product.image.height}
+                      loading="lazy"
+                      sizes={homepageProductStripSizes}
+                      src={privateTourCardImageSource(product.id, 320)}
+                      width={product.image.width}
+                    />
+                  </span>
+                ))}
+              </span>
+              <span>{String(products.length).padStart(2, "0")}</span>
+            </div>
+          </div>
         </div>
 
         <div className={styles.showcaseFooter}>
