@@ -1,83 +1,46 @@
+/*
+ * /explore/ (Destinations). Same system as /tours/, /guides/ and the section
+ * hubs: white page, one #f9f8f6 tile surface without outlines, ink #0a0a0a
+ * with muted ink at 60%, one 14px / 500 / 44px pill scale and Georgia
+ * headlines at -2% tracking. The eight city cards sit beside a sticky
+ * latitude/longitude plot; pointing at a card lights its dot on the plot.
+ */
 .page {
-  --destination-ink: #0a0a0a;
-  --destination-muted: #686b70;
-  --destination-line: #d5d9e2;
+  --destination-paper: #fff;
+  --destination-tile: #f9f8f6;
+  --destination-warm: #f2f1ef;
+  --destination-warm-hover: #e9e7e3;
   --destination-soft: #f5f5f4;
+  --destination-line: #d5d9e2;
+  --destination-rule: rgb(10 10 10 / 10%);
+  --destination-ink: #0a0a0a;
+  --destination-muted: rgb(10 10 10 / 60%);
   --destination-rust: #a84731;
-  background: #fff;
+  --destination-focus: var(--hg-color-focus, #b14f37);
+  --destination-content: 77rem;
+  --destination-gutter: 1.5rem;
+  --destination-section: 6rem;
+  --destination-pill: 2.75rem;
+  --destination-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--destination-paper);
   color: var(--destination-ink);
   min-height: 100vh;
 }
 
 .hero,
 .cities,
-.scales,
-.handoff {
-  padding-inline: max(1rem, calc((100vw - 1380px) / 2));
+.scales {
+  padding-inline: max(var(--destination-gutter), calc((100% - var(--destination-content)) / 2));
 }
 
-.hero {
-  border-block-end: 1px solid var(--destination-line);
-  padding-block: clamp(2.5rem, 7vw, 7.5rem);
-}
-
-.heroInner,
-.cities > *,
-.scales > *,
-.handoff {
-  margin-inline: auto;
-  max-width: 1380px;
-}
-
-.breadcrumb ol {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  list-style: none;
-  margin: 0 0 clamp(3.5rem, 7vw, 7rem);
-  padding: 0;
-}
-
-.breadcrumb li {
-  align-items: center;
+.eyebrow {
   color: var(--destination-muted);
-  display: flex;
-  font-size: 0.75rem;
-  gap: 0.55rem;
-}
-
-.breadcrumb a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover,
-.breadcrumb a:focus-visible {
-  color: var(--destination-rust);
-}
-
-.heroGrid,
-.sectionIntro,
-.handoff {
-  align-items: end;
-  display: grid;
-  gap: clamp(2.5rem, 8vw, 9rem);
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.55fr);
-}
-
-.eyebrow,
-.number,
-.count {
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.eyebrow,
-.number {
-  color: var(--destination-rust);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
   margin: 0;
+  text-transform: none;
 }
 
 .hero h1,
@@ -87,443 +50,1146 @@
 .handoff h2 {
   font-family: var(--hg-editorial);
   font-weight: 400;
-  letter-spacing: -0.048em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--destination-muted);
+  display: flex;
+  font-size: 0.8125rem;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.breadcrumb a {
+  color: var(--destination-ink);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
+}
+
+.heroGrid,
+.sectionIntro,
+.handoff {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+}
+
 .hero h1 {
-  font-size: clamp(3.6rem, 8vw, 8.5rem);
-  line-height: 0.9;
-  margin: 1.2rem 0 0;
-  max-width: 11ch;
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.02;
+  margin: 1rem 0 0;
+  max-width: 14ch;
 }
 
 .lede {
   color: var(--destination-muted);
-  font-size: clamp(1rem, 1.25vw, 1.16rem);
-  line-height: 1.72;
-  margin: 2rem 0 0;
-  max-width: 49rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+  text-wrap: pretty;
 }
 
+/* "What do you need to decide?" sits in one quiet tile beside the title. */
 .scope {
-  border-block-start: 1px solid var(--destination-ink);
+  background: var(--destination-tile);
+  border-radius: 1rem;
+  padding: 1.5rem;
 }
 
 .scope > p {
-  font-size: 0.74rem;
-  font-weight: 760;
+  color: var(--destination-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
   margin: 0;
-  padding-block: 1rem;
 }
 
 .scope ul {
   list-style: none;
-  margin: 0;
+  margin: 0.75rem 0 0;
   padding: 0;
 }
 
 .scope li {
-  border-block-start: 1px solid var(--destination-line);
+  border-block-start: 1px solid var(--destination-rule);
   color: var(--destination-muted);
+  font-size: 0.9375rem;
   line-height: 1.5;
-  padding-block: 1rem;
+  padding-block: 0.75rem;
+  text-wrap: pretty;
 }
+
+.scope li:last-child {
+  padding-block-end: 0;
+}
+
+/* ---------- Section intros ---------- */
 
 .cities,
-.scales,
-.handoff {
-  padding-block: clamp(4.75rem, 9vw, 9rem);
-}
-
-.cities {
-  border-block-end: 1px solid var(--destination-line);
+.scales {
+  padding-block: var(--destination-section) 0;
 }
 
 .sectionIntro {
-  margin-block-end: clamp(2.75rem, 5vw, 5rem);
+  margin-block-end: 2.5rem;
 }
 
 .sectionIntro h2,
 .handoff h2 {
-  font-size: clamp(2.75rem, 5.4vw, 5.6rem);
-  line-height: 0.96;
-  margin: 1rem 0 0;
-  max-width: 12ch;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
 }
 
 .sectionIntro > p,
 .sectionIntro > div:last-child > p:first-child,
 .handoff > div:last-child > p {
   color: var(--destination-muted);
-  line-height: 1.72;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   margin: 0;
-  max-width: 44rem;
+  max-width: 34rem;
+  text-wrap: pretty;
 }
 
 .count {
   color: var(--destination-ink);
-  margin-block-start: 1.5rem;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0.75rem 0 0;
 }
 
-.cityGrid,
-.scaleGrid {
-  border-block-start: 1px solid var(--destination-line);
-  border-inline-start: 1px solid var(--destination-line);
+/* ---------- Cities: sticky plot beside photo cards ---------- */
+
+.cityLayout {
+  align-items: start;
   display: grid;
-  list-style: none;
-  margin: 0 auto;
-  max-width: 1380px;
-  padding: 0;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+
+.plotPanel {
+  background: var(--destination-tile);
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem 1rem;
+  position: sticky;
+  top: 6rem;
+  view-timeline-name: --destination-plot;
+}
+
+.plot {
+  display: block;
+  height: auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.graticule line {
+  stroke: var(--destination-rule);
+  stroke-dasharray: 1;
+  stroke-width: 1;
+}
+
+.graticule text {
+  fill: var(--destination-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/*
+ * Each city reads one switch, --active (0 or 1), set while its card is
+ * pointed at: the halo grows, crosshair lines draw out to both axes, the
+ * dot pings and its coordinates appear at the top right, like a chart
+ * cursor. Everything else on the plot dims.
+ */
+.plotCity {
+  transition: opacity 250ms ease;
+}
+
+.plotDot {
+  fill: var(--destination-ink);
+}
+
+.plotDot,
+.plotHalo,
+.plotPing {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.plotHalo {
+  fill: var(--destination-ink);
+  opacity: calc(var(--active, 0) * 0.14);
+  transform: scale(calc(0.4 + var(--active, 0) * 0.6));
+  transition:
+    opacity 250ms ease,
+    transform 400ms var(--destination-ease);
+}
+
+.plotPing {
+  fill: none;
+  opacity: 0;
+  stroke: var(--destination-rust);
+  stroke-width: 1.5;
+}
+
+@keyframes destinationPlotPing {
+  from {
+    opacity: 0.55;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+}
+
+.plotCross {
+  stroke: var(--destination-rust);
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--active, 0));
+  stroke-opacity: 0.55;
+  stroke-width: 1;
+  transition: stroke-dashoffset 500ms var(--destination-ease);
+}
+
+.plotLabel {
+  fill: var(--destination-ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.plotReadout {
+  fill: var(--destination-rust);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  opacity: var(--active, 0);
+  transition: opacity 250ms ease;
+}
+
+.plotScale line {
+  stroke: var(--destination-ink);
+  stroke-width: 1.5;
+}
+
+.plotScale text {
+  fill: var(--destination-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
 }
 
 .cityGrid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.scaleGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid;
+  gap: 2.5rem 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .cityGrid li,
 .scaleGrid li {
-  border-block-end: 1px solid var(--destination-line);
-  border-inline-end: 1px solid var(--destination-line);
   min-width: 0;
 }
 
-.cityGrid a,
-.scaleGrid a {
+.cityGrid a {
   color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 24rem;
   overflow-wrap: anywhere;
-  padding: clamp(1.35rem, 2.3vw, 2.25rem);
   text-decoration: none;
-  transition: background-color 160ms ease;
 }
 
-.scaleGrid a {
-  min-height: 22rem;
+.number {
+  display: none;
 }
 
-.cityGrid a:hover,
-.cityGrid a:focus-visible,
-.scaleGrid a:hover,
-.scaleGrid a:focus-visible {
+.cityImage {
+  aspect-ratio: 16 / 10;
   background: var(--destination-soft);
+  border-radius: 0.75rem;
+  margin: 0 0 1rem;
+  overflow: hidden;
 }
 
-.cityGrid a:focus-visible,
-.scaleGrid a:focus-visible {
-  outline: 3px solid var(--destination-rust);
-  outline-offset: -3px;
+.cityImage img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--destination-ease);
+  width: 100%;
 }
 
-.cityGrid h3,
-.scaleGrid h3 {
-  font-size: clamp(2rem, 3.2vw, 3.45rem);
-  line-height: 0.98;
-  margin: 1.2rem 0 0;
+.cityGrid h3 {
+  align-self: flex-start;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+  position: relative;
 }
 
-.cityGrid p,
-.scaleGrid p {
-  color: var(--destination-muted);
-  line-height: 1.65;
-  margin: 1.25rem 0 0;
+/* City names draw an underline from the left on hover. */
+.cityGrid h3::after {
+  background: currentColor;
+  block-size: 1px;
+  content: "";
+  inset-block-end: -1px;
+  inset-inline: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 550ms var(--destination-ease);
 }
 
+/* Facts read like a spec sheet: a muted label column beside the value. */
 .cityFacts {
   display: grid;
-  gap: 0;
-  margin: 1.25rem 0 0;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
 }
 
 .cityFacts > div {
-  border-block-start: 1px solid var(--destination-line);
   display: grid;
-  gap: 0.6rem;
-  grid-template-columns: 4.6rem minmax(0, 1fr);
-  padding-block: 0.78rem;
+  gap: 0.75rem;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
 }
 
 .cityFacts dt {
-  color: var(--destination-ink);
-  font-size: 0.66rem;
-  font-weight: 780;
-  letter-spacing: 0.08em;
-  line-height: 1.45;
-  text-transform: uppercase;
+  color: var(--destination-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.55;
+  padding-block-start: 0.1rem;
 }
 
 .cityFacts dd {
-  color: var(--destination-muted);
-  font-size: 0.88rem;
-  line-height: 1.48;
+  color: var(--destination-ink);
+  font-size: 0.9375rem;
+  line-height: 1.5;
   margin: 0;
+  text-wrap: pretty;
+}
+
+.cityFacts > div:nth-child(3) dd {
+  color: var(--destination-muted);
 }
 
 .action {
   align-items: center;
-  border-block-start: 1px solid var(--destination-line);
   display: flex;
-  font-size: 0.76rem;
-  font-weight: 760;
-  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  line-height: 1.4;
   margin-block-start: auto;
   padding-block-start: 1rem;
 }
 
+.action > span {
+  transition: transform 300ms var(--destination-ease);
+}
+
 .seasonalLink {
   align-items: center;
-  border-block-end: 1px solid var(--destination-ink);
+  background: var(--destination-tile);
+  border-radius: 1rem;
   color: var(--destination-ink);
   display: flex;
-  font-size: 0.82rem;
-  font-weight: 760;
-  gap: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  gap: 1.5rem;
   justify-content: space-between;
-  margin-block-start: 1.5rem;
-  margin-inline-start: auto;
-  max-width: 34rem;
-  padding-block: 0.85rem;
+  line-height: 1.45;
+  margin-block-start: 2.5rem;
+  padding: 1.25rem 1.5rem;
   text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
-.seasonalLink:hover,
-.seasonalLink:focus-visible {
-  border-color: var(--destination-rust);
-  color: var(--destination-rust);
+.seasonalLink > span {
+  flex: none;
+  transition: transform 300ms var(--destination-ease);
 }
 
-.scales {
-  background: var(--destination-soft);
-  border-block-end: 1px solid var(--destination-line);
+/* ---------- Place types: three tiles ---------- */
+
+.scaleGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .scaleGrid a {
-  background: #fff;
+  background: var(--destination-tile);
+  border-radius: 1rem;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  overflow-wrap: anywhere;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
+/* Numbers: a small white disc with ink figures, as on /guides/. */
+.scaleGrid .number {
+  align-items: center;
+  background: var(--destination-paper);
+  border-radius: 999px;
+  display: flex;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.scaleGrid h3 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.scaleGrid p {
+  color: var(--destination-muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.scaleGrid .action {
+  padding-block-start: 0;
+}
+
+/* ---------- Handoff: one tile ---------- */
+
 .handoff {
-  border-block-end: 1px solid var(--destination-line);
+  background: var(--destination-tile);
+  border-radius: 1rem;
+  margin-block: var(--destination-section);
+  margin-inline: max(var(--destination-gutter), calc((100% - var(--destination-content)) / 2));
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .handoffActions {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-block-start: 2rem;
+  margin-block-start: 1.5rem;
 }
 
 .primaryAction,
 .secondaryAction {
   align-items: center;
-  border: 1px solid var(--destination-ink);
+  border: 1px solid transparent;
   border-radius: 999px;
   display: inline-flex;
-  font-size: 0.78rem;
-  font-weight: 760;
-  gap: 1.2rem;
-  justify-content: space-between;
-  min-height: 3.1rem;
-  padding: 0.75rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  justify-content: center;
+  min-height: var(--destination-pill);
+  padding: 0 1.25rem;
   text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
 .primaryAction {
   background: var(--destination-ink);
-  color: #fff;
+  color: var(--hg-color-on-dark, #fff);
 }
 
+.primaryAction > span {
+  transition: transform 300ms var(--destination-ease);
+}
+
+/* Secondary pill: white inside the #f9f8f6 tile, no outline. */
 .secondaryAction {
+  background: var(--destination-paper);
   color: var(--destination-ink);
 }
 
-.primaryAction:hover,
-.primaryAction:focus-visible {
-  background: var(--destination-rust);
-  border-color: var(--destination-rust);
+/* ---------- Hover and focus ---------- */
+
+@media (hover: hover) {
+  .breadcrumb a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .cityGrid a:hover .cityImage img {
+    transform: scale(1.04);
+  }
+
+  .cityGrid a:hover .action > span,
+  .scaleGrid a:hover .action > span,
+  .seasonalLink:hover > span,
+  .primaryAction:hover > span {
+    transform: translateX(4px);
+  }
+
+  .scaleGrid a:hover,
+  .seasonalLink:hover {
+    background: var(--destination-warm);
+  }
+
+  .primaryAction:hover {
+    background: #242424;
+  }
+
+  .secondaryAction:hover {
+    background: var(--destination-warm);
+  }
 }
 
-.secondaryAction:hover,
+.cityGrid a:focus-visible,
+.scaleGrid a:focus-visible,
+.seasonalLink:focus-visible,
+.breadcrumb a:focus-visible,
+.primaryAction:focus-visible,
 .secondaryAction:focus-visible {
-  border-color: var(--destination-rust);
-  color: var(--destination-rust);
+  outline: 3px solid var(--destination-focus);
+  outline-offset: 3px;
 }
 
-@media (max-width: 70rem) {
-  .cityGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.cityGrid a:focus-visible .cityImage img {
+  transform: scale(1.04);
+}
+
+/* Pointing at a city card lights its dot on the plot and dims the rest. */
+.cities:has(.cityGrid a:is(:hover, :focus-visible)) .plotCity {
+  opacity: 0.3;
+}
+
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="beijing"]) .plotCity[data-city="beijing"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="shanghai"]) .plotCity[data-city="shanghai"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="xian"]) .plotCity[data-city="xian"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="chengdu"]) .plotCity[data-city="chengdu"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="guangzhou"]) .plotCity[data-city="guangzhou"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="hangzhou"]) .plotCity[data-city="hangzhou"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="zhangjiajie"]) .plotCity[data-city="zhangjiajie"],
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="chongqing"]) .plotCity[data-city="chongqing"] {
+  --active: 1;
+  opacity: 1;
+}
+
+/* The pointed-at city pings on the plot. */
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="beijing"]) .plotCity[data-city="beijing"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="shanghai"]) .plotCity[data-city="shanghai"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="xian"]) .plotCity[data-city="xian"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="chengdu"]) .plotCity[data-city="chengdu"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="guangzhou"]) .plotCity[data-city="guangzhou"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="hangzhou"]) .plotCity[data-city="hangzhou"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="zhangjiajie"]) .plotCity[data-city="zhangjiajie"] .plotPing,
+.cities:has(.cityGrid a:is(:hover, :focus-visible) > [data-city="chongqing"]) .plotCity[data-city="chongqing"] .plotPing {
+  animation: destinationPlotPing 1.8s var(--destination-ease) infinite;
+}
+
+/* ---------- Interaction detail ---------- */
+
+/*
+ * Cursor light on tiles (PointerSpotlight writes --spot-x / --spot-y): a soft
+ * white glow under the pointer and a 1px ink edge that brightens nearest it.
+ */
+.scaleGrid a,
+.seasonalLink {
+  isolation: isolate;
+  position: relative;
+  transition:
+    background-color 150ms ease,
+    scale 150ms ease;
+}
+
+.scaleGrid a::before,
+.scaleGrid a::after,
+.seasonalLink::before,
+.seasonalLink::after {
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+
+.scaleGrid a::before,
+.seasonalLink::before {
+  background: radial-gradient(18rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(255 255 255 / 90%), transparent 65%);
+  z-index: -1;
+}
+
+.scaleGrid a::after,
+.seasonalLink::after {
+  background: radial-gradient(12rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(10 10 10 / 34%), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  padding: 1px;
+}
+
+/* Place-type numbers: the disc turns ink and the figures roll into an arrow. */
+.scaleGrid .number {
+  overflow: hidden;
+  position: relative;
+  transition:
+    background-color 300ms var(--destination-ease),
+    color 300ms var(--destination-ease);
+}
+
+.scaleGrid .number > span {
+  display: inline-block;
+}
+
+.scaleGrid .number > span,
+.scaleGrid .number::after {
+  transition: transform 450ms var(--destination-ease);
+}
+
+.scaleGrid .number::after {
+  align-items: center;
+  content: "→";
+  display: flex;
+  font-size: 0.9375rem;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  transform: translateY(110%);
+}
+
+.scaleGrid a:focus-visible .number {
+  background: var(--destination-ink);
+  color: var(--hg-color-on-dark, #fff);
+}
+
+.scaleGrid a:focus-visible .number > span {
+  transform: translateY(-160%);
+}
+
+.scaleGrid a:focus-visible .number::after,
+.cityGrid a:focus-visible h3::after {
+  transform: none;
+}
+
+@media (hover: hover) {
+  .scaleGrid a:hover::before,
+  .scaleGrid a:hover::after,
+  .seasonalLink:hover::before,
+  .seasonalLink:hover::after {
+    opacity: 1;
+  }
+
+  .scaleGrid a:hover .number {
+    background: var(--destination-ink);
+    color: var(--hg-color-on-dark, #fff);
+  }
+
+  .scaleGrid a:hover .number > span {
+    transform: translateY(-160%);
+  }
+
+  .scaleGrid a:hover .number::after,
+  .cityGrid a:hover h3::after {
+    transform: none;
   }
 }
 
-@media (min-width: 40.01rem) {
-  .cityFacts > div:nth-child(1) {
-    min-block-size: 5.5rem;
+.scaleGrid a:active,
+.seasonalLink:active,
+.primaryAction:active,
+.secondaryAction:active {
+  scale: 0.98;
+}
+
+.primaryAction,
+.secondaryAction {
+  transition-property: background-color, scale;
+}
+
+/* Page-load entrance after the headline words; visible within a second. */
+@keyframes destinationEnter {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    translate: 0 14px;
   }
 
-  .cityFacts > div:nth-child(2) {
-    min-block-size: 4.25rem;
-  }
-
-  .cityFacts > div:nth-child(3) {
-    min-block-size: 5.5rem;
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
   }
 }
+
+/* Scroll reveals: city photos open from the bottom edge while the picture
+   settles from a slight zoom; headings come into focus; the plot draws its
+   grid and then drops the cities in one by one. */
+@keyframes destinationImageReveal {
+  from {
+    clip-path: inset(16% 0 0 0 round 0.75rem);
+  }
+
+  to {
+    clip-path: inset(0 round 0.75rem);
+  }
+}
+
+@keyframes destinationImageSettle {
+  from {
+    scale: 1.12;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes destinationHeadingIn {
+  from {
+    filter: blur(6px);
+    opacity: 0.25;
+    translate: 0 12px;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@keyframes destinationPlotDraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes destinationPlotDrop {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes destinationPlotLabel {
+  from {
+    opacity: 0;
+    translate: -4px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .breadcrumb {
+    animation: destinationEnter 700ms var(--destination-ease) both;
+  }
+
+  .hero .eyebrow {
+    animation: destinationEnter 700ms var(--destination-ease) 60ms both;
+  }
+
+  .lede {
+    animation: destinationEnter 900ms var(--destination-ease) 320ms both;
+  }
+
+  .scope {
+    animation: destinationEnter 900ms var(--destination-ease) 460ms both;
+  }
+
+  .scope li {
+    animation: destinationEnter 700ms var(--destination-ease) both;
+  }
+
+  .scope li:nth-child(1) {
+    animation-delay: 620ms;
+  }
+
+  .scope li:nth-child(2) {
+    animation-delay: 700ms;
+  }
+
+  .scope li:nth-child(3) {
+    animation-delay: 780ms;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cityImage {
+      animation: destinationImageReveal linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+
+    .cityImage img {
+      animation: destinationImageSettle linear both;
+      animation-range: entry 0% cover 60%;
+      animation-timeline: view();
+    }
+
+    .sectionIntro h2,
+    .handoff h2 {
+      animation: destinationHeadingIn linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+
+    .graticule line {
+      animation: destinationPlotDraw linear both;
+      animation-range: entry 0% entry 60%;
+      animation-timeline: --destination-plot;
+    }
+
+    .plotDot {
+      animation: destinationPlotDrop linear both;
+      animation-range: entry calc(30% + var(--plot-index) * 7%) entry calc(40% + var(--plot-index) * 7%);
+      animation-timeline: --destination-plot;
+    }
+
+    .plotLabel {
+      animation: destinationPlotLabel linear both;
+      animation-range: entry calc(34% + var(--plot-index) * 7%) entry calc(46% + var(--plot-index) * 7%);
+      animation-timeline: --destination-plot;
+    }
+  }
+}
+
+/* ---------- Chinese and Korean ---------- */
+
+.page[data-homeground-locale="zh"] .hero h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+  max-width: 13em;
+}
+
+.page[data-homeground-locale="ko"] .hero h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  max-width: 13em;
+  word-break: keep-all;
+}
+
+.page[data-homeground-locale="zh"] :is(.sectionIntro h2, .cityGrid h3, .scaleGrid h3, .handoff h2) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.page[data-homeground-locale="ko"] :is(.sectionIntro h2, .cityGrid h3, .scaleGrid h3, .handoff h2) {
+  letter-spacing: 0;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.page[data-homeground-locale="ko"] :is(.lede, .scope li, .sectionIntro p, .cityFacts dd, .scaleGrid p, .handoff p, .seasonalLink) {
+  word-break: keep-all;
+}
+
+/* "ch" is half an ideograph wide, so CJK headings measure in em instead. */
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .handoff h2) {
+  max-width: 16em;
+}
+
+/* ---------- Motion ---------- */
+
+/* Cards rise as they scroll in; they start half-visible and settle within
+   120px. Browsers without scroll-driven animations show them statically. */
+@keyframes destinationTileRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cityGrid li,
+    .scaleGrid li {
+      animation: destinationTileRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 61.25rem) {
+  .heroGrid,
+  .sectionIntro,
+  .handoff {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scope {
+    max-width: 36rem;
+  }
+
+  /* The plot needs the side column; below it the cards carry the page. */
+  .cityLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plotPanel {
+    display: none;
+  }
+}
+
+/* ---------- Phone ---------- */
 
 @media (max-width: 48rem) {
+  .page {
+    --destination-section: 4rem;
+  }
+
   .hero {
     padding-block: 1.25rem 1.8rem;
   }
 
   .breadcrumb ol {
-    margin-block-end: 1.1rem;
-  }
-
-  .heroGrid,
-  .sectionIntro,
-  .handoff {
-    align-items: start;
-    gap: 1rem;
-    grid-template-columns: 1fr;
+    margin-block-end: 2rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 13.5vw, 4.35rem);
-    line-height: 0.94;
-    margin-block-start: 0.65rem;
-    max-width: 12ch;
+    font-size: clamp(2.25rem, 10vw, 2.75rem);
+    line-height: 1.05;
+  }
+
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
+    font-size: clamp(2.1rem, 9.4vw, 2.6rem);
+    max-width: 100%;
   }
 
   .lede {
-    font-size: 0.94rem;
-    line-height: 1.5;
-    margin-block-start: 0.85rem;
+    font-size: 1rem;
   }
 
-  .scope > p {
-    padding-block: 0.65rem;
+  .scope {
+    padding: 1.25rem;
   }
 
   .scope ul {
     display: grid;
-    gap: 0.35rem 1rem;
+    gap: 0.75rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .scope li {
-    border-block-start: 1px solid var(--destination-line);
-    font-size: 0.78rem;
-    line-height: 1.35;
-    padding-block: 0.6rem;
+    font-size: 0.875rem;
+    padding-block: 0.75rem 0;
   }
 
-  .cities,
-  .scales,
-  .handoff {
-    padding-block: 2.25rem;
+  .cities {
+    padding-block-start: 2.5rem;
   }
 
   .sectionIntro {
     margin-block-end: 1.35rem;
   }
 
-  .sectionIntro h2,
-  .handoff h2 {
-    font-size: clamp(2.15rem, 10.5vw, 3.3rem);
-    margin-block-start: 0.55rem;
-    max-width: 14ch;
-  }
-
   .sectionIntro > p,
   .sectionIntro > div:last-child > p:first-child,
   .handoff > div:last-child > p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .count {
-    margin-block-start: 0.65rem;
+    font-size: 1rem;
   }
 
   .scaleGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .cityGrid a,
   .scaleGrid a {
-    min-height: 0;
-    padding: 1rem;
-  }
-
-  .cityGrid h3,
-  .scaleGrid h3 {
-    font-size: 1.85rem;
-    margin-block-start: 0.65rem;
-  }
-
-  .cityGrid p,
-  .scaleGrid p {
-    font-size: 0.88rem;
-    line-height: 1.48;
-    margin-block-start: 0.75rem;
-  }
-
-  .cityFacts {
-    margin-block-start: 0.75rem;
-  }
-
-  .cityFacts > div {
-    grid-template-columns: 5.2rem minmax(0, 1fr);
-    padding-block: 0.65rem;
-  }
-
-  .cityFacts dd {
-    font-size: 0.84rem;
+    padding: 1.25rem;
   }
 
   .seasonalLink {
-    font-size: 0.8rem;
-    margin-block-start: 1rem;
-    max-width: none;
+    padding: 1rem 1.25rem;
   }
 
-  .action {
-    margin-block-start: 1.15rem;
-    padding-block-start: 0.75rem;
-  }
-}
-
-@media (max-width: 40rem) {
-  .cityGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 22rem) {
-  .hero,
-  .cities,
-  .scales,
   .handoff {
-    padding-inline: 0.75rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .handoffActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+/* Phones: cities become rows, a square photo beside the facts. */
+@media (max-width: 40rem) {
+  .page {
+    --destination-gutter: 1rem;
   }
 
   .scope ul {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .scope li + li {
-    border-block-start: 0;
+  .scope li {
+    padding-block: 0.75rem;
+  }
+
+  .cityGrid {
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .cityGrid a {
+    align-items: start;
+    column-gap: 0.85rem;
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+  }
+
+  .cityImage {
+    aspect-ratio: 1;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+
+  .cityGrid h3,
+  .cityFacts,
+  .action {
+    grid-column: 2;
+  }
+
+  .cityGrid h3 {
+    justify-self: start;
+  }
+
+  .cityGrid h3 {
+    font-size: 1.1875rem;
+  }
+
+  .cityFacts {
+    gap: 0.3rem;
+    margin-block-start: 0.35rem;
+  }
+
+  .cityFacts > div {
+    display: block;
+  }
+
+  .cityFacts dt,
+  .cityFacts dd {
+    display: inline;
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  .cityFacts dt::after {
+    content: "\00a0\00a0";
+  }
+
+  .action {
+    font-size: 0.8125rem;
+    padding-block-start: 0.5rem;
+  }
+}
+
+@media (max-width: 22rem) {
+  .page {
+    --destination-gutter: 0.75rem;
+  }
+
+  .cityGrid a {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cityGrid a,
-  .scaleGrid a {
+  .plotPing {
+    animation: none;
+  }
+
+  .plotCross,
+  .cityGrid h3::after,
+  .scaleGrid .number,
+  .scaleGrid .number > span,
+  .scaleGrid .number::after,
+  .scaleGrid a::before,
+  .scaleGrid a::after,
+  .seasonalLink::before,
+  .seasonalLink::after,
+  .cityImage img,
+  .action > span,
+  .seasonalLink > span,
+  .primaryAction > span,
+  .plotCity,
+  .plotHalo {
     transition: none;
+  }
+
+  .cityGrid a:hover .cityImage img,
+  .cityGrid a:focus-visible .cityImage img {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .scope,
+  .plotPanel,
+  .scaleGrid a,
+  .seasonalLink,
+  .handoff {
+    border: 1px solid CanvasText;
   }
 }

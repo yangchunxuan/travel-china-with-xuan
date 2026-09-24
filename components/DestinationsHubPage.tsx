@@ -1,5 +1,10 @@
+import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { destinationHubRegistry } from "../lib/destinationHubs";
+import {
+  destinationHubRegistry,
+  type DestinationHubId,
+} from "../lib/destinationHubs";
 import { getDestinationsHubCopy } from "../lib/destinationsHubI18n";
 import {
   getHomegroundCopy,
@@ -23,9 +28,117 @@ import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PointerSpotlight } from "./motion/PointerSpotlight";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./DestinationsHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+
+/*
+ * City-centre coordinates for the schematic plot beside the city cards. The
+ * plot is decorative (aria-hidden): dots on a latitude/longitude grid with
+ * the city name, no borders or routes. Longitude is scaled by cos(31°N) so
+ * distances read roughly true across the plotted band.
+ */
+const CITY_COORDINATES: Record<DestinationHubId, { lat: number; lon: number }> = {
+  beijing: { lat: 39.9, lon: 116.4 },
+  shanghai: { lat: 31.23, lon: 121.47 },
+  xian: { lat: 34.34, lon: 108.94 },
+  chengdu: { lat: 30.57, lon: 104.07 },
+  guangzhou: { lat: 23.13, lon: 113.26 },
+  hangzhou: { lat: 30.27, lon: 120.16 },
+  zhangjiajie: { lat: 29.12, lon: 110.48 },
+  chongqing: { lat: 29.56, lon: 106.55 },
+};
+// Labels sit right of the dot; crowded dots move theirs above or below.
+const LABEL_SIDE: Partial<Record<DestinationHubId, "above" | "below">> = {
+  chengdu: "above",
+  chongqing: "below",
+  hangzhou: "below",
+};
+const PLOT = { west: 102, east: 124, north: 42, south: 21 };
+const PLOT_WIDTH = 400;
+const LON_SCALE = Math.cos((31 * Math.PI) / 180);
+const PLOT_UNIT = PLOT_WIDTH / ((PLOT.east - PLOT.west) * LON_SCALE);
+const PLOT_HEIGHT = Math.round((PLOT.north - PLOT.south) * PLOT_UNIT);
+const plotX = (lon: number) => (lon - PLOT.west) * LON_SCALE * PLOT_UNIT;
+const plotY = (lat: number) => (PLOT.north - lat) * PLOT_UNIT;
+// 1° of latitude is 111.32 km, and the longitude scale above makes 1 km the
+// same length in both directions around 31°N.
+const SCALE_KM = 500;
+const SCALE_LENGTH = (SCALE_KM / 111.32) * PLOT_UNIT;
+
+function CityPlot({ locale }: { locale: HomegroundLocale }) {
+  return (
+    <svg
+      className={styles.plot}
+      viewBox={`-36 -8 ${PLOT_WIDTH + 44} ${PLOT_HEIGHT + 34}`}
+      aria-hidden="true"
+      focusable="false"
+    >
+      {[25, 30, 35, 40].map((lat) => (
+        <g className={styles.graticule} key={lat}>
+          <line x1={0} x2={PLOT_WIDTH} y1={plotY(lat)} y2={plotY(lat)} pathLength={1} />
+          <text x={-8} y={plotY(lat)} textAnchor="end" dominantBaseline="middle">
+            {lat}°N
+          </text>
+        </g>
+      ))}
+      {[105, 110, 115, 120].map((lon) => (
+        <g className={styles.graticule} key={lon}>
+          <line x1={plotX(lon)} x2={plotX(lon)} y1={PLOT_HEIGHT} y2={0} pathLength={1} />
+          <text x={plotX(lon)} y={PLOT_HEIGHT + 18} textAnchor="middle">
+            {lon}°E
+          </text>
+        </g>
+      ))}
+      <g className={styles.plotScale}>
+        <line
+          x1={PLOT_WIDTH - SCALE_LENGTH}
+          x2={PLOT_WIDTH}
+          y1={PLOT_HEIGHT - 12}
+          y2={PLOT_HEIGHT - 12}
+        />
+        <text x={PLOT_WIDTH - SCALE_LENGTH / 2} y={PLOT_HEIGHT - 22} textAnchor="middle">
+          {SCALE_KM} km
+        </text>
+      </g>
+      {destinationHubRegistry.map((hub, index) => {
+        const { lat, lon } = CITY_COORDINATES[hub.id];
+        const x = plotX(lon);
+        const y = plotY(lat);
+        const side = LABEL_SIDE[hub.id];
+        return (
+          <g
+            className={styles.plotCity}
+            data-city={hub.id}
+            key={hub.id}
+            style={{ "--plot-index": index } as CSSProperties}
+          >
+            <line className={styles.plotCross} x1={x} x2={0} y1={y} y2={y} pathLength={1} />
+            <line className={styles.plotCross} x1={x} x2={x} y1={y} y2={PLOT_HEIGHT} pathLength={1} />
+            <circle className={styles.plotPing} cx={x} cy={y} r={7} />
+            <circle className={styles.plotHalo} cx={x} cy={y} r={11} />
+            <circle className={styles.plotDot} cx={x} cy={y} r={4.5} />
+            <text
+              className={styles.plotLabel}
+              x={side ? x : x + 11}
+              y={side === "below" ? y + 20 : side === "above" ? y - 18 : y}
+              textAnchor={side ? "middle" : "start"}
+              dominantBaseline="middle"
+            >
+              {hub.locales[locale].navTitle}
+            </text>
+            <text className={styles.plotReadout} x={PLOT_WIDTH} y={8} textAnchor="end">
+              {lat.toFixed(2)}°N · {lon.toFixed(2)}°E
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
 
 function jsonLdForDestinations(locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
@@ -114,6 +227,7 @@ export function DestinationsHubPage({
       />
 
       <main id="destinations-main" tabIndex={-1}>
+        <PointerSpotlight />
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <nav aria-label={copy.breadcrumbLabel} className={styles.breadcrumb}>
@@ -131,7 +245,7 @@ export function DestinationsHubPage({
             <div className={styles.heroGrid}>
               <div>
                 <p className={styles.eyebrow}>{section.eyebrow}</p>
-                <h1>{section.title}</h1>
+                <h1><AnimatedHeadline locale={locale} text={section.title} /></h1>
                 <p className={styles.lede}>{section.description}</p>
               </div>
               <aside className={styles.scope} aria-labelledby="destination-scope-title">
@@ -150,7 +264,7 @@ export function DestinationsHubPage({
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>{copy.cityEyebrow}</p>
-              <h2 id="city-hubs-title">{copy.cityTitle}</h2>
+              <h2 id="city-hubs-title"><KeepWords locale={locale} text={copy.cityTitle} /></h2>
             </div>
             <div>
               <p>{copy.cityIntroduction(destinationHubRegistry.length)}</p>
@@ -160,6 +274,10 @@ export function DestinationsHubPage({
             </div>
           </div>
 
+          <div className={styles.cityLayout}>
+          <div className={styles.plotPanel}>
+            <CityPlot locale={locale} />
+          </div>
           <ol className={styles.cityGrid}>
             {destinationHubRegistry.map((hub, index) => {
               const city = hub.locales[locale];
@@ -170,6 +288,17 @@ export function DestinationsHubPage({
                     <span className={styles.number} aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
                     </span>
+                    <figure className={styles.cityImage} data-city={hub.id}>
+                      <Image
+                        src={hub.heroImagePath}
+                        alt={city.heroAlt}
+                        width={hub.imageWidth}
+                        height={hub.imageHeight}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 40rem) 6.5rem, (max-width: 61.25rem) calc((100vw - 4rem) / 2), 21rem"
+                      />
+                    </figure>
                     <h3>{city.navTitle}</h3>
                     <dl className={styles.cityFacts}>
                       <div>
@@ -194,8 +323,9 @@ export function DestinationsHubPage({
               );
             })}
           </ol>
+          </div>
 
-          <Link className={styles.seasonalLink} href={copy.winterGuidePath}>
+          <Link className={styles.seasonalLink} data-spotlight href={copy.winterGuidePath}>
             {copy.winterGuideLabel}
             <span aria-hidden="true">→</span>
           </Link>
@@ -205,7 +335,7 @@ export function DestinationsHubPage({
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>{copy.scaleEyebrow}</p>
-              <h2 id="place-scales-title">{copy.scaleTitle}</h2>
+              <h2 id="place-scales-title"><KeepWords locale={locale} text={copy.scaleTitle} /></h2>
             </div>
             <p>{copy.scaleIntroduction}</p>
           </div>
@@ -215,11 +345,11 @@ export function DestinationsHubPage({
               const item = collection.locales[locale];
               return (
                 <li key={collection.id}>
-                  <Link href={getSearchCollectionPath(collection, locale)}>
+                  <Link data-spotlight href={getSearchCollectionPath(collection, locale)}>
                     <span className={styles.number} aria-hidden="true">
-                      {String(index + 1).padStart(2, "0")}
+                      <span>{String(index + 1).padStart(2, "0")}</span>
                     </span>
-                    <h3>{item.label}</h3>
+                    <h3><KeepWords locale={locale} text={item.label} /></h3>
                     <p>{item.description}</p>
                     <span className={styles.action}>
                       {copy.openScale}
@@ -235,7 +365,7 @@ export function DestinationsHubPage({
         <section className={styles.handoff} aria-labelledby="destination-handoff-title">
           <div>
             <p className={styles.eyebrow}>{copy.handoffEyebrow}</p>
-            <h2 id="destination-handoff-title">{copy.handoffTitle}</h2>
+            <h2 id="destination-handoff-title"><KeepWords locale={locale} text={copy.handoffTitle} /></h2>
           </div>
           <div>
             <p>{copy.handoffBody}</p>

@@ -173,17 +173,16 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /"@type": "ItemList"/);
   assert.match(hub, /numberOfItems: pageGuides\.length/);
   assert.match(hub, /itemListElement: pageGuides\.map/);
-  assert.match(hub, /const tailRemainder = tailCount % 3/);
-  assert.match(hub, /styles\.guideSlotHalf/);
-  assert.match(hub, /pageGuides\.length % 2 === 1/);
+  // Page 1 opens with one featured guide and exactly three cards; every
+  // other guide is a list row, so no card row is ever left half empty.
+  assert.match(hub, /const SPOTLIGHT_CARD_COUNT = 3/);
+  assert.match(hub, /page === 1 && pageGuides\.length > SPOTLIGHT_CARD_COUNT \+ 1/);
+  assert.match(hub, /slot=\{slotFor\(index\)\}/);
   assert.match(hub, /className=\{styles\.entryAction\}/);
   assert.match(hub, /\? "\/guides\/china-entry-requirements\/"/);
   assert.doesNotMatch(hub, /entryGuides\.map/);
-  assert.match(css, /\.guideSlotHalf\s*\{[\s\S]*?grid-column: span 6;/);
-  assert.match(
-    css,
-    /\.guideGrid\[data-odd-count="true"\] \.guideSlot:last-child\s*\{[\s\S]*?grid-column: span 12;/,
-  );
+  assert.match(css, /\.guideSlotCard\s*\{[\s\S]*?grid-column: span 4;/);
+  assert.match(css, /\.guideSlotRow\s*\{[\s\S]*?grid-column: span 6;/);
 });
 
 test("each guide identity owns a distinct card and social cover", async () => {
@@ -241,9 +240,13 @@ test("hub has direct planner contact and stays usable from 320px to wide screens
   assert.match(copy, /action: "중국 여행 플래너와 상담하기"/);
   assert.doesNotMatch(copy, /planner=destinations|free-brief/);
   assert.match(css, /@media \(max-width: 22rem\)/);
-  assert.match(css, /\.guideSlotWide \{[\s\S]*?grid-column: span 12;/);
+  assert.match(css, /\.guideSlot \{[\s\S]*?grid-column: 1 \/ -1;/);
   assert.doesNotMatch(css, /\.heroInner,\s*\.catalog,\s*\.ctaInner/);
-  assert.match(css, /\.catalog \{[\s\S]*?calc\(\(100vw - 1380px\) \/ 2\)/);
+  assert.match(css, /--guides-content: 77rem/);
+  assert.match(
+    css,
+    /\.catalog,\s*\.cta \{\s*padding-inline: max\(var\(--guides-gutter\), calc\(\(100% - var\(--guides-content\)\) \/ 2\)\)/,
+  );
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /:focus-visible/);
 });

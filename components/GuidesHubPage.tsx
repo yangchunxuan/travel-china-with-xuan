@@ -30,6 +30,10 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideSearchForm } from "./GuideSearchForm";
 import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { PointerSpotlight } from "./motion/PointerSpotlight";
+import { RollingNumber } from "./motion/RollingNumber";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./GuidesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -137,6 +141,20 @@ function jsonLdForHub(locale: HomegroundLocale, page: number) {
   };
 }
 
+/** Rolls the number inside a localized count ("205 guides", "共 205 篇指南"). */
+function RollingCount({ text, count }: { text: string; count: number }) {
+  const value = String(count);
+  const at = text.indexOf(value);
+  if (at < 0) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, at)}
+      <RollingNumber value={value} />
+      {text.slice(at + value.length)}
+    </>
+  );
+}
+
 function getGuidesHubPaginationHref(
   locale: HomegroundLocale,
   page: number,
@@ -144,33 +162,41 @@ function getGuidesHubPaginationHref(
   return `${getGuidesHubPagePath(locale, page)}${GUIDE_LIST_FRAGMENT}`;
 }
 
+/*
+ * Page 1 opens the way a newsroom does: one featured guide, then three cards,
+ * then the rest as a two-column list of rows. Later pages are all rows. Rows
+ * fill a list, not a card grid, so an odd count never leaves a lone card.
+ */
+const SPOTLIGHT_CARD_COUNT = 3;
+type GuideSlot = "lead" | "card" | "row";
+
+const slotClassNames: Record<GuideSlot, string> = {
+  lead: styles.guideSlotLead,
+  card: styles.guideSlotCard,
+  row: styles.guideSlotRow,
+};
+
+// Phone rows use a 6rem thumbnail (5.5rem on the narrowest screens); the lead
+// image fills ~7/12 of the 77rem column; rows show a 10rem thumbnail.
+const guideImageSizes: Record<GuideSlot, string> = {
+  lead: "(max-width: 53.75rem) calc(100vw - 2rem), (max-width: 80rem) calc((100vw - 3rem) * 0.58), 44rem",
+  card: "(max-width: 42.5rem) 6rem, (max-width: 80rem) calc((100vw - 5rem) / 3), 25rem",
+  row: "(max-width: 26.25rem) 5.5rem, (max-width: 42.5rem) 6rem, 10rem",
+};
+
 function GuideCard({
   guide,
   index,
   locale,
   labels,
-  slotClassName,
-  isLastOddCard,
+  slot,
 }: {
   guide: HubGuide;
   index: number;
   locale: HomegroundLocale;
   labels: ReturnType<typeof getGuidesHubCopy>;
-  slotClassName?: string;
-  isLastOddCard: boolean;
+  slot: GuideSlot;
 }) {
-  const isWide = slotClassName === styles.guideSlotWide;
-  const desktopFraction = slotClassName === styles.guideSlotLead
-    ? 7 / 12
-    : index === 1
-      ? 5 / 12
-      : isWide
-        ? 0.94 / 1.66
-        : slotClassName === styles.guideSlotHalf ? 1 / 2 : 1 / 3;
-  const tabletFraction = isWide || isLastOddCard ? 0.94 / 1.66 : 1 / 2;
-  // The narrow list uses 80/88px thumbnails; wider layouts follow the card columns.
-  const imageSizes =
-    `(max-width: 22rem) 5rem, (max-width: 26.25rem) 5.5rem, (max-width: 48rem) calc(100vw - 2rem), (max-width: 64rem) calc((100vw - 2rem) * ${tabletFraction}), (max-width: 88.25rem) calc((100vw - 2rem) * ${desktopFraction}), ${1380 * desktopFraction}px`;
   const sectionLabel = guide.search
     ? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
     : labels.formatLabels[guide.format] ?? guide.format.replaceAll("-", " ");
@@ -188,7 +214,7 @@ function GuideCard({
 
   return (
     <li
-      className={`${styles.guideSlot} ${slotClassName ?? ""}`}
+      className={`${styles.guideSlot} ${slotClassNames[slot]}`}
       data-guide-id={guide.id}
     >
       <article className={styles.guideCard}>
@@ -202,7 +228,7 @@ function GuideCard({
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "auto"}
               decoding="async"
-              sizes={imageSizes}
+              sizes={guideImageSizes[slot]}
             />
           </figure>
 
@@ -218,17 +244,16 @@ function GuideCard({
               </span>
             </div>
 
-            <h3>{guide.headline}</h3>
+            <h3>
+              <span className={styles.titleInk}>
+                <KeepWords locale={locale} text={guide.headline} />
+              </span>
+            </h3>
             <p className={styles.guideDescription}>{guide.description}</p>
 
             <ul className={styles.guideTags}>
-              {cardTags.map((tag, tagIndex) => (
-                <li
-                  className={tagIndex === 0 ? styles.destinationTag : styles.topicTag}
-                  key={tag}
-                >
-                  {tag}
-                </li>
+              {cardTags.map((tag) => (
+                <li key={tag}>{tag}</li>
               ))}
             </ul>
 
@@ -260,14 +285,16 @@ export function GuidesHubPage({
     page,
   );
   const schema = jsonLdForHub(locale, page);
-  const tailCount = Math.max(0, pageGuides.length - 2);
-  const tailRemainder = tailCount % 3;
-  const wideTailIndex =
-    tailRemainder === 1 ? pageGuides.length - 1 : -1;
-  const halfTailStart =
-    tailRemainder === 2
-      ? pageGuides.length - 2
-      : pageGuides.length;
+  const hasSpotlight =
+    page === 1 && pageGuides.length > SPOTLIGHT_CARD_COUNT + 1;
+  const slotFor = (index: number): GuideSlot =>
+    !hasSpotlight
+      ? "row"
+      : index === 0
+        ? "lead"
+        : index <= SPOTLIGHT_CARD_COUNT
+          ? "card"
+          : "row";
   const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1);
 
   return (
@@ -287,13 +314,14 @@ export function GuidesHubPage({
       />
 
       <main id="guides-main" tabIndex={-1}>
+        <PointerSpotlight />
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroTopline}>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
             </div>
             <div className={styles.heroGrid}>
-              <h1>{copy.title}</h1>
+              <h1><AnimatedHeadline locale={locale} text={copy.title} /></h1>
               <p>{copy.introduction}</p>
             </div>
           </div>
@@ -305,14 +333,13 @@ export function GuidesHubPage({
         >
           <div className={styles.searchBandInner}>
             <div className={styles.searchBandCopy}>
-              <p className={styles.eyebrow}>{guideSearchCopy.eyebrow}</p>
-              <h2 id="guide-search-title">{guideSearchCopy.title}</h2>
-              <p>{guideSearchCopy.introduction}</p>
+              <h2 id="guide-search-title"><KeepWords locale={locale} text={guideSearchCopy.title} /></h2>
             </div>
             <div className={styles.searchFormCompact}>
               <GuideSearchForm
                 documents={guideSearchDocuments}
                 locale={locale}
+                rotatingPlaceholders={guideSearchCopy.examples}
                 surface="guides_hub"
               />
             </div>
@@ -328,10 +355,9 @@ export function GuidesHubPage({
             <div className={styles.countryGuideIntro}>
               <div>
                 <p className={styles.eyebrow}>{copy.countryGuide.eyebrow}</p>
-                <h2 id="china-travel-guide-title">{copy.countryGuide.title}</h2>
+                <h2 id="china-travel-guide-title"><KeepWords locale={locale} text={copy.countryGuide.title} /></h2>
               </div>
               <div className={styles.countryGuideContext}>
-                <p>{copy.countryGuide.introduction}</p>
                 <Link href={getSearchSectionPath("explore", locale)}>
                   {copy.destinationAction}
                   <span aria-hidden="true">→</span>
@@ -346,13 +372,12 @@ export function GuidesHubPage({
 
                 return (
                   <li key={section}>
-                    <Link href={getSearchSectionPath(section, locale)}>
+                    <Link data-spotlight href={getSearchSectionPath(section, locale)}>
                       <span className={styles.decisionNumber} aria-hidden="true">
-                        {String(index + 1).padStart(2, "0")}
+                        <span>{String(index + 1).padStart(2, "0")}</span>
                       </span>
                       <span className={styles.decisionCopy}>
-                        <h3>{decision.title}</h3>
-                        <p>{decision.body}</p>
+                        <h3><KeepWords locale={locale} text={decision.title} /></h3>
                       </span>
                       <span className={styles.decisionAction}>
                         <span className={styles.decisionActionLabel}>
@@ -368,6 +393,7 @@ export function GuidesHubPage({
 
             <Link
               className={styles.entryHandoff}
+              data-spotlight
               href={
                 locale === "en"
                   ? "/guides/china-entry-requirements/"
@@ -375,7 +401,7 @@ export function GuidesHubPage({
               }
             >
               <span>
-                <strong>{copy.entrySection.title}</strong>
+                <strong><KeepWords locale={locale} text={copy.entrySection.title} /></strong>
                 <small>{copy.entrySection.introduction}</small>
               </span>
               <span className={styles.entryAction}>
@@ -395,22 +421,17 @@ export function GuidesHubPage({
           <div className={styles.catalogIntro}>
             <div>
               <p className={styles.eyebrow}>{copy.catalogEyebrow}</p>
-              <h2 id="guides-catalog-title">{copy.catalogTitle}</h2>
+              <h2 id="guides-catalog-title"><KeepWords locale={locale} text={copy.catalogTitle} /></h2>
             </div>
             <div className={styles.catalogSummary}>
               <p>{copy.catalogIntroduction}</p>
               <p className={styles.guideCount}>
-                {copy.guideCount(guides.length)}
+                <RollingCount count={guides.length} text={copy.guideCount(guides.length)} />
               </p>
             </div>
           </div>
 
-          <ol
-            className={styles.guideGrid}
-            data-odd-count={
-              pageGuides.length % 2 === 1 ? "true" : "false"
-            }
-          >
+          <ol className={styles.guideGrid}>
             {pageGuides.map((guide, index) => (
               <GuideCard
                 guide={guide}
@@ -418,16 +439,7 @@ export function GuidesHubPage({
                 key={guide.id}
                 labels={copy}
                 locale={locale}
-                isLastOddCard={pageGuides.length % 2 === 1 && index === pageGuides.length - 1}
-                slotClassName={
-                  index === 0
-                    ? styles.guideSlotLead
-                    : index === wideTailIndex
-                      ? styles.guideSlotWide
-                      : index >= halfTailStart
-                        ? styles.guideSlotHalf
-                        : ""
-                }
+                slot={slotFor(index)}
               />
             ))}
           </ol>
@@ -496,7 +508,7 @@ export function GuidesHubPage({
           <div className={styles.ctaInner}>
             <p className={styles.ctaEyebrow}>{copy.cta.eyebrow}</p>
             <div className={styles.ctaGrid}>
-              <h2 id="guides-cta-title">{copy.cta.title}</h2>
+              <h2 id="guides-cta-title"><KeepWords locale={locale} text={copy.cta.title} /></h2>
               <div>
                 <p>{copy.cta.body}</p>
                 <a
