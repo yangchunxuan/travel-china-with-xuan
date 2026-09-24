@@ -10,10 +10,12 @@ export function consumeTourContactReturnFocus() { const target = returnFocusTarg
 export const tourContactOpenEvent = "homeground:open-tour-contact";
 export const guideContactOpenEvent = "homeground:open-guide-contact";
 
-type ContactLinkEvent = { preventDefault: () => void; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; button?: number; currentTarget?: EventTarget | null };
+type ContactLinkEvent = { preventDefault: () => void; defaultPrevented?: boolean; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; button?: number; currentTarget?: EventTarget | null };
 
 /** Open only a guide's generic consultation link, not product or service navigation. */
 export function openGuideContactFromLink(event: ContactLinkEvent, href: string, locale: HomegroundLocale) {
+  // On desktop the contact card has already answered this click.
+  if (event.defaultPrevented) return false;
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
   const prefix = locale === "en" ? "" : `/${locale}`;
   if (!new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(window.location.pathname)) return false;

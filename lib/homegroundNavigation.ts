@@ -15,6 +15,8 @@ export function handleHomegroundHashClick(
   event: ReactMouseEvent<HTMLAnchorElement>,
   target: HomegroundHashTarget,
 ) {
+  // On desktop the contact card may already have answered this click.
+  if (event.defaultPrevented) return;
   const opensSeparateContext =
     event.button !== 0 ||
     event.metaKey ||

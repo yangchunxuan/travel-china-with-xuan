@@ -97,6 +97,7 @@ export function HomegroundHomePage({
   planningSection = "scope-v2",
   privateTourItems,
   searchDemos,
+  teamFaces = [],
 }: {
   destinationHubItems: readonly HomepageDestinationHubItem[];
   guideRailItems: readonly HomepageGuideRailItem[];
@@ -104,6 +105,8 @@ export function HomegroundHomePage({
   planningSection?: PlanningSectionVariant;
   privateTourItems: readonly HomepagePrivateTourItem[];
   searchDemos: readonly HomepageSearchDemo[];
+  /** The planners' faces beside "Meet the team" (wide screens only). */
+  teamFaces?: readonly { id: string; src: string }[];
 }) {
   const [playHomepageIntro, setPlayHomepageIntro] = useState(
     () => !hasMountedHomegroundRoute(),
@@ -732,6 +735,21 @@ export function HomegroundHomePage({
                 className={showcaseStyles.planningTeamLink}
                 href={studioPath}
               >
+                {teamFaces.length > 0 && (
+                  <span className={showcaseStyles.planningFaces} aria-hidden="true">
+                    {teamFaces.map((face) => (
+                      <img
+                        key={face.id}
+                        alt=""
+                        decoding="async"
+                        height={112}
+                        loading="lazy"
+                        src={face.src}
+                        width={112}
+                      />
+                    ))}
+                  </span>
+                )}
                 {showcase.planning.teamAction}
                 <ArrowRight aria-hidden="true" size={16} />
               </Link>

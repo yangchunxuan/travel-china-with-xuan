@@ -18,6 +18,7 @@ import {
   getServerNewsletterDockSide, subscribeNewsletterDock,
 } from "../lib/siteOverlayState";
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
+import { openContactCard } from "../lib/contactCard";
 import { TourDateField } from "./TourDateField";
 import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
 import styles from "./TourContactPanel.module.css";
@@ -200,7 +201,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const groupLabel = requestedTravelers !== null ? locale === "zh" ? `${requestedTravelers} 人同行` : locale === "ko" ? `${requestedTravelers}명 동행` : `${requestedTravelers} travellers` : null;
 
   return <div data-homeground-contact-ready={isTour || isGuide ? "true" : undefined}>
-    {isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} ref={launcherRef} onClick={() => show(null)} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
+    {isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} ref={launcherRef} onClick={event => { if (!openContactCard({ trigger: "planner" }, event.currentTarget)) show(null); }} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
     <dialog ref={dialogRef} className={styles.dialog} data-closing={closing} data-compact={!context || status === "saved"} aria-labelledby={`${id}-title`} onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }}>
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label={text.close} onClick={close}><X size={20} strokeWidth={1.7} aria-hidden="true" /></button></div>

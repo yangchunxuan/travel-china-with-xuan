@@ -450,6 +450,54 @@
   min-inline-size: 0;
 }
 
+/* The planners' faces beside "Meet the team"; wide screens only. */
+.planningFaces {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .planningFaces {
+    display: inline-flex;
+    margin-inline-end: 0.6rem;
+  }
+
+  .planningFaces img {
+    block-size: 2.25rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgb(10 10 10 / 14%);
+    inline-size: 2.25rem;
+    object-fit: cover;
+  }
+
+  .planningFaces img + img {
+    margin-inline-start: -0.7rem;
+  }
+}
+
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  .planningFaces img {
+    transition:
+      margin 480ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .planningFaces img:nth-child(2) { transition-delay: 30ms; }
+  .planningFaces img:nth-child(3) { transition-delay: 60ms; }
+  .planningFaces img:nth-child(4) { transition-delay: 90ms; }
+  .planningFaces img:nth-child(5) { transition-delay: 120ms; }
+
+  .planningTeamLink:hover .planningFaces img + img,
+  .planningTeamLink:focus-visible .planningFaces img + img {
+    margin-inline-start: -0.2rem;
+  }
+
+  .planningTeamLink:hover .planningFaces img,
+  .planningTeamLink:focus-visible .planningFaces img {
+    transform: translateY(-2px);
+  }
+}
+
 .planningSectionResult .planningGrid {
   grid-template-columns: minmax(0, 1fr);
   max-inline-size: 68rem;
