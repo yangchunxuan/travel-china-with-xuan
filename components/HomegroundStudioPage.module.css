@@ -1,11 +1,11 @@
 .studioPage {
   --studio-paper: #fff;
-  --studio-warm: #f5f5f4;
+  --studio-warm: #f9f8f6;
   --studio-ink: #0a0a0a;
   --studio-muted: #686b70;
   --studio-green: #0a0a0a;
   --studio-rust: #a84731;
-  --studio-line: #d5d9e2;
+  --studio-line: #e7e5e2;
   background: var(--studio-paper);
   color: var(--studio-ink);
   min-height: 100vh;
@@ -18,26 +18,26 @@
 
 .eyebrow,
 .eyebrowLight {
-  color: var(--studio-rust);
-  font-size: 0.7rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
+  color: var(--studio-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .hero {
-  padding: clamp(3.75rem, 7vw, 7.5rem) max(1rem, calc((100vw - 1320px) / 2))
-    clamp(4.5rem, 8vw, 8rem);
+  padding: clamp(3.25rem, 6vw, 6rem) max(1rem, calc((100vw - 1232px) / 2))
+    clamp(4rem, 7vw, 6.5rem);
 }
 
 .heroLayout {
   align-items: start;
   display: grid;
-  gap: clamp(2.75rem, 6vw, 7rem);
-  grid-template-columns: minmax(310px, 0.72fr) minmax(560px, 1.28fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .heroIntro {
@@ -60,19 +60,19 @@
 }
 
 .heroIntro h1 {
-  font-size: clamp(3.35rem, 5.35vw, 5.35rem);
-  line-height: 0.96;
-  margin: 1.1rem 0 0;
-  max-width: 10ch;
+  font-size: clamp(3.15rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  margin: 1rem 0 0;
+  max-width: 13ch;
   text-wrap: balance;
 }
 
 .heroBody {
   color: var(--studio-muted);
-  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-  line-height: 1.72;
-  margin: 1.6rem 0 0;
-  max-width: 48ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 1.35rem 0 0;
+  max-width: 52ch;
 }
 
 .heroActions,
@@ -91,13 +91,13 @@
   align-items: center;
   border-radius: 999px;
   display: inline-flex;
-  font-size: 0.86rem;
-  font-weight: 760;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 0.65rem;
   justify-content: center;
   line-height: 1.25;
-  min-height: 3.2rem;
-  padding: 0.8rem 1.2rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.2rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
@@ -111,8 +111,8 @@
 }
 
 .secondaryAction {
-  background: transparent;
-  border: 1px solid var(--studio-line);
+  background: var(--studio-warm);
+  border: 1px solid transparent;
   color: var(--studio-ink);
 }
 
@@ -139,17 +139,19 @@
 }
 
 .planOverview {
-  border: 1px solid var(--studio-line);
+  background: var(--studio-warm);
+  border-radius: 1rem;
   min-width: 0;
+  overflow: clip;
 }
 
 .planOverview > h2 {
-  background: var(--studio-warm);
+  background: transparent;
   border-bottom: 1px solid var(--studio-line);
-  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   line-height: 1.15;
   margin: 0;
-  padding: 1.15rem 1.3rem;
+  padding: 1.25rem 1.5rem;
 }
 
 .overviewList {
@@ -160,9 +162,9 @@
 
 .overviewList > li {
   display: grid;
-  gap: clamp(1rem, 2.5vw, 2.1rem);
-  grid-template-columns: minmax(88px, 0.23fr) minmax(0, 1fr);
-  padding: 1.15rem 1.3rem;
+  gap: clamp(0.9rem, 2vw, 1.5rem);
+  grid-template-columns: minmax(108px, 0.26fr) minmax(0, 1fr);
+  padding: 1.15rem 1.5rem;
 }
 
 .overviewList > li + li {
@@ -171,30 +173,30 @@
 
 .overviewList > li > p,
 .methodNumber {
-  color: var(--studio-rust);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
+  color: var(--studio-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
   line-height: 1.4;
   margin: 0.18rem 0 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .overviewList h3 {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
   line-height: 1.15;
   margin: 0;
 }
 
 .overviewList li > div > p {
   color: var(--studio-muted);
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   line-height: 1.58;
   margin: 0.4rem 0 0;
 }
 
 .termsStage {
-  background: var(--studio-warm);
+  background: rgb(255 255 255 / 65%);
 }
 
 .termsList {
@@ -214,15 +216,15 @@
 
 .termsList dt {
   color: var(--studio-muted);
-  font-size: 0.67rem;
-  font-weight: 780;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .termsList dd {
-  font-size: 0.8rem;
-  font-weight: 680;
+  font-size: 0.875rem;
+  font-weight: 500;
   line-height: 1.45;
   margin: 0;
 }
@@ -230,7 +232,7 @@
 .trustSection {
   background: var(--studio-warm);
   color: var(--studio-ink);
-  padding: clamp(4.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1320px) / 2));
+  padding: clamp(4.25rem, 7vw, 6.5rem) max(1rem, calc((100vw - 1232px) / 2));
 }
 
 .trustIntro {
@@ -238,7 +240,7 @@
   gap: clamp(1.5rem, 3.5vw, 4rem);
   grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.65fr);
   margin: 0 auto clamp(2.5rem, 5vw, 4.5rem);
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .trustIntro .eyebrowLight {
@@ -248,8 +250,8 @@
 .trustIntro h2,
 .sectionIntro h2,
 .ctaGrid h2 {
-  font-size: clamp(2.75rem, 4.8vw, 4.85rem);
-  line-height: 0.98;
+  font-size: clamp(2.75rem, 4.5vw, 4.5rem);
+  line-height: 1.02;
   margin: 0;
   max-width: 13ch;
   text-wrap: balance;
@@ -278,12 +280,12 @@
   gap: 0.85rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .methodPanel {
   background: var(--studio-paper);
-  border: 1px solid var(--studio-line);
+  border-radius: 1rem;
   min-width: 0;
   padding: clamp(1.3rem, 2.4vw, 2rem);
 }
@@ -350,7 +352,7 @@
 
 .peopleSection {
   background: var(--studio-paper);
-  padding: clamp(4.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1320px) / 2));
+  padding: clamp(4.25rem, 7vw, 6.5rem) max(1rem, calc((100vw - 1232px) / 2));
 }
 
 .sectionIntro {
@@ -359,7 +361,7 @@
   gap: clamp(1.5rem, 4vw, 5rem);
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.55fr);
   margin: 0 auto clamp(2.75rem, 5vw, 4.5rem);
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .sectionIntro .eyebrow {
@@ -377,7 +379,7 @@
 .collageScene {
   height: clamp(330px, 41vw, 510px);
   margin: 0 auto clamp(3rem, 6vw, 5.5rem);
-  max-width: 1320px;
+  max-width: 1232px;
   overflow: clip;
   position: relative;
 }
@@ -393,6 +395,7 @@
 
 .collagePortrait {
   background: var(--studio-warm);
+  border-radius: 0.75rem;
   margin: 0;
   min-width: 0;
   overflow: hidden;
@@ -424,20 +427,20 @@
   background: rgb(255 255 255 / 94%);
   bottom: 0;
   display: flex;
-  font-size: 0.68rem;
-  font-weight: 760;
+  font-size: 0.8125rem;
+  font-weight: 500;
   gap: 0.45rem;
   left: 0;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   padding: 0.55rem 0.65rem;
   position: absolute;
-  text-transform: uppercase;
+  text-transform: none;
   transform: translate3d(0, var(--collage-caption-y, 0), 0);
 }
 
 .collagePortrait figcaption span {
-  color: var(--studio-rust);
-  font-size: 0.58rem;
+  color: var(--studio-muted);
+  font-size: 0.8125rem;
 }
 
 .memberList {
@@ -445,14 +448,16 @@
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .member {
-  border: 1px solid var(--studio-line);
+  background: var(--studio-warm);
+  border-radius: 1rem;
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
   min-width: 0;
+  overflow: clip;
   scroll-margin-top: 6.5rem;
 }
 
@@ -469,20 +474,20 @@
 }
 
 .memberNumber {
-  color: var(--studio-rust);
-  font-size: 0.67rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  color: var(--studio-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .memberRail p {
   color: var(--studio-muted);
-  font-size: 0.66rem;
-  font-weight: 760;
-  letter-spacing: 0.06em;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
   line-height: 1.35;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .memberPhoto {
@@ -501,13 +506,13 @@
 }
 
 .memberStory h3 {
-  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3vw, 2.8rem);
   line-height: 0.95;
   margin: 0;
 }
 
 .memberValue {
-  color: var(--studio-rust);
+  color: var(--studio-ink);
   font-family: var(--hg-editorial);
   font-size: 1.08rem;
   line-height: 1.35;
@@ -522,8 +527,8 @@
 
 .memberDetails summary {
   cursor: pointer;
-  font-size: 0.75rem;
-  font-weight: 760;
+  font-size: 0.875rem;
+  font-weight: 500;
   line-height: 1.4;
 }
 
@@ -533,7 +538,7 @@
 
 .memberBio {
   color: var(--studio-muted);
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   line-height: 1.68;
   margin: 0;
 }
@@ -551,8 +556,8 @@
   border: 1px solid var(--studio-line);
   border-radius: 999px;
   color: var(--studio-muted);
-  font-size: 0.65rem;
-  font-weight: 680;
+  font-size: 0.8125rem;
+  font-weight: 500;
   line-height: 1.2;
   padding: 0.42rem 0.58rem;
 }
@@ -561,8 +566,8 @@
   align-items: center;
   color: var(--studio-ink);
   display: inline-flex;
-  font-size: 0.74rem;
-  font-weight: 780;
+  font-size: 0.875rem;
+  font-weight: 500;
   gap: 0.45rem;
   margin-top: 0.9rem;
   text-decoration-color: color-mix(in srgb, var(--studio-rust) 48%, transparent);
@@ -581,13 +586,12 @@
 
 .ctaSection {
   background: #fff;
-  border-top: 1px solid var(--studio-line);
-  padding: clamp(4.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1320px) / 2));
+  padding: clamp(4.25rem, 7vw, 6.5rem) max(1rem, calc((100vw - 1232px) / 2));
 }
 
 .ctaSection > .eyebrow {
   margin: 0 auto 1.2rem;
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .ctaGrid {
@@ -596,7 +600,7 @@
   gap: clamp(2rem, 6vw, 8rem);
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.6fr);
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1232px;
 }
 
 .ctaGrid p {
@@ -607,8 +611,8 @@
 }
 
 .ctaGrid .ctaSecondary {
-  border: 1px solid var(--studio-muted);
-  background: transparent;
+  border: 1px solid transparent;
+  background: var(--studio-paper);
   color: var(--studio-ink);
 }
 
@@ -768,8 +772,8 @@
 
 @media (max-width: 1180px) {
   .heroLayout {
-    gap: 3rem;
-    grid-template-columns: minmax(280px, 0.62fr) minmax(500px, 1.38fr);
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   }
 
   .methodGrid {
@@ -852,16 +856,16 @@
 
 @media (max-width: 680px) {
   .hero {
-    padding: 2.75rem 1rem 4rem;
+    padding: 2rem 1rem 3.5rem;
   }
 
   .heroLayout {
-    gap: 2.3rem;
+    gap: 1.75rem;
   }
 
   .heroIntro h1 {
-    font-size: clamp(2.55rem, 12vw, 3.35rem);
-    line-height: 0.98;
+    font-size: clamp(2.35rem, 10vw, 3rem);
+    line-height: 1.04;
     margin-top: 0.8rem;
   }
 
@@ -888,19 +892,19 @@
 
   .primaryAction,
   .secondaryAction {
-    min-height: 2.9rem;
+    min-height: 2.75rem;
     padding-block: 0.65rem;
   }
 
   .planOverview > h2 {
     font-size: 1.22rem;
-    padding: 0.9rem 1rem;
+    padding: 1rem;
   }
 
   .overviewList > li {
-    gap: 0.65rem;
+    gap: 0.45rem;
     grid-template-columns: minmax(0, 1fr);
-    padding: 0.85rem 1rem;
+    padding: 0.9rem 1rem;
   }
 
   .overviewList > li > p {
@@ -912,7 +916,7 @@
   }
 
   .overviewList li > div > p {
-    font-size: 0.78rem;
+    font-size: 0.8125rem;
     line-height: 1.48;
     margin-top: 0.28rem;
   }
@@ -928,11 +932,11 @@
   }
 
   .termsList dt {
-    font-size: 0.61rem;
+    font-size: 0.8125rem;
   }
 
   .termsList dd {
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
     line-height: 1.4;
   }
 
@@ -994,7 +998,7 @@
   .collagePortrait figcaption {
     align-items: start;
     flex-direction: column;
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     gap: 0.12rem;
     letter-spacing: 0;
     padding: 0.4rem;
@@ -1045,34 +1049,33 @@
   }
 
   .heroIntro h1 {
-    font-size: 2.15rem;
+    font-size: 2.25rem;
     max-width: none;
     text-wrap: pretty;
   }
 
   .studioPage[data-homeground-locale="zh"] .heroIntro h1,
   .studioPage[data-homeground-locale="ko"] .heroIntro h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .heroBody {
-    font-size: 0.86rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.6;
     margin-top: 0.8rem;
   }
 
   .heroActions {
-    display: grid;
-    gap: 0.4rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
   }
 
   .primaryAction,
   .secondaryAction {
-    font-size: 0.74rem;
-    min-height: 3.2rem;
-    padding: 0.55rem;
+    font-size: 0.875rem;
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
   }
 
   .overviewList > li,
@@ -1086,9 +1089,9 @@
   }
 
   .overviewList > li {
-    gap: 0.5rem;
-    grid-template-columns: 4.5rem minmax(0, 1fr);
-    padding-block: 0.65rem;
+    gap: 0.45rem;
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 0.8rem;
   }
 
   .overviewList h3 {
@@ -1096,12 +1099,12 @@
   }
 
   .overviewList li > div > p {
-    font-size: 0.73rem;
-    line-height: 1.42;
+    font-size: 0.8125rem;
+    line-height: 1.48;
   }
 
   .termsList > div {
-    grid-template-columns: 4.1rem minmax(0, 1fr);
+    grid-template-columns: 5rem minmax(0, 1fr);
     padding-block: 0.35rem;
   }
 
