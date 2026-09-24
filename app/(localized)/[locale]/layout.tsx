@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AnalyticsConsent } from "../../../components/AnalyticsConsent";
 import { TourContactPanel } from "../../../components/TourContactPanel";
+import { ContactCardHost } from "../../../components/ContactCardHost";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
@@ -108,6 +109,7 @@ export default async function LocalizedRootLayout({
         {children}
         <AnalyticsConsent locale={locale} />
         <TourContactPanel locale={locale} />
+        <ContactCardHost locale={locale} />
         <NewsletterPopup locale={locale} />
       </body>
     </html>
