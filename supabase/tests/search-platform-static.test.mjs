@@ -263,7 +263,7 @@ test("shared search hubs keep long mobile hero titles inside the viewport", asyn
   assert.ok(mobileHeroRule, "missing the mobile hero title rule");
   assert.match(
     mobileHeroRule[1],
-    /font-size:\s*clamp\(2\.6rem,\s*12\.8vw,\s*4\.2rem\);/,
+    /font-size:\s*clamp\(2\.25rem,\s*10vw,\s*2\.75rem\);/,
   );
 
   const englishMobileHeroRule = styles.match(

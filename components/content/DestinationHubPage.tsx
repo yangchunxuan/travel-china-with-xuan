@@ -31,7 +31,7 @@ import { PageFamilyRenderer } from "./PageFamilyRenderer";
 import { EditorialByline } from "../EditorialByline";
 import { AnimatedHeadline } from "../motion/AnimatedHeadline";
 import { ReadingProgress } from "../motion/ReadingProgress";
-import homeStyles from "../HomegroundHomePage.module.css";
+import localeStyles from "../LocaleRoot.module.css";
 import styles from "./EditorialGuidePage.module.css";
 import destinationStyles from "./DestinationHubPage.module.css";
 import { DestinationGeographyDiagram } from "./DestinationGeographyDiagram";
@@ -278,7 +278,7 @@ export function DestinationHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${styles.grokGuide} ${destinationStyles.destinationRoot}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.pageRoot} ${styles.grokGuide} ${destinationStyles.destinationRoot}`}
       data-homeground-locale={locale}
       lang={homeCopy.htmlLang}
     >

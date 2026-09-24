@@ -10,7 +10,7 @@ import { editorialOrganizationSchema } from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundStudioMotion } from "./HomegroundStudioMotion";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./HomegroundStudioPage.module.css";
 
 function photoSources(
@@ -74,13 +74,13 @@ export function HomegroundStudioPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.studioPage}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.studioPage}`}
       data-homeground-locale={locale}
       data-studio-motion-root
       id={motionRootId}
       lang={homeCopy.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#studio-main">
+      <a className={localeStyles.skipLink} href="#studio-main">
         {homeCopy.skipLink}
       </a>
       <HomegroundHeader locale={locale} pageContext="studio" />

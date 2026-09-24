@@ -15,17 +15,6 @@
   overflow: clip;
 }
 
-/*
- * The root also carries the homepage’s .localeRoot (canvas + ink) at the
- * same specificity. On the live site .localeRoot wins, so this page shows
- * the warm canvas and #141413 ink. Pin that result so the page does not
- * depend on stylesheet order.
- */
-.pageRoot.pageRoot {
-  background: var(--hg-color-canvas);
-  color: var(--hg-color-ink);
-}
-
 .pageRoot main {
   scroll-margin-top: 6rem;
 }

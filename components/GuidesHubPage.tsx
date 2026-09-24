@@ -29,7 +29,7 @@ import {
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideSearchForm } from "./GuideSearchForm";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./GuidesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -272,11 +272,11 @@ export function GuidesHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.guidesPage}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.guidesPage}`}
       data-homeground-locale={locale}
       lang={home.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#guides-main">
+      <a className={localeStyles.skipLink} href="#guides-main">
         {home.skipLink}
       </a>
       <HomegroundHeader

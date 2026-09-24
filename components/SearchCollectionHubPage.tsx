@@ -27,7 +27,9 @@ import {
 } from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./SearchPlatformHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -46,7 +48,9 @@ const chineseCityCollectionTitleSegments = [
 ] as const;
 
 function renderCollectionTitle(title: string, locale: HomegroundLocale) {
-  if (locale !== "zh" || title !== chineseCityCollectionTitle) return title;
+  if (locale !== "zh" || title !== chineseCityCollectionTitle) {
+    return <AnimatedHeadline locale={locale} text={title} />;
+  }
 
   return chineseCityCollectionTitleSegments.map((segment, index) => (
     <Fragment key={segment}>
@@ -222,11 +226,11 @@ export function SearchCollectionHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.hubPage}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.hubPage}`}
       data-homeground-locale={locale}
       lang={home.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#collection-main">{home.skipLink}</a>
+      <a className={localeStyles.skipLink} href="#collection-main">{home.skipLink}</a>
       <HomegroundHeader
         languagePaths={getSearchCollectionLanguagePaths(collectionId)}
         locale={locale}
@@ -285,7 +289,7 @@ export function SearchCollectionHubPage({
           <div className={styles.collectionHeading}>
             <div>
               <p className={styles.eyebrow}>{sectionCopy.shortLabel}</p>
-              <h2 id="collection-guides-title">{ui.all}</h2>
+              <h2 id="collection-guides-title"><KeepWords locale={locale} text={ui.all} /></h2>
             </div>
             <p className={styles.collectionSummary}>{collectionCopy.description}</p>
           </div>
@@ -313,7 +317,7 @@ export function SearchCollectionHubPage({
                             {ui.updated} {formatDate(manifest.dates.dateModified ?? "2026-08-13", locale)}
                           </time>
                         </p>
-                        <h3>{manifest.h1}</h3>
+                        <h3><KeepWords locale={locale} text={manifest.h1} /></h3>
                         <p>{manifest.description}</p>
                         <span className={styles.openGuide}>{ui.open}<span aria-hidden="true">→</span></span>
                       </div>
@@ -336,14 +340,14 @@ export function SearchCollectionHubPage({
         <section className={styles.platformMap} aria-labelledby="collection-related-title">
           <div className={styles.platformMapIntro}>
             <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
-            <h2 id="collection-related-title">{ui.nearby}</h2>
+            <h2 id="collection-related-title"><KeepWords locale={locale} text={ui.nearby} /></h2>
             <p>{sectionCopy.description}</p>
           </div>
           <ul>
             {siblings.map((sibling) => (
               <li key={sibling.id}>
                 <Link href={getSearchCollectionPath(sibling, locale)}>
-                  <span>{sibling.locales[locale].label}</span>
+                  <span><KeepWords locale={locale} text={sibling.locales[locale].label} /></span>
                   <small>{sibling.locales[locale].description}</small>
                   <b aria-hidden="true">↗</b>
                 </Link>
@@ -354,7 +358,7 @@ export function SearchCollectionHubPage({
         ) : null}
 
         <section className={styles.cta} aria-labelledby="collection-cta-title">
-          <div><p className={styles.eyebrow}>Homeground</p><h2 id="collection-cta-title">{platform.nextTitle}</h2></div>
+          <div><p className={styles.eyebrow}>Homeground</p><h2 id="collection-cta-title"><KeepWords locale={locale} text={platform.nextTitle} /></h2></div>
           <div><p>{platform.nextBody}</p><div className={styles.ctaActions}>
             <a className={styles.primaryAction} href={`${home.path}#planner-contact`}>{platform.tripBriefLabel}<span aria-hidden="true">→</span></a>
             <Link className={styles.secondaryAction} href={getSearchSectionPath(collection.section, locale)}>{sectionCopy.navLabel}</Link>

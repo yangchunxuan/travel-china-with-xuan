@@ -26,7 +26,7 @@ import {
   LinkableAssetActions,
   type LinkableAssetDownload,
 } from "./LinkableAssetActions";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./FirstTripTenCityMapPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -275,7 +275,7 @@ export function FirstTripTenCityMapPage() {
   const schema = structuredData();
 
   return (
-    <div className={`${homeStyles.localeRoot} ${styles.pageRoot}`} lang="en">
+    <div className={`${localeStyles.root} hg-locale-root ${styles.pageRoot}`} lang="en">
       <a className={styles.skipLink} href="#ten-city-data">
         Skip to the ten-city matrix
       </a>

@@ -27,7 +27,7 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./ChinaItineraryTooRushedPage.module.css";
 
 const siteUrl = "https://homegroundchina.com";
@@ -142,11 +142,11 @@ export function ChinaItineraryTooRushedPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.pageRoot}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#itinerary-article-content">
+      <a className={localeStyles.skipLink} href="#itinerary-article-content">
         {copy.skipLink}
       </a>
       <HomegroundHeader

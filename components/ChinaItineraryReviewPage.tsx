@@ -3,15 +3,15 @@ import { getChinaItineraryReviewCopy, getChinaItineraryReviewLanguagePaths } fro
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./ChinaItineraryReviewPage.module.css";
 
 export function ChinaItineraryReviewPage({ locale = "en" }: { locale?: HomegroundLocale }) {
   const home = getHomegroundCopy(locale);
   const copy = getChinaItineraryReviewCopy(locale);
   return (
-    <div className={`${homeStyles.localeRoot} ${styles.pageRoot}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={homeStyles.skipLink} href="#itinerary-review-content">{home.skipLink}</a>
+    <div className={`${localeStyles.root} hg-locale-root ${styles.pageRoot}`} data-homeground-locale={locale} lang={home.htmlLang}>
+      <a className={localeStyles.skipLink} href="#itinerary-review-content">{home.skipLink}</a>
       <HomegroundHeader locale={locale} pageContext="services" languagePaths={getChinaItineraryReviewLanguagePaths()} />
       <main id="itinerary-review-content" tabIndex={-1}>
         <header className={styles.hero}>

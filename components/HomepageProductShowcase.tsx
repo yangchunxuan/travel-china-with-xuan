@@ -7,6 +7,7 @@ import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
+import { KeepWords } from "./text/KeepWords";
 import {
   privateTourCardImageSource,
   privateTourCardImageSrcSet,
@@ -96,7 +97,9 @@ export function HomepageProductShowcase({
                       {copy.durationLabel(product.days, product.nights)}
                     </span>
                   </div>
-                  <h3 className={styles.cardTitle}>{product.title}</h3>
+                  <h3 className={styles.cardTitle}>
+                    <KeepWords locale={locale} text={product.title} />
+                  </h3>
                   <p className={styles.cardPrice}>
                     <span>{copy.startingPriceLabel}</span>
                     <strong>{product.startingPrice.formatted}</strong>

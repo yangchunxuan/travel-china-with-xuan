@@ -1,0 +1,60 @@
+/*
+ * Locale typography shared by every page root except the homepage, which keeps
+ * its own .localeRoot. Pages used to borrow that homepage class; it also set a
+ * canvas and ink at the same specificity as each page's own root, so a page's
+ * paper depended on which stylesheet the bundler loaded last. This module
+ * carries no paper or ink: each page's root class alone decides those.
+ *
+ * Page roots also carry the global marker "hg-locale-root", which the shared
+ * footer (styled in HomegroundHomePage.module.css) keys its Chinese and Korean
+ * tagline on.
+ */
+.root {
+  --hg-brand: var(--hg-font-brand);
+  --hg-card-display: var(--hg-font-editorial);
+  --hg-editorial: var(--hg-font-editorial);
+  --hg-ui-display: var(--hg-font-editorial);
+}
+
+.root[data-homeground-locale="zh"] {
+  --hg-card-display: var(--serif);
+  --hg-editorial: var(--serif);
+  --hg-ui-display: var(--sans);
+  font-family: var(--sans);
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.root[data-homeground-locale="ko"] {
+  --hg-card-display: var(--sans);
+  --hg-editorial: var(--serif);
+  --hg-ui-display: var(--sans);
+  font-family: var(--sans);
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.skipLink {
+  background: var(--hg-color-card);
+  border: 2px solid var(--hg-color-rust);
+  color: var(--hg-color-ink);
+  font-family: inherit;
+  left: 1rem;
+  padding: 0.65rem 1rem;
+  position: fixed;
+  top: 0.75rem;
+  transform: translateY(-160%);
+  transition: transform 140ms ease;
+  z-index: 1000;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skipLink {
+    transition: none;
+  }
+}

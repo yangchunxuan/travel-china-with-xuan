@@ -98,6 +98,12 @@
   text-transform: uppercase;
 }
 
+/* On the dark full-trip band the dark rust label read at 2.0:1; use the
+   light on-dark ink like the band's other small labels. */
+.fullTrip .sectionEyebrow {
+  color: var(--hg-color-on-dark-muted);
+}
+
 .heroTitle {
   font-family: var(--decision-display);
   font-size: clamp(2.65rem, 5.7vw, 5.7rem);

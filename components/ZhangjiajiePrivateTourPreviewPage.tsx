@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, Check, CircleAlert } from "lucide-react";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { TourPriceScope } from "./TourPriceScope";
 import { ZhangjiajiePrivateTourPriceWindow } from "./ZhangjiajiePrivateTourPriceWindow";
@@ -321,7 +321,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${editorialStyles.pageRoot} ${styles.previewRoot}`}
+      className={`${localeStyles.root} hg-locale-root ${editorialStyles.pageRoot} ${styles.previewRoot}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >

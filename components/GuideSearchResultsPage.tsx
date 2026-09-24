@@ -10,7 +10,7 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideSearchHeader } from "./GuideSearchHeader";
 import { GuideSearchResultsClient } from "./GuideSearchResultsClient";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./GuideSearchResultsPage.module.css";
 
 export function GuideSearchResultsPage({
@@ -25,11 +25,11 @@ export function GuideSearchResultsPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.page}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.page}`}
       data-homeground-locale={locale}
       lang={home.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#guide-search-main">
+      <a className={localeStyles.skipLink} href="#guide-search-main">
         {home.skipLink}
       </a>
       <Suspense
