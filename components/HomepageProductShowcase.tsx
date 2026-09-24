@@ -276,8 +276,8 @@ export function HomepageProductShowcase({
 
         <div className={styles.showcaseFooter}>
           <Link className={styles.hubLink} href={privateTourHubPaths[locale]}>
-            <span>{copy.hubActionLabel}</span>
-            <span aria-hidden="true">→</span>
+            {copy.hubActionLabel}
+            <ArrowRight aria-hidden="true" size={16} />
           </Link>
         </div>
       </div>

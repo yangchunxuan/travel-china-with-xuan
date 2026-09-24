@@ -229,13 +229,12 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
   // Wide screens list the routes as one numbered index beside a large photo.
   assert.match(productStyles, /@media \(min-width: 64rem\) \{[\s\S]*?\.productGrid \{\s*gap: 0;\s*grid-template-columns: minmax\(0, 1fr\);/);
+  // The owner asked for a clearer way on to every route (2026-09-25): the
+  // hub link is now the site's ink pill (14px / 500 / 44px), as on the hero,
+  // right under the routes. Still no rule above it.
   assert.match(
     productStyles,
-    /\.showcaseFooter \{[\s\S]{0,100}align-items: flex-start/,
-  );
-  assert.match(
-    productStyles,
-    /\.showcaseFooter \{[\s\S]{0,180}justify-content: flex-end/,
+    /\.showcaseFooter \{[\s\S]{0,100}justify-content: flex-start/,
   );
   assert.doesNotMatch(
     productStyles,
@@ -244,16 +243,17 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(productStyles, /\.availabilityNote/);
   assert.match(
     productStyles,
-    /\.hubLink \{[\s\S]{0,240}font-size: 0\.875rem;[\s\S]{0,80}font-weight: 500/,
+    /\.hubLink \{[\s\S]{0,120}background: var\(--showcase-ink\);[\s\S]{0,240}font-size: 0\.875rem;[\s\S]{0,80}font-weight: 500;[\s\S]{0,120}min-block-size: 2\.75rem;/,
   );
   assert.match(
     productStyles,
-    /\.hubLink:hover \{[\s\S]{0,100}text-decoration: underline/,
+    /\.hubLink:hover \{\s*background: #242424;/,
   );
   assert.match(
     productStyles,
     /\.hubLink:focus-visible \{[\s\S]{0,100}outline: 3px solid/,
   );
+  assert.match(productShowcase, /\{copy\.hubActionLabel\}\s*<ArrowRight aria-hidden="true" size=\{16\} \/>/);
   assert.doesNotMatch(productStyles, /\.featured\s*\{|\.guideGrid\s*\{/);
   assert.match(
     guideRailStyles,
