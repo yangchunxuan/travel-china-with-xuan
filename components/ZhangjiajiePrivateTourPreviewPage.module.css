@@ -1030,3 +1030,43 @@
     grid-template-columns: 2.5rem minmax(0, 1fr);
   }
 }
+
+/*
+ * This page borrows EditorialGuidePage's .hero, .dek, .article and .cta and
+ * the homepage's .localeRoot. Its own rules for those elements share their
+ * specificity, so the result used to depend on which stylesheet the bundler
+ * loaded last (on the live site this one, so these rules won). Pin those
+ * wins so the page keeps its look whatever the chunk order.
+ */
+.hero.hero {
+  align-items: start;
+}
+
+.hero.hero h1 {
+  max-width: 15ch;
+}
+
+.heroLede.heroLede {
+  max-width: 38rem;
+}
+
+.article.article {
+  display: grid;
+  gap: 0;
+  padding-block-end: 1rem;
+  padding-block-start: 0;
+}
+
+.finalCta.finalCta {
+  background: var(--hg-color-soft);
+  border: 1px solid var(--hg-color-line);
+  color: var(--hg-color-ink);
+  margin-block-start: clamp(3rem, 7vw, 7rem);
+}
+
+@media (max-width: 680px) {
+  .hero.hero h1 {
+    font-size: clamp(2.6rem, 13vw, 3.65rem);
+    max-width: 12ch;
+  }
+}

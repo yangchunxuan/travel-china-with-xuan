@@ -366,7 +366,7 @@ export function EditorialGuidePage({
               tourCard
                 ? {
                     afterIndex: guideTourCardBlockIndex(body),
-                    node: <GuideTourCard card={tourCard} guideId={guide.id} locale={locale} />,
+                    node: <GuideTourCard card={tourCard} guideId={guide.id} locale={locale} variant="grok" />,
                   }
                 : undefined
             }

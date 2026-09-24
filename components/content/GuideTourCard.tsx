@@ -8,15 +8,18 @@ export function GuideTourCard({
   card,
   guideId,
   locale,
+  variant,
 }: {
   card: GuideTourCardData;
   guideId: string;
   locale: HomegroundLocale;
+  /** "grok" is the redesigned guide template's tile; hand-built guides omit it. */
+  variant?: "grok";
 }) {
   return (
     <aside
       aria-label={card.label}
-      className={styles.card}
+      className={variant === "grok" ? `${styles.card} ${styles.grok}` : styles.card}
       data-guide-cta-kind={card.kind}
       data-guide-tour-card={card.ctaId}
       data-similarity-ignore

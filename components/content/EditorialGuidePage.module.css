@@ -6,6 +6,17 @@
   overflow: clip;
 }
 
+/*
+ * The root also carries the homepage's .localeRoot, which sets the English
+ * editorial stack to Georgia, "Times New Roman", serif at the same
+ * specificity. That is the font the live site shows; keep it whichever
+ * stylesheet the bundler loads last. Chinese and Korean use their own
+ * locale rules.
+ */
+.pageRoot.pageRoot[data-homeground-locale="en"] {
+  --hg-editorial: var(--hg-font-editorial);
+}
+
 .pageRoot:lang(ko) {
   overflow-wrap: break-word;
   word-break: keep-all;
