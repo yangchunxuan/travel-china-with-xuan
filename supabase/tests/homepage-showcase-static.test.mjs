@@ -227,7 +227,8 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(productShowcase, /\{copy\.hubActionLabel\}/);
   assert.doesNotMatch(productShowcase, /availabilityNote/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
-  assert.match(productStyles, /\.productGrid \{[\s\S]{0,180}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  // Wide screens list the routes as one numbered index beside a large photo.
+  assert.match(productStyles, /@media \(min-width: 64rem\) \{[\s\S]*?\.productGrid \{\s*gap: 0;\s*grid-template-columns: minmax\(0, 1fr\);/);
   assert.match(
     productStyles,
     /\.showcaseFooter \{[\s\S]{0,100}align-items: flex-start/,
@@ -431,9 +432,11 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(productShowcase, /\{product\.appeal\}/);
   assert.match(productShowcase, /\{product\.startingPrice\.formatted\}/);
   assert.match(productShowcase, /copy\.groupBasis\(product\.startingPrice\.travelers\)/);
-  assert.match(productShowcase, /className=\{styles\.trustList\}/);
-  assert.match(productShowcase, /className=\{styles\.enquiryStrip\}/);
-  assert.match(productShowcase, /href=\{plannerHref\}/);
+  // The owner removed the three promises and the enquiry strip under the
+  // routes (2026-09-25); the planner stays reachable from the header and the
+  // contact section.
+  assert.doesNotMatch(productShowcase, /styles\.trustList|styles\.enquiryStrip|plannerHref/);
+  assert.doesNotMatch(page, /homepage-product-enquiry/);
   assert.match(productShowcase, /loading="lazy"/);
   assert.match(productShowcase, /sizes=\{homepageProductImageSizes\}/);
   assert.match(productShowcase, /privateTourCardImageSrcSet\(product\.id\)/);
@@ -485,11 +488,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
       copy.title,
       locale === "en" ? /ancient capitals/i : locale === "zh" ? /古都/ : /옛 수도/,
     );
-    assert.equal(copy.trustItems.length, 3);
-    assert.ok(copy.trustItems.every((item) => item.title.length > 3));
-    assert.ok(copy.trustItems.every((item) => item.body.length > 5));
-    assert.ok(copy.enquiryTitle.length > 8);
-    assert.ok(copy.enquiryAction.length > 4);
+    assert.ok(copy.actionLabel.length > 3);
+    assert.equal("trustItems" in copy || "enquiryTitle" in copy, false);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].privateBasis);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].sharedTransit);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].lowerCost);

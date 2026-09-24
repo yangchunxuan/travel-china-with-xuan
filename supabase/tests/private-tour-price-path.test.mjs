@@ -251,14 +251,12 @@ test("server-rendered homepage labels and detail price controls share the starti
     "./privateTourCardImages": cardImages,
     "./text/KeepWords": keepWords,
     "./motion/CharReveal": charReveal,
-    "./motion/PointerSpotlight": { PointerSpotlight: () => null },
-    "./motion/ScrollWords": { ScrollWords: ({ text }) => text },
-    "lucide-react": { ArrowRight: () => null, ArrowUpRight: () => null },
+    "lucide-react": { ArrowRight: () => null },
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);
     assert.equal(products[0].id, "zhangjiajie-forest-4-day-private-tour");
-    const homepageDom = parse(renderToStaticMarkup(React.createElement(homepage.HomepageProductShowcase, { locale, products, plannerHref: "/#planner-contact" })));
+    const homepageDom = parse(renderToStaticMarkup(React.createElement(homepage.HomepageProductShowcase, { locale, products })));
     for (const item of products) {
       const link = nodes(homepageDom).find((node) => node.tagName === "a" && attr(node, "href") === item.href);
       assert.ok(link);

@@ -21,27 +21,46 @@ test("homepage tour prices settle in glyph by glyph without ever showing another
   assert.match(styles, /@supports \(animation-timeline: view\(\)\) \{\s*@media \(prefers-reduced-motion: no-preference\) \{[\s\S]*?\.char \{[\s\S]*?animation-timeline: view\(\);/);
 });
 
-test("the tour grid keeps its layout and only adds scroll and hover motion", async () => {
+test("wide screens list the tours as a numbered index beside one large photo", async () => {
   const [styles, showcase] = await Promise.all([
     source("components/HomepageProductShowcase.module.css"),
     source("components/HomepageProductShowcase.tsx"),
   ]);
-  // Same three-column grid, same cards.
-  assert.match(styles, /\.productGrid \{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);/);
+  // Every route is still its own link with its own photo and alt text.
   assert.match(showcase, /products\.map\(\(product, index\)/);
-  // Photo unveil, column drift and rule fill run only when motion is welcome and supported.
-  const motion = styles.slice(styles.lastIndexOf("@supports (animation-timeline: view())"));
-  assert.match(motion, /^@supports \(animation-timeline: view\(\)\) \{\s*@media \(prefers-reduced-motion: no-preference\) \{/);
-  for (const rule of ["productImageUnveil", "productImageSettle", "productRuleFill", "productColumnDrift"]) {
-    assert.match(motion, new RegExp(`animation: ${rule} linear both;`), rule);
-  }
-  // The column drift is for the three-column grid only.
-  assert.match(motion, /@media \(min-width: 64rem\) \{[\s\S]*?\.productGrid li:nth-child\(3n \+ 2\) \{\s*animation: productColumnDrift/);
-  // Pointer effects only where there is a real pointer; the cursor is decoration.
-  assert.match(styles, /@media \(hover: hover\) and \(pointer: fine\) \{[\s\S]*?\.productCard:hover \.imageCursor \{\s*scale: 1;/);
-  assert.match(showcase, /<span aria-hidden="true" className=\{styles\.imageCursor\}>/);
+  assert.match(showcase, /alt=\{product\.image\.alt\}/);
+  // The large photo repeats a row's photo, so assistive tech skips it.
+  assert.match(showcase, /<div aria-hidden="true" className=\{styles\.preview\}>/);
+  assert.match(showcase, /alt=""\s*data-active=\{index === active \|\| undefined\}/);
+  // Pointer, keyboard focus and scroll position all choose the lit route;
+  // the scroll watcher only runs where the index is shown.
+  assert.match(showcase, /onFocus=\{\(\) => activate\(index\)\}/);
+  assert.match(showcase, /onPointerEnter=\{\(\) => activate\(index\)\}/);
+  // Large photos load as routes are reached, one ahead, not all six at once.
+  assert.match(showcase, /new Set\(\[0, 1\]\)/);
+  assert.match(showcase, /warm\.has\(index\) \? \(/);
+  assert.match(showcase, /window\.matchMedia\(wideIndexQuery\)/);
+  assert.match(showcase, /if \(!wide\.matches\) return;/);
+  assert.match(showcase, /wide\.addEventListener\("change", sync\)/);
+  assert.match(showcase, /new IntersectionObserver/);
+  assert.match(showcase, /wide\.removeEventListener\("change", sync\);\s*observer\?\.disconnect\(\);/);
+  // Phones keep their list and tablets their two-column cards; the photo and
+  // row numbers only appear in the wide-screen index.
+  assert.match(styles, /^\.productGrid \{[^}]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/m);
+  assert.match(styles, /^\.preview,\s*\.rowIndex \{\s*display: none;/m);
+  const wide = styles.slice(styles.indexOf("@media (min-width: 64rem) {"));
+  assert.match(wide, /\.preview \{[^}]*position: sticky;/);
+  assert.match(wide, /\.productGrid \{\s*gap: 0;\s*grid-template-columns: minmax\(0, 1fr\);/);
+  const roomy = styles.slice(styles.indexOf("@media (min-width: 80rem) {"));
+  assert.match(roomy, /grid-template-areas:\s*"meta price"\s*"title price"\s*"desc price"\s*"action price";/);
+  // No pointer-following decoration. The heading stays plain: the word
+  // reveal pulled homepage CSS into other pages' shared stylesheets.
+  assert.doesNotMatch(showcase + styles, /PointerSpotlight|imageCursor|--spot-x|productColumnDrift/);
+  assert.doesNotMatch(showcase, /ScrollWords/);
   // The label roll keeps one readable label.
   assert.match(showcase, /<span>\{copy\.actionLabel\}<\/span>\s*<span aria-hidden="true">\{copy\.actionLabel\}<\/span>/);
-  // Reduced motion also stops the hover transitions.
-  assert.match(styles, /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.imageCursor,[\s\S]*?transition: none;/);
+  // Reduced motion stops the photo wipe and the row transitions, and comes
+  // last so the wide-screen rules cannot win over it.
+  const reduced = styles.slice(styles.lastIndexOf("@media"));
+  assert.match(reduced, /^@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.previewFrame img\[data-active\],[\s\S]*?transition: none;/);
 });
