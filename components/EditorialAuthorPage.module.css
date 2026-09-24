@@ -252,13 +252,15 @@
 }
 
 .articles ul a > span > span {
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
   font-size: 1.25rem;
   justify-self: start;
   line-height: 1.25;
-  transition: background-size 550ms var(--ease);
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 300ms ease;
 }
 
 .articles small {
@@ -293,7 +295,7 @@
   }
 
   .articles a:hover > span > span {
-    background-size: 100% 1px;
+    text-decoration-color: currentColor;
   }
 
   .articles ul a:hover .articleImage img {
@@ -316,7 +318,7 @@
 }
 
 .articles a:focus-visible > span > span {
-  background-size: 100% 1px;
+  text-decoration-color: currentColor;
 }
 
 /* ---------- Chinese and Korean ---------- */
