@@ -1,66 +1,341 @@
-.page { --ink:#0a0a0a; --muted:#686b70; --line:#d5d9e2; --soft:#f5f5f4; --accent:#a84731; background:#fff; color:var(--ink); min-height:100vh; }
-.hero,.choices,.method { padding-inline:max(1rem,calc((100vw - 1380px)/2)); }
-.hero { border-block-end:1px solid var(--line); padding-block:clamp(2.5rem,7vw,7rem); }
-.heroInner,.choices>*,.method { margin-inline:auto; max-width:1380px; }
-.breadcrumb ol { display:flex; flex-wrap:wrap; gap:.55rem; list-style:none; margin:0 0 clamp(2.5rem,6vw,6rem); padding:0; }
-.breadcrumb li { align-items:center; color:var(--muted); display:flex; font-size:.74rem; gap:.55rem; }
-.breadcrumb a { color:inherit; text-decoration-color:transparent; text-underline-offset:.25rem; }
-.breadcrumb a:hover,.breadcrumb a:focus-visible { color:var(--accent); text-decoration-color:currentColor; }
-.heroGrid,.sectionIntro,.method { align-items:end; display:grid; gap:clamp(2.25rem,8vw,9rem); grid-template-columns:minmax(0,1.15fr) minmax(18rem,.55fr); }
-.eyebrow,.number,.cardEyebrow { color:var(--accent); font-size:.71rem; font-weight:780; letter-spacing:.11em; margin:0; text-transform:uppercase; }
-.hero h1,.sectionIntro h2,.cardGrid h3,.method h2 { font-family:var(--hg-editorial); font-weight:400; letter-spacing:-.045em; text-wrap:balance; }
-.hero h1 { font-size:clamp(3.6rem,7.6vw,8rem); line-height:.91; margin:1rem 0 0; max-width:11ch; }
-.heroGrid>div:last-child>p,.sectionIntro>p,.method>div:last-child>p { color:var(--muted); line-height:1.72; margin:0; }
-.heroGrid ul { border-block-start:1px solid var(--line); list-style:none; margin:1.4rem 0 0; padding:0; }
-.heroGrid li { border-block-end:1px solid var(--line); color:var(--muted); font-size:.86rem; padding-block:.8rem; }
-.choices,.method { padding-block:clamp(4rem,8vw,8rem); }
-.sectionIntro { margin-block-end:clamp(2.5rem,5vw,4.5rem); }
-.sectionIntro h2,.method h2 { font-size:clamp(2.65rem,5vw,5.2rem); line-height:.97; margin:1rem 0 0; max-width:12ch; }
-.cardGrid { border-block-start:1px solid var(--line); border-inline-start:1px solid var(--line); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); list-style:none; margin:0 auto; max-width:1380px; padding:0; }
-.cardGrid li { border-block-end:1px solid var(--line); border-inline-end:1px solid var(--line); min-width:0; }
-.cardGrid a { color:inherit; display:flex; flex-direction:column; height:100%; min-height:22rem; padding:clamp(1.3rem,2.25vw,2.2rem); text-decoration:none; }
-.cardGrid a:hover,.cardGrid a:focus-visible { background:var(--soft); }
-.cardEyebrow { margin-block-start:2.5rem; }
-.cardGrid h3 { font-size:clamp(2rem,3vw,3.2rem); line-height:1; margin:1rem 0 0; }
-.cardGrid h3+p { color:var(--muted); line-height:1.65; margin:1.2rem 0 0; }
-.action { align-items:center; border-block-start:1px solid var(--line); display:flex; font-size:.78rem; font-weight:760; justify-content:space-between; margin-block-start:auto; padding-block-start:1rem; }
-.method { border-block-start:1px solid var(--line); border-block-end:1px solid var(--line); }
-.methodLinks { display:flex; flex-wrap:wrap; gap:.7rem; margin-block-start:1.8rem; }
-.methodLinks a { align-items:center; border:1px solid var(--ink); border-radius:999px; color:var(--ink); display:inline-flex; font-size:.78rem; font-weight:760; gap:1rem; min-height:3rem; padding:.65rem 1rem; text-decoration:none; }
-.methodLinks a:first-child { background:var(--ink); color:#fff; }
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroGrid,
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro,
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method {
-  align-items: start;
-  gap: 1.75rem;
-  grid-template-columns: minmax(0, 1fr);
+/* /services/ follows the restrained visual system used by /tours/ and the hubs. */
+.page {
+  --service-paper: #fff;
+  --service-tile: #f9f8f6;
+  --service-warm: #f2f1ef;
+  --service-warm-hover: #e9e7e3;
+  --service-ink: #0a0a0a;
+  --service-muted: rgb(10 10 10 / 60%);
+  --service-rule: rgb(10 10 10 / 10%);
+  --service-focus: var(--hg-color-focus, #b14f37);
+  --service-content: 77rem;
+  --service-gutter: 1.5rem;
+  --service-pill: 2.75rem;
+  --service-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--service-paper);
+  color: var(--service-ink);
+  min-height: 100vh;
+}
+
+.page main {
+  display: block;
+  scroll-margin-top: var(--homeground-header-height, 4.25rem);
+}
+
+.page :is(a, button) {
+  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 0.75rem);
+}
+
+.hero,
+.choices,
+.method {
+  padding-inline: max(var(--service-gutter), calc((100% - var(--service-content)) / 2));
+}
+
+.hero {
+  border-block-end: 1px solid var(--service-rule);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3.5rem, 5vw, 5rem);
+}
+
+.breadcrumb ol {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--service-muted);
+  display: flex;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.breadcrumb a {
+  align-items: center;
+  color: var(--service-ink);
+  display: inline-flex;
+  min-height: var(--service-pill);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.heroGrid,
+.sectionIntro,
+.method {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+}
+
+.heroGrid > div,
+.sectionIntro > div,
+.method > div {
+  min-width: 0;
+}
+
+.eyebrow,
+.cardEyebrow {
+  color: var(--service-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none;
+}
+
+.hero h1,
+.sectionIntro h2,
+.cardGrid h3,
+.method h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.hero h1 {
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.02;
+  margin: 1rem 0 0;
+  max-width: 14ch;
+}
+
+.heroGrid > div:last-child {
+  background: var(--service-tile);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.heroGrid > div:last-child > p {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.heroGrid ul {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.heroGrid li {
+  border-block-start: 1px solid var(--service-rule);
+  color: var(--service-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  padding-block: 0.75rem;
+  text-wrap: pretty;
+}
+
+.heroGrid li:last-child {
+  padding-block-end: 0;
+}
+
+.choices {
+  padding-block: clamp(4rem, 7vw, 6rem);
+}
+
+.sectionIntro {
+  margin-block-end: clamp(2rem, 3vw, 2.5rem);
+}
+
+.sectionIntro h2,
+.method h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 18ch;
+}
+
+.sectionIntro > p,
+.method > div:last-child > p {
+  color: var(--service-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cardGrid li {
+  min-width: 0;
+}
+
+.cardGrid a {
+  background: var(--service-tile);
+  border-radius: 1rem;
+  color: var(--service-ink);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 21rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 250ms var(--service-ease);
+}
+
+.number {
+  align-items: center;
+  background: var(--service-paper);
+  border-radius: 50%;
+  color: var(--service-ink);
+  display: inline-flex;
+  flex: none;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.cardEyebrow {
+  margin-block-start: 1.5rem;
+}
+
+.cardGrid h3 {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 0;
+}
+
+.cardGrid h3 + p {
+  color: var(--service-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0.85rem 0 1.5rem;
+  max-width: 38rem;
+  text-wrap: pretty;
+}
+
+.action {
+  align-items: center;
+  align-self: flex-start;
+  background: var(--service-paper);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 1.25rem;
+  justify-content: space-between;
+  line-height: 1.25;
+  margin-block-start: auto;
+  min-height: var(--service-pill);
+  padding-inline: 1.25rem;
+}
+
+.action > span {
+  transition: transform 250ms var(--service-ease);
+}
+
+.method {
+  border-block-start: 1px solid var(--service-rule);
+  padding-block: clamp(4rem, 7vw, 6rem);
+}
+
+.methodLinks {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
+}
+
+.methodLinks a {
+  align-items: center;
+  background: var(--service-warm);
+  border-radius: 999px;
+  color: var(--service-ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.75rem;
+  justify-content: center;
+  line-height: 1.3;
+  min-height: var(--service-pill);
+  padding: 0.625rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.methodLinks a:first-child {
+  background: var(--service-ink);
+  color: var(--service-paper);
+}
+
+@media (hover: hover) {
+  .cardGrid a:hover {
+    background: var(--service-warm);
+    transform: translateY(-2px);
+  }
+
+  .cardGrid a:hover .action > span {
+    transform: translateX(3px);
+  }
+
+  .methodLinks a:hover {
+    background: var(--service-warm-hover);
+  }
+
+  .methodLinks a:first-child:hover {
+    background: #242424;
+  }
+}
+
+.breadcrumb a:focus-visible,
+.cardGrid a:focus-visible,
+.methodLinks a:focus-visible {
+  outline: 2px solid var(--service-focus);
+  outline-offset: 3px;
+}
+
+.cardGrid a:focus-visible .action > span {
+  transform: translateX(3px);
+}
+
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.hero h1, .sectionIntro h2, .cardGrid h3, .method h2) {
+  letter-spacing: 0;
+  line-height: 1.3;
 }
 
 .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
-  font-size: clamp(2.3rem, 4.2vw, 3.75rem);
-  letter-spacing: 0;
-  line-height: 1.3;
-  max-width: 22em;
+  font-size: clamp(2.4rem, 4.2vw, 3.75rem);
+  max-width: 18em;
 }
 
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro h2,
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method h2 {
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .method h2) {
   font-size: clamp(2rem, 3.3vw, 2.9rem);
-  letter-spacing: 0;
-  line-height: 1.35;
   max-width: 24em;
 }
 
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroGrid > div:last-child,
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro > p,
-.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method > div:last-child {
-  max-width: 52rem;
-}
-
 .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .cardGrid h3 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-  letter-spacing: 0;
-  line-height: 1.3;
+  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
 }
 
 .page[data-homeground-locale="zh"] :is(h1, h2, h3) {
@@ -72,18 +347,115 @@
   overflow-wrap: normal;
   word-break: keep-all;
 }
-@media(max-width:48rem){.hero{padding-block:1.5rem 3rem}.breadcrumb ol{margin-block-end:2rem}.heroGrid,.sectionIntro,.method{align-items:start;gap:1.6rem;grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,15vw,4.8rem)}.choices{padding-block:3rem 4.5rem}.sectionIntro{margin-block-end:2rem}.sectionIntro h2,.method h2{font-size:clamp(2.25rem,11vw,3.6rem)}.cardGrid{grid-template-columns:1fr}.cardGrid a{min-height:0}.action{margin-block-start:2.5rem}.method{padding-block:4rem}}
-@media(max-width:22rem){.hero,.choices,.method{padding-inline:.75rem}}
 
-@media (max-width: 48rem) {
-  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
-    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
-    line-height: 1.35;
+@media (max-width: 56.25rem) {
+  .heroGrid,
+  .sectionIntro,
+  .method {
+    align-items: start;
+    gap: 1.75rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionIntro h2,
-  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .method h2 {
-    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
-    line-height: 1.4;
+  .heroGrid > div:last-child {
+    max-width: 46rem;
+  }
+
+  .sectionIntro > p,
+  .method > div:last-child {
+    max-width: 46rem;
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .page {
+    --service-gutter: 1rem;
+  }
+
+  .hero {
+    padding-block-end: 3.5rem;
+  }
+
+  .breadcrumb ol {
+    margin-block-end: 2rem;
+  }
+
+  .breadcrumb li > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    color: var(--service-muted);
+    content: "/";
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 10vw, 2.75rem);
+    line-height: 1.05;
+  }
+
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .hero h1 {
+    font-size: clamp(2.1rem, 9.4vw, 2.6rem);
+    max-width: 100%;
+  }
+
+  .zhTitlePart {
+    display: block;
+  }
+
+  .heroGrid > div:last-child {
+    padding: 1.25rem;
+  }
+
+  .heroGrid > div:last-child > p,
+  .sectionIntro > p,
+  .method > div:last-child > p {
+    font-size: 1rem;
+  }
+
+  .choices,
+  .method {
+    padding-block: 4rem;
+  }
+
+  .sectionIntro h2,
+  .method h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.sectionIntro h2, .method h2) {
+    font-size: clamp(1.85rem, 7.2vw, 2.25rem);
+  }
+
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cardGrid a {
+    min-height: 19rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumb a,
+  .cardGrid a,
+  .action > span,
+  .methodLinks a {
+    transition: none;
+  }
+
+  .cardGrid a:hover,
+  .cardGrid a:hover .action > span,
+  .cardGrid a:focus-visible .action > span {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .heroGrid > div:last-child,
+  .cardGrid a,
+  .methodLinks a {
+    border: 1px solid CanvasText;
   }
 }
