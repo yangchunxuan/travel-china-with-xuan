@@ -1,11 +1,30 @@
+/*
+ * /guides/ and its pagination. Same system as /tours/ and the section hubs:
+ * white page, one #f9f8f6 tile surface without outlines, ink #0a0a0a with
+ * muted ink at 60%, one 14px / 500 / 44px pill scale, Georgia headlines at
+ * -2% tracking and sentence-case labels. The catalog reads like a newsroom:
+ * page 1 opens with one featured guide and three cards, then a two-column
+ * list of rows; later pages are all rows. #f5f5f4 and #d5d9e2 stay defined
+ * for image placeholders and the search field outline.
+ */
 .guidesPage {
   --guides-paper: #fff;
   --guides-card: #fff;
   --guides-soft: #f5f5f4;
+  --guides-tile: #f9f8f6;
+  --guides-warm: #f2f1ef;
+  --guides-warm-hover: #e9e7e3;
   --guides-line: #d5d9e2;
+  --guides-rule: rgb(10 10 10 / 10%);
   --guides-ink: #0a0a0a;
-  --guides-muted: #686b70;
+  --guides-muted: rgb(10 10 10 / 60%);
   --guides-rust: #a84731;
+  --guides-focus: var(--hg-color-focus, #b14f37);
+  --guides-content: 77rem;
+  --guides-gutter: 1.5rem;
+  --guides-section: 6rem;
+  --guides-pill: 2.75rem;
+  --guides-ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--guides-paper);
   color: var(--guides-ink);
   min-height: 100vh;
@@ -15,199 +34,150 @@
   display: block;
 }
 
-.hero {
-  border-block-end: 1px solid var(--guides-line);
-  padding: clamp(3.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1380px) / 2))
-    clamp(4.25rem, 8vw, 7.5rem);
+/* Every band shares the /tours/ content column with a 24px gutter (16px on phones). */
+.hero,
+.searchBand,
+.countryGuide,
+.catalog,
+.cta {
+  padding-inline: max(var(--guides-gutter), calc((100% - var(--guides-content)) / 2));
 }
 
-.heroInner,
-.countryGuideInner,
-.searchBandInner,
-.ctaInner {
-  margin-inline: auto;
-  max-width: 1380px;
+.eyebrow,
+.ctaEyebrow {
+  color: var(--guides-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+  text-transform: none;
 }
+
+.heroGrid h1,
+.searchBandCopy h2,
+.countryGuideIntro h2,
+.decisionGrid h3,
+.entryHandoff strong,
+.catalogIntro h2,
+.guideBody h3,
+.ctaGrid h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.heroTopline {
+  margin-block-end: 1rem;
+}
+
+.heroGrid {
+  align-items: end;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+}
+
+.heroGrid h1 {
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.02;
+  margin: 0;
+  max-width: 14ch;
+}
+
+.heroGrid > p {
+  color: var(--guides-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+
+/* ---------- Search: one tile, copy beside the field ---------- */
 
 .searchBand {
-  background: var(--guides-soft);
-  border-block-end: 1px solid var(--guides-line);
-  padding: clamp(3rem, 6vw, 5.5rem) max(1rem, calc((100vw - 1380px) / 2));
+  padding-block: clamp(2.5rem, 4vw, 3.5rem) 0;
 }
 
 .searchBandInner {
   align-items: center;
+  background: var(--guides-tile);
+  border-radius: 1rem;
   display: grid;
-  gap: clamp(2.5rem, 7vw, 8rem);
-  grid-template-columns: minmax(18rem, 0.62fr) minmax(0, 1.05fr);
+  gap: 1.5rem clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+/* The tile holds one question, the field and three example searches. */
+.searchBandCopy h2 {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 12ch;
 }
 
 .searchFormCompact {
   min-width: 0;
 }
 
-.searchBandCopy h2 {
-  font-family: var(--hg-editorial);
-  font-size: clamp(2.5rem, 4.5vw, 4.75rem);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 10ch;
-  text-wrap: balance;
-}
-
-.searchBandCopy > p:last-child {
-  color: var(--guides-muted);
-  line-height: 1.68;
-  margin: 1.35rem 0 0;
-  max-width: 35rem;
-}
-
-.heroTopline {
-  align-items: center;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: space-between;
-  margin-block-end: clamp(3.5rem, 7vw, 7rem);
-}
-
-.eyebrow,
-.ctaEyebrow {
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.eyebrow {
-  color: var(--guides-rust);
-}
-
-.languageNav {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem;
-  justify-content: flex-end;
-}
-
-.languageNav a {
-  align-items: center;
-  color: var(--guides-muted);
-  display: inline-flex;
-  font-size: 0.76rem;
-  font-weight: 720;
-  min-height: 2.75rem;
-  padding-inline: 0.75rem;
-  text-decoration: none;
-}
-
-.languageNav a[aria-current="page"] {
-  color: var(--guides-ink);
-  text-decoration: underline;
-  text-decoration-color: var(--guides-rust);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.4rem;
-}
-
-.languageNav a:hover {
-  color: var(--guides-ink);
-}
-
-.heroGrid {
-  align-items: end;
-  display: grid;
-  gap: clamp(2rem, 6vw, 7rem);
-  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.58fr);
-}
-
-.heroGrid h1,
-.countryGuideIntro h2,
-.decisionGrid h3,
-.catalogIntro h2,
-.entryIntro h2,
-.guideBody h3,
-.ctaGrid h2 {
-  font-family: var(--hg-editorial);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
-}
-
-.heroGrid h1 {
-  font-size: clamp(3.65rem, 7.4vw, 7.65rem);
-  line-height: 0.9;
-  margin: 0;
-  max-width: 9ch;
-}
-
-.heroGrid > p {
-  color: var(--guides-muted);
-  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
-  line-height: 1.72;
-  margin: 0 0 0.45rem;
-  max-width: 34rem;
-}
+/* ---------- Six decisions ---------- */
 
 .countryGuide {
-  background: var(--guides-paper);
-  border-block-end: 1px solid var(--guides-line);
-  padding: clamp(2.75rem, 5vw, 4.75rem) max(1rem, calc((100vw - 1380px) / 2));
+  padding-block: var(--guides-section) 0;
 }
 
 .countryGuideIntro {
-  align-items: start;
+  align-items: end;
   display: grid;
-  gap: clamp(2rem, 6vw, 7rem);
-  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.58fr);
-  margin-block-end: clamp(2rem, 3.5vw, 3.25rem);
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  margin-block-end: 2.5rem;
 }
 
 .countryGuideIntro h2 {
-  font-size: clamp(2.35rem, 4vw, 4rem);
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 12ch;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
   scroll-margin-top: 6.5rem;
 }
 
-.countryGuideIntro > p,
-.countryGuideContext > p {
-  color: var(--guides-muted);
-  font-size: 1.03rem;
-  line-height: 1.72;
-  margin: 0;
-  max-width: 36rem;
-}
-
-.countryGuideContext > p {
-  margin-block-end: 1.35rem;
+/* A quiet "view all"-style text link at the end of the heading row. */
+.countryGuideContext {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .countryGuideContext > a {
   align-items: center;
-  border-block-end: 1px solid var(--guides-ink);
   color: var(--guides-ink);
-  display: flex;
-  font-size: 0.8rem;
-  font-weight: 760;
-  justify-content: space-between;
-  min-height: 2.8rem;
-  text-decoration: none;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  min-height: var(--guides-pill);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
 }
 
-.countryGuideContext > a:hover,
-.countryGuideContext > a:focus-visible {
-  border-color: var(--guides-rust);
-  color: var(--guides-rust);
+.countryGuideContext > a > span {
+  transition: transform 300ms var(--guides-ease);
 }
 
 .decisionGrid {
-  border-block-start: 1px solid var(--guides-line);
-  border-inline-start: 1px solid var(--guides-line);
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   list-style: none;
   margin: 0;
@@ -215,219 +185,435 @@
 }
 
 .decisionGrid li {
-  border-block-end: 1px solid var(--guides-line);
-  border-inline-end: 1px solid var(--guides-line);
   grid-column: span 4;
   min-width: 0;
 }
 
+/* Each tile: number disc, the one-line advice, and the section it opens. */
 .decisionGrid a {
-  align-items: start;
-  background: var(--guides-card);
+  background: var(--guides-tile);
+  border-radius: 1rem;
   color: var(--guides-ink);
-  display: grid;
-  gap: 0.8rem 1rem;
-  grid-template-columns: auto minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   height: 100%;
-  min-height: 10.5rem;
-  padding: clamp(1.15rem, 1.8vw, 1.65rem);
+  min-height: 11rem;
+  padding: 1.5rem;
   text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    scale 150ms ease;
 }
 
-.decisionGrid a:hover,
-.decisionGrid a:focus-visible {
-  background: var(--guides-paper);
-}
-
+/* Numbers: a small white disc with ink figures, as on /plan/. */
 .decisionNumber {
-  color: var(--guides-rust);
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.12em;
+  align-items: center;
+  background: var(--guides-paper);
+  border-radius: 999px;
+  color: var(--guides-ink);
+  display: flex;
+  flex: none;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.decisionCopy {
+  flex: 1;
+  min-width: 0;
 }
 
 .decisionGrid h3 {
-  font-size: clamp(1.25rem, 1.75vw, 1.7rem);
-  line-height: 1.08;
+  font-size: 1.375rem;
+  line-height: 1.2;
   margin: 0;
-  max-width: 18ch;
-}
-
-.decisionGrid p {
-  color: var(--guides-muted);
-  font-size: 0.88rem;
-  line-height: 1.48;
-  margin: 0.55rem 0 0;
-  max-width: 38rem;
 }
 
 .decisionAction {
   align-items: center;
-  border-block-start: 1px solid var(--guides-line);
   display: flex;
-  font-size: 0.78rem;
-  font-weight: 760;
-  grid-column: 1 / -1;
-  justify-content: space-between;
-  margin-block-start: auto;
-  padding-block-start: 0.7rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  line-height: 1.4;
 }
 
 .decisionAction > span:last-child {
-  transition: transform 180ms ease;
-}
-
-.decisionGrid a:hover .decisionAction > span:last-child,
-.decisionGrid a:focus-visible .decisionAction > span:last-child {
-  transform: translateX(0.2rem);
+  transition: transform 300ms var(--guides-ease);
 }
 
 .entryHandoff {
   align-items: center;
-  background: var(--guides-soft);
-  border: 1px solid var(--guides-line);
+  background: var(--guides-tile);
+  border-radius: 1rem;
   color: var(--guides-ink);
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem 2rem;
   grid-template-columns: minmax(0, 1fr) auto;
   margin-block-start: 1rem;
-  padding: 1rem 1.15rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
 .entryHandoff > span:first-child {
   display: grid;
-  gap: 0.2rem;
+  gap: 0.35rem;
   min-width: 0;
 }
 
 .entryHandoff strong {
-  font-family: var(--hg-editorial);
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25;
 }
 
 .entryHandoff small {
   color: var(--guides-muted);
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
 
-.entryHandoff .entryAction {
-  border: 0;
-  margin: 0;
-  min-height: 2.5rem;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.entryHandoff:hover,
-.entryHandoff:focus-visible {
-  border-color: var(--guides-ink);
-}
+/* ---------- Catalog ---------- */
 
 .catalog {
-  padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
+  padding-block: var(--guides-section);
   scroll-margin-top: 6.5rem;
 }
 
 .catalogIntro {
   align-items: end;
   display: grid;
-  gap: clamp(2rem, 6vw, 7rem);
-  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.58fr);
-  margin-block-end: clamp(3.5rem, 6vw, 6rem);
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  margin-block-end: 2.5rem;
 }
 
 .catalogIntro h2 {
-  font-size: clamp(2.7rem, 5vw, 5rem);
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 11ch;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
   scroll-margin-top: 6.5rem;
 }
 
 .catalogSummary > p:first-child {
   color: var(--guides-muted);
-  font-size: 1.03rem;
-  line-height: 1.72;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   margin: 0;
-  max-width: 35rem;
+  max-width: 34rem;
+  text-wrap: pretty;
 }
 
 .guideCount {
-  border-block-start: 1px solid var(--guides-line);
-  color: var(--guides-rust);
-  font-size: 0.76rem;
-  font-weight: 760;
-  letter-spacing: 0.08em;
-  margin: 1.5rem 0 0;
-  padding-block-start: 1rem;
-  text-transform: uppercase;
+  color: var(--guides-ink);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0.75rem 0 0;
 }
 
 .guideGrid {
-  border-block-start: 1px solid var(--guides-line);
-  border-inline-start: 1px solid var(--guides-line);
   display: grid;
+  gap: 0 2.5rem;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.guideSlot {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.guideCard,
+.guideLink {
+  height: 100%;
+}
+
+.guideLink {
+  color: var(--guides-ink);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.guideImage {
+  background: var(--guides-soft);
+  border-radius: 0.75rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.guideImage img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--guides-ease);
+  width: 100%;
+}
+
+.guideBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.guideMeta {
+  align-items: baseline;
+  color: var(--guides-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
+}
+
+.guideBody h3 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.guideDescription {
+  -webkit-box-orient: vertical;
+  color: var(--guides-muted);
+  display: -webkit-box;
+  font-size: 0.9375rem;
+  -webkit-line-clamp: 2;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.guideTags {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.readGuide {
+  display: none;
+}
+
+/* Featured guide: text left, photo right, as on x.ai/news. */
+.guideSlotLead {
+  margin-block-end: 3.5rem;
+}
+
+.guideSlotLead .guideLink {
+  align-items: center;
+  display: grid;
+  gap: 2rem clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+
+.guideSlotLead .guideImage {
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.guideSlotLead .guideBody {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.guideSlotLead .guideMeta {
+  font-size: 0.875rem;
+  margin-block-end: 1rem;
+}
+
+.guideSlotLead .guideBody h3 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.08;
+}
+
+.guideSlotLead .guideDescription {
+  font-size: 1.0625rem;
+  -webkit-line-clamp: 4;
+  line-height: 1.6;
+  margin-block-start: 1rem;
+}
+
+.guideSlotLead .guideTags {
+  color: var(--guides-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  gap: 0.4rem;
+  line-height: 1.4;
+  margin-block-start: 1rem;
+}
+
+.guideSlotLead .guideTags li + li::before {
+  content: "·";
+  margin-inline-end: 0.4rem;
+}
+
+.guideSlotLead .readGuide {
+  align-items: center;
+  align-self: start;
+  background: var(--guides-warm);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  margin-block-start: 1.5rem;
+  min-height: var(--guides-pill);
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.guideSlotLead .readGuide > span {
+  transition: transform 300ms var(--guides-ease);
+}
+
+/* Three cards: photo, meta, title, two-line summary. */
+.guideSlotCard {
+  grid-column: span 4;
+  margin-block-end: 3.5rem;
+}
+
+.guideSlotCard .guideImage {
+  aspect-ratio: 16 / 10;
+  margin-block-end: 1rem;
+}
+
+.guideSlotCard[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"] .guideImage,
+.guideSlotLead[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"] .guideImage {
+  aspect-ratio: 3 / 2;
+}
+
+/* List rows: two columns of title-first rows with a small photo on the right. */
+.guideSlotRow {
+  grid-column: span 6;
+}
+
+.guideSlotRow .guideLink {
+  align-items: start;
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 10rem;
+  margin-inline: -1rem;
+  padding: 1rem;
+  transition: background-color 150ms ease;
+}
+
+.guideSlotRow .guideImage {
+  aspect-ratio: 4 / 3;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.guideSlotRow .guideBody {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+@media (hover: hover) {
+  .countryGuideContext > a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .countryGuideContext > a:hover > span,
+  .decisionGrid a:hover .decisionAction > span:last-child,
+  .guideSlotLead .guideLink:hover .readGuide > span {
+    transform: translateX(4px);
+  }
+
+  .decisionGrid a:hover,
+  .entryHandoff:hover {
+    background: var(--guides-warm);
+  }
+
+  .entryHandoff:hover .entryAction,
+  .guideSlotLead .guideLink:hover .readGuide {
+    background: var(--guides-warm-hover);
+  }
+
+  .guideSlotRow .guideLink:hover {
+    background: var(--guides-tile);
+  }
+
+  .guideLink:hover .guideImage img {
+    transform: scale(1.04);
+  }
+}
+
+/* ---------- Pagination: pills ---------- */
+
 .pagination {
-  border-block: 1px solid var(--guides-line);
-  margin-block-start: clamp(2.5rem, 5vw, 4.5rem);
-  padding-block: 1.25rem;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  margin-block-start: 3rem;
 }
 
 .pagination > p {
   color: var(--guides-muted);
-  font-size: 0.74rem;
-  font-weight: 720;
-  letter-spacing: 0.08em;
-  margin: 0 0 1rem;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
 }
 
 .paginationControls {
   align-items: center;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(9rem, auto) minmax(0, 1fr) minmax(9rem, auto);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.paginationStep,
+.entryAction,
+.ctaAction {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  justify-content: center;
+  min-height: var(--guides-pill);
+  padding: 0 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  white-space: nowrap;
 }
 
 .paginationStep {
-  align-items: center;
+  background: var(--guides-warm);
   color: var(--guides-ink);
-  display: inline-flex;
-  font-size: 0.8rem;
-  font-weight: 760;
-  gap: 0.75rem;
-  justify-content: space-between;
-  min-height: 2.75rem;
-  text-decoration: none;
-}
-
-.paginationStep:last-child {
-  justify-self: end;
-}
-
-a.paginationStep:hover,
-a.paginationStep:focus-visible {
-  color: var(--guides-rust);
 }
 
 .paginationDisabled {
   color: var(--guides-muted);
-  opacity: 0.48;
+  opacity: 0.5;
 }
 
 .paginationPages {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.25rem;
   justify-content: center;
   list-style: none;
   margin: 0;
@@ -437,434 +623,507 @@ a.paginationStep:focus-visible {
 .paginationPages a,
 .paginationPages span {
   align-items: center;
-  border: 1px solid var(--guides-line);
+  border-radius: 999px;
   color: var(--guides-ink);
   display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 720;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
   justify-content: center;
-  min-height: 2.75rem;
-  min-width: 2.75rem;
-  padding-inline: 0.7rem;
+  min-height: var(--guides-pill);
+  min-width: var(--guides-pill);
+  padding-inline: 1rem;
   text-decoration: none;
-}
-
-.paginationPages a:hover,
-.paginationPages a:focus-visible {
-  border-color: var(--guides-rust);
-  color: var(--guides-rust);
+  transition: background-color 150ms ease;
 }
 
 .paginationPages span[aria-current="page"] {
   background: var(--guides-ink);
-  border-color: var(--guides-ink);
-  color: #fff;
+  color: var(--hg-color-on-dark, #fff);
 }
 
-.guideSlot {
-  border-block-end: 1px solid var(--guides-line);
-  border-inline-end: 1px solid var(--guides-line);
-  grid-column: span 4;
-  min-width: 0;
+@media (hover: hover) {
+  a.paginationStep:hover {
+    background: var(--guides-warm-hover);
+  }
+
+  .paginationPages a:hover {
+    background: var(--guides-warm);
+  }
 }
 
-.guideSlotLead {
-  grid-column: span 7;
-}
-
-.guideSlotLead + .guideSlot {
-  grid-column: span 5;
-}
-
-.guideSlotWide {
-  grid-column: span 12;
-}
-
-.guideSlotHalf {
-  grid-column: span 6;
-}
-
-.guideCard,
-.guideLink {
-  height: 100%;
-}
-
-.guideLink {
-  background: var(--guides-card);
-  color: var(--guides-ink);
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  text-decoration: none;
-}
-
-.guideImage {
-  aspect-ratio: 16 / 10;
-  background: var(--guides-soft);
-  margin: 0;
-  overflow: hidden;
-}
-
-.guideSlotLead .guideImage {
-  aspect-ratio: 16 / 8.8;
-}
-
-.guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
-  .guideImage {
-  aspect-ratio: 3 / 2;
-}
-
-.guideSlotWide .guideLink {
-  display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(20rem, 0.72fr);
-}
-
-.guideSlotWide .guideImage {
-  aspect-ratio: auto;
-  min-height: 26rem;
-}
-
-.guideImage img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform 420ms cubic-bezier(0.2, 0.7, 0.2, 1);
-  width: 100%;
-}
-
-.guideLink:hover .guideImage img,
-.guideLink:focus-visible .guideImage img {
-  transform: scale(1.025);
-}
-
-.guideBody {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-  padding: clamp(1.4rem, 2.7vw, 2.5rem);
-}
-
-.guideMeta {
-  align-items: baseline;
-  color: var(--guides-muted);
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.72rem;
-  font-weight: 680;
-  gap: 0.45rem;
-  line-height: 1.5;
-  margin-block-end: 1.35rem;
-}
-
-.guideMeta > span:first-child {
-  color: var(--guides-rust);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.guideBody h3 {
-  font-size: clamp(1.85rem, 2.8vw, 3rem);
-  line-height: 1.04;
-  margin: 0;
-}
-
-.guideDescription {
-  color: var(--guides-muted);
-  font-size: 0.96rem;
-  line-height: 1.68;
-  margin: 1.15rem 0 0;
-}
-
-.guideTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  list-style: none;
-  margin: auto 0 0;
-  padding: 1.8rem 0 0;
-}
-
-.guideTags li {
-  border: 1px solid var(--guides-line);
-  font-size: 0.7rem;
-  font-weight: 680;
-  line-height: 1.35;
-  padding: 0.38rem 0.58rem;
-}
-
-.destinationTag {
-  background: var(--guides-soft);
-  color: var(--guides-ink);
-}
-
-.topicTag {
-  color: var(--guides-muted);
-}
-
-.readGuide {
-  align-items: center;
-  border-block-start: 1px solid var(--guides-line);
-  display: flex;
-  font-size: 0.82rem;
-  font-weight: 760;
-  gap: 0.7rem;
-  justify-content: space-between;
-  margin-block-start: 1.4rem;
-  min-height: 2.75rem;
-  padding-block-start: 0.85rem;
-}
-
-.readGuide span {
-  color: var(--guides-rust);
-  font-size: 1.1rem;
-  transition: transform 180ms ease;
-}
-
-.guideLink:hover .readGuide span,
-.guideLink:focus-visible .readGuide span {
-  transform: translateX(0.25rem);
-}
-
+/* Legacy entry collection surface, kept for the entry-guides adapter. */
 .entryCollection {
   background: var(--guides-soft);
   color: var(--guides-ink);
-  padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
 }
 
-.entryIntro {
-  align-items: end;
-  display: grid;
-  gap: clamp(2rem, 7vw, 8rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.58fr);
-  margin-block-end: clamp(3.5rem, 6vw, 6rem);
-}
-
-.entryEyebrow {
-  color: var(--guides-rust);
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.entryIntro h2 {
-  font-size: clamp(2.7rem, 5vw, 5rem);
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 13ch;
-  scroll-margin-top: 6.5rem;
-}
-
-.entryIntro > div:last-child > p {
-  color: var(--guides-muted);
-  font-size: 1rem;
-  line-height: 1.72;
-  margin: 0;
-  max-width: 38rem;
-}
-
+/* White pill inside the entry tile. */
 .entryAction {
-  align-items: center;
-  border-block-end: 1px solid var(--guides-ink);
+  background: var(--guides-paper);
   color: var(--guides-ink);
-  display: inline-flex;
-  font-size: 0.84rem;
-  font-weight: 760;
-  gap: 1.5rem;
-  justify-content: space-between;
-  margin-block-start: 1.5rem;
-  min-height: 2.75rem;
-  text-decoration: none;
 }
 
-.entryAction span {
-  color: var(--guides-muted);
-  transition: transform 180ms ease;
+.entryAction > span {
+  transition: transform 300ms var(--guides-ease);
 }
 
-.entryAction:hover span,
-.entryAction:focus-visible span {
-  transform: translateX(0.2rem);
-}
-
-.entryGuideGrid {
-  border-color: var(--guides-line);
-}
-
-.entryGuideSlot {
-  border-color: var(--guides-line);
-  grid-column: span 4;
-}
-
-.entryGuideGrid .entryGuideSlot:only-child {
-  grid-column: span 12;
-}
+/* ---------- Planner CTA: one tile ---------- */
 
 .cta {
   background: var(--guides-paper);
-  border-block-start: 1px solid var(--guides-line);
   color: var(--guides-ink);
-  padding: clamp(5rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
+  padding-block: 0 var(--guides-section);
 }
 
-.ctaEyebrow {
-  color: var(--guides-rust);
+.ctaInner {
+  background: var(--guides-tile);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
 }
 
 .ctaGrid {
-  align-items: end;
+  align-items: start;
   display: grid;
-  gap: clamp(2rem, 7vw, 8rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.52fr);
-  margin-block-start: clamp(2.5rem, 5vw, 4.75rem);
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  margin-block-start: 0.75rem;
 }
 
 .ctaGrid h2 {
-  font-size: clamp(2.85rem, 5.6vw, 5.8rem);
-  line-height: 0.96;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
   margin: 0;
-  max-width: 12ch;
+  max-width: 16ch;
 }
 
 .ctaGrid > div > p {
   color: var(--guides-muted);
-  font-size: 1rem;
-  line-height: 1.72;
-  margin: 0 0 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  text-wrap: pretty;
 }
 
 .ctaAction {
-  align-items: center;
   background: var(--guides-ink);
-  color: #fff;
-  display: inline-flex;
-  font-size: 0.88rem;
-  font-weight: 780;
-  gap: 1.25rem;
-  justify-content: space-between;
-  min-height: 3.25rem;
-  padding: 0.8rem 1rem 0.8rem 1.15rem;
-  text-decoration: none;
+  color: var(--hg-color-on-dark, #fff);
 }
 
-.ctaAction span {
-  font-size: 1.1rem;
-  transition: transform 180ms ease;
+.ctaAction > span {
+  transition: transform 300ms var(--guides-ease);
 }
 
-.ctaAction:hover span,
-.ctaAction:focus-visible span {
-  transform: translateX(0.2rem);
+a.paginationStep > span {
+  transition: transform 300ms var(--guides-ease);
 }
 
-.guidesPage[data-homeground-locale="zh"] .heroGrid h1,
-.guidesPage[data-homeground-locale="zh"] .countryGuideIntro h2,
-.guidesPage[data-homeground-locale="zh"] .decisionGrid h3,
-.guidesPage[data-homeground-locale="zh"] .searchBandCopy h2,
-.guidesPage[data-homeground-locale="zh"] .catalogIntro h2,
-.guidesPage[data-homeground-locale="zh"] .entryIntro h2,
-.guidesPage[data-homeground-locale="zh"] .guideBody h3,
-.guidesPage[data-homeground-locale="zh"] .ctaGrid h2 {
+@media (hover: hover) {
+  .ctaAction:hover {
+    background: #242424;
+  }
+
+  .ctaAction:hover > span,
+  .entryHandoff:hover .entryAction > span,
+  a.paginationStep[rel="next"]:hover > span {
+    transform: translateX(4px);
+  }
+
+  a.paginationStep[rel="prev"]:hover > span {
+    transform: translateX(-4px);
+  }
+}
+
+/* ---------- Focus ---------- */
+
+.countryGuideContext > a:focus-visible,
+.decisionGrid a:focus-visible,
+.entryHandoff:focus-visible,
+.guideLink:focus-visible,
+.paginationStep:focus-visible,
+.paginationPages a:focus-visible,
+.ctaAction:focus-visible {
+  outline: 2px solid var(--guides-focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Chinese and Korean ---------- */
+
+.guidesPage[data-homeground-locale="zh"] .heroGrid h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 500;
   letter-spacing: 0;
+  line-height: 1.15;
+  max-width: 13em;
 }
 
-.guidesPage[data-homeground-locale="ko"] .heroGrid h1,
-.guidesPage[data-homeground-locale="ko"] .countryGuideIntro h2,
-.guidesPage[data-homeground-locale="ko"] .decisionGrid h3,
-.guidesPage[data-homeground-locale="ko"] .searchBandCopy h2,
-.guidesPage[data-homeground-locale="ko"] .catalogIntro h2,
-.guidesPage[data-homeground-locale="ko"] .entryIntro h2,
-.guidesPage[data-homeground-locale="ko"] .guideBody h3,
-.guidesPage[data-homeground-locale="ko"] .ctaGrid h2 {
-  letter-spacing: -0.018em;
+.guidesPage[data-homeground-locale="ko"] .heroGrid h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  max-width: 13em;
+  word-break: keep-all;
 }
+
+.guidesPage[data-homeground-locale="zh"] :is(.searchBandCopy h2, .countryGuideIntro h2, .decisionGrid h3, .entryHandoff strong, .catalogIntro h2, .guideBody h3, .ctaGrid h2) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.guidesPage[data-homeground-locale="ko"] :is(.searchBandCopy h2, .countryGuideIntro h2, .decisionGrid h3, .entryHandoff strong, .catalogIntro h2, .guideBody h3, .ctaGrid h2) {
+  letter-spacing: 0;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.guidesPage[data-homeground-locale="ko"] :is(.heroGrid > p, .searchBandCopy > p, .countryGuideContext > p, .decisionGrid p, .entryHandoff small, .catalogSummary > p, .guideDescription, .ctaGrid p) {
+  word-break: keep-all;
+}
+
+/* "ch" is half an ideograph wide, so CJK headings measure in em instead. */
+.guidesPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.searchBandCopy h2, .countryGuideIntro h2, .catalogIntro h2, .ctaGrid h2) {
+  max-width: 14em;
+}
+
+.guidesPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .guideSlotLead .guideBody h3 {
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  line-height: 1.25;
+}
+
+/* ---------- Motion ---------- */
+
+/* Tiles rise as they scroll in; they start half-visible and settle within
+   120px. Browsers without scroll-driven animations show them statically. */
+@keyframes guidesTileRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .decisionGrid li,
+    .guideSlotCard,
+    .guideSlotRow {
+      animation: guidesTileRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
+}
+
+/*
+ * The three cards share four rows (photo, meta, title, summary), so a title
+ * that wraps in one card does not push its summary below its neighbours'.
+ */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 48.0625rem) {
+    .guideSlotCard {
+      display: grid;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+    }
+
+    .guideSlotCard .guideCard,
+    .guideSlotCard .guideLink,
+    .guideSlotCard .guideBody {
+      display: grid;
+      gap: 0;
+      grid-template-rows: subgrid;
+    }
+
+    .guideSlotCard .guideCard,
+    .guideSlotCard .guideLink {
+      grid-row: span 4;
+    }
+
+    .guideSlotCard .guideBody {
+      grid-row: span 3;
+    }
+  }
+}
+
+/* ---------- Interaction detail ---------- */
+
+/*
+ * Cursor light on tiles (PointerSpotlight writes --spot-x / --spot-y): a soft
+ * white glow under the pointer and a 1px ink edge that brightens nearest it.
+ * Without a fine pointer the tiles keep their plain hover colour.
+ */
+.decisionGrid a,
+.entryHandoff {
+  isolation: isolate;
+  position: relative;
+}
+
+.decisionGrid a::before,
+.decisionGrid a::after,
+.entryHandoff::before,
+.entryHandoff::after {
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 300ms ease;
+}
+
+.decisionGrid a::before,
+.entryHandoff::before {
+  background: radial-gradient(18rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(255 255 255 / 90%), transparent 65%);
+  z-index: -1;
+}
+
+.decisionGrid a::after,
+.entryHandoff::after {
+  background: radial-gradient(12rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(10 10 10 / 34%), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  padding: 1px;
+}
+
+/* The number disc turns ink and its figures roll up into an arrow. */
+.decisionNumber {
+  overflow: hidden;
+  position: relative;
+  transition:
+    background-color 300ms var(--guides-ease),
+    color 300ms var(--guides-ease);
+}
+
+.decisionNumber > span {
+  display: inline-block;
+}
+
+.decisionNumber > span,
+.decisionNumber::after {
+  transition: transform 450ms var(--guides-ease);
+}
+
+.decisionNumber::after {
+  align-items: center;
+  content: "→";
+  display: flex;
+  font-size: 0.9375rem;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  transform: translateY(110%);
+}
+
+.decisionGrid a:focus-visible .decisionNumber {
+  background: var(--guides-ink);
+  color: var(--hg-color-on-dark, #fff);
+}
+
+.decisionGrid a:focus-visible .decisionNumber > span {
+  transform: translateY(-160%);
+}
+
+.decisionGrid a:focus-visible .decisionNumber::after {
+  transform: none;
+}
+
+/* Guide titles draw an underline from the left on hover, line by line. */
+.titleInk {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 550ms var(--guides-ease);
+}
+
+.guideSlotLead .titleInk {
+  background-size: 0 2px;
+}
+
+.guideLink:focus-visible .titleInk {
+  background-size: 100% 1px;
+}
+
+.guideSlotLead .guideLink:focus-visible .titleInk {
+  background-size: 100% 2px;
+}
+
+@media (hover: hover) {
+  .decisionGrid a:hover::before,
+  .decisionGrid a:hover::after,
+  .entryHandoff:hover::before,
+  .entryHandoff:hover::after {
+    opacity: 1;
+  }
+
+  .decisionGrid a:hover .decisionNumber {
+    background: var(--guides-ink);
+    color: var(--hg-color-on-dark, #fff);
+  }
+
+  .decisionGrid a:hover .decisionNumber > span {
+    transform: translateY(-160%);
+  }
+
+  .decisionGrid a:hover .decisionNumber::after {
+    transform: none;
+  }
+
+  .guideLink:hover .titleInk {
+    background-size: 100% 1px;
+  }
+
+  .guideSlotLead .guideLink:hover .titleInk {
+    background-size: 100% 2px;
+  }
+}
+
+/* A small press on every tile and pill. */
+.entryHandoff,
+.paginationStep,
+.paginationPages a,
+.ctaAction {
+  transition-property: background-color, scale;
+}
+
+.decisionGrid a:active,
+.entryHandoff:active,
+.paginationStep:active,
+.paginationPages a:active,
+.ctaAction:active {
+  scale: 0.98;
+}
+
+/* Page-load entrance: the eyebrow, intro and search tile settle in after
+   the headline words; everything is fully visible within a second. */
+@keyframes guidesEnter {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    translate: 0 14px;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* Scroll reveals: photos open from the bottom edge while the picture
+   settles from a slight zoom; section headings come into focus. */
+@keyframes guidesImageReveal {
+  from {
+    clip-path: inset(16% 0 0 0 round 0.75rem);
+  }
+
+  to {
+    clip-path: inset(0 round 0.75rem);
+  }
+}
+
+@keyframes guidesImageSettle {
+  from {
+    scale: 1.12;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes guidesHeadingIn {
+  from {
+    filter: blur(6px);
+    opacity: 0.25;
+    translate: 0 12px;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .heroTopline {
+    animation: guidesEnter 700ms var(--guides-ease) both;
+  }
+
+  .heroGrid > p {
+    animation: guidesEnter 900ms var(--guides-ease) 320ms both;
+  }
+
+  .searchBandInner {
+    animation: guidesEnter 900ms var(--guides-ease) 480ms both;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .guideImage {
+      animation: guidesImageReveal linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+
+    .guideImage img {
+      animation: guidesImageSettle linear both;
+      animation-range: entry 0% cover 60%;
+      animation-timeline: view();
+    }
+
+    .countryGuideIntro h2,
+    .catalogIntro h2,
+    .ctaGrid h2 {
+      animation: guidesHeadingIn linear both;
+      animation-range: entry 0% entry 100%;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* ---------- Tablet ---------- */
 
 @media (max-width: 64rem) {
   .decisionGrid li {
     grid-column: span 6;
   }
-
-  .guideSlot,
-  .guideSlotLead,
-  .guideSlotLead + .guideSlot,
-  .guideSlotHalf {
-    grid-column: span 6;
-  }
-
-  .guideSlotWide {
-    grid-column: span 12;
-  }
-
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child {
-    grid-column: span 12;
-  }
-
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
-    display: grid;
-    grid-template-columns: minmax(0, 0.94fr) minmax(20rem, 0.72fr);
-  }
-
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideImage {
-    aspect-ratio: auto;
-    min-height: 24rem;
-  }
 }
 
-@media (max-width: 48rem) {
-  .heroTopline {
-    align-items: flex-start;
-    flex-direction: column;
-    margin-block-end: 3.5rem;
-  }
-
-  .languageNav {
+@media (max-width: 61.25rem) {
+  .countryGuideContext {
     justify-content: flex-start;
-    margin-inline-start: -0.75rem;
   }
 
   .heroGrid,
   .countryGuideIntro,
-  .searchBandInner,
   .catalogIntro,
-  .ctaGrid {
-    align-items: start;
-    grid-template-columns: 1fr;
+  .ctaGrid,
+  .searchBandInner {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .heroGrid h1 {
-    font-size: clamp(3.25rem, 18vw, 5.4rem);
+  .guideSlotRow {
+    grid-column: 1 / -1;
   }
 
-  .guideSlot,
-  .guideSlotLead,
-  .guideSlotLead + .guideSlot,
-  .guideSlotHalf,
-  .guideSlotWide {
-    grid-column: span 12;
+  .guideSlotRow .guideLink {
+    grid-template-columns: minmax(0, 1fr) 8rem;
   }
+}
 
-  .guideSlotWide .guideLink {
-    display: flex;
-  }
+/* ---------- Phone: every guide after the featured one is a row ---------- */
 
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
-    display: flex;
-  }
-
-  .guideSlotWide .guideImage {
-    aspect-ratio: 16 / 10;
-    min-height: 0;
-  }
-
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideImage {
-    aspect-ratio: 16 / 10;
-    min-height: 0;
-  }
-
-  .guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
-    .guideImage {
-    aspect-ratio: 1;
+@media (max-width: 48rem) {
+  .guidesPage {
+    --guides-section: 4rem;
   }
 
   .decisionGrid li {
@@ -872,14 +1131,14 @@ a.paginationStep:focus-visible {
   }
 
   .decisionGrid a {
-    gap: 0.65rem;
-    grid-template-columns: auto minmax(0, 1fr);
-    min-height: 9.25rem;
-    padding: 1rem;
+    gap: 0.75rem;
+    min-height: 0;
+    padding: 1.25rem;
   }
 
   .decisionGrid h3 {
-    font-size: clamp(1.05rem, 5vw, 1.28rem);
+    font-size: 1.0625rem;
+    line-height: 1.25;
     overflow-wrap: anywhere;
   }
 
@@ -890,23 +1149,112 @@ a.paginationStep:focus-visible {
 
   .decisionAction {
     justify-content: flex-end;
-    margin-block-start: 0;
-    padding-block-start: 0.45rem;
   }
 
   .entryHandoff {
-    align-items: start;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.25rem;
   }
 
   .entryHandoff .entryAction {
-    justify-content: space-between;
-    width: 100%;
+    justify-self: start;
+  }
+
+  /* One column: twelve 2.5rem gaps would be wider than a phone. */
+  .guideGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guideSlotLead {
+    margin-block-end: 1.5rem;
+  }
+
+  .guideSlotLead .guideLink {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .guideSlotLead .guideImage {
+    aspect-ratio: 16 / 10;
+    border-radius: 0.75rem;
+  }
+
+  .guideSlotLead .guideBody h3 {
+    font-size: clamp(1.5rem, 6.5vw, 1.875rem);
+    line-height: 1.12;
+  }
+
+  .guideSlotLead .guideDescription {
+    font-size: 1rem;
+    -webkit-line-clamp: 3;
+    margin-block-start: 0.5rem;
+  }
+
+  .guideSlotCard,
+  .guideSlotRow {
+    grid-column: 1 / -1;
+    margin-block-end: 0;
+  }
+
+  .guideSlotCard .guideLink,
+  .guideSlotRow .guideLink {
+    align-items: start;
+    border-radius: 0;
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    margin-inline: 0;
+    padding: 0.75rem 0;
+  }
+
+  .guideSlotCard .guideImage,
+  .guideSlotRow .guideImage,
+  .guideSlotCard[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"] .guideImage {
+    aspect-ratio: 1;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .guideSlotCard .guideBody,
+  .guideSlotRow .guideBody {
+    grid-column: 2;
+    grid-row: 1;
+    padding-block-start: 0.1rem;
+  }
+
+  .guideMeta {
+    font-size: 0.75rem;
+    margin-block-end: 0.25rem;
+  }
+
+  .guideSlotCard .guideBody h3,
+  .guideSlotRow .guideBody h3 {
+    font-size: 1.0625rem;
+    line-height: 1.25;
+  }
+
+  .guideSlotCard .guideDescription,
+  .guideSlotRow .guideDescription {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    margin-block-start: 0.25rem;
+  }
+
+  .guideSlotRow .guideLink:hover {
+    background: none;
+  }
+
+  .pagination {
+    margin-block-start: 2rem;
   }
 
   .paginationControls {
-    align-items: stretch;
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 
   .paginationPages {
@@ -915,32 +1263,59 @@ a.paginationStep:focus-visible {
   }
 
   .paginationStep {
-    border-block-start: 1px solid var(--guides-line);
-    padding-block-start: 0.65rem;
+    padding-inline: 1rem;
   }
 
-  .paginationStep:last-child {
-    justify-self: stretch;
+  .ctaGrid > div > p {
+    font-size: 1rem;
   }
 }
 
+@media (max-width: 42.5rem) {
+  .guidesPage {
+    --guides-gutter: 1rem;
+  }
+
+  .heroGrid h1 {
+    font-size: clamp(2.25rem, 10vw, 2.75rem);
+    line-height: 1.05;
+  }
+
+  .guidesPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .heroGrid h1 {
+    font-size: clamp(2.1rem, 9.4vw, 2.6rem);
+    max-width: 100%;
+  }
+
+  .heroGrid > p {
+    font-size: 1rem;
+  }
+
+  .searchBandInner {
+    padding: 1.25rem;
+  }
+
+  .ctaInner {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .ctaAction {
+    width: 100%;
+  }
+}
+
+/* ---------- Narrow phones: a compact list, first guide close to the top ---------- */
+
 @media (max-width: 26.25rem) {
   .hero {
-    padding-block: 1.5rem 1.75rem;
+    padding-block: 1.5rem 0;
   }
 
   .heroTopline {
-    margin-block-end: 0.85rem;
+    margin-block-end: 0.5rem;
   }
 
   .heroGrid {
     gap: 0;
-  }
-
-  .heroGrid h1 {
-    font-size: clamp(2.35rem, 12vw, 3rem);
-    line-height: 0.96;
-    max-width: 12ch;
   }
 
   .heroGrid > p {
@@ -948,21 +1323,17 @@ a.paginationStep:focus-visible {
   }
 
   .searchBand {
-    padding-block: 1.25rem;
+    padding-block: 1.25rem 0;
   }
 
   .searchBandInner {
     gap: 0.75rem;
-  }
-
-  .searchBandCopy .eyebrow,
-  .searchBandCopy > p:last-child {
-    display: none;
+    padding: 1rem;
   }
 
   .searchBandCopy h2 {
-    font-size: 1.45rem;
-    line-height: 1.05;
+    font-size: 1.25rem;
+    line-height: 1.2;
     margin: 0;
     max-width: none;
   }
@@ -971,7 +1342,7 @@ a.paginationStep:focus-visible {
     display: none;
   }
 
-  .searchFormCompact :global(form[role="search"] > label) {
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > label) {
     block-size: 1px;
     clip-path: inset(50%);
     margin: -1px;
@@ -981,27 +1352,27 @@ a.paginationStep:focus-visible {
     inline-size: 1px;
   }
 
-  .searchFormCompact :global(form[role="search"] > div) {
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div) {
     grid-template-columns: auto minmax(0, 1fr) 3rem;
     min-height: 3rem;
   }
 
-  .searchFormCompact :global(form[role="search"] > div > input) {
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div > input) {
     min-height: 2.9rem;
     padding-block: 0.5rem;
   }
 
-  .searchFormCompact :global(form[role="search"] > div > button) {
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div > button) {
     grid-column: 3;
     grid-row: 1;
-    margin-inline-start: 0;
-    min-height: 2.9rem;
-    min-width: 3rem;
+    margin: 0;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
     padding: 0;
-    width: 3rem;
+    width: 2.5rem;
   }
 
-  .searchFormCompact :global(form[role="search"] > div > button > span) {
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div > button > span) {
     block-size: 1px;
     clip-path: inset(50%);
     inline-size: 1px;
@@ -1011,29 +1382,35 @@ a.paginationStep:focus-visible {
   }
 
   .countryGuide {
-    padding-block: 1.5rem;
+    padding-block: 2.5rem 0;
   }
 
   .countryGuideIntro {
-    gap: 0.6rem;
-    margin-block-end: 0.85rem;
+    gap: 0.25rem;
+    margin-block-end: 1rem;
   }
 
-  .countryGuideIntro .eyebrow,
-  .countryGuideContext > p {
+  .countryGuideIntro .eyebrow {
     display: none;
   }
 
+  .countryGuideContext {
+    justify-content: flex-start;
+  }
+
   .countryGuideIntro h2 {
-    font-size: 1.55rem;
-    line-height: 1.05;
+    font-size: 1.5rem;
+    line-height: 1.15;
     margin: 0;
     max-width: none;
   }
 
   .countryGuideContext > a {
-    font-size: 0.74rem;
-    min-height: 2.75rem;
+    margin-block-start: 0;
+  }
+
+  .decisionGrid {
+    gap: 0.5rem;
   }
 
   .decisionGrid li {
@@ -1041,12 +1418,11 @@ a.paginationStep:focus-visible {
   }
 
   .decisionGrid a {
-    display: flex;
-    flex-direction: column;
+    border-radius: 0.75rem;
     gap: 0.35rem;
     justify-content: space-between;
     min-height: 5.25rem;
-    padding: 0.65rem;
+    padding: 0.85rem;
   }
 
   .decisionNumber {
@@ -1054,25 +1430,17 @@ a.paginationStep:focus-visible {
   }
 
   .decisionGrid h3 {
-    font-size: clamp(0.82rem, 3.8vw, 0.96rem);
-    line-height: 1.16;
-    max-width: none;
-  }
-
-  .decisionAction {
-    border-block-start: 0;
-    justify-content: flex-end;
-    min-height: 1rem;
-    padding-block-start: 0;
-    width: 100%;
+    font-size: clamp(0.875rem, 3.9vw, 0.96rem);
+    line-height: 1.25;
   }
 
   .entryHandoff {
     align-items: center;
+    border-radius: 0.75rem;
     gap: 0.5rem;
     grid-template-columns: minmax(0, 1fr) 2.75rem;
     min-height: 3.25rem;
-    padding: 0.55rem 0.7rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.85rem;
   }
 
   .entryHandoff small {
@@ -1081,13 +1449,15 @@ a.paginationStep:focus-visible {
 
   .entryHandoff strong {
     font-size: 0.98rem;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 
   .entryHandoff .entryAction {
     font-size: 0;
-    justify-content: flex-end;
+    gap: 0;
+    justify-self: end;
     min-height: 2.75rem;
+    padding: 0;
     width: 2.75rem;
   }
 
@@ -1100,8 +1470,8 @@ a.paginationStep:focus-visible {
   }
 
   .catalogIntro {
-    gap: 0.35rem;
-    margin-block-end: 0.9rem;
+    gap: 0.25rem;
+    margin-block-end: 1rem;
   }
 
   .catalogIntro .eyebrow,
@@ -1110,63 +1480,31 @@ a.paginationStep:focus-visible {
   }
 
   .catalogIntro h2 {
-    font-size: 1.7rem;
-    line-height: 1.04;
+    font-size: 1.5rem;
+    line-height: 1.15;
     margin: 0;
     max-width: none;
   }
 
   .guideCount {
-    border-block-start: 0;
     margin: 0;
-    padding-block-start: 0;
   }
 
-  .guideGrid {
-    border-inline-start: 0;
-  }
-
-  .guideSlot,
-  .guideSlotLead,
-  .guideSlotLead + .guideSlot,
-  .guideSlotHalf,
-  .guideSlotWide,
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child {
-    border-inline-end: 0;
-    grid-column: span 12;
-  }
-
-  .guideLink,
-  .guideSlotWide .guideLink,
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
-    display: grid;
+  .guideSlotCard .guideLink,
+  .guideSlotRow .guideLink {
     grid-template-columns: 5.5rem minmax(0, 1fr);
-    min-height: 7.75rem;
   }
 
-  .guideImage,
-  .guideSlotLead .guideImage,
-  .guideSlotWide .guideImage,
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideImage,
-  .guideSlot[data-guide-id="zhangjiajie-glass-bridge-vs-skywalk"]
-    .guideImage {
-    align-self: stretch;
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 0;
-  }
-
-  .guideBody {
-    padding: 0.85rem 0.75rem 0.8rem;
+  .guideSlotCard .guideImage,
+  .guideSlotRow .guideImage {
+    aspect-ratio: 1;
   }
 
   .guideMeta {
     align-items: start;
     display: grid;
-    font-size: 0.64rem;
-    gap: 0.16rem;
+    gap: 0.1rem;
     line-height: 1.35;
-    margin-block-end: 0.55rem;
   }
 
   .guideMeta > span[aria-hidden="true"] {
@@ -1174,8 +1512,6 @@ a.paginationStep:focus-visible {
   }
 
   .guideBody h3 {
-    font-size: clamp(1.08rem, 5.3vw, 1.24rem);
-    line-height: 1.12;
     overflow-wrap: anywhere;
   }
 
@@ -1184,78 +1520,74 @@ a.paginationStep:focus-visible {
     display: none;
   }
 
-  .readGuide {
-    font-size: 0.7rem;
-    margin-block-start: auto;
-    min-height: 1.8rem;
-    padding-block-start: 0.4rem;
+  .guideSlotLead .readGuide {
+    display: none;
   }
 }
 
 @media (max-width: 22rem) {
-  .hero,
-  .countryGuide,
-  .searchBand,
-  .catalog,
-  .cta {
-    padding-inline: 0.75rem;
+  .guidesPage {
+    --guides-gutter: 0.75rem;
   }
 
   .heroGrid h1 {
-    font-size: 3.1rem;
+    font-size: 2.1rem;
   }
 
-  .guideLink,
-  .guideSlotWide .guideLink,
-  .guideGrid[data-odd-count="true"] .guideSlot:last-child .guideLink {
+  .guideSlotCard .guideLink,
+  .guideSlotRow .guideLink {
     grid-template-columns: 5rem minmax(0, 1fr);
   }
 
-  .guideBody {
-    padding-inline: 0.65rem;
-  }
-
-  .guideBody h3 {
-    font-size: 1.06rem;
-  }
-
-  .ctaAction {
-    width: 100%;
+  .guideSlotCard .guideBody h3,
+  .guideSlotRow .guideBody h3 {
+    font-size: 1rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .decisionNumber,
+  .decisionNumber > span,
+  .decisionNumber::after,
+  .titleInk,
+  .decisionGrid a::before,
+  .decisionGrid a::after,
+  .entryHandoff::before,
+  .entryHandoff::after,
   .guideImage img,
   .decisionAction > span:last-child,
-  .readGuide span,
-  .entryAction span,
-  .ctaAction span {
+  .countryGuideContext > a > span,
+  .readGuide > span,
+  .entryAction > span,
+  .ctaAction > span,
+  a.paginationStep > span {
     transition: none;
   }
 
   .guideLink:hover .guideImage img,
-  .guideLink:focus-visible .guideImage img,
-  .guideLink:hover .readGuide span,
-  .guideLink:focus-visible .readGuide span,
-  .decisionGrid a:hover .decisionAction > span:last-child,
-  .decisionGrid a:focus-visible .decisionAction > span:last-child,
-  .entryAction:hover span,
-  .entryAction:focus-visible span,
-  .ctaAction:hover span,
-  .ctaAction:focus-visible span {
+  .guideLink:focus-visible .guideImage img {
     transform: none;
   }
 }
 
 @media (prefers-contrast: more) {
-  .guideGrid,
-  .decisionGrid,
-  .decisionGrid li,
-  .decisionAction,
-  .guideSlot,
-  .guideCount,
-  .readGuide,
-  .guideTags li {
-    border-color: var(--guides-ink);
+  .searchBandInner,
+  .decisionGrid a,
+  .entryHandoff,
+  .ctaInner,
+  .paginationStep,
+  .paginationPages a {
+    border: 1px solid var(--guides-ink);
+  }
+}
+
+@media (forced-colors: active) {
+  .searchBandInner,
+  .decisionGrid a,
+  .entryHandoff,
+  .ctaInner,
+  .paginationStep,
+  .paginationPages a {
+    border: 1px solid CanvasText;
   }
 }

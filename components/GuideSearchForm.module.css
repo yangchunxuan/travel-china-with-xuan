@@ -182,6 +182,120 @@
   background: #242424;
 }
 
+/*
+ * /guides/ hub: the same field and pill as the homepage, plus the suggested
+ * searches as white 36px pills inside the #f9f8f6 search tile.
+ */
+/* The tile's question already names the field, so its label and the
+   "Suggested searches" label are read by screen readers only. */
+.searchExperience[data-guide-search-surface="guides_hub"] .form > label,
+.searchExperience[data-guide-search-surface="guides_hub"] .examples > span {
+  block-size: 1px;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .examples {
+  grid-template-columns: minmax(0, 1fr);
+  margin-block-start: 0.75rem;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .control {
+  border-radius: 0.75rem;
+  min-height: 3.5rem;
+  overflow: hidden;
+  transition: box-shadow 250ms ease;
+}
+
+/* Focus: the outline becomes a slowly turning ink-to-terracotta ring. */
+@property --guides-ring-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes guidesRingTurn {
+  to {
+    --guides-ring-angle: 360deg;
+  }
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .control:focus-within {
+  animation: guidesRingTurn 4s linear infinite;
+  background:
+    linear-gradient(var(--guides-card, #fff), var(--guides-card, #fff)) padding-box,
+    conic-gradient(
+        from var(--guides-ring-angle),
+        #0a0a0a,
+        #a84731 30%,
+        #f2c1ad 45%,
+        #a84731 60%,
+        #0a0a0a
+      )
+      border-box;
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgb(168 71 49 / 22%);
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .control input {
+  min-height: 3.4rem;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .rotatingPlaceholder,
+.searchExperience[data-guide-search-surface="guides_hub"] .control input::placeholder {
+  color: #5d6065;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .control button {
+  align-self: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  margin-inline-end: 0.375rem;
+  min-height: 2.75rem;
+  min-width: 0;
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .control button:hover,
+.searchExperience[data-guide-search-surface="guides_hub"]
+  .control
+  button:focus-visible {
+  background: #242424;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .examples > span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding-block: 0.45rem;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .examples a {
+  align-items: center;
+  background: var(--guides-paper, #fff);
+  border-color: transparent;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  min-height: 2.25rem;
+  padding: 0.35rem 0.85rem;
+  transition: background-color 150ms ease;
+}
+
+.searchExperience[data-guide-search-surface="guides_hub"] .examples a:hover,
+.searchExperience[data-guide-search-surface="guides_hub"] .examples a:focus-visible {
+  background: var(--guides-warm, #f2f1ef);
+  color: var(--guides-ink, var(--hg-color-ink));
+}
+
 .suggestions {
   background: var(--guides-card, var(--hg-color-card));
   border: 1px solid var(--guides-ink, var(--hg-color-ink));
@@ -387,12 +501,26 @@
     width: calc(100% - 0.15rem);
   }
 
+  .searchExperience[data-guide-search-surface="guides_hub"] .control input {
+    min-height: 3.2rem;
+  }
+
+  .searchExperience[data-guide-search-surface="guides_hub"] .control button {
+    margin: 0 0.375rem 0.375rem -0.475rem;
+    min-height: 2.75rem;
+    width: calc(100% + 0.1rem);
+  }
+
   .examples {
     grid-template-columns: 1fr;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .searchExperience[data-guide-search-surface="guides_hub"] .control:focus-within {
+    animation: none;
+  }
+
   .control,
   .control button,
   .rotatingPlaceholder,

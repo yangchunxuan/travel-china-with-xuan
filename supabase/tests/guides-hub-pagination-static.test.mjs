@@ -229,8 +229,10 @@ test("the 24-guide mobile batch becomes a compact readable list without losing d
 
   assert.match(pagination, /GUIDES_HUB_PAGE_SIZE\s*=\s*24/);
   assert.match(compact, /\.guideLink,[\s\S]*?grid-template-columns:\s*5\.5rem minmax\(0, 1fr\)/);
-  assert.match(compact, /min-height:\s*7\.75rem/);
-  assert.match(compact, /\.guideImage,[\s\S]*?aspect-ratio:\s*auto/);
+  assert.match(
+    compact,
+    /\.guideSlotCard \.guideImage,\s*\.guideSlotRow \.guideImage\s*\{\s*aspect-ratio:\s*1;/,
+  );
   assert.match(compact, /\.guideMeta\s*\{[\s\S]*?display:\s*grid/);
   assert.match(compact, /\.guideBody h3\s*\{[\s\S]*?overflow-wrap:\s*anywhere/);
   assert.match(compact, /\.guideDescription,\s*\.guideTags\s*\{\s*display:\s*none/);
@@ -247,7 +249,10 @@ test("the 24-guide mobile batch becomes a compact readable list without losing d
 
   assert.match(page, /<time dateTime=\{guide\.dateModified\}>/);
   assert.match(page, /\{sectionLabel\}/);
-  assert.match(page, /<h3>\{guide\.headline\}<\/h3>/);
+  assert.match(
+    page,
+    /<h3>\s*<span className=\{styles\.titleInk\}>\s*<KeepWords locale=\{locale\} text=\{guide\.headline\} \/>\s*<\/span>\s*<\/h3>/,
+  );
   assert.match(page, /className=\{styles\.guideLink\} href=\{guide\.canonicalPath\}/);
 });
 

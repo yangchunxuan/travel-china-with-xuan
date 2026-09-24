@@ -102,7 +102,17 @@ test("destination discovery is semantic, keyboard-visible and responsive", async
   assert.match(component, /<li key=\{hub\.id\}>/);
   assert.match(component, /<Link href=\{city\.path\}>/);
   assert.match(styles, /\.cityGrid a:focus-visible[\s\S]*?outline:\s*3px solid/);
-  assert.match(styles, /grid-template-columns:\s*repeat\(4, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.cityGrid \{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
+  // The latitude/longitude plot is decorative; the cards stay the only links.
+  assert.match(component, /<svg[\s\S]*?aria-hidden="true"/);
+  assert.doesNotMatch(
+    component.slice(
+      component.indexOf("function CityPlot"),
+      component.indexOf("export function DestinationsHubPage"),
+    ),
+    /<Link|href=/,
+  );
+  assert.match(styles, /\.cities:has\(\.cityGrid a:is\(:hover, :focus-visible\)\) \.plotCity/);
   assert.match(styles, /@media \(max-width: 40rem\)[\s\S]*?\.cityGrid[\s\S]*?grid-template-columns:\s*1fr/);
   assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.hero \{[\s\S]*?padding-block:\s*1\.25rem 1\.8rem/);
   assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.scope ul \{[\s\S]*?grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/);
