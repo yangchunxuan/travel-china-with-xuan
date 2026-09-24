@@ -1,5 +1,10 @@
 # Targeted payment-answer supplement — 2026-09-09
 
+## 2026-09-25 locale-date clarification
+
+- The English payment guide was fact-reviewed on 24 September and modified that day. The Korean guide received a new, individually sourced section on 25 September, but its existing whole-page 10 August review date remains in the page header. The Chinese body was not changed by this release and retains its 20 September modification date and 10 August factual review date.
+- Locale-specific dates in guide metadata prevent a new English or Korean section from implying that the untouched Chinese guide was re-reviewed. The Korean source heading now describes all listed sources rather than calling a third-party report an official source.
+
 Scope: the two directly observed payment questions, in `body.en.ts`, `body.zh.ts`, `body.ko.ts`. Added `google-wallet-*` and `wechat-top-up-*`; appended four official sources. Only `dateModified` becomes 2026-09-09. The previous whole-page `sourceReviewedDate` remains 2026-08-10; source heading now shows individual review dates. Fees, limits, payment configuration and other payment products were not changed. This is a local content supplement; publication and traffic require separate evidence.
 
 ## Actual query evidence

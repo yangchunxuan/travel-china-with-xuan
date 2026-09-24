@@ -11,7 +11,7 @@
   "imageWidth": 1600,
   "imageHeight": 1000,
   "datePublished": "2026-08-20",
-  "dateModified": "2026-09-19",
+  "dateModified": "2026-09-25",
   "sourceReviewedDate": "2026-08-20",
   "search": {
     "section": "essentials",
@@ -22,6 +22,7 @@
   "locales": {
     "en": {
       "path": "/guides/china-online-arrival-card/",
+      "sourceReviewedDate": "2026-09-24",
       "title": "China Online Arrival Card: Official Free Form and Backup",
       "headline": "China Online Arrival Card: Fill the Official Free Form and Keep a Port Backup",
       "description": "Use China’s official free arrival-card service, prepare the right records, identify exemptions and recover from form errors, outages or fake paid websites.",

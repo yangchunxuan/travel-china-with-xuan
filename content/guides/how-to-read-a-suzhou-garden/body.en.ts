@@ -52,6 +52,42 @@ const body: StructuredPageBody = {
       tone: "decision",
     },
     {
+      id: "practical-heading",
+      type: "heading",
+      level: 2,
+      text: "Tickets, opening hours and how long each garden takes",
+    },
+    {
+      id: "practical-table",
+      type: "table",
+      caption: "The four gardens side by side: official daytime prices and hours, with Homeground's suggested visit time",
+      columns: ["Garden", "Day ticket: peak / off-peak", "Opening hours", "Time we suggest"],
+      rows: [
+        ["Humble Administrator's Garden — 拙政园", "RMB 80 / RMB 70", "07:30–17:30 (Mar–Oct), except 06:45 opening from 19 Jun to 7 Oct 2026; 07:30–17:00 (Nov–Feb)", "2 to 2.5 hours"],
+        ["Lingering Garden — 留园", "RMB 55 / RMB 45", "07:30–17:30 (Mar–Oct); 07:30–17:00 (Nov–Feb)", "1.5 to 2 hours"],
+        ["Master-of-Nets Garden — 网师园", "RMB 40 / RMB 30 by day; separate night show RMB 120", "Day: 07:30–17:30 (Mar–Oct), 07:30–17:00 (Nov–Feb); check the dated night-show schedule", "About 1 hour, or an evening for the night show"],
+        ["Lion Forest Garden — 狮子林", "RMB 40 / RMB 30", "07:30–17:30 (Mar–Oct); 07:30–17:00 (Nov–Feb)", "1 to 1.5 hours"],
+      ],
+    },
+    {
+      id: "practical-notes",
+      type: "list",
+      items: [
+        "Peak season is April, May and July to October; January, February, March, June, November and December are off-peak.",
+        "For daytime visits, last admission is 30 minutes before closing. During the Qingming, May Day, Mid-Autumn and National Day holidays the gardens close half an hour later, at 18:00; confirm your date's notice.",
+        "For daytime garden tickets, children aged 6 and under, or up to 1.4 metres tall, enter free; those over 6 and up to 18 who do not qualify for free entry pay half price. The separate Master-of-Nets night show admits children up to 1.2 metres tall free with an adult and offers no standard child discount above that height.",
+        "The 2026 Master-of-Nets night-show notice lists 18:25–22:20, with last admission at 21:35—not a last ticket-sale time. Reserve a timed show slot and check the official notice for your date; night-show hours can change.",
+        "Book Humble Administrator's, Lingering and Lion Forest gardens online in advance through the official Suzhou Garden Tourism (苏州园林旅游) platform. Humble Administrator's 2026 notice specifies a timed reservation 1–7 days ahead; carry the passport or other document used to book.",
+        "The garden authority says Master-of-Nets needs no advance reservation for daytime entry. The city says overseas visitors can buy on site when tickets are available and ask a service counter for help if self-service fails. The Master-of-Nets night show has its own timed booking through the official account.",
+        "Our advice for a quieter visit: arrive at opening or in the last hour before last entry, and expect the biggest crowds at weekends and on public holidays in April, May and October.",
+      ],
+    },
+    {
+      id: "practical-source-note",
+      type: "paragraph",
+      text: "Daytime prices, concessions and standard hours come from the Suzhou garden authority's published lists. The 2026 early opening, reservation rules and night-show details come from the later official notices linked below, checked on 25 September 2026. Check the official Suzhou Garden Tourism account for your date, because hours, sessions and entry rules can change.",
+    },
+    {
       id: "half-day-garden-heading",
       type: "heading",
       level: 2,
@@ -372,6 +408,14 @@ const body: StructuredPageBody = {
           answer: "Nine. Four were inscribed in 1997 and five added in 2000: the Humble Administrator's Garden, Lingering Garden, Master-of-Nets Garden, Mountain Villa with Embracing Beauty, Canglang Pavilion, Lion Forest Garden, Garden of Cultivation, Couple's Retreat and Retreat & Reflection Garden.",
         },
         {
+          question: "How much are tickets for the Suzhou gardens?",
+          answer: "Day tickets in peak season (April, May and July to October) cost RMB 80 at Humble Administrator's, RMB 55 at Lingering, and RMB 40 each at Master-of-Nets and Lion Forest; off-peak prices are RMB 70, 45, 30 and 30. For daytime entry, children aged 6 and under or up to 1.4 metres tall enter free; those over 6 and up to 18 who do not qualify for free entry pay half. The separate Master-of-Nets night show costs RMB 120; only children up to 1.2 metres tall enter free with an adult, with no other standard discounts.",
+        },
+        {
+          question: "What time do the Suzhou gardens open?",
+          answer: "The four gardens' standard daytime hours are 07:30–17:30 from March to October and 07:30–17:00 from November to February, with last admission 30 minutes before closing. Humble Administrator's opens at 06:45 from 19 June to 7 October 2026. The separate Master-of-Nets night show lists 18:25–22:20 in its 2026 notice, with last admission at 21:35; check the dated show schedule before booking.",
+        },
+        {
           question: "What does borrowed scenery (jiejing) mean?",
           answer: "An element beyond the garden boundary, such as a distant pagoda, a neighbouring tree line, sky or sound, made to take part in the composition inside. It is often confused with a framed view (框景), which is a scene cut by a doorway or window within the garden.",
         },
@@ -411,7 +455,7 @@ const body: StructuredPageBody = {
     {
       id: "sources",
       type: "sources",
-      title: "Official, museum, academic and image sources checked in August 2026",
+      title: "Official, museum, academic and image sources",
       items: [
         {
           label: "Classical Gardens of Suzhou — World Heritage property, criteria and conservation summary",
@@ -472,6 +516,48 @@ const body: StructuredPageBody = {
           url: "https://doi.org/10.1080/13467581.2024.2358202",
           publisher: "Journal of Asian Architecture and Building Engineering",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Suzhou garden ticket prices, peak and off-peak (list dated 11 July 2024)",
+          url: "https://ylj.suzhou.gov.cn/szsylj/mpjg/wztt.shtml",
+          publisher: "Suzhou Municipal Bureau of Landscape and Forestry",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "Suzhou garden opening hours and last admission (list dated 9 January 2025)",
+          url: "https://ylj.suzhou.gov.cn/szsylj/kfsj/wztt.shtml",
+          publisher: "Suzhou Municipal Bureau of Landscape and Forestry",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "Suzhou garden admission concessions for children and young people (list dated 23 September 2024)",
+          url: "https://ylj.suzhou.gov.cn/szsylj/zcyh/wztt.shtml",
+          publisher: "Suzhou Municipal Bureau of Landscape and Forestry",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "2026 Master-of-Nets night-show hours, last admission, price and child policy",
+          url: "https://visitsz.wglj.suzhou.com.cn/news-detail.aspx?id=2829",
+          publisher: "Suzhou Garden Tourism via Suzhou Municipal Bureau of Culture, Radio, Television and Tourism",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "2026 garden authority answer on which gardens need advance reservations",
+          url: "https://www.suzhou.gov.cn/szsrmzf/zfzb/202602/0922ee651b354608b175f451211683d2.shtml",
+          publisher: "Suzhou Municipal People's Government",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "Humble Administrator's Garden 06:45 opening and reservation window, 19 June to 7 October 2026",
+          url: "https://www.suzhou.gov.cn/szsrmzf/mszx/202606/face4650ec2245ce818aecc53eb4aaaa.shtml",
+          publisher: "Suzhou Municipal People's Government",
+          reviewedAt: "2026-09-25",
+        },
+        {
+          label: "Overseas visitor ticketing and on-site assistance at Suzhou gardens",
+          url: "https://www.suzhou.gov.cn/szsrmzf/szyw/202407/b9adeadc7d134766a4654cff216dfcf1.shtml",
+          publisher: "Suzhou Municipal People's Government",
+          reviewedAt: "2026-09-25",
         },
         {
           label: "Hero image: Lingering Garden by kevinmcgill, CC BY-SA 2.0; cropped and converted to WebP",
