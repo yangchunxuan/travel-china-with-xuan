@@ -1032,9 +1032,8 @@
 }
 
 /*
- * This page borrows EditorialGuidePage's .hero, .dek, .article and .cta and
- * the homepage's .localeRoot. Its own rules for those elements share their
- * specificity, so the result used to depend on which stylesheet the bundler
+ * This page borrows EditorialGuidePage's .hero, .dek, .article and .cta. Its
+ * own rules for those elements share their specificity, so the result used to depend on which stylesheet the bundler
  * loaded last (on the live site this one, so these rules won). Pin those
  * wins so the page keeps its look whatever the chunk order.
  */

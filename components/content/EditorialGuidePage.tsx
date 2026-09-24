@@ -34,7 +34,7 @@ import { EditorialByline } from "../EditorialByline";
 import { AnimatedHeadline } from "../motion/AnimatedHeadline";
 import { ReadingProgress } from "../motion/ReadingProgress";
 import { GuideCtaLink } from "../GuideCtaLink";
-import homeStyles from "../HomegroundHomePage.module.css";
+import localeStyles from "../LocaleRoot.module.css";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
@@ -273,7 +273,7 @@ export function EditorialGuidePage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.pageRoot} ${styles.grokGuide}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.pageRoot} ${styles.grokGuide}`}
       data-homeground-locale={locale}
       lang={homeCopy.htmlLang}
     >

@@ -24,7 +24,7 @@ test("secondary hubs use the homepage white, ink and neutral surface system", as
 
   assert.match(
     platform,
-    /\.platformMap \{[\s\S]{0,160}background: var\(--hub-soft\)[\s\S]{0,160}color: var\(--hub-ink\)/,
+    /\.platformMap \{[\s\S]{0,160}background: var\(--hub-paper\)[\s\S]{0,160}color: var\(--hub-ink\)/,
   );
   assert.doesNotMatch(
     platform,
@@ -42,7 +42,8 @@ test("secondary hubs use the homepage white, ink and neutral surface system", as
     search,
     /\.plannerHandoff \{[\s\S]{0,180}background: var\(--guides-soft\)/,
   );
-  assert.match(platform, /\.secondaryAction \{\s*border: 1px solid var\(--hub-muted\)/);
+  // Secondary actions are a light neutral pill (white inside the #f9f8f6 tile), never ink.
+  assert.match(platform, /\.secondaryAction \{\s*background: var\(--hub-paper\)/);
   assert.match(
     entry,
     /\.rulePanel \{[\s\S]{0,180}background: var\(--entry-soft\)[\s\S]{0,140}color: var\(--entry-ink\)/,

@@ -241,10 +241,12 @@ test("server-rendered homepage labels and detail price controls share the starti
     "./PrivateTourSelection": selection,
     "./TourPriceScope": priceScope,
   });
+  const keepWords = await loadComponent("components/text/KeepWords.tsx");
   const homepage = await loadComponent("components/HomepageProductShowcase.tsx", {
     "../lib/homepageProductShowcaseI18n": { getHomepageProductShowcaseCopy },
     "../lib/privateTourHubI18n": { privateTourHubPaths },
     "./privateTourCardImages": cardImages,
+    "./text/KeepWords": keepWords,
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);

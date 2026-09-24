@@ -113,7 +113,8 @@
 .localeRoot[data-homeground-locale="zh"] .cardLabel,
 .localeRoot[data-homeground-locale="zh"] .sampleRouteImage span,
 .localeRoot[data-homeground-locale="zh"] .planningExtract dt,
-.localeRoot[data-homeground-locale="zh"] .footerTop > div:first-child span {
+.localeRoot[data-homeground-locale="zh"] .footerTop > div:first-child span,
+:global(.hg-locale-root)[data-homeground-locale="zh"] .footerTop > div:first-child span {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -125,7 +126,8 @@
 .localeRoot[data-homeground-locale="ko"] .cardLabel,
 .localeRoot[data-homeground-locale="ko"] .sampleRouteImage span,
 .localeRoot[data-homeground-locale="ko"] .planningExtract dt,
-.localeRoot[data-homeground-locale="ko"] .footerTop > div:first-child span {
+.localeRoot[data-homeground-locale="ko"] .footerTop > div:first-child span,
+:global(.hg-locale-root)[data-homeground-locale="ko"] .footerTop > div:first-child span {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;

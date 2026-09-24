@@ -15,7 +15,7 @@ import { PrivateTourSelectionBoundary, SelectedPrivateTourCta, SelectedPrivateTo
 import { getPrivateTourStartingPrice } from "../lib/privateTourStartingPrice";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import { PrivateTourMotion } from "./PrivateTourMotion";
 import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
 import {
@@ -551,7 +551,7 @@ export function ShanghaiJiangnanImaginePage({
       initialSelection={startingPrice?.selection ?? null}
     >
     <div
-      className={`${homeStyles.localeRoot} ${styles.page}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.page}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >

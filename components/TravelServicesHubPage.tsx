@@ -6,7 +6,7 @@ import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./TravelServicesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -74,8 +74,8 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
   const schema = schemaForServices(locale);
 
   return (
-    <div className={`${homeStyles.localeRoot} ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={homeStyles.skipLink} href="#services-main">{home.skipLink}</a>
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
+      <a className={localeStyles.skipLink} href="#services-main">{home.skipLink}</a>
       <HomegroundHeader locale={locale} pageContext="services" languagePaths={getSearchHubLanguagePaths("services")} />
       <main id="services-main" tabIndex={-1}>
         <header className={styles.hero}>

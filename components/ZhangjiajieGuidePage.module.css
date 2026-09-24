@@ -626,8 +626,9 @@
   min-width: 0;
 }
 
+/* Large day numbers: same warm tone, darkened from 2.2:1 to 3.8:1. */
 .timelineIndex {
-  color: #b9a79c;
+  color: #8f7b6f;
   display: block;
   font-family: var(--hg-editorial), Georgia, serif;
   font-size: clamp(2.8rem, 5vw, 4.15rem);
@@ -928,8 +929,9 @@
   gap: 0.75rem;
 }
 
+/* Source numbers at 13px: darkened from 3.2:1 to 5.2:1. */
 .evidenceMeta > span {
-  color: #9c887b;
+  color: #7a6558;
   font-family: var(--hg-editorial), Georgia, serif;
   font-size: 0.82rem;
 }

@@ -49,9 +49,18 @@
   block-size: 3px;
   border-radius: 999px;
   content: "";
-  inset-block-end: -0.13em;
+  /* The line's top edge sits 0.1em under the inline box, which in Georgia
+     ends at the descenders, so p/g/y never touch it at any size (a fixed
+     em offset let the 3px line creep into the descenders on phones). */
+  inset-block-end: calc(-0.1em - 3px);
   inset-inline: 0.02em;
   position: absolute;
+}
+
+/* Chinese and Korean serif boxes already end well below the glyphs. */
+.shimmerWord:lang(zh)::after,
+.shimmerWord:lang(ko)::after {
+  inset-block-end: -0.13em;
 }
 
 @keyframes headlineShimmer {

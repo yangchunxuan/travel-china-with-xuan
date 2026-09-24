@@ -14,7 +14,7 @@ import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n"
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import styles from "./EditorialAuthorPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -50,11 +50,11 @@ export function EditorialAuthorPage({ locale = "en" }: { locale?: HomegroundLoca
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.page}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.page}`}
       data-homeground-locale={locale}
       lang={home.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#author-main">{home.skipLink}</a>
+      <a className={localeStyles.skipLink} href="#author-main">{home.skipLink}</a>
       <HomegroundHeader languagePaths={getEditorialAuthorLanguagePaths()} locale={locale} pageContext="guides" />
       <main id="author-main" tabIndex={-1}>
         <header className={styles.hero}>

@@ -22,7 +22,7 @@ import {
 } from "../lib/publishedPrivateTourCatalog";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
 import { PrivateTourCatalogFilter } from "./PrivateTourCatalogFilter";
 import { PrivateTourCatalogLink } from "./PrivateTourCatalogLink";
 import { AnimatedHeadline } from "./motion/AnimatedHeadline";
@@ -225,11 +225,11 @@ export function PrivateToursHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.toursPage}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.toursPage}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#private-tours-main">
+      <a className={localeStyles.skipLink} href="#private-tours-main">
         {home.skipLink}
       </a>
       <HomegroundHeader

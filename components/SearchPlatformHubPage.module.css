@@ -1,11 +1,29 @@
+/*
+ * Section hubs (/culture/, /plan/, …) and their focused collections.
+ * Tokens follow /tours/ and the guide template: white page, one #f9f8f6
+ * tile surface without outlines, ink #0a0a0a with muted ink at 60%, and one
+ * 14px / 500 / 44px pill scale. Headlines are Georgia at -2% tracking; small
+ * labels are 13–14px sentence case, never tracked-out capitals. The legacy
+ * #f5f5f4 / #d5d9e2 tokens stay defined for image placeholders and rules.
+ */
 .hubPage {
   --hub-paper: #fff;
   --hub-card: #fff;
   --hub-soft: #f5f5f4;
+  --hub-tile: #f9f8f6;
+  --hub-warm: #f2f1ef;
+  --hub-warm-hover: #e9e7e3;
   --hub-line: #d5d9e2;
+  --hub-rule: rgb(10 10 10 / 10%);
   --hub-ink: #0a0a0a;
-  --hub-muted: #686b70;
+  --hub-muted: rgb(10 10 10 / 60%);
   --hub-rust: #a84731;
+  --hub-focus: var(--hg-color-focus, #b14f37);
+  --hub-content: 77rem;
+  --hub-gutter: 1.5rem;
+  --hub-section: 6rem;
+  --hub-pill: 2.75rem;
+  --hub-ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--hub-paper);
   color: var(--hub-ink);
   min-height: 100vh;
@@ -15,39 +33,38 @@
   display: block;
 }
 
+/* Every band shares one content column with a 24px gutter (16px on phones). */
+.hero,
+.decisionSequence,
+.ownerBoundary,
+.platformMap,
+.collection {
+  padding-inline: max(var(--hub-gutter), calc((100% - var(--hub-content)) / 2));
+}
+
+/* ---------- Hero ---------- */
+
 .hero {
-  border-block-end: 1px solid var(--hub-line);
-  padding: clamp(3.5rem, 7vw, 7.5rem) max(1rem, calc((100vw - 1380px) / 2));
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 0;
 }
 
 .heroInner {
   align-items: end;
   display: grid;
-  gap: clamp(2.5rem, 7vw, 8rem);
-  grid-template-columns: minmax(0, 1.32fr) minmax(18rem, 0.55fr);
-  margin-inline: auto;
-  max-width: 1380px;
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
 }
 
-.indexLabel,
-.eyebrow {
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.indexLabel {
-  color: var(--hub-muted);
-  margin: 0 0 clamp(3.25rem, 6vw, 6.5rem);
+.heroCopy {
+  min-width: 0;
 }
 
 .breadcrumb ol {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.5rem;
   list-style: none;
-  margin: 0 0 clamp(3.25rem, 6vw, 6.5rem);
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
   padding: 0;
 }
 
@@ -55,70 +72,33 @@
   align-items: center;
   color: var(--hub-muted);
   display: flex;
-  font-size: 0.74rem;
-  font-weight: 680;
-  gap: 0.55rem;
+  font-size: 0.8125rem;
+  gap: 0.5rem;
   line-height: 1.45;
 }
 
 .breadcrumb a {
-  color: inherit;
+  color: var(--hub-ink);
+  text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.25rem;
+  transition: text-decoration-color 150ms ease;
 }
 
 .breadcrumb a:hover,
 .breadcrumb a:focus-visible {
-  color: var(--hub-rust);
   text-decoration-color: currentColor;
 }
 
-.directoryHandoff {
-  align-items: end;
-  border-block-end: 1px solid var(--hub-line);
-  display: grid;
-  gap: clamp(2rem, 7vw, 8rem);
-  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.55fr);
-  padding: clamp(3rem, 6vw, 5.5rem) max(1rem, calc((100vw - 1380px) / 2));
-}
-
-.directoryHandoff h2 {
-  font-family: var(--hg-editorial);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 1;
-  margin: 1rem 0 0;
-  max-width: 13ch;
-}
-
-.directoryHandoff > div:last-child > p {
-  color: var(--hub-muted);
-  line-height: 1.7;
-  margin: 0 0 1.25rem;
-}
-
-.directoryHandoff a {
-  align-items: center;
-  border-block-end: 1px solid var(--hub-ink);
-  color: var(--hub-ink);
-  display: flex;
-  font-size: 0.8rem;
-  font-weight: 760;
-  justify-content: space-between;
-  min-height: 2.8rem;
-  text-decoration: none;
-}
-
-.directoryHandoff a:hover,
-.directoryHandoff a:focus-visible {
-  border-color: var(--hub-rust);
-  color: var(--hub-rust);
-}
-
+.indexLabel,
 .eyebrow {
-  color: var(--hub-rust);
+  color: var(--hub-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
   margin: 0;
+  text-transform: none;
 }
 
 .hero h1,
@@ -130,18 +110,83 @@
 .stepBody h3,
 .ownerBoundaryIntro h2,
 .ownerBoundary h3,
+.directoryHandoff h2,
 .cta h2 {
   font-family: var(--hg-editorial);
   font-weight: 400;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-.decisionSequence {
+.hero h1 {
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.02;
+  margin: 1rem 0 0;
+  max-width: 14ch;
+}
+
+.titleSegment {
+  display: inline-block;
+}
+
+.lede {
+  color: var(--hub-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+
+/* "What do you need to decide?" sits in one quiet tile beside the title. */
+.scope {
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.scope > p {
+  color: var(--hub-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 1rem 0 0;
+  text-transform: none;
+}
+
+.scope > p:first-child {
+  color: var(--hub-ink);
+  margin: 0;
+}
+
+.scope ul {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.scope li {
+  border-block-start: 1px solid var(--hub-rule);
+  color: var(--hub-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  padding-block: 0.75rem;
+  text-wrap: pretty;
+}
+
+.scope li:last-child {
+  padding-block-end: 0;
+}
+
+/* ---------- First-trip plan sequence (/plan/ only) ---------- */
+
+.decisionSequence,
+.ownerBoundary {
   display: grid;
-  gap: clamp(3rem, 8vw, 9rem);
-  grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
-  padding: clamp(4.75rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
+  padding-block: var(--hub-section) 0;
 }
 
 .decisionSequenceIntro {
@@ -152,10 +197,10 @@
 
 .decisionSequenceIntro h2,
 .ownerBoundaryIntro h2 {
-  font-size: clamp(2.65rem, 5vw, 5rem);
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 11ch;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
   scroll-margin-top: 6.5rem;
 }
 
@@ -166,155 +211,606 @@
 .decisionSequenceIntro > p:last-child,
 .ownerBoundaryIntro > p:last-child {
   color: var(--hub-muted);
-  line-height: 1.72;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 1rem 0 0;
   max-width: 32rem;
+  text-wrap: pretty;
 }
 
 .decisionSteps {
-  border-block-start: 1px solid var(--hub-line);
+  display: grid;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .decisionSteps > li {
-  border-block-end: 1px solid var(--hub-line);
+  background: var(--hub-tile);
+  border-radius: 1rem;
   display: grid;
-  gap: clamp(1.25rem, 3vw, 2.75rem);
-  grid-template-columns: 3.25rem minmax(0, 1fr);
-  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+  gap: 1rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  padding: 1.5rem;
 }
 
+/* Step numbers: a small white disc with ink figures instead of red "01". */
 .stepNumber,
 .boundaryPosition {
-  color: var(--hub-rust);
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.1em;
-  margin: 0.35rem 0 0;
+  align-items: center;
+  background: var(--hub-paper);
+  border-radius: 999px;
+  color: var(--hub-ink);
+  display: flex;
+  flex: none;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  letter-spacing: 0;
+  margin: 0;
+  width: 2.25rem;
 }
 
 .stepBody {
   min-width: 0;
 }
 
-.stepBody h3,
-.ownerBoundary h3 {
-  font-size: clamp(1.8rem, 3vw, 3.15rem);
-  line-height: 1.04;
-  margin: 0;
+.stepBody h3 {
+  font-size: clamp(1.375rem, 2vw, 1.625rem);
+  line-height: 1.2;
+  margin: 0.25rem 0 0;
 }
 
 .stepBody > p:not(.doneWhen) {
   color: var(--hub-muted);
-  line-height: 1.68;
-  margin: 1rem 0 0;
-  max-width: 48rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+  max-width: 44rem;
+  text-wrap: pretty;
 }
 
 .doneWhen {
-  border-inline-start: 2px solid var(--hub-rust);
-  line-height: 1.65;
-  margin: 1.4rem 0 0;
-  max-width: 48rem;
-  padding-inline-start: 1rem;
+  background: var(--hub-paper);
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 1rem 0 0;
+  max-width: 44rem;
+  padding: 0.75rem 1rem;
+  text-wrap: pretty;
 }
 
 .doneWhen strong {
-  color: var(--hub-rust);
+  color: var(--hub-ink);
+  font-weight: 600;
 }
 
 .stepLinks {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.5rem;
   list-style: none;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
 }
 
+/* Pills inside a #f9f8f6 tile are white, as in the homepage contact card. */
 .stepLinks a,
 .ownerBoundary a,
 .currentOwner {
   align-items: center;
-  border: 1px solid var(--hub-line);
+  background: var(--hub-paper);
+  border: 1px solid transparent;
   border-radius: 999px;
+  color: var(--hub-ink);
   display: inline-flex;
-  font-size: 0.76rem;
-  font-weight: 760;
-  gap: 1rem;
-  line-height: 1.35;
-  min-height: 2.75rem;
-  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  line-height: 1.3;
+  min-height: var(--hub-pill);
+  padding: 0.5rem 1rem;
   text-decoration: none;
+  transition: background-color 150ms ease;
 }
 
-.stepLinks a:hover,
+.stepLinks a > span,
+.ownerBoundary a > span {
+  transition: transform 300ms var(--hub-ease);
+}
+
+@media (hover: hover) {
+  .stepLinks a:hover,
+  .ownerBoundary a:hover {
+    background: var(--hub-warm);
+  }
+
+  .stepLinks a:hover > span,
+  .ownerBoundary a:hover > span {
+    transform: translateX(4px);
+  }
+}
+
 .stepLinks a:focus-visible,
-.ownerBoundary a:hover,
 .ownerBoundary a:focus-visible {
-  border-color: var(--hub-rust);
-  color: var(--hub-rust);
-}
-
-.ownerBoundary {
-  background: var(--hub-soft);
-  display: grid;
-  gap: clamp(3rem, 8vw, 9rem);
-  grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
-  padding: clamp(4.75rem, 8vw, 8rem) max(1rem, calc((100vw - 1380px) / 2));
+  outline: 2px solid var(--hub-focus);
+  outline-offset: 2px;
 }
 
 .ownerBoundary > ul {
-  border-block-start: 1px solid var(--hub-line);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .ownerBoundary > ul > li {
-  border-block-end: 1px solid var(--hub-line);
-  padding-block: clamp(1.75rem, 3.5vw, 3rem);
+  align-items: flex-start;
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
 }
 
 .ownerBoundary h3 {
-  font-size: clamp(1.65rem, 2.5vw, 2.55rem);
-  margin-block-start: 0.65rem;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 1rem 0 0;
 }
 
 .ownerBoundary li > p:not(.boundaryPosition) {
   color: var(--hub-muted);
-  line-height: 1.65;
-  margin: 0.85rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 1.25rem;
   max-width: 44rem;
+  text-wrap: pretty;
 }
 
 .ownerBoundary a,
 .currentOwner {
-  margin-block-start: 1.25rem;
+  margin-block-start: auto;
 }
 
 .currentOwner {
   background: var(--hub-ink);
-  border-color: var(--hub-ink);
-  color: var(--hg-color-on-dark);
+  color: var(--hg-color-on-dark, #fff);
 }
 
-.hero h1 {
-  font-size: clamp(3.4rem, 7.1vw, 7.25rem);
-  line-height: 0.91;
-  margin: 1.15rem 0 0;
-  max-width: 10.5ch;
+/* ---------- Question groups (hub) and related collections ---------- */
+
+.platformMap {
+  background: var(--hub-paper);
+  color: var(--hub-ink);
+  display: grid;
+  gap: 2rem;
+  padding-block: var(--hub-section) 0;
 }
+
+.platformMapIntro {
+  align-items: end;
+  display: grid;
+  gap: 0.75rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+}
+
+.platformMapIntro .eyebrow {
+  color: var(--hub-muted);
+  grid-column: 1 / -1;
+}
+
+.platformMapIntro h2 {
+  color: var(--hub-ink);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.platformMapIntro > p:last-child {
+  color: var(--hub-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 34rem;
+  text-wrap: pretty;
+}
+
+.platformMap ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.platformMap li {
+  min-width: 0;
+}
+
+.platformMap a {
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  color: var(--hub-ink);
+  display: grid;
+  gap: 0.5rem 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  min-height: 9rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.platformMap a > span {
+  font-family: var(--hg-editorial);
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.platformMap a > small {
+  color: var(--hub-muted);
+  font-size: 0.9375rem;
+  grid-column: 1 / -1;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.platformMap a > b {
+  font-size: 1.1rem;
+  font-weight: 400;
+  grid-column: 2;
+  grid-row: 1;
+  transition: transform 300ms var(--hub-ease);
+}
+
+@media (hover: hover) {
+  .platformMap a:hover {
+    background: var(--hub-warm);
+  }
+
+  .platformMap a:hover > b {
+    transform: translate(3px, -3px);
+  }
+}
+
+.platformMap a:focus-visible {
+  outline: 2px solid var(--hub-focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Published guides ---------- */
+
+.collection {
+  padding-block: var(--hub-section) 0;
+}
+
+.collectionHeading {
+  align-items: end;
+  display: grid;
+  gap: 0.75rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  margin: 0 0 2.5rem;
+}
+
+.collectionHeading h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 18ch;
+}
+
+.collectionHeading > div:first-child > h2:first-child {
+  margin-block-start: 0;
+}
+
+.collectionSummary,
+.collectionSummary > p:first-child {
+  color: var(--hub-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.count {
+  color: var(--hub-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin: 0.75rem 0 0;
+  text-transform: none;
+}
+
+.guideGrid {
+  display: grid;
+  gap: 1.5rem 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guideGrid > li,
+.guideGrid > li.leadGuide,
+.guideGrid > li.halfGuide,
+.guideGrid > li.fullGuide {
+  grid-column: auto;
+  min-width: 0;
+}
+
+.guideCard,
+.guideCard > a {
+  height: 100%;
+}
+
+/* Grok tile: the photo inset 4px with a 12px radius inside a 16px tile. */
+.guideCard > a {
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  color: var(--hub-ink);
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  text-decoration: none;
+}
+
+.guideCard figure {
+  aspect-ratio: 16 / 10;
+  background: var(--hub-soft);
+  border-radius: 0.75rem;
+  margin: 0;
+  overflow: hidden;
+}
+
+.guideCard img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--hub-ease);
+  width: 100%;
+}
+
+.guideBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem 0.75rem 0.75rem;
+}
+
+.guideMeta {
+  align-items: baseline;
+  color: var(--hub-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
+}
+
+.guideMeta > span:first-child {
+  color: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.guideBody h3 {
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.guideBody > p:not(.guideMeta) {
+  -webkit-box-orient: vertical;
+  color: var(--hub-muted);
+  display: -webkit-box;
+  font-size: 0.9375rem;
+  -webkit-line-clamp: 3;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.openGuide {
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.35rem;
+  letter-spacing: 0;
+  margin-block-start: auto;
+  padding-block-start: 1rem;
+  text-transform: none;
+}
+
+.openGuide > span {
+  transition: transform 300ms var(--hub-ease);
+}
+
+@media (hover: hover) {
+  .guideCard > a:hover img {
+    transform: scale(1.04);
+  }
+
+  .guideCard > a:hover .openGuide > span {
+    transform: translateX(4px);
+  }
+}
+
+.guideCard > a:focus-visible {
+  outline: 2px solid var(--hub-focus);
+  outline-offset: 3px;
+}
+
+.guideCard > a:focus-visible img {
+  transform: scale(1.04);
+}
+
+.emptyState {
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.emptyState h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 18ch;
+}
+
+.emptyState > p:not(.eyebrow) {
+  color: var(--hub-muted);
+  line-height: 1.6;
+  max-width: 42rem;
+}
+
+.emptyState a,
+.moreGuides a {
+  color: var(--hub-ink);
+  font-weight: 500;
+  text-underline-offset: 0.25rem;
+}
+
+.moreGuides {
+  margin: 2rem 0 0;
+  text-align: end;
+}
+
+/* ---------- Tiles that sit in the content column ---------- */
+
+.directoryHandoff,
+.cta {
+  align-items: end;
+  background: var(--hub-tile);
+  border-radius: 1rem;
+  display: grid;
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  margin-inline: max(var(--hub-gutter), calc((100% - var(--hub-content)) / 2));
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.directoryHandoff {
+  margin-block-start: var(--hub-section);
+}
+
+.cta {
+  margin-block: var(--hub-section);
+}
+
+.directoryHandoff h2,
+.cta h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0.75rem 0 0;
+  max-width: 16ch;
+}
+
+.directoryHandoff > div:last-child > p,
+.cta > div:last-child > p {
+  color: var(--hub-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.ctaActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.5rem;
+}
+
+.directoryHandoff a,
+.primaryAction,
+.secondaryAction {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  justify-content: center;
+  min-height: var(--hub-pill);
+  padding: 0 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.directoryHandoff a {
+  background: var(--hub-paper);
+  color: var(--hub-ink);
+  margin-block-start: 1.5rem;
+}
+
+.primaryAction {
+  background: var(--hub-ink);
+  color: var(--hg-color-on-dark, #fff);
+}
+
+/* Secondary pill: white inside the #f9f8f6 tile, no outline. */
+.secondaryAction {
+  background: var(--hub-paper);
+  color: var(--hub-ink);
+}
+
+.primaryAction > span,
+.directoryHandoff a > span {
+  transition: transform 300ms var(--hub-ease);
+}
+
+@media (hover: hover) {
+  .primaryAction:hover {
+    background: #242424;
+  }
+
+  .secondaryAction:hover,
+  .directoryHandoff a:hover {
+    background: var(--hub-warm);
+  }
+
+  .primaryAction:hover > span,
+  .directoryHandoff a:hover > span {
+    transform: translateX(4px);
+  }
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.directoryHandoff a:focus-visible {
+  outline: 2px solid var(--hub-focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Chinese and Korean ---------- */
 
 .hubPage[data-homeground-locale="zh"] .hero h1 {
-  font-size: clamp(3.35rem, 6.45vw, 6.7rem);
-  max-width: 13ch;
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+  max-width: 13em;
   word-break: auto-phrase;
-}
-
-.titleSegment {
-  display: inline-block;
 }
 
 .hubPage[data-homeground-locale="zh"] .hero h1.segmentedTitle {
@@ -324,366 +820,113 @@
 }
 
 .hubPage[data-homeground-locale="ko"] .hero h1 {
-  max-width: 13ch;
+  font-size: clamp(2.4rem, 4.4vw, 3.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  max-width: 13em;
+  word-break: keep-all;
 }
 
-.lede {
-  color: var(--hub-muted);
-  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
-  line-height: 1.72;
-  margin: clamp(2rem, 3.5vw, 3.5rem) 0 0;
-  max-width: 44rem;
+.hubPage[data-homeground-locale="zh"] :is(.collectionHeading h2, .platformMapIntro h2, .decisionSequenceIntro h2, .ownerBoundaryIntro h2, .directoryHandoff h2, .cta h2, .emptyState h2, .guideBody h3, .stepBody h3, .ownerBoundary h3, .platformMap a > span) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
 }
 
-.scope {
-  border-block-start: 1px solid var(--hub-ink);
-  padding-block-start: 1rem;
+.hubPage[data-homeground-locale="ko"] :is(.collectionHeading h2, .platformMapIntro h2, .decisionSequenceIntro h2, .ownerBoundaryIntro h2, .directoryHandoff h2, .cta h2, .emptyState h2, .guideBody h3, .stepBody h3, .ownerBoundary h3, .platformMap a > span) {
+  letter-spacing: 0;
+  line-height: 1.3;
+  word-break: keep-all;
 }
 
-.scope > p {
-  font-size: 0.72rem;
-  font-weight: 780;
-  letter-spacing: 0.1em;
-  margin: 0;
-  text-transform: uppercase;
+.hubPage[data-homeground-locale="ko"] :is(.lede, .scope li, .guideBody > p, .platformMap a > small, .stepBody > p) {
+  word-break: keep-all;
 }
 
-.scope ul {
-  list-style: none;
-  margin: 1.2rem 0 0;
-  padding: 0;
+/* "ch" is half an ideograph wide, so CJK headings measure in em instead. */
+.hubPage:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) :is(.collectionHeading h2, .platformMapIntro h2, .decisionSequenceIntro h2, .ownerBoundaryIntro h2, .directoryHandoff h2, .cta h2, .emptyState h2) {
+  max-width: 14em;
 }
 
-.scope li {
-  border-block-end: 1px solid var(--hub-line);
-  color: var(--hub-muted);
-  font-size: 0.94rem;
-  line-height: 1.5;
-  padding: 0.85rem 0;
+/* ---------- Motion ---------- */
+
+/* Tiles rise as they scroll in; they start half-visible and settle within
+   120px, so a tile resting near the bottom edge never looks disabled.
+   Browsers without scroll-driven animations show the tiles statically. */
+@keyframes hubTileRise {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.collection {
-  padding: clamp(4.75rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .guideGrid > li,
+    .platformMap li,
+    .decisionSteps > li,
+    .ownerBoundary > ul > li {
+      animation: hubTileRise linear both;
+      animation-range: entry 0% entry 120px;
+      animation-timeline: view();
+    }
+  }
 }
 
-.collectionHeading {
-  align-items: end;
-  display: grid;
-  gap: clamp(2rem, 6vw, 7rem);
-  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.58fr);
-  margin: 0 auto clamp(3rem, 6vw, 6rem);
-  max-width: 1380px;
+/*
+ * Desktop and tablet: each card spans five shared rows (photo, meta, title,
+ * summary, action), so a title that wraps in one card no longer pushes its
+ * summary below its neighbours'. Card spacing comes from a bottom margin; the
+ * shared row gap is 0, as on /tours/.
+ */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 681px) {
+    .guideGrid {
+      row-gap: 0;
+    }
+
+    .guideGrid > li {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      margin-block-end: 1.5rem;
+    }
+
+    .guideCard,
+    .guideCard > a {
+      display: grid;
+      gap: 0;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+    }
+
+    .guideBody {
+      display: grid;
+      gap: 0;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+    }
+
+    .openGuide {
+      align-self: end;
+    }
+  }
 }
 
-.collectionHeading h2,
-.platformMapIntro h2 {
-  font-size: clamp(2.65rem, 5vw, 5rem);
-  line-height: 0.98;
-  margin: 1rem 0 0;
-  max-width: 11ch;
-}
-
-.collectionSummary > p:first-child {
-  color: var(--hub-muted);
-  font-size: 1.02rem;
-  line-height: 1.72;
-  margin: 0;
-}
-
-.count {
-  border-block-start: 1px solid var(--hub-line);
-  color: var(--hub-rust);
-  font-size: 0.72rem;
-  font-weight: 760;
-  letter-spacing: 0.08em;
-  margin: 1.5rem 0 0;
-  padding-block-start: 1rem;
-  text-transform: uppercase;
-}
-
-.guideGrid {
-  border-block-start: 1px solid var(--hub-line);
-  border-inline-start: 1px solid var(--hub-line);
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  list-style: none;
-  margin: 0 auto;
-  max-width: 1380px;
-  padding: 0;
-}
-
-.guideGrid > li {
-  border-block-end: 1px solid var(--hub-line);
-  border-inline-end: 1px solid var(--hub-line);
-  grid-column: span 4;
-  min-width: 0;
-}
-
-.guideGrid > li.leadGuide {
-  grid-column: span 8;
-}
-
-.guideGrid > li.halfGuide {
-  grid-column: span 6;
-}
-
-.guideGrid > li.fullGuide {
-  grid-column: span 12;
-}
-
-.guideCard,
-.guideCard > a {
-  height: 100%;
-}
-
-.guideCard > a {
-  background: var(--hub-card);
-  color: var(--hub-ink);
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-}
-
-.guideCard figure {
-  aspect-ratio: 16 / 10;
-  background: var(--hub-soft);
-  margin: 0;
-  overflow: hidden;
-}
-
-.leadGuide .guideCard figure {
-  aspect-ratio: 16 / 8.25;
-}
-
-.guideCard img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform 420ms cubic-bezier(0.2, 0.7, 0.2, 1);
-  width: 100%;
-}
-
-.guideCard > a:hover img,
-.guideCard > a:focus-visible img {
-  transform: scale(1.025);
-}
-
-.guideBody {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: clamp(1.4rem, 2.5vw, 2.35rem);
-}
-
-.guideMeta {
-  align-items: baseline;
-  color: var(--hub-muted);
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.7rem;
-  font-weight: 680;
-  gap: 0.45rem;
-  line-height: 1.5;
-  margin: 0 0 1.25rem;
-}
-
-.guideMeta > span:first-child {
-  color: var(--hub-rust);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.guideBody h3 {
-  font-size: clamp(1.8rem, 2.8vw, 3rem);
-  line-height: 1.04;
-  margin: 0;
-}
-
-.guideBody > p:not(.guideMeta) {
-  color: var(--hub-muted);
-  font-size: 0.95rem;
-  line-height: 1.68;
-  margin: 1.1rem 0 0;
-}
-
-.openGuide {
-  align-items: center;
-  border-block-start: 1px solid var(--hub-line);
-  display: flex;
-  font-size: 0.74rem;
-  font-weight: 780;
-  justify-content: space-between;
-  letter-spacing: 0.05em;
-  margin-block-start: auto;
-  padding-block-start: 1.2rem;
-  text-transform: uppercase;
-}
-
-.guideBody > p + .openGuide {
-  margin-block-start: 2rem;
-}
-
-.emptyState {
-  border: 1px solid var(--hub-line);
-  margin-inline: auto;
-  max-width: 1380px;
-  padding: clamp(2rem, 5vw, 5rem);
-}
-
-.emptyState h2 {
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 1;
-  margin: 1rem 0 0;
-  max-width: 13ch;
-}
-
-.emptyState > p:not(.eyebrow) {
-  color: var(--hub-muted);
-  line-height: 1.72;
-  max-width: 42rem;
-}
-
-.emptyState a,
-.moreGuides a {
-  color: var(--hub-rust);
-  font-weight: 760;
-  text-underline-offset: 0.25rem;
-}
-
-.moreGuides {
-  margin: 2rem auto 0;
-  max-width: 1380px;
-  text-align: end;
-}
-
-.platformMap {
-  background: var(--hub-soft);
-  color: var(--hub-ink);
-  display: grid;
-  gap: clamp(3rem, 8vw, 9rem);
-  grid-template-columns: minmax(18rem, 0.58fr) minmax(0, 1fr);
-  padding: clamp(4.75rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
-}
-
-.platformMapIntro {
-  align-self: start;
-  position: sticky;
-  top: 7rem;
-}
-
-.platformMapIntro .eyebrow {
-  color: var(--hub-rust);
-}
-
-.platformMapIntro h2 {
-  color: var(--hub-ink);
-}
-
-.platformMapIntro > p:last-child {
-  color: var(--hub-muted);
-  line-height: 1.72;
-  max-width: 31rem;
-}
-
-.platformMap ul {
-  border-block-start: 1px solid var(--hub-line);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.platformMap li {
-  border-block-end: 1px solid var(--hub-line);
-}
-
-.platformMap a {
-  align-items: center;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(10rem, 0.45fr) minmax(0, 1fr) auto;
-  min-height: 6.25rem;
-  padding: 1rem 0;
-  text-decoration: none;
-}
-
-.platformMap a:hover span,
-.platformMap a:focus-visible span {
-  color: var(--hub-rust);
-}
-
-.platformMap span {
-  font-family: var(--hg-editorial);
-  font-size: clamp(1.4rem, 2vw, 2rem);
-}
-
-.platformMap small {
-  color: var(--hub-muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-
-.platformMap b {
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-
-.cta {
-  align-items: start;
-  display: grid;
-  gap: clamp(2rem, 7vw, 8rem);
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.58fr);
-  padding: clamp(4.75rem, 9vw, 9rem) max(1rem, calc((100vw - 1380px) / 2));
-}
-
-.cta h2 {
-  font-size: clamp(2.7rem, 5vw, 5.25rem);
-  line-height: 0.96;
-  margin: 1rem 0 0;
-  max-width: 11ch;
-}
-
-.cta > div:last-child > p {
-  color: var(--hub-muted);
-  font-size: 1.02rem;
-  line-height: 1.72;
-  margin: 0;
-}
-
-.ctaActions {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-block-start: 2rem;
-}
-
-.primaryAction,
-.secondaryAction {
-  align-items: center;
-  border-radius: 999px;
-  display: inline-flex;
-  font-size: 0.82rem;
-  font-weight: 760;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.75rem 1.15rem;
-  text-decoration: none;
-}
-
-.primaryAction {
-  background: var(--hub-ink);
-  color: var(--hg-color-on-dark);
-  gap: 1.5rem;
-}
-
-.secondaryAction {
-  border: 1px solid var(--hub-muted);
-}
+/* ---------- Tablet ---------- */
 
 @media (max-width: 980px) {
   .heroInner,
   .collectionHeading,
+  .platformMapIntro,
   .decisionSequence,
   .ownerBoundary,
+  .directoryHandoff,
   .cta {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -697,23 +940,9 @@
     max-width: 36rem;
   }
 
-  .guideGrid > li,
-  .guideGrid > li.leadGuide,
-  .guideGrid > li.halfGuide,
-  .guideGrid > li.fullGuide {
-    grid-column: span 6;
-  }
-
-  .guideGrid > li:last-child:nth-child(odd) {
-    grid-column: span 12;
-  }
-
-  .platformMap {
-    grid-template-columns: 1fr;
-  }
-
-  .platformMapIntro {
-    position: static;
+  .guideGrid,
+  .platformMap ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .decisionSequenceIntro {
@@ -721,17 +950,21 @@
   }
 }
 
+/* ---------- Phone ---------- */
+
 @media (max-width: 680px) {
-  .hero {
-    padding-block: 3.5rem 4.25rem;
+  .hubPage {
+    --hub-gutter: 1rem;
+    --hub-section: 4rem;
   }
 
-  .indexLabel {
-    margin-block-end: 3rem;
+  .breadcrumb ol {
+    margin-block-end: 2rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.6rem, 12.8vw, 4.2rem);
+    font-size: clamp(2.25rem, 10vw, 2.75rem);
+    line-height: 1.05;
   }
 
   .hubPage[data-homeground-locale="en"] .hero h1 {
@@ -741,7 +974,7 @@
 
   .hubPage[data-homeground-locale="zh"] .hero h1,
   .hubPage[data-homeground-locale="ko"] .hero h1 {
-    font-size: clamp(2.85rem, 13.6vw, 4.2rem);
+    font-size: clamp(2.1rem, 9.4vw, 2.6rem);
     max-width: 100%;
   }
 
@@ -755,12 +988,28 @@
     max-width: 100%;
   }
 
-  .collection {
-    padding-block: 4.5rem;
+  .lede {
+    font-size: 1rem;
+  }
+
+  .scope {
+    padding: 1.25rem;
   }
 
   .decisionSteps > li {
-    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 0.75rem;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.25rem;
+  }
+
+  .ownerBoundary > ul,
+  .platformMap ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .platformMap a {
+    min-height: 0;
+    padding: 1.25rem;
   }
 
   .stepLinks {
@@ -775,28 +1024,53 @@
     width: 100%;
   }
 
-  .guideGrid > li,
-  .guideGrid > li.leadGuide,
-  .guideGrid > li.halfGuide,
-  .guideGrid > li.fullGuide,
-  .guideGrid > li:last-child:nth-child(odd) {
-    grid-column: span 12;
+  /* Guides become compact rows: a square thumbnail beside the title, so a
+     long section no longer stacks dozens of full-width cards. */
+  .guideGrid {
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .leadGuide .guideCard figure,
-  .guideCard figure {
-    aspect-ratio: 4 / 3;
-  }
-
-  .platformMap a {
+  .guideCard > a {
     align-items: start;
-    grid-template-columns: 1fr auto;
-    padding-block: 1.4rem;
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
   }
 
-  .platformMap small {
-    grid-column: 1 / -1;
-    grid-row: 2;
+  .guideCard figure {
+    aspect-ratio: 1;
+  }
+
+  .guideBody {
+    padding: 0.35rem 0.5rem 0.35rem 0;
+  }
+
+  .guideMeta {
+    font-size: 0.75rem;
+    margin-block-end: 0.25rem;
+  }
+
+  .guideBody h3 {
+    font-size: 1.0625rem;
+    line-height: 1.25;
+  }
+
+  .guideBody > p:not(.guideMeta) {
+    font-size: 0.875rem;
+    -webkit-line-clamp: 2;
+    line-height: 1.45;
+    margin-block-start: 0.25rem;
+  }
+
+  .openGuide {
+    font-size: 0.8125rem;
+    padding-block-start: 0.5rem;
+  }
+
+  .directoryHandoff,
+  .cta {
+    padding: 1.5rem 1.25rem;
   }
 
   .ctaActions {
@@ -806,7 +1080,25 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .guideCard img {
+  .guideCard img,
+  .openGuide > span,
+  .platformMap a > b,
+  .stepLinks a > span,
+  .ownerBoundary a > span,
+  .primaryAction > span,
+  .directoryHandoff a > span {
     transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .guideCard > a,
+  .platformMap a,
+  .scope,
+  .decisionSteps > li,
+  .ownerBoundary > ul > li,
+  .directoryHandoff,
+  .cta {
+    border: 1px solid CanvasText;
   }
 }

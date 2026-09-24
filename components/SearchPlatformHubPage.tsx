@@ -34,7 +34,9 @@ import { DestinationsHubPage } from "./DestinationsHubPage";
 import { TravelServicesHubPage } from "./TravelServicesHubPage";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
-import homeStyles from "./HomegroundHomePage.module.css";
+import localeStyles from "./LocaleRoot.module.css";
+import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./SearchPlatformHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -103,7 +105,7 @@ function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
                 {String(index + 1).padStart(2, "0")}
               </p>
               <div className={styles.stepBody}>
-                <h3>{step.title}</h3>
+                <h3><KeepWords locale={locale} text={step.title} /></h3>
                 <p>{step.task}</p>
                 <p className={styles.doneWhen}>
                   <strong>{copy.doneLabel}:</strong> {step.doneWhen}
@@ -132,7 +134,7 @@ function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
       >
         <div className={styles.ownerBoundaryIntro}>
           <p className={styles.eyebrow}>Homeground</p>
-          <h2 id="first-trip-owner-boundary-title">{copy.boundary.title}</h2>
+          <h2 id="first-trip-owner-boundary-title"><KeepWords locale={locale} text={copy.boundary.title} /></h2>
           <p>{copy.boundary.description}</p>
         </div>
         <ul>
@@ -141,7 +143,7 @@ function FirstTripPlanSequence({ locale }: { locale: HomegroundLocale }) {
               <p className={styles.boundaryPosition} aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h3>{item.title}</h3>
+              <h3><KeepWords locale={locale} text={item.title} /></h3>
               <p>{item.description}</p>
               {item.ownerId && item.linkLabel ? (
                 <Link
@@ -272,11 +274,11 @@ export function SearchPlatformHubPage({
 
   return (
     <div
-      className={`${homeStyles.localeRoot} ${styles.hubPage}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.hubPage}`}
       data-homeground-locale={locale}
       lang={home.htmlLang}
     >
-      <a className={homeStyles.skipLink} href="#hub-main">
+      <a className={localeStyles.skipLink} href="#hub-main">
         {home.skipLink}
       </a>
       <HomegroundHeader
@@ -297,7 +299,7 @@ export function SearchPlatformHubPage({
                 </ol>
               </nav>
               <p className={styles.eyebrow}>{sectionCopy.eyebrow}</p>
-              <h1>{sectionCopy.title}</h1>
+              <h1><AnimatedHeadline locale={locale} text={sectionCopy.title} /></h1>
               <p className={styles.lede}>{sectionCopy.description}</p>
             </div>
             <aside className={styles.scope} aria-labelledby="hub-scope-title">
@@ -316,14 +318,14 @@ export function SearchPlatformHubPage({
         {collections.length > 0 ? (
         <section className={styles.platformMap} aria-labelledby="hub-topics-title">
           <div className={styles.platformMapIntro}>
-            <h2 id="hub-topics-title">{copy.questionGroupsTitle}</h2>
+            <h2 id="hub-topics-title"><KeepWords locale={locale} text={copy.questionGroupsTitle} /></h2>
             <p>{copy.questionGroupsIntroduction}</p>
           </div>
           <ul>
             {collections.map((collection) => (
               <li key={collection.id}>
                 <Link href={getSearchCollectionPath(collection, locale)}>
-                  <span>{collection.locales[locale].label}</span>
+                  <span><KeepWords locale={locale} text={collection.locales[locale].label} /></span>
                   <small>{collection.locales[locale].description}</small>
                   <b aria-hidden="true">↗</b>
                 </Link>
@@ -336,7 +338,7 @@ export function SearchPlatformHubPage({
         <section className={styles.collection} aria-labelledby="hub-collection-title">
           <div className={styles.collectionHeading}>
             <div>
-              <h2 id="hub-collection-title">{copy.collectionTitle}</h2>
+              <h2 id="hub-collection-title"><KeepWords locale={locale} text={copy.collectionTitle} /></h2>
             </div>
             <div className={styles.collectionSummary}>
               <p>{copy.collectionIntroduction}</p>
@@ -376,7 +378,7 @@ export function SearchPlatformHubPage({
                             )}
                           </time>
                         </p>
-                        <h3>{manifest.h1}</h3>
+                        <h3><KeepWords locale={locale} text={manifest.h1} /></h3>
                         <p>{manifest.description}</p>
                         <span className={styles.openGuide}>
                           {copy.openGuideLabel}
@@ -402,7 +404,7 @@ export function SearchPlatformHubPage({
         <section className={styles.cta} aria-labelledby="hub-cta-title">
           <div>
             <p className={styles.eyebrow}>Homeground</p>
-            <h2 id="hub-cta-title">{copy.nextTitle}</h2>
+            <h2 id="hub-cta-title"><KeepWords locale={locale} text={copy.nextTitle} /></h2>
           </div>
           <div>
             <p>{copy.nextBody}</p>
