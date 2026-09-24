@@ -118,6 +118,14 @@ export function trustedYouTubeProfileUrl(value: string): string {
   }
 }
 
+/** The Messenger chat the site links to; an override must pass trustedMessengerUrl. */
+export function homegroundMessengerUrl(): string {
+  return trustedMessengerUrl(
+    process.env.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL?.trim() ||
+      `https://m.me/${homegroundFacebookPageId}`,
+  );
+}
+
 export function trustedMessengerUrl(value: string): string {
   try {
     const parsed = new URL(value);

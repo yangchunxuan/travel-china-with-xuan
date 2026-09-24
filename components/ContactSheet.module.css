@@ -1,0 +1,160 @@
+/*
+ * Phones and tablets: the contact card as a sheet that rises from the bottom
+ * of the screen when a "talk to a planner" link is tapped, instead of a jump
+ * down the page. Same words and email form as the desktop card; WhatsApp and
+ * Messenger are one tap away as the site's pills instead of a code to scan.
+ * Applied on top of ContactCard.module.css, so every rule here is scoped
+ * under .sheet to win over the card's.
+ */
+.sheet {
+  inset: auto 0 0;
+  width: 100%;
+  max-width: 36rem;
+  max-height: min(92dvh, 48rem);
+  margin: 0 auto;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 0 0 1px rgb(10 10 10 / 6%), 0 -24px 64px -32px rgb(10 10 10 / 45%);
+}
+
+.grabber {
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  background: var(--card-line);
+}
+
+/* Title and close button on one line, China time under the title. */
+.sheet .head {
+  grid-template-areas:
+    "text close"
+    "clock clock";
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 12px 16px 0 20px;
+}
+
+.sheet .headText {
+  grid-area: text;
+  padding-top: 6px;
+}
+
+.sheet .head h2 {
+  font-size: 1.75rem;
+}
+
+/* The card hides China time on narrow screens; the sheet has room for it. */
+.sheet .clock {
+  display: inline-flex;
+  grid-area: clock;
+  justify-self: start;
+  height: 34px;
+  padding: 0 14px;
+}
+
+.sheet .close {
+  grid-area: close;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 20px 24px;
+}
+
+.apps {
+  display: grid;
+  gap: 10px;
+}
+
+.whatsapp,
+.messenger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 200ms ease, transform 150ms ease;
+}
+
+.whatsapp {
+  justify-content: space-between;
+  background: var(--card-ink);
+  color: #fff;
+}
+
+.messenger {
+  background: var(--card-warm);
+  color: var(--card-ink);
+}
+
+.whatsapp:active,
+.messenger:active {
+  transform: scale(0.98);
+}
+
+.messenger:active {
+  background: var(--card-warm-hover);
+}
+
+/* "or", on a hairline between the apps and the email. */
+.or {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 0;
+  color: var(--card-muted);
+  font-size: 0.875rem;
+}
+
+.or::before,
+.or::after {
+  flex: 1;
+  height: 1px;
+  background: var(--card-faint);
+  content: "";
+}
+
+.sheet .mail {
+  padding-top: 14px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheet.sheet[open] {
+    animation: sheetIn 420ms var(--card-ease) both;
+  }
+
+  .sheet.sheet[data-closing] {
+    animation: sheetOut 200ms ease-in both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp,
+  .messenger {
+    transition: none;
+  }
+
+  .whatsapp:active,
+  .messenger:active {
+    transform: none;
+  }
+}
+
+@keyframes sheetIn {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes sheetOut {
+  to {
+    transform: translateY(100%);
+  }
+}
