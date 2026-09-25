@@ -29,19 +29,51 @@ async function source(path) {
 
 const locales = ["en", "zh", "ko"];
 
-test("the contact card only answers clicks on desktop and never rewrites a link", async () => {
+test("the card answers WhatsApp and mail clicks on desktop only, planner links everywhere, and never rewrites a link", async () => {
   const host = await source("components/ContactCardHost.tsx");
   assert.match(contactCardDesktopQuery, /min-width: 64rem/);
   assert.match(contactCardDesktopQuery, /hover: hover/);
   assert.match(contactCardDesktopQuery, /pointer: fine/);
-  // Phones, tablets, new-tab and modifier clicks keep the link's own behaviour.
-  assert.match(host, /if \(!desktop\.matches \|\| event\.defaultPrevented \|\| event\.button !== 0\) return;/);
+  // New-tab and modifier clicks keep the link's own behaviour.
+  assert.match(host, /if \(event\.defaultPrevented \|\| event\.button !== 0\) return;/);
   assert.match(host, /if \(event\.metaKey \|\| event\.ctrlKey \|\| event\.shiftKey \|\| event\.altKey\) return;/);
+  // Phones and tablets keep WhatsApp and mail links direct; their planner
+  // links open the card as a sheet instead of leaving or jumping down the page.
+  assert.match(host, /if \(!onDesktop && next\.trigger !== "planner"\) return;/);
   // Only navigation is replaced: hrefs stay, and the link's analytics handler still runs.
   assert.doesNotMatch(host, /setAttribute\("href"|\.href\s*=|stopPropagation|stopImmediatePropagation/);
-  assert.match(host, /event\.preventDefault\(\);\s*show\(next, anchor\);/);
+  assert.match(host, /event\.preventDefault\(\);\s*show\(next, anchor, onDesktop \? "card" : "sheet"\);/);
   // Links inside the card, and links marked as direct, work normally.
   assert.match(host, /anchor\.closest\("\[data-contact-card-dialog\], \[data-contact-card-direct\]"\)/);
+});
+
+test("on phones and tablets a planner link opens the card as a sheet: WhatsApp, Messenger and email, no code to scan", async () => {
+  const [dialog, sheetStyles, social] = await Promise.all([
+    source("components/ContactCardDialog.tsx"),
+    source("components/ContactSheet.module.css"),
+    source("lib/homegroundSocial.ts"),
+  ]);
+  assert.match(dialog, /const sheet = layout === "sheet";/);
+  // Reported as its own variant of the same events.
+  assert.match(dialog, /const contactVariant = sheet \? "mobile_sheet" : "desktop_card";/);
+  const sheetStart = dialog.indexOf("{sheet ? (");
+  const sheetBranch = dialog.slice(sheetStart, dialog.indexOf("<div className={styles.columns}", sheetStart));
+  assert.ok(sheetBranch.length > 200);
+  // WhatsApp opens the app with the same prefilled chat as the card's code; Messenger is the site's own page.
+  assert.match(sheetBranch, /href=\{whatsappHref\} target="_blank" rel="noopener noreferrer"[^>]*onClick=\{openedApp\("whatsapp"\)\}/);
+  assert.match(sheetBranch, /href=\{messengerHref\} target="_blank" rel="noopener noreferrer"[^>]*onClick=\{openedApp\("messenger"\)\}/);
+  assert.match(dialog, /const messengerHref = sheet \? homegroundMessengerUrl\(\) : "";/);
+  assert.match(social, /trustedMessengerUrl\(\s*process\.env\.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL\?\.trim\(\) \|\|\s*`https:\/\/m\.me\/\$\{homegroundFacebookPageId\}`/);
+  assert.doesNotMatch(sheetBranch, /ContactCardScan/);
+  // The same email form serves both layouts.
+  assert.equal((dialog.match(/<form /g) ?? []).length, 1);
+  assert.match(sheetBranch, /\{mail\}/);
+  // A sheet from the bottom edge, clear of the home indicator; motion only when welcome.
+  assert.match(sheetStyles, /\.sheet \{[^}]*inset: auto 0 0;[^}]*padding-bottom: env\(safe-area-inset-bottom, 0px\);/);
+  assert.match(sheetStyles, /@media \(prefers-reduced-motion: no-preference\) \{\s*\.sheet\.sheet\[open\] \{\s*animation: sheetIn/);
+  // China time stays visible on the phone, under the title.
+  assert.match(sheetStyles, /\.sheet \.clock \{\s*display: inline-flex;/);
+  for (const size of sheetStyles.matchAll(/font-size: ([0-9.]+)rem/g)) assert.ok(Number(size[1]) >= 0.8125, size[0]);
 });
 
 test("plain planner links open the card everywhere, including the homepage; chosen services keep their flow", () => {
