@@ -730,9 +730,9 @@ const body = {
           description: "핵심 의존 요소 하나가 아직 풀리지 않을 때만 동선과 숙박 조건을 보내세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
-          label: "중국 일정 리뷰",
-          href: "/ko/china-itinerary-review/",
-          description: "이미 만든 날짜별 동선을 보내고 약한 고리를 점검받으세요.",
+          label: "베이징 핵심 5일 프라이빗 투어",
+          href: "/ko/tours/beijing-highlights-5-day-private-tour/",
+          description: "공개된 베이징 일정을 보고 여행 날짜와 속도에 맞는지 판단해 보세요.",
         },
       ],
     },

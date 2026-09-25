@@ -29,7 +29,7 @@ const localeConfig = {
       foreignHotel: ["Can foreigners stay at any hotel in China?", "Separate the legal rule, platform display and the property's current operation."],
       lastNight: ["Plan the last night before an international flight", "Work backwards from the named CKG terminal and check-in requirement."],
       rushed: ["Check whether the itinerary is too rushed", "Count station access, luggage, vertical movement and the cost of another hotel move."],
-      review: ["Review an existing China itinerary", "Bring the current day-by-day route for an evidence-based weak-link review."],
+      tour: ["Chongqing & Wulong: 5-Day Private Tour", "See the published five-day route through Chongqing and Wulong."],
       contact: ["Ask Homeground to plan the complete trip", "Use the general trip brief only after the city, dates and main constraints are clear."],
     },
     figures: {
@@ -61,7 +61,7 @@ const localeConfig = {
       foreignHotel: ["外国旅客能入住中国任何酒店吗？", "区分法律规则、平台展示和具体物业当下的登记操作。"],
       lastNight: ["规划国际航班前的最后一晚", "从明确的 CKG 航站楼和值机要求倒推。"],
       rushed: ["检查行程是否太赶", "计入进站、行李、垂直移动和再次换酒店的成本。"],
-      review: ["人工复核现有中国行程", "带上当前逐日路线，找出有证据的薄弱环节。"],
+      tour: ["重庆·武隆 5 天 4 晚私家团", "查看已发布的重庆与武隆五天线路。"],
       contact: ["请 Homeground 规划完整旅行", "确定城市、日期与主要限制后，再使用通用旅行简报入口。"],
     },
     figures: {
@@ -93,7 +93,7 @@ const localeConfig = {
       foreignHotel: ["외국인은 중국의 모든 호텔에 묵을 수 있나요?", "법적 원칙, 플랫폼 표시, 개별 숙소의 현재 등록 운영을 구분하세요."],
       lastNight: ["국제선 출발 전 마지막 밤 계획", "확정된 CKG 터미널과 체크인 요건에서 역산하세요."],
       rushed: ["일정이 너무 빠른지 확인", "역 접근, 짐, 수직 이동, 호텔 재이동 비용까지 계산하세요."],
-      review: ["기존 중국 일정 검토", "현재 일자별 동선을 가져와 근거가 있는 취약 구간을 찾으세요."],
+      tour: ["충칭·우룽 5일 프라이빗 투어", "충칭과 우룽을 잇는 공개된 5일 일정을 살펴보세요."],
       contact: ["Homeground에 전체 여행 설계 요청", "도시, 날짜와 주요 제약을 정한 뒤 일반 여행 브리프를 사용하세요."],
     },
     figures: {
@@ -479,9 +479,9 @@ function enrich(blocks, locale) {
         description: config.labels.rushed[1],
       },
       {
-        label: config.labels.review[0],
-        href: `${locale === "en" ? "" : `/${locale}`}/china-itinerary-review/`,
-        description: config.labels.review[1],
+        label: config.labels.tour[0],
+        href: `${locale === "en" ? "" : `/${locale}`}/tours/chongqing-wulong-5-day-private-tour/`,
+        description: config.labels.tour[1],
       },
       {
         label: config.labels.contact[0],

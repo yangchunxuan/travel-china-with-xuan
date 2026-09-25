@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ChinaItineraryReviewPage } from "../../../../components/ChinaItineraryReviewPage";
-import {
-  getChinaItineraryReviewCopy,
-  getChinaItineraryReviewLanguagePaths,
-} from "../../../../lib/chinaItineraryReviewI18n";
+import { getChinaItineraryReviewCopy } from "../../../../lib/chinaItineraryReviewI18n";
 import type { HomegroundLocale } from "../../../../lib/homegroundI18n";
 
 type LocalizedLocale = Exclude<HomegroundLocale, "en">;
@@ -29,15 +26,11 @@ export async function generateMetadata({
   return {
     title: copy.metadata.title,
     description: copy.metadata.description,
-    alternates: {
-      canonical: copy.path,
-      languages: getChinaItineraryReviewLanguagePaths(),
-    },
     robots: {
-      index: true,
+      index: false,
       follow: true,
       googleBot: {
-        index: true,
+        index: false,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,

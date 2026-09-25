@@ -625,9 +625,9 @@ const body = {
             "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
-          label: "China itinerary review",
-          href: "/china-itinerary-review/",
-          description: "Bring an existing day-by-day route and have the weak links checked.",
+          label: "Xi'an & the Terracotta Warriors: 5-Day Private Tour",
+          href: "/tours/xian-terracotta-warriors-5-day-private-tour/",
+          description: "See how the published route divides time between Xi'an and the Terracotta Warriors.",
         },
       ],
     },

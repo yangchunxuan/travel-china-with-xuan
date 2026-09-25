@@ -925,9 +925,9 @@ const body = {
           description: "Count station access, luggage, vertical movement and the cost of another hotel move."
         },
         {
-          label: "Review an existing China itinerary",
-          href: "/china-itinerary-review/",
-          description: "Bring the current day-by-day route for an evidence-based weak-link review."
+          label: "Chongqing & Wulong: 5-Day Private Tour",
+          href: "/tours/chongqing-wulong-5-day-private-tour/",
+          description: "See the published five-day route through Chongqing and Wulong."
         },
         {
           label: "Ask Homeground to plan the complete trip",

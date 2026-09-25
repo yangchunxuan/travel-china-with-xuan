@@ -14,6 +14,12 @@
       "reason": "The section now contains reviewed seasonal and public-holiday guides, explicit child collections and a monthly refresh policy for time-sensitive material.",
       "from": { "status": "review", "index": false, "follow": true },
       "to": { "status": "published", "index": true, "follow": true }
+    },
+    {
+      "contentId": "system-itinerary-review",
+      "reason": "Standalone paid route-review and route-build services have ended. The canonical URLs redirect to current private tours, and legacy HTML fallback variants must leave the index.",
+      "from": { "status": "published", "index": true, "follow": true },
+      "to": { "status": "published", "index": false, "follow": true }
     }
   ]
 }

@@ -603,9 +603,9 @@ const body = {
           description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
-          label: "中国行程点评",
-          href: "/zh/china-itinerary-review/",
-          description: "把已有的逐日路线交上来，让人帮你找出薄弱环节。",
+          label: "西安·兵马俑 5 天 4 晚私家团",
+          href: "/zh/tours/xian-terracotta-warriors-5-day-private-tour/",
+          description: "查看已发布线路如何分配西安市区和兵马俑的游览时间。",
         },
       ],
     },
