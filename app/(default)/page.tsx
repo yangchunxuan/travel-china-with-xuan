@@ -3,7 +3,7 @@ import { HomegroundHomePage } from "../../components/HomegroundHomePage";
 import { getHomegroundCopy } from "../../lib/homegroundI18n";
 import {
   getHomepageDestinationHubItems,
-  getHomepageGuideRailItems,
+  getHomepageGuideChapters,
   getHomepageSearchDemos,
 } from "../../lib/homepageEditorial";
 import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog";
@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <HomegroundHomePage
       destinationHubItems={getHomepageDestinationHubItems("en")}
-      guideRailItems={getHomepageGuideRailItems("en").slice(0, 18)}
+      guideChapters={getHomepageGuideChapters("en")}
       locale="en"
       privateTourItems={getHomepagePrivateTourItems("en")}
       searchDemos={getHomepageSearchDemos("en")}

@@ -7,7 +7,7 @@ import {
 } from "../../../lib/homegroundI18n";
 import {
   getHomepageDestinationHubItems,
-  getHomepageGuideRailItems,
+  getHomepageGuideChapters,
   getHomepageSearchDemos,
 } from "../../../lib/homepageEditorial";
 import { getHomepagePrivateTourItems } from "../../../lib/homepagePrivateTourCatalog";
@@ -77,7 +77,7 @@ export default async function LocalizedHome({
   return (
     <HomegroundHomePage
       destinationHubItems={getHomepageDestinationHubItems(locale)}
-      guideRailItems={getHomepageGuideRailItems(locale).slice(0, 18)}
+      guideChapters={getHomepageGuideChapters(locale)}
       locale={locale}
       privateTourItems={getHomepagePrivateTourItems(locale)}
       searchDemos={getHomepageSearchDemos(locale)}
