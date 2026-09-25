@@ -68,6 +68,10 @@ export interface GuideLocaleEntry {
   title: string;
   headline: string;
   description: string;
+  /** Use when only this language was edited after the shared guide date. */
+  dateModified?: string;
+  /** Use only after the complete factual source set for this language was rechecked. */
+  sourceReviewedDate?: string;
   heroAlt: string;
   heroCredit?: {
     text: string;

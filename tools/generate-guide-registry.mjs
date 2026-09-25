@@ -127,11 +127,16 @@ function validateLocaleEntry(entry, id, locale, label) {
   ];
   assertOnlyKeys(
     entry,
-    new Set([...requiredText, "heroCredit", "cardImageAlt", "cardTags"]),
+    new Set([...requiredText, "dateModified", "sourceReviewedDate", "heroCredit", "cardImageAlt", "cardTags"]),
     label,
   );
   for (const key of requiredText) {
     if (!nonEmpty(entry[key])) throw new Error(`${label}.${key} must be non-empty.`);
+  }
+  for (const key of ["dateModified", "sourceReviewedDate"]) {
+    if (entry[key] !== undefined && !validDate(entry[key])) {
+      throw new Error(`${label}.${key} must be YYYY-MM-DD when supplied.`);
+    }
   }
   if (entry.cardImageAlt !== undefined && !nonEmpty(entry.cardImageAlt)) {
     throw new Error(`${label}.cardImageAlt must be non-empty when supplied.`);

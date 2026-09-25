@@ -36,6 +36,7 @@ export type PageBodyBlock =
       readonly title?: string;
       readonly body: string;
       readonly tone?: "neutral" | "decision" | "warning";
+      readonly link?: { readonly href: string; readonly label: string };
     }
   | {
       readonly id: string;
@@ -162,7 +163,7 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       paragraph: ["id", "type", "text"],
       figure: ["id", "type", "src", "alt", "width", "height", "caption"],
       list: ["id", "type", "ordered", "items"],
-      callout: ["id", "type", "title", "body", "tone"],
+      callout: ["id", "type", "title", "body", "tone", "link"],
       comparison: ["id", "type", "title", "columns"],
       table: ["id", "type", "caption", "columns", "rows"],
       "internal-links": ["id", "type", "title", "items"],
@@ -208,6 +209,15 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       case "callout":
         if (!nonEmpty(candidate.body)) throw new Error(`${candidate.id} needs callout body text.`);
         if (!optionalNonEmpty(candidate.title)) throw new Error(`${candidate.id} title must be non-empty when supplied.`);
+        if (
+          candidate.link !== undefined &&
+          (!isRecord(candidate.link) ||
+            !hasOnlyKeys(candidate.link, ["href", "label"]) ||
+            !validHttpUrl(candidate.link.href) ||
+            !nonEmpty(candidate.link.label))
+        ) {
+          throw new Error(`${candidate.id} needs an HTTP(S) link and label.`);
+        }
         if (
           candidate.tone !== undefined &&
           !["neutral", "decision", "warning"].includes(candidate.tone as string)

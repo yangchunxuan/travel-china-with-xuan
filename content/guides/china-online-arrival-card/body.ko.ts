@@ -14,6 +14,7 @@ const body: StructuredPageBody = {
       title: "공식 입국카드는 무료입니다",
       body: "https://s.nia.gov.cn/ArrivalCardFillingPC/ 또는 NIA의 최신 공지에 명시된 채널에서 시작하세요. 입국카드 수수료나 긴급 승인 비용을 요구하거나 카드 결제를 요청하는 사이트는 NIA가 설명한 무료 정부 서비스가 아닙니다. 결제하지 말고 공식 주소를 직접 다시 입력하세요.",
       tone: "warning",
+      link: { href: "https://s.nia.gov.cn/ArrivalCardFillingPC/", label: "공식 입국카드 작성하기" },
     },
     {
       id: "who-heading",
