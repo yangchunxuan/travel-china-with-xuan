@@ -1,21 +1,24 @@
+/*
+ * The homepage's travel guides: a China trip in three chapters. Heading and
+ * search share the top row; the chapters run across below it, each a photo
+ * at its own 16:10, a terracotta number, the topic (its hub page) and the
+ * first three guides of that topic. Phones and tablets swipe the chapters.
+ */
 .finder {
-  --guides-card: #fff;
   --guides-ink: var(--hg-color-ink);
-  --guides-line: var(--hg-color-line);
+  --guides-line: rgb(10 10 10 / 12%);
   --guides-muted: var(--hg-color-muted);
-  --guides-paper: #fff;
-  --guides-rust: var(--hg-color-rust);
-  --guides-soft: var(--hg-color-soft);
-  background: var(--hg-color-soft);
-  border: 1px solid rgb(10 10 10 / 6%);
-  border-radius: 1rem;
+  --guides-rust: #a84731;
+  --guides-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  align-items: end;
   display: grid;
-  gap: clamp(2rem, 4vw, 4rem);
-  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 2rem clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-inline-size: 0;
-  padding: clamp(1.5rem, 3.2vw, 2.5rem);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 0;
   position: relative;
   scroll-margin-top: 5.75rem;
+  /* Search suggestions open over the chapters. */
   z-index: 3;
 }
 
@@ -43,10 +46,10 @@
 .introduction h2 {
   color: var(--hg-color-ink);
   font-family: var(--hg-editorial);
-  font-size: clamp(1.85rem, 3vw, 2.65rem);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.06;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   margin: 0;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -54,107 +57,226 @@
 
 .body {
   color: var(--hg-color-muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.65;
   margin: 0;
-  max-inline-size: 34rem;
+  max-inline-size: 32rem;
 }
 
 .formArea {
-  align-self: center;
+  align-self: end;
 }
 
-.guidePaths {
-  border-block-start: 1px solid rgb(10 10 10 / 10%);
+/* Chapters */
+.chapters {
   grid-column: 1 / -1;
+  margin-block-start: clamp(0.5rem, 2vw, 1.5rem);
   min-inline-size: 0;
-  padding-block-start: 1.25rem;
 }
 
-.guidePaths > p {
-  color: var(--guides-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.4;
-  margin: 0 0 0.75rem;
-  text-transform: none;
-}
-
-.guidePaths ul {
+.chapters ol {
   display: grid;
+  gap: 3.5rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 1.75rem 0 0;
+  position: relative;
+}
+
+/* The rule above the chapters and the rules between them. */
+.chapters ol::before,
+.chapter + .chapter::before {
+  background: var(--guides-line);
+  content: "";
+  position: absolute;
+}
+
+.chapters ol::before {
+  block-size: 1px;
+  inset-block-start: 0;
+  inset-inline: 0;
+  transform-origin: left;
+}
+
+.chapter {
+  min-inline-size: 0;
+  position: relative;
+}
+
+.chapter + .chapter::before {
+  inline-size: 1px;
+  inset-block: -1.75rem 0;
+  inset-inline-start: -1.75rem;
+  transform-origin: top;
+}
+
+.chapterPhoto {
+  aspect-ratio: 16 / 10;
+  background: #f5f5f3;
+  border-radius: 1rem;
+  display: block;
+  overflow: hidden;
+}
+
+.chapterPhoto img {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--guides-ease);
+}
+
+.chapterTitle {
+  align-items: baseline;
+  display: flex;
+  gap: 0.9rem;
+  margin: 1.4rem 0 0.9rem;
+}
+
+.chapterNumber {
+  color: var(--guides-rust);
+  flex: 0 0 auto;
+  font-family: var(--hg-editorial);
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.chapterTitle a {
+  align-items: baseline;
+  color: var(--guides-ink);
+  display: inline-flex;
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.35rem, 1.9vw, 1.75rem);
+  font-weight: 400;
+  gap: 0.45rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.chapterTitle svg {
+  color: rgb(10 10 10 / 40%);
+  flex: 0 0 auto;
+  transition:
+    color 200ms ease,
+    transform 300ms var(--guides-ease);
+}
+
+.questions {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.guidePaths li {
-  min-inline-size: 0;
+.questions li {
+  border-block-start: 1px solid rgb(10 10 10 / 9%);
 }
 
-.guidePaths li + li {
-  border-inline-start: 1px solid rgb(10 10 10 / 10%);
-}
-
-.guidePaths a {
+.questions a {
   align-items: start;
   color: var(--guides-ink);
-  display: grid;
+  display: flex;
+  font-size: 0.9375rem;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) auto;
-  min-block-size: 5.5rem;
-  padding: 0.75rem 1.25rem;
+  justify-content: space-between;
+  line-height: 1.45;
+  min-block-size: 2.75rem;
+  padding-block: 0.85rem;
   text-decoration: none;
-  transition: background-color 150ms ease;
 }
 
-.guidePaths li:first-child a {
-  padding-inline-start: 0;
+/* An ink line draws under the question on hover. */
+.questions a > span {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 420ms var(--guides-ease);
 }
 
-.guidePaths li:last-child a {
-  padding-inline-end: 0;
-}
-
-.guidePaths a > span {
-  display: grid;
-  gap: 0.3rem;
-  min-inline-size: 0;
-}
-
-.guidePaths strong {
-  font-size: 0.9rem;
-  font-weight: 650;
-  line-height: 1.4;
-}
-
-.guidePaths small {
-  color: var(--guides-muted);
-  font-size: 0.78rem;
-  line-height: 1.5;
-}
-
-.guidePaths svg {
-  color: rgb(10 10 10 / 35%);
+.questions svg {
+  color: rgb(10 10 10 / 40%);
+  flex: 0 0 auto;
   margin-block-start: 0.15rem;
   transition:
-    color 150ms ease,
+    color 200ms ease,
+    transform 300ms var(--guides-ease);
+}
+
+@media (hover: hover) {
+  .chapter:hover .chapterPhoto img {
+    transform: scale(1.03);
+  }
+
+  .chapterTitle a:hover svg {
+    color: var(--guides-ink);
+    transform: translate(2px, -2px);
+  }
+
+  .questions a:hover > span {
+    background-size: 100% 1px;
+  }
+
+  .questions a:hover svg {
+    color: var(--guides-ink);
+    transform: translateX(4px);
+  }
+}
+
+.questions a:focus-visible > span {
+  background-size: 100% 1px;
+}
+
+.footer {
+  grid-column: 1 / -1;
+  margin-block-start: 0.5rem;
+}
+
+/* The site's secondary pill: 14px / 500 / 44px, warm grey. */
+.viewAll {
+  align-items: center;
+  background: #f2f1ef;
+  border-radius: 999px;
+  color: var(--guides-ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.7rem;
+  min-block-size: 2.75rem;
+  padding: 0 1.25rem;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
     transform 150ms ease;
 }
 
-.guidePaths a:hover {
-  background: rgb(10 10 10 / 4%);
+.viewAll:hover {
+  background: #e9e7e3;
 }
 
-.guidePaths a:hover svg {
-  color: var(--guides-ink);
-  transform: translate(2px, -2px);
+.viewAll:active {
+  transform: scale(0.97);
 }
 
-.guidePaths a:focus-visible {
+.viewAll svg {
+  transition: transform 300ms var(--guides-ease);
+}
+
+@media (hover: hover) {
+  .viewAll:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.chapterPhoto:focus-visible,
+.chapterTitle a:focus-visible,
+.questions a:focus-visible,
+.viewAll:focus-visible {
   outline: 2px solid var(--hg-color-focus);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 :global([data-homeground-locale="zh"]) .introduction h2 {
@@ -174,15 +296,29 @@
 }
 
 :global([data-homeground-locale="zh"]) .eyebrow,
-:global([data-homeground-locale="ko"]) .eyebrow,
-:global([data-homeground-locale="zh"]) .guidePaths > p,
-:global([data-homeground-locale="ko"]) .guidePaths > p {
+:global([data-homeground-locale="ko"]) .eyebrow {
   letter-spacing: 0.02em;
   text-transform: none;
 }
 
-@media (max-width: 52rem) {
+:global([data-homeground-locale="zh"]) .chapterTitle a {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+:global([data-homeground-locale="ko"]) .chapterTitle a {
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+:global([data-homeground-locale="ko"]) .questions a {
+  word-break: keep-all;
+}
+
+/* Phones and tablets: one chapter at a time, swiped, the next one peeking in. */
+@media (max-width: 63.999rem) {
   .finder {
+    align-items: start;
     gap: 1.6rem;
     grid-template-columns: minmax(0, 1fr);
   }
@@ -191,53 +327,126 @@
     max-inline-size: 44rem;
   }
 
-}
-
-@media (max-width: 42rem) {
-  .guidePaths ul {
-    grid-template-columns: minmax(0, 1fr);
+  .chapters {
+    margin-inline: calc(var(--showcase-gutter, 1rem) * -1);
   }
 
-  .guidePaths li + li {
-    border-block-start: 1px solid rgb(10 10 10 / 10%);
-    border-inline-start: 0;
+  .chapters ol {
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(17.5rem, 82%));
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0 var(--showcase-gutter, 1rem);
+    scroll-padding-inline: var(--showcase-gutter, 1rem);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
   }
 
-  .guidePaths a,
-  .guidePaths li:first-child a,
-  .guidePaths li:last-child a {
-    min-block-size: 4.75rem;
-    padding: 0.85rem 0;
+  .chapters ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chapters ol::before,
+  .chapter + .chapter::before {
+    display: none;
+  }
+
+  .chapter {
+    scroll-snap-align: start;
+  }
+
+  .chapterTitle {
+    margin-block: 1rem 0.5rem;
   }
 }
 
 @media (max-width: 30rem) {
-  .finder {
-    border-radius: 1rem;
-    gap: 1.25rem;
-    padding: 1.1rem;
-  }
-
   .introduction h2 {
-    font-size: clamp(1.72rem, 9vw, 2.15rem);
+    font-size: clamp(1.85rem, 9vw, 2.25rem);
   }
 }
 
-@media (prefers-contrast: more) {
-  .finder {
-    border-width: 2px;
+/*
+ * Motion, only when welcome and supported: as the chapters scroll in, the
+ * rules draw (the long one first, then the two between chapters) and each
+ * photo opens from its lower edge, a beat apart. Everything stays readable
+ * at rest; browsers without scroll-driven animation show the finished page.
+ */
+@keyframes guideRuleAcross {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes guideRuleDown {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes guidePhotoOpen {
+  from {
+    clip-path: inset(22% 0 0 0 round 1rem);
+  }
+
+  to {
+    clip-path: inset(0 round 1rem);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 64rem) {
+    .chapters ol::before {
+      animation: guideRuleAcross linear both;
+      animation-range: entry 10% cover 30%;
+      animation-timeline: view();
+    }
+
+    .chapter + .chapter::before {
+      animation: guideRuleDown linear both;
+      animation-range: entry 20% cover 45%;
+      animation-timeline: view();
+    }
+
+    .chapterPhoto {
+      animation: guidePhotoOpen linear both;
+      animation-range: entry 0% entry 90%;
+      animation-timeline: view();
+    }
+
+    .chapter:nth-child(2) .chapterPhoto {
+      animation-range: entry 10% entry 100%;
+    }
+
+    .chapter:nth-child(3) .chapterPhoto {
+      animation-range: entry 20% entry 100%;
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .guidePaths a,
-  .guidePaths svg {
+  .chapterPhoto img,
+  .chapterTitle svg,
+  .questions a > span,
+  .questions svg,
+  .viewAll,
+  .viewAll svg {
     transition: none;
+  }
+
+  .viewAll:active {
+    transform: none;
   }
 }
 
 @media (forced-colors: active) {
-  .guidePaths a:focus-visible {
+  .chapterTitle a:focus-visible,
+  .questions a:focus-visible,
+  .viewAll:focus-visible {
     outline: 2px solid CanvasText;
+  }
+
+  .viewAll {
+    border: 1px solid CanvasText;
   }
 }

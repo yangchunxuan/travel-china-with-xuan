@@ -15,11 +15,9 @@ interface HomepageShowcaseCopy {
   readonly heroDestinationAction: string;
   readonly guidePaths: {
     readonly listLabel: string;
-    readonly prompt: string;
     readonly items: readonly {
       readonly id: HomepageGuidePathId;
       readonly title: string;
-      readonly body: string;
     }[];
   };
   readonly planning: {
@@ -50,22 +48,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
     heroDestinationAction: "Explore China destinations",
     guidePaths: {
       listLabel: "Browse China travel guides by decision",
-      prompt: "Or start with the decision in front of you",
       items: [
         {
           id: "stay",
           title: "Choose a place to stay",
-          body: "Hotel areas and neighbourhood trade-offs",
         },
         {
           id: "transport",
           title: "Get the arrival right",
-          body: "Airports, railway stations and transfers",
         },
         {
           id: "plan",
           title: "Test the route",
-          body: "City order, trip length and travel pace",
         },
       ],
     },
@@ -96,22 +90,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
     heroDestinationAction: "浏览中国目的地",
     guidePaths: {
       listLabel: "按当前问题浏览中国旅行指南",
-      prompt: "也可以从眼前的问题开始",
       items: [
         {
           id: "stay",
           title: "选住宿区域",
-          body: "酒店位置、街区与往返代价",
         },
         {
           id: "transport",
           title: "先把抵达走对",
-          body: "机场、火车站与转场",
         },
         {
           id: "plan",
           title: "检查路线节奏",
-          body: "城市顺序、天数与行程松紧",
         },
       ],
     },
@@ -142,22 +132,18 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
     heroDestinationAction: "중국 여행지 둘러보기",
     guidePaths: {
       listLabel: "지금의 결정에 따라 중국 여행 가이드 둘러보기",
-      prompt: "지금 고민 중인 항목부터 살펴보세요",
       items: [
         {
           id: "stay",
           title: "숙소 지역 고르기",
-          body: "호텔 위치, 동네와 왕복 동선",
         },
         {
           id: "transport",
           title: "도착 동선 확인하기",
-          body: "공항, 기차역과 환승",
         },
         {
           id: "plan",
           title: "여행 속도 점검하기",
-          body: "도시 순서, 여행 일수와 일정 여유",
         },
       ],
     },

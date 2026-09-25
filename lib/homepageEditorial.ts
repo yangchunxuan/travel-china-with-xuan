@@ -15,6 +15,7 @@ import {
   getDestinationHubEntry,
   type DestinationHubId,
 } from "./destinationHubs";
+import type { HomepageGuidePathId } from "./homepageShowcaseI18n";
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard";
 
 export type HomepageGuideCategory =
@@ -42,6 +43,13 @@ export interface HomepageGuideRailItem {
   };
   readonly href: string;
   readonly linkLabel: string;
+}
+
+/** One chapter of the homepage's travel guides: a topic with its own hub page. */
+export interface HomepageGuideChapter {
+  readonly id: HomepageGuidePathId;
+  readonly photo: HomepageGuideRailItem["image"];
+  readonly guides: readonly HomepageGuideRailItem[];
 }
 
 export interface HomepageSearchDemo {
@@ -189,6 +197,37 @@ export function getHomepageGuideRailItems(locale: HomegroundLocale) {
     } satisfies HomepageGuideRailItem,
     ...orderedGuides.map((guide) => guideRailItem(guide, locale)),
   ];
+}
+
+// A trip in three chapters, in the order it is planned: the route and its
+// pace, getting there, then where to stay. Each shows the first three guides
+// of its topic in editorial order, under a photo that shows the theme at its
+// own 16:10 (a route, a station, a place to stay).
+const homepageGuideChapterOrder: readonly HomepageGuidePathId[] = [
+  "plan",
+  "transport",
+  "stay",
+];
+const homepageGuideChapterPhotoIds: Readonly<Record<HomepageGuidePathId, string>> = {
+  plan: "china-14-day-itinerary",
+  transport: "beijing-south-station-to-capital-or-daxing-airport",
+  stay: "zhangjiajie-city-or-wulingyuan-hotel-base",
+};
+
+export function getHomepageGuideChapters(
+  locale: HomegroundLocale,
+): readonly HomepageGuideChapter[] {
+  const guides = getHomepageGuideRailItems(locale).filter(
+    (item) => item.kind === "guide",
+  );
+  return homepageGuideChapterOrder.flatMap((id) => {
+    const inChapter = guides.filter((item) => item.category === id);
+    if (inChapter.length === 0) return [];
+    const photo =
+      inChapter.find((item) => item.id === homepageGuideChapterPhotoIds[id]) ??
+      inChapter[0];
+    return [{ id, photo: photo.image, guides: inChapter.slice(0, 3) }];
+  });
 }
 
 export function getHomepageSearchDemos(

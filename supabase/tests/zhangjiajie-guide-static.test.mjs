@@ -126,7 +126,7 @@ test("public guide remains available to search, citation and training crawlers",
   );
   const guide = await source("components/ZhangjiajieGuidePage.tsx");
   const homeEditorial = await source("lib/homepageEditorial.ts");
-  const homeRail = await source("components/HomepageGuideRail.tsx");
+  const homeGuides = await source("components/HomepageGuideSearch.tsx");
   const footer = await source("components/HomegroundFooter.tsx");
   const header = await source("components/HomegroundHeader.tsx");
 
@@ -143,7 +143,7 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(homeEditorial, /getAllGuides\(locale\)/);
   assert.match(homeEditorial, /href: guide\.canonicalPath/);
   assert.match(homeEditorial, /linkLabel: guide\.featuredLinkLabel/);
-  assert.match(homeRail, /href=\{item\.href\}/);
+  assert.match(homeGuides, /href=\{guide\.href\}/);
   assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.match(header, /getGuidePath\(guideId, targetLocale\)/);

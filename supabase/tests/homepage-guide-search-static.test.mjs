@@ -6,28 +6,24 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("homepage guide search is followed by the localized guide rail", async () => {
-  const [homepage, finder, finderStyles, rail] = await Promise.all([
+test("homepage guide search leads the guide chapters, before the planning section", async () => {
+  const [homepage, finder, finderStyles] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageGuideSearch.tsx"),
     source("components/HomepageGuideSearch.module.css"),
-    source("components/HomepageGuideRail.tsx"),
   ]);
   const finderPosition = homepage.indexOf(
     "<HomepageGuideSearch",
   );
-  const railPosition = homepage.indexOf("<HomepageGuideRail");
   const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
 
   assert.ok(finderPosition >= 0, "the guide finder must remain present");
   assert.ok(
-    railPosition > finderPosition,
-    "the broader guide rail must follow the guide finder",
-  );
-  assert.ok(
-    planningScope > railPosition,
+    planningScope > finderPosition,
     "guide discovery must remain before the planning-scope section",
   );
+  // The chapters replaced the separate guide rail (2026-09-25).
+  assert.doesNotMatch(homepage, /<HomepageGuideRail|guideRailCatalogPath|homepage-guide-index/);
   assert.doesNotMatch(
     homepage,
     /guideSearchRuntime|searchPlatformManifest/,
@@ -39,13 +35,14 @@ test("homepage guide search is followed by the localized guide rail", async () =
     "the homepage search anchor must clear the sticky header",
   );
   assert.match(finder, /<h2 id="homepage-guide-search-title">/);
-  assert.match(finder, /className=\{styles\.guidePaths\}/);
-  assert.match(finder, /<nav[\s\S]*?<ul>[\s\S]*?<li[\s\S]*?<Link href=/);
-  assert.doesNotMatch(finder, /<ol|decisionNumber/);
+  // Search comes before the chapters, and suggestions open over them.
+  assert.ok(finder.indexOf("<GuideSearchForm") < finder.indexOf("className={styles.chapters}"));
+  assert.match(finderStyles, /\.finder \{[\s\S]*?z-index: 3;/);
+  assert.match(finder, /className=\{styles\.chapters\}/);
+  assert.match(finder, /<nav[\s\S]*?<ol>[\s\S]*?<li[\s\S]*?<Link/);
   assert.match(finder, /rotatingPlaceholders=\{demos\.map/);
   assert.match(finder, /showExamples=\{false\}/);
   assert.doesNotMatch(finder, /styles\.demo|demoResults|demoQuestion/);
-  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<Link/);
 });
 
 test("homepage finder lazy-loads one same-language static index", async () => {
@@ -143,20 +140,32 @@ test("homepage search placeholder demo types continuously, pauses for input and 
   assert.doesNotMatch(finder, /typewriter|setInterval|aria-live/);
 });
 
-test("guide rail preserves position while lazy-loading and loads near the native-scroll edge", async () => {
-  const rail = await source("components/HomepageGuideRail.tsx");
-
-  assert.match(
-    rail,
-    /maximumScroll - currentScroll <= list\.clientWidth \* 1\.25/,
-  );
-  assert.match(rail, /void ensureCompleteCatalog\(\)/);
-  assert.match(
-    rail,
-    /useEffect\(\(\) => \{\s*const list = listRef\.current;\s*if \(!list\) return;\s*list\.scrollLeft = 0;\s*updateCatalogProgress\(\);\s*\}, \[resolvedCategory, updateCatalogProgress\]\)/,
-  );
-  assert.match(rail, /addEventListener\("scroll", queueCatalogProgressUpdate/);
-  assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
+test("homepage guide chapters follow a trip and show each topic's first guides under a fitting photo", async () => {
+  const [editorial, homepage, finderStyles] = await Promise.all([
+    source("lib/homepageEditorial.ts"),
+    source("components/HomegroundHomePage.tsx"),
+    source("components/HomepageGuideSearch.module.css"),
+  ]);
+  // Route and pace, getting there, then where to stay: the three topics with hub pages.
+  assert.match(editorial, /homepageGuideChapterOrder[^=]*= \[\s*"plan",\s*"transport",\s*"stay",\s*\]/);
+  assert.match(editorial, /plan: "china-14-day-itinerary"/);
+  assert.match(editorial, /transport: "beijing-south-station-to-capital-or-daxing-airport"/);
+  assert.match(editorial, /stay: "zhangjiajie-city-or-wulingyuan-hotel-base"/);
+  // Guides only, in editorial order, three per chapter; an empty topic is skipped.
+  assert.match(editorial, /\(item\) => item\.kind === "guide"/);
+  assert.match(editorial, /if \(inChapter\.length === 0\) return \[\];/);
+  assert.match(editorial, /guides: inChapter\.slice\(0, 3\)/);
+  // A chapter's guide links report through the existing guide-card event.
+  assert.match(homepage, /onGuideClick=\{\(guide\) => \{\s*trackEvent\("homepage_guide_card_clicked"/);
+  // Motion only when welcome and supported, and nothing rests hidden.
+  const motion = finderStyles.slice(finderStyles.indexOf("@supports (animation-timeline: view())"));
+  assert.match(motion, /@media \(prefers-reduced-motion: no-preference\) and \(min-width: 64rem\)/);
+  for (const name of ["guideRuleAcross", "guideRuleDown", "guidePhotoOpen"]) {
+    assert.match(motion, new RegExp(`animation: ${name} linear both;`), name);
+  }
+  assert.match(finderStyles, /@keyframes guidePhotoOpen \{\s*from \{\s*clip-path: inset\(22% 0 0 0 round 1rem\);/);
+  assert.doesNotMatch(finderStyles, /opacity: 0[;\s]/);
+  assert.match(finderStyles, /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.questions a > span,[\s\S]*?transition: none;/);
 });
 
 test("homepage hero keeps one canonical brand promise behind a two-second rotating ending", async () => {

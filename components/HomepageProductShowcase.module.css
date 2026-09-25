@@ -71,7 +71,7 @@
 .productGrid {
   display: grid;
   gap: 3.5rem 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
   margin: 3.5rem 0 0;
   padding: 0;
@@ -247,125 +247,23 @@
   outline-offset: 3px;
 }
 
+/* The way on to every route: the site's ink pill (14px / 500 / 44px), the
+   same as the hero's "compare tours" button, right under the routes. */
 .showcaseFooter {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
-  margin-block-start: 1rem;
+  justify-content: flex-start;
+  margin-block-start: 2.5rem;
 }
 
 .hubLink {
   align-items: center;
-  color: var(--showcase-ink);
+  background: var(--showcase-ink);
+  border: 1px solid var(--showcase-ink);
+  border-radius: 999px;
+  color: #fff;
   display: inline-flex;
   flex: 0 0 auto;
-  font-size: 0.875rem;
-  font-weight: 500;
-  gap: 0.55rem;
-  min-block-size: 2.75rem;
-  padding-inline: 0.45rem;
-  text-decoration: none;
-  text-underline-offset: 0.22em;
-}
-
-.hubLink:hover {
-  color: var(--showcase-muted);
-  text-decoration: underline;
-}
-
-.hubLink:focus-visible {
-  outline: 3px solid var(--showcase-focus);
-  outline-offset: 3px;
-}
-
-.trustList {
-  border-block: 1px solid rgb(10 10 10 / 12%);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  list-style: none;
-  margin: 2.75rem 0 0;
-  padding: 0;
-}
-
-.trustList li {
-  align-content: start;
-  display: grid;
-  gap: 0.35rem;
-  min-inline-size: 0;
-  padding: 1.35rem 1.5rem;
-}
-
-.trustList li:first-child {
-  padding-inline-start: 0;
-}
-
-.trustList li + li {
-  border-inline-start: 1px solid rgb(10 10 10 / 12%);
-}
-
-.trustList strong {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-.trustList span {
-  color: var(--homepage-product-muted);
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  text-wrap: pretty;
-}
-
-.enquiryStrip {
-  align-items: end;
-  background: #111;
-  border-radius: 1.1rem;
-  color: #fff;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: minmax(0, 1fr) auto;
-  margin-block-start: 2.5rem;
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-}
-
-.enquiryStrip > div {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.enquiryStrip p {
-  color: #bdbdbd;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  margin: 0;
-  text-transform: none;
-}
-
-.enquiryStrip h3 {
-  font-family: var(--hg-editorial);
-  font-size: clamp(1.65rem, 3vw, 2.5rem);
-  font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  margin: 0;
-  max-inline-size: 23ch;
-  text-wrap: balance;
-}
-
-.enquiryStrip > div > span {
-  color: #bdbdbd;
-  font-size: 0.84rem;
-  line-height: 1.55;
-}
-
-.enquiryStrip > a {
-  align-items: center;
-  background: #fff;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  color: #111;
-  display: inline-flex;
   font-size: 0.875rem;
   font-weight: 500;
   gap: 0.7rem;
@@ -373,21 +271,37 @@
   min-block-size: 2.75rem;
   padding: 0 1.25rem;
   text-decoration: none;
-  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
 }
 
-.enquiryStrip > a svg {
-  transition: transform 180ms ease;
+.hubLink svg {
+  flex: 0 0 auto;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.enquiryStrip > a:hover svg,
-.enquiryStrip > a:focus-visible svg {
-  transform: translateX(0.2rem);
+.hubLink:hover {
+  background: #242424;
 }
 
-.enquiryStrip > a:focus-visible {
-  outline: 3px solid #d69a89;
+@media (hover: hover) {
+  .hubLink:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.hubLink:active {
+  transform: scale(0.97);
+}
+
+.hubLink:focus-visible {
+  outline: 3px solid var(--showcase-focus);
   outline-offset: 3px;
+}
+
+.hubLink:focus-visible svg {
+  transform: translateX(4px);
 }
 
 .section[data-homeground-locale="zh"] .eyebrow,
@@ -395,26 +309,21 @@
 .section[data-homeground-locale="zh"] .count,
 .section[data-homeground-locale="ko"] .count,
 .section[data-homeground-locale="zh"] .cardMeta,
-.section[data-homeground-locale="ko"] .cardMeta,
-.section[data-homeground-locale="zh"] .enquiryStrip p,
-.section[data-homeground-locale="ko"] .enquiryStrip p {
+.section[data-homeground-locale="ko"] .cardMeta {
   letter-spacing: 0.02em;
   text-transform: none;
 }
 
 .section[data-homeground-locale="zh"] .intro h2,
 .section[data-homeground-locale="zh"] .cardTitle,
-.section[data-homeground-locale="zh"] .enquiryStrip h3,
 .section[data-homeground-locale="ko"] .intro h2,
-.section[data-homeground-locale="ko"] .cardTitle,
-.section[data-homeground-locale="ko"] .enquiryStrip h3 {
+.section[data-homeground-locale="ko"] .cardTitle {
   letter-spacing: 0;
   line-height: 1.3;
 }
 
 .section[data-homeground-locale="zh"] .intro h2,
-.section[data-homeground-locale="zh"] .cardTitle,
-.section[data-homeground-locale="zh"] .enquiryStrip h3 {
+.section[data-homeground-locale="zh"] .cardTitle {
   font-weight: 500;
   line-break: strict;
   overflow-wrap: normal;
@@ -423,9 +332,7 @@
 
 .section[data-homeground-locale="ko"] .intro h2,
 .section[data-homeground-locale="ko"] .cardTitle,
-.section[data-homeground-locale="ko"] .cardDescription,
-.section[data-homeground-locale="ko"] .enquiryStrip h3,
-.section[data-homeground-locale="ko"] .enquiryStrip > div > span {
+.section[data-homeground-locale="ko"] .cardDescription {
   word-break: keep-all;
 }
 
@@ -437,10 +344,6 @@
 
   .lead {
     max-inline-size: 42rem;
-  }
-
-  .productGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -537,44 +440,7 @@
   }
 
   .showcaseFooter {
-    align-items: flex-start;
-    flex-direction: column;
-    margin-block-start: 1rem;
-  }
-
-  .trustList {
-    grid-template-columns: minmax(0, 1fr);
-    margin-block-start: 1.75rem;
-  }
-
-  .trustList li,
-  .trustList li:first-child {
-    padding: 0.9rem 0;
-  }
-
-  .trustList li + li {
-    border-block-start: 1px solid rgb(10 10 10 / 12%);
-    border-inline-start: 0;
-  }
-
-  .enquiryStrip {
-    align-items: stretch;
-    gap: 1.35rem;
-    grid-template-columns: minmax(0, 1fr);
-    margin-block-start: 1.75rem;
-  }
-
-  .enquiryStrip > a {
-    inline-size: 100%;
-    white-space: normal;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-.image,
-.cardAction svg,
-.enquiryStrip > a svg {
-    transition: none;
+    margin-block-start: 1.5rem;
   }
 }
 
@@ -582,5 +448,269 @@
   .imageFrame,
   .productCard {
     border: 1px solid CanvasText;
+  }
+}
+
+/* The photo beside the list and the route numbers are for wide screens. */
+.preview,
+.rowIndex {
+  display: none;
+}
+
+/* The action label rolls over on hover; the second copy is decoration. */
+.actionRoll {
+  display: inline-grid;
+  overflow: hidden;
+}
+
+.actionRoll > span {
+  grid-area: 1 / 1;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.actionRoll > span:last-child {
+  transform: translateY(110%);
+}
+
+@media (hover: hover) {
+  .productCard:hover .actionRoll > span:first-child {
+    transform: translateY(-110%);
+  }
+
+  .productCard:hover .actionRoll > span:last-child {
+    transform: none;
+  }
+}
+
+/*
+ * Wide screens, after the feature list on x.ai's Grok page: the routes run down the left,
+ * one to about half a screen, and a photo holds still in the middle of the
+ * screen on the right. Scrolling alone picks the route: the one crossing the
+ * middle is at full strength, the others fade back, and the photo cross-fades
+ * to it. Photos keep their own 16:10, so nothing is cropped; a strip of all
+ * six sits under the large one.
+ */
+@media (min-width: 64rem) {
+  .showcaseBody {
+    align-items: start;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    margin-block-start: 1.5rem;
+  }
+
+  /* Held in the middle of the screen while the routes go by. */
+  .preview {
+    display: grid;
+    gap: 1rem;
+    inset-block-start: max(5.5rem, calc(50vh - 15.5rem));
+    position: sticky;
+  }
+
+  .previewFrame {
+    aspect-ratio: 16 / 10;
+    background: #f5f5f3;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* The next photo fades in over the last one, which stays whole
+     underneath until the fade has finished. */
+  .previewFrame img {
+    block-size: 100%;
+    display: block;
+    inline-size: 100%;
+    inset: 0;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0s linear 600ms;
+    z-index: 0;
+  }
+
+  .previewFrame img[data-active] {
+    opacity: 1;
+    transition: opacity 600ms ease;
+    z-index: 1;
+  }
+
+  .previewCount {
+    align-items: center;
+    color: var(--homepage-product-muted);
+    display: grid;
+    font-family: var(--hg-editorial);
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    gap: 1rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .previewCount > span:first-child {
+    color: var(--showcase-ink);
+  }
+
+  /* All six photos, whole, between the counter's numbers; the lit route's
+     photo is at full strength with a rule drawn under it. */
+  .filmstrip {
+    display: grid;
+    gap: 0.4rem;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+
+  .filmstrip > span {
+    display: block;
+    opacity: 0.42;
+    padding-block-end: 0.45rem;
+    position: relative;
+    transition: opacity 500ms ease;
+  }
+
+  .filmstrip > span::after {
+    background: var(--showcase-ink);
+    block-size: 1px;
+    content: "";
+    inset-block-end: 0;
+    inset-inline: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .filmstrip > span[data-active] {
+    opacity: 1;
+  }
+
+  .filmstrip > span[data-active]::after {
+    transform: none;
+  }
+
+  .filmstrip img {
+    aspect-ratio: 16 / 10;
+    block-size: auto;
+    border-radius: 0.375rem;
+    display: block;
+    inline-size: 100%;
+    object-fit: cover;
+  }
+
+  .productGrid {
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+  }
+
+  /* About half a screen per route, its text centred in it. */
+  .productGrid li {
+    align-content: center;
+    display: grid;
+    min-block-size: 46vh;
+    transition: opacity 500ms ease;
+  }
+
+  .productGrid[data-index-live] li:not([data-active]) {
+    opacity: 0.25;
+  }
+
+  .productCard {
+    align-items: start;
+    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    padding-block: 2.5rem;
+  }
+
+  .rowIndex {
+    color: #a84731;
+    display: block;
+    font-family: var(--hg-editorial);
+    font-size: 1.375rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    padding-block-start: 0.1rem;
+  }
+
+  /* The photos live, uncropped, beside the list instead. */
+  .imageFrame {
+    display: none;
+  }
+
+  .cardCopy {
+    padding: 0;
+  }
+
+  .cardMeta {
+    justify-content: flex-start;
+  }
+
+  .cardMeta > span + span::before {
+    content: "·";
+    margin-inline-end: 0.75rem;
+  }
+
+  .cardTitle {
+    font-size: clamp(1.5rem, 2.1vw, 1.875rem);
+    margin-block-start: 0.6rem;
+  }
+
+  .cardPrice {
+    margin-block-start: 1rem;
+  }
+
+  .cardPrice > strong {
+    font-family: var(--hg-editorial);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-block: 0.15rem 0.3rem;
+  }
+
+  /* The whole text: each route has room for it here. */
+  .cardDescription {
+    display: block;
+    margin-block-start: 1rem;
+    max-inline-size: 34rem;
+    overflow: visible;
+  }
+
+  .cardAction {
+    border: 0;
+    justify-content: flex-start;
+    margin-block-start: 1.25rem;
+    padding: 0;
+  }
+
+  .productGrid li[data-active] .cardAction svg {
+    transform: translateX(4px);
+  }
+
+  /* Lined up with the routes' text, under the last one. */
+  .showcaseFooter {
+    margin-block-start: 0.5rem;
+    padding-inline-start: 3.75rem;
+  }
+}
+
+/* Last, so it also stops the wide-screen transitions above. */
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .cardAction svg,
+  .actionRoll > span,
+  .productGrid li,
+  .previewFrame img,
+  .previewFrame img[data-active],
+  .filmstrip > span,
+  .filmstrip > span::after,
+  .hubLink,
+  .hubLink svg {
+    transition: none;
+  }
+
+  .hubLink:active,
+  .hubLink:hover svg,
+  .hubLink:focus-visible svg {
+    transform: none;
   }
 }
