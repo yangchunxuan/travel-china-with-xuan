@@ -78,13 +78,26 @@ export default async function LocalizedRootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
         {locale === "zh" ? (
-          <link
-            rel="preload"
-            href="/fonts/homeground-serif-sc.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
+          <>
+            {/*
+              The Chinese serif is cut into unicode-range slices
+              (tools/slice-serif-sc-font.mjs). Slice 00 holds the first
+              viewport of the key pages and is preloaded; the browser fetches
+              the other slices only for the characters a page lays out.
+            */}
+            <link
+              rel="stylesheet"
+              href="/fonts/homeground-serif-sc.css"
+              precedence="homeground-fonts"
+            />
+            <link
+              rel="preload"
+              href="/fonts/homeground-serif-sc-00.woff2"
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
+            />
+          </>
         ) : (
           <>
             <link

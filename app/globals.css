@@ -1,10 +1,7 @@
-@font-face {
-  font-family: "Homeground Serif SC";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 500;
-  src: url("/fonts/homeground-serif-sc.woff2") format("woff2");
-}
+/*
+ * "Homeground Serif SC" is declared as unicode-range slices in
+ * public/fonts/homeground-serif-sc.css, which only Chinese pages link.
+ */
 
 @font-face {
   font-family: "Homeground Pretendard";

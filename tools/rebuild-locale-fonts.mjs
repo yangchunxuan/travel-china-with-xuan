@@ -6,6 +6,8 @@ import {
   collectLocaleFontSourceFiles,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
+import { localeFontSubsetOptions } from "./locale-font-subset-options.mjs";
+import { serifScSourcePath } from "./serif-sc-slice-plan.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const argumentsByName = Object.fromEntries(
@@ -76,24 +78,14 @@ runPython("fontTools.varLib.instancer", [
   `--output=${fixedNoto}`,
 ]);
 
-const sharedSubsetOptions = [
-  "--flavor=woff2",
-  "--layout-features=*",
-  "--glyph-names",
-  "--symbol-cmap",
-  "--legacy-cmap",
-  "--notdef-glyph",
-  "--notdef-outline",
-  "--recommended-glyphs",
-  "--name-IDs=*",
-  "--name-legacy",
-  "--name-languages=*",
-];
+const sharedSubsetOptions = localeFontSubsetOptions;
 
+// The Chinese subset is the source for its unicode-range slices; only the
+// slices are published (tools/slice-serif-sc-font.mjs runs at the end).
 runPython("fontTools.subset", [
   fixedNoto,
   `--text=${chineseText}`,
-  `--output-file=${resolve(projectRoot, "public/fonts/homeground-serif-sc.woff2")}`,
+  `--output-file=${resolve(projectRoot, serifScSourcePath)}`,
   ...sharedSubsetOptions,
 ]);
 
@@ -110,6 +102,19 @@ runPython("fontTools.subset", [
   `--output-file=${resolve(projectRoot, "public/fonts/homeground-maruburi-ko.woff2")}`,
   ...sharedSubsetOptions,
 ]);
+
+const slicing = spawnSync(
+  process.execPath,
+  [
+    resolve(projectRoot, "tools/slice-serif-sc-font.mjs"),
+    `--python=${python}`,
+    `--fonttools=${pythonPath}`,
+  ],
+  { cwd: projectRoot, stdio: "inherit" },
+);
+if (slicing.status !== 0) {
+  throw new Error("tools/slice-serif-sc-font.mjs failed");
+}
 
 console.log(
   `✓ Rebuilt locale fonts for ${[...chineseText].length} Chinese-source and ${[...koreanText].length} Korean-source characters.`,

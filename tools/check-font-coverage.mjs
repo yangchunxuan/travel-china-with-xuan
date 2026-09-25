@@ -1,3 +1,4 @@
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as fontkit from "fontkit";
@@ -6,6 +7,12 @@ import {
   collectProductionExportFontFiles,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
+import {
+  parseFontFaces,
+  routeCodePoint,
+  serifScSliceFilePattern,
+  serifScStylesheetFile,
+} from "./serif-sc-slice-plan.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const argumentsSet = new Set(process.argv.slice(2));
@@ -55,20 +62,83 @@ function charactersMatching(pattern) {
 const chineseCharacters = charactersMatching(/\p{Script=Han}/gu);
 const koreanCharacters = charactersMatching(/\p{Script=Hangul}/gu);
 
+function singleFontFile(fontPath) {
+  const font = fontkit.openSync(resolve(projectRoot, fontPath));
+  return {
+    hasGlyph: (codePoint) => font.hasGlyphForCodePoint(codePoint),
+    problems: [],
+    scope: "",
+  };
+}
+
+// The Chinese font ships as unicode-range slices. A character is covered only
+// when the slice the browser consults first for it (the last-defined
+// @font-face whose unicode-range contains it) has the glyph. Every glyph a
+// slice carries must also be reachable through its own range, and every slice
+// file must be referenced, so the stylesheet and the files cannot drift apart.
+function unicodeRangeSlices(stylesheetPath) {
+  const faces = parseFontFaces(
+    readFileSync(resolve(projectRoot, stylesheetPath), "utf8"),
+  );
+  const problems = [];
+  const fonts = faces.map((face) => {
+    const filePath = resolve(
+      projectRoot,
+      fontDirectory,
+      face.src.replace(/^\/fonts\//, ""),
+    );
+    if (!face.src.startsWith("/fonts/") || !existsSync(filePath)) {
+      problems.push(`${face.src} is not a file in ${fontDirectory}`);
+      return null;
+    }
+    return fontkit.openSync(filePath);
+  });
+  if (faces.length === 0) problems.push(`${stylesheetPath} declares no slices`);
+  fonts.forEach((font, index) => {
+    if (!font) return;
+    const unreachable = font.characterSet.filter(
+      (codePoint) =>
+        font.hasGlyphForCodePoint(codePoint) &&
+        routeCodePoint(faces, codePoint) !== index,
+    );
+    if (unreachable.length > 0) {
+      problems.push(
+        `${faces[index].src} carries ${unreachable.length} glyph(s) its unicode-range never selects`,
+      );
+    }
+  });
+  const referenced = new Set(
+    faces.map((face) => face.src.replace(/^\/fonts\//, "")),
+  );
+  for (const name of readdirSync(resolve(projectRoot, fontDirectory))) {
+    if (serifScSliceFilePattern.test(name) && !referenced.has(name)) {
+      problems.push(`${fontDirectory}/${name} is not referenced by ${stylesheetPath}`);
+    }
+  }
+  return {
+    hasGlyph: (codePoint) => {
+      const index = routeCodePoint(faces, codePoint);
+      return index >= 0 && Boolean(fonts[index]?.hasGlyphForCodePoint(codePoint));
+    },
+    problems,
+    scope: ` across ${faces.length} unicode-range slices`,
+  };
+}
+
 const checks = [
   {
     characters: chineseCharacters,
-    fontPath: `${fontDirectory}/homeground-serif-sc.woff2`,
+    font: unicodeRangeSlices(`${fontDirectory}/${serifScStylesheetFile}`),
     label: "Chinese editorial font",
   },
   {
     characters: koreanCharacters,
-    fontPath: `${fontDirectory}/homeground-pretendard-ko.woff2`,
+    font: singleFontFile(`${fontDirectory}/homeground-pretendard-ko.woff2`),
     label: "Korean interface font",
   },
   {
     characters: koreanCharacters,
-    fontPath: `${fontDirectory}/homeground-maruburi-ko.woff2`,
+    font: singleFontFile(`${fontDirectory}/homeground-maruburi-ko.woff2`),
     label: "Korean editorial font",
   },
 ];
@@ -77,10 +147,12 @@ let failed = false;
 const maximumReportedGlyphs = 80;
 
 for (const check of checks) {
-  const absoluteFontPath = resolve(projectRoot, check.fontPath);
-  const font = fontkit.openSync(absoluteFontPath);
+  for (const problem of check.font.problems) {
+    failed = true;
+    console.error(`✗ ${check.label}: ${problem}`);
+  }
   const missing = check.characters.filter(
-    (character) => !font.hasGlyphForCodePoint(character.codePointAt(0)),
+    (character) => !check.font.hasGlyph(character.codePointAt(0)),
   );
 
   if (missing.length > 0) {
@@ -106,7 +178,7 @@ for (const check of checks) {
     );
   } else {
     console.log(
-      `✓ ${check.label} covers all ${check.characters.length} required characters from ${corpusLabel}.`,
+      `✓ ${check.label} covers all ${check.characters.length} required characters from ${corpusLabel}${check.font.scope}.`,
     );
   }
 }

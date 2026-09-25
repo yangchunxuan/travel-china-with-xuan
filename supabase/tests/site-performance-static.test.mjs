@@ -139,6 +139,28 @@ test("oversized card and portrait images request the generated variants", async 
   assert.match(studio, /image\.smallWidth > 640/);
 });
 
+test("Chinese pages preload only the catch-all slice of the sliced serif", async () => {
+  const [layout, globals, stylesheet] = await Promise.all([
+    source("app/(localized)/[locale]/layout.tsx"),
+    source("app/globals.css"),
+    source("public/fonts/homeground-serif-sc.css"),
+  ]);
+  const { parseFontFaces } = await import("../../tools/serif-sc-slice-plan.mjs");
+  const faces = parseFontFaces(stylesheet);
+
+  // Slice 00 has no unicode-range: it stays the family's primary font and
+  // catch-all, and it is the one slice worth fetching before first paint.
+  assert.ok(faces.length > 1);
+  assert.equal(faces[0].ranges, null);
+  assert.ok(faces.slice(1).every((face) => face.ranges?.length > 0));
+  const serifPreloads = [
+    ...layout.matchAll(/rel="preload"\s+href="(\/fonts\/homeground-serif-sc[^"]*)"/g),
+  ].map((match) => match[1]);
+  assert.deepEqual(serifPreloads, [faces[0].src]);
+  assert.match(layout, /rel="stylesheet"\s+href="\/fonts\/homeground-serif-sc\.css"/);
+  assert.doesNotMatch(globals, /font-family:\s*"Homeground Serif SC"/);
+});
+
 test("tour heroes are fetched at high priority, not only preloaded", async () => {
   const [jiangnanDeck, zhangjiajie] = await Promise.all([
     source("components/ShanghaiJiangnanImagineInteractive.tsx"),
