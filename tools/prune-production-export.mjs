@@ -344,7 +344,11 @@ for (const forbiddenAsset of [
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-nihao-twin-entry.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-twin.jpg",
   "product-previews/zhangjiajie-4-day-private-tour/accommodations/city-west-double.jpg",
-]) {
+].flatMap((asset) => [
+  asset,
+  // tools/generate-image-variants.mjs writes resized copies next to each photo.
+  ...[640, 1024, 1280].map((width) => asset.replace(/\.[a-z]+$/i, `.w${width}.webp`)),
+])) {
   const forbiddenPath = path.join(outputRoot, forbiddenAsset);
 
   try {

@@ -25,3 +25,6 @@ DESIGN-BRIEF-*.md
 public/images/**/*.w640.webp
 public/images/**/*.w1024.webp
 public/images/**/*.w1280.webp
+public/product-previews/**/*.w640.webp
+public/product-previews/**/*.w1024.webp
+public/product-previews/**/*.w1280.webp

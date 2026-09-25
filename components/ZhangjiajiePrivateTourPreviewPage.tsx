@@ -414,6 +414,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                       ? "햇빛을 받은 장가계 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
                       : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
                 }
+                fetchPriority="high"
                 fill
                 priority
                 sizes="(max-width: 860px) 100vw, 42vw"

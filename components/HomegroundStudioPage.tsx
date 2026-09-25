@@ -24,10 +24,22 @@ import { ScrollWords } from "./motion/ScrollWords";
 import { StudioPlanThread } from "./StudioPlanThread";
 import styles from "./HomegroundStudioPage.module.css";
 
-function photoSources(
-  image: ReturnType<typeof getHomegroundStudioCopy>["members"][number]["image"],
-) {
-  return `${image.smallSrc} ${image.smallWidth}w, ${image.src} ${image.width}w`;
+type StudioPhoto =
+  ReturnType<typeof getHomegroundStudioCopy>["members"][number]["image"];
+
+const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w640.webp");
+
+// Every /images/ photo has a .w640.webp sibling from
+// tools/generate-image-variants.mjs, never wider than its original. The small
+// JPEGs are 562-1000px wide but shown at 52-240 CSS px, so the webp comes first.
+function smallPhotoSources(image: StudioPhoto) {
+  return image.smallWidth > 640
+    ? `${smallVariant(image.smallSrc)} 640w, ${image.smallSrc} ${image.smallWidth}w`
+    : `${smallVariant(image.smallSrc)} ${image.smallWidth}w`;
+}
+
+function photoSources(image: StudioPhoto) {
+  return `${smallPhotoSources(image)}, ${image.src} ${image.width}w`;
 }
 
 const memberStoryGuideIds = {
@@ -79,8 +91,6 @@ const placeTiles: readonly { id: DestinationHubId; x: number; y: number; z: numb
   { id: "xian", x: 62, y: 93, z: 0.5 },
   { id: "hangzhou", x: 4, y: 8, z: 0.35 },
 ];
-
-const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w640.webp");
 
 export function HomegroundStudioPage({
   locale = "en",
@@ -151,7 +161,9 @@ export function HomegroundStudioPage({
                     alt=""
                     decoding="async"
                     height={member.image.smallHeight}
+                    sizes="(max-width: 680px) 3.25rem, (max-width: 1180px) 7.75rem, 10rem"
                     src={member.image.smallSrc}
+                    srcSet={smallPhotoSources(member.image)}
                     style={{ objectPosition: member.image.position }}
                     width={member.image.smallWidth}
                   />

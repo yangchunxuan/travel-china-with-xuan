@@ -20,6 +20,7 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import {
   editorialOrganizationSchema,
@@ -33,6 +34,10 @@ import { KeepWords } from "./text/KeepWords";
 import styles from "./SearchPlatformHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+// Guide cards: three columns up to the 77rem content width, two at tablet
+// width and a 6.5rem thumbnail on phones (SearchPlatformHubPage.module.css).
+const guideCardImageSizes =
+  "(max-width: 680px) 6.5rem, (max-width: 980px) calc((100vw - 4rem) / 2), (max-width: 1280px) calc((100vw - 5rem) / 3), 25rem";
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
   zh: "zh-CN",
@@ -306,7 +311,9 @@ export function SearchCollectionHubPage({
                           decoding="async"
                           height={guide.cardImageHeight}
                           loading="lazy"
+                          sizes={guideCardImageSizes}
                           src={guide.cardImagePath}
+                          srcSet={generatedImageSrcSet(guide.cardImagePath, guide.cardImageWidth)}
                           width={guide.cardImageWidth}
                         />
                       </figure>
