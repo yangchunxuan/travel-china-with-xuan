@@ -149,6 +149,10 @@
   white-space: nowrap;
 }
 
+.compactTitleLine {
+  white-space: nowrap;
+}
+
 .heroPromise {
   color: var(--im-muted);
   font-size: clamp(1.75rem, 2.65vw, 2.35rem);
@@ -1033,6 +1037,17 @@
     letter-spacing: -0.045em;
     line-height: 1.02;
     max-width: 12ch;
+  }
+
+  .hero h1.compactRouteTitle {
+    font-size: clamp(1.75rem, 8.2vw, 2.4rem);
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    max-width: none;
+  }
+
+  .compactTitleLine {
+    display: block;
   }
 
   .heroPromise {

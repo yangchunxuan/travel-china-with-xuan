@@ -601,9 +601,12 @@ async function sendThroughResend(
     const travelDate = quote.travelDate ?? "(Date undecided)";
     const note = quote.note ?? "(No note provided)";
     const productUrl = `https://homegroundchina.com${quote.attribution.landingPath}`;
-    subject = `[Homeground][Private tour quote] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(quote.productInterest.name, "product_name")}`;
+    const tourFormat = quote.productInterest.slug.endsWith("-small-group-tour")
+      ? "Small-group tour"
+      : "Private tour";
+    subject = `[Homeground][${tourFormat} quote] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(quote.productInterest.name, "product_name")}`;
     text = [
-      "A visitor requested a quote for this published private tour.",
+      `A visitor requested a quote for this published ${tourFormat.toLowerCase()}.`,
       "The requested date and notes are traveller input, not a confirmed booking or supplier availability.",
       "",
       `Reference: ${job.public_reference}`,
@@ -620,7 +623,7 @@ async function sendThroughResend(
       "", "Reply directly to this message; Reply-To is already set to the traveller.",
       "The Gmail thread and its Sent message are the handling record.",
     ].join("\n");
-    html = `<p>A visitor requested a quote for this published private tour.</p>
+    html = `<p>A visitor requested a quote for this published ${tourFormat.toLowerCase()}.</p>
       <p>The requested date and notes are traveller input, not a confirmed booking or supplier availability.</p>
       <dl>
         <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
