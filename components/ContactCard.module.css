@@ -318,8 +318,14 @@
   padding-top: 16px;
 }
 
-.scan h3,
-.mail h3 {
+/*
+ * The homepage card styles its own headings with `.quickContactCard h3` at the
+ * same weight. Stylesheets now load per route, so which file came last depended
+ * on whether the visitor arrived by a click or a direct load; doubling the
+ * class keeps the card's serif heading either way.
+ */
+.scan.scan h3,
+.mail.mail h3 {
   margin: 0;
   font-family: var(--hg-font-editorial, Georgia, serif);
   font-size: 1.625rem;
@@ -329,7 +335,7 @@
   text-wrap: balance;
 }
 
-.scanInline h3 {
+.scanInline.scanInline h3 {
   font-size: 1.375rem;
 }
 

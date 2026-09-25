@@ -4,9 +4,9 @@ import type { ImageLoaderProps } from "next/image";
 
 // Static export cannot run the Next.js image optimizer, so this loader maps a
 // requested width onto the pre-generated variants produced by
-// tools/generate-image-variants.mjs. Anything outside /images/ (or without a
-// raster extension) is returned untouched.
-const rasterPattern = /^\/images\/.+\.(webp|jpe?g|png)$/i;
+// tools/generate-image-variants.mjs. Anything outside /images/ and
+// /product-previews/ (or without a raster extension) is returned untouched.
+const rasterPattern = /^\/(?:images|product-previews)\/.+\.(webp|jpe?g|png)$/i;
 const variantPattern = /\.w(640|1024|1280)\.webp$/i;
 
 export default function homegroundImageLoader({ src, width }: ImageLoaderProps) {

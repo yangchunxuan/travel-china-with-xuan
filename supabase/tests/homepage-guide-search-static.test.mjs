@@ -78,6 +78,11 @@ test("homepage search remains keyboard- and error-accessible", async () => {
   assert.doesNotMatch(form, /aria-expanded=\{showSuggestions/);
   assert.doesNotMatch(form, /aria-controls=\{/);
   assert.match(form, /className=\{styles\.suggestions\}[\s\S]*?role="region"/);
+  // Safari and iPhone do not focus a pressed link, so a press inside the list
+  // must not blur the input, or the list closes before the tap lands.
+  assert.match(form, /role="region"\s+onMouseDown=\{keepFocusInSearch\}/);
+  assert.match(form, /role="status"\s+onMouseDown=\{keepFocusInSearch\}/);
+  assert.match(form, /const keepFocusInSearch = \(event: MouseEvent<HTMLDivElement>\) => \{\s+event\.preventDefault\(\);/);
   assert.match(form, /<p role="status" aria-live="polite">/);
   assert.match(form, /event\.key === "Escape"/);
   assert.match(form, /event\.key === "ArrowDown"/);

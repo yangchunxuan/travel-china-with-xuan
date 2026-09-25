@@ -6,7 +6,7 @@
  * carries no paper or ink: each page's root class alone decides those.
  *
  * Page roots also carry the global marker "hg-locale-root", which the shared
- * footer (styled in HomegroundHomePage.module.css) keys its Chinese and Korean
+ * footer (styled in HomegroundFooter.module.css) keys its Chinese and Korean
  * tagline on.
  */
 .root {

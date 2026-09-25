@@ -406,6 +406,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
             className={`${editorialStyles.heroFigure} ${styles.heroFigure}`}
           >
             <div className={styles.heroImage}>
+              {/* Above 860px the 3:2 photo covers a 4:5 box (~38vw, at most
+                  ~548px wide), so it is drawn about 1.9x the box width. */}
               <Image
                 alt={
                   isZh
@@ -414,9 +416,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
                       ? "햇빛을 받은 장가계 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
                       : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
                 }
+                fetchPriority="high"
                 fill
                 priority
-                sizes="(max-width: 860px) 100vw, 42vw"
+                sizes="(max-width: 860px) 100vw, (max-width: 1440px) 72vw, 1040px"
                 src="/product-previews/zhangjiajie-4-day-private-tour/hero/sunlit-forest-pillars-174.jpg"
               />
             </div>
@@ -565,7 +568,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                           alt={photo.alt}
                           className={styles.stayImage}
                           height={photo.height}
-                          sizes="(max-width: 540px) 92vw, (max-width: 1100px) 44vw, 36vw"
+                          sizes="(max-width: 540px) 92vw, (max-width: 1100px) 44vw, 45vw"
                           src={photo.src}
                           width={photo.width}
                         />
