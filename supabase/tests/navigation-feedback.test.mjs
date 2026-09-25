@@ -207,9 +207,15 @@ test("the loader waits 220ms, then whitens the page under the header with a coun
   assert.match(count, /font-family: var\(--hg-font-editorial, Georgia/);
   assert.match(count, /font-weight: 400;/);
   assert.match(count, /font-size: clamp\(3\.5rem, 8vw, 7\.5rem\);/);
-  assert.match(count, /font-variant-numeric: tabular-nums;/);
   assert.match(count, /color: #0a0a0a;/);
-  assert.match(count, /inset-block-end: calc\(env\(safe-area-inset-bottom/);
+  // The editorial serif's own old-style digits (no figure-style switch), in a box
+  // always as wide as "100", so nothing moves while the digits change.
+  assert.doesNotMatch(count, /font-variant-numeric|font-feature-settings/);
+  assert.match(count, /text-align: start;/);
+  assert.match(rule(css, ".count::after"), /block-size: 0;\s*content: "100";\s*display: block;\s*overflow: hidden;\s*visibility: hidden;/);
+  // Bottom-left, or just above the privacy banner while it is open.
+  assert.match(rule(css, ".feedback"), /--hg-nav-lift: 0px;/);
+  assert.match(count, /inset-block-end: max\(\s*calc\(env\(safe-area-inset-bottom, 0px\) \+ clamp\(1\.25rem, 3vw, 2\.5rem\)\),\s*calc\(var\(--hg-nav-lift\) \+ clamp\(0\.75rem, 2vw, 1\.5rem\)\)\s*\);/);
   assert.match(css, /@media \(max-width: 40rem\) \{\s*\.count \{\s*font-size: 3rem;/);
   assert.match(rule(css, ".fill"), /background: #a84731;[\s\S]*transform: scaleX\(var\(--hg-nav-progress\)\);/);
   // Nothing the loader draws ever takes a click or a tap, over the header or anywhere else.
@@ -222,9 +228,10 @@ test("the loader waits 220ms, then whitens the page under the header with a coun
   assert.match(css, /\[data-state="done"\] \.bar \{\s*opacity: 0;\s*transition: opacity 200ms ease;/);
   // Reduced motion: no count, no veil, no fades, a still full-width line.
   assert.match(css, /@media \(prefers-reduced-motion: reduce\) \{\s*[^@]*\.veil,\s*\.count \{\s*display: none;\s*\}\s*\.fill \{\s*transform: none;\s*\}\s*\.feedback\[data-state\] \.bar \{\s*transition-duration: 0s;/);
-  // Full document loads keep the short cross-fade where supported.
-  assert.match(globals, /@media \(prefers-reduced-motion: no-preference\) \{\s*@view-transition \{\s*navigation: auto;/);
-  assert.match(globals, /animation-duration: 180ms;/);
+  // Full document loads keep the browser's own behaviour: the old page (and its
+  // loader) stays until the new one paints. No cross-document view transition,
+  // which drew the old header over the new one.
+  assert.doesNotMatch(globals, /@view-transition|::view-transition/);
 });
 
 test("the loader never delays a navigation and only clears when the visitor stayed", async () => {
@@ -249,6 +256,14 @@ test("the loader never delays a navigation and only clears when the visitor stay
   assert.match(component, /addEventListener\("pageshow", onPageShow\)/);
   assert.match(component, /addEventListener\("popstate", reset\)/);
   assert.match(component, /giveUpMs = 20_000/);
+  // The count is lifted above the privacy banner while it is open, measured when
+  // the loader starts and whenever the banner changes size.
+  assert.match(component, /consentBannerSelector = "\[data-homeground-consent-banner\]"/);
+  assert.match(component, /root\.style\.setProperty\("--hg-nav-lift", `\$\{Math\.ceil\(lift\)\}px`\)/);
+  assert.match(component, /bannerObserver = new ResizeObserver\(\(\) => liftAboveBanner\(banner\)\)/);
+  assert.match(component, /show\(0\);\s*watchBanner\(\);\s*setState\("pending"\);/);
+  assert.match(component, /bannerObserver\?\.disconnect\(\);/);
+  assert.doesNotMatch(component, /pageswap/);
 });
 
 test("prefetch follows intent and idle time, shares Next.js's cache and respects data saving", async () => {

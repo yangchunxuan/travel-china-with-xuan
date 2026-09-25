@@ -6,6 +6,8 @@
    Done: the count reads 100 and everything fades in 200ms. */
 .feedback {
   --hg-nav-progress: 0;
+  /* Height of the open privacy banner (AnalyticsConsent) from the bottom edge, 0px when it is closed. */
+  --hg-nav-lift: 0px;
   display: contents;
 }
 
@@ -43,17 +45,33 @@
   font-family: var(--hg-font-editorial, Georgia, "Times New Roman", serif);
   font-size: clamp(3.5rem, 8vw, 7.5rem);
   font-style: normal;
-  font-variant-numeric: tabular-nums;
   font-weight: 400;
-  inset-block-end: calc(env(safe-area-inset-bottom, 0px) + clamp(1.25rem, 3vw, 2.5rem));
+  /* Bottom-left corner, or just above the privacy banner while it is open. */
+  inset-block-end: max(
+    calc(env(safe-area-inset-bottom, 0px) + clamp(1.25rem, 3vw, 2.5rem)),
+    calc(var(--hg-nav-lift) + clamp(0.75rem, 2vw, 1.5rem))
+  );
   inset-inline-start: clamp(1rem, 4vw, 3.5rem);
   letter-spacing: -0.02em;
   line-height: 1;
   opacity: 0;
   pointer-events: none;
   position: fixed;
+  text-align: start;
   user-select: none;
   z-index: 99;
+}
+
+/* The editorial serif's old-style digits are proportional, so "11" is
+   narrower than "88". A hidden, zero-height "100" holds the box at its
+   widest from the first frame: the box never changes width while counting
+   and the digits stay anchored at its start edge. */
+.count::after {
+  block-size: 0;
+  content: "100";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .feedback[data-state="pending"] .veil,

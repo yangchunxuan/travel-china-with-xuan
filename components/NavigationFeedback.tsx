@@ -21,6 +21,8 @@ import {
 import styles from "./NavigationFeedback.module.css";
 
 const pressedAttribute = "data-hg-nav-pressed";
+/** The privacy banner (AnalyticsConsent): fixed to the bottom edge, above the loader. */
+const consentBannerSelector = "[data-homeground-consent-banner]";
 const connection = () =>
   (navigator as Navigator & { connection?: NavigationPrefetchConnection }).connection;
 /** Matches the longest "done" transition in NavigationFeedback.module.css. */
@@ -35,7 +37,10 @@ const giveUpMs = 20_000;
  * corner and a terracotta line follows it along the top edge; on arrival
  * the count completes and the loader fades. Fast arrivals draw nothing, and
  * pages still swap atomically (components/PageArrivalFrame.tsx), with no
- * entrance animation.
+ * entrance animation. A full document load (English <-> Chinese/Korean) keeps
+ * the old page and its loader on screen until the new page paints, and the
+ * Chinese <-> Korean switch remounts the [locale] layout; both replace the
+ * loader with the new page's own, idle one in a single frame (no 100, no fade).
  *
  * It also prefetches, so the loader rarely has to show: a tour card's exact
  * page as soon as it is pointed at, touched or focused, the likeliest next
@@ -64,6 +69,7 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
     let blurredWhileVisible = false;
     let mode: NavigationFeedbackMode | null = null;
     let pressed: HTMLAnchorElement | null = null;
+    let bannerObserver: ResizeObserver | null = null;
 
     const setState = (state: "idle" | "pending" | "done") => {
       root.dataset.state = state;
@@ -79,9 +85,31 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
       pressed?.removeAttribute(pressedAttribute);
       pressed = null;
     };
+    // While the privacy banner is open it covers the bottom of the screen
+    // (above the veil and the count), so the count sits just above it. It is
+    // measured when the loader starts and whenever the banner changes size
+    // (e.g. it comes back when the phone menu closes on a tap). The value is
+    // kept through the fade-out, so the count never jumps while it fades.
+    const liftAboveBanner = (banner: HTMLElement | null) => {
+      let lift = 0;
+      if (banner?.isConnected) {
+        const { height } = banner.getBoundingClientRect();
+        if (height > 0) lift = height + (Number.parseFloat(getComputedStyle(banner).bottom) || 0);
+      }
+      root.style.setProperty("--hg-nav-lift", `${Math.ceil(lift)}px`);
+    };
+    const watchBanner = () => {
+      const banner = document.querySelector<HTMLElement>(consentBannerSelector);
+      liftAboveBanner(banner);
+      if (!banner || typeof ResizeObserver !== "function") return;
+      bannerObserver = new ResizeObserver(() => liftAboveBanner(banner));
+      bannerObserver.observe(banner);
+    };
     const stopWatching = () => {
       window.cancelAnimationFrame(frame);
       window.clearTimeout(giveUpTimer);
+      bannerObserver?.disconnect();
+      bannerObserver = null;
       window.removeEventListener("beforeunload", onBeforeUnload);
       mode = null;
       blurredWhileVisible = false;
@@ -156,6 +184,7 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
       clickAt = performance.now();
       startKey = `${location.pathname}${location.search}`;
       show(0);
+      watchBanner();
       setState("pending");
       giveUpTimer = window.setTimeout(reset, giveUpMs);
       frame = window.requestAnimationFrame(tick);
@@ -186,11 +215,6 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
     const onFocus = () => {
       if (mode === "document" && blurredWhileVisible) reset();
     };
-    // The old page's last frame (and, where supported, the cross-document
-    // view transition) shows the count completed.
-    const onPageSwap = () => {
-      if (mode === "document") show(100);
-    };
     // Back from the next page restores this one from the back/forward cache
     // exactly as it was left: pending. Clear it before it is shown.
     const onPageShow = (event: PageTransitionEvent) => {
@@ -204,7 +228,6 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
     window.addEventListener("focus", onFocus);
     document.addEventListener("visibilitychange", onVisibilityChange);
     window.addEventListener("popstate", reset);
-    window.addEventListener("pageswap", onPageSwap);
     window.addEventListener("pageshow", onPageShow);
     return () => {
       reset();
@@ -215,7 +238,6 @@ export function NavigationFeedback({ locale }: { locale: HomegroundLocale }) {
       window.removeEventListener("focus", onFocus);
       document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("popstate", reset);
-      window.removeEventListener("pageswap", onPageSwap);
       window.removeEventListener("pageshow", onPageShow);
     };
   }, [locale]);

@@ -2148,22 +2148,6 @@ a[data-hg-nav-pressed] {
   opacity: 0.72;
 }
 
-/* Full document loads (the English <-> Chinese/Korean switch and a few plain
-   links) cross-fade in 180ms where the browser supports it (Chrome/Edge 126+,
-   Safari 18.2+); elsewhere the old page is held until the new one paints.
-   Identical pixels such as the header do not visibly change. */
-@media (prefers-reduced-motion: no-preference) {
-  @view-transition {
-    navigation: auto;
-  }
-
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 180ms;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-  }
-}
-
 /* Hero carousel */
 .hero-carousel {
   position: absolute;
