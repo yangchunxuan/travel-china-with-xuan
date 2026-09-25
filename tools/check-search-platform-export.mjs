@@ -304,6 +304,13 @@ for (const id of publishedDestinationHubIds) {
     if (!sitemapLocs.includes(canonical)) {
       throw new Error(`${context}: published destination is missing from sitemap.xml`);
     }
+    if (id === "guangzhou") {
+      assertIncludes(
+        html,
+        `href="/${locale.prefix}tours/guangzhou-shunde-foshan-5-day-private-tour/"`,
+        `${context} published Guangzhou tour handoff`,
+      );
+    }
   }
 }
 
