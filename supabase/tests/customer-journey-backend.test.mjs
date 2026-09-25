@@ -50,7 +50,7 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  assert.equal(Object.keys(trafficProductPackages).length, 31);
+  assert.equal(Object.keys(trafficProductPackages).length, 45);
   assert.deepEqual(
     Object.keys(trafficProductTravelerCounts).sort(),
     Object.keys(trafficProductPackages).sort(),

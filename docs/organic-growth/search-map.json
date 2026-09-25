@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 205,
-      "localeUrlCount": 607,
-      "generatedIdentityCount": 186,
+      "identityCount": 208,
+      "localeUrlCount": 616,
+      "generatedIdentityCount": 189,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1536,6 +1536,71 @@
               "boundary": "Shanghai-to-Suzhou day-trip viability, station selection and the one-garden versus overnight decision. Date-specific train services, seats, fares, garden entry and standalone day-tour pricing remain unconfirmed."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-25",
+          "sourceBranch": "agent/longhaul-14day-20260925",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Pre-release repository snapshot; deployment, live URL verification, indexing and traffic evidence remain separate states.",
+          "identityDelta": 3,
+          "localeUrlDelta": 9,
+          "identities": [
+            {
+              "id": "best-2-week-china-tour",
+              "title": "Best 2-Week China Tour: Four 14-Day Routes Compared",
+              "metadataPath": "content/guides/best-2-week-china-tour/metadata.json",
+              "canonicalPath": "/guides/best-2-week-china-tour/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/best-2-week-china-tour/",
+                "/zh/guides/best-2-week-china-tour/",
+                "/ko/guides/best-2-week-china-tour/"
+              ],
+              "section": "plan",
+              "pageFamily": "comparison",
+              "targetIntent": "compare",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "destinations": ["china", "beijing", "xian", "chengdu", "guilin", "zhangjiajie", "shanghai"],
+              "boundary": "Compares Homeground's four bookable 14-day private routes by cities, transport, walking, season and price; excludes a self-planned day-by-day itinerary, owned by china-14-day-itinerary."
+            },
+            {
+              "id": "china-2-week-tour-cost",
+              "title": "How Much Does a 2-Week China Tour Cost? 2027 Prices",
+              "metadataPath": "content/guides/china-2-week-tour-cost/metadata.json",
+              "canonicalPath": "/guides/china-2-week-tour-cost/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/china-2-week-tour-cost/",
+                "/zh/guides/china-2-week-tour-cost/",
+                "/ko/guides/china-2-week-tour-cost/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-budget-pace-decisions",
+              "destinations": ["china", "beijing", "xian", "chengdu", "guilin", "zhangjiajie", "shanghai"],
+              "boundary": "Published per-person prices for Homeground's 10- to 21-day private tours and 2027 small groups, what they include and why they change with group size; excludes independent-travel budgets, owned by how-much-does-a-china-trip-cost."
+            },
+            {
+              "id": "china-small-group-tours-2027",
+              "title": "China Small-Group Tours 2027: Dates, Prices and Rules",
+              "metadataPath": "content/guides/china-small-group-tours-2027/metadata.json",
+              "canonicalPath": "/guides/china-small-group-tours-2027/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/china-small-group-tours-2027/",
+                "/zh/guides/china-small-group-tours-2027/",
+                "/ko/guides/china-small-group-tours-2027/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "destinations": ["china", "beijing", "xian", "chengdu", "guilin", "zhangjiajie", "shanghai"],
+              "boundary": "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail and route choice."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1549,6 +1614,7 @@
         "beijing-xian-chengdu-route-order",
         "beijing-zhangjiajie-shanghai-10-days",
         "beijing-zhangjiajie-shanghai-transport",
+        "best-2-week-china-tour",
         "best-zhangjiajie-night-show",
         "border-town-fenghuang-chadong-shen-congwen",
         "changbai-mountain-hubs-to-park-gates",
@@ -1561,6 +1627,7 @@
         "china-10-day-itinerary",
         "china-14-day-itinerary",
         "china-15-minute-neighbourhoods",
+        "china-2-week-tour-cost",
         "china-24-solar-terms-weather-food-daily-life",
         "china-240-hour-visa-free-transit-route-check",
         "china-7-day-itinerary",
@@ -1600,6 +1667,7 @@
         "china-robotaxi-zones-explained",
         "china-separate-flight-tickets-self-transfer-risk",
         "china-shoulder-season-value-tradeoff",
+        "china-small-group-tours-2027",
         "china-tiankeng-sinkholes-explained",
         "china-visa-free-canadian-citizens-2026",
         "china-visa-free-new-zealand-citizens-2026",

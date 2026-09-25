@@ -5,6 +5,8 @@ import { shanghaiSuzhouAnswers, shanghaiSuzhouHangzhouAnswers } from "./jiangnan
 import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhaseTwoProducts.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -75,6 +77,10 @@ export interface PrivateTourProduct {
     shoppingStops: false;
     addedServicesRequirePriorAgreement: true;
   }>;
+  /** Fixed-departure shared tours reuse the private-tour template with group wording. */
+  tourFormat?: "small-group";
+  /** Domestic flights named in the itinerary are part of the published price. */
+  includesDomesticFlights?: true;
   title: LocalizedText;
   // Search copy is separate from the controlled product and inquiry name.
   metadataTitle?: LocalizedText;
@@ -152,6 +158,9 @@ export interface LocalizedPrivateTourProduct {
   days: number;
   nights: number;
   servicePolicy: PrivateTourProduct["servicePolicy"];
+  // Present only when set on the source product, so other pages keep their payload.
+  tourFormat?: "small-group";
+  includesDomesticFlights?: true;
   itinerary: readonly { day: number; title: string; description: string }[];
   hotelNote: string;
   serviceNote: string;
@@ -3302,6 +3311,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     zhangjiajieFurongFenghuang,
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
+    ...privateTourLongHaulProducts,
   ],
 );
 
@@ -3410,6 +3420,8 @@ export function localizePrivateTourProduct(
     days: product.days,
     nights: product.nights,
     servicePolicy: product.servicePolicy,
+    ...(product.tourFormat ? { tourFormat: product.tourFormat } : {}),
+    ...(product.includesDomesticFlights ? { includesDomesticFlights: true as const } : {}),
     itinerary: product.itinerary.map((item) => ({
       day: item.day,
       title: item.title[locale],

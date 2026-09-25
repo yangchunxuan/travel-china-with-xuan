@@ -80,9 +80,9 @@
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 27,
-    "plan": 25,
+    "plan": 28,
     "purchase-ticket": 3,
-    "uniqueContentIds": 75
+    "uniqueContentIds": 78
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1220,6 +1220,48 @@
       "targetServiceId": null,
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "china-7-day-itinerary",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "best-2-week-china-tour",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "best-2-week-china-tour",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-2-week-tour-cost",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-2-week-tour-cost",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-small-group-tours-2027",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-small-group-tours-2027",
       "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",

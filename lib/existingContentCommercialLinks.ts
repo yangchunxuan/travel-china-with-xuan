@@ -57,6 +57,9 @@ const destinationTargets = {
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const approvedCommercialGuideIds = [
+  "best-2-week-china-tour",
+  "china-2-week-tour-cost",
+  "china-small-group-tours-2027",
   "singapore-to-zhangjiajie-itinerary",
   "chengdu-zhangjiajie-itinerary",
   "best-zhangjiajie-night-show",
@@ -265,6 +268,194 @@ const productContexts = {
       p("shanghai-suzhou-5-day-private-tour"),
     ],
   },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": {
+    destinations: ["beijing", "xian", "chengdu", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "great-wall-section-selector-from-beijing",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+      p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+      p("beijing-xian-shanghai-12-day-private-tour"),
+    ],
+  },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
+    destinations: ["beijing", "xian", "chengdu", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "chengdu-panda-base-or-dujiangyan-panda-valley",
+      "china-high-speed-train-first-time-guide",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    ],
+  },
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": {
+    destinations: ["beijing", "xian", "zhangjiajie", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "tianmen-mountain-tickets-and-routes",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"),
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+      p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+    ],
+  },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
+    destinations: ["beijing", "xian", "chengdu", "chongqing", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "chongqing-railway-station-selector",
+      "shanghai-to-suzhou-day-trip",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour"),
+      p("chongqing-yangtze-cruise-6-day-private-tour"),
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    ],
+  },
+  "beijing-xian-silk-road-15-day-private-tour": {
+    destinations: ["beijing", "xian"],
+    guides: [
+      "xian-lanzhou-dunhuang-silk-road-route",
+      "mogao-caves-independent-visit-workflow",
+      "great-wall-section-selector-from-beijing",
+      "terracotta-warriors-without-tour",
+    ],
+    relatedProducts: [
+      p("beijing-xian-silk-road-15-day-small-group-tour"),
+      p("zhangye-jiayuguan-dunhuang-7-day-private-tour"),
+      p("xinjiang-ili-sayram-8-day-private-tour"),
+    ],
+  },
+  "beijing-xian-yunnan-14-day-private-tour": {
+    destinations: ["beijing", "xian"],
+    guides: [
+      "kunming-dali-lijiang-shangri-la-route-order",
+      "lijiang-shangri-la-transport-route",
+      "lijiang-old-town-or-shuhe-where-to-stay",
+      "dali-station-to-old-town",
+    ],
+    relatedProducts: [
+      p("kunming-dali-lijiang-8-day-private-tour"),
+      p("kunming-jianshui-yuanyang-6-day-private-tour"),
+    ],
+  },
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": {
+    destinations: ["beijing", "xian", "hangzhou", "shanghai"],
+    guides: [
+      "huangshan-summit-or-gateway-base",
+      "shanghai-hangzhou-transport-route",
+      "how-to-read-a-suzhou-garden",
+      "shanghai-suzhou-hangzhou-nanjing-route-order",
+    ],
+    relatedProducts: [
+      p("huangshan-hongcun-huizhou-5-day-private-tour"),
+      p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    ],
+  },
+  "china-grand-tour-21-day-private-tour": {
+    destinations: ["beijing", "xian", "chengdu", "zhangjiajie", "chongqing", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+      p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+    ],
+  },
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": {
+    destinations: ["beijing", "xian", "zhangjiajie", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "tianmen-mountain-tickets-and-routes",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+    ],
+  },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
+    destinations: ["beijing", "xian", "chengdu", "chongqing", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "chongqing-railway-station-selector",
+      "shanghai-to-suzhou-day-trip",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+    ],
+  },
+  "beijing-xian-silk-road-15-day-small-group-tour": {
+    destinations: ["beijing", "xian"],
+    guides: [
+      "xian-lanzhou-dunhuang-silk-road-route",
+      "mogao-caves-independent-visit-workflow",
+      "great-wall-section-selector-from-beijing",
+      "terracotta-warriors-without-tour",
+    ],
+    relatedProducts: [
+      p("beijing-xian-silk-road-15-day-private-tour"),
+      p("zhangye-jiayuguan-dunhuang-7-day-private-tour"),
+    ],
+  },
+  "beijing-xian-guilin-shanghai-10-day-private-tour": {
+    destinations: ["beijing", "xian", "shanghai"],
+    guides: [
+      "china-10-day-itinerary",
+      "great-wall-section-selector-from-beijing",
+      "terracotta-warriors-without-tour",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+      p("beijing-xian-shanghai-12-day-private-tour"),
+      p("guilin-yangshuo-5-day-private-tour"),
+    ],
+  },
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": {
+    destinations: ["beijing", "hangzhou", "shanghai"],
+    guides: [
+      "shanghai-suzhou-hangzhou-nanjing-route-order",
+      "shanghai-hangzhou-transport-route",
+      "how-to-read-a-suzhou-garden",
+      "forbidden-city-for-foreign-visitors",
+    ],
+    relatedProducts: [
+      p("beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour"),
+      p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+      p("beijing-highlights-5-day-private-tour"),
+    ],
+  },
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": {
+    destinations: ["shanghai", "zhangjiajie"],
+    guides: [
+      "zhangjiajie-national-forest-park-tickets-and-entrances",
+      "tianmen-mountain-tickets-and-routes",
+      "zhangjiajie-furong-fenghuang-route-order",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+      p("guilin-yangshuo-5-day-private-tour"),
+      p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+    ],
+  },
 } as const satisfies Record<string, ProductContextDefinition>;
 
 const approvedCommercialProductSlugs = [
@@ -299,6 +490,20 @@ const approvedCommercialProductSlugs = [
   "kunming-jianshui-yuanyang-6-day-private-tour",
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+  "beijing-xian-silk-road-15-day-private-tour",
+  "beijing-xian-yunnan-14-day-private-tour",
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+  "china-grand-tour-21-day-private-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+  "beijing-xian-silk-road-15-day-small-group-tour",
+  "beijing-xian-guilin-shanghai-10-day-private-tour",
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
 ] as const;
 
 function assertExactKeys(

@@ -225,7 +225,14 @@ function buildGenericPageCopy(
       ),
     ),
   ].sort((left, right) => left - right);
-  const priceFact = product.locale === "zh"
+  const smallGroup = product.tourFormat === "small-group";
+  const priceFact = smallGroup
+    ? (product.locale === "zh"
+        ? "双人同住每人价"
+        : product.locale === "ko"
+          ? "2인 1실 기준 1인 요금"
+          : "Per person, sharing a twin room")
+    : product.locale === "zh"
     ? (publishedGroups.length
         ? `${publishedGroups.join("、")} 人公开价`
         : "按日期与人数报价")
@@ -242,8 +249,8 @@ function buildGenericPageCopy(
       skipLink: "跳到产品详情",
       breadcrumbLabel: "面包屑导航",
       homeLabel: "首页",
-      productLabel: "私家团产品",
-      heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 全程不进购物店`,
+      productLabel: smallGroup ? "线路" : "私家团产品",
+      heroMeta: `${product.days} 天 ${product.nights} 晚 · ${smallGroup ? "小团" : "私家团"} · 全程不进购物店`,
       heroPromise: product.eyebrow,
       facts: [
         { label: "行程", value: `${product.days} 天 ${product.nights} 晚` },
@@ -288,8 +295,8 @@ function buildGenericPageCopy(
       skipLink: "투어 상세로 이동",
       breadcrumbLabel: "현재 위치",
       homeLabel: "홈",
-      productLabel: "프라이빗 투어",
-      heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 쇼핑 일정 없음`,
+      productLabel: smallGroup ? "투어" : "프라이빗 투어",
+      heroMeta: `${product.nights}박 ${product.days}일 · ${smallGroup ? "소규모 그룹" : "프라이빗 투어"} · 쇼핑 일정 없음`,
       heroPromise: product.eyebrow,
       facts: [
         { label: "일정", value: `${product.nights}박 ${product.days}일` },
@@ -333,8 +340,8 @@ function buildGenericPageCopy(
     skipLink: "Skip to the tour details",
     breadcrumbLabel: "Breadcrumb",
     homeLabel: "Home",
-    productLabel: "Private tours",
-    heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · NO SHOPPING`,
+    productLabel: smallGroup ? "Tours" : "Private tours",
+    heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · ${smallGroup ? "SMALL GROUP" : "PRIVATE TOUR"} · NO SHOPPING`,
     heroPromise: product.eyebrow,
     facts: [
       {
@@ -380,6 +387,12 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
   return product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG
     ? jiangnanPageCopy[product.locale]
     : buildGenericPageCopy(product);
+}
+
+function offerGroupLabel(locale: PrivateTourLocale, travelers: number) {
+  if (locale === "zh") return `${travelers} 人同行`;
+  if (locale === "ko") return `${travelers}명 기준`;
+  return `${travelers} travellers`;
 }
 
 function schemaLanguage(locale: PrivateTourLocale) {
@@ -497,6 +510,40 @@ export function ShanghaiJiangnanImaginePage({
                 highPrice: highestRow.amount,
                 offerCount: rows.length,
                 url: pageUrl,
+                // One offer per published row, priced per person; private rows
+                // also state the party size so a 6-traveller price is not quoted to a couple.
+                offers: localized.packages.flatMap((tourPackage) =>
+                  tourPackage.rows.map((row) => ({
+                    "@type": "Offer",
+                    name:
+                      localized.tourFormat === "small-group"
+                        ? tourPackage.label
+                        : `${tourPackage.label} · ${offerGroupLabel(locale, row.travelers)}`,
+                    price: row.amount,
+                    priceCurrency: row.currency,
+                    ...(localized.tourFormat === "small-group"
+                      ? {}
+                      : {
+                          eligibleQuantity: {
+                            "@type": "QuantitativeValue",
+                            value: row.travelers,
+                            unitText: "travellers",
+                          },
+                        }),
+                    priceSpecification: {
+                      "@type": "UnitPriceSpecification",
+                      price: row.amount,
+                      priceCurrency: row.currency,
+                      referenceQuantity: {
+                        "@type": "QuantitativeValue",
+                        value: 1,
+                        unitCode: "IE",
+                        unitText: "person",
+                      },
+                    },
+                    url: pageUrl,
+                  })),
+                ),
               },
             }
           : {}),

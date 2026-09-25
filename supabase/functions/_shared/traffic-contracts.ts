@@ -61,6 +61,20 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "kunming-jianshui-yuanyang-6-day-private-tour": ["standard-guided"],
   "shenzhen-family-tech-4-day-private-tour": ["standard-guided"],
   "beijing-xian-shanghai-12-day-private-tour": ["standard-guided"],
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": ["standard-guided"],
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": ["small-group-departure"],
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": ["standard-guided"],
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": ["standard-guided"],
+  "beijing-xian-silk-road-15-day-private-tour": ["standard-guided"],
+  "beijing-xian-yunnan-14-day-private-tour": ["standard-guided"],
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": ["standard-guided"],
+  "china-grand-tour-21-day-private-tour": ["standard-guided"],
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": ["small-group-departure"],
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": ["small-group-departure"],
+  "beijing-xian-silk-road-15-day-small-group-tour": ["small-group-departure"],
+  "beijing-xian-guilin-shanghai-10-day-private-tour": ["standard-guided"],
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": ["standard-guided"],
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": ["standard-guided"],
 };
 export const trafficProductTravelerCounts: Readonly<
   Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
@@ -96,6 +110,20 @@ export const trafficProductTravelerCounts: Readonly<
   "kunming-jianshui-yuanyang-6-day-private-tour": [2, 4, 6],
   "shenzhen-family-tech-4-day-private-tour": [2, 4, 6],
   "beijing-xian-shanghai-12-day-private-tour": [2, 4, 6],
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": [2, 4, 6],
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": [2],
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": [2, 4, 6],
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": [2, 4, 6],
+  "beijing-xian-silk-road-15-day-private-tour": [2, 4, 6],
+  "beijing-xian-yunnan-14-day-private-tour": [2, 4, 6],
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": [2, 4, 6],
+  "china-grand-tour-21-day-private-tour": [2, 4, 6],
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": [2],
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": [2],
+  "beijing-xian-silk-road-15-day-small-group-tour": [2],
+  "beijing-xian-guilin-shanghai-10-day-private-tour": [2, 4, 6],
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": [2, 4, 6],
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": [2, 4, 6],
 };
 export function isTrafficProductSlug(value: unknown): value is string {
   return typeof value === "string" &&

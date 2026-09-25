@@ -498,6 +498,230 @@
         "1380x863"
       ],
       "familySha256": "ece5f5becde8dd6015af31d2071508d3f42088d4d68d135f17ce423456a9d607"
+    },
+    {
+      "productId": "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/hero.webp",
+      "sourceSha256": "ac59736eadea5feab92a9442ec804034987c274b20a3e6a70fa9eb8700dc699b",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "df6e95e1f717ae022bfba2d690efeac4ebc4819dfeda8f67a09d721f48acccca"
+    },
+    {
+      "productId": "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "sourcePath": "public/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/hero.webp",
+      "sourceSha256": "0ecd02868baf6995e3700d9b2fa1a81bbd4e36b3cd643899a82a6f3c6aa21c90",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "c5fc4641f268b6d33479372dc58f88a801792129a58c13fe4eb079cc274a3605"
+    },
+    {
+      "productId": "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/hero.webp",
+      "sourceSha256": "0c301bf882ace7fc1f3a4466957b9c5ab6b8002c7825184e5507e5c0118f014a",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "2d461b79ed809f7d24cee35999240d21c07aa33f21cdb6fdf828da3b17ac160f"
+    },
+    {
+      "productId": "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/hero.webp",
+      "sourceSha256": "6536ff4c537bf1e883563e996d7d01000aa5409666c04827669b75706203fe8b",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "9ab9b233a4816c3023bdebf2c60c712fb38f173ebf1c78a1ae97a1f2a309918b"
+    },
+    {
+      "productId": "beijing-xian-silk-road-15-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-silk-road-15-day-private-tour/hero.webp",
+      "sourceSha256": "d3dfd154939494772c6ca876c09987fc8204a6d23eb54d9645d139f910f27a33",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-silk-road-15-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "1752c1d698b8022e2fd5c131e174ed7bbe307849afb8733bdfeab7853ee9f563"
+    },
+    {
+      "productId": "beijing-xian-yunnan-14-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-yunnan-14-day-private-tour/hero.webp",
+      "sourceSha256": "f07db28174d8496b6172d999fa34569e658c76d2fe11367ae8e6d5e5861c9ce8",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-yunnan-14-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "3047aa6373b42f1a4e5d013d66012bcf5aae9263505943856019cd575ca05b0d"
+    },
+    {
+      "productId": "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/hero.webp",
+      "sourceSha256": "4c4865b0a5fd10c5ea925a6c380a543d1d29a897baaecf74ae142870d0743333",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "d959b3b96023ed2c21e408435a94762f59c3e5ea0f6d83b2643bb4de70a903e6"
+    },
+    {
+      "productId": "china-grand-tour-21-day-private-tour",
+      "sourcePath": "public/images/tours/china-grand-tour-21-day-private-tour/hero.webp",
+      "sourceSha256": "25e134745d6c21867fd445a96f5afdafe7e46c0cf8f0fe8112ec0824de5db730",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/china-grand-tour-21-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "170b402029fc5ec2e9f7c8ef28639a189f1d90dc08650fb2b490006f6103b2ed"
+    },
+    {
+      "productId": "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+      "sourcePath": "public/images/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour/hero.webp",
+      "sourceSha256": "83907eb977afde745d9cbcc49a3a06ec2f2ef9e4b4e16ebf1276b485632807e0",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "daaecb89e486ed0a9f5a8e62d5cdb926c5fa9063388c903389ee07f19d4dae98"
+    },
+    {
+      "productId": "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "sourcePath": "public/images/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour/hero.webp",
+      "sourceSha256": "b04137da2791bf2aa7f5bcca360ff9972424153466be2c98e0bfc6e815b5c5c3",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "1d74b7a9de189fa8a28de8831707254d82b814bc786cd59a32a7065378f8b4b8"
+    },
+    {
+      "productId": "beijing-xian-silk-road-15-day-small-group-tour",
+      "sourcePath": "public/images/tours/beijing-xian-silk-road-15-day-small-group-tour/hero.webp",
+      "sourceSha256": "380b771e23e1677a8a651245f60e1d75c71dee65e82f8ed676e71f413a8cdaca",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-silk-road-15-day-small-group-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "b7172d9452e79ece0e7e79e14292fa802547dbfe0951573ebbe2af9e61b86e86"
+    },
+    {
+      "productId": "beijing-xian-guilin-shanghai-10-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-guilin-shanghai-10-day-private-tour/hero.webp",
+      "sourceSha256": "c9e31fe05ac4d81977b7838343ae73bf3fe9bc13c564ffc123b3a1e138aecb9b",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-guilin-shanghai-10-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "d0c7c84cb03cfd363a9f1e48862034ad0d6010329946e1ae2b9d4481c0a4f85f"
+    },
+    {
+      "productId": "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/hero.webp",
+      "sourceSha256": "32a1bc72ec9da7f7076dbe15bb4319414c00bf08272b6b3b68b0172e1786240a",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "69d69d018467a695c0fcdec3723802d97824623f5068719f3bd3f1ecb678d446"
+    },
+    {
+      "productId": "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+      "sourcePath": "public/images/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/hero.webp",
+      "sourceSha256": "c2b76e8cd5c45bb5b3f1be679c9a711427f8230155717c9c422fdffce12df500",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "3a8ec3d34051a90cddfcd2b3384d332a080ad3a0013083f0049d08c38c33456d"
     }
   ]
 }

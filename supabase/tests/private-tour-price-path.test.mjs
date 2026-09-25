@@ -15,6 +15,7 @@ import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcas
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
 import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
+import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.ts";
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
 
@@ -145,7 +146,10 @@ test("every published service/group survives detail links, language changes and 
 
 test("six-traveller prices are exactly CNY 200 per person below each published four-traveller tier", () => {
   let sixPersonPackages = 0;
-  for (const product of privateTourProducts) for (const tourPackage of product.packages) {
+  // Long-haul routes publish USD tiers (for example USD 3,390 / 3,190) set as
+  // market targets; their CNY basis is derived from USD rather than this rule.
+  const longHaulSlugs = new Set(privateTourLongHaulSlugs);
+  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
     const four = tourPackage.prices.find((row) => row.travelers === 4);
     if (!four) continue;
     const six = tourPackage.prices.find((row) => row.travelers === 6);

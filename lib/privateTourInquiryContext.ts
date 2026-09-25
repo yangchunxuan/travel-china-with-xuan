@@ -38,6 +38,20 @@ export const privateTourInquirySlugs = [
   "kunming-jianshui-yuanyang-6-day-private-tour",
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+  "beijing-xian-silk-road-15-day-private-tour",
+  "beijing-xian-yunnan-14-day-private-tour",
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+  "china-grand-tour-21-day-private-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+  "beijing-xian-silk-road-15-day-small-group-tour",
+  "beijing-xian-guilin-shanghai-10-day-private-tour",
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
 ] as const;
 
 export type PrivateTourInquirySlug =
@@ -65,6 +79,7 @@ const packageLabels = {
   "english-guided": { en: "English-guided", zh: "含英语导游", ko: "영어 가이드 포함" },
   "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음" },
   "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스" },
+  "small-group-departure": { en: "Small group, 8–12 guests", zh: "小团，8–12 人", ko: "소규모 그룹 8~12명" },
 } as const;
 
 const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
@@ -82,6 +97,15 @@ const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
     "kunming-jianshui-yuanyang-6-day-private-tour",
     "shenzhen-family-tech-4-day-private-tour",
     "beijing-xian-shanghai-12-day-private-tour",
+    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+    "beijing-xian-yunnan-14-day-private-tour",
+    "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+    "china-grand-tour-21-day-private-tour",
+    "beijing-xian-guilin-shanghai-10-day-private-tour",
+    "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+    "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
   ] satisfies readonly PrivateTourInquirySlug[]);
 
 function usesKoreanGuideStandardPackage(slug: PrivateTourInquirySlug): boolean {
@@ -353,6 +377,73 @@ const privateTourInquiryNames: Readonly<
     en: "Beijing, Xi'an & Shanghai: 12-Day Private Tour",
     zh: "北京·西安·上海 12 天 11 晚私家团",
     ko: "베이징·시안·상하이 12일 프라이빗 투어",
+  },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": {
+    en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour",
+    zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团",
+    ko: "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어",
+  },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
+    en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour",
+    zh: "北京·西安·成都·桂林·上海 14 天 13 晚小团",
+    ko: "베이징·시안·청두·구이린·상하이 14일 소규모 그룹 투어",
+  },
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": {
+    en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour",
+    zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团",
+    ko: "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어",
+  },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
+    en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour",
+    zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团",
+    ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어",
+  },  "beijing-xian-silk-road-15-day-private-tour": {
+    en: "Beijing, Xi'an & the Silk Road: 15-Day Private Tour",
+    zh: "北京·西安·丝绸之路 15 天 14 晚私家团",
+    ko: "베이징·시안·실크로드 15일 프라이빗 투어",
+  },
+  "beijing-xian-yunnan-14-day-private-tour": {
+    en: "Beijing, Xi'an & Yunnan: 14-Day Private Tour",
+    zh: "北京·西安·云南 14 天 13 晚私家团",
+    ko: "베이징·시안·윈난 14일 프라이빗 투어",
+  },
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": {
+    en: "Beijing, Xi'an, Yellow Mountain, Hangzhou & Shanghai: 14-Day Private Tour",
+    zh: "北京·西安·黄山·杭州·上海 14 天 13 晚私家团",
+    ko: "베이징·시안·황산·항저우·상하이 14일 프라이빗 투어",
+  },
+  "china-grand-tour-21-day-private-tour": {
+    en: "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour",
+    zh: "中国全景：含张家界与长江游轮 21 天 20 晚私家团",
+    ko: "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
+  },  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": {
+    en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour",
+    zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团",
+    ko: "베이징·시안·장가계·구이린·상하이 14일 소규모 그룹 투어",
+  },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
+    en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour",
+    zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚小团",
+    ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어",
+  },
+  "beijing-xian-silk-road-15-day-small-group-tour": {
+    en: "Beijing, Xi'an & the Silk Road: 15-Day Small-Group Tour",
+    zh: "北京·西安·丝绸之路 15 天 14 晚小团",
+    ko: "베이징·시안·실크로드 15일 소규모 그룹 투어",
+  },  "beijing-xian-guilin-shanghai-10-day-private-tour": {
+    en: "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour",
+    zh: "北京·西安·桂林·上海 10 天 9 晚私家团",
+    ko: "베이징·시안·구이린·상하이 10일 프라이빗 투어",
+  },
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": {
+    en: "Beijing, Hangzhou, Suzhou & Shanghai: 11-Day Private Tour",
+    zh: "北京·杭州·苏州·上海 11 天 10 晚私家团",
+    ko: "베이징·항저우·쑤저우·상하이 11일 프라이빗 투어",
+  },
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": {
+    en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour",
+    zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团",
+    ko: "상하이·장가계·봉황·구이린 13일 프라이빗 투어",
   },
 };
 

@@ -109,6 +109,37 @@ const interactionCopy: Record<
   },
 };
 
+// Fixed-departure small groups price one twin-share place, and long-haul
+// routes include their domestic flights; everything else keeps the copy above.
+const formatCopy: Record<
+  PrivateTourLocale,
+  {
+    priceBasis: string;
+    twinShare: string;
+    smallGroup: string;
+    internationalFlightsSeparate: string;
+  }
+> = {
+  en: {
+    priceBasis: "Price per person",
+    twinShare: "Twin share",
+    smallGroup: "small group",
+    internationalFlightsSeparate: "international flights not included",
+  },
+  zh: {
+    priceBasis: "每人价格",
+    twinShare: "双人同住",
+    smallGroup: "小团",
+    internationalFlightsSeparate: "国际机票另计",
+  },
+  ko: {
+    priceBasis: "1인 요금",
+    twinShare: "2인 1실",
+    smallGroup: "소규모 그룹",
+    internationalFlightsSeparate: "국제선 항공권 별도",
+  },
+};
+
 type DeckStyle = CSSProperties & { "--deck-depth": number };
 
 export function ShanghaiJiangnanHeroDeck({
@@ -242,6 +273,14 @@ function PublishedPrivateTourPriceConsole({
   const travellers = selection.travelers;
   const selectedInquiryHref = useSelectedPrivateTourInquiryHref(inquiryHref) ?? inquiryHref;
   const copy = interactionCopy[product.locale];
+  const format = formatCopy[product.locale];
+  const smallGroup = product.tourFormat === "small-group";
+  const chooseGroup = smallGroup ? format.priceBasis : copy.chooseGroup;
+  const groupLabel = (count: number) => (smallGroup ? format.twinShare : copy.group(count));
+  const tourFormatLabel = smallGroup ? format.smallGroup : copy.privateTour;
+  const flightsLabel = product.includesDomesticFlights
+    ? format.internationalFlightsSeparate
+    : copy.flightsSeparate;
   const tourPackage =
     product.packages.find((candidate) => candidate.id === packageId) ??
     product.packages[0];
@@ -274,11 +313,11 @@ function PublishedPrivateTourPriceConsole({
             <p className={styles.packageSummary}>{tourPackage.summary}</p>
           </div>
         ) : null}
-        <p>{copy.chooseGroup}</p>
+        <p>{chooseGroup}</p>
         <div
           className={styles.priceChoices}
           role="group"
-          aria-label={copy.chooseGroup}
+          aria-label={chooseGroup}
         >
           {tourPackage.rows.map((row) => (
             <button
@@ -292,7 +331,7 @@ function PublishedPrivateTourPriceConsole({
                 })
               }
             >
-              <span>{copy.group(row.travelers)}</span>
+              <span>{groupLabel(row.travelers)}</span>
               <strong>{row.formatted}</strong>
             </button>
           ))}
@@ -305,8 +344,8 @@ function PublishedPrivateTourPriceConsole({
           {activeRow.formatted}
         </strong>
         <small>
-          {copy.perPerson} · {copy.group(activeRow.travelers)} ·{" "}
-          {copy.privateTour} · {tourPackage.label} · {copy.flightsSeparate}
+          {copy.perPerson} · {groupLabel(activeRow.travelers)} ·{" "}
+          {tourFormatLabel} · {tourPackage.label} · {flightsLabel}
         </small>
       </div>
 
