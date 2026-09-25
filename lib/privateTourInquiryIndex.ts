@@ -229,4 +229,123 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
   },
+  {
+    slug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·청두·구이린·상하이 14일 소규모 그룹 투어" },
+    packages: [
+      { id: "small-group-departure", prices: [{ travelers: 2 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·장가계·구이린·상하이 14일 소규모 그룹 투어" },
+    packages: [
+      { id: "small-group-departure", prices: [{ travelers: 2 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团", ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚小团", ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어" },
+    packages: [
+      { id: "small-group-departure", prices: [{ travelers: 2 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-silk-road-15-day-private-tour",
+    title: { en: "Beijing, Xi'an & the Silk Road: 15-Day Private Tour", zh: "北京·西安·丝绸之路 15 天 14 晚私家团", ko: "베이징·시안·실크로드 15일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-silk-road-15-day-small-group-tour",
+    title: { en: "Beijing, Xi'an & the Silk Road: 15-Day Small-Group Tour", zh: "北京·西安·丝绸之路 15 天 14 晚小团", ko: "베이징·시안·실크로드 15일 소규모 그룹 투어" },
+    packages: [
+      { id: "small-group-departure", prices: [{ travelers: 2 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-yunnan-14-day-private-tour",
+    title: { en: "Beijing, Xi'an & Yunnan: 14-Day Private Tour", zh: "北京·西安·云南 14 天 13 晚私家团", ko: "베이징·시안·윈난 14일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+    title: { en: "Beijing, Xi'an, Yellow Mountain, Hangzhou & Shanghai: 14-Day Private Tour", zh: "北京·西安·黄山·杭州·上海 14 天 13 晚私家团", ko: "베이징·시안·황산·항저우·상하이 14일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "china-grand-tour-21-day-private-tour",
+    title: { en: "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour", zh: "中国全景：含张家界与长江游轮 21 天 20 晚私家团", ko: "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-guilin-shanghai-10-day-private-tour",
+    title: { en: "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour", zh: "北京·西安·桂林·上海 10 天 9 晚私家团", ko: "베이징·시안·구이린·상하이 10일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+    title: { en: "Beijing, Hangzhou, Suzhou & Shanghai: 11-Day Private Tour", zh: "北京·杭州·苏州·上海 11 天 10 晚私家团", ko: "베이징·항저우·쑤저우·상하이 11일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+    title: { en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour", zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团", ko: "상하이·장가계·봉황·구이린 13일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-shanghai-8-day-private-tour",
+    title: { en: "Beijing, Xi'an & Shanghai: 8-Day Private Tour", zh: "北京·西安·上海 8 天 7 晚私家团", ko: "베이징·시안·상하이 8일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-guilin-hong-kong-10-day-private-tour",
+    title: { en: "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour", zh: "北京·西安·桂林·香港 10 天 9 晚私家团", ko: "베이징·시안·구이린·홍콩 10일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
+    slug: "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
+    title: { en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour", zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团", ko: "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
 ];
