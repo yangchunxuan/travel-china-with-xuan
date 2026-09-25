@@ -40,6 +40,22 @@ export const guideProductMarketForecast = {
   "kunming-jianshui-yuanyang-6-day-private-tour": 1,
   "shenzhen-family-tech-4-day-private-tour": 1,
   "beijing-xian-shanghai-12-day-private-tour": 3,
+  // Long-haul routes are not yet placed on guide pages; a new mapping version
+  // is required before they take guide-card traffic.
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": 0,
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": 0,
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": 0,
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": 0,
+  "beijing-xian-silk-road-15-day-private-tour": 0,
+  "beijing-xian-yunnan-14-day-private-tour": 0,
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": 0,
+  "china-grand-tour-21-day-private-tour": 0,
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": 0,
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": 0,
+  "beijing-xian-silk-road-15-day-small-group-tour": 0,
+  "beijing-xian-guilin-shanghai-10-day-private-tour": 0,
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": 0,
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": 0,
 } as const;
 
 export type GuideProductId = keyof typeof guideProductMarketForecast;
@@ -197,6 +213,20 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
     destinations: ["beijing", "xian", "shanghai", "forbidden-city", "terracotta-warriors"],
     topics: ["first-trip", "multi-city"],
   },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": { destinations: [] },
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": { destinations: [] },
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": { destinations: [] },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": { destinations: [] },
+  "beijing-xian-silk-road-15-day-private-tour": { destinations: [] },
+  "beijing-xian-yunnan-14-day-private-tour": { destinations: [] },
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": { destinations: [] },
+  "china-grand-tour-21-day-private-tour": { destinations: [] },
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": { destinations: [] },
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": { destinations: [] },
+  "beijing-xian-silk-road-15-day-small-group-tour": { destinations: [] },
+  "beijing-xian-guilin-shanghai-10-day-private-tour": { destinations: [] },
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": { destinations: [] },
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": { destinations: [] },
 };
 
 export const guideProductMappingVersion = "2026-09-23-v2";

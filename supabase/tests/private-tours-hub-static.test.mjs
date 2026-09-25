@@ -59,7 +59,7 @@ test("every published tour has a region in each localized catalog", () => {
   }
 });
 const reviewedDerivativeRightsSha256 =
-  "1db11585196941e5dd00029f70fd45a0543c27a36dafaefb236801d778bfb96c";
+  "b575078aa163643afe0f75bdb47b47178b160fe29878c6286cec414f9812dcd2";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);

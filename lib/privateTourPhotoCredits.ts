@@ -1,6 +1,7 @@
 import type { LocalizedText, PrivateTourLocale } from "./privateTourProducts";
 import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPhotoCredits";
 import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExpansionPhaseTwoPhotoCredits";
+import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
 
 export interface PrivateTourPhotoCredit {
   subject: LocalizedText;
@@ -50,6 +51,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
 > = Object.freeze({
   ...privateTourExpansionPhotoCreditsBySlug,
   ...privateTourExpansionPhaseTwoPhotoCreditsBySlug,
+  ...privateTourLongHaulPhotoCreditsBySlug,
   "shanghai-suzhou-hangzhou-6-day-private-tour": [
     credit(
       text("Pan Men, Suzhou", "苏州盘门", "쑤저우 판먼"),

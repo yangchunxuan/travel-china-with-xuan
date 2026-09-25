@@ -69,12 +69,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 25,
+    plan: 28,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 75);
+  assert.equal(report.uniqueContentIds, 78);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 13);
+  assert.equal(report.authorizedGenericConversation, 16);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -100,7 +100,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 36 curated guide and 31 product owners", () => {
+test("commercial links keep the approved 8 hub, 40 curated guide and 45 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -129,12 +129,15 @@ test("commercial links keep the approved 8 hub, 36 curated guide and 31 product 
       "beijing-courtyard-hotel-or-modern-hotel",
       "beijing-to-badaling-great-wall-transfer",
       "beijing-where-to-stay-first-trip",
+      "best-2-week-china-tour",
       "best-zhangjiajie-night-show",
       "border-town-fenghuang-chadong-shen-congwen",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
       "chengdu-zhangjiajie-itinerary",
+      "china-2-week-tour-cost",
       "china-climate-regions-for-trip-timing",
       "china-private-transfer-or-public-transport",
+      "china-small-group-tours-2027",
       "chongqing-railway-station-selector",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "forbidden-city-for-foreign-visitors",
@@ -172,13 +175,26 @@ test("commercial links keep the approved 8 hub, 36 curated guide and 31 product 
       /^  "([^"]+)":/gmu,
     ),
     [
+      "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
       "beijing-highlights-5-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "beijing-xian-guilin-shanghai-10-day-private-tour",
+      "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
       "beijing-xian-shanghai-12-day-private-tour",
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour",
+      "beijing-xian-yunnan-14-day-private-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
       "changbaishan-yanji-winter-6-day-private-tour",
       "chaozhou-shantou-nanao-5-day-private-tour",
       "chengdu-chongqing-8-day-private-tour",
       "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
       "chengdu-pandas-sanxingdui-5-day-private-tour",
+      "china-grand-tour-21-day-private-tour",
       "chongqing-wulong-5-day-private-tour",
       "chongqing-yangtze-cruise-6-day-private-tour",
       "datong-pingyao-6-day-private-tour",
@@ -195,6 +211,7 @@ test("commercial links keep the approved 8 hub, 36 curated guide and 31 product 
       "shanghai-disneyland-5-day-private-tour",
       "shanghai-suzhou-5-day-private-tour",
       "shanghai-suzhou-hangzhou-6-day-private-tour",
+      "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
       "shenzhen-family-tech-4-day-private-tour",
       "xiamen-tulou-quanzhou-6-day-private-tour",
       "xian-terracotta-warriors-5-day-private-tour",

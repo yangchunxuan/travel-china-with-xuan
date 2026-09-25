@@ -28,7 +28,7 @@ const config = {
   whatsappEnabled: false,
 };
 const beijing = "beijing-highlights-5-day-private-tour";
-const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay"];
+const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay", "small-group-departure"];
 const phaseTwoSlugs = [
   "shanghai-disneyland-5-day-private-tour",
   "luoyang-dengfeng-kaifeng-6-day-private-tour",
@@ -40,6 +40,22 @@ const phaseTwoSlugs = [
   "kunming-jianshui-yuanyang-6-day-private-tour",
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
+];
+const longHaulSlugs = [
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+  "beijing-xian-silk-road-15-day-private-tour",
+  "beijing-xian-yunnan-14-day-private-tour",
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+  "china-grand-tour-21-day-private-tour",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+  "beijing-xian-silk-road-15-day-small-group-tour",
+  "beijing-xian-guilin-shanghai-10-day-private-tour",
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
 ];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
@@ -175,7 +191,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 
 test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -225,7 +241,7 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
 
 test("phase-two migration extends canonical identities and exact priced selections", async () => {
   const sql = await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8");
-  for (const slug of privateTourInquirySlugs) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -267,7 +283,7 @@ test("phase-two migration extends canonical identities and exact priced selectio
 });
 
 test("final selection migration preserves every published price row after both releases", async () => {
-  const sql = await readFile(new URL("../migrations/202609230002_preserve_private_tour_selection_after_phase_two.sql", import.meta.url), "utf8");
+  const sql = await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8");
   const selectionCase = sql.match(
     /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
   )?.[1];
@@ -290,6 +306,47 @@ test("final selection migration preserves every published price row after both r
     assert.deepEqual(acceptedTravelers, publishedTravelers, `selection price rows drift: ${product.slug}`);
   }
   assert.match(selectionCase, /when 'zhangjiajie-4-day-private-tour' then\s+p_package_id in \('selected-city-stay', 'spacious-premium-stay', 'distinctive-mountain-stay'\) and p_travelers = 6/u);
+});
+
+test("long-haul migration keeps every canonical identity and adds the fourteen long-haul selections", async () => {
+  const sql = await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8");
+  for (const slug of privateTourInquirySlugs) {
+    assert.ok(sql.includes(`when '${slug}'`), slug);
+    for (const locale of ["en", "zh", "ko"]) {
+      const context = getPrivateTourInquiryContext(slug, locale);
+      const name = getPrivateTourInquirySubmissionContext(context, locale).name.replaceAll("'", "''");
+      assert.ok(sql.includes(`then '${name}'`), `${locale}:${slug}`);
+    }
+  }
+  const selectionCase = sql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase);
+  const longHaulRows = {
+    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": /p_package_id = 'small-group-departure' and p_travelers = 2$/u,
+    "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-silk-road-15-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-yunnan-14-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "china-grand-tour-21-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": /p_package_id = 'small-group-departure' and p_travelers = 2$/u,
+    "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": /p_package_id = 'small-group-departure' and p_travelers = 2$/u,
+    "beijing-xian-silk-road-15-day-small-group-tour": /p_package_id = 'small-group-departure' and p_travelers = 2$/u,
+    "beijing-xian-guilin-shanghai-10-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+  };
+  assert.deepEqual(Object.keys(longHaulRows), longHaulSlugs);
+  for (const [slug, condition] of Object.entries(longHaulRows)) {
+    const branch = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
+    assert.ok(branch && condition.test(branch), `SQL selection drift: ${slug}`);
+  }
+  assert.match(sql, /begin;[\s\S]*commit;/u);
+  assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
+  assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
+  assert.doesNotMatch(sql, /create or replace function public\./u);
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {

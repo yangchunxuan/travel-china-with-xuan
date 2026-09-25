@@ -1,0 +1,105 @@
+{
+  "id": "best-2-week-china-tour",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "route-design",
+    "first-trip",
+    "trip-planning",
+    "trip-pace"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "guilin",
+    "zhangjiajie",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/beijing-xian-yunnan-14-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-xian-yunnan-14-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-25",
+  "dateModified": "2026-09-25",
+  "sourceReviewedDate": "2026-09-25",
+  "searchTerms": {
+    "en": [
+      "best 2 week china tour",
+      "14 day china tour",
+      "china tour 14 days",
+      "best china tour itinerary 2 weeks"
+    ],
+    "zh": [
+      "中国两周游路线",
+      "中国14天私家团",
+      "中国两周旅游路线推荐"
+    ],
+    "ko": [
+      "중국 2주 투어 추천",
+      "중국 14일 여행 코스",
+      "중국 13박 14일 투어"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "comparison",
+    "primaryIntent": "compare"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/best-2-week-china-tour/",
+      "title": "Best 2-Week China Tour: Four 14-Day Routes Compared",
+      "headline": "Which 2-week China tour fits you?",
+      "description": "Four 14-day private China routes from USD 3,790 per person for two. Compare Chengdu, Zhangjiajie, Yunnan and Huangshan by travel and walking time.",
+      "heroAlt": "Erhai Lake below the snow-capped Cang Mountains in Dali",
+      "navTitle": "Best 2-week China tour",
+      "featuredLinkLabel": "Compare four 14-day China tours",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Four routes",
+        "Side-by-side table",
+        "Prices for two"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/best-2-week-china-tour/",
+      "title": "中国两周游怎么选：四条 14 天私家线对比",
+      "headline": "哪条中国两周游线路适合你",
+      "description": "四条 14 天中国私家线，2 人同行每人 ¥24,630 起。比较成都、张家界、云南和黄山线的交通、步行量与价格。",
+      "heroAlt": "大理苍山雪顶下的洱海",
+      "navTitle": "中国两周游路线对比",
+      "featuredLinkLabel": "对比四条 14 天线路",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "四条线路",
+        "并排对比",
+        "两人价格"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/best-2-week-china-tour/",
+      "title": "중국 2주 투어 비교: 14일 일정 4가지",
+      "headline": "나에게 맞는 중국 2주 투어는?",
+      "description": "14일 중국 프라이빗 일정 4가지, 2명 기준 1인 ₩5,300,000부터. 청두, 장가계, 윈난, 황산의 이동과 걷기, 요금을 비교하세요.",
+      "heroAlt": "눈 덮인 창산 아래 다리의 얼하이 호수",
+      "navTitle": "중국 2주 투어 비교",
+      "featuredLinkLabel": "14일 투어 4가지 비교하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "일정 4가지",
+        "한눈에 비교",
+        "2명 요금"
+      ]
+    }
+  }
+}

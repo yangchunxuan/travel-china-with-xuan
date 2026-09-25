@@ -12,6 +12,8 @@ import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./
 import { privateTourExpansionProfiles } from "./privateTourExpansionProfiles.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { privateTourExpansionPhaseTwoProfiles } from "./privateTourExpansionPhaseTwoProfiles.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { privateTourLongHaulProfiles } from "./privateTourLongHaulProfiles.ts";
 
 type LocalizedText = Readonly<Record<HomegroundLocale, string>>;
 
@@ -57,6 +59,8 @@ export interface PublishedPrivateTourCatalogItem {
     readonly validityNote?: string;
     readonly selection?: PrivateTourInquirySelection;
   } | null;
+  /** Present only on fixed-departure small groups, whose price is one twin-share place. */
+  readonly tourFormat?: "small-group";
   /** Published service policy: true only if a route includes shopping stops. */
   readonly shoppingStops: boolean;
   readonly dateModified: string;
@@ -315,6 +319,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
   },
   ...privateTourExpansionProfiles,
   ...privateTourExpansionPhaseTwoProfiles,
+  ...privateTourLongHaulProfiles,
 };
 
 const zhangjiajieContentLocale = {
@@ -415,6 +420,7 @@ export function getPublishedPrivateTourCatalog(
         highlights: localized.highlights.slice(0, 3),
       },
       startingPrice,
+      ...(localized.tourFormat === "small-group" ? { tourFormat: "small-group" as const } : {}),
       shoppingStops: localized.servicePolicy.shoppingStops,
       dateModified: localized.dateModified,
     } satisfies PublishedPrivateTourCatalogItem;

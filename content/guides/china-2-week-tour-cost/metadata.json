@@ -1,0 +1,105 @@
+{
+  "id": "china-2-week-tour-cost",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "budget",
+    "trip-planning",
+    "first-trip",
+    "route-design"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "guilin",
+    "zhangjiajie",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-25",
+  "dateModified": "2026-09-25",
+  "sourceReviewedDate": "2026-09-25",
+  "searchTerms": {
+    "en": [
+      "china tour cost 2 weeks",
+      "how much is a 14 day china tour",
+      "china private tour price",
+      "china tour package price 2027"
+    ],
+    "zh": [
+      "中国两周游多少钱",
+      "中国私家团价格",
+      "中国14天旅游费用"
+    ],
+    "ko": [
+      "중국 2주 여행 비용",
+      "중국 패키지 여행 가격",
+      "중국 프라이빗 투어 가격"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-2-week-tour-cost/",
+      "title": "2-Week China Tour Cost: Private and 2027 Group Prices",
+      "headline": "What a 2-week China tour costs",
+      "description": "Published 14-day private tours from USD 3,790 per person for two; 2027 small groups from USD 2,790. See what the price covers.",
+      "heroAlt": "Great Wall watchtower in the hills north of Beijing",
+      "navTitle": "2-week China tour cost",
+      "featuredLinkLabel": "See what a 2-week China tour costs",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Published prices",
+        "Private and small group",
+        "Per person, land only"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-2-week-tour-cost/",
+      "title": "中国两周游多少钱？私家团与 2027 年小团价格",
+      "headline": "中国两周游要多少钱",
+      "description": "14 天私家团公布价，2 人同行每人 ¥24,630 起；2027 年小团每人 ¥18,130 起。看清人数、住宿和交通怎么算。",
+      "heroAlt": "北京北部山间的长城敌楼",
+      "navTitle": "中国两周游价格",
+      "featuredLinkLabel": "看看中国两周游要多少钱",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "公布价格",
+        "私家团与小团",
+        "每人价格"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-2-week-tour-cost/",
+      "title": "중국 2주 투어 비용: 프라이빗·2027년 그룹 요금",
+      "headline": "중국 2주 투어 비용 알아보기",
+      "description": "14일 프라이빗 투어는 2명 기준 1인 ₩5,300,000부터, 2027년 소규모 그룹은 ₩3,900,000부터입니다. 포함 내역과 인원별 요금을 비교하세요.",
+      "heroAlt": "베이징 북쪽 산자락의 만리장성 망루",
+      "navTitle": "중국 2주 투어 비용",
+      "featuredLinkLabel": "중국 2주 투어 비용 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "공개 요금",
+        "프라이빗·소규모 그룹",
+        "1인 요금"
+      ]
+    }
+  }
+}

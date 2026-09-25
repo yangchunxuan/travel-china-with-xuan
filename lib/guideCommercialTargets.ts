@@ -95,6 +95,18 @@ export const guideTargets = {
   ],
   "china-private-transfer-or-public-transport": [toursWithTransport],
   "china-climate-regions-for-trip-timing": [productTarget("harbin-winter-5-day-private-tour")],
+  "china-2-week-tour-cost": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+  ],
+  "china-small-group-tours-2027": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"),
+  ],
+  "best-2-week-china-tour": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
 } as const satisfies Partial<Record<GuideId, readonly GuideProductTarget[]>>;
 
 /** The concrete product rendered by the first curated target, if there is one. */

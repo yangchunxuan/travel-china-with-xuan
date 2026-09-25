@@ -81,6 +81,20 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "kunming-jianshui-yuanyang-6-day-private-tour": "southwest",
   "shenzhen-family-tech-4-day-private-tour": "south",
   "beijing-xian-shanghai-12-day-private-tour": "multi",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": "multi",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": "multi",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": "multi",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": "multi",
+  "beijing-xian-silk-road-15-day-private-tour": "multi",
+  "beijing-xian-yunnan-14-day-private-tour": "multi",
+  "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour": "multi",
+  "china-grand-tour-21-day-private-tour": "multi",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": "multi",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": "multi",
+  "beijing-xian-silk-road-15-day-small-group-tour": "multi",
+  "beijing-xian-guilin-shanghai-10-day-private-tour": "multi",
+  "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": "multi",
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": "multi",
 };
 
 export function getPrivateTourRegion(slug: string): PrivateTourRegionId {
