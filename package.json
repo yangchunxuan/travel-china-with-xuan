@@ -13,6 +13,7 @@
     "check:font-coverage": "node tools/check-font-coverage.mjs",
     "check:font-coverage:export": "node tools/check-font-coverage.mjs --production-export",
     "check:private-tour-inquiry-index": "node --experimental-strip-types --no-warnings tools/generate-private-tour-inquiry-index.mjs --check",
+    "generate:private-tour-inquiry-index": "node --experimental-strip-types --no-warnings tools/generate-private-tour-inquiry-index.mjs",
     "check:planning-scope-lines": "node --experimental-strip-types --no-warnings tools/check-planning-scope-lines.mjs",
     "check:indexable-export": "node tools/check-indexable-export.mjs",
     "check:index-cohorts": "node tools/check-index-cohorts.mjs",
@@ -31,7 +32,7 @@
     "test:homepage-search": "node --test supabase/tests/homepage-guide-search-static.test.mjs",
     "typecheck": "npm run guide:generate && tsc --noEmit",
     "generate:image-variants": "node tools/generate-image-variants.mjs",
-    "prebuild": "npm run guide:generate && npm run content:check && npm run check:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
+    "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
     "build": "next build",
     "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:guide-sales-card-export",
     "start": "next start"

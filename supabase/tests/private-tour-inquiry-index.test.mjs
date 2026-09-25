@@ -64,5 +64,7 @@ test("client inquiry validation never imports the full tour catalogue", async ()
   assert.doesNotMatch(context, /import\s*\{[^}]*\bprivateTourProducts\b/);
   assert.match(context, /import type \{ PrivateTourPriceTier \} from "\.\/privateTourProducts\.ts";/);
   assert.match(context, /import \{ privateTourInquiryIndex \} from "\.\/privateTourInquiryIndex\.ts";/);
-  assert.match(prebuild, /npm run check:private-tour-inquiry-index/);
+  // Builds regenerate the index, so a branch that adds a tour never fails to
+  // build; the comparison test above still catches a stale committed index.
+  assert.match(prebuild, /npm run generate:private-tour-inquiry-index/);
 });
