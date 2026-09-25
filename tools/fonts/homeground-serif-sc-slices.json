@@ -2,46 +2,57 @@
   "family": "Homeground Serif SC",
   "about": "Han characters per slice of the Chinese editorial font. Slice 0 also holds every non-Han character of the source font. Regenerate with tools/slice-serif-sc-font.mjs --plan-from-usage=<file from tools/measure-serif-sc-usage.mjs>.",
   "measuredPages": 317,
+  "featuredGuides": [
+    "/zh/guides/beijing-copper-pot-mutton-ordering-workflow/",
+    "/zh/guides/beijing-south-station-to-capital-or-daxing-airport/",
+    "/zh/guides/beijing-where-to-stay-first-trip/",
+    "/zh/guides/best-2-week-china-tour/",
+    "/zh/guides/chaozhou-ancient-city-gates-bridge-lanes-route/",
+    "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+    "/zh/guides/chengdu-zhangjiajie-itinerary/",
+    "/zh/guides/china-10-day-itinerary/",
+    "/zh/guides/china-14-day-itinerary/",
+    "/zh/guides/china-2-week-tour-cost/",
+    "/zh/guides/china-7-day-itinerary/",
+    "/zh/guides/china-in-winter/",
+    "/zh/guides/china-itinerary-with-older-parents/",
+    "/zh/guides/china-online-arrival-card/",
+    "/zh/guides/china-packing-list/",
+    "/zh/guides/china-regional-food-route/",
+    "/zh/guides/china-small-group-tours-2027/",
+    "/zh/guides/chongqing-railway-station-selector/",
+    "/zh/guides/do-us-citizens-need-visa-china-2026/",
+    "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
+    "/zh/guides/guilin-yangshuo-longji-route-order/",
+    "/zh/guides/hostel-or-budget-hotel-china/",
+    "/zh/guides/how-to-pay-in-china-as-a-tourist/",
+    "/zh/guides/how-to-read-a-suzhou-garden/",
+    "/zh/guides/is-your-china-itinerary-too-rushed/",
+    "/zh/guides/shanghai-hangzhou-transport-route/",
+    "/zh/guides/shanghai-to-suzhou-day-trip/",
+    "/zh/guides/shenzhen-airport-railway-station-border-port-selector/",
+    "/zh/guides/singapore-to-zhangjiajie-itinerary/",
+    "/zh/guides/tianmen-mountain-tickets-and-routes/",
+    "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+    "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+    "/zh/guides/zhangjiajie-itinerary/"
+  ],
   "slices": [
     {
-      "note": "First viewport of the Chinese homepage, tour index, guide index and every tour page, plus characters in the first viewport of at least 10 pages. Preloaded.",
-      "han": "一三上下不与业丝两个中串为丽么之乐乘九也了二云交京亲人什从付仙代们件企伊会伦住何佛你俑假做像元先入全公共关兵典内再写冬冰决准几凤凰出分划别到刻前加务化北区单南原厦去参双发口古只可合吉同后向含周味呼和哈哪喀嘉器四回团园固国土在地圳场址坐坡城域基堆境墅墙增士处备多夜大天太头好如始婺子季安完宏定实家容宿寨对封小尔尼尽山屿岛峡峪峰州巷市布平年广庆序店度座廊延建开弄式张径徒得德徽怎性想慢懂成我所找技把折护拉择指按换排掖接提支放敦整文斯方旅族日时昆明星是晚景替最有服朔望期木本机村条来杭松林果树核格桂案桥梯森楼次正步武每比气水汉汕江沟没河沿泉波洛活浪海深清港游湖湿源溪满滨漓潮澳瀑点煌熊物特犁猫玩环现玻班理璃瓷生用由界畔留登白的看真眼石确票福私种科秦程稳站第算索约线经给络绸网联能自航船色节芙苏苗茶草荔落蓉蜀行街西要观规解计订认议设访读谷贝贵赛走赶足路车转轮轻较边返还这进远连迪选逛道遗遥那部都配酒里重量铁镇长门问间阳限陵隆难集雪需项顺预题馆香马验骑高黄鼓龙"
+      "note": "Primary slice, preloaded: every serif character of /zh/, /zh/tours/, /zh/guides/, every tour page and the featured guides (hidden text included), the first viewport of every measured page and the newsletter card's headings.",
+      "han": "一七万三上下不与专且世业东丝丢两严个中丰串丹为主丽久么义之乌乐乘九也习乡书买了争事二于云互五井亚些交产京亭亮亲人什今仍从他付仙代以仪们件价任份企伊伏休众优会传伦伸似但位低住体何余佛作你使例供依侧便俑俗保信修倒候借值假偏做停偶傍像儿元充先光克免兜入全八公六兰共关兴兵其具典养内冈再冒写农冬冰冲决况冷准凇减凑几凡凤凭凰出分划列则创初删判利别到制刷刹刻前剧力办功加务动助劳勒包化北匹区十升午半华协单卖南博占卡卧印即却厂厅历压原厦去县参又及双反发取受变叙口古句另只叫可台史右号司吃各合吉同名后吐向吒吗吞否含听启吸呈告员周味呼和咖咨品哈响哪唐售唱商啡啤喀善喜喝嘉嘴器四回因团园困围固国图圈土圣在地圳场址均坊坎坐坑块坛坝坡坪型城域埠基堂堆堰塔塘塞填境墅墙增壁士声处备复夏外多夜够大天太央失头夷奇奏套奥女好如妈妥始姓威婺子孔字存季学孩宁它安宋完宏官定宜宝实客宣宫家容宽宿寄富察寨对寺寻导封射小少尔就尼尽尾层居屋屏展属屯山屿岛岩岭岳岸峡峪峰崖川州工左巫差己已巷巾币市布师带帮常干平年并广庄庆床序库应底店庙府度座庭廊延建开弃弄式引张弱弹强当录形彩影往径待很律徒得御微德徽心必忆忙快念忽态怎思性总恢恭息悟悬情惯想意感愿慕慢懂戈戏成我或截户房所手才扎打扣执扶批找承技把抓折护报抵拉拒拔拖拙择括持指按换据掉排掖接控推措提插搜搬搭摩撰操擦支收改放政故效救教敞散敦数整文斗料断斯新方施旅族无既日旧早时昆昌明易星春是显晋晒晚普景暂暖更替最月有服朔望朝期木本术朱机杂杉李材村束条来杨杭杯松板构林枚果枢某染柜查柱标栈栏树样核根格桂框案桌桐档桥梁梧梯检棠森植椒楚楼概模横樾次欢款止正此步武歧死段毁母每比民气氛水求汇汉汕江池汤沉沙沟没河治沼沿泉法波注洋洗洛洞洱洲活流济浦浪浮海涮淮深混清渠渡温港游湖湿源溪溯滇滑满滨滩漓演潮澳瀑火灯灰灵炭点烟烦热然煌照熊熬爬父片版牌牙物牲特牺犁状独狮猜猫玉王玛玩环现玻珠班球理琴璃瓷生用田由甲申电画界畔留略番疆疏疑疲痕登白的皇益盖盘盛目直相省看真眼着睡瞿知矩短石码砂研础确碍碑碗碧示礼社祁祖祠票祭福离秀私种科租秦积称移程稳穴究空穿突窄窑窗窟立站竟章童端竹笔笛符第笼等筏筑答策筛签简算管箱篇类精糊系素索紧累红约级纪纳纵纸纽线组细终绍经绑结绕给络统继续维绵绸绿缓编缩缺网罗置美群老考者而耐聊联肉背胜胡能脆脊脚脸自至致舍舒舞航般舱船色艺节芙芦花苏苗英范茶草荐荔荷莫获菜菲营落蓉蓝薄藏蘸虎虑虹蜀螺行衔街衡衣补表袁袜被装裙裤西要覆见观规觅视览角解言计订认让议记论设访证识诉词试诗话询该语误说请诺读课谁调谈谱谷象豫贝负责败账货质购贵贸费资赏赖赛赞走赶起越趟足跟跨路跳踪身车轨转轮轴轻较辆辈辑辣辨边达迁迅过迈运近返还这进远连迪迹追退送适选逐递途通逛速造逻遇遍道遗遥避那邦邮郑部都配酒酵醋醒释里重野量金钞钟钱铁铜铝银铺链销锁锅错锚键镇长门闭问间阅队阱防阳阵阿附际陆降限陕院除险陵陶陷隆随隐障难雁集雕雨雪零雾需霞青靖静靠面鞋鞭音页顶项顺须顿预领颐颗题额风飞食餐饭饮饶馆首香马驯驳驶驾验骑高鲁鲜鸣鹿麓麦麻黄黑默鼓鼻齐龄龙"
     },
     {
-      "note": "Rest of the serif text on the priority pages: laid out on 50-2 of them.",
-      "han": "七专东乌乡书些以价份体作保信候值免办动包匹十午华博卡历及另史各名吗品坛坝塘外够奏学客宫寺导少岩岸巫已带并应往心总息慕或手报抵改故新早更月李束样楚款段民池沙洲滩火版独田目瞿离窟策签箱终结老考而脊花莫虑衔袁见览证语谁豫购越跨达运退送适途通遇金钱队际院面领颐额飞食餐鲁鸣齐"
-    },
-    {
-      "note": "Rest of the serif text on the priority pages: laid out on 2-1 of them.",
-      "han": "丹主久于井亚产便停光克八六具况减列初利制助半反变吐启呈唐商喜围型塔壁奇孩它官宽尾岭川工底庭强当很悬情感戈打执承持掉收政数无昌普术杨查栈桌检概模母求法洞洱流济灵然照父片牌玉电画番直省着知空穿端筑系级绿美群者胡至艺英营表视角让该调象负责质费趟身过遍避银陆随霞青鞭页饮首驳"
-    },
-    {
-      "note": "Rest of the serif text on the priority pages: laid out on 1-1 of them.",
-      "han": "世亮伏休伸俗借傍兜冈凇凡刹功勒县右嘴圣坊坎坑坪埠堂堰塞央奥女妈孔宁宋宜宝屏岳崖左帮庄庙府弹彩御微恭扎拔拙措教敞斗旧晋朝朱杉染柱桐梧棠樾沼浮涮渡滇滑灯灰牙狮王疆皇盖盛砂础碧祖祠穴窑竹笛筏精累纳纵肉脚舱芦菲蓝虎螺覆觅课赞跳轨递邦邮郑醒铜锅阿陶隐雁雾靖静顶饶驯鲜鹿麓黑鼻龄"
-    },
-    {
-      "note": "Laid out in the serif on 204-12 measured pages.",
-      "han": "义买事五仍任众优传但位低使例依侧修其则判力协又取受台号否告响图复失套字存察就层展己常干弱录形影必念态恢意户房才据控推效救料断施易显材构枢标测消混渠演状相短码示称移究立竟等答简类纽组细统继续编置背致范补被装记论诉词试误说请诺谈败起跟近追逐造钟链错阅阵险障靠须风"
-    },
-    {
-      "note": "Laid out in the serif on 12-6 measured pages.",
-      "han": "且丢临习争互今他仪似余供倒偏儿充兴农冲删剧升卖占即却厂厅压叙句司吃听员售因均填声宣寻居属屯差异弃引快戏截扣批担拆拒描搬搭操散既暂未板某柜根档止死永注浦牲牺申略矩研碍礼社租章笔符管红纪纸绕绝缩翻脸舍舞菜虹衡话询账货资赖踪轴辆辈辑述速释销锁键闭阶降除雨非音顿饭默"
-    },
-    {
-      "note": "Laid out in the serif on 6-4 measured pages.",
-      "han": "严偶允兰冒冷凭切创剩卧印吒命咖唯唱啡啤善困夷妥姓威守审射尺屋巾库待律忆忽思急悟愿慎拍拿损探插携撑春晨杯枚框梁植椒槛横此毁汤沉治洋洗溯烟热熟熬爬猜玛珠球琴疏痕百益盘睡秀窗童笼筛籍米糊紧绍维缓缺耐脆舒荷获藏讲许评识译诗诚谨谱距践输辣辨迈迹逻酵醋钞铝铺锚防附陈雕零"
-    },
-    {
-      "note": "Laid out in the serif on 4-2 measured pages.",
-      "han": "万丰乱享仅仔令估储冻净凑击刷剖劳势勉医厨叫吸咸圈块塑夹宗室密寒寸将尚尝尤局师席幅幕床归彼征志忙悉扩扰扶投抽拖拥括挤掌掘搜摄摩擦旁晒暖暴末杂架栏椅氛汇泛淡淮温湘滞漏漫烦焙爱献率甲疑疗症破硬碑祁神祭秘积稿突窄篇素纠纯练绵综缮聊胜薄虚觉触言贸软迁野针闻陕露驶驾骤麦"
+      "note": "Laid out in the serif on 18-2 measured pages.",
+      "han": "临乱享仅仔令估储允冻净击切剖剩势勉医厨命咸唯塑夹守宗审室密寒寸将尚尝尤尺局席幅幕异归彼征志急悉慎扩扰投抽担拆拍拥拿挤损掌掘探描携摄撑旁晨暴未末架椅槛永泛测消淡湘滞漏漫焙熟爱献率疗百硬神籍米绝翻虚觉触讲许评译诚谨距践软输述针闻阶陈露非骤"
     },
     {
       "note": "Laid out in the serif on 2-1 measured pages.",
-      "han": "亨亭介仰伍伤佳侨俚健偿傩兑养军削副勾千卷卸厕厝叉叠召叶吞吵吻咨喝嘈坚垂垵塌墓墟壤夏奈奉奶她婴孤害寄富寓尊尬尴峒巡巢巴币希帝幻幼康弧忍忠怀怪恒悄惊惯慌战戳扁扇抓抬抹招拨拯拱拼挑挥捞捷握摆撞撰斋旗旬旺昂映昼晾曲罐罗署聚脉般良衣讨诊贴赏赔赢超趣辩迅透采闸阻颗颜饰麻"
+      "han": "亨介仰伍伤佳侨俚健偿傩兑军削副勾千卷卸厕厝叉叠召叶吵吻嘈坚垂垵塌墓墟壤奈奉奶她婴孤害寓尊尬尴峒巡巢巴希帝幻幼康弧忍忠怀怪恒悄惊慌战戳扁扇抬抹招拨拯拱拼挑挥捞捷握摆撞斋旗旬旺昂映昼症破秘稿纠纯练综缮罐署聚脉良讨诊贴赔赢超趣辩透采闸阻颜饰"
     },
     {
       "note": "Laid out in the serif on 1-1 measured pages.",
-      "han": "曹曾权杆杠柔栋校桩梭械棒榜欠欢欧歌歧殊殷汽沈派浏浩浴润涨淄淆渐渚滕滤潼灾炭烘烹焦煮燥牛牵狐玄瑞瓦疲盅监盗眠碗祇祝秒竞筹箭篮粉繁纷纹织绑罄耗耶职胁若荐著葬蒲蘸蛇蛰蜜袜裕裙裤裹警诞详豆貌贡贯赌载辅辖辞迫逆遵邀酪钮铭铰铸锣锦镜闹阁阔阱陌陪陷雄雷鞋韩频饪饼驻骨魅鸟鹤"
+      "han": "晾曲曹曾权杆杠柔栋校桩梭械棒榜欠欧歌殊殷汽沈派浏浩浴润涨淄淆渐渚滕滤潼灾烘烹焦煮燥牛牵狐玄瑞瓦盅监盗眠祇祝秒竞筹箭篮粉繁纷纹织罄耗耶职胁若著葬蒲蛇蛰蜜裕裹警诞详豆貌贡贯赌载辅辖辞迫逆遵邀酪钮铭铰铸锣锦镜闹阁阔陌陪雄雷韩频饪饼驻骨魅鸟鹤"
     },
     {
       "note": "Not laid out in the serif on any measured page (the font still covers every Han character in the site sources).",

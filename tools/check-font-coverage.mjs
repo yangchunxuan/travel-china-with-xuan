@@ -8,10 +8,13 @@ import {
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
 import {
-  parseFontFaces,
+  readSerifScFaces,
+  retiredSerifScFile,
   routeCodePoint,
+  serifScFilesModulePath,
+  serifScGlobalsPath,
   serifScSliceFilePattern,
-  serifScStylesheetFile,
+  serifScStylesheetFilePattern,
 } from "./serif-sc-slice-plan.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -71,16 +74,41 @@ function singleFontFile(fontPath) {
   };
 }
 
-// The Chinese font ships as unicode-range slices. A character is covered only
-// when the slice the browser consults first for it (the last-defined
-// @font-face whose unicode-range contains it) has the glyph. Every glyph a
-// slice carries must also be reachable through its own range, and every slice
-// file must be referenced, so the stylesheet and the files cannot drift apart.
-function unicodeRangeSlices(stylesheetPath) {
-  const faces = parseFontFaces(
-    readFileSync(resolve(projectRoot, stylesheetPath), "utf8"),
-  );
+// The Chinese font ships as unicode-range slices: slice 0, declared in
+// app/globals.css with no unicode-range, and the slices of the stylesheet named
+// in lib/homegroundSerifScFontFiles.ts. A character is covered only when the
+// slice the browser consults first for it (the last-defined @font-face whose
+// unicode-range contains it) has the glyph. Every glyph a slice carries must
+// also be reachable through its own range, every slice file must be
+// referenced, and the retired unsliced file must not come back, so the
+// stylesheets, the layout and the files cannot drift apart.
+function unicodeRangeSlices() {
+  const { files, faces, globalsFaces, stylesheetFound } = readSerifScFaces(projectRoot, fontDirectory);
   const problems = [];
+  if (globalsFaces.length !== 1 || globalsFaces[0].ranges !== null || globalsFaces[0].src !== files.primary) {
+    problems.push(
+      `${serifScGlobalsPath} must declare the family once, with no unicode-range, from ${files.primary} (named in ${serifScFilesModulePath})`,
+    );
+  }
+  if (checksProductionExport) {
+    const cssDirectory = resolve(projectRoot, "out/_next/static/css");
+    const exportedCss = existsSync(cssDirectory)
+      ? readdirSync(cssDirectory)
+          .filter((name) => name.endsWith(".css"))
+          .map((name) => readFileSync(resolve(cssDirectory, name), "utf8"))
+      : [];
+    if (!exportedCss.some((css) => css.includes(files.primary))) {
+      problems.push(`no exported stylesheet in out/_next/static/css declares ${files.primary}`);
+    }
+  }
+  if (!stylesheetFound) {
+    problems.push(`${files.stylesheet} (named in ${serifScFilesModulePath}) is not a file in ${fontDirectory}`);
+  }
+  if (existsSync(resolve(projectRoot, fontDirectory, retiredSerifScFile))) {
+    problems.push(
+      `${fontDirectory}/${retiredSerifScFile} is back; the unsliced subset lives in tools/fonts and only its slices are published`,
+    );
+  }
   const fonts = faces.map((face) => {
     const filePath = resolve(
       projectRoot,
@@ -93,7 +121,7 @@ function unicodeRangeSlices(stylesheetPath) {
     }
     return fontkit.openSync(filePath);
   });
-  if (faces.length === 0) problems.push(`${stylesheetPath} declares no slices`);
+  if (faces.length < 2) problems.push(`${files.stylesheet} declares no slices`);
   fonts.forEach((font, index) => {
     if (!font) return;
     const unreachable = font.characterSet.filter(
@@ -107,12 +135,16 @@ function unicodeRangeSlices(stylesheetPath) {
       );
     }
   });
-  const referenced = new Set(
-    faces.map((face) => face.src.replace(/^\/fonts\//, "")),
-  );
+  const referenced = new Set([
+    ...faces.map((face) => face.src.replace(/^\/fonts\//, "")),
+    files.stylesheet.replace(/^\/fonts\//, ""),
+  ]);
   for (const name of readdirSync(resolve(projectRoot, fontDirectory))) {
-    if (serifScSliceFilePattern.test(name) && !referenced.has(name)) {
-      problems.push(`${fontDirectory}/${name} is not referenced by ${stylesheetPath}`);
+    if (
+      (serifScSliceFilePattern.test(name) || serifScStylesheetFilePattern.test(name)) &&
+      !referenced.has(name)
+    ) {
+      problems.push(`${fontDirectory}/${name} is not referenced by ${serifScFilesModulePath}`);
     }
   }
   return {
@@ -128,7 +160,7 @@ function unicodeRangeSlices(stylesheetPath) {
 const checks = [
   {
     characters: chineseCharacters,
-    font: unicodeRangeSlices(`${fontDirectory}/${serifScStylesheetFile}`),
+    font: unicodeRangeSlices(),
     label: "Chinese editorial font",
   },
   {

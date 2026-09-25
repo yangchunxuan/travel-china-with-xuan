@@ -1,28 +1,57 @@
 // Shared rules for the unicode-range slices of the Chinese editorial font.
 //
-// Slice 0 is preloaded on every Chinese page and declares no unicode-range, so
-// it stays the family's primary font (metrics, spaces, Latin, punctuation) and
-// the catch-all for any character outside the other slices, exactly like the
-// single file it replaces. Every other slice lists its own Han characters in
-// unicode-range; the browser downloads it only when a page lays one of them out
-// in the serif. See public/fonts/README.md.
+// Slice 0 is the primary slice. app/globals.css declares it with no
+// unicode-range, like the single file it replaces, so it stays the family's
+// primary font (metrics, spaces, Latin, punctuation) and catch-all; Chinese
+// pages preload it, and it is the only slice that can take part in the first
+// render. Every other slice lists its own Han characters in unicode-range in a
+// separate stylesheet that components/HomegroundSerifScSlices.tsx adds only
+// after the page has loaded and slice 0 is in. See public/fonts/README.md.
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 export const serifScFamily = "Homeground Serif SC";
 export const serifScSourcePath = "tools/fonts/homeground-serif-sc.woff2";
 export const serifScPlanPath = "tools/fonts/homeground-serif-sc-slices.json";
-export const serifScStylesheetFile = "homeground-serif-sc.css";
-export const serifScSliceFilePattern = /^homeground-serif-sc-\d{2}\.woff2$/;
-export const serifScSliceFile = (index) =>
-  `homeground-serif-sc-${String(index).padStart(2, "0")}.woff2`;
+// Declares slice 0; tools/slice-serif-sc-font.mjs rewrites its url.
+export const serifScGlobalsPath = "app/globals.css";
+// Written by tools/slice-serif-sc-font.mjs: the URLs of slice 0 and of the
+// stylesheet that declares the other slices.
+export const serifScFilesModulePath = "lib/homegroundSerifScFontFiles.ts";
+// The unsliced subset must never be published again.
+export const retiredSerifScFile = "homeground-serif-sc.woff2";
 
-// Pages whose first viewport must be complete in slice 0: the Chinese homepage,
-// the tour and guide indexes, and every tour product page.
-const priorityPaths = new Set(["/zh/", "/zh/tours/", "/zh/guides/"]);
-export function isPriorityPath(path) {
-  return priorityPaths.has(path) || /^\/zh\/tours\/[^/]+\/$/.test(path);
+// Published names carry a short content hash, so a cached stylesheet can never
+// point at slices from another plan.
+export const contentHash = (bytes) => createHash("sha256").update(bytes).digest("hex").slice(0, 8);
+export const serifScSliceFile = (index, hash) =>
+  `homeground-serif-sc-${String(index).padStart(2, "0")}.${hash}.woff2`;
+export const serifScStylesheetFile = (hash) => `homeground-serif-sc-slices.${hash}.css`;
+// Every slice or slice stylesheet this tooling has ever written, versioned or not.
+export const serifScSliceFilePattern = /^homeground-serif-sc-\d{2}(\.[0-9a-f]{8})?\.woff2$/;
+export const serifScStylesheetFilePattern = /^homeground-serif-sc(-slices)?(\.[0-9a-f]{8})?\.css$/;
+
+// Pages that must render completely in slice 0: the Chinese homepage, the
+// tour and guide indexes, every tour page, and the guides the homepage and the
+// first guide-index page link to.
+const indexPaths = new Set(["/zh/", "/zh/tours/", "/zh/guides/"]);
+export function isPriorityPath(path, featuredGuidePaths = []) {
+  return indexPaths.has(path) || /^\/zh\/tours\/[^/]+\/$/.test(path) || featuredGuidePaths.includes(path);
+}
+// Guides linked from the exported /zh/ and /zh/guides/ pages.
+export function featuredGuidePaths(chineseExportDirectory) {
+  const linked = new Set();
+  for (const page of ["index.html", "guides/index.html"]) {
+    const file = resolve(chineseExportDirectory, page);
+    if (!existsSync(file)) continue;
+    for (const [, slug] of readFileSync(file, "utf8").matchAll(/href="\/zh\/guides\/([a-z0-9-]+)\/"/g)) {
+      if (slug !== "page") linked.add(`/zh/guides/${slug}/`);
+    }
+  }
+  return [...linked].sort();
 }
 
-// Characters in the first viewport of at least this many pages also go to slice 0.
-const sharedFirstViewportPages = 10;
 // Target characters per on-demand slice (roughly 25 KB and 50 KB of WOFF2).
 const laidOutSliceCharacters = 140;
 const unusedSliceCharacters = 260;
@@ -43,56 +72,43 @@ function evenChunks(list, targetSize) {
   return chunks;
 }
 
-// usage: output of tools/measure-serif-sc-usage.mjs.
-export function planFromUsage(usage, fontCodePoints) {
+// usage: output of tools/measure-serif-sc-usage.mjs. lateSerifText: serif text
+// that can appear on any page only after a delay or a click, which the
+// measurement cannot see (the newsletter card's headings); it goes into slice 0.
+export function planFromUsage(usage, fontCodePoints, lateSerifText = "") {
   const fontHan = fontCodePoints.filter(isHanCodePoint).sort(byCodePoint);
   const inFont = new Set(fontHan);
-  const hanIn = (text) => new Set([...text].map((character) => character.codePointAt(0)).filter((codePoint) => inFont.has(codePoint)));
-  const priorityFirstViewport = new Set();
-  const firstViewportPages = new Map();
+  const hanIn = (text = "") => new Set([...text].map((character) => character.codePointAt(0)).filter((codePoint) => inFont.has(codePoint)));
+  const featured = usage.featuredGuides ?? [];
+  const primary = new Set(hanIn(lateSerifText));
   const laidOutPages = new Map();
-  const priorityLaidOutPages = new Map();
-  const count = (map, codePoint) => map.set(codePoint, (map.get(codePoint) ?? 0) + 1);
   for (const page of usage.pages) {
-    for (const codePoint of hanIn(page.firstViewport)) {
-      count(firstViewportPages, codePoint);
-      if (isPriorityPath(page.path)) priorityFirstViewport.add(codePoint);
+    // Every page's first viewport, and all serif text of the priority pages
+    // (hidden text included), so later slices cannot change what these show.
+    for (const codePoint of hanIn(page.firstViewport)) primary.add(codePoint);
+    if (isPriorityPath(page.path, featured)) {
+      for (const codePoint of hanIn(page.laidOut)) primary.add(codePoint);
+      for (const codePoint of hanIn(page.hidden)) primary.add(codePoint);
     }
-    for (const codePoint of hanIn(page.laidOut)) {
-      count(laidOutPages, codePoint);
-      if (isPriorityPath(page.path)) count(priorityLaidOutPages, codePoint);
-    }
+    for (const codePoint of hanIn(page.laidOut)) laidOutPages.set(codePoint, (laidOutPages.get(codePoint) ?? 0) + 1);
   }
 
-  const preloaded = new Set(fontHan.filter((codePoint) =>
-    priorityFirstViewport.has(codePoint) ||
-    (firstViewportPages.get(codePoint) ?? 0) >= sharedFirstViewportPages));
-  // The rest of the priority pages' serif text gets its own slices, so a tour
-  // page fetches a few slices instead of one from every usage band.
-  const priorityRest = fontHan
-    .filter((codePoint) => !preloaded.has(codePoint) && priorityLaidOutPages.has(codePoint))
-    .sort((left, right) =>
-      priorityLaidOutPages.get(right) - priorityLaidOutPages.get(left) ||
-      laidOutPages.get(right) - laidOutPages.get(left) || left - right);
   const laidOut = fontHan
-    .filter((codePoint) => !preloaded.has(codePoint) && !priorityLaidOutPages.has(codePoint) && laidOutPages.has(codePoint))
+    .filter((codePoint) => !primary.has(codePoint) && laidOutPages.has(codePoint))
     .sort((left, right) => laidOutPages.get(right) - laidOutPages.get(left) || left - right);
-  const unused = fontHan.filter((codePoint) => !preloaded.has(codePoint) && !laidOutPages.has(codePoint));
+  const unused = fontHan.filter((codePoint) => !primary.has(codePoint) && !laidOutPages.has(codePoint));
 
   return {
     family: serifScFamily,
     about:
       "Han characters per slice of the Chinese editorial font. Slice 0 also holds every non-Han character of the source font. Regenerate with tools/slice-serif-sc-font.mjs --plan-from-usage=<file from tools/measure-serif-sc-usage.mjs>.",
     measuredPages: usage.pages.length,
+    featuredGuides: featured,
     slices: [
       {
-        note: `First viewport of the Chinese homepage, tour index, guide index and every tour page, plus characters in the first viewport of at least ${sharedFirstViewportPages} pages. Preloaded.`,
-        han: toText(preloaded),
+        note: "Primary slice, preloaded: every serif character of /zh/, /zh/tours/, /zh/guides/, every tour page and the featured guides (hidden text included), the first viewport of every measured page and the newsletter card's headings.",
+        han: toText(primary),
       },
-      ...evenChunks(priorityRest, laidOutSliceCharacters).map((chunk) => ({
-        note: `Rest of the serif text on the priority pages: laid out on ${priorityLaidOutPages.get(chunk[0])}-${priorityLaidOutPages.get(chunk.at(-1))} of them.`,
-        han: toText(chunk),
-      })),
       ...evenChunks(laidOut, laidOutSliceCharacters).map((chunk) => ({
         note: `Laid out in the serif on ${laidOutPages.get(chunk[0])}-${laidOutPages.get(chunk.at(-1))} measured pages.`,
         han: toText(chunk),
@@ -144,22 +160,60 @@ export function unicodeRange(codePoints) {
     .join(",");
 }
 
-export function renderStylesheet(slices) {
-  const rules = slices.map((codePoints, index) => [
+// One @font-face rule; the primary slice has no unicode-range.
+export function fontFaceRule(url, codePoints = null) {
+  return [
     "@font-face {",
     `  font-family: "${serifScFamily}";`,
     "  font-display: swap;",
     "  font-style: normal;",
     "  font-weight: 500;",
-    `  src: url("/fonts/${serifScSliceFile(index)}") format("woff2");`,
-    ...(index === 0 ? [] : [`  unicode-range: ${unicodeRange(codePoints)};`]),
+    `  src: url("${url}") format("woff2");`,
+    ...(codePoints ? [`  unicode-range: ${unicodeRange(codePoints)};`] : []),
     "}",
-  ].join("\n"));
-  return `/* Generated by tools/slice-serif-sc-font.mjs from ${serifScSourcePath}; do not edit. */\n${rules.join("\n")}\n`;
+  ].join("\n");
 }
 
-// Parses the generated stylesheet back into { src, ranges } faces (ranges null
-// when a face has no unicode-range, i.e. it covers every code point).
+// The stylesheet for slices 1..n (slice 0 is declared in app/globals.css).
+export function renderStylesheet(slices, urls) {
+  const rules = slices.slice(1).map((codePoints, offset) => fontFaceRule(urls[offset + 1], codePoints));
+  return `/* Generated by tools/slice-serif-sc-font.mjs from ${serifScSourcePath}; do not edit. Slice 0 (${urls[0]}) is declared in ${serifScGlobalsPath}. */\n${rules.join("\n")}\n`;
+}
+
+// Points the one @font-face rule of the family in app/globals.css at slice 0.
+export function rewritePrimaryFontFace(css, url) {
+  let rules = 0;
+  const rewritten = css.replace(/@font-face\s*\{[^}]*\}/g, (rule) => {
+    if (rule.match(/font-family:\s*"([^"]+)"/)?.[1] !== serifScFamily) return rule;
+    rules += 1;
+    if (/unicode-range/.test(rule)) {
+      throw new Error(`The ${serifScFamily} rule in ${serifScGlobalsPath} must not have a unicode-range`);
+    }
+    return rule.replace(/src:\s*url\("[^"]+"\)/, `src: url("${url}")`);
+  });
+  if (rules !== 1) throw new Error(`${serifScGlobalsPath} must declare ${serifScFamily} exactly once (found ${rules})`);
+  return rewritten;
+}
+
+export function renderFilesModule(primaryUrl, stylesheetUrl) {
+  return [
+    `// Generated by tools/slice-serif-sc-font.mjs from ${serifScSourcePath}`,
+    `// and ${serifScPlanPath}; do not edit.`,
+    `export const homegroundSerifScPrimaryFontUrl = ${JSON.stringify(primaryUrl)};`,
+    `export const homegroundSerifScSlicesStylesheetUrl = ${JSON.stringify(stylesheetUrl)};`,
+    "",
+  ].join("\n");
+}
+
+export function parseFilesModule(source) {
+  const primary = source.match(/homegroundSerifScPrimaryFontUrl = "([^"]+)"/)?.[1];
+  const stylesheet = source.match(/homegroundSerifScSlicesStylesheetUrl = "([^"]+)"/)?.[1];
+  if (!primary || !stylesheet) throw new Error(`${serifScFilesModulePath} does not name both serif files`);
+  return { primary, stylesheet };
+}
+
+// Parses @font-face rules back into { src, ranges } faces (ranges null when a
+// face has no unicode-range, i.e. it covers every code point).
 export function parseFontFaces(css, family = serifScFamily) {
   return [...css.matchAll(/@font-face\s*\{([^}]*)\}/g)].flatMap(([, body]) => {
     const declaredFamily = body.match(/font-family:\s*"([^"]+)"/)?.[1];
@@ -176,6 +230,22 @@ export function parseFontFaces(css, family = serifScFamily) {
       : null;
     return [{ src, ranges }];
   });
+}
+
+// Every face of the family in declaration order: the faces app/globals.css
+// declares (slice 0, no range), then the faces of the slice stylesheet.
+export function readSerifScFaces(projectRoot, fontDirectory = "public/fonts") {
+  const files = parseFilesModule(readFileSync(resolve(projectRoot, serifScFilesModulePath), "utf8"));
+  const globalsFaces = parseFontFaces(readFileSync(resolve(projectRoot, serifScGlobalsPath), "utf8"));
+  const stylesheetPath = resolve(projectRoot, fontDirectory, files.stylesheet.replace(/^\/fonts\//, ""));
+  const later = existsSync(stylesheetPath) ? parseFontFaces(readFileSync(stylesheetPath, "utf8")) : null;
+  return {
+    files,
+    globalsFaces,
+    stylesheetPath,
+    faces: [...globalsFaces, ...(later ?? [])],
+    stylesheetFound: later !== null,
+  };
 }
 
 // The face a browser consults first for a code point: the last-defined face

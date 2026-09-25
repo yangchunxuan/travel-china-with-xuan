@@ -154,7 +154,8 @@ possible here: `tools/rebuild-locale-fonts.mjs` requires `--noto`, `--pretendard
 ```
 
 **Expected:** zero missing glyphs. **Actual:** 29 Han, 8 Hangul.
-**Central shared location to change:** `public/fonts/homeground-serif-sc.woff2`,
+**Central shared location to change:** the Chinese subset `tools/fonts/homeground-serif-sc.woff2`
+(published as unicode-range slices by `tools/slice-serif-sc-font.mjs`),
 `public/fonts/homeground-pretendard-ko.woff2`, `public/fonts/homeground-maruburi-ko.woff2`,
 regenerated via `tools/rebuild-locale-fonts.mjs`.
 

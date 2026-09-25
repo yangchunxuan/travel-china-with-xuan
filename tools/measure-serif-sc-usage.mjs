@@ -11,13 +11,15 @@
 //
 // Each page is measured at 1440x900 and at 375x812 (mobile). A character counts
 // as "laid out" when a rendered text node whose first font family is the serif
-// contains it, and as "first viewport" when that node starts above the fold.
-// Priority pages are sampled a few times so rotating hero phrases are included.
+// contains it, as "first viewport" when that node starts above the fold, and as
+// "hidden" when the node is in the DOM in the serif but not rendered (closed
+// menus and panels). Priority pages are sampled a few times so rotating hero
+// phrases are included.
 import { spawn } from "node:child_process";
 import { existsSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, relative, resolve, sep } from "node:path";
-import { isPriorityPath, serifScFamily } from "./serif-sc-slice-plan.mjs";
+import { featuredGuidePaths, isPriorityPath, serifScFamily } from "./serif-sc-slice-plan.mjs";
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((argument) => {
@@ -44,10 +46,11 @@ function exportedPaths(directory) {
   });
 }
 const paths = exportedPaths(exportDirectory).sort();
+const featuredGuides = featuredGuidePaths(exportDirectory);
 
 const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
 const extractExpression = `(() => {
-  const laidOut = new Set(), firstViewport = new Set();
+  const laidOut = new Set(), firstViewport = new Set(), hidden = new Set();
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const range = document.createRange();
   for (let node = walker.nextNode(); node; node = walker.nextNode()) {
@@ -58,14 +61,17 @@ const extractExpression = `(() => {
     if (family !== ${JSON.stringify(serifScFamily)}) continue;
     range.selectNodeContents(node);
     const rects = range.getClientRects();
-    if (!rects.length) continue;
+    if (!rects.length) {
+      for (const character of text) if (character.trim()) hidden.add(character);
+      continue;
+    }
     for (const character of text) {
       if (!character.trim()) continue;
       laidOut.add(character);
       if (rects[0].top < innerHeight) firstViewport.add(character);
     }
   }
-  return JSON.stringify({ laidOut: [...laidOut].join(""), firstViewport: [...firstViewport].join("") });
+  return JSON.stringify({ laidOut: [...laidOut].join(""), firstViewport: [...firstViewport].join(""), hidden: [...hidden].join("") });
 })()`;
 
 async function measureViewport({ width, height, mobile }, results) {
@@ -117,14 +123,15 @@ async function measureViewport({ width, height, mobile }, results) {
       await call("Page.navigate", { url: `${origin}${path}` });
       await loaded;
       await sleep(350);
-      const entry = results.get(path) ?? { laidOut: new Set(), firstViewport: new Set() };
-      let samples = isPriorityPath(path) ? 6 : 1;
+      const entry = results.get(path) ?? { laidOut: new Set(), firstViewport: new Set(), hidden: new Set() };
+      let samples = isPriorityPath(path, featuredGuides) ? 6 : 1;
       for (let sample = 0; sample < samples; sample += 1) {
         if (sample > 0) await sleep(2100);
         const before = entry.firstViewport.size;
         const measured = await evaluate(extractExpression);
         for (const character of measured.laidOut) entry.laidOut.add(character);
         for (const character of measured.firstViewport) entry.firstViewport.add(character);
+        for (const character of measured.hidden) entry.hidden.add(character);
         // Stop sampling once a page shows nothing new above the fold.
         if (sample > 0 && entry.firstViewport.size === before) samples = sample + 1;
       }
@@ -149,10 +156,12 @@ for (const viewport of [
 writeFileSync(outputPath, `${JSON.stringify({
   family: serifScFamily,
   origin,
+  featuredGuides,
   pages: paths.map((path) => ({
     path,
     laidOut: [...results.get(path).laidOut].join(""),
     firstViewport: [...results.get(path).firstViewport].join(""),
+    hidden: [...results.get(path).hidden].join(""),
   })),
 }, null, 1)}\n`);
 console.log(`✓ Measured ${paths.length} Chinese pages; wrote ${outputPath}`);

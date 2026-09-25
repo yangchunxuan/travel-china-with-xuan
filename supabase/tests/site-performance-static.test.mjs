@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import homegroundImageLoader from "../../lib/imageLoader.ts";
 import { coverImageSizes, generatedImageSrcSet } from "../../lib/generatedImageSrcSet.ts";
 
@@ -139,26 +140,44 @@ test("oversized card and portrait images request the generated variants", async 
   assert.match(studio, /image\.smallWidth > 640/);
 });
 
-test("Chinese pages preload only the catch-all slice of the sliced serif", async () => {
-  const [layout, globals, stylesheet] = await Promise.all([
+test("Chinese pages render with the primary serif slice only and add the rest after load", async () => {
+  const [layout, globals, slicesComponent] = await Promise.all([
     source("app/(localized)/[locale]/layout.tsx"),
     source("app/globals.css"),
-    source("public/fonts/homeground-serif-sc.css"),
+    source("components/HomegroundSerifScSlices.tsx"),
   ]);
-  const { parseFontFaces } = await import("../../tools/serif-sc-slice-plan.mjs");
-  const faces = parseFontFaces(stylesheet);
+  const { readSerifScFaces, serifScSliceFilePattern } = await import("../../tools/serif-sc-slice-plan.mjs");
+  const { files, faces, globalsFaces } = readSerifScFaces(fileURLToPath(new URL("../../", import.meta.url)));
 
-  // Slice 00 has no unicode-range: it stays the family's primary font and
-  // catch-all, and it is the one slice worth fetching before first paint.
+  // Slice 0 is declared once, in globals.css, with no unicode-range: it stays
+  // the family's primary font and catch-all, as the single file was. No serif
+  // stylesheet of its own blocks rendering.
+  assert.deepEqual(globalsFaces, [{ src: files.primary, ranges: null }]);
   assert.ok(faces.length > 1);
-  assert.equal(faces[0].ranges, null);
-  assert.ok(faces.slice(1).every((face) => face.ranges?.length > 0));
-  const serifPreloads = [
-    ...layout.matchAll(/rel="preload"\s+href="(\/fonts\/homeground-serif-sc[^"]*)"/g),
-  ].map((match) => match[1]);
-  assert.deepEqual(serifPreloads, [faces[0].src]);
-  assert.match(layout, /rel="stylesheet"\s+href="\/fonts\/homeground-serif-sc\.css"/);
-  assert.doesNotMatch(globals, /font-family:\s*"Homeground Serif SC"/);
+  assert.ok(faces.slice(1).every((face) => face.ranges?.length > 0 && face.src !== files.primary));
+  // Names carry a content hash, so a cached stylesheet cannot mix plans.
+  for (const face of faces) assert.match(face.src.split("/").pop(), serifScSliceFilePattern);
+  for (const face of faces) assert.match(face.src, /\/homeground-serif-sc-\d{2}\.[0-9a-f]{8}\.woff2$/);
+  assert.match(files.stylesheet, /^\/fonts\/homeground-serif-sc-slices\.[0-9a-f]{8}\.css$/);
+  assert.doesNotMatch(globals, /homeground-serif-sc-slices/);
+
+  // The Chinese layout preloads slice 0 only and links no serif stylesheet;
+  // the component that adds the other slices is mounted on Chinese pages only.
+  assert.match(layout, /locale === "zh" \? \(\s*<link\s+rel="preload"\s+href=\{homegroundSerifScPrimaryFontUrl\}\s+as="font"/);
+  assert.match(layout, /\{locale === "zh" \? <HomegroundSerifScSlices \/> : null\}/);
+  assert.doesNotMatch(layout, /rel="stylesheet"/);
+  assert.doesNotMatch(layout, /homeground-serif-sc/);
+
+  // The other slices are declared only after the load event, after slice 0
+  // has loaded and in an idle period, and only once.
+  assert.match(slicesComponent, /^"use client";/);
+  assert.match(slicesComponent, /import \{ homegroundSerifScSlicesStylesheetUrl \} from "\.\.\/lib\/homegroundSerifScFontFiles"/);
+  assert.match(slicesComponent, /if \(document\.readyState === "complete"\) start\(\);\s*else window\.addEventListener\("load", start, \{ once: true \}\);/);
+  assert.match(slicesComponent, /document\.fonts\.load\(primaryFace\)\.then\(whenIdle, whenIdle\)/);
+  assert.match(slicesComponent, /const primaryFace = '500 1em "Homeground Serif SC"';/);
+  assert.match(slicesComponent, /window\.requestIdleCallback\(add, \{ timeout: 2000 \}\)/);
+  assert.equal((slicesComponent.match(/createElement/g) ?? []).length, 1);
+  assert.match(slicesComponent, /if \(cancelled \|\| declared\(\)\) return;/);
 });
 
 test("tour heroes are fetched at high priority, not only preloaded", async () => {

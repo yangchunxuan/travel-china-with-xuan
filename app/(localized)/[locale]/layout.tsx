@@ -6,6 +6,8 @@ import { ContactCardHost } from "../../../components/ContactCardHost";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
+import { HomegroundSerifScSlices } from "../../../components/HomegroundSerifScSlices";
+import { homegroundSerifScPrimaryFontUrl } from "../../../lib/homegroundSerifScFontFiles";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -77,27 +79,20 @@ export default async function LocalizedRootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        {/*
+          The Chinese serif is cut into unicode-range slices
+          (public/fonts/README.md). Only slice 0, declared in globals.css, is
+          preloaded and can take part in the first render;
+          HomegroundSerifScSlices declares the other slices after load.
+        */}
         {locale === "zh" ? (
-          <>
-            {/*
-              The Chinese serif is cut into unicode-range slices
-              (tools/slice-serif-sc-font.mjs). Slice 00 holds the first
-              viewport of the key pages and is preloaded; the browser fetches
-              the other slices only for the characters a page lays out.
-            */}
-            <link
-              rel="stylesheet"
-              href="/fonts/homeground-serif-sc.css"
-              precedence="homeground-fonts"
-            />
-            <link
-              rel="preload"
-              href="/fonts/homeground-serif-sc-00.woff2"
-              as="font"
-              type="font/woff2"
-              crossOrigin="anonymous"
-            />
-          </>
+          <link
+            rel="preload"
+            href={homegroundSerifScPrimaryFontUrl}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
         ) : (
           <>
             <link
@@ -124,6 +119,7 @@ export default async function LocalizedRootLayout({
         <TourContactPanel locale={locale} />
         <ContactCardHost locale={locale} />
         <NewsletterPopup locale={locale} />
+        {locale === "zh" ? <HomegroundSerifScSlices /> : null}
       </body>
     </html>
   );

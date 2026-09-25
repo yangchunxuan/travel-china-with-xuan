@@ -47,8 +47,9 @@ directory (`wuhan-where-to-stay-*`, `wuhan-hankou-*`). **No canonical conflict.*
 
 The Chinese body names all three districts that make up the area people call Hankou — Jiang'an,
 Jianghan and **Qiaokou (硚口)** — because "Hankou is not a district" is the page's central
-correction and naming two of three would weaken it. **硚 (U+785A) is missing from
-`public/fonts/homeground-serif-sc.woff2`**, so `npm run check:font-coverage` fails on this branch
+correction and naming two of three would weaken it. **硚 (U+785A) is missing from the Chinese
+subset `tools/fonts/homeground-serif-sc.woff2`** (published as unicode-range slices), so
+`npm run check:font-coverage` fails on this branch
 and the build stops in `prebuild`. Fonts are a central asset and were not touched.
 
 For browser QA only, 硚 was temporarily replaced with 桥 in `body.zh.ts`, the build was run, all

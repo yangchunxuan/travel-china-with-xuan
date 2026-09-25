@@ -1,16 +1,18 @@
 // Cuts the Chinese editorial font subset (tools/fonts/homeground-serif-sc.woff2)
-// into unicode-range slices and writes their @font-face rules, so a Chinese page
-// downloads only the glyphs it lays out in the serif. See public/fonts/README.md.
+// into unicode-range slices, so a Chinese page downloads only the glyphs it lays
+// out in the serif. See public/fonts/README.md.
 //
 // usage:
 //   node tools/slice-serif-sc-font.mjs [--python=python] [--fonttools=<PYTHONPATH>]
-//     Rebuilds public/fonts/homeground-serif-sc-NN.woff2 and
-//     public/fonts/homeground-serif-sc.css from the source subset and the
+//     Rebuilds public/fonts/homeground-serif-sc-NN.<hash>.woff2, the stylesheet
+//     public/fonts/homeground-serif-sc-slices.<hash>.css for slices 1..n,
+//     lib/homegroundSerifScFontFiles.ts (the URLs of slice 0 and that stylesheet)
+//     and the slice 0 url in app/globals.css from the source subset and the
 //     committed plan tools/fonts/homeground-serif-sc-slices.json.
 //   node tools/slice-serif-sc-font.mjs --plan-from-usage=<usage.json> [...]
 //     First rewrites the plan from a tools/measure-serif-sc-usage.mjs measurement.
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,13 +20,19 @@ import * as fontkit from "fontkit";
 import { localeFontSubsetOptions } from "./locale-font-subset-options.mjs";
 import {
   assignSlices,
+  contentHash,
   planFromUsage,
+  renderFilesModule,
   renderStylesheet,
+  rewritePrimaryFontFace,
+  serifScFilesModulePath,
+  serifScGlobalsPath,
   serifScPlanPath,
   serifScSliceFile,
   serifScSliceFilePattern,
   serifScSourcePath,
   serifScStylesheetFile,
+  serifScStylesheetFilePattern,
 } from "./serif-sc-slice-plan.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -46,7 +54,11 @@ const fontCodePoints = sourceFont.characterSet
 
 if (args["plan-from-usage"]) {
   const usage = JSON.parse(readFileSync(resolve(args["plan-from-usage"]), "utf8"));
-  const plan = planFromUsage(usage, fontCodePoints);
+  // The newsletter card mounts after a delay on any Chinese page, so the usage
+  // measurement never sees its serif headings; slice 0 carries them.
+  const { newsletterCopy } = await import("../lib/newsletterI18n.ts");
+  const lateSerifText = `${newsletterCopy.zh.title}${newsletterCopy.zh.pendingTitle}`;
+  const plan = planFromUsage(usage, fontCodePoints, lateSerifText);
   writeFileSync(planPath, `${JSON.stringify(plan, null, 2)}\n`);
   console.log(`✓ Wrote ${serifScPlanPath}: ${plan.slices.length} slices from ${usage.pages.length} measured pages.`);
 }
@@ -68,14 +80,10 @@ if (unplanned.length > 0) {
 
 const workDirectory = mkdtempSync(join(tmpdir(), "serif-sc-slices-"));
 try {
-  for (const name of readdirSync(fontDirectory)) {
-    if (serifScSliceFilePattern.test(name)) rmSync(join(fontDirectory, name));
-  }
-  let total = 0;
-  slices.forEach((codePoints, index) => {
+  const built = slices.map((codePoints, index) => {
     const unicodesFile = join(workDirectory, `slice-${index}.txt`);
     writeFileSync(unicodesFile, `${codePoints.map((codePoint) => codePoint.toString(16)).join("\n")}\n`);
-    const output = join(fontDirectory, serifScSliceFile(index));
+    const output = join(workDirectory, `slice-${index}.woff2`);
     const result = spawnSync(
       python,
       ["-m", "fontTools.subset", sourcePath, `--unicodes-file=${unicodesFile}`, `--output-file=${output}`, ...localeFontSubsetOptions],
@@ -86,12 +94,29 @@ try {
       },
     );
     if (result.status !== 0) throw new Error(result.stderr || result.stdout || "fontTools.subset failed");
-    const bytes = statSync(output).size;
-    total += bytes;
-    console.log(`  ${serifScSliceFile(index)}  ${String(codePoints.length).padStart(4)} characters  ${String(bytes).padStart(7)} bytes`);
+    const bytes = readFileSync(output);
+    return { output, name: serifScSliceFile(index, contentHash(bytes)), size: bytes.length, characters: codePoints.length };
   });
-  writeFileSync(join(fontDirectory, serifScStylesheetFile), renderStylesheet(slices));
-  console.log(`✓ Wrote ${slices.length} slices (${total} bytes) and public/fonts/${serifScStylesheetFile}.`);
+
+  for (const name of readdirSync(fontDirectory)) {
+    if (serifScSliceFilePattern.test(name) || serifScStylesheetFilePattern.test(name)) rmSync(join(fontDirectory, name));
+  }
+  let total = 0;
+  for (const slice of built) {
+    copyFileSync(slice.output, join(fontDirectory, slice.name));
+    total += slice.size;
+    console.log(`  ${slice.name}  ${String(slice.characters).padStart(4)} characters  ${String(slice.size).padStart(7)} bytes`);
+  }
+  const urls = built.map((slice) => `/fonts/${slice.name}`);
+  const stylesheet = renderStylesheet(slices, urls);
+  const stylesheetName = serifScStylesheetFile(contentHash(stylesheet));
+  writeFileSync(join(fontDirectory, stylesheetName), stylesheet);
+  writeFileSync(resolve(projectRoot, serifScFilesModulePath), renderFilesModule(urls[0], `/fonts/${stylesheetName}`));
+  const globalsPath = resolve(projectRoot, serifScGlobalsPath);
+  writeFileSync(globalsPath, rewritePrimaryFontFace(readFileSync(globalsPath, "utf8"), urls[0]));
+  console.log(
+    `✓ Wrote ${built.length} slices (${total} bytes), public/fonts/${stylesheetName}, ${serifScFilesModulePath} and the slice 0 url in ${serifScGlobalsPath}.`,
+  );
 } finally {
   rmSync(workDirectory, { recursive: true, force: true });
 }
