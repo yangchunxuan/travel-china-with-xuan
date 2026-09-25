@@ -334,8 +334,13 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
   assert.match(ko.metadataDescription, /D2~D5 한국어 가이드/);
   assert.match(ko.serviceNote, /한국어 가이드는 D2~D5/);
   assert.match(ko.serviceNote, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
-  assert.match(ko.faq[1].question, /한국어 가이드/);
-  assert.match(ko.faq[1].answer, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  const guideCoverageFaq = ko.faq.find((item) => /한국어 가이드와 전용 차량/u.test(item.question));
+  assert.ok(guideCoverageFaq);
+  assert.match(guideCoverageFaq.answer, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  const guideOnlyFaq = localizePrivateTourProduct(product, "en").faq.find((item) => /only a guide or driver/u.test(item.question));
+  assert.ok(guideOnlyFaq);
+  assert.match(guideOnlyFaq.answer, /check whether a separate arrangement is possible/u);
+  assert.match(guideOnlyFaq.answer, /cannot simply be divided by day/u);
   assert.doesNotMatch(ko.summary, /영어 가이드/);
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
 });
@@ -445,7 +450,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
   }
 
-  const shanghai = product("shanghai-suzhou-5-day-private-tour");
+  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-26");
   const shanghaiRules = {
     en: {
       common: [
