@@ -51,21 +51,31 @@ export function planFromUsage(usage, fontCodePoints) {
   const priorityFirstViewport = new Set();
   const firstViewportPages = new Map();
   const laidOutPages = new Map();
+  const priorityLaidOutPages = new Map();
+  const count = (map, codePoint) => map.set(codePoint, (map.get(codePoint) ?? 0) + 1);
   for (const page of usage.pages) {
     for (const codePoint of hanIn(page.firstViewport)) {
-      firstViewportPages.set(codePoint, (firstViewportPages.get(codePoint) ?? 0) + 1);
+      count(firstViewportPages, codePoint);
       if (isPriorityPath(page.path)) priorityFirstViewport.add(codePoint);
     }
     for (const codePoint of hanIn(page.laidOut)) {
-      laidOutPages.set(codePoint, (laidOutPages.get(codePoint) ?? 0) + 1);
+      count(laidOutPages, codePoint);
+      if (isPriorityPath(page.path)) count(priorityLaidOutPages, codePoint);
     }
   }
 
   const preloaded = new Set(fontHan.filter((codePoint) =>
     priorityFirstViewport.has(codePoint) ||
     (firstViewportPages.get(codePoint) ?? 0) >= sharedFirstViewportPages));
+  // The rest of the priority pages' serif text gets its own slices, so a tour
+  // page fetches a few slices instead of one from every usage band.
+  const priorityRest = fontHan
+    .filter((codePoint) => !preloaded.has(codePoint) && priorityLaidOutPages.has(codePoint))
+    .sort((left, right) =>
+      priorityLaidOutPages.get(right) - priorityLaidOutPages.get(left) ||
+      laidOutPages.get(right) - laidOutPages.get(left) || left - right);
   const laidOut = fontHan
-    .filter((codePoint) => !preloaded.has(codePoint) && laidOutPages.has(codePoint))
+    .filter((codePoint) => !preloaded.has(codePoint) && !priorityLaidOutPages.has(codePoint) && laidOutPages.has(codePoint))
     .sort((left, right) => laidOutPages.get(right) - laidOutPages.get(left) || left - right);
   const unused = fontHan.filter((codePoint) => !preloaded.has(codePoint) && !laidOutPages.has(codePoint));
 
@@ -79,6 +89,10 @@ export function planFromUsage(usage, fontCodePoints) {
         note: `First viewport of the Chinese homepage, tour index, guide index and every tour page, plus characters in the first viewport of at least ${sharedFirstViewportPages} pages. Preloaded.`,
         han: toText(preloaded),
       },
+      ...evenChunks(priorityRest, laidOutSliceCharacters).map((chunk) => ({
+        note: `Rest of the serif text on the priority pages: laid out on ${priorityLaidOutPages.get(chunk[0])}-${priorityLaidOutPages.get(chunk.at(-1))} of them.`,
+        han: toText(chunk),
+      })),
       ...evenChunks(laidOut, laidOutSliceCharacters).map((chunk) => ({
         note: `Laid out in the serif on ${laidOutPages.get(chunk[0])}-${laidOutPages.get(chunk.at(-1))} measured pages.`,
         han: toText(chunk),

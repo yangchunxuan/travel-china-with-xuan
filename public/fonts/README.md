@@ -62,7 +62,9 @@ lays out in the serif:
   `/zh/guides/` and every tour page, plus any Han character in the first
   viewport of at least ten pages. It is the only preloaded slice and, like the
   old single file, the family's primary font and catch-all.
-- Slices `01` to `09` hold the other Han characters that pages lay out in the
+- Slices `01` to `03` hold the rest of the serif text on those same pages, so
+  a tour page fetches three more slices instead of one from every band.
+  Slices `04` to `09` hold the other Han characters that pages lay out in the
   serif, grouped by how many pages use them. Slices `10` to `13` hold the Han
   characters no page lays out in the serif, in code-point order.
 - Every slice keeps all OpenType layout features, hinting and metrics of the
