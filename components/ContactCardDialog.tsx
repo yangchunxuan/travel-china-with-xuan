@@ -6,7 +6,7 @@ import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
-import type { ContactCardLayout, ContactCardRequest } from "../lib/contactCard";
+import { holdPageScroll, type ContactCardLayout, type ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
 import { privateTourQuoteApiUrl, tourWhatsAppHref } from "../lib/tourContact";
 import {
@@ -137,6 +137,10 @@ export function ContactCardDialog({
     (emailField && !emailField.disabled ? emailField : titleRef.current)?.focus({ preventScroll: true });
   }, [open, request, frameShownAt]);
 
+  // The page stops scrolling in the same moment, before the frame the card
+  // replaces lets go of its own hold (see holdPageScroll).
+  useLayoutEffect(() => (open ? holdPageScroll() : undefined), [open]);
+
   useEffect(() => {
     if (!open) return;
     const opened = pageContext(locale);
@@ -145,12 +149,9 @@ export function ContactCardDialog({
     setInquiryOpen(true);
     setClock(chinaTime(locale));
     const tick = window.setInterval(() => setClock(chinaTime(locale)), 20_000);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     trackEvent("contact_options_viewed", { page_language: locale, contact_variant: contactVariant }, { firstPartyContext: { productSlug: opened.tour?.slug, surface: opened.tour ? "product" : "contact_options" } });
     return () => {
       window.clearInterval(tick);
-      document.body.style.overflow = previousOverflow;
       // A tour's quote sheet may still be open underneath.
       if (!document.querySelector("dialog[open]:not([data-contact-card-dialog])")) setInquiryOpen(false);
     };
@@ -445,7 +446,7 @@ export function ContactCardDialog({
         ) : (
           <div className={styles.columns} data-single={!whatsappHref || undefined}>
             {whatsappHref ? (
-              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`}>
+              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   {copy.useHere}
                   <ArrowUpRight size={16} aria-hidden="true" />

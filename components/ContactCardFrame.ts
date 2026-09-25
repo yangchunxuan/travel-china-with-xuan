@@ -1,15 +1,34 @@
 import type { HomegroundLocale } from "../lib/homegroundI18n";
-import { contactCardFrameCopy, type ContactCardLayout } from "../lib/contactCard";
+import { contactCardFrameCopy, holdPageScroll, type ContactCardLayout } from "../lib/contactCard";
 import styles from "./ContactCardFrame.module.css";
 
-// The card's usual height in pixels, and with the line naming the tour or
-// guide it was opened on (the same at every desktop window size; the sheet's
-// measured on 360–390 px phones), so the card takes the frame's place
-// without a jump.
-const usualHeight: Record<ContactCardLayout, Record<HomegroundLocale, [number, number]>> = {
-  card: { en: [537, 579], zh: [537, 579], ko: [537, 579] },
-  sheet: { en: [686, 734], zh: [638, 677], ko: [659, 707] },
+// The card's height in pixels, so it takes the frame's place without a jump,
+// [without, with] the line naming the tour or guide it was opened on. On
+// desktop it is the same at every window size.
+const cardHeight = [537, 579];
+// The sheet fills the screen's width up to 36rem, and the wider it is, the
+// fewer lines its words need: its height steps down at these widths (px) and
+// stays the same from 36rem on. Measured at every width from 320 px.
+const sheetSteps: Record<HomegroundLocale, number[]> = {
+  en: [403, 411, 563],
+  zh: [342, 367, 464],
+  ko: [356, 438, 550],
 };
+// Its heights below the first step and from each step on, [without, with] the line.
+const sheetHeights: Record<HomegroundLocale, [number, number][]> = {
+  en: [[686, 734], [659, 707], [638, 677], [618, 657]],
+  zh: [[686, 734], [665, 704], [638, 677], [618, 657]],
+  ko: [[686, 734], [659, 707], [638, 677], [618, 657]],
+};
+
+function frameHeight(locale: HomegroundLocale, layout: ContactCardLayout, named: boolean) {
+  if (layout === "card") return cardHeight[named ? 1 : 0];
+  // The page's scrollbar has gone by now (holdPageScroll), so the sheet is
+  // as wide as the window, up to 36rem.
+  const width = window.innerWidth;
+  const step = sheetSteps[locale].filter((at) => width >= at).length;
+  return sheetHeights[locale][step][named ? 1 : 0];
+}
 
 // The card's close icon (lucide X at 18 px, stroke 1.8).
 const closeIcon =
@@ -29,6 +48,10 @@ export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCa
   const copy = contactCardFrameCopy[locale];
   const sheet = layout === "sheet";
   const named = /\/(tours|guides)\/[a-z0-9-]+\/$/u.test(window.location.pathname);
+  // From the press on, as under the card: the page's scrollbar goes before
+  // the frame first paints, and the card, holding it in turn, opens exactly
+  // where the frame is.
+  const releaseScroll = holdPageScroll();
 
   const dialog = document.createElement("dialog");
   dialog.className = sheet ? `${styles.dialog} ${styles.sheet}` : styles.dialog;
@@ -37,7 +60,7 @@ export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCa
   dialog.setAttribute("data-layout", layout);
   dialog.setAttribute("aria-label", copy.title);
   dialog.setAttribute("aria-busy", "true");
-  dialog.style.setProperty("--frame-height", `${usualHeight[layout][locale][named ? 1 : 0]}px`);
+  dialog.style.setProperty("--frame-height", `${frameHeight(locale, layout, named)}px`);
 
   const card = dialog.appendChild(document.createElement("div"));
   card.className = styles.card;
@@ -67,5 +90,8 @@ export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCa
   dialog.showModal();
   // Removed rather than closed: closing a modal dialog would hand focus back
   // to the link while the card, opening in its place, is taking it.
-  return () => dialog.remove();
+  return () => {
+    dialog.remove();
+    releaseScroll();
+  };
 }

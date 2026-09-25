@@ -68,13 +68,26 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
   const close = useCallback(() => {
     removeFrame();
     setOpen(false);
-    window.requestAnimationFrame(() => {
-      const previous = returnFocusRef.current;
-      const visible = previous?.isConnected && previous.getClientRects().length > 0;
-      const target = visible ? previous : document.querySelector<HTMLElement>("header a[href]");
-      target?.focus({ preventScroll: true });
-    });
   }, [removeFrame]);
+
+  // Focus goes back to the link once the card (or its frame) has closed, in
+  // the same commit: the card's own layout effect has just closed its dialog,
+  // so the page is no longer inert. The dialog's own return target can't be
+  // relied on, because a card that opened in its frame's place took focus
+  // from the frame's close button, which is gone by then.
+  const shownRef = useRef(false);
+  useLayoutEffect(() => {
+    if (open) {
+      shownRef.current = true;
+      return;
+    }
+    if (!shownRef.current) return;
+    shownRef.current = false;
+    const previous = returnFocusRef.current;
+    const visible = previous?.isConnected && previous.getClientRects().length > 0;
+    const target = visible ? previous : document.querySelector<HTMLElement>("header a[href]");
+    target?.focus({ preventScroll: true });
+  }, [open]);
 
   // The card has opened in the frame's place (its own layout effect runs
   // first): the frame goes before the browser paints.

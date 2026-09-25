@@ -50,29 +50,10 @@ function drawCode(href: string) {
   return { size, version: qr.version, logo, modules, finders };
 }
 
-/**
- * The WhatsApp chat as a scannable code, drawn in the site's hand: soft
- * square modules, rounded finder "eyes" with terracotta pupils, and the
- * Homeground mark in a clear centre (error correction M restores the few
- * modules it covers). Encoded once per href; plain SVG, no canvas. The code
- * is drawn just after the block first paints, so the card around it opens
- * without waiting for the heaviest part (its reveal starts later anyway); the
- * square it fills is there from the start.
- */
-export function WhatsAppQr({ href, label }: { href: string; label: string }) {
-  const [drawn, setDrawn] = useState(false);
-  useEffect(() => {
-    let timer = 0;
-    const frame = window.requestAnimationFrame(() => {
-      timer = window.setTimeout(() => setDrawn(true));
-    });
-    return () => {
-      window.cancelAnimationFrame(frame);
-      window.clearTimeout(timer);
-    };
-  }, []);
-  const code = useMemo(() => (drawn ? drawCode(href) : null), [drawn, href]);
+type QrDrawing = ReturnType<typeof drawCode>;
 
+/** The code's markup; until `code` is drawn, the same square, empty. */
+function QrCode({ code, label }: { code: QrDrawing | null; label: string }) {
   return (
     <div className={styles.qrCode} style={code ? ({ "--qr-logo": `${(code.logo / code.size) * 100}%` } as CSSProperties) : undefined}>
       <svg
@@ -105,4 +86,35 @@ export function WhatsAppQr({ href, label }: { href: string; label: string }) {
       ) : null}
     </div>
   );
+}
+
+/** The code drawn in the first moment after its (empty) square has painted. */
+function QrCodeAfterPaint({ href, label }: { href: string; label: string }) {
+  const [drawn, setDrawn] = useState(false);
+  useEffect(() => {
+    let timer = 0;
+    const frame = window.requestAnimationFrame(() => {
+      timer = window.setTimeout(() => setDrawn(true));
+    });
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, []);
+  const code = useMemo(() => (drawn ? drawCode(href) : null), [drawn, href]);
+  return <QrCode code={code} label={label} />;
+}
+
+/**
+ * The WhatsApp chat as a scannable code, drawn in the site's hand: soft
+ * square modules, rounded finder "eyes" with terracotta pupils, and the
+ * Homeground mark in a clear centre (error correction M restores the few
+ * modules it covers). Plain SVG, no canvas. The contact card passes
+ * `drawAfterPaint`: the code is then drawn just after the card first paints,
+ * so the card opens without waiting for its heaviest part (the code's reveal
+ * starts later anyway) and the square it fills is there from the start.
+ * Everywhere else (the homepage contact board) it is drawn as it renders.
+ */
+export function WhatsAppQr({ href, label, drawAfterPaint = false }: { href: string; label: string; drawAfterPaint?: boolean }) {
+  return drawAfterPaint ? <QrCodeAfterPaint href={href} label={label} /> : <QrCode code={drawCode(href)} label={label} />;
 }

@@ -6,6 +6,7 @@ import {
   contactCardDesktopQuery,
   contactCardFrameCopy,
   contactCardRequestForLink,
+  holdPageScroll,
   whatsappDisplayNumber,
   whatsappQrCandidates,
 } from "../../lib/contactCard.ts";
@@ -211,7 +212,16 @@ test("the first open answers the press at once: the card's frame, then the card 
   assert.match(frame, /close\.setAttribute\("aria-label", copy\.close\);/);
   assert.match(frame, /addEventListener\("cancel", \(event\) => \{\s*event\.preventDefault\(\);\s*onClose\(\);/);
   assert.match(frame, /setAttribute\("aria-busy", "true"\)/);
-  assert.match(frame, /return \(\) => dialog\.remove\(\);/);
+  assert.match(frame, /return \(\) => \{\s*dialog\.remove\(\);\s*releaseScroll\(\);\s*\};/);
+  // The page stops scrolling from the press, under the frame as under the card,
+  // and the card takes its hold in the same commit that opens it.
+  assert.match(frame, /const releaseScroll = holdPageScroll\(\);[\s\S]*?document\.body\.append\(dialog\);/);
+  assert.match(dialog, /useLayoutEffect\(\(\) => \(open \? holdPageScroll\(\) : undefined\), \[open\]\);/);
+  assert.doesNotMatch(dialog, /document\.body\.style\.overflow/);
+  // Focus goes back to the link in the commit that closes the card, whichever
+  // way it opened (the frame's close button, the card's own return target then, is gone).
+  assert.doesNotMatch(host, /requestAnimationFrame/);
+  assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(open\) \{\s*shownRef\.current = true;\s*return;\s*\}[\s\S]*?const previous = returnFocusRef\.current;[\s\S]*?target\?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open\]\);/);
   // The card opens before the browser paints and carries on the frame's entrance.
   assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?dialog\.showModal\(\);[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt\]\);/);
   assert.match(dialog, /dialog\.style\.setProperty\("--card-enter-delay"/);
@@ -256,11 +266,73 @@ test("the frame is the card's own shape and size, and the card's title and close
 });
 
 test("the card's QR code is drawn just after the card first paints, in a square that is there from the start", async () => {
-  const qr = await source("components/WhatsAppQr.tsx");
+  const [qr, scan, dialog, inline] = await Promise.all([
+    source("components/WhatsAppQr.tsx"),
+    source("components/ContactCardScan.tsx"),
+    source("components/ContactCardDialog.tsx"),
+    source("components/ContactCardInlineScan.tsx"),
+  ]);
+  // Only the card waits: the homepage contact board (WhatsApp and Messenger)
+  // draws its codes as they render, as it always has.
+  assert.match(qr, /drawAfterPaint \? <QrCodeAfterPaint href=\{href\} label=\{label\} \/> : <QrCode code=\{drawCode\(href\)\} label=\{label\} \/>/);
+  assert.match(qr, /drawAfterPaint = false/);
+  assert.match(scan, /drawQrAfterPaint = false,/);
+  assert.match(scan, /<WhatsAppQr href=\{href\} label=\{[^}]*\} drawAfterPaint=\{drawQrAfterPaint\} \/>/);
+  assert.match(dialog, /<ContactCardScan locale=\{locale\} href=\{whatsappHref\} headingId=\{`\$\{id\}-scan`\} drawQrAfterPaint>/);
+  assert.doesNotMatch(inline, /drawQrAfterPaint/);
   assert.match(qr, /useEffect\(\(\) => \{[\s\S]*?requestAnimationFrame\([\s\S]*?setTimeout\(\(\) => setDrawn\(true\)\)/);
   assert.match(qr, /const code = useMemo\(\(\) => \(drawn \? drawCode\(href\) : null\), \[drawn, href\]\);/);
   // The same svg element throughout (its reveal keeps running), labelled from the start.
   assert.match(qr, /<svg\s+viewBox=\{code \? `0 0 \$\{code\.size\} \$\{code\.size\}` : "0 0 1 1"\}\s+role="img"\s+aria-label=\{label\}/);
+});
+
+test("the page stops scrolling while the frame or the card is up, and gets its own overflow back after both", () => {
+  const previous = globalThis.document;
+  globalThis.document = { body: { style: { overflow: "clip" } } };
+  try {
+    const style = globalThis.document.body.style;
+    // The frame holds first, the card takes over, then the frame lets go.
+    const releaseFrame = holdPageScroll();
+    assert.equal(style.overflow, "hidden");
+    const releaseCard = holdPageScroll();
+    releaseFrame();
+    assert.equal(style.overflow, "hidden");
+    releaseFrame();
+    assert.equal(style.overflow, "hidden", "releasing the same hold twice does nothing");
+    releaseCard();
+    assert.equal(style.overflow, "clip");
+    // A frame closed before the card arrived.
+    const releaseAlone = holdPageScroll();
+    assert.equal(style.overflow, "hidden");
+    releaseAlone();
+    assert.equal(style.overflow, "clip");
+  } finally {
+    globalThis.document = previous;
+  }
+});
+
+test("the frame is as tall as the card or sheet that replaces it, at every width", async () => {
+  const frame = await source("components/ContactCardFrame.ts");
+  const table = (name) => {
+    const start = frame.indexOf(`const ${name}`);
+    const body = frame.slice(start, frame.indexOf("};", start));
+    return Object.fromEntries(locales.map((locale) => [locale, JSON.parse(body.match(new RegExp(`${locale}: (\\[.*\\]),`))[1])]));
+  };
+  const steps = table("sheetSteps");
+  const heights = table("sheetHeights");
+  for (const locale of locales) {
+    // Rising widths below the sheet's 36rem, and a height before the first step and from each on.
+    assert.deepEqual([...steps[locale]].sort((a, b) => a - b), steps[locale], locale);
+    assert.ok(steps[locale].every((at) => at > 320 && at < 576), locale);
+    assert.equal(heights[locale].length, steps[locale].length + 1, locale);
+    // Lower as it widens; the line naming a tour or guide adds to each.
+    for (let index = 1; index < heights[locale].length; index += 1) {
+      assert.ok(heights[locale][index][0] < heights[locale][index - 1][0], locale);
+    }
+    assert.ok(heights[locale].every(([without, withLine]) => withLine > without), locale);
+  }
+  assert.match(frame, /const cardHeight = \[537, 579\];/);
+  assert.match(frame, /dialog\.style\.setProperty\("--frame-height", `\$\{frameHeight\(locale, layout, named\)\}px`\);/);
 });
 
 test("a guide link the card already answered does not also open the guide panel", () => {
