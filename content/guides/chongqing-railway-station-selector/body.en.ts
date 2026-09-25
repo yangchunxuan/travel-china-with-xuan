@@ -9,6 +9,19 @@ const body = {
       text: "If your ticket is issued, both stations are fixed: go to the exact departure station printed on it and arrange arrival pickup from the exact destination station. If you have not booked, compare trains that actually run on your date, the hotel-door-to-platform journey in Chongqing and the platform-to-hotel journey on arrival. This guide compares four principal urban hubs—Chongqing North, West, East and Shapingba—not every passenger stop across the municipality.",
     },
     {
+      id: "stations-at-a-glance",
+      type: "table",
+      caption: "The four stations at a glance, and the one that is closed (checked 20 August 2026)",
+      columns: ["Station", "Chinese name to show a driver", "Where", "Metro"],
+      rows: [
+        ["Chongqing North", "重庆北站", "Longtousi, on the Yubei side", "North Square: Lines 4 and 10; South Square: Lines 3 and 10 and the Loop Line"],
+        ["Chongqing West", "重庆西站", "Shangqiao, west and southwest of the centre", "Line 5 and the Loop Line"],
+        ["Chongqing East (opened 2025)", "重庆东站", "Southeast of Chayuan, Nan’an", "Line 6 East section, then a same-platform transfer into Line 6"],
+        ["Shapingba", "沙坪坝站", "Shapingba’s commercial centre", "Lines 1 and 9 and the Loop Line"],
+        ["Chongqing Station (closed)", "重庆站", "Caiyuanba", "No passenger trains since 2022; under reconstruction"],
+      ],
+    },
+    {
       id: "quick-answer",
       type: "callout",
       title: "Arrival and departure follow the same rule",
@@ -213,6 +226,10 @@ const body = {
         {
           question: "Which railway station should I use in Chongqing?",
           answer: "If your ticket is issued, the exact station printed on it, matched character for character: 重庆北, 重庆西, 重庆东 or 沙坪坝. If you have not booked, search trains that actually run on your date first, then compare the hotel-door-to-platform journey and the arrival-side transfer; a closer station with no suitable train is not useful.",
+        },
+        {
+          question: "What is the Chinese name of Chongqing East railway station?",
+          answer: "重庆东站 (Chongqing East). It opened in 2025 southeast of Chayuan in Nan’an, and by metro you reach it on the Line 6 East section. Show the full name 重庆东站 to a driver, and do not confuse it with 重庆站 (Chongqing Station), which has had no passenger trains since 2022.",
         },
         {
           question: "Is Chongqing Station (重庆站) the main station?",

@@ -171,6 +171,21 @@
   margin: 0;
 }
 
+.calloutLink {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  margin-block-start: 0.75rem;
+  min-block-size: 2.75rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.calloutLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 .callout[data-tone="warning"] strong::before {
   background: var(--hg-color-rust);
 }

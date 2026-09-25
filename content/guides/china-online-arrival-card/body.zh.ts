@@ -14,6 +14,7 @@ const body: StructuredPageBody = {
       title: "官方填报不收取任何费用",
       body: "从 https://s.nia.gov.cn/ArrivalCardFillingPC/ 或国家移民管理局当期公告列出的渠道进入。若网站收取入境卡费、出售“加急批准”，或要求为填表输入银行卡付款信息，它就不是国家移民管理局所说的免费官方服务。不要付款，自己重新输入官方网址。",
       tone: "warning",
+      link: { href: "https://s.nia.gov.cn/ArrivalCardFillingPC/", label: "填写官方免费入境卡" },
     },
     {
       id: "who-heading",
