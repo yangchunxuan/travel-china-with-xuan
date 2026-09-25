@@ -52,6 +52,9 @@ export const privateTourInquirySlugs = [
   "beijing-xian-guilin-shanghai-10-day-private-tour",
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+  "beijing-xian-shanghai-8-day-private-tour",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
 ] as const;
 
 export type PrivateTourInquirySlug =
@@ -106,6 +109,9 @@ const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
     "beijing-xian-guilin-shanghai-10-day-private-tour",
     "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
     "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+    "beijing-xian-shanghai-8-day-private-tour",
+    "beijing-xian-guilin-hong-kong-10-day-private-tour",
+    "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
   ] satisfies readonly PrivateTourInquirySlug[]);
 
 function usesKoreanGuideStandardPackage(slug: PrivateTourInquirySlug): boolean {
@@ -194,6 +200,12 @@ export function privateTourInquirySelectionLabel(
       ? "한국어 가이드 포함"
       : packageLabels[selection.packageId as keyof typeof packageLabels]?.[locale];
   if (!packageLabel) return null;
+  if (selection.packageId === "small-group-departure") {
+    const priceBasis = locale === "zh" ? "双人同住价格基准"
+      : locale === "ko" ? "2인 1실 요금 기준"
+        : "twin-share price basis";
+    return `${packageLabel} · ${priceBasis}`;
+  }
   const group = locale === "zh" ? `${selection.travelers} 人同行`
     : locale === "ko" ? `${selection.travelers}명 기준`
       : `${selection.travelers} travellers`;
@@ -444,6 +456,21 @@ const privateTourInquiryNames: Readonly<
     en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour",
     zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团",
     ko: "상하이·장가계·봉황·구이린 13일 프라이빗 투어",
+  },
+  "beijing-xian-shanghai-8-day-private-tour": {
+    en: "Beijing, Xi'an & Shanghai: 8-Day Private Tour",
+    zh: "北京·西安·上海 8 天 7 晚私家团",
+    ko: "베이징·시안·상하이 8일 프라이빗 투어",
+  },
+  "beijing-xian-guilin-hong-kong-10-day-private-tour": {
+    en: "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour",
+    zh: "北京·西安·桂林·香港 10 天 9 晚私家团",
+    ko: "베이징·시안·구이린·홍콩 10일 프라이빗 투어",
+  },
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
+    en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour",
+    zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团",
+    ko: "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
   },
 };
 

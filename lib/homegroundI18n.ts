@@ -507,9 +507,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro: "",
       items: [
         {
-          question: "Is this a fixed group tour?",
+          question: "Are these private tours or fixed small groups?",
           answer:
-            "No. Every published tour and price is for you and your companions, not a shared tour group. Some itineraries use public trains, cruises or transport within attractions; those shared elements are listed on the product page and in the written confirmation. If you ask us to explore a lower-cost alternative, we will explain what could change and quote any suitable option separately. We will not add a shared arrangement without your agreement, and every shared element will be confirmed in writing before payment.",
+            "Most published routes are private: the guide and vehicle serve only you and your companions. The routes explicitly labelled ‘small group’ have fixed dates and are shared with other booked guests. Some private routes also use public trains, cruises or transport within attractions; those shared elements are listed on the product page and in the written confirmation. We confirm the format, scope and price before payment and never move you into a shared group without your agreement.",
         },
         {
           question: "What happens after I contact you?",
@@ -1043,9 +1043,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro: "",
       items: [
         {
-          question: "这是固定跟团游吗？",
+          question: "这里是私家团，还是固定日期的小团？",
           answer:
-            "不是。页面上的行程和价格按你和同行者单独安排，不会临时并入陌生人的旅游团。部分路线会使用高铁、游船或景区交通，这些共享环节会在产品页和书面确认中列明。如果你希望进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价。未经你同意不会增加共享安排，所有共享环节都会在付款前书面说明。",
+            "大多数路线是私家团，导游和用车只服务你和同行者。明确标为“小团”的路线有固定出发日期，会与其他报名客人同行。部分私家路线也会乘坐公共高铁、游船或景区交通；这些共享环节会在产品页和书面确认中列明。我们会在付款前确认团型、服务范围和价格，未经你同意不会把私家团改成拼团。",
         },
         {
           question: "联系之后会发生什么？",
@@ -1553,9 +1553,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro: "",
       items: [
         {
-          question: "정해진 단체 패키지여행인가요?",
+          question: "프라이빗 투어인가요, 정기 소규모 그룹인가요?",
           answer:
-            "아닙니다. 홈페이지에 공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준입니다. 일부 일정은 열차, 유람선 또는 관광지 내부 교통을 다른 이용객과 함께 이용하며, 해당 구간은 상품 페이지와 확인서에 명시합니다. 비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적을 안내합니다. 동의 없이 공동 이용 방식을 추가하지 않으며, 모든 공동 이용 구간은 결제 전에 서면으로 확인합니다.",
+            "대부분은 가이드와 차량을 동행 일행만 이용하는 프라이빗 투어입니다. ‘소규모 그룹’으로 표시된 일정은 정해진 날짜에 다른 예약 고객과 함께 출발합니다. 프라이빗 일정에도 일반 열차, 유람선 또는 관광지 내부 교통을 함께 이용하는 구간이 있을 수 있으며 상품 페이지와 확인서에 명시합니다. 결제 전에 여행 방식, 서비스 범위와 요금을 확인하고 동의 없이 공동 그룹으로 바꾸지 않습니다.",
         },
         {
           question: "문의한 다음에는 어떻게 진행되나요?",

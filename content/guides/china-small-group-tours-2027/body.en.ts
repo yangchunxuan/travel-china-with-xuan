@@ -48,11 +48,11 @@ const body = {
           "USD 690"
         ],
         [
-          "15–31 May 2027",
+          "19 May–4 Jun 2027",
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
           "USD 3,490",
-          "USD 990"
+          "USD 1,090"
         ],
         [
           "12–26 Jun 2027",
@@ -62,11 +62,11 @@ const body = {
           "USD 690"
         ],
         [
-          "4–20 Sep 2027",
+          "1–17 Sep 2027",
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
           "USD 3,490",
-          "USD 990"
+          "USD 1,090"
         ],
         [
           "11–24 Sep 2027",
@@ -110,7 +110,7 @@ const body = {
       "items": [
         "Eight booked guests confirm the departure; twelve is the maximum.",
         "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.",
-        "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room; we do not pair strangers.",
+        "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.",
         "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.",
         "Until the departure is confirmed, choose international flights you can change or refund."
       ]
@@ -191,7 +191,7 @@ const body = {
         },
         {
           "question": "Can I join on my own?",
-          "answer": "Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at USD 2,790 per person, plus a single-room supplement from USD 690. The Yangtze group's single-room supplement starts at USD 990. We do not pair strangers in a room."
+          "answer": "Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at USD 2,790 per person, plus a single-room supplement from USD 690. The Yangtze group's supplement starts at USD 1,090 and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin."
         },
         {
           "question": "Are international flights included?",

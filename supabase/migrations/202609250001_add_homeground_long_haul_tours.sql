@@ -236,6 +236,21 @@ as $$
       when 'zh' then '上海·张家界·凤凰·桂林 13 天 12 晚私家团'
       when 'ko' then '상하이·장가계·봉황·구이린 13일 프라이빗 투어'
       else null end
+    when 'beijing-xian-shanghai-8-day-private-tour' then case p_locale
+      when 'en' then 'Beijing, Xi''an & Shanghai: 8-Day Private Tour'
+      when 'zh' then '北京·西安·上海 8 天 7 晚私家团'
+      when 'ko' then '베이징·시안·상하이 8일 프라이빗 투어'
+      else null end
+    when 'beijing-xian-guilin-hong-kong-10-day-private-tour' then case p_locale
+      when 'en' then 'Beijing, Xi''an, Guilin & Hong Kong: 10-Day Private Tour'
+      when 'zh' then '北京·西安·桂林·香港 10 天 9 晚私家团'
+      when 'ko' then '베이징·시안·구이린·홍콩 10일 프라이빗 투어'
+      else null end
+    when 'beijing-xian-yangtze-cruise-shanghai-12-day-private-tour' then case p_locale
+      when 'en' then 'Beijing, Xi''an, Yangtze Cruise & Shanghai: 12-Day Private Tour'
+      when 'zh' then '北京·西安·长江游轮·上海 12 天 11 晚私家团'
+      when 'ko' then '베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어'
+      else null end
     else null
   end;
 $$;
@@ -323,6 +338,12 @@ as $$
     when 'beijing-hangzhou-suzhou-shanghai-11-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     when 'shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour' then
+      p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
+    when 'beijing-xian-shanghai-8-day-private-tour' then
+      p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
+    when 'beijing-xian-guilin-hong-kong-10-day-private-tour' then
+      p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
+    when 'beijing-xian-yangtze-cruise-shanghai-12-day-private-tour' then
       p_package_id = 'standard-guided' and p_travelers in (2, 4, 6)
     else false
   end is true;

@@ -97,6 +97,21 @@ const approvedCommercialGuideIds = [
   "border-town-fenghuang-chadong-shen-congwen",
   "china-private-transfer-or-public-transport",
   "china-climate-regions-for-trip-timing",
+  "food-plants-and-animal-products-into-china",
+  "china-public-holidays-travel-calendar",
+  "china-online-arrival-card",
+  "how-to-pay-in-china-as-a-tourist",
+  "china-power-plugs-voltage-and-adapters",
+  "lunar-new-year-customs-for-visitors",
+  "how-much-does-a-china-trip-cost",
+  "china-7-day-itinerary",
+  "china-10-day-itinerary",
+  "china-14-day-itinerary",
+  "do-us-citizens-need-visa-china-2026",
+  "china-240-hour-visa-free-transit-route-check",
+  "china-visa-free-uk-citizens-2026",
+  "china-visa-free-canadian-citizens-2026",
+  "china-visa-free-new-zealand-citizens-2026",
 ] as const satisfies readonly GuideId[];
 
 interface ProductContextDefinition {
@@ -456,6 +471,48 @@ const productContexts = {
       p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
     ],
   },
+  "beijing-xian-shanghai-8-day-private-tour": {
+    destinations: ["beijing", "xian", "shanghai"],
+    guides: [
+      "forbidden-city-for-foreign-visitors",
+      "great-wall-section-selector-from-beijing",
+      "terracotta-warriors-without-tour",
+      "shanghai-where-to-stay-first-trip",
+    ],
+    relatedProducts: [
+      p("beijing-xian-shanghai-12-day-private-tour"),
+      p("beijing-xian-guilin-shanghai-10-day-private-tour"),
+      p("beijing-highlights-5-day-private-tour"),
+    ],
+  },
+  "beijing-xian-guilin-hong-kong-10-day-private-tour": {
+    destinations: ["beijing", "xian"],
+    guides: [
+      "great-wall-section-selector-from-beijing",
+      "terracotta-warriors-without-tour",
+      "guilin-yangshuo-transport-route",
+      "guilin-airport-or-railway-station-arrival-guide",
+    ],
+    relatedProducts: [
+      p("beijing-xian-guilin-shanghai-10-day-private-tour"),
+      p("guilin-yangshuo-5-day-private-tour"),
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    ],
+  },
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
+    destinations: ["beijing", "xian", "chongqing", "shanghai"],
+    guides: [
+      "forbidden-city-for-foreign-visitors",
+      "terracotta-warriors-without-tour",
+      "chongqing-upper-lower-city-orientation",
+      "shanghai-where-to-stay-first-trip",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+      p("chongqing-yangtze-cruise-6-day-private-tour"),
+      p("beijing-xian-shanghai-12-day-private-tour"),
+    ],
+  },
 } as const satisfies Record<string, ProductContextDefinition>;
 
 const approvedCommercialProductSlugs = [
@@ -504,6 +561,9 @@ const approvedCommercialProductSlugs = [
   "beijing-xian-guilin-shanghai-10-day-private-tour",
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+  "beijing-xian-shanghai-8-day-private-tour",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
 ] as const;
 
 function assertExactKeys(

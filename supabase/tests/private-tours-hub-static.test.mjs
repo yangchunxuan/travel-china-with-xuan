@@ -59,7 +59,7 @@ test("every published tour has a region in each localized catalog", () => {
   }
 });
 const reviewedDerivativeRightsSha256 =
-  "b575078aa163643afe0f75bdb47b47178b160fe29878c6286cec414f9812dcd2";
+  "5cce1ea62787769eedeb208de50cd22a7521729e0074127d3537f269cba0afe1";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);
@@ -255,8 +255,8 @@ test("hub copy and language ownership are complete and self-consistent", () => {
   });
 
   const englishCopy = getPrivateTourHubCopy("en", expectedPublishedCount);
-  assert.equal(englishCopy.metadata.title, "Private China Tours: Routes & Prices");
-  assert.match(englishCopy.title, /private China tours/i);
+  assert.equal(englishCopy.metadata.title, "Private China Tours & Small Groups: Prices");
+  assert.match(englishCopy.title, /private China tours and small groups/i);
   assert.equal(getPrivateTourHubPlannerPath("en"), "/#planner-contact");
   assert.equal(getPrivateTourHubPlannerPath("zh"), "/zh/#planner-contact");
   assert.equal(getPrivateTourHubPlannerPath("ko"), "/ko/#planner-contact");

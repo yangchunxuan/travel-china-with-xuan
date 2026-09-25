@@ -80,19 +80,29 @@ const departures = GROUP_ROUTES.flatMap((slug) => {
   const summary = bySlug[slug].summary.en;
   const year = summary.match(/\b20\d{2}\b/)?.[0];
   if (!year) throw new Error(`departure year missing from ${slug}`);
-  const dates = [...summary.matchAll(/(\d{1,2})\s*[–-]\s*(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)/g)];
+  // Ranges read "10–23 April" or, across a month end, "19 May–4 June".
+  const monthPattern = MONTHS.join("|");
+  const dates = [...summary.matchAll(new RegExp(`(\\d{1,2})(?:\\s+(${monthPattern}))?\\s*[–-]\\s*(\\d{1,2})\\s+(${monthPattern})`, "g"))];
   if (!dates.length) throw new Error(`departure dates missing from ${slug}`);
-  return dates.map(([, start, end, monthName]) => {
-    const month = String(MONTHS.indexOf(monthName) + 1).padStart(2, "0");
-    const a = `${year}-${month}-${start.padStart(2, "0")}`;
-    const b = `${year}-${month}-${end.padStart(2, "0")}`;
-    if (Number(end) - Number(start) + 1 !== bySlug[slug].days) throw new Error(`departure length mismatch for ${slug}: ${a}–${b}`);
+  return dates.map(([, start, startMonthName, end, endMonthName]) => {
+    const endMonth = MONTHS.indexOf(endMonthName) + 1;
+    const startMonth = startMonthName ? MONTHS.indexOf(startMonthName) + 1 : endMonth;
+    const pad = (n) => String(n).padStart(2, "0");
+    const a = `${year}-${pad(startMonth)}-${pad(start)}`;
+    const b = `${year}-${pad(endMonth)}-${pad(end)}`;
+    const length = (Date.UTC(Number(year), endMonth - 1, Number(end)) - Date.UTC(Number(year), startMonth - 1, Number(start))) / 86_400_000 + 1;
+    if (length !== bySlug[slug].days) throw new Error(`departure length mismatch for ${slug}: ${a}–${b}`);
     return [slug, a, b, singleSupplementUsd(slug)];
   });
 }).sort((a, b) => a[1].localeCompare(b[1]));
 function dateRange(loc, a, b) {
   const [year, am, ad] = a.split("-").map(Number);
-  const [, , bd] = b.split("-").map(Number);
+  const [, bm, bd] = b.split("-").map(Number);
+  if (am !== bm) {
+    if (loc === "en") return `${ad} ${MON[am - 1]}–${bd} ${MON[bm - 1]} ${year}`;
+    if (loc === "zh") return `${year} 年 ${am} 月 ${ad} 日–${bm} 月 ${bd} 日`;
+    return `${year}년 ${am}월 ${ad}일~${bm}월 ${bd}일`;
+  }
   if (loc === "en") return `${ad}–${bd} ${MON[am - 1]} ${year}`;
   if (loc === "zh") return `${year} 年 ${am} 月 ${ad}–${bd} 日`;
   return `${year}년 ${am}월 ${ad}~${bd}일`;
@@ -190,9 +200,9 @@ function costBody(loc) {
           "Homeground의 10~21일 중국 투어 공개 요금은 중국 도착부터 출국까지입니다. 중국 왕복 국제선은 별도입니다. 일정에 적힌 중국 국내선, 열차와 크루즈는 포함됩니다.") },
       { question: tr("How much does a solo traveller pay?", "一个人出行要多少钱？", "혼자 여행하면 얼마인가요?"),
         answer: tr(
-          `There is no published one-person private-tour price; we quote it in writing because the guide and car serve one guest. On Homeground's 2027 small groups, a solo guest pays the route price and keeps a private room. The supplement starts at ${groupSupplement(loc, S.l14g)}, or ${groupSupplement(loc, S.yzg)} on the 17-day Yangtze route.`,
-          `一个人走私家团，没有现成的公布价。导游和车只服务你，我们会单独书面报价。若参加 Homeground 2027 年小团，按线路团费付，再自己住一间。单房差从 ${groupSupplement(loc, S.l14g)} 起，17 天长江线从 ${groupSupplement(loc, S.yzg)} 起。`,
-          `혼자 쓰는 프라이빗 투어에는 공개된 1인 요금이 없습니다. 가이드와 차량을 혼자 이용하므로 서면 견적을 드립니다. Homeground의 2027년 소규모 그룹에 참가하면 일정 요금과 1인실 추가금을 냅니다. 추가금은 ${groupSupplement(loc, S.l14g)}부터이고 17일 양쯔강 일정은 ${groupSupplement(loc, S.yzg)}부터입니다.`) },
+          `There is no published one-person private-tour price; we quote it in writing because the guide and car serve one guest. On Homeground's 2027 small groups, a solo guest pays the route price and keeps a private room. The supplement starts at ${groupSupplement(loc, S.l14g)}, or ${groupSupplement(loc, S.yzg)} on the 17-day Yangtze route, where it also covers a cabin to yourself.`,
+          `一个人走私家团，没有现成的公布价。导游和车只服务你，我们会单独书面报价。若参加 Homeground 2027 年小团，按线路团费付，再自己住一间。单房差从 ${groupSupplement(loc, S.l14g)} 起，17 天长江线从 ${groupSupplement(loc, S.yzg)} 起，已含一人住一间船舱。`,
+          `혼자 쓰는 프라이빗 투어에는 공개된 1인 요금이 없습니다. 가이드와 차량을 혼자 이용하므로 서면 견적을 드립니다. Homeground의 2027년 소규모 그룹에 참가하면 일정 요금과 1인실 추가금을 냅니다. 추가금은 ${groupSupplement(loc, S.l14g)}부터이고 17일 양쯔강 일정은 ${groupSupplement(loc, S.yzg)}부터이며 선실을 혼자 쓰는 비용도 포함됩니다.`) },
       { question: tr("Why do some China tours look much cheaper?", "为什么有些中国团便宜很多？", "왜 어떤 중국 투어는 훨씬 저렴한가요?"),
         answer: tr(
           "Before comparing a cheaper China tour with Homeground's 14-day private prices, check group size, hotel grade, named admissions, trains, domestic flights and shopping stops. Our price includes twin-share hotels with breakfast and the listed domestic transport; the hotel note on each route shows where a four-star or 4-diamond property is available. There are no shopping stops.",
@@ -238,9 +248,9 @@ function smallGroupBody(loc) {
       rows: table },
     { id: "rules-heading", type: "heading", level: 2, text: tr("How the group rules work", "小团规则", "소규모 그룹 운영 규칙") },
     { id: "rules", type: "list", items: tr(
-      ["Eight booked guests confirm the departure; twelve is the maximum.", "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.", "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room; we do not pair strangers.", "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.", "Until the departure is confirmed, choose international flights you can change or refund."],
-      ["有 8 人报名就确认出团，最多收 12 人。", "出发前 45 天核对人数。不到 8 人，你可以拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，保留原日期。", "表中价格按两人一间计算。一个人报名需补单房差，自己住一间。我们不会安排陌生人拼房。", "如果你们本来就有 8–12 人，可以自己选日期，价格仍按小团价算。", "确认成团之前，国际机票尽量选能改签或退款的。"],
-      ["8명이 예약하면 출발이 확정되고 최대 12명까지 받습니다.", "출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 전액 환불받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.", "표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
+      ["Eight booked guests confirm the departure; twelve is the maximum.", "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.", "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.", "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.", "Until the departure is confirmed, choose international flights you can change or refund."],
+      ["有 8 人报名就确认出团，最多收 12 人。", "出发前 45 天核对人数。不到 8 人，你可以拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，保留原日期。", "表中价格按两人一间计算。一个人报名需补单房差，自己住一间；长江线还自己住一间船舱。我们不会安排陌生人拼房。", "如果你们本来就有 8–12 人，可以自己选日期，价格仍按小团价算。", "确认成团之前，国际机票尽量选能改签或退款的。"],
+      ["8명이 예약하면 출발이 확정되고 최대 12명까지 받습니다.", "출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 전액 환불받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.", "표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 쓰며, 양쯔강 일정은 선실도 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
     { id: "includes-heading", type: "heading", level: 2, text: tr("What a small group includes", "小团包含什么", "소규모 그룹에 포함된 것") },
     { id: "includes", type: "paragraph", text: tr(
       "Breakfast is included each hotel night. The hotel plan follows the matching private route: four-star or Trip.com 4-diamond where available, with suitable local hotels at some smaller stops. In each city, the group has an English-speaking local guide and a vehicle on touring days; the named sights and the route's listed trains, flights or cruise are covered too. One arrival and one departure transfer are included on the group dates, with no shopping stops. On the Li River day, you cruise about four hours to Yangshuo while your luggage travels there by vehicle.",
@@ -272,9 +282,9 @@ function smallGroupBody(loc) {
           "Homeground의 2027년 소규모 그룹은 출발 45일 전에 예약 인원을 확인합니다. 8명에 못 미치면 연락을 드리고, 저희에게 낸 금액을 모두 돌려받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 드립니다. 견적을 본 뒤 선택할 수 있습니다.") },
       { question: tr("Can I join on my own?", "一个人可以报名吗？", "혼자 참가할 수 있나요?"),
         answer: tr(
-          `Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at ${sgPrice(loc, S.l14g)} per person, plus a single-room supplement from ${groupSupplement(loc, S.l14g)}. The Yangtze group's single-room supplement starts at ${groupSupplement(loc, S.yzg)}. We do not pair strangers in a room.`,
-          `一个人可以报名 Homeground 2027 年小团。14 天张家界小团每人 ${sgPrice(loc, S.l14g)} 起，再加 ${groupSupplement(loc, S.l14g)} 起的单房差。长江小团的单房差从 ${groupSupplement(loc, S.yzg)} 起。我们不会安排陌生人拼房。`,
-          `Homeground의 2027년 소규모 그룹에는 혼자 참가할 수 있습니다. 14일 장가계 그룹은 1인 ${sgPrice(loc, S.l14g)}부터이며 1인실 추가금은 ${groupSupplement(loc, S.l14g)}부터입니다. 양쯔강 그룹은 1인실 추가금이 ${groupSupplement(loc, S.yzg)}부터입니다. 모르는 사람과 한 방을 배정하지 않습니다.`) },
+          `Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at ${sgPrice(loc, S.l14g)} per person, plus a single-room supplement from ${groupSupplement(loc, S.l14g)}. The Yangtze group's supplement starts at ${groupSupplement(loc, S.yzg)} and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin.`,
+          `一个人可以报名 Homeground 2027 年小团。14 天张家界小团每人 ${sgPrice(loc, S.l14g)} 起，再加 ${groupSupplement(loc, S.l14g)} 起的单房差。长江小团的单房差从 ${groupSupplement(loc, S.yzg)} 起，含单人住酒店和单人住舱。我们不会安排陌生人拼房或拼舱。`,
+          `Homeground의 2027년 소규모 그룹에는 혼자 참가할 수 있습니다. 14일 장가계 그룹은 1인 ${sgPrice(loc, S.l14g)}부터이며 1인실 추가금은 ${groupSupplement(loc, S.l14g)}부터입니다. 양쯔강 그룹은 추가금이 ${groupSupplement(loc, S.yzg)}부터이며 호텔 객실과 선실을 혼자 쓰는 비용이 포함됩니다. 모르는 사람과 객실이나 선실을 함께 쓰도록 배정하지 않습니다.`) },
       { question: tr("Are international flights included?", "含国际机票吗？", "국제선이 포함되나요?"),
         answer: tr(
           "Book the flights to and from China separately. Homeground's 2027 small-group fare pays for the trip between your arrival and departure in China. The trains and domestic flights named on each route are included; the 17-day Yangtze route also includes its cruise.",

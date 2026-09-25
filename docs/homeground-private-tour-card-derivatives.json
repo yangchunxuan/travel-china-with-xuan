@@ -722,6 +722,54 @@
         "1380x863"
       ],
       "familySha256": "3a8ec3d34051a90cddfcd2b3384d332a080ad3a0013083f0049d08c38c33456d"
+    },
+    {
+      "productId": "beijing-xian-shanghai-8-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-shanghai-8-day-private-tour/hero.webp",
+      "sourceSha256": "dba8c9e666f64eee6e3badf1ee713bb2440d167a8f537ed73e6d374af6937321",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-shanghai-8-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "c398bd7ed3f5ad1b6a033d71ad4a7cf88c568adaeb9af352fd19f34a9d7debbf"
+    },
+    {
+      "productId": "beijing-xian-guilin-hong-kong-10-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/hero.webp",
+      "sourceSha256": "8a84fe82af8a934b453bf1f5d4f8c2a0d56f6ef2b4ec9f60e87f29a26a8fdcd1",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "ca6a90a7c48f9ebe308af6a6ae2e6bb60efd168351b8ed660679f9f6e86a50a1"
+    },
+    {
+      "productId": "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
+      "sourcePath": "public/images/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/hero.webp",
+      "sourceSha256": "42a46085c3f50a1cb6066b9492c081cd57e8a3c09afadb7a971799bce541a88d",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "cbb7e384d7cc0d180c9fbd24cccefae5665f23f17a2d367f0f55f060d5f5922b"
     }
   ]
 }

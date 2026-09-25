@@ -95,6 +95,9 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "beijing-xian-guilin-shanghai-10-day-private-tour": "multi",
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": "multi",
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": "multi",
+  "beijing-xian-shanghai-8-day-private-tour": "multi",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour": "multi",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": "multi",
 };
 
 export function getPrivateTourRegion(slug: string): PrivateTourRegionId {

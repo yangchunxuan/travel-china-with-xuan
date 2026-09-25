@@ -157,8 +157,8 @@ const body = {
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
           "USD 3,490",
-          "USD 990",
-          "15–31 May 2027; 4–20 Sep 2027"
+          "USD 1,090",
+          "19 May–4 Jun 2027; 1–17 Sep 2027"
         ]
       ]
     },
@@ -231,7 +231,7 @@ const body = {
         },
         {
           "question": "How much does a solo traveller pay?",
-          "answer": "There is no published one-person private-tour price; we quote it in writing because the guide and car serve one guest. On Homeground's 2027 small groups, a solo guest pays the route price and keeps a private room. The supplement starts at USD 690, or USD 990 on the 17-day Yangtze route."
+          "answer": "There is no published one-person private-tour price; we quote it in writing because the guide and car serve one guest. On Homeground's 2027 small groups, a solo guest pays the route price and keeps a private room. The supplement starts at USD 690, or USD 1,090 on the 17-day Yangtze route, where it also covers a cabin to yourself."
         },
         {
           "question": "Why do some China tours look much cheaper?",

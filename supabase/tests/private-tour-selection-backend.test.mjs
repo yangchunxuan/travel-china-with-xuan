@@ -56,6 +56,9 @@ const longHaulSlugs = [
   "beijing-xian-guilin-shanghai-10-day-private-tour",
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+  "beijing-xian-shanghai-8-day-private-tour",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
 ];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
@@ -308,7 +311,7 @@ test("final selection migration preserves every published price row after both r
   assert.match(selectionCase, /when 'zhangjiajie-4-day-private-tour' then\s+p_package_id in \('selected-city-stay', 'spacious-premium-stay', 'distinctive-mountain-stay'\) and p_travelers = 6/u);
 });
 
-test("long-haul migration keeps every canonical identity and adds the fourteen long-haul selections", async () => {
+test("long-haul migration keeps every canonical identity and adds all long-haul selections", async () => {
   const sql = await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8");
   for (const slug of privateTourInquirySlugs) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
@@ -337,11 +340,25 @@ test("long-haul migration keeps every canonical identity and adds the fourteen l
     "beijing-xian-guilin-shanghai-10-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
     "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
     "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-shanghai-8-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-guilin-hong-kong-10-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
+    "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": /p_package_id = 'standard-guided' and p_travelers in \(2, 4, 6\)/u,
   };
   assert.deepEqual(Object.keys(longHaulRows), longHaulSlugs);
   for (const [slug, condition] of Object.entries(longHaulRows)) {
     const branch = selectionCase.match(new RegExp(`when '${slug}' then\\s+([^\\n]+)`, "u"))?.[1];
     assert.ok(branch && condition.test(branch), `SQL selection drift: ${slug}`);
+  }
+  const groupSlug = "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour";
+  for (const locale of ["en", "zh", "ko"]) {
+    const context = getPrivateTourInquiryContext(groupSlug, locale, {
+      packageId: "small-group-departure", travelers: 2,
+    });
+    const label = privateTourInquirySelectionLabel(context, locale);
+    assert.match(label, locale === "en" ? /twin-share price basis/u
+      : locale === "zh" ? /双人同住价格基准/u
+        : /2인 1실 요금 기준/u);
+    assert.doesNotMatch(label, /2 travellers|2 人同行|2명 기준/u);
   }
   assert.match(sql, /begin;[\s\S]*commit;/u);
   assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);

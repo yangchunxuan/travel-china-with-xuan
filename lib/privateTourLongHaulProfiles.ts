@@ -318,4 +318,70 @@ export const privateTourLongHaulProfiles: Readonly<
       "베이징과 시안을 이미 봤다면 다음 여행으로 어울립니다. 12박 동안 숙소 7곳을 옮기므로 이동이 잦습니다.",
     ),
   },
+  "beijing-xian-shanghai-8-day-private-tour": {
+    route: l(
+      "Beijing · Xi'an · Shanghai",
+      "北京 · 西安 · 上海",
+      "베이징 · 시안 · 상하이",
+    ),
+    appeal: l(
+      "The shortest way to fit the Great Wall, the Terracotta Warriors and Shanghai into one trip: eight days, three cities.",
+      "用 8 天、三座城市，把长城、兵马俑和上海放进一趟。",
+      "8일, 세 도시로 만리장성·병마용·상하이를 한 번에 봅니다.",
+    ),
+    pace: l(
+      "Seven nights in three hotels, joined by one high-speed train and one domestic flight.",
+      "7 晚住 3 家酒店，用一段高铁和一段国内航班连接。",
+      "호텔 3곳에서 7박하며 고속철도 1구간과 국내선 1구간으로 잇습니다.",
+    ),
+    fit: l(
+      "For a first visit when you only have about a week of leave. There is no spare day.",
+      "第一次来、只请得到一周左右假的人。这趟没有空闲日。",
+      "휴가가 일주일 남짓인 첫 중국 여행에 맞습니다. 여유 있는 날은 없습니다.",
+    ),
+  },
+  "beijing-xian-guilin-hong-kong-10-day-private-tour": {
+    route: l(
+      "Beijing · Xi'an · Guilin · Yangshuo · Hong Kong",
+      "北京 · 西安 · 桂林 · 阳朔 · 香港",
+      "베이징 · 시안 · 구이린 · 양숴 · 홍콩",
+    ),
+    appeal: l(
+      "Fly into Beijing and out of Hong Kong. The mainland part ends on Day 9, so eligible passport holders, including US citizens, may be able to use 240-hour visa-free transit.",
+      "北京进、香港出。第 9 天就离开内地，美国等适用国家的旅客，有机会用 240 小时过境免签。",
+      "베이징으로 들어와 홍콩에서 나갑니다. 9일 차에 본토를 떠나므로 미국 등 대상 국가 여권 소지자는 240시간 경유 무비자를 쓸 수도 있습니다.",
+    ),
+    pace: l(
+      "Nine nights in five places, joined by two high-speed trains and one domestic flight.",
+      "9 晚住 5 个地方，用两段高铁和一段国内航班连接。",
+      "5곳에서 9박하며 고속철도 2구간과 국내선 1구간으로 잇습니다.",
+    ),
+    fit: l(
+      "For travellers who hope to go without a tourist visa, or whose flights home are cheaper from Hong Kong.",
+      "希望不办旅游签证，或者从香港回国机票更便宜的人。",
+      "관광 비자 없이 가고 싶거나 홍콩에서 귀국하는 항공권이 더 싼 여행자에게 맞습니다.",
+    ),
+  },
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
+    route: l(
+      "Beijing · Xi'an · Chongqing · Yangtze · Shanghai",
+      "北京 · 西安 · 重庆 · 长江 · 上海",
+      "베이징 · 시안 · 충칭 · 양쯔강 · 상하이",
+    ),
+    appeal: l(
+      "Keeps the three-night Three Gorges cruise but fits it into twelve days by flying from Xi'an straight to Chongqing.",
+      "保留三晚三峡游轮，西安直接飞重庆，整趟压在 12 天。",
+      "3박 삼협 크루즈는 그대로 두고 시안에서 충칭으로 바로 날아가 12일에 맞춥니다.",
+    ),
+    pace: l(
+      "Eleven nights: eight in three hotels and three on the ship, with one train, one flight, and a train or flight after the cruise.",
+      "11 晚：3 家酒店住 8 晚，船上 3 晚；一段高铁、一段航班，下船后再坐火车或飞机。",
+      "11박 중 호텔 3곳 8박, 선상 3박이며 열차 1구간, 항공 1구간, 하선 후 열차나 항공편이 있습니다.",
+    ),
+    fit: l(
+      "For a first visit with a river cruise when two weeks is too long. Chengdu and the pandas are not included.",
+      "第一次来想坐长江游轮、但抽不出两周的人。成都和大熊猫不在这条线上。",
+      "강 크루즈를 원하지만 2주는 길다면 맞습니다. 청두와 판다는 없습니다.",
+    ),
+  },
 };
