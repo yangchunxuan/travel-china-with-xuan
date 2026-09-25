@@ -36,6 +36,14 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
     ),
   },
   {
+    question: l("Can I use my own hotel or book only the Suzhou day?", "酒店已经订好，或只想订苏州一日游，可以吗？", "호텔을 직접 예약했거나 쑤저우 당일 일정만 예약할 수 있나요?"),
+    answer: l(
+      "The listed price is for the full five-day tour, including four hotel nights. If you have booked your own hotel or only need the Suzhou day, tell us your dates, group size, hotel location and which services you need. We will check what we can arrange and quote it separately; the package price does not apply to a shorter booking.",
+      "页面价格对应完整 5 天行程，包含 4 晚酒店。如果你已经订好酒店，或只需要苏州一日游，请告诉我们日期、人数、住宿位置，以及需要导游、用车还是整天安排。我们会核对能否提供，再单独报价；不能直接套用完整行程的价格。",
+      "표시된 가격은 호텔 4박을 포함한 5일 전체 일정 기준입니다. 숙소를 직접 예약했거나 쑤저우 당일 일정만 필요하다면 날짜, 인원, 숙소 위치와 필요한 서비스를 알려 주세요. 가능한지 확인한 뒤 별도로 견적을 드리며, 전체 상품 가격을 짧은 일정에 그대로 적용하지는 않습니다.",
+    ),
+  },
+  {
     question: l("Are the guide, hotel and price confirmed when I enquire?", "咨询时就能确认导游、酒店和价格吗？", "문의하면 가이드, 호텔과 가격이 바로 확정되나요?"),
     answer: l(
       "The published package includes English-speaking guide service and four nights with breakfast at a Ctrip 4-Diamond-rated hotel. We check your dates, room arrangement and availability before confirming the hotel and total in writing. Public two-, four- and six-person prices are a starting point; children, other group sizes and changes need a personal quote. Enquiring does not reserve rooms or tickets.",
@@ -84,6 +92,14 @@ export const shanghaiSuzhouHangzhouAnswers: readonly PrivateTourFaqItem[] = [
       "Because it is just your party, you can talk through rest stops and priorities with Homeground before booking. Tell us the children's ages, room needs and how long each traveller can comfortably walk. Gardens, temple grounds and old lanes still have steps and uneven paths, so this is not a step-free trip; we check a workable route and any change in cost.",
       "私家团可以在预订前和 Homeground 商量休息和游览重点。告诉我们孩子年龄、房型需求，以及同行的人大概能连续走多久。园林、寺院和老街仍有台阶和不平的路面，这条路线不是无障碍行程；我们会为你核对可行路线和费用变化。",
       "우리 일행만 다니는 투어라 예약 전에 쉬는 시간과 우선순위를 Homeground와 상의하실 수 있습니다. 어린이 나이, 객실 구성과 무리 없이 걸을 수 있는 시간을 알려 주세요. 정원, 사찰, 옛 골목에는 계단과 고르지 않은 길이 있어 단차 없는 여행은 아닙니다. 가능한 동선과 비용 변화는 저희가 확인해 드립니다.",
+    ),
+  },
+  {
+    question: l("Can we use our own hotels or book only a guide or driver?", "酒店自己订，或只要导游、用车，可以吗？", "숙소를 직접 예약하거나 가이드·차량만 이용할 수 있나요?"),
+    answer: l(
+      "The listed price covers the full six-day route and five hotel nights. If you have booked your own hotels or only need guiding or transport on certain days, tell us your dates, group size, cities and the services you need. We will check what is possible and quote it separately; the full-tour price is not a per-day rate.",
+      "页面价格对应完整 6 天路线，包含 5 晚酒店。如果酒店已经订好，或只需要其中几天的导游、用车，请告诉我们日期、人数、要去的城市和所需服务。我们会核对能否安排，再单独报价；完整行程的价格不是按天拆算的价格。",
+      "표시된 가격은 호텔 5박을 포함한 6일 전체 일정 기준입니다. 숙소를 이미 예약했거나 특정 날짜에 가이드 또는 차량만 필요하다면 날짜, 인원, 방문 도시와 필요한 서비스를 알려 주세요. 가능한지 확인한 뒤 별도로 견적을 드리며, 전체 상품 가격을 일수로 나누어 적용하지는 않습니다.",
     ),
   },
   {
