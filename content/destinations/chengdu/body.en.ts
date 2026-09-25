@@ -697,9 +697,9 @@ const body = {
             "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
-          label: "China itinerary review",
-          href: "/china-itinerary-review/",
-          description: "Bring an existing day-by-day route and have the weak links checked.",
+          label: "Chengdu, Pandas & Sanxingdui: 5-Day Private Tour",
+          href: "/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+          description: "See the published route combining Chengdu, the pandas and Sanxingdui.",
         },
       ],
     },

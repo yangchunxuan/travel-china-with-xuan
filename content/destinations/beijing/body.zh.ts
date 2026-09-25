@@ -730,9 +730,9 @@ const body = {
           description: "只有在某项关键依赖仍无法解决时，再提交路线与住宿限制；不会预选任何付费服务。",
         },
         {
-          label: "中国行程点评",
-          href: "/zh/china-itinerary-review/",
-          description: "把已有的逐日路线交上来，让人帮你找出薄弱环节。",
+          label: "北京经典 5 天 4 晚私家团",
+          href: "/zh/tours/beijing-highlights-5-day-private-tour/",
+          description: "查看已发布的北京线路，再按出行日期和旅行节奏判断是否适合。",
         },
       ],
     },

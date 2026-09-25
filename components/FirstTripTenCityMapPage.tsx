@@ -182,6 +182,7 @@ function structuredData() {
         "@id": ASSET_CREATOR_ID,
         name: "Homeground China",
         legalName: ASSET_CREATOR_REGISTERED_NAME,
+        description: "Historical creator credit for the original v1 ten-city map asset; the site's current travel agency operator is identified separately.",
       },
       editorialPersonSchema("en"),
       {
@@ -428,7 +429,7 @@ export function FirstTripTenCityMapPage() {
                     Download the pack licence
                   </a>
                 </p>
-                <small>{ASSET_COPYRIGHT_NOTICE}</small>
+                <small>Original v1 asset attribution: {ASSET_COPYRIGHT_NOTICE}</small>
               </div>
             </div>
           </section>

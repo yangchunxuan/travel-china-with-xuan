@@ -81,6 +81,7 @@ function systemNode({
   volatility = "low",
   refreshCadence = "on-source-change",
   nextReviewAt,
+  indexability = { index: true, follow: true },
 }: {
   id: LegacySystemContentId;
   section: ContentSection;
@@ -95,6 +96,7 @@ function systemNode({
   volatility?: ContentNode["updatePolicy"]["volatility"];
   refreshCadence?: ContentNode["updatePolicy"]["refreshCadence"];
   nextReviewAt?: string;
+  indexability?: ContentNode["indexability"];
 }): ContentNode {
   return {
     id: `system-${id}`,
@@ -105,7 +107,7 @@ function systemNode({
     relationIds: [],
     parentContentId,
     status: "published",
-    indexability: { index: true, follow: true },
+    indexability,
     locales: localizedVersions(id, definitions),
     factIds: [],
     sourceIds: [],
@@ -284,6 +286,11 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       lifecycle: getLegacySystemContentLifecycle("itinerary-review"),
       schemaTypes: ["Service"],
       parentContentId: "hub-services",
+      indexability: {
+        index: false,
+        follow: true,
+        blockReason: "Standalone itinerary review and route-build services have ended; canonical URLs redirect to private tours.",
+      },
     }),
     systemNode({
       id: "zhangjiajie-4-day-private-tour",

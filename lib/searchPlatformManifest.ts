@@ -73,7 +73,21 @@ export const legacyIndexableManifestEntries = getIndexableManifestEntries(
 const actualLegacyPaths = legacyIndexableManifestEntries
   .map((entry) => entry.path)
   .sort((left, right) => left.localeCompare(right, "en"));
-const expectedLegacyPaths = [...legacyIndexablePathBaseline].sort((left, right) =>
+const approvedNoindexPaths = new Set(
+  phase0IndexablePathBaseline.entries
+    .filter((entry) =>
+      indexabilityMigrations.migrations.some(
+        (migration) =>
+          migration.contentId === entry.contentId &&
+          migration.from.index === true &&
+          migration.to.index === false,
+      ),
+    )
+    .map((entry) => entry.path),
+);
+const expectedLegacyPaths = legacyIndexablePathBaseline.filter(
+  (path) => !approvedNoindexPaths.has(path),
+).sort((left, right) =>
   left.localeCompare(right, "en"),
 );
 
