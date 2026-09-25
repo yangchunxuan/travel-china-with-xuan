@@ -103,8 +103,13 @@
 
 /* ---------- Search: one tile, copy beside the field ---------- */
 
+/* The tile's entrance animation gives it its own stacking context, which
+   traps the suggestion list's z-index. Lifting the whole band keeps the
+   list above the tips cards that follow, so a tap lands on the suggestion. */
 .searchBand {
   padding-block: clamp(2.5rem, 4vw, 3.5rem) 0;
+  position: relative;
+  z-index: 2;
 }
 
 .searchBandInner {
@@ -1363,7 +1368,17 @@ a.paginationStep > span {
     min-height: 2.5rem;
     min-width: 2.5rem;
     padding: 0;
+    position: relative;
     width: 2.5rem;
+  }
+
+  /* An invisible ring takes the 40px button to a 44px tap target. The field
+     keeps its own edge on the left, so the ring reaches further right. */
+  .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div > button)::after {
+    border-radius: 999px;
+    content: "";
+    inset: -0.1875rem -0.3125rem -0.1875rem -0.1875rem;
+    position: absolute;
   }
 
   .searchFormCompact :global([data-guide-search-surface] form[role="search"] > div > button > span) {
