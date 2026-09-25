@@ -677,9 +677,9 @@ const body = {
           description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
-          label: "中国行程点评",
-          href: "/zh/china-itinerary-review/",
-          description: "把已有的逐日路线交上来，让人帮你找出薄弱环节。",
+          label: "成都·大熊猫·三星堆 5 天 4 晚私家团",
+          href: "/zh/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+          description: "查看串联成都、大熊猫和三星堆的已发布线路。",
         },
       ],
     },

@@ -790,9 +790,9 @@ const body = {
             "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
-          label: "China itinerary review",
-          href: "/china-itinerary-review/",
-          description: "Bring an existing day-by-day route and have the weak links checked.",
+          label: "Shanghai & Suzhou: 5-Day Private Tour",
+          href: "/tours/shanghai-suzhou-5-day-private-tour/",
+          description: "See the published route with four nights in Shanghai and a Suzhou day trip.",
         },
       ],
     },

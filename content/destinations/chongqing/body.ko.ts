@@ -925,9 +925,9 @@ const body = {
           description: "역 접근, 짐, 수직 이동, 호텔 재이동 비용까지 계산하세요."
         },
         {
-          label: "기존 중국 일정 검토",
-          href: "/ko/china-itinerary-review/",
-          description: "현재 일자별 동선을 가져와 근거가 있는 취약 구간을 찾으세요."
+          label: "충칭·우룽 5일 프라이빗 투어",
+          href: "/ko/tours/chongqing-wulong-5-day-private-tour/",
+          description: "충칭과 우룽을 잇는 공개된 5일 일정을 살펴보세요."
         },
         {
           label: "Homeground에 전체 여행 설계 요청",

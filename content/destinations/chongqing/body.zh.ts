@@ -925,9 +925,9 @@ const body = {
           description: "计入进站、行李、垂直移动和再次换酒店的成本。"
         },
         {
-          label: "人工复核现有中国行程",
-          href: "/zh/china-itinerary-review/",
-          description: "带上当前逐日路线，找出有证据的薄弱环节。"
+          label: "重庆·武隆 5 天 4 晚私家团",
+          href: "/zh/tours/chongqing-wulong-5-day-private-tour/",
+          description: "查看已发布的重庆与武隆五天线路。"
         },
         {
           label: "请 Homeground 规划完整旅行",

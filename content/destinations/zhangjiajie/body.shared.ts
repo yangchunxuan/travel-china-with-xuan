@@ -93,7 +93,7 @@ const copies = {
     planningTitle: "Test the complete route, not only the mountain days",
     planningLinks: [
       ["Compare Beijing–Zhangjiajie–Shanghai transport", "beijing-zhangjiajie-shanghai-transport", "Count airports, stations, late arrivals and protected hotel handoffs."],
-      ["Review an existing China itinerary", "../china-itinerary-review", "Check whether the chosen nights really contain the promised complete days."],
+      ["Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour", "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/", "See how the published route allocates nights and sightseeing time across the three stops."],
     ],
     sourcesTitle: "Official and primary sources",
     sourceLabels: ["Wulingyuan Scenic and Historic Interest Area", "Zhangjiajie municipal government", "China Railway 12306 date-specific search", "Zhangjiajie Hehua Airport identity", "Owner-supplied real Zhangjiajie hero photograph and rights record"],
@@ -182,7 +182,7 @@ const copies = {
     planningTitle: "检验完整路线，不只看山上几天",
     planningLinks: [
       ["比较北京—张家界—上海交通", "beijing-zhangjiajie-shanghai-transport", "计算机场、车站、晚到与酒店交接。"],
-      ["审阅已有中国行程", "../china-itinerary-review", "检查订下的晚数是否真的包含承诺的完整游览日。"],
+      ["张家界、芙蓉镇与凤凰 7 天 6 晚私家团", "/zh/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/", "查看已发布线路如何在三站分配住宿晚数和游览时间。"],
     ],
     sourcesTitle: "官方与一手来源",
     sourceLabels: ["武陵源风景名胜区", "张家界市人民政府", "中国铁路12306按日期查询", "张家界荷花机场身份", "业主提供的真实张家界题图与权利记录"],
@@ -271,7 +271,7 @@ const copies = {
     planningTitle: "산에서 보낸 날만 아니라 전체 동선을 시험하세요",
     planningLinks: [
       ["베이징–장가계–상하이 교통 비교", "beijing-zhangjiajie-shanghai-transport", "공항·역·늦은 도착과 호텔 인계를 셉니다."],
-      ["기존 중국 일정 검토", "../china-itinerary-review", "예약한 박수가 약속한 온전한 날을 실제로 담는지 확인합니다."],
+      ["장가계, 부용진, 봉황 6박 7일 프라이빗 투어", "/ko/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/", "공개된 일정에서 세 여행지의 숙박과 관광 시간을 어떻게 나누는지 살펴보세요."],
     ],
     sourcesTitle: "공식·1차 출처",
     sourceLabels: ["무릉원 경관·역사 지구", "장가계시 인민정부", "중국철도 12306 날짜별 검색", "장가계 허화공항 식별", "소유자가 제공한 실제 장가계 대표 사진과 권리 기록"],
@@ -323,9 +323,7 @@ export function buildZhangjiajieBody(locale: HomegroundLocale): StructuredPageBo
       ]),
       { id: "planning", type: "internal-links", title: c.planningTitle, items: c.planningLinks.map(([label, target, description]) => ({
         label,
-        href: target.startsWith("..")
-          ? locale === "en" ? "/china-itinerary-review/" : `/${locale}/china-itinerary-review/`
-          : guidePath(locale, target),
+        href: target.startsWith("/") ? target : guidePath(locale, target),
         description,
       })) },
       { id: "sources", type: "sources", title: c.sourcesTitle, items: sourceUrls.map(([url, publisher], index) => ({ label: c.sourceLabels[index], url, publisher, reviewedAt: "2026-08-20" })) },

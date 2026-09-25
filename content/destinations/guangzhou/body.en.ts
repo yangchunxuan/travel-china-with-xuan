@@ -552,9 +552,9 @@ const body = {
             "Send the route and stay constraints for a free first look; no paid service is preselected.",
         },
         {
-          label: "China itinerary review",
-          href: "/china-itinerary-review/",
-          description: "Bring an existing day-by-day route and have the weak links checked.",
+          label: "Guangzhou, Shunde & Foshan: 5-Day Private Tour",
+          href: "/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+          description: "See the published route based in Guangzhou with visits to Shunde and Foshan.",
         },
       ],
     },

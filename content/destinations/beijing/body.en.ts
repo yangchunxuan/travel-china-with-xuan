@@ -784,10 +784,10 @@ const body = {
             "Share the route and stay constraints only if one dependency still does not resolve; no paid service is preselected.",
         },
         {
-          label: "China itinerary review",
-          href: "/china-itinerary-review/",
+          label: "Beijing Highlights: 5-Day Private Tour",
+          href: "/tours/beijing-highlights-5-day-private-tour/",
           description:
-            "Bring an existing day-by-day route and have the weak links checked.",
+            "See the published Beijing route and decide how its days fit your dates and pace.",
         },
       ],
     },

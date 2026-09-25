@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { ChinaItineraryReviewPage } from "../../../components/ChinaItineraryReviewPage";
-import {
-  getChinaItineraryReviewCopy,
-  getChinaItineraryReviewLanguagePaths,
-} from "../../../lib/chinaItineraryReviewI18n";
+import { getChinaItineraryReviewCopy } from "../../../lib/chinaItineraryReviewI18n";
 
 const copy = getChinaItineraryReviewCopy("en");
 const socialImage =
@@ -12,15 +9,11 @@ const socialImage =
 export const metadata: Metadata = {
   title: copy.metadata.title,
   description: copy.metadata.description,
-  alternates: {
-    canonical: copy.path,
-    languages: getChinaItineraryReviewLanguagePaths(),
-  },
   robots: {
-    index: true,
+    index: false,
     follow: true,
     googleBot: {
-      index: true,
+      index: false,
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,

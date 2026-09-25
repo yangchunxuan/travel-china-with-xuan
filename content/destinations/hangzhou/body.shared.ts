@@ -98,7 +98,7 @@ const copies = {
     planningTitle: "Turn the city choice into a whole route",
     planningLinks: [
       ["Check whether the itinerary is too rushed", "is-your-china-itinerary-too-rushed", "Count station access, luggage and the cost of another hotel move."],
-      ["Review an existing China itinerary", "../china-itinerary-review", "Bring the current day-by-day route for an evidence-based weak-link review."],
+      ["Shanghai, Suzhou & Hangzhou: 6-Day Private Tour", "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "See the published route linking all three cities, with a stay in Hangzhou."],
     ],
     sourcesTitle: "Official sources and review record",
     sourceLabels: [
@@ -206,7 +206,7 @@ const copies = {
     planningTitle: "把城市决定放回完整路线",
     planningLinks: [
       ["检查行程是否太赶", "is-your-china-itinerary-too-rushed", "计算进站、行李和再换一家酒店的成本。"],
-      ["审阅已有中国行程", "../china-itinerary-review", "带着现有逐日路线，检查真正薄弱的连接。"],
+      ["上海·苏州·杭州 6 天 5 晚私家团", "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "查看串联三座城市、在杭州住宿的已发布线路。"],
     ],
     sourcesTitle: "官方来源与复核记录",
     sourceLabels: ["杭州西湖文化景观", "西湖风景名胜区管理机构与当前通知", "HGH机场地铁接驳", "中国铁路12306按日期查询", "良渚官方场馆与天气通知", "良渚古城遗址"],
@@ -300,7 +300,7 @@ const copies = {
     planningTitle: "도시 선택을 전체 동선으로 돌려놓기",
     planningLinks: [
       ["일정이 너무 빠른지 확인", "is-your-china-itinerary-too-rushed", "역 접근, 짐과 호텔 이동 하나를 더하는 비용을 셉니다."],
-      ["기존 중국 일정 검토", "../china-itinerary-review", "현재 일별 동선을 가져와 실제 약한 연결을 점검합니다."],
+      ["상하이·쑤저우·항저우 6일 프라이빗 투어", "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "세 도시를 잇고 항저우에서 숙박하는 공개 일정을 살펴보세요."],
     ],
     sourcesTitle: "공식 출처와 검토 기록",
     sourceLabels: ["항저우 서호 문화경관", "서호 경관구 관리기관과 현재 공지", "HGH 공항 지하철 접근", "중국철도 12306 날짜별 검색", "량주 공식 장소·기상 공지", "량주 고성 유적"],
@@ -353,9 +353,7 @@ export function buildHangzhouBody(locale: HomegroundLocale): StructuredPageBody 
       ]),
       { id: "planning", type: "internal-links", title: c.planningTitle, items: c.planningLinks.map(([label, target, description]) => ({
         label,
-        href: target.startsWith("..")
-          ? locale === "en" ? "/china-itinerary-review/" : `/${locale}/china-itinerary-review/`
-          : guidePath(locale, target),
+        href: target.startsWith("/") ? target : guidePath(locale, target),
         description,
       })) },
       { id: "sources", type: "sources", title: c.sourcesTitle, items: sourceUrls.map(([url, publisher], index) => ({ label: c.sourceLabels[index], url, publisher, reviewedAt: "2026-08-20" })) },

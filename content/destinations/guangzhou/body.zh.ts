@@ -543,9 +543,9 @@ const body = {
           description: "提交路线与住宿限制，先由人工免费查看；不会预先选择任何付费服务。",
         },
         {
-          label: "中国行程点评",
-          href: "/zh/china-itinerary-review/",
-          description: "把已有的逐日路线交上来，让人帮你找出薄弱环节。",
+          label: "广州·顺德·佛山 5 天 4 晚私家团",
+          href: "/zh/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+          description: "查看以广州为住宿基地、走访顺德和佛山的已发布线路。",
         },
       ],
     },

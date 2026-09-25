@@ -678,9 +678,9 @@ const body = {
           description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
-          label: "중국 일정 리뷰",
-          href: "/ko/china-itinerary-review/",
-          description: "이미 만든 날짜별 동선을 보내고 약한 고리를 점검받으세요.",
+          label: "청두·판다·싼싱두이 5일 프라이빗 투어",
+          href: "/ko/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+          description: "청두와 판다, 싼싱두이를 잇는 공개 일정을 살펴보세요.",
         },
       ],
     },

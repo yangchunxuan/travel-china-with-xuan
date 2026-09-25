@@ -543,9 +543,9 @@ const body = {
           description: "동선과 숙박 조건을 보내 무료로 먼저 검토받으세요. 유료 서비스는 미리 선택되지 않습니다.",
         },
         {
-          label: "중국 일정 리뷰",
-          href: "/ko/china-itinerary-review/",
-          description: "이미 만든 날짜별 동선을 보내고 약한 고리를 점검받으세요.",
+          label: "광저우·순더·포산 5일 프라이빗 투어",
+          href: "/ko/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+          description: "광저우를 숙박 거점으로 순더와 포산을 방문하는 공개 일정을 살펴보세요.",
         },
       ],
     },

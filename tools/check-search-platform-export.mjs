@@ -241,6 +241,14 @@ const sitemap = await readFile(sitemapPath, "utf8");
 const phase0Baseline = JSON.parse(
   await readFile(path.join(process.cwd(), "content/phase0-indexable-path-baseline.json"), "utf8"),
 );
+const indexabilityMigrations = JSON.parse(
+  await readFile(path.join(process.cwd(), "content/search-platform-indexability-migrations.json"), "utf8"),
+);
+const approvedNoindexIds = new Set(
+  indexabilityMigrations.migrations
+    .filter((migration) => migration.from.index === true && migration.to.index === false)
+    .map((migration) => migration.contentId),
+);
 const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
   (match) => match[1],
 );
@@ -255,7 +263,7 @@ if (duplicateSitemapLocs.length > 0) {
 }
 
 const protectedSitemapUrls = phase0Baseline.entries
-  .filter((entry) => entry.status === "published" && entry.indexability.index)
+  .filter((entry) => entry.status === "published" && entry.indexability.index && !approvedNoindexIds.has(entry.contentId))
   .map((entry) => `${siteUrl}${entry.path}`);
 const missingProtectedSitemapUrls = protectedSitemapUrls.filter(
   (url) => !sitemapLocs.includes(url),
@@ -264,6 +272,17 @@ if (missingProtectedSitemapUrls.length > 0) {
   throw new Error(
     `sitemap.xml is missing protected Phase 0 URL(s): ${missingProtectedSitemapUrls.join(", ")}`,
   );
+}
+
+for (const entry of phase0Baseline.entries.filter((candidate) => approvedNoindexIds.has(candidate.contentId))) {
+  const canonical = `${siteUrl}${entry.path}`;
+  if (sitemapLocs.includes(canonical)) {
+    throw new Error(`${entry.path}: retired URL remains in sitemap.xml`);
+  }
+  const html = await readFile(path.join(outputRoot, entry.path, "index.html"), "utf8");
+  if (!/<meta[^>]+name="robots"[^>]+content="[^"]*noindex[^"]*follow/iu.test(html)) {
+    throw new Error(`${entry.path}: retired HTML fallback must be noindex, follow`);
+  }
 }
 
 for (const id of publishedDestinationHubIds) {
@@ -284,6 +303,13 @@ for (const id of publishedDestinationHubIds) {
     }
     if (!sitemapLocs.includes(canonical)) {
       throw new Error(`${context}: published destination is missing from sitemap.xml`);
+    }
+    if (id === "guangzhou") {
+      assertIncludes(
+        html,
+        `href="/${locale.prefix}tours/guangzhou-shunde-foshan-5-day-private-tour/"`,
+        `${context} published Guangzhou tour handoff`,
+      );
     }
   }
 }

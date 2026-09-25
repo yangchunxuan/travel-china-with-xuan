@@ -27,11 +27,6 @@ export interface ExistingContentCommercialLink {
   readonly label: string;
 }
 
-const toursHubNoLocalRoute: ProductTarget = {
-  kind: "tours-hub",
-  reason: "no-local-route",
-};
-
 const destinationTargets = {
   beijing: [
     p("beijing-highlights-5-day-private-tour"),
@@ -48,7 +43,7 @@ const destinationTargets = {
     p("beijing-xian-shanghai-12-day-private-tour"),
   ],
   chengdu: [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
-  guangzhou: [toursHubNoLocalRoute],
+  guangzhou: [p("guangzhou-shunde-foshan-5-day-private-tour")],
   hangzhou: [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
   zhangjiajie: [
     classicZhangjiajie,
@@ -334,7 +329,6 @@ const commercialCopy = {
     hubLabel: "Published private routes",
     hubTitle: "See the route before asking for a custom plan.",
     hubBody: "These are the published private routes that actually include this destination. Compare the named itinerary and inclusions before starting an enquiry.",
-    noLocalHubBody: "Homeground does not currently publish a Guangzhou-specific private route. The tour collection shows the routes that can be checked now.",
     guideLabel: "Relevant published routes",
     guideTitle: "Apply this decision to a real itinerary.",
     productLabel: "Plan the destination",
@@ -345,13 +339,11 @@ const commercialCopy = {
     related: "Compare a related published route",
     tours: "Browse all published private tours",
     toursWithTransport: "See complete private routes that include transport arrangements — not a standalone transfer service",
-    noLocalRoute: "No Guangzhou-specific private route is published yet — browse the current tour collection",
   },
   zh: {
     hubLabel: "已发布私家路线",
     hubTitle: "先看清现有路线，再决定是否定制。",
     hubBody: "以下是目前确实包含这个目的地的已发布私家路线。发起咨询前，可先比较明确行程与包含项目。",
-    noLocalHubBody: "Homeground 目前没有已发布的广州专属私家路线。现有路线集合只展示现在可以核对的产品。",
     guideLabel: "相关已发布路线",
     guideTitle: "把这个决定放进一条真实路线里。",
     productLabel: "继续规划目的地",
@@ -362,13 +354,11 @@ const commercialCopy = {
     related: "比较另一条已发布路线",
     tours: "查看全部已发布私家路线",
     toursWithTransport: "查看包含交通安排的完整私家路线（不是单独接送服务）",
-    noLocalRoute: "目前还没有已发布的广州专属私家路线，可先查看现有路线集合",
   },
   ko: {
     hubLabel: "현재 공개된 프라이빗 코스",
     hubTitle: "맞춤 상담 전에 실제 코스를 먼저 확인하세요.",
     hubBody: "이 목적지를 실제로 포함하는 공개 프라이빗 코스입니다. 문의 전에 일정과 포함 항목을 먼저 비교해 보세요.",
-    noLocalHubBody: "Homeground는 현재 광저우 전용 프라이빗 코스를 공개하지 않습니다. 지금 확인할 수 있는 상품은 전체 코스 모음에서 볼 수 있습니다.",
     guideLabel: "관련 공개 코스",
     guideTitle: "이 선택을 실제 일정에 적용하세요.",
     productLabel: "여행지 계획 이어가기",
@@ -379,7 +369,6 @@ const commercialCopy = {
     related: "다른 공개 코스와 비교",
     tours: "공개된 프라이빗 투어 전체 보기",
     toursWithTransport: "교통 일정이 포함된 전체 프라이빗 코스 보기(단독 픽업·샌딩 서비스 아님)",
-    noLocalRoute: "현재 광저우 전용 프라이빗 코스는 공개되어 있지 않습니다. 기존 코스 모음을 확인하세요",
   },
 } as const;
 
@@ -409,7 +398,7 @@ function toProductLink(
       href: toursPath(locale),
       label:
         target.reason === "no-local-route"
-          ? commercialCopy[locale].noLocalRoute
+          ? commercialCopy[locale].tours
           : commercialCopy[locale].toursWithTransport,
     };
   }

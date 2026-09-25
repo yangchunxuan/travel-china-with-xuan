@@ -429,11 +429,7 @@ export function DestinationHubPage({
               <h2 id="destination-published-routes-title">
                 {commercialCopy.hubTitle}
               </h2>
-              <p>
-                {hubId === "guangzhou"
-                  ? commercialCopy.noLocalHubBody
-                  : commercialCopy.hubBody}
-              </p>
+              <p>{commercialCopy.hubBody}</p>
             </div>
             <ul>
               {publishedRouteLinks.map((route) => (
