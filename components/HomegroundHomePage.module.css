@@ -2392,7 +2392,7 @@
 .faqList details > p {
   color: var(--hg-color-muted);
   line-height: 1.7;
-  margin: -0.25rem 1.25rem 0;
+  margin: 0 1.25rem;
   max-inline-size: 42rem;
   padding-block-end: 1.5rem;
 }
@@ -2410,8 +2410,10 @@
   }
 }
 
-/* FAQ answers slide open (browsers with ::details-content) and fade up; the
-   answers stay in the HTML either way. */
+/* FAQ answers slide open (browsers with ::details-content); the answers stay
+   in the HTML either way. The tile's height is the only thing that moves:
+   the answer text keeps still, and the curve starts and ends gently, so the
+   rows below glide rather than jolt. */
 .faqList details {
   interpolate-size: allow-keywords;
 }
@@ -2421,28 +2423,12 @@
     block-size: 0;
     overflow: clip;
     transition:
-      block-size 380ms cubic-bezier(0.22, 1, 0.36, 1),
-      content-visibility 380ms allow-discrete;
+      block-size 420ms cubic-bezier(0.4, 0, 0.2, 1),
+      content-visibility 420ms allow-discrete;
   }
 
   .faqList details[open]::details-content {
     block-size: auto;
-  }
-}
-
-.faqList details[open] > p {
-  animation: homeFaqFadeUp 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes homeFaqFadeUp {
-  from {
-    opacity: 0.02;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
   }
 }
 
@@ -2485,10 +2471,6 @@
 
   .faqList details::details-content {
     transition: none;
-  }
-
-  .faqList details[open] > p {
-    animation: none;
   }
 }
 
