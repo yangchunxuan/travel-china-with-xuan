@@ -33,6 +33,47 @@ const locales = ["en", "zh", "ko"];
 const reservedStaticSlug = "zhangjiajie-4-day-private-tour";
 const shanghaiJiangnanSlug = "shanghai-suzhou-hangzhou-6-day-private-tour";
 
+test("regional private tours answer the pre-purchase question without promising unconfirmed service", () => {
+  const cases = [
+    ["chengdu-jiuzhaigou-huanglong-6-day-private-tour", {
+      en: [/train to Huanglongjiuzhai Station is delayed/u, /unlimited waiting is not included/u, /agree any extra cost/u],
+      zh: [/去黄龙九寨站的高铁晚点/u, /不默认无限等候/u, /先征得你同意/u],
+      ko: [/황룽주자이역행 열차가 늦으면/u, /무제한 대기는 자동으로 포함되지/u, /먼저 동의를 구합니다/u],
+    }],
+    ["kunming-dali-lijiang-8-day-private-tour", {
+      en: [/include Shangri-La/u, /Kunming on Day 8/u, /Shangri-La is not included/u],
+      zh: [/包含香格里拉/u, /第 8 天从昆明离开/u, /香格里拉不在其中/u],
+      ko: [/샹그릴라가 포함되나요/u, /8일 차에 쿤밍에서 출발/u, /샹그릴라는 포함되지/u],
+    }],
+    ["guangzhou-shunde-foshan-5-day-private-tour", {
+      en: [/Shenzhen, Hong Kong or Macau/u, /day trips to Shunde and Foshan/u, /cross-border transfers need a separately checked route/u],
+      zh: [/深圳、香港或澳门/u, /顺德和佛山各走日游/u, /跨境接送.*另核对路线并报价/u],
+      ko: [/선전·홍콩·마카오/u, /순더·포산 당일 여행/u, /국경 이동은 별도 동선과 견적/u],
+    }],
+    ["chengdu-pandas-sanxingdui-5-day-private-tour", {
+      en: [/Sanxingdui Museum tickets/u, /an inquiry does not hold a museum slot/u, /not guaranteed until booked/u],
+      zh: [/三星堆博物馆门票/u, /咨询本身不会占住/u, /实际订妥前，不保证入馆/u],
+      ko: [/싼싱두이박물관 입장권/u, /문의만으로.*확보되지는 않습니다/u, /실제 예약 전에는 입장을 보장하지/u],
+    }],
+    ["xian-terracotta-warriors-5-day-private-tour", {
+      en: [/Terracotta Warriors tickets/u, /real-name advance booking/u, /not guaranteed until booked/u],
+      zh: [/兵马俑门票/u, /实名预约/u, /实际订妥前不保证入馆/u],
+      ko: [/병마용 입장권/u, /실명 사전 예약제/u, /실제 예약 전에는 입장을 보장하지/u],
+    }],
+  ];
+  for (const [slug, languages] of cases) {
+    const product = getPrivateTourProduct(slug);
+    assert.ok(product, slug);
+    assert.equal(product.dateModified, "2026-09-26", slug);
+    for (const locale of locales) {
+      const [questionPattern, ...answerPatterns] = languages[locale];
+      const faq = localizePrivateTourProduct(product, locale).faq.find(({ question }) => questionPattern.test(question));
+      assert.ok(faq, `${slug}/${locale} is missing its buyer question`);
+      for (const pattern of answerPatterns) assert.match(faq.answer, pattern, `${slug}/${locale}`);
+    }
+  }
+});
+
 test("partial-service inquiries are separate from published full-tour prices in every language", () => {
   const cases = [
     ["shanghai-suzhou-5-day-private-tour", {
@@ -526,7 +567,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.ok(localized.bookingNote.includes(rules.bookingOnly));
   }
 
-  const xian = product("xian-terracotta-warriors-5-day-private-tour");
+  const xian = product("xian-terracotta-warriors-5-day-private-tour", "2026-09-26");
   const xianRules = {
     en: {
       title: "Muslim Quarter and Xi'an Museum complex",

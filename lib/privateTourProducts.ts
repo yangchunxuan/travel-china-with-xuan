@@ -874,6 +874,18 @@ const chengdu: PrivateTourProduct = {
     ["칭청산 및 일정에 명시되지 않은 관광지"],
   ),
   bookingNote: commonBookingNote,
+  faq: [{
+    question: l(
+      "Are Sanxingdui Museum tickets already confirmed when I enquire?",
+      "咨询时，三星堆博物馆门票就订好了吗？",
+      "문의하면 싼싱두이박물관 입장권이 바로 확정되나요?",
+    ),
+    answer: l(
+      "The listed adult admission and reservation work are included in this tour, but an inquiry does not hold a museum slot. We check official availability for your date and confirm the booking status in writing. If no suitable slot is available, we discuss a different day or plan before changing your itinerary; admission is not guaranteed until booked.",
+      "这条团包含所列成人基础门票和预约安排，但咨询本身不会占住三星堆的票。我们按出行日期核对官方票源，并书面告知预订状态；若没有合适时段，先与你商量改日期或行程，不会直接替换。实际订妥前，不保证入馆。",
+      "이 투어에는 명시된 성인 기본 입장권과 예약 준비가 포함되지만 문의만으로 박물관 입장 시간이 확보되지는 않습니다. 여행 날짜의 공식 예약 가능 여부를 확인하고 예약 상태를 서면으로 알려 드립니다. 적절한 시간이 없으면 일정을 바꾸기 전에 상의하며, 실제 예약 전에는 입장을 보장하지 않습니다.",
+    ),
+  }],
   heroImage: image(
     "/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
     l(
@@ -1006,7 +1018,7 @@ const chengdu: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const xian: PrivateTourProduct = {
@@ -1125,6 +1137,18 @@ const xian: PrivateTourProduct = {
     ["장한가 등 공연", "화산 및 일정에 명시되지 않은 관광지"],
   ),
   bookingNote: commonBookingNote,
+  faq: [{
+    question: l(
+      "Are Terracotta Warriors tickets included and already booked?",
+      "兵马俑门票包含吗？咨询时就订好了吗？",
+      "병마용 입장권이 포함되며 문의하면 바로 예약되나요?",
+    ),
+    answer: l(
+      "The listed adult admission is included, but the museum requires real-name advance booking and an inquiry is not a ticket reservation. We check the official slots for your date and confirm the booking status in writing. If no suitable slot is available, we agree a revised visit day or plan with you before changing the itinerary; admission is not guaranteed until booked.",
+      "包含行程所列成人基础门票，但博物院实行实名预约；咨询不等于已经订票。我们按出行日期核对官方时段，并书面告知预订状态。若没有合适时段，先与你确认调整参观日或行程，实际订妥前不保证入馆。",
+      "일정에 명시된 성인 기본 입장권은 포함되지만 박물관은 실명 사전 예약제이며 문의만으로 예약되지 않습니다. 날짜별 공식 예약 가능 시간을 확인하고 예약 상태를 서면으로 알려 드립니다. 적절한 시간이 없으면 방문일이나 일정을 바꾸기 전에 상의하며, 실제 예약 전에는 입장을 보장하지 않습니다.",
+    ),
+  }],
   heroImage: image(
     "/images/destinations/xian/hero-1600.webp",
     l(
@@ -1239,7 +1263,7 @@ const xian: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const chongqingWulong: PrivateTourProduct = {
