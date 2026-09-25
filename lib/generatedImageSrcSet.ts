@@ -17,3 +17,31 @@ export function generatedImageSrcSet(src: string, width: number): string | undef
     );
   return variants.length > 0 ? [...variants, `${src} ${width}w`].join(", ") : undefined;
 }
+
+export interface CoverImageSlot {
+  /** Media condition, omitted for the last (default) slot. */
+  readonly media?: string;
+  /** Box width as a CSS length, e.g. "6.5rem" or "calc((100vw - 4rem) / 2)". */
+  readonly size: string;
+  /** Box width / height at this breakpoint. */
+  readonly boxAspect: number;
+}
+
+/**
+ * `sizes` for an object-fit: cover image. A photo that is wider (for its
+ * height) than its box is drawn wider than the box, so each slot is scaled by
+ * that overflow; otherwise the browser would pick a variant that is too small.
+ */
+export function coverImageSizes(
+  width: number,
+  height: number,
+  slots: readonly CoverImageSlot[],
+): string {
+  return slots
+    .map(({ media, size, boxAspect }) => {
+      const scale = Math.max(1, width / height / boxAspect);
+      const length = scale > 1.005 ? `calc(${size} * ${scale.toFixed(2)})` : size;
+      return media ? `${media} ${length}` : length;
+    })
+    .join(", ");
+}

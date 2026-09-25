@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import homegroundImageLoader from "../../lib/imageLoader.ts";
-import { generatedImageSrcSet } from "../../lib/generatedImageSrcSet.ts";
+import { coverImageSizes, generatedImageSrcSet } from "../../lib/generatedImageSrcSet.ts";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -85,6 +85,30 @@ test("plain <img> srcsets list only generated variants narrower than the origina
   assert.equal(generatedImageSrcSet("https://example.com/card.jpg", 1600), undefined);
 });
 
+test("cover-cropped images size each slot for the width the photo is drawn at", () => {
+  const cardSlots = [
+    { media: "(max-width: 680px)", size: "6.5rem", boxAspect: 1 },
+    { media: "(max-width: 980px)", size: "calc((100vw - 4rem) / 2)", boxAspect: 16 / 10 },
+    { size: "25rem", boxAspect: 16 / 10 },
+  ];
+
+  // A 16:10 photo fills a 16:10 card exactly, but a square phone thumbnail
+  // shows only its middle, so the whole photo is drawn 1.6x the box width.
+  assert.equal(
+    coverImageSizes(1600, 1000, cardSlots),
+    "(max-width: 680px) calc(6.5rem * 1.60), (max-width: 980px) calc((100vw - 4rem) / 2), 25rem",
+  );
+  assert.equal(
+    coverImageSizes(1600, 692, cardSlots),
+    "(max-width: 680px) calc(6.5rem * 2.31), (max-width: 980px) calc(calc((100vw - 4rem) / 2) * 1.45), calc(25rem * 1.45)",
+  );
+  // Photos narrower than the box are scaled by width: the slot is exact.
+  assert.equal(
+    coverImageSizes(750, 1000, [{ media: "(max-width: 680px)", size: "3.25rem", boxAspect: 1 }, { size: "10rem", boxAspect: 3 / 4 }]),
+    "(max-width: 680px) 3.25rem, 10rem",
+  );
+});
+
 test("oversized card and portrait images request the generated variants", async () => {
   const [platformHub, collectionHub, studio] = await Promise.all([
     source("components/SearchPlatformHubPage.tsx"),
@@ -94,15 +118,23 @@ test("oversized card and portrait images request the generated variants", async 
 
   for (const hub of [platformHub, collectionHub]) {
     assert.match(hub, /src=\{guide\.cardImagePath\}\s*srcSet=\{generatedImageSrcSet\(guide\.cardImagePath, guide\.cardImageWidth\)\}/);
-    assert.match(hub, /sizes=\{guideCardImageSizes\}/);
-    assert.match(hub, /"\(max-width: 680px\) 6\.5rem, \(max-width: 980px\) calc\(\(100vw - 4rem\) \/ 2\), \(max-width: 1280px\) calc\(\(100vw - 5rem\) \/ 3\), 25rem"/);
+    assert.match(hub, /sizes=\{coverImageSizes\(\s*guide\.cardImageWidth,\s*guide\.cardImageHeight,\s*guideCardImageSlots,\s*\)\}/);
+    // Mirrors .guideGrid / .guideCard figure in SearchPlatformHubPage.module.css.
+    assert.match(hub, /\{ media: "\(max-width: 680px\)", size: "6\.5rem", boxAspect: 1 \}/);
+    assert.match(hub, /\{ media: "\(max-width: 980px\)", size: "calc\(\(100vw - 4rem\) \/ 2\)", boxAspect: 16 \/ 10 \}/);
+    assert.match(hub, /\{ media: "\(max-width: 1280px\)", size: "calc\(\(100vw - 5rem\) \/ 3\)", boxAspect: 16 \/ 10 \}/);
+    assert.match(hub, /\{ size: "25rem", boxAspect: 16 \/ 10 \}/);
   }
 
-  // Hero constellation portraits render at 52-160 CSS px.
+  // Hero constellation portraits render at 52-160 CSS px; team cards keep
+  // their reviewed slot widths.
   assert.match(
     studio,
-    /sizes="\(max-width: 680px\) 3\.25rem, \(max-width: 1180px\) 7\.75rem, 10rem"\s*src=\{member\.image\.smallSrc\}\s*srcSet=\{smallPhotoSources\(member\.image\)\}/,
+    /sizes=\{photoSizes\(member\.image, tilePhotoSlots\)\}\s*src=\{member\.image\.smallSrc\}\s*srcSet=\{smallPhotoSources\(member\.image\)\}/,
   );
+  assert.match(studio, /sizes=\{photoSizes\(member\.image, teamPhotoSlots\)\}/);
+  assert.match(studio, /\{ media: "\(max-width: 680px\)", size: "3\.25rem", boxAspect: 1 \}/);
+  assert.match(studio, /\{ media: "\(max-width: 1180px\)", size: "30vw", boxAspect: 3 \/ 4 \}/);
   assert.match(studio, /srcSet=\{photoSources\(member\.image\)\}/);
   assert.match(studio, /image\.smallWidth > 640/);
 });
@@ -115,8 +147,10 @@ test("tour heroes are fetched at high priority, not only preloaded", async () =>
 
   // next/image `priority` alone leaves the image at the browser's Low priority.
   assert.match(jiangnanDeck, /fetchPriority=\{index === 0 \? "high" : undefined\}\s*fill\s*priority=\{index === 0\}/);
+  // With real variants behind the srcset, sizes must cover the object-fit
+  // crop: on desktop the 3:2 photo fills a 4:5 box (~38vw), ~1.9x its width.
   assert.match(
     zhangjiajie,
-    /fetchPriority="high"\s*fill\s*priority\s*sizes="\(max-width: 860px\) 100vw, 42vw"\s*src="\/product-previews\/zhangjiajie-4-day-private-tour\/hero\/sunlit-forest-pillars-174\.jpg"/,
+    /fetchPriority="high"\s*fill\s*priority\s*sizes="\(max-width: 860px\) 100vw, \(max-width: 1440px\) 72vw, 1040px"\s*src="\/product-previews\/zhangjiajie-4-day-private-tour\/hero\/sunlit-forest-pillars-174\.jpg"/,
   );
 });

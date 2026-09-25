@@ -7,6 +7,7 @@ import {
   homegroundLocales,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import { coverImageSizes, type CoverImageSlot } from "../lib/generatedImageSrcSet";
 import { getAllGuides, getGuideEntry } from "../lib/guideRegistry";
 import {
   getHomegroundStudioCopy,
@@ -40,6 +41,24 @@ function smallPhotoSources(image: StudioPhoto) {
 
 function photoSources(image: StudioPhoto) {
   return `${smallPhotoSources(image)}, ${image.src} ${image.width}w`;
+}
+
+// Both photo boxes crop with object-fit: cover, so a landscape photo (Kevin's)
+// is drawn wider than its box. Hero tiles are 3:4 and at most 10rem wide
+// (3.25rem circles on phones); team photos are 3:4 cards.
+const tilePhotoSlots: readonly CoverImageSlot[] = [
+  { media: "(max-width: 680px)", size: "3.25rem", boxAspect: 1 },
+  { media: "(max-width: 1180px)", size: "7.75rem", boxAspect: 3 / 4 },
+  { size: "10rem", boxAspect: 3 / 4 },
+];
+const teamPhotoSlots: readonly CoverImageSlot[] = [
+  { media: "(max-width: 680px)", size: "7.5rem", boxAspect: 3 / 4 },
+  { media: "(max-width: 1180px)", size: "30vw", boxAspect: 3 / 4 },
+  { size: "15rem", boxAspect: 3 / 4 },
+];
+
+function photoSizes(image: StudioPhoto, slots: readonly CoverImageSlot[]) {
+  return coverImageSizes(image.smallWidth, image.smallHeight, slots);
 }
 
 const memberStoryGuideIds = {
@@ -161,7 +180,7 @@ export function HomegroundStudioPage({
                     alt=""
                     decoding="async"
                     height={member.image.smallHeight}
-                    sizes="(max-width: 680px) 3.25rem, (max-width: 1180px) 7.75rem, 10rem"
+                    sizes={photoSizes(member.image, tilePhotoSlots)}
                     src={member.image.smallSrc}
                     srcSet={smallPhotoSources(member.image)}
                     style={{ objectPosition: member.image.position }}
@@ -321,7 +340,7 @@ export function HomegroundStudioPage({
                     <img
                       src={member.image.smallSrc}
                       srcSet={photoSources(member.image)}
-                      sizes="(max-width: 680px) 7.5rem, (max-width: 1180px) 30vw, 15rem"
+                      sizes={photoSizes(member.image, teamPhotoSlots)}
                       alt={member.image.alt}
                       width={member.image.smallWidth}
                       height={member.image.smallHeight}
