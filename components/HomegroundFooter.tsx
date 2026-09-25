@@ -26,7 +26,7 @@ import {
 import type { HomepageDestinationHubItem } from "../lib/homepageEditorial";
 import type { HomegroundPageContext } from "./HomegroundHeader";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
-import styles from "./HomegroundHomePage.module.css";
+import styles from "./HomegroundFooter.module.css";
 import homepageStyles from "./HomepageFooter.module.css";
 import { NewsletterFooterLink } from "./NewsletterFooterLink";
 import { getNewsletterConfig } from "../lib/newsletter";

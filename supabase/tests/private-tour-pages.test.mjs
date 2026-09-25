@@ -788,13 +788,13 @@ test("Shanghai Suzhou Hangzhou assigns stable, unique primary media to all six d
 });
 
 test("product-page motion degrades safely and the Jiangnan body stays white above the footer", async () => {
-  const [motion, jiangnanInteractive, jiangnanPage, jiangnanCss, homeCss] =
+  const [motion, jiangnanInteractive, jiangnanPage, jiangnanCss, footerCss] =
     await Promise.all([
       source("components/PrivateTourMotion.tsx"),
       source("components/ShanghaiJiangnanImagineInteractive.tsx"),
       source("components/ShanghaiJiangnanImaginePage.tsx"),
       source("components/ShanghaiJiangnanImaginePage.module.css"),
-      source("components/HomegroundHomePage.module.css"),
+      source("components/HomegroundFooter.module.css"),
     ]);
 
   assert.match(motion, /prefers-reduced-motion: reduce/);
@@ -813,7 +813,7 @@ test("product-page motion degrades safely and the Jiangnan body stays white abov
     );
   }
   assert.match(jiangnanPage, /<\/main>\s*<HomegroundFooter\b/s);
-  assert.match(homeCss, /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s);
+  assert.match(footerCss, /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s);
 });
 
 test("traveler-facing product data does not expose internal commercial terms", () => {

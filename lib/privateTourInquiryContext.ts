@@ -1,6 +1,10 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
-import { privateTourProducts, type PrivateTourPriceTier } from "./privateTourProducts.ts";
+import type { PrivateTourPriceTier } from "./privateTourProducts.ts";
+// This module runs in every page's bundle (tour contact panel, header), so it
+// reads the generated slim index rather than the full tour catalogue.
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourInquiryIndex } from "./privateTourInquiryIndex.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 
@@ -144,7 +148,7 @@ export function getPrivateTourInquirySelection(
       ? { packageId: packageValue, travelers: 6 }
       : null;
   }
-  const product = privateTourProducts.find((candidate) => candidate.slug === slug);
+  const product = privateTourInquiryIndex.find((candidate) => candidate.slug === slug);
   const tourPackage = product?.packages.find(
     (candidate) => candidate.id === packageValue,
   );
@@ -563,7 +567,7 @@ export function getPrivateTourInquiryContext(
     ? getPrivateTourInquirySelection(value, selection.packageId, selection.travelers)
     : null;
   if (selection && !validatedSelection) return null;
-  const structuredProduct = privateTourProducts.find(
+  const structuredProduct = privateTourInquiryIndex.find(
     (candidate) => candidate.slug === value,
   );
   return {

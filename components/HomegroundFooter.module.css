@@ -1,0 +1,180 @@
+/*
+ * Shared footer used by every page except the homepage (which renders the
+ * homepage variant from HomepageFooter.module.css). These rules used to live
+ * in HomegroundHomePage.module.css, so every page loaded the whole ~80 KB
+ * homepage stylesheet just to style five footer classes.
+ *
+ * Page roots carry the global marker "hg-locale-root" (see
+ * LocaleRoot.module.css); the Chinese and Korean tagline rules key on it.
+ */
+.footer {
+  font-family: inherit;
+}
+
+:global(.hg-locale-root)[data-homeground-locale="zh"] .footerTop > div:first-child span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+:global(.hg-locale-root)[data-homeground-locale="ko"] .footerTop > div:first-child span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.footer {
+  background: var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
+  padding: 2.5rem max(1rem, calc((100% - 1260px) / 2)) 1.5rem;
+}
+
+.footerTop {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(180px, 1fr) auto;
+}
+
+.footerTop > div:first-child {
+  display: grid;
+}
+
+.footerTop strong {
+  font-family: var(--hg-brand);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.footerTop > div:first-child span {
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footerTop nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footerTop a,
+.footerTop span[aria-current] {
+  align-items: center;
+  color: var(--hg-color-on-dark-muted);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 650;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.footerTop span[aria-current] {
+  color: var(--hg-color-on-dark);
+}
+
+.footerLegal {
+  align-items: start;
+  border-top: 1px solid var(--hg-color-on-dark-line);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(18rem, 1fr) auto;
+  margin-top: 2rem;
+  padding-top: 1.35rem;
+}
+
+.footerLegal p {
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 78ch;
+  text-wrap: pretty;
+}
+
+.footerLegal p a {
+  color: var(--hg-color-on-dark);
+  text-underline-offset: 0.2rem;
+}
+
+.footerLegal p span {
+  display: block;
+}
+
+.footerLegal nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  justify-content: flex-end;
+}
+
+.footerLegal nav a,
+.footerPrivacyButton {
+  align-items: center;
+  color: var(--hg-color-on-dark-muted);
+  display: inline-flex;
+  font-size: 0.82rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.footerPrivacyButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.footerTop a:hover,
+.footerLegal a:hover,
+.footerPrivacyButton:hover {
+  color: var(--hg-color-on-dark);
+}
+
+.footerNote {
+  border-top: 1px solid var(--hg-color-on-dark-line);
+  color: var(--hg-color-on-dark-muted);
+  font-size: 0.72rem;
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+}
+
+@media (max-width: 680px) {
+  .footerTop {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footerTop nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footerLegal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footerLegal nav {
+    justify-content: flex-start;
+  }
+
+  .footerLegal p a[lang="zh-Hans"] {
+    display: block;
+    font-size: 0.8rem;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
