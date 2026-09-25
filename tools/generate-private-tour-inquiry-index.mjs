@@ -82,9 +82,12 @@ ${entries.join("\n")}
 
 const output = render(projectPrivateTourInquiryIndex(privateTourProducts));
 
+// Compared without line endings: a Windows checkout holds the file with CRLF.
+const current = await readFile(outputPath, "utf8").catch(() => null);
+const upToDate = current?.replace(/\r\n/g, "\n") === output;
+
 if (check) {
-  const current = await readFile(outputPath, "utf8").catch(() => null);
-  if (current?.replace(/\r\n/g, "\n") !== output) {
+  if (!upToDate) {
     console.error(
       "lib/privateTourInquiryIndex.ts is out of date with lib/privateTourProducts.ts.\n" +
         "Run: node --experimental-strip-types tools/generate-private-tour-inquiry-index.mjs",
@@ -92,6 +95,9 @@ if (check) {
     process.exit(1);
   }
   console.log(`✓ private tour inquiry index matches ${privateTourProducts.length} tours.`);
+} else if (upToDate) {
+  // Builds run this; leave an unchanged index alone so the checkout stays clean.
+  console.log(`private tour inquiry index: ${privateTourProducts.length} tours, unchanged`);
 } else {
   await writeFile(outputPath, output, "utf8");
   console.log(`private tour inquiry index: ${privateTourProducts.length} tours, ${output.length} bytes`);
