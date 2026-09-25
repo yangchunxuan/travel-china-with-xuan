@@ -339,6 +339,21 @@ export function HomegroundFooter({
             </p>
           </div>
         </div>
+
+        {/* The name across the full width, as the page's last line. SVG text
+            stretched to the width, so it fits whatever serif the device has. */}
+        <div aria-hidden="true" className={homepageStyles.wordmark}>
+          <svg focusable="false" viewBox="0 0 1000 128">
+            <text
+              lengthAdjust="spacingAndGlyphs"
+              textLength="1000"
+              x="0"
+              y="138"
+            >
+              Homeground
+            </text>
+          </svg>
+        </div>
       </footer>
     );
   }

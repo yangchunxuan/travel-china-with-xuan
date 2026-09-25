@@ -775,6 +775,17 @@ export function HomegroundHomePage({
               {copy.faq.title}
             </h2>
             {copy.faq.intro && <p>{copy.faq.intro}</p>}
+            {/* After the last questions, the way on: the hero's planner button. */}
+            <a
+              className={styles.faqAction}
+              href={plannerTarget}
+              onClick={(event) =>
+                handleHomegroundHashClick(event, plannerTarget)
+              }
+            >
+              {showcase.heroSecondary}
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
           <div className={styles.faqList}>
             {copy.faq.items.slice(0, 7).map((item) => (
