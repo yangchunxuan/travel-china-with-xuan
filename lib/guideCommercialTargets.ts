@@ -95,6 +95,70 @@ export const guideTargets = {
   ],
   "china-private-transfer-or-public-transport": [toursWithTransport],
   "china-climate-regions-for-trip-timing": [productTarget("harbin-winter-5-day-private-tour")],
+  "china-2-week-tour-cost": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+  ],
+  "china-small-group-tours-2027": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"),
+  ],
+  "best-2-week-china-tour": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  // Whole-China first-trip guides with the most Search Console impressions
+  // (July–September 2026) point at the multi-city routes their readers are
+  // planning, instead of a market-weighted regional tour.
+  "food-plants-and-animal-products-into-china": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
+  "china-public-holidays-travel-calendar": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+  ],
+  "china-online-arrival-card": [
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
+    productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
+  ],
+  "how-to-pay-in-china-as-a-tourist": [
+    productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
+  "china-power-plugs-voltage-and-adapters": [
+    productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
+  ],
+  "lunar-new-year-customs-for-visitors": [productTarget("harbin-winter-5-day-private-tour")],
+  "how-much-does-a-china-trip-cost": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
+  ],
+  "china-7-day-itinerary": [productTarget("beijing-xian-shanghai-8-day-private-tour")],
+  "china-10-day-itinerary": [
+    productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
+    productTarget("beijing-xian-guilin-hong-kong-10-day-private-tour"),
+  ],
+  "china-14-day-itinerary": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  // Entry-rule guides: US passports rely on 240-hour transit, which the
+  // Hong Kong-exit route is built for; 30-day visa-free markets fit two weeks.
+  "do-us-citizens-need-visa-china-2026": [
+    productTarget("beijing-xian-guilin-hong-kong-10-day-private-tour"),
+  ],
+  "china-240-hour-visa-free-transit-route-check": [
+    productTarget("beijing-xian-guilin-hong-kong-10-day-private-tour"),
+  ],
+  "china-visa-free-uk-citizens-2026": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
+  "china-visa-free-canadian-citizens-2026": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
+  "china-visa-free-new-zealand-citizens-2026": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
 } as const satisfies Partial<Record<GuideId, readonly GuideProductTarget[]>>;
 
 /** The concrete product rendered by the first curated target, if there is one. */

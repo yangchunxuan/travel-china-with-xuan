@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 186);
+  assert.equal(inventory.generatedIdentityCount, 189);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 205);
-  assert.equal(inventory.localeUrlCount, 607);
+  assert.equal(inventory.identityCount, 208);
+  assert.equal(inventory.localeUrlCount, 616);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(

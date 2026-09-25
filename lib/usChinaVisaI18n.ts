@@ -58,13 +58,13 @@ export interface UsChinaVisaCopy {
 
 const sharedSources: SourceLink[] = [
   {
-    label:
-      "State Council — 240-hour visa-free transit expanded to 65 ports",
-    url: "https://english.www.gov.cn/news/202511/04/content_WS69094ae0c6d00ca5f9a07472.html",
-  },
-  {
     label: "National Immigration Administration — 240-hour visa-free transit",
     url: "https://en.nia.gov.cn/n147418/n147463/c183412/content.html",
+  },
+  {
+    label:
+      "National Immigration Administration — West Kowloon added as an eligible port",
+    url: "https://en.nia.gov.cn/n147413/c187308/content.html",
   },
   {
     label: "Chinese Embassy in the United States — tourist (L) visa",
@@ -100,7 +100,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "This page covers ordinary US passports travelling to mainland China for tourism. It is not immigration advice, and we do not process visa applications.",
     updatedLabel: "Updated",
-    updatedDate: "9 September 2026",
+    updatedDate: "25 September 2026",
     heroAlt:
       "Arrivals concourse at Shanghai Pudong International Airport, with bilingual wayfinding signs overhead.",
     heroCaption:
@@ -117,11 +117,11 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionTwo: {
       id: "transit",
       title: "The broad route-based exception is 240-hour transit",
-      lead: "US citizens sit on the list of 55 nationalities eligible for China's 240-hour visa-free transit. Eligible travellers do not obtain a visa in advance, but they still complete temporary-entry formalities at the port.",
+      lead: "US citizens sit on the list of 57 nationalities eligible for China's 240-hour visa-free transit. Eligible travellers do not obtain a visa in advance, but they still complete temporary-entry formalities at the port.",
       paragraphs: [
         "Since 5 November 2025 the policy covers 65 ports across 24 provincial-level regions — Beijing, Shanghai, Guangzhou, Xi'an and Chengdu among them.",
         "One condition carries the whole thing: your onward ticket has to leave for a third country or region, with a confirmed seat and date.",
-        "New York → Beijing → New York is not transit. It is a round trip wearing a transit costume, and it does not qualify. New York → Beijing → Seoul qualifies. So does New York → Shanghai → Hong Kong, because Hong Kong counts as a separate region here — which means a trip that was never going to leave Asia can still be built to fit.",
+        "New York → Beijing → New York is not transit. It is a round trip wearing a transit costume, and it does not qualify. New York → Beijing → Seoul, or New York → Shanghai → Hong Kong, can meet the third-destination rule because Hong Kong counts as a separate region here. The route alone does not establish eligibility; the other entry and ticket conditions still apply.",
         "The November 2025 expansion added something most English guides have not caught up with. The new ports include the Hong Kong-Zhuhai-Macao Bridge and West Kowloon Station on the Guangzhou-Shenzhen-Hong Kong express rail link. You no longer have to fly in. A route that reaches the mainland overland or by high-speed rail from Hong Kong can sit inside the same exemption.",
         "Your passport needs at least three months of remaining validity.",
       ],
@@ -138,7 +138,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book. The tour-company assistance FAQ and US application procedure were checked on 9 September 2026; this limited update does not represent a new review of every transit or regional exemption on this page.",
+      "Homeground China is a China travel agency drawing on our planning team’s first-hand local experience. This page follows the published rules of the State Council, the National Immigration Administration and the Chinese Embassy in the United States. Entry policy moves faster than any other part of a China trip; we re-check this page at least every 90 days and date any change. Confirm your own routing against the sources below before you book. We checked the transit-country list, eligible ports and Hong Kong exit route on 25 September 2026; the US tourist-visa application procedure was checked on 9 September 2026. Other regional exemptions were not re-reviewed in this update.",
     sourcesLabel: "Official sources",
     sources: sharedSources,
     faqTitle: "Common questions",
@@ -156,7 +156,12 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "Does Hong Kong count as leaving China?",
         answer:
-          "For the transit exemption, yes. An onward ticket from the mainland to Hong Kong satisfies the third-country-or-region requirement.",
+          "For the transit exemption, Hong Kong counts as a separate region. A confirmed mainland-to-Hong Kong onward ticket can satisfy the destination requirement, provided you arrived from somewhere other than Hong Kong and meet the other conditions.",
+      },
+      {
+        question: "Is there a China tour built around the 240-hour rule?",
+        answer:
+          "Homeground's 10-day Beijing–Xi’an–Guilin–Hong Kong private tour enters the mainland at Beijing on Day 1 and plans to leave on Day 9 by train for Hong Kong West Kowloon, inside the 10-day limit. It starts at USD 3,090 per person for two sharing a twin room. This route can only be considered for 240-hour transit if you arrived from a country or region other than Hong Kong, hold a confirmed onward ticket to Hong Kong and meet the other entry conditions. The border officer makes the entry decision on arrival.",
       },
       {
         question: "Can I use the 240 hours twice in one trip?",
@@ -205,7 +210,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "本页针对持普通美国护照、以旅游目的前往中国大陆的情况。这不是移民建议,我们也不代办签证。",
     updatedLabel: "最近更新",
-    updatedDate: "2026 年 9 月 9 日",
+    updatedDate: "2026 年 9 月 25 日",
     heroAlt: "上海浦东国际机场到达层,头顶是中英双语指示牌。",
     heroCaption: "走到这个大厅之前,护照、旅行目的和航线都需要核对。",
     sectionOne: {
@@ -220,11 +225,11 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionTwo: {
       id: "transit",
       title: "覆盖面较广的路线型例外是 240 小时过境免签",
-      lead: "美国在中国 240 小时过境免签的 55 个适用国家名单里。符合条件者无需提前办理签证,但抵达指定口岸后仍要办理临时入境手续。",
+      lead: "美国在中国 240 小时过境免签的 57 个适用国家名单里。符合条件者无需提前办理签证,但抵达指定口岸后仍要办理临时入境手续。",
       paragraphs: [
         "自 2025 年 11 月 5 日起,这项政策覆盖 24 个省级地区的 65 个口岸 —— 北京、上海、广州、西安、成都都在内。",
-        "全靠一个条件撑着:你的续程票必须飞往第三国或地区,且座位与日期已确认。",
-        "纽约 → 北京 → 纽约不是过境。那是一趟往返穿了件过境的外衣,不符合条件。纽约 → 北京 → 首尔符合。纽约 → 上海 → 香港也符合,因为香港在这里算作单独的地区 —— 也就是说,一趟本来就没打算离开亚洲的旅行,仍然可以搭得进去。",
+        "关键是入境前后的地点必须不同：从一地进入内地后，须持日期和座位已确认、前往第三国或地区的续程机票、车票等。",
+        "纽约 → 北京 → 纽约不是过境。那是一趟往返穿了件过境的外衣，不符合条件。纽约 → 北京 → 首尔，或纽约 → 上海 → 香港，可以满足前往第三地的路线要求，因为香港在这里算作单独的地区。但路线本身不代表自动符合免签条件，仍须满足续程票和其他入境要求。",
         "2025 年 11 月这次扩容里有一条,多数英文攻略还没跟上:新增口岸包含港珠澳大桥,以及广深港高铁西九龙站。你不再必须飞进来。从香港经陆路或高铁进入内地的路线,同样可以放进这条免签里。",
         "护照剩余有效期需在三个月以上。",
       ],
@@ -241,7 +246,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分;我们至少每 90 天复核本页,并为改动标注日期。订票前,请对照下列来源确认你自己的航线。 旅行公司协助签证的问题与美国申请流程另于 2026 年 9 月 9 日核对；此次局部更新不表示重新复核了本页每项过境或区域免签政策。",
+      "Homeground China 是一家拥有自己地接团队的中国旅行社。本页依据国务院、国家移民管理局与中国驻美国大使馆公布的规则撰写。入境政策是一趟中国行里变动最快的部分；我们至少每 90 天复核本页，并为改动标注日期。订票前，请对照下列来源确认你自己的航线。适用国家名单、口岸和赴港离境路线已于 2026 年 9 月 25 日核对；美国旅游签证申请流程于 9 月 9 日核对。本次未重新核对其他地区性免签政策。",
     sourcesLabel: "官方来源",
     sources: sharedSources,
     faqTitle: "常见问题",
@@ -259,7 +264,12 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "香港算离开中国吗?",
         answer:
-          "就过境免签而言,算。从内地飞往香港的续程票满足“第三国或地区”的要求。",
+          "就过境免签而言,香港算单独的地区。内地到香港、日期和座位已确认的续程票可以满足目的地条件，但你入境前不能也从香港出发，其他条件也要满足。",
+      },
+      {
+        question: "有没有按 240 小时过境免签设计的中国行程?",
+        answer:
+          "Homeground 的北京、西安、桂林到香港 10 天私家团，计划第 1 天从北京入境、第 9 天乘高铁前往香港西九龙，在 10 天时限以内。2 人同行、两人一间，每人 ¥20,080 起。只有入境前的出发地不是香港、持有日期和座位已确认的赴港续程票，且满足其他条件时，才可考虑按 240 小时过境免签走；能不能入境由边检当场决定。",
       },
       {
         question: "一趟旅行能用两次 240 小时吗?",
@@ -301,7 +311,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     scopeNote:
       "이 페이지는 일반 미국 여권으로 관광 목적의 중국 본토 방문을 다룹니다. 이민 관련 조언이 아니며, 저희는 비자를 대행하지 않습니다.",
     updatedLabel: "최종 업데이트",
-    updatedDate: "2026년 9월 9일",
+    updatedDate: "2026년 9월 25일",
     heroAlt: "상하이 푸둥 국제공항 도착층, 머리 위로 중국어·영어 안내 표지판이 보인다.",
     heroCaption: "이 홀에 닿기 전에 여권, 방문 목적과 경로를 모두 확인해야 합니다.",
     sectionOne: {
@@ -316,11 +326,11 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     sectionTwo: {
       id: "transit",
       title: "가장 폭넓은 경로형 예외는 240시간 무비자 환승입니다",
-      lead: "미국은 중국 240시간 무비자 환승이 적용되는 55개국 명단에 있습니다. 조건을 충족한 여행자는 비자를 미리 발급받지 않지만, 지정 항구에서 임시 입국 수속은 거쳐야 합니다.",
+      lead: "미국은 중국 240시간 무비자 환승이 적용되는 57개국 명단에 있습니다. 조건을 충족한 여행자는 비자를 미리 발급받지 않지만, 지정 항구에서 임시 입국 수속은 거쳐야 합니다.",
       paragraphs: [
         "2025년 11월 5일부터 이 정책은 24개 성급 지역의 65개 항구·공항에 적용됩니다. 베이징, 상하이, 광저우, 시안, 청두가 모두 포함됩니다.",
-        "모든 것을 지탱하는 조건은 하나입니다. 다음 구간 항공권이 제3국 또는 제3지역으로 향해야 하고, 좌석과 날짜가 확정되어 있어야 합니다.",
-        "뉴욕 → 베이징 → 뉴욕은 환승이 아닙니다. 환승 옷을 걸친 왕복일 뿐이며 조건을 만족하지 못합니다. 뉴욕 → 베이징 → 서울은 됩니다. 뉴욕 → 상하이 → 홍콩도 됩니다. 여기서 홍콩은 별개 지역으로 취급되기 때문입니다. 즉 애초에 아시아를 벗어날 생각이 없던 일정도 조건에 맞게 짤 수 있다는 뜻입니다.",
+        "입국 전후의 출발지와 목적지가 달라야 합니다. 제3국 또는 제3지역으로 가는 항공권·열차표 등 다음 구간 표에는 확정된 날짜와 좌석이 있어야 합니다.",
+        "뉴욕 → 베이징 → 뉴욕은 환승이 아닙니다. 환승 옷을 걸친 왕복일 뿐이며 조건을 만족하지 못합니다. 뉴욕 → 베이징 → 서울 또는 뉴욕 → 상하이 → 홍콩은 제3지역 목적지 요건을 충족할 수 있습니다. 여기서 홍콩은 별개 지역으로 취급됩니다. 다만 경로만으로 무비자 입국이 확정되는 것은 아닙니다. 다음 구간 표와 다른 입국 요건도 충족해야 합니다.",
         "2025년 11월 확대에는 대부분의 영어 가이드가 아직 따라잡지 못한 내용이 있습니다. 새로 추가된 항구에 강주아오 대교와 광선강 고속철도 시주룽역이 포함되었습니다. 이제 반드시 비행기로 들어올 필요가 없습니다. 홍콩에서 육로나 고속철도로 본토에 닿는 경로도 같은 면제 안에 들어갈 수 있습니다.",
         "여권 잔여 유효기간은 3개월 이상이어야 합니다.",
       ],
@@ -337,7 +347,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
     },
     reviewTitle: "작성과 확인",
     reviewBody:
-      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요. 여행사의 비자 지원 범위와 미국 내 신청 절차는 2026년 9월 9일에 별도로 확인했습니다. 이번 부분 업데이트가 모든 환승·지역 무비자 정책의 재검토를 뜻하지는 않습니다.",
+      "Homeground China는 자체 현지 팀을 둔 중국 전문 여행사입니다. 이 페이지는 국무원, 국가이민관리국, 주미 중국대사관이 공개한 규정을 따릅니다. 입국 정책은 중국 여행에서 가장 빠르게 바뀌는 부분입니다. 저희는 최소 90일마다 이 페이지를 다시 확인하고 변경 사항에 날짜를 표기합니다. 예약 전에 아래 출처로 본인의 경로를 확인하세요. 적용 국가, 입국 항구와 홍콩 출국 경로는 2026년 9월 25일에 확인했고 미국 내 관광비자 신청 절차는 9월 9일에 확인했습니다. 다른 지역별 무비자 제도는 이번에 다시 검토하지 않았습니다.",
     sourcesLabel: "공식 출처",
     sources: sharedSources,
     faqTitle: "자주 묻는 질문",
@@ -355,12 +365,17 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "홍콩은 중국을 떠난 것으로 치나요?",
         answer:
-          "환승 면제에 한해서는 그렇습니다. 본토에서 홍콩으로 가는 다음 구간 항공권은 제3국·제3지역 요건을 충족합니다.",
+          "환승 면제에서는 홍콩을 별도 지역으로 봅니다. 본토에서 홍콩으로 가는 날짜와 좌석이 확정된 다음 구간 표는 목적지 요건에 맞을 수 있습니다. 단, 본토 입국 전에도 홍콩에서 출발했다면 이 경로만으로는 제3지역 환승이 되지 않습니다.",
+      },
+      {
+        question: "240시간 규정에 맞춘 중국 일정이 있나요?",
+        answer:
+          "Homeground의 베이징·시안·구이린·홍콩 10일 프라이빗 투어는 1일 차 베이징으로 본토에 들어와 9일 차 열차로 홍콩 웨스트카오룽에 가도록 계획합니다. 2명, 2인 1실 기준 1인 ₩4,320,000부터입니다. 본토 입국 전 출발지가 홍콩이 아니고, 날짜와 좌석이 확정된 홍콩행 표를 소지하며 다른 조건도 충족해야 240시간 무비자 환승을 검토할 수 있습니다. 최종 입국 여부는 도착 시 심사관이 결정합니다.",
       },
       {
         question: "한 여행에서 240시간을 두 번 쓸 수 있나요?",
         answer:
-          "입국할 때마다 그 입국의 다음 구간 항공권으로 따로 판단합니다. 본토를 떠났다가 다시 들어오면 두 번째 입국도 조건을 처음부터 다시 만족해야 합니다. 여러 나라를 도는 일정이 가장 자주 무너지는 지점입니다.",
+          "입국할 때마다 그 입국의 다음 구간 표로 따로 판단합니다. 본토를 떠났다가 다시 들어오면 두 번째 입국도 조건을 처음부터 다시 만족해야 합니다. 여러 나라를 도는 일정이 가장 자주 무너지는 지점입니다.",
       },
       {
         question: "L 비자는 얼마나 걸리나요?",

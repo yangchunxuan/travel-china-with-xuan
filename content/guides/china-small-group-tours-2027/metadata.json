@@ -1,0 +1,103 @@
+{
+  "id": "china-small-group-tours-2027",
+  "type": "planning",
+  "pillar": "traveller-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "trip-planning",
+    "first-trip",
+    "route-design"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "guilin",
+    "zhangjiajie",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-25",
+  "dateModified": "2026-09-25",
+  "sourceReviewedDate": "2026-09-25",
+  "searchTerms": {
+    "en": [
+      "china small group tour 2027",
+      "small group tours of china",
+      "china group tour dates 2027"
+    ],
+    "zh": [
+      "中国小团 2027",
+      "中国小团游",
+      "中国精品小团"
+    ],
+    "ko": [
+      "중국 소규모 그룹 투어",
+      "중국 소그룹 여행 2027",
+      "중국 패키지 출발일"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-small-group-tours-2027/",
+      "title": "China Small-Group Tours 2027: Dates, Prices and Rules",
+      "headline": "Every 2027 China small-group departure",
+      "description": "10 departures in 2027 on 14- to 17-day China routes for 8–12 guests, from USD 2,790 per person. Dates and refund rule inside.",
+      "heroAlt": "Karst peaks along the Li River",
+      "navTitle": "China small-group tours 2027",
+      "featuredLinkLabel": "See 2027 small-group dates",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "10 departures",
+        "8–12 guests",
+        "Full refund if it does not run"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-small-group-tours-2027/",
+      "title": "2027 年中国小团：出团日期、价格与规则",
+      "headline": "2027 年中国小团全部出发日期",
+      "description": "Homeground 2027 年 10 个小团出发日，14–17 天，8–12 人，每人 ¥18,130 起。查看日期、单房差与不足 8 人的退款规则。",
+      "heroAlt": "漓江两岸的喀斯特山峰",
+      "navTitle": "2027 中国小团",
+      "featuredLinkLabel": "查看 2027 年小团日期",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "10 个出发日",
+        "8–12 人",
+        "不成团全额退款"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-small-group-tours-2027/",
+      "title": "2027 중국 소규모 그룹 투어: 출발일·요금·규칙",
+      "headline": "2027년 중국 소규모 그룹 전체 출발일",
+      "description": "Homeground 2027년 소규모 그룹 10회 출발, 14~17일, 8~12명, 1인 ₩3,900,000부터. 날짜와 인원 미달 시 환불 규칙을 확인하세요.",
+      "heroAlt": "리강 양쪽의 카르스트 봉우리",
+      "navTitle": "2027 중국 소규모 그룹",
+      "featuredLinkLabel": "2027 소규모 그룹 날짜 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "10회 출발",
+        "8~12명",
+        "미출발 시 전액 환불"
+      ]
+    }
+  }
+}
