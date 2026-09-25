@@ -1,12 +1,16 @@
-/* Page-change feedback. Idle: invisible, no transitions (so every reset is instant).
-   Pending: after 160ms the line and the veil appear; a fast arrival cancels
-   them before the delay ends, so nothing is ever drawn. */
+/* Page-change loader (NavigationFeedback.tsx).
+   Idle: nothing is drawn and nothing transitions, so every reset is instant.
+   Pending: after 220ms the page below the header turns white, the count
+   appears bottom-left and the top line follows it (--hg-nav-progress, 0-1).
+   A page that arrives inside the delay cancels all of it: nothing is drawn.
+   Done: the count reads 100 and everything fades in 200ms. */
 .feedback {
+  --hg-nav-progress: 0;
   display: contents;
 }
 
 .veil {
-  background: rgb(255 255 255 / 36%);
+  background: rgb(255 255 255 / 92%);
   inset: 0;
   opacity: 0;
   pointer-events: none;
@@ -30,45 +34,69 @@
   background: #a84731;
   block-size: 100%;
   display: block;
-  transform: scaleX(0);
+  transform: scaleX(var(--hg-nav-progress));
   transform-origin: 0 50%;
 }
 
-.feedback[data-state="pending"] .veil {
+.count {
+  color: #0a0a0a;
+  font-family: var(--hg-font-editorial, Georgia, "Times New Roman", serif);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  inset-block-end: calc(env(safe-area-inset-bottom, 0px) + clamp(1.25rem, 3vw, 2.5rem));
+  inset-inline-start: clamp(1rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  user-select: none;
+  z-index: 99;
+}
+
+.feedback[data-state="pending"] .veil,
+.feedback[data-state="pending"] .count {
   opacity: 1;
-  transition: opacity 240ms cubic-bezier(0.22, 1, 0.36, 1) 160ms;
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1) 220ms;
 }
 
 .feedback[data-state="pending"] .bar {
   opacity: 1;
-  transition: opacity 120ms linear 160ms;
+  transition: opacity 120ms linear 220ms;
 }
 
-.feedback[data-state="pending"] .fill {
-  transform: scaleX(0.9);
-  transition: transform 12s cubic-bezier(0.08, 0.82, 0.17, 1) 160ms;
-}
-
-.feedback[data-state="done"] .veil {
-  opacity: 0;
-  transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
+.feedback[data-state="done"] .veil,
+.feedback[data-state="done"] .count,
 .feedback[data-state="done"] .bar {
   opacity: 0;
-  transition: opacity 200ms linear 140ms;
+  transition: opacity 200ms ease;
 }
 
 .feedback[data-state="done"] .fill {
-  transform: scaleX(1);
-  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 40rem) {
+  .count {
+    font-size: 3rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* No travel: a still, full-width line appears after the same delay. */
-  .feedback[data-state="pending"] .fill,
-  .feedback[data-state="done"] .fill {
+  /* No counting and no fades: after the same delay, a still full-width line. */
+  .veil,
+  .count {
+    display: none;
+  }
+
+  .fill {
     transform: none;
+  }
+
+  .feedback[data-state] .bar {
+    transition-duration: 0s;
   }
 }
 
