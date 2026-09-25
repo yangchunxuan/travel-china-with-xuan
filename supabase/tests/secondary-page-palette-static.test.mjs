@@ -120,3 +120,20 @@ test("localized collection titles wrap on narrow screens without changing articl
   assert.match(destinationPage, /destinationStyles\.destinationRoot/);
   assert.match(destinationPage, /destinationStyles\.destinationCta/);
 });
+
+test("Korean guides keep break-word wrapping whichever stylesheet loads last", async () => {
+  const [editorial, localeRoot] = await Promise.all([
+    source("components/content/EditorialGuidePage.module.css"),
+    source("components/LocaleRoot.module.css"),
+  ]);
+
+  // LocaleRoot sets Korean to overflow-wrap: anywhere at 0,2,0; the guide rule
+  // must outrank it rather than rely on stylesheet order, which the bundler
+  // reshuffles whenever any CSS changes.
+  assert.match(localeRoot, /\.root\[data-homeground-locale="ko"\] \{[^}]*overflow-wrap:\s*anywhere;/);
+  assert.match(
+    editorial,
+    /\.pageRoot\.pageRoot:lang\(ko\) \{\s*overflow-wrap:\s*break-word;\s*word-break:\s*keep-all;\s*\}/,
+  );
+  assert.doesNotMatch(editorial, /(^|\n)\.pageRoot:lang\(ko\) \{/);
+});

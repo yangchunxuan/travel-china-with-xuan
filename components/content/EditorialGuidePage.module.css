@@ -16,7 +16,12 @@
   --hg-editorial: var(--hg-font-editorial);
 }
 
-.pageRoot:lang(ko) {
+/*
+ * LocaleRoot's .root sets Korean to overflow-wrap: anywhere at the same
+ * specificity; guides keep break-word so tables and long words wrap as on the
+ * live site, whichever stylesheet the bundler loads last.
+ */
+.pageRoot.pageRoot:lang(ko) {
   overflow-wrap: break-word;
   word-break: keep-all;
 }
