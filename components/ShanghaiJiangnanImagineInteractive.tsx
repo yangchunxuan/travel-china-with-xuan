@@ -202,6 +202,7 @@ export function ShanghaiJiangnanHeroDeck({
             >
               <Image
                 alt={depth === 0 ? image.alt : ""}
+                fetchPriority={index === 0 ? "high" : undefined}
                 fill
                 priority={index === 0}
                 sizes="(max-width: 760px) 92vw, (max-width: 1100px) 44vw, 500px"

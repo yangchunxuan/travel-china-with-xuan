@@ -20,6 +20,11 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
+import {
+  coverImageSizes,
+  generatedImageSrcSet,
+  type CoverImageSlot,
+} from "../lib/generatedImageSrcSet";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import {
   editorialOrganizationSchema,
@@ -33,6 +38,15 @@ import { KeepWords } from "./text/KeepWords";
 import styles from "./SearchPlatformHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+// Guide cards (SearchPlatformHubPage.module.css): a 16:10 photo box in three
+// columns up to the 77rem content width, two at tablet width, and a 6.5rem
+// square thumbnail on phones.
+const guideCardImageSlots: readonly CoverImageSlot[] = [
+  { media: "(max-width: 680px)", size: "6.5rem", boxAspect: 1 },
+  { media: "(max-width: 980px)", size: "calc((100vw - 4rem) / 2)", boxAspect: 16 / 10 },
+  { media: "(max-width: 1280px)", size: "calc((100vw - 5rem) / 3)", boxAspect: 16 / 10 },
+  { size: "25rem", boxAspect: 16 / 10 },
+];
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
   zh: "zh-CN",
@@ -306,7 +320,13 @@ export function SearchCollectionHubPage({
                           decoding="async"
                           height={guide.cardImageHeight}
                           loading="lazy"
+                          sizes={coverImageSizes(
+                            guide.cardImageWidth,
+                            guide.cardImageHeight,
+                            guideCardImageSlots,
+                          )}
                           src={guide.cardImagePath}
+                          srcSet={generatedImageSrcSet(guide.cardImagePath, guide.cardImageWidth)}
                           width={guide.cardImageWidth}
                         />
                       </figure>
