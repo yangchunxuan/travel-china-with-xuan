@@ -213,12 +213,12 @@ test("planner CTAs preserve the result while moving to the human handoff", async
       ?.length,
     2,
   );
-  // The hero button; the enquiry strip under the tours was removed at the
-  // owner's request (2026-09-25).
+  // The hero button and the one beside the FAQ (2026-09-25); the enquiry
+  // strip under the tours was removed at the owner's request.
   assert.equal(
     page.match(/handleHomegroundHashClick\(event, plannerTarget\)/g)
       ?.length,
-    1,
+    2,
   );
 });
 
