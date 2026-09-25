@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { AnalyticsConsent } from "../../../components/AnalyticsConsent";
 import { TourContactPanel } from "../../../components/TourContactPanel";
 import { ContactCardHost } from "../../../components/ContactCardHost";
+import { NavigationFeedback } from "../../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
@@ -107,6 +108,7 @@ export default async function LocalizedRootLayout({
       <body>
         <SiteAnalytics locale={locale} />
         {children}
+        <NavigationFeedback locale={locale} />
         <AnalyticsConsent locale={locale} />
         <TourContactPanel locale={locale} />
         <ContactCardHost locale={locale} />

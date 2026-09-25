@@ -1,0 +1,90 @@
+/* Page-change feedback. Idle: invisible, no transitions (so every reset is instant).
+   Pending: after 160ms the line and the veil appear; a fast arrival cancels
+   them before the delay ends, so nothing is ever drawn. */
+.feedback {
+  display: contents;
+}
+
+.veil {
+  background: rgb(255 255 255 / 36%);
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  /* Under the header (z-index 100, 1400 with the phone menu open); above page content. */
+  z-index: 99;
+}
+
+.bar {
+  /* White track hides the guide reading-progress line (z-index 1200) while a page loads. */
+  background: #fff;
+  block-size: 2px;
+  inset: 0 0 auto;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 1500;
+}
+
+.fill {
+  background: #a84731;
+  block-size: 100%;
+  display: block;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.feedback[data-state="pending"] .veil {
+  opacity: 1;
+  transition: opacity 240ms cubic-bezier(0.22, 1, 0.36, 1) 160ms;
+}
+
+.feedback[data-state="pending"] .bar {
+  opacity: 1;
+  transition: opacity 120ms linear 160ms;
+}
+
+.feedback[data-state="pending"] .fill {
+  transform: scaleX(0.9);
+  transition: transform 12s cubic-bezier(0.08, 0.82, 0.17, 1) 160ms;
+}
+
+.feedback[data-state="done"] .veil {
+  opacity: 0;
+  transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.feedback[data-state="done"] .bar {
+  opacity: 0;
+  transition: opacity 200ms linear 140ms;
+}
+
+.feedback[data-state="done"] .fill {
+  transform: scaleX(1);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No travel: a still, full-width line appears after the same delay. */
+  .feedback[data-state="pending"] .fill,
+  .feedback[data-state="done"] .fill {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .veil {
+    display: none;
+  }
+
+  .fill {
+    background: Highlight;
+    forced-color-adjust: none;
+  }
+}
+
+@media print {
+  .feedback {
+    display: none;
+  }
+}

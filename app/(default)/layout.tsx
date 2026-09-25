@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AnalyticsConsent } from "../../components/AnalyticsConsent";
 import { TourContactPanel } from "../../components/TourContactPanel";
 import { ContactCardHost } from "../../components/ContactCardHost";
+import { NavigationFeedback } from "../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
 import { homegroundInternalRouteBootstrap } from "../../lib/homegroundRouteSession";
@@ -48,6 +49,7 @@ export default function RootLayout({
       <body>
         <SiteAnalytics locale="en" />
         {children}
+        <NavigationFeedback locale="en" />
         <AnalyticsConsent locale="en" />
         <TourContactPanel locale="en" />
         <ContactCardHost locale="en" />
