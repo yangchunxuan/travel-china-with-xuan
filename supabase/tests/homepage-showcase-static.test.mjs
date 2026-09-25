@@ -124,13 +124,14 @@ test("the homepage separates tour conversion, destination discovery and three pa
     );
     assert.notEqual(copy.heroPrimary, copy.heroDestinationAction);
     assert.ok(copy.heroDestinationPrompt.length > 4);
-    assert.ok(copy.guidePaths.prompt.length > 4);
+    // The owner removed the prompt line and each path's small text (2026-09-25).
+    assert.equal("prompt" in copy.guidePaths, false);
     assert.equal(
       privateTourHubPaths[locale],
       locale === "en" ? "/tours/" : `/${locale}/tours/`,
     );
     for (const item of copy.guidePaths.items) {
-      assert.ok(item.body.length > 8);
+      assert.equal("body" in item, false);
       assert.equal(
         getHomepageGuidePath(locale, item.id),
         locale === "en"
@@ -155,7 +156,6 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     footerStyles,
     searchStyles,
     productStyles,
-    guideRailStyles,
     productShowcase,
   ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
@@ -164,14 +164,14 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     source("components/HomepageFooter.module.css"),
     source("components/HomepageGuideSearch.module.css"),
     source("components/HomepageProductShowcase.module.css"),
-    source("components/HomepageGuideRail.module.css"),
     source("components/HomepageProductShowcase.tsx"),
   ]);
 
+  // The guide chapters replaced the separate guide rail (2026-09-25).
+  assert.doesNotMatch(page, /<HomepageGuideRail/);
   const orderedMarkers = [
     "<HomepageProductShowcase",
     "<HomepageGuideSearch",
-    "<HomepageGuideRail",
     "<PlanningScopeSection",
     'id="homepage-human-planning-title"',
     'id="faq"',
@@ -204,10 +204,9 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(footerStyles, /\.navGrid h2:focus-visible,[\s\S]{0,180}outline:/);
   assert.doesNotMatch(footerStyles, /\.navGrid h2\s*\{[^}]*outline:\s*none/);
   assert.doesNotMatch(footerStyles, /(?:linear|radial)-gradient|border-radius/);
-  assert.match(
-    searchStyles,
-    /\.finder \{[\s\S]{0,260}background: var\(--hg-color-soft\)/,
-  );
+  // The guide chapters sit on the white page; the old soft search card is gone (2026-09-25).
+  assert.doesNotMatch(searchStyles, /\.finder \{[^}]*(?:background|border-radius):/);
+  assert.match(showcaseStyles, /\.searchSection \{[\s\S]{0,40}background: #fff/);
   assert.match(productStyles, /\.section \{[\s\S]{0,120}background: #fff/);
   const productMuted = productStyles.match(
     /--homepage-product-muted:\s*(#[0-9a-f]{6})/i,
@@ -227,14 +226,14 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(productShowcase, /\{copy\.hubActionLabel\}/);
   assert.doesNotMatch(productShowcase, /availabilityNote/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
-  assert.match(productStyles, /\.productGrid \{[\s\S]{0,180}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  // Wide screens list the routes as one numbered index beside a large photo.
+  assert.match(productStyles, /@media \(min-width: 64rem\) \{[\s\S]*?\.productGrid \{\s*gap: 0;\s*grid-template-columns: minmax\(0, 1fr\);/);
+  // The owner asked for a clearer way on to every route (2026-09-25): the
+  // hub link is now the site's ink pill (14px / 500 / 44px), as on the hero,
+  // right under the routes. Still no rule above it.
   assert.match(
     productStyles,
-    /\.showcaseFooter \{[\s\S]{0,100}align-items: flex-start/,
-  );
-  assert.match(
-    productStyles,
-    /\.showcaseFooter \{[\s\S]{0,180}justify-content: flex-end/,
+    /\.showcaseFooter \{[\s\S]{0,100}justify-content: flex-start/,
   );
   assert.doesNotMatch(
     productStyles,
@@ -243,22 +242,24 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(productStyles, /\.availabilityNote/);
   assert.match(
     productStyles,
-    /\.hubLink \{[\s\S]{0,240}font-size: 0\.875rem;[\s\S]{0,80}font-weight: 500/,
+    /\.hubLink \{[\s\S]{0,120}background: var\(--showcase-ink\);[\s\S]{0,240}font-size: 0\.875rem;[\s\S]{0,80}font-weight: 500;[\s\S]{0,120}min-block-size: 2\.75rem;/,
   );
   assert.match(
     productStyles,
-    /\.hubLink:hover \{[\s\S]{0,100}text-decoration: underline/,
+    /\.hubLink:hover \{\s*background: #242424;/,
   );
   assert.match(
     productStyles,
     /\.hubLink:focus-visible \{[\s\S]{0,100}outline: 3px solid/,
   );
+  assert.match(productShowcase, /\{copy\.hubActionLabel\}\s*<ArrowRight aria-hidden="true" size=\{16\} \/>/);
   assert.doesNotMatch(productStyles, /\.featured\s*\{|\.guideGrid\s*\{/);
   assert.match(
-    guideRailStyles,
-    /:global\(\[data-homeground-locale="ko"\]\) \.card h3 \{[\s\S]*?line-height: 1\.3;[\s\S]*?word-break: keep-all;/,
-    "Korean homepage-card headings need collision-safe leading",
+    searchStyles,
+    /:global\(\[data-homeground-locale="ko"\]\) \.chapterTitle a \{[\s\S]*?word-break: keep-all;/,
+    "Korean chapter titles break between words",
   );
+  assert.match(searchStyles, /:global\(\[data-homeground-locale="ko"\]\) \.questions a \{\s*word-break: keep-all;/);
   assert.doesNotMatch(page, /<TenCityMapFeature/);
   assert.equal(page.match(/<RouteFinder\b/g)?.length, 1);
   assert.equal(page.match(/<PlannerHandoff\b/g)?.length, 1);
@@ -336,7 +337,6 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     productShowcaseStyles,
     catalog,
     publishedCatalog,
-    rail,
     defaultRoute,
     localizedRoute,
     labRoute,
@@ -348,7 +348,6 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     source("components/HomepageProductShowcase.module.css"),
     source("lib/homepagePrivateTourCatalog.ts"),
     source("lib/publishedPrivateTourCatalog.ts"),
-    source("components/HomepageGuideRail.tsx"),
     source("app/(default)/page.tsx"),
     source("app/(localized)/[locale]/page.tsx"),
     source("app/(lab)/planning-scope-lab/full/[locale]/page.lab.tsx"),
@@ -422,7 +421,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(publishedCatalog, /description: localized\.lede/);
   assert.doesNotMatch(page, /homepageProductShowcaseGuideIds|productShowcaseGuides|featuredTour/);
   assert.match(page, /products=\{privateTourItems\}/);
-  assert.match(page, /excludedItemIds=\{productShowcaseExcludedItemIds\}/);
+  // The guide chapters list guides only, so no tour appears twice.
+  assert.doesNotMatch(page, /excludedItemIds|productShowcaseExcludedItemIds/);
   assert.match(page, /homepage_product_card_clicked/);
   assert.match(productShowcase, /products\.map\(\(product, index\)/);
   assert.doesNotMatch(productShowcase, /copy\.titleNoWrap|styles\.keepTogether/);
@@ -431,9 +431,11 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(productShowcase, /\{product\.appeal\}/);
   assert.match(productShowcase, /\{product\.startingPrice\.formatted\}/);
   assert.match(productShowcase, /copy\.groupBasis\(product\.startingPrice\.travelers\)/);
-  assert.match(productShowcase, /className=\{styles\.trustList\}/);
-  assert.match(productShowcase, /className=\{styles\.enquiryStrip\}/);
-  assert.match(productShowcase, /href=\{plannerHref\}/);
+  // The owner removed the three promises and the enquiry strip under the
+  // routes (2026-09-25); the planner stays reachable from the header and the
+  // contact section.
+  assert.doesNotMatch(productShowcase, /styles\.trustList|styles\.enquiryStrip|plannerHref/);
+  assert.doesNotMatch(page, /homepage-product-enquiry/);
   assert.match(productShowcase, /loading="lazy"/);
   assert.match(productShowcase, /sizes=\{homepageProductImageSizes\}/);
   assert.match(productShowcase, /privateTourCardImageSrcSet\(product\.id\)/);
@@ -443,8 +445,9 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     assert.match(route, /getHomepagePrivateTourItems/);
     assert.match(route, /privateTourItems=\{getHomepagePrivateTourItems\(/);
   }
-  assert.match(rail, /excludedItemIds\?: readonly string\[\]/);
-  assert.match(rail, /!excludedItemIdSet\.has\(item\.id\)/);
+  for (const route of [defaultRoute, localizedRoute, labRoute]) {
+    assert.match(route, /guideChapters=\{getHomepageGuideChapters\(/);
+  }
 
   const faqTrustCopy = {
     en: {
@@ -485,11 +488,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
       copy.title,
       locale === "en" ? /ancient capitals/i : locale === "zh" ? /古都/ : /옛 수도/,
     );
-    assert.equal(copy.trustItems.length, 3);
-    assert.ok(copy.trustItems.every((item) => item.title.length > 3));
-    assert.ok(copy.trustItems.every((item) => item.body.length > 5));
-    assert.ok(copy.enquiryTitle.length > 8);
-    assert.ok(copy.enquiryAction.length > 4);
+    assert.ok(copy.actionLabel.length > 3);
+    assert.equal("trustItems" in copy || "enquiryTitle" in copy, false);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].privateBasis);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].sharedTransit);
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].lowerCost);
@@ -705,27 +705,39 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   );
 });
 
-test("homepage guide paths are parallel, compact and remain ordinary discoverable links", async () => {
-  const [page, finder, finderStyles, pageStyles, showcaseStyles] = await Promise.all([
+test("homepage guide chapters are parallel, numbered and remain ordinary discoverable links", async () => {
+  const [page, finder, finderStyles, pageStyles, showcaseStyles, editorial] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("components/HomepageGuideSearch.tsx"),
     source("components/HomepageGuideSearch.module.css"),
     source("components/HomegroundHomePage.module.css"),
     source("components/HomepageShowcase.module.css"),
+    source("lib/homepageEditorial.ts"),
   ]);
   assert.match(page, /guidePaths=\{showcase\.guidePaths\}/);
+  assert.match(page, /chapters=\{guideChapters\}/);
+  // The owner chose a trip in three numbered chapters (2026-09-25): each opens
+  // its topic page and lists that topic's first guides as plain links.
   assert.match(
     finder,
-    /<nav className=\{styles\.guidePaths\} aria-label=\{guidePaths\.listLabel\}>[\s\S]*?<ul>[\s\S]*?<li key=\{item\.id\}>[\s\S]*?<Link href=\{getHomepageGuidePath\(locale, item\.id\)\}>/,
+    /<nav className=\{styles\.chapters\} aria-label=\{guidePaths\.listLabel\}>\s*<ol>[\s\S]*?<li className=\{styles\.chapter\} key=\{chapter\.id\}>/,
   );
-  assert.doesNotMatch(finder, /<ol|decisionNumber|String\(index \+ 1\)/);
-  assert.match(finderStyles, /\.guidePaths ul \{[\s\S]{0,140}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
-  assert.match(finderStyles, /@media \(max-width: 42rem\)[\s\S]{0,140}\.guidePaths ul \{[\s\S]{0,80}grid-template-columns: minmax\(0, 1fr\)/);
-  assert.match(finderStyles, /\.guidePaths a \{[\s\S]{0,220}min-block-size: 5\.5rem/);
-  assert.doesNotMatch(finderStyles, /\.guidePaths[^}]*overflow:\s*hidden/);
+  assert.match(finder, /const topicHref = getHomepageGuidePath\(locale, chapter\.id\);/);
+  assert.match(finder, /<Link href=\{topicHref\}>\s*\{path\.title\}/);
+  assert.match(finder, /<Link href=\{guide\.href\} onClick=\{\(\) => onGuideClick\?\.\(guide\)\}>\s*<span>\{guide\.title\}<\/span>/);
+  assert.match(finder, /String\(index \+ 1\)\.padStart\(2, "0"\)/);
+  // The photo repeats the chapter link, so it is hidden from assistive tech and the tab order.
+  assert.match(finder, /<Link\s+aria-hidden="true"\s+className=\{styles\.chapterPhoto\}\s+href=\{topicHref\}\s+tabIndex=\{-1\}/);
+  assert.match(finder, /alt=""/);
+  assert.match(editorial, /homepageGuideChapterOrder[^=]*= \[\s*"plan",\s*"transport",\s*"stay",\s*\]/);
+  assert.match(editorial, /guides: inChapter\.slice\(0, 3\)/);
+  // Photos keep their own 16:10; phones swipe the chapters.
+  assert.match(finderStyles, /\.chapterPhoto \{\s*aspect-ratio: 16 \/ 10;/);
+  assert.match(finderStyles, /\.chapters ol \{[\s\S]{0,160}grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(finderStyles, /@media \(max-width: 63\.999rem\)[\s\S]*?\.chapters ol \{[\s\S]{0,260}scroll-snap-type: x mandatory;/);
   assert.doesNotMatch(finderStyles, /\.(?:finder|formArea)\s*\{[^}]*overflow:\s*hidden/);
   assert.doesNotMatch(pageStyles, /\.travelGuides(?:Section)?\s*\{[^}]*overflow:\s*hidden/);
   assert.doesNotMatch(showcaseStyles, /\.searchSection\s*\{[^}]*overflow:\s*hidden/);
-  assert.match(finder, /<strong>\{item\.title\}<\/strong>[\s\S]{0,80}<small>\{item\.body\}<\/small>/);
   assert.doesNotMatch(finder, /<Link[^>]*aria-label=/);
+  assert.doesNotMatch(finder, /\{item\.body\}|guidePaths\.prompt/);
 });

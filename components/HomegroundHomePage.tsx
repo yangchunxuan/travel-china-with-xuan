@@ -5,7 +5,6 @@ import {
   useCallback,
   useEffect,
   useLayoutEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -26,8 +25,7 @@ import { trackEvent } from "../lib/analytics";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import type {
   HomepageDestinationHubItem,
-  HomepageGuideCategory,
-  HomepageGuideRailItem,
+  HomepageGuideChapter,
   HomepageSearchDemo,
 } from "../lib/homepageEditorial";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
@@ -66,7 +64,6 @@ import {
 } from "./RouteFinder";
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
-import { HomepageGuideRail } from "./HomepageGuideRail";
 import { HomepageProductShowcase } from "./HomepageProductShowcase";
 import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import styles from "./HomegroundHomePage.module.css";
@@ -92,7 +89,7 @@ const planningStarterIntentStorageKey =
 
 export function HomegroundHomePage({
   destinationHubItems,
-  guideRailItems,
+  guideChapters,
   locale = "en",
   planningSection = "scope-v2",
   privateTourItems,
@@ -100,7 +97,7 @@ export function HomegroundHomePage({
   teamFaces = [],
 }: {
   destinationHubItems: readonly HomepageDestinationHubItem[];
-  guideRailItems: readonly HomepageGuideRailItem[];
+  guideChapters: readonly HomepageGuideChapter[];
   locale?: HomegroundLocale;
   planningSection?: PlanningSectionVariant;
   privateTourItems: readonly HomepagePrivateTourItem[];
@@ -138,30 +135,12 @@ export function HomegroundHomePage({
     useState<RouteServiceInterest | null>(null);
   const copy = getHomegroundCopy(locale);
   const showcase = getHomepageShowcaseCopy(locale);
-  const productShowcaseExcludedItemIds = useMemo(
-    () => [...privateTourItems.map((item) => item.id), "zhangjiajie-4-day-private-tour"],
-    [privateTourItems],
-  );
   const guidesIndexPath =
     locale === "en" ? "/guides/" : `/${locale}/guides/`;
   const destinationsIndexPath =
     locale === "en" ? "/explore/" : `/${locale}/explore/`;
   const studioPath =
     locale === "en" ? "/studio/" : `/${locale}/studio/`;
-  const guideRailCatalogPath =
-    locale === "en"
-      ? "/guides/homepage-guide-index.json"
-      : `/${locale}/guides/homepage-guide-index.json`;
-  const guideCategoryLabels: Record<HomepageGuideCategory, string> = {
-    tour: copy.guides.categoryLabels.tour,
-    explore: copy.guides.categoryLabels.explore,
-    stay: copy.guides.categoryLabels.stay,
-    transport: copy.guides.categoryLabels.transport,
-    plan: copy.guides.categoryLabels.plan,
-    culture: copy.guides.categoryLabels.culture,
-    essentials: copy.guides.categoryLabels.essentials,
-    "when-to-go": copy.guides.categoryLabels.whenToGo,
-  };
   const plannerTarget =
     plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
@@ -591,15 +570,6 @@ export function HomegroundHomePage({
                 total_nights: item.nights,
               });
             }}
-            plannerHref={plannerTarget}
-            onPlannerClick={(event) => {
-              trackEvent("navigation_clicked", {
-                navigation_item: "homepage-product-enquiry",
-                navigation_surface: "homepage-product-showcase",
-                page_language: locale,
-              });
-              handleHomegroundHashClick(event, plannerTarget);
-            }}
             products={privateTourItems}
           />
         ) : null}
@@ -609,36 +579,23 @@ export function HomegroundHomePage({
         >
           <div className={styles.travelGuides}>
             <HomepageGuideSearch
+              chapters={guideChapters}
               demos={searchDemos}
               guidePaths={showcase.guidePaths}
               locale={locale}
+              onGuideClick={(guide) => {
+                trackEvent("homepage_guide_card_clicked", {
+                  content_category: guide.category,
+                  content_kind: guide.kind,
+                  guide_id: guide.id,
+                  page_language: locale,
+                });
+              }}
+              viewAllHref={guidesIndexPath}
+              viewAllLabel={copy.guides.viewAllLabel}
             />
           </div>
         </div>
-
-        <HomepageGuideRail
-          catalogUrl={guideRailCatalogPath}
-          categoryLabels={guideCategoryLabels}
-          controlLabels={{
-            allCategories: copy.guides.categoryLabels.all,
-            categoryFilter: copy.guides.railLabel,
-          }}
-          eyebrow={copy.guides.eyebrow}
-          excludedItemIds={productShowcaseExcludedItemIds}
-          id="homepage-guide-rail"
-          items={guideRailItems}
-          onItemClick={(item) => {
-            trackEvent("homepage_guide_card_clicked", {
-              content_category: item.category,
-              content_kind: item.kind,
-              guide_id: item.id,
-              page_language: locale,
-            });
-          }}
-          title={copy.guides.title}
-          viewAllHref={guidesIndexPath}
-          viewAllLabel={copy.guides.viewAllLabel}
-        />
 
         {planningSection === "scope-v2" ? (
           <PlanningScopeSection locale={locale} />
@@ -818,6 +775,17 @@ export function HomegroundHomePage({
               {copy.faq.title}
             </h2>
             {copy.faq.intro && <p>{copy.faq.intro}</p>}
+            {/* After the last questions, the way on: the hero's planner button. */}
+            <a
+              className={styles.faqAction}
+              href={plannerTarget}
+              onClick={(event) =>
+                handleHomegroundHashClick(event, plannerTarget)
+              }
+            >
+              {showcase.heroSecondary}
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
           <div className={styles.faqList}>
             {copy.faq.items.slice(0, 7).map((item) => (

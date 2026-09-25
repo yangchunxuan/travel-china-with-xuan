@@ -1,0 +1,28 @@
+.char {
+  display: inline-block;
+}
+
+@keyframes charIn {
+  from {
+    filter: blur(3px);
+    opacity: 0.12;
+    translate: 0 0.45em;
+  }
+
+  to {
+    filter: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .char {
+      animation: charIn linear both;
+      animation-range: entry calc(30% + var(--char, 0) * 5%) cover
+        calc(25% + var(--char, 0) * 1.5%);
+      animation-timeline: view();
+    }
+  }
+}

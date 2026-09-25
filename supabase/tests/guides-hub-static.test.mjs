@@ -39,23 +39,17 @@ test("guides hub is registry-driven and exposes the complete catalog through pag
   );
 });
 
-test("homepage guide rail exposes the tour and complete localized guide catalog", async () => {
+test("homepage guide chapters draw on the complete localized guide catalog", async () => {
   const [
     homepage,
     homepageRoute,
+    localizedRoute,
     editorial,
-    rail,
-    railCss,
-    englishIndex,
-    localizedIndex,
   ] = await Promise.all([
     source("components/HomegroundHomePage.tsx"),
     source("app/(default)/page.tsx"),
+    source("app/(localized)/[locale]/page.tsx"),
     source("lib/homepageEditorial.ts"),
-    source("components/HomepageGuideRail.tsx"),
-    source("components/HomepageGuideRail.module.css"),
-    source("app/(default)/guides/homepage-guide-index.json/route.ts"),
-    source("app/(localized)/[locale]/guides/homepage-guide-index.json/route.ts"),
   ]);
 
   assert.match(editorial, /const allGuides = getAllGuides\(locale\)/);
@@ -65,28 +59,25 @@ test("homepage guide rail exposes the tour and complete localized guide catalog"
   assert.match(editorial, /alt: guide\.cardImageAlt/);
   assert.match(editorial, /width: guide\.cardImageWidth/);
   assert.match(editorial, /height: guide\.cardImageHeight/);
-  assert.match(homepageRoute, /getHomepageGuideRailItems\("en"\)\.slice\(0, 18\)/);
-  assert.match(homepage, /catalogUrl=\{guideRailCatalogPath\}/);
-  assert.match(homepage, /<HomepageGuideRail/);
-  assert.match(englishIndex, /getHomepageGuideRailItems\("en"\)/);
-  assert.match(localizedIndex, /getHomepageGuideRailItems\(locale\)/);
-  assert.match(localizedIndex, /value === "zh" \|\| value === "ko"/);
-  assert.match(rail, /fetch\(catalogUrl/);
-  assert.match(rail, /<ol[\s\S]*?<li[\s\S]*?<Link/);
-  assert.match(rail, /data-category=\{item\.category\}/);
-  assert.match(rail, /data-kind=\{item\.kind\}/);
-  assert.match(railCss, /scroll-snap-type:\s*x mandatory/);
-  assert.doesNotMatch(rail, /arrowButton|scrollList|scrollBy/);
-  assert.match(rail, /className=\{styles\.actions\}/);
-  assert.match(railCss, /flex-basis:\s*calc\(\(100% - var\(--rail-gap\)\) \/ 2\)/);
-  assert.match(railCss, /\) \/ 4\s*\);/);
-  assert.match(railCss, /@media \(prefers-reduced-motion: reduce\)/);
+  // The chapters are chosen on the server from every guide in the page's language.
+  assert.match(editorial, /const guides = getHomepageGuideRailItems\(locale\)\.filter\(/);
+  assert.match(homepageRoute, /guideChapters=\{getHomepageGuideChapters\("en"\)\}/);
+  assert.match(localizedRoute, /guideChapters=\{getHomepageGuideChapters\(locale\)\}/);
+  // The rail and its client-side catalogue were removed with the chapters (2026-09-25).
+  assert.doesNotMatch(homepage, /<HomepageGuideRail|catalogUrl=/);
+  for (const path of [
+    "components/HomepageGuideRail.tsx",
+    "app/(default)/guides/homepage-guide-index.json/route.ts",
+    "app/(localized)/[locale]/guides/homepage-guide-index.json/route.ts",
+  ]) {
+    await assert.rejects(source(path), { code: "ENOENT" }, path);
+  }
 
-  const guidesSectionIndex = homepage.indexOf("<HomepageGuideRail");
+  const guidesSectionIndex = homepage.indexOf("<HomepageGuideSearch");
   const proofSectionIndex = homepage.indexOf("<PlanningScopeSection locale={locale} />");
   assert.ok(
     guidesSectionIndex >= 0 && guidesSectionIndex < proofSectionIndex,
-    "the complete travel-guide rail must appear before the planning-proof section",
+    "the travel-guide chapters must appear before the planning-proof section",
   );
 });
 
