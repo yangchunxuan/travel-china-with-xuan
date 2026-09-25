@@ -100,7 +100,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 55 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 65 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -129,9 +129,13 @@ test("commercial links keep the approved 8 hub, 55 curated guide and 48 product 
       "beijing-courtyard-hotel-or-modern-hotel",
       "beijing-to-badaling-great-wall-transfer",
       "beijing-where-to-stay-first-trip",
+      "beijing-xian-chengdu-route-order",
+      "beijing-zhangjiajie-shanghai-10-days",
+      "beijing-zhangjiajie-shanghai-transport",
       "best-2-week-china-tour",
       "best-zhangjiajie-night-show",
       "border-town-fenghuang-chadong-shen-congwen",
+      "chengdu-chongqing-zhangjiajie-itinerary",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
       "chengdu-zhangjiajie-itinerary",
       "china-10-day-itinerary",
@@ -154,17 +158,22 @@ test("commercial links keep the approved 8 hub, 55 curated guide and 48 product 
       "food-plants-and-animal-products-into-china",
       "forbidden-city-for-foreign-visitors",
       "great-wall-section-selector-from-beijing",
+      "guangzhou-macau-transport-route",
+      "guangzhou-shenzhen-hong-kong-route-order",
       "guilin-airport-or-railway-station-arrival-guide",
       "guilin-yangshuo-transport-route",
       "how-much-does-a-china-trip-cost",
       "how-to-pay-in-china-as-a-tourist",
       "how-to-read-a-suzhou-garden",
+      "kunming-dali-lijiang-shangri-la-route-order",
+      "lijiang-shangri-la-transport-route",
       "lunar-new-year-customs-for-visitors",
       "national-museum-of-china-booking-and-route",
       "sanxingdui-museum-booking-and-gallery-order",
       "shaanxi-history-museum-booking-and-collection-plan",
       "shanghai-hangzhou-transport-route",
       "shanghai-pudong-or-hongqiao-airport",
+      "shanghai-suzhou-hangzhou-nanjing-route-order",
       "shanghai-to-suzhou-day-trip",
       "shanghai-where-to-stay-first-trip",
       "singapore-to-zhangjiajie-itinerary",
@@ -172,6 +181,7 @@ test("commercial links keep the approved 8 hub, 55 curated guide and 48 product 
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
+      "xian-lanzhou-dunhuang-silk-road-route",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "zhangjiajie-arrival-departure-stations",
