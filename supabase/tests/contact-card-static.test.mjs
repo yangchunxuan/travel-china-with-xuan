@@ -4,6 +4,7 @@ import test from "node:test";
 import { encode } from "uqr";
 import {
   contactCardDesktopQuery,
+  contactCardFrameCopy,
   contactCardRequestForLink,
   whatsappDisplayNumber,
   whatsappQrCandidates,
@@ -69,7 +70,8 @@ test("on phones and tablets a planner link opens the card as a sheet: WhatsApp, 
   assert.equal((dialog.match(/<form /g) ?? []).length, 1);
   assert.match(sheetBranch, /\{mail\}/);
   // A sheet from the bottom edge, clear of the home indicator; motion only when welcome.
-  assert.match(sheetStyles, /\.sheet \{[^}]*inset: auto 0 0;[^}]*padding-bottom: env\(safe-area-inset-bottom, 0px\);/);
+  // Its box outranks the card's .dialog whichever of the two stylesheets loaded last.
+  assert.match(sheetStyles, /\n\.sheet\.sheet \{[^}]*inset: auto 0 0;[^}]*padding-bottom: env\(safe-area-inset-bottom, 0px\);/);
   assert.match(sheetStyles, /@media \(prefers-reduced-motion: no-preference\) \{\s*\.sheet\.sheet\[open\] \{\s*animation: sheetIn/);
   // China time stays visible on the phone, under the title.
   assert.match(sheetStyles, /\.sheet \.clock \{\s*display: inline-flex;/);
@@ -167,6 +169,98 @@ test("the contact card mounts on every page next to the tour contact panel", asy
     const layout = await source(path);
     assert.match(layout, /<TourContactPanel locale=\{?[^/]+\/>\s*<ContactCardHost locale=/, path);
   }
+});
+
+function ruleBody(css, selector) {
+  const start = css.indexOf(`\n${selector} {`);
+  assert.ok(start >= 0, selector);
+  return css.slice(css.indexOf("{", start) + 1, css.indexOf("}", start));
+}
+
+function declaration(body, property) {
+  return body.match(new RegExp(`(?:^|;)\\s*${property}:\\s*([^;]+);`))?.[1].trim();
+}
+
+test("the first open answers the press at once: the card's frame, then the card in its place", async () => {
+  const [host, frame, dialog] = await Promise.all([
+    source("components/ContactCardHost.tsx"),
+    source("components/ContactCardFrame.ts"),
+    source("components/ContactCardDialog.tsx"),
+  ]);
+  // The card's code still loads only on demand, never with the page.
+  assert.match(host, /import type \{ ContactCardDialog as ContactCardDialogComponent \} from "\.\/ContactCardDialog";/);
+  assert.match(host, /import\("\.\/ContactCardDialog"\)/);
+  assert.doesNotMatch(host, /^import \{[^}]*\} from "\.\/ContactCardDialog";/m);
+  // No Suspense boundary: React holds a suspended boundary's content back
+  // until 300 ms after its fallback showed, which was the blank first open.
+  assert.doesNotMatch(host, /lazy\(|<Suspense/);
+  // Idle preload as before, and sooner on the way to a link or control the card answers.
+  assert.match(host, /requestIdleCallback\(preloadDialog, \{ timeout: 4000 \}\)/);
+  assert.match(host, /setTimeout\(preloadDialog, 2500\)/);
+  assert.match(host, /\["pointerover", "pointerdown", "touchstart", "focusin"\]/);
+  assert.match(host, /if \(!next \|\| \(!desktop\.matches && next\.trigger !== "planner"\)\) return;/);
+  // With the code there the card opens straight away; otherwise the frame opens
+  // in the press itself, outside React's commit, goes as the card opens in its
+  // place, and a failed load closes it.
+  assert.match(host, /if \(loadedDialog\) \{\s*mountCard\(\);\s*setFrameShownAt\(null\);\s*return;\s*\}/);
+  assert.match(host, /removeFrameRef\.current = openContactCardFrame\(locale, nextLayout, close\);\s*setFrameShownAt\(performance\.now\(\)\);\s*loadDialog\(\)\.then\(\s*mountCard,/);
+  assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(cardMounted && open\) removeFrame\(\);/);
+  assert.match(host, /The code did not arrive[\s\S]*?removeFrame\(\);\s*setOpen\(false\);/);
+  // The frame is the card's outer shape: a modal dialog, its close button, no words of its own.
+  assert.match(frame, /dialog\.showModal\(\);/);
+  assert.match(frame, /close\.setAttribute\("aria-label", copy\.close\);/);
+  assert.match(frame, /addEventListener\("cancel", \(event\) => \{\s*event\.preventDefault\(\);\s*onClose\(\);/);
+  assert.match(frame, /setAttribute\("aria-busy", "true"\)/);
+  assert.match(frame, /return \(\) => dialog\.remove\(\);/);
+  // The card opens before the browser paints and carries on the frame's entrance.
+  assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?dialog\.showModal\(\);[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt\]\);/);
+  assert.match(dialog, /dialog\.style\.setProperty\("--card-enter-delay"/);
+  // The guide's "ask a planner" button warms the card up as its links do.
+  assert.match(await source("components/TourContactPanel.tsx"), /className=\{styles\.launcher\}[^>]*data-contact-card-trigger=""/);
+});
+
+test("the frame is the card's own shape and size, and the card's title and close words have one home", async () => {
+  const [card, sheet, frame, copy] = await Promise.all([
+    source("components/ContactCard.module.css"),
+    source("components/ContactSheet.module.css"),
+    source("components/ContactCardFrame.module.css"),
+    source("lib/contactCardCopy.ts"),
+  ]);
+  const same = (from, fromSelector, toSelector, properties) => {
+    const a = ruleBody(from, fromSelector), b = ruleBody(frame, toSelector);
+    for (const property of properties) {
+      assert.equal(declaration(b, property), declaration(a, property), `${toSelector} ${property}`);
+    }
+  };
+  same(card, ".dialog", ".dialog", ["position", "inset", "width", "max-height", "margin", "border-radius", "box-shadow"]);
+  same(card, ".dialog::backdrop", ".dialog::backdrop", ["background", "backdrop-filter"]);
+  same(card, ".head", ".head", ["gap", "padding"]);
+  same(card, ".close", ".close", ["width", "height", "border-radius"]);
+  same(sheet, ".sheet.sheet", ".sheet", ["inset", "width", "max-width", "max-height", "margin", "padding-bottom", "border-radius", "box-shadow"]);
+  same(sheet, ".grabber", ".grabber", ["width", "height", "margin", "border-radius"]);
+  same(sheet, ".sheet .head", ".sheet .head", ["padding"]);
+  assert.equal(declaration(ruleBody(frame, ".close"), "background"), "#f2f1ef");
+  assert.equal(declaration(ruleBody(frame, ".dialog"), "background"), "#fff");
+  // Its entrance is the card's, and only when motion is welcome; the card continues it (negative delay).
+  assert.match(frame, /@media \(prefers-reduced-motion: no-preference\) \{\s*\.dialog\[open\] \{\s*animation: cardIn 460ms cubic-bezier\(0\.22, 1, 0\.36, 1\) both;/);
+  assert.doesNotMatch(withoutMotionBlocks(frame), /animation:/);
+  assert.match(card, /\.dialog\[open\] \{\s*animation: cardIn 460ms var\(--card-ease\) var\(--card-enter-delay, 0s\) both;/);
+  assert.match(card, /\.dialog\[open\]::backdrop \{\s*animation: fadeIn 260ms ease-out var\(--card-enter-delay, 0s\) both;/);
+  assert.match(sheet, /\.sheet\.sheet\[open\] \{\s*animation: sheetIn 420ms var\(--card-ease\) var\(--card-enter-delay, 0s\) both;/);
+  // Every page carries the frame, so it stays small.
+  assert.ok(frame.length < 4_000, `${frame.length} bytes`);
+  for (const locale of locales) {
+    assert.match(copy, new RegExp(`${locale}: \\{\\s*\\.\\.\\.contactCardFrameCopy\\.${locale},`));
+    assert.ok(contactCardFrameCopy[locale].title && contactCardFrameCopy[locale].close, locale);
+  }
+});
+
+test("the card's QR code is drawn just after the card first paints, in a square that is there from the start", async () => {
+  const qr = await source("components/WhatsAppQr.tsx");
+  assert.match(qr, /useEffect\(\(\) => \{[\s\S]*?requestAnimationFrame\([\s\S]*?setTimeout\(\(\) => setDrawn\(true\)\)/);
+  assert.match(qr, /const code = useMemo\(\(\) => \(drawn \? drawCode\(href\) : null\), \[drawn, href\]\);/);
+  // The same svg element throughout (its reveal keeps running), labelled from the start.
+  assert.match(qr, /<svg\s+viewBox=\{code \? `0 0 \$\{code\.size\} \$\{code\.size\}` : "0 0 1 1"\}\s+role="img"\s+aria-label=\{label\}/);
 });
 
 test("a guide link the card already answered does not also open the guide panel", () => {

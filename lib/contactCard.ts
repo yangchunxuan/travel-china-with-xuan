@@ -30,6 +30,17 @@ export interface ContactCardRequest {
   mailtoHref?: string;
 }
 
+/**
+ * The card's name and close label. Its frame, shown at once while the rest of
+ * the card loads, needs them on every page; the card's other words load with
+ * the card (lib/contactCardCopy.ts).
+ */
+export const contactCardFrameCopy = {
+  en: { title: "Talk to a China trip planner", close: "Close" },
+  zh: { title: "联系中国旅行规划师", close: "关闭" },
+  ko: { title: "중국 여행 플래너와 상담하기", close: "닫기" },
+} as const satisfies Record<HomegroundLocale, { title: string; close: string }>;
+
 let returnFocusTarget: HTMLElement | null = null;
 
 export function consumeContactCardReturnFocus() {

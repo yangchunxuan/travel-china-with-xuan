@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, ArrowUpRight, LoaderCircle, MessagesSquare, X } from "lucide-react";
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
@@ -70,12 +70,15 @@ export function ContactCardDialog({
   layout,
   open,
   onClose,
+  frameShownAt = null,
 }: {
   locale: HomegroundLocale;
   request: ContactCardRequest;
   layout: ContactCardLayout;
   open: boolean;
   onClose: () => void;
+  /** When the card's frame (ContactCardFrame) appeared for this open, if the card is taking its place. */
+  frameShownAt?: number | null;
 }) {
   const copy = contactCardCopy[locale];
   // Phones and tablets: the same card as a sheet from the bottom of the screen.
@@ -116,17 +119,26 @@ export function ContactCardDialog({
   const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
   const messengerHref = sheet ? homegroundMessengerUrl() : "";
 
-  useEffect(() => {
+  // Opened before the browser paints, so a card taking its frame's place
+  // never leaves a painted frame with neither on screen.
+  useLayoutEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     if (!open) {
       if (dialog.open) dialog.close();
       return;
     }
+    // Carry on the frame's entrance (and its backdrop's) instead of starting again.
+    if (frameShownAt === null) dialog.style.removeProperty("--card-enter-delay");
+    else dialog.style.setProperty("--card-enter-delay", `${Math.round(frameShownAt - performance.now())}ms`);
     if (!dialog.open) dialog.showModal();
     // From a mail link, start in the email field; otherwise at the title.
     const emailField = request.trigger === "email" ? emailRef.current : null;
     (emailField && !emailField.disabled ? emailField : titleRef.current)?.focus({ preventScroll: true });
+  }, [open, request, frameShownAt]);
+
+  useEffect(() => {
+    if (!open) return;
     const opened = pageContext(locale);
     setContext(opened);
     markNewsletterPromptHandled();
