@@ -261,6 +261,8 @@
   .navGrid button {
     font-size: 0.8rem;
     min-block-size: 2.25rem;
+    /* Short labels such as FAQ still get the whole column as their target. */
+    inline-size: 100%;
   }
 
   .meta {

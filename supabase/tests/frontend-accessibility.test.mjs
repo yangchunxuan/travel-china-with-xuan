@@ -633,3 +633,74 @@ test("homepage header and footer preserve the reviewed major-target CSS contract
     /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,100}min-block-size:\s*2\.25rem/,
   );
 });
+
+test("small links keep 44px tap targets and tile-shaped links cover their tile", async () => {
+  const [
+    guidesHub,
+    guideSearch,
+    pageFamily,
+    tourCard,
+    footer,
+    editorial,
+    planHub,
+    servicesHub,
+    contactCard,
+    product,
+    homeSearch,
+    studio,
+  ] = await Promise.all([
+    source("components/GuidesHubPage.module.css"),
+    source("components/GuideSearchForm.module.css"),
+    source("components/content/PageFamilyRenderer.module.css"),
+    source("components/content/GuideTourCard.module.css"),
+    source("components/HomepageFooter.module.css"),
+    source("components/content/EditorialGuidePage.module.css"),
+    source("components/SearchPlatformHubPage.module.css"),
+    source("components/TravelServicesHubPage.module.css"),
+    source("components/ContactCard.module.css"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.module.css"),
+    source("components/HomepageGuideSearch.module.css"),
+    source("components/HomegroundStudioPage.module.css"),
+  ]);
+
+  // The hub's search suggestions must paint above the tips cards below the
+  // animated search tile, or a tap opens a different guide.
+  assert.match(guidesHub, /\.searchBand \{[^}]*position:\s*relative;[^}]*z-index:\s*2;/);
+  assert.match(
+    guidesHub,
+    /@media \(max-width: 26\.25rem\)[\s\S]*?form\[role="search"\] > div > button\) \{[^}]*position:\s*relative;[\s\S]*?form\[role="search"\] > div > button\)::after \{[^}]*inset:\s*-0\.1875rem -0\.3125rem -0\.1875rem -0\.1875rem;/,
+  );
+  assert.match(
+    guideSearch,
+    /\.suggestions li > a:focus-visible,\s*\.allResults:focus-visible \{\s*outline-offset:\s*-3px;/,
+  );
+
+  // Tiles that react to hover are links edge to edge.
+  assert.match(pageFamily, /\.internalLinks li \{[^}]*position:\s*relative;/);
+  assert.match(pageFamily, /\.internalLinks a::before \{[^}]*content:\s*"";[^}]*inset:\s*0;[^}]*position:\s*absolute;/);
+  assert.match(pageFamily, /\.internalLinks a::after \{\s*content:\s*" →";/);
+  assert.match(tourCard, /\.card\.grok \{[^}]*isolation:\s*isolate;[^}]*position:\s*relative;/);
+  assert.match(tourCard, /\.grok \.action::after \{[^}]*content:\s*"";[^}]*inset:\s*0;[^}]*position:\s*absolute;[^}]*z-index:\s*1;/);
+
+  // Invisible extenders take text-sized links to 44px without moving layout.
+  assert.match(pageFamily, /\.sources summary::before \{[^}]*inset:\s*-0\.375rem 0;[^}]*position:\s*absolute;/);
+  for (const styles of [editorial, planHub, servicesHub]) {
+    assert.match(styles, /\.breadcrumb a \{[^}]*position:\s*relative;/);
+    // Reaches further down than up, so a wrapped second row never covers the
+    // text of the row above it.
+    assert.match(styles, /\.breadcrumb a::after \{[^}]*inset:\s*-0\.5rem -0\.25rem -1(?:\.125)?rem;[^}]*position:\s*absolute;/);
+  }
+  assert.match(contactCard, /\.copy \{[^}]*min-height:\s*36px;[^}]*position:\s*relative;/);
+  assert.match(contactCard, /\.copy::after \{[^}]*inset:\s*-0\.3125rem -0\.125rem;[^}]*position:\s*absolute;/);
+  assert.match(product, /\.priceJump::after,\s*\.heroDecisionBar \.articleJump::after \{[^}]*inset:\s*-3px 0;/);
+  assert.match(product, /\.sixPersonInquiry::after \{[^}]*inset:\s*-0\.75rem 0;/);
+  assert.match(product, /\.planningLinks a::after \{[^}]*inset:\s*-7px 0;/);
+  assert.match(product, /\.sources a::after \{[^}]*inset:\s*-9px 0;/);
+  assert.match(homeSearch, /\.chapterTitle a::after \{[^}]*inset:\s*-9px -4px;/);
+  assert.match(studio, /\.threadNode \{[^}]*position:\s*absolute;/);
+  assert.match(studio, /\.threadNode::before \{[^}]*inset:\s*-2px;[^}]*position:\s*absolute;/);
+  assert.match(
+    footer,
+    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[^}]*min-block-size:\s*2\.25rem;[^}]*inline-size:\s*100%;/,
+  );
+});

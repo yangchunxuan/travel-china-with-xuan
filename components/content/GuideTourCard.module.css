@@ -93,8 +93,10 @@
   border: 0;
   border-radius: 1rem;
   grid-template-columns: clamp(5rem, 18vw, 7.5rem) minmax(0, 1fr);
+  isolation: isolate;
   max-inline-size: 44rem;
   padding: 4px clamp(0.875rem, 2.5vw, 1.25rem) 4px 4px;
+  position: relative;
 }
 
 .grok .media {
@@ -120,6 +122,16 @@
   font-weight: 500;
   padding: 0.625rem 1.25rem;
   transition: background-color 150ms ease;
+}
+
+/* The photo zooms wherever the tile is hovered, so the whole tile is the
+   link: the pill's ::after stretches over the card, above the photo. */
+.grok .action::after {
+  border-radius: 1rem;
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
 }
 
 .grok .action svg {

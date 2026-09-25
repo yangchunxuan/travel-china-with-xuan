@@ -321,6 +321,14 @@
   width: 2.5rem;
 }
 
+/* The button is 40px; an invisible ring takes the tap target to 44px. */
+.threadNode::before {
+  border-radius: 999px;
+  content: "";
+  inset: -2px;
+  position: absolute;
+}
+
 .threadDot {
   background: var(--studio-faint);
   border-radius: 999px;

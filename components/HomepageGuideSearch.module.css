@@ -154,7 +154,15 @@
   gap: 0.45rem;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  position: relative;
   text-decoration: none;
+}
+
+/* The title is one line tall; this takes the tap target to 44px. */
+.chapterTitle a::after {
+  content: "";
+  inset: -9px -4px;
+  position: absolute;
 }
 
 .chapterTitle svg {

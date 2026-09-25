@@ -335,6 +335,7 @@
   background: var(--body-tile);
   border-radius: 0.75rem;
   padding: 1.1rem 1.2rem;
+  position: relative;
   transition: background-color 200ms ease;
 }
 
@@ -347,6 +348,15 @@
   font-size: 0.9375rem;
   font-weight: 500;
   text-decoration: none;
+}
+
+/* The whole tile reacts to hover, so the whole tile is the link: the
+   anchor's ::before (::after is the arrow) stretches over it. */
+.internalLinks a::before {
+  border-radius: 0.75rem;
+  content: "";
+  inset: 0;
+  position: absolute;
 }
 
 .internalLinks a::after {
@@ -492,7 +502,15 @@
   gap: 0.5rem;
   letter-spacing: 0;
   list-style: none;
+  position: relative;
   text-transform: none;
+}
+
+/* Takes the 32px toggle to a 44px tap target (::after is the + circle). */
+.sources summary::before {
+  content: "";
+  inset: -0.375rem 0;
+  position: absolute;
 }
 
 .sources summary::-webkit-details-marker {

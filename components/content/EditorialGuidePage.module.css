@@ -16,7 +16,12 @@
   --hg-editorial: var(--hg-font-editorial);
 }
 
-.pageRoot:lang(ko) {
+/*
+ * LocaleRoot's .root sets Korean to overflow-wrap: anywhere at the same
+ * specificity; guides keep break-word so tables and long words wrap as on the
+ * live site, whichever stylesheet the bundler loads last.
+ */
+.pageRoot.pageRoot:lang(ko) {
   overflow-wrap: break-word;
   word-break: keep-all;
 }
@@ -77,7 +82,17 @@
 
 .breadcrumb a {
   color: inherit;
+  position: relative;
   text-underline-offset: 0.2em;
+}
+
+/* The links are one text line tall; this takes each tap target to 44px.
+   It reaches further down than up, so when the trail wraps, the next row
+   (painted later) covers only the gap and never the row above's text. */
+.breadcrumb a::after {
+  content: "";
+  inset: -0.5rem -0.25rem -1rem;
+  position: absolute;
 }
 
 .eyebrow {

@@ -419,7 +419,16 @@
   font: inherit;
   font-size: 0.875rem;
   font-weight: 500;
+  position: relative;
   transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+/* The pill stays 36px; an invisible ring takes the tap target to 44px. */
+.copy::after {
+  border-radius: 999px;
+  content: "";
+  inset: -0.3125rem -0.125rem;
+  position: absolute;
 }
 
 .copy:hover {

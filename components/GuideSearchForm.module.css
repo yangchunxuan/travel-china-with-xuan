@@ -411,6 +411,12 @@
   background: var(--guides-soft, var(--hg-color-soft));
 }
 
+/* The list scrolls, so an outside focus ring would be clipped; draw it inside. */
+.suggestions li > a:focus-visible,
+.allResults:focus-visible {
+  outline-offset: -3px;
+}
+
 .allResults {
   align-items: center;
   background: var(--guides-soft, var(--hg-color-soft));
