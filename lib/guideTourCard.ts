@@ -25,9 +25,9 @@ type CuratedCardCopy = { readonly label: string; readonly note: string; readonly
 /** Make the difference visible when a published tour extends a planning example. */
 const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedCardCopy>>> = {
   "china-7-day-itinerary": {
-    en: { label: "A longer published route", note: "This 8-day tour adds Xi'an. For the Beijing–Shanghai week above, ask us for a two-city quote.", action: "View the 8-day tour" },
-    zh: { label: "一条更长的现有路线", note: "这条 8 天产品增加了西安。若想按上面的北京—上海两城走，可请我们另行报价。", action: "查看 8 天行程" },
-    ko: { label: "도시를 추가한 공개 일정", note: "이 8일 상품에는 시안이 추가됩니다. 위의 베이징·상하이 2도시 일정은 별도로 견적을 요청해 주세요.", action: "8일 일정 보기" },
+    en: { label: "A different published route", note: "This 8-day tour has Beijing 3 nights, Xi'an 2 and Shanghai 2—one less Shanghai night than above. Ask us to quote the two-city week separately.", action: "View the 8-day tour" },
+    zh: { label: "另一条已发布路线", note: "这条 8 天产品住北京 3 晚、西安 2 晚、上海 2 晚，比上面的上海安排少 1 晚。只走两城可另行报价。", action: "查看 8 天行程" },
+    ko: { label: "구성이 다른 공개 일정", note: "이 8일 상품은 베이징 3박·시안 2박·상하이 2박으로, 위 일정의 상하이 숙박보다 1박 짧습니다. 두 도시만 여행하려면 별도로 견적을 요청해 주세요.", action: "8일 일정 보기" },
   },
   "china-10-day-itinerary": {
     en: { label: "The same three cities in a published route", note: "This tour is 8 days. The 10-day outline above is a planning example; ask us to add time and quote it separately.", action: "View the 8-day tour" },
@@ -70,19 +70,19 @@ const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedC
     ko: { label: "광저우 인근의 공개 일정", note: "이 5일 상품에는 마카오가 없습니다. 광저우·마카오 여행은 별도로 견적을 요청해 주세요.", action: "5일 일정 보기" },
   },
   "kunming-dali-lijiang-shangri-la-route-order": {
-    en: { label: "A published Yunnan route", note: "This 8-day tour ends in Lijiang; Shangri-La needs a separate extension and quote.", action: "View the 8-day tour" },
-    zh: { label: "已发布的云南路线", note: "这条 8 天产品到丽江为止；继续去香格里拉须另排并报价。", action: "查看 8 天行程" },
-    ko: { label: "공개된 윈난 일정", note: "이 8일 상품은 리장에서 끝납니다. 샹그릴라 연장은 별도로 설계하고 견적을 드립니다.", action: "8일 일정 보기" },
+    en: { label: "A published Yunnan route", note: "This 8-day tour visits Lijiang, then returns to Kunming for departure. Shangri-La needs a separate extension and quote.", action: "View the 8-day tour" },
+    zh: { label: "已发布的云南路线", note: "这条 8 天产品游览丽江后返回昆明离开；增加香格里拉须另排并报价。", action: "查看 8 天行程" },
+    ko: { label: "공개된 윈난 일정", note: "이 8일 상품은 리장 방문 뒤 쿤밍으로 돌아가 출발합니다. 샹그릴라 연장은 별도로 견적을 요청해 주세요.", action: "8일 일정 보기" },
   },
   "lijiang-shangri-la-transport-route": {
-    en: { label: "A published route ending in Lijiang", note: "Shangri-La is not included in this 8-day tour. Ask us to quote that extension separately.", action: "View the 8-day tour" },
-    zh: { label: "到丽江的现有路线", note: "这条 8 天产品不含香格里拉。若要继续往北走，可请我们另行报价。", action: "查看 8 天行程" },
-    ko: { label: "리장에서 끝나는 공개 일정", note: "이 8일 상품에는 샹그릴라가 없습니다. 북쪽 연장은 별도로 견적을 요청해 주세요.", action: "8일 일정 보기" },
+    en: { label: "A published route through Lijiang", note: "This 8-day tour returns to Kunming after Lijiang and does not include Shangri-La. Ask us to quote that extension separately.", action: "View the 8-day tour" },
+    zh: { label: "经过丽江的现有路线", note: "这条 8 天产品游览丽江后返回昆明，不含香格里拉。继续往北走可请我们另行报价。", action: "查看 8 天行程" },
+    ko: { label: "리장을 방문하는 공개 일정", note: "이 8일 상품은 리장 뒤에 쿤밍으로 돌아가며 샹그릴라는 포함하지 않습니다. 연장 일정은 별도로 견적을 요청해 주세요.", action: "8일 일정 보기" },
   },
   "shanghai-suzhou-hangzhou-nanjing-route-order": {
     en: { label: "A published three-city Jiangnan route", note: "This 6-day tour covers Shanghai, Suzhou and Hangzhou; Nanjing needs extra time and a separate quote.", action: "View the 6-day tour" },
     zh: { label: "已发布的江南三城路线", note: "这条 6 天产品走上海、苏州和杭州；增加南京需另排时间并报价。", action: "查看 6 天行程" },
-    ko: { label: "공개된 장난 3도시 일정", note: "이 6일 상품은 상하이·쑤저우·항저우를 방문합니다. 난징을 더하려면 별도로 견적을 요청해 주세요.", action: "6일 일정 보기" },
+    ko: { label: "공개된 강남 3도시 일정", note: "이 6일 상품은 상하이·쑤저우·항저우를 방문합니다. 난징을 더하려면 별도로 견적을 요청해 주세요.", action: "6일 일정 보기" },
   },
   "xian-lanzhou-dunhuang-silk-road-route": {
     en: { label: "A longer published Silk Road route", note: "This 15-day tour visits Xi'an and Dunhuang but does not stop in Lanzhou. Ask us to quote the shorter route above.", action: "View the 15-day tour" },
