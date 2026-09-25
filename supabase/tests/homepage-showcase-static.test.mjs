@@ -451,22 +451,22 @@ test("the homepage shows six stable private tours while the hub keeps the comple
 
   const faqTrustCopy = {
     en: {
-      privateBasis: /published tour and price is for you and your companions/,
+      privateBasis: /Most published routes are private/,
       sharedTransit: /public trains, cruises or transport within attractions/,
-      lowerCost: /lower-cost alternative, we will explain what could change and quote any suitable option separately/,
-      consent: /not add a shared arrangement without your agreement/,
+      lowerCost: /routes explicitly labelled ‘small group’ have fixed dates/,
+      consent: /never move you into a shared group without your agreement/,
     },
     zh: {
-      privateBasis: /页面上的行程和价格按你和同行者单独安排/,
+      privateBasis: /大多数路线是私家团/,
       sharedTransit: /高铁、游船或景区交通/,
-      lowerCost: /进一步控制预算，我们会先说明哪些安排可以调整；如有合适方案，再单独报价/,
-      consent: /未经你同意不会增加共享安排/,
+      lowerCost: /明确标为“小团”的路线有固定出发日期/,
+      consent: /未经你同意不会把私家团改成拼团/,
     },
     ko: {
-      privateBasis: /공개된 일정과 요금은 예약한 일행만을 위한 프라이빗 투어 기준/,
+      privateBasis: /대부분은 가이드와 차량을 동행 일행만 이용하는 프라이빗 투어/,
       sharedTransit: /열차, 유람선 또는 관광지 내부 교통/,
-      lowerCost: /비용을 낮출 수 있는 대안을 원하시면 변경 가능한 부분을 먼저 설명하고, 적합한 대안이 있을 때 별도로 견적/,
-      consent: /동의 없이 공동 이용 방식을 추가하지 않으며/,
+      lowerCost: /‘소규모 그룹’으로 표시된 일정은 정해진 날짜에/,
+      consent: /동의 없이 공동 그룹으로 바꾸지 않습니다/,
     },
   };
 
@@ -496,7 +496,7 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     assert.match(homeCopy.faq.items[0].answer, faqTrustCopy[locale].consent);
     assert.doesNotMatch(
       homeCopy.faq.items[0].answer,
-      /small-group tours|shared transfers|小团|拼车|소그룹|합승/i,
+      /every published tour.*private|所有路线都是私家团|모든 일정은 프라이빗/u,
     );
     assert.equal(homeCopy.faq.items.length, 7);
     const priorityQuestions = homeCopy.faq.items

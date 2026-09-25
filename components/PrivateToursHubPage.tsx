@@ -167,7 +167,7 @@ function CompactTourComparison({
               <span className={styles.priceLabel}>{copy.startingPriceLabel}</span>
               <strong>{product.startingPrice.formatted}</strong>
               <span>
-                <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={copy.groupBasis(product.startingPrice.travelers)} />
+                <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={product.tourFormat === "small-group" ? copy.twinShareBasis : copy.groupBasis(product.startingPrice.travelers)} />
               </span>
               {product.startingPrice.serviceLabel && (
                 <span className={styles.priceService}>
