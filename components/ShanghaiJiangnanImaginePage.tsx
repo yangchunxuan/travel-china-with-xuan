@@ -399,6 +399,12 @@ function schemaLanguage(locale: PrivateTourLocale) {
   return locale === "zh" ? "zh-Hans" : locale;
 }
 
+const compactChineseRouteTitleSlugs = new Set([
+  "beijing-xian-shanghai-8-day-private-tour",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
+]);
+
 function displayTourTitle(
   title: string,
   locale: PrivateTourLocale,
@@ -417,6 +423,25 @@ function displayTourTitle(
         <span className={styles.titleUnit}>私家团</span>
       </>
     );
+  }
+  if (locale === "zh" && compactChineseRouteTitleSlugs.has(slug)) {
+    const match = title.match(/^(.+) (\d+ 天 \d+ 晚)(私家团)$/u);
+    if (match) {
+      const cities = match[1].split("·");
+      const firstLine = cities.length > 3
+        ? `${cities.slice(0, 2).join("·")}·`
+        : cities.join("·");
+      const secondLine = cities.length > 3
+        ? cities.slice(2).join("·")
+        : "";
+      return (
+        <>
+          <span className={styles.compactTitleLine}>{firstLine}</span>
+          {secondLine && <span className={styles.compactTitleLine}>{secondLine}</span>}{" "}
+          <span className={styles.compactTitleLine}>{match[2]}{match[3]}</span>
+        </>
+      );
+    }
   }
   return title.replace(/(\d+)-Day/g, "$1‑Day");
 }
@@ -633,7 +658,12 @@ export function ShanghaiJiangnanImaginePage({
                 </ol>
               </nav>
               <p className={styles.heroMeta}>{copy.heroMeta}</p>
-              <h1 id="product-title">
+              <h1
+                id="product-title"
+                className={locale === "zh" && compactChineseRouteTitleSlugs.has(product.slug)
+                  ? styles.compactRouteTitle
+                  : undefined}
+              >
                 {displayTourTitle(localized.title, locale, product.slug)}
               </h1>
               <p className={styles.heroPromise}>{copy.heroPromise}</p>
