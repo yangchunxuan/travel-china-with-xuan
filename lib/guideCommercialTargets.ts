@@ -135,12 +135,42 @@ export const guideTargets = {
   ],
   "china-7-day-itinerary": [productTarget("beijing-xian-shanghai-8-day-private-tour")],
   "china-10-day-itinerary": [
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
     productTarget("beijing-xian-guilin-shanghai-10-day-private-tour"),
-    productTarget("beijing-xian-guilin-hong-kong-10-day-private-tour"),
   ],
   "china-14-day-itinerary": [
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
     productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  "beijing-zhangjiajie-shanghai-10-days": [
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  "beijing-zhangjiajie-shanghai-transport": [
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  "beijing-xian-chengdu-route-order": [
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
+  "chengdu-chongqing-zhangjiajie-itinerary": [
+    productTarget("chengdu-chongqing-8-day-private-tour"),
+  ],
+  "guangzhou-shenzhen-hong-kong-route-order": [
+    productTarget("guangzhou-shunde-foshan-5-day-private-tour"),
+  ],
+  "guangzhou-macau-transport-route": [
+    productTarget("guangzhou-shunde-foshan-5-day-private-tour"),
+  ],
+  "kunming-dali-lijiang-shangri-la-route-order": [
+    productTarget("kunming-dali-lijiang-8-day-private-tour"),
+  ],
+  "lijiang-shangri-la-transport-route": [
+    productTarget("kunming-dali-lijiang-8-day-private-tour"),
+  ],
+  "shanghai-suzhou-hangzhou-nanjing-route-order": [
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+  ],
+  "xian-lanzhou-dunhuang-silk-road-route": [
+    productTarget("beijing-xian-silk-road-15-day-private-tour"),
   ],
   // Entry-rule guides: US passports rely on 240-hour transit, which the
   // Hong Kong-exit route is built for; 30-day visa-free markets fit two weeks.

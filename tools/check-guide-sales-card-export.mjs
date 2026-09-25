@@ -61,6 +61,63 @@ const explicitPlans = {
   },
 };
 
+// These guides compare named routes. A partly related tour is useful only when
+// the rendered card makes the difference clear before the reader clicks.
+const reviewedRouteCards = {
+  "china-7-day-itinerary": {
+    ctaId: "beijing-xian-shanghai-8-day-private-tour",
+    difference: { en: ["Beijing 3 nights", "Shanghai 2"], zh: ["北京 3 晚", "上海 2 晚"], ko: ["베이징 3박", "상하이 2박"] },
+  },
+  "china-10-day-itinerary": {
+    ctaId: "beijing-xian-shanghai-8-day-private-tour",
+    difference: { en: ["8 days", "10-day"], zh: ["8 天", "10 天"], ko: ["8일", "10일"] },
+  },
+  "china-14-day-itinerary": {
+    ctaId: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    difference: { en: ["adds Guilin"], zh: ["多了桂林"], ko: ["구이린을 추가"] },
+  },
+  "beijing-zhangjiajie-shanghai-10-days": {
+    ctaId: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 구이린"] },
+  },
+  "beijing-zhangjiajie-shanghai-transport": {
+    ctaId: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 구이린"] },
+  },
+  "beijing-xian-chengdu-route-order": {
+    ctaId: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    difference: { en: ["Guilin and Shanghai"], zh: ["桂林和上海"], ko: ["구이린과 상하이"] },
+  },
+  "chengdu-chongqing-zhangjiajie-itinerary": {
+    ctaId: "chengdu-chongqing-8-day-private-tour",
+    difference: { en: ["does not include Zhangjiajie"], zh: ["不含张家界"], ko: ["장가계가 없습니다"] },
+  },
+  "guangzhou-shenzhen-hong-kong-route-order": {
+    ctaId: "guangzhou-shunde-foshan-5-day-private-tour",
+    difference: { en: ["not Shenzhen or Hong Kong"], zh: ["不含深圳与香港"], ko: ["선전과 홍콩은 포함하지"] },
+  },
+  "guangzhou-macau-transport-route": {
+    ctaId: "guangzhou-shunde-foshan-5-day-private-tour",
+    difference: { en: ["does not include Macau"], zh: ["不含澳门"], ko: ["마카오가 없습니다"] },
+  },
+  "kunming-dali-lijiang-shangri-la-route-order": {
+    ctaId: "kunming-dali-lijiang-8-day-private-tour",
+    difference: { en: ["returns to Kunming", "Shangri-La"], zh: ["返回昆明", "香格里拉"], ko: ["쿤밍으로 돌아가", "샹그릴라"] },
+  },
+  "lijiang-shangri-la-transport-route": {
+    ctaId: "kunming-dali-lijiang-8-day-private-tour",
+    difference: { en: ["returns to Kunming", "does not include Shangri-La"], zh: ["返回昆明", "不含香格里拉"], ko: ["쿤밍으로 돌아가", "샹그릴라는 포함하지"] },
+  },
+  "shanghai-suzhou-hangzhou-nanjing-route-order": {
+    ctaId: "shanghai-suzhou-hangzhou-6-day-private-tour",
+    difference: { en: ["Nanjing needs extra time"], zh: ["增加南京需另排"], ko: ["난징을 더하려면"] },
+  },
+  "xian-lanzhou-dunhuang-silk-road-route": {
+    ctaId: "beijing-xian-silk-road-15-day-private-tour",
+    difference: { en: ["does not stop in Lanzhou"], zh: ["不在兰州停留"], ko: ["란저우에 머물지"] },
+  },
+};
+
 function quotedIds(source, expression) {
   const block = source.match(expression);
   if (!block) throw new Error(`Guide id source did not match ${expression}`);
@@ -158,6 +215,15 @@ for (const guideId of guideIds) {
     }
     if (explicit && (kind !== explicit.kind || ctaId !== explicit.ctaId)) {
       failures.push(`${where}: explicit plan drifted to ${kind}/${ctaId}`);
+    }
+    const reviewed = reviewedRouteCards[guideId];
+    if (reviewed && ctaId !== reviewed.ctaId) {
+      failures.push(`${where}: reviewed route card drifted to ${ctaId}`);
+    }
+    for (const fragment of reviewed?.difference[locale] ?? []) {
+      if (!decode(cardInner).includes(fragment)) {
+        failures.push(`${where}: route difference missing: ${fragment}`);
+      }
     }
   }
   if (availableLocales === 0) failures.push(`${guideId}: no exported locale found`);

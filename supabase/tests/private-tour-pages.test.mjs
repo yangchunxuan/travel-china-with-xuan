@@ -33,6 +33,36 @@ const locales = ["en", "zh", "ko"];
 const reservedStaticSlug = "zhangjiajie-4-day-private-tour";
 const shanghaiJiangnanSlug = "shanghai-suzhou-hangzhou-6-day-private-tour";
 
+test("partial-service inquiries are separate from published full-tour prices in every language", () => {
+  const cases = [
+    ["shanghai-suzhou-5-day-private-tour", {
+      en: [/only the Suzhou day/u, /quote it separately/u, /package price does not apply/u],
+      zh: [/只想订苏州一日游/u, /单独报价/u, /不能直接套用完整行程的价格/u],
+      ko: [/쑤저우 당일 일정만/u, /별도로 견적/u, /그대로 적용하지는 않습니다/u],
+    }],
+    [shanghaiJiangnanSlug, {
+      en: [/only a guide or driver/u, /quote it separately/u, /not a per-day rate/u],
+      zh: [/只要导游、用车/u, /单独报价/u, /不是按天拆算/u],
+      ko: [/가이드·차량만/u, /별도로 견적/u, /일수로 나누어 적용하지는 않습니다/u],
+    }],
+    ["zhangjiajie-furong-fenghuang-7-day-private-tour", {
+      en: [/only a guide or driver/u, /separate arrangement is possible/u, /cannot simply be divided by day/u],
+      zh: [/只要导游或司机/u, /核对能否单独安排/u, /不能把完整团价格直接按天拆算/u],
+      ko: [/가이드나 기사만/u, /별도 예약이 가능한지 확인/u, /일수로 나누어 적용하지는 않습니다/u],
+    }],
+  ];
+  for (const [slug, languages] of cases) {
+    const product = getPrivateTourProduct(slug);
+    assert.ok(product, slug);
+    for (const locale of locales) {
+      const faq = localizePrivateTourProduct(product, locale).faq.find(({ question }) => languages[locale][0].test(question));
+      assert.ok(faq, `${slug}/${locale} is missing the partial-service question`);
+      assert.match(faq.answer, languages[locale][1], `${slug}/${locale}: separate quote`);
+      assert.match(faq.answer, languages[locale][2], `${slug}/${locale}: full-tour price boundary`);
+    }
+  }
+});
+
 test("the Zhangjiajie product title owns price and inclusions rather than itinerary intent", async () => {
   const previewCopy = await source("lib/zhangjiajiePrivateTourPreview.ts");
   assert.match(
@@ -334,8 +364,13 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
   assert.match(ko.metadataDescription, /D2~D5 한국어 가이드/);
   assert.match(ko.serviceNote, /한국어 가이드는 D2~D5/);
   assert.match(ko.serviceNote, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
-  assert.match(ko.faq[1].question, /한국어 가이드/);
-  assert.match(ko.faq[1].answer, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  const guideCoverageFaq = ko.faq.find((item) => /한국어 가이드와 전용 차량/u.test(item.question));
+  assert.ok(guideCoverageFaq);
+  assert.match(guideCoverageFaq.answer, /D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만/);
+  const guideOnlyFaq = localizePrivateTourProduct(product, "en").faq.find((item) => /only a guide or driver/u.test(item.question));
+  assert.ok(guideOnlyFaq);
+  assert.match(guideOnlyFaq.answer, /check whether a separate arrangement is possible/u);
+  assert.match(guideOnlyFaq.answer, /cannot simply be divided by day/u);
   assert.doesNotMatch(ko.summary, /영어 가이드/);
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
 });
@@ -445,7 +480,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
   }
 
-  const shanghai = product("shanghai-suzhou-5-day-private-tour");
+  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-26");
   const shanghaiRules = {
     en: {
       common: [
