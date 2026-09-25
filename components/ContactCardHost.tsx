@@ -8,6 +8,7 @@ import {
   contactCardOpenEvent,
   contactCardReadyAttribute,
   contactCardRequestForLink,
+  type ContactCardLayout,
   type ContactCardRequest,
 } from "../lib/contactCard";
 
@@ -17,14 +18,16 @@ const ContactCardDialog = lazy(() =>
 );
 
 /**
- * Site-wide, desktop-only: answers WhatsApp, studio email and plain "talk to
- * a planner" links with the contact card (see lib/contactCard.ts). The card's
- * code loads in the background once a desktop page is idle, and the card stays
- * mounted after the first open so a half-typed email survives closing it.
+ * Site-wide: on desktop answers WhatsApp, studio email and plain "talk to a
+ * planner" links with the contact card; on phones and tablets answers only
+ * the planner links, with the same card as a sheet (see lib/contactCard.ts).
+ * The card's code loads in the background once a page is idle, and the card
+ * stays mounted after the first open so a half-typed email survives closing it.
  */
 export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
   const [ready, setReady] = useState(false);
   const [request, setRequest] = useState<ContactCardRequest | null>(null);
+  const [layout, setLayout] = useState<ContactCardLayout>("card");
   const [open, setOpen] = useState(false);
   const returnFocusRef = useRef<HTMLElement | null>(null);
 
@@ -34,34 +37,37 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
     sync();
     desktop.addEventListener("change", sync);
 
+    // Small (about 6 KB compressed), so every screen fetches it once idle
+    // and the card or the sheet opens at once.
     const canIdle = typeof window.requestIdleCallback === "function";
-    let idle = 0;
-    if (desktop.matches) {
-      const preload = () => { void loadDialog(); };
-      idle = canIdle
-        ? window.requestIdleCallback(preload, { timeout: 4000 })
-        : window.setTimeout(preload, 2500);
-    }
+    const preload = () => { void loadDialog(); };
+    const idle = canIdle
+      ? window.requestIdleCallback(preload, { timeout: 4000 })
+      : window.setTimeout(preload, 2500);
 
-    const show = (next: ContactCardRequest, returnFocus: HTMLElement | null) => {
+    const show = (next: ContactCardRequest, returnFocus: HTMLElement | null, nextLayout: ContactCardLayout) => {
       returnFocusRef.current = returnFocus;
       setRequest(next);
+      setLayout(nextLayout);
       setOpen(true);
     };
     const onClick = (event: MouseEvent) => {
-      if (!desktop.matches || event.defaultPrevented || event.button !== 0) return;
+      if (event.defaultPrevented || event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const anchor = event.target instanceof Element ? event.target.closest("a[href]") : null;
       if (!(anchor instanceof HTMLAnchorElement) || anchor.closest("[data-contact-card-dialog], [data-contact-card-direct]")) return;
       const next = contactCardRequestForLink(anchor, locale);
       if (!next) return;
+      // Phones and tablets open WhatsApp and mail links in their own apps.
+      const onDesktop = desktop.matches;
+      if (!onDesktop && next.trigger !== "planner") return;
       // The link's own click handlers (analytics) still run; only the navigation is replaced.
       event.preventDefault();
-      show(next, anchor);
+      show(next, anchor, onDesktop ? "card" : "sheet");
     };
     const onOpen = (event: Event) => {
       const detail = (event as CustomEvent<ContactCardRequest>).detail;
-      if (detail) show(detail, consumeContactCardReturnFocus());
+      if (detail) show(detail, consumeContactCardReturnFocus(), "card");
     };
 
     document.addEventListener("click", onClick, true);
@@ -89,7 +95,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
     <div {...{ [contactCardReadyAttribute]: ready ? "ready" : undefined }}>
       {request ? (
         <Suspense fallback={null}>
-          <ContactCardDialog locale={locale} request={request} open={open} onClose={close} />
+          <ContactCardDialog locale={locale} request={request} layout={layout} open={open} onClose={close} />
         </Suspense>
       ) : null}
     </div>

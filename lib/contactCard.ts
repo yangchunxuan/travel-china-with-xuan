@@ -3,12 +3,15 @@ import type { HomegroundLocale } from "./homegroundI18n";
 import { homegroundBusiness } from "./homegroundBusiness.ts";
 
 /**
- * The desktop contact card. On a computer, WhatsApp links usually land on a
+ * The contact card. On a computer, WhatsApp links usually land on a
  * "download the app" page, and mail links open a mail program many people
  * never set up, so on wide screens with a mouse those links open one card
  * instead: scan the chat onto the phone, copy the number, or leave an email.
- * Phones and tablets keep the direct links, and every link keeps its href,
- * so modifier-clicks, no-JavaScript visits and crawlers see what they did.
+ * Phones and tablets keep WhatsApp and mail links direct (the apps are right
+ * there); their "talk to a planner" links open the same card as a sheet from
+ * the bottom of the screen (WhatsApp, Messenger, email) instead of leaving
+ * the page or jumping down it. Every link keeps its href, so modifier-clicks,
+ * no-JavaScript visits and crawlers see what they did.
  */
 export const contactCardDesktopQuery =
   "(min-width: 64rem) and (hover: hover) and (pointer: fine)";
@@ -16,6 +19,8 @@ export const contactCardOpenEvent = "homeground:open-contact-card";
 export const contactCardReadyAttribute = "data-homeground-contact-card";
 
 export type ContactCardTrigger = "whatsapp" | "email" | "planner";
+/** The card on desktop; the sheet on phones and tablets. */
+export type ContactCardLayout = "card" | "sheet";
 
 export interface ContactCardRequest {
   trigger: ContactCardTrigger;

@@ -1,11 +1,12 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, LoaderCircle, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, LoaderCircle, MessagesSquare, X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
-import type { ContactCardRequest } from "../lib/contactCard";
+import type { ContactCardLayout, ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
 import { privateTourQuoteApiUrl, tourWhatsAppHref } from "../lib/tourContact";
 import {
@@ -26,13 +27,13 @@ import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { setInquiryOpen } from "../lib/siteOverlayState";
 import { ContactCardScan, CopyButton } from "./ContactCardScan";
 import styles from "./ContactCard.module.css";
+import sheetStyles from "./ContactSheet.module.css";
 
 type EmailStatus = "idle" | "submitting" | "success" | "failed" | "uncertain";
 type Snapshot = { body: string; key: string };
 
 const maximumEmailLength = 254;
 const requestTimeoutMilliseconds = 20_000;
-const contactVariant = "desktop_card";
 
 function isValidEmail(value: string) {
   const normalized = value.trim();
@@ -66,15 +67,21 @@ function pageContext(locale: HomegroundLocale) {
 export function ContactCardDialog({
   locale,
   request,
+  layout,
   open,
   onClose,
 }: {
   locale: HomegroundLocale;
   request: ContactCardRequest;
+  layout: ContactCardLayout;
   open: boolean;
   onClose: () => void;
 }) {
   const copy = contactCardCopy[locale];
+  // Phones and tablets: the same card as a sheet from the bottom of the screen.
+  const sheet = layout === "sheet";
+  const contactVariant = sheet ? "mobile_sheet" : "desktop_card";
+  const withSheet = (base: string, extra: string) => (sheet ? `${base} ${extra}` : base);
   const desk = getHomepagePlanningDeskCopy(locale).contactStart;
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -107,6 +114,7 @@ export function ContactCardDialog({
   const directWhatsApp = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
   const whatsappHref = request.whatsappHref ?? (directWhatsApp ? tourWhatsAppHref(locale, tour, context.path) : "");
   const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
+  const messengerHref = sheet ? homegroundMessengerUrl() : "";
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -134,7 +142,7 @@ export function ContactCardDialog({
       // A tour's quote sheet may still be open underneath.
       if (!document.querySelector("dialog[open]:not([data-contact-card-dialog])")) setInquiryOpen(false);
     };
-  }, [open, locale, request]);
+  }, [open, locale, request, contactVariant]);
 
   useEffect(() => {
     if (status !== "success") return;
@@ -275,12 +283,103 @@ export function ContactCardDialog({
 
   const aboutLabel = tour ? copy.tourLabel : context.guideTitle ? copy.guideLabel : "";
   const aboutName = tour ? tour.name : context.guideTitle;
+  const openedApp = (channel: "whatsapp" | "messenger") => () =>
+    trackEvent("contact_option_clicked", { channel, contact_variant: contactVariant, page_language: locale });
+
+  const mail = (
+    <section className={withSheet(styles.mail, sheetStyles.mail)} aria-labelledby={`${id}-mail`}>
+      <h3 id={`${id}-mail`}>{desk.emailTitle}</h3>
+      <p className={styles.replyFrom}>
+        <span>{copy.replyFrom}</span>
+        <strong>{homegroundBusiness.serviceEmail}</strong>
+        <CopyButton value={homegroundBusiness.serviceEmail} label={copy.copyEmail} copied={copy.copied} idle={copy.copy} />
+      </p>
+
+      {!emailReady ? (
+        <p className={styles.note}>{desk.emailUnavailable}</p>
+      ) : status === "success" ? (
+        <div className={styles.success} ref={successRef} role="status" aria-live="polite" tabIndex={-1}>
+          <svg className={styles.successMark} viewBox="0 0 28 28" aria-hidden="true">
+            <circle cx="14" cy="14" r="11" />
+            <path d="M9 14.4l3.3 3.3 6.7-7.2" />
+          </svg>
+          <div>
+            <strong>{desk.emailSuccessTitle}</strong>
+            <p>{desk.emailSuccessBody}</p>
+            <small>{desk.referenceLabel}: {reference}</small>
+          </div>
+        </div>
+      ) : (
+        <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
+          <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
+          <input
+            ref={emailRef}
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            autoCapitalize="none"
+            spellCheck={false}
+            required
+            maxLength={maximumEmailLength}
+            placeholder={desk.emailPlaceholder}
+            value={email}
+            aria-invalid={invalid || undefined}
+            aria-describedby={error ? `${id}-error` : undefined}
+            disabled={status === "submitting"}
+            onFocus={() => {
+              if (startedRef.current) return;
+              startedRef.current = true;
+              trackEvent("quick_email_started", { submission_surface: "homepage_email", contact_variant: contactVariant, page_language: locale });
+            }}
+            onChange={(event) => {
+              setEmail(event.target.value);
+              snapshotRef.current = null;
+              setError("");
+              setStatus("idle");
+              setInvalid(false);
+            }}
+          />
+          <div className={styles.honeypot} aria-hidden="true">
+            <label htmlFor={`${id}-company`}>Company website</label>
+            <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />
+          </div>
+          {status === "uncertain" && snapshotRef.current ? (
+            <button className={styles.send} type="button" onClick={() => { const snapshot = snapshotRef.current; if (snapshot) void dispatch(snapshot, true); }}>
+              {desk.retryAction}
+              <ArrowRight size={18} aria-hidden="true" />
+            </button>
+          ) : (
+            <button className={styles.send} type="submit" disabled={status === "submitting"}>
+              {status === "submitting" ? (
+                <><LoaderCircle className={styles.spinner} size={18} aria-hidden="true" />{desk.emailSubmitting}</>
+              ) : (
+                <>{desk.emailAction}<ArrowRight size={18} aria-hidden="true" /></>
+              )}
+            </button>
+          )}
+          <p className={styles.error} id={`${id}-error`} role="alert">{error}</p>
+          <p className={styles.privacy}>
+            {desk.emailUse} {desk.privacyLead}{" "}
+            <a href={privacyPath(locale)} target="_blank" rel="noopener noreferrer">{desk.privacyAction}</a>
+          </p>
+        </form>
+      )}
+
+      <a className={styles.mailApp} href={mailtoHref}>
+        {copy.openMailApp}
+        <ArrowUpRight size={16} aria-hidden="true" />
+      </a>
+    </section>
+  );
 
   return (
     <dialog
       ref={dialogRef}
-      className={styles.dialog}
+      className={withSheet(styles.dialog, sheetStyles.sheet)}
       data-contact-card-dialog=""
+      data-layout={layout}
       data-closing={closing || undefined}
       data-trigger={request.trigger}
       aria-labelledby={`${id}-title`}
@@ -288,8 +387,9 @@ export function ContactCardDialog({
       onClick={(event) => { if (event.target === event.currentTarget) close(); }}
     >
       <div className={styles.card}>
-        <header className={styles.head}>
-          <div className={styles.headText}>
+        {sheet ? <span className={sheetStyles.grabber} aria-hidden="true" /> : null}
+        <header className={withSheet(styles.head, sheetStyles.head)}>
+          <div className={withSheet(styles.headText, sheetStyles.headText)}>
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{copy.title}</h2>
             {aboutName ? (
               <p className={styles.about}>
@@ -298,113 +398,54 @@ export function ContactCardDialog({
               </p>
             ) : null}
           </div>
-          <p className={styles.clock}>
+          <p className={withSheet(styles.clock, sheetStyles.clock)}>
             <span className={styles.clockDot} aria-hidden="true" />
             {copy.chinaTime} <time>{clock}</time>
           </p>
-          <button type="button" className={styles.close} aria-label={copy.close} onClick={close}>
+          <button type="button" className={withSheet(styles.close, sheetStyles.close)} aria-label={copy.close} onClick={close}>
             <X size={18} strokeWidth={1.8} aria-hidden="true" />
           </button>
         </header>
 
-        <div className={styles.columns} data-single={!whatsappHref || undefined}>
-          {whatsappHref ? (
-            <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`}>
-              <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
-                {copy.useHere}
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-            </ContactCardScan>
-          ) : null}
+        {sheet ? (
+          <div className={sheetStyles.body}>
+            <div className={sheetStyles.apps}>
+              {whatsappHref ? (
+                <a className={sheetStyles.whatsapp} href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-describedby={`${id}-whatsapp-note`} onClick={openedApp("whatsapp")}>
+                  {desk.whatsappAction}
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </a>
+              ) : (
+                <p className={styles.note}>{desk.whatsappUnavailable}</p>
+              )}
+              {messengerHref ? (
+                <a className={sheetStyles.messenger} href={messengerHref} target="_blank" rel="noopener noreferrer" aria-describedby={`${id}-messenger-note`} onClick={openedApp("messenger")}>
+                  <MessagesSquare size={16} aria-hidden="true" />
+                  {desk.messengerAction}
+                </a>
+              ) : null}
+              <span className={styles.visuallyHidden} id={`${id}-whatsapp-note`}>{desk.whatsappOpensExternally}</span>
+              <span className={styles.visuallyHidden} id={`${id}-messenger-note`}>{desk.messengerOpensExternally}</span>
+            </div>
+            <p className={sheetStyles.or} aria-hidden="true"><span>{copy.or}</span></p>
+            {mail}
+          </div>
+        ) : (
+          <div className={styles.columns} data-single={!whatsappHref || undefined}>
+            {whatsappHref ? (
+              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`}>
+                <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                  {copy.useHere}
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </ContactCardScan>
+            ) : null}
 
-          {whatsappHref ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
+            {whatsappHref ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
 
-          <section className={styles.mail} aria-labelledby={`${id}-mail`}>
-            <h3 id={`${id}-mail`}>{desk.emailTitle}</h3>
-            <p className={styles.replyFrom}>
-              <span>{copy.replyFrom}</span>
-              <strong>{homegroundBusiness.serviceEmail}</strong>
-              <CopyButton value={homegroundBusiness.serviceEmail} label={copy.copyEmail} copied={copy.copied} idle={copy.copy} />
-            </p>
-
-            {!emailReady ? (
-              <p className={styles.note}>{desk.emailUnavailable}</p>
-            ) : status === "success" ? (
-              <div className={styles.success} ref={successRef} role="status" aria-live="polite" tabIndex={-1}>
-                <svg className={styles.successMark} viewBox="0 0 28 28" aria-hidden="true">
-                  <circle cx="14" cy="14" r="11" />
-                  <path d="M9 14.4l3.3 3.3 6.7-7.2" />
-                </svg>
-                <div>
-                  <strong>{desk.emailSuccessTitle}</strong>
-                  <p>{desk.emailSuccessBody}</p>
-                  <small>{desk.referenceLabel}: {reference}</small>
-                </div>
-              </div>
-            ) : (
-              <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
-                <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
-                <input
-                  ref={emailRef}
-                  id={`${id}-email`}
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  autoCapitalize="none"
-                  spellCheck={false}
-                  required
-                  maxLength={maximumEmailLength}
-                  placeholder={desk.emailPlaceholder}
-                  value={email}
-                  aria-invalid={invalid || undefined}
-                  aria-describedby={error ? `${id}-error` : undefined}
-                  disabled={status === "submitting"}
-                  onFocus={() => {
-                    if (startedRef.current) return;
-                    startedRef.current = true;
-                    trackEvent("quick_email_started", { submission_surface: "homepage_email", contact_variant: contactVariant, page_language: locale });
-                  }}
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                    snapshotRef.current = null;
-                    setError("");
-                    setStatus("idle");
-                    setInvalid(false);
-                  }}
-                />
-                <div className={styles.honeypot} aria-hidden="true">
-                  <label htmlFor={`${id}-company`}>Company website</label>
-                  <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />
-                </div>
-                {status === "uncertain" && snapshotRef.current ? (
-                  <button className={styles.send} type="button" onClick={() => { const snapshot = snapshotRef.current; if (snapshot) void dispatch(snapshot, true); }}>
-                    {desk.retryAction}
-                    <ArrowRight size={18} aria-hidden="true" />
-                  </button>
-                ) : (
-                  <button className={styles.send} type="submit" disabled={status === "submitting"}>
-                    {status === "submitting" ? (
-                      <><LoaderCircle className={styles.spinner} size={18} aria-hidden="true" />{desk.emailSubmitting}</>
-                    ) : (
-                      <>{desk.emailAction}<ArrowRight size={18} aria-hidden="true" /></>
-                    )}
-                  </button>
-                )}
-                <p className={styles.error} id={`${id}-error`} role="alert">{error}</p>
-                <p className={styles.privacy}>
-                  {desk.emailUse} {desk.privacyLead}{" "}
-                  <a href={privacyPath(locale)} target="_blank" rel="noopener noreferrer">{desk.privacyAction}</a>
-                </p>
-              </form>
-            )}
-
-            <a className={styles.mailApp} href={mailtoHref}>
-              {copy.openMailApp}
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          </section>
-        </div>
+            {mail}
+          </div>
+        )}
       </div>
     </dialog>
   );
