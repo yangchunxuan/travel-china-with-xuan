@@ -1637,4 +1637,36 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     assert.equal("campaign_source" in config[2], false);
     assert.equal("campaign_medium" in config[2], false);
   });
+
+  await context.test("consented ChatGPT Search source-only links reach GA without weakening other source checks", () => {
+    installBrowser({
+      href: "https://homegroundchina.com/tours/shanghai-suzhou-5-day-private-tour/?utm_source=chatgpt.com",
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    let { analytics } = loadCompiledModules(outputDirectory);
+    analytics.captureEntryAttribution();
+    analytics.removeAttributionParametersFromAddressBar();
+    assert.deepEqual(
+      JSON.parse(window.sessionStorage.getItem("homeground-entry-attribution")),
+      { landing_path: "/tours/shanghai-suzhou-5-day-private-tour/", utm_medium: "referral", utm_source: "chatgpt.com" },
+    );
+    assert.equal(window.location.search, "");
+    assert.equal(analytics.initializeGoogleAnalytics(), true);
+    let config = window.dataLayer.find((command) => command[0] === "config");
+    assert.equal(config[2].campaign_source, "chatgpt.com");
+    assert.equal(config[2].campaign_medium, "referral");
+    assert.equal(config[2].page_location, undefined);
+
+    installBrowser({
+      href: "https://homegroundchina.com/tours/?utm_source=facebook",
+      consent: preferences({ analytics: true, marketing: false }),
+    });
+    ({ analytics } = loadCompiledModules(outputDirectory));
+    analytics.captureEntryAttribution();
+    analytics.removeAttributionParametersFromAddressBar();
+    assert.deepEqual(JSON.parse(window.sessionStorage.getItem("homeground-entry-attribution")), { landing_path: "/tours/" });
+    assert.equal(analytics.initializeGoogleAnalytics(), true);
+    config = window.dataLayer.find((command) => command[0] === "config");
+    assert.equal("campaign_source" in config[2], false);
+  });
 });

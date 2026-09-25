@@ -360,12 +360,18 @@ export function captureEntryAttribution() {
       params.get("utm_medium"),
       64,
     );
+    // ChatGPT Search links can carry only utm_source=chatgpt.com. Recognise
+    // this fixed marker for consented GA reporting; the first-party collector
+    // still requires a Homeground signature before accepting any source label.
+    const chatgptSearchLink =
+      !medium && sanitizeAttributionValue(params.get("utm_source"), 64) === "chatgpt.com";
     // Links between Homeground pages use these media labels for content
     // navigation. If consent is granted only after such a click, treating
     // them as first-touch acquisition would overwrite the real source with
     // Homeground itself. Keep the source Unknown instead.
-    if (medium && !internalUtmMediums.has(medium)) {
-      attribution.utm_medium = medium;
+    if ((medium && !internalUtmMediums.has(medium)) || chatgptSearchLink) {
+      attribution.utm_medium = medium ?? "referral";
+      if (chatgptSearchLink) attribution.utm_source = "chatgpt.com";
       for (const key of [
         "utm_source",
         "utm_campaign",

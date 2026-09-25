@@ -762,7 +762,7 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     },
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const chengdu: PrivateTourProduct = {
@@ -2256,7 +2256,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const beijing: PrivateTourProduct = {
@@ -3069,6 +3069,18 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
   faq: [
     {
       question: l(
+        "Can I book only a guide or driver instead of the full seven-day tour?",
+        "不订完整七天团，只要导游或司机可以吗？",
+        "7일 전체 상품 대신 가이드나 기사만 예약할 수 있나요?",
+      ),
+      answer: l(
+        "The displayed price is for the full seven-day tour with six hotel nights. If you have booked your own hotels or transport, tell us your dates, group size, the places you will visit and which days need a guide or driver. We will check whether a separate arrangement is possible and quote it on its own; the package price cannot simply be divided by day.",
+        "页面价格对应含 6 晚住宿的完整 7 天团。如果酒店或交通已自己订好，请告诉我们日期、人数、要去的地方，以及哪几天需要导游或司机。我们会核对能否单独安排并另行报价，不能把完整团价格直接按天拆算。",
+        "표시된 요금은 호텔 6박을 포함한 7일 전체 상품 기준입니다. 숙소나 교통편을 직접 예약했다면 날짜, 인원, 방문 장소와 가이드나 기사가 필요한 날짜를 알려 주세요. 별도 예약이 가능한지 확인한 뒤 따로 견적을 드리며, 전체 요금을 일수로 나누어 적용하지는 않습니다.",
+      ),
+    },
+    {
+      question: l(
         "Which admission tickets are included?",
         "基础价格具体包含哪些门票？",
         "어떤 입장권이 기본 요금에 포함되나요?",
@@ -3293,7 +3305,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
   lastReviewed: "2026-09-20",
 };
 

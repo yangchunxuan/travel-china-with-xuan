@@ -112,6 +112,16 @@ const approvedCommercialGuideIds = [
   "china-visa-free-uk-citizens-2026",
   "china-visa-free-canadian-citizens-2026",
   "china-visa-free-new-zealand-citizens-2026",
+  "beijing-zhangjiajie-shanghai-10-days",
+  "beijing-zhangjiajie-shanghai-transport",
+  "beijing-xian-chengdu-route-order",
+  "chengdu-chongqing-zhangjiajie-itinerary",
+  "guangzhou-shenzhen-hong-kong-route-order",
+  "guangzhou-macau-transport-route",
+  "kunming-dali-lijiang-shangri-la-route-order",
+  "lijiang-shangri-la-transport-route",
+  "shanghai-suzhou-hangzhou-nanjing-route-order",
+  "xian-lanzhou-dunhuang-silk-road-route",
 ] as const satisfies readonly GuideId[];
 
 interface ProductContextDefinition {
