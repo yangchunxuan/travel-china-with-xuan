@@ -12,6 +12,7 @@ import {
   type FocusEvent,
   type FormEvent,
   type KeyboardEvent,
+  type MouseEvent,
 } from "react";
 import {
   normalizeGuideSearchText,
@@ -335,6 +336,14 @@ export function GuideSearchForm({
     setFocusedWithin(false);
   };
 
+  // Safari, and every browser on iPhone, does not focus a link or button when
+  // it is pressed: the input blurs with nowhere to go and the list closes
+  // before the tap lands. Pressing inside the list keeps the focus in the
+  // search box; the click still follows the link.
+  const keepFocusInSearch = (event: MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     const normalized = normalizeGuideSearchText(input, locale);
     if (!normalized) {
@@ -464,6 +473,7 @@ export function GuideSearchForm({
             className={styles.suggestions}
             id={suggestionsId}
             role="region"
+            onMouseDown={keepFocusInSearch}
           >
             <p role="status" aria-live="polite">
               {copy.suggestionsLabel(suggestions.length)}
@@ -502,6 +512,7 @@ export function GuideSearchForm({
             className={styles.suggestionNotice}
             id={suggestionsId}
             role="status"
+            onMouseDown={keepFocusInSearch}
           >
             <span>
               {indexState === "loading"
