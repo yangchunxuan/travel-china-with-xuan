@@ -154,3 +154,17 @@ test("tour heroes are fetched at high priority, not only preloaded", async () =>
     /fetchPriority="high"\s*fill\s*priority\s*sizes="\(max-width: 860px\) 100vw, \(max-width: 1440px\) 72vw, 1040px"\s*src="\/product-previews\/zhangjiajie-4-day-private-tour\/hero\/sunlit-forest-pillars-174\.jpg"/,
   );
 });
+
+test("the contact card heading keeps its style whichever route's stylesheet loaded last", async () => {
+  const [card, home] = await Promise.all([
+    source("components/ContactCard.module.css"),
+    source("components/HomegroundHomePage.module.css"),
+  ]);
+
+  // With per-route CSS, arriving on the homepage by a click loaded the homepage
+  // file after the card's; `.quickContactCard h3` then won the tie and turned the
+  // "Scan to chat" heading bold (sans-serif in zh/ko). The card rules outrank it.
+  assert.match(home, /\.quickContactCard h3 \{/);
+  assert.match(card, /\.scan\.scan h3,\s*\.mail\.mail h3 \{[^}]*font-family:\s*var\(--hg-font-editorial, Georgia, serif\);[^}]*font-weight:\s*400;/);
+  assert.match(card, /\.scanInline\.scanInline h3 \{\s*font-size:\s*1\.375rem;\s*\}/);
+});

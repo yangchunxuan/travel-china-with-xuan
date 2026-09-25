@@ -568,7 +568,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                           alt={photo.alt}
                           className={styles.stayImage}
                           height={photo.height}
-                          sizes="(max-width: 540px) 92vw, (max-width: 1100px) 44vw, 36vw"
+                          sizes="(max-width: 540px) 92vw, (max-width: 1100px) 44vw, 45vw"
                           src={photo.src}
                           width={photo.width}
                         />
