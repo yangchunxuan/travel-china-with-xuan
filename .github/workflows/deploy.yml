@@ -10,7 +10,9 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # Let the post-deploy purge and its delayed second pass finish before a new
+  # deployment starts; canceling here could leave old pages cached.
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -95,3 +97,28 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+      - name: Purge Cloudflare cache after Pages deployment
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          set -euo pipefail
+          : "${CLOUDFLARE_API_TOKEN:?CLOUDFLARE_API_TOKEN secret is missing}"
+          : "${CLOUDFLARE_ZONE_ID:?CLOUDFLARE_ZONE_ID secret is missing}"
+
+          purge_cache() {
+            response="$(curl --fail-with-body --silent --show-error \
+              --request POST \
+              --url "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+              --header "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+              --header 'Content-Type: application/json' \
+              --data '{"purge_everything":true}')"
+            if ! jq -e '.success == true' <<< "$response" > /dev/null; then
+              echo 'Cloudflare cache purge failed' >&2
+              return 1
+            fi
+          }
+
+          purge_cache
+          sleep 60
+          purge_cache
