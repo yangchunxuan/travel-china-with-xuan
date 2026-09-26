@@ -66,7 +66,7 @@ export function JapaneseToursHubPage() {
               <h2 id="tour-quick-compare-title">行程を比べて選ぶ。</h2>
             </div>
             <div className={styles.priceContext}>
-              <p>料金は各ページに表示する人数・プランの条件でご確認ください。公開料金のないコースは旅行日程と人数に合わせてお見積もりします。</p>
+              <p>料金は各ツアーページに記載の人数・プランを基準にご確認ください。掲載料金のないコースは旅行日程と人数に合わせてお見積もりします。</p>
             </div>
           </div>
           <ul className={styles.quickList}>
@@ -93,7 +93,7 @@ export function JapaneseToursHubPage() {
                     </div>
                     <p className={styles.quickFacts}>
                       {starting ? <>
-                        <span className={styles.priceLabel}>公開料金の目安</span>
+                        <span className={styles.priceLabel}>掲載料金の目安</span>
                         <strong>{starting.formatted}</strong>
                         <span>{tour.tourFormat === "small-group" ? "2名1室・1名あたり" : `${starting.selection.travelers}名参加時・1名あたり`}</span>
                         <span className={styles.priceService}>{starting.serviceLabel}</span>
