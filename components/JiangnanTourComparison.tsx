@@ -57,16 +57,26 @@ const copy = {
 
 const slugs = ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"] as const;
 
-function ComparisonTourLink({ locale, slug, children }: { locale: HomegroundLocale; slug: PrivateTourInquirySlug; children: ReactNode }) {
+type JapaneseComparisonCopy = Readonly<{
+  title: string;
+  intro: string;
+  headings: readonly string[];
+  rows: readonly (readonly string[])[];
+  view: string;
+  current: string;
+}>;
+
+function ComparisonTourLink({ locale, slug, children }: { locale: HomegroundLocale | "ja"; slug: PrivateTourInquirySlug; children: ReactNode }) {
   const current = usePrivateTourSelection();
-  const path = `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
+  const path = `${locale === "en" || locale === "ja" ? "" : `/${locale}`}/tours/${slug}/`;
   const targetSelection = current && getPrivateTourInquirySelection(slug, current.selection.packageId, current.selection.travelers);
   const href = targetSelection ? buildPrivateTourDetailHref(path, slug, targetSelection) : path;
-  return <Link href={href}>{children}</Link>;
+  return <Link href={href} hrefLang={locale === "ja" ? "en" : undefined}>{children}</Link>;
 }
 
-export function JiangnanTourComparison({ locale, currentSlug }: { locale: HomegroundLocale; currentSlug: string }) {
-  const text = copy[locale];
+export function JiangnanTourComparison({ locale, currentSlug, japaneseCopy }: { locale: HomegroundLocale | "ja"; currentSlug: string; japaneseCopy?: JapaneseComparisonCopy }) {
+  const text = locale === "ja" ? japaneseCopy : copy[locale];
+  if (!text) throw new Error("Japanese comparison copy is required");
   return <section className={styles.section} aria-labelledby="jiangnan-comparison-title">
     <div className={styles.sectionInner}>
       <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
@@ -83,12 +93,13 @@ export function JiangnanTourComparison({ locale, currentSlug }: { locale: Homegr
   </section>;
 }
 
-export function JiangnanBookingTrust({ locale }: { locale: HomegroundLocale }) {
-  const text = copy[locale];
-  const prefix = locale === "en" ? "" : `/${locale}`;
+export function JiangnanBookingTrust({ locale, japaneseCopy }: { locale: HomegroundLocale | "ja"; japaneseCopy?: Readonly<{ trust: string; trustBody: string; business: string; terms: string }> }) {
+  const text = locale === "ja" ? japaneseCopy : copy[locale];
+  if (!text) throw new Error("Japanese booking copy is required");
+  const prefix = locale === "en" || locale === "ja" ? "" : `/${locale}`;
   return <div className={styles.bookingTrust}>
     <h3>{text.trust}</h3>
     <p>{text.trustBody}</p>
-    <p><Link href={`${prefix}/business-information/#travel-agency-credentials`}>{text.business}</Link><span aria-hidden="true"> · </span><Link href={`${prefix}/terms/`}>{text.terms}</Link></p>
+    <p><Link href={`${prefix}/business-information/#travel-agency-credentials`} hrefLang={locale === "ja" ? "en" : undefined}>{text.business}</Link><span aria-hidden="true"> · </span><Link href={`${prefix}/terms/`} hrefLang={locale === "ja" ? "en" : undefined}>{text.terms}</Link></p>
   </div>;
 }

@@ -14,6 +14,7 @@ const productionExportExtensions = new Set([".html", ".js"]);
 // checking every EN/ZH/KO page and their shared components.
 const japanesePilotSourceFiles = new Set([
   "components/JapaneseJiangnanInteraction.tsx",
+  "components/JapaneseTourChrome.tsx",
   "components/JapanesePilotShell.tsx",
   "lib/jaPilot.ts",
   "lib/jaPilotCopy.ts",

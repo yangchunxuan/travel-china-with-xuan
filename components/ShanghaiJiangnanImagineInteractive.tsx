@@ -19,6 +19,8 @@ import type {
 } from "../lib/privateTourProducts";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { TourPriceScope } from "./TourPriceScope";
+import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
+import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { isJiangnanTour } from "../lib/tourContactDraft";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
@@ -114,6 +116,21 @@ type PhotoCopy = Readonly<{
   routeLabel: string;
   routeScenes: string;
   dayUnit: string;
+}>;
+
+/** Scoped copy supplied by the Japanese page; pricing and selection stay shared. */
+export type JapanesePriceCopy = Readonly<{
+  chooseGroup: string;
+  publishedPrice: string;
+  perPerson: string;
+  groupUnit: string;
+  privateTour: string;
+  flightsSeparate: string;
+  checkDates: string;
+  otherGroups: string;
+  otherGroupsBody: string;
+  requestQuote: string;
+  emailLabel: string;
 }>;
 
 // Fixed-departure small groups price one twin-share place, and long-haul
@@ -232,9 +249,13 @@ export function ShanghaiJiangnanHeroDeck({
 export function ShanghaiJiangnanPriceConsole({
   product,
   inquiryHref,
+  japaneseCopy,
+  japaneseContactHrefs,
 }: {
   product: LocalizedPrivateTourProduct;
   inquiryHref: string;
+  japaneseCopy?: JapanesePriceCopy;
+  japaneseContactHrefs?: JapaneseContactHrefs;
 }) {
   const hasPublishedPrice = product.packages.some(
     (tourPackage) => tourPackage.rows.length > 0,
@@ -265,6 +286,8 @@ export function ShanghaiJiangnanPriceConsole({
     <PublishedPrivateTourPriceConsole
       inquiryHref={inquiryHref}
       product={product}
+      japaneseCopy={japaneseCopy}
+      japaneseContactHrefs={japaneseContactHrefs}
     />
   );
 }
@@ -272,9 +295,13 @@ export function ShanghaiJiangnanPriceConsole({
 function PublishedPrivateTourPriceConsole({
   product,
   inquiryHref,
+  japaneseCopy,
+  japaneseContactHrefs,
 }: {
   product: LocalizedPrivateTourProduct;
   inquiryHref: string;
+  japaneseCopy?: JapanesePriceCopy;
+  japaneseContactHrefs?: JapaneseContactHrefs;
 }) {
   const selectionContext = usePrivateTourSelection();
   if (!selectionContext) throw new Error("Private tour price needs selection context");
@@ -282,7 +309,13 @@ function PublishedPrivateTourPriceConsole({
   const packageId = selection.packageId;
   const travellers = selection.travelers;
   const selectedInquiryHref = useSelectedPrivateTourInquiryHref(inquiryHref) ?? inquiryHref;
-  const copy = interactionCopy[product.locale];
+  const copy = japaneseCopy
+    ? {
+        ...interactionCopy.en,
+        ...japaneseCopy,
+        group: (count: number) => `${count}${japaneseCopy.groupUnit}`,
+      }
+    : interactionCopy[product.locale];
   const format = formatCopy[product.locale];
   const smallGroup = product.tourFormat === "small-group";
   const chooseGroup = smallGroup ? format.priceBasis : copy.chooseGroup;
@@ -364,7 +397,10 @@ function PublishedPrivateTourPriceConsole({
       ) : null}
 
       <div className={styles.priceConsoleActions}>
-        <GuideCtaLink
+        {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink className={styles.primaryAction} hrefs={japaneseContactHrefs}>
+          {copy.checkDates}
+          <ArrowRight aria-hidden="true" size={17} />
+        </JapaneseTourContactLink> : <GuideCtaLink
           className={styles.primaryAction}
           guideId={product.id}
           href={selectedInquiryHref}
@@ -373,12 +409,17 @@ function PublishedPrivateTourPriceConsole({
         >
           {copy.checkDates}
           <ArrowRight aria-hidden="true" size={17} />
-        </GuideCtaLink>
-        <TourWhatsAppLink locale={product.locale} slug={product.slug} />
+        </GuideCtaLink>}
+        {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink channel="email" className={tourContactStyles.secondaryLink} hrefs={japaneseContactHrefs}>
+          {japaneseCopy.emailLabel}
+        </JapaneseTourContactLink> : <TourWhatsAppLink locale={product.locale} slug={product.slug} />}
         <div className={styles.otherGroupCopy}>
           <strong>{copy.otherGroups}</strong>
           <span>{copy.otherGroupsBody}</span>
-          <GuideCtaLink
+          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink ignoreSelection hrefs={japaneseContactHrefs}>
+            {copy.requestQuote}
+            <ArrowRight aria-hidden="true" size={15} />
+          </JapaneseTourContactLink> : <GuideCtaLink
             guideId={product.id}
             href={isJiangnanTour(product.slug) ? inquiryHref : selectedInquiryHref}
             locale={product.locale}
@@ -386,7 +427,7 @@ function PublishedPrivateTourPriceConsole({
           >
             {copy.requestQuote}
             <ArrowRight aria-hidden="true" size={15} />
-          </GuideCtaLink>
+          </GuideCtaLink>}
         </div>
       </div>
     </div>

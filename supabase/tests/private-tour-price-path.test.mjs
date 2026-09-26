@@ -41,6 +41,7 @@ async function loadComponent(path, overrides = {}, window) {
     "../lib/tourContactDraft": { isJiangnanTour },
     "../lib/analytics": { trackEvent() {} },
     "./GuideCtaLink": { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) },
+    "./JapaneseJiangnanInteraction": { JapaneseTourContactLink: ({ hrefs, channel = "whatsapp", children }) => React.createElement("a", { href: hrefs[channel][2] }, children) },
     "./TourWhatsAppLink": { TourWhatsAppLink: ({ locale, slug }) => {
       const selected = overrides["./PrivateTourSelection"]?.usePrivateTourSelection();
       const context = inquiry.getPrivateTourInquiryContext(slug, locale, selected?.slug === slug ? selected.selection : undefined);

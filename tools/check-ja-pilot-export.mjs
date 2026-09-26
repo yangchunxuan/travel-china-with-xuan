@@ -63,6 +63,8 @@ assert.match(visibleTourText, /日本語ガイド込み/u);
 assert.doesNotMatch(visibleTourText, /英語ガイド/u);
 assert.match(tour, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(tour, /mailto:hello@homegroundchina\.com/u);
+hasTag(tour, 'id="contact"');
+assert.match(tour, /href="[^"]*#contact"/u);
 assert.match(tour, /href="\/ja\/privacy\/"/u);
 
 const guide = await page(jaPilot.guide);
