@@ -1,5 +1,9 @@
 .productPage {
+  --sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Noto Sans CJK JP", system-ui, sans-serif;
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", "Noto Serif CJK JP", serif;
+  --hg-card-display: var(--serif);
   --hg-editorial: var(--serif);
+  --hg-ui-display: var(--sans);
   font-family: var(--sans);
   line-break: strict;
   overflow-wrap: break-word;

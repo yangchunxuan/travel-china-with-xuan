@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ArrowRight, Check, Mail } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import {
@@ -22,6 +23,7 @@ import {
   buildPrivateTourInquiryHref,
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContext,
+  getPrivateTourInquirySelection,
 } from "../lib/privateTourInquiryContext";
 import {
   ShanghaiJiangnanHeroDeck,
@@ -35,7 +37,11 @@ import {
   getExistingContentCommercialCopy,
   getProductPlanningContext,
 } from "../lib/existingContentCommercialLinks";
-import { jaPilot } from "../lib/jaPilot";
+import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
+import { jaPilotCopy } from "../lib/jaPilotCopy";
+import { localizeJapaneseJiangnanProduct } from "../lib/japaneseJiangnanProduct";
+import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
+import jaStyles from "./JapaneseJiangnanPage.module.css";
 
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
@@ -216,6 +222,42 @@ const jiangnanPageCopy: Record<
 
 type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
 
+function japanesePageCopy(): ImaginePageCopy {
+  const tour = jaPilotCopy.tour;
+  const copy = tour.presentation;
+  return {
+    htmlLang: "ja",
+    skipLink: copy.skipLink,
+    breadcrumbLabel: copy.breadcrumbLabel,
+    homeLabel: copy.breadcrumbHome,
+    productLabel: copy.breadcrumbTours,
+    heroMeta: copy.heroMeta,
+    heroPromise: copy.heroPromise,
+    facts: copy.facts,
+    overviewEyebrow: copy.overviewEyebrow,
+    overviewTitle: copy.overviewTitle,
+    overviewBody: copy.overviewBody,
+    routeEyebrow: copy.routeEyebrow,
+    routeTitle: copy.routeTitle,
+    routeBody: copy.routeBody,
+    serviceEyebrow: copy.serviceEyebrow,
+    serviceTitle: copy.serviceTitle,
+    serviceBody: copy.serviceBody,
+    hotelTitle: copy.hotelTitle,
+    transportTitle: copy.transportTitle,
+    scopeEyebrow: copy.scopeEyebrow,
+    scopeTitle: copy.scopeTitle,
+    exclusionsTitle: copy.exclusionsTitle,
+    confirmedTitle: copy.confirmedTitle,
+    confirmations: copy.confirmations,
+    finalEyebrow: copy.finalEyebrow,
+    finalTitle: tour.ctaTitle,
+    finalBody: tour.ctaBody,
+    contact: tour.ctaLabel,
+    email: copy.emailLabel,
+  };
+}
+
 function buildGenericPageCopy(
   product: LocalizedPrivateTourProduct,
 ): ImaginePageCopy {
@@ -390,13 +432,14 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
     : buildGenericPageCopy(product);
 }
 
-function offerGroupLabel(locale: PrivateTourLocale, travelers: number) {
+function offerGroupLabel(locale: PrivateTourLocale | "ja", travelers: number) {
   if (locale === "zh") return `${travelers} 人同行`;
   if (locale === "ko") return `${travelers}명 기준`;
+  if (locale === "ja") return `${travelers}名で参加`;
   return `${travelers} travellers`;
 }
 
-function schemaLanguage(locale: PrivateTourLocale) {
+function schemaLanguage(locale: PrivateTourLocale | "ja") {
   return locale === "zh" ? "zh-Hans" : locale;
 }
 
@@ -450,35 +493,87 @@ function displayTourTitle(
 export function ShanghaiJiangnanImaginePage({
   product,
   locale,
+  japaneseChrome,
 }: {
   product: PrivateTourProduct;
-  locale: PrivateTourLocale;
+  locale: PrivateTourLocale | "ja";
+  japaneseChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
 }) {
-  const localized = localizePrivateTourProduct(product, locale);
+  const japanese = locale === "ja";
+  if (japanese && !japaneseChrome) throw new Error("Japanese tour requires its localized site chrome");
+  const sourceLocale = japanese ? "en" : locale;
+  const localized = japanese
+    ? localizeJapaneseJiangnanProduct(product)
+    : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
-  const copy = getPageCopy(localized);
-  const photoCreditCopy = privateTourPhotoCreditCopy[locale];
-  const photoCredits = getLocalizedPrivateTourPhotoCredits(
-    product.slug,
-    locale,
-  );
-  const planningContext = getProductPlanningContext(
+  const copy = japanese ? japanesePageCopy() : getPageCopy(localized);
+  const jaPresentation = jaPilotCopy.tour.presentation;
+  const photoCreditCopy = japanese ? {
+    title: jaPresentation.photoCreditsTitle,
+    intro: jaPresentation.photoCreditsIntro,
+    by: jaPresentation.photoCreditsBy,
+    localNote: "",
+  } : privateTourPhotoCreditCopy[sourceLocale];
+  const photoCredits = getLocalizedPrivateTourPhotoCredits(product.slug, sourceLocale)
+    .map((credit, index) => japanese ? {
+      ...credit,
+      subject: jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject,
+    } : credit);
+  const planningContext = japanese ? {
+    destinations: [],
+    guides: [{ id: jaPilot.guideId, href: jaPilot.guide, label: jaPresentation.planningGuideLabel }],
+    relatedProducts: [],
+  } : getProductPlanningContext(
     product.slug as Parameters<typeof getProductPlanningContext>[0],
-    locale,
+    sourceLocale,
   );
-  const commercialCopy = getExistingContentCommercialCopy(locale);
+  const commercialCopy = japanese ? {
+    ...getExistingContentCommercialCopy("en"),
+    productLabel: jaPresentation.planningEyebrow,
+    productTitle: jaPresentation.planningTitle,
+    productBody: jaPresentation.planningBody,
+    guides: jaPresentation.planningGuides,
+  } : getExistingContentCommercialCopy(sourceLocale);
   const homePath = locale === "en" ? "/" : `/${locale}/`;
-  const tourHubPath = `${homePath}tours/`;
+  const tourHubPath = japanese ? homePath : `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
-  const inquiryContext = getPrivateTourInquiryContext(product.slug, locale);
-  if (!inquiryContext) {
+  const inquiryContext = japanese ? null : getPrivateTourInquiryContext(product.slug, sourceLocale);
+  if (!japanese && !inquiryContext) {
     throw new Error(`Missing controlled inquiry context for ${product.slug}.`);
   }
-  const inquiryHref = buildPrivateTourInquiryHref(
+  const inquiryHref = japanese ? `${jaPilot.tour}#contact` : buildPrivateTourInquiryHref(
     homePath,
-    inquiryContext.slug,
+    product.slug as Parameters<typeof buildPrivateTourInquiryHref>[1],
     "private_tour_product",
   );
+  const jaPriceCopy = japanese ? {
+    chooseGroup: jaPresentation.priceChooseGroup,
+    publishedPrice: jaPresentation.priceSelected,
+    perPerson: jaPresentation.pricePerPerson,
+    groupUnit: jaPresentation.priceGroupUnit,
+    privateTour: jaPresentation.pricePrivateTour,
+    flightsSeparate: jaPresentation.priceFlightsSeparate,
+    checkDates: jaPilotCopy.tour.ctaLabel,
+    otherGroups: jaPresentation.otherGroups,
+    otherGroupsBody: jaPresentation.otherGroupsBody,
+    requestQuote: jaPresentation.otherGroupsAction,
+    emailLabel: jaPresentation.emailLabel,
+  } : undefined;
+  const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : undefined;
+  const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanese ? {
+    whatsapp: {
+      2: jaPilotWhatsAppHref("tour", 2),
+      4: jaPilotWhatsAppHref("tour", 4),
+      6: jaPilotWhatsAppHref("tour", 6),
+      other: jaPilotWhatsAppHref("tour"),
+    },
+    email: {
+      2: jaPilotEmailHref("tour", 2),
+      4: jaPilotEmailHref("tour", 4),
+      6: jaPilotEmailHref("tour", 6),
+      other: jaPilotEmailHref("tour"),
+    },
+  } : undefined;
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
   const lowestRow = rows.length
     ? rows.reduce((lowest, row) =>
@@ -619,27 +714,29 @@ export function ShanghaiJiangnanImaginePage({
 
   return (
     <PrivateTourSelectionBoundary
-      key={inquiryContext.slug}
-      slug={inquiryContext.slug}
-      initialSelection={startingPrice?.selection ?? null}
+      key={product.slug}
+      slug={product.slug as Parameters<typeof PrivateTourSelectionBoundary>[0]["slug"]}
+      initialSelection={japanese
+        ? getPrivateTourInquirySelection(product.slug, "standard-guided", 2)
+        : startingPrice?.selection ?? null}
     >
     <div
-      className={`${localeStyles.root} hg-locale-root ${styles.page}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.page}${japanese ? ` ${jaStyles.productPage}` : ""}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >
       <a className={styles.skipLink} href="#tour-details">
         {copy.skipLink}
       </a>
-      <HomegroundHeader
+      {japanese ? japaneseChrome?.header : <HomegroundHeader
         languagePaths={{
           ...localized.paths,
           ...(product.slug === jaPilot.tourSlug ? { ja: jaPilot.tour } : {}),
         }}
-        locale={locale}
+        locale={sourceLocale}
         pageContext="tour"
         plannerHrefOverride={inquiryHref}
-      />
+      />}
 
       <main id="tour-details">
         <section aria-labelledby="product-title" className={styles.hero}>
@@ -668,7 +765,7 @@ export function ShanghaiJiangnanImaginePage({
                   ? styles.compactRouteTitle
                   : undefined}
               >
-                {displayTourTitle(localized.title, locale, product.slug)}
+                {displayTourTitle(localized.title, sourceLocale, product.slug)}
               </h1>
               <p className={styles.heroPromise}>{copy.heroPromise}</p>
               <p className={styles.heroLede}>{localized.lede}</p>
@@ -677,9 +774,11 @@ export function ShanghaiJiangnanImaginePage({
               <ShanghaiJiangnanPriceConsole
                 inquiryHref={inquiryHref}
                 product={localized}
+                japaneseCopy={jaPriceCopy}
+                japaneseContactHrefs={japaneseContactHrefs}
               />
             </div>
-            <ShanghaiJiangnanHeroDeck product={localized} />
+            <ShanghaiJiangnanHeroDeck product={localized} photoCopy={jaPhotoCopy} />
           </div>
         </section>
 
@@ -715,12 +814,12 @@ export function ShanghaiJiangnanImaginePage({
           data-tour-reveal
         >
           <div className={styles.sectionInner}>
-            <div className={`${styles.sectionHeading} ${styles.routeHeading}`}>
+            <div className={`${styles.sectionHeading} ${styles.routeHeading}${japanese ? ` ${jaStyles.routeHeading}` : ""}`}>
               <p className={styles.sectionEyebrow}>{copy.routeEyebrow}</p>
               <h2>{copy.routeTitle}</h2>
               <p>{copy.routeBody}</p>
             </div>
-            <ShanghaiJiangnanRouteExplorer product={localized} />
+            <ShanghaiJiangnanRouteExplorer product={localized} photoCopy={jaPhotoCopy} />
           </div>
         </section>
 
@@ -746,7 +845,7 @@ export function ShanghaiJiangnanImaginePage({
           </div>
         </section>
 
-        {isJiangnanTour(product.slug) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} /> : null}
+        {isJiangnanTour(product.slug) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} japaneseCopy={japanese ? jaPresentation.comparison : undefined} /> : null}
 
         {localized.faq?.length ? (
           <section
@@ -755,7 +854,7 @@ export function ShanghaiJiangnanImaginePage({
           >
             <div className={styles.sectionInner}>
               <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
-                <h2 id="tour-choice-title">{beforeYouChooseTitle[locale]}</h2>
+                <h2 id="tour-choice-title">{japanese ? jaPresentation.beforeChooseTitle : beforeYouChooseTitle[sourceLocale]}</h2>
               </div>
               <div className={`${styles.serviceGrid} ${styles.faqGrid}`}>
                 {localized.faq.map((item) => (
@@ -786,7 +885,7 @@ export function ShanghaiJiangnanImaginePage({
                 {product.slug === "zhangjiajie-forest-4-day-private-tour" ? (
                   <ZhangjiajieTourComparisonLink
                     currentRoute="forest"
-                    locale={locale}
+                    locale={sourceLocale}
                   />
                 ) : null}
               </p>
@@ -815,7 +914,12 @@ export function ShanghaiJiangnanImaginePage({
                 </ul>
               </section>
             </div>
-            {isJiangnanTour(product.slug) ? <JiangnanBookingTrust locale={locale} /> : null}
+            {isJiangnanTour(product.slug) ? <JiangnanBookingTrust locale={locale} japaneseCopy={japanese ? {
+              trust: jaPresentation.bookingTrust.title,
+              trustBody: jaPresentation.bookingTrust.body,
+              business: jaPresentation.bookingTrust.business,
+              terms: jaPresentation.bookingTrust.terms,
+            } : undefined} /> : null}
           </div>
         </section>
 
@@ -901,13 +1005,13 @@ export function ShanghaiJiangnanImaginePage({
                     ))}
                   </ul>
                 ) : null}
-                <p>{photoCreditCopy.localNote}</p>
+                {photoCreditCopy.localNote ? <p>{photoCreditCopy.localNote}</p> : null}
               </div>
             </details>
           </div>
         </section>
 
-        <aside className={styles.finalCta} data-tour-reveal>
+        <aside className={styles.finalCta} data-tour-reveal id={japanese ? "contact" : undefined}>
           <div className={styles.finalInner}>
             <div>
               <p className={styles.finalEyebrow}>{copy.finalEyebrow}</p>
@@ -915,11 +1019,19 @@ export function ShanghaiJiangnanImaginePage({
               <p>{copy.finalBody}</p>
             </div>
             <div className={styles.finalActions}>
+              {japanese ? <>
+                <JapaneseTourContactLink className={styles.finalPrimary} hrefs={japaneseContactHrefs!}>
+                  {copy.contact}<ArrowRight aria-hidden="true" size={18} />
+                </JapaneseTourContactLink>
+                <JapaneseTourContactLink channel="email" className={styles.finalEmail} hrefs={japaneseContactHrefs!}>
+                  <Mail aria-hidden="true" size={16} />{copy.email}
+                </JapaneseTourContactLink>
+              </> : <>
               <SelectedPrivateTourCta
                 className={styles.finalPrimary}
                 guideId={localized.id}
                 href={inquiryHref}
-                locale={locale}
+                locale={sourceLocale}
                 position="footer"
               >
                 {copy.contact}
@@ -928,22 +1040,23 @@ export function ShanghaiJiangnanImaginePage({
               <SelectedPrivateTourEmailLink
                 className={styles.finalEmail}
                 email={homegroundBusiness.serviceEmail}
-                locale={locale}
+                locale={sourceLocale}
                 href={buildPrivateTourMailtoHref(
                   homegroundBusiness.serviceEmail,
-                  locale,
-                  inquiryContext,
+                  sourceLocale,
+                  inquiryContext!,
                 )}
               >
                 <Mail aria-hidden="true" size={16} />
                 {copy.email}
               </SelectedPrivateTourEmailLink>
+              </>}
             </div>
           </div>
         </aside>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="tour" />
+      {japanese ? japaneseChrome?.footer : <HomegroundFooter locale={sourceLocale} pageContext="tour" />}
       <PrivateTourMotion />
       <script
         dangerouslySetInnerHTML={{

@@ -1,0 +1,28 @@
+.japaneseHeader .brand small {
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.japaneseFooter {
+  --hg-brand: var(--hg-font-brand);
+}
+
+.japaneseFooter .footerTop > div:first-child span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+@media (max-width: 1179.98px) {
+  .japaneseHeader .mobilePrimaryLinks > a {
+    font-family: var(--sans, system-ui, sans-serif);
+    font-weight: 560;
+    letter-spacing: -0.015em;
+  }
+
+  .japaneseHeader .mobileLanguageNav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

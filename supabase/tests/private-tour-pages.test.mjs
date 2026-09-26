@@ -219,7 +219,11 @@ test("all published tour templates return through the localized tours hub", asyn
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
   ]);
 
-  assert.match(batchTemplate, /const tourHubPath = `\$\{homePath\}tours\/`/);
+  assert.match(
+    batchTemplate,
+    /const tourHubPath = japanese \? homePath : `\$\{homePath\}tours\/`/,
+    "published EN/ZH/KO tours retain their hub; the single Japanese pilot returns home",
+  );
   assert.match(batchTemplate, /<Link href=\{tourHubPath\}>\{copy\.productLabel\}<\/Link>/);
   assert.match(batchTemplate, /position: 3,\s*name: localized\.title/s);
   assert.match(batchTemplate, /<li aria-current="page">\{localized\.title\}<\/li>/);
@@ -888,7 +892,11 @@ test("product-page motion degrades safely and the Jiangnan body stays white abov
       `${selector} must remain white`,
     );
   }
-  assert.match(jiangnanPage, /<\/main>\s*<HomegroundFooter\b/s);
+  assert.match(
+    jiangnanPage,
+    /<\/main>\s*\{japanese \? japaneseChrome\?\.footer : <HomegroundFooter\b/s,
+    "the shared page keeps its standard footer and uses Japanese chrome only for JA",
+  );
   assert.match(footerCss, /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s);
 });
 
