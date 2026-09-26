@@ -333,6 +333,32 @@ test("Jiangnan comparison preserves the selected party and the other-size quote 
   }
 });
 
+test("Japanese Jiangnan comparison opens the Japanese tour with the selected party size", async () => {
+  const selection = await loadComponent("components/PrivateTourSelection.tsx");
+  const comparison = await loadComponent("components/JiangnanTourComparison.tsx", { "./PrivateTourSelection": selection });
+  const origin = "shanghai-suzhou-hangzhou-6-day-private-tour";
+  const target = "shanghai-suzhou-5-day-private-tour";
+  const japaneseCopy = {
+    title: "行程を比べる", intro: "", headings: ["比較", "5日間", "6日間"],
+    rows: [["宿泊", "上海4泊", "上海2泊・蘇州1泊・杭州2泊"]],
+    view: "行程を見る", current: "現在ご覧のツアー",
+  };
+  for (const travelers of [2, 4, 6]) {
+    const chosen = inquiry.getPrivateTourInquirySelection(origin, "standard-guided", travelers);
+    const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
+      slug: origin, initialSelection: chosen,
+    }, React.createElement(comparison.JiangnanTourComparison, {
+      locale: "ja", currentSlug: origin, japaneseCopy,
+    })));
+    const link = nodes(parse(html)).find(node => node.tagName === "a" &&
+      new URL(attr(node, "href"), "https://homegroundchina.com").pathname === `/ja/tours/${target}/`);
+    assert.ok(link, "the Japanese comparison must stay on a Japanese product page");
+    assert.equal(attr(link, "hreflang"), "ja");
+    const url = new URL(attr(link, "href"), "https://homegroundchina.com");
+    assert.equal(inquiry.getPrivateTourDetailSelectionFromSearchParams(target, url.searchParams)?.travelers, travelers);
+  }
+});
+
 test("hydration and history restore validated selection without recording a user change; controls update URLs and consultations", async () => {
   let address = new URL(`https://homegroundchina.com/zh/tours/${beijingSlug}/?package=english-guided&travelers=4#price`);
   const listeners = new Map();

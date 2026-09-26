@@ -68,10 +68,10 @@ type JapaneseComparisonCopy = Readonly<{
 
 function ComparisonTourLink({ locale, slug, children }: { locale: HomegroundLocale | "ja"; slug: PrivateTourInquirySlug; children: ReactNode }) {
   const current = usePrivateTourSelection();
-  const path = `${locale === "en" || locale === "ja" ? "" : `/${locale}`}/tours/${slug}/`;
+  const path = `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
   const targetSelection = current && getPrivateTourInquirySelection(slug, current.selection.packageId, current.selection.travelers);
   const href = targetSelection ? buildPrivateTourDetailHref(path, slug, targetSelection) : path;
-  return <Link href={href} hrefLang={locale === "ja" ? "en" : undefined}>{children}</Link>;
+  return <Link href={href} hrefLang={locale === "ja" ? "ja" : undefined}>{children}</Link>;
 }
 
 export function JiangnanTourComparison({ locale, currentSlug, japaneseCopy }: { locale: HomegroundLocale | "ja"; currentSlug: string; japaneseCopy?: JapaneseComparisonCopy }) {
