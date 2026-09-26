@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { resolvePageTitle } from "./pageTitle.ts";
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { jaPilot } from "./jaPilot.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { localizePrivateTourProduct, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";
 
 export const RESERVED_PRIVATE_TOUR_SLUGS = [
@@ -26,6 +28,7 @@ export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
     en: paths.en,
     "zh-Hans": paths.zh,
     ko: paths.ko,
+    ...(product.slug === jaPilot.tourSlug ? { ja: jaPilot.tour } : {}),
     "x-default": paths.en,
   } as const;
 }

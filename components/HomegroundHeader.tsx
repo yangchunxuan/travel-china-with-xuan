@@ -63,7 +63,7 @@ export type HomegroundPageContext =
   | "destination"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja";
 
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
@@ -628,6 +628,7 @@ export function HomegroundHeader({
             style={showLanguageNav ? undefined : { display: "none" }}
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
+            {languagePaths?.ja ? <a href={languagePaths.ja} hrefLang="ja" lang="ja">JA</a> : null}
           </nav>
           <Link
             className={styles.headerCta}
@@ -738,6 +739,7 @@ export function HomegroundHeader({
                 style={showLanguageNav ? undefined : { display: "none" }}
               >
                 {availableLanguageLocales.map(renderLanguageChoice)}
+                {languagePaths?.ja ? <a href={languagePaths.ja} hrefLang="ja" lang="ja">JA</a> : null}
               </div>
             </div>
             <Link

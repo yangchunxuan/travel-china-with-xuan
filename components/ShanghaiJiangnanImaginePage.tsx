@@ -35,6 +35,7 @@ import {
   getExistingContentCommercialCopy,
   getProductPlanningContext,
 } from "../lib/existingContentCommercialLinks";
+import { jaPilot } from "../lib/jaPilot";
 
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
@@ -631,7 +632,10 @@ export function ShanghaiJiangnanImaginePage({
         {copy.skipLink}
       </a>
       <HomegroundHeader
-        languagePaths={localized.paths}
+        languagePaths={{
+          ...localized.paths,
+          ...(product.slug === jaPilot.tourSlug ? { ja: jaPilot.tour } : {}),
+        }}
         locale={locale}
         pageContext="tour"
         plannerHrefOverride={inquiryHref}

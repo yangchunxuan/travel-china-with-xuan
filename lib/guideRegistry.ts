@@ -1287,6 +1287,11 @@ export function getGuideLanguagePaths(id: GuideId) {
     paths["x-default"] = paths.en;
   }
 
+  // Japanese is intentionally available for this complete guide only.
+  if (id === "shanghai-hangzhou-transport-route") {
+    paths.ja = "/ja/guides/shanghai-hangzhou-transport-route/";
+  }
+
   return paths;
 }
 

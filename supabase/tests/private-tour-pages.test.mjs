@@ -1035,6 +1035,9 @@ test("manifest distinguishes one tours hub from every registry product and detai
       en: `/tours/${product.slug}/`,
       "zh-Hans": `/zh/tours/${product.slug}/`,
       ko: `/ko/tours/${product.slug}/`,
+      ...(product.slug === "shanghai-suzhou-hangzhou-6-day-private-tour"
+        ? { ja: `/ja/tours/${product.slug}/` }
+        : {}),
       "x-default": `/tours/${product.slug}/`,
     });
 
@@ -1064,7 +1067,10 @@ test("manifest distinguishes one tours hub from every registry product and detai
       );
       assert.ok(manifestEntry, `${product.slug}/${locale} manifest entry`);
       assert.equal(manifestEntry.canonicalPath, localized.path);
-      assert.deepEqual(manifestEntry.alternates, languages);
+      // The sparse Japanese pilot is added to sitemap/metadata separately;
+      // the three-language content-node schema remains unchanged.
+      const { ja: _japanesePilotPath, ...manifestLanguages } = languages;
+      assert.deepEqual(manifestEntry.alternates, manifestLanguages);
     }
   }
 

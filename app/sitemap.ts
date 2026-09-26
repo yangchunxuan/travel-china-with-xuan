@@ -11,6 +11,12 @@ import {
   searchPlatformManifest,
 } from "../lib/searchPlatformManifest";
 import { legacyGuideIdFromBodyResource } from "../lib/searchPlatformContentAdapter";
+import {
+  absoluteJaPilotAlternates,
+  jaPilot,
+  jaPilotGuideAlternates,
+  jaPilotTourAlternates,
+} from "../lib/jaPilot";
 
 export const dynamic = "force-static";
 
@@ -75,15 +81,24 @@ export function sitemapLastModified(entry: ContentManifestEntry) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const guideAlternates = jaPilotGuideAlternates();
+  const tourAlternates = jaPilotTourAlternates();
+  const guidePaths = new Set<string>(Object.values(guideAlternates));
+  const tourPaths = new Set<string>(Object.values(tourAlternates));
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
+    const alternates = guidePaths.has(entry.canonicalPath)
+      ? absoluteJaPilotAlternates(guideAlternates)
+      : tourPaths.has(entry.canonicalPath)
+        ? absoluteJaPilotAlternates(tourAlternates)
+        : absoluteManifestAlternates(entry);
 
     return {
       url: `${base}${entry.canonicalPath}`,
       ...(lastModified ? { lastModified } : {}),
       changeFrequency: changeFrequency(entry),
       priority: sitemapPriority(entry),
-      alternates: { languages: absoluteManifestAlternates(entry) },
+      alternates: { languages: alternates },
     };
   });
 
@@ -97,5 +112,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  return [...manifestEntries, ...guidePaginationEntries];
+  const japaneseEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${base}${jaPilot.guide}`,
+      lastModified: "2026-09-26",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: absoluteJaPilotAlternates(guideAlternates) },
+    },
+    {
+      url: `${base}${jaPilot.tour}`,
+      lastModified: "2026-09-26",
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(tourAlternates) },
+    },
+  ];
+
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries];
 }
