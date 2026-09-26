@@ -359,7 +359,7 @@ export const malaysiaZhangjiajieGuideCopyEn = {
         items: [
           "You book flights, rail, hotels and tickets",
           "You keep responsibility when one booking affects another",
-          "A written route review or plan can still check the structure",
+          "Use the responsibility checklist above to check connections, tickets and change handling before booking",
         ],
       },
       {
@@ -496,7 +496,7 @@ export const malaysiaZhangjiajieGuideCopyEn = {
     note:
       "The first conversation is free. Detailed personalised work and any agreed ground arrangements begin only after the scope, responsible parties, delivery and payment are clear.",
     formNote:
-      "Send one trip brief. You do not need to choose Route Review, Route Planning or Full Trip Support before speaking with us.",
+      "Standalone paid Route Review and Route Planning services are no longer offered. Send one trip brief to discuss a private trip and the ground arrangements you want us to handle; we confirm the scope and price in writing before payment.",
   },
   methodology: {
     label: "How the guide was checked",
