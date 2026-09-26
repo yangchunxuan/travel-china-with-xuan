@@ -32,16 +32,38 @@ function legacyRegistrySource(destinations) {
 test("entity coverage includes the complete generated plus legacy runtime ledger", async () => {
   const report = await generateGuideEntityCoverage();
   assert.deepEqual(report.scope, {
-    runtimeGuideCount: 208,
-    independentGuideCount: 189,
+    runtimeGuideCount: 210,
+    independentGuideCount: 191,
     legacyGuideCount: 19,
   });
-  assert.equal(report.guideCount, 208);
-  assert.equal(report.guideWithUnmappedTokenCount, 93);
-  assert.equal(report.countryFallbackGuideCount, 42);
-  assert.equal(report.unmappedTokenCount, 147);
+  assert.equal(report.guideCount, 210);
+  assert.equal(report.guideWithUnmappedTokenCount, 95);
+  assert.equal(report.countryFallbackGuideCount, 43);
+  assert.equal(report.unmappedTokenCount, 149);
   assert.equal(strictModeExitCode(report), 1);
   assert.equal(report.rows.filter((row) => row.scope === "legacy").length, 19);
+  assert.deepEqual(
+    report.rows.find((row) => row.contentId === "guide-xiamen-tulou-quanzhou-six-day-route"),
+    {
+      contentId: "guide-xiamen-tulou-quanzhou-six-day-route",
+      scope: "independent",
+      destinationTokens: ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+      entityIds: ["country-china"],
+      unmappedTokens: ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+      usedCountryFallback: true,
+    },
+  );
+  assert.deepEqual(
+    report.rows.find((row) => row.contentId === "guide-yangtze-cruise-fit-china-itinerary"),
+    {
+      contentId: "guide-yangtze-cruise-fit-china-itinerary",
+      scope: "independent",
+      destinationTokens: ["china", "chongqing", "yichang"],
+      entityIds: ["country-china", "city-chongqing"],
+      unmappedTokens: ["yichang"],
+      usedCountryFallback: false,
+    },
+  );
   assert.ok(report.rows.some((row) =>
     row.contentId === "guide-do-us-citizens-need-visa-china-2026" &&
     row.scope === "legacy" &&

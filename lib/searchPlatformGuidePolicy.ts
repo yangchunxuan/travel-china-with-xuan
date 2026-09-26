@@ -182,6 +182,8 @@ export const guideFreshnessMinimums = Object.freeze({
   "wheelchair-accessible-china-route-planning": "high",
   "wuhan-where-to-stay-hankou-wuchang-hanyang": "high",
   "xian-lanzhou-dunhuang-silk-road-route": "high",
+  "xiamen-tulou-quanzhou-six-day-route": "high",
+  "yangtze-cruise-fit-china-itinerary": "high",
 } as const satisfies Record<string, GuideFreshnessVolatility>);
 
 export const dynamicTicketTopicFragments = [

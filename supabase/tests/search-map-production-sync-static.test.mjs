@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { legacySystemContentIds } from "../../lib/legacySystemContentLifecycle.ts";
-import { resolveGuideEntities } from "../../lib/searchPlatformGuidePolicy.ts";
+import { guideUpdatePolicy, resolveGuideEntities } from "../../lib/searchPlatformGuidePolicy.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 
@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 189);
+  assert.equal(inventory.generatedIdentityCount, 191);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 208);
-  assert.equal(inventory.localeUrlCount, 616);
+  assert.equal(inventory.identityCount, 210);
+  assert.equal(inventory.localeUrlCount, 622);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
@@ -57,6 +57,30 @@ test("the Search Map complete inventory covers every current guide directory", a
     inventory.identityIds.filter((id) => !guideDirectories.includes(id)).length,
     inventory.protectedLegacyIdentityCount,
   );
+
+  const latestIncrement = inventory.repositoryIncrements.at(-1);
+  assert.equal(latestIncrement.checkedAt, "2026-09-26");
+  assert.equal(latestIncrement.publicationStatus, "not-published");
+  assert.equal(latestIncrement.identityDelta, 2);
+  assert.equal(latestIncrement.localeUrlDelta, 6);
+  assert.deepEqual(latestIncrement.identities.map((entry) => entry.id), [
+    "xiamen-tulou-quanzhou-six-day-route",
+    "yangtze-cruise-fit-china-itinerary",
+  ]);
+  for (const entry of latestIncrement.identities) {
+    const metadata = await loadJson(entry.metadataPath);
+    assert.equal(metadata.id, entry.id);
+    assert.equal(entry.canonicalPath, metadata.locales.en.path);
+    assert.deepEqual(entry.localePaths, [
+      metadata.locales.en.path,
+      metadata.locales.zh.path,
+      metadata.locales.ko.path,
+    ]);
+    assert.equal(entry.pillar, metadata.pillar);
+    assert.deepEqual(entry.destinations, metadata.destinations);
+    assert.deepEqual(entry.entityResolution, resolveGuideEntities(metadata.destinations));
+    assert.equal(entry.freshnessMinimum, guideUpdatePolicy(metadata).volatility);
+  }
 });
 
 test("all eight destination Hubs are published and the old PR 74 queue is empty", async () => {

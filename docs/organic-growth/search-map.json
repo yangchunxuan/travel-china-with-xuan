@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 208,
-      "localeUrlCount": 616,
-      "generatedIdentityCount": 189,
+      "identityCount": 210,
+      "localeUrlCount": 622,
+      "generatedIdentityCount": 191,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1601,6 +1601,68 @@
               "boundary": "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail and route choice."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "codex/gpt-new-pages-20260926",
+          "sourceCommit": "e542cefd5f8e5308cef3a08a90c9541974666a3c",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "PR #227 branch inventory only; merge, deployment, live URL checks, crawl and indexing require separate evidence.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "xiamen-tulou-quanzhou-six-day-route",
+              "title": "Xiamen, Tulou & Quanzhou in 6 Days: Where to Stay",
+              "metadataPath": "content/guides/xiamen-tulou-quanzhou-six-day-route/metadata.json",
+              "canonicalPath": "/guides/xiamen-tulou-quanzhou-six-day-route/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/xiamen-tulou-quanzhou-six-day-route/",
+                "/zh/guides/xiamen-tulou-quanzhou-six-day-route/",
+                "/ko/guides/xiamen-tulou-quanzhou-six-day-route/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "pillar": "routes-and-pace",
+              "destinations": ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+              "entityResolution": {
+                "entityIds": ["country-china"],
+                "unmappedTokens": ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+                "usedCountryFallback": true
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Six-day Fujian hotel-base and route-order decision across Xiamen, two tulou areas, Anxi and Quanzhou; published tour inclusions and date-specific ferry, attraction and hotel availability remain owned by the linked product and operational guides."
+            },
+            {
+              "id": "yangtze-cruise-fit-china-itinerary",
+              "title": "Should You Add a Yangtze Cruise to Your China Itinerary?",
+              "metadataPath": "content/guides/yangtze-cruise-fit-china-itinerary/metadata.json",
+              "canonicalPath": "/guides/yangtze-cruise-fit-china-itinerary/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/yangtze-cruise-fit-china-itinerary/",
+                "/zh/guides/yangtze-cruise-fit-china-itinerary/",
+                "/ko/guides/yangtze-cruise-fit-china-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "compare",
+              "primaryCollectionId": "plan-budget-pace-decisions",
+              "pillar": "routes-and-pace",
+              "destinations": ["china", "chongqing", "yichang"],
+              "entityResolution": {
+                "entityIds": ["country-china", "city-chongqing"],
+                "unmappedTokens": ["yichang"],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Whether a three-night Chongqing-to-Yichang cruise merits four calendar days in a China route; ship, sailing, pier, cabin, onboard service, price and date-specific inclusions remain with the actual operator and linked tour products."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1790,6 +1852,7 @@
         "wuhan-where-to-stay-hankou-wuchang-hanyang",
         "wukong-nezha-games-animation-myth-guide",
         "xiamen-hubs-to-gulangyu-ferry-terminal",
+        "xiamen-tulou-quanzhou-six-day-route",
         "xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan",
         "xian-chengdu-transport-route",
         "xian-lanzhou-dunhuang-silk-road-route",
@@ -1797,6 +1860,7 @@
         "xixia-script-and-imperial-tombs-context",
         "yangshan-automated-port-explained",
         "yangshuo-town-or-yulong-river-where-to-stay",
+        "yangtze-cruise-fit-china-itinerary",
         "yingge-dance-beyond-the-viral-clips",
         "yiwu-market-to-factory-network",
         "yuanyang-rice-terraces-viewpoint-and-village-route",

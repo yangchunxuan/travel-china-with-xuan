@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { historicalRouteServiceIds as routeServiceIds } from "../../lib/routeServiceInterest.ts";
+import { guideTargets } from "../../lib/guideCommercialTargets.ts";
 import {
   loadGuideMetadata,
   loadHighIntentCtaOwnershipRegistry,
@@ -69,12 +70,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 28,
+    plan: 30,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 78);
+  assert.equal(report.uniqueContentIds, 80);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 16);
+  assert.equal(report.authorizedGenericConversation, 18);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -100,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 65 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 67 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -181,9 +182,11 @@ test("commercial links keep the approved 8 hub, 65 curated guide and 48 product 
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
+      "xiamen-tulou-quanzhou-six-day-route",
       "xian-lanzhou-dunhuang-silk-road-route",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
+      "yangtze-cruise-fit-china-itinerary",
       "zhangjiajie-arrival-departure-stations",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
@@ -250,6 +253,16 @@ test("commercial links keep the approved 8 hub, 65 curated guide and 48 product 
       "zhangye-jiayuguan-dunhuang-7-day-private-tour",
     ],
   );
+});
+
+test("new route guides point to their matching private-tour products", () => {
+  assert.deepEqual(guideTargets["xiamen-tulou-quanzhou-six-day-route"], [
+    { kind: "product", slug: "xiamen-tulou-quanzhou-6-day-private-tour" },
+  ]);
+  assert.deepEqual(guideTargets["yangtze-cruise-fit-china-itinerary"], [
+    { kind: "product", slug: "chongqing-yangtze-cruise-6-day-private-tour" },
+    { kind: "product", slug: "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour" },
+  ]);
 });
 
 test("Zhangjiajie commercial routes and Singapore planning links stay distinct", () => {

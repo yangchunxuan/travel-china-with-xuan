@@ -129,7 +129,7 @@ test("all six Guangzhou hub support guides resolve the Guangzhou entity", async 
 
 test("freshness registry exhaustively covers the runtime pillar vocabulary", async () => {
   const runtime = await loadRuntimeFreshnessInputs();
-  assert.equal(runtime.size, 208);
+  assert.equal(runtime.size, 210);
   const runtimePillars = [...new Set(
     [...runtime.values()].map((guide) => guide.pillar),
   )].sort();
@@ -189,6 +189,8 @@ test("explicit high-risk minima cover safety, accessibility, airline and dynamic
     "great-wall-section-selector-from-beijing",
     "lunar-new-year-customs-for-visitors",
     "wheelchair-accessible-china-route-planning",
+    "xiamen-tulou-quanzhou-six-day-route",
+    "yangtze-cruise-fit-china-itinerary",
   ];
   for (const id of ids) {
     assert.equal(guideFreshnessMinimums[id], "high");
