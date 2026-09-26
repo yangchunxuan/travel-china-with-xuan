@@ -9,7 +9,9 @@
 //     --chrome="C:/Program Files/Google/Chrome/Application/chrome.exe" \
 //     [--export=out] [--output=serif-sc-usage.json] [--port=9230]
 //
-// Each page is measured at 1440x900 and at 375x812 (mobile). A character counts
+// Each page is measured at 1440x900, 1920x1080, 1024x1366 (tablet), 430x932 and
+// 375x812 (phones): a heading can wrap into the first viewport at one size and
+// not another, and every character there must be in slice 0. A character counts
 // as "laid out" when a rendered text node whose first font family is the serif
 // contains it, as "first viewport" when that node starts above the fold, and as
 // "hidden" when the node is in the DOM in the serif but not rendered (closed
@@ -148,6 +150,9 @@ async function measureViewport({ width, height, mobile }, results) {
 const results = new Map();
 for (const viewport of [
   { width: 1440, height: 900, mobile: false },
+  { width: 1920, height: 1080, mobile: false },
+  { width: 1024, height: 1366, mobile: true },
+  { width: 430, height: 932, mobile: true },
   { width: 375, height: 812, mobile: true },
 ]) {
   await measureViewport(viewport, results);

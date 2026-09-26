@@ -61,7 +61,7 @@ them. The subset is therefore cut into slices that share one family, weight
   and every Han character that is laid out in the serif, hidden text included,
   on `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour page and every guide that
   `/zh/` or the first `/zh/guides/` page links to, every Han character in the
-  first viewport of any measured page (1440 and 375 wide), and the newsletter
+  first viewport of any measured page (1440, 1920, 1024 tablet, 430 and 375 wide), and the newsletter
   card's headings, which mount after a delay on any page and so are never
   measured. The measured text of those pages therefore needs no other slice.
   Half the size of the old single file, it is also the only serif file a
