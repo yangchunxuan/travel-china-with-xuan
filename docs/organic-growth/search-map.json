@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 217,
-      "localeUrlCount": 643,
-      "generatedIdentityCount": 198,
+      "identityCount": 218,
+      "localeUrlCount": 646,
+      "generatedIdentityCount": 199,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1916,6 +1916,42 @@
               "boundary": "Family pace for the published five-day Guilin-Yangshuo private route and the distinction between its included Li River cruise and optional Yulong rafting; the Longcun-Daba Bridge restriction is route-specific and must be rechecked with the operator."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/jiangnan-family-geo-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "One Suzhou older-parent decision guide in the repository; live publication and AI citations need separate verification.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "suzhou-with-older-parents-garden-museum-transfer-day",
+              "title": "Suzhou with Older Parents: Garden, Museum & Hangzhou",
+              "metadataPath": "content/guides/suzhou-with-older-parents-garden-museum-transfer-day/metadata.json",
+              "canonicalPath": "/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+                "/zh/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+                "/ko/guides/suzhou-with-older-parents-garden-museum-transfer-day/"
+              ],
+              "section": "plan",
+              "pageFamily": "task",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "pillar": "routes-and-pace",
+              "destinations": ["suzhou", "hangzhou"],
+              "entityResolution": {
+                "entityIds": ["city-suzhou", "city-hangzhou"],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "Older-parent pace and the published Suzhou-to-Hangzhou transfer-day decision; garden and museum entry remain separate date-dependent reservations, and changes to the route require a written quote."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2093,6 +2129,7 @@
         "sichuan-opera-face-changing-with-context",
         "singapore-to-zhangjiajie-itinerary",
         "summer-palace-gates-route-and-boat-plan",
+        "suzhou-with-older-parents-garden-museum-transfer-day",
         "tea-landscape-regions-of-china",
         "temple-of-heaven-gates-and-ritual-sequence",
         "terracotta-warriors-without-tour",

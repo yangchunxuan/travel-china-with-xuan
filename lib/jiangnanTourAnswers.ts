@@ -28,6 +28,14 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
     ),
   },
   {
+    question: l("How are rooms and the Suzhou journey arranged for four or six people?", "4 人或 6 人怎样分房、去苏州？", "4명이나 6명은 객실과 쑤저우 이동을 어떻게 준비하나요?"),
+    answer: l(
+      "The published starting prices assume two people sharing a room: two rooms for four travellers, or three for six, at the same Shanghai hotel for all four nights. Both groups still use second-class return high-speed rail for Suzhou, with private station transfers. Tell us your preferred beds, ages and luggage count; we confirm the rooms, train and vehicle before the final written quote. The Suzhou day does not include a return to your Shanghai room for a midday rest.",
+      "公开起价按两人一间计算：4 人通常 2 间，6 人通常 3 间，4 晚都住上海同一家酒店。两种人数去苏州都含高铁二等座往返和两端私车接驳。告诉我们床型、年龄和行李数量后，我们会核对房间、车次与车辆，再给书面总价。苏州当天不会中午回上海酒店休息。",
+      "공개 시작가는 2인 1실 기준으로, 4명은 객실 2개, 6명은 객실 3개를 같은 상하이 호텔에서 4박 이용하는 구성입니다. 두 인원 모두 쑤저우는 왕복 고속철도 2등석과 양쪽 전용 픽업을 이용합니다. 침대 유형, 나이와 수하물 수량을 알려주시면 객실·열차·차량을 확인한 뒤 최종 총액을 서면으로 안내합니다. 쑤저우 당일에는 점심 휴식을 위해 상하이 호텔 객실로 돌아가지 않습니다.",
+    ),
+  },
+  {
     question: l("Which sights distinguish this from the six-day tour?", "与 6 天三城路线相比，景点有什么不同？", "6일 3도시 일정과 관광지가 어떻게 다른가요?"),
     answer: l(
       "This route includes Zhujiajiao, Shanghai Tower's 118th-floor observation deck and a Suzhou day with the Humble Administrator's Garden, Hanshan Temple and Pingjiang Road. Hangzhou and Suzhou Museum are not included. The six-day route instead stays in Suzhou and Hangzhou and includes a West Lake cruise.",
@@ -92,6 +100,22 @@ export const shanghaiSuzhouHangzhouAnswers: readonly PrivateTourFaqItem[] = [
       "Because it is just your party, you can talk through rest stops and priorities with Homeground before booking. Tell us the children's ages, room needs and how long each traveller can comfortably walk. Gardens, temple grounds and old lanes still have steps and uneven paths, so this is not a step-free trip; we check a workable route and any change in cost.",
       "私家团可以在预订前和 Homeground 商量休息和游览重点。告诉我们孩子年龄、房型需求，以及同行的人大概能连续走多久。园林、寺院和老街仍有台阶和不平的路面，这条路线不是无障碍行程；我们会为你核对可行路线和费用变化。",
       "우리 일행만 다니는 투어라 예약 전에 쉬는 시간과 우선순위를 Homeground와 상의하실 수 있습니다. 어린이 나이, 객실 구성과 무리 없이 걸을 수 있는 시간을 알려 주세요. 정원, 사찰, 옛 골목에는 계단과 고르지 않은 길이 있어 단차 없는 여행은 아닙니다. 가능한 동선과 비용 변화는 저희가 확인해 드립니다.",
+    ),
+  },
+  {
+    question: l("Will the Suzhou-to-Hangzhou day be too full for an older parent?", "带长辈时，苏州去杭州这天会不会太赶？", "부모님과 함께라면 쑤저우에서 항저우로 가는 날이 무리일까요?"),
+    answer: l(
+      "Day 4 combines Suzhou hotel checkout, the Humble Administrator's Garden, Suzhou Museum if a reservation is secured, Pingjiang Road and the onward move to Hangzhou. It is the busiest change-of-hotel day, not a guaranteed midday hotel break. Day 3 includes Panmen or Tiger Hill, not both. If someone needs a seated lunch or a room rest, tell us which visit matters most; we can check a shorter Day 4 or an extra Suzhou night, with any changed inclusions and price agreed in writing before booking.",
+      "第 4 天要退房，再走拙政园、预约成功才可去的苏州博物馆、平江路，之后转去杭州；这是紧凑的换酒店日，不保证能回房午休。第 3 天的盘门与虎丘也只选一处。如果同行长辈需要坐下来慢慢吃午饭或回房休息，请先告诉我们最想保留哪处；我们可核对缩短第 4 天或苏州多住一晚的方案，并在预订前书面确认项目和价格变化。",
+      "4일차에는 쑤저우 호텔 체크아웃 뒤 졸정원, 예약이 확보된 경우에만 가능한 쑤저우박물관, 핑장루를 보고 항저우로 이동합니다. 숙소를 옮기는 바쁜 날이라 객실에서의 낮잠은 보장되지 않습니다. 3일차 판먼과 후추도 둘 중 한 곳만 방문합니다. 부모님께 앉아서 천천히 점심을 드시거나 객실에서 쉬는 시간이 필요하다면 꼭 보고 싶은 곳을 알려주세요. 4일차 방문지를 줄이거나 쑤저우 1박을 추가하는 방안을 검토하고, 변경된 포함 사항과 요금은 예약 전 서면으로 확인해 드립니다.",
+    ),
+  },
+  {
+    question: l("What changes for four or six travellers?", "4 人和 6 人的房间、跨城用车怎么安排？", "4명과 6명일 때 객실과 도시 간 이동은 어떻게 달라지나요?"),
+    answer: l(
+      "The published starting prices assume two people per room: two rooms for four people or three for six, across Shanghai, Suzhou and Hangzhou. For groups of four to nine, we usually plan a door-to-door vehicle for the two city moves, but the vehicle must fit the actual people and bags. Send us ages, bed preferences, luggage and arrival/departure details; we confirm the three hotels, vehicle and final group total in writing. A four- or six-person starting price is not a guarantee of a particular hotel or vehicle model.",
+      "公开起价按两人一间：4 人在上海、苏州和杭州各住 2 间，6 人各住 3 间。4–9 人跨城通常安排门到门车辆，但车型要按实际人数和行李核对。请告诉我们年龄、床型、行李以及进出城市，三地房间、车辆和全团总价都会书面确认。网页起价不代表指定酒店或指定车型已经锁定。",
+      "공개 시작가는 2인 1실 기준으로, 4명은 상하이·쑤저우·항저우에서 객실 2개씩, 6명은 3개씩 이용하는 구성입니다. 4~9명의 도시 간 이동은 보통 문 앞까지 가는 차량으로 계획하지만 실제 인원과 짐에 맞는 차종을 확인해야 합니다. 나이, 침대 선호, 수하물과 입출국 정보를 알려주시면 세 도시의 객실, 차량, 전체 일행의 최종 금액을 서면으로 확정합니다. 공개 시작가만으로 특정 호텔이나 차종이 확보되는 것은 아닙니다.",
     ),
   },
   {

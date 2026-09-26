@@ -93,6 +93,7 @@ const approvedCommercialGuideIds = [
   "yangshuo-town-or-yulong-river-where-to-stay",
   "guilin-yangshuo-with-kids-and-older-parents",
   "first-china-trip-jiangnan-6-or-beijing-11-days",
+  "suzhou-with-older-parents-garden-museum-transfer-day",
   "zhangjiajie-city-or-wulingyuan-hotel-base",
   "zhangjiajie-furong-fenghuang-route-order",
   "zhangjiajie-arrival-departure-stations",
@@ -142,7 +143,7 @@ interface ProductContextDefinition {
 const productContexts = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": {
     destinations: ["shanghai", "hangzhou"],
-    guides: ["shanghai-suzhou-hangzhou-nanjing-route-order", "shanghai-hangzhou-transport-route", "first-china-trip-jiangnan-6-or-beijing-11-days"],
+    guides: ["shanghai-suzhou-hangzhou-nanjing-route-order", "shanghai-hangzhou-transport-route", "first-china-trip-jiangnan-6-or-beijing-11-days", "suzhou-with-older-parents-garden-museum-transfer-day"],
     relatedProducts: [p("shanghai-suzhou-5-day-private-tour")],
   },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {

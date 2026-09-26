@@ -80,9 +80,9 @@
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 27,
-    "plan": 32,
+    "plan": 33,
     "purchase-ticket": 3,
-    "uniqueContentIds": 82
+    "uniqueContentIds": 83
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1249,6 +1249,21 @@
       "targetServiceId": null,
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "suzhou-with-older-parents-garden-museum-transfer-day",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "suzhou-with-older-parents-garden-museum-transfer-day",
       "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",
