@@ -30,6 +30,40 @@ export interface ContactCardRequest {
   mailtoHref?: string;
 }
 
+/**
+ * The card's name and close label. Its frame, shown at once while the rest of
+ * the card loads, needs them on every page; the card's other words load with
+ * the card (lib/contactCardCopy.ts).
+ */
+export const contactCardFrameCopy = {
+  en: { title: "Talk to a China trip planner", close: "Close" },
+  zh: { title: "联系中国旅行规划师", close: "关闭" },
+  ko: { title: "중국 여행 플래너와 상담하기", close: "닫기" },
+} as const satisfies Record<HomegroundLocale, { title: string; close: string }>;
+
+let pageScrollHolds = 0;
+let pageOverflow = "";
+
+/**
+ * Stops the page scrolling under the card, or under its frame while the card
+ * loads; returns the release. The card takes its hold before the frame lets
+ * go of the frame's, so the page's scrollbar (and with it the card's
+ * position) stays put through the change. The page's own overflow comes back
+ * when the last hold goes.
+ */
+export function holdPageScroll() {
+  if (pageScrollHolds++ === 0) {
+    pageOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+  }
+  let held = true;
+  return () => {
+    if (!held) return;
+    held = false;
+    if (--pageScrollHolds === 0) document.body.style.overflow = pageOverflow;
+  };
+}
+
 let returnFocusTarget: HTMLElement | null = null;
 
 export function consumeContactCardReturnFocus() {

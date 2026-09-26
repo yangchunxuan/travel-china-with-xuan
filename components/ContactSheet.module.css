@@ -4,9 +4,12 @@
  * down the page. Same words and email form as the desktop card; WhatsApp and
  * Messenger are one tap away as the site's pills instead of a code to scan.
  * Applied on top of ContactCard.module.css, so every rule here is scoped
- * under .sheet to win over the card's.
+ * under .sheet to win over the card's. The two stylesheets load as separate
+ * files whose order can differ (it depends on what else React is inserting
+ * as they arrive), so the sheet's own box doubles its class to outrank
+ * .dialog whichever came last.
  */
-.sheet {
+.sheet.sheet {
   inset: auto 0 0;
   width: 100%;
   max-width: 36rem;
@@ -127,7 +130,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .sheet.sheet[open] {
-    animation: sheetIn 420ms var(--card-ease) both;
+    animation: sheetIn 420ms var(--card-ease) var(--card-enter-delay, 0s) both;
   }
 
   .sheet.sheet[data-closing] {

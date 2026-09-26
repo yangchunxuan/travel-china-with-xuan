@@ -1,10 +1,10 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+import { contactCardFrameCopy } from "./contactCard";
 
 /** Words for the desktop contact card; loaded with the card, not on every page. */
 export const contactCardCopy = {
   en: {
-    title: "Talk to a China trip planner",
-    close: "Close",
+    ...contactCardFrameCopy.en,
     chinaTime: "China time",
     tourLabel: "Your itinerary",
     guideLabel: "About this guide",
@@ -32,8 +32,7 @@ export const contactCardCopy = {
     messengerQrLabel: "QR code that opens Homeground on Messenger",
   },
   zh: {
-    title: "联系中国旅行规划师",
-    close: "关闭",
+    ...contactCardFrameCopy.zh,
     chinaTime: "北京时间",
     tourLabel: "你选择的行程",
     guideLabel: "你正在看的攻略",
@@ -61,8 +60,7 @@ export const contactCardCopy = {
     messengerQrLabel: "扫码在 Messenger 打开 Homeground",
   },
   ko: {
-    title: "중국 여행 플래너와 상담하기",
-    close: "닫기",
+    ...contactCardFrameCopy.ko,
     chinaTime: "중국 시간",
     tourLabel: "선택하신 일정",
     guideLabel: "읽고 있는 가이드",
