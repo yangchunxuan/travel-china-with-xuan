@@ -734,12 +734,13 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* A negative delay when the card takes over from its frame mid-entrance. */
   .dialog[open] {
-    animation: cardIn 460ms var(--card-ease) both;
+    animation: cardIn 460ms var(--card-ease) var(--card-enter-delay, 0s) both;
   }
 
   .dialog[open]::backdrop {
-    animation: fadeIn 260ms ease-out both;
+    animation: fadeIn 260ms ease-out var(--card-enter-delay, 0s) both;
   }
 
   .dialog[data-closing] {
