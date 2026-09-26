@@ -120,12 +120,24 @@
 }
 
 .desktopNav a[aria-current],
-.desktopNav a[data-active="true"] {
+.desktopNav a[data-active="true"],
+.desktopNav a[data-hg-nav-pressed] {
   color: var(--hg-color-ink, #141413);
 }
 
+/* A chosen item answers with the underline itself, not the global dimmed
+   press (components/NavigationFeedback.tsx); the underline moves at once. */
+.desktopNav a[data-hg-nav-pressed] {
+  opacity: 1;
+}
+
+.desktopNav:has(a[data-hg-nav-pressed]) a:not([data-hg-nav-pressed])::after {
+  visibility: hidden;
+}
+
 .desktopNav a[aria-current]::after,
-.desktopNav a[data-active="true"]::after {
+.desktopNav a[data-active="true"]::after,
+.desktopNav a[data-hg-nav-pressed]::after {
   background: currentColor;
   block-size: 2px;
   border-radius: 999px;
