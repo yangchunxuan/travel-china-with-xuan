@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Menu, X } from "lucide-react";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { jaPilot } from "../lib/jaPilot";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
@@ -19,17 +20,27 @@ export function JapanesePilotShell({
         <div className={styles.headerInner}>
           <a className={styles.brand} href={jaPilot.home} aria-label="Homeground China 日本語トップ">
             <HomegroundBrandMark className={styles.brandMark} />
-            <span lang="en">Homeground China</span>
+            <span className={styles.brandText} lang="en"><strong>Homeground China</strong><small>PRIVATE CHINA JOURNEYS</small></span>
           </a>
           <nav aria-label="主なページ" className={styles.nav}>
             <a aria-current={current === "home" ? "page" : undefined} href={jaPilot.home}>{nav.home}</a>
             <a aria-current={current === "guide" ? "page" : undefined} href={jaPilot.guide}>{nav.guide}</a>
             <a aria-current={current === "tour" ? "page" : undefined} href={jaPilot.tour}>{nav.tour}</a>
           </nav>
-          <a className={styles.headerContact} href={current === "guide" ? "#contact" : `${jaPilot.tour}#contact`}>
-            <span className={styles.contactFull}>{nav.contact}</span>
-            <span className={styles.contactShort}>相談</span>
-          </a>
+          <div className={styles.headerActions}>
+            <a className={styles.headerContact} href={current === "guide" || current === "tour" ? "#contact" : `${jaPilot.tour}#contact`}>
+              <span className={styles.contactFull}>{nav.contact}</span>
+              <span className={styles.contactShort}>相談</span>
+            </a>
+            <details className={styles.mobileMenu}>
+              <summary aria-label="メニューを開く"><Menu className={styles.menuOpenIcon} aria-hidden="true" size={21} /><X className={styles.menuCloseIcon} aria-hidden="true" size={21} /></summary>
+              <nav aria-label="モバイルメニュー">
+                <a aria-current={current === "home" ? "page" : undefined} href={jaPilot.home}>{nav.home}</a>
+                <a aria-current={current === "guide" ? "page" : undefined} href={jaPilot.guide}>{nav.guide}</a>
+                <a aria-current={current === "tour" ? "page" : undefined} href={jaPilot.tour}>{nav.tour}</a>
+              </nav>
+            </details>
+          </div>
         </div>
       </header>
       <main id="main">{children}</main>

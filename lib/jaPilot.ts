@@ -39,7 +39,7 @@ export function absoluteJaPilotAlternates(
 }
 
 /** Direct Japanese consultation while the three-language quote form remains unchanged. */
-export function jaPilotWhatsAppHref(subject: "tour" | "guide") {
+export function jaPilotWhatsAppHref(subject: "tour" | "guide", travelers?: 2 | 4 | 6) {
   const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
   const number = /^\d{7,15}$/.test(configured) ? configured : "8613174215999";
   const path = subject === "tour" ? jaPilot.tour : jaPilot.guide;
@@ -47,13 +47,13 @@ export function jaPilotWhatsAppHref(subject: "tour" | "guide") {
     "こんにちは。日本語で旅行の相談をしたいです。",
     subject === "tour" ? "上海・蘇州・杭州の6日間プライベートツアーについて問い合わせます。" : "上海・杭州の移動と旅程について相談したいです。",
     `https://homegroundchina.com${path}`,
-    subject === "tour" ? "旅行予定月：\n人数：\n日本語ガイド：含まれています" : "旅行予定月：\n人数：\n日本語ガイドの希望：",
+    subject === "tour" ? `旅行予定月：\n人数：${travelers ? `${travelers}名` : ""}\n日本語ガイド：含まれています` : "旅行予定月：\n人数：\n日本語ガイドの希望：",
   ].join("\n");
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
-export function jaPilotEmailHref(subject: "tour" | "guide") {
+export function jaPilotEmailHref(subject: "tour" | "guide", travelers?: 2 | 4 | 6) {
   const topic = subject === "tour" ? "上海・蘇州・杭州6日間" : "上海・杭州の移動";
   const guideLine = subject === "tour" ? "日本語ガイド：含まれています" : "日本語ガイドの希望：";
-  return `mailto:hello@homegroundchina.com?subject=${encodeURIComponent(`日本語での旅行相談：${topic}`)}&body=${encodeURIComponent(`こんにちは。${topic}について相談したいです。\n旅行予定月：\n人数：\n${guideLine}\n参照ページ：https://homegroundchina.com${subject === "tour" ? jaPilot.tour : jaPilot.guide}`)}`;
+  return `mailto:hello@homegroundchina.com?subject=${encodeURIComponent(`日本語での旅行相談：${topic}`)}&body=${encodeURIComponent(`こんにちは。${topic}について相談したいです。\n旅行予定月：\n人数：${travelers ? `${travelers}名` : ""}\n${guideLine}\n参照ページ：https://homegroundchina.com${subject === "tour" ? jaPilot.tour : jaPilot.guide}`)}`;
 }

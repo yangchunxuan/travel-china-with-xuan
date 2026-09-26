@@ -109,6 +109,13 @@ const interactionCopy: Record<
   },
 };
 
+type PhotoCopy = Readonly<{
+  nextPhoto: string;
+  routeLabel: string;
+  routeScenes: string;
+  dayUnit: string;
+}>;
+
 // Fixed-departure small groups price one twin-share place, and long-haul
 // routes include their domestic flights; everything else keeps the copy above.
 const formatCopy: Record<
@@ -144,12 +151,14 @@ type DeckStyle = CSSProperties & { "--deck-depth": number };
 
 export function ShanghaiJiangnanHeroDeck({
   product,
+  photoCopy,
 }: {
   product: LocalizedPrivateTourProduct;
+  photoCopy?: PhotoCopy;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const copy = interactionCopy[product.locale];
+  const copy = photoCopy ?? interactionCopy[product.locale];
   const images = useMemo(
     () => [product.heroImage, ...product.gallery],
     [product.gallery, product.heroImage],
@@ -447,12 +456,16 @@ function ShanghaiJiangnanMobileDayMedia({
 
 export function ShanghaiJiangnanRouteExplorer({
   product,
+  photoCopy,
 }: {
   product: LocalizedPrivateTourProduct;
+  photoCopy?: PhotoCopy;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const explorerRef = useRef<HTMLDivElement>(null);
-  const copy = interactionCopy[product.locale];
+  const copy = photoCopy
+    ? { ...photoCopy, dayLabel: (day: number) => `${day}${photoCopy.dayUnit}` }
+    : interactionCopy[product.locale];
   const routeMedia = useMemo(
     () =>
       product.itinerary.map((day) => {

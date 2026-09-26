@@ -31,7 +31,8 @@ for (const [path, alternates] of [
   for (const existingPath of new Set([alternates.en, alternates["zh-Hans"], alternates.ko])) {
     const existingHtml = await page(existingPath);
     hasTag(existingHtml, `<link rel="alternate" hrefLang="ja" href="${site}${path}"/>`);
-    hasTag(existingHtml, `href="${path}"`);
+    // Product language links may carry the selected group size in the query.
+    hasTag(existingHtml, `href="${path}`);
   }
 }
 
@@ -68,6 +69,9 @@ const guide = await page(jaPilot.guide);
 hasTag(guide, `href="${jaPilot.tour}"`);
 hasTag(guide, 'href="#contact"');
 assert.match(guide, /https:\/\/www\.12306\.cn\/en\/index\.html/u);
-assert.match(decodeURIComponent(tour), /日本語ガイド：含まれています/u);
+const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
+assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
+const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");
+assert.match(whatsappMessage ?? "", /日本語ガイド：含まれています/u);
 
 console.log("✓ Japanese pilot exports two indexable reciprocal pages, live-model prices, Japanese guide terms and working contact paths.");

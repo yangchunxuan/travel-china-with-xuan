@@ -1,0 +1,43 @@
+.productPage {
+  --hg-editorial: var(--serif);
+  font-family: var(--sans);
+  line-break: strict;
+  overflow-wrap: break-word;
+}
+
+.productPage[data-homeground-locale="ja"] :is(h1, h2, h3) {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.productPage[data-homeground-locale="ja"] h1 {
+  font-size: clamp(2.8rem, 4.6vw, 4.1rem);
+  max-width: 17ch;
+}
+
+.productPage[data-homeground-locale="ja"] .routeHeading h2 {
+  font-size: clamp(2.75rem, 4.2vw, 3.75rem);
+  max-width: 15ch;
+}
+
+.privacyLink {
+  margin: 0 auto;
+  max-width: 77rem;
+  padding: 0 1.5rem 2rem;
+  text-align: right;
+}
+
+.privacyLink a {
+  color: inherit;
+  font-size: 0.84rem;
+  text-underline-offset: 0.25em;
+}
+
+@media (max-width: 760px) {
+  .productPage[data-homeground-locale="ja"] h1 {
+    font-size: clamp(2.15rem, 8.3vw, 3rem);
+    max-width: none;
+  }
+}

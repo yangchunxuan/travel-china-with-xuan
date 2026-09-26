@@ -13,6 +13,7 @@ const productionExportExtensions = new Set([".html", ".js"]);
 // Chinese serif subset. Keep its pages out of the SC glyph corpus while still
 // checking every EN/ZH/KO page and their shared components.
 const japanesePilotSourceFiles = new Set([
+  "components/JapaneseJiangnanInteraction.tsx",
   "components/JapanesePilotShell.tsx",
   "lib/jaPilot.ts",
   "lib/jaPilotCopy.ts",
@@ -97,7 +98,12 @@ export function collectProductionExportFontFiles(
       absoluteExportDirectory,
       productionExportExtensions,
     ),
-  ).filter((filePath) => !normalizedRelative(absoluteExportDirectory, filePath).startsWith("ja/"));
+  ).filter((filePath) => {
+    const path = normalizedRelative(absoluteExportDirectory, filePath);
+    // The Japanese-only page chunks and HTML use system Japanese fonts. Shared
+    // chunks still stay in the SC/Korean corpus because EN/ZH/KO can load them.
+    return !path.startsWith("ja/") && !path.startsWith("_next/static/chunks/app/(japanese)/");
+  });
 
   if (files.length === 0) {
     throw new Error(
