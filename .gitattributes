@@ -4,3 +4,7 @@ public/downloads/*.txt text eol=lf
 public/downloads/*.csv text eol=lf
 public/downloads/*.json text eol=lf
 public/downloads/*.svg text eol=lf
+
+# The serif slice stylesheet is named after a hash of its bytes; keep them
+# identical on every checkout.
+public/fonts/*.css text eol=lf
