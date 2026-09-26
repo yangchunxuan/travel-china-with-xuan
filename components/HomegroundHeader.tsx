@@ -63,7 +63,7 @@ export type HomegroundPageContext =
   | "destination"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja";
 
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
@@ -292,6 +292,9 @@ export function HomegroundHeader({
                   ? `${target.path}?planner=result${languageHash}`
                   : `${target.path}${languageQuery}${languageHash}`;
   };
+  const japaneseLanguageHref = languagePaths?.ja && pageContext === "tour" && tourSelection
+    ? buildPrivateTourDetailHref(languagePaths.ja, tourSelection.slug, tourSelection.selection)
+    : languagePaths?.ja;
 
   useEffect(() => {
     const syncLocation = () => {
@@ -628,6 +631,7 @@ export function HomegroundHeader({
             style={showLanguageNav ? undefined : { display: "none" }}
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
+            {japaneseLanguageHref ? <a href={japaneseLanguageHref} hrefLang="ja" lang="ja">JA</a> : null}
           </nav>
           <Link
             className={styles.headerCta}
@@ -738,6 +742,7 @@ export function HomegroundHeader({
                 style={showLanguageNav ? undefined : { display: "none" }}
               >
                 {availableLanguageLocales.map(renderLanguageChoice)}
+                {japaneseLanguageHref ? <a href={japaneseLanguageHref} hrefLang="ja" lang="ja">JA</a> : null}
               </div>
             </div>
             <Link

@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { extname, resolve } from "node:path";
+import { extname, relative, resolve, sep } from "node:path";
 
 // Include independently authored guide sources as well as runtime code. The
 // guide registry imports bodies from content/guides without copying their text
@@ -8,6 +8,25 @@ import { extname, resolve } from "node:path";
 const localeFontSourceDirectories = ["app", "components", "lib", "content"];
 const localeFontSourceExtensions = new Set([".ts", ".tsx", ".json"]);
 const productionExportExtensions = new Set([".html", ".js"]);
+
+// The Japanese pilot uses a Japanese system-font stack, not the self-hosted
+// Chinese serif subset. Keep its pages out of the SC glyph corpus while still
+// checking every EN/ZH/KO page and their shared components.
+const japanesePilotSourceFiles = new Set([
+  "components/JapaneseJiangnanInteraction.tsx",
+  "components/JapanesePilotShell.tsx",
+  "lib/jaPilot.ts",
+  "lib/jaPilotCopy.ts",
+]);
+
+function normalizedRelative(root, filePath) {
+  return relative(root, filePath).split(sep).join("/");
+}
+
+function isJapanesePilotSource(projectRoot, filePath) {
+  const path = normalizedRelative(projectRoot, filePath);
+  return path.startsWith("app/(japanese)/") || japanesePilotSourceFiles.has(path);
+}
 
 function comparePaths(left, right) {
   if (left < right) return -1;
@@ -59,7 +78,7 @@ export function collectLocaleFontSourceFiles(projectRoot) {
         localeFontSourceExtensions,
       ),
     ),
-  );
+  ).filter((filePath) => !isJapanesePilotSource(projectRoot, filePath));
 }
 
 export function collectProductionExportFontFiles(
@@ -79,7 +98,12 @@ export function collectProductionExportFontFiles(
       absoluteExportDirectory,
       productionExportExtensions,
     ),
-  );
+  ).filter((filePath) => {
+    const path = normalizedRelative(absoluteExportDirectory, filePath);
+    // The Japanese-only page chunks and HTML use system Japanese fonts. Shared
+    // chunks still stay in the SC/Korean corpus because EN/ZH/KO can load them.
+    return !path.startsWith("ja/") && !path.startsWith("_next/static/chunks/app/(japanese)/");
+  });
 
   if (files.length === 0) {
     throw new Error(
