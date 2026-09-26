@@ -80,9 +80,9 @@
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 27,
-    "plan": 28,
+    "plan": 30,
     "purchase-ticket": 3,
-    "uniqueContentIds": 78
+    "uniqueContentIds": 80
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1106,6 +1106,34 @@
       "targetServiceId": null,
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "xian-lanzhou-dunhuang-silk-road-route",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "xiamen-tulou-quanzhou-six-day-route",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "xiamen-tulou-quanzhou-six-day-route",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "yangtze-cruise-fit-china-itinerary",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "yangtze-cruise-fit-china-itinerary",
       "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",

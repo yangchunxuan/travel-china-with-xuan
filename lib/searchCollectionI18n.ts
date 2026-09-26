@@ -288,6 +288,8 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "guangzhou-shenzhen-hong-kong-route-order": "plan-trip-length-city-order",
   "kunming-dali-lijiang-shangri-la-route-order": "plan-trip-length-city-order",
   "shanghai-suzhou-hangzhou-nanjing-route-order": "plan-trip-length-city-order",
+  "xiamen-tulou-quanzhou-six-day-route": "plan-trip-length-city-order",
+  "yangtze-cruise-fit-china-itinerary": "plan-budget-pace-decisions",
   "china-hotel-near-metro": "stay-city-areas",
   "huangshan-summit-or-gateway-base": "stay-hotel-types-scenic-bases",
   "zhangjiajie-city-or-wulingyuan-hotel-base": "stay-hotel-types-scenic-bases",

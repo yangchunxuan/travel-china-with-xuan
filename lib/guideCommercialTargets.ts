@@ -172,6 +172,13 @@ export const guideTargets = {
   "xian-lanzhou-dunhuang-silk-road-route": [
     productTarget("beijing-xian-silk-road-15-day-private-tour"),
   ],
+  "xiamen-tulou-quanzhou-six-day-route": [
+    productTarget("xiamen-tulou-quanzhou-6-day-private-tour"),
+  ],
+  "yangtze-cruise-fit-china-itinerary": [
+    productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
+    productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),
+  ],
   // Entry-rule guides: US passports rely on 240-hour transit, which the
   // Hong Kong-exit route is built for; 30-day visa-free markets fit two weeks.
   "do-us-citizens-need-visa-china-2026": [

@@ -1,0 +1,79 @@
+{
+  "id": "xiamen-tulou-quanzhou-six-day-route",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global", "singapore", "malaysia", "australia"],
+  "format": "route-and-stay-decision",
+  "topics": ["fujian-itinerary", "tulou", "hotel-bases", "route-tradeoffs"],
+  "destinations": ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+  "heroImagePath": "/images/tours/xiamen-tulou-quanzhou-6-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/xiamen-tulou-quanzhou-6-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1060,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["xiamen tulou quanzhou itinerary 6 days", "fujian itinerary where to stay", "xiamen tulou quanzhou private tour"],
+    "zh": ["厦门土楼泉州六天怎么安排", "福建土楼泉州住宿顺序", "厦门土楼泉州私家团"],
+    "ko": ["샤먼 토루 취안저우 6일 일정", "푸젠 여행 숙소 동선", "샤먼 토루 취안저우 프라이빗 투어"]
+  },
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/xiamen-tulou-quanzhou-six-day-route/",
+      "title": "Xiamen, Tulou & Quanzhou in 6 Days: Where to Stay",
+      "headline": "Six days in Fujian: where to sleep, and what to cut",
+      "description": "Plan five nights across Xiamen, the tulou region, Anxi and Quanzhou. See why the route splits Yongding and Nanjing across two days.",
+      "heroAlt": "Traditional rooftops on Gulangyu Island, Xiamen",
+      "heroCredit": {
+        "text": "Gulangyu photograph by Jakob Montrasio; existing product image cropped and converted to WebP.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gulangyu.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "Six days in Fujian",
+      "featuredLinkLabel": "Plan six days in Fujian",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Fujian", "Six-day route", "Where to stay"]
+    },
+    "zh": {
+      "path": "/zh/guides/xiamen-tulou-quanzhou-six-day-route/",
+      "title": "厦门、土楼、泉州六天怎么住、怎么取舍",
+      "headline": "福建六天：住在哪，时间不够先删什么",
+      "description": "厦门住首尾两晚，南靖、安溪、泉州各住一晚。看清永定与南靖为何分两天走，以及抵达日能否去鼓浪屿。",
+      "heroAlt": "俯瞰厦门鼓浪屿街区与屋顶",
+      "heroCredit": {
+        "text": "鼓浪屿照片由 Jakob Montrasio 拍摄；复用产品页已裁切并转换为 WebP 的图片。",
+        "sourceLabel": "原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gulangyu.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "福建六天路线",
+      "featuredLinkLabel": "规划福建六天路线",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["福建", "六天行程", "住宿顺序"]
+    },
+    "ko": {
+      "path": "/ko/guides/xiamen-tulou-quanzhou-six-day-route/",
+      "title": "샤먼·토루·취안저우 6일: 숙소와 동선 선택",
+      "headline": "푸젠 6일, 어디서 자고 무엇을 덜어낼까",
+      "description": "샤먼에서 첫날과 마지막 밤을 보내고 난징·안시·취안저우에서 각각 1박. 융딩과 난징 토루를 이틀로 나누는 이유를 살펴보세요.",
+      "heroAlt": "샤먼 구랑위의 골목과 지붕을 내려다본 풍경",
+      "heroCredit": {
+        "text": "Jakob Montrasio가 촬영한 구랑위 사진. 기존 상품 이미지를 잘라 WebP로 변환한 파일을 재사용했습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gulangyu.jpg",
+        "licenseLabel": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "navTitle": "푸젠 6일 동선",
+      "featuredLinkLabel": "푸젠 6일 일정 살펴보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["푸젠", "6일 동선", "숙박 지역"]
+    }
+  }
+}
