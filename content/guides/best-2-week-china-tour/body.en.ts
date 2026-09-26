@@ -181,6 +181,10 @@ const body = {
           "href": "/guides/china-2-week-tour-cost/"
         },
         {
+          "label": "Should you add a Yangtze cruise to your China itinerary?",
+          "href": "/guides/yangtze-cruise-fit-china-itinerary/"
+        },
+        {
           "label": "China small-group tours 2027: dates and prices",
           "href": "/guides/china-small-group-tours-2027/"
         }

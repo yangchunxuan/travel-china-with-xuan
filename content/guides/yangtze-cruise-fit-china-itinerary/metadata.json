@@ -1,0 +1,79 @@
+{
+  "id": "yangtze-cruise-fit-china-itinerary",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "decision-guide",
+  "topics": ["yangtze-cruise", "three-gorges", "route-design", "trip-pace"],
+  "destinations": ["china", "chongqing", "yichang"],
+  "heroImagePath": "/images/tours/chongqing-yangtze-cruise-6-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/chongqing-yangtze-cruise-6-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1067,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["is a yangtze river cruise worth it", "add yangtze cruise to china itinerary", "chongqing to yichang cruise itinerary"],
+    "zh": ["长江三峡游轮值得加进行程吗", "重庆到宜昌游轮怎么衔接中国行程"],
+    "ko": ["양쯔강 크루즈 중국 여행에 넣을까", "충칭 이창 크루즈 일정 연결"]
+  },
+  "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "compare" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/yangtze-cruise-fit-china-itinerary/",
+      "title": "Should You Add a Yangtze Cruise to Your China Itinerary?",
+      "headline": "Is a three-night Yangtze cruise worth four days of your China trip?",
+      "description": "Decide whether a Chongqing–Yichang Three Gorges cruise fits your route, count all four calendar days and check the boarding, disembarkation and service boundaries.",
+      "heroAlt": "Qutang Gorge along the Yangtze River, photographed from Baidicheng.",
+      "heroCredit": {
+        "text": "Qutang Gorge photograph by Tan Wei Liang Byorn; existing product image cropped and converted to WebP.",
+        "sourceLabel": "Original photograph",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "Yangtze cruise route fit",
+      "featuredLinkLabel": "See if a Yangtze cruise fits your trip",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Three Gorges", "Four-day decision", "Route fit"]
+    },
+    "zh": {
+      "path": "/zh/guides/yangtze-cruise-fit-china-itinerary/",
+      "title": "长江三峡游轮值得放进中国行程吗？",
+      "headline": "三晚三峡游轮，值不值得占用四天行程？",
+      "description": "按完整四个日历日判断重庆至宜昌游轮是否适合你的路线，并核对登离船缓冲、陆上私家服务与船上共享安排。",
+      "heroAlt": "从白帝城望向长江瞿塘峡。",
+      "heroCredit": {
+        "text": "瞿塘峡照片由 Tan Wei Liang Byorn 拍摄；复用产品页已裁切并转换为 WebP 的图片。",
+        "sourceLabel": "原图",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "三峡游轮怎么接行程",
+      "featuredLinkLabel": "判断三峡游轮值不值得加",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["长江三峡", "四天取舍", "路线衔接"]
+    },
+    "ko": {
+      "path": "/ko/guides/yangtze-cruise-fit-china-itinerary/",
+      "title": "중국 여행에 양쯔강 삼협 크루즈를 넣을까?",
+      "headline": "3박 양쯔강 크루즈에 여행 4일을 쓸 만할까?",
+      "description": "충칭 출발·이창 도착 삼협 크루즈가 일정에 맞는지 4일 전체로 판단하고, 승하선 여유와 육상·선상 서비스 범위를 확인하세요.",
+      "heroAlt": "백제성에서 바라본 양쯔강 구당협 풍경.",
+      "heroCredit": {
+        "text": "Tan Wei Liang Byorn이 촬영한 구당협 사진. 기존 상품 이미지를 잘라 WebP로 변환한 파일을 재사용했습니다.",
+        "sourceLabel": "원본 사진",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
+        "licenseLabel": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "navTitle": "양쯔강 크루즈 일정 선택",
+      "featuredLinkLabel": "양쯔강 크루즈가 일정에 맞는지 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["양쯔강 삼협", "4일 선택", "이동 연결"]
+    }
+  }
+}

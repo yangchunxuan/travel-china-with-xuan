@@ -181,6 +181,10 @@ const body = {
           "href": "/ko/guides/china-2-week-tour-cost/"
         },
         {
+          "label": "중국 여행에 양쯔강 크루즈를 넣을까?",
+          "href": "/ko/guides/yangtze-cruise-fit-china-itinerary/"
+        },
+        {
           "label": "2027 중국 소규모 그룹 투어: 날짜와 요금",
           "href": "/ko/guides/china-small-group-tours-2027/"
         }

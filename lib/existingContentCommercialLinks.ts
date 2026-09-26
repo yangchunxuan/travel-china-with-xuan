@@ -122,6 +122,8 @@ const approvedCommercialGuideIds = [
   "lijiang-shangri-la-transport-route",
   "shanghai-suzhou-hangzhou-nanjing-route-order",
   "xian-lanzhou-dunhuang-silk-road-route",
+  "xiamen-tulou-quanzhou-six-day-route",
+  "yangtze-cruise-fit-china-itinerary",
 ] as const satisfies readonly GuideId[];
 
 interface ProductContextDefinition {
