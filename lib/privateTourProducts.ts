@@ -2635,131 +2635,138 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "张家界森林公园4天私家团：固定徒步路线",
     "장가계 국립삼림공원 3박 4일 프라이빗 투어",
   ),
+  // 2026-09-24: route, stay and inclusions follow the owner's 4D3N card (Day 1 tower at night,
+  // Day 2 full Forest Park day, Day 3 Tianmen Mountain with Baofeng Lake as a free weather backup,
+  // villa or 4-star hotel). Titles and slug are unchanged.
   metadataDescription: l(
-    "Four-day fixed-route private tour of Zhangjiajie National Forest Park, with two walking days and one villa base. No cable cars or elevators.",
-    "张家界森林公园4天3晚固定路线私家团：两个步行游览日、三晚同住一处指定别墅，含行程私车、D2全天和D3白天英语导游。不乘索道和电梯，不含玻璃桥与天门山。",
-    "장가계 국립삼림공원 3박 4일 고정 코스. 한 빌라 3박, D2 종일·D3 주간 한국어 가이드 포함. 케이블카·엘리베이터 미이용, 유리다리·천문산 불포함.",
+    "4-day Zhangjiajie private tour: a full Forest Park day, Tianmen Mountain with a free weather backup, and three nights in one villa or 4-star hotel.",
+    "张家界4天3晚私家团：森林公园玩一整天，第三天上天门山，天气不好免费改游宝峰湖；三晚同住一处别墅或四星酒店，含行程私车、D2全天和D3白天英语导游。",
+    "장가계 3박 4일 프라이빗 투어. 국립삼림공원 종일, 천문산(악천후 시 보봉호로 무료 변경), 빌라 또는 4성급 호텔 한 곳에서 3박, D2 종일·D3 주간 한국어 가이드 포함.",
   ),
   eyebrow: l(
-    "Same designated villa for 3 nights · Two walking forest days · No cable cars or elevators",
-    "三晚连住指定别墅 · 两天徒步森林公园 · 不乘索道与天梯",
-    "지정 빌라 3박 연박 · 이틀간 산림 도보 탐방 · 케이블카 및 엘리베이터 미이용",
+    "3 nights in one base: villa or 4-star hotel · A full Forest Park day · Tianmen Mountain with a free weather backup",
+    "三晚同住一处：别墅或四星酒店 · 森林公园一整天 · 天门山，天气不好免费换宝峰湖",
+    "빌라 또는 4성급 호텔 한 곳에서 3박 · 국립삼림공원 종일 · 천문산, 악천후 시 보봉호로 무료 변경",
   ),
   lede: l(
-    "A lower-priced private route for travellers who want Zhangjiajie’s forest landscapes without cable cars, elevators or last-minute add-ons. Stay in the same Country Garden villa for all three nights, use the north gate for the high peaks, then walk the east-gate valleys before an evening at Seventy-Two Wonder Tower.",
-    "这是一条不坐索道、电梯，也不靠临时加项抬价的张家界低价私家路线。三晚固定入住同一处碧桂园别墅；第二天从北门看高山峰林，第三天从东门步行溪谷，再夜游七十二奇楼。",
-    "케이블카와 엘리베이터, 현장 추가 옵션 없이 장가계의 산림 풍경을 보는 합리적인 프라이빗 코스입니다. 3박 모두 같은 컨트리 가든 빌라에 머물고, 둘째 날은 북문 산악 코스, 셋째 날은 동문 계곡 산책과 칠십이기루 야경을 이어갑니다.",
+    "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See Seventy-Two Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
+    "四天从容游览张家界的砂岩峰林、翡翠峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
+    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 칠십이기루를 보고, 둘째 날은 국립삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
   ),
   summary: l(
-    "Three nights in a designated Country Garden family villa with breakfast, private station or airport transfers, private transport on the fixed route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
-    "含指定碧桂园家庭别墅 3 晚及早餐、机场或车站接送、固定路线私车、D2 全天与 D3 白天英语导游，以及行程所列成人门票。七十二奇楼夜场为自由活动，含专车送达、夜间接回与远程协助。",
-    "지정 컨트리 가든 패밀리 빌라 3박과 조식, 공항·역 픽업 및 샌딩, 고정 일정 전용 차량, D2 종일과 D3 주간 한국어 가이드, 명시된 성인 입장권이 포함됩니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다.",
+    "Three nights in one designated villa or a 4-star hotel in Wulingyuan with breakfast, private station or airport transfers, private transport on the route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions, including Tianmen Mountain with its cable car, or Baofeng Lake with its boat in bad weather. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+    "含武陵源指定别墅或四星酒店 3 晚及早餐、机场或车站接送、行程私车、D2 全天与 D3 白天英语导游，以及行程所列成人门票：含天门山门票与索道，天气不好时改为宝峰湖门票与游船。七十二奇楼夜场为自由活动，含专车送达、夜间接回与远程协助。",
+    "무릉원의 지정 빌라 또는 4성급 호텔 3박과 조식, 공항·역 픽업 및 샌딩, 일정 전용 차량, D2 종일과 D3 주간 한국어 가이드, 명시된 성인 입장권이 포함됩니다. 천문산 입장권과 케이블카가 포함되며, 악천후 시에는 보봉호 입장권과 유람선으로 바꿉니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다.",
   ),
   highlights: lists(
     [
-      "Tianzi Mountain, Yangjiajie and Yuanjiajie from the north gate",
-      "Ten-Mile Gallery on foot and the eastern Golden Whip Stream",
-      "A self-guided evening at Seventy-Two Wonder Tower with private transfers",
-      "The same designated Country Garden villa for all three nights",
+      "Seventy-Two Wonder Tower lit up on your arrival night",
+      "A full Forest Park day: Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery",
+      "Tianmen Mountain by cable car, with Baofeng Lake as a free weather backup",
+      "Three nights in one base: a boutique villa or a 4-star hotel",
     ],
     [
-      "从北门串联天子山、杨家界与袁家界",
-      "全程步行十里画廊，并游览金鞭溪东段",
-      "七十二奇楼夜场自由游览，含专车往返",
-      "三晚固定入住同一处指定碧桂园别墅",
+      "抵达当晚看七十二奇楼夜景",
+      "森林公园一整天：天子山、杨家界、袁家界、金鞭溪与十里画廊",
+      "乘索道上天门山，天气不好免费换宝峰湖",
+      "三晚同住一处：精品别墅或四星酒店",
     ],
     [
-      "북문에서 천자산·양가계·원가계를 잇는 코스",
-      "십리화랑을 걸어서 왕복하고 금편계 동쪽 구간 산책",
-      "전용 차량 왕복이 포함된 칠십이기루 자유 야간 관람",
-      "3박 모두 같은 지정 컨트리 가든 빌라 이용",
+      "도착한 밤 불 밝힌 칠십이기루 관람",
+      "국립삼림공원 종일: 천자산·양가계·원가계·금편계·십리화랑",
+      "케이블카로 오르는 천문산, 악천후 시 보봉호로 무료 변경",
+      "빌라 또는 4성급 호텔 한 곳에서 3박",
     ],
   ),
   itinerary: [
     day(
       1,
-      l("Arrive and settle in", "抵达张家界并入住", "장가계 도착 및 체크인"),
       l(
-        "Our driver meets you at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station and takes you by private vehicle to the designated Country Garden villa. There is no sightseeing today, so you can check in and rest. This villa is your base for all three nights.",
-        "司机在张家界荷花机场或张家界西站接你，乘专车前往指定碧桂园别墅。当天不安排景区，入住后好好休息；三晚都住这处别墅，中途不换酒店。",
-        "기사가 장가계 허화공항이나 장가계서역에서 맞이해 전용 차량으로 지정 컨트리 가든 빌라까지 모셔다 드립니다. 이날은 관광 일정이 없으니 체크인 후 편히 쉬세요. 3박 모두 이 빌라에 머뭅니다.",
+        "Arrive, then Seventy-Two Wonder Tower at night",
+        "抵达张家界，顺路看七十二奇楼夜景",
+        "장가계 도착, 칠십이기루 야경",
+      ),
+      l(
+        "Our driver meets you at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station, including evening arrivals. On the way to Wulingyuan, stop at Seventy-Two Wonder Tower to see it lit up; the visit is self-guided, with your driver waiting and remote assistance. Then check in to your villa or 4-star hotel, your base for all three nights. Evening entry closes at about 22:30, so if you land too late we move this visit to the evening of Day 3.",
+        "司机在张家界荷花机场或张家界西站接你，晚班航班也接。去武陵源的路上，顺路在七十二奇楼看夜景；夜场为自由游览，司机等候并提供远程协助。之后入住别墅或四星酒店，三晚都住这里，中途不换住处。夜场约 22:30 停止入场；如果落地太晚，这一站改到 D3 晚上。",
+        "기사가 장가계 허화공항이나 장가계서역에서 맞이하며, 저녁 도착편도 마중합니다. 무릉원으로 가는 길에 칠십이기루에 들러 야경을 봅니다. 야간 관람은 자유 일정이며 기사가 기다리고 원격 지원을 제공합니다. 이후 빌라 또는 4성급 호텔에 체크인하며, 3박 모두 이곳에 머뭅니다. 야간 입장은 22:30경 마감되므로 너무 늦게 도착하면 이 일정을 D3 저녁으로 옮깁니다.",
       ),
     ),
     day(
       2,
       l(
-        "Tianzi Mountain, Yangjiajie and Yuanjiajie",
-        "天子山、杨家界与袁家界",
-        "천자산·양가계·원가계",
+        "Forest Park full day: Tianzi Mountain to Ten-Mile Gallery",
+        "森林公园一整天：天子山至十里画廊",
+        "국립삼림공원 종일: 천자산에서 십리화랑까지",
       ),
       l(
-        "Leave the villa at about 07:45 for Tianzi Mountain North Gate. Use the included scenic shuttles via Sancha Junction to visit Dianjiangtai, the Tianzi Mountain core area, the short Natural Great Wall walk in Yangjiajie and Yuanjiajie’s main viewpoints, then take the shuttle back to the north gate and your private vehicle to the villa, arriving at about 18:30. Allow roughly 10–11 hours door to door and 4–7 km of walking. No cable cars or elevators today. Official closures, last-shuttle times, weather, safety or crowd control may change the order, but we won’t casually drop the listed core stops.",
-        "约 07:45 从别墅出发前往天子山北门，使用已含的景区环保车，经三岔口游览点将台、天子山核心区域、杨家界天然长城短线和袁家界主要观景点；随后乘环保车返回北门，再乘专车回别墅，正常约 18:30 抵达。门到门约 10–11 小时，步行约 4–7 公里。当天不乘索道或电梯；如遇官方关闭、末班环保车、天气、安全或限流，游览顺序可能会变，但不会因为一般进度随意删减已列的核心景点。",
-        "07:45경 빌라에서 출발해 천자산 북문으로 이동합니다. 포함된 관광 셔틀을 이용해 싼차 교차점, 뎬장타이, 천자산 핵심 구역, 양가계 천연장성 짧은 산책로와 원가계 주요 전망대를 둘러본 뒤 북문으로 돌아와 전용 차량으로 18:30경 빌라에 도착합니다. 총 10~11시간, 도보 약 4~7km의 일정입니다. 케이블카와 엘리베이터는 이용하지 않습니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있지만, 명시된 핵심 장소를 임의로 빼지는 않습니다.",
+        "An early start for a full day in Zhangjiajie National Forest Park with your English-speaking guide. See morning mist over Tianzi Mountain’s sandstone peaks and Yangjiajie’s Natural Great Wall, then stand above Yuanjiajie’s Avatar Hallelujah Mountain and the First Bridge Under Heaven. After lunch, head down to the valley for a walk along Golden Whip Stream and the scenery of Ten-Mile Gallery. The included scenic shuttles link the areas; the Bailong Elevator, cableways and the Ten-Mile Gallery mini-train are optional and paid on the spot if you want to save walking. Allow roughly 10–11 hours door to door. Official closures, last-shuttle times, weather, safety or crowd control may change the order, and your guide sets a pace that suits your group.",
+        "早上出发，由英语导游陪同，在张家界国家森林公园玩一整天。清晨云雾中看天子山的砂岩峰林和杨家界天然长城，再到袁家界看阿凡达哈利路亚山和天下第一桥。午后下到谷底，走金鞭溪，看十里画廊。已含的景区环保车连接各景区；百龙天梯、索道和十里画廊小火车为自选项目，想少走路可以现场自费乘坐。门到门约 10–11 小时。如遇官方关闭、末班环保车、天气、安全或限流，游览顺序可能会变，导游会按你们的体力安排节奏。",
+        "아침 일찍 출발해 한국어 가이드와 함께 장가계 국립삼림공원에서 하루를 보냅니다. 아침 안개 속 천자산의 사암 봉우리와 양가계 천연장성을 보고, 원가계의 아바타 할렐루야산과 천하제일교에 섭니다. 오후에는 계곡으로 내려가 금편계를 걷고 십리화랑 풍경을 봅니다. 구역 사이 이동은 포함된 관광 셔틀을 이용하며, 백룡 엘리베이터·케이블카·십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제합니다. 숙소 출발부터 귀환까지 약 10~11시간입니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있으며 가이드가 일행에 맞춰 속도를 조절합니다.",
       ),
     ),
     day(
       3,
       l(
-        "Ten-Mile Gallery, Golden Whip Stream and the night lights",
-        "十里画廊、金鞭溪与七十二奇楼夜景",
-        "십리화랑·금편계·칠십이기루 야경",
+        "Tianmen Mountain, or Baofeng Lake in bad weather",
+        "天门山，天气不好改游宝峰湖",
+        "천문산, 악천후 시 보봉호",
       ),
       l(
-        "Leave at about 07:30 for the east gate. Walk the open section of Ten-Mile Gallery out and back, take the included shuttle to Water Winding Four Gates, then walk the eastern Golden Whip Stream out and back toward the Tiaoyutan area. After a simple lunch break, visit the World Geopark Museum when open, then return to the villa at about 15:00. At about 17:30, the driver takes you to Seventy-Two Wonder Tower; explore the regular evening session on your own and meet the driver at the agreed point at about 20:30. Your English-speaking guide is with you for the daytime route only; the evening includes private drop-off, pickup and remote assistance. The Ten-Mile Gallery mini-train is not used.",
-        "约 07:30 从别墅出发前往东门。十里画廊开放游览段步行往返，再乘已含的环保车前往水绕四门，沿金鞭溪东段步行至跳鱼潭附近后原路返回。简单午餐休息后，在开放时参观世界地质公园博物馆，正常约 15:00 回别墅休息。约 17:30 由司机送往七十二奇楼，普通夜场由客人自由游览，约 20:30 在约定地点会合返回。英语导游只陪同白天路线；夜场含专车送达、接回和远程协助，但没有现场导游。当天不乘十里画廊小火车。",
-        "07:30경 동문으로 출발합니다. 십리화랑의 개방 구간을 걸어서 왕복한 뒤 포함된 셔틀로 수요사문에 이동하고, 금편계 동쪽 구간을 도약담 부근까지 왕복 산책합니다. 간단한 점심 휴식 후 운영 중이면 세계지질공원박물관을 관람하고, 15:00경 빌라로 돌아와 쉽니다. 17:30경 기사가 칠십이기루까지 모셔다 드리며, 일반 야간 회차를 자유롭게 관람한 뒤 20:30경 약속 장소에서 기사와 만나 돌아옵니다. 한국어 가이드는 주간 일정까지만 동행하고, 야간에는 전용 차량 왕복과 원격 지원만 제공합니다. 십리화랑 미니 열차는 이용하지 않습니다.",
+        "Drive about an hour to Zhangjiajie city with your English-speaking guide. Ride the cable car up Tianmen Mountain for its cliff-side walkways, then see the great Tianmen Cave. If Tianmen Mountain is closed or fogged in, we switch to Baofeng Lake near Wulingyuan and cruise its emerald water by boat, at no extra charge. Return to your villa or hotel for a quiet evening. Your guide is with you for the daytime only.",
+        "由英语导游陪同，乘车约一小时到张家界市区。乘索道上天门山，走悬崖栈道，再去看壮观的天门洞。如果天门山关闭或大雾看不到，就改去武陵源附近的宝峰湖坐船游湖，不另外收费。之后回别墅或酒店，晚上自由休息。英语导游只陪同白天行程。",
+        "한국어 가이드와 함께 차로 약 1시간 거리의 장가계 시내로 이동합니다. 케이블카로 천문산에 올라 절벽 잔도를 걷고 웅장한 천문동을 봅니다. 천문산이 폐쇄되거나 안개로 보이지 않으면 무릉원 근처 보봉호로 바꿔 유람선을 타며, 추가 요금은 없습니다. 이후 빌라나 호텔로 돌아와 저녁은 자유롭게 쉽니다. 가이드는 주간 일정에만 동행합니다.",
       ),
     ),
     day(
       4,
-      l("Breakfast and departure", "早餐后从容离开", "조식 후 출발"),
+      l("Breakfast and departure", "早餐后送机或送站", "조식 후 출발"),
       l(
-        "Breakfast at the villa, then rest until your pickup time. Check out and travel by private vehicle to Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station. No sightseeing is added on departure day, so there is less risk of rushing for your flight or train.",
-        "在别墅吃早餐，休息到约好的接送时间。退房后乘专车前往张家界荷花机场或张家界西站。离开日不再安排景区，免得因为游览赶车、赶飞机。",
-        "빌라에서 조식을 드시고 픽업 시간까지 편히 쉬다가 체크아웃합니다. 전용 차량으로 장가계 허화공항이나 장가계서역에 갑니다. 항공편이나 열차 시간에 서두르지 않도록 출발일에는 관광지를 넣지 않습니다.",
+        "Breakfast at your villa or hotel, then check out and travel by private vehicle to Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station in time for your flight or train. Leaving later in the day? We can add a morning at Yellow Dragon Cave or Baofeng Lake, quoted separately before you book.",
+        "在别墅或酒店吃早餐，退房后乘专车前往张家界荷花机场或张家界西站，按你的航班或高铁时间送达。如果离开得晚，上午可以加游黄龙洞或宝峰湖，费用在预订前单独报价。",
+        "빌라나 호텔에서 조식 후 체크아웃하고, 전용 차량으로 항공편·열차 시간에 맞춰 장가계 허화공항이나 장가계서역까지 이동합니다. 늦게 출발한다면 오전에 황룡동이나 보봉호를 추가할 수 있으며, 요금은 예약 전에 따로 안내합니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Three nights in the same designated Country Garden family villa, on a twin-sharing basis with breakfast, and no hotel changes along the way. Before you pay, we confirm the exact villa unit, bedroom allocation, foreign-guest registration, breakfast arrangement and any single-room difference.",
-    "三晚固定入住同一处指定碧桂园家庭别墅，按两人一间、含早餐计，中途不换住处。付款前，我们会和你确认具体别墅单元、卧室分配、外宾登记、早餐安排和单房差。",
-    "3박 모두 같은 지정 컨트리 가든 패밀리 빌라에 머물며, 2인 1실·조식 포함이 기본입니다. 중간에 숙소를 옮기지 않습니다. 정확한 빌라 동, 객실 배정, 외국인 숙박 등록, 조식과 1인실 차액은 결제 전에 확정해 드립니다.",
+    "Three nights in the same place in Wulingyuan, with breakfast and no hotel changes along the way. Choose the designated Country Garden family villa, with a shared living room and garden that suit families, or a 4-star hotel; both are priced on a twin-sharing basis. Before you pay, we confirm the exact villa unit or hotel name, bedroom allocation, foreign-guest registration, breakfast arrangement and any single-room difference.",
+    "三晚都住武陵源同一处，含早餐，中途不换住处。可选指定碧桂园家庭别墅，有共享客厅和花园，适合一家人；也可选四星酒店，都按两人一间计价。付款前，我们会和你确认具体别墅单元或酒店名称、卧室分配、外宾登记、早餐安排和单房差。",
+    "무릉원 한 곳에서 3박하며 조식이 포함되고 중간에 숙소를 옮기지 않습니다. 가족 여행에 맞는 공용 거실과 정원이 있는 지정 컨트리 가든 패밀리 빌라, 또는 4성급 호텔 중에서 고를 수 있으며 모두 2인 1실 기준입니다. 정확한 빌라 동 또는 호텔 이름, 객실 배정, 외국인 숙박 등록, 조식과 1인실 차액은 결제 전에 확정해 드립니다.",
   ),
   serviceNote: l(
-    "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, and standard evening admission to Seventy-Two Wonder Tower with insurance. The Day 3 evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
-    "含 D1/D4 司机接送、行程所列私车、D2 全天及 D3 白天英语导游、成人武陵源门票与环保车联票及必买保险、七十二奇楼普通夜场票及保险。D3 夜场为自由活动，含专车送达、接回和远程协助。全程无购物店安排。",
-    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 무릉원 입장권·셔틀 패키지, 보험이 포함된 칠십이기루 일반 야간 입장권이 포함됩니다. D3 야간은 자유 관람이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
+    "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, Tianmen Mountain admission with its cable car (or Baofeng Lake admission with its boat in bad weather), standard evening admission to Seventy-Two Wonder Tower with insurance, and local tour accident insurance. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
+    "含 D1/D4 司机接送、行程所列私车、D2 全天及 D3 白天英语导游、成人武陵源门票与环保车联票及必买保险、天门山门票与索道（天气不好时改为宝峰湖门票与游船）、七十二奇楼普通夜场票及保险，以及当地旅游意外险。七十二奇楼夜场为自由活动，含专车送达、接回和远程协助。全程无购物店安排。",
+    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 무릉원 입장권·셔틀 패키지, 천문산 입장권과 케이블카(악천후 시 보봉호 입장권과 유람선), 보험이 포함된 칠십이기루 일반 야간 입장권, 현지 여행자 상해보험이 포함됩니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
-      "Bailong Elevator, Tianzi Mountain Cableway and Yangjiajie Cableway",
-      "Ten-Mile Gallery mini-train and other unlisted paid scenic transport (the Wulingyuan admission-and-shuttle package is included)",
+      "Bailong Elevator, Tianzi Mountain and Yangjiajie cableways, the Ten-Mile Gallery mini-train and other optional scenic transport (the Wulingyuan admission-and-shuttle package and the Tianmen Mountain cable car are included)",
+      "Other optional paid items inside the scenic areas",
       "An on-site guide during the Seventy-Two Wonder Tower evening",
-      "Paid museum experiences, shows or any item not listed in the fixed route",
+      "A Day 4 morning at Yellow Dragon Cave or Baofeng Lake for later departures, quoted separately",
     ],
     [
-      "百龙天梯、天子山索道与杨家界索道",
-      "十里画廊小火车及未列入包含项的其他收费景区交通（武陵源门票与环保车联票已含）",
+      "百龙天梯、天子山索道、杨家界索道、十里画廊小火车及其他自选景区交通（武陵源门票与环保车联票、天门山索道已含）",
+      "景区内其他自选收费项目",
       "七十二奇楼夜场现场导游",
-      "博物馆收费体验、另购演出及固定路线未列项目",
+      "晚走时 D4 上午加游黄龙洞或宝峰湖，另行报价",
     ],
     [
-      "백룡 엘리베이터, 천자산 케이블카와 양가계 케이블카",
-      "십리화랑 미니 열차 및 포함 항목에 없는 기타 유료 관광지 교통 (무릉원 입장권·셔틀 패키지는 포함)",
+      "백룡 엘리베이터, 천자산·양가계 케이블카, 십리화랑 미니 열차 및 기타 선택 관광지 교통 (무릉원 입장권·셔틀 패키지와 천문산 케이블카는 포함)",
+      "관광지 안의 기타 선택 유료 항목",
       "칠십이기루 야간 현장 가이드",
-      "박물관 유료 체험, 별도 공연 및 고정 일정에 명시되지 않은 항목",
+      "늦게 출발할 때 D4 오전 황룡동 또는 보봉호 추가 일정, 별도 견적",
     ],
     l(
-      "Holiday, unlisted night-time, overtime and other unlisted services; Day 3 Seventy-Two Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
-      "节假日、未列出的夜间服务、超时及其他未列服务（D3 七十二奇楼普通夜场票及保险、专车往返与远程协助已含）",
-      "공휴일, 일정 외 야간 서비스, 초과 시간 및 기타 일정 외 서비스 (D3 칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함)",
+      "Holiday, unlisted night-time, overtime and other unlisted services; the Seventy-Two Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
+      "节假日、未列出的夜间服务、超时及其他未列服务（七十二奇楼普通夜场票及保险、专车往返与远程协助已含）",
+      "공휴일, 일정 외 야간 서비스, 초과 시간 및 기타 일정 외 서비스 (칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함)",
     ),
   ),
   bookingNote: l(
-    "The route is fixed, with no optional attraction swaps or last-minute add-ons. Before you pay, we reconfirm the exact villa, room plan, vehicle and ticket availability for your non-holiday dates. The per-person starting prices shown are for groups of 2, 4 and 6 travellers; flights are not included. For other group sizes and all child prices, we work out a quote based on age, bed use and vehicle seats.",
-    "这是一条固定路线，不设置自选景点，也不在现场临时加项。付款前，我们会按你的非节假日出行日期，再次确认别墅、房间分配、车型和票源。网页只公开 2 人、4 人和 6 人的每人起价，往返机票另计；其他人数和所有儿童价格，我们会按年龄、占床和车辆座位单独核价。",
-    "관광지를 골라 바꾸거나 현장에서 옵션을 추가하지 않는 고정 코스입니다. 결제 전에 선택하신 비공휴일 날짜의 빌라, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 공개된 항공권 제외 1인 시작가는 2명·4명·6명 기준입니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
+    "The route is fixed and nothing is added on the spot. The only planned change is the Day 3 weather backup: Baofeng Lake instead of Tianmen Mountain, at no extra charge. Before you pay, we reconfirm the villa or hotel, room plan, vehicle and ticket availability for your non-holiday dates. The per-person starting prices shown are for groups of 2, 4 and 6 travellers; flights are not included. For other group sizes and all child prices, we work out a quote based on age, bed use and vehicle seats.",
+    "这是一条固定路线，现场不临时加项；唯一预设的调整是 D3 天气备选：天门山改宝峰湖，不另外收费。付款前，我们会按你的非节假日出行日期，再次确认别墅或酒店、房间分配、车型和票源。网页只公开 2 人、4 人和 6 人的每人起价，往返机票另计；其他人数和所有儿童价格，我们会按年龄、占床和车辆座位单独核价。",
+    "고정 코스이며 현장에서 옵션을 추가하지 않습니다. 미리 정해 둔 변경은 D3 악천후 대비뿐으로, 천문산 대신 보봉호로 가며 추가 요금은 없습니다. 결제 전에 선택하신 비공휴일 날짜의 빌라 또는 호텔, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 공개된 항공권 제외 1인 시작가는 2명·4명·6명 기준입니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
   ),
   heroImage: image(
     "/images/tours/zhangjiajie-forest-4-day-private-tour/hero-morning-pillars-1600.jpg",
@@ -2812,7 +2819,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     routeGroup(
       1,
       routeVariant(
-        l("Country Garden villa", "碧桂园别墅", "컨트리 가든 빌라"),
+        l("Villa option", "别墅住宿可选", "빌라 선택지"),
         "/images/tours/zhangjiajie-forest-4-day-private-tour/day-1-villa-twin-room-1600.jpg",
         l(
           "Twin bedroom in the designated Country Garden villa collection",
@@ -2820,9 +2827,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "지정 컨트리 가든 빌라 객실군의 트윈룸",
         ),
         l(
-          "The same villa is your base for all three nights; we confirm the exact room split before you pay.",
-          "三晚都住同一处别墅；具体怎么分房，付款前和你确认。",
-          "3박 모두 같은 빌라에 머물며, 정확한 객실 배정은 결제 전에 확정해 드립니다.",
+          "Your base for all three nights is this villa or a 4-star hotel; we confirm the exact rooms before you pay.",
+          "三晚都住这处别墅或一家四星酒店；具体房间付款前和你确认。",
+          "3박 모두 이 빌라 또는 4성급 호텔에 머물며, 정확한 객실은 결제 전에 확정해 드립니다.",
         ),
       ),
     ),
@@ -2842,9 +2849,6 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "사진은 D2의 봉우리 지형을 보여 주며 특정 전망대나 관람 순서를 뜻하지 않습니다.",
         ),
       ),
-    ),
-    routeGroup(
-      3,
       routeVariant(
         l("Golden Whip Stream valley", "金鞭溪谷", "금편계 계곡"),
         "/images/tours/zhangjiajie-forest-4-day-private-tour/day-3-golden-whip-stream-1600.jpg",
@@ -2854,16 +2858,35 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "장가계 계곡의 숲과 물길, 산책로 다리",
         ),
         l(
-          "Setting the scene for the eastern Golden Whip Stream walk; water levels and visibility vary with the weather.",
-          "金鞭溪东段步行一带的溪谷环境；水量和能见度会随天气变化。",
-          "금편계 동쪽 산책로의 계곡 분위기를 보여 주는 사진이며, 수량과 시야는 날씨에 따라 달라집니다.",
+          "The valley setting for the Day 2 afternoon walk along Golden Whip Stream; water levels and visibility vary with the weather.",
+          "D2 下午金鞭溪步行一带的溪谷环境；水量和能见度会随天气变化。",
+          "D2 오후 금편계 산책로의 계곡 분위기를 보여 주는 사진이며, 수량과 시야는 날씨에 따라 달라집니다.",
         ),
+      ),
+    ),
+    routeGroup(
+      3,
+      routeVariant(
+        l("Tianmen Mountain", "天门山", "천문산"),
+        "/images/guides/zhangjiajie/tianmen-1600.jpg",
+        l(
+          "The long stairway climbing to Tianmen Cave on Tianmen Mountain",
+          "天门山通往天门洞的长阶梯",
+          "천문산 천문동으로 이어지는 긴 계단",
+        ),
+        l(
+          "Tianmen Mountain on Day 3. If it is closed or fogged in, the day switches to a boat on Baofeng Lake at no extra charge.",
+          "D3 的天门山；如果关闭或大雾，当天改为宝峰湖坐船，不另外收费。",
+          "D3의 천문산입니다. 폐쇄되거나 안개가 짙으면 추가 요금 없이 보봉호 유람선으로 바꿉니다.",
+        ),
+        1600,
+        1040,
       ),
     ),
     routeGroup(
       4,
       routeVariant(
-        l("A quiet departure morning", "从容离开的早晨", "여유로운 출발 아침"),
+        l("An easy departure morning", "从容离开的早晨", "여유로운 출발 아침"),
         "/images/tours/zhangjiajie-forest-4-day-private-tour/day-4-villa-terrace-1600.jpg",
         l(
           "Garden terrace at the designated Country Garden villa collection",
@@ -2871,36 +2894,45 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "지정 컨트리 가든 빌라 객실군의 정원 테라스",
         ),
         l(
-          "No sightseeing on departure day, so your transfer can follow your flight or train.",
-          "离开日不再加景点，接送时间按你的航班或高铁来安排。",
-          "출발일에는 관광 일정 없이 항공편이나 열차 시간에 맞춰 이동합니다.",
+          "Breakfast, then your transfer follows your flight or train time.",
+          "吃完早餐，接送时间按你的航班或高铁来安排。",
+          "조식 후 항공편이나 열차 시간에 맞춰 이동합니다.",
         ),
       ),
     ),
   ],
   packages: [
-    guidedPackage(
-      // Stable backend identifier retained for existing links and enquiries.
-      // The customer-facing guide language follows the page locale.
-      "fixed-route-english-guided",
-      "guided",
-      l(
-        "Fixed route with English guide",
-        "固定路线英语导游版",
-        "한국어 가이드 포함 고정 코스",
+    {
+      ...guidedPackage(
+        // Stable backend identifier retained for existing links and enquiries.
+        // The customer-facing guide language follows the page locale.
+        "fixed-route-english-guided",
+        "guided",
+        l(
+          "Fixed route with English guide",
+          "固定路线英语导游版",
+          "한국어 가이드 포함 고정 코스",
+        ),
+        l(
+          "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+          "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
+          "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
+        ),
+        [3980, 3280],
       ),
-      l(
-        "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
-        "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
-        "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
-      ),
-      // Owner-approved USD selling prices, 2026-09-06; CNY follows the existing conversion basis.
-      [2918, 2502],
-      [449, 385],
-    ),
+      // Owner-approved CNY selling prices, 2026-09-24, matching the 4D3N price card
+      // (2 / 4 / 6 travellers = 3,980 / 3,280 / 2,980). The six-traveller rate is set
+      // explicitly because it is CNY 300 below the four-traveller rate, not the usual 200.
+      // USD and KRW follow the standard conservative conversion (USD 620 / 510 / 460).
+      prices: [
+        { travelers: 2, cnyPerPerson: 3980 },
+        { travelers: 4, cnyPerPerson: 3280 },
+        { travelers: 6, cnyPerPerson: 2980 },
+      ],
+    },
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-24",
   lastReviewed: "2026-08-31",
 };
 
