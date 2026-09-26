@@ -371,7 +371,7 @@ const en: ItineraryRushGuideCopy = {
       "Would one delay remove the only meaningful activity in a city?",
     ],
     nextLabel: "Not sure what the trip needs?",
-    nextTitle: "Talk it through with a planner before choosing a service.",
+    nextTitle: "Talk it through with a planner before deciding what to book.",
   },
   services: {
 
@@ -409,7 +409,7 @@ const en: ItineraryRushGuideCopy = {
           "Remove a city only when doing so returns something you actually value: a full sightseeing day, one less hotel move, protection around a fixed booking or a usable recovery window.",
       },
       {
-        question: "What if I am not sure which planning service I need?",
+        question: "What if I am not sure what help my trip needs?",
         answer:
           "Use WhatsApp or leave your email to enquire about a private China tour. We confirm the arrangements, inclusions and quotation before booking.",
       },
@@ -664,9 +664,9 @@ const zh: ItineraryRushGuideCopy = {
           "只有当删掉一座城市能换回你真正重视的东西时再删：一个完整游览日、少一次换酒店、保护一项固定预约，或留出可用的恢复时间。",
       },
       {
-        question: "如果我还不确定需要哪一种规划服务怎么办？",
+        question: "如果我还不确定这趟旅行需要哪些协助怎么办？",
         answer:
-          "可以通过 WhatsApp 联系旅行规划师，或只留下一个邮箱。你不需要自己先选服务；规划师会说明更适合路线审核、路线规划还是全程旅行支持。在范围、价格或报价、交付时间和付款确认前，不会开始任何付费工作。",
+          "可以通过 WhatsApp 联系旅行规划师，或留下邮箱咨询中国私家团。单独收费的路线审核和路线规划已停止提供；我们会根据你的行程需求，书面确认可承接的安排、包含项、报价和付款条件。",
       },
     ],
   },
@@ -882,7 +882,7 @@ const ko: ItineraryRushGuideCopy = {
       "한 번의 지연으로 한 도시의 유일한 핵심 활동을 잃게 되나요?",
     ],
     nextLabel: "이 여행에 어떤 도움이 필요한지 모르겠나요?",
-    nextTitle: "플래너와 먼저 이야기한 뒤 필요한 서비스를 정하세요.",
+    nextTitle: "플래너와 먼저 이야기한 뒤 무엇을 예약할지 결정하세요.",
   },
   services: {
 
@@ -919,7 +919,7 @@ const ko: ItineraryRushGuideCopy = {
           "온전한 관광일, 한 번 줄어든 숙소 변경, 고정 예약 보호, 실제로 쉴 수 있는 시간처럼 내가 중요하게 생각하는 것을 되찾을 때만 도시를 빼세요.",
       },
       {
-        question: "어떤 여행 설계 서비스가 필요한지 아직 모르겠다면 어떻게 하나요?",
+        question: "여행에 어떤 도움이 필요한지 아직 모르겠다면 어떻게 하나요?",
         answer:
           "WhatsApp으로 바로 문의하거나 이메일을 남겨 중국 프라이빗 투어를 문의하세요. 여행 준비, 포함 사항과 견적은 예약 전에 확인합니다.",
       },
