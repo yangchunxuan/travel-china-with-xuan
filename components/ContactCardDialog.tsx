@@ -1,12 +1,12 @@
 "use client";
 
 import { ArrowRight, ArrowUpRight, LoaderCircle, MessagesSquare, X } from "lucide-react";
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
-import type { ContactCardLayout, ContactCardRequest } from "../lib/contactCard";
+import { holdPageScroll, type ContactCardLayout, type ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
 import { privateTourQuoteApiUrl, tourWhatsAppHref } from "../lib/tourContact";
 import {
@@ -70,12 +70,15 @@ export function ContactCardDialog({
   layout,
   open,
   onClose,
+  frameShownAt = null,
 }: {
   locale: HomegroundLocale;
   request: ContactCardRequest;
   layout: ContactCardLayout;
   open: boolean;
   onClose: () => void;
+  /** When the card's frame (ContactCardFrame) appeared for this open, if the card is taking its place. */
+  frameShownAt?: number | null;
 }) {
   const copy = contactCardCopy[locale];
   // Phones and tablets: the same card as a sheet from the bottom of the screen.
@@ -116,29 +119,39 @@ export function ContactCardDialog({
   const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
   const messengerHref = sheet ? homegroundMessengerUrl() : "";
 
-  useEffect(() => {
+  // Opened before the browser paints, so a card taking its frame's place
+  // never leaves a painted frame with neither on screen.
+  useLayoutEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     if (!open) {
       if (dialog.open) dialog.close();
       return;
     }
+    // Carry on the frame's entrance (and its backdrop's) instead of starting again.
+    if (frameShownAt === null) dialog.style.removeProperty("--card-enter-delay");
+    else dialog.style.setProperty("--card-enter-delay", `${Math.round(frameShownAt - performance.now())}ms`);
     if (!dialog.open) dialog.showModal();
     // From a mail link, start in the email field; otherwise at the title.
     const emailField = request.trigger === "email" ? emailRef.current : null;
     (emailField && !emailField.disabled ? emailField : titleRef.current)?.focus({ preventScroll: true });
+  }, [open, request, frameShownAt]);
+
+  // The page stops scrolling in the same moment, before the frame the card
+  // replaces lets go of its own hold (see holdPageScroll).
+  useLayoutEffect(() => (open ? holdPageScroll() : undefined), [open]);
+
+  useEffect(() => {
+    if (!open) return;
     const opened = pageContext(locale);
     setContext(opened);
     markNewsletterPromptHandled();
     setInquiryOpen(true);
     setClock(chinaTime(locale));
     const tick = window.setInterval(() => setClock(chinaTime(locale)), 20_000);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     trackEvent("contact_options_viewed", { page_language: locale, contact_variant: contactVariant }, { firstPartyContext: { productSlug: opened.tour?.slug, surface: opened.tour ? "product" : "contact_options" } });
     return () => {
       window.clearInterval(tick);
-      document.body.style.overflow = previousOverflow;
       // A tour's quote sheet may still be open underneath.
       if (!document.querySelector("dialog[open]:not([data-contact-card-dialog])")) setInquiryOpen(false);
     };
@@ -433,7 +446,7 @@ export function ContactCardDialog({
         ) : (
           <div className={styles.columns} data-single={!whatsappHref || undefined}>
             {whatsappHref ? (
-              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`}>
+              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   {copy.useHere}
                   <ArrowUpRight size={16} aria-hidden="true" />

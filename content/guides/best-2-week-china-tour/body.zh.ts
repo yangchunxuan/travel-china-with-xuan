@@ -181,6 +181,10 @@ const body = {
           "href": "/zh/guides/china-2-week-tour-cost/"
         },
         {
+          "label": "三峡游轮值不值得占用四天行程？",
+          "href": "/zh/guides/yangtze-cruise-fit-china-itinerary/"
+        },
+        {
           "label": "2027 年中国小团：日期与价格",
           "href": "/zh/guides/china-small-group-tours-2027/"
         }

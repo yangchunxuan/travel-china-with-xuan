@@ -135,7 +135,7 @@ export const homegroundPrivacyCopy: Record<
       title: "From the website to a human reply",
       paragraphs: [
         "After the traveller first interacts with the trip brief, the form may keep selected structured answers in this browser’s session storage so progress can be restored. It never stores the free-text “other place”, route note, contact details, optional departure country or rough budget there. This browser copy is cleared after 30 minutes without planner activity, on restart and after a successful enquiry.",
-        "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional planning-service choice, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
+        "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional request for full-trip planning and ground support, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
         "The homepage quick-email option sends the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. When the contact area was opened from a published private-tour page, it also sends that tour’s allowlisted slug, canonical localised name and any valid service option and group-size selection shown above the contact choices; a name supplied in the URL is never accepted. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
         "The homepage WhatsApp and Messenger options are direct outbound links. Opening either link does not save the visitor’s phone number or message on Homeground’s website and is not treated as a submitted enquiry. If the visitor then sends a message, WhatsApp or Facebook and Meta process that conversation under their own terms and infrastructure.",
         "If the visitor allows analytics, Homeground creates a temporary anonymous browser-session token. The event service first issues a short-lived signed credential; bare or expired event requests are rejected. A limited first-touch source is recorded only when the landing link contains Homeground-signed UTM source, medium, campaign and content codes. Unsigned, altered or unrecognised UTM values remain Unknown. The website-event record does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer.",
@@ -163,11 +163,11 @@ export const homegroundPrivacyCopy: Record<
             "Selected destinations, another place entered, total nights, party, pace, must-see priorities, timing status, page language and internal rules version describe the request. Restricted summaries count compatible structured choices to improve the planner and travel information; the free-text other place is excluded from those summaries.",
         },
         {
-          name: "Optional planning-service choice and route context",
+          name: "Optional full-trip request and route context",
           stage:
             "Submitted enquiry, notification and connected team inbox when supplied",
           purpose:
-            "A traveller arriving from the route-service page can carry a Review, Build or full-trip-support choice into the enquiry and add a short route outline, fixed constraints or shareable route link. This free text is used for the human reply and is excluded from restricted summaries. Full files can be requested later by reply.",
+            "A traveller asking about full-trip planning and ground support can include that interest and add a short route outline, fixed constraints or shareable route link. This free text is used for the human reply and is excluded from restricted summaries. Earlier enquiries may retain route-review or route-build choices as historical request records; those standalone services are no longer offered. Full files can be requested later by reply.",
         },
         {
           name: "Optional published-tour interest",

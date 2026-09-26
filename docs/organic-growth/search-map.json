@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 208,
-      "localeUrlCount": 616,
-      "generatedIdentityCount": 189,
+      "identityCount": 218,
+      "localeUrlCount": 646,
+      "generatedIdentityCount": 199,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1601,6 +1601,357 @@
               "boundary": "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail and route choice."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "codex/gpt-new-pages-20260926",
+          "sourceCommit": "e542cefd5f8e5308cef3a08a90c9541974666a3c",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "PR #227 branch inventory only; merge, deployment, live URL checks, crawl and indexing require separate evidence.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "xiamen-tulou-quanzhou-six-day-route",
+              "title": "Xiamen, Tulou & Quanzhou in 6 Days: Where to Stay",
+              "metadataPath": "content/guides/xiamen-tulou-quanzhou-six-day-route/metadata.json",
+              "canonicalPath": "/guides/xiamen-tulou-quanzhou-six-day-route/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/xiamen-tulou-quanzhou-six-day-route/",
+                "/zh/guides/xiamen-tulou-quanzhou-six-day-route/",
+                "/ko/guides/xiamen-tulou-quanzhou-six-day-route/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "pillar": "routes-and-pace",
+              "destinations": ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+              "entityResolution": {
+                "entityIds": ["country-china"],
+                "unmappedTokens": ["xiamen", "yongding", "nanjing-county", "anxi", "quanzhou"],
+                "usedCountryFallback": true
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Six-day Fujian hotel-base and route-order decision across Xiamen, two tulou areas, Anxi and Quanzhou; published tour inclusions and date-specific ferry, attraction and hotel availability remain owned by the linked product and operational guides."
+            },
+            {
+              "id": "yangtze-cruise-fit-china-itinerary",
+              "title": "Should You Add a Yangtze Cruise to Your China Itinerary?",
+              "metadataPath": "content/guides/yangtze-cruise-fit-china-itinerary/metadata.json",
+              "canonicalPath": "/guides/yangtze-cruise-fit-china-itinerary/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/yangtze-cruise-fit-china-itinerary/",
+                "/zh/guides/yangtze-cruise-fit-china-itinerary/",
+                "/ko/guides/yangtze-cruise-fit-china-itinerary/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "compare",
+              "primaryCollectionId": "plan-budget-pace-decisions",
+              "pillar": "routes-and-pace",
+              "destinations": ["china", "chongqing", "yichang"],
+              "entityResolution": {
+                "entityIds": ["country-china", "city-chongqing"],
+                "unmappedTokens": ["yichang"],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Whether a three-night Chongqing-to-Yichang cruise merits four calendar days in a China route; ship, sailing, pier, cabin, onboard service, price and date-specific inclusions remain with the actual operator and linked tour products."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/attraction-booking-pilot-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Five-guide pilot branch inventory only; merge, deployment, live URL checks, crawl and indexing require separate evidence.",
+          "identityDelta": 5,
+          "localeUrlDelta": 15,
+          "identities": [
+            {
+              "id": "humble-administrators-garden-tickets-entry",
+              "title": "Humble Administrator's Garden Tickets & Entry",
+              "metadataPath": "content/guides/humble-administrators-garden-tickets-entry/metadata.json",
+              "canonicalPath": "/guides/humble-administrators-garden-tickets-entry/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/humble-administrators-garden-tickets-entry/",
+                "/zh/guides/humble-administrators-garden-tickets-entry/",
+                "/ko/guides/humble-administrators-garden-tickets-entry/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "suzhou",
+                "jiangsu"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-suzhou",
+                  "province-jiangsu"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Garden ticket, appointment window, gate and dated early-opening rule; tour itinerary and inclusions remain with the linked Jiangnan product."
+            },
+            {
+              "id": "jade-dragon-snow-mountain-cable-car-booking",
+              "title": "Jade Dragon Snow Mountain: Tickets and Cable Cars",
+              "metadataPath": "content/guides/jade-dragon-snow-mountain-cable-car-booking/metadata.json",
+              "canonicalPath": "/guides/jade-dragon-snow-mountain-cable-car-booking/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/jade-dragon-snow-mountain-cable-car-booking/",
+                "/zh/guides/jade-dragon-snow-mountain-cable-car-booking/",
+                "/ko/guides/jade-dragon-snow-mountain-cable-car-booking/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "lijiang",
+                "jade-dragon-snow-mountain"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "lijiang",
+                  "jade-dragon-snow-mountain"
+                ],
+                "usedCountryFallback": true
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Scenic entry versus Glacier Park and Spruce Meadow cable-car booking; the linked eight-day Yunnan tour names Spruce Meadow and Blue Moon Valley, not Glacier Park."
+            },
+            {
+              "id": "li-river-cruise-tickets-piers-booking",
+              "title": "Li River Cruise Tickets: 3 vs 4 Stars and Boarding Piers",
+              "metadataPath": "content/guides/li-river-cruise-tickets-piers-booking/metadata.json",
+              "canonicalPath": "/guides/li-river-cruise-tickets-piers-booking/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/li-river-cruise-tickets-piers-booking/",
+                "/zh/guides/li-river-cruise-tickets-piers-booking/",
+                "/ko/guides/li-river-cruise-tickets-piers-booking/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "guilin",
+                "li-river",
+                "yangshuo"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-guilin"
+                ],
+                "unmappedTokens": [
+                  "li-river",
+                  "yangshuo"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Official three- and four-star cruise fares, pier assignment and dated booking checks; the linked Guilin–Yangshuo product owns its inclusions."
+            },
+            {
+              "id": "shanghai-museum-east-entry-reservations",
+              "title": "Shanghai Museum East: Entry, Reservations & Hours",
+              "metadataPath": "content/guides/shanghai-museum-east-entry-reservations/metadata.json",
+              "canonicalPath": "/guides/shanghai-museum-east-entry-reservations/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/shanghai-museum-east-entry-reservations/",
+                "/zh/guides/shanghai-museum-east-entry-reservations/",
+                "/ko/guides/shanghai-museum-east-entry-reservations/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "shanghai"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-shanghai"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "East Museum entry and gallery-specific reservations; the linked Shanghai–Suzhou five-day tour does not include the East Museum without a custom adjustment."
+            },
+            {
+              "id": "xian-city-wall-tickets-gates-walk-or-bike",
+              "title": "Xi'an City Wall Tickets, Gates, Walking and Cycling",
+              "metadataPath": "content/guides/xian-city-wall-tickets-gates-walk-or-bike/metadata.json",
+              "canonicalPath": "/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+                "/zh/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+                "/ko/guides/xian-city-wall-tickets-gates-walk-or-bike/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "shaanxi",
+                "xian",
+                "xian-city-wall"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-xian"
+                ],
+                "unmappedTokens": [
+                  "shaanxi",
+                  "xian-city-wall"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Verified South Gate and standard tickets plus walk-versus-cycle choice; unverified gate hours, bike rental and passport screen steps are excluded."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/product-geo-human-question-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Two-guide product GEO branch inventory only; deployment, live URLs, crawl and AI citation require separate evidence.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "first-china-trip-jiangnan-6-or-beijing-11-days",
+              "title": "First China Trip: Jiangnan 6 Days or Beijing 11?",
+              "metadataPath": "content/guides/first-china-trip-jiangnan-6-or-beijing-11-days/metadata.json",
+              "canonicalPath": "/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+                "/zh/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+                "/ko/guides/first-china-trip-jiangnan-6-or-beijing-11-days/"
+              ],
+              "section": "plan",
+              "pageFamily": "comparison",
+              "targetIntent": "compare",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "pillar": "routes-and-pace",
+              "destinations": ["china", "beijing", "shanghai", "suzhou", "hangzhou"],
+              "entityResolution": {
+                "entityIds": ["country-china", "city-beijing", "city-shanghai", "city-suzhou", "city-hangzhou"],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "First-trip decision between the published six-day Shanghai-Suzhou-Hangzhou route and the eleven-day Beijing-Hangzhou-Suzhou-Shanghai route; dates, live rooms, fares and any itinerary customization remain with the actual quote."
+            },
+            {
+              "id": "guilin-yangshuo-with-kids-and-older-parents",
+              "title": "Guilin & Yangshuo with Kids and Older Parents",
+              "metadataPath": "content/guides/guilin-yangshuo-with-kids-and-older-parents/metadata.json",
+              "canonicalPath": "/guides/guilin-yangshuo-with-kids-and-older-parents/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/guilin-yangshuo-with-kids-and-older-parents/",
+                "/zh/guides/guilin-yangshuo-with-kids-and-older-parents/",
+                "/ko/guides/guilin-yangshuo-with-kids-and-older-parents/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "pillar": "routes-and-pace",
+              "destinations": ["guilin", "yangshuo"],
+              "entityResolution": {
+                "entityIds": ["city-guilin"],
+                "unmappedTokens": ["yangshuo"],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "Family pace for the published five-day Guilin-Yangshuo private route and the distinction between its included Li River cruise and optional Yulong rafting; the Longcun-Daba Bridge restriction is route-specific and must be rechecked with the operator."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/jiangnan-family-geo-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "One Suzhou older-parent decision guide in the repository; live publication and AI citations need separate verification.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "suzhou-with-older-parents-garden-museum-transfer-day",
+              "title": "Suzhou with Older Parents: Garden, Museum & Hangzhou",
+              "metadataPath": "content/guides/suzhou-with-older-parents-garden-museum-transfer-day/metadata.json",
+              "canonicalPath": "/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+                "/zh/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+                "/ko/guides/suzhou-with-older-parents-garden-museum-transfer-day/"
+              ],
+              "section": "plan",
+              "pageFamily": "task",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "pillar": "routes-and-pace",
+              "destinations": ["suzhou", "hangzhou"],
+              "entityResolution": {
+                "entityIds": ["city-suzhou", "city-hangzhou"],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "Older-parent pace and the published Suzhou-to-Hangzhou transfer-day decision; garden and museum entry remain separate date-dependent reservations, and changes to the route require a written quote."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1683,6 +2034,7 @@
         "do-us-citizens-need-visa-china-2026",
         "do-you-need-a-tour-guide-in-china",
         "dougong-and-chinese-timber-frame-reading",
+        "first-china-trip-jiangnan-6-or-beijing-11-days",
         "first-shared-meal-in-china",
         "first-trip-china-airport-station-stay-map",
         "food-plants-and-animal-products-into-china",
@@ -1699,6 +2051,7 @@
         "guilin-airport-or-railway-station-arrival-guide",
         "guilin-yangshuo-longji-route-order",
         "guilin-yangshuo-transport-route",
+        "guilin-yangshuo-with-kids-and-older-parents",
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
         "guizhou-village-basketball-culture",
@@ -1716,15 +2069,18 @@
         "how-to-read-heritage-sites-in-china",
         "how-to-visit-an-archaeological-site-museum",
         "huangshan-summit-or-gateway-base",
+        "humble-administrators-garden-tickets-entry",
         "hunan-cuisine-balanced-first-meal",
         "inner-mongolia-long-song-first-performance",
         "international-chain-or-local-hotel-china",
         "is-your-china-itinerary-too-rushed",
+        "jade-dragon-snow-mountain-cable-car-booking",
         "jingxian-xuan-paper-museum-workshop-choice",
         "kaifeng-song-dynasty-urban-landscape",
         "kevin-before-the-hotel-pickup",
         "kunming-dali-lijiang-shangri-la-route-order",
         "leshan-giant-buddha-land-or-boat-visit",
+        "li-river-cruise-tickets-piers-booking",
         "liangzhu-ruins-park-and-museum-sequence",
         "liaozhai-zibo-former-residence-liqu-liaozhai-city",
         "lijiang-old-town-or-shuhe-where-to-stay",
@@ -1760,6 +2116,7 @@
         "shandong-peninsula-coastal-city-rail-arc",
         "shanghai-24-hour-parks-reality-check",
         "shanghai-hangzhou-transport-route",
+        "shanghai-museum-east-entry-reservations",
         "shanghai-pudong-or-hongqiao-airport",
         "shanghai-suzhou-hangzhou-nanjing-route-order",
         "shanghai-to-suzhou-day-trip",
@@ -1772,6 +2129,7 @@
         "sichuan-opera-face-changing-with-context",
         "singapore-to-zhangjiajie-itinerary",
         "summer-palace-gates-route-and-boat-plan",
+        "suzhou-with-older-parents-garden-museum-transfer-day",
         "tea-landscape-regions-of-china",
         "temple-of-heaven-gates-and-ritual-sequence",
         "terracotta-warriors-without-tour",
@@ -1790,13 +2148,16 @@
         "wuhan-where-to-stay-hankou-wuchang-hanyang",
         "wukong-nezha-games-animation-myth-guide",
         "xiamen-hubs-to-gulangyu-ferry-terminal",
+        "xiamen-tulou-quanzhou-six-day-route",
         "xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan",
         "xian-chengdu-transport-route",
+        "xian-city-wall-tickets-gates-walk-or-bike",
         "xian-lanzhou-dunhuang-silk-road-route",
         "xian-where-to-stay-city-wall-or-dayanta",
         "xixia-script-and-imperial-tombs-context",
         "yangshan-automated-port-explained",
         "yangshuo-town-or-yulong-river-where-to-stay",
+        "yangtze-cruise-fit-china-itinerary",
         "yingge-dance-beyond-the-viral-clips",
         "yiwu-market-to-factory-network",
         "yuanyang-rice-terraces-viewpoint-and-village-route",

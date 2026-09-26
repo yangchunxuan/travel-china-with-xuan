@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { historicalRouteServiceIds as routeServiceIds } from "../../lib/routeServiceInterest.ts";
+import { guideTargets } from "../../lib/guideCommercialTargets.ts";
 import {
   loadGuideMetadata,
   loadHighIntentCtaOwnershipRegistry,
@@ -69,12 +70,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 28,
+    plan: 33,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 78);
+  assert.equal(report.uniqueContentIds, 83);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 16);
+  assert.equal(report.authorizedGenericConversation, 21);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -100,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 65 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 75 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -155,6 +156,7 @@ test("commercial links keep the approved 8 hub, 65 curated guide and 48 product 
       "chongqing-railway-station-selector",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "do-us-citizens-need-visa-china-2026",
+      "first-china-trip-jiangnan-6-or-beijing-11-days",
       "food-plants-and-animal-products-into-china",
       "forbidden-city-for-foreign-visitors",
       "great-wall-section-selector-from-beijing",
@@ -162,28 +164,37 @@ test("commercial links keep the approved 8 hub, 65 curated guide and 48 product 
       "guangzhou-shenzhen-hong-kong-route-order",
       "guilin-airport-or-railway-station-arrival-guide",
       "guilin-yangshuo-transport-route",
+      "guilin-yangshuo-with-kids-and-older-parents",
       "how-much-does-a-china-trip-cost",
       "how-to-pay-in-china-as-a-tourist",
       "how-to-read-a-suzhou-garden",
+      "humble-administrators-garden-tickets-entry",
+      "jade-dragon-snow-mountain-cable-car-booking",
       "kunming-dali-lijiang-shangri-la-route-order",
+      "li-river-cruise-tickets-piers-booking",
       "lijiang-shangri-la-transport-route",
       "lunar-new-year-customs-for-visitors",
       "national-museum-of-china-booking-and-route",
       "sanxingdui-museum-booking-and-gallery-order",
       "shaanxi-history-museum-booking-and-collection-plan",
       "shanghai-hangzhou-transport-route",
+      "shanghai-museum-east-entry-reservations",
       "shanghai-pudong-or-hongqiao-airport",
       "shanghai-suzhou-hangzhou-nanjing-route-order",
       "shanghai-to-suzhou-day-trip",
       "shanghai-where-to-stay-first-trip",
       "singapore-to-zhangjiajie-itinerary",
       "summer-palace-gates-route-and-boat-plan",
+      "suzhou-with-older-parents-garden-museum-transfer-day",
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
+      "xiamen-tulou-quanzhou-six-day-route",
+      "xian-city-wall-tickets-gates-walk-or-bike",
       "xian-lanzhou-dunhuang-silk-road-route",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
+      "yangtze-cruise-fit-china-itinerary",
       "zhangjiajie-arrival-departure-stations",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
@@ -250,6 +261,16 @@ test("commercial links keep the approved 8 hub, 65 curated guide and 48 product 
       "zhangye-jiayuguan-dunhuang-7-day-private-tour",
     ],
   );
+});
+
+test("new route guides point to their matching private-tour products", () => {
+  assert.deepEqual(guideTargets["xiamen-tulou-quanzhou-six-day-route"], [
+    { kind: "product", slug: "xiamen-tulou-quanzhou-6-day-private-tour" },
+  ]);
+  assert.deepEqual(guideTargets["yangtze-cruise-fit-china-itinerary"], [
+    { kind: "product", slug: "chongqing-yangtze-cruise-6-day-private-tour" },
+    { kind: "product", slug: "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour" },
+  ]);
 });
 
 test("Zhangjiajie commercial routes and Singapore planning links stay distinct", () => {

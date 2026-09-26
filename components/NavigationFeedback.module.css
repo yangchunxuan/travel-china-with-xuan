@@ -1,0 +1,136 @@
+/* Page-change loader (NavigationFeedback.tsx).
+   Idle: nothing is drawn and nothing transitions, so every reset is instant.
+   Pending: after 220ms the page below the header turns white, the count
+   appears bottom-left and the top line follows it (--hg-nav-progress, 0-1).
+   A page that arrives inside the delay cancels all of it: nothing is drawn.
+   Done: the count reads 100 and everything fades in 200ms. */
+.feedback {
+  --hg-nav-progress: 0;
+  /* Height of the open privacy banner (AnalyticsConsent) from the bottom edge, 0px when it is closed. */
+  --hg-nav-lift: 0px;
+  display: contents;
+}
+
+.veil {
+  background: rgb(255 255 255 / 92%);
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  /* Under the header (z-index 100, 1400 with the phone menu open); above page content. */
+  z-index: 99;
+}
+
+.bar {
+  /* White track hides the guide reading-progress line (z-index 1200) while a page loads. */
+  background: #fff;
+  block-size: 2px;
+  inset: 0 0 auto;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 1500;
+}
+
+.fill {
+  background: #a84731;
+  block-size: 100%;
+  display: block;
+  transform: scaleX(var(--hg-nav-progress));
+  transform-origin: 0 50%;
+}
+
+.count {
+  color: #0a0a0a;
+  font-family: var(--hg-font-editorial, Georgia, "Times New Roman", serif);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-style: normal;
+  font-weight: 400;
+  /* Bottom-left corner, or just above the privacy banner while it is open. */
+  inset-block-end: max(
+    calc(env(safe-area-inset-bottom, 0px) + clamp(1.25rem, 3vw, 2.5rem)),
+    calc(var(--hg-nav-lift) + clamp(0.75rem, 2vw, 1.5rem))
+  );
+  inset-inline-start: clamp(1rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  text-align: start;
+  user-select: none;
+  z-index: 99;
+}
+
+/* The editorial serif's old-style digits are proportional, so "11" is
+   narrower than "88". A hidden, zero-height "100" holds the box at its
+   widest from the first frame: the box never changes width while counting
+   and the digits stay anchored at its start edge. */
+.count::after {
+  block-size: 0;
+  content: "100";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.feedback[data-state="pending"] .veil,
+.feedback[data-state="pending"] .count {
+  opacity: 1;
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1) 220ms;
+}
+
+.feedback[data-state="pending"] .bar {
+  opacity: 1;
+  transition: opacity 120ms linear 220ms;
+}
+
+.feedback[data-state="done"] .veil,
+.feedback[data-state="done"] .count,
+.feedback[data-state="done"] .bar {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.feedback[data-state="done"] .fill {
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 40rem) {
+  .count {
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No counting and no fades: after the same delay, a still full-width line. */
+  .veil,
+  .count {
+    display: none;
+  }
+
+  .fill {
+    transform: none;
+  }
+
+  .feedback[data-state] .bar {
+    transition-duration: 0s;
+  }
+}
+
+@media (forced-colors: active) {
+  .veil {
+    display: none;
+  }
+
+  .fill {
+    background: Highlight;
+    forced-color-adjust: none;
+  }
+}
+
+@media print {
+  .feedback {
+    display: none;
+  }
+}

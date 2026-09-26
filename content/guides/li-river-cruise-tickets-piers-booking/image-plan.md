@@ -1,0 +1,3 @@
+# Image plan
+
+Hero reuses the real Li River boat photograph already published at `/images/tours/guilin-yangshuo-5-day-private-tour/li-river-cruise-1600.webp` (1600×1000). Source is the owner's locally supplied `六妹素材 (75).jpg`; original and derivative hashes and owner-authorised website use are recorded in `docs/homeground-photo-provenance.md` under “Guilin D2 — Li River cruise.” That record is not independent proof of the original photographer's copyright. The image shows a boat between karst hills but does not identify its class, operator or exact route. No new or AI-generated image is introduced.

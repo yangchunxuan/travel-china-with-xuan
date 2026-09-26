@@ -1,0 +1,58 @@
+{
+  "id": "li-river-cruise-tickets-piers-booking",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global", "singapore", "malaysia", "australia"],
+  "format": "workflow",
+  "topics": ["li-river-cruise", "guilin-yangshuo", "tickets", "boarding-piers"],
+  "destinations": ["guilin", "li-river", "yangshuo"],
+  "heroImagePath": "/images/tours/guilin-yangshuo-5-day-private-tour/li-river-cruise-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/guilin-yangshuo-5-day-private-tour/li-river-cruise-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["li river cruise tickets", "li river 3 star vs 4 star cruise", "li river cruise boarding pier"],
+    "zh": ["漓江游船怎么买票", "漓江三星四星游船区别", "漓江游船磨盘山竹江码头"],
+    "ko": ["리강 유람선 예약", "리강 3성 4성 유람선", "리강 유람선 선착장"]
+  },
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/li-river-cruise-tickets-piers-booking/",
+      "title": "Li River Cruise Tickets: 3 vs 4 Stars and Boarding Piers",
+      "headline": "Book the right Li River boat, then go to the right pier",
+      "description": "Compare the published 3-star and 4-star fares, official booking channel and Guilin boarding piers. Check the live date before paying.",
+      "heroAlt": "A passenger boat travelling between karst hills on the Li River",
+      "navTitle": "Li River cruise tickets",
+      "featuredLinkLabel": "Book a Li River cruise",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Guilin", "Li River", "Tickets"]
+    },
+    "zh": {
+      "path": "/zh/guides/li-river-cruise-tickets-piers-booking/",
+      "title": "漓江游船怎么买票：三星四星、码头与行程",
+      "headline": "漓江游船先选船型，再认准上船码头",
+      "description": "核对漓江三星、四星游船的官方票价、购票渠道与磨盘山、竹江两个码头；普通日期放票时间仍需看当期公告。",
+      "heroAlt": "漓江喀斯特山峰之间航行的一艘客船",
+      "navTitle": "漓江游船购票",
+      "featuredLinkLabel": "查看漓江游船购票方法",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["桂林", "漓江", "游船购票"]
+    },
+    "ko": {
+      "path": "/ko/guides/li-river-cruise-tickets-piers-booking/",
+      "title": "리강 유람선 예약: 3성·4성·승선 선착장",
+      "headline": "리강 유람선은 배 종류와 승선 선착장부터 확인하세요",
+      "description": "구이린에서 양숴로 가는 리강 3성·4성 유람선의 공식 요금, 예약 채널, 승선 장소를 구분합니다. 출발 날짜의 공지도 다시 확인하세요.",
+      "heroAlt": "리강의 카르스트 봉우리 사이를 항해하는 유람선",
+      "navTitle": "리강 유람선 예약",
+      "featuredLinkLabel": "리강 유람선 예약 방법",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["구이린", "리강", "유람선 예약"]
+    }
+  }
+}

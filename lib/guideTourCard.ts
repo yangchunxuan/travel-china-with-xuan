@@ -24,6 +24,16 @@ type CuratedCardCopy = { readonly label: string; readonly note: string; readonly
 
 /** Make the difference visible when a published tour extends a planning example. */
 const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedCardCopy>>> = {
+  "shanghai-museum-east-entry-reservations": {
+    en: { label: "Shanghai and Suzhou private tour", note: "The 5-day route does not include East. Ask us to adjust the Shanghai day; we'll check opening rules and any special-area booking first.", action: "View the 5-day route" },
+    zh: { label: "上海—苏州私家团", note: "现有 5 天行程不含上博东馆。想去可调整上海当天安排，再核对开放与专项区域预约。", action: "查看 5 天路线" },
+    ko: { label: "상하이·쑤저우 프라이빗 투어", note: "공개된 5일 일정에 동관은 포함되지 않습니다. 상하이 방문일을 조정하고 운영 규정과 특별 구역 예약을 확인해 드립니다.", action: "5일 일정 보기" },
+  },
+  "jade-dragon-snow-mountain-cable-car-booking": {
+    en: { label: "A published Yunnan private tour", note: "This 8-day route plans Spruce Meadow and Blue Moon Valley. Glacier Park cable-car tickets are not included; ask us to check them separately for your date.", action: "View the 8-day route" },
+    zh: { label: "现有云南私家团", note: "这条 8 天路线安排云杉坪与蓝月谷，不含冰川公园大索道票；若想改去冰川公园，请按出行日期另行核实。", action: "查看 8 天路线" },
+    ko: { label: "공개된 윈난 프라이빗 투어", note: "이 8일 일정은 윈산핑과 블루문밸리를 계획하며 빙천공원 케이블카 표는 포함하지 않습니다. 원하면 날짜별 가능 여부를 따로 확인해 주세요.", action: "8일 일정 보기" },
+  },
   "china-7-day-itinerary": {
     en: { label: "A different published route", note: "This 8-day tour has Beijing 3 nights, Xi'an 2 and Shanghai 2—one less Shanghai night than above. Ask us to quote the two-city week separately.", action: "View the 8-day tour" },
     zh: { label: "另一条已发布路线", note: "这条 8 天产品住北京 3 晚、西安 2 晚、上海 2 晚，比上面的上海安排少 1 晚。只走两城可另行报价。", action: "查看 8 天行程" },

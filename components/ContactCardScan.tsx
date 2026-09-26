@@ -59,6 +59,8 @@ export function CopyButton({ value, label, copied, idle }: { value: string; labe
  * number to copy. Shared by the desktop contact card (where the code resolves
  * as the card opens) and the homepage contact board (`inline`, where it
  * resolves as the board scrolls into view). `children` joins the last row.
+ * The card passes `drawQrAfterPaint`, so it opens without waiting for the
+ * code (see WhatsAppQr); the board draws its codes as they render.
  */
 export function ContactCardScan({
   locale,
@@ -66,6 +68,7 @@ export function ContactCardScan({
   headingId,
   app = "whatsapp",
   inline = false,
+  drawQrAfterPaint = false,
   children,
 }: {
   locale: HomegroundLocale;
@@ -73,6 +76,7 @@ export function ContactCardScan({
   headingId: string;
   app?: "whatsapp" | "messenger";
   inline?: boolean;
+  drawQrAfterPaint?: boolean;
   children?: ReactNode;
 }) {
   const copy = contactCardCopy[locale];
@@ -81,7 +85,7 @@ export function ContactCardScan({
   return (
     <section className={`${styles.scan} ${inline ? styles.scanInline : ""}`} aria-labelledby={headingId}>
       <div className={styles.qrFrame}>
-        <WhatsAppQr href={href} label={messenger ? copy.messengerQrLabel : copy.qrLabel} />
+        <WhatsAppQr href={href} label={messenger ? copy.messengerQrLabel : copy.qrLabel} drawAfterPaint={drawQrAfterPaint} />
         <span className={styles.scanBeam} aria-hidden="true" />
       </div>
       <div className={styles.scanText}>

@@ -2146,6 +2146,13 @@ article.post li {
   }
 }
 
+/* Page changes (components/NavigationFeedback.tsx): the link a visitor chose
+   answers at once. Instant, not transitioned, so no card's own transitions
+   are overridden. */
+a[data-hg-nav-pressed] {
+  opacity: 0.72;
+}
+
 /* Hero carousel */
 .hero-carousel {
   position: absolute;

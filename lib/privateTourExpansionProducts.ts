@@ -862,9 +862,9 @@ const fujian: PrivateTourProduct = {
       5,
       l("Quanzhou to Xiamen", "泉州返回厦门", "취안저우에서 샤먼으로"),
       l(
-        "Visit Quanzhou Maritime Museum, then return to Xiamen by private vehicle for the Xiamen University and seaside-promenade route. Your last night is in Xiamen. Breakfast and lunch are included.",
-        "游览泉州海外交通史博物馆后乘私车返回厦门，再游览厦门大学与海滨步道，最后一晚住厦门；当天含早餐与午餐。",
-        "취안저우 해외교통사박물관을 본 뒤 전용 차량으로 샤먼에 돌아와 샤먼대학과 해변 산책로를 둘러보고 마지막 밤을 보냅니다. 조식과 중식이 포함됩니다.",
+        "Visit Quanzhou Maritime Museum, then return to Xiamen by private vehicle for the university-side neighbourhood and seaside promenade. Campus entry is not included; travellers may visit only with their own successful official individual reservation. Your last night is in Xiamen. Breakfast and lunch are included.",
+        "游览泉州海外交通史博物馆后乘私车返回厦门，走访厦门大学周边街区和海滨步道。行程不含入校参观；只有旅客自行通过官方渠道成功预约，才可另行安排。最后一晚住厦门；当天含早餐与午餐。",
+        "취안저우 해외교통사박물관을 본 뒤 전용 차량으로 샤먼에 돌아와 샤먼대학 주변과 해변 산책로를 둘러봅니다. 대학 내부 방문은 포함되지 않으며 여행자가 공식 채널에서 개인 예약에 성공한 경우에만 별도 검토할 수 있습니다. 마지막 밤은 샤먼에서 보내며 조식과 중식이 포함됩니다.",
       ),
     ),
     day(
@@ -910,9 +910,9 @@ const fujian: PrivateTourProduct = {
     1600,
     1060,
     l(
-      "Gulangyu waterfront in Xiamen",
-      "厦门鼓浪屿滨水景观",
-      "샤먼 구랑위 해안 풍경",
+      "Traditional rooftops on Gulangyu Island, Xiamen",
+      "俯瞰厦门鼓浪屿街区与屋顶",
+      "샤먼 구랑위의 골목과 지붕을 내려다본 풍경",
     ),
     l(
       "You cross to Gulangyu by reserved ferry and explore the island on foot.",
@@ -967,7 +967,7 @@ const fujian: PrivateTourProduct = {
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const chaoshanSlug = "chaozhou-shantou-nanao-5-day-private-tour";

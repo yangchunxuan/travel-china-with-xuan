@@ -1,0 +1,79 @@
+{
+  "id": "suzhou-with-older-parents-garden-museum-transfer-day",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "practical-guide",
+  "topics": ["suzhou-with-older-parents", "suzhou-museum", "humble-administrators-garden", "tiger-hill", "suzhou-hangzhou-transfer"],
+  "destinations": ["suzhou", "hangzhou"],
+  "heroImagePath": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["suzhou with older parents garden museum", "suzhou museum garden tiger hill one day", "suzhou to hangzhou with elderly parents"],
+    "zh": ["带父母苏州拙政园苏博虎丘怎么排", "苏州博物馆拙政园午休去杭州", "苏州带长辈转杭州行程"],
+    "ko": ["부모님과 쑤저우 졸정원 박물관 일정", "쑤저우 후추 박물관 항저우 이동", "쑤저우 부모님 여행 휴식 일정"]
+  },
+  "search": { "section": "plan", "family": "task", "primaryIntent": "plan" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+      "title": "Suzhou with Older Parents: Garden, Museum & Hangzhou",
+      "headline": "Suzhou with older parents: where should the rest go?",
+      "description": "Fit Humble Administrator's Garden, Suzhou Museum and a Hangzhou transfer around an older parent's energy. See why Tiger Hill belongs on a different day.",
+      "heroAlt": "Pavilion and pond at Suzhou's Humble Administrator's Garden, photographed in 2024.",
+      "navTitle": "Suzhou with older parents",
+      "featuredLinkLabel": "Plan Suzhou with older parents",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Suzhou", "Older travellers", "Trip pace"],
+      "heroCredit": {
+        "text": "Humble Administrator's Garden by Chainwit. (2024); cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+      "title": "带父母游苏州：拙政园、苏博、虎丘和去杭州怎么排？",
+      "headline": "带父母游苏州，休息时间放在哪里？",
+      "description": "带长辈游苏州，把虎丘和拙政园、苏博分开安排；退房去杭州当天，怎样留午餐与休息时间，什么时候要改行程。",
+      "heroAlt": "2024 年拍摄的苏州拙政园亭台与池塘。",
+      "navTitle": "带父母游苏州怎么排",
+      "featuredLinkLabel": "安排带父母游苏州的节奏",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["苏州", "带父母旅行", "行程节奏"],
+      "heroCredit": {
+        "text": "苏州拙政园，Chainwit. 摄于 2024 年；已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/suzhou-with-older-parents-garden-museum-transfer-day/",
+      "title": "부모님과 쑤저우: 졸정원·박물관·후추·항저우 이동",
+      "headline": "부모님과 쑤저우 여행, 휴식은 어디에 넣을까요?",
+      "description": "졸정원과 쑤저우박물관, 후추 방문을 나누고 항저우로 이동하는 날 점심·휴식 시간을 확보하는 방법을 살펴봅니다.",
+      "heroAlt": "2024년에 촬영한 쑤저우 졸정원의 정자와 연못.",
+      "navTitle": "부모님과 쑤저우 여행",
+      "featuredLinkLabel": "부모님과 함께하는 쑤저우 일정 짜기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["쑤저우", "부모님 여행", "일정 여유"],
+      "heroCredit": {
+        "text": "쑤저우 졸정원, Chainwit. 촬영(2024); 크롭 및 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  }
+}

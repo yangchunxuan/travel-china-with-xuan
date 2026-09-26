@@ -74,11 +74,24 @@ export const guideTargets = {
   ],
   "chengdu-panda-base-or-dujiangyan-panda-valley": [productTarget("chengdu-pandas-sanxingdui-5-day-private-tour")],
   "sanxingdui-museum-booking-and-gallery-order": [productTarget("chengdu-pandas-sanxingdui-5-day-private-tour")],
+  "li-river-cruise-tickets-piers-booking": [productTarget("guilin-yangshuo-5-day-private-tour")],
+  "xian-city-wall-tickets-gates-walk-or-bike": [productTarget("xian-terracotta-warriors-5-day-private-tour")],
+  "shanghai-museum-east-entry-reservations": [productTarget("shanghai-suzhou-5-day-private-tour")],
+  "humble-administrators-garden-tickets-entry": [productTarget("shanghai-suzhou-hangzhou-6-day-private-tour")],
+  "jade-dragon-snow-mountain-cable-car-booking": [productTarget("kunming-dali-lijiang-8-day-private-tour")],
   "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba": [productTarget("chongqing-wulong-5-day-private-tour")],
   "chongqing-railway-station-selector": [productTarget("chongqing-wulong-5-day-private-tour")],
   "guilin-airport-or-railway-station-arrival-guide": [productTarget("guilin-yangshuo-5-day-private-tour")],
   "guilin-yangshuo-transport-route": [productTarget("guilin-yangshuo-5-day-private-tour")],
   "yangshuo-town-or-yulong-river-where-to-stay": [productTarget("guilin-yangshuo-5-day-private-tour")],
+  "guilin-yangshuo-with-kids-and-older-parents": [productTarget("guilin-yangshuo-5-day-private-tour")],
+  "first-china-trip-jiangnan-6-or-beijing-11-days": [
+    productTarget("beijing-hangzhou-suzhou-shanghai-11-day-private-tour"),
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+  ],
+  "suzhou-with-older-parents-garden-museum-transfer-day": [
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+  ],
   "zhangjiajie-city-or-wulingyuan-hotel-base": [
     classicZhangjiajie,
     productTarget("zhangjiajie-forest-4-day-private-tour"),
@@ -171,6 +184,13 @@ export const guideTargets = {
   ],
   "xian-lanzhou-dunhuang-silk-road-route": [
     productTarget("beijing-xian-silk-road-15-day-private-tour"),
+  ],
+  "xiamen-tulou-quanzhou-six-day-route": [
+    productTarget("xiamen-tulou-quanzhou-6-day-private-tour"),
+  ],
+  "yangtze-cruise-fit-china-itinerary": [
+    productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
+    productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),
   ],
   // Entry-rule guides: US passports rely on 240-hour transit, which the
   // Hong Kong-exit route is built for; 30-day visa-free markets fit two weeks.

@@ -59,6 +59,14 @@ const explicitPlans = {
     kind: "private-tour-product",
     ctaId: "shanghai-suzhou-5-day-private-tour",
   },
+  "xiamen-tulou-quanzhou-six-day-route": {
+    kind: "private-tour-product",
+    ctaId: "xiamen-tulou-quanzhou-6-day-private-tour",
+  },
+  "yangtze-cruise-fit-china-itinerary": {
+    kind: "private-tour-product",
+    ctaId: "chongqing-yangtze-cruise-6-day-private-tour",
+  },
 };
 
 // These guides compare named routes. A partly related tour is useful only when
