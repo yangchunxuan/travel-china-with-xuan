@@ -302,6 +302,7 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "china-itinerary-with-young-children": "plan-traveller-theme-itineraries",
   "guilin-yangshuo-with-kids-and-older-parents": "plan-traveller-theme-itineraries",
   "first-china-trip-jiangnan-6-or-beijing-11-days": "plan-trip-length-city-order",
+  "suzhou-with-older-parents-garden-museum-transfer-day": "plan-traveller-theme-itineraries",
   "wheelchair-accessible-china-route-planning": "plan-traveller-theme-itineraries",
 };
 

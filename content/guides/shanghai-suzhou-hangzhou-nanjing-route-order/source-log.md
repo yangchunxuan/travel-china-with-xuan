@@ -1,6 +1,6 @@
 # Source log — Shanghai, Suzhou, Hangzhou and Nanjing Route Order
 
-Status: `DEPTH REPAIR COMPLETE — CENTRAL REVIEW REQUIRED`
+Status: `UPDATED — 2026-09-26 PRODUCT FACT CHECK`
 
 Checked at: 2026-08-12 (Asia/Shanghai)
 
@@ -37,6 +37,12 @@ This page owns the four-city order and the choice among a one-way chain, Shangha
 - Update trigger: Passenger-service change.
 
 ## Editorial judgments
+
+### Four- and six-traveller short-trip comparison (2026-09-26)
+
+- The room counts, hotel nights, rail/vehicle split and luggage descriptions in the new short-trip table come from the published five- and six-day product records in `lib/privateTourProducts.ts` and their answers in `lib/jiangnanTourAnswers.ts`.
+- Four- and six-person public prices use two people per room. The five-day tour retains return second-class Suzhou rail at both sizes; the six-day tour usually plans a door-to-door vehicle for four to nine, subject to actual luggage and written confirmation.
+- No live train, hotel room, vehicle model or party total is guaranteed by the table. The exact date and ages remain necessary before quoting children or confirming availability.
 
 - Gateway airports and exact stations precede city-night allocation.
 - Suzhou day visit versus overnight depends on activities, station geography and the forced return.

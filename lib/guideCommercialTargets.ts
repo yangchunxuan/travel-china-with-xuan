@@ -89,6 +89,9 @@ export const guideTargets = {
     productTarget("beijing-hangzhou-suzhou-shanghai-11-day-private-tour"),
     productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
   ],
+  "suzhou-with-older-parents-garden-museum-transfer-day": [
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+  ],
   "zhangjiajie-city-or-wulingyuan-hotel-base": [
     classicZhangjiajie,
     productTarget("zhangjiajie-forest-4-day-private-tour"),

@@ -70,12 +70,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 32,
+    plan: 33,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 82);
+  assert.equal(report.uniqueContentIds, 83);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 20);
+  assert.equal(report.authorizedGenericConversation, 21);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 74 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 75 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -185,6 +185,7 @@ test("commercial links keep the approved 8 hub, 74 curated guide and 48 product 
       "shanghai-where-to-stay-first-trip",
       "singapore-to-zhangjiajie-itinerary",
       "summer-palace-gates-route-and-boat-plan",
+      "suzhou-with-older-parents-garden-museum-transfer-day",
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
