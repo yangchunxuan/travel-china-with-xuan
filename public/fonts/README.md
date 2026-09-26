@@ -5,7 +5,7 @@ localized pages and guides. They are self-hosted so the English page does not
 request CJK fonts and the Chinese and Korean pages do not depend on a
 third-party font CDN at runtime.
 
-- `homeground-serif-sc-00.<hash>.woff2` to `homeground-serif-sc-07.<hash>.woff2`
+- `homeground-serif-sc-00.<hash>.woff2` to `homeground-serif-sc-06.<hash>.woff2`
   and `homeground-serif-sc-slices.<hash>.css` — Noto Serif SC, weight 500,
   sourced from the
   [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/notoserifsc),
@@ -56,7 +56,7 @@ the serif on any page. As one 521 KB file, every Chinese page preloaded all of
 them. The subset is therefore cut into slices that share one family, weight
 500 and `font-display: swap`:
 
-- Slice `00` (260 KB) is the primary slice. It holds every non-Han character
+- Slice `00` (282 KB) is the primary slice. It holds every non-Han character
   (Latin, digits, punctuation and symbols with all their layout alternates)
   and every Han character that is laid out in the serif, hidden text included,
   on `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour page and every guide that
@@ -67,7 +67,7 @@ them. The subset is therefore cut into slices that share one family, weight
   Half the size of the old single file, it is also the only serif file a
   Chinese page fetches before its load event.
 - Slices `01` to `03` hold the other Han characters that pages lay out in the
-  serif, grouped by how many pages use them. Slices `04` to `07` hold the Han
+  serif, grouped by how many pages use them. Slices `04` to `06` hold the Han
   characters no page lays out in the serif, in code-point order.
 - Every slice keeps all OpenType layout features, hinting and metrics of the
   source subset; only the glyph set differs.
