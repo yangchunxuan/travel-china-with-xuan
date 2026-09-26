@@ -201,7 +201,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ),
     day(
       2,
-      l("Train north to Jiuzhaigou", "高铁进入川北", "열차로 주자이거우 이동"),
+      l("Train to Huanglongjiuzhai, then drive to Jiuzhaigou", "高铁到黄龙九寨站，再乘车去九寨沟", "황룽주자이역행 열차 후 주자이거우 이동"),
       l(
         "Take the high-speed train to Huanglongjiuzhai station, where your local guide and driver meet you and take you by private vehicle to your Jiuzhaigou hotel. The rest of the day is for resting and getting used to the altitude.",
         "乘高铁到黄龙九寨站，当地导游和司机接站，专车送你到九寨沟酒店。余下时间好好休息，适应海拔。",
@@ -275,6 +275,18 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     "页面所示每人起价分别适用于 2 人或 6 人同行、淡季双人同住。",
     "표시된 1인 시작가는 비수기 2인 1실 조건에서 2명 또는 6명 여행에 적용됩니다.",
   ),
+  faq: [{
+    question: l(
+      "What if our train to Huanglongjiuzhai Station is delayed?",
+      "去黄龙九寨站的高铁晚点，接站车会一直等吗？",
+      "황룽주자이역행 열차가 늦으면 픽업 차량이 계속 기다리나요?",
+    ),
+    answer: l(
+      "The private transfer is planned around the train in your written itinerary; unlimited waiting is not included automatically. Before payment, we confirm the station and meeting point, and record any agreed waiting or changed-train terms in writing. If your train is delayed, contact us so we can check the revised pickup and agree any extra cost before arranging it.",
+      "接站私车按书面行程中的车次安排，不默认无限等候。付款前，我们会确认车站与会合地点，并把商定的等候或改签处理写入确认单。若列车晚点，请及时联系我方；我们核对新的接车安排，如有额外费用，会先征得你同意。",
+      "역 픽업 차량은 서면 일정의 열차에 맞춰 준비하며 무제한 대기는 자동으로 포함되지 않습니다. 결제 전에 역과 만남 장소를 확인하고, 합의한 대기·열차 변경 조건을 서면에 적습니다. 지연되면 연락해 주세요. 새 픽업 가능 여부를 확인하고 추가 비용이 있다면 먼저 동의를 구합니다.",
+    ),
+  }],
   heroImage: image(
     chengduJiuzhaigouSlug,
     "hero.webp",
@@ -330,7 +342,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const yunnanSlug = "kunming-dali-lijiang-8-day-private-tour";
@@ -488,6 +500,18 @@ const yunnan: PrivateTourProduct = {
     "页面所示 CNY 5,680/人起价适用于 6 人同行；2 人与 4 人需单独询价。",
     "표시된 1인 CNY 5,680 시작가는 6명 기준이며 2명과 4명은 별도 견적입니다.",
   ),
+  faq: [{
+    question: l(
+      "Does this eight-day Yunnan tour include Shangri-La, and where does it end?",
+      "这条云南 8 天团包含香格里拉吗？从哪里离开？",
+      "이 8일 윈난 여행에 샹그릴라가 포함되나요? 어디서 끝나나요?",
+    ),
+    answer: l(
+      "No. This route visits Kunming, Dali and Lijiang, returns by train to Kunming on Day 7 and departs from Kunming on Day 8. Shangri-La is not included. If you want to add it or depart from Lijiang, ask us for a separately checked route and quote before booking.",
+      "不包含。公开路线游览昆明、大理和丽江，第 7 天乘动车回昆明，第 8 天从昆明离开。香格里拉不在其中；若想加上它，或从丽江离开，请在预订前让我们核对交通并另行报价。",
+      "아니요. 공개 일정은 쿤밍·다리·리장을 방문한 뒤 7일 차에 열차로 쿤밍에 돌아와 8일 차에 쿤밍에서 출발합니다. 샹그릴라는 포함되지 않습니다. 샹그릴라를 추가하거나 리장에서 출발하려면 예약 전에 별도 동선과 견적을 요청해 주세요.",
+    ),
+  }],
   heroImage: image(
     yunnanSlug,
     "hero.webp",
@@ -534,7 +558,7 @@ const yunnan: PrivateTourProduct = {
   ],
   packages: [standardPackage([{ travelers: 6, cnyPerPerson: 5680, publishedPrice: { currency: "CNY", amountPerPerson: 5680 } }])],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-26",
 };
 
 const guizhouSlug = "guizhou-huangguoshu-libo-miao-7-day-private-tour";
@@ -1503,6 +1527,18 @@ const guangzhou: PrivateTourProduct = {
     "上方分别列出 2 人、4 人和 6 人同行的每人起价；最终总价仍按房间与车型确认。",
     "위 가격은 2명·4명·6명 그룹의 1인 시작가입니다. 최종 총액은 객실과 차량 등급을 확인한 뒤 안내합니다.",
   ),
+  faq: [{
+    question: l(
+      "Does this tour include Shenzhen, Hong Kong or Macau?",
+      "这条团包含深圳、香港或澳门吗？",
+      "이 투어에 선전·홍콩·마카오가 포함되나요?",
+    ),
+    answer: l(
+      "No. The five days stay in mainland Guangdong: four nights in Guangzhou, with day trips to Shunde and Foshan. The listed arrival and departure transfers are at the confirmed Guangzhou airport or station, not a border crossing. Shenzhen, Hong Kong, Macau and cross-border transfers need a separately checked route and quote.",
+      "不包含。这 5 天都在广东境内：广州连住 4 晚，顺德和佛山各走日游。已列接送是在确认的广州机场或车站，不含口岸接送。深圳、香港、澳门及跨境接送，都要另核对路线并报价。",
+      "포함되지 않습니다. 이 5일 일정은 중국 본토 광둥성에서 진행되며 광저우 4박과 순더·포산 당일 여행으로 구성됩니다. 기본 픽업·샌딩은 확정된 광저우 공항 또는 역 기준이고 국경 이동은 포함되지 않습니다. 선전·홍콩·마카오와 국경 이동은 별도 동선과 견적이 필요합니다.",
+    ),
+  }],
   heroImage: image(
     guangzhouSlug,
     "hero.webp",
@@ -1572,7 +1608,7 @@ const guangzhou: PrivateTourProduct = {
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-23",
+  dateModified: "2026-09-26",
 };
 
 const huangshanSlug = "huangshan-hongcun-huizhou-5-day-private-tour";
