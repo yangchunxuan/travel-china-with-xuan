@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 215,
-      "localeUrlCount": 637,
-      "generatedIdentityCount": 196,
+      "identityCount": 217,
+      "localeUrlCount": 643,
+      "generatedIdentityCount": 198,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1855,6 +1855,67 @@
               "boundary": "Verified South Gate and standard tickets plus walk-versus-cycle choice; unverified gate hours, bike rental and passport screen steps are excluded."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/product-geo-human-question-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Two-guide product GEO branch inventory only; deployment, live URLs, crawl and AI citation require separate evidence.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "first-china-trip-jiangnan-6-or-beijing-11-days",
+              "title": "First China Trip: Jiangnan 6 Days or Beijing 11?",
+              "metadataPath": "content/guides/first-china-trip-jiangnan-6-or-beijing-11-days/metadata.json",
+              "canonicalPath": "/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+                "/zh/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+                "/ko/guides/first-china-trip-jiangnan-6-or-beijing-11-days/"
+              ],
+              "section": "plan",
+              "pageFamily": "comparison",
+              "targetIntent": "compare",
+              "primaryCollectionId": "plan-trip-length-city-order",
+              "pillar": "routes-and-pace",
+              "destinations": ["china", "beijing", "shanghai", "suzhou", "hangzhou"],
+              "entityResolution": {
+                "entityIds": ["country-china", "city-beijing", "city-shanghai", "city-suzhou", "city-hangzhou"],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "First-trip decision between the published six-day Shanghai-Suzhou-Hangzhou route and the eleven-day Beijing-Hangzhou-Suzhou-Shanghai route; dates, live rooms, fares and any itinerary customization remain with the actual quote."
+            },
+            {
+              "id": "guilin-yangshuo-with-kids-and-older-parents",
+              "title": "Guilin & Yangshuo with Kids and Older Parents",
+              "metadataPath": "content/guides/guilin-yangshuo-with-kids-and-older-parents/metadata.json",
+              "canonicalPath": "/guides/guilin-yangshuo-with-kids-and-older-parents/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/guilin-yangshuo-with-kids-and-older-parents/",
+                "/zh/guides/guilin-yangshuo-with-kids-and-older-parents/",
+                "/ko/guides/guilin-yangshuo-with-kids-and-older-parents/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "pillar": "routes-and-pace",
+              "destinations": ["guilin", "yangshuo"],
+              "entityResolution": {
+                "entityIds": ["city-guilin"],
+                "unmappedTokens": ["yangshuo"],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "Family pace for the published five-day Guilin-Yangshuo private route and the distinction between its included Li River cruise and optional Yulong rafting; the Longcun-Daba Bridge restriction is route-specific and must be rechecked with the operator."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1937,6 +1998,7 @@
         "do-us-citizens-need-visa-china-2026",
         "do-you-need-a-tour-guide-in-china",
         "dougong-and-chinese-timber-frame-reading",
+        "first-china-trip-jiangnan-6-or-beijing-11-days",
         "first-shared-meal-in-china",
         "first-trip-china-airport-station-stay-map",
         "food-plants-and-animal-products-into-china",
@@ -1953,6 +2015,7 @@
         "guilin-airport-or-railway-station-arrival-guide",
         "guilin-yangshuo-longji-route-order",
         "guilin-yangshuo-transport-route",
+        "guilin-yangshuo-with-kids-and-older-parents",
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
         "guizhou-village-basketball-culture",

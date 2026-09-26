@@ -1,0 +1,58 @@
+{
+  "id": "first-china-trip-jiangnan-6-or-beijing-11-days",
+  "type": "planning",
+  "pillar": "routes-and-pace",
+  "audienceMarkets": ["global"],
+  "format": "comparison-guide",
+  "topics": ["first-trip", "route-design", "trip-length", "east-china", "beijing"],
+  "destinations": ["china", "beijing", "shanghai", "suzhou", "hangzhou"],
+  "heroImagePath": "/images/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["first china trip beijing and jiangnan", "beijing shanghai suzhou hangzhou 11 days", "shanghai suzhou hangzhou 6 or 11 days"],
+    "zh": ["第一次去中国北京江南怎么选", "北京杭州苏州上海11天", "上海苏州杭州6天还是加北京11天"],
+    "ko": ["중국 첫 여행 베이징 또는 상하이 항저우", "베이징 항저우 쑤저우 상하이 11일", "상하이 쑤저우 항저우 6일 베이징 11일"]
+  },
+  "search": {"section": "plan", "family": "comparison", "primaryIntent": "compare"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+      "title": "First China Trip: Jiangnan 6 Days or Add Beijing for 11?",
+      "headline": "Jiangnan in 6 days, or add Beijing and take 11?",
+      "description": "Compare two real private routes by first-trip sights, hotel nights, train days and arrival and departure cities before choosing your China trip.",
+      "heroAlt": "A pavilion beside West Lake in Hangzhou.",
+      "navTitle": "Jiangnan 6 or Beijing 11 days",
+      "featuredLinkLabel": "Choose 6 days in Jiangnan or 11 with Beijing",
+      "openGraphLocale": "en_US",
+      "cardTags": ["First China trip", "6 vs 11 days", "Route choice"]
+    },
+    "zh": {
+      "path": "/zh/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+      "title": "第一次来中国：江南 6 天，还是加北京走 11 天？",
+      "headline": "江南走 6 天，还是加北京走 11 天？",
+      "description": "对照两条已公开私家线路，比较北京看点、住宿分配、跨城交通和进出城市，选适合自己的第一次中国旅行。",
+      "heroAlt": "杭州西湖岸边的亭子。",
+      "navTitle": "江南 6 天或北京江南 11 天",
+      "featuredLinkLabel": "比较江南 6 天与北京江南 11 天",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["第一次来中国", "6 天或 11 天", "选线对比"]
+    },
+    "ko": {
+      "path": "/ko/guides/first-china-trip-jiangnan-6-or-beijing-11-days/",
+      "title": "상하이·쑤저우·항저우 6일 vs 베이징 11일",
+      "headline": "상하이·쑤저우·항저우 6일, 베이징까지 11일?",
+      "description": "실제 프라이빗 일정 두 가지의 방문지, 숙박, 도시 간 이동과 입출국 도시를 비교해 첫 중국 여행의 길이를 정하세요.",
+      "heroAlt": "항저우 서호 호숫가의 정자.",
+      "navTitle": "동부 6일 vs 베이징 포함 11일",
+      "featuredLinkLabel": "동부 6일과 베이징 포함 11일 비교",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["중국 첫 여행", "6일 또는 11일", "일정 비교"]
+    }
+  }
+}
