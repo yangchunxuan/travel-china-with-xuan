@@ -24,6 +24,7 @@ export function JapanesePilotShell({
           </a>
           <nav aria-label="主なページ" className={styles.nav}>
             <a aria-current={current === "home" ? "page" : undefined} href={jaPilot.home}>{nav.home}</a>
+            <a href="/ja/tours/">ツアー一覧</a>
             <a aria-current={current === "guide" ? "page" : undefined} href={jaPilot.guide}>{nav.guide}</a>
             <a aria-current={current === "tour" ? "page" : undefined} href={jaPilot.tour}>{nav.tour}</a>
           </nav>
@@ -36,6 +37,7 @@ export function JapanesePilotShell({
               <summary aria-label="メニューを開く"><Menu className={styles.menuOpenIcon} aria-hidden="true" size={21} /><X className={styles.menuCloseIcon} aria-hidden="true" size={21} /></summary>
               <nav aria-label="モバイルメニュー">
                 <a aria-current={current === "home" ? "page" : undefined} href={jaPilot.home}>{nav.home}</a>
+                <a href="/ja/tours/">ツアー一覧</a>
                 <a aria-current={current === "guide" ? "page" : undefined} href={jaPilot.guide}>{nav.guide}</a>
                 <a aria-current={current === "tour" ? "page" : undefined} href={jaPilot.tour}>{nav.tour}</a>
               </nav>

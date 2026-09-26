@@ -221,8 +221,8 @@ test("all published tour templates return through the localized tours hub", asyn
 
   assert.match(
     batchTemplate,
-    /const tourHubPath = japanese \? homePath : `\$\{homePath\}tours\/`/,
-    "published EN/ZH/KO tours retain their hub; the single Japanese pilot returns home",
+    /const tourHubPath = japanesePilot \? homePath : `\$\{homePath\}tours\/`/,
+    "published tours return through their localized hub; the existing Japanese pilot keeps its breadcrumb",
   );
   assert.match(batchTemplate, /<Link href=\{tourHubPath\}>\{copy\.productLabel\}<\/Link>/);
   assert.match(batchTemplate, /position: 3,\s*name: localized\.title/s);
@@ -1034,7 +1034,8 @@ test("manifest distinguishes one tours hub from every registry product and detai
     },
   );
   for (const hubEntry of hubEntries) {
-    assert.deepEqual(hubEntry.alternates, getPrivateTourHubLanguagePaths());
+    const { ja: _ja, ...manifestLanguages } = getPrivateTourHubLanguagePaths();
+    assert.deepEqual(hubEntry.alternates, manifestLanguages);
   }
 
   for (const product of privateTourProducts) {
@@ -1043,9 +1044,7 @@ test("manifest distinguishes one tours hub from every registry product and detai
       en: `/tours/${product.slug}/`,
       "zh-Hans": `/zh/tours/${product.slug}/`,
       ko: `/ko/tours/${product.slug}/`,
-      ...(product.slug === "shanghai-suzhou-hangzhou-6-day-private-tour"
-        ? { ja: `/ja/tours/${product.slug}/` }
-        : {}),
+      ja: `/ja/tours/${product.slug}/`,
       "x-default": `/tours/${product.slug}/`,
     });
 
@@ -1075,9 +1074,9 @@ test("manifest distinguishes one tours hub from every registry product and detai
       );
       assert.ok(manifestEntry, `${product.slug}/${locale} manifest entry`);
       assert.equal(manifestEntry.canonicalPath, localized.path);
-      // The sparse Japanese pilot is added to sitemap/metadata separately;
+      // Japanese tours are added to route metadata and sitemap separately;
       // the three-language content-node schema remains unchanged.
-      const { ja: _japanesePilotPath, ...manifestLanguages } = languages;
+      const { ja: _japanesePath, ...manifestLanguages } = languages;
       assert.deepEqual(manifestEntry.alternates, manifestLanguages);
     }
   }

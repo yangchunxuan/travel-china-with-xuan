@@ -47,6 +47,7 @@ export async function generateMetadata({
         en: zhangjiajiePrivateTourPaths.en,
         "zh-Hans": zhangjiajiePrivateTourPaths.zh,
         ko: zhangjiajiePrivateTourPaths.ko,
+        ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
         "x-default": zhangjiajiePrivateTourPaths.en,
       },
     },
@@ -66,7 +67,7 @@ export async function generateMetadata({
       type: "website",
       locale: openGraphLocale,
       alternateLocale:
-        locale === "zh" ? ["en_US", "ko_KR"] : ["en_US", "zh_CN"],
+        locale === "zh" ? ["en_US", "ko_KR", "ja_JP"] : ["en_US", "zh_CN", "ja_JP"],
       url: canonicalPath,
       images: [
         {

@@ -23,6 +23,7 @@ export const zhangjiajiePrivateTourPaths = {
   en: "/tours/zhangjiajie-4-day-private-tour/",
   zh: "/zh/tours/zhangjiajie-4-day-private-tour/",
   ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
+  ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
 } as const;
 
 export const productPreviewCopy = {

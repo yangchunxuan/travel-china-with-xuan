@@ -39,7 +39,9 @@ import {
 } from "../lib/existingContentCommercialLinks";
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
-import { localizeJapaneseJiangnanProduct } from "../lib/japaneseJiangnanProduct";
+import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
+import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
+import { japaneseTourContactHrefs } from "../lib/japaneseTourContact";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import jaStyles from "./JapaneseJiangnanPage.module.css";
 
@@ -255,6 +257,55 @@ function japanesePageCopy(): ImaginePageCopy {
     finalBody: tour.ctaBody,
     contact: tour.ctaLabel,
     email: copy.emailLabel,
+  };
+}
+
+function genericJapanesePageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
+  const smallGroup = product.tourFormat === "small-group";
+  const publishedGroups = [...new Set(product.packages.flatMap((item) =>
+    item.rows.map((row) => row.travelers),
+  ))].sort((left, right) => left - right);
+  return {
+    htmlLang: "ja",
+    skipLink: "ツアーの詳細へ移動",
+    breadcrumbLabel: "パンくずリスト",
+    homeLabel: "ホーム",
+    productLabel: "中国ツアー一覧",
+    heroMeta: `${product.days}日間・${product.nights}泊 · ${smallGroup ? "出発日指定の少人数グループ" : "プライベートツアー"} · ショッピング立ち寄りなし`,
+    heroPromise: product.eyebrow,
+    facts: [
+      { label: "日程", value: `${product.days}日間・${product.nights}泊` },
+      { label: "旅行形態", value: smallGroup ? "出発日指定の少人数グループ" : "プライベートツアー" },
+      { label: "サービス", value: "ガイド・移動・宿泊の範囲は下記をご確認ください" },
+      { label: "料金", value: smallGroup ? "2名1室利用時の1名料金" : publishedGroups.length ? `${publishedGroups.join("・")}名の公開料金` : "日程と人数に応じてお見積もり" },
+    ],
+    overviewEyebrow: "この旅の見どころ",
+    overviewTitle: product.eyebrow,
+    overviewBody: product.summary,
+    routeEyebrow: "日ごとの行程",
+    routeTitle: "各日の移動と観光をご覧ください。",
+    routeBody: "各日の行程をご確認いただけます。訪問順や利用条件は、実際の旅行日程に合わせてご案内します。",
+    serviceEyebrow: "サービス内容",
+    serviceTitle: "宿泊と移動、ガイドの範囲をご確認ください。",
+    serviceBody: smallGroup
+      ? "この固定出発グループの現地ガイドは英語です。日本語での案内をご希望なら、プライベート旅行としてご相談ください。"
+      : "掲載料金に含まれるガイド言語は、下記のサービス内容をご確認ください。日本語ガイドをご希望の場合は、旅行日と訪問都市に合わせて手配可否と料金をご案内します。",
+    hotelTitle: "宿泊",
+    transportTitle: "ガイド・移動・観光",
+    scopeEyebrow: "お申し込み前に確認",
+    scopeTitle: "別料金となるものと、最終案内で確認すること。",
+    exclusionsTitle: "料金に含まれないもの",
+    confirmedTitle: "事前に確認すること",
+    confirmations: [
+      "旅行日程と到着・出発の予定",
+      "利用する宿泊施設とお部屋の条件",
+      "手配可能なサービスと最終料金",
+    ],
+    finalEyebrow: smallGroup ? "出発日について相談" : "この旅について相談",
+    finalTitle: smallGroup ? "参加できる出発日を確認しますか？" : "ご希望の日程で旅を考えてみませんか？",
+    finalBody: smallGroup ? "希望する出発日と人数をお知らせください。空き状況とプランの内容をご案内します。" : "旅行日程と人数、ご希望をお知らせください。この行程をもとにご案内します。",
+    contact: "日本語で相談する",
+    email: "メールで相談",
   };
 }
 
@@ -494,73 +545,93 @@ export function ShanghaiJiangnanImaginePage({
   product,
   locale,
   japaneseChrome,
+  japaneseCopyOverride,
 }: {
   product: PrivateTourProduct;
   locale: PrivateTourLocale | "ja";
   japaneseChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
+  japaneseCopyOverride?: JapaneseTourCopy;
 }) {
   const japanese = locale === "ja";
+  const japanesePilot = japanese && product.slug === jaPilot.tourSlug && !japaneseCopyOverride;
   if (japanese && !japaneseChrome) throw new Error("Japanese tour requires its localized site chrome");
   const sourceLocale = japanese ? "en" : locale;
   const localized = japanese
-    ? localizeJapaneseJiangnanProduct(product)
+    ? localizeJapanesePrivateTourProduct(product, japaneseCopyOverride)
     : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
-  const copy = japanese ? japanesePageCopy() : getPageCopy(localized);
+  const copy = japanese ? japanesePilot ? japanesePageCopy() : genericJapanesePageCopy(localized) : getPageCopy(localized);
   const jaPresentation = jaPilotCopy.tour.presentation;
   const photoCreditCopy = japanese ? {
-    title: jaPresentation.photoCreditsTitle,
-    intro: jaPresentation.photoCreditsIntro,
-    by: jaPresentation.photoCreditsBy,
+    title: japanesePilot ? jaPresentation.photoCreditsTitle : "写真クレジット",
+    intro: japanesePilot ? jaPresentation.photoCreditsIntro : "写真の出典と利用条件を掲載しています。",
+    by: japanesePilot ? jaPresentation.photoCreditsBy : "撮影者：",
     localNote: "",
   } : privateTourPhotoCreditCopy[sourceLocale];
   const photoCredits = getLocalizedPrivateTourPhotoCredits(product.slug, sourceLocale)
     .map((credit, index) => japanese ? {
       ...credit,
-      subject: jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject,
+      subject: japanesePilot ? jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject : `写真 ${index + 1}`,
     } : credit);
-  const planningContext = japanese ? {
+  const planningContext = japanesePilot ? {
     destinations: [],
     guides: [{ id: jaPilot.guideId, href: jaPilot.guide, label: jaPresentation.planningGuideLabel }],
     relatedProducts: [],
+  } : japanese ? {
+    destinations: [],
+    guides: [],
+    relatedProducts: [{ id: "ja-tour-hub", href: "/ja/tours/", label: "中国ツアー一覧を見る" }],
   } : getProductPlanningContext(
     product.slug as Parameters<typeof getProductPlanningContext>[0],
     sourceLocale,
   );
-  const commercialCopy = japanese ? {
+  const commercialCopy = japanesePilot ? {
     ...getExistingContentCommercialCopy("en"),
     productLabel: jaPresentation.planningEyebrow,
     productTitle: jaPresentation.planningTitle,
     productBody: jaPresentation.planningBody,
     guides: jaPresentation.planningGuides,
+  } : japanese ? {
+    ...getExistingContentCommercialCopy("en"),
+    productLabel: "ほかの旅も見る",
+    productTitle: "中国各地の旅を比べる。",
+    productBody: "行き先や日数の異なるツアーもご覧いただけます。",
+    related: "ツアー一覧",
   } : getExistingContentCommercialCopy(sourceLocale);
   const homePath = locale === "en" ? "/" : `/${locale}/`;
-  const tourHubPath = japanese ? homePath : `${homePath}tours/`;
+  const tourHubPath = japanesePilot ? homePath : `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
   const inquiryContext = japanese ? null : getPrivateTourInquiryContext(product.slug, sourceLocale);
   if (!japanese && !inquiryContext) {
     throw new Error(`Missing controlled inquiry context for ${product.slug}.`);
   }
-  const inquiryHref = japanese ? `${jaPilot.tour}#contact` : buildPrivateTourInquiryHref(
+  const inquiryHref = japanese ? `${localized.path}#contact` : buildPrivateTourInquiryHref(
     homePath,
     product.slug as Parameters<typeof buildPrivateTourInquiryHref>[1],
     "private_tour_product",
   );
   const jaPriceCopy = japanese ? {
+    choosePackage: japanesePilot ? "サービスを選ぶ" : "プランを選ぶ",
     chooseGroup: jaPresentation.priceChooseGroup,
-    publishedPrice: jaPresentation.priceSelected,
+    publishedPrice: japanesePilot ? jaPresentation.priceSelected : "選択したプランの公開料金",
     perPerson: jaPresentation.pricePerPerson,
     groupUnit: jaPresentation.priceGroupUnit,
-    privateTour: jaPresentation.pricePrivateTour,
-    flightsSeparate: jaPresentation.priceFlightsSeparate,
-    checkDates: jaPilotCopy.tour.ctaLabel,
-    otherGroups: jaPresentation.otherGroups,
-    otherGroupsBody: jaPresentation.otherGroupsBody,
-    requestQuote: jaPresentation.otherGroupsAction,
+    privateTour: japanesePilot ? jaPresentation.pricePrivateTour : "プライベートツアー",
+    flightsSeparate: japanesePilot ? jaPresentation.priceFlightsSeparate : "航空券は別料金",
+    internationalFlightsSeparate: "国際線は別料金",
+    priceBasis: "1名あたりの料金",
+    twinShare: "2名1室",
+    smallGroup: "少人数グループ",
+    checkDates: japanesePilot ? jaPilotCopy.tour.ctaLabel : "日程と空き状況を確認",
+    otherGroups: japanesePilot ? jaPresentation.otherGroups : "別の人数をご希望ですか？",
+    otherGroupsBody: japanesePilot ? jaPresentation.otherGroupsBody : "人数やお部屋の条件を確認し、お見積もりをご案内します。",
+    requestQuote: japanesePilot ? jaPresentation.otherGroupsAction : "日本語で相談する",
+    quoteOnlyTitle: "旅行日程と人数に合わせてお見積もり",
+    quoteOnlyBody: "この行程には固定の公開料金がありません。日程と人数をお知らせください。",
     emailLabel: jaPresentation.emailLabel,
   } : undefined;
   const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : undefined;
-  const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanese ? {
+  const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanesePilot ? {
     whatsapp: {
       2: jaPilotWhatsAppHref("tour", 2),
       4: jaPilotWhatsAppHref("tour", 4),
@@ -573,7 +644,7 @@ export function ShanghaiJiangnanImaginePage({
       6: jaPilotEmailHref("tour", 6),
       other: jaPilotEmailHref("tour"),
     },
-  } : undefined;
+  } : japanese ? japaneseTourContactHrefs(localized) : undefined;
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
   const lowestRow = rows.length
     ? rows.reduce((lowest, row) =>
@@ -717,7 +788,9 @@ export function ShanghaiJiangnanImaginePage({
       key={product.slug}
       slug={product.slug as Parameters<typeof PrivateTourSelectionBoundary>[0]["slug"]}
       initialSelection={japanese
-        ? getPrivateTourInquirySelection(product.slug, "standard-guided", 2)
+        ? japanesePilot
+          ? getPrivateTourInquirySelection(product.slug, "standard-guided", 2)
+          : startingPrice?.selection ?? null
         : startingPrice?.selection ?? null}
     >
     <div
@@ -731,7 +804,9 @@ export function ShanghaiJiangnanImaginePage({
       {japanese ? japaneseChrome?.header : <HomegroundHeader
         languagePaths={{
           ...localized.paths,
-          ...(product.slug === jaPilot.tourSlug ? { ja: jaPilot.tour } : {}),
+          ja: product.slug === jaPilot.tourSlug
+            ? jaPilot.tour
+            : `/ja/tours/${product.slug}/`,
         }}
         locale={sourceLocale}
         pageContext="tour"
@@ -845,7 +920,7 @@ export function ShanghaiJiangnanImaginePage({
           </div>
         </section>
 
-        {isJiangnanTour(product.slug) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} japaneseCopy={japanese ? jaPresentation.comparison : undefined} /> : null}
+        {isJiangnanTour(product.slug) && (!japanese || japanesePilot) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} japaneseCopy={japanese ? jaPresentation.comparison : undefined} /> : null}
 
         {localized.faq?.length ? (
           <section
@@ -854,7 +929,7 @@ export function ShanghaiJiangnanImaginePage({
           >
             <div className={styles.sectionInner}>
               <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
-                <h2 id="tour-choice-title">{japanese ? jaPresentation.beforeChooseTitle : beforeYouChooseTitle[sourceLocale]}</h2>
+                <h2 id="tour-choice-title">{japanese ? japanesePilot ? jaPresentation.beforeChooseTitle : "この旅を選ぶ前に" : beforeYouChooseTitle[sourceLocale]}</h2>
               </div>
               <div className={`${styles.serviceGrid} ${styles.faqGrid}`}>
                 {localized.faq.map((item) => (
@@ -882,7 +957,7 @@ export function ShanghaiJiangnanImaginePage({
               <h2>{copy.scopeTitle}</h2>
               <p>
                 {localized.bookingNote}
-                {product.slug === "zhangjiajie-forest-4-day-private-tour" ? (
+                {product.slug === "zhangjiajie-forest-4-day-private-tour" && !japanese ? (
                   <ZhangjiajieTourComparisonLink
                     currentRoute="forest"
                     locale={sourceLocale}
@@ -914,7 +989,7 @@ export function ShanghaiJiangnanImaginePage({
                 </ul>
               </section>
             </div>
-            {isJiangnanTour(product.slug) ? <JiangnanBookingTrust locale={locale} japaneseCopy={japanese ? {
+            {isJiangnanTour(product.slug) && (!japanese || japanesePilot) ? <JiangnanBookingTrust locale={locale} japaneseCopy={japanese ? {
               trust: jaPresentation.bookingTrust.title,
               trustBody: jaPresentation.bookingTrust.body,
               business: jaPresentation.bookingTrust.business,
@@ -946,7 +1021,7 @@ export function ShanghaiJiangnanImaginePage({
                   </ul>
                 </section>
               ) : null}
-              <section>
+              {planningContext.guides.length > 0 ? <section>
                 <h3>{commercialCopy.guides}</h3>
                 <ul>
                   {planningContext.guides.map((link) => (
@@ -958,7 +1033,7 @@ export function ShanghaiJiangnanImaginePage({
                     </li>
                   ))}
                 </ul>
-              </section>
+              </section> : null}
               {planningContext.relatedProducts.length > 0 ? (
                 <section>
                   <h3>{commercialCopy.related}</h3>

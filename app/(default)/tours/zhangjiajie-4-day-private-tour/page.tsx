@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       en: zhangjiajiePrivateTourPaths.en,
       "zh-Hans": zhangjiajiePrivateTourPaths.zh,
       ko: zhangjiajiePrivateTourPaths.ko,
+      ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
       "x-default": zhangjiajiePrivateTourPaths.en,
     },
   },
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     description: copy.metadataDescription,
     type: "website",
     locale: "en_US",
-    alternateLocale: ["zh_CN", "ko_KR"],
+    alternateLocale: ["zh_CN", "ko_KR", "ja_JP"],
     url: zhangjiajiePrivateTourPaths.en,
     images: [
       {

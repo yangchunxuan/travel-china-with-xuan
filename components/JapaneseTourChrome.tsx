@@ -6,43 +6,51 @@ import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import {
-  buildPrivateTourDetailHref,
-  type PrivateTourInquirySelection,
-} from "../lib/privateTourInquiryContext";
+import { privateTourInquirySelectionQueryKeys } from "../lib/privateTourInquiryContext";
 import { jaPilot } from "../lib/jaPilot";
 import headerStyles from "./HomegroundHeader.module.css";
 import footerStyles from "./HomegroundFooter.module.css";
 import styles from "./JapaneseTourChrome.module.css";
 
-const tourPaths = [
-  { label: "EN", lang: "en", path: `/tours/${jaPilot.tourSlug}/` },
-  { label: "ZH", lang: "zh-Hans", path: `/zh/tours/${jaPilot.tourSlug}/` },
-  { label: "KO", lang: "ko", path: `/ko/tours/${jaPilot.tourSlug}/` },
-  { label: "JA", lang: "ja", path: jaPilot.tour },
-] as const;
-
-const primaryLinks = [
+const pilotLinks = [
   { href: jaPilot.home, label: "ホーム", description: "日本語の旅のご案内" },
+  { href: "/ja/tours/", label: "ツアー一覧", description: "中国各地の旅を見る" },
   { href: jaPilot.tour, label: "江南6日間の旅", description: "上海・蘇州・杭州を巡るプライベートツアー" },
   { href: jaPilot.guide, label: "旅行ガイド", description: "上海・杭州の移動と旅程" },
 ] as const;
 
-/** The Japanese pilot publishes only the standard-guided 2/4/6-person offer. */
-function useSelectedTourHref() {
-  const context = usePrivateTourSelection();
-  const selected: PrivateTourInquirySelection =
-    context?.slug === jaPilot.tourSlug &&
-    context.selection.packageId === "standard-guided"
-      ? context.selection
-      : { packageId: "standard-guided", travelers: 2 };
+const catalogLinks = [
+  { href: jaPilot.home, label: "ホーム", description: "日本語の旅のご案内" },
+  { href: "/ja/tours/", label: "ツアー一覧", description: "中国各地の旅を見る" },
+  { href: jaPilot.guide, label: "旅行ガイド", description: "上海・杭州の移動と旅程" },
+] as const;
 
-  return (path: string) =>
-    buildPrivateTourDetailHref(path, jaPilot.tourSlug, selected);
+function languagePaths(slug: string | null) {
+  const base = slug ? `tours/${slug}/` : "tours/";
+  return [
+    { label: "EN", lang: "en", path: `/${base}` },
+    { label: "ZH", lang: "zh-Hans", path: `/zh/${base}` },
+    { label: "KO", lang: "ko", path: `/ko/${base}` },
+    { label: "JA", lang: "ja", path: `/ja/${base}` },
+  ] as const;
 }
 
-export function JapaneseTourHeader() {
-  const selectedHref = useSelectedTourHref();
+function useSelectedTourHref(slug: string | null) {
+  const context = usePrivateTourSelection();
+  return (path: string) => {
+    if (!slug || context?.slug !== slug) return path;
+    const url = new URL(path, "https://homegroundchina.com");
+    url.searchParams.set(privateTourInquirySelectionQueryKeys.packageId, context.selection.packageId);
+    url.searchParams.set(privateTourInquirySelectionQueryKeys.travelers, String(context.selection.travelers));
+    return `${url.pathname}${url.search}${url.hash}`;
+  };
+}
+
+export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
+  const selectedHref = useSelectedTourHref(tourSlug);
+  const primaryLinks = tourSlug === jaPilot.tourSlug ? pilotLinks : catalogLinks;
+  const tourPaths = languagePaths(tourSlug);
+  const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : "/ja/tours/";
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
@@ -121,7 +129,7 @@ export function JapaneseTourHeader() {
   }, [open]);
 
   const close = () => setOpen(false);
-  const contactHref = selectedHref(`${jaPilot.tour}#contact`);
+  const contactHref = selectedHref(`${currentPath}#contact`);
 
   return (
     <header
@@ -153,8 +161,8 @@ export function JapaneseTourHeader() {
           <nav aria-label="主なページ" className={headerStyles.desktopNav}>
             {primaryLinks.map((item) => (
               <a
-                aria-current={item.href === jaPilot.tour ? "page" : undefined}
-                href={item.href === jaPilot.tour ? selectedHref(item.href) : item.href}
+                aria-current={item.href === currentPath ? "page" : undefined}
+                href={item.href === currentPath ? selectedHref(item.href) : item.href}
                 key={item.href}
               >
                 {item.label}
@@ -207,8 +215,8 @@ export function JapaneseTourHeader() {
           <div className={`${headerStyles.mobilePrimaryLinks} ${styles.mobilePrimaryLinks}`}>
             {primaryLinks.map((item) => (
               <a
-                aria-current={item.href === jaPilot.tour ? "page" : undefined}
-                href={item.href === jaPilot.tour ? selectedHref(item.href) : item.href}
+                aria-current={item.href === currentPath ? "page" : undefined}
+                href={item.href === currentPath ? selectedHref(item.href) : item.href}
                 key={item.href}
                 onClick={close}
               >
@@ -255,8 +263,10 @@ export function JapaneseTourHeader() {
   );
 }
 
-export function JapaneseTourFooter() {
-  const selectedHref = useSelectedTourHref();
+export function JapaneseTourFooter({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
+  const selectedHref = useSelectedTourHref(tourSlug);
+  const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : "/ja/tours/";
+  const primaryLinks = tourSlug === jaPilot.tourSlug ? pilotLinks : catalogLinks;
   return (
     <footer className={`${footerStyles.footer} ${styles.japaneseFooter}`}>
       <div className={`${footerStyles.footerTop} ${styles.footerTop}`}>
@@ -265,9 +275,11 @@ export function JapaneseTourFooter() {
           <span>中国プライベート旅行</span>
         </div>
         <nav aria-label="フッターナビゲーション">
-          <a href={jaPilot.home}>ホーム</a>
-          <a href={selectedHref(jaPilot.tour)}>江南6日間の旅</a>
-          <a href={jaPilot.guide}>旅行ガイド</a>
+          {primaryLinks.map((item) => (
+            <a href={item.href === currentPath ? selectedHref(item.href) : item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
       <div className={footerStyles.footerLegal}>
@@ -278,7 +290,7 @@ export function JapaneseTourFooter() {
           </a>{" "}
           が運営しています。事業者情報は英語のページで確認できます。
           <span>統一社会信用コード：{homegroundBusiness.unifiedSocialCreditCode}</span>
-          <span>旅行社業務経営許可番号：{homegroundBusiness.travelAgencyLicenceNumber}</span>
+          <span>中国の旅行会社営業許可番号：{homegroundBusiness.travelAgencyLicenceNumber}</span>
         </p>
         <nav aria-label="プライバシー・利用条件">
           <a href="/business-information/" hrefLang="en">事業者情報（英語）</a>

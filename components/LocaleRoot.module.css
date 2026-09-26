@@ -35,6 +35,16 @@
   word-break: keep-all;
 }
 
+.root[data-homeground-locale="ja"] {
+  --hg-card-display: var(--sans);
+  --hg-editorial: var(--serif);
+  --hg-ui-display: var(--sans);
+  font-family: var(--sans);
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
 .skipLink {
   background: var(--hg-color-card);
   border: 2px solid var(--hg-color-rust);

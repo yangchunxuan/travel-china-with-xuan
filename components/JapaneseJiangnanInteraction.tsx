@@ -5,8 +5,8 @@ import { trackEvent } from "../lib/analytics";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 
 export type JapaneseContactHrefs = Readonly<{
-  whatsapp: Readonly<Record<2 | 4 | 6 | "other", string>>;
-  email: Readonly<Record<2 | 4 | 6 | "other", string>>;
+  whatsapp: Readonly<Record<string, string>>;
+  email: Readonly<Record<string, string>>;
 }>;
 
 /** Japanese contact links use the same selected package and group as every tour page. */
@@ -24,9 +24,13 @@ export function JapaneseTourContactLink({
   hrefs: JapaneseContactHrefs;
 }) {
   const selected = usePrivateTourSelection();
-  const count = ignoreSelection ? undefined : selected?.selection.travelers;
-  const travelers = count === 2 || count === 4 || count === 6 ? count : undefined;
-  const href = hrefs[channel][travelers ?? "other"];
+  const travelers = ignoreSelection ? undefined : selected?.selection.travelers;
+  const packageKey = selected && travelers
+    ? `${selected.selection.packageId}:${travelers}`
+    : "other";
+  const href = hrefs[channel][packageKey]
+    ?? (travelers ? hrefs[channel][String(travelers)] : undefined)
+    ?? hrefs[channel].other;
   return (
     <a
       className={className}

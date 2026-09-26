@@ -120,16 +120,23 @@ type PhotoCopy = Readonly<{
 
 /** Scoped copy supplied by the Japanese page; pricing and selection stay shared. */
 export type JapanesePriceCopy = Readonly<{
+  choosePackage: string;
   chooseGroup: string;
   publishedPrice: string;
   perPerson: string;
   groupUnit: string;
   privateTour: string;
-  flightsSeparate: string;
+  flightsSeparate?: string;
+  internationalFlightsSeparate?: string;
+  priceBasis?: string;
+  twinShare?: string;
+  smallGroup?: string;
   checkDates: string;
   otherGroups: string;
   otherGroupsBody: string;
   requestQuote: string;
+  quoteOnlyTitle?: string;
+  quoteOnlyBody?: string;
   emailLabel: string;
 }>;
 
@@ -264,11 +271,17 @@ export function ShanghaiJiangnanPriceConsole({
     return (
       <div className={styles.priceConsole}>
         <div className={styles.priceResult}>
-          <span>{interactionCopy[product.locale].quoteOnlyTitle}</span>
-          <p>{interactionCopy[product.locale].quoteOnlyBody}</p>
+          <span>{japaneseCopy?.quoteOnlyTitle ?? interactionCopy[product.locale].quoteOnlyTitle}</span>
+          <p>{japaneseCopy?.quoteOnlyBody ?? interactionCopy[product.locale].quoteOnlyBody}</p>
         </div>
         <div className={styles.priceConsoleActions}>
-          <GuideCtaLink
+          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink
+            className={styles.primaryAction}
+            hrefs={japaneseContactHrefs}
+          >
+            {japaneseCopy.requestQuote}
+            <ArrowRight aria-hidden="true" size={18} />
+          </JapaneseTourContactLink> : <GuideCtaLink
             className={styles.primaryAction}
             guideId={product.id}
             href={inquiryHref}
@@ -277,7 +290,7 @@ export function ShanghaiJiangnanPriceConsole({
           >
             {interactionCopy[product.locale].requestQuote}
             <ArrowRight aria-hidden="true" size={18} />
-          </GuideCtaLink>
+          </GuideCtaLink>}
         </div>
       </div>
     );
@@ -316,7 +329,12 @@ function PublishedPrivateTourPriceConsole({
         group: (count: number) => `${count}${japaneseCopy.groupUnit}`,
       }
     : interactionCopy[product.locale];
-  const format = formatCopy[product.locale];
+  const format = japaneseCopy ? {
+    priceBasis: japaneseCopy.priceBasis ?? japaneseCopy.chooseGroup,
+    twinShare: japaneseCopy.twinShare ?? "2名1室",
+    smallGroup: japaneseCopy.smallGroup ?? "少人数グループ",
+    internationalFlightsSeparate: japaneseCopy.internationalFlightsSeparate ?? "",
+  } : formatCopy[product.locale];
   const smallGroup = product.tourFormat === "small-group";
   const chooseGroup = smallGroup ? format.priceBasis : copy.chooseGroup;
   const groupLabel = (count: number) => (smallGroup ? format.twinShare : copy.group(count));
@@ -388,11 +406,11 @@ function PublishedPrivateTourPriceConsole({
         </strong>
         <small>
           {copy.perPerson} · {groupLabel(activeRow.travelers)} ·{" "}
-          {tourFormatLabel} · {tourPackage.label} · {flightsLabel}
+          {tourFormatLabel} · {tourPackage.label}{flightsLabel ? ` · ${flightsLabel}` : ""}
         </small>
       </div>
 
-      {product.slug === "beijing-highlights-5-day-private-tour" ? (
+      {product.slug === "beijing-highlights-5-day-private-tour" && !japaneseCopy ? (
         <TourPriceScope route="beijing" locale={product.locale} detailsHref="#tour-price-details" />
       ) : null}
 

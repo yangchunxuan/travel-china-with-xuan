@@ -17,6 +17,9 @@ import {
   jaPilotGuideAlternates,
   jaPilotTourAlternates,
 } from "../lib/jaPilot";
+import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
+import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
+import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
 
 export const dynamic = "force-static";
 
@@ -85,12 +88,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const tourAlternates = jaPilotTourAlternates();
   const guidePaths = new Set<string>(Object.values(guideAlternates));
   const tourPaths = new Set<string>(Object.values(tourAlternates));
+  const hubAlternates = getPrivateTourHubLanguagePaths();
+  const hubPaths = new Set<string>(Object.values(hubAlternates));
+  const structuredTourByPath = new Map(
+    privateTourProducts.flatMap((product) =>
+      Object.values(getPrivateTourPaths(product.slug)).map((path) => [path, product] as const),
+    ),
+  );
+  const legacyAlternates = {
+    en: "/tours/zhangjiajie-4-day-private-tour/",
+    "zh-Hans": "/zh/tours/zhangjiajie-4-day-private-tour/",
+    ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
+    ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
+    "x-default": "/tours/zhangjiajie-4-day-private-tour/",
+  };
+  const legacyPaths = new Set<string>(Object.values(legacyAlternates));
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
+    const structuredTour = structuredTourByPath.get(entry.canonicalPath);
     const alternates = guidePaths.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(guideAlternates)
-      : tourPaths.has(entry.canonicalPath)
-        ? absoluteJaPilotAlternates(tourAlternates)
+      : structuredTour
+        ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
+        : tourPaths.has(entry.canonicalPath)
+          ? absoluteJaPilotAlternates(tourAlternates)
+          : hubPaths.has(entry.canonicalPath)
+            ? absoluteJaPilotAlternates(hubAlternates)
+            : legacyPaths.has(entry.canonicalPath)
+              ? absoluteJaPilotAlternates(legacyAlternates)
         : absoluteManifestAlternates(entry);
 
     return {
@@ -114,6 +139,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const japaneseEntries: MetadataRoute.Sitemap = [
     {
+      url: `${base}/ja/tours/`,
+      lastModified: "2026-09-27",
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(hubAlternates) },
+    },
+    {
       url: `${base}${jaPilot.guide}`,
       lastModified: "2026-09-26",
       changeFrequency: "monthly",
@@ -126,6 +158,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(tourAlternates) },
+    },
+    ...privateTourProducts
+      .filter((product) => product.slug !== jaPilot.tourSlug)
+      .map((product) => ({
+        url: `${base}/ja/tours/${product.slug}/`,
+        lastModified: "2026-09-27",
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+        alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
+      })),
+    {
+      url: `${base}${legacyAlternates.ja}`,
+      lastModified: "2026-09-27",
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(legacyAlternates) },
     },
   ];
 
