@@ -70,12 +70,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 30,
+    plan: 32,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 80);
+  assert.equal(report.uniqueContentIds, 82);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 18);
+  assert.equal(report.authorizedGenericConversation, 20);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 6);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 72 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 74 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -156,6 +156,7 @@ test("commercial links keep the approved 8 hub, 72 curated guide and 48 product 
       "chongqing-railway-station-selector",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "do-us-citizens-need-visa-china-2026",
+      "first-china-trip-jiangnan-6-or-beijing-11-days",
       "food-plants-and-animal-products-into-china",
       "forbidden-city-for-foreign-visitors",
       "great-wall-section-selector-from-beijing",
@@ -163,6 +164,7 @@ test("commercial links keep the approved 8 hub, 72 curated guide and 48 product 
       "guangzhou-shenzhen-hong-kong-route-order",
       "guilin-airport-or-railway-station-arrival-guide",
       "guilin-yangshuo-transport-route",
+      "guilin-yangshuo-with-kids-and-older-parents",
       "how-much-does-a-china-trip-cost",
       "how-to-pay-in-china-as-a-tourist",
       "how-to-read-a-suzhou-garden",

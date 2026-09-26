@@ -1292,9 +1292,9 @@ const westLakeAndLongjing = (n: number) => day(
   n,
   l("West Lake and Longjing tea", "西湖与龙井茶", "서호와 용정차"),
   l(
-    "Spend the Hangzhou day on West Lake: take a boat and walk part of the Su Causeway. Later, drink tea in a hillside Longjing village, or choose Lingyin Temple instead. Stay in Hangzhou.",
-    "杭州这天先坐船看西湖，再走一段苏堤。下午可去山坡上的龙井茶村喝茶，或把茶村换成灵隐寺；住杭州。",
-    "항저우에서는 서호 배를 타고 소제 둑길 일부를 걷습니다. 오후에는 언덕의 용정차 마을에서 차를 마시거나 대신 영은사를 고릅니다. 항저우에서 숙박합니다.",
+    "Spend the Hangzhou day on West Lake: take a boat and walk part of the Su Causeway. Later, drink tea in a hillside Longjing village, or replace that stop with Lingyin Temple if a visit slot is available. Stay in Hangzhou.",
+    "杭州这天先坐船看西湖，再走一段苏堤。下午可去山坡上的龙井茶村喝茶；如约到参观时段，也可改去灵隐寺。住杭州。",
+    "항저우에서는 서호 배를 타고 소제 둑길 일부를 걷습니다. 오후에는 언덕의 용정차 마을에서 차를 마시거나, 예약 가능 시 영은사 방문으로 바꿀 수 있습니다. 항저우에서 숙박합니다.",
   ),
 );
 
@@ -2445,7 +2445,6 @@ const beijingJiangnan: PrivateTourProduct = {
       "Travel insurance, visas, tips and personal expenses",
       "Room upgrades and public-holiday surcharges",
       "Single-room supplement",
-      "Lingyin Temple admission if it replaces the tea village",
     ],
     [
       "往返中国的国际航班",
@@ -2453,7 +2452,6 @@ const beijingJiangnan: PrivateTourProduct = {
       "旅行保险、签证、小费及个人消费",
       "房型升级及法定节假日附加费",
       "单房差",
-      "用灵隐寺替换茶村时的灵隐寺门票",
     ],
     [
       "중국 왕복 국제선 항공편",
@@ -2461,7 +2459,6 @@ const beijingJiangnan: PrivateTourProduct = {
       "여행자 보험, 비자, 팁 및 개인 경비",
       "객실 업그레이드와 공휴일 추가금",
       "1인실 추가금",
-      "차 마을 대신 영은사를 갈 경우 영은사 입장권",
     ],
   ),
   bookingNote: l(

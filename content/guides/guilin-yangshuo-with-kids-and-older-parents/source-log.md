@@ -1,0 +1,8 @@
+# Sources and fact boundaries (26 September 2026)
+
+1. `lib/privateTourProducts.ts`, product `guilin-yangshuo-5-day-private-tour`: D1 Guilin arrival; D2 included Guilin→Yangshuo Li River cruise with luggage moved separately; D3 Yulong countryside with one basic family activity or gentle cycling; D4 return to Guilin with Reed Flute Cave **or** Elephant Trunk Hill; D5 departure. Accommodation is Guilin 1 + Yangshuo 2 + Guilin 1, with two hotel changes. Bamboo rafting is an extra and Longji is outside this route. These are the published Homeground product terms, not a claim about every operator.
+2. [Yulong River operator: Longcun Pier–Daba Bridge two-person return rafting](https://www.ysylh.cn/jdjs/2024/6a7d914728304f999d023243c40b8680.shtml). The page names its exact section and states the under-1-metre and 70-plus prohibitions alongside other conditions. It does not establish a river-wide rule. Recheck the actual section and current terms before offering a raft.
+3. [Guilin Li River scenic area's official ticketing page](https://www.liriver.com.cn/page/article/lyfw.pwxx). Confirms the official `漓江售票处` service channel and distinct cruise/raft products; it does not guarantee a particular sailing or cabin on a later travel date.
+4. `docs/homeground-photo-provenance.md` row “Guilin gallery — Li River aerial”: the reused image is an existing real photograph supplied for site use. Its scene is a broad river landscape; no precise pier, sailing or weather is implied.
+
+No personal traveller quote, account name or Chinese-community link is published on the website or in this repository.

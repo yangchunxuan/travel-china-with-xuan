@@ -91,6 +91,8 @@ const approvedCommercialGuideIds = [
   "guilin-airport-or-railway-station-arrival-guide",
   "guilin-yangshuo-transport-route",
   "yangshuo-town-or-yulong-river-where-to-stay",
+  "guilin-yangshuo-with-kids-and-older-parents",
+  "first-china-trip-jiangnan-6-or-beijing-11-days",
   "zhangjiajie-city-or-wulingyuan-hotel-base",
   "zhangjiajie-furong-fenghuang-route-order",
   "zhangjiajie-arrival-departure-stations",
@@ -140,7 +142,7 @@ interface ProductContextDefinition {
 const productContexts = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": {
     destinations: ["shanghai", "hangzhou"],
-    guides: ["shanghai-suzhou-hangzhou-nanjing-route-order", "shanghai-hangzhou-transport-route"],
+    guides: ["shanghai-suzhou-hangzhou-nanjing-route-order", "shanghai-hangzhou-transport-route", "first-china-trip-jiangnan-6-or-beijing-11-days"],
     relatedProducts: [p("shanghai-suzhou-5-day-private-tour")],
   },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {
@@ -157,7 +159,7 @@ const productContexts = {
   },
   "guilin-yangshuo-5-day-private-tour": {
     destinations: [],
-    guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "yangshuo-town-or-yulong-river-where-to-stay"],
+    guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "yangshuo-town-or-yulong-river-where-to-stay", "guilin-yangshuo-with-kids-and-older-parents"],
   },
   "harbin-winter-5-day-private-tour": {
     destinations: [],
@@ -467,6 +469,7 @@ const productContexts = {
       "shanghai-hangzhou-transport-route",
       "how-to-read-a-suzhou-garden",
       "forbidden-city-for-foreign-visitors",
+      "first-china-trip-jiangnan-6-or-beijing-11-days",
     ],
     relatedProducts: [
       p("beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour"),
