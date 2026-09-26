@@ -1,0 +1,61 @@
+{
+  "id": "jade-dragon-snow-mountain-cable-car-booking",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global", "singapore", "malaysia", "australia"],
+  "format": "workflow",
+  "topics": ["jade-dragon-snow-mountain", "cable-car", "tickets", "lijiang"],
+  "destinations": ["lijiang", "jade-dragon-snow-mountain"],
+  "heroImagePath": "/images/guides/jade-dragon-snow-mountain-cable-car-booking/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jade-dragon-snow-mountain-cable-car-booking/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1200,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "searchTerms": {
+    "en": ["jade dragon snow mountain cable car tickets", "glacier park cable car booking", "spruce meadow cable car booking"],
+    "zh": ["玉龙雪山大索道怎么买票", "云杉坪索道放票时间", "玉龙雪山门票索道区别"],
+    "ko": ["위룽쉐산 케이블카 예약", "빙천공원 케이블카 예매", "윈산핑 케이블카 예매"]
+  },
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/jade-dragon-snow-mountain-cable-car-booking/",
+      "title": "Jade Dragon Snow Mountain: Tickets and Cable Cars",
+      "headline": "Book the mountain entry and the right cable car separately",
+      "description": "Glacier Park and Spruce Meadow use different ticket releases. Check the official channels, 2026 prices, weather rules and what your tour includes.",
+      "heroAlt": "A view of Jade Dragon Snow Mountain and a lake in Lijiang",
+      "heroCredit": { "text": "Jade Dragon Snow Mountain and a lake, photographed by 钉钉; resized and converted to WebP. This image does not show a cable car or current operating conditions.", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
+      "navTitle": "Jade Dragon Snow Mountain tickets",
+      "featuredLinkLabel": "Plan a Jade Dragon Snow Mountain visit",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Lijiang", "Cable cars", "Tickets"]
+    },
+    "zh": {
+      "path": "/zh/guides/jade-dragon-snow-mountain-cable-car-booking/",
+      "title": "玉龙雪山门票与索道：大索道、云杉坪怎么约",
+      "headline": "玉龙雪山门票和索道票，先分清再下单",
+      "description": "冰川公园大索道与云杉坪索道在不同时间放票；核对官方渠道、2026年票价和天气停运安排，再选适合自己的路线。",
+      "heroAlt": "丽江玉龙雪山与湖泊景色",
+      "heroCredit": { "text": "钉钉拍摄的玉龙雪山与湖泊照片；已调整尺寸并转为 WebP。照片不表示当前索道开放情况。", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
+      "navTitle": "玉龙雪山索道购票",
+      "featuredLinkLabel": "查看玉龙雪山索道购票方法",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["丽江", "玉龙雪山", "索道购票"]
+    },
+    "ko": {
+      "path": "/ko/guides/jade-dragon-snow-mountain-cable-car-booking/",
+      "title": "위룽쉐산 케이블카 예약: 빙천공원·윈산핑",
+      "headline": "위룽쉐산 입장권과 케이블카 표는 따로 확인하세요",
+      "description": "빙천공원과 윈산핑 케이블카는 예약 시간이 다릅니다. 공식 예매 채널, 2026년 요금과 기상 중단 규정을 확인하세요.",
+      "heroAlt": "리장의 위룽쉐산과 호수 풍경",
+      "heroCredit": { "text": "钉钉이 촬영한 위룽쉐산과 호수 사진입니다. 크기를 조정하고 WebP로 변환했으며, 현재 케이블카 운영 상황을 나타내지 않습니다.", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
+      "navTitle": "위룽쉐산 케이블카 예약",
+      "featuredLinkLabel": "위룽쉐산 케이블카 예약 방법",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["리장", "위룽쉐산", "케이블카"]
+    }
+  }
+}

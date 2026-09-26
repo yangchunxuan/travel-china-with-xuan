@@ -1,0 +1,74 @@
+{
+  "id": "humble-administrators-garden-tickets-entry",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["singapore", "malaysia", "australia", "global"],
+  "format": "practical-guide",
+  "topics": ["humble-administrators-garden", "suzhou-garden-tickets", "timed-entry", "suzhou-itinerary"],
+  "destinations": ["suzhou", "jiangsu"],
+  "heroImagePath": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/humble-administrators-garden-tickets-entry/",
+      "title": "Humble Administrator's Garden Tickets & Entry",
+      "headline": "Humble Administrator's Garden: Book the Right Date and Slot",
+      "description": "Book timed entry to Suzhou's Humble Administrator's Garden. Check official channels, the 1–7 day window, ¥70/¥80 prices and 2026 early hours.",
+      "heroAlt": "Pavilion and pond at the Humble Administrator's Garden in Suzhou, photographed in 2024.",
+      "navTitle": "Humble Administrator's Garden tickets",
+      "featuredLinkLabel": "Book and visit Humble Administrator's Garden",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Suzhou", "Garden", "Tickets"],
+      "heroCredit": {
+        "text": "Humble Administrator's Garden by Chainwit. (2024); cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/humble-administrators-garden-tickets-entry/",
+      "title": "拙政园门票与入园：实名预约、价格和时间",
+      "headline": "拙政园门票：先定日期和入园时段",
+      "description": "拙政园实名分时段购票，官方建议提前 1–7 天安排。看清旺淡季 80/70 元票价、证件要求、2026 年 6:45 开园期限和苏博另约规则。",
+      "heroAlt": "2024 年拍摄的苏州拙政园亭台与池塘。",
+      "navTitle": "拙政园门票与入园",
+      "featuredLinkLabel": "安排拙政园门票与入园",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["苏州", "拙政园", "门票"],
+      "heroCredit": {
+        "text": "苏州拙政园，Chainwit. 摄于 2024 年；已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/humble-administrators-garden-tickets-entry/",
+      "title": "쑤저우 졸정원 입장권: 예약·요금·입장",
+      "headline": "졸정원 방문은 날짜와 입장 시간대부터 정하세요",
+      "description": "쑤저우 졸정원의 실명제 시간대별 예약, 방문 1~7일 전 예매, 성인 요금 70/80위안, 여권 확인 사항과 2026년 조기 개장 기간을 정리했습니다.",
+      "heroAlt": "2024년에 촬영한 쑤저우 졸정원의 정자와 연못.",
+      "navTitle": "졸정원 입장권과 입장",
+      "featuredLinkLabel": "졸정원 입장권과 방문 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["쑤저우", "졸정원", "입장권"],
+      "heroCredit": {
+        "text": "쑤저우 졸정원, Chainwit. 촬영(2024); 크롭 및 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
+        "licenseLabel": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    }
+  }
+}
