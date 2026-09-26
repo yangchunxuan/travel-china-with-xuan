@@ -100,7 +100,8 @@ ours to fix:
    missing. Suggested entry: `"timing-events-natural-calendar": "high"`, to match
    `timing-holidays-crowds`, since bloom, water level and boat status are all high-volatility.
 2. **Missing Chinese glyphs.** Six characters required by the Chinese body are absent from
-   `public/fonts/homeground-serif-sc.woff2`: 舟, 筏, 篷, 橹, 鹅 and 泼. Five are the operator's own
+   the Chinese subset `tools/fonts/homeground-serif-sc.woff2` (published as unicode-range slices
+   by `tools/slice-serif-sc-font.mjs`): 舟, 筏, 篷, 橹, 鹅 and 泼. Five are the operator's own
    product names — 柳叶小舟, 竹筏, 乌篷船, 摇橹船, 天鹅湖 — and the sixth is 泼水, the summer
    water-splashing custom the operator publishes etiquette for and which determines whether a
    reader will be soaked. None can be dropped without misdescribing what the reader is buying.

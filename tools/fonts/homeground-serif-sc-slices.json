@@ -1,0 +1,70 @@
+{
+  "family": "Homeground Serif SC",
+  "about": "Han characters per slice of the Chinese editorial font. Slice 0 also holds every non-Han character of the source font. Regenerate with tools/slice-serif-sc-font.mjs --plan-from-usage=<file from tools/measure-serif-sc-usage.mjs>.",
+  "measuredPages": 317,
+  "featuredGuides": [
+    "/zh/guides/beijing-copper-pot-mutton-ordering-workflow/",
+    "/zh/guides/beijing-south-station-to-capital-or-daxing-airport/",
+    "/zh/guides/beijing-where-to-stay-first-trip/",
+    "/zh/guides/best-2-week-china-tour/",
+    "/zh/guides/chaozhou-ancient-city-gates-bridge-lanes-route/",
+    "/zh/guides/chengdu-chongqing-zhangjiajie-itinerary/",
+    "/zh/guides/chengdu-zhangjiajie-itinerary/",
+    "/zh/guides/china-10-day-itinerary/",
+    "/zh/guides/china-14-day-itinerary/",
+    "/zh/guides/china-2-week-tour-cost/",
+    "/zh/guides/china-7-day-itinerary/",
+    "/zh/guides/china-in-winter/",
+    "/zh/guides/china-itinerary-with-older-parents/",
+    "/zh/guides/china-online-arrival-card/",
+    "/zh/guides/china-packing-list/",
+    "/zh/guides/china-regional-food-route/",
+    "/zh/guides/china-small-group-tours-2027/",
+    "/zh/guides/chongqing-railway-station-selector/",
+    "/zh/guides/do-us-citizens-need-visa-china-2026/",
+    "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
+    "/zh/guides/guilin-yangshuo-longji-route-order/",
+    "/zh/guides/hostel-or-budget-hotel-china/",
+    "/zh/guides/how-to-pay-in-china-as-a-tourist/",
+    "/zh/guides/how-to-read-a-suzhou-garden/",
+    "/zh/guides/is-your-china-itinerary-too-rushed/",
+    "/zh/guides/shanghai-hangzhou-transport-route/",
+    "/zh/guides/shanghai-to-suzhou-day-trip/",
+    "/zh/guides/shenzhen-airport-railway-station-border-port-selector/",
+    "/zh/guides/singapore-to-zhangjiajie-itinerary/",
+    "/zh/guides/tianmen-mountain-tickets-and-routes/",
+    "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+    "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+    "/zh/guides/zhangjiajie-itinerary/"
+  ],
+  "slices": [
+    {
+      "note": "Primary slice, preloaded: every serif character of /zh/, /zh/tours/, /zh/guides/, every tour page and the featured guides (hidden text included), the first viewport of every measured page and the newsletter card's headings.",
+      "han": "一七万三上下不与专且世业东丝丢两严个中丰串丹为主丽久么义之乌乐乘九也习乡书买乱了争事二于云互五井亚些交产京亭亮亲人什仅今仍从他付仙代以仪们件价任份企伊伏休众优会传伦伸似但位低住体何余佛作你使例供依侧侨便俑俗保信修倒候借值假偏做停偶傍像儿元充先光克免兑兜入全八公六兰共关兴兵其具典养内冈再冒写军农冬冰冲决况冷准凇减凑几凡凤凭凰出分划列则创初删判利别到制刷刹刻前剖剧力办功加务动助劳势勒包化北匹区十升午半华协单卖南博占卡卧印即却卷厂厅历压原厦去县参又及双反发取受变叙口古句另只叫可台史右号司吃各合吉同名后吐向吒吗吞否含听启吸呈告员周味呼和咖咨品哈响哪唐售唯唱商啡啤喀善喜喝嘉嘴器四回因团园困围固国图圈土圣在地圳场址均坊坎坐坑块坛坝坡坪型城域埠基堂堆堰塔塘塞填境墅墙增壁士声处备复夏外多夜够大天太央失头夷奇奏套奥女好如妈妥始姓威婺子孔字存季学孩宁它安宋完宏官定宜宝实客宣宫家容宽宿寄富察寨对寺寻导封射将小少尔就尼尽尾层居屋屏展属屯山屿岛岩岭岳岸峒峡峪峰崖川州工左巫差己已巷巾币市布师带帮常干平年并广庄庆床序库应底店庙府度座庭廊延建开弃弄式引张弱弹强归当录形彩影彼往径待很律徒得御微德徽心必忆忙快念忽态怎思性总恒恢恭息悉悟悬情惯想意感愿慌慕慢懂戈戏成我或截户房所手才扎打扣执扶批找承技把抓抖折护报抵担拆拉拒拔拖拙招择括拱拿持指按捞换据掉掌排掖掘接控推措提插握搜搬搭携摩撰操擦支收改放政故效救教敞散敦数整文斋斗料断斯新方施旅族无既日旧早旬时旺昆昌明易星映春是昼显晋晒晚普景暂暖暴更替最月有服朔望朝期木本术朱机杂权杉李材村束条来杨杭杯松板构林枚果枢某染柜查柱标栈栏树样核根格桂框案桌桐档桥梁梧梯械检棠森植椒楚楼概槛模横樾次欢款歌止正此步武歧死段毁母每比民气氛水永求汇汉汕汛江池汤沉沙沟没河治沼沿泉法波注洋洗洛洞洱洲活流测济浦浪浮海消涮淄淡淮深混清渚渠渡温港游湖湘湿源溪溯滇滑满滨滩漏漓演漫潮澳瀑火灯灰灵炭点烟烦热然煌照熊熟熬爬父片版牌牙牦物牲特牺犁状狐独狮猜猫玉王玛玩环现玻珠班球理琴璃瓷生用田由甲申电画界畔留略番疆疏疑疲症痕登白的皇益盖盘盛目直相省看真眠眼着睡瞿知矩短石码砂研础确碍碑碗碧示礼社祁祖祠票祭福离秀私种科秒秘租秦积称移程稳稿穴究空穿突窄窑窗窟立站竟章童端竹笔笛符第笼等筏筑答策筛签简算管箱篇籍类粉精糊系素索紧累红约级纪纯纳纵纸纽线组细终绍经绑结绕给络统继续维绵绸综绿缓编缩缺罄网罗置美群翻老考者而耐耗耶聊联肉背胜胡能脆脉脊脚脸自至致舍舒舞航般舱船良色艺节芙芦花苏苗英范茶草荐荔荷莫获菜菲营落蓉蓝薄藏蘸虎虑虹蜀螺行衔街衡衣补表袁袜被装裙裤西要覆见观规觅视览觉角解言计订认让议记许论设访证评识诉诊词译试诗话诞询该语误说请诺读课谁调谈谱谷象豫贝负责败账货质购贵贸费资赏赖赛赞走赶起越趟足跟跨路跳践踪身车轨转轮轴轻较辆辈辑输辣辨边达迁迅过迈运近返还这进远连迪迹追退送适选逐递途通逛速造逻遇遍道遗遥避那邦邮郑部都配酒酵醋醒释里重野量金钞钟钱铁铜铝银铺链销锁锅错锚键镇长门闭问间闻阅阔队阱防阳阵阶阿附际陆陈降限陕院除险陪陵陶陷隆随隐障难雁集雕雨雪零雾需霞露青靖静靠面鞋鞭音页顶项顺须顿预领颐颗题额风飞食餐饭饮饶馆首香马驯驳驶驾验骑骤高鲁鲜鸣鹿麓麦麻黄黑默鼓鼻齐龄龙"
+    },
+    {
+      "note": "Laid out in the serif on 12-1 measured pages.",
+      "han": "临亨享介仔令仰伍伤估佳俚健偿储傩允冻净击切削剩副勉勾医千卸厕厝厨叉叠召叶吵吻命咸嘈坚垂垵塌塑墓墟壤夹奈奉奶她婴孤守宗审室害密寒寸尚尝尤尺局席幅幕异征志急慎扩扰投抽拍拥挤损探描摄撑旁晨未末架椅泛滞焙爱献率疗百破硬神米纠练绝缮罐署聚虚触讨讲诚谨贴赔赢超趣距软辩述透采针闸阻非颜饰"
+    },
+    {
+      "note": "Laid out in the serif on 1-1 measured pages.",
+      "han": "寓尊尬尴巡巢巴希帝幻幼康弧忍忠怀怪悄惊战戳扁扇抬抹拨拯拼挑挥捷摆撞旗昂晾曲曹曾杆杠柔栋校桩梭棒榜欠欧殊殷汽沈派浏浩浴润涨淆渐滕滤潼灾烘烹焦煮燥牛牵玄瑞瓦盅监盗祇祝竞筹箭篮繁纷纹织职胁若著葬蒲蛇蛰蜜裕裹警详豆貌贡贯赌载辅辖辞迫逆遵邀酪钮铭铰铸锣锦镜闹阁陌雄雷韩频饪饼驻骨魅鸟鹤"
+    },
+    {
+      "note": "Not laid out in the serif on any measured page (the font still covers every Han character in the site sources).",
+      "han": "丁丈丘丛丧举乃乎乏乔乙乳乾予亡亦亩亿仁仓仗仞仲仿伙伞伟伪伯伴佐佣佩侠侣侯侵促俊俯倍倚倡倾傅傣催僵僻党兼兽册冗冠冯冶凉凋凌凝凯凳凸凹函凿刀刃刊刘刚券刺剁剂剃剑剔剪割劈劍劣努励劲勃勇勋勘募勤勺勿匀匆匙匜匠匾匿區卜卣卫卯危卿厌厘厚厢友叛叩吊吏君吟吧吴吹吾呐呤咎哆哥哨哲喂喊喷喻嘌嘱噪囱圃圆園圜圾坍坏坞坤坦垃垄垛垫垮埂埋培堡堤場堵塾墨墩壑壮壳壶壹壺夕夫夯夸夺奋奔奖妇妨妻姆姐姑委姜姻姿娘娱婉婚媒嫁嫌嫩嬉嬗孕孙孝孟宅宇宛宠宪宰宴宵宸宾寿尖尘尿届屑屠屡履岁岔岗岨峦峨峭峻峽崇崔崩嵌巅巧巨帖帘帧師帽幸庞废廉廓廣廷弛弟弥弦弩弯彝彤役彻徐"
+    },
+    {
+      "note": "Not laid out in the serif on any measured page (the font still covers every Han character in the site sources).",
+      "han": "徙從循忌忘怕怨恋恐恨恰恶悠患悦您悲惕惜惠惧惫慈戒戴扉扔托扫扬扮抄抑抗抛抢披抱押拌拓拜拟拢拣拦拭拳拾挂挖挞挡挣挨挪振挽捆捐捕捡捻掀授掏掠掩掰揉揭援揽搅搞摇摊摔摘摸摹撇撒撕撤播撮撼擅擎攀攻敌敏敢敬敲斑斜斟斥旋旦旱旷昏昙昨昵昶晃晕晖晰晴晶智暑暗暮曜曝書朋朗朴朵朽杀杏杖杜杞東杵极枋析枪枸柄柑柳栅栖株栽桃桅桔桶梅梓梗梢梦梨梳梵棉棚棱棵椽楔楹榕榨榫榴構槟槽樁橋橘橫橹檀檐檩欣欲欺歇残殖殿毒毕毛毫毯氏氧氨氹汀汁汐汗污汰汴沁沥沧沪沫沱沸油泄泊泡泥泮泰泳泵泻泼泽泾洁洒津洪洼浅浆浇浒浓浙浜浸涂涉涛涝涤涧液涵涸淀淋淘淹添渊渍渗渝渤湄湍湛湾"
+    },
+    {
+      "note": "Not laid out in the serif on any measured page (the font still covers every Han character in the site sources).",
+      "han": "溅溉溜溢溶滄滋滚滥漂漕漠漱潘潦潭澄激濒濠灌灭灶炉炊炎炒炫炮炸炼烈烤烧烫焊焗焚煎煨煲熏熙燃燕爆爵爽牍牟牢牧犄犬犯犹狭猎猪猴獅玺珊珍琮琵琶瑕瑶璧環瓮瓶甘甚甜畅畜疫疵疼疾病痛痪瘦瘫皆皮皱盆盐盒盔盟盤盥盯盲盾眉眺睁睛督睫瞎瞒瞥瞬瞰矗矛矶砌砍砖硚碌碎碚碟碰碱碳碾磁磨礁祀祈祛祥禁禅禺禽秆秋秩秸稀稍税稻稽穆穷穹窃窖窝竖竣笋笑笙筋筐筒筷箍箐箫篁篆篓篝篡篦篱篷簇簋簿粒粗粘粤粥粮糕糖糙糜糟糯級網縣纂纤纬纺绉绎绘绞绢绣绩绪绰绳缀缆缔缘缝缸罕罘罚罩罪羊羹羽翠翼耀耕耦耳耸耽聆肃肌肖肘肠股肢肤肥肩肪肯育肴胃胆胎胞胶脂脏脑脖脱腊腌腐腔腰腹腻腾腿"
+    },
+    {
+      "note": "Not laid out in the serif on any measured page (the font still covers every Han character in the site sources).",
+      "han": "膏膝膳臂舂舟舫舶艘艰艳芒芝芯苍苑苦苹茂茅茼荒荣荫药莆莊莓莲菇菊菌萃萄萎萝萧萨葡葱蒙蒜蒸蒿蓄蔬蔽蕴薪薰藕藝虫虽虾蚀蚁蚂蚊蚝蛋蜂蜡融蟹血衍衫衬衰袋袍袖裁裂裴裸褶計誉變讫训讯讼诀诈诠诵诿谎谓谚谢谣豁豉豪豬贞财贩贺赁赋赎赐赜赠赣赤赴赵趁趋跃跌跑踏踩蹄蹈蹲躯躲轩轶轿辉辛辟辰辽迎违迟迦迷逃逗逸逼逾遭遮邊邑邻郁郊郎郡酌酚酥酱酶酷酸酿醅醇醉釉釜鉴銎鎏鐃鐘鑑钉钠钢钥钹钻铃铅铙铠锂锈锡锻镶長門閘關闪闯闲闵闽阈阐阴陛陡隋隍隔隙隧隶雅震霜靛革靴韦韧韭韵額顷顾颂颈颢飨飲餮饕饥饯饱饺饿馅馈馒馥驱驼骆骗鬼魁魂魏鱼鲍鳳鸡鸿鹅麋麸黎黏黔點鼎龍龛龟"
+    }
+  ]
+}

@@ -128,8 +128,9 @@ Run in this worktree at base 2f98803.
 **Expected:** zero missing glyphs. **Actual:** 8 Han glyphs. `check:font-coverage:export` reports the
 same eight against the production HTML, and both Korean subsets pass cleanly there too.
 
-**Central shared location to change:** `public/fonts/homeground-serif-sc.woff2`, regenerated via
-`tools/rebuild-locale-fonts.mjs`. **`public/fonts/` was not modified.** Regeneration was also not
+**Central shared location to change:** the Chinese subset `tools/fonts/homeground-serif-sc.woff2`,
+regenerated with its unicode-range slices via `tools/rebuild-locale-fonts.mjs`.
+**`public/fonts/` was not modified.** Regeneration was also not
 possible here: that tool requires `--noto`, `--pretendard`, `--maruburi`, `--fonttools` and
 `--python` inputs that are not available in this worktree.
 

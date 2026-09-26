@@ -7,6 +7,8 @@ import { NavigationFeedback } from "../../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
+import { HomegroundSerifScSlices } from "../../../components/HomegroundSerifScSlices";
+import { homegroundSerifScPrimaryFontUrl } from "../../../lib/homegroundSerifScFontFiles";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -78,10 +80,16 @@ export default async function LocalizedRootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        {/*
+          The Chinese serif is cut into unicode-range slices
+          (public/fonts/README.md). Only slice 0, declared in globals.css, is
+          preloaded and can take part in the first render;
+          HomegroundSerifScSlices declares the other slices after load.
+        */}
         {locale === "zh" ? (
           <link
             rel="preload"
-            href="/fonts/homeground-serif-sc.woff2"
+            href={homegroundSerifScPrimaryFontUrl}
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -113,6 +121,7 @@ export default async function LocalizedRootLayout({
         <TourContactPanel locale={locale} />
         <ContactCardHost locale={locale} />
         <NewsletterPopup locale={locale} />
+        {locale === "zh" ? <HomegroundSerifScSlices /> : null}
       </body>
     </html>
   );

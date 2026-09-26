@@ -1,9 +1,14 @@
+/*
+ * Slice 0 of the Chinese serif, the family's primary font and catch-all. Its
+ * url is written by tools/slice-serif-sc-font.mjs; the other slices are
+ * declared after load by components/HomegroundSerifScSlices.tsx.
+ */
 @font-face {
   font-family: "Homeground Serif SC";
   font-display: swap;
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/homeground-serif-sc.woff2") format("woff2");
+  src: url("/fonts/homeground-serif-sc-00.8c1d896a.woff2") format("woff2");
 }
 
 @font-face {
