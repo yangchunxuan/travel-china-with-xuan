@@ -254,6 +254,7 @@ export function getPrivateTourHubLanguagePaths() {
     en: privateTourHubPaths.en,
     "zh-Hans": privateTourHubPaths.zh,
     ko: privateTourHubPaths.ko,
+    ja: "/ja/tours/",
     "x-default": privateTourHubPaths.en,
   } as const;
 }

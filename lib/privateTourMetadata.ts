@@ -28,7 +28,9 @@ export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
     en: paths.en,
     "zh-Hans": paths.zh,
     ko: paths.ko,
-    ...(product.slug === jaPilot.tourSlug ? { ja: jaPilot.tour } : {}),
+    ja: product.slug === jaPilot.tourSlug
+      ? jaPilot.tour
+      : `/ja/tours/${product.slug}/`,
     "x-default": paths.en,
   } as const;
 }

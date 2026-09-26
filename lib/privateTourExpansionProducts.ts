@@ -1980,7 +1980,7 @@ const jiangxi: PrivateTourProduct = {
   ],
   routeMedia: [
     routeMedia(
-      4,
+      3,
       l("Huangling, Wuyuan", "婺源篁岭", "우위안 황링"),
       image(
         jiangxiSlug,
