@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 210,
-      "localeUrlCount": 622,
-      "generatedIdentityCount": 191,
+      "identityCount": 215,
+      "localeUrlCount": 637,
+      "generatedIdentityCount": 196,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1663,6 +1663,198 @@
               "boundary": "Whether a three-night Chongqing-to-Yichang cruise merits four calendar days in a China route; ship, sailing, pier, cabin, onboard service, price and date-specific inclusions remain with the actual operator and linked tour products."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-09-26",
+          "sourceBranch": "agent/attraction-booking-pilot-20260926",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Five-guide pilot branch inventory only; merge, deployment, live URL checks, crawl and indexing require separate evidence.",
+          "identityDelta": 5,
+          "localeUrlDelta": 15,
+          "identities": [
+            {
+              "id": "humble-administrators-garden-tickets-entry",
+              "title": "Humble Administrator's Garden Tickets & Entry",
+              "metadataPath": "content/guides/humble-administrators-garden-tickets-entry/metadata.json",
+              "canonicalPath": "/guides/humble-administrators-garden-tickets-entry/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/humble-administrators-garden-tickets-entry/",
+                "/zh/guides/humble-administrators-garden-tickets-entry/",
+                "/ko/guides/humble-administrators-garden-tickets-entry/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "suzhou",
+                "jiangsu"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-suzhou",
+                  "province-jiangsu"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Garden ticket, appointment window, gate and dated early-opening rule; tour itinerary and inclusions remain with the linked Jiangnan product."
+            },
+            {
+              "id": "jade-dragon-snow-mountain-cable-car-booking",
+              "title": "Jade Dragon Snow Mountain: Tickets and Cable Cars",
+              "metadataPath": "content/guides/jade-dragon-snow-mountain-cable-car-booking/metadata.json",
+              "canonicalPath": "/guides/jade-dragon-snow-mountain-cable-car-booking/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/jade-dragon-snow-mountain-cable-car-booking/",
+                "/zh/guides/jade-dragon-snow-mountain-cable-car-booking/",
+                "/ko/guides/jade-dragon-snow-mountain-cable-car-booking/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "lijiang",
+                "jade-dragon-snow-mountain"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "lijiang",
+                  "jade-dragon-snow-mountain"
+                ],
+                "usedCountryFallback": true
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Scenic entry versus Glacier Park and Spruce Meadow cable-car booking; the linked eight-day Yunnan tour names Spruce Meadow and Blue Moon Valley, not Glacier Park."
+            },
+            {
+              "id": "li-river-cruise-tickets-piers-booking",
+              "title": "Li River Cruise Tickets: 3 vs 4 Stars and Boarding Piers",
+              "metadataPath": "content/guides/li-river-cruise-tickets-piers-booking/metadata.json",
+              "canonicalPath": "/guides/li-river-cruise-tickets-piers-booking/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/li-river-cruise-tickets-piers-booking/",
+                "/zh/guides/li-river-cruise-tickets-piers-booking/",
+                "/ko/guides/li-river-cruise-tickets-piers-booking/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "guilin",
+                "li-river",
+                "yangshuo"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-guilin"
+                ],
+                "unmappedTokens": [
+                  "li-river",
+                  "yangshuo"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Official three- and four-star cruise fares, pier assignment and dated booking checks; the linked Guilin–Yangshuo product owns its inclusions."
+            },
+            {
+              "id": "shanghai-museum-east-entry-reservations",
+              "title": "Shanghai Museum East: Entry, Reservations & Hours",
+              "metadataPath": "content/guides/shanghai-museum-east-entry-reservations/metadata.json",
+              "canonicalPath": "/guides/shanghai-museum-east-entry-reservations/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/shanghai-museum-east-entry-reservations/",
+                "/zh/guides/shanghai-museum-east-entry-reservations/",
+                "/ko/guides/shanghai-museum-east-entry-reservations/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "shanghai"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-shanghai"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "East Museum entry and gallery-specific reservations; the linked Shanghai–Suzhou five-day tour does not include the East Museum without a custom adjustment."
+            },
+            {
+              "id": "xian-city-wall-tickets-gates-walk-or-bike",
+              "title": "Xi'an City Wall Tickets, Gates, Walking and Cycling",
+              "metadataPath": "content/guides/xian-city-wall-tickets-gates-walk-or-bike/metadata.json",
+              "canonicalPath": "/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+                "/zh/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+                "/ko/guides/xian-city-wall-tickets-gates-walk-or-bike/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "shaanxi",
+                "xian",
+                "xian-city-wall"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-xian"
+                ],
+                "unmappedTokens": [
+                  "shaanxi",
+                  "xian-city-wall"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Verified South Gate and standard tickets plus walk-versus-cycle choice; unverified gate hours, bike rental and passport screen steps are excluded."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1778,15 +1970,18 @@
         "how-to-read-heritage-sites-in-china",
         "how-to-visit-an-archaeological-site-museum",
         "huangshan-summit-or-gateway-base",
+        "humble-administrators-garden-tickets-entry",
         "hunan-cuisine-balanced-first-meal",
         "inner-mongolia-long-song-first-performance",
         "international-chain-or-local-hotel-china",
         "is-your-china-itinerary-too-rushed",
+        "jade-dragon-snow-mountain-cable-car-booking",
         "jingxian-xuan-paper-museum-workshop-choice",
         "kaifeng-song-dynasty-urban-landscape",
         "kevin-before-the-hotel-pickup",
         "kunming-dali-lijiang-shangri-la-route-order",
         "leshan-giant-buddha-land-or-boat-visit",
+        "li-river-cruise-tickets-piers-booking",
         "liangzhu-ruins-park-and-museum-sequence",
         "liaozhai-zibo-former-residence-liqu-liaozhai-city",
         "lijiang-old-town-or-shuhe-where-to-stay",
@@ -1822,6 +2017,7 @@
         "shandong-peninsula-coastal-city-rail-arc",
         "shanghai-24-hour-parks-reality-check",
         "shanghai-hangzhou-transport-route",
+        "shanghai-museum-east-entry-reservations",
         "shanghai-pudong-or-hongqiao-airport",
         "shanghai-suzhou-hangzhou-nanjing-route-order",
         "shanghai-to-suzhou-day-trip",
@@ -1855,6 +2051,7 @@
         "xiamen-tulou-quanzhou-six-day-route",
         "xiamen-where-to-stay-zhongshan-gulangyu-zengcuoan",
         "xian-chengdu-transport-route",
+        "xian-city-wall-tickets-gates-walk-or-bike",
         "xian-lanzhou-dunhuang-silk-road-route",
         "xian-where-to-stay-city-wall-or-dayanta",
         "xixia-script-and-imperial-tombs-context",

@@ -1,0 +1,53 @@
+{
+  "id": "xian-city-wall-tickets-gates-walk-or-bike",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["global"],
+  "format": "workflow",
+  "topics": ["xian-city-wall", "city-wall-tickets", "city-wall-gates", "city-wall-cycling"],
+  "destinations": ["shaanxi", "xian", "xian-city-wall"],
+  "heroImagePath": "/images/tours/xian-terracotta-warriors-5-day-private-tour/arrival-city-wall-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/xian-terracotta-warriors-5-day-private-tour/arrival-city-wall-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "search": {"section": "explore", "family": "task", "primaryIntent": "execute"},
+  "layout": {"mode": "template", "templateId": "editorial-v1"},
+  "locales": {
+    "en": {
+      "path": "/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+      "title": "Xi'an City Wall Tickets, Gates, Walking and Cycling",
+      "headline": "Xi'an City Wall: Buy a Ticket, Choose a Gate, Walk or Cycle",
+      "description": "Check Xi'an City Wall tickets and 17 access points, then choose a short walk or longer ride. Includes online-ticket collection steps for foreign visitors.",
+      "heroAlt": "A broad pedestrian stretch on top of Xi'an City Wall at dusk, with a gate tower and lanterns",
+      "navTitle": "Xi'an City Wall visit",
+      "featuredLinkLabel": "Plan a Xi'an City Wall visit",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Xi'an", "City Wall", "Tickets and gates"]
+    },
+    "zh": {
+      "path": "/zh/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+      "title": "西安城墙门票与登城口：步行还是骑行？",
+      "headline": "买对西安城墙门票，选好登城口，再决定走一段还是骑行",
+      "description": "按官方信息核对西安城墙购票、外籍游客换票与 17 处登城口；比较短段步行和骑行，出发前再查当日门点与租车规则。",
+      "heroAlt": "黄昏时西安城墙上开阔的步道、城楼与灯笼",
+      "navTitle": "西安城墙参观",
+      "featuredLinkLabel": "规划西安城墙参观",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["西安", "城墙", "门票与登城口"]
+    },
+    "ko": {
+      "path": "/ko/guides/xian-city-wall-tickets-gates-walk-or-bike/",
+      "title": "시안 성벽 입장권과 출입구: 걷기 또는 자전거",
+      "headline": "시안 성벽 입장권과 출입구를 확인하고 걷기·자전거를 고르세요",
+      "description": "공식 판매 채널과 외국인 입장 절차, 17곳의 성벽 진입 지점을 확인하고 짧게 걷거나 자전거를 탈지 결정하세요.",
+      "heroAlt": "해 질 무렵 시안 성벽 위의 넓은 보행로와 누각, 등불",
+      "navTitle": "시안 성벽 방문",
+      "featuredLinkLabel": "시안 성벽 방문 계획",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["시안", "성벽", "입장권과 출입구"]
+    }
+  }
+}

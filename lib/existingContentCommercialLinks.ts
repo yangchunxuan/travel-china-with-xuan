@@ -124,6 +124,11 @@ const approvedCommercialGuideIds = [
   "xian-lanzhou-dunhuang-silk-road-route",
   "xiamen-tulou-quanzhou-six-day-route",
   "yangtze-cruise-fit-china-itinerary",
+  "li-river-cruise-tickets-piers-booking",
+  "jade-dragon-snow-mountain-cable-car-booking",
+  "shanghai-museum-east-entry-reservations",
+  "humble-administrators-garden-tickets-entry",
+  "xian-city-wall-tickets-gates-walk-or-bike",
 ] as const satisfies readonly GuideId[];
 
 interface ProductContextDefinition {

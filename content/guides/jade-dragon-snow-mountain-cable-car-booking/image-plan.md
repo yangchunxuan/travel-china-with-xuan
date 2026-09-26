@@ -1,0 +1,3 @@
+# Image plan
+
+Hero is a real photograph of Jade Dragon Snow Mountain and a lake by **钉钉**, sourced from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg) under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The local `hero-1600.webp` preserves the full frame, resized to 1600×1200 and converted to WebP. Every locale's visible `heroCredit` retains author, source, licence and modification. It illustrates the mountain, not the Glacier Park or Spruce Meadow cable car, its current weather or ticket availability. No AI-generated image was used.

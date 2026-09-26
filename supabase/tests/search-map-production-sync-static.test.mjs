@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 191);
+  assert.equal(inventory.generatedIdentityCount, 196);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 210);
-  assert.equal(inventory.localeUrlCount, 622);
+  assert.equal(inventory.identityCount, 215);
+  assert.equal(inventory.localeUrlCount, 637);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
@@ -61,11 +61,14 @@ test("the Search Map complete inventory covers every current guide directory", a
   const latestIncrement = inventory.repositoryIncrements.at(-1);
   assert.equal(latestIncrement.checkedAt, "2026-09-26");
   assert.equal(latestIncrement.publicationStatus, "not-published");
-  assert.equal(latestIncrement.identityDelta, 2);
-  assert.equal(latestIncrement.localeUrlDelta, 6);
+  assert.equal(latestIncrement.identityDelta, 5);
+  assert.equal(latestIncrement.localeUrlDelta, 15);
   assert.deepEqual(latestIncrement.identities.map((entry) => entry.id), [
-    "xiamen-tulou-quanzhou-six-day-route",
-    "yangtze-cruise-fit-china-itinerary",
+    "humble-administrators-garden-tickets-entry",
+    "jade-dragon-snow-mountain-cable-car-booking",
+    "li-river-cruise-tickets-piers-booking",
+    "shanghai-museum-east-entry-reservations",
+    "xian-city-wall-tickets-gates-walk-or-bike",
   ]);
   for (const entry of latestIncrement.identities) {
     const metadata = await loadJson(entry.metadataPath);

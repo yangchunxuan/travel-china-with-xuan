@@ -1,0 +1,74 @@
+{
+  "id": "shanghai-museum-east-entry-reservations",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": ["singapore", "malaysia", "australia", "global"],
+  "format": "practical-guide",
+  "topics": ["shanghai-museum-east", "museum-entry", "reservations", "shanghai-itinerary"],
+  "destinations": ["shanghai"],
+  "heroImagePath": "/images/guides/shanghai-museum-east-entry-reservations/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/shanghai-museum-east-entry-reservations/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-09-26",
+  "dateModified": "2026-09-26",
+  "sourceReviewedDate": "2026-09-26",
+  "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
+  "layout": { "mode": "template", "templateId": "editorial-v1" },
+  "locales": {
+    "en": {
+      "path": "/guides/shanghai-museum-east-entry-reservations/",
+      "title": "Shanghai Museum East: Entry, Reservations & Hours",
+      "headline": "Shanghai Museum East: What to Book and Where to Enter",
+      "description": "Shanghai Museum East offers free walk-in entry, but two areas need booking. Check the B1 east entrance, Tuesday closure and People's Square rules.",
+      "heroAlt": "Exterior of Shanghai Museum East in Pudong, photographed in October 2024.",
+      "navTitle": "Shanghai Museum East entry",
+      "featuredLinkLabel": "Check Shanghai Museum East entry rules",
+      "openGraphLocale": "en_US",
+      "cardTags": ["Shanghai", "Museum", "Entry"],
+      "heroCredit": {
+        "text": "Shanghai Museum East by Alexey Yakovlev (2024); cropped and converted to WebP",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_East.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "zh": {
+      "path": "/zh/guides/shanghai-museum-east-entry-reservations/",
+      "title": "上海博物馆东馆怎么进：预约、入口与开放时间",
+      "headline": "上海博物馆东馆：普通入馆免预约，两个区域要另约",
+      "description": "上海博物馆东馆散客普通入馆免费免预约，从 B1 层东门安检刷证；古代文明探索宫与数字馆另需预约。分清东馆和人民广场馆的规定。",
+      "heroAlt": "2024 年拍摄的上海博物馆东馆建筑外观。",
+      "navTitle": "上海博物馆东馆入馆",
+      "featuredLinkLabel": "查清上海博物馆东馆入馆规则",
+      "openGraphLocale": "zh_CN",
+      "cardTags": ["上海", "博物馆", "入馆"],
+      "heroCredit": {
+        "text": "上海博物馆东馆，Alexey Yakovlev 摄于 2024 年；已裁切并转换为 WebP",
+        "sourceLabel": "维基共享资源",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_East.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    "ko": {
+      "path": "/ko/guides/shanghai-museum-east-entry-reservations/",
+      "title": "상하이박물관 동관 입장: 예약·입구·운영시간",
+      "headline": "상하이박물관 동관: 일반 입장과 별도 예약 구역",
+      "description": "상하이박물관 동관 일반 입장은 무료이며 사전 예약이 필요 없습니다. B1 동쪽 입구와 화요일 휴관, 별도 예약 구역 및 인민광장관 규정을 확인하세요.",
+      "heroAlt": "2024년에 촬영한 상하이박물관 동관 건물 외관.",
+      "navTitle": "상하이박물관 동관 입장",
+      "featuredLinkLabel": "상하이박물관 동관 입장 규정 확인하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": ["상하이", "박물관", "입장"],
+      "heroCredit": {
+        "text": "상하이박물관 동관, Alexey Yakovlev 촬영(2024); 크롭 및 WebP 변환",
+        "sourceLabel": "위키미디어 공용",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_East.jpg",
+        "licenseLabel": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  }
+}
