@@ -34,3 +34,11 @@
     display: none;
   }
 }
+
+/* Five Japanese primary links need slightly less room than the shared desktop
+   spacing gives them; keep the FAQ and language controls clear at wide widths. */
+@media (min-width: 1360px) {
+  .japaneseHeader .desktopNav a {
+    padding-inline: 0.45rem;
+  }
+}

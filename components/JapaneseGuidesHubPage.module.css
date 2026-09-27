@@ -1,0 +1,19 @@
+.photoCredit,
+.otherLanguages {
+  color: rgb(10 10 10 / 60%);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.photoCredit a,
+.otherLanguages a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.otherLanguages {
+  font-size: 0.9375rem;
+  margin-block-start: 1.25rem;
+}

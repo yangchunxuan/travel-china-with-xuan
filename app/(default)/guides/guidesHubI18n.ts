@@ -419,6 +419,7 @@ export function getGuidesHubLanguagePaths() {
     en: copies.en.path,
     ko: copies.ko.path,
     "zh-Hans": copies.zh.path,
+    ja: "/ja/guides/",
     "x-default": copies.en.path,
   } as const;
 }

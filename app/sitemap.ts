@@ -107,6 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
   const japaneseSitePages = [
     { en: "/", ja: "/ja/", changeFrequency: "weekly" as const, priority: 0.8 },
+    { en: "/guides/", ja: "/ja/guides/", changeFrequency: "weekly" as const, priority: 0.7 },
     { en: "/services/", ja: "/ja/services/", changeFrequency: "monthly" as const, priority: 0.6 },
     { en: "/explore/", ja: "/ja/explore/", changeFrequency: "weekly" as const, priority: 0.7 },
     { en: "/studio/", ja: "/ja/studio/", changeFrequency: "monthly" as const, priority: 0.5 },
