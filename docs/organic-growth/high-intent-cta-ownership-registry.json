@@ -103,6 +103,17 @@
   },
   "guideInlineSalesCards": [
     {
+      "contentId": "longji-rice-terraces-day-trip-or-overnight",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "guilin-yangshuo-5-day-private-tour",
+      "placement": "guide-inline",
+      "image": "product",
+      "forbiddenClaims": [
+        "guaranteed-booking-or-availability",
+        "fit-verification-claim"
+      ]
+    },
+    {
       "contentId": "zhangjiajie-older-travellers",
       "ctaKind": "private-tour-product",
       "ctaTarget": "zhangjiajie-4-day-private-tour",

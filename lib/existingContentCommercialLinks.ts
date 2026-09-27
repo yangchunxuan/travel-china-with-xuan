@@ -717,7 +717,15 @@ export function getGuidePublishedRouteLinks(
   guideId: GuideId,
   locale: HomegroundLocale,
 ) {
-  return (guideTargets[guideId] ?? []).map((target) => toProductLink(target, locale));
+  const links = (guideTargets[guideId] ?? []).map((target) => toProductLink(target, locale));
+  if (guideId !== "china-7-day-itinerary") return links;
+
+  const alternativeLabel: Record<HomegroundLocale, string> = {
+    en: "Different route: Beijing, Xi'an and Shanghai in 8 days",
+    zh: "另一条路线：北京、西安、上海 8 天",
+    ko: "다른 일정: 베이징·시안·상하이 8일",
+  };
+  return links.map((link) => ({ ...link, label: alternativeLabel[locale] }));
 }
 
 export function getProductPlanningContext(
