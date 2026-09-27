@@ -1,12 +1,14 @@
+"use client";
+
 import { Mail, MessageCircle } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { japaneseDraftNote } from "../lib/japaneseSite";
+import { openJapaneseContact, japaneseDirectWhatsAppEnabled } from "../lib/japaneseContactFlow";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./JapaneseContactPanel.module.css";
 
 /**
- * Japanese consultation panel. Both buttons open a pre-filled draft in the
- * traveller's own WhatsApp or mail app; nothing is sent until they send it.
+ * Japanese consultation panel. The primary action opens the saved inquiry
+ * flow; its mailto href remains a real no-JavaScript fallback.
  */
 export function JapaneseContactPanel({
   title,
@@ -30,17 +32,20 @@ export function JapaneseContactPanel({
       </h3>
       <p className={styles.body}>{body}</p>
       <div className={styles.actions}>
-        <a className={styles.primary} href={whatsappHref} rel="noopener noreferrer" target="_blank">
+        <a className={styles.primary} href={emailHref} onClick={event => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+          if (openJapaneseContact({ whatsappHref, emailHref })) event.preventDefault();
+        }}>
+          <Mail aria-hidden="true" size={18} />
+          <span>相談・見積もりを送る</span>
+        </a>
+        {japaneseDirectWhatsAppEnabled() ? <a className={styles.secondary} href={whatsappHref} rel="noopener noreferrer" target="_blank">
           <MessageCircle aria-hidden="true" size={18} />
           <span>WhatsAppで相談する</span>
-        </a>
-        <a className={styles.secondary} href={emailHref}>
-          <Mail aria-hidden="true" size={18} />
-          <span>メールで相談する</span>
-        </a>
+        </a> : null}
       </div>
       <p className={styles.note}>
-        {japaneseDraftNote}
+        サイト内のフォームは、保存できた場合に受付番号を表示します。外部の連絡アプリは下書きが開くだけです。
       </p>
       <p className={styles.note}>
         メールアプリが開かない場合は、

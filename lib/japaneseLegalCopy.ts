@@ -9,9 +9,8 @@ import { travelAgencyCertificateHolder } from "./homegroundTravelAgencyCredentia
  * Japanese copy for the business information, terms and refund & delivery
  * pages. The English copy in lib/homegroundLegalI18n.ts and
  * lib/homegroundTravelAgencyCredentials.ts is the source of truth; section
- * order, ids and every fact follow it. Japanese readers have no website form
- * and contact Homeground by WhatsApp or email, so form wording is adapted
- * (see the notes at the end of this file).
+ * order, ids and every fact follow it. Japanese readers can submit an email
+ * inquiry on-site or contact Homeground through external apps.
  */
 export type JapaneseLegalCopy = Omit<HomegroundLegalCopy, "locale"> & {
   locale: "ja";
@@ -21,7 +20,7 @@ type JapaneseLegalSection = JapaneseLegalCopy["sections"][number];
 
 const holder = travelAgencyCertificateHolder;
 
-const reviewedValue = "2026年7月24日";
+const reviewedValue = "2026年9月27日";
 const businessReviewedValue = "2026年9月15日";
 
 // Official registry names stay in Chinese, exactly as the Chinese copy names them.
@@ -141,7 +140,7 @@ const businessInformation: JapaneseLegalCopy = {
     label: "わかりやすい始め方",
     title: "登記内容を確認できる事業者が、お支払いの前にサービスの範囲を明確にします。",
     body:
-      "まずは WhatsApp またはメールで、旅のご希望をまとめてお送りください。Homeground がご要望を整理し、次のステップを書面でお知らせします。お引き受けする場合は、お支払いの前に、サービス内容、料金、範囲、提供の時期、お支払いに関する詳細をお示しします。",
+      "まずはサイト内の相談フォーム、WhatsApp、またはメールで、旅のご希望をお送りください。Homeground がご要望を整理し、次のステップを書面でお知らせします。お引き受けする場合は、お支払いの前に、サービス内容、料金、範囲、提供の時期、お支払いに関する詳細をお示しします。",
   },
   sections: [
     {
@@ -192,7 +191,7 @@ const businessInformation: JapaneseLegalCopy = {
       id: "how-it-starts",
       title: "旅のご相談の進み方",
       numbered: [
-        "WhatsApp またはメールで、旅のご希望を無料でお送りいただきます。",
+        "サイト内の相談フォーム、WhatsApp、またはメールで、旅のご希望を無料でお送りいただきます。",
         "Homeground が、旅のご要望と手配できる内容を確認します。",
         "お支払いの前に、運営事業者、サービス内容、料金と通貨、含まれる業務、ご用意いただく資料、提供日、適用される条件を記載した確認書を、書面でお送りします。",
         "お支払い方法は別途ご案内します。",
@@ -203,7 +202,7 @@ const businessInformation: JapaneseLegalCopy = {
       id: "payment-records",
       title: "お支払いの記録と連絡先",
       paragraphs: [
-        "お問い合わせの WhatsApp やメールで、カード情報、銀行のログイン情報、決済用の QR コードを送らないでください。お支払いの前に、受取人の名義が書面のサービス確認書と一致しているかをご確認ください。発行できる請求書または領収書については、お支払いの前にお知らせします。",
+        "サイト内の相談フォーム、WhatsApp、メールで、カード情報、銀行のログイン情報、決済用の QR コードを送らないでください。お支払いの前に、受取人の名義が書面のサービス確認書と一致しているかをご確認ください。発行できる請求書または領収書については、お支払いの前にお知らせします。",
       ],
       facts: [
         {
@@ -275,7 +274,7 @@ const terms: JapaneseLegalCopy = {
         "キャンセル、返金、提供に関する条件",
       ],
       paragraphs: [
-        "当サイトでは現在、オンライン決済を提供していません。お問い合わせの WhatsApp やメールで、カード、銀行口座、決済の認証情報を決して送らないでください。",
+        "当サイトでは現在、オンライン決済を提供していません。サイト内の相談フォーム、WhatsApp、メールで、カード、銀行口座、決済の認証情報を決して送らないでください。",
       ],
     },
     {
@@ -283,7 +282,7 @@ const terms: JapaneseLegalCopy = {
       title: "5. お客様の責任",
       paragraphs: [
         "旅行に関する情報は、漏れなく正確にお知らせください。予約済みのものや期限が決まっているものは、はっきりとお示しください。日程、同行者、目的地、制約条件が変わった場合は、速やかにご連絡ください。お送りいただく資料は、お客様が使用する権利を持つものに限ります。",
-        "お問い合わせの WhatsApp やメールで、パスポートや身分証明書の画像、銀行口座やカードの情報、決済用の QR コード、一部を伏せていない予約番号を送らないでください。",
+        "サイト内の相談フォーム、WhatsApp、メールで、パスポートや身分証明書の画像、銀行口座やカードの情報、決済用の QR コード、一部を伏せていない予約番号を送らないでください。",
       ],
     },
     {
@@ -312,7 +311,7 @@ const terms: JapaneseLegalCopy = {
       id: "privacy-contact",
       title: "9. 個人情報とお問い合わせ先",
       paragraphs: [
-        `個人情報は「プライバシーポリシー」に従って取り扱います。取引に関するご質問は、注文番号などお取引を特定できる情報を添えて、${homegroundBusiness.serviceEmail} までお送りください。`,
+        `個人情報は「プライバシーポリシー」に従って取り扱います。取引に関するご質問は、受付番号や注文番号など、お取引を特定できる情報を添えて、${homegroundBusiness.serviceEmail} までお送りください。`,
       ],
     },
   ],
@@ -336,14 +335,14 @@ const refundDelivery: JapaneseLegalCopy = {
     label: "オンライン決済について",
     title: "当サイトには、オンライン決済の機能はありません。",
     body:
-      "WhatsApp やメールでのご相談は無料です。お支払い方法のご案内は、範囲、料金、提供と返金の条件を書面で確認した後に限り、別途お送りします。",
+      "サイト内の相談フォーム、WhatsApp、メールでのご相談は無料です。お支払い方法のご案内は、範囲、料金、提供と返金の条件を書面で確認した後に限り、別途お送りします。",
   },
   sections: [
     {
       id: "delivery",
       title: "1. 提供までの流れ",
       numbered: [
-        "WhatsApp またはメールで、旅のご相談を無料でお送りいただきます。",
+        "サイト内の相談フォーム、WhatsApp、またはメールで、旅のご相談を無料でお送りいただきます。",
         "Homeground が、ご依頼の範囲とお引き受けに適しているかを確認します。",
         "お支払いの前に、書面のサービス確認書をお受け取りいただきます。",
         "作業は、お支払いと必要な資料がすべてそろってから始めます。",
@@ -357,6 +356,9 @@ const refundDelivery: JapaneseLegalCopy = {
     {
       id: "cancellation",
       title: "2. キャンセルと返金の各段階",
+      paragraphs: [
+        "以下は有料の旅程コンサルティングに関する段階です。プライベートツアーの予約・キャンセル条件は、お支払い前の書面による確認で個別に定めます。",
+      ],
       cards: [
         {
           title: "お支払い前",
@@ -424,17 +426,12 @@ export function getJapaneseLegalCopy(
 }
 
 // Adaptation notes:
-// navigation.homeCta: EN "Start my trip brief" becomes 旅の相談をする, because Japanese readers have no website form.
+// navigation.homeCta: EN "Start my trip brief" becomes 旅の相談をする.
 // related.contact: EN "Email Homeground" is written as メールで問い合わせる (the link is a mailto link).
-// Business callout body: "Start with one trip brief" becomes sending your trip wishes by WhatsApp or email.
-// Business "How a trip enquiry moves forward" step 1: "You submit a trip brief at no charge" becomes sending your trip wishes by WhatsApp or email at no charge.
-// Business "Payment records and contact": "through the website enquiry form" becomes お問い合わせの WhatsApp やメールで (inquiry messages by WhatsApp or email).
 // Business registry facts: registry names stay in Chinese (国家企业信用信息公示系统, 全国旅游监管服务平台, from the Chinese copy); each detail adds a Japanese gloss, and the licence lookup gloss combines the EN value (China Ministry of Culture and Tourism) with the Chinese platform name.
 // Business "Licensed services": the value is written in Japanese (中国国内旅行と訪中旅行（インバウンド）), matching the EN wording rather than the Chinese scope string.
 // Terms callout title: "Submitting a trip brief is not an order" becomes ご相談をお送りいただいただけでは、予約は成立しません.
 // Terms section 3: "A Full Trip Planning & Ground Support submission" becomes sending a consultation about 旅全体の計画と現地サポート.
-// Terms section 4: "Never submit payment credentials through the enquiry form" becomes a warning not to send them in inquiry messages by WhatsApp or email; "payment credentials" is spelled out as card, bank account and payment credential information, following the Chinese copy.
-// Terms section 5: "Do not submit ... through the website form" becomes a warning not to send those items in inquiry messages by WhatsApp or email.
-// Refund callout body: "A trip brief is free to submit" becomes consulting by WhatsApp or email is free.
-// Terms section 9: "enquiry or order reference" becomes 注文番号などお取引を特定できる情報, because WhatsApp and email enquiries have no enquiry number.
-// Refund section 1 step 1: "Submit a trip brief at no charge" becomes sending your trip consultation by WhatsApp or email at no charge.
+// Terms sections 4-5 warn against sending payment credentials or identity documents through the site form or external chat and email.
+// Terms section 9 accepts an enquiry receipt or an order reference; only saved site enquiries have a receipt number.
+// Refund stages concern paid itinerary consulting, while tour cancellation terms are confirmed separately before payment.

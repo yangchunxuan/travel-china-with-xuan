@@ -83,7 +83,7 @@ export function JapaneseToursHubPage() {
                 body="気になるコースと旅行の時期、人数をお知らせください。日本語でご案内します。まだコースが決まっていなくてもかまいません。"
                 emailHref={contact.email}
                 headingId="ja-tours-contact-title"
-                title="WhatsApp・メールで相談"
+                title="日本語で旅を相談する"
                 whatsappHref={contact.whatsapp}
               />
             </div>

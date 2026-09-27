@@ -4,9 +4,8 @@ import type { HomegroundPrivacyCopy } from "./homegroundPrivacyI18n";
 /**
  * Japanese privacy notice. The English copy in lib/homegroundPrivacyI18n.ts is
  * the source of truth; every field, row and item follows it in the same order.
- * The trip-brief form and the homepage quick-email option exist only on the
- * English, Chinese and Korean pages. Japanese readers contact Homeground by
- * WhatsApp or email, so form wording is adapted (see the notes at the end).
+ * The full trip brief remains on English, Chinese and Korean pages. Japanese
+ * visitors can submit a saved email inquiry or use an external contact draft.
  */
 export const japanesePrivacyCopy: HomegroundPrivacyCopy = {
   htmlLang: "ja",
@@ -35,24 +34,24 @@ export const japanesePrivacyCopy: HomegroundPrivacyCopy = {
       "ウェブサイトのフォームから送信されたお問い合わせは Supabase のソウルリージョンに保存され、通知は Resend の東京リージョンを経由して、Homeground の担当者が確認している Gmail の受信トレイに送られます。",
       "Homeground が管理するウェブサイト上のお問い合わせ記録は、保存から12か月以内に削除します。お客様との取引関係や法的義務により記録が必要な場合は、必要な記録だけを別の記録体系で、その規則に従って保管します。これによってウェブサイト上の記録の保存期間が延びることはありません。メールや WhatsApp でのやり取り（日本語ページからのご相談を含みます）には、それぞれのサービスと業務記録の規則が適用されます。",
       "秘密鍵を用いてハッシュ化した識別子を、10分間と24時間のリクエスト数制限の集計枠に使います。各集計単位（バケット）は、最終更新の24時間後に削除の対象となり、通常は1分ごとに実行される次回の削除処理で削除されます。",
-      "英語・中国語・韓国語ページの旅行相談フォームでは、メールアドレスまたは WhatsApp の番号のどちらか一方を保存します。同じく英語・中国語・韓国語のホームページにある簡易メール問い合わせでは、入力されたメールアドレスを保存し、公開中のプライベートツアーのページから開かれた場合は、連絡方法の選択肢の上に表示された、許可リストに登録済みのツアー情報も保存します。任意のアクセス解析とマーケティングの計測は、閲覧者がそれぞれ許可しない限りオフのままです。AI チャットは引き続き使用していません。",
+      "英語・中国語・韓国語ページの旅行相談フォームでは、メールアドレスまたは WhatsApp の番号のどちらか一方を保存します。各言語の簡易メール問い合わせと日本語ページのサイト内フォームでは、入力されたメールアドレスを保存します。日本語の商品ページからのお問い合わせでは、選んだツアー、プラン、人数、入力された旅行日とメモも保存します。任意のアクセス解析とマーケティングの計測は、閲覧者がそれぞれ許可しない限りオフのままです。AI チャットは引き続き使用していません。",
     ],
   },
   hero: {
     eyebrow: "Homeground · プライバシー",
     title: "お問い合わせの取り扱いについて",
     intro:
-      "日本語ページには入力フォームはありません。WhatsApp またはメールで直接ご相談いただけます。その場合の取り扱いは、以下の Gmail、WhatsApp、SaleSmartly に関する説明をご覧ください。英語・中国語・韓国語ページでは、旅行相談フォームの質問に答え、メールアドレスまたは WhatsApp の番号のどちらか一方を添えて、お問い合わせを1件送ることができます。いずれの方法でも、お問い合わせは現在のご相談に担当者が返信するためのものであり、自動で予約を確定したり、関係のない宣伝に使ったりするものではありません。",
+      "日本語ページでは、サイト内のフォームにメールアドレスを入力してお問い合わせを送れます。ツアーページでは、選んだ旅程と人数に加え、希望する旅行日やご要望も送信できます。保存に成功した場合だけ受付番号を表示します。WhatsApp、Messenger、メールアプリから直接ご連絡いただくこともできますが、リンクを開いただけでは送信されません。英語・中国語・韓国語ページでは、詳しい旅行相談フォームも利用できます。いずれもご相談への返信が目的であり、自動予約や関係のない宣伝には使いません。",
     reviewedLabel: "最終確認日",
-    reviewedValue: "2026年8月24日",
+    reviewedValue: "2026年9月27日",
   },
   currentFlow: {
     title: "ウェブサイトから担当者の返信まで",
     paragraphs: [
       "旅行相談フォームを最初に操作した後、フォームは入力途中の状態を復元できるよう、選択式の回答の一部をこのブラウザのセッションストレージに保存することがあります。「その他の場所」の自由記述、ルートのメモ、連絡先、任意の出発国、おおよその予算は、ここには一切保存しません。このブラウザ内の記録は、フォームの操作がないまま30分が経過したとき、最初からやり直したとき、お問い合わせの送信に成功したときに消去されます。",
       "フォームが送信されると、Supabase が旅のご希望、選択されたメールアドレスまたは WhatsApp の番号、任意で入力された「旅全体の計画と現地サポート」のご依頼、ルートのメモ、出発国・地域、1人あたりのおおよその予算を検証して保存します。保存に成功した後にのみ、ページに保存済みと表示されます。",
-      "英語・中国語・韓国語のホームページにある簡易メール問い合わせでは、入力されたメールアドレス、ページの言語、言語ごとに固定された送信画面のコード、確実な送信とリクエスト数制限に必要な限られた技術的記録を送信します。公開中のプライベートツアーのページから連絡欄を開いた場合は、そのツアーの許可リストに登録された識別名（スラッグ）、各言語の正式名称、連絡方法の選択肢の上に表示された有効なサービスプランと人数の選択も送信します。URL で指定された名称を受け付けることはありません。旅程、旅行者のプロフィール、日付、目的地、予算、自由記述のメッセージは収集せず、Supabase が保存を確認した後にのみ送信完了と表示します。",
-      "英語・中国語・韓国語のホームページにある WhatsApp と Messenger、および日本語ページの WhatsApp とメールのボタンは、外部のアプリやサービスを直接開くリンクです（日本語ページのボタンは、相談内容の下書きを開くだけです）。どのリンクを開いても、閲覧者の電話番号やメッセージが Homeground のウェブサイトに保存されることはなく、送信済みのお問い合わせとしても扱いません。その後に WhatsApp または Messenger で送信したメッセージは、WhatsApp、Facebook、Meta がそれぞれの規約と基盤のもとで処理します。メールで送信した内容は、送信者側のメールサービスと Homeground が利用する Gmail で処理されます。Homeground が受信したメールや WhatsApp の会話は、チームで対応するため SaleSmartly に同期されることがあります。",
+      "英語・中国語・韓国語・日本語の簡易メール問い合わせでは、入力されたメールアドレス、ページの言語、送信画面のコード、確実な送信とリクエスト数制限に必要な限られた技術的記録を送信します。日本語のツアーページでは、許可リストに登録されたツアー名と、お選びいただいた有効なプラン・人数、入力された希望日とメモも送信します。URL で指定された商品名は受け付けません。Supabase が保存を確認した後にのみ、受付番号を表示します。",
+      "サイト内フォームの送信と、外部の連絡リンクは別の操作です。WhatsApp、Messenger、メールアプリのリンクを開いても、メッセージや電話番号が Homeground のサイトに保存されることはなく、送信済みの問い合わせとして扱いません。その後にご自身で送信した内容は、各サービスと Homeground が利用する Gmail で処理されます。受信したメールや WhatsApp の会話は、チームで対応するため SaleSmartly に同期されることがあります。",
       "閲覧者がアクセス解析を許可した場合、Homeground は一時的な匿名のブラウザセッション用トークンを作成します。イベントの受付サービスは、まず有効期間の短い署名付きの認証情報を発行し、認証情報のない、または期限切れのイベント送信は拒否します。最初の流入元に関する限定的な情報は、訪問時のリンクに Homeground が署名した UTM のソース、メディア、キャンペーン、コンテンツのコードが含まれている場合にのみ記録します。署名のない UTM、改変された UTM、識別できない UTM の値は「不明」のまま扱います。ウェブサイトのイベント記録には、参照元の完全な URL、IP アドレスそのもの、ユーザーエージェント文字列、クリック識別子、連絡先、自由記述の回答は保存しません。",
       "アクセス解析が許可されている場合、Homeground はページの閲覧と、あらかじめ定めた操作（連絡方法の表示、連絡手段の選択、連絡用リンクを開く操作、メールフォームへの入力開始、公開中のツアーの選択肢の変更、お問い合わせの送信の試み）を記録します。自社のイベント受付サービスは、公開中の商品コード、サービスプラン、その商品ページに表示された人数の選択を受け取ることもあります。これらの商品選択の項目は、Google Analytics や Meta Pixel には送信しません。クリックの記録は選択肢が開かれたことを示すだけで、メッセージの送信や予約の成立を示すものではありません。送信の明確な失敗と、ブラウザで結果を確認できなかった送信は区別して記録し、保存済みのお問い合わせはサーバーの記録に基づいて数えます。一時的な再送信は同じイベント識別子を保ち、アクセス解析の許可を取り消すと消去されます。",
       "同じブラウザから後でお問い合わせが送信された場合、保存されている最初の流入元のラベルをそのお問い合わせに付けて、どのページや投稿がきっかけになったかを把握することがあります。セッションや流入元の情報がなくてもお問い合わせは正常に送信でき、不明な流入元を推測で補うことはありません。",
@@ -95,7 +94,7 @@ export const japanesePrivacyCopy: HomegroundPrivacyCopy = {
         name: "返信用にお選びいただいた連絡先",
         stage: "送信されたお問い合わせ、Gmail の通知、連携したチーム受信トレイ",
         purpose:
-          "旅行相談フォームでは、メールアドレスまたは WhatsApp の番号のどちらか一方を受け付けます。英語・中国語・韓国語のホームページにある簡易メール問い合わせで受け付けるのは、メールアドレスのみです。これらの連絡先は現在のご相談への返信に使い、関係のない宣伝への同意とはみなしません。英語・中国語・韓国語のホームページから WhatsApp や Messenger を直接開くリンク、および日本語ページの WhatsApp・メールのボタンでは、Homeground のウェブサイトに連絡先は保存されません。",
+          "詳しい旅行相談フォームでは、メールアドレスまたは WhatsApp の番号のどちらか一方を受け付けます。簡易メール問い合わせと日本語のサイト内フォームでは、メールアドレスを受け付けます。これらは現在のご相談への返信に使い、関係のない宣伝への同意とはみなしません。WhatsApp、Messenger、メールアプリへの直接リンクを開いただけでは、連絡先はサイトに保存されません。",
       },
       {
         name: "任意：出発国・地域",
@@ -234,7 +233,7 @@ export const japanesePrivacyCopy: HomegroundPrivacyCopy = {
     paragraphs: [
       "旅行相談フォームの回答は、返信用の連絡先を1つ入力してご自身の意思で送信するまで、ブラウザ内にとどまります。送信前にページを離れたり、最初からやり直したりしても、Homeground にお問い合わせが送られることはありません。",
       "お問い合わせの取り扱いと、マーケティングへの同意は別のものです。Homeground は、別途の同意なく、お問い合わせの際にお知らせいただいた連絡先を関係のない宣伝に使うことはありません。",
-      "アクセス解析とマーケティングの計測は、それぞれ個別に許可または拒否でき、英語・中国語・韓国語ページのフッターにある「プライバシーの選択」から設定を開き直せます。任意の計測を拒否しても、旅行相談フォームの利用や送信が妨げられることはありません。許可を取り消すと、以降のイベント送信を停止し、技術的に可能な範囲で、関連する Homeground のブラウザ上の設定を消去します。",
+      "アクセス解析とマーケティングの計測は、それぞれ個別に許可または拒否できます。英語・中国語・韓国語ページでは、フッターの「プライバシーの選択」から設定を開き直せます。日本語ページには任意の計測を開始する同意画面はありません。計測の可否にかかわらず、お問い合わせは送信できます。",
     ],
     items: [
       "お問い合わせを送らないことを選べます。",
@@ -258,19 +257,5 @@ export const japanesePrivacyCopy: HomegroundPrivacyCopy = {
     "このプライバシーポリシーは、Homeground の旅行相談フォーム、お問い合わせの受付、同意に基づく任意のウェブサイト計測を対象としています。お問い合わせを送っても、関係のない宣伝への同意にはなりません。また、AI チャットは使用していません。",
 };
 
-// Adaptation notes:
-// navigation.homeCta: EN "Back to the trip brief" becomes 旅の相談をする, because Japanese readers have no trip-brief form.
-// hero.intro: adds that Japanese pages have no input form, that Japanese readers consult by WhatsApp or email, and points them to the Gmail, WhatsApp and SaleSmartly explanations; the EN form sentence is kept as describing the English, Chinese and Korean pages, and "It is for a human reply ..., not for automatic booking or unrelated marketing" is applied to every contact method (いずれの方法でも).
-// "trip brief" / "planner" / "trip questionnaire" are rendered as 旅行相談フォーム (the form on the English, Chinese and Korean pages).
-// status.body: "the trip brief" becomes the trip wishes sent through the 旅行相談フォーム, so the sentence stays true for Japanese readers who have no form.
-// status.blockers[0]: "Enquiries are stored in Supabase" becomes enquiries sent through the website forms, because WhatsApp or email messages are not stored there.
-// status.blockers[1]: "Later email or WhatsApp conversations" becomes email or WhatsApp conversations, including consultations from the Japanese pages, which have no earlier website enquiry.
-// status.blockers[3], currentFlow[2] and collection.items[3]: "The full trip-brief form" and "The homepage quick-email option" are qualified as the English, Chinese and Korean pages' form and homepage option.
-// currentFlow[11]: "through the enquiry form" becomes through the 旅行相談フォーム or WhatsApp/email inquiries.
-// choices.title: "You decide whether to submit" becomes you decide whether to send an inquiry, covering WhatsApp and email.
-// choices.paragraphs[1]: "the submitted contact" becomes the contact details given with an inquiry, covering WhatsApp and email inquiries.
-// choices.paragraphs[2]: "can reopen Privacy choices from the footer" becomes the footer of the English, Chinese and Korean pages, because the Japanese footer has no Privacy choices control.
-// choices.items[0]: "Do not submit the enquiry form" becomes choosing not to send an inquiry.
-// choices.items[3]: "leave the optional departure country or rough budget blank" becomes you do not have to tell us the optional departure country or rough budget, which also fits WhatsApp and email.
-// currentFlow[3], collection.items[3] and providers.rows[4]: the WhatsApp/Messenger links are qualified as the English, Chinese and Korean homepages', and the Japanese WhatsApp/email buttons are added as draft-opening links that store nothing on the website.
-// contact.emailPlaceholder uses homegroundBusiness.serviceEmail, which has the same value as the source privacyEmail constant (not exported).
+// Japanese full trip brief is not enabled. Japanese on-site email and quote
+// submissions are separate from external WhatsApp, Messenger and mail drafts.

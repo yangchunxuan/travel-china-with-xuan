@@ -23,7 +23,7 @@ const normalized = (input) => { const result = validateAndNormalizeInquiry(input
 const semantic = (input) => canonicalizeJson(semanticInquiryPayload(normalized(input)));
 
 test("quote contract retains every valid localized product selection and classic identity-only tour", () => {
-  for (const locale of ["en", "zh", "ko"]) {
+  for (const locale of ["en", "zh", "ko", "ja"]) {
     for (const slug of privateTourInquirySlugs) {
       if (slug === "zhangjiajie-4-day-private-tour") {
         const value = normalized(quotePayload(locale, slug, null));
@@ -82,6 +82,22 @@ test("quote rejects impossible dates, forged context, cross-locale paths and exc
   assert.equal(validateAndNormalizeInquiry({ ...quotePayload("en", "zhangjiajie-4-day-private-tour", null), productInterest: previous }, config).ok, false);
 });
 
+test("Japanese quote requires its published title, slug, priced selection and exact page path", () => {
+  const slug = "beijing-highlights-5-day-private-tour";
+  const valid = quotePayload("ja", slug, { packageId: "no-guide", travelers: 4 });
+  const saved = normalized(valid);
+  assert.equal(saved.locale, "ja");
+  assert.equal(saved.productInterest.name, getPrivateTourInquiryContext(slug, "ja").name);
+  assert.equal(saved.attribution.landingPath, `/ja/tours/${slug}/`);
+  for (const changed of [
+    { productInterest: { ...valid.productInterest, name: getPrivateTourInquiryContext(slug, "en").name } },
+    { productInterest: { ...valid.productInterest, slug: "chengdu-pandas-sanxingdui-5-day-private-tour" } },
+    { productInterest: { ...valid.productInterest, selection: { packageId: "not-a-package", travelers: 4 } } },
+    { productInterest: { ...valid.productInterest, selection: { packageId: "no-guide", travelers: 3 } } },
+    { attribution: { landingPath: `/tours/${slug}/` } },
+  ]) assert.equal(validateAndNormalizeInquiry({ ...valid, ...changed }, config).ok, false);
+});
+
 test("date, notes, product and group participate in retry identity while homepage shape remains unchanged", () => {
   const base = quotePayload(); const hash = semantic(base);
   for (const change of [{ travelDate: null }, { note: "Different needs" }, { productInterest: { ...base.productInterest, selection: { packageId: "no-guide", travelers: 2 } } }]) {
@@ -132,6 +148,11 @@ test("actual intake and notification handlers preserve quote fields, replay iden
     assert.equal((await intake(request({ ...base, trafficSessionToken: randomUUID() }, key))).status, 200);
     assert.equal(writes[0].body.p_payload_hash, writes[1].body.p_payload_hash);
     assert.match(writes[1].path, /_with_traffic_v1$/); assert.match(writes[1].body.p_traffic_session_hash, /^[a-f0-9]{64}$/);
+    const japanese = quotePayload("ja");
+    assert.equal((await intake(request(japanese, randomUUID()))).status, 201);
+    assert.equal(writes.at(-1).body.p_locale, "ja");
+    assert.deepEqual(writes.at(-1).body.p_product_interest, japanese.productInterest);
+    assert.equal(writes.at(-1).body.p_landing_path, japanese.attribution.landingPath);
     assert.equal((await intake(request({ ...base, note: "changed" }, key))).status, 409);
     const before = writes.length; failWrite = true;
     const uncertain = await intake(request(base, randomUUID()));
@@ -157,7 +178,7 @@ test("actual intake and notification handlers preserve quote fields, replay iden
 
     await import(`../functions/notify-inquiries/index.ts?quote=${Date.now()}`); const worker = handler;
     const runWorker = () => worker(new Request("https://project.supabase.co/functions/v1/notify-inquiries", { method: "POST", headers: { "x-worker-secret": env.get("NOTIFICATION_WORKER_SECRET") } }));
-    for (const locale of ["en", "zh", "ko"]) {
+    for (const locale of ["en", "zh", "ko", "ja"]) {
       for (const isClassic of [false, true]) {
         const input = isClassic ? quotePayload(locale, "zhangjiajie-4-day-private-tour", { packageId: "selected-city-stay", travelers: 6 }) : quotePayload(locale);
         currentJob = { job_id: randomUUID(), inquiry_id: randomUUID(), public_reference: "HG-TEST", locale, route_id: "private-tour-quote",

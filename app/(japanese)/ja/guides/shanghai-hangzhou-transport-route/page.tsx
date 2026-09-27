@@ -11,6 +11,7 @@ import {
 import { jaPilotCopy } from "../../../../../lib/jaPilotCopy";
 import { japaneseDraftNote, japaneseLanguagePaths } from "../../../../../lib/japaneseSite";
 import { KeepWords } from "../../../../../components/text/KeepWords";
+import { JapaneseGuideContactLink } from "../../../../../components/JapaneseGuideContactLink";
 
 const copy = jaPilotCopy.guide;
 const image = "/images/guides/shanghai-hangzhou-transport-route/hero-1600.webp";
@@ -67,7 +68,7 @@ export default function JapaneseShanghaiHangzhouGuide() {
         <section className={styles.cta} id="contact" aria-labelledby="contact-title">
           <h2 id="contact-title"><KeepWords locale="ja" text={copy.ctaTitle} /></h2><p>{copy.ctaBody}</p>
           <div className={styles.ctaLinks}>
-            <a className={styles.buttonPrimary} href={jaPilotWhatsAppHref("guide")} target="_blank" rel="noopener noreferrer">{copy.ctaLabel} · WhatsApp</a>
+            <JapaneseGuideContactLink className={styles.buttonPrimary} emailHref={jaPilotEmailHref("guide")} whatsappHref={jaPilotWhatsAppHref("guide")}>{copy.ctaLabel}</JapaneseGuideContactLink>
             <a className={styles.buttonSecondary} href={jaPilotEmailHref("guide")}>メールで相談する</a>
           </div>
           <p className={styles.imageCaption}>{japaneseDraftNote}</p>

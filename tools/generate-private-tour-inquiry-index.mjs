@@ -23,11 +23,42 @@ const check = process.argv.includes("--check");
 const { privateTourProducts } = await import(
   pathToFileURL(path.join(root, "lib", "privateTourProducts.ts")).href
 );
+const { getJapaneseTourCopy } = await import(
+  pathToFileURL(path.join(root, "lib", "japaneseTourCopy.ts")).href
+);
+const { japaneseCruiseOverrides } = await import(
+  pathToFileURL(path.join(root, "lib", "japaneseCruiseOverrides.ts")).href
+);
+const { japaneseExpansionOverrides } = await import(
+  pathToFileURL(path.join(root, "lib", "japaneseExpansionOverrides.ts")).href
+);
+const { japaneseSmallGroupOverrides } = await import(
+  pathToFileURL(path.join(root, "lib", "japaneseSmallGroupOverrides.ts")).href
+);
+const { jaPilotCopy } = await import(
+  pathToFileURL(path.join(root, "lib", "jaPilotCopy.ts")).href
+);
+const { jaPilot } = await import(
+  pathToFileURL(path.join(root, "lib", "jaPilot.ts")).href
+);
+
+function japaneseTitle(slug) {
+  const title = slug === jaPilot.tourSlug
+    ? jaPilotCopy.tour.title
+    : {
+        ...getJapaneseTourCopy(slug),
+        ...japaneseCruiseOverrides[slug],
+        ...japaneseExpansionOverrides[slug],
+        ...japaneseSmallGroupOverrides[slug],
+      }.title;
+  if (!title) throw new Error(`Japanese tour title is missing for ${slug}`);
+  return title;
+}
 
 function projectPrivateTourInquiryIndex(products) {
   return products.map((product) => ({
     slug: product.slug,
-    title: { en: product.title.en, zh: product.title.zh, ko: product.title.ko },
+    title: { en: product.title.en, zh: product.title.zh, ko: product.title.ko, ja: japaneseTitle(product.slug) },
     packages: product.packages.map((tourPackage) => ({
       id: tourPackage.id,
       prices: tourPackage.prices.map((row) => ({ travelers: row.travelers })),
@@ -47,7 +78,7 @@ function render(index) {
     return [
       "  {",
       `    slug: ${q(entry.slug)},`,
-      `    title: { en: ${q(entry.title.en)}, zh: ${q(entry.title.zh)}, ko: ${q(entry.title.ko)} },`,
+      `    title: { en: ${q(entry.title.en)}, zh: ${q(entry.title.zh)}, ko: ${q(entry.title.ko)}, ja: ${q(entry.title.ja)} },`,
       "    packages: [",
       ...packages,
       "    ],",
@@ -67,7 +98,7 @@ import type { PrivateTourPriceTier } from "./privateTourProducts.ts";
 
 export interface PrivateTourInquiryIndexEntry {
   readonly slug: string;
-  readonly title: Readonly<Record<HomegroundLocale, string>>;
+  readonly title: Readonly<Record<HomegroundLocale | "ja", string>>;
   readonly packages: readonly {
     readonly id: string;
     readonly prices: readonly { readonly travelers: PrivateTourPriceTier["travelers"] }[];

@@ -33,7 +33,7 @@ interface NotificationJob {
   job_id: string;
   inquiry_id: string;
   public_reference: string;
-  locale: "en" | "zh" | "ko";
+  locale: "en" | "zh" | "ko" | "ja";
   route_id: string;
   answers: Record<string, unknown>;
   route_snapshot: Record<string, unknown>;

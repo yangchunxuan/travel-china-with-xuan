@@ -76,7 +76,7 @@ function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale =
 }
 
 test("intake preserves every allowed tour selection in every locale and its semantic hash", () => {
-  for (const locale of ["en", "zh", "ko"]) {
+  for (const locale of ["en", "zh", "ko", "ja"]) {
     for (const slug of privateTourInquirySlugs) {
       for (const packageId of packages) {
         for (const travelers of [2, 3, 4, 5, 6, 7, 8, 9]) {
@@ -426,6 +426,10 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
     assert.equal((await intake(request(payload({ ...selected, selection: { ...selected.selection, price: 1 } }), randomUUID()))).status, 422);
     assert.equal(persistenceCalls, beforeInvalid);
 
+    const japanese = getPrivateTourInquiryContext(beijing, "ja", { packageId: "no-guide", travelers: 4 });
+    assert.equal((await intake(request(payload(japanese, "ja"), randomUUID()))).status, 201);
+    assert.deepEqual(attribution, { productInterest: japanese });
+
     for (const slug of [
       "zhangjiajie-forest-4-day-private-tour",
       "zhangjiajie-furong-fenghuang-7-day-private-tour",
@@ -451,7 +455,7 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       lease_token: randomUUID(), row_version: 1, attempt_count: 1,
     };
     const runWorker = () => worker(new Request("https://project.supabase.co/functions/v1/notify-inquiries", { method: "POST", headers: { "x-worker-secret": env.get("NOTIFICATION_WORKER_SECRET") } }));
-    for (const locale of ["en", "zh", "ko"]) {
+    for (const locale of ["en", "zh", "ko", "ja"]) {
       for (const packageId of ["english-guided", "no-guide"]) {
       const context = getPrivateTourInquiryContext(beijing, locale, { packageId, travelers: 4 });
       currentJob = { ...baseJob, locale, answers: { informationStatus: "not_provided", productInterest: context } };

@@ -8,6 +8,7 @@ import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { privateTourInquirySelectionQueryKeys } from "../lib/privateTourInquiryContext";
 import { jaPilot } from "../lib/jaPilot";
+import { japaneseContactReady, openJapaneseContact } from "../lib/japaneseContactFlow";
 import {
   japaneseLanguagePaths,
   japaneseLegalLinks,
@@ -61,6 +62,7 @@ export function JapaneseSiteHeader({
   selectionSlug?: string | null;
 }) {
   const selectedHref = useSelectedTourHref(selectionSlug);
+  const selectedTour = usePrivateTourSelection();
   const primaryLinks = japanesePrimaryLinks;
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -141,6 +143,16 @@ export function JapaneseSiteHeader({
 
   const close = () => setOpen(false);
   const ctaHref = selectedHref(contactHref);
+  const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!japaneseContactReady()) return;
+    event.preventDefault();
+    setOpen(false);
+    window.setTimeout(() => { if (!openJapaneseContact({
+      slug: selectionSlug ?? undefined,
+      selection: selectionSlug && selectedTour?.slug === selectionSlug ? selectedTour.selection : undefined,
+    })) window.location.assign(ctaHref); }, 0);
+  };
 
   return (
     <header
@@ -199,7 +211,7 @@ export function JapaneseSiteHeader({
                 </a>
               ))}
             </nav>
-            <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref}>
+            <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref} onClick={openTourInquiry}>
               <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
             </a>
@@ -265,7 +277,7 @@ export function JapaneseSiteHeader({
                 ))}
               </div>
             </div>
-            <a className={headerStyles.mobileCta} href={ctaHref} onClick={close}>
+            <a className={headerStyles.mobileCta} href={ctaHref} onClick={openTourInquiry}>
               旅について相談する
             </a>
           </div>
