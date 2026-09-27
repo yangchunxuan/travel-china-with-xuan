@@ -5,7 +5,8 @@ import { HomepageProductShowcase } from "./HomepageProductShowcase";
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import { JapaneseContactPanel } from "./JapaneseContactPanel";
-import { JapaneseSiteFooter, JapaneseSiteHeader } from "./JapaneseTourChrome";
+import { JapaneseSiteHeader } from "./JapaneseTourChrome";
+import { JapaneseHomeFooter } from "./JapaneseHomeFooter";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { japaneseHomeCopy as copy } from "../lib/japaneseHomeCopy";
 import { splitJapanesePhrases } from "../lib/japanesePhrases";
@@ -191,7 +192,7 @@ export function JapaneseHomePage({
         </section>
       </main>
 
-      <JapaneseSiteFooter currentPath={japaneseSite.home} />
+      <JapaneseHomeFooter />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </div>
   );
