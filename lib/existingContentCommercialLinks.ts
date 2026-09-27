@@ -92,6 +92,8 @@ const approvedCommercialGuideIds = [
   "guilin-yangshuo-transport-route",
   "yangshuo-town-or-yulong-river-where-to-stay",
   "guilin-yangshuo-with-kids-and-older-parents",
+  "chengdu-jiuzhaigou-transport-route",
+  "huangshan-summit-or-gateway-base",
   "first-china-trip-jiangnan-6-or-beijing-11-days",
   "suzhou-with-older-parents-garden-museum-transfer-day",
   "zhangjiajie-city-or-wulingyuan-hotel-base",
@@ -160,7 +162,7 @@ const productContexts = {
   },
   "guilin-yangshuo-5-day-private-tour": {
     destinations: [],
-    guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "yangshuo-town-or-yulong-river-where-to-stay", "guilin-yangshuo-with-kids-and-older-parents"],
+    guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "li-river-cruise-tickets-piers-booking", "yangshuo-town-or-yulong-river-where-to-stay", "guilin-yangshuo-with-kids-and-older-parents"],
   },
   "harbin-winter-5-day-private-tour": {
     destinations: [],
@@ -193,12 +195,12 @@ const productContexts = {
   },
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
     destinations: ["chengdu"],
-    guides: ["chengdu-panda-base-or-dujiangyan-panda-valley"],
+    guides: ["chengdu-jiuzhaigou-transport-route", "chengdu-panda-base-or-dujiangyan-panda-valley"],
     relatedProducts: [p("chengdu-pandas-sanxingdui-5-day-private-tour")],
   },
   "kunming-dali-lijiang-8-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["lijiang-old-town-or-shuhe-where-to-stay", "jade-dragon-snow-mountain-cable-car-booking"],
   },
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": {
     destinations: [],
@@ -230,7 +232,7 @@ const productContexts = {
   },
   "huangshan-hongcun-huizhou-5-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["huangshan-summit-or-gateway-base"],
   },
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": {
     destinations: [],
