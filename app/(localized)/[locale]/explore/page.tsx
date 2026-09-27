@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DestinationsHubPage } from "../../../../components/DestinationsHubPage";
 import { localizedRouteLocale } from "../../../../lib/localizedRouteLocale";
+import { withJapaneseAlternate } from "../../../../lib/japaneseSite";
 import { getSearchHubMetadata } from "../../../../lib/searchPlatformManifest";
 
 export async function generateMetadata({
@@ -10,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: routeLocale } = await params;
   const locale = localizedRouteLocale(routeLocale);
-  return getSearchHubMetadata("explore", locale);
+  return withJapaneseAlternate(getSearchHubMetadata("explore", locale), "/ja/explore/");
 }
 
 export default async function LocalizedExploreHubPage({

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       en: "/",
       ko: "/ko/",
       "zh-Hans": "/zh/",
+      ja: "/ja/",
       "x-default": "/",
     },
   },

@@ -387,3 +387,35 @@
     transition: none;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.localeRoot[data-legal-locale="ja"] {
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.localeRoot[data-legal-locale="ja"] .eyebrow,
+.localeRoot[data-legal-locale="ja"] .calloutLabel {
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+/* "ch" is half a kanji wide, so Japanese headings measure in em. */
+.localeRoot[data-legal-locale="ja"] .hero h1 {
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  letter-spacing: 0;
+  line-height: 1.2;
+  max-inline-size: 11em;
+}
+
+.localeRoot[data-legal-locale="ja"] .callout h2 {
+  line-height: 1.35;
+}
+
+.localeRoot[data-legal-locale="ja"] .section > h2 {
+  letter-spacing: 0;
+  line-height: 1.3;
+  max-inline-size: 18em;
+}

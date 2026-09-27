@@ -667,6 +667,7 @@ export function getStudioLanguagePaths() {
     en: "/studio/",
     "zh-Hans": "/zh/studio/",
     ko: "/ko/studio/",
+    ja: "/ja/studio/",
     "x-default": "/studio/",
   };
 }

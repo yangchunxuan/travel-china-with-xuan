@@ -1193,3 +1193,48 @@
     border: 1px solid CanvasText;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.page[data-homeground-locale="ja"] .hero h1 {
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  letter-spacing: 0;
+  line-height: 1.2;
+  max-width: 12em;
+}
+
+.page[data-homeground-locale="ja"] :is(.sectionIntro h2, .cityGrid h3, .scaleGrid h3, .handoff h2) {
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+/* "ch" is half a kanji wide, so Japanese headings measure in em. */
+.page[data-homeground-locale="ja"] :is(.sectionIntro h2, .handoff h2) {
+  max-width: 16em;
+}
+
+/* Seven-character Japanese labels ("ルートの役割") need a wider label column. */
+.page[data-homeground-locale="ja"] .cityFacts > div {
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+}
+
+.page[data-homeground-locale="ja"] .cityFacts dt {
+  white-space: nowrap;
+}
+
+/* The Japanese handoff has a contact panel beside it; align both to the top. */
+.page[data-homeground-locale="ja"] .handoff {
+  align-items: start;
+}
+
+@media (max-width: 48rem) {
+  .page[data-homeground-locale="ja"] .hero h1 {
+    font-size: clamp(2.1rem, 9.4vw, 2.6rem);
+    max-width: 100%;
+  }
+}
+
+/* The Japanese page's own contact section, reached from its header button. */
+.page[data-homeground-locale="ja"] :global(#contact) {
+  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 1rem);
+}

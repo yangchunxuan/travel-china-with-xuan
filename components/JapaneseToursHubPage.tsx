@@ -1,21 +1,18 @@
 import Link from "next/link";
 import { JapaneseTourFooter, JapaneseTourHeader } from "./JapaneseTourChrome";
-import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { japaneseLegacyZhangjiajieCopy, japaneseLegacyZhangjiajieProduct } from "../lib/japaneseLegacyZhangjiajieProduct";
-import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
-import { getPrivateTourStartingPrice } from "../lib/privateTourStartingPrice";
-import { privateTourProducts } from "../lib/privateTourProducts";
+import { japaneseGeneralContactHrefs, japaneseSite } from "../lib/japaneseSite";
+import { JapaneseContactPanel } from "./JapaneseContactPanel";
+import { getJapaneseTourCatalog } from "../lib/japaneseTourCatalog";
+import { JapaneseTourQuickCard } from "./JapaneseTourQuickCard";
 import localeStyles from "./LocaleRoot.module.css";
 import styles from "./PrivateToursHubPage.module.css";
+import { KeepWords } from "./text/KeepWords";
 
 const site = "https://homegroundchina.com";
 
 export function JapaneseToursHubPage() {
-  const tours = [
-    ...privateTourProducts.map((product) => localizeJapanesePrivateTourProduct(product)),
-    localizeJapanesePrivateTourProduct(japaneseLegacyZhangjiajieProduct, japaneseLegacyZhangjiajieCopy),
-  ];
-  const contactHref = `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent("日本語で中国旅行を相談")}`;
+  const tours = getJapaneseTourCatalog();
+  const contact = japaneseGeneralContactHrefs(japaneseSite.tours);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -63,58 +60,14 @@ export function JapaneseToursHubPage() {
           <div className={styles.quickIntro}>
             <div>
               <p className={styles.eyebrow}>ツアー一覧</p>
-              <h2 id="tour-quick-compare-title">行程を比べて選ぶ。</h2>
+              <h2 id="tour-quick-compare-title"><KeepWords locale="ja" text="行程を比べて選ぶ。" /></h2>
             </div>
             <div className={styles.priceContext}>
               <p>料金は各ツアーページに記載の人数・プランを基準にご確認ください。掲載料金のないコースは旅行日程と人数に合わせてお見積もりします。</p>
             </div>
           </div>
           <ul className={styles.quickList}>
-            {tours.map((tour) => {
-              const starting = getPrivateTourStartingPrice(tour);
-              return (
-                <li className={styles.quickItem} key={tour.slug}>
-                  <Link className={styles.quickLink} href={tour.path}>
-                    <figure className={styles.quickImage}>
-                      <img
-                        alt={tour.heroImage.alt}
-                        decoding="async"
-                        height={tour.heroImage.height}
-                        loading="lazy"
-                        src={tour.heroImage.src}
-                        style={{ objectPosition: tour.heroImage.objectPosition }}
-                        width={tour.heroImage.width}
-                      />
-                    </figure>
-                    <div className={styles.quickIdentity}>
-                      <p>{tour.tourFormat === "small-group" ? "出発日指定の少人数グループ" : "プライベートツアー"}</p>
-                      <h3>{tour.title}</h3>
-                      <p className={styles.quickAppeal}>{tour.lede}</p>
-                    </div>
-                    <p className={styles.quickFacts}>
-                      {starting ? <>
-                        <span className={styles.priceLabel}>掲載料金の目安</span>
-                        <strong>{starting.formatted}</strong>
-                        <span>{tour.tourFormat === "small-group" ? "2名1室・1名あたり" : `${starting.selection.travelers}名参加時・1名あたり`}</span>
-                        <span className={styles.priceService}>{starting.serviceLabel}</span>
-                      </> : <>
-                        <strong>日程に合わせてお見積もり</strong>
-                        <span>人数・お部屋・プランを確認してご案内</span>
-                      </>}
-                    </p>
-                    <div className={styles.quickMeta}>
-                      <dl className={styles.quickDetails}>
-                        <div><dt>日数</dt><dd>{tour.days}日間・{tour.nights}泊</dd></div>
-                      </dl>
-                    </div>
-                    <span className={styles.quickAction}>
-                      <span>{tour.days}日間</span>
-                      <span>行程を見る <span aria-hidden="true">→</span></span>
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
+            {tours.map((tour) => <JapaneseTourQuickCard key={tour.slug} tour={tour} />)}
           </ul>
         </section>
 
@@ -122,11 +75,17 @@ export function JapaneseToursHubPage() {
           <div className={styles.finalInner}>
             <div>
               <p className={styles.finalEyebrow}>旅について相談する</p>
-              <h2>行きたい場所が決まりましたか？</h2>
+              <h2><KeepWords locale="ja" text="行きたい場所が決まりましたか？" /></h2>
             </div>
+            {/* Wrapped so the tile's `div:last-child > p` rule leaves the panel's own text alone. */}
             <div>
-              <p>気になるコースと旅行日程、人数をお知らせください。日本語でご案内します。</p>
-              <a className={styles.finalAction} href={contactHref}>メールで相談する <span aria-hidden="true">→</span></a>
+              <JapaneseContactPanel
+                body="気になるコースと旅行の時期、人数をお知らせください。日本語でご案内します。まだコースが決まっていなくてもかまいません。"
+                emailHref={contact.email}
+                headingId="ja-tours-contact-title"
+                title="WhatsApp・メールで相談"
+                whatsappHref={contact.whatsapp}
+              />
             </div>
           </div>
         </section>

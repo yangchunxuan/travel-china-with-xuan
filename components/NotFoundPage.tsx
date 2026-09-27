@@ -9,9 +9,15 @@ const languagePaths = { en: "/", zh: "/zh/", ko: "/ko/" } as const;
  * (GitHub Pages serves it for all three locales), so the page keeps the
  * English site chrome and offers a way back in each language.
  */
+// GitHub Pages serves this one page for every unmatched path, so a missing
+// /ja/ address is sent to the Japanese 404 page before this one paints.
+const japaneseNotFoundRedirect =
+  'if(/^\\/ja(\\/|$)/.test(location.pathname)&&location.pathname!=="/ja/404/")location.replace("/ja/404/")';
+
 export function NotFoundPage() {
   return (
     <div className={styles.root} lang="en">
+      <script dangerouslySetInnerHTML={{ __html: japaneseNotFoundRedirect }} />
       <a className={styles.skipLink} href="#not-found-content">
         Skip to main content
       </a>
@@ -73,6 +79,21 @@ export function NotFoundPage() {
               여행 가이드
             </a>
             로 이동하세요.
+          </p>
+          <p lang="ja">
+            このページは存在しないか、移動しました。
+            <a className={styles.langLink} href="/ja/">
+              日本語のホーム
+            </a>
+            、
+            <a className={styles.langLink} href="/ja/tours/">
+              ツアー一覧
+            </a>
+            、
+            <a className={styles.langLink} href="/ja/explore/">
+              目的地から探す
+            </a>
+            からお探しください。
           </p>
         </div>
       </main>

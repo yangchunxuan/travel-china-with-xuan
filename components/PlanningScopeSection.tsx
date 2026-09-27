@@ -2,7 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import { getPlanningScopeCopy } from "../lib/homegroundPlanningScopeI18n";
+import {
+  getPlanningScopeCopy,
+  type PlanningScopeCopy,
+} from "../lib/homegroundPlanningScopeI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { handleHomegroundHashClick } from "../lib/homegroundNavigation";
 import styles from "./PlanningScopeSection.module.css";
@@ -38,10 +41,14 @@ function SoftBreaks({ line }: { line: string }) {
  */
 export function PlanningScopeSection({
   locale = "en",
+  japanese,
 }: {
   locale?: HomegroundLocale;
+  /** Japanese pages pass their own copy and contact target; other locales use the defaults. */
+  japanese?: { copy: PlanningScopeCopy; ctaHref: string };
 }) {
-  const copy = getPlanningScopeCopy(locale);
+  const copy = japanese?.copy ?? getPlanningScopeCopy(locale);
+  const ctaHref = japanese?.ctaHref ?? "#planner-contact";
   const visualRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoInViewRef = useRef(false);
@@ -158,7 +165,7 @@ export function PlanningScopeSection({
     <section
       aria-labelledby="planning-proof-title"
       className={styles.scope}
-      data-homeground-locale={locale}
+      data-homeground-locale={japanese ? "ja" : locale}
       id="planning-proof"
       lang={copy.htmlLang}
     >
@@ -246,9 +253,11 @@ export function PlanningScopeSection({
 
           <a
             className={styles.cta}
-            href="#planner-contact"
-            onClick={(event) =>
-              handleHomegroundHashClick(event, "#planner-contact")
+            href={ctaHref}
+            onClick={
+              japanese
+                ? undefined
+                : (event) => handleHomegroundHashClick(event, "#planner-contact")
             }
           >
             <span>{copy.cta}</span>

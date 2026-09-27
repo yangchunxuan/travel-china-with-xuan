@@ -38,6 +38,7 @@ test("all Studio openings expose inputs, deliverables and timing without price o
     en: "/studio/",
     "zh-Hans": "/zh/studio/",
     ko: "/ko/studio/",
+    ja: "/ja/studio/",
     "x-default": "/studio/",
   });
 

@@ -118,3 +118,9 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+
+/* Japanese 404: one phrase must fit a phone line. */
+.root:lang(ja) .title {
+  font-size: clamp(1.75rem, 5vw, 2.9rem);
+  line-height: 1.3;
+}

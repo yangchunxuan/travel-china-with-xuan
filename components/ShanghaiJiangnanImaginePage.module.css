@@ -359,6 +359,22 @@
   line-height: 1.5;
 }
 
+/* Japanese pages only: the contact buttons open a draft, nothing is sent yet. */
+.draftNote {
+  color: var(--im-muted);
+  font-size: 0.74rem;
+  grid-column: 1 / -1;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* In the closing actions column, wrap to the buttons' width instead of widening it. */
+.finalActions .draftNote {
+  inline-size: 0;
+  min-inline-size: 100%;
+}
+
 .otherGroupCopy strong {
   font-size: 0.79rem;
 }

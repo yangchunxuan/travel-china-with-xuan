@@ -1,49 +1,60 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { JapanesePilotShell } from "../../../components/JapanesePilotShell";
-import { jaPilot } from "../../../lib/jaPilot";
-import { jaPilotCopy } from "../../../lib/jaPilotCopy";
+import { JapaneseHomePage } from "../../../components/JapaneseHomePage";
+import { japaneseHomeCopy } from "../../../lib/japaneseHomeCopy";
+import { buildJapaneseSocialMetadata, japaneseAlternates, japaneseSite } from "../../../lib/japaneseSite";
+import { homepagePrivateTourSlugs, type HomepagePrivateTourItem } from "../../../lib/homepagePrivateTourCatalog";
+import { getHomepageTeamFaces } from "../../../lib/homegroundStudioI18n";
+import { localizeJapanesePrivateTourProduct } from "../../../lib/localizeJapanesePrivateTourProduct";
 import { getPrivateTourProduct } from "../../../lib/privateTourProducts";
-import { privateTourProducts } from "../../../lib/privateTourProducts";
-import styles from "../../../components/JapanesePilot.module.css";
+import { getPrivateTourStartingPrice } from "../../../lib/privateTourStartingPrice";
 
-const copy = jaPilotCopy.home;
+const copy = japaneseHomeCopy;
 
 export const metadata: Metadata = {
-  title: "日本語で探す中国ツアー | Homeground China",
-  description: "中国各地のプライベートツアーと出発日指定の少人数グループを日本語でご案内。日程、サービス内容、料金条件を比較できます。",
-  alternates: { canonical: jaPilot.home },
-  robots: { index: false, follow: true },
+  title: { absolute: copy.metadata.title },
+  description: copy.metadata.description,
+  alternates: { canonical: japaneseSite.home, languages: japaneseAlternates("/", japaneseSite.home) },
+  robots: { index: true, follow: true },
+  ...buildJapaneseSocialMetadata({
+    title: copy.metadata.title,
+    description: copy.metadata.description,
+    url: japaneseSite.home,
+  }),
 };
 
+/** The same six featured routes as the English homepage, from the Japanese product copy. */
+function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
+  return homepagePrivateTourSlugs.flatMap((slug) => {
+    const product = getPrivateTourProduct(slug);
+    if (!product) return [];
+    const tour = localizeJapanesePrivateTourProduct(product);
+    const starting = getPrivateTourStartingPrice(tour);
+    if (!starting) return [];
+    return [{
+      id: tour.slug,
+      kind: "tour" as const,
+      title: tour.title,
+      appeal: tour.lede,
+      days: tour.days,
+      nights: tour.nights,
+      href: tour.path,
+      startingPrice: {
+        formatted: starting.formatted,
+        travelers: starting.travelers,
+        serviceLabel: starting.serviceLabel,
+        selection: starting.selection,
+      },
+      image: {
+        src: tour.heroImage.src,
+        alt: tour.heroImage.alt,
+        width: tour.heroImage.width,
+        height: tour.heroImage.height,
+        objectPosition: tour.heroImage.objectPosition,
+      },
+    }];
+  });
+}
+
 export default function JapaneseHome() {
-  const image = getPrivateTourProduct(jaPilot.tourSlug)?.heroImage;
-  return (
-    <JapanesePilotShell current="home">
-      <div className={styles.container}>
-        <section className={styles.hero}>
-          <p className={styles.eyebrow}>{copy.eyebrow}</p>
-          <h1 className={styles.title}>{copy.title}</h1>
-          <p className={styles.lede}>{copy.intro}</p>
-        </section>
-        {image ? <Image className={styles.heroImage} src={image.src} alt="上海の街並みと黄浦江を挟んだ高層ビル群" width={image.width} height={image.height} priority sizes="(max-width: 1200px) 100vw, 1200px" /> : null}
-        <section className={styles.section} aria-label="日本語で読める旅の情報">
-          <div className={`${styles.cards} ${styles.homeCards}`}>
-            <article className={styles.card}>
-              <h2>{copy.catalogTitle}</h2><p>{copy.catalogSummary}</p>
-              <a className={styles.cardLink} href="/ja/tours/">{privateTourProducts.length + 1}コースを見る →</a>
-            </article>
-            <article className={styles.card}>
-              <h2>{copy.guideTitle}</h2><p>{copy.guideSummary}</p>
-              <a className={styles.cardLink} href={jaPilot.guide}>移動ガイドを見る →</a>
-            </article>
-            <article className={styles.card}>
-              <h2>{copy.tourTitle}</h2><p>{copy.tourSummary}</p>
-              <a className={styles.cardLink} href={jaPilot.tour}>6日間の行程を見る →</a>
-            </article>
-          </div>
-        </section>
-      </div>
-    </JapanesePilotShell>
-  );
+  return <JapaneseHomePage products={japaneseHomepageProducts()} teamFaces={getHomepageTeamFaces("en")} />;
 }

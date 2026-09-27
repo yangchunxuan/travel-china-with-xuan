@@ -5,7 +5,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
-import { getHomepageProductShowcaseCopy } from "../lib/homepageProductShowcaseI18n";
+import {
+  getHomepageProductShowcaseCopy,
+  type HomepageProductShowcaseCopy,
+} from "../lib/homepageProductShowcaseI18n";
 import { privateTourHubPaths } from "../lib/privateTourHubI18n";
 import { KeepWords } from "./text/KeepWords";
 import { CharReveal } from "./motion/CharReveal";
@@ -22,6 +25,37 @@ interface HomepageProductShowcaseProps {
     item: HomepagePrivateTourItem,
     position: number,
   ) => void;
+  /** Japanese pages pass their own copy and catalog link; other locales use the defaults. */
+  readonly japanese?: {
+    readonly copy: HomepageProductShowcaseTemplateCopy;
+    readonly hubHref: string;
+  };
+}
+
+/**
+ * Showcase copy that can cross from a server page into this client component:
+ * the counted labels are templates ({count}, {days}, {nights}, {travelers})
+ * instead of functions.
+ */
+export type HomepageProductShowcaseTemplateCopy = Omit<
+  HomepageProductShowcaseCopy,
+  "intro" | "countLabel" | "durationLabel" | "groupBasis"
+> & {
+  readonly intro: string;
+  readonly countLabel: string;
+  readonly durationLabel: string;
+  readonly groupBasis: string;
+};
+
+function fromTemplateCopy(copy: HomepageProductShowcaseTemplateCopy): HomepageProductShowcaseCopy {
+  return {
+    ...copy,
+    intro: () => copy.intro,
+    countLabel: (count) => copy.countLabel.replace("{count}", String(count)),
+    durationLabel: (days, nights) =>
+      copy.durationLabel.replace("{days}", String(days)).replace("{nights}", String(nights)),
+    groupBasis: (travelers) => copy.groupBasis.replace("{travelers}", String(travelers)),
+  };
 }
 
 /* Phones: a square thumbnail beside each row. Tablets: a two-column card
@@ -37,8 +71,9 @@ export function HomepageProductShowcase({
   locale,
   products,
   onItemClick,
+  japanese,
 }: HomepageProductShowcaseProps) {
-  const copy = getHomepageProductShowcaseCopy(locale);
+  const copy = japanese ? fromTemplateCopy(japanese.copy) : getHomepageProductShowcaseCopy(locale);
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
   // Rows dim only once the scroll watcher runs, so without it every route
@@ -117,7 +152,7 @@ export function HomepageProductShowcase({
     <section
       aria-labelledby="homepage-products-title"
       className={styles.section}
-      data-homeground-locale={locale}
+      data-homeground-locale={japanese ? "ja" : locale}
       data-homepage-product-count={products.length}
       data-homepage-product-showcase="true"
       id="travel-products"
@@ -130,7 +165,7 @@ export function HomepageProductShowcase({
           </div>
           <div className={styles.introGrid}>
             <h2 id="homepage-products-title" tabIndex={-1}>
-              {copy.title}
+              {japanese ? <KeepWords locale="ja" text={copy.title} /> : copy.title}
             </h2>
             <p className={styles.lead}>{copy.intro(products.length)}</p>
           </div>
@@ -186,7 +221,7 @@ export function HomepageProductShowcase({
                       </span>
                     </div>
                     <h3 className={styles.cardTitle}>
-                      <KeepWords locale={locale} text={product.title} />
+                      <KeepWords locale={japanese ? "ja" : locale} text={product.title} />
                     </h3>
                     <p className={styles.cardPrice}>
                       <span>{copy.startingPriceLabel}</span>
@@ -275,7 +310,10 @@ export function HomepageProductShowcase({
         </div>
 
         <div className={styles.showcaseFooter}>
-          <Link className={styles.hubLink} href={privateTourHubPaths[locale]}>
+          <Link
+            className={styles.hubLink}
+            href={japanese?.hubHref ?? privateTourHubPaths[locale]}
+          >
             {copy.hubActionLabel}
             <ArrowRight aria-hidden="true" size={16} />
           </Link>

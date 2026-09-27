@@ -303,3 +303,18 @@
     border: 1px solid CanvasText;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.scope[data-homeground-locale="ja"] {
+  line-break: strict;
+}
+
+.scope[data-homeground-locale="ja"] .intro h2 {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.scope[data-homeground-locale="ja"] .values li {
+  letter-spacing: 0;
+}

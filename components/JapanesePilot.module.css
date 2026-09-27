@@ -120,3 +120,8 @@
   .footerInner { display: block; }
   .footerInner div { margin-top: 1rem; }
 }
+
+/* Space between the guide's dark contact card and the site footer. */
+.site > main {
+  padding-block-end: clamp(3rem, 6vw, 5rem);
+}

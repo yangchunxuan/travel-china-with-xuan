@@ -96,10 +96,10 @@ export function JiangnanTourComparison({ locale, currentSlug, japaneseCopy }: { 
 export function JiangnanBookingTrust({ locale, japaneseCopy }: { locale: HomegroundLocale | "ja"; japaneseCopy?: Readonly<{ trust: string; trustBody: string; business: string; terms: string }> }) {
   const text = locale === "ja" ? japaneseCopy : copy[locale];
   if (!text) throw new Error("Japanese booking copy is required");
-  const prefix = locale === "en" || locale === "ja" ? "" : `/${locale}`;
+  const prefix = locale === "en" ? "" : `/${locale}`;
   return <div className={styles.bookingTrust}>
     <h3>{text.trust}</h3>
     <p>{text.trustBody}</p>
-    <p><Link href={`${prefix}/business-information/#travel-agency-credentials`} hrefLang={locale === "ja" ? "en" : undefined}>{text.business}</Link><span aria-hidden="true"> · </span><Link href={`${prefix}/terms/`} hrefLang={locale === "ja" ? "en" : undefined}>{text.terms}</Link></p>
+    <p><Link href={`${prefix}/business-information/#travel-agency-credentials`}>{text.business}</Link><span aria-hidden="true"> · </span><Link href={`${prefix}/terms/`}>{text.terms}</Link></p>
   </div>;
 }

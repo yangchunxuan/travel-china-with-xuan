@@ -1,0 +1,214 @@
+/*
+ * /ja/explore/. The page reuses the /explore/ layout (DestinationsHubPage)
+ * and the /ja/tours/ cards (PrivateToursHubPage); this file only adds the
+ * per-city tour sections.
+ */
+
+/* The tour lists also carry the /ja/tours/ page class for its card tokens;
+   this only restores the page gutter and drops that class's full height. */
+.root .tourScope {
+  min-height: 0;
+  padding-inline: max(1.5rem, calc((100% - 77rem) / 2));
+}
+
+.citySection {
+  border-block-start: 1px solid rgb(10 10 10 / 10%);
+  padding-block: clamp(3rem, 6vw, 4.5rem) 0;
+  scroll-margin-block-start: 5rem;
+}
+
+.citySection:first-child {
+  border-block-start: 0;
+  margin-block-start: clamp(3rem, 6vw, 5rem);
+}
+
+.cityIntro {
+  display: grid;
+  gap: 1.5rem 3rem;
+  margin-block-end: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .cityIntro {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  }
+}
+
+.cityIntro h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0.75rem 0 0;
+}
+
+.tourCount {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  margin: 0.75rem 0 0;
+}
+
+.citySummary {
+  display: grid;
+  gap: 1rem;
+}
+
+.citySummary > p:first-child {
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.citySummary dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.citySummary dl div {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+}
+
+.citySummary dt {
+  color: rgb(10 10 10 / 60%);
+  font-size: 0.875rem;
+}
+
+.citySummary dd {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.guideNote {
+  color: rgb(10 10 10 / 60%);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.guideNote a,
+.backLink {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.backLink {
+  color: rgb(10 10 10 / 60%);
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  gap: 0.35rem;
+  margin-block: 1rem clamp(1.5rem, 4vw, 3rem);
+  min-block-size: 2.75rem;
+}
+
+.guideNote a:focus-visible,
+.backLink:focus-visible {
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 2px;
+}
+
+@media (max-width: 30rem) {
+  .citySummary dl div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+}
+
+/* Long multi-city routes: compact rows in a disclosure, styled like the FAQ rows. */
+.routes {
+  border-block: 1px solid rgb(10 10 10 / 10%);
+  margin-block: 0.5rem 0;
+}
+
+.routes summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  min-block-size: 3.25rem;
+  padding-block: 0.75rem;
+}
+
+.routes summary::-webkit-details-marker {
+  display: none;
+}
+
+.routes summary > span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transform 160ms ease;
+}
+
+.routes[open] summary > span {
+  transform: rotate(45deg);
+}
+
+.routes summary:focus-visible {
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 2px;
+}
+
+.routeList {
+  display: grid;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.routeList li + li {
+  border-block-start: 1px solid rgb(10 10 10 / 8%);
+}
+
+.routeList a {
+  color: inherit;
+  display: grid;
+  gap: 0.25rem 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-block-size: 2.75rem;
+  padding-block: 0.75rem;
+  text-decoration: none;
+}
+
+.routeList a:focus-visible {
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 2px;
+}
+
+.routeTitle {
+  font-weight: 600;
+  grid-column: 1;
+  line-height: 1.5;
+}
+
+.routeArrow {
+  align-self: center;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.keep {
+  white-space: nowrap;
+}
+
+.routeMeta {
+  color: rgb(10 10 10 / 60%);
+  grid-column: 1;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+@media (hover: hover) {
+  .routeList a:hover .routeTitle {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}

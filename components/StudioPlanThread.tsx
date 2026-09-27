@@ -24,7 +24,7 @@ export function StudioPlanThread({
   locale,
   overview,
 }: {
-  locale: "en" | "zh" | "ko";
+  locale: "en" | "zh" | "ko" | "ja";
   overview: HomegroundStudioCopy["overview"];
 }) {
   const stageCount = overview.stages.length + 1;

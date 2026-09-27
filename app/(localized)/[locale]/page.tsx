@@ -38,6 +38,7 @@ export async function generateMetadata({
         en: "/",
         ko: "/ko/",
         "zh-Hans": "/zh/",
+        ja: "/ja/",
         "x-default": "/",
       },
     },
