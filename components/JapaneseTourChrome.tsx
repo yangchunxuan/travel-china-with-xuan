@@ -170,7 +170,7 @@ export function JapaneseSiteHeader({
           </a>
 
           {/* The logo already links home, so the desktop nav leaves ホーム out (as the English nav does). */}
-          <nav aria-label="主なページ" className={headerStyles.desktopNav}>
+          <nav aria-label="主なページ" className={`${headerStyles.desktopNav} ${styles.desktopNav}`}>
             {primaryLinks.filter((item) => item.href !== japaneseSite.home).map((item) => (
               <a
                 aria-current={item.href === currentPath ? "page" : undefined}

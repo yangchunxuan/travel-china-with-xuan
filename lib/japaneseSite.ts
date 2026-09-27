@@ -4,6 +4,7 @@ import { homegroundBusiness } from "./homegroundBusiness";
 export const japaneseSite = {
   home: "/ja/",
   tours: "/ja/tours/",
+  guides: "/ja/guides/",
   explore: "/ja/explore/",
   services: "/ja/services/",
   studio: "/ja/studio/",
@@ -25,6 +26,7 @@ export interface JapaneseNavLink {
 export const japanesePrimaryLinks: readonly JapaneseNavLink[] = [
   { href: japaneseSite.home, label: "ホーム", description: "日本語の旅のご案内" },
   { href: japaneseSite.tours, label: "ツアー一覧", description: "中国各地の旅を見る" },
+  { href: japaneseSite.guides, label: "実用ガイド", description: "日本語の旅の情報" },
   { href: japaneseSite.explore, label: "目的地から探す", description: "都市ごとに旅を探す" },
   { href: japaneseSite.services, label: "サービス", description: "ご相談から旅行中まで" },
   { href: japaneseSite.studio, label: "私たちについて", description: "計画の進め方とチーム" },

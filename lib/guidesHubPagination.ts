@@ -57,6 +57,8 @@ export function getGuidesHubPageLanguagePaths(page: number) {
     paths[language] = getGuidesHubPagePath(locale, page);
   }
 
+  if (page === 1) paths.ja = "/ja/guides/";
+
   if (paths.en) paths["x-default"] = paths.en;
   return paths;
 }

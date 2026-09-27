@@ -53,6 +53,7 @@ hasTag(sitemap, `<loc>${site}${jaPilot.tour}</loc>`);
 // Japanese site pages: indexable, in the sitemap, reciprocal with EN/ZH/KO.
 const japaneseSitePages = [
   ["/", "/ja/"],
+  ["/guides/", "/ja/guides/"],
   ["/services/", "/ja/services/"],
   ["/explore/", "/ja/explore/"],
   ["/studio/", "/ja/studio/"],
@@ -121,6 +122,18 @@ const guide = await page(jaPilot.guide);
 hasTag(guide, `href="${jaPilot.tour}"`);
 hasTag(guide, 'href="#contact"');
 assert.match(guide, /https:\/\/www\.12306\.cn\/en\/index\.html/u);
+const guidesHub = await page("/ja/guides/");
+assert.match(guidesHub.match(/<h1[^>]*>[\s\S]*?<\/h1>/u)?.[0].replace(/<[^>]+>/gu, "") ?? "", /中国旅行の実用ガイド/u);
+hasTag(guidesHub, `href="${jaPilot.guide}"`);
+assert.match(guidesHub, /公開中：1本/u);
+assert.deepEqual(
+  [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])],
+  [`href="${jaPilot.guide}"`],
+  "Japanese guides hub should list only published Japanese articles",
+);
+assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
+assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);
+assert.match(guidesHub, /すぐには送信されません/u);
 const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
 assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
 const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");
