@@ -267,9 +267,16 @@ export function HomegroundHeader({
     (targetLocale) =>
       !languagePaths || Boolean(overriddenLanguagePathFor(targetLocale)),
   );
+  const homeLanguageHrefFor = (path: string) =>
+    plannerStatus === "result" && !languageQuery
+      ? `${path}?planner=result${languageHash}`
+      : `${path}${languageQuery}${languageHash}`;
   const languageHrefFor = (targetLocale: HomegroundLocale) => {
     const overriddenPath = overriddenLanguagePathFor(targetLocale);
     if (overriddenPath) {
+      if (pageContext === "home") {
+        return homeLanguageHrefFor(overriddenPath);
+      }
       return pageContext === "tour" && tourSelection
         ? buildPrivateTourDetailHref(overriddenPath, tourSelection.slug, tourSelection.selection)
         : overriddenPath;
@@ -288,9 +295,7 @@ export function HomegroundHeader({
               ? `${getChinaItineraryReviewCopy(targetLocale).path}${languageHash}`
               : pageContext === "studio"
                 ? `${target.path}studio/`
-                : plannerStatus === "result" && !languageQuery
-                  ? `${target.path}?planner=result${languageHash}`
-                  : `${target.path}${languageQuery}${languageHash}`;
+                : homeLanguageHrefFor(target.path);
   };
   const japaneseLanguageHref = languagePaths?.ja && pageContext === "tour" && tourSelection
     ? buildPrivateTourDetailHref(languagePaths.ja, tourSelection.slug, tourSelection.selection)
@@ -486,7 +491,7 @@ export function HomegroundHeader({
   };
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetLocale: HomegroundLocale,
+    targetLocale: HomegroundLocale | "ja",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -507,9 +512,12 @@ export function HomegroundHeader({
 
     if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
-      requestNewsletterLanguageTransfer(event.currentTarget.pathname);
-      if ((locale === "en") !== (targetLocale === "en")) {
-        markHomegroundInternalReload(event.currentTarget.href);
+      // The Japanese site has no newsletter or planner form to receive state.
+      if (targetLocale !== "ja") {
+        requestNewsletterLanguageTransfer(event.currentTarget.pathname);
+        if ((locale === "en") !== (targetLocale === "en")) {
+          markHomegroundInternalReload(event.currentTarget.href);
+        }
       }
     }
     close();
@@ -555,6 +563,16 @@ export function HomegroundHeader({
       </Link>
     );
   };
+  const renderJapaneseLanguageChoice = () => japaneseLanguageHref ? (
+    <a
+      href={japaneseLanguageHref}
+      hrefLang="ja"
+      lang="ja"
+      onClick={(event) => handleLanguageChange(event, "ja")}
+    >
+      日本語
+    </a>
+  ) : null;
 
   return (
     <>
@@ -631,7 +649,7 @@ export function HomegroundHeader({
             style={showLanguageNav ? undefined : { display: "none" }}
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
-            {japaneseLanguageHref ? <a href={japaneseLanguageHref} hrefLang="ja" lang="ja">JA</a> : null}
+            {renderJapaneseLanguageChoice()}
           </nav>
           <Link
             className={styles.headerCta}
@@ -742,7 +760,7 @@ export function HomegroundHeader({
                 style={showLanguageNav ? undefined : { display: "none" }}
               >
                 {availableLanguageLocales.map(renderLanguageChoice)}
-                {japaneseLanguageHref ? <a href={japaneseLanguageHref} hrefLang="ja" lang="ja">JA</a> : null}
+                {renderJapaneseLanguageChoice()}
               </div>
             </div>
             <Link

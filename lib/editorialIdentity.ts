@@ -99,6 +99,7 @@ export function getEditorialAuthorLanguagePaths() {
     en: profilePaths.en,
     "zh-Hans": profilePaths.zh,
     ko: profilePaths.ko,
+    ja: "/ja/studio/evan/",
   };
 }
 

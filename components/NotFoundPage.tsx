@@ -2,7 +2,7 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./NotFoundPage.module.css";
 
-const languagePaths = { en: "/", zh: "/zh/", ko: "/ko/" } as const;
+const languagePaths = { en: "/", zh: "/zh/", ko: "/ko/", ja: "/ja/" } as const;
 
 /**
  * Global 404. The static export ships one 404.html for every unmatched path
