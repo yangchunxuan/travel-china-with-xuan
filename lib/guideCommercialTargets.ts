@@ -85,6 +85,8 @@ export const guideTargets = {
   "guilin-yangshuo-transport-route": [productTarget("guilin-yangshuo-5-day-private-tour")],
   "yangshuo-town-or-yulong-river-where-to-stay": [productTarget("guilin-yangshuo-5-day-private-tour")],
   "guilin-yangshuo-with-kids-and-older-parents": [productTarget("guilin-yangshuo-5-day-private-tour")],
+  "chengdu-jiuzhaigou-transport-route": [productTarget("chengdu-jiuzhaigou-huanglong-6-day-private-tour")],
+  "huangshan-summit-or-gateway-base": [productTarget("huangshan-hongcun-huizhou-5-day-private-tour")],
   "first-china-trip-jiangnan-6-or-beijing-11-days": [
     productTarget("beijing-hangzhou-suzhou-shanghai-11-day-private-tour"),
     productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
