@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
   getHomegroundLegalCopy,
+  getHomegroundLegalLanguagePaths,
   getHomegroundLegalPath,
   homegroundLegalPageIds,
   type HomegroundLegalPageId,
@@ -43,11 +44,7 @@ export function HomegroundLegalPage({
   const copy = getHomegroundLegalCopy(pageId, locale);
   const privacyPath =
     locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
-  const languagePaths = {
-    en: getHomegroundLegalCopy(pageId, "en").pagePath,
-    zh: getHomegroundLegalCopy(pageId, "zh").pagePath,
-    ko: getHomegroundLegalCopy(pageId, "ko").pagePath,
-  };
+  const languagePaths = getHomegroundLegalLanguagePaths(pageId);
   const schema = {
     "@context": "https://schema.org",
     "@type": pageId === "business-information" ? "AboutPage" : "WebPage",

@@ -246,11 +246,15 @@ export function getSearchHubEntry(
 }
 
 export function getSearchHubLanguagePaths(section: SearchSectionId) {
-  return Object.fromEntries(
+  const paths = Object.fromEntries(
     getManifestEntriesByNodeId(searchPlatformManifest, `hub-${section}`).map(
       (entry) => [entry.locale, entry.path],
     ),
-  ) as Partial<Record<HomegroundLocale, string>>;
+  ) as Partial<Record<HomegroundLocale | "ja", string>>;
+  if (section === "explore" || section === "services") {
+    paths.ja = `/ja/${section}/`;
+  }
+  return paths;
 }
 
 export function getSearchHubGuides(

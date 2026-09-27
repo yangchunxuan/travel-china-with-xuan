@@ -11,6 +11,7 @@ import { coverImageSizes, type CoverImageSlot } from "../lib/generatedImageSrcSe
 import { getAllGuides, getGuideEntry } from "../lib/guideRegistry";
 import {
   getHomegroundStudioCopy,
+  getStudioLanguagePaths,
   HOMEGROUND_TEAM_SIZE,
 } from "../lib/homegroundStudioI18n";
 import { editorialOrganizationSchema } from "../lib/editorialIdentity";
@@ -151,7 +152,7 @@ export function HomegroundStudioPage({
       <a className={localeStyles.skipLink} href="#studio-main">
         {homeCopy.skipLink}
       </a>
-      <HomegroundHeader locale={locale} pageContext="studio" />
+      <HomegroundHeader locale={locale} pageContext="studio" languagePaths={getStudioLanguagePaths()} />
 
       <main id="studio-main" tabIndex={-1}>
         <section

@@ -293,6 +293,10 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.mobileLanguageNav:has(> a:nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .mobileLanguageNav a {
   align-items: center;
   border: 1px solid #d8d8d2;
@@ -359,6 +363,14 @@
   .headerCta {
     font-size: 0.76rem;
     padding-inline: 0.85rem;
+  }
+
+  .headerCtaLong {
+    display: none;
+  }
+
+  .headerCtaShort {
+    display: inline;
   }
 }
 

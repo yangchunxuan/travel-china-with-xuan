@@ -17,6 +17,15 @@ function hasTag(html, tag) {
   assert.ok(html.includes(tag), `Missing ${tag}`);
 }
 
+function hasJapaneseLanguageChoice(html, target, source) {
+  const navigation = html.match(/<nav(?=[^>]*HomegroundHeader_languageNav)[^>]*>[\s\S]*?<\/nav>/u)?.[0] ?? "";
+  const mobileNavigation = html.match(/<div(?=[^>]*HomegroundHeader_mobileLanguageNav)[^>]*>[\s\S]*?<\/div>/u)?.[0] ?? "";
+  for (const [surface, markup] of [["desktop", navigation], ["mobile", mobileNavigation]]) {
+    assert.ok(markup.includes(`href="${target}`), `${source} ${surface} header is missing its Japanese page`);
+    assert.match(markup, />日本語<\/a>/u, `${source} ${surface} header is missing the Japanese label`);
+  }
+}
+
 for (const [path, alternates] of [
   [jaPilot.guide, jaPilotGuideAlternates()],
   [jaPilot.tour, jaPilotTourAlternates()],
@@ -33,6 +42,7 @@ for (const [path, alternates] of [
     hasTag(existingHtml, `<link rel="alternate" hrefLang="ja" href="${site}${path}"/>`);
     // Product language links may carry the selected group size in the query.
     hasTag(existingHtml, `href="${path}`);
+    hasJapaneseLanguageChoice(existingHtml, path, existingPath);
   }
 }
 
@@ -68,6 +78,7 @@ for (const [enPath, jaPath] of japaneseSitePages) {
   for (const existingPath of [alternates.en, alternates["zh-Hans"], alternates.ko]) {
     const existingHtml = await page(existingPath);
     hasTag(existingHtml, `<link rel="alternate" hrefLang="ja" href="${site}${jaPath}"/>`);
+    hasJapaneseLanguageChoice(existingHtml, jaPath, existingPath);
   }
   // The Japanese footer keeps readers on the Japanese legal pages; no optional tracking loads.
   const footer = html.match(/<footer[\s\S]*?<\/footer>/u)?.[0] ?? "";
@@ -84,6 +95,7 @@ assert.match(notFound, /<meta[^>]+name="robots"[^>]+noindex/u);
 assert.ok(!sitemap.includes(`<loc>${site}/ja/404/</loc>`));
 const rootNotFound = await readFile(join(output, "404.html"), "utf8");
 assert.ok(rootNotFound.includes('location.replace(\"/ja/404/\")') || rootNotFound.includes('location.replace("/ja/404/")'), "root 404 sends /ja/ paths to the Japanese 404");
+hasJapaneseLanguageChoice(rootNotFound, "/ja/", "/404/");
 
 const tour = await page(jaPilot.tour);
 const visibleTourText = tour
