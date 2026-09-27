@@ -224,7 +224,7 @@ export function JapaneseServicesPage() {
             body="旅行の時期、人数、気になる都市や必要な手配をお知らせください。日本語でご返信します。"
             emailHref={contact.email}
             headingId="ja-services-contact-title"
-            title="WhatsApp・メールで相談"
+            title="日本語で旅を相談する"
             whatsappHref={contact.whatsapp}
           />
         </section>

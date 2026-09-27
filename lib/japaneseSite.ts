@@ -77,9 +77,9 @@ export function withJapaneseAlternate<
   };
 }
 
-/** Shown under every Japanese WhatsApp/email button: they open a draft, nothing is sent yet. */
+/** Distinguishes a saved on-site inquiry from an external unsent draft. */
 export const japaneseDraftNote =
-  "ボタンを押しても、すぐには送信されません。WhatsApp またはメールアプリに相談内容の下書きが開くので、内容を確認・編集してからご自身で送信してください。";
+  "サイト内の相談フォームでは、送信後に受付番号が表示されます。メールアプリや WhatsApp を開いた場合は下書きのままなので、内容を確認してからご自身で送信してください。";
 
 /** hreflang map for page metadata, matching the language switcher. */
 export function japaneseAlternates(

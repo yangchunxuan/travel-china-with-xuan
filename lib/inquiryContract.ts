@@ -46,6 +46,7 @@ import {
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
+  emailInquirySubmitSurfaceByLocale,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -76,6 +77,7 @@ export {
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
+  emailInquirySubmitSurfaceByLocale,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -105,6 +107,8 @@ export type {
 export const inquiryLocales = ["en", "zh", "ko"] as const;
 
 export type InquiryLocale = (typeof inquiryLocales)[number];
+export const emailInquiryLocales = ["en", "zh", "ko", "ja"] as const;
+export type EmailInquiryLocale = (typeof emailInquiryLocales)[number];
 export type InquiryAnswers = RouteAnswers;
 export type CanonicalCityNights = CityNights;
 export type CanonicalRouteSnapshot = ComputedRoutePlan;
@@ -198,7 +202,7 @@ export interface NormalizedHomepageEmailInquiryPayload {
   schemaVersion: typeof homepageEmailInquirySchemaVersion;
   formVersion: typeof currentHomepageEmailFormVersion;
   entryPath: "homepage_email";
-  locale: InquiryLocale;
+  locale: EmailInquiryLocale;
   contact: {
     channel: "email";
     email: string;
@@ -579,7 +583,7 @@ function validateAndNormalizeEmailInquiry(
   if (input.entryPath !== (isQuote ? "private_tour_quote" : "homepage_email")) {
     fieldErrors.entryPath = "invalid";
   }
-  if (!isOneOf(input.locale, inquiryLocales)) {
+  if (!isOneOf(input.locale, emailInquiryLocales)) {
     fieldErrors.locale = "invalid";
   }
   if (
@@ -655,7 +659,7 @@ function validateAndNormalizeEmailInquiry(
           if (!selection) fieldErrors["productInterest.selection"] = "invalid";
         }
       }
-      const expectedLocale = isOneOf(input.locale, inquiryLocales)
+      const expectedLocale = isOneOf(input.locale, emailInquiryLocales)
         ? input.locale
         : null;
       const expected =
@@ -716,10 +720,10 @@ function validateAndNormalizeEmailInquiry(
       "attribution",
       fieldErrors,
     );
-    const expectedSubmitSurface = isOneOf(input.locale, inquiryLocales)
+    const expectedSubmitSurface = isOneOf(input.locale, emailInquiryLocales)
       ? isQuote
-        ? productInterest ? `${inquirySubmitSurfaceByLocale[input.locale]}tours/${productInterest.slug}/` : null
-        : inquirySubmitSurfaceByLocale[input.locale]
+        ? productInterest ? `${emailInquirySubmitSurfaceByLocale[input.locale]}tours/${productInterest.slug}/` : null
+        : emailInquirySubmitSurfaceByLocale[input.locale]
       : null;
     if (
       typeof attribution.landingPath !== "string" ||
@@ -752,7 +756,7 @@ function validateAndNormalizeEmailInquiry(
 
   if (
     Object.keys(fieldErrors).length > 0 ||
-    !isOneOf(input.locale, inquiryLocales) ||
+    !isOneOf(input.locale, emailInquiryLocales) ||
     !email ||
     !normalizedAttribution
   ) {

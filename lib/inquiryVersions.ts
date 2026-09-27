@@ -29,4 +29,8 @@ export const inquirySubmitSurfaceByLocale = {
   zh: "/zh/",
   ko: "/ko/",
 } as const;
+export const emailInquirySubmitSurfaceByLocale = {
+  ...inquirySubmitSurfaceByLocale,
+  ja: "/ja/",
+} as const;
 export const inquirySavedBrowserEventName = "homeground:inquiry-saved";

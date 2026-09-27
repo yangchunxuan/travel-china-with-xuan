@@ -1238,6 +1238,9 @@ export function trackEvent(
   options: EventDispatchOptions = {},
 ): PageViewMeasurementTarget[] {
   const dispatched: PageViewMeasurementTarget[] = [];
+  // The first-party traffic contract has no Japanese session yet. Do not
+  // silently relabel Japanese actions as English after a locale switch.
+  if (typeof window !== "undefined" && window.location.pathname.startsWith("/ja/")) return dispatched;
   if (!ANALYTICS_ENABLED ||
     !analyticsRuntimeIsAllowed() || typeof window === "undefined") return dispatched;
 

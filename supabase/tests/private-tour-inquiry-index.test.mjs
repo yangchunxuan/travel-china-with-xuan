@@ -8,6 +8,12 @@ import {
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { getJapaneseTourCopy } from "../../lib/japaneseTourCopy.ts";
+import { japaneseCruiseOverrides } from "../../lib/japaneseCruiseOverrides.ts";
+import { japaneseExpansionOverrides } from "../../lib/japaneseExpansionOverrides.ts";
+import { japaneseSmallGroupOverrides } from "../../lib/japaneseSmallGroupOverrides.ts";
+import { jaPilotCopy } from "../../lib/jaPilotCopy.ts";
+import { jaPilot } from "../../lib/jaPilot.ts";
 
 async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -16,7 +22,19 @@ async function source(path) {
 function project(products) {
   return products.map((product) => ({
     slug: product.slug,
-    title: { en: product.title.en, zh: product.title.zh, ko: product.title.ko },
+    title: {
+      en: product.title.en,
+      zh: product.title.zh,
+      ko: product.title.ko,
+      ja: product.slug === jaPilot.tourSlug
+        ? jaPilotCopy.tour.title
+        : {
+            ...getJapaneseTourCopy(product.slug),
+            ...japaneseCruiseOverrides[product.slug],
+            ...japaneseExpansionOverrides[product.slug],
+            ...japaneseSmallGroupOverrides[product.slug],
+          }.title,
+    },
     packages: product.packages.map((tourPackage) => ({
       id: tourPackage.id,
       prices: tourPackage.prices.map((row) => ({ travelers: row.travelers })),
@@ -36,8 +54,10 @@ test("every inquiry slug resolves through the index to the catalogue title and p
   for (const slug of privateTourInquirySlugs) {
     const product = privateTourProducts.find((candidate) => candidate.slug === slug);
     if (!product) continue;
-    for (const locale of ["en", "zh", "ko"]) {
-      assert.equal(getPrivateTourInquiryContext(slug, locale)?.name, product.title[locale]);
+    for (const locale of ["en", "zh", "ko", "ja"]) {
+      assert.equal(getPrivateTourInquiryContext(slug, locale)?.name, locale === "ja"
+        ? project([product])[0].title.ja
+        : product.title[locale]);
     }
     if (slug === "zhangjiajie-4-day-private-tour") continue;
     for (const tourPackage of product.packages) {
@@ -51,6 +71,13 @@ test("every inquiry slug resolves through the index to the catalogue title and p
     }
     assert.equal(getPrivateTourInquirySelection(slug, "not-a-package", "2"), null);
   }
+});
+
+test("the Japanese-only legacy Zhangjiajie tour retains its published title", () => {
+  assert.equal(
+    getPrivateTourInquiryContext("zhangjiajie-4-day-private-tour", "ja")?.name,
+    "張家界4日間｜奇岩の峰林・ガラス橋・天門山",
+  );
 });
 
 test("client inquiry validation never imports the full tour catalogue", async () => {

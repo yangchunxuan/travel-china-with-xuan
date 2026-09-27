@@ -133,14 +133,14 @@ assert.deepEqual(
 );
 assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);
-assert.match(guidesHub, /すぐには送信されません/u);
+assert.match(guidesHub, /受付番号/u);
 const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
 assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
 const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");
 assert.match(whatsappMessage ?? "", /日本語ガイド付きの公開料金/u);
 assert.match(whatsappMessage ?? "", /参加人数：2名/u);
 
-// Every Japanese tour page says its WhatsApp/email buttons open a draft that is not sent yet.
+// Every Japanese tour page distinguishes the saved on-site form from an external draft.
 const { readdir } = await import("node:fs/promises");
 const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: true }))
   .filter((entry) => entry.isDirectory())
@@ -148,7 +148,7 @@ const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: t
 assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
 for (const slug of tourSlugs) {
   const tourPage = await page(`/ja/tours/${slug}/`);
-  assert.match(tourPage, /すぐには送信されません/u, `/ja/tours/${slug}/ is missing the draft notice`);
+  assert.match(tourPage, /受付番号/u, `/ja/tours/${slug}/ is missing the on-site inquiry notice`);
 }
 
 // The tours hub offers WhatsApp and email, not an email link alone.

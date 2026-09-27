@@ -12,6 +12,7 @@ import {
   currentRouteRuleVersion,
   destinationInquirySchemaVersion,
   destinationTimingRuleVersion,
+  emailInquirySubmitSurfaceByLocale,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
   inquirySchemaVersion,
@@ -141,7 +142,7 @@ function validHomepageEmailPayload(locale = "en") {
     },
     privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
     attribution: {
-      landingPath: inquirySubmitSurfaceByLocale[locale],
+      landingPath: emailInquirySubmitSurfaceByLocale[locale],
     },
     experiment: null,
     antiAbuse: {
@@ -151,7 +152,7 @@ function validHomepageEmailPayload(locale = "en") {
 }
 
 test("homepage email normalizes one email and no inferred traveller data", () => {
-  for (const locale of ["en", "zh", "ko"]) {
+  for (const locale of ["en", "zh", "ko", "ja"]) {
     const result = validateAndNormalizeInquiry(
       validHomepageEmailPayload(locale),
       validationConfig,
@@ -171,7 +172,7 @@ test("homepage email normalizes one email and no inferred traveller data", () =>
       productInterest: null,
       privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
       attribution: {
-        landingPath: inquirySubmitSurfaceByLocale[locale],
+        landingPath: emailInquirySubmitSurfaceByLocale[locale],
         utmSource: null,
         utmMedium: null,
         utmCampaign: null,
@@ -208,7 +209,7 @@ test("homepage email normalizes one email and no inferred traveller data", () =>
 });
 
 test("homepage email accepts only a canonical published-tour identity", () => {
-  for (const locale of ["en", "zh", "ko"]) {
+  for (const locale of ["en", "zh", "ko", "ja"]) {
     const expected = getPrivateTourInquiryContext(
       "zhangjiajie-4-day-private-tour",
       locale,
@@ -253,6 +254,27 @@ test("homepage email accepts only a canonical published-tour identity", () => {
   if (!unknownSlugResult.ok) {
     assert.equal(unknownSlugResult.fieldErrors.productInterest, "invalid");
   }
+});
+
+test("Japanese homepage email preserves the published title and rejects English identity or path", () => {
+  const slug = "beijing-highlights-5-day-private-tour";
+  const expected = getPrivateTourInquiryContext(slug, "ja");
+  const payload = validHomepageEmailPayload("ja");
+  payload.productInterest = expected;
+  const result = validateAndNormalizeInquiry(payload, validationConfig);
+  assert.equal(result.ok, true);
+  assert.equal(result.value.locale, "ja");
+  assert.equal(result.value.productInterest.name, expected.name);
+  assert.equal(result.value.attribution.landingPath, "/ja/");
+  const english = getPrivateTourInquiryContext(slug, "en");
+  assert.equal(validateAndNormalizeInquiry({
+    ...payload,
+    productInterest: { ...expected, name: english.name },
+  }, validationConfig).ok, false);
+  assert.equal(validateAndNormalizeInquiry({
+    ...payload,
+    attribution: { landingPath: "/" },
+  }, validationConfig).ok, false);
 });
 
 test("homepage email rejects itinerary, identity, phone, note and UTM fields", () => {

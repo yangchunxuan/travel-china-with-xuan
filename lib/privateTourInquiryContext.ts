@@ -8,6 +8,8 @@ import { privateTourInquiryIndex } from "./privateTourInquiryIndex.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 
+export type PrivateTourInquiryLocale = HomegroundLocale | "ja";
+
 export const privateTourInquiryQueryKey = "tour";
 
 export const privateTourInquirySlugs = [
@@ -81,12 +83,12 @@ export const privateTourInquirySelectionQueryKeys = {
 } as const;
 
 const packageLabels = {
-  "standard-guided": { en: "Private tour", zh: "私家团标准版", ko: "프라이빗 투어" },
-  "standard-guided-winter": { en: "Private tour", zh: "私家团标准版", ko: "프라이빗 투어" },
-  "english-guided": { en: "English-guided", zh: "含英语导游", ko: "영어 가이드 포함" },
-  "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음" },
-  "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스" },
-  "small-group-departure": { en: "Small group, 8–12 guests", zh: "小团，8–12 人", ko: "소규모 그룹 8~12명" },
+  "standard-guided": { en: "Private tour", zh: "私家团标准版", ko: "프라이빗 투어", ja: "プライベートツアー標準プラン" },
+  "standard-guided-winter": { en: "Private tour", zh: "私家团标准版", ko: "프라이빗 투어", ja: "冬季プライベートツアー" },
+  "english-guided": { en: "English-guided", zh: "含英语导游", ko: "영어 가이드 포함", ja: "英語ガイド付き" },
+  "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음", ja: "現地ガイドなし" },
+  "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스", ja: "固定ルートプラン" },
+  "small-group-departure": { en: "Small group, 8–12 guests", zh: "小团，8–12 人", ko: "소규모 그룹 8~12명", ja: "少人数グループ（8～12名）" },
 } as const;
 
 const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
@@ -126,9 +128,9 @@ function usesKoreanGuideStandardPackage(slug: PrivateTourInquirySlug): boolean {
 // Keep this small public selection contract in TypeScript: analytics' focused
 // CommonJS build cannot import pricing.json. The pricing test checks parity.
 const legacyZhangjiajieStayLabels = {
-  "selected-city-stay": { en: "Selected City Stay", zh: "精选市区酒店", ko: "엄선한 시내 숙소" },
-  "spacious-premium-stay": { en: "Spacious Premium Stay", zh: "宽敞高级住宿", ko: "넉넉한 프리미엄 숙소" },
-  "distinctive-mountain-stay": { en: "Distinctive Mountain Stay", zh: "精品山景住宿", ko: "특색 있는 산악 숙소" },
+  "selected-city-stay": { en: "Selected City Stay", zh: "精选市区酒店", ko: "엄선한 시내 숙소", ja: "市内ホテル" },
+  "spacious-premium-stay": { en: "Spacious Premium Stay", zh: "宽敞高级住宿", ko: "넉넉한 프리미엄 숙소", ja: "ゆとりのある上級宿泊" },
+  "distinctive-mountain-stay": { en: "Distinctive Mountain Stay", zh: "精品山景住宿", ko: "특색 있는 산악 숙소", ja: "山の景色を楽しむ宿泊" },
 } as const;
 
 export function getPrivateTourInquirySelection(
@@ -185,7 +187,7 @@ export function buildPrivateTourDetailHref(
 
 export function privateTourInquirySelectionLabel(
   context: PrivateTourInquiryContext,
-  locale: HomegroundLocale,
+  locale: PrivateTourInquiryLocale,
 ): string | null {
   const selection = context.selection;
   if (!selection) {
@@ -207,11 +209,13 @@ export function privateTourInquirySelectionLabel(
   if (selection.packageId === "small-group-departure") {
     const priceBasis = locale === "zh" ? "双人同住价格基准"
       : locale === "ko" ? "2인 1실 요금 기준"
+        : locale === "ja" ? "2名1室料金を基準"
         : "twin-share price basis";
     return `${packageLabel} · ${priceBasis}`;
   }
   const group = locale === "zh" ? `${selection.travelers} 人同行`
     : locale === "ko" ? `${selection.travelers}명 기준`
+      : locale === "ja" ? `${selection.travelers}名参加`
       : `${selection.travelers} travellers`;
   return `${packageLabel} · ${group}`;
 }
@@ -493,7 +497,7 @@ const previousKoreanZhangjiajieNames: Partial<
 
 export function getPrivateTourInquirySubmissionContext(
   context: PrivateTourInquiryContext,
-  locale: HomegroundLocale,
+  locale: PrivateTourInquiryLocale,
 ): PrivateTourInquiryContext {
   const previousName = locale === "ko"
     ? previousKoreanZhangjiajieNames[context.slug]
@@ -503,7 +507,7 @@ export function getPrivateTourInquirySubmissionContext(
 
 export function isPrivateTourInquiryNameForSlug(
   context: PrivateTourInquiryContext,
-  locale: HomegroundLocale,
+  locale: PrivateTourInquiryLocale,
   name: string,
 ): boolean {
   return name === context.name ||
@@ -559,7 +563,7 @@ export function isPrivateTourInquirySlug(
 
 export function getPrivateTourInquiryContext(
   value: string | null | undefined,
-  locale: HomegroundLocale,
+  locale: PrivateTourInquiryLocale,
   selection?: PrivateTourInquirySelection,
 ): PrivateTourInquiryContext | null {
   if (!isPrivateTourInquirySlug(value)) return null;
@@ -572,14 +576,16 @@ export function getPrivateTourInquiryContext(
   );
   return {
     slug: value,
-    name: structuredProduct?.title[locale] ?? privateTourInquiryNames[value][locale],
+    name: structuredProduct?.title[locale] ?? (locale === "ja"
+      ? "張家界4日間｜奇岩の峰林・ガラス橋・天門山"
+      : privateTourInquiryNames[value][locale]),
     ...(validatedSelection ? { selection: validatedSelection } : {}),
   };
 }
 
 export function getPrivateTourInquiryContextFromSearchParams(
   parameters: URLSearchParams,
-  locale: HomegroundLocale,
+  locale: PrivateTourInquiryLocale,
 ): PrivateTourInquiryContext | null {
   const keys = [privateTourInquiryQueryKey, ...Object.values(privateTourInquirySelectionQueryKeys)];
   if (keys.some((key) => parameters.getAll(key).length > 1)) return null;

@@ -43,7 +43,7 @@ export function JapaneseNotFoundPage() {
           body="お探しのツアーや行き先がわからないときは、日本語でお問い合わせください。"
           emailHref={contact.email}
           headingId="ja-not-found-contact-title"
-          title="WhatsApp・メールで相談"
+          title="日本語で旅を相談する"
           whatsappHref={contact.whatsapp}
         />
       </main>

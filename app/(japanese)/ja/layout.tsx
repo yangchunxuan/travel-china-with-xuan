@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JapaneseInquiryDialog } from "../../../components/JapaneseInquiryDialog";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
 import "../../globals.css";
 
@@ -15,7 +16,7 @@ export default function JapanesePilotLayout({ children }: { children: React.Reac
       <head>
         <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
       </head>
-      <body>{children}</body>
+      <body>{children}<JapaneseInquiryDialog /></body>
     </html>
   );
 }
