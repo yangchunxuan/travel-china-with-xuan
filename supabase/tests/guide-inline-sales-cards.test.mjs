@@ -68,6 +68,11 @@ const guideIds = [
 const productIds = getPublishedPrivateTourCatalog("en").map((product) => product.id);
 
 const expected = {
+  "longji-rice-terraces-day-trip-or-overnight": {
+    kind: "private-tour-product",
+    ctaId: "guilin-yangshuo-5-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/guilin-yangshuo-5-day-private-tour/`,
+  },
   "zhangjiajie-older-travellers": {
     kind: "private-tour-product",
     ctaId: "zhangjiajie-4-day-private-tour",
@@ -120,7 +125,7 @@ const fitClaims = [
   /보장|검증된|조정|확인된 객실|휠체어 전용|어르신에게 적합|아이에게 적합/u,
 ];
 
-test("the six guides resolve to exactly one planned sales card each", () => {
+test("reviewed guides resolve to exactly one planned sales card each", () => {
   assert.deepEqual([...guideSalesCardGuideIds].sort(), Object.keys(expected).sort());
 });
 

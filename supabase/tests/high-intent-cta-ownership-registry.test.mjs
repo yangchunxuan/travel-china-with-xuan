@@ -77,7 +77,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.equal(report.authorizedExistingService, 23);
   assert.equal(report.authorizedGenericConversation, 21);
   assert.equal(report.authorizedPublicCtas, 10);
-  assert.equal(report.guideInlineSalesCards, 6);
+  assert.equal(report.guideInlineSalesCards, 7);
   assert.equal(report.blockedPendingAuthorization, 39);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
@@ -430,7 +430,7 @@ function ownerEntry(copy, contentId) {
   return copy.entries.find((entry) => entry.contentId === contentId);
 }
 
-test("inline sales cards record the six guide owners and their exact CTA kinds", () => {
+test("inline sales cards record the reviewed guide owners and their exact CTA kinds", () => {
   assert.deepEqual(
     registry.guideInlineSalesCards.map((card) => [
       card.contentId,
@@ -440,6 +440,7 @@ test("inline sales cards record the six guide owners and their exact CTA kinds",
       card.image,
     ]),
     [
+      ["longji-rice-terraces-day-trip-or-overnight", "private-tour-product", "guilin-yangshuo-5-day-private-tour", "guide-inline", "product"],
       ["zhangjiajie-older-travellers", "private-tour-product", "zhangjiajie-4-day-private-tour", "guide-inline", "product"],
       ["china-itinerary-with-older-parents", "private-tour-product", "shanghai-suzhou-hangzhou-6-day-private-tour", "guide-inline", "product"],
       ["china-itinerary-with-young-children", "private-tour-product", "chengdu-pandas-sanxingdui-5-day-private-tour", "guide-inline", "product"],

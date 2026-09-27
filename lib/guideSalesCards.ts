@@ -61,11 +61,31 @@ const forecastCopy: LocalizedCardCopy = {
 };
 
 /**
- * Six pages need copy that avoids claiming a route has already been checked
- * for a family, mobility need or room requirement. They still open one real
- * product, in line with the site-wide product-card rule.
+ * Reviewed cards make route scope and fit limitations clear before a reader
+ * opens a related product. They still open one real published product.
  */
 export const guideSalesCardPlans = {
+  "longji-rice-terraces-day-trip-or-overnight": {
+    kind: "private-tour-product",
+    productId: "guilin-yangshuo-5-day-private-tour",
+    copy: {
+      en: {
+        label: "A Guilin route to extend",
+        note: "Longji is not in this 5-day tour. Ask us to add a terrace day or overnight stay and quote the revised route.",
+        action: "View the 5-day route",
+      },
+      zh: {
+        label: "可增加龙脊的桂林路线",
+        note: "这条 5 天产品不含龙脊。想增加梯田一日或过夜行程，可请我们另排并报价。",
+        action: "查看 5 天路线",
+      },
+      ko: {
+        label: "룽지를 추가할 수 있는 구이린 일정",
+        note: "이 5일 상품에는 룽지가 없습니다. 계단식 논 당일 방문이나 1박을 추가하려면 별도로 일정과 견적을 요청해 주세요.",
+        action: "5일 일정 보기",
+      },
+    },
+  },
   "zhangjiajie-older-travellers": {
     kind: "private-tour-product",
     productId: "zhangjiajie-4-day-private-tour",

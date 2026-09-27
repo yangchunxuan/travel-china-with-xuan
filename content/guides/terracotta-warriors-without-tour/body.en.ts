@@ -370,7 +370,7 @@ export default {
       type: "internal-links",
       title: "Connect this day to the rest of the China trip",
       items: [ { label: "Xi'an destination hub", href: "/destinations/xian/", description: "Decide nights, base and the next city before fixing this detail." },
-        { label: "See the 5-day Xi'an private tour with a full Terracotta Warriors day", href: "/tours/xian-terracotta-warriors-5-day-private-tour/", description: "Compare independent execution with a private route that includes the Lintong day, city transport and three guided touring days." },
+        { label: "See the 5-day Xi'an private tour with Terracotta Warriors", href: "/tours/xian-terracotta-warriors-5-day-private-tour/", description: "Day 3 combines the Terracotta Warriors and Huaqing Palace. This differs from the full museum plan above; ask us if you want more time at the museum." },
         {
           label: "China high-speed trains for first-time visitors",
           href: "/guides/china-high-speed-train-first-time-guide/",
