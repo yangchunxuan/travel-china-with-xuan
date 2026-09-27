@@ -39,13 +39,51 @@ for (const [path, alternates] of [
 const sitemap = await readFile(join(output, "sitemap.xml"), "utf8");
 hasTag(sitemap, `<loc>${site}${jaPilot.guide}</loc>`);
 hasTag(sitemap, `<loc>${site}${jaPilot.tour}</loc>`);
-assert.ok(!sitemap.includes(`<loc>${site}${jaPilot.home}</loc>`));
 
-const home = await page(jaPilot.home);
-const privacy = await page(jaPilot.privacy);
-hasTag(home, '<html lang="ja"');
-assert.match(home, /name="robots"[^>]+noindex/u);
-assert.match(privacy, /name="robots"[^>]+noindex/u);
+// Japanese site pages: indexable, in the sitemap, reciprocal with EN/ZH/KO.
+const japaneseSitePages = [
+  ["/", "/ja/"],
+  ["/services/", "/ja/services/"],
+  ["/explore/", "/ja/explore/"],
+  ["/studio/", "/ja/studio/"],
+  ["/studio/evan/", "/ja/studio/evan/"],
+  ["/business-information/", "/ja/business-information/"],
+  ["/terms/", "/ja/terms/"],
+  ["/refund-delivery/", "/ja/refund-delivery/"],
+  ["/privacy/", "/ja/privacy/"],
+];
+for (const [enPath, jaPath] of japaneseSitePages) {
+  const suffix = enPath.replace(/^\//u, "");
+  const alternates = { en: enPath, "zh-Hans": `/zh/${suffix}`, ko: `/ko/${suffix}`, ja: jaPath };
+  const html = await page(jaPath);
+  hasTag(html, '<html lang="ja"');
+  hasTag(html, `<link rel="canonical" href="${site}${jaPath}"/>`);
+  assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+noindex/u, `${jaPath} is indexable`);
+  assert.match(html, /<title>[^<]+<\/title>/u, `${jaPath} has a title`);
+  assert.match(html, /<meta name="description" content="[^"]+"/u, `${jaPath} has a description`);
+  hasTag(sitemap, `<loc>${site}${jaPath}</loc>`);
+  for (const [language, target] of Object.entries(alternates)) {
+    hasTag(html, `<link rel="alternate" hrefLang="${language}" href="${site}${target}"/>`);
+  }
+  for (const existingPath of [alternates.en, alternates["zh-Hans"], alternates.ko]) {
+    const existingHtml = await page(existingPath);
+    hasTag(existingHtml, `<link rel="alternate" hrefLang="ja" href="${site}${jaPath}"/>`);
+  }
+  // The Japanese footer keeps readers on the Japanese legal pages; no optional tracking loads.
+  const footer = html.match(/<footer[\s\S]*?<\/footer>/u)?.[0] ?? "";
+  assert.ok(footer.includes('href="/ja/business-information/"'), `${jaPath} footer lists business information`);
+  for (const englishOnly of ["/business-information/", "/terms/", "/refund-delivery/", "/privacy/"]) {
+    assert.ok(!footer.includes(`href="${englishOnly}"`), `${jaPath} footer links to English ${englishOnly}`);
+  }
+  assert.doesNotMatch(html, /googletagmanager|connect\.facebook\.net|fbevents/u, `${jaPath} loads tracking`);
+}
+
+const notFound = await page("/ja/404/");
+hasTag(notFound, '<html lang="ja"');
+assert.match(notFound, /<meta[^>]+name="robots"[^>]+noindex/u);
+assert.ok(!sitemap.includes(`<loc>${site}/ja/404/</loc>`));
+const rootNotFound = await readFile(join(output, "404.html"), "utf8");
+assert.ok(rootNotFound.includes('location.replace(\"/ja/404/\")') || rootNotFound.includes('location.replace("/ja/404/")'), "root 404 sends /ja/ paths to the Japanese 404");
 
 const tour = await page(jaPilot.tour);
 const visibleTourText = tour
@@ -74,6 +112,23 @@ assert.match(guide, /https:\/\/www\.12306\.cn\/en\/index\.html/u);
 const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
 assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
 const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");
-assert.match(whatsappMessage ?? "", /日本語ガイド：含まれています/u);
+assert.match(whatsappMessage ?? "", /日本語ガイド付きの公開料金/u);
+assert.match(whatsappMessage ?? "", /参加人数：2名/u);
 
-console.log("✓ Japanese pilot exports two indexable reciprocal pages, live-model prices, Japanese guide terms and working contact paths.");
+// Every Japanese tour page says its WhatsApp/email buttons open a draft that is not sent yet.
+const { readdir } = await import("node:fs/promises");
+const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name);
+assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
+for (const slug of tourSlugs) {
+  const tourPage = await page(`/ja/tours/${slug}/`);
+  assert.match(tourPage, /すぐには送信されません/u, `/ja/tours/${slug}/ is missing the draft notice`);
+}
+
+// The tours hub offers WhatsApp and email, not an email link alone.
+const toursHub = await page("/ja/tours/");
+assert.match(toursHub, /https:\/\/wa\.me\/\d+\?text=/u);
+assert.match(toursHub, /mailto:hello@homegroundchina\.com/u);
+
+console.log(`✓ Japanese site exports ${japaneseSitePages.length} indexable site pages plus the guide and tour pages with reciprocal hreflang, a noindex Japanese 404, live-model prices and working contact paths.`);

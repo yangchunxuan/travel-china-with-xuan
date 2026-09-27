@@ -18,6 +18,7 @@ import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice
 import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.ts";
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
+import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
 const locales = ["en", "zh", "ko"];
 const beijingSlug = "beijing-highlights-5-day-private-tour";
@@ -40,6 +41,8 @@ async function loadComponent(path, overrides = {}, window) {
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/tourContactDraft": { isJiangnanTour },
     "../lib/analytics": { trackEvent() {} },
+    // KeepWords splits Japanese headings into phrases.
+    "../../lib/japanesePhrases": { splitJapanesePhrases },
     "./GuideCtaLink": { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) },
     "./JapaneseJiangnanInteraction": { JapaneseTourContactLink: ({ hrefs, channel = "whatsapp", children }) => React.createElement("a", { href: hrefs[channel][2] }, children) },
     "./TourWhatsAppLink": { TourWhatsAppLink: ({ locale, slug }) => {

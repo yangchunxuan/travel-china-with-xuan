@@ -1,7 +1,8 @@
 import { Fragment, type CSSProperties } from "react";
+import { splitJapanesePhrases } from "../../lib/japanesePhrases";
 import styles from "./AnimatedHeadline.module.css";
 
-type Locale = "en" | "zh" | "ko";
+type Locale = "en" | "zh" | "ko" | "ja";
 
 interface Unit {
   readonly text: string;
@@ -16,6 +17,10 @@ interface Unit {
  * heading's textContent identical to the source string.
  */
 export function splitHeadline(text: string, locale: Locale): Unit[] {
+  // Japanese animates and wraps by phrase (a word plus its particles).
+  if (locale === "ja") {
+    return splitJapanesePhrases(text).map((phrase) => ({ text: phrase, space: false }));
+  }
   const segmenter = new Intl.Segmenter(locale === "zh" ? "zh-Hans" : locale, {
     granularity: "word",
   });

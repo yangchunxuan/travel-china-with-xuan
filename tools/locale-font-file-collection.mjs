@@ -15,7 +15,6 @@ const productionExportExtensions = new Set([".html", ".js"]);
 const japanesePilotSourceFiles = new Set([
   "components/JapaneseJiangnanInteraction.tsx",
   "components/JapaneseTourChrome.tsx",
-  "components/JapanesePilotShell.tsx",
   "lib/jaPilot.ts",
   "lib/jaPilotCopy.ts",
 ]);
@@ -24,9 +23,17 @@ function normalizedRelative(root, filePath) {
   return relative(root, filePath).split(sep).join("/");
 }
 
+// Japanese-only modules follow one naming rule, so new Japanese pages do not
+// need to be listed one by one: components/Japanese*, lib/japanese*, lib/jaPilot*.
+const japaneseOnlySourcePattern = /^(?:components\/Japanese[A-Z]|lib\/japanese[A-Z]|lib\/jaPilot)/u;
+
 function isJapanesePilotSource(projectRoot, filePath) {
   const path = normalizedRelative(projectRoot, filePath);
-  return path.startsWith("app/(japanese)/") || japanesePilotSourceFiles.has(path);
+  return (
+    path.startsWith("app/(japanese)/") ||
+    japanesePilotSourceFiles.has(path) ||
+    japaneseOnlySourcePattern.test(path)
+  );
 }
 
 function comparePaths(left, right) {

@@ -714,3 +714,24 @@
     transform: none;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.section[data-homeground-locale="ja"] .eyebrow,
+.section[data-homeground-locale="ja"] .count,
+.section[data-homeground-locale="ja"] .cardMeta {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.section[data-homeground-locale="ja"] .intro h2,
+.section[data-homeground-locale="ja"] .cardTitle {
+  letter-spacing: 0;
+  line-break: strict;
+  line-height: 1.35;
+}
+
+/* "ch" is half a kanji wide, so the Japanese heading measures in em. */
+.section[data-homeground-locale="ja"] .intro h2 {
+  max-inline-size: 14em;
+}

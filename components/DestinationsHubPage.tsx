@@ -69,7 +69,14 @@ const plotY = (lat: number) => (PLOT.north - lat) * PLOT_UNIT;
 const SCALE_KM = 500;
 const SCALE_LENGTH = (SCALE_KM / 111.32) * PLOT_UNIT;
 
-function CityPlot({ locale }: { locale: HomegroundLocale }) {
+export function CityPlot({
+  locale,
+  labels,
+}: {
+  locale: HomegroundLocale;
+  /** City names for a page outside the three hub locales (the Japanese explore page). */
+  labels?: Readonly<Record<DestinationHubId, string>>;
+}) {
   return (
     <svg
       className={styles.plot}
@@ -128,7 +135,7 @@ function CityPlot({ locale }: { locale: HomegroundLocale }) {
               textAnchor={side ? "middle" : "start"}
               dominantBaseline="middle"
             >
-              {hub.locales[locale].navTitle}
+              {labels?.[hub.id] ?? hub.locales[locale].navTitle}
             </text>
             <text className={styles.plotReadout} x={PLOT_WIDTH} y={8} textAnchor="end">
               {lat.toFixed(2)}°N · {lon.toFixed(2)}°E

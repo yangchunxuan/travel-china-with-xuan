@@ -8,32 +8,16 @@ import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { privateTourInquirySelectionQueryKeys } from "../lib/privateTourInquiryContext";
 import { jaPilot } from "../lib/jaPilot";
+import {
+  japaneseLanguagePaths,
+  japaneseLegalLinks,
+  japanesePrimaryLinks,
+  japaneseSite,
+  type JapaneseLanguagePath,
+} from "../lib/japaneseSite";
 import headerStyles from "./HomegroundHeader.module.css";
 import footerStyles from "./HomegroundFooter.module.css";
 import styles from "./JapaneseTourChrome.module.css";
-
-const pilotLinks = [
-  { href: jaPilot.home, label: "ホーム", description: "日本語の旅のご案内" },
-  { href: "/ja/tours/", label: "ツアー一覧", description: "中国各地の旅を見る" },
-  { href: jaPilot.tour, label: "江南6日間の旅", description: "上海・蘇州・杭州を巡るプライベートツアー" },
-  { href: jaPilot.guide, label: "旅行ガイド", description: "上海・杭州の移動と旅程" },
-] as const;
-
-const catalogLinks = [
-  { href: jaPilot.home, label: "ホーム", description: "日本語の旅のご案内" },
-  { href: "/ja/tours/", label: "ツアー一覧", description: "中国各地の旅を見る" },
-  { href: jaPilot.guide, label: "旅行ガイド", description: "上海・杭州の移動と旅程" },
-] as const;
-
-function languagePaths(slug: string | null) {
-  const base = slug ? `tours/${slug}/` : "tours/";
-  return [
-    { label: "EN", lang: "en", path: `/${base}` },
-    { label: "ZH", lang: "zh-Hans", path: `/zh/${base}` },
-    { label: "KO", lang: "ko", path: `/ko/${base}` },
-    { label: "JA", lang: "ja", path: `/ja/${base}` },
-  ] as const;
-}
 
 function useSelectedTourHref(slug: string | null) {
   const context = usePrivateTourSelection();
@@ -46,11 +30,38 @@ function useSelectedTourHref(slug: string | null) {
   };
 }
 
+function tourPaths(tourSlug: string | null) {
+  const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : japaneseSite.tours;
+  const englishPath = tourSlug ? `/tours/${tourSlug}/` : "/tours/";
+  return { currentPath, languagePaths: japaneseLanguagePaths(englishPath, currentPath) };
+}
+
+/** Product and catalog pages keep the chosen package and party size in every self link. */
 export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
-  const selectedHref = useSelectedTourHref(tourSlug);
-  const primaryLinks = tourSlug === jaPilot.tourSlug ? pilotLinks : catalogLinks;
-  const tourPaths = languagePaths(tourSlug);
-  const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : "/ja/tours/";
+  const { currentPath, languagePaths } = tourPaths(tourSlug);
+  return (
+    <JapaneseSiteHeader
+      contactHref={`${currentPath}#contact`}
+      currentPath={currentPath}
+      languagePaths={languagePaths}
+      selectionSlug={tourSlug}
+    />
+  );
+}
+
+export function JapaneseSiteHeader({
+  contactHref,
+  currentPath,
+  languagePaths,
+  selectionSlug = null,
+}: {
+  contactHref: string;
+  currentPath: string;
+  languagePaths: readonly JapaneseLanguagePath[];
+  selectionSlug?: string | null;
+}) {
+  const selectedHref = useSelectedTourHref(selectionSlug);
+  const primaryLinks = japanesePrimaryLinks;
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
@@ -129,7 +140,7 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
   }, [open]);
 
   const close = () => setOpen(false);
-  const contactHref = selectedHref(`${currentPath}#contact`);
+  const ctaHref = selectedHref(contactHref);
 
   return (
     <header
@@ -148,18 +159,19 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
           <a
             aria-label="Homeground China 日本語トップ"
             className={`${headerStyles.brand} ${styles.brand}`}
-            href={jaPilot.home}
+            href={japaneseSite.home}
             onClick={close}
           >
             <HomegroundBrandMark className={headerStyles.brandMark} />
             <span>
               <strong lang="en">Homeground China</strong>
-              <small>中国プライベート旅行</small>
+              <small>中国の旅行会社</small>
             </span>
           </a>
 
+          {/* The logo already links home, so the desktop nav leaves ホーム out (as the English nav does). */}
           <nav aria-label="主なページ" className={headerStyles.desktopNav}>
-            {primaryLinks.map((item) => (
+            {primaryLinks.filter((item) => item.href !== japaneseSite.home).map((item) => (
               <a
                 aria-current={item.href === currentPath ? "page" : undefined}
                 href={item.href === currentPath ? selectedHref(item.href) : item.href}
@@ -171,11 +183,11 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
           </nav>
 
           <div className={headerStyles.headerActions}>
-            <a className={headerStyles.desktopUtilityLink} href={jaPilot.privacy}>
-              プライバシー
+            <a className={`${headerStyles.desktopUtilityLink} ${styles.faqUtilityLink}`} href={`${japaneseSite.home}#faq`}>
+              よくある質問
             </a>
             <nav aria-label="言語を選ぶ" className={headerStyles.languageNav}>
-              {tourPaths.map((item) => (
+              {languagePaths.map((item) => (
                 <a
                   aria-current={item.lang === "ja" ? "page" : undefined}
                   href={selectedHref(item.path)}
@@ -187,7 +199,7 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
                 </a>
               ))}
             </nav>
-            <a aria-label="旅について相談する" className={headerStyles.headerCta} href={contactHref}>
+            <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref}>
               <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
             </a>
@@ -230,8 +242,8 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
           </div>
           <div className={headerStyles.mobileUtility}>
             <div className={headerStyles.mobileUtilityRow}>
-              <a className={headerStyles.mobileUtilityLink} href={jaPilot.privacy} onClick={close}>
-                <span>プライバシー</span>
+              <a className={headerStyles.mobileUtilityLink} href={`${japaneseSite.home}#faq`} onClick={close}>
+                <span>よくある質問</span>
                 <span aria-hidden="true">→</span>
               </a>
               <div
@@ -239,7 +251,7 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
                 className={`${headerStyles.mobileLanguageNav} ${styles.mobileLanguageNav}`}
                 role="group"
               >
-                {tourPaths.map((item) => (
+                {languagePaths.map((item) => (
                   <a
                     aria-current={item.lang === "ja" ? "page" : undefined}
                     href={selectedHref(item.path)}
@@ -253,7 +265,7 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
                 ))}
               </div>
             </div>
-            <a className={headerStyles.mobileCta} href={contactHref} onClick={close}>
+            <a className={headerStyles.mobileCta} href={ctaHref} onClick={close}>
               旅について相談する
             </a>
           </div>
@@ -264,19 +276,32 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
 }
 
 export function JapaneseTourFooter({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
-  const selectedHref = useSelectedTourHref(tourSlug);
-  const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : "/ja/tours/";
-  const primaryLinks = tourSlug === jaPilot.tourSlug ? pilotLinks : catalogLinks;
+  const { currentPath } = tourPaths(tourSlug);
+  return <JapaneseSiteFooter currentPath={currentPath} selectionSlug={tourSlug} />;
+}
+
+export function JapaneseSiteFooter({
+  currentPath,
+  selectionSlug = null,
+}: {
+  currentPath: string;
+  selectionSlug?: string | null;
+}) {
+  const selectedHref = useSelectedTourHref(selectionSlug);
   return (
     <footer className={`${footerStyles.footer} ${styles.japaneseFooter}`}>
       <div className={`${footerStyles.footerTop} ${styles.footerTop}`}>
         <div>
           <strong lang="en">Homeground China</strong>
-          <span>中国プライベート旅行</span>
+          <span>中国の旅行会社</span>
         </div>
         <nav aria-label="フッターナビゲーション">
-          {primaryLinks.map((item) => (
-            <a href={item.href === currentPath ? selectedHref(item.href) : item.href} key={item.href}>
+          {japanesePrimaryLinks.map((item) => (
+            <a
+              aria-current={item.href === currentPath ? "page" : undefined}
+              href={item.href === currentPath ? selectedHref(item.href) : item.href}
+              key={item.href}
+            >
               {item.label}
             </a>
           ))}
@@ -285,18 +310,19 @@ export function JapaneseTourFooter({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
       <div className={footerStyles.footerLegal}>
         <p>
           Homeground China は{" "}
-          <a href="/business-information/" hrefLang="en" lang="zh-Hans">
+          <a href={japaneseSite.businessInformation} lang="zh-Hans">
             {homegroundBusiness.publicName}
           </a>{" "}
-          が運営しています。事業者情報は英語のページで確認できます。
+          が運営しています。
           <span>統一社会信用コード：{homegroundBusiness.unifiedSocialCreditCode}</span>
-          <span>中国の旅行会社営業許可番号：{homegroundBusiness.travelAgencyLicenceNumber}</span>
+          <span>旅行業許可番号（中国）：{homegroundBusiness.travelAgencyLicenceNumber}</span>
         </p>
-        <nav aria-label="プライバシー・利用条件">
-          <a href="/business-information/" hrefLang="en">事業者情報（英語）</a>
-          <a href="/terms/" hrefLang="en">利用規約（英語）</a>
-          <a href={jaPilot.privacy}>プライバシー</a>
-          <a href="/refund-delivery/" hrefLang="en">返金・提供条件（英語）</a>
+        <nav aria-label="事業者情報・規約">
+          {japaneseLegalLinks.map((item) => (
+            <a aria-current={item.href === currentPath ? "page" : undefined} href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
       <p className={footerStyles.footerNote}>

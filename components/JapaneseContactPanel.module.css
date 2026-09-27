@@ -1,0 +1,96 @@
+.panel {
+  background: var(--hg-color-card);
+  border: 1px solid var(--hg-color-line);
+  border-radius: 1.25rem;
+  color: var(--hg-color-ink);
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.panel[data-tone="dark"] {
+  background: rgb(250 249 245 / 6%);
+  border-color: var(--hg-color-on-dark-line);
+  color: var(--hg-color-on-dark);
+}
+
+.title {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.body {
+  line-height: 1.85;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primary,
+.secondary {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 600;
+  gap: 0.5rem;
+  justify-content: center;
+  min-block-size: 3rem;
+  padding: 0.75rem 1.4rem;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--hg-color-ink);
+  color: var(--hg-color-on-dark);
+}
+
+.secondary {
+  border: 1px solid currentcolor;
+  color: inherit;
+}
+
+.panel[data-tone="dark"] .primary {
+  background: var(--hg-color-on-dark);
+  color: var(--hg-color-ink);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 3px solid var(--hg-color-focus);
+  outline-offset: 3px;
+}
+
+.note {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.panel[data-tone="dark"] .note {
+  color: var(--hg-color-on-dark-muted);
+}
+
+.note a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 30rem) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    inline-size: 100%;
+  }
+}

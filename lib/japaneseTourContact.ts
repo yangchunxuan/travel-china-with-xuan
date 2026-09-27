@@ -13,15 +13,15 @@ export function japaneseTourContactHrefs(
   const email: Record<string, string> = {};
   const add = (key: string, packageLabel?: string, travelers?: number) => {
     const message = [
-      "こんにちは。日本語で旅行について相談したいです。",
+      "こんにちは。日本語で旅行の相談をさせてください。",
       `希望する旅行：${product.title}`,
       ...(packageLabel ? [`希望するプラン：${packageLabel}`] : []),
       ...(product.slug === "zhangjiajie-4-day-private-tour" && !packageLabel
         ? ["希望する宿泊プラン："]
         : []),
       `参加人数：${travelers && product.tourFormat !== "small-group" ? `${travelers}名` : ""}`,
-      product.tourFormat === "small-group" ? "希望する出発日：" : "旅行予定日：",
-      "ガイドの言語の希望：",
+      product.tourFormat === "small-group" ? "希望する出発日：" : "旅行予定の時期：",
+      "希望するガイドの言語：",
       `参照ページ：${url}`,
     ].join("\n");
     whatsapp[key] = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;

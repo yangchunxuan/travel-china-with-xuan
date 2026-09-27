@@ -1308,3 +1308,36 @@
     border-color: currentColor;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.toursPage[data-homeground-locale="ja"] :is(.hero h1, .quickIntro h2, .quickIdentity h3, .finalInner h2) {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+/* "ch" is half a kanji wide, so Japanese headings measure in em. */
+.toursPage[data-homeground-locale="ja"] :is(.quickIntro h2, .finalInner h2) {
+  max-width: 14em;
+}
+
+/* Without the English filter bar, the list needs its own space below the intro. */
+.toursPage[data-homeground-locale="ja"] .quickIntro {
+  margin-block-end: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* The Japanese closing tile holds a contact panel: top-align it, keep the
+   heading clear of the sticky header, and stack it on tablets. */
+.toursPage[data-homeground-locale="ja"] .finalSection {
+  scroll-margin-top: var(--homeground-header-height, 4.25rem);
+}
+
+.toursPage[data-homeground-locale="ja"] .finalInner {
+  align-items: start;
+}
+
+@media (max-width: 64rem) {
+  .toursPage[data-homeground-locale="ja"] .finalInner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

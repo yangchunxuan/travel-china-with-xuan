@@ -1,7 +1,8 @@
 import { Fragment, type ReactNode } from "react";
+import { splitJapanesePhrases } from "../../lib/japanesePhrases";
 import styles from "./KeepWords.module.css";
 
-type Locale = "en" | "zh" | "ko";
+type Locale = "en" | "zh" | "ko" | "ja";
 
 /**
  * Line-breaking help that never changes the text:
@@ -14,9 +15,35 @@ type Locale = "en" | "zh" | "ko";
  *   "on-site") stay whole.
  * - Korean already breaks between words (word-break: keep-all), so the text
  *   is returned untouched.
+ * - Japanese: the same keep-all + <wbr> treatment as Chinese, placed between
+ *   phrases (a word plus its particles) from splitJapanesePhrases.
  */
 export function KeepWords({ text, locale }: { text: string; locale: Locale }) {
   if (locale === "ko") return <>{text}</>;
+
+  if (locale === "ja") {
+    return (
+      <span className={styles.phrases}>
+        {splitJapanesePhrases(text).map((phrase, index) => {
+          // A forced break inside a long phrase must not leave 。 or 、 alone on a line.
+          const tail = phrase.match(/.[\u3001\u3002\uff01\uff1f\uff09\u300d\u300f]+$/u)?.[0];
+          return (
+            <Fragment key={`${phrase}-${index}`}>
+              {index > 0 ? <wbr /> : null}
+              {tail ? (
+                <>
+                  {phrase.slice(0, -tail.length)}
+                  <span className={styles.keep}>{tail}</span>
+                </>
+              ) : (
+                phrase
+              )}
+            </Fragment>
+          );
+        })}
+      </span>
+    );
+  }
 
   if (locale === "en") {
     const parts = text.split(/(\d+-Day|[A-Za-z]+(?:-[A-Za-z]+)+)/u);

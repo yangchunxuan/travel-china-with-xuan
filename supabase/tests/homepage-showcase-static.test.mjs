@@ -222,7 +222,8 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     );
   }
   assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
-  assert.match(productShowcase, /href=\{privateTourHubPaths\[locale\]\}/);
+  // The Japanese homepage passes its own hub link; every other locale uses privateTourHubPaths.
+  assert.match(productShowcase, /href=\{(?:japanese\?\.hubHref \?\? )?privateTourHubPaths\[locale\]\}/);
   assert.match(productShowcase, /\{copy\.hubActionLabel\}/);
   assert.doesNotMatch(productShowcase, /availabilityNote/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);

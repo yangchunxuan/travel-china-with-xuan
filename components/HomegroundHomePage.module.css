@@ -3408,3 +3408,18 @@
     transform: translateY(8px);
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.localeRoot[data-homeground-locale="ja"] .faqIntro h2 {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.localeRoot[data-homeground-locale="ja"] .faqList summary {
+  letter-spacing: 0;
+  line-height: 1.55;
+  /* Break only at the <wbr> phrase boundaries; a too-long phrase may still wrap. */
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}

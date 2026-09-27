@@ -2,7 +2,7 @@ import { Fragment, type CSSProperties } from "react";
 import { splitHeadline } from "./AnimatedHeadline";
 import styles from "./ScrollWords.module.css";
 
-type Locale = "en" | "zh" | "ko";
+type Locale = "en" | "zh" | "ko" | "ja";
 
 /**
  * Section headings that come into focus word by word as they scroll in

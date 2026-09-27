@@ -711,3 +711,23 @@
     border: 1px solid CanvasText;
   }
 }
+
+/* ---------- Japanese ---------- */
+
+.root[data-homeground-locale="ja"] .eyebrow {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.root[data-homeground-locale="ja"] .heroTitle,
+.root[data-homeground-locale="ja"] .planningIntro h2,
+.root[data-homeground-locale="ja"] :global(#homepage-human-planning-title),
+.root[data-homeground-locale="ja"] :global(#faq-title) {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+/* "ch" is half a kanji wide; the longest Japanese hero line is ten characters. */
+.root[data-homeground-locale="ja"] .heroTitle {
+  max-inline-size: 11em;
+}

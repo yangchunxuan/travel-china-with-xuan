@@ -6,7 +6,7 @@ const author = getEditorialAuthor("en");
 export const metadata: Metadata = {
   title: { absolute: author.copy.title },
   description: author.copy.introduction,
-  alternates: { canonical: author.path, languages: { ...getEditorialAuthorLanguagePaths(), "x-default": author.path } },
+  alternates: { canonical: author.path, languages: { ...getEditorialAuthorLanguagePaths(), ja: "/ja/studio/evan/", "x-default": author.path } },
   openGraph: { type: "profile", title: author.copy.title, description: author.copy.introduction, url: author.path, images: [author.image.src] },
 };
 export default function Page() { return <EditorialAuthorPage locale="en" />; }

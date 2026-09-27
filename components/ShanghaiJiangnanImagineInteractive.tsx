@@ -138,6 +138,8 @@ export type JapanesePriceCopy = Readonly<{
   quoteOnlyTitle?: string;
   quoteOnlyBody?: string;
   emailLabel: string;
+  /** Japanese only: says the WhatsApp/email buttons open a draft that is not sent yet. */
+  draftNote?: string;
 }>;
 
 // Fixed-departure small groups price one twin-share place, and long-haul
@@ -291,6 +293,7 @@ export function ShanghaiJiangnanPriceConsole({
             {interactionCopy[product.locale].requestQuote}
             <ArrowRight aria-hidden="true" size={18} />
           </GuideCtaLink>}
+          {japaneseCopy?.draftNote ? <p className={styles.draftNote}>{japaneseCopy.draftNote}</p> : null}
         </div>
       </div>
     );
@@ -447,6 +450,7 @@ function PublishedPrivateTourPriceConsole({
             <ArrowRight aria-hidden="true" size={15} />
           </GuideCtaLink>}
         </div>
+        {japaneseCopy?.draftNote ? <p className={styles.draftNote}>{japaneseCopy.draftNote}</p> : null}
       </div>
     </div>
   );

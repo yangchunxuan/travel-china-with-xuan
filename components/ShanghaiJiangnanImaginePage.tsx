@@ -38,6 +38,7 @@ import {
   getProductPlanningContext,
 } from "../lib/existingContentCommercialLinks";
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
+import { japaneseDraftNote } from "../lib/japaneseSite";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
 import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
 import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
@@ -289,7 +290,7 @@ function genericJapanesePageCopy(product: LocalizedPrivateTourProduct): ImagineP
     serviceTitle: "ホテル・移動・ガイドの内容",
     serviceBody: smallGroup
       ? "この固定出発グループの現地ガイドは英語です。日本語での案内をご希望なら、プライベート旅行としてご相談ください。"
-      : "掲載料金に含まれるガイド言語は、下記のサービス内容をご確認ください。日本語ガイドをご希望の場合は、旅行日と訪問都市に合わせて手配可否と料金をご案内します。",
+      : "掲載料金に含まれるガイド言語は、下記のサービス内容をご確認ください。日本語ガイドの手配可否と料金は予約前に確認します。",
     hotelTitle: "宿泊",
     transportTitle: "ガイド・移動・観光",
     scopeEyebrow: "お申し込み前に確認",
@@ -629,6 +630,7 @@ export function ShanghaiJiangnanImaginePage({
     quoteOnlyTitle: "旅行日程と人数に合わせてお見積もり",
     quoteOnlyBody: "この行程には固定の公開料金がありません。日程と人数をお知らせください。",
     emailLabel: jaPresentation.emailLabel,
+    draftNote: japaneseDraftNote,
   } : undefined;
   const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : undefined;
   const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanesePilot ? {
@@ -1101,6 +1103,7 @@ export function ShanghaiJiangnanImaginePage({
                 <JapaneseTourContactLink channel="email" className={styles.finalEmail} hrefs={japaneseContactHrefs!}>
                   <Mail aria-hidden="true" size={16} />{copy.email}
                 </JapaneseTourContactLink>
+                <p className={styles.draftNote}>{japaneseDraftNote}</p>
               </> : <>
               <SelectedPrivateTourCta
                 className={styles.finalPrimary}

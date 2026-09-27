@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { JapanesePilotShell } from "../../../../../components/JapanesePilotShell";
+import { JapaneseSiteFooter, JapaneseSiteHeader } from "../../../../../components/JapaneseTourChrome";
 import styles from "../../../../../components/JapanesePilot.module.css";
 import {
   jaPilot,
@@ -9,6 +9,8 @@ import {
   jaPilotWhatsAppHref,
 } from "../../../../../lib/jaPilot";
 import { jaPilotCopy } from "../../../../../lib/jaPilotCopy";
+import { japaneseDraftNote, japaneseLanguagePaths } from "../../../../../lib/japaneseSite";
+import { KeepWords } from "../../../../../components/text/KeepWords";
 
 const copy = jaPilotCopy.guide;
 const image = "/images/guides/shanghai-hangzhou-transport-route/hero-1600.webp";
@@ -23,11 +25,18 @@ export const metadata: Metadata = {
 
 export default function JapaneseShanghaiHangzhouGuide() {
   return (
-    <JapanesePilotShell current="guide">
+    <div className={styles.site}>
+      <a className={styles.skipLink} href="#main">本文へ移動</a>
+      <JapaneseSiteHeader
+        contactHref="#contact"
+        currentPath={jaPilot.guide}
+        languagePaths={japaneseLanguagePaths(`/guides/${jaPilot.guideId}/`, jaPilot.guide)}
+      />
+      <main id="main">
       <div className={styles.container}>
         <header className={styles.hero}>
           <p className={styles.eyebrow}>{copy.eyebrow}</p>
-          <h1 className={styles.title}>{copy.title}</h1>
+          <h1 className={styles.title}><KeepWords locale="ja" text={copy.title} /></h1>
           <p className={styles.lede}>{copy.lede}</p>
         </header>
         <figure>
@@ -36,34 +45,37 @@ export default function JapaneseShanghaiHangzhouGuide() {
         </figure>
 
         <section className={styles.section} aria-labelledby="decision">
-          <h2 id="decision">{copy.compareTitle}</h2>
+          <h2 id="decision"><KeepWords locale="ja" text={copy.compareTitle} /></h2>
           <div className={styles.cards}>
-            {copy.compare.map((item) => <article className={styles.card} key={item.label}><h3>{item.label}</h3><p>{item.body}</p></article>)}
+            {copy.compare.map((item) => <article className={styles.card} key={item.label}><h3><KeepWords locale="ja" text={item.label} /></h3><p>{item.body}</p></article>)}
           </div>
         </section>
 
         {copy.sections.map((section, index) => (
           <section className={styles.section} aria-labelledby={`section-${index}`} key={section.title}>
-            <h2 id={`section-${index}`}>{section.title}</h2><p>{section.body}</p>
+            <h2 id={`section-${index}`}><KeepWords locale="ja" text={section.title} /></h2><p>{section.body}</p>
             {index === 5 ? <a className={styles.cardLink} href={jaPilot.tour}>上海・蘇州・杭州6日間の行程を見る →</a> : null}
           </section>
         ))}
 
         <section className={styles.section} aria-labelledby="sources">
-          <h2 id="sources">{copy.sourceTitle}</h2>
+          <h2 id="sources"><KeepWords locale="ja" text={copy.sourceTitle} /></h2>
           <ul className={styles.sourceList}>{copy.sources.map((source) => <li key={source.url}><a href={source.url} rel="noopener noreferrer">{source.label}</a></li>)}</ul>
           <p>列車の時刻・空席・運賃は日付で変わります。予約前に12306で確認してください。</p>
         </section>
 
         <section className={styles.cta} id="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">{copy.ctaTitle}</h2><p>{copy.ctaBody}</p>
+          <h2 id="contact-title"><KeepWords locale="ja" text={copy.ctaTitle} /></h2><p>{copy.ctaBody}</p>
           <div className={styles.ctaLinks}>
             <a className={styles.buttonPrimary} href={jaPilotWhatsAppHref("guide")} target="_blank" rel="noopener noreferrer">{copy.ctaLabel} · WhatsApp</a>
             <a className={styles.buttonSecondary} href={jaPilotEmailHref("guide")}>メールで相談する</a>
           </div>
+          <p className={styles.imageCaption}>{japaneseDraftNote}</p>
           <p className={styles.imageCaption}><a href={jaPilot.privacy}>お問い合わせと個人情報について</a></p>
         </section>
       </div>
-    </JapanesePilotShell>
+      </main>
+      <JapaneseSiteFooter currentPath={jaPilot.guide} />
+    </div>
   );
 }

@@ -319,7 +319,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
   ],
   routeMedia: [
     routeMedia(
-      5,
+      4,
       l("Huanglong", "黄龙", "황룽"),
       image(
         chengduJiuzhaigouSlug,

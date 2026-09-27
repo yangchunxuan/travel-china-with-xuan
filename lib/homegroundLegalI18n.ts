@@ -117,6 +117,7 @@ export function getHomegroundLegalLanguagePaths(
     en: getHomegroundLegalPath(pageId, "en"),
     "zh-Hans": getHomegroundLegalPath(pageId, "zh"),
     ko: getHomegroundLegalPath(pageId, "ko"),
+    ja: `/ja/${pageId}/`,
     "x-default": getHomegroundLegalPath(pageId, "en"),
   };
 }

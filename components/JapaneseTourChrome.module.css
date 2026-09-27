@@ -26,3 +26,11 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* The Japanese nav is wider than the English one; below 1440px the FAQ link
+   would collide with it (FAQ stays in the home page and the mobile menu). */
+@media (max-width: 1439.98px) {
+  a.faqUtilityLink {
+    display: none;
+  }
+}

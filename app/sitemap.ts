@@ -17,6 +17,7 @@ import {
   jaPilotGuideAlternates,
   jaPilotTourAlternates,
 } from "../lib/jaPilot";
+import { japaneseAlternates } from "../lib/japaneseSite";
 import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
@@ -103,6 +104,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "x-default": "/tours/zhangjiajie-4-day-private-tour/",
   };
   const legacyPaths = new Set<string>(Object.values(legacyAlternates));
+  // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
+  const japaneseSitePages = [
+    { en: "/", ja: "/ja/", changeFrequency: "weekly" as const, priority: 0.8 },
+    { en: "/services/", ja: "/ja/services/", changeFrequency: "monthly" as const, priority: 0.6 },
+    { en: "/explore/", ja: "/ja/explore/", changeFrequency: "weekly" as const, priority: 0.7 },
+    { en: "/studio/", ja: "/ja/studio/", changeFrequency: "monthly" as const, priority: 0.5 },
+    { en: "/studio/evan/", ja: "/ja/studio/evan/", changeFrequency: "monthly" as const, priority: 0.4 },
+    { en: "/business-information/", ja: "/ja/business-information/", changeFrequency: "yearly" as const, priority: 0.3 },
+    { en: "/terms/", ja: "/ja/terms/", changeFrequency: "yearly" as const, priority: 0.3 },
+    { en: "/refund-delivery/", ja: "/ja/refund-delivery/", changeFrequency: "yearly" as const, priority: 0.3 },
+    { en: "/privacy/", ja: "/ja/privacy/", changeFrequency: "yearly" as const, priority: 0.3 },
+  ].map((page) => ({ ...page, alternates: japaneseAlternates(page.en, page.ja) }));
+  const japaneseSiteAlternatesByPath = new Map(
+    japaneseSitePages.flatMap((page) =>
+      Object.values(page.alternates).map((path) => [path, page.alternates] as const),
+    ),
+  );
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
@@ -116,6 +134,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             ? absoluteJaPilotAlternates(hubAlternates)
             : legacyPaths.has(entry.canonicalPath)
               ? absoluteJaPilotAlternates(legacyAlternates)
+              : japaneseSiteAlternatesByPath.has(entry.canonicalPath)
+                ? absoluteJaPilotAlternates(japaneseSiteAlternatesByPath.get(entry.canonicalPath)!)
         : absoluteManifestAlternates(entry);
 
     return {
@@ -138,6 +158,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const japaneseEntries: MetadataRoute.Sitemap = [
+    ...japaneseSitePages.map((page) => ({
+      url: `${base}${page.ja}`,
+      lastModified: "2026-09-27",
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: { languages: absoluteJaPilotAlternates(page.alternates) },
+    })),
     {
       url: `${base}/ja/tours/`,
       lastModified: "2026-09-27",
