@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 77 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 84 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -136,6 +136,7 @@ test("commercial links keep the approved 8 hub, 77 curated guide and 48 product 
       "best-2-week-china-tour",
       "best-zhangjiajie-night-show",
       "border-town-fenghuang-chadong-shen-congwen",
+      "chaozhou-ancient-city-gates-bridge-lanes-route",
       "chengdu-chongqing-zhangjiajie-itinerary",
       "chengdu-jiuzhaigou-transport-route",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
@@ -160,12 +161,14 @@ test("commercial links keep the approved 8 hub, 77 curated guide and 48 product 
       "first-china-trip-jiangnan-6-or-beijing-11-days",
       "food-plants-and-animal-products-into-china",
       "forbidden-city-for-foreign-visitors",
+      "fujian-tulou-cluster-selection",
       "great-wall-section-selector-from-beijing",
       "guangzhou-macau-transport-route",
       "guangzhou-shenzhen-hong-kong-route-order",
       "guilin-airport-or-railway-station-arrival-guide",
       "guilin-yangshuo-transport-route",
       "guilin-yangshuo-with-kids-and-older-parents",
+      "how-guangzhou-morning-tea-works",
       "how-much-does-a-china-trip-cost",
       "how-to-pay-in-china-as-a-tourist",
       "how-to-read-a-suzhou-garden",
@@ -185,18 +188,22 @@ test("commercial links keep the approved 8 hub, 77 curated guide and 48 product 
       "shanghai-suzhou-hangzhou-nanjing-route-order",
       "shanghai-to-suzhou-day-trip",
       "shanghai-where-to-stay-first-trip",
+      "shenzhen-airport-railway-station-border-port-selector",
+      "shenzhen-where-to-stay-futian-luohu-nanshan",
       "singapore-to-zhangjiajie-itinerary",
       "summer-palace-gates-route-and-boat-plan",
       "suzhou-with-older-parents-garden-museum-transfer-day",
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
+      "xiamen-hubs-to-gulangyu-ferry-terminal",
       "xiamen-tulou-quanzhou-six-day-route",
       "xian-city-wall-tickets-gates-walk-or-bike",
       "xian-lanzhou-dunhuang-silk-road-route",
       "xian-where-to-stay-city-wall-or-dayanta",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "yangtze-cruise-fit-china-itinerary",
+      "yuanyang-rice-terraces-viewpoint-and-village-route",
       "zhangjiajie-arrival-departure-stations",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
@@ -272,6 +279,8 @@ test("new route guides point to their matching private-tour products", () => {
   assert.deepEqual(guideTargets["yangtze-cruise-fit-china-itinerary"], [
     { kind: "product", slug: "chongqing-yangtze-cruise-6-day-private-tour" },
     { kind: "product", slug: "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour" },
+    { kind: "product", slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour" },
+    { kind: "product", slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour" },
   ]);
 });
 

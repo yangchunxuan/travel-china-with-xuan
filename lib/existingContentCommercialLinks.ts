@@ -128,6 +128,13 @@ const approvedCommercialGuideIds = [
   "shanghai-suzhou-hangzhou-nanjing-route-order",
   "xian-lanzhou-dunhuang-silk-road-route",
   "xiamen-tulou-quanzhou-six-day-route",
+  "fujian-tulou-cluster-selection",
+  "xiamen-hubs-to-gulangyu-ferry-terminal",
+  "shenzhen-where-to-stay-futian-luohu-nanshan",
+  "shenzhen-airport-railway-station-border-port-selector",
+  "chaozhou-ancient-city-gates-bridge-lanes-route",
+  "how-guangzhou-morning-tea-works",
+  "yuanyang-rice-terraces-viewpoint-and-village-route",
   "yangtze-cruise-fit-china-itinerary",
   "li-river-cruise-tickets-piers-booking",
   "jade-dragon-snow-mountain-cable-car-booking",
@@ -170,7 +177,7 @@ const productContexts = {
   },
   "shanghai-suzhou-5-day-private-tour": {
     destinations: ["shanghai"],
-    guides: ["china-10-day-itinerary", "shanghai-where-to-stay-first-trip", "shanghai-to-suzhou-day-trip", "how-to-read-a-suzhou-garden"],
+    guides: ["china-10-day-itinerary", "shanghai-where-to-stay-first-trip", "shanghai-to-suzhou-day-trip", "how-to-read-a-suzhou-garden", "wheelchair-accessible-china-route-planning", "china-accessible-hotel-room-verification"],
     relatedProducts: [p("shanghai-suzhou-hangzhou-6-day-private-tour")],
   },
   "beijing-highlights-5-day-private-tour": {
@@ -208,11 +215,11 @@ const productContexts = {
   },
   "xiamen-tulou-quanzhou-6-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["xiamen-tulou-quanzhou-six-day-route", "xiamen-hubs-to-gulangyu-ferry-terminal", "fujian-tulou-cluster-selection"],
   },
   "chaozhou-shantou-nanao-5-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["chaozhou-ancient-city-gates-bridge-lanes-route"],
   },
   "chengdu-chongqing-8-day-private-tour": {
     destinations: ["chengdu", "chongqing"],
@@ -228,7 +235,7 @@ const productContexts = {
   },
   "guangzhou-shunde-foshan-5-day-private-tour": {
     destinations: ["guangzhou"],
-    guides: [],
+    guides: ["how-guangzhou-morning-tea-works", "guangzhou-baiyun-airport-t2-t3"],
   },
   "huangshan-hongcun-huizhou-5-day-private-tour": {
     destinations: [],
@@ -269,6 +276,7 @@ const productContexts = {
   "chongqing-yangtze-cruise-6-day-private-tour": {
     destinations: ["chongqing"],
     guides: [
+      "yangtze-cruise-fit-china-itinerary",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "chongqing-railway-station-selector",
     ],
@@ -284,12 +292,12 @@ const productContexts = {
   },
   "kunming-jianshui-yuanyang-6-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["yuanyang-rice-terraces-viewpoint-and-village-route"],
     relatedProducts: [p("kunming-dali-lijiang-8-day-private-tour")],
   },
   "shenzhen-family-tech-4-day-private-tour": {
     destinations: [],
-    guides: [],
+    guides: ["china-itinerary-with-young-children", "shenzhen-where-to-stay-futian-luohu-nanshan", "shenzhen-airport-railway-station-border-port-selector"],
   },
   "beijing-xian-shanghai-12-day-private-tour": {
     destinations: ["beijing", "xian", "shanghai"],
@@ -322,6 +330,7 @@ const productContexts = {
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     destinations: ["beijing", "xian", "chengdu", "shanghai"],
     guides: [
+      "china-small-group-tours-2027",
       "china-14-day-itinerary",
       "beijing-xian-chengdu-route-order",
       "chengdu-panda-base-or-dujiangyan-panda-valley",
@@ -348,6 +357,7 @@ const productContexts = {
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
     destinations: ["beijing", "xian", "chengdu", "chongqing", "shanghai"],
     guides: [
+      "yangtze-cruise-fit-china-itinerary",
       "china-14-day-itinerary",
       "beijing-xian-chengdu-route-order",
       "chongqing-railway-station-selector",
@@ -415,6 +425,7 @@ const productContexts = {
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": {
     destinations: ["beijing", "xian", "zhangjiajie", "shanghai"],
     guides: [
+      "china-small-group-tours-2027",
       "china-14-day-itinerary",
       "zhangjiajie-national-forest-park-tickets-and-entrances",
       "tianmen-mountain-tickets-and-routes",
@@ -428,6 +439,8 @@ const productContexts = {
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
     destinations: ["beijing", "xian", "chengdu", "chongqing", "shanghai"],
     guides: [
+      "china-small-group-tours-2027",
+      "yangtze-cruise-fit-china-itinerary",
       "china-14-day-itinerary",
       "beijing-xian-chengdu-route-order",
       "chongqing-railway-station-selector",
@@ -441,6 +454,7 @@ const productContexts = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     destinations: ["beijing", "xian"],
     guides: [
+      "china-small-group-tours-2027",
       "xian-lanzhou-dunhuang-silk-road-route",
       "mogao-caves-independent-visit-workflow",
       "great-wall-section-selector-from-beijing",
@@ -525,6 +539,7 @@ const productContexts = {
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
     destinations: ["beijing", "xian", "chongqing", "shanghai"],
     guides: [
+      "yangtze-cruise-fit-china-itinerary",
       "forbidden-city-for-foreign-visitors",
       "terracotta-warriors-without-tour",
       "chongqing-upper-lower-city-orientation",

@@ -787,9 +787,9 @@ const fujian: PrivateTourProduct = {
     "구랑위 골목, 두 토루 지역, 안시 차와 해상 실크로드 취안저우",
   ),
   lede: l(
-    "Start with Gulangyu, continue through Yongding's Chengqi Lou and Nanjing's Tianluokeng area, stop for Anxi tea, then visit Quanzhou before returning to Xiamen for departure.",
-    "先游鼓浪屿，再依次前往永定承启楼、南靖田螺坑一带、安溪茶园和泉州，最后返回厦门离境。",
-    "구랑위에서 시작해 융딩 청치러우와 난징 톈뤄컹 일대, 안시 차밭, 취안저우를 거쳐 샤먼으로 돌아와 출발합니다.",
+    "Visit Gulangyu when your Xiamen arrival and ferry allow, then travel through Yongding's Chengqi Lou, Nanjing's Tianluokeng area, Anxi and Quanzhou before returning to Xiamen.",
+    "抵达厦门后，按时间和船班安排鼓浪屿，再前往永定承启楼、南靖田螺坑、安溪与泉州，最后返回厦门。",
+    "샤먼 도착 시간과 배편이 맞으면 구랑위를 방문하고, 이후 융딩 청치러우, 난징 톈뤄컹, 안시와 취안저우를 거쳐 샤먼으로 돌아옵니다.",
   ),
   summary: l(
     "Five nights with breakfast in four-star-standard hotels across Xiamen, Nanjing, Anxi and Quanzhou, plus a private English guide, vehicle, admissions, tea tasting and four listed lunches.",
@@ -824,11 +824,11 @@ const fujian: PrivateTourProduct = {
   itinerary: [
     day(
       1,
-      l("Arrive in Xiamen and visit Gulangyu", "抵达厦门与鼓浪屿", "샤먼 도착과 구랑위"),
+      l("Arrive in Xiamen; Gulangyu if time allows", "抵达厦门；时间允许再上鼓浪屿", "샤먼 도착, 시간이 맞으면 구랑위"),
       l(
-        "Your guide and driver meet you at the airport. Take the reserved ferry to Gulangyu, explore the car-free lanes and the museum named in your confirmation, then return to your Xiamen hotel.",
-        "厦门机场接机后，乘预约好的船班前往鼓浪屿，步行游览街巷和确认单上列明的博物馆，再返回厦门酒店。",
-        "샤먼 공항에서 가이드와 기사가 맞이합니다. 예약된 배편으로 구랑위에 들어가 차 없는 골목과 확인서에 적힌 박물관을 둘러본 뒤 샤먼 호텔로 돌아옵니다.",
+        "Your guide and driver meet you at the airport. If the actual arrival time and a confirmed ferry leave enough time, visit Gulangyu's car-free lanes and the museum named in your confirmation before returning to the Xiamen hotel. A late arrival starts with the hotel transfer; we agree any revised island visit and its effect on the other stops in writing before booking.",
+        "导游和司机在厦门机场接机。只有实际抵达时间与已确认船班留出足够时间时，才上鼓浪屿走街巷、参观确认单列明的博物馆，再返回厦门酒店。若到得晚，先接送入住；鼓浪屿改到哪天、会不会影响其他景点，预订前书面确认。",
+        "샤먼 공항에서 가이드와 기사가 맞이합니다. 실제 도착 시각과 확정된 배편으로 충분한 시간이 남을 때에만 구랑위의 골목과 확인서에 적힌 박물관을 보고 샤먼 호텔로 돌아옵니다. 늦게 도착하면 먼저 호텔로 이동하며, 섬 방문 일정 변경과 다른 방문지에 미치는 영향은 예약 전에 서면으로 합의합니다.",
       ),
     ),
     day(
@@ -904,6 +904,14 @@ const fujian: PrivateTourProduct = {
     "页面列出的 2 人和 6 人每人起价按双人同住计算；准确总价会在付款前确认，单房差另计。",
     "표시된 2명·6명 기준 1인 시작가는 2인 1실 조건입니다. 정확한 총액은 결제 전 확인하며 1인실 추가금은 별도입니다.",
   ),
+  faq: [{
+    question: l("Is Gulangyu guaranteed on arrival day?", "抵达当天一定能去鼓浪屿吗？", "도착 당일 구랑위 방문이 보장되나요?"),
+    answer: l(
+      "No. We check your actual Xiamen arrival, time to leave the airport and an available ferry before fixing Day 1. If the ferry does not fit, we discuss a later island visit or a lighter arrival day. Moving the visit may require removing or changing another stop; the final sequence and inclusions are confirmed in writing before booking.",
+      "不保证。要先核对实际抵达时间、出机场所需时间和可订船班。若赶不上，就讨论改日上岛或把抵达日放轻；改序可能要调整其他景点。最终顺序和包含项目会在预订前书面确认。",
+      "보장되지 않습니다. 실제 샤먼 도착 시각, 공항을 나오는 데 걸리는 시간과 예약 가능한 배편을 확인한 뒤 1일 차를 정합니다. 배편이 맞지 않으면 섬 방문을 다른 날로 옮기거나 도착일을 가볍게 조정합니다. 순서를 바꾸면 다른 방문지를 조정해야 할 수 있으며, 최종 동선과 포함 사항은 예약 전에 서면으로 확인합니다.",
+    ),
+  }],
   heroImage: image(
     fujianSlug,
     "hero.webp",
@@ -967,7 +975,7 @@ const fujian: PrivateTourProduct = {
     ]),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-26",
+  dateModified: "2026-09-28",
 };
 
 const chaoshanSlug = "chaozhou-shantou-nanao-5-day-private-tour";

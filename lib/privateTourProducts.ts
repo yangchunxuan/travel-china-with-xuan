@@ -2281,7 +2281,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ),
   ],
   datePublished: PUBLISHED,
-  dateModified: "2026-09-26",
+  dateModified: "2026-09-28",
 };
 
 const beijing: PrivateTourProduct = {

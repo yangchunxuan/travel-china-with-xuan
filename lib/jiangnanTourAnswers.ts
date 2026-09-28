@@ -28,6 +28,14 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
     ),
   },
   {
+    question: l("Can a wheelchair user take this Shanghai–Suzhou tour?", "使用轮椅能参加这条上海—苏州路线吗？", "휠체어 이용자도 상하이·쑤저우 일정에 참여할 수 있나요?"),
+    answer: l(
+      "The published route has not been verified as wheelchair-accessible. The high-speed train, station handoffs, vehicle, hotel room, Zhujiajiao, gardens and old streets must each work for the specific traveller and wheelchair. Send us the chair dimensions, transfer needs and walking limits before booking. We will check each link and an alternative; if an essential link cannot be confirmed, we will propose a different route rather than promise this one will work.",
+      "这条公开路线没有被核实为全程轮椅无障碍。高铁及车站接续、车辆、酒店房间、朱家角、园林和老街，都要按使用者和轮椅的具体情况逐段核对。预订前请告诉我们轮椅尺寸、上下车需求和步行能力；我们会核实每一段及替代方案。如果关键一段无法确认，就另拟路线，不承诺原路线一定可行。",
+      "공개 일정은 휠체어로 전 구간 이동이 가능하다고 검증된 상품이 아닙니다. 고속열차와 역 환승, 차량, 호텔 객실, 주자자오, 정원과 옛 거리를 해당 여행자와 휠체어에 맞춰 각각 확인해야 합니다. 예약 전에 휠체어 크기, 이동 보조 필요 사항과 보행 가능 범위를 알려 주세요. 구간별 동선과 대안을 확인하고, 핵심 구간이 맞지 않으면 이 일정을 무리하게 약속하지 않고 다른 경로를 제안합니다.",
+    ),
+  },
+  {
     question: l("How are rooms and the Suzhou journey arranged for four or six people?", "4 人或 6 人怎样分房、去苏州？", "4명이나 6명은 객실과 쑤저우 이동을 어떻게 준비하나요?"),
     answer: l(
       "The published starting prices assume two people sharing a room: two rooms for four travellers, or three for six, at the same Shanghai hotel for all four nights. Both groups still use second-class return high-speed rail for Suzhou, with private station transfers. Tell us your preferred beds, ages and luggage count; we confirm the rooms, train and vehicle before the final written quote. The Suzhou day does not include a return to your Shanghai room for a midday rest.",

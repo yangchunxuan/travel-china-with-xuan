@@ -525,7 +525,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.doesNotMatch(localized.bookingNote, rules.impossibleGuarantee);
   }
 
-  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-26");
+  const shanghai = product("shanghai-suzhou-5-day-private-tour", "2026-09-28");
   const shanghaiRules = {
     en: {
       common: [
