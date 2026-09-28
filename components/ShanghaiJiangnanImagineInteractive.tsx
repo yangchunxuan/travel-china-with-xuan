@@ -118,6 +118,37 @@ type PhotoCopy = Readonly<{
   dayUnit: string;
 }>;
 
+const previewCaption: Record<PrivateTourLocale, (alt: string) => string> = {
+  en: (alt) =>
+    `${alt} — Tour photo preview only. This does not confirm this day's sights, arrangements or actual conditions.`,
+  zh: (alt) =>
+    `${alt}｜本行程实景预览；不代表这一天的景点、已确认安排或实际情况。`,
+  ko: (alt) =>
+    `${alt} — 이 여행의 사진 미리보기입니다. 해당 날짜의 관광지, 확정 일정 또는 실제 현장 상황을 뜻하지 않습니다.`,
+};
+
+const japanesePreviewCaption = (alt: string) =>
+  `${alt}｜この旅の写真プレビューです。この日の行き先、確定した行程や実際の現地状況を示すものではありません。`;
+
+const beijingArrivalTitles = new Set([
+  "Arrive in Beijing",
+  "抵达北京",
+  "베이징 도착",
+  "北京到着",
+  "北京に到着",
+]);
+const beijingArrivalPhoto = "/images/tours/beijing-highlights-5-day-private-tour/arrival-beijing-city-1600.webp";
+const beijingArrivalAlt: Record<PrivateTourLocale, string> = {
+  en: "Beijing CBD roads and skyline at night",
+  zh: "北京 CBD 夜间道路与城市天际线",
+  ko: "밤의 베이징 CBD 도로와 스카이라인",
+};
+const beijingArrivalPreviewLabel: Record<PrivateTourLocale, string> = {
+  en: "Beijing city journey preview. ",
+  zh: "北京城市行程预览。",
+  ko: "베이징 도심 여행 미리보기. ",
+};
+
 /** Scoped copy supplied by the Japanese page; pricing and selection stay shared. */
 export type JapanesePriceCopy = Readonly<{
   choosePackage: string;
@@ -529,18 +560,75 @@ export function ShanghaiJiangnanRouteExplorer({
   const copy = photoCopy
     ? { ...photoCopy, dayLabel: (day: number) => `${day}${photoCopy.dayUnit}` }
     : interactionCopy[product.locale];
-  const routeMedia = useMemo(
-    () =>
-      product.itinerary.map((day) => {
-        const assigned = product.routeMedia.find(
-          (group) => group.day === day.day,
-        );
-        return assigned?.variants.length ? assigned : null;
-      }),
-    [product.itinerary, product.routeMedia],
-  );
-  const activeDay = product.itinerary[activeIndex] ?? product.itinerary[0];
-  const activeImage = routeMedia[activeIndex]?.variants[0]?.image;
+  const routeMedia = useMemo(() => {
+    const datedPhotos = product.routeMedia.flatMap((group) =>
+      group.variants.map((variant) => ({ day: group.day, image: variant.image })),
+    );
+    const previewPhotos = [...datedPhotos, { day: 1, image: product.heroImage }];
+    const genericPhotos = [product.heroImage, ...product.gallery];
+    const describePreview = photoCopy
+      ? japanesePreviewCaption
+      : previewCaption[product.locale];
+
+    return product.itinerary.map((day, index) => {
+      const assigned = product.routeMedia.find(
+        (group) => group.day === day.day,
+      );
+      const authored = assigned?.variants.length ? assigned : null;
+      if (authored) return authored;
+
+      if (day.day === 1 && beijingArrivalTitles.has(day.title)) {
+        const alt = photoCopy
+          ? "夜の北京CBDの道路と街の景色"
+          : beijingArrivalAlt[product.locale];
+        const label = photoCopy
+          ? "北京の街の旅程プレビュー。"
+          : beijingArrivalPreviewLabel[product.locale];
+        return {
+          day: day.day,
+          variants: [{
+            label: copy.routeScenes,
+            image: {
+              src: beijingArrivalPhoto,
+              width: 1600,
+              height: 1000,
+              objectPosition: "50% 50%",
+              alt,
+              caption: `${label}${describePreview(alt)}`,
+            },
+          }],
+        };
+      }
+
+      // Gallery photos have no day assignment. Use them only when the route
+      // has no dated photos; otherwise the closest dated scene (or the hero
+      // for the opening day) is the least arbitrary preview.
+      const nearest = previewPhotos.reduce((best, candidate) =>
+        Math.abs(candidate.day - day.day) < Math.abs(best.day - day.day)
+          ? candidate
+          : best,
+      );
+      const source = datedPhotos.length
+        ? nearest.image
+        : genericPhotos[index % genericPhotos.length];
+      return {
+        day: day.day,
+        variants: [{
+          label: copy.routeScenes,
+          image: { ...source, caption: describePreview(source.alt) },
+        }],
+      };
+    });
+  }, [
+    copy.routeScenes,
+    photoCopy,
+    product.gallery,
+    product.heroImage,
+    product.itinerary,
+    product.locale,
+    product.routeMedia,
+  ]);
+  const activeImage = routeMedia[activeIndex]?.variants[0]?.image ?? product.heroImage;
 
   useEffect(() => {
     const explorer = explorerRef.current;
@@ -612,29 +700,19 @@ export function ShanghaiJiangnanRouteExplorer({
         })}
       </ol>
 
-      {activeImage ? (
-        <figure className={styles.routeMedia}>
-          <div className={styles.routeImageFrame}>
-            <Image
-              alt={activeImage.alt}
-              fill
-              key={`${activeIndex}-${activeImage.src}`}
-              sizes="(max-width: 860px) 92vw, 48vw"
-              src={activeImage.src}
-              style={{ objectPosition: activeImage.objectPosition }}
-            />
-          </div>
-          <figcaption>{activeImage.caption}</figcaption>
-        </figure>
-      ) : (
-        <aside
-          aria-live="polite"
-          className={`${styles.routeMedia} ${styles.routeMediaEmpty}`}
-        >
-          <span>{copy.dayLabel(activeDay.day)}</span>
-          <strong>{activeDay.title}</strong>
-        </aside>
-      )}
+      <figure className={styles.routeMedia}>
+        <div className={styles.routeImageFrame}>
+          <Image
+            alt={activeImage.alt}
+            fill
+            key={`${activeIndex}-${activeImage.src}`}
+            sizes="(max-width: 860px) 92vw, 48vw"
+            src={activeImage.src}
+            style={{ objectPosition: activeImage.objectPosition }}
+          />
+        </div>
+        <figcaption>{activeImage.caption}</figcaption>
+      </figure>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { LocalizedText, PrivateTourLocale } from "./privateTourProducts";
 import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPhotoCredits";
 import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExpansionPhaseTwoPhotoCredits";
 import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
+import { privateTourAdditionalCreditsBySlug } from "./privateTourPhotoAdditions";
 
 export interface PrivateTourPhotoCredit {
   subject: LocalizedText;
@@ -304,7 +305,7 @@ export const privateTourPhotoCreditCopy = {
   en: {
     title: "Photo credits",
     intro:
-      "The location-specific external photographs are credited below. Only conventional cropping, resizing and web-format optimisation were applied; no generative edits were made.",
+      "The location-specific external photographs are credited below. Only conventional cropping, resizing and WebP conversion were applied; no generative edits were made. Adapted CC BY-SA photos are shared under the linked CC BY-SA license.",
     by: "Photo by",
     localNote:
       "All remaining photographs were selected from the Homeground project library and authorised by the site owner for this website. Only routine cropping, resizing and format conversion were applied.",
@@ -312,7 +313,7 @@ export const privateTourPhotoCreditCopy = {
   zh: {
     title: "图片来源与授权",
     intro:
-      "地点明确的外部照片在下方逐张标注。本站只做常规裁切、缩放与网页格式优化，没有生成式修改。",
+      "地点明确的外部照片在下方逐张标注。本站只做常规裁切、缩放与 WebP 转换，没有生成式修改。以 CC BY-SA 授权的改作照片继续按所链接的同一许可分享。",
     by: "摄影",
     localNote:
       "其余照片由网站负责人从 Homeground 项目素材库选用并授权用于本站，仅做常规裁切、缩放和格式转换。",
@@ -320,7 +321,7 @@ export const privateTourPhotoCreditCopy = {
   ko: {
     title: "사진 출처 및 라이선스",
     intro:
-      "장소가 확인된 외부 사진의 출처를 아래에 표시했습니다. 일반적인 자르기, 크기 조정과 웹 형식 최적화만 했으며 생성형 편집은 사용하지 않았습니다.",
+      "장소가 확인된 외부 사진의 출처를 아래에 표시했습니다. 일반적인 자르기, 크기 조정과 WebP 변환만 했으며 생성형 편집은 사용하지 않았습니다. CC BY-SA 사진의 수정본은 연결된 동일 라이선스로 공유합니다.",
     by: "촬영",
     localNote:
       "나머지 사진은 사이트 소유자가 Homeground 프로젝트 자료실에서 선택해 이 웹사이트 사용을 승인했습니다. 일반적인 자르기, 크기 조정과 형식 변환만 적용했습니다.",
@@ -331,7 +332,13 @@ export function getLocalizedPrivateTourPhotoCredits(
   slug: string,
   locale: PrivateTourLocale,
 ): readonly LocalizedPrivateTourPhotoCredit[] {
-  return (privateTourPhotoCreditsBySlug[slug] ?? []).map((item) => ({
+  const credits = [
+    ...(privateTourPhotoCreditsBySlug[slug] ?? []),
+    ...(privateTourAdditionalCreditsBySlug[slug] ?? []),
+  ];
+  return credits.filter((item, index) =>
+    credits.findIndex((candidate) => candidate.sourceUrl === item.sourceUrl) === index,
+  ).map((item) => ({
     subject: item.subject[locale],
     author: item.author,
     sourceUrl: item.sourceUrl,

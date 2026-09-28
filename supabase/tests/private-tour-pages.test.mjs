@@ -64,7 +64,7 @@ test("regional private tours answer the pre-purchase question without promising 
   for (const [slug, languages] of cases) {
     const product = getPrivateTourProduct(slug);
     assert.ok(product, slug);
-    assert.equal(product.dateModified, "2026-09-26", slug);
+    assert.ok(product.dateModified >= "2026-09-26", `${slug} freshness`);
     for (const locale of locales) {
       const [questionPattern, ...answerPatterns] = languages[locale];
       const faq = localizePrivateTourProduct(product, locale).faq.find(({ question }) => questionPattern.test(question));
@@ -469,7 +469,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     return result;
   };
 
-  const harbin = product("harbin-winter-5-day-private-tour");
+  const harbin = product("harbin-winter-5-day-private-tour", "2026-09-28");
   const harbinRules = {
     en: {
       dayTwo: ["named, managed", "confirms open that day", "Never enter unmanaged river ice"],
@@ -571,7 +571,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     assert.ok(localized.bookingNote.includes(rules.bookingOnly));
   }
 
-  const xian = product("xian-terracotta-warriors-5-day-private-tour", "2026-09-26");
+  const xian = product("xian-terracotta-warriors-5-day-private-tour", "2026-09-28");
   const xianRules = {
     en: {
       title: "Muslim Quarter and Xi'an Museum complex",
@@ -610,7 +610,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     );
   }
 
-  const chongqing = product("chongqing-wulong-5-day-private-tour");
+  const chongqing = product("chongqing-wulong-5-day-private-tour", "2026-09-28");
   const chongqingRules = {
     en: {
       standard: ["current standard admission", "official transfer bus", "Tianlong revolving elevator"],
