@@ -244,7 +244,7 @@ export function HomepageQuickContact({
     process.env.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL?.trim() ||
       defaultMessengerUrl,
   );
-  const fallbackMailto = buildPrivateTourMailtoHref(
+  const directMailto = buildPrivateTourMailtoHref(
     homegroundBusiness.serviceEmail,
     locale,
     privateTourInterest,
@@ -590,6 +590,15 @@ export function HomepageQuickContact({
             ))}
             <span className={styles.boardKnob} aria-hidden="true" />
           </div>
+          <a
+            className={styles.boardDirectEmail}
+            href={directMailto}
+            data-contact-card-direct=""
+            onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
+          >
+            {contactCardCopy[locale].directEmailAction}
+            <ArrowUpRight aria-hidden="true" size={16} />
+          </a>
           {clock && (
             <p className={styles.boardClock}>
               {contactCardCopy[locale].chinaTime} <time>{clock}</time>
@@ -689,6 +698,20 @@ export function HomepageQuickContact({
               {contactCopy.emailEyebrow}
             </p>
           )}
+          {!board && (
+            <div className={styles.quickContactDirectEmailGroup}>
+              <a
+                className={styles.quickContactDirectEmail}
+                href={directMailto}
+                data-contact-card-direct=""
+                onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
+              >
+                {contactCardCopy[locale].directEmailAction}
+                <ArrowUpRight aria-hidden="true" size={18} />
+              </a>
+              <span>{homegroundBusiness.serviceEmail}</span>
+            </div>
+          )}
           <h3>{contactCopy.emailTitle}</h3>
           {board && (
             <p className={styles.boardReplyFrom}>
@@ -702,10 +725,6 @@ export function HomepageQuickContact({
               <p className={styles.quickContactUnavailable}>
                 {contactCopy.emailUnavailable}
               </p>
-              <a href={fallbackMailto} data-contact-card-direct={board ? "" : undefined} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}>
-                {contactCopy.emailFallbackAction}
-                <ArrowUpRight aria-hidden="true" size={18} />
-              </a>
             </div>
           ) : status === "success" ? (
             <div
@@ -841,17 +860,6 @@ export function HomepageQuickContact({
           >
             {liveStatus}
           </p>
-          {board && emailIntakeReady && (
-            <a
-              className={styles.boardMailApp}
-              href={fallbackMailto}
-              data-contact-card-direct=""
-              onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
-            >
-              {contactCardCopy[locale].openMailApp}
-              <ArrowUpRight aria-hidden="true" size={16} />
-            </a>
-          )}
         </article>
 
         {board && messengerUrl && (

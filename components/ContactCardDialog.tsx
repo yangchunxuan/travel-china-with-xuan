@@ -301,12 +301,19 @@ export function ContactCardDialog({
 
   const mail = (
     <section className={withSheet(styles.mail, sheetStyles.mail)} aria-labelledby={`${id}-mail`}>
-      <h3 id={`${id}-mail`}>{desk.emailTitle}</h3>
+      <h3 id={`${id}-mail`}>{sheet ? desk.emailTitle : copy.tabEmail}</h3>
       <p className={styles.replyFrom}>
         <span>{copy.replyFrom}</span>
         <strong>{homegroundBusiness.serviceEmail}</strong>
         <CopyButton value={homegroundBusiness.serviceEmail} label={copy.copyEmail} copied={copy.copied} idle={copy.copy} />
       </p>
+
+      {!sheet ? (
+        <a className={styles.mailApp} href={mailtoHref} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: contactVariant, page_language: locale })}>
+          {copy.directEmailAction}
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      ) : null}
 
       {!emailReady ? (
         <p className={styles.note}>{desk.emailUnavailable}</p>
@@ -380,10 +387,6 @@ export function ContactCardDialog({
         </form>
       )}
 
-      <a className={styles.mailApp} href={mailtoHref}>
-        {copy.openMailApp}
-        <ArrowUpRight size={16} aria-hidden="true" />
-      </a>
     </section>
   );
 
@@ -431,6 +434,10 @@ export function ContactCardDialog({
               ) : (
                 <p className={styles.note}>{desk.whatsappUnavailable}</p>
               )}
+              <a className={sheetStyles.directEmail} href={mailtoHref} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: contactVariant, page_language: locale })}>
+                {copy.directEmailAction}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
               {messengerHref ? (
                 <a className={sheetStyles.messenger} href={messengerHref} target="_blank" rel="noopener noreferrer" aria-describedby={`${id}-messenger-note`} onClick={openedApp("messenger")}>
                   <MessagesSquare size={16} aria-hidden="true" />
