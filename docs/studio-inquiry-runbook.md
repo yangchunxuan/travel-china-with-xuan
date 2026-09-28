@@ -134,9 +134,9 @@ that need a reply.
    including read messages. Review the inbox for direct enquiries without a
    handling label. Verify the actual Sent message before deciding that a
    response is overdue; answer or hand it to the person on duty immediately.
-   Do not hard-code 24 or 48 hours into this check until the owner selects the
-   public commitment. The local backend default is 24 hours and is configurable;
-   it is not evidence of current staffing or a verified production setting.
+   The owner-approved production commitment is 48 hours from receipt. Use each
+   enquiry's saved `first_response_due_at` for the actual deadline; the local
+   mock's separate 24-hour example does not change the production promise.
 
 2. In the Supabase SQL editor, run the non-PII aggregate query:
 

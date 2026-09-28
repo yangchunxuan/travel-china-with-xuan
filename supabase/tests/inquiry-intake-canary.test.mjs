@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { readFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import test from "node:test";
 
 const canaryWorkflowPath = ".github/workflows/inquiry-intake-canary.yml";
@@ -9,6 +11,140 @@ async function source(path) {
   return (await readFile(new URL(`../../${path}`, import.meta.url), "utf8"))
     .replace(/\r\n?/gu, "\n");
 }
+
+// Execute the actual workflow script with every curl call intercepted. This
+// exercises bundle discovery, payload creation and rejection checks without
+// accessing production or creating an inquiry.
+async function runCanaryFixture(t, { newPrivacyNotice = false, responseKind = "safe" } = {}) {
+  for (const command of ["bash", "jq"]) {
+    const available = spawnSync(command, ["--version"], { encoding: "utf8" });
+    if (available.error?.code === "ENOENT") {
+      t.skip(`${command} is unavailable; CI must execute the workflow fixture`);
+      return null;
+    }
+    assert.equal(available.status, 0, available.stderr);
+  }
+
+  const workflow = await source(canaryWorkflowPath);
+  const scriptMatch = workflow.match(/        run: \|\n([\s\S]*)$/);
+  assert.ok(scriptMatch, "the canary's shell script must be extractable");
+  const directory = await mkdtemp(join(tmpdir(), "inquiry-canary-test-"));
+  const fixturePath = join(directory, "curl-fixture.mjs");
+  const requestsPath = join(directory, "requests.jsonl");
+
+  try {
+    await writeFile(requestsPath, "");
+    await writeFile(fixturePath, String.raw`
+      import { appendFileSync, writeFileSync } from "node:fs";
+      const args = process.argv.slice(2);
+      const argument = (name) => args[args.indexOf(name) + 1];
+      const url = args.at(-1);
+      const origin = process.env.SITE_ORIGIN;
+      const endpoint = "https://canaryfixture.supabase.co/functions/v1/v1-inquiries";
+      let output;
+      if (args.includes("--request")) {
+        if (url !== endpoint) throw new Error("Unexpected endpoint: " + url);
+        const body = JSON.parse(argument("--data"));
+        appendFileSync(process.env.CANARY_REQUESTS, JSON.stringify(body) + "\n");
+        const fieldErrors = { contact: "required", antiAbuse: "required" };
+        if (body.entryPath === "destination_timing") fieldErrors.journey = "required";
+        const kind = process.env.CANARY_RESPONSE_KIND;
+        if (kind === "unsupported-privacy") fieldErrors.privacyNoticeVersion = "unsupported";
+        if (kind === "missing-contact-error") delete fieldErrors.contact;
+        if (kind === "missing-anti-abuse-error") delete fieldErrors.antiAbuse;
+        output = JSON.stringify({ error: {
+          code: "validation_failed",
+          persistenceState: kind === "persisted" ? "persisted" : "not_persisted",
+          fieldErrors,
+        } });
+        writeFileSync(argument("--output"), output);
+        process.stdout.write(kind === "accepted" ? "200" : "422");
+        process.exit(0);
+      }
+      if (url === origin + "/") {
+        output = '<script src="/_next/static/chunks/canary-fixture.js"></script>';
+      } else if (url === origin + "/_next/static/chunks/canary-fixture.js") {
+        output = JSON.stringify([
+          endpoint, "2026-07-21.1", "2026-07-26.1", "2099-01-01.1",
+          ...(process.env.CANARY_NEW_PRIVACY === "true" ? ["2026-09-28.1"] : []),
+        ]);
+      } else {
+        throw new Error("Unexpected download: " + url);
+      }
+      if (args.includes("--output")) writeFileSync(argument("--output"), output);
+      else process.stdout.write(output);
+    `);
+
+    const result = spawnSync("bash", ["-c", `
+      curl() { "$CANARY_NODE" "$CANARY_CURL_FIXTURE" "$@"; }
+      # GitHub's Linux UUID source is replaced for portable, deterministic tests.
+      cat() {
+        if [[ "$1" == "/proc/sys/kernel/random/uuid" ]]; then
+          printf '%s\\n' '00000000-0000-4000-8000-000000000001'
+        else
+          command cat "$@"
+        fi
+      }
+      ${scriptMatch[1].replace(/^ {10}/gm, "")}
+    `], {
+      encoding: "utf8",
+      timeout: 15_000,
+      env: {
+        ...process.env,
+        SITE_ORIGIN: "https://canary.invalid",
+        CANARY_NODE: process.execPath,
+        CANARY_CURL_FIXTURE: fixturePath,
+        CANARY_REQUESTS: requestsPath,
+        CANARY_NEW_PRIVACY: String(newPrivacyNotice),
+        CANARY_RESPONSE_KIND: responseKind,
+      },
+    });
+    assert.ifError(result.error);
+    const requests = (await readFile(requestsPath, "utf8"))
+      .trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
+    return { ...result, requests };
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+}
+
+test("the intake canary selects privacy from the live bundle without changing form versions", async (t) => {
+  for (const newPrivacyNotice of [false, true]) {
+    await t.test(newPrivacyNotice ? "updated live notice" : "old live notice fallback", async (t) => {
+      const result = await runCanaryFixture(t, { newPrivacyNotice });
+      if (!result) return;
+      assert.equal(result.status, 0, result.stdout + result.stderr);
+      assert.equal(result.requests.length, 6, "both surfaces must be probed in all three locales");
+      for (const body of result.requests) {
+        const destination = body.entryPath === "destination_timing";
+        const formVersion = destination ? "2026-07-21.1" : "2026-07-26.1";
+        assert.equal(body.schemaVersion, destination ? 2 : 3);
+        assert.equal(body.formVersion, formVersion);
+        assert.equal(body.privacyNoticeVersion, newPrivacyNotice ? "2026-09-28.1" : formVersion);
+        for (const forbidden of ["journey", "contact", "antiAbuse", "contact_email"]) {
+          assert.equal(Object.hasOwn(body, forbidden), false, `probe must omit ${forbidden}`);
+        }
+      }
+    });
+  }
+});
+
+test("the intake canary fails if the new notice or safe rejection is not supported", async (t) => {
+  for (const responseKind of [
+    "unsupported-privacy", "accepted", "persisted", "missing-contact-error", "missing-anti-abuse-error",
+  ]) {
+    await t.test(responseKind, async (t) => {
+      const result = await runCanaryFixture(t, { newPrivacyNotice: true, responseKind });
+      if (!result) return;
+      assert.equal(result.status, 1, result.stdout + result.stderr);
+      assert.equal(result.requests.length, 1, "an unsafe response must stop further probes");
+      assert.match(result.stdout, /::error::/);
+      if (responseKind === "unsupported-privacy") {
+        assert.match(result.stdout, /Intake rejects fields[\s\S]*privacyNoticeVersion/);
+      }
+    });
+  }
+});
 
 /**
  * On 2026-07-23 the published site moved to form/privacy version 2026-07-25.1

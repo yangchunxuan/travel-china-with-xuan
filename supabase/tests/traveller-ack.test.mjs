@@ -134,6 +134,7 @@ test("saved intake stays successful on optional receipt failures and exposes onl
     const body = await response.json(); assert.equal(body.ackQueued, false); assert.equal(body.ackStatus, "suppressed"); assert.equal(body.firstResponseDueAt, "2026-09-30T00:00:00Z");
     assert.equal(calls[0].name, "prepare_homeground_traveller_ack_v1");
     assert.equal(calls[0].args.p_recipient_hash, createHmac("sha256", "local-idempotency-secret").update("traveller-ack:guest@example.test").digest("hex"));
+    assert.match(calls[0].args.p_payload_hash, /^[a-f0-9]{64}$/);
     failAuxiliary = true;
     const failed = await send(); assert.equal(failed.status, 201);
     const fallback = await failed.json(); assert.equal(fallback.state, "submitted"); assert.equal(fallback.publicReference, reference); assert.equal(fallback.ackStatus, "unavailable");

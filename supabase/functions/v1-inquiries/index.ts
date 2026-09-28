@@ -459,6 +459,7 @@ async function handleRequest(request: Request): Promise<Response> {
       const recipientHash = email ? await hmacSha256Hex(requiredEnv("IDEMPOTENCY_HASH_SECRET"), `traveller-ack:${email.toLowerCase()}`) : null;
       await callSupabaseRpc<boolean>("prepare_homeground_traveller_ack_v1", {
         p_idempotency_key_hash: idempotencyKeyHash,
+        p_payload_hash: payloadHash,
         p_enabled: booleanEnv("TRAVELLER_ACK_ENABLED", false),
         p_recipient_hash: recipientHash,
         p_privacy_notice_version: payload.privacyNoticeVersion,

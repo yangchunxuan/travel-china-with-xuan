@@ -5,6 +5,7 @@ begin;
 -- Missing/off intent and legacy disclosures never become sendable on a later rollout.
 create table homeground_private.traveller_ack_intents (
   idempotency_key_hash text primary key check (idempotency_key_hash ~ '^[a-f0-9]{64}$'),
+  payload_hash text not null check (payload_hash ~ '^[a-f0-9]{64}$'),
   enabled boolean not null,
   privacy_notice_version text not null,
   recipient_hash text check (recipient_hash ~ '^[a-f0-9]{64}$'),
@@ -54,10 +55,10 @@ alter table homeground_private.traveller_ack_events force row level security;
 revoke all on homeground_private.traveller_ack_intents, homeground_private.traveller_ack_outbox,
   homeground_private.traveller_ack_suppressions, homeground_private.traveller_ack_events from public, anon, authenticated, service_role;
 
-create function public.prepare_homeground_traveller_ack_v1(p_idempotency_key_hash text, p_enabled boolean, p_recipient_hash text, p_privacy_notice_version text)
+create function public.prepare_homeground_traveller_ack_v1(p_idempotency_key_hash text, p_payload_hash text, p_enabled boolean, p_recipient_hash text, p_privacy_notice_version text)
 returns boolean language plpgsql security definer set search_path = pg_catalog, homeground_private as $$
 begin
-  if p_idempotency_key_hash !~ '^[a-f0-9]{64}$' or p_enabled is null
+  if p_idempotency_key_hash !~ '^[a-f0-9]{64}$' or p_payload_hash !~ '^[a-f0-9]{64}$' or p_enabled is null
     or (p_recipient_hash is not null and p_recipient_hash !~ '^[a-f0-9]{64}$') then
     raise exception using errcode = '22023', message = 'invalid receipt intent';
   end if;
@@ -74,8 +75,8 @@ begin
     return false;
   end if;
   -- Do not change the intent on a replay, even when the feature switch changed.
-  insert into homeground_private.traveller_ack_intents(idempotency_key_hash, enabled, recipient_hash, privacy_notice_version)
-    values (p_idempotency_key_hash, p_enabled and p_recipient_hash is not null and p_privacy_notice_version='2026-09-28.1', p_recipient_hash, p_privacy_notice_version)
+  insert into homeground_private.traveller_ack_intents(idempotency_key_hash, payload_hash, enabled, recipient_hash, privacy_notice_version)
+    values (p_idempotency_key_hash, p_payload_hash, p_enabled and p_recipient_hash is not null and p_privacy_notice_version='2026-09-28.1', p_recipient_hash, p_privacy_notice_version)
     on conflict do nothing;
   return true;
 end;
@@ -83,11 +84,16 @@ $$;
 
 create function homeground_private.enroll_traveller_ack_v1()
 returns trigger language plpgsql security definer set search_path = pg_catalog, homeground_private as $$
-declare intent homeground_private.traveller_ack_intents; receipt_status text := 'disabled'; reason text;
+declare saved homeground_private.inquiries; intent homeground_private.traveller_ack_intents; receipt_status text := 'disabled'; reason text;
 begin
-  select * into intent from homeground_private.traveller_ack_intents where idempotency_key_hash = new.idempotency_key_hash;
-  if new.contact_channel = 'email' and new.contact_email is not null and intent.enabled is true
-    and intent.recipient_hash is not null and intent.privacy_notice_version = '2026-09-28.1' then
+  -- The destination v4 wrapper inserts via v3 and updates the privacy version
+  -- later in the same transaction. A deferred trigger reads the final row.
+  select * into saved from homeground_private.inquiries where inquiry_id = new.inquiry_id;
+  if not found then return new; end if;
+  select * into intent from homeground_private.traveller_ack_intents where idempotency_key_hash = saved.idempotency_key_hash;
+  if saved.contact_channel = 'email' and saved.contact_email is not null and intent.enabled is true
+    and intent.recipient_hash is not null and intent.privacy_notice_version = '2026-09-28.1'
+    and saved.privacy_notice_version = '2026-09-28.1' and intent.payload_hash = saved.payload_hash then
     -- Serializes concurrent submissions to the same address across different keys.
     perform pg_advisory_xact_lock(hashtextextended(intent.recipient_hash, 28092026));
     select s.reason into reason from homeground_private.traveller_ack_suppressions s where s.recipient_hash = intent.recipient_hash;
@@ -102,16 +108,17 @@ begin
     end if;
   else
     reason := case when intent.idempotency_key_hash is null then 'intent_unavailable'
-      when new.contact_channel <> 'email' then 'no_email'
-      when intent.privacy_notice_version <> '2026-09-28.1' then 'legacy_disclosure' else 'feature_disabled' end;
+      when saved.contact_channel <> 'email' then 'no_email'
+      when saved.privacy_notice_version <> '2026-09-28.1' or intent.privacy_notice_version <> '2026-09-28.1' then 'legacy_disclosure'
+      when intent.payload_hash is distinct from saved.payload_hash then 'intent_mismatch' else 'feature_disabled' end;
   end if;
   insert into homeground_private.traveller_ack_outbox(inquiry_id, recipient_hash, status, suppression_reason)
-    values(new.inquiry_id, intent.recipient_hash, receipt_status, reason);
+    values(saved.inquiry_id, intent.recipient_hash, receipt_status, reason);
   return new;
 end;
 $$;
-create trigger enroll_homeground_traveller_ack after insert on homeground_private.inquiries
-  for each row execute function homeground_private.enroll_traveller_ack_v1();
+create constraint trigger enroll_homeground_traveller_ack after insert on homeground_private.inquiries
+  deferrable initially deferred for each row execute function homeground_private.enroll_traveller_ack_v1();
 
 create function public.get_homeground_traveller_ack_receipt_v1(p_inquiry_id uuid)
 returns jsonb language sql stable security definer set search_path = pg_catalog, homeground_private as $$
@@ -267,12 +274,12 @@ $$;
 select cron.schedule('homeground-traveller-ack-intent-cleanup','17 3 * * *','select homeground_private.cleanup_traveller_ack_intents_v1();');
 
 revoke all on function homeground_private.enroll_traveller_ack_v1(), homeground_private.cleanup_traveller_ack_intents_v1() from public, anon, authenticated, service_role;
-revoke all on function public.prepare_homeground_traveller_ack_v1(text,boolean,text,text), public.get_homeground_traveller_ack_receipt_v1(uuid),
+revoke all on function public.prepare_homeground_traveller_ack_v1(text,text,boolean,text,text), public.get_homeground_traveller_ack_receipt_v1(uuid),
   public.freeze_homeground_traveller_ack_message_v1(uuid,uuid,bigint,jsonb),
   public.claim_homeground_traveller_ack_v1(text,integer,integer), public.finish_homeground_traveller_ack_v1(uuid,uuid,bigint,boolean,boolean,text,text,timestamptz),
   public.record_homeground_traveller_ack_event_v1(text,text,uuid,text,text), public.get_homeground_traveller_ack_health_v1(),
   public.list_homeground_traveller_ack_issues_v1(), public.resolve_homeground_traveller_ack_issue_v1(uuid,boolean) from public, anon, authenticated;
-grant execute on function public.prepare_homeground_traveller_ack_v1(text,boolean,text,text), public.get_homeground_traveller_ack_receipt_v1(uuid),
+grant execute on function public.prepare_homeground_traveller_ack_v1(text,text,boolean,text,text), public.get_homeground_traveller_ack_receipt_v1(uuid),
   public.freeze_homeground_traveller_ack_message_v1(uuid,uuid,bigint,jsonb),
   public.claim_homeground_traveller_ack_v1(text,integer,integer), public.finish_homeground_traveller_ack_v1(uuid,uuid,bigint,boolean,boolean,text,text,timestamptz),
   public.record_homeground_traveller_ack_event_v1(text,text,uuid,text,text), public.get_homeground_traveller_ack_health_v1(),

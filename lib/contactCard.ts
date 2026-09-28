@@ -94,7 +94,7 @@ export function openContactCard(
   return true;
 }
 
-function localePrefix(locale: HomegroundLocale) {
+function localePrefix(locale: HomegroundLocale | "ja") {
   return locale === "en" ? "" : `/${locale}`;
 }
 
@@ -107,7 +107,7 @@ function localePrefix(locale: HomegroundLocale) {
  */
 export function contactCardRequestForLink(
   anchor: HTMLAnchorElement,
-  locale: HomegroundLocale,
+  locale: HomegroundLocale | "ja",
 ): ContactCardRequest | null {
   const href = anchor.href;
   if (/^https:\/\/wa\.me\/[1-9][0-9]{6,14}(?:\?|$)/u.test(href)) {

@@ -7,6 +7,19 @@ import { contactCardCopy } from "../lib/contactCardCopy";
 import { WhatsAppQr } from "./WhatsAppQr";
 import styles from "./ContactCard.module.css";
 
+export interface ContactCardScanCopy {
+  scanTitle: string;
+  scanSteps: readonly string[];
+  qrLabel: string;
+  numberLabel: string;
+  copy: string;
+  copied: string;
+  copyNumber: string;
+  messengerScanTitle: string;
+  messengerSteps: readonly string[];
+  messengerQrLabel: string;
+}
+
 export function CopyButton({ value, label, copied, idle }: { value: string; label: string; copied: string; idle: string }) {
   const [done, setDone] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -64,6 +77,7 @@ export function CopyButton({ value, label, copied, idle }: { value: string; labe
  */
 export function ContactCardScan({
   locale,
+  localizedCopy,
   href,
   headingId,
   app = "whatsapp",
@@ -71,7 +85,8 @@ export function ContactCardScan({
   drawQrAfterPaint = false,
   children,
 }: {
-  locale: HomegroundLocale;
+  locale?: HomegroundLocale;
+  localizedCopy?: ContactCardScanCopy;
   href: string;
   headingId: string;
   app?: "whatsapp" | "messenger";
@@ -79,7 +94,7 @@ export function ContactCardScan({
   drawQrAfterPaint?: boolean;
   children?: ReactNode;
 }) {
-  const copy = contactCardCopy[locale];
+  const copy = localizedCopy ?? contactCardCopy[locale ?? "en"];
   const messenger = app === "messenger";
   const number = messenger ? "" : whatsappDisplayNumber(href);
   return (

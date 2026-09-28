@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import {
@@ -30,6 +30,19 @@ import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryRec
 import { InquiryReceipt } from "./InquiryReceipt";
 import { EmailTypoHint } from "./EmailTypoHint";
 import { japaneseInquiryReceiptCopy } from "../lib/japaneseInquiryReceiptCopy";
+import { contactCardDesktopQuery, contactCardRequestForLink } from "../lib/contactCard";
+import { ContactCardScan, type ContactCardScanCopy } from "./ContactCardScan";
+import cardStyles from "./ContactCard.module.css";
+
+const japaneseScanCopy = {
+  scanTitle: "スマートフォンでスキャンして相談する",
+  scanSteps: ["スマートフォンのカメラをコードに向けてください。", "メッセージが入力された状態で WhatsApp が開きます。"],
+  qrLabel: "Homeground との WhatsApp チャットを開く QR コード",
+  numberLabel: "WhatsApp", copy: "コピー", copied: "コピーしました", copyNumber: "WhatsApp の番号をコピー",
+  messengerScanTitle: "スキャンして Messenger で相談する",
+  messengerSteps: ["スマートフォンのカメラをコードに向けてください。", "Messenger で Homeground とのチャットが開きます。"],
+  messengerQrLabel: "Messenger で Homeground を開く QR コード",
+} satisfies ContactCardScanCopy;
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
 type Snapshot = { body: string; key: string; requestedTravelers?: number | null };
@@ -55,6 +68,9 @@ export function JapaneseInquiryDialog() {
   statusRef.current = status;
   const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
   const receiptRef = useRef<HTMLDivElement>(null);
+  const [scanHref, setScanHref] = useState<string | null>(null);
+  const scanTitleRef = useRef<HTMLHeadingElement>(null);
+  const scanWasOpenRef = useRef(false);
   const [error, setError] = useState("");
 
   const context: PrivateTourInquiryContext | null = request?.slug && pathname === `/ja/tours/${request.slug}/`
@@ -103,6 +119,7 @@ export function JapaneseInquiryDialog() {
       setStatus("idle");
       setError("");
       setReceipt(null);
+      setScanHref(null);
       setEmail("");
       setDate("");
       setDatesUndecided(true);
@@ -142,6 +159,17 @@ export function JapaneseInquiryDialog() {
   useEffect(() => {
     if (status === "saved" && open) receiptRef.current?.focus({ preventScroll: true });
   }, [status, open]);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    if (scanHref) {
+      scanWasOpenRef.current = true;
+      scanTitleRef.current?.focus({ preventScroll: true });
+    } else if (scanWasOpenRef.current) {
+      scanWasOpenRef.current = false;
+      receiptRef.current?.querySelector<HTMLElement>("[data-contact-card-scan-only]")?.focus({ preventScroll: true });
+    }
+  }, [open, scanHref]);
 
   async function send(snapshot: Snapshot) {
     if (!apiUrl || sendingRef.current) return;
@@ -220,10 +248,32 @@ export function JapaneseInquiryDialog() {
     trackEvent("contact_option_clicked", { channel, page_language: "ja" });
 
   return (
-    <dialog ref={dialogRef} className={styles.dialog} data-homeground-contact-ready="true" data-compact={!context || status === "saved"} aria-labelledby={`${id}-title`}
-      onCancel={event => { event.preventDefault(); close(); }}
-      onClick={event => { if (event.target === event.currentTarget) close(); }}>
-      <div className={styles.sheet}>
+    <dialog ref={dialogRef} className={scanHref ? cardStyles.dialog : styles.dialog} data-homeground-contact-ready="true" data-contact-card-dialog={scanHref ? "" : undefined} data-compact={!context || status === "saved"} aria-labelledby={`${id}-${scanHref ? "scan-title" : "title"}`}
+      onCancel={event => { event.preventDefault(); if (scanHref) setScanHref(null); else close(); }}
+      onClick={event => { if (event.target === event.currentTarget) { if (scanHref) setScanHref(null); else close(); } }}
+      onClickCapture={event => {
+        if (status !== "saved" || scanHref || event.defaultPrevented || event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (!window.matchMedia(contactCardDesktopQuery).matches) return;
+        const anchor = event.target instanceof Element ? event.target.closest("a[data-contact-card-scan-only]") : null;
+        if (!(anchor instanceof HTMLAnchorElement)) return;
+        const next = contactCardRequestForLink(anchor, "ja");
+        if (!next?.scanOnly || !next.whatsappHref) return;
+        event.preventDefault();
+        setScanHref(next.whatsappHref);
+      }}>
+      {scanHref ? <div className={cardStyles.card}>
+        <header className={cardStyles.head}>
+          <div className={cardStyles.headText}><h2 id={`${id}-scan-title`} ref={scanTitleRef} tabIndex={-1}>中国旅行プランナーに相談する</h2></div>
+          <p className={cardStyles.clock}><span className={cardStyles.clockDot} aria-hidden="true" />中国時間 <time>{new Intl.DateTimeFormat("ja", { timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date())}</time></p>
+          <button type="button" className={cardStyles.close} aria-label="受付内容に戻る" onClick={() => setScanHref(null)}><X size={18} aria-hidden="true" /></button>
+        </header>
+        <div className={cardStyles.columns} data-single="true">
+          <ContactCardScan localizedCopy={japaneseScanCopy} href={scanHref} headingId={`${id}-scan`} drawQrAfterPaint>
+            <a className={cardStyles.webLink} href={scanHref} target="_blank" rel="noopener noreferrer">このパソコンで WhatsApp を使う <ArrowUpRight size={16} aria-hidden="true" /></a>
+          </ContactCardScan>
+        </div>
+      </div> : <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label="閉じる" onClick={close}><X size={20} aria-hidden="true" /></button></div>
         <div className={styles.body}>
           {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} headingId={`${id}-title`} containerRef={receiptRef}>
@@ -258,7 +308,7 @@ export function JapaneseInquiryDialog() {
             </div>
           </>}
         </div>
-      </div>
+      </div>}
     </dialog>
   );
 }

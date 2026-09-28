@@ -239,4 +239,56 @@ test("quote migration persists real fields with atomic outbox, attribution, comp
       }));
     }
   });
+
+  await t.test("receipt intent matches the saved disclosure and payload before any email job is queued", () => {
+    reset();
+    const historical = submit(makeArgs());
+    assert.equal(historical.outcome, "created");
+    const receiptMigration = readFileSync(new URL("202609280001_homeground_traveller_ack.sql", migrations), "utf8")
+      .replace(/^select cron\.schedule\(.*\);\s*$/gm, "-- Hosted scheduling omitted in isolated test.\n");
+    sql(receiptMigration);
+    sql(readFileSync(new URL("202609280002_inquiry_privacy_ack_disclosure.sql", migrations), "utf8"));
+    assert.equal(count("traveller_ack_outbox"), 0, "adding the trigger never backfills older enquiries");
+
+    const prepare = (args, preparedHash = args.p_payload_hash, recipientHash = digest(`recipient:${args.p_contact_email}`)) => rpc("prepare_homeground_traveller_ack_v1", {
+      p_idempotency_key_hash: args.p_idempotency_key_hash,
+      p_payload_hash: preparedHash,
+      p_enabled: true,
+      p_recipient_hash: recipientHash,
+      p_privacy_notice_version: "2026-09-28.1",
+    });
+    const receipt = (inquiryId) => JSON.parse(sql(`select jsonb_build_object('status',status,'reason',suppression_reason) from homeground_private.traveller_ack_outbox where inquiry_id=${quoted(inquiryId)};`));
+
+    reset();
+    const legacy = makeArgs();
+    assert.equal(prepare(legacy), true);
+    const savedLegacy = submit(legacy);
+    assert.equal(savedLegacy.outcome, "created");
+    assert.deepEqual(receipt(savedLegacy.inquiryId), { status: "disabled", reason: "legacy_disclosure" }, "an earlier failed/new-notice attempt cannot authorize an old-notice save");
+
+    reset();
+    const changedRecipient = { ...makeArgs(), p_privacy_notice_version: "2026-09-28.1", p_contact_email: "second@example.invalid" };
+    assert.equal(prepare(changedRecipient, digest("first-payload"), digest("recipient:first@example.invalid")), true);
+    const savedChangedRecipient = submit(changedRecipient);
+    assert.equal(savedChangedRecipient.outcome, "created");
+    assert.deepEqual(receipt(savedChangedRecipient.inquiryId), { status: "disabled", reason: "intent_mismatch" }, "a reused key cannot apply the first address's suppression state to a second address");
+
+    reset();
+    const staged = makeArgs();
+    assert.equal(prepare(staged), true);
+    // The destination v4 wrapper likewise inserts through an older-version RPC
+    // and updates the saved privacy version before its transaction commits.
+    sql(`begin; select public.create_homeground_private_tour_quote_v1(${Object.entries(staged).map(([key, value]) => `${key} => ${quoted(value)}`).join(",")}); update homeground_private.inquiries set privacy_notice_version='2026-09-28.1' where idempotency_key_hash=${quoted(staged.p_idempotency_key_hash)}; commit;`);
+    const stagedId = sql(`select inquiry_id from homeground_private.inquiries where idempotency_key_hash=${quoted(staged.p_idempotency_key_hash)};`);
+    assert.deepEqual(receipt(stagedId), { status: "pending", reason: null }, "the deferred trigger uses the final saved disclosure");
+
+    reset();
+    const current = { ...makeArgs(), p_privacy_notice_version: "2026-09-28.1" };
+    assert.equal(prepare(current), true);
+    const savedCurrent = submit(current);
+    assert.equal(savedCurrent.outcome, "created");
+    assert.deepEqual(receipt(savedCurrent.inquiryId), { status: "pending", reason: null });
+    assert.equal(submit(current).outcome, "replay");
+    assert.equal(count("traveller_ack_outbox"), 1, "a same-key replay does not queue a second confirmation");
+  });
 });

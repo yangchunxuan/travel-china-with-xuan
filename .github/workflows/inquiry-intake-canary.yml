@@ -79,6 +79,15 @@ jobs:
           # schema 3.
           destination_version="2026-07-21.1"
           homepage_email_version="2026-07-26.1"
+          # Privacy copy can ship independently of either form schema. Use the
+          # updated notice only once the live bundle publishes it; older builds
+          # still send the original notice associated with each form.
+          destination_privacy_version="${destination_version}"
+          homepage_email_privacy_version="${homepage_email_version}"
+          if grep -Fq "2026-09-28.1" "${bundle}"; then
+            destination_privacy_version="2026-09-28.1"
+            homepage_email_privacy_version="2026-09-28.1"
+          fi
           endpoint="$(
             grep -oE 'https://[a-z0-9]+\.supabase\.co/functions/v1/v1-inquiries' \
               "${bundle}" | head -1 || true
@@ -115,6 +124,8 @@ jobs:
 
           echo "Live site publishes destination ${destination_version} and \
           homepage email ${homepage_email_version}"
+          echo "Probing privacy notices: destination ${destination_privacy_version}, \
+          homepage email ${homepage_email_privacy_version}"
 
           # Both probes intentionally omit every persistence-critical contact
           # field. The destination probe also omits journey. A healthy endpoint
@@ -128,12 +139,13 @@ jobs:
                 body="$(
                   jq -nc \
                     --arg v "${destination_version}" \
+                    --arg privacyVersion "${destination_privacy_version}" \
                     --arg locale "${locale}" \
                     --arg landingPath "${landing_path}" \
                     '{
                       schemaVersion: 2,
                       formVersion: $v,
-                      privacyNoticeVersion: $v,
+                      privacyNoticeVersion: $privacyVersion,
                       entryPath: "destination_timing",
                       locale: $locale,
                       attribution: {
@@ -149,12 +161,13 @@ jobs:
                 body="$(
                   jq -nc \
                     --arg v "${homepage_email_version}" \
+                    --arg privacyVersion "${homepage_email_privacy_version}" \
                     --arg locale "${locale}" \
                     --arg landingPath "${landing_path}" \
                     '{
                       schemaVersion: 3,
                       formVersion: $v,
-                      privacyNoticeVersion: $v,
+                      privacyNoticeVersion: $privacyVersion,
                       entryPath: "homepage_email",
                       locale: $locale,
                       attribution: {
