@@ -297,7 +297,7 @@ test("tour CTAs, quick contacts and backend keep the canonical context end to en
   assert.match(quickContact, /whatsappMessage\(locale, privateTourInterest\)/u);
   assert.match(quickContact, /getPrivateTourInquirySubmissionContext\(privateTourInterest, locale\)/u);
   assert.match(tourContact, /productInterest: getPrivateTourInquirySubmissionContext\(context, locale\)/u);
-  assert.match(quickContact, /href=\{fallbackMailto\}/u);
+  assert.match(quickContact, /href=\{directMailto\}/u);
   assert.match(header, /isPrivateTourInquirySlug\(privateTour\)/u);
   assert.match(contract, /isPrivateTourInquiryNameForSlug/u);
   assert.match(endpoint, /p_attribution:\s*payload\.productInterest/u);

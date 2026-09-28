@@ -117,7 +117,7 @@ export const homegroundPrivacyCopy: Record<
         "Homeground uses the trip brief, the one contact method you choose and any optional planning-service choice, route note, departure country, region or rough per-person budget to review and answer this travel request. Structured trip choices may also be counted in restricted summaries to improve the planner and travel information. Contact details, free text and individual records are not shown in those summaries. An enquiry is not consent to unrelated marketing, and it is not handled by an AI chat service.",
       blockersTitle: "Key points",
       blockers: [
-        "Enquiries are stored in Supabase’s Seoul region and notifications are sent through Resend’s Tokyo region to Homeground’s monitored Gmail inbox.",
+        "Enquiries are stored in Supabase’s Seoul region. Resend’s Tokyo region sends internal notifications to Homeground’s monitored email inbox and, when enquiry acknowledgements are enabled, an automatic confirmation to the email address submitted.",
         "Homeground-controlled website enquiry records are deleted no later than 12 months after they are saved. If a client relationship or legal duty requires a record, only the necessary record is retained separately under that system’s rules; it does not extend the website copy. Later email or WhatsApp conversations follow their own service and business-record rules.",
         "Secret-keyed hashed identifiers are used for 10-minute and 24-hour rate-limit windows. Each bucket is scheduled for deletion 24 hours after its last update, normally at the next one-minute cleanup run.",
         "The full trip-brief form saves either an email address or a WhatsApp number. The homepage quick-email option saves the email entered there and, when opened from a published private-tour page, the allowlisted product identity shown above the contact choices. Optional analytics and marketing measurement remain off unless the visitor grants the relevant choice; AI chat remains disabled.",
@@ -129,7 +129,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "24 August 2026",
+      reviewedValue: "28 September 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -142,8 +142,10 @@ export const homegroundPrivacyCopy: Record<
         "With analytics permission, Homeground records page views and fixed actions: viewing contact options, choosing a channel, opening a contact link, starting the email form, changing a published tour option, and attempting to submit an enquiry. The first-party service may also receive the published product code, service option and the group-size choice displayed on that product page. These product-choice fields are not sent to Google Analytics or Meta Pixel. A click means only that an option was opened; it does not prove that a message was sent or a booking was made. Definite submission failures and results the browser cannot confirm are recorded separately; saved enquiries are counted from server records. Temporary retries keep the same event identifier and are cleared when analytics permission is withdrawn.",
         "When the same browser later submits an enquiry, the saved first-touch labels may be attached to that enquiry so Homeground can understand which page or post led to it. The enquiry still succeeds when no session or source is available, and an unknown source is never guessed.",
         "Authorised staff may view restricted aggregate counts and, only after the 30-day window contains at least five eligible anonymous sessions that are not linked to enquiries, a day-level recent-session summary without per-session click or event timelines. Contact details, trip-questionnaire answers and message text are kept out of analytics and are not sent to Google Analytics or Meta Pixel.",
-        "Resend then sends a notification to Homeground’s monitored Gmail inbox. For an email enquiry, Reply-To is the traveller’s address. For a WhatsApp enquiry, the notification gives authorised staff a link to start the requested conversation from the studio’s account.",
-        "Homeground currently connects that Gmail inbox and the studio WhatsApp account to SaleSmartly for shared handling. The notification, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
+        "Resend sends an internal notification to Homeground’s monitored email inbox. Authorised staff use the submitted contact to answer the request; internal notification instructions are not intended for the traveller. For a WhatsApp enquiry, staff receive a link to start the requested conversation from the studio’s account.",
+        "When enquiry acknowledgements are enabled, Resend also sends an automatic confirmation to the submitted email address. It contains the enquiry reference and available structured enquiry details, such as the published tour, requested date and selected option. It does not repeat free-text notes. Replies go to hello@homegroundchina.com. The confirmation is a receipt, not a personal reply, a booking or a requirement to reply before we handle the enquiry. It is separate from marketing consent.",
+        "An enquiry remains saved if its confirmation is delayed, not sent because of a sending limit, or cannot be delivered. Sending and failure records help us prevent repeated messages and investigate delivery problems; an accepted or delivered email status does not prove that the message reached an inbox or was read.",
+        "Homeground uses Gmail for email handling and connects selected Gmail folders and the studio WhatsApp account to SaleSmartly for shared handling. Internal notifications, submitted trip details and later messages may therefore also be synchronised into the studio’s SaleSmartly team inbox for authorised staff.",
         "Choosing WhatsApp and submitting asks Homeground to contact that number about this trip request. The later conversation is processed by WhatsApp and Meta under their own terms and infrastructure.",
         "Online checkout is not enabled. Accepted trip arrangements and payment conditions are confirmed in writing. Do not submit card, bank or payment QR information through the enquiry form.",
         "When the quick-email form is unavailable, the contact card offers a prepared mailto link to the same monitored inbox. Opening an email app is never described as a saved or successful website submission.",
@@ -204,6 +206,12 @@ export const homegroundPrivacyCopy: Record<
             "A public reference, time, form version, brief revision, fixed language-specific submit-surface code and limited anti-abuse data support reliable submission and duplicate prevention. The submit-surface code is not treated as a traffic source.",
         },
         {
+          name: "Enquiry confirmation and sending controls",
+          stage: "Enquiry service and email provider, when confirmations are enabled",
+          purpose:
+            "The confirmation job and delivery events are deleted with the website enquiry under its retention rules. Preparation records become eligible for deletion after 48 hours and are removed by the scheduled daily cleanup. To avoid contacting an address again after a bounce, complaint or stop-contact request, a separate secret-keyed hash of the recipient, its reason and timestamps remain until authorised review removes that sending restriction. This separate record contains no trip notes and is not used for marketing.",
+        },
+        {
           name: "Optional anonymous website measurement",
           stage:
             "Browser, Homeground first-party event service and optional Google Analytics or Meta Pixel",
@@ -237,10 +245,10 @@ export const homegroundPrivacyCopy: Record<
             "Validates and stores the enquiry before the page can show a received state.",
         },
         {
-          label: "Email notification",
+          label: "Email notifications and enquiry confirmations",
           value: "Resend · Tokyo (ap-northeast-1)",
           detail:
-            "Sends the saved enquiry to Gmail with the traveller address in Reply-To.",
+            "Sends internal notifications to Homeground and, when enabled, a transactional confirmation to the submitted email address. Resend processes the recipient, message content and sending or failure records for these messages. Confirmation replies are directed to hello@homegroundchina.com; these messages do not subscribe the traveller to marketing.",
         },
         {
           label: "WhatsApp and Messenger",
@@ -367,9 +375,9 @@ export const homegroundPrivacyCopy: Record<
         "Homeground 使用你主动提交的旅行需求、所选的一种联系方式，以及选填的出发国家、地区或每人大致预算，来人工复核并回复本次咨询。结构化的旅行选择也可能进入受限统计，用于改进旅行简报流程和旅行信息；这些统计不展示联系方式、自由文本或单条咨询。提交咨询不代表同意无关营销，也不会交给 AI 聊天服务处理。",
       blockersTitle: "关键规则",
       blockers: [
-        "咨询存储在 Supabase 首尔地区，并由 Resend 东京地区发送通知到 Homeground 持续查看的 Gmail。",
+        "咨询存储在 Supabase 首尔地区。Resend 东京地区向 Homeground 持续查看的邮箱发送内部通知；咨询确认信功能启用时，还会向所填邮箱发送一封自动确认信。",
         "Homeground 控制的网站咨询记录会在保存满 12 个月时删除。如果客户关系或法律义务确实要求保留记录，只把必要记录另行放在相应记录体系并按其规则保留；网站副本不会因此保存更久。之后的邮件或 WhatsApp 对话适用各自服务与业务记录规则。",
-        "经过秘密密钥哈希的标识只用于 10 分钟和 24 小时限流窗口。每个限流桶会在最后一次更新满 24 小时后安排删除，通常在下一次每分钟清理任务运行时完成。",
+        "用于提交限流的秘密密钥哈希标识按 10 分钟和 24 小时窗口处理。每个限流桶会在最后一次更新满 24 小时后安排删除，通常在下一次每分钟清理任务运行时完成；确认信的独立停发记录见下文。",
         "完整旅行简报表单会保存邮箱或 WhatsApp 号码中的一种；首页快速留邮箱会保存所填邮箱；如果从已发布私家团页面进入，还会保存联系选项上方明确显示的白名单产品身份。访客未主动允许相应选项时，可选分析统计与营销衡量保持关闭；AI 聊天仍未启用。",
       ],
     },
@@ -379,7 +387,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 8 月 24 日",
+      reviewedValue: "2026 年 9 月 28 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -392,8 +400,10 @@ export const homegroundPrivacyCopy: Record<
         "获得分析许可后，Homeground 可记录页面浏览及固定动作：看到联系选项、选择联系方式、打开联系链接、开始填写邮箱、主动更改公开产品选项，以及尝试提交咨询。第一方事件服务还可接收公开产品编号、服务版本和产品页面显示的同行人数选项；这些产品选择字段不会发送给 Google Analytics 或 Meta Pixel。点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订。明确提交失败和浏览器无法确认的提交结果分别记录；已保存咨询以服务器记录为准。临时重试使用同一事件编号，撤回分析许可后会清空待发送记录。",
         "同一浏览器随后提交咨询时，已保存的首次来源标签可附在该咨询上，以判断哪一页或哪条外部内容带来咨询。没有会话或来源时，咨询仍会正常保存；未知来源不会被猜测或分摊。",
         "获授权的工作人员可查看受限汇总计数；只有当 30 天窗口至少包含 5 个符合展示边界且未关联询盘的匿名会话时，后台才会显示精确到天、且不含逐会话点击或事件时间线的近期会话摘要。联系方式、旅行问卷答案与消息内容不会进入分析事件，也不会发送给 Google Analytics 或 Meta Pixel。",
-        "随后，Resend 会把通知送到 Homeground 持续查看的 Gmail。邮件咨询会把 Reply-To 设为访客邮箱；WhatsApp 咨询会为获授权的工作人员提供从工作室账号发起本次对话的入口。",
-        "Homeground 目前把该 Gmail 和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理，因此通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
+        "Resend 会向 Homeground 持续查看的邮箱发送内部通知。获授权的工作人员使用所填联系方式回复当前请求，内部通知中的操作说明不用于发送给访客。WhatsApp 咨询会为工作人员提供从工作室账号发起本次对话的入口。",
+        "咨询确认信功能启用时，Resend 还会向所填邮箱发送一封自动确认信，包含咨询编号以及已记录的结构化信息，例如公开产品、希望出发日期和所选方案，不回显自由备注。回复这封确认信会发往 hello@homegroundchina.com。确认信是收件凭证，不是人工答复或预订确认；访客无需先回复确认信，我们也会处理咨询。该信与营销许可相互独立。",
+        "确认信延迟、因发送频率限制而未发送，或无法投递，都不会取消已保存的咨询。发送和失败记录用于防止重复发信及排查投递问题；邮件服务接受或标记已投递，并不证明邮件进入收件箱或已被阅读。",
+        "Homeground 使用 Gmail 处理邮件，并把选定的 Gmail 文件夹和工作室 WhatsApp 连接到 SaleSmartly 供团队共同处理。内部通知、已提交的旅行信息和后续消息也可能同步到仅供获授权工作人员使用的 SaleSmartly 团队收件箱。",
         "选择 WhatsApp 并提交，即表示访客请求 Homeground 就本次旅行需求联系该号码。后续对话由 WhatsApp 与 Meta 依据其条款和基础设施处理。",
         "本网站目前没有在线收银台。确认承接的旅行安排与付款条件会书面确认。请勿通过咨询表单提交银行卡、银行账户或付款二维码信息。",
         "快速邮箱表单不可用时，联系卡会提供一封发往同一持续查看邮箱的预填邮件。打开邮件应用绝不能被描述成网站已保存或提交成功。",
@@ -442,6 +452,12 @@ export const homegroundPrivacyCopy: Record<
             "公开咨询编号、时间、表单版本、需求修订、固定的语言版提交页面代码和有限的防滥用信息，用于可靠提交与避免重复；提交页面代码不会被当作流量来源。",
         },
         {
+          name: "咨询确认信与发送控制",
+          stage: "功能启用时的咨询服务与邮件服务商",
+          purpose:
+            "确认信任务与投递事件随网站咨询记录按其保留规则删除。发信准备记录满 48 小时后成为待删除记录，由每日定时清理任务删除。为避免在退信、投诉或停止联系请求后再次发信，会另行保留收件地址的秘密密钥哈希、原因与时间，直到获授权人员复核并解除停发限制。这份独立记录不含旅行备注，也不用于营销。",
+        },
+        {
           name: "可选的匿名网站衡量",
           stage:
             "浏览器、Homeground 第一方事件服务，以及可选的 Google Analytics 或 Meta Pixel",
@@ -474,9 +490,9 @@ export const homegroundPrivacyCopy: Record<
           detail: "在网页显示已收到前，验证并保存咨询。",
         },
         {
-          label: "邮件通知",
+          label: "邮件通知与咨询确认信",
           value: "Resend · 东京（ap-northeast-1）",
-          detail: "把已保存咨询送入 Gmail，并将访客邮箱写入 Reply-To。",
+          detail: "向 Homeground 发送内部通知，并在功能启用时向所填邮箱发送本次咨询的事务确认信。Resend 为此处理收件地址、邮件内容和发送或失败记录。确认信的回复地址为 hello@homegroundchina.com；发送这些邮件不会为访客订阅营销内容。",
         },
         {
           label: "WhatsApp 与 Messenger",
@@ -603,9 +619,9 @@ export const homegroundPrivacyCopy: Record<
         "Homeground는 여행자가 직접 제출한 여행 요청서, 선택한 한 가지 연락 방법과 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 이번 문의를 검토하고 답변하는 데 사용합니다. 구조화된 여행 선택은 여행 브리프 흐름과 여행 정보를 개선하기 위한 제한된 요약 집계에도 포함될 수 있습니다. 이 요약에는 연락처, 자유 입력 문구 또는 개별 문의가 표시되지 않습니다. 문의 제출은 관련 없는 마케팅 동의가 아니며 AI 채팅 서비스가 처리하지 않습니다.",
       blockersTitle: "핵심 원칙",
       blockers: [
-        "문의는 Supabase 서울 리전에 저장되고 Resend 도쿄 리전에서 Homeground가 확인하는 Gmail로 알림을 보냅니다.",
+        "문의는 Supabase 서울 리전에 저장됩니다. Resend 도쿄 리전에서 Homeground가 확인하는 이메일 수신함으로 내부 알림을 보내며, 문의 확인 메일 기능이 활성화된 경우 입력한 이메일 주소로 자동 확인 메일도 보냅니다.",
         "Homeground가 관리하는 웹사이트 문의 기록은 저장 후 12개월 안에 삭제합니다. 고객 관계나 법적 의무 때문에 기록이 필요한 경우에는 필요한 기록만 별도 보관 기준에 따라 보관하며 웹사이트 사본을 더 오래 두지 않습니다. 이후 이메일 또는 WhatsApp 대화에는 각 서비스와 업무 기록 기준이 적용됩니다.",
-        "비밀 키로 해시한 식별자는 10분 및 24시간 속도 제한 창에만 사용합니다. 각 버킷은 마지막 갱신 후 24시간이 지나면 삭제 대상으로 예약되며 일반적으로 다음 1분 주기 정리 작업에서 삭제됩니다.",
+        "제출 횟수 제한용 비밀 키 해시 식별자는 10분 및 24시간 창으로 처리합니다. 각 버킷은 마지막 갱신 후 24시간이 지나면 삭제 대상으로 예약되며 일반적으로 다음 1분 주기 정리 작업에서 삭제됩니다. 확인 메일의 별도 발송 중지 기록은 아래에서 설명합니다.",
         "전체 여행 브리프 양식은 이메일 주소 또는 WhatsApp 번호 중 하나를 저장합니다. 홈페이지의 간단 이메일 옵션은 입력한 이메일을 저장하며, 공개된 프라이빗 투어 페이지에서 이동한 경우 연락 선택지 위에 표시된 허용 목록의 상품 식별 정보도 함께 저장합니다. 방문자가 해당 선택을 허용하지 않으면 선택적 분석 및 마케팅 측정은 꺼진 상태로 유지되며 AI 채팅은 사용하지 않습니다.",
       ],
     },
@@ -615,7 +631,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 8월 24일",
+      reviewedValue: "2026년 9월 28일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -628,8 +644,10 @@ export const homegroundPrivacyCopy: Record<
         "분석을 허용하면 페이지 조회와 연락 옵션 보기, 연락 수단 선택, 연락 링크 열기, 이메일 입력 시작, 공개 상품 옵션 변경, 문의 제출 시도 등 정해진 동작을 기록할 수 있습니다. 자체 이벤트 서비스에는 공개 상품 코드, 서비스 유형, 상품 페이지에서 선택한 인원도 전송할 수 있으며, 이 상품 선택 항목은 Google Analytics나 Meta Pixel로 보내지 않습니다. 클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않습니다. 명확한 제출 실패와 브라우저가 결과를 확인하지 못한 경우는 구분하며, 저장된 문의는 서버 기록을 기준으로 집계합니다. 임시 재시도는 같은 이벤트 식별자를 사용하고 분석 동의를 철회하면 전송 대기 기록을 지웁니다.",
         "같은 브라우저에서 나중에 문의를 제출하면 저장된 첫 유입 표지를 문의에 연결해 어떤 페이지나 외부 게시물이 문의로 이어졌는지 확인할 수 있습니다. 세션이나 유입 정보가 없어도 문의는 정상 저장되며 알 수 없는 유입은 추정하거나 배분하지 않습니다.",
         "권한 있는 담당자는 제한된 집계 수치를 볼 수 있습니다. 최근 30일 창에 표시 기준을 충족하고 문의와 연결되지 않은 익명 세션이 5개 이상 있을 때만 날짜 단위의 최근 세션 요약이 표시되며 세션별 클릭 또는 이벤트 타임라인은 포함하지 않습니다. 연락처, 여행 설문 답변 및 메시지 내용은 분석 이벤트에 포함하지 않고 Google Analytics 또는 Meta Pixel로 보내지 않습니다.",
-        "이후 Resend가 Homeground가 확인하는 Gmail로 알림을 보냅니다. 이메일 문의에는 여행자 주소를 Reply-To로 사용합니다. WhatsApp 문의에는 권한이 있는 담당자가 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
-        "Homeground는 현재 공동 처리를 위해 해당 Gmail과 스튜디오 WhatsApp 계정을 SaleSmartly에 연결합니다. 따라서 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
+        "Resend는 Homeground가 확인하는 이메일 수신함으로 내부 알림을 보냅니다. 권한이 있는 담당자가 입력된 연락처로 현재 문의에 답하며, 내부 알림의 업무 안내는 여행자에게 보내기 위한 내용이 아닙니다. WhatsApp 문의에는 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
+        "문의 확인 메일 기능이 활성화된 경우 Resend는 입력한 이메일 주소로 자동 확인 메일도 보냅니다. 문의 번호와 저장된 구조화 정보(공개 상품, 희망 여행일, 선택한 옵션 등)를 포함하며 자유 입력 메모는 반복하지 않습니다. 확인 메일의 회신 주소는 hello@homegroundchina.com입니다. 확인 메일은 접수 안내이며 개인 답변이나 예약 확정이 아닙니다. 확인 메일에 회신하지 않아도 문의를 처리하며, 이 메일은 마케팅 동의와 별개입니다.",
+        "확인 메일이 지연되거나 발송 횟수 제한으로 전송되지 않거나 전달되지 않아도 저장된 문의는 취소되지 않습니다. 발송 및 실패 기록은 중복 메일을 방지하고 전달 문제를 확인하는 데 사용합니다. 메일 서비스의 접수 또는 전달 상태는 받은편지함 도착이나 열람을 증명하지 않습니다.",
+        "Homeground는 Gmail로 이메일을 처리하고 선택한 Gmail 폴더와 스튜디오 WhatsApp 계정을 SaleSmartly에 연결하여 공동으로 대응합니다. 내부 알림, 제출한 여행 정보와 이후 메시지가 권한 있는 담당자만 사용하는 SaleSmartly 팀 받은편지함에도 동기화될 수 있습니다.",
         "WhatsApp을 선택하고 제출하면 Homeground가 이 여행 요청과 관련해 해당 번호로 연락해 달라고 요청하는 것입니다. 이후 대화는 WhatsApp과 Meta가 자체 약관과 인프라에 따라 처리합니다.",
         "현재 웹사이트에는 온라인 결제가 없습니다. 수락된 여행 준비와 결제 조건은 서면으로 확인합니다. 문의 양식에 카드, 계좌 또는 결제 QR 정보를 제출하지 마세요.",
         "간단 이메일 양식을 사용할 수 없을 때 연락 카드가 같은 모니터링 메일함으로 보내는 미리 작성된 이메일 링크를 제공합니다. 이메일 앱을 여는 것을 웹사이트 저장 또는 제출 성공으로 표시하지 않습니다.",
@@ -683,6 +701,12 @@ export const homegroundPrivacyCopy: Record<
             "공개 문의 번호, 시간, 양식 버전, 요청서 수정 정보, 고정된 언어별 제출 화면 번호와 제한된 악용 방지 데이터로 안정적인 제출과 중복 방지를 지원합니다. 제출 화면 번호는 유입 출처로 취급하지 않습니다.",
         },
         {
+          name: "문의 확인 메일 및 발송 관리",
+          stage: "확인 메일 기능이 활성화된 경우 문의 서비스와 이메일 제공업체",
+          purpose:
+            "확인 메일 작업과 전달 이벤트는 웹사이트 문의의 보관 규칙에 따라 해당 문의와 함께 삭제합니다. 발송 준비 기록은 48시간 후 삭제 대상이 되며 매일 예약된 정리 작업에서 삭제합니다. 반송, 스팸 신고 또는 연락 중지 요청 후 같은 주소로 다시 보내지 않도록 수신 주소의 비밀 키 해시, 사유와 시간을 별도로 보관하며, 권한 있는 담당자가 검토하여 발송 제한을 해제할 때까지 유지합니다. 이 별도 기록에는 여행 메모가 없으며 마케팅에 사용하지 않습니다.",
+        },
+        {
           name: "선택적 익명 웹사이트 측정",
           stage:
             "브라우저, Homeground 퍼스트파티 이벤트 서비스 및 선택적 Google Analytics 또는 Meta Pixel",
@@ -715,10 +739,10 @@ export const homegroundPrivacyCopy: Record<
           detail: "접수 완료를 표시하기 전에 문의를 검증하고 저장합니다.",
         },
         {
-          label: "메일 알림",
+          label: "내부 알림 및 문의 확인 메일",
           value: "Resend · 도쿄(ap-northeast-1)",
           detail:
-            "저장된 문의를 Gmail로 보내고 Reply-To에 여행자 이메일을 넣습니다.",
+            "Homeground로 내부 알림을 보내며, 기능이 활성화된 경우 입력한 이메일 주소로 해당 문의의 자동 확인 메일을 보냅니다. 이를 위해 수신 주소, 메일 내용, 발송 또는 실패 기록을 처리합니다. 확인 메일의 회신 주소는 hello@homegroundchina.com이며, 이 메일로 마케팅을 구독하게 되지는 않습니다.",
         },
         {
           label: "WhatsApp 및 Messenger",

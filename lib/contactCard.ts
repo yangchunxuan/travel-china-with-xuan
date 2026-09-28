@@ -28,6 +28,8 @@ export interface ContactCardRequest {
   whatsappHref?: string;
   /** The exact mailto link that was clicked, subject and draft included. */
   mailtoHref?: string;
+  /** The enquiry is already saved (a success page link): show the scan only, not another email form. */
+  scanOnly?: boolean;
 }
 
 /**
@@ -92,7 +94,7 @@ export function openContactCard(
   return true;
 }
 
-function localePrefix(locale: HomegroundLocale) {
+function localePrefix(locale: HomegroundLocale | "ja") {
   return locale === "en" ? "" : `/${locale}`;
 }
 
@@ -105,11 +107,13 @@ function localePrefix(locale: HomegroundLocale) {
  */
 export function contactCardRequestForLink(
   anchor: HTMLAnchorElement,
-  locale: HomegroundLocale,
+  locale: HomegroundLocale | "ja",
 ): ContactCardRequest | null {
   const href = anchor.href;
   if (/^https:\/\/wa\.me\/[1-9][0-9]{6,14}(?:\?|$)/u.test(href)) {
-    return { trigger: "whatsapp", whatsappHref: href };
+    return anchor.hasAttribute?.("data-contact-card-scan-only")
+      ? { trigger: "whatsapp", whatsappHref: href, scanOnly: true }
+      : { trigger: "whatsapp", whatsappHref: href };
   }
   if (
     href

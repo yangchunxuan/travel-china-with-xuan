@@ -111,6 +111,19 @@ test("a homepage planner link the card already answered does not also scroll the
   }
 });
 
+test("saved inquiry WhatsApp links preserve their draft and request scan-only in every receipt language", () => {
+  const href = "https://wa.me/8613174215999?text=Saved%20enquiry%20HG-TEST-1234-ABCD";
+  for (const locale of ["en", "zh", "ko", "ja"]) {
+    const savedLink = { href, hasAttribute: (name) => name === "data-contact-card-scan-only" };
+    assert.deepEqual(contactCardRequestForLink(savedLink, locale), {
+      trigger: "whatsapp", whatsappHref: href, scanOnly: true,
+    });
+    assert.deepEqual(contactCardRequestForLink({ href, hasAttribute: () => false }, locale), {
+      trigger: "whatsapp", whatsappHref: href,
+    }, "ordinary contact links keep the existing contact options");
+  }
+});
+
 test("the homepage contact panel shows the card's scan block on desktop and keeps its WhatsApp link", async () => {
   const [panel, inline, styles] = await Promise.all([
     source("components/HomepageQuickContact.tsx"),
@@ -364,7 +377,7 @@ test("every WhatsApp chat fits a QR code a phone reads easily off a screen", () 
 test("the card's email reuses the homepage email contract, with the tour when there is one", async () => {
   const dialog = await source("components/ContactCardDialog.tsx");
   assert.match(dialog, /entryPath: "homepage_email"/);
-  assert.match(dialog, /privacyNoticeVersion: homepageEmailPrivacyNoticeVersion/);
+  assert.match(dialog, /privacyNoticeVersion: travellerAckPrivacyNoticeVersion/);
   assert.match(dialog, /attribution: \{ landingPath: inquirySubmitSurfaceByLocale\[locale\] \}/);
   assert.match(dialog, /"Idempotency-Key": snapshot\.key/);
   assert.match(dialog, /name="companyWebsite"/);

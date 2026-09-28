@@ -35,7 +35,7 @@ test("Home planning desk leads with quick contacts and keeps the private-tour sh
   assert.match(quickContact, /entryPath: "homepage_email"/);
   assert.match(
     quickContact,
-    /privacyNoticeVersion:\s*homepageEmailPrivacyNoticeVersion/,
+    /privacyNoticeVersion:\s*travellerAckPrivacyNoticeVersion/,
   );
   assert.match(
     quickContact,

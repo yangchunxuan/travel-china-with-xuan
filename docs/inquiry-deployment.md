@@ -1,5 +1,163 @@
 # Homeground Inquiry backend deployment
 
+## 2026-09-28 revision: optional traveller confirmations
+
+**Release authorised by the owner after local acceptance on 2026-09-28.**
+This section describes the source and deployment order; it does not itself
+record a successful deployment or verified inbox delivery. The dated July
+record below remains historical. Mobile layout is being reviewed separately.
+
+### Current behaviour to validate locally
+
+- A successful form response means the enquiry is saved. The internal
+  notification and optional traveller confirmation have independent delivery
+  work. Failure or suppression of the confirmation must not invalidate the
+  enquiry or prevent internal notification and staff review. Complaints and
+  stop-follow-up requests must still prevent further unsolicited email.
+- Keep `TRAVELLER_ACK_ENABLED=false` by default. A frontend success message
+  must use the actual API result; the existence of the confirmation template
+  or a frontend switch cannot mean a message was sent.
+- Enrol only eligible email enquiries submitted with Privacy Notice version
+  `2026-09-28.1`. Preserve the existing accepted versions and their payload
+  routing for cached pages and same-key retries. An older accepted notice may
+  still save an enquiry without receiving the newly introduced confirmation.
+  Enabling the feature must not silently mail historical enquiries.
+- Request idempotency, recipient cooldown and provider suppression are separate.
+  A same-key replay keeps the existing reference. A new enquiry may be saved
+  even when an extra confirmation to the same recipient is withheld. Never
+  describe withheld email as merged or deleted enquiry data.
+- Confirmations contain the reference and available structured context, not
+  free-text notes or marketing. The selected product price basis is not a
+  confirmed party size; requested dates are not a booking. The traveller does
+  not have to reply to a confirmation for staff to handle the request.
+- Internal notices do not use the traveller as Reply-To. Staff open the clean
+  write-to-traveller draft and verify the sender and recipient, or reply to an
+  actual traveller message. Do not quote internal notices. Resend delivery
+  does not create a Gmail Sent record automatically.
+- Preserve the existing 48-hour production reply commitment, configurable
+  through `REPLY_SLA_HOURS`. The local mock used a separate 24-hour demo;
+  it must not shorten the production promise.
+
+### Delivery-state meaning
+
+Current server configuration for the optional confirmation worker:
+
+| Variable | Local default / requirement |
+|---|---|
+| `TRAVELLER_ACK_ENABLED` | `false`; remains off until acceptance and release gates pass. |
+| `TRAVELLER_ACK_MONITOR_ENABLED` | `false` for local review; enable when confirmations are rolled out. Keep monitoring enabled if sending is later paused, so pending failures and unresolved delivery issues still alert. |
+| `TRAVELLER_ACK_FROM_EMAIL` | Defaults to `Homeground China <hello@homegroundchina.com>`; this default does not verify that Resend can send for the address. |
+| `RESEND_API_KEY` | Reuses the existing server-only provider credential. |
+| `RESEND_TRAVELLER_ACK_WEBHOOK_SECRET` | Required by the sending gate so delivery outcomes can be verified. Never expose it in the browser or logs. |
+| `REPLY_SLA_HOURS` | Production default `48`; the stored reply deadline drives the promise. Preserve the existing public commitment. |
+| `IDEMPOTENCY_HASH_SECRET` | Also namespaces recipient HMACs. Keep it stable; rotation needs a migration that preserves suppression lookups. |
+
+Confirmation Reply-To is fixed to `hello@homegroundchina.com`. The API's
+`ackStatus` is `disabled`, `queued`, `suppressed` or `unavailable`; it does not
+claim delivery. The job's processing state and provider delivery outcome are
+stored separately.
+
+| State or signal | What it establishes |
+|---|---|
+| Enquiry saved | The customer request has been persisted. |
+| Confirmation queued | A job exists; the email may not have left the service. |
+| Provider accepted / `email.sent` | The provider accepted the request and will attempt delivery. |
+| `email.delivered` | The recipient's mail server accepted the message; inbox placement and reading remain unknown. |
+| Cooldown or suppression | This confirmation is not being sent; preserve the enquiry and its reason for staff review. |
+| Delayed, failed or bounced | Investigate the actual reason; not every failure means the traveller mistyped an address. |
+| Human reply | Confirmed separately from the actual staff Sent message or channel conversation. |
+
+Confirmation preparation records become eligible for deletion after 48 hours
+and are removed by the scheduled daily cleanup. The
+confirmation outbox and event records are deleted with their enquiry. A
+separate recipient HMAC restriction for bounced, complained, suppressed or
+not-me outcomes has no automatic expiry; it remains until authorised removal.
+It contains a reason and timestamps, not trip notes. The privacy notice must
+disclose this separate retention, and the owner must approve it before release.
+Do not remove suppression by deleting an enquiry, rotating the HMAC secret or
+switching From addresses. The service-only issue record may reveal the
+reference, address and reason to authorised staff; it must not become a public
+status lookup or analytics field. Resolving an issue does not resend an email.
+
+The Resend event meanings are documented in
+[Event Types](https://resend.com/docs/webhooks/event-types). If delivery
+webhooks are enabled, verify their signatures and process repeated events
+idempotently; do not trust a public POST claiming delivery or a complaint.
+[Resend webhook verification](https://resend.com/docs/webhooks/verify-webhooks-requests).
+Until those outcomes are recorded reliably, report only the state actually
+known; API acceptance alone must not become “delivered”.
+
+### Acceptance and release gates
+
+1. Complete local review with the owner. Render the four-language HTML and
+   text confirmations and use only local mocks or test-provider recipients.
+   Cover a saved enquiry with confirmations off, an eligible queued job,
+   same-key retry, a second distinct enquiry, recipient cooldown, send failure
+   and internal-notification failure. Confirm that no customer email is sent
+   during this exercise.
+2. Confirm that the owner or named teammate checks `hello@homegroundchina.com`
+   and that direct email plus confirmation replies arrive in that handling
+   queue. Verify the actual outbound identity is `hello@` for human replies.
+   This file does not change the historically configured notification inbox.
+3. Verify the selected confirmation From address with Resend, configure its
+   reply address as the monitored `hello@`, and approve the reply-time promise.
+   DNS or mailbox changes, if needed, require the owner's separate release
+   decision. Do not infer authentication or inbox placement from local rendering.
+4. Obtain approval before any push, PR or production action. Prepare a
+   controlled version overlap: accept `2026-09-28.1` alongside the currently
+   supported notice versions before publishing clients that use it; retain
+   old form routes and old-client retries. Check pending jobs and worker lease
+   compatibility before applying schema changes.
+5. Once a later release is authorised, deploy the supporting backend with
+   confirmations still off and verify internal notification remains healthy.
+   Publish the matching notice and frontend. Enable confirmation sending only
+   after the mailbox, verified From, monitoring and owner acceptance gates
+   pass. Frontend wording must remain truthful in the off state throughout.
+6. Monitor saved requests, both delivery queues and outstanding human replies
+   separately. A confirmation-only incident should disable
+   `TRAVELLER_ACK_ENABLED` while preserving a healthy saved-enquiry and internal
+   notification flow. Keep `TRAVELLER_ACK_MONITOR_ENABLED=true` during that
+   sending pause until existing jobs and issues have been reviewed. Do not
+   replay a backlog blindly or discard saved records.
+
+### Concrete migration and worker order
+
+- Apply `202609280001_homeground_traveller_ack.sql`, then
+  `202609280002_inquiry_privacy_ack_disclosure.sql`,
+  `202609280003_traveller_ack_staff_status.sql`, and
+  `202609280004_freeze_internal_notification_message.sql` before deploying
+  the revised intake, notification and health functions. The existing minute
+  scheduler continues calling `notify-inquiries`; that worker also processes
+  the optional confirmation queue.
+- The new signed callback is `traveller-ack-events`. Configure the matching
+  provider webhook signing secret only during the approved release. API JWT
+  verification is off for this callback because raw-body Svix signatures
+  provide its authentication. A successful local signature test does not
+  verify the hosted callback configuration.
+- Reconcile any uncertain **old-worker** notification attempts before switching
+  workers. Provider idempotency keys already used by the old template must not
+  be replayed with a newly generated envelope. New-worker notifications and
+  acknowledgements freeze their first provider payload in the database, so
+  later retries use identical content. Never reset an accepted job merely to
+  regenerate its text or suppression banner.
+- `get_homeground_traveller_ack_health_v1()` includes
+  `intent_capacity_reached`. Preparation is capped at 5,000 short-lived rows
+  to bound pre-rate-limit abuse. At capacity, ordinary intake and existing
+  enquiry replays still work, while new confirmations may be unavailable.
+  Investigate traffic and cleanup rather than deleting suppression records
+  or blindly raising the limit. The independent health endpoint returns an
+  unhealthy result at capacity.
+- Before replying manually, staff must check current stop-follow-up records.
+  A notification already received cannot be recalled when a later complaint
+  arrives. Resolving an operational issue does not remove its suppression.
+
+Local mock/provider tests demonstrate handling of simulated outcomes, not real
+inbox delivery. Actual production mailbox routing, sender authentication,
+reply time configuration and delivery remain release checks, not completed
+facts in this local revision.
+
+## Historical 2026-07-20.x deployment record
+
 Status: **HISTORICAL 2026-07-20.x INQUIRY DEPLOYMENT RECORD**. The production
 Supabase functions, private schema, Resend notification path and 24-hour
 rate-limit cleanup described here were recorded for the `2026-07-20.1` contact

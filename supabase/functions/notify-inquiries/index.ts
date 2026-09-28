@@ -1,3 +1,5 @@
+import { staffReplyMailto } from "../_shared/staff-reply.ts";
+import { processTravellerAcknowledgements } from "../_shared/traveller-ack-worker.ts";
 import {
   booleanEnv,
   callSupabaseRpc,
@@ -534,13 +536,13 @@ function routeAnswers(job: NotificationJob): Array<{
 
 function contactDetails(job: NotificationJob): {
   display: string;
-  replyTo: string | null;
+  writeUrl: string | null;
   whatsappUrl: string | null;
 } {
   if (job.reply_channel === "email") {
     if (!job.contact_email) throw new Error("invalid_job:contact_email");
     const email = ensureHeaderSafe(job.contact_email, "contact_email");
-    return { display: email, replyTo: email, whatsappUrl: null };
+    return { display: email, writeUrl: staffReplyMailto(email, job.public_reference, job.locale), whatsappUrl: null };
   }
 
   if (!job.contact_phone_e164) {
@@ -552,7 +554,7 @@ function contactDetails(job: NotificationJob): {
   );
   return {
     display: phone,
-    replyTo: null,
+    writeUrl: null,
     whatsappUrl: `https://wa.me/${phone.replace(/\D/gu, "")}`,
   };
 }
@@ -565,6 +567,26 @@ async function sendThroughResend(
   const channel =
     job.reply_channel === "email" ? "Email" : "WhatsApp";
   const contact = contactDetails(job);
+  let followupNotice = "";
+  if (contact.writeUrl) {
+    try {
+      if (booleanEnv("TRAVELLER_ACK_ENABLED", false) || booleanEnv("TRAVELLER_ACK_MONITOR_ENABLED", false)) {
+        const status = await callSupabaseRpc<{ stopReason?: string; deliveryStatus?: string }>("get_homeground_traveller_ack_staff_status_v1", { p_inquiry_id: job.inquiry_id });
+        if (!status.ok) throw new Error("followup_status_unavailable");
+        const reason = status.data?.stopReason;
+        if (reason === "complained" || reason === "not_me") {
+          followupNotice = "DO NOT CONTACT this email address: a spam complaint or stop-follow-up request is recorded. Review the request with the responsible person; do not send a new email.";
+          contact.writeUrl = null;
+        } else if (reason === "bounced" || reason === "suppressed") {
+          followupNotice = "EMAIL DELIVERY BLOCKED: verify the address and recorded delivery problem before attempting contact. Do not assume the traveller mistyped it.";
+          contact.writeUrl = null;
+        }
+      }
+    } catch {
+      followupNotice = "Contact preferences could not be checked. Check the receipt issue and stop-follow-up records before writing to this address.";
+      contact.writeUrl = null;
+    }
+  }
   let subject: string;
   let text: string;
   let html: string;
@@ -620,8 +642,8 @@ async function sendThroughResend(
       `Traveller contact: ${contact.display}`,
       `Received: ${job.inquiry_created_at}`,
       `First response due: ${job.first_response_due_at}`,
-      "", "Reply directly to this message; Reply-To is already set to the traveller.",
-      "The Gmail thread and its Sent message are the handling record.",
+      "", "Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller.",
+      "Record the human reply as handled; the automatic receipt does not count as a human reply.",
     ].join("\n");
     html = `<p>A visitor requested a quote for this published ${tourFormat.toLowerCase()}.</p>
       <p>The requested date and notes are traveller input, not a confirmed booking or supplier availability.</p>
@@ -638,8 +660,8 @@ async function sendThroughResend(
         <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
         <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
       </dl>
-      <p>Reply directly to this message; Reply-To is already set to the traveller.</p>
-      <p>The Gmail thread and its Sent message are the handling record.</p>`;
+      <p>Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller.</p>
+      <p>Record the human reply as handled; the automatic receipt does not count as a human reply.</p>`;
   } else if (job.route_id === "homepage-email") {
     const homepageAnswerKeys = Object.keys(job.answers);
     const homepageSnapshotKeys = Object.keys(job.route_snapshot);
@@ -649,7 +671,7 @@ async function sendThroughResend(
       : null;
     const informationNote = selectionLabel
       ? productInterest?.selection
-        ? "Selected service version and group size are recorded below. Travel dates, traveller identities, budget and free-text details were not collected."
+        ? "The selected service version and pricing tier are recorded below; the tier is not a confirmed party size. Travel dates, traveller identities, budget and free-text details were not collected."
         : "The published service scope is recorded below. Travel dates, traveller identities, group size, budget and free-text details were not collected."
       : "No itinerary, traveller, date, destination, budget or free-text details were collected.";
     if (
@@ -694,8 +716,8 @@ async function sendThroughResend(
       `Received: ${job.inquiry_created_at}`,
       `First response due: ${job.first_response_due_at}`,
       "",
-      "Reply directly to this message; Reply-To is already set to the traveller.",
-      "The Gmail thread and its Sent message are the handling record.",
+      "Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller.",
+      "Record the human reply as handled; the automatic receipt does not count as a human reply.",
     ].join("\n");
     html = `
       <p>${
@@ -718,8 +740,8 @@ async function sendThroughResend(
         <dt>Received</dt><dd>${escapeHtml(job.inquiry_created_at)}</dd>
         <dt>First response due</dt><dd>${escapeHtml(job.first_response_due_at)}</dd>
       </dl>
-      <p>Reply directly to this message; Reply-To is already set to the traveller.</p>
-      <p>The Gmail thread and its Sent message are the handling record.</p>
+      <p>Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller.</p>
+      <p>Record the human reply as handled; the automatic receipt does not count as a human reply.</p>
     `.trim();
   } else {
     const departureCountry = job.departure_country
@@ -767,10 +789,10 @@ async function sendThroughResend(
       `First response due: ${job.first_response_due_at}`,
       "",
       job.reply_channel === "email"
-        ? "Reply directly to this message; Reply-To is already set to the traveller."
+        ? "Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller."
         : `Continue in the studio WhatsApp account: ${contact.whatsappUrl}`,
       job.reply_channel === "email"
-        ? "The Gmail thread and its Sent message are the handling record."
+        ? "Record the human reply as handled; the automatic receipt does not count as a human reply."
         : "The studio WhatsApp conversation is the handling record.",
     ].join("\n");
     html = `
@@ -795,19 +817,39 @@ async function sendThroughResend(
       </dl>
       ${
         job.reply_channel === "email"
-          ? "<p>Reply directly to this message; Reply-To is already set to the traveller.</p>"
+          ? "<p>Do not reply to this internal notification. Start a clean email from hello@homegroundchina.com using Write to traveller.</p>"
           : `<p><a href="${escapeHtml(contact.whatsappUrl ?? "")}">Continue in the studio WhatsApp account</a>.</p>`
       }
       <p><strong>Budget note:</strong> traveller context only, not a Homeground quote.</p>
       <p><strong>Safety:</strong> traveller-provided text and links are untrusted. Never share passwords, verification codes or payment credentials.</p>
       <p>${
         job.reply_channel === "email"
-          ? "The Gmail thread and its Sent message are the handling record."
+          ? "Record the human reply as handled; the automatic receipt does not count as a human reply."
           : "The studio WhatsApp conversation is the handling record."
       }</p>
     `.trim();
   }
 
+  const staffWarning = "INTERNAL — do not quote or forward to the traveller.";
+  const writeAction = contact.writeUrl
+    ? `Write to traveller (new message; choose hello@homegroundchina.com as From): ${contact.writeUrl}`
+    : contact.whatsappUrl ? `Continue in the studio WhatsApp account: ${contact.whatsappUrl}` : "The email action is withheld pending review.";
+  text = [staffWarning, followupNotice, writeAction, "Check any delivery-failure or do-not-contact alert before following up.", "", text].filter(Boolean).join("\n");
+  html = `<div style="padding:16px;background:#fff4e5;border:1px solid #d5b78c"><strong>${staffWarning}</strong>
+    ${followupNotice ? `<p><strong>${escapeHtml(followupNotice)}</strong></p>` : ""}
+    <p>${contact.writeUrl ? `<a href="${escapeHtml(contact.writeUrl)}">Write to traveller</a> — a new, clean message. Select hello@homegroundchina.com as From.` : contact.whatsappUrl ? `<a href="${escapeHtml(contact.whatsappUrl)}">Continue on WhatsApp</a>` : "The email action is withheld pending review."}</p>
+    <p>Check delivery-failure and do-not-contact alerts before following up.</p></div>${html}`;
+
+  let frozenMessage;
+  try {
+    frozenMessage = await callSupabaseRpc<Record<string, unknown>>("freeze_homeground_notification_message_v1", {
+      p_job_id: job.job_id, p_lease_token: job.lease_token, p_row_version: job.row_version,
+      p_message: { from: config.from, to: [config.to], subject, text, html },
+    });
+  } catch { frozenMessage = { ok: false, data: null }; }
+  if (!frozenMessage.ok || !frozenMessage.data) {
+    return { accepted: false, providerMessageId: null, errorCode: "message_freeze_unavailable", retryable: true };
+  }
   let response: Response;
   const timeoutController = new AbortController();
   const timeoutId = setTimeout(
@@ -822,14 +864,9 @@ async function sendThroughResend(
         "Content-Type": "application/json",
         "Idempotency-Key": job.inquiry_id,
       },
-      body: JSON.stringify({
-        from: config.from,
-        to: [config.to],
-        ...(contact.replyTo ? { reply_to: contact.replyTo } : {}),
-        subject,
-        text,
-        html,
-      }),
+      // Frozen envelope deliberately has no traveller Reply-To. Suppression
+      // updates must not change an uncertain provider retry's idempotent body.
+      body: JSON.stringify(frozenMessage.data),
       signal: timeoutController.signal,
     });
   } catch {
@@ -944,6 +981,10 @@ async function handleRequest(request: Request): Promise<Response> {
       batchSize *
         (
           config.providerTimeoutMilliseconds +
+          // Each email handoff may need a separate preference read.
+          SUPABASE_RPC_TIMEOUT_MILLISECONDS +
+          // Freeze the exact first provider envelope before sending.
+          SUPABASE_RPC_TIMEOUT_MILLISECONDS +
           SUPABASE_RPC_TIMEOUT_MILLISECONDS +
           5_000
         );
@@ -1040,7 +1081,11 @@ async function handleRequest(request: Request): Promise<Response> {
     }
   }
 
-  return jsonResponse(200, { ...summary, requestId });
+  // Auxiliary receipt failures never undo or hide the internal handoff result.
+  let travellerAck;
+  try { travellerAck = await processTravellerAcknowledgements(requestId); }
+  catch { travellerAck = { status: "unavailable" }; }
+  return jsonResponse(200, { ...summary, travellerAck, requestId });
 }
 
 Deno.serve(handleRequest);

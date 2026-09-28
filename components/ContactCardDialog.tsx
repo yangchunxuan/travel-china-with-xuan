@@ -18,7 +18,7 @@ import {
 import {
   currentHomepageEmailFormVersion,
   homepageEmailInquirySchemaVersion,
-  homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
@@ -28,6 +28,9 @@ import { setInquiryOpen } from "../lib/siteOverlayState";
 import { ContactCardScan, CopyButton } from "./ContactCardScan";
 import styles from "./ContactCard.module.css";
 import sheetStyles from "./ContactSheet.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 type EmailStatus = "idle" | "submitting" | "success" | "failed" | "uncertain";
 type Snapshot = { body: string; key: string };
@@ -104,7 +107,7 @@ export function ContactCardDialog({
   const [status, setStatus] = useState<EmailStatus>("idle");
   const [error, setError] = useState("");
   const [invalid, setInvalid] = useState(false);
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
 
   const tour: PrivateTourInquiryContext | null = context.tour;
   const apiUrl = privateTourQuoteApiUrl();
@@ -180,7 +183,7 @@ export function ContactCardDialog({
     entryPath: "homepage_email",
     locale,
     contact: { channel: "email", email: email.trim() },
-    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
     productInterest: tour ? getPrivateTourInquirySubmissionContext(tour, locale) : null,
     attribution: { landingPath: inquirySubmitSurfaceByLocale[locale] },
     experiment: null,
@@ -218,7 +221,7 @@ export function ContactCardDialog({
       try { result = text ? JSON.parse(text) : null; } catch { result = null; }
       if (response.ok) {
         if (result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-          setReference(result.publicReference.trim());
+          setReceipt(createInquiryReceipt(result, snapshot.body, locale));
           setStatus("success");
           if (!submittedRef.current) {
             submittedRef.current = true;
@@ -301,27 +304,26 @@ export function ContactCardDialog({
 
   const mail = (
     <section className={withSheet(styles.mail, sheetStyles.mail)} aria-labelledby={`${id}-mail`}>
-      <h3 id={`${id}-mail`}>{desk.emailTitle}</h3>
+      {status !== "success" ? <>
+      <h3 id={`${id}-mail`}>{sheet ? desk.emailTitle : copy.tabEmail}</h3>
       <p className={styles.replyFrom}>
         <span>{copy.replyFrom}</span>
         <strong>{homegroundBusiness.serviceEmail}</strong>
         <CopyButton value={homegroundBusiness.serviceEmail} label={copy.copyEmail} copied={copy.copied} idle={copy.copy} />
       </p>
 
+      {!sheet ? (
+        <a className={styles.mailApp} href={mailtoHref} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: contactVariant, page_language: locale })}>
+          {copy.directEmailAction}
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      ) : null}
+      </> : null}
+
       {!emailReady ? (
         <p className={styles.note}>{desk.emailUnavailable}</p>
-      ) : status === "success" ? (
-        <div className={styles.success} ref={successRef} role="status" aria-live="polite" tabIndex={-1}>
-          <svg className={styles.successMark} viewBox="0 0 28 28" aria-hidden="true">
-            <circle cx="14" cy="14" r="11" />
-            <path d="M9 14.4l3.3 3.3 6.7-7.2" />
-          </svg>
-          <div>
-            <strong>{desk.emailSuccessTitle}</strong>
-            <p>{desk.emailSuccessBody}</p>
-            <small>{desk.referenceLabel}: {reference}</small>
-          </div>
-        </div>
+      ) : status === "success" && receipt ? (
+        <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} headingId={`${id}-mail`} hideWhatsApp />
       ) : (
         <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
           <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
@@ -354,6 +356,7 @@ export function ContactCardDialog({
               setInvalid(false);
             }}
           />
+          <EmailTypoHint email={email} locale={locale} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setInvalid(false); }} />
           <div className={styles.honeypot} aria-hidden="true">
             <label htmlFor={`${id}-company`}>Company website</label>
             <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />
@@ -380,10 +383,6 @@ export function ContactCardDialog({
         </form>
       )}
 
-      <a className={styles.mailApp} href={mailtoHref}>
-        {copy.openMailApp}
-        <ArrowUpRight size={16} aria-hidden="true" />
-      </a>
     </section>
   );
 
@@ -431,6 +430,10 @@ export function ContactCardDialog({
               ) : (
                 <p className={styles.note}>{desk.whatsappUnavailable}</p>
               )}
+              <a className={sheetStyles.directEmail} href={mailtoHref} onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: contactVariant, page_language: locale })}>
+                {copy.directEmailAction}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
               {messengerHref ? (
                 <a className={sheetStyles.messenger} href={messengerHref} target="_blank" rel="noopener noreferrer" aria-describedby={`${id}-messenger-note`} onClick={openedApp("messenger")}>
                   <MessagesSquare size={16} aria-hidden="true" />
@@ -444,7 +447,7 @@ export function ContactCardDialog({
             {mail}
           </div>
         ) : (
-          <div className={styles.columns} data-single={!whatsappHref || undefined}>
+          <div className={styles.columns} data-single={!whatsappHref || request.scanOnly || undefined}>
             {whatsappHref ? (
               <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
@@ -454,9 +457,10 @@ export function ContactCardDialog({
               </ContactCardScan>
             ) : null}
 
-            {whatsappHref ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
+            {/* The divider keeps its grid column after success (the columns are placed by position); it is only hidden. */}
+            {whatsappHref && !request.scanOnly ? <span className={styles.or} aria-hidden="true" style={receipt ? { visibility: "hidden" } : undefined}><span>{copy.or}</span></span> : null}
 
-            {mail}
+            {whatsappHref && request.scanOnly ? null : mail}
           </div>
         )}
       </div>

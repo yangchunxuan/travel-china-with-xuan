@@ -15,10 +15,11 @@ const sheetSteps: Record<HomegroundLocale, number[]> = {
   ko: [356, 438, 550],
 };
 // Its heights below the first step and from each step on, [without, with] the line.
+// The direct-email action adds one 52px row and a 10px gap to the mobile app choices.
 const sheetHeights: Record<HomegroundLocale, [number, number][]> = {
-  en: [[686, 734], [659, 707], [638, 677], [618, 657]],
-  zh: [[686, 734], [665, 704], [638, 677], [618, 657]],
-  ko: [[686, 734], [659, 707], [638, 677], [618, 657]],
+  en: [[748, 796], [721, 769], [700, 739], [680, 719]],
+  zh: [[748, 796], [727, 766], [700, 739], [680, 719]],
+  ko: [[748, 796], [721, 769], [700, 739], [680, 719]],
 };
 
 function frameHeight(locale: HomegroundLocale, layout: ContactCardLayout, named: boolean) {

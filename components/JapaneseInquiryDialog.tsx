@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Check, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import {
@@ -15,7 +15,7 @@ import {
   currentHomepageEmailFormVersion,
   currentPrivateTourQuoteFormVersion,
   homepageEmailInquirySchemaVersion,
-  homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
 } from "../lib/inquiryVersions";
 import { trackEnquirySubmitted, trackEvent } from "../lib/analytics";
@@ -26,9 +26,26 @@ import { japaneseDirectWhatsAppEnabled, japaneseContactOpenEvent, setJapaneseCon
 import { japaneseGeneralContactHrefs } from "../lib/japaneseSite";
 import { setInquiryOpen } from "../lib/siteOverlayState";
 import styles from "./TourContactPanel.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
+import { japaneseInquiryReceiptCopy } from "../lib/japaneseInquiryReceiptCopy";
+import { contactCardDesktopQuery, contactCardRequestForLink } from "../lib/contactCard";
+import { ContactCardScan, type ContactCardScanCopy } from "./ContactCardScan";
+import cardStyles from "./ContactCard.module.css";
+
+const japaneseScanCopy = {
+  scanTitle: "スマートフォンでスキャンして相談する",
+  scanSteps: ["スマートフォンのカメラをコードに向けてください。", "メッセージが入力された状態で WhatsApp が開きます。"],
+  qrLabel: "Homeground との WhatsApp チャットを開く QR コード",
+  numberLabel: "WhatsApp", copy: "コピー", copied: "コピーしました", copyNumber: "WhatsApp の番号をコピー",
+  messengerScanTitle: "スキャンして Messenger で相談する",
+  messengerSteps: ["スマートフォンのカメラをコードに向けてください。", "Messenger で Homeground とのチャットが開きます。"],
+  messengerQrLabel: "Messenger で Homeground を開く QR コード",
+} satisfies ContactCardScanCopy;
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
-type Snapshot = { body: string; key: string };
+type Snapshot = { body: string; key: string; requestedTravelers?: number | null };
 const requestTimeoutMs = 20_000;
 
 /** Japanese copy and paths, with the same saved inquiry receipt and retry rules as the main site. */
@@ -49,7 +66,11 @@ export function JapaneseInquiryDialog() {
   const [group, setGroup] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   statusRef.current = status;
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
+  const receiptRef = useRef<HTMLDivElement>(null);
+  const [scanHref, setScanHref] = useState<string | null>(null);
+  const scanTitleRef = useRef<HTMLHeadingElement>(null);
+  const scanWasOpenRef = useRef(false);
   const [error, setError] = useState("");
 
   const context: PrivateTourInquiryContext | null = request?.slug && pathname === `/ja/tours/${request.slug}/`
@@ -97,7 +118,8 @@ export function JapaneseInquiryDialog() {
       setRequest(detail);
       setStatus("idle");
       setError("");
-      setReference("");
+      setReceipt(null);
+      setScanHref(null);
       setEmail("");
       setDate("");
       setDatesUndecided(true);
@@ -134,6 +156,21 @@ export function JapaneseInquiryDialog() {
 
   const close = () => { if (!sendingRef.current) setOpen(false); };
 
+  useEffect(() => {
+    if (status === "saved" && open) receiptRef.current?.focus({ preventScroll: true });
+  }, [status, open]);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    if (scanHref) {
+      scanWasOpenRef.current = true;
+      scanTitleRef.current?.focus({ preventScroll: true });
+    } else if (scanWasOpenRef.current) {
+      scanWasOpenRef.current = false;
+      receiptRef.current?.querySelector<HTMLElement>("[data-contact-card-scan-only]")?.focus({ preventScroll: true });
+    }
+  }, [open, scanHref]);
+
   async function send(snapshot: Snapshot) {
     if (!apiUrl || sendingRef.current) return;
     sendingRef.current = true;
@@ -152,7 +189,7 @@ export function JapaneseInquiryDialog() {
       let result: { state?: unknown; publicReference?: unknown; error?: { code?: unknown; persistenceState?: unknown } } | null = null;
       try { result = raw ? JSON.parse(raw) : null; } catch { result = null; }
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReference(result.publicReference.trim());
+        setReceipt(createInquiryReceipt(result, snapshot.body, "ja", snapshot.requestedTravelers));
         setStatus("saved");
         trackEnquirySubmitted({ page_language: "ja", reply_channel: "email", submission_surface: context ? "private_tour_quote" : "homepage_email" });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
@@ -179,7 +216,7 @@ export function JapaneseInquiryDialog() {
     const base = {
       locale: "ja" as const,
       contact: { channel: "email" as const, email: email.trim() },
-      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       experiment: null,
       antiAbuse: { companyWebsite: String(form.get("companyWebsite") || "") },
       // JA pages do not yet mint a JA traffic session; never attach an EN/KO/ZH token.
@@ -202,7 +239,7 @@ export function JapaneseInquiryDialog() {
       productInterest: null,
       attribution: { landingPath: "/ja/" },
     };
-    snapshotRef.current = { body: JSON.stringify(payload), key: crypto.randomUUID() };
+    snapshotRef.current = { body: JSON.stringify(payload), key: crypto.randomUUID(), requestedTravelers };
     trackEvent("enquiry_submit_attempted", { page_language: "ja", submission_surface: context ? "private_tour_quote" : "homepage_email" });
     void send(snapshotRef.current);
   }
@@ -211,25 +248,44 @@ export function JapaneseInquiryDialog() {
     trackEvent("contact_option_clicked", { channel, page_language: "ja" });
 
   return (
-    <dialog ref={dialogRef} className={styles.dialog} data-homeground-contact-ready="true" data-compact={!context || status === "saved"} aria-labelledby={`${id}-title`}
-      onCancel={event => { event.preventDefault(); close(); }}
-      onClick={event => { if (event.target === event.currentTarget) close(); }}>
-      <div className={styles.sheet}>
+    <dialog ref={dialogRef} className={scanHref ? cardStyles.dialog : styles.dialog} data-homeground-contact-ready="true" data-contact-card-dialog={scanHref ? "" : undefined} data-compact={!context || status === "saved"} aria-labelledby={`${id}-${scanHref ? "scan-title" : "title"}`}
+      onCancel={event => { event.preventDefault(); if (scanHref) setScanHref(null); else close(); }}
+      onClick={event => { if (event.target === event.currentTarget) { if (scanHref) setScanHref(null); else close(); } }}
+      onClickCapture={event => {
+        if (status !== "saved" || scanHref || event.defaultPrevented || event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (!window.matchMedia(contactCardDesktopQuery).matches) return;
+        const anchor = event.target instanceof Element ? event.target.closest("a[data-contact-card-scan-only]") : null;
+        if (!(anchor instanceof HTMLAnchorElement)) return;
+        const next = contactCardRequestForLink(anchor, "ja");
+        if (!next?.scanOnly || !next.whatsappHref) return;
+        event.preventDefault();
+        setScanHref(next.whatsappHref);
+      }}>
+      {scanHref ? <div className={cardStyles.card}>
+        <header className={cardStyles.head}>
+          <div className={cardStyles.headText}><h2 id={`${id}-scan-title`} ref={scanTitleRef} tabIndex={-1}>中国旅行プランナーに相談する</h2></div>
+          <p className={cardStyles.clock}><span className={cardStyles.clockDot} aria-hidden="true" />中国時間 <time>{new Intl.DateTimeFormat("ja", { timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date())}</time></p>
+          <button type="button" className={cardStyles.close} aria-label="受付内容に戻る" onClick={() => setScanHref(null)}><X size={18} aria-hidden="true" /></button>
+        </header>
+        <div className={cardStyles.columns} data-single="true">
+          <ContactCardScan localizedCopy={japaneseScanCopy} href={scanHref} headingId={`${id}-scan`} drawQrAfterPaint>
+            <a className={cardStyles.webLink} href={scanHref} target="_blank" rel="noopener noreferrer">このパソコンで WhatsApp を使う <ArrowUpRight size={16} aria-hidden="true" /></a>
+          </ContactCardScan>
+        </div>
+      </div> : <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label="閉じる" onClick={close}><X size={20} aria-hidden="true" /></button></div>
         <div className={styles.body}>
-          {status === "saved" ? <div className={styles.receipt}>
-            <span className={styles.check}><Check size={24} aria-hidden="true" /></span>
-            <h2 id={`${id}-title`} tabIndex={-1}>お問い合わせを受け付けました。</h2>
-            <p>内容を確認し、メールでご返信します。</p>
-            <p className={styles.reference}>受付番号 <strong>{reference}</strong></p>
+          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} headingId={`${id}-title`} containerRef={receiptRef}>
             <button type="button" className={styles.primary} onClick={close}>旅程に戻る <ArrowRight size={18} aria-hidden="true" /></button>
-          </div> : <>
+          </InquiryReceipt> : <>
             <h2 id={`${id}-title`} tabIndex={-1}>日本語で旅を相談する</h2>
             <p className={styles.intro}>{context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
                 <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com" /></label>
+                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={setEmail} />
                 {context ? <>
                   {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
                   {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}
@@ -252,7 +308,7 @@ export function JapaneseInquiryDialog() {
             </div>
           </>}
         </div>
-      </div>
+      </div>}
     </dialog>
   );
 }

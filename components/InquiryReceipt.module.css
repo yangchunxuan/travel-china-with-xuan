@@ -1,0 +1,41 @@
+.receipt { --receipt-ink: #141413; --receipt-body: #3d3c38; --receipt-muted: #6b6a64; --receipt-line: #e6e2d8; --receipt-rust: #a74731; width: 100%; min-width: 0; color: var(--receipt-ink); text-align: left; overflow-wrap: anywhere; }
+.receipt:lang(ko) { word-break: keep-all; }
+.receipt:lang(ja) :is(h3, .message, .note) { word-break: auto-phrase; }
+.mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #f2e7de; color: var(--receipt-rust); }
+.receipt.receipt > h3 { margin: 16px 0 0; color: var(--receipt-ink); font-family: var(--serif, Georgia, "Times New Roman", serif); font-size: 1.75rem; font-weight: 400; line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
+.receipt p { margin: 0; }
+.receipt .message { max-width: 34em; margin-top: 8px; color: var(--receipt-body); font-size: 1rem; font-weight: 400; line-height: 1.6; text-wrap: pretty; }
+.facts { margin: 22px 0 0; padding: 0; border-top: 1px solid var(--receipt-line); }
+.facts > div, .details dl > div { display: grid; grid-template-columns: minmax(6.5rem, max-content) minmax(0, 1fr); column-gap: 20px; row-gap: 2px; align-items: baseline; }
+.facts > div { padding: 11px 0; border-bottom: 1px solid var(--receipt-line); }
+.receipt dt { color: var(--receipt-muted); font-size: .8125rem; line-height: 1.5; }
+.receipt dd { margin: 0; color: var(--receipt-ink); font-size: .9375rem; line-height: 1.5; }
+.contactValue { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.address { font-weight: 600; }
+.zone { color: var(--receipt-muted); font-size: .8125rem; white-space: nowrap; }
+.inlineLink { color: var(--receipt-muted); font-size: .8125rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+.inlineLink:hover { color: var(--receipt-ink); }
+.help { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; padding: 14px 16px; border-radius: 12px; background: #f4f1ea; color: #4a4944; }
+.help > svg { flex: none; margin-top: 2px; color: var(--receipt-rust); }
+.receipt .next, .receipt .direct { font-size: .84375rem; line-height: 1.65; }
+.receipt .direct { margin-top: 14px; color: var(--receipt-muted); }
+.next a, .direct a { color: var(--receipt-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.details { margin-top: 18px; border: 1px solid var(--receipt-line); border-radius: 14px; background: rgb(255 255 255 / 72%); }
+.details summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 16px; color: var(--receipt-ink); font-size: .875rem; font-weight: 550; line-height: 1.5; list-style: none; cursor: pointer; }
+.details summary::-webkit-details-marker { display: none; }
+.details summary svg { flex: none; color: var(--receipt-muted); transition: transform 160ms ease; }
+.details[open] summary svg { transform: rotate(180deg); }
+.details dl { margin: 0; padding: 4px 16px 6px; border-top: 1px solid #eee9df; }
+.details dl > div { padding: 8px 0; }
+.details dl > div + div { border-top: 1px dashed #ece8de; }
+.receipt .note { text-wrap: pretty; margin: 0 16px 14px; color: var(--receipt-muted); font-size: .8125rem; line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.actions > * { flex: 1 1 100%; }
+.whatsapp { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 11px 20px; border: 1px solid #d8d6ce; border-radius: 999px; background: #fff; color: var(--receipt-ink); font: 550 14px/1.4 var(--sans, system-ui, sans-serif); text-decoration: none; transition: border-color 120ms, background 120ms; }
+.whatsapp:hover { border-color: var(--receipt-ink); background: #fbfaf7; }
+.actions > .whatsapp:only-child { flex: 0 1 auto; }
+.typo { grid-column: 1 / -1; margin: 4px 0; font-size: .8125rem; line-height: 1.6; color: #51452e; overflow-wrap: anywhere; }
+.typo button { appearance: none; width: auto; min-height: 0; border: 0; border-radius: 0; padding: 3px 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.inlineLink:focus-visible, .next a:focus-visible, .direct a:focus-visible, .details summary:focus-visible, .whatsapp:focus-visible, .typo button:focus-visible { outline: 2px solid #303030; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .details summary svg { transition: none; } }
+@media (forced-colors: active) { .mark, .help, .whatsapp, .details { border: 1px solid CanvasText; } }

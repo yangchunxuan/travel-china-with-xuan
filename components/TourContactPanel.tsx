@@ -2,14 +2,14 @@
 
 import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Check, Mail, MessageCircle, X } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
 import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, privateTourQuoteApiUrl } from "../lib/tourContact";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
-import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, homepageEmailPrivacyNoticeVersion } from "../lib/inquiryVersions";
+import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, travellerAckPrivacyNoticeVersion } from "../lib/inquiryVersions";
 import {
   getNavigationMenuOpen, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
   getNewsletterExpanded, subscribeNavigationMenu, subscribePrivacyManager,
@@ -22,13 +22,38 @@ import { openContactCard } from "../lib/contactCard";
 import { TourDateField } from "./TourDateField";
 import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
 import styles from "./TourContactPanel.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
-type Snapshot = { body: string; key: string };
+type Snapshot = { body: string; key: string; requestedTravelers?: number | null };
+
+const directTourContactCopy = {
+  en: {
+    intro: "Email us from your own inbox or message us on WhatsApp. We'll reply in the same conversation.",
+    email: "Email us directly",
+    formIntro: "Prefer us to email you first? Leave your details for a personal quote.",
+    failed: "We couldn't save your enquiry. Please try again, or email us using the option above.",
+  },
+  zh: {
+    intro: "你可以用自己的邮箱直接给我们发邮件，或通过 WhatsApp 联系。我们会在同一段对话里回复。",
+    email: "直接发邮件",
+    formIntro: "希望我们先发邮件给你？也可以留下信息，获取专属报价。",
+    failed: "暂时没能保存你的咨询，请重试或用上方的邮件入口联系我们。",
+  },
+  ko: {
+    intro: "본인 이메일에서 직접 보내시거나 WhatsApp으로 문의해 주세요. 같은 대화에서 답변드리겠습니다.",
+    email: "이메일로 직접 문의",
+    formIntro: "저희가 먼저 이메일을 보내드릴까요? 정보를 남겨주시면 맞춤 견적을 보내드립니다.",
+    failed: "문의를 저장하지 못했습니다. 다시 시도하거나 위의 이메일 버튼으로 연락해 주세요.",
+  },
+} as const;
 
 export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const pathname = usePathname();
   const text = tourContactCopy[locale];
+  const directText = directTourContactCopy[locale];
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -49,7 +74,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const [groupTouched, setGroupTouched] = useState(false);
   const [referralSource, setReferralSource] = useState<ReferralSource>("");
   const [status, setStatus] = useState<Status>("idle");
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
   const [fieldError, setFieldError] = useState("");
   const privacy = useSyncExternalStore(subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen);
   const menu = useSyncExternalStore(subscribeNavigationMenu, getNavigationMenuOpen, getServerPrivacyManagerOpen);
@@ -67,6 +92,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const jiangnanText = jiangnanContactCopy[locale];
   const customGroup = jiangnan && Boolean(context) && !context?.selection;
   const requestedTravelers = customGroup ? parseRequestedTravelers(requestedTravelersInput) : null;
+  // A Jiangnan custom group names its size first, so the WhatsApp message carries it (as on the live site).
   const contactLinkReady = !customGroup || requestedTravelers !== null;
   const draft = { travelDate: undecided ? null : date, note, referralSource: jiangnan ? referralSource : "" as const, requestedTravelers };
   const privacyHref = `${locale === "en" ? "" : `/${locale}`}/privacy/`;
@@ -79,7 +105,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     if (!dispatching.current && statusRef.current !== "uncertain") {
       setContext(next);
       setGuideTitle(!next && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "");
-      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReference(""); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
+      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReceipt(null); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
     }
     triggerRef.current = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     markNewsletterPromptHandled();
@@ -156,7 +182,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.key }, body: inquiryBodyWithCurrentTrafficConsent(snapshot.body), signal: controller.signal });
       const result = await response.json();
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReference(result.publicReference.trim()); updateStatus("saved");
+        setReceipt(createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers)); updateStatus("saved");
         if (stillOnSource()) trackEnquirySubmitted({ ...parameters, reply_channel: "email", form_version: currentPrivateTourQuoteFormVersion }, { firstPartyContext: journey });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         updateStatus("failed"); snapshotRef.current = null;
@@ -186,10 +212,10 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     const data = new FormData(event.currentTarget);
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: getPrivateTourInquirySubmissionContext(context, locale),
-      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource, requestedTravelers), privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource, requestedTravelers), privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
       experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: getTrafficSessionToken() ?? null });
-    snapshotRef.current = { body, key: crypto.randomUUID() };
+    snapshotRef.current = { body, key: crypto.randomUUID(), requestedTravelers };
     void send(snapshotRef.current);
   }
 
@@ -206,20 +232,29 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label={text.close} onClick={close}><X size={20} strokeWidth={1.7} aria-hidden="true" /></button></div>
         <div className={styles.body}>
-          {status === "saved" ? <div className={styles.receipt}><span className={styles.check}><Check size={24} aria-hidden="true" /></span><h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.success}</h2><p>{text.successBody}</p>{context ? <div className={styles.context}><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}</div> : null}<p className={styles.reference}>{text.reference} <strong>{reference}</strong></p><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></div> : <>
+          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale={locale} headingId={`${id}-title`} headingRef={titleRef}><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></InquiryReceipt> : <>
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.title}</h2>
-            <p className={styles.intro}>{context ? enabled ? text.intro : text.unavailable : text.guideBody}</p>
+            <p className={styles.intro}>{context ? enabled ? directText.intro : text.unavailable : text.guideBody}</p>
             {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}</div> : null}
             {!context && guideTitle ? <div className={styles.context}><span>{locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide"}</span><strong>{guideTitle}</strong></div> : null}
+            {context && enabled ? <div className={styles.directFirst}>
+              <div className={styles.directChoices}>
+                <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>
+                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
+              </div>
+              <span className={styles.emailAddress}>{homegroundBusiness.serviceEmail}</span>
+            </div> : null}
             {customGroup ? <div className={styles.groupField}>
               <label htmlFor={`${id}-group`}>{jiangnanText.group}</label>
               <input id={`${id}-group`} name="requestedTravelers" type="number" inputMode="numeric" min={1} max={99} step={1} required={enabled} form={enabled ? `${id}-quote-form` : undefined} value={requestedTravelersInput} onChange={event => { setRequestedTravelersInput(event.target.value); setGroupTouched(true); }} onBlur={() => setGroupTouched(true)} disabled={locked} aria-invalid={groupTouched && requestedTravelers === null ? "true" : undefined} aria-describedby={`${id}-group-hint${groupTouched && requestedTravelers === null ? ` ${id}-group-error` : ""}`} />
               <p id={`${id}-group-hint`}>{jiangnanText.groupHint}</p>
               {groupTouched && requestedTravelers === null ? <p id={`${id}-group-error`} className={styles.groupError} role="alert">{jiangnanText.groupError}</p> : null}
             </div> : null}
+            {context && enabled ? <p className={styles.formIntro}>{directText.formIntro}</p> : null}
             {context && enabled ? <form id={`${id}-quote-form`} className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
+                <EmailTypoHint email={email} locale={locale} disabled={locked} onAccept={setEmail} />
                 {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
                 <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={jiangnan ? 900 : 1000} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => setNote(event.target.value)} /></label>
@@ -227,14 +262,13 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>
               <p className={styles.consent}>{text.consent} <a href={privacyHref} target="_blank" rel="noopener noreferrer">{text.privacy}</a></p>
-              {status === "failed" || status === "uncertain" ? <p className={styles.error} role="alert">{status === "failed" ? fieldError || text.failed : text.uncertain}</p> : null}
+              {status === "failed" || status === "uncertain" ? <p className={styles.error} role="alert">{status === "failed" ? fieldError || directText.failed : text.uncertain}</p> : null}
               {status === "uncertain" ? <button className={styles.primary} type="button" onClick={() => snapshotRef.current && void send(snapshotRef.current)}>{text.retry}<ArrowRight size={18} aria-hidden="true" /></button> : <button className={styles.primary} type="submit" disabled={status === "sending"}>{status === "sending" ? text.sending : text.submit}{status !== "sending" ? <ArrowRight size={18} aria-hidden="true" /> : null}</button>}
-              {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={20} aria-hidden="true" />{text.whatsapp}</a> : null}
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
-            {(!context || !enabled || status === "failed" || status === "uncertain") ? <div className={styles.direct}>
-              {whatsappEnabled && (!context || !enabled) && contactLinkReady ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined, customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
-              {(!context || !enabled || status === "failed" || status === "uncertain") && contactLinkReady ? <a className={styles.directLink} href={emailHref} onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a> : null}
+            {(!context || !enabled) ? <div className={styles.direct}>
+              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined, customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
+              <a className={styles.directLink} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a>
               {!context ? <a className={styles.catalog} href={`${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
             </div> : null}
           </>}

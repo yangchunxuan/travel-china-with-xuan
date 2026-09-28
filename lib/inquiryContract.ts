@@ -42,6 +42,7 @@ import {
   currentPrivateTourQuoteFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
@@ -73,6 +74,7 @@ export {
   currentPrivateTourQuoteFormVersion,
   currentInquiryFormVersion,
   currentPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   homepageEmailInquirySchemaVersion,
   homepageEmailPrivacyNoticeVersion,
@@ -208,7 +210,7 @@ export interface NormalizedHomepageEmailInquiryPayload {
     email: string;
   };
   productInterest: PrivateTourInquiryContext | null;
-  privacyNoticeVersion: typeof homepageEmailPrivacyNoticeVersion;
+  privacyNoticeVersion: typeof homepageEmailPrivacyNoticeVersion | typeof travellerAckPrivacyNoticeVersion;
   attribution: NormalizedInquiryAttribution;
   experiment: null;
 }
@@ -587,10 +589,9 @@ function validateAndNormalizeEmailInquiry(
     fieldErrors.locale = "invalid";
   }
   if (
-    input.privacyNoticeVersion !== homepageEmailPrivacyNoticeVersion ||
-    !config.allowedPrivacyNoticeVersions.includes(
-      homepageEmailPrivacyNoticeVersion,
-    )
+    (input.privacyNoticeVersion !== homepageEmailPrivacyNoticeVersion &&
+      input.privacyNoticeVersion !== travellerAckPrivacyNoticeVersion) ||
+    !config.allowedPrivacyNoticeVersions.includes(String(input.privacyNoticeVersion))
   ) {
     fieldErrors.privacyNoticeVersion = "unsupported";
   }
@@ -780,7 +781,7 @@ function validateAndNormalizeEmailInquiry(
       productInterest,
       travelDate,
       note,
-      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      privacyNoticeVersion: input.privacyNoticeVersion as typeof homepageEmailPrivacyNoticeVersion | typeof travellerAckPrivacyNoticeVersion,
       attribution: normalizedAttribution,
       experiment: null,
     },
@@ -795,7 +796,7 @@ function validateAndNormalizeEmailInquiry(
       locale: input.locale,
       contact: { channel: "email", email },
       productInterest,
-      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      privacyNoticeVersion: input.privacyNoticeVersion as typeof homepageEmailPrivacyNoticeVersion | typeof travellerAckPrivacyNoticeVersion,
       attribution: normalizedAttribution,
       experiment: null,
     },
@@ -854,7 +855,8 @@ function validateAndNormalizeDestinationInquiry(
   }
   const supportedVersionPair =
     (input.formVersion === currentDestinationInquiryFormVersion &&
-      input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+      (input.privacyNoticeVersion === currentPrivacyNoticeVersion ||
+        input.privacyNoticeVersion === travellerAckPrivacyNoticeVersion)) ||
     (input.formVersion === budgetDestinationInquiryFormVersion &&
       input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
     (input.formVersion === previousDestinationInquiryFormVersion &&
@@ -1118,7 +1120,8 @@ function validateAndNormalizeDestinationInquiry(
     hasOnlyKeys(contact, ["channel", "phoneRaw"], "contact", fieldErrors);
     const supportedConsentPair =
       (input.formVersion === currentDestinationInquiryFormVersion &&
-        input.privacyNoticeVersion === currentPrivacyNoticeVersion) ||
+        (input.privacyNoticeVersion === currentPrivacyNoticeVersion ||
+          input.privacyNoticeVersion === travellerAckPrivacyNoticeVersion)) ||
       (input.formVersion === budgetDestinationInquiryFormVersion &&
         input.privacyNoticeVersion === budgetPrivacyNoticeVersion) ||
       (input.formVersion === previousDestinationInquiryFormVersion &&

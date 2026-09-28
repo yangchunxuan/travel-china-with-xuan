@@ -632,5 +632,5 @@ export function buildPrivateTourMailtoHref(
     ? `${copy.emailBody}: ${context.name}\n${copy.referenceLabel}: ${context.slug}${privateTourInquirySelectionLabel(context, locale) ? `\n${privateTourInquirySelectionLabel(context, locale)}` : ""}`
     : copy.genericEmailBody;
   const completeBody = [body, tourContactDraftText(locale, draft)].filter(Boolean).join("\n\n");
-  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(completeBody)}`;
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(completeBody.replace(/\r?\n/g, "\r\n"))}`;
 }

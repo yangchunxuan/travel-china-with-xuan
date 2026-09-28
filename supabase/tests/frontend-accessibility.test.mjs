@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { getHomegroundCopy } from "../../lib/homegroundI18n.ts";
+import { createInquiryReceipt, inquiryReceiptCopy } from "../../lib/inquiryReceipt.ts";
+import { japaneseInquiryReceiptCopy } from "../../lib/japaneseInquiryReceiptCopy.ts";
 
 const routeFinderPath = "components/RouteFinder.tsx";
 const destinationCopyPath = "lib/destinationPlannerI18n.ts";
@@ -304,44 +306,30 @@ test("the sticky header is opaque over mobile hero text", async () => {
   assert.doesNotMatch(headerStyles, /background:\s*rgb\([^)]*\/\s*[0-9]+%/);
 });
 
-test("success keeps the full public reference as secondary three-language copy", async () => {
+test("saved success keeps its reference for follow-up and a localized accessible heading", async () => {
   const publicReference = "HG-7K4M-9Q2P-X6RT";
   const plannerHandoff = await source(plannerHandoffPath);
-  const plannerStyles = await source(plannerHandoffStylesPath);
-
-  assert.equal(
-    getHomegroundCopy("en").handoff.successReference(publicReference),
-    `Support reference: ${publicReference}`,
-  );
-  assert.equal(
-    getHomegroundCopy("zh").handoff.successReference(publicReference),
-    `查询参考号：${publicReference}`,
-  );
-  assert.equal(
-    getHomegroundCopy("ko").handoff.successReference(publicReference),
-    `문의 확인 번호: ${publicReference}`,
-  );
+  const receiptComponent = await source("components/InquiryReceipt.tsx");
+  for (const locale of ["en", "zh", "ko", "ja"]) {
+    const receipt = createInquiryReceipt({ state: "submitted", publicReference }, JSON.stringify({ entryPath: "homepage_email", contact: { channel: "email", email: "reader@example.invalid" } }), locale);
+    assert.equal(receipt.publicReference, publicReference);
+    const localizedCopy = locale === "ja" ? japaneseInquiryReceiptCopy : inquiryReceiptCopy[locale];
+    assert.ok(localizedCopy.title);
+    assert.ok(localizedCopy.reference);
+  }
 
   assert.match(
     plannerHandoff,
-    /<p className=\{styles\.publicReference\}>/,
+    /<InquiryReceipt receipt=\{receipt\} locale=\{locale\} headingRef=\{statusHeadingRef\}>/,
   );
   assert.doesNotMatch(
-    plannerHandoff,
-    /<strong className=\{styles\.publicReference\}>/,
+    receiptComponent,
+    /<h[1-6][^>]*>\{receipt\.publicReference\}/,
   );
 
-  const referenceStyleStart = plannerStyles.indexOf(".publicReference");
-  const referenceStyleEnd = plannerStyles.indexOf(
-    "\n}",
-    referenceStyleStart,
-  );
-  const referenceStyles = plannerStyles.slice(
-    referenceStyleStart,
-    referenceStyleEnd,
-  );
-  assert.match(referenceStyles, /font-size:\s*0\.78rem/);
-  assert.doesNotMatch(referenceStyles, /background|border|font-weight/);
+  assert.match(receiptComponent, /<h3 id=\{headingId\} ref=\{headingRef\} tabIndex=\{-1\}>\{copy\.title\}<\/h3>/);
+  assert.doesNotMatch(receiptComponent, /<dt>\{copy\.reference\}<\/dt>/);
+  assert.match(receiptComponent, /role="status" aria-live="polite"/);
 });
 
 test("email and WhatsApp use one accessible in-site enquiry submit", async () => {

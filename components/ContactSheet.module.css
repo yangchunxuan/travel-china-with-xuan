@@ -73,6 +73,7 @@
 }
 
 .whatsapp,
+.directEmail,
 .messenger {
   display: flex;
   align-items: center;
@@ -92,12 +93,20 @@
   color: #fff;
 }
 
+.directEmail {
+  justify-content: space-between;
+  border: 1px solid var(--card-ink);
+  background: #fff;
+  color: var(--card-ink);
+}
+
 .messenger {
   background: var(--card-warm);
   color: var(--card-ink);
 }
 
 .whatsapp:active,
+.directEmail:active,
 .messenger:active {
   transform: scale(0.98);
 }
@@ -140,11 +149,13 @@
 
 @media (prefers-reduced-motion: reduce) {
   .whatsapp,
+  .directEmail,
   .messenger {
     transition: none;
   }
 
   .whatsapp:active,
+  .directEmail:active,
   .messenger:active {
     transform: none;
   }

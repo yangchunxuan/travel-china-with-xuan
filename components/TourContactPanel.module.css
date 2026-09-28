@@ -35,6 +35,13 @@
 .context > span { display: block; font-size: 10px; line-height: 1.4; color: #666; margin-bottom: 5px; }
 .context strong { display: block; font-size: 14px; font-weight: 600; line-height: 1.45; }
 .context p { margin: 6px 0 0; color: #616161; font-size: 12px; line-height: 1.5; }
+.directFirst { margin: -3px 0 19px; padding-bottom: 19px; border-bottom: 1px solid #eee; }
+.directChoices { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.emailButton { box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 12px; border: 1px solid #111; border-radius: 999px; background: #111; color: #fff; font: 550 13px/1.35 var(--sans,system-ui,sans-serif); text-align: center; text-decoration: none; }
+.emailButton:hover { background: #333; }
+.directChoices .whatsappButton { margin-top: 0; padding: 10px 12px; font-size: 13px; text-align: center; }
+.emailAddress { display: block; margin-top: 9px; color: #555; font-size: 12px; line-height: 1.5; text-align: center; overflow-wrap: anywhere; user-select: text; }
+.formIntro { margin: 0 0 15px; color: #414141; font-size: 12px; font-weight: 550; line-height: 1.5; }
 .groupField { margin: 0 0 18px; }
 .groupField label { display: block; font-size: 12px; font-weight: 550; line-height: 1.5; }
 .groupField input { display: block; box-sizing: border-box; width: 100%; min-height: 46px; margin-top: 7px; padding: 11px 13px; font: 400 16px/1.4 var(--sans,system-ui,sans-serif); color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 10px; }
@@ -103,6 +110,6 @@
   @keyframes leave { to { opacity: 0; transform: translateY(16px); } }
 }
 @media (prefers-reduced-motion: reduce) { .dialog[open], .dialog[open]::backdrop, .dialog[data-closing="true"], .dialog[data-closing="true"]::backdrop, .launcher { animation: none; } }
-@media (forced-colors: active) { .primary, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
+@media (forced-colors: active) { .primary, .emailButton, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
 
 .form select { appearance: auto; }

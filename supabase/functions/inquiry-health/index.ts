@@ -1,4 +1,5 @@
 import {
+  booleanEnv,
   callSupabaseRpc,
   constantTimeEqual,
   jsonResponse,
@@ -187,7 +188,27 @@ async function handleRequest(request: Request): Promise<Response> {
     });
   }
 
+  let travellerAck: { status: string; pending?: number; failed?: number; bounced?: number; complained?: number; overdue?: number; intentCapacityReached?: boolean } = { status: "disabled" };
+  let ackHealthy = true;
+  try {
+    // Keep monitoring after pausing sending by retaining the independent flag.
+    if (booleanEnv("TRAVELLER_ACK_MONITOR_ENABLED", false) || booleanEnv("TRAVELLER_ACK_ENABLED", false)) {
+      const ackResult = await callSupabaseRpc<unknown>("get_homeground_traveller_ack_health_v1", {});
+      const row = ackResult.ok && Array.isArray(ackResult.data) && ackResult.data.length === 1 ? ackResult.data[0] : null;
+      const values = ["pending_count", "failed_count", "bounced_count", "complained_count", "overdue_count"]
+        .map(key => nonNegativeSafeInteger(row?.[key]));
+      if (values.some(value => value === null) || typeof row?.intent_capacity_reached !== "boolean") throw new Error("invalid_ack_health");
+      const [pending, failed, bounced, complained, overdue] = values as number[];
+      const intentCapacityReached = row.intent_capacity_reached;
+      ackHealthy = failed === 0 && bounced === 0 && complained === 0 && overdue === 0 && !intentCapacityReached;
+      travellerAck = { status: ackHealthy ? "healthy" : "unhealthy", pending, failed, bounced, complained, overdue, intentCapacityReached };
+    }
+  } catch {
+    ackHealthy = false;
+    travellerAck = { status: "unavailable" };
+  }
   const healthy =
+    ackHealthy &&
     counts.failed === 0 &&
     counts.overduePending === 0 &&
     counts.expiredProcessing === 0 &&
@@ -199,6 +220,7 @@ async function handleRequest(request: Request): Promise<Response> {
     status: healthy ? "healthy" : "unhealthy",
     checkedAt: new Date().toISOString(),
     counts,
+    travellerAck,
     requestId,
   });
 }
