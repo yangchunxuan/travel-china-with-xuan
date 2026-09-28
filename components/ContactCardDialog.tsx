@@ -457,7 +457,8 @@ export function ContactCardDialog({
               </ContactCardScan>
             ) : null}
 
-            {whatsappHref && !request.scanOnly && !receipt ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
+            {/* The divider keeps its grid column after success (the columns are placed by position); it is only hidden. */}
+            {whatsappHref && !request.scanOnly ? <span className={styles.or} aria-hidden="true" style={receipt ? { visibility: "hidden" } : undefined}><span>{copy.or}</span></span> : null}
 
             {whatsappHref && request.scanOnly ? null : mail}
           </div>
