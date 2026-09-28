@@ -817,6 +817,31 @@
   margin-block-start: 0.25rem;
 }
 
+.relatedRoute {
+  border-block-end: 1px solid var(--hg-color-line);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 1.5rem;
+}
+
+.relatedRoute h3 {
+  color: var(--hg-color-ink);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.relatedRoute ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.relatedRoute li + li {
+  margin-block-start: 0.9rem;
+}
+
 .listDash {
   background: var(--hg-color-rust);
   block-size: 2px;
@@ -1044,6 +1069,11 @@
 
   .scopeGrid > section {
     border-inline-end: 0;
+    padding-inline: 0;
+  }
+
+  .relatedRoute {
+    grid-template-columns: 1fr;
     padding-inline: 0;
   }
 

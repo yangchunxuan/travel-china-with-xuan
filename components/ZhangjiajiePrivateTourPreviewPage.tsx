@@ -732,6 +732,21 @@ export function ZhangjiajiePrivateTourPreviewPage({
                   </ul>
                 </section>
               </div>
+              {planningContext.relatedProducts.length > 0 ? (
+                <section className={`${styles.relatedRoute} ${styles.planningLinks}`} aria-labelledby="related-routes-title">
+                  <h3 id="related-routes-title">{commercialCopy.related}</h3>
+                  <ul>
+                    {planningContext.relatedProducts.map((link) => (
+                      <li key={link.id}>
+                        <Link href={link.href}>
+                          <span>{link.label}</span>
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
             </section>
           ) : null}
 

@@ -98,7 +98,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "kunming-dali-lijiang-8-day-private-tour",
-    title: { en: "Kunming, Dali & Lijiang: 8-Day Private Tour", zh: "昆明·大理·丽江 8 天 7 晚私家团", ko: "쿤밍·다리·리장 8일 프라이빗 투어", ja: "昆明・大理・麗江 8日間（7泊）プライベートツアー" },
+    title: { en: "Yunnan 8-Day Private Tour: Kunming, Dali & Lijiang", zh: "昆明·大理·丽江 8 天 7 晚私家团", ko: "쿤밍·다리·리장 8일 프라이빗 투어", ja: "昆明・大理・麗江 8日間（7泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 6 }] },
     ],

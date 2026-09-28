@@ -42,6 +42,14 @@ test("the inquiry allowlist exactly matches every published tour in all locales"
   }
 });
 
+test("Yunnan's public search title keeps the deployed inquiry identity", () => {
+  const displayed = getPrivateTourInquiryContext("kunming-dali-lijiang-8-day-private-tour", "en");
+  assert.match(displayed.name, /^Yunnan 8-Day Private Tour/u);
+  const submitted = getPrivateTourInquirySubmissionContext(displayed, "en");
+  assert.equal(submitted.name, "Kunming, Dali & Lijiang: 8-Day Private Tour");
+  assert.equal(submitted.slug, displayed.slug);
+});
+
 test("product and service contact links carry only controlled identifiers", () => {
   const zhangjiajie = getPrivateTourInquiryContext(
     "zhangjiajie-4-day-private-tour",

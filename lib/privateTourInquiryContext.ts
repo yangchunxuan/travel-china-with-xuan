@@ -501,7 +501,11 @@ export function getPrivateTourInquirySubmissionContext(
 ): PrivateTourInquiryContext {
   const previousName = locale === "ko"
     ? previousKoreanZhangjiajieNames[context.slug]
-    : undefined;
+    : locale === "en" && context.slug === "kunming-dali-lijiang-8-day-private-tour"
+      // The published SEO title changed, but deployed SQL still validates this
+      // canonical inquiry name. Keep submitted inquiries compatible.
+      ? privateTourInquiryNames[context.slug].en
+      : undefined;
   return previousName ? { ...context, name: previousName } : context;
 }
 
