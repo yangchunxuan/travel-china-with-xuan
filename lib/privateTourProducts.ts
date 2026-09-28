@@ -7,6 +7,7 @@ import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts"
 import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhaseTwoProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
+import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -3348,7 +3349,17 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
     ...privateTourLongHaulProducts,
-  ],
+  ].map((product) => {
+    const additions = privateTourAdditionalMediaBySlug[product.slug];
+    if (!additions?.length) return product;
+    return {
+      ...product,
+      routeMedia: [...(product.routeMedia ?? []), ...additions].sort(
+        (left, right) => left.day - right.day,
+      ),
+      dateModified: "2026-09-28",
+    };
+  }),
 );
 
 const englishMetadataDescriptions: Readonly<Record<string, string>> =
