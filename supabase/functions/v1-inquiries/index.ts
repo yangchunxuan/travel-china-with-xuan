@@ -24,6 +24,7 @@ import {
   sha256Hex,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
+import { travellerAckPrivacyVersion } from "../_shared/traveller-ack.ts";
 
 declare const Deno: {
   serve(handler: (request: Request) => Response | Promise<Response>): void;
@@ -422,7 +423,7 @@ async function handleRequest(request: Request): Promise<Response> {
     const now = Date.now();
     firstResponseDueAt = new Date(
       now +
-        positiveIntegerEnv("REPLY_SLA_HOURS", 24, 1, 720) * 3_600_000,
+        positiveIntegerEnv("REPLY_SLA_HOURS", 48, 1, 720) * 3_600_000,
     ).toISOString();
   } catch {
     return errorResponse(
@@ -446,6 +447,23 @@ async function handleRequest(request: Request): Promise<Response> {
       // prevent a genuine inquiry from reaching the planner.
       trafficSessionHash = null;
     }
+  }
+
+  // Optional receipt enrollment is recorded BEFORE the atomic inquiry write.
+  // The insert trigger consumes immutable intent in that transaction, closing
+  // the saved-inquiry/enqueue crash gap without emailing historical submissions.
+  // A receipt setup failure must never prevent the actual inquiry from saving.
+  if (payload.privacyNoticeVersion === travellerAckPrivacyVersion) {
+    try {
+      const email = payload.contact.channel === "email" ? payload.contact.email : null;
+      const recipientHash = email ? await hmacSha256Hex(requiredEnv("IDEMPOTENCY_HASH_SECRET"), `traveller-ack:${email.toLowerCase()}`) : null;
+      await callSupabaseRpc<boolean>("prepare_homeground_traveller_ack_v1", {
+        p_idempotency_key_hash: idempotencyKeyHash,
+        p_enabled: booleanEnv("TRAVELLER_ACK_ENABLED", false),
+        p_recipient_hash: recipientHash,
+        p_privacy_notice_version: payload.privacyNoticeVersion,
+      });
+    } catch { /* Intake remains available; receipt status is read after saving. */ }
   }
 
   let persistenceResult;
@@ -678,6 +696,20 @@ async function handleRequest(request: Request): Promise<Response> {
     );
   }
 
+  let ackStatus: "disabled" | "queued" | "suppressed" | "unavailable" = "disabled";
+  let savedFirstResponseDueAt: string | undefined;
+  if (payload.privacyNoticeVersion === travellerAckPrivacyVersion) {
+    ackStatus = "unavailable";
+    try {
+      const receipt = await callSupabaseRpc<{ ackStatus?: unknown; firstResponseDueAt?: unknown }>("get_homeground_traveller_ack_receipt_v1", { p_inquiry_id: result.inquiryId });
+      if (receipt.ok && receipt.data) {
+        const status = receipt.data.ackStatus;
+        if (status === "disabled" || status === "queued" || status === "suppressed" || status === "unavailable") ackStatus = status;
+        if (typeof receipt.data.firstResponseDueAt === "string" && Number.isFinite(Date.parse(receipt.data.firstResponseDueAt))) savedFirstResponseDueAt = receipt.data.firstResponseDueAt;
+      }
+    } catch { /* A saved inquiry is successful even if its receipt cannot queue. */ }
+  }
+
   return jsonResponse(
     result.outcome === "created" ? 201 : 200,
     {
@@ -685,6 +717,9 @@ async function handleRequest(request: Request): Promise<Response> {
       state: "submitted",
       receivedAt: result.receivedAt,
       duplicate: result.outcome === "replay",
+      ackQueued: ackStatus === "queued",
+      ackStatus,
+      ...(savedFirstResponseDueAt ? { firstResponseDueAt: savedFirstResponseDueAt } : {}),
       requestId,
     },
     responseHeaders,

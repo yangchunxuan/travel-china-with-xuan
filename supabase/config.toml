@@ -25,6 +25,11 @@ verify_jwt = false
 # NOTIFICATION_WORKER_SECRET header. This function is not browser-facing.
 verify_jwt = false
 
+[functions.traveller-ack-events]
+# Resend/Svix HMAC over raw body with timestamp tolerance and event deduplication.
+# This webhook never sends mail, and needs no browser or service-role JWT.
+verify_jwt = false
+
 [functions.inquiry-health]
 # GitHub Actions authenticates with an independent OUTBOX_MONITOR_SECRET.
 # This read-only function returns aggregate outbox counts and no Inquiry data.

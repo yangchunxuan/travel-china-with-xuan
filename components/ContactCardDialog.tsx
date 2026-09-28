@@ -18,7 +18,7 @@ import {
 import {
   currentHomepageEmailFormVersion,
   homepageEmailInquirySchemaVersion,
-  homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
@@ -28,6 +28,9 @@ import { setInquiryOpen } from "../lib/siteOverlayState";
 import { ContactCardScan, CopyButton } from "./ContactCardScan";
 import styles from "./ContactCard.module.css";
 import sheetStyles from "./ContactSheet.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 type EmailStatus = "idle" | "submitting" | "success" | "failed" | "uncertain";
 type Snapshot = { body: string; key: string };
@@ -104,7 +107,7 @@ export function ContactCardDialog({
   const [status, setStatus] = useState<EmailStatus>("idle");
   const [error, setError] = useState("");
   const [invalid, setInvalid] = useState(false);
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
 
   const tour: PrivateTourInquiryContext | null = context.tour;
   const apiUrl = privateTourQuoteApiUrl();
@@ -180,7 +183,7 @@ export function ContactCardDialog({
     entryPath: "homepage_email",
     locale,
     contact: { channel: "email", email: email.trim() },
-    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
     productInterest: tour ? getPrivateTourInquirySubmissionContext(tour, locale) : null,
     attribution: { landingPath: inquirySubmitSurfaceByLocale[locale] },
     experiment: null,
@@ -218,7 +221,7 @@ export function ContactCardDialog({
       try { result = text ? JSON.parse(text) : null; } catch { result = null; }
       if (response.ok) {
         if (result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-          setReference(result.publicReference.trim());
+          setReceipt(createInquiryReceipt(result, snapshot.body, locale));
           setStatus("success");
           if (!submittedRef.current) {
             submittedRef.current = true;
@@ -301,6 +304,7 @@ export function ContactCardDialog({
 
   const mail = (
     <section className={withSheet(styles.mail, sheetStyles.mail)} aria-labelledby={`${id}-mail`}>
+      {status !== "success" ? <>
       <h3 id={`${id}-mail`}>{sheet ? desk.emailTitle : copy.tabEmail}</h3>
       <p className={styles.replyFrom}>
         <span>{copy.replyFrom}</span>
@@ -314,21 +318,12 @@ export function ContactCardDialog({
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       ) : null}
+      </> : null}
 
       {!emailReady ? (
         <p className={styles.note}>{desk.emailUnavailable}</p>
-      ) : status === "success" ? (
-        <div className={styles.success} ref={successRef} role="status" aria-live="polite" tabIndex={-1}>
-          <svg className={styles.successMark} viewBox="0 0 28 28" aria-hidden="true">
-            <circle cx="14" cy="14" r="11" />
-            <path d="M9 14.4l3.3 3.3 6.7-7.2" />
-          </svg>
-          <div>
-            <strong>{desk.emailSuccessTitle}</strong>
-            <p>{desk.emailSuccessBody}</p>
-            <small>{desk.referenceLabel}: {reference}</small>
-          </div>
-        </div>
+      ) : status === "success" && receipt ? (
+        <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} headingId={`${id}-mail`} />
       ) : (
         <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
           <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
@@ -361,6 +356,7 @@ export function ContactCardDialog({
               setInvalid(false);
             }}
           />
+          <EmailTypoHint email={email} locale={locale} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setInvalid(false); }} />
           <div className={styles.honeypot} aria-hidden="true">
             <label htmlFor={`${id}-company`}>Company website</label>
             <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />

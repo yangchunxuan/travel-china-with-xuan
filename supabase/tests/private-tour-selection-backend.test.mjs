@@ -140,7 +140,7 @@ test("six-traveller prices for two-person-only expansion tours are exactly CNY 2
 });
 
 test("six-traveller database whitelist includes the newly published choices", async () => {
-  const sql = await readFile(new URL("../migrations/202609230001_add_six_traveller_private_tour_prices.sql", import.meta.url), "utf8");
+  const sql = (await readFile(new URL("../migrations/202609230001_add_six_traveller_private_tour_prices.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
   assert.match(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
   const selectionCase = sql.match(/select case p_slug([\s\S]*?)else false\s+end is true;/u)?.[1];
   assert.ok(selectionCase);
@@ -193,7 +193,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 });
 
 test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
-  const sql = await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8");
+  const sql = (await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
   for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
@@ -243,7 +243,7 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
 });
 
 test("phase-two migration extends canonical identities and exact priced selections", async () => {
-  const sql = await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8");
+  const sql = (await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
   for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
@@ -286,7 +286,7 @@ test("phase-two migration extends canonical identities and exact priced selectio
 });
 
 test("final selection migration preserves every published price row after both releases", async () => {
-  const sql = await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8");
+  const sql = (await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
   const selectionCase = sql.match(
     /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
   )?.[1];
@@ -312,7 +312,7 @@ test("final selection migration preserves every published price row after both r
 });
 
 test("long-haul migration keeps every canonical identity and adds all long-haul selections", async () => {
-  const sql = await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8");
+  const sql = (await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
   for (const slug of privateTourInquirySlugs) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
@@ -407,6 +407,7 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       return response({ outcome: previous ? "replay" : "created", inquiryId: "66c78072-5792-4573-9668-93c8e2e88c89", publicReference: "HG-TEST", receivedAt: "2026-09-05T00:00:00Z" });
     }
     if (path.endsWith("/claim_homeground_notification_jobs_v3")) return response([currentJob]);
+    if (path.endsWith("/freeze_homeground_notification_message_v1")) return response(body.p_message);
     if (path.endsWith("/finish_homeground_notification_job")) return response(true);
     throw new Error(`Unexpected network request: ${url}`);
   };
@@ -465,7 +466,8 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       assert.ok(message.text.includes(label));
       assert.ok(message.html.includes(label));
       assert.doesNotMatch(message.text, /No itinerary, traveller/);
-      assert.equal(message.reply_to, "traveller@example.com");
+      assert.equal(message.reply_to, undefined);
+      assert.match(message.html, /Write to traveller/);
       }
     }
     for (const slug of phaseTwoSlugs) {

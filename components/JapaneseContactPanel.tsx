@@ -45,7 +45,7 @@ export function JapaneseContactPanel({
         </a> : null}
       </div>
       <p className={styles.note}>
-        サイト内のフォームは、保存できた場合に受付番号を表示します。外部の連絡アプリは下書きが開くだけです。
+        サイト内のフォームは、保存できた場合に受付完了を表示します。外部の連絡アプリは下書きが開くだけです。
       </p>
       <p className={styles.note}>
         メールアプリが開かない場合は、

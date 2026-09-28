@@ -171,7 +171,8 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /contact_phone_e164/);
   assert.match(code, /rough_budget_per_person/);
   assert.match(code, /job\.note/);
-  assert.match(code, /reply_to/);
+  assert.doesNotMatch(code, /reply_to\s*:/);
+  assert.match(code, /staffReplyMailto/);
   assert.match(code, /BRAND_NOTIFICATION_EMAIL/);
   assert.match(code, /RESEND_API_KEY/);
   assert.match(code, /NOTIFICATION_PROCESSING_ENABLED/);
@@ -189,8 +190,9 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.doesNotMatch(code, /@gmail\.com/i);
   assert.doesNotMatch(code, /(?:\+?86)?1[3-9][0-9]{9}/);
   assert.doesNotMatch(code, /Claimed|Replied|Closed/);
-  assert.match(code, /Reply-To is already set to the traveller/);
-  assert.match(code, /Gmail thread and its Sent message/);
+  assert.doesNotMatch(code, /Reply-To is already set to the traveller/);
+  assert.match(code, /INTERNAL — do not quote/);
+  assert.match(code, /Write to traveller/);
   assert.match(code, /traveller-provided text and links are untrusted/);
   assert.match(
     code,
@@ -376,7 +378,7 @@ test("GitHub Actions checks outbox health every fifteen minutes without Resend",
   assert.doesNotMatch(workflow, /cat\s+["']?\$\{?response_file/);
   assert.match(
     runbook,
-    /label:"Homeground inquiries" is:unread older:2d/,
+    /label:"Needs reply"/,
   );
   assert.match(runbook, /public\.get_homeground_outbox_health\(\)/);
   assert.match(
@@ -645,11 +647,11 @@ test("environment template covers the public form and server functions", async (
   );
   assert.match(
     example,
-    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1,2026-07-26\.1$/m,
+    /^ALLOWED_FORM_VERSIONS=2026-07-21\.1,2026-07-26\.1,2026-09-10\.1$/m,
   );
   assert.match(
     example,
-    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1,2026-07-26\.1$/m,
+    /^ALLOWED_PRIVACY_NOTICE_VERSIONS=2026-07-21\.1,2026-07-26\.1,2026-09-28\.1$/m,
   );
   assert.doesNotMatch(
     example,
@@ -693,15 +695,15 @@ test("GitHub Pages build receives only explicit public Inquiry variables", async
   );
 });
 
-test("fallback email enters the same monitored Gmail workflow", async () => {
+test("fallback and direct email enter the monitored handling workflow", async () => {
   const copy = await source(handoffCopyPath);
   const runbook = await source(studioRunbookPath);
   assert.equal(
     copy.match(/\[Homeground\]\[Fallback\]/g)?.length,
     3,
   );
-  assert.match(runbook, /\[Homeground\]\[Fallback\]/);
-  assert.match(runbook, /same\s+monitored inbox/);
+  assert.match(runbook, /direct enquiries/);
+  assert.match(runbook, /Needs reply/);
   assert.match(runbook, /Homeground inquiries/);
   assert.doesNotMatch(runbook, /New → Claimed → Replied → Closed/);
 });

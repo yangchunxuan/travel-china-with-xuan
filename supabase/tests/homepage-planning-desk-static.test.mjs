@@ -494,12 +494,13 @@ test("conversation and the full-trip path end at the same human handoff", async 
   );
   assert.match(
     plannerHandoff,
-    /paidBriefCopy\?\.successTitle\s*\?\?[\s\S]{0,80}conversationBriefCopy\?\.successTitle\s*\?\?[\s\S]{0,80}copy\.handoff\.successTitle/u,
-    "conversation submissions must use the dedicated free-enquiry success copy",
+    /<InquiryReceipt receipt=\{receipt\} locale=\{locale\} headingRef=\{statusHeadingRef\}>/u,
+    "conversation and service submissions share a saved-enquiry receipt",
   );
   assert.match(
     plannerHandoff,
-    /paidBriefCopy\?\.successBody\s*\?\?[\s\S]{0,80}conversationBriefCopy\?\.successBody\s*\?\?[\s\S]{0,80}copy\.handoff\.successBody/u,
+    /setReceipt\(createInquiryReceipt\(success, snapshot\.body, locale\)\)/u,
+    "receipt must use the saved submission snapshot, not the editable current brief",
   );
   assert.match(
     plannerHandoff,

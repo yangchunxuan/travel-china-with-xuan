@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Check, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import {
@@ -15,7 +15,7 @@ import {
   currentHomepageEmailFormVersion,
   currentPrivateTourQuoteFormVersion,
   homepageEmailInquirySchemaVersion,
-  homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
 } from "../lib/inquiryVersions";
 import { trackEnquirySubmitted, trackEvent } from "../lib/analytics";
@@ -26,9 +26,13 @@ import { japaneseDirectWhatsAppEnabled, japaneseContactOpenEvent, setJapaneseCon
 import { japaneseGeneralContactHrefs } from "../lib/japaneseSite";
 import { setInquiryOpen } from "../lib/siteOverlayState";
 import styles from "./TourContactPanel.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
+import { japaneseInquiryReceiptCopy } from "../lib/japaneseInquiryReceiptCopy";
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
-type Snapshot = { body: string; key: string };
+type Snapshot = { body: string; key: string; requestedTravelers?: number | null };
 const requestTimeoutMs = 20_000;
 
 /** Japanese copy and paths, with the same saved inquiry receipt and retry rules as the main site. */
@@ -49,7 +53,8 @@ export function JapaneseInquiryDialog() {
   const [group, setGroup] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   statusRef.current = status;
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
+  const receiptRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState("");
 
   const context: PrivateTourInquiryContext | null = request?.slug && pathname === `/ja/tours/${request.slug}/`
@@ -97,7 +102,7 @@ export function JapaneseInquiryDialog() {
       setRequest(detail);
       setStatus("idle");
       setError("");
-      setReference("");
+      setReceipt(null);
       setEmail("");
       setDate("");
       setDatesUndecided(true);
@@ -134,6 +139,10 @@ export function JapaneseInquiryDialog() {
 
   const close = () => { if (!sendingRef.current) setOpen(false); };
 
+  useEffect(() => {
+    if (status === "saved" && open) receiptRef.current?.focus({ preventScroll: true });
+  }, [status, open]);
+
   async function send(snapshot: Snapshot) {
     if (!apiUrl || sendingRef.current) return;
     sendingRef.current = true;
@@ -152,7 +161,7 @@ export function JapaneseInquiryDialog() {
       let result: { state?: unknown; publicReference?: unknown; error?: { code?: unknown; persistenceState?: unknown } } | null = null;
       try { result = raw ? JSON.parse(raw) : null; } catch { result = null; }
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReference(result.publicReference.trim());
+        setReceipt(createInquiryReceipt(result, snapshot.body, "ja", snapshot.requestedTravelers));
         setStatus("saved");
         trackEnquirySubmitted({ page_language: "ja", reply_channel: "email", submission_surface: context ? "private_tour_quote" : "homepage_email" });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
@@ -179,7 +188,7 @@ export function JapaneseInquiryDialog() {
     const base = {
       locale: "ja" as const,
       contact: { channel: "email" as const, email: email.trim() },
-      privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       experiment: null,
       antiAbuse: { companyWebsite: String(form.get("companyWebsite") || "") },
       // JA pages do not yet mint a JA traffic session; never attach an EN/KO/ZH token.
@@ -202,7 +211,7 @@ export function JapaneseInquiryDialog() {
       productInterest: null,
       attribution: { landingPath: "/ja/" },
     };
-    snapshotRef.current = { body: JSON.stringify(payload), key: crypto.randomUUID() };
+    snapshotRef.current = { body: JSON.stringify(payload), key: crypto.randomUUID(), requestedTravelers };
     trackEvent("enquiry_submit_attempted", { page_language: "ja", submission_surface: context ? "private_tour_quote" : "homepage_email" });
     void send(snapshotRef.current);
   }
@@ -217,19 +226,16 @@ export function JapaneseInquiryDialog() {
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label="閉じる" onClick={close}><X size={20} aria-hidden="true" /></button></div>
         <div className={styles.body}>
-          {status === "saved" ? <div className={styles.receipt}>
-            <span className={styles.check}><Check size={24} aria-hidden="true" /></span>
-            <h2 id={`${id}-title`} tabIndex={-1}>お問い合わせを受け付けました。</h2>
-            <p>内容を確認し、メールでご返信します。</p>
-            <p className={styles.reference}>受付番号 <strong>{reference}</strong></p>
+          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} headingId={`${id}-title`} containerRef={receiptRef}>
             <button type="button" className={styles.primary} onClick={close}>旅程に戻る <ArrowRight size={18} aria-hidden="true" /></button>
-          </div> : <>
+          </InquiryReceipt> : <>
             <h2 id={`${id}-title`} tabIndex={-1}>日本語で旅を相談する</h2>
             <p className={styles.intro}>{context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
                 <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com" /></label>
+                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={setEmail} />
                 {context ? <>
                   {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
                   {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}

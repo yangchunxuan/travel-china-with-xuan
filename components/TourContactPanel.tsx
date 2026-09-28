@@ -2,14 +2,14 @@
 
 import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Check, Mail, MessageCircle, X } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
 import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, privateTourQuoteApiUrl } from "../lib/tourContact";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
-import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, homepageEmailPrivacyNoticeVersion } from "../lib/inquiryVersions";
+import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, travellerAckPrivacyNoticeVersion } from "../lib/inquiryVersions";
 import {
   getNavigationMenuOpen, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
   getNewsletterExpanded, subscribeNavigationMenu, subscribePrivacyManager,
@@ -22,9 +22,12 @@ import { openContactCard } from "../lib/contactCard";
 import { TourDateField } from "./TourDateField";
 import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
 import styles from "./TourContactPanel.module.css";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 type Status = "idle" | "sending" | "saved" | "failed" | "uncertain";
-type Snapshot = { body: string; key: string };
+type Snapshot = { body: string; key: string; requestedTravelers?: number | null };
 
 const directTourContactCopy = {
   en: {
@@ -71,7 +74,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const [groupTouched, setGroupTouched] = useState(false);
   const [referralSource, setReferralSource] = useState<ReferralSource>("");
   const [status, setStatus] = useState<Status>("idle");
-  const [reference, setReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
   const [fieldError, setFieldError] = useState("");
   const privacy = useSyncExternalStore(subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen);
   const menu = useSyncExternalStore(subscribeNavigationMenu, getNavigationMenuOpen, getServerPrivacyManagerOpen);
@@ -100,7 +103,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     if (!dispatching.current && statusRef.current !== "uncertain") {
       setContext(next);
       setGuideTitle(!next && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "");
-      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReference(""); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
+      if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReceipt(null); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
     }
     triggerRef.current = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     markNewsletterPromptHandled();
@@ -177,7 +180,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.key }, body: inquiryBodyWithCurrentTrafficConsent(snapshot.body), signal: controller.signal });
       const result = await response.json();
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReference(result.publicReference.trim()); updateStatus("saved");
+        setReceipt(createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers)); updateStatus("saved");
         if (stillOnSource()) trackEnquirySubmitted({ ...parameters, reply_channel: "email", form_version: currentPrivateTourQuoteFormVersion }, { firstPartyContext: journey });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         updateStatus("failed"); snapshotRef.current = null;
@@ -207,10 +210,10 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     const data = new FormData(event.currentTarget);
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: getPrivateTourInquirySubmissionContext(context, locale),
-      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource, requestedTravelers), privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource, requestedTravelers), privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
       experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: getTrafficSessionToken() ?? null });
-    snapshotRef.current = { body, key: crypto.randomUUID() };
+    snapshotRef.current = { body, key: crypto.randomUUID(), requestedTravelers };
     void send(snapshotRef.current);
   }
 
@@ -227,7 +230,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label={text.close} onClick={close}><X size={20} strokeWidth={1.7} aria-hidden="true" /></button></div>
         <div className={styles.body}>
-          {status === "saved" ? <div className={styles.receipt}><span className={styles.check}><Check size={24} aria-hidden="true" /></span><h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.success}</h2><p>{text.successBody}</p>{context ? <div className={styles.context}><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}</div> : null}<p className={styles.reference}>{text.reference} <strong>{reference}</strong></p><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></div> : <>
+          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale={locale} headingId={`${id}-title`} headingRef={titleRef}><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></InquiryReceipt> : <>
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.title}</h2>
             <p className={styles.intro}>{context ? enabled ? directText.intro : text.unavailable : text.guideBody}</p>
             {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}</div> : null}
@@ -249,6 +252,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             {context && enabled ? <form id={`${id}-quote-form`} className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
+                <EmailTypoHint email={email} locale={locale} disabled={locked} onAccept={setEmail} />
                 {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
                 <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={jiangnan ? 900 : 1000} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => setNote(event.target.value)} /></label>

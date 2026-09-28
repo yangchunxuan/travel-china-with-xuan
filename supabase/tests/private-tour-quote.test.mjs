@@ -135,6 +135,7 @@ test("actual intake and notification handlers preserve quote fields, replay iden
       return response({ outcome: previous ? "replay" : "created", inquiryId: randomUUID(), publicReference: "HG-TEST", receivedAt: new Date().toISOString() });
     }
     if (path.endsWith("/claim_homeground_notification_jobs_v3")) return response([currentJob]);
+    if (path.endsWith("/freeze_homeground_notification_message_v1")) return response(body.p_message);
     if (path.endsWith("/finish_homeground_notification_job")) return response(true);
     throw new Error(`Unexpected network request ${url}`);
   };
@@ -188,7 +189,9 @@ test("actual intake and notification handlers preserve quote fields, replay iden
           departure_country: null, rough_budget_per_person: null, note: isClassic ? null : "Pace <slow> & steady\nTwo rooms.",
           inquiry_created_at: new Date().toISOString(), first_response_due_at: new Date().toISOString(), lease_token: randomUUID(), row_version: 1, attempt_count: 1 };
         assert.equal((await (await runWorker()).json()).accepted, 1);
-        const mail = messages.at(-1); assert.equal(mail.reply_to, currentJob.contact_email);
+        const mail = messages.at(-1); assert.equal(mail.reply_to, undefined);
+        assert.match(mail.text, /INTERNAL — do not quote/);
+        assert.match(mail.html, /Write to traveller/);
         assert.ok(mail.text.includes(getPrivateTourInquirySubmissionContext(input.productInterest, locale).name)); assert.ok(mail.text.includes(input.attribution.landingPath));
         if (isClassic) { assert.match(mail.text, /Date undecided/); assert.ok(mail.text.includes(privateTourInquirySelectionLabel(input.productInterest, locale))); }
         else { assert.ok(mail.text.includes(input.travelDate)); assert.match(mail.html, /Pace &lt;slow&gt; &amp; steady/); assert.doesNotMatch(mail.html, /Pace <slow>/); }

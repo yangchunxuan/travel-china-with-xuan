@@ -15,7 +15,9 @@ test("switching to direct contact preserves each locale's selected trip, party, 
     const expected = tourContactDraftText(locale, draft);
     const whatsapp = new URL(tourWhatsAppHref(locale, context, undefined, draft)).searchParams.get("text");
     const email = new URL(buildPrivateTourMailtoHref("test@example.invalid", locale, context, draft)).searchParams.get("body");
-    for (const text of [whatsapp, email]) {
+    assert.ok(email.includes("\r\n"));
+    for (const rawText of [whatsapp, email]) {
+      const text = rawText.replaceAll("\r\n", "\n");
       assert.ok(text.includes(context.name));
       assert.ok(text.includes(String(travelers)));
       assert.ok(text.includes(expected));

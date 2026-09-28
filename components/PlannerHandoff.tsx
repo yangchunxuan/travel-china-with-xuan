@@ -2,7 +2,6 @@
 
 import {
   AlertCircle,
-  CheckCircle2,
   LoaderCircle,
 } from "lucide-react";
 import {
@@ -22,7 +21,7 @@ import {
 } from "../lib/destinationPlannerI18n";
 import {
   currentDestinationInquiryFormVersion,
-  currentPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   destinationInquirySchemaVersion,
   inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
@@ -46,6 +45,9 @@ import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConse
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 import { useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -189,24 +191,6 @@ function normalizeWhatsAppNumber(value: string): string | null {
 
 function isValidWhatsAppNumber(value: string): boolean {
   return normalizeWhatsAppNumber(value) !== null;
-}
-
-function maskEmail(value: string): string {
-  const normalized = value.trim();
-  const separatorIndex = normalized.lastIndexOf("@");
-  if (separatorIndex <= 0 || separatorIndex === normalized.length - 1) {
-    return "***";
-  }
-
-  const localPart = normalized.slice(0, separatorIndex);
-  const domain = normalized.slice(separatorIndex + 1);
-  return `${localPart.slice(0, 1)}***@${domain}`;
-}
-
-function maskPhone(value: string): string {
-  const normalized = normalizeWhatsAppNumber(value);
-  if (!normalized) return "+••••";
-  return `+•••• ${normalized.slice(-4)}`;
 }
 
 function isValidDepartureCountry(value: string): boolean {
@@ -394,14 +378,12 @@ export function PlannerHandoff({
   const [roughBudgetPerPerson, setRoughBudgetPerPerson] =
     useState("");
   const [tripContext, setTripContext] = useState("");
-  const [submittedChannel, setSubmittedChannel] =
-    useState<ContactMethod>("email");
-  const [submittedContact, setSubmittedContact] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [failureKind, setFailureKind] = useState<FailureKind | null>(null);
   const [failureOverride, setFailureOverride] = useState("");
   const [publicReference, setPublicReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
   const [previousSubmissionReference, setPreviousSubmissionReference] =
     useState("");
   const [retryAfterLabel, setRetryAfterLabel] = useState("");
@@ -865,7 +847,7 @@ export function PlannerHandoff({
       roughBudgetPerPerson:
         roughBudgetPerPerson.trim() || null,
       note: inquiryNote,
-      privacyNoticeVersion: currentPrivacyNoticeVersion,
+      privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       attribution: {
         landingPath: inquirySubmitSurfaceByLocale[locale],
       },
@@ -999,12 +981,11 @@ export function PlannerHandoff({
               form_version: currentDestinationInquiryFormVersion,
             });
           }
-          setSubmittedChannel(snapshot.replyChannel);
-          setSubmittedContact(snapshot.replyContact);
           setErrors({});
           if (snapshot.routeIdentity === routeIdentityRef.current) {
             setPreviousSubmissionReference("");
             setPublicReference(nextPublicReference);
+            setReceipt(createInquiryReceipt(success, snapshot.body, locale));
             setStatus("success");
           } else {
             setPreviousSubmissionReference(nextPublicReference);
@@ -1289,35 +1270,8 @@ export function PlannerHandoff({
             </div>
           )}
 
-          {status === "success" && (
-            <div className={styles.statusState} role="status">
-              <CheckCircle2
-                aria-hidden="true"
-                className={styles.successIcon}
-                size={27}
-              />
-              <h3 ref={statusHeadingRef} tabIndex={-1}>
-                {paidBriefCopy?.successTitle ??
-                  conversationBriefCopy?.successTitle ??
-                  copy.handoff.successTitle}
-              </h3>
-              <p>
-                {paidBriefCopy?.successBody ??
-                  conversationBriefCopy?.successBody ??
-                  copy.handoff.successBody}
-              </p>
-              <p>
-                {copy.handoff.successReplyContact(
-                  submittedChannel === "email" ? "Email" : "WhatsApp",
-                  submittedChannel === "email"
-                    ? maskEmail(submittedContact)
-                    : maskPhone(submittedContact),
-                  replySla,
-                )}
-              </p>
-              <p className={styles.publicReference}>
-                {copy.handoff.successReference(publicReference)}
-              </p>
+          {status === "success" && receipt && (
+            <InquiryReceipt receipt={receipt} locale={locale} headingRef={statusHeadingRef}>
               <a
                 className={styles.routeLink}
                 href="#route-finder"
@@ -1329,7 +1283,7 @@ export function PlannerHandoff({
                   conversationBriefCopy?.successBackLabel ??
                   copy.handoff.backToRoute}
               </a>
-            </div>
+            </InquiryReceipt>
           )}
 
           {status === "uncertain" && (
@@ -1633,6 +1587,7 @@ export function PlannerHandoff({
                     <p className={styles.hint} id={emailHintId}>
                       {copy.handoff.emailHint}
                     </p>
+                    <EmailTypoHint email={email} locale={locale} disabled={controlsLocked} onAccept={(value) => { setEmail(value); markEditing("email"); }} />
                     {errors.email && (
                       <p
                         className={styles.fieldError}

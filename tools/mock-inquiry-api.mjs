@@ -19,6 +19,7 @@ import {
   currentHomepageEmailFormVersion,
   currentPrivateTourQuoteFormVersion,
   homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   supportedDestinationInquiryFormVersions,
 } from "../lib/inquiryVersions.ts";
 
@@ -35,7 +36,7 @@ const allowedOrigins = new Set(
 );
 const privacyNoticeVersions = (
   process.env.MOCK_ALLOWED_PRIVACY_NOTICE_VERSIONS ||
-  `${currentPrivacyNoticeVersion},${homepageEmailPrivacyNoticeVersion}`
+  `${currentPrivacyNoticeVersion},${homepageEmailPrivacyNoticeVersion},${travellerAckPrivacyNoticeVersion}`
 )
   .split(",")
   .map((value) => value.trim())
@@ -46,6 +47,12 @@ const maximumRequestBytes = 16 * 1024;
 const uuidV4Pattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const inquiryByIdempotencyKey = new Map();
+const ackLastQueuedByEmail = new Map();
+const mockAckStatus = process.env.MOCK_ACK_STATUS || "queued";
+if (!["queued", "disabled", "suppressed", "unavailable"].includes(mockAckStatus)) {
+  throw new Error("Invalid MOCK_ACK_STATUS");
+}
+const mockReplyHours = parsePositiveInteger(process.env.MOCK_REPLY_SLA_HOURS, 24);
 const referenceAlphabet = "23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
 
 function parsePositiveInteger(raw, fallback) {
@@ -313,10 +320,20 @@ const server = createServer(async (request, response) => {
     return;
   }
 
+  const now = Date.now();
+  const email = validation.value.contact.channel === "email" ? validation.value.contact.email.toLowerCase() : null;
+  let ackStatus = email && validation.value.privacyNoticeVersion === travellerAckPrivacyNoticeVersion ? mockAckStatus : "disabled";
+  if (ackStatus === "queued" && ackLastQueuedByEmail.has(email) && now - ackLastQueuedByEmail.get(email) < 86_400_000) {
+    ackStatus = "suppressed";
+  }
+  if (ackStatus === "queued") ackLastQueuedByEmail.set(email, now);
   const publicResult = {
     publicReference: makePublicReference(),
     state: "submitted",
-    receivedAt: new Date().toISOString(),
+    receivedAt: new Date(now).toISOString(),
+    firstResponseDueAt: new Date(now + mockReplyHours * 3_600_000).toISOString(),
+    ackQueued: ackStatus === "queued",
+    ackStatus,
   };
   inquiryByIdempotencyKey.set(idempotencyKey, {
     payloadHash,

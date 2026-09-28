@@ -28,7 +28,7 @@ import { trustedMessengerUrl } from "../lib/homegroundSocial";
 import {
   currentHomepageEmailFormVersion,
   homepageEmailInquirySchemaVersion,
-  homepageEmailPrivacyNoticeVersion,
+  travellerAckPrivacyNoticeVersion,
   inquirySubmitSurfaceByLocale,
 } from "../lib/inquiryVersions";
 import type { HomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
@@ -45,6 +45,9 @@ import styles from "./HomegroundHomePage.module.css";
 import { useAnalyticsEventOnce, useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
 import { ContactCardInlineScan, useContactCardDesktop } from "./ContactCardInlineScan";
 import { contactCardCopy } from "../lib/contactCardCopy";
+import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { InquiryReceipt } from "./InquiryReceipt";
+import { EmailTypoHint } from "./EmailTypoHint";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -215,7 +218,7 @@ export function HomepageQuickContact({
   const [error, setError] = useState("");
   const [emailValidationError, setEmailValidationError] = useState(false);
   const [showRetry, setShowRetry] = useState(false);
-  const [publicReference, setPublicReference] = useState("");
+  const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
   const [privateTourInterest, setPrivateTourInterest] =
     useState<PrivateTourInquiryContext | null>(null);
 
@@ -297,7 +300,7 @@ export function HomepageQuickContact({
       channel: "email",
       email: email.trim(),
     },
-    privacyNoticeVersion: homepageEmailPrivacyNoticeVersion,
+    privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
     productInterest: privateTourInterest
       ? getPrivateTourInquirySubmissionContext(privateTourInterest, locale)
       : null,
@@ -353,7 +356,7 @@ export function HomepageQuickContact({
           typeof success.publicReference === "string" &&
           success.publicReference.trim()
         ) {
-          setPublicReference(success.publicReference.trim());
+          setReceipt(createInquiryReceipt(success, snapshot.body, locale));
           setStatus("success");
           setError("");
           setShowRetry(false);
@@ -553,7 +556,7 @@ export function HomepageQuickContact({
       }${board ? ` ${styles.quickContactBoard}` : ""}`}
       data-contact-board={board ? "" : undefined}
     >
-      {privateTourInterest && (
+      {privateTourInterest && status !== "success" && (
         <aside
           className={styles.quickContactProductInterest}
           aria-label={privateTourInquiryContactCopy[locale].surfaceLabel}
@@ -590,7 +593,7 @@ export function HomepageQuickContact({
             ))}
             <span className={styles.boardKnob} aria-hidden="true" />
           </div>
-          <a
+          {status !== "success" || boardTab !== "email" ? <a
             className={styles.boardDirectEmail}
             href={directMailto}
             data-contact-card-direct=""
@@ -598,7 +601,7 @@ export function HomepageQuickContact({
           >
             {contactCardCopy[locale].directEmailAction}
             <ArrowUpRight aria-hidden="true" size={16} />
-          </a>
+          </a> : null}
           {clock && (
             <p className={styles.boardClock}>
               {contactCardCopy[locale].chinaTime} <time>{clock}</time>
@@ -690,6 +693,7 @@ export function HomepageQuickContact({
           className={`${styles.quickContactCard} ${styles.quickContactEmail}`}
           {...boardPanel("email")}
         >
+          {status !== "success" ? <>
           <div className={styles.quickContactIcon} aria-hidden="true">
             <Mail size={22} strokeWidth={1.8} />
           </div>
@@ -719,6 +723,7 @@ export function HomepageQuickContact({
               <strong>{homegroundBusiness.serviceEmail}</strong>
             </p>
           )}
+          </> : null}
 
           {!emailIntakeReady ? (
             <div className={styles.quickContactEmailFallback}>
@@ -726,25 +731,8 @@ export function HomepageQuickContact({
                 {contactCopy.emailUnavailable}
               </p>
             </div>
-          ) : status === "success" ? (
-            <div
-              className={styles.quickContactSuccess}
-              ref={successRef}
-              role="status"
-              aria-live="polite"
-              tabIndex={-1}
-            >
-              <CheckCircle2 aria-hidden="true" size={22} />
-              <div>
-                <strong>{contactCopy.emailSuccessTitle}</strong>
-                <p>{privateTourInterest?.selection
-                  ? privateTourInquiryContactCopy[locale].emailSelectionSuccessBody
-                  : contactCopy.emailSuccessBody}</p>
-                <small>
-                  {contactCopy.referenceLabel}: {publicReference}
-                </small>
-              </div>
-            </div>
+          ) : status === "success" && receipt ? (
+            <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} />
           ) : (
             <form
               className={styles.quickContactEmailForm}
@@ -810,6 +798,7 @@ export function HomepageQuickContact({
                   )}
                 </button>
               </div>
+              <EmailTypoHint email={email} locale={locale} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setEmailValidationError(false); setShowRetry(false); }} />
               <div className={styles.quickContactHoneypot} aria-hidden="true">
                 <label htmlFor={`${emailId}-company`}>Company website</label>
                 <input

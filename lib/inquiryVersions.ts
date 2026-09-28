@@ -24,6 +24,8 @@ export const legacyPrivacyNoticeVersion = "2026-07-19.1";
 export const previousPrivacyNoticeVersion = "2026-07-20.1";
 export const budgetPrivacyNoticeVersion = "2026-07-20.2";
 export const currentPrivacyNoticeVersion = "2026-07-21.1";
+// New disclosure shared by current forms; historical version pairs stay valid.
+export const travellerAckPrivacyNoticeVersion = "2026-09-28.1";
 export const inquirySubmitSurfaceByLocale = {
   en: "/",
   zh: "/zh/",

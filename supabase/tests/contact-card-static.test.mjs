@@ -364,7 +364,7 @@ test("every WhatsApp chat fits a QR code a phone reads easily off a screen", () 
 test("the card's email reuses the homepage email contract, with the tour when there is one", async () => {
   const dialog = await source("components/ContactCardDialog.tsx");
   assert.match(dialog, /entryPath: "homepage_email"/);
-  assert.match(dialog, /privacyNoticeVersion: homepageEmailPrivacyNoticeVersion/);
+  assert.match(dialog, /privacyNoticeVersion: travellerAckPrivacyNoticeVersion/);
   assert.match(dialog, /attribution: \{ landingPath: inquirySubmitSurfaceByLocale\[locale\] \}/);
   assert.match(dialog, /"Idempotency-Key": snapshot\.key/);
   assert.match(dialog, /name="companyWebsite"/);
