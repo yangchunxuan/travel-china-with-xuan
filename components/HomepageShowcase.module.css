@@ -714,6 +714,10 @@
 
 /* ---------- Japanese ---------- */
 
+.root[data-homeground-locale="ja"] .hero {
+  padding-block-start: clamp(4rem, 5vw, 5rem);
+}
+
 .root[data-homeground-locale="ja"] .eyebrow {
   letter-spacing: 0.02em;
   text-transform: none;
