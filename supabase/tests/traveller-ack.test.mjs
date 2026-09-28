@@ -17,15 +17,15 @@ test("four receipt languages echo only canonical context and use the saved SLA",
   for (const locale of ["en", "zh", "ko", "ja"]) {
     const message = renderTravellerAcknowledgement(job({ locale }));
     assert.ok(message.text.includes(reference));
-    assert.ok(message.text.includes("2026-12-03"));
+    assert.ok(message.text.includes({ en: "3 Dec 2026", zh: "2026年12月3日", ko: "2026년 12월 3일", ja: "2026年12月3日" }[locale]), "the arrival date is shown in the traveller's language");
     assert.ok(message.text.includes("48"));
     assert.ok(message.text.includes("hello@homegroundchina.com"));
-    assert.ok(message.text.includes("not me"));
+    assert.ok(message.text.includes({ en: "not me", zh: "不是我", ko: "본인 아님", ja: "心当たりなし" }[locale]), "the stop phrase is written in the traveller's language");
     assert.doesNotMatch(message.text + message.html, /NOT FOR MAIL|Untrusted|<script>|data:image|<img|track|https?:/);
     assert.match(message.html, new RegExp(`<html lang="${locale}">`));
   }
   const english = renderTravellerAcknowledgement(job()).text;
-  assert.match(english, /price basis, not a confirmed number/);
+  assert.match(english, /confirm your actual number of travellers/);
   assert.match(english, /not a confirmed booking/);
   assert.doesNotMatch(english, /we will delete|within 2 minutes|Evan.*personally/i);
 });
@@ -33,8 +33,9 @@ test("receipt never invents actual party size from a selected price tier", () =>
   assert.doesNotMatch(renderTravellerAcknowledgement(job()).text, /Requested number of travellers/);
   assert.match(renderTravellerAcknowledgement(job({ requested_travelers: 15 })).text, /Requested number of travellers: 15/);
   const simple = renderTravellerAcknowledgement(job({ entry_path: "homepage_email", answers: {} })).text;
-  assert.match(simple, /Homepage enquiry/);
-  assert.doesNotMatch(simple, /Requested travel date|Selected pricing option/);
+  assert.match(simple, /Reference: HG-1234-5678-ABCD/);
+  assert.doesNotMatch(simple, /Homepage enquiry|Your enquiry:/, "an internal entry-point name is not echoed to the traveller");
+  assert.doesNotMatch(simple, /Arrival date|Price option/);
   assert.throws(() => renderTravellerAcknowledgement(job({ first_response_due_at: "bad" })), /deadline/);
 });
 test("Svix official signature fixture, raw-body changes and replay window", async () => {

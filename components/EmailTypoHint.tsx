@@ -10,7 +10,7 @@ export function EmailTypoHint({ email, locale, localizedCopy, onAccept, disabled
   if (!suggestion || disabled) return null;
   const copy = getInquiryReceiptCopy(locale, localizedCopy);
   return <div className={styles.typo} role="status">
-    <span>{copy.typo} <strong>{suggestion}</strong>?</span>{" "}
+    <span>{copy.typo} <strong>{suggestion}</strong>{copy.typoEnd}</span>{" "}
     <button type="button" onClick={() => onAccept(suggestion)}>{copy.use}</button>
   </div>;
 }

@@ -323,7 +323,7 @@ export function ContactCardDialog({
       {!emailReady ? (
         <p className={styles.note}>{desk.emailUnavailable}</p>
       ) : status === "success" && receipt ? (
-        <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} headingId={`${id}-mail`} />
+        <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} headingId={`${id}-mail`} hideWhatsApp />
       ) : (
         <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
           <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
@@ -447,7 +447,7 @@ export function ContactCardDialog({
             {mail}
           </div>
         ) : (
-          <div className={styles.columns} data-single={!whatsappHref || undefined}>
+          <div className={styles.columns} data-single={!whatsappHref || request.scanOnly || undefined}>
             {whatsappHref ? (
               <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
@@ -457,9 +457,9 @@ export function ContactCardDialog({
               </ContactCardScan>
             ) : null}
 
-            {whatsappHref ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
+            {whatsappHref && !request.scanOnly && !receipt ? <span className={styles.or} aria-hidden="true"><span>{copy.or}</span></span> : null}
 
-            {mail}
+            {whatsappHref && request.scanOnly ? null : mail}
           </div>
         )}
       </div>

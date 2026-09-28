@@ -133,7 +133,7 @@ assert.deepEqual(
 );
 assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);
-assert.match(guidesHub, /受付番号/u);
+assert.match(guidesHub, /受付完了を表示/u);
 const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
 assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
 const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");

@@ -92,6 +92,8 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const jiangnanText = jiangnanContactCopy[locale];
   const customGroup = jiangnan && Boolean(context) && !context?.selection;
   const requestedTravelers = customGroup ? parseRequestedTravelers(requestedTravelersInput) : null;
+  // A Jiangnan custom group names its size first, so the WhatsApp message carries it (as on the live site).
+  const contactLinkReady = !customGroup || requestedTravelers !== null;
   const draft = { travelDate: undecided ? null : date, note, referralSource: jiangnan ? referralSource : "" as const, requestedTravelers };
   const privacyHref = `${locale === "en" ? "" : `/${locale}`}/privacy/`;
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
@@ -238,7 +240,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             {context && enabled ? <div className={styles.directFirst}>
               <div className={styles.directChoices}>
                 <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>
-                {whatsappEnabled ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" data-contact-card-direct="" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
+                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
               </div>
               <span className={styles.emailAddress}>{homegroundBusiness.serviceEmail}</span>
             </div> : null}
@@ -265,7 +267,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
             {(!context || !enabled) ? <div className={styles.direct}>
-              {whatsappEnabled ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined, customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" data-contact-card-direct="" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
+              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined, customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               <a className={styles.directLink} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a>
               {!context ? <a className={styles.catalog} href={`${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
             </div> : null}

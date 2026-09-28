@@ -163,7 +163,7 @@ test("all four receipt languages render truthful status, correction links and no
     assert.match(html, /href="mailto:hello@homegroundchina.com\?subject=HG-TEST-1234-ABCD" data-contact-card-direct="">hello@homegroundchina.com<\/a>/);
     assert.ok(html.includes(ackStatus === "queued" ? copyFor(locale).next : ackStatus === "suppressed" ? copyFor(locale).suppressedNext : copyFor(locale).directNext));
     if (ackStatus === "suppressed") {
-      assert.doesNotMatch(html, /<time /);
+      assert.doesNotMatch(html, /<time dateTime="2026-09-30T/, "no reply deadline when the confirmation is suppressed");
     } else {
       assert.match(html, /<time dateTime="2026-09-30T04:00:18.528Z"/);
     }
@@ -181,16 +181,16 @@ test("the saved homepage view emphasizes the email guidance without administrati
   const visible = html.replace(/<[^>]*>/g, "");
   assert.ok(visible.includes(inquiryReceiptCopy.zh.queued));
   assert.ok(!visible.includes(saved.publicReference));
-  assert.ok(!visible.includes(receipt.email));
+  assert.ok(visible.includes(receipt.email), "the traveller can check the address they typed");
   assert.ok(!visible.includes(inquiryReceiptCopy.zh.homepage));
-  assert.doesNotMatch(html, /<dl|<details/);
+  assert.doesNotMatch(html, /<details/);
   assert.match(html, /class="message" data-ack-status="queued"/);
   assert.ok(html.includes(saved.publicReference), "continuation links still carry the saved reference");
   const tour = createInquiryReceipt(saved, JSON.stringify(quote("zh")), "zh", 7);
   const tourHtml = renderToStaticMarkup(React.createElement(InquiryReceipt, { receipt: tour, locale: "zh" }));
-  assert.match(tourHtml, /<details class="details"><summary>查看咨询内容<\/summary>/);
+  assert.match(tourHtml, /<details class="details"><summary>查看咨询内容<svg/);
   assert.ok(tourHtml.includes(tour.productName));
-  assert.ok(tourHtml.includes("2026-12-03"));
+  assert.ok(tourHtml.includes('<time dateTime="2026-12-03">2026年12月3日</time>'), "the date is readable and keeps its machine value");
 });
 
 test("the typo hint is an optional button and never changes the supplied address on render", async () => {
