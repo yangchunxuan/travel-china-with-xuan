@@ -199,6 +199,7 @@ const productContexts = {
   "zhangjiajie-4-day-private-tour": {
     destinations: ["zhangjiajie"],
     guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
+    relatedProducts: [p("zhangjiajie-furong-fenghuang-7-day-private-tour")],
   },
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
     destinations: ["chengdu"],
@@ -207,7 +208,7 @@ const productContexts = {
   },
   "kunming-dali-lijiang-8-day-private-tour": {
     destinations: [],
-    guides: ["lijiang-old-town-or-shuhe-where-to-stay", "jade-dragon-snow-mountain-cable-car-booking"],
+    guides: ["kunming-dali-lijiang-shangri-la-route-order", "lijiang-old-town-or-shuhe-where-to-stay", "jade-dragon-snow-mountain-cable-car-booking"],
   },
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": {
     destinations: [],

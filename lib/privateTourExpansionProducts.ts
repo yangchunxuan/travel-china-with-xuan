@@ -353,7 +353,7 @@ const yunnan: PrivateTourProduct = {
   nights: 7,
   servicePolicy,
   title: l(
-    "Kunming, Dali & Lijiang: 8-Day Private Tour",
+    "Yunnan 8-Day Private Tour: Kunming, Dali & Lijiang",
     "昆明·大理·丽江 8 天 7 晚私家团",
     "쿤밍·다리·리장 8일 프라이빗 투어",
   ),
@@ -373,7 +373,7 @@ const yunnan: PrivateTourProduct = {
     "쿤밍 2박, 다리 3박, 리장 2박으로 총 7박입니다. 현지 일정 시작가는 6명 기준 CNY 5,680이며, 호텔, 객실과 조식은 결제 전에 서면으로 보내 드립니다.",
   ),
   metadataDescription: l(
-    "8-day Kunming, Dali and Lijiang private route from CNY 5,680 per person for 6 travellers. Hotel and service scope are confirmed before payment.",
+    "Yunnan 8-day private tour: Kunming, Dali and Lijiang. Land arrangements from CNY 5,680 per person for 6; hotels and services confirmed before payment.",
     "昆明、大理、丽江 8 天私家路线，6 人 CNY 5,680/人起；酒店与服务范围在付款前确认。",
     "쿤밍·다리·리장 8일 프라이빗 일정. 6명 기준 1인 CNY 5,680부터이며 호텔과 서비스 범위는 결제 전 확인합니다.",
   ),
