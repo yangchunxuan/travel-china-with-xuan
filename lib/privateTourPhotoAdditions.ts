@@ -424,7 +424,12 @@ const longHaulAdditions: readonly Addition[] = [
   longHaulScene("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", 8, l("Qutang Gorge on the Yangtze", "长江瞿塘峡", "창장 구당협"), "Tan Wei Liang Byorn", qutang, "CC BY 3.0", ccBy3),
 ];
 
-const additionsBySlug = Object.groupBy([...additions, ...longHaulAdditions], (item) => item.slug);
+const additionsBySlug = [...additions, ...longHaulAdditions].reduce<
+  Record<string, Addition[]>
+>((groups, item) => {
+  (groups[item.slug] ??= []).push(item);
+  return groups;
+}, {});
 
 export const privateTourAdditionalMediaBySlug: Readonly<
   Record<string, readonly PrivateTourRouteMediaGroup[]>
