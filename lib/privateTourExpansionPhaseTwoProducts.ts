@@ -440,12 +440,30 @@ const shenzhen: PrivateTourProduct = {
   serviceNote: l("Days 2–3 include a private English-speaking guide, driver, vehicle and named admissions. Korean pages use a Korean-speaking guide at the same base price, subject to availability. Corporate showrooms, robotaxis and private workshops are included only when separately confirmed.", "第 2–3 天包含私人英语导游、司机、用车与所列门票；导游语种按订单确认。企业展厅、无人车与私营课程只有另行确认后才包含。", "2~3일 차에는 한국어 가이드, 기사, 전용 차량과 명시된 입장권이 포함되며 한국어 가이드는 같은 기본 가격으로 가능 여부를 확인합니다. 기업 전시장, 로보택시와 사설 수업은 별도 확정 시에만 포함됩니다."),
   exclusions: commonExclusions(["Corporate visits, robotaxi rides, workshops and paid special exhibitions unless listed"], ["确认单未列明的企业参访、无人车、课程与收费特展"], ["확인서에 명시되지 않은 기업 방문, 로보택시, 수업과 유료 특별전"]),
   bookingNote: pricingNote,
+  faq: [
+    {
+      question: l("Is this route suitable for toddlers?", "低龄儿童适合这条深圳路线吗？", "어린 유아도 이 선전 일정에 참여할 수 있나요?"),
+      answer: l(
+        "The standard version fits school-age children better. Days 2 and 3 usually involve about 4–6 km of walking each, with more possible on a coastal afternoon. Tell us each child's age, nap needs and stroller use before booking; we can check a shorter, break-led version and confirm any changed inclusions and price in writing.",
+        "标准版更适合学龄儿童。第 2、3 天通常各需步行约 4–6 公里，选海边下午可能更多。预订前告诉我们孩子年龄、午睡需要和是否用推车；我们会核对缩短、增加休息的版本，并书面确认项目和价格变化。",
+        "기본 일정은 학령기 아동에게 더 잘 맞습니다. 2~3일 차는 각각 약 4~6km 걷고 해안 오후를 선택하면 더 길어질 수 있습니다. 예약 전에 아이의 나이, 낮잠 시간과 유모차 사용 여부를 알려 주시면 더 짧고 휴식이 많은 일정과 변경되는 포함 사항·요금을 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l("Are a company visit and a guide included every day?", "每天都有导游，也包含企业参访吗？", "매일 가이드가 함께하고 기업 방문도 포함되나요?"),
+      answer: l(
+        "No. The published guide and vehicle service is on Days 2–3; Days 1 and 4 are transfers. Company showrooms, robotaxis and workshops are not in the base route and are added only after separate written confirmation. The museum reservation is checked for your dates and children's ages.",
+        "不是。公开行程的导游与游览用车在第 2–3 天；第 1、4 天是接送。企业展厅、无人车和课程不在基础范围内，另行书面确认后才增加。科学馆预约也要按出行日期和孩子年龄核对。",
+        "아닙니다. 공개 일정의 가이드와 관광 차량은 2~3일 차에 제공되며 1일 차와 4일 차는 이동일입니다. 기업 전시장, 로보택시, 체험 수업은 기본 일정에 없고 별도로 서면 확인한 경우에만 추가합니다. 과학관 예약도 날짜와 아이 나이에 맞춰 확인합니다.",
+      ),
+    },
+  ],
   heroImage: image(shenzhenSlug, "hero.webp", 1600, 1200, l("Futian skyline in Shenzhen", "深圳福田天际线", "선전 푸톈 스카이라인"), l("The family route uses central Shenzhen as one hotel base.", "亲子路线以深圳市区同一家酒店为基地。", "가족 일정은 선전 도심 한 호텔을 거점으로 합니다.")),
   gallery: [image(shenzhenSlug, "gallery-1.webp", 1600, 1200, l("Inside Shenzhen Science and Technology Museum", "深圳科学技术馆内部", "선전과학기술관 내부"), l("The museum day is built around confirmed reservations and the children's ages.", "科学馆一天按预约与孩子年龄安排。", "과학관 일정은 예약과 아이 나이에 맞춰 구성합니다."))],
   routeMedia: [{ day: 3, variants: [{ label: l("Huaqiangbei", "华强北", "화창베이"), image: image(shenzhenSlug, "route-day-2.webp", 899, 1200, l("Huaqiangbei and central Shenzhen", "华强北与深圳市区", "화창베이와 선전 도심"), l("Huaqiangbei is presented as an urban technology district, not a compulsory shopping stop.", "华强北以城市科技街区游览，不安排强制购物。", "화창베이는 의무 쇼핑이 아닌 도시 기술 상권으로 소개합니다.")) }] }],
   packages: [standardPackage([{ travelers: 2, cnyPerPerson: 3980, usdPerPerson: 620 }, { travelers: 4, cnyPerPerson: 2880, usdPerPerson: 450 }, { travelers: 6, cnyPerPerson: 2680 }])],
   datePublished: PUBLISHED,
-  dateModified: MODIFIED,
+  dateModified: "2026-09-28",
 };
 
 const classicChinaSlug = "beijing-xian-shanghai-12-day-private-tour";

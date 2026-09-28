@@ -117,6 +117,8 @@ export const guideTargets = {
   "china-small-group-tours-2027": [
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
     productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"),
+    productTarget("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour"),
+    productTarget("beijing-xian-silk-road-15-day-small-group-tour"),
   ],
   "best-2-week-china-tour": [
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
@@ -190,9 +192,32 @@ export const guideTargets = {
   "xiamen-tulou-quanzhou-six-day-route": [
     productTarget("xiamen-tulou-quanzhou-6-day-private-tour"),
   ],
+  "fujian-tulou-cluster-selection": [
+    productTarget("xiamen-tulou-quanzhou-6-day-private-tour"),
+  ],
+  "xiamen-hubs-to-gulangyu-ferry-terminal": [
+    productTarget("xiamen-tulou-quanzhou-6-day-private-tour"),
+  ],
+  "shenzhen-where-to-stay-futian-luohu-nanshan": [
+    productTarget("shenzhen-family-tech-4-day-private-tour"),
+  ],
+  "shenzhen-airport-railway-station-border-port-selector": [
+    productTarget("shenzhen-family-tech-4-day-private-tour"),
+  ],
+  "chaozhou-ancient-city-gates-bridge-lanes-route": [
+    productTarget("chaozhou-shantou-nanao-5-day-private-tour"),
+  ],
+  "how-guangzhou-morning-tea-works": [
+    productTarget("guangzhou-shunde-foshan-5-day-private-tour"),
+  ],
+  "yuanyang-rice-terraces-viewpoint-and-village-route": [
+    productTarget("kunming-jianshui-yuanyang-6-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),
+    productTarget("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+    productTarget("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour"),
   ],
   // Entry-rule guides: US passports rely on 240-hour transit, which the
   // Hong Kong-exit route is built for; 30-day visa-free markets fit two weeks.
