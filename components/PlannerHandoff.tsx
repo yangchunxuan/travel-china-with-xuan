@@ -985,7 +985,7 @@ export function PlannerHandoff({
           if (snapshot.routeIdentity === routeIdentityRef.current) {
             setPreviousSubmissionReference("");
             setPublicReference(nextPublicReference);
-            setReceipt(createInquiryReceipt(success, snapshot.body, locale));
+            setReceipt(createInquiryReceipt(success, snapshot.body, locale, undefined, snapshot.idempotencyKey));
             setStatus("success");
           } else {
             setPreviousSubmissionReference(nextPublicReference);

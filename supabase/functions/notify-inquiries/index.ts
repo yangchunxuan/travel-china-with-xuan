@@ -50,6 +50,9 @@ interface NotificationJob {
   lease_token: string;
   row_version: number;
   attempt_count: number;
+  contact_revision?: number;
+  current_contact_revision?: number;
+  previous_contact_email?: string | null;
 }
 
 interface ResendResult {
@@ -568,6 +571,10 @@ async function sendThroughResend(
     job.reply_channel === "email" ? "Email" : "WhatsApp";
   const contact = contactDetails(job);
   let followupNotice = "";
+  if ((job.contact_revision ?? 0) < (job.current_contact_revision ?? 0)) {
+    followupNotice = "THIS EMAIL ADDRESS HAS BEEN REPLACED. Use the newest email-correction notice for this enquiry; do not contact the address in this older notice.";
+    contact.writeUrl = null;
+  }
   if (contact.writeUrl) {
     try {
       if (booleanEnv("TRAVELLER_ACK_ENABLED", false) || booleanEnv("TRAVELLER_ACK_MONITOR_ENABLED", false)) {
@@ -830,6 +837,19 @@ async function sendThroughResend(
     `.trim();
   }
 
+  if ((job.contact_revision ?? 0) > 0) {
+    if (!job.contact_email || !job.previous_contact_email) throw new Error("invalid_email_correction_job");
+    subject = `Email corrected: ${job.public_reference} (revision ${job.contact_revision})`;
+    const correctionSummary = ["The traveller corrected the contact email for an existing enquiry.",
+      `Reference: ${job.public_reference}`, `Previous email: ${job.previous_contact_email}`,
+      `Corrected email: ${job.contact_email}`, `Contact revision: ${job.contact_revision}`,
+      `Original response deadline (unchanged): ${job.first_response_due_at}`,
+      "Use the latest contact revision. The complete original enquiry context follows below, including the itinerary and requested travellers.",
+      "Previously sent or in-flight emails cannot be recalled. Do not use an older notice's email action."].join("\n");
+    text = `${correctionSummary}\n\n${text}`;
+    html = `<h1>Email address corrected</h1>${correctionSummary.split("\n").map(line => `<p>${escapeHtml(line)}</p>`).join("")}<hr>${html}`;
+  }
+
   const staffWarning = "INTERNAL — do not quote or forward to the traveller.";
   const writeAction = contact.writeUrl
     ? `Write to traveller (new message; choose hello@homegroundchina.com as From): ${contact.writeUrl}`
@@ -862,7 +882,7 @@ async function sendThroughResend(
       headers: {
         Authorization: `Bearer ${config.apiKey}`,
         "Content-Type": "application/json",
-        "Idempotency-Key": job.inquiry_id,
+        "Idempotency-Key": (job.contact_revision ?? 0) > 0 ? `homeground-email-correction/v1/${job.job_id}` : job.inquiry_id,
       },
       // Frozen envelope deliberately has no traveller Reply-To. Suppression
       // updates must not change an uncertain provider retry's idempotent body.
@@ -1000,7 +1020,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let jobsResult;
   try {
     jobsResult = await callSupabaseRpc<NotificationJob[]>(
-      "claim_homeground_notification_jobs_v3",
+      "claim_homeground_notification_jobs_v4",
       {
         p_worker_id: `edge:${requestId}`,
         p_job_limit: batchSize,

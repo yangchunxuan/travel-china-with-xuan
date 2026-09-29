@@ -189,7 +189,7 @@ export function JapaneseInquiryDialog() {
       let result: { state?: unknown; publicReference?: unknown; error?: { code?: unknown; persistenceState?: unknown } } | null = null;
       try { result = raw ? JSON.parse(raw) : null; } catch { result = null; }
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReceipt(createInquiryReceipt(result, snapshot.body, "ja", snapshot.requestedTravelers));
+        setReceipt(createInquiryReceipt(result, snapshot.body, "ja", snapshot.requestedTravelers, snapshot.key));
         setStatus("saved");
         trackEnquirySubmitted({ page_language: "ja", reply_channel: "email", submission_surface: context ? "private_tour_quote" : "homepage_email" });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {

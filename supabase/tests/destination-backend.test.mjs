@@ -259,7 +259,7 @@ test("notification handoff includes wishes, timing, and traveller-stated budget 
   assert.match(worker, /Traveller answers/);
   assert.match(worker, /departure_country/);
   assert.match(worker, /rough_budget_per_person/);
-  assert.match(worker, /claim_homeground_notification_jobs_v3/);
+  assert.match(worker, /claim_homeground_notification_jobs_v4/);
   assert.match(
     worker,
     /Traveller-stated rough budget per person \(international flights excluded\)/,
@@ -269,7 +269,7 @@ test("notification handoff includes wishes, timing, and traveller-stated budget 
     /Budget note: traveller context only, not a Homeground quote/,
   );
   assert.match(worker, /escapeHtml\(roughBudgetPerPerson\)/);
-  assert.match(worker, /Idempotency-Key": job\.inquiry_id/);
+  assert.match(worker, /Idempotency-Key":.*: job\.inquiry_id/);
   assert.doesNotMatch(worker, /(?:\+?86)?1[3-9][0-9]{9}/);
   assert.doesNotMatch(worker, /@gmail\.com/i);
 });

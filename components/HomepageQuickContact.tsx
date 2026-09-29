@@ -356,7 +356,7 @@ export function HomepageQuickContact({
           typeof success.publicReference === "string" &&
           success.publicReference.trim()
         ) {
-          setReceipt(createInquiryReceipt(success, snapshot.body, locale));
+          setReceipt(createInquiryReceipt(success, snapshot.body, locale, undefined, snapshot.idempotencyKey));
           setStatus("success");
           setError("");
           setShowRetry(false);

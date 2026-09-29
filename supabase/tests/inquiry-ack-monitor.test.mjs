@@ -12,7 +12,7 @@ test('internal handoff withholds email action for recorded stops or unavailable 
   globalThis.fetch=async(url,init)=>{
     const path=new URL(url).pathname;let body;
     if(url==='https://api.resend.com/emails'){sent=JSON.parse(init.body);assert.deepEqual(sent.to,['staff@example.invalid']);body={id:'internal-only'};}
-    else if(path.endsWith('/claim_homeground_notification_jobs_v3'))body=[job];
+    else if(path.endsWith('/claim_homeground_notification_jobs_v4'))body=[job];
     else if(path.endsWith('/get_homeground_traveller_ack_staff_status_v1')){if(unavailable)throw Error('simulated unavailable');body={stopReason:reason};}
     else if(path.endsWith('/freeze_homeground_notification_message_v1')){if(!retry)frozen=JSON.parse(init.body).p_message;body=frozen;}
     else if(path.endsWith('/finish_homeground_notification_job'))body=true;

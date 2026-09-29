@@ -1,10 +1,14 @@
 "use client";
 
-import type { ReactNode, Ref } from "react";
+import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode, type Ref } from "react";
 import { Check, ChevronDown, Mail, MessageCircle } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { inquiryCorrectionLinks, getInquiryReceiptCopy, inquiryWhatsAppHref, type InquiryReceiptData, type InquiryReceiptLocale, type InquiryReceiptCopy } from "../lib/inquiryReceipt";
+import { correctedInquiryReceipt, displayedInquiryReceipt, inquiryCorrectionLinks, inquiryEmailCorrectionApiUrl, inquiryReceiptAccessKey, normalizeCorrectionEmail, sendInquiryEmailCorrection, getInquiryReceiptCopy, inquiryWhatsAppHref, type InquiryReceiptData, type InquiryReceiptLocale, type InquiryReceiptCopy, type InquiryEmailCorrectionSnapshot } from "../lib/inquiryReceipt";
+import { privateTourQuoteApiUrl } from "../lib/tourContact";
+import { EmailTypoHint } from "./EmailTypoHint";
 import styles from "./InquiryReceipt.module.css";
+
+type CorrectionState = "idle" | "saving" | "failed" | "uncertain" | "busy" | "blocked" | "done";
 
 const intlLocale = (locale: InquiryReceiptLocale) => locale === "zh" ? "zh-CN" : locale === "en" ? "en-GB" : locale;
 
@@ -23,7 +27,7 @@ function replyByLabel(value: string, locale: InquiryReceiptLocale) {
   }).format(new Date(Math.ceil(Date.parse(value) / hour) * hour));
 }
 
-export function InquiryReceipt({ receipt, locale, localizedCopy, containerRef, headingRef, headingId, hideWhatsApp = false, children }: {
+export function InquiryReceipt({ receipt: originalReceipt, locale, localizedCopy, containerRef, headingRef, headingId, hideWhatsApp = false, children }: {
   receipt: InquiryReceiptData;
   locale: InquiryReceiptLocale;
   localizedCopy?: InquiryReceiptCopy;
@@ -35,6 +39,143 @@ export function InquiryReceipt({ receipt, locale, localizedCopy, containerRef, h
   children?: ReactNode;
 }) {
   const copy = getInquiryReceiptCopy(locale, localizedCopy);
+  const [corrected, setCorrected] = useState<InquiryReceiptData | null>(null);
+  const [correctionOpen, setCorrectionOpen] = useState(false);
+  const [correctionEmail, setCorrectionEmail] = useState("");
+  const [correctionState, setCorrectionState] = useState<CorrectionState>("idle");
+  const [correctionError, setCorrectionError] = useState("");
+  const editButtonRef = useRef<HTMLButtonElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const correctionSnapshotRef = useRef<InquiryEmailCorrectionSnapshot | null>(null);
+  const dispatchingRef = useRef(false);
+  const activeReferenceRef = useRef(originalReceipt.publicReference);
+  activeReferenceRef.current = originalReceipt.publicReference;
+  const correctionId = useId();
+  const receipt = displayedInquiryReceipt(originalReceipt, corrected);
+  const accessKey = inquiryReceiptAccessKey(receipt);
+  const correctionApiUrl = inquiryEmailCorrectionApiUrl(privateTourQuoteApiUrl());
+  const canCorrectOnline = Boolean(receipt.email && accessKey && correctionApiUrl && receipt.contactRevision !== null && receipt.contactRevision < 3) && correctionState !== "blocked";
+
+  useEffect(() => {
+    setCorrected(null);
+    setCorrectionOpen(false);
+    setCorrectionEmail("");
+    setCorrectionState("idle");
+    setCorrectionError("");
+    correctionSnapshotRef.current = null;
+  }, [originalReceipt.publicReference]);
+
+  function openCorrection() {
+    if (!canCorrectOnline) return;
+    if (correctionState !== "uncertain" && correctionState !== "busy") {
+      correctionSnapshotRef.current = null;
+      setCorrectionEmail(receipt.email ?? "");
+      setCorrectionState("idle");
+      setCorrectionError("");
+    }
+    setCorrectionOpen(true);
+    window.requestAnimationFrame(() => emailInputRef.current?.focus());
+  }
+
+  function closeCorrection() {
+    if (correctionState === "saving") return;
+    setCorrectionOpen(false);
+    window.requestAnimationFrame(() => editButtonRef.current?.focus());
+  }
+
+  async function sendCorrection(snapshot: InquiryEmailCorrectionSnapshot) {
+    if (dispatchingRef.current || !correctionApiUrl) return;
+    dispatchingRef.current = true;
+    setCorrectionState("saving");
+    setCorrectionError("");
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20_000);
+    try {
+      const { response, result } = await sendInquiryEmailCorrection(snapshot, correctionApiUrl, controller.signal);
+      if (activeReferenceRef.current !== snapshot.base.publicReference) return;
+      if (response.ok) {
+        const next = correctedInquiryReceipt(snapshot.base, result);
+        if (next) {
+          setCorrected(next);
+          setCorrectionEmail(next.email ?? "");
+          setCorrectionOpen(false);
+          setCorrectionState("done");
+          correctionSnapshotRef.current = null;
+          window.requestAnimationFrame(() => editButtonRef.current?.focus());
+          return;
+        }
+        setCorrectionState("uncertain");
+        setCorrectionError(copy.correctionUncertain);
+        return;
+      }
+      const code = (result as { error?: { code?: string } } | null)?.error?.code;
+      if (response.status === 422 && code === "invalid_email") {
+        correctionSnapshotRef.current = null;
+        setCorrectionState("failed");
+        setCorrectionError(copy.correctionInvalid);
+        window.requestAnimationFrame(() => emailInputRef.current?.focus());
+      } else if ((response.status === 403 && code === "correction_unavailable") || (response.status === 409 && code === "correction_limit")) {
+        correctionSnapshotRef.current = null;
+        setCorrectionState("blocked");
+        setCorrectionError(copy.correctionUnavailable);
+      } else if (response.status === 409 && (code === "correction_conflict" || code === "idempotency_conflict")) {
+        correctionSnapshotRef.current = null;
+        setCorrectionState("blocked");
+        setCorrectionError(copy.correctionConflict);
+      } else if (response.status === 409 && code === "correction_busy") {
+        setCorrectionState("busy");
+        setCorrectionError(copy.correctionBusy);
+      } else {
+        setCorrectionState("uncertain");
+        setCorrectionError(copy.correctionUncertain);
+      }
+    } catch {
+      if (activeReferenceRef.current === snapshot.base.publicReference) {
+        setCorrectionState("uncertain");
+        setCorrectionError(copy.correctionUncertain);
+      }
+    } finally {
+      window.clearTimeout(timeout);
+      dispatchingRef.current = false;
+    }
+  }
+
+  function submitCorrection(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!canCorrectOnline || correctionState === "saving") return;
+    if ((correctionState === "uncertain" || correctionState === "busy") && correctionSnapshotRef.current) {
+      void sendCorrection(correctionSnapshotRef.current);
+      return;
+    }
+    const normalized = normalizeCorrectionEmail(correctionEmail);
+    if (!normalized) {
+      setCorrectionState("failed");
+      setCorrectionError(copy.correctionInvalid);
+      emailInputRef.current?.focus();
+      return;
+    }
+    if (normalized === receipt.email) {
+      setCorrectionState("failed");
+      setCorrectionError(copy.correctionSame);
+      emailInputRef.current?.focus();
+      return;
+    }
+    if (typeof globalThis.crypto?.randomUUID !== "function" || !accessKey || receipt.contactRevision === null) {
+      setCorrectionState("failed");
+      setCorrectionError(copy.correctionFailed);
+      return;
+    }
+    const snapshot: InquiryEmailCorrectionSnapshot = {
+      base: receipt,
+      email: normalized,
+      key: globalThis.crypto.randomUUID(),
+      accessKey,
+      body: JSON.stringify({ email: normalized, expectedRevision: receipt.contactRevision }),
+    };
+    correctionSnapshotRef.current = snapshot;
+    void sendCorrection(snapshot);
+  }
+
   const configuredPhone = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER?.trim() || "8613174215999";
   const correction = inquiryCorrectionLinks(receipt.publicReference, locale, homegroundBusiness.serviceEmail, configuredPhone, copy);
   // Not marked direct: on a computer the site-wide contact card turns it into the scan-to-phone QR, as every WhatsApp link on the live site does;
@@ -55,13 +196,47 @@ export function InquiryReceipt({ receipt, locale, localizedCopy, containerRef, h
     {receipt.email || due ? <dl className={styles.facts}>
       {receipt.email ? <div>
         <dt>{copy.email}</dt>
-        <dd className={styles.contactValue}><span className={styles.address}>{receipt.email}</span>{" "}<a className={styles.inlineLink} href={correction.email} data-contact-card-direct="">{copy.correct}</a></dd>
+        <dd className={styles.contactValue}>
+          <span className={styles.address}>{receipt.email}</span>{" "}
+          {canCorrectOnline ? <button ref={editButtonRef} className={styles.inlineLink} type="button" aria-expanded={correctionOpen} aria-controls={correctionOpen ? `${correctionId}-form` : undefined} onClick={correctionOpen ? closeCorrection : openCorrection}>{copy.correct}</button>
+            : <a className={styles.inlineLink} href={correction.email} data-contact-card-direct="">{copy.correct}</a>}
+        </dd>
       </div> : null}
       {due ? <div>
         <dt>{copy.due}</dt>
         <dd><time dateTime={receipt.firstResponseDueAt!}>{due}</time> <span className={styles.zone}>{copy.zone}</span></dd>
       </div> : null}
     </dl> : null}
+    {correctionState === "done" && !correctionOpen ? <p className={styles.correctionSuccess} role="status">{copy.correctionSaved}</p> : null}
+    {correctionOpen ? <form id={`${correctionId}-form`} className={styles.correctionForm} onSubmit={submitCorrection} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); closeCorrection(); } }} noValidate>
+      <label htmlFor={`${correctionId}-email`}>{copy.correctionLabel}</label>
+      <p id={`${correctionId}-help`}>{copy.correctionHelp}</p>
+      <input
+        ref={emailInputRef}
+        id={`${correctionId}-email`}
+        type="email"
+        name="correctedEmail"
+        autoComplete="email"
+        autoCapitalize="none"
+        autoCorrect="off"
+        spellCheck={false}
+        required
+        maxLength={254}
+        value={correctionEmail}
+        disabled={correctionState === "saving" || correctionState === "uncertain" || correctionState === "busy" || correctionState === "blocked"}
+        aria-invalid={correctionState === "failed"}
+        aria-describedby={`${correctionId}-help${correctionError ? ` ${correctionId}-error` : ""}`}
+        onChange={(event) => { setCorrectionEmail(event.target.value); setCorrectionError(""); setCorrectionState("idle"); }}
+      />
+      <EmailTypoHint email={correctionEmail} locale={locale} localizedCopy={localizedCopy} disabled={correctionState === "saving" || correctionState === "uncertain" || correctionState === "busy" || correctionState === "blocked"} onAccept={(value) => { setCorrectionEmail(value); setCorrectionError(""); setCorrectionState("idle"); emailInputRef.current?.focus(); }} />
+      {correctionError ? <p id={`${correctionId}-error`} className={styles.correctionError} role="alert">{correctionError}{correctionState === "blocked" ? <> <a href={correction.email} data-contact-card-direct="">{copy.emailAction}</a></> : null}</p> : null}
+      <div className={styles.correctionActions}>
+        {correctionState !== "blocked" ? <button className={styles.correctionSave} type="submit" disabled={correctionState === "saving"}>
+          {correctionState === "saving" ? copy.correctionSaving : correctionState === "uncertain" || correctionState === "busy" ? copy.correctionRetry : copy.correctionSave}
+        </button> : null}
+        <button className={styles.correctionCancel} type="button" disabled={correctionState === "saving"} onClick={closeCorrection}>{copy.correctionCancel}</button>
+      </div>
+    </form> : null}
     {inboxHelp ? <div className={styles.help}>
       <Mail size={18} aria-hidden="true" />
       <p className={styles.next}>{inboxHelp}{space}<a href={directEmail} data-contact-card-direct="">{homegroundBusiness.serviceEmail}</a></p>
