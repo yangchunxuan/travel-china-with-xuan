@@ -134,7 +134,7 @@ test("actual intake and notification handlers preserve quote fields, replay iden
       saved.set(body.p_idempotency_key_hash, body.p_payload_hash);
       return response({ outcome: previous ? "replay" : "created", inquiryId: randomUUID(), publicReference: "HG-TEST", receivedAt: new Date().toISOString() });
     }
-    if (path.endsWith("/claim_homeground_notification_jobs_v3")) return response([currentJob]);
+    if (path.endsWith("/claim_homeground_notification_jobs_v4")) return response([currentJob]);
     if (path.endsWith("/freeze_homeground_notification_message_v1")) return response(body.p_message);
     if (path.endsWith("/finish_homeground_notification_job")) return response(true);
     throw new Error(`Unexpected network request ${url}`);

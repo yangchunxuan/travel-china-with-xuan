@@ -189,7 +189,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.key }, body: inquiryBodyWithCurrentTrafficConsent(snapshot.body), signal: controller.signal });
       const result = await response.json();
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReceipt(createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers)); updateStatus("saved");
+        setReceipt(createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers, snapshot.key)); updateStatus("saved");
         if (stillOnSource()) trackEnquirySubmitted({ ...parameters, reply_channel: "email", form_version: currentPrivateTourQuoteFormVersion }, { firstPartyContext: journey });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         updateStatus("failed"); snapshotRef.current = null;

@@ -225,7 +225,7 @@ export function ContactCardDialog({
       try { result = text ? JSON.parse(text) : null; } catch { result = null; }
       if (response.ok) {
         if (result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-          setReceipt(createInquiryReceipt(result, snapshot.body, locale));
+          setReceipt(createInquiryReceipt(result, snapshot.body, locale, undefined, snapshot.key));
           setStatus("success");
           if (!submittedRef.current) {
             submittedRef.current = true;

@@ -13,8 +13,22 @@
 .contactValue { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
 .address { font-weight: 600; }
 .zone { color: var(--receipt-muted); font-size: .8125rem; white-space: nowrap; }
-.inlineLink { color: var(--receipt-muted); font-size: .8125rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
+.inlineLink { appearance: none; display: inline-flex; align-items: center; min-height: 44px; border: 0; background: none; padding: 0; color: var(--receipt-muted); cursor: pointer; font: inherit; font-size: .8125rem; white-space: nowrap; text-decoration: underline; text-underline-offset: 3px; }
 .inlineLink:hover { color: var(--receipt-ink); }
+.correctionForm { margin-top: 10px; padding: 16px; border: 1px solid var(--receipt-line); border-radius: 12px; background: #fbfaf7; }
+.correctionForm label { display: block; color: var(--receipt-ink); font-size: .875rem; font-weight: 600; line-height: 1.4; }
+.receipt .correctionForm > p:first-of-type { margin-top: 5px; color: var(--receipt-muted); font-size: .8125rem; line-height: 1.55; }
+.correctionForm input { box-sizing: border-box; width: 100%; min-height: 46px; margin-top: 12px; padding: 10px 13px; border: 1px solid #aca9a0; border-radius: 9px; background: #fff; color: var(--receipt-ink); font: 1rem/1.4 var(--sans, system-ui, sans-serif); }
+.correctionForm input[aria-invalid="true"] { border-color: #a74731; }
+.correctionForm input:disabled { background: #f2f1ed; }
+.receipt .correctionError { margin-top: 9px; color: #8b321f; font-size: .8125rem; line-height: 1.5; }
+.correctionError a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.receipt .correctionSuccess { margin-top: 11px; color: #3e603f; font-size: .8125rem; line-height: 1.55; }
+.correctionActions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+.correctionActions button { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 9px 16px; border: 1px solid var(--receipt-line); border-radius: 999px; cursor: pointer; font: 600 .875rem/1.4 var(--sans, system-ui, sans-serif); }
+.correctionSave { background: var(--receipt-ink); color: #fff; }
+.correctionCancel { background: #fff; color: var(--receipt-ink); }
+.correctionActions button:disabled { opacity: .6; cursor: wait; }
 .help { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; padding: 14px 16px; border-radius: 12px; background: #f4f1ea; color: #4a4944; }
 .help > svg { flex: none; margin-top: 2px; color: var(--receipt-rust); }
 .receipt .next, .receipt .direct { font-size: .84375rem; line-height: 1.65; }
@@ -36,6 +50,7 @@
 .actions > .whatsapp:only-child { flex: 0 1 auto; }
 .typo { grid-column: 1 / -1; margin: 4px 0; font-size: .8125rem; line-height: 1.6; color: #51452e; overflow-wrap: anywhere; }
 .typo button { appearance: none; width: auto; min-height: 0; border: 0; border-radius: 0; padding: 3px 0; background: transparent; color: inherit; font: inherit; text-align: left; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-.inlineLink:focus-visible, .next a:focus-visible, .direct a:focus-visible, .details summary:focus-visible, .whatsapp:focus-visible, .typo button:focus-visible { outline: 2px solid #303030; outline-offset: 3px; }
+.inlineLink:focus-visible, .next a:focus-visible, .direct a:focus-visible, .details summary:focus-visible, .whatsapp:focus-visible, .typo button:focus-visible, .correctionForm input:focus-visible, .correctionForm button:focus-visible, .correctionError a:focus-visible { outline: 2px solid #303030; outline-offset: 3px; }
+@media (max-width: 26rem) { .facts > div, .details dl > div { grid-template-columns: minmax(0, 1fr); } .correctionForm { padding: 14px; } .correctionActions button { flex: 1 1 auto; } }
 @media (prefers-reduced-motion: reduce) { .details summary svg { transition: none; } }
-@media (forced-colors: active) { .mark, .help, .whatsapp, .details { border: 1px solid CanvasText; } }
+@media (forced-colors: active) { .mark, .help, .whatsapp, .details, .correctionForm, .correctionActions button { border: 1px solid CanvasText; } }

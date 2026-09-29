@@ -499,7 +499,7 @@ test("conversation and the full-trip path end at the same human handoff", async 
   );
   assert.match(
     plannerHandoff,
-    /setReceipt\(createInquiryReceipt\(success, snapshot\.body, locale\)\)/u,
+    /setReceipt\(createInquiryReceipt\(success, snapshot\.body, locale, undefined, snapshot\.idempotencyKey\)\)/u,
     "receipt must use the saved submission snapshot, not the editable current brief",
   );
   assert.match(
