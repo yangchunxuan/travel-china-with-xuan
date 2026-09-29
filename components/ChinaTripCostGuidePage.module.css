@@ -21,6 +21,10 @@
   overflow-wrap: break-word;
 }
 
+.pageRoot:lang(ja) {
+  --page-display: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", "Noto Serif CJK JP", serif;
+}
+
 .pageRoot main {
   scroll-margin-top: 6rem;
 }
@@ -743,9 +747,26 @@
 .pageRoot:lang(ko) .bandLabel,
 .pageRoot:lang(zh-CN) .finalCtaLabel,
 .pageRoot:lang(zh-Hans) .finalCtaLabel,
-.pageRoot:lang(ko) .finalCtaLabel {
+.pageRoot:lang(ko) .finalCtaLabel,
+.pageRoot:lang(ja) .eyebrow,
+.pageRoot:lang(ja) .ctaLabel,
+.pageRoot:lang(ja) .bandLabel,
+.pageRoot:lang(ja) .finalCtaLabel {
   letter-spacing: 0.02em;
   text-transform: none;
+}
+
+.japaneseByline {
+  color: var(--page-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-block: 1rem 0;
+}
+
+.japaneseByline a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 /* --------------------------- Responsive --------------------------- */

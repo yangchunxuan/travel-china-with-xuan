@@ -5,6 +5,7 @@ import * as fontkit from "fontkit";
 import {
   collectLocaleFontSourceFiles,
   collectProductionExportFontFiles,
+  readChineseFontCorpus,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
 import {
@@ -37,6 +38,7 @@ const collectedFiles = checksProductionExport
   ? collectProductionExportFontFiles(projectRoot)
   : collectLocaleFontSourceFiles(projectRoot);
 const sourceText = readCollectedFiles(collectedFiles);
+const chineseSourceText = readChineseFontCorpus(collectedFiles);
 const fontDirectory = checksProductionExport ? "out/fonts" : "public/fonts";
 const corpusLabel = checksProductionExport
   ? "production HTML/client JavaScript"
@@ -56,14 +58,14 @@ if (checksProductionExport) {
   console.log(`Checking ${collectedFiles.length} locale font source file(s).`);
 }
 
-function charactersMatching(pattern) {
-  return [...new Set(sourceText.match(pattern) ?? [])].sort(
+function charactersMatching(text, pattern) {
+  return [...new Set(text.match(pattern) ?? [])].sort(
     (left, right) => left.codePointAt(0) - right.codePointAt(0),
   );
 }
 
-const chineseCharacters = charactersMatching(/\p{Script=Han}/gu);
-const koreanCharacters = charactersMatching(/\p{Script=Hangul}/gu);
+const chineseCharacters = charactersMatching(chineseSourceText, /\p{Script=Han}/gu);
+const koreanCharacters = charactersMatching(sourceText, /\p{Script=Hangul}/gu);
 
 function singleFontFile(fontPath) {
   const font = fontkit.openSync(resolve(projectRoot, fontPath));

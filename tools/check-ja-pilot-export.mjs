@@ -28,6 +28,13 @@ function hasJapaneseLanguageChoice(html, target, source) {
 
 for (const [path, alternates] of [
   [jaPilot.guide, jaPilotGuideAlternates()],
+  ["/ja/guides/how-much-does-a-china-trip-cost/", {
+    en: "/guides/how-much-does-a-china-trip-cost/",
+    "zh-Hans": "/zh/guides/how-much-does-a-china-trip-cost/",
+    ko: "/ko/guides/how-much-does-a-china-trip-cost/",
+    ja: "/ja/guides/how-much-does-a-china-trip-cost/",
+    "x-default": "/guides/how-much-does-a-china-trip-cost/",
+  }],
   [jaPilot.tour, jaPilotTourAlternates()],
 ]) {
   const html = await page(path);
@@ -48,7 +55,17 @@ for (const [path, alternates] of [
 
 const sitemap = await readFile(join(output, "sitemap.xml"), "utf8");
 hasTag(sitemap, `<loc>${site}${jaPilot.guide}</loc>`);
+hasTag(sitemap, `<loc>${site}/ja/guides/how-much-does-a-china-trip-cost/</loc>`);
 hasTag(sitemap, `<loc>${site}${jaPilot.tour}</loc>`);
+for (const path of [
+  "/guides/how-much-does-a-china-trip-cost/",
+  "/zh/guides/how-much-does-a-china-trip-cost/",
+  "/ko/guides/how-much-does-a-china-trip-cost/",
+  "/ja/guides/how-much-does-a-china-trip-cost/",
+]) {
+  const entry = sitemap.split(`<loc>${site}${path}</loc>`)[1]?.split("</url>")[0] ?? "";
+  assert.ok(entry.includes(`hreflang="ja" href="${site}/ja/guides/how-much-does-a-china-trip-cost/"`), `${path} sitemap entry is missing its Japanese alternate`);
+}
 
 // Japanese site pages: indexable, in the sitemap, reciprocal with EN/ZH/KO.
 const japaneseSitePages = [
@@ -122,14 +139,26 @@ const guide = await page(jaPilot.guide);
 hasTag(guide, `href="${jaPilot.tour}"`);
 hasTag(guide, 'href="#contact"');
 assert.match(guide, /https:\/\/www\.12306\.cn\/en\/index\.html/u);
+const costGuide = await page("/ja/guides/how-much-does-a-china-trip-cost/");
+assert.match(costGuide, /中国旅行の費用はいくら？/u);
+for (const price of ["US$1,462.71", "A$2,470", "A$5,130"]) {
+  assert.ok(costGuide.includes(price), `Japanese cost guide is missing ${price}`);
+}
+assert.match(costGuide, /CNY[\s\u00a0]19,430/u);
+hasTag(costGuide, 'id="contact"');
+hasTag(costGuide, 'href="#contact"');
+hasTag(costGuide, 'href="/ja/studio/evan/"');
+assert.match(costGuide, /mailto:hello@homegroundchina\.com/u);
+assert.match(costGuide, /https:\/\/wa\.me\/\d+\?text=/u);
 const guidesHub = await page("/ja/guides/");
 assert.match(guidesHub.match(/<h1[^>]*>[\s\S]*?<\/h1>/u)?.[0].replace(/<[^>]+>/gu, "") ?? "", /中国旅行の実用ガイド/u);
 hasTag(guidesHub, `href="${jaPilot.guide}"`);
-assert.match(guidesHub, /公開中：1本/u);
+hasTag(guidesHub, 'href="/ja/guides/how-much-does-a-china-trip-cost/"');
+assert.match(guidesHub, /公開中：2本/u);
 assert.deepEqual(
-  [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])],
-  [`href="${jaPilot.guide}"`],
-  "Japanese guides hub should list only published Japanese articles",
+  [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].sort(),
+  [`href="${jaPilot.guide}"`, 'href="/ja/guides/how-much-does-a-china-trip-cost/"'].sort(),
+  "Japanese guides hub should list both published Japanese articles",
 );
 assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);
@@ -156,4 +185,4 @@ const toursHub = await page("/ja/tours/");
 assert.match(toursHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(toursHub, /mailto:hello@homegroundchina\.com/u);
 
-console.log(`✓ Japanese site exports ${japaneseSitePages.length} indexable site pages plus the guide and tour pages with reciprocal hreflang, a noindex Japanese 404, live-model prices and working contact paths.`);
+console.log(`✓ Japanese site exports ${japaneseSitePages.length} indexable site pages, two guides and tour pages with reciprocal hreflang, a noindex Japanese 404, live-model prices and working contact paths.`);

@@ -598,6 +598,8 @@ for (const sitemapUrl of sitemapLocs) {
       ? "/zh"
       : url.pathname.startsWith("/ko/")
         ? "/ko"
+        : url.pathname.startsWith("/ja/")
+          ? "/ja"
         : "";
     assertIncludes(
       jsonLd,

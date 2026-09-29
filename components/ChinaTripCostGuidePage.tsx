@@ -6,8 +6,13 @@ import {
   getChinaTripCostCopy,
   type ChinaTripCostCopy,
 } from "../lib/chinaTripCostI18n";
-import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { chinaTripCostJapaneseCopy } from "../lib/chinaTripCostJapaneseCopy";
+import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
+import { getPrivateTourProduct } from "../lib/privateTourProducts";
+import { buildPrivateTourDetailHref } from "../lib/privateTourInquiryContext";
+import { japaneseGeneralContactHrefs, japaneseLanguagePaths } from "../lib/japaneseSite";
 import { getPublishedPrivateTourCatalog, selectPublishedPrivateTourPrice } from "../lib/publishedPrivateTourCatalog";
 import {
   EDITORIAL_ORGANIZATION_ID,
@@ -23,23 +28,25 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
+import { JapaneseSiteFooter, JapaneseSiteHeader } from "./JapaneseTourChrome";
+import { JapaneseContactPanel } from "./JapaneseContactPanel";
 import styles from "./ChinaTripCostGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
 function createStructuredData(
-  locale: HomegroundLocale,
+  locale: HomegroundLocale | "ja",
   copy: ChinaTripCostCopy,
   guide: ReturnType<typeof getGuideEntry>,
 ) {
-  const canonicalUrl = guide.canonicalUrl;
+  const canonicalUrl = `${SITE_URL}${copy.pagePath}`;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       editorialWebsiteSchema(),
       editorialOrganizationSchema(),
-      editorialPersonSchema(locale),
+      editorialPersonSchema(locale === "ja" ? "en" : locale),
       {
         "@type": "Article",
         "@id": `${canonicalUrl}#article`,
@@ -53,8 +60,8 @@ function createStructuredData(
           height: guide.imageHeight,
           caption: copy.metadata.heroAlt,
         },
-        datePublished: guide.datePublished,
-        dateModified: guide.dateModified,
+        datePublished: locale === "ja" ? "2026-09-29" : guide.datePublished,
+        dateModified: locale === "ja" ? "2026-09-29" : guide.dateModified,
         inLanguage: copy.metadata.inLanguage,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
@@ -104,9 +111,12 @@ function createStructuredData(
 function PlannerButton({ href, label, locale, position }: {
   href: string;
   label: string;
-  locale: HomegroundLocale;
+  locale: HomegroundLocale | "ja";
   position: "inline" | "footer";
 }) {
+  if (locale === "ja") {
+    return <Link className={styles.ctaPrimary} href={href}>{label}<ArrowRight aria-hidden="true" size={17} /></Link>;
+  }
   return (
     <GuideCtaLink className={styles.ctaPrimary} href={href} guideId={chinaTripCostGuideId} locale={locale} position={position}>
       {label}
@@ -118,21 +128,34 @@ function PlannerButton({ href, label, locale, position }: {
 export function ChinaTripCostGuidePage({
   locale = "en",
 }: {
-  locale?: HomegroundLocale;
+  locale?: HomegroundLocale | "ja";
 }) {
-  const copy = getChinaTripCostCopy(locale);
-  const guide = getGuideEntry(chinaTripCostGuideId, locale);
+  const copy = locale === "ja" ? chinaTripCostJapaneseCopy : getChinaTripCostCopy(locale);
+  const guide = getGuideEntry(chinaTripCostGuideId, locale === "ja" ? "en" : locale);
   const structuredData = createStructuredData(locale, copy, guide);
   const hero = CHINA_TRIP_COST_IMAGES.hero;
-  const route = getPublishedPrivateTourCatalog(locale).find(
-    (product) => product.slug === "beijing-xian-guilin-shanghai-10-day-private-tour",
-  );
-  if (!route) throw new Error("Missing published 10-day China route");
-  const publishedRoute = selectPublishedPrivateTourPrice(route, locale, {
-    packageId: "standard-guided",
-    travelers: 2,
-  });
-  if (!publishedRoute.startingPrice) throw new Error("Missing published 10-day China price");
+  const routeSlug = "beijing-xian-guilin-shanghai-10-day-private-tour";
+  const publishedRoute = (() => {
+    if (locale === "ja") {
+      const source = getPrivateTourProduct(routeSlug);
+      if (!source) throw new Error("Missing published 10-day China route");
+      const product = localizeJapanesePrivateTourProduct(source);
+      const price = product.packages.find((item) => item.id === "standard-guided")?.rows.find((item) => item.travelers === 2);
+      if (!price) throw new Error("Missing Japanese 10-day China price");
+      return {
+        title: product.title,
+        price: price.formatted,
+        href: buildPrivateTourDetailHref(product.path, routeSlug, { packageId: "standard-guided", travelers: 2 }),
+      };
+    }
+    const route = getPublishedPrivateTourCatalog(locale).find((product) => product.slug === routeSlug);
+    if (!route) throw new Error("Missing published 10-day China route");
+    const selected = selectPublishedPrivateTourPrice(route, locale, { packageId: "standard-guided", travelers: 2 });
+    if (!selected.startingPrice) throw new Error("Missing published 10-day China price");
+    return { title: selected.title, price: selected.startingPrice.formatted, href: selected.startingPriceHref };
+  })();
+  const contact = locale === "ja" ? japaneseGeneralContactHrefs(copy.pagePath) : null;
+  const plannerHref = locale === "ja" ? "#contact" : copy.plannerHref;
 
   return (
     <div className={styles.pageRoot} lang={copy.htmlLang}>
@@ -140,11 +163,8 @@ export function ChinaTripCostGuidePage({
         {copy.skipLink}
       </a>
 
-      <HomegroundHeader
-        locale={locale}
-        pageContext="guide"
-        guideId={chinaTripCostGuideId}
-      />
+      {locale === "ja" ? <JapaneseSiteHeader contactHref="#contact" currentPath={copy.pagePath} languagePaths={japaneseLanguagePaths("/guides/how-much-does-a-china-trip-cost/", copy.pagePath)} /> :
+        <HomegroundHeader locale={locale} pageContext="guide" guideId={chinaTripCostGuideId} languagePaths={getGuideLanguagePaths(chinaTripCostGuideId)} />}
 
       <main id="trip-cost-main">
         {/* ---------------- Hero ---------------- */}
@@ -177,11 +197,8 @@ export function ChinaTripCostGuidePage({
                 {paragraph}
               </p>
             ))}
-            <LegacyEditorialByline
-              guideId={guide.id}
-              locale={locale}
-              reviewedAt={guide.sourceReviewedDate}
-            />
+            {locale === "ja" ? <p className={styles.japaneseByline}>執筆：<Link href="/ja/studio/evan/">Evan</Link> · 公開料金の確認：2026年8月9日</p> :
+              <LegacyEditorialByline guideId={guide.id} locale={locale} reviewedAt={guide.sourceReviewedDate} />}
           </div>
 
           <figure className={styles.heroFigure}>
@@ -226,18 +243,14 @@ export function ChinaTripCostGuidePage({
 
           <div className={styles.ownPublishedRoute}>
             <p className={styles.ownPublishedLabel}>{copy.ownPublishedRoute.label}</p>
-            <GuideCtaLink
-              className={styles.ownPublishedLink}
-              guideId={chinaTripCostGuideId}
-              href={publishedRoute.startingPriceHref}
-              locale={locale}
-              position="inline"
-            >
+            {locale === "ja" ? <Link className={styles.ownPublishedLink} href={publishedRoute.href}>
               {publishedRoute.title}
               <ArrowRight aria-hidden="true" size={17} />
-            </GuideCtaLink>
+            </Link> : <GuideCtaLink className={styles.ownPublishedLink} guideId={chinaTripCostGuideId} href={publishedRoute.href} locale={locale} position="inline">
+              {publishedRoute.title}<ArrowRight aria-hidden="true" size={17} />
+            </GuideCtaLink>}
             <p className={styles.ownPublishedPrice}>
-              <strong>{publishedRoute.startingPrice.formatted}</strong> {copy.ownPublishedRoute.basis}
+              <strong>{publishedRoute.price}</strong> {copy.ownPublishedRoute.basis}
             </p>
             <p className={styles.ownPublishedScope}>{copy.ownPublishedRoute.scope}</p>
           </div>
@@ -251,7 +264,7 @@ export function ChinaTripCostGuidePage({
               <h2 className={styles.ctaTitle}>{copy.earlyCta.title}</h2>
               <p className={styles.ctaDetail}>{copy.earlyCta.detail}</p>
             </div>
-            <PlannerButton href={copy.plannerHref} label={copy.earlyCta.button} locale={locale} position="inline" />
+            <PlannerButton href={plannerHref} label={copy.earlyCta.button} locale={locale} position="inline" />
           </div>
         </section>
 
@@ -388,7 +401,7 @@ export function ChinaTripCostGuidePage({
           </div>
         </section>
 
-        <LegacyGuideTourCard guideId={chinaTripCostGuideId} locale={locale} />
+        {locale !== "ja" ? <LegacyGuideTourCard guideId={chinaTripCostGuideId} locale={locale} /> : null}
 
         {/* ---------------- FAQ ---------------- */}
         <section className={styles.section}>
@@ -417,7 +430,7 @@ export function ChinaTripCostGuidePage({
               ))}
             </ul>
             <p className={styles.finalCtaDetail}>{copy.finalCta.detail}</p>
-            <PlannerButton href={copy.plannerHref} label={copy.finalCta.button} locale={locale} position="footer" />
+            <PlannerButton href={plannerHref} label={copy.finalCta.button} locale={locale} position="footer" />
           </div>
         </section>
 
@@ -436,9 +449,12 @@ export function ChinaTripCostGuidePage({
           </ol>
           <p className={styles.sourceNote}>{copy.sourceNote}</p>
         </section>
+        {contact ? <section className={styles.section} id="contact" aria-label="日本語で旅を相談する">
+          <JapaneseContactPanel title="日本語で旅を相談する" body="旅行月、人数、訪れたい都市を教えてください。行程と費用の考え方を一緒に整理します。" emailHref={contact.email} headingId="trip-cost-contact-title" whatsappHref={contact.whatsapp} />
+        </section> : null}
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guide" />
+      {locale === "ja" ? <JapaneseSiteFooter currentPath={copy.pagePath} /> : <HomegroundFooter locale={locale} pageContext="guide" />}
 
       <script
         type="application/ld+json"
