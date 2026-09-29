@@ -99,7 +99,7 @@ export const japaneseLegacyZhangjiajieProduct: PrivateTourProduct = {
     { day: 3, variants: [{ label: l("Grand Canyon"), image: sourcePhotos.gallery[0] }] },
     { day: 4, variants: [{ label: l("Tianmen Mountain"), image: sourcePhotos.gallery[1] }] },
   ],
-  // Source prices expire on 30 September 2026. A statically exported new
+  // Source prices expire on 30 December 2026. A statically exported new
   // locale would keep those numbers visible after that date, so request a
   // date-specific quote instead of publishing a soon-stale offer.
   packages: stays.map((stay) => ({

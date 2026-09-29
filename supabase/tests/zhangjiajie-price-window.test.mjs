@@ -88,7 +88,7 @@ test("static HTML contains dated, localized reference prices and the approved gr
       assert.ok(text.includes(input.pricing.timeZoneLabel));
       assert.ok(text.includes(input.pricing.tiers[0].name));
       assert.match(html, /dateTime="2026-09-06T00:00:00\+08:00"/);
-      assert.match(html, /dateTime="2026-09-30T23:59:59\+08:00"/);
+      assert.match(html, /dateTime="2026-12-30T23:59:59\+08:00"/);
       assert.doesNotMatch(text, /Checking the current price window|正在核对当前价格|현재 가격 적용 기간을 확인/);
       const tiers = variant === "full" ? approved.tiers : [approved.tiers[0]];
       for (const tier of tiers) {

@@ -47,10 +47,10 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   assert.equal(pricing.status, "approved_price_decision");
   assert.equal(pricing.public_eligible, true);
   assert.equal(pricing.valid_from, "2026-09-06");
-  assert.equal(pricing.valid_until, "2026-09-30T23:59:59+08:00");
+  assert.equal(pricing.valid_until, "2026-12-30T23:59:59+08:00");
   assert.equal(
     new Date(pricing.valid_until).toISOString(),
-    "2026-09-30T15:59:59.000Z",
+    "2026-12-30T15:59:59.000Z",
   );
   assert.equal(product.price_display.valid_until, pricing.valid_until);
   assert.equal(product.price_display.from_price_per_person, pricing.tiers[0].six_person_price_per_person);
@@ -393,9 +393,9 @@ test("approved prices cross the client boundary as a public projection only", as
   assert.match(helper, /getZhangjiajiePrivateTourPublicPricing/);
   assert.match(helper, /validFrom: pricing\.valid_from/);
   assert.match(helper, /validUntil: pricing\.valid_until/);
-  assert.match(helper, /Price window: 6–30 September 2026/);
-  assert.match(helper, /价格期：2026年9月6日至9月30日/);
-  assert.match(helper, /가격 적용 기간: 2026년 9월 6일–9월 30일/);
+  assert.match(helper, /Price window: 6 September – 30 December 2026/);
+  assert.match(helper, /价格期：2026年9月6日至12月30日/);
+  assert.match(helper, /가격 적용 기간: 2026년 9월 6일–12월 30일/);
   assert.match(page, /getZhangjiajiePrivateTourPublicPricing\(locale\)/);
   assert.match(priceWindow, /pricing: PublicPricing/);
   assert.match(priceWindow, /Date\.now\(\)/);

@@ -32,7 +32,7 @@
     "from_price_per_person": 3245,
     "starting_group_size": 6,
     "approved_decision_id": "approved-public-pricing-20260906",
-    "valid_until": "2026-09-30T23:59:59+08:00",
+    "valid_until": "2026-12-30T23:59:59+08:00",
     "pricing_source": "pricing.json"
   },
   "route": [

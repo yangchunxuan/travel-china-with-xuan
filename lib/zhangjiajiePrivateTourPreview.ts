@@ -44,7 +44,7 @@ export const productPreviewCopy = {
     heroLede:
       "A private four-day trip through Zhangjiajie National Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain. Day 1 is simply for arriving; Days 2–4 are for sightseeing. Before you book, we check your last-day Tianmen time against your departure.",
     secondaryCta: "Start with the four-day route",
-    validThrough: "Price window: 6–30 September 2026",
+    validThrough: "Price window: 6 September – 30 December 2026",
     checkingPrice: "Published reference prices",
     expiredPrice:
       "The published price window does not apply today. Ask for a fresh quote for your travel dates.",
@@ -415,7 +415,7 @@ export const productPreviewCopy = {
     heroLede:
       "4天3晚私家行程，游张家界国家森林公园、大峡谷玻璃桥和天门山。第1天只管抵达，第2–4天专心游览；预订前，我们会先核对最后一天的入场时段和你的返程时间。",
     secondaryCta: "先看四天怎么走",
-    validThrough: "价格期：2026年9月6日至9月30日",
+    validThrough: "价格期：2026年9月6日至12月30日",
     checkingPrice: "已公布的参考价格",
     expiredPrice: "今天不在已公布的价格有效期内，请按实际出行日期重新询价。",
     fromLabel: "起价",
@@ -769,7 +769,7 @@ export const productPreviewCopy = {
     heroLede:
       "장가계 국가삼림공원, 대협곡 유리다리, 천문산을 둘러보는 3박 4일 프라이빗 투어입니다. 1일 차는 도착하는 날, 2~4일 차는 관광에 집중하는 날입니다. 예약 전에 마지막 날 입장 시간과 출발 시각을 함께 확인해 드립니다.",
     secondaryCta: "4일 일정부터 보기",
-    validThrough: "가격 적용 기간: 2026년 9월 6일–9월 30일",
+    validThrough: "가격 적용 기간: 2026년 9월 6일–12월 30일",
     checkingPrice: "공개된 참고 가격",
     expiredPrice:
       "오늘은 공개된 가격의 적용 기간에 해당하지 않습니다. 여행 날짜에 맞는 새 견적을 요청해 주세요.",
