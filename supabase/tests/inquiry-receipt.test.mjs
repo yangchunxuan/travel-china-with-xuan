@@ -10,10 +10,11 @@ import { getPrivateTourInquiryContext } from "../../lib/privateTourInquiryContex
 import { safeInquiryDestinationNames, safeInquiryNights } from "../../lib/inquirySafeSummary.ts";
 import { japaneseInquiryReceiptCopy } from "../../lib/japaneseInquiryReceiptCopy.ts";
 
-const { createInquiryReceipt, emailTypoSuggestion, inquiryCorrectionLinks, inquiryWhatsAppHref, inquiryReceiptCopy } = receiptHelpers;
+const { createInquiryReceipt, correctedInquiryReceipt, displayedInquiryReceipt, emailTypoSuggestion, inquiryCorrectionLinks, inquiryEmailCorrectionApiUrl, inquiryReceiptAccessKey, normalizeCorrectionEmail, sendInquiryEmailCorrection, inquiryWhatsAppHref, inquiryReceiptCopy } = receiptHelpers;
 const copyFor = (locale) => locale === "ja" ? japaneseInquiryReceiptCopy : inquiryReceiptCopy[locale];
 const locales = ["en", "zh", "ko", "ja"];
 const saved = { state: "submitted", publicReference: "HG-TEST-1234-ABCD", ackQueued: true, ackStatus: "queued", firstResponseDueAt: "2026-09-30T04:00:18.528Z" };
+const savedCorrectable = { ...saved, contactEmail: "Traveller@example.invalid", contactRevision: 0 };
 const homeBody = JSON.stringify({ entryPath: "homepage_email", contact: { channel: "email", email: "Traveller@example.invalid" }, productInterest: null });
 const quote = (locale) => ({
   entryPath: "private_tour_quote", contact: { channel: "email", email: "Traveller@example.invalid" },
@@ -104,6 +105,82 @@ test("typo suggestions are narrow and retain the local part; valid corporate ema
   for (const value of ["lej@ejbt.co.kr", "a@company.sg", "a@gmail.com", "a@outlook.com", "a@not-gmial.com", "a@gmial", "", "broken", "a@@gmial.com"]) assert.equal(emailTypoSuggestion(value), null, value);
 });
 
+test("correction credential stays in memory and a confirmed correction retains the saved trip", () => {
+  const key = "123e4567-e89b-42d3-a456-426614174000";
+  const original = createInquiryReceipt(savedCorrectable, JSON.stringify(quote("en")), "en", 7, key);
+  assert.equal(inquiryReceiptAccessKey(original), key);
+  assert.doesNotMatch(JSON.stringify(original), /123e4567|Inquiry-Access-Key/);
+  const corrected = correctedInquiryReceipt(original, {
+    state: "corrected", publicReference: saved.publicReference, contactEmail: "new@example.invalid", contactRevision: 1,
+    ackStatus: "suppressed", firstResponseDueAt: saved.firstResponseDueAt,
+  });
+  assert.equal(corrected.email, "new@example.invalid");
+  assert.equal(corrected.ackStatus, "suppressed");
+  assert.equal(corrected.contactRevision, 1);
+  assert.equal(corrected.requestedTravelers, 7);
+  assert.equal(corrected.requestedDate, original.requestedDate);
+  assert.equal(corrected.firstResponseDueAt, original.firstResponseDueAt);
+  assert.equal(inquiryReceiptAccessKey(corrected), key);
+  assert.equal(displayedInquiryReceipt(original, corrected), corrected, "parent rerenders keep the corrected address for the same reference");
+  assert.equal(displayedInquiryReceipt(createInquiryReceipt({ ...saved, publicReference: "HG-OTHER" }, homeBody, "en"), corrected).publicReference, "HG-OTHER");
+  assert.equal(correctedInquiryReceipt(original, { state: "corrected", publicReference: "WRONG", contactEmail: "x@example.invalid", contactRevision: 1, ackStatus: "queued" }), null);
+  assert.equal(correctedInquiryReceipt(corrected, { state: "corrected", publicReference: saved.publicReference, contactEmail: "x@example.invalid", contactRevision: 0, ackStatus: "queued" }), null);
+  assert.equal(inquiryReceiptAccessKey(createInquiryReceipt(saved, homeBody, "en")), null);
+});
+
+test("missing or invalid server contact state cannot authorize online correction", () => {
+  const key = "123e4567-e89b-42d3-a456-426614174000";
+  for (const response of [
+    saved,
+    { ...saved, contactEmail: "Traveller@example.invalid" },
+    { ...saved, contactRevision: 0 },
+    { ...savedCorrectable, contactEmail: "not-an-email" },
+    ...[-1, 1.5, 4, Number.MAX_SAFE_INTEGER].map((contactRevision) => ({ ...savedCorrectable, contactRevision })),
+  ]) {
+    const receipt = createInquiryReceipt(response, homeBody, "en", undefined, key);
+    assert.equal(inquiryReceiptAccessKey(receipt), null);
+  }
+  const exhausted = createInquiryReceipt({ ...savedCorrectable, contactRevision: 3 }, homeBody, "en", undefined, key);
+  assert.equal(exhausted.contactRevision, 3);
+  assert.equal(inquiryReceiptAccessKey(exhausted), null, "the correction limit is terminal");
+});
+
+test("network retry resends the same correction key and body without putting access in the URL", async () => {
+  const originalKey = "123e4567-e89b-42d3-a456-426614174000";
+  const correctionKey = "923e4567-e89b-42d3-a456-426614174001";
+  const base = createInquiryReceipt(savedCorrectable, homeBody, "en", undefined, originalKey);
+  const snapshot = { base, email: "new@example.invalid", key: correctionKey, accessKey: originalKey,
+    body: JSON.stringify({ email: "new@example.invalid", expectedRevision: 0 }) };
+  const url = inquiryEmailCorrectionApiUrl("https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries");
+  const sent = [];
+  const request = async (target, init) => {
+    sent.push({ target, init });
+    if (sent.length === 1) throw new TypeError("network interrupted after dispatch");
+    return new Response(JSON.stringify({ state: "corrected", publicReference: saved.publicReference, contactEmail: "new@example.invalid", contactRevision: 1, ackStatus: "queued", firstResponseDueAt: saved.firstResponseDueAt }), { status: 200, headers: { "Content-Type": "application/json" } });
+  };
+  await assert.rejects(sendInquiryEmailCorrection(snapshot, url, undefined, request), /network interrupted/);
+  const { response, result } = await sendInquiryEmailCorrection(snapshot, url, undefined, request);
+  assert.equal(response.status, 200);
+  assert.equal(correctedInquiryReceipt(base, result).email, "new@example.invalid");
+  assert.equal(sent.length, 2);
+  for (const attempt of sent) {
+    assert.equal(attempt.target, url);
+    assert.equal(attempt.init.headers["Inquiry-Access-Key"], originalKey);
+    assert.equal(attempt.init.headers["Idempotency-Key"], correctionKey);
+    assert.equal(attempt.init.body, snapshot.body);
+    assert.doesNotMatch(attempt.target, /123e4567|923e4567|example\.invalid/);
+    assert.doesNotMatch(attempt.init.body, /123e4567|923e4567|HG-TEST/);
+  }
+});
+
+test("correction endpoint stays on the trusted intake host and address validation is local", () => {
+  assert.equal(inquiryEmailCorrectionApiUrl("https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries"), "https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiry-email-corrections");
+  assert.equal(inquiryEmailCorrectionApiUrl("http://127.0.0.1:8787/v1/inquiries"), "http://127.0.0.1:8787/v1/inquiry-email-corrections");
+  for (const value of ["https://evil.invalid/functions/v1/v1-inquiries", "https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries?key=abc", "/functions/v1/v1-inquiries"]) assert.equal(inquiryEmailCorrectionApiUrl(value), "");
+  assert.equal(normalizeCorrectionEmail(" Traveller@EXAMPLE.COM "), "Traveller@example.com");
+  for (const value of ["", "broken", "name@invalid", "x..y@example.com", "name@example..com", "name@exa mple.com"]) assert.equal(normalizeCorrectionEmail(value), null);
+});
+
 test("address correction opens a clean draft with reference and CRLF, not an unauthenticated mutation", () => {
   for (const locale of locales) {
     const links = inquiryCorrectionLinks(saved.publicReference, locale, "hello@homegroundchina.com", "8613174215999", copyFor(locale));
@@ -144,6 +221,8 @@ async function loadComponent(path, extra) {
     if (specifier.endsWith("/inquiryReceipt")) return receiptHelpers;
     if (specifier.endsWith("/homegroundBusiness")) return { homegroundBusiness: { serviceEmail: "hello@homegroundchina.com" } };
     if (extra?.[specifier]) return extra[specifier];
+    if (specifier.endsWith("/tourContact")) return { privateTourQuoteApiUrl: () => "" };
+    if (specifier === "./EmailTypoHint") return { EmailTypoHint: () => null };
     return require(specifier);
   }, exports);
   return exports;
@@ -172,6 +251,18 @@ test("all four receipt languages render truthful status, correction links and no
   const whatsapp = createInquiryReceipt(saved, JSON.stringify({ entryPath: "destination_timing", contact: { channel: "whatsapp", phoneRaw: "+8613174215999" } }), "en");
   const whatsappHtml = renderToStaticMarkup(React.createElement(InquiryReceipt, { receipt: whatsapp, locale: "en" }));
   assert.doesNotMatch(whatsappHtml, /data-ack-status|mailto:|Email address wrong/);
+});
+
+test("a newly saved email receipt exposes inline correction without rendering its access key", async () => {
+  const key = "123e4567-e89b-42d3-a456-426614174000";
+  const { InquiryReceipt } = await loadComponent("../../components/InquiryReceipt.tsx", {
+    "../lib/tourContact": { privateTourQuoteApiUrl: () => "https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries" },
+  });
+  const receipt = createInquiryReceipt(savedCorrectable, homeBody, "en", undefined, key);
+  const html = renderToStaticMarkup(React.createElement(InquiryReceipt, { receipt, locale: "en" }));
+  assert.match(html, /<button[^>]*aria-expanded="false"[^>]*>Wrong address\?<\/button>/);
+  assert.doesNotMatch(html, /123e4567|Inquiry-Access-Key/);
+  assert.doesNotMatch(html, /Correct my enquiry email/);
 });
 
 test("the saved homepage view emphasizes the email guidance without administrative details", async () => {

@@ -177,6 +177,31 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
   assert.equal((await sendQuote({ ...quote, note: "Changed request" })).status, 409);
   assert.equal((await sendQuote({ ...quote, attribution: { landingPath: "/" } })).status, 422);
 
+  const correctionEndpoint = `http://${hostname}:${port}/v1/inquiry-email-corrections`;
+  const correctionKey = "f4521f74-93db-46d2-8bd9-b616c5c972e5";
+  const correct = (email, expectedRevision = 0, access = quoteKey, key = correctionKey) => fetch(correctionEndpoint, {
+    method: "POST", headers: { Origin: origin, "Content-Type": "application/json", "Inquiry-Access-Key": access, "Idempotency-Key": key },
+    body: JSON.stringify({ email, expectedRevision }),
+  });
+  assert.equal((await correct("corrected@example.invalid", 0, "7a67a8d5-b0a5-4d92-8a32-8ded156d62eb")).status, 403, "public context without the original key cannot change a contact");
+  assert.equal((await correct("not-an-email")).status, 422);
+  const correctedResponse = await correct("corrected@example.invalid");
+  assert.equal(correctedResponse.status, 200);
+  const corrected = await correctedResponse.json();
+  assert.equal(corrected.publicReference, quoteReference, "email correction does not create a new enquiry");
+  assert.equal(corrected.contactEmail, "corrected@example.invalid");
+  assert.equal(corrected.contactRevision, 1);
+  assert.equal(corrected.changed, true);
+  const repeatedCorrection = await (await correct("corrected@example.invalid")).json();
+  assert.equal(repeatedCorrection.duplicate, true);
+  assert.equal(repeatedCorrection.contactRevision, 1, "an uncertain correction retry must not create another revision");
+  assert.equal((await correct("different@example.invalid")).status, 409, "correction keys cannot be reused with changed content");
+  assert.equal((await correct("different@example.invalid", 0, quoteKey, "c120c55c-5eba-4e8a-b934-01d23f840349")).status, 409, "a stale editor must not overwrite a newer contact");
+  const replayAfterCorrection = await (await sendQuote(quote)).json();
+  assert.equal(replayAfterCorrection.publicReference, quoteReference);
+  assert.equal(replayAfterCorrection.contactEmail, corrected.contactEmail);
+  assert.equal(replayAfterCorrection.firstResponseDueAt, corrected.firstResponseDueAt, "the original submission replay preserves the deadline and current contact");
+
   const preflight = await fetch(endpoint, {
     method: "OPTIONS",
     headers: {

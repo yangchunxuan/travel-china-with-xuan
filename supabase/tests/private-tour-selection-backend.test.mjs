@@ -406,7 +406,7 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
       saved.set(body.p_idempotency_key_hash, body.p_payload_hash);
       return response({ outcome: previous ? "replay" : "created", inquiryId: "66c78072-5792-4573-9668-93c8e2e88c89", publicReference: "HG-TEST", receivedAt: "2026-09-05T00:00:00Z" });
     }
-    if (path.endsWith("/claim_homeground_notification_jobs_v3")) return response([currentJob]);
+    if (path.endsWith("/claim_homeground_notification_jobs_v4")) return response([currentJob]);
     if (path.endsWith("/freeze_homeground_notification_message_v1")) return response(body.p_message);
     if (path.endsWith("/finish_homeground_notification_job")) return response(true);
     throw new Error(`Unexpected network request: ${url}`);

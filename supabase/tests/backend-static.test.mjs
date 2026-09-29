@@ -179,7 +179,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
   assert.match(code, /status: "paused"/);
   assert.ok(
     code.indexOf("NOTIFICATION_PROCESSING_ENABLED") <
-      code.indexOf('"claim_homeground_notification_jobs_v3"'),
+      code.indexOf('"claim_homeground_notification_jobs_v4"'),
   );
   assert.match(code, /NOTIFICATION_PROVIDER_TIMEOUT_SECONDS/);
   assert.match(code, /signal: timeoutController\.signal/);
@@ -236,7 +236,7 @@ test("notification worker gives the monitored inbox a complete human handoff", a
 
   const configurationCheck = code.indexOf("config = notificationConfig()");
   const outboxClaim = code.indexOf(
-    '"claim_homeground_notification_jobs_v3"',
+    '"claim_homeground_notification_jobs_v4"',
   );
   assert.ok(configurationCheck >= 0);
   assert.ok(outboxClaim > configurationCheck);

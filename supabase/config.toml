@@ -53,3 +53,7 @@ verify_jwt = true
 # independent default-off traffic kill switch, a strict response contract and
 # body-free access audit.
 verify_jwt = true
+
+[functions.v1-inquiry-email-corrections]
+# Original browser bearer key, short correction window, strict Origin and idempotency.
+verify_jwt = false

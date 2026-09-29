@@ -699,16 +699,34 @@ async function handleRequest(request: Request): Promise<Response> {
 
   let ackStatus: "disabled" | "queued" | "suppressed" | "unavailable" = "disabled";
   let savedFirstResponseDueAt: string | undefined;
-  if (payload.privacyNoticeVersion === travellerAckPrivacyVersion) {
-    ackStatus = "unavailable";
+  let savedContactEmail: string | undefined;
+  let savedContactRevision: number | undefined;
+  {
+    if (payload.privacyNoticeVersion === travellerAckPrivacyVersion) ackStatus = "unavailable";
     try {
-      const receipt = await callSupabaseRpc<{ ackStatus?: unknown; firstResponseDueAt?: unknown }>("get_homeground_traveller_ack_receipt_v1", { p_inquiry_id: result.inquiryId });
+      const receipt = await callSupabaseRpc<{ ackStatus?: unknown; firstResponseDueAt?: unknown; contactEmail?: unknown; contactRevision?: unknown }>("get_homeground_traveller_ack_receipt_v1", { p_inquiry_id: result.inquiryId });
       if (receipt.ok && receipt.data) {
-        const status = receipt.data.ackStatus;
+        if (typeof receipt.data.contactEmail === "string") savedContactEmail = receipt.data.contactEmail;
+        if (Number.isInteger(receipt.data.contactRevision) && Number(receipt.data.contactRevision) >= 0) savedContactRevision = Number(receipt.data.contactRevision);
+        const status = payload.privacyNoticeVersion === travellerAckPrivacyVersion ? receipt.data.ackStatus : "disabled";
         if (status === "disabled" || status === "queued" || status === "suppressed" || status === "unavailable") ackStatus = status;
         if (typeof receipt.data.firstResponseDueAt === "string" && Number.isFinite(Date.parse(receipt.data.firstResponseDueAt))) savedFirstResponseDueAt = receipt.data.firstResponseDueAt;
       }
     } catch { /* A saved inquiry is successful even if its receipt cannot queue. */ }
+  }
+
+  // A replay after a correction must never redisplay the old browser snapshot.
+  // Keep the saved enquiry and request key; a transient contact-state read
+  // failure is an uncertain response that the client can safely retry.
+  if (result.outcome === "replay" && payload.contact.channel === "email" &&
+      (savedContactEmail === undefined || savedContactRevision === undefined)) {
+    try {
+      if (booleanEnv("INQUIRY_EMAIL_CORRECTION_ENABLED", false)) {
+        return errorResponse(503, "persistence_unavailable", true, "unknown", requestId, responseHeaders);
+      }
+    } catch {
+      return errorResponse(503, "service_not_configured", true, "unknown", requestId, responseHeaders);
+    }
   }
 
   return jsonResponse(
@@ -720,6 +738,8 @@ async function handleRequest(request: Request): Promise<Response> {
       duplicate: result.outcome === "replay",
       ackQueued: ackStatus === "queued",
       ackStatus,
+      ...(savedContactEmail !== undefined ? { contactEmail: savedContactEmail } : {}),
+      ...(savedContactRevision !== undefined ? { contactRevision: savedContactRevision } : {}),
       ...(savedFirstResponseDueAt ? { firstResponseDueAt: savedFirstResponseDueAt } : {}),
       requestId,
     },

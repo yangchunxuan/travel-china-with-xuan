@@ -66,7 +66,7 @@ function parsePositiveInteger(raw, fallback) {
 
 function corsHeaders(origin) {
   return {
-    "access-control-allow-headers": "content-type, idempotency-key",
+    "access-control-allow-headers": "content-type, idempotency-key, inquiry-access-key",
     "access-control-allow-methods": "POST, OPTIONS",
     "access-control-allow-origin": origin,
     "access-control-max-age": "600",
@@ -152,7 +152,8 @@ const server = createServer(async (request, response) => {
   }
   const responseHeaders = corsHeaders(origin);
 
-  if (request.url !== "/v1/inquiries") {
+  const isCorrection = request.url === "/v1/inquiry-email-corrections";
+  if (request.url !== "/v1/inquiries" && !isCorrection) {
     sendError(
       response,
       404,
@@ -175,7 +176,7 @@ const server = createServer(async (request, response) => {
     if (
       requestedMethod !== "POST" ||
       !requestedHeaders.every((header) =>
-        ["content-type", "idempotency-key"].includes(header)
+        ["content-type", "idempotency-key", ...(isCorrection ? ["inquiry-access-key"] : [])].includes(header)
       )
     ) {
       sendError(
@@ -257,6 +258,54 @@ const server = createServer(async (request, response) => {
     return;
   }
 
+  // Development-only correction contract. No email is sent and no production
+  // credential is read. The original submission remains one in-memory enquiry.
+  if (isCorrection) {
+    const accessKey = request.headers["inquiry-access-key"]?.trim() || "";
+    const original = uuidV4Pattern.test(accessKey) ? inquiryByIdempotencyKey.get(accessKey) : null;
+    if (!original?.publicResult.contactEmail || Date.now() - original.createdAt > 30 * 60_000) {
+      sendError(response, 403, "correction_unavailable", requestId, responseHeaders);
+      return;
+    }
+    const email = typeof rawPayload?.email === "string" ? rawPayload.email.trim().toLowerCase() : "";
+    if (email.length > 254 || !/^[^\s@,<>]+@[^\s@,<>]+\.[^\s@,<>]+$/.test(email)) {
+      sendError(response, 422, "invalid_email", requestId, responseHeaders);
+      return;
+    }
+    if (!Number.isInteger(rawPayload.expectedRevision) || rawPayload.expectedRevision < 0) {
+      sendError(response, 422, "invalid_request", requestId, responseHeaders);
+      return;
+    }
+    const prior = original.corrections.get(idempotencyKey);
+    if (prior) {
+      if (prior.email !== email || prior.expectedRevision !== rawPayload.expectedRevision) {
+        sendError(response, 409, "correction_conflict", requestId, responseHeaders);
+      } else {
+        sendJson(response, 200, { ...original.publicResult, state: "corrected", changed: prior.changed, duplicate: true, requestId }, responseHeaders);
+      }
+      return;
+    }
+    if (original.publicResult.contactRevision !== rawPayload.expectedRevision) {
+      sendError(response, 409, "correction_conflict", requestId, responseHeaders);
+      return;
+    }
+    const changed = email !== original.publicResult.contactEmail;
+    if (changed && original.publicResult.contactRevision >= 3) {
+      sendError(response, 403, "correction_unavailable", requestId, responseHeaders);
+      return;
+    }
+    if (changed) {
+      let ackStatus = original.ackEligible ? mockAckStatus : "disabled";
+      const now = Date.now();
+      if (ackStatus === "queued" && ackLastQueuedByEmail.has(email) && now - ackLastQueuedByEmail.get(email) < 86_400_000) ackStatus = "suppressed";
+      if (ackStatus === "queued") ackLastQueuedByEmail.set(email, now);
+      Object.assign(original.publicResult, { contactEmail: email, contactRevision: original.publicResult.contactRevision + 1, ackStatus, ackQueued: ackStatus === "queued" });
+    }
+    original.corrections.set(idempotencyKey, { email, expectedRevision: rawPayload.expectedRevision, changed });
+    sendJson(response, 200, { ...original.publicResult, state: "corrected", changed, duplicate: false, requestId }, responseHeaders);
+    return;
+  }
+
   // Match the production intake envelope: this optional attribution token is
   // not an inquiry answer and never affects the semantic idempotency hash.
   // The development mock has no traffic collector or attribution persistence.
@@ -334,10 +383,15 @@ const server = createServer(async (request, response) => {
     firstResponseDueAt: new Date(now + mockReplyHours * 3_600_000).toISOString(),
     ackQueued: ackStatus === "queued",
     ackStatus,
+    contactEmail: email,
+    contactRevision: 0,
   };
   inquiryByIdempotencyKey.set(idempotencyKey, {
     payloadHash,
     publicResult,
+    createdAt: now,
+    ackEligible: validation.value.privacyNoticeVersion === travellerAckPrivacyNoticeVersion,
+    corrections: new Map(),
   });
   sendJson(
     response,

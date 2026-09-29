@@ -90,15 +90,31 @@ test("intake selects one compatible RPC before writing, independently of optiona
   ]);
   let handler;
   let mode = "created";
+  let receiptMode = "available";
+  const inquiryId = "66c78072-5792-4573-9668-93c8e2e88c89";
+  const receiptRpc = "get_homeground_traveller_ack_receipt_v1";
   const calls = [];
   globalThis.Deno = { env: { get: (name) => env.get(name) }, serve: (value) => { handler = value; } };
   globalThis.fetch = async (url, init) => {
     assert.equal(new URL(String(url)).origin, "https://project.supabase.co");
-    calls.push({ name: new URL(String(url)).pathname.split("/").at(-1), args: JSON.parse(init.body) });
+    const name = new URL(String(url)).pathname.split("/").at(-1);
+    const args = JSON.parse(init.body);
+    calls.push({ name, args });
+    // Receipt lookup is a separate read, never another persistence operation.
+    // Its availability is independent of whether the create RPC succeeded.
+    if (name === receiptRpc) {
+      assert.deepEqual(args, { p_inquiry_id: inquiryId });
+      if (receiptMode === "throw") throw new Error("Simulated receipt-read connection loss");
+      return new Response(JSON.stringify({
+        ackStatus: "disabled", firstResponseDueAt: "2026-09-07T00:00:00Z",
+        contactEmail: "current@example.com", contactRevision: 1,
+      }), { status: receiptMode === "rpc-missing" ? 404 : 200 });
+    }
+    assert.match(name, /^create_homeground_/, "only the selected create RPC or independent receipt read is allowed");
     if (mode === "throw") throw new Error("Simulated connection loss after unknown persistence");
     const body = mode === "missing-result" ? { outcome: "created" } : {
       outcome: mode === "replay" ? "replay" : "created",
-      inquiryId: "66c78072-5792-4573-9668-93c8e2e88c89", publicReference: "HG-TEST",
+      inquiryId, publicReference: "HG-TEST",
       receivedAt: "2026-09-05T00:00:00Z",
     };
     return new Response(JSON.stringify(body), {
@@ -106,10 +122,10 @@ test("intake selects one compatible RPC before writing, independently of optiona
       headers: { "Content-Type": "application/json" },
     });
   };
-  const send = (body) => handler(new Request("https://project.supabase.co/functions/v1/v1-inquiries", {
+  const send = (body, key = randomUUID()) => handler(new Request("https://project.supabase.co/functions/v1/v1-inquiries", {
     method: "POST", headers: {
       "Content-Type": "application/json", Origin: publicOrigin,
-      "Idempotency-Key": randomUUID(), "X-Forwarded-For": "203.0.113.42",
+      "Idempotency-Key": key, "X-Forwarded-For": "203.0.113.42",
     }, body: JSON.stringify(body),
   }));
   try {
@@ -127,11 +143,16 @@ test("intake selects one compatible RPC before writing, independently of optiona
           if (scenario === "missing-secret") env.delete("TRAFFIC_SESSION_HASH_SECRET");
           const before = calls.length;
           const response = await send(input);
-          assert.equal(response.status, 201, JSON.stringify(await response.json()));
-          assert.equal(calls.length, before + 1);
-          const call = calls.at(-1);
+          const body = await response.json();
+          assert.equal(response.status, 201, JSON.stringify(body));
           const attributed = scenario === "attributed";
-          assert.equal(call.name, attributed ? item.wrapper : item.base);
+          const requestCalls = calls.slice(before);
+          assert.deepEqual(requestCalls.map(call => call.name), [attributed ? item.wrapper : item.base, receiptRpc],
+            "exactly one compatible write followed by exactly one independent receipt read");
+          const call = requestCalls[0];
+          assert.deepEqual(requestCalls[1].args, { p_inquiry_id: inquiryId });
+          assert.equal(body.contactEmail, "current@example.com");
+          assert.equal(body.contactRevision, 1);
           assert.deepEqual(Object.keys(call.args).sort(), attributed ? wrapperKeys : baseKeys);
           if (attributed) {
             assert.equal(call.args.p_traffic_session_hash, createHmac("sha256", trafficSecret).update(token).digest("hex"));
@@ -141,6 +162,21 @@ test("intake selects one compatible RPC before writing, independently of optiona
           for (const [key, field] of [["p_departure_country", "departureCountry"], ["p_rough_budget_per_person", "roughBudgetPerPerson"]]) {
             if (Object.hasOwn(call.args, key)) assert.equal(call.args[key], input[field] ?? null);
           }
+        });
+      }
+      for (const failure of ["throw", "rpc-missing"]) {
+        await t.test(`${item.name}: ${failure} receipt read never repeats a successful create`, async () => {
+          receiptMode = failure;
+          const before = calls.length;
+          const response = await send(item.payload());
+          const body = await response.json();
+          assert.equal(response.status, 201);
+          assert.equal(body.state, "submitted");
+          assert.equal(body.publicReference, "HG-TEST");
+          assert.equal(Object.hasOwn(body, "contactEmail"), false, "failed reads cannot invent current contact data");
+          assert.deepEqual(calls.slice(before).map(call => call.name), [item.base, receiptRpc],
+            "receipt failure must not retry or fall back through another create RPC");
+          receiptMode = "available";
         });
       }
       for (const attributed of [false, true]) {
@@ -153,13 +189,38 @@ test("intake selects one compatible RPC before writing, independently of optiona
             const body = await response.json();
             assert.equal(response.status, 503);
             assert.equal(body.error.code, "persistence_unavailable");
-            assert.equal(calls.length, before + 1);
-            assert.equal(calls.at(-1).name, attributed ? item.wrapper : item.base);
+            assert.deepEqual(calls.slice(before).map(call => call.name), [attributed ? item.wrapper : item.base],
+              "unknown/failed persistence neither retries a write nor attempts receipt lookup");
             mode = "created";
           });
         }
       }
     }
+    await t.test("replay with unknown current contact preserves the original key and never silently rewrites", async () => {
+      env.set("INQUIRY_EMAIL_CORRECTION_ENABLED", "true");
+      mode = "replay";
+      receiptMode = "throw";
+      const key = randomUUID();
+      const before = calls.length;
+      const response = await send(homepagePayload(), key);
+      const body = await response.json();
+      assert.equal(response.status, 503);
+      assert.equal(body.error.persistenceState, "unknown");
+      assert.equal(body.error.retryable, true);
+      assert.deepEqual(calls.slice(before).map(call => call.name), [cases[0].base, receiptRpc]);
+      const firstArgs = calls[before].args;
+      receiptMode = "available";
+      const retryBefore = calls.length;
+      const retried = await send(homepagePayload(), key);
+      const current = await retried.json();
+      assert.equal(retried.status, 200);
+      assert.equal(current.duplicate, true);
+      assert.equal(current.contactEmail, "current@example.com");
+      assert.equal(current.contactRevision, 1);
+      assert.deepEqual(calls.slice(retryBefore).map(call => call.name), [cases[0].base, receiptRpc]);
+      assert.equal(calls[retryBefore].args.p_idempotency_key_hash, firstArgs.p_idempotency_key_hash);
+      assert.equal(calls[retryBefore].args.p_payload_hash, firstArgs.p_payload_hash);
+    });
   } finally {
     globalThis.Deno = originalDeno;
     globalThis.fetch = originalFetch;
