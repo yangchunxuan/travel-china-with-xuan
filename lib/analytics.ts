@@ -192,6 +192,23 @@ export interface EntryAttribution {
   utm_content?: string;
   attribution_signature?: string;
   landing_path?: string;
+  /** A fixed class of the entry page's referrer host; the URL itself is never kept. */
+  referrer_class?: TrafficReferrerClass;
+}
+
+export type TrafficReferrerClass = "naver";
+
+/** Exact hostname match on naver.com and its subdomains; never a substring match. */
+export function trafficReferrerClass(referrer: string): TrafficReferrerClass | null {
+  if (!referrer) return null;
+  try {
+    const url = new URL(referrer);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    const host = url.hostname.toLowerCase().replace(/\.$/u, "");
+    return host === "naver.com" || host.endsWith(".naver.com") ? "naver" : null;
+  } catch {
+    return null;
+  }
 }
 
 interface TrafficSessionCredential {
@@ -312,6 +329,7 @@ function normalizeAttribution(value: unknown): EntryAttribution {
   if (candidate.landing_path) {
     attribution.landing_path = sanitizePagePath(candidate.landing_path);
   }
+  if (candidate.referrer_class === "naver") attribution.referrer_class = "naver";
   const medium = sanitizeAttributionValue(candidate.utm_medium, 64);
   if (medium && !internalUtmMediums.has(medium)) {
     attribution.utm_medium = medium;
@@ -356,6 +374,9 @@ export function captureEntryAttribution() {
     const attribution: EntryAttribution = {
       landing_path: sanitizePagePath(window.location.pathname),
     };
+    // The server uses this only when no signed campaign link is accepted.
+    const referrerClass = trafficReferrerClass(document.referrer);
+    if (referrerClass) attribution.referrer_class = referrerClass;
     const medium = sanitizeAttributionValue(
       params.get("utm_medium"),
       64,
@@ -802,6 +823,11 @@ function trafficAttributionPayload(attribution: EntryAttribution) {
   };
 }
 
+/** Sent only when present, so sessions without a referrer class keep the original payload shape. */
+function trafficReferrerPayload(attribution: EntryAttribution) {
+  return attribution.referrer_class ? { referrerClass: attribution.referrer_class } : {};
+}
+
 function trafficCredentialContext({
   locale,
   entryPath,
@@ -817,6 +843,7 @@ function trafficCredentialContext({
     attribution: trafficAttributionPayload(attribution),
     attributionSignature:
       attribution.attribution_signature ?? null,
+    ...trafficReferrerPayload(attribution),
   });
 }
 
@@ -938,6 +965,7 @@ async function requestTrafficSessionCredential({
       entryPath,
       attribution: trafficAttributionPayload(attribution),
       attributionSignature: attribution.attribution_signature ?? null,
+      ...trafficReferrerPayload(attribution),
     });
   } catch {
     return null;
@@ -1138,6 +1166,7 @@ async function flushTrafficQueue() {
             locale, entryPath,
             attribution: trafficAttributionPayload(attribution),
             attributionSignature: attribution.attribution_signature ?? null,
+            ...trafficReferrerPayload(attribution),
             events: [queued.event],
           } });
           if (outcome !== "unauthorized" || attempt > 0 || !analyticsConsentRemains(consentState)) break;

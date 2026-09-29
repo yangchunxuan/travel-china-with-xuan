@@ -159,6 +159,12 @@ export const trafficContactActionCodes = [
 ] as const;
 
 const trafficLocales = ["en", "zh", "ko"] as const;
+
+// Unsigned fallback for sessions without an accepted signed campaign link.
+// The browser sends only this fixed class, never the referrer URL, path or
+// query. Unknown values are ignored (treated as absent), not rejected.
+export const trafficReferrerClasses = ["naver"] as const;
+export type TrafficReferrerClass = (typeof trafficReferrerClasses)[number];
 const uuidV4Pattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const hmacSha256Pattern = /^[0-9a-f]{64}$/i;
@@ -203,6 +209,7 @@ export interface NormalizedTrafficEventBatch {
   entryPath: string;
   attribution: NormalizedTrafficAttribution;
   attributionSignature: string | null;
+  referrerClass: TrafficReferrerClass | null;
   events: NormalizedTrafficEvent[];
 }
 
@@ -215,7 +222,17 @@ export interface NormalizedTrafficSessionStart {
   entryPath: string;
   attribution: NormalizedTrafficAttribution;
   attributionSignature: string | null;
+  referrerClass: TrafficReferrerClass | null;
 }
+
+/**
+ * Stored first-touch labels for a referrer-derived session. Signed campaign
+ * links always carry a campaign, so `utm_campaign is null` together with
+ * `utm_content = 'referrer'` marks this basis in the database and reports.
+ */
+export const trafficReferrerAttribution: Readonly<Record<TrafficReferrerClass, NormalizedTrafficAttribution>> = {
+  naver: { utmSource: "naver", utmMedium: "referral", utmCampaign: null, utmContent: "referrer" },
+};
 
 export type TrafficValidationResult =
   | { ok: true; value: NormalizedTrafficEventBatch }
@@ -337,6 +354,10 @@ function normalizeAttribution(
   return normalizedAttribution;
 }
 
+function normalizeReferrerClass(value: unknown): TrafficReferrerClass | null {
+  return isOneOf(value, trafficReferrerClasses) ? value : null;
+}
+
 function normalizeAttributionSignature(
   value: unknown,
   fieldErrors: Record<string, string>,
@@ -398,6 +419,7 @@ export function validateAndNormalizeTrafficSessionStart(
       "entryPath",
       "attribution",
       "attributionSignature",
+      "referrerClass",
     ],
     "",
     fieldErrors,
@@ -434,6 +456,7 @@ export function validateAndNormalizeTrafficSessionStart(
       entryPath: entryPath as string,
       attribution,
       attributionSignature,
+      referrerClass: normalizeReferrerClass(input.referrerClass),
     },
   };
 }
@@ -462,6 +485,7 @@ export function validateAndNormalizeTrafficEventBatch(
       "entryPath",
       "attribution",
       "attributionSignature",
+      "referrerClass",
       "events",
     ],
     "",
@@ -628,6 +652,7 @@ export function validateAndNormalizeTrafficEventBatch(
       entryPath: entryPath as string,
       attribution: normalizedAttribution,
       attributionSignature,
+      referrerClass: normalizeReferrerClass(input.referrerClass),
       events: normalizedEvents,
     },
   };

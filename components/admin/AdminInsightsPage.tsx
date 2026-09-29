@@ -339,6 +339,8 @@ function trafficLabelCopy(
     const selectionLabel = privateTourAggregateSelectionLabel(context);
     return selectionLabel ? `${context.name} · ${selectionLabel}` : context.name;
   }
+  // Unsigned Naver visits share this label (their campaign stays Unknown).
+  if (kind === "source" && value.label === "naver") return "Naver（含来源页推断）";
   return value.label ?? "标签不可用";
 }
 
@@ -1482,7 +1484,7 @@ function TrafficSection({
           <div className={styles.trafficDimensions}>
             <TrafficDimensionCard
               title="来源"
-              description="只显示标准化来源标签；Unknown 会原样保留，不猜测、不分摊。"
+              description="只显示标准化来源标签；Unknown 会原样保留，不猜测、不分摊。没有签名链接、但从 Naver 页面进入的会话记为 Naver，其活动为 Unknown。"
               kind="source"
               buckets={traffic.dimensions.sources}
             />

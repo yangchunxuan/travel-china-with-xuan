@@ -11,7 +11,7 @@ const channels: { id: ContactChannel; title: string }[] = [
 const dimensions: { id: ContactDimension; title: string; description: string }[] = [
   { id: 'pages', title: '点击页面', description: '客人点击联系按钮时所在的页面。' },
   { id: 'entryPages', title: '首次记录页面', description: '同意统计后，首次记录到的页面；可能不是最初打开的网站页面。' },
-  { id: 'sources', title: '访问来源', description: '只显示已记录的活动来源标签。未记录不等于直接访问，也不能据此排除搜索或广告。' },
+  { id: 'sources', title: '访问来源', description: '只显示已记录的活动来源标签；没有签名链接但从 Naver 页面进入的会话也记为 Naver。未记录不等于直接访问，也不能据此排除搜索或广告。' },
   { id: 'products', title: '关联产品', description: '点击时一并记录的产品。旧记录或通用按钮可能没有产品信息。' },
   { id: 'surfaces', title: '按钮位置', description: '点击时记录的功能区域。旧记录未采集的位置无法补回。' },
 ];
@@ -24,6 +24,7 @@ function label(key: string, dimension: ContactDimension) {
   if (key === '/zh/') return '中文首页';
   if (key === '/ko/') return '韩文首页';
   if (dimension === 'surfaces') return positionLabels[key] ?? key;
+  if (dimension === 'sources' && key === 'naver') return 'Naver（含来源页推断）';
   if (dimension === 'products') return key.replace(/-/g, ' ');
   return key;
 }
