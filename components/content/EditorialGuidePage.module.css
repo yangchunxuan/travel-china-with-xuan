@@ -91,7 +91,7 @@
    (painted later) covers only the gap and never the row above's text. */
 .breadcrumb a::after {
   content: "";
-  inset: -0.5rem -0.25rem -1rem;
+  inset: -0.5rem -0.4375rem -1rem;
   position: absolute;
 }
 

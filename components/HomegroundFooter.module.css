@@ -98,6 +98,8 @@
 
 .footerLegal p a {
   color: var(--hg-color-on-dark);
+  /* Inline padding gives the link a 24px+ tap target without moving text. */
+  padding-block: 0.3125rem;
   text-underline-offset: 0.2rem;
 }
 

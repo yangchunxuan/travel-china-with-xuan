@@ -165,11 +165,35 @@ function CompactTourComparison({
           {product.startingPrice ? (
             <>
               <span className={styles.priceLabel}>{copy.startingPriceLabel}</span>
-              <strong>{product.startingPrice.formatted}</strong>
-              <span>
-                <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={product.tourFormat === "small-group" ? copy.twinShareBasis : copy.groupBasis(product.startingPrice.travelers)} />
-              </span>
-              {product.startingPrice.serviceLabel && (
+              {product.twoTravellerPrice ? (
+                <>
+                  {/* A couple sees its own per-person price first; the lower
+                      larger-group price keeps its group basis beside it. */}
+                  <span className={styles.priceTiers}>
+                    <span>
+                      <span>{copy.partySize(2)}</span>{" "}
+                      <strong>{product.twoTravellerPrice.formatted}</strong>
+                    </span>
+                    <span>
+                      <span>{copy.partySize(product.startingPrice.travelers)}</span>{" "}
+                      <strong>{product.startingPrice.formatted}</strong>
+                    </span>
+                  </span>
+                  <span>{copy.perPersonPriceNote}</span>
+                </>
+              ) : (
+                <>
+                  <strong>{product.startingPrice.formatted}</strong>
+                  <span>
+                    <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={product.tourFormat === "small-group" ? copy.twinShareBasis : copy.groupBasis(product.startingPrice.travelers)} />
+                  </span>
+                </>
+              )}
+              {/* The service name matters when the tour offers a choice
+                  (e.g. Beijing's no-guide price) or states a limited scope
+                  (Zhangjiajie's two guided days); otherwise it only repeats
+                  the tour type or the guide badge below. */}
+              {(product.hasServiceChoice || product.source === "zhangjiajie-tour") && product.startingPrice.serviceLabel && (
                 <span className={styles.priceService}>
                   <KeepWords locale={locale} text={product.startingPrice.serviceLabel} />
                 </span>
@@ -181,6 +205,9 @@ function CompactTourComparison({
               <span>{copy.quoteOnlyBody}</span>
             </>
           )}
+          <span className={styles.guideBadge} data-guide-language="">
+            <KeepWords locale={locale} text={product.guideLanguage} />
+          </span>
         </p>
         <div className={styles.quickMeta}>
           <dl className={styles.quickDetails}>

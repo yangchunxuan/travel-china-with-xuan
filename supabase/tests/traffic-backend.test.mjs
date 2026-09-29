@@ -291,7 +291,7 @@ test("public traffic endpoint is default-off, exact-origin and never persists ra
   );
   assert.match(
     endpoint,
-    /attributionHasLabels\(attribution\)[\s\S]{0,220}"unknown"/u,
+    /attributionHasLabels\(derived\.attribution\)[\s\S]{0,220}"unknown"/u,
   );
   assert.match(endpoint, /p_session_hash: sessionHash/u);
   assert.doesNotMatch(endpoint, /p_session_token/u);

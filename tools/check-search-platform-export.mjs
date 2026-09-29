@@ -3,6 +3,7 @@ import path from "node:path";
 import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../lib/homepagePrivateTourCatalog.ts";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle.ts";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
+import { getPrivateTourInquirySelection } from "../lib/privateTourInquiryContext.ts";
 import { isIsoDateTimeWithTimezone } from "./lib/iso-date-time.mjs";
 
 const outputRoot = path.join(process.cwd(), "out");
@@ -219,9 +220,14 @@ function assertPrivateTourPriceLinks(html, products, context) {
       throw new Error(`${context}: price entry changed the canonical route for ${product.slug}`);
     }
     if (selection) {
+      // Cards open the starting price's service at a published party no larger
+      // than the starting price's group (usually two travellers), so a couple
+      // never lands on the cheaper six-traveller tier.
+      const linkedTravelers = Number(target.searchParams.get("travelers"));
       if (target.searchParams.size !== 2 ||
           target.searchParams.get("package") !== selection.packageId ||
-          target.searchParams.get("travelers") !== String(selection.travelers)) {
+          !getPrivateTourInquirySelection(product.slug, selection.packageId, target.searchParams.get("travelers")) ||
+          linkedTravelers > selection.travelers) {
         throw new Error(`${context}: price entry does not identify its published service/group for ${product.slug}`);
       }
     } else if (target.search) {

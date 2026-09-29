@@ -9,7 +9,10 @@ export function isJiangnanTour(slug?: string) {
   return jiangnanTourSlugs.some(value => value === slug);
 }
 
-export const referralSources = ["ChatGPT", "Google", "Gemini", "Perplexity", "friend", "other"] as const;
+// Offered on every private-tour quote. Brand names stay untranslated; only friend/other are localized.
+export const referralSources = ["ChatGPT", "Google", "Naver", "Gemini", "Perplexity", "KakaoTalk", "Instagram", "YouTube", "friend", "other"] as const;
+/** The self-reported source line can add ~45 characters, so every product's note keeps this headroom under the 1,000-character contract. */
+export const tourContactNoteMaxLength = 900;
 export type ReferralSource = "" | (typeof referralSources)[number];
 export const jiangnanContactCopy = {
   en: { placeholder: "Room preferences, children’s ages, arrival/departure plans or walking needs…", source: "How did you find us?", blank: "Choose if you’d like", friend: "Friends or family", other: "Other", group: "How many people are travelling?", groupHint: "Enter your group size to get in touch; we’ll quote for that group.", groupError: "Please enter a group size from 1 to 99." },

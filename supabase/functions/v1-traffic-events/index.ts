@@ -2,6 +2,8 @@ import {
   type NormalizedTrafficAttribution,
   type NormalizedTrafficEventBatch,
   type NormalizedTrafficSessionStart,
+  type TrafficReferrerClass,
+  trafficReferrerAttribution,
   trafficEventBatchRequestType,
   trafficEventsContractVersion,
   trafficEventsContractVersionV2,
@@ -140,6 +142,31 @@ async function acceptedAttribution({
     : unknownAttribution;
 }
 
+interface SessionAttribution {
+  attribution: NormalizedTrafficAttribution;
+  // Present only when unsigned labels were derived from the entry referrer.
+  referrerClass: TrafficReferrerClass | null;
+}
+
+/**
+ * A verified signed campaign link always wins. Otherwise a fixed referrer
+ * class (never a URL) may supply fixed fallback labels; anything else is
+ * Unknown. Deterministic, so every event batch re-derives the same labels.
+ */
+async function sessionAttribution(payload: {
+  entryPath: string;
+  attribution: NormalizedTrafficAttribution;
+  attributionSignature: string | null;
+  referrerClass: TrafficReferrerClass | null;
+}): Promise<SessionAttribution> {
+  const signed = await acceptedAttribution(payload);
+  if (attributionHasLabels(signed)) return { attribution: signed, referrerClass: null };
+  if (payload.referrerClass) {
+    return { attribution: trafficReferrerAttribution[payload.referrerClass], referrerClass: payload.referrerClass };
+  }
+  return { attribution: unknownAttribution, referrerClass: null };
+}
+
 function credentialMessage({
   contractVersion,
   noticeVersion,
@@ -148,6 +175,7 @@ function credentialMessage({
   locale,
   entryPath,
   attribution,
+  referrerClass,
 }: {
   contractVersion: string;
   noticeVersion: string;
@@ -156,6 +184,7 @@ function credentialMessage({
   locale: string;
   entryPath: string;
   attribution: NormalizedTrafficAttribution;
+  referrerClass: TrafficReferrerClass | null;
 }): string {
   return [
     "homeground-traffic-session.v1",
@@ -169,12 +198,14 @@ function credentialMessage({
     attribution.utmMedium ?? "",
     attribution.utmCampaign ?? "",
     attribution.utmContent ?? "",
+    // Signed and Unknown sessions keep the original message byte for byte.
+    ...(referrerClass ? [`referrer:${referrerClass}`] : []),
   ].join("\n");
 }
 
 async function issueSessionCredential(
   payload: NormalizedTrafficSessionStart,
-  attribution: NormalizedTrafficAttribution,
+  { attribution, referrerClass }: SessionAttribution,
 ): Promise<{ credential: string; expiresAt: number }> {
   const ttlSeconds = positiveIntegerEnv(
     "TRAFFIC_SESSION_CREDENTIAL_TTL_SECONDS",
@@ -193,6 +224,7 @@ async function issueSessionCredential(
       locale: payload.locale,
       entryPath: payload.entryPath,
       attribution,
+      referrerClass,
     }),
   );
   return {
@@ -203,7 +235,7 @@ async function issueSessionCredential(
 
 async function validSessionCredential(
   payload: NormalizedTrafficEventBatch,
-  attribution: NormalizedTrafficAttribution,
+  { attribution, referrerClass }: SessionAttribution,
 ): Promise<boolean> {
   const match =
     /^v1\.([0-9]{10})\.([0-9a-f]{64})$/u.exec(
@@ -238,6 +270,7 @@ async function validSessionCredential(
       locale: payload.locale,
       entryPath: payload.entryPath,
       attribution,
+      referrerClass,
     }),
   );
   return constantTimeEqual(expectedSignature, suppliedSignature);
@@ -654,10 +687,10 @@ async function handleRequest(request: Request): Promise<Response> {
     }
 
     try {
-      const attribution = await acceptedAttribution(validation.value);
+      const derived = await sessionAttribution(validation.value);
       const issued = await issueSessionCredential(
         validation.value,
-        attribution,
+        derived,
       );
       return jsonResponse(
         201,
@@ -666,9 +699,11 @@ async function handleRequest(request: Request): Promise<Response> {
           state: "session_ready",
           sessionCredential: issued.credential,
           expiresAt: new Date(issued.expiresAt * 1_000).toISOString(),
-          attributionState: attributionHasLabels(attribution)
-            ? "verified"
-            : "unknown",
+          attributionState: derived.referrerClass
+            ? "referrer"
+            : attributionHasLabels(derived.attribution)
+              ? "verified"
+              : "unknown",
           requestId,
         },
         responseHeaders,
@@ -724,8 +759,9 @@ async function handleRequest(request: Request): Promise<Response> {
   let attribution: NormalizedTrafficAttribution;
   let eventsForRpc: Array<Record<string, string | number | null>>;
   try {
-    attribution = await acceptedAttribution(payload);
-    if (!(await validSessionCredential(payload, attribution))) {
+    const derived = await sessionAttribution(payload);
+    attribution = derived.attribution;
+    if (!(await validSessionCredential(payload, derived))) {
       return errorResponse(
         401,
         "invalid_session_credential",

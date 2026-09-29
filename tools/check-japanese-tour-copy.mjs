@@ -42,8 +42,8 @@ for (const product of privateTourProducts) {
       const renderedRow = renderedPackage.rows[rowIndex];
       assert.equal(renderedRow.travelers, sourceRow.travelers, `${product.slug}: travelers ${index}/${rowIndex}`);
       assert.equal(renderedRow.cny, sourceRow.cnyPerPerson, `${product.slug}: CNY price ${index}/${rowIndex}`);
-      assert.equal(renderedRow.amount, sourceRow.publishedPrice?.amountPerPerson ?? sourceRow.cnyPerPerson, `${product.slug}: published price ${index}/${rowIndex}`);
-      assert.equal(renderedRow.currency, sourceRow.publishedPrice?.currency ?? "CNY", `${product.slug}: currency ${index}/${rowIndex}`);
+      assert.equal(renderedRow.amount, sourceRow.cnyPerPerson, `${product.slug}: CNY display price ${index}/${rowIndex}`);
+      assert.equal(renderedRow.currency, "CNY", `${product.slug}: currency ${index}/${rowIndex}`);
     }
   }
 

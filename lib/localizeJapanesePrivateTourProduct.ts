@@ -12,9 +12,11 @@ import {
   type PrivateTourProduct,
 } from "./privateTourProducts";
 
+// Japanese pages show every product in CNY, the price basis. A USD source
+// benchmark is not shown here, so the list never mixes currencies.
 function sourcePrice(tier: PrivateTourPriceTier) {
-  const currency = tier.publishedPrice?.currency ?? "CNY";
-  const amount = tier.publishedPrice?.amountPerPerson ?? tier.cnyPerPerson;
+  const currency = "CNY" as const;
+  const amount = tier.cnyPerPerson;
   return {
     travelers: tier.travelers,
     cny: tier.cnyPerPerson,

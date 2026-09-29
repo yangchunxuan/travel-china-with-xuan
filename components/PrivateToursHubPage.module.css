@@ -713,6 +713,40 @@
   color: var(--tour-muted);
 }
 
+/* Two-traveller and larger-group per-person prices side by side; each pair
+   stays together and wraps as a unit on narrow cards, so the gap (not a
+   separator glyph that could dangle at a line end) divides them. */
+.priceTiers {
+  align-items: baseline;
+  column-gap: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.1rem;
+}
+
+.priceTiers > span {
+  white-space: nowrap;
+}
+
+.priceTiers > span > span {
+  color: var(--tour-muted);
+  font-size: 0.8125rem;
+}
+
+/* Guide language, from the product's own service text, on every card. */
+.guideBadge {
+  background: var(--tour-warm);
+  border-radius: 999px;
+  color: var(--tour-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  justify-self: start;
+  line-height: 1.35;
+  margin-block-start: 0.4rem;
+  max-width: 100%;
+  padding: 0.2rem 0.6rem;
+}
+
 .quickDetails > div {
   min-width: 0;
 }
@@ -830,16 +864,14 @@
 
 /* Cards rise as they scroll into view (scroll-driven: on-screen cards are
    always fully shown, and unsupported browsers show them statically). */
-/* Starts half-visible and finishes within 120px of entering, so a card that
-   stops near the bottom edge never looks disabled. */
+/* Finishes within 120px of entering. Motion only, no fade: a fade held
+   not-yet-entered cards (and the final tile) below WCAG AA contrast. */
 @keyframes cardRise {
   from {
-    opacity: 0.55;
     transform: translateY(16px);
   }
 
   to {
-    opacity: 1;
     transform: none;
   }
 }

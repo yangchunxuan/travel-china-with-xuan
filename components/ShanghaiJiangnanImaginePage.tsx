@@ -39,6 +39,7 @@ import {
 } from "../lib/existingContentCommercialLinks";
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
 import { japaneseDraftNote } from "../lib/japaneseSite";
+import { japaneseCurrencyNote } from "../lib/japaneseCurrencyNote";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
 import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
 import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
@@ -631,6 +632,7 @@ export function ShanghaiJiangnanImaginePage({
     quoteOnlyBody: "この行程には固定の公開料金がありません。日程と人数をお知らせください。",
     emailLabel: jaPresentation.emailLabel,
     draftNote: japaneseDraftNote,
+    currencyNote: japaneseCurrencyNote,
   } : undefined;
   const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : undefined;
   const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanesePilot ? {

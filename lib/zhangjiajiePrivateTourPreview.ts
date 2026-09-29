@@ -1,6 +1,7 @@
 import product from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json";
 import pricing from "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
 import { formatPrivateTourPrice } from "./privateTourProducts";
+import { privateTourCurrencyNote } from "./privateTourCurrencyNote";
 
 export type ProductPreviewLocale = "en" | "zh" | "ko";
 
@@ -1146,6 +1147,7 @@ export function getZhangjiajiePrivateTourPublicPricing(
       zh: `每人价格 · 至少${basis.minimum_adults}位成人 · ${basis.duration_days}天${basis.nights}晚 · 两位成人同住一间房`,
       ko: `1인 기준 · 성인 ${basis.minimum_adults}명 이상 · ${basis.nights}박 ${basis.duration_days}일 · 성인 2명 1실 기준`,
     }[locale],
+    currencyNote: privateTourCurrencyNote[locale],
     guideLanguageNote: {
       en: "The price includes two days of English-speaking guide service.",
       zh: "价格已含两天英文导游服务。",

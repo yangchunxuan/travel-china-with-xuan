@@ -6,7 +6,8 @@ import { homepagePrivateTourSlugs, type HomepagePrivateTourItem } from "../../..
 import { getHomepageTeamFaces } from "../../../lib/homegroundStudioI18n";
 import { localizeJapanesePrivateTourProduct } from "../../../lib/localizeJapanesePrivateTourProduct";
 import { getPrivateTourProduct } from "../../../lib/privateTourProducts";
-import { getPrivateTourStartingPrice } from "../../../lib/privateTourStartingPrice";
+import { getPrivateTourStartingPrice, getPrivateTourTwoTravellerPrice } from "../../../lib/privateTourStartingPrice";
+import { japaneseTourEntryHref } from "../../../lib/japaneseTourCatalog";
 
 const copy = japaneseHomeCopy;
 
@@ -30,6 +31,7 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
     const tour = localizeJapanesePrivateTourProduct(product);
     const starting = getPrivateTourStartingPrice(tour);
     if (!starting) return [];
+    const twoTravellers = getPrivateTourTwoTravellerPrice(tour);
     return [{
       id: tour.slug,
       kind: "tour" as const,
@@ -37,13 +39,14 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
       appeal: tour.lede,
       days: tour.days,
       nights: tour.nights,
-      href: tour.path,
+      href: japaneseTourEntryHref(tour),
       startingPrice: {
         formatted: starting.formatted,
         travelers: starting.travelers,
         serviceLabel: starting.serviceLabel,
         selection: starting.selection,
       },
+      ...(twoTravellers ? { twoTravellerPrice: { formatted: twoTravellers.formatted } } : {}),
       image: {
         src: tour.heroImage.src,
         alt: tour.heroImage.alt,

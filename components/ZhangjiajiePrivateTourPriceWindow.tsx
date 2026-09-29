@@ -31,6 +31,8 @@ interface PublicPricing {
   referenceNote: string;
   basisLabel: string;
   guideLanguageNote: string;
+  /** Currency and settlement disclosure, when the page converts the price. */
+  currencyNote?: string;
   publicNote: string;
   tiers: readonly PublicPriceTier[];
 }
@@ -123,6 +125,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
         {validity}
         {status === "checking" ? <p>{pricing.referenceNote}</p> : null}
         <p>{pricing.guideLanguageNote}</p>
+        {pricing.currencyNote ? <p>{pricing.currencyNote}</p> : null}
       </div>
     );
   }
@@ -188,6 +191,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
       </div>
       <p className={styles.priceFootnote}>{pricing.publicNote}</p>
       <p className={styles.priceFootnote}>{pricing.guideLanguageNote}</p>
+      {pricing.currencyNote ? <p className={styles.priceFootnote}>{pricing.currencyNote}</p> : null}
     </div>
   );
 }

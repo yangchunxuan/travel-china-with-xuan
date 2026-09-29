@@ -108,7 +108,7 @@ type FirstPartyEventType =
   | "enquiry_submit_attempted"
   | "enquiry_submit_failed"
   | "enquiry_submit_uncertain";
-type ContactActionCode = "email" | "whatsapp" | "messenger";
+type ContactActionCode = "email" | "whatsapp" | "messenger" | "kakao";
 
 type Gtag = (...args: unknown[]) => void;
 type MetaPixel = ((...args: unknown[]) => void) & {
@@ -192,6 +192,23 @@ export interface EntryAttribution {
   utm_content?: string;
   attribution_signature?: string;
   landing_path?: string;
+  /** A fixed class of the entry page's referrer host; the URL itself is never kept. */
+  referrer_class?: TrafficReferrerClass;
+}
+
+export type TrafficReferrerClass = "naver";
+
+/** Exact hostname match on naver.com and its subdomains; never a substring match. */
+export function trafficReferrerClass(referrer: string): TrafficReferrerClass | null {
+  if (!referrer) return null;
+  try {
+    const url = new URL(referrer);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    const host = url.hostname.toLowerCase().replace(/\.$/u, "");
+    return host === "naver.com" || host.endsWith(".naver.com") ? "naver" : null;
+  } catch {
+    return null;
+  }
 }
 
 interface TrafficSessionCredential {
@@ -312,6 +329,7 @@ function normalizeAttribution(value: unknown): EntryAttribution {
   if (candidate.landing_path) {
     attribution.landing_path = sanitizePagePath(candidate.landing_path);
   }
+  if (candidate.referrer_class === "naver") attribution.referrer_class = "naver";
   const medium = sanitizeAttributionValue(candidate.utm_medium, 64);
   if (medium && !internalUtmMediums.has(medium)) {
     attribution.utm_medium = medium;
@@ -356,6 +374,9 @@ export function captureEntryAttribution() {
     const attribution: EntryAttribution = {
       landing_path: sanitizePagePath(window.location.pathname),
     };
+    // The server uses this only when no signed campaign link is accepted.
+    const referrerClass = trafficReferrerClass(document.referrer);
+    if (referrerClass) attribution.referrer_class = referrerClass;
     const medium = sanitizeAttributionValue(
       params.get("utm_medium"),
       64,
@@ -781,7 +802,8 @@ function firstPartyEvent(
     if (
       channel === "email" ||
       channel === "whatsapp" ||
-      channel === "messenger"
+      channel === "messenger" ||
+      channel === "kakao"
     ) {
       return {
         type: name === "contact_channel_selected" ? name : "contact_channel_clicked",
@@ -801,6 +823,38 @@ function trafficAttributionPayload(attribution: EntryAttribution) {
   };
 }
 
+const referrerClassUnsupportedStorageKey = "homeground-traffic-referrer-class-unsupported";
+let referrerClassUnsupported = false;
+
+/** A collector deployed before `referrerClass` rejects the unknown key; stop sending it for this browser session. */
+function referrerClassIsUnsupported() {
+  if (referrerClassUnsupported) return true;
+  try { referrerClassUnsupported = window.sessionStorage.getItem(referrerClassUnsupportedStorageKey) === "1"; } catch { /* Keep sending. */ }
+  return referrerClassUnsupported;
+}
+
+function markReferrerClassUnsupported() {
+  referrerClassUnsupported = true;
+  try { window.sessionStorage.setItem(referrerClassUnsupportedStorageKey, "1"); } catch { /* The in-memory flag still applies. */ }
+}
+
+/** Sent only when present, so sessions without a referrer class keep the original payload shape. */
+function trafficReferrerPayload(attribution: EntryAttribution) {
+  return attribution.referrer_class && !referrerClassIsUnsupported() ? { referrerClass: attribution.referrer_class } : {};
+}
+
+function isLegacyReferrerClassRejection(payload: unknown): boolean {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) return false;
+  const error = (payload as Record<string, unknown>).error;
+  if (!error || typeof error !== "object" || Array.isArray(error)) return false;
+  const fields = (error as Record<string, unknown>).fieldErrors;
+  if (!fields || typeof fields !== "object" || Array.isArray(fields)) return false;
+  const fieldErrors = fields as Record<string, unknown>;
+  return (error as Record<string, unknown>).code === "validation_failed" &&
+    fieldErrors.referrerClass === "unexpected" &&
+    Object.keys(fieldErrors).length === 1;
+}
+
 function trafficCredentialContext({
   locale,
   entryPath,
@@ -816,6 +870,7 @@ function trafficCredentialContext({
     attribution: trafficAttributionPayload(attribution),
     attributionSignature:
       attribution.attribution_signature ?? null,
+    ...trafficReferrerPayload(attribution),
   });
 }
 
@@ -937,6 +992,7 @@ async function requestTrafficSessionCredential({
       entryPath,
       attribution: trafficAttributionPayload(attribution),
       attributionSignature: attribution.attribution_signature ?? null,
+      ...trafficReferrerPayload(attribution),
     });
   } catch {
     return null;
@@ -946,8 +1002,22 @@ async function requestTrafficSessionCredential({
     return null;
   }
   if (!response.ok) {
+    let retryWithoutReferrerClass = false;
+    if (response.status === 422 && attribution.referrer_class && !referrerClassIsUnsupported()) {
+      try {
+        retryWithoutReferrerClass = isLegacyReferrerClassRejection(await response.json());
+      } catch {
+        // An unreadable error is not evidence that the old collector rejected this field.
+      }
+    }
     await discardResponseBody(response);
     if (!analyticsConsentRemains(consentState)) return null;
+    // Older collectors return 422 only for the unexpected `referrerClass` field.
+    // Retry once without it so the session is still measured, as unknown.
+    if (retryWithoutReferrerClass) {
+      markReferrerClassUnsupported();
+      return requestTrafficSessionCredential({ sessionToken, locale, entryPath, attribution, consentState });
+    }
     return null;
   }
 
@@ -1010,6 +1080,7 @@ async function trafficSessionCredential(parameters: {
 type TrafficEventAttemptOutcome =
   | "accepted"
   | "unauthorized"
+  | "legacy_referrer_rejected"
   | "retry"
   | "stopped";
 
@@ -1039,7 +1110,16 @@ async function sendTrafficEventBatch({
   }
   if (response.ok) return "accepted";
 
+  let legacyReferrerRejected = false;
+  if (response.status === 422 && typeof payload.referrerClass === "string") {
+    try {
+      legacyReferrerRejected = isLegacyReferrerClassRejection(await response.json());
+    } catch {
+      // An unreadable error is not evidence that the old collector rejected this field.
+    }
+  }
   const outcome =
+    legacyReferrerRejected ? "legacy_referrer_rejected" :
     response.status === 401 ? "unauthorized" : response.status === 429 || response.status >= 500 ? "retry" : "stopped";
   await discardResponseBody(response);
   if (!analyticsConsentRemains(consentState)) return "stopped";
@@ -1137,9 +1217,13 @@ async function flushTrafficQueue() {
             locale, entryPath,
             attribution: trafficAttributionPayload(attribution),
             attributionSignature: attribution.attribution_signature ?? null,
+            ...trafficReferrerPayload(attribution),
             events: [queued.event],
           } });
-          if (outcome !== "unauthorized" || attempt > 0 || !analyticsConsentRemains(consentState)) break;
+          if ((outcome !== "unauthorized" && outcome !== "legacy_referrer_rejected") || attempt > 0 || !analyticsConsentRemains(consentState)) break;
+          // A credential issued by the new collector includes the referrer class in its signature.
+          // An old collector needs a fresh credential; simply omitting the event key would fail 401.
+          if (outcome === "legacy_referrer_rejected") markReferrerClassUnsupported();
           clearRejectedTrafficSessionCredential(credential.credential);
           credential = await trafficSessionCredential(queued.credentialParameters);
           if (!credential) { outcome = "retry"; break; }

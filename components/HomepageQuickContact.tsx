@@ -48,6 +48,8 @@ import { contactCardCopy } from "../lib/contactCardCopy";
 import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
 import { InquiryReceipt } from "./InquiryReceipt";
 import { EmailTypoHint } from "./EmailTypoHint";
+import { KakaoTalkContact } from "./KakaoTalkContact";
+import { kakaoTalkCopy } from "../lib/tourContact";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -164,7 +166,7 @@ function whatsappMessage(
   return `Hello Homeground, I’m planning a trip to China and would like to talk.${productLine}`;
 }
 
-type BoardTab = "whatsapp" | "email" | "messenger";
+type BoardTab = "whatsapp" | "email" | "messenger" | "kakao";
 
 function chinaTime(locale: HomegroundLocale): string {
   return new Intl.DateTimeFormat(
@@ -468,14 +470,33 @@ export function HomepageQuickContact({
 
   // Desktop: one way in at a time, chosen from a tab bar.
   const board = desktopCard;
-  const boardTabs: BoardTab[] = messengerUrl
-    ? ["whatsapp", "email", "messenger"]
-    : ["whatsapp", "email"];
+  // Korean pages add KakaoTalk; it copies the same prepared text as WhatsApp.
+  const kakaoEnabled = locale === "ko";
+  const boardTabs: BoardTab[] = [
+    "whatsapp",
+    "email",
+    ...(messengerUrl ? ["messenger" as const] : []),
+    ...(kakaoEnabled ? ["kakao" as const] : []),
+  ];
   const boardLabels: Record<BoardTab, string> = {
     whatsapp: contactCardCopy[locale].tabWhatsApp,
     email: contactCardCopy[locale].tabEmail,
     messenger: contactCardCopy[locale].tabMessenger,
+    kakao: kakaoTalkCopy.tab,
   };
+  const kakaoContact = kakaoEnabled ? (
+    <KakaoTalkContact
+      className={board ? undefined : styles.quickContactKakao}
+      inquiry={() => whatsappMessage(locale, privateTourInterest)}
+      onOpen={() => {
+        trackEvent("contact_option_clicked", {
+          channel: "kakao",
+          contact_variant: variant,
+          page_language: locale,
+        });
+      }}
+    />
+  ) : null;
   const chooseBoardTab = (tab: BoardTab) => {
     setBoardSwitched(true);
     setBoardTab(tab);
@@ -687,6 +708,7 @@ export function HomepageQuickContact({
               {messengerNote}
             </p>
           )}
+          {!board && kakaoContact}
         </article>
 
         <article
@@ -866,6 +888,20 @@ export function HomepageQuickContact({
             </div>
             {messengerLink}
             {messengerNote}
+          </article>
+        )}
+
+        {board && kakaoContact && (
+          <article
+            className={`${styles.quickContactCard} ${styles.quickContactKakaoPanel}`}
+            {...boardPanel("kakao")}
+          >
+            <div className={styles.quickContactIcon} aria-hidden="true">
+              <MessageCircle size={22} strokeWidth={1.8} />
+            </div>
+            <h3>{kakaoTalkCopy.action}</h3>
+            <p className={styles.quickContactKakaoLead}>{kakaoTalkCopy.lead}</p>
+            {kakaoContact}
           </article>
         )}
       </div>
