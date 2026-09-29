@@ -843,6 +843,18 @@ function trafficReferrerPayload(attribution: EntryAttribution) {
   return attribution.referrer_class && !referrerClassIsUnsupported() ? { referrerClass: attribution.referrer_class } : {};
 }
 
+function isLegacyReferrerClassRejection(payload: unknown): boolean {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) return false;
+  const error = (payload as Record<string, unknown>).error;
+  if (!error || typeof error !== "object" || Array.isArray(error)) return false;
+  const fields = (error as Record<string, unknown>).fieldErrors;
+  if (!fields || typeof fields !== "object" || Array.isArray(fields)) return false;
+  const fieldErrors = fields as Record<string, unknown>;
+  return (error as Record<string, unknown>).code === "validation_failed" &&
+    fieldErrors.referrerClass === "unexpected" &&
+    Object.keys(fieldErrors).length === 1;
+}
+
 function trafficCredentialContext({
   locale,
   entryPath,
@@ -990,11 +1002,19 @@ async function requestTrafficSessionCredential({
     return null;
   }
   if (!response.ok) {
+    let retryWithoutReferrerClass = false;
+    if (response.status === 422 && attribution.referrer_class && !referrerClassIsUnsupported()) {
+      try {
+        retryWithoutReferrerClass = isLegacyReferrerClassRejection(await response.json());
+      } catch {
+        // An unreadable error is not evidence that the old collector rejected this field.
+      }
+    }
     await discardResponseBody(response);
     if (!analyticsConsentRemains(consentState)) return null;
-    // An older collector rejects the unknown `referrerClass` key with 400.
+    // Older collectors return 422 only for the unexpected `referrerClass` field.
     // Retry once without it so the session is still measured, as unknown.
-    if (response.status === 400 && attribution.referrer_class && !referrerClassIsUnsupported()) {
+    if (retryWithoutReferrerClass) {
       markReferrerClassUnsupported();
       return requestTrafficSessionCredential({ sessionToken, locale, entryPath, attribution, consentState });
     }
@@ -1060,6 +1080,7 @@ async function trafficSessionCredential(parameters: {
 type TrafficEventAttemptOutcome =
   | "accepted"
   | "unauthorized"
+  | "legacy_referrer_rejected"
   | "retry"
   | "stopped";
 
@@ -1089,7 +1110,16 @@ async function sendTrafficEventBatch({
   }
   if (response.ok) return "accepted";
 
+  let legacyReferrerRejected = false;
+  if (response.status === 422 && typeof payload.referrerClass === "string") {
+    try {
+      legacyReferrerRejected = isLegacyReferrerClassRejection(await response.json());
+    } catch {
+      // An unreadable error is not evidence that the old collector rejected this field.
+    }
+  }
   const outcome =
+    legacyReferrerRejected ? "legacy_referrer_rejected" :
     response.status === 401 ? "unauthorized" : response.status === 429 || response.status >= 500 ? "retry" : "stopped";
   await discardResponseBody(response);
   if (!analyticsConsentRemains(consentState)) return "stopped";
@@ -1190,7 +1220,10 @@ async function flushTrafficQueue() {
             ...trafficReferrerPayload(attribution),
             events: [queued.event],
           } });
-          if (outcome !== "unauthorized" || attempt > 0 || !analyticsConsentRemains(consentState)) break;
+          if ((outcome !== "unauthorized" && outcome !== "legacy_referrer_rejected") || attempt > 0 || !analyticsConsentRemains(consentState)) break;
+          // A credential issued by the new collector includes the referrer class in its signature.
+          // An old collector needs a fresh credential; simply omitting the event key would fail 401.
+          if (outcome === "legacy_referrer_rejected") markReferrerClassUnsupported();
           clearRejectedTrafficSessionCredential(credential.credential);
           credential = await trafficSessionCredential(queued.credentialParameters);
           if (!credential) { outcome = "retry"; break; }

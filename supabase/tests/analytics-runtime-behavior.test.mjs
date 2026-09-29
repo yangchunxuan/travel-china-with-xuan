@@ -1709,19 +1709,81 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
       for (const request of otherRequests) assert.equal("referrerClass" in request, false);
     }
 
-    // A collector deployed before referrerClass rejects the key with 400: retry once without it.
+    // The pre-referrerClass collector rejects the extra field with validation_failed (422).
     installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://blog.naver.com/someone/1" });
     const { analytics: legacy } = loadCompiledModules(outputDirectory);
     const legacyRequests = [];
     globalThis.fetch = async (_url, init) => {
       const payload = JSON.parse(init.body); legacyRequests.push(payload);
-      if ("referrerClass" in payload) return new Response(JSON.stringify({ error: { code: "invalid_request" } }), { status: 400 });
+      if ("referrerClass" in payload) {
+        return new Response(JSON.stringify({
+          error: { code: "validation_failed", fieldErrors: { referrerClass: "unexpected" } },
+        }), { status: 422 });
+      }
       return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
     };
     legacy.trackEvent("contact_option_clicked", { channel: "email" });
     await waitForTurns(() => legacyRequests.length === 3);
     assert.deepEqual(legacyRequests.map((request) => [request.requestType, "referrerClass" in request]), [["start_session", true], ["start_session", false], ["events", false]]);
     await settleAsyncTurns();
+
+    // A mixed-version deployment may issue the new credential, then send the event to an old collector.
+    // The event needs a fresh credential without referrerClass; stripping only the event key is not enough.
+    installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://blog.naver.com/someone/1" });
+    const { analytics: mixedVersion } = loadCompiledModules(outputDirectory);
+    const mixedRequests = [];
+    let sessionCount = 0;
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); mixedRequests.push(payload);
+      if (payload.requestType === "start_session") {
+        sessionCount += 1;
+        return sessionReadyResponse(sessionCount === 1 ? "a" : "b");
+      }
+      if ("referrerClass" in payload) {
+        return new Response(JSON.stringify({
+          error: { code: "validation_failed", fieldErrors: { referrerClass: "unexpected" } },
+        }), { status: 422 });
+      }
+      return new Response("{}", { status: 202 });
+    };
+    mixedVersion.trackEvent("contact_option_clicked", { channel: "email" });
+    await waitForTurns(() => mixedRequests.length === 4);
+    assert.deepEqual(mixedRequests.map((request) => [request.requestType, "referrerClass" in request]), [["start_session", true], ["events", true], ["start_session", false], ["events", false]]);
+    assert.equal(mixedRequests[1].events[0].eventId, mixedRequests[3].events[0].eventId);
+    assert.equal(mixedRequests[1].events[0].clientSequence, mixedRequests[3].events[0].clientSequence);
+    assert.notEqual(mixedRequests[1].sessionCredential, mixedRequests[3].sessionCredential);
+    await settleAsyncTurns();
+
+    // A mixed validation error is not proof of an old collector, so do not replace the credential.
+    installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://blog.naver.com/someone/1" });
+    const { analytics: mixedFailure } = loadCompiledModules(outputDirectory);
+    const mixedFailureRequests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); mixedFailureRequests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response(JSON.stringify({
+        error: { code: "validation_failed", fieldErrors: { referrerClass: "unexpected", entryPath: "invalid" } },
+      }), { status: 422 });
+    };
+    mixedFailure.trackEvent("contact_option_clicked", { channel: "email" });
+    await waitForTurns(() => mixedFailureRequests.length === 2);
+    await settleAsyncTurns();
+    assert.deepEqual(mixedFailureRequests.map((request) => [request.requestType, "referrerClass" in request]), [["start_session", true], ["events", true]]);
+
+    // A different validation failure must not be disguised as an old-collector fallback.
+    const failedBrowser = installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://blog.naver.com/someone/1" });
+    const { analytics: unrelatedFailure } = loadCompiledModules(outputDirectory);
+    const failedRequests = [];
+    globalThis.fetch = async (_url, init) => {
+      failedRequests.push(JSON.parse(init.body));
+      return new Response(JSON.stringify({
+        error: { code: "validation_failed", fieldErrors: { entryPath: "invalid" } },
+      }), { status: 422 });
+    };
+    unrelatedFailure.trackEvent("contact_option_clicked", { channel: "email" });
+    await waitForTurns(() => failedRequests.length === 1);
+    await settleAsyncTurns();
+    assert.deepEqual(failedRequests.map((request) => [request.requestType, "referrerClass" in request]), [["start_session", true]]);
+    failedBrowser.emitStorage(preferences({ analytics: false, marketing: false }));
   });
 
   await context.test("the private-tour quote form start reuses email_form_started with product context", async () => {
