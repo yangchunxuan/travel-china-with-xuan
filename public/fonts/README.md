@@ -37,6 +37,14 @@ The current subsets were regenerated from these exact upstream artifacts:
 - `PretendardVariable.woff2` from the official Pretendard `v1.3.9` tag.
 - `MaruBuri-Regular.ttf` from NAVER's official `maruburi.zip` download.
 
+2026-09-29 (KakaoTalk contact copy added 톡, U+D1A1): the Pretendard subset was
+regenerated from the same `PretendardVariable.woff2` v1.3.9 artifact with the
+shared options. NAVER's `maruburi.zip` host was unreachable from the build
+environment, so the published MaruBuri subset was kept unchanged and only the
+missing U+D1A1 glyph was added, converted to TrueType quadratics from NAVER's
+MaruBuri Regular OTF (v2.000, as redistributed in `@kfonts/maruburi-otf`). The
+next full regeneration from `maruburi.zip` supersedes this one-glyph patch.
+
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
 `pyftsubset --flavor=woff2` for all three outputs (`tools/rebuild-locale-fonts.mjs`
 does both). The required Han and Hangul

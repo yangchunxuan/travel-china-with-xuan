@@ -1,7 +1,7 @@
 # Private contact analytics
 
-The admin dashboard offers WhatsApp, email, Messenger and all-channel contact
-reports for rolling 7- and 30-day windows. It reuses the existing consented
+The admin dashboard offers WhatsApp, email, Messenger, KakaoTalk and all-channel
+contact reports for rolling 7- and 30-day windows. It reuses the existing consented
 first-party records; this release does not collect new visitor data.
 
 ## Definitions
@@ -53,6 +53,26 @@ No raw events or identifiers are exported to the client for calculating charts.
 To roll back the Edge change, deploy the previous admin-traffic bundle calling
 v2. The new client remains compatible. Leave the additive v3 function in place
 unless removal is separately needed; never delete visitor records for rollback.
+
+## KakaoTalk channel (2026-09-29)
+
+Korean pages offer "카카오톡으로 문의". KakaoTalk has no public web link that
+opens a chat by phone number, so the button copies the prepared inquiry text and
+shows the owner's number with steps to add it; it is recorded as the v2 action
+code `kakao` (v1 keeps email/whatsapp/messenger). A click proves neither a
+friend request nor a sent message.
+
+Apply `202609290001_homeground_kakao_contact_channel.sql` (table check, v2 event
+validator and a fifth `kakao` slice in the v3 report). Release order:
+
+1. Deploy `v1-traffic-events` and `admin-traffic`. The new admin parser accepts
+   reports with or without the `kakao` slice; the old site never sends `kakao`.
+2. Apply the migration.
+3. Deploy the site promptly: the previously deployed admin page expects exactly
+   four channels, so its contact detail is unavailable between steps 2 and 3.
+
+If the site ships before the migration, Kakao clicks fail at the database
+validator (503, retried then dropped) and are not counted.
 
 ## Validation
 

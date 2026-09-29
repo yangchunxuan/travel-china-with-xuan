@@ -172,3 +172,9 @@
     transform: translateY(100%);
   }
 }
+
+/* KakaoTalk (Korean pages): same height as the other app buttons. */
+.kakao > button {
+  min-height: 52px;
+  font-size: 0.9375rem;
+}

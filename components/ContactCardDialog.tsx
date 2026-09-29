@@ -8,7 +8,8 @@ import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
 import { holdPageScroll, type ContactCardLayout, type ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
-import { privateTourQuoteApiUrl, tourWhatsAppHref } from "../lib/tourContact";
+import { privateTourQuoteApiUrl, tourContactMessageText, tourWhatsAppHref, whatsAppHrefText } from "../lib/tourContact";
+import { KakaoTalkContact } from "./KakaoTalkContact";
 import {
   buildPrivateTourMailtoHref,
   getPrivateTourInquiryContext,
@@ -299,8 +300,16 @@ export function ContactCardDialog({
 
   const aboutLabel = tour ? copy.tourLabel : context.guideTitle ? copy.guideLabel : "";
   const aboutName = tour ? tour.name : context.guideTitle;
-  const openedApp = (channel: "whatsapp" | "messenger") => () =>
+  const openedApp = (channel: "whatsapp" | "messenger" | "kakao") => () =>
     trackEvent("contact_option_clicked", { channel, contact_variant: contactVariant, page_language: locale });
+  // Korean pages: KakaoTalk copies the same prepared text the WhatsApp link carries.
+  const kakao = locale === "ko" ? (
+    <KakaoTalkContact
+      className={sheet ? sheetStyles.kakao : styles.kakao}
+      inquiry={() => whatsAppHrefText(whatsappHref) || tourContactMessageText(locale, tour, context.path)}
+      onOpen={openedApp("kakao")}
+    />
+  ) : null;
 
   const mail = (
     <section className={withSheet(styles.mail, sheetStyles.mail)} aria-labelledby={`${id}-mail`}>
@@ -440,6 +449,7 @@ export function ContactCardDialog({
                   {desk.messengerAction}
                 </a>
               ) : null}
+              {kakao}
               <span className={styles.visuallyHidden} id={`${id}-whatsapp-note`}>{desk.whatsappOpensExternally}</span>
               <span className={styles.visuallyHidden} id={`${id}-messenger-note`}>{desk.messengerOpensExternally}</span>
             </div>
@@ -463,6 +473,7 @@ export function ContactCardDialog({
             {whatsappHref && request.scanOnly ? null : mail}
           </div>
         )}
+        {!sheet && !request.scanOnly ? kakao : null}
       </div>
     </dialog>
   );

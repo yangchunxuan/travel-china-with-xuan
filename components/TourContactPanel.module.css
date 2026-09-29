@@ -39,6 +39,7 @@
 .directChoices { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 .emailButton { box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 12px; border: 1px solid #111; border-radius: 999px; background: #111; color: #fff; font: 550 13px/1.35 var(--sans,system-ui,sans-serif); text-align: center; text-decoration: none; }
 .emailButton:hover { background: #333; }
+.directChoices .kakaoChoice { grid-column: 1 / -1; }
 .directChoices .whatsappButton { margin-top: 0; padding: 10px 12px; font-size: 13px; text-align: center; }
 .emailAddress { display: block; margin-top: 9px; color: #555; font-size: 12px; line-height: 1.5; text-align: center; overflow-wrap: anywhere; user-select: text; }
 .formIntro { margin: 0 0 15px; color: #414141; font-size: 12px; font-weight: 550; line-height: 1.5; }

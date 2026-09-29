@@ -1669,4 +1669,60 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     config = window.dataLayer.find((command) => command[0] === "config");
     assert.equal("campaign_source" in config[2], false);
   });
+
+  await context.test("a Naver entry referrer is sent only as a fixed class, never as a URL", async () => {
+    const { analytics: classifier } = loadCompiledModules(outputDirectory);
+    for (const referrer of ["https://naver.com/", "https://search.naver.com/search.naver?query=private", "https://m.search.naver.com/x", "https://blog.naver.com/someone/123", "https://m.blog.naver.com/x", "https://cafe.naver.com/x", "https://m.cafe.naver.com/x", "https://in.naver.com/x", "https://post.naver.com/x", "https://SEARCH.NAVER.COM./x"]) {
+      assert.equal(classifier.trafficReferrerClass(referrer), "naver", referrer);
+    }
+    for (const referrer of ["", "https://evilnaver.com/", "https://naver.com.evil.io/", "https://evil.io/naver.com", "https://notnaver.com/", "https://naver.co.kr.evil.io/", "javascript:naver.com", "not a url", "https://www.google.com/?q=naver.com"]) {
+      assert.equal(classifier.trafficReferrerClass(referrer), null, referrer);
+    }
+
+    installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://search.naver.com/search.naver?where=nexearch&query=%EC%A4%91%EA%B5%AD" });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    analytics.trackEvent("contact_option_clicked", { channel: "kakao", page_language: "ko" });
+    await waitForTurns(() => requests.length === 2);
+    assert.deepEqual(JSON.parse(window.sessionStorage.getItem("homeground-entry-attribution")), { landing_path: "/ko/", referrer_class: "naver" });
+    assert.deepEqual(requests.map((request) => [request.requestType, request.referrerClass]), [["start_session", "naver"], ["events", "naver"]]);
+    assert.deepEqual(requests[0].attribution, { utmSource: null, utmMedium: null, utmCampaign: null, utmContent: null });
+    assert.equal(requests[1].events[0].type, "contact_channel_clicked");
+    assert.equal(requests[1].events[0].actionCode, "kakao");
+    assert.doesNotMatch(JSON.stringify(requests), /search\.naver|query|nexearch/u);
+
+    for (const referrer of ["https://evilnaver.com/", "https://naver.com.evil.io/", ""]) {
+      installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer });
+      const { analytics: other } = loadCompiledModules(outputDirectory);
+      const otherRequests = [];
+      globalThis.fetch = async (_url, init) => {
+        const payload = JSON.parse(init.body); otherRequests.push(payload);
+        return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+      };
+      other.trackEvent("contact_option_clicked", { channel: "email" });
+      await waitForTurns(() => otherRequests.length === 2);
+      // Without a class the payload keeps the original shape, so older collectors still accept it.
+      for (const request of otherRequests) assert.equal("referrerClass" in request, false);
+    }
+    await settleAsyncTurns();
+  });
+
+  await context.test("the private-tour quote form start reuses email_form_started with product context", async () => {
+    installBrowser({ href: "https://homegroundchina.com/ko/tours/shanghai-suzhou-5-day-private-tour/", consent: preferences({ analytics: true, marketing: false }) });
+    const { analytics } = loadCompiledModules(outputDirectory);
+    const requests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); requests.push(payload);
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    const context = { productSlug: "shanghai-suzhou-5-day-private-tour", packageId: "standard-guided", travelers: 2, surface: "product" };
+    analytics.trackEvent("quick_email_started", { page_language: "ko", submission_surface: "private_tour_quote" }, { firstPartyContext: context });
+    await waitForTurns(() => requests.length === 2);
+    assert.deepEqual(requests[1].events[0], { eventId: requests[1].events[0].eventId, type: "email_form_started", pagePath: "/ko/tours/shanghai-suzhou-5-day-private-tour/", actionCode: null, clientSequence: 1, ...context, errorCode: null });
+    await settleAsyncTurns();
+  });
 });

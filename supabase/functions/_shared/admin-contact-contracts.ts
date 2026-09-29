@@ -1,5 +1,7 @@
 // Shared by the privileged Edge response and the admin UI. No person-level data.
-export const contactChannels = ['all', 'whatsapp', 'email', 'messenger'] as const;
+export const contactChannels = ['all', 'whatsapp', 'email', 'messenger', 'kakao'] as const;
+// Reports from before migration 202609290001 have no KakaoTalk slice; both shapes stay readable.
+const requiredContactChannels = ['all', 'whatsapp', 'email', 'messenger'] as const;
 export const contactDimensions = ['pages', 'entryPages', 'sources', 'products', 'surfaces'] as const;
 export type ContactChannel = typeof contactChannels[number];
 export type ContactDimension = typeof contactDimensions[number];
@@ -63,7 +65,7 @@ export function parseContactReport(value: unknown, generatedAt: string): Contact
     if (period.days !== days || Date.parse(endsAt) !== Date.parse(generatedAt) ||
       Date.parse(endsAt) - Date.parse(startsAt) !== days * 86400_000) throw Error('Invalid contact window');
     const eligibleSessions = count(period.eligibleSessions);
-    const inputs = array(period.channels, 4);
+    const inputs = array(period.channels, contactChannels.length);
     const seen = new Set<string>();
     const channels = inputs.map((input): ContactSlice => {
       const row = record(input, ['channel', 'clicks', 'sessions', 'unknownSourceClicks', 'dimensions', 'daily']);
@@ -98,7 +100,7 @@ export function parseContactReport(value: unknown, generatedAt: string): Contact
       if (daily.reduce((n, row) => n + row.clicks, 0) !== totals.clicks) throw Error('Contact days do not reconcile');
       return { channel, ...totals, unknownSourceClicks, dimensions, daily };
     });
-    if (seen.size !== 4) throw Error('Missing contact channels');
+    if (requiredContactChannels.some(channel => !seen.has(channel))) throw Error('Missing contact channels');
     const all = channels.find(row => row.channel === 'all')!;
     const individual = channels.filter(row => row.channel !== 'all');
     if (individual.reduce((n, row) => n + row.clicks, 0) !== all.clicks ||
@@ -107,8 +109,10 @@ export function parseContactReport(value: unknown, generatedAt: string): Contact
       individual.reduce((n, row) => n + row.sessions, 0) < all.sessions) throw Error('Contact channels do not reconcile');
     return { days, startsAt, endsAt, eligibleSessions, channels };
   });
+  if (parsed[0].channels.length !== parsed[1].channels.length) throw Error('Contact periods do not reconcile');
   for (const small of parsed[0].channels) {
-    const large = parsed[1].channels.find(row => row.channel === small.channel)!;
+    const large = parsed[1].channels.find(row => row.channel === small.channel);
+    if (!large) throw Error('Contact periods do not reconcile');
     if (small.clicks > large.clicks || small.sessions > large.sessions) throw Error('Contact periods do not reconcile');
   }
   if (parsed[0].eligibleSessions > parsed[1].eligibleSessions) throw Error('Invalid contact denominators');

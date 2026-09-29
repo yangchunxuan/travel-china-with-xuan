@@ -15,6 +15,19 @@ export const homegroundBusiness = {
   licensedBusinessScope: "境内旅游业务、入境旅游业务",
   travelAgencyLicenceAuthority: "北京市文化和旅游局",
   serviceEmail: "hello@homegroundchina.com",
+  /** Korean visitors add this number in KakaoTalk; there is no public chat deep link by phone. */
+  kakaoTalkPhone: { display: "010-6658-3226", e164: "+821066583226" },
   registryUrl: "https://www.gsxt.gov.cn/index.html",
   travelAgencyRegistryUrl: "https://mr.mct.gov.cn/",
 } as const;
+
+export type KakaoTalkPhone = { display: string; e164: string };
+
+/** A Korean mobile number from the build-time override, or the published default. */
+export function homegroundKakaoTalkPhone(configured = process.env.NEXT_PUBLIC_HOMEGROUND_KAKAOTALK_PHONE?.trim() || ""): KakaoTalkPhone {
+  const compact = configured.replace(/[\s-]/g, "");
+  const national = /^\+821[016789]\d{7,8}$/.test(compact) ? `0${compact.slice(3)}` : /^01[016789]\d{7,8}$/.test(compact) ? compact : "";
+  if (!national) return homegroundBusiness.kakaoTalkPhone;
+  const split = national.length === 11 ? 7 : 6;
+  return { display: `${national.slice(0, 3)}-${national.slice(3, split)}-${national.slice(split)}`, e164: `+82${national.slice(1)}` };
+}

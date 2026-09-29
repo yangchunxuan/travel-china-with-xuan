@@ -78,7 +78,32 @@ The collector accepts only the fixed contract and event enum in
 session and rate-limit subjects, not raw browser tokens or raw IP addresses.
 It does not store User-Agent, referrer, query string, email, phone, note or
 free text. Campaign labels contribute only when a link signature validates;
-otherwise attribution becomes Unknown.
+otherwise attribution becomes Unknown, with one fixed fallback below.
+
+### Unsigned Naver referrer fallback (2026-09-29)
+
+At entry capture (same consent gate as UTM capture) the browser classifies the
+hostname of `document.referrer` into a fixed class. Only `naver.com` and its
+subdomains (exact hostname match, e.g. `search.naver.com`, `m.blog.naver.com`,
+`cafe.naver.com`; never `evilnaver.com` or `naver.com.evil.io`) produce
+`referrerClass: "naver"`. The referrer URL, path and query are never sent or
+stored. The field is optional in `start_session` and `events`; it is omitted
+when absent, and the server ignores any other value instead of rejecting the
+request.
+
+On the server a verified signed link always wins. Only when no signed labels
+are accepted does `referrerClass: "naver"` become the fixed first-touch labels
+`utm_source = naver`, `utm_medium = referral`, `utm_campaign = null`,
+`utm_content = referrer`. Signed links always carry a campaign, so
+`utm_campaign is null and utm_content = 'referrer'` identifies referrer-derived
+sessions (and the inquiry snapshots copied from them) without a schema change.
+The session credential binds this basis: its HMAC message appends
+`referrer:naver` only for such sessions, so signed and Unknown credentials keep
+their original bytes. The Admin source label reads "Naver（含来源页推断）".
+
+Release order: redeploy `v1-traffic-events` **before** the Pages build that
+sends `referrerClass`; an older collector rejects the unknown key for Naver
+visitors (other visitors are unaffected because the key is omitted).
 
 Traffic events and sessions have a 30-day TTL. After 30 days, the reversible
 session association on an inquiry snapshot is cleared. The controlled

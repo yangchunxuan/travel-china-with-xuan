@@ -6,12 +6,12 @@ import styles from "./AdminContactAnalytics.module.css";
 
 const channels: { id: ContactChannel; title: string }[] = [
   { id: 'whatsapp', title: 'WhatsApp' }, { id: 'email', title: '邮件' },
-  { id: 'messenger', title: 'Messenger' }, { id: 'all', title: '全部渠道' },
+  { id: 'messenger', title: 'Messenger' }, { id: 'kakao', title: 'KakaoTalk（复制号码）' }, { id: 'all', title: '全部渠道' },
 ];
 const dimensions: { id: ContactDimension; title: string; description: string }[] = [
   { id: 'pages', title: '点击页面', description: '客人点击联系按钮时所在的页面。' },
   { id: 'entryPages', title: '首次记录页面', description: '同意统计后，首次记录到的页面；可能不是最初打开的网站页面。' },
-  { id: 'sources', title: '访问来源', description: '只显示已记录的活动来源标签。未记录不等于直接访问，也不能据此排除搜索或广告。' },
+  { id: 'sources', title: '访问来源', description: '只显示已记录的活动来源标签；没有签名链接但从 Naver 页面进入的会话也记为 Naver。未记录不等于直接访问，也不能据此排除搜索或广告。' },
   { id: 'products', title: '关联产品', description: '点击时一并记录的产品。旧记录或通用按钮可能没有产品信息。' },
   { id: 'surfaces', title: '按钮位置', description: '点击时记录的功能区域。旧记录未采集的位置无法补回。' },
 ];
@@ -24,6 +24,7 @@ function label(key: string, dimension: ContactDimension) {
   if (key === '/zh/') return '中文首页';
   if (key === '/ko/') return '韩文首页';
   if (dimension === 'surfaces') return positionLabels[key] ?? key;
+  if (dimension === 'sources' && key === 'naver') return 'Naver（含来源页推断）';
   if (dimension === 'products') return key.replace(/-/g, ' ');
   return key;
 }
@@ -54,7 +55,7 @@ export function AdminContactAnalytics({ report, loading, error }: { report?: Con
     {error ? <p role="alert" className={styles.notice}>联系统计暂时不可读。{error}</p> : null}
     {!loading && !error && !report ? <p className={styles.notice}>当前后台尚未提供联系渠道明细。此处不显示为零。</p> : null}
     {period && selected ? <>
-      <div className={styles.channels} aria-label="联系渠道">{channels.map(item => <button type="button" key={item.id} aria-pressed={item.id === channel} onClick={() => setChannel(item.id)}>{item.title}<span>{num.format(period.channels.find(row => row.channel === item.id)!.clicks)}</span></button>)}</div>
+      <div className={styles.channels} aria-label="联系渠道">{channels.filter(item => period.channels.some(row => row.channel === item.id)).map(item => <button type="button" key={item.id} aria-pressed={item.id === channel} onClick={() => setChannel(item.id)}>{item.title}<span>{num.format(period.channels.find(row => row.channel === item.id)!.clicks)}</span></button>)}</div>
       <p className={styles.window}><span><time dateTime={period.startsAt}>{time(period.startsAt)}</time> — <time dateTime={period.endsAt}>{time(period.endsAt)}</time></span><span>北京时间 · 滚动 {days} 天</span></p>
       <dl className={styles.metrics} aria-live="polite">
         <div><dt>按钮点击</dt><dd>{num.format(selected.clicks)}<small>次</small><p>同一会话可点击多次</p></dd></div>
@@ -83,7 +84,7 @@ export function AdminContactAnalytics({ report, loading, error }: { report?: Con
         <p>会话点击率 = 点击过所选渠道的匿名会话 ÷ 同期首次记录的全部匿名会话。一个人可能产生多个会话；这个比例不是成交率。</p>
         <p>近 7 天和 30 天窗口按会话首次记录时间及点击接收时间共同筛选。原始访问记录保留 30 天；更早的数据无法从这里补回。</p>
         <p>联系明细提供精确汇总数，不提供姓名、电话、会话编号或个人浏览轨迹。下方网站行为概览继续对小样本分组隐藏；两处显示精度不同。</p>
-        <p>WhatsApp 消息是否发出、对方身份与成交情况暂未接入。正式表单咨询以数据库成功保存为准，请看保存记录汇总。</p>
+        <p>KakaoTalk 按钮只复制咨询内容并显示号码，点击不代表已添加好友或已发消息。WhatsApp 消息是否发出、对方身份与成交情况暂未接入。正式表单咨询以数据库成功保存为准，请看保存记录汇总。</p>
       </div></details>
     </> : null}
   </section>;
