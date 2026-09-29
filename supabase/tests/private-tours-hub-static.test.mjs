@@ -58,6 +58,35 @@ test("every published tour has a region in each localized catalog", () => {
     }
   }
 });
+
+test("every card carries a guide-language badge and one currency per language", async () => {
+  const component = await source("components/PrivateToursHubPage.tsx");
+  assert.match(component, /className=\{styles\.guideBadge\}[\s\S]*?product\.guideLanguage/);
+  const currency = { en: "USD", zh: "CNY", ko: "KRW" };
+  for (const locale of locales) {
+    const catalog = getPublishedPrivateTourCatalog(locale);
+    for (const item of catalog) {
+      assert.ok(item.guideLanguage.trim(), `${locale}:${item.slug} guide language`);
+      if (item.startingPrice) {
+        assert.equal(item.startingPrice.currency, currency[locale], `${locale}:${item.slug}`);
+        assert.match(item.startingPrice.formatted, { en: /^USD /, zh: /^¥/, ko: /^₩/ }[locale], `${locale}:${item.slug} notation`);
+      }
+      if (item.twoTravellerPrice) assert.equal(item.twoTravellerPrice.currency, currency[locale], `${locale}:${item.slug}`);
+    }
+  }
+  const ko = getPublishedPrivateTourCatalog("ko");
+  const badge = (slug) => ko.find((item) => item.slug === slug).guideLanguage;
+  assert.equal(badge("shanghai-suzhou-5-day-private-tour"), "영어 가이드");
+  assert.equal(badge("shanghai-suzhou-hangzhou-6-day-private-tour"), "영어 가이드");
+  assert.equal(badge("luoyang-dengfeng-kaifeng-6-day-private-tour"), "한국어 가이드 (날짜별 확인)");
+  assert.equal(badge("zhangjiajie-furong-fenghuang-7-day-private-tour"), "한국어 가이드");
+  assert.equal(badge("kunming-dali-lijiang-8-day-private-tour"), "가이드 언어 견적 시 확인");
+  assert.equal(
+    getPublishedPrivateTourCatalog("en").find((item) => item.slug === "luoyang-dengfeng-kaifeng-6-day-private-tour").guideLanguage,
+    "English-speaking guide",
+    "other languages keep the English-speaking guide the service note publishes",
+  );
+});
 const reviewedDerivativeRightsSha256 =
   "5cce1ea62787769eedeb208de50cd22a7521729e0074127d3537f269cba0afe1";
 

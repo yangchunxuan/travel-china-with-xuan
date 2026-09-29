@@ -18,6 +18,10 @@ export interface HomepagePrivateTourItem {
     readonly selection?: PrivateTourInquirySelection;
     readonly validityNote?: string;
   };
+  /** Two-traveller per-person price shown beside a larger-group starting price. */
+  readonly twoTravellerPrice?: {
+    readonly formatted: string;
+  };
   readonly image: {
     readonly src: string;
     readonly alt: string;
@@ -89,6 +93,9 @@ export function getHomepagePrivateTourItems(
             selection: product.startingPrice.selection,
             validityNote: product.startingPrice.validityNote,
           },
+          ...(product.twoTravellerPrice
+            ? { twoTravellerPrice: { formatted: product.twoTravellerPrice.formatted } }
+            : {}),
           image: product.image,
         }) satisfies HomepagePrivateTourItem,
     ),

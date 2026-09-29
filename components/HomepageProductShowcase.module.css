@@ -165,6 +165,26 @@
   font-weight: 400;
 }
 
+/* Two-traveller and larger-group prices; each pair wraps as a unit and the
+   gap, not a separator glyph that could dangle at a line end, divides them. */
+.cardPrice > .cardPriceTiers {
+  align-items: baseline;
+  column-gap: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.1rem;
+}
+
+.cardPriceTiers > span {
+  white-space: nowrap;
+}
+
+.cardPriceTiers small {
+  color: var(--homepage-product-muted);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
 .cardPrice > .cardValidity {
   font-size: 0.75rem;
 }

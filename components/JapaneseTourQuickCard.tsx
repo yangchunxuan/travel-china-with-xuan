@@ -1,15 +1,21 @@
 import Link from "next/link";
-import type { JapaneseCatalogTour } from "../lib/japaneseTourCatalog";
-import { getPrivateTourStartingPrice } from "../lib/privateTourStartingPrice";
+import { japaneseTourEntryHref, type JapaneseCatalogTour } from "../lib/japaneseTourCatalog";
+import { getJapaneseGuideLanguageLabel } from "../lib/japaneseGuideLanguage";
+import {
+  getPrivateTourStartingPrice,
+  getPrivateTourTwoTravellerPrice,
+} from "../lib/privateTourStartingPrice";
 import styles from "./PrivateToursHubPage.module.css";
 import { KeepWords } from "./text/KeepWords";
 
 /** One row of the Japanese tour list (tours hub and destination sections). */
 export function JapaneseTourQuickCard({ tour }: { tour: JapaneseCatalogTour }) {
   const starting = getPrivateTourStartingPrice(tour);
+  const twoTravellers = getPrivateTourTwoTravellerPrice(tour);
+  const href = japaneseTourEntryHref(tour);
   return (
     <li className={styles.quickItem}>
-      <Link className={styles.quickLink} href={tour.path}>
+      <Link className={styles.quickLink} href={href}>
         <figure className={styles.quickImage}>
           <img
             alt={tour.heroImage.alt}
@@ -29,13 +35,24 @@ export function JapaneseTourQuickCard({ tour }: { tour: JapaneseCatalogTour }) {
         <p className={styles.quickFacts}>
           {starting ? <>
             <span className={styles.priceLabel}>公開料金の目安</span>
-            <strong>{starting.formatted}</strong>
-            <span>{tour.tourFormat === "small-group" ? "2名1室・1名あたり" : `${starting.selection.travelers}名参加時・1名あたり`}</span>
-            <span className={styles.priceService}>{starting.serviceLabel}</span>
+            {twoTravellers ? <>
+              <span className={styles.priceTiers}>
+                <span><span>2名</span> <strong>{twoTravellers.formatted}</strong></span>
+                <span><span>{starting.selection.travelers}名</span> <strong>{starting.formatted}</strong></span>
+              </span>
+              <span>1名あたり</span>
+            </> : <>
+              <strong>{starting.formatted}</strong>
+              <span>{tour.tourFormat === "small-group" ? "2名1室・1名あたり" : `${starting.selection.travelers}名参加時・1名あたり`}</span>
+            </>}
+            {tour.packages.filter((tourPackage) => tourPackage.rows.length > 0).length > 1 || tour.slug === "zhangjiajie-4-day-private-tour"
+              ? <span className={styles.priceService}>{starting.serviceLabel}</span>
+              : null}
           </> : <>
             <strong>日程に合わせてお見積もり</strong>
             <span>人数・お部屋・プランを確認してご案内</span>
           </>}
+          <span className={styles.guideBadge} data-guide-language="">{getJapaneseGuideLanguageLabel(tour.slug)}</span>
         </p>
         <div className={styles.quickMeta}>
           <dl className={styles.quickDetails}>

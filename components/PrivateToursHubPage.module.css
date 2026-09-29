@@ -713,6 +713,40 @@
   color: var(--tour-muted);
 }
 
+/* Two-traveller and larger-group per-person prices side by side; each pair
+   stays together and wraps as a unit on narrow cards, so the gap (not a
+   separator glyph that could dangle at a line end) divides them. */
+.priceTiers {
+  align-items: baseline;
+  column-gap: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.1rem;
+}
+
+.priceTiers > span {
+  white-space: nowrap;
+}
+
+.priceTiers > span > span {
+  color: var(--tour-muted);
+  font-size: 0.8125rem;
+}
+
+/* Guide language, from the product's own service text, on every card. */
+.guideBadge {
+  background: var(--tour-warm);
+  border-radius: 999px;
+  color: var(--tour-ink);
+  font-size: 0.75rem;
+  font-weight: 500;
+  justify-self: start;
+  line-height: 1.35;
+  margin-block-start: 0.4rem;
+  max-width: 100%;
+  padding: 0.2rem 0.6rem;
+}
+
 .quickDetails > div {
   min-width: 0;
 }

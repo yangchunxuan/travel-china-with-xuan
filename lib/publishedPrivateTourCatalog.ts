@@ -5,7 +5,9 @@ import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
-import { getPrivateTourStartingPrice } from "./privateTourStartingPrice.ts";
+import { getPrivateTourEntrySelection, getPrivateTourStartingPrice, getPrivateTourTwoTravellerPrice } from "./privateTourStartingPrice.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getPrivateTourGuideLanguageLabel, hasKoreanGuideOnKoreanPages, privateTourGuideLanguageBySlug } from "./privateTourGuideLanguage.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./privateTourInquiryContext.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
@@ -59,6 +61,19 @@ export interface PublishedPrivateTourCatalogItem {
     readonly validityNote?: string;
     readonly selection?: PrivateTourInquirySelection;
   } | null;
+  /**
+   * Per-person price for two travellers in the starting service, shown beside
+   * a larger-group starting price so a couple sees the price that applies.
+   */
+  readonly twoTravellerPrice?: {
+    readonly amount: number;
+    readonly currency: "CNY" | "USD" | "KRW";
+    readonly formatted: string;
+  };
+  /** True when the tour publishes more than one priced service option. */
+  readonly hasServiceChoice: boolean;
+  /** Localized guide-language badge from `privateTourGuideLanguage`. */
+  readonly guideLanguage: string;
   /** Present only on fixed-departure small groups, whose price is one twin-share place. */
   readonly tourFormat?: "small-group";
   /** Published service policy: true only if a route includes shopping stops. */
@@ -374,11 +389,20 @@ export function selectPublishedPrivateTourPrice(
   );
   const row = service?.rows.find((candidate) => candidate.travelers === selection.travelers);
   if (!service || !row) throw new Error(`Missing published offer: ${product.slug}`);
+  const twoTravellers = selection.travelers === 2
+    ? undefined
+    : service.rows.find((candidate) => candidate.travelers === 2);
+  const { twoTravellerPrice: _previous, ...rest } = product;
   return {
-    ...product,
+    ...rest,
     startingPriceHref: buildPrivateTourDetailHref(product.href, product.slug, selection),
     startingPrice: { ...row, serviceLabel: service.label, selection },
+    ...(twoTravellers ? { twoTravellerPrice: priceSummary(twoTravellers) } : {}),
   };
+}
+
+function priceSummary(row: { amount: number; currency: "CNY" | "USD" | "KRW"; formatted: string }) {
+  return { amount: row.amount, currency: row.currency, formatted: row.formatted };
 }
 
 export function getPublishedPrivateTourCatalog(
@@ -388,6 +412,8 @@ export function getPublishedPrivateTourCatalog(
   const structuredItems = privateTourProducts.map((product) => {
     const localized = localizePrivateTourProduct(product, locale);
     const startingPrice = getPrivateTourStartingPrice(localized);
+    const entrySelection = getPrivateTourEntrySelection(localized);
+    const twoTravellerPrice = getPrivateTourTwoTravellerPrice(localized);
     const image = chooseDistinctCatalogImage(localized, usedImagePaths);
     usedImagePaths.add(image.src);
 
@@ -400,11 +426,13 @@ export function getPublishedPrivateTourCatalog(
       days: localized.days,
       nights: localized.nights,
       href: localized.path,
-      startingPriceHref: startingPrice
+      // Cards open the tour at its smallest published party, not at the
+      // cheaper large-group tier the starting price is quoted for.
+      startingPriceHref: entrySelection
         ? buildPrivateTourDetailHref(
             localized.path,
             localized.slug,
-            startingPrice.selection,
+            entrySelection,
           )
         : localized.path,
       paths: localized.paths,
@@ -420,6 +448,10 @@ export function getPublishedPrivateTourCatalog(
         highlights: localized.highlights.slice(0, 3),
       },
       startingPrice,
+      ...(twoTravellerPrice ? { twoTravellerPrice: priceSummary(twoTravellerPrice) } : {}),
+      hasServiceChoice:
+        localized.packages.filter((tourPackage) => tourPackage.rows.length > 0).length > 1,
+      guideLanguage: getPrivateTourGuideLanguageLabel(localized.slug, locale),
       ...(localized.tourFormat === "small-group" ? { tourFormat: "small-group" as const } : {}),
       shoppingStops: localized.servicePolicy.shoppingStops,
       dateModified: localized.dateModified,
@@ -482,6 +514,8 @@ export function getPublishedPrivateTourCatalog(
           ko: `${zhangjiajiePriceEnd}까지의 참고 요금이며, 다른 날짜는 새 견적이 필요합니다.`,
         }[locale],
       },
+      hasServiceChoice: false,
+      guideLanguage: getPrivateTourGuideLanguageLabel(zhangjiajieSlug, locale),
       shoppingStops: zhangjiajieProduct.service_policy.shopping_stops,
       dateModified: zhangjiajieCard.dateModified,
     } satisfies PublishedPrivateTourCatalogItem,
@@ -512,6 +546,24 @@ export function assertPublishedPrivateTourCatalogIntegrity(): true {
     throw new Error(
       "Published private-tour source and comparison profiles must contain the same IDs.",
     );
+  }
+
+  const guideLanguageSlugs = Object.keys(privateTourGuideLanguageBySlug);
+  if (
+    guideLanguageSlugs.length !== sourceSlugs.length ||
+    sourceSlugs.some((slug) => !guideLanguageSlugs.includes(slug))
+  ) {
+    throw new Error("Every published private tour needs exactly one guide-language entry.");
+  }
+  for (const product of privateTourProducts) {
+    // The Korean badge may only promise a Korean-speaking guide where the
+    // Korean package label itself publishes one.
+    const koreanLabel = product.packages.some((tourPackage) =>
+      tourPackage.label.ko.includes("한국어 가이드"),
+    );
+    if (koreanLabel !== hasKoreanGuideOnKoreanPages(product.slug)) {
+      throw new Error(`Korean guide badge and package label diverge: ${product.slug}`);
+    }
   }
 
   for (const locale of ["en", "zh", "ko"] as const) {

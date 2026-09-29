@@ -252,6 +252,13 @@ const numberLocales: Record<PrivateTourLocale, string> = {
   ko: "ko-KR",
 };
 
+/** Every product in a language shows one currency: USD (en), CNY (zh), KRW (ko). */
+export function getPrivateTourDisplayCurrency(
+  locale: PrivateTourLocale,
+): PrivateTourCurrency {
+  return locale === "en" ? "USD" : locale === "ko" ? "KRW" : "CNY";
+}
+
 export function formatPrivateTourPrice(
   cny: number,
   locale: PrivateTourLocale,
@@ -259,7 +266,11 @@ export function formatPrivateTourPrice(
   publishedPrice?: PrivateTourPriceTier["publishedPrice"],
 ): FormattedPrivateTourPrice {
   assertValidCny(cny);
-  if (publishedPrice) {
+  // A source-currency benchmark is shown exactly only where it is already the
+  // language's display currency. Elsewhere the CNY basis goes through the same
+  // conversion and rounding as every other product, so one page never mixes
+  // currencies (e.g. USD cards among KRW cards on the Korean hub).
+  if (publishedPrice && publishedPrice.currency === getPrivateTourDisplayCurrency(locale)) {
     if (!Number.isSafeInteger(publishedPrice.amountPerPerson) || publishedPrice.amountPerPerson <= 0) {
       throw new RangeError("A published source-currency price must be a positive safe integer.");
     }
@@ -270,7 +281,8 @@ export function formatPrivateTourPrice(
       formatted: new Intl.NumberFormat(numberLocales[locale], {
         style: "currency",
         currency: publishedPrice.currency,
-        currencyDisplay: "code",
+        // Same notation as every other price in this language (¥ on zh, USD code on en).
+        currencyDisplay: locale === "en" ? "code" : "symbol",
         maximumFractionDigits: 0,
       }).format(publishedPrice.amountPerPerson),
     };
@@ -281,8 +293,7 @@ export function formatPrivateTourPrice(
     }
     assertConvertedPriceInvariant(cny, usdPerPerson, "USD");
   }
-  const currency: PrivateTourCurrency =
-    locale === "en" ? "USD" : locale === "ko" ? "KRW" : "CNY";
+  const currency = getPrivateTourDisplayCurrency(locale);
   const amount =
     locale === "en"
       ? (usdPerPerson ?? convertCnyToUsd(cny))

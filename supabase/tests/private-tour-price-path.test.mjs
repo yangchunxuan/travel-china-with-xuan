@@ -8,16 +8,17 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "parse5";
 import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
-import { getPrivateTourStartingPrice } from "../../lib/privateTourStartingPrice.ts";
+import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
-import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
+import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice, getPrivateTourDisplayCurrency } from "../../lib/privateTourProducts.ts";
 import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.ts";
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
+import { privateTourCurrencyNote } from "../../lib/privateTourCurrencyNote.ts";
 import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
 const locales = ["en", "zh", "ko"];
@@ -40,6 +41,7 @@ async function loadComponent(path, overrides = {}, window) {
     "react/jsx-runtime": require("react/jsx-runtime"),
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/tourContactDraft": { isJiangnanTour },
+    "../lib/privateTourCurrencyNote": { privateTourCurrencyNote },
     "../lib/analytics": { trackEvent() {} },
     // KeepWords splits Japanese headings into phrases.
     "../../lib/japanesePhrases": { splitJapanesePhrases },
@@ -66,7 +68,7 @@ async function loadComponent(path, overrides = {}, window) {
   return module.exports;
 }
 
-test("all three-language catalog price links land on the exact lowest published service/group row", () => {
+test("all three-language catalog cards quote the lowest row but open the smallest published party of that service", () => {
   for (const locale of locales) {
     const catalog = getPublishedPrivateTourCatalog(locale);
     for (const product of privateTourProducts) {
@@ -81,8 +83,16 @@ test("all three-language catalog price links land on the exact lowest published 
         assert.equal(url.search, "");
         continue;
       }
-      const selection = inquiry.getPrivateTourDetailSelectionFromSearchParams(product.slug, url.searchParams);
-      assert.deepEqual(selection, starting.selection);
+      const linked = inquiry.getPrivateTourDetailSelectionFromSearchParams(product.slug, url.searchParams);
+      const selection = starting.selection;
+      // A couple must not land on the cheaper six-traveller tier: the card
+      // opens the same service at its smallest published party.
+      assert.deepEqual(linked, getPrivateTourEntrySelection(localized));
+      assert.equal(linked.packageId, selection.packageId);
+      assert.equal(linked.travelers, Math.min(...localized.packages.find((p) => p.id === selection.packageId).rows.map((r) => r.travelers)));
+      const two = getPrivateTourTwoTravellerPrice(localized);
+      assert.equal(item.twoTravellerPrice?.formatted, two?.formatted, `${locale}:${product.slug} two-traveller price`);
+      if (item.twoTravellerPrice) assert.notEqual(item.startingPrice.travelers, 2);
       assert.equal(url.pathname, localized.path);
       assert.equal(item.href, localized.path, "canonical catalog paths stay query-free");
       assert.equal(item.startingPrice.formatted, starting.formatted);
@@ -195,7 +205,7 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
   assert.equal(getHomepagePrivateTourItems("en").find((p) => p.id === cases[1][0]).startingPrice.formatted, "USD\u00a0600");
 });
 
-test("source-currency product prices remain exact in every locale", () => {
+test("source-currency prices stay exact in their own currency and convert elsewhere, so no page mixes currencies", () => {
   const publishedTiers = privateTourProducts.flatMap((product) =>
     product.packages.flatMap((tourPackage) =>
       tourPackage.prices
@@ -219,10 +229,36 @@ test("source-currency product prices remain exact in every locale", () => {
       const row = localized.packages
         .find((tourPackage) => tourPackage.id === expected.packageId)
         .rows.find((candidate) => candidate.travelers === expected.travelers);
-      assert.equal(row.currency, expected.publishedPrice.currency, `${expected.slug}:${locale}`);
-      assert.equal(row.amount, expected.publishedPrice.amountPerPerson, `${expected.slug}:${locale}`);
+      const tier = privateTourProducts.find((product) => product.slug === expected.slug).packages
+        .find((tourPackage) => tourPackage.id === expected.packageId).prices
+        .find((candidate) => candidate.travelers === expected.travelers);
+      assert.equal(row.currency, getPrivateTourDisplayCurrency(locale), `${expected.slug}:${locale}`);
+      assert.equal(
+        row.amount,
+        expected.publishedPrice.currency === row.currency
+          ? expected.publishedPrice.amountPerPerson
+          : formatPrivateTourPrice(tier.cnyPerPerson, locale, tier.usdPerPerson).amount,
+        `${expected.slug}:${locale}`,
+      );
     }
   }
+  for (const locale of locales) {
+    const currencies = new Set(getPublishedPrivateTourCatalog(locale)
+      .filter((item) => item.startingPrice)
+      .map((item) => item.startingPrice.currency));
+    assert.deepEqual([...currencies], [getPrivateTourDisplayCurrency(locale)], `${locale} catalog uses one currency`);
+  }
+  const jiuzhaigou = privateTourProducts.find((product) => product.slug === "chengdu-jiuzhaigou-huanglong-6-day-private-tour");
+  assert.deepEqual(
+    localizePrivateTourProduct(jiuzhaigou, "ko").packages[0].rows.map((row) => row.formatted),
+    ["₩1,950,000", "₩1,910,000"],
+    "Korean pages use the KRW conversion and rounding every other product uses",
+  );
+  assert.deepEqual(
+    localizePrivateTourProduct(jiuzhaigou, "en").packages[0].rows.map((row) => row.amount),
+    [1395, 1365],
+    "the approved USD benchmark stays exact on English pages",
+  );
 });
 
 test("explicit USD prices retain conversion and display validation", () => {
@@ -402,4 +438,36 @@ test("hydration and history restore validated selection without recording a user
   assert.deepEqual(normalize(render().selection), initialSelection);
   assert.equal(tracked.length, 1, "history synchronization is not a user selection event");
   cleanup(); assert.equal(listeners.size, 0);
+});
+
+test("the selected-price line names the tour type once and the currency note sits under the price", async () => {
+  const selection = await loadComponent("components/PrivateTourSelection.tsx");
+  const priceScope = await loadComponent("components/TourPriceScope.tsx");
+  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", {
+    "./PrivateTourSelection": selection, "./TourPriceScope": priceScope,
+  });
+  const basis = (...args) => normalize(interactive.privateTourPriceBasisLabels(...args));
+  assert.deepEqual(basis("프라이빗 투어", "프라이빗 투어"), ["프라이빗 투어"]);
+  assert.deepEqual(basis("프라이빗 투어", "프라이빗 투어 패키지"), ["프라이빗 투어 패키지"]);
+  assert.deepEqual(basis("private tour", "Private tour"), ["private tour"]);
+  assert.deepEqual(basis("private tour", "Private tour package"), ["private tour package"]);
+  assert.deepEqual(basis("私家团", "私家团标准版"), ["私家团标准版"]);
+  assert.deepEqual(basis("private tour", "English-guided"), ["private tour", "English-guided"]);
+  assert.deepEqual(basis("프라이빗 투어", "한국어 가이드 포함"), ["프라이빗 투어", "한국어 가이드 포함"]);
+  for (const slug of ["shanghai-suzhou-5-day-private-tour", "chengdu-jiuzhaigou-huanglong-6-day-private-tour", beijingSlug]) {
+    for (const locale of locales) {
+      const product = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === slug), locale);
+      const starting = getPrivateTourStartingPrice(product);
+      const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, { slug, initialSelection: starting.selection },
+        React.createElement(interactive.ShanghaiJiangnanPriceConsole, { product, inquiryHref: `/?tour=${slug}` })));
+      const dom = nodes(parse(html));
+      const result = dom.find((node) => attr(node, "class") === "priceResult");
+      const line = text(result.childNodes.find((node) => node.tagName === "small"));
+      const parts = line.split(" · ");
+      assert.equal(new Set(parts.map((part) => part.toLocaleLowerCase())).size, parts.length, `${locale}:${slug} ${line}`);
+      assert.ok(!/(프라이빗 투어|private tour|私家团).*\1/iu.test(line), `${locale}:${slug} ${line}`);
+      const note = dom.find((node) => attr(node, "class") === "currencyNote");
+      assert.equal(text(note), privateTourCurrencyNote[locale]);
+    }
+  }
 });
