@@ -8,6 +8,7 @@ import {
 } from "../lib/chinaTripCostI18n";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { getPublishedPrivateTourCatalog, selectPublishedPrivateTourPrice } from "../lib/publishedPrivateTourCatalog";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
@@ -123,6 +124,15 @@ export function ChinaTripCostGuidePage({
   const guide = getGuideEntry(chinaTripCostGuideId, locale);
   const structuredData = createStructuredData(locale, copy, guide);
   const hero = CHINA_TRIP_COST_IMAGES.hero;
+  const route = getPublishedPrivateTourCatalog(locale).find(
+    (product) => product.slug === "beijing-xian-guilin-shanghai-10-day-private-tour",
+  );
+  if (!route) throw new Error("Missing published 10-day China route");
+  const publishedRoute = selectPublishedPrivateTourPrice(route, locale, {
+    packageId: "standard-guided",
+    travelers: 2,
+  });
+  if (!publishedRoute.startingPrice) throw new Error("Missing published 10-day China price");
 
   return (
     <div className={styles.pageRoot} lang={copy.htmlLang}>
@@ -212,6 +222,24 @@ export function ChinaTripCostGuidePage({
 
           <div className={styles.prose}>
             <p className={styles.caveat}>{copy.shortAnswer.caveat}</p>
+          </div>
+
+          <div className={styles.ownPublishedRoute}>
+            <p className={styles.ownPublishedLabel}>{copy.ownPublishedRoute.label}</p>
+            <GuideCtaLink
+              className={styles.ownPublishedLink}
+              guideId={chinaTripCostGuideId}
+              href={publishedRoute.startingPriceHref}
+              locale={locale}
+              position="inline"
+            >
+              {publishedRoute.title}
+              <ArrowRight aria-hidden="true" size={17} />
+            </GuideCtaLink>
+            <p className={styles.ownPublishedPrice}>
+              <strong>{publishedRoute.startingPrice.formatted}</strong> {copy.ownPublishedRoute.basis}
+            </p>
+            <p className={styles.ownPublishedScope}>{copy.ownPublishedRoute.scope}</p>
           </div>
         </section>
 
