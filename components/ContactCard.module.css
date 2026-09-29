@@ -1010,3 +1010,18 @@
     border: 1px solid ButtonText;
   }
 }
+
+/* KakaoTalk (Korean pages): a quiet row under the columns. */
+.kakao {
+  margin: -12px 36px 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(10 10 10 / 10%);
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (max-width: 52rem) {
+  .kakao {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -51,3 +51,22 @@ test('v2 fallback remains readable and has no invented contact data',()=>{
  assert.equal(parseAdminTraffic(value).contacts,undefined);
  assert.equal(sanitizeAdminTrafficRpc([{payload:value}]).contacts,undefined);
 });
+test('KakaoTalk reports add a fifth slice while pre-migration four-channel reports stay readable',()=>{
+ const zeroKakao=report=>{for(const period of report.periods){const kakao=structuredClone(period.channels.find(c=>c.channel==='messenger'));kakao.channel='kakao';period.channels.push(kakao);}return report;};
+ const five=parseContactReport(zeroKakao(sample()),generatedAt);
+ assert.deepEqual(five.periods.map(p=>p.channels.find(c=>c.channel==='kakao').clicks),[0,0]);
+ const moved=sample();
+ for(const period of moved.periods){const email=period.channels.find(c=>c.channel==='email');const zero=structuredClone(period.channels.find(c=>c.channel==='messenger'));zero.channel='email';email.channel='kakao';period.channels.push(zero);}
+ const clicked=parseContactReport(moved,generatedAt);
+ assert.deepEqual(clicked.periods.map(p=>p.channels.find(c=>c.channel==='kakao').clicks),[1,1]);
+ const value=payload();value.contacts=zeroKakao(sample());
+ assert.deepEqual(parseAdminTraffic(value).contacts,five);
+ assert.deepEqual(sanitizeAdminTrafficRpc([{payload:value}]).contacts,five);
+ assert.equal(parseContactReport(sample(),generatedAt).periods[0].channels.length,4);
+ const missingWhatsApp=sample();for(const period of missingWhatsApp.periods)period.channels.find(c=>c.channel==='whatsapp').channel='kakao';
+ assert.throws(()=>parseContactReport(missingWhatsApp,generatedAt));
+ const oneSided=sample();const kakao=structuredClone(oneSided.periods[0].channels.find(c=>c.channel==='messenger'));kakao.channel='kakao';oneSided.periods[0].channels.push(kakao);
+ assert.throws(()=>parseContactReport(oneSided,generatedAt));
+ const unknownChannel=zeroKakao(sample());unknownChannel.periods[0].channels.at(-1).channel='line';
+ assert.throws(()=>parseContactReport(unknownChannel,generatedAt));
+});

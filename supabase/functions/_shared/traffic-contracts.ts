@@ -146,10 +146,16 @@ export function isTrafficProductSelection(
     );
 }
 
-export const trafficContactActionCodes = [
+// The v1 database RPC still accepts only these three; KakaoTalk is v2-only
+// (migration 202609290001 extends the v2 validator and table check).
+export const trafficContactActionCodesV1 = [
   "email",
   "whatsapp",
   "messenger",
+] as const;
+export const trafficContactActionCodes = [
+  ...trafficContactActionCodesV1,
+  "kakao",
 ] as const;
 
 const trafficLocales = ["en", "zh", "ko"] as const;
@@ -527,7 +533,7 @@ export function validateAndNormalizeTrafficEventBatch(
       let actionCode: TrafficContactActionCode | null = null;
       if (candidate.type === "contact_channel_clicked" ||
         (isV2 && candidate.type === "contact_channel_selected")) {
-        if (!isOneOf(candidate.actionCode, trafficContactActionCodes)) {
+        if (!isOneOf(candidate.actionCode, isV2 ? trafficContactActionCodes : trafficContactActionCodesV1)) {
           fieldErrors[`${prefix}.actionCode`] = "invalid";
         } else {
           actionCode = candidate.actionCode;

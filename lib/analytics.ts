@@ -108,7 +108,7 @@ type FirstPartyEventType =
   | "enquiry_submit_attempted"
   | "enquiry_submit_failed"
   | "enquiry_submit_uncertain";
-type ContactActionCode = "email" | "whatsapp" | "messenger";
+type ContactActionCode = "email" | "whatsapp" | "messenger" | "kakao";
 
 type Gtag = (...args: unknown[]) => void;
 type MetaPixel = ((...args: unknown[]) => void) & {
@@ -781,7 +781,8 @@ function firstPartyEvent(
     if (
       channel === "email" ||
       channel === "whatsapp" ||
-      channel === "messenger"
+      channel === "messenger" ||
+      channel === "kakao"
     ) {
       return {
         type: name === "contact_channel_selected" ? name : "contact_channel_clicked",
