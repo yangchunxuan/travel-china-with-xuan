@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   collectLocaleFontSourceFiles,
+  readChineseFontCorpus,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
 import { localeFontSubsetOptions } from "./locale-font-subset-options.mjs";
@@ -32,6 +33,7 @@ for (const name of requiredArguments) {
 
 const sourceFiles = collectLocaleFontSourceFiles(projectRoot);
 const sourceText = readCollectedFiles(sourceFiles);
+const chineseSourceText = readChineseFontCorpus(sourceFiles);
 
 const commonCharacters = Array.from(
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 " +
@@ -42,20 +44,20 @@ const commonCharacters = Array.from(
 // 昨 also appears in DayPicker's bundled Chinese relative-date labels.
 const retainedPublishedChineseCharacters = "卷守履径遵昨";
 
-function characterSet(pattern) {
-  return [...new Set(`${commonCharacters}${sourceText.match(pattern)?.join("") ?? ""}`)]
+function characterSet(text, pattern) {
+  return [...new Set(`${commonCharacters}${text.match(pattern)?.join("") ?? ""}`)]
     .sort((left, right) => left.codePointAt(0) - right.codePointAt(0))
     .join("");
 }
 
 const chineseText = [
   ...new Set(
-    `${retainedPublishedChineseCharacters}${characterSet(/[\p{Script=Han}]/gu)}`,
+    `${retainedPublishedChineseCharacters}${characterSet(chineseSourceText, /[\p{Script=Han}]/gu)}`,
   ),
 ]
   .sort((left, right) => left.codePointAt(0) - right.codePointAt(0))
   .join("");
-const koreanText = characterSet(/[\p{Script=Hangul}]/gu);
+const koreanText = characterSet(sourceText, /[\p{Script=Hangul}]/gu);
 const python = argumentsByName.python;
 const pythonPath = argumentsByName.fonttools;
 const fixedNoto = resolve(tmpdir(), "homeground-noto-serif-sc-500.ttf");

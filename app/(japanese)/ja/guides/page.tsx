@@ -7,7 +7,7 @@ import {
 } from "../../../../lib/japaneseSite";
 
 const title = "中国旅行の実用ガイド | Homeground China";
-const description = "中国旅行の移動や行程を考えるための日本語ガイド。上海から杭州への鉄道移動では、駅とホテルの間も含めて比べます。";
+const description = "中国旅行の移動と費用を考えるための日本語ガイド。上海から杭州への鉄道移動と、中国旅行の公開料金・見積もりの違いを比べます。";
 
 export const metadata: Metadata = {
   title: { absolute: title },

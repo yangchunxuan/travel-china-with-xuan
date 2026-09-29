@@ -6,6 +6,7 @@ import localeStyles from "./LocaleRoot.module.css";
 import { KeepWords } from "./text/KeepWords";
 import { jaPilot } from "../lib/jaPilot";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
+import { chinaTripCostJapaneseCopy } from "../lib/chinaTripCostJapaneseCopy";
 import {
   japaneseGeneralContactHrefs,
   japaneseLanguagePaths,
@@ -16,6 +17,8 @@ import jaStyles from "./JapaneseGuidesHubPage.module.css";
 
 const guide = jaPilotCopy.guide;
 const image = "/images/guides/shanghai-hangzhou-transport-route/hero-1600.webp";
+const costGuide = chinaTripCostJapaneseCopy;
+const costGuideImage = "/images/guides/china-trip-cost/beijing-cbd-city-mobility-1200.jpg";
 const contact = japaneseGeneralContactHrefs(japaneseSite.guides);
 const url = `https://homegroundchina.com${japaneseSite.guides}`;
 
@@ -28,12 +31,17 @@ const schema = {
   inLanguage: "ja",
   mainEntity: {
     "@type": "ItemList",
-    numberOfItems: 1,
+    numberOfItems: 2,
     itemListElement: [{
       "@type": "ListItem",
       position: 1,
       name: guide.title,
       url: `https://homegroundchina.com${jaPilot.guide}`,
+    }, {
+      "@type": "ListItem",
+      position: 2,
+      name: costGuide.metadata.headline,
+      url: `https://homegroundchina.com${costGuide.pagePath}`,
     }],
   },
 };
@@ -54,7 +62,7 @@ export function JapaneseGuidesHubPage() {
           </div>
           <div className={styles.heroGrid}>
             <h1><KeepWords locale="ja" text="中国旅行の実用ガイド" /></h1>
-            <p>駅の選び方や移動の組み立て方を、旅行者の目線で確認できます。日本語のガイドは現在1本公開しています。</p>
+            <p>駅の選び方や移動の組み立て方、旅行費用の見方を旅行者の目線で確認できます。日本語のガイドは現在2本公開しています。</p>
           </div>
         </header>
 
@@ -62,11 +70,11 @@ export function JapaneseGuidesHubPage() {
           <div className={styles.catalogIntro}>
             <div>
               <p className={styles.eyebrow}>日本語の記事</p>
-              <h2 id="guides-catalog-title"><KeepWords locale="ja" text="移動を決める前に、駅の先まで。" /></h2>
+              <h2 id="guides-catalog-title"><KeepWords locale="ja" text="移動と費用、決める前に。" /></h2>
             </div>
             <div className={styles.catalogSummary}>
-              <p>上海から杭州へ向かうとき、列車の所要時間だけでなく、ホテルから駅、到着駅から目的地までの移動も比べます。</p>
-              <p className={styles.guideCount}>公開中：1本</p>
+              <p>上海から杭州への移動と、中国旅行の公開料金を比較。旅程を決める前に確認したい条件をまとめました。</p>
+              <p className={styles.guideCount}>公開中：2本</p>
             </div>
           </div>
           <ol className={styles.guideGrid}>
@@ -85,8 +93,23 @@ export function JapaneseGuidesHubPage() {
                 </Link>
               </article>
             </li>
+            <li className={`${styles.guideSlot} ${styles.guideSlotRow}`}>
+              <article>
+                <Link className={styles.guideLink} href={costGuide.pagePath}>
+                  <figure className={styles.guideImage}>
+                    <Image src={costGuideImage} alt={costGuide.hero.imageAlt} width={1200} height={750} sizes="(max-width: 53rem) 100vw, 22vw" />
+                  </figure>
+                  <div className={styles.guideBody}>
+                    <p className={styles.guideMeta}>中国全土 · 費用と見積もり</p>
+                    <h3><KeepWords locale="ja" text={costGuide.metadata.headline} /></h3>
+                    <p className={styles.guideDescription}>{costGuide.metadata.description}</p>
+                    <span className={styles.readGuide}>ガイドを見る <span aria-hidden="true">→</span></span>
+                  </div>
+                </Link>
+              </article>
+            </li>
           </ol>
-          <p className={jaStyles.photoCredit}>写真：<a href="https://commons.wikimedia.org/wiki/File:Hangzhou_East_railway_station_interior.jpg">Staeiou / Wikimedia Commons</a>、<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>。トリミング・WebP変換済み。</p>
+          <p className={jaStyles.photoCredit}>上海・杭州ガイドの写真：<a href="https://commons.wikimedia.org/wiki/File:Hangzhou_East_railway_station_interior.jpg">Staeiou / Wikimedia Commons</a>、<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>。トリミング・WebP変換済み。</p>
           <p className={jaStyles.otherLanguages}>ほかの実用ガイドは、<Link href="/guides/" hrefLang="en" lang="en">English guides</Link> でご覧いただけます。</p>
         </section>
 

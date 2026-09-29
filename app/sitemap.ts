@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getIndexableManifestEntries } from "../lib/content-system/manifest";
 import type { ContentManifestEntry } from "../lib/content-system/types";
-import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
 import {
   getGuidesHubIndexablePaginationPages,
   getGuidesHubPageLastModified,
@@ -87,7 +87,11 @@ export function sitemapLastModified(entry: ContentManifestEntry) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const guideAlternates = jaPilotGuideAlternates();
   const tourAlternates = jaPilotTourAlternates();
-  const guidePaths = new Set<string>(Object.values(guideAlternates));
+  const japaneseGuideAlternatesByPath = new Map(
+    [guideAlternates, getGuideLanguagePaths("how-much-does-a-china-trip-cost")].flatMap((alternates) =>
+      Object.values(alternates).map((path) => [path, alternates] as const),
+    ),
+  );
   const tourPaths = new Set<string>(Object.values(tourAlternates));
   const hubAlternates = getPrivateTourHubLanguagePaths();
   const hubPaths = new Set<string>(Object.values(hubAlternates));
@@ -125,8 +129,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
-    const alternates = guidePaths.has(entry.canonicalPath)
-      ? absoluteJaPilotAlternates(guideAlternates)
+    const alternates = japaneseGuideAlternatesByPath.has(entry.canonicalPath)
+      ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
       : structuredTour
         ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
         : tourPaths.has(entry.canonicalPath)
@@ -179,6 +183,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.65,
       alternates: { languages: absoluteJaPilotAlternates(guideAlternates) },
+    },
+    {
+      url: `${base}/ja/guides/how-much-does-a-china-trip-cost/`,
+      lastModified: "2026-09-29",
+      changeFrequency: "monthly",
+      priority: 0.65,
+      alternates: { languages: absoluteJaPilotAlternates(getGuideLanguagePaths("how-much-does-a-china-trip-cost")) },
     },
     {
       url: `${base}${jaPilot.tour}`,
