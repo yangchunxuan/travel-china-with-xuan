@@ -120,7 +120,11 @@
 }
 
 .breadcrumb a {
+  /* Short crumbs such as "Home" get a 24px+ wide hit area; the negative
+     margin keeps the trail exactly where it was. */
+  margin-inline: -0.4375rem;
   min-height: 2.75rem;
+  padding-inline: 0.4375rem;
   place-content: center;
   text-underline-offset: 0.25em;
 }
@@ -391,6 +395,7 @@
   font-weight: 650;
   gap: 0.4rem;
   margin-block-start: 0.2rem;
+  min-block-size: 1.5rem;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
   width: fit-content;
@@ -661,17 +666,23 @@
   align-items: flex-start;
   display: flex;
   min-height: clamp(18rem, 44vh, 23rem);
-  opacity: 0.58;
   padding-block: clamp(2rem, 5vh, 3.5rem);
-  transition: opacity 360ms ease;
 }
 
 .routeList li:first-child {
   padding-block-start: 0;
 }
 
-.routeList li[aria-current="step"] {
-  opacity: 1;
+/* Days that are not the current step step back to the muted grey instead of
+   fading the whole row, so every day's text stays at WCAG AA contrast. */
+.routeList li :is(.routeDayNumber, h3) {
+  transition: color 360ms ease;
+}
+
+@media (min-width: 760.02px) {
+  .routeList li:not([aria-current="step"]) :is(.routeDayNumber, h3) {
+    color: var(--im-muted);
+  }
 }
 
 .routeDay {
@@ -845,6 +856,7 @@
 .photoCreditBody a {
   color: var(--im-ink);
   overflow-wrap: anywhere;
+  padding-block: 0.3125rem;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.16em;
 }
@@ -1299,6 +1311,7 @@
   .otherGroupCopy a svg,
   .routeMobileStage > span,
   .routeList li,
+  .routeList li :is(.routeDayNumber, h3),
   :global(html[data-tour-motion="ready"]) .page [data-tour-reveal] {
     animation: none;
     scroll-behavior: auto;

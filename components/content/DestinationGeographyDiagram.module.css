@@ -214,6 +214,11 @@
     scrollbar-width: thin;
   }
 
+  /* Keyboard focus for the sideways-scrolling key, drawn inside its edge. */
+  .key:focus-visible {
+    outline-offset: -3px;
+  }
+
   .key li {
     background: #fff;
     border: 1px solid #d5d9e2;

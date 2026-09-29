@@ -217,17 +217,15 @@
   }
 }
 
-/* Cards rise as they scroll into view; they start half-visible and finish
-   within 120px, so nothing ever rests faded. Browsers without scroll-driven
-   animations show the cards statically. */
+/* Cards rise as they scroll into view and finish within 120px; they are
+   never faded, so their text keeps full contrast (WCAG AA). Browsers without
+   scroll-driven animations show the cards statically. */
 @keyframes productCardRise {
   from {
-    opacity: 0.55;
     transform: translateY(16px);
   }
 
   to {
-    opacity: 1;
     transform: none;
   }
 }
@@ -607,11 +605,17 @@
     align-content: center;
     display: grid;
     min-block-size: 46vh;
-    transition: opacity 500ms ease;
   }
 
-  .productGrid[data-index-live] li:not([data-active]) {
-    opacity: 0.25;
+  /* Routes that are not lit step back to the muted grey (5.7:1 on white)
+     instead of fading the whole row: every row stays readable and linkable
+     (WCAG AA 1.4.3) while the lit route keeps its ink title and rust index. */
+  .productGrid li :is(.rowIndex, .cardTitle, .cardPrice > strong, .cardAction) {
+    transition: color 500ms ease;
+  }
+
+  .productGrid[data-index-live] li:not([data-active]) :is(.rowIndex, .cardTitle, .cardPrice > strong, .cardAction) {
+    color: var(--homepage-product-muted);
   }
 
   .productCard {
@@ -698,7 +702,7 @@
   .image,
   .cardAction svg,
   .actionRoll > span,
-  .productGrid li,
+  .productGrid li :is(.rowIndex, .cardTitle, .cardPrice > strong, .cardAction),
   .previewFrame img,
   .previewFrame img[data-active],
   .filmstrip > span,

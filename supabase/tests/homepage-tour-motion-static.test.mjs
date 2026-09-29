@@ -62,7 +62,10 @@ test("wide screens scroll through the tours beside one still photo, as on x.ai's
   assert.doesNotMatch(wide, /aspect-ratio: (4 \/ 5|1;)/);
   assert.match(showcase, /<span className=\{styles\.filmstrip\}>\s*\{products\.map\(\(product, index\) => \(/);
   assert.match(wide, /\.productGrid \{\s*gap: 0;\s*grid-template-columns: minmax\(0, 1fr\);/);
-  assert.match(wide, /\.productGrid\[data-index-live\] li:not\(\[data-active\]\) \{\s*opacity: 0\.25;/);
+  // Unlit rows step back to the muted grey rather than fading, so their
+  // text keeps WCAG AA contrast.
+  assert.match(wide, /\.productGrid\[data-index-live\] li:not\(\[data-active\]\) :is\([^)]*\.cardTitle[^)]*\) \{\s*color: var\(--homepage-product-muted\);/);
+  assert.doesNotMatch(wide, /li:not\(\[data-active\]\) \{\s*opacity:/);
   assert.match(wide, /\.preview \{[^}]*inset-block-start: max\(5\.5rem, calc\(50vh - 15\.5rem\)\);/);
   // No pointer-following decoration. The heading stays plain: the word
   // reveal pulled homepage CSS into other pages' shared stylesheets.
