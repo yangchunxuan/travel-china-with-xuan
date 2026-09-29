@@ -1,5 +1,5 @@
 // @ts-ignore Shared strict aggregate contract for browser and Edge.
-import { parseContactReport, type ContactReport } from "../supabase/functions/_shared/admin-contact-contracts.ts";
+import { kakaoContactReportClientInfo, parseContactReport, type ContactReport } from "../supabase/functions/_shared/admin-contact-contracts.ts";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 // @ts-ignore Explicit extension also supports the Node contract-test runner.
 import { getPrivateTourInquirySelection, isPrivateTourInquirySlug } from "./privateTourInquiryContext.ts";
@@ -1850,6 +1850,7 @@ async function fetchAdminJson<T>(
   accessToken: string,
   publishableKey: string,
   parser: (value: unknown) => T,
+  clientInfo?: string,
 ): Promise<T> {
   const controller = new AbortController();
   const timeoutId = window.setTimeout(() => controller.abort(), 15_000);
@@ -1860,6 +1861,7 @@ async function fetchAdminJson<T>(
         Accept: "application/json",
         Authorization: `Bearer ${accessToken}`,
         apikey: publishableKey,
+        ...(clientInfo ? { "X-Client-Info": clientInfo } : {}),
       },
       cache: "no-store",
       credentials: "omit",
@@ -1975,5 +1977,6 @@ export function fetchAdminTraffic(
     accessToken,
     config.publishableKey,
     parseAdminTraffic,
+    kakaoContactReportClientInfo,
   );
 }

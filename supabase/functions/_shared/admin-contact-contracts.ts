@@ -1,4 +1,6 @@
 // Shared by the privileged Edge response and the admin UI. No person-level data.
+// Exact opt-in on the already allowed X-Client-Info header; old clients keep v3 RPC data.
+export const kakaoContactReportClientInfo = 'homeground-private-admin/kakao-contacts-v1' as const;
 export const contactChannels = ['all', 'whatsapp', 'email', 'messenger', 'kakao'] as const;
 // Reports from before migration 202609290001 have no KakaoTalk slice; both shapes stay readable.
 const requiredContactChannels = ['all', 'whatsapp', 'email', 'messenger'] as const;

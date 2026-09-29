@@ -2,9 +2,11 @@
 -- The button copies a prepared inquiry and shows the owner's KakaoTalk number;
 -- a click is stored as action_code 'kakao' and never proves a message was sent.
 -- v1 events keep the original three channels. Historical migrations stay
--- unchanged; this forward migration replaces the v2 event validator, the
--- event action check and the fixed v3 contact report (which gains a fifth
--- 'kakao' slice; the admin parser accepts reports with or without it).
+-- unchanged; this forward migration replaces the v2 event validator and the
+-- event action check, and adds an opt-in v4 RPC with a fifth 'kakao' slice.
+-- The original v3 RPC remains unchanged for old Edge/UI clients, including
+-- its exact legacy all-channel deduplication and dimension totals. The v4 RPC
+-- keeps the existing response contract; the new parser accepts four or five slices.
 
 begin;
 
@@ -74,7 +76,7 @@ $$;
 revoke all on function homeground_private.is_valid_traffic_event_v2(jsonb)
   from public, anon, authenticated, service_role;
 
-create or replace function public.get_homeground_admin_traffic_v3()
+create or replace function public.get_homeground_admin_traffic_v4()
 returns table(payload jsonb)
 language plpgsql
 security definer
@@ -153,9 +155,9 @@ begin
   return query select base || jsonb_build_object('contractVersion', 'homeground-admin-traffic.v3', 'contacts', report);
 end;
 $$;
-revoke all on function public.get_homeground_admin_traffic_v3() from public, anon, authenticated;
-grant execute on function public.get_homeground_admin_traffic_v3() to service_role;
-comment on function public.get_homeground_admin_traffic_v3() is
-  'Fixed read-only 7/30-day contact aggregates; owner MFA allowlist via admin-traffic. No identities or message-send claims.';
+revoke all on function public.get_homeground_admin_traffic_v4() from public, anon, authenticated;
+grant execute on function public.get_homeground_admin_traffic_v4() to service_role;
+comment on function public.get_homeground_admin_traffic_v4() is
+  'Opt-in fixed read-only 7/30-day contact aggregates including KakaoTalk; owner MFA allowlist via admin-traffic. No identities or message-send claims.';
 
 commit;

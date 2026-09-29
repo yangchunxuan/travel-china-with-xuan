@@ -9,6 +9,10 @@ import {
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/admin-traffic-contracts.ts";
 import {
+  kakaoContactReportClientInfo,
+  // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
+} from "../_shared/admin-contact-contracts.ts";
+import {
   recordAdminAccess,
   type AdminAuditResult,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
@@ -69,8 +73,12 @@ async function handleRequest(request: Request): Promise<Response> {
 
   let rpcResult;
   try {
+    // Do not strip Kakao from an aggregate: distinct sessions and top-20 rows
+    // cannot be reconstructed. The original RPC retains exact legacy totals.
     rpcResult = await callSupabaseRpc<unknown>(
-      "get_homeground_admin_traffic_v3",
+      request.headers.get("x-client-info") === kakaoContactReportClientInfo
+        ? "get_homeground_admin_traffic_v4"
+        : "get_homeground_admin_traffic_v3",
       {},
     );
   } catch {

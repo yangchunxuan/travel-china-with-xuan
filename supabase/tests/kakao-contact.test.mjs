@@ -91,6 +91,8 @@ test("the forward migration accepts KakaoTalk for v2 events and reports it as a 
   assert.match(sql, /create or replace function homeground_private\.is_valid_traffic_event_v2\(candidate jsonb\)[\s\S]+not in \('email', 'whatsapp', 'messenger', 'kakao'\)/u);
   assert.match(sql, /and e\.action_code in \('whatsapp', 'email', 'messenger', 'kakao'\)/u);
   assert.match(sql, /\(values \('all'\), \('whatsapp'\), \('email'\), \('messenger'\), \('kakao'\)\) c\(channel\)/u);
-  assert.match(sql, /revoke all on function public\.get_homeground_admin_traffic_v3\(\) from public, anon, authenticated;/u);
+  assert.match(sql, /create or replace function public\.get_homeground_admin_traffic_v4\(\)/u);
+  assert.match(sql, /revoke all on function public\.get_homeground_admin_traffic_v4\(\) from public, anon, authenticated;/u);
+  assert.doesNotMatch(sql, /(?:create or replace|drop|alter) function public\.get_homeground_admin_traffic_v3\(/u);
   assert.doesNotMatch(sql, /to (?:anon|authenticated);/u);
 });
