@@ -74,10 +74,13 @@ test("contact surfaces offer KakaoTalk on Korean pages only, tracked as its own 
 
 test("the product quote form records one form start per opening with product context", async () => {
   const panel = await source("components/TourContactPanel.tsx");
-  assert.match(panel, /formStartedRef\.current = false;\s*triggerRef\.current/u);
+  assert.match(panel, /formStartedRef\.current = false;\s*setOpenCount\(count => count \+ 1\);\s*triggerRef\.current/u);
   assert.match(panel, /trackEvent\("quick_email_started", \{ page_language: locale, submission_surface: "private_tour_quote" \}, \{ firstPartyContext: \{ productSlug: context\.slug, packageId: context\.selection\?\.packageId, travelers: context\.selection\?\.travelers, surface: "product" \} \}\)/u);
   assert.match(panel, /onSubmit=\{submit\} onFocus=\{trackFormStart\} onChange=\{trackFormStart\}/u);
-  assert.match(panel, /onFocus=\{trackFormStart\} onChange=\{event => \{ trackFormStart\(\);/u);
+  // Only real quote fields count; the Jiangnan group size unlocks WhatsApp/KakaoTalk and is not a form start.
+  assert.match(panel, /event\.target instanceof HTMLInputElement \|\| event\.target instanceof HTMLTextAreaElement \|\| event\.target instanceof HTMLSelectElement\) \|\| event\.target\.name === "companyWebsite"\) return;/u);
+  assert.match(panel, /value=\{requestedTravelersInput\} onChange=\{event => \{ setRequestedTravelersInput/u);
+  assert.match(panel, /<KakaoTalkContact key=\{`\$\{openCount\}-\$\{context\?\.slug \?\? ""\}`\}/u);
   assert.match(panel, /\{context \? <label htmlFor=\{`\$\{id\}-source`\}>/u);
   assert.match(panel, /maxLength=\{tourContactNoteMaxLength\}/u);
 });

@@ -85,6 +85,9 @@ export function ContactCardDialog({
   frameShownAt?: number | null;
 }) {
   const copy = contactCardCopy[locale];
+  // A fresh KakaoTalk hint per opening or request, so a revealed number or copied message never carries over.
+  const [kakaoKey, setKakaoKey] = useState(0);
+  useEffect(() => { if (open) setKakaoKey(key => key + 1); }, [open, request]);
   // Phones and tablets: the same card as a sheet from the bottom of the screen.
   const sheet = layout === "sheet";
   const contactVariant = sheet ? "mobile_sheet" : "desktop_card";
@@ -305,6 +308,7 @@ export function ContactCardDialog({
   // Korean pages: KakaoTalk copies the same prepared text the WhatsApp link carries.
   const kakao = locale === "ko" ? (
     <KakaoTalkContact
+      key={kakaoKey}
       className={sheet ? sheetStyles.kakao : styles.kakao}
       inquiry={() => whatsAppHrefText(whatsappHref) || tourContactMessageText(locale, tour, context.path)}
       onOpen={openedApp("kakao")}

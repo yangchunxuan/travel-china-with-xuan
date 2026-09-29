@@ -1708,6 +1708,19 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
       // Without a class the payload keeps the original shape, so older collectors still accept it.
       for (const request of otherRequests) assert.equal("referrerClass" in request, false);
     }
+
+    // A collector deployed before referrerClass rejects the key with 400: retry once without it.
+    installBrowser({ href: "https://homegroundchina.com/ko/", consent: preferences({ analytics: true, marketing: false }), referrer: "https://blog.naver.com/someone/1" });
+    const { analytics: legacy } = loadCompiledModules(outputDirectory);
+    const legacyRequests = [];
+    globalThis.fetch = async (_url, init) => {
+      const payload = JSON.parse(init.body); legacyRequests.push(payload);
+      if ("referrerClass" in payload) return new Response(JSON.stringify({ error: { code: "invalid_request" } }), { status: 400 });
+      return payload.requestType === "start_session" ? sessionReadyResponse() : new Response("{}", { status: 202 });
+    };
+    legacy.trackEvent("contact_option_clicked", { channel: "email" });
+    await waitForTurns(() => legacyRequests.length === 3);
+    assert.deepEqual(legacyRequests.map((request) => [request.requestType, "referrerClass" in request]), [["start_session", true], ["start_session", false], ["events", false]]);
     await settleAsyncTurns();
   });
 

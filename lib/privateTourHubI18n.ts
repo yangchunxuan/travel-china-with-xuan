@@ -236,7 +236,7 @@ export const englishMarketPlanning = {
     },
     {
       title: "Which currency and room basis should I compare?",
-      body: "Cards show USD reference amounts converted from each route’s CNY price basis, and the written quote confirms the payment currency. Compare the group-size basis shown beside each price rather than treating every route as a two-person package. Children, extra rooms and different group sizes need their own quote.",
+      body: "Cards show prices in USD. Most are converted from the route’s CNY price basis; a few routes publish a fixed USD price. Your written quote confirms the payment currency, exchange rate and total. Compare the group-size basis shown beside each price rather than treating every route as a two-person package. Children, extra rooms and different group sizes need their own quote.",
     },
     {
       title: "Will I have an English-speaking guide?",

@@ -11,11 +11,12 @@ async function copyText(value: string, host: HTMLElement | null) {
   try { if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(value); return true; } } catch { /* Try the legacy path. */ }
   if (!host) return false;
   const area = document.createElement("textarea");
+  const previous = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   try {
     area.value = value; area.readOnly = true; area.className = styles.copySource;
     host.append(area); area.select();
     return document.execCommand("copy");
-  } catch { return false; } finally { area.remove(); }
+  } catch { return false; } finally { area.remove(); previous?.focus({ preventScroll: true }); }
 }
 
 /**

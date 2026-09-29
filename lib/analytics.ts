@@ -823,9 +823,24 @@ function trafficAttributionPayload(attribution: EntryAttribution) {
   };
 }
 
+const referrerClassUnsupportedStorageKey = "homeground-traffic-referrer-class-unsupported";
+let referrerClassUnsupported = false;
+
+/** A collector deployed before `referrerClass` rejects the unknown key; stop sending it for this browser session. */
+function referrerClassIsUnsupported() {
+  if (referrerClassUnsupported) return true;
+  try { referrerClassUnsupported = window.sessionStorage.getItem(referrerClassUnsupportedStorageKey) === "1"; } catch { /* Keep sending. */ }
+  return referrerClassUnsupported;
+}
+
+function markReferrerClassUnsupported() {
+  referrerClassUnsupported = true;
+  try { window.sessionStorage.setItem(referrerClassUnsupportedStorageKey, "1"); } catch { /* The in-memory flag still applies. */ }
+}
+
 /** Sent only when present, so sessions without a referrer class keep the original payload shape. */
 function trafficReferrerPayload(attribution: EntryAttribution) {
-  return attribution.referrer_class ? { referrerClass: attribution.referrer_class } : {};
+  return attribution.referrer_class && !referrerClassIsUnsupported() ? { referrerClass: attribution.referrer_class } : {};
 }
 
 function trafficCredentialContext({
@@ -977,6 +992,12 @@ async function requestTrafficSessionCredential({
   if (!response.ok) {
     await discardResponseBody(response);
     if (!analyticsConsentRemains(consentState)) return null;
+    // An older collector rejects the unknown `referrerClass` key with 400.
+    // Retry once without it so the session is still measured, as unknown.
+    if (response.status === 400 && attribution.referrer_class && !referrerClassIsUnsupported()) {
+      markReferrerClassUnsupported();
+      return requestTrafficSessionCredential({ sessionToken, locale, entryPath, attribution, consentState });
+    }
     return null;
   }
 

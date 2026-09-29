@@ -65,6 +65,8 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const statusRef = useRef<Status>("idle");
   const formStartedRef = useRef(false);
   const [open, setOpen] = useState(false);
+  // Each opening gets a fresh KakaoTalk hint, so a revealed number or copied message never carries over.
+  const [openCount, setOpenCount] = useState(0);
   const [closing, setClosing] = useState(false);
   const [context, setContext] = useState<PrivateTourInquiryContext | null>(null);
   const [guideTitle, setGuideTitle] = useState("");
@@ -111,6 +113,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReceipt(null); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
     }
     formStartedRef.current = false;
+    setOpenCount(count => count + 1);
     triggerRef.current = returnFocus ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     markNewsletterPromptHandled();
     setInquiryOpen(true);
@@ -226,14 +229,15 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   function trackContact(channel: "email" | "whatsapp" | "kakao") {
     trackEvent("contact_option_clicked", { channel, page_language: locale }, { firstPartyContext: { productSlug: context?.slug, packageId: context?.selection?.packageId, travelers: context?.selection?.travelers, surface: context ? "product" : "contact_options" } });
   }
-  /** Once per opening, on the first focus or edit of any quote field (email, note, date, source, group size). */
-  function trackFormStart() {
+  /** Once per opening, on the first focus or edit of a quote field (email, date, note, source). The Jiangnan group size also unlocks WhatsApp/KakaoTalk, so it is not a form start; buttons and links are not fields. */
+  function trackFormStart(event: { target: EventTarget | null }) {
+    if (!(event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) || event.target.name === "companyWebsite") return;
     if (formStartedRef.current || !context || !enabled || locked) return;
     formStartedRef.current = true;
     trackEvent("quick_email_started", { page_language: locale, submission_surface: "private_tour_quote" }, { firstPartyContext: { productSlug: context.slug, packageId: context.selection?.packageId, travelers: context.selection?.travelers, surface: "product" } });
   }
   // Korean pages only; follows the WhatsApp rule for a Jiangnan custom group.
-  const kakao = (fallback: boolean) => locale === "ko" && contactLinkReady ? <KakaoTalkContact className={fallback ? undefined : styles.kakaoChoice} inquiry={() => tourContactMessageText(locale, context, pathname || undefined, !fallback || customGroup ? draft : undefined)} onOpen={() => trackContact("kakao")} /> : null;
+  const kakao = (fallback: boolean) => locale === "ko" && contactLinkReady ? <KakaoTalkContact key={`${openCount}-${context?.slug ?? ""}`} className={fallback ? undefined : styles.kakaoChoice} inquiry={() => tourContactMessageText(locale, context, pathname || undefined, !fallback || customGroup ? draft : undefined)} onOpen={() => trackContact("kakao")} /> : null;
   const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled || customGroup ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent([guideTitle, `https://homegroundchina.com${pathname}`].filter(Boolean).join("\n"))}`;
   const selectedLabel = context ? privateTourInquirySelectionLabel(context, locale) : null;
   const groupLabel = requestedTravelers !== null ? locale === "zh" ? `${requestedTravelers} 人同行` : locale === "ko" ? `${requestedTravelers}명 동행` : `${requestedTravelers} travellers` : null;
@@ -259,7 +263,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             </div> : null}
             {customGroup ? <div className={styles.groupField}>
               <label htmlFor={`${id}-group`}>{jiangnanText.group}</label>
-              <input id={`${id}-group`} name="requestedTravelers" type="number" inputMode="numeric" min={1} max={99} step={1} required={enabled} form={enabled ? `${id}-quote-form` : undefined} value={requestedTravelersInput} onFocus={trackFormStart} onChange={event => { trackFormStart(); setRequestedTravelersInput(event.target.value); setGroupTouched(true); }} onBlur={() => setGroupTouched(true)} disabled={locked} aria-invalid={groupTouched && requestedTravelers === null ? "true" : undefined} aria-describedby={`${id}-group-hint${groupTouched && requestedTravelers === null ? ` ${id}-group-error` : ""}`} />
+              <input id={`${id}-group`} name="requestedTravelers" type="number" inputMode="numeric" min={1} max={99} step={1} required={enabled} form={enabled ? `${id}-quote-form` : undefined} value={requestedTravelersInput} onChange={event => { setRequestedTravelersInput(event.target.value); setGroupTouched(true); }} onBlur={() => setGroupTouched(true)} disabled={locked} aria-invalid={groupTouched && requestedTravelers === null ? "true" : undefined} aria-describedby={`${id}-group-hint${groupTouched && requestedTravelers === null ? ` ${id}-group-error` : ""}`} />
               <p id={`${id}-group-hint`}>{jiangnanText.groupHint}</p>
               {groupTouched && requestedTravelers === null ? <p id={`${id}-group-error`} className={styles.groupError} role="alert">{jiangnanText.groupError}</p> : null}
             </div> : null}
