@@ -34,7 +34,8 @@
 
 .list li {
   align-items: center;
-  color: rgb(10 10 10 / 55%);
+  /* 60% ink = #6c6c6c on white, 5.25:1 (WCAG AA for 14px text). */
+  color: rgb(10 10 10 / 60%);
   display: flex;
   font-size: 0.875rem;
   font-weight: 500;

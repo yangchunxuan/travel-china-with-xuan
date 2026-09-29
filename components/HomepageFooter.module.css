@@ -180,6 +180,9 @@
 
 .operator a {
   color: #faf9f5;
+  /* Inline padding gives the one-line link a 24px tap target without moving
+     the text around it. */
+  padding-block: 0.3125rem;
   text-underline-offset: 0.18rem;
 }
 

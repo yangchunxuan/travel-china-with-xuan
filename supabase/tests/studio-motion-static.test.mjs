@@ -35,6 +35,7 @@ test("studio motion is CSS-only with mobile and reduced-motion exits", async () 
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /transform: none !important/);
   assert.doesNotMatch(styles, /scroll-snap-type|scroll-snap-align/);
-  // Reveals start half-visible, so nothing waits hidden for a scroll event.
-  assert.match(styles, /@keyframes studioRise \{\s*from \{\s*opacity: 0\.55;/);
+  // Reveals only move, never fade, so nothing waits hidden (or below AA
+  // contrast) for a scroll event.
+  assert.match(styles, /@keyframes studioRise \{\s*from \{\s*translate: 0 16px;\s*\}/);
 });

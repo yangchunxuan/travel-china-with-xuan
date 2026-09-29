@@ -184,7 +184,16 @@ export function AnalyticsConsent({
           <div className={styles.bannerCopy}>
             <h2 id={`${titleId}-banner`}>{copy.bannerTitle}</h2>
             <p>{copy.bannerBody}</p>
-            <a href={privacyPath(locale)}>{copy.privacyNotice}</a>
+            <span className={styles.bannerLinks}>
+              <a href={privacyPath(locale)}>{copy.privacyNotice}</a>
+              <button
+                className={styles.textButton}
+                type="button"
+                onClick={openManager}
+              >
+                {copy.manage}
+              </button>
+            </span>
           </div>
           <div className={styles.bannerActions}>
             <button
@@ -200,13 +209,6 @@ export function AnalyticsConsent({
               onClick={() => choose(true, true)}
             >
               {copy.acceptAll}
-            </button>
-            <button
-              className={styles.textButton}
-              type="button"
-              onClick={openManager}
-            >
-              {copy.manage}
             </button>
           </div>
         </section>

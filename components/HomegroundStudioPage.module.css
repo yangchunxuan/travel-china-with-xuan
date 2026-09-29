@@ -1152,14 +1152,14 @@
   }
 }
 
+/* Motion only, no fade: a fade held not-yet-entered text below WCAG AA
+   contrast. */
 @keyframes studioRise {
   from {
-    opacity: 0.55;
     translate: 0 16px;
   }
 
   to {
-    opacity: 1;
     translate: none;
   }
 }

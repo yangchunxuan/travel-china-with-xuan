@@ -116,7 +116,12 @@ export function DestinationGeographyDiagram({
         ))}
       </svg>
 
-      <ol className={styles.key}>
+      <ol
+        aria-labelledby="destination-geography"
+        className={styles.key}
+        // Scrolls sideways on phones, so it must be reachable by keyboard.
+        tabIndex={0}
+      >
         {positioned.map((node) => {
           const label = copy.nodes[node.id];
           if (!label) return null;
