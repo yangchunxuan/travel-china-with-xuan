@@ -23,9 +23,10 @@ function normalizedRelative(root, filePath) {
   return relative(root, filePath).split(sep).join("/");
 }
 
-// Japanese-only modules follow one naming rule, so new Japanese pages do not
-// need to be listed one by one: components/Japanese*, lib/japanese*, lib/jaPilot*.
-const japaneseOnlySourcePattern = /^(?:components\/Japanese[A-Z]|lib\/japanese[A-Z]|lib\/jaPilot)/u;
+// Japanese-only modules use the Japanese system-font stack. Exclude their
+// source text from the Chinese serif corpus, including separately authored
+// *JapaneseCopy modules and generated guide bodies named body.ja.ts.
+const japaneseOnlySourcePattern = /^(?:components\/Japanese[A-Z]|lib\/japanese[A-Z]|lib\/jaPilot|lib\/[A-Za-z0-9]+JapaneseCopy\.(?:ts|tsx)$|content\/guides\/[^/]+\/body\.ja\.(?:ts|tsx)$)/u;
 
 function isJapanesePilotSource(projectRoot, filePath) {
   const path = normalizedRelative(projectRoot, filePath);
@@ -124,4 +125,39 @@ export function collectProductionExportFontFiles(
 
 export function readCollectedFiles(files) {
   return files.map((filePath) => readFileSync(filePath, "utf8")).join("\n");
+}
+
+const japaneseKana = /[\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const javascriptStringLiteral = /"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`/gsu;
+
+function sourceLineForChineseFont(line) {
+  const retainedLiterals = [];
+  const outsideLiterals = line.replace(javascriptStringLiteral, (literal) => {
+    if (!japaneseKana.test(literal)) retainedLiterals.push(literal);
+    return "";
+  });
+  // Japanese JSX text is unquoted. Keep any Chinese literals on the same line
+  // instead of dropping them with the Japanese text.
+  if (japaneseKana.test(outsideLiterals)) return retainedLiterals.join(" ");
+  return line.replace(javascriptStringLiteral, (literal) =>
+    japaneseKana.test(literal) ? "" : literal,
+  );
+}
+
+export function readChineseFontCorpus(files) {
+  return files.map((filePath) => {
+    const source = readFileSync(filePath, "utf8");
+    if (extname(filePath) === ".js") {
+      // Exported chunks can contain Chinese and Japanese strings on one
+      // minified line. Remove only the Japanese literals in that case.
+      return source.replace(javascriptStringLiteral, (literal) =>
+        japaneseKana.test(literal) ? "" : literal,
+      );
+    }
+    if (extname(filePath) === ".html") return source;
+
+    // Shared TSX components can contain Japanese-only JSX text alongside
+    // Chinese copy. Japanese text renders with the Japanese font stack.
+    return source.split(/\r?\n/u).map(sourceLineForChineseFont).join("\n");
+  }).join("\n");
 }

@@ -6,7 +6,7 @@ async function source(path) {
   return readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 }
 
-test("China trip cost guide is available in English, Chinese and Korean", async () => {
+test("China trip cost guide is available in English, Chinese, Korean and Japanese", async () => {
   const registry = await source("lib/guideRegistry.ts");
   const route = await source(
     "app/(default)/guides/how-much-does-a-china-trip-cost/page.tsx",
@@ -14,6 +14,10 @@ test("China trip cost guide is available in English, Chinese and Korean", async 
   const localizedRoute = await source(
     "app/(localized)/[locale]/guides/how-much-does-a-china-trip-cost/page.tsx",
   );
+  const japaneseRoute = await source(
+    "app/(japanese)/ja/guides/how-much-does-a-china-trip-cost/page.tsx",
+  );
+  const japaneseCopy = await source("lib/chinaTripCostJapaneseCopy.ts");
 
   assert.match(
     registry,
@@ -22,14 +26,21 @@ test("China trip cost guide is available in English, Chinese and Korean", async 
   assert.match(route, /<ChinaTripCostGuidePage locale="en" \/>/);
   assert.match(localizedRoute, /value === "zh" \|\| value === "ko"/);
   assert.match(localizedRoute, /<ChinaTripCostGuidePage locale=\{locale\} \/>/);
+  assert.match(japaneseRoute, /<ChinaTripCostGuidePage locale="ja" \/>/);
+  assert.match(japaneseCopy, /pagePath: "\/ja\/guides\/how-much-does-a-china-trip-cost\/"/);
+  assert.match(registry, /"how-much-does-a-china-trip-cost": "\/ja\/guides\/how-much-does-a-china-trip-cost\/"/);
 });
 
 test("published-price comparison keeps conditions and original currencies", async () => {
   const copy = await source("lib/chinaTripCostI18n.ts");
+  const japaneseCopy = await source("lib/chinaTripCostJapaneseCopy.ts");
 
   for (const verifiedPrice of ["US$1,462.71", "A$2,470", "A$5,130"]) {
     assert.match(copy, new RegExp(verifiedPrice.replace("$", "\\$")));
+    assert.match(japaneseCopy, new RegExp(verifiedPrice.replace("$", "\\$")));
   }
+  assert.match(japaneseCopy, /人民元360\.2/);
+  assert.match(japaneseCopy, /日本語ガイドの手配可否と料金は予約前に確認します/u);
 
   assert.match(copy, /wendywutours\.com\.au\/china\/tours\/beijing-shanghai-short-stay\.htm/);
   assert.match(copy, /wendywutours\.com\.au\/china\/tours\/in-pursuit-of-pandas\.htm/);
