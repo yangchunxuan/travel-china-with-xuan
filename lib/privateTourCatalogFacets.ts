@@ -113,10 +113,10 @@ export function getPrivateTourLength(days: number): PrivateTourLengthId {
 }
 
 /**
- * Price tiers are expressed in the currency each language shows on its cards.
- * A card that keeps a different published currency (for example a CNY-only
- * route on the English page) is bucketed by the site's own conversion of its
- * CNY basis, while the card itself keeps showing the published figure.
+ * Price tiers are expressed in the currency each language shows on its cards
+ * (`getPrivateTourDisplayCurrency`). Every card now uses that currency; the
+ * fallback below still buckets any other currency by the site's own
+ * conversion of its CNY basis.
  */
 const priceTierBounds: Readonly<
   Record<HomegroundLocale, { readonly low: number; readonly mid: number }>

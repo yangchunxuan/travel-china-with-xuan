@@ -23,6 +23,7 @@ import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJi
 import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { isJiangnanTour } from "../lib/tourContactDraft";
+import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const interactionCopy: Record<
@@ -111,6 +112,32 @@ const interactionCopy: Record<
   },
 };
 
+/**
+ * The selected-price line names the tour type and the service once: a package
+ * label that already contains the type ("프라이빗 투어 패키지", "私家团标准版")
+ * replaces it, and an identical label is not repeated.
+ */
+export function privateTourPriceBasisLabels(
+  tourFormatLabel: string,
+  packageLabel: string,
+): readonly string[] {
+  const format = tourFormatLabel.trim();
+  const service = packageLabel.trim();
+  if (!service) return format ? [format] : [];
+  if (!format) return [service];
+  const formatKey = format.toLocaleLowerCase();
+  const serviceKey = service.toLocaleLowerCase();
+  if (serviceKey === formatKey) return [format];
+  if (serviceKey.includes(formatKey)) {
+    // Mid-sentence in English, "Private tour package" reads "private tour package".
+    return [format === formatKey && service[0] !== serviceKey[0]
+      ? serviceKey[0] + service.slice(1)
+      : service];
+  }
+  if (formatKey.includes(serviceKey)) return [format];
+  return [format, service];
+}
+
 type PhotoCopy = Readonly<{
   nextPhoto: string;
   routeLabel: string;
@@ -171,6 +198,8 @@ export type JapanesePriceCopy = Readonly<{
   emailLabel: string;
   /** Japanese only: says the WhatsApp/email buttons open a draft that is not sent yet. */
   draftNote?: string;
+  /** Currency and settlement note shown under the selected price. */
+  currencyNote?: string;
 }>;
 
 // Fixed-departure small groups price one twin-share place, and long-haul
@@ -439,10 +468,20 @@ function PublishedPrivateTourPriceConsole({
           {activeRow.formatted}
         </strong>
         <small>
-          {copy.perPerson} · {groupLabel(activeRow.travelers)} ·{" "}
-          {tourFormatLabel} · {tourPackage.label}{flightsLabel ? ` · ${flightsLabel}` : ""}
+          {[
+            copy.perPerson,
+            groupLabel(activeRow.travelers),
+            ...privateTourPriceBasisLabels(tourFormatLabel, tourPackage.label),
+            ...(flightsLabel ? [flightsLabel] : []),
+          ].join(" · ")}
         </small>
       </div>
+      {/* Outside the live region: the note is static and need not be re-read. */}
+      {japaneseCopy && !japaneseCopy.currencyNote ? null : (
+        <p className={styles.currencyNote}>
+          {japaneseCopy ? japaneseCopy.currencyNote : privateTourCurrencyNote[product.locale]}
+        </p>
+      )}
 
       {product.slug === "beijing-highlights-5-day-private-tour" && !japaneseCopy ? (
         <TourPriceScope route="beijing" locale={product.locale} detailsHref="#tour-price-details" />

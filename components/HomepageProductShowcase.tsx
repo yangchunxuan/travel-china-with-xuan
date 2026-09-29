@@ -225,13 +225,33 @@ export function HomepageProductShowcase({
                     </h3>
                     <p className={styles.cardPrice}>
                       <span>{copy.startingPriceLabel}</span>
-                      <strong>
-                        <CharReveal text={product.startingPrice.formatted} />
-                      </strong>
-                      <small>
-                        {copy.perPersonLabel} ·{" "}
-                        {copy.groupBasis(product.startingPrice.travelers)}
-                      </small>
+                      {product.twoTravellerPrice ? (
+                        <>
+                          {/* A couple sees its own per-person price beside
+                              the lower larger-group starting price. */}
+                          <strong className={styles.cardPriceTiers}>
+                            <span>
+                              <small>{copy.groupBasis(2)}</small>{" "}
+                              <CharReveal text={product.twoTravellerPrice.formatted} />
+                            </span>
+                            <span>
+                              <small>{copy.groupBasis(product.startingPrice.travelers)}</small>{" "}
+                              <CharReveal text={product.startingPrice.formatted} />
+                            </span>
+                          </strong>
+                          <small>{copy.perPersonLabel}</small>
+                        </>
+                      ) : (
+                        <>
+                          <strong>
+                            <CharReveal text={product.startingPrice.formatted} />
+                          </strong>
+                          <small>
+                            {copy.perPersonLabel} ·{" "}
+                            {copy.groupBasis(product.startingPrice.travelers)}
+                          </small>
+                        </>
+                      )}
                       {product.startingPrice.serviceLabel && (
                         <small>{product.startingPrice.serviceLabel}</small>
                       )}

@@ -8,6 +8,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "parse5";
 import ts from "typescript";
 import { formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
+import { privateTourCurrencyNote } from "../../lib/privateTourCurrencyNote.ts";
 
 const require = createRequire(import.meta.url);
 const readSource = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -36,6 +37,7 @@ const preview = await loadModule("lib/zhangjiajiePrivateTourPreview.ts", {
   "../content/product-previews/zhangjiajie-4-day-private-tour/product.json": product,
   "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json": approved,
   "./privateTourProducts": { formatPrivateTourPrice },
+  "./privateTourCurrencyNote": { privateTourCurrencyNote },
 });
 const jsx = require("react/jsx-runtime");
 const guideCta = { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) };

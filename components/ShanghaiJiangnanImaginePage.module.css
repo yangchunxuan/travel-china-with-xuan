@@ -312,6 +312,16 @@
   line-height: 1.55;
 }
 
+/* Currency and settlement disclosure, one small line under the price. */
+.currencyNote {
+  color: var(--im-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin: -0.6rem 0 0;
+  padding: 0 1.25rem 1rem;
+  text-wrap: pretty;
+}
+
 .priceConsoleActions {
   border-block-start: 1px solid var(--im-line);
   display: grid;
@@ -1285,6 +1295,7 @@
 
   .priceConsoleTop,
   .priceResult,
+  .currencyNote,
   .priceConsoleActions {
     padding-inline: 0.85rem;
   }
