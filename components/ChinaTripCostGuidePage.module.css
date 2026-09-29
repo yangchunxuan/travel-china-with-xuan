@@ -247,6 +247,57 @@
   margin: 0;
 }
 
+.ownPublishedRoute {
+  border-inline-start: 2px solid var(--page-rust);
+  margin-top: 1.5rem;
+  max-width: 42rem;
+  padding: 0.1rem 0 0.1rem 1rem;
+}
+
+.ownPublishedLabel {
+  color: var(--page-rust-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.ownPublishedLink {
+  color: var(--page-ink);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.ownPublishedLink svg {
+  margin-inline-start: 0.25rem;
+  vertical-align: -0.18em;
+}
+
+.ownPublishedLink:focus-visible {
+  outline: 2px solid var(--page-rust);
+  outline-offset: 3px;
+}
+
+.ownPublishedPrice {
+  line-height: 1.55;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.ownPublishedPrice strong {
+  font-size: 1.25rem;
+}
+
+.ownPublishedScope {
+  color: var(--page-muted);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ------------------------------ CTAs ------------------------------ */
 
 .ctaCard {

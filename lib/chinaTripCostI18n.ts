@@ -65,6 +65,12 @@ export interface ChinaTripCostCopy {
     caveat: string;
   };
 
+  ownPublishedRoute: {
+    label: string;
+    basis: string;
+    scope: string;
+  };
+
   tiers: {
     title: string;
     intro: string;
@@ -209,6 +215,13 @@ const en: ChinaTripCostCopy = {
       "Prices checked 9 August 2026 and kept in their original currencies. All are per person and marked “from”; dates, availability, departure city, room basis and sale conditions can change the payable amount.",
   },
 
+  ownPublishedRoute: {
+    label: "A published Homeground route",
+    basis: "starting price per person for two sharing a twin room.",
+    scope:
+      "Nine hotel nights, guided touring days and the listed travel within China are included. International flights are extra; confirm the price for your dates in writing.",
+  },
+
   tiers: {
     title: "Published examples: compare the scope before the price",
     intro:
@@ -342,9 +355,9 @@ const en: ChinaTripCostCopy = {
           "No. The word expedition does not establish the route’s difficulty, permits, remote-area logistics or emergency support. Describe what you actually need: multi-day trekking, daily distance, altitude, camping, equipment, luggage support and an exit plan. Ask for the written route, inclusions, guide capabilities, any applicable permissions and the arrangements if someone cannot continue. An ordinary fixed sightseeing tour booked privately for your party does not automatically include those services.",
       },
       {
-        question: "How should I budget Malaysia–China return flights?",
+        question: "How should I budget flights to and from China?",
         answer:
-          "Price international flights separately from the China land itinerary. Search the same dates, travellers and cabin from your actual Malaysian departure airport, then compare returning from the same Chinese city with arriving in one city and flying home from another. Use the final total in MYR for both directions, including taxes, your required baggage, seats or meals and payment fees, rather than a one-way headline fare. Check each flight’s baggage allowance, whether a connection is on one through booking or requires self-transfer, and any extra airport transfer or overnight hotel. A cheaper return airport may add a domestic journey and a lost sightseeing day. Save the quote time and fare conditions, then add the chosen flight total to land costs, insurance and a contingency; fares must be rechecked before booking.",
+          "Keep international flights separate from the China land-tour price. Search from your actual departure airport for the same dates, travellers and cabin, then compare a return from one Chinese city with flying into one city and home from another. Use the total payable price in your booking currency, including taxes, baggage and any seats or meals you need. Check whether a connection is on one ticket or requires self-transfer, and count extra airport transfers or an overnight stay. An apparently cheaper return airport may add a domestic journey and take a sightseeing day. Recheck the fare and change terms before booking.",
       },
       {
         question: "How much should I tip a private tour guide in China?",
@@ -494,6 +507,13 @@ const zh: ChinaTripCostCopy = {
       "价格核对于 2026 年 8 月 9 日，并保留原币。三项都是人均“起”价；日期、余位、出发城市、房间基础和促销条件都会改变最终应付金额。",
   },
 
+  ownPublishedRoute: {
+    label: "Homeground 已公布的路线",
+    basis: "2 人同住一间时的每人起价。",
+    scope:
+      "含 9 晚早餐酒店、游览日导游及行程所列中国境内交通；国际机票另计。实际日期以书面报价为准。",
+  },
+
   tiers: {
     title: "公开价格对照：先比较包含范围，再比较数字",
     intro:
@@ -627,9 +647,9 @@ const zh: ChinaTripCostCopy = {
           "不一样。“探险”这个名称不能说明路线难度、许可、野外后勤或紧急支援。先讲清真正需要的是几天徒步、每天距离、海拔、露营、装备、行李支持和中途退出方案，再要求书面路线、包含项、向导能力、适用时的许可安排，以及有人无法继续时怎样处理。把普通固定景点行程包成私人团，不会自动包含这些服务。",
       },
       {
-        question: "马来西亚往返中国的国际机票怎样做预算？",
+        question: "往返中国的国际机票怎样做预算？",
         answer:
-          "国际机票与中国境内地面行程分开列预算。从你实际使用的马来西亚机场出发，用相同日期、人数和舱等查询，再比较同一中国城市往返与不同城市进出的开口程。比较马币计价的双程结算总额，计入税费、所需行李、选座或餐食及付款费用，不只看单程宣传价。逐段核对行李额度、转机是否为同一联程订单还是需要自行中转，以及额外机场交通和过夜酒店。便宜的返程机场可能增加一段中国境内交通并占用一天游览。保存查询时间与退改条件，再把选定机票总额加到地面费用、保险和预备金中；付款前重新核价。",
+          "国际机票和中国境内行程分开算。从实际出发机场查询相同日期、人数和舱等，再比较同城往返与从不同中国城市进出的总价。按订票时使用的币种比较最终应付金额，算上税费、所需行李、选座和餐食。转机要看是否一张联程票、是否需要自行中转，也要算额外机场交通或住宿。回程机场看似便宜，可能多出一段境内交通并占用游览时间；订票前再核价和退改条件。",
       },
       {
         question: "在中国参加私人游，导游小费应该给多少？",
@@ -769,7 +789,14 @@ const ko: ChinaTripCostCopy = {
       },
     ],
     caveat:
-      "가격 확인일은 2026년 8월 9일이며 원화폐 그대로 표시했습니다. 모두 1인당 ‘최저’ 가격입니다. 날짜, 좌석, 출발 도시, 객실 기준과 프로모션 조건에 따라 실제 결제액이 달라집니다.",
+      "가격 확인일은 2026년 8월 9일이며 원래 통화 그대로 표시했습니다. 모두 1인당 ‘최저’ 가격입니다. 날짜, 좌석, 출발 도시, 객실 기준과 프로모션 조건에 따라 실제 결제액이 달라집니다.",
+  },
+
+  ownPublishedRoute: {
+    label: "Homeground의 공개 일정",
+    basis: "2명이 2인 1실로 여행할 때의 1인당 시작가입니다.",
+    scope:
+      "조식 포함 호텔 9박, 관광일 현지 가이드·차량과 일정에 명시된 중국 내 이동이 포함됩니다. 한국어 가이드 배정은 도시별로 확인하며 국제선은 별도입니다. 실제 날짜의 총액은 서면으로 확인합니다.",
   },
 
   tiers: {
@@ -779,7 +806,7 @@ const ko: ChinaTripCostCopy = {
     columns: {
       way: "공개 상품 유형",
       example: "여행 형태",
-      price: "공개 원화폐 가격",
+      price: "원래 통화로 표시한 공개 가격",
       includes: "포함",
       excludes: "불포함 또는 조건",
     },
@@ -813,7 +840,7 @@ const ko: ChinaTripCostCopy = {
       },
     ],
     fxNote:
-      "가격은 2026년 8월 9일에 확인했고 환율 선택이 잘못된 정밀도를 만들지 않도록 원화폐로 표시했습니다. 외부 사이트의 공개 ‘최저’ 가격이며 Homeground 견적이 아닙니다.",
+      "가격은 2026년 8월 9일에 확인했고 환율 선택이 잘못된 정밀도를 만들지 않도록 원래 통화로 표시했습니다. 외부 사이트의 공개 ‘최저’ 가격이며 Homeground 견적이 아닙니다.",
   },
 
   spread: {
@@ -905,9 +932,9 @@ const ko: ChinaTripCostCopy = {
           "아닙니다. 탐험이라는 이름만으로 난도, 허가, 외진 지역의 물류나 비상 지원을 알 수는 없습니다. 여러 날의 트레킹, 하루 이동 거리, 고도, 캠핑, 장비, 짐 운반과 중도 이탈 계획 등 실제 필요를 설명하세요. 서면 경로와 포함 항목, 가이드 역량, 해당하는 허가 절차, 누군가 계속할 수 없을 때의 대응을 요청해야 합니다. 일반적인 고정 관광 일정을 일행만의 프라이빗 투어로 예약한다고 이런 서비스가 자동으로 포함되지는 않습니다.",
       },
       {
-        question: "말레이시아와 중국 왕복 항공권 예산은 어떻게 잡나요?",
+        question: "중국 왕복 항공권 예산은 어떻게 잡나요?",
         answer:
-          "국제선 항공권과 중국 현지 일정 비용을 따로 계산하세요. 실제 이용할 말레이시아 출발 공항에서 같은 날짜, 인원, 좌석 등급으로 조회한 뒤 중국의 같은 도시로 왕복하는 방법과 서로 다른 도시로 입출국하는 방법을 비교합니다. 편도 광고 가격 대신 세금, 필요한 수하물, 좌석이나 기내식, 결제 수수료를 포함한 왕복 최종 금액을 MYR로 비교하세요. 구간별 수하물 한도, 하나의 연결 예약인지 직접 환승해야 하는지, 추가 공항 교통비와 환승 숙박도 확인합니다. 저렴한 귀국 공항 때문에 중국 국내 이동과 관광 하루가 더 필요할 수 있습니다. 조회 시각과 변경·환불 조건을 저장한 다음 선택한 항공료를 현지 비용, 보험과 예비비에 더하고, 결제 전에 다시 조회하세요.",
+          "국제선 항공권과 중국 현지 일정 비용을 나눠 계산하세요. 실제 출발할 공항에서 같은 날짜, 인원과 좌석 등급으로 조회하고, 중국의 같은 도시로 왕복할 때와 다른 도시에서 돌아올 때의 총액을 비교합니다. 편도 광고 가격이 아니라 결제 통화 기준으로 세금과 필요한 수하물·좌석 지정·기내식 비용까지 포함한 최종 금액을 비교하세요. 환승이 한 장의 항공권인지, 직접 다시 수속해야 하는지와 추가 공항 이동·숙박도 확인합니다. 귀국 항공편이 저렴해도 중국 내 이동이 늘어 관광 하루를 쓸 수 있으니, 예약 전에 운임과 변경·환불 조건을 다시 확인하세요.",
       },
       {
         question: "중국 프라이빗 투어 가이드에게 팁을 얼마나 주면 되나요?",
@@ -976,7 +1003,7 @@ const ko: ChinaTripCostCopy = {
     { label: "문화여유부 · 2025년 별등급 호텔 통계", url: SOURCE_URLS.mctHotels },
   ],
   sourceNote:
-    "판매 가격과 포함 항목은 2026년 8월 9일에 확인했습니다. Viator와 Wendy Wu 금액은 당시의 ‘최저’, 비수기 또는 프로모션 사례이며 실제 금액은 날짜, 인원과 출발 정보에 따라 달라집니다. 원화폐로 표시했고 Homeground 견적이 아닙니다. 가격과 예약 가능 여부는 바뀔 수 있습니다. 팁 참고액은 2026년 9월 9일에 확인했습니다.",
+    "판매 가격과 포함 항목은 2026년 8월 9일에 확인했습니다. Viator와 Wendy Wu 금액은 당시의 ‘최저’, 비수기 또는 프로모션 사례이며 실제 금액은 날짜, 인원과 출발 정보에 따라 달라집니다. 원래 통화로 표시했고 Homeground 견적이 아닙니다. 가격과 예약 가능 여부는 바뀔 수 있습니다. 팁 참고액은 2026년 9월 9일에 확인했습니다.",
 };
 
 const copy: Record<HomegroundLocale, ChinaTripCostCopy> = { en, zh, ko };
