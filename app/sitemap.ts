@@ -40,6 +40,7 @@ function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId === "system-studio") return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "system-author-evan") return entry.locale === "en" ? 0.68 : 0.63;
   if (entry.contentId === "system-itinerary-review") return entry.locale === "en" ? 0.65 : 0.6;
+  if (entry.contentId === "system-attraction-reservations") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId === "system-zhangjiajie-4-day-private-tour") {
     return entry.locale === "en" ? 0.75 : 0.7;
   }

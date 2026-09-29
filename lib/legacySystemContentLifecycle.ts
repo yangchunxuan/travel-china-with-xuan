@@ -18,6 +18,7 @@ export const legacySystemContentIds = [
   "business-information",
   "terms",
   "refund-delivery",
+  "attraction-reservations",
 ] as const;
 
 export type LegacySystemContentId =
@@ -41,6 +42,13 @@ export interface LegacySystemContentLifecycleRecord {
  */
 export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
   "2026-08-22T22:33:16+08:00";
+
+/**
+ * The attraction reservation release is recorded against the commit it was
+ * built on until the merge commit is known; replace it at merge time.
+ */
+const ATTRACTION_RESERVATION_RELEASE_COMMIT =
+  "d80ffa73de84b13f43dfb653ab440506e319cf9b";
 
 /**
  * Publication dates preserve the repository's established public lifecycle.
@@ -132,13 +140,13 @@ export const legacySystemContentLifecycle = {
   },
   privacy: {
     datePublished: "2026-07-24",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-29",
     lastReviewed: "2026-08-24",
     evidence: {
-      commit: "9ff9d3de0d254821d3b8cff33e9049f4da19b38b",
-      changedAt: "2026-09-15",
+      commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
+      changedAt: "2026-09-29",
       summary:
-        "The privacy notice now uses the licensed Beijing travel agency's registered address for the Homeground data controller; the separate full-review date remains unchanged.",
+        "The privacy notice now explains how passport details for an accepted attraction reservation are requested, used, shared with the booking channel and deleted; the separate full-review date remains unchanged.",
     },
   },
   "business-information": {
@@ -154,24 +162,35 @@ export const legacySystemContentLifecycle = {
   },
   terms: {
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
-    lastReviewed: "2026-07-24",
+    dateModified: "2026-09-29",
+    lastReviewed: "2026-09-29",
     evidence: {
-      commit: "6c4295d77bce295a4a546d8c4dc6818e9626cf42",
-      changedAt: "2026-07-24",
+      commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
+      changedAt: "2026-09-29",
       summary:
-        "The registered-business trust release published these terms; later shared-header branding did not alter their substantive copy or metadata.",
+        "Added the paid attraction reservation service's scope, fee, face-value tickets, no-availability-promise, refund and change rules in all three languages.",
     },
   },
   "refund-delivery": {
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
-    lastReviewed: "2026-07-24",
+    dateModified: "2026-09-29",
+    lastReviewed: "2026-09-29",
     evidence: {
-      commit: "6c4295d77bce295a4a546d8c4dc6818e9626cf42",
-      changedAt: "2026-07-24",
+      commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
+      changedAt: "2026-09-29",
       summary:
-        "The registered-business trust release published this policy; later shared-header branding did not alter its substantive copy or metadata.",
+        "Added the attraction reservation service's delivery, not-secured refund and issued-ticket cancellation rules in all three languages.",
+    },
+  },
+  "attraction-reservations": {
+    datePublished: "2026-09-29",
+    dateModified: "2026-09-29",
+    lastReviewed: "2026-09-29",
+    evidence: {
+      commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
+      changedAt: "2026-09-29",
+      summary:
+        "Published the trilingual attraction reservation service page with its dated per-attraction booking rules for Beijing, Shanghai, Xi'an, Chengdu and Hangzhou.",
     },
   },
 } as const satisfies Record<

@@ -39,6 +39,12 @@ import {
   getDestinationPublishedRouteLinks,
   getExistingContentCommercialCopy,
 } from "../../lib/existingContentCommercialLinks";
+import {
+  attractionReservationCityIds,
+  attractionReservationPath,
+  type AttractionReservationCityId,
+} from "../../lib/attractionReservations";
+import { fillReservationCopy, getAttractionReservationCopy } from "../../lib/attractionReservationsI18n";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -275,6 +281,14 @@ export function DestinationHubPage({
   const titleSegments = locale === "zh" ? zhHeadingSegments[hubId] : null;
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const publishedRouteLinks = getDestinationPublishedRouteLinks(hubId, locale);
+  const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
+    ? {
+        href: `${attractionReservationPath[locale]}#city-${hubId}`,
+        label: fillReservationCopy(getAttractionReservationCopy(locale).hubLink, {
+          city: getAttractionReservationCopy(locale).cities[hubId as AttractionReservationCityId],
+        }),
+      }
+    : null;
 
   return (
     <div
@@ -439,6 +453,13 @@ export function DestinationHubPage({
                   </Link>
                 </li>
               ))}
+              {reservationLink ? (
+                <li>
+                  <Link href={reservationLink.href}>
+                    {reservationLink.label}<span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </section>
 

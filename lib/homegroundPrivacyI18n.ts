@@ -57,6 +57,12 @@ export interface HomegroundPrivacyCopy {
     intro: string;
     items: readonly PrivacyItem[];
   };
+  reservation: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    rows: readonly PrivacyConfigurationRow[];
+  };
   providers: {
     eyebrow: string;
     title: string;
@@ -129,7 +135,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "28 September 2026",
+      reviewedValue: "29 September 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -217,6 +223,44 @@ export const homegroundPrivacyCopy: Record<
             "Browser, Homeground first-party event service and optional Google Analytics or Meta Pixel",
           purpose:
             "After permission, a temporary session token, short-lived signed event credential, page path, language, Homeground-signed first-touch campaign codes and fixed event/action codes help Homeground understand useful pages and contact attempts. Published product, service and group-size choices are sent only to the first-party service. Unsigned campaign labels stay Unknown. The event service excludes names, email addresses, phone numbers, trip-questionnaire answers, messages, raw IP addresses, user-agent strings and full referrer URLs.",
+        },
+      ],
+    },
+    reservation: {
+      eyebrow: "Attraction reservations",
+      title: "Passport details for an accepted reservation",
+      intro:
+        "The attraction reservation request on the website does not ask for passport numbers. Passport details are requested only after the traveller accepts Homeground's written confirmation, and only for the attractions in that confirmation.",
+      rows: [
+        {
+          label: "Purpose",
+          value: "Real-name attraction reservation",
+          detail:
+            "Many Chinese attractions require each visitor's name and identity document for the booking and check the original document at entry. Homeground uses the details only to make and manage the reservations the traveller asked for.",
+        },
+        {
+          label: "What is collected",
+          value: "Full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry",
+          detail:
+            "Only the fields the attraction's official booking channel requires, for each traveller in the reservation. Please do not send passport images unless a planner explains that the official channel needs one.",
+        },
+        {
+          label: "How it is received",
+          value: "Email, WhatsApp or KakaoTalk, after the written confirmation is accepted",
+          detail:
+            "Passport details are never entered in a website form. They arrive in the same conversation as the written confirmation and may therefore also be held by that messaging or email provider under its own terms.",
+        },
+        {
+          label: "Who receives it",
+          value: "The attraction's official booking channel",
+          detail:
+            "Homeground enters the details only in the booking system the attraction names, such as its website, WeChat account or mini-program, or a platform its official site links to. They are not sold, used for marketing or passed to other parties.",
+        },
+        {
+          label: "How long it is kept",
+          value: "Deleted after the trip",
+          detail:
+            "Homeground deletes the passport details it holds for the reservation after the trip ends. The booking record held by the attraction's own system follows that operator's rules.",
         },
       ],
     },
@@ -387,7 +431,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 9 月 28 日",
+      reviewedValue: "2026 年 9 月 29 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -463,6 +507,44 @@ export const homegroundPrivacyCopy: Record<
             "浏览器、Homeground 第一方事件服务，以及可选的 Google Analytics 或 Meta Pixel",
           purpose:
             "获得许可后，临时会话令牌、短时签名事件凭据、页面路径、语言、由 Homeground 签名的首次活动代码和固定事件代码，以及仅进入第一方服务的公开产品、服务版本和人数选项，可帮助判断哪些页面和联系入口有用；未签名的活动标签保持为“未知”。事件服务不保存姓名、邮箱、电话、旅行问卷答案、消息、原始 IP、User-Agent 或完整来源网址。",
+        },
+      ],
+    },
+    reservation: {
+      eyebrow: "景点代预约",
+      title: "已接受预约的护照信息",
+      intro:
+        "网站上的景点代预约需求不会索取护照号码。只有在游客接受 Homeground 的书面确认后，我们才会索取护照信息，并且只用于该确认中列明的景点。",
+      rows: [
+        {
+          label: "用途",
+          value: "景点实名预约",
+          detail:
+            "中国许多景点预约时要求每位游客的姓名和证件信息，并在入园时核验证件原件。Homeground 只用这些信息完成和管理游客委托的预约。",
+        },
+        {
+          label: "收集内容",
+          value: "证件上的姓名、护照号码、国籍，以及预约页面要求时的出生日期或护照有效期",
+          detail:
+            "只收集景点官方预约渠道要求的字段，并只针对预约中的每位游客。除非规划师说明官方渠道需要，否则请勿发送护照照片。",
+        },
+        {
+          label: "接收方式",
+          value: "接受书面确认后，通过邮件、WhatsApp 或 KakaoTalk",
+          detail:
+            "护照信息从不通过网站表单填写。它们与书面确认在同一对话中发送，因此相应的邮件或通讯服务商也可能按其条款保存。",
+        },
+        {
+          label: "提供给谁",
+          value: "景点的官方预约渠道",
+          detail:
+            "Homeground 只把信息填入景点公布的预约系统，例如官网、官方微信公众号或小程序，或其官网链接的平台。不出售、不用于营销，也不提供给其他方。",
+        },
+        {
+          label: "保存期限",
+          value: "行程结束后删除",
+          detail:
+            "行程结束后，Homeground 删除为预约保存的护照信息。景点自身系统中的预约记录按该运营方的规则处理。",
         },
       ],
     },
@@ -631,7 +713,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 9월 28일",
+      reviewedValue: "2026년 9월 29일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -712,6 +794,44 @@ export const homegroundPrivacyCopy: Record<
             "브라우저, Homeground 퍼스트파티 이벤트 서비스 및 선택적 Google Analytics 또는 Meta Pixel",
           purpose:
             "허용 후 임시 세션 토큰, 짧은 유효기간의 서명된 이벤트 자격 증명, 페이지 경로, 언어, Homeground가 서명한 첫 캠페인 코드와 고정 이벤트 코드, 자체 서비스에만 전달하는 공개 상품·서비스 유형·인원 옵션은 유용한 페이지와 연락 시도를 이해하는 데 사용됩니다. 서명되지 않은 캠페인 표지는 ‘알 수 없음’으로 둡니다. 이벤트 서비스는 이름, 이메일, 전화번호, 여행 설문 답변, 메시지, 원본 IP, User-Agent 또는 전체 리퍼러 URL을 저장하지 않습니다.",
+        },
+      ],
+    },
+    reservation: {
+      eyebrow: "관광지 예약 대행",
+      title: "수락된 예약의 여권 정보",
+      intro:
+        "웹사이트의 관광지 예약 요청은 여권 번호를 묻지 않습니다. 여행자가 Homeground의 서면 확인을 수락한 뒤에만, 그 확인서에 적힌 관광지에 한해 여권 정보를 요청합니다.",
+      rows: [
+        {
+          label: "목적",
+          value: "관광지 실명 예약",
+          detail:
+            "중국의 많은 관광지는 예약 시 방문객별 이름과 신분증 정보를 요구하고 입장 시 원본을 확인합니다. Homeground는 이 정보를 여행자가 요청한 예약을 하고 관리하는 데만 사용합니다.",
+        },
+        {
+          label: "수집 항목",
+          value: "여권에 적힌 이름, 여권 번호, 국적, 예약 양식이 요구하는 경우 생년월일 또는 여권 만료일",
+          detail:
+            "관광지 공식 예약 채널이 요구하는 항목만, 예약에 포함된 여행자별로 받습니다. 공식 채널에 필요하다고 플래너가 안내하지 않는 한 여권 사진은 보내지 마세요.",
+        },
+        {
+          label: "받는 방법",
+          value: "서면 확인 수락 후 이메일, WhatsApp 또는 카카오톡",
+          detail:
+            "여권 정보는 웹사이트 양식에 입력하지 않습니다. 서면 확인과 같은 대화에서 받으므로 해당 이메일·메신저 서비스도 자체 약관에 따라 보관할 수 있습니다.",
+        },
+        {
+          label: "제공 대상",
+          value: "관광지의 공식 예약 채널",
+          detail:
+            "Homeground는 관광지가 안내하는 예약 시스템, 예를 들어 공식 웹사이트, 공식 위챗 계정이나 미니프로그램, 공식 사이트가 연결한 플랫폼에만 정보를 입력합니다. 판매하거나 마케팅에 쓰거나 다른 곳에 제공하지 않습니다.",
+        },
+        {
+          label: "보관 기간",
+          value: "여행 종료 후 삭제",
+          detail:
+            "여행이 끝나면 Homeground는 예약을 위해 보관한 여권 정보를 삭제합니다. 관광지 자체 시스템의 예약 기록은 해당 운영 기관의 규칙을 따릅니다.",
         },
       ],
     },

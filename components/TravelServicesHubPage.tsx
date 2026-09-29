@@ -7,6 +7,7 @@ import { getKevinPreparationStoryCopy } from "../lib/kevinPreparationStoryI18n";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
+import { attractionReservationPath, attractionReservationServiceFeeCny, formatAttractionReservationFee } from "../lib/attractionReservations";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -18,11 +19,12 @@ import styles from "./TravelServicesHubPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 
 function serviceHref(
-  id: "tours" | "support",
+  id: "tours" | "reservations" | "support",
   locale: HomegroundLocale,
 ) {
   const home = getHomegroundCopy(locale);
   if (id === "tours") return `${home.path}tours/`;
+  if (id === "reservations") return attractionReservationPath[locale];
   return `${home.path}?service=full-trip-support#planner-contact`;
 }
 
@@ -31,7 +33,21 @@ function serviceHref(
  * it with the same alt text: the Zhangjiajie city-guide cover for published
  * routes, and Kevin with guests (faces blurred) for on-the-ground support.
  */
-function serviceImage(id: "tours" | "support", locale: HomegroundLocale) {
+function serviceImage(id: "tours" | "reservations" | "support", locale: HomegroundLocale) {
+  if (id === "reservations") {
+    // The Chengdu tour's panda photograph, with that product's alt text.
+    return {
+      src: "/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
+      width: 1600,
+      height: 1000,
+      alt: {
+        en: "A giant panda at Chengdu Research Base of Giant Panda Breeding",
+        zh: "成都大熊猫繁育研究基地内的大熊猫",
+        ko: "청두 자이언트판다 번식연구기지의 자이언트판다",
+      }[locale],
+      position: "50% 45%",
+    };
+  }
   if (id === "tours") {
     const hub = destinationHubRegistry.find((entry) => entry.id === "zhangjiajie");
     if (!hub) throw new Error("Missing Zhangjiajie destination hub.");
@@ -146,7 +162,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
             </div>
             <p>{copy.choicesBody}</p>
           </div>
-          <ol className={styles.cardGrid}>
+          <ol className={styles.cardGrid} data-count={copy.cards.length}>
             {copy.cards.map((card, index) => {
               const image = serviceImage(card.id, locale);
               return (
@@ -170,7 +186,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
                       </span>
                       <p className={styles.cardEyebrow}>{card.eyebrow}</p>
                       <h3><KeepWords locale={locale} text={card.title} /></h3>
-                      <p className={styles.cardText}>{card.body}</p>
+                      <p className={styles.cardText}>{card.body.replace("{fee}", formatAttractionReservationFee(attractionReservationServiceFeeCny, locale))}</p>
                       <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
                     </div>
                   </Link>
