@@ -35,6 +35,7 @@ import { JiangnanTourComparison, JiangnanBookingTrust } from "./JiangnanTourComp
 import { isJiangnanTour } from "../lib/tourContactDraft";
 import {
   getExistingContentCommercialCopy,
+  getPreviewProductPlanningContext,
   getProductPlanningContext,
 } from "../lib/existingContentCommercialLinks";
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
@@ -480,9 +481,101 @@ function buildGenericPageCopy(
 }
 
 function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
+  if (product.visibility === "preview") return buildPreviewPageCopy(product);
   return product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG
     ? jiangnanPageCopy[product.locale]
     : buildGenericPageCopy(product);
+}
+
+/**
+ * Preview products are unconfirmed supplier proposals served by a
+ * driver-guide. The generic copy promises guided days, transfers and no
+ * shopping stops, so previews state only what their own data publishes.
+ */
+function buildPreviewPageCopy(
+  product: LocalizedPrivateTourProduct,
+): ImaginePageCopy {
+  const generic = buildGenericPageCopy(product);
+  const facts = product.facts ?? generic.facts;
+  if (product.locale === "zh") {
+    return {
+      ...generic,
+      heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 司机兼向导`,
+      facts,
+      routeBody:
+        "每日安排依据地接方案逐日列出。东北冬季的开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会与你沟通。",
+      serviceEyebrow: "服务范围",
+      serviceTitle: "私车加司机兼向导，不是导游讲解团。",
+      serviceBody:
+        "车辆按人数安排，只服务你们一行；司机兼向导负责开车并协助当天衔接，不是持证导游，景区内不做讲解。服务语言在付款前书面确认。",
+      transportTitle: "车辆、司机兼向导与包含项目",
+      exclusionsTitle: "书面报价未列明则不包含",
+      confirmedTitle: "付款前书面确认",
+      confirmations: [
+        "出行日期，以及适用淡季价还是旺季价",
+        "司机兼向导的服务语言",
+        "酒店、房间安排与适合实际人数的车辆",
+        "包含哪些门票和接送、儿童价、单房差与取消条款",
+      ],
+      finalEyebrow: "咨询这条路线",
+      finalTitle: "想按你的日期走这条路线吗？",
+      finalBody:
+        "告诉我们日期、人数和同行儿童的年龄。我们先与地接核对路线，再在你付款前发出书面报价。",
+      contact: "获取书面报价",
+    };
+  }
+  if (product.locale === "ko") {
+    return {
+      ...generic,
+      heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 운전기사 겸 안내인`,
+      facts,
+      routeBody:
+        "날짜별 일정은 현지 협력사의 제안을 따릅니다. 동북의 겨울에는 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 고객과 상의합니다.",
+      serviceEyebrow: "서비스 범위",
+      serviceTitle: "가이드 해설 투어가 아닌, 전용 차량과 운전기사 겸 안내인.",
+      serviceBody:
+        "일행 인원에 맞춘 전용 차량을 이용하며, 운전기사 겸 안내인이 운전과 당일 진행을 돕습니다. 자격증이 있는 관광 가이드가 아니며 관광지 안에서 해설하지 않습니다. 서비스 언어는 결제 전에 서면으로 확인합니다.",
+      transportTitle: "차량, 운전기사 겸 안내인과 포함 항목",
+      exclusionsTitle: "서면 견적에 없으면 불포함",
+      confirmedTitle: "결제 전 서면 확인",
+      confirmations: [
+        "여행 날짜와 비수기·성수기 요금 적용 여부",
+        "운전기사 겸 안내인의 서비스 언어",
+        "호텔과 객실 구성, 실제 인원에 맞는 차량",
+        "포함되는 입장권과 이동, 아동 요금, 1인실 추가금과 취소 규정",
+      ],
+      finalEyebrow: "이 코스 문의하기",
+      finalTitle: "내 날짜에 맞춰 이 코스로 여행할까요?",
+      finalBody:
+        "날짜와 인원, 동반 아동의 나이를 알려 주세요. 현지 협력사와 코스를 확인한 뒤 결제 전에 서면 견적을 보내 드립니다.",
+      contact: "서면 견적 요청하기",
+    };
+  }
+  return {
+    ...generic,
+    heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · DRIVER-GUIDE`,
+    facts,
+    routeBody:
+      "The day plan follows our local partner's proposal. Opening dates, roads and weather in a Northeast winter can change the order; if anything important has to change, we discuss it with you.",
+    serviceEyebrow: "What the service covers",
+    serviceTitle: "A private vehicle and a driver-guide, not a guided tour.",
+    serviceBody:
+      "Your party has its own vehicle, sized to the group, and a driver-guide who drives and helps with the day's logistics. The driver-guide is not a licensed tour guide and gives no commentary inside scenic areas. The service language is confirmed in writing before you pay.",
+    transportTitle: "Vehicle, driver-guide and inclusions",
+    exclusionsTitle: "Not included unless your written quote lists it",
+    confirmedTitle: "Confirmed in writing before payment",
+    confirmations: [
+      "Your dates, and whether low- or peak-season prices apply",
+      "The driver-guide's service language",
+      "Hotels, room arrangement and the vehicle for your actual group",
+      "Which admissions and transfers are included, children's prices, single-room supplement and cancellation terms",
+    ],
+    finalEyebrow: "Ask about this route",
+    finalTitle: "Want this route for your dates?",
+    finalBody:
+      "Share your dates, group size and the ages of any children. We check the route with our local partner and send a written quote before you pay.",
+    contact: "Request a written quote",
+  };
 }
 
 function offerGroupLabel(locale: PrivateTourLocale | "ja", travelers: number) {
@@ -583,10 +676,12 @@ export function ShanghaiJiangnanImaginePage({
     destinations: [],
     guides: [],
     relatedProducts: [{ id: "ja-tour-hub", href: "/ja/tours/", label: "中国ツアー一覧を見る" }],
-  } : getProductPlanningContext(
-    product.slug as Parameters<typeof getProductPlanningContext>[0],
-    sourceLocale,
-  );
+  } : localized.visibility === "preview"
+    ? getPreviewProductPlanningContext(sourceLocale)
+    : getProductPlanningContext(
+      product.slug as Parameters<typeof getProductPlanningContext>[0],
+      sourceLocale,
+    );
   const commercialCopy = japanesePilot ? {
     ...getExistingContentCommercialCopy("en"),
     productLabel: jaPresentation.planningEyebrow,
@@ -806,12 +901,15 @@ export function ShanghaiJiangnanImaginePage({
         {copy.skipLink}
       </a>
       {japanese ? japaneseChrome?.header : <HomegroundHeader
-        languagePaths={{
-          ...localized.paths,
-          ja: product.slug === jaPilot.tourSlug
-            ? jaPilot.tour
-            : `/ja/tours/${product.slug}/`,
-        }}
+        languagePaths={localized.visibility === "preview"
+          // A preview has no Japanese page, so the switch offers no Japanese link.
+          ? localized.paths
+          : {
+            ...localized.paths,
+            ja: product.slug === jaPilot.tourSlug
+              ? jaPilot.tour
+              : `/ja/tours/${product.slug}/`,
+          }}
         locale={sourceLocale}
         pageContext="tour"
         plannerHrefOverride={inquiryHref}

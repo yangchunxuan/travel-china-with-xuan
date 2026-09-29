@@ -1,7 +1,7 @@
 import zhangjiajieProduct from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
-import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
+import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct, privateTourPreviewProducts, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { getZhangjiajiePrivateTourHomeCard } from "./zhangjiajiePrivateTourHomeCard.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
@@ -548,14 +548,21 @@ export function assertPublishedPrivateTourCatalogIntegrity(): true {
     );
   }
 
-  const guideLanguageSlugs = Object.keys(privateTourGuideLanguageBySlug);
-  if (
-    guideLanguageSlugs.length !== sourceSlugs.length ||
-    sourceSlugs.some((slug) => !guideLanguageSlugs.includes(slug))
-  ) {
-    throw new Error("Every published private tour needs exactly one guide-language entry.");
+  // Preview products never reach this catalogue, but their pages state a
+  // guide language too, so they keep an entry beside the published ones.
+  const previewSlugs = privateTourPreviewProducts.map((product) => product.slug);
+  if (previewSlugs.some((slug) => sourceSlugs.includes(slug))) {
+    throw new Error("A preview private tour must not be part of the published catalogue.");
   }
-  for (const product of privateTourProducts) {
+  const guideLanguageSlugs = Object.keys(privateTourGuideLanguageBySlug);
+  const guideLanguageOwners = [...sourceSlugs, ...previewSlugs];
+  if (
+    guideLanguageSlugs.length !== guideLanguageOwners.length ||
+    guideLanguageOwners.some((slug) => !guideLanguageSlugs.includes(slug))
+  ) {
+    throw new Error("Every published or preview private tour needs exactly one guide-language entry.");
+  }
+  for (const product of [...privateTourProducts, ...privateTourPreviewProducts]) {
     // The Korean badge may only promise a Korean-speaking guide where the
     // Korean package label itself publishes one.
     const koreanLabel = product.packages.some((tourPackage) =>

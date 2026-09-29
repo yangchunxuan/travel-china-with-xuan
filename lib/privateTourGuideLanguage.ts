@@ -9,18 +9,22 @@
  * - "english-or-none": the traveller chooses an English-guided version or a
  *   version with no on-site guide.
  * - "quote": the published text leaves the guide language to the written quote.
+ * - "driver-guide": a driver who also helps with logistics (司机兼向导), not a
+ *   licensed guide; the service language is confirmed before payment.
  *
  * Korean pages differ only where the Korean package label publishes a
  * Korean-speaking guide (`koreanGuide`). "availability" marks products whose
  * service note says that Korean guide is checked per date or city.
  * `assertPublishedPrivateTourCatalogIntegrity` fails if the Korean set here and
- * the Korean package labels diverge, or a published product has no entry.
+ * the Korean package labels diverge, or a published or preview product has no
+ * entry.
  */
 export type PrivateTourGuideLanguageBase =
   | "english"
   | "english-land"
   | "english-or-none"
-  | "quote";
+  | "quote"
+  | "driver-guide";
 
 // Japanese labels live in lib/japaneseGuideLanguage.ts: Japanese-only modules
 // are outside the self-hosted Chinese font's coverage check.
@@ -37,6 +41,7 @@ const quote: GuideLanguageEntry = { base: "quote" };
 const koreanConfirmed: GuideLanguageEntry = { base: "english", koreanGuide: "confirmed" };
 const koreanByDate: GuideLanguageEntry = { base: "english", koreanGuide: "availability" };
 const koreanByDateLand: GuideLanguageEntry = { base: "english-land", koreanGuide: "availability" };
+const driverGuide: GuideLanguageEntry = { base: "driver-guide" };
 
 export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLanguageEntry>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": english,
@@ -87,6 +92,11 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "beijing-xian-shanghai-8-day-private-tour": koreanByDate,
   "beijing-xian-guilin-hong-kong-10-day-private-tour": koreanByDate,
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": koreanByDateLand,
+  // Preview products (visibility "preview"); never shown on a public card.
+  "harbin-yabuli-snow-town-6-day-private-tour": driverGuide,
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": driverGuide,
+  "harbin-mohe-arctic-village-7-day-private-tour": driverGuide,
+  "harbin-snow-town-mohe-9-day-private-tour": driverGuide,
 };
 
 const baseLabels: Readonly<
@@ -111,6 +121,11 @@ const baseLabels: Readonly<
     en: "Guide language confirmed in quote",
     zh: "导游语种报价时确认",
     ko: "가이드 언어 견적 시 확인",
+  },
+  "driver-guide": {
+    en: "Driver-guide; language confirmed before payment",
+    zh: "司机兼向导，服务语言付款前确认",
+    ko: "운전기사 겸 안내인, 언어는 결제 전 확인",
   },
 };
 

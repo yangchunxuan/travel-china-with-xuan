@@ -154,6 +154,13 @@ const previewCaption: Record<PrivateTourLocale, (alt: string) => string> = {
     `${alt} — 이 여행의 사진 미리보기입니다. 해당 날짜의 관광지, 확정 일정 또는 실제 현장 상황을 뜻하지 않습니다.`,
 };
 
+// Shown when a route declines photos of other places (routePhotoFallback: false).
+const noDayPhotoCopy: Record<PrivateTourLocale, string> = {
+  en: "We have no verified photo of this day's places yet, so none is shown.",
+  zh: "这一天的地点暂时没有经过核实的照片，因此不配图。",
+  ko: "이날 방문지의 확인된 사진이 아직 없어 사진을 싣지 않았습니다.",
+};
+
 const japanesePreviewCaption = (alt: string) =>
   `${alt}｜この旅の写真プレビューです。この日の行き先、確定した行程や実際の現地状況を示すものではありません。`;
 
@@ -615,6 +622,8 @@ export function ShanghaiJiangnanRouteExplorer({
       );
       const authored = assigned?.variants.length ? assigned : null;
       if (authored) return authored;
+      // A photo of another place would read as this day's scene.
+      if (product.routePhotoFallback === false) return null;
 
       if (day.day === 1 && beijingArrivalTitles.has(day.title)) {
         const alt = photoCopy
@@ -666,7 +675,9 @@ export function ShanghaiJiangnanRouteExplorer({
     product.itinerary,
     product.locale,
     product.routeMedia,
+    product.routePhotoFallback,
   ]);
+  const withoutDayPhoto = product.routePhotoFallback === false && !routeMedia[activeIndex];
   const activeImage = routeMedia[activeIndex]?.variants[0]?.image ?? product.heroImage;
 
   useEffect(() => {
@@ -740,17 +751,17 @@ export function ShanghaiJiangnanRouteExplorer({
       </ol>
 
       <figure className={styles.routeMedia}>
-        <div className={styles.routeImageFrame}>
-          <Image
+        <div className={styles.routeImageFrame} data-empty={withoutDayPhoto ? "true" : undefined}>
+          {withoutDayPhoto ? null : <Image
             alt={activeImage.alt}
             fill
             key={`${activeIndex}-${activeImage.src}`}
             sizes="(max-width: 860px) 92vw, 48vw"
             src={activeImage.src}
             style={{ objectPosition: activeImage.objectPosition }}
-          />
+          />}
         </div>
-        <figcaption>{activeImage.caption}</figcaption>
+        <figcaption>{withoutDayPhoto ? noDayPhotoCopy[product.locale] : activeImage.caption}</figcaption>
       </figure>
     </div>
   );

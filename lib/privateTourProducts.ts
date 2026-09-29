@@ -7,6 +7,8 @@ import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts"
 import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhaseTwoProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
@@ -69,11 +71,31 @@ export interface PrivateTourRouteMediaGroup {
   variants: readonly PrivateTourRouteMediaVariant[];
 }
 
+export interface PrivateTourFact {
+  label: string;
+  value: string;
+}
+
 export interface PrivateTourProduct {
   id: string;
   slug: string;
   days: number;
   nights: number;
+  /**
+   * "preview" marks an unconfirmed product (for example a supplier proposal)
+   * that renders at its direct URL with robots noindex, and is kept out of
+   * `privateTourProducts`: no tour hub card, sitemap, search, homepage or
+   * guide link, Japanese page or published catalogue count. Preview products
+   * live in `privateTourPreviewProducts`; see docs/private-tour-previews.md.
+   */
+  visibility?: "preview";
+  /** Replaces the generic page facts rail when the generic wording would overstate the service. */
+  facts?: LocalizedValue<readonly PrivateTourFact[]>;
+  /**
+   * false: a day without its own route photo shows no photo, instead of the
+   * nearest dated photo from another place.
+   */
+  routePhotoFallback?: false;
   servicePolicy: Readonly<{
     shoppingStops: false;
     addedServicesRequirePriorAgreement: true;
@@ -160,6 +182,9 @@ export interface LocalizedPrivateTourProduct {
   nights: number;
   servicePolicy: PrivateTourProduct["servicePolicy"];
   // Present only when set on the source product, so other pages keep their payload.
+  visibility?: "preview";
+  facts?: readonly PrivateTourFact[];
+  routePhotoFallback?: false;
   tourFormat?: "small-group";
   includesDomesticFlights?: true;
   itinerary: readonly { day: number; title: string; description: string }[];
@@ -3345,6 +3370,19 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
   lastReviewed: "2026-09-20",
 };
 
+function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
+  const additions = privateTourAdditionalMediaBySlug[product.slug];
+  if (!additions?.length) return product;
+  return {
+    ...product,
+    routeMedia: [...(product.routeMedia ?? []), ...additions].sort(
+      (left, right) => left.day - right.day,
+    ),
+    dateModified: "2026-09-28",
+  };
+}
+
+/** Published products: every list, card, sitemap, search and catalogue reads only these. */
 export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
   [
     shanghaiSuzhouHangzhou,
@@ -3360,16 +3398,20 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
     ...privateTourLongHaulProducts,
-  ].map((product) => {
-    const additions = privateTourAdditionalMediaBySlug[product.slug];
-    if (!additions?.length) return product;
-    return {
-      ...product,
-      routeMedia: [...(product.routeMedia ?? []), ...additions].sort(
-        (left, right) => left.day - right.day,
-      ),
-      dateModified: "2026-09-28",
-    };
+  ].map(withAdditionalMedia),
+);
+
+/**
+ * Unconfirmed preview products (`visibility: "preview"`). They render only at
+ * their direct /tours/, /zh/tours/ and /ko/tours/ URLs with robots noindex;
+ * nothing that lists or links published products reads this array.
+ */
+export const privateTourPreviewProducts: readonly PrivateTourProduct[] = Object.freeze(
+  privateTourNortheastWinterPreviewProducts.map((product: PrivateTourProduct) => {
+    if (product.visibility !== "preview") {
+      throw new Error(`Preview product must set visibility "preview": ${product.slug}`);
+    }
+    return withAdditionalMedia(product);
   }),
 );
 
@@ -3395,6 +3437,34 @@ export function getPrivateTourProduct(
   slug: string,
 ): PrivateTourProduct | undefined {
   return privateTourProductsBySlug[slug];
+}
+
+const privateTourPreviewProductsBySlug: Readonly<
+  Record<string, PrivateTourProduct>
+> = Object.freeze(
+  Object.fromEntries(
+    privateTourPreviewProducts.map((product) => [product.slug, product]),
+  ),
+);
+
+for (const slug of Object.keys(privateTourPreviewProductsBySlug)) {
+  if (privateTourProductsBySlug[slug]) {
+    throw new Error(`Preview slug duplicates a published private tour: ${slug}`);
+  }
+}
+
+/** Preview products only; published lookups keep using getPrivateTourProduct. */
+export function getPrivateTourPreviewProduct(
+  slug: string,
+): PrivateTourProduct | undefined {
+  return privateTourPreviewProductsBySlug[slug];
+}
+
+/** The product a /tours/[slug]/ route renders: published first, then preview. */
+export function getPrivateTourRouteProduct(
+  slug: string,
+): PrivateTourProduct | undefined {
+  return privateTourProductsBySlug[slug] ?? privateTourPreviewProductsBySlug[slug];
 }
 
 export function getPrivateTourPaths(slug: string): LocalizedValue<string> {
@@ -3478,6 +3548,9 @@ export function localizePrivateTourProduct(
     days: product.days,
     nights: product.nights,
     servicePolicy: product.servicePolicy,
+    ...(product.visibility ? { visibility: product.visibility } : {}),
+    ...(product.facts ? { facts: product.facts[locale] } : {}),
+    ...(product.routePhotoFallback === false ? { routePhotoFallback: false as const } : {}),
     ...(product.tourFormat ? { tourFormat: product.tourFormat } : {}),
     ...(product.includesDomesticFlights ? { includesDomesticFlights: true as const } : {}),
     itinerary: product.itinerary.map((item) => ({
@@ -3526,7 +3599,7 @@ export function getLocalizedPrivateTourProduct(
 }
 
 export function assertAllPrivateTourPriceInvariants(): true {
-  for (const product of privateTourProducts) {
+  for (const product of [...privateTourProducts, ...privateTourPreviewProducts]) {
     for (const tourPackage of product.packages) {
       for (const tier of tourPackage.prices) {
         if (tier.publishedPrice) {

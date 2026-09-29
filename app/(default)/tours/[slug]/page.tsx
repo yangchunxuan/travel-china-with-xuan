@@ -2,16 +2,21 @@ import { notFound } from "next/navigation";
 import { ShanghaiJiangnanImaginePage } from "../../../../components/ShanghaiJiangnanImaginePage";
 import {
   buildPrivateTourMetadata,
+  getPrivateTourPreviewRouteParams,
   getPrivateTourRouteParams,
   isReservedPrivateTourSlug,
 } from "../../../../lib/privateTourMetadata";
-import { getPrivateTourProduct } from "../../../../lib/privateTourProducts";
+import { getPrivateTourRouteProduct } from "../../../../lib/privateTourProducts";
 
 export const dynamicParams = false;
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  return getPrivateTourRouteParams("en").map(({ slug }) => ({ slug }));
+  // Preview products render at their direct URL only (noindex, unlisted).
+  return [
+    ...getPrivateTourRouteParams("en"),
+    ...getPrivateTourPreviewRouteParams("en"),
+  ].map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -21,7 +26,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   if (isReservedPrivateTourSlug(slug)) notFound();
-  const product = getPrivateTourProduct(slug);
+  const product = getPrivateTourRouteProduct(slug);
   if (!product) notFound();
   return buildPrivateTourMetadata(product, "en");
 }
@@ -33,7 +38,7 @@ export default async function PrivateTourRoute({
 }) {
   const { slug } = await params;
   if (isReservedPrivateTourSlug(slug)) notFound();
-  const product = getPrivateTourProduct(slug);
+  const product = getPrivateTourRouteProduct(slug);
   if (!product) notFound();
   return <ShanghaiJiangnanImaginePage product={product} locale="en" />;
 }
