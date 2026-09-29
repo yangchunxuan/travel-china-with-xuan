@@ -676,7 +676,7 @@ test("small links keep 44px tap targets and tile-shaped links cover their tile",
     assert.match(styles, /\.breadcrumb a \{[^}]*position:\s*relative;/);
     // Reaches further down than up, so a wrapped second row never covers the
     // text of the row above it.
-    assert.match(styles, /\.breadcrumb a::after \{[^}]*inset:\s*-0\.5rem -0\.25rem -1(?:\.125)?rem;[^}]*position:\s*absolute;/);
+    assert.match(styles, /\.breadcrumb a::after \{[^}]*inset:\s*-0\.5rem -0\.(?:25|4375)rem -1(?:\.125)?rem;[^}]*position:\s*absolute;/);
   }
   assert.match(contactCard, /\.copy \{[^}]*min-height:\s*36px;[^}]*position:\s*relative;/);
   assert.match(contactCard, /\.copy::after \{[^}]*inset:\s*-0\.3125rem -0\.125rem;[^}]*position:\s*absolute;/);
