@@ -171,7 +171,7 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
       <a className={localeStyles.skipLink} href="#reservations-main">{home.skipLink}</a>
-      <HomegroundHeader languagePaths={attractionReservationLanguagePaths()} locale={locale} pageContext="services" />
+      <HomegroundHeader languagePaths={attractionReservationLanguagePaths()} locale={locale} pageContext="reservations" />
       <main id="reservations-main" tabIndex={-1}>
         <header className={styles.hero}>
           <nav aria-label={copy.breadcrumb} className={styles.breadcrumb}>

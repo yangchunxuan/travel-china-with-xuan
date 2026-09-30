@@ -17,7 +17,7 @@ const articleComponents = [
   "components/ChinaItineraryWithOlderParentsPage.tsx",
 ];
 
-test("global navigation keeps one distinct four-item information architecture", async () => {
+test("global navigation keeps one distinct five-item information architecture", async () => {
   const [header, footer, css, model] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
@@ -32,6 +32,9 @@ test("global navigation keeps one distinct four-item information architecture", 
     "Private Tours",
     "私家团",
     "프라이빗 투어",
+    "Attraction Tickets",
+    "景点代预约",
+    "관광지 예약 대행",
     "Travel Advice",
     "实用指南",
     "실용 가이드",
@@ -68,10 +71,10 @@ test("global navigation keeps one distinct four-item information architecture", 
   assert.doesNotMatch(header, /String\(index \+ 1\)\.padStart/);
   assert.match(
     model,
-    /homegroundPrimaryNavigationIds = \[[\s\S]*"destinations"[\s\S]*"tours"[\s\S]*"guides"[\s\S]*"studio"/,
+    /homegroundPrimaryNavigationIds = \[[\s\S]*"destinations"[\s\S]*"tours"[\s\S]*"reservations"[\s\S]*"guides"[\s\S]*"studio"/,
   );
   assert.doesNotMatch(model, /"first-trip"|pathSegment: "plan\/"/);
-  for (const pathSegment of ["explore/", "tours/", "guides/", "studio/"]) {
+  for (const pathSegment of ["explore/", "tours/", "services/china-attraction-reservations/", "guides/", "studio/"]) {
     assert.match(model, new RegExp(`pathSegment: "${pathSegment}"`));
   }
   assert.equal(
@@ -109,7 +112,9 @@ test("global navigation keeps one distinct four-item information architecture", 
   assert.match(css, /\.mobileNavCopy small \{/);
   assert.match(css, /\.mobileUtilityLink \{/);
   assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
-  assert.match(css, /max-height: 560px/);
+  // Five items: short phones tighten the rows first, then drop descriptions.
+  assert.match(css, /max-height: 680px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 4\.4rem;/);
+  assert.match(css, /max-height: 570px\) \{[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
 });
 
 test("all public page families use the shared header", async () => {

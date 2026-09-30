@@ -3,6 +3,7 @@ import type { HomegroundLocale } from "./homegroundI18n";
 export type HomegroundPrimaryNavigationId =
   | "destinations"
   | "tours"
+  | "reservations"
   | "guides"
   | "studio";
 
@@ -29,6 +30,7 @@ export interface HomegroundPrimaryNavigationItem
 export const homegroundPrimaryNavigationIds = [
   "destinations",
   "tours",
+  "reservations",
   "guides",
   "studio",
 ] as const satisfies readonly HomegroundPrimaryNavigationId[];
@@ -46,6 +48,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         label: "Private Tours",
         description: "Compare published private itineraries",
         pathSegment: "tours/",
+      },
+      reservations: {
+        label: "Attraction Tickets",
+        description: "We book timed attraction tickets in your own name",
+        pathSegment: "services/china-attraction-reservations/",
       },
       guides: {
         label: "Travel Advice",
@@ -72,6 +79,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "比较已经上线的私家路线",
         pathSegment: "tours/",
       },
+      reservations: {
+        label: "景点代预约",
+        description: "以你本人护照实名代约景点",
+        pathSegment: "services/china-attraction-reservations/",
+      },
       guides: {
         label: "实用指南",
         description: "搜索入境、交通、住宿与时间问题",
@@ -96,6 +108,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         label: "프라이빗 투어",
         description: "공개된 프라이빗 일정을 비교",
         pathSegment: "tours/",
+      },
+      reservations: {
+        label: "관광지 예약 대행",
+        description: "본인 여권으로 관광지 실명 예약 대행",
+        pathSegment: "services/china-attraction-reservations/",
       },
       guides: {
         label: "실용 가이드",

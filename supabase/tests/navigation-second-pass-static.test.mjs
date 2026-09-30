@@ -14,11 +14,19 @@ test("compact desktop header preserves the reviewed navigation CSS contract", as
 
   assert.match(
     styles,
-    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]*?\.desktopUtilityLink \{\s*display: none;/,
+    /@media \(min-width: 1180px\) \{[\s\S]*?\.desktopUtilityLink \{\s*display: none;/,
   );
   assert.match(
     styles,
-    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]*?\.desktopNav a \{[\s\S]*?padding-inline: 0\.58rem;/,
+    /@media \(min-width: 1180px\) \{[\s\S]*?\.desktopNav a \{[\s\S]*?padding-inline: 0\.58rem;/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 1180px\) \{[\s\S]*?grid-template-columns: minmax\(13rem, 1fr\) auto minmax\(max-content, 1fr\);/,
+  );
+  assert.match(
+    styles,
+    /@media \(min-width: 1180px\) and \(max-width: 1439\.98px\) \{\s*\.headerCtaLong \{\s*display: none;[\s\S]*?\.headerCtaShort \{\s*display: inline;/,
   );
   assert.equal(
     (header.match(/state\.exact \? "page" : state\.active \? "location"/g) ?? [])
