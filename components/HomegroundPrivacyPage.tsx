@@ -95,6 +95,29 @@ export function HomegroundPrivacyPage({
             </div>
           </section>
 
+          <section
+            className={styles.section}
+            aria-labelledby="reservation-privacy-title"
+            id="attraction-reservations"
+          >
+            <header className={styles.sectionHeading}>
+              <p className={styles.eyebrow}>{copy.reservation.eyebrow}</p>
+              <h2 id="reservation-privacy-title">{copy.reservation.title}</h2>
+              <p>{copy.reservation.intro}</p>
+            </header>
+            <dl className={styles.configurationList}>
+              {copy.reservation.rows.map((row) => (
+                <div key={row.label}>
+                  <dt>{row.label}</dt>
+                  <dd>
+                    <code>{row.value}</code>
+                    <p>{row.detail}</p>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
           <section className={styles.section} aria-labelledby="providers-title">
             <header className={styles.sectionHeading}>
               <p className={styles.eyebrow}>{copy.providers.eyebrow}</p>

@@ -1,0 +1,789 @@
+/*
+ * /services/china-attraction-reservations/. Same system as /services/:
+ * white page, #f9f8f6 tiles without outlines, ink #0a0a0a with muted ink at
+ * 60%, 44px pills and Georgia headlines. The rules table scrolls inside its
+ * own container on narrow screens so the page itself never scrolls sideways.
+ */
+.page {
+  --ink: #0a0a0a;
+  --muted: rgb(10 10 10 / 64%);
+  --rule: rgb(10 10 10 / 10%);
+  --tile: #f9f8f6;
+  --warm: #f2f1ef;
+  --paper: #fff;
+  --accent: #a84731;
+  --focus: var(--hg-color-focus, #b14f37);
+  --content: 77rem;
+  --gutter: 1.5rem;
+  --section: 5rem;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.page main > * {
+  padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+}
+
+.page h1,
+.page h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.page h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.page h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.page p,
+.page li {
+  text-wrap: pretty;
+}
+
+.page a:focus-visible,
+.page summary:focus-visible,
+.page input:focus-visible,
+.page textarea:focus-visible,
+.tableScroll:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(2rem, 4vw, 3.5rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.8125rem;
+  gap: 0.5rem;
+  line-height: 1.45;
+}
+
+.breadcrumb a {
+  color: var(--ink);
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+.heroGrid {
+  align-items: start;
+  display: grid;
+  gap: 2rem clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.heroCopy h1 {
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.03;
+  margin: 1rem 0 0;
+  max-width: 16ch;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 0;
+  max-width: 38rem;
+}
+
+.heroFacts {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 2rem 0 0;
+}
+
+.heroFacts > div {
+  background: var(--tile);
+  border-radius: 1rem;
+  padding: 1rem 1.125rem;
+}
+
+.heroFacts dt {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.heroFacts dd {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0.375rem 0 0;
+}
+
+/* The booking guarantee under the hero facts: one sentence pair, never a badge. */
+.guarantee {
+  background: #e3efe8;
+  border-radius: 1rem;
+  color: #1f5a41;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 48rem;
+  overflow-wrap: break-word;
+  padding: 0.875rem 1.125rem;
+}
+
+.heroActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  align-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  gap: 0.625rem;
+  justify-content: center;
+  line-height: 1.3;
+  min-height: 3rem;
+  padding: 0.75rem 1.375rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.primaryButton {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.primaryButton:hover {
+  background: #333;
+}
+
+.secondaryButton {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.secondaryButton:hover {
+  background: var(--warm);
+}
+
+.textLink {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.9375rem;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25rem;
+}
+
+.heroFigure {
+  margin: 0;
+}
+
+.heroFigure img {
+  aspect-ratio: 8 / 5;
+  border-radius: 1rem;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.heroFigure figcaption {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.heroFigure figcaption a {
+  color: inherit;
+}
+
+/* ---------- Sections ---------- */
+
+.section,
+.twoColumn,
+.rules,
+.enquirySection {
+  padding-block: var(--section) 0;
+}
+
+.sectionLead {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 48rem;
+}
+
+.twoColumn {
+  display: grid;
+  gap: 2rem clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.twoColumn p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.tile {
+  background: var(--tile);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.tile h2 {
+  font-size: clamp(1.375rem, 2.4vw, 1.75rem);
+}
+
+.tile ul,
+.plainList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tile li,
+.plainList li {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  padding-block: 0.75rem;
+}
+
+.checkList li {
+  color: var(--ink);
+  padding-inline-start: 1.5rem;
+  position: relative;
+}
+
+.checkList li::before {
+  color: var(--accent);
+  content: "✓";
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.steps,
+.priceGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.steps li,
+.priceGrid li {
+  background: var(--tile);
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem;
+}
+
+.steps p,
+.priceGrid p {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0.625rem 0 0;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 1rem 0 0;
+}
+
+.policyLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 1rem 0 0;
+}
+
+.policyLinks a {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* ---------- Rules table ---------- */
+
+.scrollHint {
+  color: var(--muted);
+  display: none;
+  font-size: 0.8125rem;
+  margin: 1rem 0 0;
+}
+
+.tableScroll {
+  border: 1px solid var(--rule);
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  min-width: 64rem;
+  width: 100%;
+}
+
+.table caption {
+  caption-side: top;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  padding: 0.875rem 1rem;
+  text-align: start;
+}
+
+.table th,
+.table td {
+  border-top: 1px solid var(--rule);
+  padding: 0.75rem 0.75rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+/* CJK text would otherwise break a narrow column one character per line. */
+.table td,
+.table thead th {
+  min-width: 6.5rem;
+  word-break: keep-all;
+}
+
+/*
+ * Chinese has no spaces between words, so keep-all leaves whole clauses
+ * unbreakable and pushes the table past its container even at desktop
+ * widths. Chinese cells break between characters, with strict punctuation
+ * rules; the column minimums above still stop one-character lines.
+ */
+.table:lang(zh) td,
+.table:lang(zh) thead th {
+  line-break: strict;
+  word-break: normal;
+}
+
+.table thead th {
+  background: var(--tile);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.table tbody th[scope="row"] {
+  font-weight: 600;
+  min-width: 9.5rem;
+}
+
+.table td:nth-child(8) {
+  min-width: 15rem;
+}
+
+.table td:last-child {
+  white-space: nowrap;
+}
+
+.cityRow th {
+  background: var(--warm);
+  font-family: var(--hg-editorial);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.status {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0.25rem 0.625rem;
+  white-space: nowrap;
+}
+
+.status[data-status="offered"] {
+  background: #e3efe8;
+  color: #1f5a41;
+}
+
+.status[data-status="not-needed"] {
+  background: #eceae6;
+  color: #3d3b37;
+}
+
+.unknown {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.sourceLink {
+  color: var(--ink);
+  display: inline-block;
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+  text-underline-offset: 0.2rem;
+}
+
+/* ---------- Enquiry ---------- */
+
+.enquirySection {
+  display: grid;
+  gap: 2rem clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  scroll-margin-top: 5rem;
+}
+
+.enquiryIntro p:last-child {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.enquiryIntro h2 {
+  margin-top: 0.75rem;
+}
+
+.enquiry {
+  background: var(--tile);
+  border-radius: 1.25rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.enquiryForm {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.choiceGroup {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+.choiceGroup legend,
+.field,
+.sendTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.choiceGroup legend {
+  margin-bottom: 0.625rem;
+  padding: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  cursor: pointer;
+  position: relative;
+}
+
+.chip input {
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.chip span {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+}
+
+.chip input:checked + span {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.chip input:focus-visible + span {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.attractionList {
+  display: grid;
+  gap: 0.375rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.attractionOption {
+  align-items: flex-start;
+  background: var(--paper);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  gap: 0.625rem;
+  line-height: 1.4;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+}
+
+.attractionOption input,
+.checkboxRow input {
+  accent-color: var(--ink);
+  flex: none;
+  height: 1.0625rem;
+  margin: 0.125rem 0 0;
+  width: 1.0625rem;
+}
+
+.fieldRow {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field input,
+.field textarea {
+  appearance: none;
+  background: var(--paper);
+  border: 1px solid #d8d8d8;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+  color: #171717;
+  font: 400 1rem/1.4 var(--sans, system-ui, sans-serif);
+  min-height: 2.875rem;
+  min-width: 0;
+  padding: 0.6875rem 0.8125rem;
+  width: 100%;
+}
+
+.field input:disabled {
+  background: #f1f1f1;
+  color: #767676;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.optional {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.checkboxRow {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  gap: 0.625rem;
+  margin-top: -0.5rem;
+  min-height: 2.75rem;
+}
+
+.fieldHint {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.send {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.sendTitle {
+  margin: 0 0 0.75rem;
+}
+
+.sendButtons {
+  display: grid;
+  gap: 0.625rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sendButtons .kakao {
+  grid-column: 1 / -1;
+}
+
+.replyFrom,
+.privacyLine {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0.75rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.privacyLine a {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  min-height: 2.75rem;
+}
+
+/* ---------- FAQ ---------- */
+
+.faqList {
+  border-top: 1px solid var(--rule);
+  margin-top: 1rem;
+  max-width: 52rem;
+}
+
+.faqList details {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faqList summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.125rem 2rem 1.125rem 0;
+  position: relative;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  inset-block-start: 1rem;
+  inset-inline-end: 0.25rem;
+  position: absolute;
+}
+
+.faqList details[open] summary::after {
+  content: "−";
+}
+
+.faqList summary h3 {
+  display: inline;
+}
+
+.faqList p {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
+}
+
+.page main > :last-child {
+  padding-block-end: var(--section);
+}
+
+/* ---------- Narrow screens ---------- */
+
+/*
+ * The table's column minimums add up to about 75rem, so it only fits once the
+ * container reaches its full 77rem width (an 80rem viewport). Below that it
+ * scrolls inside its container, so the hint shows at tablet and small
+ * desktop widths too, not only on phones.
+ */
+@media (max-width: 80rem) {
+  .scrollHint {
+    display: block;
+  }
+}
+
+@media (max-width: 56rem) {
+  .heroGrid,
+  .twoColumn,
+  .enquirySection {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .steps,
+  .priceGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 40rem) {
+  .page {
+    --gutter: 1rem;
+    --section: 3.5rem;
+  }
+
+  .heroFacts,
+  .attractionList,
+  .fieldRow,
+  .sendButtons {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .enquiry {
+    padding: 1.125rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+  }
+}

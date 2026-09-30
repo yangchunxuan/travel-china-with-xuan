@@ -24,6 +24,8 @@ import {
   type LegacySystemContentLifecycleRecord,
 } from "./legacySystemContentLifecycle";
 import { getEditorialAuthor } from "./editorialIdentity";
+import { attractionReservationPath } from "./attractionReservations";
+import { getAttractionReservationCopy } from "./attractionReservationsI18n";
 import {
   productPreviewCopy,
   zhangjiajiePrivateTourPaths,
@@ -237,6 +239,21 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     }),
   );
 
+  const attractionReservations = Object.fromEntries(
+    locales.map((locale) => {
+      const copy = getAttractionReservationCopy(locale);
+      return [
+        locale,
+        {
+          path: attractionReservationPath[locale],
+          title: copy.metadata.title,
+          description: copy.lede,
+          h1: copy.h1,
+        },
+      ];
+    }),
+  );
+
   const nodes = [
     systemNode({
       id: "home",
@@ -307,6 +324,20 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
       volatility: "high",
       refreshCadence: "weekly",
       nextReviewAt: "2026-08-31",
+    }),
+    systemNode({
+      id: "attraction-reservations",
+      section: "services",
+      family: "service",
+      primaryIntent: "purchase",
+      definitions: attractionReservations,
+      lifecycle: getLegacySystemContentLifecycle("attraction-reservations"),
+      schemaTypes: ["WebPage", "Service", "FAQPage"],
+      entityIds: ["country-china", "city-beijing", "city-shanghai", "city-xian", "city-chengdu", "city-hangzhou"],
+      parentContentId: "hub-services",
+      volatility: "high",
+      refreshCadence: "monthly",
+      nextReviewAt: "2026-10-29",
     }),
     systemNode({
       id: "entry-requirements",

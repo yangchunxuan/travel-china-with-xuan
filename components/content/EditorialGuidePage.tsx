@@ -27,6 +27,8 @@ import {
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
 import { getGuideTourCard, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
 import { GuideTourCard } from "./GuideTourCard";
+import { GuideReservationCta } from "./GuideReservationCta";
+import { getGuideAttractionReservationTarget } from "../../lib/attractionReservations";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
@@ -264,6 +266,7 @@ export function EditorialGuidePage({
   const tourCard = getGuideTourCard(guide.id, locale);
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
+  const reservationTarget = getGuideAttractionReservationTarget(guide.id);
   const relatedDestinationCopy =
     locale === "zh"
       ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
@@ -372,6 +375,10 @@ export function EditorialGuidePage({
             }
           />
         </article>
+
+        {reservationTarget ? (
+          <GuideReservationCta guideId={guide.id} locale={locale} rule={reservationTarget} />
+        ) : null}
 
         {relatedDestinations.length > 0 ? (
           <aside className={styles.relatedDestinations}>

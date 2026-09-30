@@ -3732,8 +3732,8 @@
       }
     ],
     "nonEditorialSystemPages": {
-      "identityCount": 9,
-      "scope": "The nine remaining system identities after system-guides and system-entry-requirements are counted elsewhere: home, studio, author-evan, itinerary-review, zhangjiajie-4-day-private-tour, privacy, business-information, terms and refund-delivery. They are excluded from topic ownership."
+      "identityCount": 10,
+      "scope": "The ten remaining system identities after system-guides and system-entry-requirements are counted elsewhere: home, studio, author-evan, itinerary-review, zhangjiajie-4-day-private-tour, privacy, business-information, terms, refund-delivery and attraction-reservations (the paid attraction reservation service page added on 2026-09-29, which owns the service offer and its dated booking-rules table, not any attraction's how-to-visit topic). They are excluded from topic ownership."
     },
     "inProduction": [],
     "roundLockedTopicsAtKickoff": [

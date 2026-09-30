@@ -260,8 +260,8 @@ test("entity evidence and detailed published assignments match current repositor
   const expectedNonEditorial = legacySystemContentIds.filter(
     (id) => !["guides", "entry-requirements"].includes(id),
   );
-  assert.equal(searchMap.coverage.nonEditorialSystemPages.identityCount, 9);
-  assert.equal(expectedNonEditorial.length, 9);
+  assert.equal(searchMap.coverage.nonEditorialSystemPages.identityCount, 10);
+  assert.equal(expectedNonEditorial.length, 10);
   for (const id of expectedNonEditorial) {
     assert.match(searchMap.coverage.nonEditorialSystemPages.scope, new RegExp(id));
   }

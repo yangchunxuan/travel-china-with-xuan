@@ -193,6 +193,13 @@
   min-width: 0;
 }
 
+/* Three kinds of help sit in one row on a wide screen. */
+@media (min-width: 61.3125rem) {
+  .cardGrid[data-count="3"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 /* Grok tile: the photo inset 4px with a 12px radius inside a 16px tile. */
 .cardGrid a {
   background: var(--tile);
