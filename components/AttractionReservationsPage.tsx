@@ -104,7 +104,7 @@ function structuredData(locale: HomegroundLocale, fee: string) {
         "@id": `${canonicalUrl}#service`,
         name: copy.navLabel,
         serviceType: copy.navLabel,
-        description: copy.lede,
+        description: `${copy.lede}${locale === "zh" ? "" : " "}${copy.guarantee}`,
         url: canonicalUrl,
         inLanguage: home.htmlLang,
         provider: { "@id": ORGANIZATION_ID },
@@ -117,7 +117,8 @@ function structuredData(locale: HomegroundLocale, fee: string) {
           url: `${canonicalUrl}#${attractionReservationEnquiryAnchor}`,
           price: String(attractionReservationServiceFeeCny),
           priceCurrency: "CNY",
-          description: unitText,
+          // The offer names its price and the booking guarantee that comes with it.
+          description: `${unitText}${locale === "zh" ? "。" : ". "}${copy.guarantee}`,
           priceSpecification: {
             "@type": "UnitPriceSpecification",
             price: String(attractionReservationServiceFeeCny),
@@ -193,6 +194,7 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                   </div>
                 ))}
               </dl>
+              <p className={styles.guarantee} data-reservation-guarantee>{copy.guarantee}</p>
               <div className={styles.heroActions}>
                 <a className={styles.primaryButton} href={`#${attractionReservationEnquiryAnchor}`}>{copy.heroCta}<ArrowRight aria-hidden="true" size={18} /></a>
                 <a className={styles.textLink} href="#reservation-rules">{copy.tableCta}</a>

@@ -15,8 +15,9 @@ import styles from "./GuideReservationCta.module.css";
  * reservation service covers. It is not the guide's inline sales card
  * (data-guide-tour-card): that card stays the guide's one product link, and
  * this aside opens the service page with the attraction preselected. A rule's
- * `disclosure` (for example an operator's statement that it has not
- * authorised third-party agents) is always shown beside the offer. The body
+ * `disclosure` (what we do there, such as booking on the official channel
+ * with no resale or mark-up) is always shown beside the offer. Both bodies
+ * state the booking guarantee's lead time. The body
  * promises a booking in the traveller's own passport name only where the
  * source guide confirms the official system accepts passports; otherwise it
  * says we check that before payment.

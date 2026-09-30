@@ -31,8 +31,34 @@ const unverifiedRuleIds = [
  */
 const routeSourceGuides = new Set(["first-china-trip-jiangnan-6-or-beijing-11-days"]);
 
-/** Operators whose own statements say they have not authorised third-party agents. */
+/** Operators whose own statements (kept in their guides) say they have not authorised third-party agents. */
 const operatorStatementRuleIds = ["forbidden-city", "shaanxi-history-museum"];
+
+/** Absolute terms China's Advertising Law bans from the service copy. */
+const bannedAbsolute = /100\s*%|绝对|absolutely|零风险|保证\s*100/iu;
+
+/**
+ * Sales copy says only what we do. It never quotes an operator's statement
+ * about third parties, never says whether we hold any authorisation, and
+ * never claims to be an attraction's seller, agent or partner or to have a
+ * relationship with its staff.
+ */
+const authorisationWords = /authori[sz]|授权|승인/iu;
+const authorisationClaims = /(?:authori[sz]ed|official|appointed) (?:ticket )?(?:seller|agent|partner|reseller)|partner of|in partnership with|合作伙伴|官方代理|指定代理|官方合作|内部(?:票|渠道|关系)|공식 판매처|공식 대리점|제휴사|staff|工作人员|직원|inside contact|connections? (?:at|with) the/iu;
+
+/** Every mention of the booking guarantee, per language: the lead time and the full refund. */
+const guaranteeLead = { en: /at least 8 days before (?:your|the) visit/u, zh: /至少 8 天/u, ko: /최소 8일 전/u };
+const guaranteeRefund = { en: /full refund|refunded in full/u, zh: /全额退还/u, ko: /전액 환불/u };
+const retiredNoGuarantee =
+  /cannot promise (?:availability|a slot)|Availability is never certain|What we cannot promise|cannot guarantee availability|不保证有余量|无法保证有余量|余量永远无法保证|无法承诺一定约到|我们无法承诺的事|잔여분은 (?:보장되지|확실하지)|약속할 수 (?:는 )?없|보장하지 않습니다\. 인기/u;
+
+/** The attraction reservation sections of the legal copy (terms and refund & delivery, every language). */
+function legalReservationSections(legal) {
+  const sections = [...legal.matchAll(/id: "attraction-reservations",[\s\S]*?(?=\n {8}\{\n {10}id: "|\n {6}\],\n)/gu)].map((match) => match[0]);
+  const constants = legal.match(/const reservationGuarantee = \{[\s\S]*?\n\} as const;\n\nconst reservationLate = \{[\s\S]*?\n\} as const;/u);
+  assert.ok(constants, "legal copy states the guarantee as shared constants");
+  return { sections, constants: constants[0] };
+}
 
 const hasRuleFacts = (rule) =>
   rule.channels !== null ||
@@ -125,11 +151,8 @@ test("every attraction is bookable except free walk-in entry, and nothing is exc
   assert.match(cityWall.disclosure.en, /Walk-up windows also sell tickets/u);
 });
 
-test("operators' third-party statements stay disclosed and the guides warn against resellers, not against us", async () => {
-  const statement = { en: /has not authorised/u, zh: /未授权第三方/u, ko: /승인하지 않았다/u };
-  // A plain "no authorisation" statement, never "not its agent", which reads
-  // as if the operator's statement covered only agents it appointed itself.
-  const noAuthorisation = { en: /We have no authorisation from the museum/u, zh: /我们未获得(?:故宫|博物馆)授权/u, ko: /승인을 받지 않았으며/u };
+test("sales copy says what we do and neither quotes operator statements nor claims authorisation", async () => {
+  const noResale = { en: /do not resell tickets/u, zh: /不转售/u, ko: /되팔(?:지 않|거나 금액을 더하지 않)/u };
   const carveOut = /not its agent|its ticket or reservation agents|不是(?:故宫|博物馆)的代理|대리점이 아니|do not sell its tickets|不销售故宫门票|입장권을 판매하지 않습니다/u;
   const refusal = /do not book|don't book|不代订|예약하지 않습니다/u;
   for (const id of operatorStatementRuleIds) {
@@ -137,20 +160,21 @@ test("operators' third-party statements stay disclosed and the guides warn again
     assert.equal(rule.status, "offered", id);
     for (const locale of locales) {
       for (const text of [rule.notes[locale], rule.disclosure[locale]]) {
-        assert.match(text, statement[locale], `${id}: ${locale} keeps the operator statement`);
-        assert.match(text, noAuthorisation[locale], `${id}: ${locale} says we have no authorisation from the operator`);
-        assert.doesNotMatch(text, carveOut, `${id}: ${locale} does not narrow the operator statement`);
+        assert.doesNotMatch(text, authorisationWords, `${id}: ${locale} no operator statement or authorisation wording`);
+        assert.doesNotMatch(text, /We have no authorisation|未获得(?:故宫|博物馆)?授权|승인을 받지 않았/u, `${id}: ${locale}`);
+        assert.match(text, noResale[locale], `${id}: ${locale} says we do not resell`);
+        assert.doesNotMatch(text, carveOut, `${id}: ${locale}`);
         assert.doesNotMatch(text, refusal, `${id}: ${locale} no longer says we do not book it`);
       }
     }
     if (id === "forbidden-city") {
-      // Quote the museum exactly, as the source guides do.
-      assert.match(rule.notes.en, /has not authorised third parties to act as ticket or exhibition-reservation agents/u);
-      assert.match(rule.disclosure.en, /has not authorised third parties to act as ticket or exhibition-reservation agents/u);
       for (const locale of locales) {
         assert.match(rule.notes[locale], /(?:do not resell tickets or add a mark-up|不转售、不加价|되팔거나 금액을 더하지 않으며)/u, `${locale}: no resale, no mark-up`);
+        assert.match(rule.notes[locale], /(?:official channel in the visitor's own passport name|官方渠道以每位游客本人的护照实名|공식 채널에서 방문자 본인의 여권 실명)/u, `${locale}: official system, own name`);
+        assert.match(rule.disclosure[locale], /(?:face value|票面价|공식 가격 그대로)/u, `${locale}: tickets at face value`);
       }
     }
+    // The guides keep the operator's own statement as a fact and warn against resellers.
     const guideId = rule.source;
     assert.equal(reservations.getGuideAttractionReservationTarget(guideId)?.id, id);
     const bodies = Object.fromEntries(await Promise.all(locales.map(async (locale) => [locale, await source(`content/guides/${guideId}/body.${locale}.ts`)])));
@@ -161,16 +185,25 @@ test("operators' third-party statements stay disclosed and the guides warn again
     assert.match(bodies.ko, /승인하지 않았/u);
     assert.match(bodies.ko, /재판매처나 암표상/u);
   }
+  // No rule note or CTA disclosure on the hub or a guide CTA quotes an operator or mentions authorisation.
+  for (const rule of reservations.attractionReservationRules) {
+    for (const locale of locales) {
+      assert.doesNotMatch(rule.notes[locale], authorisationWords, `${rule.id}: ${locale} note`);
+      if (rule.disclosure) assert.doesNotMatch(rule.disclosure[locale], authorisationWords, `${rule.id}: ${locale} disclosure`);
+    }
+  }
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);
     const text = JSON.stringify(copy);
+    assert.doesNotMatch(text, authorisationWords, `${locale}: hub, FAQ and CTA copy say nothing about authorisation`);
+    assert.doesNotMatch(text, authorisationClaims, `${locale}: no seller, agent, partner or staff claim`);
     assert.doesNotMatch(text, refusal, `${locale}: hub copy`);
-    assert.doesNotMatch(text, carveOut, `${locale}: hub copy does not narrow the operator statements`);
+    assert.doesNotMatch(text, carveOut, `${locale}: hub copy`);
     assert.equal(Object.keys(copy.status).sort().join(","), "not-needed,offered");
   }
-  assert.match(copyModule.getAttractionReservationCopy("en").compliance.join(" "), /not an authorised ticket seller or agent of any attraction/u);
-  assert.match(copyModule.getAttractionReservationCopy("zh").compliance.join(" "), /不是任何景点授权的售票方或代理/u);
-  assert.match(copyModule.getAttractionReservationCopy("ko").compliance.join(" "), /공식 판매처나 대리점도 아니/u);
+  assert.match(copyModule.getAttractionReservationCopy("en").compliance.join(" "), /No resale and no mark-up on tickets.*face value/u);
+  assert.match(copyModule.getAttractionReservationCopy("zh").compliance.join(" "), /不转售门票，门票不加价.*票面价/u);
+  assert.match(copyModule.getAttractionReservationCopy("ko").compliance.join(" "), /되팔지 않으며.*공식 가격 그대로/u);
   // The guide linked from the Forbidden City guide warns against resold tickets, not against a reservation in the visitor's name.
   const resellerGuide = Object.fromEntries(await Promise.all(locales.map(async (locale) => [locale, await source(`content/guides/official-or-reseller-china-tickets/body.${locale}.ts`)])));
   assert.doesNotMatch(resellerGuide.en, /standalone third-party Forbidden City ticket|No, not a standalone third-party ticket/u);
@@ -180,9 +213,90 @@ test("operators' third-party statements stay disclosed and the guides warn again
   assert.match(resellerGuide.en, /resold Forbidden City ticket/u);
   assert.match(resellerGuide.zh, /转售的故宫门票/u);
   assert.match(resellerGuide.ko, /재판매된 자금성 입장권/u);
+  // Terms and refund & delivery sections of the service.
   const legal = await source("lib/homegroundLegalI18n.ts");
+  const { sections, constants } = legalReservationSections(legal);
+  assert.equal(sections.length, 6, "terms and refund & delivery sections in en, zh and ko");
+  for (const text of [...sections, constants]) {
+    assert.doesNotMatch(text, authorisationWords, "legal reservation sections say nothing about authorisation");
+    assert.doesNotMatch(text, authorisationClaims, "legal reservation sections make no seller, agent or partner claim");
+  }
   assert.doesNotMatch(legal, /do not book attractions whose operator|不代订运营方|허가하지 않았다고 밝힌 관광지는 예약하지 않습니다/u);
-  assert.match(legal, /Homeground is not an authorised ticket seller or agent of any attraction/u);
+  assert.doesNotMatch(legal, /not an authorised ticket seller|不是任何景点授权|공식 판매처나 대리점도 아니/u);
+  assert.match(legal, /do not resell tickets or add a mark-up, and charge admission at the attraction's official face value/u);
+  assert.match(legal, /不转售门票、不加价，门票按景点官方票面价收取/u);
+  assert.match(legal, /티켓을 되팔거나 금액을 더하지 않으며, 입장료는 관광지 공식 가격 그대로 받습니다/u);
+});
+
+test("the 8-day booking guarantee is stated once as data and repeated everywhere the service is sold", async () => {
+  assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
+  const guaranteeModule = await import("../../lib/attractionReservationGuarantee.ts");
+  assert.equal(guaranteeModule.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
+  const fee = { en: "USD 7", zh: "¥45", ko: "₩10,000" };
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    const check = (text, where) => {
+      assert.match(text, guaranteeLead[locale], `${locale} ${where}: 8-day lead time`);
+    };
+    check(copy.guarantee, "guarantee");
+    assert.match(copy.guarantee, guaranteeRefund[locale], `${locale}: full refund of fee and ticket`);
+    assert.match(copy.guarantee, { en: /service fee and ticket money/u, zh: /服务费和门票款/u, ko: /수수료와 입장료/u }[locale]);
+    assert.match(copy.guarantee, { en: /^Guaranteed booking: /u, zh: /^预约保证：/u, ko: /^예약 보장: /u }[locale]);
+    // Later requests are still tried, not guaranteed, and keep the existing refund rule.
+    assert.match(copy.guaranteeLate, { en: /later than 8 days/u, zh: /不足 8 天/u, ko: /8일 전보다 늦게/u }[locale]);
+    assert.match(copy.guaranteeLate, { en: /not guaranteed, but we still try/u, zh: /仍会尽力预约，但不作保证/u, ko: /시도하되 보장하지는 않습니다/u }[locale]);
+    assert.match(copy.guaranteeLate, { en: /refunded in full, together with any ticket money not spent/u, zh: /全额退还该景点的服务费及未使用的门票款/u, ko: /수수료 전액과 사용하지 않은 입장료를 환불/u }[locale]);
+    assert.ok(copy.limits.includes(copy.guarantee) && copy.limits.includes(copy.guaranteeLate), `${locale}: refund list`);
+    check(copy.pricingLead, "pricing");
+    check(copy.enquiry.intro.replace("first visit", "visit").replace("첫 방문일", "방문일").replace("第一个参观日", "参观日"), "enquiry");
+    check(copy.rulesIntro.replace(/The 8-day booking guarantee/u, "at least 8 days before your visit").replace(/提前 8 天/u, "至少 8 天").replace(/8일 전 예약 보장/u, "최소 8일 전"), "rules intro");
+    assert.match(copy.heroFacts.map((fact) => fact.value).join(" "), /8/u, `${locale}: hero fact`);
+    const guaranteeFaq = copy.faqs.find((item) => guaranteeLead[locale].test(item.answer) && /guaranteed\?|有保证吗|보장되나요/u.test(item.question));
+    assert.ok(guaranteeFaq, `${locale}: guarantee FAQ`);
+    assert.match(guaranteeFaq.answer, guaranteeRefund[locale]);
+    const forbiddenCityFaq = copy.faqs.find((item) => /Forbidden City|故宫|자금성/u.test(item.question));
+    check(forbiddenCityFaq.answer, "Forbidden City FAQ");
+    for (const body of [copy.guideCta.body, copy.guideCta.bodyPassportUnchecked]) {
+      check(body.replace("{fee}", fee[locale]), "guide CTA");
+    }
+    const text = JSON.stringify(copy);
+    assert.doesNotMatch(text, retiredNoGuarantee, `${locale}: blanket "not guaranteed" statements are gone`);
+    assert.doesNotMatch(text, bannedAbsolute, `${locale}: no banned absolute terms`);
+  }
+  for (const rule of reservations.attractionReservationRules) {
+    for (const locale of locales) {
+      for (const text of [rule.notes[locale], rule.disclosure?.[locale] ?? ""]) {
+        assert.doesNotMatch(text, bannedAbsolute, `${rule.id}: ${locale}`);
+        assert.doesNotMatch(text, retiredNoGuarantee, `${rule.id}: ${locale}`);
+      }
+    }
+  }
+  // The page shows the guarantee in the hero and in the Offer JSON-LD.
+  const page = await source("components/AttractionReservationsPage.tsx");
+  assert.match(page, /data-reservation-guarantee>\{copy\.guarantee\}/u);
+  assert.match(page, /description: `\$\{unitText\}.*\$\{copy\.guarantee\}`/u);
+  assert.match(page, /description: `\$\{copy\.lede\}.*\$\{copy\.guarantee\}`/u, "Service JSON-LD description");
+  // The copy takes the lead time from the constant, never a typed-in 8.
+  const [i18nSource, legal] = await Promise.all([source("lib/attractionReservationsI18n.ts"), source("lib/homegroundLegalI18n.ts")]);
+  assert.match(i18nSource, /const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;/u);
+  assert.doesNotMatch(i18nSource, /\b8 days|8 天|8일/u);
+  assert.match(legal, /import \{ ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS \} from "\.\/attractionReservationGuarantee";/u);
+  assert.doesNotMatch(legal, /\b8 days|8 天|8일/u);
+  // Terms and refund & delivery: the guarantee and the later-request rule in every language.
+  const { sections, constants } = legalReservationSections(legal);
+  assert.match(constants, /at least \$\{guaranteeDays\} days before the visit date, Homeground guarantees the reservation\. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full\./u);
+  assert.match(constants, /在参观日前至少 \$\{guaranteeDays\} 天提交需求并完成付款的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。/u);
+  assert.match(constants, /방문일 최소 \$\{guaranteeDays\}일 전까지 요청과 결제를 마치시면 예약을 보장합니다\. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다\./u);
+  assert.match(constants, /later than \$\{guaranteeDays\} days before the visit is attempted but not guaranteed/u);
+  assert.doesNotMatch(constants, bannedAbsolute);
+  for (const locale of locales) {
+    const inLocale = sections.filter((text) => text.includes(`reservationGuarantee.${locale}`) && text.includes(`reservationLate.${locale}`));
+    assert.equal(inLocale.length, 2, `${locale}: terms and refund & delivery state the guarantee`);
+  }
+  for (const text of sections) {
+    assert.doesNotMatch(text, retiredNoGuarantee, "legal reservation sections");
+    assert.doesNotMatch(text, bannedAbsolute, "legal reservation sections");
+  }
 });
 
 test("guide CTAs cover every guided attraction the ownership registry allows", async () => {
@@ -275,7 +389,7 @@ test("the prepared request carries the service context and no passport field", a
   assert.match(component, /homegroundWhatsAppHref/u);
 });
 
-test("public copy avoids checkout language and promises of availability", async () => {
+test("public copy avoids checkout language", async () => {
   const files = [
     "lib/attractionReservationsI18n.ts",
     "lib/attractionReservations.ts",
@@ -284,7 +398,7 @@ test("public copy avoids checkout language and promises of availability", async 
   ];
   for (const file of files) {
     const text = await source(file);
-    assert.doesNotMatch(text, /\bguaranteed\b|Book now|Buy now|Checkout/u, file);
+    assert.doesNotMatch(text, /Book now|Buy now|Checkout/u, file);
   }
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);

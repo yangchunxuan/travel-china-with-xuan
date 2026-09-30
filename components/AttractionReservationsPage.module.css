@@ -147,6 +147,19 @@
   margin: 0.375rem 0 0;
 }
 
+/* The booking guarantee under the hero facts: one sentence pair, never a badge. */
+.guarantee {
+  background: #e3efe8;
+  border-radius: 1rem;
+  color: #1f5a41;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 48rem;
+  overflow-wrap: break-word;
+  padding: 0.875rem 1.125rem;
+}
+
 .heroActions {
   align-items: center;
   display: flex;

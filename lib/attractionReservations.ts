@@ -3,6 +3,10 @@ import type { GuideId } from "./guideRegistry";
 import type { DestinationHubId } from "./destinationHubs";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { PRIVATE_TOUR_PRICE_CONVERSION } from "./privateTourProducts.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee.ts";
+
+export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
 
 /**
  * Attraction reservation service (代预约 / 예약 대행).
@@ -24,10 +28,14 @@ import { PRIVATE_TOUR_PRICE_CONVERSION } from "./privateTourProducts.ts";
  *   not-needed  — the guide says individual visitors enter free without an
  *                 advance reservation, so there is nothing to book or charge.
  *
- * Homeground is not an authorised ticket seller or agent of any attraction
- * and never resells tickets. Where an operator says it has not authorised
- * third-party agents, that statement stays in `notes` and `disclosure`; it
- * is never removed or contradicted.
+ * Sales copy says only what Homeground does: it submits each reservation on
+ * the attraction's own official system in the traveller's own name, never
+ * resells tickets or adds a mark-up, and charges tickets at face value. It
+ * never claims to be an authorised seller, agent or partner of an
+ * attraction, and never quotes operators' statements about third parties;
+ * those facts stay in the source guides. A request sent and paid at least
+ * ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS days before the visit is a
+ * guaranteed booking at every offered attraction.
  */
 
 export const attractionReservationCityIds = [
@@ -187,14 +195,14 @@ export const attractionReservationRules = [
     },
     price: null,
     notes: {
-      en: "The Palace Museum says it has not authorised third parties to act as ticket or exhibition-reservation agents. We have no authorisation from the museum. We submit each reservation on the museum's own official channel in the visitor's own passport name; we do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our guide.",
-      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们未获得故宫授权。我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
-      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 고궁박물원의 승인을 받지 않았으며, 박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출할 뿐입니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 가이드를 보고 직접 예약하셔도 됩니다.",
+      en: "We submit each reservation on the museum's own official channel in the visitor's own passport name. We do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our guide.",
+      zh: "我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
+      ko: "박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 가이드를 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
-      en: "The Palace Museum says it has not authorised third parties to act as ticket or exhibition-reservation agents. We have no authorisation from the museum. We do not resell tickets or add a mark-up, and its real-name and cancellation rules apply.",
-      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们未获得故宫授权，也不转售、不加价；故宫的实名与退改规则照常适用。",
-      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 고궁박물원의 승인을 받지 않았으며, 표를 되팔거나 금액을 더하지 않습니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.",
+      en: "We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. We do not resell tickets or add a mark-up: tickets are charged at face value, and the museum's real-name and cancellation rules apply.",
+      zh: "我们在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，门票按票面价收取；故宫的实名与退改规则照常适用。",
+      ko: "고궁박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않고 입장료는 공식 가격 그대로 받으며, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.",
     },
     verifiedAt: "2026-08-22",
     source: "forbidden-city-for-foreign-visitors",
@@ -358,14 +366,14 @@ export const attractionReservationRules = [
     },
     price: { kind: "free-reservation" },
     notes: {
-      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We have no authorisation from the museum and do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket. No-shows get a 180-day booking restriction. You can also book it yourself with our guide.",
-      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们未获得博物馆授权，也不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
-      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 승인을 받지 않았으며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권입니다. 노쇼 시 180일 예약 제한. 가이드를 보고 직접 예약하셔도 됩니다.",
+      en: "We do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket, charged at face value. No-shows get a 180-day booking restriction. You can also book it yourself with our guide.",
+      zh: "我们不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票，按票面价收取。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
+      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권이며 공식 가격 그대로 받습니다. 노쇼 시 180일 예약 제한. 가이드를 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
-      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We have no authorisation from the museum and do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
-      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们未获得博物馆授权，也不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用，你也可以自行预约。",
-      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 승인을 받지 않았으며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것이며, 직접 예약하셔도 됩니다.",
+      en: "We do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
+      zh: "我们不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用，你也可以自行预约。",
+      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것이며, 직접 예약하셔도 됩니다.",
     },
     verifiedAt: "2026-08-12",
     source: "shaanxi-history-museum-booking-and-collection-plan",
@@ -557,9 +565,8 @@ export function getBookableAttractionReservationRules(): readonly AttractionRese
 
 /**
  * Guides that explain an attraction Homeground can book, and the attraction
- * each one preselects. Only `offered` rules appear here. Where the operator
- * says it has not authorised third-party agents, the guide keeps that
- * statement and the CTA shows the rule's `disclosure` beside the offer.
+ * each one preselects. Only `offered` rules appear here. The CTA shows the
+ * rule's `disclosure` beside the offer where the rule has one.
  *
  * The Badaling and Mutianyu transfer guides are left out on purpose: the
  * high-intent CTA ownership registry blocks specialised CTAs on them. The
