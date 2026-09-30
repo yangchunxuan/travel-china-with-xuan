@@ -13,6 +13,28 @@ const messageModule = await import("../../lib/attractionReservationMessage.ts");
 const locales = ["en", "zh", "ko"];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/u;
 
+/** Offered attractions whose booking rule no guide records yet. */
+const unverifiedRuleIds = [
+  "great-wall-badaling",
+  "great-wall-mutianyu",
+  "shanghai-museum-peoples-square",
+  "shanghai-tower",
+  "huaqing-palace",
+  "jinsha-site-museum",
+  "lingyin-feilai-peak",
+  "west-lake-boat",
+];
+
+/** Operators whose own statements say they have not authorised third-party agents. */
+const operatorStatementRuleIds = ["forbidden-city", "shaanxi-history-museum"];
+
+const hasRuleFacts = (rule) =>
+  rule.channels !== null ||
+  rule.passportAccepted !== null ||
+  rule.realName !== null ||
+  rule.release !== null ||
+  rule.price !== null;
+
 test("every reservation rule is dated and traced to an existing guide", async () => {
   const ids = new Set();
   for (const rule of reservations.attractionReservationRules) {
@@ -25,8 +47,12 @@ test("every reservation rule is dated and traced to an existing guide", async ()
       assert.ok(rule.notes[locale]?.trim(), `${rule.id}: ${locale} notes`);
       if (rule.release) assert.ok(rule.release[locale]?.trim(), `${rule.id}: ${locale} release`);
     }
-    if (rule.status === "offered" || rule.status === "excluded" || rule.status === "not-needed") {
-      assert.ok(rule.source, `${rule.id}: a ${rule.status} rule needs a source guide`);
+    assert.ok(["offered", "not-needed"].includes(rule.status), `${rule.id}: status ${rule.status}`);
+    if (hasRuleFacts(rule) || rule.status === "not-needed") {
+      assert.ok(rule.source, `${rule.id}: a rule that states facts needs a source guide`);
+    }
+    if (rule.disclosure) {
+      for (const locale of locales) assert.ok(rule.disclosure[locale]?.trim(), `${rule.id}: ${locale} disclosure`);
     }
     if (rule.source) {
       const metadata = JSON.parse(await source(`content/guides/${rule.source}/metadata.json`));
@@ -36,7 +62,12 @@ test("every reservation rule is dated and traced to an existing guide", async ()
 });
 
 test("a rule without a verified booking rule stays empty instead of inventing facts", () => {
-  for (const rule of reservations.attractionReservationRules.filter((candidate) => candidate.status === "ask")) {
+  const unverified = reservations.attractionReservationRules.filter(
+    (rule) => unverifiedRuleIds.includes(rule.id) || rule.source === null,
+  );
+  assert.deepEqual(unverified.map((rule) => rule.id).sort(), [...unverifiedRuleIds].sort());
+  for (const rule of unverified) {
+    assert.equal(rule.status, "offered", `${rule.id}: status`);
     assert.equal(rule.channels, null, `${rule.id}: channels`);
     assert.equal(rule.passportAccepted, null, `${rule.id}: passport`);
     assert.equal(rule.realName, null, `${rule.id}: real name`);
@@ -67,17 +98,86 @@ test("published face values and release rules are copied from the source guide",
   }
 });
 
-test("operators that refuse third parties are excluded and never carry a booking CTA", () => {
-  const excluded = reservations.attractionReservationRules.filter((rule) => rule.status === "excluded").map((rule) => rule.id).sort();
-  assert.deepEqual(excluded, ["forbidden-city", "shaanxi-history-museum"]);
+test("every attraction is bookable except free walk-in entry, and nothing is excluded", () => {
+  const rules = reservations.attractionReservationRules;
+  const notNeeded = rules.filter((rule) => rule.status === "not-needed").map((rule) => rule.id);
+  assert.deepEqual(notNeeded, ["shanghai-museum-east"]);
+  assert.equal(reservations.getAttractionReservationRule("shanghai-museum-east").price.kind, "free-walk-in");
+  const bookable = reservations.getBookableAttractionReservationRules().map((rule) => rule.id).sort();
+  assert.deepEqual(bookable, rules.filter((rule) => rule.id !== "shanghai-museum-east").map((rule) => rule.id).sort());
+  for (const id of ["forbidden-city", "shaanxi-history-museum", "xian-city-wall", "national-museum-of-china", "sanxingdui-museum", "tiananmen-square", ...unverifiedRuleIds]) {
+    assert.ok(bookable.includes(id), `${id} is bookable`);
+  }
+  const cityWall = reservations.getAttractionReservationRule("xian-city-wall");
+  assert.match(cityWall.notes.en, /Walk-up windows also sell tickets/u);
+  assert.match(cityWall.disclosure.en, /Walk-up windows also sell tickets/u);
+});
+
+test("operators' third-party statements stay disclosed and the guides warn against resellers, not against us", async () => {
+  const statement = { en: /has not authorised/u, zh: /未授权第三方/u, ko: /승인하지 않았다/u };
+  const notAgent = { en: /not its agent/u, zh: /不是(?:故宫|博物馆)的代理/u, ko: /대리점이 아니/u };
+  const refusal = /do not book|don't book|不代订|예약하지 않습니다/u;
+  for (const id of operatorStatementRuleIds) {
+    const rule = reservations.getAttractionReservationRule(id);
+    assert.equal(rule.status, "offered", id);
+    for (const locale of locales) {
+      for (const text of [rule.notes[locale], rule.disclosure[locale]]) {
+        assert.match(text, statement[locale], `${id}: ${locale} keeps the operator statement`);
+        assert.match(text, notAgent[locale], `${id}: ${locale} says we are not the operator's agent`);
+        assert.doesNotMatch(text, refusal, `${id}: ${locale} no longer says we do not book it`);
+      }
+    }
+    const guideId = rule.source;
+    assert.equal(reservations.getGuideAttractionReservationTarget(guideId)?.id, id);
+    const bodies = Object.fromEntries(await Promise.all(locales.map(async (locale) => [locale, await source(`content/guides/${guideId}/body.${locale}.ts`)])));
+    assert.match(bodies.en, /has not authorised third-party/u, `${guideId}: authorisation fact kept`);
+    assert.match(bodies.en, /reseller or scalper as unverified/u, `${guideId}: warning is about sellers`);
+    assert.match(bodies.zh, /未授权第三方/u);
+    assert.match(bodies.zh, /经销商或黄牛/u);
+    assert.match(bodies.ko, /승인하지 않았/u);
+    assert.match(bodies.ko, /재판매처나 암표상/u);
+  }
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    const text = JSON.stringify(copy);
+    assert.doesNotMatch(text, refusal, `${locale}: hub copy`);
+    assert.equal(Object.keys(copy.status).sort().join(","), "not-needed,offered");
+  }
+  assert.match(copyModule.getAttractionReservationCopy("en").compliance.join(" "), /not an authorised ticket seller or agent of any attraction/u);
+  assert.match(copyModule.getAttractionReservationCopy("zh").compliance.join(" "), /不是任何景点授权的售票方或代理/u);
+  assert.match(copyModule.getAttractionReservationCopy("ko").compliance.join(" "), /공식 판매처나 대리점도 아니/u);
+  const legal = await source("lib/homegroundLegalI18n.ts");
+  assert.doesNotMatch(legal, /do not book attractions whose operator|不代订运营方|허가하지 않았다고 밝힌 관광지는 예약하지 않습니다/u);
+  assert.match(legal, /Homeground is not an authorised ticket seller or agent of any attraction/u);
+});
+
+test("guide CTAs cover every guided attraction the ownership registry allows", async () => {
+  const registry = JSON.parse(await source("docs/organic-growth/high-intent-cta-ownership-registry.json"));
+  const blocked = new Set(
+    registry.entries
+      .filter((entry) => entry.ctaPlacement === "specialized-cta-blocked-generic-footer-only")
+      .map((entry) => entry.contentId),
+  );
   for (const [guideId, attractionId] of Object.entries(reservations.attractionReservationGuideTargets)) {
     const rule = reservations.getAttractionReservationRule(attractionId);
     assert.equal(rule?.status, "offered", `${guideId} → ${attractionId}`);
     assert.equal(reservations.getGuideAttractionReservationTarget(guideId)?.id, attractionId);
+    assert.ok(!blocked.has(guideId), `${guideId}: specialised CTAs are blocked by the ownership registry`);
   }
-  assert.equal(reservations.getGuideAttractionReservationTarget("forbidden-city-for-foreign-visitors"), null);
-  assert.equal(reservations.getGuideAttractionReservationTarget("shaanxi-history-museum-booking-and-collection-plan"), null);
-  assert.equal(reservations.getGuideAttractionReservationTarget("xian-city-wall-tickets-gates-walk-or-bike"), null);
+  assert.equal(reservations.getGuideAttractionReservationTarget("forbidden-city-for-foreign-visitors")?.id, "forbidden-city");
+  assert.equal(reservations.getGuideAttractionReservationTarget("shaanxi-history-museum-booking-and-collection-plan")?.id, "shaanxi-history-museum");
+  assert.equal(reservations.getGuideAttractionReservationTarget("xian-city-wall-tickets-gates-walk-or-bike")?.id, "xian-city-wall");
+  // Registry-blocked transfer guides keep only their generic footer CTA.
+  assert.equal(reservations.getGuideAttractionReservationTarget("beijing-to-badaling-great-wall-transfer"), null);
+  assert.equal(reservations.getGuideAttractionReservationTarget("beijing-to-mutianyu-great-wall-transfer"), null);
+  // Every offered rule whose source guide is free to carry it has a CTA there.
+  for (const rule of reservations.attractionReservationRules) {
+    if (rule.status !== "offered" || !rule.source || blocked.has(rule.source)) continue;
+    const target = reservations.getGuideAttractionReservationTarget(rule.source);
+    assert.ok(target, `${rule.source}: guide for ${rule.id} carries a reservation CTA`);
+  }
+  const cta = await source("components/content/GuideReservationCta.tsx");
+  assert.match(cta, /rule\.disclosure/u);
 });
 
 test("the service fee shows one currency per language and never less than CNY 45", () => {
@@ -93,6 +193,10 @@ test("the service fee shows one currency per language and never less than CNY 45
   );
   assert.equal(
     reservations.attractionReservationHref("en", "forbidden-city"),
+    "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+  );
+  assert.equal(
+    reservations.attractionReservationHref("en", "shanghai-museum-east"),
     "/services/china-attraction-reservations/#reservation-enquiry",
   );
 });
@@ -142,6 +246,26 @@ test("public copy avoids checkout language and promises of availability", async 
     assert.ok(copy.passportBody.length > 60);
     assert.equal(copy.faqs.length >= 5, true);
   }
+});
+
+test("search copy leads with the Forbidden City and the owner's refund and privacy clauses stay", async () => {
+  const lead = { en: /Forbidden City/u, zh: /故宫/u, ko: /자금성/u };
+  const yes = { en: /^Yes\./u, zh: /^可以。/u, ko: /^네\./u };
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    assert.match(copy.metadata.title, lead[locale], `${locale}: title`);
+    assert.match(copy.metadata.description, lead[locale], `${locale}: description`);
+    assert.match(copy.h1, lead[locale], `${locale}: h1`);
+    const forbiddenCityFaq = copy.faqs.find((item) => lead[locale].test(item.question));
+    assert.ok(forbiddenCityFaq, `${locale}: Forbidden City FAQ`);
+    assert.match(forbiddenCityFaq.answer, yes[locale], `${locale}: Forbidden City FAQ answers yes`);
+    assert.doesNotMatch(copy.enquiry.attractionsHint, /ask us|可询问|‘문의’로/u);
+  }
+  const [legal, privacy] = await Promise.all([source("lib/homegroundLegalI18n.ts"), source("lib/homegroundPrivacyI18n.ts")]);
+  assert.match(legal, /You may cancel by email before we make the reservation; the service fee and ticket money received are refunded\./u);
+  assert.match(privacy, /Full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry/u);
+  const page = await source("components/AttractionReservationsPage.tsx");
+  assert.equal((page.match(/<h1>/gu) ?? []).length, 1);
 });
 
 test("the page is a public, indexable system identity with reciprocal alternates", async () => {

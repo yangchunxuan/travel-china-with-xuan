@@ -68,7 +68,7 @@ export default {
     {
       id: "booking-rules",
       type: "paragraph",
-      text: "For a visitor booking with a passport, start with the Palace Museum's current official English Tickets page rather than assuming every language uses the same checkout. At the 22 August review, that page instructed international visitors to submit each visitor's full name, passport number and intended date to bookingticket@dpm.org.cn within the seven-day booking window and at least one calendar day in advance. The Chinese official rules separately identify the Palace Museum WeChat mini-program, a 20:00 release seven days before the visit and no same-day tickets. Treat these as distinct official channel instructions, follow the one currently addressed to your booking case, and require a completed reservation record before fixing the day. The museum has not authorised third-party ticket agents.",
+      text: "For a visitor booking with a passport, start with the Palace Museum's current official English Tickets page rather than assuming every language uses the same checkout. At the 22 August review, that page instructed international visitors to submit each visitor's full name, passport number and intended date to bookingticket@dpm.org.cn within the seven-day booking window and at least one calendar day in advance. The Chinese official rules separately identify the Palace Museum WeChat mini-program, a 20:00 release seven days before the visit and no same-day tickets. Treat these as distinct official channel instructions, follow the one currently addressed to your booking case, and require a completed reservation record before fixing the day. The museum has not authorised third-party ticket agents, so treat a ticket offered by a reseller or scalper as unverified: what counts is a completed Palace Museum reservation record in the visitor's own name.",
     },
     {
       id: "booking-paths",
@@ -85,7 +85,7 @@ export default {
       id: "email-boundary",
       type: "callout",
       title: "Sending an email or opening a booking page is not the same as holding a ticket",
-      body: "Keep the museum's response or completed booking record and check every visitor, passport number, date and time period before treating the visit as secured. Passport data is sensitive: send it only through the exact official route currently published by the Palace Museum, do not copy Homeground or an unrelated seller, and do not forward the record publicly. If the result is unclear, use the contact details on the museum site.",
+      body: "Keep the museum's response or completed booking record and check every visitor, passport number, date and time period before treating the visit as secured. Passport data is sensitive: when you book yourself, send it only through the exact official route currently published by the Palace Museum, do not copy Homeground or an unrelated seller, and do not forward the record publicly. If the result is unclear, use the contact details on the museum site.",
       tone: "warning",
     },
     {

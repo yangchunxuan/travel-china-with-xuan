@@ -436,16 +436,6 @@
   color: #3d3b37;
 }
 
-.status[data-status="excluded"] {
-  background: #f6e3de;
-  color: #842a2a;
-}
-
-.status[data-status="ask"] {
-  background: #eef0f5;
-  color: #34405a;
-}
-
 .unknown {
   color: var(--muted);
   font-style: italic;
@@ -576,14 +566,6 @@
   height: 1.0625rem;
   margin: 0.125rem 0 0;
   width: 1.0625rem;
-}
-
-.attractionOption em {
-  color: var(--muted);
-  display: block;
-  font-size: 0.75rem;
-  font-style: normal;
-  margin-top: 0.125rem;
 }
 
 .fieldRow {

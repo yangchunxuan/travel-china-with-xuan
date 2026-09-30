@@ -608,7 +608,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. Attraction reservation service",
           paragraphs: [
-            "Homeground reserves attraction admission for travellers in Beijing, Shanghai, Xi'an, Chengdu and Hangzhou through the channel each attraction names, in each traveller's own real name and passport. We do not use automated booking tools or multiple accounts, do not resell tickets and do not book attractions whose operator says it has not authorised third parties.",
+            "Homeground reserves attraction admission for travellers in Beijing, Shanghai, Xi'an, Chengdu and Hangzhou by submitting each reservation through the official channel the attraction names, in each traveller's own real name and passport. Homeground is not an authorised ticket seller or agent of any attraction; some operators, including the Palace Museum and the Shaanxi History Museum, state that they have not authorised third-party agents. We do not use automated booking tools or multiple accounts and do not resell tickets, and each attraction's own real-name, cancellation and no-show rules apply.",
             "Price: a service fee of CNY 45 per person per attraction, plus admission charged at the attraction's official face value with no mark-up, paid together after written confirmation. Reservations for attractions in a confirmed Homeground private-tour itinerary are included without a service fee.",
           ],
           bullets: [
@@ -721,7 +721,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. 景点代预约服务",
           paragraphs: [
-            "Homeground 通过各景点公布的渠道，以每位游客本人的真实姓名和护照，为游客预约北京、上海、西安、成都、杭州的景点门票。我们不使用自动抢票工具或多个账号，不转售门票，也不代订运营方表示未授权第三方的景点。",
+            "Homeground 通过各景点公布的官方渠道，以每位游客本人的真实姓名和护照提交预约，为游客预约北京、上海、西安、成都、杭州的景点门票。Homeground 不是任何景点授权的售票方或代理；故宫博物院、陕西历史博物馆等运营方声明未授权第三方代理。我们不使用自动抢票工具或多个账号，不转售门票；各景点自己的实名、退改和爽约规则照常适用。",
             "价格：每人每个景点服务费 45 元人民币，门票按景点官方票面价收取、不加价，书面确认后一并支付。已确认的 Homeground 私家团行程内景点，预约不收服务费。",
           ],
           bullets: [
@@ -834,7 +834,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. 관광지 예약 대행 서비스",
           paragraphs: [
-            "Homeground는 각 관광지가 안내하는 채널에서 여행자 본인의 실명과 여권으로 베이징·상하이·시안·청두·항저우 관광지 입장 예약을 대신합니다. 자동 예매 도구나 여러 계정을 쓰지 않고, 티켓을 되팔지 않으며, 운영 기관이 제3자를 허가하지 않았다고 밝힌 관광지는 예약하지 않습니다.",
+            "Homeground는 각 관광지가 안내하는 공식 채널에서 여행자 본인의 실명과 여권으로 예약을 제출하여 베이징·상하이·시안·청두·항저우 관광지 입장 예약을 대신합니다. Homeground는 어떤 관광지의 공식 판매처나 대리점도 아니며, 고궁박물원과 산시역사박물관 등은 제3자 대행을 승인하지 않았다고 밝힙니다. 자동 예매 도구나 여러 계정을 쓰지 않고 티켓을 되팔지 않으며, 각 관광지의 실명·취소·노쇼 규칙이 그대로 적용됩니다.",
             "가격: 관광지당 1인 45위안의 수수료와 관광지 공식 가격 그대로의 입장료이며, 서면 확인 후 함께 결제합니다. 확정된 Homeground 프라이빗 투어 일정의 관광지 예약에는 수수료가 없습니다.",
           ],
           bullets: [

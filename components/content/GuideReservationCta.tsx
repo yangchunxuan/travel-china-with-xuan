@@ -14,7 +14,9 @@ import styles from "./GuideReservationCta.module.css";
  * "We can book this for you" under an attraction guide whose attraction the
  * reservation service covers. It is not the guide's inline sales card
  * (data-guide-tour-card): that card stays the guide's one product link, and
- * this aside opens the service page with the attraction preselected.
+ * this aside opens the service page with the attraction preselected. A rule's
+ * `disclosure` (for example an operator's statement that it has not
+ * authorised third-party agents) is always shown beside the offer.
  */
 export function GuideReservationCta({
   guideId,
@@ -35,6 +37,7 @@ export function GuideReservationCta({
       <p className={styles.label}>{copy.label}</p>
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
       <p className={styles.body}>{fillReservationCopy(copy.body, values)}</p>
+      {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position="footer">
         {copy.action}
         <ArrowRight aria-hidden="true" size={18} />

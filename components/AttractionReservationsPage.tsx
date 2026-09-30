@@ -164,7 +164,6 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
     id: rule.id,
     city: rule.city,
     label: rule.name[locale],
-    ask: rule.status === "ask",
   }));
   const enquiryCities = attractionReservationCityIds.map((cityId) => ({ id: cityId, label: copy.cities[cityId] }));
 

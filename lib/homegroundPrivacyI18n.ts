@@ -254,7 +254,7 @@ export const homegroundPrivacyCopy: Record<
           label: "Who receives it",
           value: "The attraction's official booking channel",
           detail:
-            "Homeground enters the details only in the booking system the attraction names, such as its website, WeChat account or mini-program, or a platform its official site links to. They are not sold, used for marketing or passed to other parties.",
+            "Homeground enters or sends the details only through the booking channel the attraction names, such as its website, WeChat account or mini-program, a platform its official site links to, or the booking email address it publishes. They are not sold, used for marketing or passed to other parties.",
         },
         {
           label: "How long it is kept",
@@ -538,7 +538,7 @@ export const homegroundPrivacyCopy: Record<
           label: "提供给谁",
           value: "景点的官方预约渠道",
           detail:
-            "Homeground 只把信息填入景点公布的预约系统，例如官网、官方微信公众号或小程序，或其官网链接的平台。不出售、不用于营销，也不提供给其他方。",
+            "Homeground 只把信息提交到景点公布的预约渠道，例如官网、官方微信公众号或小程序、其官网链接的平台，或其公布的预约邮箱。不出售、不用于营销，也不提供给其他方。",
         },
         {
           label: "保存期限",
@@ -825,7 +825,7 @@ export const homegroundPrivacyCopy: Record<
           label: "제공 대상",
           value: "관광지의 공식 예약 채널",
           detail:
-            "Homeground는 관광지가 안내하는 예약 시스템, 예를 들어 공식 웹사이트, 공식 위챗 계정이나 미니프로그램, 공식 사이트가 연결한 플랫폼에만 정보를 입력합니다. 판매하거나 마케팅에 쓰거나 다른 곳에 제공하지 않습니다.",
+            "Homeground는 관광지가 안내하는 예약 채널, 예를 들어 공식 웹사이트, 공식 위챗 계정이나 미니프로그램, 공식 사이트가 연결한 플랫폼, 관광지가 공개한 예약 이메일로만 정보를 입력하거나 보냅니다. 판매하거나 마케팅에 쓰거나 다른 곳에 제공하지 않습니다.",
         },
         {
           label: "보관 기간",

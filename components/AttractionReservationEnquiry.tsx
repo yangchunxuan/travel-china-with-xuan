@@ -12,7 +12,7 @@ import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./AttractionReservationsPage.module.css";
 
 export interface ReservationEnquiryCity { id: string; label: string }
-export interface ReservationEnquiryAttraction { id: string; city: string; label: string; ask: boolean }
+export interface ReservationEnquiryAttraction { id: string; city: string; label: string }
 
 const serviceInterest = "attraction_reservation";
 
@@ -59,7 +59,7 @@ export function AttractionReservationEnquiry({
   // A guide's "we can book this" link preselects one attraction by id.
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get(queryKey);
-    const match = attractions.find((attraction) => attraction.id === requested && !attraction.ask);
+    const match = attractions.find((attraction) => attraction.id === requested);
     if (!match) return;
     // Only the attraction: choosing its city too would hide the other cities' attractions.
     setSelectedAttractions((current) => (current.includes(match.id) ? current : [...current, match.id]));
@@ -122,10 +122,7 @@ export function AttractionReservationEnquiry({
             {visibleAttractions.map((attraction) => (
               <label className={styles.attractionOption} key={attraction.id}>
                 <input checked={selectedAttractions.includes(attraction.id)} name="attraction" onChange={() => setSelectedAttractions((current) => toggle(current, attraction.id))} type="checkbox" value={attraction.id} />
-                <span>
-                  {attraction.label}
-                  {attraction.ask ? <em>{copy.askGroup}</em> : null}
-                </span>
+                <span>{attraction.label}</span>
               </label>
             ))}
           </div>
