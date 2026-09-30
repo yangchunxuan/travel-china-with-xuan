@@ -581,7 +581,7 @@ test("homepage header and footer preserve the reviewed major-target CSS contract
   );
   assert.match(
     headerStyles,
-    /@media \(min-width: 1180px\) and \(max-width: 1359\.98px\)[\s\S]{0,620}\.desktopUtilityLink \{\s*display:\s*none/,
+    /@media \(min-width: 1180px\) \{[\s\S]{0,620}\.desktopUtilityLink \{\s*display:\s*none/,
   );
   assert.match(
     header,

@@ -57,6 +57,7 @@ export type HomegroundPageContext =
   | "plan"
   | "studio"
   | "services"
+  | "reservations"
   | "tours"
   | "tour"
   | "destinations"
@@ -246,6 +247,10 @@ export function HomegroundHeader({
         };
       case "tours":
         return { active: toursAreCurrent, exact: toursAreExact };
+      case "reservations": {
+        const current = pageContext === "reservations";
+        return { active: current, exact: current };
+      }
       case "guides":
         return { active: guidesAreCurrent, exact: guidesAreExact };
       case "studio":
