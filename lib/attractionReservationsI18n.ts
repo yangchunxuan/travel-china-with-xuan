@@ -167,7 +167,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     home: "Home",
     services: "Services",
     navLabel: "Attraction reservations",
-    eyebrow: "Beijing · Shanghai · Xi'an · Chengdu · Hangzhou",
+    eyebrow: "Beijing · Shanghai · Suzhou · Hangzhou · Xi'an · Chengdu · Guilin · Lijiang",
     h1: "Forbidden City and China attraction reservations for foreign travellers",
     lede:
       "The Forbidden City, the Terracotta Warriors and many other Chinese museums and heritage sites need a real-name reservation made days ahead, often through a Chinese-language app. Tell us the attractions, dates and number of travellers. We check availability, confirm the price in writing and, after payment, submit each reservation on the attraction's own official system in every traveller's own passport name.",
@@ -230,7 +230,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     rulesTitle: "Booking rules by attraction",
     rulesIntro:
       `Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. Blank facts are confirmed when you enquire. The ${days}-day booking guarantee covers every attraction we book.`,
-    rulesCaption: "Attraction reservation rules in Beijing, Shanghai, Xi'an, Chengdu and Hangzhou, with the date a guide checked each rule",
+    rulesCaption: "Attraction reservation rules in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang, with the date a guide checked each rule",
     columns: {
       attraction: "Attraction",
       status: "Our service",
@@ -256,7 +256,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "Ticket window",
       email: "Official email",
     },
-    cities: { beijing: "Beijing", shanghai: "Shanghai", xian: "Xi'an", chengdu: "Chengdu", hangzhou: "Hangzhou" },
+    cities: { beijing: "Beijing", shanghai: "Shanghai", suzhou: "Suzhou", hangzhou: "Hangzhou", xian: "Xi'an", chengdu: "Chengdu", guilin: "Guilin", lijiang: "Lijiang" },
     unknown: "Confirmed when you enquire",
     notApplicable: "Not applicable: walk-in entry",
     notChecked: "Not yet checked",
@@ -324,13 +324,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "外国游客代预约故宫、兵马俑与博物馆门票",
       description:
-        "Homeground 在各景点官方系统中、以游客本人护照实名，代外国游客预约故宫、兵马俑、陕西历史博物馆等北京、上海、西安、成都、杭州景点。每人每个景点服务费 {fee}，门票按官方票面价收取，不加价。",
+        "Homeground 在各景点官方系统中、以游客本人护照实名，代外国游客预约故宫、兵马俑、陕西历史博物馆、漓江游船、玉龙雪山等北京、上海、苏州、杭州、西安、成都、桂林、丽江景点。每人每个景点服务费 {fee}，门票按官方票面价收取，不加价。",
     },
     breadcrumb: "当前位置",
     home: "首页",
     services: "服务",
     navLabel: "景点代预约",
-    eyebrow: "北京 · 上海 · 西安 · 成都 · 杭州",
+    eyebrow: "北京 · 上海 · 苏州 · 杭州 · 西安 · 成都 · 桂林 · 丽江",
     h1: "外国游客故宫与中国景点代预约",
     lede:
       "故宫、兵马俑和中国不少博物馆、古迹都需要提前数天实名预约，而且常常只能在中文应用里完成。告诉我们想去的景点、日期和人数，我们核实余量、书面确认价格，收款后在各景点自己的官方系统中、以每位游客本人的护照实名提交预约。",
@@ -393,7 +393,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     rulesTitle: "各景点预约规则",
     rulesIntro:
       `有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。空白项在你询问时确认。提前 ${days} 天的预约保证适用于我们代约的每个景点。`,
-    rulesCaption: "北京、上海、西安、成都、杭州景点预约规则及攻略核实各条规则的日期",
+    rulesCaption: "北京、上海、苏州、杭州、西安、成都、桂林、丽江景点预约规则及攻略核实各条规则的日期",
     columns: {
       attraction: "景点",
       status: "我们的服务",
@@ -419,7 +419,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "售票窗口",
       email: "官方邮箱",
     },
-    cities: { beijing: "北京", shanghai: "上海", xian: "西安", chengdu: "成都", hangzhou: "杭州" },
+    cities: { beijing: "北京", shanghai: "上海", suzhou: "苏州", hangzhou: "杭州", xian: "西安", chengdu: "成都", guilin: "桂林", lijiang: "丽江" },
     unknown: "询问时确认",
     notApplicable: "不适用：免预约入馆",
     notChecked: "尚未核实",
@@ -487,13 +487,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "외국인 자금성·병마용·중국 박물관 예약 대행",
       description:
-        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관 등 베이징·상하이·시안·청두·항저우 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
+        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관, 리강 유람선, 위룽쉐산 등 베이징·상하이·쑤저우·항저우·시안·청두·구이린·리장 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
     },
     breadcrumb: "현재 위치",
     home: "홈",
     services: "서비스",
     navLabel: "관광지 예약 대행",
-    eyebrow: "베이징 · 상하이 · 시안 · 청두 · 항저우",
+    eyebrow: "베이징 · 상하이 · 쑤저우 · 항저우 · 시안 · 청두 · 구이린 · 리장",
     h1: "외국인을 위한 자금성·중국 관광지 예약 대행",
     lede:
       "자금성과 병마용을 비롯한 중국의 많은 박물관과 유적지는 며칠 전에 실명 예약을 해야 하고, 대개 중국어 앱에서만 가능합니다. 가고 싶은 관광지, 날짜, 인원을 알려 주세요. 잔여분을 확인하고 가격을 서면으로 안내한 뒤, 결제 후 각 관광지의 공식 시스템에서 여행자 본인의 여권 실명으로 예약을 제출합니다.",
@@ -556,7 +556,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     rulesTitle: "관광지별 예약 규칙",
     rulesIntro:
       `출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. 빈 항목은 문의 시 확인합니다. ${days}일 전 예약 보장은 저희가 예약하는 모든 관광지에 적용됩니다.`,
-    rulesCaption: "베이징·상하이·시안·청두·항저우 관광지 예약 규칙과 가이드가 규칙별로 확인한 날짜",
+    rulesCaption: "베이징·상하이·쑤저우·항저우·시안·청두·구이린·리장 관광지 예약 규칙과 가이드가 규칙별로 확인한 날짜",
     columns: {
       attraction: "관광지",
       status: "서비스",
@@ -582,7 +582,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "매표 창구",
       email: "공식 이메일",
     },
-    cities: { beijing: "베이징", shanghai: "상하이", xian: "시안", chengdu: "청두", hangzhou: "항저우" },
+    cities: { beijing: "베이징", shanghai: "상하이", suzhou: "쑤저우", hangzhou: "항저우", xian: "시안", chengdu: "청두", guilin: "구이린", lijiang: "리장" },
     unknown: "문의 시 확인",
     notApplicable: "해당 없음: 예약 없이 입장",
     notChecked: "미확인",
