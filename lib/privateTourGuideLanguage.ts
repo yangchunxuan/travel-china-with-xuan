@@ -9,8 +9,9 @@
  * - "english-or-none": the traveller chooses an English-guided version or a
  *   version with no on-site guide.
  * - "quote": the published text leaves the guide language to the written quote.
- * - "driver-guide": a driver who also helps with logistics (司机兼向导), not a
- *   licensed guide; the service language is confirmed before payment.
+ * - "driver-guide": an English-speaking driver who also helps with logistics
+ *   (司机兼向导) who runs the day and goes with travellers around city sights;
+ *   travellers explore large scenic areas on their own.
  *
  * Korean pages differ only where the Korean package label publishes a
  * Korean-speaking guide (`koreanGuide`). "availability" marks products whose
@@ -123,9 +124,9 @@ const baseLabels: Readonly<
     ko: "가이드 언어 견적 시 확인",
   },
   "driver-guide": {
-    en: "Driver-guide; language confirmed before payment",
-    zh: "司机兼向导，服务语言付款前确认",
-    ko: "운전기사 겸 안내인, 언어는 결제 전 확인",
+    en: "English-speaking driver-guide",
+    zh: "司机兼向导（中英文）",
+    ko: "영어 가능 운전기사 겸 안내인",
   },
 };
 

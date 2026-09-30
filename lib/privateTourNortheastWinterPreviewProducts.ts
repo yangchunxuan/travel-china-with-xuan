@@ -17,9 +17,13 @@ import type { PrivateTourPhotoCredit } from "./privateTourPhotoCredits";
 // are previews (`visibility: "preview"`): direct URL only, robots noindex, and
 // outside every published list. See docs/private-tour-previews.md.
 //
-// Only the supplier sheet's facts are stated. Service is by a driver-guide
-// (司机兼向导), not a licensed guide; meals, transfers, admissions, children's
-// prices, single rooms and cancellation terms are left to the written quote.
+// Only the supplier sheet's facts are stated. Service is by an English-speaking
+// driver-guide (司机兼向导). Owner confirmed on 2026-09-30: the driver-guide
+// speaks English and goes with travellers around city sights; at large scenic
+// areas such as Ice and Snow World travellers explore on their own, as is
+// usual, and any ski instruction is by the resort's own instructors. Meals,
+// transfers, admissions, children's prices, single rooms and cancellation
+// terms are left to the written quote.
 // Prices are the owner-approved CNY per person (supplier cost x 1.30, rounded
 // up to CNY 100); USD and KRW follow the site-wide conversion.
 
@@ -179,14 +183,14 @@ const sophiaExterior = {
 
 const driverGuideFaq = faq(
   l(
-    "Is the driver-guide a licensed tour guide?",
-    "司机兼向导是持证导游吗？",
-    "운전기사 겸 안내인은 자격증 있는 가이드인가요?",
+    "What does the driver-guide do?",
+    "司机兼向导负责什么？",
+    "운전기사 겸 안내인은 무엇을 하나요?",
   ),
   l(
-    "No. The driver-guide (司机兼向导) drives your private vehicle and helps with the day's logistics, such as timings and getting you to each stop. They are not a licensed tour guide and give no commentary inside scenic areas. The service language is confirmed in writing before you pay, so please don't assume English.",
-    "不是。司机兼向导负责开你们的私车，并协助当天的时间安排和各站衔接；不是持证导游，景区内不做讲解。服务语言在付款前书面确认，请不要默认对方会说英语。",
-    "아닙니다. 운전기사 겸 안내인은 일행의 전용 차량을 운전하고, 시간 조율과 각 장소로의 이동 등 당일 진행을 돕습니다. 자격증이 있는 관광 가이드가 아니며 관광지 안에서 해설하지 않습니다. 서비스 언어는 결제 전에 서면으로 확인하니, 영어나 한국어가 가능하다고 미리 가정하지 마세요.",
+    "The driver-guide (司机兼向导) drives your private vehicle, speaks English and runs the day for you: timings, getting you to each stop and going with you around the city sights. At large scenic areas such as Harbin Ice and Snow World, you explore at your own pace, as most visitors do, and meet the driver-guide again afterwards. Any ski instruction is by the ski resort's own instructors; what your ski package includes is set out in your written confirmation.",
+    "司机兼向导负责开你们的私车，会说中文和英语，全天帮你们安排时间、衔接各站，市区景点陪同游览。冰雪大世界这类大景区，和大多数游客一样由你们自己游玩，结束后再与司机兼向导会合。滑雪由雪场的专业教练指导，滑雪套餐包含哪些内容以书面确认为准。",
+    "운전기사 겸 안내인은 일행의 전용 차량을 운전하고 영어로 소통하며, 시간 조율과 각 장소로의 이동 등 하루 일정을 챙기고 시내 명소는 함께 둘러봅니다. 하얼빈 빙설대세계 같은 큰 관광지는 대부분의 여행자처럼 자유롭게 둘러본 뒤 안내인과 다시 만납니다. 스키 강습은 스키장 소속 강사가 맡으며, 스키 패키지 포함 내용은 서면 확인서에 적어 드립니다. 한국어 안내는 포함되지 않습니다.",
   ),
 );
 
@@ -279,9 +283,9 @@ const exclusions = (
 );
 
 const serviceNote = (inclusions: LocalizedText) => l(
-  `Your party has its own vehicle, sized to the group, and a driver-guide (司机兼向导) — a driver who also helps with the day's logistics. The driver-guide is not a licensed tour guide and gives no commentary inside scenic areas; the service language is confirmed in writing before you pay. Included: the private vehicle and driver-guide on the route days in your written confirmation, the reference hotels, ${inclusions.en}. Meals, airport and station transfers and admissions are included only where your written quote lists them.`,
-  `私车按人数安排，只服务你们一行，由司机兼向导负责开车并协助当天衔接。司机兼向导不是持证导游，景区内不做讲解；服务语言在付款前书面确认。包含：书面确认单所列行程日的私车和司机兼向导、参考酒店，${inclusions.zh}。餐食、机场和车站接送以及景点门票，只有书面报价列明时才包含。`,
-  `일행 인원에 맞춘 전용 차량과 운전기사 겸 안내인이 함께합니다. 안내인은 운전과 당일 진행을 돕는 역할로, 자격증이 있는 관광 가이드가 아니며 관광지 안에서 해설하지 않습니다. 서비스 언어는 결제 전 서면으로 확인합니다. 포함: 서면 확인서에 적힌 일정일의 전용 차량과 운전기사 겸 안내인, 참고 호텔, ${inclusions.ko}. 식사, 공항·역 이동과 입장권은 서면 견적에 적힌 경우에만 포함됩니다.`,
+  `Your party has its own vehicle, sized to the group, and an English-speaking driver-guide (司机兼向导) who drives, runs the day's timings and goes with you around the city sights. At large scenic areas such as Harbin Ice and Snow World you explore at your own pace, and any ski instruction is by the resort's own instructors. Included: the private vehicle and driver-guide on the route days in your written confirmation, the reference hotels, ${inclusions.en}. Meals, airport and station transfers and admissions are included only where your written quote lists them.`,
+  `私车按人数安排，只服务你们一行，司机兼向导会说中文和英语，负责开车、安排当天行程，市区景点陪同游览。冰雪大世界这类大景区由你们自己游玩，滑雪由雪场的专业教练指导。包含：书面确认单所列行程日的私车和司机兼向导、参考酒店，${inclusions.zh}。餐食、机场和车站接送以及景点门票，只有书面报价列明时才包含。`,
+  `일행 인원에 맞춘 전용 차량과 영어로 소통하는 운전기사 겸 안내인이 함께합니다. 안내인은 운전과 하루 일정을 챙기고 시내 명소는 함께 둘러봅니다. 하얼빈 빙설대세계 같은 큰 관광지는 자유롭게 둘러보며, 스키 강습은 스키장 소속 강사가 맡습니다. 한국어 안내는 포함되지 않습니다. 포함: 서면 확인서에 적힌 일정일의 전용 차량과 운전기사 겸 안내인, 참고 호텔, ${inclusions.ko}. 식사, 공항·역 이동과 입장권은 서면 견적에 적힌 경우에만 포함됩니다.`,
 );
 
 const yabuliSkiPackage = l(
@@ -311,9 +315,9 @@ const harbinIceDay = day(
   2,
   l("Central Street and Ice and Snow World", "中央大街与冰雪大世界", "중앙대가와 빙설대세계"),
   l(
-    "With your private vehicle and driver-guide, walk Central Street, then visit Harbin Ice and Snow World. The driver-guide handles the driving and timings; there is no guided commentary inside the park. Admission is included only if your written quote lists it. Overnight in Harbin.",
-    "私车和司机兼向导陪同，先逛中央大街，再去哈尔滨冰雪大世界。司机兼向导负责开车和时间安排，园区内不做讲解。门票是否包含，以书面报价为准。住哈尔滨。",
-    "전용 차량과 운전기사 겸 안내인과 함께 중앙대가를 걷고 하얼빈 빙설대세계를 방문합니다. 안내인은 운전과 시간 조율을 맡으며 관광지 안에서 해설하지 않습니다. 입장권은 서면 견적에 적힌 경우에만 포함됩니다. 하얼빈에서 숙박합니다.",
+    "Walk Central Street with your driver-guide, then head to Harbin Ice and Snow World, which you explore at your own pace; your driver-guide meets you afterwards. Admission is included only if your written quote lists it. Overnight in Harbin.",
+    "司机兼向导陪你们逛中央大街，之后送你们去哈尔滨冰雪大世界，园区内自由游玩，结束后再会合。门票是否包含，以书面报价为准。住哈尔滨。",
+    "운전기사 겸 안내인과 함께 중앙대가를 걸은 뒤 하얼빈 빙설대세계로 이동해 자유롭게 둘러보고, 관람 후 안내인과 다시 만납니다. 입장권은 서면 견적에 적힌 경우에만 포함됩니다. 하얼빈에서 숙박합니다.",
   ),
 );
 
