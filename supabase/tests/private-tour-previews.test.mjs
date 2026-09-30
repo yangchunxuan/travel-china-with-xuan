@@ -138,8 +138,12 @@ test("preview copy keeps to the supplier facts: driver-guide, written confirmati
       assert.doesNotMatch(localized.title, /aurora|极光|오로라/iu);
       assert.doesNotMatch(text, /English-speaking guide|英语导游|영어 가이드|한국어 가이드|No shopping|无购物|쇼핑 일정은 없습니다/u);
       assert.ok(localized.facts?.length === 4, `${locale}:${product.slug} facts`);
-      assert.match(localized.serviceNote, locale === "en" ? /not a licensed tour guide/u : locale === "zh" ? /不是持证导游/u : /자격증이 있는 관광 가이드가 아니며/u);
-      assert.match(getPrivateTourGuideLanguageLabel(product.slug, locale), locale === "en" ? /Driver-guide; language confirmed before payment/u : locale === "zh" ? /司机兼向导/u : /운전기사 겸 안내인/u);
+      assert.match(localized.serviceNote, locale === "en" ? /explore at your own pace/u : locale === "zh" ? /由你们自己游玩/u : /자유롭게 둘러보며/u);
+      assert.match(localized.serviceNote, locale === "en" ? /city sights/u : locale === "zh" ? /市区景点陪同/u : /시내 명소는 함께/u);
+      assert.doesNotMatch(text, /licensed tour guide|持证导游|자격증이 있는 관광 가이드/u);
+      assert.match(getPrivateTourGuideLanguageLabel(product.slug, locale), locale === "en" ? /^English-speaking driver-guide$/u : locale === "zh" ? /^司机兼向导（中英文）$/u : /^영어 가능 운전기사 겸 안내인$/u);
+      assert.match(localized.serviceNote, locale === "en" ? /English-speaking driver-guide/u : locale === "zh" ? /会说中文和英语/u : /영어로 소통/u);
+      assert.doesNotMatch(text, /service language|don't assume English|服务语言|不要默认对方会说英语|서비스 언어|가정하지 마세요/u);
       assert.ok(product.packages.every((tourPackage) => !tourPackage.label.ko.includes("한국어 가이드")));
       const auroraMentions = text.match(/aurora|极光|오로라/giu) ?? [];
       if (auroraMentions.length) {
