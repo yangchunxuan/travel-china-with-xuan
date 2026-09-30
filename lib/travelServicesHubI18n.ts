@@ -17,7 +17,7 @@ const copies = {
       "Browse published private tours, or tell us your dates, group and the arrangements you need. We confirm what can be provided and the trip quotation before booking.",
     cards: [
       { id: "tours", eyebrow: "Published journeys", title: "Compare private tours", body: "Open real day-by-day routes with public starting prices, inclusions and booking boundaries.", action: "Compare private tours" },
-      { id: "reservations", eyebrow: "Timed, real-name entry", title: "Attraction reservations", body: "Beijing, Shanghai, Xi'an, Chengdu and Hangzhou: we book through official channels in your own passport name for {fee} per person per attraction.", action: "See attraction reservations" },
+      { id: "reservations", eyebrow: "Timed, real-name entry", title: "Attraction reservations", body: "Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang: we book through official channels in your own passport name for {fee} per person per attraction.", action: "See attraction reservations" },
       { id: "support", eyebrow: "The trip also needs delivery", title: "Full-trip support", body: "Connect planning with the local hotels, tickets, transfers and on-the-ground arrangements the journey needs.", action: "See full-trip support" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "How decisions are made",
@@ -35,7 +35,7 @@ const copies = {
       "你可以比较已发布的私家团，或告诉我们日期、同行人数和需要的具体安排。可提供的服务与旅行报价会在预订前确认。",
     cards: [
       { id: "tours", eyebrow: "已发布路线", title: "比较私家团", body: "查看真实逐日路线、公开起价、包含项和预订边界，再判断是否适合自己的日期。", action: "比较私家团" },
-      { id: "reservations", eyebrow: "实名分时入场", title: "景点代预约", body: "北京、上海、西安、成都、杭州：通过官方渠道、以你本人护照实名预约，每人每个景点 {fee}。", action: "查看景点代预约" },
+      { id: "reservations", eyebrow: "实名分时入场", title: "景点代预约", body: "北京、上海、苏州、杭州、西安、成都、桂林、丽江：通过官方渠道、以你本人护照实名预约，每人每个景点 {fee}。", action: "查看景点代预约" },
       { id: "support", eyebrow: "还需要本地执行", title: "全程旅行支持", body: "把路线与酒店、门票、接送及现场安排连接起来，并在开始前写清责任范围。", action: "查看全程支持" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "我们如何判断",
@@ -53,7 +53,7 @@ const copies = {
       "공개된 프라이빗 투어를 비교하거나 날짜, 인원과 필요한 준비를 알려 주세요. 제공 가능한 서비스와 여행 견적은 예약 전에 확인합니다.",
     cards: [
       { id: "tours", eyebrow: "공개된 여정", title: "프라이빗 투어 비교", body: "실제 일자별 동선, 공개 시작가, 포함 사항과 예약 조건을 확인하세요.", action: "프라이빗 투어 비교" },
-      { id: "reservations", eyebrow: "시간 지정 실명 입장", title: "관광지 예약 대행", body: "베이징·상하이·시안·청두·항저우: 공식 채널에서 본인 여권 실명으로 예약하며 관광지당 1인 {fee}입니다.", action: "관광지 예약 대행 보기" },
+      { id: "reservations", eyebrow: "시간 지정 실명 입장", title: "관광지 예약 대행", body: "베이징·상하이·쑤저우·항저우·시안·청두·구이린·리장: 공식 채널에서 본인 여권 실명으로 예약하며 관광지당 1인 {fee}입니다.", action: "관광지 예약 대행 보기" },
       { id: "support", eyebrow: "현지 진행도 필요해요", title: "전체 여행 지원", body: "일정과 숙소, 티켓, 이동 및 현지 준비를 연결하고 시작 전에 책임 범위를 명확히 합니다.", action: "전체 여행 지원 보기" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "판단 방식",

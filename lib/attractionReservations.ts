@@ -38,13 +38,21 @@ export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
  * guaranteed booking at every offered attraction.
  */
 
+/**
+ * Service cities, in table order. Not every one has a destination hub
+ * (Suzhou, Guilin and Lijiang do not); a hub links to the service only when
+ * its id is listed here.
+ */
 export const attractionReservationCityIds = [
   "beijing",
   "shanghai",
+  "suzhou",
+  "hangzhou",
   "xian",
   "chengdu",
-  "hangzhou",
-] as const satisfies readonly DestinationHubId[];
+  "guilin",
+  "lijiang",
+] as const satisfies readonly (DestinationHubId | "suzhou" | "guilin" | "lijiang")[];
 
 export type AttractionReservationCityId =
   (typeof attractionReservationCityIds)[number];
@@ -549,6 +557,114 @@ export const attractionReservationRules = [
     verifiedAt: null,
     source: null,
   },
+  // Suzhou
+  {
+    id: "humble-administrators-garden",
+    city: "suzhou",
+    status: "offered",
+    name: { en: "Humble Administrator's Garden", zh: "拙政园", ko: "졸정원" },
+    channels: ["wechat"],
+    passportAccepted: null,
+    realName: true,
+    release: {
+      en: "1–7 days before the visit; no daily release time confirmed",
+      zh: "参观前 1–7 天可订；未确认每日放票时间",
+      ko: "방문 1~7일 전 예약 가능; 매일 오픈 시각은 확인되지 않음",
+    },
+    price: {
+      kind: "cny",
+      amount: 80,
+      basis: {
+        en: "adult, April, May and July–October (CNY 70 in the other months)",
+        zh: "成人，4 月、5 月及 7–10 月（其他月份 ¥70）",
+        ko: "성인, 4·5월 및 7~10월(그 외 달 70위안)",
+      },
+    },
+    notes: {
+      en: "A real-name ticket for a named visitor, date and entry slot, booked on the official Suzhou Gardens WeChat service. Suzhou Museum is a separate reservation. The current passport steps inside the official service were not verified, so we confirm them for your date before the written confirmation.",
+      zh: "实名门票对应游客姓名、日期和入园时段，在苏州园林官方微信服务预约。苏州博物馆需另行预约。官方服务内的护照预约步骤尚未核实，书面确认前我们会按你的日期核实。",
+      ko: "방문자 이름, 날짜, 입장 시간대가 지정되는 실명 입장권으로, 쑤저우 정원 공식 위챗 서비스에서 예약합니다. 쑤저우박물관은 따로 예약해야 합니다. 공식 서비스 안의 여권 예약 절차는 확인되지 않았으므로, 서면 확인 전에 날짜 기준으로 확인합니다.",
+    },
+    disclosure: {
+      en: "A real-name ticket for a set date and entry slot on the official Suzhou Gardens service. Suzhou Museum needs its own separate reservation.",
+      zh: "在苏州园林官方服务预约指定日期和入园时段的实名门票；苏州博物馆需另行预约。",
+      ko: "쑤저우 정원 공식 서비스에서 날짜와 입장 시간대가 지정된 실명 입장권을 예약합니다. 쑤저우박물관은 따로 예약해야 합니다.",
+    },
+    verifiedAt: "2026-09-26",
+    source: "humble-administrators-garden-tickets-entry",
+  },
+  // Guilin
+  {
+    id: "li-river-cruise",
+    city: "guilin",
+    status: "offered",
+    name: { en: "Li River cruise (Guilin to Yangshuo)", zh: "漓江游船（桂林—阳朔）", ko: "리강 유람선(구이린–양숴)" },
+    channels: ["wechat"],
+    passportAccepted: null,
+    realName: true,
+    release: {
+      en: "No general release rule confirmed; the 2026 National Day notice opened full-route boats 15 days ahead",
+      zh: "未确认统一放票规则；2026 年国庆公告为全程游船提前 15 天开放",
+      ko: "일반 오픈 규칙은 확인되지 않음; 2026년 국경절 공지는 전 구간 유람선을 15일 전에 오픈",
+    },
+    price: {
+      kind: "cny",
+      amount: 215,
+      basis: {
+        en: "adult, 3-star boat (4-star boat CNY 360), August 2026 list",
+        zh: "成人三星船（四星船 ¥360），2026 年 8 月价目",
+        ko: "성인 3성 유람선(4성 360위안), 2026년 8월 요금표",
+      },
+    },
+    notes: {
+      en: "Booked on the scenic area's official WeChat service account. 3-star boats board at Mopanshan and 4-star boats at Zhujiang, so tell us the boat class you want. The official material does not explain the foreign-passport steps, so we confirm your passport and ticket collection before the written confirmation. High water can suspend sailings at short notice.",
+      zh: "在景区官方微信服务号预约。三星船在磨盘山客运港上船、四星船在竹江码头上船，请告诉我们想坐哪一种。官方资料没有说明外国护照的预约步骤，书面确认前我们会核实你的护照能否使用以及如何取票。汛期可能临时停航。",
+      ko: "관광지 공식 위챗 서비스 계정에서 예약합니다. 3성 유람선은 모판산, 4성 유람선은 주장 선착장에서 타므로 원하는 등급을 알려 주세요. 공식 자료에 외국 여권 예약 절차가 나와 있지 않아, 서면 확인 전에 여권 사용 가능 여부와 발권 방법을 확인합니다. 물이 불어나면 운항이 갑자기 중단될 수 있습니다.",
+    },
+    disclosure: {
+      en: "Choose a 3-star or 4-star boat: they board at different Guilin piers. High water can suspend sailings at short notice.",
+      zh: "请选三星船或四星船，两者在桂林的上船码头不同；汛期可能临时停航。",
+      ko: "3성 또는 4성 유람선을 골라 주세요. 구이린의 승선 선착장이 서로 다릅니다. 물이 불어나면 운항이 갑자기 중단될 수 있습니다.",
+    },
+    verifiedAt: "2026-09-26",
+    source: "li-river-cruise-tickets-piers-booking",
+  },
+  // Lijiang
+  {
+    id: "jade-dragon-snow-mountain",
+    city: "lijiang",
+    status: "offered",
+    name: { en: "Jade Dragon Snow Mountain (entry and cable cars)", zh: "玉龙雪山（进山票与索道）", ko: "위룽쉐산(입장권·케이블카)" },
+    channels: ["wechat-mini-program"],
+    passportAccepted: null,
+    realName: true,
+    release: {
+      en: "Cable cars for the next 7 days: Glacier Park daily at 20:00, Spruce Meadow at 21:00; entry up to 7 days ahead",
+      zh: "索道可订未来 7 天：冰川公园大索道每天 20:00、云杉坪索道 21:00 放票；进山票最多提前 7 天",
+      ko: "케이블카는 향후 7일분: 빙천공원 매일 20:00, 윈산핑 21:00 오픈; 입장권은 최대 7일 전",
+    },
+    price: {
+      kind: "cny",
+      amount: 100,
+      basis: {
+        en: "entry, plus CNY 20 eco-bus; cable cars extra: Glacier Park CNY 120, Spruce Meadow CNY 40 (2026 list)",
+        zh: "进山门票，另加环保车 ¥20；索道另计：冰川公园大索道 ¥120、云杉坪索道 ¥40（2026 年价目）",
+        ko: "입장권, 친환경 버스 20위안 별도; 케이블카 별도: 빙천공원 120위안, 윈산핑 40위안(2026년 요금표)",
+      },
+    },
+    notes: {
+      en: "Entry and each cable car are separate official products in different mini-programs; the cable cars use real-name and face-recognition checks. The Yak Meadow cable car has been closed for rebuilding since 4 March 2026. Wind or weather can suspend a cable car, and the operator's change or refund rule then applies. We confirm the current passport steps before the written confirmation.",
+      zh: "进山票和各条索道是不同小程序里的独立官方产品；索道实行实名和人脸核验。牦牛坪索道自 2026 年 3 月 4 日起停运改建。大风或天气可能让索道停运，届时按运营方的改签或退款规则处理。书面确认前，我们会核实当前的护照预约步骤。",
+      ko: "입장권과 각 케이블카는 서로 다른 미니 프로그램의 별도 공식 상품이며, 케이블카는 실명과 안면 인식 확인을 거칩니다. 야크 메도 케이블카는 2026년 3월 4일부터 재건축으로 운행이 중단됐습니다. 바람이나 날씨로 케이블카가 멈추면 운영사의 변경·환불 규칙이 적용됩니다. 서면 확인 전에 현재 여권 예약 절차를 확인합니다.",
+    },
+    disclosure: {
+      en: "Entry and each cable car are separate official products. Wind or weather can suspend a cable car; the operator's change or refund rule then applies.",
+      zh: "进山票和各条索道是独立的官方产品；大风或天气可能让索道停运，届时按运营方的改签或退款规则处理。",
+      ko: "입장권과 각 케이블카는 별도의 공식 상품입니다. 바람이나 날씨로 케이블카가 멈추면 운영사의 변경·환불 규칙이 적용됩니다.",
+    },
+    verifiedAt: "2026-09-26",
+    source: "jade-dragon-snow-mountain-cable-car-booking",
+  },
 ] as const satisfies readonly AttractionReservationRule[];
 
 export type AttractionReservationId =
@@ -585,6 +701,9 @@ export const attractionReservationGuideTargets = {
   "sanxingdui-museum-booking-and-gallery-order": "sanxingdui-museum",
   "liangzhu-ruins-park-and-museum-sequence": "liangzhu",
   "shanghai-museum-east-entry-reservations": "shanghai-museum-east-experience-areas",
+  "humble-administrators-garden-tickets-entry": "humble-administrators-garden",
+  "li-river-cruise-tickets-piers-booking": "li-river-cruise",
+  "jade-dragon-snow-mountain-cable-car-booking": "jade-dragon-snow-mountain",
 } as const satisfies Partial<Record<GuideId, AttractionReservationId>>;
 
 export function getGuideAttractionReservationTarget(guideId: string) {
