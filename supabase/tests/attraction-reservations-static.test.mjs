@@ -358,6 +358,13 @@ test("the service fee shows one currency per language and never less than CNY 45
   );
 });
 
+test("visit dates use the site's locale-fixed date field, not the OS-language browser control", async () => {
+  const enquiry = await source("components/AttractionReservationEnquiry.tsx");
+  assert.doesNotMatch(enquiry, /type="date"/u);
+  assert.equal((enquiry.match(/<TourDateField /gu) ?? []).length, 2);
+  assert.match(enquiry, /\{!undecided \? \(/u);
+});
+
 test("the prepared request carries the service context and no passport field", async () => {
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);

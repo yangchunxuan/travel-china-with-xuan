@@ -9,6 +9,7 @@ import { homegroundWhatsAppHref } from "../lib/tourContact";
 import { trackEvent } from "../lib/analytics";
 import { useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
 import { KakaoTalkContact } from "./KakaoTalkContact";
+import { TourDateField } from "./TourDateField";
 import styles from "./AttractionReservationsPage.module.css";
 
 export interface ReservationEnquiryCity { id: string; label: string }
@@ -128,16 +129,15 @@ export function AttractionReservationEnquiry({
           </div>
         </fieldset>
 
-        <div className={styles.fieldRow}>
-          <label className={styles.field} htmlFor={`${id}-from`}>
-            {copy.from}
-            <input disabled={undecided} id={`${id}-from`} name="from" onChange={(event) => setFrom(event.target.value)} type="date" value={from} />
-          </label>
-          <label className={styles.field} htmlFor={`${id}-to`}>
-            {copy.to}
-            <input disabled={undecided} id={`${id}-to`} min={from || undefined} name="to" onChange={(event) => setTo(event.target.value)} type="date" value={to} />
-          </label>
-        </div>
+        {/* The site's own date field, not the browser's native date input,
+            which follows the OS language: a Chinese page showed Korean
+            placeholders in a Korean-language Chrome. */}
+        {!undecided ? (
+          <div className={styles.fieldRow}>
+            <TourDateField active disabled={false} id={`${id}-from`} label={copy.from} locale={locale} onChange={setFrom} value={from} />
+            <TourDateField active disabled={false} id={`${id}-to`} label={copy.to} locale={locale} onChange={setTo} value={to} />
+          </div>
+        ) : null}
         <label className={styles.checkboxRow}>
           <input checked={undecided} onChange={(event) => setUndecided(event.target.checked)} type="checkbox" />
           {copy.undecided}
