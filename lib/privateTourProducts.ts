@@ -2687,7 +2687,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   ),
   lede: l(
     "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See Seventy-Two Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
-    "四天从容游览张家界的砂岩峰林、翡翠峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
+    "四天从容游览张家界的砂岩峰林、碧绿峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
     "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 칠십이기루를 보고, 둘째 날은 국립삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
   ),
   summary: l(
@@ -2739,7 +2739,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       l(
         "An early start for a full day in Zhangjiajie National Forest Park with your English-speaking guide. See morning mist over Tianzi Mountain’s sandstone peaks and Yangjiajie’s Natural Great Wall, then stand above Yuanjiajie’s Avatar Hallelujah Mountain and the First Bridge Under Heaven. After lunch, head down to the valley for a walk along Golden Whip Stream and the scenery of Ten-Mile Gallery. The included scenic shuttles link the areas; the Bailong Elevator, cableways and the Ten-Mile Gallery mini-train are optional and paid on the spot if you want to save walking. Allow roughly 10–11 hours door to door. Official closures, last-shuttle times, weather, safety or crowd control may change the order, and your guide sets a pace that suits your group.",
         "早上出发，由英语导游陪同，在张家界国家森林公园玩一整天。清晨云雾中看天子山的砂岩峰林和杨家界天然长城，再到袁家界看阿凡达哈利路亚山和天下第一桥。午后下到谷底，走金鞭溪，看十里画廊。已含的景区环保车连接各景区；百龙天梯、索道和十里画廊小火车为自选项目，想少走路可以现场自费乘坐。门到门约 10–11 小时。如遇官方关闭、末班环保车、天气、安全或限流，游览顺序可能会变，导游会按你们的体力安排节奏。",
-        "아침 일찍 출발해 한국어 가이드와 함께 장가계 국립삼림공원에서 하루를 보냅니다. 아침 안개 속 천자산의 사암 봉우리와 양가계 천연장성을 보고, 원가계의 아바타 할렐루야산과 천하제일교에 섭니다. 오후에는 계곡으로 내려가 금편계를 걷고 십리화랑 풍경을 봅니다. 구역 사이 이동은 포함된 관광 셔틀을 이용하며, 백룡 엘리베이터·케이블카·십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제합니다. 숙소 출발부터 귀환까지 약 10~11시간입니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있으며 가이드가 일행에 맞춰 속도를 조절합니다.",
+        "아침 일찍 출발해 한국어 가이드와 함께 장가계 국립삼림공원에서 하루를 보냅니다. 아침 안개 속 천자산의 사암 봉우리와 양가계 천연장성을 보고, 원가계의 아바타 산과 천하제일교에 섭니다. 오후에는 계곡으로 내려가 금편계를 걷고 십리화랑 풍경을 봅니다. 구역 사이 이동은 포함된 관광 셔틀을 이용하며, 백룡 엘리베이터·케이블카·십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제합니다. 숙소 출발부터 귀환까지 약 10~11시간입니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있으며 가이드가 일행에 맞춰 속도를 조절합니다.",
       ),
     ),
     day(
