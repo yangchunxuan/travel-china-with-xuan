@@ -15,7 +15,7 @@ import {
 } from "../../lib/privateTourInquiryContext.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { buildRouteServiceContactHref } from "../../lib/routeServiceInterest.ts";
-import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { privateTourPreviewProducts, privateTourProducts } from "../../lib/privateTourProducts.ts";
 import { privateTourExpansionPhaseTwoProducts } from "../../lib/privateTourExpansionPhaseTwoProducts.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
@@ -27,9 +27,14 @@ async function source(path) {
 test("the inquiry allowlist exactly matches every published tour in all locales", () => {
   for (const locale of ["en", "zh", "ko"]) {
     const catalog = getPublishedPrivateTourCatalog(locale);
+    // Unlisted preview products take inquiries from their direct-URL pages
+    // but never appear in the published catalogue.
     assert.deepEqual(
       new Set(privateTourInquirySlugs),
-      new Set(catalog.map((product) => product.slug)),
+      new Set([
+        ...catalog.map((product) => product.slug),
+        ...privateTourPreviewProducts.map((product) => product.slug),
+      ]),
       locale,
     );
     for (const product of catalog) {

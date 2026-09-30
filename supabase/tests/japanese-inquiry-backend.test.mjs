@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import {
   getPrivateTourInquiryContext,
+  isPrivateTourPreviewInquirySlug,
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 
@@ -17,7 +18,9 @@ test("Japanese SQL identity matches every published Japanese tour title", async 
     /create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u,
   )?.[0];
   assert.ok(productNames);
-  for (const slug of privateTourInquirySlugs) {
+  // Preview products have no Japanese page; the Northeast preview migration
+  // adds their en/zh/ko names without a Japanese one.
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !isPrivateTourPreviewInquirySlug(candidate))) {
     const branch = productNames.match(
       new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"),
     )?.[1];

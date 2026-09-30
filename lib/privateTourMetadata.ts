@@ -4,7 +4,7 @@ import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { jaPilot } from "./jaPilot.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
-import { localizePrivateTourProduct, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";
+import { localizePrivateTourProduct, privateTourPreviewProducts, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";
 
 export const RESERVED_PRIVATE_TOUR_SLUGS = [
   "zhangjiajie-4-day-private-tour",
@@ -20,6 +20,30 @@ export function getPrivateTourRouteParams(_locale: HomegroundLocale) {
   return privateTourProducts
     .filter((product) => !isReservedPrivateTourSlug(product.slug))
     .map((product) => ({ slug: product.slug }));
+}
+
+/**
+ * Preview products (`visibility: "preview"`) get their own en/zh/ko static
+ * pages so they open at a direct URL. They are deliberately not part of
+ * getPrivateTourRouteParams, which mirrors the published catalogue.
+ */
+export function getPrivateTourPreviewRouteParams(_locale: HomegroundLocale) {
+  return privateTourPreviewProducts.map((product) => ({ slug: product.slug }));
+}
+
+export function isPrivateTourPreview(product: Pick<PrivateTourProduct, "visibility">) {
+  return product.visibility === "preview";
+}
+
+/** A preview has no Japanese page, so it names no ja alternate. */
+export function getPrivateTourPreviewLanguagePaths(product: PrivateTourProduct) {
+  const paths = localizePrivateTourProduct(product, "en").paths;
+  return {
+    en: paths.en,
+    "zh-Hans": paths.zh,
+    ko: paths.ko,
+    "x-default": paths.en,
+  } as const;
 }
 
 export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
@@ -47,14 +71,22 @@ export function buildPrivateTourMetadata(
         localizePrivateTourProduct(product, candidate).openGraphLocale,
     );
 
+  const preview = isPrivateTourPreview(product);
+
   return {
     title: resolvePageTitle(localized.metadataTitle, locale),
     description: localized.metadataDescription,
     alternates: {
       canonical: localized.path,
-      languages: getPrivateTourLanguagePaths(product),
+      languages: preview
+        ? getPrivateTourPreviewLanguagePaths(product)
+        : getPrivateTourLanguagePaths(product),
     },
-    robots: {
+    robots: preview ? {
+      index: false,
+      follow: false,
+      googleBot: { index: false, follow: false },
+    } : {
       index: true,
       follow: true,
       googleBot: {

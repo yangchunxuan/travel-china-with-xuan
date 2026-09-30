@@ -14,13 +14,14 @@ import {
   getPrivateTourInquiryContext,
   getPrivateTourInquirySubmissionContext,
   getPrivateTourInquirySelection,
+  isPrivateTourPreviewInquirySlug,
   privateTourInquirySelectionLabel,
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 import {
   trafficProductTravelerCounts,
 } from "../functions/_shared/traffic-contracts.ts";
-import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { privateTourPreviewProducts, privateTourProducts } from "../../lib/privateTourProducts.ts";
 
 const config = {
   allowedFormVersions: [currentHomepageEmailFormVersion],
@@ -28,7 +29,7 @@ const config = {
   whatsappEnabled: false,
 };
 const beijing = "beijing-highlights-5-day-private-tour";
-const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay", "small-group-departure"];
+const packages = ["standard-guided", "standard-guided-winter", "english-guided", "no-guide", "fixed-route-english-guided", "selected-city-stay", "spacious-premium-stay", "distinctive-mountain-stay", "small-group-departure", "low-season", "peak-season"];
 const phaseTwoSlugs = [
   "shanghai-disneyland-5-day-private-tour",
   "luoyang-dengfeng-kaifeng-6-day-private-tour",
@@ -60,6 +61,12 @@ const longHaulSlugs = [
   "beijing-xian-guilin-hong-kong-10-day-private-tour",
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
 ];
+const northeastPreviewSlugs = [
+  "harbin-yabuli-snow-town-6-day-private-tour",
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+  "harbin-mohe-arctic-village-7-day-private-tour",
+  "harbin-snow-town-mohe-9-day-private-tour",
+];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -83,7 +90,9 @@ test("intake preserves every allowed tour selection in every locale and its sema
           const selection = getPrivateTourInquirySelection(slug, packageId, travelers);
           const context = { ...getPrivateTourInquiryContext(slug, locale), selection: { packageId, travelers } };
           const result = validateAndNormalizeInquiry(payload(context, locale), config);
-          assert.equal(result.ok, Boolean(selection), `${locale}:${slug}:${packageId}:${travelers}`);
+          // Preview products have no Japanese page, so no Japanese inquiry names them.
+          const expected = Boolean(selection) && !(locale === "ja" && isPrivateTourPreviewInquirySlug(slug));
+          assert.equal(result.ok, expected, `${locale}:${slug}:${packageId}:${travelers}`);
           if (result.ok) {
             const submitted = getPrivateTourInquirySubmissionContext(context, locale);
             assert.deepEqual(result.value.productInterest, submitted);
@@ -194,7 +203,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 
 test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = (await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -244,7 +253,7 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
 
 test("phase-two migration extends canonical identities and exact priced selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -313,7 +322,7 @@ test("final selection migration preserves every published price row after both r
 
 test("long-haul migration keeps every canonical identity and adds all long-haul selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !northeastPreviewSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -364,6 +373,92 @@ test("long-haul migration keeps every canonical identity and adds all long-haul 
   assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
   assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
   assert.doesNotMatch(sql, /create or replace function public\./u);
+});
+
+test("Northeast preview migration keeps every identity and adds exact eight-traveller seasonal selections", async () => {
+  const sql = (await readFile(new URL("../migrations/202609300001_add_northeast_winter_preview_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
+  const [japaneseSql, longHaulSql, ackSql] = await Promise.all([
+    "202609270001_add_japanese_email_and_quote_inquiries.sql",
+    "202609250001_add_homeground_long_haul_tours.sql",
+    "202609280002_inquiry_privacy_ack_disclosure.sql",
+  ].map(async (name) => (await readFile(new URL(`../migrations/${name}`, import.meta.url), "utf8")).replace(/\r\n/g, "\n")));
+  assert.deepEqual(privateTourPreviewProducts.map((product) => product.slug), northeastPreviewSlugs);
+  assert.deepEqual(northeastPreviewSlugs.filter(isPrivateTourPreviewInquirySlug), northeastPreviewSlugs);
+  const productNames = sql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
+  assert.ok(productNames);
+  // Every earlier identity, including the Japanese names, is carried over verbatim.
+  const previousNames = japaneseSql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
+  assert.ok(productNames.startsWith(previousNames.replace(/    else null\n  end;\n\$\$;$/u, "")));
+  for (const slug of privateTourInquirySlugs) {
+    const branch = productNames.match(new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"))?.[1];
+    assert.ok(branch, slug);
+    for (const locale of ["en", "zh", "ko"]) {
+      const context = getPrivateTourInquiryContext(slug, locale);
+      const name = getPrivateTourInquirySubmissionContext(context, locale).name.replaceAll("'", "''");
+      assert.ok(branch.includes(`when '${locale}' then '${name}'`), `${locale}:${slug}`);
+    }
+    if (northeastPreviewSlugs.includes(slug)) {
+      assert.doesNotMatch(branch, /when 'ja'/u, `preview has no Japanese identity: ${slug}`);
+    }
+  }
+  const selectionCase = sql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase);
+  const previousSelection = longHaulSql.match(
+    /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
+  )?.[1];
+  assert.ok(selectionCase.startsWith(previousSelection));
+  for (const product of [...privateTourProducts, ...privateTourPreviewProducts]) {
+    const branch = selectionCase.match(new RegExp(`when '${product.slug}' then\\s+([^\\n]+)`, "u"))?.[1];
+    const pricedPackages = product.packages.filter((tourPackage) => tourPackage.prices.length > 0);
+    if (pricedPackages.length === 0) {
+      assert.equal(branch, undefined, product.slug);
+      continue;
+    }
+    assert.ok(branch, `missing selection rule: ${product.slug}`);
+    for (const tourPackage of pricedPackages) assert.ok(branch.includes(`'${tourPackage.id}'`), `${product.slug}:${tourPackage.id}`);
+    const publishedTravelers = [...new Set(pricedPackages.flatMap((tourPackage) => tourPackage.prices.map((row) => row.travelers)))].sort();
+    const acceptedTravelers = [...new Set([...branch.matchAll(/\b[2-9]\b/gu)].map((match) => Number(match[0])))].sort();
+    assert.deepEqual(acceptedTravelers, publishedTravelers, `selection price rows drift: ${product.slug}`);
+  }
+  for (const slug of northeastPreviewSlugs) {
+    assert.match(selectionCase, new RegExp(`when '${slug}' then\\s+p_package_id in \\('low-season', 'peak-season'\\) and p_travelers in \\(2, 4, 6, 8\\)\\n`, "u"));
+  }
+  // Intake functions are the reviewed definitions plus one eight-traveller branch.
+  for (const name of ["create_homeground_homepage_email_v1", "create_homeground_private_tour_quote_v1"]) {
+    const pattern = new RegExp(`create or replace function public\\.${name}\\([\\s\\S]*?\\n\\$\\$;`, "u");
+    const current = sql.match(pattern)?.[0];
+    const previous = ackSql.match(pattern)?.[0];
+    assert.ok(current && previous, name);
+    assert.equal(current, previous.replace("        when '6'::jsonb then 6\n", "        when '6'::jsonb then 6\n        when '8'::jsonb then 8\n"), name);
+  }
+  assert.match(sql, /begin;[\s\S]*commit;/u);
+  assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
+  assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
+  assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_traffic_event_v2/u);
+});
+
+test("eight-traveller preview selections survive intake, labels and traffic metadata", () => {
+  for (const slug of northeastPreviewSlugs) {
+    for (const packageId of ["low-season", "peak-season"]) {
+      for (const locale of ["en", "zh", "ko"]) {
+        const context = getPrivateTourInquiryContext(slug, locale, { packageId, travelers: 8 });
+        assert.deepEqual(context.selection, { packageId, travelers: 8 });
+        const result = validateAndNormalizeInquiry(payload(context, locale), config);
+        assert.equal(result.ok, true, `${locale}:${slug}:${packageId}`);
+        const label = privateTourInquirySelectionLabel(context, locale);
+        assert.match(label, locale === "en" ? /8 travellers/u : locale === "zh" ? /8 人同行/u : /8명 기준/u);
+        assert.match(label, packageId === "low-season"
+          ? (locale === "en" ? /Low season/u : locale === "zh" ? /淡季/u : /비수기/u)
+          : (locale === "en" ? /Peak season/u : locale === "zh" ? /旺季/u : /성수기/u));
+      }
+      assert.equal(getPrivateTourInquiryContext(slug, "ja", { packageId, travelers: 8 }), null);
+      assert.equal(getPrivateTourInquirySelection(slug, packageId, 3), null);
+      assert.equal(getPrivateTourInquirySelection(slug, "standard-guided", 8), null);
+    }
+    assert.deepEqual(trafficProductTravelerCounts[slug], [2, 4, 6, 8]);
+  }
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {

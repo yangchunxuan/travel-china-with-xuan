@@ -7,7 +7,7 @@ import {
   getPrivateTourInquirySelection,
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
-import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { privateTourPreviewProducts, privateTourProducts } from "../../lib/privateTourProducts.ts";
 import { getJapaneseTourCopy } from "../../lib/japaneseTourCopy.ts";
 import { japaneseCruiseOverrides } from "../../lib/japaneseCruiseOverrides.ts";
 import { japaneseExpansionOverrides } from "../../lib/japaneseExpansionOverrides.ts";
@@ -20,7 +20,15 @@ async function source(path) {
 }
 
 function project(products) {
-  return products.map((product) => ({
+  return products.map((product) => product.visibility === "preview" ? {
+    slug: product.slug,
+    visibility: "preview",
+    title: { en: product.title.en, zh: product.title.zh, ko: product.title.ko },
+    packages: product.packages.map((tourPackage) => ({
+      id: tourPackage.id,
+      prices: tourPackage.prices.map((row) => ({ travelers: row.travelers })),
+    })),
+  } : ({
     slug: product.slug,
     title: {
       en: product.title.en,
@@ -45,16 +53,18 @@ function project(products) {
 test("the slim inquiry index is an exact projection of the tour catalogue", () => {
   assert.deepEqual(
     JSON.parse(JSON.stringify(privateTourInquiryIndex)),
-    project(privateTourProducts),
+    project([...privateTourProducts, ...privateTourPreviewProducts]),
     "regenerate with: node --experimental-strip-types tools/generate-private-tour-inquiry-index.mjs",
   );
 });
 
 test("every inquiry slug resolves through the index to the catalogue title and prices", () => {
   for (const slug of privateTourInquirySlugs) {
-    const product = privateTourProducts.find((candidate) => candidate.slug === slug);
+    const product = [...privateTourProducts, ...privateTourPreviewProducts]
+      .find((candidate) => candidate.slug === slug);
     if (!product) continue;
     for (const locale of ["en", "zh", "ko", "ja"]) {
+      // A preview has no Japanese page, so no Japanese inquiry names it.
       assert.equal(getPrivateTourInquiryContext(slug, locale)?.name, locale === "ja"
         ? project([product])[0].title.ja
         : product.title[locale]);

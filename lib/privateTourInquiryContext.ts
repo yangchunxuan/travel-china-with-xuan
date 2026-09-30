@@ -61,6 +61,11 @@ export const privateTourInquirySlugs = [
   "beijing-xian-shanghai-8-day-private-tour",
   "beijing-xian-guilin-hong-kong-10-day-private-tour",
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
+  // Preview products (visibility "preview"): en/zh/ko direct-URL pages only.
+  "harbin-yabuli-snow-town-6-day-private-tour",
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+  "harbin-mohe-arctic-village-7-day-private-tour",
+  "harbin-snow-town-mohe-9-day-private-tour",
 ] as const;
 
 export type PrivateTourInquirySlug =
@@ -89,7 +94,19 @@ const packageLabels = {
   "no-guide": { en: "No on-site guide", zh: "无现场导游", ko: "현장 가이드 없음", ja: "現地ガイドなし" },
   "fixed-route-english-guided": { en: "Fixed route with English guide", zh: "固定路线英语导游版", ko: "한국어 가이드 포함 고정 코스", ja: "固定ルートプラン" },
   "small-group-departure": { en: "Small group, 8–12 guests", zh: "小团，8–12 人", ko: "소규모 그룹 8~12명", ja: "少人数グループ（8～12名）" },
+  "low-season": { en: "Low season", zh: "淡季", ko: "비수기", ja: "オフシーズン" },
+  "peak-season": { en: "Peak season (20 Dec–14 Feb)", zh: "旺季（12月20日–2月14日）", ko: "성수기(12월 20일~2월 14일)", ja: "ピークシーズン（12月20日～2月14日）" },
 } as const;
+
+/**
+ * Preview products have no Japanese page, so a Japanese inquiry cannot name
+ * them. The slim index marks them; see docs/private-tour-previews.md.
+ */
+export function isPrivateTourPreviewInquirySlug(slug: string): boolean {
+  return privateTourInquiryIndex.some(
+    (candidate) => candidate.slug === slug && candidate.visibility === "preview",
+  );
+}
 
 const phaseTwoKoreanGuideSlugs: ReadonlySet<PrivateTourInquirySlug> =
   new Set([
@@ -480,6 +497,26 @@ const privateTourInquiryNames: Readonly<
     zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团",
     ko: "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
   },
+  "harbin-yabuli-snow-town-6-day-private-tour": {
+    en: "Harbin, Yabuli & Snow Town: 6-Day Winter Private Tour",
+    zh: "哈尔滨·亚布力·雪乡 6 天 5 晚冬季私家团",
+    ko: "하얼빈·야부리·설향 6일 겨울 프라이빗 투어",
+  },
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
+    en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour",
+    zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团",
+    ko: "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
+  },
+  "harbin-mohe-arctic-village-7-day-private-tour": {
+    en: "Harbin, Mohe, Beihong & Arctic Village: 7-Day Winter Private Tour",
+    zh: "哈尔滨·漠河·北红村·北极村 7 天 6 晚冬季私家团",
+    ko: "하얼빈·모허·베이훙촌·북극촌 7일 겨울 프라이빗 투어",
+  },
+  "harbin-snow-town-mohe-9-day-private-tour": {
+    en: "Harbin, Yabuli, Snow Town & Mohe: 9-Day Winter Private Tour",
+    zh: "哈尔滨·亚布力·雪乡·漠河 9 天 8 晚冬季私家团",
+    ko: "하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어",
+  },
 };
 
 // The existing intake/SQL contract uses these exact Korean names. Keep the
@@ -578,6 +615,7 @@ export function getPrivateTourInquiryContext(
   const structuredProduct = privateTourInquiryIndex.find(
     (candidate) => candidate.slug === value,
   );
+  if (locale === "ja" && structuredProduct?.visibility === "preview") return null;
   return {
     slug: value,
     name: structuredProduct?.title[locale] ?? (locale === "ja"

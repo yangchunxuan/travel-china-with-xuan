@@ -50,7 +50,9 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  assert.equal(Object.keys(trafficProductPackages).length, 48);
+  // 47 published inquiry products plus the classic Zhangjiajie identity, and
+  // four unlisted Northeast winter previews.
+  assert.equal(Object.keys(trafficProductPackages).length, 52);
   assert.deepEqual(
     Object.keys(trafficProductTravelerCounts).sort(),
     Object.keys(trafficProductPackages).sort(),

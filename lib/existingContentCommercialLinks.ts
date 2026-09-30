@@ -774,6 +774,29 @@ export function getProductPlanningContext(
   };
 }
 
+/**
+ * Preview products (`visibility: "preview"`) are not commercial link owners
+ * and are never link targets. Their pages link out only to published
+ * Northeast winter routes and the climate-timing guide.
+ */
+export function getPreviewProductPlanningContext(locale: HomegroundLocale) {
+  return {
+    destinations: [] as ExistingContentCommercialLink[],
+    guides: (["china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {
+      const guide = getGuideEntry(id, locale);
+      return {
+        id,
+        href: guide.canonicalPath,
+        label: guide.navTitle,
+      } satisfies ExistingContentCommercialLink;
+    }),
+    relatedProducts: [
+      p("harbin-winter-5-day-private-tour"),
+      p("changbaishan-yanji-winter-6-day-private-tour"),
+    ].map((target) => toProductLink(target, locale)),
+  };
+}
+
 export function getExistingContentCommercialCopy(locale: HomegroundLocale) {
   return commercialCopy[locale];
 }

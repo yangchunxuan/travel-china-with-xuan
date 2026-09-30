@@ -78,6 +78,10 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "beijing-xian-shanghai-8-day-private-tour": ["standard-guided"],
   "beijing-xian-guilin-hong-kong-10-day-private-tour": ["standard-guided"],
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": ["standard-guided"],
+  "harbin-yabuli-snow-town-6-day-private-tour": ["low-season", "peak-season"],
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": ["low-season", "peak-season"],
+  "harbin-mohe-arctic-village-7-day-private-tour": ["low-season", "peak-season"],
+  "harbin-snow-town-mohe-9-day-private-tour": ["low-season", "peak-season"],
 };
 export const trafficProductTravelerCounts: Readonly<
   Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
@@ -130,6 +134,10 @@ export const trafficProductTravelerCounts: Readonly<
   "beijing-xian-shanghai-8-day-private-tour": [2, 4, 6],
   "beijing-xian-guilin-hong-kong-10-day-private-tour": [2, 4, 6],
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": [2, 4, 6],
+  "harbin-yabuli-snow-town-6-day-private-tour": [2, 4, 6, 8],
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": [2, 4, 6, 8],
+  "harbin-mohe-arctic-village-7-day-private-tour": [2, 4, 6, 8],
+  "harbin-snow-town-mohe-9-day-private-tour": [2, 4, 6, 8],
 };
 export function isTrafficProductSlug(value: unknown): value is string {
   return typeof value === "string" &&
