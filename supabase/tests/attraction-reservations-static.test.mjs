@@ -21,9 +21,15 @@ const unverifiedRuleIds = [
   "shanghai-tower",
   "huaqing-palace",
   "jinsha-site-museum",
-  "lingyin-feilai-peak",
   "west-lake-boat",
 ];
+
+/**
+ * Source guides that are not about one attraction. The Jiangnan route
+ * comparison records the Lingyin rule, but its footer belongs to the private
+ * tours it compares, so it carries no reservation CTA.
+ */
+const routeSourceGuides = new Set(["first-china-trip-jiangnan-6-or-beijing-11-days"]);
 
 /** Operators whose own statements say they have not authorised third-party agents. */
 const operatorStatementRuleIds = ["forbidden-city", "shaanxi-history-museum"];
@@ -41,7 +47,12 @@ test("every reservation rule is dated and traced to an existing guide", async ()
     assert.ok(!ids.has(rule.id), `${rule.id}: duplicate id`);
     ids.add(rule.id);
     assert.ok(reservations.attractionReservationCityIds.includes(rule.city), `${rule.id}: city`);
-    assert.match(rule.verifiedAt, isoDate, `${rule.id}: verifiedAt`);
+    if (rule.source) {
+      assert.match(rule.verifiedAt, isoDate, `${rule.id}: verifiedAt`);
+      assert.ok(rule.verifiedAt <= "2026-09-30", `${rule.id}: verifiedAt is not in the future`);
+    } else {
+      assert.equal(rule.verifiedAt, null, `${rule.id}: a row without a source guide has no check date`);
+    }
     for (const locale of locales) {
       assert.ok(rule.name[locale]?.trim(), `${rule.id}: ${locale} name`);
       assert.ok(rule.notes[locale]?.trim(), `${rule.id}: ${locale} notes`);
@@ -85,6 +96,7 @@ test("published face values and release rules are copied from the source guide",
     "shaanxi-history-museum": [/five days ahead at 17:00/u, /has not authorised third-party platforms/u],
     "forbidden-city": [/has not authorised third-party ticket agents/u, /20:00/u],
     "shanghai-museum-east": [/without an advance reservation/u],
+    "lingyin-feilai-peak": [/free admission but requires a real-name timed reservation/u, /reviewedAt: "2026-09-26"/u],
   };
   for (const [id, patterns] of Object.entries(expectedEvidence)) {
     const rule = reservations.getAttractionReservationRule(id);
@@ -115,7 +127,10 @@ test("every attraction is bookable except free walk-in entry, and nothing is exc
 
 test("operators' third-party statements stay disclosed and the guides warn against resellers, not against us", async () => {
   const statement = { en: /has not authorised/u, zh: /未授权第三方/u, ko: /승인하지 않았다/u };
-  const notAgent = { en: /not its agent/u, zh: /不是(?:故宫|博物馆)的代理/u, ko: /대리점이 아니/u };
+  // A plain "no authorisation" statement, never "not its agent", which reads
+  // as if the operator's statement covered only agents it appointed itself.
+  const noAuthorisation = { en: /We have no authorisation from the museum/u, zh: /我们未获得(?:故宫|博物馆)授权/u, ko: /승인을 받지 않았으며/u };
+  const carveOut = /not its agent|its ticket or reservation agents|不是(?:故宫|博物馆)的代理|대리점이 아니|do not sell its tickets|不销售故宫门票|입장권을 판매하지 않습니다/u;
   const refusal = /do not book|don't book|不代订|예약하지 않습니다/u;
   for (const id of operatorStatementRuleIds) {
     const rule = reservations.getAttractionReservationRule(id);
@@ -123,8 +138,17 @@ test("operators' third-party statements stay disclosed and the guides warn again
     for (const locale of locales) {
       for (const text of [rule.notes[locale], rule.disclosure[locale]]) {
         assert.match(text, statement[locale], `${id}: ${locale} keeps the operator statement`);
-        assert.match(text, notAgent[locale], `${id}: ${locale} says we are not the operator's agent`);
+        assert.match(text, noAuthorisation[locale], `${id}: ${locale} says we have no authorisation from the operator`);
+        assert.doesNotMatch(text, carveOut, `${id}: ${locale} does not narrow the operator statement`);
         assert.doesNotMatch(text, refusal, `${id}: ${locale} no longer says we do not book it`);
+      }
+    }
+    if (id === "forbidden-city") {
+      // Quote the museum exactly, as the source guides do.
+      assert.match(rule.notes.en, /has not authorised third parties to act as ticket or exhibition-reservation agents/u);
+      assert.match(rule.disclosure.en, /has not authorised third parties to act as ticket or exhibition-reservation agents/u);
+      for (const locale of locales) {
+        assert.match(rule.notes[locale], /(?:do not resell tickets or add a mark-up|不转售、不加价|되팔거나 금액을 더하지 않으며)/u, `${locale}: no resale, no mark-up`);
       }
     }
     const guideId = rule.source;
@@ -141,11 +165,21 @@ test("operators' third-party statements stay disclosed and the guides warn again
     const copy = copyModule.getAttractionReservationCopy(locale);
     const text = JSON.stringify(copy);
     assert.doesNotMatch(text, refusal, `${locale}: hub copy`);
+    assert.doesNotMatch(text, carveOut, `${locale}: hub copy does not narrow the operator statements`);
     assert.equal(Object.keys(copy.status).sort().join(","), "not-needed,offered");
   }
   assert.match(copyModule.getAttractionReservationCopy("en").compliance.join(" "), /not an authorised ticket seller or agent of any attraction/u);
   assert.match(copyModule.getAttractionReservationCopy("zh").compliance.join(" "), /不是任何景点授权的售票方或代理/u);
   assert.match(copyModule.getAttractionReservationCopy("ko").compliance.join(" "), /공식 판매처나 대리점도 아니/u);
+  // The guide linked from the Forbidden City guide warns against resold tickets, not against a reservation in the visitor's name.
+  const resellerGuide = Object.fromEntries(await Promise.all(locales.map(async (locale) => [locale, await source(`content/guides/official-or-reseller-china-tickets/body.${locale}.ts`)])));
+  assert.doesNotMatch(resellerGuide.en, /standalone third-party Forbidden City ticket|No, not a standalone third-party ticket/u);
+  assert.doesNotMatch(resellerGuide.zh, /第三方单独故宫门票/u);
+  assert.doesNotMatch(resellerGuide.ko, /제3자 단독/u);
+  assert.match(resellerGuide.en, /has not authorised third parties to act as ticket or exhibition-reservation agents/u);
+  assert.match(resellerGuide.en, /resold Forbidden City ticket/u);
+  assert.match(resellerGuide.zh, /转售的故宫门票/u);
+  assert.match(resellerGuide.ko, /재판매된 자금성 입장권/u);
   const legal = await source("lib/homegroundLegalI18n.ts");
   assert.doesNotMatch(legal, /do not book attractions whose operator|不代订运营方|허가하지 않았다고 밝힌 관광지는 예약하지 않습니다/u);
   assert.match(legal, /Homeground is not an authorised ticket seller or agent of any attraction/u);
@@ -172,12 +206,18 @@ test("guide CTAs cover every guided attraction the ownership registry allows", a
   assert.equal(reservations.getGuideAttractionReservationTarget("beijing-to-mutianyu-great-wall-transfer"), null);
   // Every offered rule whose source guide is free to carry it has a CTA there.
   for (const rule of reservations.attractionReservationRules) {
-    if (rule.status !== "offered" || !rule.source || blocked.has(rule.source)) continue;
+    if (rule.status !== "offered" || !rule.source || blocked.has(rule.source) || routeSourceGuides.has(rule.source)) continue;
     const target = reservations.getGuideAttractionReservationTarget(rule.source);
     assert.ok(target, `${rule.source}: guide for ${rule.id} carries a reservation CTA`);
   }
   const cta = await source("components/content/GuideReservationCta.tsx");
   assert.match(cta, /rule\.disclosure/u);
+  // The "own passport name" body is only for attractions whose guide confirms passports.
+  assert.match(cta, /rule\.passportAccepted === true \? copy\.body : copy\.bodyPassportUnchecked/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale).guideCta;
+    assert.doesNotMatch(copy.bodyPassportUnchecked, /own passport name|本人护照实名|여권 실명/u, `${locale}: unchecked-passport CTA body`);
+  }
 });
 
 test("the service fee shows one currency per language and never less than CNY 45", () => {
@@ -224,7 +264,12 @@ test("the prepared request carries the service context and no passport field", a
     });
     assert.ok(mailto.startsWith("mailto:hello@homegroundchina.com?subject="));
   }
+  // Only the Korean page shows a KakaoTalk button, so only Korean copy names it.
+  for (const locale of ["en", "zh"]) {
+    assert.doesNotMatch(JSON.stringify(copyModule.getAttractionReservationCopy(locale)), /KakaoTalk|카카오/u, `${locale}: no KakaoTalk channel`);
+  }
   const component = await source("components/AttractionReservationEnquiry.tsx");
+  assert.match(component, /locale === "ko" \? <KakaoTalkContact/u);
   assert.doesNotMatch(component, /name="passport|passportNumber/iu);
   assert.match(component, /KakaoTalkContact/u);
   assert.match(component, /homegroundWhatsAppHref/u);
@@ -254,6 +299,10 @@ test("search copy leads with the Forbidden City and the owner's refund and priva
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);
     assert.match(copy.metadata.title, lead[locale], `${locale}: title`);
+    if (locale === "en") {
+      assert.ok(copy.metadata.title.length <= 60, "en: title fits a search result");
+      assert.ok(copy.metadata.description.replace("{fee}", "USD 7").length <= 155, "en: description fits a search result");
+    }
     assert.match(copy.metadata.description, lead[locale], `${locale}: description`);
     assert.match(copy.h1, lead[locale], `${locale}: h1`);
     const forbiddenCityFaq = copy.faqs.find((item) => lead[locale].test(item.question));
@@ -262,10 +311,15 @@ test("search copy leads with the Forbidden City and the owner's refund and priva
     assert.doesNotMatch(copy.enquiry.attractionsHint, /ask us|可询问|‘문의’로/u);
   }
   const [legal, privacy] = await Promise.all([source("lib/homegroundLegalI18n.ts"), source("lib/homegroundPrivacyI18n.ts")]);
-  assert.match(legal, /You may cancel by email before we make the reservation; the service fee and ticket money received are refunded\./u);
+  assert.match(legal, /You may cancel by email before we complete the reservation; the service fee and ticket money received are refunded in full\./u);
+  assert.match(legal, /在我们完成预约前，你可以通过邮件取消，已收取的服务费和门票款全额退还。/u);
+  assert.match(legal, /예약을 완료하기 전이라면 이메일로 취소할 수 있으며, 받은 수수료와 입장료를 전액 환불합니다\./u);
   assert.match(privacy, /Full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry/u);
   const page = await source("components/AttractionReservationsPage.tsx");
   assert.equal((page.match(/<h1>/gu) ?? []).length, 1);
+  // A free walk-in row says "not applicable", and an unchecked row shows no date.
+  assert.match(page, /rule\.status === "not-needed" \? copy\.notApplicable : copy\.unknown/u);
+  assert.match(page, /copy\.notChecked/u);
 });
 
 test("the page is a public, indexable system identity with reciprocal alternates", async () => {

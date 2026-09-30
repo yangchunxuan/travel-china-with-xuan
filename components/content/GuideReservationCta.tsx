@@ -16,7 +16,10 @@ import styles from "./GuideReservationCta.module.css";
  * (data-guide-tour-card): that card stays the guide's one product link, and
  * this aside opens the service page with the attraction preselected. A rule's
  * `disclosure` (for example an operator's statement that it has not
- * authorised third-party agents) is always shown beside the offer.
+ * authorised third-party agents) is always shown beside the offer. The body
+ * promises a booking in the traveller's own passport name only where the
+ * source guide confirms the official system accepts passports; otherwise it
+ * says we check that before payment.
  */
 export function GuideReservationCta({
   guideId,
@@ -36,7 +39,7 @@ export function GuideReservationCta({
     <aside aria-label={copy.label} className={styles.card} data-guide-reservation-cta={rule.id} data-similarity-ignore>
       <p className={styles.label}>{copy.label}</p>
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
-      <p className={styles.body}>{fillReservationCopy(copy.body, values)}</p>
+      <p className={styles.body}>{fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
       {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position="footer">
         {copy.action}

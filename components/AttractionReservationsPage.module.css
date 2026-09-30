@@ -390,6 +390,18 @@
   word-break: keep-all;
 }
 
+/*
+ * Chinese has no spaces between words, so keep-all leaves whole clauses
+ * unbreakable and pushes the table past its container even at desktop
+ * widths. Chinese cells break between characters, with strict punctuation
+ * rules; the column minimums above still stop one-character lines.
+ */
+.table:lang(zh) td,
+.table:lang(zh) thead th {
+  line-break: strict;
+  word-break: normal;
+}
+
 .table thead th {
   background: var(--tile);
   font-size: 0.8125rem;
@@ -713,6 +725,18 @@
 
 /* ---------- Narrow screens ---------- */
 
+/*
+ * The table's column minimums add up to about 75rem, so it only fits once the
+ * container reaches its full 77rem width (an 80rem viewport). Below that it
+ * scrolls inside its container, so the hint shows at tablet and small
+ * desktop widths too, not only on phones.
+ */
+@media (max-width: 80rem) {
+  .scrollHint {
+    display: block;
+  }
+}
+
 @media (max-width: 56rem) {
   .heroGrid,
   .twoColumn,
@@ -737,10 +761,6 @@
   .fieldRow,
   .sendButtons {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .scrollHint {
-    display: block;
   }
 
   .enquiry {

@@ -9,9 +9,11 @@ import { PRIVATE_TOUR_PRICE_CONVERSION } from "./privateTourProducts.ts";
  *
  * Every fact below is copied from a Homeground guide that already cites the
  * attraction's own official source; `source` names that guide and
- * `verifiedAt` is the date the guide recorded for the check. A field the
- * guide does not state is `null` and renders as "confirmed when you
- * enquire". Never fill a null from memory, a reseller listing or a blog.
+ * `verifiedAt` is the date the guide recorded for the check. A row with no
+ * source guide has `verifiedAt: null` and renders as "not yet checked"; it
+ * never carries a date no guide recorded. A field the guide does not state
+ * is `null` and renders as "confirmed when you enquire". Never fill a null
+ * from memory, a reseller listing or a blog.
  *
  * `status`:
  *   offered     — Homeground submits the reservation on the attraction's own
@@ -76,7 +78,8 @@ export interface AttractionReservationRule {
    * beside every offer of it outside the rules table (the guide CTA).
    */
   readonly disclosure?: Localized;
-  readonly verifiedAt: string;
+  /** The source guide's check date; null exactly when `source` is null. */
+  readonly verifiedAt: string | null;
   readonly source: GuideId | null;
 }
 
@@ -184,14 +187,14 @@ export const attractionReservationRules = [
     },
     price: null,
     notes: {
-      en: "The Palace Museum says it has not authorised third parties to act as its ticket or reservation agents. We are not its agent and do not sell its tickets: we submit each reservation on the museum's own official channel in the visitor's own passport name, and the museum's real-name and cancellation rules apply. You can also book it yourself with our guide.",
-      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们不是故宫的代理，也不销售故宫门票：我们只在故宫官方渠道以每位游客本人的护照实名提交预约，故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
-      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 박물원의 대리점이 아니며 입장권을 판매하지 않습니다. 박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출할 뿐이며, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 가이드를 보고 직접 예약하셔도 됩니다.",
+      en: "The Palace Museum says it has not authorised third parties to act as ticket or exhibition-reservation agents. We have no authorisation from the museum. We submit each reservation on the museum's own official channel in the visitor's own passport name; we do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our guide.",
+      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们未获得故宫授权。我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
+      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 고궁박물원의 승인을 받지 않았으며, 박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출할 뿐입니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 가이드를 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
-      en: "The Palace Museum says it has not authorised third parties to act as its ticket or reservation agents. We are not its agent and do not resell tickets: we submit your reservation on the museum's own official channel in your own passport name, and its real-name and cancellation rules apply.",
-      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们不是故宫的代理，不转售门票，只在故宫官方渠道以你本人的护照实名提交预约，故宫的实名与退改规则照常适用。",
-      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 박물원의 대리점이 아니며 표를 되팔지 않습니다. 박물원 공식 채널에서 본인 여권 실명으로 예약을 제출하며, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.",
+      en: "The Palace Museum says it has not authorised third parties to act as ticket or exhibition-reservation agents. We have no authorisation from the museum. We do not resell tickets or add a mark-up, and its real-name and cancellation rules apply.",
+      zh: "故宫博物院声明未授权第三方代理门票或展览预约。我们未获得故宫授权，也不转售、不加价；故宫的实名与退改规则照常适用。",
+      ko: "고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 고궁박물원의 승인을 받지 않았으며, 표를 되팔거나 금액을 더하지 않습니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.",
     },
     verifiedAt: "2026-08-22",
     source: "forbidden-city-for-foreign-visitors",
@@ -306,7 +309,7 @@ export const attractionReservationRules = [
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
       ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
-    verifiedAt: "2026-09-29",
+    verifiedAt: null,
     source: null,
   },
   // Xi'an
@@ -355,14 +358,14 @@ export const attractionReservationRules = [
     },
     price: { kind: "free-reservation" },
     notes: {
-      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We are not its agent and do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket. No-shows get a 180-day booking restriction. You can also book it yourself with our guide.",
-      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们不是博物馆的代理，也不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
-      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 대리점이 아니며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권입니다. 노쇼 시 180일 예약 제한. 가이드를 보고 직접 예약하셔도 됩니다.",
+      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We have no authorisation from the museum and do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket. No-shows get a 180-day booking restriction. You can also book it yourself with our guide.",
+      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们未获得博物馆授权，也不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
+      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 승인을 받지 않았으며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권입니다. 노쇼 시 180일 예약 제한. 가이드를 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
-      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We are not its agent and do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
-      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们不是博物馆的代理，不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用，你也可以自行预约。",
-      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 대리점이 아니며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것이며, 직접 예약하셔도 됩니다.",
+      en: "The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We have no authorisation from the museum and do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
+      zh: "博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们未获得博物馆授权，也不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用，你也可以自行预约。",
+      ko: "박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 승인을 받지 않았으며 표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것이며, 직접 예약하셔도 됩니다.",
     },
     verifiedAt: "2026-08-12",
     source: "shaanxi-history-museum-booking-and-collection-plan",
@@ -409,7 +412,7 @@ export const attractionReservationRules = [
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
       ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
-    verifiedAt: "2026-09-29",
+    verifiedAt: null,
     source: null,
   },
   // Chengdu
@@ -476,7 +479,7 @@ export const attractionReservationRules = [
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
       ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
-    verifiedAt: "2026-09-29",
+    verifiedAt: null,
     source: null,
   },
   // Hangzhou
@@ -509,16 +512,16 @@ export const attractionReservationRules = [
     name: { en: "Lingyin Temple and Feilai Peak", zh: "灵隐寺与飞来峰", ko: "영은사와 비래봉" },
     channels: null,
     passportAccepted: null,
-    realName: null,
+    realName: true,
     release: null,
-    price: null,
+    price: { kind: "free-reservation" },
     notes: {
-      en: "Our Hangzhou guide lists access, reservation and separate tickets as a date check, so we check them for your date before the written confirmation.",
-      zh: "我们的杭州指南把入口、预约和分开购票列为出行前核实项；书面确认前，我们会按你的日期核实。",
-      ko: "항저우 가이드는 입장·예약·별도 티켓을 날짜별 확인 항목으로 두므로, 서면 확인 전에 날짜 기준으로 확인합니다.",
+      en: "Our route guide records, from the scenic area's official notice, that admission is currently free but needs a real-name timed reservation. We recheck the rule for your date before the written confirmation.",
+      zh: "我们的线路攻略依据景区官方公告记录：目前景区免票，但须实名分时预约。书面确认前，我们会按你的日期重新核实。",
+      ko: "저희 일정 가이드는 관광지 공식 공지를 근거로 현재 무료이지만 실명 시간대 예약이 필요하다고 기록합니다. 서면 확인 전에 날짜 기준으로 다시 확인합니다.",
     },
-    verifiedAt: "2026-09-29",
-    source: null,
+    verifiedAt: "2026-09-26",
+    source: "first-china-trip-jiangnan-6-or-beijing-11-days",
   },
   {
     id: "west-lake-boat",
@@ -535,7 +538,7 @@ export const attractionReservationRules = [
       zh: "游船、交通管制与限流措施按日期变化；书面确认前，规划师会按你的日期核实。",
       ko: "유람선, 교통 통제와 인파 조치는 날짜마다 달라지므로, 서면 확인 전에 플래너가 날짜 기준으로 확인합니다.",
     },
-    verifiedAt: "2026-09-29",
+    verifiedAt: null,
     source: null,
   },
 ] as const satisfies readonly AttractionReservationRule[];
@@ -559,7 +562,9 @@ export function getBookableAttractionReservationRules(): readonly AttractionRese
  * statement and the CTA shows the rule's `disclosure` beside the offer.
  *
  * The Badaling and Mutianyu transfer guides are left out on purpose: the
- * high-intent CTA ownership registry blocks specialised CTAs on them.
+ * high-intent CTA ownership registry blocks specialised CTAs on them. The
+ * Jiangnan route-comparison guide is only the Lingyin rule's source; its
+ * footer belongs to the private tours it compares, so it carries no CTA.
  */
 export const attractionReservationGuideTargets = {
   "forbidden-city-for-foreign-visitors": "forbidden-city",

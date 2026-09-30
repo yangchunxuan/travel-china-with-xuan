@@ -88,7 +88,7 @@ const body: StructuredPageBody = {
       caption: "Official rules observed on 13 August 2026—not universal China rules",
       columns: ["Attraction owner", "What its official page establishes", "Booking lesson"],
       rows: [
-        ["Palace Museum", "It names its official mini program, says it has not authorised third parties to act as ticket or exhibition-reservation agents, and applies real-name document checks including passports for eligible non-mainland visitors.", "Do not buy a standalone third-party Forbidden City ticket; recheck live document, release and cancellation rules in the official flow."],
+        ["Palace Museum", "It names its official mini program, says it has not authorised third parties to act as ticket or exhibition-reservation agents, and applies real-name document checks including passports for eligible non-mainland visitors.", "Do not buy a resold Forbidden City ticket; only a completed Palace Museum reservation record in each visitor's own name counts. Recheck live document, release and cancellation rules in the official flow."],
         ["Dunhuang Academy / Mogao Caves", "A July 2026 statement says its named website and mini program are the official ticket platforms and rejects third-party ticket agents; the annual notice also provides an official foreign-passport path and an official portal for reviewed travel-agency users.", "An agency’s owner-portal access does not prove authority to advertise public standalone inventory elsewhere."],
         ["Emperor Qinshihuang’s Mausoleum Site Museum", "Its owner site names its website and official accounts, supports passport information for booking, requires original-document verification and can stop sales at capacity.", "A separate technology domain may be legitimate when reached from the owner site; capacity and passport matching still control entry."],
         ["National Museum of China", "General admission is an official real-name reservation, and the museum warns against other reservation routes because of fraud and personal-data risks.", "If a seller charges money, identify whether it sells admission, booking assistance, a guide, transport or another service."],
@@ -240,7 +240,7 @@ const body: StructuredPageBody = {
         },
         {
           question: "Can I buy a Forbidden City ticket from a third-party seller?",
-          answer: "No, not a standalone third-party ticket. The Palace Museum names its official mini program and says it has not authorised third parties to act as ticket or exhibition-reservation agents, and it applies real-name document checks including passports for eligible non-mainland visitors. Recheck live document, release and cancellation rules in the official flow. Rules observed on 13 August 2026.",
+          answer: "No, not a resold ticket. The Palace Museum names its official mini program and says it has not authorised third parties to act as ticket or exhibition-reservation agents, and it applies real-name document checks including passports for eligible non-mainland visitors. Only a completed Palace Museum reservation record in each visitor's own name counts; recheck live document, release and cancellation rules in the official flow. Rules observed on 13 August 2026.",
         },
         {
           question: "I paid and received a voucher. Does that mean I can enter?",

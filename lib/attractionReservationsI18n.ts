@@ -101,6 +101,10 @@ export interface AttractionReservationCopy {
   channel: Record<AttractionReservationChannelType, string>;
   cities: Record<AttractionReservationCityId, string>;
   unknown: string;
+  /** A rule field that does not apply because entry is a free walk-in. */
+  notApplicable: string;
+  /** The checked-date cell of a row that no guide has checked yet. */
+  notChecked: string;
   yes: string;
   no: string;
   free: string;
@@ -113,7 +117,10 @@ export interface AttractionReservationCopy {
   guideCta: {
     label: string;
     title: string;
+    /** For an attraction whose guide confirms the official system accepts passports. */
     body: string;
+    /** For an attraction whose passport handling online is not confirmed. */
+    bodyPassportUnchecked: string;
     action: string;
   };
   hubLink: string;
@@ -122,9 +129,9 @@ export interface AttractionReservationCopy {
 const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
   en: {
     metadata: {
-      title: "Book Forbidden City, Terracotta Warriors & Museum Tickets as a Foreigner",
+      title: "Book Forbidden City & China Museum Tickets as a Foreigner",
       description:
-        "We reserve the Forbidden City, Terracotta Warriors and other China museums on each attraction's official system in your own passport name: {fee} per person per attraction plus face value.",
+        "We reserve the Forbidden City, Terracotta Warriors and other museums on official systems in your own name: {fee} per person per attraction plus face value.",
     },
     breadcrumb: "Breadcrumb",
     home: "Home",
@@ -145,7 +152,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     whatBody: [
       "Homeground China is operated by a licensed Beijing travel agency. For foreign independent travellers, we make attraction reservations that normally need a Chinese phone number, a WeChat account or fast action at a release time.",
       "We use only the channel the attraction itself names: its website, its official booking email, its WeChat account or mini-program, or a platform its own site links to. Every booking is made in the real name and passport of the person who will visit.",
-      "We are not an authorised ticket seller or agent of any attraction on this page, and we never resell tickets. Some operators, including the Palace Museum and the Shaanxi History Museum, say they have not authorised third-party ticket agents or sellers; the table records what each one says, and you can always book yourself with our guides.",
+      "We are not an authorised ticket seller or agent of any attraction on this page, and we never resell tickets. Some operators, including the Palace Museum and the Shaanxi History Museum, say they have not authorised third parties to act as ticket agents or to sell their tickets, and we have no authorisation from them; the table records what each one says, and you can always book yourself with our guides.",
     ],
     forTitle: "Who it is for",
     forItems: [
@@ -155,7 +162,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "How it works",
     steps: [
-      { title: "1. Send a request", body: "Choose the attractions, dates and number of travellers below and send the request by WhatsApp, email or KakaoTalk. Do not send passport details yet." },
+      { title: "1. Send a request", body: "Choose the attractions, dates and number of travellers below and send the request by WhatsApp or email. Do not send passport details yet." },
       { title: "2. Written confirmation", body: "A planner checks the booking window and availability, then confirms in writing what we will try to book, the service fee, the face value and the payment instructions." },
       { title: "3. Payment, then booking", body: "After payment we ask for each traveller's passport details, book through the official channel and send you the confirmation record. Carry the same original passports on the day." },
     ],
@@ -184,14 +191,14 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "Passport details",
     passportBody:
-      "The request form on this page never asks for passport numbers. We ask for passport details only after you accept the written confirmation, by email, WhatsApp or KakaoTalk. We use them only for the reservation, pass them only to the attraction's booking channel, and delete them after the trip.",
+      "The request form on this page never asks for passport numbers. We ask for passport details only after you accept the written confirmation, by email or WhatsApp. We use them only for the reservation, pass them only to the attraction's booking channel, and delete them after the trip.",
     privacyLink: "Privacy notice",
     termsLink: "Terms",
     refundLink: "Refund & delivery",
     rulesTitle: "Booking rules by attraction",
     rulesIntro:
-      "Each row repeats what one of our dated guides found on the attraction's official source. Rules change: we recheck the live rule for your dates before confirming. Blank facts are confirmed when you enquire.",
-    rulesCaption: "Attraction reservation rules in Beijing, Shanghai, Xi'an, Chengdu and Hangzhou, with the date each rule was checked",
+      "Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. Blank facts are confirmed when you enquire.",
+    rulesCaption: "Attraction reservation rules in Beijing, Shanghai, Xi'an, Chengdu and Hangzhou, with the date a guide checked each rule",
     columns: {
       attraction: "Attraction",
       status: "Our service",
@@ -219,17 +226,19 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     },
     cities: { beijing: "Beijing", shanghai: "Shanghai", xian: "Xi'an", chengdu: "Chengdu", hangzhou: "Hangzhou" },
     unknown: "Confirmed when you enquire",
+    notApplicable: "Not applicable: walk-in entry",
+    notChecked: "Not yet checked",
     yes: "Yes",
     no: "No",
     free: "Free, reservation required",
     freeWalkIn: "Free, no reservation",
     sourceLabel: "Source guide",
-    scrollHint: "Swipe the table sideways to see every column.",
+    scrollHint: "Scroll the table sideways to see every column.",
     faqTitle: "Questions about the reservation service",
     faqs: [
       { question: "How much does the attraction reservation service cost?", answer: "{fee} per person per attraction, plus the attraction's official ticket price with no mark-up. Both are paid together after we confirm in writing. Reservations for attractions in a Homeground private-tour itinerary are included at no extra fee." },
-      { question: "Can you book the Forbidden City?", answer: "Yes. We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. Tickets open seven days ahead at 20:00 China time and there are no same-day tickets, so send your request early. The Palace Museum says it has not authorised third parties to act as its ticket or reservation agents: we are not its agent, we do not resell tickets, and its real-name and cancellation rules apply. We cannot promise a slot; if we cannot secure one, that attraction's fee is refunded in full." },
-      { question: "Can you book the Shaanxi History Museum?", answer: "Yes, on the museum's official WeChat system in your own passport name. Basic admission is free, so you pay only our fee for the reservation work, plus the separate ticket at face value if you add the Tang mural gallery. The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets: we are not its agent and do not resell tickets, and you can also book it yourself with our guide. A no-show brings a 180-day booking restriction, so tell us early if plans change." },
+      { question: "Can you book the Forbidden City?", answer: "Yes. We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. Tickets open seven days ahead at 20:00 China time and there are no same-day tickets, so send your request early. The Palace Museum says it has not authorised third parties to act as ticket or exhibition-reservation agents. We have no authorisation from the museum. We do not resell tickets or add a mark-up, and its real-name and cancellation rules apply. We cannot promise a slot; if we cannot secure one, that attraction's fee is refunded in full." },
+      { question: "Can you book the Shaanxi History Museum?", answer: "Yes, on the museum's official WeChat system in your own passport name. Basic admission is free, so you pay only our fee for the reservation work, plus the separate ticket at face value if you add the Tang mural gallery. The museum says it has not authorised third-party platforms, agencies or individuals to sell or bundle its tickets. We have no authorisation from the museum and do not resell tickets, and you can also book it yourself with our guide. A no-show brings a 180-day booking restriction, so tell us early if plans change." },
       { question: "What happens if the attraction is sold out?", answer: "We tell you, and we refund that attraction's service fee in full together with any ticket money not spent. We cannot promise availability at any attraction." },
       { question: "Why don't you ask for my passport number in the form?", answer: "Because it is not needed to check availability. We ask for passport details only after you accept the written confirmation, use them only for the booking and delete them after the trip." },
       { question: "Can I cancel after the ticket is issued?", answer: "Cancellation and changes then follow the attraction's own rules, and the service fee for an issued ticket is not refundable. Some attractions also restrict future bookings after a no-show, so tell us early if plans change." },
@@ -238,7 +247,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
-      intro: "Nothing is sent until you choose WhatsApp, email or KakaoTalk. Your choices are written into the message so the planner sees them at once.",
+      intro: "Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once.",
       cities: "Cities",
       attractions: "Attractions",
       attractionsHint: "Where the rules table says “confirmed when you enquire”, we check that rule for your dates before the written confirmation.",
@@ -274,6 +283,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       label: "Attraction reservation service",
       title: "We can book {attraction} for you",
       body: "We submit the reservation on the official system in your own passport name, not a resold ticket: {fee} per person plus the official ticket price, confirmed in writing before payment.",
+      bodyPassportUnchecked: "Before payment we check whether the official system accepts your passport for your date and confirm in writing: {fee} per person plus the official ticket price, never a resold ticket.",
       action: "See the reservation service",
     },
     hubLink: "Attraction reservations in {city}",
@@ -303,7 +313,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     whatBody: [
       "Homeground China 由持证的北京旅行社运营。我们为外国自由行游客预约那些通常需要中国手机号、微信账号，或必须在放票时刻抢先操作的景点。",
       "我们只使用景点自己公布的渠道：官网、官方预约邮箱、官方微信公众号或小程序，或其官网链接的平台。每一笔预约都使用实际入园者本人的姓名和护照。",
-      "我们不是本页任何景点授权的售票方或代理，也从不转售门票。故宫博物院、陕西历史博物馆等运营方声明未授权第三方代理或销售门票；下表记录了各馆的说法，你也可以随时按我们的攻略自行预约。",
+      "我们不是本页任何景点授权的售票方或代理，也从不转售门票。故宫博物院、陕西历史博物馆等运营方声明未授权第三方代理或销售门票，我们也未获得其授权；下表记录了各馆的说法，你也可以随时按我们的攻略自行预约。",
     ],
     forTitle: "适合谁",
     forItems: [
@@ -313,7 +323,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "流程",
     steps: [
-      { title: "1. 发送需求", body: "在下方选择景点、日期和人数，通过 WhatsApp、邮件或 KakaoTalk 发给我们。此时不要发送护照信息。" },
+      { title: "1. 发送需求", body: "在下方选择景点、日期和人数，通过 WhatsApp 或邮件发给我们。此时不要发送护照信息。" },
       { title: "2. 书面确认", body: "规划师核实预约时间窗与余量，书面确认预约内容、服务费、票面价和付款方式。" },
       { title: "3. 付款后预约", body: "收款后我们再索取每位游客的护照信息，通过官方渠道预约，并把预约记录发给你。当天请携带同一本护照原件。" },
     ],
@@ -342,14 +352,14 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "护照信息",
     passportBody:
-      "本页的需求表单从不索取护照号码。只有在你接受书面确认后，我们才会通过邮件、WhatsApp 或 KakaoTalk 索取护照信息；这些信息只用于预约，只提供给景点的预约渠道，并在行程结束后删除。",
+      "本页的需求表单从不索取护照号码。只有在你接受书面确认后，我们才会通过邮件或 WhatsApp 索取护照信息；这些信息只用于预约，只提供给景点的预约渠道，并在行程结束后删除。",
     privacyLink: "隐私说明",
     termsLink: "服务条款",
     refundLink: "退款与交付",
     rulesTitle: "各景点预约规则",
     rulesIntro:
-      "每一行都来自我们一篇注明日期的攻略，攻略依据的是景点官方来源。规则会变：确认前我们会按你的日期重新核实。空白项在你询问时确认。",
-    rulesCaption: "北京、上海、西安、成都、杭州景点预约规则及各条规则的核实日期",
+      "有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。空白项在你询问时确认。",
+    rulesCaption: "北京、上海、西安、成都、杭州景点预约规则及攻略核实各条规则的日期",
     columns: {
       attraction: "景点",
       status: "我们的服务",
@@ -377,6 +387,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     },
     cities: { beijing: "北京", shanghai: "上海", xian: "西安", chengdu: "成都", hangzhou: "杭州" },
     unknown: "询问时确认",
+    notApplicable: "不适用：免预约入馆",
+    notChecked: "尚未核实",
     yes: "是",
     no: "否",
     free: "免费，需预约",
@@ -386,8 +398,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     faqTitle: "关于景点代预约的问题",
     faqs: [
       { question: "景点代预约怎么收费？", answer: "每人每个景点服务费 {fee}，另加景点官方票价，门票不加价。两者在书面确认后一起支付。Homeground 私家团行程内的景点预约不另收服务费。" },
-      { question: "可以代约故宫吗？", answer: "可以。我们在故宫官方渠道以每位游客本人的护照实名提交预约。故宫提前 7 天北京时间 20:00 开放预约，不售当日票，请尽早告诉我们。故宫博物院声明未授权第三方代理门票或展览预约：我们不是故宫的代理，不转售门票，故宫的实名与退改规则照常适用。我们无法承诺一定约到；如未约到，全额退还该景点的服务费。" },
-      { question: "可以代约陕西历史博物馆吗？", answer: "可以，我们在博物馆官方微信系统以你本人的护照实名预约。基本陈列免费，所以你只需支付预约服务费；如加选唐代壁画珍品馆，另按票面价支付门票。博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票：我们不是博物馆的代理，不转售门票，你也可以按我们的攻略自行预约。爽约会被限制预约 180 天，行程有变请尽早告诉我们。" },
+      { question: "可以代约故宫吗？", answer: "可以。我们在故宫官方渠道以每位游客本人的护照实名提交预约。故宫提前 7 天北京时间 20:00 开放预约，不售当日票，请尽早告诉我们。故宫博物院声明未授权第三方代理门票或展览预约。我们未获得故宫授权，也不转售、不加价；故宫的实名与退改规则照常适用。我们无法承诺一定约到；如未约到，全额退还该景点的服务费。" },
+      { question: "可以代约陕西历史博物馆吗？", answer: "可以，我们在博物馆官方微信系统以你本人的护照实名预约。基本陈列免费，所以你只需支付预约服务费；如加选唐代壁画珍品馆，另按票面价支付门票。博物馆声明未授权第三方平台、旅行社或个人销售、捆绑本馆门票。我们未获得博物馆授权，也不转售门票；你也可以按我们的攻略自行预约。爽约会被限制预约 180 天，行程有变请尽早告诉我们。" },
       { question: "景点约满了怎么办？", answer: "我们会告诉你，并全额退还该景点的服务费和未使用的门票款。任何景点我们都无法保证有余量。" },
       { question: "为什么表单里不填护照号码？", answer: "核实余量不需要护照号码。只有在你接受书面确认后，我们才索取护照信息，只用于预约，并在行程结束后删除。" },
       { question: "出票后还能取消吗？", answer: "出票后的取消和改期按景点自己的规则处理，已出票门票的服务费不予退还。有些景点对爽约会限制之后的预约，行程有变请尽早告诉我们。" },
@@ -396,7 +408,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "代预约需求",
       title: "告诉我们要预约什么",
-      intro: "在你选择 WhatsApp、邮件或 KakaoTalk 之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。",
+      intro: "在你选择 WhatsApp 或邮件之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。",
       cities: "城市",
       attractions: "景点",
       attractionsHint: "规则表中写着“询问时确认”的景点，我们会在书面确认前按你的日期核实规则。",
@@ -432,6 +444,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       label: "景点代预约服务",
       title: "我们可以帮你预约{attraction}",
       body: "在官方系统以你本人护照实名提交预约，不是转售门票：每人服务费 {fee}，另加官方票价，付款前先书面确认。",
+      bodyPassportUnchecked: "付款前，我们会按你的日期核实官方系统是否接受你的护照，并书面确认每人服务费 {fee} 与官方票价；我们不经手转售门票。",
       action: "查看代预约服务",
     },
     hubLink: "{city}景点代预约",
@@ -461,7 +474,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     whatBody: [
       "Homeground China는 허가받은 베이징 여행사가 운영합니다. 중국 휴대폰 번호나 위챗 계정이 필요하거나, 오픈 시각에 맞춰 빠르게 신청해야 하는 관광지 예약을 외국인 자유여행객을 위해 대신합니다.",
       "관광지가 직접 안내하는 채널만 사용합니다. 공식 웹사이트, 공식 예약 이메일, 공식 위챗 계정이나 미니프로그램, 또는 공식 사이트가 연결한 플랫폼입니다. 모든 예약은 실제로 방문할 사람의 실명과 여권으로 합니다.",
-      "저희는 이 페이지에 있는 어떤 관광지의 공식 판매처나 대리점도 아니며 표를 되팔지 않습니다. 고궁박물원과 산시역사박물관 등은 제3자 대행이나 판매를 승인하지 않았다고 밝히며, 아래 규칙표에 각 기관의 입장을 적어 두었습니다. 가이드를 보고 언제든 직접 예약하셔도 됩니다.",
+      "저희는 이 페이지에 있는 어떤 관광지의 공식 판매처나 대리점도 아니며 표를 되팔지 않습니다. 고궁박물원과 산시역사박물관 등은 제3자 대행이나 판매를 승인하지 않았다고 밝히며, 저희도 그 승인을 받지 않았습니다. 아래 규칙표에 각 기관의 입장을 적어 두었습니다. 가이드를 보고 언제든 직접 예약하셔도 됩니다.",
     ],
     forTitle: "이런 분께 맞습니다",
     forItems: [
@@ -506,8 +519,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "환불 및 제공",
     rulesTitle: "관광지별 예약 규칙",
     rulesIntro:
-      "각 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용입니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. 빈 항목은 문의 시 확인합니다.",
-    rulesCaption: "베이징·상하이·시안·청두·항저우 관광지 예약 규칙과 규칙별 확인 날짜",
+      "출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. 빈 항목은 문의 시 확인합니다.",
+    rulesCaption: "베이징·상하이·시안·청두·항저우 관광지 예약 규칙과 가이드가 규칙별로 확인한 날짜",
     columns: {
       attraction: "관광지",
       status: "서비스",
@@ -535,6 +548,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     },
     cities: { beijing: "베이징", shanghai: "상하이", xian: "시안", chengdu: "청두", hangzhou: "항저우" },
     unknown: "문의 시 확인",
+    notApplicable: "해당 없음: 예약 없이 입장",
+    notChecked: "미확인",
     yes: "예",
     no: "아니요",
     free: "무료, 예약 필요",
@@ -544,8 +559,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     faqTitle: "관광지 예약 대행 자주 묻는 질문",
     faqs: [
       { question: "관광지 예약 대행 비용은 얼마인가요?", answer: "관광지당 1인 {fee} 수수료와 관광지 공식 입장료입니다. 입장료에 금액을 더하지 않으며, 서면 확인 후 함께 결제합니다. Homeground 프라이빗 투어 일정의 관광지 예약은 수수료가 없습니다." },
-      { question: "자금성도 예약해 주나요?", answer: "네. 고궁박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 예약은 7일 전 중국 시간 20:00에 열리고 당일권은 없으니 일찍 알려 주세요. 고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 박물원의 대리점이 아니고 표를 되팔지 않으며, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 예약을 약속할 수는 없으며, 확보하지 못하면 해당 관광지 수수료 전액을 환불합니다." },
-      { question: "산시역사박물관도 예약해 주나요?", answer: "네. 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약합니다. 기본 관람은 무료이므로 예약 업무 수수료만 내시면 되고, 당대 벽화관을 더하면 그 입장권을 공식 가격으로 따로 냅니다. 박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 대리점이 아니며 표를 되팔지 않고, 가이드를 보고 직접 예약하셔도 됩니다. 노쇼 시 180일 동안 예약이 제한되니 일정이 바뀌면 빨리 알려 주세요." },
+      { question: "자금성도 예약해 주나요?", answer: "네. 고궁박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 예약은 7일 전 중국 시간 20:00에 열리고 당일권은 없으니 일찍 알려 주세요. 고궁박물원은 제3자에게 입장권·전시 예약 대행을 승인하지 않았다고 밝힙니다. 저희는 고궁박물원의 승인을 받지 않았으며, 표를 되팔거나 금액을 더하지 않고, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 예약을 약속할 수는 없으며, 확보하지 못하면 해당 관광지 수수료 전액을 환불합니다." },
+      { question: "산시역사박물관도 예약해 주나요?", answer: "네. 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약합니다. 기본 관람은 무료이므로 예약 업무 수수료만 내시면 되고, 당대 벽화관을 더하면 그 입장권을 공식 가격으로 따로 냅니다. 박물관은 입장권을 판매하거나 묶어 파는 제3자 플랫폼, 여행사 또는 개인을 승인하지 않았다고 밝힙니다. 저희는 박물관의 승인을 받지 않았으며 표를 되팔지 않고, 가이드를 보고 직접 예약하셔도 됩니다. 노쇼 시 180일 동안 예약이 제한되니 일정이 바뀌면 빨리 알려 주세요." },
       { question: "매진되면 어떻게 되나요?", answer: "바로 알려 드리고, 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다. 어떤 관광지도 잔여분을 약속할 수는 없습니다." },
       { question: "왜 양식에 여권 번호를 적지 않나요?", answer: "잔여분 확인에는 여권 번호가 필요 없기 때문입니다. 서면 확인을 수락하신 뒤에만 여권 정보를 받고, 예약에만 쓰며, 여행이 끝나면 삭제합니다." },
       { question: "발권 후에도 취소할 수 있나요?", answer: "발권 후 취소와 변경은 관광지 자체 규칙을 따르고, 발권된 티켓의 수수료는 환불되지 않습니다. 노쇼 시 이후 예약을 제한하는 관광지도 있으니 일정이 바뀌면 빨리 알려 주세요." },
@@ -589,7 +604,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     guideCta: {
       label: "관광지 예약 대행",
       title: "{attraction} 예약을 대신해 드립니다",
-      body: "공식 시스템에서 본인 여권 실명으로 예약을 제출하며, 되판 표가 아닙니다. 1인 {fee} 수수료와 공식 입장료를 결제 전에 서면으로 확인합니다.",
+      body: "되판 표가 아니라 공식 시스템에서 본인 여권 실명으로 직접 예약을 제출합니다. 1인 {fee} 수수료와 공식 입장료는 결제 전에 서면으로 확인합니다.",
+      bodyPassportUnchecked: "결제 전에 공식 시스템이 해당 날짜에 여권을 받는지 확인하고 서면으로 안내합니다. 되판 표는 다루지 않으며, 1인 {fee} 수수료와 공식 입장료가 듭니다.",
       action: "예약 대행 서비스 보기",
     },
     hubLink: "{city} 관광지 예약 대행",

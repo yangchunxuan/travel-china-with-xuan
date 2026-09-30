@@ -296,7 +296,11 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                     .filter((rule) => rule.city === cityId)
                     .map((rule) => {
                       const guide = rule.source ? getGuideEntry(rule.source, locale) : null;
-                      const unknown = <span className={styles.unknown}>{copy.unknown}</span>;
+                      // A free walk-in has no booking channel or release to confirm, so its
+                      // empty fields say "not applicable" instead of inviting an enquiry.
+                      const unknown = (
+                        <span className={styles.unknown}>{rule.status === "not-needed" ? copy.notApplicable : copy.unknown}</span>
+                      );
                       return (
                         <tr data-status={rule.status} id={`rule-${rule.id}`} key={rule.id}>
                           <th scope="row">{rule.name[locale]}</th>
@@ -310,7 +314,11 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                             {rule.notes[locale]}
                             {guide ? <> <Link className={styles.sourceLink} href={guide.canonicalPath}>{copy.sourceLabel}: {guide.navTitle}</Link></> : null}
                           </td>
-                          <td><time dateTime={rule.verifiedAt}>{formatDate(rule.verifiedAt, locale)}</time></td>
+                          <td>
+                            {rule.verifiedAt
+                              ? <time dateTime={rule.verifiedAt}>{formatDate(rule.verifiedAt, locale)}</time>
+                              : <span className={styles.unknown}>{copy.notChecked}</span>}
+                          </td>
                         </tr>
                       );
                     })}

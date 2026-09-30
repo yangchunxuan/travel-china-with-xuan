@@ -982,7 +982,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               title: "After payment, before booking",
               body:
-                "You may cancel by email before we make the reservation; the service fee and ticket money received are refunded.",
+                "You may cancel by email before we complete the reservation; the service fee and ticket money received are refunded in full.",
             },
             {
               title: "A slot cannot be secured",
@@ -1220,7 +1220,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             {
               title: "결제 후, 예약 전",
               body:
-                "예약을 진행하기 전이라면 이메일로 취소할 수 있으며, 받은 수수료와 입장료를 전액 환불합니다.",
+                "예약을 완료하기 전이라면 이메일로 취소할 수 있으며, 받은 수수료와 입장료를 전액 환불합니다.",
             },
             {
               title: "예약하지 못한 경우",
