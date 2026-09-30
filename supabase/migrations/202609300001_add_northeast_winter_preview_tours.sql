@@ -329,7 +329,7 @@ as $$
       else null end
     else null
   end;
-$;
+$$;
 
 create or replace function homeground_private.is_valid_private_tour_selection_v1(
   p_slug text, p_package_id text, p_travelers integer
@@ -429,7 +429,7 @@ as $$
       p_package_id in ('low-season', 'peak-season') and p_travelers in (2, 4, 6, 8)
     else false
   end is true;
-$;
+$$;
 
 revoke all on function homeground_private.private_tour_product_name_v1(text, text)
   from public, anon, authenticated, service_role;
