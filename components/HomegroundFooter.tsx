@@ -36,7 +36,6 @@ const footerSections: Record<
   {
     guides: string;
     services: string;
-    attractionReservations: string;
     legalLabel: string;
     legalHeading: string;
     exploreHeading: string;
@@ -54,7 +53,6 @@ const footerSections: Record<
   en: {
     guides: "Travel Advice",
     services: "Trip planning services",
-    attractionReservations: "Attraction reservations",
     legalLabel: "Business and service information",
     legalHeading: "Legal",
     exploreHeading: "Explore",
@@ -71,7 +69,6 @@ const footerSections: Record<
   zh: {
     guides: "实用指南",
     services: "旅行规划服务",
-    attractionReservations: "景点代预约",
     legalLabel: "经营与服务信息",
     legalHeading: "法律与经营信息",
     exploreHeading: "探索",
@@ -88,7 +85,6 @@ const footerSections: Record<
   ko: {
     guides: "실용 가이드",
     services: "여행 설계 서비스",
-    attractionReservations: "관광지 예약 대행",
     legalLabel: "사업자 및 서비스 안내",
     legalHeading: "법률 및 사업자 정보",
     exploreHeading: "둘러보기",
@@ -149,7 +145,6 @@ export function HomegroundFooter({
     locale,
   );
   const planningServicesPath = `${copy.path}services/`;
-  const attractionReservationsPath = `${copy.path}services/china-attraction-reservations/`;
   const guideHubPath = `${copy.path}guides/`;
   const tourHubPath = `${copy.path}tours/`;
   const destinationsHubPath = `${copy.path}explore/`;
@@ -222,9 +217,6 @@ export function HomegroundFooter({
                 </li>
                 <li>
                   <Link href={planningServicesPath}>{sectionLabels.services}</Link>
-                </li>
-                <li>
-                  <Link href={attractionReservationsPath}>{sectionLabels.attractionReservations}</Link>
                 </li>
               </ul>
             </nav>

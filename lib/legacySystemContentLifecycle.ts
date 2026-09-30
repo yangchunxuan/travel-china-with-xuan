@@ -48,7 +48,7 @@ export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
  * built on until the merge commit is known; replace it at merge time.
  */
 const ATTRACTION_RESERVATION_RELEASE_COMMIT =
-  "d80ffa73de84b13f43dfb653ab440506e319cf9b";
+  "b2bc7803c880dbc7540ab60af15db27082bce2e0";
 
 /**
  * Publication dates preserve the repository's established public lifecycle.
@@ -168,7 +168,7 @@ export const legacySystemContentLifecycle = {
       commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
       changedAt: "2026-09-29",
       summary:
-        "Added the paid attraction reservation service's scope, fee, face-value tickets, no-availability-promise, refund and change rules in all three languages.",
+        "Added the paid attraction reservation service's scope, fee, face-value tickets, eight-day booking guarantee, refund and change rules in all three languages.",
     },
   },
   "refund-delivery": {
