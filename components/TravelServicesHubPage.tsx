@@ -6,7 +6,8 @@ import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import { getKevinPreparationStoryCopy } from "../lib/kevinPreparationStoryI18n";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
-import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
+import { getTravelServicesHubCopy, type TravelServiceCardCopy } from "../lib/travelServicesHubI18n";
+import { privateGuideServicePath } from "../lib/privateGuideServices";
 import { attractionReservationPath, attractionReservationServiceFeeCny, formatAttractionReservationFee } from "../lib/attractionReservations";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -19,21 +20,22 @@ import styles from "./TravelServicesHubPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 
 function serviceHref(
-  id: "tours" | "reservations" | "support",
+  id: TravelServiceCardCopy["id"],
   locale: HomegroundLocale,
 ) {
   const home = getHomegroundCopy(locale);
   if (id === "tours") return `${home.path}tours/`;
+  if (id === "guides") return privateGuideServicePath[locale];
   if (id === "reservations") return attractionReservationPath[locale];
   return `${home.path}?service=full-trip-support#planner-contact`;
 }
 
 /*
- * One photograph per kind of help, reused from pages that already publish
- * it with the same alt text: the Zhangjiajie city-guide cover for published
- * routes, and Kevin with guests (faces blurred) for on-the-ground support.
+ * Reuse existing photographs with their original alt text. Kevin's editorial
+ * photograph illustrates guide help and support; it does not promise that
+ * Kevin is the guide assigned to an enquiry.
  */
-function serviceImage(id: "tours" | "reservations" | "support", locale: HomegroundLocale) {
+function serviceImage(id: TravelServiceCardCopy["id"], locale: HomegroundLocale) {
   if (id === "reservations") {
     // The Chengdu tour's panda photograph, with that product's alt text.
     return {

@@ -572,6 +572,40 @@ for (const slug of englishOnlyVisaGuideSlugs) {
   );
 }
 
+// A guide-only service must remain discoverable from the localized service
+// hub and keep one canonical identity across its three language versions.
+for (const locale of locales) {
+  const route = `${locale.prefix}services/private-english-speaking-guides/`;
+  const context = `/${route}`;
+  const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+  const canonical = `${siteUrl}/${route}`;
+  assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+  assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+  const schemaNodes = jsonLdNodes(html, context);
+  for (const schemaType of ["Service", "FAQPage"]) {
+    if (!schemaNodes.some((node) => nodeHasType(node, schemaType))) {
+      throw new Error(`${context}: ${schemaType} schema is missing`);
+    }
+  }
+  for (const target of locales) {
+    assertIncludes(
+      html,
+      `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${target.prefix}services/private-english-speaking-guides/"/>`,
+      context,
+    );
+  }
+  assertIncludes(
+    html,
+    `<link rel="alternate" hrefLang="x-default" href="${siteUrl}/services/private-english-speaking-guides/"/>`,
+    context,
+  );
+  if (!sitemapUrlEntry(sitemap, canonical)) {
+    throw new Error(`${context}: guide service is missing from sitemap.xml`);
+  }
+  const hub = await readFile(path.join(outputRoot, `${locale.prefix}services/`, "index.html"), "utf8");
+  assertIncludes(hub, `href="/${route}"`, `${locale.runtime} services hub`);
+}
+
 for (const sitemapUrl of sitemapLocs) {
   const url = new URL(sitemapUrl);
   const route = url.pathname.replace(/^\/+|\/+$/gu, "");
@@ -1027,5 +1061,5 @@ for (const locale of locales) {
 }
 
 console.log(
-  `✓ ${allSections.length * locales.length} section hubs, ${allSections.length * 3 * locales.length} collection hubs, ${locales.length} guide search routes, ${locales.length} homepage search indexes and ${locales.length} Evan profiles match their export contract; every internal href/src on indexable pages resolves.`,
+  `✓ ${allSections.length * locales.length} section hubs, ${allSections.length * 3 * locales.length} collection hubs, ${locales.length} guide search routes, ${locales.length} guide service pages, ${locales.length} homepage search indexes and ${locales.length} Evan profiles match their export contract; every internal href/src on indexable pages resolves.`,
 );
