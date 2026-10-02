@@ -95,6 +95,11 @@ test("only Homeground's own WhatsApp and email links are rewritten, once", () =>
     assert.equal(ref.appendVisitRefToContactHref(other, line, targets), other, other);
   }
   assert.equal(ref.appendVisitRefToContactHref(wa, null, targets), wa, "no line, no change");
+  // After a refusal (no line), a link rewritten earlier on the page comes back clean.
+  assert.equal(ref.appendVisitRefToContactHref(rewritten, null, targets), wa);
+  assert.equal(ref.appendVisitRefToContactHref(mailRewritten, null, targets), mail);
+  const plusEncoded = "https://wa.me/8613174215999?text=Hi+there";
+  assert.equal(ref.appendVisitRefToContactHref(plusEncoded, null, targets), plusEncoded, "a link without the line is left exactly as it was");
 });
 
 test("the line is started site-wide, added to KakaoTalk text, and disclosed in every privacy notice", async () => {
@@ -113,7 +118,7 @@ test("the line is started site-wide, added to KakaoTalk text, and disclosed in e
   const consent = await source("lib/analyticsConsent.ts");
   assert.match(consent, /export const firstTouchStorageKey = "homeground-first-touch\.v1"/u);
   assert.match(consent, /if \(!analytics\) \{\s*clearAnalyticsCookies\(\);\s*clearFirstTouch\(\);/u);
-  assert.match(module, /preferences\?\.analytics === false\) \{\s*clearFirstTouch\(\);/u);
+  assert.match(module, /preferences\?\.analytics === false\) \{\s*clearFirstTouch\(\);\s*state\.line = null;[\s\S]{0,200}\.forEach\(rewriteContactLink\)/u);
   assert.match(module, /document\.addEventListener\("click", rewriteClickedContactLink, true\)/u);
 
   const expected = {
