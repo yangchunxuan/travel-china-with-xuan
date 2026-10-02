@@ -358,11 +358,19 @@ test("the service fee shows one currency per language and never less than CNY 45
   );
 });
 
-test("visit dates use the site's locale-fixed date field, not the OS-language browser control", async () => {
+test("each chosen attraction gets one visit date in the site's locale-fixed date field", async () => {
   const enquiry = await source("components/AttractionReservationEnquiry.tsx");
   assert.doesNotMatch(enquiry, /type="date"/u);
-  assert.equal((enquiry.match(/<TourDateField /gu) ?? []).length, 2);
+  // A ticket is for one day: one field per chosen attraction, no from/to range.
+  assert.equal((enquiry.match(/<TourDateField /gu) ?? []).length, 1);
+  assert.match(enquiry, /chosen\.map\(\(attraction\) => \(\s*<TourDateField [^>]*label=\{attraction\.label\}/u);
+  assert.doesNotMatch(enquiry, /setFrom|setTo|copy\.from|copy\.to\b/u);
   assert.match(enquiry, /\{!undecided \? \(/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale).enquiry;
+    assert.equal("from" in copy || "to" in copy || "dates" in copy.message, false, `${locale}: no range labels`);
+    assert.match(copy.visitDatesHint, { en: /one day/u, zh: /按天/u, ko: /하루 단위/u }[locale], locale);
+  }
 });
 
 test("the prepared request carries the service context and no passport field", async () => {
@@ -370,21 +378,23 @@ test("the prepared request carries the service context and no passport field", a
     const copy = copyModule.getAttractionReservationCopy(locale);
     const text = messageModule.attractionReservationMessageText(copy.enquiry.message, {
       cities: ["Beijing"],
-      attractions: ["National Museum of China", "Temple of Heaven"],
-      from: "2026-10-12",
-      to: "2026-10-14",
+      visits: [
+        { label: "National Museum of China", date: "2026-10-12" },
+        { label: "Temple of Heaven", date: null },
+      ],
       travellers: 3,
       note: "Morning\u0007 please",
       pageUrl: `https://homegroundchina.com${reservations.attractionReservationPath[locale]}`,
     });
     assert.match(text, new RegExp(copy.enquiry.message.serviceValue, "u"));
-    assert.match(text, /National Museum of China; Temple of Heaven/u);
-    assert.match(text, /2026-10-12 – 2026-10-14/u);
+    assert.match(text, /^· National Museum of China: 2026-10-12$/mu);
+    assert.match(text, new RegExp(`^· Temple of Heaven: ${copy.enquiry.message.datesUndecided}$`, "mu"));
+    assert.doesNotMatch(text, / – /u, "no date range");
     assert.match(text, /: 3$/mu);
     assert.doesNotMatch(text, /\u0007/u);
     assert.match(text, /homegroundchina\.com\/(?:zh\/|ko\/)?services\/china-attraction-reservations\//u);
     const mailto = messageModule.attractionReservationMailtoHref("hello@homegroundchina.com", copy.enquiry.message, {
-      cities: [], attractions: [], from: null, to: null, travellers: null, note: "", pageUrl: "https://homegroundchina.com/",
+      cities: [], visits: [], travellers: null, note: "", pageUrl: "https://homegroundchina.com/",
     });
     assert.ok(mailto.startsWith("mailto:hello@homegroundchina.com?subject="));
   }

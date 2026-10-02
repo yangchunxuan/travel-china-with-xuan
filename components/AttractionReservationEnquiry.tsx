@@ -47,8 +47,8 @@ export function AttractionReservationEnquiry({
   const id = useId();
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  // One date per attraction id: a ticket is for a single day, not a range.
+  const [dates, setDates] = useState<Record<string, string>>({});
   const [undecided, setUndecided] = useState(false);
   const [travellers, setTravellers] = useState("2");
   const [note, setNote] = useState("");
@@ -70,20 +70,22 @@ export function AttractionReservationEnquiry({
     ? attractions.filter((attraction) => selectedCities.includes(attraction.city) || selectedAttractions.includes(attraction.id))
     : attractions;
 
+  const chosen = useMemo(
+    () => attractions.filter((attraction) => selectedAttractions.includes(attraction.id)),
+    [attractions, selectedAttractions],
+  );
+
   const draft = useMemo(() => {
-    const chosen = attractions.filter((attraction) => selectedAttractions.includes(attraction.id));
     const cityIds = cities.map((city) => city.id).filter((cityId) => selectedCities.includes(cityId) || chosen.some((attraction) => attraction.city === cityId));
     const count = Number.parseInt(travellers, 10);
     return {
       cities: cityIds.map((cityId) => cities.find((city) => city.id === cityId)?.label ?? cityId),
-      attractions: chosen.map((attraction) => attraction.label),
-      from: undecided ? null : from || null,
-      to: undecided ? null : to || null,
+      visits: chosen.map((attraction) => ({ label: attraction.label, date: undecided ? null : dates[attraction.id] || null })),
       travellers: Number.isInteger(count) && count > 0 && count < 100 ? count : null,
       note,
       pageUrl,
     };
-  }, [attractions, cities, selectedAttractions, selectedCities, from, to, undecided, travellers, note, pageUrl]);
+  }, [chosen, cities, selectedCities, dates, undecided, travellers, note, pageUrl]);
 
   const message = attractionReservationMessageText(copy.message, draft);
   const whatsappHref = homegroundWhatsAppHref(message);
@@ -129,14 +131,23 @@ export function AttractionReservationEnquiry({
           </div>
         </fieldset>
 
-        {/* The site's own date field, not the browser's native date input,
-            which follows the OS language: a Chinese page showed Korean
-            placeholders in a Korean-language Chrome. */}
+        {/* One visit date per chosen attraction, as Klook, GetYourGuide and
+            the official systems ask: a ticket is for one day. The site's own
+            date field, not the browser's native date input, which follows
+            the OS language (a Chinese page showed Korean placeholders in a
+            Korean-language Chrome). */}
         {!undecided ? (
-          <div className={styles.fieldRow}>
-            <TourDateField active disabled={false} id={`${id}-from`} label={copy.from} locale={locale} onChange={setFrom} value={from} />
-            <TourDateField active disabled={false} id={`${id}-to`} label={copy.to} locale={locale} onChange={setTo} value={to} />
-          </div>
+          <fieldset aria-describedby={`${id}-dates-hint`} className={styles.choiceGroup}>
+            <legend>{copy.visitDates}</legend>
+            <p className={styles.fieldHint} id={`${id}-dates-hint`}>{chosen.length ? copy.visitDatesHint : copy.visitDatesEmpty}</p>
+            {chosen.length ? (
+              <div className={styles.fieldRow}>
+                {chosen.map((attraction) => (
+                  <TourDateField active disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
+                ))}
+              </div>
+            ) : null}
+          </fieldset>
         ) : null}
         <label className={styles.checkboxRow}>
           <input checked={undecided} onChange={(event) => setUndecided(event.target.checked)} type="checkbox" />

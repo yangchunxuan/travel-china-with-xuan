@@ -49,8 +49,10 @@ export interface AttractionReservationEnquiryCopy {
   cities: string;
   attractions: string;
   attractionsHint: string;
-  from: string;
-  to: string;
+  /** One date per chosen attraction: a ticket is for a single day. */
+  visitDates: string;
+  visitDatesHint: string;
+  visitDatesEmpty: string;
   undecided: string;
   travellers: string;
   note: string;
@@ -69,7 +71,6 @@ export interface AttractionReservationEnquiryCopy {
     serviceValue: string;
     city: string;
     attractions: string;
-    dates: string;
     datesUndecided: string;
     travellers: string;
     note: string;
@@ -283,8 +284,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       cities: "Cities",
       attractions: "Attractions",
       attractionsHint: "Where the rules table says “confirmed when you enquire”, we check that rule for your dates before the written confirmation.",
-      from: "First visit date",
-      to: "Last visit date",
+      visitDates: "Visit dates",
+      visitDatesHint: "Each ticket is for one day. Pick the day you will visit each attraction.",
+      visitDatesEmpty: "Choose an attraction above, then pick the day you will visit it.",
       undecided: "Dates not decided yet",
       travellers: "Number of travellers",
       note: "Anything else?",
@@ -303,7 +305,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
         serviceValue: "Attraction reservation",
         city: "City",
         attractions: "Attractions",
-        dates: "Dates",
         datesUndecided: "not decided yet",
         travellers: "Travellers",
         note: "Note",
@@ -446,8 +447,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       cities: "城市",
       attractions: "景点",
       attractionsHint: "规则表中写着“询问时确认”的景点，我们会在书面确认前按你的日期核实规则。",
-      from: "第一个参观日",
-      to: "最后一个参观日",
+      visitDates: "参观日期",
+      visitDatesHint: "门票按天预约，请为每个景点选一个参观日。",
+      visitDatesEmpty: "先在上面选景点，再选哪天去。",
       undecided: "日期还没确定",
       travellers: "人数",
       note: "还有其他要求吗？",
@@ -466,7 +468,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
         serviceValue: "景点代预约",
         city: "城市",
         attractions: "景点",
-        dates: "日期",
         datesUndecided: "还没确定",
         travellers: "人数",
         note: "备注",
@@ -609,8 +610,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       cities: "도시",
       attractions: "관광지",
       attractionsHint: "규칙표에 ‘문의 시 확인’으로 표시된 관광지는 서면 확인 전에 날짜 기준으로 규칙을 확인합니다.",
-      from: "첫 방문일",
-      to: "마지막 방문일",
+      visitDates: "방문일",
+      visitDatesHint: "입장권은 하루 단위로 예약돼요. 관광지마다 방문할 날짜를 하나씩 골라 주세요.",
+      visitDatesEmpty: "위에서 관광지를 고르면 방문일을 고를 수 있어요.",
       undecided: "날짜는 아직 미정이에요",
       travellers: "인원",
       note: "더 알려 주실 내용이 있나요?",
@@ -629,7 +631,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
         serviceValue: "관광지 예약 대행",
         city: "도시",
         attractions: "관광지",
-        dates: "날짜",
         datesUndecided: "미정",
         travellers: "인원",
         note: "메모",

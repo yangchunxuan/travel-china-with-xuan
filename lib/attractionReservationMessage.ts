@@ -1,16 +1,21 @@
 import type { AttractionReservationEnquiryCopy } from "./attractionReservationsI18n";
 
+/** One chosen attraction and the single day it is to be visited. */
+export interface AttractionReservationVisit {
+  label: string;
+  date: string | null;
+}
+
 /**
  * The prepared reservation request shared by WhatsApp, email and KakaoTalk.
  * It carries only what the traveller chose on the page: service, cities,
- * attractions, dates, party size and an optional note. Passport details are
- * never part of it (they are requested only after the written confirmation).
+ * each attraction with its visit date, party size and an optional note.
+ * Passport details are never part of it (they are requested only after the
+ * written confirmation).
  */
 export interface AttractionReservationDraft {
   cities: readonly string[];
-  attractions: readonly string[];
-  from: string | null;
-  to: string | null;
+  visits: readonly AttractionReservationVisit[];
   travellers: number | null;
   note: string;
   pageUrl: string;
@@ -20,11 +25,9 @@ export const attractionReservationNoteMaxLength = 600;
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/u;
 
-export function attractionReservationDates(draft: Pick<AttractionReservationDraft, "from" | "to">, undecided: string) {
-  const from = draft.from && isoDate.test(draft.from) ? draft.from : null;
-  const to = draft.to && isoDate.test(draft.to) ? draft.to : null;
-  if (from && to) return from === to ? from : `${from} – ${to}`;
-  return from ?? to ?? undecided;
+/** A ticket is for one day, so each attraction carries one date or "not decided yet". */
+export function attractionReservationVisitDate(date: string | null, undecided: string) {
+  return date && isoDate.test(date) ? date : undecided;
 }
 
 export function attractionReservationMessageText(copy: AttractionReservationEnquiryCopy["message"], draft: AttractionReservationDraft) {
@@ -34,8 +37,9 @@ export function attractionReservationMessageText(copy: AttractionReservationEnqu
     copy.opening,
     `${copy.service}: ${copy.serviceValue}`,
     `${copy.city}: ${draft.cities.length ? draft.cities.join(", ") : copy.none}`,
-    `${copy.attractions}: ${draft.attractions.length ? draft.attractions.join("; ") : copy.none}`,
-    `${copy.dates}: ${attractionReservationDates(draft, copy.datesUndecided)}`,
+    ...(draft.visits.length
+      ? [`${copy.attractions}:`, ...draft.visits.map((visit) => `· ${visit.label}: ${attractionReservationVisitDate(visit.date, copy.datesUndecided)}`)]
+      : [`${copy.attractions}: ${copy.none}`]),
     `${copy.travellers}: ${travellers}`,
     note ? `${copy.note}: ${note}` : null,
     draft.pageUrl,
