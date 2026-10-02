@@ -104,7 +104,7 @@ test("English Studio keeps its service comparison and uses the unified planner c
   );
 });
 
-test("global navigation keeps services behind the planning state and CTA", async () => {
+test("global navigation puts service pages under the Services item, beside the planning CTA", async () => {
   const [header, footer, servicePage] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
@@ -114,7 +114,9 @@ test("global navigation keeps services behind the planning state and CTA", async
   assert.match(header, /export type HomegroundPageContext =[\s\S]*\| "services"/);
   assert.match(header, /pageContext\?: HomegroundPageContext/);
   assert.match(header, /getChinaItineraryReviewCopy\(targetLocale\)\.path/);
-  assert.match(header, /pageContext === "studio" \|\| pageContext === "services"/);
+  // 2026-10-03: the owner approved a Services item (menu of standalone services);
+  // /services/ pages light it instead of "How We Plan".
+  assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
   assert.doesNotMatch(header, /services: "Trip planning services"/);
   assert.match(header, /className=\{styles\.headerCta\}/);
   assert.match(header, /allowedServiceHashes/);

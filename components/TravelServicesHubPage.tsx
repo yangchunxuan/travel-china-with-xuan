@@ -8,6 +8,7 @@ import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePath
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { getTravelServicesHubCopy, type TravelServiceCardCopy } from "../lib/travelServicesHubI18n";
 import { privateGuideServicePath } from "../lib/privateGuideServices";
+import { fullTripSupportPath } from "../lib/fullTripSupport";
 import { attractionReservationPath, attractionReservationServiceFeeCny, formatAttractionReservationFee } from "../lib/attractionReservations";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -27,7 +28,7 @@ function serviceHref(
   if (id === "tours") return `${home.path}tours/`;
   if (id === "guides") return privateGuideServicePath[locale];
   if (id === "reservations") return attractionReservationPath[locale];
-  return `${home.path}?service=full-trip-support#planner-contact`;
+  return fullTripSupportPath[locale];
 }
 
 /*

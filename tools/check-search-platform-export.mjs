@@ -606,6 +606,38 @@ for (const locale of locales) {
   assertIncludes(hub, `href="/${route}"`, `${locale.runtime} services hub`);
 }
 
+// Full-trip support: one canonical identity in three languages, in the
+// sitemap, linked from each localized services hub, priced by custom quote only.
+for (const locale of locales) {
+  const route = `${locale.prefix}services/full-trip-support/`;
+  const context = `/${route}`;
+  const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+  const canonical = `${siteUrl}/${route}`;
+  assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+  assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+  const schemaNodes = jsonLdNodes(html, context);
+  for (const schemaType of ["Service", "FAQPage"]) {
+    if (!schemaNodes.some((node) => nodeHasType(node, schemaType))) {
+      throw new Error(`${context}: ${schemaType} schema is missing`);
+    }
+  }
+  if (schemaNodes.some((node) => node.price !== undefined || node.priceSpecification !== undefined)) {
+    throw new Error(`${context}: a custom-quote service must not publish a price`);
+  }
+  for (const target of locales) {
+    assertIncludes(
+      html,
+      `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${target.prefix}services/full-trip-support/"/>`,
+      context,
+    );
+  }
+  if (!sitemapUrlEntry(sitemap, canonical)) {
+    throw new Error(`${context}: full-trip support is missing from sitemap.xml`);
+  }
+  const hub = await readFile(path.join(outputRoot, `${locale.prefix}services/`, "index.html"), "utf8");
+  assertIncludes(hub, `href="/${route}"`, `${locale.runtime} services hub`);
+}
+
 for (const sitemapUrl of sitemapLocs) {
   const url = new URL(sitemapUrl);
   const route = url.pathname.replace(/^\/+|\/+$/gu, "");
