@@ -102,14 +102,41 @@ test("the line is started site-wide, added to KakaoTalk text, and disclosed in e
   ]);
   assert.match(siteAnalytics, /startVisitRef\(\{/u);
   assert.match(kakao, /appendVisitRef\(inquiry\(\), currentVisitRefLine\(\)\)/u);
-  assert.doesNotMatch(module, /localStorage|sessionStorage|document\.cookie|indexedDB/u, "nothing is stored on the device");
+  // The only device storage is the 30-day first-visit entry, and refusing
+  // analytics deletes it.
+  assert.doesNotMatch(module, /sessionStorage|document\.cookie|indexedDB/u);
+  assert.equal((module.match(/localStorage\.setItem\(/gu) ?? []).length, 1);
+  assert.match(module, /localStorage\.setItem\(firstTouchStorageKey/u);
+  const consent = await source("lib/analyticsConsent.ts");
+  assert.match(consent, /export const firstTouchStorageKey = "homeground-first-touch\.v1"/u);
+  assert.match(consent, /if \(!analytics\) \{\s*clearAnalyticsCookies\(\);\s*clearFirstTouch\(\);/u);
+  assert.match(module, /preferences\?\.analytics === false\) \{\s*clearFirstTouch\(\);/u);
   assert.match(module, /document\.addEventListener\("click", rewriteClickedContactLink, true\)/u);
 
   const expected = {
-    en: /Korea, the United States, Singapore, Malaysia, Australia and Hong Kong[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google[\s\S]*Global Privacy Control/u,
-    zh: /韩国、美国、新加坡、马来西亚、澳大利亚和香港[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google[\s\S]*全球隐私控制/u,
-    ko: /한국, 미국, 싱가포르, 말레이시아, 호주, 홍콩[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google[\s\S]*글로벌 개인정보 보호 제어/u,
+    en: /Korea, the United States, Singapore, Malaysia, Australia and Hong Kong[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30 days[\s\S]*Necessary only[\s\S]*Global Privacy Control/u,
+    zh: /韩国、美国、新加坡、马来西亚、澳大利亚和香港[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30 天[\s\S]*仅使用必要功能[\s\S]*全球隐私控制/u,
+    ko: /한국, 미국, 싱가포르, 말레이시아, 호주, 홍콩[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30일간[\s\S]*필수 기능만[\s\S]*글로벌 개인정보 보호 제어/u,
   };
   const privacyCopy = await source("lib/homegroundPrivacyI18n.ts");
   for (const locale of ["en", "zh", "ko"]) assert.match(privacyCopy, expected[locale], locale);
+  const banner = await source("lib/analyticsConsentI18n.ts");
+  assert.match(banner, /first page and referral source for 30 days; “Necessary only” turns this off/u);
+  assert.match(banner, /部分地区会记住你首次进入的页面和来源 30 天，选“仅使用必要功能”即可关闭/u);
+  assert.match(banner, /처음 방문한 페이지와 유입 경로를 30일간 기억하며, ‘필수 기능만’을 누르면 꺼집니다/u);
+});
+
+test("the first visit is remembered for 30 days and shown with its age", () => {
+  const now = new Date("2026-10-05T10:00:00Z");
+  const touch = ref.newFirstTouch("zh/guides/forbidden-city-for-foreign-visitors", "google", new Date("2026-10-02T23:00:00Z"));
+  assert.deepEqual(touch, { v: 1, page: "zh/guides/forbidden-city-for-foreign-visitors", source: "google", firstSeen: "2026-10-02" });
+  assert.equal(ref.visitRefLineFromFirstTouch(touch, now), "Ref: zh/guides/forbidden-city-for-foreign-visitors · google · 3d");
+  assert.equal(ref.visitRefLineFromFirstTouch(touch, new Date("2026-10-02T23:30:00Z")), "Ref: zh/guides/forbidden-city-for-foreign-visitors · google", "same day: no age");
+  assert.deepEqual(ref.parseFirstTouch(JSON.stringify(touch), now), touch);
+  assert.equal(ref.parseFirstTouch(JSON.stringify(touch), new Date("2026-11-01T00:00:00Z")), null, "older than 30 days expires");
+  assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, page: "<script>" }), now), null);
+  assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, source: "Some Host.com" }), now), null);
+  assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, firstSeen: "2026-10-09" }), now), null, "a future date is rejected");
+  assert.equal(ref.parseFirstTouch("not json", now), null);
+  assert.deepEqual(ref.parseFirstTouch(JSON.stringify({ v: 1, page: "home", source: "direct", firstSeen: "2026-10-04" }), now)?.page, "home");
 });

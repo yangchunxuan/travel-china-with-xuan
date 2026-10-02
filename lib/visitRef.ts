@@ -18,11 +18,19 @@
  *   the browser time zone is compared locally so that, for example, a visitor
  *   in mainland China or Europe behind a VPN is treated as strict.
  * - Global Privacy Control and automated browsers get no line.
- * - Nothing is written to cookies or storage. The landing page is held in
- *   memory for the life of the page; a full reload starts again.
- * - No identifier is created: the line is the same for everyone who arrived
- *   on the same page from the same kind of site.
+ * - In notice regions the first visit's page, source label and date are kept
+ *   for 30 days in one local-storage entry (`firstTouchStorageKey`), so a
+ *   traveller who returns days later still shows where they first came from,
+ *   e.g. "Ref: guides/forbidden-city-for-foreign-visitors · google · 3d". It is
+ *   not sent with requests and holds no identifier: everyone who arrived on the
+ *   same page from the same kind of site on the same day has the same entry.
+ * - Refusing analytics ("Necessary only", or analytics off in Privacy
+ *   choices) deletes the entry and stops the line; nothing is written for
+ *   strict or unknown regions.
  */
+
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { clearFirstTouch, firstTouchStorageKey, readAnalyticsConsent, subscribeAnalyticsConsent } from "./analyticsConsent.ts";
 
 export const visitRefNoticeCountries = ["KR", "US", "SG", "MY", "AU", "HK"] as const;
 
@@ -135,8 +143,53 @@ export function visitPageTag(path: string | null): string | null {
   return trimmed || "home";
 }
 
-export function visitRefLine(pageTag: string | null, source: string): string | null {
-  return pageTag ? `Ref: ${pageTag} · ${source}` : null;
+export function visitRefLine(pageTag: string | null, source: string, daysAgo = 0): string | null {
+  if (!pageTag) return null;
+  return `Ref: ${pageTag} · ${source}${daysAgo >= 1 ? ` · ${daysAgo}d` : ""}`;
+}
+
+export const firstTouchLifetimeDays = 30;
+
+export interface FirstTouch {
+  v: 1;
+  page: string;
+  source: string;
+  /** UTC calendar date of the first visit, YYYY-MM-DD. */
+  firstSeen: string;
+}
+
+const isoDay = /^\d{4}-\d{2}-\d{2}$/;
+const sourcePattern = /^[a-z0-9:._-]{1,40}$/;
+
+function utcDay(now: Date) {
+  return now.toISOString().slice(0, 10);
+}
+
+export function daysBetween(firstSeen: string, now: Date) {
+  return Math.floor((Date.parse(`${utcDay(now)}T00:00:00Z`) - Date.parse(`${firstSeen}T00:00:00Z`)) / 86_400_000);
+}
+
+/** A stored entry that is well formed and younger than 30 days, else null. */
+export function parseFirstTouch(raw: string | null, now: Date): FirstTouch | null {
+  if (!raw) return null;
+  try {
+    const value = JSON.parse(raw) as Partial<FirstTouch>;
+    if (value.v !== 1 || typeof value.page !== "string" || typeof value.source !== "string" || typeof value.firstSeen !== "string") return null;
+    if (!visitPageTag(`/${value.page === "home" ? "" : `${value.page}/`}`) || !sourcePattern.test(value.source) || !isoDay.test(value.firstSeen)) return null;
+    const age = daysBetween(value.firstSeen, now);
+    if (!Number.isFinite(age) || age < 0 || age >= firstTouchLifetimeDays) return null;
+    return { v: 1, page: value.page, source: value.source, firstSeen: value.firstSeen };
+  } catch {
+    return null;
+  }
+}
+
+export function newFirstTouch(page: string, source: string, now: Date): FirstTouch {
+  return { v: 1, page, source, firstSeen: utcDay(now) };
+}
+
+export function visitRefLineFromFirstTouch(touch: FirstTouch, now: Date) {
+  return visitRefLine(touch.page, touch.source, daysBetween(touch.firstSeen, now));
 }
 
 const refMarker = /\n\nRef: [^\n]*$/;
@@ -238,7 +291,8 @@ async function detectCountry(): Promise<string | null> {
   }
 }
 
-function buildLine() {
+/** This visit's page and source, before any stored first visit is consulted. */
+function currentTouch(): { page: string | null; source: string } {
   const ownHost = window.location.hostname;
   const referrer = document.referrer;
   // A full page load from another Homeground page: the page before this one
@@ -249,16 +303,41 @@ function buildLine() {
   } catch {
     sameSitePath = null;
   }
-  if (sameSitePath) return visitRefLine(visitPageTag(sameSitePath), "site");
-  return visitRefLine(
-    visitPageTag(state.landingPath),
-    visitSourceLabel({ referrer, utmSource: state.utmSource, ownHost }),
-  );
+  if (sameSitePath) return { page: visitPageTag(sameSitePath), source: "site" };
+  return {
+    page: visitPageTag(state.landingPath),
+    source: visitSourceLabel({ referrer, utmSource: state.utmSource, ownHost }),
+  };
 }
 
-/** The line for this visit, or null (strict region, unknown, or not ready). */
+function analyticsRefused() {
+  return readAnalyticsConsent()?.analytics === false;
+}
+
+/** Read or create the 30-day first-visit entry, then derive the line. */
+function buildLine(): string | null {
+  const now = new Date();
+  let stored: FirstTouch | null = null;
+  try {
+    stored = parseFirstTouch(window.localStorage.getItem(firstTouchStorageKey), now);
+  } catch {
+    stored = null;
+  }
+  if (stored) return visitRefLineFromFirstTouch(stored, now);
+  const touch = currentTouch();
+  if (!touch.page) return null;
+  const created = newFirstTouch(touch.page, touch.source, now);
+  try {
+    window.localStorage.setItem(firstTouchStorageKey, JSON.stringify(created));
+  } catch {
+    // Blocked storage: the line still works for this page.
+  }
+  return visitRefLineFromFirstTouch(created, now);
+}
+
+/** The line for this visit, or null (strict region, unknown, refused, or not ready). */
 export function currentVisitRefLine(): string | null {
-  return state.region === "notice" ? state.line : null;
+  return state.region === "notice" && !analyticsRefused() ? state.line : null;
 }
 
 function rewriteClickedContactLink(event: MouseEvent) {
@@ -304,8 +383,16 @@ export function startVisitRef(targets: { whatsappNumber: string; email: string }
     state.region = "strict";
     return;
   }
+  subscribeAnalyticsConsent((preferences) => {
+    if (preferences?.analytics === false) {
+      clearFirstTouch();
+      state.line = null;
+    } else if (state.region === "notice" && !state.line) {
+      state.line = buildLine();
+    }
+  });
   void detectCountry().then((country) => {
     state.region = classifyVisitRegion({ country, timeZone, globalPrivacyControl, automated });
-    if (state.region === "notice") state.line = buildLine();
+    if (state.region === "notice" && !analyticsRefused()) state.line = buildLine();
   });
 }

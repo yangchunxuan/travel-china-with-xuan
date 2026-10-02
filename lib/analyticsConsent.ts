@@ -1,5 +1,19 @@
 export const analyticsConsentVersion = "2026-09-05.1";
 export const analyticsConsentStorageKey = "homeground-consent.v1";
+/**
+ * First visit page and source for the prepared-message reference line
+ * (lib/visitRef.ts). Kept only in notice regions; refusing analytics deletes it.
+ */
+export const firstTouchStorageKey = "homeground-first-touch.v1";
+
+export function clearFirstTouch() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(firstTouchStorageKey);
+  } catch {
+    // Blocked storage holds nothing to delete.
+  }
+}
 export const analyticsConsentChangedEventName =
   "homeground:consent-changed";
 export const analyticsConsentOpenEventName =
@@ -135,7 +149,10 @@ export function saveAnalyticsConsent({
     // still applies to this page through the event below, but it cannot persist.
   }
 
-  if (!analytics) clearAnalyticsCookies();
+  if (!analytics) {
+    clearAnalyticsCookies();
+    clearFirstTouch();
+  }
   if (!marketing) clearMarketingCookies();
 
   window.dispatchEvent(

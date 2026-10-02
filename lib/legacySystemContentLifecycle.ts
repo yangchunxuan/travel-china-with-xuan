@@ -153,7 +153,7 @@ export const legacySystemContentLifecycle = {
       commit: VISIT_REF_RELEASE_COMMIT,
       changedAt: "2026-10-02",
       summary:
-        "The privacy notice now explains the short reference line added to prepared WhatsApp, email and KakaoTalk messages for visitors in Korea, the United States, Singapore, Malaysia, Australia and Hong Kong; the separate full-review date remains unchanged.",
+        "The privacy notice now explains the short reference line added to prepared WhatsApp, email and KakaoTalk messages for visitors in Korea, the United States, Singapore, Malaysia, Australia and Hong Kong, the 30-day first-visit local-storage entry behind it and how refusing analytics deletes it; the separate full-review date remains unchanged.",
     },
   },
   "business-information": {
