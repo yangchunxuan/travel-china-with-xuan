@@ -26,6 +26,8 @@ import {
 import { getEditorialAuthor } from "./editorialIdentity";
 import { attractionReservationPath } from "./attractionReservations";
 import { getAttractionReservationCopy } from "./attractionReservationsI18n";
+import { privateGuideCities, privateGuideServicePath } from "./privateGuideServices";
+import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
 import {
   productPreviewCopy,
   zhangjiajiePrivateTourPaths,
@@ -254,7 +256,49 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     }),
   );
 
+  const privateGuides = Object.fromEntries(
+    locales.map((locale) => {
+      const copy = getPrivateGuideServiceCopy(locale);
+      return [
+        locale,
+        {
+          path: privateGuideServicePath[locale],
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          h1: copy.h1,
+        },
+      ];
+    }),
+  );
+
+  // An additive, indexable service route prepared for release. It is not a
+  // legacy publication event: do not invent a release date or commit evidence.
+  const privateGuidesNode: ContentNode = {
+    id: "private-english-speaking-guides",
+    section: "services",
+    family: "service",
+    primaryIntent: "purchase",
+    entityIds: privateGuideCities.map((city) => `city-${city}`),
+    relationIds: [],
+    parentContentId: "hub-services",
+    status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions("private-english-speaking-guides", privateGuides),
+    factIds: [],
+    sourceIds: [],
+    mediaIds: [],
+    schemaTypes: ["WebPage", "Service", "FAQPage"],
+    legacyAliases: [],
+    dates: {},
+    updatePolicy: {
+      volatility: "high",
+      refreshCadence: "monthly",
+      owner: "homeground-platform",
+    },
+  };
+
   const nodes = [
+    privateGuidesNode,
     systemNode({
       id: "home",
       section: "explore",
