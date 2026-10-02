@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { homegroundKakaoTalkPhone } from "../lib/homegroundBusiness";
 import { kakaoTalkCopy, kakaoTalkInquiryText } from "../lib/tourContact";
+import { appendVisitRef, currentVisitRefLine } from "../lib/visitRef";
 import styles from "./KakaoTalkContact.module.css";
 
 /** Clipboard API first; a selected textarea inside `host` (a modal dialog makes the body inert) second. */
@@ -36,7 +37,7 @@ export function KakaoTalkContact({ inquiry, onOpen, className, buttonClassName }
 
   async function reveal() {
     onOpen?.();
-    const text = kakaoTalkInquiryText(inquiry(), phone);
+    const text = kakaoTalkInquiryText(appendVisitRef(inquiry(), currentVisitRefLine()), phone);
     setMessage(text);
     setResult(await copyText(text, rootRef.current) ? "copied" : "failed");
   }

@@ -31,7 +31,8 @@ const expectedModifiedDates = {
   guides: "2026-08-22",
   home: "2026-09-15",
   "itinerary-review": "2026-09-05",
-  privacy: "2026-09-29",
+  // 2026-10-02: the visit reference line on prepared contact messages.
+  privacy: "2026-10-02",
   "refund-delivery": "2026-09-29",
   studio: "2026-08-22",
   terms: "2026-09-29",

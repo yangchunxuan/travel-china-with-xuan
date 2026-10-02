@@ -50,11 +50,15 @@ export function tourContactMessageText(locale: HomegroundLocale, context: Privat
     safePath ? `https://homegroundchina.com${safePath}` : null, tourContactDraftText(locale, draft)].filter(Boolean).join("\n");
 }
 
+/** The studio WhatsApp number used by every prepared wa.me link. */
+export function homegroundWhatsAppNumber() {
+  const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
+  return /^\d{7,15}$/.test(configured) ? configured : "8613174215999";
+}
+
 /** A wa.me link to the studio number carrying a prepared message. */
 export function homegroundWhatsAppHref(text: string) {
-  const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
-  const number = /^\d{7,15}$/.test(configured) ? configured : "8613174215999";
-  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/${homegroundWhatsAppNumber()}?text=${encodeURIComponent(text)}`;
 }
 
 export function tourWhatsAppHref(locale: HomegroundLocale, context: PrivateTourInquiryContext | null, path?: string, draft?: TourContactDraft) {
