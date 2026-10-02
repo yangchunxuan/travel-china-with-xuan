@@ -9,6 +9,7 @@ const source = (relativePath) => readFile(path.join(projectRoot, relativePath), 
 const reservations = await import("../../lib/attractionReservations.ts");
 const copyModule = await import("../../lib/attractionReservationsI18n.ts");
 const messageModule = await import("../../lib/attractionReservationMessage.ts");
+const feeFormat = await import("../../lib/attractionReservationFeeFormat.ts");
 
 const locales = ["en", "zh", "ko"];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/u;
@@ -253,7 +254,9 @@ test("the 8-day booking guarantee is stated once as data and repeated everywhere
     check(copy.pricingLead, "pricing");
     check(copy.enquiry.intro.replace("first visit", "visit").replace("첫 방문일", "방문일").replace("第一个参观日", "参观日"), "enquiry");
     check(copy.rulesIntro.replace(/The 8-day booking guarantee/u, "at least 8 days before your visit").replace(/提前 8 天/u, "至少 8 天").replace(/8일 전 예약 보장/u, "최소 8일 전"), "rules intro");
-    assert.match(copy.heroFacts.map((fact) => fact.value).join(" "), /8/u, `${locale}: hero fact`);
+    // The hero shows the fee and ticket facts; the guarantee banner under them carries the lead time.
+    assert.equal(copy.heroFacts.length, 2, `${locale}: hero facts`);
+    assert.match(copy.guarantee, /8/u, `${locale}: hero guarantee`);
     const guaranteeFaq = copy.faqs.find((item) => guaranteeLead[locale].test(item.answer) && /guaranteed\?|有保证吗|보장되나요/u.test(item.question));
     assert.ok(guaranteeFaq, `${locale}: guarantee FAQ`);
     assert.match(guaranteeFaq.answer, guaranteeRefund[locale]);
@@ -358,11 +361,19 @@ test("the service fee shows one currency per language and never less than CNY 45
   );
 });
 
-test("visit dates use the site's locale-fixed date field, not the OS-language browser control", async () => {
+test("each chosen attraction gets one visit date in the site's locale-fixed date field", async () => {
   const enquiry = await source("components/AttractionReservationEnquiry.tsx");
   assert.doesNotMatch(enquiry, /type="date"/u);
-  assert.equal((enquiry.match(/<TourDateField /gu) ?? []).length, 2);
+  // A ticket is for one day: one field per chosen attraction, no from/to range.
+  assert.equal((enquiry.match(/<TourDateField /gu) ?? []).length, 1);
+  assert.match(enquiry, /chosen\.map\(\(attraction\) => \(\s*<TourDateField [^>]*label=\{attraction\.label\}/u);
+  assert.doesNotMatch(enquiry, /setFrom|setTo|copy\.from|copy\.to\b/u);
   assert.match(enquiry, /\{!undecided \? \(/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale).enquiry;
+    assert.equal("from" in copy || "to" in copy || "dates" in copy.message, false, `${locale}: no range labels`);
+    assert.match(copy.visitDatesHint, { en: /one day/u, zh: /按天/u, ko: /하루 단위/u }[locale], locale);
+  }
 });
 
 test("the prepared request carries the service context and no passport field", async () => {
@@ -370,21 +381,23 @@ test("the prepared request carries the service context and no passport field", a
     const copy = copyModule.getAttractionReservationCopy(locale);
     const text = messageModule.attractionReservationMessageText(copy.enquiry.message, {
       cities: ["Beijing"],
-      attractions: ["National Museum of China", "Temple of Heaven"],
-      from: "2026-10-12",
-      to: "2026-10-14",
+      visits: [
+        { label: "National Museum of China", date: "2026-10-12" },
+        { label: "Temple of Heaven", date: null },
+      ],
       travellers: 3,
       note: "Morning\u0007 please",
       pageUrl: `https://homegroundchina.com${reservations.attractionReservationPath[locale]}`,
     });
     assert.match(text, new RegExp(copy.enquiry.message.serviceValue, "u"));
-    assert.match(text, /National Museum of China; Temple of Heaven/u);
-    assert.match(text, /2026-10-12 – 2026-10-14/u);
+    assert.match(text, /^· National Museum of China: 2026-10-12$/mu);
+    assert.match(text, new RegExp(`^· Temple of Heaven: ${copy.enquiry.message.datesUndecided}$`, "mu"));
+    assert.doesNotMatch(text, / – /u, "no date range");
     assert.match(text, /: 3$/mu);
     assert.doesNotMatch(text, /\u0007/u);
     assert.match(text, /homegroundchina\.com\/(?:zh\/|ko\/)?services\/china-attraction-reservations\//u);
     const mailto = messageModule.attractionReservationMailtoHref("hello@homegroundchina.com", copy.enquiry.message, {
-      cities: [], attractions: [], from: null, to: null, travellers: null, note: "", pageUrl: "https://homegroundchina.com/",
+      cities: [], visits: [], travellers: null, note: "", pageUrl: "https://homegroundchina.com/",
     });
     assert.ok(mailto.startsWith("mailto:hello@homegroundchina.com?subject="));
   }
@@ -461,4 +474,75 @@ test("the page is a public, indexable system identity with reciprocal alternates
   assert.match(localizedRoute, /localizedRouteLocale/u);
   assert.match(adapter, /id: "attraction-reservations"/u);
   assert.match(sitemap, /system-attraction-reservations/u);
+});
+
+test("the request form comes right after the steps, with a summary and folded city rules", async () => {
+  const [page, enquiry, opener] = await Promise.all([
+    source("components/AttractionReservationsPage.tsx"),
+    source("components/AttractionReservationEnquiry.tsx"),
+    source("components/OpenDetailsForHash.tsx"),
+  ]);
+  // Order: steps → form → price → guarantee → what we do → passport → rules → FAQ.
+  const order = ["reservation-steps-title", "reservation-enquiry-title", "reservation-price-title", "reservation-limits-title", "reservation-what-title", "reservation-passport-title", "reservation-rules-title", "reservation-faq-title"]
+    .map((id) => page.indexOf(`aria-labelledby="${id}"`));
+  assert.ok(order.every((index) => index > 0), "every section is present");
+  assert.deepEqual([...order].sort((a, b) => a - b), order, "sections are in the new order");
+  // The hero shows the Forbidden City (the headline's subject), not a panda.
+  assert.match(page, /\/images\/guides\/forbidden-city-for-foreign-visitors\/hero-1600\.webp/u);
+  assert.doesNotMatch(page, /hero-panda/u);
+
+  // Rules: one closed disclosure per city, keeping the #city-<id> anchors destination pages link to.
+  assert.match(page, /<details className=\{styles\.ruleCity\} data-keep-in-view="" id=\{`city-\$\{cityId\}`\}/u);
+  assert.match(page, /<OpenDetailsForHash \/>/u);
+  assert.match(opener, /closest\("details"\)/u);
+  assert.match(opener, /addEventListener\("hashchange", open\)/u);
+  // An unconfirmed field shows a dash with the words kept for screen readers.
+  assert.match(page, /<span aria-hidden="true">—<\/span><span className=\{styles\.visuallyHidden\}>\{unknownText\}<\/span>/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    assert.match(copy.unknownLegend, /—/u, `${locale}: legend explains the dash`);
+    assert.match(copy.attractionCount.other, /\{count\}/u);
+  }
+
+  // Form: attractions grouped under their city, no separate city choice.
+  assert.doesNotMatch(enquiry, /name="city"/u);
+  assert.match(enquiry, /role="group"/u);
+  // Summary: attractions with dates, travellers, fee × people × attractions, tickets, then the send buttons.
+  assert.match(enquiry, /<aside aria-labelledby=\{`\$\{id\}-summary`\} className=\{styles\.enquiryAside\}>/u);
+  // The client form never imports the reservations library, which pulls in the tour catalogue.
+  assert.doesNotMatch(enquiry, /from "\.\.\/lib\/attractionReservations"/u);
+  // Units in the fee formula, a date button per attraction without a date, KakaoTalk first on Korean pages.
+  assert.match(enquiry, /\{countText\(copy\.summaryPeople, draft\.travellers\)\}<\/span>\s*\{" × "\}<span className=\{styles\.nowrap\}>\{countText\(copy\.summaryAttractions, chosen\.length\)\}/u);
+  assert.match(enquiry, /onClick=\{\(\) => focusDateField\(attractionId\)\}/u);
+  assert.match(enquiry, /\{kakao\}\s*<a aria-label=\{kakao && copy\.whatsappShort \? copy\.whatsapp : undefined\} className=\{kakao \? styles\.secondaryButton : styles\.primaryButton\}/u);
+
+  // Each bookable rule links back to the picker with that attraction ticked, and names it for screen readers.
+  assert.match(page, /data-reserve-attraction=\{rule\.id\} href=\{`#\$\{reservationFormAnchor\}`\}>\{copy\.reserveThis\}<span className=\{styles\.visuallyHidden\}>/u);
+  assert.match(enquiry, /<div className=\{styles\.enquiryLayout\} id=\{formId\}>/u);
+  assert.match(enquiry, /closest\("\[data-reserve-attraction\]"\)/u);
+  // Phones hide dash cells but name them in the card footer, with the checked date.
+  assert.match(page, /<td className=\{styles\.cardFooter\}>[\s\S]{0,240}<span className=\{styles\.pendingFields\}>\{copy\.unknown\}\{colon\}\{pending\.join\(listSeparator\)\}<\/span>/u);
+  // A rule's link shows its result: the new date field (or chip) scrolls into view and a status line names it.
+  assert.match(enquiry, /setAddedMessage\(copy\.added\.replace\("\{name\}", match\.label\)\)/u);
+  assert.match(enquiry, /<p className=\{styles\.visuallyHidden\} role="status">\{addedMessage\}<\/p>/u);
+  // "Choose a date" opens that field's calendar rather than raising a phone keypad.
+  assert.match(enquiry, /querySelector<HTMLButtonElement>\('button\[aria-haspopup="dialog"\]'\)/u);
+  // A city closed from its sticky row scrolls back into view.
+  assert.match(page, /data-keep-in-view=""/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    assert.match(copy.enquiry.added, /\{name\}/u, `${locale}: the added status names the attraction`);
+    assert.ok(copy.enquiry.summaryPeople.one.includes("{n}") && copy.enquiry.summaryAttractions.other.includes("{n}"));
+  }
+});
+
+test("the summary total is the displayed unit fee times people and attractions", () => {
+  for (const locale of locales) {
+    const display = reservations.attractionReservationFeeDisplay(reservations.attractionReservationServiceFeeCny, locale);
+    const unit = feeFormat.formatAttractionReservationFeeDisplay(display);
+    assert.equal(unit, reservations.formatAttractionReservationFee(reservations.attractionReservationServiceFeeCny, locale), locale);
+    const total = feeFormat.formatAttractionReservationFeeDisplay(display, 6);
+    assert.equal(total.replace(/\D/gu, ""), String(display.amount * 6), `${locale}: ${total}`);
+    assert.throws(() => feeFormat.formatAttractionReservationFeeDisplay(display, 0));
+  }
 });

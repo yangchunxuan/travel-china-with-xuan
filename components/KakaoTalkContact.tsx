@@ -25,7 +25,7 @@ async function copyText(value: string, host: HTMLElement | null) {
  * phone number, so the button copies the prepared inquiry and reveals the
  * number with the steps to add it. It never offers a tel: link.
  */
-export function KakaoTalkContact({ inquiry, onOpen, className, buttonClassName }: { inquiry: () => string; onOpen?: () => void; className?: string; buttonClassName?: string }) {
+export function KakaoTalkContact({ inquiry, onOpen, className, buttonClassName, label }: { inquiry: () => string; onOpen?: () => void; className?: string; buttonClassName?: string; /** Overrides the button text where it must match sibling buttons. */ label?: string }) {
   const id = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -49,7 +49,7 @@ export function KakaoTalkContact({ inquiry, onOpen, className, buttonClassName }
   }
 
   return <div ref={rootRef} className={className ? `${styles.kakao} ${className}` : styles.kakao} data-kakao-contact="">
-    <button type="button" className={buttonClassName ? `${styles.button} ${buttonClassName}` : styles.button} aria-expanded={result !== null} aria-controls={`${id}-hint`} onClick={() => void reveal()}><MessageCircle size={18} aria-hidden="true" />{kakaoTalkCopy.action}</button>
+    <button type="button" className={buttonClassName ? `${styles.button} ${buttonClassName}` : styles.button} aria-expanded={result !== null} aria-controls={`${id}-hint`} onClick={() => void reveal()}><MessageCircle size={18} aria-hidden="true" />{label ?? kakaoTalkCopy.action}</button>
     <div id={`${id}-hint`} className={result ? styles.hint : undefined} role="status" aria-live="polite">
       {result ? <>
         <p className={styles.status} data-state={result}>{result === "copied" ? kakaoTalkCopy.copied : kakaoTalkCopy.copyFailed}</p>

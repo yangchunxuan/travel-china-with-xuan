@@ -5,6 +5,8 @@ import type { DestinationHubId } from "./destinationHubs";
 import { PRIVATE_TOUR_PRICE_CONVERSION } from "./privateTourProducts.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "./attractionReservationFeeFormat.ts";
 
 export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
 
@@ -728,21 +730,23 @@ const numberLocales: Localized = { en: "en-US", zh: "zh-CN", ko: "ko-KR" };
  * rounds up to the whole dollar and KRW 1,000 instead. It never shows less
  * than the CNY amount charged.
  */
-export function formatAttractionReservationFee(cny: number, locale: HomegroundLocale) {
+export function attractionReservationFeeDisplay(cny: number, locale: HomegroundLocale): AttractionReservationFeeDisplay {
   if (!Number.isSafeInteger(cny) || cny <= 0) throw new RangeError("The fee must be a positive whole CNY amount.");
-  const currency = locale === "en" ? "USD" : locale === "ko" ? "KRW" : "CNY";
-  const amount =
-    locale === "en"
-      ? Math.ceil(cny / PRIVATE_TOUR_PRICE_CONVERSION.cnyPerUsd)
-      : locale === "ko"
-        ? Math.ceil((cny * PRIVATE_TOUR_PRICE_CONVERSION.krwPerCny) / 1_000) * 1_000
-        : cny;
-  return new Intl.NumberFormat(numberLocales[locale], {
-    style: "currency",
-    currency,
+  return {
+    amount:
+      locale === "en"
+        ? Math.ceil(cny / PRIVATE_TOUR_PRICE_CONVERSION.cnyPerUsd)
+        : locale === "ko"
+          ? Math.ceil((cny * PRIVATE_TOUR_PRICE_CONVERSION.krwPerCny) / 1_000) * 1_000
+          : cny,
+    currency: locale === "en" ? "USD" : locale === "ko" ? "KRW" : "CNY",
+    numberLocale: numberLocales[locale],
     currencyDisplay: locale === "en" ? "code" : "symbol",
-    maximumFractionDigits: 0,
-  }).format(amount);
+  };
+}
+
+export function formatAttractionReservationFee(cny: number, locale: HomegroundLocale) {
+  return formatAttractionReservationFeeDisplay(attractionReservationFeeDisplay(cny, locale));
 }
 
 /** Official face value, always in the attraction's own currency (CNY). */

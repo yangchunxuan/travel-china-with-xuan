@@ -1,8 +1,11 @@
 /*
  * /services/china-attraction-reservations/. Same system as /services/:
  * white page, #f9f8f6 tiles without outlines, ink #0a0a0a with muted ink at
- * 60%, 44px pills and Georgia headlines. The rules table scrolls inside its
- * own container on narrow screens so the page itself never scrolls sideways.
+ * 60%, 44px pills and Georgia headlines. Order: hero, steps, the request
+ * form (with a summary that stays beside it), then price, guarantee and the
+ * rules, which fold by city. The rules table scrolls inside its own
+ * container at tablet widths and becomes one card per attraction on phones,
+ * so the page itself never scrolls sideways.
  */
 .page {
   --ink: #0a0a0a;
@@ -100,7 +103,7 @@
 }
 
 .heroGrid {
-  align-items: start;
+  align-items: stretch;
   display: grid;
   gap: 2rem clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -110,7 +113,21 @@
   font-size: clamp(2.5rem, 5vw, 4.25rem);
   line-height: 1.03;
   margin: 1rem 0 0;
-  max-width: 16ch;
+  max-width: 20ch;
+}
+
+.heroCopy h1:lang(en) {
+  font-size: clamp(2.5rem, 4.2vw, 3.75rem);
+}
+
+.heroCopy h1:is(:lang(zh), :lang(ko)) {
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+/* "ch" is a Latin width: 20ch is about ten Chinese characters, which keeps two balanced lines. */
+.heroCopy h1:lang(zh) {
+  max-width: 10em;
 }
 
 .lede {
@@ -124,8 +141,9 @@
 .heroFacts {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 2rem 0 0;
+  max-width: 48rem;
 }
 
 .heroFacts > div {
@@ -165,7 +183,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
 }
 
 .primaryButton,
@@ -214,28 +232,20 @@
   text-underline-offset: 0.25rem;
 }
 
+/* The photo fills the height of the text beside it instead of a short strip. */
 .heroFigure {
+  height: 100%;
   margin: 0;
 }
 
 .heroFigure img {
-  aspect-ratio: 8 / 5;
   border-radius: 1rem;
   display: block;
-  height: auto;
+  height: 100%;
+  min-height: 24rem;
   object-fit: cover;
+  object-position: 50% 55%;
   width: 100%;
-}
-
-.heroFigure figcaption {
-  color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.5;
-  margin-top: 0.5rem;
-}
-
-.heroFigure figcaption a {
-  color: inherit;
 }
 
 /* ---------- Sections ---------- */
@@ -256,6 +266,7 @@
 }
 
 .twoColumn {
+  align-items: start;
   display: grid;
   gap: 2rem clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -363,10 +374,73 @@
   margin: 1rem 0 0;
 }
 
+.ruleCities {
+  border-top: 1px solid var(--rule);
+  margin-top: 1.5rem;
+}
+
+.ruleCity {
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 5.5rem;
+}
+
+.ruleCity > summary {
+  align-items: baseline;
+  cursor: pointer;
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  min-height: 2.75rem;
+  padding: 1.125rem 2.25rem 1.125rem 0;
+  position: relative;
+}
+
+.ruleCity > summary::-webkit-details-marker {
+  display: none;
+}
+
+.ruleCity > summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  inset-block-start: 1rem;
+  inset-inline-end: 0.25rem;
+  position: absolute;
+}
+
+.ruleCity[open] > summary::after {
+  content: "−";
+}
+
+.ruleCityName {
+  font-family: var(--hg-editorial);
+  font-size: 1.375rem;
+  line-height: 1.2;
+}
+
+.ruleCityCount {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.ruleCity > summary:hover .ruleCityName {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.ruleCity[open] {
+  padding-bottom: 1.5rem;
+}
+
+.legend {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+}
+
 .tableScroll {
   border: 1px solid var(--rule);
   border-radius: 1rem;
-  margin-top: 1.5rem;
   max-width: 100%;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -426,24 +500,30 @@
   min-width: 9.5rem;
 }
 
-.table td:nth-child(8) {
+/* Columns: 1 name, 2 channel, 3 passport, 4 release, 5 real name, 6 price, 7 notes, 8 checked. */
+.table :is(th, td):nth-child(3),
+.table :is(th, td):nth-child(5) {
+  min-width: 4.5rem;
+}
+
+.table :is(th, td):nth-child(4) {
+  min-width: 11rem;
+}
+
+.table :is(th, td):nth-child(7) {
   min-width: 15rem;
 }
 
-.table td:last-child {
+/* The checked date (column 8) stays on one line. */
+.table td:nth-child(8) {
   white-space: nowrap;
-}
-
-.cityRow th {
-  background: var(--warm);
-  font-family: var(--hg-editorial);
-  font-size: 1.125rem;
-  font-weight: 400;
 }
 
 .status {
   border-radius: 999px;
-  display: inline-block;
+  display: block;
+  margin-top: 0.375rem;
+  width: fit-content;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.4;
@@ -463,7 +543,37 @@
 
 .unknown {
   color: var(--muted);
-  font-style: italic;
+}
+
+.visuallyHidden {
+  block-size: 1px;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.reserveLink {
+  align-items: center;
+  color: var(--ink);
+  display: flex;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  gap: 0.25rem;
+  margin-top: 0.375rem;
+  min-height: 2rem;
+  text-underline-offset: 0.2rem;
+  width: fit-content;
+}
+
+/* Phones only: the card footer with the checked date and the fields shown as a dash on wider screens. */
+.cardFooter {
+  display: none;
 }
 
 .sourceLink {
@@ -476,34 +586,199 @@
 
 /* ---------- Enquiry ---------- */
 
+/* The hero button lands the intro just under the sticky header, not a section's padding below it. */
 .enquirySection {
+  scroll-margin-top: calc(5.5rem - var(--section));
+}
+
+/* The form on the left; the summary and send buttons beside it stay in view. */
+.enquiryLayout {
+  scroll-margin-top: 5.5rem;
+  align-items: start;
   display: grid;
-  gap: 2rem clamp(2rem, 5vw, 4.5rem);
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  scroll-margin-top: 5rem;
+  gap: 2rem clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 22.5rem);
+}
+
+.enquiryIntro {
+  margin-bottom: 1.75rem;
+  max-width: 48rem;
 }
 
 .enquiryIntro p:last-child {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
+  margin: 0;
+  max-width: 40rem;
 }
 
 .enquiryIntro h2 {
   margin-top: 0.75rem;
 }
 
-.enquiry {
+.enquiryForm {
   background: var(--tile);
   border-radius: 1.25rem;
   display: grid;
-  gap: 1.5rem;
+  gap: 2.25rem;
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
-.enquiryForm {
+/*
+ * Sticky beside the form. On a short window the request list scrolls inside
+ * the card and the send buttons stay on screen (the reserve-card pattern).
+ */
+.enquiryAside {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 6.5rem);
+  padding: 1.5rem;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.summary {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.summary > :not(.summaryList) {
+  flex: none;
+}
+
+/*
+ * The one part that scrolls. The local/scroll background pair draws a soft
+ * shadow at an edge only while there is more list beyond it.
+ */
+.summaryList {
+  background:
+    linear-gradient(var(--paper) 30%, rgb(255 255 255 / 0%)) center top / 100% 2rem no-repeat local,
+    linear-gradient(rgb(255 255 255 / 0%), var(--paper) 70%) center bottom / 100% 2rem no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgb(10 10 10 / 14%), transparent) center top / 100% 0.625rem no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgb(10 10 10 / 14%), transparent) center bottom / 100% 0.625rem no-repeat scroll;
+  flex: 0 1 auto;
+  min-height: 5.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.summary h3 {
+  font-family: var(--hg-editorial);
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+.summaryList {
+  border-top: 1px solid var(--rule);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.summaryList:empty {
+  min-height: 0;
+}
+
+.summaryList li {
+  align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+  column-gap: 0.75rem;
   display: grid;
-  gap: 1.25rem;
+  font-size: 0.9375rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  line-height: 1.4;
+  padding-block: 0.625rem;
+}
+
+.summaryDate,
+.summaryPickDate {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-align: end;
+  white-space: nowrap;
+}
+
+/* No date yet: a link-style button that takes the visitor to that attraction's date field. */
+.summaryPickDate {
+  background: none;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8125rem;
+  min-height: 2rem;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.summaryPickDate:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.summaryEmpty {
+  border-block: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-block: 0.75rem;
+}
+
+.summaryFacts {
+  display: grid;
+  gap: 0.625rem;
+  margin: 1rem 0 0;
+}
+
+.summaryFacts > div {
+  align-items: baseline;
+  display: flex;
+  font-size: 0.875rem;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.summaryFacts dt {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.summaryFacts dd {
+  font-weight: 600;
+  margin: 0;
+  text-align: end;
+}
+
+.summaryFormula {
+  color: var(--muted);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 0.125rem;
+}
+
+.summaryFacts .summaryTickets {
+  font-weight: 400;
+  max-width: 14rem;
+  text-wrap: balance;
+}
+
+.summaryNote {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
 }
 
 .choiceGroup {
@@ -513,7 +788,6 @@
   padding: 0;
 }
 
-.choiceGroup legend,
 .field,
 .sendTitle {
   font-size: 0.875rem;
@@ -522,47 +796,55 @@
 }
 
 .choiceGroup legend {
-  margin-bottom: 0.625rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.375rem;
   padding: 0;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.choiceGroup > .fieldHint {
+  margin-bottom: 0.875rem;
 }
 
-.chip {
-  cursor: pointer;
-  position: relative;
+.choiceGroup .checkboxRow {
+  margin: 0 0 0.25rem;
 }
 
-.chip input {
-  inset: 0;
-  opacity: 0;
-  position: absolute;
+.cityGroups {
+  display: grid;
+  gap: 0.75rem;
 }
 
-.chip span {
-  align-items: center;
-  background: var(--paper);
-  border: 1px solid #d8d8d8;
-  border-radius: 999px;
-  display: inline-flex;
+/* The city name sits beside its attractions, so it costs no row of its own. */
+@media (min-width: 40.0625rem) {
+  .cityGroup {
+    align-items: start;
+    column-gap: 1rem;
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+
+  .cityGroup .cityLabel {
+    margin: 0.625rem 0 0;
+  }
+}
+
+.cityGroup + .cityGroup {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.75rem;
+}
+
+.cityLabel {
+  color: var(--ink);
   font-size: 0.875rem;
-  min-height: 2.75rem;
-  padding: 0 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
 }
 
-.chip input:checked + span {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
-
-.chip input:focus-visible + span {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
+.attractionOption span {
+  text-wrap: balance;
 }
 
 .attractionList {
@@ -582,6 +864,15 @@
   line-height: 1.4;
   min-height: 2.75rem;
   padding: 0.625rem 0.75rem;
+}
+
+.attractionOption:hover {
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+/* A chosen attraction reads as chosen, not only by its small checkbox. */
+.attractionOption:has(input:checked) {
+  box-shadow: inset 0 0 0 1.5px var(--ink);
 }
 
 .attractionOption input,
@@ -628,6 +919,10 @@
   resize: vertical;
 }
 
+.field input[type="number"] {
+  max-width: 9rem;
+}
+
 .optional {
   color: var(--muted);
   font-size: 0.75rem;
@@ -653,7 +948,15 @@
 
 .send {
   border-top: 1px solid var(--rule);
+  flex: none;
+  margin-top: 1.25rem;
   padding-top: 1.25rem;
+}
+
+/* The KakaoTalk help panel opens inside the card; it scrolls rather than pushing the card off-screen. */
+.send [data-kakao-contact] [role="status"] {
+  max-height: 14rem;
+  overflow-y: auto;
 }
 
 .sendTitle {
@@ -663,6 +966,10 @@
 .sendButtons {
   display: grid;
   gap: 0.625rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.sendButtons[data-kakao-first] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -670,8 +977,7 @@
   grid-column: 1 / -1;
 }
 
-.replyFrom,
-.privacyLine {
+.replyFrom {
   color: var(--muted);
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -679,11 +985,11 @@
   overflow-wrap: anywhere;
 }
 
-.privacyLine a {
-  align-items: center;
+.replyFrom a {
   color: var(--ink);
-  display: inline-flex;
-  min-height: 2.75rem;
+  display: block;
+  padding-block: 0.375rem;
+  width: fit-content;
 }
 
 /* ---------- FAQ ---------- */
@@ -740,26 +1046,209 @@
 
 /*
  * The table's column minimums add up to about 75rem, so it only fits once the
- * container reaches its full 77rem width (an 80rem viewport). Below that it
- * scrolls inside its container, so the hint shows at tablet and small
- * desktop widths too, not only on phones.
+ * container reaches its full 77rem width (an 80rem viewport). Between that and
+ * the phone layout it scrolls inside its container, with a hint.
  */
-@media (max-width: 80rem) {
+@media (max-width: 80rem) and (min-width: 56.0625rem) {
   .scrollHint {
     display: block;
+    margin: 0 0 0.75rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .attractionList:is(:lang(zh), :lang(ko)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Short windows drop the note (the price section says it) to keep the fee and buttons in view. */
+@media (max-height: 50rem) {
+  .summaryNote {
+    display: none;
+  }
+}
+
+/* Until a privacy choice is stored, the consent banner covers the bottom of the window. */
+@media (min-height: 46rem) {
+  :global(html:not([data-homeground-consent-stored])) .enquiryAside {
+    max-height: calc(100dvh - 16.5rem);
+  }
+}
+
+/* A window too short for the sticky summary gets it in the page flow. */
+@media (max-height: 40rem) {
+  .enquiryAside {
+    max-height: none;
+    position: static;
   }
 }
 
 @media (max-width: 56rem) {
   .heroGrid,
   .twoColumn,
-  .enquirySection {
+  .enquiryLayout {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heroFigure img {
+    aspect-ratio: 8 / 5;
+    height: auto;
+    min-height: 0;
+  }
+
+  /* On phones and tablets the summary follows the form instead of floating. */
+  .enquiryAside {
+    max-height: none;
+    position: static;
   }
 
   .steps,
   .priceGrid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /*
+   * Phones: each attraction becomes a card. Nine wordy columns cannot be
+   * read side by side on a narrow screen, so every cell shows its column
+   * name, and fields that are confirmed on enquiry (a dash) are left out.
+   */
+  .tableScroll {
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table th,
+  .table td {
+    display: block;
+  }
+
+  .table thead {
+    block-size: 1px;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  .table tbody tr {
+    background: var(--tile);
+    border-radius: 1rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem 0.75rem;
+  }
+
+  .table th,
+  .table td {
+    border-top: 0;
+    min-width: 0;
+    padding: 0.375rem 0;
+  }
+
+  .table tbody th[scope="row"] {
+    font-size: 1rem;
+    min-width: 0;
+    padding-top: 0.625rem;
+  }
+
+
+  /* Short fields put the label beside the value; the notes keep it above. */
+  .table td[data-label] {
+    column-gap: 0.75rem;
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+  }
+
+  .table td::before {
+    color: var(--muted);
+    content: attr(data-label);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .table td:nth-child(7) {
+    display: block;
+  }
+
+  .table td:nth-child(7)::before {
+    display: block;
+    margin-bottom: 0.125rem;
+  }
+
+  /* Dash cells are named in the card's "confirmed when you enquire" line instead. */
+  .table td[data-label][data-unknown] {
+    display: none;
+  }
+
+  /* Cards name their own "confirmed when you enquire" fields, so the dash legend is not needed. */
+  .legend {
+    display: none;
+  }
+
+  .table .cardFooter {
+    color: var(--muted);
+    display: block;
+    font-size: 0.8125rem;
+    padding-top: 0.5rem;
+  }
+
+  .cardFooter .pendingFields::before {
+    content: " · ";
+  }
+
+  /* The checked date moves into the footer line. */
+  .table td:nth-child(8) {
+    display: none;
+  }
+
+  /* Name and "Request this attraction" share the title row. */
+  .table tbody th[scope="row"] {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    justify-content: space-between;
+  }
+
+  .table tbody th .reserveLink {
+    margin-top: 0;
+    min-height: 2.75rem;
+  }
+
+  .table:is(:lang(zh), :lang(ko)) td[data-label] {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+
+  .sourceLink {
+    display: block;
+    margin-top: 0.375rem;
+  }
+
+  /* An open city keeps its row in view, so it can be closed without scrolling back. */
+  .ruleCity[open] > summary {
+    background: var(--paper);
+    box-shadow: 0 1px 0 var(--rule);
+    position: sticky;
+    top: 4rem;
+    z-index: 1;
+  }
+
+  .table td:nth-child(n) {
+    min-width: 0;
+  }
+
+  .table td:nth-child(8) {
+    white-space: normal;
   }
 }
 
@@ -769,15 +1258,113 @@
     --section: 3.5rem;
   }
 
-  .heroFacts,
-  .attractionList,
-  .fieldRow,
-  .sendButtons {
+  .fieldRow {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .enquiry {
+  /* Cards share one inner padding so text edges line up. */
+  .tile,
+  .steps li,
+  .priceGrid li,
+  .enquiryForm,
+  .enquiryAside,
+  .table tbody tr {
     padding: 1.125rem;
+  }
+
+  /* The two facts share one tile as label/value rows. */
+  .heroFacts {
+    background: var(--tile);
+    border-radius: 1rem;
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0.25rem 1.125rem;
+  }
+
+  .heroFacts > div {
+    align-items: baseline;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+  }
+
+  .heroFacts > div + div {
+    border-top: 1px solid var(--rule);
+  }
+
+  .heroFacts dt {
+    flex: none;
+  }
+
+  .heroFacts dd {
+    margin: 0;
+    text-align: end;
+  }
+
+  /* Korean headline: "중국 관광지" stays together at phone size. */
+  .heroCopy h1:lang(ko) {
+    font-size: 2.25rem;
+  }
+
+  .keepOnPhone {
+    white-space: nowrap;
+  }
+
+  /* Form sections separated, so "Visit dates" never reads as another city. */
+  .enquiryForm > .choiceGroup + .choiceGroup {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+  }
+
+  .summaryPickDate {
+    min-height: 2.75rem;
+  }
+
+  /* Steps as a plain list instead of three tall tiles. */
+  .steps li {
+    background: none;
+    border-radius: 0;
+    border-top: 1px solid var(--rule);
+    padding-inline: 0;
+  }
+
+  /*
+   * Attractions as chips sized to their names; a chosen one fills with ink.
+   * The checkbox stays in the chip for keyboards and screen readers.
+   */
+  .attractionList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .attractionOption {
+    align-items: center;
+    border: 1px solid rgb(10 10 10 / 14%);
+    padding: 0.5rem 0.875rem;
+    position: relative;
+  }
+
+  .attractionOption input {
+    height: 1px;
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .attractionOption:has(input:checked) {
+    background: var(--ink);
+    border-color: var(--ink);
+    box-shadow: none;
+    color: var(--paper);
+  }
+
+  .attractionOption:has(input:focus-visible) {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
   }
 }
 
