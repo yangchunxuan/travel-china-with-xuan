@@ -46,7 +46,6 @@ export interface AttractionReservationEnquiryCopy {
   eyebrow: string;
   title: string;
   intro: string;
-  cities: string;
   attractions: string;
   attractionsHint: string;
   /** One date per chosen attraction: a ticket is for a single day. */
@@ -65,6 +64,21 @@ export interface AttractionReservationEnquiryCopy {
   emailAddress: string;
   noneSelected: string;
   privacy: string;
+  /** The running summary beside the form (below it on phones). */
+  summaryTitle: string;
+  summaryFee: string;
+  summaryPickDate: string;
+  /** Units in the fee formula: "{n}" is replaced; "one" is used for 1. */
+  summaryPeople: { one: string; other: string };
+  summaryAttractions: { one: string; other: string };
+  summaryNote: string;
+  /** Announced after a rule's "Request this attraction" link adds it; {name} is the attraction. */
+  added: string;
+  /** Korean only: the KakaoTalk button, worded like the WhatsApp and email buttons. */
+  kakaoAction?: string;
+  /** Korean only: WhatsApp and email side by side under KakaoTalk need short labels. */
+  whatsappShort?: string;
+  emailShort?: string;
   message: {
     opening: string;
     service: string;
@@ -116,10 +130,8 @@ export interface AttractionReservationCopy {
   refundLink: string;
   rulesTitle: string;
   rulesIntro: string;
-  rulesCaption: string;
   columns: {
     attraction: string;
-    status: string;
     channel: string;
     passport: string;
     release: string;
@@ -142,6 +154,12 @@ export interface AttractionReservationCopy {
   freeWalkIn: string;
   sourceLabel: string;
   scrollHint: string;
+  /** Shown above the rules: a dash in a cell means the rule is confirmed on enquiry. */
+  unknownLegend: string;
+  /** In each bookable rule: selects that attraction in the request form. */
+  reserveThis: string;
+  /** The count on each city's collapsed rules row, e.g. "{count} attractions". */
+  attractionCount: { one: string; other: string };
   faqTitle: string;
   faqs: readonly AttractionReservationFaq[];
   enquiry: AttractionReservationEnquiryCopy;
@@ -175,7 +193,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     heroFacts: [
       { label: "Service fee", value: "{fee} per person per attraction" },
       { label: "Tickets", value: "Official face value, no mark-up" },
-      { label: "Guaranteed booking", value: `Request and pay at least ${days} days ahead` },
     ],
     guarantee: guarantee.en,
     guaranteeLate: guaranteeLate.en,
@@ -230,11 +247,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "Refund & delivery",
     rulesTitle: "Booking rules by attraction",
     rulesIntro:
-      `Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. Blank facts are confirmed when you enquire. The ${days}-day booking guarantee covers every attraction we book.`,
-    rulesCaption: "Attraction reservation rules in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang, with the date a guide checked each rule",
+      `Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. The ${days}-day booking guarantee covers every attraction we book.`,
     columns: {
       attraction: "Attraction",
-      status: "Our service",
       channel: "Official channel",
       passport: "Passport accepted",
       release: "When tickets open",
@@ -267,6 +282,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     freeWalkIn: "Free, no reservation",
     sourceLabel: "Source guide",
     scrollHint: "Scroll the table sideways to see every column.",
+    reserveThis: "Request this attraction",
+    unknownLegend: "A dash (—) in the table means we check that rule for your travel dates when you contact us.",
+    attractionCount: { one: "{count} attraction", other: "{count} attractions" },
     faqTitle: "Questions about the reservation service",
     faqs: [
       { question: "How much does the attraction reservation service cost?", answer: "{fee} per person per attraction, plus the attraction's official ticket price with no mark-up. Both are paid together after we confirm in writing. Reservations for attractions in a Homeground private-tour itinerary are included at no extra fee." },
@@ -281,9 +299,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
       intro: `Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once. Send it and pay at least ${days} days before your first visit for a guaranteed booking.`,
-      cities: "Cities",
       attractions: "Attractions",
-      attractionsHint: "Where the rules table says “confirmed when you enquire”, we check that rule for your dates before the written confirmation.",
+      attractionsHint: "Choose as many as you like; you will pick a date for each one below.",
       visitDates: "Visit dates",
       visitDatesHint: "Each ticket is for one day. Pick the day you will visit each attraction.",
       visitDatesEmpty: "Choose an attraction above, then pick the day you will visit it.",
@@ -299,6 +316,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       emailAddress: "We reply from",
       noneSelected: "Choose at least one attraction so the planner knows what to check.",
       privacy: "How we handle your details",
+      summaryTitle: "Your request",
+      summaryFee: "Service fee (estimate)",
+      summaryPickDate: "Choose a date",
+      summaryPeople: { one: "{n} traveller", other: "{n} travellers" },
+      added: "Added to your request: {name}",
+      summaryAttractions: { one: "{n} attraction", other: "{n} attractions" },
+      summaryNote: "You pay only after our written confirmation. Attractions in a Homeground private tour carry no service fee.",
       message: {
         opening: "Hi, I'd like Homeground to reserve attraction tickets in China.",
         service: "Service",
@@ -332,17 +356,16 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     services: "服务",
     navLabel: "景点代预约",
     eyebrow: "北京 · 上海 · 苏州 · 杭州 · 西安 · 成都 · 桂林 · 丽江",
-    h1: "外国游客故宫与中国景点代预约",
+    h1: "为外国游客代预约故宫与中国景点",
     lede:
       "故宫、兵马俑和中国不少博物馆、古迹都需要提前数天实名预约，而且常常只能在中文应用里完成。告诉我们想去的景点、日期和人数，我们核实余量、书面确认价格，收款后在各景点自己的官方系统中、以每位游客本人的护照实名提交预约。",
     heroFacts: [
       { label: "服务费", value: "每人每个景点 {fee}" },
       { label: "门票", value: "按官方票面价，不加价" },
-      { label: "预约保证", value: `提前至少 ${days} 天提交并付款` },
     ],
     guarantee: guarantee.zh,
     guaranteeLate: guaranteeLate.zh,
-    heroCta: "提交代预约需求",
+    heroCta: "填写代预约需求",
     tableCta: "按城市查看预约规则",
     whatTitle: "我们做什么",
     whatBody: [
@@ -366,7 +389,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     pricingLead: `网站不设在线收银台。书面确认后才需要付款；在参观日前至少 ${days} 天付款，即享预约保证。`,
     pricing: [
       { title: "每人每个景点 {fee}", body: "我们为每位游客预约每个景点收取的服务费。免费预约的博物馆同样收取服务费，因为我们提供的是预约服务。" },
-      { title: "门票按官方票面价", body: "门票按景点官方价格收取，不加价，与服务费一起支付。表中未列价格的，在你询问时确认。" },
+      { title: "门票按官方票面价", body: "门票按景点官方价格收取，不加价，与服务费一起支付。表中未列价格的，在你咨询时确认。" },
       { title: "私家团客人免服务费", body: "预订 Homeground 私家团的客人，行程内景点的预约不另收服务费。" },
     ],
     currencyNote: "服务费以人民币计；如需以其他币种付款，币种与汇率在付款前的书面确认中说明。",
@@ -393,11 +416,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "退款与交付",
     rulesTitle: "各景点预约规则",
     rulesIntro:
-      `有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。空白项在你询问时确认。提前 ${days} 天的预约保证适用于我们代约的每个景点。`,
-    rulesCaption: "北京、上海、苏州、杭州、西安、成都、桂林、丽江景点预约规则及攻略核实各条规则的日期",
+      `有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。提前 ${days} 天的预约保证适用于我们代约的每个景点。`,
     columns: {
       attraction: "景点",
-      status: "我们的服务",
       channel: "官方渠道",
       passport: "可用护照",
       release: "放票规则",
@@ -421,7 +442,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       email: "官方邮箱",
     },
     cities: { beijing: "北京", shanghai: "上海", suzhou: "苏州", hangzhou: "杭州", xian: "西安", chengdu: "成都", guilin: "桂林", lijiang: "丽江" },
-    unknown: "询问时确认",
+    unknown: "咨询时确认",
     notApplicable: "不适用：免预约入馆",
     notChecked: "尚未核实",
     yes: "是",
@@ -430,6 +451,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     freeWalkIn: "免费，无需预约",
     sourceLabel: "来源攻略",
     scrollHint: "左右滑动表格可查看全部列。",
+    reserveThis: "预约这个景点",
+    unknownLegend: "表中以 — 标出的项目，会在你咨询时按出行日期确认。",
+    attractionCount: { one: "{count} 个景点", other: "{count} 个景点" },
     faqTitle: "关于景点代预约的问题",
     faqs: [
       { question: "景点代预约怎么收费？", answer: "每人每个景点服务费 {fee}，另加景点官方票价，门票不加价。两者在书面确认后一起支付。Homeground 私家团行程内的景点预约不另收服务费。" },
@@ -444,13 +468,12 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       eyebrow: "代预约需求",
       title: "告诉我们要预约什么",
       intro: `在你选择 WhatsApp 或邮件之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证。`,
-      cities: "城市",
       attractions: "景点",
-      attractionsHint: "规则表中写着“询问时确认”的景点，我们会在书面确认前按你的日期核实规则。",
+      attractionsHint: "可多选。选好后，在下方为每个景点选日期。",
       visitDates: "参观日期",
       visitDatesHint: "门票按天预约，请为每个景点选一个参观日。",
-      visitDatesEmpty: "先在上面选景点，再选哪天去。",
-      undecided: "日期还没确定",
+      visitDatesEmpty: "先在上方选择景点，再为每个景点选日期。",
+      undecided: "日期未定",
       travellers: "人数",
       note: "还有其他要求吗？",
       optional: "选填",
@@ -462,6 +485,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       emailAddress: "回复邮箱",
       noneSelected: "请至少选择一个景点，方便规划师核实。",
       privacy: "我们如何处理你的信息",
+      summaryTitle: "你的需求",
+      summaryFee: "服务费（预估）",
+      summaryPickDate: "选择日期",
+      summaryPeople: { one: "{n} 人", other: "{n} 人" },
+      added: "已加入需求：{name}",
+      summaryAttractions: { one: "{n} 个景点", other: "{n} 个景点" },
+      summaryNote: "书面确认后才付款。Homeground 私家团行程内的景点免服务费。",
       message: {
         opening: "你好，我想请 Homeground 代预约中国景点门票。",
         service: "服务",
@@ -501,11 +531,10 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     heroFacts: [
       { label: "수수료", value: "관광지당 1인 {fee}" },
       { label: "입장료", value: "공식 가격 그대로, 추가 금액 없음" },
-      { label: "예약 보장", value: `방문 ${days}일 전까지 요청·결제` },
     ],
     guarantee: guarantee.ko,
     guaranteeLate: guaranteeLate.ko,
-    heroCta: "예약 요청 보내기",
+    heroCta: "예약 요청 작성하기",
     tableCta: "도시별 예약 규칙 보기",
     whatTitle: "하는 일",
     whatBody: [
@@ -521,7 +550,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "진행 방식",
     steps: [
-      { title: "1. 요청 보내기", body: `아래에서 관광지, 날짜, 인원을 고르고 WhatsApp, 이메일 또는 카카오톡으로 보내 주세요. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 보내 주세요. 여권 정보는 아직 보내지 마세요.` },
+      { title: "1. 요청 보내기", body: `아래에서 관광지, 날짜, 인원을 고르고 카카오톡, WhatsApp 또는 이메일로 보내 주세요. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 보내 주세요. 여권 정보는 아직 보내지 마세요.` },
       { title: "2. 서면 확인", body: "플래너가 예약 가능 기간과 잔여분을 확인하고, 예약할 내용, 수수료, 입장료, 결제 방법을 서면으로 안내합니다." },
       { title: "3. 결제 후 예약", body: "결제 후 각 여행자의 여권 정보를 받아 공식 채널에서 예약하고 예약 기록을 보내 드립니다. 당일에는 같은 여권 원본을 지참하세요." },
     ],
@@ -556,11 +585,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "환불 및 제공",
     rulesTitle: "관광지별 예약 규칙",
     rulesIntro:
-      `출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. 빈 항목은 문의 시 확인합니다. ${days}일 전 예약 보장은 저희가 예약하는 모든 관광지에 적용됩니다.`,
-    rulesCaption: "베이징·상하이·쑤저우·항저우·시안·청두·구이린·리장 관광지 예약 규칙과 가이드가 규칙별로 확인한 날짜",
+      `출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. ${days}일 전 예약 보장은 저희가 예약하는 모든 관광지에 적용됩니다.`,
     columns: {
       attraction: "관광지",
-      status: "서비스",
       channel: "공식 채널",
       passport: "여권 사용",
       release: "예약 오픈",
@@ -593,6 +620,9 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     freeWalkIn: "무료, 예약 불필요",
     sourceLabel: "출처 가이드",
     scrollHint: "표를 옆으로 밀어 모든 열을 확인하세요.",
+    reserveThis: "이 관광지 예약 요청",
+    unknownLegend: "표에서 —로 표시된 항목은 문의하실 때 여행 날짜 기준으로 확인합니다.",
+    attractionCount: { one: "관광지 {count}곳", other: "관광지 {count}곳" },
     faqTitle: "관광지 예약 대행 자주 묻는 질문",
     faqs: [
       { question: "관광지 예약 대행 비용은 얼마인가요?", answer: "관광지당 1인 {fee} 수수료와 관광지 공식 입장료입니다. 입장료에 금액을 더하지 않으며, 서면 확인 후 함께 결제합니다. Homeground 프라이빗 투어 일정의 관광지 예약은 수수료가 없습니다." },
@@ -606,14 +636,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "예약 요청",
       title: "예약할 내용을 알려 주세요",
-      intro: `WhatsApp, 이메일, 카카오톡 중 하나를 고르기 전에는 아무것도 전송되지 않습니다. 선택한 내용이 메시지에 들어가 플래너가 바로 확인합니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다.`,
-      cities: "도시",
+      intro: `카카오톡, WhatsApp, 이메일 중 하나를 고르기 전에는 아무것도 전송되지 않습니다. 선택한 내용이 메시지에 들어가 플래너가 바로 확인합니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다.`,
       attractions: "관광지",
-      attractionsHint: "규칙표에 ‘문의 시 확인’으로 표시된 관광지는 서면 확인 전에 날짜 기준으로 규칙을 확인합니다.",
+      attractionsHint: "여러 곳을 고를 수 있어요. 고른 뒤 아래에서 관광지마다 날짜를 정해 주세요.",
       visitDates: "방문일",
       visitDatesHint: "입장권은 하루 단위로 예약돼요. 관광지마다 방문할 날짜를 하나씩 골라 주세요.",
       visitDatesEmpty: "위에서 관광지를 고르면 방문일을 고를 수 있어요.",
-      undecided: "날짜는 아직 미정이에요",
+      undecided: "날짜 미정",
       travellers: "인원",
       note: "더 알려 주실 내용이 있나요?",
       optional: "선택",
@@ -625,6 +654,16 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       emailAddress: "답장 주소",
       noneSelected: "플래너가 확인할 수 있도록 관광지를 하나 이상 골라 주세요.",
       privacy: "개인정보 처리 방식",
+      summaryTitle: "요청 내용",
+      summaryFee: "예상 수수료",
+      summaryPickDate: "날짜 고르기",
+      summaryPeople: { one: "{n}명", other: "{n}명" },
+      added: "요청에 추가했습니다: {name}",
+      summaryAttractions: { one: "{n}곳", other: "{n}곳" },
+      summaryNote: "서면 확인을 받은 뒤에만 결제합니다. Homeground 프라이빗 투어 일정의 관광지는 수수료가 없습니다.",
+      kakaoAction: "카카오톡으로 보내기",
+      whatsappShort: "WhatsApp",
+      emailShort: "이메일",
       message: {
         opening: "안녕하세요. Homeground에 중국 관광지 예약 대행을 요청하고 싶습니다.",
         service: "서비스",
