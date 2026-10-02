@@ -135,7 +135,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "29 September 2026",
+      reviewedValue: "2 October 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -144,6 +144,7 @@ export const homegroundPrivacyCopy: Record<
         "When a traveller submits the form, Supabase validates and saves the trip brief, the selected email address or WhatsApp number, and any optional request for full-trip planning and ground support, route note, departure country, region or rough per-person budget. The page shows a saved state only after that save succeeds.",
         "The homepage quick-email option sends the entered email address, page language, fixed language-specific submit-surface code and the limited technical record needed for reliable submission and rate limiting. When the contact area was opened from a published private-tour page, it also sends that tour’s allowlisted slug, canonical localised name and any valid service option and group-size selection shown above the contact choices; a name supplied in the URL is never accepted. It does not collect an itinerary, traveller profile, date, destination, budget or free-text message, and it shows success only after Supabase confirms the save.",
         "The homepage WhatsApp and Messenger options are direct outbound links. Opening either link does not save the visitor’s phone number or message on Homeground’s website and is not treated as a submitted enquiry. If the visitor then sends a message, WhatsApp or Facebook and Meta process that conversation under their own terms and infrastructure.",
+        "For visitors in Korea, the United States, Singapore, Malaysia, Australia and Hong Kong, a prepared WhatsApp, email or KakaoTalk message from these pages ends with one short reference line, for example “ref: forbidden-city-for-foreign-visitors · google”. It names the page where the first visit started and the kind of site that sent the visitor (such as a search engine, an AI assistant or social media), so Homeground can learn which pages lead to enquiries. To remember this between visits, the browser keeps one local-storage entry, “homeground-first-touch.v1”, holding only that page, that source label and the date of the first visit, which is used only to delete the entry after 30 days. It is not sent with page requests and contains no personal identifier. The approximate country comes from Cloudflare, which serves this website, and is compared with the browser’s time zone on the device; neither is stored. The line is visible before sending and can be deleted. Choosing “Necessary only”, or saving Privacy choices with analytics off, deletes the entry and stops the line; clearing this site’s data in the browser also deletes it. Visitors elsewhere, visitors whose country cannot be determined and browsers that send a Global Privacy Control signal get neither the entry nor the line.",
         "If the visitor allows analytics, Homeground creates a temporary anonymous browser-session token. The event service first issues a short-lived signed credential; bare or expired event requests are rejected. A limited first-touch source is recorded only when the landing link contains Homeground-signed UTM source, medium, campaign and content codes. Unsigned, altered or unrecognised UTM values remain Unknown. The website-event record does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer.",
         "With analytics permission, Homeground records page views and fixed actions: viewing contact options, choosing a channel, opening a contact link, starting the email form, changing a published tour option, and attempting to submit an enquiry. The first-party service may also receive the published product code, service option and the group-size choice displayed on that product page. These product-choice fields are not sent to Google Analytics or Meta Pixel. A click means only that an option was opened; it does not prove that a message was sent or a booking was made. Definite submission failures and results the browser cannot confirm are recorded separately; saved enquiries are counted from server records. Temporary retries keep the same event identifier and are cleared when analytics permission is withdrawn.",
         "When the same browser later submits an enquiry, the saved first-touch labels may be attached to that enquiry so Homeground can understand which page or post led to it. The enquiry still succeeds when no session or source is available, and an unknown source is never guessed.",
@@ -431,7 +432,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 9 月 29 日",
+      reviewedValue: "2026 年 10 月 2 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -440,6 +441,7 @@ export const homegroundPrivacyCopy: Record<
         "访客提交表单时，Supabase 会验证并保存旅行需求、所选邮箱或 WhatsApp 号码，以及选填的出发国家、地区或每人大致预算。只有保存成功后，网页才会显示已保存。",
         "首页“只留邮箱”会发送所填邮箱、页面语言、固定的语言版提交页面代码，以及可靠提交和限流所需的有限技术记录；如果联系区域由已发布私家团页面打开，还会发送该产品经白名单确认的 slug、正式中文名，以及联系选项上方显示的有效服务版本和同行人数，网址里自行填写的产品名称不会被接受。该入口不会收集路线、同行者资料、日期、目的地、预算或自由文本。只有 Supabase 确认保存后，页面才会显示成功。",
         "首页 WhatsApp 与 Messenger 是直接跳转到外部服务的链接。打开链接不会在 Homeground 网站保存访客电话号码或消息，也不会被记作已提交咨询；访客随后主动发送消息时，该对话由 WhatsApp 或 Facebook 与 Meta 依据其自身条款和基础设施处理。",
+        "对来自韩国、美国、新加坡、马来西亚、澳大利亚和香港的访客，从这些页面准备好的 WhatsApp、邮件或 KakaoTalk 消息末尾会多一行简短的来源说明，例如“ref: forbidden-city-for-foreign-visitors · google”。它写明首次访问从哪个页面开始、是哪一类网站把访客带来（例如搜索引擎、AI 助手或社交媒体），以便 Homeground 了解哪些页面带来咨询。为了在多次访问之间记住这些信息，浏览器会保留一项本地存储“homeground-first-touch.v1”，只包含该页面、来源类别和首次访问日期（日期只用于在 30 天后删除这项存储）；它不会随网页请求发送，也不含任何个人识别信息。大致所在国家来自为本网站提供网络服务的 Cloudflare，并在设备上与浏览器时区比对，两者都不会被保存。发送前可以看到并删除这一行。选择“仅使用必要功能”，或在隐私选择中关闭分析统计并保存，会删除这项存储并停止附加这一行；在浏览器中清除本网站数据也会将其删除。其他地区的访客、无法判断所在国家的访客，以及发出“全球隐私控制”（GPC）信号的浏览器，既不会保存这项存储，也不会附加这一行。",
         "访客允许分析统计后，Homeground 会创建临时匿名浏览器会话令牌；事件服务会先签发短时有效的签名凭据，没有凭据或凭据过期的事件请求会被拒绝。只有进入链接带有 Homeground 签名的 UTM 来源、媒介、活动和内容代码时，才会记录有限的首次来源；未签名、被修改或无法识别的 UTM 一律保留为“未知”。网站事件记录不保存完整来源网址、原始 IP、User-Agent、广告点击标识、联系方式或旅行自由文本。",
         "获得分析许可后，Homeground 可记录页面浏览及固定动作：看到联系选项、选择联系方式、打开联系链接、开始填写邮箱、主动更改公开产品选项，以及尝试提交咨询。第一方事件服务还可接收公开产品编号、服务版本和产品页面显示的同行人数选项；这些产品选择字段不会发送给 Google Analytics 或 Meta Pixel。点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订。明确提交失败和浏览器无法确认的提交结果分别记录；已保存咨询以服务器记录为准。临时重试使用同一事件编号，撤回分析许可后会清空待发送记录。",
         "同一浏览器随后提交咨询时，已保存的首次来源标签可附在该咨询上，以判断哪一页或哪条外部内容带来咨询。没有会话或来源时，咨询仍会正常保存；未知来源不会被猜测或分摊。",
@@ -713,7 +715,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 9월 29일",
+      reviewedValue: "2026년 10월 2일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -722,6 +724,7 @@ export const homegroundPrivacyCopy: Record<
         "여행자가 양식을 제출하면 Supabase가 여행 요청서, 선택한 이메일 주소 또는 WhatsApp 번호와 선택 입력한 출발 국가, 지역 또는 1인당 대략적인 예산을 검증하고 저장합니다. 저장에 성공한 뒤에만 화면에 저장 완료가 표시됩니다.",
         "홈페이지의 간단 이메일 옵션은 입력한 이메일 주소, 페이지 언어, 고정된 언어별 제출 화면 번호와 안정적인 제출 및 속도 제한에 필요한 최소한의 기술 기록을 전송합니다. 연락 영역이 공개된 프라이빗 투어 페이지에서 열렸다면 허용 목록으로 확인한 상품 slug, 공식 한국어 이름, 연락 옵션 위에 표시된 유효한 서비스 유형과 인원 선택도 전송하며, URL에서 임의로 제공한 상품 이름은 받지 않습니다. 동선, 여행자 정보, 날짜, 목적지, 예산 또는 자유 입력 문구는 수집하지 않으며 Supabase가 저장을 확인한 뒤에만 성공을 표시합니다.",
         "홈페이지의 WhatsApp 및 Messenger 옵션은 외부 서비스로 바로 이동하는 링크입니다. 링크를 여는 것만으로는 Homeground 웹사이트가 방문자의 전화번호나 메시지를 저장하지 않으며 제출된 문의로 처리하지 않습니다. 이후 방문자가 메시지를 보내면 WhatsApp 또는 Facebook과 Meta가 자체 약관과 인프라에 따라 대화를 처리합니다.",
+        "한국, 미국, 싱가포르, 말레이시아, 호주, 홍콩에서 방문한 경우, 이 페이지들에서 준비되는 WhatsApp·이메일·KakaoTalk 메시지 끝에 짧은 출처 한 줄이 붙습니다. 예: “ref: forbidden-city-for-foreign-visitors · google”. 첫 방문이 시작된 페이지와 방문자를 보낸 사이트의 종류(검색엔진, AI 어시스턴트, 소셜 미디어 등)를 적어 Homeground가 어떤 페이지가 문의로 이어지는지 알 수 있게 합니다. 방문 사이에 이를 기억하기 위해 브라우저에 로컬 저장 항목 “homeground-first-touch.v1” 하나를 30일간 둡니다(자동 수집 장치의 설치·운영). 이 항목에는 해당 페이지, 유입 경로 종류, 첫 방문 날짜(30일 후 삭제하는 데에만 사용)만 담기며 페이지 요청과 함께 전송되지 않고 개인 식별 정보도 없습니다. 대략적인 국가는 이 웹사이트를 제공하는 Cloudflare에서 받아 기기 안에서 브라우저 시간대와 비교하며, 두 정보 모두 저장하지 않습니다. 보내기 전에 이 줄을 확인하고 지울 수 있습니다. 거부 방법: ‘필수 기능만’을 누르거나 개인정보 선택에서 분석을 끄고 저장하면 항목이 삭제되고 줄도 더 이상 붙지 않으며, 브라우저에서 이 사이트의 데이터를 지워도 삭제됩니다. 그 밖의 지역, 국가를 판단할 수 없는 경우, ‘글로벌 개인정보 보호 제어’(GPC) 신호를 보내는 브라우저에는 항목도 저장하지 않고 줄도 붙이지 않습니다.",
         "방문자가 분석을 허용하면 Homeground는 임시 익명 브라우저 세션 토큰을 만듭니다. 이벤트 서비스는 먼저 짧은 유효기간의 서명된 자격 증명을 발급하며 자격 증명이 없거나 만료된 이벤트 요청은 거부합니다. 첫 유입 링크에 Homeground가 서명한 UTM 소스·매체·캠페인·콘텐츠 코드가 있을 때만 제한된 유입 정보를 기록하고, 서명이 없거나 변경되었거나 인식되지 않는 UTM 값은 ‘알 수 없음’으로 둡니다. 웹사이트 이벤트에는 전체 리퍼러 URL, 원본 IP, User-Agent, 광고 클릭 식별자, 연락처 또는 자유 입력 여행 답변을 저장하지 않습니다.",
         "분석을 허용하면 페이지 조회와 연락 옵션 보기, 연락 수단 선택, 연락 링크 열기, 이메일 입력 시작, 공개 상품 옵션 변경, 문의 제출 시도 등 정해진 동작을 기록할 수 있습니다. 자체 이벤트 서비스에는 공개 상품 코드, 서비스 유형, 상품 페이지에서 선택한 인원도 전송할 수 있으며, 이 상품 선택 항목은 Google Analytics나 Meta Pixel로 보내지 않습니다. 클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않습니다. 명확한 제출 실패와 브라우저가 결과를 확인하지 못한 경우는 구분하며, 저장된 문의는 서버 기록을 기준으로 집계합니다. 임시 재시도는 같은 이벤트 식별자를 사용하고 분석 동의를 철회하면 전송 대기 기록을 지웁니다.",
         "같은 브라우저에서 나중에 문의를 제출하면 저장된 첫 유입 표지를 문의에 연결해 어떤 페이지나 외부 게시물이 문의로 이어졌는지 확인할 수 있습니다. 세션이나 유입 정보가 없어도 문의는 정상 저장되며 알 수 없는 유입은 추정하거나 배분하지 않습니다.",

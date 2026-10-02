@@ -35,6 +35,9 @@ import {
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 
 import { analyticsRuntimeIsAllowed, subscribeAnalyticsRuntime } from "../lib/analyticsRuntime";
+import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { homegroundWhatsAppNumber } from "../lib/tourContact";
+import { startVisitRef } from "../lib/visitRef";
 
 const googleScriptId = "homeground-ga4-script";
 const metaScriptId = "homeground-meta-pixel-script";
@@ -67,6 +70,15 @@ export function SiteAnalytics({
   );
   const [runtimeAllowed, setRuntimeAllowed] = useState(false);
   const pageViewsRef = useRef(createAnalyticsPageViewState());
+
+  // Ref line on prepared contact messages (notice regions only; see
+  // lib/visitRef.ts). Independent of analytics consent: it stores nothing.
+  useEffect(() => {
+    startVisitRef({
+      whatsappNumber: homegroundWhatsAppNumber(),
+      email: homegroundBusiness.serviceEmail,
+    });
+  }, []);
 
   useEffect(() => {
     const refresh = () => {

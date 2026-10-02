@@ -26,7 +26,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   en: {
     bannerTitle: "Your privacy choices",
     bannerBody:
-      "Necessary storage keeps the planner working. You can also allow analytics and Meta marketing measurement.",
+      "Necessary storage keeps the planner working. In some regions we also remember your first page and referral source for 30 days; “Necessary only” turns this off. You can also allow analytics and Meta marketing measurement.",
     acceptAll: "Allow all",
     necessaryOnly: "Necessary only",
     manage: "Manage choices",
@@ -41,7 +41,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     alwaysOn: "Always on",
     analyticsTitle: "Analytics",
     analyticsBody:
-      "Measures anonymous page and button activity with Google Analytics and Homeground’s first-party event service. Published product, service and group-size choices are recorded only by Homeground’s service, not Google Analytics or Meta.",
+      "Measures anonymous page and button activity with Google Analytics and Homeground’s first-party event service. Published product, service and group-size choices are recorded only by Homeground’s service, not Google Analytics or Meta. In some regions it also covers the 30-day first-visit source shown in prepared messages; saving with analytics off deletes it.",
     marketingTitle: "Marketing measurement",
     marketingBody:
       "Allows Meta Pixel to measure visits and confirmed enquiries from Facebook or Instagram campaigns.",
@@ -53,7 +53,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   zh: {
     bannerTitle: "你的隐私选择",
     bannerBody:
-      "必要存储用于维持旅行规划功能。你也可以允许分析统计和 Meta 营销衡量。",
+      "必要存储用于维持旅行规划功能。部分地区会记住你首次进入的页面和来源 30 天，选“仅使用必要功能”即可关闭。你也可以允许分析统计和 Meta 营销衡量。",
     acceptAll: "全部允许",
     necessaryOnly: "仅使用必要功能",
     manage: "管理选择",
@@ -67,7 +67,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     alwaysOn: "始终启用",
     analyticsTitle: "分析统计",
     analyticsBody:
-      "通过 Google Analytics 和 Homeground 第一方事件服务统计匿名页面与按钮活动。公开产品、服务版本和人数选项只进入 Homeground 第一方服务，不发送给 Google Analytics 或 Meta。",
+      "通过 Google Analytics 和 Homeground 第一方事件服务统计匿名页面与按钮活动。公开产品、服务版本和人数选项只进入 Homeground 第一方服务，不发送给 Google Analytics 或 Meta。在部分地区，这一项也包括预填消息里使用的 30 天首次来源；关闭分析统计并保存即会删除。",
     marketingTitle: "营销衡量",
     marketingBody:
       "允许 Meta Pixel 衡量来自 Facebook 或 Instagram 活动的访问与已确认咨询。",
@@ -79,7 +79,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   ko: {
     bannerTitle: "개인정보 선택",
     bannerBody:
-      "필수 저장 기능은 여행 플래너를 작동하게 합니다. 분석과 Meta 마케팅 측정도 허용할 수 있습니다.",
+      "필수 저장 기능은 여행 플래너를 작동하게 합니다. 일부 지역에서는 처음 방문한 페이지와 유입 경로를 30일간 기억하며, ‘필수 기능만’을 누르면 꺼집니다. 분석과 Meta 마케팅 측정도 허용할 수 있습니다.",
     acceptAll: "모두 허용",
     necessaryOnly: "필수 기능만",
     manage: "선택 관리",
@@ -94,7 +94,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     alwaysOn: "항상 사용",
     analyticsTitle: "분석",
     analyticsBody:
-      "Google Analytics와 Homeground의 자체 이벤트 서비스로 익명 페이지 및 버튼 활동을 측정합니다. 공개 상품, 서비스 유형, 인원 선택은 Homeground 자체 서비스에만 기록하며 Google Analytics나 Meta로 보내지 않습니다.",
+      "Google Analytics와 Homeground의 자체 이벤트 서비스로 익명 페이지 및 버튼 활동을 측정합니다. 공개 상품, 서비스 유형, 인원 선택은 Homeground 자체 서비스에만 기록하며 Google Analytics나 Meta로 보내지 않습니다. 일부 지역에서는 미리 작성된 메시지에 쓰이는 30일 첫 방문 경로도 포함하며, 분석을 끄고 저장하면 삭제됩니다.",
     marketingTitle: "마케팅 측정",
     marketingBody:
       "Meta Pixel이 Facebook 또는 Instagram 캠페인에서 발생한 방문과 확인된 문의를 측정하도록 허용합니다.",

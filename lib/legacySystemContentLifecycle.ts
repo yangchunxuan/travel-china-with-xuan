@@ -47,6 +47,13 @@ export const EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT =
  * The attraction reservation release is recorded against the commit it was
  * built on until the merge commit is known; replace it at merge time.
  */
+/**
+ * The visit reference line release is recorded against the commit it was
+ * built on until the merge commit is known; replace it at merge time.
+ */
+const VISIT_REF_RELEASE_COMMIT =
+  "dcf57dfb8fcd987e7d4ff7faa6badcf4eb22bc56";
+
 const ATTRACTION_RESERVATION_RELEASE_COMMIT =
   "b2bc7803c880dbc7540ab60af15db27082bce2e0";
 
@@ -140,13 +147,13 @@ export const legacySystemContentLifecycle = {
   },
   privacy: {
     datePublished: "2026-07-24",
-    dateModified: "2026-09-29",
+    dateModified: "2026-10-02",
     lastReviewed: "2026-08-24",
     evidence: {
-      commit: ATTRACTION_RESERVATION_RELEASE_COMMIT,
-      changedAt: "2026-09-29",
+      commit: VISIT_REF_RELEASE_COMMIT,
+      changedAt: "2026-10-02",
       summary:
-        "The privacy notice now explains how passport details for an accepted attraction reservation are requested, used, shared with the booking channel and deleted; the separate full-review date remains unchanged.",
+        "The privacy notice now explains the short reference line added to prepared WhatsApp, email and KakaoTalk messages for visitors in Korea, the United States, Singapore, Malaysia, Australia and Hong Kong, the 30-day first-visit local-storage entry behind it and how refusing analytics deletes it; the separate full-review date remains unchanged.",
     },
   },
   "business-information": {
