@@ -61,16 +61,19 @@ test("sources are grouped into a few labels and never echo an unknown host", () 
 });
 
 test("page tags are short paths, and invalid paths give no line", () => {
-  assert.equal(ref.visitPageTag("/zh/guides/forbidden-city-for-foreign-visitors/"), "zh/guides/forbidden-city-for-foreign-visitors");
+  assert.equal(ref.visitPageTag("/zh/guides/forbidden-city-for-foreign-visitors/"), "forbidden-city-for-foreign-visitors");
+  assert.equal(ref.visitPageTag("/tours/beijing-highlights-5-day-private-tour/"), "beijing-highlights-5-day-private-tour");
   assert.equal(ref.visitPageTag("/"), "home");
+  assert.equal(ref.visitPageTag("/zh/"), "home");
+  assert.equal(ref.visitPageTag("/ko/"), "home");
   assert.equal(ref.visitPageTag("/guides/<script>/"), null);
   assert.equal(ref.visitPageTag(null), null);
-  assert.equal(ref.visitRefLine("guides/x", "google"), "Ref: guides/x · google");
+  assert.equal(ref.visitRefLine("x", "google"), "ref: x · google");
   assert.equal(ref.visitRefLine(null, "google"), null);
 });
 
 test("only Homeground's own WhatsApp and email links are rewritten, once", () => {
-  const line = "Ref: zh/guides/forbidden-city-for-foreign-visitors · google";
+  const line = "ref: forbidden-city-for-foreign-visitors · google";
   const text = "你好，我想请 Homeground 代预约中国景点门票。\n服务: 景点代预约";
   const wa = `https://wa.me/8613174215999?text=${encodeURIComponent(text)}`;
   const rewritten = ref.appendVisitRefToContactHref(wa, line, targets);
@@ -114,9 +117,9 @@ test("the line is started site-wide, added to KakaoTalk text, and disclosed in e
   assert.match(module, /document\.addEventListener\("click", rewriteClickedContactLink, true\)/u);
 
   const expected = {
-    en: /Korea, the United States, Singapore, Malaysia, Australia and Hong Kong[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30 days[\s\S]*Necessary only[\s\S]*Global Privacy Control/u,
-    zh: /韩国、美国、新加坡、马来西亚、澳大利亚和香港[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30 天[\s\S]*仅使用必要功能[\s\S]*全球隐私控制/u,
-    ko: /한국, 미국, 싱가포르, 말레이시아, 호주, 홍콩[\s\S]*Ref: guides\/forbidden-city-for-foreign-visitors · google · 3d[\s\S]*homeground-first-touch\.v1[\s\S]*30일간[\s\S]*필수 기능만[\s\S]*글로벌 개인정보 보호 제어/u,
+    en: /Korea, the United States, Singapore, Malaysia, Australia and Hong Kong[\s\S]*ref: forbidden-city-for-foreign-visitors · google[\s\S]*homeground-first-touch\.v1[\s\S]*30 days[\s\S]*Necessary only[\s\S]*Global Privacy Control/u,
+    zh: /韩国、美国、新加坡、马来西亚、澳大利亚和香港[\s\S]*ref: forbidden-city-for-foreign-visitors · google[\s\S]*homeground-first-touch\.v1[\s\S]*30 天[\s\S]*仅使用必要功能[\s\S]*全球隐私控制/u,
+    ko: /한국, 미국, 싱가포르, 말레이시아, 호주, 홍콩[\s\S]*ref: forbidden-city-for-foreign-visitors · google[\s\S]*homeground-first-touch\.v1[\s\S]*30일간[\s\S]*필수 기능만[\s\S]*글로벌 개인정보 보호 제어/u,
   };
   const privacyCopy = await source("lib/homegroundPrivacyI18n.ts");
   for (const locale of ["en", "zh", "ko"]) assert.match(privacyCopy, expected[locale], locale);
@@ -126,17 +129,19 @@ test("the line is started site-wide, added to KakaoTalk text, and disclosed in e
   assert.match(banner, /처음 방문한 페이지와 유입 경로를 30일간 기억하며, ‘필수 기능만’을 누르면 꺼집니다/u);
 });
 
-test("the first visit is remembered for 30 days and shown with its age", () => {
+test("the first visit is remembered for 30 days; the line shows page and source only", () => {
   const now = new Date("2026-10-05T10:00:00Z");
-  const touch = ref.newFirstTouch("zh/guides/forbidden-city-for-foreign-visitors", "google", new Date("2026-10-02T23:00:00Z"));
-  assert.deepEqual(touch, { v: 1, page: "zh/guides/forbidden-city-for-foreign-visitors", source: "google", firstSeen: "2026-10-02" });
-  assert.equal(ref.visitRefLineFromFirstTouch(touch, now), "Ref: zh/guides/forbidden-city-for-foreign-visitors · google · 3d");
-  assert.equal(ref.visitRefLineFromFirstTouch(touch, new Date("2026-10-02T23:30:00Z")), "Ref: zh/guides/forbidden-city-for-foreign-visitors · google", "same day: no age");
+  const touch = ref.newFirstTouch("forbidden-city-for-foreign-visitors", "google", new Date("2026-10-02T23:00:00Z"));
+  assert.deepEqual(touch, { v: 1, page: "forbidden-city-for-foreign-visitors", source: "google", firstSeen: "2026-10-02" });
+  assert.equal(ref.visitRefLineFromFirstTouch(touch), "ref: forbidden-city-for-foreign-visitors · google");
   assert.deepEqual(ref.parseFirstTouch(JSON.stringify(touch), now), touch);
   assert.equal(ref.parseFirstTouch(JSON.stringify(touch), new Date("2026-11-01T00:00:00Z")), null, "older than 30 days expires");
   assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, page: "<script>" }), now), null);
+  assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, page: "zh/guides/x" }), now), null, "only a bare slug is accepted");
   assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, source: "Some Host.com" }), now), null);
   assert.equal(ref.parseFirstTouch(JSON.stringify({ ...touch, firstSeen: "2026-10-09" }), now), null, "a future date is rejected");
   assert.equal(ref.parseFirstTouch("not json", now), null);
-  assert.deepEqual(ref.parseFirstTouch(JSON.stringify({ v: 1, page: "home", source: "direct", firstSeen: "2026-10-04" }), now)?.page, "home");
+  assert.equal(ref.parseFirstTouch(JSON.stringify({ v: 1, page: "home", source: "direct", firstSeen: "2026-10-04" }), now)?.page, "home");
+  // Older "Ref:" lines are recognised too, so a second click never adds another.
+  assert.equal(ref.appendVisitRef("Hi\n\nRef: x · google", "ref: y · naver"), "Hi\n\nRef: x · google");
 });

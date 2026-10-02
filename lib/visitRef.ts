@@ -2,8 +2,10 @@
  * Visit reference line ("Ref") for prepared contact messages.
  *
  * When a traveller opens one of Homeground's WhatsApp or email links, or
- * copies the prepared KakaoTalk text, the message can end with one short line
- * such as "Ref: guides/forbidden-city-for-foreign-visitors · google". It names
+ * copies the prepared KakaoTalk text, the message can end with one short,
+ * low-key line such as "ref: forbidden-city-for-foreign-visitors · google",
+ * the format chat CRMs (respond.io, SleekFlow, Kommo) use and SaleSmartly can
+ * auto-tag by keyword. It names
  * the page where the visit started and the kind of site that sent the
  * traveller, so a deal closed in a chat can be traced back to its page and
  * channel. The traveller sees the line before sending and can delete it.
@@ -20,8 +22,8 @@
  * - Global Privacy Control and automated browsers get no line.
  * - In notice regions the first visit's page, source label and date are kept
  *   for 30 days in one local-storage entry (`firstTouchStorageKey`), so a
- *   traveller who returns days later still shows where they first came from,
- *   e.g. "Ref: guides/forbidden-city-for-foreign-visitors · google · 3d". It is
+ *   traveller who returns days later still shows where they first came from.
+ *   The date is kept only to expire the entry; the line does not show it. It is
  *   not sent with requests and holds no identifier: everyone who arrived on the
  *   same page from the same kind of site on the same day has the same entry.
  * - Refusing analytics ("Necessary only", or analytics off in Privacy
@@ -136,16 +138,23 @@ export function visitSourceLabel({
 
 const pathPattern = /^\/[A-Za-z0-9/_-]{0,160}$/;
 
-/** "guides/forbidden-city-for-foreign-visitors" (en) or "zh/guides/…"; "/" → "home". */
+const localeSegments = new Set(["zh", "ko", "ja"]);
+
+/**
+ * The page's own slug, e.g. "forbidden-city-for-foreign-visitors"; a homepage
+ * ("/", "/zh/", "/ko/") is "home". The message language already shows the
+ * locale, so it is left out.
+ */
 export function visitPageTag(path: string | null): string | null {
   if (!path || !pathPattern.test(path)) return null;
-  const trimmed = path.replace(/^\/+|\/+$/g, "");
-  return trimmed || "home";
+  const segments = path.split("/").filter(Boolean);
+  const last = segments[segments.length - 1];
+  if (!last || (segments.length === 1 && localeSegments.has(last))) return "home";
+  return /^[a-z0-9-]{1,80}$/.test(last) ? last : null;
 }
 
-export function visitRefLine(pageTag: string | null, source: string, daysAgo = 0): string | null {
-  if (!pageTag) return null;
-  return `Ref: ${pageTag} · ${source}${daysAgo >= 1 ? ` · ${daysAgo}d` : ""}`;
+export function visitRefLine(pageTag: string | null, source: string): string | null {
+  return pageTag ? `ref: ${pageTag} · ${source}` : null;
 }
 
 export const firstTouchLifetimeDays = 30;
@@ -175,7 +184,7 @@ export function parseFirstTouch(raw: string | null, now: Date): FirstTouch | nul
   try {
     const value = JSON.parse(raw) as Partial<FirstTouch>;
     if (value.v !== 1 || typeof value.page !== "string" || typeof value.source !== "string" || typeof value.firstSeen !== "string") return null;
-    if (!visitPageTag(`/${value.page === "home" ? "" : `${value.page}/`}`) || !sourcePattern.test(value.source) || !isoDay.test(value.firstSeen)) return null;
+    if (!/^[a-z0-9-]{1,80}$/.test(value.page) || !sourcePattern.test(value.source) || !isoDay.test(value.firstSeen)) return null;
     const age = daysBetween(value.firstSeen, now);
     if (!Number.isFinite(age) || age < 0 || age >= firstTouchLifetimeDays) return null;
     return { v: 1, page: value.page, source: value.source, firstSeen: value.firstSeen };
@@ -188,11 +197,11 @@ export function newFirstTouch(page: string, source: string, now: Date): FirstTou
   return { v: 1, page, source, firstSeen: utcDay(now) };
 }
 
-export function visitRefLineFromFirstTouch(touch: FirstTouch, now: Date) {
-  return visitRefLine(touch.page, touch.source, daysBetween(touch.firstSeen, now));
+export function visitRefLineFromFirstTouch(touch: FirstTouch) {
+  return visitRefLine(touch.page, touch.source);
 }
 
-const refMarker = /\n\nRef: [^\n]*$/;
+const refMarker = /\n\nref: [^\n]*$/i;
 
 /** Append the line once; a second call (another click) leaves the text as it is. */
 export function appendVisitRef(text: string, line: string | null): string {
@@ -323,7 +332,7 @@ function buildLine(): string | null {
   } catch {
     stored = null;
   }
-  if (stored) return visitRefLineFromFirstTouch(stored, now);
+  if (stored) return visitRefLineFromFirstTouch(stored);
   const touch = currentTouch();
   if (!touch.page) return null;
   const created = newFirstTouch(touch.page, touch.source, now);
@@ -332,7 +341,7 @@ function buildLine(): string | null {
   } catch {
     // Blocked storage: the line still works for this page.
   }
-  return visitRefLineFromFirstTouch(created, now);
+  return visitRefLineFromFirstTouch(created);
 }
 
 /** The line for this visit, or null (strict region, unknown, refused, or not ready). */
