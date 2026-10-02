@@ -211,14 +211,16 @@ export function appendVisitRef(text: string, line: string | null): string {
 
 /**
  * Rewrite a WhatsApp (wa.me/<number>?text=) or mailto (<email>?…&body=) link
- * so its prepared text ends with the line. Other links are returned unchanged.
+ * so its prepared text ends with the line. With no line, a line added earlier
+ * is removed, so a link clicked before the visitor refused analytics comes
+ * back clean. Other links are returned unchanged.
  */
 export function appendVisitRefToContactHref(
   href: string,
   line: string | null,
   { whatsappNumber, email }: { whatsappNumber: string; email: string },
 ): string {
-  if (!line) return href;
+  const apply = (text: string) => (line ? appendVisitRef(text, line) : text.replace(refMarker, ""));
   const whatsapp = /^https:\/\/wa\.me\/(\d{7,15})\?text=([^&#]*)$/.exec(href);
   if (whatsapp && whatsapp[1] === whatsappNumber) {
     let text: string;
@@ -227,7 +229,8 @@ export function appendVisitRefToContactHref(
     } catch {
       return href;
     }
-    return `https://wa.me/${whatsapp[1]}?text=${encodeURIComponent(appendVisitRef(text, line))}`;
+    const next = apply(text);
+    return next === text ? href : `https://wa.me/${whatsapp[1]}?text=${encodeURIComponent(next)}`;
   }
   const mail = /^mailto:([^?]+)\?(.*)$/i.exec(href);
   if (mail && mail[1].toLowerCase() === email.toLowerCase()) {
@@ -240,7 +243,9 @@ export function appendVisitRefToContactHref(
     } catch {
       return href;
     }
-    parts[index] = `body=${encodeURIComponent(appendVisitRef(body, line))}`;
+    const next = apply(body);
+    if (next === body) return href;
+    parts[index] = `body=${encodeURIComponent(next)}`;
     return `mailto:${mail[1]}?${parts.join("&")}`;
   }
   return href;
@@ -349,16 +354,17 @@ export function currentVisitRefLine(): string | null {
   return state.region === "notice" && !analyticsRefused() ? state.line : null;
 }
 
+function rewriteContactLink(anchor: HTMLAnchorElement) {
+  const href = anchor.getAttribute("href") ?? "";
+  const next = appendVisitRefToContactHref(href, currentVisitRefLine(), contactTargets());
+  if (next !== href) anchor.setAttribute("href", next);
+}
+
 function rewriteClickedContactLink(event: MouseEvent) {
-  const line = currentVisitRefLine();
-  if (!line) return;
   const target = event.target;
   if (!(target instanceof Element)) return;
   const anchor = target.closest("a[href]");
-  if (!(anchor instanceof HTMLAnchorElement)) return;
-  const href = anchor.getAttribute("href") ?? "";
-  const next = appendVisitRefToContactHref(href, line, contactTargets());
-  if (next !== href) anchor.setAttribute("href", next);
+  if (anchor instanceof HTMLAnchorElement) rewriteContactLink(anchor);
 }
 
 let contactTargetsValue: { whatsappNumber: string; email: string } = { whatsappNumber: "", email: "" };
@@ -396,6 +402,10 @@ export function startVisitRef(targets: { whatsappNumber: string; email: string }
     if (preferences?.analytics === false) {
       clearFirstTouch();
       state.line = null;
+      // Links clicked before the refusal already carry the line.
+      document
+        .querySelectorAll<HTMLAnchorElement>('a[href^="https://wa.me/"], a[href^="mailto:"]')
+        .forEach(rewriteContactLink);
     } else if (state.region === "notice" && !state.line) {
       state.line = buildLine();
     }
