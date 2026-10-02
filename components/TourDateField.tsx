@@ -8,9 +8,11 @@ import { dateFromIso, dateToIso, formatTourDate, parseTourDate, tourDateCopy } f
 import styles from "./TourDateField.module.css";
 
 /** A visible, editable field; neither its text nor its calendar uses the OS locale. */
-export function TourDateField({ id, label, locale, value, onChange, disabled, active }: {
+export function TourDateField({ id, label, locale, value, onChange, disabled, active, required = true }: {
   id: string; label: string; locale: HomegroundLocale; value: string;
   onChange: (iso: string) => void; disabled: boolean; active: boolean;
+  /** Optional dates (a trip brief) accept an empty field without an error; tour pages keep the default. */
+  required?: boolean;
 }) {
   const copy = tourDateCopy[locale];
   const [raw, setRaw] = useState(() => formatTourDate(value, locale));
@@ -24,6 +26,8 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
   const lastEmitted = useRef(value);
   const lastLocale = useRef(locale);
   const iso = parseTourDate(raw, locale);
+  // An optional field is only invalid when something unreadable was typed.
+  const invalid = !iso && (required || raw.trim() !== "");
 
   useEffect(() => {
     if (!calendarOpen || Calendar || disabled || !active) return;
@@ -50,8 +54,8 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
   }, [value, locale]);
 
   useEffect(() => {
-    inputRef.current?.setCustomValidity(iso ? "" : copy.invalid);
-  }, [iso, copy.invalid]);
+    inputRef.current?.setCustomValidity(invalid ? copy.invalid : "");
+  }, [invalid, copy.invalid]);
 
   useEffect(() => {
     const dialog = calendarRef.current;
@@ -88,12 +92,12 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
     <label htmlFor={id} className={styles.label}>{label}</label>
     <div className={styles.row}>
       <input ref={inputRef} id={id} type="text" inputMode="numeric" autoComplete="off"
-        required disabled={disabled} value={raw} maxLength={24} placeholder={copy.placeholder}
-        aria-describedby={`${id}-hint${touched && !iso ? ` ${id}-error` : ""}`}
-        aria-invalid={touched && !iso ? true : undefined}
+        required={required} disabled={disabled} value={raw} maxLength={24} placeholder={copy.placeholder}
+        aria-describedby={`${id}-hint${touched && invalid ? ` ${id}-error` : ""}`}
+        aria-invalid={touched && invalid ? true : undefined}
         onChange={event => {
           const next = parseTourDate(event.target.value, locale);
-          event.target.setCustomValidity(next ? "" : copy.invalid);
+          event.target.setCustomValidity(next || (!required && event.target.value.trim() === "") ? "" : copy.invalid);
           setRaw(event.target.value);
           lastEmitted.current = next;
           onChange(next);
@@ -108,7 +112,7 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
       </button>
     </div>
     <p id={`${id}-hint`} className={styles.hint}>{copy.formatHint}</p>
-    {touched && !iso ? <p id={`${id}-error`} className={styles.error} role="alert">{copy.invalid}</p> : null}
+    {touched && invalid ? <p id={`${id}-error`} className={styles.error} role="alert">{copy.invalid}</p> : null}
     <dialog ref={calendarRef} id={`${id}-calendar`} className={styles.calendar} aria-labelledby={`${id}-calendar-title`}
       onCancel={event => { event.preventDefault(); event.stopPropagation(); closeCalendar(); }}
       onClick={event => { if (event.target === event.currentTarget) closeCalendar(); }}>

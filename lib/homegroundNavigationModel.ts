@@ -3,9 +3,21 @@ import type { HomegroundLocale } from "./homegroundI18n";
 export type HomegroundPrimaryNavigationId =
   | "destinations"
   | "tours"
-  | "reservations"
+  | "services"
   | "guides"
   | "studio";
+
+/**
+ * The services menu (x.ai's "Products" pattern): one primary item, with every
+ * standalone service listed beneath it. The item's own link opens Full Trip
+ * Planning & Ground Support, whose "Which service fits?" section also routes
+ * to tours and the single services, so a separate overview page is not in
+ * the way. New services join this list instead of taking another header slot.
+ */
+export type HomegroundServiceNavigationId =
+  | "attraction-tickets"
+  | "english-guides"
+  | "trip-support";
 
 interface HomegroundPrimaryNavigationItemCopy {
   label: string;
@@ -19,6 +31,9 @@ interface HomegroundNavigationModelCopy {
     HomegroundPrimaryNavigationId,
     HomegroundPrimaryNavigationItemCopy
   >;
+  services: Record<HomegroundServiceNavigationId, HomegroundPrimaryNavigationItemCopy>;
+  /** The accessible name of the button that opens the services menu. */
+  servicesToggle: string;
 }
 
 export interface HomegroundPrimaryNavigationItem
@@ -27,13 +42,25 @@ export interface HomegroundPrimaryNavigationItem
   id: HomegroundPrimaryNavigationId;
 }
 
+export interface HomegroundServiceNavigationItem
+  extends HomegroundPrimaryNavigationItemCopy {
+  href: string;
+  id: HomegroundServiceNavigationId;
+}
+
 export const homegroundPrimaryNavigationIds = [
   "destinations",
   "tours",
-  "reservations",
+  "services",
   "guides",
   "studio",
 ] as const satisfies readonly HomegroundPrimaryNavigationId[];
+
+export const homegroundServiceNavigationIds = [
+  "attraction-tickets",
+  "english-guides",
+  "trip-support",
+] as const satisfies readonly HomegroundServiceNavigationId[];
 
 const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = {
   en: {
@@ -49,10 +76,10 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "Compare published private itineraries",
         pathSegment: "tours/",
       },
-      reservations: {
-        label: "Attraction Tickets",
-        description: "We book timed attraction tickets in your own name",
-        pathSegment: "services/china-attraction-reservations/",
+      services: {
+        label: "Services",
+        description: "Attraction tickets, English-speaking guides and full-trip support",
+        pathSegment: "services/full-trip-support/",
       },
       guides: {
         label: "Travel Advice",
@@ -65,6 +92,24 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "studio/",
       },
     },
+    services: {
+      "attraction-tickets": {
+        label: "Attraction Tickets",
+        description: "Timed entry, booked in your passport name",
+        pathSegment: "services/china-attraction-reservations/",
+      },
+      "english-guides": {
+        label: "Private English-speaking Guides",
+        description: "One guide by the day, in four cities",
+        pathSegment: "services/private-english-speaking-guides/",
+      },
+      "trip-support": {
+        label: "Full Trip Planning & Ground Support",
+        description: "Hotels, transfers and help on the ground",
+        pathSegment: "services/full-trip-support/",
+      },
+    },
+    servicesToggle: "Services menu",
   },
   zh: {
     mobileCta: "规划",
@@ -79,10 +124,10 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "比较已经上线的私家路线",
         pathSegment: "tours/",
       },
-      reservations: {
-        label: "景点代预约",
-        description: "以你本人护照实名代约景点",
-        pathSegment: "services/china-attraction-reservations/",
+      services: {
+        label: "服务",
+        description: "景点代预约、英文导游与全程规划支持",
+        pathSegment: "services/full-trip-support/",
       },
       guides: {
         label: "实用指南",
@@ -95,6 +140,24 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "studio/",
       },
     },
+    services: {
+      "attraction-tickets": {
+        label: "景点代预约",
+        description: "官方渠道，用你本人护照实名预约",
+        pathSegment: "services/china-attraction-reservations/",
+      },
+      "english-guides": {
+        label: "私人英文导游",
+        description: "上海、北京、西安、张家界，按天预订",
+        pathSegment: "services/private-english-speaking-guides/",
+      },
+      "trip-support": {
+        label: "全程规划与落地支持",
+        description: "酒店、接送与现场安排一起交给我们",
+        pathSegment: "services/full-trip-support/",
+      },
+    },
+    servicesToggle: "服务菜单",
   },
   ko: {
     mobileCta: "상담",
@@ -109,10 +172,10 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "공개된 프라이빗 일정을 비교",
         pathSegment: "tours/",
       },
-      reservations: {
-        label: "관광지 예약 대행",
-        description: "본인 여권으로 관광지 실명 예약 대행",
-        pathSegment: "services/china-attraction-reservations/",
+      services: {
+        label: "서비스",
+        description: "관광지 예약 대행, 영어 가이드, 전체 여행 지원",
+        pathSegment: "services/full-trip-support/",
       },
       guides: {
         label: "실용 가이드",
@@ -125,6 +188,24 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "studio/",
       },
     },
+    services: {
+      "attraction-tickets": {
+        label: "관광지 예약 대행",
+        description: "공식 채널에서 본인 여권 실명으로 예약",
+        pathSegment: "services/china-attraction-reservations/",
+      },
+      "english-guides": {
+        label: "프라이빗 영어 가이드",
+        description: "상하이·베이징·시안·장자제, 하루 단위 예약",
+        pathSegment: "services/private-english-speaking-guides/",
+      },
+      "trip-support": {
+        label: "전체 여행 설계 및 현지 지원",
+        description: "숙소·이동·현지 준비까지 한 번에",
+        pathSegment: "services/full-trip-support/",
+      },
+    },
+    servicesToggle: "서비스 메뉴",
   },
 };
 
@@ -141,5 +222,11 @@ export function getHomegroundNavigationModel(
       href: `${localePath}${copy.items[id].pathSegment}`,
       id,
     })),
+    services: homegroundServiceNavigationIds.map((id) => ({
+      ...copy.services[id],
+      href: `${localePath}${copy.services[id].pathSegment}`,
+      id,
+    })),
+    servicesToggle: copy.servicesToggle,
   };
 }

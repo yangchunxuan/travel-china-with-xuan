@@ -9,6 +9,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import {
+  Fragment,
   useEffect,
   useRef,
   useState,
@@ -31,6 +32,7 @@ import {
 import {
   getHomegroundNavigationModel,
   type HomegroundPrimaryNavigationId,
+  type HomegroundServiceNavigationId,
 } from "../lib/homegroundNavigationModel";
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
@@ -43,6 +45,7 @@ import {
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
+import { HeaderServicesMenu, ServiceLink } from "./HeaderServicesMenu";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
@@ -186,7 +189,8 @@ export function HomegroundHeader({
   languagePaths,
   navigationIsExact = false,
 }: HomegroundHeaderProps) {
-  const articleId = guideTourEntryId(usePathname());
+  const pathname = usePathname();
+  const articleId = guideTourEntryId(pathname);
   const [open, setOpen] = useState(false);
   useEffect(() => {
     setNavigationMenuOpen(open);
@@ -235,8 +239,11 @@ export function HomegroundHeader({
   const toursAreCurrent =
     pageContext === "tours" || pageContext === "tour";
   const toursAreExact = pageContext === "tours";
-  const planningIsCurrent =
-    pageContext === "studio" || pageContext === "services";
+  // Every /services/ page (hub, guides, itinerary review) and the
+  // reservation page sit under the Services item.
+  const servicesAreCurrent =
+    pageContext === "services" || pageContext === "reservations";
+  const planningIsCurrent = pageContext === "studio";
   const planningIsExact = pageContext === "studio";
   const navItemState = (id: HomegroundPrimaryNavigationId) => {
     switch (id) {
@@ -247,9 +254,10 @@ export function HomegroundHeader({
         };
       case "tours":
         return { active: toursAreCurrent, exact: toursAreExact };
-      case "reservations": {
-        const current = pageContext === "reservations";
-        return { active: current, exact: current };
+      case "services": {
+        // The page "Services" opens is the exact page; the other service pages are a location.
+        const hubPath = primaryNavigation.items.find((entry) => entry.id === "services")?.href;
+        return { active: servicesAreCurrent, exact: servicesAreCurrent && pathname === hubPath };
       }
       case "guides":
         return { active: guidesAreCurrent, exact: guidesAreExact };
@@ -473,11 +481,13 @@ export function HomegroundHeader({
 
   const close = () => setOpen(false);
   const trackNavigationClick = (
-    item: HomegroundPrimaryNavigationId | "faq",
+    item: HomegroundPrimaryNavigationId | HomegroundServiceNavigationId | "faq",
     surface:
       | "desktop-primary"
+      | "desktop-services-menu"
       | "desktop-utility"
       | "mobile-primary"
+      | "mobile-services-menu"
       | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
@@ -613,11 +623,25 @@ export function HomegroundHeader({
         >
           {primaryNavigation.items.map((item) => {
             const state = navItemState(item.id);
+            const current = state.exact ? "page" : state.active ? "location" : undefined;
+            if (item.id === "services") {
+              return (
+                <HeaderServicesMenu
+                  active={state.active}
+                  ariaCurrent={current}
+                  item={item}
+                  key={item.id}
+                  onNavigate={(target) =>
+                    trackNavigationClick(target, target === "services" ? "desktop-primary" : "desktop-services-menu")
+                  }
+                  services={primaryNavigation.services}
+                  toggleLabel={primaryNavigation.servicesToggle}
+                />
+              );
+            }
             return (
               <Link
-                aria-current={
-                  state.exact ? "page" : state.active ? "location" : undefined
-                }
+                aria-current={current}
                 data-active={state.active ? "true" : undefined}
                 href={item.href}
                 key={item.id}
@@ -714,12 +738,13 @@ export function HomegroundHeader({
           <div className={styles.mobilePrimaryLinks}>
             {primaryNavigation.items.map((item) => {
               const state = navItemState(item.id);
-              return (
+              const link = (
                 <Link
                   aria-current={
                     state.exact ? "page" : state.active ? "location" : undefined
                   }
                   data-active={state.active ? "true" : undefined}
+                  data-has-services={item.id === "services" ? "true" : undefined}
                   href={item.href}
                   key={item.id}
                   onClick={() => {
@@ -733,6 +758,30 @@ export function HomegroundHeader({
                   </span>
                   <span aria-hidden="true">→</span>
                 </Link>
+              );
+              if (item.id !== "services") return link;
+              // Services lists its standalone services directly, one tap away.
+              return (
+                <Fragment key={item.id}>
+                  {link}
+                  <ul aria-label={item.label} className={styles.mobileServices}>
+                    {primaryNavigation.services.filter((service) => service.href !== item.href).map((service) => (
+                      <li key={service.id}>
+                        <ServiceLink
+                          aria-current={!service.href.includes("?") && service.href.split(/[?#]/u)[0] === pathname ? "page" : undefined}
+                          href={service.href}
+                          onClick={() => {
+                            trackNavigationClick(service.id, "mobile-services-menu");
+                            close();
+                          }}
+                        >
+                          <span>{service.label}</span>
+                          <span aria-hidden="true">→</span>
+                        </ServiceLink>
+                      </li>
+                    ))}
+                  </ul>
+                </Fragment>
               );
             })}
           </div>

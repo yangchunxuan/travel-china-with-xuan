@@ -28,6 +28,8 @@ import { attractionReservationPath } from "./attractionReservations";
 import { getAttractionReservationCopy } from "./attractionReservationsI18n";
 import { privateGuideCities, privateGuideServicePath } from "./privateGuideServices";
 import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
+import { fullTripSupportPath } from "./fullTripSupport";
+import { getFullTripSupportCopy } from "./fullTripSupportI18n";
 import {
   productPreviewCopy,
   zhangjiajiePrivateTourPaths,
@@ -297,8 +299,50 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     },
   };
 
+  const fullTrip = Object.fromEntries(
+    locales.map((locale) => {
+      const copy = getFullTripSupportCopy(locale);
+      return [
+        locale,
+        {
+          path: fullTripSupportPath[locale],
+          title: copy.metadata.title,
+          description: copy.metadata.description,
+          h1: copy.h1,
+        },
+      ];
+    }),
+  );
+
+  // Additive service route (custom quote): like the guide service, it is not a
+  // legacy publication event, so it carries no invented release date.
+  const fullTripNode: ContentNode = {
+    id: "full-trip-support",
+    section: "services",
+    family: "service",
+    primaryIntent: "purchase",
+    entityIds: ["country-china"],
+    relationIds: [],
+    parentContentId: "hub-services",
+    status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions("full-trip-support", fullTrip),
+    factIds: [],
+    sourceIds: [],
+    mediaIds: [],
+    schemaTypes: ["WebPage", "Service", "FAQPage"],
+    legacyAliases: [],
+    dates: {},
+    updatePolicy: {
+      volatility: "medium",
+      refreshCadence: "quarterly",
+      owner: "homeground-platform",
+    },
+  };
+
   const nodes = [
     privateGuidesNode,
+    fullTripNode,
     systemNode({
       id: "home",
       section: "explore",

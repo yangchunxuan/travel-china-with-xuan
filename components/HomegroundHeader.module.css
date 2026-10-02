@@ -149,6 +149,263 @@
   transform: translateX(-50%);
 }
 
+/*
+ * Services menu (desktop), after x.ai's "Products" menu and beyond it: the
+ * label and its chevron read as one item, the panel drops in with a short
+ * fade and lift, its rows settle one after another, and a single highlight
+ * glides to whichever row the pointer or keyboard reaches. Motion uses one
+ * ease-out curve; reduced motion removes it (end of this file).
+ */
+.navGroup {
+  --menu-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  align-items: stretch;
+  border-radius: 0.55rem;
+  display: flex;
+  position: relative;
+  transition: background-color 140ms ease;
+}
+
+.desktopNav .navGroup > a {
+  padding-inline-end: 0.2rem;
+}
+
+.desktopNav .navGroup > a:hover,
+.desktopNav .navGroup > a:focus-visible {
+  background: transparent;
+}
+
+/* Hover styles only where hover exists, so a tap on a tablet never leaves them stuck. */
+@media (hover: hover) {
+  .navGroup:hover {
+    background: #f4f4f1;
+  }
+
+  .navGroup:hover > a,
+  .navGroup:hover .navGroupToggle {
+    color: var(--hg-color-ink, #141413);
+  }
+}
+
+.navGroup[data-open],
+.navGroup:has(:focus-visible) {
+  background: #f4f4f1;
+}
+
+.navGroup[data-open] > a {
+  color: var(--hg-color-ink, #141413);
+}
+
+/* The active underline sits under the word, not under the word plus chevron. */
+.desktopNav .navGroup > a[aria-current]::after,
+.desktopNav .navGroup > a[data-active="true"]::after {
+  inset-inline-start: calc(50% + 0.215rem);
+}
+
+.navGroupToggle {
+  align-items: center;
+  align-self: center;
+  background: none;
+  border: 0;
+  border-radius: 0.4rem;
+  color: #555550;
+  cursor: pointer;
+  display: inline-flex;
+  block-size: 1.75rem;
+  inline-size: 1.5rem;
+  justify-content: center;
+  margin-inline-end: 0.3rem;
+  padding: 0;
+}
+
+.navGroupToggle svg {
+  transition: transform 180ms var(--menu-ease);
+}
+
+.navGroup[data-open] .navGroupToggle {
+  color: var(--hg-color-ink, #141413);
+}
+
+.navGroup[data-open] .navGroupToggle svg {
+  transform: rotate(180deg);
+}
+
+/*
+ * The panel floats 8px below the header line; its transparent top padding
+ * bridges that gap, so the pointer can travel from the label into it.
+ */
+.servicesPanel {
+  inline-size: max-content;
+  inset-block-start: calc(100% - 0.75rem);
+  inset-inline-start: 50%;
+  max-inline-size: 25rem;
+  min-inline-size: 20rem;
+  padding-block-start: 1.25rem;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: visibility 0s linear 140ms;
+  visibility: hidden;
+  z-index: 120;
+}
+
+.navGroup[data-open] .servicesPanel {
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+.servicesSurface {
+  background: #fff;
+  border: 1px solid rgb(10 10 10 / 7%);
+  border-radius: 0.875rem;
+  box-shadow:
+    0 1px 2px rgb(10 10 10 / 4%),
+    0 18px 48px -12px rgb(10 10 10 / 24%);
+  opacity: 0;
+  padding: 0.375rem;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: 50% 0;
+  transition:
+    opacity 100ms ease-out,
+    transform 160ms var(--menu-ease);
+}
+
+.navGroup[data-open] .servicesSurface {
+  opacity: 1;
+  transform: none;
+}
+
+.servicesListWrap {
+  position: relative;
+}
+
+.servicesList {
+  display: grid;
+  gap: 0.125rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rows settle in turn, never later than the panel they sit on. */
+.servicesList li {
+  opacity: 0;
+  transform: translateY(3px);
+  transition:
+    opacity 120ms ease,
+    transform 160ms var(--menu-ease),
+    background-color 140ms ease;
+}
+
+.navGroup[data-open] .servicesList li {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--i, 0) * 25ms), calc(var(--i, 0) * 25ms), 0s;
+}
+
+/*
+ * The highlight keeps its last place: it fades in on the first row reached
+ * (no sweep from the top) and only glides between rows once it is showing.
+ */
+.servicesHighlight {
+  background: #f4f4f1;
+  block-size: var(--hl-h, 0);
+  border-radius: 0.5rem;
+  inset-block-start: 0;
+  inset-inline: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(var(--hl-y, 0));
+  transition: opacity 120ms ease;
+}
+
+.servicesListWrap[data-glide] .servicesHighlight {
+  transition:
+    transform 170ms var(--menu-ease),
+    block-size 170ms var(--menu-ease),
+    opacity 120ms ease;
+}
+
+.servicesListWrap[data-highlight] .servicesHighlight {
+  opacity: 1;
+}
+
+/* Rows reset the primary-link styles they sit under (.desktopNav a). */
+.desktopNav .servicesPanel a {
+  border-radius: 0.5rem;
+  color: var(--hg-color-ink, #141413);
+  font-size: 0.875rem;
+  font-weight: 620;
+  line-height: 1.3;
+  padding: 0.6rem 0.7rem;
+  white-space: normal;
+}
+
+.desktopNav .servicesPanel a:hover,
+.desktopNav .servicesPanel a:focus-visible {
+  background: transparent;
+}
+
+.desktopNav .servicesPanel a::after,
+.desktopNav .servicesPanel a[aria-current]::after {
+  content: none;
+}
+
+.desktopNav .servicesPanel .servicesItem {
+  align-items: center;
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  position: relative;
+  z-index: 1;
+}
+
+/* A white tile with a hairline stays visible on the highlight; the icon simply darkens. */
+.servicesIcon {
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgb(10 10 10 / 8%);
+  border-radius: 0.5rem;
+  block-size: 2.5rem;
+  box-sizing: border-box;
+  color: #6b6b66;
+  display: flex;
+  inline-size: 2.5rem;
+  justify-content: center;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.servicesItem:hover .servicesIcon,
+.servicesItem:focus-visible .servicesIcon {
+  border-color: rgb(10 10 10 / 16%);
+  color: var(--hg-color-ink, #141413);
+}
+
+/* The page you are on: an ink outline, not a fill, so hover stays the only fill. */
+.servicesItem[aria-current] .servicesIcon {
+  border-color: var(--hg-color-ink, #141413);
+  color: var(--hg-color-ink, #141413);
+}
+
+.servicesText {
+  display: grid;
+  gap: 0.2rem;
+  min-inline-size: 0;
+}
+
+.servicesText strong {
+  font-weight: 640;
+}
+
+.servicesText small {
+  color: #6b6b66;
+  font-size: 0.78rem;
+  font-weight: 450;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
 .headerActions {
   align-items: center;
   display: flex;
@@ -354,6 +611,15 @@
     padding-inline: 0.58rem;
   }
 
+  .desktopNav .navGroup > a {
+    padding-inline-end: 0.15rem;
+  }
+
+  .desktopNav .servicesPanel a {
+    font-size: 0.875rem;
+  }
+
+
   .desktopUtilityLink {
     display: none;
   }
@@ -479,6 +745,71 @@
     color: var(--hg-color-ink, #141413);
   }
 
+  /* "Services" lists its services right under it, so its own rule moves below them. */
+  .mobilePrimaryLinks > a[data-has-services] {
+    border-block-end: 0;
+  }
+
+  /* "Services" keeps its description off the phone menu: the list right under it says it. */
+  .mobilePrimaryLinks > a[data-has-services] .mobileNavCopy small {
+    display: none;
+  }
+
+  .mobileServices {
+    border-block-end: 1px solid rgb(10 10 10 / 10%);
+    display: grid;
+    list-style: none;
+    margin: -0.35rem 0 0;
+    padding: 0 0 0.75rem;
+  }
+
+  /* One continuous rail groups the three services under their parent. */
+  .mobileServices li {
+    border-inline-start: 1px solid rgb(10 10 10 / 14%);
+    margin-inline-start: 2px;
+  }
+
+  .mobileServices a {
+    align-items: center;
+    border-radius: 0 0.6rem 0.6rem 0;
+    color: #3d3d39;
+    display: grid;
+    font-size: 0.95rem;
+    font-weight: 560;
+    gap: 0.75rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-block-size: 2.75rem;
+    padding-inline: 0.85rem 0;
+    text-decoration: none;
+  }
+
+  .mobileServices a > span:last-child {
+    color: #777772;
+    font-size: 1rem;
+    font-weight: 520;
+  }
+
+  .mobileServices a[aria-current] {
+    color: var(--hg-color-ink, #141413);
+    font-weight: 650;
+  }
+
+  .mobileServices li:has(a[aria-current]) {
+    border-inline-start: 2px solid var(--hg-color-ink, #141413);
+    margin-inline-start: 1px;
+  }
+
+  .mobileServices a:hover,
+  .mobileServices a:focus-visible {
+    background: #f4f4f1;
+    color: var(--hg-color-ink, #141413);
+  }
+
+  /* The list scrolls; an outside focus ring would be clipped at its edges. */
+  .mobilePrimaryLinks :where(a):focus-visible {
+    outline-offset: -2px;
+  }
+
   .mobilePrimaryLinks > a[aria-current] .mobileNavCopy strong,
   .mobilePrimaryLinks > a[data-active="true"] .mobileNavCopy strong {
     font-weight: 650;
@@ -544,34 +875,43 @@
 }
 
 /*
- * Five primary items need about 462px with descriptions, so short phones
- * (571–680px tall) tighten the rows while keeping the descriptions; from
- * 570px down the descriptions go, as before. 320x568 phones fall in that
- * lower band, so the fifth item is never hidden below the utility bar.
+ * Five primary items with descriptions plus the three services under
+ * "Services" need about 600px. Phones up to 760px tall (iPhone Safari with
+ * its toolbars, in-app browsers) get label-only rows, as x.ai and Apple use,
+ * about 440px in all. From 650px down (small Android phones in Samsung
+ * Internet or in-app browsers, iPhone mini, 320x568) the service list goes
+ * too (the Services row opens the hub that lists them), so the fifth item is
+ * never hidden below the utility bar.
  */
-@media (max-width: 1179.98px) and (max-height: 680px) {
+@media (max-width: 1179.98px) and (max-height: 760px) {
   .mobilePrimaryLinks {
     padding-block: 0.5rem;
   }
 
   .mobilePrimaryLinks > a {
-    min-block-size: 4.4rem;
-    padding-block: 0.55rem;
-  }
-}
-
-@media (max-width: 1179.98px) and (max-height: 570px) {
-  .mobilePrimaryLinks {
-    padding-block: 0.5rem;
-  }
-
-  .mobilePrimaryLinks > a {
-    min-block-size: 3.8rem;
-    padding-block: 0.4rem;
+    min-block-size: 3.6rem;
+    padding-block: 0.45rem;
   }
 
   .mobileNavCopy small {
     display: none;
+  }
+}
+
+@media (max-width: 1179.98px) and (max-height: 650px) {
+  .mobilePrimaryLinks > a[data-has-services] {
+    border-block-end: 1px solid rgb(10 10 10 / 10%);
+  }
+
+  .mobileServices {
+    display: none;
+  }
+}
+
+@media (max-width: 1179.98px) and (max-height: 570px) {
+  .mobilePrimaryLinks > a {
+    min-block-size: 3.25rem;
+    padding-block: 0.35rem;
   }
 
   .mobileUtility {
@@ -663,9 +1003,23 @@
   .brandMark,
   .desktopNav a,
   .headerCta,
-  .mobileCta {
+  .mobileCta,
+  .navGroup,
+  .navGroupToggle svg,
+  .servicesPanel,
+  .servicesSurface,
+  .servicesList li,
+  .servicesHighlight,
+  .servicesIcon {
     transition: none;
   }
+
+  .servicesSurface,
+  .servicesList li,
+  .navGroup[data-open] .navGroupToggle svg {
+    transform: none;
+  }
+
 }
 
 @media (forced-colors: active) {
