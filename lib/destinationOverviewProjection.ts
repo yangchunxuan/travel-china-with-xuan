@@ -109,13 +109,37 @@ function sectionBlocks(body: StructuredPageBody, headingId: string) {
 function preferredTableRow(table: TableBlock, signalId: DestinationOverviewSignalId) {
   if (signalId === "stay" || signalId === "next") return table.rows[0];
 
+  // A row named as the recommendation wins first, so a "minimum: 3 nights"
+  // row above it cannot match the broader pattern ("3박") ahead of it.
+  const recommendedPattern = /recommended|推荐|建议|권장|추천/iu;
   const preferredPattern =
     /recommended|balanced|default|first visit|practical|two nights|three nights|4.?5|建议|推荐|默认|平衡|两晚|三晚|권장|기본|균형|2박|3박/iu;
   return (
+    table.rows.find((row) => recommendedPattern.test(row.join(" "))) ??
     table.rows.find((row) => preferredPattern.test(row.join(" "))) ??
     table.rows[Math.floor(table.rows.length / 2)] ??
     table.rows[0]
   );
+}
+
+/**
+ * Tables often put the unit in the column head ("Hotel nights": "4–5"); a
+ * card shows the cell without its head, so a bare number takes its unit
+ * back from the head ("4–5 nights", "3晚", "3박").
+ */
+const tableUnits: Record<HomegroundLocale, readonly (readonly [RegExp, (one: boolean) => string])[]> = {
+  en: [[/night/iu, (one) => (one ? " night" : " nights")], [/day/iu, (one) => (one ? " day" : " days")]],
+  zh: [[/晚|夜/u, () => "晚"], [/天|日/u, () => "天"]],
+  ko: [[/박/u, () => "박"], [/일/u, () => "일"]],
+};
+
+function withUnits(row: readonly string[], columns: readonly string[], locale: HomegroundLocale) {
+  return row.map((cell, index) => {
+    if (!/^(?:about\s+|约)?\d+(?:\.\d+)?(?:\s*[–~-]\s*\d+(?:\.\d+)?)?$/iu.test(cell.trim())) return cell;
+    const column = columns[index] ?? "";
+    const unit = tableUnits[locale].find(([pattern]) => pattern.test(column))?.[1];
+    return unit ? `${cell}${unit(cell.trim() === "1")}` : cell;
+  });
 }
 
 function trimSummary(
@@ -171,7 +195,7 @@ function extractSignal(
   );
 
   if ((signalId === "nights" || signalId === "stay" || signalId === "next") && tables[0]) {
-    const row = preferredTableRow(tables[0], signalId);
+    const row = withUnits(preferredTableRow(tables[0], signalId), tables[0].columns, locale);
     const [emphasis, ...rest] = row;
     return {
       id: signalId,
@@ -198,7 +222,7 @@ function extractSignal(
   }
 
   if (tables[0]) {
-    const row = preferredTableRow(tables[0], signalId);
+    const row = withUnits(preferredTableRow(tables[0], signalId), tables[0].columns, locale);
     const [emphasis, ...rest] = row;
     return {
       id: signalId,

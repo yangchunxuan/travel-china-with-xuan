@@ -170,6 +170,8 @@
 
 .heroVisual {
   align-self: stretch;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   min-height: 42rem;
   overflow: hidden;
@@ -183,56 +185,22 @@
   width: 100%;
 }
 
+/* The photo takes the height the caption leaves; the caption sits below it, never on it. */
+.heroVisual picture {
+  flex: 1;
+  min-height: 0;
+}
+
 .heroVisual img {
   object-fit: cover;
   object-position: 50% 55%;
 }
 
 .heroVisual figcaption {
-  background: rgb(20 20 19 / 84%);
-  bottom: 1rem;
-  color: var(--hg-color-on-dark);
-  font-size: 0.72rem;
-  inset-inline-end: 1rem;
-  line-height: 1.4;
-  padding: 0.45rem 0.6rem;
-  position: absolute;
-}
-
-.policyStamp {
-  background: var(--page-card);
-  border: 1px solid var(--page-line);
-  display: flex;
-  flex-direction: column;
-  inset-block-start: clamp(1rem, 3vw, 2.2rem);
-  inset-inline-start: clamp(1rem, 3vw, 2.2rem);
-  padding: 1.15rem 1.25rem;
-  position: absolute;
-  width: min(12rem, calc(100% - 2rem));
-}
-
-.policyStamp span {
-  color: var(--page-rust);
-  font-size: 0.68rem;
-  font-weight: 780;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.policyStamp strong {
-  font-family: var(--hg-font-editorial), Georgia, serif;
-  font-size: 2.55rem;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-block-start: 0.65rem;
-}
-
-.policyStamp small {
   color: var(--page-muted);
-  font-size: 0.69rem;
-  line-height: 1.45;
-  margin-block-start: 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding-block-start: 0.6rem;
 }
 
 .quickAnswer {
@@ -1031,15 +999,6 @@
 
   .heroVisual {
     aspect-ratio: 3 / 4;
-  }
-
-  .policyStamp {
-    padding: 0.9rem 1rem;
-    width: 9.5rem;
-  }
-
-  .policyStamp strong {
-    font-size: 1.9rem;
   }
 
   .scenarioList article {

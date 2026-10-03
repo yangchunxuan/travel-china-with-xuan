@@ -156,8 +156,8 @@ function RuleCard({ rule, locale, index, feeNote }: { rule: AttractionReservatio
   );
 }
 
-/** A sight on the hub: photo, city, name and why. */
-function SightCard({ sight, locale, index, anchor }: { sight: Sight; locale: HomegroundLocale; index: number; anchor?: string }) {
+/** A sight on the hub (and on its city's page): photo, city, name and why. */
+export function SightCard({ sight, locale, index, anchor, hideCity = false }: { sight: Sight; locale: HomegroundLocale; index: number; anchor?: string; hideCity?: boolean }) {
   const copy = getSightsCopy(locale);
   const image = sightImage(sight, locale);
   return (
@@ -176,7 +176,7 @@ function SightCard({ sight, locale, index, anchor }: { sight: Sight; locale: Hom
           />
         </span>
         <span className={sightStyles.sightText}>
-          <small>{cityName(sight.city, locale)}</small>
+          {hideCity ? null : <small>{cityName(sight.city, locale)}</small>}
           <strong>{copy.sights[sight.id].name}</strong>
           <span><SightText locale={locale} text={copy.sights[sight.id].line} /></span>
         </span>

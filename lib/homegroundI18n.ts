@@ -70,7 +70,6 @@ export interface HomegroundCopy {
     title: string;
     intro: string;
     imageAlt: string;
-    imageBadge: string;
     cardLabel: string;
     cardTitle: string;
     cardTag: string;
@@ -392,7 +391,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         "Homeground can plan a private China trip from the beginning. Or keep the flights, hotels and independent time you have already chosen, and ask us to step in where professional judgment or local coordination matters. We consider the travellers, interests, accommodation, transport, reservations and daily pace together, then confirm the scope and fee before paid work begins.",
       imageAlt:
         "Leifeng Pagoda above West Lake in Hangzhou, with a small boat crossing the water",
-      imageBadge: "Illustrative planning extract · Hangzhou",
       cardLabel: "What gets added after the route",
       cardTitle: "A transfer day that still feels like part of the trip",
       cardTag: "Example format, not a fixed package",
@@ -934,7 +932,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro:
         "你可以让 Homeground 从头规划一趟私人中国旅行，也可以保留已经订好的航班、酒店和想自己探索的时间，只把需要专业判断或本地协调的部分交给我们。下方杭州示例展示的，是规划师如何把住宿、交通、预约和每天的节奏放在一起判断。",
       imageAlt: "杭州西湖水面上一艘小船驶过，雷峰塔立在湖畔山林上方",
-      imageBadge: "规划示例节选 · 杭州",
       cardLabel: "得到路线之后，我们会补上什么",
       cardTitle: "让转场日也成为旅行的一部分",
       cardTag: "仅展示规划方式，并非固定产品",
@@ -1441,7 +1438,6 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
       intro:
         "Homeground에 처음부터 중국 맞춤 여행 전체를 맡길 수 있습니다. 이미 예약한 항공편과 숙소, 직접 여행하고 싶은 시간은 그대로 두고 전문적인 판단이나 현지 조율이 필요한 부분만 도움을 받아도 됩니다. 아래 항저우 예시는 숙소, 교통, 예약과 하루의 속도를 함께 판단하는 방식을 보여 줍니다.",
       imageAlt: "항저우 서호 위를 작은 배가 지나고 호숫가 숲 위로 뇌봉탑이 보이는 풍경",
-      imageBadge: "여행 설계 예시 · 항저우",
       cardLabel: "동선 초안이 나온 뒤 더해지는 것",
       cardTitle: "이동하는 날도 여행의 일부가 되도록",
       cardTag: "고정 패키지가 아닌 설계 방식 예시",

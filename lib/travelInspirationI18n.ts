@@ -43,7 +43,6 @@ export interface TravelInspirationCopy {
     facts: (routes: number, minDays: number, maxDays: number) => string;
     jumpToRoutes: string;
     routesTitle: string;
-    days: (days: number) => string;
     tourAction: string;
     /** Fills a route row that is not full: the way to a trip planned around you. */
     planTile: { title: string; body: string; action: string };
@@ -80,7 +79,6 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       facts: (routes, min, max) => `${routes} private routes · ${min}–${max} days`,
       jumpToRoutes: "See the routes",
       routesTitle: "Routes by trip length",
-      days: (days) => `${days} days`,
       tourAction: "Itinerary & price",
       planTile: {
         title: "None of these?",
@@ -158,7 +156,6 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       facts: (routes, min, max) => `${routes} 条私家路线 · ${min}–${max} 天`,
       jumpToRoutes: "看路线",
       routesTitle: "按天数挑路线",
-      days: (days) => `${days} 天`,
       tourAction: "看行程与价格",
       planTile: {
         title: "都不太合适？",
@@ -235,7 +232,6 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       facts: (routes, min, max) => `프라이빗 일정 ${routes}개 · ${min}~${max}일`,
       jumpToRoutes: "일정 보기",
       routesTitle: "기간별 일정",
-      days: (days) => `${days}일`,
       tourAction: "일정·가격 보기",
       planTile: {
         title: "고르기 어려우신가요?",

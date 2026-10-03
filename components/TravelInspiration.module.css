@@ -7,7 +7,9 @@
  * Motion is opacity/transform only, and reduced motion shows the finished
  * state.
  */
-.page {
+/* The Destinations pages' tokens; .tokens lends them to sections inside other pages (the city page). */
+.page,
+.tokens {
   --ink: #0a0a0a;
   --muted: rgb(10 10 10 / 62%);
   --rule: rgb(10 10 10 / 10%);
@@ -19,6 +21,9 @@
   --section: 6rem;
   --radius: 1rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page {
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
@@ -53,12 +58,14 @@
 }
 
 .page h3,
-.page h4 {
+.page h4,
+.tokens .tourText h4 {
   font-weight: 620;
   margin: 0;
 }
 
-.page :where(a):focus-visible {
+.page :where(a):focus-visible,
+.tokens :where(a):focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
@@ -384,28 +391,6 @@
   position: relative;
 }
 
-.days,
-.formatTag {
-  background: rgb(255 255 255 / 92%);
-  border-radius: 999px;
-  box-shadow: 0 1px 3px rgb(10 10 10 / 18%);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  inset-block-start: 0.75rem;
-  inset-inline-start: 0.75rem;
-  line-height: 1;
-  padding: 0.45rem 0.7rem;
-  position: absolute;
-  white-space: nowrap;
-}
-
-/* A small group's tag sits in the photo's other corner, never wrapping the days pill. */
-.formatTag {
-  background: var(--ink);
-  color: var(--paper);
-  inset-inline: auto 0.75rem;
-}
-
 .tourText {
   display: grid;
   gap: 0.45rem;
@@ -464,6 +449,54 @@
 
 .tours > li:last-child:not(:first-child) .tourCard > .tourMedia {
   grid-row: span 2;
+}
+
+/* The horizontal card: the words and the action together in the middle of
+   the photo's height, not the words at the top and the action at the foot. */
+@media (min-width: 40.0625rem) and (max-width: 61.25rem) {
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard {
+    grid-template-rows: 1fr auto auto 1fr;
+    /* The photo runs to the card's foot; the empty rows keep the words off it. */
+    padding-bottom: 0;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .tourMedia {
+    grid-row: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .tourText {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .cardAction {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.9rem;
+  }
+}
+
+@media (min-width: 61.3125rem) {
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard {
+    grid-template-rows: 1fr auto auto 1fr;
+    /* The photo runs to the card's foot; the empty rows keep the words off it. */
+    padding-bottom: 0;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .tourMedia {
+    grid-row: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .tourText {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .cardAction {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.9rem;
+  }
 }
 
 /* On three columns the tile takes every slot left in its row. */
@@ -806,20 +839,6 @@
   .tourCard .cardAction {
     font-size: 0.8125rem;
     padding: 0.5rem 0 0;
-  }
-
-  .days,
-  .formatTag {
-    font-size: 0.6875rem;
-    inset-block-start: 0.4rem;
-    inset-inline-start: 0.4rem;
-    padding: 0.3rem 0.45rem;
-  }
-
-  /* Phones: the thumbnail is narrow, so the small-group tag sits under the days pill. */
-  .formatTag {
-    inset-block: auto 0.4rem;
-    inset-inline: 0.4rem auto;
   }
 
   .groupHead {

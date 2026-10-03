@@ -42,6 +42,168 @@
   padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
 }
 
+/*
+ * The city page's second version (cityPageV2): what to do here opens the
+ * article; tours and services close it, as cards from the Destinations pages
+ * (their tokens come from TravelInspiration.module.css .tokens). Heads match
+ * the decision and owner-link blocks above them.
+ */
+.cityWhat {
+  margin-block: 0 clamp(3rem, 7vw, 5rem);
+}
+
+.cityTours {
+  border-block-start: 1px solid var(--hg-color-line);
+  margin-block-start: clamp(3rem, 7vw, 6rem);
+  padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.cityBlockHead {
+  margin-block-end: 1.75rem;
+}
+
+/* Labels and headings as the decision and deeper-answer heads (.destinationRoot rules below). */
+.cityBlockHead > p:first-child,
+.cityBandLabel.cityBandLabel {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.cityBlockHead h2,
+.cityBand h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+.destinationRoot[data-homeground-locale="zh"] :is(.cityBlockHead h2, .cityBand h2) {
+  letter-spacing: 0;
+}
+
+.cityBlockHead > p:last-child {
+  color: var(--hg-color-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 44rem;
+}
+
+/*
+ * Inside the article column: three sights to a row on six tracks. When the
+ * count leaves two over, the first two (the city's headline sights) take
+ * half each (2 + 3); four are 2 + 2; a lone last card sits in the middle.
+ */
+.citySightGrid.citySightGrid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.citySightGrid.citySightGrid > li {
+  grid-column: span 2;
+}
+
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(3n + 2),
+.citySightGrid.citySightGrid > li:nth-child(2):nth-last-child(3n + 1),
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(4),
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(4) ~ li {
+  grid-column: span 3;
+}
+
+.citySightGrid.citySightGrid > li:nth-child(3n + 1):last-child:not(:nth-child(4)) {
+  grid-column: 3 / span 2;
+}
+
+/* The wider cards keep the row's photo height (4:3 at a third is about 2:1 at a half). */
+@media (min-width: 40.0625rem) {
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(3n + 2) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:nth-child(2):nth-last-child(3n + 1) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(4) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(4) ~ li > a > span:first-child {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+.cityBlockLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.cityBlockLinks a {
+  align-items: center;
+  border-block-end: 1px solid var(--hg-color-ink);
+  color: var(--hg-color-ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.cityBlockLinks a span {
+  display: inline-block;
+}
+
+/* Phones: the sights as compact rows (photo beside the words), as the sights pages' strips. */
+@media (max-width: 40rem) {
+  .citySightGrid.citySightGrid {
+    gap: 0.6rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .citySightGrid.citySightGrid > li,
+  .citySightGrid.citySightGrid > li:nth-child(n):nth-child(n) {
+    grid-column: auto;
+  }
+
+  .citySightGrid.citySightGrid > li > a {
+    align-items: center;
+    column-gap: 0.9rem;
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    padding: 0.6rem;
+  }
+
+  .citySightGrid.citySightGrid > li > a > span:first-child {
+    aspect-ratio: 1;
+    border-radius: 0.6rem;
+  }
+
+  .citySightGrid.citySightGrid > li > a > span:last-child {
+    padding: 0;
+  }
+
+  .cityBlockLinks a {
+    border-block-end: 0;
+  }
+
+  .cityLinkText {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+  }
+}
+
+/*
+ * The second version ends once: the services, full-trip planning first, in
+ * the Destinations pages' closing band (its grid from .cta), boxed where the
+ * old call to action sat.
+ */
+.cityBand.cityBand {
+  border: 1px solid var(--hg-color-line);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  margin: 0 auto clamp(3rem, 7vw, 7rem);
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  /* The article's column: 90rem at most, inside its side padding. */
+  width: calc(min(100%, 90rem) - 2 * clamp(1rem, 5vw, 5rem));
+}
+
 .stayExample {
   min-width: 0;
 }
@@ -427,6 +589,12 @@
     margin-block-start: 0.6rem;
   }
 
+  .cityBand.cityBand {
+    gap: 1.5rem;
+    margin-block-end: 2.5rem;
+    padding: 1.25rem;
+  }
+
   .destinationCta {
     gap: 1.15rem;
     margin-block-end: 2.5rem;
@@ -503,6 +671,7 @@
 
 .destinationRoot .decisionIntro > a {
   background: #f2f1ef;
+  justify-self: end;
   border: 0;
   border-radius: 999px;
   font-size: 0.875rem;
@@ -661,6 +830,11 @@
   .destinationRoot .decisionIntro > a,
   .destinationRoot .ownerLinks a {
     font-size: 0.875rem;
+  }
+
+  /* One column: the advice pill starts the row again. */
+  .destinationRoot .decisionIntro > a {
+    justify-self: start;
   }
 
   .destinationRoot .evidenceHeader h2,

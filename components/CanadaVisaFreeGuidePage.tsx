@@ -192,11 +192,6 @@ export function CanadaVisaFreeGuidePage() {
                 />
               </picture>
               <figcaption>Photographed by Homeground in Beijing.</figcaption>
-              <div className={styles.policyStamp} aria-label="Current policy">
-                <span>Current rule</span>
-                <strong>30 days</strong>
-                <small>Enter by 31 Dec 2026</small>
-              </div>
             </figure>
           </header>
 

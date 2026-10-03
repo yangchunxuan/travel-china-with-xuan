@@ -972,10 +972,9 @@ test("the homepage planning example keeps its image and localized copy aligned",
   assert.match(chinese.imageAlt, /雷峰塔/u);
   assert.match(korean.imageAlt, /서호/u);
   assert.match(korean.imageAlt, /뇌봉탑/u);
-  assert.match(english.imageBadge, /Hangzhou/u);
+  // Nothing is written on the photo; the card heading and extract name the city.
+  assert.equal(english.imageBadge, undefined);
   assert.match(english.extract[0].detail, /Shanghai → Hangzhou/u);
-  assert.match(chinese.imageBadge, /杭州/u);
   assert.match(chinese.extract[0].detail, /上海 → 杭州/u);
-  assert.match(korean.imageBadge, /항저우/u);
   assert.match(korean.extract[0].detail, /상하이 → 항저우/u);
 });

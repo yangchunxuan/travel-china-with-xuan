@@ -59,14 +59,19 @@ test("multi-city and regions together hold every published tour exactly once; th
   }
 });
 
-test("collections publish no price and no train tickets, and small groups are marked", async () => {
+test("collections publish no price and no train tickets, and small groups say so in their names", async () => {
   for (const locale of locales) {
     const all = JSON.stringify(getTourCollectionsCopy(locale));
     assert.doesNotMatch(all, /[¥$₩]\s?\d|\d+\s*(?:元|원|USD|CNY)/u, `${locale}: no price`);
     assert.doesNotMatch(all, /train ticket|火车票|高铁票|12306|기차표/iu, `${locale}: no train tickets`);
   }
   const [parts, pages] = await Promise.all([source("components/DestinationParts.tsx"), source("components/TourCollectionsPages.tsx")]);
-  assert.match(parts, /tour\.tourFormat === "small-group" \? <span className=\{styles\.formatTag\}>\{getTourCollectionsCopy\(locale\)\.smallGroup\}<\/span> : null/);
+  // Nothing is written on a photo; a small group says so in its own name.
+  for (const locale of locales) {
+    for (const tour of getPublishedPrivateTourCatalog(locale).filter((item) => item.tourFormat === "small-group")) {
+      assert.match(tour.title, /Small-Group|小团|소규모 그룹/u, `${locale}: ${tour.slug} names itself a small group`);
+    }
+  }
   // Each collection links the other ways in (phones that hide the menu rows still reach them).
   assert.match(pages, /menus\.tours\?\.entries \?\? \[\]\)\.filter\(\(entry\) => entry\.id !== collectionId\)/);
   assert.match(pages, /pageContext="tour-collection"/);
