@@ -16,7 +16,7 @@ Reviewed search questions included:
 - `West Street or Yulong River hotel`
 - `第一次去阳朔住哪里`
 - `阳朔西街还是遇龙河住宿`
-- `양숴 시내 위룽허 숙소`
+- `양삭 시내 위룽허 숙소`
 
 Common result patterns treated `West Street` as a single noisy hotel block and `Yulong River` as a single scenic pin. The missing decision object is the repeated **evening → morning → rain → luggage → exact door** chain. This page therefore opens with a direct default, defines both broad labels, then makes the exact property address the final decision. No search-volume, difficulty or commercial-rank claim is made.
 

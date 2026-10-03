@@ -1562,27 +1562,27 @@ const guilinYangshuo: PrivateTourProduct = {
   title: l(
     "Guilin & Yangshuo: 5-Day Private Tour",
     "桂林·阳朔 5 天 4 晚私家团",
-    "구이린·양숴 5일 프라이빗 투어",
+    "계림·양삭 5일 프라이빗 투어",
   ),
   metadataDescription: l(
     "Five-day Guilin and Yangshuo private tour with a Li River cruise, two Yangshuo nights, three English-guided days and separate cruise-day luggage transfer.",
     "桂林阳朔5天4晚私家团，含漓江游船、阳朔连住2晚、D2–D4英语导游、行程内私车及游船日行李单独转运。桂林与阳朔各住2晚。",
-    "구이린·양숴 4박 5일 프라이빗 투어. 리강 유람선, 양숴 연속 2박, D2~D4 영어 가이드와 전용 차량, 유람선 당일 수하물 별도 이동이 포함됩니다.",
+    "계림·양삭 4박 5일 프라이빗 투어. 이강 유람선, 양삭 연속 2박, D2~D4 영어 가이드와 전용 차량, 유람선 당일 수하물 별도 이동이 포함됩니다.",
   ),
   eyebrow: l(
     "River landscapes at an unhurried pace",
     "沿漓江慢慢进入山水之间",
-    "리강을 따라 천천히 만나는 산수",
+    "이강을 따라 천천히 만나는 산수",
   ),
   lede: l(
     "Cruise the Li River into Yangshuo, slow down among the countryside and return to Guilin with a flexible final sightseeing choice.",
     "乘漓江游船从桂林进入阳朔，在乡村山水里放慢节奏，再返回桂林完成一项轻松游览。",
-    "리강 유람선으로 양숴에 들어가 전원 풍경을 여유롭게 즐기고, 구이린으로 돌아와 마지막 명소를 선택합니다.",
+    "이강 유람선으로 양삭에 들어가 전원 풍경을 여유롭게 즐기고, 계림으로 돌아와 마지막 명소를 선택합니다.",
   ),
   summary: l(
     "Two nights in Guilin and two in Yangshuo, with private transfers, three English-guided touring days, the Li River cruise and luggage moved separately on cruise day.",
     "桂林 2 晚 + 阳朔 2 晚，D2–D4 英语导游；含漓江游船、行程内私车，并在游船日单独转运行李。",
-    "구이린 2박과 양숴 2박, D2~D4 영어 가이드, 리강 유람선과 일정 내 전용 차량, 유람선 당일 수하물 별도 이동이 포함됩니다.",
+    "계림 2박과 양삭 2박, D2~D4 영어 가이드, 이강 유람선과 일정 내 전용 차량, 유람선 당일 수하물 별도 이동이 포함됩니다.",
   ),
   highlights: lists(
     [
@@ -1598,8 +1598,8 @@ const guilinYangshuo: PrivateTourProduct = {
       "芦笛岩或象鼻山二选一",
     ],
     [
-      "구이린에서 양숴까지 리강 유람선",
-      "양숴 2박",
+      "계림에서 양삭까지 이강 유람선",
+      "양삭 2박",
       "전원 산책, 가족 체험 또는 가벼운 자전거",
       "노적암 또는 상비산 중 한 곳",
     ],
@@ -1607,11 +1607,11 @@ const guilinYangshuo: PrivateTourProduct = {
   itinerary: [
     day(
       1,
-      l("Arrive in Guilin", "抵达桂林", "구이린 도착"),
+      l("Arrive in Guilin", "抵达桂林", "계림 도착"),
       l(
         "Your English-speaking guide and private driver meet you at Guilin airport or railway station and take you and your luggage to your Guilin hotel. The guide helps with the transfer and check-in; there is no sightseeing today, so you can settle in. Overnight in Guilin.",
         "英语导游和司机在桂林机场或车站接你，连人带行李送到桂林酒店，导游协助接送和入住。当天不安排景点，安顿下来好好休息，当晚住桂林。",
-        "영어 가이드와 전용 차량 기사가 구이린 공항이나 기차역에서 맞이해 짐과 함께 구이린 호텔까지 모셔다 드립니다. 가이드가 이동과 체크인을 도와 드리며, 이날은 관광 일정이 없으니 편하게 쉬세요. 구이린에서 숙박합니다.",
+        "영어 가이드와 전용 차량 기사가 계림 공항이나 기차역에서 맞이해 짐과 함께 계림 호텔까지 모셔다 드립니다. 가이드가 이동과 체크인을 도와 드리며, 이날은 관광 일정이 없으니 편하게 쉬세요. 계림에서 숙박합니다.",
       ),
     ),
     day(
@@ -1619,51 +1619,51 @@ const guilinYangshuo: PrivateTourProduct = {
       l(
         "Li River to Yangshuo",
         "乘漓江游船到阳朔",
-        "리강 유람선으로 양숴 이동",
+        "이강 유람선으로 양삭 이동",
       ),
       l(
         "After checking out of your Guilin hotel, you are driven to the Li River pier to board the cruise to Yangshuo. Your luggage goes separately by road under the written handover plan; once you step off the boat, continue to your Yangshuo hotel for the night.",
         "桂林酒店退房后，乘车前往漓江码头，登船去阳朔。行李按书面交接方案另车转运；下船后前往阳朔酒店，当晚住阳朔。",
-        "구이린 호텔에서 체크아웃한 뒤 차량으로 리강 선착장에 가서 양숴행 유람선에 오릅니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮기며, 배에서 내리면 양숴 호텔로 이동해 숙박합니다.",
+        "계림 호텔에서 체크아웃한 뒤 차량으로 이강 선착장에 가서 양삭행 유람선에 오릅니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮기며, 배에서 내리면 양삭 호텔로 이동해 숙박합니다.",
       ),
     ),
     day(
       3,
-      l("Yangshuo countryside", "阳朔乡村慢游", "양숴 전원 풍경"),
+      l("Yangshuo countryside", "阳朔乡村慢游", "양삭 전원 풍경"),
       l(
         "Your guide and local private transport take you from your Yangshuo hotel into the Yulong River countryside. Follow a gentle route and do one simple family activity or some light cycling, whichever has been arranged for your group, then head back to the same Yangshuo hotel for your second night.",
         "导游和当地专车从阳朔酒店出发，带你去遇龙河沿线乡村。节奏轻松，安排一项基础家庭体验或轻骑行，结束后回到同一家阳朔酒店，住第二晚。",
-        "가이드와 현지 전용 차량으로 양숴 호텔을 출발해 위룽허 전원 지역을 둘러봅니다. 여유로운 동선으로 간단한 가족 체험 또는 가벼운 자전거 중 정해진 한 가지를 진행한 뒤, 같은 양숴 호텔로 돌아와 두 번째 밤을 보냅니다.",
+        "가이드와 현지 전용 차량으로 양삭 호텔을 출발해 위룽허 전원 지역을 둘러봅니다. 여유로운 동선으로 간단한 가족 체험 또는 가벼운 자전거 중 정해진 한 가지를 진행한 뒤, 같은 양삭 호텔로 돌아와 두 번째 밤을 보냅니다.",
       ),
     ),
     day(
       4,
-      l("Return to Guilin", "返回桂林", "구이린 귀환"),
+      l("Return to Guilin", "返回桂林", "계림 귀환"),
       l(
         "Check out with your luggage in the private vehicle and drive back to Guilin. Visit Reed Flute Cave or Elephant Trunk Hill—only one of the two is included, as set out in your written confirmation—then check in at your Guilin hotel for the final night.",
         "阳朔酒店退房后，行李放在专车上，一路返回桂林。游览芦笛岩或象鼻山其中一处（只含一项，以书面确认单为准），之后入住桂林酒店，住最后一晚。",
-        "양숴 호텔에서 체크아웃하고 짐은 전용 차량에 실은 채 구이린으로 돌아갑니다. 노적암과 상비산 중 한 곳을 둘러봅니다. 포함되는 곳은 한 곳뿐이며, 서면 확인서에 적힌 곳으로 갑니다. 이후 구이린 호텔에 체크인해 마지막 밤을 보냅니다.",
+        "양삭 호텔에서 체크아웃하고 짐은 전용 차량에 실은 채 계림으로 돌아갑니다. 노적암과 상비산 중 한 곳을 둘러봅니다. 포함되는 곳은 한 곳뿐이며, 서면 확인서에 적힌 곳으로 갑니다. 이후 계림 호텔에 체크인해 마지막 밤을 보냅니다.",
       ),
     ),
     day(
       5,
-      l("Depart Guilin", "桂林返程", "구이린 출발"),
+      l("Depart Guilin", "桂林返程", "계림 출발"),
       l(
         "Check out and travel with your luggage by private vehicle to the airport or railway station, with your English-speaking guide assisting on the transfer. There is no sightseeing today, so the day is kept clear for your departure.",
         "桂林酒店退房后，专车连人带行李送你去机场或车站，英语导游协助送机或送站。当天不安排景点，时间留给返程。",
-        "구이린 호텔에서 체크아웃한 뒤 짐과 함께 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드가 출발 이동을 도와 드립니다. 이날은 관광 일정 없이 출발에 여유를 둡니다.",
+        "계림 호텔에서 체크아웃한 뒤 짐과 함께 전용 차량으로 공항이나 기차역에 갑니다. 영어 가이드가 출발 이동을 도와 드립니다. 이날은 관광 일정 없이 출발에 여유를 둡니다.",
       ),
     ),
   ],
   hotelNote: l(
     "Two nights in Guilin and two in Yangshuo, all in Ctrip 4-Diamond–rated hotels with breakfast. The 2-, 4- and 6-traveller prices shown are based on twin sharing; we confirm any other room arrangement individually.",
     "桂林 2 晚 + 阳朔 2 晚，均为携程 4 钻酒店双床房，含早餐。页面上的 2 人、4 人和 6 人价格按两人一间计算；其他人数怎么分房，我们会单独确认。",
-    "구이린 2박과 양숴 2박 모두 중국 씨트립 기준 4다이아 등급 호텔이며 조식이 포함됩니다. 페이지의 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
+    "계림 2박과 양삭 2박 모두 중국 씨트립 기준 4다이아 등급 호텔이며 조식이 포함됩니다. 페이지의 2명·4명·6명 요금은 2인 1실 기준이며, 그 외 인원의 객실 구성은 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "Included: private arrival and departure transfers with English-speaking guide assistance on Days 1 and 5; English-guided sightseeing on Days 2–4; the Li River cruise, with your luggage moved separately that day; air-conditioned private road transport; and the listed adult admission for one Day 4 sight. Day 3 includes one simple family activity or gentle cycling, chosen to suit your group—a basic local experience rather than a named premium programme, and bamboo rafting is not a given. No shopping stops.",
     "含 D1/D5 私人接送及英语导游协助、D2–D4 英语导游游览、漓江游船、D2 行李另车转运、行程内空调私车，以及 D4 两处景点中一处的成人基础门票。D3 含一项基础家庭体验或轻骑行，按同行人的情况确认；这是简单的当地体验，不是指定品牌或高阶项目，竹筏也不一定能安排。全程不进购物店。",
-    "D1·D5 전용 차량 픽업·샌딩과 영어 가이드 지원, D2~D4 영어 가이드 관광, 리강 유람선, D2 수하물 별도 이동, 에어컨 전용 차량과 D4 선택 관광지 한 곳의 성인 기본 입장권이 포함됩니다. D3에는 일행에 맞춰 정하는 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. 기본적인 현지 체험이며 특정 프리미엄 프로그램은 아니고, 대나무 뗏목은 항상 가능한 것은 아닙니다. 쇼핑 일정은 없습니다.",
+    "D1·D5 전용 차량 픽업·샌딩과 영어 가이드 지원, D2~D4 영어 가이드 관광, 이강 유람선, D2 수하물 별도 이동, 에어컨 전용 차량과 D4 선택 관광지 한 곳의 성인 기본 입장권이 포함됩니다. D3에는 일행에 맞춰 정하는 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. 기본적인 현지 체험이며 특정 프리미엄 프로그램은 아니고, 대나무 뗏목은 항상 가능한 것은 아닙니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1689,36 +1689,36 @@ const guilinYangshuo: PrivateTourProduct = {
       question: l(
         "Is the Li River cruise included, and what happens to our luggage?",
         "包含漓江游船吗？行李怎么走？",
-        "리강 유람선이 포함되나요? 수하물은 어떻게 이동하나요?",
+        "이강 유람선이 포함되나요? 수하물은 어떻게 이동하나요?",
       ),
       answer: l(
         "Yes—the Day 2 cruise from Guilin to Yangshuo is included, and your luggage goes separately by road under a written handover plan. Before you pay, we confirm the sailing, cabin class, pier and luggage handover with you.",
         "包含。D2 从桂林乘漓江游船到阳朔，行李按书面交接方案另车转运；船班、舱等、码头和行李交接，付款前都会跟你确认。",
-        "네, D2 구이린에서 양숴로 가는 리강 유람선이 포함됩니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮깁니다. 선편, 좌석 등급, 선착장과 수하물 인계는 결제 전에 확인해 드립니다.",
+        "네, D2 계림에서 양삭으로 가는 이강 유람선이 포함됩니다. 짐은 서면 인계 계획에 따라 별도 차량으로 옮깁니다. 선편, 좌석 등급, 선착장과 수하물 인계는 결제 전에 확인해 드립니다.",
       ),
     },
     {
       question: l(
         "Why stay two nights in Yangshuo, and does the route include Longji?",
         "为什么在阳朔连住两晚？包含龙脊梯田吗？",
-        "양숴에서 왜 2박하나요? 룽지 계단식 논도 포함되나요?",
+        "양삭에서 왜 2박하나요? 룽지 계단식 논도 포함되나요?",
       ),
       answer: l(
         "Two nights in a row free up Day 3 for the Yulong River countryside, with no hotel change. This five-day route then returns to Guilin and does not include the Longji Rice Terraces. If you'd like to add Longji, we would need to look again at the route, timing and quote.",
         "阳朔连住两晚，把D3留给遇龙河沿线乡村，不用当天再换酒店。这条5天路线随后返回桂林，不含龙脊梯田；如想加入龙脊，需要重新评估路线、时间和报价。",
-        "양숴에서 연속 2박하며 D3는 숙소를 옮기지 않고 위룽허 전원 지역을 둘러봅니다. 이 5일 코스는 구이린으로 돌아오며 룽지 계단식 논은 포함하지 않습니다. 룽지를 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
+        "양삭에서 연속 2박하며 D3는 숙소를 옮기지 않고 위룽허 전원 지역을 둘러봅니다. 이 5일 코스는 계림으로 돌아오며 룽지 계단식 논은 포함하지 않습니다. 룽지를 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
       ),
     },
     {
       question: l(
         "Are bamboo rafting and both Guilin attractions included?",
         "竹筏、芦笛岩和象鼻山都包含吗？",
-        "대나무 뗏목과 구이린 관광지 두 곳이 모두 포함되나요?",
+        "대나무 뗏목과 계림 관광지 두 곳이 모두 포함되나요?",
       ),
       answer: l(
         "The Li River cruise is included; bamboo-raft upgrades are extra. Day 3 includes one simple family activity or gentle cycling, chosen to suit your group. Day 4 includes Reed Flute Cave or Elephant Trunk Hill—only one, as set out in your written confirmation, not both.",
         "包含的是漓江游船，竹筏升级另计。D3 含一项基础家庭体验或轻骑行，按同行人的情况确认；D4 游览芦笛岩或象鼻山其中一处，以书面确认单为准，不是两处都含。",
-        "리강 유람선은 포함되며, 대나무 뗏목 업그레이드는 별도입니다. D3에는 일행에 맞춰 정한 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. D4는 노적암과 상비산 중 서면 확인서에 적힌 한 곳만 포함되며, 두 곳 모두는 아닙니다.",
+        "이강 유람선은 포함되며, 대나무 뗏목 업그레이드는 별도입니다. D3에는 일행에 맞춰 정한 간단한 가족 체험 또는 가벼운 자전거 일정 한 가지가 포함됩니다. D4는 노적암과 상비산 중 서면 확인서에 적힌 한 곳만 포함되며, 두 곳 모두는 아닙니다.",
       ),
     },
   ],
@@ -1727,12 +1727,12 @@ const guilinYangshuo: PrivateTourProduct = {
     l(
       "Bamboo rafts on the Yulong River below karst hills in Yangshuo",
       "阳朔喀斯特山峰与竹林下的遇龙河实景",
-      "양숴 카르스트 산과 대나무 숲 아래 위룽허 풍경",
+      "양삭 카르스트 산과 대나무 숲 아래 위룽허 풍경",
     ),
     l(
       "A real Yulong River scene from the slower Yangshuo part of the route. It is not the Li River cruise, and rafts may not be running when you travel.",
       "遇龙河乡村实景，看看阳朔这一段的慢节奏。这不是漓江游船画面，竹筏也不一定在运营。",
-      "실제 위룽허 전원 풍경으로 양숴 일정의 느긋한 리듬을 보여 드립니다. 리강 유람선 사진은 아니며, 뗏목 운항 여부는 시기에 따라 다를 수 있습니다.",
+      "실제 위룽허 전원 풍경으로 양삭 일정의 느긋한 리듬을 보여 드립니다. 이강 유람선 사진은 아니며, 뗏목 운항 여부는 시기에 따라 다를 수 있습니다.",
     ),
     1600,
     1000,
@@ -1743,12 +1743,12 @@ const guilinYangshuo: PrivateTourProduct = {
       l(
         "The Li River winding through karst peaks near Yangshuo",
         "漓江穿行于阳朔喀斯特峰林之间",
-        "양숴 카르스트 봉우리 사이를 흐르는 리강",
+        "양삭 카르스트 봉우리 사이를 흐르는 이강",
       ),
       l(
         "From the air, you can see why the route follows the river one way from Guilin into Yangshuo.",
         "从空中看，就能明白行程为何从桂林走水路单程进入阳朔。",
-        "하늘에서 보면 왜 구이린에서 양숴까지 강을 따라 한 방향으로 가는지 알 수 있습니다.",
+        "하늘에서 보면 왜 계림에서 양삭까지 강을 따라 한 방향으로 가는지 알 수 있습니다.",
       ),
     ),
     image(
@@ -1756,12 +1756,12 @@ const guilinYangshuo: PrivateTourProduct = {
       l(
         "Sun and Moon Pagodas reflected in Guilin's lake at sunset",
         "夕阳下倒映湖面的桂林日月双塔",
-        "해질 무렵 호수에 비친 구이린 일월쌍탑",
+        "해질 무렵 호수에 비친 계림 일월쌍탑",
       ),
       l(
         "A Guilin evening scene bookends the two-night Yangshuo stay.",
         "桂林湖畔的傍晚，阳朔两晚的前后都住在桂林。",
-        "구이린의 호숫가 저녁 풍경. 양숴 2박의 앞뒤로 구이린에서 묵습니다.",
+        "계림의 호숫가 저녁 풍경. 양삭 2박의 앞뒤로 계림에서 묵습니다.",
       ),
     ),
   ],
@@ -1769,34 +1769,34 @@ const guilinYangshuo: PrivateTourProduct = {
     routeGroup(
       1,
       routeVariant(
-        l("Guilin Railway Station arrival", "抵达桂林站", "구이린역 도착"),
+        l("Guilin Railway Station arrival", "抵达桂林站", "계림역 도착"),
         "/images/guides/guilin-airport-or-railway-station-arrival-guide/hero-1600.webp",
         l(
           "The forecourt and entrance of Guilin Railway Station",
           "桂林站站前广场与进站口",
-          "구이린역 앞 광장과 출입구",
+          "계림역 앞 광장과 출입구",
         ),
         l(
           "Guilin Railway Station, one possible arrival point; we confirm airport and other-station pickups separately.",
           "桂林站，你可能到达的地点之一；机场或其他车站的接送另行确认。",
-          "구이린역 · 가능한 도착지 중 한 곳. 공항이나 다른 역 픽업은 따로 확정해 드립니다.",
+          "계림역 · 가능한 도착지 중 한 곳. 공항이나 다른 역 픽업은 따로 확정해 드립니다.",
         ),
       ),
     ),
     routeGroup(
       2,
       routeVariant(
-        l("Li River cruise", "漓江游船", "리강 유람선"),
+        l("Li River cruise", "漓江游船", "이강 유람선"),
         "/images/tours/guilin-yangshuo-5-day-private-tour/li-river-cruise-1600.webp",
         l(
           "A cruise boat travelling between Li River karst peaks",
           "游船穿行于漓江喀斯特峰林之间",
-          "리강 카르스트 봉우리 사이를 지나는 유람선",
+          "이강 카르스트 봉우리 사이를 지나는 유람선",
         ),
         l(
           "On the river towards Yangshuo; the sailing, pier and cabin details are confirmed for your travel date.",
           "前往阳朔的水路。船班、码头和舱等按你的出行日期确认。",
-          "양숴로 향하는 강 여정. 운항편, 선착장과 좌석 등급은 여행 날짜에 맞춰 확정합니다.",
+          "양삭으로 향하는 강 여정. 운항편, 선착장과 좌석 등급은 여행 날짜에 맞춰 확정합니다.",
         ),
       ),
     ),
@@ -1808,7 +1808,7 @@ const guilinYangshuo: PrivateTourProduct = {
         l(
           "A bamboo raft and fields beneath Yangshuo's karst hills",
           "阳朔喀斯特峰林下的竹筏、田野与水面",
-          "양숴 카르스트 산 아래의 대나무 뗏목과 들판",
+          "양삭 카르스트 산 아래의 대나무 뗏목과 들판",
         ),
         l(
           "Day 3 takes you into countryside like this for one simple family activity or gentle cycling; the rafts in the photo may not be running when you visit.",
@@ -1825,7 +1825,7 @@ const guilinYangshuo: PrivateTourProduct = {
         l(
           "Elephant Trunk Hill beside the river in Guilin",
           "桂林江畔的象鼻山",
-          "구이린 강변의 상비산",
+          "계림 강변의 상비산",
         ),
         l(
           "Elephant Trunk Hill, one of two Day 4 options. Only one—Reed Flute Cave or Elephant Trunk Hill—is included, as set out in your written confirmation.",

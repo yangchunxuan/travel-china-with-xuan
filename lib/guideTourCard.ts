@@ -47,22 +47,22 @@ const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedC
   "china-14-day-itinerary": {
     en: { label: "A published two-week alternative", note: "This tour adds Guilin to the four-city example above. Ask us to quote the version without Guilin.", action: "View the five-city tour" },
     zh: { label: "已发布的另一条两周路线", note: "这条产品比上面的四城示例多了桂林。若想只走四城，可以请我们另排并报价。", action: "查看五城行程" },
-    ko: { label: "공개된 다른 2주 일정", note: "이 상품은 위의 네 도시 예시에 구이린을 추가합니다. 구이린을 뺀 일정은 별도로 견적을 요청해 주세요.", action: "다섯 도시 일정 보기" },
+    ko: { label: "공개된 다른 2주 일정", note: "이 상품은 위의 네 도시 예시에 계림을 추가합니다. 계림을 뺀 일정은 별도로 견적을 요청해 주세요.", action: "다섯 도시 일정 보기" },
   },
   "beijing-zhangjiajie-shanghai-10-days": {
     en: { label: "A longer route through all three cities", note: "This 14-day tour adds Xi'an and Guilin. Ask us for a separate quote for the Beijing–Zhangjiajie–Shanghai 10-day route above.", action: "View the 14-day tour" },
     zh: { label: "经过这三座城市的更长路线", note: "这条 14 天产品还增加西安和桂林。若只走上面的北京—张家界—上海 10 天，可请我们另行报价。", action: "查看 14 天行程" },
-    ko: { label: "세 도시를 모두 지나는 더 긴 일정", note: "이 14일 상품에는 시안과 구이린도 포함됩니다. 위의 베이징·장가계·상하이 10일 일정은 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
+    ko: { label: "세 도시를 모두 지나는 더 긴 일정", note: "이 14일 상품에는 시안과 계림도 포함됩니다. 위의 베이징·장가계·상하이 10일 일정은 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
   },
   "beijing-zhangjiajie-shanghai-transport": {
     en: { label: "A longer route through all three cities", note: "This 14-day tour also visits Xi'an and Guilin. Ask us to quote only Beijing, Zhangjiajie and Shanghai.", action: "View the 14-day tour" },
     zh: { label: "经过这三座城市的更长路线", note: "这条 14 天产品还去西安和桂林。若只走北京、张家界和上海，可请我们另行报价。", action: "查看 14 天行程" },
-    ko: { label: "세 도시를 모두 지나는 더 긴 일정", note: "이 14일 상품은 시안과 구이린도 방문합니다. 베이징·장가계·상하이만 원하면 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
+    ko: { label: "세 도시를 모두 지나는 더 긴 일정", note: "이 14일 상품은 시안과 계림도 방문합니다. 베이징·장가계·상하이만 원하면 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
   },
   "beijing-xian-chengdu-route-order": {
     en: { label: "A published route starting with these cities", note: "This tour continues from Chengdu to Guilin and Shanghai. Ask us to quote the Beijing–Xi'an–Chengdu route on its own.", action: "View the 14-day tour" },
     zh: { label: "从这三座城市继续走的现有路线", note: "这条产品从成都继续到桂林和上海。若只走北京—西安—成都，可请我们另行报价。", action: "查看 14 天行程" },
-    ko: { label: "이 세 도시에서 이어지는 공개 일정", note: "이 상품은 청두 뒤에 구이린과 상하이로 이어집니다. 베이징·시안·청두만 여행하려면 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
+    ko: { label: "이 세 도시에서 이어지는 공개 일정", note: "이 상품은 청두 뒤에 계림과 상하이로 이어집니다. 베이징·시안·청두만 여행하려면 별도로 견적을 요청해 주세요.", action: "14일 일정 보기" },
   },
   "chengdu-chongqing-zhangjiajie-itinerary": {
     en: { label: "The Chengdu–Chongqing part of this route", note: "This 8-day tour does not include Zhangjiajie. Ask us to add it and quote the full route separately.", action: "View the 8-day tour" },

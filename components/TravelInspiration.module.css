@@ -384,9 +384,11 @@
   position: relative;
 }
 
-.days {
+.days,
+.formatTag {
   background: rgb(255 255 255 / 92%);
   border-radius: 999px;
+  box-shadow: 0 1px 3px rgb(10 10 10 / 18%);
   font-size: 0.8125rem;
   font-weight: 600;
   inset-block-start: 0.75rem;
@@ -394,6 +396,14 @@
   line-height: 1;
   padding: 0.45rem 0.7rem;
   position: absolute;
+  white-space: nowrap;
+}
+
+/* A small group's tag sits in the photo's other corner, never wrapping the days pill. */
+.formatTag {
+  background: var(--ink);
+  color: var(--paper);
+  inset-inline: auto 0.75rem;
 }
 
 .tourText {
@@ -421,6 +431,46 @@
 
 .tourCard .cardAction {
   padding-inline: 1.25rem;
+}
+
+/*
+ * A route left alone on the last row takes the whole row as a horizontal
+ * card, its photo exactly one column wide, so the row never ends in a lone
+ * card and an empty two thirds. (Phones show one card per row anyway.)
+ */
+@media (min-width: 40.0625rem) and (max-width: 61.25rem) {
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) {
+    grid-column: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard {
+    display: grid;
+    grid-template-columns: calc((100% - 1.25rem) / 2) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+}
+
+@media (min-width: 61.3125rem) {
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) {
+    grid-column: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard {
+    display: grid;
+    grid-template-columns: calc((100% - 2.5rem) / 3) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+}
+
+.tours > li:last-child:not(:first-child) .tourCard > .tourMedia {
+  grid-row: span 2;
+}
+
+/* On three columns the tile takes every slot left in its row. */
+@media (min-width: 61.3125rem) {
+  .planTileItem {
+    grid-column: span var(--span, 1);
+  }
 }
 
 /* Ends a row that is not full: the way to a trip planned around you, in
@@ -758,11 +808,23 @@
     padding: 0.5rem 0 0;
   }
 
-  .days {
+  .days,
+  .formatTag {
     font-size: 0.6875rem;
     inset-block-start: 0.4rem;
     inset-inline-start: 0.4rem;
     padding: 0.3rem 0.45rem;
+  }
+
+  /* Phones: the thumbnail is narrow, so the small-group tag sits under the days pill. */
+  .formatTag {
+    inset-block: auto 0.4rem;
+    inset-inline: 0.4rem auto;
+  }
+
+  .groupHead {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   /* The planning tile is a desktop row-filler; phones reach it in the band below. */

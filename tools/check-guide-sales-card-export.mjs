@@ -82,19 +82,19 @@ const reviewedRouteCards = {
   },
   "china-14-day-itinerary": {
     ctaId: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-    difference: { en: ["adds Guilin"], zh: ["多了桂林"], ko: ["구이린을 추가"] },
+    difference: { en: ["adds Guilin"], zh: ["多了桂林"], ko: ["계림을 추가"] },
   },
   "beijing-zhangjiajie-shanghai-10-days": {
     ctaId: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 구이린"] },
+    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 계림"] },
   },
   "beijing-zhangjiajie-shanghai-transport": {
     ctaId: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 구이린"] },
+    difference: { en: ["Xi'an and Guilin"], zh: ["西安和桂林"], ko: ["시안과 계림"] },
   },
   "beijing-xian-chengdu-route-order": {
     ctaId: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-    difference: { en: ["Guilin and Shanghai"], zh: ["桂林和上海"], ko: ["구이린과 상하이"] },
+    difference: { en: ["Guilin and Shanghai"], zh: ["桂林和上海"], ko: ["계림과 상하이"] },
   },
   "chengdu-chongqing-zhangjiajie-itinerary": {
     ctaId: "chengdu-chongqing-8-day-private-tour",

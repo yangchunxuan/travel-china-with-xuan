@@ -518,13 +518,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "외국인 자금성·병마용·중국 박물관 예약 대행",
       description:
-        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관, 리강 유람선, 위룽쉐산 등 베이징·상하이·쑤저우·항저우·시안·청두·구이린·리장 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
+        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관, 이강 유람선, 옥룡설산 등 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
     },
     breadcrumb: "현재 위치",
     home: "홈",
     services: "서비스",
     navLabel: "관광지 예약 대행",
-    eyebrow: "베이징 · 상하이 · 쑤저우 · 항저우 · 시안 · 청두 · 구이린 · 리장",
+    eyebrow: "베이징 · 상하이 · 쑤저우 · 항저우 · 시안 · 청두 · 계림 · 리장",
     h1: "외국인을 위한 자금성·중국 관광지 예약 대행",
     lede:
       "자금성과 병마용을 비롯한 중국의 많은 박물관과 유적지는 며칠 전에 실명 예약을 해야 하고, 대개 중국어 앱에서만 가능합니다. 가고 싶은 관광지, 날짜, 인원을 알려 주세요. 잔여분을 확인하고 가격을 서면으로 안내한 뒤, 결제 후 각 관광지의 공식 시스템에서 여행자 본인의 여권 실명으로 예약을 제출합니다.",
@@ -610,7 +610,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "매표 창구",
       email: "공식 이메일",
     },
-    cities: { beijing: "베이징", shanghai: "상하이", suzhou: "쑤저우", hangzhou: "항저우", xian: "시안", chengdu: "청두", guilin: "구이린", lijiang: "리장" },
+    cities: { beijing: "베이징", shanghai: "상하이", suzhou: "쑤저우", hangzhou: "항저우", xian: "시안", chengdu: "청두", guilin: "계림", lijiang: "리장" },
     unknown: "문의 시 확인",
     notApplicable: "해당 없음: 예약 없이 입장",
     notChecked: "미확인",

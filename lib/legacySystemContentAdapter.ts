@@ -33,6 +33,8 @@ import { getFullTripSupportCopy } from "./fullTripSupportI18n";
 import { travelInspirationPath, travelInspirationThemePath, travelInspirationThemes } from "./travelInspiration";
 import { sightPath, sights, sightsPath } from "./sights";
 import { getSightsCopy } from "./sightsI18n";
+import { tourCollectionIds, tourCollectionPath } from "./tourCollections";
+import { getTourCollectionsCopy } from "./tourCollectionsI18n";
 import { getTravelInspirationCopy } from "./travelInspirationI18n";
 import {
   productPreviewCopy,
@@ -418,11 +420,24 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     })),
   ];
 
+  // Tour collections (Private Tours menu): curated views of the published
+  // catalogue under the tour hub, each indexed.
+  const tourCollectionNodes: ContentNode[] = tourCollectionIds.map((id) => ({
+    ...inspirationNode(`tour-collection-${id}`, "tour-hub", inspirationVersions((locale) => {
+      const copy = getTourCollectionsCopy(locale).collections[id];
+      return { path: tourCollectionPath(id, locale), ...copy.metadata, h1: copy.h1Lines.join(locale === "zh" ? "" : " ") };
+    })),
+    section: "services",
+    family: "comparison",
+    primaryIntent: "compare",
+  }));
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
     ...inspirationNodes,
     ...sightNodes,
+    ...tourCollectionNodes,
     systemNode({
       id: "home",
       section: "explore",

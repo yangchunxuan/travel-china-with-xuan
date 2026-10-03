@@ -296,7 +296,7 @@
       "names": {
         "en": { "name": "Guilin" },
         "zh-Hans": { "name": "桂林" },
-        "ko": { "name": "구이린" }
+        "ko": { "name": "계림" }
       },
       "parentEntityIds": ["province-guangxi"],
       "sourceIds": [],

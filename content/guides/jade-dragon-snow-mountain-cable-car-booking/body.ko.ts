@@ -3,7 +3,7 @@ import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    { id: "answer-first", type: "lead", text: "위룽쉐산에 갈 때는 산 입장권과 케이블카 표를 따로 확인해야 합니다. 2026년 공지 요금은 입장권 100위안, 친환경 셔틀 20위안이며, 빙천공원 케이블카는 120위안, 윈산핑 케이블카는 40위안입니다. 개인 입장권은 ‘玉龙雪山服务’, 케이블카는 ‘丽江旅游集团’ 위챗 미니프로그램에서 확인합니다. 묶음 상품도 있으니 결제 전에 포함 항목을 보세요." },
+    { id: "answer-first", type: "lead", text: "옥룡설산에 갈 때는 산 입장권과 케이블카 표를 따로 확인해야 합니다. 2026년 공지 요금은 입장권 100위안, 친환경 셔틀 20위안이며, 빙천공원 케이블카는 120위안, 윈산핑 케이블카는 40위안입니다. 개인 입장권은 ‘玉龙雪山服务’, 케이블카는 ‘丽江旅游集团’ 위챗 미니프로그램에서 확인합니다. 묶음 상품도 있으니 결제 전에 포함 항목을 보세요." },
     { id: "tickets-heading", type: "heading", level: 2, text: "같은 산에 들어가도 표는 서로 다릅니다" },
     { id: "tickets-table", type: "table", caption: "2026년 공개된 1인당 요금, 2026년 9월 26일 확인", columns: ["항목", "공개 요금", "개인 예약 채널"], rows: [
       ["산 입장권", "100위안", "‘玉龙雪山服务’ 위챗 미니프로그램"],
@@ -27,7 +27,7 @@ const body = {
       "바람이나 날씨로 운행이 중단되면 해당 주문의 변경·환불 안내를 따릅니다. 다른 케이블카로 자동 교체된다고 생각하면 안 됩니다."
     ] },
     { id: "passport", type: "callout", tone: "neutral", title: "외국 여권을 사용할 때", body: "운영사의 이전 안내는 외국 여권 소지자가 중국 주민신분증 소지자와 따로 케이블카를 예약해야 한다고 설명합니다. 현재 미니프로그램의 자세한 여권 입력 방법은 확인되지 않았습니다. 결제 전에 공식 판매처에 예약·확인 방법을 묻고, 확정된 주문에 사용한 신분증 원본을 가져오세요." },
-    { id: "faq", type: "faq", title: "위룽쉐산 예약에서 많이 묻는 것", items: [
+    { id: "faq", type: "faq", title: "옥룡설산 예약에서 많이 묻는 것", items: [
       { question: "빙천공원 케이블카 표는 언제 열리나요?", answer: "운영사 발표 규칙은 ‘丽江旅游集团’에서 매일 20:00에 앞으로 7일치 표를 여는 것입니다. 당일 운영과 남은 수량은 별도로 확인해야 합니다." },
       { question: "윈산핑 케이블카는 몇 시에 예약하나요?", answer: "발표된 시각은 매일 21:00이며 앞으로 7일치가 열립니다. 빙천공원과는 별도 상품입니다." },
       { question: "입장권 하나로 케이블카까지 탈 수 있나요?", answer: "그렇게 가정하면 안 됩니다. 2026년 공지에는 입장권 100위안, 셔틀 20위안, 케이블카 요금이 각각 적혀 있습니다. 묶음 상품은 실제 주문에 포함된 항목을 확인하세요." },
@@ -40,9 +40,9 @@ const body = {
       { label: "리장에서 샹그릴라까지 이동 순서", href: "/ko/guides/lijiang-shangri-la-transport-route/", description: "산 방문일을 정하기 전에 전체 여행 동선을 살펴보세요." }
     ] },
     { id: "sources", type: "sources", title: "공식 기관 및 운영사 자료", items: [
-      { label: "2026년 입장권·케이블카 가격", url: "https://www.lijiang.cn/article/175988.html", publisher: "위룽쉐산 관리기관 공지 / 리장시 매체", reviewedAt: "2026-09-26" },
-      { label: "현재 입장권 미니프로그램과 7일 예약 기간", url: "https://www.lijiang.cn/article/181225.html", publisher: "위룽쉐산 관리기관 설명 / 리장시 매체", reviewedAt: "2026-09-26" },
-      { label: "바이사 방문객센터 이전 공지", url: "https://www.lijiang.cn/article/164510.html", publisher: "위룽쉐산 관리기관 공지 / 리장시 매체", reviewedAt: "2026-09-26" },
+      { label: "2026년 입장권·케이블카 가격", url: "https://www.lijiang.cn/article/175988.html", publisher: "옥룡설산 관리기관 공지 / 리장시 매체", reviewedAt: "2026-09-26" },
+      { label: "현재 입장권 미니프로그램과 7일 예약 기간", url: "https://www.lijiang.cn/article/181225.html", publisher: "옥룡설산 관리기관 설명 / 리장시 매체", reviewedAt: "2026-09-26" },
+      { label: "바이사 방문객센터 이전 공지", url: "https://www.lijiang.cn/article/164510.html", publisher: "옥룡설산 관리기관 공지 / 리장시 매체", reviewedAt: "2026-09-26" },
       { label: "케이블카 예약·날씨 규칙", url: "https://www.ctnews.com.cn/dongtai/content/2025-06/25/content_175505.html", publisher: "운영사를 인용한 중국관광보", reviewedAt: "2026-09-26" },
       { label: "외국 여권 예약에 관한 이전 안내", url: "https://www.lijiang.cn/article/133126.html", publisher: "리장 케이블카 운영사 / 리장시 매체", reviewedAt: "2026-09-26" },
       { label: "牦牛坪 케이블카 중단 공시", url: "https://static.cninfo.com.cn/finalpage/2026-03-03/1224991096.PDF", publisher: "리장 관광 운영사 증권거래소 공시", reviewedAt: "2026-09-26" },

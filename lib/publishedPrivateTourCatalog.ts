@@ -182,17 +182,17 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Guilin · Li River · Yangshuo",
       "桂林 · 漓江 · 阳朔",
-      "구이린 · 리강 · 양숴",
+      "계림 · 이강 · 양삭",
     ),
     appeal: l(
       "Cruise the Li River through karst scenery to Yangshuo, stay for two nights, and give the Yulong River countryside a full unhurried day.",
       "乘漓江游船穿过喀斯特山水抵达阳朔，连住两晚，再用完整一天慢慢走遇龙河乡村段。",
-      "리강 유람선으로 카르스트 풍경을 지나 양숴에 도착해 2박하고, 위룽허 전원 지역을 하루 동안 여유롭게 둘러봅니다.",
+      "이강 유람선으로 카르스트 풍경을 지나 양삭에 도착해 2박하고, 위룽허 전원 지역을 하루 동안 여유롭게 둘러봅니다.",
     ),
     pace: l(
       "Two bases, including two nights in Yangshuo and time for the countryside.",
       "桂林、阳朔两地住宿，其中阳朔连住两晚，为乡村山水留出时间。",
-      "구이린과 양숴 두 곳에 머물며, 양숴 2박으로 전원 풍경을 여유 있게 봅니다.",
+      "계림과 양삭 두 곳에 머물며, 양삭 2박으로 전원 풍경을 여유 있게 봅니다.",
     ),
     fit: l(
       "Landscape-focused travellers who want a cruise and a choice between a simple family activity and gentle cycling.",

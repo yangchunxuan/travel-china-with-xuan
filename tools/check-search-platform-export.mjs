@@ -211,7 +211,9 @@ function assertSameStringSet(actualValues, expectedValues, context) {
 function assertPrivateTourPriceLinks(html, products, context) {
   const actualHrefs = [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/giu)]
     .map((match) => match[1].replaceAll("&amp;", "&"))
-    .filter((href) => /^\/(?:zh\/|ko\/)?tours\/[^/?#]+\/(?:\?[^#]*)?(?:#.*)?$/u.test(href));
+    .filter((href) => /^\/(?:zh\/|ko\/)?tours\/[^/?#]+\/(?:\?[^#]*)?(?:#.*)?$/u.test(href))
+    // The header's Private Tours menu links its collections, which are not tours.
+    .filter((href) => !/^\/(?:zh\/|ko\/)?tours\/(?:multi-city|regions|seasonal)\/$/u.test(href));
 
   for (const product of products) {
     const target = new URL(product.startingPriceHref, siteUrl);
@@ -682,6 +684,37 @@ for (const locale of locales) {
   assertIncludes(sight, `<link rel="canonical" href="${siteUrl}/${sightRoute}"/>`, `/${sightRoute}`);
   if (!/<meta[^>]+name="robots"[^>]+content="noindex/iu.test(sight) && !sitemapUrlEntry(sitemap, `${siteUrl}/${sightRoute}`)) {
     throw new Error(`/${sightRoute}: a sight page is either noindex or in the sitemap`);
+  }
+}
+
+// The season's pick has an end date. Builds warn from two weeks before it;
+// two weeks after it they fail, so the menu cannot sell winter into spring,
+// while an urgent fix in between still ships.
+{
+  const collectionsSource = await readFile(path.join(process.cwd(), "lib/tourCollections.ts"), "utf8");
+  const until = collectionsSource.match(/until: "(\d{4}-\d{2}-\d{2})"/u)?.[1];
+  if (!until) throw new Error("lib/tourCollections.ts: currentSeason.until is missing");
+  const day = 24 * 60 * 60 * 1000;
+  const daysLeft = Math.round((Date.parse(`${until}T00:00:00Z`) - Date.parse(`${new Date().toISOString().slice(0, 10)}T00:00:00Z`)) / day);
+  const update = "update currentSeason in lib/tourCollections.ts, its copy and the menu row";
+  if (daysLeft < -14) throw new Error(`The season's pick ended on ${until}: ${update}.`);
+  if (daysLeft <= 14) console.warn(`⚠ The season's pick ${daysLeft < 0 ? "ended" : "ends"} on ${until}: ${update}.`);
+}
+
+// Tour collections (the Private Tours menu's rows): three curated views in
+// three languages, indexed, in the sitemap, linked from every header.
+for (const locale of locales) {
+  for (const id of ["multi-city", "regions", "seasonal"]) {
+    const route = `${locale.prefix}tours/${id}/`;
+    const context = `/${route}`;
+    const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+    assertIncludes(html, `<link rel="canonical" href="${siteUrl}/${route}"/>`, context);
+    assertIncludes(html, `href="/${route}"`, `${context} header link`);
+    for (const target of locales) {
+      assertIncludes(html, `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${target.prefix}tours/${id}/"/>`, context);
+    }
+    if (!sitemapUrlEntry(sitemap, `${siteUrl}/${route}`)) throw new Error(`${context}: tour collection is missing from sitemap.xml`);
+    if (html.includes("priceSpecification")) throw new Error(`${context}: prices stay on the tour pages`);
   }
 }
 

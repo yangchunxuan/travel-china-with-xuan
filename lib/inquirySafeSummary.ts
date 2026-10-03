@@ -5,7 +5,7 @@ const destinations: Readonly<Record<string, readonly [string, string, string, st
   shanghai: ["Shanghai", "上海", "상하이", "上海"], xian: ["Xi’an", "西安", "시안", "西安"],
   chengdu: ["Chengdu", "成都", "청두", "成都"], chongqing: ["Chongqing", "重庆", "충칭", "重慶"],
   zhangjiajie: ["Zhangjiajie", "张家界", "장자제", "張家界"],
-  "guilin-yangshuo": ["Guilin & Yangshuo", "桂林与阳朔", "구이린·양숴", "桂林・陽朔"],
+  "guilin-yangshuo": ["Guilin & Yangshuo", "桂林与阳朔", "계림·양삭", "桂林・陽朔"],
   "hangzhou-suzhou": ["Hangzhou & Suzhou", "杭州与苏州", "항저우·쑤저우", "杭州・蘇州"],
   "yunnan-dali-lijiang": ["Yunnan · Dali & Lijiang", "云南·大理与丽江", "윈난·다리·리장", "雲南・大理・麗江"],
   "guangzhou-shenzhen": ["Guangzhou & Shenzhen", "广州与深圳", "광저우·선전", "広州・深圳"],

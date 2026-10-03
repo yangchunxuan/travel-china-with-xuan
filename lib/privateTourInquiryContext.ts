@@ -283,7 +283,7 @@ const privateTourInquiryNames: Readonly<
   "guilin-yangshuo-5-day-private-tour": {
     en: "Guilin & Yangshuo: 5-Day Private Tour",
     zh: "桂林·阳朔 5 天 4 晚私家团",
-    ko: "구이린·양숴 5일 프라이빗 투어",
+    ko: "계림·양삭 5일 프라이빗 투어",
   },
   "harbin-winter-5-day-private-tour": {
     en: "Harbin Ice & Snow: 5-Day Private Tour",
@@ -418,17 +418,17 @@ const privateTourInquiryNames: Readonly<
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": {
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour",
     zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团",
-    ko: "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어",
+    ko: "베이징·시안·청두·계림·상하이 14일 프라이빗 투어",
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour",
     zh: "北京·西安·成都·桂林·上海 14 天 13 晚小团",
-    ko: "베이징·시안·청두·구이린·상하이 14일 소규모 그룹 투어",
+    ko: "베이징·시안·청두·계림·상하이 14일 소규모 그룹 투어",
   },
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": {
     en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour",
     zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团",
-    ko: "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어",
+    ko: "베이징·시안·장가계·계림·상하이 14일 프라이빗 투어",
   },
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
     en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour",
@@ -456,7 +456,7 @@ const privateTourInquiryNames: Readonly<
   },  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": {
     en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour",
     zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团",
-    ko: "베이징·시안·장가계·구이린·상하이 14일 소규모 그룹 투어",
+    ko: "베이징·시안·장가계·계림·상하이 14일 소규모 그룹 투어",
   },
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
     en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour",
@@ -470,7 +470,7 @@ const privateTourInquiryNames: Readonly<
   },  "beijing-xian-guilin-shanghai-10-day-private-tour": {
     en: "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour",
     zh: "北京·西安·桂林·上海 10 天 9 晚私家团",
-    ko: "베이징·시안·구이린·상하이 10일 프라이빗 투어",
+    ko: "베이징·시안·계림·상하이 10일 프라이빗 투어",
   },
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": {
     en: "Beijing, Hangzhou, Suzhou & Shanghai: 11-Day Private Tour",
@@ -480,7 +480,7 @@ const privateTourInquiryNames: Readonly<
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": {
     en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour",
     zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团",
-    ko: "상하이·장가계·봉황·구이린 13일 프라이빗 투어",
+    ko: "상하이·장가계·봉황·계림 13일 프라이빗 투어",
   },
   "beijing-xian-shanghai-8-day-private-tour": {
     en: "Beijing, Xi'an & Shanghai: 8-Day Private Tour",
@@ -490,7 +490,7 @@ const privateTourInquiryNames: Readonly<
   "beijing-xian-guilin-hong-kong-10-day-private-tour": {
     en: "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour",
     zh: "北京·西安·桂林·香港 10 天 9 晚私家团",
-    ko: "베이징·시안·구이린·홍콩 10일 프라이빗 투어",
+    ko: "베이징·시안·계림·홍콩 10일 프라이빗 투어",
   },
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
     en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour",
@@ -520,8 +520,10 @@ const privateTourInquiryNames: Readonly<
 };
 
 // The existing intake/SQL contract uses these exact Korean names. Keep the
-// published name on screen and translate only the submitted payload.
-const previousKoreanZhangjiajieNames: Partial<
+// published name on screen and translate only the submitted payload. The
+// Guilin names changed on screen to 계림 (the Korean travel-market form) on
+// 2026-10-03; the deployed SQL still validates 구이린, so they submit that.
+const previousKoreanInquiryNames: Partial<
   Record<PrivateTourInquirySlug, string>
 > = {
   "zhangjiajie-forest-4-day-private-tour":
@@ -530,6 +532,14 @@ const previousKoreanZhangjiajieNames: Partial<
     "장자제, 푸룽전, 펑황 6박 7일 프라이빗 투어",
   "zhangjiajie-4-day-private-tour":
     "장자제 4일 3박: 사암 봉우리와 유리다리, 톈먼산",
+  "guilin-yangshuo-5-day-private-tour": "구이린·양숴 5일 프라이빗 투어",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": "베이징·시안·청두·구이린·상하이 14일 소규모 그룹 투어",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어",
+  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": "베이징·시안·장가계·구이린·상하이 14일 소규모 그룹 투어",
+  "beijing-xian-guilin-shanghai-10-day-private-tour": "베이징·시안·구이린·상하이 10일 프라이빗 투어",
+  "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": "상하이·장가계·봉황·구이린 13일 프라이빗 투어",
+  "beijing-xian-guilin-hong-kong-10-day-private-tour": "베이징·시안·구이린·홍콩 10일 프라이빗 투어",
 };
 
 export function getPrivateTourInquirySubmissionContext(
@@ -537,7 +547,7 @@ export function getPrivateTourInquirySubmissionContext(
   locale: PrivateTourInquiryLocale,
 ): PrivateTourInquiryContext {
   const previousName = locale === "ko"
-    ? previousKoreanZhangjiajieNames[context.slug]
+    ? previousKoreanInquiryNames[context.slug]
     : locale === "en" && context.slug === "kunming-dali-lijiang-8-day-private-tour"
       // The published SEO title changed, but deployed SQL still validates this
       // canonical inquiry name. Keep submitted inquiries compatible.

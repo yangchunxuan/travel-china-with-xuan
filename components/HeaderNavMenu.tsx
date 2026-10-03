@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Compass, Landmark, MapPin, Route, Ticket, UserRound } from "lucide-react";
+import { CalendarDays, ChevronDown, Compass, Landmark, LayoutGrid, Map as MapIcon, MapPin, Route, Ticket, UserRound, Waypoints } from "lucide-react";
 import {
   useEffect,
   useId,
@@ -24,6 +24,10 @@ const menuIcons = {
   cities: MapPin,
   inspiration: Compass,
   sights: Landmark,
+  "all-tours": LayoutGrid,
+  "multi-city": Waypoints,
+  regions: MapIcon,
+  seasonal: CalendarDays,
   "attraction-tickets": Ticket,
   "english-guides": UserRound,
   "trip-support": Route,

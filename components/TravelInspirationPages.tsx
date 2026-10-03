@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowDown, ArrowRight, Route } from "lucide-react";
 import { destinationHubIds } from "../lib/destinationHubs";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
@@ -232,7 +233,7 @@ export function TravelInspirationThemePage({ locale = "en", themeId }: { locale?
                 <ul className={styles.tours}>
                   {group.tours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                   {fullTrip && group.tours.length % 3 !== 0 ? (
-                    <li className={styles.planTileItem} style={revealDelay(group.tours.length)}>
+                    <li className={styles.planTileItem} style={{ ...revealDelay(group.tours.length), "--span": 3 - (group.tours.length % 3) } as CSSProperties}>
                       <Link className={styles.planTile} href={fullTrip.href}>
                         <span aria-hidden="true" className={styles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
                         <strong>{copy.theme.planTile.title}</strong>

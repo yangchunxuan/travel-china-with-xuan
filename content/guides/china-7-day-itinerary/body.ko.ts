@@ -112,7 +112,7 @@ const body = {
     "title": "이 관람일의 이동과 예약",
     "items": [
       {
-        "label": "바다링: 교통과 입구 선택",
+        "label": "팔달령: 교통과 입구 선택",
         "href": "/ko/guides/beijing-to-badaling-great-wall-transfer/"
       }
     ]

@@ -567,10 +567,10 @@ const copies: Record<HomegroundLocale, TransitRouteCheckCopy> = {
       { where: "장가계", open: "후난성 전역" },
       { where: "광저우 · 선전", open: "광둥성 전역" },
       { where: "청두", open: "쓰촨 지정 11개 도시만", restricted: true },
-      { where: "구이린", open: "광시 지정 12개 도시만", restricted: true },
+      { where: "계림", open: "광시 지정 12개 도시만", restricted: true },
     ],
     areaNote:
-      "청두와 구이린이 계획이 조용히 어긋나는 지점입니다. 모든 경유지를 공식 표로 확인하세요.",
+      "청두와 계림은 계획이 조용히 어긋나기 쉬운 지점입니다. 모든 경유지를 공식 표로 확인하세요.",
     areaTableLinkLabel: "공식 항구·허용지역 표",
     areaTableUrl,
     clockSection: {

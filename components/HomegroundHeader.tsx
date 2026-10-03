@@ -63,6 +63,8 @@ export type HomegroundPageContext =
   | "reservations"
   | "tours"
   | "tour"
+  /** A curated collection of tours (/tours/multi-city/ …), under Private Tours. */
+  | "tour-collection"
   | "destinations"
   | "destination"
   | "content";
@@ -237,7 +239,7 @@ export function HomegroundHeader({
     pageContext === "destinations" || pageContext === "destination";
   const destinationsAreExact = pageContext === "destinations";
   const toursAreCurrent =
-    pageContext === "tours" || pageContext === "tour";
+    pageContext === "tours" || pageContext === "tour" || pageContext === "tour-collection";
   const toursAreExact = pageContext === "tours";
   // Every /services/ page (hub, guides, itinerary review) and the
   // reservation page sit under the Services item.
@@ -485,10 +487,10 @@ export function HomegroundHeader({
     item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq",
     surface:
       | "desktop-primary"
-      | `desktop-${"destinations" | "services"}-menu`
+      | `desktop-${"destinations" | "tours" | "services"}-menu`
       | "desktop-utility"
       | "mobile-primary"
-      | `mobile-${"destinations" | "services"}-menu`
+      | `mobile-${"destinations" | "tours" | "services"}-menu`
       | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
@@ -627,7 +629,7 @@ export function HomegroundHeader({
             const current = state.exact ? "page" : state.active ? "location" : undefined;
             const menu = submenuFor(item.id);
             if (menu) {
-              const menuId = item.id as "destinations" | "services";
+              const menuId = item.id as "destinations" | "tours" | "services";
               return (
                 <HeaderNavMenu
                   active={state.active}
@@ -768,7 +770,7 @@ export function HomegroundHeader({
               if (!menu) return link;
               // A menu's other rows sit right under its item, one tap away; the
               // row for the item's own page is the item itself.
-              const menuId = item.id as "destinations" | "services";
+              const menuId = item.id as "destinations" | "tours" | "services";
               return (
                 <Fragment key={item.id}>
                   {link}
