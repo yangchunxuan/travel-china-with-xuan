@@ -118,10 +118,10 @@ test("global navigation keeps one distinct five-item information architecture", 
   assert.match(css, /\.mobileNavCopy small \{/);
   assert.match(css, /\.mobileUtilityLink \{/);
   assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
-  // Five items plus the menu rows: phones up to 760px tall get label-only
-  // rows; from 650px down the menu rows go too (each item opens its own page).
-  assert.match(css, /max-height: 760px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
-  assert.match(css, /max-height: 650px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
+  // Five items plus the menu rows: phones up to 860px tall get label-only
+  // rows; from 700px down the services rows go too ("Services" opens its page).
+  assert.match(css, /max-height: 860px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
+  assert.match(css, /max-height: 700px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
 });
 
 test("all public page families use the shared header", async () => {
@@ -196,7 +196,7 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   assert.match(model, /pathSegment: "services\/full-trip-support\/"/);
   // Every item with a menu (Destinations, Services) renders the same component.
   assert.match(header, /const menu = submenuFor\(item\.id\);\s*if \(menu\) \{[\s\S]*?<HeaderNavMenu/);
-  assert.match(model, /homegroundDestinationNavigationIds = \[\s*"cities",\s*"inspiration",\s*\]/);
+  assert.match(model, /homegroundDestinationNavigationIds = \[\s*"cities",\s*"inspiration",\s*"sights",\s*\]/);
   assert.match(model, /pathSegment: "inspiration\/"/);
   // Every /services/ page and the reservation page sit under Services.
   assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);

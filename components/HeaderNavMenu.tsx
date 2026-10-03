@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Compass, MapPin, Route, Ticket, UserRound } from "lucide-react";
+import { ChevronDown, Compass, Landmark, MapPin, Route, Ticket, UserRound } from "lucide-react";
 import {
   useEffect,
   useId,
@@ -23,6 +23,7 @@ import styles from "./HomegroundHeader.module.css";
 const menuIcons = {
   cities: MapPin,
   inspiration: Compass,
+  sights: Landmark,
   "attraction-tickets": Ticket,
   "english-guides": UserRound,
   "trip-support": Route,
