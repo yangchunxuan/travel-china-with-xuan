@@ -241,11 +241,11 @@ const liRiver = (n: number) => day(
 
 const yulongCountryside = (n: number) => day(
   n,
-  l("Yulong River countryside", "遇龙河乡村", "위룽허 전원"),
+  l("Yulong River countryside", "遇龙河乡村", "우룡하 전원"),
   l(
     "If the water level and operator allow, ride a bamboo raft on the booked stretch of the Yulong River. Afterward, see the countryside by bike or vehicle without a fixed walking target. Stay in Yangshuo.",
     "遇龙河水位和运营允许时，按确认的河段坐一次竹筏。之后骑车或乘车看乡村，不设一定要走多少路；晚上住阳朔。",
-    "수위와 운영이 허락하면 예약된 위룽허 구간에서 대나무 뗏목을 탑니다. 그 뒤에는 자전거나 차량으로 시골을 둘러봅니다. 걸어야 하는 거리를 정해 두지 않고 양삭에서 숙박합니다.",
+    "수위와 운영이 허락하면 예약된 우룡하 구간에서 대나무 뗏목을 탑니다. 그 뒤에는 자전거나 차량으로 시골을 둘러봅니다. 걸어야 하는 거리를 정해 두지 않고 양삭에서 숙박합니다.",
   ),
 );
 
@@ -345,7 +345,7 @@ const chongqingThenBoard = (n: number) => day(
 
 const onTheYangtze = (n: number) => day(
   n,
-  l("On the Yangtze", "长江航行", "양쯔강 항해"),
+  l("On the Yangtze", "长江航行", "장강 항해"),
   l(
     "The included shore visit is usually Fengdu Ghost City in the morning; the rest of the day is on board. Stops such as Shuanggui Mountain and the evening show are paid options sold on the ship, and weather or the water level can change a stop.",
     "船票含的岸上游览通常是上午的丰都鬼城，其余时间在船上。双桂山、晚上的演出这类项目要在船上另外报名付费；天气或水位也可能让停靠点变动。",
@@ -545,7 +545,7 @@ const classicPrivate: PrivateTourProduct = {
   serviceNote: l(
     "On city touring days, an English-speaking local guide and vehicle serve your party only. We include every airport and station transfer, the named first-entry tickets, the Li River cruise with your luggage moved separately, and one Yulong River bamboo raft. The long crossings are second-class trains Beijing–Xi’an–Chengdu and economy flights Chengdu–Guilin and Guilin–Shanghai. Guides change by city; drivers take you to and from stations and airports on travel days. A Korean-speaking guide costs the same where available, checked city by city.",
     "各地游览日由当地导游和车只带你们一行。价格含全部机场、车站接送，所列首道门票、漓江船及行李另车转运，还有一次遇龙河竹筏。城际交通是北京—西安—成都二等座高铁，成都—桂林、桂林—上海经济舱航班。导游按城市更换，转场日由两地司机负责接送；导游语种按订单确认。",
-    "도시별 관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 공항·역 이동, 명시된 기본 입장권, 짐을 별도로 옮기는 이강 유람선과 위룽허 대나무 뗏목 1회가 포함됩니다. 베이징–시안–청두 고속철도 2등석과 청두–계림, 계림–상하이 이코노미 항공편도 포함됩니다. 가이드는 도시마다 바뀌고 이동일에는 양쪽 기사가 역이나 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+    "도시별 관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 공항·역 이동, 명시된 기본 입장권, 짐을 별도로 옮기는 이강 유람선과 우룡하 대나무 뗏목 1회가 포함됩니다. 베이징–시안–청두 고속철도 2등석과 청두–계림, 계림–상하이 이코노미 항공편도 포함됩니다. 가이드는 도시마다 바뀌고 이동일에는 양쪽 기사가 역이나 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
   ),
   exclusions: exclusions(
     ["Single-room supplement", "Checked baggage above the airline's included allowance", "The Day 13 option not chosen in writing"],
@@ -591,7 +591,7 @@ const classicPrivate: PrivateTourProduct = {
       l(
         "On the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private tour, we can quote a version with Zhangjiajie instead of Chengdu, a Yangtze cruise or extra nights. We put the changed route and price in writing before payment.",
         "北京、西安、成都、桂林到上海的 14 天私家团可以改，比如把成都换成张家界、加长江游轮，或多住几晚。改后的路线和价格先书面发给你，确认后才付款。",
-        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 청두 대신 장가계를 넣거나 양쯔강 크루즈와 숙박을 추가할 수 있습니다. 바뀐 일정과 요금은 결제 전에 서면으로 안내합니다.",
+        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 청두 대신 장가계를 넣거나 장강 크루즈와 숙박을 추가할 수 있습니다. 바뀐 일정과 요금은 결제 전에 서면으로 안내합니다.",
       ),
     ),
     faq(
@@ -719,7 +719,7 @@ const classicSmallGroup: PrivateTourProduct = {
   serviceNote: l(
     "English-speaking local guides take the group around each city on touring days. The price includes a group vehicle, one Beijing airport pickup and one Shanghai airport drop-off on the group dates, named admissions, the Li River cruise and one Yulong River raft, second-class trains Beijing–Xi’an–Chengdu, and economy flights Chengdu–Guilin and Guilin–Shanghai.",
     "各地游览由当地英语导游带团。价格含团车、按团期的一次北京接机和一次上海送机、所列门票、漓江游船与一次遇龙河竹筏、北京—西安—成都二等座高铁，以及成都—桂林和桂林—上海经济舱航班。",
-    "관광일에는 도시별 영어 현지 가이드가 안내합니다. 그룹 차량, 그룹 날짜의 베이징 공항 픽업 1회와 상하이 공항 샌딩 1회, 명시된 입장권, 이강 유람선과 위룽허 뗏목 1회, 베이징–시안–청두 고속철도 2등석, 청두–계림과 계림–상하이 이코노미 항공편이 포함됩니다.",
+    "관광일에는 도시별 영어 현지 가이드가 안내합니다. 그룹 차량, 그룹 날짜의 베이징 공항 픽업 1회와 상하이 공항 샌딩 1회, 명시된 입장권, 이강 유람선과 우룡하 뗏목 1회, 베이징–시안–청두 고속철도 2등석, 청두–계림과 계림–상하이 이코노미 항공편이 포함됩니다.",
   ),
   exclusions: exclusions(
     ["Single supplement, from USD 690", "Transfers on dates other than the group's arrival and departure days", "Checked baggage above the airline's included allowance"],
@@ -915,7 +915,7 @@ const landscapes: PrivateTourProduct = {
   serviceNote: l(
     "On touring days, only your party uses the English-speaking local guide and vehicle. The price covers transfers and named first entries, including Zhangjiajie National Forest Park, the Bailong Elevator and Tianmen Mountain cable car. It also covers the Li River cruise with separate luggage transfer, one Yulong River raft, the second-class Beijing–Xi’an train, economy flights Xi’an–Zhangjiajie and Guilin–Shanghai, and the direct Zhangjiajie–Guilin train. Guides change with the city; one driver sees you off and another meets you after a train or flight. Korean-speaking guides are the same price where available.",
     "游览日的当地导游和车只服务你们。所列首道门票含张家界国家森林公园、百龙天梯和天门山索道；漓江船与行李另车转运、一次遇龙河竹筏也含。城际交通含北京—西安二等座高铁、西安—张家界和桂林—上海经济舱航班、张家界—桂林直达高铁。导游每城更换，转场由两地司机接送；语种按订单确认。",
-    "관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카 등 기본 입장권과 짐을 따로 옮기는 이강 배, 위룽허 뗏목 1회가 포함됩니다. 베이징–시안 고속철도 2등석, 시안–장가계와 계림–상하이 이코노미 항공편, 장가계–계림 직통 열차도 포함됩니다. 가이드는 도시별로 바뀌며 이동일에는 양쪽 기사가 역과 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+    "관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카 등 기본 입장권과 짐을 따로 옮기는 이강 배, 우룡하 뗏목 1회가 포함됩니다. 베이징–시안 고속철도 2등석, 시안–장가계와 계림–상하이 이코노미 항공편, 장가계–계림 직통 열차도 포함됩니다. 가이드는 도시별로 바뀌며 이동일에는 양쪽 기사가 역과 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
   ),
   exclusions: exclusions(
     ["Single-room supplement", "Grand Canyon Glass Bridge and other Zhangjiajie add-ons unless listed", "Checked baggage above the airline's included allowance"],
@@ -945,7 +945,7 @@ const landscapes: PrivateTourProduct = {
       l(
         "On the 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route, choose Zhangjiajie if you would rather spend two walking days among sandstone peaks than visit Chengdu’s pandas. To include both, the 21-day private route adds Chengdu and a three-night Yangtze cruise, from USD 5,890 per person for two.",
         "北京、西安、张家界、桂林到上海这条 14 天线，适合愿意在砂岩峰林里走两天、把成都熊猫留到下次的人。想两处都看，21 天私家团还加成都和三晚长江游轮，2 人同行每人 ¥38,280 起。",
-        "베이징·시안·장가계·계림·상하이 14일 일정은 청두 판다보다 사암 봉우리 사이를 이틀 걷고 싶은 분에게 맞습니다. 둘 다 보려면 청두와 양쯔강 크루즈 3박을 더한 21일 프라이빗 투어가 있으며 2명 기준 1인 ₩8,240,000부터입니다.",
+        "베이징·시안·장가계·계림·상하이 14일 일정은 청두 판다보다 사암 봉우리 사이를 이틀 걷고 싶은 분에게 맞습니다. 둘 다 보려면 청두와 장강 크루즈 3박을 더한 21일 프라이빗 투어가 있으며 2명 기준 1인 ₩8,240,000부터입니다.",
       ),
     ),
     faq(
@@ -1026,27 +1026,27 @@ const yangtzeLongHaul: PrivateTourProduct = {
   title: l(
     "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour",
     "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团",
-    "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어",
+    "베이징·시안·청두·장강 크루즈·상하이 17일 프라이빗 투어",
   ),
   metadataTitle: l(
     "Beijing, Xi'an & Yangtze Cruise Private Tour: 17 Days",
     "北京西安成都长江三峡上海17天私家团",
-    "양쯔강 크루즈 포함 중국 17일 프라이빗 투어",
+    "장강 크루즈 포함 중국 17일 프라이빗 투어",
   ),
   metadataDescription: l(
     "17-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, pandas, Three Gorges, Shanghai. Per person USD 4,690 for 2 travellers, 3,790 for 6.",
     "17 天私家团含三晚长江游轮：北京、西安、成都大熊猫、三峡与上海。每人价格：2 人同行 ¥30,480，6 人同行 ¥24,630。",
-    "3박 양쯔강 크루즈 포함 17일 프라이빗 투어: 베이징, 시안, 청두 판다, 삼협, 상하이. 1인 요금 2명 ₩6,560,000, 6명 ₩5,300,000.",
+    "3박 장강 크루즈 포함 17일 프라이빗 투어: 베이징, 시안, 청두 판다, 삼협, 상하이. 1인 요금 2명 ₩6,560,000, 6명 ₩5,300,000.",
   ),
   eyebrow: l(
     "Three river nights break up the train journey between cities",
     "几座城市之间，留三晚在长江船上",
-    "도시 이동 중간에 양쯔강 크루즈 3박",
+    "도시 이동 중간에 장강 크루즈 3박",
   ),
   lede: l(
     "A pair sharing hotel rooms and a standard balcony cabin pays from USD 4,690 each on the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour; international flights are extra. The three-night cruise runs downstream from Chongqing to Yichang, so the land route follows the sailing date.",
     "2 人走北京、西安、成都、长江到上海的 17 天私家团，酒店两人一间并住标准阳台舱，每人 ¥30,480 起，国际机票另计。游轮从重庆下水到宜昌，住三晚；陆上日期得跟着船期排。",
-    "호텔 2인 1실과 기본 발코니 객실을 쓰는 2명은 베이징·시안·청두·양쯔강·상하이 17일 프라이빗 투어를 1인 ₩6,560,000부터 예약할 수 있습니다. 국제선은 별도입니다. 충칭에서 이창까지 내려가는 크루즈가 3박이어서 육상 일정도 운항일에 맞춥니다.",
+    "호텔 2인 1실과 기본 발코니 객실을 쓰는 2명은 베이징·시안·청두·장강·상하이 17일 프라이빗 투어를 1인 ₩6,560,000부터 예약할 수 있습니다. 국제선은 별도입니다. 충칭에서 이창까지 내려가는 크루즈가 3박이어서 육상 일정도 운항일에 맞춥니다.",
   ),
   summary: l(
     "Of the 16 nights, 13 are in breakfast-included hotels and three are aboard the ship. The price covers private local guides and vehicles on land touring days, transfers, named tickets, trains, the cruise with onboard meals, and the train or flight from Yichang to Shanghai. The ship and cabin are confirmed for your sailing.",
@@ -1067,7 +1067,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       "上海住 4 晚，含苏州一日",
     ],
     [
-      "3박 양쯔강 삼협 하행 크루즈",
+      "3박 장강 삼협 하행 크루즈",
       "구당협·무협·소삼협과 삼협댐",
       "청두 판다와 충칭 1박",
       "상하이 4박과 쑤저우 당일 일정",
@@ -1095,7 +1095,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
   hotelNote: l(
     "Of 16 nights, 13 are in breakfast-included hotels at the four-star standard (4 diamonds on Trip.com/Ctrip): Beijing 4, Xi’an 2, Chengdu 2, Chongqing 1 and Shanghai 4. The other three are in a standard balcony cabin on a five-star-rated Yangtze ship, normally with Gold Cruises. On the lowest cabin deck the balcony may be glassed in; a higher deck costs a little more. Hotel rooms are twin share; the ship, deck and cabin are set for the sailing date.",
     "16 晚里，13 晚住含早的携程 4 钻标准酒店：北京 4 晚、西安 2 晚、成都 2 晚、重庆 1 晚、上海 4 晚。另 3 晚住五星级长江游轮的标准阳台舱，通常订长江黄金游轮。最低一层舱房的阳台可能是封闭玻璃窗，住高一层要稍加钱。酒店默认两人一间，船名、楼层和舱房按航期确认。",
-    "16박 중 조식 포함 씨트립 4다이아 등급 호텔이 13박입니다. 베이징 4박, 시안 2박, 청두 2박, 충칭 1박, 상하이 4박입니다. 나머지 3박은 5성급 양쯔강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있고 높은 층은 요금이 조금 더 붙습니다. 호텔은 2인 1실이며 선박, 층과 객실은 운항일에 맞춰 정합니다.",
+    "16박 중 조식 포함 씨트립 4다이아 등급 호텔이 13박입니다. 베이징 4박, 시안 2박, 청두 2박, 충칭 1박, 상하이 4박입니다. 나머지 3박은 5성급 장강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있고 높은 층은 요금이 조금 더 붙습니다. 호텔은 2인 1실이며 선박, 층과 객실은 운항일에 맞춰 정합니다.",
   ),
   serviceNote: l(
     "On land touring days, your party has its own English-speaking local guide and vehicle. The price covers transfers, named first entries, second-class trains Beijing–Xi’an–Chengdu–Chongqing and Shanghai–Suzhou return, plus the Yichang–Shanghai train or economy flight. The three-night ship booking includes the cabin, meals from dinner on boarding night to breakfast on the last morning, and three shore visits, usually Fengdu Ghost City, the Lesser Three Gorges by small boat and the Three Gorges Dam. Ship commentary follows the ship’s language programme. Land guides change by city, with drivers at both ends of train and flight days; Korean-speaking land guides cost the same where available.",
@@ -1115,11 +1115,11 @@ const yangtzeLongHaul: PrivateTourProduct = {
   ),
   faq: [
     faq(
-      l("How much does a China tour with a Yangtze cruise cost?", "带长江游轮的中国行要多少钱？", "양쯔강 크루즈가 포함된 중국 여행은 얼마인가요?"),
+      l("How much does a China tour with a Yangtze cruise cost?", "带长江游轮的中国行要多少钱？", "장강 크루즈가 포함된 중국 여행은 얼마인가요?"),
       l(
         "For the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour, two sharing hotel rooms and a standard balcony cabin pay USD 4,690 each, USD 9,380 together. The rate falls to USD 3,990 each for four and USD 3,790 for six. Included are 13 breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, local private guides and vehicles on land, tickets, high-speed trains and a train or flight from Yichang to Shanghai. Land meals and international flights cost extra; peak sailings can raise the total. Eight or more may depart on their own dates at USD 3,490 each. Other party sizes need a written quote.",
         "北京、西安、成都、长江到上海的 17 天私家团，2 人住一间并用标准阳台舱，每人 ¥30,480，两人共 ¥60,960。4 人每人 ¥25,930，6 人每人 ¥24,630。价格含 13 晚早餐酒店、三晚长江游轮及船上餐食和已含岸上项目、陆上私人导游与车、门票、高铁，以及宜昌到上海的火车或航班。国际机票、陆上午晚餐另付，旺季船期也可能加价。8 人以上可自选日期按每人 ¥22,680 走；其他人数书面报价。",
-        "베이징·시안·청두·양쯔강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,560,000, 합계 ₩13,120,000입니다. 4명은 1인 ₩5,580,000, 6명은 ₩5,300,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩4,880,000이며 다른 인원은 서면 견적을 드립니다.",
+        "베이징·시안·청두·장강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,560,000, 합계 ₩13,120,000입니다. 4명은 1인 ₩5,580,000, 6명은 ₩5,300,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩4,880,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
@@ -1127,7 +1127,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       l(
         "Both 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai versions use a shared cruise ship. On land, the private guide and vehicle serve only your party on dates you choose, from USD 4,690 each for two. The 2027 small group costs USD 3,490 each with 8–12 guests, departing 19 May or 1 September on one fixed plan.",
         "北京、西安、成都、长江到上海的两种 17 天版本，游轮都是共乘。陆上私家团的导游和车只带你们，可选日期，2 人同行每人 ¥30,480 起；2027 年小团每人 ¥22,680，5 月 19 日或 9 月 1 日出发，8–12 人按固定行程走。",
-        "베이징·시안·청두·양쯔강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,560,000부터입니다. 2027년 소규모 그룹은 1인 ₩4,880,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
+        "베이징·시안·청두·장강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,560,000부터입니다. 2027년 소규모 그룹은 1인 ₩4,880,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
       ),
     ),
     faq(
@@ -1135,7 +1135,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       l(
         "The Yangtze leg of the 17-day Beijing–Xi’an–Chengdu–Shanghai private tour sails downstream from Chongqing to Yichang for three nights. Going upstream takes four nights, so we use the downstream sailing to keep the entire route at 17 days.",
         "北京、西安、成都到上海的 17 天私家团，长江段从重庆下水到宜昌，船上住三晚。上水要四晚，所以这里选下水，整条线才排得进 17 天。",
-        "베이징·시안·청두·상하이 17일 프라이빗 일정의 양쯔강 구간은 충칭에서 이창까지 하류로 3박합니다. 상류는 4박이라 전체 일정을 17일로 맞추려고 하류 배를 씁니다.",
+        "베이징·시안·청두·상하이 17일 프라이빗 일정의 장강 구간은 충칭에서 이창까지 하류로 3박합니다. 상류는 4박이라 전체 일정을 17일로 맞추려고 하류 배를 씁니다.",
       ),
     ),
     faq(
@@ -1143,7 +1143,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       l(
         "The three-night Chongqing–Yichang Yangtze cruise is on a shared ship, with a cabin for your party and the ship’s own programme. The private guide and vehicle apply to the land touring days.",
         "重庆到宜昌的三晚长江游轮是共乘船，你们有自己的舱房，船上按船方活动走。私人导游和车服务的是陆上游览日。",
-        "충칭–이창 양쯔강 3박 크루즈는 다른 승객과 같은 배를 타고 일행의 객실을 씁니다. 선상 일정은 선박 운영에 따릅니다. 전용 가이드와 차량은 육상 관광일에 배정됩니다.",
+        "충칭–이창 장강 3박 크루즈는 다른 승객과 같은 배를 타고 일행의 객실을 씁니다. 선상 일정은 선박 운영에 따릅니다. 전용 가이드와 차량은 육상 관광일에 배정됩니다.",
       ),
     ),
     faq(
@@ -1159,7 +1159,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       l(
         "Yes. On the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai tour, a standard cabin takes up to four people, children included. A third person or a child sharing the cabin pays a reduced cruise fare, and children under 2 pay only a small part of it. Hotel rooms for the same party are priced separately, and we send the whole quote in writing.",
         "可以。北京、西安、成都、长江到上海 17 天私家团的标准舱每间最多住 4 人（含儿童）。同舱的第三人或儿童船费有折扣，2 岁以下只收一小部分船费。同行的酒店房间另算，整团报价书面发你。",
-        "가능합니다. 베이징·시안·청두·양쯔강·상하이 17일 투어의 기본 선실은 어린이를 포함해 최대 4명까지 묵을 수 있습니다. 같은 선실의 세 번째 승객이나 어린이는 할인된 크루즈 요금을 내고 2세 미만은 요금의 일부만 냅니다. 같은 일행의 호텔 객실은 따로 계산하며 전체 견적은 서면으로 드립니다.",
+        "가능합니다. 베이징·시안·청두·장강·상하이 17일 투어의 기본 선실은 어린이를 포함해 최대 4명까지 묵을 수 있습니다. 같은 선실의 세 번째 승객이나 어린이는 할인된 크루즈 요금을 내고 2세 미만은 요금의 일부만 냅니다. 같은 일행의 호텔 객실은 따로 계산하며 전체 견적은 서면으로 드립니다.",
       ),
     ),
   ],
@@ -1167,7 +1167,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
     yangtzeSlug,
     "hero.webp",
     l("Chongqing skyline and river bridge at sunset", "日落时的重庆天际线与跨江大桥", "해 질 녘 충칭 스카이라인과 강 위의 다리"),
-    l("Spend one night in Chongqing, then board the Yangtze ship.", "重庆住一晚，第二天上长江游轮。", "충칭에서 1박한 다음 양쯔강 배에 오릅니다."),
+    l("Spend one night in Chongqing, then board the Yangtze ship.", "重庆住一晚，第二天上长江游轮。", "충칭에서 1박한 다음 장강 배에 오릅니다."),
   ),
   gallery: [
     image(
@@ -1989,7 +1989,7 @@ const grandChina: PrivateTourProduct = {
   title: l(
     "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour",
     "中国全景：含张家界与长江游轮 21 天 20 晚私家团",
-    "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
+    "장가계·장강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
   ),
   metadataTitle: l(
     "3-Week China Private Tour: 21 Days with Yangtze Cruise",
@@ -1999,17 +1999,17 @@ const grandChina: PrivateTourProduct = {
   metadataDescription: l(
     "21-day private tour: Beijing, Xi'an, pandas, Li River, Zhangjiajie, 3-night Yangtze cruise, Shanghai. Per person USD 5,890 for 2 travellers, 4,690 for 6.",
     "21 天私家团：北京、西安、大熊猫、漓江、张家界、三晚长江游轮与上海。每人价格：2 人同行 ¥38,280，6 人同行 ¥30,480。",
-    "21일 프라이빗 투어: 베이징, 시안, 판다, 이강, 장가계, 3박 양쯔강 크루즈, 상하이. 1인 요금 2명 ₩8,240,000, 6명 ₩6,560,000.",
+    "21일 프라이빗 투어: 베이징, 시안, 판다, 이강, 장가계, 3박 장강 크루즈, 상하이. 1인 요금 2명 ₩8,240,000, 6명 ₩6,560,000.",
   ),
   eyebrow: l(
     "Three weeks across the cities, mountains and the Yangtze",
     "三周走城市、山水，也在长江船上住三晚",
-    "3주 동안 도시와 산을 돌고 양쯔강에서 3박",
+    "3주 동안 도시와 산을 돌고 장강에서 3박",
   ),
   lede: l(
     "Two sharing twin hotel rooms and a standard balcony cabin pay USD 5,890 each to take the 21-day China private tour; international flights are extra. It joins Beijing and Xi’an, Chengdu’s pandas, the Li River, Zhangjiajie and a three-night downstream Yangtze cruise. Expect several full travel days between them.",
     "走 21 天中国私家团，2 人住一间并用标准阳台舱，每人 ¥38,280 起，国际机票另付。北京、西安、成都大熊猫、漓江、张家界和三晚长江下水游轮都走到；中间也有几天几乎整天在转场。",
-    "중국 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실을 쓰는 2명일 때 1인 ₩8,240,000부터입니다. 국제선은 별도입니다. 베이징, 시안, 청두 판다, 이강, 장가계와 양쯔강 하행 크루즈 3박을 잇습니다. 중간에는 하루를 거의 이동에 쓰는 날도 있습니다.",
+    "중국 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실을 쓰는 2명일 때 1인 ₩8,240,000부터입니다. 국제선은 별도입니다. 베이징, 시안, 청두 판다, 이강, 장가계와 장강 하행 크루즈 3박을 잇습니다. 중간에는 하루를 거의 이동에 쓰는 날도 있습니다.",
   ),
   summary: l(
     "The 20 nights comprise 17 breakfast-included hotel nights and three in a balcony cruise cabin. Local private guides and vehicles on land touring days, transfers, named tickets, trains, domestic flights and the cruise with onboard meals are included. Guides change by city; the ship runs its own programme.",
@@ -2078,12 +2078,12 @@ const grandChina: PrivateTourProduct = {
   hotelNote: l(
     "This 20-night trip has 17 breakfast-included hotel nights at the four-star standard (4 diamonds on Trip.com/Ctrip), with twin rooms: Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2, Wulingyuan 2, Zhangjiajie city 1, Chongqing 1 and Shanghai 2. Three more nights are in a standard balcony cabin on a five-star-rated Yangtze ship, normally with Gold Cruises; on the lowest cabin deck the balcony may be glassed in. We confirm the hotels, ship and cabin before payment.",
     "20 晚中，17 晚住含早的携程 4 钻标准酒店，默认两人一间：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、武陵源 2 晚、张家界市区 1 晚、重庆 1 晚、上海 2 晚。另外 3 晚住五星级长江游轮的标准阳台舱，通常订长江黄金游轮；最低一层舱房的阳台可能是封闭玻璃窗。酒店、船和舱房付款前确认。",
-    "20박 중 17박은 조식 포함 씨트립 4다이아 등급 호텔 2인 1실입니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 무릉원 2박, 장가계 시내 1박, 충칭 1박, 상하이 2박입니다. 3박은 5성급 양쯔강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있습니다. 호텔, 선박과 객실은 결제 전에 확인합니다.",
+    "20박 중 17박은 조식 포함 씨트립 4다이아 등급 호텔 2인 1실입니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 무릉원 2박, 장가계 시내 1박, 충칭 1박, 상하이 2박입니다. 3박은 5성급 장강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있습니다. 호텔, 선박과 객실은 결제 전에 확인합니다.",
   ),
   serviceNote: l(
     "An English-speaking local guide and vehicle serve your party on land touring days. Transfers and named first entries include Zhangjiajie National Forest Park, the Bailong Elevator and Tianmen Mountain cable car. The Li River cruise moves luggage separately, and one Yulong River bamboo raft is included. Second-class trains run Beijing–Xi’an–Chengdu, Guilin–Zhangjiajie and Zhangjiajie–Chongqing; flights are economy Chengdu–Guilin and, if chosen over rail, Yichang–Shanghai. The Yichang–Shanghai train is also included as that alternative. The ship booking covers the cabin, meals from boarding-night dinner to last-morning breakfast, and three shore visits, usually Fengdu Ghost City, the Lesser Three Gorges and the Three Gorges Dam. Guides change by city; drivers cover travel-day handovers. Korean-speaking land guides cost the same where available.",
     "陆上游览日由各地导游和车只带你们。全部接送、所列首道门票都含，包括张家界国家森林公园、百龙天梯和天门山索道。漓江船有行李另车转运，还含一次遇龙河竹筏。北京—西安—成都、桂林—张家界、张家界—重庆坐二等座高铁；成都—桂林坐经济舱航班，宜昌—上海则按确认的火车或经济舱航班走。游轮含舱房、从登船晚餐到离船早餐的船上餐食，以及三处岸上游览，通常是丰都鬼城、小三峡和三峡大坝。导游每城更换，转场由两地司机接送；陆上语种按订单确认。",
-    "육상 관광일에는 도시별 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 모든 이동과 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카 등 기본 입장권이 포함됩니다. 이강 배의 짐 별도 이동과 위룽허 뗏목 1회도 포함됩니다. 베이징–시안–청두, 계림–장가계, 장가계–충칭은 고속철도 2등석입니다. 청두–계림은 이코노미 항공편, 이창–상하이는 열차 또는 이코노미 항공편을 탑니다. 크루즈 객실, 승선일 저녁부터 마지막 날 아침까지의 선상 식사, 보통 펑두 귀성·소삼협·삼협댐 세 곳의 육상 관광도 요금에 들어 있습니다. 가이드는 도시별로 바뀌고 이동일에는 양쪽 기사가 맡습니다. 한국어 육상 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+    "육상 관광일에는 도시별 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 모든 이동과 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카 등 기본 입장권이 포함됩니다. 이강 배의 짐 별도 이동과 우룡하 뗏목 1회도 포함됩니다. 베이징–시안–청두, 계림–장가계, 장가계–충칭은 고속철도 2등석입니다. 청두–계림은 이코노미 항공편, 이창–상하이는 열차 또는 이코노미 항공편을 탑니다. 크루즈 객실, 승선일 저녁부터 마지막 날 아침까지의 선상 식사, 보통 펑두 귀성·소삼협·삼협댐 세 곳의 육상 관광도 요금에 들어 있습니다. 가이드는 도시별로 바뀌고 이동일에는 양쪽 기사가 맡습니다. 한국어 육상 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
   ),
   exclusions: exclusions(
     ["Single-room and single-cabin supplements (a cabin for one is charged at close to twice the shared per-person cruise fare)", "Cruise gratuities, paid shore options sold on board (such as White Emperor City and the dam's ship lift) and cabin upgrades", "Peak-date cruise surcharges above the base balcony cabin", "The Day 20 option not chosen in writing"],
@@ -2094,7 +2094,7 @@ const grandChina: PrivateTourProduct = {
   bookingNote: l(
     "The listed starting price is per person for the stated group size, assuming twin hotel rooms and a standard balcony cabin. Yangtze fares vary by ship and sailing date. Before payment, we put the ship, cabin, any peak-date difference and the final total in writing. We request passport details ahead of Forbidden City and Terracotta Warriors ticket sales.",
     "页面起价按对应人数算每人，酒店两人一间，游轮用标准阳台舱。长江船价随船和航期变；付款前，我们会把船名、舱房、旺季差价和最终总价写给你。故宫、兵马俑开放订票前，还要收护照信息。",
-    "표시 시작가는 해당 인원이 호텔 2인 1실과 기본 발코니 객실을 쓸 때의 1인 금액입니다. 양쯔강 크루즈 요금은 배와 운항일에 따라 달라집니다. 결제 전에 선박, 객실, 성수기 차액과 최종 금액을 서면으로 확인합니다. 자금성과 병마용 입장권 발매 전에는 여권 정보를 요청합니다.",
+    "표시 시작가는 해당 인원이 호텔 2인 1실과 기본 발코니 객실을 쓸 때의 1인 금액입니다. 장강 크루즈 요금은 배와 운항일에 따라 달라집니다. 결제 전에 선박, 객실, 성수기 차액과 최종 금액을 서면으로 확인합니다. 자금성과 병마용 입장권 발매 전에는 여권 정보를 요청합니다.",
   ),
   faq: [
     faq(
@@ -2102,7 +2102,7 @@ const grandChina: PrivateTourProduct = {
       l(
         "A 21-day private China trip covering Beijing, Xi’an, Chengdu, Guilin, Zhangjiajie, the Yangtze and Shanghai is USD 5,890 each for two sharing hotel rooms and a standard balcony cabin, USD 11,780 together. Four pay USD 4,990 each and six USD 4,690. Included are 17 hotel nights with breakfast, a three-night Yangtze cruise with onboard meals, the Li River boat, local private guides and vehicles on land, tickets, route trains and domestic flights. International flights and land meals are separate; peak sailings may raise the total. Ask for a written quote for another group size.",
         "这条走北京、西安、成都、桂林、张家界、长江和上海的 21 天私家团，2 人住一间并用标准阳台舱，每人 ¥38,280，两人共 ¥76,560；4 人每人 ¥32,430，6 人每人 ¥30,480。价格含 17 晚早餐酒店、三晚长江游轮及船上餐食、漓江游船、陆上私人导游和车、门票、路线上的火车和国内航班。国际机票和陆上午晚餐另付，旺季船期可能加价；其他人数书面报价。",
-        "베이징·시안·청두·계림·장가계·양쯔강·상하이를 잇는 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩8,240,000, 합계 ₩16,480,000입니다. 4명은 1인 ₩6,980,000, 6명은 ₩6,560,000입니다. 조식 포함 호텔 17박, 선상 식사가 있는 양쯔강 크루즈 3박, 이강 유람선, 육상 도시별 전용 가이드와 차량, 입장권, 열차와 국내선이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 다른 인원은 서면으로 견적을 드립니다.",
+        "베이징·시안·청두·계림·장가계·장강·상하이를 잇는 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩8,240,000, 합계 ₩16,480,000입니다. 4명은 1인 ₩6,980,000, 6명은 ₩6,560,000입니다. 조식 포함 호텔 17박, 선상 식사가 있는 장강 크루즈 3박, 이강 유람선, 육상 도시별 전용 가이드와 차량, 입장권, 열차와 국내선이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 다른 인원은 서면으로 견적을 드립니다.",
       ),
     ),
     faq(
@@ -2110,7 +2110,7 @@ const grandChina: PrivateTourProduct = {
       l(
         "The 21-day China private tour still has several full travel days, even though most stops get at least one full day and the three Yangtze cruise nights reduce hotel changes. If that pace feels heavy, the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai tour leaves out Guilin and Zhangjiajie and starts at USD 4,690 each for two.",
         "21 天中国私家团多数地方至少留一个完整游览日，三晚长江游轮也省了换酒店，但仍有几天几乎都在转场。觉得太赶，可以选不去桂林和张家界的 17 天北京、西安、成都、长江到上海线，2 人同行每人 ¥30,480 起。",
-        "중국 21일 프라이빗 투어는 대부분의 지역에 관광 하루 이상을 두고 양쯔강 크루즈 3박 동안 호텔을 옮기지 않습니다. 그래도 하루를 거의 이동에 쓰는 날이 있습니다. 부담스럽다면 계림과 장가계를 뺀 베이징·시안·청두·양쯔강·상하이 17일 일정이 2명 기준 1인 ₩6,560,000부터입니다.",
+        "중국 21일 프라이빗 투어는 대부분의 지역에 관광 하루 이상을 두고 장강 크루즈 3박 동안 호텔을 옮기지 않습니다. 그래도 하루를 거의 이동에 쓰는 날이 있습니다. 부담스럽다면 계림과 장가계를 뺀 베이징·시안·청두·장강·상하이 17일 일정이 2명 기준 1인 ₩6,560,000부터입니다.",
       ),
     ),
     faq(
@@ -2118,7 +2118,7 @@ const grandChina: PrivateTourProduct = {
       l(
         "The 21-day China private route works best in April–May or September–October, when Zhangjiajie has more clear days and the heat is easier. The Yangtze ships run from late February to late December, so the cruise is rarely what limits the dates. Avoid the first weeks of May and October if you can; the holiday crowds make several stops busier.",
         "21 天中国私家团优先选 4–5 月或 9–10 月。这时张家界晴天相对多，也没那么热；长江游轮 2 月底到 12 月下旬都在开，日期很少卡在游轮上。能避开五一和国庆第一周就避开，几处景点都会更忙。",
-        "중국 21일 프라이빗 일정은 4~5월과 9~10월이 좋습니다. 장가계에 맑은 날이 비교적 많고 더위도 덜합니다. 양쯔강 크루즈는 2월 말부터 12월 하순까지 운항해 크루즈 때문에 날짜가 막히는 경우는 드뭅니다. 5월과 10월 첫 주 연휴는 여러 명소가 붐비니 가능하면 피하세요.",
+        "중국 21일 프라이빗 일정은 4~5월과 9~10월이 좋습니다. 장가계에 맑은 날이 비교적 많고 더위도 덜합니다. 장강 크루즈는 2월 말부터 12월 하순까지 운항해 크루즈 때문에 날짜가 막히는 경우는 드뭅니다. 5월과 10월 첫 주 연휴는 여러 명소가 붐비니 가능하면 피하세요.",
       ),
     ),
   ],
@@ -2126,7 +2126,7 @@ const grandChina: PrivateTourProduct = {
     grandChinaSlug,
     "hero.webp",
     l("Mist among the sandstone peaks of Zhangjiajie", "张家界砂岩峰林间的云雾", "장가계 사암 봉우리 사이의 안개"),
-    l("Between the Li River and Yangtze legs, stay three nights in Zhangjiajie.", "漓江之后、长江之前，在张家界住 3 晚。", "이강과 양쯔강 사이에 장가계에서 3박합니다."),
+    l("Between the Li River and Yangtze legs, stay three nights in Zhangjiajie.", "漓江之后、长江之前，在张家界住 3 晚。", "이강과 장강 사이에 장가계에서 3박합니다."),
   ),
   gallery: [
     image(
@@ -2243,7 +2243,7 @@ const classicTen: PrivateTourProduct = {
       l(
         "The Li River boat takes about four hours to Yangshuo, while your luggage goes separately by road. Later, take a short bike ride or drive through the Yulong River countryside. Stay in Yangshuo.",
         "漓江船约 4 小时到阳朔，大件行李另车转运。下午再骑车或乘车走一小段遇龙河乡村，晚上住阳朔。",
-        "이강 배로 양삭까지 약 4시간 가는 동안 짐은 차량으로 따로 옮깁니다. 오후에는 위룽허 시골길을 짧게 자전거로 가거나 차량으로 둘러봅니다. 양삭에서 숙박합니다.",
+        "이강 배로 양삭까지 약 4시간 가는 동안 짐은 차량으로 따로 옮깁니다. 오후에는 우룡하 시골길을 짧게 자전거로 가거나 차량으로 둘러봅니다. 양삭에서 숙박합니다.",
       ),
     ),
     flyToShanghai(8),
@@ -2563,7 +2563,7 @@ const southLandscapes: PrivateTourProduct = {
   metadataDescription: l(
     "13-day private tour from Shanghai: Zhangjiajie, Fenghuang, Longji rice terraces, Li River. Per person USD 3,590 for 2 travellers, 2,890 for 6.",
     "13 天私家团，从上海进出：张家界、凤凰古城、龙脊梯田与漓江。每人价格：2 人同行 ¥23,330，6 人同行 ¥18,780。",
-    "상하이를 오가는 13일 프라이빗 투어: 장가계, 봉황고성, 룽지 다랑논, 이강. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
+    "상하이를 오가는 13일 프라이빗 투어: 장가계, 봉황고성, 용척 다랑논, 이강. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
   ),
   eyebrow: l(
     "From Shanghai to Zhangjiajie, Fenghuang and the Li River",
@@ -2573,7 +2573,7 @@ const southLandscapes: PrivateTourProduct = {
   lede: l(
     "The starting price for the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route is USD 3,590 each for two sharing a twin room; international flights are extra. It trades the northern capitals for more time in the south, including Longji’s rice terraces. The Fenghuang-to-Guilin train alone takes about six hours.",
     "上海进出，走张家界、凤凰和桂林 13 天，2 人住一间每人 ¥23,330 起，国际机票另计。它把北京、西安换成了南方山水和龙脊梯田；凤凰到桂林的直达高铁就要约 6 小时。",
-    "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 일정의 시작가는 2명, 2인 1실에 1인 ₩5,020,000입니다. 국제선은 별도입니다. 북쪽 수도 대신 룽지 다랑논까지 남쪽 풍경에 시간을 씁니다. 봉황고성에서 계림까지 직통 열차만 약 6시간 걸립니다.",
+    "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 일정의 시작가는 2명, 2인 1실에 1인 ₩5,020,000입니다. 국제선은 별도입니다. 북쪽 수도 대신 용척 다랑논까지 남쪽 풍경에 시간을 씁니다. 봉황고성에서 계림까지 직통 열차만 약 6시간 걸립니다.",
   ),
   summary: l(
     "Twelve hotel nights include breakfast. Local private guides and vehicles on touring days, transfers, named tickets including Tianmen Mountain and the Li River cruise, two second-class trains and two economy flights are included. Zhangjiajie has long walking days, so tell us early if steps are difficult.",
@@ -2596,7 +2596,7 @@ const southLandscapes: PrivateTourProduct = {
     [
       "장가계 삼림공원과 천문산",
       "강변 마을 봉황고성 2박",
-      "룽지 다랑논",
+      "용척 다랑논",
       "이강 유람선과 양삭 2박",
     ],
   ),
@@ -2651,11 +2651,11 @@ const southLandscapes: PrivateTourProduct = {
     ),
     day(
       9,
-      l("Longji rice terraces", "龙脊梯田", "룽지 다랑논"),
+      l("Longji rice terraces", "龙脊梯田", "용척 다랑논"),
       l(
         "Longji is about two hours from Guilin by road. Walk between rice-terrace viewpoints above a Zhuang or Yao village; in spring the fields hold water, in summer they are green, and before autumn harvest they turn gold. Return to Guilin to sleep.",
         "桂林开车到龙脊约 2 小时，在壮寨或瑶寨上方的梯田观景点之间走。春天看灌水，夏天看绿色稻田，秋收前看金黄；晚上回桂林。",
-        "계림에서 룽지까지 차로 약 2시간입니다. 좡족 또는 야오족 마을 위의 계단식 논 전망대 사이를 걷습니다. 봄에는 물이 차고 여름에는 초록색, 가을 수확 전에는 금빛입니다. 밤에는 계림으로 돌아옵니다.",
+        "계림에서 용척까지 차로 약 2시간입니다. 좡족 또는 야오족 마을 위의 계단식 논 전망대 사이를 걷습니다. 봄에는 물이 차고 여름에는 초록색, 가을 수확 전에는 금빛입니다. 밤에는 계림으로 돌아옵니다.",
       ),
     ),
     liRiver(10),
@@ -2671,7 +2671,7 @@ const southLandscapes: PrivateTourProduct = {
   serviceNote: l(
     "On touring days your party has its own English-speaking local guide and vehicle. Transfers and named first entries cover Zhangjiajie National Forest Park, the Bailong Elevator, Tianmen Mountain cable car and Longji. The price also includes the Li River boat with luggage carried separately by road and one Yulong River raft. High-speed trains run Zhangjiajie–Fenghuang and Fenghuang–Guilin; economy flights run Shanghai–Zhangjiajie and Guilin–Shanghai. Guides change by city, with drivers for the station and airport handovers. Korean-speaking guides cost the same where available.",
     "游览日各地导游和车只带你们。全部接送、所列首道门票都含，包括张家界国家森林公园、百龙天梯、天门山索道和龙脊。漓江船及行李另车转运、一次遇龙河竹筏也含。张家界—凤凰、凤凰—桂林坐高铁，上海—张家界、桂林—上海坐经济舱航班。导游每城更换，转场由两地司机接送；语种按订单确认。",
-    "관광일에는 도시별 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 모든 이동과 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카, 룽지 등 기본 입장권이 포함됩니다. 이강 배와 짐 별도 이동, 위룽허 뗏목 1회도 들어 있습니다. 장가계–봉황과 봉황–계림은 고속철도, 상하이–장가계와 계림–상하이는 이코노미 항공편입니다. 가이드는 도시별로 바뀌고 이동일에는 양쪽 기사가 역과 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+    "관광일에는 도시별 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 모든 이동과 장가계 국가삼림공원, 백룡엘리베이터, 천문산 케이블카, 용척 등 기본 입장권이 포함됩니다. 이강 배와 짐 별도 이동, 우룡하 뗏목 1회도 들어 있습니다. 장가계–봉황과 봉황–계림은 고속철도, 상하이–장가계와 계림–상하이는 이코노미 항공편입니다. 가이드는 도시별로 바뀌고 이동일에는 양쪽 기사가 역과 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
   ),
   exclusions: exclusions(
     ["Single-room supplement", "Tuojiang boat rides and paid smaller sights in Fenghuang", "Checked baggage above the airline's included allowance"],
@@ -2689,7 +2689,7 @@ const southLandscapes: PrivateTourProduct = {
       l(
         "For the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route, two sharing a twin room pay USD 3,590 each, or USD 7,180 together. Four pay USD 3,040 each and six USD 2,890. The price includes 12 breakfast hotel nights, local private guides and vehicles on touring days, named tickets including Tianmen Mountain and Longji, the Li River cruise, two high-speed trains and two domestic flights. International flights and lunches and dinners cost extra; other party sizes are quoted in writing.",
         "上海进出、走张家界、凤凰和桂林的 13 天私家团，2 人住一间每人 ¥23,330，两人共 ¥46,660；4 人每人 ¥19,760，6 人每人 ¥18,780。价格含 12 晚早餐酒店、各地游览日的私人导游和车、天门山与龙脊等门票、漓江游船、两段高铁及两段国内航班。国际机票、午晚餐另付；其他人数书面报价。",
-        "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,020,000, 두 명 합계 ₩10,040,000입니다. 4명은 1인 ₩4,250,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 12박, 관광일의 도시별 전용 가이드와 차량, 천문산과 룽지 등 입장권, 이강 유람선, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,020,000, 두 명 합계 ₩10,040,000입니다. 4명은 1인 ₩4,250,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 12박, 관광일의 도시별 전용 가이드와 차량, 천문산과 용척 등 입장권, 이강 유람선, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
@@ -2701,11 +2701,11 @@ const southLandscapes: PrivateTourProduct = {
       ),
     ),
     faq(
-      l("When are the rice terraces at their best?", "龙脊梯田什么时候最好看？", "룽지 다랑논은 언제가 가장 좋나요?"),
+      l("When are the rice terraces at their best?", "龙脊梯田什么时候最好看？", "용척 다랑논은 언제가 가장 좋나요?"),
       l(
         "Longji rice terraces on the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin route look different each season. Water reflects the sky from late April through May, the fields are green in June–August, and rice turns gold from late September to mid-October. Winter is quiet and brown.",
         "上海进出、走张家界、凤凰和桂林的 13 天线，龙脊梯田要看你想看哪种颜色。4 月下旬到 5 月田里灌水，6–8 月一片青绿，9 月下旬到 10 月中旬稻子金黄；冬天人少，田里偏黄。",
-        "상하이 왕복 장가계·봉황고성·계림 13일 일정의 룽지 다랑논은 계절마다 다릅니다. 4월 말~5월에는 물이 차고 6~8월은 초록색, 9월 말~10월 중순에는 벼가 금빛입니다. 겨울에는 한산하고 갈색 논이 보입니다.",
+        "상하이 왕복 장가계·봉황고성·계림 13일 일정의 용척 다랑논은 계절마다 다릅니다. 4월 말~5월에는 물이 차고 6~8월은 초록색, 9월 말~10월 중순에는 벼가 금빛입니다. 겨울에는 한산하고 갈색 논이 보입니다.",
       ),
     ),
     faq(
@@ -2713,7 +2713,7 @@ const southLandscapes: PrivateTourProduct = {
       l(
         "The 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin route has two Zhangjiajie days with several hours of paths and stairs. The Bailong Elevator and cable cars remove the steepest climbs, while Longji has village paths between viewpoints. The longest transfer is the Fenghuang–Guilin train, about six hours. Tell us before booking if you need shorter walks; there are no shopping stops.",
         "上海进出、走张家界、凤凰和桂林的 13 天线，张家界有两天要走几个小时步道和台阶，最陡处有百龙天梯和索道；龙脊则要走村寨小路。最长转场是凤凰到桂林约 6 小时高铁。走路不方便请订前告诉我们，可选短些的观景路线。全程不进购物店。",
-        "상하이 왕복 장가계·봉황고성·계림 13일 일정에는 장가계에서 길과 계단을 몇 시간 걷는 날이 이틀 있습니다. 가장 가파른 부분은 백룡엘리베이터와 케이블카를 타고, 룽지는 마을길로 전망대 사이를 걷습니다. 가장 긴 이동은 봉황고성–계림 열차 약 6시간입니다. 짧은 걷기가 필요하면 예약 전에 알려 주세요. 쇼핑 일정은 없습니다.",
+        "상하이 왕복 장가계·봉황고성·계림 13일 일정에는 장가계에서 길과 계단을 몇 시간 걷는 날이 이틀 있습니다. 가장 가파른 부분은 백룡엘리베이터와 케이블카를 타고, 용척은 마을길로 전망대 사이를 걷습니다. 가장 긴 이동은 봉황고성–계림 열차 약 6시간입니다. 짧은 걷기가 필요하면 예약 전에 알려 주세요. 쇼핑 일정은 없습니다.",
       ),
     ),
   ],
@@ -2727,8 +2727,8 @@ const southLandscapes: PrivateTourProduct = {
     image(
       southSlug,
       "gallery-1.webp",
-      l("Golden rice terraces and a village at Longji", "龙脊金色梯田与村寨", "룽지의 금빛 다랑논과 마을"),
-      l("Day 9 takes you from Guilin to Longji and back.", "第 9 天从桂林去龙脊，当天回桂林。", "9일 차에 계림에서 룽지에 다녀옵니다."),
+      l("Golden rice terraces and a village at Longji", "龙脊金色梯田与村寨", "용척의 금빛 다랑논과 마을"),
+      l("Day 9 takes you from Guilin to Longji and back.", "第 9 天从桂林去龙脊，当天回桂林。", "9일 차에 계림에서 용척에 다녀옵니다."),
     ),
   ],
   routeMedia: [
@@ -2978,7 +2978,7 @@ const landscapesSmallGroup = smallGroup({
   inclusions: l(
     "Between cities, the fare covers the second-class train Beijing–Xi'an, the direct Zhangjiajie–Guilin train, and economy flights Xi'an–Zhangjiajie and Guilin–Shanghai. The named admissions include the Forest Park, Bailong Elevator and Tianmen Mountain cable car; the Li River cruise and one Yulong River bamboo raft are included too. On the group dates there is one Beijing arrival transfer and one Shanghai departure transfer. Touring in each city is with an English-speaking local guide and a group vehicle.",
     "跨城交通已含北京—西安二等座高铁、张家界—桂林直达高铁，以及西安—张家界、桂林—上海两段经济舱航班。所列门票中有森林公园、百龙天梯和天门山索道，漓江游船与一次遇龙河竹筏也含在内。按团期安排北京接机一次、上海送机一次；各地游览日由当地英语导游和团车带大家走。",
-    "도시 간 이동에는 베이징–시안 고속철도 2등석과 장가계–계림 직통 열차, 시안–장가계·계림–상하이 이코노미 항공편이 포함됩니다. 명시된 입장권에는 삼림공원, 백룡엘리베이터와 천문산 케이블카가 있고 이강 유람선과 위룽허 대나무 뗏목 1회도 포함됩니다. 그룹 날짜에 베이징 도착 픽업 1회와 상하이 출발 샌딩 1회를 제공합니다. 각 도시 관광일에는 영어 현지 가이드와 그룹 차량이 함께합니다.",
+    "도시 간 이동에는 베이징–시안 고속철도 2등석과 장가계–계림 직통 열차, 시안–장가계·계림–상하이 이코노미 항공편이 포함됩니다. 명시된 입장권에는 삼림공원, 백룡엘리베이터와 천문산 케이블카가 있고 이강 유람선과 우룡하 대나무 뗏목 1회도 포함됩니다. 그룹 날짜에 베이징 도착 픽업 1회와 상하이 출발 샌딩 1회를 제공합니다. 각 도시 관광일에는 영어 현지 가이드와 그룹 차량이 함께합니다.",
   ),
   departures: l("17–30 April and 16–29 October", "4 月 17–30 日、10 月 16–29 日", "4월 17~30일, 10월 16~29일"),
   departureHighlight: l("Departs 17 April and 16 October 2027", "2027 年 4 月 17 日、10 月 16 日出发", "2027년 4월 17일, 10월 16일 출발"),
@@ -3044,12 +3044,12 @@ const yangtzeSmallGroup = smallGroup({
   title: l(
     "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour",
     "北京·西安·成都·长江游轮·上海 17 天 16 晚小团",
-    "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어",
+    "베이징·시안·청두·장강 크루즈·상하이 17일 소규모 그룹 투어",
   ),
   metadataTitle: l(
     "Yangtze Cruise Small-Group Tour 2027: 17 Days in China",
     "长江三峡17天小团：最多12人",
-    "양쯔강 크루즈 17일 소규모 그룹 투어",
+    "장강 크루즈 17일 소규모 그룹 투어",
   ),
   metadataDescription: l(
     "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 3,490 per person twin share; departs 19 May, 1 Sep.",
@@ -3059,7 +3059,7 @@ const yangtzeSmallGroup = smallGroup({
   lede: l(
     "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 3,490 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
     "2027 年北京、西安、成都、长江到上海的 17 天小团，酒店两人一间并住标准阳台舱，每人 ¥22,680，国际机票另计。5 月 19 日或 9 月 1 日出发，每团 8–12 人；船上和其他客人共乘，活动按船方安排。",
-    "2027년 베이징·시안·청두·양쯔강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩4,880,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
+    "2027년 베이징·시안·청두·장강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩4,880,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
   ),
   routeHighlight: l("A three-night Three Gorges cruise", "三晚长江三峡游轮", "3박 삼협 크루즈"),
   itinerary: [
@@ -3084,12 +3084,12 @@ const yangtzeSmallGroup = smallGroup({
   hotelScope: l(
     "The Yangtze ship accounts for 3 of the 16 nights, in a standard balcony cabin on a five-star-rated vessel, normally with Gold Cruises. The other 13 are breakfast-included four-star standard hotels, rated 4 diamonds on Trip.com (Ctrip): 4 each in Beijing and Shanghai, 2 each in Xi'an and Chengdu, and 1 in Chongqing.",
     "16 晚里有 3 晚住五星级长江游轮的标准阳台舱，通常订长江黄金游轮。其余 13 晚是携程 4 钻标准的含早酒店：北京和上海各 4 晚，西安和成都各 2 晚，重庆 1 晚。",
-    "전체 16박 중 3박은 5성급 양쯔강 크루즈의 기본 발코니 객실에서 보내며 보통 골드 크루즈를 이용합니다. 나머지 13박은 조식 포함 씨트립 4다이아 등급의 4성급 기준 호텔로, 베이징·상하이 각 4박, 시안·청두 각 2박, 충칭 1박입니다.",
+    "전체 16박 중 3박은 5성급 장강 크루즈의 기본 발코니 객실에서 보내며 보통 골드 크루즈를 이용합니다. 나머지 13박은 조식 포함 씨트립 4다이아 등급의 4성급 기준 호텔로, 베이징·상하이 각 4박, 시안·청두 각 2박, 충칭 1박입니다.",
   ),
   inclusions: l(
     "The Yangtze booking includes the cabin, meals aboard from dinner on boarding night to breakfast on the last morning, and three shore visits, usually Fengdu Ghost City, the Lesser Three Gorges and the Three Gorges Dam. On land, the fare covers named admissions, second-class trains Beijing–Xi'an–Chengdu–Chongqing and Shanghai–Suzhou return, then a train or economy flight from Yichang to Shanghai. There is one Beijing arrival transfer and one Shanghai departure transfer on the group dates. English-speaking local guides and a group vehicle cover land touring days in each city.",
     "长江游轮的舱房、从登船晚餐到离船早餐的船上餐食，以及三处岸上游览（通常是丰都鬼城、小三峡和三峡大坝）都在团费里。陆上另含所列门票、北京—西安—成都—重庆及上海—苏州往返的二等座高铁，还有宜昌—上海的火车或经济舱航班。按团期接北京机场一次、送上海机场一次；各地陆上游览日配当地英语导游和团车。",
-    "양쯔강 크루즈 객실, 승선일 저녁부터 마지막 날 아침까지의 선상 식사, 보통 펑두 귀성·소삼협·삼협댐 세 곳의 육상 관광이 요금에 들어 있습니다. 육상에서는 명시된 입장권, 베이징–시안–청두–충칭 및 상하이–쑤저우 왕복 고속철도 2등석, 이창–상하이 열차 또는 이코노미 항공편을 이용합니다. 그룹 날짜에 베이징 도착 픽업 1회와 상하이 출발 샌딩 1회가 포함됩니다. 각 도시의 육상 관광일에는 영어 현지 가이드와 그룹 차량이 함께합니다.",
+    "장강 크루즈 객실, 승선일 저녁부터 마지막 날 아침까지의 선상 식사, 보통 펑두 귀성·소삼협·삼협댐 세 곳의 육상 관광이 요금에 들어 있습니다. 육상에서는 명시된 입장권, 베이징–시안–청두–충칭 및 상하이–쑤저우 왕복 고속철도 2등석, 이창–상하이 열차 또는 이코노미 항공편을 이용합니다. 그룹 날짜에 베이징 도착 픽업 1회와 상하이 출발 샌딩 1회가 포함됩니다. 각 도시의 육상 관광일에는 영어 현지 가이드와 그룹 차량이 함께합니다.",
   ),
   departures: l("19 May–4 June and 1–17 September", "5 月 19 日–6 月 4 日、9 月 1–17 日", "5월 19일~6월 4일, 9월 1~17일"),
   departureHighlight: l("Departs 19 May and 1 September 2027", "2027 年 5 月 19 日、9 月 1 日出发", "2027년 5월 19일, 9월 1일 출발"),
@@ -3108,7 +3108,7 @@ const yangtzeSmallGroup = smallGroup({
     yangtzeGroupSlug,
     "hero.webp",
     l("Chongqing's river bridges lit up at night", "夜色中的重庆跨江大桥", "밤에 불 밝힌 충칭의 강 다리"),
-    l("The group boards the Yangtze cruise in Chongqing on Day 10.", "第 10 天在重庆登长江游轮。", "10일 차 충칭에서 양쯔강 크루즈에 오릅니다."),
+    l("The group boards the Yangtze cruise in Chongqing on Day 10.", "第 10 天在重庆登长江游轮。", "10일 차 충칭에서 장강 크루즈에 오릅니다."),
   ),
   gallery: [
     image(
@@ -3603,7 +3603,7 @@ const hongKongExitTen: PrivateTourProduct = {
           hongKongExit10Slug,
           "route-day-8.webp",
           l("Karst hills and fields in the Yangshuo countryside", "阳朔乡村的峰林和田野", "양삭 시골의 봉우리와 들판"),
-          l("Day 8 is a slower day around the Yulong River.", "第 8 天在遇龙河一带慢慢走。", "8일 차에는 위룽허 주변을 천천히 둘러봅니다."),
+          l("Day 8 is a slower day around the Yulong River.", "第 8 天在遇龙河一带慢慢走。", "8일 차에는 우룡하 주변을 천천히 둘러봅니다."),
         ),
       }],
     },
@@ -3629,17 +3629,17 @@ const yangtzeTwelve: PrivateTourProduct = {
   title: l(
     "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour",
     "北京·西安·长江游轮·上海 12 天 11 晚私家团",
-    "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
+    "베이징·시안·장강 크루즈·상하이 12일 프라이빗 투어",
   ),
   metadataTitle: l(
     "12-Day China Tour with Yangtze Cruise: Beijing to Shanghai",
     "北京西安长江三峡上海12天私家团",
-    "양쯔강 크루즈 포함 중국 12일 프라이빗 투어",
+    "장강 크루즈 포함 중국 12일 프라이빗 투어",
   ),
   metadataDescription: l(
     "12-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, Three Gorges, Shanghai. Per person USD 3,590 for 2 travellers, 2,890 for 6.",
     "12 天私家团含三晚长江游轮：北京、西安、三峡与上海。每人价格：2 人同行 ¥23,330，6 人同行 ¥18,780。",
-    "3박 양쯔강 크루즈 포함 12일 프라이빗 투어: 베이징, 시안, 삼협, 상하이. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
+    "3박 장강 크루즈 포함 12일 프라이빗 투어: 베이징, 시안, 삼협, 상하이. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
   ),
   eyebrow: l(
     "The Three Gorges in twelve days",
@@ -3649,7 +3649,7 @@ const yangtzeTwelve: PrivateTourProduct = {
   lede: l(
     "This 12-day Beijing–Xi’an–Yangtze–Shanghai private tour starts at USD 3,590 per person for two sharing a twin room and a standard balcony cabin; international flights are extra. It keeps the three-night downstream cruise from Chongqing to Yichang and leaves out Chengdu, which is what the 17-day version adds.",
     "北京、西安、长江到上海的 12 天私家团，2 人同行、酒店两人一间并住标准阳台舱，每人 ¥23,330 起，不含国际机票。重庆到宜昌三晚下水游轮保留，成都拿掉；成都放在 17 天版本里。",
-    "베이징·시안·양쯔강·상하이 12일 프라이빗 투어는 2명, 호텔 2인 1실과 기본 발코니 객실 기준 1인 ₩5,020,000부터이며 국제선은 별도입니다. 충칭에서 이창까지 내려가는 3박 크루즈는 그대로 두고 청두는 넣지 않았습니다. 청두는 17일 일정에 들어 있습니다.",
+    "베이징·시안·장강·상하이 12일 프라이빗 투어는 2명, 호텔 2인 1실과 기본 발코니 객실 기준 1인 ₩5,020,000부터이며 국제선은 별도입니다. 충칭에서 이창까지 내려가는 3박 크루즈는 그대로 두고 청두는 넣지 않았습니다. 청두는 17일 일정에 들어 있습니다.",
   ),
   summary: l(
     "Of the 11 nights, eight are in breakfast-included hotels and three are aboard the ship. The price covers private local guides and vehicles on land touring days, transfers, named tickets, the Beijing–Xi’an train, the Xi’an–Chongqing flight, the cruise with onboard meals and three included shore visits, the train or flight from Yichang to Shanghai, and the Suzhou day trip.",
@@ -3670,7 +3670,7 @@ const yangtzeTwelve: PrivateTourProduct = {
       "从上海去苏州看园林一天",
     ],
     [
-      "3박 양쯔강 삼협 하행 크루즈",
+      "3박 장강 삼협 하행 크루즈",
       "구당협·무협·소삼협과 삼협댐",
       "병마용과 만리장성",
       "상하이에서 가는 쑤저우 정원 하루",
@@ -3693,7 +3693,7 @@ const yangtzeTwelve: PrivateTourProduct = {
   hotelNote: l(
     "Of 11 nights, eight are in breakfast-included hotels at the four-star standard (4 diamonds on Trip.com/Ctrip): Beijing 3, Xi’an 2 and Shanghai 3. The other three are in a standard balcony cabin on a five-star-rated Yangtze ship, normally with Gold Cruises. On the lowest cabin deck the balcony may be glassed in; a higher deck costs a little more. Hotel rooms are twin share; the ship, deck and cabin are set for the sailing date.",
     "11 晚里，8 晚住含早的携程 4 钻标准酒店：北京 3 晚、西安 2 晚、上海 3 晚。另 3 晚住五星级长江游轮的标准阳台舱，通常订长江黄金游轮。最低一层舱房的阳台可能是封闭玻璃窗，住高一层要稍加钱。酒店默认两人一间，船名、楼层和舱房按航期确认。",
-    "11박 중 조식 포함 씨트립 4다이아 등급 호텔이 8박입니다. 베이징 3박, 시안 2박, 상하이 3박입니다. 나머지 3박은 5성급 양쯔강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있고 높은 층은 요금이 조금 더 붙습니다. 호텔은 2인 1실이며 선박, 층과 객실은 운항일에 맞춰 정합니다.",
+    "11박 중 조식 포함 씨트립 4다이아 등급 호텔이 8박입니다. 베이징 3박, 시안 2박, 상하이 3박입니다. 나머지 3박은 5성급 장강 크루즈의 기본 발코니 객실이며 보통 골드 크루즈를 이용합니다. 가장 낮은 객실층은 발코니가 유리로 막혀 있을 수 있고 높은 층은 요금이 조금 더 붙습니다. 호텔은 2인 1실이며 선박, 층과 객실은 운항일에 맞춰 정합니다.",
   ),
   serviceNote: l(
     "Included: an English-speaking local guide and vehicle for your party in each city on land touring days, all transfers, named first admissions, the second-class train Beijing–Xi'an, the economy flight Xi'an–Chongqing, the cruise cabin with meals from dinner on boarding night to breakfast on the last morning and three shore visits (usually Fengdu Ghost City, the Lesser Three Gorges and the Three Gorges Dam), the train or economy flight Yichang–Shanghai and the Shanghai–Suzhou return train. Cruise commentary follows the ship's language programme. Guides work city by city: on train and flight days, a driver takes you to the station or airport and another meets you on arrival. Korean-speaking guides can be arranged on land at the same price, subject to availability in each city.",
@@ -3713,27 +3713,27 @@ const yangtzeTwelve: PrivateTourProduct = {
   ),
   faq: [
     faq(
-      l("How much is a 12-day China tour with a Yangtze cruise?", "带长江游轮的 12 天中国行多少钱？", "양쯔강 크루즈가 있는 12일 중국 여행은 얼마인가요?"),
+      l("How much is a 12-day China tour with a Yangtze cruise?", "带长江游轮的 12 天中国行多少钱？", "장강 크루즈가 있는 12일 중국 여행은 얼마인가요?"),
       l(
         "The 12-day Beijing–Xi’an–Yangtze–Shanghai private tour is USD 3,590 each for two sharing hotel rooms and a standard balcony cabin, USD 7,180 together. Four pay USD 3,050 each and six pay USD 2,890. Eight breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, land guides and vehicles, tickets, trains and two domestic transfers are included. International flights and land lunches and dinners are extra, and peak sailings can cost more.",
         "北京、西安、长江到上海的 12 天私家团，2 人住一间并用标准阳台舱，每人 ¥23,330，两人共 ¥46,660。4 人每人 ¥19,820，6 人每人 ¥18,780。8 晚早餐酒店、三晚游轮及船上餐食和已含岸上项目、陆上导游与车、门票、高铁和两段国内转场都含。国际机票和陆上午晚餐另付，旺季船期可能加价。",
-        "베이징·시안·양쯔강·상하이 12일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩5,020,000, 합계 ₩10,040,000입니다. 4명은 1인 ₩4,270,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 8박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 가이드와 차량, 입장권, 고속철도와 국내 이동 2구간이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다.",
+        "베이징·시안·장강·상하이 12일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩5,020,000, 합계 ₩10,040,000입니다. 4명은 1인 ₩4,270,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 8박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 가이드와 차량, 입장권, 고속철도와 국내 이동 2구간이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다.",
       ),
     ),
     faq(
-      l("Should I choose the 12-day or the 17-day Yangtze tour?", "长江线选 12 天还是 17 天？", "양쯔강 일정은 12일과 17일 중 무엇이 좋을까요?"),
+      l("Should I choose the 12-day or the 17-day Yangtze tour?", "长江线选 12 天还是 17 天？", "장강 일정은 12일과 17일 중 무엇이 좋을까요?"),
       l(
         "Both use the same three-night Chongqing–Yichang cruise. The 12-day Beijing–Xi’an–Yangtze–Shanghai tour, from USD 3,590 each for two, flies from Xi’an straight to Chongqing on boarding day. The 17-day version, from USD 4,690, adds Chengdu’s pandas, a Temple of Heaven day, a night in Chongqing and a free Shanghai afternoon. Pick the 12-day route if your time off is short, and the 17-day route if you want the pandas.",
         "两条线用的都是重庆到宜昌三晚的游轮。北京、西安、长江到上海 12 天线，2 人同行每人 ¥23,330 起，登船当天从西安直接飞重庆。17 天版本每人 ¥30,480 起，多了成都大熊猫、天坛一天、重庆一晚和上海半天空闲。假期短就选 12 天，想看熊猫就选 17 天。",
-        "두 일정 모두 충칭–이창 3박 크루즈를 탑니다. 베이징·시안·양쯔강·상하이 12일 일정은 2명 기준 1인 ₩5,020,000부터이며 승선일에 시안에서 충칭으로 바로 갑니다. 17일 일정은 ₩6,560,000부터이며 청두 판다, 천단 하루, 충칭 1박, 상하이 자유 오후가 더해집니다. 휴가가 짧으면 12일, 판다를 보고 싶으면 17일을 고르세요.",
+        "두 일정 모두 충칭–이창 3박 크루즈를 탑니다. 베이징·시안·장강·상하이 12일 일정은 2명 기준 1인 ₩5,020,000부터이며 승선일에 시안에서 충칭으로 바로 갑니다. 17일 일정은 ₩6,560,000부터이며 청두 판다, 천단 하루, 충칭 1박, 상하이 자유 오후가 더해집니다. 휴가가 짧으면 12일, 판다를 보고 싶으면 17일을 고르세요.",
       ),
     ),
     faq(
-      l("When does the 12-day Yangtze tour run?", "12 天长江线什么时候能走？", "12일 양쯔강 일정은 언제 가능한가요?"),
+      l("When does the 12-day Yangtze tour run?", "12 天长江线什么时候能走？", "12일 장강 일정은 언제 가능한가요?"),
       l(
         "The 12-day Beijing–Xi’an–Yangtze–Shanghai private tour follows the Chongqing–Yichang sailings. In the 2026 timetable of Gold Cruises, the line we normally book, ships leave Chongqing five or six evenings a week from late March to mid-December, with only a few sailings in late February, early March and late December and none in January. You board on Day 6, so most start days work once the 2027 timetable is out. April–May and September–October are usually the most comfortable; July and August are hot in Chongqing.",
         "北京、西安、长江到上海 12 天私家团跟着重庆到宜昌的船期走。按我们常用的长江黄金游轮 2026 年船期，3 月下旬到 12 月中旬每周有 5–6 个晚上从重庆开船，2 月底、3 月上旬和 12 月下旬只有少数几班，1 月停航。你第 6 天登船，等 2027 年船期公布后，多数出发日都能排上。4–5 月和 9–10 月通常最舒服，7、8 月重庆很热。",
-        "베이징·시안·양쯔강·상하이 12일 프라이빗 투어는 충칭–이창 운항일에 맞춥니다. 저희가 주로 이용하는 골드 크루즈의 2026년 운항표를 보면 3월 하순부터 12월 중순까지 주 5~6회 저녁에 충칭을 출발하고, 2월 말·3월 초와 12월 하순에는 몇 편뿐이며 1월에는 운항하지 않습니다. 6일 차에 승선하므로 2027년 운항표가 나오면 대부분의 출발일이 가능합니다. 4~5월과 9~10월이 보통 가장 쾌적하고 7~8월 충칭은 덥습니다.",
+        "베이징·시안·장강·상하이 12일 프라이빗 투어는 충칭–이창 운항일에 맞춥니다. 저희가 주로 이용하는 골드 크루즈의 2026년 운항표를 보면 3월 하순부터 12월 중순까지 주 5~6회 저녁에 충칭을 출발하고, 2월 말·3월 초와 12월 하순에는 몇 편뿐이며 1월에는 운항하지 않습니다. 6일 차에 승선하므로 2027년 운항표가 나오면 대부분의 출발일이 가능합니다. 4~5월과 9~10월이 보통 가장 쾌적하고 7~8월 충칭은 덥습니다.",
       ),
     ),
     faq(
@@ -3741,7 +3741,7 @@ const yangtzeTwelve: PrivateTourProduct = {
       l(
         "On the 12-day Beijing–Xi’an–Yangtze–Shanghai tour we book a morning flight from Xi’an. Boarding opens at about 18:00 and the ship sails at about 21:00, so there are several hours in hand. If a delay still puts boarding at risk, we tell you straight away and work through the options with the cruise company; what is possible depends on the ship. Travel insurance that covers missed connections is worth having for this day.",
         "12 天长江线从西安订的是上午的航班。游轮约 18:00 开始登船、约 21:00 开船，中间有好几个小时余量。万一延误影响登船，我们会马上告诉你，并和游轮公司商量办法，能怎么处理要看船方。这一天最好有含航班延误的旅行保险。",
-        "베이징·시안·양쯔강·상하이 12일 일정은 시안에서 오전 항공편을 예약합니다. 승선은 약 18:00부터이고 배는 약 21:00에 출발하므로 몇 시간 여유가 있습니다. 그래도 지연으로 승선이 어려우면 바로 알리고 크루즈 회사와 방법을 찾으며, 가능한 방법은 선박에 따라 다릅니다. 이날을 위해 연결 지연을 보장하는 여행자 보험을 권합니다.",
+        "베이징·시안·장강·상하이 12일 일정은 시안에서 오전 항공편을 예약합니다. 승선은 약 18:00부터이고 배는 약 21:00에 출발하므로 몇 시간 여유가 있습니다. 그래도 지연으로 승선이 어려우면 바로 알리고 크루즈 회사와 방법을 찾으며, 가능한 방법은 선박에 따라 다릅니다. 이날을 위해 연결 지연을 보장하는 여행자 보험을 권합니다.",
       ),
     ),
   ],

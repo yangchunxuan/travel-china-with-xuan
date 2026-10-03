@@ -86,7 +86,7 @@ export const privateTourExpansionProfiles: Readonly<Record<string, ComparisonPro
     route: l(
       "Xiamen · Gulangyu · Yongding · Nanjing · Anxi · Quanzhou",
       "厦门 · 鼓浪屿 · 永定 · 南靖 · 安溪 · 泉州",
-      "샤먼 · 구랑위 · 융딩 · 난징 · 안시 · 취안저우",
+      "샤먼 · 구랑위 · 융딩 · 남정 · 안시 · 취안저우",
     ),
     appeal: l(
       "Begin on Gulangyu, connect Chengqi Lou and Tianluokeng with Anxi tea, then finish with Quanzhou's maritime heritage before returning to Xiamen.",
@@ -96,7 +96,7 @@ export const privateTourExpansionProfiles: Readonly<Record<string, ComparisonPro
     pace: l(
       "Two nights in Xiamen and one each in Nanjing, Anxi and Quanzhou, with four included lunches on the main touring days.",
       "厦门 2 晚，南靖、安溪、泉州各 1 晚；4 个主要游览日包含午餐。",
-      "샤먼 2박, 난징·안시·취안저우 각 1박이며 주요 관광일 중식 4회가 포함됩니다.",
+      "샤먼 2박, 남정·안시·취안저우 각 1박이며 주요 관광일 중식 4회가 포함됩니다.",
     ),
     fit: l(
       "Travellers interested in island streets, tulou architecture and the layered coastal history of southern Fujian.",
@@ -218,22 +218,22 @@ export const privateTourExpansionProfiles: Readonly<Record<string, ComparisonPro
     route: l(
       "Changbaishan Resort · North Slope · Yanji",
       "长白山度假区 · 北坡 · 延吉",
-      "창바이산 리조트 · 북파 · 옌지",
+      "백두산 리조트 · 북파 · 연길",
     ),
     appeal: l(
       "Begin with a beginner ski lesson and snow time at the resort, keep a weather-aware day for the North Slope, then continue to Yanji's markets and neighbourhoods.",
       "先在度假区体验初学滑雪与玩雪，再按天气安排北坡机会日，最后前往延吉逛市场和城市街区。",
-      "리조트에서 초급 스키 수업과 눈놀이를 즐기고 날씨를 살펴 북파 일정을 진행한 뒤 옌지의 시장과 도심 거리를 둘러봅니다.",
+      "리조트에서 초급 스키 수업과 눈놀이를 즐기고 날씨를 살펴 북파 일정을 진행한 뒤 연길의 시장과 도심 거리를 둘러봅니다.",
     ),
     pace: l(
       "Two resort nights, one near the North Slope and two in Yanji, with room to adjust the winter sequence for conditions.",
       "度假区住 2 晚、北坡周边住 1 晚、延吉住 2 晚，并为冬季天气变化保留调序空间。",
-      "리조트 2박, 북파 인근 1박, 옌지 2박으로 머물며 겨울 날씨에 따라 일정 순서를 조정할 여유를 둡니다.",
+      "리조트 2박, 북파 인근 1박, 연길 2박으로 머물며 겨울 날씨에 따라 일정 순서를 조정할 여유를 둡니다.",
     ),
     fit: l(
       "Winter travellers prepared for severe cold who want snow activities, a Changbaishan nature day and Yanji city culture.",
       "能适应严寒天气，想兼顾玩雪、长白山自然景观与延吉城市文化的冬季旅客。",
-      "매서운 추위에 대비해 눈 체험, 창바이산 자연 풍경과 옌지의 도시 문화를 함께 즐기고 싶은 겨울 여행자.",
+      "매서운 추위에 대비해 눈 체험, 백두산 자연 풍경과 연길의 도시 문화를 함께 즐기고 싶은 겨울 여행자.",
     ),
   },
 };

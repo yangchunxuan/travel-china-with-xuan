@@ -251,14 +251,14 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       guangzhou: "아침 딤섬·옛 상가 거리·주장강",
       hangzhou: "서호와 룽징 차밭",
       zhangjiajie: "원가계 기암 봉우리와 천문산",
-      chongqing: "입체 도시·훠궈·양쯔강",
+      chongqing: "입체 도시·훠궈·장강",
     },
     themes: {
       "first-time-in-china": {
         metadata: {
           title: "첫 중국 여행 일정: 여행 기간별 프라이빗 투어",
           description:
-            "중국이 처음이라면 여행 기간부터 정하세요. 일주일이면 베이징·시안·상하이, 열흘이면 계림 이강, 12일이면 양쯔강 크루즈, 2주면 청두 판다까지. 일정마다 상세 일정표와 가격을 공개합니다.",
+            "중국이 처음이라면 여행 기간부터 정하세요. 일주일이면 베이징·시안·상하이, 열흘이면 계림 이강, 12일이면 장강 크루즈, 2주면 청두 판다까지. 일정마다 상세 일정표와 가격을 공개합니다.",
         },
         name: "첫 중국 여행",
         teaser: "첫 중국 여행에 맞는 프라이빗 일정을 여행 기간별로 모았습니다.",
@@ -277,7 +277,7 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
           },
           "two-weeks": {
             title: "12일~2주",
-            note: "세 도시에 더 오래 머물거나, 양쯔강 크루즈나 청두 판다를 더합니다.",
+            note: "세 도시에 더 오래 머물거나, 장강 크루즈나 청두 판다를 더합니다.",
           },
         },
         citiesTitle: "위 일정에 포함된 도시",

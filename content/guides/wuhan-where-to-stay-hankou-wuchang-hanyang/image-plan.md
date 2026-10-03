@@ -51,7 +51,7 @@ before reading a word.
 
 - **en:** "The Wuhan Yangtze River Bridge crossing from the Wuchang side toward the opposite bank, with the river and the city on both sides."
 - **zh:** "武汉长江大桥自武昌一侧跨江而过，两岸城区与江面同在画面中。"
-- **ko:** "우창 쪽에서 강을 건너가는 우한 창장대교와, 강 양쪽에 펼쳐진 시가지."
+- **ko:** "우창 쪽에서 강을 건너가는 우한 장강대교와, 강 양쪽에 펼쳐진 시가지."
 
 ### Crop review
 

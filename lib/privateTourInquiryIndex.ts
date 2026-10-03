@@ -79,7 +79,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "zhangjiajie-forest-4-day-private-tour",
-    title: { en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour", zh: "张家界森林公园 4 天 3 晚固定路线私家团", ko: "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어", ja: "張家界森林公園 4日間（3泊）固定ルートのプライベートツアー" },
+    title: { en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour", zh: "张家界森林公园 4 天 3 晚固定路线私家团", ko: "장가계 국가삼림공원 4일 고정 코스 프라이빗 투어", ja: "張家界森林公園 4日間（3泊）固定ルートのプライベートツアー" },
     packages: [
       { id: "fixed-route-english-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -156,7 +156,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "changbaishan-yanji-winter-6-day-private-tour",
-    title: { en: "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour", zh: "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团", ko: "창바이산·북파·옌지 6일 겨울 프라이빗 투어", ja: "長白山リゾート・北坡・延吉 冬の6日間（5泊）プライベートツアー" },
+    title: { en: "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour", zh: "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团", ko: "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어", ja: "長白山リゾート・北坡・延吉 冬の6日間（5泊）プライベートツアー" },
     packages: [
       { id: "standard-guided-winter", prices: [] },
     ],
@@ -191,7 +191,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "chongqing-yangtze-cruise-6-day-private-tour",
-    title: { en: "Chongqing & Yangtze Three Gorges: 6-Day Private Tour", zh: "重庆与长江三峡游轮 6 天 5 晚私家团", ko: "충칭·창장삼협 크루즈 6일 프라이빗 투어", ja: "重慶と長江三峡 6日間プライベートツアー" },
+    title: { en: "Chongqing & Yangtze Three Gorges: 6-Day Private Tour", zh: "重庆与长江三峡游轮 6 天 5 晚私家团", ko: "충칭·장강삼협 크루즈 6일 프라이빗 투어", ja: "重慶と長江三峡 6日間プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [] },
     ],
@@ -261,14 +261,14 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
-    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团", ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어", ja: "北京・西安・成都・長江クルーズ・上海 17日間プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团", ko: "베이징·시안·청두·장강 크루즈·상하이 17일 프라이빗 투어", ja: "北京・西安・成都・長江クルーズ・上海 17日間プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
   },
   {
     slug: "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
-    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚小团", ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어", ja: "北京・西安・成都・長江クルーズ・上海 17日間 少人数ツアー" },
+    title: { en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour", zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚小团", ko: "베이징·시안·청두·장강 크루즈·상하이 17일 소규모 그룹 투어", ja: "北京・西安・成都・長江クルーズ・上海 17日間 少人数ツアー" },
     packages: [
       { id: "small-group-departure", prices: [{ travelers: 2 }] },
     ],
@@ -303,7 +303,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "china-grand-tour-21-day-private-tour",
-    title: { en: "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour", zh: "中国全景：含张家界与长江游轮 21 天 20 晚私家团", ko: "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어", ja: "北京・西安・桂林・張家界・長江三峡・上海 21日間プライベートツアー" },
+    title: { en: "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour", zh: "中国全景：含张家界与长江游轮 21 天 20 晚私家团", ko: "장가계·장강 크루즈를 포함한 중국 일주 21일 프라이빗 투어", ja: "北京・西安・桂林・張家界・長江三峡・上海 21日間プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -345,7 +345,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
-    title: { en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour", zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团", ko: "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어", ja: "北京・西安・長江クルーズ・上海 12日間プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour", zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团", ko: "베이징·시안·장강 크루즈·상하이 12일 프라이빗 투어", ja: "北京・西安・長江クルーズ・上海 12日間プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -362,7 +362,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   {
     slug: "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
     visibility: "preview",
-    title: { en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团", ko: "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어" },
+    title: { en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团", ko: "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어" },
     packages: [
       { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },

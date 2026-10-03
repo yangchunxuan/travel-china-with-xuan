@@ -16,7 +16,7 @@
   "searchTerms": {
     "en": ["guilin yangshuo with kids and elderly", "guilin yangshuo family itinerary 5 days", "li river cruise with older parents", "yulong river bamboo raft children seniors"],
     "zh": ["桂林阳朔带老人小孩五天", "桂林阳朔三代同游", "遇龙河竹筏儿童老人限制"],
-    "ko": ["계림 양삭 아이 부모님 5일", "계림 양삭 가족 여행 일정", "위룽허 뗏목 어린이 노인 제한"]
+    "ko": ["계림 양삭 아이 부모님 5일", "계림 양삭 가족 여행 일정", "우룡하 뗏목 어린이 노인 제한"]
   },
   "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },

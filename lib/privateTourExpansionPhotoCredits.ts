@@ -128,7 +128,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Tianluokeng Tulou Cluster",
       "南靖田螺坑土楼群",
-      "난징 톈뤄컹 토루군",
+      "남정 톈뤄컹 토루군",
       "rheins",
       "https://commons.wikimedia.org/wiki/File:%E7%94%B0%E8%9E%BA%E5%9D%91%E5%9C%9F%E6%A5%BC%E7%BE%A4_-_Tianluokeng_Tulou_Cluster_-_2010.07_-_panoramio.jpg",
       "CC BY 3.0",
@@ -329,7 +329,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Yanji at night",
       "延吉夜景",
-      "옌지 야경",
+      "연길 야경",
       "EditQ",
       "https://commons.wikimedia.org/wiki/File:Yanji_at_night.jpg",
       "CC BY-SA 4.0",

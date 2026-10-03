@@ -54,8 +54,8 @@ const route = {
   [S.y14]: t("Beijing, Xi'an, Dali, Lijiang, Shangri-La", "北京·西安·大理·丽江·香格里拉", "베이징·시안·다리·리장·샹그릴라"),
   [S.h14]: t("Beijing, Xi'an, Yellow Mountain, Hangzhou, Suzhou, Shanghai", "北京·西安·黄山·杭州·苏州·上海", "베이징·시안·황산·항저우·쑤저우·상하이"),
   [S.silk]: t("Beijing, Xi'an, Silk Road to Urumqi", "北京·西安·丝绸之路到乌鲁木齐", "베이징·시안·실크로드(우루무치까지)"),
-  [S.yz]: t("Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai", "北京·西安·成都·长江游轮·上海", "베이징·시안·청두·양쯔강 크루즈·상하이"),
-  [S.g21]: t("Grand China with Zhangjiajie and the Yangtze", "中国全景：张家界与长江游轮", "장가계·양쯔강 크루즈 포함 중국 일주"),
+  [S.yz]: t("Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai", "北京·西安·成都·长江游轮·上海", "베이징·시안·청두·장강 크루즈·상하이"),
+  [S.g21]: t("Grand China with Zhangjiajie and the Yangtze", "中国全景：张家界与长江游轮", "장가계·장강 크루즈 포함 중국 일주"),
 };
 route[S.c14g] = route[S.c14];
 route[S.l14g] = route[S.l14];
@@ -202,7 +202,7 @@ function costBody(loc) {
         answer: tr(
           `There is no published one-person private-tour price; we quote it in writing because the guide and car serve one guest. On Homeground's 2027 small groups, a solo guest pays the route price and keeps a private room. The supplement starts at ${groupSupplement(loc, S.l14g)}, or ${groupSupplement(loc, S.yzg)} on the 17-day Yangtze route, where it also covers a cabin to yourself.`,
           `一个人走私家团，没有现成的公布价。导游和车只服务你，我们会单独书面报价。若参加 Homeground 2027 年小团，按线路团费付，再自己住一间。单房差从 ${groupSupplement(loc, S.l14g)} 起，17 天长江线从 ${groupSupplement(loc, S.yzg)} 起，已含一人住一间船舱。`,
-          `혼자 쓰는 프라이빗 투어에는 공개된 1인 요금이 없습니다. 가이드와 차량을 혼자 이용하므로 서면 견적을 드립니다. Homeground의 2027년 소규모 그룹에 참가하면 일정 요금과 1인실 추가금을 냅니다. 추가금은 ${groupSupplement(loc, S.l14g)}부터이고 17일 양쯔강 일정은 ${groupSupplement(loc, S.yzg)}부터이며 선실을 혼자 쓰는 비용도 포함됩니다.`) },
+          `혼자 쓰는 프라이빗 투어에는 공개된 1인 요금이 없습니다. 가이드와 차량을 혼자 이용하므로 서면 견적을 드립니다. Homeground의 2027년 소규모 그룹에 참가하면 일정 요금과 1인실 추가금을 냅니다. 추가금은 ${groupSupplement(loc, S.l14g)}부터이고 17일 장강 일정은 ${groupSupplement(loc, S.yzg)}부터이며 선실을 혼자 쓰는 비용도 포함됩니다.`) },
       { question: tr("Why do some China tours look much cheaper?", "为什么有些中国团便宜很多？", "왜 어떤 중국 투어는 훨씬 저렴한가요?"),
         answer: tr(
           "Before comparing a cheaper China tour with Homeground's 14-day private prices, check group size, hotel grade, named admissions, trains, domestic flights and shopping stops. Our price includes twin-share hotels with breakfast and the listed domestic transport; the hotel note on each route shows where a four-star or 4-diamond property is available. There are no shopping stops.",
@@ -250,7 +250,7 @@ function smallGroupBody(loc) {
     { id: "rules", type: "list", items: tr(
       ["Eight booked guests confirm the departure; twelve is the maximum.", "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.", "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.", "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.", "Until the departure is confirmed, choose international flights you can change or refund."],
       ["有 8 人报名就确认出团，最多收 12 人。", "出发前 45 天核对人数。不到 8 人，你可以拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，保留原日期。", "表中价格按两人一间计算。一个人报名需补单房差，自己住一间；长江线还自己住一间船舱。我们不会安排陌生人拼房。", "如果你们本来就有 8–12 人，可以自己选日期，价格仍按小团价算。", "确认成团之前，国际机票尽量选能改签或退款的。"],
-      ["8명이 예약하면 출발이 확정되고 최대 12명까지 받습니다.", "출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 전액 환불받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.", "표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 쓰며, 양쯔강 일정은 선실도 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
+      ["8명이 예약하면 출발이 확정되고 최대 12명까지 받습니다.", "출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 전액 환불받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.", "표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 쓰며, 장강 일정은 선실도 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
     { id: "includes-heading", type: "heading", level: 2, text: tr("What a small group includes", "小团包含什么", "소규모 그룹에 포함된 것") },
     { id: "includes", type: "paragraph", text: tr(
       "Breakfast is included each hotel night. The hotel plan follows the matching private route: four-star or Trip.com 4-diamond where available, with suitable local hotels at some smaller stops. In each city, the group has an English-speaking local guide and a vehicle on touring days; the named sights and the route's listed trains, flights or cruise are covered too. One arrival and one departure transfer are included on the group dates, with no shopping stops. On the Li River day, you cruise about four hours to Yangshuo while your luggage travels there by vehicle.",
@@ -284,12 +284,12 @@ function smallGroupBody(loc) {
         answer: tr(
           `Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at ${sgPrice(loc, S.l14g)} per person, plus a single-room supplement from ${groupSupplement(loc, S.l14g)}. The Yangtze group's supplement starts at ${groupSupplement(loc, S.yzg)} and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin.`,
           `一个人可以报名 Homeground 2027 年小团。14 天张家界小团每人 ${sgPrice(loc, S.l14g)} 起，再加 ${groupSupplement(loc, S.l14g)} 起的单房差。长江小团的单房差从 ${groupSupplement(loc, S.yzg)} 起，含单人住酒店和单人住舱。我们不会安排陌生人拼房或拼舱。`,
-          `Homeground의 2027년 소규모 그룹에는 혼자 참가할 수 있습니다. 14일 장가계 그룹은 1인 ${sgPrice(loc, S.l14g)}부터이며 1인실 추가금은 ${groupSupplement(loc, S.l14g)}부터입니다. 양쯔강 그룹은 추가금이 ${groupSupplement(loc, S.yzg)}부터이며 호텔 객실과 선실을 혼자 쓰는 비용이 포함됩니다. 모르는 사람과 객실이나 선실을 함께 쓰도록 배정하지 않습니다.`) },
+          `Homeground의 2027년 소규모 그룹에는 혼자 참가할 수 있습니다. 14일 장가계 그룹은 1인 ${sgPrice(loc, S.l14g)}부터이며 1인실 추가금은 ${groupSupplement(loc, S.l14g)}부터입니다. 장강 그룹은 추가금이 ${groupSupplement(loc, S.yzg)}부터이며 호텔 객실과 선실을 혼자 쓰는 비용이 포함됩니다. 모르는 사람과 객실이나 선실을 함께 쓰도록 배정하지 않습니다.`) },
       { question: tr("Are international flights included?", "含国际机票吗？", "국제선이 포함되나요?"),
         answer: tr(
           "Book the flights to and from China separately. Homeground's 2027 small-group fare pays for the trip between your arrival and departure in China. The trains and domestic flights named on each route are included; the 17-day Yangtze route also includes its cruise.",
           "往返中国的国际机票，你要另外订。Homeground 2027 年小团团费从落地中国算到离开中国，列明的高铁和国内航班已含。17 天长江线还含游轮。",
-          "중국에 오는 항공편과 돌아가는 항공편은 따로 예약해야 합니다. Homeground의 2027년 소규모 그룹 요금은 중국 도착 후부터 출국 전까지의 일정에 해당합니다. 각 일정에 적힌 열차와 국내선이 포함되고, 17일 양쯔강 일정에는 크루즈도 포함됩니다.") },
+          "중국에 오는 항공편과 돌아가는 항공편은 따로 예약해야 합니다. Homeground의 2027년 소규모 그룹 요금은 중국 도착 후부터 출국 전까지의 일정에 해당합니다. 각 일정에 적힌 열차와 국내선이 포함되고, 17일 장강 일정에는 크루즈도 포함됩니다.") },
     ] },
     { id: "links", type: "internal-links", title: tr("Small-group routes", "小团线路", "소규모 그룹 일정"), items: [
       ...[S.c14g, S.l14g, S.silkg, S.yzg].map((slug) => ({ label: bySlug[slug].title[loc], href: tourHref(loc, slug) })),
@@ -364,7 +364,7 @@ function compareBody(loc) {
       { question: tr("Which route has the least walking?", "哪条线路走路最少？", "걷는 양이 가장 적은 일정은?"),
         answer: tr("The 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour has the lightest walking of these four routes. Zhangjiajie National Forest Park and Huangshan involve long stone stair sections, while Yunnan adds altitude. Tell us about mobility limits before booking so we can shorten walking days.", "四条 14 天私家线里，北京、西安、成都、桂林、上海经典线走路最轻松。张家界国家森林公园和黄山有长段石阶，云南还要考虑海拔。若有人行动不便，订行程前告诉我们，我们可以缩短步行日。", "14일 프라이빗 일정 네 가지 중 베이징·시안·청두·계림·상하이 일정이 걷는 양이 가장 적습니다. 장가계 국가삼림공원과 황산에는 긴 돌계단이 있고 윈난은 고도까지 고려해야 합니다. 걷기 어려운 분이 있다면 예약 전에 알려 주세요. 걷는 날을 줄여 드릴 수 있습니다.") },
       { question: tr("Can we combine two routes?", "可以把两条线合在一起吗？", "두 일정을 합칠 수 있나요?"),
-        answer: tr(`Homeground's 21-day Grand China private tour already joins the classic cities with Zhangjiajie and a three-night Yangtze cruise. It starts at ${P(S.g21, 2)} per person for two sharing a room, before international flights. For a different combination, we prepare a written quote.`, `Homeground 的 21 天中国全景私家线已把经典城市、张家界和三晚长江游轮接在一起。2 人同行、两人一间，每人 ${P(S.g21, 2)} 起，国际机票另算。想换别的组合，我们会另给书面报价。`, `장가계와 양쯔강 크루즈까지 한 번에 넣으려면 Homeground의 21일 중국 일주 프라이빗 투어를 보세요. 대표 도시를 함께 지나고 크루즈에서는 3박합니다. 두 사람이 한 방을 쓸 때 1인 ${P(S.g21, 2)}부터이며 국제선은 별도입니다. 다른 조합은 서면으로 견적을 드립니다.`) },
+        answer: tr(`Homeground's 21-day Grand China private tour already joins the classic cities with Zhangjiajie and a three-night Yangtze cruise. It starts at ${P(S.g21, 2)} per person for two sharing a room, before international flights. For a different combination, we prepare a written quote.`, `Homeground 的 21 天中国全景私家线已把经典城市、张家界和三晚长江游轮接在一起。2 人同行、两人一间，每人 ${P(S.g21, 2)} 起，国际机票另算。想换别的组合，我们会另给书面报价。`, `장가계와 장강 크루즈까지 한 번에 넣으려면 Homeground의 21일 중국 일주 프라이빗 투어를 보세요. 대표 도시를 함께 지나고 크루즈에서는 3박합니다. 두 사람이 한 방을 쓸 때 1인 ${P(S.g21, 2)}부터이며 국제선은 별도입니다. 다른 조합은 서면으로 견적을 드립니다.`) },
     ] },
     { id: "links", type: "internal-links", title: tr("Open a route", "查看线路", "일정 보기"), items: [
       ...four.map((slug) => ({ label: bySlug[slug].title[loc], href: tourHref(loc, slug) })),

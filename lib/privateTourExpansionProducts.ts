@@ -789,12 +789,12 @@ const fujian: PrivateTourProduct = {
   lede: l(
     "Visit Gulangyu when your Xiamen arrival and ferry allow, then travel through Yongding's Chengqi Lou, Nanjing's Tianluokeng area, Anxi and Quanzhou before returning to Xiamen.",
     "抵达厦门后，按时间和船班安排鼓浪屿，再前往永定承启楼、南靖田螺坑、安溪与泉州，最后返回厦门。",
-    "샤먼 도착 시간과 배편이 맞으면 구랑위를 방문하고, 이후 융딩 청치러우, 난징 톈뤄컹, 안시와 취안저우를 거쳐 샤먼으로 돌아옵니다.",
+    "샤먼 도착 시간과 배편이 맞으면 구랑위를 방문하고, 이후 융딩 청치러우, 남정 톈뤄컹, 안시와 취안저우를 거쳐 샤먼으로 돌아옵니다.",
   ),
   summary: l(
     "Five nights with breakfast in four-star-standard hotels across Xiamen, Nanjing, Anxi and Quanzhou, plus a private English guide, vehicle, admissions, tea tasting and four listed lunches.",
     "在厦门、南靖、安溪和泉州共住 5 晚 4 星标准酒店，含早餐；另含私人英语导游、专车、所列门票、品茶体验和行程中的 4 顿午餐。",
-    "샤먼, 난징, 안시와 취안저우에서 4성급 기준 조식 포함 5박, 영어 전용 가이드, 차량, 명시된 입장권, 차 시음과 중식 4회가 포함됩니다.",
+    "샤먼, 남정, 안시와 취안저우에서 4성급 기준 조식 포함 5박, 영어 전용 가이드, 차량, 명시된 입장권, 차 시음과 중식 4회가 포함됩니다.",
   ),
   metadataDescription: l(
     "6-day Xiamen, Fujian Tulou, Anxi and Quanzhou private tour with 4-star stays, English guide, private vehicle, admissions and four lunches.",
@@ -833,11 +833,11 @@ const fujian: PrivateTourProduct = {
     ),
     day(
       2,
-      l("Chengqi Lou and overnight in Nanjing", "承启楼与南靖住宿", "청치러우와 난징 숙박"),
+      l("Chengqi Lou and overnight in Nanjing", "承启楼与南靖住宿", "청치러우와 남정 숙박"),
       l(
         "Drive into the tulou region to visit Chengqi Lou in Yongding and the round and square earth buildings named in your confirmation, then continue to your Nanjing hotel. Breakfast and lunch are included.",
         "乘私车进入土楼区域，游览永定承启楼及确认单列明的圆形、方形土楼，再前往南靖酒店入住；当天含早餐与午餐。",
-        "전용 차량으로 토루 지역에 들어가 융딩 청치러우와 확인서에 적힌 원형·사각형 토루를 본 뒤 난징 호텔에 숙박합니다. 조식과 중식이 포함됩니다.",
+        "전용 차량으로 토루 지역에 들어가 융딩 청치러우와 확인서에 적힌 원형·사각형 토루를 본 뒤 남정 호텔에 숙박합니다. 조식과 중식이 포함됩니다.",
       ),
     ),
     day(
@@ -884,7 +884,7 @@ const fujian: PrivateTourProduct = {
   hotelNote: l(
     "Five nights with breakfast in four-star-standard hotels, based on two sharing a room: two in Xiamen and one each in Nanjing, Anxi and Quanzhou. You get the exact hotels and room types in writing; the published single supplement is USD 380.",
     "共住 5 晚 4 星标准酒店，含早餐，按两人同住一间计：厦门 2 晚，南靖、安溪、泉州各 1 晚。具体酒店和房型会书面发给你确认；公开单房差为 USD 380。",
-    "4성급 기준 호텔에서 조식 포함 5박을 하며 2인 1실 기준입니다. 샤먼 2박, 난징·안시·취안저우 각 1박이며, 정확한 호텔과 객실은 서면으로 보내 드립니다. 공개 1인실 추가금은 USD 380입니다.",
+    "4성급 기준 호텔에서 조식 포함 5박을 하며 2인 1실 기준입니다. 샤먼 2박, 남정·안시·취안저우 각 1박이며, 정확한 호텔과 객실은 서면으로 보내 드립니다. 공개 1인실 추가금은 USD 380입니다.",
   ),
   serviceNote: l(
     "The tour includes a private English-speaking guide, private driver and air-conditioned vehicle, airport transfers, all listed admissions, the Gulangyu ferry, the Anxi tea visit and tasting, breakfasts and the four lunches named on Days 2–5.",
@@ -937,12 +937,12 @@ const fujian: PrivateTourProduct = {
       l(
         "Tianluokeng Tulou Cluster in Nanjing County",
         "南靖田螺坑土楼群",
-        "난징현 톈뤄컹 토루 군락",
+        "남정현 톈뤄컹 토루 군락",
       ),
       l(
         "The route links Yongding's Chengqi Lou area with Nanjing's Tianluokeng cluster; entry inside individual buildings can vary.",
         "路线串起永定承启楼一带和南靖田螺坑土楼群；不一定每座楼都能进去参观。",
-        "융딩 청치러우 일대와 난징 톈뤄컹 토루 군락을 함께 둘러봅니다. 내부 입장 가능 여부는 건물마다 다를 수 있습니다.",
+        "융딩 청치러우 일대와 남정 톈뤄컹 토루 군락을 함께 둘러봅니다. 내부 입장 가능 여부는 건물마다 다를 수 있습니다.",
       ),
     ),
   ],
@@ -2023,7 +2023,7 @@ const changbaishan: PrivateTourProduct = {
   title: l(
     "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour",
     "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团",
-    "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
+    "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어",
   ),
   eyebrow: l(
     "A winter-only route with a built-in weather alternative",
@@ -2033,12 +2033,12 @@ const changbaishan: PrivateTourProduct = {
   lede: l(
     "Start with a beginner ski lesson, head for the North Slope when the weather allows, then finish among Yanji's markets and neighbourhoods. We confirm each snow activity and language arrangement separately.",
     "先上一节初学滑雪课，天气允许时前往北坡，最后逛延吉的市场和街区。每项雪上活动和语言服务，我们都会单独确认。",
-    "초급 스키 수업으로 시작해 날씨가 허락하면 북파에 가고, 옌지의 시장과 거리로 여정을 마무리합니다. 설상 체험과 언어 서비스는 항목별로 따로 확인해 드립니다.",
+    "초급 스키 수업으로 시작해 날씨가 허락하면 북파에 가고, 연길의 시장과 거리로 여정을 마무리합니다. 설상 체험과 언어 서비스는 항목별로 따로 확인해 드립니다.",
   ),
   summary: l(
     "Six-day Changbaishan and Yanji winter private tour with five breakfast-included nights, snow activities and winter-equipped road transfers.",
     "共 5 晚冬季含早：长白山度假区 2 晚、北坡周边或二道白河 1 晚、延吉 2 晚，并安排适合冬季路况的私车。",
-    "조식 포함 겨울 5박으로 창바이산 리조트 2박, 북파 인근 또는 얼다오바이허 1박, 옌지 2박과 겨울 도로에 맞는 전용 차량으로 구성됩니다.",
+    "조식 포함 겨울 5박으로 백두산 리조트 2박, 북파 인근 또는 이도백하 1박, 연길 2박과 겨울 도로에 맞는 전용 차량으로 구성됩니다.",
   ),
   highlights: lists(
     [
@@ -2057,7 +2057,7 @@ const changbaishan: PrivateTourProduct = {
       "초급 스키 수업",
       "날씨를 보고 가는 북파 일정",
       "계절 설상 또는 상고대 체험 한 가지",
-      "옌지 시장과 조선족 문화",
+      "연길 시장과 조선족 문화",
     ],
   ),
   itinerary: [
@@ -2066,12 +2066,12 @@ const changbaishan: PrivateTourProduct = {
       l(
         "Arrive at Changbaishan resort",
         "抵达长白山度假区",
-        "창바이산 리조트 도착",
+        "백두산 리조트 도착",
       ),
       l(
         "Your winter-equipped vehicle meets you at Changbaishan airport or station and takes you to the resort hotel. The day is yours to settle in and check your clothing and equipment.",
         "冬季车辆在长白山机场或车站接你，送你到度假区酒店。当天主要是入住、适应天气和检查装备。",
-        "창바이산 공항이나 역에서 겨울 장비를 갖춘 차량을 만나 리조트 호텔로 이동합니다. 이날은 날씨에 적응하고 복장과 장비를 점검하는 데 시간을 씁니다.",
+        "창바이산공항이나 역에서 겨울 장비를 갖춘 차량을 만나 리조트 호텔로 이동합니다. 이날은 날씨에 적응하고 복장과 장비를 점검하는 데 시간을 씁니다.",
       ),
     ),
     day(
@@ -2097,7 +2097,7 @@ const changbaishan: PrivateTourProduct = {
       l(
         "We set out for the North Slope only when the roads and scenic area are open, and whether Tianchi is visible depends on the day. If wind, snow or closures shut the route, we switch to the alternative agreed in advance. Tonight you stay near the North Slope or in Erdaobaihe.",
         "只在道路和景区开放时前往北坡；能否看到天池，要看当天情况。如遇风雪或封闭，就改走提前确认的备用方案。当晚住北坡周边或二道白河。",
-        "도로와 관광지가 운영할 때만 북파를 방문합니다. 천지를 볼 수 있을지는 당일 상황에 따라 다릅니다. 강풍, 폭설 또는 통제로 길이 막히면 미리 합의한 대체 일정으로 진행합니다. 숙박은 북파 인근 또는 얼다오바이허입니다.",
+        "도로와 관광지가 운영할 때만 북파를 방문합니다. 천지를 볼 수 있을지는 당일 상황에 따라 다릅니다. 강풍, 폭설 또는 통제로 길이 막히면 미리 합의한 대체 일정으로 진행합니다. 숙박은 북파 인근 또는 이도백하입니다.",
       ),
     ),
     day(
@@ -2105,12 +2105,12 @@ const changbaishan: PrivateTourProduct = {
       l(
         "Seasonal winter activity and Yanji",
         "季节活动与前往延吉",
-        "계절 겨울 체험 후 옌지 이동",
+        "계절 겨울 체험 후 연길 이동",
       ),
       l(
         "Pick a rime drift or a safer snow activity, only when the season and safety conditions allow, then continue to Yanji by winter-equipped private vehicle. You get the activity's age requirement, duration and cancellation rule in writing.",
         "季节和安全条件都满足时，才选择雾凇漂流或更安全的雪地活动，之后乘冬季车辆前往延吉。活动的年龄要求、时长和取消规则，都会书面写明。",
-        "계절과 안전 조건이 맞을 때만 상고대 래프팅이나 더 안전한 설상 활동을 고르고, 겨울 장비를 갖춘 차량으로 옌지에 갑니다. 체험 연령, 시간과 취소 규정은 서면으로 보내 드립니다.",
+        "계절과 안전 조건이 맞을 때만 상고대 래프팅이나 더 안전한 설상 활동을 고르고, 겨울 장비를 갖춘 차량으로 연길에 갑니다. 체험 연령, 시간과 취소 규정은 서면으로 보내 드립니다.",
       ),
     ),
     day(
@@ -2118,7 +2118,7 @@ const changbaishan: PrivateTourProduct = {
       l(
         "Yanji markets and neighbourhoods",
         "延吉市场、民俗与城市街区",
-        "옌지 시장, 민속과 거리",
+        "연길 시장, 민속과 거리",
       ),
       l(
         "Visit the morning market or a local market, one Korean-Chinese cultural venue and selected city streets. Meals stay flexible and at your own cost, with guidance available if you'd like it.",
@@ -2128,23 +2128,23 @@ const changbaishan: PrivateTourProduct = {
     ),
     day(
       6,
-      l("Depart Yanji", "延吉送机或送站", "옌지 출발"),
+      l("Depart Yanji", "延吉送机或送站", "연길 출발"),
       l(
         "Your private vehicle takes you to Yanji airport or station. There is no fixed sightseeing today.",
         "专车送你去延吉机场或车站，当天不安排固定游览。",
-        "전용 차량으로 옌지 공항이나 역까지 모셔다 드립니다. 이날은 고정 관광 일정이 없습니다.",
+        "전용 차량으로 연길 공항이나 역까지 모셔다 드립니다. 이날은 고정 관광 일정이 없습니다.",
       ),
     ),
   ],
   hotelNote: l(
     "Five nights with breakfast, based on twin sharing: two at a named Changbaishan resort hotel, one near the North Slope or in Erdaobaihe, and two in Yanji. We send you the brand, room type, breakfast, hot-spring access and single supplement in writing.",
     "共 5 晚含早，按双人同住计：长白山度假区指定品牌酒店 2 晚、北坡周边或二道白河 1 晚、延吉 2 晚。酒店品牌、房型、早餐、温泉权益和单房差，都会书面发给你确认。",
-    "조식 포함 5박, 2인 1실 기준입니다. 지정 창바이산 리조트 2박, 북파 인근 또는 얼다오바이허 1박, 옌지 2박으로 묵습니다. 브랜드, 객실, 조식, 온천 이용과 1인실 추가금은 서면으로 보내 드립니다.",
+    "조식 포함 5박, 2인 1실 기준입니다. 지정 백두산 리조트 2박, 북파 인근 또는 이도백하 1박, 연길 2박으로 묵습니다. 브랜드, 객실, 조식, 온천 이용과 1인실 추가금은 서면으로 보내 드립니다.",
   ),
   serviceNote: l(
     "We cost the English-guide days and the ski instructor's language once your group is confirmed. Your confirmation then lists each item: winter vehicle safety equipment, airport transfer, resort–North Slope–Yanji transport, North Slope admission and scenic buses, lift ticket, equipment, helmet, lesson, hot spring, drift or snow activity, and the cancellation rule for each. A general 'unlimited skiing' label does not by itself mean any of these are included.",
     "英语导游服务日与雪场教练语言，会在确认同行信息后核算。确认单会逐项写明：冬季车型安全配置、机场接机、度假区—北坡—延吉用车、北坡门票与景区车、雪票、雪具、头盔、课程、温泉、漂流或雪地活动，以及各项取消规则。“无限滑雪”这类概括说法，不代表以上项目都自动包含。",
-    "영어 가이드 일정과 스키 강습 언어는 일행을 확인한 뒤 비용을 산정합니다. 확인서에는 겨울 차량 안전 장비, 공항 이동, 리조트-북파-옌지 차량, 북파 입장·관광지 버스, 리프트권, 장비, 헬멧, 강습, 온천, 래프팅 또는 설상 체험과 각 취소 규정을 하나하나 적어 드립니다. '무제한 스키' 같은 표현만으로 이 항목들이 모두 포함되는 것은 아닙니다.",
+    "영어 가이드 일정과 스키 강습 언어는 일행을 확인한 뒤 비용을 산정합니다. 확인서에는 겨울 차량 안전 장비, 공항 이동, 리조트-북파-연길 차량, 북파 입장·관광지 버스, 리프트권, 장비, 헬멧, 강습, 온천, 래프팅 또는 설상 체험과 각 취소 규정을 하나하나 적어 드립니다. '무제한 스키' 같은 표현만으로 이 항목들이 모두 포함되는 것은 아닙니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -2167,7 +2167,7 @@ const changbaishan: PrivateTourProduct = {
     "hero.webp",
     1920,
     1440,
-    l("Tianchi crater lake on Changbaishan", "长白山天池", "창바이산 천지"),
+    l("Tianchi crater lake on Changbaishan", "长白山天池", "백두산 천지"),
     l(
       "Tianchi · visibility varies from day to day",
       "天池 · 能否看到，要看当天情况",
@@ -2180,18 +2180,18 @@ const changbaishan: PrivateTourProduct = {
       "gallery-1.webp",
       1920,
       1235,
-      l("Yanji city lights at night", "延吉城市夜景", "옌지 야경"),
+      l("Yanji city lights at night", "延吉城市夜景", "연길 야경"),
       l(
         "The route ends with two nights in Yanji.",
         "路线最后在延吉连住两晚。",
-        "여정은 옌지 2박으로 마칩니다.",
+        "여정은 연길 2박으로 마칩니다.",
       ),
     ),
   ],
   routeMedia: [
     routeMedia(
       5,
-      l("Yanji neighbourhoods", "延吉城市街区", "옌지 거리"),
+      l("Yanji neighbourhoods", "延吉城市街区", "연길 거리"),
       image(
         changbaishanSlug,
         "route-day-2.webp",
@@ -2205,7 +2205,7 @@ const changbaishan: PrivateTourProduct = {
         l(
           "Yanji's streets show the city's Korean-Chinese culture, while meals stay your own choice.",
           "延吉街区里能看到朝鲜族文化，吃什么由你自己选。",
-          "옌지 거리에서 조선족 문화를 만나고, 식사는 자유롭게 고릅니다.",
+          "연길 거리에서 조선족 문화를 만나고, 식사는 자유롭게 고릅니다.",
         ),
       ),
     ),
