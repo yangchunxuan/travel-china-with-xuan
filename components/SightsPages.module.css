@@ -257,6 +257,84 @@
   margin: 0.75rem 0 0;
 }
 
+/*
+ * Tour collections: each group is an h2 (there is no section heading above
+ * it) set like the theme pages' group headings. Doubled to outrank the
+ * shared sheet's editorial ".page h2".
+ */
+.groupTitle.groupTitle {
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 620;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Tour collections: the other ways in, after the last group. */
+.otherWays {
+  border-top: 1px solid var(--rule);
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+}
+
+.otherWays > p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.otherWays .cityChips {
+  margin-top: 0.75rem;
+}
+
+/* A group's count and length, on its own line above the note. */
+.groupMeta.groupMeta {
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 550;
+}
+
+/* A chip's count, quieter than its name. */
+.chipCount {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  margin-inline-start: 0.4rem;
+}
+
+/* Two routes (the season's pick): two to a row, not two thirds of one. */
+@media (min-width: 61.3125rem) {
+  .pairTours.pairTours {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Long collections (regions): four to a row on wide screens, where a lone
+   last card is counted in fours (the shared sheet counts in threes). */
+@media (min-width: 75rem) {
+  .denseTours.denseTours {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .denseTours.denseTours > li:last-child:nth-child(3n + 1):not(:first-child) {
+    grid-column: auto;
+  }
+
+  .denseTours.denseTours > li:last-child:nth-child(3n + 1):not(:first-child) > a {
+    display: flex;
+  }
+
+  .denseTours.denseTours > li:last-child:nth-child(4n + 1):not(:first-child) {
+    grid-column: 1 / -1;
+  }
+
+  .denseTours.denseTours > li:last-child:nth-child(4n + 1):not(:first-child) > a {
+    display: grid;
+    grid-template-columns: calc((100% - 3.75rem) / 4) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+}
+
 /* "More in <city>": names line up across a row, whatever the line below them. */
 .strip > li > a {
   align-items: start;

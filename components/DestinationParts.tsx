@@ -6,6 +6,7 @@ import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel, type HomegroundSubmenuId } from "../lib/homegroundNavigationModel";
 import type { PublishedPrivateTourCatalogItem } from "../lib/publishedPrivateTourCatalog";
+import { getTourCollectionsCopy } from "../lib/tourCollectionsI18n";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import { privateTourCardImageSource, privateTourCardImageSrcSet } from "./privateTourCardImages";
 import { KeepStops, KeepWords } from "./text/KeepWords";
@@ -131,6 +132,8 @@ export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCa
             width={tour.image.width}
           />
           <span className={styles.days}>{copy.theme.days(tour.days)}</span>
+          {/* A fixed-departure small group is not a private tour: say so on the card. */}
+          {tour.tourFormat === "small-group" ? <span className={styles.formatTag}>{getTourCollectionsCopy(locale).smallGroup}</span> : null}
         </span>
         <span className={styles.tourText}>
           <h4><KeepWords locale={locale} text={tourTitle(tour.title, locale)} /></h4>

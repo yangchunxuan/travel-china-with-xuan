@@ -16,7 +16,7 @@
   "searchTerms": {
     "en": ["guilin yangshuo with kids and elderly", "guilin yangshuo family itinerary 5 days", "li river cruise with older parents", "yulong river bamboo raft children seniors"],
     "zh": ["桂林阳朔带老人小孩五天", "桂林阳朔三代同游", "遇龙河竹筏儿童老人限制"],
-    "ko": ["구이린 양숴 아이 부모님 5일", "구이린 양숴 가족 여행 일정", "위룽허 뗏목 어린이 노인 제한"]
+    "ko": ["계림 양삭 아이 부모님 5일", "계림 양삭 가족 여행 일정", "위룽허 뗏목 어린이 노인 제한"]
   },
   "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "plan" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
@@ -45,14 +45,14 @@
     },
     "ko": {
       "path": "/ko/guides/guilin-yangshuo-with-kids-and-older-parents/",
-      "title": "아이·부모님과 구이린·양숴 5일 여행",
-      "headline": "아이와 부모님과 함께하는 구이린·양숴 5일 여행",
-      "description": "아이와 부모님이 함께하는 구이린·양숴 5일 일정. 리강 유람선과 선택형 대나무 뗏목을 구분하고 숙소 이동, 짐, 선착장 조건을 확인하세요.",
-      "heroAlt": "흐린 날 양숴 부근의 카르스트 봉우리 사이로 흐르는 리강.",
-      "navTitle": "구이린·양숴 가족 여행",
-      "featuredLinkLabel": "구이린·양숴 가족 일정 짜기",
+      "title": "아이·부모님과 계림·양삭 5일 여행",
+      "headline": "아이와 부모님과 함께하는 계림·양삭 5일 여행",
+      "description": "아이와 부모님이 함께하는 계림·양삭 5일 일정. 이강 유람선과 선택형 대나무 뗏목을 구분하고 숙소 이동, 짐, 선착장 조건을 확인하세요.",
+      "heroAlt": "흐린 날 양삭 부근의 카르스트 봉우리 사이로 흐르는 이강.",
+      "navTitle": "계림·양삭 가족 여행",
+      "featuredLinkLabel": "계림·양삭 가족 일정 짜기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["구이린", "양숴", "가족 여행"]
+      "cardTags": ["계림", "양삭", "가족 여행"]
     }
   }
 }

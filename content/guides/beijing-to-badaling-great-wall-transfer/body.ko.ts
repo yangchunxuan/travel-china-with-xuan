@@ -1,6 +1,6 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "바다링에는 여러 대중교통이 있지만 서로 다른 베이징 지점에서 출발하고 같은 곳에 내리지도 않는다. 가장 짧은 승차 시간보다 호텔에서 출발 지점까지와 귀환 좌석을 먼저 본다." },
+  { id: "lead", type: "lead", text: "팔달령에는 여러 대중교통이 있지만 서로 다른 베이징 지점에서 출발하고 같은 곳에 내리지도 않는다. 가장 짧은 승차 시간보다 호텔에서 출발 지점까지와 귀환 좌석을 먼저 본다." },
   { id: "answer", type: "callout", title: "노선 이름은 답의 절반", tone: "decision", body: "칭허 또는 베이징북역이 편하고 날짜에 맞는 열차가 있으면 고속철도를 확인한다. S2 교외철도는 현재 난커우역에서 출발하고, 877번 버스는 현재 베이투청 지하철역 인근에서 출발한다. 공항 직행은 공항이 실제 출발 또는 도착일 때만 의미가 있다." },
   { id: "matrix-heading", type: "heading", level: 2, text: "네 노선과 서로 다른 첫 구간" },
   { id: "matrix", type: "table", caption: "여행 날짜에 모든 터미널 이름을 확인한다", columns: ["노선", "좋은 출발 조건", "부담", "가정하지 말 것"], rows: [
@@ -9,7 +9,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["877번 버스", "베이투청 접근이 쉽고 도로 변동을 감수할 때", "공식 정류장 찾기, 대기, 정체와 귀환 마감", "예전 안내의 더성먼이 지금도 출발역"],
     ["공항 직행버스", "서우두공항이 실제 출발 또는 도착일 때", "날짜별 시간, 터미널과 관광지 운영일", "영구 매일 운행하거나 다싱공항도 이용"],
   ]},
-  { id: "names", type: "callout", title: "전체 이름 저장하기", tone: "warning", body: "바다링 만리장성역, S2 바다링 정차 지점과 도로 버스 도착지는 같은 이름이 아니다. 베이징에서는 고속철도의 칭허 또는 베이징북, S2의 난커우, 877번 버스의 베이투청을 중국어로 저장하고 출발 전에 당일 운행을 확인한다." },
+  { id: "names", type: "callout", title: "전체 이름 저장하기", tone: "warning", body: "팔달령 만리장성역, S2 팔달령 정차 지점과 도로 버스 도착지는 같은 이름이 아니다. 베이징에서는 고속철도의 칭허 또는 베이징북, S2의 난커우, 877번 버스의 베이투청을 중국어로 저장하고 출발 전에 당일 운행을 확인한다." },
   { id: "clock-heading", type: "heading", level: 2, text: "양방향 이동을 계산한다" },
   { id: "clock", type: "list", ordered: true, items: ["호텔이나 공항에서 올바른 터미널까지.", "대기, 보안검색과 줄 여유.", "예정 승차 시간과 지연 위험.", "도착 지점에서 선택한 입구와 오르막 이동.", "하산, 일행 모으기와 마지막 안전 귀환."] },
   { id: "groups", type: "comparison", title: "어떤 부담이 가장 중요한가?", columns: [
@@ -18,9 +18,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { heading: "공항 또는 열차 연결", items: ["날짜가 확인된 공식 교통만 사용", "짐과 수속 시간을 충분히 확보", "같은 날 빠듯한 연결 피하기"] },
   ]},
   { id: "booking-heading", type: "heading", level: 2, text: "경로를 날짜별 예약 절차로 바꾸세요" },
-  { id: "booking-copy", type: "paragraph", text: "블로그의 오래된 경로를 복사하지 말고 실제 여행일을 검색합니다. 철도라면 결제 전에 정확한 베이징 출발역, 바다링창청역, 출발·도착 시각과 돌아오는 표를 함께 비교하세요. S2나 877번 버스는 현재 운행 공지를 사용하고 출발지의 중국어 이름을 저장합니다. 그런 다음 실제 아침 시간에 호텔 입구에서 그 출발지까지를 지도에 넣습니다. 종이 위에서 단순한 선택도 첫 지하철, 보안 대기, 도시를 가로지르는 택시를 더하면 장점이 사라질 수 있습니다." },
+  { id: "booking-copy", type: "paragraph", text: "블로그의 오래된 경로를 복사하지 말고 실제 여행일을 검색합니다. 철도라면 결제 전에 정확한 베이징 출발역, 팔달령장성역, 출발·도착 시각과 돌아오는 표를 함께 비교하세요. S2나 877번 버스는 현재 운행 공지를 사용하고 출발지의 중국어 이름을 저장합니다. 그런 다음 실제 아침 시간에 호텔 입구에서 그 출발지까지를 지도에 넣습니다. 종이 위에서 단순한 선택도 첫 지하철, 보안 대기, 도시를 가로지르는 택시를 더하면 장점이 사라질 수 있습니다." },
   { id: "identity", type: "callout", title: "예약 서류와 여행자가 일치해야 합니다", tone: "warning", body: "철도 상품에 신원 정보가 필요하면 시스템이 허용하는 형식으로 여권 정보를 정확히 입력하고 같은 서류를 지참합니다. 자동 게이트가 읽지 못할 때를 대비해 직원 도움을 받을 시간을 남기세요. 다른 여행자의 승차권 화면, 번역된 역 별칭, 결제 영수증은 유효한 주문과 여행 서류를 대신하지 못합니다." },
-  { id: "wall-heading", type: "heading", level: 2, text: "바다링 도착은 또 하나의 경로 결정 시작입니다" },
+  { id: "wall-heading", type: "heading", level: 2, text: "팔달령 도착은 또 하나의 경로 결정 시작입니다" },
   { id: "wall-matrix", type: "table", caption: "돌아오는 편을 고르기 전에 관광 구간을 설계하세요", columns: ["질문", "결정", "중요한 이유"], rows: [
     ["어느 입구와 성벽 구간인가?", "걷는 방향과 재집결 지점을 정합니다", "교통별 도착 지점과 내부 이동은 같은 시작점을 만들지 않습니다"],
     ["얼마나 오를 것인가?", "이동이 가장 제한된 사람과 당일 이동 보조 시설에 맞춥니다", "교통일에는 이미 역 보행과 대기가 포함됩니다"],
@@ -36,29 +36,29 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["버스 정류장이 불명확", "직원에게 묻고 전체 노선과 중국어 목적지 확인"],
     ["귀환 실패 위험", "관광지를 나와 다음 확인된 교통을 잡고 호텔이나 후속 운영사에 알리기"],
   ]},
-  { id: "facts", type: "callout", title: "교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "베이징 버스 운영사는 2025년 3월 27일 877번 버스의 출발지를 더성먼에서 베이투청으로 옮겼다. 베이징시 교통 당국은 S2 노선이 2025년 10월 25일부터 난커우역에서 출발한다고 안내한다. 고속철도는 별도 철도역을 이용하며, 서우두공항과 바다링을 잇는 노선도 날짜에 따라 운행한다. 출발 전 시간표, 요금과 운행일을 다시 확인한다." },
+  { id: "facts", type: "callout", title: "교통 정보 확인일: 2026년 8월 13일", tone: "neutral", body: "베이징 버스 운영사는 2025년 3월 27일 877번 버스의 출발지를 더성먼에서 베이투청으로 옮겼다. 베이징시 교통 당국은 S2 노선이 2025년 10월 25일부터 난커우역에서 출발한다고 안내한다. 고속철도는 별도 철도역을 이용하며, 서우두공항과 팔달령을 잇는 노선도 날짜에 따라 운행한다. 출발 전 시간표, 요금과 운행일을 다시 확인한다." },
   { id: "help", type: "callout", title: "호텔에 맞는 노선을 확인할까요?", tone: "decision", body: "날짜, 베이징 호텔 또는 공항 터미널, 인원, 이동 요구와 저녁 고정 일정을 보내 주세요. Homeground는 전체 이동과 문제가 생겼을 때의 대안을 비교할 수 있지만 실시간 좌석을 보장하지 않습니다." },
-  { id: "faq", type: "faq", title: "바다링 이동 자주 묻는 질문", items: [
-    { question: "베이징에서 바다링까지 대중교통으로 어떻게 가나요?", answer: "노선이 여럿이고 출발 지점이 서로 다릅니다. 칭허나 베이징북역이 호텔에서 편하고 날짜에 맞는 열차가 있으면 고속철도를 확인하세요. S2 교외철도는 현재 난커우역에서, 877번 버스는 현재 베이투청 지하철역 인근에서 출발합니다. 가장 짧은 승차 시간보다 호텔에서 출발 지점까지 가는 첫 구간을 먼저 비교하세요." },
+  { id: "faq", type: "faq", title: "팔달령 이동 자주 묻는 질문", items: [
+    { question: "베이징에서 팔달령까지 대중교통으로 어떻게 가나요?", answer: "노선이 여럿이고 출발 지점이 서로 다릅니다. 칭허나 베이징북역이 호텔에서 편하고 날짜에 맞는 열차가 있으면 고속철도를 확인하세요. S2 교외철도는 현재 난커우역에서, 877번 버스는 현재 베이투청 지하철역 인근에서 출발합니다. 가장 짧은 승차 시간보다 호텔에서 출발 지점까지 가는 첫 구간을 먼저 비교하세요." },
     { question: "877번 버스는 아직 더성먼에서 출발하나요?", answer: "아닙니다. 베이징 버스 운영사는 2025년 3월 27일 877번 출발지를 더성먼에서 베이투청으로 옮겼습니다(2026년 8월 13일 확인). 더성먼을 적은 예전 안내는 오래된 정보이니 베이투청 출발지를 중국어로 저장하고 출발 전에 시간표, 요금, 운행일을 다시 확인하세요." },
     { question: "S2 노선은 아직 황투뎬역에서 출발하나요?", answer: "지금은 아닙니다. 베이징시 교통 당국은 S2 노선이 2025년 10월 25일부터 난커우역에서 출발한다고 안내합니다(2026년 8월 13일 확인). 난커우는 별도 역이고 편수가 제한적이며 대기가 있으니 당일 시간표를 877번, 고속철도와 함께 비교한 뒤 정하세요." },
-    { question: "바다링 당일치기는 시간이 얼마나 걸리나요?", answer: "승차 시간 하나가 아니라 다섯 구간으로 계산하세요. 호텔이나 공항에서 올바른 터미널까지, 대기와 보안검색·줄 여유, 예정 승차 시간과 지연 위험, 도착 지점에서 선택한 입구까지와 오르막 이동, 그리고 하산과 일행 모으기, 마지막 안전 귀환입니다. 하나의 숫자는 없고 호텔에서 호텔까지의 실제 연결이 답을 정합니다." },
-    { question: "바다링행 열차를 예약할 때 여권이 필요한가요?", answer: "철도 상품에 신원 정보가 필요하면 그렇습니다. 시스템이 허용하는 형식으로 여권 정보를 정확히 입력하고 같은 서류를 지참하세요. 자동 게이트가 읽지 못할 때를 대비해 직원 도움을 받을 시간도 남깁니다. 다른 여행자의 승차권 화면, 번역된 역 별칭, 결제 영수증은 유효한 주문과 여행 서류를 대신하지 못합니다." },
+    { question: "팔달령 당일치기는 시간이 얼마나 걸리나요?", answer: "승차 시간 하나가 아니라 다섯 구간으로 계산하세요. 호텔이나 공항에서 올바른 터미널까지, 대기와 보안검색·줄 여유, 예정 승차 시간과 지연 위험, 도착 지점에서 선택한 입구까지와 오르막 이동, 그리고 하산과 일행 모으기, 마지막 안전 귀환입니다. 하나의 숫자는 없고 호텔에서 호텔까지의 실제 연결이 답을 정합니다." },
+    { question: "팔달령행 열차를 예약할 때 여권이 필요한가요?", answer: "철도 상품에 신원 정보가 필요하면 그렇습니다. 시스템이 허용하는 형식으로 여권 정보를 정확히 입력하고 같은 서류를 지참하세요. 자동 게이트가 읽지 못할 때를 대비해 직원 도움을 받을 시간도 남깁니다. 다른 여행자의 승차권 화면, 번역된 역 별칭, 결제 영수증은 유효한 주문과 여행 서류를 대신하지 못합니다." },
     { question: "몇 시에 성벽에서 내려와야 하나요?", answer: "폐장 시각이 아니라 마지막 안전한 귀로에 맞춰 하산 시각을 정하세요. 오르기 전에 성벽에서 정확한 철도역이나 버스 대기열로 가는 길을 저장해 두세요. 가는 길이 순조로웠다고 해서 돌아오는 길이 저절로 분명해지지는 않습니다. 저녁 식사, 열차, 항공편이 있으면 작은 지연도 큰 문제가 됩니다." },
   ] },
   { id: "links", type: "internal-links", title: "계속 계획하기", items: [
-    { label: "맞는 만리장성 구간 고르기", href: "/ko/guides/great-wall-section-selector-from-beijing/", description: "이 이동편을 확정하기 전에 무톈위·바다링·진산링·쓰마타이를 비교하세요." },
+    { label: "맞는 만리장성 구간 고르기", href: "/ko/guides/great-wall-section-selector-from-beijing/", description: "이 이동편을 확정하기 전에 무톈위·팔달령·진산링·쓰마타이를 비교하세요." },
     { label: "어느 베이징 기차역인가요?", href: "/ko/guides/which-beijing-railway-station/", description: "칭허, 베이징북과 다른 주요 터미널을 구분합니다." },
     { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "숙소 지역이 첫 구간을 바꿉니다." },
     { label: "베이징에서 무톈위까지", href: "/ko/guides/beijing-to-mutianyu-great-wall-transfer/", description: "무톈위를 정한 뒤에만 이용합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "긴 이동이 있는 하루에 충분한 여유를 둡니다." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
-    { label: "바다링 대중교통 노선 안내", url: "https://english.beijing.gov.cn/latest/news/202406/t20240624_3725018.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },
+    { label: "팔달령 대중교통 노선 안내", url: "https://english.beijing.gov.cn/latest/news/202406/t20240624_3725018.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },
     { label: "877번 버스 출발지 베이투청 이전", url: "https://www.bjbus.com/home/fun_news_detail.php?uNewsCode=00010196&uNewsType=1", publisher: "베이징 버스 운영사", reviewedAt: "2026-08-13" },
     { label: "S2 노선 난커우역 출발 안내", url: "https://jtw.beijing.gov.cn/sjtl/202111/t20211118_2540164.html", publisher: "베이징시 교통위원회", reviewedAt: "2026-08-13" },
     { label: "2026년 서우두공항 직행", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202602/t20260211_4507827.html", publisher: "베이징시 정부", reviewedAt: "2026-08-12" },
-    { label: "대표 사진: N509FZ의 바다링역, CC BY-SA 4.0, 크롭 편집", url: "https://commons.wikimedia.org/wiki/File:Exterior_of_Badaling_Great_Wall_Railway_Station_(20220109161541).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "대표 사진: N509FZ의 팔달령역, CC BY-SA 4.0, 크롭 편집", url: "https://commons.wikimedia.org/wiki/File:Exterior_of_Badaling_Great_Wall_Railway_Station_(20220109161541).jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
     { label: "대표 사진 편집본 라이선스: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
   ]},
 ] } as const satisfies StructuredPageBody;

@@ -17,7 +17,7 @@ AI-generated documentary images used: **0**
 
 - EN: `Front of Guilin Railway Station with the Chinese and English station names above the entrance.`
 - ZH: `桂林站正面，入口上方可见中英文站名。`
-- KO: `입구 위에 중국어와 영어 역명이 보이는 구이린역 정면.`
+- KO: `입구 위에 중국어와 영어 역명이 보이는 계림역 정면.`
 
 ## Optional future documentary additions
 

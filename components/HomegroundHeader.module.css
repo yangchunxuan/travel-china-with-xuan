@@ -881,15 +881,17 @@
 
 /*
  * Five primary items with descriptions plus the menu rows under
- * "Destinations" (two) and "Services" (two) need about 700px. Phones up to
- * 860px tall (iPhone Safari with its toolbars, in-app browsers, a full
- * 390x844 screen) get label-only rows, as x.ai and Apple use, about 530px
- * in all. From 700px down (small Android phones in Samsung Internet or
- * in-app browsers, iPhone SE and mini, 320x568) the two services rows go
- * too ("Services" opens a page that links them) and the Destinations rows
- * stay, so the fifth item is never hidden below the utility bar.
+ * "Destinations" (two), "Private Tours" (three) and "Services" (two) need
+ * about 840px. Phones up to 960px tall (every phone held upright, in-app
+ * browsers included) get label-only rows, as x.ai and Apple use, about 620px
+ * in all. From 820px down the two services rows go ("Services" opens a page
+ * that links them) and the tour rows become one scrolling line of chips
+ * (about 52px), so the collections stay one tap away on an iPhone in Safari;
+ * from 650px down the chips go too ("Private Tours" opens the full list).
+ * The Destinations rows always stay, so the fifth item is never hidden below
+ * the utility bar (measured from 320x568 to 412x915).
  */
-@media (max-width: 1179.98px) and (max-height: 860px) {
+@media (max-width: 1179.98px) and (max-height: 960px) {
   .mobilePrimaryLinks {
     padding-block: 0.5rem;
   }
@@ -904,13 +906,61 @@
   }
 }
 
-@media (max-width: 1179.98px) and (max-height: 700px) {
+@media (max-width: 1179.98px) and (max-height: 820px) {
   .mobilePrimaryLinks > a[data-has-submenu="services"] {
     border-block-end: 1px solid rgb(10 10 10 / 10%);
   }
 
-  /* The single Travel Inspiration row still fits; the services go. */
   .mobileSubmenu[data-menu="services"] {
+    display: none;
+  }
+}
+
+@media (max-width: 1179.98px) and (max-height: 820px) {
+  /* The tour rows as one line of chips that scrolls sideways: it runs to
+     the screen edge and fades there, so a cut-off chip reads as "more". */
+  .mobileSubmenu[data-menu="tours"] {
+    display: flex;
+    gap: 0.5rem;
+    margin-inline-end: calc(-1 * clamp(1.25rem, 6vw, 4rem));
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    overflow-x: auto;
+    padding: 0.15rem clamp(1.25rem, 6vw, 4rem) 0.75rem 0;
+    scrollbar-width: none;
+  }
+
+  .mobileSubmenu[data-menu="tours"] li,
+  .mobileSubmenu[data-menu="tours"] li:has(a[aria-current]) {
+    border-inline-start: 0;
+    flex: none;
+    margin-inline-start: 0;
+  }
+
+  .mobileSubmenu[data-menu="tours"] a {
+    border: 1px solid rgb(10 10 10 / 14%);
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 0.875rem;
+    padding-inline: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .mobileSubmenu[data-menu="tours"] a > span:last-child {
+    display: none;
+  }
+
+  .mobileSubmenu[data-menu="tours"] a[aria-current] {
+    border-color: var(--hg-color-ink, #141413);
+  }
+}
+
+@media (max-width: 1179.98px) and (max-height: 650px) {
+  .mobilePrimaryLinks > a[data-has-submenu="tours"] {
+    border-block-end: 1px solid rgb(10 10 10 / 10%);
+  }
+
+  /* The Destinations rows still fit; the tour chips go. */
+  .mobileSubmenu[data-menu="tours"] {
     display: none;
   }
 }

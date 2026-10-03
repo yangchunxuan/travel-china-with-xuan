@@ -16,7 +16,7 @@
   "searchTerms": {
     "en": ["li river cruise tickets", "li river 3 star vs 4 star cruise", "li river cruise boarding pier"],
     "zh": ["漓江游船怎么买票", "漓江三星四星游船区别", "漓江游船磨盘山竹江码头"],
-    "ko": ["리강 유람선 예약", "리강 3성 4성 유람선", "리강 유람선 선착장"]
+    "ko": ["이강 유람선 예약", "이강 3성 4성 유람선", "이강 유람선 선착장"]
   },
   "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
@@ -45,14 +45,14 @@
     },
     "ko": {
       "path": "/ko/guides/li-river-cruise-tickets-piers-booking/",
-      "title": "리강 유람선 예약: 3성·4성·승선 선착장",
-      "headline": "리강 유람선은 배 종류와 승선 선착장부터 확인하세요",
-      "description": "구이린에서 양숴로 가는 리강 3성·4성 유람선의 공식 요금, 예약 채널, 승선 장소를 구분합니다. 출발 날짜의 공지도 다시 확인하세요.",
-      "heroAlt": "리강의 카르스트 봉우리 사이를 항해하는 유람선",
-      "navTitle": "리강 유람선 예약",
-      "featuredLinkLabel": "리강 유람선 예약 방법",
+      "title": "이강 유람선 예약: 3성·4성·승선 선착장",
+      "headline": "이강 유람선은 배 종류와 승선 선착장부터 확인하세요",
+      "description": "계림에서 양삭으로 가는 이강 3성·4성 유람선의 공식 요금, 예약 채널, 승선 장소를 구분합니다. 출발 날짜의 공지도 다시 확인하세요.",
+      "heroAlt": "이강의 카르스트 봉우리 사이를 항해하는 유람선",
+      "navTitle": "이강 유람선 예약",
+      "featuredLinkLabel": "이강 유람선 예약 방법",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["구이린", "리강", "유람선 예약"]
+      "cardTags": ["계림", "이강", "유람선 예약"]
     }
   }
 }

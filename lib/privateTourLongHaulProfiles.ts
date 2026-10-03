@@ -12,7 +12,7 @@ const l = (
 const classicRoute = l(
   "Beijing · Xi'an · Chengdu · Guilin · Yangshuo · Shanghai",
   "北京 · 西安 · 成都 · 桂林 · 阳朔 · 上海",
-  "베이징 · 시안 · 청두 · 구이린 · 양숴 · 상하이",
+  "베이징 · 시안 · 청두 · 계림 · 양삭 · 상하이",
 );
 
 export const privateTourLongHaulProfiles: Readonly<
@@ -23,7 +23,7 @@ export const privateTourLongHaulProfiles: Readonly<
     appeal: l(
       "For a first trip, this route gives each of Beijing, Xi'an, Chengdu, the Li River and Shanghai its own time. The Great Wall and Terracotta Warriors sit between city days, rather than on travel days.",
       "第一次来中国，可以把北京、西安、成都、漓江和上海都走到。长城和兵马俑各有游览日，不用塞进转场那天。",
-      "첫 중국 여행이라면 베이징, 시안, 청두, 리강, 상하이를 차례로 볼 수 있습니다. 만리장성과 병마용은 이동일에 끼워 넣지 않습니다.",
+      "첫 중국 여행이라면 베이징, 시안, 청두, 이강, 상하이를 차례로 볼 수 있습니다. 만리장성과 병마용은 이동일에 끼워 넣지 않습니다.",
     ),
     pace: l(
       "Thirteen nights in six hotels, joined by two high-speed trains and two domestic flights, with light arrival and travel days.",
@@ -41,7 +41,7 @@ export const privateTourLongHaulProfiles: Readonly<
     appeal: l(
       "Beijing, Xi'an, Chengdu, the Li River and Shanghai on four fixed 2027 departures. At most 12 guests share the guide and vehicle, which lowers the price per person.",
       "北京、西安、成都、漓江和上海这条线，2027 年有四个固定出发日。最多 12 人共用导游和车，每人的费用因此更低。",
-      "베이징, 시안, 청두, 리강, 상하이를 2027년 네 차례의 정기 출발로 여행합니다. 최대 12명이 가이드와 차량을 함께 쓰므로 1인 요금이 낮아집니다.",
+      "베이징, 시안, 청두, 이강, 상하이를 2027년 네 차례의 정기 출발로 여행합니다. 최대 12명이 가이드와 차량을 함께 쓰므로 1인 요금이 낮아집니다.",
     ),
     pace: l(
       "Everyone follows one plan on fixed dates. The trip runs with at least 8 guests; if it cannot run, you can take a full refund.",
@@ -58,12 +58,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Zhangjiajie · Guilin · Yangshuo · Shanghai",
       "北京 · 西安 · 张家界 · 桂林 · 阳朔 · 上海",
-      "베이징 · 시안 · 장가계 · 구이린 · 양숴 · 상하이",
+      "베이징 · 시안 · 장가계 · 계림 · 양삭 · 상하이",
     ),
     appeal: l(
       "Beijing and Xi'an come first. Then spend three nights around Zhangjiajie's sandstone pillars and three around the Li River before ending in Shanghai.",
       "先看北京和西安，再把张家界峰林和漓江山水各留三晚，最后到上海。这样两段山水都不用当天赶来赶去。",
-      "베이징과 시안을 먼저 보고 장가계 사암 봉우리와 리강 주변에서 각각 3박한 뒤 상하이로 갑니다. 두 풍경을 당일치기로 서두르지 않습니다.",
+      "베이징과 시안을 먼저 보고 장가계 사암 봉우리와 이강 주변에서 각각 3박한 뒤 상하이로 갑니다. 두 풍경을 당일치기로 서두르지 않습니다.",
     ),
     pace: l(
       "Thirteen nights in seven hotel stays, with Tianmen Mountain and a full Forest Park day.",
@@ -73,7 +73,7 @@ export const privateTourLongHaulProfiles: Readonly<
     fit: l(
       "Pick this route if Zhangjiajie and the Li River matter more to you than Chengdu's pandas. It includes a full Forest Park day and Tianmen Mountain.",
       "如果比起成都大熊猫，你更想看张家界和漓江，可以选这条。森林公园有完整一天，也留了天门山。",
-      "청두 판다보다 장가계와 리강이 더 끌린다면 이 일정이 맞습니다. 삼림공원에 하루를 쓰고 천문산도 봅니다.",
+      "청두 판다보다 장가계와 이강이 더 끌린다면 이 일정이 맞습니다. 삼림공원에 하루를 쓰고 천문산도 봅니다.",
     ),
   },
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
@@ -168,12 +168,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Chengdu · Guilin · Yangshuo · Zhangjiajie · Chongqing · Yangtze River · Shanghai",
       "北京 · 西安 · 成都 · 桂林 · 阳朔 · 张家界 · 重庆 · 长江 · 上海",
-      "베이징 · 시안 · 청두 · 구이린 · 양숴 · 장가계 · 충칭 · 양쯔강 · 상하이",
+      "베이징 · 시안 · 청두 · 계림 · 양삭 · 장가계 · 충칭 · 양쯔강 · 상하이",
     ),
     appeal: l(
       "Three weeks make room for Beijing and Xi'an, Chengdu's pandas, the Li River, Zhangjiajie and three nights on a Three Gorges cruise. It is a long route, with a full day at each stop.",
       "有三周时间，才好把北京、西安、成都大熊猫、漓江、张家界和三晚三峡游轮放在一趟里。每一站至少留一个完整游览日。",
-      "3주라면 베이징과 시안, 청두 판다, 리강, 장가계, 삼협 3박 크루즈를 한 번에 잇고 각 지역에서 적어도 하루를 보낼 수 있습니다.",
+      "3주라면 베이징과 시안, 청두 판다, 이강, 장가계, 삼협 3박 크루즈를 한 번에 잇고 각 지역에서 적어도 하루를 보낼 수 있습니다.",
     ),
     pace: l(
       "Twenty nights: seventeen in hotels and three on the ship, with at least one full day at every stop.",
@@ -190,12 +190,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Zhangjiajie · Guilin · Yangshuo · Shanghai",
       "北京 · 西安 · 张家界 · 桂林 · 阳朔 · 上海",
-      "베이징 · 시안 · 장가계 · 구이린 · 양숴 · 상하이",
+      "베이징 · 시안 · 장가계 · 계림 · 양삭 · 상하이",
     ),
     appeal: l(
       "Zhangjiajie and the Li River stay in the 14-day route. On two fixed 2027 dates, up to 12 guests share the guide and vehicle for a lower price per person.",
       "张家界和漓江都保留在 14 天路线里。2027 年有两个固定出发日，最多 12 人共用导游和车，每人费用比私家团低。",
-      "14일 일정에 장가계와 리강을 모두 넣었습니다. 2027년 두 차례 정기 출발하며 최대 12명이 가이드와 차량을 함께 써 1인 요금을 낮춥니다.",
+      "14일 일정에 장가계와 이강을 모두 넣었습니다. 2027년 두 차례 정기 출발하며 최대 12명이 가이드와 차량을 함께 써 1인 요금을 낮춥니다.",
     ),
     pace: l(
       "The dates and daily plan are shared. At least 8 guests are needed; if the trip cannot run, you can choose a full refund.",
@@ -205,7 +205,7 @@ export const privateTourLongHaulProfiles: Readonly<
     fit: l(
       "For solo travellers or couples who want both landscape stops and are comfortable following the group's pace.",
       "适合一个人或两个人出行，想看两段山水，也愿意跟着全团的节奏走。",
-      "혼자 또는 둘이 장가계와 리강을 모두 보고 싶고 그룹 속도에 맞춰도 괜찮다면 적합합니다.",
+      "혼자 또는 둘이 장가계와 이강을 모두 보고 싶고 그룹 속도에 맞춰도 괜찮다면 적합합니다.",
     ),
   },
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
@@ -256,12 +256,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Guilin · Yangshuo · Shanghai",
       "北京 · 西安 · 桂林 · 阳朔 · 上海",
-      "베이징 · 시안 · 구이린 · 양숴 · 상하이",
+      "베이징 · 시안 · 계림 · 양삭 · 상하이",
     ),
     appeal: l(
       "Ten days cover the Great Wall, the Terracotta Warriors, a Li River cruise and Shanghai. There is a travel day between each main stop.",
       "十天可以看长城、兵马俑、坐漓江游船，最后到上海。几个主要站点之间都留了转场日。",
-      "열흘 동안 만리장성과 병마용을 보고 리강 유람선을 탄 뒤 상하이로 갑니다. 주요 지역 사이에는 이동일을 둡니다.",
+      "열흘 동안 만리장성과 병마용을 보고 이강 유람선을 탄 뒤 상하이로 갑니다. 주요 지역 사이에는 이동일을 둡니다.",
     ),
     pace: l(
       "Nine nights in five hotels, joined by one high-speed train and two domestic flights.",
@@ -300,12 +300,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Shanghai · Zhangjiajie · Fenghuang · Guilin · Longji · Yangshuo",
       "上海 · 张家界 · 凤凰 · 桂林 · 龙脊 · 阳朔",
-      "상하이 · 장가계 · 봉황 · 구이린 · 룽지 · 양숴",
+      "상하이 · 장가계 · 봉황 · 계림 · 룽지 · 양삭",
     ),
     appeal: l(
       "Fly into and out of Shanghai, then spend the middle of the trip among Zhangjiajie's peaks, Fenghuang, the Longji rice terraces and the Li River.",
       "从上海进出，中间把时间留给张家界峰林、凤凰古城、龙脊梯田和漓江。",
-      "상하이로 들어와 상하이에서 돌아갑니다. 중간 일정은 장가계 봉우리, 봉황고성, 룽지 다랑논과 리강에 씁니다.",
+      "상하이로 들어와 상하이에서 돌아갑니다. 중간 일정은 장가계 봉우리, 봉황고성, 룽지 다랑논과 이강에 씁니다.",
     ),
     pace: l(
       "Twelve nights at seven stays, with two flights and two high-speed trains through southern China.",
@@ -344,7 +344,7 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Guilin · Yangshuo · Hong Kong",
       "北京 · 西安 · 桂林 · 阳朔 · 香港",
-      "베이징 · 시안 · 구이린 · 양숴 · 홍콩",
+      "베이징 · 시안 · 계림 · 양삭 · 홍콩",
     ),
     appeal: l(
       "Fly into Beijing and out of Hong Kong. The mainland part ends on Day 9, so eligible passport holders, including US citizens, may be able to use 240-hour visa-free transit.",

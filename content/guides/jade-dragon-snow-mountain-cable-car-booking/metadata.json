@@ -16,7 +16,7 @@
   "searchTerms": {
     "en": ["jade dragon snow mountain cable car tickets", "glacier park cable car booking", "spruce meadow cable car booking"],
     "zh": ["玉龙雪山大索道怎么买票", "云杉坪索道放票时间", "玉龙雪山门票索道区别"],
-    "ko": ["위룽쉐산 케이블카 예약", "빙천공원 케이블카 예매", "윈산핑 케이블카 예매"]
+    "ko": ["옥룡설산 케이블카 예약", "빙천공원 케이블카 예매", "윈산핑 케이블카 예매"]
   },
   "search": { "section": "explore", "family": "task", "primaryIntent": "execute" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
@@ -47,15 +47,15 @@
     },
     "ko": {
       "path": "/ko/guides/jade-dragon-snow-mountain-cable-car-booking/",
-      "title": "위룽쉐산 케이블카 예약: 빙천공원·윈산핑",
-      "headline": "위룽쉐산 입장권과 케이블카 표는 따로 확인하세요",
+      "title": "옥룡설산 케이블카 예약: 빙천공원·윈산핑",
+      "headline": "옥룡설산 입장권과 케이블카 표는 따로 확인하세요",
       "description": "빙천공원과 윈산핑 케이블카는 예약 시간이 다릅니다. 공식 예매 채널, 2026년 요금과 기상 중단 규정을 확인하세요.",
-      "heroAlt": "리장의 위룽쉐산과 호수 풍경",
-      "heroCredit": { "text": "钉钉이 촬영한 위룽쉐산과 호수 사진입니다. 크기를 조정하고 WebP로 변환했으며, 현재 케이블카 운영 상황을 나타내지 않습니다.", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
-      "navTitle": "위룽쉐산 케이블카 예약",
-      "featuredLinkLabel": "위룽쉐산 케이블카 예약 방법",
+      "heroAlt": "리장의 옥룡설산과 호수 풍경",
+      "heroCredit": { "text": "钉钉이 촬영한 옥룡설산과 호수 사진입니다. 크기를 조정하고 WebP로 변환했으며, 현재 케이블카 운영 상황을 나타내지 않습니다.", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
+      "navTitle": "옥룡설산 케이블카 예약",
+      "featuredLinkLabel": "옥룡설산 케이블카 예약 방법",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["리장", "위룽쉐산", "케이블카"]
+      "cardTags": ["리장", "옥룡설산", "케이블카"]
     }
   }
 }

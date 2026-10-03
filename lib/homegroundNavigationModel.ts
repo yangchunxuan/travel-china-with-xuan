@@ -26,9 +26,17 @@ export type HomegroundServiceNavigationId =
  */
 export type HomegroundDestinationNavigationId = "cities" | "inspiration" | "sights";
 
+/**
+ * The private-tours menu: "Private Tours" opens the full catalogue; the rows
+ * open curated collections of the same published tours (by how many cities,
+ * by one region, and the season's pick, which changes with the season).
+ */
+export type HomegroundTourNavigationId = "all-tours" | "multi-city" | "regions" | "seasonal";
+
 export type HomegroundSubmenuId =
   | HomegroundServiceNavigationId
-  | HomegroundDestinationNavigationId;
+  | HomegroundDestinationNavigationId
+  | HomegroundTourNavigationId;
 
 interface HomegroundPrimaryNavigationItemCopy {
   label: string;
@@ -44,9 +52,11 @@ interface HomegroundNavigationModelCopy {
   >;
   services: Record<HomegroundServiceNavigationId, HomegroundPrimaryNavigationItemCopy>;
   destinations: Record<HomegroundDestinationNavigationId, HomegroundPrimaryNavigationItemCopy>;
+  tours: Record<HomegroundTourNavigationId, HomegroundPrimaryNavigationItemCopy>;
   /** The accessible names of the buttons that open each menu. */
   servicesToggle: string;
   destinationsToggle: string;
+  toursToggle: string;
 }
 
 export interface HomegroundPrimaryNavigationItem
@@ -80,6 +90,13 @@ export const homegroundServiceNavigationIds = [
   "english-guides",
   "trip-support",
 ] as const satisfies readonly HomegroundServiceNavigationId[];
+
+export const homegroundTourNavigationIds = [
+  "all-tours",
+  "multi-city",
+  "regions",
+  "seasonal",
+] as const satisfies readonly HomegroundTourNavigationId[];
 
 export const homegroundDestinationNavigationIds = [
   "cities",
@@ -151,8 +168,31 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "sights/",
       },
     },
+    tours: {
+      "all-tours": {
+        label: "All Private Tours",
+        description: "Every route, by region, length and price",
+        pathSegment: "tours/",
+      },
+      "multi-city": {
+        label: "Multi-City Classics",
+        description: "Several cities in one trip",
+        pathSegment: "tours/multi-city/",
+      },
+      regions: {
+        label: "One Region at a Time",
+        description: "East, Southwest, South China and more",
+        pathSegment: "tours/regions/",
+      },
+      seasonal: {
+        label: "This Season",
+        description: "Winter in the Northeast: Harbin, Changbai Mountain",
+        pathSegment: "tours/seasonal/",
+      },
+    },
     servicesToggle: "Services menu",
     destinationsToggle: "Destinations menu",
+    toursToggle: "Private tours menu",
   },
   zh: {
     mobileCta: "规划",
@@ -217,8 +257,31 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "sights/",
       },
     },
+    tours: {
+      "all-tours": {
+        label: "全部私家团",
+        description: "按地区、天数和价格筛选全部路线",
+        pathSegment: "tours/",
+      },
+      "multi-city": {
+        label: "多城经典线",
+        description: "一趟走好几座城",
+        pathSegment: "tours/multi-city/",
+      },
+      regions: {
+        label: "一个地区慢慢玩",
+        description: "华东、西南、华南等，只玩一个地区",
+        pathSegment: "tours/regions/",
+      },
+      seasonal: {
+        label: "当季推荐",
+        description: "冬季东北：哈尔滨、长白山",
+        pathSegment: "tours/seasonal/",
+      },
+    },
     servicesToggle: "服务菜单",
     destinationsToggle: "目的地菜单",
+    toursToggle: "私家团菜单",
   },
   ko: {
     mobileCta: "상담",
@@ -283,8 +346,31 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "sights/",
       },
     },
+    tours: {
+      "all-tours": {
+        label: "프라이빗 투어 전체",
+        description: "지역·기간·가격으로 전체 일정 찾기",
+        pathSegment: "tours/",
+      },
+      "multi-city": {
+        label: "여러 도시 일주",
+        description: "한 번에 여러 도시를 잇는 코스",
+        pathSegment: "tours/multi-city/",
+      },
+      regions: {
+        label: "한 지역 깊이 보기",
+        description: "동부·서남부·남부 등 한 지역만",
+        pathSegment: "tours/regions/",
+      },
+      seasonal: {
+        label: "이번 시즌 추천",
+        description: "겨울 동북: 하얼빈, 창바이산",
+        pathSegment: "tours/seasonal/",
+      },
+    },
     servicesToggle: "서비스 메뉴",
     destinationsToggle: "여행지 메뉴",
+    toursToggle: "프라이빗 투어 메뉴",
   },
 };
 
@@ -302,6 +388,10 @@ export function getHomegroundNavigationModel(
     destinations: {
       entries: homegroundDestinationNavigationIds.map((id) => entry(id, copy.destinations[id])),
       toggle: copy.destinationsToggle,
+    },
+    tours: {
+      entries: homegroundTourNavigationIds.map((id) => entry(id, copy.tours[id])),
+      toggle: copy.toursToggle,
     },
     services: {
       entries: homegroundServiceNavigationIds.map((id) => entry(id, copy.services[id])),

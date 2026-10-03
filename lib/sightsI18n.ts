@@ -153,7 +153,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     hub: {
       metadata: {
         title: "중국 꼭 가볼 명소: 만리장성·자금성·병마용, 예약 방법까지",
-        description: "만리장성부터 리강까지 도시별 중국 꼭 가볼 명소. 가 볼 만한 이유와 예약 방법, 예약 대행과 프라이빗 투어를 함께 소개합니다.",
+        description: "만리장성부터 이강까지 도시별 중국 꼭 가볼 명소. 가 볼 만한 이유와 예약 방법, 예약 대행과 프라이빗 투어를 함께 소개합니다.",
       },
       h1: "꼭 가볼 명소",
       lede: "도시별로 정리한 꼭 가볼 명소입니다. 대부분 사전 실명 예약이 필요하며, 이 {total}곳 중 {count}곳은 여권 실명으로 대신 예약해 드립니다.",
@@ -183,7 +183,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     guidedBody: "프라이빗 영어 가이드를 예약하거나 전체 여행을 맡기실 수 있습니다.",
     sights: {
       "forbidden-city": { name: "자금성", line: "명·청 시대의 황궁, 베이징의 중심" },
-      "great-wall": { name: "만리장성", line: "베이징에서 하루, 바다링 또는 무톈위" },
+      "great-wall": { name: "만리장성", line: "베이징에서 하루, 팔달령 또는 무톈위" },
       "temple-of-heaven": { name: "천단", line: "명·청 황제가 하늘에 제사하고 풍년을 빌던 제단" },
       "summer-palace": { name: "이화원", line: "곤명호와 만수산, 긴 회랑의 황실 정원" },
       "national-museum": { name: "중국 국가박물관", line: "톈안먼 광장 동쪽, 선사부터 명·청까지의 중국사" },
@@ -195,8 +195,8 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       liangzhu: { name: "량주 고성 유적", line: "5천여 년 전의 고대 도시, 세계유산" },
       "chengdu-panda-base": { name: "청두 판다기지", line: "개장 직후가 판다가 보통 가장 활발한 시간" },
       sanxingdui: { name: "싼싱두이박물관", line: "3천여 년 전 고촉 문명의 청동 가면과 청동 나무" },
-      "li-river": { name: "리강", line: "카르스트 봉우리 사이를 배로, 구이린에서 양숴까지" },
-      "jade-dragon-snow-mountain": { name: "위룽쉐산", line: "리장 근교의 설산, 케이블카로 올라가는 곳" },
+      "li-river": { name: "이강", line: "카르스트 봉우리 사이를 배로, 계림에서 양삭까지" },
+      "jade-dragon-snow-mountain": { name: "옥룡설산", line: "리장 근교의 설산, 케이블카로 올라가는 곳" },
       "zhangjiajie-forest-park": { name: "장가계 국가삼림공원", line: "원가계·천자산의 기암 봉우리" },
     },
   },

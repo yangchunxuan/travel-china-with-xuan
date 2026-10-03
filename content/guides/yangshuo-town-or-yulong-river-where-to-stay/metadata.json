@@ -68,21 +68,21 @@
     },
     "ko": {
       "path": "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/",
-      "title": "양숴 첫 여행 숙소: 시내와 위룽허 중 어디에 묵을까?",
-      "headline": "양숴 시내 생활권과 위룽허 전원 지역 중 어디에 묵을까요?",
-      "description": "호텔 순위 대신 저녁, 이른 아침, 비, 짐, 아이·이동 편의와 농촌의 실제 마지막 이동을 기준으로 양숴 숙박 거점을 고릅니다.",
-      "heroAlt": "양숴의 카르스트 봉우리와 늘어진 대나무 아래 위룽허를 오가는 대나무 배.",
+      "title": "양삭 첫 여행 숙소: 시내와 위룽허 중 어디에 묵을까?",
+      "headline": "양삭 시내 생활권과 위룽허 전원 지역 중 어디에 묵을까요?",
+      "description": "호텔 순위 대신 저녁, 이른 아침, 비, 짐, 아이·이동 편의와 농촌의 실제 마지막 이동을 기준으로 양삭 숙박 거점을 고릅니다.",
+      "heroAlt": "양삭의 카르스트 봉우리와 늘어진 대나무 아래 위룽허를 오가는 대나무 배.",
       "heroCredit": {
-        "text": "양숴 위룽허의 실제 풍경. Liuxingy가 2024년 2월 11일 촬영했으며 Homeground가 중앙부를 16:10으로 잘라 크기를 조정하고 WebP로 변환했습니다. 특정 숙소 추천이나 현재 대나무 배 운항을 증명하는 사진이 아닙니다.",
+        "text": "양삭 위룽허의 실제 풍경. Liuxingy가 2024년 2월 11일 촬영했으며 Homeground가 중앙부를 16:10으로 잘라 크기를 조정하고 WebP로 변환했습니다. 특정 숙소 추천이나 현재 대나무 배 운항을 증명하는 사진이 아닙니다.",
         "sourceLabel": "원본 사진",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
         "licenseLabel": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       },
-      "navTitle": "양숴 시내·위룽허 숙소",
-      "featuredLinkLabel": "양숴 숙박 거점 고르기",
+      "navTitle": "양삭 시내·위룽허 숙소",
+      "featuredLinkLabel": "양삭 숙박 거점 고르기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["양숴", "숙소 위치", "위룽허"]
+      "cardTags": ["양삭", "숙소 위치", "위룽허"]
     }
   },
   "searchTerms": {
@@ -97,8 +97,8 @@
       "阳朔镇和遇龙河住哪里"
     ],
     "ko": [
-      "양숴 숙소 위치",
-      "양숴 시내 위룽허 숙소",
+      "양삭 숙소 위치",
+      "양삭 시내 위룽허 숙소",
       "시제 위룽허 어디에 묵을까"
     ]
   }

@@ -47,6 +47,7 @@ function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId.startsWith("travel-inspiration-")) return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "must-see-sights") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId.startsWith("sight-")) return entry.locale === "en" ? 0.7 : 0.65;
+  if (entry.contentId.startsWith("tour-collection-")) return entry.locale === "en" ? 0.74 : 0.69;
   if (entry.contentId === "system-zhangjiajie-4-day-private-tour") {
     return entry.locale === "en" ? 0.75 : 0.7;
   }

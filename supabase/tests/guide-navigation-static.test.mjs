@@ -118,10 +118,13 @@ test("global navigation keeps one distinct five-item information architecture", 
   assert.match(css, /\.mobileNavCopy small \{/);
   assert.match(css, /\.mobileUtilityLink \{/);
   assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
-  // Five items plus the menu rows: phones up to 860px tall get label-only
-  // rows; from 700px down the services rows go too ("Services" opens its page).
-  assert.match(css, /max-height: 860px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
-  assert.match(css, /max-height: 700px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
+  // Five items plus the menu rows: phones up to 960px tall get label-only
+  // rows; from 820px down the services rows go, from 700px down the tour rows.
+  assert.match(css, /max-height: 960px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
+  assert.match(css, /max-height: 820px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
+  // Tour rows become a sideways chip strip from 820px down, and go from 650px down.
+  assert.match(css, /max-height: 820px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="tours"\] \{\s*display: flex;[\s\S]*?overflow-x: auto;/);
+  assert.match(css, /max-height: 650px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="tours"\] \{\s*display: none;/);
 });
 
 test("all public page families use the shared header", async () => {

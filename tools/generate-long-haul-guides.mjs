@@ -46,11 +46,11 @@ const S = {
   silkg: "beijing-xian-silk-road-15-day-small-group-tour",
 };
 const route = {
-  [S.c10]: t("Beijing, Xi'an, Guilin, Shanghai", "北京·西安·桂林·上海", "베이징·시안·구이린·상하이"),
+  [S.c10]: t("Beijing, Xi'an, Guilin, Shanghai", "北京·西安·桂林·上海", "베이징·시안·계림·상하이"),
   [S.j11]: t("Beijing, Hangzhou, Suzhou, Shanghai (no flights)", "北京·杭州·苏州·上海（不坐飞机）", "베이징·항저우·쑤저우·상하이(국내선 없음)"),
-  [S.s13]: t("Shanghai, Zhangjiajie, Fenghuang, Guilin", "上海·张家界·凤凰·桂林", "상하이·장가계·봉황·구이린"),
-  [S.c14]: t("Beijing, Xi'an, Chengdu, Guilin, Shanghai", "北京·西安·成都·桂林·上海", "베이징·시안·청두·구이린·상하이"),
-  [S.l14]: t("Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai", "北京·西安·张家界·桂林·上海", "베이징·시안·장가계·구이린·상하이"),
+  [S.s13]: t("Shanghai, Zhangjiajie, Fenghuang, Guilin", "上海·张家界·凤凰·桂林", "상하이·장가계·봉황·계림"),
+  [S.c14]: t("Beijing, Xi'an, Chengdu, Guilin, Shanghai", "北京·西安·成都·桂林·上海", "베이징·시안·청두·계림·상하이"),
+  [S.l14]: t("Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai", "北京·西安·张家界·桂林·上海", "베이징·시안·장가계·계림·상하이"),
   [S.y14]: t("Beijing, Xi'an, Dali, Lijiang, Shangri-La", "北京·西安·大理·丽江·香格里拉", "베이징·시안·다리·리장·샹그릴라"),
   [S.h14]: t("Beijing, Xi'an, Yellow Mountain, Hangzhou, Suzhou, Shanghai", "北京·西安·黄山·杭州·苏州·上海", "베이징·시안·황산·항저우·쑤저우·상하이"),
   [S.silk]: t("Beijing, Xi'an, Silk Road to Urumqi", "北京·西安·丝绸之路到乌鲁木齐", "베이징·시안·실크로드(우루무치까지)"),
@@ -177,7 +177,7 @@ function costBody(loc) {
     { id: "compare", type: "paragraph", text: tr(
       `On the Beijing–Xi'an–Chengdu–Guilin–Shanghai 14-day route, a private departure for two is ${P(S.c14, 2)} each. The fixed-date group is ${sgPrice(loc, S.c14g)} each. A private guide and vehicle give your party more control over the pace; the group follows one plan with 8–12 guests. Eight friends travelling together can also set their own group date at the small-group price.`,
       `以北京、西安、成都、桂林、上海 14 天线来说，2 人私家团每人 ${P(S.c14, 2)}，固定日期小团每人 ${sgPrice(loc, S.c14g)}。私家团的导游和车只服务你们，走快走慢都好商量。小团是 8–12 人同走一份行程。如果你们已有 8 人，也能按小团价自己定出发日。`,
-      `같은 베이징·시안·청두·구이린·상하이 14일 코스라도 출발 방식에 따라 요금이 달라집니다. 두 사람이 프라이빗으로 가면 1인 ${P(S.c14, 2)}, 정기 출발 그룹에 합류하면 ${sgPrice(loc, S.c14g)}입니다. 그룹에서는 8~12명이 한 일정으로 움직입니다. 일행만 가이드와 차량을 쓰며 속도를 조정하려면 프라이빗으로 예약하세요. 이미 8명 이상이 함께 간다면 그룹 요금으로 날짜를 직접 정할 수 있습니다.`) },
+      `같은 베이징·시안·청두·계림·상하이 14일 코스라도 출발 방식에 따라 요금이 달라집니다. 두 사람이 프라이빗으로 가면 1인 ${P(S.c14, 2)}, 정기 출발 그룹에 합류하면 ${sgPrice(loc, S.c14g)}입니다. 그룹에서는 8~12명이 한 일정으로 움직입니다. 일행만 가이드와 차량을 쓰며 속도를 조정하려면 프라이빗으로 예약하세요. 이미 8명 이상이 함께 간다면 그룹 요금으로 날짜를 직접 정할 수 있습니다.`) },
     { id: "price-note", type: "callout", tone: "warning", title: tr("Starting prices, confirmed in writing", "起价，付款前书面确认", "시작가이며 결제 전 서면 확인"), body: tr(
       "Before you pay, ask us for the hotel names, train and flight plan, and one written total. The table gives starting prices; travel during Chinese public holidays may cost more.",
       "付款前，先让我们把酒店、火车、航班和总价写在同一份确认里。表中只是起价，中国节假日出行可能更贵。",
@@ -192,7 +192,7 @@ function costBody(loc) {
         answer: tr(
           `On the 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private route, the published per-person price falls from ${P(S.c14, 2)} for two travellers to ${P(S.c14, 4)} for four and ${P(S.c14, 6)} for six. The guide and vehicle cost is shared across more people.`,
           `北京、西安、成都、桂林、上海 14 天私家线，每人价格随人数下降：2 人同行 ${P(S.c14, 2)}，4 人 ${P(S.c14, 4)}，6 人 ${P(S.c14, 6)}。导游和车的费用由更多人分摊。`,
-          `베이징·시안·청두·구이린·상하이 14일 프라이빗 투어는 1인 요금이 2명일 때 ${P(S.c14, 2)}, 4명일 때 ${P(S.c14, 4)}, 6명일 때 ${P(S.c14, 6)}입니다. 가이드와 차량 비용을 더 많은 인원이 나눠 내기 때문입니다.`) },
+          `베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 1인 요금이 2명일 때 ${P(S.c14, 2)}, 4명일 때 ${P(S.c14, 4)}, 6명일 때 ${P(S.c14, 6)}입니다. 가이드와 차량 비용을 더 많은 인원이 나눠 내기 때문입니다.`) },
       { question: tr("Do the prices include international flights?", "价格含国际机票吗？", "요금에 국제선이 포함되나요?"),
         answer: tr(
           "Homeground's published 10- to 21-day China tour prices cover the trip from arrival in China to departure from China. Flights to and from China are extra. The itinerary names the domestic flights, trains and cruises included in each route.",
@@ -255,7 +255,7 @@ function smallGroupBody(loc) {
     { id: "includes", type: "paragraph", text: tr(
       "Breakfast is included each hotel night. The hotel plan follows the matching private route: four-star or Trip.com 4-diamond where available, with suitable local hotels at some smaller stops. In each city, the group has an English-speaking local guide and a vehicle on touring days; the named sights and the route's listed trains, flights or cruise are covered too. One arrival and one departure transfer are included on the group dates, with no shopping stops. On the Li River day, you cruise about four hours to Yangshuo while your luggage travels there by vehicle.",
       "每晚酒店都含早餐，住宿沿用对应私家线的安排：有条件的城市按 4 星或携程 4 钻标准，个别小城市选当地合适酒店。游览日有当地英语导游和团车，列明的景点首道门票、高铁、国内航班或游轮也在团费里。团期当天含一次抵达接送、一次离开接送，不进购物店。漓江那天，人在船上约 4 小时到阳朔，行李走陆路。",
-      "호텔에서는 매일 조식을 제공합니다. 숙소는 같은 노선의 프라이빗 투어와 같습니다. 가능한 도시에서는 4성급 또는 트립닷컴 4다이아 등급을 기준으로 하고, 일부 소도시에서는 적절한 현지 호텔을 이용합니다. 관광일에는 도시별 영어 현지 가이드와 그룹 차량이 함께합니다. 일정에 적힌 명소의 첫 입장권과 열차·국내선 또는 크루즈도 포함됩니다. 그룹 출발일에는 도착과 출발 픽업이 각각 한 번씩 있고 쇼핑 일정은 없습니다. 리강 유람선 날에는 배로 약 4시간 양숴에 가고 짐은 차량으로 따로 옮깁니다.") },
+      "호텔에서는 매일 조식을 제공합니다. 숙소는 같은 노선의 프라이빗 투어와 같습니다. 가능한 도시에서는 4성급 또는 트립닷컴 4다이아 등급을 기준으로 하고, 일부 소도시에서는 적절한 현지 호텔을 이용합니다. 관광일에는 도시별 영어 현지 가이드와 그룹 차량이 함께합니다. 일정에 적힌 명소의 첫 입장권과 열차·국내선 또는 크루즈도 포함됩니다. 그룹 출발일에는 도착과 출발 픽업이 각각 한 번씩 있고 쇼핑 일정은 없습니다. 이강 유람선 날에는 배로 약 4시간 양삭에 가고 짐은 차량으로 따로 옮깁니다.") },
     { id: "choose-heading", type: "heading", level: 2, text: tr("Small group or private tour?", "小团还是私家团？", "소규모 그룹과 프라이빗 투어 중 무엇을 고를까") },
     { id: "choose", type: "table",
       caption: tr("Per person for two travellers, twin share", "两人同行每人价格，两人一间", "2명 기준 1인 요금, 2인 1실"),
@@ -297,7 +297,7 @@ function smallGroupBody(loc) {
       { label: tr("Best 2-week China tour: four routes compared", "中国两周游：四条 14 天线路比较", "중국 2주 투어: 14일 일정 4개 비교"), href: guideHref(loc, "best-2-week-china-tour") },
     ] },
     { id: "sources", type: "sources", title: tr("Official route and holiday sources", "线路与节日日期来源", "일정과 공휴일 공식 자료"), items: [
-      { label: tr("Li River cruise route and approximate duration", "漓江精华游线路与约 4 小时船程", "리강 유람선 경로와 약 4시간 소요"), url: "https://www.liriver.com.cn/page/article/zxlj.jqdt/126", publisher: tr("Li River Scenic Area", "桂林漓江景区", "구이린 리강 관광지"), reviewedAt: TODAY },
+      { label: tr("Li River cruise route and approximate duration", "漓江精华游线路与约 4 小时船程", "이강 유람선 경로와 약 4시간 소요"), url: "https://www.liriver.com.cn/page/article/zxlj.jqdt/126", publisher: tr("Li River Scenic Area", "桂林漓江景区", "계림 이강 관광지"), reviewedAt: TODAY },
       { label: tr("2027 Mid-Autumn Festival date", "2027 年中秋节日期", "2027년 중추절 날짜"), url: "https://weather.sz.gov.cn/zhuanti/2023zhongqiuguanshangzhinan/index.html", publisher: tr("Shenzhen Meteorological Bureau", "深圳市气象局", "선전시 기상국"), reviewedAt: TODAY },
       { label: tr("Statutory May Day holiday dates", "劳动节法定放假日期", "노동절 법정 공휴일 날짜"), url: "https://rsj.gz.gov.cn/zcfg/flfg/content/post_10803356.html", publisher: tr("Guangzhou Human Resources and Social Security Bureau", "广州市人力资源和社会保障局", "광저우시 인력자원사회보장국"), reviewedAt: TODAY },
     ] },
@@ -312,8 +312,8 @@ function compareBody(loc) {
   const P = (slug, n) => price(slug, loc, n);
   const four = [S.c14, S.l14, S.y14, S.h14];
   const facts = {
-    [S.c14]: tr(["Chengdu, Guilin/Yangshuo, Shanghai", "2 trains, 2 flights", "Easy to moderate", "Apr–May, Sep–Oct"], ["成都、桂林/阳朔、上海", "2 段高铁，2 段航班", "轻松到中等", "4–5 月、9–10 月"], ["청두, 구이린/양숴, 상하이", "고속철도 2구간, 항공 2구간", "쉬움~보통", "4~5월, 9~10월"]),
-    [S.l14]: tr(["Zhangjiajie, Guilin/Yangshuo, Shanghai", "2 trains incl. a 7-hour one, 2 flights", "Moderate: stairs in Zhangjiajie", "Apr–May, Sep–Oct"], ["张家界、桂林/阳朔、上海", "2 段高铁（含一段约 7 小时），2 段航班", "中等：张家界台阶多", "4–5 月、9–10 月"], ["장가계, 구이린/양숴, 상하이", "고속철도 2구간(약 7시간 1구간 포함), 항공 2구간", "보통: 장가계 계단", "4~5월, 9~10월"]),
+    [S.c14]: tr(["Chengdu, Guilin/Yangshuo, Shanghai", "2 trains, 2 flights", "Easy to moderate", "Apr–May, Sep–Oct"], ["成都、桂林/阳朔、上海", "2 段高铁，2 段航班", "轻松到中等", "4–5 月、9–10 月"], ["청두, 계림/양삭, 상하이", "고속철도 2구간, 항공 2구간", "쉬움~보통", "4~5월, 9~10월"]),
+    [S.l14]: tr(["Zhangjiajie, Guilin/Yangshuo, Shanghai", "2 trains incl. a 7-hour one, 2 flights", "Moderate: stairs in Zhangjiajie", "Apr–May, Sep–Oct"], ["张家界、桂林/阳朔、上海", "2 段高铁（含一段约 7 小时），2 段航班", "中等：张家界台阶多", "4–5 月、9–10 月"], ["장가계, 계림/양삭, 상하이", "고속철도 2구간(약 7시간 1구간 포함), 항공 2구간", "보통: 장가계 계단", "4~5월, 9~10월"]),
     [S.y14]: tr(["Kunming, Dali, Lijiang, Shangri-La", "4 trains, 2 flights, 1 long drive", "Moderate; Shangri-La nights around 3,300 m; mountain cable car may go higher", "Mar–May, Sep–Nov"], ["昆明、大理、丽江、香格里拉", "4 段火车，2 段航班，1 段长途车", "中等；香格里拉住宿地约 3,300 米，上山索道若开放可能更高", "3–5 月、9–11 月"], ["쿤밍, 다리, 리장, 샹그릴라", "열차 4구간, 항공 2구간, 장거리 차량 1회", "보통; 샹그릴라 숙박지는 약 3,300m, 산 케이블카 운영 시 더 높아질 수 있음", "3~5월, 9~11월"]),
     [S.h14]: tr(["Huangshan, Hangzhou, Suzhou, Shanghai", "4 trains incl. a 7-hour one, flight only when it fits", "Moderate: a stair-heavy summit day", "Apr–May, Sep–Nov"], ["黄山、杭州、苏州、上海", "4 段高铁（含一段约 7 小时），日期合适才坐飞机", "中等：黄山登顶台阶多", "4–5 月、9–11 月"], ["황산, 항저우, 쑤저우, 상하이", "고속철도 4구간(약 7시간 1구간 포함), 날짜가 맞을 때만 항공", "보통: 계단이 많은 황산 정상", "4~5월, 9~11월"]),
   };
@@ -322,11 +322,11 @@ function compareBody(loc) {
     [S.c14]: tr(
       `For a first visit, we would start with Beijing, Xi'an, Chengdu, Guilin and Shanghai. You see the Great Wall and Terracotta Warriors, then pandas and the Li River without the longer mountain walking days. It is ${P(S.c14, 2)} per person for two, or ${P(S.c14, 6)} for six.`,
       `第一次来中国，我们会先推北京、西安、成都、桂林、上海这条线。长城和兵马俑之后看大熊猫、坐漓江游船，不用安排很长的登山日。2 人同行每人 ${P(S.c14, 2)}，6 人每人 ${P(S.c14, 6)}。`,
-      `베이징·시안·청두·구이린·상하이 14일 일정은 만리장성과 병마용을 본 뒤 판다와 리강 유람선으로 이어집니다. 산에서 오래 걷는 날이 없어 첫 중국 여행이라면 이 코스를 먼저 권합니다. 1인 요금은 2명일 때 ${P(S.c14, 2)}, 6명일 때 ${P(S.c14, 6)}입니다.`),
+      `베이징·시안·청두·계림·상하이 14일 일정은 만리장성과 병마용을 본 뒤 판다와 이강 유람선으로 이어집니다. 산에서 오래 걷는 날이 없어 첫 중국 여행이라면 이 코스를 먼저 권합니다. 1인 요금은 2명일 때 ${P(S.c14, 2)}, 6명일 때 ${P(S.c14, 6)}입니다.`),
     [S.l14]: tr(
       `The Zhangjiajie route spends three nights near Zhangjiajie National Forest Park and Tianmen Mountain before continuing to the Li River. You trade the Chengdu panda stop for sandstone peaks, more stone steps and a direct train to Guilin that takes about seven hours. It starts at ${P(S.l14, 2)} per person for two, or ${P(S.l14, 6)} for six.`,
       `张家界线在张家界国家森林公园和天门山附近住三晚，再去漓江。它把成都大熊猫换成砂岩峰林，台阶多一些，张家界到桂林的直达高铁也要约 7 小时。2 人同行每人 ${P(S.l14, 2)} 起，6 人每人 ${P(S.l14, 6)}。`,
-      `청두 판다를 빼고 산 풍경을 넣고 싶다면 장가계 일정이 맞습니다. 장가계 국가삼림공원과 천문산 근처에서 3박한 다음 리강으로 갑니다. 돌계단이 많고 구이린행 직행 열차에 약 7시간을 쓰는 날도 있습니다. 1인 요금은 2명일 때 ${P(S.l14, 2)}부터, 6명일 때 ${P(S.l14, 6)}입니다.`),
+      `청두 판다를 빼고 산 풍경을 넣고 싶다면 장가계 일정이 맞습니다. 장가계 국가삼림공원과 천문산 근처에서 3박한 다음 이강으로 갑니다. 돌계단이 많고 계림행 직행 열차에 약 7시간을 쓰는 날도 있습니다. 1인 요금은 2명일 때 ${P(S.l14, 2)}부터, 6명일 때 ${P(S.l14, 6)}입니다.`),
     [S.y14]: tr(
       `Yunnan is for travellers who want Dali, Lijiang and Shangri-La more than Shanghai. The road via Tiger Leaping Gorge takes about five to six hours with stops, and Shangri-La is around 3,300 metres above sea level. Allow for the altitude. The 14-day route is ${P(S.y14, 2)} per person for two and ${P(S.y14, 6)} for six.`,
       `云南线从大理、丽江走到香格里拉，适合更想看古城和山的人。经虎跳峡去香格里拉那天，连停留约坐车 5–6 小时，终点海拔约 3,300 米，得把适应海拔算进去。14 天行程 2 人同行每人 ${P(S.y14, 2)}，6 人每人 ${P(S.y14, 6)}。`,
@@ -345,7 +345,7 @@ function compareBody(loc) {
     { id: "lead", type: "lead", text: tr(
       `Homeground's four 14-day private China tours have published starting prices of ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))} per person for two sharing a room, before international flights. All begin in Beijing and Xi'an. For a first visit, we would start with Chengdu and the Li River; Zhangjiajie adds longer walking days, Yunnan adds altitude, and Huangshan trades a long train day for gardens and West Lake.`,
       `Homeground 四条 14 天中国私家线，2 人同行、两人一间，每人 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}，国际机票另算。四条都先走北京和西安。第一次来，我们会先推成都加漓江的经典线。张家界要多走台阶，云南要适应海拔，黄山线则用一段长高铁换来园林和西湖。`,
-      `Homeground의 14일 중국 프라이빗 투어 네 가지는 2명, 2인 1실 기준 1인 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}이며 국제선은 별도입니다. 모두 베이징과 시안에서 시작합니다. 첫 여행에는 청두와 리강을 넣은 대표 일정을 권합니다. 장가계는 걷는 양이 많고, 윈난은 고도에 적응해야 합니다. 황산 일정에는 긴 열차 이동일이 있지만 정원과 서호도 볼 수 있습니다.`) },
+      `Homeground의 14일 중국 프라이빗 투어 네 가지는 2명, 2인 1실 기준 1인 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}이며 국제선은 별도입니다. 모두 베이징과 시안에서 시작합니다. 첫 여행에는 청두와 이강을 넣은 대표 일정을 권합니다. 장가계는 걷는 양이 많고, 윈난은 고도에 적응해야 합니다. 황산 일정에는 긴 열차 이동일이 있지만 정원과 서호도 볼 수 있습니다.`) },
     { id: "compare-heading", type: "heading", level: 2, text: tr("The four routes side by side", "四条线路对比", "네 일정 한눈에 비교") },
     { id: "compare", type: "table", caption: tr("14 days and 13 nights each; per person, twin share, land only", "每条 14 天 13 晚；每人价格，两人一间，不含国际机票", "모두 13박 14일; 1인 요금, 2인 1실, 국제선 별도"), columns: cols,
       rows: four.map((slug) => [route[slug][loc], ...facts[slug], P(slug, 2)]) },
@@ -355,14 +355,14 @@ function compareBody(loc) {
     { id: "small-group", type: "paragraph", text: tr(
       `The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is ${sgPrice(loc, S.l14g)} per person, twin share. Check the departure table before choosing a route; dates may settle the decision.`,
       `北京、西安、成都、桂林、上海经典线和张家界线，2027 年也有固定日期的 8–12 人小团。两条里较低的团费是每人 ${sgPrice(loc, S.l14g)}，两人一间。先看看出发日期，能配合的团期可能比路线喜好更影响选择。`,
-      `베이징·시안·청두·구이린·상하이 대표 일정과 장가계 14일 일정은 2027년에 8~12명 정기 출발 그룹으로도 운영합니다. 두 그룹 중 낮은 요금은 2인 1실 기준 1인 ${sgPrice(loc, S.l14g)}입니다. 여행 날짜가 정해져 있다면 출발일 표부터 확인하세요.`) },
+      `베이징·시안·청두·계림·상하이 대표 일정과 장가계 14일 일정은 2027년에 8~12명 정기 출발 그룹으로도 운영합니다. 두 그룹 중 낮은 요금은 2인 1실 기준 1인 ${sgPrice(loc, S.l14g)}입니다. 여행 날짜가 정해져 있다면 출발일 표부터 확인하세요.`) },
     { id: "faq", type: "faq", title: tr("Questions about choosing a 14-day route", "选 14 天线路的常见问题", "14일 일정 선택에 대해 자주 묻는 질문"), items: [
       { question: tr("Which 14-day China tour is best for a first trip?", "第一次去中国，哪条 14 天线最好？", "첫 중국 여행에는 어떤 14일 일정이 좋나요?"),
-        answer: tr(`For a first visit, we would choose Homeground's 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour. It puts the Great Wall, Terracotta Warriors, pandas and Li River into one route without Zhangjiajie's long stair days. The published price is ${P(S.c14, 2)} per person for two sharing a room, before international flights.`, `第一次来，我们会推荐 Homeground 北京、西安、成都、桂林、上海 14 天私家线。长城、兵马俑、大熊猫和漓江都能走到，少了张家界那种长时间爬台阶的日子。2 人同行、两人一间，每人 ${P(S.c14, 2)}，国际机票另算。`, `첫 중국 여행에는 Homeground의 베이징·시안·청두·구이린·상하이 14일 프라이빗 투어를 권합니다. 만리장성, 병마용, 판다와 리강을 보면서 장가계처럼 계단을 오래 걷는 날은 피할 수 있습니다. 2명, 2인 1실 기준 1인 ${P(S.c14, 2)}이며 국제선은 별도입니다.`) },
+        answer: tr(`For a first visit, we would choose Homeground's 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour. It puts the Great Wall, Terracotta Warriors, pandas and Li River into one route without Zhangjiajie's long stair days. The published price is ${P(S.c14, 2)} per person for two sharing a room, before international flights.`, `第一次来，我们会推荐 Homeground 北京、西安、成都、桂林、上海 14 天私家线。长城、兵马俑、大熊猫和漓江都能走到，少了张家界那种长时间爬台阶的日子。2 人同行、两人一间，每人 ${P(S.c14, 2)}，国际机票另算。`, `첫 중국 여행에는 Homeground의 베이징·시안·청두·계림·상하이 14일 프라이빗 투어를 권합니다. 만리장성, 병마용, 판다와 이강을 보면서 장가계처럼 계단을 오래 걷는 날은 피할 수 있습니다. 2명, 2인 1실 기준 1인 ${P(S.c14, 2)}이며 국제선은 별도입니다.`) },
       { question: tr("Which route has the least travel time?", "哪条线路上时间最少？", "이동 시간이 가장 적은 일정은?"),
-        answer: tr("Among Homeground's four 14-day private routes, Beijing–Xi'an–Chengdu–Guilin–Shanghai has the fewest long travel days. Its main rail legs are Beijing–Xi'an and Xi'an–Chengdu. Zhangjiajie–Guilin and Xi'an–Huangshan each take about seven hours by train; the Yunnan route spends more time on the road.", "Homeground 四条 14 天私家线里，北京、西安、成都、桂林、上海这条长途转场日最少。主要高铁是北京到西安、西安到成都。张家界到桂林、西安到黄山各约坐 7 小时高铁，云南线坐车时间更长。", "Homeground의 14일 프라이빗 일정 네 가지 중 긴 이동일이 가장 적은 것은 베이징·시안·청두·구이린·상하이 일정입니다. 주요 열차 이동은 베이징~시안, 시안~청두입니다. 장가계~구이린과 시안~황산은 열차로 각각 약 7시간이고 윈난은 차량 이동이 더 깁니다.") },
+        answer: tr("Among Homeground's four 14-day private routes, Beijing–Xi'an–Chengdu–Guilin–Shanghai has the fewest long travel days. Its main rail legs are Beijing–Xi'an and Xi'an–Chengdu. Zhangjiajie–Guilin and Xi'an–Huangshan each take about seven hours by train; the Yunnan route spends more time on the road.", "Homeground 四条 14 天私家线里，北京、西安、成都、桂林、上海这条长途转场日最少。主要高铁是北京到西安、西安到成都。张家界到桂林、西安到黄山各约坐 7 小时高铁，云南线坐车时间更长。", "Homeground의 14일 프라이빗 일정 네 가지 중 긴 이동일이 가장 적은 것은 베이징·시안·청두·계림·상하이 일정입니다. 주요 열차 이동은 베이징~시안, 시안~청두입니다. 장가계~계림과 시안~황산은 열차로 각각 약 7시간이고 윈난은 차량 이동이 더 깁니다.") },
       { question: tr("Which route has the least walking?", "哪条线路走路最少？", "걷는 양이 가장 적은 일정은?"),
-        answer: tr("The 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour has the lightest walking of these four routes. Zhangjiajie National Forest Park and Huangshan involve long stone stair sections, while Yunnan adds altitude. Tell us about mobility limits before booking so we can shorten walking days.", "四条 14 天私家线里，北京、西安、成都、桂林、上海经典线走路最轻松。张家界国家森林公园和黄山有长段石阶，云南还要考虑海拔。若有人行动不便，订行程前告诉我们，我们可以缩短步行日。", "14일 프라이빗 일정 네 가지 중 베이징·시안·청두·구이린·상하이 일정이 걷는 양이 가장 적습니다. 장가계 국가삼림공원과 황산에는 긴 돌계단이 있고 윈난은 고도까지 고려해야 합니다. 걷기 어려운 분이 있다면 예약 전에 알려 주세요. 걷는 날을 줄여 드릴 수 있습니다.") },
+        answer: tr("The 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour has the lightest walking of these four routes. Zhangjiajie National Forest Park and Huangshan involve long stone stair sections, while Yunnan adds altitude. Tell us about mobility limits before booking so we can shorten walking days.", "四条 14 天私家线里，北京、西安、成都、桂林、上海经典线走路最轻松。张家界国家森林公园和黄山有长段石阶，云南还要考虑海拔。若有人行动不便，订行程前告诉我们，我们可以缩短步行日。", "14일 프라이빗 일정 네 가지 중 베이징·시안·청두·계림·상하이 일정이 걷는 양이 가장 적습니다. 장가계 국가삼림공원과 황산에는 긴 돌계단이 있고 윈난은 고도까지 고려해야 합니다. 걷기 어려운 분이 있다면 예약 전에 알려 주세요. 걷는 날을 줄여 드릴 수 있습니다.") },
       { question: tr("Can we combine two routes?", "可以把两条线合在一起吗？", "두 일정을 합칠 수 있나요?"),
         answer: tr(`Homeground's 21-day Grand China private tour already joins the classic cities with Zhangjiajie and a three-night Yangtze cruise. It starts at ${P(S.g21, 2)} per person for two sharing a room, before international flights. For a different combination, we prepare a written quote.`, `Homeground 的 21 天中国全景私家线已把经典城市、张家界和三晚长江游轮接在一起。2 人同行、两人一间，每人 ${P(S.g21, 2)} 起，国际机票另算。想换别的组合，我们会另给书面报价。`, `장가계와 양쯔강 크루즈까지 한 번에 넣으려면 Homeground의 21일 중국 일주 프라이빗 투어를 보세요. 대표 도시를 함께 지나고 크루즈에서는 3박합니다. 두 사람이 한 방을 쓸 때 1인 ${P(S.g21, 2)}부터이며 국제선은 별도입니다. 다른 조합은 서면으로 견적을 드립니다.`) },
     ] },

@@ -50,7 +50,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "guilin-yangshuo-5-day-private-tour",
-    title: { en: "Guilin & Yangshuo: 5-Day Private Tour", zh: "桂林·阳朔 5 天 4 晚私家团", ko: "구이린·양숴 5일 프라이빗 투어", ja: "桂林・陽朔 5日間（4泊）プライベートツアー" },
+    title: { en: "Guilin & Yangshuo: 5-Day Private Tour", zh: "桂林·阳朔 5 天 4 晚私家团", ko: "계림·양삭 5일 프라이빗 투어", ja: "桂林・陽朔 5日間（4泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -233,28 +233,28 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어", ja: "北京・西安・成都・桂林・上海 14日間（13泊）プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·청두·계림·상하이 14일 프라이빗 투어", ja: "北京・西安・成都・桂林・上海 14日間（13泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
   },
   {
     slug: "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
-    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·청두·구이린·상하이 14일 소규모 그룹 투어", ja: "北京・西安・成都・桂林・上海 14日間 少人数ツアー" },
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·成都·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·청두·계림·상하이 14일 소규모 그룹 투어", ja: "北京・西安・成都・桂林・上海 14日間 少人数ツアー" },
     packages: [
       { id: "small-group-departure", prices: [{ travelers: 2 }] },
     ],
   },
   {
     slug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어", ja: "北京・西安・張家界・桂林・上海 14日間（13泊）プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·장가계·계림·상하이 14일 프라이빗 투어", ja: "北京・西安・張家界・桂林・上海 14日間（13泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
   },
   {
     slug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
-    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·장가계·구이린·상하이 14일 소규모 그룹 투어", ja: "北京・西安・張家界・桂林・上海 14日間 少人数ツアー" },
+    title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团", ko: "베이징·시안·장가계·계림·상하이 14일 소규모 그룹 투어", ja: "北京・西安・張家界・桂林・上海 14日間 少人数ツアー" },
     packages: [
       { id: "small-group-departure", prices: [{ travelers: 2 }] },
     ],
@@ -310,7 +310,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "beijing-xian-guilin-shanghai-10-day-private-tour",
-    title: { en: "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour", zh: "北京·西安·桂林·上海 10 天 9 晚私家团", ko: "베이징·시안·구이린·상하이 10일 프라이빗 투어", ja: "北京・西安・桂林・上海 10日間（9泊）プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour", zh: "北京·西安·桂林·上海 10 天 9 晚私家团", ko: "베이징·시안·계림·상하이 10일 프라이빗 투어", ja: "北京・西安・桂林・上海 10日間（9泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -324,7 +324,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
-    title: { en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour", zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团", ko: "상하이·장가계·봉황·구이린 13일 프라이빗 투어", ja: "上海・張家界・鳳凰・桂林 13日間（12泊）プライベートツアー" },
+    title: { en: "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour", zh: "上海·张家界·凤凰·桂林 13 天 12 晚私家团", ko: "상하이·장가계·봉황·계림 13일 프라이빗 투어", ja: "上海・張家界・鳳凰・桂林 13日間（12泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -338,7 +338,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "beijing-xian-guilin-hong-kong-10-day-private-tour",
-    title: { en: "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour", zh: "北京·西安·桂林·香港 10 天 9 晚私家团", ko: "베이징·시안·구이린·홍콩 10일 프라이빗 투어", ja: "北京・西安・桂林・香港 10日間（9泊）プライベートツアー" },
+    title: { en: "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour", zh: "北京·西安·桂林·香港 10 天 9 晚私家团", ko: "베이징·시안·계림·홍콩 10일 프라이빗 투어", ja: "北京・西安・桂林・香港 10日間（9泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
