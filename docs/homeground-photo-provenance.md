@@ -1763,3 +1763,23 @@ limited to EXIF rotation, a centred 1600 × 1000 crop, resize and WebP encoding.
 | `jade-dragon-snow-mountain-cable-car-booking` | [Jade Dragon Snow Mountain, Yunnan.jpg](https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg), 钉钉, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `public/images/guides/jade-dragon-snow-mountain-cable-car-booking/hero-1600.webp`, 1600 × 1200, SHA-256 `0574ea49aecfbbf7501f9ca6dccd60c60c818557b52420f80b2d56ec13620cb3`; full-frame resize and WebP conversion | Mountain and lake, not a cable car or current conditions; full source, creator and licence appear in the three visible hero credits. |
 
 The Li River, Xi'an City Wall and Humble Administrator's Garden pilot pages reuse previously documented real photos. They add no AI-generated image.
+
+### Must-see sights: West Lake, Dazu Rock Carvings, Zhangjiajie Grand Canyon (October 4, 2026)
+
+Three sights added to the city pages had no photo of their own on the site.
+They come from the owner-organised `Facebook图片素材` library, which the owner
+authorised for Homeground website use. Each was exported once at 1200 × 800 WebP
+(centre crop, no EXIF, GPS or device metadata) with nothing written on it.
+
+| Sight | Source in the owner library; SHA-256 | Website file; SHA-256 |
+| --- | --- | --- |
+| West Lake | `杭州优选素材/01_西湖湖景与湖岸/杭州 西湖.jpg`; `2a7564c8ddd91c6561cfd24494c788b79789eb8344388d97c0e536b7dc17d9ab` | `public/images/sights/west-lake-1200.webp`; `2f5b64da0bd628b1fccc6d7e2a5eaf155b3b97fd06c0f6eef44a2f146d9295fc` |
+| Dazu Rock Carvings | `重庆优选素材/04_重庆人文与古镇/大足石刻_01.jpg`; `8fc42268acc5dce943a77b560bd11ba9c0bd9a923f7d9a1f426544c3c988946b` | `public/images/sights/dazu-rock-carvings-1200.webp`; `1c424b8d5bb26331512e1520c7f1c221674aad795db5e768a48e49aeea687c37` |
+| Zhangjiajie Grand Canyon (canyon floor) | `张家界优选素材/03_大峡谷与玻璃体验/大峡谷·溪谷水景_142.jpg`; `210eef560c5415519daf972ae346ccbcc1249f8f739564f5eaa2bbe10ef99ca9` | `public/images/sights/zhangjiajie-grand-canyon-1200.webp`; `06b6e5f3fa2bf5ebab5ff4b2f2562be1481fb83632b38c25c818385d076cd8c6` |
+
+The library's only "glass walkway" photo shows a cliff-side walkway (Tianmen
+Mountain), not the Grand Canyon Glass Bridge, so the canyon floor stands in.
+The Guangzhou sights reuse the already-logged Wikimedia Commons photos (Chen
+Clan Ancestral Hall, Canton Tower, Shamian); their author and licence appear
+under the photo on each sight page and under every grid or strip that shows
+them.

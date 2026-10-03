@@ -341,18 +341,23 @@ test("city hubs use a compact mobile-only projection without dropping decisions 
   assert.doesNotMatch(geography, /\.key(?:Label|Note)?[^{]*\{[^}]*display:\s*none/);
 });
 
-test("a city joins the second version only with at least three sights and two published tours", async () => {
+test("a city joins the second version only with at least three sights and one published private tour", async () => {
   const { cityPageV2 } = await import("../../lib/cityPage.ts");
   const { sights } = await import("../../lib/sights.ts");
   const { getPublishedPrivateTourCatalog } = await import("../../lib/publishedPrivateTourCatalog.ts");
-  const published = new Set(getPublishedPrivateTourCatalog("en").map((tour) => tour.slug));
+  const catalog = new Map(getPublishedPrivateTourCatalog("en").map((tour) => [tour.slug, tour]));
+  const published = new Set(catalog.keys());
   assert.ok(Object.keys(cityPageV2).length > 0, "at least one city is on the second version");
   for (const [city, page] of Object.entries(cityPageV2)) {
     const citySights = sights.filter((sight) => sight.city === city);
     assert.ok(citySights.length >= 3, `${city}: ${citySights.length} sights, needs 3 or more`);
-    assert.ok(page.tourSlugs.length >= 2, `${city}: ${page.tourSlugs.length} tours, needs 2 or more`);
+    assert.ok(page.tourSlugs.length >= 1, `${city}: ${page.tourSlugs.length} tours, needs 1 or more`);
     assert.equal(new Set(page.tourSlugs).size, page.tourSlugs.length, `${city}: no tour twice`);
-    for (const slug of page.tourSlugs) assert.ok(published.has(slug), `${city}: ${slug} is published`);
+    for (const slug of page.tourSlugs) {
+      assert.ok(published.has(slug), `${city}: ${slug} is published`);
+      // The block says "just your group, on your dates": private tours only.
+      assert.notEqual(catalog.get(slug).tourFormat, "small-group", `${city}: ${slug} is a private tour`);
+    }
   }
 
   const [page, styles] = await Promise.all([

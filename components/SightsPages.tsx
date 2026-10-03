@@ -10,7 +10,7 @@ import {
   type AttractionReservationRule,
 } from "../lib/attractionReservations";
 import { getAttractionReservationCopy } from "../lib/attractionReservationsI18n";
-import { getDestinationHubEntry, isDestinationHubId } from "../lib/destinationHubs";
+import { getDestinationHubEntry, isDestinationHubId, type DestinationHubId } from "../lib/destinationHubs";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
@@ -24,6 +24,7 @@ import {
   sightPaths,
   sights,
   sightsPath,
+  type PhotoCredit,
   type Sight,
   type SightCityId,
   type SightId,
@@ -49,9 +50,9 @@ import styles from "./TravelInspiration.module.css";
 import sightStyles from "./SightsPages.module.css";
 
 function cityName(city: SightCityId, locale: HomegroundLocale) {
-  return city === "zhangjiajie"
-    ? getDestinationHubEntry(city, locale).navTitle
-    : getAttractionReservationCopy(locale).cities[city];
+  // The booking service names its cities; Zhangjiajie, Chongqing and Guangzhou are named by their city pages.
+  const bookingCities: Partial<Record<SightCityId, string>> = getAttractionReservationCopy(locale).cities;
+  return bookingCities[city] ?? getDestinationHubEntry(city as DestinationHubId, locale).navTitle;
 }
 
 function cityHubPath(city: SightCityId, locale: HomegroundLocale) {
@@ -66,8 +67,42 @@ function sightRules(sight: Sight) {
 
 function sightImage(sight: Sight, locale: HomegroundLocale) {
   if (sight.image) return { ...sight.image, alt: sight.image.alt[locale] };
+  if (!sight.guideId) throw new Error(`Sight "${sight.id}" has neither a guide nor a photo`);
   const guide = getGuideEntry(sight.guideId, locale);
-  return { src: guide.heroImagePath, width: guide.imageWidth, height: guide.imageHeight, alt: guide.heroAlt };
+  return { src: guide.heroImagePath, width: guide.imageWidth, height: guide.imageHeight, alt: guide.heroAlt, credit: sight.photoCredit };
+}
+
+function photoCreditOf(sight: Sight) {
+  return sight.image ? sight.image.credit : sight.photoCredit;
+}
+
+function CreditLinks({ credit }: { credit: PhotoCredit }) {
+  return (
+    <>
+      <a href={credit.sourceUrl} rel="noreferrer">{credit.author}</a>, <a href={credit.licenseUrl} rel="license noreferrer">{credit.license}</a>
+    </>
+  );
+}
+
+/**
+ * The credits of the openly licensed photos in a grid or strip, in one line
+ * under it: nothing is ever written on a photo.
+ */
+export function SightPhotoCredits({ items, locale }: { items: readonly Sight[]; locale: HomegroundLocale }) {
+  const credited = items.filter((sight) => photoCreditOf(sight));
+  if (!credited.length) return null;
+  const copy = getSightsCopy(locale);
+  return (
+    <p className={sightStyles.photoCredits}>
+      {copy.photos}{locale === "zh" ? "：" : ": "}
+      {credited.map((sight, index) => (
+        <span key={sight.id}>
+          {index ? " · " : null}
+          {copy.sights[sight.id].name}{locale === "zh" ? "，" : ", "}<CreditLinks credit={photoCreditOf(sight)} />
+        </span>
+      ))}
+    </p>
+  );
 }
 
 function formatDate(value: string, locale: HomegroundLocale) {
@@ -291,6 +326,7 @@ export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) 
               />
             ))}
           </ul>
+          <SightPhotoCredits items={ordered} locale={locale} />
         </section>
 
         <ClosingBand bookable id="sights-cta-title" locale={locale} />
@@ -327,7 +363,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
   const sightCopy = copy.sights[sight.id];
   const { destinations, tours: allToursItem } = navigationFor(locale);
   const image = sightImage(sight, locale);
-  const guide = getGuideEntry(sight.guideId, locale);
+  // No guide of its own yet: no "Full guide" link until one is written.
+  const guide = sight.guideId ? getGuideEntry(sight.guideId, locale) : null;
   const rules = sightRules(sight);
   const offered = rules.filter((rule) => rule.status === "offered");
   // We sell booking for a sight only when its main entry is bookable: the
@@ -400,23 +437,29 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
                 {freeEntry && offered.length ? (
                   <a className={styles.textLink} href={`#${bookingAnchor}`}>{copy.page.extras}<ArrowDown aria-hidden="true" size={15} /></a>
                 ) : null}
-                {!rules.length || (!heroAction && !freeEntry) ? (
+                {guide && (!rules.length || (!heroAction && !freeEntry)) ? (
                   <Link className={styles.textLink} href={guide.canonicalPath}>{copy.page.guideLink}<ArrowRight aria-hidden="true" size={15} /></Link>
                 ) : null}
               </div>
             </div>
-            <figure className={`${styles.heroMedia} ${sightStyles.sightHeroMedia}`}>
-              <img
-                alt={image.alt}
-                decoding="async"
-                fetchPriority="high"
-                height={image.height}
-                sizes="(max-width: 61.25rem) calc(100vw - 3rem), 32rem"
-                src={image.src}
-                srcSet={generatedImageSrcSet(image.src, image.width)}
-                width={image.width}
-              />
-            </figure>
+            {/* An openly licensed photo carries its credit on a line under it. */}
+            <div className={image.credit ? sightStyles.creditedHero : sightStyles.plainHero}>
+              <figure className={`${styles.heroMedia} ${sightStyles.sightHeroMedia}`}>
+                <img
+                  alt={image.alt}
+                  decoding="async"
+                  fetchPriority="high"
+                  height={image.height}
+                  sizes="(max-width: 61.25rem) calc(100vw - 3rem), 32rem"
+                  src={image.src}
+                  srcSet={generatedImageSrcSet(image.src, image.width)}
+                  width={image.width}
+                />
+              </figure>
+              {image.credit ? (
+                <p className={sightStyles.photoCredits}>{copy.photo}{locale === "zh" ? "：" : ": "}<CreditLinks credit={image.credit} /></p>
+              ) : null}
+            </div>
           </div>
         </header>
 
@@ -427,7 +470,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
                 <h2 id="sight-booking-title">{copy.page.bookingTitle}</h2>
                 <p>{copy.page.bookingNote}</p>
               </div>
-              <Link className={styles.textLink} href={guide.canonicalPath}>{copy.page.guideLink}<ArrowRight aria-hidden="true" size={15} /></Link>
+              {guide ? <Link className={styles.textLink} href={guide.canonicalPath}>{copy.page.guideLink}<ArrowRight aria-hidden="true" size={15} /></Link> : null}
             </div>
             <ul className={sightStyles.rules}>
               {/* Where the hero carries no fee (the main entry is free), each bookable card says it. */}
@@ -460,6 +503,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
             </div>
           </div>
           <SightStrip items={more.items} locale={locale} />
+          <SightPhotoCredits items={more.items} locale={locale} />
         </section>
 
         <ClosingBand bookable={offered.length > 0} id="sight-cta-title" locale={locale} showAllTours={!tours.length} />

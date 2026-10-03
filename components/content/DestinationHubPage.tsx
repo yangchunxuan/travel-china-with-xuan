@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Route } from "lucide-react";
 import {
   getDestinationHubEntry,
   getDestinationHubLanguagePaths,
@@ -51,8 +51,8 @@ import { sights, sightsPath } from "../../lib/sights";
 import { getSightsCopy } from "../../lib/sightsI18n";
 import { travelInspirationThemePath, travelInspirationThemes } from "../../lib/travelInspiration";
 import { getTravelInspirationCopy } from "../../lib/travelInspirationI18n";
-import { ServiceRows, TourCard } from "../DestinationParts";
-import { SightCard } from "../SightsPages";
+import { navigationFor, revealDelay, ServiceRows, TourCard } from "../DestinationParts";
+import { SightCard, SightPhotoCredits } from "../SightsPages";
 import { KeepWords } from "../text/KeepWords";
 import inspirationStyles from "../TravelInspiration.module.css";
 import sightStyles from "../SightsPages.module.css";
@@ -90,7 +90,7 @@ const ui = {
     ctaButton: "Start my trip brief",
     whatLabel: "Must-See Sights",
     whatTitle: (city: string) => `What to see in ${city}`,
-    whatBody: "Each takes half a day to a full day. Open one for why it is worth it and how booking works; the four decisions below give each its day.",
+    whatBody: "Open one for why it is worth the trip and how booking works; the four decisions below show how to fit them into your days.",
     themeLink: (name: string) => `Trip ideas: ${name}`,
     toursLabel: "Private tours",
     toursTitle: (city: string) => `Private tours that include ${city}`,
@@ -129,7 +129,7 @@ const ui = {
     ctaButton: "开始填写旅行简报",
     whatLabel: "必去景点",
     whatTitle: (city: string) => `${city}必去的几个地方`,
-    whatBody: "每处要半天到一整天。点进去看为什么值得去、怎么预约；天数怎么分，看下面的四个决定。",
+    whatBody: "点进去看为什么值得去、怎么预约；怎么排进你的天数，看下面的四个决定。",
     themeLink: (name: string) => `旅行灵感：${name}`,
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
@@ -168,7 +168,7 @@ const ui = {
     ctaButton: "여행 브리프 시작하기",
     whatLabel: "꼭 가볼 명소",
     whatTitle: (city: string) => `${city}에서 꼭 가볼 곳`,
-    whatBody: "모두 반나절에서 하루가 걸리는 곳입니다. 누르면 가 볼 만한 이유와 예약 방법을, 아래 네 가지 판단에서 하루 배분을 볼 수 있습니다.",
+    whatBody: "누르면 가 볼 만한 이유와 예약 방법을 볼 수 있습니다. 일정에 어떻게 넣을지는 아래 네 가지 판단을 참고하세요.",
     themeLink: (name: string) => `테마 여행: ${name}`,
     toursLabel: "프라이빗 투어",
     // "프라이빗 투어" stays on one line.
@@ -358,6 +358,7 @@ export function DestinationHubPage({
     return tour;
   });
   const inspiration = getTravelInspirationCopy(locale);
+  const fullTrip = navigationFor(locale).services.find((entry) => entry.id === "trip-support");
   const sightsCopy = getSightsCopy(locale);
   // How many published tours pass through this city (by the city's Chinese name on each route line).
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
@@ -469,6 +470,7 @@ export function DestinationHubPage({
                       </Link>
                     ))}
                   </p>
+                  <SightPhotoCredits items={citySights} locale={locale} />
                 </section>
               ) : null}
               <section className={destinationStyles.decisionIndex} aria-labelledby="destination-signals-title">
@@ -569,6 +571,17 @@ export function DestinationHubPage({
                 </div>
                 <ul className={inspirationStyles.tours}>
                   {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
+                  {/* A row the city's tours do not fill ends with the way to a trip planned around you. */}
+                  {fullTrip && cityTours.length % 3 !== 0 ? (
+                    <li className={inspirationStyles.planTileItem} style={{ ...revealDelay(cityTours.length), "--span": 3 - (cityTours.length % 3) } as CSSProperties}>
+                      <Link className={inspirationStyles.planTile} href={fullTrip.href}>
+                        <span aria-hidden="true" className={inspirationStyles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
+                        <strong>{inspiration.theme.planTile.title}</strong>
+                        <span><KeepWords locale={locale} text={inspiration.theme.planTile.body} /></span>
+                        <span className={inspirationStyles.cardAction}>{inspiration.theme.planTile.action}<ArrowRight aria-hidden="true" size={15} /></span>
+                      </Link>
+                    </li>
+                  ) : null}
                 </ul>
                 <p className={destinationStyles.cityBlockLinks}>
                   <Link href={`${homeCopy.path}tours/`}><span className={destinationStyles.cityLinkText}>{copy.allTours}</span><span aria-hidden="true">→</span></Link>
