@@ -30,6 +30,8 @@ import { privateGuideCities, privateGuideServicePath } from "./privateGuideServi
 import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
 import { fullTripSupportPath } from "./fullTripSupport";
 import { getFullTripSupportCopy } from "./fullTripSupportI18n";
+import { travelInspirationPath, travelInspirationThemePath, travelInspirationThemes } from "./travelInspiration";
+import { getTravelInspirationCopy } from "./travelInspirationI18n";
 import {
   productPreviewCopy,
   zhangjiajiePrivateTourPaths,
@@ -340,9 +342,57 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     },
   };
 
+  // Travel inspiration (Destinations menu): additive pages like the services
+  // above, so no invented release date. Themes sit under the inspiration hub.
+  const inspirationNode = (
+    id: string,
+    parentContentId: string,
+    versions: ReturnType<typeof inspirationVersions>,
+  ): ContentNode => ({
+    id,
+    section: "explore",
+    family: "combined-decision",
+    primaryIntent: "plan",
+    entityIds: ["country-china"],
+    relationIds: [],
+    parentContentId,
+    status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions(id, versions),
+    factIds: [],
+    sourceIds: [],
+    mediaIds: [],
+    schemaTypes: ["CollectionPage", "ItemList"],
+    legacyAliases: [],
+    dates: {},
+    updatePolicy: {
+      volatility: "medium",
+      refreshCadence: "quarterly",
+      owner: "homeground-platform",
+    },
+  });
+  function inspirationVersions(
+    page: (locale: HomegroundLocale) => { path: string; title: string; description: string; h1: string },
+  ) {
+    return Object.fromEntries(locales.map((locale) => [locale, page(locale)]));
+  }
+  const inspirationNodes = [
+    inspirationNode("travel-inspiration", "hub-explore", inspirationVersions((locale) => {
+      const copy = getTravelInspirationCopy(locale).hub;
+      return { path: travelInspirationPath[locale], ...copy.metadata, h1: copy.h1 };
+    })),
+    ...travelInspirationThemes.map((theme) =>
+      inspirationNode(`travel-inspiration-${theme.id}`, "travel-inspiration", inspirationVersions((locale) => {
+        const copy = getTravelInspirationCopy(locale).themes[theme.id];
+        return { path: travelInspirationThemePath(theme.id, locale), ...copy.metadata, h1: copy.h1Lines.join(locale === "zh" ? "" : " ") };
+      })),
+    ),
+  ];
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
+    ...inspirationNodes,
     systemNode({
       id: "home",
       section: "explore",

@@ -32,7 +32,7 @@ import {
 import {
   getHomegroundNavigationModel,
   type HomegroundPrimaryNavigationId,
-  type HomegroundServiceNavigationId,
+  type HomegroundSubmenuId,
 } from "../lib/homegroundNavigationModel";
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
@@ -45,7 +45,7 @@ import {
 import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
-import { HeaderServicesMenu, ServiceLink } from "./HeaderServicesMenu";
+import { HeaderNavMenu, MenuLink } from "./HeaderNavMenu";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
@@ -245,6 +245,7 @@ export function HomegroundHeader({
     pageContext === "services" || pageContext === "reservations";
   const planningIsCurrent = pageContext === "studio";
   const planningIsExact = pageContext === "studio";
+  const submenuFor = (id: HomegroundPrimaryNavigationId) => primaryNavigation.menus[id];
   const navItemState = (id: HomegroundPrimaryNavigationId) => {
     switch (id) {
       case "destinations":
@@ -481,13 +482,13 @@ export function HomegroundHeader({
 
   const close = () => setOpen(false);
   const trackNavigationClick = (
-    item: HomegroundPrimaryNavigationId | HomegroundServiceNavigationId | "faq",
+    item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq",
     surface:
       | "desktop-primary"
-      | "desktop-services-menu"
+      | `desktop-${"destinations" | "services"}-menu`
       | "desktop-utility"
       | "mobile-primary"
-      | "mobile-services-menu"
+      | `mobile-${"destinations" | "services"}-menu`
       | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
@@ -624,18 +625,22 @@ export function HomegroundHeader({
           {primaryNavigation.items.map((item) => {
             const state = navItemState(item.id);
             const current = state.exact ? "page" : state.active ? "location" : undefined;
-            if (item.id === "services") {
+            const menu = submenuFor(item.id);
+            if (menu) {
+              const menuId = item.id as "destinations" | "services";
               return (
-                <HeaderServicesMenu
+                <HeaderNavMenu
                   active={state.active}
                   ariaCurrent={current}
+                  entries={menu.entries}
                   item={item}
                   key={item.id}
                   onNavigate={(target) =>
-                    trackNavigationClick(target, target === "services" ? "desktop-primary" : "desktop-services-menu")
+                    target
+                      ? trackNavigationClick(target, `desktop-${menuId}-menu`)
+                      : trackNavigationClick(item.id, "desktop-primary")
                   }
-                  services={primaryNavigation.services}
-                  toggleLabel={primaryNavigation.servicesToggle}
+                  toggleLabel={menu.toggle}
                 />
               );
             }
@@ -744,7 +749,7 @@ export function HomegroundHeader({
                     state.exact ? "page" : state.active ? "location" : undefined
                   }
                   data-active={state.active ? "true" : undefined}
-                  data-has-services={item.id === "services" ? "true" : undefined}
+                  data-has-submenu={submenuFor(item.id) ? item.id : undefined}
                   href={item.href}
                   key={item.id}
                   onClick={() => {
@@ -759,25 +764,36 @@ export function HomegroundHeader({
                   <span aria-hidden="true">→</span>
                 </Link>
               );
-              if (item.id !== "services") return link;
-              // Services lists its standalone services directly, one tap away.
+              const menu = submenuFor(item.id);
+              if (!menu) return link;
+              // A menu's other rows sit right under its item, one tap away; the
+              // row for the item's own page is the item itself.
+              const menuId = item.id as "destinations" | "services";
               return (
                 <Fragment key={item.id}>
                   {link}
-                  <ul aria-label={item.label} className={styles.mobileServices}>
-                    {primaryNavigation.services.filter((service) => service.href !== item.href).map((service) => (
-                      <li key={service.id}>
-                        <ServiceLink
-                          aria-current={!service.href.includes("?") && service.href.split(/[?#]/u)[0] === pathname ? "page" : undefined}
-                          href={service.href}
+                  <ul aria-label={item.label} className={styles.mobileSubmenu} data-menu={menuId}>
+                    {menu.entries.filter((entry) => entry.href !== item.href).map((entry) => (
+                      <li key={entry.id}>
+                        <MenuLink
+                          aria-current={
+                            entry.href.includes("?")
+                              ? undefined
+                              : entry.href.split(/[?#]/u)[0] === pathname
+                                ? "page"
+                                : pathname?.startsWith(entry.href.split(/[?#]/u)[0])
+                                  ? "location"
+                                  : undefined
+                          }
+                          href={entry.href}
                           onClick={() => {
-                            trackNavigationClick(service.id, "mobile-services-menu");
+                            trackNavigationClick(entry.id, `mobile-${menuId}-menu`);
                             close();
                           }}
                         >
-                          <span>{service.label}</span>
+                          <span>{entry.label}</span>
                           <span aria-hidden="true">→</span>
-                        </ServiceLink>
+                        </MenuLink>
                       </li>
                     ))}
                   </ul>

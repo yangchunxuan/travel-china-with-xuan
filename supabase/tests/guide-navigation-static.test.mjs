@@ -118,10 +118,10 @@ test("global navigation keeps one distinct five-item information architecture", 
   assert.match(css, /\.mobileNavCopy small \{/);
   assert.match(css, /\.mobileUtilityLink \{/);
   assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
-  // Five items plus the services list: phones up to 760px tall get label-only
-  // rows; from 570px down the service list goes too (the Services row opens the hub).
+  // Five items plus the menu rows: phones up to 760px tall get label-only
+  // rows; from 650px down the menu rows go too (each item opens its own page).
   assert.match(css, /max-height: 760px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
-  assert.match(css, /max-height: 650px\) \{[\s\S]*?\.mobileServices \{\s*display: none;/);
+  assert.match(css, /max-height: 650px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
 });
 
 test("all public page families use the shared header", async () => {
@@ -183,10 +183,10 @@ test("all eight article types expose the same visible and JSON-LD hierarchy", as
   assert.doesNotMatch(tantan, /copy\.breadcrumbStudio/);
 });
 
-test("the Services item opens a menu of every standalone service (x.ai's Products pattern)", async () => {
+test("Destinations and Services open menus (x.ai's Products pattern)", async () => {
   const [header, menu, css, model] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
-    source("components/HeaderServicesMenu.tsx"),
+    source("components/HeaderNavMenu.tsx"),
     source("components/HomegroundHeader.module.css"),
     source("lib/homegroundNavigationModel.ts"),
   ]);
@@ -194,13 +194,21 @@ test("the Services item opens a menu of every standalone service (x.ai's Product
   assert.match(model, /homegroundServiceNavigationIds = \[\s*"attraction-tickets",\s*"english-guides",\s*"trip-support",\s*\]/);
   // Full-trip support has its own page.
   assert.match(model, /pathSegment: "services\/full-trip-support\/"/);
-  assert.match(header, /if \(item\.id === "services"\) \{\s*return \(\s*<HeaderServicesMenu/);
+  // Every item with a menu (Destinations, Services) renders the same component.
+  assert.match(header, /const menu = submenuFor\(item\.id\);\s*if \(menu\) \{[\s\S]*?<HeaderNavMenu/);
+  assert.match(model, /homegroundDestinationNavigationIds = \[\s*"cities",\s*"inspiration",\s*\]/);
+  assert.match(model, /pathSegment: "inspiration\/"/);
   // Every /services/ page and the reservation page sit under Services.
   assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
   assert.match(header, /const planningIsCurrent = pageContext === "studio";/);
   // Phones list the services under the item, one tap away.
-  assert.match(header, /<ul aria-label=\{item\.label\} className=\{styles\.mobileServices\}>/);
-  assert.match(header, /trackNavigationClick\(service\.id, "mobile-services-menu"\)/);
+  assert.match(header, /<ul aria-label=\{item\.label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);
+  // One menu open at a time: opening one closes the others without a fade.
+  assert.match(menu, /window\.dispatchEvent\(new CustomEvent\(menuOpenEvent, \{ detail: panelId \}\)\)/);
+  assert.match(css, /\.navGroup\[data-replaced\] :is\(\.menuPanel, \.menuSurface, \.menuList li\) \{\s*transition: none;/);
+  assert.match(header, /trackNavigationClick\(entry\.id, `mobile-\$\{menuId\}-menu`\)/);
+  // The row for the item's own page is the item itself on phones.
+  assert.match(header, /menu\.entries\.filter\(\(entry\) => entry\.href !== item\.href\)/);
 
   // Disclosure pattern: link + chevron button with aria-expanded/controls; Escape returns focus.
   assert.match(menu, /aria-controls=\{panelId\}\s*aria-expanded=\{open\}\s*aria-label=\{toggleLabel\}/);
@@ -210,20 +218,20 @@ test("the Services item opens a menu of every standalone service (x.ai's Product
   assert.match(menu, /const openDelayMs = 60;\s*const closeDelayMs = 150;/);
   assert.match(menu, /event\.pointerType === "mouse"/);
   // The panel is hidden from the keyboard and screen readers until open.
-  assert.match(css, /\.servicesPanel \{[\s\S]*?visibility: hidden;/);
-  assert.match(css, /\.navGroup\[data-open\] \.servicesPanel \{[\s\S]*?visibility: visible;/);
+  assert.match(css, /\.menuPanel \{[\s\S]*?visibility: hidden;/);
+  assert.match(css, /\.navGroup\[data-open\] \.menuPanel \{[\s\S]*?visibility: visible;/);
   // Motion: lift-in panel, staggered rows, gliding highlight; all off with reduced motion.
   assert.match(css, /transition-delay: calc\(var\(--i, 0\) \* 25ms\), calc\(var\(--i, 0\) \* 25ms\), 0s;/);
   // "Services" itself opens the full-trip page; the menu lists only the services.
   assert.match(model, /services: \{\s*label: "服务",[\s\S]{0,120}pathSegment: "services\/full-trip-support\/"/);
   assert.doesNotMatch(menu, /allServices|servicesAll/);
   // The highlight only glides once it is showing (no sweep in from the top).
-  assert.match(css, /\.servicesListWrap\[data-glide\] \.servicesHighlight \{/);
+  assert.match(css, /\.menuListWrap\[data-glide\] \.menuHighlight \{/);
   // A query link (none today) would load the page, so a homepage preset is read.
   assert.match(menu, /href\.includes\("\?"\)\s*\? <a href=\{href\}/);
-  assert.match(header, /<ServiceLink\s/);
+  assert.match(header, /<MenuLink\s/);
   // Touch: the first tap on the label opens the panel.
   assert.match(menu, /lastPointer\.current !== "mouse" && !open/);
-  assert.match(css, /\.servicesHighlight \{[\s\S]*?transform: translateY\(var\(--hl-y, 0\)\)/);
-  assert.match(css, /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.servicesSurface,[\s\S]*?\.servicesHighlight,/);
+  assert.match(css, /\.menuHighlight \{[\s\S]*?transform: translateY\(var\(--hl-y, 0\)\)/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.menuSurface,[\s\S]*?\.menuHighlight,/);
 });
