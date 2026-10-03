@@ -104,7 +104,7 @@ export const privateTourExpansionPhaseTwoProfiles: Readonly<
     route: l(
       "Chongqing · Yangtze Three Gorges · Yichang",
       "重庆 · 长江三峡 · 宜昌",
-      "충칭 · 창장삼협 · 이창",
+      "충칭 · 장강삼협 · 이창",
     ),
     appeal: l(
       "See Chongqing before boarding a date-confirmed downstream cruise, then pass the Three Gorges and finish in Yichang without retracing the route.",
@@ -119,7 +119,7 @@ export const privateTourExpansionPhaseTwoProfiles: Readonly<
     fit: l(
       "Travellers who want two Chongqing nights followed by a three-night downstream cruise through the Three Gorges.",
       "想先住两晚重庆，再乘三晚下水游轮穿过长江三峡的旅客。",
-      "충칭에서 2박한 뒤 3박 하행 크루즈로 창장삼협을 지나고 싶은 여행자.",
+      "충칭에서 2박한 뒤 3박 하행 크루즈로 장강삼협을 지나고 싶은 여행자.",
     ),
   },
   "xinjiang-ili-sayram-8-day-private-tour": {

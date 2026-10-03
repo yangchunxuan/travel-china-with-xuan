@@ -303,7 +303,7 @@ const privateTourInquiryNames: Readonly<
   "zhangjiajie-forest-4-day-private-tour": {
     en: "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     zh: "张家界森林公园 4 天 3 晚固定路线私家团",
-    ko: "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어",
+    ko: "장가계 국가삼림공원 4일 고정 코스 프라이빗 투어",
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     en: "Zhangjiajie, Furong Town & Fenghuang: 7-Day Private Tour",
@@ -363,7 +363,7 @@ const privateTourInquiryNames: Readonly<
   "changbaishan-yanji-winter-6-day-private-tour": {
     en: "Changbaishan Resort, North Slope & Yanji: 6-Day Winter Private Tour",
     zh: "长白山度假区·北坡·延吉 6 天 5 晚冬季私家团",
-    ko: "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
+    ko: "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어",
   },
   "shanghai-disneyland-5-day-private-tour": {
     en: "Shanghai & Disneyland: 5-Day Private Tour",
@@ -388,7 +388,7 @@ const privateTourInquiryNames: Readonly<
   "chongqing-yangtze-cruise-6-day-private-tour": {
     en: "Chongqing & Yangtze Three Gorges: 6-Day Private Tour",
     zh: "重庆与长江三峡游轮 6 天 5 晚私家团",
-    ko: "충칭·창장삼협 크루즈 6일 프라이빗 투어",
+    ko: "충칭·장강삼협 크루즈 6일 프라이빗 투어",
   },
   "xinjiang-ili-sayram-8-day-private-tour": {
     en: "Ili, Sayram Lake & Nalati: 8-Day Private Tour",
@@ -433,7 +433,7 @@ const privateTourInquiryNames: Readonly<
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": {
     en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour",
     zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚私家团",
-    ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어",
+    ko: "베이징·시안·청두·장강 크루즈·상하이 17일 프라이빗 투어",
   },  "beijing-xian-silk-road-15-day-private-tour": {
     en: "Beijing, Xi'an & the Silk Road: 15-Day Private Tour",
     zh: "北京·西安·丝绸之路 15 天 14 晚私家团",
@@ -452,7 +452,7 @@ const privateTourInquiryNames: Readonly<
   "china-grand-tour-21-day-private-tour": {
     en: "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour",
     zh: "中国全景：含张家界与长江游轮 21 天 20 晚私家团",
-    ko: "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
+    ko: "장가계·장강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
   },  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": {
     en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Small-Group Tour",
     zh: "北京·西安·张家界·桂林·上海 14 天 13 晚小团",
@@ -461,7 +461,7 @@ const privateTourInquiryNames: Readonly<
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": {
     en: "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Small-Group Tour",
     zh: "北京·西安·成都·长江游轮·上海 17 天 16 晚小团",
-    ko: "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어",
+    ko: "베이징·시안·청두·장강 크루즈·상하이 17일 소규모 그룹 투어",
   },
   "beijing-xian-silk-road-15-day-small-group-tour": {
     en: "Beijing, Xi'an & the Silk Road: 15-Day Small-Group Tour",
@@ -495,7 +495,7 @@ const privateTourInquiryNames: Readonly<
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": {
     en: "Beijing, Xi'an, Yangtze Cruise & Shanghai: 12-Day Private Tour",
     zh: "北京·西安·长江游轮·上海 12 天 11 晚私家团",
-    ko: "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
+    ko: "베이징·시안·장강 크루즈·상하이 12일 프라이빗 투어",
   },
   "harbin-yabuli-snow-town-6-day-private-tour": {
     en: "Harbin, Yabuli & Snow Town: 6-Day Winter Private Tour",
@@ -505,7 +505,7 @@ const privateTourInquiryNames: Readonly<
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
     en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour",
     zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团",
-    ko: "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
+    ko: "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어",
   },
   "harbin-mohe-arctic-village-7-day-private-tour": {
     en: "Harbin, Mohe, Beihong & Arctic Village: 7-Day Winter Private Tour",
@@ -522,7 +522,8 @@ const privateTourInquiryNames: Readonly<
 // The existing intake/SQL contract uses these exact Korean names. Keep the
 // published name on screen and translate only the submitted payload. The
 // Guilin names changed on screen to 계림 (the Korean travel-market form) on
-// 2026-10-03; the deployed SQL still validates 구이린, so they submit that.
+// 2026-10-03, and the Northeast, Yangtze and Zhangjiajie names after it; the
+// deployed SQL still validates the old names, so they submit those.
 const previousKoreanInquiryNames: Partial<
   Record<PrivateTourInquirySlug, string>
 > = {
@@ -540,6 +541,13 @@ const previousKoreanInquiryNames: Partial<
   "beijing-xian-guilin-shanghai-10-day-private-tour": "베이징·시안·구이린·상하이 10일 프라이빗 투어",
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": "상하이·장가계·봉황·구이린 13일 프라이빗 투어",
   "beijing-xian-guilin-hong-kong-10-day-private-tour": "베이징·시안·구이린·홍콩 10일 프라이빗 투어",
+  "changbaishan-yanji-winter-6-day-private-tour": "창바이산·북파·옌지 6일 겨울 프라이빗 투어",
+  "chongqing-yangtze-cruise-6-day-private-tour": "충칭·창장삼협 크루즈 6일 프라이빗 투어",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": "베이징·시안·청두·양쯔강 크루즈·상하이 17일 프라이빗 투어",
+  "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour": "베이징·시안·청두·양쯔강 크루즈·상하이 17일 소규모 그룹 투어",
+  "china-grand-tour-21-day-private-tour": "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
+  "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
 };
 
 export function getPrivateTourInquirySubmissionContext(

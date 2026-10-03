@@ -80,7 +80,7 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Chengdu · Chongqing · Yangtze River · Shanghai · Suzhou day trip",
       "北京 · 西安 · 成都 · 重庆 · 长江 · 上海 · 苏州一日往返",
-      "베이징 · 시안 · 청두 · 충칭 · 양쯔강 · 상하이 · 쑤저우 당일치기",
+      "베이징 · 시안 · 청두 · 충칭 · 장강 · 상하이 · 쑤저우 당일치기",
     ),
     appeal: l(
       "Travel between Beijing, Xi'an, Chengdu and Chongqing by train, then spend three nights sailing downstream through the Three Gorges to Yichang. Shanghai comes after the cruise.",
@@ -168,7 +168,7 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Chengdu · Guilin · Yangshuo · Zhangjiajie · Chongqing · Yangtze River · Shanghai",
       "北京 · 西安 · 成都 · 桂林 · 阳朔 · 张家界 · 重庆 · 长江 · 上海",
-      "베이징 · 시안 · 청두 · 계림 · 양삭 · 장가계 · 충칭 · 양쯔강 · 상하이",
+      "베이징 · 시안 · 청두 · 계림 · 양삭 · 장가계 · 충칭 · 장강 · 상하이",
     ),
     appeal: l(
       "Three weeks make room for Beijing and Xi'an, Chengdu's pandas, the Li River, Zhangjiajie and three nights on a Three Gorges cruise. It is a long route, with a full day at each stop.",
@@ -212,7 +212,7 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Chengdu · Chongqing · Yangtze River · Shanghai · Suzhou day trip",
       "北京 · 西安 · 成都 · 重庆 · 长江 · 上海 · 苏州一日往返",
-      "베이징 · 시안 · 청두 · 충칭 · 양쯔강 · 상하이 · 쑤저우 당일치기",
+      "베이징 · 시안 · 청두 · 충칭 · 장강 · 상하이 · 쑤저우 당일치기",
     ),
     appeal: l(
       "This 17-day route puts a three-night Three Gorges cruise between the city stays. It has two fixed 2027 departures and no more than 12 guests.",
@@ -300,12 +300,12 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Shanghai · Zhangjiajie · Fenghuang · Guilin · Longji · Yangshuo",
       "上海 · 张家界 · 凤凰 · 桂林 · 龙脊 · 阳朔",
-      "상하이 · 장가계 · 봉황 · 계림 · 룽지 · 양삭",
+      "상하이 · 장가계 · 봉황 · 계림 · 용척 · 양삭",
     ),
     appeal: l(
       "Fly into and out of Shanghai, then spend the middle of the trip among Zhangjiajie's peaks, Fenghuang, the Longji rice terraces and the Li River.",
       "从上海进出，中间把时间留给张家界峰林、凤凰古城、龙脊梯田和漓江。",
-      "상하이로 들어와 상하이에서 돌아갑니다. 중간 일정은 장가계 봉우리, 봉황고성, 룽지 다랑논과 이강에 씁니다.",
+      "상하이로 들어와 상하이에서 돌아갑니다. 중간 일정은 장가계 봉우리, 봉황고성, 용척 다랑논과 이강에 씁니다.",
     ),
     pace: l(
       "Twelve nights at seven stays, with two flights and two high-speed trains through southern China.",
@@ -366,7 +366,7 @@ export const privateTourLongHaulProfiles: Readonly<
     route: l(
       "Beijing · Xi'an · Chongqing · Yangtze · Shanghai",
       "北京 · 西安 · 重庆 · 长江 · 上海",
-      "베이징 · 시안 · 충칭 · 양쯔강 · 상하이",
+      "베이징 · 시안 · 충칭 · 장강 · 상하이",
     ),
     appeal: l(
       "Keeps the three-night Three Gorges cruise but fits it into twelve days by flying from Xi'an straight to Chongqing.",

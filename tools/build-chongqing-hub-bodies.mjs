@@ -97,7 +97,7 @@ const localeConfig = {
       contact: ["Homeground에 전체 여행 설계 요청", "도시, 날짜와 주요 제약을 정한 뒤 일반 여행 브리프를 사용하세요."],
     },
     figures: {
-      confluence: ["충칭 위중반도 아래에서 만나는 양쯔강과 자링강.", "두 강의 관계를 보면 가까워 보이는 구역도 다리·터널·철도 연결이 필요할 수 있음을 알 수 있습니다."],
+      confluence: ["충칭 위중반도 아래에서 만나는 장강과 자링강.", "두 강의 관계를 보면 가까워 보이는 구역도 다리·터널·철도 연결이 필요할 수 있음을 알 수 있습니다."],
       escalator: ["충칭의 서로 다른 도로 높이를 잇는 황관 대형 에스컬레이터.", "충칭에서는 지도상 직선거리보다 실제 수직 연결수단이 더 중요합니다."],
       station: ["충칭동역 역사 앞 교통 공간.", "충칭동역은 북역이나 서역의 다른 이름이 아니라 별도의 승차권 역입니다."],
       liziba: ["충칭 리쯔바 주변의 겹친 도로, 철도시설, 강변 지형.", "리쯔바는 서쪽 구역 일정이며 중심반도 도보동선에 속하지 않습니다."],
@@ -180,7 +180,7 @@ const sourceItems = [
   },
   {
     url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
-    labels: { en: "Yangtze–Jialing confluence by Tauno Tõhk, CC BY-SA 2.0; cropped, resized and converted", zh: "长江—嘉陵江交汇处，摄影 Tauno Tõhk，CC BY-SA 2.0；已裁切、缩放并转码", ko: "양쯔강–자링강 합류부, 촬영 Tauno Tõhk, CC BY-SA 2.0; 자르기·크기 조정·형식 변환" },
+    labels: { en: "Yangtze–Jialing confluence by Tauno Tõhk, CC BY-SA 2.0; cropped, resized and converted", zh: "长江—嘉陵江交汇处，摄影 Tauno Tõhk，CC BY-SA 2.0；已裁切、缩放并转码", ko: "장강–자링강 합류부, 촬영 Tauno Tõhk, CC BY-SA 2.0; 자르기·크기 조정·형식 변환" },
     publishers: { en: "Wikimedia Commons", zh: "Wikimedia Commons", ko: "Wikimedia Commons" },
   },
   {

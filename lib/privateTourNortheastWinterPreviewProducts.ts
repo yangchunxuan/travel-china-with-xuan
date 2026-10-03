@@ -495,7 +495,7 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
       l(
         "This is the easiest introduction: five hotel nights and no night trains. The 8-day version adds Changbai Mountain and Yanji but has a long transfer on Day 5. The Mohe routes reach China's far north but include two nights on sleeper trains.",
         "这是最轻松的入门路线：住 5 晚酒店，不坐夜车。8 天版本加上长白山和延吉，但第 5 天是长途转场日。漠河路线能去到中国最北端，但要坐两晚卧铺夜车。",
-        "가장 무난한 입문 코스로, 호텔 5박에 야간열차가 없습니다. 8일 코스는 창바이산과 옌지를 더하지만 5일차에 장거리 이동이 있습니다. 모허 코스는 중국 최북단까지 가는 대신 침대열차 2박이 포함됩니다.",
+        "가장 무난한 입문 코스로, 호텔 5박에 야간열차가 없습니다. 8일 코스는 백두산과 연길을 더하지만 5일차에 장거리 이동이 있습니다. 모허 코스는 중국 최북단까지 가는 대신 침대열차 2박이 포함됩니다.",
       ),
     ),
     driverGuideFaq,
@@ -547,32 +547,32 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
   title: l(
     "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour",
     "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团",
-    "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
+    "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어",
   ),
   metadataTitle: l(
     "Harbin, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour",
     "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团",
-    "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
+    "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어",
   ),
   metadataDescription: l(
     "Eight-day private winter route from Harbin via Yabuli and Snow Town to Changbai Mountain's North Slope and Yanji, with seven hotel nights and a driver-guide.",
     "8 天冬季私家路线：哈尔滨、亚布力、雪乡，再到长白山北坡和延吉，住 7 晚酒店，私车和司机兼向导只服务你们一行。",
-    "8일 겨울 프라이빗 코스: 하얼빈, 야부리, 설향을 거쳐 창바이산 북파와 옌지까지. 호텔 7박, 전용 차량과 운전기사 겸 안내인.",
+    "8일 겨울 프라이빗 코스: 하얼빈, 야부리, 설향을 거쳐 백두산 북파와 연길까지. 호텔 7박, 전용 차량과 운전기사 겸 안내인.",
   ),
   eyebrow: l(
     "Snow Town and Changbai Mountain in one winter trip",
     "一次冬季旅行，串起雪乡和长白山",
-    "한 번의 겨울 여행으로 설향과 창바이산까지",
+    "한 번의 겨울 여행으로 설향과 백두산까지",
   ),
   lede: l(
     "Follow the Harbin, Yabuli and Snow Town days, then cross to Changbai Mountain's North Slope and finish in Yanji. Seven hotel nights and no night trains, but Day 5 is a long transfer from Snow Town to Erdaobaihe.",
     "前四天走哈尔滨、亚布力和雪乡，之后转往长白山北坡，最后在延吉结束。全程住 7 晚酒店、不坐夜车，但第 5 天从雪乡到二道白河是长途转场。",
-    "하얼빈, 야부리, 설향 일정을 지나 창바이산 북파로 넘어가고 옌지에서 마칩니다. 호텔 7박에 야간열차는 없지만, 5일차는 설향에서 얼다오바이허까지 장거리 이동일입니다.",
+    "하얼빈, 야부리, 설향 일정을 지나 백두산 북파로 넘어가고 연길에서 마칩니다. 호텔 7박에 야간열차는 없지만, 5일차는 설향에서 이도백하까지 장거리 이동일입니다.",
   ),
   summary: l(
     "Eight days and seven hotel nights across Heilongjiang and Jilin: Harbin's ice scenery, a Yabuli ski day, Snow Town, Changbai Mountain's North Slope and Yanji. It covers more than the 6-day route, at the cost of one long road day.",
     "8 天住 7 晚酒店，横跨黑龙江和吉林：哈尔滨冰雪、亚布力滑雪、雪乡、长白山北坡和延吉。比 6 天路线走得更多，代价是有一天长途坐车。",
-    "8일 동안 호텔 7박으로 헤이룽장성과 지린성을 잇습니다. 하얼빈 빙설 풍경, 야부리 스키, 설향, 창바이산 북파와 옌지까지 돌아봅니다. 6일 코스보다 많이 보는 대신 장거리 이동일이 하루 있습니다.",
+    "8일 동안 호텔 7박으로 헤이룽장성과 지린성을 잇습니다. 하얼빈 빙설 풍경, 야부리 스키, 설향, 백두산 북파와 연길까지 돌아봅니다. 6일 코스보다 많이 보는 대신 장거리 이동일이 하루 있습니다.",
   ),
   facts: facts(
     [
@@ -588,7 +588,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       fact("价格", servicePrices.zh),
     ],
     [
-      fact("동선", "하얼빈 → 야부리 → 설향 → 창바이산 → 옌지"),
+      fact("동선", "하얼빈 → 야부리 → 설향 → 백두산 → 연길"),
       fact("숙박", "호텔 7박 · 5일차 장거리 이동"),
       fact("서비스", "전용 차량 · 운전기사 겸 안내인"),
       fact("요금", servicePrices.ko),
@@ -602,7 +602,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       "Via Xueling to Yanji",
     ],
     ["中央大街与哈尔滨冰雪大世界", "亚布力滑雪，并在雪乡一带住一晚", "长白山北坡", "经雪岭前往延吉"],
-    ["중앙대가와 하얼빈 빙설대세계", "야부리 스키와 설향 일대 1박", "창바이산 북파", "쉐링을 지나 옌지로"],
+    ["중앙대가와 하얼빈 빙설대세계", "야부리 스키와 설향 일대 1박", "백두산 북파", "쉐링을 지나 연길로"],
   ),
   itinerary: [
     arriveHarbin,
@@ -614,46 +614,46 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       l(
         "Long transfer: Snow Town to Erdaobaihe via Jingpo Lake",
         "长途转场：雪乡经镜泊湖到二道白河",
-        "장거리 이동: 설향에서 징포호를 지나 얼다오바이허로",
+        "장거리 이동: 설향에서 징포호를 지나 이도백하로",
       ),
       l(
         "A long day on the road: drive from Snow Town, passing Jingpo Lake, to Erdaobaihe near Changbai Mountain. Jingpo Lake is a stop on the way, not a paid visit; its admission is not included. Overnight in Erdaobaihe.",
         "这一天大部分时间在路上：从雪乡出发，途经镜泊湖，前往长白山脚下的二道白河。镜泊湖只是途经停留，不含门票，不安排入园游览。住二道白河。",
-        "하루 대부분을 차에서 보내는 이동일입니다. 설향을 출발해 징포호를 지나 창바이산 아래 얼다오바이허로 갑니다. 징포호는 지나가며 잠시 들르는 곳으로 입장 관람이 아니며, 입장료는 포함되지 않습니다. 얼다오바이허에서 숙박합니다.",
+        "하루 대부분을 차에서 보내는 이동일입니다. 설향을 출발해 징포호를 지나 백두산 아래 이도백하로 갑니다. 징포호는 지나가며 잠시 들르는 곳으로 입장 관람이 아니며, 입장료는 포함되지 않습니다. 이도백하에서 숙박합니다.",
       ),
     ),
     day(
       6,
-      l("Changbai Mountain North Slope", "长白山北坡", "창바이산 북파"),
+      l("Changbai Mountain North Slope", "长白山北坡", "백두산 북파"),
       l(
         "Visit the North Slope of Changbai Mountain when the roads and scenic area are open; weather decides access and whether Tianchi is visible. Whether North Slope admission and scenic-area buses are included is stated in your written quote. Your hotel tonight is named in your confirmation.",
         "道路和景区开放时游览长白山北坡；能否上山、能否看到天池，都取决于当天天气。北坡门票和景区交通车是否包含，以书面报价为准。当晚酒店写在确认单上。",
-        "도로와 관광지가 운영할 때 창바이산 북파를 방문합니다. 입장 여부와 천지가 보일지는 당일 날씨에 달려 있습니다. 북파 입장권과 관광지 셔틀버스 포함 여부는 서면 견적을 따릅니다. 이날 호텔은 확인서에 적어 드립니다.",
+        "도로와 관광지가 운영할 때 백두산 북파를 방문합니다. 입장 여부와 천지가 보일지는 당일 날씨에 달려 있습니다. 북파 입장권과 관광지 셔틀버스 포함 여부는 서면 견적을 따릅니다. 이날 호텔은 확인서에 적어 드립니다.",
       ),
     ),
     day(
       7,
-      l("Via Xueling to Yanji", "经雪岭前往延吉", "쉐링을 지나 옌지로"),
+      l("Via Xueling to Yanji", "经雪岭前往延吉", "쉐링을 지나 연길로"),
       l(
         "Travel via Xueling (雪岭) to Yanji. Overnight in Yanji.",
         "经雪岭前往延吉。住延吉。",
-        "쉐링(雪岭)을 지나 옌지로 갑니다. 옌지에서 숙박합니다.",
+        "쉐링(雪岭)을 지나 연길로 갑니다. 연길에서 숙박합니다.",
       ),
     ),
     day(
       8,
-      l("Depart Yanji", "延吉返程", "옌지 출발"),
+      l("Depart Yanji", "延吉返程", "연길 출발"),
       l(
         "Check out and depart from Yanji. A transfer to the airport or station is included only if your written quote lists it.",
         "退房后从延吉返程。送机或送站是否包含，以书面报价为准。",
-        "체크아웃 후 옌지에서 출발합니다. 공항·역 샌딩은 서면 견적에 적힌 경우에만 포함됩니다.",
+        "체크아웃 후 연길에서 출발합니다. 공항·역 샌딩은 서면 견적에 적힌 경우에만 포함됩니다.",
       ),
     ),
   ],
   hotelNote: l(
     "Seven hotel nights and no night trains: two in Harbin, one at Yabuli, one in the Snow Town area, one in Erdaobaihe, one on Day 6 as named in your confirmation, and one in Yanji. Prices are based on reference hotels with two adults sharing one room; single rooms are quoted separately.",
     "共 7 晚酒店、不坐夜车：哈尔滨 2 晚、亚布力 1 晚、雪乡一带 1 晚、二道白河 1 晚、第 6 天按确认单入住 1 晚、延吉 1 晚。价格按参考酒店、两位成人同住一间计算；单住另行报价。",
-    "호텔 7박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 얼다오바이허 1박, 6일차에 확인서에 적힌 호텔 1박, 옌지 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며 1인실은 따로 견적을 드립니다.",
+    "호텔 7박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 이도백하 1박, 6일차에 확인서에 적힌 호텔 1박, 연길 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며 1인실은 따로 견적을 드립니다.",
   ),
   serviceNote: serviceNote(yabuliSkiPackage),
   exclusions: exclusions(
@@ -675,7 +675,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       l(
         "It adds Changbai Mountain and Yanji to the 6-day Harbin, Yabuli and Snow Town route, with seven hotel nights and no night trains. The trade-off is Day 5, a long road transfer. If you want an easier trip, the 6-day route covers Harbin, Yabuli and Snow Town only.",
         "它在 6 天哈尔滨·亚布力·雪乡路线上加了长白山和延吉，住 7 晚酒店、不坐夜车。代价是第 5 天的长途转场。想走得轻松些，可以选只去哈尔滨、亚布力和雪乡的 6 天路线。",
-        "6일 하얼빈·야부리·설향 코스에 창바이산과 옌지를 더했으며, 호텔 7박에 야간열차가 없습니다. 대신 5일차에 장거리 이동이 있습니다. 더 여유로운 여행을 원하면 하얼빈, 야부리, 설향만 도는 6일 코스가 맞습니다.",
+        "6일 하얼빈·야부리·설향 코스에 백두산과 연길을 더했으며, 호텔 7박에 야간열차가 없습니다. 대신 5일차에 장거리 이동이 있습니다. 더 여유로운 여행을 원하면 하얼빈, 야부리, 설향만 도는 6일 코스가 맞습니다.",
       ),
     ),
     faq(
@@ -683,7 +683,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       l(
         "Plan for most of the day in the vehicle, from Snow Town past Jingpo Lake to Erdaobaihe near Changbai Mountain; snow and winter roads can make it longer. Jingpo Lake is a stop on the way, and its admission is not included.",
         "这一天大部分时间都在车上：从雪乡经镜泊湖，到长白山脚下的二道白河；遇上降雪和冬季路况，用时可能更长。镜泊湖只是途经停留，不含门票。",
-        "설향에서 징포호를 지나 창바이산 아래 얼다오바이허까지, 하루 대부분을 차에서 보낸다고 생각하세요. 눈과 겨울 도로 상황에 따라 더 오래 걸릴 수 있습니다. 징포호는 지나가며 들르는 곳이며 입장료는 포함되지 않습니다.",
+        "설향에서 징포호를 지나 백두산 아래 이도백하까지, 하루 대부분을 차에서 보낸다고 생각하세요. 눈과 겨울 도로 상황에 따라 더 오래 걸릴 수 있습니다. 징포호는 지나가며 들르는 곳이며 입장료는 포함되지 않습니다.",
       ),
     ),
     driverGuideFaq,
@@ -691,7 +691,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       l(
         "Is the Changbai Mountain North Slope visit guaranteed?",
         "一定能上长白山北坡吗？",
-        "창바이산 북파는 꼭 갈 수 있나요?",
+        "백두산 북파는 꼭 갈 수 있나요?",
       ),
       l(
         "No. Access depends on the weather and road conditions that day, and the scenic area can close; Tianchi may not be visible even when it is open. Whether North Slope admission and scenic-area buses are included is confirmed in your written quote.",
@@ -706,11 +706,11 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
   gallery: [
     image(
       `${changbaishanImages}/hero.webp`,
-      l("Tianchi crater lake on Changbai Mountain", "长白山天池", "창바이산 천지"),
+      l("Tianchi crater lake on Changbai Mountain", "长白山天池", "백두산 천지"),
       l(
         "Tianchi on Changbai Mountain; whether it is visible depends on the day.",
         "长白山天池；能否看到，要看当天情况。",
-        "창바이산 천지입니다. 볼 수 있을지는 당일 상황에 따라 다릅니다.",
+        "백두산 천지입니다. 볼 수 있을지는 당일 상황에 따라 다릅니다.",
       ),
       1920,
       1440,
@@ -719,26 +719,26 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
   routeMedia: [
     ...harbinSnowTownRoutePhotos,
     routePhoto(6, {
-      label: l("Changbai Mountain Tianchi", "长白山天池", "창바이산 천지"),
+      label: l("Changbai Mountain Tianchi", "长白山天池", "백두산 천지"),
       image: image(
         `${changbaishanImages}/route-day-3-extra.webp`,
-        l("Snow around Heaven Lake on Changbaishan", "长白山积雪环绕的天池", "눈에 둘러싸인 창바이산 천지"),
+        l("Snow around Heaven Lake on Changbaishan", "长白山积雪环绕的天池", "눈에 둘러싸인 백두산 천지"),
         l(
           "Changbai Mountain Tianchi in winter. Access and visibility depend on the weather and cannot be guaranteed.",
           "长白山冬季天池实景；能否进入、能见度均取决于天气，不保证看到。",
-          "겨울 창바이산 천지입니다. 입장과 시야는 날씨에 좌우되며 볼 수 있다고 보장할 수 없습니다.",
+          "겨울 백두산 천지입니다. 입장과 시야는 날씨에 좌우되며 볼 수 있다고 보장할 수 없습니다.",
         ),
       ),
     }),
     routePhoto(7, {
-      label: l("Yanji at night", "延吉夜景", "옌지 야경"),
+      label: l("Yanji at night", "延吉夜景", "연길 야경"),
       image: image(
         `${changbaishanImages}/gallery-1.webp`,
-        l("Yanji city lights at night", "延吉城市夜景", "옌지 야경"),
+        l("Yanji city lights at night", "延吉城市夜景", "연길 야경"),
         l(
           "Yanji at night; you stay one night here before departing.",
           "延吉夜景；返程前在这里住一晚。",
-          "옌지의 밤 풍경입니다. 출발 전 이곳에서 1박합니다.",
+          "연길의 밤 풍경입니다. 출발 전 이곳에서 1박합니다.",
         ),
         1920,
         1235,
@@ -1180,21 +1180,21 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
   [changbaiSlug]: [
     ...harbinSnowTownCredits,
     {
-      subject: l("Heaven Lake, Changbai Mountain", "长白山天池", "창바이산 천지"),
+      subject: l("Heaven Lake, Changbai Mountain", "长白山天池", "백두산 천지"),
       author: "Wang65",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Tianchi_Changbai.JPG",
       licenseLabel: "CC BY-SA 3.0",
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     },
     {
-      subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 창바이산 천지"),
+      subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"),
       author: "Charlie fong",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg",
       licenseLabel: "Public domain",
       licenseUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg#Licensing",
     },
     {
-      subject: l("Yanji at night", "延吉夜景", "옌지 야경"),
+      subject: l("Yanji at night", "延吉夜景", "연길 야경"),
       author: "EditQ",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Yanji_at_night.jpg",
       licenseLabel: "CC BY-SA 4.0",

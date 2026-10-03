@@ -191,7 +191,7 @@ const copies: Record<HomegroundLocale, DestinationsHubCopy> = {
         routeRole: "북부 관문이자 시안 또는 남행 동선의 자연스러운 시작",
       },
       shanghai: {
-        bestFor: "현대 중국, 도시의 여러 동네와 장강 삼각주",
+        bestFor: "현대 중국, 도시의 여러 동네와 장강삼각주",
         stay: "온전한 도시 관광 3일",
         routeRole: "국제 관문이자 여행을 시작하거나 마치기 좋은 도시",
       },

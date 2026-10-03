@@ -143,7 +143,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
   ],
   "guilin-yangshuo-5-day-private-tour": [
     credit(
-      text("Yulong River, Yangshuo", "阳朔遇龙河", "양삭 위룽허"),
+      text("Yulong River, Yangshuo", "阳朔遇龙河", "양삭 우룡하"),
       "Liuxingy",
       "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
       "CC BY-SA 4.0",

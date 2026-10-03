@@ -147,7 +147,7 @@ export const privateTourExpansionPhaseTwoPhotoCreditsBySlug: Readonly<
     credit(
       "Qutang Gorge on the Yangtze River",
       "长江瞿塘峡",
-      "창장 구당협",
+      "장강 구당협",
       "Tan Wei Liang Byorn",
       "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
       "CC BY 3.0",
@@ -156,7 +156,7 @@ export const privateTourExpansionPhaseTwoPhotoCreditsBySlug: Readonly<
     credit(
       "Yangtze River cruise ship",
       "长江游轮",
-      "창장 크루즈 선박",
+      "장강 크루즈 선박",
       "Gaynor",
       "https://commons.wikimedia.org/wiki/File:MV_Selina_Yangtze_River_Cruise_(12280525406).jpg",
       "CC BY 2.0",

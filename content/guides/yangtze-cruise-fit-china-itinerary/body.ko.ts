@@ -22,8 +22,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "route-options-heading", type: "heading", level: 2, text: "기존 여행 세 가지는 배에 닿는 방식이 다릅니다" },
   { id: "route-options", type: "table", caption: "동선의 차이이며, 예약은 각각 확인해야 합니다", columns: ["Homeground 일정", "크루즈 연결"], rows: [
     ["충칭·삼협 6일", "충칭 호텔에서 2박한 뒤 크루즈에서 3박하고 이창에서 마칩니다."],
-    ["베이징·시안·양쯔강·상하이 12일", "승선일에 시안에서 충칭으로 비행하므로 당일 이동 여유를 특히 확인해야 합니다."],
-    ["베이징·시안·청두·양쯔강·상하이 17일", "승선 전 충칭에서 1박하고, 하선 후 이창에서 상하이로 이어집니다."]
+    ["베이징·시안·장강·상하이 12일", "승선일에 시안에서 충칭으로 비행하므로 당일 이동 여유를 특히 확인해야 합니다."],
+    ["베이징·시안·청두·장강·상하이 17일", "승선 전 충칭에서 1박하고, 하선 후 이창에서 상하이로 이어집니다."]
   ] },
   { id: "service-heading", type: "heading", level: 2, text: "육상 프라이빗 투어와 크루즈 서비스는 다릅니다" },
   { id: "service", type: "callout", tone: "warning", title: "서비스 범위를 따로 읽어 보세요", body: "아래 Homeground 상품에서는 명시된 육상 관광일에 일행만을 위한 가이드와 차량이 제공됩니다. 크루즈는 다른 승객과 함께 타는 배이며 선사 직원과 프로그램을 이용합니다. 육상 가이드가 배에도 동행하거나 선상 해설이 원하는 언어로 제공된다고 가정하지 마세요. 결제 전 서면 확인서에서 해당 날짜의 선박, 객실, 부두, 포함된 식사·육상 관광, 추가 요금과 서비스 비용을 확인해야 합니다." },
@@ -43,9 +43,9 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { question: "크루즈를 넣으니 나머지 일정이 너무 바빠집니다. 어떻게 할까요?", answer: "크루즈를 빼거나 여행 일수를 늘리세요. 강에서 보내는 시간이 포기해야 할 육상 일정만큼 중요할 때에만 4일을 쓰는 편이 좋습니다. 고정된 운항일에 맞추려고 중요한 도시나 이동 여유를 희생할 필요는 없습니다." }
   ] },
   { id: "links", type: "internal-links", title: "일정별로 살펴보기", items: [
-    { label: "충칭·양쯔강 삼협 6일 프라이빗 투어", href: "/ko/tours/chongqing-yangtze-cruise-6-day-private-tour/", description: "충칭 2박 뒤 다른 승객과 함께 크루즈에서 3박합니다." },
-    { label: "베이징·시안·양쯔강·상하이 12일", href: "/ko/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/", description: "승선일에 시안에서 충칭으로 이동하는 다도시 일정입니다." },
-    { label: "베이징·시안·청두·양쯔강·상하이 17일", href: "/ko/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/", description: "승선 전에 충칭 호텔에서 하루를 보내는 더 긴 일정입니다." },
+    { label: "충칭·장강 삼협 6일 프라이빗 투어", href: "/ko/tours/chongqing-yangtze-cruise-6-day-private-tour/", description: "충칭 2박 뒤 다른 승객과 함께 크루즈에서 3박합니다." },
+    { label: "베이징·시안·장강·상하이 12일", href: "/ko/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/", description: "승선일에 시안에서 충칭으로 이동하는 다도시 일정입니다." },
+    { label: "베이징·시안·청두·장강·상하이 17일", href: "/ko/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/", description: "승선 전에 충칭 호텔에서 하루를 보내는 더 긴 일정입니다." },
     { label: "중국 여행 일정이 너무 빠듯한지 확인하기", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "도시를 옮기는 날에 드는 전체 시간을 계산하세요." },
     { label: "중국 입출국 도시를 다르게 잡는 항공편 계획", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "여행 양쪽 끝에서 불필요한 역주행을 줄이세요." }
   ] },

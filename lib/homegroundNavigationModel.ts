@@ -364,7 +364,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       },
       seasonal: {
         label: "이번 시즌 추천",
-        description: "겨울 동북: 하얼빈, 창바이산",
+        description: "겨울 동북: 하얼빈, 백두산",
         pathSegment: "tours/seasonal/",
       },
     },

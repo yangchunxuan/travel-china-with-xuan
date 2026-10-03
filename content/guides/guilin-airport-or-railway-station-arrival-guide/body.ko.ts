@@ -6,7 +6,7 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "항공권이나 기차표가 이미 발권됐다면 관문은 정해져 있습니다. KWL은 계림 량장 국제공항이고, 桂林·桂林北·桂林西는 서로 다른 세 기차역입니다. 아직 예약하지 않았다면 여행 날짜에 실제 운행하는 항공편이나 열차부터 찾은 뒤, 짐·마지막 도보·프런트 운영 시간·늦은 도착 대안까지 넣어 실제 숙소 문까지의 전체 여정을 비교하세요.",
+      text: "항공권이나 기차표가 이미 발권됐다면 관문은 정해져 있습니다. KWL은 계림 양강 국제공항이고, 桂林·桂林北·桂林西는 서로 다른 세 기차역입니다. 아직 예약하지 않았다면 여행 날짜에 실제 운행하는 항공편이나 열차부터 찾은 뒤, 짐·마지막 도보·프런트 운영 시간·늦은 도착 대안까지 넣어 실제 숙소 문까지의 전체 여정을 비교하세요.",
     },
     {
       id: "quick-answer",
@@ -28,7 +28,7 @@ const body = {
       ordered: true,
       items: [
         "지도를 열기 전에 교통 기록부터 읽으세요. 항공편은 편명과 KWL, 열차는 열차 번호와 출발·도착역의 전체 중국어 이름을 확인합니다.",
-        "첫 숙소의 정확한 이름, 지점과 중국어 주소를 적으세요. ‘계림’, ‘양삭’, ‘룽지’만으로는 부족합니다.",
+        "첫 숙소의 정확한 이름, 지점과 중국어 주소를 적으세요. ‘계림’, ‘양삭’, ‘용척’만으로는 부족합니다.",
         "숙소가 좁은 길, 경관 지구나 시골길에 있다면 차량이 닿는 출입구와 보행자 출입구를 따로 표시하세요.",
         "도착 절차, 차량이나 버스 대기, 도로 구간, 마지막 도보, 짐을 옮기는 횟수와 프런트 운영 시간을 더하세요.",
         "결제 전에 대안을 정하세요. 정식 도로 차량, 더 늦은 유효 열차, 또는 농촌 연계가 실패할 때 이용할 직원이 있는 도착지 쪽 숙소입니다.",
@@ -47,7 +47,7 @@ const body = {
       columns: ["기록에 적힌 관문", "후보에 넣을 때", "문 앞까지 확인할 질문", "막아야 할 착각"],
       rows: [
         [
-          "계림 량장 국제공항 / 桂林两江国际机场 / KWL",
+          "계림 양강 국제공항 / 桂林两江国际机场 / KWL",
           "도시 간 이동에 항공편이 알맞거나, 여행이 그 항공편으로 시작하거나 끝날 때",
           "입국 절차나 수하물 수취 뒤, 현재 공항버스·정식 택시/호출차 또는 확인된 숙소 차량이 필요한 시간에 정확한 첫 숙소까지 갈 수 있는가?",
           "KWL은 중심 관광지 안에 있지 않습니다. 착륙 시각은 숙소 도착 시각이 아니며, 낮 버스가 있다고 밤새 운행한다는 뜻도 아닙니다.",
@@ -102,13 +102,13 @@ const body = {
           "정확한 양삭 호텔, 차량 하차 지점, 교통·보행 구역 제한과 마지막 체크인. 이동 수단은 별도의 계림–양삭 가이드에서 고릅니다.",
         ],
         [
-          "위룽허 농촌, 싱핑 또는 다른 양삭 지역 숙소",
+          "우룡하 농촌, 흥평 또는 다른 양삭 지역 숙소",
           "‘양삭’라는 이름보다 숙소의 실제 도로 종점이 중요합니다. 양삭 시내에 도착해도 침대까지 멀 수 있습니다.",
-          "마을/숙소 이름, 기사 연락처, 차량 접근, 마지막 도보, 밤길과 짐 처리. 양삭역은 싱핑에 있으며 시내 중심역이 아닙니다.",
+          "마을/숙소 이름, 기사 연락처, 차량 접근, 마지막 도보, 밤길과 짐 처리. 양삭역은 흥평에 있으며 시내 중심역이 아닙니다.",
         ],
         [
-          "룽지 계단식 논의 한 마을 또는 시골 숙소",
-          "예약한 공항이나 기차역은 별도의 도로+보행 동선이 시작되는 곳일 뿐입니다. 하나의 통용되는 ‘룽지 하차 지점’은 없습니다.",
+          "용척 계단식 논의 한 마을 또는 시골 숙소",
+          "예약한 공항이나 기차역은 별도의 도로+보행 동선이 시작되는 곳일 뿐입니다. 하나의 통용되는 ‘용척 하차 지점’은 없습니다.",
           "확정한 마을이나 입구, 숙소 픽업, 도로 통제·날씨 대안, 차량 진입 한계, 계단·보행로와 큰 가방 처리입니다.",
         ],
         [
@@ -123,7 +123,7 @@ const body = {
       type: "callout",
       title: "양삭역은 중간 인계 지점이지 완성된 양삭 도착이 아닙니다",
       tone: "warning",
-      body: "阳朔站은 싱핑에 있으며 대부분의 양삭 시내와 위룽허 숙소와는 별도 장소입니다. 이 글에서는 계림서역이나 호텔 주소와 혼동하지 않도록 언급할 뿐입니다. 열차, 도로 환승과 이강 유람선을 비교하고 양삭 쪽 마지막 도로 구간까지 넣으려면 계림–양삭 전용 교통 가이드를 이어서 보세요.",
+      body: "阳朔站은 흥평에 있으며 대부분의 양삭 시내와 우룡하 숙소와는 별도 장소입니다. 이 글에서는 계림서역이나 호텔 주소와 혼동하지 않도록 언급할 뿐입니다. 열차, 도로 환승과 이강 유람선을 비교하고 양삭 쪽 마지막 도로 구간까지 넣으려면 계림–양삭 전용 교통 가이드를 이어서 보세요.",
     },
     {
       id: "names-heading",
@@ -140,8 +140,8 @@ const body = {
         ["桂林站", "계림역이라는 한 곳의 철도 터미널", "계림 지역의 아무 역"],
         ["桂林北站", "계림북역", "桂林站의 북쪽 출입구"],
         ["桂林西站", "계림서역", "양삭 서가 또는 다른 역의 서쪽 출구"],
-        ["桂林两江国际机场 / KWL", "계림 량장 국제공항", "기차역이나 도심 공항터미널"],
-        ["阳朔站", "싱핑에 있는 양삭역", "양삭 시내 중심이나 서가의 호텔"],
+        ["桂林两江国际机场 / KWL", "계림 양강 국제공항", "기차역이나 도심 공항터미널"],
+        ["阳朔站", "흥평에 있는 양삭역", "양삭 시내 중심이나 서가의 호텔"],
       ],
     },
     {
@@ -361,12 +361,12 @@ const body = {
           description: "거리 표현만 믿지 말고 실제 입구, 마지막 도보와 짐 동선을 확인하세요.",
         },
         {
-          label: "룽지 다랑논 당일치기 vs 1박",
+          label: "용척 다랑논 당일치기 vs 1박",
           href: "/ko/guides/longji-rice-terraces-day-trip-or-overnight/",
           description: "계림에서 당일치기로 갈지, 하룻밤 묵을지를 먼저 정하세요.",
         },
         {
-          label: "양삭 숙소: 시내와 위룽허",
+          label: "양삭 숙소: 시내와 우룡하",
           href: "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/",
           description: "이후 이동을 예약하기 전에 양삭 숙소 거점을 정하세요.",
         },
@@ -377,15 +377,15 @@ const body = {
       type: "sources",
       title: "공식 출처와 이미지 크레디트",
       items: [
-        { label: "도심, 계림북역·서역을 포함한 현재 계림 시내 공항버스 채널", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "계림 량장 국제공항", reviewedAt: "2026-08-21" },
-        { label: "양삭 방향을 포함한 현재 공항 도시 간 교통 페이지", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "계림 량장 국제공항", reviewedAt: "2026-08-21" },
-        { label: "국제선 도착 절차와 공식 지상교통 선택지", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "계림 량장 국제공항", reviewedAt: "2026-08-21" },
+        { label: "도심, 계림북역·서역을 포함한 현재 계림 시내 공항버스 채널", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "계림 양강 국제공항", reviewedAt: "2026-08-21" },
+        { label: "양삭 방향을 포함한 현재 공항 도시 간 교통 페이지", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "계림 양강 국제공항", reviewedAt: "2026-08-21" },
+        { label: "국제선 도착 절차와 공식 지상교통 선택지", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "계림 양강 국제공항", reviewedAt: "2026-08-21" },
         { label: "KWL·계림역·북역·서역·양삭역을 각각 열거한 이강 공식 교통 페이지", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "계림 이강 풍경명승구", reviewedAt: "2026-08-21" },
         { label: "중국철도 실시간 여정 검색", url: "https://www.12306.cn/en/index.html", publisher: "중국철도 12306", reviewedAt: "2026-08-21" },
         { label: "2026년 철도 여객과 칭좡싱 짐 서비스 업데이트", url: "https://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t27181214.shtml", publisher: "광시좡족자치구 교통운수청; 출처: 중국철도 난닝국그룹", reviewedAt: "2026-08-21" },
         { label: "링촨 딩장 계림서역 쪽 교통사업 공식 토지 기록", url: "https://dnr.gxzf.gov.cn/z/exproInfoDetails?a=21984&b=450323&iframe=1", publisher: "광시좡족자치구 자연자원청", reviewedAt: "2026-08-21" },
         { label: "대표 이미지: Rat2의 Guilin Railway Station 202102, 크롭; CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Guilin_Railway_Station_202102.jpg", publisher: "위키미디어 공용", reviewedAt: "2026-08-21" },
-        { label: "공항 공식 앱 호출 차량 승차 안내", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/tingchechang/wycskd/", publisher: "계림 량장 국제공항", reviewedAt: "2026-08-21" },
+        { label: "공항 공식 앱 호출 차량 승차 안내", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/tingchechang/wycskd/", publisher: "계림 양강 국제공항", reviewedAt: "2026-08-21" },
       ],
     },
   ],

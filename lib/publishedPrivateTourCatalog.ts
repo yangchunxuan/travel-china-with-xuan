@@ -187,7 +187,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     appeal: l(
       "Cruise the Li River through karst scenery to Yangshuo, stay for two nights, and give the Yulong River countryside a full unhurried day.",
       "乘漓江游船穿过喀斯特山水抵达阳朔，连住两晚，再用完整一天慢慢走遇龙河乡村段。",
-      "이강 유람선으로 카르스트 풍경을 지나 양삭에 도착해 2박하고, 위룽허 전원 지역을 하루 동안 여유롭게 둘러봅니다.",
+      "이강 유람선으로 카르스트 풍경을 지나 양삭에 도착해 2박하고, 우룡하 전원 지역을 하루 동안 여유롭게 둘러봅니다.",
     ),
     pace: l(
       "Two bases, including two nights in Yangshuo and time for the countryside.",
@@ -204,7 +204,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Harbin · Songhua River · Ice and Snow World",
       "哈尔滨 · 松花江 · 冰雪大世界",
-      "하얼빈 · 쑹화강 · 빙설대세계",
+      "하얼빈 · 송화강 · 빙설대세계",
     ),
     appeal: l(
       "Visit Ice and Snow World from afternoon into evening, explore Central Street, and use a heated private vehicle for the winter transfers included in the route.",
@@ -275,17 +275,18 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     appeal: l(
       "See Seventy-Two Wonder Tower lit up on arrival, spend a full day in the Forest Park, then ride up Tianmen Mountain, with Baofeng Lake as a free weather backup.",
       "抵达当晚看七十二奇楼夜景，森林公园玩一整天，再乘索道上天门山；天气不好免费改游宝峰湖。",
-      "도착한 밤 칠십이기루 야경을 보고, 국립삼림공원에서 하루를 보낸 뒤 케이블카로 천문산에 오릅니다. 악천후 시에는 보봉호로 무료 변경합니다.",
+      "도착한 밤 칠십이기루 야경을 보고, 국가삼림공원에서 하루를 보낸 뒤 케이블카로 천문산에 오릅니다. 악천후 시에는 보봉호로 무료 변경합니다.",
     ),
     pace: l(
       "Three nights in one villa or 4-star hotel, two full sightseeing days, and an easy arrival and departure.",
       "同一处别墅或四星酒店连住 3 晚，中间两个完整游览日，抵达与离开日轻松安排。",
       "빌라 또는 4성급 호텔 한 곳에서 3박하며, 가운데 이틀은 종일 관광하고 도착일과 출발일은 여유롭게 보냅니다.",
     ),
+    // Says how it differs from the other 4-day Zhangjiajie route beside it.
     fit: l(
-      "Travellers who want the Forest Park and Tianmen Mountain in a short private trip, from one base.",
-      "想在一趟短途私家团里，住同一处就玩到森林公园和天门山的旅客。",
-      "짧은 프라이빗 일정으로 한 숙소에 머물며 국립삼림공원과 천문산을 모두 보고 싶은 여행자.",
+      "A fixed route from one villa or 4-star base: two full days for the Forest Park and Tianmen Mountain, without the Glass Bridge.",
+      "固定路线，住同一处别墅或四星酒店：两个整天玩森林公园和天门山，不含大峡谷玻璃桥。",
+      "고정 코스로 빌라나 4성급 호텔 한 곳에 머물며 이틀간 국가삼림공원과 천문산을 봅니다. 대협곡 유리다리는 포함되지 않습니다.",
     ),
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
@@ -326,10 +327,11 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "抵达日不赶景点，随后 3 天游览；天门山与返程能否同日须按票务和班次核对。",
       "도착일에는 여유를 두고 3일간 관광하며, 천문산 관람과 출발을 같은 날에 배치할 수 있는지 따로 확인합니다.",
     ),
+    // Says how it differs from the fixed-route Forest Park 4-day tour beside it.
     fit: l(
-      "Travellers who want Zhangjiajie’s best-known mountain landscapes in one private route.",
-      "希望用一条私家路线集中看完张家界代表性山岳景观的旅客。",
-      "장가계의 대표 산악 풍경을 하나의 프라이빗 일정으로 보고 싶은 여행자.",
+      "Three sightseeing days, one each for the Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain, with a choice of three stays.",
+      "三个游览日，森林公园、大峡谷玻璃桥和天门山各一天，住宿有三档可选。",
+      "관광 3일 동안 국가삼림공원, 대협곡 유리다리, 천문산을 하루씩 보며, 숙소는 세 가지 중에서 고릅니다.",
     ),
   },
   ...privateTourExpansionProfiles,

@@ -16,7 +16,7 @@
   "searchTerms": {
     "en": ["is a yangtze river cruise worth it", "add yangtze cruise to china itinerary", "chongqing to yichang cruise itinerary"],
     "zh": ["长江三峡游轮值得加进行程吗", "重庆到宜昌游轮怎么衔接中国行程"],
-    "ko": ["양쯔강 크루즈 중국 여행에 넣을까", "충칭 이창 크루즈 일정 연결"]
+    "ko": ["장강 크루즈 중국 여행에 넣을까", "충칭 이창 크루즈 일정 연결"]
   },
   "search": { "section": "plan", "family": "combined-decision", "primaryIntent": "compare" },
   "layout": { "mode": "template", "templateId": "editorial-v1" },
@@ -59,10 +59,10 @@
     },
     "ko": {
       "path": "/ko/guides/yangtze-cruise-fit-china-itinerary/",
-      "title": "중국 여행에 양쯔강 삼협 크루즈를 넣을까?",
-      "headline": "3박 양쯔강 크루즈에 여행 4일을 쓸 만할까?",
+      "title": "중국 여행에 장강 삼협 크루즈를 넣을까?",
+      "headline": "3박 장강 크루즈에 여행 4일을 쓸 만할까?",
       "description": "충칭 출발·이창 도착 삼협 크루즈가 일정에 맞는지 4일 전체로 판단하고, 승하선 여유와 육상·선상 서비스 범위를 확인하세요.",
-      "heroAlt": "백제성에서 바라본 양쯔강 구당협 풍경.",
+      "heroAlt": "백제성에서 바라본 장강 구당협 풍경.",
       "heroCredit": {
         "text": "Tan Wei Liang Byorn이 촬영한 구당협 사진. 기존 상품 이미지를 잘라 WebP로 변환한 파일을 재사용했습니다.",
         "sourceLabel": "원본 사진",
@@ -70,10 +70,10 @@
         "licenseLabel": "CC BY 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
       },
-      "navTitle": "양쯔강 크루즈 일정 선택",
-      "featuredLinkLabel": "양쯔강 크루즈가 일정에 맞는지 보기",
+      "navTitle": "장강 크루즈 일정 선택",
+      "featuredLinkLabel": "장강 크루즈가 일정에 맞는지 보기",
       "openGraphLocale": "ko_KR",
-      "cardTags": ["양쯔강 삼협", "4일 선택", "이동 연결"]
+      "cardTags": ["장강 삼협", "4일 선택", "이동 연결"]
     }
   }
 }

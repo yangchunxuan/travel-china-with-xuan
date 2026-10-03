@@ -1633,7 +1633,7 @@ const guilinYangshuo: PrivateTourProduct = {
       l(
         "Your guide and local private transport take you from your Yangshuo hotel into the Yulong River countryside. Follow a gentle route and do one simple family activity or some light cycling, whichever has been arranged for your group, then head back to the same Yangshuo hotel for your second night.",
         "导游和当地专车从阳朔酒店出发，带你去遇龙河沿线乡村。节奏轻松，安排一项基础家庭体验或轻骑行，结束后回到同一家阳朔酒店，住第二晚。",
-        "가이드와 현지 전용 차량으로 양삭 호텔을 출발해 위룽허 전원 지역을 둘러봅니다. 여유로운 동선으로 간단한 가족 체험 또는 가벼운 자전거 중 정해진 한 가지를 진행한 뒤, 같은 양삭 호텔로 돌아와 두 번째 밤을 보냅니다.",
+        "가이드와 현지 전용 차량으로 양삭 호텔을 출발해 우룡하 전원 지역을 둘러봅니다. 여유로운 동선으로 간단한 가족 체험 또는 가벼운 자전거 중 정해진 한 가지를 진행한 뒤, 같은 양삭 호텔로 돌아와 두 번째 밤을 보냅니다.",
       ),
     ),
     day(
@@ -1701,12 +1701,12 @@ const guilinYangshuo: PrivateTourProduct = {
       question: l(
         "Why stay two nights in Yangshuo, and does the route include Longji?",
         "为什么在阳朔连住两晚？包含龙脊梯田吗？",
-        "양삭에서 왜 2박하나요? 룽지 계단식 논도 포함되나요?",
+        "양삭에서 왜 2박하나요? 용척 계단식 논도 포함되나요?",
       ),
       answer: l(
         "Two nights in a row free up Day 3 for the Yulong River countryside, with no hotel change. This five-day route then returns to Guilin and does not include the Longji Rice Terraces. If you'd like to add Longji, we would need to look again at the route, timing and quote.",
         "阳朔连住两晚，把D3留给遇龙河沿线乡村，不用当天再换酒店。这条5天路线随后返回桂林，不含龙脊梯田；如想加入龙脊，需要重新评估路线、时间和报价。",
-        "양삭에서 연속 2박하며 D3는 숙소를 옮기지 않고 위룽허 전원 지역을 둘러봅니다. 이 5일 코스는 계림으로 돌아오며 룽지 계단식 논은 포함하지 않습니다. 룽지를 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
+        "양삭에서 연속 2박하며 D3는 숙소를 옮기지 않고 우룡하 전원 지역을 둘러봅니다. 이 5일 코스는 계림으로 돌아오며 용척 계단식 논은 포함하지 않습니다. 용척을 추가하려면 동선, 시간과 견적을 다시 검토해야 합니다.",
       ),
     },
     {
@@ -1727,12 +1727,12 @@ const guilinYangshuo: PrivateTourProduct = {
     l(
       "Bamboo rafts on the Yulong River below karst hills in Yangshuo",
       "阳朔喀斯特山峰与竹林下的遇龙河实景",
-      "양삭 카르스트 산과 대나무 숲 아래 위룽허 풍경",
+      "양삭 카르스트 산과 대나무 숲 아래 우룡하 풍경",
     ),
     l(
       "A real Yulong River scene from the slower Yangshuo part of the route. It is not the Li River cruise, and rafts may not be running when you travel.",
       "遇龙河乡村实景，看看阳朔这一段的慢节奏。这不是漓江游船画面，竹筏也不一定在运营。",
-      "실제 위룽허 전원 풍경으로 양삭 일정의 느긋한 리듬을 보여 드립니다. 이강 유람선 사진은 아니며, 뗏목 운항 여부는 시기에 따라 다를 수 있습니다.",
+      "실제 우룡하 전원 풍경으로 양삭 일정의 느긋한 리듬을 보여 드립니다. 이강 유람선 사진은 아니며, 뗏목 운항 여부는 시기에 따라 다를 수 있습니다.",
     ),
     1600,
     1000,
@@ -1803,7 +1803,7 @@ const guilinYangshuo: PrivateTourProduct = {
     routeGroup(
       3,
       routeVariant(
-        l("Yulong River countryside", "遇龙河乡村", "위룽허 전원"),
+        l("Yulong River countryside", "遇龙河乡村", "우룡하 전원"),
         "/images/tours/guilin-yangshuo-5-day-private-tour/yulong-countryside-1600.webp",
         l(
           "A bamboo raft and fields beneath Yangshuo's karst hills",
@@ -1868,7 +1868,7 @@ const harbinWinter: PrivateTourProduct = {
   lede: l(
     "Experience Harbin's winter architecture, frozen river activities and Ice and Snow World with heated private transport and an itinerary timed for daylight and the night display.",
     "在标明的冰雪季日期内，坐暖风车辆串起哈尔滨城市建筑、松花江冰雪体验和冰雪大世界夜景。",
-    "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축과 쑹화강 체험, 빙설대세계 야경까지 둘러봅니다.",
+    "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축과 송화강 체험, 빙설대세계 야경까지 둘러봅니다.",
   ),
   summary: l(
     "Four nights with breakfast, heated private transport and three touring days with an English-speaking guide. The price shown is for Sunday–Thursday check-ins within the stated dates only, excluding holidays and peak Ice Festival weekends.",
@@ -1890,7 +1890,7 @@ const harbinWinter: PrivateTourProduct = {
     ],
     [
       "중앙대가와 성 소피아 성당 외관",
-      "얼어붙은 쑹화강 체험",
+      "얼어붙은 송화강 체험",
       "볼가장원 또는 결제 전 서면으로 명시한 다른 겨울 문화 프로그램",
       "오후부터 야간까지 빙설대세계",
     ],
@@ -1910,12 +1910,12 @@ const harbinWinter: PrivateTourProduct = {
       l(
         "Historic Harbin and the frozen river",
         "老城建筑与松花江",
-        "하얼빈 구도심과 쑹화강",
+        "하얼빈 구도심과 송화강",
       ),
       l(
         "Your English-speaking guide and heated private vehicle take you to the exterior of Saint Sophia Cathedral and Central Street. On the Songhua River, you then join only a named, managed ice-and-snow activity that its operator confirms open that day. Never enter unmanaged river ice. Back to the same Harbin hotel afterwards.",
         "英语导游和暖风车辆带你先看圣索菲亚教堂外观、逛中央大街。之后到松花江，只参加书面列名、由正规机构管理且经运营方确认当天开放的冰雪项目；不得自行进入未管理冰面。结束后回到同一家哈尔滨酒店。",
-        "영어 가이드와 난방 전용 차량으로 성 소피아 성당 외관과 중앙대가를 둘러봅니다. 이어서 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다. 일정을 마치면 같은 하얼빈 호텔로 돌아옵니다.",
+        "영어 가이드와 난방 전용 차량으로 성 소피아 성당 외관과 중앙대가를 둘러봅니다. 이어서 송화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다. 일정을 마치면 같은 하얼빈 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -1980,7 +1980,7 @@ const harbinWinter: PrivateTourProduct = {
   bookingNote: l(
     "Harbin winter temperatures can fall below −20°C, so wear professional cold-weather clothing, insulated snow boots, gloves and face protection. Outdoor sessions may be shortened or cancelled because of wind chill, ice conditions or an operator safety decision. Heated vehicles, hot water and basic heat patches supplement that gear; they do not replace it. On the Songhua River, use only a named, managed activity that its operator confirms open that day; never enter unmanaged river ice. The per-person starting prices shown are for groups of 2, 4 and 6 travellers, exclude flights and apply only to Sunday–Thursday check-ins from 6 January to 5 February 2027, on non-holiday dates after the main ice attractions have opened. For other group sizes, we confirm the price with you individually. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends, or different operating dates need a new quote.",
     "哈尔滨冬季可能出现 −20°C 以下严寒，请穿专业防寒服、保暖雪地靴、手套并做好面部防护。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消；暖风车辆、热水和基础暖贴只能辅助，不能替代专业防寒装备。松花江冰上项目只参加书面列名、由正规机构管理且经运营方确认当天开放的项目，不得自行进入未管理冰面。页面上是 2 人、4 人和 6 人的每人起价，不含往返机票；其他人数的价格我们会单独确认。这个价格只适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区实际开放日期有变，我们会重新给你报价。",
-    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 쑹화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 페이지의 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원의 요금은 따로 확인해 드립니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박이나 크리스마스, 신정, 춘절, 빙설제 핵심 주말, 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다.",
+    "하얼빈 겨울에는 영하 20°C 이하의 한파가 올 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 착용하세요. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다. 난방 차량, 온수와 기본 핫팩은 보조 수단일 뿐 전문 방한 장비를 대신하지 않습니다. 송화강에서는 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 프로그램만 이용하고, 관리되지 않는 강 얼음 위에는 들어가지 마세요. 페이지의 1인 시작가는 2명·4명·6명 기준이며 항공권은 포함되지 않습니다. 그 외 인원의 요금은 따로 확인해 드립니다. 이 가격은 주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박이나 크리스마스, 신정, 춘절, 빙설제 핵심 주말, 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다.",
   ),
   heroImage: image(
     "/images/tours/harbin-winter-5-day-private-tour/hero-ice-world-1600.webp",
@@ -2665,12 +2665,12 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   title: l(
     "Zhangjiajie Forest: 4-Day Fixed-Route Private Tour",
     "张家界森林公园 4 天 3 晚固定路线私家团",
-    "장가계 국립삼림공원 4일 고정 코스 프라이빗 투어",
+    "장가계 국가삼림공원 4일 고정 코스 프라이빗 투어",
   ),
   metadataTitle: l(
     "Zhangjiajie National Forest Park: 4-Day Private Tour",
     "张家界森林公园4天私家团：固定徒步路线",
-    "장가계 국립삼림공원 3박 4일 프라이빗 투어",
+    "장가계 국가삼림공원 3박 4일 프라이빗 투어",
   ),
   // 2026-09-24: route, stay and inclusions follow the owner's 4D3N card (Day 1 tower at night,
   // Day 2 full Forest Park day, Day 3 Tianmen Mountain with Baofeng Lake as a free weather backup,
@@ -2678,17 +2678,17 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   metadataDescription: l(
     "4-day Zhangjiajie private tour: a full Forest Park day, Tianmen Mountain with a free weather backup, and three nights in one villa or 4-star hotel.",
     "张家界4天3晚私家团：森林公园玩一整天，第三天上天门山，天气不好免费改游宝峰湖；三晚同住一处别墅或四星酒店，含行程私车、D2全天和D3白天英语导游。",
-    "장가계 3박 4일 프라이빗 투어. 국립삼림공원 종일, 천문산(악천후 시 보봉호로 무료 변경), 빌라 또는 4성급 호텔 한 곳에서 3박, D2 종일·D3 주간 한국어 가이드 포함.",
+    "장가계 3박 4일 프라이빗 투어. 국가삼림공원 종일, 천문산(악천후 시 보봉호로 무료 변경), 빌라 또는 4성급 호텔 한 곳에서 3박, D2 종일·D3 주간 한국어 가이드 포함.",
   ),
   eyebrow: l(
     "3 nights in one base: villa or 4-star hotel · A full Forest Park day · Tianmen Mountain with a free weather backup",
     "三晚同住一处：别墅或四星酒店 · 森林公园一整天 · 天门山，天气不好免费换宝峰湖",
-    "빌라 또는 4성급 호텔 한 곳에서 3박 · 국립삼림공원 종일 · 천문산, 악천후 시 보봉호로 무료 변경",
+    "빌라 또는 4성급 호텔 한 곳에서 3박 · 국가삼림공원 종일 · 천문산, 악천후 시 보봉호로 무료 변경",
   ),
   lede: l(
     "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See Seventy-Two Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
     "四天从容游览张家界的砂岩峰林、碧绿峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
-    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 칠십이기루를 보고, 둘째 날은 국립삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
+    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 칠십이기루를 보고, 둘째 날은 국가삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
   ),
   summary: l(
     "Three nights in one designated villa or a 4-star hotel in Wulingyuan with breakfast, private station or airport transfers, private transport on the route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions, including Tianmen Mountain with its cable car, or Baofeng Lake with its boat in bad weather. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
@@ -2710,7 +2710,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     ],
     [
       "도착한 밤 불 밝힌 칠십이기루 관람",
-      "국립삼림공원 종일: 천자산·양가계·원가계·금편계·십리화랑",
+      "국가삼림공원 종일: 천자산·양가계·원가계·금편계·십리화랑",
       "케이블카로 오르는 천문산, 악천후 시 보봉호로 무료 변경",
       "빌라 또는 4성급 호텔 한 곳에서 3박",
     ],
@@ -2734,12 +2734,12 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       l(
         "Forest Park full day: Tianzi Mountain to Ten-Mile Gallery",
         "森林公园一整天：天子山至十里画廊",
-        "국립삼림공원 종일: 천자산에서 십리화랑까지",
+        "국가삼림공원 종일: 천자산에서 십리화랑까지",
       ),
       l(
         "An early start for a full day in Zhangjiajie National Forest Park with your English-speaking guide. See morning mist over Tianzi Mountain’s sandstone peaks and Yangjiajie’s Natural Great Wall, then stand above Yuanjiajie’s Avatar Hallelujah Mountain and the First Bridge Under Heaven. After lunch, head down to the valley for a walk along Golden Whip Stream and the scenery of Ten-Mile Gallery. The included scenic shuttles link the areas; the Bailong Elevator, cableways and the Ten-Mile Gallery mini-train are optional and paid on the spot if you want to save walking. Allow roughly 10–11 hours door to door. Official closures, last-shuttle times, weather, safety or crowd control may change the order, and your guide sets a pace that suits your group.",
         "早上出发，由英语导游陪同，在张家界国家森林公园玩一整天。清晨云雾中看天子山的砂岩峰林和杨家界天然长城，再到袁家界看阿凡达哈利路亚山和天下第一桥。午后下到谷底，走金鞭溪，看十里画廊。已含的景区环保车连接各景区；百龙天梯、索道和十里画廊小火车为自选项目，想少走路可以现场自费乘坐。门到门约 10–11 小时。如遇官方关闭、末班环保车、天气、安全或限流，游览顺序可能会变，导游会按你们的体力安排节奏。",
-        "아침 일찍 출발해 한국어 가이드와 함께 장가계 국립삼림공원에서 하루를 보냅니다. 아침 안개 속 천자산의 사암 봉우리와 양가계 천연장성을 보고, 원가계의 아바타 산과 천하제일교에 섭니다. 오후에는 계곡으로 내려가 금편계를 걷고 십리화랑 풍경을 봅니다. 구역 사이 이동은 포함된 관광 셔틀을 이용하며, 백룡 엘리베이터·케이블카·십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제합니다. 숙소 출발부터 귀환까지 약 10~11시간입니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있으며 가이드가 일행에 맞춰 속도를 조절합니다.",
+        "아침 일찍 출발해 한국어 가이드와 함께 장가계 국가삼림공원에서 하루를 보냅니다. 아침 안개 속 천자산의 사암 봉우리와 양가계 천연장성을 보고, 원가계의 아바타 산과 천하제일교에 섭니다. 오후에는 계곡으로 내려가 금편계를 걷고 십리화랑 풍경을 봅니다. 구역 사이 이동은 포함된 관광 셔틀을 이용하며, 백룡 엘리베이터·케이블카·십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제합니다. 숙소 출발부터 귀환까지 약 10~11시간입니다. 공식 폐쇄, 셔틀 막차, 날씨, 안전, 혼잡 통제에 따라 순서가 바뀔 수 있으며 가이드가 일행에 맞춰 속도를 조절합니다.",
       ),
     ),
     day(
@@ -2810,7 +2810,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     l(
       "Layered sandstone pillars in Zhangjiajie National Forest Park",
       "张家界国家森林公园层叠的砂岩峰柱",
-      "장가계 국립삼림공원의 겹겹이 이어진 사암 봉우리",
+      "장가계 국가삼림공원의 겹겹이 이어진 사암 봉우리",
     ),
     l(
       "Your first full touring day on this fixed route is spent among the high forest pillars.",
