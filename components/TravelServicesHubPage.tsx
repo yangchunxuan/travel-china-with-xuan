@@ -166,7 +166,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
             <p>{copy.choicesBody}</p>
           </div>
           <ol className={styles.cardGrid} data-count={copy.cards.length}>
-            {copy.cards.map((card, index) => {
+            {copy.cards.map((card) => {
               const image = serviceImage(card.id, locale);
               return (
                 <li key={card.id}>
@@ -184,9 +184,6 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
                       />
                     </figure>
                     <div className={styles.cardBody}>
-                      <span className={styles.number} aria-hidden="true">
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                      </span>
                       <p className={styles.cardEyebrow}>{card.eyebrow}</p>
                       <h3><KeepWords locale={locale} text={card.title} /></h3>
                       <p className={styles.cardText}>{card.body.replace("{fee}", formatAttractionReservationFee(attractionReservationServiceFeeCny, locale))}</p>

@@ -620,7 +620,6 @@ export function HomegroundHomePage({
                   height="1200"
                   loading="lazy"
                 />
-                <span>{copy.proof.imageBadge}</span>
               </div>
               <div className={styles.sampleRouteHeading}>
                 <div>

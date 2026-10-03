@@ -240,48 +240,6 @@
   padding: 1.5rem 1.25rem 1.25rem;
 }
 
-/* The number sits on the photo as a white disc and rolls into an arrow. */
-.number {
-  align-items: center;
-  background: var(--paper);
-  border-radius: 999px;
-  display: flex;
-  font-size: 0.8125rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 500;
-  height: 2.25rem;
-  inset-block-start: 1rem;
-  inset-inline-start: 1rem;
-  justify-content: center;
-  overflow: hidden;
-  position: absolute;
-  transition:
-    background-color 300ms var(--ease),
-    color 300ms var(--ease);
-  width: 2.25rem;
-  z-index: 1;
-}
-
-.number > span {
-  display: inline-block;
-}
-
-.number > span,
-.number::after {
-  transition: transform 450ms var(--ease);
-}
-
-.number::after {
-  align-items: center;
-  content: "→";
-  display: flex;
-  font-size: 0.9375rem;
-  inset: 0;
-  justify-content: center;
-  position: absolute;
-  transform: translateY(110%);
-}
-
 .cardGrid h3 {
   font-size: clamp(1.75rem, 2.4vw, 2.25rem);
   line-height: 1.1;
@@ -410,19 +368,6 @@
     transform: scale(1.04);
   }
 
-  .cardGrid a:hover .number {
-    background: var(--ink);
-    color: var(--hg-color-on-dark, #fff);
-  }
-
-  .cardGrid a:hover .number > span {
-    transform: translateY(-160%);
-  }
-
-  .cardGrid a:hover .number::after {
-    transform: none;
-  }
-
   .cardGrid a:hover .action > span,
   .methodLinks a:hover > span {
     transform: translateX(4px);
@@ -447,19 +392,6 @@
 .breadcrumb a:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
-}
-
-.cardGrid a:focus-visible .number {
-  background: var(--ink);
-  color: var(--hg-color-on-dark, #fff);
-}
-
-.cardGrid a:focus-visible .number > span {
-  transform: translateY(-160%);
-}
-
-.cardGrid a:focus-visible .number::after {
-  transform: none;
 }
 
 /* ---------- Chinese and Korean ---------- */
@@ -671,9 +603,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .cardImage img,
-  .number,
-  .number > span,
-  .number::after,
   .action > span,
   .methodLinks a > span,
   .cardGrid a::before,

@@ -241,7 +241,10 @@ bystander faces in the two working photographs were obscured in the image
 files before publication; the originals were not copied into `public/`. A
 separate photograph featuring a child was not selected for publication. The
 released JPG, WebP and AVIF derivatives were exported without original EXIF,
-GPS or device metadata and carry a small Homeground watermark.
+GPS or device metadata. They first shipped with a small Homeground watermark;
+on October 3, 2026 the owner ruled that nothing may be written on a photo, and
+the watermark was removed by trimming the strip that held it (the originals
+were not on hand) and scaling each frame back to its published size.
 
 The two operational situations described in the article were anonymised and
 narratively reconstructed from Kevin's interview. The photographs illustrate
@@ -261,8 +264,12 @@ Current website derivatives:
 - `public/images/guides/china-visa-free-canadian-citizens-2026/skyline-og-*`
 
 Each is released as a JPG fallback plus WebP and AVIF derivatives, written
-without EXIF, GPS or ICC metadata, carrying the same small Homeground
-watermark used elsewhere on the site.
+without EXIF, GPS or ICC metadata. The watermark they first carried was removed
+on October 3, 2026: the card and open-graph images were re-cut from the centre
+of the full-frame hero, below which the watermark sat, and the hero lost its
+bottom strip. The same removal applies to the Zhangjiajie older-travellers and
+Tantan Zhangjiajie image sets. No watermark, logo or caption is written on any
+site photograph.
 
 For the New Zealand visa-free entry guide, no unused owner-supplied
 photograph fit the article without repeating imagery already used for the

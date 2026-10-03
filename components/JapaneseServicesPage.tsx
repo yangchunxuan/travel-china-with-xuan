@@ -167,7 +167,7 @@ export function JapaneseServicesPage() {
             <p>{copy.choices.body}</p>
           </div>
           <ol className={styles.cardGrid}>
-            {copy.cards.map((card, index) => {
+            {copy.cards.map((card) => {
               const image = cardImage(card.id);
               return (
                 <li key={card.id}>
@@ -185,9 +185,6 @@ export function JapaneseServicesPage() {
                       />
                     </figure>
                     <div className={styles.cardBody}>
-                      <span className={styles.number} aria-hidden="true">
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                      </span>
                       <p className={styles.cardEyebrow}>{card.eyebrow}</p>
                       <h3><KeepWords locale="ja" text={card.title} /></h3>
                       <p className={styles.cardText}>{card.body}</p>
