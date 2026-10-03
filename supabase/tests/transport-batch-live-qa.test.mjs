@@ -90,7 +90,7 @@ test("transport guides keep station, ferry and scenic-area corrections aligned",
   assert.equal(jiuzhaigou.locales.zh.headline, "成都到九寨沟：火车不能直达景区入口");
   assert.equal(
     jiuzhaigou.locales.ko.headline,
-    "청두에서 주자이거우까지: 열차만으로는 관광지 입구까지 갈 수 없습니다",
+    "청두에서 구채구까지: 열차만으로는 관광지 입구까지 갈 수 없습니다",
   );
 });
 

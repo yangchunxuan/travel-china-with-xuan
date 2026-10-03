@@ -116,7 +116,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Chengdu · Panda Base · Sanxingdui · Dujiangyan",
       "成都 · 大熊猫基地 · 三星堆 · 都江堰",
-      "청두 · 판다기지 · 싼싱두이 · 두장옌",
+      "청두 · 판다기지 · 싼싱두이 · 도강언",
     ),
     appeal: l(
       "Visit Chengdu Panda Base early, give Sanxingdui Museum the main part of a day, and slow down at a People’s Park teahouse while staying in one Chengdu hotel.",
@@ -160,17 +160,17 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     route: l(
       "Chongqing · Wulong · Three Natural Bridges",
       "重庆 · 武隆 · 天生三桥",
-      "충칭 · 우룽 · 천생삼교",
+      "충칭 · 우롱 · 천생삼교",
     ),
     appeal: l(
       "See Chongqing’s train-through-building cityscape at Liziba, then stay one night in Wulong for the Three Natural Bridges.",
       "先在李子坝看重庆的列车穿楼城市景观，再到武隆住一晚，把天生三桥留给完整的山地行程。",
-      "리쯔바에서 건물을 가로지르는 열차를 보고, 우룽에서 1박하며 천생삼교를 만납니다.",
+      "리쯔바에서 건물을 가로지르는 열차를 보고, 우롱에서 1박하며 천생삼교를 만납니다.",
     ),
     pace: l(
       "Explore Chongqing first, then change hotels for one night in Wulong rather than forcing the mountain return into a single day.",
       "先看重庆立体城市，再换住武隆一晚，不把山地往返硬塞进一天。",
-      "충칭 도심을 둘러본 뒤 우룽으로 이동해 1박하는 구성입니다.",
+      "충칭 도심을 둘러본 뒤 우롱으로 이동해 1박하는 구성입니다.",
     ),
     fit: l(
       "Travellers who want a megacity and dramatic karst scenery in the same trip.",
@@ -298,7 +298,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
     appeal: l(
       "Spend two full days in Wulingyuan, stay overnight in waterfall-side Furong Town, then slow down for two nights beside Fenghuang’s Tuojiang River.",
       "用两个完整游览日走武陵源峰林与溪谷，在临水的芙蓉镇住一晚，再到凤凰沱江边连住两晚。",
-      "무릉원에서 이틀을 온전히 보내고 폭포 마을 부용진에서 1박한 뒤, 봉황 퉈장 강변에서 2박하며 속도를 늦춥니다.",
+      "무릉원에서 이틀을 온전히 보내고 폭포 마을 부용진에서 1박한 뒤, 봉황 타강 강변에서 2박하며 속도를 늦춥니다.",
     ),
     pace: l(
       "Three hotel bases across seven days, with four guided touring days and a free day in Fenghuang.",

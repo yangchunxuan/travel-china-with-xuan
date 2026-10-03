@@ -242,7 +242,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "Shanghai Tower beside the Jin Mao Tower and the Shanghai World Financial Center at sunset",
         zh: "日落时的上海中心大厦，旁边是金茂大厦和环球金融中心",
-        ko: "해 질 녘 진마오타워·상하이 세계금융센터 옆의 상하이타워",
+        ko: "해 질 녘 진마오타워·상하이 세계금융센터 옆의 상하이 타워",
       },
     },
     tourSlugs: ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"],
@@ -299,7 +299,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "Buddhist carvings in the limestone of Feilai Peak beside Lingyin Temple",
         zh: "灵隐寺旁飞来峰岩壁上的佛教造像",
-        ko: "링인사 옆 페이라이펑 석회암 벽면의 불교 조각",
+        ko: "영은사 옆 비래봉 석회암 벽면의 불교 조각",
       },
     },
     tourSlugs: ["shanghai-suzhou-hangzhou-6-day-private-tour"],
@@ -361,7 +361,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "Hongyadong lit up at night beside Qiansimen Bridge on the Jialing River",
         zh: "夜里亮灯的洪崖洞和嘉陵江上的大桥",
-        ko: "밤에 불이 켜진 훙야둥과 자링강의 첸쓰먼대교",
+        ko: "밤에 불이 켜진 홍야동과 자링강의 첸쓰먼대교",
       },
     },
     tourSlugs: ["chongqing-wulong-5-day-private-tour", "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"],
@@ -378,7 +378,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "Limestone cliffs of the Three Natural Bridges at Wulong",
         zh: "武隆天生三桥的石灰岩峭壁",
-        ko: "우룽 천생삼교의 석회암 절벽",
+        ko: "우롱 천생삼교의 석회암 절벽",
       },
     },
     tourSlugs: ["chongqing-wulong-5-day-private-tour", "chengdu-chongqing-8-day-private-tour"],
@@ -500,7 +500,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "Canton Tower lit up at night above the Pearl River",
         zh: "夜里亮灯的广州塔和珠江",
-        ko: "밤에 불이 켜진 광저우타워와 주강",
+        ko: "밤에 불이 켜진 광저우 타워와 주강",
       },
       credit: {
         author: "Daniel Lu (User:dllu)",
@@ -523,7 +523,7 @@ export const sights: readonly Sight[] = [
       alt: {
         en: "A colonial-era building under banyan trees on Shamian Island",
         zh: "沙面岛榕树下的老洋楼",
-        ko: "사몐섬 반얀나무 아래의 근대 건물",
+        ko: "사면도 반얀나무 아래의 근대 건물",
       },
       credit: {
         author: "xiquinhosilva",

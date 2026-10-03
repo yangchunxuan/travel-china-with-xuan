@@ -32,7 +32,7 @@ const body = {
         },
         {
           heading: "봉황",
-          body: "선충원이 성장한 곳, 그의 옛집이 보호되는 방식, 도시가 그를 기념하는 방식을 보고 싶은 독자에게 알맞다. 골목과 퉈장(沱江)은 작가 고향의 맥락이지 소설의 일대일 지도는 아니다."
+          body: "선충원이 성장한 곳, 그의 옛집이 보호되는 방식, 도시가 그를 기념하는 방식을 보고 싶은 독자에게 알맞다. 골목과 타강(沱江)은 작가 고향의 맥락이지 소설의 일대일 지도는 아니다."
         },
         {
           heading: "두 곳",
@@ -92,10 +92,10 @@ const body = {
       id: "fenghuang-rooftops-figure",
       type: "figure",
       src: "/images/guides/border-town-fenghuang-chadong-shen-congwen/fenghuang-rooftops-1600.webp",
-      alt: "봉황 퉈장 변의 지붕과 수변 건물, 물레방아.",
+      alt: "봉황 타강 변의 지붕과 수변 건물, 물레방아.",
       width: 1600,
       height: 1067,
-      caption: "퉈장 강변은 선충원의 고향 환경을 이해하는 데 도움이 되지만 『변성』의 장면을 일대일로 보여 주지는 않는다."
+      caption: "타강 강변은 선충원의 고향 환경을 이해하는 데 도움이 되지만 『변성』의 장면을 일대일로 보여 주지는 않는다."
     },
     {
       id: "former-home-boundary",
@@ -173,19 +173,19 @@ const body = {
       items: [
         "막연한 ‘변성’ 표지보다 선충원 옛집에서 시작한다. 보호 표지를 확인하고 건물 부재, 전시, 출처 캡션이 있는 물건을 나눠 본다.",
         "뜰의 관계와 주거 규모로 가족과 초기 환경을 생각하되, 모든 배치물을 전기 자료로 만들지는 않는다. 물건과 역사적 주장 사이에는 신뢰할 수 있는 캡션이 필요하다.",
-        "주변 골목은 작가 고향의 맥락으로 걷는다. 길의 폭, 마당의 관계, 퉈장으로 이어지는 변화를 본다. 공식 또는 학술 근거가 없다면 골목을 소설 사건의 현장으로 임의 명명하지 않는다.",
-        "퉈장과 훙차오(虹橋)에서는 오래 지속된 도시 지리와 집중 관리되는 관광 경관이 어떻게 겹치는지 본다. 둘 다 현실이지만 어느 쪽도 작품 속 나루가 이곳에 있었다는 증거는 아니다.",
-        "시간, 접근 가능 여부와 관심이 맞으면 퉈장 변 선충원의 묘 또는 기념 공간에서 마친다. 기록기관의 전기는 이곳의 기념 성격을 뒷받침한다. 옛집을 이해하는 데 필수는 아니며 소설 장면도 아니다."
+        "주변 골목은 작가 고향의 맥락으로 걷는다. 길의 폭, 마당의 관계, 타강으로 이어지는 변화를 본다. 공식 또는 학술 근거가 없다면 골목을 소설 사건의 현장으로 임의 명명하지 않는다.",
+        "타강과 홍교(虹橋)에서는 오래 지속된 도시 지리와 집중 관리되는 관광 경관이 어떻게 겹치는지 본다. 둘 다 현실이지만 어느 쪽도 작품 속 나루가 이곳에 있었다는 증거는 아니다.",
+        "시간, 접근 가능 여부와 관심이 맞으면 타강 변 선충원의 묘 또는 기념 공간에서 마친다. 기록기관의 전기는 이곳의 기념 성격을 뒷받침한다. 옛집을 이해하는 데 필수는 아니며 소설 장면도 아니다."
       ]
     },
     {
       id: "stepping-stones-figure",
       type: "figure",
       src: "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
-      alt: "차둥이 아닌 봉황 퉈장의 징검다리를 건너는 방문객과 뒤편의 강변 건물.",
+      alt: "차둥이 아닌 봉황 타강의 징검다리를 건너는 방문객과 뒤편의 강변 건물.",
       width: 1126,
       height: 819,
-      caption: "이곳은 차둥이 아니라 봉황의 퉈장이다. 사진 찍기 좋은 건넘 지점도 소설 속 나루의 증거는 아니다."
+      caption: "이곳은 차둥이 아니라 봉황의 타강이다. 사진 찍기 좋은 건넘 지점도 소설 속 나루의 증거는 아니다."
     },
     {
       id: "grave-figure",
@@ -214,7 +214,7 @@ const body = {
         ["차둥 관광 연출의 추이추이 집", "소설 속 공간을 모사하기 위해 재건한 장면", "추이추이의 실제 집 또는 남아 있는 원건물"],
         ["2026년 설치한 볜청진 입구 글씨", "1981년 선충원 진필을 바탕으로 만든 현대의 허가된 재현", "원래 필적 자료 또는 오래된 문루 글씨"],
         ["절벽의 붉은 글씨", "현지 서예가 룽칭롄이 1993년에 만든 모사", "선충원이 절벽에 직접 쓴 글씨"],
-        ["봉황의 퉈장·훙차오·골목", "선충원 고향과 현재 관광 경관의 실제 구성 요소", "공인된 『변성』 평면도"]
+        ["봉황의 타강·홍교·골목", "선충원 고향과 현재 관광 경관의 실제 구성 요소", "공인된 『변성』 평면도"]
       ]
     },
     {
@@ -247,7 +247,7 @@ const body = {
           items: [
             "봉황을 고른다.",
             "옛집과 그 안내판에서 시작한다.",
-            "골목을 따라 퉈장과 훙차오로 가며 고향 맥락으로 읽는다.",
+            "골목을 따라 타강과 홍교로 가며 고향 맥락으로 읽는다.",
             "접근과 관심이 맞을 때만 묘를 더한다."
           ]
         },
@@ -367,11 +367,11 @@ const body = {
         {"label": "차둥·볜청 지명 연혁", "url": "https://mzt.hunan.gov.cn/mzt/sxdmx/202005/t20200513_12118025.html", "publisher": "후난성 민정청", "reviewedAt": "2026-08-13"},
         {"label": "2025년 관광지 운영과 한 차례 공익 공연의 날짜별 기록", "url": "https://whhlyt.hunan.gov.cn/whhlyt/cyfz/cyxm/202507/t20250711_33736998.html", "publisher": "후난성 문화여유청", "reviewedAt": "2026-08-14"},
         {"label": "岨 표준 독음표", "url": "https://language.moe.gov.tw/001/Upload/Files/wxiao89/a.pdf", "publisher": "대만 교육부 언어 자료", "reviewedAt": "2026-08-13"},
-        {"label": "대표 이미지: xiquinhosilva의 봉황 훙차오; 크롭, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "대표 이미지: xiquinhosilva의 봉황 홍교; 크롭, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "본문 이미지: Kurgenera의 선충원 옛집 입구; 크기 조정, CC BY-SA 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E6%B2%88%E4%BB%8E%E6%96%87%E6%95%85%E5%B1%85.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
-        {"label": "본문 이미지: xiquinhosilva의 봉황 퉈장 지붕 풍경; 크기 조정, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_01.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: xiquinhosilva의 봉황 타강 지붕 풍경; 크기 조정, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_01.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "본문 이미지: xiquinhosilva의 장톈광장 입구; 크기 조정, CC BY 4.0", "url": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_11.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
-        {"label": "본문 이미지: Yu Hui의 퉈장 징검다리; 원본 크기 변환, CC BY-SA 2.0", "url": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
+        {"label": "본문 이미지: Yu Hui의 타강 징검다리; 원본 크기 변환, CC BY-SA 2.0", "url": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "본문 이미지: Zhangmoon618의 선충원 묘; 크기 조정, 퍼블릭 도메인 기증", "url": "https://commons.wikimedia.org/wiki/File:Shen_Congwen_Grave_in_Fenghuang_County.JPG", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-14"},
         {"label": "CC BY 4.0 라이선스", "url": "https://creativecommons.org/licenses/by/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},
         {"label": "CC BY-SA 4.0 라이선스", "url": "https://creativecommons.org/licenses/by-sa/4.0/", "publisher": "Creative Commons", "reviewedAt": "2026-08-14"},

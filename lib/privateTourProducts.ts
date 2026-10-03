@@ -531,7 +531,7 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     [
       "와이탄과 푸둥 스카이라인",
       "쑤저우 고전 정원과 골목",
-      "링인사와 서호 유람선",
+      "영은사와 서호 유람선",
       "수하물까지 고려한 도시 간 이동",
     ],
   ),
@@ -593,12 +593,12 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
       l(
         "Lingyin, tea and West Lake",
         "杭州深度一日｜灵隐、茶文化与西湖",
-        "링인사·차 문화·서호",
+        "영은사·차 문화·서호",
       ),
       l(
         "Your guide and private vehicle take you from your Hangzhou hotel to Lingyin–Feilai Peak and Lingyin Temple. Next is Longjing Village or the China National Tea Museum—one of the two, as set out in your written confirmation—then the West Lake shore and the listed cruise, before returning to the same Hangzhou hotel.",
         "导游和专车从杭州酒店出发，带你去灵隐飞来峰和灵隐寺；之后游览龙井村或中国茶叶博物馆其中一处（以书面确认单为准），再到西湖边乘坐行程所列游船，当晚回同一家杭州酒店。",
-        "가이드와 전용 차량으로 항저우 호텔에서 출발해 링인 페이라이펑과 링인사를 둘러봅니다. 이어 룽징촌과 중국차엽박물관 중 서면 확인서에 적힌 한 곳을 방문하고, 서호 호숫가와 일정에 포함된 유람선으로 하루를 마친 뒤 같은 항저우 호텔로 돌아갑니다.",
+        "가이드와 전용 차량으로 항저우 호텔에서 출발해 비래봉과 영은사를 둘러봅니다. 이어 용정촌과 중국차엽박물관 중 서면 확인서에 적힌 한 곳을 방문하고, 서호 호숫가와 일정에 포함된 유람선으로 하루를 마친 뒤 같은 항저우 호텔로 돌아갑니다.",
       ),
     ),
     day(
@@ -753,17 +753,17 @@ const shanghaiSuzhouHangzhou: PrivateTourProduct = {
     routeGroup(
       5,
       routeVariant(
-        l("Lingyin–Feilai Peak", "灵隐飞来峰", "링인 페이라이펑"),
+        l("Lingyin–Feilai Peak", "灵隐飞来峰", "영은사 비래봉"),
         "/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/lingyin-feilai-peak-1600.webp",
         l(
           "Buddhist carvings in the limestone of Feilai Peak",
           "灵隐飞来峰岩壁上的佛教造像",
-          "페이라이펑 석회암 벽면의 불교 조각",
+          "비래봉 석회암 벽면의 불교 조각",
         ),
         l(
           "The Hangzhou sightseeing day begins at Feilai Peak and Lingyin Temple, then moves on to a tea stop and West Lake.",
           "杭州游览日从飞来峰和灵隐寺开始，再去茶文化地点和西湖。",
-          "항저우 관광일은 페이라이펑과 링인사에서 시작해 차 문화 장소와 서호로 이어집니다.",
+          "항저우 관광일은 비래봉과 영은사에서 시작해 차 문화 장소와 서호로 이어집니다.",
         ),
       ),
     ),
@@ -821,12 +821,12 @@ const chengdu: PrivateTourProduct = {
   lede: l(
     "See the pandas early, give Sanxingdui the time it deserves, and balance two major day trips with Chengdu's relaxed parks and teahouses.",
     "早场看熊猫，用完整一天读懂三星堆，再以人民公园和都江堰平衡城市生活与古代工程。",
-    "이른 시간 판다를 만나고 싼싱두이를 온전히 둘러본 뒤, 청두의 공원과 두장옌까지 균형 있게 경험합니다.",
+    "이른 시간 판다를 만나고 싼싱두이를 온전히 둘러본 뒤, 청두의 공원과 도강언까지 균형 있게 경험합니다.",
   ),
   summary: l(
     "Four nights in Chengdu with private transfers, three English-guided touring days and the main admissions for the Panda Base, Sanxingdui and Dujiangyan.",
     "成都连住 4 晚，D2–D4 英语导游，私车往返熊猫基地、三星堆与都江堰，免去每天换酒店。",
-    "청두 4박 연박, D2~D4 영어 가이드와 전용 차량으로 판다기지, 싼싱두이, 두장옌을 방문합니다.",
+    "청두 4박 연박, D2~D4 영어 가이드와 전용 차량으로 판다기지, 싼싱두이, 도강언을 방문합니다.",
   ),
   highlights: lists(
     [
@@ -844,7 +844,7 @@ const chengdu: PrivateTourProduct = {
     [
       "청두 판다기지 이른 관람",
       "싼싱두이박물관 종일 관람",
-      "두장옌 고대 수리시설",
+      "도강언 고대 수리시설",
       "인민공원과 찻집 체험",
     ],
   ),
@@ -878,11 +878,11 @@ const chengdu: PrivateTourProduct = {
     ),
     day(
       4,
-      l("Dujiangyan", "都江堰", "두장옌"),
+      l("Dujiangyan", "都江堰", "도강언"),
       l(
         "A private vehicle takes you from your Chengdu hotel to Dujiangyan. See the irrigation system, then Guanxian Ancient Town, in the order set out in your written confirmation, and return to the same Chengdu hotel for your final night.",
         "专车从成都酒店送你去都江堰，按书面确认的顺序游览都江堰水利工程和灌县古城，之后回到同一家成都酒店，住最后一晚。",
-        "전용 차량으로 청두 호텔에서 두장옌으로 갑니다. 서면 확인서에 적힌 순서대로 두장옌 수리시설과 관현고성을 둘러본 뒤, 같은 청두 호텔로 돌아와 마지막 밤을 보냅니다.",
+        "전용 차량으로 청두 호텔에서 도강언으로 갑니다. 서면 확인서에 적힌 순서대로 도강언 수리시설과 관현고성을 둘러본 뒤, 같은 청두 호텔로 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
@@ -908,7 +908,7 @@ const chengdu: PrivateTourProduct = {
   exclusions: commonExclusions(
     ["Mount Qingcheng and attractions not listed"],
     ["青城山及未列景点"],
-    ["칭청산 및 일정에 명시되지 않은 관광지"],
+    ["청성산 및 일정에 명시되지 않은 관광지"],
   ),
   bookingNote: commonBookingNote,
   faq: [{
@@ -1011,17 +1011,17 @@ const chengdu: PrivateTourProduct = {
     routeGroup(
       4,
       routeVariant(
-        l("Dujiangyan waterworks", "都江堰水利工程", "두장옌 수리시설"),
+        l("Dujiangyan waterworks", "都江堰水利工程", "도강언 수리시설"),
         "/images/destinations/chengdu/dujiangyan-1200.webp",
         l(
           "Dujiangyan irrigation site and river valley",
           "都江堰水利工程与河谷全景",
-          "두장옌 수리시설과 강 계곡 전경",
+          "도강언 수리시설과 강 계곡 전경",
         ),
         l(
           "Dujiangyan's river valley, to give a sense of its scale. Routes within the site and attraction transport are confirmed for your visit.",
           "都江堰河谷全景，感受一下它的规模。景区内的游览路线和景交按实际游览确认。",
-          "두장옌 강 계곡의 규모를 한눈에 보여 주는 전경입니다. 내부 동선과 관광지 내 이동은 방문 조건에 맞춰 확정합니다.",
+          "도강언 강 계곡의 규모를 한눈에 보여 주는 전경입니다. 내부 동선과 관광지 내 이동은 방문 조건에 맞춰 확정합니다.",
         ),
         1200,
         750,
@@ -1312,7 +1312,7 @@ const chongqingWulong: PrivateTourProduct = {
   title: l(
     "Chongqing & Wulong: 5-Day Private Tour",
     "重庆·武隆 5 天 4 晚私家团",
-    "충칭·우룽 5일 프라이빗 투어",
+    "충칭·우롱 5일 프라이빗 투어",
   ),
   eyebrow: l(
     "Vertical city, karst landscapes",
@@ -1322,12 +1322,12 @@ const chongqingWulong: PrivateTourProduct = {
   lede: l(
     "Pair Chongqing's layered cityscape with an overnight journey into Wulong, including the Three Natural Bridges and your choice of Fairy Mountain or Furong Cave.",
     "先读懂重庆的立体城市景观，再住进武隆仙女山度假区，游览天生三桥，并在仙女山与芙蓉洞之间选择一项。",
-    "충칭의 입체적인 도시 풍경과 우룽 1박을 연결해 천생삼교를 둘러보고, 선녀산과 부용동 중 한 곳을 선택합니다.",
+    "충칭의 입체적인 도시 풍경과 우롱 1박을 연결해 천생삼교를 둘러보고, 선녀산과 부용동 중 한 곳을 선택합니다.",
   ),
   summary: l(
     "Three nights in Chongqing and one in Wulong, with private transport, three English-guided touring days and the listed basic admissions.",
     "重庆 3 晚、武隆 1 晚，D2–D4 英语导游，全程按行程安排私车与列明基础门票。",
-    "충칭 3박과 우룽 1박, D2~D4 영어 가이드, 일정 내 전용 차량과 명시된 기본 입장권이 포함됩니다.",
+    "충칭 3박과 우롱 1박, D2~D4 영어 가이드, 일정 내 전용 차량과 명시된 기본 입장권이 포함됩니다.",
   ),
   highlights: lists(
     [
@@ -1344,8 +1344,8 @@ const chongqingWulong: PrivateTourProduct = {
     ],
     [
       "충칭의 모노레일과 두 강 풍경",
-      "우룽 천생삼교",
-      "우룽 1박",
+      "우롱 천생삼교",
+      "우롱 1박",
       "선녀산 또는 부용동 중 선택",
     ],
   ),
@@ -1370,11 +1370,11 @@ const chongqingWulong: PrivateTourProduct = {
     ),
     day(
       3,
-      l("Chongqing to Wulong", "重庆前往武隆", "충칭에서 우룽으로"),
+      l("Chongqing to Wulong", "重庆前往武隆", "충칭에서 우롱으로"),
       l(
         "Check out of your Chongqing hotel and head to Wulong with your luggage in the private vehicle. At the Three Natural Bridges, the current standard admission includes the official transfer bus and Tianlong revolving elevator; you follow the site's operating route and its walking sections. Then on to your hotel in the Fairy Mountain resort area for the night.",
         "从重庆酒店退房，行李放在专车上一起去武隆。天生三桥当前标准票包含官方中转车和天龙旋梯，到了按景区实际运营路线和步行路段游览；之后去仙女山度假区的酒店入住。",
-        "충칭 호텔에서 체크아웃하고 짐은 전용 차량에 실어 우룽으로 갑니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 현장 운영 동선과 도보 구간을 따라 둘러봅니다. 이후 선녀산 리조트 지역 호텔로 이동해 숙박합니다.",
+        "충칭 호텔에서 체크아웃하고 짐은 전용 차량에 실어 우롱으로 갑니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 현장 운영 동선과 도보 구간을 따라 둘러봅니다. 이후 선녀산 리조트 지역 호텔로 이동해 숙박합니다.",
       ),
     ),
     day(
@@ -1382,12 +1382,12 @@ const chongqingWulong: PrivateTourProduct = {
       l(
         "Wulong choice and return",
         "武隆二选一后返程",
-        "우룽 선택 일정 후 귀환",
+        "우롱 선택 일정 후 귀환",
       ),
       l(
         "Check out of the Wulong hotel with your luggage in the private vehicle. Today includes just one visit, and your written confirmation names which: either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package. Only one is included, not both. Then return by road to Chongqing and check in for your final night.",
         "从武隆酒店退房，行李放在专车上。今天只游览一项，书面确认单上会写明是仙女山门票，还是芙蓉洞门票及索道套票；两者仅含其一，不同时包含。结束后乘车回重庆，当晚住重庆。",
-        "우룽 호텔에서 체크아웃하고 짐은 전용 차량에 싣습니다. 이날은 한 곳만 방문하며, 선녀산 입장권과 부용동 입장권·케이블카 패키지 중 어느 쪽인지 서면 확인서에 적어 드립니다. 둘 중 하나만 포함하며 두 항목을 모두 포함하지 않습니다. 이후 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
+        "우롱 호텔에서 체크아웃하고 짐은 전용 차량에 싣습니다. 이날은 한 곳만 방문하며, 선녀산 입장권과 부용동 입장권·케이블카 패키지 중 어느 쪽인지 서면 확인서에 적어 드립니다. 둘 중 하나만 포함하며 두 항목을 모두 포함하지 않습니다. 이후 차량으로 충칭에 돌아와 마지막 밤을 보냅니다.",
       ),
     ),
     day(
@@ -1403,12 +1403,12 @@ const chongqingWulong: PrivateTourProduct = {
   hotelNote: l(
     "Three nights in Chongqing and one in Wulong, in Ctrip 4-Diamond–rated rooms with breakfast. The published 2-, 4- and 6-traveller prices are based on twin sharing; we confirm other room arrangements with you individually.",
     "重庆 3 晚、武隆 1 晚，均住携程 4 钻双床房，含早餐；页面上的 2 人、4 人和 6 人价按两人一间计算，其他人数的分房我们单独帮你确认。",
-    "충칭 3박과 우룽 1박 모두 중국 씨트립 기준 4다이아 등급 호텔에 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 밖의 인원은 객실 구성을 따로 확인해 드립니다.",
+    "충칭 3박과 우롱 1박 모두 중국 씨트립 기준 4다이아 등급 호텔에 조식이 포함되며, 공개된 2명·4명·6명 요금은 2인 1실 기준입니다. 그 밖의 인원은 객실 구성을 따로 확인해 드립니다.",
   ),
   serviceNote: l(
     "On Days 1 and 5, a private driver and air-conditioned vehicle handle your transfers, with an English-speaking guide to help you arrive and depart; on Days 2–4 you have an English guide and private air-conditioned vehicle. The current Three Natural Bridges standard admission includes the official transfer bus and Tianlong revolving elevator; the exit battery car and glass viewing platform are included only when written in your confirmation. Day 4 includes either the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, as named in your confirmation. No shopping stops.",
     "D1 和 D5 由司机开空调专车接送，英语导游协助你抵达和返程；D2–D4 有英语导游和行程内空调专车，包括重庆—武隆段。天生三桥当前标准票包含官方中转车和天龙旋梯；出口电瓶车、玻璃眺台仅在确认单写明时包含。D4 含仙女山门票或芙蓉洞门票及索道套票其中一项，确认单上会写明是哪一项。全程无购物店安排。",
-    "D1·D5에는 기사가 에어컨을 갖춘 전용 차량으로 픽업·샌딩하며, 영어 가이드가 도착과 출발을 도와 드립니다. D2~D4에는 영어 가이드와 에어컨을 갖춘 전용 차량이 포함되며, 충칭~우룽 구간도 포함됩니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함됩니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다. D4에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 하나가 포함되며, 어느 쪽인지 확인서에 적어 드립니다. 쇼핑 일정은 없습니다.",
+    "D1·D5에는 기사가 에어컨을 갖춘 전용 차량으로 픽업·샌딩하며, 영어 가이드가 도착과 출발을 도와 드립니다. D2~D4에는 영어 가이드와 에어컨을 갖춘 전용 차량이 포함되며, 충칭~우롱 구간도 포함됩니다. 천생삼교의 현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함됩니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다. D4에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 하나가 포함되며, 어느 쪽인지 확인서에 적어 드립니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -1440,12 +1440,12 @@ const chongqingWulong: PrivateTourProduct = {
     l(
       "Hongya Cave and Qiansimen Bridge illuminated beside the Jialing River",
       "嘉陵江畔亮灯的洪崖洞与跨江大桥",
-      "자링강변에 불이 켜진 훙야둥과 첸쓰먼대교",
+      "자링강변에 불이 켜진 홍야동과 첸쓰먼대교",
     ),
     l(
       "Begin in the vertical city before heading into Wulong.",
       "从立体山城出发，再深入武隆。",
-      "수직 도시에서 시작해 우룽으로 들어갑니다.",
+      "수직 도시에서 시작해 우롱으로 들어갑니다.",
     ),
     1600,
     1000,
@@ -1457,12 +1457,12 @@ const chongqingWulong: PrivateTourProduct = {
       l(
         "A limestone canyon and stream in Wulong",
         "武隆石灰岩峡谷与溪流",
-        "우룽 석회암 협곡과 계류",
+        "우롱 석회암 협곡과 계류",
       ),
       l(
         "Wulong adds a quieter natural chapter after Chongqing's dense urban layers.",
         "离开重庆密集的立体城市，走进武隆峡谷，换一段更安静的自然风景。",
-        "충칭의 빽빽한 수직 도시를 떠나 우룽 협곡의 조용한 자연으로 이어집니다.",
+        "충칭의 빽빽한 수직 도시를 떠나 우롱 협곡의 조용한 자연으로 이어집니다.",
       ),
     ),
   ],
@@ -1504,17 +1504,17 @@ const chongqingWulong: PrivateTourProduct = {
     routeGroup(
       3,
       routeVariant(
-        l("Three Natural Bridges", "武隆天生三桥", "우룽 천생삼교"),
+        l("Three Natural Bridges", "武隆天生三桥", "우롱 천생삼교"),
         "/images/destinations/chongqing/wulong-1200.webp",
         l(
           "Natural-bridge karst landscape at Wulong",
           "武隆天生三桥喀斯特景观",
-          "우룽 천생삼교 카르스트 풍경",
+          "우롱 천생삼교 카르스트 풍경",
         ),
         l(
           "Wulong's natural-bridge landscape. We check weather, shuttle and walking conditions for your visit.",
           "武隆天生三桥地貌；天气、景区交通和步行条件，按实际游览时确认。",
-          "우룽 천생삼교 지형입니다. 날씨와 셔틀, 보행 조건은 방문 시점에 확인해 드립니다.",
+          "우롱 천생삼교 지형입니다. 날씨와 셔틀, 보행 조건은 방문 시점에 확인해 드립니다.",
         ),
         1200,
         800,
@@ -2088,7 +2088,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
     ],
     ["外滩、豫园与上海中心", "朱家角水乡", "高铁往返苏州", "拙政园与平江路"],
     [
-      "와이탄, 예원과 상하이타워",
+      "와이탄, 예원과 상하이 타워",
       "주자자오 수향마을",
       "고속철도 쑤저우 왕복",
       "졸정원과 핑장루",
@@ -2110,7 +2110,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
       l(
         "Your English-speaking guide and private vehicle collect you from the Shanghai hotel. See the Bund, continue to Nanjing Road and Yu Garden, then finish at the Shanghai Tower 118th-floor observation deck before returning to the same hotel.",
         "英语导游和私车从上海酒店接你出发，先游览外滩，再去南京路和豫园，最后登上上海中心 118 层“上海之巅”；结束后回到同一家酒店。",
-        "상하이 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 와이탄, 난징루와 예원을 차례로 둘러보고, 마지막으로 상하이타워 118층 전망대에 오른 뒤 같은 호텔로 돌아옵니다.",
+        "상하이 호텔에서 영어 가이드와 전용 차량으로 출발합니다. 와이탄, 난징루와 예원을 차례로 둘러보고, 마지막으로 상하이 타워 118층 전망대에 오른 뒤 같은 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -2244,7 +2244,7 @@ const shanghaiSuzhou: PrivateTourProduct = {
         l(
           "Shanghai Tower and the World Financial Center in the sunset light",
           "夕阳中的上海中心与环球金融中心",
-          "노을 속 상하이타워와 세계금융센터",
+          "노을 속 상하이 타워와 세계금융센터",
         ),
         l(
           "Day 2 links the historic Bund with present-day Pudong.",
@@ -3333,7 +3333,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         l(
           "Hongqiao entrance in Fenghuang Ancient Town.",
           "凤凰古城虹桥入口。",
-          "봉황고성 훙차오 입구.",
+          "봉황고성 홍교 입구.",
         ),
         l(
           "The guide introduces Fenghuang’s public lanes and riverside on Day 5.",
@@ -3371,7 +3371,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         l(
           "Visitors crossing stepping stones on the Tuojiang in Fenghuang.",
           "游客从凤凰沱江跳岩上过河。",
-          "봉황 퉈장의 징검다리를 건너는 방문객들.",
+          "봉황 타강의 징검다리를 건너는 방문객들.",
         ),
         l(
           "Departure time follows your train or return-transfer plan.",

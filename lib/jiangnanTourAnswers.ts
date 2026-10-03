@@ -48,7 +48,7 @@ export const shanghaiSuzhouAnswers: readonly PrivateTourFaqItem[] = [
     answer: l(
       "This route includes Zhujiajiao, Shanghai Tower's 118th-floor observation deck and a Suzhou day with the Humble Administrator's Garden, Hanshan Temple and Pingjiang Road. Hangzhou and Suzhou Museum are not included. The six-day route instead stays in Suzhou and Hangzhou and includes a West Lake cruise.",
       "这条包含朱家角、上海中心 118 层，以及苏州的拙政园、寒山寺和平江路，不含杭州和苏州博物馆。6 天路线则在苏州和杭州过夜，并包含西湖游船。两条路线各有侧重，不是简单多加一天。",
-      "이 일정은 주자자오, 상하이타워 118층 전망대와 쑤저우의 졸정원·한산사·핑장루를 포함합니다. 항저우와 쑤저우박물관은 포함되지 않습니다. 6일 일정은 쑤저우와 항저우에서 숙박하고 서호 유람선을 포함하는 별도 구성입니다.",
+      "이 일정은 주자자오, 상하이 타워 118층 전망대와 쑤저우의 졸정원·한산사·핑장루를 포함합니다. 항저우와 쑤저우박물관은 포함되지 않습니다. 6일 일정은 쑤저우와 항저우에서 숙박하고 서호 유람선을 포함하는 별도 구성입니다.",
     ),
   },
   {
