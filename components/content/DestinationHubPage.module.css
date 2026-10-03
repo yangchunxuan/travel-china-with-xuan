@@ -52,8 +52,7 @@
   margin-block: 0 clamp(3rem, 7vw, 5rem);
 }
 
-.cityTours,
-.cityServices {
+.cityTours {
   border-block-start: 1px solid var(--hg-color-line);
   margin-block-start: clamp(3rem, 7vw, 6rem);
   padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
@@ -88,9 +87,33 @@
   max-width: 44rem;
 }
 
-/* Inside the article column: three sights to a row, two on phones. */
+/*
+ * Inside the article column: three sights to a row on six tracks, so a last
+ * row of two takes half each (3 + 2) and a lone last card sits in the middle.
+ */
 .citySightGrid.citySightGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.citySightGrid.citySightGrid > li {
+  grid-column: span 2;
+}
+
+.citySightGrid.citySightGrid > li:nth-child(3n + 1):nth-last-child(2),
+.citySightGrid.citySightGrid > li:nth-child(3n + 2):last-child {
+  grid-column: span 3;
+}
+
+.citySightGrid.citySightGrid > li:nth-child(3n + 1):last-child {
+  grid-column: 3 / span 2;
+}
+
+/* The two wider cards keep the row's photo height (4:3 at a third is about 2:1 at a half). */
+@media (min-width: 40.0625rem) {
+  .citySightGrid.citySightGrid > li:nth-child(3n + 1):nth-last-child(2) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:nth-child(3n + 2):last-child > a > span:first-child {
+    aspect-ratio: 2 / 1;
+  }
 }
 
 .cityBlockLinks {
@@ -123,6 +146,11 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .citySightGrid.citySightGrid > li,
+  .citySightGrid.citySightGrid > li:nth-child(n):nth-child(n) {
+    grid-column: auto;
+  }
+
   .citySightGrid.citySightGrid > li > a {
     align-items: center;
     column-gap: 0.9rem;
@@ -145,6 +173,39 @@
     text-decoration: underline;
     text-underline-offset: 0.25rem;
   }
+}
+
+/*
+ * The second version ends once: the services, full-trip planning first, in
+ * the Destinations pages' closing band (its grid from .cta), boxed where the
+ * old call to action sat.
+ */
+.cityBand.cityBand {
+  border: 1px solid var(--hg-color-line);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  margin: 0 auto clamp(3rem, 7vw, 7rem);
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  /* The article's column: 90rem at most, inside its side padding. */
+  width: calc(min(100%, 90rem) - 2 * clamp(1rem, 5vw, 5rem));
+}
+
+.cityBand h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.cityBandLabel.cityBandLabel {
+  color: var(--hg-color-rust);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
 }
 
 .stayExample {
@@ -530,6 +591,12 @@
   .evidenceBody {
     gap: 0.65rem;
     margin-block-start: 0.6rem;
+  }
+
+  .cityBand.cityBand {
+    gap: 1.5rem;
+    margin-block-end: 2.5rem;
+    padding: 1.25rem;
   }
 
   .destinationCta {

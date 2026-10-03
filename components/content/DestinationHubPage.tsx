@@ -53,6 +53,7 @@ import { travelInspirationThemePath, travelInspirationThemes } from "../../lib/t
 import { getTravelInspirationCopy } from "../../lib/travelInspirationI18n";
 import { ServiceRows, TourCard } from "../DestinationParts";
 import { SightCard } from "../SightsPages";
+import { KeepWords } from "../text/KeepWords";
 import inspirationStyles from "../TravelInspiration.module.css";
 import sightStyles from "../SightsPages.module.css";
 
@@ -95,9 +96,10 @@ const ui = {
     toursTitle: (city: string) => `Private tours that include ${city}`,
     allToursCount: (count: number, city: string) => `All private tours (${count} include ${city})`,
     toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
-    servicesLabel: "Single services",
-    servicesTitle: "Hand us only what you need.",
-    servicesBody: "Attraction bookings, a private guide by the day, or the whole trip planned around you.",
+    bandBody: "Have us plan the whole trip, or just book the sights or a guide. A real person replies, working from your dates and group.",
+    v2Eyebrow: "City guide",
+    v2DecisionsBody: "How many nights, which area to stay in, how to arrive and leave, where to go next. How to book each part is in Travel Advice.",
+    v2DetailedAnswersBody: "The questions this city raises, from tickets to stations, one guide for each.",
     decisionsLabel: "Four city decisions",
     decisionsTitle: "Understand the city before solving the details.",
     decisionsBody: "This page owns the broad shape: how long to stay, where to base, which gateway matters and what should come next. Booking steps and recovery advice live in the focused Travel Advice below.",
@@ -129,9 +131,10 @@ const ui = {
     toursTitle: (city: string) => `包含${city}的私家团`,
     allToursCount: (count: number, city: string) => `全部私家团（含${city}的共 ${count} 条）`,
     toursBody: "现成路线，行程和价格写在各自的路线页上；只接待你们一行人，出发日期你们定。",
-    servicesLabel: "单项服务",
-    servicesTitle: "只请我们做一部分。",
-    servicesBody: "代约景点、按天请私人导游，或者把整趟旅行交给我们安排。",
+    bandBody: "可以把整趟交给我们，也可以只请我们代约景点或请导游。真人回复，按你们的日期和人数安排。",
+    v2Eyebrow: "城市指南",
+    v2DecisionsBody: "住几晚、住在哪一区、从哪里进出、下一站去哪；具体怎么预订，看实用指南。",
+    v2DetailedAnswersBody: "这座城市的具体问题，从门票到车站，一篇讲清一件事。",
     decisionsLabel: "四个城市决定",
     decisionsTitle: "先看懂这座城市，再处理执行细节。",
     decisionsBody: "本页只负责整座城市的形状：住多久、以哪里为基地、哪个进出门户重要、下一站接哪里。预订步骤与失败补救交给下方的专题实用指南。",
@@ -164,9 +167,10 @@ const ui = {
     toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗${String.fromCharCode(0xa0)}투어`,
     allToursCount: (count: number, city: string) => `프라이빗 투어 전체 보기 (${city} 포함 ${count}개)`,
     toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
-    servicesLabel: "단독 서비스",
-    servicesTitle: "필요한 부분만 맡기세요.",
-    servicesBody: "관광지 예약, 하루 단위 프라이빗 가이드, 또는 전체 여행 설계까지.",
+    bandBody: "전체 여행을 맡기셔도, 관광지 예약이나 가이드만 맡기셔도 됩니다. 실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
+    v2Eyebrow: "도시 가이드",
+    v2DecisionsBody: "몇 박을 할지, 어느 지역에 묵을지, 어디로 들어오고 나갈지, 다음엔 어디로 갈지. 예약 방법은 실용 가이드에서 확인하세요.",
+    v2DetailedAnswersBody: "입장권부터 기차역까지, 이 도시에서 생기는 질문을 한 편에 하나씩 정리했습니다.",
     decisionsLabel: "도시를 정하는 네 가지 판단",
     decisionsTitle: "세부 예약보다 도시의 구조를 먼저 이해하세요.",
     decisionsBody: "이 페이지는 체류 기간, 숙소 거점, 주요 관문과 다음 도시라는 큰 틀만 맡습니다. 예약 절차와 문제 해결은 아래의 실용 가이드에서 확인하세요.",
@@ -393,7 +397,7 @@ export function DestinationHubPage({
               </ol>
             </nav>
             <p className={styles.eyebrow}>
-              <span>{copy.eyebrow}</span>
+              <span>{v2 ? copy.v2Eyebrow : copy.eyebrow}</span>
               <span>
                 {copy.reviewed} {date}
               </span>
@@ -432,96 +436,121 @@ export function DestinationHubPage({
           data-content-body
           id="destination-hub-body"
         >
-          {v2 && citySights.length ? (
-            <section aria-labelledby="destination-what-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityWhat}`}>
-              <div className={destinationStyles.cityBlockHead}>
-                <p>{copy.whatLabel}</p>
-                <h2 id="destination-what-title">{copy.whatTitle(hub.navTitle)}</h2>
-                <p>{copy.whatBody}</p>
-              </div>
-              <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
-                {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
-              </ul>
-              <p className={destinationStyles.cityBlockLinks}>
-                <Link href={sightsPath[locale]}>{sightsCopy.page.allSights}<span aria-hidden="true">→</span></Link>
-                {cityThemes.map((theme) => (
-                  <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
-                    {copy.themeLink(inspiration.themes[theme.id].name)}<span aria-hidden="true">→</span>
-                  </Link>
-                ))}
-              </p>
-            </section>
-          ) : null}
-
-          {openingBody.blocks.length > 0 ? (
-            <div className={destinationStyles.destinationOpening}>
-              <PageFamilyRenderer body={openingBody} />
-            </div>
-          ) : null}
-          <DestinationGeographyDiagram
-            copy={hub.geography}
-            locale={locale}
-            nodes={hub.geometry}
-          />
-          <section className={destinationStyles.decisionIndex} aria-labelledby="destination-signals-title">
-            <div className={destinationStyles.decisionIntro}>
-              <div>
-                <p>{copy.decisionsLabel}</p>
-                <h2 id="destination-signals-title">{copy.decisionsTitle}</h2>
-                <p>{copy.decisionsBody}</p>
-              </div>
-              <Link href={`${homeCopy.path}guides/`}>
-                {copy.adviceAction}<span aria-hidden="true">→</span>
-              </Link>
-            </div>
-            <div className={destinationStyles.signalGrid}>
-              {overviewSignals.map((signal, index) => (
-                <section className={destinationStyles.signalCard} key={signal.id}>
-                  <p>
-                    <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                    {copy.signalLabels[signal.id]}
-                  </p>
-                  <h3>{signal.sourceHeading}</h3>
-                  {signal.emphasis ? <strong>{signal.emphasis}</strong> : null}
-                  <p>{signal.summary}</p>
-                </section>
-              ))}
-            </div>
-          </section>
-
-          {dayTripLinks ? (
-            <div className={destinationStyles.dayTripLinks}>
-              <PageFamilyRenderer
-                body={{ schemaVersion: body.schemaVersion, blocks: [dayTripLinks] }}
-              />
-            </div>
-          ) : null}
-
-          {stayExample.blocks.length > 0 ? (
-            <section
-              className={destinationStyles.stayExample}
-              aria-labelledby={stayExample.blocks[0].id}
-            >
-              <PageFamilyRenderer body={stayExample} />
-            </section>
-          ) : null}
-
-          <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
-            <div>
-              <p>{copy.detailedAnswersLabel}</p>
-              <h2 id="destination-owner-links-title">{copy.detailedAnswers}</h2>
-              <p>{copy.detailedAnswersBody}</p>
-            </div>
-            <ul>
-              {ownerGuideIds.map((guideId) => {
-                const guide = getGuideEntry(guideId, locale);
-                return <li key={guideId}><Link href={guide.canonicalPath}>{guide.navTitle}<span aria-hidden="true">→</span></Link></li>;
-              })}
-            </ul>
-          </section>
-
           {v2 ? (
+            // The second version: what to see first, then the four decisions,
+            // the map, the opening argument and the deeper answers; sources
+            // close the reading and the tours lead into the one closing band.
             <>
+              {citySights.length ? (
+                <section aria-labelledby="destination-what-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityWhat}`}>
+                  <div className={destinationStyles.cityBlockHead}>
+                    <p>{copy.whatLabel}</p>
+                    <h2 id="destination-what-title">{copy.whatTitle(hub.navTitle)}</h2>
+                    <p>{copy.whatBody}</p>
+                  </div>
+                  <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
+                    {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
+                  </ul>
+                  <p className={destinationStyles.cityBlockLinks}>
+                    <Link href={sightsPath[locale]}>{sightsCopy.page.allSights}<span aria-hidden="true">→</span></Link>
+                    {cityThemes.map((theme) => (
+                      <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
+                        {copy.themeLink(inspiration.themes[theme.id].name)}<span aria-hidden="true">→</span>
+                      </Link>
+                    ))}
+                  </p>
+                </section>
+              ) : null}
+              <section className={destinationStyles.decisionIndex} aria-labelledby="destination-signals-title">
+                <div className={destinationStyles.decisionIntro}>
+                  <div>
+                    <p>{copy.decisionsLabel}</p>
+                    <h2 id="destination-signals-title">{copy.decisionsTitle}</h2>
+                    <p>{copy.v2DecisionsBody}</p>
+                  </div>
+                  <Link href={`${homeCopy.path}guides/`}>
+                    {copy.adviceAction}<span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+                <div className={destinationStyles.signalGrid}>
+                  {overviewSignals.map((signal, index) => (
+                    <section className={destinationStyles.signalCard} key={signal.id}>
+                      <p>
+                        <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                        {copy.signalLabels[signal.id]}
+                      </p>
+                      <h3>{signal.sourceHeading}</h3>
+                      {signal.emphasis ? <strong>{signal.emphasis}</strong> : null}
+                      <p>{signal.summary}</p>
+                    </section>
+                  ))}
+                </div>
+              </section>
+              <DestinationGeographyDiagram
+                copy={hub.geography}
+                locale={locale}
+                nodes={hub.geometry}
+              />
+              {openingBody.blocks.length > 0 ? (
+                <div className={destinationStyles.destinationOpening}>
+                  <PageFamilyRenderer body={openingBody} />
+                </div>
+              ) : null}
+              {dayTripLinks ? (
+                <div className={destinationStyles.dayTripLinks}>
+                  <PageFamilyRenderer
+                    body={{ schemaVersion: body.schemaVersion, blocks: [dayTripLinks] }}
+                  />
+                </div>
+              ) : null}
+              {stayExample.blocks.length > 0 ? (
+                <section
+                  className={destinationStyles.stayExample}
+                  aria-labelledby={stayExample.blocks[0].id}
+                >
+                  <PageFamilyRenderer body={stayExample} />
+                </section>
+              ) : null}
+              <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
+                <div>
+                  <p>{copy.detailedAnswersLabel}</p>
+                  <h2 id="destination-owner-links-title">{copy.detailedAnswers}</h2>
+                  <p>{copy.v2DetailedAnswersBody}</p>
+                </div>
+                <ul>
+                  {ownerGuideIds.map((guideId) => {
+                    const guide = getGuideEntry(guideId, locale);
+                    return <li key={guideId}><Link href={guide.canonicalPath}>{guide.navTitle}<span aria-hidden="true">→</span></Link></li>;
+                  })}
+                </ul>
+              </section>
+              {visibleSources.length > 0 ? (
+                <aside
+                  aria-labelledby="destination-evidence-title"
+                  className={destinationStyles.evidencePanel}
+                >
+                  <header className={destinationStyles.evidenceHeader}>
+                    <h2 id="destination-evidence-title">{copy.evidenceSummary}</h2>
+                    <p>
+                      {copy.evidenceReviewed}{" "}
+                      <time dateTime={hub.sourceReviewedDate}>{date}</time>
+                    </p>
+                  </header>
+                  <div className={destinationStyles.evidenceBody}>
+                    <p>{copy.evidenceBody}</p>
+                    <ul>
+                      {visibleSources.map((source) => (
+                        <li key={source.url}>
+                          <a href={source.url} rel="noreferrer">
+                            {source.publisher ? `${source.publisher}: ` : ""}
+                            {source.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </aside>
+              ) : null}
               <section aria-labelledby="destination-published-routes-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityTours}`}>
                 <div className={destinationStyles.cityBlockHead}>
                   <p>{copy.toursLabel}</p>
@@ -535,90 +564,160 @@ export function DestinationHubPage({
                   <Link href={`${homeCopy.path}tours/`}>{copy.allToursCount(cityTourCount, hub.navTitle)}<span aria-hidden="true">→</span></Link>
                 </p>
               </section>
-              <section aria-labelledby="destination-services-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityServices}`}>
-                <div className={destinationStyles.cityBlockHead}>
-                  <p>{copy.servicesLabel}</p>
-                  <h2 id="destination-services-title">{copy.servicesTitle}</h2>
-                  <p>{copy.servicesBody}</p>
-                </div>
-                {/* Full-trip planning is the contact block just below, so it is not repeated here. */}
-                <ServiceRows lead="attraction-tickets" locale={locale} omit={["trip-support"]} />
-              </section>
             </>
           ) : (
-          <section
-            className={destinationStyles.ownerLinks}
-            aria-labelledby="destination-published-routes-title"
-          >
-            <div>
-              <p>{commercialCopy.hubLabel}</p>
-              <h2 id="destination-published-routes-title">
-                {commercialCopy.hubTitle}
-              </h2>
-              <p>{commercialCopy.hubBody}</p>
-            </div>
-            <ul>
-              {publishedRouteLinks.map((route) => (
-                <li key={route.id}>
-                  <Link href={route.href}>
-                    {route.label}<span aria-hidden="true">→</span>
-                  </Link>
-                </li>
-              ))}
-              {reservationLink ? (
-                <li>
-                  <Link href={reservationLink.href}>
-                    {reservationLink.label}<span aria-hidden="true">→</span>
-                  </Link>
-                </li>
+            <>
+              {openingBody.blocks.length > 0 ? (
+                <div className={destinationStyles.destinationOpening}>
+                  <PageFamilyRenderer body={openingBody} />
+                </div>
               ) : null}
-            </ul>
-          </section>
-          )}
-
-          {visibleSources.length > 0 ? (
-            <aside
-              aria-labelledby="destination-evidence-title"
-              className={destinationStyles.evidencePanel}
-            >
-              <header className={destinationStyles.evidenceHeader}>
-                <h2 id="destination-evidence-title">{copy.evidenceSummary}</h2>
-                <p>
-                  {copy.evidenceReviewed}{" "}
-                  <time dateTime={hub.sourceReviewedDate}>{date}</time>
-                </p>
-              </header>
-              <div className={destinationStyles.evidenceBody}>
-                <p>{copy.evidenceBody}</p>
+              <DestinationGeographyDiagram
+                copy={hub.geography}
+                locale={locale}
+                nodes={hub.geometry}
+              />
+              <section className={destinationStyles.decisionIndex} aria-labelledby="destination-signals-title">
+                <div className={destinationStyles.decisionIntro}>
+                  <div>
+                    <p>{copy.decisionsLabel}</p>
+                    <h2 id="destination-signals-title">{copy.decisionsTitle}</h2>
+                    <p>{copy.decisionsBody}</p>
+                  </div>
+                  <Link href={`${homeCopy.path}guides/`}>
+                    {copy.adviceAction}<span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+                <div className={destinationStyles.signalGrid}>
+                  {overviewSignals.map((signal, index) => (
+                    <section className={destinationStyles.signalCard} key={signal.id}>
+                      <p>
+                        <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                        {copy.signalLabels[signal.id]}
+                      </p>
+                      <h3>{signal.sourceHeading}</h3>
+                      {signal.emphasis ? <strong>{signal.emphasis}</strong> : null}
+                      <p>{signal.summary}</p>
+                    </section>
+                  ))}
+                </div>
+              </section>
+              {dayTripLinks ? (
+                <div className={destinationStyles.dayTripLinks}>
+                  <PageFamilyRenderer
+                    body={{ schemaVersion: body.schemaVersion, blocks: [dayTripLinks] }}
+                  />
+                </div>
+              ) : null}
+              {stayExample.blocks.length > 0 ? (
+                <section
+                  className={destinationStyles.stayExample}
+                  aria-labelledby={stayExample.blocks[0].id}
+                >
+                  <PageFamilyRenderer body={stayExample} />
+                </section>
+              ) : null}
+              <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
+                <div>
+                  <p>{copy.detailedAnswersLabel}</p>
+                  <h2 id="destination-owner-links-title">{copy.detailedAnswers}</h2>
+                  <p>{copy.detailedAnswersBody}</p>
+                </div>
                 <ul>
-                  {visibleSources.map((source) => (
-                    <li key={source.url}>
-                      <a href={source.url} rel="noreferrer">
-                        {source.publisher ? `${source.publisher}: ` : ""}
-                        {source.label}
-                      </a>
+                  {ownerGuideIds.map((guideId) => {
+                    const guide = getGuideEntry(guideId, locale);
+                    return <li key={guideId}><Link href={guide.canonicalPath}>{guide.navTitle}<span aria-hidden="true">→</span></Link></li>;
+                  })}
+                </ul>
+              </section>
+              <section
+                className={destinationStyles.ownerLinks}
+                aria-labelledby="destination-published-routes-title"
+              >
+                <div>
+                  <p>{commercialCopy.hubLabel}</p>
+                  <h2 id="destination-published-routes-title">
+                    {commercialCopy.hubTitle}
+                  </h2>
+                  <p>{commercialCopy.hubBody}</p>
+                </div>
+                <ul>
+                  {publishedRouteLinks.map((route) => (
+                    <li key={route.id}>
+                      <Link href={route.href}>
+                        {route.label}<span aria-hidden="true">→</span>
+                      </Link>
                     </li>
                   ))}
+                  {reservationLink ? (
+                    <li>
+                      <Link href={reservationLink.href}>
+                        {reservationLink.label}<span aria-hidden="true">→</span>
+                      </Link>
+                    </li>
+                  ) : null}
                 </ul>
-              </div>
-            </aside>
-          ) : null}
+              </section>
+              {visibleSources.length > 0 ? (
+                <aside
+                  aria-labelledby="destination-evidence-title"
+                  className={destinationStyles.evidencePanel}
+                >
+                  <header className={destinationStyles.evidenceHeader}>
+                    <h2 id="destination-evidence-title">{copy.evidenceSummary}</h2>
+                    <p>
+                      {copy.evidenceReviewed}{" "}
+                      <time dateTime={hub.sourceReviewedDate}>{date}</time>
+                    </p>
+                  </header>
+                  <div className={destinationStyles.evidenceBody}>
+                    <p>{copy.evidenceBody}</p>
+                    <ul>
+                      {visibleSources.map((source) => (
+                        <li key={source.url}>
+                          <a href={source.url} rel="noreferrer">
+                            {source.publisher ? `${source.publisher}: ` : ""}
+                            {source.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </aside>
+              ) : null}
+            </>
+          )}
         </article>
 
-        <aside
-          className={`${styles.cta} ${destinationStyles.destinationCta}`}
-          data-similarity-ignore
-        >
-          <div>
-            <p className={styles.ctaLabel}>{copy.ctaLabel}</p>
-            <h2>{copy.ctaTitle}</h2>
-            <p>{copy.ctaBody}</p>
-          </div>
-          <Link href={`${homeCopy.path}#planner-contact`}>
-            {copy.ctaButton}
-            <ArrowRight aria-hidden="true" size={18} />
-          </Link>
-        </aside>
+        {v2 ? (
+          <section
+            aria-labelledby="destination-band-title"
+            className={`${inspirationStyles.tokens} ${inspirationStyles.cta} ${destinationStyles.cityBand}`}
+            data-similarity-ignore
+          >
+            <div>
+              <p className={destinationStyles.cityBandLabel}>{copy.ctaLabel}</p>
+              <h2 id="destination-band-title"><KeepWords locale={locale} text={copy.ctaTitle} /></h2>
+              <p><KeepWords locale={locale} text={copy.bandBody} /></p>
+            </div>
+            <ServiceRows locale={locale} />
+          </section>
+        ) : (
+          <aside
+            className={`${styles.cta} ${destinationStyles.destinationCta}`}
+            data-similarity-ignore
+          >
+            <div>
+              <p className={styles.ctaLabel}>{copy.ctaLabel}</p>
+              <h2>{copy.ctaTitle}</h2>
+              <p>{copy.ctaBody}</p>
+            </div>
+            <Link href={`${homeCopy.path}#planner-contact`}>
+              {copy.ctaButton}
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </aside>
+        )}
       </main>
 
       <HomegroundFooter locale={locale} pageContext="destination" />

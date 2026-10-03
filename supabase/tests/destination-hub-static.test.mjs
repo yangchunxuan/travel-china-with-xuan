@@ -317,10 +317,15 @@ test("city hubs use a compact mobile-only projection without dropping decisions 
   assert.match(page, /detailedAnswersLabel: "深入答案"/u);
   assert.match(page, /detailedAnswersLabel: "더 깊은 답변"/u);
   assert.match(page, /<p>\{copy\.detailedAnswersLabel\}<\/p>/);
-  assert.doesNotMatch(
-    page,
-    /className=\{destinationStyles\.ownerLinks\}[\s\S]*?<p>\{copy\.decisionsLabel\}<\/p>/,
-  );
+  // Both versions (the second, then the first) keep the decisions before the deeper answers.
+  const versions = page.split(/\n {10}\) : \(\n {12}<>\n/);
+  assert.equal(versions.length, 2);
+  for (const version of versions) {
+    assert.doesNotMatch(
+      version,
+      /className=\{destinationStyles\.ownerLinks\}[\s\S]*?<p>\{copy\.decisionsLabel\}<\/p>/,
+    );
+  }
   assert.doesNotMatch(page, /<details\b/);
   assert.match(page, /className=\{destinationStyles\.evidencePanel\}/);
   assert.match(styles, /@media \(max-width: 48rem\)[\s\S]*?\.destinationHero \{[\s\S]*?padding-block:\s*1\.2rem 1\.6rem/);
@@ -334,4 +339,29 @@ test("city hubs use a compact mobile-only projection without dropping decisions 
   assert.match(geography, /scroll-snap-type:\s*inline proximity/);
   assert.match(geography, /\.key li \{[\s\S]*?flex:\s*0 0 min\(76vw, 15rem\)/);
   assert.doesNotMatch(geography, /\.key(?:Label|Note)?[^{]*\{[^}]*display:\s*none/);
+});
+
+test("a city joins the second version only with at least three sights and two published tours", async () => {
+  const { cityPageV2 } = await import("../../lib/cityPage.ts");
+  const { sights } = await import("../../lib/sights.ts");
+  const { getPublishedPrivateTourCatalog } = await import("../../lib/publishedPrivateTourCatalog.ts");
+  const published = new Set(getPublishedPrivateTourCatalog("en").map((tour) => tour.slug));
+  assert.ok(Object.keys(cityPageV2).length > 0, "at least one city is on the second version");
+  for (const [city, page] of Object.entries(cityPageV2)) {
+    const citySights = sights.filter((sight) => sight.city === city);
+    assert.ok(citySights.length >= 3, `${city}: ${citySights.length} sights, needs 3 or more`);
+    assert.ok(page.tourSlugs.length >= 2, `${city}: ${page.tourSlugs.length} tours, needs 2 or more`);
+    assert.equal(new Set(page.tourSlugs).size, page.tourSlugs.length, `${city}: no tour twice`);
+    for (const slug of page.tourSlugs) assert.ok(published.has(slug), `${city}: ${slug} is published`);
+  }
+
+  const [page, styles] = await Promise.all([
+    source("components/content/DestinationHubPage.tsx"),
+    source("components/content/DestinationHubPage.module.css"),
+  ]);
+  // One way out at the end: the services band, full-trip planning first, instead of the old brief button.
+  assert.match(page, /\{v2 \? \(\s*<section\s+aria-labelledby="destination-band-title"[\s\S]*?<ServiceRows locale=\{locale\} \/>/);
+  assert.doesNotMatch(page, /destination-services-title/);
+  // Three sights to a row on six tracks, a last row of two in halves.
+  assert.match(styles, /\.citySightGrid\.citySightGrid \{\s*grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/);
 });
