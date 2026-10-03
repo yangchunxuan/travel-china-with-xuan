@@ -45,6 +45,16 @@ import {
   type AttractionReservationCityId,
 } from "../../lib/attractionReservations";
 import { fillReservationCopy, getAttractionReservationCopy } from "../../lib/attractionReservationsI18n";
+import { cityPageV2 } from "../../lib/cityPage";
+import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog";
+import { sights, sightsPath } from "../../lib/sights";
+import { getSightsCopy } from "../../lib/sightsI18n";
+import { travelInspirationThemePath, travelInspirationThemes } from "../../lib/travelInspiration";
+import { getTravelInspirationCopy } from "../../lib/travelInspirationI18n";
+import { ServiceRows, TourCard } from "../DestinationParts";
+import { SightCard } from "../SightsPages";
+import inspirationStyles from "../TravelInspiration.module.css";
+import sightStyles from "../SightsPages.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -59,6 +69,12 @@ const zhHeadingSegments = {
   chongqing: ["重庆：", "选对住宿基地、", "车站和停留晚数"],
 } as const satisfies Record<DestinationHubId, readonly string[]>;
 
+/** Korean object particle after a name: 을 after a final consonant (베이징을), 를 after a vowel (상하이를). */
+function koObject(word: string) {
+  const code = word.charCodeAt(word.length - 1) - 0xac00;
+  return `${word}${code >= 0 && code < 11172 && code % 28 !== 0 ? "을" : "를"}`;
+}
+
 const ui = {
   en: {
     skip: "Skip to the guide",
@@ -71,6 +87,15 @@ const ui = {
     ctaBody:
       "Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.",
     ctaButton: "Start my trip brief",
+    whatLabel: "What to do",
+    whatTitle: (city: string) => `What to do in ${city}`,
+    whatBody: "The sights worth the trip. Open one to see why it is worth it and how booking works.",
+    toursLabel: "Private tours",
+    toursTitle: (city: string) => `Private tours with ${city}`,
+    toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
+    servicesLabel: "Or just part of it",
+    servicesTitle: "Hand us only what you need.",
+    servicesBody: "Attraction bookings, a private guide by the day, or the whole trip planned around you.",
     decisionsLabel: "Four city decisions",
     decisionsTitle: "Understand the city before solving the details.",
     decisionsBody: "This page owns the broad shape: how long to stay, where to base, which gateway matters and what should come next. Booking steps and recovery advice live in the focused Travel Advice below.",
@@ -94,6 +119,15 @@ const ui = {
     ctaBody:
       "留下日期、人数和大致预算。真人规划师会帮你判断合理路线，以及这趟旅行真正需要哪些支持。",
     ctaButton: "开始填写旅行简报",
+    whatLabel: "可以怎么玩",
+    whatTitle: (city: string) => `${city}可以怎么玩`,
+    whatBody: "必去的几个地方，点进去看为什么值得去、怎么预约。",
+    toursLabel: "私家团",
+    toursTitle: (city: string) => `包含${city}的私家团`,
+    toursBody: "现成路线，行程和价格写在各自的路线页上；只有你们一行人，日期你们定。",
+    servicesLabel: "也可以只请我们帮一部分",
+    servicesTitle: "只把需要的部分交给我们。",
+    servicesBody: "代约景点、按天请私人导游，或者把整趟旅行交给我们安排。",
     decisionsLabel: "四个城市决定",
     decisionsTitle: "先看懂这座城市，再处理执行细节。",
     decisionsBody: "本页只负责整座城市的形状：住多久、以哪里为基地、哪个进出门户重要、下一站接哪里。预订步骤与失败补救交给下方的专题实用指南。",
@@ -117,6 +151,15 @@ const ui = {
     ctaBody:
       "여행 날짜, 인원, 대략적인 예산을 남기면 실제 담당자가 무리 없는 동선과 필요한 지원 범위를 함께 정리합니다.",
     ctaButton: "여행 브리프 시작하기",
+    whatLabel: "즐길 거리",
+    whatTitle: (city: string) => `${city}에서 즐길 거리`,
+    whatBody: "꼭 가볼 곳을 모았습니다. 누르면 가 볼 만한 이유와 예약 방법을 볼 수 있습니다.",
+    toursLabel: "프라이빗 투어",
+    toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗 투어`,
+    toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
+    servicesLabel: "일부만 맡기셔도 됩니다",
+    servicesTitle: "필요한 부분만 맡기세요.",
+    servicesBody: "관광지 예약, 하루 단위 프라이빗 가이드, 또는 전체 여행 설계까지.",
     decisionsLabel: "도시를 정하는 네 가지 판단",
     decisionsTitle: "세부 예약보다 도시의 구조를 먼저 이해하세요.",
     decisionsBody: "이 페이지는 체류 기간, 숙소 거점, 주요 관문과 다음 도시라는 큰 틀만 맡습니다. 예약 절차와 문제 해결은 아래의 실용 가이드에서 확인하세요.",
@@ -281,6 +324,18 @@ export function DestinationHubPage({
   const titleSegments = locale === "zh" ? zhHeadingSegments[hubId] : null;
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const publishedRouteLinks = getDestinationPublishedRouteLinks(hubId, locale);
+  // The second version (Beijing first): what to do here, then tours and services as cards.
+  const v2 = cityPageV2[hubId];
+  const citySights = v2 ? sights.filter((sight) => sight.city === hubId) : [];
+  const cityThemes = v2 ? travelInspirationThemes.filter((theme) => (theme.cityIds as readonly string[]).includes(hubId)) : [];
+  const catalog = v2 ? getPublishedPrivateTourCatalog(locale) : [];
+  const cityTours = (v2?.tourSlugs ?? []).map((slug) => {
+    const tour = catalog.find((item) => item.slug === slug);
+    if (!tour) throw new Error(`City page ${hubId} names an unpublished tour: ${slug}`);
+    return tour;
+  });
+  const inspiration = getTravelInspirationCopy(locale);
+  const sightsCopy = getSightsCopy(locale);
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
     ? {
         href: `${attractionReservationPath[locale]}#city-${hubId}`,
@@ -367,6 +422,27 @@ export function DestinationHubPage({
           data-content-body
           id="destination-hub-body"
         >
+          {v2 && citySights.length ? (
+            <section aria-labelledby="destination-what-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityWhat}`}>
+              <div className={destinationStyles.cityBlockHead}>
+                <p>{copy.whatLabel}</p>
+                <h2 id="destination-what-title">{copy.whatTitle(hub.navTitle)}</h2>
+                <p>{copy.whatBody}</p>
+              </div>
+              <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
+                {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
+              </ul>
+              <p className={destinationStyles.cityBlockLinks}>
+                <Link href={sightsPath[locale]}>{sightsCopy.page.allSights}<span aria-hidden="true">→</span></Link>
+                {cityThemes.map((theme) => (
+                  <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
+                    {inspiration.themes[theme.id].name}<span aria-hidden="true">→</span>
+                  </Link>
+                ))}
+              </p>
+            </section>
+          ) : null}
+
           {openingBody.blocks.length > 0 ? (
             <div className={destinationStyles.destinationOpening}>
               <PageFamilyRenderer body={openingBody} />
@@ -434,6 +510,31 @@ export function DestinationHubPage({
             </ul>
           </section>
 
+          {v2 ? (
+            <>
+              <section aria-labelledby="destination-published-routes-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityTours}`}>
+                <div className={destinationStyles.cityBlockHead}>
+                  <p>{copy.toursLabel}</p>
+                  <h2 id="destination-published-routes-title">{copy.toursTitle(hub.navTitle)}</h2>
+                  <p>{copy.toursBody}</p>
+                </div>
+                <ul className={inspirationStyles.tours}>
+                  {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
+                </ul>
+                <p className={destinationStyles.cityBlockLinks}>
+                  <Link href={`${homeCopy.path}tours/`}>{inspiration.hub.allTours}<span aria-hidden="true">→</span></Link>
+                </p>
+              </section>
+              <section aria-labelledby="destination-services-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityServices}`}>
+                <div className={destinationStyles.cityBlockHead}>
+                  <p>{copy.servicesLabel}</p>
+                  <h2 id="destination-services-title">{copy.servicesTitle}</h2>
+                  <p>{copy.servicesBody}</p>
+                </div>
+                <ServiceRows lead="attraction-tickets" locale={locale} />
+              </section>
+            </>
+          ) : (
           <section
             className={destinationStyles.ownerLinks}
             aria-labelledby="destination-published-routes-title"
@@ -462,6 +563,7 @@ export function DestinationHubPage({
               ) : null}
             </ul>
           </section>
+          )}
 
           {visibleSources.length > 0 ? (
             <aside

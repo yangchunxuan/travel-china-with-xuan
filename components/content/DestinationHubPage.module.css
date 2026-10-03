@@ -42,6 +42,88 @@
   padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
 }
 
+/*
+ * The city page's second version (cityPageV2): what to do here opens the
+ * article; tours and services close it, as cards from the Destinations pages
+ * (their tokens come from TravelInspiration.module.css .tokens). Heads match
+ * the decision and owner-link blocks above them.
+ */
+.cityWhat {
+  margin-block: 0 clamp(3rem, 7vw, 5rem);
+}
+
+.cityTours,
+.cityServices {
+  border-block-start: 1px solid var(--hg-color-line);
+  margin-block-start: clamp(3rem, 7vw, 6rem);
+  padding-block-start: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.cityBlockHead {
+  margin-block-end: 1.75rem;
+}
+
+.cityBlockHead > p:first-child {
+  color: var(--hg-color-rust);
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.cityBlockHead h2 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 1rem;
+}
+
+.cityBlockHead > p:last-child {
+  color: var(--hg-color-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 44rem;
+}
+
+/* Inside the article column: three sights to a row, two on phones. */
+.citySightGrid.citySightGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cityBlockLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 1.25rem 0 0;
+}
+
+.cityBlockLinks a {
+  align-items: center;
+  border-block-end: 1px solid var(--hg-color-ink);
+  color: var(--hg-color-ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+@media (max-width: 40rem) {
+  .citySightGrid.citySightGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cityBlockLinks a {
+    border-block-end: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+  }
+}
+
 .stayExample {
   min-width: 0;
 }
