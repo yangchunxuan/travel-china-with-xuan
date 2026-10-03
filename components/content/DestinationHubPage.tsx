@@ -89,17 +89,21 @@ const ui = {
       "Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.",
     ctaButton: "Start my trip brief",
     whatLabel: "Must-See Sights",
-    whatTitle: (city: string) => `What to do in ${city}`,
+    whatTitle: (city: string) => `What to see in ${city}`,
     whatBody: "Each takes half a day to a full day. Open one for why it is worth it and how booking works; the four decisions below give each its day.",
     themeLink: (name: string) => `Trip ideas: ${name}`,
     toursLabel: "Private tours",
     toursTitle: (city: string) => `Private tours that include ${city}`,
-    allToursCount: (count: number, city: string) => `All private tours (${count} include ${city})`,
+    allTours: "All private tours",
     toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
-    bandBody: "Have us plan the whole trip, or just book the sights or a guide. A real person replies, working from your dates and group.",
+    bandTitle: "Hand us the whole trip, or just part of it.",
+    bandBody: "A real person replies to each request, working from your dates and group size.",
     v2Eyebrow: "City guide",
+    v2DecisionsTitle: "Understand the city, then plan the details.",
     v2DecisionsBody: "How many nights, which area to stay in, how to arrive and leave, where to go next. How to book each part is in Travel Advice.",
-    v2DetailedAnswersBody: "The questions this city raises, from tickets to stations, one guide for each.",
+    v2DetailedAnswers: (city: string) => `More on ${city}`,
+    v2DetailedAnswersBody: "From where to stay to getting in and out of the city, one guide for each question.",
+    v2EvidenceBody: "The facts on this page come from the official and primary sources below. Opening times and rules change, so check them again before you go.",
     decisionsLabel: "Four city decisions",
     decisionsTitle: "Understand the city before solving the details.",
     decisionsBody: "This page owns the broad shape: how long to stay, where to base, which gateway matters and what should come next. Booking steps and recovery advice live in the focused Travel Advice below.",
@@ -124,17 +128,21 @@ const ui = {
       "留下日期、人数和大致预算。真人规划师会帮你判断合理路线，以及这趟旅行真正需要哪些支持。",
     ctaButton: "开始填写旅行简报",
     whatLabel: "必去景点",
-    whatTitle: (city: string) => `${city}可以怎么玩`,
+    whatTitle: (city: string) => `${city}必去的几个地方`,
     whatBody: "每处要半天到一整天。点进去看为什么值得去、怎么预约；天数怎么分，看下面的四个决定。",
     themeLink: (name: string) => `旅行灵感：${name}`,
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
-    allToursCount: (count: number, city: string) => `全部私家团（含${city}的共 ${count} 条）`,
+    allTours: "全部私家团",
     toursBody: "现成路线，行程和价格写在各自的路线页上；只接待你们一行人，出发日期你们定。",
-    bandBody: "可以把整趟交给我们，也可以只请我们代约景点或请导游。真人回复，按你们的日期和人数安排。",
+    bandTitle: "整趟交给我们，或只请我们做一部分。",
+    bandBody: "每一项都由真人回复，按你们的日期和人数来安排。",
     v2Eyebrow: "城市指南",
+    v2DecisionsTitle: "先看懂这座城市，再安排细节。",
     v2DecisionsBody: "住几晚、住在哪一区、从哪里进出、下一站去哪；具体怎么预订，看实用指南。",
-    v2DetailedAnswersBody: "这座城市的具体问题，从门票到车站，一篇讲清一件事。",
+    v2DetailedAnswers: (city: string) => `${city}的具体问题`,
+    v2DetailedAnswersBody: "从住哪里到怎么进出城，一篇讲清一件事。",
+    v2EvidenceBody: "本页信息来自下面的官方与一手来源。开放时间和规定会变，出发前请再核对一次。",
     decisionsLabel: "四个城市决定",
     decisionsTitle: "先看懂这座城市，再处理执行细节。",
     decisionsBody: "本页只负责整座城市的形状：住多久、以哪里为基地、哪个进出门户重要、下一站接哪里。预订步骤与失败补救交给下方的专题实用指南。",
@@ -159,18 +167,22 @@ const ui = {
       "여행 날짜, 인원, 대략적인 예산을 남기면 실제 담당자가 무리 없는 동선과 필요한 지원 범위를 함께 정리합니다.",
     ctaButton: "여행 브리프 시작하기",
     whatLabel: "꼭 가볼 명소",
-    whatTitle: (city: string) => `${city}에서 즐길 거리`,
-    whatBody: "모두 반나절에서 하루가 걸리는 곳입니다. 누르면 가 볼 만한 이유와 예약 방법을, 아래 네 가지 결정에서 하루 배분을 볼 수 있습니다.",
+    whatTitle: (city: string) => `${city}에서 꼭 가볼 곳`,
+    whatBody: "모두 반나절에서 하루가 걸리는 곳입니다. 누르면 가 볼 만한 이유와 예약 방법을, 아래 네 가지 판단에서 하루 배분을 볼 수 있습니다.",
     themeLink: (name: string) => `테마 여행: ${name}`,
     toursLabel: "프라이빗 투어",
     // "프라이빗 투어" stays on one line.
     toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗${String.fromCharCode(0xa0)}투어`,
-    allToursCount: (count: number, city: string) => `프라이빗 투어 전체 보기 (${city} 포함 ${count}개)`,
+    allTours: "프라이빗 투어 전체 보기",
     toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
-    bandBody: "전체 여행을 맡기셔도, 관광지 예약이나 가이드만 맡기셔도 됩니다. 실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
+    bandTitle: "전체 여행도, 일부만도 맡기실 수 있습니다.",
+    bandBody: "어느 쪽이든 실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
     v2Eyebrow: "도시 가이드",
+    v2DecisionsTitle: "도시의 구조를 먼저 보고, 세부 일정을 정하세요.",
     v2DecisionsBody: "몇 박을 할지, 어느 지역에 묵을지, 어디로 들어오고 나갈지, 다음엔 어디로 갈지. 예약 방법은 실용 가이드에서 확인하세요.",
-    v2DetailedAnswersBody: "입장권부터 기차역까지, 이 도시에서 생기는 질문을 한 편에 하나씩 정리했습니다.",
+    v2DetailedAnswers: (city: string) => `${city} 더 알아보기`,
+    v2DetailedAnswersBody: "숙소부터 오가는 교통까지, 질문 하나에 한 편씩 정리했습니다.",
+    v2EvidenceBody: "이 페이지의 정보는 아래 공식·1차 출처를 바탕으로 했습니다. 운영 시간과 규정은 바뀔 수 있으니 출발 전에 다시 확인하세요.",
     decisionsLabel: "도시를 정하는 네 가지 판단",
     decisionsTitle: "세부 예약보다 도시의 구조를 먼저 이해하세요.",
     decisionsBody: "이 페이지는 체류 기간, 숙소 거점, 주요 관문과 다음 도시라는 큰 틀만 맡습니다. 예약 절차와 문제 해결은 아래의 실용 가이드에서 확인하세요.",
@@ -348,8 +360,6 @@ export function DestinationHubPage({
   const inspiration = getTravelInspirationCopy(locale);
   const sightsCopy = getSightsCopy(locale);
   // How many published tours pass through this city (by the city's Chinese name on each route line).
-  const cityZhName = v2 ? getDestinationHubEntry(hubId, "zh").navTitle : "";
-  const cityTourCount = v2 ? getPublishedPrivateTourCatalog("zh").filter((tour) => tour.comparison.route.includes(cityZhName)).length : 0;
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
     ? {
         href: `${attractionReservationPath[locale]}#city-${hubId}`,
@@ -445,17 +455,17 @@ export function DestinationHubPage({
                 <section aria-labelledby="destination-what-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityWhat}`}>
                   <div className={destinationStyles.cityBlockHead}>
                     <p>{copy.whatLabel}</p>
-                    <h2 id="destination-what-title">{copy.whatTitle(hub.navTitle)}</h2>
-                    <p>{copy.whatBody}</p>
+                    <h2 id="destination-what-title"><KeepWords locale={locale} text={copy.whatTitle(hub.navTitle)} /></h2>
+                    <p><KeepWords locale={locale} text={copy.whatBody} /></p>
                   </div>
                   <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
                     {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
                   </ul>
                   <p className={destinationStyles.cityBlockLinks}>
-                    <Link href={sightsPath[locale]}>{sightsCopy.page.allSights}<span aria-hidden="true">→</span></Link>
+                    <Link href={sightsPath[locale]}><span className={destinationStyles.cityLinkText}>{sightsCopy.page.allSights}</span><span aria-hidden="true">→</span></Link>
                     {cityThemes.map((theme) => (
                       <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
-                        {copy.themeLink(inspiration.themes[theme.id].name)}<span aria-hidden="true">→</span>
+                        <span className={destinationStyles.cityLinkText}>{copy.themeLink(inspiration.themes[theme.id].name)}</span><span aria-hidden="true">→</span>
                       </Link>
                     ))}
                   </p>
@@ -465,8 +475,8 @@ export function DestinationHubPage({
                 <div className={destinationStyles.decisionIntro}>
                   <div>
                     <p>{copy.decisionsLabel}</p>
-                    <h2 id="destination-signals-title">{copy.decisionsTitle}</h2>
-                    <p>{copy.v2DecisionsBody}</p>
+                    <h2 id="destination-signals-title"><KeepWords keep={["再安排细节"]} locale={locale} text={copy.v2DecisionsTitle} /></h2>
+                    <p><KeepWords locale={locale} text={copy.v2DecisionsBody} /></p>
                   </div>
                   <Link href={`${homeCopy.path}guides/`}>
                     {copy.adviceAction}<span aria-hidden="true">→</span>
@@ -514,8 +524,8 @@ export function DestinationHubPage({
               <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
                 <div>
                   <p>{copy.detailedAnswersLabel}</p>
-                  <h2 id="destination-owner-links-title">{copy.detailedAnswers}</h2>
-                  <p>{copy.v2DetailedAnswersBody}</p>
+                  <h2 id="destination-owner-links-title"><KeepWords locale={locale} text={copy.v2DetailedAnswers(hub.navTitle)} /></h2>
+                  <p><KeepWords locale={locale} text={copy.v2DetailedAnswersBody} /></p>
                 </div>
                 <ul>
                   {ownerGuideIds.map((guideId) => {
@@ -537,7 +547,7 @@ export function DestinationHubPage({
                     </p>
                   </header>
                   <div className={destinationStyles.evidenceBody}>
-                    <p>{copy.evidenceBody}</p>
+                    <p>{copy.v2EvidenceBody}</p>
                     <ul>
                       {visibleSources.map((source) => (
                         <li key={source.url}>
@@ -554,14 +564,14 @@ export function DestinationHubPage({
               <section aria-labelledby="destination-published-routes-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityTours}`}>
                 <div className={destinationStyles.cityBlockHead}>
                   <p>{copy.toursLabel}</p>
-                  <h2 id="destination-published-routes-title">{copy.toursTitle(hub.navTitle)}</h2>
-                  <p>{copy.toursBody}</p>
+                  <h2 id="destination-published-routes-title"><KeepWords locale={locale} text={copy.toursTitle(hub.navTitle)} /></h2>
+                  <p><KeepWords locale={locale} text={copy.toursBody} /></p>
                 </div>
                 <ul className={inspirationStyles.tours}>
                   {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                 </ul>
                 <p className={destinationStyles.cityBlockLinks}>
-                  <Link href={`${homeCopy.path}tours/`}>{copy.allToursCount(cityTourCount, hub.navTitle)}<span aria-hidden="true">→</span></Link>
+                  <Link href={`${homeCopy.path}tours/`}><span className={destinationStyles.cityLinkText}>{copy.allTours}</span><span aria-hidden="true">→</span></Link>
                 </p>
               </section>
             </>
@@ -697,7 +707,7 @@ export function DestinationHubPage({
           >
             <div>
               <p className={destinationStyles.cityBandLabel}>{copy.ctaLabel}</p>
-              <h2 id="destination-band-title"><KeepWords locale={locale} text={copy.ctaTitle} /></h2>
+              <h2 id="destination-band-title"><KeepWords locale={locale} text={copy.bandTitle} /></h2>
               <p><KeepWords locale={locale} text={copy.bandBody} /></p>
             </div>
             <ServiceRows locale={locale} />

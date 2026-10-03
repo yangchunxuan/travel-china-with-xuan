@@ -62,22 +62,28 @@
   margin-block-end: 1.75rem;
 }
 
-.cityBlockHead > p:first-child {
-  color: var(--hg-color-rust);
-  font-size: 0.72rem;
-  font-weight: 760;
-  letter-spacing: 0.08em;
+/* Labels and headings as the decision and deeper-answer heads (.destinationRoot rules below). */
+.cityBlockHead > p:first-child,
+.cityBandLabel.cityBandLabel {
+  color: var(--hg-color-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
   margin: 0 0 0.75rem;
-  text-transform: uppercase;
 }
 
-.cityBlockHead h2 {
+.cityBlockHead h2,
+.cityBand h2 {
   font-family: var(--hg-editorial);
-  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
   margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+.destinationRoot[data-homeground-locale="zh"] :is(.cityBlockHead h2, .cityBand h2) {
+  letter-spacing: 0;
 }
 
 .cityBlockHead > p:last-child {
@@ -88,8 +94,9 @@
 }
 
 /*
- * Inside the article column: three sights to a row on six tracks, so a last
- * row of two takes half each (3 + 2) and a lone last card sits in the middle.
+ * Inside the article column: three sights to a row on six tracks. When the
+ * count leaves two over, the first two (the city's headline sights) take
+ * half each (2 + 3); four are 2 + 2; a lone last card sits in the middle.
  */
 .citySightGrid.citySightGrid {
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -99,19 +106,23 @@
   grid-column: span 2;
 }
 
-.citySightGrid.citySightGrid > li:nth-child(3n + 1):nth-last-child(2),
-.citySightGrid.citySightGrid > li:nth-child(3n + 2):last-child {
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(3n + 2),
+.citySightGrid.citySightGrid > li:nth-child(2):nth-last-child(3n + 1),
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(4),
+.citySightGrid.citySightGrid > li:first-child:nth-last-child(4) ~ li {
   grid-column: span 3;
 }
 
-.citySightGrid.citySightGrid > li:nth-child(3n + 1):last-child {
+.citySightGrid.citySightGrid > li:nth-child(3n + 1):last-child:not(:nth-child(4)) {
   grid-column: 3 / span 2;
 }
 
-/* The two wider cards keep the row's photo height (4:3 at a third is about 2:1 at a half). */
+/* The wider cards keep the row's photo height (4:3 at a third is about 2:1 at a half). */
 @media (min-width: 40.0625rem) {
-  .citySightGrid.citySightGrid > li:nth-child(3n + 1):nth-last-child(2) > a > span:first-child,
-  .citySightGrid.citySightGrid > li:nth-child(3n + 2):last-child > a > span:first-child {
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(3n + 2) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:nth-child(2):nth-last-child(3n + 1) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(4) > a > span:first-child,
+  .citySightGrid.citySightGrid > li:first-child:nth-last-child(4) ~ li > a > span:first-child {
     aspect-ratio: 2 / 1;
   }
 }
@@ -170,6 +181,9 @@
 
   .cityBlockLinks a {
     border-block-end: 0;
+  }
+
+  .cityLinkText {
     text-decoration: underline;
     text-underline-offset: 0.25rem;
   }
@@ -188,24 +202,6 @@
   padding: clamp(1.75rem, 4vw, 3.5rem);
   /* The article's column: 90rem at most, inside its side padding. */
   width: calc(min(100%, 90rem) - 2 * clamp(1rem, 5vw, 5rem));
-}
-
-.cityBand h2 {
-  font-family: var(--hg-editorial);
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
-  font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  margin: 0 0 1rem;
-}
-
-.cityBandLabel.cityBandLabel {
-  color: var(--hg-color-rust);
-  font-size: 0.72rem;
-  font-weight: 760;
-  letter-spacing: 0.08em;
-  margin: 0 0 0.75rem;
-  text-transform: uppercase;
 }
 
 .stayExample {
@@ -675,6 +671,7 @@
 
 .destinationRoot .decisionIntro > a {
   background: #f2f1ef;
+  justify-self: end;
   border: 0;
   border-radius: 999px;
   font-size: 0.875rem;
@@ -833,6 +830,11 @@
   .destinationRoot .decisionIntro > a,
   .destinationRoot .ownerLinks a {
     font-size: 0.875rem;
+  }
+
+  /* One column: the advice pill starts the row again. */
+  .destinationRoot .decisionIntro > a {
+    justify-self: start;
   }
 
   .destinationRoot .evidenceHeader h2,

@@ -365,3 +365,18 @@ test("a city joins the second version only with at least three sights and two pu
   // Three sights to a row on six tracks, a last row of two in halves.
   assert.match(styles, /\.citySightGrid\.citySightGrid \{\s*grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/);
 });
+
+test("the stay-length card shows the recommended row, with units, in every language", async () => {
+  const { projectDestinationOverview } = await import("../../lib/destinationOverviewProjection.ts");
+  const nights = async (locale) => {
+    const { default: body } = await import(`../../content/destinations/beijing/body.${locale}.ts`);
+    return projectDestinationOverview(body, "beijing", locale).find((signal) => signal.id === "nights");
+  };
+  const [en, zh, ko] = await Promise.all(["en", "zh", "ko"].map(nights));
+  // The Korean "minimum" row (3박) used to match before the recommended one.
+  assert.equal(ko.emphasis, "권장 첫 방문");
+  assert.match(ko.summary, /^4~5박 · 3~4일 · /u);
+  assert.equal(zh.emphasis, "推荐初访");
+  // English cells are bare numbers under "Hotel nights" and "Likely complete days".
+  assert.match(en.summary, /^4–5 nights · 3–4 days · /u);
+});

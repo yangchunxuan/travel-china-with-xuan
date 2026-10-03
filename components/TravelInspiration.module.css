@@ -473,6 +473,54 @@
   grid-row: span 2;
 }
 
+/* The horizontal card: the words and the action together in the middle of
+   the photo's height, not the words at the top and the action at the foot. */
+@media (min-width: 40.0625rem) and (max-width: 61.25rem) {
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard {
+    grid-template-rows: 1fr auto auto 1fr;
+    /* The photo runs to the card's foot; the empty rows keep the words off it. */
+    padding-bottom: 0;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .tourMedia {
+    grid-row: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .tourText {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .tours > li:last-child:nth-child(2n + 1):not(:first-child) .tourCard > .cardAction {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.9rem;
+  }
+}
+
+@media (min-width: 61.3125rem) {
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard {
+    grid-template-rows: 1fr auto auto 1fr;
+    /* The photo runs to the card's foot; the empty rows keep the words off it. */
+    padding-bottom: 0;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .tourMedia {
+    grid-row: 1 / -1;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .tourText {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .tours > li:last-child:nth-child(3n + 1):not(:first-child) .tourCard > .cardAction {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.9rem;
+  }
+}
+
 /* On three columns the tile takes every slot left in its row. */
 @media (min-width: 61.3125rem) {
   .planTileItem {
