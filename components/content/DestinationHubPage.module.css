@@ -112,9 +112,32 @@
   text-decoration: none;
 }
 
+.cityBlockLinks a span {
+  display: inline-block;
+}
+
+/* Phones: the sights as compact rows (photo beside the words), as the sights pages' strips. */
 @media (max-width: 40rem) {
   .citySightGrid.citySightGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .citySightGrid.citySightGrid > li > a {
+    align-items: center;
+    column-gap: 0.9rem;
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    padding: 0.6rem;
+  }
+
+  .citySightGrid.citySightGrid > li > a > span:first-child {
+    aspect-ratio: 1;
+    border-radius: 0.6rem;
+  }
+
+  .citySightGrid.citySightGrid > li > a > span:last-child {
+    padding: 0;
   }
 
   .cityBlockLinks a {

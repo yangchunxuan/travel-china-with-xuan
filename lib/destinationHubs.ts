@@ -290,7 +290,7 @@ export const destinationHubRegistry = [
               note: "남부 축; 반나절에서 하루",
             },
             northwest: {
-              label: "이허위안 · 서북부",
+              label: "이화원 · 서북부",
               note: "충실한 반나절, 흔히 하루에 가까움",
             },
             gulou: {

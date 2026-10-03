@@ -87,13 +87,15 @@ const ui = {
     ctaBody:
       "Share your dates, group size and rough budget. A real person will help you work out a sensible route and the support you actually need.",
     ctaButton: "Start my trip brief",
-    whatLabel: "What to do",
+    whatLabel: "Must-See Sights",
     whatTitle: (city: string) => `What to do in ${city}`,
-    whatBody: "The sights worth the trip. Open one to see why it is worth it and how booking works.",
+    whatBody: "Each takes half a day to a full day. Open one for why it is worth it and how booking works; the four decisions below give each its day.",
+    themeLink: (name: string) => `Trip ideas: ${name}`,
     toursLabel: "Private tours",
-    toursTitle: (city: string) => `Private tours with ${city}`,
+    toursTitle: (city: string) => `Private tours that include ${city}`,
+    allToursCount: (count: number, city: string) => `All private tours (${count} include ${city})`,
     toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
-    servicesLabel: "Or just part of it",
+    servicesLabel: "Single services",
     servicesTitle: "Hand us only what you need.",
     servicesBody: "Attraction bookings, a private guide by the day, or the whole trip planned around you.",
     decisionsLabel: "Four city decisions",
@@ -119,14 +121,16 @@ const ui = {
     ctaBody:
       "留下日期、人数和大致预算。真人规划师会帮你判断合理路线，以及这趟旅行真正需要哪些支持。",
     ctaButton: "开始填写旅行简报",
-    whatLabel: "可以怎么玩",
+    whatLabel: "必去景点",
     whatTitle: (city: string) => `${city}可以怎么玩`,
-    whatBody: "必去的几个地方，点进去看为什么值得去、怎么预约。",
+    whatBody: "每处要半天到一整天。点进去看为什么值得去、怎么预约；天数怎么分，看下面的四个决定。",
+    themeLink: (name: string) => `旅行灵感：${name}`,
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
-    toursBody: "现成路线，行程和价格写在各自的路线页上；只有你们一行人，日期你们定。",
-    servicesLabel: "也可以只请我们帮一部分",
-    servicesTitle: "只把需要的部分交给我们。",
+    allToursCount: (count: number, city: string) => `全部私家团（含${city}的共 ${count} 条）`,
+    toursBody: "现成路线，行程和价格写在各自的路线页上；只接待你们一行人，出发日期你们定。",
+    servicesLabel: "单项服务",
+    servicesTitle: "只请我们做一部分。",
     servicesBody: "代约景点、按天请私人导游，或者把整趟旅行交给我们安排。",
     decisionsLabel: "四个城市决定",
     decisionsTitle: "先看懂这座城市，再处理执行细节。",
@@ -151,13 +155,16 @@ const ui = {
     ctaBody:
       "여행 날짜, 인원, 대략적인 예산을 남기면 실제 담당자가 무리 없는 동선과 필요한 지원 범위를 함께 정리합니다.",
     ctaButton: "여행 브리프 시작하기",
-    whatLabel: "즐길 거리",
+    whatLabel: "꼭 가볼 명소",
     whatTitle: (city: string) => `${city}에서 즐길 거리`,
-    whatBody: "꼭 가볼 곳을 모았습니다. 누르면 가 볼 만한 이유와 예약 방법을 볼 수 있습니다.",
+    whatBody: "모두 반나절에서 하루가 걸리는 곳입니다. 누르면 가 볼 만한 이유와 예약 방법을, 아래 네 가지 결정에서 하루 배분을 볼 수 있습니다.",
+    themeLink: (name: string) => `테마 여행: ${name}`,
     toursLabel: "프라이빗 투어",
-    toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗 투어`,
+    // "프라이빗 투어" stays on one line.
+    toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗${String.fromCharCode(0xa0)}투어`,
+    allToursCount: (count: number, city: string) => `프라이빗 투어 전체 보기 (${city} 포함 ${count}개)`,
     toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
-    servicesLabel: "일부만 맡기셔도 됩니다",
+    servicesLabel: "단독 서비스",
     servicesTitle: "필요한 부분만 맡기세요.",
     servicesBody: "관광지 예약, 하루 단위 프라이빗 가이드, 또는 전체 여행 설계까지.",
     decisionsLabel: "도시를 정하는 네 가지 판단",
@@ -336,6 +343,9 @@ export function DestinationHubPage({
   });
   const inspiration = getTravelInspirationCopy(locale);
   const sightsCopy = getSightsCopy(locale);
+  // How many published tours pass through this city (by the city's Chinese name on each route line).
+  const cityZhName = v2 ? getDestinationHubEntry(hubId, "zh").navTitle : "";
+  const cityTourCount = v2 ? getPublishedPrivateTourCatalog("zh").filter((tour) => tour.comparison.route.includes(cityZhName)).length : 0;
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
     ? {
         href: `${attractionReservationPath[locale]}#city-${hubId}`,
@@ -436,7 +446,7 @@ export function DestinationHubPage({
                 <Link href={sightsPath[locale]}>{sightsCopy.page.allSights}<span aria-hidden="true">→</span></Link>
                 {cityThemes.map((theme) => (
                   <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
-                    {inspiration.themes[theme.id].name}<span aria-hidden="true">→</span>
+                    {copy.themeLink(inspiration.themes[theme.id].name)}<span aria-hidden="true">→</span>
                   </Link>
                 ))}
               </p>
@@ -522,7 +532,7 @@ export function DestinationHubPage({
                   {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                 </ul>
                 <p className={destinationStyles.cityBlockLinks}>
-                  <Link href={`${homeCopy.path}tours/`}>{inspiration.hub.allTours}<span aria-hidden="true">→</span></Link>
+                  <Link href={`${homeCopy.path}tours/`}>{copy.allToursCount(cityTourCount, hub.navTitle)}<span aria-hidden="true">→</span></Link>
                 </p>
               </section>
               <section aria-labelledby="destination-services-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityServices}`}>
@@ -531,7 +541,8 @@ export function DestinationHubPage({
                   <h2 id="destination-services-title">{copy.servicesTitle}</h2>
                   <p>{copy.servicesBody}</p>
                 </div>
-                <ServiceRows lead="attraction-tickets" locale={locale} />
+                {/* Full-trip planning is the contact block just below, so it is not repeated here. */}
+                <ServiceRows lead="attraction-tickets" locale={locale} omit={["trip-support"]} />
               </section>
             </>
           ) : (

@@ -58,7 +58,8 @@
 }
 
 .page h3,
-.page h4 {
+.page h4,
+.tokens .tourText h4 {
   font-weight: 620;
   margin: 0;
 }
