@@ -25,6 +25,8 @@ import {
   getSearchHubLanguagePaths,
 } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
+import { travelInspirationPath } from "../lib/travelInspiration";
+import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -212,6 +214,7 @@ export function DestinationsHubPage({
   const copy = getDestinationsHubCopy(locale);
   const platform = getSearchPlatformCopy(locale);
   const section = platform.sections.explore;
+  const inspiration = getTravelInspirationCopy(locale);
   const languagePaths = getSearchHubLanguagePaths("explore");
   const placeCollections = searchCollections.filter(
     (collection) => collection.section === "explore",
@@ -254,6 +257,10 @@ export function DestinationsHubPage({
                 <p className={styles.eyebrow}>{section.eyebrow}</p>
                 <h1><AnimatedHeadline locale={locale} text={section.title} /></h1>
                 <p className={styles.lede}>{section.description}</p>
+                <p className={styles.inspirationLink}>
+                  {inspiration.fromCities.lead}{" "}
+                  <Link href={travelInspirationPath[locale]}>{inspiration.fromCities.label}<span aria-hidden="true"> →</span></Link>
+                </p>
               </div>
               <aside className={styles.scope} aria-labelledby="destination-scope-title">
                 <p id="destination-scope-title">{section.scopeTitle}</p>

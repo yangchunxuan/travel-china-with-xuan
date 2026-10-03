@@ -1,0 +1,812 @@
+/*
+ * /inspiration/ and /inspiration/<theme>/. The services pages' Grok language
+ * (white page, #f9f8f6 tiles, ink #0a0a0a, editorial headlines, 48px pills),
+ * with photography doing the inspiring and never hazed over: cards lift a
+ * little and their photo eases in on hover. Sections below the fold reveal
+ * once (RevealOnce), their cards settling left to right (--d, set per card).
+ * Motion is opacity/transform only, and reduced motion shows the finished
+ * state.
+ */
+.page {
+  --ink: #0a0a0a;
+  --muted: rgb(10 10 10 / 62%);
+  --rule: rgb(10 10 10 / 10%);
+  --tile: #f9f8f6;
+  --paper: #fff;
+  --focus: var(--hg-color-focus, #b14f37);
+  --content: 77rem;
+  --gutter: 1.5rem;
+  --section: 6rem;
+  --radius: 1rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.page main > * {
+  padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+}
+
+.page h1,
+.page h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.page h1 {
+  font-size: clamp(2.75rem, 5.6vw, 4.75rem);
+  line-height: 1.02;
+  margin: 1rem 0 0;
+}
+
+.page h1 > span {
+  display: block;
+}
+
+.page h2 {
+  font-size: clamp(2rem, 3.6vw, 2.875rem);
+  line-height: 1.08;
+  margin: 0 0 2rem;
+}
+
+.page h3,
+.page h4 {
+  font-weight: 620;
+  margin: 0;
+}
+
+.page :where(a):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin: 1.5rem 0 0;
+  max-width: 38rem;
+  text-wrap: pretty;
+}
+
+.primaryButton {
+  align-items: center;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: var(--paper);
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 550;
+  gap: 0.625rem;
+  justify-content: center;
+  line-height: 1.3;
+  min-height: 3rem;
+  padding: 0.75rem 1.375rem;
+  text-decoration: none;
+}
+
+.primaryButton svg,
+.textLink svg {
+  transition: transform 300ms var(--ease);
+}
+
+.textLink {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3.5rem, 6vw, 5rem);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  list-style: none;
+  margin: 0 0 clamp(1.5rem, 3.5vw, 3rem);
+  padding: 0;
+}
+
+.breadcrumb li {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.8125rem;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  min-height: 2.75rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* Words lead (wider column), so each H1 phrase keeps to one line. */
+.themeHeroGrid {
+  align-items: start;
+  display: grid;
+  gap: 2.5rem clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.themeHero h1 {
+  font-size: clamp(2.5rem, 4.4vw, 4rem);
+}
+
+.themeHero .primaryButton {
+  margin-top: 2rem;
+}
+
+.heroMedia {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  margin: 0;
+  overflow: hidden;
+}
+
+.heroMedia img,
+.themeMedia img,
+.tourMedia img,
+.cityThumb img {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Sections ---------- */
+
+/* An in-page jump lands below the sticky header. */
+.section,
+.group {
+  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 1.5rem);
+}
+
+.section {
+  padding-block: 0 var(--section);
+}
+
+.sectionHead {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.sectionHead h2 {
+  margin: 0;
+}
+
+.sectionHead p {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 34rem;
+  text-wrap: pretty;
+}
+
+.cardAction {
+  align-items: center;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.cardAction svg {
+  transition: transform 300ms var(--ease);
+}
+
+/* ---------- Theme cards (hub): one featured, later ones two to a row ---------- */
+
+.themes {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.themes > li:first-child {
+  grid-column: 1 / -1;
+}
+
+.themeCard {
+  background: var(--tile);
+  border-radius: var(--radius);
+  color: inherit;
+  display: grid;
+  height: 100%;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.themes > li:first-child .themeCard {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+
+/* Side by side, the photo fills the card's height, whatever the text needs. */
+.themes > li:first-child .themeMedia {
+  aspect-ratio: auto;
+  min-block-size: 24rem;
+}
+
+.themeMedia {
+  aspect-ratio: 16 / 10;
+  display: block;
+  overflow: hidden;
+}
+
+.themeText {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.themeCount {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 550;
+}
+
+.themeText h3 {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-top: 0.75rem;
+}
+
+.themeTeaser {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 26rem;
+}
+
+/* The lengths the page is grouped by: a plain preview (the card is the link). */
+.themeGroups {
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+}
+
+.themeGroups > span {
+  align-items: baseline;
+  display: flex;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+.themeGroups small {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* ---------- Tour cards (theme) ---------- */
+
+.group + .group {
+  margin-top: 3.5rem;
+}
+
+.groupHead {
+  align-items: baseline;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.groupHead h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.groupHead p {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 44rem;
+  text-wrap: pretty;
+}
+
+.tours {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tours > li {
+  display: flex;
+}
+
+.tourCard,
+.planTile {
+  background: var(--tile);
+  border-radius: var(--radius);
+  color: inherit;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 1.25rem;
+  text-decoration: none;
+  transition: transform 300ms var(--ease);
+}
+
+.tourMedia {
+  aspect-ratio: 4 / 3;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.days {
+  background: rgb(255 255 255 / 92%);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  line-height: 1;
+  padding: 0.45rem 0.7rem;
+  position: absolute;
+}
+
+.tourText {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.1rem 1.25rem 0;
+}
+
+.tourText h4 {
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.route,
+.fit {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.route {
+  font-weight: 550;
+}
+
+.tourCard .cardAction {
+  padding-inline: 1.25rem;
+}
+
+/* Ends a row that is not full: the way to a trip planned around you, in
+   the service rows' look (white, hairline, icon tile). */
+.planTile {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-sizing: border-box;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 1.75rem;
+  transition:
+    transform 300ms var(--ease),
+    border-color 150ms ease;
+}
+
+.planIcon {
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  block-size: 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  inline-size: 2.5rem;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.planTile strong {
+  font-family: var(--hg-editorial);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.planTile > span:not(.cardAction) {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  max-width: 20rem;
+}
+
+.planTile .cardAction {
+  margin-top: 0.4rem;
+  padding-top: 0;
+}
+
+/* ---------- City strip ---------- */
+
+.cityStrip {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cityStrip > li {
+  display: flex;
+}
+
+.cityRow {
+  align-items: center;
+  background: var(--tile);
+  border-radius: 0.875rem;
+  color: inherit;
+  column-gap: 0.9rem;
+  display: grid;
+  flex: 1;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  padding: 0.6rem;
+  text-decoration: none;
+  transition: transform 300ms var(--ease);
+}
+
+.cityThumb {
+  aspect-ratio: 1;
+  border-radius: 0.6rem;
+  display: block;
+  overflow: hidden;
+}
+
+.cityText {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.cityText strong {
+  font-size: 1rem;
+  font-weight: 620;
+}
+
+.cityText > span {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+/* ---------- Closing band ---------- */
+
+.cta {
+  align-items: start;
+  background: var(--tile);
+  display: grid;
+  gap: 2rem clamp(2.5rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding-block: clamp(3.5rem, 6vw, 5rem);
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 30rem;
+  text-wrap: pretty;
+}
+
+.cta .textLink {
+  margin-top: 1rem;
+}
+
+.services {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.serviceRow {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 0.875rem;
+  color: inherit;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  transition: border-color 150ms ease;
+}
+
+.serviceIcon {
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  block-size: 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  inline-size: 2.5rem;
+  justify-content: center;
+}
+
+.serviceText {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.serviceText strong {
+  font-size: 0.9375rem;
+  font-weight: 620;
+}
+
+.serviceText span {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.serviceArrow {
+  transition: transform 300ms var(--ease);
+}
+
+/* ---------- Hover (pointer devices only) ---------- */
+
+.themeMedia img,
+.tourMedia img,
+.cityThumb img {
+  transition: transform 600ms var(--ease);
+}
+
+@media (hover: hover) {
+  .tourCard:hover,
+  .planTile:hover,
+  .cityRow:hover {
+    transform: translateY(-3px);
+  }
+
+  .themeCard:hover img,
+  .tourCard:hover img,
+  .cityRow:hover img {
+    transform: scale(1.03);
+  }
+
+  .themeCard:hover .cardAction svg,
+  .tourCard:hover .cardAction svg,
+  .planTile:hover .cardAction svg,
+  .serviceRow:hover .serviceArrow,
+  .primaryButton:hover svg,
+  .textLink:hover svg {
+    transform: translateX(3px);
+  }
+
+  .serviceRow:hover {
+    border-color: rgb(10 10 10 / 28%);
+  }
+
+  .planTile:hover {
+    border-color: rgb(10 10 10 / 28%);
+  }
+}
+
+/* ---------- Reveal once ---------- */
+
+.page [data-reveal="pending"] li {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.page [data-reveal="in"] li {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 500ms ease var(--d, 0ms),
+    transform 700ms var(--ease) var(--d, 0ms);
+}
+
+.page [data-reveal="pending"] :is(h2, h3, p, .textLink) {
+  opacity: 0;
+}
+
+.page [data-reveal="in"] :is(h2, h3, p, .textLink) {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+/* ---------- Locale ---------- */
+
+.page[data-homeground-locale="zh"] h1,
+.page[data-homeground-locale="ko"] h1 {
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.page[data-homeground-locale="zh"] .themeHero h1,
+.page[data-homeground-locale="ko"] .themeHero h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.page[data-homeground-locale="zh"] :is(h2, .themeText h3, .planTile strong),
+.page[data-homeground-locale="ko"] :is(h2, .themeText h3, .planTile strong) {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ---------- Layout ---------- */
+
+@media (max-width: 61.25rem) {
+  .themeHeroGrid,
+  .cta,
+  .themes > li:first-child .themeCard {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .themes > li:first-child .themeMedia {
+    aspect-ratio: 16 / 10;
+    min-block-size: 0;
+  }
+
+  .themes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tours {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cityStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .page {
+    --gutter: 1rem;
+    --section: 4rem;
+  }
+
+  /* The routes carry photos; the words lead straight to them. */
+  .heroMedia {
+    display: none;
+  }
+
+  .tours {
+    gap: 0.75rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Phones: a photo beside the words (as the tours list does), so eight
+     routes stay a short scroll. */
+  .tourCard {
+    align-items: start;
+    column-gap: 0.9rem;
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    padding: 0.75rem;
+  }
+
+  .tourMedia {
+    aspect-ratio: 1;
+    border-radius: 0.6rem;
+    grid-row: span 2;
+  }
+
+  .tourText {
+    gap: 0.3rem;
+    padding: 0;
+  }
+
+  .tourText h4 {
+    font-size: 0.9375rem;
+  }
+
+  .tourCard .cardAction {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0 0;
+  }
+
+  .days {
+    font-size: 0.6875rem;
+    inset-block-start: 0.4rem;
+    inset-inline-start: 0.4rem;
+    padding: 0.3rem 0.45rem;
+  }
+
+  /* The planning tile is a desktop row-filler; phones reach it in the band below. */
+  .tours > .planTileItem {
+    display: none;
+  }
+
+  /* Balanced CJK titles strand "·" at the end of line 1; break greedily. */
+  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .tourText h4 {
+    text-wrap: pretty;
+  }
+
+  /* Four crumbs wrap on a phone: "Destinations" stays in the JSON-LD only. */
+  .breadcrumb li:nth-child(2):not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  .cityStrip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cityRow {
+    grid-template-columns: 4rem minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tourCard,
+  .planTile,
+  .cityRow,
+  .serviceRow,
+  .themeMedia img,
+  .tourMedia img,
+  .cityThumb img,
+  .cardAction svg,
+  .serviceArrow,
+  .primaryButton svg,
+  .textLink svg {
+    transition: none;
+  }
+
+  .page [data-reveal] li,
+  .page [data-reveal] :is(h2, h3, p, .textLink) {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -111,6 +111,24 @@
   text-wrap: pretty;
 }
 
+/* The second way into Destinations (the menu's "Travel Inspiration" row). */
+.inspirationLink {
+  color: var(--destination-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+/* A full tap target: on short phones this is the only way in. */
+.inspirationLink a {
+  align-items: center;
+  color: var(--hg-color-ink, #141413);
+  display: inline-flex;
+  font-weight: 600;
+  min-block-size: 2.75rem;
+  text-underline-offset: 0.25rem;
+}
+
 /* "What do you need to decide?" sits in one quiet tile beside the title. */
 .scope {
   background: var(--destination-tile);

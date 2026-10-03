@@ -19,6 +19,17 @@ export type HomegroundServiceNavigationId =
   | "english-guides"
   | "trip-support";
 
+/**
+ * The destinations menu, in the same pattern: "Destinations" opens the city
+ * index, and the menu adds the ways in that are not a city, beginning with
+ * travel inspiration by theme. Kept to a few rows, like Services.
+ */
+export type HomegroundDestinationNavigationId = "cities" | "inspiration";
+
+export type HomegroundSubmenuId =
+  | HomegroundServiceNavigationId
+  | HomegroundDestinationNavigationId;
+
 interface HomegroundPrimaryNavigationItemCopy {
   label: string;
   description: string;
@@ -32,8 +43,10 @@ interface HomegroundNavigationModelCopy {
     HomegroundPrimaryNavigationItemCopy
   >;
   services: Record<HomegroundServiceNavigationId, HomegroundPrimaryNavigationItemCopy>;
-  /** The accessible name of the button that opens the services menu. */
+  destinations: Record<HomegroundDestinationNavigationId, HomegroundPrimaryNavigationItemCopy>;
+  /** The accessible names of the buttons that open each menu. */
   servicesToggle: string;
+  destinationsToggle: string;
 }
 
 export interface HomegroundPrimaryNavigationItem
@@ -42,10 +55,16 @@ export interface HomegroundPrimaryNavigationItem
   id: HomegroundPrimaryNavigationId;
 }
 
-export interface HomegroundServiceNavigationItem
+export interface HomegroundSubmenuItem
   extends HomegroundPrimaryNavigationItemCopy {
   href: string;
-  id: HomegroundServiceNavigationId;
+  id: HomegroundSubmenuId;
+}
+
+/** A primary item that opens a menu: its rows and its toggle's accessible name. */
+export interface HomegroundSubmenu {
+  entries: readonly HomegroundSubmenuItem[];
+  toggle: string;
 }
 
 export const homegroundPrimaryNavigationIds = [
@@ -62,13 +81,18 @@ export const homegroundServiceNavigationIds = [
   "trip-support",
 ] as const satisfies readonly HomegroundServiceNavigationId[];
 
+export const homegroundDestinationNavigationIds = [
+  "cities",
+  "inspiration",
+] as const satisfies readonly HomegroundDestinationNavigationId[];
+
 const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = {
   en: {
     mobileCta: "Plan",
     items: {
       destinations: {
         label: "Destinations",
-        description: "Choose cities and see how they connect",
+        description: "Cities and travel inspiration",
         pathSegment: "explore/",
       },
       tours: {
@@ -109,14 +133,27 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "services/full-trip-support/",
       },
     },
+    destinations: {
+      cities: {
+        label: "Cities",
+        description: "Beijing, Shanghai, Xi'an and five more",
+        pathSegment: "explore/",
+      },
+      inspiration: {
+        label: "Travel Inspiration",
+        description: "Trip ideas by theme, with routes to match",
+        pathSegment: "inspiration/",
+      },
+    },
     servicesToggle: "Services menu",
+    destinationsToggle: "Destinations menu",
   },
   zh: {
     mobileCta: "规划",
     items: {
       destinations: {
         label: "目的地",
-        description: "按城市与地点浏览，了解怎样连接",
+        description: "城市与旅行灵感",
         pathSegment: "explore/",
       },
       tours: {
@@ -157,14 +194,27 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "services/full-trip-support/",
       },
     },
+    destinations: {
+      cities: {
+        label: "城市",
+        description: "北京、上海、西安等 8 座城市",
+        pathSegment: "explore/",
+      },
+      inspiration: {
+        label: "旅行灵感",
+        description: "按主题找玩法，配好现成路线",
+        pathSegment: "inspiration/",
+      },
+    },
     servicesToggle: "服务菜单",
+    destinationsToggle: "目的地菜单",
   },
   ko: {
     mobileCta: "상담",
     items: {
       destinations: {
         label: "여행지",
-        description: "도시와 장소를 고르고 연결 동선 확인",
+        description: "도시와 테마 여행",
         pathSegment: "explore/",
       },
       tours: {
@@ -196,7 +246,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       },
       "english-guides": {
         label: "프라이빗 영어 가이드",
-        description: "상하이·베이징·시안·장자제, 하루 단위 예약",
+        description: "상하이·베이징·시안·장가계, 하루 단위 예약",
         pathSegment: "services/private-english-speaking-guides/",
       },
       "trip-support": {
@@ -205,7 +255,20 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "services/full-trip-support/",
       },
     },
+    destinations: {
+      cities: {
+        label: "도시",
+        description: "베이징·상하이·시안 등 8개 도시",
+        pathSegment: "explore/",
+      },
+      inspiration: {
+        label: "테마 여행",
+        description: "테마로 고르는 추천 일정",
+        pathSegment: "inspiration/",
+      },
+    },
     servicesToggle: "서비스 메뉴",
+    destinationsToggle: "여행지 메뉴",
   },
 };
 
@@ -214,6 +277,21 @@ export function getHomegroundNavigationModel(
   localePath: string,
 ) {
   const copy = navigationCopy[locale];
+  const entry = <Id extends HomegroundSubmenuId>(id: Id, item: HomegroundPrimaryNavigationItemCopy) => ({
+    ...item,
+    href: `${localePath}${item.pathSegment}`,
+    id,
+  });
+  const menus: Partial<Record<HomegroundPrimaryNavigationId, HomegroundSubmenu>> = {
+    destinations: {
+      entries: homegroundDestinationNavigationIds.map((id) => entry(id, copy.destinations[id])),
+      toggle: copy.destinationsToggle,
+    },
+    services: {
+      entries: homegroundServiceNavigationIds.map((id) => entry(id, copy.services[id])),
+      toggle: copy.servicesToggle,
+    },
+  };
 
   return {
     mobileCta: copy.mobileCta,
@@ -222,11 +300,6 @@ export function getHomegroundNavigationModel(
       href: `${localePath}${copy.items[id].pathSegment}`,
       id,
     })),
-    services: homegroundServiceNavigationIds.map((id) => ({
-      ...copy.services[id],
-      href: `${localePath}${copy.services[id].pathSegment}`,
-      id,
-    })),
-    servicesToggle: copy.servicesToggle,
+    menus,
   };
 }

@@ -638,6 +638,34 @@ for (const locale of locales) {
   assertIncludes(hub, `href="/${route}"`, `${locale.runtime} services hub`);
 }
 
+// Travel inspiration (the Destinations menu's second row): the hub and each
+// theme in three languages, in the sitemap; every page's header links the hub,
+// and the hub links each theme.
+for (const locale of locales) {
+  const hubRoute = `${locale.prefix}inspiration/`;
+  const themeRoutes = ["first-time-in-china"].map((theme) => `${hubRoute}${theme}/`);
+  for (const route of [hubRoute, ...themeRoutes]) {
+    const context = `/${route}`;
+    const html = await readFile(path.join(outputRoot, route, "index.html"), "utf8");
+    const canonical = `${siteUrl}/${route}`;
+    assertIncludes(html, `<html lang="${locale.htmlLang}"`, context);
+    assertIncludes(html, `<link rel="canonical" href="${canonical}"/>`, context);
+    assertIncludes(html, `href="/${hubRoute}"`, `${context} header link to the inspiration hub`);
+    if (!jsonLdNodes(html, context).some((node) => nodeHasType(node, "CollectionPage"))) {
+      throw new Error(`${context}: CollectionPage schema is missing`);
+    }
+    for (const target of locales) {
+      const targetRoute = route.replace(locale.prefix, target.prefix);
+      assertIncludes(html, `<link rel="alternate" hrefLang="${target.hreflang}" href="${siteUrl}/${targetRoute}"/>`, context);
+    }
+    if (!sitemapUrlEntry(sitemap, canonical)) {
+      throw new Error(`${context}: travel inspiration page is missing from sitemap.xml`);
+    }
+  }
+  const hub = await readFile(path.join(outputRoot, hubRoute, "index.html"), "utf8");
+  for (const route of themeRoutes) assertIncludes(hub, `href="/${route}"`, `/${hubRoute} theme link`);
+}
+
 for (const sitemapUrl of sitemapLocs) {
   const url = new URL(sitemapUrl);
   const route = url.pathname.replace(/^\/+|\/+$/gu, "");
