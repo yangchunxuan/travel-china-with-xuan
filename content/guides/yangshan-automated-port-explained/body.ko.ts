@@ -293,7 +293,7 @@ const body = {
           description: "Homeground의 다른 글과 함께 오늘날 중국 속 양산을 이해합니다."
         },
         {
-          label: "푸둥공항과 훙차오공항 비교하기",
+          label: "푸둥공항과 홍차오공항 비교하기",
           href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/",
           description: "실제 공항 선택은 항만 학습 계획과 분리해 결정하세요."
         },

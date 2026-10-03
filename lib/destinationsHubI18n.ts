@@ -211,7 +211,7 @@ const copies: Record<HomegroundLocale, DestinationsHubCopy> = {
         routeRole: "주강 삼각주의 남부 관문",
       },
       hangzhou: {
-        bestFor: "시후, 차밭과 한결 느긋한 여행",
+        bestFor: "서호, 차밭과 한결 느긋한 여행",
         stay: "당일치기 또는 2박",
         routeRole: "상하이와 자연스럽게 연결되지만, 짧게 끼워 넣기보다 충분한 시간을 둘 곳",
       },
@@ -223,7 +223,7 @@ const copies: Record<HomegroundLocale, DestinationsHubCopy> = {
       chongqing: {
         bestFor: "입체적인 산악 도시, 야경과 강한 지역 음식",
         stay: "3박",
-        routeRole: "서남부 관문, 우룽은 별도 확장 일정으로 구성",
+        routeRole: "서남부 관문, 우롱은 별도 확장 일정으로 구성",
       },
     },
     openCity: "도시 가이드 열기",

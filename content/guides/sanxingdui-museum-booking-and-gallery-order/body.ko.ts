@@ -30,8 +30,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
    { question: "싼싱두이 청동기는 외계인과 관련이 있나요?", answer: "아닙니다. 박물관이 지지하지 않는 외계인 이야기로 빈 곳을 채우지 마세요. 제례와 신앙에서는 규모, 눈, 나무, 새, 인물을 관찰하되 가능한 해석과 확정 사실을 나눕니다. 청동 신수도 복잡한 복원과 고고학 증거로 보고 접합과 결손을 살피세요." },
  ] },
  {id:"internal-links",type:"internal-links",title:"쓰촨 일정에 연결하기",items:[ { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
-  {label:"청두 판다기지와 두장옌 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"두 큰 외출을 한 날에 억지로 넣지 말고 판다 장소를 별도로 고릅니다."},
-  {label:"청두-주자이거우 교통",href:"/ko/guides/chengdu-jiuzhaigou-transport-route/",description:"정확한 역과 마지막 연결로 다음 쓰촨 이동을 준비합니다."},
+  {label:"청두 판다기지와 도강언 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"두 큰 외출을 한 날에 억지로 넣지 말고 판다 장소를 별도로 고릅니다."},
+  {label:"청두-구채구 교통",href:"/ko/guides/chengdu-jiuzhaigou-transport-route/",description:"정확한 역과 마지막 연결로 다음 쓰촨 이동을 준비합니다."},
   {label:"중국 여행에 가이드가 필요한가",href:"/ko/guides/do-you-need-a-tour-guide-in-china/",description:"이 박물관의 해설 가치와 여행 전체 지원 결정을 분리합니다."},
   { label: "도장을 찾기 전에 중국 박물관 도장 문화를 이해하기", href: "/ko/guides/why-china-museums-have-stamps/", description: "싼싱두이에 현재 도장이 있다고 가정하지 말고 박물관 자체 채널을 확인하며 전시실 동선을 우선합니다." }
  ]},

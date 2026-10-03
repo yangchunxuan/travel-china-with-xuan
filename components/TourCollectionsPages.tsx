@@ -18,6 +18,7 @@ import {
   TourCard,
 } from "./DestinationParts";
 import { HomegroundFooter } from "./HomegroundFooter";
+import { TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
 import { RevealOnce } from "./motion/RevealOnce";
@@ -96,6 +97,7 @@ export function TourCollectionPage({ locale = "en", collectionId }: { locale?: H
                 <ul className={[styles.tours, collectionId === "regions" ? sightStyles.denseTours : "", group.tours.length === 2 ? sightStyles.pairTours : ""].join(" ")}>
                   {group.tours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                 </ul>
+                <TourPhotoCredits locale={locale} tours={group.tours} />
               </div>
             );
           })}

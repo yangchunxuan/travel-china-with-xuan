@@ -54,7 +54,7 @@ const body = {schemaVersion:"1.0.0",blocks:[
     { question: "청두 첫 방문에 반나절뿐인데 녹도가 그만한 가치가 있나요?", answer: "지하철과 연결된 도시·공원 구간을 하나 걷고 동네로 빠져나오세요. 이 글의 결정 규칙은 도심 공원에서는 얻을 수 없는 시각을 더할 때만 반나절 일정에 녹도를 남기라는 것입니다. 그렇지 않다면 그 반나절은 다른 곳에 쓰는 편이 낫습니다. 목표를 조건에 맞추는 방식입니다." },
   ] },
   {id:"links",type:"internal-links",title:"도시 맥락 연결하기",items:[
-    {label:"청두 판다기지와 두장옌 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"동물 관람과 녹도를 별도의 현실적인 도시 과제로 둔다."},
+    {label:"청두 판다기지와 도강언 판다밸리 비교",href:"/ko/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"동물 관람과 녹도를 별도의 현실적인 도시 과제로 둔다."},
     {label:"중국 지도 좌표 오프셋 이해",href:"/ko/guides/china-map-coordinate-offset-explained/",description:"정확한 녹도 입구·출구 핀 오류를 피한다."},
     {label:"중국 공휴일 달력 확인",href:"/ko/guides/china-public-holidays-travel-calendar/",description:"정확한 인파를 보장하지 않고 여가 압력을 예상한다."},
     { label: "15분 동네를 생활 서비스망으로 읽기", href: "/ko/guides/china-15-minute-neighbourhoods/", description: "녹지 구간만 보지 말고 상점·돌봄·공공공간·출입 통제와 실제 보행 접근을 같은 동선 기준으로 확인합니다." },

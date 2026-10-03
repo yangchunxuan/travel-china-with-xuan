@@ -127,7 +127,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       ccBySa4,
     ),
     credit(
-      text("Three Natural Bridges, Wulong", "武隆天生三桥", "우룽 천생삼교"),
+      text("Three Natural Bridges, Wulong", "武隆天生三桥", "우롱 천생삼교"),
       "Brookqi",
       "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
       "Public Domain Mark",
@@ -272,7 +272,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       ccBySa4,
     ),
     credit(
-      text("Hongqiao, Fenghuang", "凤凰古城虹桥", "봉황고성 훙차오"),
+      text("Hongqiao, Fenghuang", "凤凰古城虹桥", "봉황고성 홍교"),
       "xiquinhosilva",
       "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_18.jpg",
       "CC BY 4.0",
@@ -293,7 +293,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       text(
         "Tuojiang stepping stones, Fenghuang",
         "凤凰沱江跳岩",
-        "봉황 퉈장 징검다리",
+        "봉황 타강 징검다리",
       ),
       "Yu Hui (于回)",
       "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg",

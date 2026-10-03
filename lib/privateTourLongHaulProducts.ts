@@ -191,7 +191,7 @@ const trainToChengdu = (n: number) => day(
   l(
     "The second-class train from Xi’an to Chengdu takes about 3–4.5 hours. There is still an afternoon for tea in People’s Park and a walk along Kuanzhai Alley.",
     "西安到成都的二等座高铁约 3–4.5 小时。到了以后还来得及去人民公园喝茶，再走一走宽窄巷子。",
-    "시안에서 청두까지 고속철도 2등석으로 약 3~4.5시간 갑니다. 오후에는 인민공원에서 차를 마시고 콴자이샹쯔를 걸을 시간이 남습니다.",
+    "시안에서 청두까지 고속철도 2등석으로 약 3~4.5시간 갑니다. 오후에는 인민공원에서 차를 마시고 관착항자를 걸을 시간이 남습니다.",
   ),
 );
 
@@ -289,7 +289,7 @@ const departShanghai = (n: number, mode: Mode) => day(
     : l(
       "On the last group day, one transfer to Pudong or Hongqiao airport is included. Extra nights in Shanghai can be arranged separately.",
       "小团最后一天含一次送浦东或虹桥机场。想在上海多住几晚，我们可以另行安排。",
-      "그룹 마지막 날 푸둥 또는 훙차오 공항으로 가는 이동 1회가 포함됩니다. 상하이 추가 숙박은 따로 준비할 수 있습니다.",
+      "그룹 마지막 날 푸둥 또는 홍차오 공항으로 가는 이동 1회가 포함됩니다. 상하이 추가 숙박은 따로 준비할 수 있습니다.",
     ),
 );
 
@@ -329,7 +329,7 @@ const trainChengduToChongqing = (n: number) => day(
   l(
     "It is about 1.5 hours by second-class high-speed train from Chengdu to Chongqing. Spend the afternoon around Jiefangbei and follow the riverside to Hongyadong after the lights come on. Sleep in Chongqing.",
     "成都到重庆的二等座高铁约 1.5 小时。下午走解放碑和江边，天黑亮灯后看洪崖洞；晚上住重庆。",
-    "청두에서 충칭까지 고속철도 2등석으로 약 1.5시간 갑니다. 오후에는 제팡베이와 강변을 걷고 불이 켜진 뒤 훙야둥을 봅니다. 충칭에서 숙박합니다.",
+    "청두에서 충칭까지 고속철도 2등석으로 약 1.5시간 갑니다. 오후에는 해방비와 강변을 걷고 불이 켜진 뒤 홍야동을 봅니다. 충칭에서 숙박합니다.",
   ),
 );
 
@@ -339,7 +339,7 @@ const chongqingThenBoard = (n: number) => day(
   l(
     "Before boarding, there is time for the monorail at Liziba and the old hillside lanes. Boarding at Chaotianmen pier opens at about 18:00, dinner is served on the ship and it sails at about 21:00. If the water level or river control moves boarding to another pier, the cruise company runs a transfer from central Chongqing and your driver takes you to it.",
     "登船前还有时间看李子坝轻轨穿楼，走一走山城老巷。朝天门码头约 18:00 开始登船，晚餐在船上吃，约 21:00 开船。如果因水位或航道管制改在别的码头登船，游轮公司会从重庆市区安排接驳车，司机送你过去。",
-    "승선 전 리쯔바 건물 사이를 지나는 모노레일과 산비탈 옛 골목을 볼 시간이 있습니다. 차오톈먼 부두에서 약 18:00부터 승선하고 저녁은 배에서 먹으며 약 21:00에 출발합니다. 수위나 수로 통제로 다른 부두에서 승선하게 되면 선사가 충칭 시내에서 연결 차량을 운행하고 기사가 그곳까지 모십니다.",
+    "승선 전 리쯔바 건물 사이를 지나는 모노레일과 산비탈 옛 골목을 볼 시간이 있습니다. 조천문 부두에서 약 18:00부터 승선하고 저녁은 배에서 먹으며 약 21:00에 출발합니다. 수위나 수로 통제로 다른 부두에서 승선하게 되면 선사가 충칭 시내에서 연결 차량을 운행하고 기사가 그곳까지 모십니다.",
   ),
 );
 
@@ -449,7 +449,7 @@ const flyXianToChongqingAndBoard = (n: number) => day(
   l(
     "Take a morning economy flight from Xi’an to Chongqing, about 1.5 hours. With your bags in the vehicle, the driver stops at the Liziba monorail station and Hongyadong in the afternoon. Boarding at Chaotianmen pier opens at about 18:00, dinner is on the ship and it sails at about 21:00. If the water level moves boarding to another pier, the cruise company runs a transfer from central Chongqing.",
     "上午坐经济舱航班从西安飞重庆，约 1.5 小时。行李放车上，下午司机带你去看李子坝轻轨穿楼和洪崖洞。朝天门码头约 18:00 开始登船，晚餐在船上吃，约 21:00 开船。如果因水位改在别的码头登船，游轮公司会从重庆市区安排接驳车。",
-    "오전 이코노미 항공편으로 시안에서 충칭까지 약 1.5시간 갑니다. 짐은 차에 두고 오후에 기사와 리쯔바 모노레일역과 훙야둥에 들릅니다. 차오톈먼 부두에서 약 18:00부터 승선하고 저녁은 배에서 먹으며 약 21:00에 출발합니다. 수위 때문에 다른 부두에서 승선하게 되면 선사가 충칭 시내에서 연결 차량을 운행합니다.",
+    "오전 이코노미 항공편으로 시안에서 충칭까지 약 1.5시간 갑니다. 짐은 차에 두고 오후에 기사와 리쯔바 모노레일역과 홍야동에 들릅니다. 조천문 부두에서 약 18:00부터 승선하고 저녁은 배에서 먹으며 약 21:00에 출발합니다. 수위 때문에 다른 부두에서 승선하게 되면 선사가 충칭 시내에서 연결 차량을 운행합니다.",
   ),
 );
 
@@ -2065,7 +2065,7 @@ const grandChina: PrivateTourProduct = {
       l(
         "Zhangjiajie to Chongqing is about 2–3 hours on the booked high-speed train. Later, walk from Jiefangbei along the river to Hongyadong; it is lit after dark. Stay in Chongqing.",
         "张家界到重庆坐已订高铁约 2–3 小时。下午从解放碑沿江走到洪崖洞，天黑后看亮灯，住重庆。",
-        "장가계에서 충칭까지 예약된 고속철도로 약 2~3시간입니다. 오후에는 제팡베이에서 강을 따라 훙야둥까지 걷고 어두워진 뒤 불 켜진 모습을 봅니다. 충칭에서 숙박합니다.",
+        "장가계에서 충칭까지 예약된 고속철도로 약 2~3시간입니다. 오후에는 해방비에서 강을 따라 홍야동까지 걷고 어두워진 뒤 불 켜진 모습을 봅니다. 충칭에서 숙박합니다.",
       ),
     ),
     chongqingThenBoard(16),
@@ -2628,7 +2628,7 @@ const southLandscapes: PrivateTourProduct = {
       l(
         "The booked train from Zhangjiajie West to Fenghuang Ancient City takes about an hour. With the guide, walk the public old-town lanes and Tuojiang riverbank; those streets have no gate ticket. Boat rides cost extra. Stay in Fenghuang.",
         "张家界西站到凤凰古城站坐已订高铁约 1 小时。导游带你走古城公共街巷和沱江边，这些公共街区不用大门票；想坐船要另外付费。住凤凰。",
-        "장가계서역에서 봉황고성역까지 예약된 열차로 약 한 시간 갑니다. 가이드와 고성의 공공 골목과 퉈장 강변을 걷습니다. 이 구역은 입장권이 없고 배는 별도 요금입니다. 봉황고성에서 숙박합니다.",
+        "장가계서역에서 봉황고성역까지 예약된 열차로 약 한 시간 갑니다. 가이드와 고성의 공공 골목과 타강 강변을 걷습니다. 이 구역은 입장권이 없고 배는 별도 요금입니다. 봉황고성에서 숙박합니다.",
       ),
     ),
     day(
@@ -2637,7 +2637,7 @@ const southLandscapes: PrivateTourProduct = {
       l(
         "Walk Fenghuang early, before the day visitors arrive. Then drive to one nearby site confirmed for your date, such as the Southern Great Wall or a Miao village. Return for the lights along the Tuojiang and a second night in Fenghuang.",
         "趁一日游客还没到，早上先走凤凰古城。之后乘车去一处确认好的附近景点，比如南方长城或苗寨；晚上回沱江边看亮灯，再住凤凰。",
-        "당일 방문객이 오기 전 아침에 봉황고성을 걷습니다. 이후 날짜에 맞춰 확정한 근처 한 곳, 남방장성이나 먀오족 마을 등에 차로 갑니다. 저녁 퉈장 강변의 불빛을 보고 봉황고성에서 한 밤 더 묵습니다.",
+        "당일 방문객이 오기 전 아침에 봉황고성을 걷습니다. 이후 날짜에 맞춰 확정한 근처 한 곳, 남방장성이나 먀오족 마을 등에 차로 갑니다. 저녁 타강 강변의 불빛을 보고 봉황고성에서 한 밤 더 묵습니다.",
       ),
     ),
     day(
@@ -2676,7 +2676,7 @@ const southLandscapes: PrivateTourProduct = {
   exclusions: exclusions(
     ["Single-room supplement", "Tuojiang boat rides and paid smaller sights in Fenghuang", "Checked baggage above the airline's included allowance"],
     ["单房差", "凤凰沱江游船及收费小景点", "超出航司免费额度的托运行李"],
-    ["1인실 추가금", "봉황 퉈장 유람선과 유료 소규모 명소", "항공사 무료 허용량을 넘는 위탁 수하물"],
+    ["1인실 추가금", "봉황 타강 유람선과 유료 소규모 명소", "항공사 무료 허용량을 넘는 위탁 수하물"],
   ),
   bookingNote: l(
     "The shown starting price is per person for the stated party size, with twin rooms. Tianmen Mountain and Zhangjiajie National Forest Park tickets specify routes and time slots, so we set those day orders after tickets are issued. Train seats, flights, hotels and the final total are confirmed in writing before payment.",
@@ -2720,7 +2720,7 @@ const southLandscapes: PrivateTourProduct = {
   heroImage: image(
     southSlug,
     "hero.webp",
-    l("Stilt houses and a pagoda reflected in the Tuojiang at Fenghuang", "凤凰古城沱江边的吊脚楼与塔", "봉황고성 퉈장에 비친 수상 가옥과 탑"),
+    l("Stilt houses and a pagoda reflected in the Tuojiang at Fenghuang", "凤凰古城沱江边的吊脚楼与塔", "봉황고성 타강에 비친 수상 가옥과 탑"),
     l("Two Fenghuang nights let you see the old town early and after dark.", "凤凰住 2 晚，早上和入夜后都能逛古城。", "봉황고성에서 2박해 아침과 밤의 고성을 봅니다."),
   ),
   gallery: [
@@ -3114,8 +3114,8 @@ const yangtzeSmallGroup = smallGroup({
     image(
       yangtzeGroupSlug,
       "gallery-1.webp",
-      l("Kuanzhai Alley in Chengdu", "成都宽窄巷子", "청두 콴자이샹쯔"),
-      l("Day 7 has Kuanzhai Alley after the train to Chengdu.", "第 7 天到成都，下午走宽窄巷子。", "7일 차 청두에 도착해 오후에 콴자이샹쯔를 걷습니다."),
+      l("Kuanzhai Alley in Chengdu", "成都宽窄巷子", "청두 관착항자"),
+      l("Day 7 has Kuanzhai Alley after the train to Chengdu.", "第 7 天到成都，下午走宽窄巷子。", "7일 차 청두에 도착해 오후에 관착항자를 걷습니다."),
     ),
   ],
   routeMedia: [
@@ -3756,7 +3756,7 @@ const yangtzeTwelve: PrivateTourProduct = {
       yangtze12Slug,
       "gallery-1.webp",
       l("Chongqing bridges lit at night", "夜里亮灯的重庆大桥", "밤에 불 켜진 충칭의 다리"),
-      l("Before boarding, there is an afternoon for the monorail and Hongyadong.", "登船前，下午可以看轻轨和洪崖洞。", "승선 전 오후에 모노레일과 훙야둥을 봅니다."),
+      l("Before boarding, there is an afternoon for the monorail and Hongyadong.", "登船前，下午可以看轻轨和洪崖洞。", "승선 전 오후에 모노레일과 홍야동을 봅니다."),
     ),
   ],
   routeMedia: [

@@ -45,7 +45,8 @@ export interface TravelInspirationCopy {
     routesTitle: string;
     tourAction: string;
     /** Fills a route row that is not full: the way to a trip planned around you. */
-    planTile: { title: string; body: string; action: string };
+    /** `titleOne` sits beside a single route ("None of these?" would not fit). */
+    planTile: { title: string; titleOne: string; body: string; action: string };
   };
   /** What a city is for, in one line (its own page says how to plan it). */
   cities: Readonly<Record<DestinationHubId, string>>;
@@ -82,6 +83,7 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       tourAction: "Itinerary & price",
       planTile: {
         title: "None of these?",
+        titleOne: "Want a different trip?",
         body: "Tell us your days and cities, and we'll plan the trip around you.",
         action: "Plan it with us",
       },
@@ -159,6 +161,7 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       tourAction: "看行程与价格",
       planTile: {
         title: "都不太合适？",
+        titleOne: "想换个走法？",
         body: "告诉我们天数和想去的城市，我们按你的情况安排整趟旅行。",
         action: "交给我们安排",
       },
@@ -235,6 +238,7 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       tourAction: "일정·가격 보기",
       planTile: {
         title: "고르기 어려우신가요?",
+        titleOne: "다른 일정을 원하시나요?",
         body: "여행 기간과 가고 싶은 도시만 알려 주세요. 일행에 맞춰 일정을 짜 드립니다.",
         action: "맞춤 일정 문의",
       },
@@ -244,8 +248,8 @@ const copy: Record<HomegroundLocale, TravelInspirationCopy> = {
       shanghai: "와이탄·옛 골목, 근교 쑤저우까지",
       xian: "병마용·성벽·회민거리",
       chengdu: "판다·찻집·쓰촨 요리",
-      guangzhou: "아침 딤섬·옛 상가 거리·주장강",
-      hangzhou: "서호와 룽징 차밭",
+      guangzhou: "아침 딤섬·옛 상가 거리·주강",
+      hangzhou: "서호와 용정 차밭",
       zhangjiajie: "원가계 기암 봉우리와 천문산",
       chongqing: "입체 도시·훠궈·장강",
     },

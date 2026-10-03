@@ -83,6 +83,17 @@ const projectionDefinitions = {
   },
 } as const satisfies Record<DestinationHubId, ProjectionDefinition>;
 
+/**
+ * The stay-length row each city recommends, where the keyword match would
+ * pick a different row in each language (the tables are parallel, the words
+ * are not): Xi'an's opening calls three nights the balanced stay; Chongqing's
+ * time table builds its first plan on four nights.
+ */
+const pinnedNightsRow: Partial<Record<DestinationHubId, number>> = {
+  xian: 2,
+  chongqing: 2,
+};
+
 const sourceSectionNumberPrefix = /^\s*\d+\s*[.．、)）]\s*/u;
 
 function stripSourceSectionNumber(value: string) {
@@ -106,8 +117,9 @@ function sectionBlocks(body: StructuredPageBody, headingId: string) {
   return { heading, blocks };
 }
 
-function preferredTableRow(table: TableBlock, signalId: DestinationOverviewSignalId) {
+function preferredTableRow(table: TableBlock, signalId: DestinationOverviewSignalId, pinnedRow?: number) {
   if (signalId === "stay" || signalId === "next") return table.rows[0];
+  if (pinnedRow !== undefined && table.rows[pinnedRow]) return table.rows[pinnedRow];
 
   // A row named as the recommendation wins first, so a "minimum: 3 nights"
   // row above it cannot match the broader pattern ("3박") ahead of it.
@@ -130,7 +142,7 @@ function preferredTableRow(table: TableBlock, signalId: DestinationOverviewSigna
 const tableUnits: Record<HomegroundLocale, readonly (readonly [RegExp, (one: boolean) => string])[]> = {
   en: [[/night/iu, (one) => (one ? " night" : " nights")], [/day/iu, (one) => (one ? " day" : " days")]],
   zh: [[/晚|夜/u, () => "晚"], [/天|日/u, () => "天"]],
-  ko: [[/박/u, () => "박"], [/일/u, () => "일"]],
+  ko: [[/박/u, () => "박"], [/일|날|하루/u, () => "일"]],
 };
 
 function withUnits(row: readonly string[], columns: readonly string[], locale: HomegroundLocale) {
@@ -173,6 +185,7 @@ function extractSignal(
   locale: HomegroundLocale,
   signalId: DestinationOverviewSignalId,
   headingIds: readonly string[],
+  pinnedRow?: number,
 ): DestinationOverviewSignal {
   const sections = headingIds
     .map((headingId) => sectionBlocks(body, headingId))
@@ -195,7 +208,7 @@ function extractSignal(
   );
 
   if ((signalId === "nights" || signalId === "stay" || signalId === "next") && tables[0]) {
-    const row = withUnits(preferredTableRow(tables[0], signalId), tables[0].columns, locale);
+    const row = withUnits(preferredTableRow(tables[0], signalId, pinnedRow), tables[0].columns, locale);
     const [emphasis, ...rest] = row;
     return {
       id: signalId,
@@ -222,7 +235,7 @@ function extractSignal(
   }
 
   if (tables[0]) {
-    const row = withUnits(preferredTableRow(tables[0], signalId), tables[0].columns, locale);
+    const row = withUnits(preferredTableRow(tables[0], signalId, pinnedRow), tables[0].columns, locale);
     const [emphasis, ...rest] = row;
     return {
       id: signalId,
@@ -242,7 +255,7 @@ export function projectDestinationOverview(
 ) {
   const definition = projectionDefinitions[hubId];
   return (Object.keys(definition) as DestinationOverviewSignalId[]).map((signalId) =>
-    extractSignal(body, locale, signalId, definition[signalId]),
+    extractSignal(body, locale, signalId, definition[signalId], signalId === "nights" ? pinnedNightsRow[hubId] : undefined),
   );
 }
 
@@ -257,7 +270,6 @@ export function projectDestinationStayExample(
       "five-day-intro",
       "five-day-plan",
       "five-full-days",
-      "five-day-next-steps",
     ],
     chengdu: [
       "first-stay-plan-heading",

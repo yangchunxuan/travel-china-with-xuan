@@ -38,7 +38,7 @@ test("regional private tours answer the pre-purchase question without promising 
     ["chengdu-jiuzhaigou-huanglong-6-day-private-tour", {
       en: [/train to Huanglongjiuzhai Station is delayed/u, /unlimited waiting is not included/u, /agree any extra cost/u],
       zh: [/去黄龙九寨站的高铁晚点/u, /不默认无限等候/u, /先征得你同意/u],
-      ko: [/황룽주자이역행 열차가 늦으면/u, /무제한 대기는 자동으로 포함되지/u, /먼저 동의를 구합니다/u],
+      ko: [/황룡구채역행 열차가 늦으면/u, /무제한 대기는 자동으로 포함되지/u, /먼저 동의를 구합니다/u],
     }],
     ["kunming-dali-lijiang-8-day-private-tour", {
       en: [/include Shangri-La/u, /Kunming on Day 8/u, /Shangri-La is not included/u],

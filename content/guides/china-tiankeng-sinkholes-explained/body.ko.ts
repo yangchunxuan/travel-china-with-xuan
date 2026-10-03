@@ -59,7 +59,7 @@ const body = {schemaVersion:"1.0.0",blocks:[
     { question: "부모님과 함께인데 톈컹을 볼 만할까요?", answer: "네, 가장자리와 방문자센터 구간까지라면 충분합니다. 확인된 출입 조건, 난간, 쉴 곳, 화장실, 지상 대안을 먼저 챙기고, 계단과 복귀에 드는 힘을 확인한 뒤에만 하강을 생각하세요. 측정 가능한 출입 근거 없이 ‘쉽다’고만 적힌 경로라면, 출입 근거가 문서화된 다른 정식 카르스트 장소를 고르는 편이 낫습니다." },
     { question: "안개로 함몰지가 안 보이면 어떻게 하나요?", answer: "방문자센터, 지질 단면도, 축척 모형, 가장자리 식생을 둘러보고, 교통편 여유 시간 안에서만 기다리세요. 보이지 않는 풍경을 꾸며내지 않고도 형성 과정과 서식지를 이해할 수 있습니다. 비가 온 뒤 아래쪽 경로가 폐쇄됐다면 개방이 명시된 지상 경로에만 머물거나 자리를 뜨고, 차단물을 돌아간 발자국은 따라가지 마세요." },
   ] },
-  {id:"links",type:"internal-links",title:"책임 있는 자연 탐방 계획",items:[{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
+  {id:"links",type:"internal-links",title:"책임 있는 자연 탐방 계획",items:[{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우롱·대족 포함 여부를 정하세요." },
     {label:"치롄산 공개 관문 고르기",href:"/ko/guides/qilian-mountains-public-gateways-and-access/",description:"넓은 보호 경관에도 같은 경계 원칙을 적용하세요."},
     {label:"중국 기후 지역 이해하기",href:"/ko/guides/china-climate-regions-for-trip-timing/",description:"한 지역의 날씨 결론을 모든 카르스트 지역에 그대로 적용하지 마세요."},
     {label:"중국에서 휠체어로 이동 가능한 경로 계획하기",href:"/ko/guides/wheelchair-accessible-china-route-planning/",description:"모호한 접근성 표시를 측정 가능한 경로 근거로 바꾸세요."},

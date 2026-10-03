@@ -278,7 +278,7 @@ const privateTourInquiryNames: Readonly<
   "chongqing-wulong-5-day-private-tour": {
     en: "Chongqing & Wulong: 5-Day Private Tour",
     zh: "重庆·武隆 5 天 4 晚私家团",
-    ko: "충칭·우룽 5일 프라이빗 투어",
+    ko: "충칭·우롱 5일 프라이빗 투어",
   },
   "guilin-yangshuo-5-day-private-tour": {
     en: "Guilin & Yangshuo: 5-Day Private Tour",
@@ -318,7 +318,7 @@ const privateTourInquiryNames: Readonly<
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {
     en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour",
     zh: "成都·九寨沟·黄龙 6 天 5 晚私家团",
-    ko: "청두·주자이거우·황룽 6일 프라이빗 투어",
+    ko: "청두·구채구·황룡 6일 프라이빗 투어",
   },
   "kunming-dali-lijiang-8-day-private-tour": {
     en: "Kunming, Dali & Lijiang: 8-Day Private Tour",
@@ -343,7 +343,7 @@ const privateTourInquiryNames: Readonly<
   "chengdu-chongqing-8-day-private-tour": {
     en: "Chengdu, Leshan, Chongqing, Wulong & Dazu: 8-Day Private Tour",
     zh: "成都·乐山·重庆·武隆·大足 8 天 7 晚私家团",
-    ko: "청두·러산·충칭·우룽·대족 8일 프라이빗 투어",
+    ko: "청두·낙산·충칭·우롱·대족 8일 프라이빗 투어",
   },
   "guangzhou-shunde-foshan-5-day-private-tour": {
     en: "Guangzhou, Shunde & Foshan: 5-Day Private Tour",
@@ -548,6 +548,9 @@ const previousKoreanInquiryNames: Partial<
   "china-grand-tour-21-day-private-tour": "장가계·양쯔강 크루즈를 포함한 중국 일주 21일 프라이빗 투어",
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": "베이징·시안·양쯔강 크루즈·상하이 12일 프라이빗 투어",
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": "하얼빈·야부리·설향·창바이산·옌지 8일 겨울 프라이빗 투어",
+  "chongqing-wulong-5-day-private-tour": "충칭·우룽 5일 프라이빗 투어",
+  "chengdu-jiuzhaigou-huanglong-6-day-private-tour": "청두·주자이거우·황룽 6일 프라이빗 투어",
+  "chengdu-chongqing-8-day-private-tour": "청두·러산·충칭·우룽·대족 8일 프라이빗 투어",
 };
 
 export function getPrivateTourInquirySubmissionContext(

@@ -1450,12 +1450,12 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
         {
           term: "아직 결정할 것",
           detail:
-            "서호 접근성, 링인사 이동 시간과 다음 출발 동선을 함께 보고 숙소 위치를 고릅니다.",
+            "서호 접근성, 영은사 이동 시간과 다음 출발 동선을 함께 보고 숙소 위치를 고릅니다.",
         },
         {
           term: "Homeground의 도움",
           detail:
-            "도착일은 가볍게 두고 서호와 링인사를 서둘러 한 번에 넣지 않습니다.",
+            "도착일은 가볍게 두고 서호와 영은사를 서둘러 한 번에 넣지 않습니다.",
         },
         {
           term: "시작 전에 확인",

@@ -459,7 +459,7 @@ export const attractionReservationRules = [
     notes: {
       en: "Separate from Panda Valley in Dujiangyan; the city-base ticket is not valid there. On-site sales are only for special cases.",
       zh: "与都江堰熊猫谷分开售票，基地门票在熊猫谷无效。现场售票只面向特殊情况。",
-      ko: "두장옌 판다밸리와 별도이며 기지 입장권은 그곳에서 쓸 수 없습니다. 현장 판매는 특별한 경우에만 가능합니다.",
+      ko: "도강언 판다밸리와 별도이며 기지 입장권은 그곳에서 쓸 수 없습니다. 현장 판매는 특별한 경우에만 가능합니다.",
     },
     verifiedAt: "2026-08-11",
     source: "chengdu-panda-base-or-dujiangyan-panda-valley",
@@ -545,7 +545,7 @@ export const attractionReservationRules = [
     id: "west-lake-boat",
     city: "hangzhou",
     status: "offered",
-    name: { en: "West Lake boats", zh: "西湖游船", ko: "시후 유람선" },
+    name: { en: "West Lake boats", zh: "西湖游船", ko: "서호 유람선" },
     channels: null,
     passportAccepted: null,
     realName: null,
