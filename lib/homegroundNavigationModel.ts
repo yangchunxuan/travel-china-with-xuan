@@ -24,7 +24,7 @@ export type HomegroundServiceNavigationId =
  * index, and the menu adds the ways in that are not a city, beginning with
  * travel inspiration by theme. Kept to a few rows, like Services.
  */
-export type HomegroundDestinationNavigationId = "cities" | "inspiration";
+export type HomegroundDestinationNavigationId = "cities" | "inspiration" | "sights";
 
 export type HomegroundSubmenuId =
   | HomegroundServiceNavigationId
@@ -84,6 +84,7 @@ export const homegroundServiceNavigationIds = [
 export const homegroundDestinationNavigationIds = [
   "cities",
   "inspiration",
+  "sights",
 ] as const satisfies readonly HomegroundDestinationNavigationId[];
 
 const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = {
@@ -92,7 +93,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "Destinations",
-        description: "Cities and travel inspiration",
+        description: "Cities, travel inspiration and must-see sights",
         pathSegment: "explore/",
       },
       tours: {
@@ -144,6 +145,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "Trip ideas by theme, with routes to match",
         pathSegment: "inspiration/",
       },
+      sights: {
+        label: "Must-See Sights",
+        description: "The Great Wall, Terracotta Warriors and more",
+        pathSegment: "sights/",
+      },
     },
     servicesToggle: "Services menu",
     destinationsToggle: "Destinations menu",
@@ -153,7 +159,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "目的地",
-        description: "城市与旅行灵感",
+        description: "城市、旅行灵感与必去景点",
         pathSegment: "explore/",
       },
       tours: {
@@ -205,6 +211,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         description: "按主题找玩法，配好现成路线",
         pathSegment: "inspiration/",
       },
+      sights: {
+        label: "必去景点",
+        description: "长城、兵马俑等，大多可代预约",
+        pathSegment: "sights/",
+      },
     },
     servicesToggle: "服务菜单",
     destinationsToggle: "目的地菜单",
@@ -214,7 +225,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     items: {
       destinations: {
         label: "여행지",
-        description: "도시와 테마 여행",
+        description: "도시, 테마 여행, 꼭 가볼 명소",
         pathSegment: "explore/",
       },
       tours: {
@@ -265,6 +276,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         label: "테마 여행",
         description: "테마로 고르는 추천 일정",
         pathSegment: "inspiration/",
+      },
+      sights: {
+        label: "꼭 가볼 명소",
+        description: "만리장성·병마용 등, 대부분 예약 대행 가능",
+        pathSegment: "sights/",
       },
     },
     servicesToggle: "서비스 메뉴",

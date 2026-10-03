@@ -775,7 +775,7 @@
     text-wrap: pretty;
   }
 
-  /* Four crumbs wrap on a phone: "Destinations" stays in the JSON-LD only. */
+  /* Four crumbs wrap on a phone: "Destinations" (with its separator) stays in the JSON-LD only. */
   .breadcrumb li:nth-child(2):not(:last-child):not(:nth-last-child(2)) {
     display: none;
   }

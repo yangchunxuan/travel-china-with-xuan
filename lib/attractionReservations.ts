@@ -205,9 +205,9 @@ export const attractionReservationRules = [
     },
     price: null,
     notes: {
-      en: "We submit each reservation on the museum's own official channel in the visitor's own passport name. We do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our guide.",
+      en: "We submit each reservation on the museum's own official channel in the visitor's own passport name. We do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our travel article.",
       zh: "我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
-      ko: "박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 가이드를 보고 직접 예약하셔도 됩니다.",
+      ko: "박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 실용 가이드 글을 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
       en: "We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. We do not resell tickets or add a mark-up: tickets are charged at face value, and the museum's real-name and cancellation rules apply.",
@@ -228,9 +228,9 @@ export const attractionReservationRules = [
     release: null,
     price: null,
     notes: {
-      en: "Our guides cover transport, not the admission booking rule, so we check the official rule for your date before the written confirmation.",
+      en: "Our Great Wall articles cover transport, not the admission booking rule, so we check the official rule for your date before the written confirmation.",
       zh: "我们的攻略只核实了交通，未核实门票预约规则；书面确认前，我们会按你的日期核实官方规则。",
-      ko: "가이드는 교통만 다루고 입장 예약 규칙은 확인하지 않았으므로, 서면 확인 전에 날짜 기준으로 공식 규칙을 확인합니다.",
+      ko: "저희 실용 가이드 글은 교통만 다루고 입장 예약 규칙은 확인하지 않았으므로, 서면 확인 전에 날짜 기준으로 공식 규칙을 확인합니다.",
     },
     verifiedAt: "2026-08-13",
     source: "beijing-to-badaling-great-wall-transfer",
@@ -246,9 +246,9 @@ export const attractionReservationRules = [
     release: null,
     price: null,
     notes: {
-      en: "Admission, shuttle and cable car are separate purchases. Our guides do not record the booking rule yet, so we check it for your date before the written confirmation.",
+      en: "Admission, shuttle and cable car are separate purchases. Our travel articles do not record the booking rule yet, so we check it for your date before the written confirmation.",
       zh: "门票、摆渡车与缆车分开购买。攻略尚未核实预约规则；书面确认前，我们会按你的日期核实。",
-      ko: "입장권, 셔틀, 케이블카는 따로 구매합니다. 예약 규칙은 아직 가이드에서 확인하지 않았으므로 서면 확인 전에 날짜 기준으로 확인합니다.",
+      ko: "입장권, 셔틀, 케이블카는 따로 구매합니다. 예약 규칙은 아직 실용 가이드 글에서 확인하지 않았으므로 서면 확인 전에 날짜 기준으로 확인합니다.",
     },
     verifiedAt: "2026-08-13",
     source: "beijing-to-mutianyu-great-wall-transfer",
@@ -323,9 +323,9 @@ export const attractionReservationRules = [
     release: null,
     price: null,
     notes: {
-      en: "Our guides do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
+      en: "Our travel articles do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
-      ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
+      ko: "실용 가이드 글에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
     verifiedAt: null,
     source: null,
@@ -376,9 +376,9 @@ export const attractionReservationRules = [
     },
     price: { kind: "free-reservation" },
     notes: {
-      en: "We do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket, charged at face value. No-shows get a 180-day booking restriction. You can also book it yourself with our guide.",
+      en: "We do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket, charged at face value. No-shows get a 180-day booking restriction. You can also book it yourself with our travel article.",
       zh: "我们不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票，按票面价收取。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
-      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권이며 공식 가격 그대로 받습니다. 노쇼 시 180일 예약 제한. 가이드를 보고 직접 예약하셔도 됩니다.",
+      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권이며 공식 가격 그대로 받습니다. 노쇼 시 180일 예약 제한. 실용 가이드 글을 보고 직접 예약하셔도 됩니다.",
     },
     disclosure: {
       en: "We do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
@@ -426,9 +426,9 @@ export const attractionReservationRules = [
     release: null,
     price: null,
     notes: {
-      en: "Our guides do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
+      en: "Our travel articles do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
-      ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
+      ko: "실용 가이드 글에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
     verifiedAt: null,
     source: null,
@@ -493,9 +493,9 @@ export const attractionReservationRules = [
     release: null,
     price: null,
     notes: {
-      en: "Our guides do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
+      en: "Our travel articles do not record a booking rule yet, so a planner checks the official rule for your date before the written confirmation.",
       zh: "攻略尚无已核实的预约规则；书面确认前，规划师会按你的日期核实官方规则。",
-      ko: "가이드에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
+      ko: "실용 가이드 글에 확인된 예약 규칙이 아직 없으므로, 서면 확인 전에 플래너가 날짜 기준으로 공식 규칙을 확인합니다.",
     },
     verifiedAt: null,
     source: null,
@@ -536,7 +536,7 @@ export const attractionReservationRules = [
     notes: {
       en: "Our route guide records, from the scenic area's official notice, that admission is currently free but needs a real-name timed reservation. We recheck the rule for your date before the written confirmation.",
       zh: "我们的线路攻略依据景区官方公告记录：目前景区免票，但须实名分时预约。书面确认前，我们会按你的日期重新核实。",
-      ko: "저희 일정 가이드는 관광지 공식 공지를 근거로 현재 무료이지만 실명 시간대 예약이 필요하다고 기록합니다. 서면 확인 전에 날짜 기준으로 다시 확인합니다.",
+      ko: "저희 일정 안내 글은 관광지 공식 공지를 근거로 현재 무료이지만 실명 시간대 예약이 필요하다고 기록합니다. 서면 확인 전에 날짜 기준으로 다시 확인합니다.",
     },
     verifiedAt: "2026-09-26",
     source: "first-china-trip-jiangnan-6-or-beijing-11-days",

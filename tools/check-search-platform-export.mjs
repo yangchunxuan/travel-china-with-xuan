@@ -666,6 +666,25 @@ for (const locale of locales) {
   for (const route of themeRoutes) assertIncludes(hub, `href="/${route}"`, `/${hubRoute} theme link`);
 }
 
+// Must-see Sights (the Destinations menu's third row): the hub in three
+// languages, indexed and in the sitemap; a sight page stays out of the
+// sitemap and asks not to be indexed until its own writing is in.
+for (const locale of locales) {
+  const hubRoute = `${locale.prefix}sights/`;
+  const context = `/${hubRoute}`;
+  const hub = await readFile(path.join(outputRoot, hubRoute, "index.html"), "utf8");
+  assertIncludes(hub, `<link rel="canonical" href="${siteUrl}/${hubRoute}"/>`, context);
+  assertIncludes(hub, `href="/${hubRoute}"`, `${context} header link`);
+  if (!sitemapUrlEntry(sitemap, `${siteUrl}/${hubRoute}`)) throw new Error(`${context}: must-see sights is missing from sitemap.xml`);
+  const sightRoute = `${hubRoute}great-wall/`;
+  const sight = await readFile(path.join(outputRoot, sightRoute, "index.html"), "utf8");
+  assertIncludes(hub, `href="/${sightRoute}"`, `${context} sight link`);
+  assertIncludes(sight, `<link rel="canonical" href="${siteUrl}/${sightRoute}"/>`, `/${sightRoute}`);
+  if (!/<meta[^>]+name="robots"[^>]+content="noindex/iu.test(sight) && !sitemapUrlEntry(sitemap, `${siteUrl}/${sightRoute}`)) {
+    throw new Error(`/${sightRoute}: a sight page is either noindex or in the sitemap`);
+  }
+}
+
 for (const sitemapUrl of sitemapLocs) {
   const url = new URL(sitemapUrl);
   const route = url.pathname.replace(/^\/+|\/+$/gu, "");

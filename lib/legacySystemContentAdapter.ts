@@ -31,6 +31,8 @@ import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
 import { fullTripSupportPath } from "./fullTripSupport";
 import { getFullTripSupportCopy } from "./fullTripSupportI18n";
 import { travelInspirationPath, travelInspirationThemePath, travelInspirationThemes } from "./travelInspiration";
+import { sightPath, sights, sightsPath } from "./sights";
+import { getSightsCopy } from "./sightsI18n";
 import { getTravelInspirationCopy } from "./travelInspirationI18n";
 import {
   productPreviewCopy,
@@ -389,10 +391,38 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     ),
   ];
 
+  // Must-see Sights (Destinations menu): the hub is indexed; a sight page is
+  // indexed only once its own writing is in (`ready`), so a page of links
+  // never competes with the guide it points to.
+  const sightNodes: ContentNode[] = [
+    {
+      ...inspirationNode("must-see-sights", "hub-explore", inspirationVersions((locale) => {
+        const copy = getSightsCopy(locale).hub;
+        return { path: sightsPath[locale], ...copy.metadata, h1: copy.h1 };
+      })),
+      family: "entity",
+      primaryIntent: "understand",
+    },
+    ...sights.map((sight): ContentNode => ({
+      ...inspirationNode(`sight-${sight.id}`, "must-see-sights", inspirationVersions((locale) => {
+        const copy = getSightsCopy(locale);
+        const name = copy.sights[sight.id].name;
+        return { path: sightPath(sight.id, locale), title: `${name} · ${copy.hub.h1}`, description: copy.sights[sight.id].line, h1: name };
+      })),
+      family: "entity",
+      primaryIntent: "understand",
+      schemaTypes: ["WebPage", "TouristAttraction"],
+      indexability: sight.ready
+        ? { index: true, follow: true }
+        : { index: false, follow: true, blockReason: "Framework page: indexed once the sight's own writing is added." },
+    })),
+  ];
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
     ...inspirationNodes,
+    ...sightNodes,
     systemNode({
       id: "home",
       section: "explore",

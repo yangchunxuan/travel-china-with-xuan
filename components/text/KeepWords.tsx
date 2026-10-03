@@ -18,7 +18,16 @@ type Locale = "en" | "zh" | "ko" | "ja";
  * - Japanese: the same keep-all + <wbr> treatment as Chinese, placed between
  *   phrases (a word plus its particles) from splitJapanesePhrases.
  */
-export function KeepWords({ text, locale }: { text: string; locale: Locale }) {
+export function KeepWords({ text, locale, keep }: {
+  text: string;
+  locale: Locale;
+  /**
+   * Chinese only, opt-in: names the word segmenter would split (八达岭 comes
+   * out as 八|达|岭). Each is kept whole, with a break allowed around it.
+   * Without it the output is exactly as before.
+   */
+  keep?: readonly string[];
+}) {
   if (locale === "ko") return <>{text}</>;
 
   if (locale === "ja") {
@@ -65,9 +74,11 @@ export function KeepWords({ text, locale }: { text: string; locale: Locale }) {
   const segmenter = new Intl.Segmenter("zh-Hans", { granularity: "word" });
   const nodes: ReactNode[] = [];
   // Number + unit runs first, so "6 天 5 晚" never splits at its spaces.
-  text.split(/(\d+\s*天(?:\s*\d+\s*晚)?|\d+\s*晚|\d+\s*人)/u).forEach((chunk, chunkIndex) => {
+  const pushText = (piece: string, keyPrefix: string) => piece.split(/(\d+\s*天(?:\s*\d+\s*晚)?|\d+\s*晚|\d+\s*人)/u).forEach((chunk, rawIndex) => {
+    const chunkIndex = `${keyPrefix}${rawIndex}`;
+    const isUnitRun = rawIndex % 2 === 1;
     if (!chunk) return;
-    if (chunkIndex % 2 === 1) {
+    if (isUnitRun) {
       nodes.push(
         <span className={styles.keep} key={`n-${chunkIndex}`}>
           {chunk}
@@ -84,6 +95,25 @@ export function KeepWords({ text, locale }: { text: string; locale: Locale }) {
       nodes.push(<Fragment key={`t-${chunkIndex}-${part.index}`}>{part.segment}</Fragment>);
       first = false;
     }
+  });
+  if (!keep?.length) {
+    pushText(text, "");
+    return <span className={styles.phrases}>{nodes}</span>;
+  }
+  const escaped = keep.map((word) => word.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&"));
+  let afterKept = false;
+  text.split(new RegExp(`(${escaped.join("|")})`, "u")).forEach((piece, index) => {
+    if (!piece) return;
+    if (index % 2 === 1) {
+      if (nodes.length) nodes.push(<wbr key={`kw-${index}`} />);
+      nodes.push(<span className={styles.keep} key={`k-${index}`}>{piece}</span>);
+      afterKept = true;
+      return;
+    }
+    // A break may follow a kept name, unless punctuation stays with it.
+    if (afterKept && !/^\p{P}/u.test(piece)) nodes.push(<wbr key={`ka-${index}`} />);
+    afterKept = false;
+    pushText(piece, `p${index}-`);
   });
   return <span className={styles.phrases}>{nodes}</span>;
 }

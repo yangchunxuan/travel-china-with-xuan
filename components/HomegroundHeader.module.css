@@ -881,15 +881,15 @@
 
 /*
  * Five primary items with descriptions plus the menu rows under
- * "Destinations" (one) and "Services" (two) need about 650px. Phones up to
- * 760px tall (iPhone Safari with its toolbars, in-app browsers) get
- * label-only rows, as x.ai and Apple use, about 480px in all. From 650px
- * down (small Android phones in Samsung Internet or in-app browsers, iPhone
- * mini, 320x568) the two services rows go too ("Services" opens a page
- * that links them) and the one Travel Inspiration row stays, so the fifth
- * item is never hidden below the utility bar.
+ * "Destinations" (two) and "Services" (two) need about 700px. Phones up to
+ * 860px tall (iPhone Safari with its toolbars, in-app browsers, a full
+ * 390x844 screen) get label-only rows, as x.ai and Apple use, about 530px
+ * in all. From 700px down (small Android phones in Samsung Internet or
+ * in-app browsers, iPhone SE and mini, 320x568) the two services rows go
+ * too ("Services" opens a page that links them) and the Destinations rows
+ * stay, so the fifth item is never hidden below the utility bar.
  */
-@media (max-width: 1179.98px) and (max-height: 760px) {
+@media (max-width: 1179.98px) and (max-height: 860px) {
   .mobilePrimaryLinks {
     padding-block: 0.5rem;
   }
@@ -904,7 +904,7 @@
   }
 }
 
-@media (max-width: 1179.98px) and (max-height: 650px) {
+@media (max-width: 1179.98px) and (max-height: 700px) {
   .mobilePrimaryLinks > a[data-has-submenu="services"] {
     border-block-end: 1px solid rgb(10 10 10 / 10%);
   }
