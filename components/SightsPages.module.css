@@ -167,15 +167,24 @@
   text-underline-offset: 0.2em;
 }
 
-/* "CC BY-SA 4.0" never breaks across lines. */
-.photoCredits .license {
+/* An author or "CC BY-SA 4.0" never breaks across lines; a credit stays whole where it fits. */
+.photoCredits a {
   white-space: nowrap;
 }
 
+.creditItem {
+  display: inline-block;
+}
+
 @media (max-width: 40rem) {
-  /* One credit per line on phones; the dots between them only separate on wider screens. */
+  /* Phones: the label, then one credit per line, so "Name (" never splits from its author. */
   .creditItem {
-    display: block;
+    display: inline;
+  }
+
+  .creditItem::before {
+    content: "\A";
+    white-space: pre;
   }
 
   .creditSeparator {

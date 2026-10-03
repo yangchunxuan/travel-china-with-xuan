@@ -381,9 +381,9 @@ export const sights: readonly Sight[] = [
       width: 1200,
       height: 800,
       alt: {
-        en: "Hongyadong's stilt-house-style towers lit up at dusk",
-        zh: "黄昏时亮灯的洪崖洞吊脚楼式建筑",
-        ko: "해 질 녘 불이 켜진 홍야동의 조각루 양식 건물",
+        en: "Hongyadong's stilt-house-style tiers lit up at night above a busy street",
+        zh: "夜里亮灯的洪崖洞吊脚楼式建筑，楼前车流不断",
+        ko: "밤에 불이 켜진 홍야동의 조각루 양식 건물과 앞길의 차량 불빛",
       },
     },
     tourSlugs: ["beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"],

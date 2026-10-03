@@ -249,7 +249,7 @@ function ClosingBand({ locale, id, bookable, showAllTours = true, city }: { loca
     <section aria-labelledby={id} className={styles.cta} data-reveal="">
       <div>
         <h2 id={id}>{title}</h2>
-        <p><KeepWords locale={locale} text={body} /></p>
+        <p><KeepWords keep={sightsKeepWords} locale={locale} text={body} /></p>
         {tours && showAllTours ? (
           <Link className={styles.textLink} href={tours.href}>{getTravelInspirationCopy(locale).hub.allTours}<ArrowRight aria-hidden="true" size={15} /></Link>
         ) : null}
@@ -295,7 +295,7 @@ export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) 
           <h1>{copy.hub.h1}</h1>
           <p className={styles.lede}>
             <KeepWords locale={locale} text={fillSightsCopy(copy.hub.lede, {
-              count: String(ordered.filter((sight) => getAttractionReservationRule(sight.reservationIds[0])?.status === "offered").length),
+              count: String(ordered.filter((sight) => !sight.freeToVisit && getAttractionReservationRule(sight.reservationIds[0])?.status === "offered").length),
               total: String(ordered.length),
             })} />
           </p>
@@ -426,7 +426,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
                 ) : null}
                 {mainBookable ? (
                   <span className={sightStyles.heroNote}>
-                    {fillSightsCopy(rules[0].price?.kind === "free-reservation" ? copy.reserveNoteFree : copy.page.reserveNote, { fee })}
+                    <SightText locale={locale} text={fillSightsCopy(rules[0].price?.kind === "free-reservation" ? copy.reserveNoteFree : copy.page.reserveNote, { fee })} />
                   </span>
                 ) : null}
                 {freeEntry ? <span className={sightStyles.heroNote}>{getAttractionReservationCopy(locale).freeWalkIn}</span> : null}

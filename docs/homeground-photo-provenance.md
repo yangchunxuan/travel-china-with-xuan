@@ -1789,7 +1789,7 @@ Two more sight photos were exported the same way on October 4, 2026, after revie
 | Sight | Source in the owner library; SHA-256 | Website file; SHA-256 |
 | --- | --- | --- |
 | Chengdu Panda Base (live pandas) | `成都优选素材/01_熊猫基地与熊猫元素/六妹素材 (35).jpg`; `362c3e0f11436990c3a0c4242123c9f30a90c2bb1d76de856d993c551364b1a3` | `public/images/sights/chengdu-panda-base-1200.webp`; `6180859decb5d2967abb365c8970cebd67464184005c8f8a8a9d38dafe563a81` |
-| Hongyadong (at dusk) | `重庆优选素材/01_重庆地标建筑/洪崖洞_08.jpg`; `5e2a6e169040b59d17681b306b1b37e188c900dae670f0addad5c63ce45c3463` | `public/images/sights/hongyadong-1200.webp`; `b15560b2d96e81ce186fade8e2ec34b4d693bbc384ca5c8d68bace9c5fe8fad7` |
+| Hongyadong (at night, street level) | `重庆优选素材/01_重庆地标建筑/洪崖洞_01.jpg`; `e552c84167414ec3b2dd515c73ae114686851ed52a5c70ebe8828e8f22093017` | `public/images/sights/hongyadong-1200.webp`; `20a12a3db60e3b27ce8bdb6c2a88b6936cffdafb53d6fcd624160f220b86125e` |
 
 The Hongyadong photo shows the building's own lit signs; nothing is added to it.
 Tour-card photos under an attribution licence are credited from

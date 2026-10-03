@@ -532,6 +532,35 @@
   }
 }
 
+/* Two columns: a tile left alone on its row is a compact band, not a big empty card. */
+@media (min-width: 40.0625rem) and (max-width: 61.25rem) {
+  .tours > .planTileItem:nth-child(2n + 1) .planTile {
+    align-items: center;
+    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: 1.25rem 1.5rem;
+    row-gap: 0.25rem;
+  }
+
+  .tours > .planTileItem:nth-child(2n + 1) .planIcon {
+    grid-row: 1 / span 2;
+    margin-bottom: 0;
+  }
+
+  .tours > .planTileItem:nth-child(2n + 1) .planTile > strong,
+  .tours > .planTileItem:nth-child(2n + 1) .planTile > span:not(.cardAction):not(.planIcon) {
+    grid-column: 2;
+    max-width: none;
+  }
+
+  .tours > .planTileItem:nth-child(2n + 1) .planTile > .cardAction {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    margin-top: 0;
+  }
+}
+
 /* On three columns the tile takes every slot left in its row. */
 @media (min-width: 61.3125rem) {
   .planTileItem {

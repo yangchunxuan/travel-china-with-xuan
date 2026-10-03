@@ -68,7 +68,7 @@ const zhHeadingSegments = {
   xian: ["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"],
   chengdu: ["成都：", "先把城市住稳，", "再搭四川路线"],
   guangzhou: ["广州：", "住几晚、", "住哪个区、", "走哪个门户"],
-  hangzhou: ["杭州：", "先决定一日往返，", "还是把杭州", "真正住下来"],
+  hangzhou: ["杭州：", "先决定", "一日往返，", "还是把杭州", "真正住下来"],
   zhangjiajie: ["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"],
   chongqing: ["重庆：", "选对住宿基地、", "车站和停留晚数"],
 } as const satisfies Record<DestinationHubId, readonly string[]>;
@@ -94,13 +94,14 @@ const ui = {
     whatLabel: "Must-See Sights",
     whatTitle: (city: string) => `What to see in ${city}`,
     whatBody: "Open one for why it is worth the trip and how to visit; the four decisions below show how to fit them into your days.",
-    planTileOne: "Want a different trip?",
     themeLink: (name: string) => `Trip ideas: ${name}`,
     toursLabel: "Private tours",
     toursTitle: (city: string) => `Private tours that include ${city}`,
     allTours: "All private tours",
     toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
     bandTitle: "Hand us the whole trip, or just part of it.",
+    bandTitleTrip: "Hand us the whole trip.",
+    bandBodyTrip: "A real person replies, working from your dates and group size.",
     bandBody: "A real person replies to each request, working from your dates and group size.",
     v2Eyebrow: "City guide",
     v2DecisionsTitle: "Understand the city, then plan the details.",
@@ -134,13 +135,14 @@ const ui = {
     whatLabel: "必去景点",
     whatTitle: (city: string) => `${city}必去的几个地方`,
     whatBody: "点进去看为什么值得去、怎么去；怎么排进行程，看下面的四个决定。",
-    planTileOne: "想换个走法？",
     themeLink: (name: string) => `旅行灵感：${name}`,
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
     allTours: "全部私家团",
     toursBody: "现成路线，行程和价格写在各自的路线页上；只接待你们一行人，出发日期你们定。",
-    bandTitle: "整趟交给我们，或只请我们做一部分。",
+    bandTitle: "整趟交给我们，或只交一部分。",
+    bandTitleTrip: "把整趟旅行交给我们。",
+    bandBodyTrip: "真人回复，按你们的日期和人数来安排。",
     bandBody: "每一项都由真人回复，按你们的日期和人数来安排。",
     v2Eyebrow: "城市指南",
     v2DecisionsTitle: "先看懂这座城市，再安排细节。",
@@ -174,7 +176,6 @@ const ui = {
     whatLabel: "꼭 가볼 명소",
     whatTitle: (city: string) => `${city}에서 꼭 가볼 곳`,
     whatBody: "누르면 가 볼 만한 이유와 방문 방법을 볼 수 있습니다. 일정에 어떻게 넣을지는 아래 네 가지 판단을 참고하세요.",
-    planTileOne: "다른 일정을 원하시나요?",
     themeLink: (name: string) => `테마 여행: ${name}`,
     toursLabel: "프라이빗 투어",
     // "프라이빗 투어" stays on one line.
@@ -182,6 +183,8 @@ const ui = {
     allTours: "프라이빗 투어 전체 보기",
     toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
     bandTitle: "전체 여행도, 일부만도 맡기실 수 있습니다.",
+    bandTitleTrip: "전체 여행을 맡겨 주세요.",
+    bandBodyTrip: "실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
     bandBody: "어느 쪽이든 실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
     v2Eyebrow: "도시 가이드",
     v2DecisionsTitle: "도시의 구조를 먼저 보고, 세부 일정을 정하세요.",
@@ -369,6 +372,8 @@ export function DestinationHubPage({
     ...((attractionReservationCityIds as readonly string[]).includes(hubId) ? [] : ["attraction-tickets" as const]),
     ...((privateGuideCities as readonly string[]).includes(hubId) ? [] : ["english-guides" as const]),
   ];
+  // Only the whole trip left to offer: the band says so instead of "or just part of it".
+  const tripOnly = missingServices.length === 2;
   const sightsCopy = getSightsCopy(locale);
   // How many published tours pass through this city (by the city's Chinese name on each route line).
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
@@ -470,7 +475,7 @@ export function DestinationHubPage({
                   <div className={destinationStyles.cityBlockHead}>
                     <p>{copy.whatLabel}</p>
                     <h2 id="destination-what-title"><KeepWords locale={locale} text={copy.whatTitle(hub.navTitle)} /></h2>
-                    <p><KeepWords locale={locale} text={copy.whatBody} /></p>
+                    <p><KeepWords keep={["排进行程"]} locale={locale} text={copy.whatBody} /></p>
                   </div>
                   <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
                     {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
@@ -585,7 +590,7 @@ export function DestinationHubPage({
                 <ul className={inspirationStyles.tours}>
                   {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                   {/* A row the city's tours do not fill ends with the way to a trip planned around you. */}
-                  <PlanTile count={cityTours.length} locale={locale} title={cityTours.length === 1 ? copy.planTileOne : undefined} />
+                  <PlanTile count={cityTours.length} locale={locale} />
                 </ul>
                 <TourPhotoCredits locale={locale} tours={cityTours} />
                 <p className={destinationStyles.cityBlockLinks}>
@@ -725,8 +730,8 @@ export function DestinationHubPage({
           >
             <div>
               <p className={destinationStyles.cityBandLabel}>{copy.ctaLabel}</p>
-              <h2 id="destination-band-title"><KeepWords keep={["整趟交给我们，", "或只请我们做一部分。"]} locale={locale} text={copy.bandTitle} /></h2>
-              <p><KeepWords locale={locale} text={copy.bandBody} /></p>
+              <h2 id="destination-band-title"><KeepWords keep={["整趟交给我们，", "或只交一部分。"]} locale={locale} text={tripOnly ? copy.bandTitleTrip : copy.bandTitle} /></h2>
+              <p><KeepWords locale={locale} text={tripOnly ? copy.bandBodyTrip : copy.bandBody} /></p>
             </div>
             <ServiceRows locale={locale} omit={missingServices} />
           </section>

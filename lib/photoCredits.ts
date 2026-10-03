@@ -60,7 +60,7 @@ export const tourCardCredits: Readonly<Partial<Record<string, PhotoCredit>>> = {
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
   },
   "guangzhou-shunde-foshan-5-day-private-tour": {
-    author: "Daniel Lu（User:dllu）",
+    author: "Daniel Lu (User:dllu)",
     license: "CC BY-SA 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Canton_Tower_at_night_Guangzhou_2024_dllu.jpg",

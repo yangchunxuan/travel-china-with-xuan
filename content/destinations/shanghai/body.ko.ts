@@ -172,7 +172,7 @@ const body = {
       id: "five-day-heading",
       type: "heading",
       level: 2,
-      text: "상하이 4박 5일 일정: 도착·출발일부터 계산하기",
+      text: "상하이 4박 5일 일정: 도착일과 출발일부터 계산하기",
     },
     {
       id: "five-day-intro",

@@ -113,11 +113,12 @@ export function tourTitle(title: string, locale: HomegroundLocale) {
   return title;
 }
 
-/*
- * Tour titles take no `keep` list: KeepWords' no-break spans inside a
- * balanced heading (text-wrap: balance) froze Chrome's layout on
- * /zh/tours/regions/ (October 2026). Titles keep their plain word breaks.
+/**
+ * Chinese place names in tour titles the word segmenter would split
+ * (三星|堆, 游|轮). KeepWords keeps them as plain text with no <wbr> inside;
+ * an earlier nowrap-span version froze Chrome in balanced headings.
  */
+const tourTitleKeepWords = ["三星堆", "九寨沟", "武隆", "游轮", "峰林", "天门山", "岭南", "水乡", "大熊猫"] as const;
 
 /**
  * Ends a row of tour cards that the tours do not fill: the way to a trip
@@ -125,7 +126,7 @@ export function tourTitle(title: string, locale: HomegroundLocale) {
  * wide card (TravelInspiration.module.css), so the row never leaves a large
  * empty tile. Phones reach the same service in the closing band instead.
  */
-export function PlanTile({ count, locale, title }: { count: number; locale: HomegroundLocale; title?: string }) {
+export function PlanTile({ count, locale }: { count: number; locale: HomegroundLocale }) {
   const fullTrip = navigationFor(locale).services.find((entry) => entry.id === "trip-support");
   if (!fullTrip || count % 3 === 0) return null;
   const copy = getTravelInspirationCopy(locale).theme.planTile;
@@ -133,7 +134,7 @@ export function PlanTile({ count, locale, title }: { count: number; locale: Home
     <li className={styles.planTileItem} style={revealDelay(count)}>
       <Link className={styles.planTile} href={fullTrip.href}>
         <span aria-hidden="true" className={styles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
-        <strong>{title ?? copy.title}</strong>
+        <strong>{count === 1 ? copy.titleOne : copy.title}</strong>
         <span><KeepWords locale={locale} text={copy.body} /></span>
         <span className={styles.cardAction}>{copy.action}<ArrowRight aria-hidden="true" size={15} /></span>
       </Link>
@@ -160,7 +161,7 @@ export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCa
           />
         </span>
         <span className={styles.tourText}>
-          <h4><KeepWords locale={locale} text={tourTitle(tour.title, locale)} /></h4>
+          <h4><KeepWords keep={tourTitleKeepWords} locale={locale} text={tourTitle(tour.title, locale)} /></h4>
           <span className={styles.route}><KeepStops route={tour.comparison.route} /></span>
           <span className={styles.fit}><KeepWords locale={locale} text={tour.comparison.fit} /></span>
         </span>

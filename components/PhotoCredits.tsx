@@ -38,7 +38,7 @@ export function CreditLinks({ credit, locale }: { credit: PhotoCredit; locale: H
 export function PhotoCreditLine({ credit, locale, className }: { credit: PhotoCredit; locale: HomegroundLocale; className?: string }) {
   return (
     <p className={className ?? styles.photoCredits}>
-      {getSightsCopy(locale).photo}{colon(locale)}<CreditLinks credit={credit} locale={locale} />{edited(locale)}
+      {getSightsCopy(locale).photo}{edited(locale)}{colon(locale)}<CreditLinks credit={credit} locale={locale} />
     </p>
   );
 }
@@ -53,14 +53,13 @@ export function PhotoCredits({ items, locale }: {
   const copy = getSightsCopy(locale);
   return (
     <p className={styles.photoCredits}>
-      <span>{credited.length === 1 ? copy.photo : copy.photos}{colon(locale)}</span>
+      {credited.length === 1 ? copy.photo : copy.photos}{edited(locale)}{colon(locale)}
       {credited.map((item, index) => (
         <span className={styles.creditItem} key={item.key}>
           {index ? <span aria-hidden="true" className={styles.creditSeparator}> · </span> : null}
-          {item.name}{comma(locale)}<CreditLinks credit={item.credit} locale={locale} />
+          {item.name}{locale === "zh" ? "（" : " ("}<CreditLinks credit={item.credit} locale={locale} />{locale === "zh" ? "）" : ")"}
         </span>
       ))}
-      <span>{edited(locale)}</span>
     </p>
   );
 }

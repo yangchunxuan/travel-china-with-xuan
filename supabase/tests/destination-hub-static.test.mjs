@@ -15,7 +15,7 @@ test("destination hubs keep each Chinese city name together on narrow screens", 
   assert.match(page, /beijing: \["北京：", "先分配", "完整的一天，", "再安排景点"\]/);
   assert.match(page, /shanghai: \["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
   assert.match(page, /xian: \["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
-  assert.match(page, /hangzhou: \["杭州：", "先决定一日往返，", "还是把杭州", "真正住下来"\]/);
+  assert.match(page, /hangzhou: \["杭州：", "先决定", "一日往返，", "还是把杭州", "真正住下来"\]/);
   assert.match(page, /zhangjiajie: \["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"\]/);
   assert.match(page, /chongqing: \["重庆：", "选对住宿基地、", "车站和停留晚数"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
