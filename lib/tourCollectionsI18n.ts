@@ -14,8 +14,6 @@ interface TourCollectionCopy {
 export interface TourCollectionsCopy {
   /** The hero eyebrow, from the data. */
   facts: (routes: number, minDays: number, maxDays: number) => string;
-  /** The tag on a fixed-departure small group. */
-  smallGroup: string;
   /** Under a group heading: how many routes and how long. */
   groupMeta: (routes: number, minDays: number, maxDays: number) => string;
   servicesTitle: string;
@@ -28,7 +26,6 @@ export interface TourCollectionsCopy {
 const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
   en: {
     facts: (routes, min, max) => (min === max ? `${routes} routes · ${min} days` : `${routes} routes · ${min}–${max} days`),
-    smallGroup: "Small group",
     groupMeta: (routes, min, max) => `${routes} ${routes === 1 ? "route" : "routes"} · ${min === max ? min : `${min}–${max}`} days`,
     otherWays: "Browse another way",
     servicesTitle: "No route fits?",
@@ -43,7 +40,7 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
         name: "Multi-City Classics",
         h1Lines: ["Multi-city classics:", "several cities in one trip."],
         lede:
-          "A common first route links Beijing, Xi'an and Shanghai, then adds Guilin, Chengdu, Zhangjiajie or a Yangtze cruise as the days allow. They are sorted by length below; those marked \"Small group\" run on fixed dates with other travellers.",
+          "A common first route links Beijing, Xi'an and Shanghai, then adds Guilin, Chengdu, Zhangjiajie or a Yangtze cruise as the days allow. They are sorted by length below; a \"Small-Group Tour\" runs on fixed dates with other travellers.",
         groups: {
           "up-to-10": { title: "Up to 10 days", note: "Three cities, or three plus Guilin; the shortest is a 6-day Chongqing and Three Gorges cruise." },
           "11-to-14": { title: "11 to 14 days", note: "More nights per stop, or one or two more regions: Zhangjiajie, Guilin, Yunnan or Huangshan." },
@@ -78,7 +75,6 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
   },
   zh: {
     facts: (routes, min, max) => (min === max ? `${routes} 条路线 · ${min} 天` : `${routes} 条路线 · ${min}–${max} 天`),
-    smallGroup: "小团",
     groupMeta: (routes, min, max) => `${routes} 条 · ${min === max ? min : `${min}–${max}`} 天`,
     otherWays: "换个方式挑",
     servicesTitle: "没有合适的路线？",
@@ -93,7 +89,7 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
         name: "多城经典线",
         h1Lines: ["多城经典线，", "一趟走好几座城。"],
         lede:
-          "常见的走法是先串起北京、西安、上海，再按天数加上桂林、成都、张家界或长江游轮。下面按天数排好；标了“小团”的，是固定日期出发、和其他客人同行的团。",
+          "常见的走法是先串起北京、西安、上海，再按天数加上桂林、成都、张家界或长江游轮。下面按天数排好；名称里写着“小团”的，是固定日期出发、和其他客人同行的团。",
         groups: {
           "up-to-10": { title: "10 天以内", note: "三座城市，或三城加桂林山水；最短的是 6 天重庆三峡游轮。" },
           "11-to-14": { title: "11 到 14 天", note: "每一站多住几晚，或者再加张家界、桂林、云南、黄山等一两个地区。" },
@@ -126,7 +122,6 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
   },
   ko: {
     facts: (routes, min, max) => (min === max ? `일정 ${routes}개 · ${min}일` : `일정 ${routes}개 · ${min}~${max}일`),
-    smallGroup: "소그룹",
     groupMeta: (routes, min, max) => `${routes}개 · ${min === max ? min : `${min}~${max}`}일`,
     otherWays: "다른 방식으로 보기",
     servicesTitle: "맞는 일정이 없나요?",
@@ -141,7 +136,7 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
         name: "여러 도시 일주",
         h1Lines: ["여러 도시 일주,", "한 번에 여러 도시를."],
         lede:
-          "기본은 베이징·시안·상하이를 잇는 코스이고, 기간에 따라 계림·청두·장가계나 장강 크루즈를 더합니다. 아래에 기간별로 정리했으며, '소그룹' 표시는 정해진 날짜에 다른 여행자와 함께 출발하는 상품입니다.",
+          "기본은 베이징·시안·상하이를 잇는 코스이고, 기간에 따라 계림·청두·장가계나 장강 크루즈를 더합니다. 아래에 기간별로 정리했으며, 이름에 '소규모 그룹'이 붙은 상품은 정해진 날짜에 다른 여행자와 함께 출발합니다.",
         groups: {
           "up-to-10": { title: "10일 이내", note: "세 도시, 또는 세 도시에 계림을 더한 일정. 가장 짧은 건 6일 충칭·삼협 크루즈입니다." },
           "11-to-14": { title: "11~14일", note: "도시마다 더 머물거나, 장가계·계림·윈난·황산 같은 지역을 한두 곳 더합니다." },

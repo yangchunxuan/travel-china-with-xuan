@@ -391,28 +391,6 @@
   position: relative;
 }
 
-.days,
-.formatTag {
-  background: rgb(255 255 255 / 92%);
-  border-radius: 999px;
-  box-shadow: 0 1px 3px rgb(10 10 10 / 18%);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  inset-block-start: 0.75rem;
-  inset-inline-start: 0.75rem;
-  line-height: 1;
-  padding: 0.45rem 0.7rem;
-  position: absolute;
-  white-space: nowrap;
-}
-
-/* A small group's tag sits in the photo's other corner, never wrapping the days pill. */
-.formatTag {
-  background: var(--ink);
-  color: var(--paper);
-  inset-inline: auto 0.75rem;
-}
-
 .tourText {
   display: grid;
   gap: 0.45rem;
@@ -861,20 +839,6 @@
   .tourCard .cardAction {
     font-size: 0.8125rem;
     padding: 0.5rem 0 0;
-  }
-
-  .days,
-  .formatTag {
-    font-size: 0.6875rem;
-    inset-block-start: 0.4rem;
-    inset-inline-start: 0.4rem;
-    padding: 0.3rem 0.45rem;
-  }
-
-  /* Phones: the thumbnail is narrow, so the small-group tag sits under the days pill. */
-  .formatTag {
-    inset-block: auto 0.4rem;
-    inset-inline: 0.4rem auto;
   }
 
   .groupHead {

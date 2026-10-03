@@ -78,3 +78,23 @@ test("the pages sit under Destinations, reveal once and keep prices out of their
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /\.page \[data-reveal="pending"\] li \{/);
 });
+
+test("nothing is written on a photo: tour, sight and theme cards hold the image alone", async () => {
+  const [parts, sightsPage, inspirationPage, styles] = await Promise.all([
+    readFile(path.join(projectRoot, "components/DestinationParts.tsx"), "utf8"),
+    readFile(path.join(projectRoot, "components/SightsPages.tsx"), "utf8"),
+    readFile(path.join(projectRoot, "components/TravelInspirationPages.tsx"), "utf8"),
+    readFile(path.join(projectRoot, "components/TravelInspiration.module.css"), "utf8"),
+  ]);
+  const mediaHoldsOnlyTheImage = (source, mediaClass) => {
+    const blocks = [...source.matchAll(new RegExp(`<span className=\\{\\w+\\.${mediaClass}\\}>([\\s\\S]*?)\\n\\s*</span>`, "gu"))];
+    assert.ok(blocks.length > 0, `${mediaClass} is rendered`);
+    for (const [, inner] of blocks) {
+      assert.match(inner.trim(), /^<img[\s\S]*\/>$/u, `${mediaClass} holds an <img> and nothing else`);
+    }
+  };
+  mediaHoldsOnlyTheImage(parts, "tourMedia");
+  mediaHoldsOnlyTheImage(sightsPage, "sightMedia");
+  mediaHoldsOnlyTheImage(inspirationPage, "themeMedia");
+  assert.doesNotMatch(styles, /\.days|\.formatTag/u);
+});
