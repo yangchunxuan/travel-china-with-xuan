@@ -113,6 +113,31 @@ export function tourTitle(title: string, locale: HomegroundLocale) {
   return title;
 }
 
+/** Chinese place names in tour titles the word segmenter would split (三星|堆, 游|轮). */
+const tourTitleKeepWords = ["三星堆", "九寨沟", "武隆", "游轮", "峰林", "天门山", "岭南", "水乡", "大熊猫"] as const;
+
+/**
+ * Ends a row of tour cards that the tours do not fill: the way to a trip
+ * planned around you, one column wide. A lone card before it turns into a
+ * wide card (TravelInspiration.module.css), so the row never leaves a large
+ * empty tile. Phones reach the same service in the closing band instead.
+ */
+export function PlanTile({ count, locale, title }: { count: number; locale: HomegroundLocale; title?: string }) {
+  const fullTrip = navigationFor(locale).services.find((entry) => entry.id === "trip-support");
+  if (!fullTrip || count % 3 === 0) return null;
+  const copy = getTravelInspirationCopy(locale).theme.planTile;
+  return (
+    <li className={styles.planTileItem} style={revealDelay(count)}>
+      <Link className={styles.planTile} href={fullTrip.href}>
+        <span aria-hidden="true" className={styles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
+        <strong>{title ?? copy.title}</strong>
+        <span><KeepWords locale={locale} text={copy.body} /></span>
+        <span className={styles.cardAction}>{copy.action}<ArrowRight aria-hidden="true" size={15} /></span>
+      </Link>
+    </li>
+  );
+}
+
 export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCatalogItem; locale: HomegroundLocale; index: number }) {
   const copy = getTravelInspirationCopy(locale);
   return (
@@ -132,7 +157,7 @@ export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCa
           />
         </span>
         <span className={styles.tourText}>
-          <h4><KeepWords locale={locale} text={tourTitle(tour.title, locale)} /></h4>
+          <h4><KeepWords keep={tourTitleKeepWords} locale={locale} text={tourTitle(tour.title, locale)} /></h4>
           <span className={styles.route}><KeepStops route={tour.comparison.route} /></span>
           <span className={styles.fit}><KeepWords locale={locale} text={tour.comparison.fit} /></span>
         </span>

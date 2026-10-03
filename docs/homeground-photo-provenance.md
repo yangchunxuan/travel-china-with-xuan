@@ -1783,3 +1783,15 @@ The Guangzhou sights reuse the already-logged Wikimedia Commons photos (Chen
 Clan Ancestral Hall, Canton Tower, Shamian); their author and licence appear
 under the photo on each sight page and under every grid or strip that shows
 them.
+
+Two more sight photos were exported the same way on October 4, 2026, after review: the Panda Base guide's photo shows a sculpture, and the Hongyadong card repeated a tour photo on the Chongqing page.
+
+| Sight | Source in the owner library; SHA-256 | Website file; SHA-256 |
+| --- | --- | --- |
+| Chengdu Panda Base (live pandas) | `成都优选素材/01_熊猫基地与熊猫元素/六妹素材 (35).jpg`; `362c3e0f11436990c3a0c4242123c9f30a90c2bb1d76de856d993c551364b1a3` | `public/images/sights/chengdu-panda-base-1200.webp`; `6180859decb5d2967abb365c8970cebd67464184005c8f8a8a9d38dafe563a81` |
+| Hongyadong (at dusk) | `重庆优选素材/01_重庆地标建筑/洪崖洞_08.jpg`; `5e2a6e169040b59d17681b306b1b37e188c900dae670f0addad5c63ce45c3463` | `public/images/sights/hongyadong-1200.webp`; `b15560b2d96e81ce186fade8e2ec34b4d693bbc384ca5c8d68bace9c5fe8fad7` |
+
+The Hongyadong photo shows the building's own lit signs; nothing is added to it.
+Tour-card photos under an attribution licence are credited from
+`lib/photoCredits.ts` on every row that shows them (city, sight, inspiration and
+collection pages), matched to `docs/homeground-private-tour-card-derivatives.json`.

@@ -2,6 +2,9 @@ import type { AttractionReservationCityId, AttractionReservationId } from "./att
 import type { DestinationHubId } from "./destinationHubs";
 import type { GuideId } from "./guideRegistry";
 import type { HomegroundLocale } from "./homegroundI18n";
+import type { PhotoCredit } from "./photoCredits";
+
+export type { PhotoCredit };
 
 /**
  * Must-see sights: the third way into Destinations. A sight page says why it
@@ -79,13 +82,6 @@ export const sightIds = [
 ] as const;
 export type SightId = (typeof sightIds)[number];
 
-export interface PhotoCredit {
-  readonly author: string;
-  readonly license: string;
-  readonly licenseUrl: string;
-  readonly sourceUrl: string;
-}
-
 export interface Sight {
   readonly id: SightId;
   readonly city: SightCityId;
@@ -108,9 +104,16 @@ export interface Sight {
     readonly height: number;
     readonly alt: Readonly<Record<HomegroundLocale, string>>;
     readonly credit?: PhotoCredit;
+    /** Where the crop centres when a card or hero cuts the photo (CSS object-position). */
+    readonly objectPosition?: string;
   };
   /** The credit of an openly licensed guide photo the sight borrows (from docs/homeground-photo-provenance.md). */
   readonly photoCredit?: PhotoCredit;
+  /**
+   * The place itself is free to walk into, so the page leads with that and
+   * offers the bookable extras (the West Lake boats) below, never "book it".
+   */
+  readonly freeToVisit?: boolean;
   readonly ready: boolean;
 }
 
@@ -189,6 +192,12 @@ export const sights: readonly Sight[] = [
     guideId: "terracotta-warriors-without-tour",
     reservationIds: ["terracotta-warriors"],
     tourSlugs: ["xian-terracotta-warriors-5-day-private-tour", "beijing-xian-shanghai-8-day-private-tour", "beijing-xian-shanghai-12-day-private-tour"],
+    photoCredit: {
+      author: "BrokenSphere",
+      license: "CC BY-SA 3.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG",
+    },
     ready: false,
   },
   {
@@ -244,8 +253,9 @@ export const sights: readonly Sight[] = [
         zh: "日落时的上海中心大厦，旁边是金茂大厦和环球金融中心",
         ko: "해 질 녘 진마오타워·상하이 세계금융센터 옆의 상하이 타워",
       },
+      objectPosition: "15% 50%",
     },
-    tourSlugs: ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"],
+    tourSlugs: ["shanghai-suzhou-5-day-private-tour"],
     ready: false,
   },
   {
@@ -286,6 +296,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["shanghai-suzhou-hangzhou-6-day-private-tour", "beijing-hangzhou-suzhou-shanghai-11-day-private-tour", "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour"],
+    freeToVisit: true,
     ready: false,
   },
   {
@@ -324,6 +335,17 @@ export const sights: readonly Sight[] = [
     city: "chengdu",
     guideId: "chengdu-panda-base-or-dujiangyan-panda-valley",
     reservationIds: ["chengdu-panda-base"],
+    // The guide's photo is a panda sculpture; the card shows live pandas.
+    image: {
+      src: "/images/sights/chengdu-panda-base-1200.webp",
+      width: 1200,
+      height: 800,
+      alt: {
+        en: "Two giant pandas resting on a wooden climbing frame among trees",
+        zh: "两只大熊猫在林间的木架上休息",
+        ko: "나무 사이 목재 구조물 위에서 쉬고 있는 판다 두 마리",
+      },
+    },
     tourSlugs: ["chengdu-pandas-sanxingdui-5-day-private-tour", "chengdu-chongqing-8-day-private-tour", "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"],
     ready: false,
   },
@@ -355,16 +377,16 @@ export const sights: readonly Sight[] = [
     city: "chongqing",
     reservationIds: [],
     image: {
-      src: "/images/tours/chongqing-wulong-5-day-private-tour/gallery-hongyadong-qiansimen-1600.webp",
-      width: 1600,
-      height: 1000,
+      src: "/images/sights/hongyadong-1200.webp",
+      width: 1200,
+      height: 800,
       alt: {
-        en: "Hongyadong lit up at night beside Qiansimen Bridge on the Jialing River",
-        zh: "夜里亮灯的洪崖洞和嘉陵江上的大桥",
-        ko: "밤에 불이 켜진 홍야동과 자링강의 첸쓰먼대교",
+        en: "Hongyadong's stilt-house-style towers lit up at dusk",
+        zh: "黄昏时亮灯的洪崖洞吊脚楼式建筑",
+        ko: "해 질 녘 불이 켜진 홍야동의 조각루 양식 건물",
       },
     },
-    tourSlugs: ["chongqing-wulong-5-day-private-tour", "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"],
+    tourSlugs: ["beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"],
     ready: false,
   },
   {

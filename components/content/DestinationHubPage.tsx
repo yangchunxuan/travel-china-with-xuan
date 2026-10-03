@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowRight, Route } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   getDestinationHubEntry,
   getDestinationHubLanguagePaths,
@@ -51,7 +51,10 @@ import { sights, sightsPath } from "../../lib/sights";
 import { getSightsCopy } from "../../lib/sightsI18n";
 import { travelInspirationThemePath, travelInspirationThemes } from "../../lib/travelInspiration";
 import { getTravelInspirationCopy } from "../../lib/travelInspirationI18n";
-import { navigationFor, revealDelay, ServiceRows, TourCard } from "../DestinationParts";
+import { PlanTile, ServiceRows, TourCard } from "../DestinationParts";
+import { PhotoCreditLine, TourPhotoCredits } from "../PhotoCredits";
+import { privateGuideCities } from "../../lib/privateGuideServices";
+import type { HomegroundSubmenuId } from "../../lib/homegroundNavigationModel";
 import { SightCard, SightPhotoCredits } from "../SightsPages";
 import { KeepWords } from "../text/KeepWords";
 import inspirationStyles from "../TravelInspiration.module.css";
@@ -63,10 +66,10 @@ const zhHeadingSegments = {
   beijing: ["北京：", "先分配", "完整的一天，", "再安排景点"],
   shanghai: ["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"],
   xian: ["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"],
-  chengdu: ["成都：", "先把城市", "住稳，", "再搭四川路线"],
+  chengdu: ["成都：", "先把城市住稳，", "再搭四川路线"],
   guangzhou: ["广州：", "住几晚、", "住哪个区、", "走哪个门户"],
-  hangzhou: ["杭州：", "先决定一日往返，", "还是把杭州真正住下来"],
-  zhangjiajie: ["张家界：", "先分清市区、", "武陵源和不同山岳系统"],
+  hangzhou: ["杭州：", "先决定一日往返，", "还是把杭州", "真正住下来"],
+  zhangjiajie: ["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"],
   chongqing: ["重庆：", "选对住宿基地、", "车站和停留晚数"],
 } as const satisfies Record<DestinationHubId, readonly string[]>;
 
@@ -90,7 +93,8 @@ const ui = {
     ctaButton: "Start my trip brief",
     whatLabel: "Must-See Sights",
     whatTitle: (city: string) => `What to see in ${city}`,
-    whatBody: "Open one for why it is worth the trip and how booking works; the four decisions below show how to fit them into your days.",
+    whatBody: "Open one for why it is worth the trip and how to visit; the four decisions below show how to fit them into your days.",
+    planTileOne: "Want a different trip?",
     themeLink: (name: string) => `Trip ideas: ${name}`,
     toursLabel: "Private tours",
     toursTitle: (city: string) => `Private tours that include ${city}`,
@@ -129,7 +133,8 @@ const ui = {
     ctaButton: "开始填写旅行简报",
     whatLabel: "必去景点",
     whatTitle: (city: string) => `${city}必去的几个地方`,
-    whatBody: "点进去看为什么值得去、怎么预约；怎么排进你的天数，看下面的四个决定。",
+    whatBody: "点进去看为什么值得去、怎么去；怎么排进行程，看下面的四个决定。",
+    planTileOne: "想换个走法？",
     themeLink: (name: string) => `旅行灵感：${name}`,
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
@@ -168,7 +173,8 @@ const ui = {
     ctaButton: "여행 브리프 시작하기",
     whatLabel: "꼭 가볼 명소",
     whatTitle: (city: string) => `${city}에서 꼭 가볼 곳`,
-    whatBody: "누르면 가 볼 만한 이유와 예약 방법을 볼 수 있습니다. 일정에 어떻게 넣을지는 아래 네 가지 판단을 참고하세요.",
+    whatBody: "누르면 가 볼 만한 이유와 방문 방법을 볼 수 있습니다. 일정에 어떻게 넣을지는 아래 네 가지 판단을 참고하세요.",
+    planTileOne: "다른 일정을 원하시나요?",
     themeLink: (name: string) => `테마 여행: ${name}`,
     toursLabel: "프라이빗 투어",
     // "프라이빗 투어" stays on one line.
@@ -358,7 +364,11 @@ export function DestinationHubPage({
     return tour;
   });
   const inspiration = getTravelInspirationCopy(locale);
-  const fullTrip = navigationFor(locale).services.find((entry) => entry.id === "trip-support");
+  // Offer only what the city has: ticket booking in the booking-service cities, guides in four.
+  const missingServices: HomegroundSubmenuId[] = [
+    ...((attractionReservationCityIds as readonly string[]).includes(hubId) ? [] : ["attraction-tickets" as const]),
+    ...((privateGuideCities as readonly string[]).includes(hubId) ? [] : ["english-guides" as const]),
+  ];
   const sightsCopy = getSightsCopy(locale);
   // How many published tours pass through this city (by the city's Chinese name on each route line).
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
@@ -438,7 +448,10 @@ export function DestinationHubPage({
               src={hub.heroImagePath}
               width={hub.imageWidth}
             />
-            <figcaption className={styles.heroCredit}>{hub.heroCaption}</figcaption>
+            <figcaption className={styles.heroCredit}>
+              {hub.heroCaption}
+              {hub.heroCredit ? <PhotoCreditLine className={destinationStyles.heroPhotoCredit} credit={hub.heroCredit} locale={locale} /> : null}
+            </figcaption>
           </figure>
         </header>
 
@@ -462,6 +475,7 @@ export function DestinationHubPage({
                   <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
                     {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
                   </ul>
+                  <SightPhotoCredits items={citySights} locale={locale} />
                   <p className={destinationStyles.cityBlockLinks}>
                     <Link href={sightsPath[locale]}><span className={destinationStyles.cityLinkText}>{sightsCopy.page.allSights}</span><span aria-hidden="true">→</span></Link>
                     {cityThemes.map((theme) => (
@@ -470,7 +484,6 @@ export function DestinationHubPage({
                       </Link>
                     ))}
                   </p>
-                  <SightPhotoCredits items={citySights} locale={locale} />
                 </section>
               ) : null}
               <section className={destinationStyles.decisionIndex} aria-labelledby="destination-signals-title">
@@ -572,17 +585,9 @@ export function DestinationHubPage({
                 <ul className={inspirationStyles.tours}>
                   {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
                   {/* A row the city's tours do not fill ends with the way to a trip planned around you. */}
-                  {fullTrip && cityTours.length % 3 !== 0 ? (
-                    <li className={inspirationStyles.planTileItem} style={{ ...revealDelay(cityTours.length), "--span": 3 - (cityTours.length % 3) } as CSSProperties}>
-                      <Link className={inspirationStyles.planTile} href={fullTrip.href}>
-                        <span aria-hidden="true" className={inspirationStyles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
-                        <strong>{inspiration.theme.planTile.title}</strong>
-                        <span><KeepWords locale={locale} text={inspiration.theme.planTile.body} /></span>
-                        <span className={inspirationStyles.cardAction}>{inspiration.theme.planTile.action}<ArrowRight aria-hidden="true" size={15} /></span>
-                      </Link>
-                    </li>
-                  ) : null}
+                  <PlanTile count={cityTours.length} locale={locale} title={cityTours.length === 1 ? copy.planTileOne : undefined} />
                 </ul>
+                <TourPhotoCredits locale={locale} tours={cityTours} />
                 <p className={destinationStyles.cityBlockLinks}>
                   <Link href={`${homeCopy.path}tours/`}><span className={destinationStyles.cityLinkText}>{copy.allTours}</span><span aria-hidden="true">→</span></Link>
                 </p>
@@ -720,10 +725,10 @@ export function DestinationHubPage({
           >
             <div>
               <p className={destinationStyles.cityBandLabel}>{copy.ctaLabel}</p>
-              <h2 id="destination-band-title"><KeepWords locale={locale} text={copy.bandTitle} /></h2>
+              <h2 id="destination-band-title"><KeepWords keep={["整趟交给我们，", "或只请我们做一部分。"]} locale={locale} text={copy.bandTitle} /></h2>
               <p><KeepWords locale={locale} text={copy.bandBody} /></p>
             </div>
-            <ServiceRows locale={locale} />
+            <ServiceRows locale={locale} omit={missingServices} />
           </section>
         ) : (
           <aside

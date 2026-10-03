@@ -499,6 +499,39 @@
   }
 }
 
+/*
+ * A lone tour card before the plan tile turns into a wide card (photo beside
+ * the words), and the tile takes the one column left, so the row never ends
+ * in a large, mostly empty tile.
+ */
+@media (min-width: 61.3125rem) {
+  .tours > li:nth-child(3n + 1):nth-last-child(2):has(+ .planTileItem) {
+    grid-column: span 2;
+  }
+
+  .tours > li:nth-child(3n + 1):nth-last-child(2):has(+ .planTileItem) .tourCard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto 1fr;
+    padding-bottom: 0;
+  }
+
+  .tours > li:nth-child(3n + 1):nth-last-child(2):has(+ .planTileItem) .tourCard > .tourMedia {
+    grid-row: 1 / -1;
+  }
+
+  .tours > li:nth-child(3n + 1):nth-last-child(2):has(+ .planTileItem) .tourCard > .tourText {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .tours > li:nth-child(3n + 1):nth-last-child(2):has(+ .planTileItem) .tourCard > .cardAction {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 0.9rem;
+  }
+}
+
 /* On three columns the tile takes every slot left in its row. */
 @media (min-width: 61.3125rem) {
   .planTileItem {
@@ -852,7 +885,7 @@
   }
 
   /* Balanced CJK titles strand "·" at the end of line 1; break greedily. */
-  .page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .tourText h4 {
+  :is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .tourText h4 {
     text-wrap: pretty;
   }
 

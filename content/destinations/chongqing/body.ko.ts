@@ -548,12 +548,12 @@ const body = {
       id: "heading-051",
       type: "heading",
       level: 3,
-      text: "결정표: 우롱인가, 다쭈인가?"
+      text: "결정표: 우롱인가, 대족인가?"
     },
     {
       id: "table-052",
       type: "table",
-      caption: "결정표: 우롱인가, 다쭈인가?",
+      caption: "결정표: 우롱인가, 대족인가?",
       columns: [
         "판단 기준",
         "우롱",

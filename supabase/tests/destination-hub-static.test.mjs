@@ -15,8 +15,8 @@ test("destination hubs keep each Chinese city name together on narrow screens", 
   assert.match(page, /beijing: \["北京：", "先分配", "完整的一天，", "再安排景点"\]/);
   assert.match(page, /shanghai: \["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
   assert.match(page, /xian: \["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
-  assert.match(page, /hangzhou: \["杭州：", "先决定一日往返，", "还是把杭州真正住下来"\]/);
-  assert.match(page, /zhangjiajie: \["张家界：", "先分清市区、", "武陵源和不同山岳系统"\]/);
+  assert.match(page, /hangzhou: \["杭州：", "先决定一日往返，", "还是把杭州", "真正住下来"\]/);
+  assert.match(page, /zhangjiajie: \["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"\]/);
   assert.match(page, /chongqing: \["重庆：", "选对住宿基地、", "车站和停留晚数"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
   assert.match(page, /className=\{styles\.keepTogether\}/);
@@ -124,7 +124,7 @@ test("Shanghai Songjiang copy records both the rename and expanded-hub opening",
 test("batch two hubs keep their Chinese city names together on narrow screens", async () => {
   const page = await source("components/content/DestinationHubPage.tsx");
 
-  assert.match(page, /chengdu: \["成都：", "先把城市", "住稳，", "再搭四川路线"\]/);
+  assert.match(page, /chengdu: \["成都：", "先把城市住稳，", "再搭四川路线"\]/);
   assert.match(page, /guangzhou: \["广州：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
 });
 
@@ -365,7 +365,7 @@ test("a city joins the second version only with at least three sights and one pu
     source("components/content/DestinationHubPage.module.css"),
   ]);
   // One way out at the end: the services band, full-trip planning first, instead of the old brief button.
-  assert.match(page, /\{v2 \? \(\s*<section\s+aria-labelledby="destination-band-title"[\s\S]*?<ServiceRows locale=\{locale\} \/>/);
+  assert.match(page, /\{v2 \? \(\s*<section\s+aria-labelledby="destination-band-title"[\s\S]*?<ServiceRows locale=\{locale\} omit=\{missingServices\} \/>/);
   assert.doesNotMatch(page, /destination-services-title/);
   // Three sights to a row on six tracks, a last row of two in halves.
   assert.match(styles, /\.citySightGrid\.citySightGrid \{\s*grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/);
@@ -384,4 +384,37 @@ test("the stay-length card shows the recommended row, with units, in every langu
   assert.equal(zh.emphasis, "推荐初访");
   // English cells are bare numbers under "Hotel nights" and "Likely complete days".
   assert.match(en.summary, /^4–5 nights · 3–4 days · /u);
+});
+
+test("the stay-length card gives the same number in every language, with its unit", async () => {
+  const { projectDestinationOverview } = await import("../../lib/destinationOverviewProjection.ts");
+  // Bodies that import shared files without an extension load only in the Next build; check the rest.
+  let checked = 0;
+  for (const hubId of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie", "chongqing"]) {
+    const firstNumbers = {};
+    for (const locale of ["en", "zh", "ko"]) {
+      let body;
+      try { ({ default: body } = await import(`../../content/destinations/${hubId}/body.${locale}.ts`)); } catch { continue; }
+      const card = projectDestinationOverview(body, hubId, locale).find((signal) => signal.id === "nights");
+      const text = `${card.emphasis ?? ""} ${card.summary}`;
+      // "Two nights" / "两晚" / "2박" are the same number.
+      const words = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, 一: 1, 两: 2, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6 };
+      const number = text.match(/\d+|\b(?:one|two|three|four|five|six)\b|[一两二三四五六](?=晚|天|个)/iu)?.[0];
+      firstNumbers[locale] = number ? String(words[number.toLowerCase()] ?? number) : undefined;
+      // A bare number reads as nothing: "3" must say nights or days.
+      assert.doesNotMatch(card.emphasis ?? "", /^\d+$/u, `${hubId} (${locale}): "${card.emphasis}" has no unit`);
+    }
+    const values = new Set(Object.values(firstNumbers));
+    assert.ok(values.size <= 1, `${hubId}: ${JSON.stringify(firstNumbers)} differ across languages`);
+    if (Object.keys(firstNumbers).length === 3) checked += 1;
+  }
+  assert.ok(checked >= 6, `only ${checked} cities checked in all three languages`);
+});
+
+test("each Chinese title phrase fits a phone line", async () => {
+  const page = await source("components/content/DestinationHubPage.tsx");
+  const table = page.match(/const zhHeadingSegments = \{([\s\S]*?)\} as const/u)[1];
+  for (const phrase of table.matchAll(/"([^"]+)"/gu)) {
+    assert.ok([...phrase[1]].length <= 8, `"${phrase[1]}" is longer than a phone line holds`);
+  }
 });

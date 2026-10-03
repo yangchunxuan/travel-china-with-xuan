@@ -1,5 +1,6 @@
 import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
 import type { GuideId } from "./guideRegistry";
+import type { PhotoCredit } from "./photoCredits";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -69,6 +70,8 @@ export interface DestinationHubEntry {
   readonly id: DestinationHubId;
   readonly entityId: string;
   readonly heroImagePath: string;
+  /** Set for an openly licensed hero photo; shown on a line under it. */
+  readonly heroCredit?: PhotoCredit;
   readonly heroImageUrl: string;
   readonly imageWidth: number;
   readonly imageHeight: number;
@@ -875,6 +878,12 @@ export const destinationHubRegistry = [
     id: "guangzhou",
     entityId: "city-guangzhou",
     heroImagePath: "/images/destinations/guangzhou/hero-1600.webp",
+    heroCredit: {
+      author: "Shujianyang",
+      license: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_01.jpg",
+    },
     heroImageUrl:
       "https://homegroundchina.com/images/destinations/guangzhou/hero-1600.webp",
     imageWidth: 1600,
@@ -1193,7 +1202,7 @@ export const destinationHubRegistry = [
           nodes: {
             east: { label: "후빈 · 동쪽 물가", note: "도시 입구, 저녁, 첫 방향 잡기" },
             north: { label: "베이산 · 북쪽 물가", note: "제방, 구산과 문화경관" },
-            south: { label: "남쪽 구간 · 레이펑", note: "두 번째 호수 시선, 억지 일주가 아님" },
+            south: { label: "남쪽 구간 · 뇌봉탑", note: "두 번째 호수 시선, 억지 일주가 아님" },
             west: { label: "영은사 · 용정", note: "서쪽 구릉; 선택적인 반나절 또는 하루" },
             canal: { label: "대운하", note: "별도의 북쪽 도시사 블록" },
             liangzhu: { label: "량주", note: "박물관과 고고학 경관; 전용 하루" },
@@ -1367,6 +1376,12 @@ export const destinationHubRegistry = [
     id: "chongqing",
     entityId: "city-chongqing",
     heroImagePath: "/images/destinations/chongqing/hero-1600.webp",
+    heroCredit: {
+      author: "Kingswang192",
+      license: "CC BY 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
+    },
     heroImageUrl:
       "https://homegroundchina.com/images/destinations/chongqing/hero-1600.webp",
     imageWidth: 1600,

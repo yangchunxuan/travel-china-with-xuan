@@ -163,8 +163,24 @@
 .photoCredits a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: var(--rule);
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
   text-underline-offset: 0.2em;
+}
+
+/* "CC BY-SA 4.0" never breaks across lines. */
+.photoCredits .license {
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  /* One credit per line on phones; the dots between them only separate on wider screens. */
+  .creditItem {
+    display: block;
+  }
+
+  .creditSeparator {
+    display: none;
+  }
 }
 
 .rules {

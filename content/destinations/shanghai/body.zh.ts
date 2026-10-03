@@ -631,7 +631,7 @@ const body = {
     {
       id: "delta-day-trip-links",
       type: "internal-links",
-      title: "把实际往返安排清楚",
+      title: "从上海出发的一日游",
       items: [
         { label: "上海去苏州一日游", href: "/zh/guides/shanghai-to-suzhou-day-trip/", description: "选择车站、当天游览重点和可行的返程。" },
         { label: "上海到杭州怎么坐车", href: "/zh/guides/shanghai-hangzhou-transport-route/", description: "先比较车站，再决定当天往返或住一晚。" },

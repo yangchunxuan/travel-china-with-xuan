@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { ArrowDown, ArrowRight, Route } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { destinationHubIds } from "../lib/destinationHubs";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
@@ -21,12 +20,13 @@ import {
   CityStrip,
   JsonLd,
   navigationFor,
-  revealDelay,
   ServiceRows,
   SITE_URL,
+  PlanTile,
   TourCard,
 } from "./DestinationParts";
 import { HomegroundFooter } from "./HomegroundFooter";
+import { TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
 import { RevealOnce } from "./motion/RevealOnce";
@@ -174,8 +174,7 @@ export function TravelInspirationThemePage({ locale = "en", themeId }: { locale?
   const home = getHomegroundCopy(locale);
   const copy = getTravelInspirationCopy(locale);
   const themeCopy = copy.themes[themeId];
-  const { destinations, tours: toursItem, services } = navigationFor(locale);
-  const fullTrip = services.find((entry) => entry.id === "trip-support");
+  const { destinations, tours: toursItem } = navigationFor(locale);
   const groups = themeTours(theme, locale);
   const allTours = groups.flatMap((group) => group.tours);
   const days = allTours.map((tour) => tour.days);
@@ -232,17 +231,9 @@ export function TravelInspirationThemePage({ locale = "en", themeId }: { locale?
                 </div>
                 <ul className={styles.tours}>
                   {group.tours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
-                  {fullTrip && group.tours.length % 3 !== 0 ? (
-                    <li className={styles.planTileItem} style={{ ...revealDelay(group.tours.length), "--span": 3 - (group.tours.length % 3) } as CSSProperties}>
-                      <Link className={styles.planTile} href={fullTrip.href}>
-                        <span aria-hidden="true" className={styles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
-                        <strong>{copy.theme.planTile.title}</strong>
-                        <span><KeepWords locale={locale} text={copy.theme.planTile.body} /></span>
-                        <span className={styles.cardAction}>{copy.theme.planTile.action}<ArrowRight aria-hidden="true" size={15} /></span>
-                      </Link>
-                    </li>
-                  ) : null}
+                  <PlanTile count={group.tours.length} locale={locale} />
                 </ul>
+                <TourPhotoCredits locale={locale} tours={group.tours} />
               </div>
             );
           })}

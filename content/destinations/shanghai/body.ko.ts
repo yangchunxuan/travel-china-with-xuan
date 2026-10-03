@@ -631,7 +631,7 @@ const body = {
     {
       id: "delta-day-trip-links",
       type: "internal-links",
-      title: "실제 왕복 동선 계획하기",
+      title: "상하이에서 당일치기",
       items: [
         { label: "상하이 출발 쑤저우 당일치기", href: "/ko/guides/shanghai-to-suzhou-day-trip/", description: "역, 하루의 우선순위와 돌아오는 열차를 함께 고릅니다." },
         { label: "상하이에서 항저우까지 열차", href: "/ko/guides/shanghai-hangzhou-transport-route/", description: "당일치기와 1박을 고르기 전에 역 조합을 비교합니다." },
