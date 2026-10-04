@@ -740,7 +740,7 @@ test("the remaining tours keep complete itineraries and only publish verified ro
   );
 });
 
-test("published private-tour identities do not repeat an image path or image bytes", async () => {
+test("published private-tour covers and galleries keep distinct photo identities", async () => {
   const zhangjiajiePageSource = await source(
     "components/ZhangjiajiePrivateTourPreviewPage.tsx",
   );
@@ -757,12 +757,9 @@ test("published private-tour identities do not repeat an image path or image byt
       owner: `${product.slug}/gallery-${index + 1}`,
       src: image.src,
     })),
-    ...product.routeMedia.flatMap((group) =>
-      group.variants.map((variant, index) => ({
-        owner: `${product.slug}/day-${group.day}-${index + 1}`,
-        src: variant.image.src,
-      })),
-    ),
+    // An itinerary day may reuse a verified photograph of the same place.
+    // Day assignments, captions, uniqueness within a day and asset existence
+    // are covered by private-tour-media.test.mjs rather than global identity.
   ]);
   const zhangjiajieMedia = [
     {
@@ -855,18 +852,21 @@ test("Shanghai Suzhou Hangzhou assigns stable, unique primary media to all six d
   );
   assert.equal(new Set(primarySources).size, 6);
   assert.notEqual(primarySources[2], primarySources[3]);
-  assert.ok(
-    localized.routeMedia.every(({ variants }) => variants.length === 1),
-    "each day should use one deliberate, non-repeating primary image",
-  );
+  for (const { day, variants } of localized.routeMedia) {
+    assert.equal(
+      new Set(variants.map(({ image }) => image.src)).size,
+      variants.length,
+      `day ${day} must not repeat a source among its alternate scenes`,
+    );
+  }
 
   const [interactive, css] = await Promise.all([
     source("components/ShanghaiJiangnanImagineInteractive.tsx"),
     source("components/ShanghaiJiangnanImaginePage.module.css"),
   ]);
-  assert.match(interactive, /matchMedia\("\(max-width: 760px\)"\)\.matches/);
+  assert.match(interactive, /collectPrivateTourPhotos/);
+  assert.match(interactive, /pickVisibleRouteDay/);
   assert.match(interactive, /product\.routeMedia\b/);
-  assert.match(interactive, /assigned\?\.variants\.length \? assigned : null/);
   assert.doesNotMatch(interactive, /index % routeImages\.length/);
   assert.match(css, /\.routeMobileStage > span\[data-active="true"\]/);
   assert.match(css, /\.routeMediaEmpty/);

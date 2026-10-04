@@ -5,6 +5,8 @@ import { japaneseCruiseOverrides } from "./japaneseCruiseOverrides";
 import { japaneseExpansionOverrides } from "./japaneseExpansionOverrides";
 import { japaneseSmallGroupOverrides } from "./japaneseSmallGroupOverrides";
 import { japanesePrivateTourPhotoAdditionsBySrc } from "./japanesePrivateTourPhotoAdditions";
+import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
+import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions";
 import {
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
@@ -78,22 +80,32 @@ export function localizeJapanesePrivateTourProduct(
     gallery: source.gallery.map((image, index) => ({ ...image, ...copy.gallery[index] })),
     routeMedia: source.routeMedia.map((group) => {
       const translated = copy.routeMedia?.find((item) => item.day === group.day);
-      const isAddedPhotoGroup = group.variants.every(
-        (variant) => japanesePrivateTourPhotoAdditionsBySrc[variant.image.src] !== undefined,
-      );
-      if (!isAddedPhotoGroup && translated && translated.variants.length !== group.variants.length) {
+      // Existing authored translations retain their position. Extra scenes
+      // must have a translation registered for this exact tour/day/source.
+      if (translated && translated.variants.length > group.variants.length) {
         throw new Error(`Japanese route media does not match source: ${product.slug}, day ${group.day}`);
       }
       return {
         day: group.day,
         variants: group.variants.map((variant, index) => {
-          const addedPhotoCopy = japanesePrivateTourPhotoAdditionsBySrc[variant.image.src];
+          const registeredLegacyAddition = privateTourAdditionalMediaBySlug[product.slug]?.some(
+            (addition) => addition.day === group.day && addition.variants.some((item) => item.image.src === variant.image.src),
+          );
+          const addedPhotoCopy = registeredLegacyAddition
+            ? japanesePrivateTourPhotoAdditionsBySrc[variant.image.src]
+            : undefined;
+          const originalPhotoCopy = translated?.variants[index];
+          const scenePhotoCopy = getJapanesePrivateTourSceneCopy(product.slug, group.day, variant.image.src);
+          const photoCopy = addedPhotoCopy ?? originalPhotoCopy ?? scenePhotoCopy;
+          if (!photoCopy) {
+            throw new Error(`Japanese route photo copy is missing: ${product.slug}, day ${group.day}, ${variant.image.src}`);
+          }
           return {
-            label: addedPhotoCopy?.label ?? translated?.variants[index]?.label ?? variant.label,
+            label: photoCopy.label,
             image: {
               ...variant.image,
-              alt: addedPhotoCopy?.alt ?? translated?.variants[index]?.alt ?? variant.image.alt,
-              caption: addedPhotoCopy?.caption ?? translated?.variants[index]?.caption ?? variant.image.caption,
+              alt: photoCopy.alt,
+              caption: photoCopy.caption,
             },
           };
         }),
