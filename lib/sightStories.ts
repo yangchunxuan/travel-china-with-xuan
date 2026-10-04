@@ -508,6 +508,444 @@ export const sightStories: Stories = {
       skip: "박물관에 큰 관심이 없거나, 베이징에 하루이틀뿐인데 아직 자금성도 못 봤다면 건너뛰어도 됩니다. 시안에 간다면 산시역사박물관에서 주·진·한·당의 유물을 출토지 가까이에서 볼 수 있습니다.",
     },
   },
+  "terracotta-warriors": {
+    en: {
+      description: "Look down on rank after rank of life-size clay soldiers in the pits where they were buried for China's First Emperor. What to find, and how to pace it.",
+      why: [
+        "Step into the hall over Pit 1 and the army is suddenly below you. Rank after rank of life-size clay soldiers stand in long earth trenches, in a pit 230 metres long. Walk along the rail and look closely. Faces, hair and beards change from one soldier to the next; Yuan Zhongyi, who led the first dig, counted 24 kinds of beard alone. Some figures carry their makers' names, stamped or scratched in out-of-the-way places. Qin rules made craftsmen sign their work, so a fault could be traced back to the man who made it.",
+        "Farmers digging a well found the first fragments in 1974, and the digging and restoring have hardly stopped since. The army you see is grey, but it was painted in more than a dozen colours over a coat of lacquer. Pit 1's figures lost almost all of theirs long ago, when the pit burned and then flooded. Where paint does survive, it starts to change within about 15 seconds of being uncovered and can curl and flake away within four minutes. So the excavators work slowly, and only about a fifth of Pit 1's estimated 6,000 figures and horses are out of the ground.",
+        "The pits are only the outer edge of the First Emperor's tomb. His own mound rises 1.5 kilometres to the west, in Lishan Garden, and has never been opened. The historian Sima Qian wrote that its chamber held rivers and seas of mercury, and the soil over its centre does carry unusually high levels. The same ticket covers both areas. Pit 1 gives you the scale, Pit 2 the close-up detail, and Lishan Garden the bronze chariots and the mound itself.",
+      ],
+      highlights: [
+        {
+          name: "Walk Pit 1 to the far end",
+          body: "At the east end the army faces you, its front ranks in battle robes without armour, the lightly armed vanguard. Keep following the rail round to the far end of the hall. There, half-reassembled soldiers stand on the pit floor among the fragments, and restorers are often at work.",
+        },
+        {
+          name: "Meet single soldiers in Pit 2",
+          body: "Archers, chariots and cavalry were buried here together in one formation. Single figures are shown up close, among them a cavalryman with his saddled horse and a mid-ranking officer. Look for the display case that shows the colours the army was painted in.",
+        },
+        {
+          name: "Two bronze chariots, rebuilt from fragments",
+          body: "In Lishan Garden's Bronze Chariots Museum, two half-size bronze chariots, each drawn by four bronze horses, are shown together. They were found beside the emperor's tomb mound in 1980, crushed into more than 3,000 pieces, and restorers spent eight years putting them back together. Look for the gold and silver fittings, 14 kilograms of them on the pair.",
+        },
+      ],
+      time: "Most of a day from central Xi'an. The museum reckons on about an hour and a half for the pits and the same for Lishan Garden; travel, security checks and the shuttle between them come on top.",
+      when: "Avoid Chinese national holidays such as May Day and National Day, when the day's tickets can sell out. The pits are under roofs, so rain matters little there, but Lishan Garden and the ground round the mound are open-air. In hot or wet weather, that is the part to shorten; spring and autumn suit it best.",
+      pair: "Huaqing Palace stands beside Huaqingchi station on Metro Line 9, which the public-transport route back to Xi'an passes anyway. The Tang emperor Xuanzong and his consort Yang Guifei bathed in its hot springs, the ones Bai Juyi wrote of in his poem The Song of Everlasting Regret. In 1936 Chiang Kai-shek was seized there by his own generals, in the Xi'an Incident. Stop only if you cut Lishan Garden short and still have time.",
+      skip: "If you hoped to walk among the soldiers, you will see them from walkways round the pits instead. With older parents or tired legs, see the three pits first and decide on Lishan Garden afterwards; if you go, make it the bronze chariots. With one day in Xi'an and little interest in archaeology, spend it in the walled city.",
+      faq: [
+        {
+          question: "Are the Terracotta Warriors worth visiting?",
+          answer: "Yes, for most first-time visitors to Xi'an. Pit 1 alone is 230 metres long, and the first look down at its ranks of life-size soldiers stays with you. You see them from walkways round the pits rather than walking among them. If you have only one day in Xi'an and little interest in archaeology, the walled city may suit you better.",
+        },
+        {
+          question: "How long do you need at the Terracotta Warriors?",
+          answer: "Plan on most of a day from central Xi'an. The museum reckons on about 1.5 hours for the three pits and another 1.5 hours for Lishan Garden, where the bronze chariots are. Travel out to Lintong, security and passport checks, and the shuttle between the two areas all come on top.",
+        },
+        {
+          question: "Do I need to book Terracotta Warriors tickets in advance?",
+          answer: "Yes. Each visitor needs a real-name reservation made with the passport they will carry, and the original passport is checked at entry. One ticket covers the three pits, Lishan Garden and the shuttle between them. Around national holidays the day's tickets can sell out, so book once your date is fixed; we can check and book it for you.",
+        },
+        {
+          question: "Do I need a guide for the Terracotta Warriors?",
+          answer: "No, you can visit on your own. Xi'an's metro (Lines 1 and 9) and a local bus reach the museum, and the shuttle to Lishan Garden is included in the ticket. A guide earns their fee mainly in explanation: the formations, the ranks, and how the figures were made and restored. If you mostly want to see the scale, the labels are enough.",
+        },
+        {
+          question: "When is the best time to visit the Terracotta Warriors?",
+          answer: "Spring or autumn, on an ordinary weekday. Avoid May Day and the National Day week in early October, when tickets can sell out. The pits are indoors, so rain matters little there, but Lishan Garden is open-air and hard going in summer heat. Start early so the second half of the day is not squeezed.",
+        },
+      ],
+    },
+    zh: {
+      description: "西安兵马俑：站在一号坑边往下看，真人大小的陶俑一排排立在当年下葬的俑坑里。三个坑和丽山园各看什么，这一天怎么排。",
+      why: [
+        "走进一号坑的展厅，整支军队一下子出现在脚下。坑长 230 米，真人大小的陶俑一排接一排，立在一条条土沟里。沿着栏杆慢慢走，凑近了看，脸型、发式、胡须一个一个都不一样，当年主持发掘的袁仲一，光胡须就数出了 24 种。有些陶俑在不起眼的地方还刻着工匠的名字：秦朝规定，谁做的东西就要留下谁的名字，出了问题，可以一直追查到人。",
+        "1974 年，村民打井时挖出了第一批陶俑碎片，此后的发掘和修复几乎没有停过。眼前的军阵是灰色的，可它当年通体彩绘，先刷一层生漆打底，再施十几种颜色。一号坑在很久以前遭过火烧，后来又被水泡过，陶俑身上的彩绘几乎掉光了。就算有彩绘保存下来，出土后 15 秒左右也会开始变化，4 分钟内就可能起翘、剥落。所以考古队挖得格外慢：据推算，一号坑埋有陶俑陶马约 6000 件，目前出土的只有五分之一左右。",
+        "这些俑坑，其实只在秦始皇陵的外围。秦始皇自己的封土在西边 1.5 公里外的丽山园里，至今从未打开。司马迁在《史记》里说，地宫“以水银为百川江河大海”；多次勘探也发现，封土中心一带土壤的汞含量明显偏高。两处用同一张门票。一号坑看气势，二号坑看细节，丽山园看铜车马和封土本身。",
+      ],
+      highlights: [
+        {
+          name: "一号坑，一直走到头",
+          body: "东端是军阵的正面，最前面几排兵俑只穿战袍、不披铠甲，是轻装的前锋。别看完正面就走，沿着栏杆绕到展厅的另一头。那里的坑底立着拼好一半的陶俑，四周散着碎片，常能看到修复人员在工作。",
+        },
+        {
+          name: "二号坑，凑近看单个陶俑",
+          body: "二号坑里，弓弩手、战车和骑兵混编成一个军阵。这里能凑近看单件陶俑，其中有牵着鞍马的骑兵，也有一位中级军官。再找找展示彩绘原貌的展柜，看看兵马俑当年是什么颜色。",
+        },
+        {
+          name: "铜车马，从碎片拼回原样",
+          body: "丽山园的铜车马博物馆里，两乘铜车马同馆展出，都按真车真马一半的大小铸造，每乘套着四匹马。1980 年它们在封土旁出土时，已被压成 3000 多块碎片，修复人员花了 8 年才拼回原样。留意车马上的金银饰件，两乘加起来有 14 公斤。",
+        },
+      ],
+      time: "从西安市区出发，基本要一整天。按博物院的估算，俑坑区和丽山园各需一个半小时左右；来回路程、安检和两处之间的摆渡车，都要另算时间。",
+      when: "避开五一、国庆这样的长假，那几天的门票可能售罄。俑坑都罩在展厅里，下雨影响不大；丽山园和封土一带是露天的，天太热或下雨时，就把这一段缩短。春秋两季最合适。",
+      pair: "华清宫就在地铁 9 号线华清池站旁边，坐公共交通回西安本来就要经过这一站。白居易《长恨歌》里“春寒赐浴华清池”，写的就是唐玄宗和杨贵妃在这里泡温泉。1936 年西安事变，蒋介石也是在这里被自己手下的将领扣押的。只有丽山园逛得短、时间还有富余，才值得顺路进去。",
+      skip: "想走进军阵、站在陶俑中间的人要有心理准备，游客只能在坑边的通道上往下看。同行有老人，或者自己已经走累了，就先看三个俑坑，丽山园看完再定；要去的话，就去看铜车马。如果在西安只有一天，对考古兴趣又不大，不如把这一天留给城墙里的老城。",
+      faq: [
+        {
+          question: "兵马俑值得去吗？",
+          answer: "值得，第一次来西安的人大多都该去。光一号坑就长 230 米，第一眼往下看到成排成列、真人大小的陶俑，很难忘记。游客是在坑边的通道上往下看，不能走进军阵。如果在西安只有一天，对考古又没什么兴趣，城墙里的老城可能更适合你。",
+        },
+        {
+          question: "参观兵马俑要多长时间？",
+          answer: "从西安市区出发，基本要一整天。按博物院的估算，三个俑坑约 1.5 小时，放着铜车马的丽山园再要约 1.5 小时。去临潼的路程、安检和核验证件，还有两处之间的摆渡车，都要另算。",
+        },
+        {
+          question: "兵马俑要提前预约吗？",
+          answer: "要。每位游客都要用本人当天要带的护照实名预约，入口会核验护照原件。一张门票包含三个俑坑、丽山园和两处之间的摆渡车。五一、国庆前后，当天的票可能售罄，日期一定下来就尽早订；我们也可以帮你查好、代为预订。",
+        },
+        {
+          question: "参观兵马俑需要请导游吗？",
+          answer: "不一定，自己去完全可以。从西安坐地铁 1 号线、9 号线，再换公交就能到，去丽山园的摆渡车也含在门票里。导游的价值主要在讲解：军阵怎么排、军阶怎么分、陶俑怎么做出来又怎么修复。如果主要想看那份气势，看展板就够了。",
+        },
+        {
+          question: "什么时候去兵马俑最好？",
+          answer: "春秋两季的平常工作日最好。避开五一和十月初的国庆长假，那几天门票可能售罄。俑坑在室内，下雨影响不大；丽山园是露天的，夏天顶着暑热走会很累。早点出发，下半天才不会太赶。",
+        },
+      ],
+    },
+    ko: {
+      description: "시안 병마용: 1호갱 난간에서 내려다보면 실물 크기의 흙 병사들이 묻혔던 갱 안에 줄줄이 서 있습니다. 갱 세 곳과 여산원에서 볼 것, 하루 짜는 법.",
+      why: [
+        "1호갱 전시관에 들어서면 군대 전체가 갑자기 발아래 펼쳐집니다. 길이 230m의 갱 안, 흙으로 된 긴 고랑마다 실물 크기의 도용(흙으로 빚은 병사상)이 줄지어 서 있습니다. 난간을 따라 천천히 걸으며 가까이 들여다보세요. 얼굴형도 머리 모양도 수염도 제각각이어서, 첫 발굴을 이끈 위안중이는 수염 모양만 24가지를 헤아렸습니다. 눈에 잘 띄지 않는 곳에 만든 사람의 이름이 찍히거나 새겨진 도용도 있습니다. 진나라는 장인에게 자기 이름을 남기게 해서, 잘못이 생기면 끝까지 그 사람에게 책임을 물었습니다.",
+        "1974년 우물을 파던 농민들이 첫 조각을 캐냈고, 그 뒤로 발굴과 복원은 거의 멈춘 적이 없습니다. 지금 보이는 병마용은 회색이지만, 원래는 옻칠로 바탕을 입힌 위에 열 가지가 넘는 색이 칠해져 있었습니다. 1호갱의 도용은 아주 오래전 갱이 불타고 물에 잠기면서 색이 거의 다 사라졌습니다. 색이 남아 있더라도 땅 밖으로 나오면 15초쯤 뒤부터 변하기 시작해, 4분 안에 들뜨고 떨어져 나가기도 합니다. 그래서 발굴은 아주 천천히 진행되며, 1호갱에 묻힌 것으로 추정되는 병사와 말 약 6천 점 가운데 지금까지 나온 것은 5분의 1 정도입니다.",
+        "병마용갱은 진시황릉의 바깥 가장자리일 뿐입니다. 진시황의 봉분은 서쪽으로 1.5km 떨어진 여산원 안에 솟아 있고, 한 번도 열린 적이 없습니다. 사마천은 『사기』에서 그 안에 수은으로 강과 바다를 만들었다고 썼고, 실제로 봉분 중심부 흙에서는 수은 농도가 유난히 높게 나옵니다. 두 구역은 입장권 한 장으로 들어갑니다. 1호갱에서는 규모를, 2호갱에서는 가까이서 보는 세부를, 여산원에서는 청동마차와 봉분 자체를 보게 됩니다.",
+      ],
+      highlights: [
+        {
+          name: "1호갱, 맨 끝까지 걷기",
+          body: "동쪽 끝에 서면 군대가 정면으로 마주 보는데, 맨 앞 몇 줄은 갑옷 없이 전투복만 입은 가벼운 차림의 선봉대입니다. 정면만 보고 돌아서지 말고 난간을 따라 전시관 반대편 끝까지 가 보세요. 갱 바닥에는 반쯤 맞춘 도용들이 흩어진 조각들 사이에 서 있고, 복원 연구원들이 일하는 모습도 자주 볼 수 있습니다.",
+        },
+        {
+          name: "2호갱에서 병사 하나하나 가까이 보기",
+          body: "2호갱에는 궁수와 전차, 기병이 한 진형 안에 섞여 묻혔습니다. 이곳에서는 도용을 한 점씩 가까이 볼 수 있는데, 안장 얹은 말을 끄는 기병과 중급 군관도 그중에 있습니다. 병마용이 원래 어떤 색으로 칠해져 있었는지 보여 주는 진열장도 찾아보세요.",
+        },
+        {
+          name: "조각에서 되살아난 청동마차",
+          body: "여산원의 청동마차박물관에는 실물의 절반 크기로 만든 마차 두 대가 함께 전시되어 있고, 각각 청동 말 네 필이 끕니다. 1980년 봉분 바로 옆에서 3천 개가 넘는 조각으로 짓눌린 채 발견되었고, 복원팀이 8년에 걸쳐 다시 맞췄습니다. 두 대에 달린 금·은 장식만 14kg이니 눈여겨보세요.",
+        },
+      ],
+      time: "시안 시내에서 출발하면 하루를 거의 다 씁니다. 진시황제릉박물원은 병마용 구역과 여산원에 각각 1시간 30분쯤 걸린다고 보는데, 오가는 시간과 보안 검색, 두 구역 사이 셔틀 시간은 따로 잡아야 합니다.",
+      when: "국경절이나 노동절 같은 중국 연휴는 피하세요. 이 기간에는 당일 입장권이 매진되기도 합니다. 갱은 모두 실내 전시관 안에 있어 비가 와도 큰 지장이 없지만, 여산원과 봉분 일대는 야외입니다. 덥거나 비가 오는 날에는 이쪽 일정을 줄이세요. 봄과 가을이 가장 알맞습니다.",
+      pair: "화청지은 지하철 9호선 화청지역 바로 옆에 있어, 대중교통으로 시안에 돌아가는 길에 어차피 지나갑니다. 당 현종과 양귀비가 온천을 즐기던 곳으로, 백거이가 「장한가」에서 노래한 온천이 바로 이곳입니다. 1936년 장제스가 부하 장군들에게 붙잡힌 시안 사건의 현장이기도 합니다. 여산원을 짧게 끝내 시간이 남을 때만 들르세요.",
+      skip: "병마용 사이를 걸어 보고 싶다면 기대와 다를 수 있습니다. 관람객은 갱 둘레의 통로에서 내려다봅니다. 걷기 힘든 부모님과 함께이거나 다리가 지쳤다면 갱 세 곳을 먼저 보고, 여산원은 그다음에 정하세요. 간다면 청동마차를 보세요. 시안에 하루밖에 없고 고고학에 큰 관심이 없다면, 그 하루는 성벽 안 옛 시가지에 쓰세요.",
+      faq: [
+        {
+          question: "병마용은 가 볼 만한가요?",
+          answer: "네, 시안이 처음이라면 대부분 가 볼 만합니다. 1호갱 하나만 길이가 230m이고, 실물 크기의 병사들이 줄지어 선 모습을 처음 내려다보는 순간은 쉽게 잊히지 않습니다. 병사들 사이를 걷는 것이 아니라 갱 둘레 통로에서 내려다봅니다. 시안에 하루밖에 없고 고고학에 관심이 적다면 성벽 안 옛 시가지가 더 맞을 수 있습니다.",
+        },
+        {
+          question: "병마용 관람에는 시간이 얼마나 걸리나요?",
+          answer: "시안 시내에서 출발하면 거의 하루를 잡으세요. 박물원은 갱 세 곳에 1시간 30분, 청동마차가 있는 여산원에 1시간 30분쯤 걸린다고 봅니다. 린퉁까지 오가는 시간, 보안 검색과 여권 확인, 두 구역 사이 셔틀 시간은 따로입니다.",
+        },
+        {
+          question: "병마용은 미리 예약해야 하나요?",
+          answer: "네. 관람객마다 실제로 가져갈 여권으로 실명 예약을 해야 하고, 입장할 때 여권 원본을 확인합니다. 입장권 한 장에 갱 세 곳과 여산원, 두 구역 사이 셔틀이 모두 포함됩니다. 중국 연휴 무렵에는 당일 표가 매진될 수 있으니 날짜가 정해지면 바로 예약하세요. 저희가 확인하고 대신 예약해 드릴 수도 있습니다.",
+        },
+        {
+          question: "병마용에 가이드가 꼭 필요한가요?",
+          answer: "아니요, 혼자서도 충분히 다녀올 수 있습니다. 시안에서 지하철 1호선과 9호선, 현지 버스로 박물원까지 갈 수 있고, 여산원 셔틀도 입장권에 포함됩니다. 가이드는 주로 해설에서 제값을 합니다. 병사들의 대열과 계급, 도용을 만들고 복원한 과정을 알고 싶다면 도움이 되고, 규모를 보는 것이 목적이라면 안내판으로도 충분합니다.",
+        },
+        {
+          question: "병마용은 언제 가는 게 가장 좋나요?",
+          answer: "봄이나 가을의 평일이 가장 좋습니다. 노동절 연휴와 10월 초 국경절 연휴에는 표가 매진될 수 있으니 피하세요. 갱은 실내라 비가 와도 괜찮지만, 여산원은 야외라 한여름 더위에는 걷기 힘듭니다. 아침 일찍 출발해야 오후 일정이 빠듯해지지 않습니다.",
+        },
+      ],
+    },
+  },
+  "xian-city-wall": {
+    en: {
+      description: "Walk or cycle on top of Xi'an's city wall, nearly 14 km round, then step inside it to see a Tang gate with cart ruts still in its road.",
+      why: [
+        "Go up at the South Gate and the top of the wall opens out like a road, 12 to 14 metres wide. It runs straight off east and west until it narrows to a point. Bicycles rattle past over the bricks. On one side lies the old city; on the other, the moat and a strip of park that follow the wall all the way round. Every 120 metres the wall juts out into a broad platform, close enough to the next one that defenders on each could cover the ground between them.",
+        "The wall's line is older than its bricks. As the Tang dynasty collapsed, its capital Chang'an was sacked again and again. In 904 the governor gave up the rest of the city and held only the walled quarter of government offices. The Ming built their wall on that line, pushed it outwards on the east and north, and finished it in 1378. In doing so they sealed up one of the old Tang gates, Hanguang Gate, which is why it survives. Yet the walled city covers only about a seventh of Tang Chang'an, which spread far beyond the wall you stand on.",
+        "It nearly disappeared. In 1958, as Beijing was tearing down its walls, Xi'an decided to demolish its own. Bricks were stripped from almost all the battlements before heritage officials telegraphed the State Council, which ordered the wall protected in 1959. Most of what you walk on was repaired after 1983, and the ring has been whole again only since the mid-2000s. For a first visit, walk one stretch from the South Gate; cycle the whole loop only if the ride itself appeals.",
+      ],
+      highlights: [
+        {
+          name: "Look down into the South Gate",
+          body: "Stand on the wall above the South Gate and look down into the walled courtyard where attackers who broke through the outer gate were trapped. This is the one main gate where all three towers stand again: one that worked the drawbridge, the arrow tower with rows of archers' windows, and the main tower. The arrow tower is a 2014 rebuild of one destroyed in 1926.",
+        },
+        {
+          name: "Tang cart ruts at Hanguang Gate",
+          body: "Near the west end of the south wall, a museum built into the wall shows what is left of Hanguang Gate, first built in 582. Of its three passages, the middle one was kept for the emperor, and the western one still has cart ruts in its Tang road surface. Beside it, a cut through the wall shows its layers, from Sui and Tang earth to modern repairs.",
+        },
+        {
+          name: "Find the one round corner",
+          body: "From Hanguang Gate, walk west along the top to the southwest corner, the only one of the four that curves. The usual explanation is that the Ming builders followed the rounded corner of an older wall on the same spot. Below, the moat bends with it.",
+        },
+      ],
+      time: "An hour to an hour and a half to walk one stretch and come down again. Cycling the whole loop is an outing of its own, so keep the rest of that half-day loose.",
+      when: "In warm months, go up in the late afternoon, once the bricks have started to cool. If you stay into the evening, check how late your exit gate stays open. There is almost no shade on top, so spring and autumn are the comfortable seasons. Around the Spring Festival the wall is hung with lanterns for weeks, in recent years into March.",
+      pair: "From the South Gate, walk north up South Street to the Bell Tower, about 1.1 kilometres or fifteen minutes. The Drum Tower and the food lanes of the Muslim Quarter lie just beyond it. Or, inside the wall, turn east along Shuyuanmen, a street of brush, ink and calligraphy shops, to the Forest of Stone Steles Museum.",
+      skip: "If you hope to find an untouched Ming wall, you will be disappointed; almost every stretch has been repaired. If your time in Xi'an is short, go up at one gate and walk one stretch, and let the whole loop wait. To see how old the wall really is, half an hour in the Hanguang Gate museum shows more than a ride round the top.",
+      faq: [
+        {
+          question: "Is the Xi'an City Wall worth visiting?",
+          answer: "Yes, even for an hour. The top is 12 to 14 metres wide, so a walk along it feels like following a road above the city. The moat and park lie on one side, the old town on the other. The full circuit is 13.74 kilometres, but one stretch from the South Gate gives you the feel. Add the Hanguang Gate museum to see a Tang gate inside the wall.",
+        },
+        {
+          question: "Should I walk or cycle the Xi'an City Wall?",
+          answer: "Walk if you have an hour or so; cycle if the ride itself appeals. Walking one stretch and coming down again takes about 60 to 90 minutes. The full loop is 13.74 kilometres of brick paving with almost no shade, so cycling it is an outing of its own. Check the bike rental terms on the day.",
+        },
+        {
+          question: "Which gate is best for getting onto the Xi'an City Wall?",
+          answer: "For a first visit, the South Gate (Yongning Gate) is the easiest. It is the one main gate with all three of its towers standing, and the Bell Tower is 1.1 kilometres north up South Street. There are 17 official points to go up and come down, so you can also choose by where you are heading next; check that gate's hours first.",
+        },
+        {
+          question: "When is the best time to visit the Xi'an City Wall?",
+          answer: "Spring and autumn, in the late afternoon. There is almost no shade on top, so in summer wait until the bricks start to cool. Around the Spring Festival the wall is hung with lanterns for weeks, in recent years from January into March. If you stay after dark, check how late your exit gate is open.",
+        },
+        {
+          question: "Do I need to book Xi'an City Wall tickets in advance?",
+          answer: "Usually not far ahead: tickets can be bought on the day. How tickets are sold and checked changes from time to time, and lantern-festival days can differ, so check for your date before you go, or let us check it for you.",
+        },
+      ],
+    },
+    zh: {
+      description: "西安城墙周长近 14 公里，墙顶宽得能骑车。在上面走一段或骑车绕一圈，再进嵌在墙里的博物馆，看唐代城门道上的车辙。",
+      why: [
+        "从南门登上城墙，墙顶像一条宽 12 到 14 米的大路，向东、向西笔直地伸出去，远到缩成一个点。自行车在砖面上颠簸着骑过。一边是老城，另一边是护城河和沿河绕城一圈的环城公园。每隔 120 米，城墙就向外突出一座宽大的平台，相邻两座离得正好够近，两边的守军都能射到中间的空当。",
+        "这道城墙的走向，比它的城砖老得多。唐朝末年，长安屡遭兵火。904 年，镇守长安的将领放弃了外城和宫城，只守官署所在的皇城。明代就沿着这条线筑城，东、北两面向外扩出，1378 年完工。筑城时，唐皇城的一座城门含光门被封进了墙里，反倒因此保存到今天。即便如此，整座城墙围起来的地方，也只有唐长安城的七分之一左右，当年的长安，远远铺展到你脚下这道墙之外。",
+        "它差一点就没能留下来。1958 年，北京正在拆城墙，西安也决定跟着拆，城头外沿那道矮墙的砖几乎被扒光。几位文物工作者给国务院发了电报，1959 年，保护西安城墙的通知下达了。如今脚下的城墙，大多是 1983 年以后修整的，2005 年前后整圈才重新连通。第一次来，从南门上去走一段就好；只有想骑车兜风，才值得绕完一整圈。",
+      ],
+      highlights: [
+        {
+          name: "从南门城头往下看",
+          body: "登上南门城头，往下看城门之间那方围起来的院子：攻破外门的敌人会被困在这里，成了瓮中之鳖。四座主城门里，如今只有南门的三重城楼都在，最外面一座小楼管着吊桥，中间的箭楼开着一排排射箭的小窗，最里面是正楼。箭楼原物毁于 1926 年，现在看到的是 2014 年复建的。",
+        },
+        {
+          name: "含光门：唐代路面上的车辙",
+          body: "南城墙西头有一座嵌在墙体里的博物馆，里面是始建于 582 年的隋唐皇城含光门遗址。三条门道中，中间一条是皇帝专用的，西边那条的唐代路面上至今留着车辙。旁边的城墙剖面上，从隋唐夯起的土层到近现代的修补，一层层叠在一起。",
+        },
+        {
+          name: "找到唯一的圆角",
+          body: "从含光门沿城墙往西走，到西南城角。四个城角里只有这一个是圆的，通常的解释是，明代筑城时沿用了这里原有旧城墙的圆角。墙下的护城河也跟着弯成一道弧。",
+        },
+      ],
+      time: "在城墙上走一段再下来，一个到一个半小时。骑车绕完一整圈，就得单独安排了，那半天剩下的时间别排太满。",
+      when: "天热的季节，傍晚前后再上城墙，那时墙顶的砖已经开始降温。想待到天黑，先确认打算下城的那座门开到几点。城墙顶上几乎没有遮阴，春秋两季最舒服。春节前后，城墙上会挂起花灯，一挂就是好几周，近几年都持续到三月。",
+      pair: "从南门沿南大街往北走约 1.1 公里、15 分钟，就到钟楼；再往前，鼓楼和回民街的小吃巷子都在附近。或者进城后往东拐，沿着卖笔墨字画的书院门老街，一直走到碑林博物馆。",
+      skip: "想看原汁原味明城墙的人，可能会失望，几乎每一段都修补过。在西安时间紧，就从一座城门上去走一段，不必非绕一整圈。想知道城墙到底有多老，在含光门遗址博物馆待半个小时，比骑一圈看得更明白。",
+      faq: [
+        {
+          question: "西安城墙值得去吗？",
+          answer: "值得，哪怕只待一个小时。墙顶宽 12 到 14 米，走在上面像走在城市上空的一条大路，一边是护城河和公园，一边是老城。整圈 13.74 公里，但从南门上去走一段，就能感受到它的分量。再去含光门遗址博物馆，能看到包在城墙里的唐代城门。",
+        },
+        {
+          question: "西安城墙是走路好还是骑车好？",
+          answer: "只有一个小时左右就走路，想骑车兜风再租车。走一段再下来，大约 60 到 90 分钟。整圈 13.74 公里全是砖面，几乎没有遮阴，骑一圈得单独安排时间。租车的价格和规则，当天到现场再确认。",
+        },
+        {
+          question: "西安城墙从哪个门上去最好？",
+          answer: "第一次去，从南门（永宁门）上最省心。四座主城门里只有它的三重城楼都在，往北沿南大街走 1.1 公里就是钟楼。城墙共有 17 处上下城的地方，也可以按下一站去哪儿来选，但要先查好那座门的开放时间。",
+        },
+        {
+          question: "什么时候去西安城墙最好？",
+          answer: "春秋两季的傍晚最好。墙顶几乎没有遮阴，夏天要等砖面凉下来再上。春节前后城墙上挂满花灯，近几年都是从一月一直挂到三月。想待到天黑，先查好打算下城的那座门开到几点。",
+        },
+        {
+          question: "西安城墙需要提前预约吗？",
+          answer: "一般不需要提前很久订，当天也能买到票。买票和入场的方式时有调整，灯会等活动期间也可能不同，出发前查一下当天的情况，或者交给我们核实。",
+        },
+      ],
+    },
+    ko: {
+      description: "시안 성벽은 둘레 14km 가까이, 위에서 자전거를 탈 만큼 넓습니다. 성벽 위를 걷고, 성벽 속 박물관에서 수레바퀴 자국이 남은 당나라 성문 유적을 찾아보세요.",
+      why: [
+        "남문으로 성벽에 오르면 윗면이 너비 12~14m의 길처럼 펼쳐져, 동서로 곧게 뻗다가 멀리 한 점이 됩니다. 자전거들이 벽돌 바닥 위를 덜컹거리며 지나갑니다. 한쪽은 옛 시가지, 다른 쪽은 해자와 성벽을 따라 한 바퀴 이어지는 공원입니다. 120m마다 성벽 바깥으로 넓은 치(雉)가 튀어나와 있습니다. 수원 화성의 치처럼, 이웃한 두 치의 병사가 그 사이를 함께 지킬 수 있도록 간격을 맞췄습니다.",
+        "성벽이 지나는 자리는 벽돌보다 훨씬 오래되었습니다. 당나라 말 장안은 거듭 약탈당했고, 904년 장안을 지키던 장수는 바깥 성곽과 궁성을 버리고 관청이 모인 황성만 지켰습니다. 명나라는 그 선 위에 성을 쌓으며 동쪽과 북쪽을 바깥으로 넓혔고, 1378년에 완공했습니다. 이때 당나라 황성의 성문인 함광문이 성벽 속에 묻혔는데, 그 덕분에 지금까지 남았습니다. 그래도 성벽 안은 당나라 장안성의 7분의 1 정도로, 옛 장안은 지금 서 있는 성벽 너머로 훨씬 멀리 펼쳐져 있었습니다.",
+        "성벽은 하마터면 사라질 뻔했습니다. 1958년 베이징이 성벽을 허물던 무렵 시안도 철거를 결정했고, 성벽 위 바깥쪽 낮은 담의 벽돌은 거의 다 뜯겨 나갔습니다. 문화재 관계자들이 국무원에 전보를 보냈고, 1959년 성벽을 보호하라는 지시가 내려왔습니다. 지금 걷는 성벽은 대부분 1983년 이후 보수한 것이고, 한 바퀴가 다시 이어진 것은 2000년대 중반입니다. 처음이라면 남문에서 한 구간만 걸어도 충분하고, 자전거 일주는 달리는 것 자체가 좋을 때만 하세요.",
+      ],
+      highlights: [
+        {
+          name: "남문 옹성 내려다보기",
+          body: "남문 위 성벽에 서서 성문 사이에 둘러싸인 마당, 옹성을 내려다보세요. 바깥 문을 깨고 들어온 적을 가두던 곳으로 흥인지문(동대문)이나 수원 화성 팔달문의 옹성과 같은 원리인데, 네 정문 가운데 지금 문루 세 채가 모두 선 곳은 남문뿐입니다. 해자 위 다리를 들어 올리던 바깥 문루, 활 쏘는 작은 창이 줄지어 난 전루(箭樓), 안쪽의 본 문루 순이며, 전루는 1926년에 무너진 것을 2014년에 다시 지었습니다.",
+        },
+        {
+          name: "함광문의 당나라 수레바퀴 자국",
+          body: "남쪽 성벽 서쪽 끝 가까이, 성벽 속에 들어앉은 박물관에서 582년에 처음 세운 함광문의 유적을 볼 수 있습니다. 세 통로 중 한복판의 길은 황제만 다니던 길이었고, 서쪽 통로의 당나라 노면에는 수레바퀴 자국이 아직 남아 있습니다. 옆의 성벽 단면에는 수·당 때 다진 흙부터 근현대에 보수한 층까지 켜켜이 쌓여 있습니다.",
+        },
+        {
+          name: "하나뿐인 둥근 모서리 찾기",
+          body: "함광문에서 성벽 위를 따라 서쪽으로 가면 남서쪽 모서리가 나옵니다. 네 모서리 가운데 이곳만 둥근데, 흔히 명나라가 성을 쌓을 때 이 자리에 있던 옛 성벽의 모서리 모양을 그대로 살렸기 때문이라고 설명합니다. 성벽 아래 해자도 모서리를 따라 휘어 흐릅니다.",
+        },
+      ],
+      time: "한 구간을 걷고 내려오는 데 1시간에서 1시간 30분쯤 걸립니다. 자전거로 한 바퀴를 돌려면 따로 시간을 내야 하니, 그 반나절에는 다른 일정을 빡빡하게 넣지 마세요.",
+      when: "더운 철에는 바닥 열기가 식기 시작하는 늦은 오후에 오르세요. 해가 진 뒤까지 머물 생각이라면 내려올 성문이 몇 시까지 여는지 먼저 확인하세요. 성벽 위에는 그늘이 거의 없어 봄과 가을이 가장 편합니다. 춘절 무렵에는 성벽에 등불이 몇 주씩 걸리며, 최근에는 3월까지 이어졌습니다.",
+      pair: "남문에서 남대가(南大街)를 따라 북쪽으로 1.1km, 15분쯤 걸으면 종루가 나오고, 고루와 그 뒤 회족거리(회민가)의 먹자골목도 가깝습니다. 아니면 성 안에서 동쪽으로 꺾어, 서울 인사동처럼 붓·먹·서화 가게가 늘어선 서원문 거리를 따라 비림박물관까지 걸어 보세요.",
+      skip: "손대지 않은 명나라 성벽을 기대한다면 실망할 수 있습니다. 거의 모든 구간이 보수를 거쳤습니다. 시안 일정이 짧다면 한 성문으로 올라가 한 구간만 걸어도 충분합니다. 성벽의 진짜 나이가 궁금하다면 자전거로 한 바퀴 도는 것보다 함광문 유적 박물관에서 30분을 보내는 편이 낫습니다.",
+      faq: [
+        {
+          question: "시안 성벽은 가 볼 만한가요?",
+          answer: "네, 한 시간만 있어도 가 볼 만합니다. 성벽 윗면은 너비가 12~14m라, 걷다 보면 도시 위에 놓인 큰길을 따라가는 느낌입니다. 한쪽은 해자와 공원, 다른 쪽은 옛 시가지입니다. 한 바퀴는 13.74km지만 남문에서 한 구간만 걸어도 분위기를 충분히 느낄 수 있고, 함광문 유적 박물관에서는 성벽 속에 남은 당나라 성문을 볼 수 있습니다.",
+        },
+        {
+          question: "시안 성벽은 걷는 게 좋을까요, 자전거가 좋을까요?",
+          answer: "한 시간 남짓이라면 걷고, 달리는 것 자체를 즐기고 싶다면 자전거를 타세요. 한 구간을 걷고 내려오는 데 60~90분쯤 걸립니다. 한 바퀴 13.74km는 그늘이 거의 없는 벽돌길이라, 자전거로 돌려면 따로 시간을 내야 합니다. 자전거 대여 조건은 당일 현장에서 확인하세요.",
+        },
+        {
+          question: "시안 성벽은 어느 문으로 올라가는 게 좋나요?",
+          answer: "처음이라면 남문(영녕문)이 가장 편합니다. 네 정문 가운데 문루 세 채가 모두 선 유일한 문이고, 남대가를 따라 북쪽으로 1.1km 가면 종루입니다. 성벽에 오르내릴 수 있는 곳이 17곳이라 다음 목적지에 맞춰 골라도 되지만, 그 문의 운영 시간은 미리 확인하세요.",
+        },
+        {
+          question: "시안 성벽은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을의 늦은 오후가 가장 좋습니다. 성벽 위에는 그늘이 거의 없어, 여름에는 벽돌이 식을 때까지 기다리세요. 춘절 무렵에는 성벽에 등불이 걸리는데, 최근에는 1월부터 3월까지 이어졌습니다. 해가 진 뒤까지 있을 생각이라면 내려올 성문의 운영 시간을 확인하세요.",
+        },
+        {
+          question: "시안 성벽은 미리 예약해야 하나요?",
+          answer: "보통은 오래전부터 예약할 필요가 없고, 당일에도 표를 살 수 있습니다. 표를 사고 입장하는 방식은 종종 바뀌고, 등불 축제 같은 행사 기간에는 다를 수 있으니 가기 전에 날짜별로 확인하거나 저희에게 맡겨 주세요.",
+        },
+      ],
+    },
+  },
+  "shaanxi-history-museum": {
+    en: {
+      description: "At Xi'an's Shaanxi History Museum, find a land deal cast in bronze, a band riding a Tang camel and an envoy from Korea in a prince's tomb mural.",
+      why: [
+        "Around Xi'an, emperors lie under man-made mounds and whole hillsides, and the Tang capital is buried beneath the modern city. This museum is where you see what came out of that ground. Shaanxi was home to the capitals of the Zhou, Qin, Han and Tang. About 3,000 objects take you through their story in three halls, from the first humans here to 1840. Walk it once in order, and the tombs and ruins you visit afterwards each find their place in time.",
+        "The most unusual collection is downstairs. Nearly 600 murals, over 1,000 square metres in all, were taken from the walls of more than 20 Tang tombs, among them those of princes and a princess. In them, Tang court life comes back in colour: hunting parties setting out, palace women, musicians and dancers. Painted on earth walls, they flake easily, so they are kept in a gallery of their own, in sealed cases that hold temperature and humidity steady.",
+        "The museum has two sites. This page is about the Main Building in central Xi'an; the newer Qin-Han Gallery is a separate venue out in Xixian New Area. You will know the Main Building by its shape. The architect Zhang Jinqiu designed it as a pared-down Tang palace, a central hall with a tower at each corner. She dressed it in grey, white and black instead of imperial red and yellow. Basic entry is free with a reservation. The mural gallery costs extra, and it is the part to add if Tang life is what you came for.",
+      ],
+      highlights: [
+        {
+          name: "A land deal cast in bronze",
+          body: "In the first hall stands a plain bronze cauldron, the Wusi Wei ding, with 207 characters cast inside. They record how, nearly 3,000 years ago, a man named Qiu Wei swapped fields with a neighbouring lord, and the king's ministers sent officials to mark the new boundaries. Its exact date, the fifth year of King Gong of Zhou, makes it a yardstick for dating other bronzes of its time.",
+        },
+        {
+          name: "A band riding a camel",
+          body: "In the third hall, a Tang three-colour camel carries a whole band on its back: seven seated men with foreign instruments, and a woman standing in the middle, singing. Nearby, a Five Dynasties green-glazed ewer from the Yaozhou kilns has a lid that never opens and a nursing lioness for a spout. It was filled through a plum-blossom hole in its base and does not leak when set upright.",
+        },
+        {
+          name: "Envoys and polo in the mural gallery",
+          body: "In the mural Reception of Envoys, from Prince Zhanghuai's tomb, three Tang officials receive three foreign envoys. The one in the middle, with two feathers in his cap, is most often read as an envoy from Silla in Korea, though some scholars say Goguryeo. From the same tomb comes a polo match more than six metres long, with some twenty riders chasing the ball at full gallop.",
+        },
+      ],
+      time: "Ninety minutes takes you once through the three halls in order; two to three hours lets you read as you go. The mural gallery needs its own paid ticket; give it about an hour more.",
+      when: "If you can, come before the Terracotta Warriors, so the Qin section gives you the background for the pits. The summer holidays, the Spring Festival and the national holidays are the hardest dates to book.",
+      pair: "The Giant Wild Goose Pagoda is about two kilometres south-east, half an hour on foot or a short taxi ride. It was built in 652 to hold the scriptures the monk Xuanzang brought back from India. Keep the Terracotta Warriors for another day; both in one morning means rushing each.",
+      skip: "If museums tire you, or your Xi'an days are already full with the Terracotta Warriors and the wall, leave it out. For Tang Chang'an in a smaller dose, the Hanguang Gate museum in the city wall shows a Tang gate on the spot where it stood.",
+      faq: [
+        {
+          question: "Is the Shaanxi History Museum worth visiting?",
+          answer: "Yes, especially before you see Xi'an's tombs and ruins. About 3,000 objects in three halls take you from the region's first humans to 1840, with the weight on the Zhou, Qin, Han and Tang, whose capitals were here. Basic entry is free with a reservation, and 90 minutes covers the main story.",
+        },
+        {
+          question: "How long do you need at the Shaanxi History Museum?",
+          answer: "About 90 minutes to walk the three halls once in order, or two to three hours to read as you go. Add about an hour for the Tang mural gallery, which has its own ticket. Arrive well before your time slot, because the queue, security and passport check take time.",
+        },
+        {
+          question: "Do I need to book the Shaanxi History Museum in advance?",
+          answer: "Yes. The main museum is free, but every visitor needs a real-name booking with the passport they will carry that day. Summer holidays and national holidays are the hardest to get, so book as soon as your date is fixed; we can also book it for you with your own passport.",
+        },
+        {
+          question: "Is the Tang mural gallery worth the extra ticket?",
+          answer: "Yes, if Tang life is what interests you. The museum holds nearly 600 murals from more than 20 Tang tombs, over 1,000 square metres in all, shown in sealed, climate-controlled cases. Look for the polo match, more than six metres long, and the foreign envoys, one of them most often read as an envoy from Silla in Korea. Give it about an hour on top of the main halls.",
+        },
+        {
+          question: "Should I see the Shaanxi History Museum before the Terracotta Warriors?",
+          answer: "Yes, if your days allow it. The museum's Qin section gives you the background for the pits, and its three halls place the First Emperor among the dynasties before and after him. Keep the two on separate days, because the Warriors take most of a day on their own, with about three hours on site.",
+        },
+      ],
+    },
+    zh: {
+      description: "西安陕西历史博物馆：去找铸着西周一桩换地交易的青铜鼎、驼背上的唐代乐队，还有唐墓壁画里来自朝鲜半岛的使节。",
+      why: [
+        "在西安，帝王们长眠在人工堆起的封土和整座山下，唐长安城则埋在今天的城市底下。这座博物馆，把从这片土地下挖出来的东西，按时代顺序摆在你眼前。周、秦、汉、唐都在陕西建过都。三个展厅里的三千余件文物，从这里最早的古人类一直讲到 1840 年。按顺序走一遍，之后再去看的陵墓和遗址，都能在时间线上找到位置。",
+        "最特别的收藏在地下一层。馆里藏有 20 多座唐墓的壁画近 600 幅，共 1000 多平方米，其中有太子墓，也有公主墓。壁画里，唐代宫廷的生活重新有了颜色：出行打猎的队伍、宫女、乐手和舞者。这些壁画原本绘在土墙上，容易掉色掉渣，所以单独建了一座展馆，放在恒温恒湿的密封展柜里。",
+        "陕历博现在有两处场馆，这里说的是西安市区的本馆；新开的秦汉馆在西咸新区，是另一处。本馆很好认：建筑师张锦秋把它设计成一座简化了的唐代宫殿，中间一座主殿，四个角上各有一座高楼，外观用黑、白、灰，而不用皇家建筑惯用的红墙黄瓦。基本陈列免费，但要预约；壁画馆另外收费，如果你是冲着唐代生活来的，就值得加上。",
+      ],
+      highlights: [
+        {
+          name: "一桩铸在青铜里的土地交易",
+          body: "第一展厅有一件造型朴素的青铜鼎，叫五祀卫鼎，内壁铸着 207 个字。记的是近三千年前，一个叫裘卫的人和邻近的一位贵族换地，朝中大臣派官员到现场，划定了新的地界。铭文写明了年份，是西周共王五年，学者因此拿它来推定同时期其他青铜器的年代。",
+        },
+        {
+          name: "驼背上的乐队",
+          body: "第三展厅里，一峰唐三彩骆驼背上驮着整整一支乐队：七个男乐手拿着胡人的乐器盘腿坐着，中间站着一位唱歌的女子。附近还有一件五代耀州窑的青釉倒灌壶，壶盖是假的，打不开；盖和壶身相接的地方，塑着一只正给小狮子喂奶的母狮，它张开的嘴就是壶嘴。酒要从壶底的梅花孔灌进去，把壶放正也不会漏。",
+        },
+        {
+          name: "壁画馆里的使节与马球",
+          body: "章怀太子墓的《客使图》里，三位唐朝官员正在接待三位外国使节。使节中间那位冠上插着两根羽毛，一般认为是新罗使节，也有学者主张来自高句丽。同一座墓里还出土了《马球图》，画面长 6 米多，二十多骑人马正策马争球。",
+        },
+      ],
+      time: "按顺序走完三个展厅，一个半小时；边走边细看，要两三个小时。壁画馆要另外买票，再加一个小时左右。",
+      when: "能安排的话，放在兵马俑之前。先在秦代展区补补课，再去看俑坑，会明白得多。暑假、春节和国庆、五一这样的长假最难约。",
+      pair: "大雁塔在博物馆东南约 2 公里，步行半小时左右，打车只是一小段路。塔建于 652 年，用来存放玄奘从印度带回的经卷。别把兵马俑和这里塞进同一个上午，两处都会看得很赶。",
+      skip: "对博物馆兴趣不大，或者在西安的几天已经被兵马俑和城墙排满的人，可以不来。想用更少的时间感受唐长安，可以去嵌在城墙里的含光门遗址博物馆，唐代城门的遗址就在原地。",
+      faq: [
+        {
+          question: "陕西历史博物馆值得去吗？",
+          answer: "值得，尤其是在去看西安的陵墓和遗址之前。三个展厅里的三千余件文物，从这里最早的古人类一直讲到 1840 年，重点是在陕西建都的周、秦、汉、唐。基本陈列免费，但要预约；一个半小时就能把主线走完。",
+        },
+        {
+          question: "参观陕西历史博物馆要多长时间？",
+          answer: "按顺序走完三个展厅大约一个半小时，边看边读要两三个小时。唐代壁画珍品馆另外买票，再加一个小时左右。排队、安检和核验护照都要时间，最好比预约的时段早些到。",
+        },
+        {
+          question: "陕西历史博物馆需要提前预约吗？",
+          answer: "需要。本馆免费，但每位游客都要用自己当天要带的护照实名预约，暑假和节假日最难约，日期一定就尽早约；我们也可以用你本人的护照帮你预约。",
+        },
+        {
+          question: "唐代壁画馆值得另外买票吗？",
+          answer: "如果你对唐代生活感兴趣，值得。馆里藏有 20 多座唐墓的壁画近 600 幅，共 1000 多平方米，放在恒温恒湿的密封展柜里。别错过 6 米多长的《马球图》，还有画着外国使节的《客使图》，其中一位一般认为是新罗使节。在基本陈列之外，再留一个小时左右。",
+        },
+        {
+          question: "陕西历史博物馆和兵马俑，先去哪个？",
+          answer: "日程允许的话，先来博物馆。秦代展区能给俑坑补上背景，三个展厅也能让你看清秦始皇前后各朝的位置。两处最好分在不同的日子：兵马俑单独就要大半天，光在景区里就得三个小时左右。",
+        },
+      ],
+    },
+    ko: {
+      description: "시안 산시역사박물관에서 서주 시대 토지 거래를 기록한 청동 솥, 낙타 등에 올라탄 당나라 악단, 왕자 무덤 벽화 속 조우관을 쓴 사신을 찾아보세요.",
+      why: [
+        "시안 일대의 황제들은 사람이 쌓은 봉분이나 산 하나를 통째로 무덤으로 삼았고, 당나라 장안성은 지금의 도시 아래에 묻혀 있습니다. 이 박물관에서는 그 땅속에서 나온 것들을 시대순으로 볼 수 있습니다. 산시는 주·진·한·당이 도읍을 두었던 곳으로, 세 전시실의 유물 3천여 점이 이 땅의 첫 인류부터 1840년까지 이어집니다. 한 번 순서대로 걷고 나면, 그다음에 가는 무덤과 유적이 연표 어디쯤에 놓이는지 보입니다.",
+        "가장 특별한 소장품은 지하에 있습니다. 당나라 무덤 20여 기의 벽에서 떼어 온 벽화가 600점 가까이 있고, 모두 합치면 1,000㎡가 넘습니다. 그 무덤 가운데에는 태자와 공주의 무덤도 있습니다. 벽화 속에서는 사냥 길에 나서는 행렬, 궁녀, 악사와 무희가 당나라 궁정의 삶을 색으로 되살립니다. 흙벽에 그린 그림이라 쉽게 바래고 부스러지기 때문에, 전용 전시관의 밀폐 진열장에 담아 온도와 습도를 일정하게 지킵니다.",
+        "박물관은 지금 두 곳이며, 이 페이지는 시안 도심의 본관을 다룹니다. 새로 문을 연 진한관은 시셴신구에 있는 별도의 시설입니다. 본관은 생김새로 알아볼 수 있습니다. 건축가 장진추의 작품으로 당나라 궁전을 간결하게 압축한 모습인데, 가운데 큰 전각을 두고 네 모서리에 누각을 세웠으며, 황실 건축의 붉은 벽과 노란 기와 대신 검정·흰색·회색을 썼습니다. 기본 관람은 예약하면 무료이고, 벽화관은 따로 돈을 내야 하지만 당나라 사람들의 삶이 궁금해서 왔다면 꼭 더할 만합니다.",
+      ],
+      highlights: [
+        {
+          name: "청동 솥에 남은 토지 거래",
+          body: "제1전시실의 수수한 청동 솥 오사위정(五祀衛鼎) 안쪽에는 글자 207자가 주조되어 있습니다. 3천 년 가까이 전, 구위(裘衛)라는 사람이 이웃 귀족과 땅을 바꾸자 조정 대신들이 관리를 보내 새 경계를 정했다는 기록입니다. 서주 공왕 5년이라는 연도가 분명해서, 같은 시기 다른 청동기의 연대를 가늠하는 기준이 됩니다.",
+        },
+        {
+          name: "낙타 등에 올라탄 악단",
+          body: "제3전시실의 당삼채 낙타는 등에 악단 하나를 통째로 싣고 있는데, 서역 악기를 든 남자 악사 일곱 명이 둘러앉고 가운데에 여자 한 명이 서서 노래합니다. 근처의 오대(五代) 요주요(耀州窯) 청자 주전자는 뚜껑이 열리지 않는 가짜이고, 새끼에게 젖을 먹이는 어미 사자의 벌린 입이 주둥이입니다. 바닥의 매화 모양 구멍으로 술을 채우는데, 바로 세워도 새지 않습니다.",
+        },
+        {
+          name: "벽화관의 사신과 격구",
+          body: "장회태자 묘의 ‘예빈도(禮賓圖)’에서는 당나라 관리 셋이 외국 사신 셋을 맞습니다. 가운데 사신은 새 깃털 두 개를 꽂은 조우관(鳥羽冠)을 썼는데, 흔히 신라 사신으로 보며 고구려 사신이라는 견해도 있습니다. 같은 무덤의 ‘마구도(馬毬圖)’에서는 6m가 넘는 화면에서 기수 20여 명이 말을 달리며 공을 다투는데, 고려와 조선 초에 성행한 격구와 같은 계통의 경기입니다.",
+        },
+      ],
+      time: "세 전시실을 순서대로 한 번 둘러보는 데 1시간 30분, 설명을 읽으며 천천히 보려면 2~3시간입니다. 당대(唐代) 벽화관은 입장권을 따로 사야 하며, 1시간쯤 더 잡으세요.",
+      when: "가능하면 병마용보다 먼저 오세요. 진나라 전시를 보고 가면 병마용갱이 훨씬 잘 이해됩니다. 여름방학과 춘절, 국경절·노동절 연휴에는 예약이 가장 어렵습니다.",
+      pair: "대안탑은 박물관에서 남동쪽으로 약 2km, 걸어서 30분쯤이고 택시로도 금방입니다. 현장 법사가 인도에서 가져온 경전을 보관하려고 652년에 세운 탑입니다. 병마용과 같은 오전에 몰아넣으면 두 곳 다 서둘러 보게 되니 다른 날로 나누세요.",
+      skip: "박물관에 큰 흥미가 없거나, 시안 일정이 병마용과 성벽으로 이미 꽉 찼다면 건너뛰어도 됩니다. 당나라 장안을 짧게 맛보고 싶다면 성벽 속에 들어앉은 함광문 유적 박물관에서 제자리에 남은 당나라 성문 유적을 볼 수 있습니다.",
+      faq: [
+        {
+          question: "산시역사박물관은 가 볼 만한가요?",
+          answer: "네, 특히 시안의 무덤과 유적을 보러 가기 전이라면 꼭 가 볼 만합니다. 세 전시실의 유물 3천여 점이 이 땅의 첫 인류부터 1840년까지 이어지며, 이곳에 도읍을 두었던 주·진·한·당에 무게를 둡니다. 기본 관람은 예약하면 무료이고, 1시간 30분이면 큰 줄기를 볼 수 있습니다.",
+        },
+        {
+          question: "산시역사박물관 관람에는 시간이 얼마나 걸리나요?",
+          answer: "세 전시실을 순서대로 한 번 보는 데 1시간 30분, 설명을 읽으며 보려면 2~3시간입니다. 입장권을 따로 사야 하는 당대 벽화관은 1시간쯤 더 잡으세요. 줄서기와 보안 검색, 여권 확인에도 시간이 걸리니 예약한 시간대보다 일찍 도착하세요.",
+        },
+        {
+          question: "산시역사박물관은 미리 예약해야 하나요?",
+          answer: "네. 본관은 무료지만, 관람객마다 당일 가져갈 본인 여권으로 실명 예약을 해야 합니다. 여름방학과 연휴에 가장 예약하기 어려우니 날짜가 정해지면 바로 예약하세요. 본인 여권으로 저희가 대신 예약해 드릴 수도 있습니다.",
+        },
+        {
+          question: "당대 벽화관은 따로 표를 살 만한가요?",
+          answer: "당나라 사람들의 삶에 관심이 있다면 그렇습니다. 당나라 무덤 20여 기에서 옮겨 온 벽화 600점 가까이, 모두 1,000㎡가 넘는 그림을 온도와 습도를 지키는 밀폐 진열장에 담아 보여 줍니다. 6m가 넘는 ‘마구도’와, 흔히 신라 사신으로 보는 인물이 나오는 ‘예빈도’를 놓치지 마세요. 본관 관람에 1시간쯤 더 잡으면 됩니다.",
+        },
+        {
+          question: "산시역사박물관과 병마용, 어디부터 가야 하나요?",
+          answer: "일정이 된다면 박물관을 먼저 보세요. 진나라 전시가 병마용갱을 볼 배경이 되어 주고, 세 전시실을 지나며 진시황이 앞뒤 왕조 사이 어디에 놓이는지 알게 됩니다. 두 곳은 다른 날로 나누세요. 병마용은 현장에서만 3시간쯤 걸려, 그것만으로도 하루가 거의 다 갑니다.",
+        },
+      ],
+    },
+  },
   "west-lake": {
     en: {
       description: "Hangzhou's West Lake at dawn: mist on the Su Causeway, willows trailing in still water, no ticket, no gate. Three places to find, and how to add Lingyin.",
@@ -679,6 +1117,41 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Great Wall of China", "长城", "万里长城", "만리장성", "Badaling Great Wall", "八达岭长城", "Mutianyu Great Wall", "慕田峪长城"],
     sameAs: ["https://en.wikipedia.org/wiki/Great_Wall_of_China", "https://www.wikidata.org/wiki/Q12501", "https://whc.unesco.org/en/list/438/"],
+  },
+  "terracotta-warriors": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Mausoleum of the First Qin Emperor", url: "https://whc.unesco.org/en/list/441/" },
+      { title: "Emperor Qinshihuang's Mausoleum Site Museum: Pit 1", url: "https://www.bmy.com.cn/pitone.html" },
+      { title: "Emperor Qinshihuang's Mausoleum Site Museum: Pit 2", url: "https://www.bmy.com.cn/pittwo.html" },
+      { title: "Emperor Qinshihuang's Mausoleum Site Museum: the bronze chariots", url: "https://www.bmy.com.cn/pithorse.html" },
+      { title: "Xinhua: 50 years since the Terracotta Warriors were found (2024)", url: "https://www.news.cn/politics/20240909/39a50eca54654ada85168f8ddae2e8e4/c.html" },
+    ],
+    alternateName: ["Terracotta Army", "Terracotta Warriors and Horses", "兵马俑", "秦始皇兵马俑", "병마용", "Bingmayong", "Emperor Qinshihuang's Mausoleum Site Museum", "秦始皇帝陵博物院", "진시황제릉박물원"],
+    sameAs: ["https://en.wikipedia.org/wiki/Terracotta_Army", "https://www.wikidata.org/wiki/Q47672", "https://whc.unesco.org/en/list/441/"],
+  },
+  "xian-city-wall": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Qujiang New District Management Committee: the wall's 13.74 km circuit (2026)", url: "https://qjxq.xa.gov.cn/xwzx/xwdt/2032394805232328706.html" },
+      { title: "Qujiang New District Management Committee: the wall's 17 access points (2025)", url: "https://qjxq.xa.gov.cn/xwzx/xwdt/1949774484239577090.html" },
+      { title: "China News Service: how the Xi'an City Wall was saved in 1959 (2015)", url: "https://www.chinanews.com.cn/m/gn/2015/03-06/7108190.shtml" },
+      { title: "China News Service: Hanguang Gate site museum opens (2008)", url: "https://www.chinanews.com/cul/news/2008/09-27/1396235.shtml" },
+    ],
+    alternateName: ["Xi'an City Wall", "Fortifications of Xi'an", "Xi'an Ming City Wall", "西安城墙", "西安明城墙", "시안 성벽", "Xi'an Chengqiang"],
+    sameAs: ["https://en.wikipedia.org/wiki/Fortifications_of_Xi%27an", "https://www.wikidata.org/wiki/Q1334336"],
+  },
+  "shaanxi-history-museum": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Shaanxi History Museum: about the museum", url: "https://www.sxhm.com/about.html" },
+      { title: "Shaanxi History Museum: the basic exhibition, Ancient Civilization of Shaanxi", url: "https://www.sxhm.com/basic_display.html" },
+      { title: "Shaanxi History Museum: Tang Dynasty Mural Treasures Gallery", url: "https://www.sxhm.com/tang_mural.html" },
+      { title: "Shaanxi History Museum: the Wusi Wei ding", url: "https://www.sxhm.com/collections/detail/511.html" },
+      { title: "Shaanxi History Museum: visiting the Main Building (English)", url: "https://en.sxhm.com/en/new/visit.html" },
+    ],
+    alternateName: ["Shaanxi History Museum", "陕西历史博物馆", "陕历博", "산시역사박물관", "섬서역사박물관", "Shaanxi Lishi Bowuguan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Shaanxi_History_Museum", "https://www.wikidata.org/wiki/Q1151210"],
   },
 };
 

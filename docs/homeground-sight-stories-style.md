@@ -26,12 +26,34 @@ That means:
 | Field | What it holds | Length |
 | --- | --- | --- |
 | `description` | Search snippet and link preview | en ≤ 155 characters; zh ≤ 70; ko ≤ 95 |
-| `why` | 2–3 paragraphs: why it is worth the trip | 60–110 words each (en) |
+| `why` | 3 paragraphs (owner, 2026-10-04): the experience; the story that changes what you see; how it compares or which part to choose | 70–120 words each (en) |
 | `highlights` | Exactly 3 things to find, each with a `name` and 1–3 sentences | |
 | `time` | How long to give it | One or two sentences |
 | `when` | Time of day and season | |
 | `pair` | What fits around it the same day, with directions | |
 | `skip` | Who can leave it out, and what to do instead | Full sentences |
+| `faq` | 5 questions travellers type into search engines and AI assistants, each with an answer | Answer in the first sentence, then 2–3 more |
+| `meta` (per sight, shared) | `reviewedAt` (YYYY-MM-DD); `sources`; `alternateName`; `sameAs` | See below |
+
+### `meta` fields
+
+- **`sources`:** 3–5 official or reference sources, shown on the page. Use UNESCO, government, the site's own website or the museum's page; never a blog.
+- **`alternateName`:** the sight's names in English, Chinese, Korean and pinyin, plus common variants.
+- **`sameAs`:** the English Wikipedia URL, the Wikidata URL (check the Q-number) and the UNESCO URL when listed.
+
+## GEO: being quoted by AI search (owner, 2026-10-04)
+
+Research basis:
+- The Princeton GEO paper (KDD 2024) found that concrete statistics, authoritative quotations and cited sources raise visibility in AI answers by about 30–40 %.
+- Google says AI features use the same helpful-content signals as Search, and structured data must match what is visible on the page.
+
+So:
+- **FAQ questions are the real questions people ask:** "Is X worth visiting?", "X or Y?", "How long do you need?", "Best time to visit?", "Do I need to book?"
+- **Every answer opens with a direct answer** ("Yes, especially…", "Choose Badaling if…") and includes a concrete, useful number: hours, kilometres, months.
+- **Same voice as the rest of the page:** warm and plain, with no jargon.
+- **Quotations only where they belong to the place:** a poem line, or UNESCO's own words. Never decoration.
+- **Numbers must help the trip:** time, distance, season, size you can feel. Not trivia.
+- **The page renders the FAQ as FAQPage markup and the meta as TouristAttraction markup,** so wording must be final and visible.
 
 ## Make them want to go (owner's rule, 2026-10-04)
 
@@ -138,7 +160,7 @@ Also:
 
 ## Process
 
-1. **Research and write.** Read the guide and the reservation rules first, then research. Write all three languages with sources.
+1. **Research and write.** Read the guide and the reservation rules first, then research. Write all three languages with sources, including the FAQ and the `meta` (reviewedAt, sources, alternateName, sameAs).
 2. **Review round 1:** two reviewers.
    - One checks facts in all languages and the English.
    - One checks Chinese, Korean and the phone layout.
