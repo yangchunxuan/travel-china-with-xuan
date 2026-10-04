@@ -1002,12 +1002,6 @@ const body = {
           reviewedAt: "2026-08-21"
         },
         {
-          label: "대표 이미지: 위중, 촬영 Kingswang192, CC BY 4.0; 자르기·크기 조정·형식 변환",
-          url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons",
-          reviewedAt: "2026-08-21"
-        },
-        {
           label: "장강–자링강 합류부, 촬영 Tauno Tõhk, CC BY-SA 2.0; 자르기·크기 조정·형식 변환",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
           publisher: "Wikimedia Commons",

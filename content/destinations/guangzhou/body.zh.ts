@@ -585,7 +585,7 @@ const body = {
           reviewedAt: "2026-08-17",
         },
         {
-          label: "首图：陈家祠，摄影 Shujianyang，CC BY-SA 4.0；已裁切转码",
+          label: "陈家祠照片：摄影 Shujianyang，CC BY-SA 4.0；已裁切转码",
           url: "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_01.jpg",
           publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-17",

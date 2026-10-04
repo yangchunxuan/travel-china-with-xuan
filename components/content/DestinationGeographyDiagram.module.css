@@ -132,6 +132,7 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: #686b70;
+  text-wrap: pretty;
 }
 
 .legend {
@@ -183,6 +184,7 @@
   font-size: 0.9rem;
   line-height: 1.6;
   color: #686b70;
+  text-wrap: pretty;
 }
 
 @media (max-width: 640px) {

@@ -66,13 +66,13 @@ const overviewSignalIds = ["nights", "stay", "gateway", "next"] as const;
 
 const zhHeadingSegments = {
   beijing: ["北京：", "故宫、长城", "和胡同，", "留足四五晚"],
-  shanghai: ["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"],
-  xian: ["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"],
-  chengdu: ["成都：", "先把城市住稳，", "再搭四川路线"],
-  guangzhou: ["广州：", "住几晚、", "住哪个区、", "走哪个门户"],
-  hangzhou: ["杭州：", "先决定", "一日往返，", "还是把杭州", "真正住下来"],
-  zhangjiajie: ["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"],
-  chongqing: ["重庆：", "选对住宿基地、", "车站和停留晚数"],
+  shanghai: ["上海：", "外滩夜景、", "老弄堂", "和摩天楼，", "留足四晚"],
+  xian: ["西安：", "兵马俑、古城墙", "和回民街，", "留足三晚"],
+  chengdu: ["成都：", "熊猫、茶馆", "和火锅，", "留足三晚"],
+  guangzhou: ["广州：", "早茶、老街", "和珠江，", "留足三晚"],
+  hangzhou: ["杭州：", "西湖、灵隐", "和龙井茶园，", "住上两晚"],
+  zhangjiajie: ["张家界：", "云雾里的石柱，", "留足四五晚"],
+  chongqing: ["重庆：", "爬坡上坎、", "两江夜色，", "留足三晚"],
 } as const satisfies Record<DestinationHubId, readonly string[]>;
 
 /** Korean object particle after a name: 을 after a final consonant (베이징을), 를 after a vowel (상하이를). */

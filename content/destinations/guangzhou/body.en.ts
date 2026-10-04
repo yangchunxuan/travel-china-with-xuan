@@ -599,7 +599,7 @@ const body = {
         },
         {
           label:
-            "Hero: Chen Clan Ancestral Hall by Shujianyang, CC BY-SA 4.0; cropped and converted",
+            "Chen Clan Ancestral Hall photo by Shujianyang, CC BY-SA 4.0; cropped and converted",
           url: "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_01.jpg",
           publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-17",
