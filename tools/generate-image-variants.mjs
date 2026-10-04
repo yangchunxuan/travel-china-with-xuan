@@ -51,7 +51,7 @@ for await (const file of walkRoots()) {
       await sharp(file)
         .rotate()
         .resize({ width, withoutEnlargement: true })
-        .webp({ quality: 78, effort: 4 })
+        .webp({ quality: path.basename(path.dirname(file)).startsWith("photo-quality-") ? 84 : 78, effort: 4 })
         .toFile(target);
       generated += 1;
     } catch (error) {

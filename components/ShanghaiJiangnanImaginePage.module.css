@@ -483,6 +483,11 @@
   max-width: 29rem;
 }
 
+.routeDaySelect:focus-visible {
+  outline: 2px solid var(--im-ink);
+  outline-offset: 4px;
+}
+
 .factsRail {
   border-block: 1px solid var(--im-line);
   display: grid;
@@ -633,6 +638,73 @@
   line-height: 1.55;
   margin-block-start: 0.85rem;
   min-height: 2.25rem;
+}
+
+.routePhotoHeading {
+  color: var(--im-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 0 0 0.75rem;
+}
+
+.routeDaySelect {
+  background: transparent;
+  border: 0;
+  border-radius: 0.2rem;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  min-height: 2.75rem;
+  padding: 0;
+  text-align: start;
+}
+
+.routeDaySelect:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.routeMediaTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-block-start: 0.85rem;
+  max-width: 100%;
+  padding: 0.2rem 0.15rem;
+}
+
+.routeMediaTabs button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--im-line);
+  border-radius: 999px;
+  color: var(--im-muted);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 1 auto;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 620;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.95rem;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+}
+
+.routeMediaTabs button[aria-pressed="true"] {
+  background: var(--im-ink);
+  border-color: var(--im-ink);
+  color: #fff;
+}
+
+.routeMediaTabs button:focus-visible {
+  outline: 2px solid var(--im-ink);
+  outline-offset: 2px;
 }
 
 .routeMediaEmpty {
@@ -1220,49 +1292,6 @@
     height: 100%;
     object-fit: cover;
     width: 100%;
-  }
-
-  .routeMediaTabs {
-    display: flex;
-    gap: 0.45rem;
-    margin-block-start: 0.85rem;
-    max-width: 100%;
-    overflow-x: auto;
-    padding-block-end: 0.15rem;
-    scrollbar-width: none;
-    touch-action: auto;
-  }
-
-  .routeMediaTabs::-webkit-scrollbar {
-    display: none;
-  }
-
-  .routeMediaTabs button {
-    align-items: center;
-    background: transparent;
-    border: 1px solid var(--im-line);
-    border-radius: 999px;
-    color: var(--im-muted);
-    display: inline-flex;
-    flex: 0 0 auto;
-    font: inherit;
-    font-size: 0.75rem;
-    font-weight: 620;
-    justify-content: center;
-    min-height: 2.75rem;
-    padding: 0.65rem 0.95rem;
-    white-space: nowrap;
-  }
-
-  .routeMediaTabs button[aria-pressed="true"] {
-    background: var(--im-ink);
-    border-color: var(--im-ink);
-    color: #fff;
-  }
-
-  .routeMediaTabs button:focus-visible {
-    outline: 2px solid var(--im-ink);
-    outline-offset: 2px;
   }
 
   .routeMobileMedia figcaption {

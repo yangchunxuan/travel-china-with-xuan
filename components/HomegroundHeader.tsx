@@ -50,6 +50,7 @@ import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./Pr
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
 import { markHomegroundInternalReload } from "../lib/homegroundRouteSession";
+import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import styles from "./HomegroundHeader.module.css";
 
 export type HomegroundPageContext =
@@ -198,6 +199,8 @@ export function HomegroundHeader({
     setNavigationMenuOpen(open);
     return () => setNavigationMenuOpen(false);
   }, [open]);
+  // Scrolled past the top, the wordmark folds to "Hi"; back at the top it unfolds.
+  const brandFold = useBrandFold();
   const [activeHash, setActiveHash] = useState("");
   const [languageQuery, setLanguageQuery] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -599,6 +602,7 @@ export function HomegroundHeader({
       data-homeground-header-context={pageContext}
       data-homeground-header-locale={locale}
       data-menu-open={open ? "true" : "false"}
+      {...brandFold}
     >
       <div
         aria-label={open ? copy.navigation.mobileLabel : undefined}
@@ -615,7 +619,7 @@ export function HomegroundHeader({
         >
           <HomegroundBrandMark className={styles.brandMark} />
           <span>
-            <strong lang="en">Homeground China</strong>
+            <HomegroundWordmark />
             <small>{copy.businessDescriptor}</small>
           </span>
         </Link>

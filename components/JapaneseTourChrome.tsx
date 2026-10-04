@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
@@ -65,6 +66,8 @@ export function JapaneseSiteHeader({
   const selectedTour = usePrivateTourSelection();
   const primaryLinks = japanesePrimaryLinks;
   const [open, setOpen] = useState(false);
+  // The logo folds to "Hi" on scroll, as on the other languages' headers.
+  const brandFold = useBrandFold();
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
 
@@ -160,6 +163,7 @@ export function JapaneseSiteHeader({
       data-homeground-header-context="tour"
       data-homeground-header-locale="ja"
       data-menu-open={open ? "true" : "false"}
+      {...brandFold}
     >
       <div
         aria-label={open ? "モバイルメニュー" : undefined}
@@ -176,7 +180,7 @@ export function JapaneseSiteHeader({
           >
             <HomegroundBrandMark className={headerStyles.brandMark} />
             <span>
-              <strong lang="en">Homeground China</strong>
+              <HomegroundWordmark />
               <small>中国の旅行会社</small>
             </span>
           </a>

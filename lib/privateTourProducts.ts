@@ -10,6 +10,12 @@ import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourSceneMediaBySlug } from "./privateTourSceneMedia.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { mergePrivateTourRouteMedia } from "./privateTourMedia.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { withPrivateTourPhotoQuality } from "./privateTourPhotoQuality.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -977,17 +983,17 @@ const chengdu: PrivateTourProduct = {
     routeGroup(
       2,
       routeVariant(
-        l("Panda Base landmark", "熊猫基地园区地标", "판다기지 조형물"),
-        "/images/guides/chengdu-panda-base-or-dujiangyan-panda-valley/hero-1600.webp",
+        l("Chengdu Panda Base", "成都熊猫基地", "청두 판다기지"),
+        "/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
         l(
-          "Golden panda sculpture in the landscaped grounds of Chengdu Panda Base",
-          "成都大熊猫基地园区内的金色熊猫雕塑",
-          "청두 판다기지 조경 구역의 황금색 판다 조형물",
+          "A giant panda at Chengdu Panda Base",
+          "成都熊猫基地的大熊猫",
+          "청두 판다기지의 자이언트 판다",
         ),
         l(
-          "A sculpture, not a live panda—you visit the real panda enclosures early in the day.",
-          "照片里是园区雕塑，不是真熊猫；当天早场去真熊猫的展区参观。",
-          "사진은 실제 판다가 아닌 기지의 조형물입니다. 실제 판다 방사장은 이른 시간에 둘러봅니다.",
+          "Chengdu Panda Base",
+          "成都熊猫基地",
+          "청두 판다기지",
         ),
       ),
     ),
@@ -1002,9 +1008,9 @@ const chengdu: PrivateTourProduct = {
           "싼싱두이 신관 외관과 입장 광장",
         ),
         l(
-          "Where you arrive at the new Sanxingdui Museum. Ticket availability and the gallery order are confirmed separately.",
-          "三星堆新馆的到达区域。门票能否订到、展厅参观顺序另行确认。",
-          "싼싱두이 신관에 도착하면 보이는 공간입니다. 입장권 예약 가능 여부와 전시 관람 순서는 별도로 확인합니다.",
+          "Sanxingdui Museum",
+          "三星堆博物馆",
+          "싼싱두이박물관",
         ),
       ),
     ),
@@ -3404,14 +3410,15 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
 
 function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
   const additions = privateTourAdditionalMediaBySlug[product.slug];
-  if (!additions?.length) return product;
-  return {
+  const scenes = privateTourSceneMediaBySlug[product.slug];
+  if (!additions?.length && !scenes?.length) return withPrivateTourPhotoQuality(product);
+  return withPrivateTourPhotoQuality({
     ...product,
-    routeMedia: [...(product.routeMedia ?? []), ...additions].sort(
-      (left, right) => left.day - right.day,
-    ),
-    dateModified: "2026-09-28",
-  };
+    routeMedia: mergePrivateTourRouteMedia([
+      ...(product.routeMedia ?? []), ...(additions ?? []), ...(scenes ?? []),
+    ]),
+    dateModified: scenes?.length ? "2026-10-04" : "2026-09-28",
+  });
 }
 
 /** Published products: every list, card, sitemap, search and catalogue reads only these. */

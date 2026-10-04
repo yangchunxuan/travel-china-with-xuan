@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
-const source = (relativePath) => readFile(path.join(projectRoot, relativePath), "utf8");
+const source = async (relativePath) => (await readFile(path.join(projectRoot, relativePath), "utf8")).replaceAll("\r\n", "\n");
 
 const reservations = await import("../../lib/attractionReservations.ts");
 const copyModule = await import("../../lib/attractionReservationsI18n.ts");

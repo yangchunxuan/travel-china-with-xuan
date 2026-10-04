@@ -19,6 +19,7 @@ import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
 import { privateTourCurrencyNote } from "../../lib/privateTourCurrencyNote.ts";
+import * as privateTourMedia from "../../lib/privateTourMedia.ts";
 import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
 const locales = ["en", "zh", "ko"];
@@ -42,6 +43,7 @@ async function loadComponent(path, overrides = {}, window) {
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/tourContactDraft": { isJiangnanTour },
     "../lib/privateTourCurrencyNote": { privateTourCurrencyNote },
+    "../lib/privateTourMedia": privateTourMedia,
     "../lib/analytics": { trackEvent() {} },
     // KeepWords splits Japanese headings into phrases.
     "../../lib/japanesePhrases": { splitJapanesePhrases },

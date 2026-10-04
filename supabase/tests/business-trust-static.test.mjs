@@ -194,3 +194,26 @@ test("active business identity remains available after the sales page becomes a 
   assert.match(retiredServicePage, /<HomegroundFooter locale=\{locale\}/);
   assert.doesNotMatch(retiredServicePage, /"@type": "(?:Offer|Service)"|review-my-route|build-my-route/);
 });
+
+test("one operating entity everywhere: 盛世美达, and the shared organization markup carries its registered name and codes", async () => {
+  const { readdir, readFile: read } = await import("node:fs/promises");
+  const pathModule = await import("node:path");
+  const root = pathModule.resolve(import.meta.dirname, "../..");
+  const former = /本境文化交流工作室|92430802MAE0TE500J|Benjing/u;
+  const walk = async (dir) => (await readdir(dir, { withFileTypes: true })).flatMap((entry) => [entry]).length
+    ? (await Promise.all((await readdir(dir, { withFileTypes: true })).map(async (entry) => {
+        const full = pathModule.join(dir, entry.name);
+        return entry.isDirectory() ? walk(full) : [full];
+      }))).flat()
+    : [];
+  for (const dir of ["app", "components", "lib", "content", "public/downloads", "supabase/functions", "tools"]) {
+    for (const file of await walk(pathModule.join(root, dir))) {
+      if (!/\.(tsx?|mjs|json|txt|md|html)$/u.test(file)) continue;
+      assert.doesNotMatch(await read(file, "utf8"), former, `${pathModule.relative(root, file)} names the former studio`);
+    }
+  }
+  const identity = await read(pathModule.join(root, "lib/editorialIdentity.ts"), "utf8");
+  assert.match(identity, /legalName: homegroundBusiness\.registeredName/u);
+  assert.match(identity, /homegroundBusiness\.unifiedSocialCreditCode/u);
+  assert.match(identity, /homegroundBusiness\.travelAgencyLicenceNumber/u);
+});

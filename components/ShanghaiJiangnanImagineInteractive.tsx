@@ -24,6 +24,7 @@ import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { isJiangnanTour } from "../lib/tourContactDraft";
 import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
+import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const interactionCopy: Record<
@@ -145,42 +146,11 @@ type PhotoCopy = Readonly<{
   dayUnit: string;
 }>;
 
-const previewCaption: Record<PrivateTourLocale, (alt: string) => string> = {
-  en: (alt) =>
-    `${alt} — Tour photo preview only. This does not confirm this day's sights, arrangements or actual conditions.`,
-  zh: (alt) =>
-    `${alt}｜本行程实景预览；不代表这一天的景点、已确认安排或实际情况。`,
-  ko: (alt) =>
-    `${alt} — 이 여행의 사진 미리보기입니다. 해당 날짜의 관광지, 확정 일정 또는 실제 현장 상황을 뜻하지 않습니다.`,
-};
-
-// Shown when a route declines photos of other places (routePhotoFallback: false).
-const noDayPhotoCopy: Record<PrivateTourLocale, string> = {
-  en: "We have no verified photo of this day's places yet, so none is shown.",
-  zh: "这一天的地点暂时没有经过核实的照片，因此不配图。",
-  ko: "이날 방문지의 확인된 사진이 아직 없어 사진을 싣지 않았습니다.",
-};
-
-const japanesePreviewCaption = (alt: string) =>
-  `${alt}｜この旅の写真プレビューです。この日の行き先、確定した行程や実際の現地状況を示すものではありません。`;
-
-const beijingArrivalTitles = new Set([
-  "Arrive in Beijing",
-  "抵达北京",
-  "베이징 도착",
-  "北京到着",
-  "北京に到着",
-]);
-const beijingArrivalPhoto = "/images/tours/beijing-highlights-5-day-private-tour/arrival-beijing-city-1600.webp";
-const beijingArrivalAlt: Record<PrivateTourLocale, string> = {
-  en: "Beijing CBD roads and skyline at night",
-  zh: "北京 CBD 夜间道路与城市天际线",
-  ko: "밤의 베이징 CBD 도로와 스카이라인",
-};
-const beijingArrivalPreviewLabel: Record<PrivateTourLocale, string> = {
-  en: "Beijing city journey preview. ",
-  zh: "北京城市行程预览。",
-  ko: "베이징 도심 여행 미리보기. ",
+const mediaControlCopy = {
+  en: { previous: "Previous photo", next: "Next photo", pause: "Pause slideshow", play: "Play slideshow", unavailable: "Photo unavailable", count: "Journey photographs" },
+  zh: { previous: "上一张照片", next: "下一张照片", pause: "暂停轮播", play: "播放轮播", unavailable: "照片暂时无法显示", count: "行程照片" },
+  ko: { previous: "이전 사진", next: "다음 사진", pause: "슬라이드쇼 일시 정지", play: "슬라이드쇼 재생", unavailable: "사진을 표시할 수 없습니다", count: "여행 사진" },
+  ja: { previous: "前の写真", next: "次の写真", pause: "スライドショーを一時停止", play: "スライドショーを再生", unavailable: "写真を表示できません", count: "旅の写真" },
 };
 
 /** Scoped copy supplied by the Japanese page; pricing and selection stay shared. */
@@ -251,27 +221,43 @@ export function ShanghaiJiangnanHeroDeck({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
   const copy = photoCopy ?? interactionCopy[product.locale];
+  const controls = mediaControlCopy[photoCopy ? "ja" : product.locale];
   const images = useMemo(
-    () => [product.heroImage, ...product.gallery],
-    [product.gallery, product.heroImage],
+    () => collectPrivateTourPhotos(product).filter((image) => !failedPhotos.has(image.src)),
+    [product.gallery, product.heroImage, product.routeMedia, failedPhotos],
   );
+  const currentIndex = images.length ? activeIndex % images.length : 0;
+  const current = images[currentIndex];
 
   useEffect(() => {
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (paused || reducedMotion || images.length < 2) return;
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotion = () => setReducedMotion(preference.matches);
+    const updateVisibility = () => setHidden(document.hidden);
+    updateMotion();
+    updateVisibility();
+    preference.addEventListener("change", updateMotion);
+    document.addEventListener("visibilitychange", updateVisibility);
+    return () => {
+      preference.removeEventListener("change", updateMotion);
+      document.removeEventListener("visibilitychange", updateVisibility);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (paused || hidden || reducedMotion || images.length < 2) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
     }, 3600);
     return () => window.clearInterval(timer);
-  }, [images.length, paused]);
+  }, [images.length, paused, hidden, reducedMotion]);
 
   const move = (delta: number) => {
-    setActiveIndex(
-      (current) => (current + delta + images.length) % images.length,
-    );
+    if (!images.length) return;
+    setActiveIndex((current) => (current + delta + images.length) % images.length);
   };
   const handleBlur = (event: FocusEvent<HTMLElement>) => {
     if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
@@ -280,43 +266,49 @@ export function ShanghaiJiangnanHeroDeck({
   return (
     <figure
       className={styles.heroDeck}
+      data-tour-hero
+      data-photo-count={images.length}
+      data-photo-index={currentIndex}
       onBlurCapture={handleBlur}
       onFocusCapture={() => setPaused(true)}
       onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseLeave={(event) => setPaused(event.currentTarget.contains(document.activeElement))}
     >
       <button
-        aria-label={`${copy.nextPhoto}: ${images[(activeIndex + 1) % images.length].alt}`}
+        aria-label={images.length > 1 ? `${copy.nextPhoto}: ${images[(currentIndex + 1) % images.length].alt}` : controls.count}
         className={styles.deckStage}
+        disabled={images.length < 2}
         type="button"
         onClick={() => move(1)}
       >
-        {images.map((image, index) => {
-          const depth = (index - activeIndex + images.length) % images.length;
-          const visible = depth < Math.min(4, images.length);
+        {Array.from({ length: Math.min(4, images.length) }, (_, depth) => {
+          const image = images[(currentIndex + depth) % images.length];
           return (
             <span
               aria-hidden={depth === 0 ? undefined : "true"}
               className={styles.deckCard}
-              data-visible={visible ? "true" : "false"}
+              data-visible="true"
+              data-source-src={image.src}
               key={image.src}
               style={{ "--deck-depth": depth } as DeckStyle}
             >
               <Image
                 alt={depth === 0 ? image.alt : ""}
-                fetchPriority={index === 0 ? "high" : undefined}
+                fetchPriority={currentIndex === 0 && depth === 0 ? "high" : undefined}
                 fill
-                priority={index === 0}
-                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 44vw, 500px"
+                priority={currentIndex === 0 && depth === 0}
+                sizes={privateTourImageSizes(image, "hero")}
                 src={image.src}
-                style={{ objectPosition: image.objectPosition }}
+                style={{ objectPosition: image.objectPosition, objectFit: image.height > image.width ? "contain" : "cover" }}
+                onError={() => setFailedPhotos((existing) => new Set([...existing, image.src]))}
               />
             </span>
           );
         })}
+        {!current ? <span className={styles.routeMediaEmpty}>{controls.unavailable}</span> : null}
       </button>
       <figcaption className={styles.deckCaption}>
-        <span aria-live="polite">{images[activeIndex].caption}</span>
+        <span>{current?.caption ?? controls.unavailable}</span>
       </figcaption>
     </figure>
   );
@@ -533,52 +525,60 @@ function PublishedPrivateTourPriceConsole({
   );
 }
 
-function ShanghaiJiangnanMobileDayMedia({
+function ShanghaiJiangnanDayMedia({
   dayLabel,
   scenesLabel,
   variants,
+  title,
+  unavailable,
+  mobile = true,
+  onInteract,
 }: {
   dayLabel: string;
   scenesLabel: string;
   variants: LocalizedPrivateTourProduct["routeMedia"][number]["variants"];
+  title: string;
+  unavailable: string;
+  mobile?: boolean;
+  onInteract?: () => void;
 }) {
   const [activeVariant, setActiveVariant] = useState(0);
-  const selected = variants[activeVariant] ?? variants[0];
-
-  if (!selected) return null;
+  const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
+  const available = variants.filter((variant) => !failedPhotos.has(variant.image.src));
+  const currentIndex = available.length ? activeVariant % available.length : 0;
+  const selected = available[currentIndex];
 
   return (
-    <figure className={styles.routeMobileMedia}>
-      <div className={styles.routeMobileStage}>
-        {variants.map((variant, index) => {
-          const active = index === activeVariant;
-          return (
+    <figure className={mobile ? styles.routeMobileMedia : styles.routeMedia} data-route-photo={mobile ? "mobile" : "desktop"} onFocusCapture={onInteract} onPointerDownCapture={onInteract}>
+      {!mobile ? <p className={styles.routePhotoHeading}>{dayLabel} · {title}</p> : null}
+      <div className={mobile ? styles.routeMobileStage : styles.routeImageFrame} data-source-src={selected?.image.src ?? ""} data-empty={!selected ? "true" : undefined}>
+        {selected ? (
             <span
-              aria-hidden={active ? undefined : "true"}
-              data-active={active ? "true" : "false"}
-              key={variant.image.src}
+              data-active="true"
+              key={selected.image.src}
             >
               <Image
-                alt={active ? variant.image.alt : ""}
+                alt={selected.image.alt}
                 fill
-                sizes="(max-width: 760px) 92vw, 1px"
-                src={variant.image.src}
-                style={{ objectPosition: variant.image.objectPosition }}
+                sizes={privateTourImageSizes(selected.image, mobile ? "day-mobile" : "day-desktop")}
+                src={selected.image.src}
+                style={{ objectPosition: selected.image.objectPosition, objectFit: selected.image.height > selected.image.width ? "contain" : "cover" }}
+                onError={() => setFailedPhotos((existing) => new Set([...existing, selected.image.src]))}
               />
             </span>
-          );
-        })}
+        ) : <div className={styles.routeMediaEmpty}><span>{dayLabel}</span><strong>{title}</strong></div>}
       </div>
 
-      {variants.length > 1 ? (
+      {available.length > 1 ? (
         <div
           aria-label={`${dayLabel} · ${scenesLabel}`}
           className={styles.routeMediaTabs}
           role="group"
         >
-          {variants.map((variant, index) => (
+          {available.map((variant, index) => (
             <button
-              aria-pressed={index === activeVariant}
+              aria-pressed={index === currentIndex}
+              data-route-scene={index}
               key={`${variant.image.src}-tab`}
               type="button"
               onClick={() => setActiveVariant(index)}
@@ -589,7 +589,7 @@ function ShanghaiJiangnanMobileDayMedia({
         </div>
       ) : null}
 
-      <figcaption aria-live="polite">{selected.image.caption}</figcaption>
+      <figcaption aria-live="polite">{selected?.image.caption ?? (variants.length ? unavailable : "")}</figcaption>
     </figure>
   );
 }
@@ -603,121 +603,59 @@ export function ShanghaiJiangnanRouteExplorer({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const explorerRef = useRef<HTMLDivElement>(null);
+  const manualSelectionRef = useRef<{ index: number; scrollY: number } | null>(null);
+  const selectDay = (index: number) => {
+    manualSelectionRef.current = { index, scrollY: window.scrollY };
+    setActiveIndex(index);
+  };
   const copy = photoCopy
     ? { ...photoCopy, dayLabel: (day: number) => `${day}${photoCopy.dayUnit}` }
     : interactionCopy[product.locale];
+  const controls = mediaControlCopy[photoCopy ? "ja" : product.locale];
   const routeMedia = useMemo(() => {
-    const datedPhotos = product.routeMedia.flatMap((group) =>
-      group.variants.map((variant) => ({ day: group.day, image: variant.image })),
-    );
-    const previewPhotos = [...datedPhotos, { day: 1, image: product.heroImage }];
-    const genericPhotos = [product.heroImage, ...product.gallery];
-    const describePreview = photoCopy
-      ? japanesePreviewCaption
-      : previewCaption[product.locale];
-
-    return product.itinerary.map((day, index) => {
-      const assigned = product.routeMedia.find(
-        (group) => group.day === day.day,
-      );
-      const authored = assigned?.variants.length ? assigned : null;
-      if (authored) return authored;
-      // A photo of another place would read as this day's scene.
-      if (product.routePhotoFallback === false) return null;
-
-      if (day.day === 1 && beijingArrivalTitles.has(day.title)) {
-        const alt = photoCopy
-          ? "夜の北京CBDの道路と街の景色"
-          : beijingArrivalAlt[product.locale];
-        const label = photoCopy
-          ? "北京の街の旅程プレビュー。"
-          : beijingArrivalPreviewLabel[product.locale];
-        return {
-          day: day.day,
-          variants: [{
-            label: copy.routeScenes,
-            image: {
-              src: beijingArrivalPhoto,
-              width: 1600,
-              height: 1000,
-              objectPosition: "50% 50%",
-              alt,
-              caption: `${label}${describePreview(alt)}`,
-            },
-          }],
-        };
-      }
-
-      // Gallery photos have no day assignment. Use them only when the route
-      // has no dated photos; otherwise the closest dated scene (or the hero
-      // for the opening day) is the least arbitrary preview.
-      const nearest = previewPhotos.reduce((best, candidate) =>
-        Math.abs(candidate.day - day.day) < Math.abs(best.day - day.day)
-          ? candidate
-          : best,
-      );
-      const source = datedPhotos.length
-        ? nearest.image
-        : genericPhotos[index % genericPhotos.length];
-      return {
-        day: day.day,
-        variants: [{
-          label: copy.routeScenes,
-          image: { ...source, caption: describePreview(source.alt) },
-        }],
-      };
-    });
-  }, [
-    copy.routeScenes,
-    photoCopy,
-    product.gallery,
-    product.heroImage,
-    product.itinerary,
-    product.locale,
-    product.routeMedia,
-    product.routePhotoFallback,
-  ]);
-  const withoutDayPhoto = product.routePhotoFallback === false && !routeMedia[activeIndex];
-  const activeImage = routeMedia[activeIndex]?.variants[0]?.image ?? product.heroImage;
+    const groups = mergePrivateTourRouteMedia(product.routeMedia);
+    return product.itinerary.map((day) => groups.find((group) => group.day === day.day) ?? null);
+  }, [product.itinerary, product.routeMedia]);
+  const activeDay = product.itinerary[activeIndex] ?? product.itinerary[0];
 
   useEffect(() => {
     const explorer = explorerRef.current;
-    if (!explorer || typeof IntersectionObserver === "undefined") return;
-    if (window.matchMedia("(max-width: 760px)").matches) return;
+    if (!explorer) return;
 
     const days = Array.from(
       explorer.querySelectorAll<HTMLElement>("[data-route-day]"),
     );
-    const visibility = new Map<Element, number>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          visibility.set(
-            entry.target,
-            entry.isIntersecting ? entry.intersectionRatio : 0,
-          );
-        });
-        const mostVisible = Array.from(visibility.entries()).sort(
-          (left, right) => right[1] - left[1],
-        )[0];
-        if (!mostVisible || mostVisible[1] <= 0) return;
-        const nextIndex = Number(
-          (mostVisible[0] as HTMLElement).dataset.routeDay ?? 0,
-        );
-        setActiveIndex(nextIndex);
-      },
-      {
-        rootMargin: "-22% 0px -32% 0px",
-        threshold: [0, 0.2, 0.4, 0.6, 0.8],
-      },
-    );
-
-    days.forEach((day) => observer.observe(day));
-    return () => observer.disconnect();
-  }, []);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const manual = manualSelectionRef.current;
+      // A pending scroll frame from focusing a title must not undo that click.
+      // Reading resumes following the viewport once the user scrolls again.
+      if (manual && Math.abs(window.scrollY - manual.scrollY) < 1) return;
+      manualSelectionRef.current = null;
+      const bounds = explorer.getBoundingClientRect();
+      if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
+      const anchor = Math.min(Math.max(140, window.innerHeight * 0.34), window.innerHeight * 0.6);
+      const nextIndex = pickVisibleRouteDay(days.map((day, index) => {
+        const rect = day.getBoundingClientRect();
+        return { index, top: rect.top, bottom: rect.bottom };
+      }), anchor);
+      if (nextIndex !== null) setActiveIndex(nextIndex);
+    };
+    const schedule = () => { if (!frame) frame = window.requestAnimationFrame(update); };
+    const resize = () => { manualSelectionRef.current = null; schedule(); };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", resize);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", resize);
+    };
+  }, [product.slug, product.itinerary.length]);
 
   return (
-    <div className={styles.routeExplorer} ref={explorerRef}>
+    <div className={styles.routeExplorer} data-route-explorer data-active-day={activeDay?.day} ref={explorerRef}>
       <ol aria-label={copy.routeLabel} className={styles.routeList}>
         {product.itinerary.map((day, index) => {
           const dayMedia = routeMedia[index];
@@ -735,13 +673,16 @@ export function ShanghaiJiangnanRouteExplorer({
                   </span>
                   <small>{copy.dayLabel(day.day)}</small>
                 </div>
-                <h3>{day.title}</h3>
+                <h3><button className={styles.routeDaySelect} type="button" data-route-day-select={day.day} aria-label={`${copy.dayLabel(day.day)}: ${day.title}`} aria-pressed={activeIndex === index} onClick={() => selectDay(index)} onFocus={() => selectDay(index)}>{day.title}</button></h3>
                 <p>{day.description}</p>
                 {dayMedia ? (
-                  <ShanghaiJiangnanMobileDayMedia
+                  <ShanghaiJiangnanDayMedia
+                    key={day.day}
                     dayLabel={copy.dayLabel(day.day)}
                     scenesLabel={copy.routeScenes}
                     variants={dayMedia.variants}
+                    title={day.title}
+                    unavailable={controls.unavailable}
                   />
                 ) : null}
               </article>
@@ -750,19 +691,16 @@ export function ShanghaiJiangnanRouteExplorer({
         })}
       </ol>
 
-      <figure className={styles.routeMedia}>
-        <div className={styles.routeImageFrame} data-empty={withoutDayPhoto ? "true" : undefined}>
-          {withoutDayPhoto ? null : <Image
-            alt={activeImage.alt}
-            fill
-            key={`${activeIndex}-${activeImage.src}`}
-            sizes="(max-width: 860px) 92vw, 48vw"
-            src={activeImage.src}
-            style={{ objectPosition: activeImage.objectPosition }}
-          />}
-        </div>
-        <figcaption>{withoutDayPhoto ? noDayPhotoCopy[product.locale] : activeImage.caption}</figcaption>
-      </figure>
+      {activeDay ? <ShanghaiJiangnanDayMedia
+        key={`desktop-${activeDay.day}`}
+        dayLabel={copy.dayLabel(activeDay.day)}
+        scenesLabel={copy.routeScenes}
+        variants={routeMedia[activeIndex]?.variants ?? []}
+        title={activeDay.title}
+        unavailable={controls.unavailable}
+        mobile={false}
+        onInteract={() => selectDay(activeIndex)}
+      /> : null}
     </div>
   );
 }

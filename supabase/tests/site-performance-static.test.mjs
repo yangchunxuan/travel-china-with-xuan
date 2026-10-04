@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { runInNewContext } from "node:vm";
+import ts from "typescript";
 import homegroundImageLoader from "../../lib/imageLoader.ts";
 import { coverImageSizes, generatedImageSrcSet } from "../../lib/generatedImageSrcSet.ts";
 
@@ -186,8 +188,40 @@ test("tour heroes are fetched at high priority, not only preloaded", async () =>
     source("components/ZhangjiajiePrivateTourPreviewPage.tsx"),
   ]);
 
-  // next/image `priority` alone leaves the image at the browser's Low priority.
-  assert.match(jiangnanDeck, /fetchPriority=\{index === 0 \? "high" : undefined\}\s*fill\s*priority=\{index === 0\}/);
+  // The deck now mounts just the visible stack rather than every photograph.
+  // Evaluate its actual JSX expressions: only the first initial photograph
+  // is high-priority/preloaded, regardless of how the condition is formatted.
+  const parsed = ts.createSourceFile("deck.tsx", jiangnanDeck, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+  const hero = parsed.statements.find((node) => ts.isFunctionDeclaration(node) && node.name?.text === "ShanghaiJiangnanHeroDeck");
+  assert.ok(hero, "shared tour hero component is missing");
+  const descendants = [];
+  const visit = (node) => { descendants.push(node); ts.forEachChild(node, visit); };
+  visit(hero);
+  const imageNodes = descendants.filter((node) => ts.isJsxSelfClosingElement(node) && node.tagName.getText(parsed) === "Image");
+  assert.equal(imageNodes.length, 1, "the deck must have one image template within its bounded stack");
+  const imageAttribute = (name) => {
+    const attribute = imageNodes[0].attributes.properties.find((node) => ts.isJsxAttribute(node) && node.name.text === name);
+    assert.ok(attribute && ts.isJsxExpression(attribute.initializer) && attribute.initializer.expression, `${name} must use the current stack position`);
+    return attribute.initializer.expression.getText(parsed);
+  };
+  const fetchPriority = imageAttribute("fetchPriority");
+  const priority = imageAttribute("priority");
+  for (let currentIndex = 0; currentIndex < 8; currentIndex += 1) {
+    for (let depth = 0; depth < 4; depth += 1) {
+      const initialFront = currentIndex === 0 && depth === 0;
+      const context = { currentIndex, depth };
+      assert.equal(runInNewContext(fetchPriority, context, { timeout: 50 }), initialFront ? "high" : undefined, `fetchPriority at index ${currentIndex}, depth ${depth}`);
+      assert.equal(runInNewContext(priority, context, { timeout: 50 }), initialFront, `preload at index ${currentIndex}, depth ${depth}`);
+    }
+  }
+  const stackLoop = descendants.find((node) => ts.isCallExpression(node) && node.expression.getText(parsed) === "Array.from");
+  assert.ok(stackLoop && ts.isObjectLiteralExpression(stackLoop.arguments[0]), "the stack must have an explicit mount limit");
+  const length = stackLoop.arguments[0].properties.find((node) => ts.isPropertyAssignment(node) && node.name.getText(parsed) === "length");
+  assert.ok(length, "the stack has no mount count");
+  for (const count of [0, 1, 2, 3, 4, 5, 12, 50]) {
+    assert.equal(runInNewContext(length.initializer.getText(parsed), { images: { length: count } }, { timeout: 50 }), Math.min(4, count), `a ${count}-photo collection must mount at most four cards`);
+  }
+  assert.doesNotMatch(hero.getText(parsed), /images\.map\(/, "an expanded collection must not mount every photo");
   // With real variants behind the srcset, sizes must cover the object-fit
   // crop: on desktop the 3:2 photo fills a 4:5 box (~38vw), ~1.9x its width.
   assert.match(

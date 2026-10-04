@@ -4,6 +4,8 @@ import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExp
 import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
 import { privateTourNortheastWinterPreviewPhotoCreditsBySlug } from "./privateTourNortheastWinterPreviewProducts";
 import { privateTourAdditionalCreditsBySlug } from "./privateTourPhotoAdditions";
+import { privateTourSceneCreditsBySlug } from "./privateTourSceneMedia";
+import { applyPrivateTourQualityCredits } from "./privateTourPhotoQuality";
 
 export interface PrivateTourPhotoCredit {
   subject: LocalizedText;
@@ -334,10 +336,11 @@ export function getLocalizedPrivateTourPhotoCredits(
   slug: string,
   locale: PrivateTourLocale,
 ): readonly LocalizedPrivateTourPhotoCredit[] {
-  const credits = [
+  const credits = applyPrivateTourQualityCredits(slug, [
     ...(privateTourPhotoCreditsBySlug[slug] ?? []),
     ...(privateTourAdditionalCreditsBySlug[slug] ?? []),
-  ];
+    ...(privateTourSceneCreditsBySlug[slug] ?? []),
+  ]);
   return credits.filter((item, index) =>
     credits.findIndex((candidate) => candidate.sourceUrl === item.sourceUrl) === index,
   ).map((item) => ({

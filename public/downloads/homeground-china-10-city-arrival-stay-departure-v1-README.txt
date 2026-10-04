@@ -26,4 +26,4 @@ compiled dataset are offered under CC BY 4.0. Third-party source facts and names
 remain subject to their own terms.
 
 Rights holder
-张家界市永定区本境文化交流工作室, operating as Homeground China
+盛世美达（北京）国际旅行社有限公司, operating as Homeground China

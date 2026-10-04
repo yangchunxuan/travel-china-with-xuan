@@ -1,5 +1,8 @@
 import { jaPilot } from "./jaPilot";
 import { jaPilotCopy } from "./jaPilotCopy";
+import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
+import { originalPrivateTourPhotoSource } from "./privateTourPhotoQuality";
+import { withJapanesePhotoQuality } from "./japanesePrivateTourPhotoQuality";
 import {
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
@@ -48,28 +51,33 @@ export function localizeJapaneseJiangnanProduct(
       question: copy.presentation.beforeChooseLabels[index],
       answer,
     })),
-    heroImage: {
+    heroImage: withJapanesePhotoQuality({
       ...source.heroImage,
       alt: copy.photos.deck[0].alt,
       caption: copy.photos.deck[0].caption,
-    },
-    gallery: source.gallery.map((image, index) => ({
+    }),
+    gallery: source.gallery.map((image, index) => withJapanesePhotoQuality({
       ...image,
       alt: copy.photos.deck[index + 1]?.alt ?? image.alt,
       caption: copy.photos.deck[index + 1]?.caption ?? image.caption,
     })),
     routeMedia: source.routeMedia.map((group) => ({
       ...group,
-      variants: group.variants.map((variant) => {
-        const photo = copy.photos.route[group.day - 1];
+      variants: group.variants.map((variant, index) => {
+        const photo = index === 0
+          ? copy.photos.route[group.day - 1]
+          : getJapanesePrivateTourSceneCopy(product.slug, group.day, originalPrivateTourPhotoSource(variant.image.src));
+        if (!photo) {
+          throw new Error(`Japanese Jiangnan photo copy is missing: day ${group.day}, ${variant.image.src}`);
+        }
         return {
           ...variant,
-          label: photo?.label ?? variant.label,
-          image: {
+          label: photo.label,
+          image: withJapanesePhotoQuality({
             ...variant.image,
-            alt: photo?.alt ?? variant.image.alt,
-            caption: photo?.caption ?? variant.image.caption,
-          },
+            alt: photo.alt,
+            caption: photo.caption,
+          }),
         };
       }),
     })),
