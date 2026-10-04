@@ -3582,7 +3582,7 @@ export const sightStories: Stories = {
       ],
       time: "About four hours on the water, plus a drive of roughly 30 km from Guilin to the pier. With boarding it fills most of a day, so sleep in Yangshuo that night rather than heading back to Guilin.",
       when: "Autumn, roughly September to November, is the surest bet. The weather is mostly sunny and dry, and on still days the peaks stand mirrored in the water. Spring is often grey and misty, but April to June is also the wettest time of year, and high water can stop the boats at short notice. In an unusually dry winter or early spring, the river has sometimes dropped so low that the full route was cut back to a short loop from Yangdi. Tickets run short around the National Day holiday in early October, so avoid it if you can.",
-      pair: "The boat lands at Yangshuo. In the evening, walk West Street, or watch Impression Liu Sanjie, Zhang Yimou's show staged on the river itself with twelve peaks lit up behind it. The next day, drive about 25 km to Xingping for its stone-paved old street. You may see cormorant fishermen on bamboo rafts there, though these days they pose for photographers more than they fish. If you still have the legs, climb Laozhai Hill beside the town and look down on the great bend the river makes there.",
+      pair: "The boat lands at Yangshuo. In the evening, walk West Street, or watch Impression Liu Sanjie, the show co-directed by Zhang Yimou and staged on the river itself with twelve peaks lit up behind it. The next day, drive about 25 km to Xingping for its stone-paved old street. You may see cormorant fishermen on bamboo rafts there. If you still have the legs, climb Laozhai Hill beside the town and look down on the great bend the river makes there.",
       skip: "If you get restless sitting still, four hours is a long time on a boat, however good the view. Take an electric raft on the Yangdi stretch instead, or go straight to Xingping, where a short boat ride takes in the 20-yuan view. If you have one day in Guilin and must sleep there again, the one-way cruise fits badly; Xingping by road is the easier choice.",
       faq: [
         {
@@ -3630,7 +3630,7 @@ export const sightStories: Stories = {
       ],
       time: "船上大约四个小时，再加上从桂林市区到码头约30公里的车程。算上登船，差不多要占一整天，当晚就住阳朔，别打算当天赶回桂林。",
       when: "秋天最稳妥，大约九到十一月，晴天多、雨水少，风平浪静的日子，山峰倒映在水里。春天常起雾，山水朦胧，但四到六月也是一年里雨最多的时候，江水一涨，游船可能临时停航。特别干旱的冬春，水位太低，全程航线也有过临时改成杨堤附近短途往返的时候。国庆黄金周船票紧张，能避开就避开。",
-      pair: "船到阳朔。晚上可以逛西街，或者看张艺谋导演的《印象·刘三姐》，舞台就是漓江江面，十二座山峰打上灯光做背景。第二天开车25公里左右去兴坪，走走古镇的石板老街。江上也许能看到带着鸬鹚的竹筏渔翁，不过如今他们多半是给拍照的人当模特，捕鱼倒在其次。还走得动的话，爬上镇边的老寨山，俯看漓江在这里绕的那道大弯。",
+      pair: "船到阳朔。晚上可以逛西街，或者看张艺谋等人导演的《印象·刘三姐》，舞台就是漓江江面，十二座山峰打上灯光做背景。第二天开车25公里左右去兴坪，走走古镇的石板老街。江上也许能看到带着鸬鹚的竹筏渔翁。还走得动的话，爬上镇边的老寨山，俯看漓江在这里绕的那道大弯。",
       skip: "坐不住的人：风景再好，在船上坐四个小时也不短。可以在杨堤坐一段电动排筏，或者直接去兴坪，坐一趟短途船就能看到20元人民币背面的那段江景。如果在桂林只有一天、晚上还得住回桂林，这趟单程船不太顺路，开车去兴坪更合适。",
       faq: [
         {
@@ -3678,7 +3678,7 @@ export const sightStories: Stories = {
       ],
       time: "배 위에서 4시간쯤 보내고, 여기에 계림 시내에서 30km 안팎 떨어진 선착장까지 가는 시간이 더해집니다. 승선까지 치면 거의 하루가 걸리니, 그날 밤은 계림으로 돌아가지 말고 양삭에서 묵으세요.",
       when: "가장 무난한 때는 대략 9~11월의 가을입니다. 맑고 건조한 날이 많고, 바람 없는 날에는 봉우리가 물에 또렷이 비칩니다. 봄에는 흐리고 안개 낀 날이 많지만, 4~6월은 1년 중 비가 가장 많은 때라 물이 불면 운항이 갑자기 중단될 수 있습니다. 유난히 가문 겨울이나 이른 봄에는 수위가 너무 낮아져 전 구간 운항이 양디 부근의 짧은 왕복으로 바뀐 적도 있습니다. 10월 초 국경절 연휴에는 표가 부족하니 되도록 피하세요.",
-      pair: "배는 양삭에 닿습니다. 저녁에는 서가(西街)를 걷거나, 장예모 감독의 ‘인상유삼저’를 보세요. 강물 위가 무대이고, 조명을 받은 봉우리 열두 개가 배경입니다. 이튿날에는 차로 25km쯤 떨어진 싱핑에 가 보세요. 돌이 깔린 옛 거리가 있고, 가마우지를 태운 대나무 뗏목 위의 어부를 볼 수도 있습니다. 다만 요즘은 고기를 잡기보다 사진 모델로 나서는 일이 더 많습니다. 걸을 힘이 남았다면 마을 옆 라오자이산(老寨山)에 올라, 강이 크게 휘어 도는 굽이를 내려다보세요.",
+      pair: "배는 양삭에 닿습니다. 저녁에는 서가(西街)를 걷거나, 장예모 감독의 ‘인상유삼저’를 보세요. 강물 위가 무대이고, 조명을 받은 봉우리 열두 개가 배경입니다. 이튿날에는 차로 25km쯤 떨어진 싱핑에 가 보세요. 돌이 깔린 옛 거리가 있고, 가마우지를 태운 대나무 뗏목 위의 어부를 볼 수도 있습니다. 걸을 힘이 남았다면 마을 옆 라오자이산(老寨山)에 올라, 강이 크게 휘어 도는 굽이를 내려다보세요.",
       skip: "가만히 앉아 있기 힘든 분이라면 다시 생각해 보세요. 풍경이 아무리 좋아도 배에서 4시간은 짧지 않습니다. 대신 양디 구간에서 전동 뗏목을 타거나, 바로 싱핑으로 가서 짧은 배를 타면 20위안 지폐 뒷면의 그 풍경을 볼 수 있습니다. 계림 일정이 하루뿐이고 그날 밤도 계림에서 묵어야 한다면 편도 유람선은 동선이 맞지 않습니다. 차로 싱핑에 다녀오는 편이 낫습니다.",
       faq: [
         {
