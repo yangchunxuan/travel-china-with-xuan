@@ -436,6 +436,131 @@
   }
 }
 
+/* ---------- The sight's own writing ---------- */
+
+/* Why: the heading beside the text on wide screens, above it on narrow ones. */
+.why {
+  display: grid;
+  gap: 1.5rem 4rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
+}
+
+.why h2 {
+  margin: 0;
+}
+
+.whyBody p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0 0 1.1em;
+  max-width: 40rem;
+  text-wrap: pretty;
+}
+
+.whyBody p:last-child {
+  margin-bottom: 0;
+}
+
+/* After .why, so it outranks the shared ".page h3 { margin: 0 }". */
+.why ~ .highlightsTitle {
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin: 3.5rem 0 1.25rem;
+}
+
+.highlights {
+  display: grid;
+  gap: 1.25rem 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.highlights li {
+  border-top: 1px solid var(--ink);
+  padding-top: 1.1rem;
+}
+
+.highlights h4 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+.highlights p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0.6rem 0 0;
+  text-wrap: pretty;
+}
+
+/* Fitting it in: four short answers, two to a row. */
+.fit {
+  display: grid;
+  gap: 0 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.fit > div {
+  border-top: 1px solid var(--rule);
+  padding: 1.25rem 0 1.5rem;
+}
+
+.fit dt {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.fit dd {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin: 0.5rem 0 0;
+  max-width: 36rem;
+  text-wrap: pretty;
+}
+
+@media (max-width: 61.25rem) {
+  .why {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .highlights li {
+    display: grid;
+    gap: 0 1.5rem;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+  }
+
+  .highlights p {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .whyBody p {
+    font-size: 1.0625rem;
+  }
+
+  .highlights li {
+    display: block;
+  }
+
+  .highlights p {
+    margin-top: 0.5rem;
+  }
+
+  .fit {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sightCard,
   .sightMedia img,

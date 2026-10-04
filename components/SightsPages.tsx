@@ -30,6 +30,7 @@ import {
   type SightId,
 } from "../lib/sights";
 import { fillSightsCopy, getSightsCopy, sightsKeepWords } from "../lib/sightsI18n";
+import { getSightStory, type SightStory } from "../lib/sightStories";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -99,6 +100,52 @@ function SightText({ text, locale }: { text: string; locale: HomegroundLocale })
 
 const bookingAnchor = "booking";
 const toursAnchor = "tours";
+
+/**
+ * The sight's own writing, between the hero and the booking facts: why it is
+ * worth the trip and three things not to miss, then how it fits a day.
+ */
+function SightStorySections({ story, locale }: { story: SightStory; locale: HomegroundLocale }) {
+  const labels = getSightsCopy(locale).page.story;
+  const facts = [
+    { label: labels.time, text: story.time },
+    { label: labels.when, text: story.when },
+    { label: labels.pair, text: story.pair },
+    { label: labels.skip, text: story.skip },
+  ];
+  return (
+    <>
+      <section aria-labelledby="sight-why-title" className={styles.section} data-reveal="">
+        <div className={sightStyles.why}>
+          <h2 id="sight-why-title">{labels.whyTitle}</h2>
+          <div className={sightStyles.whyBody}>
+            {story.why.map((paragraph) => <p key={paragraph}><SightText locale={locale} text={paragraph} /></p>)}
+          </div>
+        </div>
+        <h3 className={sightStyles.highlightsTitle}>{labels.highlightsTitle}</h3>
+        <ul className={sightStyles.highlights}>
+          {story.highlights.map((item) => (
+            <li key={item.name}>
+              <h4>{item.name}</h4>
+              <p><SightText locale={locale} text={item.body} /></p>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section aria-labelledby="sight-fit-title" className={styles.section} data-reveal="">
+        <h2 id="sight-fit-title">{labels.fitTitle}</h2>
+        <dl className={sightStyles.fit}>
+          {facts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd><SightText locale={locale} text={fact.text} /></dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
+  );
+}
 
 /**
  * One reservation rule as a card, with exactly the facts the rules state (the
@@ -352,6 +399,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
   const copy = getSightsCopy(locale);
   const inspiration = getTravelInspirationCopy(locale);
   const sightCopy = copy.sights[sight.id];
+  const story = getSightStory(sight.id, locale);
   const { destinations, tours: allToursItem } = navigationFor(locale);
   const image = sightImage(sight, locale);
   // No guide of its own yet: no "Full guide" link until one is written.
@@ -461,6 +509,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
           </div>
         </header>
 
+        {story ? <SightStorySections locale={locale} story={story} /> : null}
+
         {rules.length ? (
           <section aria-labelledby="sight-booking-title" className={styles.section} data-reveal="" id={bookingAnchor}>
             <div className={styles.sectionHead}>
@@ -514,7 +564,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
         "@graph": [
           { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: sightCopy.line,
             inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
-            about: { "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}` } },
+            about: { "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}`, ...(story ? { description: story.why[0] } : {}) } },
           breadcrumbJsonLd(url, crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path ?? paths[locale] }))),
         ],
       }} />

@@ -13,6 +13,8 @@ export interface SightsCopy {
   };
   page: {
     bookingTitle: string;
+    /** The sight's own writing (lib/sightStories.ts). */
+    story: { whyTitle: string; highlightsTitle: string; fitTitle: string; time: string; when: string; pair: string; skip: string };
     bookingNote: string;
     guideLink: string;
     reserve: string;
@@ -74,6 +76,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "Booking at a glance",
+      story: { whyTitle: "Why it's worth the trip", highlightsTitle: "Don't miss", fitTitle: "Fitting it in", time: "Time to give it", when: "When to go", pair: "Pair it with", skip: "Who can skip it" },
       bookingNote: "From our attraction-booking rules.",
       guideLink: "Full guide",
       reserve: "Book it with us",
@@ -145,6 +148,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "预约要点",
+      story: { whyTitle: "为什么值得去", highlightsTitle: "别错过", fitTitle: "怎么排进行程", time: "留多长时间", when: "什么时候去", pair: "顺路搭配", skip: "可以不去的人" },
       bookingNote: "以下来自我们的景点代预约规则。",
       guideLink: "完整攻略",
       reserve: "我们帮你约",
@@ -216,6 +220,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "예약 안내",
+      story: { whyTitle: "가볼 만한 이유", highlightsTitle: "놓치지 마세요", fitTitle: "일정에 넣는 법", time: "필요한 시간", when: "언제 가면 좋을까", pair: "함께 묶기 좋은 곳", skip: "건너뛰어도 되는 경우" },
       bookingNote: "관광지 예약 대행 기준입니다.",
       guideLink: "실용 가이드 보기",
       reserve: "예약 대행 문의",
@@ -280,7 +285,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
  * Names in the Chinese lines that the word segmenter would split across a
  * line (八|达|岭); KeepWords keeps each whole on these pages only.
  */
-export const sightsKeepWords = ["八达岭", "慕田峪", "袁家界", "天子山", "昆明湖", "万寿山", "回民街", "秦始皇陵", "喀斯特", "浦东", "古蜀", "明清", "陆家嘴", "雷峰塔", "吊脚楼", "嘉陵江", "天门洞", "玻璃桥", "摩崖", "岭南", "入夜亮灯", "岭南木雕、砖雕、石雕的代表", "从成都出发玩一天", "从重庆去要一整天或住一晚", "再到天门洞", "但须实名预约", "排进行程"] as const;
+export const sightsKeepWords = ["八达岭", "慕田峪", "袁家界", "天子山", "昆明湖", "万寿山", "回民街", "秦始皇陵", "喀斯特", "浦东", "古蜀", "明清", "陆家嘴", "雷峰塔", "吊脚楼", "嘉陵江", "天门洞", "玻璃桥", "摩崖", "岭南", "入夜亮灯", "岭南木雕、砖雕、石雕的代表", "从成都出发玩一天", "从重庆去要一整天或住一晚", "再到天门洞", "但须实名预约", "排进行程", "“文化景观”", "白蛇传"] as const;
 
 export function getSightsCopy(locale: HomegroundLocale): SightsCopy {
   return copy[locale];

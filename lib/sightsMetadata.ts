@@ -4,6 +4,7 @@ import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
 import { getSight, sightPaths, sightsPath, type SightId } from "./sights";
 import { getSightsCopy } from "./sightsI18n";
+import { getSightStory } from "./sightStories";
 
 function alternates(paths: Record<HomegroundLocale, string>, locale: HomegroundLocale) {
   return {
@@ -29,7 +30,8 @@ export function buildSightMetadata(id: SightId, locale: HomegroundLocale): Metad
   const sight = getSight(id);
   const name = copy.sights[id].name;
   const title = `${name} · ${copy.hub.h1}`;
-  const description = copy.sights[id].line;
+  // The story's own search description once it is written; until then the card line.
+  const description = getSightStory(id, locale)?.description ?? copy.sights[id].line;
   const paths = sightPaths(id);
   return {
     title: resolvePageTitle(title, locale),
