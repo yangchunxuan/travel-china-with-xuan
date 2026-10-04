@@ -3558,6 +3558,298 @@ export const sightStories: Stories = {
       ],
     },
   },
+  "li-river": {
+    en: {
+      description: "Four hours by boat from Guilin to Yangshuo, green peaks rising from both banks and the water clear to the riverbed. Which stretch to watch, and when to go.",
+      why: [
+        "Leave the farmland behind and the hills begin. Green limestone peaks rise straight out of both banks, one behind another. Bamboo leans over the river, the water is clear enough to show the pebbles on the bottom, and after rain a thin waterfall may run down a cliff. On a damp spring morning the far peaks are only grey outlines, fading layer after layer. Stand at the rail and the scene keeps sliding past for hours. Some 1,200 years ago the Tang poet Han Yu called this river a green silk belt and its hills jade hairpins. Chinese people still say that Guilin's scenery is the finest under heaven.",
+        "Watch the hills change shape as you go. Through the middle of the trip they crowd together in clumps, joined at the foot, and the river threads between them. Nearer Yangshuo they stand apart, each one alone on flat fields. Over millions of years, rain and the river wore away the limestone around them until only the peaks were left. Almost every peak has a name, and the commentary on board points many of them out. Look for a carp clinging to a cliff and a camel wading across the river. On another hill, the story goes, a wife climbed after her husband with their baby on her back and turned to stone halfway up.",
+        "The boat runs one way, about 60 kilometres downstream, and lands you in Yangshuo some four hours later, so the cruise is also the day's journey. The stretch most people come for runs from Yangdi past Nine Horses Fresco Hill to Xingping. For a closer look, electric rafts make short trips from Yangdi, sitting so low that the river is within arm's reach. And if you want a quieter river the next day, Yangshuo's little Yulong River winds through farmland and villages.",
+      ],
+      highlights: [
+        {
+          name: "Go out on deck as the peaks close in",
+          body: "The first stretch passes mostly farmland and old villages. After Caoping the peaks close in on both sides and the water quickens over the shallows. If mist is down around Yangdi, you are looking at the scene called Yangdi in Misty Rain.",
+        },
+        {
+          name: "Count the horses at Nine Horses Fresco Hill",
+          body: "A sheer cliff rises from the water's edge, streaked ochre, yellow, green and white, and people see nine horses in the streaks. A local song says that if you spot eight you come second in the imperial exams, and if you spot all nine you come top. Even Xu Beihong, the painter famous for his horses, is said to have found only eight.",
+        },
+        {
+          name: "Yellow Cloth Shoal and the 20-yuan view",
+          body: "Just downstream the river widens and lies still over a pale slab on the riverbed that looks like a bolt of yellow cloth. On a clear, still day the seven peaks around it, called the Seven Fairies, hang upside down in the water, sharpest just as the boat swings into the bend. As you near Xingping, hold up a 20-yuan note: the hills on the back come from this stretch.",
+        },
+      ],
+      time: "About four hours on the water, plus a drive of roughly 30 km from Guilin to the pier. With boarding it fills most of a day, so sleep in Yangshuo that night rather than heading back to Guilin.",
+      when: "Autumn, roughly September to November, is the surest bet. The weather is mostly sunny and dry, and on still days the peaks stand mirrored in the water. Spring is often grey and misty, but April to June is also the wettest time of year, and high water can stop the boats at short notice. In an unusually dry winter or early spring, the river has sometimes dropped so low that the full route was cut back to a short loop from Yangdi. Tickets run short around the National Day holiday in early October, so avoid it if you can.",
+      pair: "The boat lands at Yangshuo. In the evening, walk West Street, or watch Impression Liu Sanjie, Zhang Yimou's show staged on the river itself with twelve peaks lit up behind it. The next day, drive about 25 km to Xingping for its stone-paved old street. You may see cormorant fishermen on bamboo rafts there, though these days they pose for photographers more than they fish. If you still have the legs, climb Laozhai Hill beside the town and look down on the great bend the river makes there.",
+      skip: "If you get restless sitting still, four hours is a long time on a boat, however good the view. Take an electric raft on the Yangdi stretch instead, or go straight to Xingping, where a short boat ride takes in the 20-yuan view. If you have one day in Guilin and must sleep there again, the one-way cruise fits badly; Xingping by road is the easier choice.",
+      faq: [
+        {
+          question: "Is the Li River cruise worth it?",
+          answer: "Yes, if you can give it a day. For about four hours you sail between green peaks on water clear enough to see the riverbed. The stretch from Yangdi to Xingping holds the view on the back of the 20-yuan note. If four hours on a boat sounds too long, a raft from Yangdi or a short boat at Xingping shows part of that stretch in much less time.",
+        },
+        {
+          question: "How long is the Li River cruise from Guilin to Yangshuo?",
+          answer: "About four hours on the water, covering roughly 60 kilometres one way. The boats leave from piers about 30 kilometres from Guilin, so with the drive and boarding the trip fills most of a day. It ends in Yangshuo, so plan your hotel and luggage there rather than returning to Guilin that evening.",
+        },
+        {
+          question: "What is the best time of year for a Li River cruise?",
+          answer: "September to November, when the weather is mostly sunny and dry and calm days give the clearest reflections. Spring is often grey and misty, but April to June is the wettest time of year, and high water can stop sailings at short notice. In an unusually dry winter or early spring the full route has sometimes been cut back to a short loop. Avoid the National Day holiday in early October, when tickets run short.",
+        },
+        {
+          question: "Do I need to book the Li River cruise in advance?",
+          answer: "Yes. Tickets are sold by name for a dated boat, and holiday dates can sell out. The 3-star and 4-star boats leave from different piers near Guilin, so choose the boat before you arrange the drive. The official channel does not spell out the steps for foreign passports, and we can check them for your date and book for you.",
+        },
+        {
+          question: "Where is the 20-yuan note view on the Li River?",
+          answer: "Near Xingping, an old river town about 25 kilometres north-east of Yangshuo. The full cruise sails past it, so have the note ready on deck after Nine Horses Fresco Hill and Yellow Cloth Shoal. To see it from Xingping instead, go by road; the short boats from Xingping to the nearby fishing village pass the spot.",
+        },
+      ],
+    },
+    zh: {
+      description: "桂林漓江：从桂林坐船顺流而下到阳朔，约四个小时，两岸青峰，江水清得见底。哪一段最值得看，几月去最好。",
+      why: [
+        "田园一过，山就来了。青绿的石山从两岸拔地而起，一座挨着一座；翠竹斜伸到江面上，江水清得能看见河底的卵石；雨后，崖壁上偶尔会挂下一道细细的瀑布。春天起雾的早晨，远处的山只剩一层层淡灰的影子。站在船边，这样的画面一连几个小时从眼前滑过。一千二百多年前，韩愈写下“江作青罗带，山如碧玉簪”；直到今天，人们还说“桂林山水甲天下”。",
+        "一路留意山的样子。中段的山一簇一簇挤在一起，山脚连着山脚，江水从中间绕过去；快到阳朔，山就一座座分开，各自立在平地上。千万年来，雨水和江水一点点溶掉了四周的石灰岩，只剩下这些山峰。几乎每座山都有名字，船上的讲解会一路指给你看。找一找鲤鱼挂壁、骆驼过江，还有望夫石：传说一位妻子背着孩子上山寻找丈夫，走到半山腰，就化成了石头。",
+        "游船只往下游单程开，全程约60公里，四个小时左右到阳朔，所以这趟船既是游览，也是去阳朔的路。大家最想看的一段，是从杨堤经过九马画山到兴坪。想离水面更近，可以在杨堤坐电动排筏走其中一段，江水伸手就能碰到。第二天要是想找一条更安静的河，可以去阳朔的遇龙河，它从田野和村庄中间流过，小得多，也静得多。",
+      ],
+      highlights: [
+        {
+          name: "过了草坪，到甲板上去",
+          body: "开头一段，两岸多是田园和老村子。过了草坪，奇峰从两边围上来，江水在浅滩上流得急了。到了杨堤一带，要是正赶上起雾，眼前就是有名的“杨堤烟雨”。",
+        },
+        {
+          name: "九马画山，数一数有几匹马",
+          body: "一面石壁从江边直直立起，赭、黄、绿、白，五彩斑驳，人们说石壁上藏着九匹马。当地歌谣唱：“看出八匹是榜眼，能见九匹状元郎。”据说画马的大师徐悲鸿，数来数去也只数出八匹。",
+        },
+        {
+          name: "黄布倒影和20元人民币",
+          body: "再往下不远，江面变宽，水平如镜，河底有一块米黄色的大石板，像一匹黄布铺在水下，这就是黄布滩。周围七座山峰人称“七仙下凡”，晴朗无风的日子，它们倒映在水里，游船拐进弯道的那一刻看得最清楚。快到兴坪时，掏出一张20元的人民币对照一下，背面的山水就出自这一段。",
+        },
+      ],
+      time: "船上大约四个小时，再加上从桂林市区到码头约30公里的车程。算上登船，差不多要占一整天，当晚就住阳朔，别打算当天赶回桂林。",
+      when: "秋天最稳妥，大约九到十一月，晴天多、雨水少，风平浪静的日子，山峰倒映在水里。春天常起雾，山水朦胧，但四到六月也是一年里雨最多的时候，江水一涨，游船可能临时停航。特别干旱的冬春，水位太低，全程航线也有过临时改成杨堤附近短途往返的时候。国庆黄金周船票紧张，能避开就避开。",
+      pair: "船到阳朔。晚上可以逛西街，或者看张艺谋导演的《印象·刘三姐》，舞台就是漓江江面，十二座山峰打上灯光做背景。第二天开车25公里左右去兴坪，走走古镇的石板老街。江上也许能看到带着鸬鹚的竹筏渔翁，不过如今他们多半是给拍照的人当模特，捕鱼倒在其次。还走得动的话，爬上镇边的老寨山，俯看漓江在这里绕的那道大弯。",
+      skip: "坐不住的人：风景再好，在船上坐四个小时也不短。可以在杨堤坐一段电动排筏，或者直接去兴坪，坐一趟短途船就能看到20元人民币背面的那段江景。如果在桂林只有一天、晚上还得住回桂林，这趟单程船不太顺路，开车去兴坪更合适。",
+      faq: [
+        {
+          question: "漓江游船值得坐吗？",
+          answer: "值得，前提是能留出一天。四个小时左右，船在青山之间顺流而下，江水清得能看见河底；从杨堤到兴坪那一段里，就有20元人民币背面的山水。觉得在船上坐四个小时太长，可以在杨堤坐排筏，或者在兴坪坐短途船，花的时间少得多，也能看到这一段里的一部分。",
+        },
+        {
+          question: "从桂林坐船到阳朔要多久？",
+          answer: "船上大约四个小时，单程约60公里。上船的码头离桂林市区约30公里，算上路程和登船，差不多要一整天。船到阳朔为止，酒店和行李都按住阳朔来安排，别打算当晚回桂林。",
+        },
+        {
+          question: "什么季节游漓江最好？",
+          answer: "九到十一月最好，晴天多、雨水少，风平浪静时倒影最清楚。春天常起雾，山水朦胧，但四到六月雨水最多，江水一涨，游船可能临时停航。特别干旱的冬春，全程航线有时会临时改成短途往返。尽量避开十月初的国庆黄金周，那几天船票紧张。",
+        },
+        {
+          question: "漓江游船要提前预订吗？",
+          answer: "要。船票实名销售，按日期订船，节假日可能订满。三星船和四星船在桂林这边的上船码头不同，先定好坐哪种船，再安排去码头的车。官方渠道没有写清外国护照怎么预订，我们可以按你的日期核实并代为预订。",
+        },
+        {
+          question: "20元人民币背面的风景在漓江哪里？",
+          answer: "在兴坪一带。兴坪是漓江边的古镇，离阳朔县城约25公里，在县城东北方向。全程游船会从旁边经过，过了九马画山和黄布滩，就可以把20元的人民币拿在手里准备对照。想从兴坪看，就开车过去；从兴坪去附近渔村的短途船也会经过这里。",
+        },
+      ],
+    },
+    ko: {
+      description: "계림 이강: 계림에서 양삭까지 배로 4시간쯤, 강 양쪽으로 초록 봉우리가 솟고 물은 바닥까지 맑습니다. 어느 구간을 눈여겨볼지, 언제 가면 좋을지까지.",
+      why: [
+        "논밭이 끝나면 산이 시작됩니다. 초록빛 석회암 봉우리가 강 양쪽에서 곧장 솟아 줄줄이 이어집니다. 대나무가 수면 쪽으로 기울어 있고, 강물은 바닥의 자갈이 보일 만큼 맑으며, 비가 온 뒤에는 절벽에 가느다란 폭포가 걸리기도 합니다. 안개 낀 봄날 아침이면 먼 산은 회색 윤곽만 남아 한 겹씩 옅어집니다. 뱃전에 서 있으면 이런 풍경이 몇 시간 동안 눈앞을 흘러갑니다. 1,200여 년 전 당나라 시인 한유는 이 강을 ‘푸른 비단 띠’에, 산을 ‘벽옥 비녀’에 비유했습니다. 중국 사람들은 지금도 ‘계림의 산수는 천하제일’이라고 말합니다.",
+        "가는 동안 산의 모양이 바뀌는 것을 눈여겨보세요. 중간 구간에서는 봉우리들이 밑동을 맞댄 채 무리 지어 서 있고, 강은 그 사이를 굽이굽이 빠져나갑니다. 양삭에 가까워지면 봉우리가 하나씩 떨어져 평평한 들판 위에 따로 섭니다. 아주 오랜 세월 빗물과 강물이 주변의 석회암을 녹여 봉우리만 남겼습니다. 거의 모든 봉우리에 이름이 있고, 배 안의 해설이 그중 여럿을 짚어 줍니다. 절벽에 매달린 잉어와 강을 건너는 낙타를 찾아보세요. 아기를 업고 남편을 찾아 산을 오르다 산허리에서 돌이 되었다는 아내의 바위도 있습니다.",
+        "유람선은 하류 쪽으로 약 60km를 한 방향으로만 가고, 4시간쯤 뒤 양삭에 닿습니다. 그래서 이 배는 구경이면서 양삭으로 가는 길이기도 합니다. 사람들이 가장 기대하는 구간은 양디(楊堤)에서 구마화산을 지나 싱핑(興坪)까지입니다. 수면 가까이 가 보고 싶다면 양디에서 전동 뗏목을 타고 그 일부 구간을 가 보세요. 뗏목이 낮아서 손을 뻗으면 강물이 닿습니다. 이튿날 더 조용한 강을 보고 싶다면 양삭의 작은 강 우룡하로 가 보세요. 들판과 마을 사이를 굽이굽이 흐릅니다.",
+      ],
+      highlights: [
+        {
+          name: "봉우리가 다가오면 갑판으로",
+          body: "처음 한동안은 강가에 논밭과 오래된 마을이 이어집니다. 차오핑(草坪)을 지나면 봉우리들이 양쪽에서 바짝 다가서고 여울 위로 물살이 빨라집니다. 양디 부근에서 안개를 만나면, 그것이 바로 이름난 ‘양디의 안개비’입니다.",
+        },
+        {
+          name: "구마화산에서 말 세어 보기",
+          body: "깎아지른 절벽이 강가에서 곧장 솟아 있고 황토색·노란색·초록색·흰색 무늬가 얼룩덜룩한데, 사람들은 이 무늬에서 말 아홉 마리를 찾아냅니다. 현지 민요는 여덟 마리를 찾으면 과거 시험 2등, 아홉 마리를 다 찾으면 장원이라고 노래합니다. 말 그림으로 이름난 화가 쉬베이훙도 여덟 마리밖에 찾지 못했다고 전해집니다.",
+        },
+        {
+          name: "황포탄의 물그림자와 20위안 지폐",
+          body: "조금 더 내려가면 강폭이 넓어지고 물이 거울처럼 잔잔해집니다. 강바닥의 연노란 큰 바위가 물속에 깔린 노란 천 같아서 이곳을 황포탄(黃布灘)이라 부릅니다. 맑고 바람 없는 날에는 ‘일곱 선녀’라 불리는 주변 봉우리 일곱 개가 물에 거꾸로 비치는데, 배가 굽이로 접어드는 순간이 가장 선명합니다. 싱핑에 가까워지면 20위안 지폐를 꺼내 보세요. 뒷면의 산수가 바로 이 구간에서 나왔습니다.",
+        },
+      ],
+      time: "배 위에서 4시간쯤 보내고, 여기에 계림 시내에서 30km 안팎 떨어진 선착장까지 가는 시간이 더해집니다. 승선까지 치면 거의 하루가 걸리니, 그날 밤은 계림으로 돌아가지 말고 양삭에서 묵으세요.",
+      when: "가장 무난한 때는 대략 9~11월의 가을입니다. 맑고 건조한 날이 많고, 바람 없는 날에는 봉우리가 물에 또렷이 비칩니다. 봄에는 흐리고 안개 낀 날이 많지만, 4~6월은 1년 중 비가 가장 많은 때라 물이 불면 운항이 갑자기 중단될 수 있습니다. 유난히 가문 겨울이나 이른 봄에는 수위가 너무 낮아져 전 구간 운항이 양디 부근의 짧은 왕복으로 바뀐 적도 있습니다. 10월 초 국경절 연휴에는 표가 부족하니 되도록 피하세요.",
+      pair: "배는 양삭에 닿습니다. 저녁에는 서가(西街)를 걷거나, 장예모 감독의 ‘인상유삼저’를 보세요. 강물 위가 무대이고, 조명을 받은 봉우리 열두 개가 배경입니다. 이튿날에는 차로 25km쯤 떨어진 싱핑에 가 보세요. 돌이 깔린 옛 거리가 있고, 가마우지를 태운 대나무 뗏목 위의 어부를 볼 수도 있습니다. 다만 요즘은 고기를 잡기보다 사진 모델로 나서는 일이 더 많습니다. 걸을 힘이 남았다면 마을 옆 라오자이산(老寨山)에 올라, 강이 크게 휘어 도는 굽이를 내려다보세요.",
+      skip: "가만히 앉아 있기 힘든 분이라면 다시 생각해 보세요. 풍경이 아무리 좋아도 배에서 4시간은 짧지 않습니다. 대신 양디 구간에서 전동 뗏목을 타거나, 바로 싱핑으로 가서 짧은 배를 타면 20위안 지폐 뒷면의 그 풍경을 볼 수 있습니다. 계림 일정이 하루뿐이고 그날 밤도 계림에서 묵어야 한다면 편도 유람선은 동선이 맞지 않습니다. 차로 싱핑에 다녀오는 편이 낫습니다.",
+      faq: [
+        {
+          question: "이강 유람선은 탈 만한가요?",
+          answer: "네, 하루를 내줄 수 있다면 탈 만합니다. 4시간쯤 초록 봉우리 사이를 지나는데, 강물은 바닥이 보일 만큼 맑습니다. 양디에서 싱핑까지의 구간에 20위안 지폐 뒷면의 바로 그 풍경이 있습니다. 배에서 4시간이 길게 느껴진다면 양디의 뗏목이나 싱핑의 짧은 배로 그 구간의 일부를 훨씬 짧은 시간에 볼 수 있습니다.",
+        },
+        {
+          question: "계림에서 양삭까지 이강 유람선은 얼마나 걸리나요?",
+          answer: "배 위에서 4시간쯤, 편도로 약 60km를 갑니다. 출발 선착장이 계림 시내에서 30km 안팎 떨어져 있어, 이동과 승선까지 치면 거의 하루가 걸립니다. 배는 양삭에서 끝나므로, 그날 저녁 계림으로 돌아가지 말고 호텔과 짐을 양삭 기준으로 준비하세요.",
+        },
+        {
+          question: "이강 유람은 언제 가는 게 가장 좋나요?",
+          answer: "9~11월이 가장 좋습니다. 맑고 건조한 날이 많고, 바람 없는 날에는 봉우리가 물에 또렷이 비칩니다. 봄에는 흐리고 안개 낀 날이 많지만 4~6월은 비가 가장 많은 때라, 물이 불면 운항이 갑자기 중단될 수 있습니다. 유난히 가문 겨울이나 이른 봄에는 전 구간 운항이 짧은 왕복으로 바뀐 적도 있습니다. 10월 초 국경절 연휴는 표가 부족하니 피하세요.",
+        },
+        {
+          question: "이강 유람선은 미리 예약해야 하나요?",
+          answer: "네. 표는 실명으로 날짜를 정해 팔고, 연휴 날짜는 매진될 수 있습니다. 3성과 4성 유람선은 계림 쪽 승선 선착장이 서로 다르므로, 배 등급을 먼저 정한 뒤 차를 준비하세요. 공식 채널에 외국 여권 예약 절차가 나와 있지 않아, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "20위안 지폐 뒷면의 풍경은 이강 어디인가요?",
+          answer: "싱핑 부근입니다. 싱핑은 양삭 현성에서 북동쪽으로 약 25km 떨어진 강변의 옛 마을입니다. 전 구간 유람선이 그 앞을 지나가니, 구마화산과 황포탄을 지나면 지폐를 꺼내 들고 갑판에서 기다리세요. 싱핑에서 보고 싶다면 차로 가면 되고, 싱핑에서 근처 어촌을 오가는 짧은 배도 그 앞을 지납니다.",
+        },
+      ],
+    },
+  },
+  "jade-dragon-snow-mountain": {
+    en: {
+      description: "Ride a cable car more than a kilometre up Jade Dragon Snow Mountain near Lijiang, to 4,506 metres and close to its glaciers. Which cable car, which months.",
+      why: [
+        "On a clear day, look north from the old town of Lijiang and the snow peaks stand above the tiled roofs. The Glacier Park cable car lifts you more than a kilometre up the mountain in a single ride. It rises out of dark fir and spruce forest, over rhododendron scrub and slopes of bare, broken rock, and sets you down at 4,506 metres. The air is thin and cold, and glaciers hang from the summit ridge above you. Lijiang itself sits at about 2,400 metres, so you have climbed two kilometres since breakfast.",
+        "To the Naxi people of Lijiang the mountain is a god. They call it the silver rock and see in it Sanduo, their protector, a warrior in white armour and helmet on a white horse. One legend tells of a hunter who found a strange white stone in the snow, as big as a burly warrior but light enough to lift with one hand. He carried it down, but after resting at the foot of the mountain he could not lift it again, so a shrine was built on the spot. Sanduo's temple still stands near Baisha. Every spring, on a lunar date in late February or March, the Naxi gather there for his festival.",
+        "There are three ways to meet the mountain. The two cable cars are ticketed separately, on top of entry, so choose before you book. Glacier Park is the high one. It has the big cable car, a boardwalk above it and the ice close up, and it is the most exposed to wind and weather. Spruce Meadow is gentler. A smaller cable car takes you to a forest clearing more than a kilometre lower, still under the peaks. Blue Moon Valley lies at the foot of the mountain and needs no cable car at all, so it fits into the same day as either of the others.",
+      ],
+      highlights: [
+        {
+          name: "Climb the boardwalk to 4,680 metres",
+          body: "From the top station a boardwalk climbs to a lookout about 170 metres higher. Take it slowly, because up here a few steps leave you breathless, and rest on the benches along the way. At the top the summit seems almost within reach. The glacier in front of you, Baishui No. 1, is the largest on the mountain, and it has been shrinking for decades as the climate warms.",
+        },
+        {
+          name: "Look up at the peaks from Spruce Meadow",
+          body: "The smaller cable car brings you to a grassy clearing ringed with old spruce, about 3,240 metres up, with the snow peaks rising straight above it. In Naxi legend it is the gateway to the Third Kingdom of the Jade Dragon, a paradise sought by lovers who were not allowed to marry. The Dongba scriptures of the Naxi priests paint it richly: red tigers to ride, silver-horned deer to pull the plough, golden pheasants to call the dawn.",
+        },
+        {
+          name: "Blue Moon Valley on a sunny day",
+          body: "Glacier meltwater runs down a valley floored with white stone, which is why the river was long called the White Water. In sunshine its pools turn a startling blue; in rain they cloud to milky white. The four lakes curving down the crescent-shaped valley are held back by low dams, and the same water helps supply Lijiang and the canals of its old town.",
+        },
+      ],
+      time: "Most of a day. The mountain is under an hour from Lijiang's old town by road. Glacier Park with Blue Moon Valley fills the day; Spruce Meadow with Blue Moon Valley is gentler and leaves time for Baisha on the way back.",
+      when: "The dry months, roughly November to April, give the best chance of a clear summit, and December is Lijiang's sunniest month. About 80 per cent of the year's rain falls from June to September, and in July the peaks often hide in cloud. In any season, wind or snow can stop the cable cars at short notice, so if Glacier Park matters, leave a spare day in Lijiang. Bring warm layers whatever the month.",
+      pair: "Black Dragon Pool lies at the northern edge of the old town, on the road out to the mountain. When the pool is full and the air is still, the snow peaks hang upside down in the water behind a white marble bridge and a pavilion. It is Lijiang's classic postcard. Go on a clear morning, on the way up or on another day. On the way back, stop in Baisha, near Sanduo's temple.",
+      skip: "If anyone in your group has heart disease or high blood pressure, or is pregnant, Lijiang's official advice is to skip the Glacier Park cable car. It suggests Blue Moon Valley instead. Spruce Meadow is far lower than Glacier Park, but still above 3,000 metres. If you want empty mountains, look elsewhere: millions come each year. See the peaks from Black Dragon Pool instead. Or, if you have strong legs and a day or two, walk the high trail of Tiger Leaping Gorge, which looks across at the mountain's far side.",
+      faq: [
+        {
+          question: "Is Jade Dragon Snow Mountain worth visiting?",
+          answer: "Yes, if you are in Lijiang and the weather is clear. A cable car lifts you more than a kilometre to 4,506 metres, where glaciers hang from the summit ridge just above you. To the Naxi people below, the mountain is a god. Give it most of a day. If altitude worries you, Spruce Meadow and Blue Moon Valley stay far lower and still bring you close.",
+        },
+        {
+          question: "Glacier Park or Spruce Meadow: which should I choose?",
+          answer: "Choose Glacier Park for ice and height: the cable car tops out at 4,506 metres and a boardwalk climbs on to 4,680. Choose Spruce Meadow for a gentler day in a clearing of old spruce at about 3,240 metres, below the peaks. Each needs its own cable-car ticket, and Glacier Park has the tighter quota, so book it as soon as your date opens. We can check and book for you.",
+        },
+        {
+          question: "How much time do you need at Jade Dragon Snow Mountain?",
+          answer: "Plan on most of a day; the mountain is under an hour from Lijiang's old town by road. Glacier Park with Blue Moon Valley fills the day, while Spruce Meadow with Blue Moon Valley leaves time for Baisha. If the high cable car matters, keep a spare day in Lijiang, because wind or snow can stop it at short notice.",
+        },
+        {
+          question: "When is the best time to visit Jade Dragon Snow Mountain?",
+          answer: "November to April, the dry season, gives the best chance of a clear summit, and December is Lijiang's sunniest month. About 80 per cent of the year's rain falls from June to September, and in July the peaks often hide in cloud. Bring warm layers in any month, since the top station is two kilometres higher than Lijiang.",
+        },
+        {
+          question: "Will I get altitude sickness at Jade Dragon Snow Mountain?",
+          answer: "You may well feel the height at Glacier Park, where the cable car sets you down at 4,506 metres, about two kilometres above Lijiang. Expect to be short of breath. If you feel unwell, rest at once or get medical help. Lijiang's official advice is that people with heart disease or high blood pressure, and pregnant women, should not ride the Glacier Park cable car. It suggests Blue Moon Valley instead. Spruce Meadow, at about 3,240 metres, is much easier than Glacier Park.",
+        },
+      ],
+    },
+    zh: {
+      description: "丽江玉龙雪山：坐冰川公园索道一趟升高一千多米，到海拔4506米，离冰川很近。选哪条索道，几月最容易看清雪峰。",
+      why: [
+        "天晴的时候，在丽江古城往北看，雪峰就立在青瓦屋顶上方。冰川公园索道一趟就升高一千多米。它从深色的冷杉、云杉林里升起，越过杜鹃灌丛和光秃秃的碎石坡，最后停在海拔4506米。空气又冷又稀薄，冰川就挂在头顶主峰的山脊下面。丽江城海拔两千四百米左右，一个上午，你就往上升了两千多米。",
+        "在纳西人心里，这座山是神。纳西语叫它“欧鲁”，意思是银色的山岩；他们的保护神三朵，就是雪山的化身，一位穿白甲、戴白盔、骑白马的武将。传说从前有个猎人在雪山上捡到一块奇怪的白石，大得像个魁梧的武将，却轻得一只手就能托起。他把石头背下山，到了山脚放下歇一口气，再背时，石头却纹丝不动，人们就在那里建祠供奉。如今三朵的庙还在白沙一带，每年农历二月初八三朵节，纳西人都会聚到这里祭拜。",
+        "上雪山有三种走法。两条索道的票都要在门票之外另买，订票前先想好。冰川公园最高，坐大索道上去，再走栈道，离冰川最近，也最怕刮风变天。云杉坪平缓一些，坐小索道到一片林间草地，比冰川公园低一千多米，雪峰仍在头顶。蓝月谷在山脚，不用坐索道，和另外两处哪一处都能排在同一天。",
+      ],
+      highlights: [
+        {
+          name: "沿栈道爬上4680米",
+          body: "出了索道上站，栈道还要往上爬升一百七十多米，才到观景台。慢慢走，这个高度走几步就喘，沿途有座椅可以歇。到了顶上，主峰好像伸手就能够到。眼前这条冰川叫“白水一号”，是山上最大的一条，随着气候变暖，几十年来一直在缩小。",
+        },
+        {
+          name: "站在云杉坪，抬头看雪峰",
+          body: "坐小索道上去，就是一片被老云杉围着的草甸，海拔约3240米，雪峰直直地立在上方。纳西族传说，从这里可以通往“玉龙第三国”，那是不能成婚的恋人们向往的天国。东巴经里这样描写那里：“火红斑虎当乘骑，银角花鹿来耕耘”，还有“花尾锦鸡来报晓”。",
+        },
+        {
+          name: "晴天的蓝月谷",
+          body: "冰川融水顺着一条铺满白石的山谷流下来，所以这条河的老名字叫白水河。晴天，一汪汪湖水蓝得出奇；下雨天，水又变成乳白色。月牙形的山谷里串着四个湖，是几道矮坝拦出来的；这些水也是丽江城和古城水系的重要水源。",
+        },
+      ],
+      time: "差不多一整天。从丽江古城开车到雪山不到一小时。冰川公园加蓝月谷，一天就排满了；云杉坪加蓝月谷轻松一些，回程还能在白沙停一停。",
+      when: "旱季最容易看到完整的主峰，大约是十一月到次年四月，十二月是丽江最晴的月份。全年约八成的雨都下在六到九月，七月雪峰常躲在云里。不管哪个季节，大风、大雪都可能让索道临时停运，所以如果非上冰川公园不可，在丽江多留一天机动。雪山上“一山分四季，十里不同天”，哪个月去都要带上厚衣服。",
+      pair: "黑龙潭在古城北边，正好在去雪山的路上。潭水满、没有风的时候，雪峰倒映在潭里，前面是白色的石桥和得月楼，这就是丽江最经典的那张明信片。挑一个晴朗的早上去，去雪山的路上顺道或者另找一天都行。回程在山脚的白沙停一下，三朵的庙就在那一带。",
+      skip: "如果同行有人有心脏病、高血压，或者正怀孕，丽江官方的提醒是不要坐冰川公园索道，可以改去蓝月谷。云杉坪比冰川公园低得多，但海拔也在三千米以上。想找一座清静的雪山，这里不合适，每年来的游客有几百万。可以在黑龙潭远看雪山；腿脚好、又有一两天时间的话，去走虎跳峡的高路，隔着峡谷看雪山的另一面。",
+      faq: [
+        {
+          question: "玉龙雪山值得去吗？",
+          answer: "值得，尤其是人在丽江、又碰上晴天的时候。索道一趟把你送上一千多米，到海拔4506米，冰川就挂在头顶的山脊下；山脚下的纳西人，把这座山当作神。差不多留出一整天。担心高原反应的话，云杉坪和蓝月谷海拔低得多，也能离雪山很近。",
+        },
+        {
+          question: "冰川公园和云杉坪，选哪个？",
+          answer: "想看冰川、上高处，选冰川公园：索道到海拔4506米，再走栈道到4680米。想轻松一点，选云杉坪：老云杉围着的一片草甸，海拔约3240米，雪峰就在上方。两条索道各要各的票，冰川公园名额更紧，你的日期一开放就要订；我们可以帮你核实并代订。",
+        },
+        {
+          question: "玉龙雪山需要玩多久？",
+          answer: "差不多一整天，从丽江古城开车过去不到一小时。冰川公园加蓝月谷，一天就满了；云杉坪加蓝月谷，回程还有时间去白沙。如果非上冰川公园不可，在丽江多留一天机动，因为大风、大雪可能让索道临时停运。",
+        },
+        {
+          question: "什么时候去玉龙雪山最好？",
+          answer: "十一月到次年四月的旱季最好，最容易看到完整的主峰；十二月是丽江最晴的月份。全年约八成的雨都下在六到九月，七月雪峰常躲在云里。上站比丽江城高两千多米，哪个月去都要带上厚衣服。",
+        },
+        {
+          question: "去玉龙雪山会有高原反应吗？",
+          answer: "到冰川公园很可能会有感觉，索道把你送到海拔4506米，比丽江城高两千多米。走几步就喘很正常，如果觉得不舒服，就及时休息或就医。丽江官方的提醒是，有心脏病、高血压的人和孕妇不要坐冰川公园索道，可以改去蓝月谷。云杉坪海拔约3240米，比冰川公园轻松得多。",
+        },
+      ],
+    },
+    ko: {
+      description: "리장 옥룡설산: 케이블카로 단번에 1km 넘게 올라 해발 4,506m, 빙하 가까이에 섭니다. 어느 케이블카를 탈지, 몇 월이 가장 맑은지까지.",
+      why: [
+        "맑은 날 리장 고성에서 북쪽을 바라보면 기와지붕 위로 설산 봉우리들이 솟아 있습니다. 빙천공원 케이블카는 한 번에 1km 넘게 올라갑니다. 짙은 전나무·가문비나무 숲을 벗어나 진달래 덤불과 돌 부스러기만 깔린 비탈을 넘어, 해발 4,506m에 내려 줍니다. 공기는 차고 희박하며, 머리 위 주봉 능선에 빙하가 걸려 있습니다. 리장 시내가 해발 2,400m쯤이니, 아침을 먹고 나서 2km를 더 올라온 셈입니다.",
+        "리장의 나시족에게 이 산은 신입니다. 나시어로 ‘은빛 바위’라고 부르고, 흰 갑옷과 흰 투구 차림에 흰 말을 탄 장수, 수호신 삼다(三多)의 화신으로 여깁니다. 옛날 한 사냥꾼이 설산에서 이상한 흰 돌을 주웠는데, 건장한 장수만큼 컸지만 한 손으로 들 수 있을 만큼 가벼웠다는 전설이 있습니다. 돌을 지고 내려와 산 아래에서 잠시 내려놓고 쉬었는데, 다시 지려니 꿈쩍도 하지 않아 사람들이 그 자리에 사당을 지었습니다. 지금도 바이샤(白沙) 근처에 삼다의 사당이 있고, 해마다 음력 2월 8일(양력 2월 말~3월) 삼다절이면 나시족이 이곳에 모입니다.",
+        "옥룡설산을 만나는 길은 세 가지입니다. 케이블카 두 노선은 입장권과 별도로 표를 사야 하니 예약 전에 정해 두세요. 빙천공원은 가장 높은 코스입니다. 큰 케이블카와 그 위의 나무 데크 길, 가까이서 보는 빙하가 있지만 바람과 날씨의 영향도 가장 크게 받습니다. 윈산핑(운삼평)은 더 완만합니다. 작은 케이블카로 빙천공원보다 1km 넘게 낮은 숲속 풀밭에 오르는데, 그래도 봉우리들이 바로 위에 서 있습니다. 남월곡은 산기슭에 있어 케이블카가 필요 없고, 나머지 두 곳 중 어느 쪽과도 같은 날 묶을 수 있습니다.",
+      ],
+      highlights: [
+        {
+          name: "나무 데크 길로 해발 4,680m까지",
+          body: "케이블카 상부 정류장에서 나무 데크 길이 170m쯤 더 높은 전망대까지 이어집니다. 이 높이에서는 몇 걸음만 걸어도 숨이 차니 천천히 걷고, 길 중간중간 의자에서 쉬어 가세요. 꼭대기에 서면 주봉이 손에 닿을 듯합니다. 눈앞의 빙하는 이 산에서 가장 큰 백수 1호 빙하로, 기후가 따뜻해지면서 수십 년째 줄어들고 있습니다.",
+        },
+        {
+          name: "윈산핑 풀밭에서 올려다보는 설산",
+          body: "작은 케이블카를 타고 오르면 오래된 가문비나무 숲에 둘러싸인 풀밭이 나옵니다. 해발 약 3,240m이고, 설산 봉우리가 바로 위로 솟아 있습니다. 나시족 전설에서 이곳은 ‘옥룡 제3국’으로 들어가는 문으로, 혼인을 허락받지 못한 연인들이 그리던 낙원입니다. 나시족 사제들의 동파경(東巴經)은 그 낙원을 붉은 호랑이를 타고 다니고, 은빛 뿔 사슴이 밭을 갈며, 금계가 새벽을 알리는 곳으로 그립니다.",
+        },
+        {
+          name: "맑은 날의 남월곡",
+          body: "빙하 녹은 물이 흰 돌이 깔린 골짜기를 따라 흘러내려, 이 강은 오랫동안 백수하(白水河)라고 불렸습니다. 햇빛이 비치면 웅덩이마다 놀랄 만큼 파랗게 빛나고, 비가 오면 우윳빛으로 탁해집니다. 초승달 모양 골짜기를 따라 늘어선 호수 네 개는 낮은 둑으로 물을 막아 만든 것이고, 이 물은 리장 시내와 고성 물길의 중요한 수원이기도 합니다.",
+        },
+      ],
+      time: "거의 하루가 걸립니다. 리장 고성에서 차로 1시간이 안 됩니다. 빙천공원과 남월곡을 묶으면 하루가 꽉 차고, 윈산핑과 남월곡을 묶으면 여유가 있어 돌아오는 길에 바이샤에 들를 수 있습니다.",
+      when: "대략 11월부터 이듬해 4월까지의 건기에 주봉을 온전히 볼 가능성이 가장 높고, 리장은 12월이 가장 맑습니다. 1년 강수량의 약 80%가 6~9월에 내리고, 7월에는 봉우리가 구름에 가리기 쉽습니다. 계절과 상관없이 강풍이나 폭설로 케이블카가 갑자기 멈출 수 있으니, 빙천공원이 꼭 가야 할 곳이라면 리장에 하루 여유를 두세요. 몇 월에 가든 따뜻한 옷을 챙기세요.",
+      pair: "흑룡담은 고성 북쪽 끝, 설산으로 가는 길목에 있습니다. 연못에 물이 가득하고 바람이 없을 때면 흰 대리석 다리와 누각 뒤로 설산이 물에 거꾸로 비칩니다. 리장을 대표하는 엽서 속 풍경입니다. 설산에 오르는 길이든 다른 날이든, 맑은 아침에 들르세요. 돌아오는 길에는 삼다의 사당이 가까운 산기슭 마을 바이샤에 들러 보세요.",
+      skip: "일행 중에 심장병이나 고혈압이 있거나 임신한 분이 있다면, 리장 당국은 빙천공원 케이블카 대신 남월곡을 둘러보라고 안내합니다. 윈산핑은 빙천공원보다 훨씬 낮지만, 그래도 해발 3,000m가 넘습니다. 한적한 산을 원한다면 이곳은 맞지 않습니다. 해마다 수백만 명이 찾습니다. 대신 흑룡담에서 설산을 바라보거나, 다리 힘과 하루이틀 여유가 있다면 협곡 건너편에서 옥룡설산의 반대쪽 사면을 마주 보는 호도협 트레킹 길을 걸어 보세요.",
+      faq: [
+        {
+          question: "옥룡설산은 가 볼 만한가요?",
+          answer: "네, 리장에 왔는데 날씨까지 맑다면 꼭 가 볼 만합니다. 케이블카가 단번에 1km 넘게 올라 해발 4,506m에 내려 주고, 바로 위 주봉 능선에 빙하가 걸려 있습니다. 산 아래 나시족에게 이 산은 신입니다. 거의 하루를 잡으세요. 고산 증세가 걱정된다면 훨씬 낮은 윈산핑과 남월곡에서도 설산을 가까이 볼 수 있습니다.",
+        },
+        {
+          question: "빙천공원과 윈산핑 중 어디가 좋을까요?",
+          answer: "빙하와 높이를 원한다면 빙천공원입니다. 케이블카로 해발 4,506m까지 오르고, 나무 데크 길로 4,680m까지 더 올라갑니다. 편안한 하루를 원한다면 윈산핑입니다. 해발 약 3,240m, 오래된 가문비나무에 둘러싸인 풀밭이고 봉우리가 바로 위에 있습니다. 케이블카 표는 각각 따로이고 빙천공원 쪽이 인원이 더 빠듯하니, 날짜가 열리자마자 예약하세요. 저희가 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "옥룡설산은 시간이 얼마나 걸리나요?",
+          answer: "거의 하루를 잡으세요. 리장 고성에서 차로 1시간이 안 걸립니다. 빙천공원과 남월곡을 묶으면 하루가 꽉 차고, 윈산핑과 남월곡을 묶으면 바이샤 마을에 들를 시간이 남습니다. 빙천공원이 꼭 가야 할 곳이라면 강풍이나 폭설로 케이블카가 갑자기 멈출 수 있으니 리장에 하루 여유를 두세요.",
+        },
+        {
+          question: "옥룡설산은 언제 가는 게 가장 좋나요?",
+          answer: "11월부터 이듬해 4월까지의 건기가 주봉을 온전히 볼 가능성이 가장 높고, 리장은 12월이 가장 맑습니다. 1년 강수량의 약 80%가 6~9월에 내리고, 7월에는 봉우리가 구름에 가리기 쉽습니다. 상부 정류장은 리장 시내보다 2km 넘게 높으니 몇 월에 가든 따뜻한 옷을 챙기세요.",
+        },
+        {
+          question: "옥룡설산에서 고산병이 생기나요?",
+          answer: "빙천공원에서는 높이를 느낄 가능성이 큽니다. 케이블카가 리장 시내보다 2km쯤 높은 해발 4,506m에 내려 주기 때문입니다. 숨이 차는 것은 흔한 일이고, 몸이 불편하면 바로 쉬거나 진료를 받으세요. 리장 당국은 심장병이나 고혈압이 있는 분과 임신부는 빙천공원 케이블카를 타지 말고 남월곡을 둘러보라고 안내합니다. 해발 약 3,240m의 윈산핑은 빙천공원보다 훨씬 수월합니다.",
+        },
+      ],
+    },
+  },
 };
 
 export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
@@ -3845,6 +4137,29 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Zhangjiajie Grand Canyon", "Zhangjiajie Grand Canyon Glass Bridge", "Zhangjiajie Glass Bridge", "张家界大峡谷", "张家界大峡谷玻璃桥", "云天渡", "장가계 대협곡", "장가계 대협곡 유리다리", "Zhangjiajie Daxiagu", "Yuntiandu"],
     sameAs: ["https://en.wikipedia.org/wiki/Zhangjiajie_Glass_Bridge", "https://www.wikidata.org/wiki/Q27925184", "https://www.wikidata.org/wiki/Q131315007"],
+  },
+  "li-river": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Guilin Li River Scenic Area: 景区简介 (introduction)", url: "https://www.liriver.com.cn/page/article/zjlj.ljjj" },
+      { title: "Guilin Li River Scenic Area: 九马画山 (Nine Horses Fresco Hill)", url: "https://www.liriver.com.cn/page/article/zglj.jmhs" },
+      { title: "Guilin Li River Scenic Area: 黄布倒影 (Yellow Cloth Shoal)", url: "https://www.liriver.com.cn/page/article/zglj.hbdy" },
+      { title: "UNESCO World Heritage Centre: South China Karst", url: "https://whc.unesco.org/en/list/1248/" },
+      { title: "People's Bank of China: the design of the fifth-series 20-yuan note", url: "https://chongqing.pbc.gov.cn/chongqing/107674/2927554/2787261/index.html" },
+    ],
+    alternateName: ["Li River", "Lijiang River", "Li Jiang", "Li River (Guilin to Yangshuo)", "漓江", "桂林漓江", "漓江精华段", "이강", "리강", "계림 이강"],
+    sameAs: ["https://en.wikipedia.org/wiki/Li_River", "https://www.wikidata.org/wiki/Q334225", "https://whc.unesco.org/en/list/1248/"],
+  },
+  "jade-dragon-snow-mountain": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Lijiang Municipal Media Centre: riding the Jade Dragon cable cars, with official health advice (2024)", url: "https://www.lijiang.cn/article/127342.html" },
+      { title: "Yunnan Daily (via Yunnan.cn): Jade Dragon Snow Mountain scenic area, glaciers, cable car and Blue Moon Valley (2019)", url: "https://yn.yunnan.cn/system/2019/06/26/030308776.shtml" },
+      { title: "National Climate Center (CMA): global warming and the retreat of the Jade Dragon glaciers (2009)", url: "https://www.ncc-cma.net/channel/news/newsid/4230" },
+      { title: "Guangming Daily: heavy snow closes the Jade Dragon cable cars (2025)", url: "https://m.gmw.cn/2025-03/19/content_1303995430.htm" },
+    ],
+    alternateName: ["Jade Dragon Snow Mountain", "Yulong Snow Mountain", "Mount Yulong", "Yulong Xueshan", "Mount Satseto", "玉龙雪山", "丽江玉龙雪山", "玉龍雪山", "옥룡설산", "리장 옥룡설산"],
+    sameAs: ["https://en.wikipedia.org/wiki/Jade_Dragon_Snow_Mountain", "https://www.wikidata.org/wiki/Q1465660"],
   },
 };
 
