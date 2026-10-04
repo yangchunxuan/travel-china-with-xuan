@@ -2828,6 +2828,298 @@ export const sightStories: Stories = {
       ],
     },
   },
+  wulong: {
+    en: {
+      description: "A glass lift drops you into a sinkhole outside Chongqing, then the path runs under three stone bridges, the tallest 281 metres. A day trip, or a night?",
+      why: [
+        "A glass lift turns as it slides down the cliff, the doors open, and you are standing at the bottom of a giant sinkhole. Rock walls rise close to 300 metres on every side, green shrubs clinging to them, and the sky is a ragged patch straight overhead. Then the path bends and the first bridge fills the view: a whole slab of mountain laid across the gorge, the arch beneath it nearly 100 metres high. A stream chatters beside the path and springs spill from the cliffs. Three bridges like this stand within a kilometre and a half, and you walk under every one.",
+        "The bridges are what is left of a cave. An underground river once ran here, inside the mountain. In two places the cave roof fell in, opening the two sinkholes; the three stretches that held became the bridges. You can still read it in the rock. Under the first bridge, Tianlong, a second opening sits about 120 metres above the one the water uses now. That higher hole was the river's old way through. Under the second, Qinglong, look up at the curved scars where the roof broke away layer by layer. The stream at your feet is that same river, now running in daylight.",
+        "The Wulong area has three big sights, and the bridges come first. Fairy Mountain is high country of meadow and forest, where summer temperatures average only 21 to 22°C, so people from Chongqing come up here to escape the heat. In Furong Cave, a path of nearly two kilometres leads past stone curtains and glittering crystals. With one day, see the bridges. With a night at Fairy Mountain, add one of the other two the next morning; trying for both turns a good day into a rush.",
+      ],
+      highlights: [
+        {
+          name: "Tianfu Post, in the first sinkhole",
+          body: "A courtyard of grey tiles and grey walls, hung with lanterns, stands on the sinkhole floor. It looks ancient, but it was built in Tang-dynasty style for Zhang Yimou's 2006 film Curse of the Golden Flower and was its only outdoor location. In the yard stand an official's horse carriage and props from the shoot.",
+        },
+        {
+          name: "Under Qinglong Bridge",
+          body: "The tallest of the three rises 281 metres from the stream to its top. Its name, Azure Dragon, is said to come from what happens after rain. Water pours off the top and breaks into mist, and when the sun catches the spray, a rainbow rises through it like a dragon climbing the sky. Whether you see it depends on that week's weather.",
+        },
+        {
+          name: "The springs in Heilong's arch",
+          body: "The last bridge, Heilong or Black Dragon, takes its name from its deep, dark arch, where a black dragon seems to wind across the roof. In the gloom, four springs hang from the rock wall, each named for the way it falls: mist, pearls, a single thread, three tiers. How strongly they run depends on recent rain. Then the path carries you back out into daylight.",
+        },
+      ],
+      time: "Two to three hours in the gorge, plus the shuttle from the visitor centre and back. From central Chongqing it makes a long day; a night in the Fairy Mountain area makes it an easy one.",
+      when: "Spring and autumn are the most comfortable, roughly April to May and September to October. After rain, the waterfall off Qinglong and the springs under Heilong run at their fullest. Heavy rain can close the gorge at short notice, though, so a spare night helps. In summer, Fairy Mountain's cool air is another reason to stay. Avoid the National Day holiday in early October, when the gorge is at its most crowded.",
+      pair: "The bridges' shuttle starts from the visitor centre in the Fairy Mountain resort town, so stay there. The next morning, choose one: Fairy Mountain, which rises to 2,033 metres, or Furong Cave by the Furong River, where it stays around 16°C deep inside all year. If you still have the legs on the first day, the exit shuttle can carry on to Longshui Gorge, a deep, narrow slot canyon with its own ticket.",
+      skip: "If you have only two full days in Chongqing, spend them in the city; Wulong needs a day of its own. If you came for history and art rather than landscape, Dazu's rock carvings are the better day out. If long walks are hard for anyone in your group, know the shape of the day first. After the lift, the route runs one way along the gorge for a few kilometres, and only the final climb can be swapped for a buggy.",
+      faq: [
+        {
+          question: "Is Wulong worth visiting?",
+          answer: "Yes, if you want one big landscape day from Chongqing. A lift takes you down into a sinkhole close to 300 metres deep. From there you walk under three natural stone bridges, the tallest 281 metres high, all within a kilometre and a half. Give the gorge two to three hours, and the trip a long day or, better, a night.",
+        },
+        {
+          question: "Can you visit Wulong as a day trip from Chongqing?",
+          answer: "Yes, but it is a long day, and a night makes it much easier. By road it is about two and a half to three hours each way to the visitor centre. The high-speed train from Chongqing East reaches Wulong in about half an hour, but the station is still a road transfer from the bridges. Our Wulong trips spend a night in the Fairy Mountain area.",
+        },
+        {
+          question: "How long do you need at the Three Natural Bridges?",
+          answer: "Plan on two to three hours in the gorge, plus shuttle time each way from the visitor centre. The route runs one way: a glass lift down the cliff, a few kilometres on foot under the bridges, then an uphill stretch or a buggy to the exit. Add half a day if you also want Fairy Mountain or Furong Cave.",
+        },
+        {
+          question: "When is the best time to visit Wulong?",
+          answer: "Spring and autumn, roughly April to May and September to October, are the most comfortable. After rain, the waterfall off Qinglong Bridge and the springs under Heilong Bridge run fullest, but heavy rain can close the gorge at short notice. In summer, Fairy Mountain averages 21 to 22°C, a relief from Chongqing's heat. Avoid the National Day holiday in the first week of October, when the gorge is at its most crowded.",
+        },
+        {
+          question: "How hard is the walk at the Three Natural Bridges?",
+          answer: "Moderate: most of it is downhill or level along the gorge floor, with some steps. The lift does the steep descent for you, and the hardest part is the uphill stretch to the exit at the end, which a buggy can cover instead. Wear shoes with grip, because the path can be wet under the springs.",
+        },
+      ],
+    },
+    zh: {
+      description: "重庆武隆天生三桥：坐观光电梯下到近三百米深的天坑底，再从三座天生石桥底下走过。留多久、几月去、要不要住一晚。",
+      why: [
+        "玻璃观光电梯贴着悬崖往下降，一边降一边转，门一开，人已经站在天坑底：四面石壁直上直下，将近三百米高，崖上挂着绿色的灌木，头顶只剩参差不齐的一块天。往前一拐，第一座石桥横在眼前，整块山体架在峡谷上，光是桥下的洞就有近百米高。脚边溪水潺潺，崖上的山泉往下飞洒。一公里半的峡谷里，连着三座这样的桥，你会从每一座底下走过。",
+        "这三座桥，原本是一个大溶洞的洞顶。很久以前，一条暗河在山体里流，后来洞顶有两段塌了下去，塌开的地方成了两个天坑，没塌的三段，就是今天的三座桥。石头上还看得出来：第一座天龙桥下有两个洞口，一高一低，高的那个，洞底比低的高出约 120 米，那是暗河从前走的老路，后来水才改走低处这个；第二座青龙桥下，抬头能看到洞顶一层层塌落后留下的一道道弧形痕迹。脚下这条溪，就是当年那条暗河，如今流在了天光下。",
+        "武隆有三处大景，天生三桥排第一。仙女山是高山上的草原和森林，夏天平均气温只有二十一二度，是重庆人上山避暑的地方；芙蓉洞里的游览路将近两公里，一路上石幔垂挂，晶花亮晶晶的。只有一天，就看天生三桥；在仙女山住一晚，第二天上午再从另外两处里挑一处。两处都想去，好好的一天就赶成了行军。",
+      ],
+      highlights: [
+        {
+          name: "天坑底的天福官驿",
+          body: "第一个天坑底下，有一座青瓦灰墙、挂着灯笼的四合院，叫天福官驿。它看着像上千年的老房子，其实是张艺谋拍《满城尽带黄金甲》（2006 年上映）时照着唐代房屋的样式建的，也是整部电影唯一的外景地。院子里还停着一辆官员出行坐的马车，摆着剧组拍戏用过的道具。",
+        },
+        {
+          name: "青龙桥下",
+          body: "三座桥里最高的一座，从溪边到桥顶 281 米。名字据说来自雨后的景象：瀑布从桥面倾泻下来，散成水雾，太阳一照，雾里挂起彩虹，像一条青龙往上飞。能不能碰上，要看那几天的天气。",
+        },
+        {
+          name: "黑龙桥洞里的四道泉",
+          body: "最后一座黑龙桥，桥洞幽深昏暗，像有条黑龙盘在洞顶，名字就是这么来的。走进暗处，沿着洞壁看，四道泉水从石头上挂下来，按各自落下的样子，分别叫雾泉、珍珠泉、一线泉、三叠泉；水大水小，要看最近下没下雨。走出桥洞，眼前又亮了。",
+        },
+      ],
+      time: "峡谷里走两到三个小时，再加上从游客中心坐中转车进出的时间。从重庆市区当天来回，是很长的一天；在仙女山住一晚，就从容得多。",
+      when: "春秋两季最舒服，大约是四五月和九、十月。雨后，青龙桥的瀑布和黑龙桥下的泉水最足；不过遇上暴雨，景区可能临时关闭，多留一晚更稳妥。夏天仙女山凉快，又多了一个住一晚的理由。国庆长假尽量避开，那几天峡谷里的路上人挨着人。",
+      pair: "去天生三桥的中转车从仙女山度假区的游客中心出发，所以就住在那一带。第二天上午二选一：最高处海拔 2033 米的仙女山，或者芙蓉江边的芙蓉洞，洞的深处一年到头都在 16 度左右。头一天要是还走得动，从天生三桥出口还能接着坐车去龙水峡地缝，那是一条又深又窄的峡谷，门票另买。",
+      skip: "在重庆只有两个整天的话，留给城里，武隆得单独占一天。冲着历史和艺术来的，去大足看石刻更合适。同行有人走不了远路的，出发前要知道：电梯下去以后，是沿着峡谷单向步行几公里，只有最后那段上坡可以换成坐电瓶车。",
+      faq: [
+        {
+          question: "武隆天生三桥值得去吗？",
+          answer: "值得，想在重庆周边看一回大山大谷，就去这里。坐电梯下到近三百米深的天坑底，从三座天生石桥底下走过，最高的一座 281 米，三座桥都在一公里半之内。峡谷里留两三个小时；整趟当天来回很赶，住一晚更好。",
+        },
+        {
+          question: "从重庆去武隆能当天来回吗？",
+          answer: "能，但这一天会很长，住一晚轻松得多。开车到游客中心，单程大约两个半到三个小时。从重庆东站坐高铁到武隆约半个小时，但车站离天生三桥还有一段路，要再坐车过去。我们的武隆行程都会在仙女山住一晚。",
+        },
+        {
+          question: "游天生三桥要多长时间？",
+          answer: "在峡谷里留两到三个小时，游客中心往返的中转车时间另算。路线是单向的：先坐观光电梯下到崖底，沿峡谷步行几公里，从三座桥底下穿过，最后走一段上坡或坐电瓶车到出口。还想去仙女山或芙蓉洞，就再加半天。",
+        },
+        {
+          question: "什么时候去武隆最好？",
+          answer: "春秋两季最舒服，大约是四五月和九、十月。雨后，青龙桥的瀑布和黑龙桥下的泉水最足，但暴雨天景区可能临时关闭。夏天仙女山平均只有二十一二度，正好躲开重庆的暑热。尽量避开十月第一周的国庆长假，那几天峡谷里挤满了人。",
+        },
+        {
+          question: "天生三桥的路难走吗？",
+          answer: "中等难度：大部分是沿着谷底下坡或走平路，中间有些台阶。最陡的下降交给电梯，最累的是最后到出口那段上坡，不想走可以坐电瓶车。穿一双防滑的鞋，泉水底下的路面可能是湿的。",
+        },
+      ],
+    },
+    ko: {
+      description: "충칭 우롱 천생삼교: 유리 엘리베이터로 깊이 300m 가까운 천갱 바닥에 내려가 거대한 돌다리 세 개 아래를 걷습니다. 관람 시간, 계절, 1박까지.",
+      why: [
+        "유리 엘리베이터가 회전하며 절벽을 따라 내려가고, 문이 열리면 거대한 천갱(땅이 꺼져 생긴 큰 구덩이)의 바닥입니다. 사방의 바위벽이 300m 가까이 곧게 솟아 있고, 벽에는 푸른 덤불이 매달려 있으며, 하늘은 머리 위로 들쭉날쭉한 조각만 보입니다. 길이 꺾이면 첫 번째 다리가 눈앞을 가득 채웁니다. 산 한 덩어리가 협곡 위에 그대로 걸쳐 있고, 그 아래 뚫린 구멍만 해도 높이가 100m 가까이 됩니다. 발 옆으로는 개울이 졸졸 흐르고 절벽에서는 샘물이 쏟아집니다. 이런 다리 세 개가 1.5km 안에 이어지고, 그 아래를 모두 걸어서 지나갑니다.",
+        "이 다리들은 원래 거대한 동굴의 천장이었습니다. 아주 오래전 산속으로 지하 강이 흘렀고, 동굴 천장의 두 구간이 무너져 내리면서 천갱 두 개가 생겼습니다. 무너지지 않고 남은 세 구간이 지금의 다리입니다. 그 흔적은 바위에 그대로 남아 있습니다. 첫 번째 천룡교 아래에는 구멍이 두 개 있는데, 높은 쪽 구멍의 바닥이 낮은 쪽보다 약 120m 위에 있습니다. 높은 구멍이 물이 예전에 지나던 옛길이고, 나중에 물길이 낮은 쪽으로 바뀌었습니다. 두 번째 청룡교 아래에서 올려다보면 천장이 한 겹씩 떨어져 나간 둥근 자국이 보입니다. 발밑의 개울이 바로 그 지하 강이고, 지금은 햇빛 아래를 흐릅니다.",
+        "우롱에는 큰 볼거리가 세 곳 있고, 그중 첫째가 천생삼교입니다. 선녀산은 초원과 숲이 펼쳐진 높은 산으로, 여름 평균 기온이 21~22℃여서 충칭 사람들이 더위를 피해 올라오는 곳입니다. 부용동은 2km 가까운 관람로를 따라 돌 커튼과 반짝이는 결정체가 늘어선 석회암 동굴입니다. 하루뿐이라면 천생삼교만 보세요. 선녀산에서 하룻밤 묵는다면 다음 날 오전에 나머지 두 곳 중 하나를 고르세요. 둘 다 넣으면 좋은 하루가 강행군이 됩니다.",
+      ],
+      highlights: [
+        {
+          name: "천갱 바닥의 천복관역",
+          body: "첫 번째 천갱 바닥에 초롱이 걸린, 잿빛 기와와 회색 담장의 사합원(ㅁ자 모양 안뜰 가옥)이 있습니다. 천 년은 된 듯 보이지만, 2006년 개봉한 장이머우 감독의 영화 ‘황후화’를 찍으려고 당나라 건축 양식으로 지은 건물이고, 이 영화의 유일한 야외 촬영지였습니다. 마당에는 옛 관리용 마차와 영화 촬영 때 쓴 소품도 놓여 있습니다.",
+        },
+        {
+          name: "청룡교 아래",
+          body: "세 다리 중 가장 높은 다리로, 개울에서 꼭대기까지 281m입니다. 이름은 비 온 뒤의 풍경에서 왔다고 합니다. 다리 위에서 폭포가 쏟아져 물안개로 흩어지고, 햇빛이 비치면 안개 속에 무지개가 걸려 푸른 용이 솟아오르는 듯하다는 것입니다. 볼 수 있을지는 그 무렵 날씨에 달렸습니다.",
+        },
+        {
+          name: "흑룡교 굴속의 네 샘",
+          body: "마지막 흑룡교는 아치 구멍이 깊고 어둡습니다. 천장에 검은 용이 똬리를 튼 듯하다 해서 붙은 이름입니다. 어둠 속으로 들어가 벽을 따라 보면 네 줄기 샘물이 바위에서 떨어지는데, 떨어지는 모양에 따라 안개샘, 진주샘, 한줄기샘, 삼단샘이라 부릅니다. 물줄기의 세기는 최근에 비가 왔는지에 따라 다릅니다. 굴을 빠져나오면 다시 환한 햇빛입니다.",
+        },
+      ],
+      time: "협곡 안에서 2~3시간, 여기에 방문자 센터에서 셔틀을 타고 오가는 시간을 더하세요. 충칭 시내에서 당일로 다녀오면 긴 하루가 되고, 선녀산 쪽에서 하룻밤 묵으면 훨씬 여유롭습니다.",
+      when: "봄과 가을, 대략 4~5월과 9~10월이 가장 쾌적합니다. 비가 온 뒤에는 청룡교의 폭포와 흑룡교 아래 샘물이 가장 풍성합니다. 다만 폭우가 쏟아지면 협곡이 갑자기 문을 닫기도 하니, 하룻밤 여유를 두면 안심입니다. 여름에는 선녀산의 서늘한 공기도 하룻밤 묵을 이유가 됩니다. 10월 초 국경절 연휴에는 협곡 길이 사람으로 꽉 차니 피하세요.",
+      pair: "천생삼교로 가는 셔틀은 선녀산 리조트 지역의 방문자 센터에서 출발하니, 숙소도 그 동네에 잡으세요. 다음 날 오전에는 둘 중 하나를 고르세요. 가장 높은 곳이 해발 2,033m인 선녀산, 또는 부용강 가의 부용동입니다. 부용동 깊은 곳은 일 년 내내 16℃ 안팎입니다. 첫날 걸을 힘이 남았다면 천생삼교 출구에서 셔틀을 타고 용수협(龍水峽)까지 가 보세요. 땅이 깊고 좁게 갈라진 협곡으로, 입장권은 따로 삽니다.",
+      skip: "충칭에서 온전한 날이 이틀뿐이라면 도심에 쓰세요. 우롱에는 하루가 통째로 필요합니다. 풍경보다 역사와 예술을 보러 왔다면 대족석각이 더 나은 하루입니다. 일행 중 오래 걷기 힘든 분이 있다면 미리 알아 두세요. 엘리베이터로 내려간 뒤에는 협곡을 따라 한 방향으로 몇 km를 걸어야 하고, 전동카로 대신할 수 있는 것은 마지막 오르막뿐입니다.",
+      faq: [
+        {
+          question: "우롱 천생삼교는 가 볼 만한가요?",
+          answer: "네, 충칭에서 큰 자연 풍경을 하루 보고 싶다면 가 볼 만합니다. 엘리베이터로 깊이 300m 가까운 천갱 바닥까지 내려가, 가장 높은 것이 281m에 이르는 천연 돌다리 세 개 아래를 걷습니다. 세 다리는 모두 1.5km 안에 있습니다. 협곡에는 2~3시간을 잡고, 일정은 긴 하루나, 가능하면 1박으로 짜세요.",
+        },
+        {
+          question: "충칭에서 우롱까지 당일치기가 가능한가요?",
+          answer: "가능하지만 긴 하루가 되고, 1박을 하면 훨씬 편합니다. 차로는 방문자 센터까지 편도 2시간 반~3시간쯤 걸립니다. 충칭동역에서 고속열차를 타면 우롱까지 30분 남짓이지만, 역에서 천생삼교까지는 다시 차로 이동해야 합니다. 저희 우롱 일정은 모두 선녀산 지역에서 하룻밤 묵습니다.",
+        },
+        {
+          question: "천생삼교 관람에는 시간이 얼마나 걸리나요?",
+          answer: "협곡 안에서 2~3시간을 잡고, 방문자 센터를 오가는 셔틀 시간을 따로 더하세요. 동선은 한 방향입니다. 유리 엘리베이터로 절벽을 내려가 세 다리 아래로 몇 km를 걸은 뒤, 오르막을 걷거나 전동카로 출구에 닿습니다. 선녀산이나 부용동도 보려면 반나절을 더하세요.",
+        },
+        {
+          question: "우롱은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을, 대략 4~5월과 9~10월이 가장 쾌적합니다. 비가 온 뒤에는 청룡교의 폭포와 흑룡교 아래 샘물이 가장 풍성하지만, 폭우가 내리면 협곡이 임시로 문을 닫기도 합니다. 여름에는 선녀산 평균 기온이 21~22℃라 충칭의 더위를 피하기 좋습니다. 10월 첫 주 국경절 연휴에는 협곡이 사람으로 가득하니 피하세요.",
+        },
+        {
+          question: "천생삼교는 걷기 힘든가요?",
+          answer: "보통 수준입니다. 대부분 협곡 바닥을 따라 내려가거나 평지를 걷고, 중간에 계단이 조금 있습니다. 가장 가파른 내리막은 엘리베이터가 대신하고, 가장 힘든 구간은 마지막 출구까지의 오르막인데 전동카로 대신할 수 있습니다. 샘물 아래 길이 젖어 있을 수 있으니 미끄럼 방지 신발을 신으세요.",
+        },
+      ],
+    },
+  },
+  "dazu-rock-carvings": {
+    en: {
+      description: "Spend a day at Dazu, two hours from Chongqing, where a 31-metre Buddha lies half inside the cliff and 830 gilded hands fan out like a peacock's tail.",
+      why: [
+        "Walk into the horseshoe-shaped valley at Baodingshan and the cliff around you is carved for some 500 metres, scene after scene, like a picture book in stone. Three figures seven metres tall lean forward to look down at you. One holds up a stone pagoda as tall as a man; a fold of his robe, falling from forearm to knee, takes the weight. Round a corner, a golden Guanyin, the goddess of mercy, sits amid 830 hands fanned across the rock like a peacock's tail. Further on, a Buddha 31 metres long lies on his side, eyes almost closed, his lower legs vanishing into the cliff. Early surveyors wrote that his head was as big as a house.",
+        "It reads like a book because it was planned as one. From the 1170s, a local monk, Zhao Zhifeng, spent some 70 years having the valley carved as one long sermon for ordinary people. Words run beside the scenes, and no subject is told twice. Much of it is everyday life. Parents raise a child across ten scenes. A farm woman lifts the lid of her coop, the hens scramble out, and two squabble over a worm. There are drunk men and women, and herd boys with their oxen. One line spells it out: of three thousand laws, failing your parents is the worst crime. Look for a curly-haired monk in several scenes; scholars mostly take him to be Zhao.",
+        "Of Dazu's five main carving sites, two are the ones to see. Baodingshan holds the great set pieces, so if you have time for one site, make it this. Beishan, on a hill just north of Dazu town, was begun nearly three centuries earlier and is quieter. Its smaller niches crowd the cliff like a honeycomb, each finely cut, with so many figures of Guanyin that it is called a gallery of them. Compared with Leshan's single giant, Dazu is a place to walk slowly and look at faces up close.",
+      ],
+      highlights: [
+        {
+          name: "The spring that bathes the baby Buddha",
+          body: "Beside the reclining Buddha, nine dragon heads burst from the rock. Water runs all year from the mouth of the central one onto the infant Buddha below, who sits with palms together for his first bath. The carvers collected the hillside's rainwater in a pool and led it through hidden channels to the dragon's mouth. From there it winds away along a zigzag channel in front of the reclining Buddha.",
+        },
+        {
+          name: "The shaft of light in Yuanjue Cave",
+          body: "Step into Yuanjue Cave, 12 metres deep. A window cut above the entrance sends a shaft of daylight into the middle, where a figure kneels, head bowed and palms together, before three Buddhas. Twelve more figures sit along the walls in robes that look like silk. When the cave falls quiet, you may hear a drip: water seeping through the rock falls from a carved dragon's mouth into an old monk's bowl.",
+        },
+        {
+          name: "Beishan's Guanyin with prayer beads",
+          body: "At Beishan, look for niche 125, a small Guanyin with her hands crossed at her waist around a string of prayer beads. Her thin robe clings, her ribbons lift as if in a breeze, and she seems about to smile. Then visit cave 136, which faces west. On a sunny afternoon, light slants in past the stone scripture case at its centre, and the shadows on the figures shift as you move.",
+        },
+      ],
+      time: "About two hours each way by road from central Chongqing. Allow two to three hours for the carvings at Baodingshan, more if you want the museum beside it, and one to two hours at Beishan. The two together fill the day.",
+      when: "Spring and autumn are the comfortable seasons. The carvings line open cliffs and Chongqing summers are hot and humid, so in July and August start early. Go on a weekday if you can, and avoid the May Day and National Day holidays, when it is at its busiest. Conservation work sometimes screens part of the cliff, so we check before you go.",
+      pair: "See Baodingshan in the morning, have lunch in Dazu town and spend the afternoon at Beishan; the two are 20 to 30 minutes apart by car. If you are joining a Yangtze cruise, Dazu fits the day you embark: carvings by day, then back to Chongqing to go aboard in the evening.",
+      skip: "If you came to Chongqing for the city and have only two or three days, keep them there. Dazu costs a whole day, about four hours of it in the car. If Leshan is already on your route and you want one giant Buddha, Leshan is the bigger single sight. Dazu is for people who like to look closely. And if sculpture leaves you cold, a day on the road for it is hard to justify.",
+      faq: [
+        {
+          question: "Are the Dazu Rock Carvings worth visiting?",
+          answer: "Yes, if you enjoy art or stories. Carved between the 9th and 13th centuries, the cliffs hold a 31-metre reclining Buddha alongside farmers, drunkards and parents raising a child. UNESCO, which listed Dazu in 1999, singles out ‘the light that they shed on everyday life’ in China at the time. Allow a full day from Chongqing, with two to three hours at Baodingshan.",
+        },
+        {
+          question: "Baodingshan or Beishan: which should I visit?",
+          answer: "Choose Baodingshan if you have time for one. It holds the Thousand-Hand Guanyin, the reclining Buddha and some 500 metres of carved valley. Add Beishan if you love sculpture. It was begun nearly three centuries earlier, it is quieter, and its cliff is crowded with finely cut figures of Guanyin. The two are 20 to 30 minutes apart by car and have separate tickets.",
+        },
+        {
+          question: "Can you visit Dazu as a day trip from Chongqing?",
+          answer: "Yes. It is about two hours each way by road, so it fits one day. Spend two to three hours at Baodingshan, then an hour or two at Beishan if you want both. Leave early, because the drive takes about four hours of the day.",
+        },
+        {
+          question: "Dazu Rock Carvings or the Leshan Giant Buddha: which should I choose?",
+          answer: "Choose Leshan for one overwhelming sight: a single Buddha 71 metres tall, seated by the river, a day out from Chengdu. Choose Dazu for detail and stories: thousands of figures you see up close, a day out from Chongqing. If you have time for both, they make two very different days.",
+        },
+        {
+          question: "When is the best time to visit Dazu?",
+          answer: "Spring and autumn, roughly March to May and September to November, are the most comfortable. July and August are hot and humid on the open cliffs, so go early in the day. Avoid the May Day and National Day holidays, and go on a weekday if you can.",
+        },
+      ],
+    },
+    zh: {
+      description: "重庆大足石刻：830 只贴金的手在崖壁上像孔雀开屏，31 米长的卧佛半身隐入山岩。宝顶山还是北山、留多久、这一天怎么走。",
+      why: [
+        "宝顶山的大佛湾是一道马蹄形的山湾，走进去，五百多米长的崖壁上一幕接一幕刻满了石像，像一本刻在石头上的连环画。三尊七米来高的石像微微前倾，低头看着你；其中一尊手托一座一人多高的石塔，从小臂斜垂到膝头的一角袈裟，悄悄撑住了石塔的分量。转过一个弯，金光闪闪的千手观音坐在崖壁上，830 只手层层展开，像孔雀开屏。再往前，一尊 31 米长的卧佛侧身躺着，双眼微闭，膝盖以下隐进了山岩；早年来考察的人形容他“头大如屋”。",
+        "说它像连环画，是因为它本来就是照着一整部书来安排的。从 1170 年代起，大足本地僧人赵智凤主持开凿，前后七十多年，把整个山湾刻成一部讲给老百姓听的经，图旁配着文字，同一个题材从不重复。所以这里满是寻常日子：父母从怀胎到把孩子拉扯大，刻成十个场景；农家妇女掀开鸡笼，鸡争着往外跑，两只在笼边抢一条蚯蚓；还有喝醉了的男男女女，放牛的牧童。石壁上有一句话，说得再直白不过：“三千条律令，不孝罪为先”。留意一个卷头发的僧人，好几个场景里都有他，学者多认为刻的就是赵智凤自己。",
+        "大足有五处主要石刻，值得专门去的是两处。大场面都在宝顶山，只去一处，就去这里。北山在大足城北的山上，开凿比宝顶山早了将近三百年，人也少些。一个个小石窟像蜂房一样密密排在崖壁上，雕得小巧精细，观音像尤其多，被称作“中国观音造像的陈列馆”。乐山看的是一尊大佛的气势；大足要的，是慢慢走，凑近了看一张张脸。",
+      ],
+      highlights: [
+        {
+          name: "九龙浴太子",
+          body: "卧佛旁边，九个龙头从崖壁上探出来。正中那条龙的嘴里，泉水终年不断，浇在下方端坐合十的小太子身上，给刚出生的他洗澡。工匠先把山上的雨水积在池子里，再从石头里的暗道引到龙嘴；水流下来以后，又顺着卧佛前那条弯弯曲曲的“九曲黄河”流走。",
+        },
+        {
+          name: "圆觉洞里的一束光",
+          body: "走进圆觉洞，洞深 12 米。洞口上方开了一扇天窗，一束光直直照进洞中央，那里跪着一尊低头合十的菩萨，面对三尊佛；两边石壁上坐着十二尊菩萨，衣裳刻得像丝绸一样软。洞里安静下来时，有时能听见滴答声：石缝里渗出的水，从一条石龙的嘴里滴进下方老僧捧着的钵里。",
+        },
+        {
+          name: "北山的数珠手观音",
+          body: "到了北山，找到编号 125 的那尊观音：个子不大，双手交叉在腹前，握着一串念珠，薄薄的衣裳贴着身子，飘带像被风吹起，神情似笑非笑。再去 136 号石窟看看。窟口朝西，晴天的下午，阳光斜斜照进来，越过窟中央那座石刻的经柜，落在一尊尊像上，人一走动，光影也跟着变。",
+        },
+      ],
+      time: "从重庆市区开车，单程两个小时左右。宝顶山的石刻留两三个小时，想看景区里的大足石刻博物馆就再多留些；北山一到两个小时。两处都去，正好一整天。",
+      when: "春秋两季最舒服。石刻都在露天的崖壁上，重庆的夏天又闷又热，七八月要早点出发。能挑平日就挑平日；五一、国庆长假尽量避开，那几天人最多。崖壁偶尔会有局部在做保护修缮，出发前我们会帮你确认。",
+      pair: "上午看宝顶山，中午回大足城里吃饭，下午去北山，两处开车相距二三十分钟。要坐长江游轮的话，大足正好放在登船那天：白天看石刻，晚上回重庆上船。",
+      skip: "来重庆只有两三天、又是冲着城市来的，就别去了：大足要花掉一整天，光路上就四个小时左右。这趟本来就去乐山、只想看一尊大佛的，乐山那一眼更震撼；大足适合爱凑近细看的人。对雕塑实在提不起兴趣的，为它在路上花一天并不划算。",
+      faq: [
+        {
+          question: "大足石刻值得去吗？",
+          answer: "值得，尤其是喜欢艺术、爱听故事的人。这些石刻凿于 9 到 13 世纪，崖壁上既有 31 米长的卧佛，也有农夫、醉汉、拉扯孩子的父母。1999 年列入世界遗产时，联合国教科文组织特别提到，它让人看到了当时中国人的日常生活。从重庆出发留一整天，宝顶山看两三个小时。",
+        },
+        {
+          question: "宝顶山和北山，去哪个？",
+          answer: "只能去一处，就去宝顶山：千手观音、卧佛都在这里，五百多米长的山湾刻满了石像。喜欢雕塑的，再加北山：开凿比宝顶山早将近三百年，人更少，精美的观音像一个挨一个。两处开车相距二三十分钟，门票分开买。",
+        },
+        {
+          question: "从重庆去大足石刻能当天来回吗？",
+          answer: "能。开车单程两个小时左右，一天正好。宝顶山看两三个小时，两处都想看，就再给北山一到两个小时。早点出发，一来一回光路上就要四个小时左右。",
+        },
+        {
+          question: "大足石刻和乐山大佛，选哪个？",
+          answer: "想要一眼的震撼，选乐山：一尊 71 米高的大佛坐在江边，从成都出发玩一天。想看细节、看故事，选大足：成千上万的石像都能凑近了看，从重庆出发玩一天。两处都有时间，就是截然不同的两天。",
+        },
+        {
+          question: "什么时候去大足石刻最好？",
+          answer: "春秋两季最舒服，大约是三到五月和九到十一月。七八月露天的崖壁上又闷又热，最好一早就去。尽量避开五一和国庆长假，能挑平日就挑平日。",
+        },
+      ],
+    },
+    ko: {
+      description: "충칭 대족석각: 금빛 손 830개가 절벽에 공작 꼬리처럼 펼쳐지고 31m 와불이 바위 속에 반쯤 잠겨 있습니다. 보정산과 북산, 관람 시간까지.",
+      why: [
+        "보정산의 대불만(大佛灣)은 말발굽 모양의 골짜기입니다. 들어서면 500m 남짓한 절벽에 장면이 하나씩 이어 새겨져 있어, 돌로 만든 그림책 같습니다. 높이 7m쯤 되는 석상 세 구가 몸을 앞으로 기울여 내려다봅니다. 그중 하나는 사람 키만 한 돌탑을 손에 받쳐 들고 있는데, 팔뚝에서 무릎까지 비스듬히 늘어진 옷자락이 그 무게를 떠받칩니다. 모퉁이를 돌면 금빛 천수관음이 나타납니다. 손 830개가 공작이 꼬리를 펼치듯 바위 위에 퍼져 있습니다. 더 가면 길이 31m의 석가열반상, 곧 와불이 옆으로 누워 있습니다. 눈은 지그시 감았고, 무릎 아래는 절벽 속으로 사라집니다. 일찍이 이곳을 조사한 사람들은 ‘머리가 집채만 하다’고 적었습니다.",
+        "그림책처럼 읽히는 것은 처음부터 한 권의 책처럼 기획했기 때문입니다. 1170년대부터 이 고장 승려 조지봉(趙智鳳)이 70여 년에 걸쳐 골짜기 전체를 백성을 위한 하나의 설법으로 새기게 했고, 장면마다 글을 곁들였으며 같은 주제는 한 번도 되풀이하지 않았습니다. 그래서 이곳에는 평범한 삶이 가득합니다. 부모의 은혜를 열 장면에 담은 『부모은중경』 이야기는 정조가 화성 용주사에 그림을 곁들인 경판을 새기게 했을 만큼 한국에도 익숙합니다. 농가 아낙이 닭장 뚜껑을 열자 닭들이 앞다퉈 뛰쳐나오고 두 마리가 지렁이를 두고 다투는 장면, 술에 취한 남녀, 소 치는 목동도 있습니다. 바위에는 ‘삼천 가지 율령 가운데 불효의 죄가 으뜸’이라고 새겨져 있습니다. 여러 장면에 나오는 곱슬머리 승려도 찾아보세요. 학자들은 대개 조지봉 자신으로 봅니다.",
+        "대족에는 주요 석각지가 다섯 곳 있고, 꼭 볼 곳은 두 곳입니다. 큰 장면은 보정산에 모여 있으니, 한 곳만 간다면 여기입니다. 북산은 대족 시내 바로 북쪽 산에 있으며, 보정산보다 300년 가까이 앞서 새기기 시작했고 더 조용합니다. 작고 정교한 석굴이 벌집처럼 절벽에 빼곡하고, 관음상이 특히 많아 ‘중국 관음상의 전시관’이라 불립니다. 낙산대불이 거대한 불상 하나로 압도하는 곳이라면, 대족은 천천히 걸으며 얼굴 하나하나를 가까이 들여다보는 곳입니다.",
+      ],
+      highlights: [
+        {
+          name: "아기 부처를 씻기는 샘물",
+          body: "와불 곁 절벽에서 용머리 아홉 개가 튀어나와 있습니다. 가운데 용의 입에서는 일 년 내내 물이 흘러내려, 그 아래 두 손을 모으고 앉은 아기 부처를 씻깁니다. 태어나 처음 하는 목욕입니다. 석공들은 산의 빗물을 못에 모았다가 바위 속 숨은 물길로 용의 입까지 끌어왔습니다. 흘러내린 물은 다시 와불 앞의 구불구불한 도랑을 따라 빠져나갑니다.",
+        },
+        {
+          name: "원각동의 한 줄기 빛",
+          body: "원각동은 깊이 12m의 굴입니다. 입구 위에 낸 창으로 햇빛이 곧장 굴 한가운데로 들어오고, 그 자리에 고개를 숙이고 두 손을 모은 보살이 부처 세 분 앞에 무릎을 꿇고 있습니다. 양쪽 벽에는 보살 열둘이 앉아 있는데, 옷자락이 비단처럼 부드럽게 새겨져 있습니다. 굴 안이 조용해지면 물방울 소리가 들릴 때가 있습니다. 바위틈에서 스민 물이 돌로 새긴 용의 입에서 노승이 받쳐 든 그릇으로 똑똑 떨어지는 소리입니다.",
+        },
+        {
+          name: "북산의 염주 든 관음",
+          body: "북산에서는 125번 관음상을 찾아보세요. 아담한 크기에, 두 손을 배 앞에서 엇갈려 염주를 쥐고 있습니다. 얇은 옷이 몸에 착 붙고 옷자락은 바람에 날리는 듯하며, 얼굴은 웃을 듯 말 듯합니다. 이어서 136번 굴에도 들러 보세요. 서쪽을 향한 굴이라 맑은 날 오후에는 햇살이 비스듬히 들어와, 한가운데 돌로 새긴 경전 책장을 지나 조각들 위로 떨어집니다. 걸음을 옮길 때마다 빛과 그림자가 달라집니다.",
+        },
+      ],
+      time: "충칭 시내에서 차로 편도 2시간쯤 걸립니다. 보정산 석각에는 2~3시간, 같은 경내의 대족석각박물관까지 보려면 더 잡고, 북산에는 1~2시간을 쓰세요. 두 곳을 함께 보면 하루가 꽉 찹니다.",
+      when: "봄과 가을이 쾌적합니다. 석각은 모두 야외 절벽에 있고 충칭의 여름은 덥고 습하니, 7~8월에는 일찍 출발하세요. 가능하면 평일에 가고, 노동절과 국경절 연휴는 가장 붐비니 피하세요. 보존 작업으로 절벽 일부가 가려질 때가 있으니, 출발 전에 확인해 드립니다.",
+      pair: "오전에 보정산을 보고 대족 시내에서 점심을 먹은 뒤 오후에 북산으로 가세요. 두 곳은 차로 20~30분 거리입니다. 장강 크루즈를 탄다면 승선하는 날에 대족을 넣기 좋습니다. 낮에는 석각을 보고, 저녁에 충칭으로 돌아와 배에 오르면 됩니다.",
+      skip: "도시를 보러 충칭에 왔고 일정이 2~3일뿐이라면 도심에 쓰세요. 대족은 하루를 통째로 쓰고, 그중 4시간쯤은 차 안입니다. 여행 경로에 이미 낙산이 있고 거대한 불상 하나를 보고 싶다면, 한눈에 압도되는 쪽은 낙산대불입니다. 대족은 가까이 들여다보기를 좋아하는 사람에게 맞습니다. 조각에 큰 관심이 없다면 하루를 길에서 보낼 만한 곳은 아닙니다.",
+      faq: [
+        {
+          question: "대족석각은 가 볼 만한가요?",
+          answer: "네, 예술이나 옛이야기를 좋아한다면 가 볼 만합니다. 9~13세기에 새긴 절벽에는 31m 와불과 함께 농부, 술꾼, 아이를 키우는 부모가 있습니다. 1999년 세계유산에 올릴 때 유네스코는 이 석각이 당시 중국인의 일상을 비춰 준다는 점을 특히 짚었습니다. 충칭에서 하루를 잡고, 보정산에서 2~3시간을 보내세요.",
+        },
+        {
+          question: "보정산과 북산 중 어디를 가야 하나요?",
+          answer: "한 곳만 간다면 보정산입니다. 천수관음과 와불이 모두 여기 있고, 500m 남짓한 골짜기 전체가 조각입니다. 조각을 좋아한다면 북산도 더하세요. 보정산보다 300년 가까이 앞서 새기기 시작한 곳이고, 사람이 적으며, 정교한 관음상이 빼곡합니다. 두 곳은 차로 20~30분 거리이고 입장권은 따로 삽니다.",
+        },
+        {
+          question: "충칭에서 대족석각까지 당일치기가 가능한가요?",
+          answer: "네, 차로 편도 2시간쯤이라 하루에 다녀올 수 있습니다. 보정산에서 2~3시간을 보내고, 두 곳 다 보려면 북산에 1~2시간을 더하세요. 오가는 길에만 4시간쯤 걸리니 일찍 출발하세요.",
+        },
+        {
+          question: "대족석각과 낙산대불 중 어디가 좋을까요?",
+          answer: "한눈에 압도되는 경험을 원한다면 낙산입니다. 강가에 높이 71m의 불상 하나가 앉아 있고, 청두에서 하루 일정입니다. 섬세한 조각과 이야기를 원한다면 대족입니다. 수많은 조각을 가까이에서 볼 수 있고, 충칭에서 하루 일정입니다. 둘 다 갈 시간이 있다면 전혀 다른 이틀이 됩니다.",
+        },
+        {
+          question: "대족석각은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을, 대략 3~5월과 9~11월이 가장 쾌적합니다. 7~8월에는 야외 절벽이 덥고 습하니 이른 시간에 둘러보세요. 노동절과 국경절 연휴는 피하고, 가능하면 평일에 가세요.",
+        },
+      ],
+    },
+  },
 };
 
 export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
@@ -3055,6 +3347,30 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Hongyadong", "Hongya Cave", "Hongya Dong", "洪崖洞", "洪崖洞民俗风貌区", "重庆洪崖洞", "홍야동", "훙야둥", "홍애동"],
     sameAs: ["https://en.wikipedia.org/wiki/Hongya_Cave", "https://www.wikidata.org/wiki/Q32171478"],
+  },
+  wulong: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: South China Karst (Wulong Karst)", url: "https://whc.unesco.org/en/list/1248/" },
+      { title: "Wulong District Commission of Culture and Tourism: 武隆天生三桥景区 (the Three Natural Bridges)", url: "https://www.cqwl.gov.cn/bmjz_sites/bm/wlw/zwxx_98939/jqjd/jdjd_1/202007/t20200702_7634529.html" },
+      { title: "Wulong District Commission of Culture and Tourism: 细看天福官驿 (Tianfu Post)", url: "https://cqwl.gov.cn/bmjz_sites/bm/wlw/zwxx_98939/jqjd/ywtj/202112/t20211210_10141671.html" },
+      { title: "Chongqing government: Wulong Karst tourist area, Fairy Mountain and Furong Cave (2026)", url: "https://www.cq.gov.cn/zjcq/cycq/zmjd/zqaaaaajjq/202606/t20260604_15729062.html" },
+      { title: "Chongqing government: Wulong Karst, from hidden valley to World Heritage (2025)", url: "https://www.cq.gov.cn/ywdt/zwhd/qxdt/202507/t20250703_14772857.html" },
+    ],
+    alternateName: ["Three Natural Bridges", "Wulong Karst", "Wulong Three Natural Bridges", "Wulong Tiankeng", "天生三桥", "武隆天生三桥", "武隆天坑", "武隆喀斯特", "천생삼교", "우롱 천생삼교", "Tiansheng Sanqiao"],
+    sameAs: ["https://en.wikipedia.org/wiki/Three_Natural_Bridges", "https://www.wikidata.org/wiki/Q7797661", "https://whc.unesco.org/en/list/1248/"],
+  },
+  "dazu-rock-carvings": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Dazu Rock Carvings", url: "https://whc.unesco.org/en/list/912/" },
+      { title: "Dazu District government: Zhao Zhifeng and the Baodingshan carvings (2022)", url: "https://www.dazu.gov.cn/rsdz/dzwh/dzsk/202202/t20220225_10434462.html" },
+      { title: "Dazu District government: the reclining Buddha and the Nine Dragons (2023)", url: "https://www.dazu.gov.cn/rsdz/dzwh/dzsk/202303/t20230321_11791450.html" },
+      { title: "Xinhua: the Thousand-Hand Guanyin restored (2021)", url: "https://www.xinhuanet.com/2021-04/12/c_1127321754.htm" },
+      { title: "Chongqing Municipal Commission of Culture and Tourism Development: 北山摩崖造像 (Beishan)", url: "https://whlyw.cq.gov.cn/zjwl/yzq/cqwlzy/zqwwzy/202405/t20240507_13182671.html" },
+    ],
+    alternateName: ["Dazu Rock Carvings", "Dazu Grottoes", "Baodingshan Rock Carvings", "Beishan Rock Carvings", "大足石刻", "宝顶山石刻", "北山石刻", "대족석각", "다쭈 석각", "Dazu Shike"],
+    sameAs: ["https://en.wikipedia.org/wiki/Dazu_Rock_Carvings", "https://www.wikidata.org/wiki/Q651278", "https://whc.unesco.org/en/list/912/"],
   },
 };
 
