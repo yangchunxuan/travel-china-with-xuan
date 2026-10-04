@@ -1222,6 +1222,590 @@ export const sightStories: Stories = {
       ],
     },
   },
+  "the-bund": {
+    en: {
+      description: "At dusk on Shanghai's Bund, century-old stone banks and Pudong's glass towers light up on opposite sides of the river. When to come, and where to stand.",
+      why: [
+        "Come as the light fades and stand on the raised walk above the river. Behind you runs a row of grand stone banks and hotels, with domes, columns and a clock tower. Across the Huangpu, the glass towers of Pudong rise from the far bank. Then the lights come on along both shores. The old stone fronts turn gold, the towers glow and flicker, and lit-up boats slide past below.",
+        "Most of these buildings went up about a century ago, when foreigners ran this part of Shanghai. This riverfront was where their banks, trading firms and clubs showed off to every ship coming up the river. The far bank was another world. Until the government opened Pudong for development in 1990, Lujiazui was crowded ferry landings, narrow lanes and makeshift houses, and every tower you see there has gone up since. So you stand between two skylines, one about a hundred years old and the other little more than thirty.",
+        "It is free, with no gate to pass, so come twice if you can, once by day and once after dark. Each bank is best seen from the other. From the Bund you look across at Pudong's towers; to see the old stone row itself lit up, cross the river and look back from the Pudong riverside. On a first evening, walk the Bund south from Waibaidu Bridge past the old banks and hotels. Then take the Metro one stop under the river from East Nanjing Road for the view back.",
+      ],
+      highlights: [
+        {
+          name: "Look along the river from Waibaidu Bridge",
+          body: "At the north end, an old steel bridge crosses Suzhou Creek just before it flows into the Huangpu. Stop in the middle and look south: the whole row of old buildings curves away along the river, with Pudong's towers rising on the left.",
+        },
+        {
+          name: "Look up inside an old bank",
+          body: "Inside No. 12, the former HSBC building, look up at the dome of the eight-sided entrance hall. Its mosaics of the zodiac and of eight cities where the bank had branches, from London to Calcutta, were plastered over in the 1950s and uncovered only in the late 1990s. Visits are free but have to be booked ahead through the bank, so check the current arrangement before you go.",
+        },
+        {
+          name: "Cross the river by ferry",
+          body: "From the Jinling Road East pier at the south end, the public ferry crosses the Huangpu in a few minutes, alongside commuters. Turn round on deck and the whole Bund spreads out behind you. It lands at Dongchang Road on the Pudong side.",
+        },
+      ],
+      time: "An hour or two to walk the Bund from end to end and back, longer if you wait for the lights. Crossing to Pudong for the view back adds about an hour.",
+      when: "Arrive before dusk and stay until it is fully dark. The city switches the lights on and off on a fixed schedule rather than at sunset, and keeps them on longer on some public holidays, so check the time for your date. From Friday to Sunday and on public holidays, the lights may add colour and slow movement. For a quiet walk, come in the hour after sunrise, when the sun comes up behind the Pudong towers. Avoid public holiday evenings if you can. On the first day of the October holiday in 2024, more than 460,000 people came and police ran one-way routes.",
+      pair: "Nanjing Road East, Shanghai's best-known shopping street, runs inland from the Bund towards People's Square. For Pudong, take Metro Line 2 one stop from East Nanjing Road to Lujiazui; the Shanghai Tower is about ten minutes' walk from there. Yu Garden and the old town are a short taxi ride south.",
+      skip: "If you want the Shanghai of lanes and neighbourhoods, the Bund is the city's grand front, not where people lived. Give the time to the old lanes of the former French Concession instead. If crowds wear you out, skip the evening and come at sunrise. Short of time? A Huangpu river cruise shows you both banks in one go.",
+      faq: [
+        {
+          question: "Is the Bund worth visiting?",
+          answer: "Yes, especially from dusk into dark. On the riverside walk you have a row of century-old stone banks behind you and Pudong's glass towers across the water, and then both banks light up. It costs nothing. Give it an hour or two, and walk the full 1.5 kilometres from Waibaidu Bridge if you can.",
+        },
+        {
+          question: "What is the best time to visit the Bund?",
+          answer: "From just before dusk until fully dark, for the lights. For a quiet walk, come in the hour after sunrise, when the sun rises behind Pudong. The lights follow a fixed city schedule rather than sunset, so check the time for your date. Avoid holiday evenings if you can: more than 460,000 people came on the first day of the October holiday in 2024.",
+        },
+        {
+          question: "Is the Bund free?",
+          answer: "Yes. The Bund is an open riverside walk with no ticket and no gate, by day or night. You pay only for extras such as a river cruise or the public ferry to Pudong. Some old bank halls can be visited free too, some with a sign-in at the door and some by booking; the arrangements change, so check before you go.",
+        },
+        {
+          question: "When do the Bund lights come on?",
+          answer: "In the early evening, at a time set by the city rather than at sunset. The Bund and Lujiazui light up together and switch off later the same evening, and on some public holidays they stay on longer. From Friday to Sunday and on public holidays, the display may add colour and slow movement. The times change with the season, so check them for your date and be in place a little early.",
+        },
+        {
+          question: "Where is the best view of the Bund?",
+          answer: "From the opposite bank, because each side is best seen from the other. From the Bund you see Pudong's towers; from the Pudong riverside you see the old stone row lit up. The two are one stop apart on Metro Line 2, or a few minutes by public ferry. For the view along the whole curve, stand on Waibaidu Bridge at the north end.",
+        },
+      ],
+    },
+    zh: {
+      description: "黄昏的上海外滩，江这边的百年石头老楼和对岸浦东的玻璃高楼一起亮灯。什么时候来，站在哪里看。",
+      why: [
+        "天色暗下来时，站到江边比马路高出一截的观景平台上。身后是一整排厚重的石头老楼，银行、饭店，有圆顶，有廊柱，还有钟楼；黄浦江对岸，浦东的玻璃高楼拔地而起。接着，两岸的灯一起亮了。老楼的石墙被照成金黄，对岸的高楼一闪一闪，亮着灯的游船从脚下慢慢开过。",
+        "这些老楼大多建于大约一百年前。那时外滩一带是租界，洋行、银行和俱乐部都把楼修在江边，要让每一条开进黄浦江的船看见它们的气派。对岸当年完全是另一个世界。1990 年浦东开发开放以前，陆家嘴还是挤满人的渡口、窄窄的弄堂和简陋的棚户，你现在看到的每一栋高楼，都是那以后才盖起来的。站在这里，一边是百年的老上海，一边是三十来年长出来的新上海。",
+        "外滩不要门票，也没有大门，能来两次最好，白天一次，天黑后一次。两岸的景，都要站到对面才看得全。在外滩看的是浦东的高楼；想看外滩这排老楼亮灯，得过江到浦东滨江回头看。第一次来的晚上，可以从北头的外白渡桥沿着老楼往南走，再到南京东路站坐一站地铁，从江底过去，回头看一眼。",
+      ],
+      highlights: [
+        {
+          name: "站上外白渡桥",
+          body: "外滩北头，一座老钢桥横跨苏州河，河水在桥下不远处汇入黄浦江。走到桥中间往南看，外滩这排老楼顺着江岸弯过去，左手边就是浦东的高楼。",
+        },
+        {
+          name: "走进老银行，抬头看",
+          body: "外滩 12 号原是汇丰银行大楼，走进八角形的门厅，抬头看穹顶。马赛克拼出十二星座，下面一圈是汇丰当年设有分行的八座城市，从伦敦一直到加尔各答；这些壁画上世纪 50 年代被厚厚的石膏盖住，直到 90 年代末修缮时才重见天日。参观免费，但要提前通过银行预约，出发前先确认当时的安排。",
+        },
+        {
+          name: "坐轮渡过江",
+          body: "从外滩南头的金陵东路渡口上船，跟上下班的本地人一起，几分钟就到对岸。站在甲板上回头，整条外滩在身后铺开。船在浦东的东昌路渡口靠岸。",
+        },
+      ],
+      time: "从头走到尾再走回来，一到两个小时；要等亮灯，就再多留一会儿。过江到浦东回头看，大约再加一个小时。",
+      when: "天黑前到，一直待到天全黑。灯由城市按固定时间开关，不跟着日落走，有些节假日会关得更晚，出发前查一下当天的时间。周五到周日和法定节假日，灯光可能加上彩色、缓缓变化的光。想清清静静走一走，就在日出后一小时内来，太阳正从浦东的高楼后面升起。节假日晚上尽量别来：2024 年国庆第一天，外滩滨水区客流超过 46 万人次，警方实行了单向通行。",
+      pair: "南京东路步行街从外滩往城里一直通到人民广场。去浦东就坐地铁 2 号线，从南京东路站坐一站到陆家嘴，再步行十分钟左右到上海中心。豫园和老城厢在南边，打车很近。",
+      skip: "想看弄堂里过日子的老上海，外滩不是那个地方。它是上海的门面，不是居民区，不如把时间留给原法租界一带的老街。怕挤的话，就别赶晚上，改在日出时来。时间实在紧，坐一趟黄浦江游船，两岸一次都能看到。",
+      faq: [
+        {
+          question: "上海外滩值得去吗？",
+          answer: "值得，尤其是傍晚到天黑这段时间。站在江边，身后是一整排百年石头老楼，对岸是浦东的玻璃高楼，接着两岸一起亮灯。外滩不收门票。留一到两个小时，走得动的话，就从外白渡桥把 1.5 公里走完。",
+        },
+        {
+          question: "什么时候去外滩最好？",
+          answer: "天黑前到、待到天全黑，看亮灯；想清静，就在日出后一小时内来，太阳从浦东那边升起。灯按城市定的时间开关，不跟着日落走，出发前查一下当天的时间。节假日晚上尽量避开，2024 年国庆第一天，外滩滨水区客流超过 46 万人次。",
+        },
+        {
+          question: "外滩要门票吗？",
+          answer: "不要。外滩是一条开放的滨江步道，白天晚上都没有门票，也没有大门。另外花钱的只有游船、过江轮渡这类项目。有些老楼也能免费进去看，有的在门口登记就行，有的要提前预约，安排时常调整，出发前查一下。",
+        },
+        {
+          question: "外滩什么时候亮灯？",
+          answer: "傍晚亮灯，时间由城市统一安排，不跟着日落走。外滩和陆家嘴一起亮，当晚稍晚再一起关，有些节假日会开得更久。周五到周日和法定节假日，灯光可能加上彩色、缓缓变化的光。具体时间随季节调整，出发前查一下当天的安排，早一点到。",
+        },
+        {
+          question: "外滩夜景在哪里看最好？",
+          answer: "在对岸看。两岸的景，都要站到对面才看得全：在外滩看浦东的高楼，到浦东滨江看外滩老楼亮灯。两边坐地铁 2 号线只隔一站，坐轮渡也就几分钟。想看整条外滩的弧线，就站到北头的外白渡桥上。",
+        },
+      ],
+    },
+    ko: {
+      description: "해 질 녘 상하이 와이탄에서는 강을 사이에 두고 백 년 된 석조 건물과 푸둥의 유리 빌딩에 함께 불이 켜집니다. 언제 와서 어디에 서면 좋을지.",
+      why: [
+        "해가 질 무렵, 도로보다 높이 올린 강변 산책로에 서 보세요. 등 뒤로는 돔과 기둥, 시계탑을 얹은 묵직한 석조 은행과 호텔이 줄지어 있고, 황푸강 건너편에는 푸둥의 유리 빌딩들이 솟아 있습니다. 이윽고 양쪽 강변에 한꺼번에 불이 들어옵니다. 오래된 석조 건물은 금빛으로 물들고, 건너편 빌딩들은 반짝이며, 불 밝힌 유람선이 발아래로 천천히 지나갑니다.",
+        "주윤발이 주연한 홍콩 드라마 ‘상해탄’의 영어 제목이 바로 이곳의 이름, ‘The Bund’입니다. 이 건물들은 대부분 100년쯤 전, 외국인들이 이 일대를 다스리던 조계 시절에 지어졌습니다. 외국 은행과 무역회사, 사교 클럽이 황푸강을 거슬러 오는 배마다 위세를 보여 주려고 이 강변에 세운 것입니다. 강 건너는 전혀 다른 세상이었습니다. 1990년 푸둥 개발이 시작되기 전까지 루자쭈이는 붐비는 나루터와 좁은 골목, 허름한 판잣집뿐이었고, 지금 보이는 빌딩은 모두 그 뒤에 올라갔습니다. 한쪽은 백 년 된 스카이라인, 다른 쪽은 서른 해 남짓 된 스카이라인입니다.",
+        "입장료도 문도 없으니, 할 수 있다면 낮에 한 번, 해가 진 뒤에 한 번 오세요. 양쪽 강변은 서로 맞은편에서 봐야 제대로 보입니다. 와이탄에서는 푸둥의 빌딩을 바라보고, 불 켜진 와이탄의 석조 건물을 보려면 강을 건너 푸둥 강변에서 돌아봐야 합니다. 처음 오는 저녁이라면 북쪽 끝 와이바이두교에서 옛 건물들을 따라 남쪽으로 걸은 뒤, 난징둥루역에서 지하철로 한 정거장 강 밑을 건너 반대편에서 바라보세요.",
+      ],
+      highlights: [
+        {
+          name: "와이바이두교에서 강 따라 바라보기",
+          body: "와이탄 북쪽 끝, 쑤저우강이 황푸강으로 흘러들기 직전에 오래된 철교가 놓여 있습니다. 다리 가운데서 남쪽을 보면 옛 건물들이 강을 따라 휘어지며 늘어서 있고, 왼편으로 푸둥의 빌딩들이 솟아 있습니다.",
+        },
+        {
+          name: "옛 은행 천장 올려다보기",
+          body: "와이탄 12호, 옛 HSBC(홍콩상하이은행) 건물의 팔각형 홀에 들어서서 천장 돔을 올려다보세요. 열두 별자리와, 이 은행이 지점을 두었던 런던부터 캘커타(지금의 콜카타)까지 여덟 도시를 그린 모자이크는 1950년대에 두꺼운 회반죽으로 덮였다가 1990년대 말 보수 공사 때에야 다시 드러났습니다. 관람은 무료지만 은행을 통해 미리 예약해야 하니, 출발 전에 현재 운영 방식을 확인하세요.",
+        },
+        {
+          name: "페리로 황푸강 건너기",
+          body: "와이탄 남쪽 진링둥루 선착장에서 공공 페리를 타면 출퇴근하는 현지 사람들과 함께 몇 분 만에 강을 건넙니다. 갑판에서 뒤돌아보면 와이탄 전체가 등 뒤로 펼쳐집니다. 배는 푸둥 쪽 둥창루 선착장에 닿습니다.",
+        },
+      ],
+      time: "끝에서 끝까지 걸었다가 돌아오는 데 1~2시간, 조명을 기다린다면 조금 더 잡으세요. 강을 건너 푸둥에서 돌아보려면 한 시간쯤 더 듭니다.",
+      when: "해 지기 전에 도착해 완전히 어두워질 때까지 머무르세요. 조명은 일몰이 아니라 시에서 정한 시간표에 따라 켜지고 꺼지며, 공휴일에는 더 늦게까지 켜 둘 때도 있으니 당일 시간을 확인하세요. 금요일부터 일요일까지와 공휴일에는 조명에 색이 더해지고 빛이 천천히 움직이기도 합니다. 한적하게 걷고 싶다면 해 뜬 뒤 한 시간 안에 오세요. 푸둥 빌딩들 뒤로 해가 떠오릅니다. 연휴 저녁은 되도록 피하세요. 2024년 국경절 연휴 첫날에는 46만 명이 넘게 몰려 경찰이 한 방향 통행을 실시했습니다.",
+      pair: "난징둥루 보행가는 와이탄에서 안쪽으로 인민광장 쪽까지 이어집니다. 푸둥으로 가려면 지하철 2호선을 타고 난징둥루역에서 한 정거장 가면 루자쭈이역이고, 거기서 상하이 타워까지 걸어서 10분쯤입니다. 예원과 옛 성곽 안 마을은 남쪽으로 택시를 타면 금방입니다.",
+      skip: "골목 속 상하이 사람들의 삶을 보고 싶다면 와이탄은 맞지 않습니다. 이곳은 사람이 살던 동네가 아니라 도시의 얼굴이니, 그 시간은 옛 프랑스 조계 일대의 골목에 쓰세요. 인파가 힘들다면 저녁 대신 해 뜰 무렵에 오세요. 시간이 정말 없다면 황푸강 유람선 한 번으로 양쪽 강변을 모두 볼 수 있습니다.",
+      faq: [
+        {
+          question: "상하이 와이탄은 가 볼 만한가요?",
+          answer: "네, 특히 해 질 녘부터 밤까지 가 볼 만합니다. 강변 산책로에 서면 등 뒤로 백 년 된 석조 건물이, 강 건너로 푸둥의 유리 빌딩이 보이고, 이어 양쪽 강변에 불이 들어옵니다. 입장료는 없습니다. 1~2시간을 잡고, 힘이 남으면 와이바이두교부터 1.5km를 끝까지 걸어 보세요.",
+        },
+        {
+          question: "와이탄은 언제 가는 게 가장 좋나요?",
+          answer: "해 지기 직전에 도착해 완전히 어두워질 때까지 머무르면 조명을 볼 수 있습니다. 한적하게 걷고 싶다면 해 뜬 뒤 한 시간 안에 오세요. 푸둥 쪽에서 해가 떠오릅니다. 조명은 일몰이 아니라 시의 시간표를 따르니 당일 시간을 확인하세요. 연휴 저녁은 되도록 피하세요. 2024년 국경절 연휴 첫날에는 46만 명이 넘게 다녀갔습니다.",
+        },
+        {
+          question: "와이탄은 입장료가 있나요?",
+          answer: "없습니다. 와이탄은 입장권도 문도 없는 열린 강변 산책로로, 낮이든 밤이든 자유롭게 걸을 수 있습니다. 유람선이나 푸둥으로 건너가는 공공 페리 같은 것만 따로 요금을 냅니다. 일부 옛 은행 건물도 무료로 들어가 볼 수 있습니다. 입구에서 이름만 적으면 되는 곳도 있고 미리 예약해야 하는 곳도 있으며, 운영 방식이 바뀌기도 하니 가기 전에 확인하세요.",
+        },
+        {
+          question: "와이탄 야경 조명은 언제 켜지나요?",
+          answer: "이른 저녁, 일몰이 아니라 시에서 정한 시각에 켜집니다. 와이탄과 루자쭈이가 함께 불을 밝혔다가 그날 밤 함께 꺼지고, 일부 공휴일에는 더 오래 켜 둡니다. 금요일부터 일요일까지와 공휴일에는 조명에 색이 더해지고 빛이 천천히 움직이기도 합니다. 계절마다 시간이 바뀌니 당일 시간을 확인하고 조금 일찍 자리를 잡으세요.",
+        },
+        {
+          question: "와이탄 야경은 어디서 봐야 가장 멋진가요?",
+          answer: "맞은편 강변입니다. 양쪽 풍경은 서로 건너편에서 봐야 제대로 보입니다. 와이탄에서는 푸둥의 빌딩을, 푸둥 강변에서는 불 켜진 와이탄의 석조 건물을 봅니다. 두 곳은 지하철 2호선으로 한 정거장, 공공 페리로 몇 분 거리입니다. 와이탄 전체가 휘어지는 모습을 보려면 북쪽 끝 와이바이두교 위에 서 보세요.",
+        },
+      ],
+    },
+  },
+  "shanghai-tower": {
+    en: {
+      description: "From Shanghai Tower's 118th-floor deck, 546 metres up, you look down on Pudong's other skyscrapers. Which day to go up, and which deck to choose.",
+      why: [
+        "The lift doors close in the basement, and less than a minute later they open on the 118th floor, 546 metres up. Walk to the glass and Shanghai lies spread out below you. Skyscrapers that made you crane your neck in the street now sit beneath your feet. The Huangpu loops round the Lujiazui bend and the Bund shrinks to a line of small stone fronts on the far bank. Beyond, the city runs on in every direction as far as you can see.",
+        "Take a good look at the tower from outside before you go up. Its glass skin turns about a third of a circle from bottom to top, so the whole building seems to twist as it climbs. The twist also eases the push of strong winds on it. Chinese internet users call the three tall neighbours the kitchen set. The Jin Mao is the syringe, the World Financial Center the bottle opener, and this twisted one the egg whisk. Learn the names in the street, then find all three again from the top.",
+        "Lujiazui has four towers you can go up. Shanghai Tower is the highest, and from it the others look small. The World Financial Center's deck, on its 100th floor at 474 metres, has see-through glass strips in the floor to stand on. The Jin Mao's deck, on the 88th floor at about 340 metres, is lower still. The Oriental Pearl, the TV tower by the river, works better as something to photograph from the Bund. If you go up only one, choose by the sky. On a clear day go highest; on a murky one, skip the decks and look at the towers from the river.",
+      ],
+      highlights: [
+        {
+          name: "The 55-second ride",
+          body: "The ride from the basement to the 118th floor takes about 55 seconds. Stand still and you feel the push as the lift speeds away, and your ears may pop on the way up.",
+        },
+        {
+          name: "Look down on the neighbours",
+          body: "Find the World Financial Center, with the open slot at its top that earned it the bottle-opener name, and the stepped spire of the Jin Mao, both well below you. Further down, by the river, are the pink spheres of the Oriental Pearl Tower.",
+        },
+        {
+          name: "Stay from sunset into dark",
+          body: "Come up about an hour before sunset and find a place at the west-facing glass. The sun goes down over Puxi, the older half of the city across the river, and then the lights come on along both banks below you.",
+        },
+      ],
+      time: "About an hour and a half, including security, the ride up and time at the glass. Allow longer if you stay from sunset into dark.",
+      when: "Pick the clearest day of your stay and check the visibility that morning: in low cloud or haze you may see little but grey. To see the city by day and by night in one visit, arrive about an hour before sunset. Weekdays are calmer than weekends and public holidays.",
+      pair: "Go up first, then cross to the Bund after dark, so you see Pudong from above and then from the far bank. Metro Line 2 runs one stop from Lujiazui to East Nanjing Road. Three stops the other way, at Shanghai Science and Technology Museum station, is Shanghai Museum East, so the museum by day and the tower at sunset make one easy day.",
+      skip: "If heights or packed lifts bother you, stay on the ground and look at the towers from the Bund, which costs nothing. On a hazy or rainy day, save your money, because you will see little. And if you have already been up one of Lujiazui's towers, a second brings less of a thrill.",
+      faq: [
+        {
+          question: "Is the Shanghai Tower observation deck worth it?",
+          answer: "Yes, on a clear day. From the 118th floor, 546 metres up, even Pudong's other skyscrapers sit below you, and the river and the city spread out on every side. The lift takes about 55 seconds. On a hazy or rainy day, skip it and look at the towers from the Bund instead.",
+        },
+        {
+          question: "Shanghai Tower or the World Financial Center: which deck should I choose?",
+          answer: "Choose Shanghai Tower for the highest view: its 118th-floor deck is 546 metres up and looks down on the others. Choose the World Financial Center if you want to stand on glass: its 100th-floor deck, at 474 metres, has see-through strips in the floor. They stand side by side, so one deck is enough for most visitors.",
+        },
+        {
+          question: "When is the best time to go up the Shanghai Tower?",
+          answer: "On the clearest day of your stay, arriving about an hour before sunset, so you see the city in daylight and then lit up. Check the visibility that morning, because low cloud or haze can leave you looking at grey. Weekdays are calmer than weekends and public holidays.",
+        },
+        {
+          question: "How long do you need at the Shanghai Tower?",
+          answer: "About an hour and a half, including security, the ride up and time at the glass, and longer if you wait from sunset into dark. The Bund is one Metro stop away on Line 2, so the tower and an evening walk there fit easily into one afternoon and evening.",
+        },
+        {
+          question: "Do I need to book Shanghai Tower tickets in advance?",
+          answer: "Booking ahead is wise, especially for a sunset visit or a public holiday. Tickets are sold in each visitor's own name, so foreign visitors use their passport. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+      ],
+    },
+    zh: {
+      description: "上海中心大厦 118 层观光厅离地 546 米，连陆家嘴其他摩天楼都在脚下。什么时候上去，选哪个观光厅。",
+      why: [
+        "电梯门在地下关上，不到一分钟，就在 118 层打开，这里离地 546 米。走到玻璃前，整个上海铺在脚下；在街上要仰着头看的那些摩天楼，这会儿都矮了一截。黄浦江绕着陆家嘴拐了个大弯，对岸的外滩缩成一排小小的石头房子，城市朝四面八方铺开，一眼望不到头。",
+        "上去之前，先在外面抬头好好看看它。整栋楼的玻璃外墙从下到上转了大约三分之一圈，看上去像是一边往上长、一边拧着身子；这一拧，也让大风推在楼上的力小了不少。网友给陆家嘴挨在一起的三栋高楼起了个外号，叫“厨房三件套”：金茂大厦是注射器，环球金融中心是开瓶器，拧着身子的上海中心是打蛋器。在街上认准了它们，上到顶层再一栋栋找出来。",
+        "陆家嘴能登高看风景的楼和塔一共有四座。上海中心最高，站在上面，其他几座都在脚下。环球金融中心的观光厅在 100 层，离地 474 米，地上有几条透明玻璃，可以站上去往下看。金茂大厦的观光厅在 88 层，离地约 340 米，又低一些；江边的东方明珠电视塔，更适合在外滩当背景拍照。只上一个的话，看天挑。天晴就去最高的；天灰蒙蒙的就别上了，到江边看楼更值。",
+      ],
+      highlights: [
+        {
+          name: "55 秒直上 118 层",
+          body: "从地下到 118 层，大约 55 秒。站稳了，能感觉到电梯起步时往上一送，耳朵也可能有点发胀。",
+        },
+        {
+          name: "低头找邻居",
+          body: "找到环球金融中心顶上那个镂空的“开瓶器”口，再找金茂大厦一层层收上去的尖顶，两栋都在你脚下。再往下，江边是东方明珠那几颗粉色的圆球。",
+        },
+        {
+          name: "从日落待到天黑",
+          body: "日落前一小时左右上来，在朝西的玻璃前找个位置。太阳落到江对岸的浦西后面，接着，脚下两岸的灯亮了起来。",
+        },
+      ],
+      time: "连安检、坐电梯和在观光厅里看，一个半小时左右；想从日落待到天黑，就再多留些时间。",
+      when: "挑在上海那几天里最晴的一天，当天早上看一下能见度，碰上低云或雾霾，可能只看得到一片灰。想一次看到白天和夜景，日落前一小时左右到。平日比周末和节假日人少。",
+      pair: "先上楼，天黑后再去外滩，从高处看完浦东，再从对岸看一遍。地铁 2 号线从陆家嘴坐一站就到南京东路。往另一个方向坐三站是上海科技馆站，上海博物馆东馆就在旁边，白天看博物馆、傍晚上上海中心，正好排成一天。",
+      skip: "怕高或者怕挤电梯的人，就别上去了，在外滩看陆家嘴的楼，不花钱也好看。阴天下雨也不值得花这个钱，上去看不到什么。已经上过陆家嘴别的高楼，再上一栋，新鲜感就不多了。",
+      faq: [
+        {
+          question: "上海中心观光厅值得上去吗？",
+          answer: "值得，前提是天晴。118 层离地 546 米，连浦东其他摩天楼都在脚下，江和整座城市在四周铺开。电梯大约 55 秒到顶。碰上雾霾或下雨，就别上去了，改去外滩看楼。",
+        },
+        {
+          question: "上海中心和环球金融中心，选哪个观光厅？",
+          answer: "想看最高的风景，选上海中心：118 层观光厅离地 546 米，能俯瞰周围的高楼。想站在玻璃上往下看，选环球金融中心：100 层观光厅离地 474 米，地上有透明玻璃。两栋楼挨在一起，大多数人上一个就够了。",
+        },
+        {
+          question: "什么时候上上海中心最好？",
+          answer: "挑在上海最晴的一天，日落前一小时左右到，先看白天的城市，再看亮灯。当天早上查一下能见度，碰上低云或雾霾，可能只看得到一片灰。平日比周末和节假日人少。",
+        },
+        {
+          question: "上海中心观光要多长时间？",
+          answer: "一个半小时左右，包括安检、坐电梯上楼和在观光厅里看；想从日落待到天黑就再久一点。外滩只隔一站地铁 2 号线，上海中心加外滩夜景，一个下午加晚上就能轻松排下。",
+        },
+        {
+          question: "上海中心观光厅要提前买票吗？",
+          answer: "建议提前买，尤其是想看日落或者赶上节假日。门票实名，外国游客用护照购票。规则时常调整，我们可以按你的日期核实并代为预订。",
+        },
+      ],
+    },
+    ko: {
+      description: "상하이 타워 118층 전망대는 지상 546m에 있어 루자쭈이의 다른 고층 빌딩들도 발아래로 보입니다. 언제 오를지, 어느 전망대를 고를지.",
+      why: [
+        "지하에서 엘리베이터 문이 닫히고 1분도 안 돼 118층, 지상 546m에서 문이 열립니다. 유리창 앞에 서면 상하이가 발아래 펼쳐지고, 거리에서 고개를 한껏 젖혀야 보이던 고층 빌딩들이 이제 내려다보입니다. 황푸강은 루자쭈이를 감싸며 크게 굽이치고, 강 건너 와이탄은 작은 석조 건물 한 줄로 줄어들며, 도시는 사방으로 아득히 이어집니다. 같은 118층이지만 롯데월드타워 서울스카이의 스카이데크(478m)보다 70m쯤 더 높습니다.",
+        "올라가기 전에 먼저 밖에서 이 빌딩을 찬찬히 올려다보세요. 유리 외벽이 아래에서 위로 3분의 1바퀴쯤 돌아가 있어, 건물 전체가 몸을 비틀며 솟아오르는 것처럼 보입니다. 이 비틀림 덕분에 건물이 강풍에 받는 힘도 한결 줄어듭니다. 중국 네티즌들은 나란히 선 세 빌딩을 ‘주방 3종 세트’라고 부릅니다. 진마오 타워는 주사기, 세계금융센터는 병따개, 몸을 비튼 상하이 타워는 거품기입니다. 거리에서 이름을 익혀 두었다가 꼭대기에서 셋을 다시 찾아보세요.",
+        "루자쭈이에는 올라가 볼 수 있는 빌딩과 탑이 네 곳 있습니다. 상하이 타워가 가장 높아 나머지를 모두 내려다봅니다. 세계금융센터의 전망대는 100층, 474m에 있고 바닥에 투명 유리 구간이 있어 그 위에 서 볼 수 있습니다. 진마오 타워의 전망대는 88층, 약 340m로 그보다 낮고, 강가의 방송탑 동방명주는 올라가기보다 와이탄에서 사진 배경으로 담기에 더 좋습니다. 한 곳만 오른다면 하늘을 보고 고르세요. 맑은 날에는 가장 높은 곳으로, 뿌연 날에는 전망대 대신 강가에서 빌딩을 바라보는 편이 낫습니다.",
+      ],
+      highlights: [
+        {
+          name: "55초 만에 118층까지",
+          body: "지하에서 118층까지 55초쯤 걸립니다. 가만히 서 있으면 출발할 때 몸이 위로 밀리는 느낌이 들고, 올라가는 동안 귀가 먹먹해질 수도 있습니다.",
+        },
+        {
+          name: "이웃 빌딩 내려다보기",
+          body: "꼭대기에 뚫린 구멍 때문에 ‘병따개’라는 별명이 붙은 세계금융센터와, 층층이 좁아지는 진마오 타워의 뾰족한 꼭대기를 찾아보세요. 둘 다 한참 발아래 있습니다. 더 아래 강가에는 동방명주의 분홍빛 구슬이 보입니다.",
+        },
+        {
+          name: "해 질 녘부터 밤까지",
+          body: "일몰 한 시간쯤 전에 올라가 서쪽 창가에 자리를 잡으세요. 강 건너 오래된 시가지인 푸시(浦西) 쪽으로 해가 지고 나면, 발아래 양쪽 강변에 불이 들어옵니다.",
+        },
+      ],
+      time: "보안 검색과 엘리베이터, 전망대 관람까지 1시간 30분 정도입니다. 일몰부터 밤까지 머문다면 더 잡으세요.",
+      when: "머무는 동안 가장 맑은 날을 고르고, 그날 아침 시정을 확인하세요. 낮은 구름이나 스모그가 끼면 회색빛만 보일 수 있습니다. 낮과 밤을 한 번에 보려면 일몰 한 시간쯤 전에 도착하세요. 평일이 주말이나 공휴일보다 한산합니다.",
+      pair: "먼저 전망대에 오르고 해가 진 뒤 와이탄으로 건너가면, 푸둥을 위에서 한 번, 강 건너에서 한 번 보게 됩니다. 지하철 2호선으로 루자쭈이역에서 난징둥루역까지 한 정거장입니다. 반대 방향으로 세 정거장 가면 상하이과학기술관역이고 바로 옆이 상하이박물관 동관이라, 낮에는 박물관, 해 질 녘에는 타워로 하루를 짜기 좋습니다.",
+      skip: "높은 곳이나 붐비는 엘리베이터가 힘들다면 올라가지 말고, 무료로 볼 수 있는 와이탄에서 빌딩 풍경을 바라보세요. 뿌옇거나 비 오는 날에는 돈을 아끼세요. 올라가도 보이는 게 별로 없습니다. 루자쭈이의 다른 전망대에 이미 올라 봤다면, 하나 더 오르는 설렘은 크지 않습니다.",
+      faq: [
+        {
+          question: "상하이 타워 전망대는 가 볼 만한가요?",
+          answer: "네, 맑은 날이라면 가 볼 만합니다. 지상 546m의 118층에서는 푸둥의 다른 고층 빌딩들까지 발아래 있고, 강과 도시가 사방으로 펼쳐집니다. 엘리베이터로 55초쯤 걸립니다. 뿌옇거나 비 오는 날에는 오르지 말고 와이탄에서 빌딩을 바라보세요.",
+        },
+        {
+          question: "상하이 타워와 세계금융센터 중 어느 전망대가 좋을까요?",
+          answer: "가장 높은 전망을 원한다면 상하이 타워입니다. 118층 전망대가 546m 높이에 있어 다른 빌딩들을 내려다봅니다. 유리 바닥 위에 서 보고 싶다면 세계금융센터입니다. 474m 높이의 100층 전망대 바닥에 투명 유리 구간이 있습니다. 두 빌딩이 나란히 있어 대부분은 한 곳이면 충분합니다.",
+        },
+        {
+          question: "상하이 타워는 언제 오르는 게 가장 좋나요?",
+          answer: "머무는 동안 가장 맑은 날, 일몰 한 시간쯤 전에 오르면 낮의 도시와 불 켜진 도시를 모두 볼 수 있습니다. 그날 아침 시정을 확인하세요. 낮은 구름이나 스모그가 끼면 회색빛만 보일 수 있습니다. 평일이 주말이나 공휴일보다 한산합니다.",
+        },
+        {
+          question: "상하이 타워 관람에는 시간이 얼마나 걸리나요?",
+          answer: "보안 검색과 엘리베이터, 전망대 관람까지 1시간 30분 정도이고, 일몰부터 밤까지 머문다면 더 걸립니다. 와이탄은 지하철 2호선으로 한 정거장이라, 타워와 와이탄 야경 산책을 오후부터 저녁까지 한 번에 묶기 좋습니다.",
+        },
+        {
+          question: "상하이 타워 입장권은 미리 예약해야 하나요?",
+          answer: "미리 사 두는 것이 좋습니다. 일몰 시간대나 공휴일이라면 더욱 그렇습니다. 입장권은 방문자 본인 실명으로 사며, 외국인은 여권을 씁니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+      ],
+    },
+  },
+  "shanghai-museum-east": {
+    en: {
+      description: "In Pudong, Shanghai Museum East shows a bronze cauldron once buried to hide it from soldiers, scrolls that change every six months and a roof garden.",
+      why: [
+        "From the basement entrance, an escalator carries you up under a round skylight into a bright hall, where people sit on wide steps with a coffee. The galleries off it are hushed and softly lit. Here are bronze vessels three thousand years old, Buddhist figures carved in white stone and a Song dynasty dish the blue-green of the sky after rain. Every floor has tall windows or a terrace to rest your eyes, and chairs line the corridors, so a long day never turns into a march.",
+        "Its best-known treasure comes with a war story. The Da Ke Ding, a great bronze cauldron, belonged to the Pan family of Suzhou, who also owned another giant, the Da Yu Ding. In 1937 Pan Dayu, the woman who ran the household, had both buried. After the city fell, Japanese soldiers searched the house several times and never found them, and in 1951 she gave both to the state. Upstairs, the paintings and calligraphy keep their own rhythm. Too fragile to stay out, they change about every six months, and when a famous scroll goes back into storage, people queue for a last look.",
+        "East now holds the museum's permanent collection, in thirteen galleries from bronze and jade to porcelain, coins, seals, painting and calligraphy. Seeing them all properly would take at least seven hours, so choose two or three and take your time. Bronze plus painting and calligraphy makes a strong first visit; add ceramics if you love porcelain. The older building at People's Square is a separate visit until November 2027, given over to a single ticketed exhibition, so be sure which building you are heading for.",
+      ],
+      highlights: [
+        {
+          name: "The Da Ke Ding",
+          body: "It stands in the bronze gallery on the ground floor, almost a metre tall and about 75 centimetres across the mouth, and it weighs about 200 kilograms. One broad wave pattern runs right round its belly, and a beast face stares out from the top of each of its three legs. Inside, 290 characters cast into the bronze record a king's gifts to a man named Ke, who made the cauldron to praise the king and honour his grandfather.",
+        },
+        {
+          name: "A kilometre of scrolls",
+          body: "On the second floor, the calligraphy and painting rooms run together as one route about a kilometre long, with small garden scenes and Chinese-style benches along the way. The scrolls change about every six months, so check what is on show before you go; the most famous pieces may be out for only a few months.",
+        },
+        {
+          name: "The garden on the roof",
+          body: "Follow the spiral walkway up to the fifth floor and into Yunlin, the Cloud Forest, a new roof garden built like the old gardens of the Yangtze delta, Suzhou's among them. On the west side are little bridges, running water and pavilions; on the east, an open courtyard ends at an old-style opera stage. Check that it is open on your day.",
+        },
+      ],
+      time: "Three hours covers two or three galleries and the roof garden. Seeing every room properly would take at least seven.",
+      when: "Weekday mornings are calmest. Numbers inside are capped, so at weekends and on holidays you may queue at the door even though no booking is needed. The museum closes one weekday each week, which our guide covers, so check it before you fix a date. It also makes a good plan for a rainy day.",
+      pair: "The museum stands beside Shanghai Science and Technology Museum station on Metro Line 2, three stops east of Lujiazui. That makes an easy day: the museum in the morning, the Shanghai Tower at sunset. Century Park is one stop further east if you want a walk under the trees afterwards.",
+      skip: "If ancient Chinese art leaves you cold, give it an hour for the bronze gallery and the roof garden, then move on. With only a day or two in Shanghai, the Bund and the old lanes will tell you more about the city itself.",
+      faq: [
+        {
+          question: "Is Shanghai Museum East worth visiting?",
+          answer: "Yes, if you have half a day for Chinese art. It holds the Shanghai Museum's permanent collection in 13 galleries, from 3,000-year-old bronzes to Song porcelain and famous scrolls, in a bright new building with a garden on the roof. Ordinary entry is free. Choose two or three galleries and give them about three hours.",
+        },
+        {
+          question: "Shanghai Museum East or People's Square: which should I visit?",
+          answer: "Choose East for the permanent collection: its 13 galleries hold the bronzes, ceramics, jade, painting and calligraphy. Until November 2027, the People's Square building shows a single ticketed special exhibition, so go there only if that exhibition appeals. The two buildings have separate rules, so check the right one before you go.",
+        },
+        {
+          question: "How long do you need at Shanghai Museum East?",
+          answer: "About three hours for two or three galleries and the roof garden. Seeing every gallery properly would take at least seven hours, more than most visitors want. Chairs along the corridors and a café in the main hall make a long visit easier.",
+        },
+        {
+          question: "Do I need to book Shanghai Museum East?",
+          answer: "No, not for ordinary entry: individual visitors walk in free with an original ID document, and our guide explains what to check if yours is a foreign passport. Two hands-on areas, the Curio-City and the Digital Gallery, need separate bookings in advance. Numbers inside are capped, so expect a queue at busy times, and check the weekly closing day before you go.",
+        },
+        {
+          question: "How do I get to Shanghai Museum East?",
+          answer: "Take Metro Line 2 to Shanghai Science and Technology Museum station, three stops east of Lujiazui; Shanghai's visitor guide points to Exit 8. Individual visitors use the east entrance on the basement level, so follow the signs once you arrive. The Shanghai Tower is on the same line, so the two fit into one day.",
+        },
+      ],
+    },
+    zh: {
+      description: "浦东的上海博物馆东馆里，有战时埋进地下、躲过搜查的大克鼎，有每半年换一轮的古书画，楼顶还有一座园林。",
+      why: [
+        "从地下一层的入口进来，坐扶梯往上，头顶是一圈圆形的天窗；上到一座明亮的大厅，有人坐在宽宽的台阶上喝咖啡。大厅四周的展厅安安静静，灯光柔和，有三千年前的青铜器，有白石雕成的佛像，还有一只宋代瓷盘，颜色正是雨过天青。每层都有落地窗或露台，看累了可以望望窗外；走廊边一路摆着椅子，逛一整天也不至于走成急行军。",
+        "最有名的那件宝贝，背后有一段战时的故事。大克鼎原是苏州潘家的藏品，潘家还藏着另一只大鼎，叫大盂鼎。1937 年，主持家事的潘达于把两只鼎埋进了地下；苏州沦陷后，日军几次闯进潘家搜查，始终没有找到。1951 年，潘达于把两只鼎都捐给了国家。楼上的书画，则有自己的节奏。古书画太娇贵，不能一直展着，大约每半年换一轮；名作撤下来之前，常有人排长队，只为再看一眼。",
+        "如今上博的常设展都在东馆，一共 13 个展厅，从青铜、玉器到陶瓷、钱币、印章、书画。真要一间间看完，至少得七个小时，所以挑两三个，慢慢看。第一次来，青铜加书画就很扎实；喜欢瓷器，再加陶瓷馆。人民广场那座老馆到 2027 年 11 月为止只办一个另外售票的特展，跟东馆是两回事，出发前先想清楚去哪一座。",
+      ],
+      highlights: [
+        {
+          name: "大克鼎",
+          body: "大克鼎在一楼青铜馆，高将近一米，口径 75 厘米左右，重约 200 公斤。鼎的肚子上绕着一整圈宽宽的波浪纹，三条腿的上端各凸出一张兽面。内壁铸着 290 个字，记下周王给克的封赏；克铸了这只鼎，歌颂周王，也祭祀祖父。",
+        },
+        {
+          name: "一公里书画长廊",
+          body: "二楼的书法馆和绘画馆连成一条约一公里长的看展路线，沿途布置了几处园林小景和中式座椅。书画大约每半年换一轮，出发前先查一下眼下展的是什么；最有名的几件，可能只展出几个月。",
+        },
+        {
+          name: "楼顶园林“云林”",
+          body: "顺着螺旋形步道上到五楼，就走进了屋顶上新造的一座江南园林“云林”。西边是小桥流水和亭台，东边是一个开阔的院子，尽头立着一座仿古戏台。去之前确认一下当天是否开放。",
+        },
+      ],
+      time: "挑两三个展厅、再上楼顶园林，三个小时左右。每个展厅都认真看完，至少要七个小时。",
+      when: "平日上午人最少。馆内限流，周末和节假日即使不用预约，门口也可能要排队。东馆每周有一个工作日闭馆，我们的攻略里写着是哪天，定日期前先看一下。下雨天来这里正合适。",
+      pair: "上博东馆就在地铁 2 号线上海科技馆站旁边，从陆家嘴往东坐三站。可以这样排一天：上午看博物馆，傍晚去上海中心看日落。想在树下走走，再往东坐一站就是世纪公园。",
+      skip: "对中国古代艺术没什么兴趣的话，留一个小时，看完青铜馆、再上楼顶园林就够了。在上海只有一两天，外滩和老弄堂更能让你认识这座城市本身。",
+      faq: [
+        {
+          question: "上海博物馆东馆值得去吗？",
+          answer: "值得，前提是你愿意花半天看中国艺术。上博的常设展都在这里，13 个展厅，从三千年前的青铜器到宋代瓷器、传世书画，楼顶还有一座园林。普通入馆免费。挑两三个展厅，留三个小时左右。",
+        },
+        {
+          question: "上博东馆和人民广场馆，去哪个？",
+          answer: "想看常设展，就去东馆：青铜、陶瓷、玉器、书画这些展厅都在那里。人民广场馆到 2027 年 11 月为止只办一个售票特展，对那个展感兴趣再去。两座馆规则各不相同，出发前查清楚去的是哪一座。",
+        },
+        {
+          question: "逛上博东馆需要多长时间？",
+          answer: "挑两三个展厅、再上楼顶园林，三个小时左右。每个展厅都认真看完至少要七个小时，大多数人用不着。走廊边有椅子，大厅里有咖啡，逛久了也不太累。",
+        },
+        {
+          question: "上博东馆要预约吗？",
+          answer: "普通入馆不用：个人观众带有效证件原件，免费入馆；用外国护照入馆要注意什么，我们的攻略里有说明。古代文明探索宫和数字馆这两个互动区，要另外提前预约。馆内限流，人多时门口可能排队，出发前也确认一下每周的闭馆日。",
+        },
+        {
+          question: "怎么去上海博物馆东馆？",
+          answer: "坐地铁 2 号线到上海科技馆站，从陆家嘴往东三站；上海市政府的游客指南建议走 8 号口。个人观众从地下一层的东门进馆，到了跟着指示牌走。上海中心在同一条线上，两处正好排在一天。",
+        },
+      ],
+    },
+    ko: {
+      description: "푸둥의 상하이박물관 동관에는 전쟁 때 땅에 묻어 수색을 피한 청동솥, 반년마다 바뀌는 옛 서화, 옥상 정원이 있습니다.",
+      why: [
+        "지하 입구로 들어서면 둥근 천창 아래로 에스컬레이터가 올라가고, 그 위 밝은 중앙 홀에서는 넓은 계단에 앉아 커피를 마시는 사람들이 보입니다. 홀 옆 전시실들은 조용하고 조명이 부드럽습니다. 3,000년 전 청동기와 흰 돌로 새긴 불교 조각, 비 갠 뒤의 하늘처럼 푸른 송나라 자기 접시가 이곳에 있습니다. 층마다 큰 창이나 테라스가 있어 눈을 쉴 수 있고, 복도 곳곳에 의자가 있어 하루 종일 있어도 강행군이 되지 않습니다.",
+        "가장 유명한 보물에는 전쟁 이야기가 얽혀 있습니다. 거대한 청동솥 대극정(大克鼎)은 쑤저우 판(潘)씨 집안의 소장품이었고, 이 집안에는 또 하나의 큰 솥 대우정도 있었습니다. 1937년 집안을 이끌던 판다위(潘達于)가 두 솥을 땅에 묻었고, 쑤저우가 함락된 뒤 일본군이 여러 차례 집을 뒤졌지만 끝내 찾지 못했습니다. 1951년 판다위는 두 솥을 모두 나라에 기증했습니다. 위층 서화실은 사정이 다릅니다. 옛 그림과 글씨는 쉽게 상해서 계속 걸어 둘 수 없으니 반년쯤마다 작품을 바꾸고, 유명한 작품이 내려가기 전에는 마지막으로 보려는 사람들이 길게 줄을 섭니다.",
+        "지금 상하이박물관의 상설 전시는 동관에 있습니다. 청동기와 옥기부터 도자기, 화폐, 인장, 서화까지 전시실이 13곳입니다. 모두 제대로 보려면 적어도 7시간이 걸리니 두세 곳을 골라 여유 있게 보세요. 처음이라면 청동기와 서화가 든든한 조합이고, 도자기를 좋아한다면 도자기실을 더하세요. 인민광장의 옛 건물은 2027년 11월까지 별도 입장권이 필요한 특별전 하나만 엽니다. 동관과는 전혀 다른 관람이니 어느 건물로 가는지 먼저 확인하세요.",
+      ],
+      highlights: [
+        {
+          name: "대극정 앞에 서기",
+          body: "1층 청동기실에 있으며, 높이는 1m 가까이, 솥 입구 지름은 75cm쯤, 무게는 200kg쯤 됩니다. 몸통에는 굵은 물결무늬가 한 바퀴 빙 둘러 있고, 세 다리 윗부분에는 짐승 얼굴이 하나씩 불룩하게 도드라져 있습니다. 안쪽 벽에 주조된 290자에는 주나라 왕이 극(克)에게 상을 내린 일이 적혀 있고, 극은 왕을 기리고 할아버지께 제사를 올리려고 이 솥을 만들었습니다.",
+        },
+        {
+          name: "1km 서화 길",
+          body: "2층의 서예실과 회화실은 약 1km의 관람 동선으로 이어지고, 길 곳곳에 작은 정원 풍경과 중국식 의자가 놓여 있습니다. 작품이 반년쯤마다 바뀌니 지금 무엇이 걸려 있는지 미리 확인하세요. 가장 유명한 작품은 몇 달만 나오기도 합니다.",
+        },
+        {
+          name: "옥상 정원 ‘운림’",
+          body: "나선형 산책로를 따라 5층에 오르면 쑤저우를 비롯한 장강 하류 지역의 옛 정원처럼 새로 꾸민 옥상 정원 ‘운림(雲林)’이 나옵니다. 서쪽에는 작은 다리와 물길, 정자가 있고, 동쪽은 탁 트인 마당 끝에 옛 양식의 공연 무대가 서 있습니다. 방문하는 날 열려 있는지 확인하세요.",
+        },
+      ],
+      time: "전시실 두세 곳과 옥상 정원이면 3시간 정도입니다. 모든 전시실을 제대로 보려면 적어도 7시간이 걸립니다.",
+      when: "평일 오전이 가장 한산합니다. 관내 인원을 제한하기 때문에 주말과 연휴에는 예약이 필요 없어도 입구에서 줄을 설 수 있습니다. 매주 평일 하루는 휴관하며 저희 가이드 글에 요일이 있으니, 날짜를 정하기 전에 확인하세요. 비 오는 날 일정으로도 좋습니다.",
+      pair: "박물관은 지하철 2호선 상하이과학기술관역 바로 옆으로, 루자쭈이역에서 동쪽으로 세 정거장입니다. 오전에는 박물관, 해 질 녘에는 상하이 타워로 하루를 짜기 좋습니다. 나무 그늘 아래를 걷고 싶다면 한 정거장 더 가서 세기공원에 들르세요.",
+      skip: "중국 고대 미술에 큰 관심이 없다면 한 시간만 잡아 청동기실과 옥상 정원만 보고 나와도 됩니다. 상하이에 하루이틀뿐이라면 와이탄과 옛 골목이 이 도시를 더 잘 보여 줍니다.",
+      faq: [
+        {
+          question: "상하이박물관 동관은 가 볼 만한가요?",
+          answer: "네, 중국 미술에 반나절을 쓸 수 있다면 가 볼 만합니다. 상하이박물관의 상설 전시가 모두 이곳 13개 전시실에 있습니다. 3,000년 전 청동기부터 송나라 자기와 이름난 서화까지 있고, 옥상에는 정원도 있습니다. 일반 입장은 무료입니다. 두세 곳을 골라 3시간쯤 잡으세요.",
+        },
+        {
+          question: "상하이박물관 동관과 인민광장관 중 어디로 가야 하나요?",
+          answer: "상설 전시를 보려면 동관입니다. 청동기, 도자기, 옥기, 서화 전시실이 모두 동관에 있습니다. 인민광장관은 2027년 11월까지 유료 특별전 하나만 열고 있으니, 그 전시에 관심이 있을 때만 가세요. 두 건물은 규정이 서로 다르니 어느 쪽인지 먼저 확인하세요.",
+        },
+        {
+          question: "상하이박물관 동관 관람에는 시간이 얼마나 걸리나요?",
+          answer: "전시실 두세 곳과 옥상 정원이면 3시간 정도입니다. 모든 전시실을 제대로 보려면 적어도 7시간이 걸리는데, 대부분은 그럴 필요가 없습니다. 복도 곳곳의 의자와 중앙 홀의 카페 덕분에 오래 머물러도 덜 지칩니다.",
+        },
+        {
+          question: "상하이박물관 동관은 예약해야 하나요?",
+          answer: "일반 입장은 예약이 필요 없습니다. 개인 방문객은 신분증 원본을 지참하면 무료로 들어갈 수 있고, 외국 여권이라면 무엇을 확인해야 하는지 저희 가이드 글에 정리해 두었습니다. 다만 체험 공간인 고대문명탐색궁과 디지털관은 따로 미리 예약해야 합니다. 관내 인원을 제한하므로 붐빌 때는 줄을 설 수 있고, 매주 휴관일도 미리 확인하세요.",
+        },
+        {
+          question: "상하이박물관 동관은 어떻게 가나요?",
+          answer: "지하철 2호선 상하이과학기술관역에서 내리면 되고, 루자쭈이역에서 동쪽으로 세 정거장입니다. 상하이시 방문 안내는 8번 출구를 안내합니다. 개인 방문객은 지하 1층 동쪽 입구로 들어가니 도착하면 표지판을 따라가세요. 상하이 타워가 같은 노선에 있어 하루에 함께 묶기 좋습니다.",
+        },
+      ],
+    },
+  },
+  "humble-administrators-garden": {
+    en: {
+      description: "Suzhou's Humble Administrator's Garden: willows over still ponds, and a pagoda outside the walls that looks like part of the view. What to find, and when.",
+      why: [
+        "Step in from the street and the noise falls away behind the walls. A path winds past rocks and through doorways. Then the big pond of the Middle Garden opens in front of you. Willows lean over the water, stone bridges zigzag across it and pavilions lift their roof corners; in summer, lotus leaves spread across the pond. Every window and round doorway seems placed to frame a picture. Walk slowly and stop often. The garden shows itself one view at a time, the way a long painted scroll unrolls.",
+        "It was begun about five hundred years ago by Wang Xianchen, an official who gave up his post and came home to Suzhou. He took its name from the third-century writer Pan Yue, who called watering his garden and selling his vegetables a clumsy man's way of governing. The painter Wen Zhengming is said to have helped plan the garden, and he painted its views. Later owners left their own marks. In the West Garden, a nineteenth-century merchant set the windows of his hall with blue glass, said to have come from Europe; look out through it at the pond.",
+        "At about five hectares it is the largest of Suzhou's classic gardens, and it is built around water. Choose it for wide ponds and long views; for winding corridors and courtyards, Lingering Garden suits better, and Master-of-Nets is small and intimate. The Middle Garden is the heart of it, so give that part the most time. Its fame brings crowds. In July 2023 it averaged more than 20,000 visitors a day, so book the earliest entry slot you can get.",
+      ],
+      highlights: [
+        {
+          name: "The pagoda across the water",
+          body: "At the east end of the big pond, stand by the Leaning Rainbow Pavilion and look west, over the bridges and trees, to the North Temple Pagoda. It stands about a kilometre away, outside the garden, yet on a still day it shows in the pond as if it belonged here. No building in between may rise higher than the pagoda, so the view stays open.",
+        },
+        {
+          name: "The Hall of Distant Fragrance",
+          body: "The Middle Garden's main hall has tall windows on all four sides, so from inside you see water, rocks and pavilions all round. In summer the pond in front fills with lotus. The hall is named for it, after the Song writer Zhou Dunyi's line that the lotus's fragrance grows purer the further it carries.",
+        },
+        {
+          name: "A pavilion shaped like a fan",
+          body: "In the West Garden, a small pavilion by the water is fan-shaped down to its doors, windows, table and stools. It is said to recall the owner's family fan business. Its name asks ‘With whom shall I sit?’, a line from the poet Su Dongpo, whose answer is the bright moon, the fresh breeze and me.",
+        },
+      ],
+      time: "Two to two and a half hours for the East, Middle and West gardens at an easy pace.",
+      when: "Book the earliest entry slot you can; the ponds are calmest before the crowds build. Azaleas fill the garden in spring, from about April into May, and lotus spreads across parts of the pond from about June, at its fullest in high summer. Around the May Day and National Day holidays, tickets can sell out.",
+      pair: "Suzhou Museum, designed by the architect I. M. Pei, is next door and needs its own booking. A wisteria said to have been planted by Wen Zhengming grows in the courtyard of the old mansion that is now part of the museum. In early April it spills purple over the wall, and you can see it from the street. Lion Forest Garden, with its maze of rocks, is about 500 metres' walk away. Pingjiang Road, a lane of old houses along a canal, starts about ten minutes' walk away.",
+      skip: "If crowds spoil a garden for you, choose a smaller one on a quiet morning, such as Master-of-Nets or the Couple's Retreat Garden. If you have time for just one garden and love water, keep this one. And if gardens leave you cold, give the morning to Suzhou's canals and Pingjiang Road instead.",
+      faq: [
+        {
+          question: "Is the Humble Administrator's Garden worth visiting?",
+          answer: "Yes, especially if you have time for only one Suzhou garden. At about five hectares it is the largest of the city's classic gardens, laid out round a big pond with willows, stone bridges and pavilions. Even a pagoda outside the walls seems part of the view. Give it two to two and a half hours and take an early slot.",
+        },
+        {
+          question: "How long do you need at the Humble Administrator's Garden?",
+          answer: "Two to two and a half hours covers the East, Middle and West gardens at an easy pace. Allow longer if you like to sit and look, which is what the garden was made for. Suzhou Museum next door needs its own booking, so plan its time separately.",
+        },
+        {
+          question: "Humble Administrator's Garden or Lingering Garden: which should I choose?",
+          answer: "Choose the Humble Administrator's Garden for wide water and long views; at about five hectares it is Suzhou's largest classic garden. Choose Lingering Garden for winding corridors, courtyards and framed views. If you dislike crowds, Master-of-Nets is smaller and more intimate. With a whole day, see two that feel different.",
+        },
+        {
+          question: "What is the best time to visit the Humble Administrator's Garden?",
+          answer: "An early entry slot, ideally on a weekday in spring or summer. Azaleas bloom from about April into May, and lotus spreads across the pond from about June, fullest in high summer. Expect company: in July 2023 it averaged more than 20,000 visitors a day, and tickets can sell out around the May Day and National Day holidays.",
+        },
+        {
+          question: "Do I need to book the Humble Administrator's Garden in advance?",
+          answer: "Yes. Tickets are real-name and timed, for a set date and entry slot, and can be booked one to seven days ahead through the official Suzhou Gardens service. Holiday dates can sell out. Booking with a passport is not always straightforward, and we can check the rules for your date and book for you.",
+        },
+      ],
+    },
+    zh: {
+      description: "苏州拙政园：一池静水，满岸垂柳，连园外的一座古塔都成了园中一景。去看哪三处，什么时候去。",
+      why: [
+        "从街上走进园门，墙一隔，外面的嘈杂就没了。顺着小路绕过假山、穿过门洞，中部那一大片水忽然在眼前铺开：柳枝垂在水面上，石桥曲曲折折，亭子的屋角高高翘起；到了夏天，池里一片片都是荷叶。每一扇窗、每一个圆门洞，都像是专为框一幅画留的。慢慢走，多停一停。这座园子要一景一景地看，像慢慢展开一幅长卷。",
+        "约五百年前，官员王献臣辞官回到苏州，修起了这座园子。园名取自西晋潘岳的《闲居赋》：浇浇园子、卖卖菜，“是亦拙者之为政也”，这也算是笨人的为政之道。据说画家文徵明帮着出过主意，他还画过园中景致。后来的园主也各自留下了印记。西园里，清末一位商人修了一座厅，窗上嵌着蓝色玻璃，相传是从欧洲买来的。不妨隔着这层蓝玻璃，看一看外面的池水。",
+        "拙政园占地约 5 公顷，是苏州古典园林里最大的一座，全园以水为主。想看开阔的水面和远景，就来这里；想看曲折的回廊和小院，留园更合适；网师园则小巧精致。中部是全园的精华，时间多留给那里。名气大，人也多。2023 年 7 月，这里平均每天接待游客超过 2 万人次，能约到最早的入园时段，就约最早的。",
+      ],
+      highlights: [
+        {
+          name: "隔水看塔",
+          body: "走到中部大水池的东头，在倚虹亭边往西望，越过曲桥和树梢，就是北寺塔。塔在园外约 1 公里，水面平静时，塔影还会倒映在池里，像是园中一景。拙政园和北寺塔之间的楼房，都不许高过这座塔，所以这一眼到今天还看得到。",
+        },
+        {
+          name: "远香堂",
+          body: "中部的主厅，四面都是落地长窗，坐在里面，水、石、亭子一圈都看得到。夏天堂前满池荷花，堂名也从荷花来，取自周敦颐《爱莲说》里的“香远益清”。",
+        },
+        {
+          name: "扇形的与谁同坐轩",
+          body: "西园水边一座小亭，门、窗，连桌子凳子都是扇形的，据说是园主为纪念祖上做扇子起家而建。亭名出自苏轼的词：“与谁同坐？明月，清风，我。”",
+        },
+      ],
+      time: "东、中、西三部分从容走一遍，两到两个半小时。",
+      when: "能约最早的时段就约最早的，趁人潮上来之前，水边最安静。春天四五月间看杜鹃；夏天从六月起，池里陆续开出荷花，盛夏最旺。五一、国庆前后，门票可能约满。",
+      pair: "隔壁就是贝聿铭设计的苏州博物馆，要另外预约。博物馆里的忠王府院中，有一株相传是文徵明亲手种下的紫藤，四月初开花时，一大片紫色从墙头垂下来，在街上就看得到。狮子林和它的假山迷宫，步行约 500 米；沿河的老街平江路，北头离这里步行十分钟左右。",
+      skip: "怕挤的人，不如挑个清静的早上，去小一些的园子，比如网师园或耦园。只有时间看一座园子、又喜欢水的人，就留着拙政园。对园林本来就没兴趣，把这个上午留给苏州的河道和平江路吧。",
+      faq: [
+        {
+          question: "苏州拙政园值得去吗？",
+          answer: "值得，尤其是只有时间看一座苏州园林的话。它占地约 5 公顷，是苏州古典园林里最大的一座，围着一大片水池，有垂柳、石桥和亭子，连园外的一座塔都像园里的景。留两到两个半小时，约早一点的时段。",
+        },
+        {
+          question: "逛拙政园要多长时间？",
+          answer: "东、中、西三部分从容走一遍，两到两个半小时。喜欢坐下来慢慢看，就多留一些，这座园子本来就是让人这样看的。隔壁的苏州博物馆要另外预约，时间也要另算。",
+        },
+        {
+          question: "拙政园和留园，选哪个？",
+          answer: "想看开阔的水面和远景，选拙政园，它占地约 5 公顷，是苏州最大的古典园林。想看曲折的回廊、小院和一扇扇窗里的景，选留园。怕挤的话，网师园小巧精致。有一整天，就挑两座风格不同的。",
+        },
+        {
+          question: "什么时候去拙政园最好？",
+          answer: "约早一点的入园时段，最好是春夏的平日。四五月间杜鹃开，六月起池里陆续开荷花，盛夏最旺。人一定不会少：2023 年 7 月，这里平均每天接待游客超过 2 万人次，五一、国庆前后门票可能约满。",
+        },
+        {
+          question: "拙政园要提前预约吗？",
+          answer: "要。门票实名、分时段，对应日期和入园时段，可以提前一到七天在苏州园林官方渠道预约。节假日可能很快约满。用护照预约的步骤不一定顺利，我们可以按你的日期核实规则并代为预约。",
+        },
+      ],
+    },
+    ko: {
+      description: "쑤저우 졸정원: 고요한 연못에 늘어진 버드나무, 담장 밖 옛 탑까지 정원의 풍경이 됩니다. 꼭 찾아볼 세 곳과 가기 좋은 때.",
+      why: [
+        "길에서 문 안으로 들어서면 담장 하나로 바깥 소음이 사라집니다. 바위를 쌓은 가산을 돌고 문을 지나면 중원(中園)의 큰 연못이 눈앞에 펼쳐집니다. 버드나무가 물 위로 늘어지고, 돌다리가 지그재그로 이어지며, 정자의 처마 끝이 하늘로 들려 있습니다. 여름이면 연잎이 연못 곳곳을 덮습니다. 창 하나, 둥근 문 하나도 그림 한 폭을 담으려고 낸 것 같습니다. 천천히 걷고 자주 멈추세요. 이 정원은 긴 두루마리 그림을 펼치듯 한 장면씩 모습을 드러냅니다.",
+        "약 500년 전, 왕헌신이라는 관리가 벼슬을 내려놓고 고향 쑤저우로 돌아와 지은 정원입니다. 조선의 양산보가 스승 조광조를 잃고 낙향해 담양에 소쇄원을 지은 것도 비슷한 무렵입니다. 이름은 서진의 문인 반악의 글에서 따왔습니다. 텃밭에 물을 주고 채소를 내다 파는 일을 두고 ‘이 또한 못난 사람이 하는 정치(拙者之爲政)’라고 한 구절입니다. 화가 문징명이 설계를 도왔다고 전하며, 그는 정원 풍경을 그림으로도 남겼습니다. 뒤의 주인들도 저마다 흔적을 남겼습니다. 서원(西園)에는 19세기의 한 상인이 지은 건물이 있는데, 유럽에서 들여왔다는 파란 유리가 창에 끼워져 있습니다. 그 유리 너머로 연못을 내다보세요.",
+        "약 5ha로 쑤저우 고전 정원 가운데 가장 크고, 물을 중심으로 꾸몄습니다. 탁 트인 연못과 먼 풍경을 원한다면 이곳이고, 굽이진 회랑과 작은 마당을 원한다면 유원이 더 맞으며, 망사원은 작고 아기자기합니다. 중원이 정원의 핵심이니 그곳에 시간을 가장 많이 쓰세요. 이름난 만큼 사람도 많습니다. 2023년 7월에는 하루 평균 2만 명 넘게 다녀갔으니, 잡을 수 있는 가장 이른 입장 시간대를 예약하세요.",
+      ],
+      highlights: [
+        {
+          name: "물 건너 탑 바라보기",
+          body: "큰 연못 동쪽 끝 의홍정(倚虹亭) 옆에서 서쪽을 바라보면, 돌다리와 나무 너머로 북사탑이 보입니다. 정원 밖 1km쯤 떨어져 있지만, 물결이 잔잔한 날에는 탑이 연못에 비쳐 정원의 일부처럼 보입니다. 정원과 탑 사이의 건물은 탑보다 높게 지을 수 없어, 이 풍경이 지금도 가려지지 않고 그대로 남아 있습니다.",
+        },
+        {
+          name: "원향당",
+          body: "중원의 중심 건물로, 사방이 바닥까지 내려오는 긴 창이라 안에 앉으면 물과 돌, 정자가 빙 둘러 보입니다. 여름에는 앞 연못에 연꽃이 가득한데, 이름도 연꽃에서 왔습니다. 송나라 주돈이의 「애련설」 중 ‘향기는 멀리 갈수록 더 맑다(香遠益淸)’는 구절입니다.",
+        },
+        {
+          name: "부채꼴 정자 여수동좌헌",
+          body: "서원의 물가에 있는 작은 정자로, 문과 창, 탁자와 걸상까지 부채꼴이며, 주인이 부채로 일어선 집안의 가업을 기리려고 지었다고 전합니다. 이름은 ‘누구와 함께 앉을까(與誰同坐)’로, 소동파의 노랫말에서 왔습니다. 그의 대답은 ‘밝은 달, 맑은 바람, 그리고 나’입니다.",
+        },
+      ],
+      time: "동원, 중원, 서원을 여유 있게 둘러보면 2시간에서 2시간 30분 걸립니다.",
+      when: "잡을 수 있는 가장 이른 입장 시간대를 고르세요. 사람이 몰리기 전의 물가가 가장 고요합니다. 봄에는 4~5월 무렵 철쭉이 피고, 여름에는 6월부터 연꽃이 피기 시작해 한여름에 가장 무성합니다. 노동절과 국경절 연휴 무렵에는 입장권이 매진될 수 있습니다.",
+      pair: "바로 옆 쑤저우박물관은 건축가 I. M. 페이(貝聿銘)의 작품이며 따로 예약해야 합니다. 박물관에 속한 옛 저택 충왕부의 마당에는 문징명이 직접 심었다고 전하는 등나무가 있어, 4월 초 꽃이 피면 보랏빛이 담장 위로 넘쳐흘러 길에서도 보입니다. 바위 미로로 유명한 사자림은 걸어서 500m쯤, 운하를 따라 옛집이 늘어선 핑장루는 북쪽 입구까지 걸어서 10분쯤입니다.",
+      skip: "인파 때문에 정원을 제대로 즐기기 어렵다면, 한적한 아침에 망사원이나 우원 같은 작은 정원을 고르세요. 정원을 하나만 볼 시간이 있고 물가 풍경을 좋아한다면 졸정원을 남겨 두세요. 정원 자체에 관심이 없다면 그 오전은 쑤저우의 운하와 핑장루에 쓰세요.",
+      faq: [
+        {
+          question: "쑤저우 졸정원은 가 볼 만한가요?",
+          answer: "네, 특히 쑤저우 정원을 하나만 볼 시간이 있다면 가 볼 만합니다. 약 5ha로 쑤저우 고전 정원 가운데 가장 크고, 큰 연못을 중심으로 버드나무와 돌다리, 정자가 이어지며, 담장 밖의 탑까지 정원 풍경의 일부처럼 보입니다. 2시간에서 2시간 30분을 잡고 이른 시간대를 예약하세요.",
+        },
+        {
+          question: "졸정원 관람에는 시간이 얼마나 걸리나요?",
+          answer: "동원, 중원, 서원을 여유 있게 둘러보면 2시간에서 2시간 30분 걸립니다. 앉아서 천천히 바라보는 것을 좋아한다면 더 잡으세요. 이 정원은 원래 그렇게 보라고 만든 곳입니다. 바로 옆 쑤저우박물관은 따로 예약해야 하니 시간도 따로 잡으세요.",
+        },
+        {
+          question: "졸정원과 유원 중 어디가 좋을까요?",
+          answer: "탁 트인 물과 먼 풍경을 원한다면 졸정원입니다. 약 5ha로 쑤저우에서 가장 큰 고전 정원입니다. 굽이진 회랑과 작은 마당, 창마다 담긴 풍경을 원한다면 유원입니다. 인파가 싫다면 작고 아기자기한 망사원도 좋습니다. 하루를 다 쓸 수 있다면 분위기가 다른 두 곳을 보세요.",
+        },
+        {
+          question: "졸정원은 언제 가는 게 가장 좋나요?",
+          answer: "이른 입장 시간대, 되도록 봄이나 여름의 평일이 좋습니다. 4~5월 무렵 철쭉이 피고, 6월부터 연꽃이 피기 시작해 한여름에 가장 무성합니다. 사람은 많습니다. 2023년 7월에는 하루 평균 2만 명 넘게 다녀갔고, 노동절과 국경절 연휴 무렵에는 입장권이 매진될 수 있습니다.",
+        },
+        {
+          question: "졸정원은 미리 예약해야 하나요?",
+          answer: "네. 입장권은 실명제이고 날짜와 입장 시간대가 정해지며, 쑤저우 정원 공식 서비스에서 방문 1~7일 전에 예약할 수 있습니다. 연휴 날짜는 금방 매진될 수 있습니다. 여권으로 예약하는 절차가 늘 순조롭지는 않으니, 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+      ],
+    },
+  },
   "west-lake": {
     en: {
       description: "Hangzhou's West Lake at dawn: mist on the Su Causeway, willows trailing in still water, no ticket, no gate. Three places to find, and how to add Lingyin.",
@@ -1611,6 +2195,54 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Shaanxi History Museum", "陕西历史博物馆", "陕历博", "산시역사박물관", "섬서역사박물관", "Shaanxi Lishi Bowuguan"],
     sameAs: ["https://en.wikipedia.org/wiki/Shaanxi_History_Museum", "https://www.wikidata.org/wiki/Q1151210"],
+  },
+  "the-bund": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Shanghai Landscaping and City Appearance Administrative Bureau: Bund and Lujiazui lighting schedule (2024)", url: "https://lhsr.sh.gov.cn/gggs/20240429/f77bff8b7a1843d1a360eec8133fab44.html" },
+      { title: "Meet in Shanghai (Shanghai tourism): Huangpu ferry piers at Jinling Road East and Dongchang Road", url: "https://www.meet-in-shanghai.net/cn/traffic/dock-112479/" },
+      { title: "Cailian Press: 462,000 visitors on the Bund waterfront, 1 October 2024", url: "https://www.cls.cn/detail/1815574" },
+      { title: "The Paper: the Customs House at 90 and its clock (2017)", url: "https://www.thepaper.cn/newsDetail_forward_1918168" },
+      { title: "The Paper: what Lujiazui looked like before 1990 (2015)", url: "https://www.thepaper.cn/newsDetail_forward_1321191" },
+    ],
+    alternateName: ["The Bund", "Shanghai Bund", "Waitan", "外滩", "上海外滩", "와이탄", "상하이 와이탄"],
+    sameAs: ["https://en.wikipedia.org/wiki/The_Bund", "https://www.wikidata.org/wiki/Q125474"],
+  },
+  "shanghai-tower": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Shanghai Tower official site: Top of Shanghai Observatory", url: "https://www.shanghaitower.com/shagnhai.html" },
+      { title: "Shanghai government: Shanghai Tower", url: "https://english.shanghai.gov.cn/en-ScenicSpots/20240507/f3ce9cade30f4ff2a0bad6293626a232.html" },
+      { title: "CNR: the 118th-floor observatory opens, 55 seconds to 546 metres (2017)", url: "https://www.cnr.cn/shanghai/tt/20170426/t20170426_523727308.shtml" },
+      { title: "China News Service: Lujiazui's ‘kitchen set’ nickname (2013)", url: "https://www.chinanews.com.cn/house/2013/08-06/5127927.shtml" },
+      { title: "China News Service: the World Financial Center's 474-metre deck (2008)", url: "https://www.chinanews.com/sh/news/2008/08-19/1352663.shtml" },
+    ],
+    alternateName: ["Shanghai Tower", "Top of Shanghai Observatory", "上海中心大厦", "上海中心", "上海之巅观光厅", "상하이 타워", "Shanghai Zhongxin Dasha"],
+    sameAs: ["https://en.wikipedia.org/wiki/Shanghai_Tower", "https://www.wikidata.org/wiki/Q18547"],
+  },
+  "shanghai-museum-east": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Shanghai Museum: visiting the East building", url: "https://www.shanghaimuseum.cn/mu/frontend/pg/en/service/visit-east" },
+      { title: "Shanghai Municipal Administration of Culture and Tourism: Shanghai Museum East fully opens (2024)", url: "https://whlyj.sh.gov.cn/wlyw/20241203/a4f01fa0d284419090dd69ac3f747f52.html" },
+      { title: "Shanghai Municipal Administration of Culture and Tourism: the painting and calligraphy galleries change their display (2025)", url: "https://whlyj.sh.gov.cn/wbzx/20250225/c206279ec7064a4d9140e78b7b435e27.html" },
+      { title: "Shanghai government: Shanghai Museum East visitor guide", url: "https://english.shanghai.gov.cn/en-MuseumsGalleries/20241205/756c96bd7dd940378b9ac056f11429e2.html" },
+      { title: "National Museum of China: the Da Yu Ding, the Da Ke Ding and the Pan family", url: "https://www.chnmuseum.cn/portals/0/web/zt/202106dayuding/" },
+    ],
+    alternateName: ["Shanghai Museum East", "Shanghai Museum East Branch", "上海博物馆东馆", "上博东馆", "상하이박물관 동관", "Shanghai Bowuguan Dongguan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Shanghai_Museum_East", "https://www.wikidata.org/wiki/Q124211936"],
+  },
+  "humble-administrators-garden": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Classical Gardens of Suzhou", url: "https://whc.unesco.org/en/list/813/" },
+      { title: "Suzhou Landscape and Greening Bureau: 拙政园 (Humble Administrator's Garden)", url: "https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/c1df393edc8745abb20e8a9bd5525782.shtml" },
+      { title: "Suzhou Landscape and Greening Bureau: 与谁同坐轩 (the fan-shaped pavilion)", url: "https://ylj.suzhou.gov.cn/szsylj/ylwh/201604/2bf2a231928b4ed9840d69893a7ae240.shtml" },
+      { title: "Shanghai Landscaping and City Appearance Administrative Bureau: the garden's view of the North Temple Pagoda", url: "https://lhsr.sh.gov.cn/jnylwh/20200824/7cc5e5102094470b94a8f771808c1f53.html" },
+      { title: "Suzhou Museum: Prince Zhong's Mansion and the garden's history", url: "https://www.szmuseum.com/News/Details/tptgzwf" },
+    ],
+    alternateName: ["Humble Administrator's Garden", "Zhuozheng Garden", "拙政园", "苏州拙政园", "졸정원", "쑤저우 졸정원", "Zhuozheng Yuan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Humble_Administrator%27s_Garden", "https://www.wikidata.org/wiki/Q1076650", "https://whc.unesco.org/en/list/813/"],
   },
   "west-lake": {
     reviewedAt: "2026-10-04",
