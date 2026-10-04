@@ -2244,6 +2244,444 @@ export const sightStories: Stories = {
       ],
     },
   },
+  "chengdu-panda-base": {
+    en: {
+      description: "At Chengdu's panda base, pandas sit up like people, bamboo in both paws, eating breakfast in the cool of the morning. New cubs appear from late September.",
+      why: [
+        "Be at the gate when it opens and walk in under the bamboo. Round a bend and a giant panda sits back against a log like a person on the floor. It holds a stalk of bamboo in both paws and works through it piece by piece. On a quiet morning you may hear the stalks snap. Next door another lies draped over a wooden platform, one leg dangling. There is no show and no hurry. Pick one panda and stay until the stalk is gone.",
+        "Watch for a while and the eating starts to make sense. A giant panda is a bear with a gut built more for meat, yet it lives mostly on bamboo. It gets little from each mouthful, so it spends 10 to 16 hours a day eating and rests in between to save energy. That sprawl on a platform is how a panda budgets its day. Look at how it holds the stalk, too. Its extra ‘thumb’ is an enlarged wrist bone padded with skin, and it grips like a hand.",
+        "The base is big, its core more than three times the area of the Forbidden City, and you won't see it all. Start with the grown pandas while they are eating, then one of the nursery houses, then the red pandas. The best-known pandas can draw queues of an hour or more; if any panda will do, skip that line and keep walking. Panda Valley, the base's sister site about 50 kilometres away in Dujiangyan, suits a trip that is already going there. If you are staying in central Chengdu, start here.",
+      ],
+      highlights: [
+        {
+          name: "Finding this year's cubs",
+          body: "From about late September, that year's cubs go on show in the Sun, Moon and Star nursery houses and their outdoor yards. You may find them huddled together on a mat, or clambering up a tree trunk with a keeper close by. When they were born, each was pink, blind and lighter than a phone. Which cubs are out changes from day to day.",
+        },
+        {
+          name: "Red pandas on the branches beside you",
+          body: "In the walk-in red panda areas, these small russet animals with ringed tails potter along the branches beside the path. They are livelier in cool weather, another reason to come early. The base asks you to stay at least three metres away from them.",
+        },
+        {
+          name: "Indoors while the pandas nap",
+          body: "By late morning many pandas have eaten their fill and gone to sleep. That is the time to step inside the base's own Giant Panda Museum, then take one last loop past the enclosures on your way out.",
+        },
+      ],
+      time: "Half a day. Three to four hours covers the grown pandas, a nursery house, the red pandas and the museum without rushing.",
+      when: "Book a morning entry. Pandas are usually livelier in the cool of the morning, though nothing is guaranteed, and in hot weather keepers may move them indoors. Spring and autumn are the most comfortable seasons, and autumn is when the year's new cubs go on show. Avoid the May Day and National Day holidays, when the base is at its busiest.",
+      pair: "Head back to the centre, about ten kilometres away, and spend the afternoon the Chengdu way. In People's Park, sit at the century-old Heming teahouse for as long as you like, and have your ears cleaned if you dare. Give Sanxingdui and Leshan days of their own; each needs an early start.",
+      skip: "If you can only come on a hot summer afternoon, expect many pandas to be asleep or moved indoors out of the heat. Switch to a morning if you can. If your trip already takes you to Dujiangyan or Qingcheng Mountain, compare Panda Valley there first. It has its own ticket and its own hillside setting.",
+      faq: [
+        {
+          question: "Is the Chengdu Panda Base worth visiting?",
+          answer: "Yes, especially in the morning. Just 10 kilometres from central Chengdu, it lets you watch giant pandas eat bamboo among the trees. From late September you can look for that year's cubs, and you can walk through the red panda areas too. Give it half a day and arrive at opening.",
+        },
+        {
+          question: "What time of day is best to see the pandas?",
+          answer: "Early, as the gates open. Pandas are usually livelier in the cool of the morning, and many are asleep by late morning. Nothing is guaranteed: rain, heat and the keepers' plans decide what you see, and in hot weather pandas may be moved indoors. Book a morning entry.",
+        },
+        {
+          question: "How long do you need at the Chengdu Panda Base?",
+          answer: "Plan on half a day, three to four hours. The core area covers about 238 hectares, more than three times the Forbidden City. Pick the grown pandas, one nursery house and the red pandas rather than trying to see everything. A paid sightseeing bus links the main areas and saves some walking.",
+        },
+        {
+          question: "Chengdu Panda Base or Dujiangyan Panda Valley: which should I choose?",
+          answer: "Choose the Chengdu Panda Base if you are staying in Chengdu: it is about 10 kilometres from the centre, with the larger visitor site and its own museum. Choose Panda Valley, about 50 kilometres away in Dujiangyan, if your trip already goes there. The same organisation runs both, but they sell separate tickets, and neither can promise livelier pandas.",
+        },
+        {
+          question: "Do I need to book Chengdu Panda Base tickets in advance?",
+          answer: "Yes. Tickets are booked online in each visitor's own name, and a passport is accepted; carry the same passport to the gate. Tickets on the day are sold only in special cases, and holiday dates go fast. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+      ],
+    },
+    zh: {
+      description: "成都大熊猫基地：熊猫像人一样坐着，两只前掌抱着竹子，趁清晨凉快吃早饭；九月下旬起，当年出生的熊猫宝宝也陆续露面。",
+      why: [
+        "开园就进门，沿着竹林里的小路往里走。拐个弯，一只大熊猫正靠着木头坐着，像人坐在地上那样，两只前掌抱着一根竹子，一节一节往嘴里送；早上安静的时候，有时还能听见竹子咔嚓折断。隔壁那只趴在木架上，一条腿耷拉下来。这里没有表演，也没人催你。挑一只熊猫，看它把一根竹子慢慢吃完。",
+        "多看一会儿，就明白它为什么老在吃。大熊猫说到底是熊，肠胃更像吃肉的动物，却几乎只靠竹子过活，每一口能吸收的很少，所以一天要花 10 到 16 个小时吃东西，中间就躺下歇着。趴在木架上一动不动，就是它过日子的办法：能省一分力气就省一分。再看它怎么拿竹子。那根多出来的“大拇指”，其实是一块变大的腕骨，外面包着肉垫，抓起竹子跟人手一样灵。",
+        "基地很大，核心区比三个故宫还大，一次逛不完，也不必逛完。先趁成年熊猫吃早饭的时候去看，再挑一座产房，最后去看小熊猫。最出名的几只熊猫门前，排一个多小时的队并不稀奇；看哪只都行的话，绕开队伍往前走就是。都江堰的熊猫谷是基地的分部，离成都约 50 公里，行程本来就去都江堰的人，去那里更顺路；住在成都市区，就从这里开始。",
+      ],
+      highlights: [
+        {
+          name: "找找当年的熊猫宝宝",
+          body: "大约从九月下旬起，当年出生的熊猫宝宝陆续在太阳、月亮、星星几座产房和外面的活动场露面。有时几只挤在软垫上东张西望，有时在饲养员身边抱着树干往上爬。刚出生时，它们浑身粉红、睁不开眼，比一部手机还轻。哪几只出来，每天都不一样。",
+        },
+        {
+          name: "步道边树枝上的小熊猫",
+          body: "在可以走进去参观的小熊猫区，一身红棕毛、尾巴一圈一圈的小熊猫，顺着步道边的树枝慢悠悠地走。它们天凉的时候更爱动，这也是早点来的又一个理由。基地要求离它们至少 3 米。",
+        },
+        {
+          name: "熊猫午睡时进博物馆",
+          body: "上午晚些时候，不少熊猫吃饱就睡了。这时候进室内，去基地里的大熊猫博物馆看看，出园前再绕回去看一眼熊猫。",
+        },
+      ],
+      time: "半天，三四个小时。成年熊猫、一座产房、小熊猫和博物馆都能看到，不用赶。",
+      when: "预约上午场。清晨凉快，熊猫通常最有精神，但谁也打不了包票；天太热时，饲养员可能把它们移到室内。春秋两季最舒服，秋天也正是当年熊猫宝宝露面的时候。五一、国庆长假人最多，尽量避开。",
+      pair: "回市区（约 10 公里），下午照成都人的过法过：去人民公园里有百年历史的鹤鸣茶社，泡一杯茶坐一下午，胆子大的还可以掏个耳朵。三星堆和乐山都要一大早出发，各留一天，别和熊猫挤在同一天。",
+      skip: "只能在夏天的下午来的话，不少熊猫可能在睡觉，或者为了避暑待在室内，能改到上午就改。行程本来就去都江堰、青城山的，先看看那边的熊猫谷，门票分开买，山坡上的环境也不一样。",
+      faq: [
+        {
+          question: "成都大熊猫基地值得去吗？",
+          answer: "值得，尤其是上午去。基地离市中心只有 10 公里左右，可以看大熊猫在林子里吃竹子；九月下旬以后，还能找找当年出生的熊猫宝宝，再走进小熊猫区转一圈。留半天，开园就到。",
+        },
+        {
+          question: "几点去看熊猫最好？",
+          answer: "开园就去。清晨凉快，熊猫通常最有精神，不少到上午晚些时候就睡了。但谁也保证不了：下雨、天热和饲养安排都会影响能看到什么，天热时熊猫还可能被移到室内。预约上午场。",
+        },
+        {
+          question: "逛成都大熊猫基地要多长时间？",
+          answer: "半天左右，三四个小时。核心区约 238 公顷，比三个故宫还大，挑成年熊猫、一座产房和小熊猫看，不必全走一遍。园里有收费观光车连着几个主要区域，能少走些路。",
+        },
+        {
+          question: "成都大熊猫基地和都江堰熊猫谷，选哪个？",
+          answer: "住在成都，就选成都大熊猫基地：离市中心约 10 公里，园区更大，还有自己的博物馆。行程本来就去都江堰的，再考虑约 50 公里外的熊猫谷。两处同属一家单位，但门票分开买，哪一处都不能保证熊猫更活跃。",
+        },
+        {
+          question: "成都大熊猫基地要提前预约吗？",
+          answer: "要。门票在网上实名预约，护照也能用，入园时带上预约用的那本护照。当天现场售票只面向特殊情况，节假日的票很快约满。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+      ],
+    },
+    ko: {
+      description: "청두 판다기지: 문이 열릴 무렵 가면 사람처럼 앉아 두 앞발로 대나무를 쥐고 아침을 먹는 판다를 만납니다. 9월 하순부터는 그해 태어난 새끼 판다도 나옵니다.",
+      why: [
+        "문이 열리자마자 들어가 대나무 사이 오솔길을 걷습니다. 모퉁이를 돌면 판다 한 마리가 통나무에 기대 사람이 바닥에 앉듯 앉아, 두 앞발로 대나무를 쥐고 한 마디씩 먹고 있습니다. 조용한 아침에는 대나무가 툭 꺾이는 소리가 들리기도 합니다. 옆 방사장에서는 다른 한 마리가 나무 구조물 위에 엎드려 다리 하나를 늘어뜨리고 있습니다. 공연도 없고 서두를 필요도 없습니다. 판다 한 마리를 골라 대나무 한 대를 다 먹을 때까지 지켜보세요.",
+        "조금만 지켜보면 왜 늘 먹고 있는지 알게 됩니다. 판다는 곰이고 소화기관도 육식동물에 가깝지만, 거의 대나무만 먹고 삽니다. 한 입에서 얻는 영양이 적다 보니 하루 10~16시간을 먹는 데 쓰고, 그 사이에는 누워서 쉽니다. 나무 구조물 위에 축 늘어진 모습도 조금이라도 힘을 아끼려는 판다 나름의 생활 방식입니다. 대나무를 쥐는 손도 보세요. 또 하나의 ‘엄지’는 커진 손목뼈에 살이 덮인 것으로, 사람 손처럼 대나무를 움켜쥡니다.",
+        "기지는 무척 넓습니다. 핵심 구역만 자금성의 세 배가 넘어 한 번에 다 볼 수 없고, 다 볼 필요도 없습니다. 다 자란 판다들이 아침을 먹는 동안 먼저 보고, 산실(새끼 판다를 돌보는 곳) 한 곳, 그다음 레서판다 순서로 도세요. 가장 유명한 판다 앞에는 한 시간 넘게 줄이 늘어서기도 하니, 어느 판다든 괜찮다면 그 줄은 지나쳐도 됩니다. 도강언 판다밸리는 같은 기관이 운영하는 곳으로 청두에서 약 50km 떨어져 있어, 원래 도강언에 들르는 일정에 맞습니다. 청두 시내에 묵는다면 이곳에서 시작하세요.",
+      ],
+      highlights: [
+        {
+          name: "그해 태어난 새끼 판다 찾기",
+          body: "9월 하순 무렵부터 그해 태어난 새끼들이 태양·달·별 산실과 바깥 놀이터에 차례로 나옵니다. 매트 위에 옹기종기 모여 두리번거리기도 하고, 사육사 곁에서 나무줄기를 끌어안고 기어오르기도 합니다. 태어났을 때는 분홍빛에 눈도 못 뜨고 스마트폰보다 가벼웠던 아기들입니다. 어떤 새끼가 나와 있는지는 날마다 다릅니다.",
+        },
+        {
+          name: "산책로 옆 나뭇가지 위 레서판다",
+          body: "걸어 들어가 보는 레서판다 구역에서는 붉은 갈색 털에 고리 무늬 꼬리를 한 레서판다가 산책로 옆 나뭇가지를 따라 느릿느릿 움직입니다. 서늘할 때 더 활발하니 일찍 와야 할 이유가 하나 더 있는 셈입니다. 기지 규정에 따라 3m 이상 거리를 두세요.",
+        },
+        {
+          name: "판다가 낮잠 잘 때는 박물관",
+          body: "오전 늦게쯤이면 배부른 판다들이 하나둘 잠이 듭니다. 이때 기지 안의 자이언트판다박물관에 들어가 보고, 나가는 길에 판다를 한 번 더 둘러보세요.",
+        },
+      ],
+      time: "반나절을 잡으세요. 3~4시간이면 다 자란 판다, 산실 한 곳, 레서판다, 박물관까지 서두르지 않고 볼 수 있습니다.",
+      when: "오전 입장으로 예약하세요. 서늘한 아침에 판다가 보통 가장 활발하지만 보장할 수는 없고, 날이 더우면 사육사가 판다를 실내로 옮길 수 있습니다. 봄과 가을이 쾌적하고, 가을은 그해 태어난 새끼 판다가 모습을 드러내는 때이기도 합니다. 5월 초 노동절 연휴와 10월 첫 주 국경절 연휴에 가장 붐비니 피하세요.",
+      pair: "시내(약 10km)로 돌아와 오후는 청두 사람들처럼 보내 보세요. 인민공원 안의 100년이 넘은 찻집 학명다사(鶴鳴茶社)에서 몇 시간이고 차를 마시고, 용기가 있다면 귀 청소도 받아 보세요. 싼싱두이와 낙산대불은 둘 다 아침 일찍 출발해야 하니 하루씩 따로 잡으세요.",
+      skip: "더운 여름 오후에만 갈 수 있다면 판다 상당수가 자고 있거나 더위를 피해 실내에 있을 수 있으니, 가능하면 오전으로 옮기세요. 도강언이나 청성산에 들르는 일정이라면 그곳 판다밸리를 먼저 비교해 보세요. 입장권도 따로이고 산비탈의 분위기도 다릅니다. 푸바오를 만나러 가는 길이라면 이곳이 아닙니다. 2026년 현재 푸바오는 다른 기관인 중국자이언트판다보호연구센터의 워룽 선수핑 기지에서 지냅니다.",
+      faq: [
+        {
+          question: "청두 판다기지는 가 볼 만한가요?",
+          answer: "네, 특히 오전에 가 볼 만합니다. 시내 중심에서 약 10km밖에 떨어지지 않은 곳에서 나무 사이로 대나무를 먹는 판다를 볼 수 있습니다. 9월 하순 이후라면 그해 태어난 새끼 판다도 찾아보고, 레서판다 구역도 걸어 보세요. 반나절을 잡고 개장 시간에 맞춰 가세요.",
+        },
+        {
+          question: "판다를 보려면 몇 시에 가는 게 가장 좋나요?",
+          answer: "개장 직후가 가장 좋습니다. 서늘한 아침에 판다가 보통 가장 활발하고, 오전 늦게쯤이면 많이들 잠이 듭니다. 다만 보장되지는 않습니다. 비와 더위, 사육 일정에 따라 볼 수 있는 모습이 달라지고, 더운 날에는 실내로 옮겨질 수도 있습니다. 오전 입장으로 예약하세요.",
+        },
+        {
+          question: "청두 판다기지 관람에는 시간이 얼마나 걸리나요?",
+          answer: "반나절, 3~4시간 정도입니다. 핵심 구역이 약 238ha로 자금성의 세 배가 넘으니, 다 보려 하지 말고 다 자란 판다와 산실 한 곳, 레서판다를 골라 보세요. 주요 구역을 잇는 유료 관광 전동차를 타면 걷는 거리를 조금 줄일 수 있습니다.",
+        },
+        {
+          question: "청두 판다기지와 도강언 판다밸리 중 어디가 좋을까요?",
+          answer: "청두에 묵는다면 청두 판다기지입니다. 시내에서 약 10km로 가깝고, 관람 구역이 더 넓으며 박물관도 있습니다. 원래 도강언에 가는 일정이라면 약 50km 떨어진 판다밸리를 고려하세요. 두 곳은 같은 기관이 운영하지만 입장권은 따로이고, 어느 쪽도 판다가 더 활발하다고 보장하지 않습니다.",
+        },
+        {
+          question: "청두 판다기지는 미리 예약해야 하나요?",
+          answer: "네. 입장권은 온라인 실명 예약이고 여권으로도 예약할 수 있으며, 입장할 때 그 여권을 지참해야 합니다. 당일 현장 판매는 특별한 경우에만 하고, 연휴 날짜는 금방 매진됩니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+      ],
+    },
+  },
+  sanxingdui: {
+    en: {
+      description: "At Sanxingdui, near Chengdu, bronze faces with jutting eyes and gold masks stare back at you. They were buried over 3,000 years ago.",
+      why: [
+        "Walk into the bronze galleries at Sanxingdui and the faces start looking back. Bronze heads fill the cases, some wearing masks of beaten gold. Then comes a mask 1.38 metres across, wider than a doorway. Its eyes jut out like short pillars, its ears flare like fans, and the corners of its mouth hold a faint smile. Little else from ancient China looks like it. An old chronicle says Cancong, the first king of Shu, had eyes that jutted out, and it is hard to stand before this face and not think of him.",
+        "A little over 3,000 years ago, the people who lived here broke and burned bronzes, gold, jade and ivory, then buried them in pits. In most of the pits, the objects went in first, elephant tusks were laid over them, and ash and earth went on top. No one knows for certain why, and no writing has been found here to explain it. Pieces of a single bronze have turned up in different pits and been fitted back together. So as you walk round, look for the snapped edges, the scorch marks and the repairs.",
+        "Even the building plays along. It rises as three earth-covered mounds, after the three mounds of earth that gave Sanxingdui, ‘Three-Star Mound’, its name. Two huge glass walls shaped like eyes stare out towards the dig. Inside, the famous finds of 1986 sit alongside pieces from six new pits opened since 2020. See the rooms about the site and the dig before the great bronzes; the faces mean more once you know where they lay. If you can give ancient Sichuan only one day, give it here.",
+      ],
+      highlights: [
+        {
+          name: "Looking up at the bronze standing figure",
+          body: "Base and all, he stands 2.6 metres tall, barefoot, with rings round his ankles. His hands are made far too big and curl into hollow rings, as if gripping something, and whether he ever held anything is still argued over. He was found snapped in two, lying on his back at the bottom of a pit.",
+        },
+        {
+          name: "Under the bronze sacred tree",
+          body: "A bronze tree nearly four metres tall has a room of its own, and even with its top missing you have to tilt your head back. It rises in three tiers of three branches, hung with flowers and fruit, with crested birds perched on them and a dragon climbing down the trunk.",
+        },
+        {
+          name: "Watching restorers at work",
+          body: "In a separate building in the museum grounds, a glass wall lets you watch restorers at their benches, cleaning and piecing together finds from the new pits. Opening arrangements change, so check on the day.",
+        },
+      ],
+      time: "About three hours inside. With the trip out and back from Chengdu, that makes most of a day.",
+      when: "Any season. It is all indoors, which makes it a good choice for a wet or very hot day. It is busiest in the summer school holidays and on public holidays, so go on a weekday and arrive early if you can.",
+      pair: "Back in Chengdu, the Jinsha Site Museum on the west side of the city picks up the story. Jinsha is thought to have become the main centre of this culture after Sanxingdui declined. Its gold sun-bird disc, a whirling sun circled by four flying birds, is now the emblem of China's cultural heritage. Go the same afternoon only if you still have energy for another museum; otherwise give it a half-day of its own.",
+      skip: "If ancient objects in glass cases leave you cold, a day out to Guanghan is a lot to spend. The Jinsha Site Museum in Chengdu gives you a taste of the same world in a couple of hours, without the trip out.",
+      faq: [
+        {
+          question: "Is Sanxingdui Museum worth visiting?",
+          answer: "Yes, if ancient art interests you at all. Bronze faces with jutting eyes, a 2.6-metre standing figure and a bronze tree nearly 4 metres tall look like little else from ancient China. All of them are over 3,000 years old. The museum is about 40 kilometres from Chengdu, so plan on most of a day.",
+        },
+        {
+          question: "How long do you need at Sanxingdui Museum?",
+          answer: "About three hours inside. Two hours covers the main story if you move selectively, and the restoration hall needs extra time. Add the trip out and back from Chengdu, about 40 kilometres each way, and it fills most of a day.",
+        },
+        {
+          question: "How do you get to Sanxingdui from Chengdu?",
+          answer: "By train to Guanghan North and then a road transfer, or by car all the way; the museum is about 40 kilometres north of Chengdu. The station is not at the museum, so allow time for the last leg and don't book a tight return train.",
+        },
+        {
+          question: "Do I need to book Sanxingdui Museum tickets in advance?",
+          answer: "Yes. Tickets are booked in each visitor's own name, and foreign visitors can book with a passport through the museum's own website, WeChat account or mini-program. Carry the same passport to the gate. The museum warns against unofficial sellers, and we can check the rules for your date and book for you.",
+        },
+        {
+          question: "How old are the Sanxingdui bronzes?",
+          answer: "A little over 3,000 years old. Radiocarbon dates from four of the pits fall between about 1130 and 1010 BC, late in the Shang dynasty, which is roughly when the objects were broken and buried. No writing has been found at the site, so who made them is pieced together from what they left behind.",
+        },
+      ],
+    },
+    zh: {
+      description: "广汉三星堆：一张张青铜面孔盯着你看，有的眼珠往外凸，有的贴着金面罩。它们在三千多年前被埋进了土坑。",
+      why: [
+        "走进三星堆的青铜展厅，一张张脸就盯住了你。展柜里一排排青铜人头像，有的脸上还贴着金箔做的面罩。再往前，一张宽 1.38 米、比一扇门还宽的大面具迎面而来：两只眼珠像短柱一样往外凸，耳朵像两把扇子张开，嘴角却挂着一丝笑。中国别处的古代青铜器里，很少有长成这样的。古书《华阳国志》记载，最早称王的蜀王蚕丛“其目纵”，也就是眼睛往外凸。站在这张脸面前，很难不想起这句话。",
+        "三千多年前，住在这里的人把不少青铜器、金器、玉器和象牙打碎、烧过，再埋进土坑。大多数坑里，先放器物，上面铺满象牙，最后盖上炭渣和泥土。为什么这样做，至今没人说得准，这里也还没发现能回答这个问题的文字。同一件青铜器的碎片，散落在不同的坑里，后来又被拼回了一起。所以一路看过去，留意那些断口、烧痕和修补的地方。",
+        "连博物馆的房子都在呼应这个故事。它建成三座覆土的小山，对应“三星堆”得名的那三个土堆；两面巨大的玻璃墙做成眼睛的样子，正对着遗址发掘区。馆里既有 1986 年出土的那批国宝，也有 2020 年以来新发掘的六个坑里的文物。先看讲遗址和考古发掘的展厅，再去看那些大件青铜器；知道它们原先埋在哪里，再看那些脸，感觉就不一样了。在成都只能给古蜀文明留一天的话，就留给这里。",
+      ],
+      highlights: [
+        {
+          name: "仰望青铜大立人",
+          body: "连底座 2.6 米高，光着脚，脚踝戴着镯子。一双手做得格外大，握成中空的圆环，像攥着什么；到底握过东西没有，专家至今还在争。它出土时断成两截，仰面躺在坑底。",
+        },
+        {
+          name: "站在青铜神树下",
+          body: "近 4 米高的青铜神树单独占一个展厅，就算树顶残缺，也得仰起头看。树分三层，每层三根枝条，枝上开花结果，站着头顶羽冠的鸟，一条龙顺着树干往下爬。",
+        },
+        {
+          name: "隔着玻璃看文物修复",
+          body: "主馆之外，博物馆园区里还有一座文物保护修复馆。隔着一道玻璃墙，能看到修复师在工作台前清理、拼对新坑里出土的文物。开放安排会调整，当天问一下。",
+        },
+      ],
+      time: "馆内三个小时左右，加上从成都往返，差不多一整天。",
+      when: "四季都行。全在室内，成都下雨或者热得出不了门的日子正合适。暑假和节假日人最多，尽量挑平日，早点到。",
+      pair: "回到成都，城西的金沙遗址博物馆接着讲这个故事。一般认为，三星堆衰落以后，金沙成了古蜀的中心。那里的太阳神鸟金饰，中间是旋转的太阳，外圈四只鸟绕着飞，如今是中国文化遗产标志。还有力气再看一座博物馆，就当天下午去；不然单独留半天。",
+      skip: "对玻璃柜里的古物提不起兴趣的话，专门去一趟广汉就太花时间了。成都市区的金沙遗址博物馆，两个小时就能感受同一个古蜀世界，也不用出城。",
+      faq: [
+        {
+          question: "三星堆博物馆值得去吗？",
+          answer: "值得，只要你对古代文物有一点兴趣。眼珠凸出的青铜面具、2.6 米高的青铜大立人、近 4 米高的青铜神树，都是三千多年前的东西，在中国别处很难见到这样的造型。博物馆离成都约 40 公里，要花差不多一整天。",
+        },
+        {
+          question: "三星堆博物馆要看多久？",
+          answer: "馆内留三个小时左右；挑着重点看，两个小时也能看完主线，想去文物修复馆再多留些时间。从成都过去约 40 公里，算上往返，差不多一整天。",
+        },
+        {
+          question: "从成都怎么去三星堆？",
+          answer: "坐火车到广汉北站再换车，或者从成都直接坐车过去，博物馆在成都以北约 40 公里。火车站不在博物馆门口，最后一段路要把时间算进去，回程车票别买得太紧。",
+        },
+        {
+          question: "三星堆博物馆要提前预约吗？",
+          answer: "要。门票实名预约，外国游客可以用护照，在博物馆官网、官方微信公众号或小程序上预约，入馆时带上那本护照。馆方提醒不要通过非官方渠道购票。我们可以按你的日期核实规则并代为预约。",
+        },
+        {
+          question: "三星堆的青铜器有多少年了？",
+          answer: "三千多年。其中四个坑的碳十四测年集中在公元前 1130 年到前 1010 年前后，相当于商朝晚期，大约就是这些器物被打碎、埋下的时候。遗址里至今没有发现文字，这群人是谁，只能靠他们留下的东西一点点拼出来。",
+        },
+      ],
+    },
+    ko: {
+      description: "청두 근교 광한의 싼싱두이: 눈이 툭 튀어나온 청동 얼굴과 금 가면을 쓴 얼굴들이 당신을 바라봅니다. 3천여 년 전 땅에 묻힌 유물입니다.",
+      why: [
+        "싼싱두이(삼성퇴)의 청동 전시실에 들어서면 얼굴들이 이쪽을 바라보기 시작합니다. 진열장마다 청동 두상이 늘어서 있고, 몇몇은 금을 얇게 두드려 편 가면을 쓰고 있습니다. 조금 더 가면 폭 1.38m, 문 하나보다 넓은 커다란 가면이 나타납니다. 두 눈알은 짧은 기둥처럼 앞으로 튀어나왔고 귀는 부채처럼 활짝 펼쳐졌는데, 입가에는 옅은 미소가 걸려 있습니다. 중국의 다른 고대 청동기에서는 이런 얼굴을 찾기 어렵습니다. 옛 역사서 《화양국지》에는 처음으로 왕이라 일컬은 촉의 군주 잠총의 눈이 ‘튀어나왔다(其目縱)’는 구절이 있는데, 이 얼굴 앞에 서면 그 구절이 떠오를 수밖에 없습니다.",
+        "3천여 년 전, 이곳 사람들은 청동기와 금, 옥, 상아를 부수고 불에 태운 뒤 구덩이에 묻었습니다. 대부분의 구덩이에서는 먼저 유물을 넣고, 그 위에 상아를 깔고, 마지막으로 재와 흙을 덮었습니다. 왜 그랬는지는 아직 확실히 아는 사람이 없고, 이곳에서는 답해 줄 문자도 발견되지 않았습니다. 청동기 한 점의 조각들이 서로 다른 구덩이에서 나와 다시 맞춰지기도 했습니다. 그러니 둘러보면서 깨진 자리와 그을린 자국, 수리한 흔적을 찾아보세요.",
+        "박물관 건물부터 이 이야기를 닮았습니다. ‘삼성퇴(三星堆)’, 곧 ‘별 세 개 무더기’라는 이름은 유적의 흙무더기 세 개에서 왔는데, 건물도 이를 따라 흙을 덮은 언덕 세 채로 지었습니다. 눈 모양의 커다란 유리벽 두 면은 발굴 현장을 마주 보고 있습니다. 안에는 1986년에 발굴된 대표 유물과 2020년부터 새로 발굴한 구덩이 여섯 곳의 유물이 함께 있습니다. 유명한 청동기로 바로 가기보다 유적과 발굴 이야기를 다룬 전시실부터 보세요. 어디에 묻혀 있었는지 알고 나면 그 얼굴들이 달리 보입니다. 청두에서 고촉(古蜀, 옛 촉나라) 문명에 하루만 쓸 수 있다면 이곳에 쓰세요.",
+      ],
+      highlights: [
+        {
+          name: "청동 입상 올려다보기",
+          body: "청동 입상은 받침까지 합쳐 높이 2.6m이고, 맨발에 발찌를 찼습니다. 일부러 크게 만든 두 손은 속이 빈 고리처럼 말려 무언가를 쥔 듯한데, 정말 무언가를 쥐고 있었는지는 전문가들 사이에서도 아직 의견이 갈립니다. 발굴 당시에는 두 동강 난 채 구덩이 바닥에 반듯이 누워 있었습니다.",
+        },
+        {
+          name: "청동 신수(神樹) 아래에서",
+          body: "높이 4m 가까운 청동 나무가 전시실 하나를 통째로 차지합니다. 꼭대기가 떨어져 나갔는데도 고개를 젖혀야 올려다볼 수 있습니다. 가지는 세 층에 층마다 셋이고, 가지마다 꽃과 열매가 달리고 볏을 단 새가 앉아 있으며, 용 한 마리가 줄기를 타고 내려옵니다.",
+        },
+        {
+          name: "유리벽 너머 복원 현장",
+          body: "본관 밖 박물관 단지 안에 문물 보호·복원관이 따로 있습니다. 유리벽 너머로 복원사들이 작업대에서 새 구덩이 출토품을 손질하고 맞추는 모습을 볼 수 있습니다. 운영 방식이 바뀔 수 있으니 당일 확인하세요.",
+        },
+      ],
+      time: "관내 3시간 정도에 청두 왕복까지 더하면 거의 하루가 걸립니다.",
+      when: "계절은 상관없습니다. 모두 실내라 비가 오거나 무척 더운 날에 잘 맞습니다. 중국의 여름방학과 연휴에 가장 붐비니, 되도록 평일에 일찍 가세요.",
+      pair: "청두로 돌아오면 시내 서쪽의 진사유적박물관이 이야기를 이어 갑니다. 싼싱두이가 쇠퇴한 뒤에는 진사가 고촉 문명의 중심이 되었다고 보는 견해가 일반적입니다. 그곳의 태양신조 금박 장식은 소용돌이치는 태양을 네 마리 새가 둘러 나는 모양으로, 지금은 중국 문화유산 표지로 쓰입니다. 박물관 하나를 더 볼 힘이 남았다면 그날 오후에, 아니라면 반나절을 따로 잡으세요.",
+      skip: "유리 진열장 속 옛 유물에 별 관심이 없다면 광한까지 하루를 쓰기는 아깝습니다. 청두 시내의 진사유적박물관에서 두 시간이면, 시외로 나가지 않고도 같은 고촉의 세계를 맛볼 수 있습니다.",
+      faq: [
+        {
+          question: "싼싱두이박물관은 가 볼 만한가요?",
+          answer: "네, 옛 유물에 조금이라도 관심이 있다면 가 볼 만합니다. 눈이 튀어나온 청동 가면, 높이 2.6m의 청동 입상, 4m 가까운 청동 신수는 중국의 다른 고대 유물에서는 보기 드문 모습이고, 모두 3천 년이 넘었습니다. 청두에서 약 40km 떨어져 있어 거의 하루를 잡아야 합니다.",
+        },
+        {
+          question: "싼싱두이박물관 관람에는 시간이 얼마나 걸리나요?",
+          answer: "관내에서 3시간 정도입니다. 골라서 보면 2시간으로도 핵심 줄거리는 볼 수 있고, 복원관까지 보려면 시간을 더 잡으세요. 청두에서 편도 약 40km 거리라 왕복까지 더하면 거의 하루가 걸립니다.",
+        },
+        {
+          question: "청두에서 싼싱두이까지 어떻게 가나요?",
+          answer: "기차로 광한북역까지 간 뒤 차로 갈아타거나, 청두에서 바로 차로 갑니다. 박물관은 청두에서 북쪽으로 약 40km입니다. 기차역이 박물관 바로 앞이 아니니 마지막 구간 시간을 넉넉히 잡고, 돌아오는 기차표를 빠듯하게 사지 마세요.",
+        },
+        {
+          question: "싼싱두이박물관은 미리 예약해야 하나요?",
+          answer: "네. 입장권은 실명 예약이고, 외국인은 박물관 공식 웹사이트, 공식 위챗 계정이나 미니 프로그램에서 여권으로 예약할 수 있습니다. 입장할 때 그 여권을 지참하세요. 박물관이 비공식 판매처를 경고하고 있으니, 저희가 날짜에 맞춰 규정을 확인하고 공식 채널로 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "싼싱두이 청동기는 얼마나 오래되었나요?",
+          answer: "3천 년이 조금 넘었습니다. 구덩이 네 곳의 시료를 방사성 탄소로 측정한 연대는 대략 기원전 1130년에서 1010년 사이로, 상나라 말기에 해당합니다. 유물이 부서져 묻힌 것도 대략 이때입니다. 유적에서 문자가 발견되지 않아, 이들이 누구였는지는 남긴 물건으로 맞춰 갈 수밖에 없습니다.",
+        },
+      ],
+    },
+  },
+  "leshan-giant-buddha": {
+    en: {
+      description: "Stand beside the Leshan Giant Buddha's head, then see all 71 metres of him from his feet or from a boat, on a long day trip from Chengdu.",
+      why: [
+        "Come out at the top of the cliff and the Buddha's head is right beside you, taller than a four-storey house, one ear alone seven metres long. Far below, three rivers meet in front of him. If the way down is open, take the narrow stone stairs down the rock face and, at the bottom, turn and look up. Seventy-one metres of Buddha sits with his hands on his knees, gazing out over the water. Locals say the mountain is a Buddha and the Buddha is a mountain, and down here you see what they mean.",
+        "He was carved to calm those rivers. Boats kept being wrecked where they meet, and in the early 700s a monk named Haitong began cutting a Buddha from the cliff. When a local official demanded a bribe from the building fund, Haitong refused. A Tang record has him reply, ‘You may gouge out my eyes, but you will not get the Buddha's money.’ ‘Try it, then,’ snapped the official. Haitong cut out his own eyes and held them out on a plate, and the official fled, begging forgiveness. The monk did not live to see the Buddha finished; the work took about ninety years. His statue sits in a small cave above the Buddha's head.",
+        "You can see him two ways. On foot you get the scale, and the land route also passes Lingyun Temple on the hilltop beside him and Haitong's cave. From a boat on the river, the whole seated figure fits into one view, sitting in his niche in the cliff like a man in a deep armchair. On a day trip from Chengdu, pick one; our guide sets out how to choose.",
+      ],
+      highlights: [
+        {
+          name: "Face to face at the head",
+          body: "The platform beside the head is where everyone takes a photo pretending to touch the Buddha. Three rows of his stone curls hide gutters, finished so well that they vanish from a distance. They join channels behind the ears and in the collar to carry rainwater away, part of why he has come through twelve centuries of Sichuan rain.",
+        },
+        {
+          name: "Down the cliff to his feet",
+          body: "When the way down is open, narrow stone stairs cut into the cliff take you all the way to his feet, where his instep alone is 8.5 metres across. In Chinese, ‘hugging the Buddha's feet’ means cramming at the last minute; down here, the feet are right in front of you. Which stairs go down and which come back up changes with repairs and crowds, so follow the signs on the day, and save some legs for the climb back.",
+        },
+        {
+          name: "The sleeping Buddha from the river",
+          body: "From a boat, the whole Buddha comes into view at once. Then follow the hills along the bank. Wuyou Hill is the head, Lingyun Hill the chest and Guicheng Hill the feet of a sleeping Buddha about 1,300 metres long. The Giant Buddha sits at its heart, so locals call it a Buddha within a Buddha.",
+        },
+      ],
+      time: "A full day from Chengdu. Allow about an hour each way by high-speed train to Leshan, then a road transfer to the scenic area, and three to four hours on the land route. At holiday peaks, the queue for the stairs to his feet alone can run past an hour.",
+      when: "A weekday in spring or autumn, early in the day. Avoid the national holidays in early May and early October. High water in the summer rains, or fog, can stop the boats, so treat the land route as your main plan.",
+      pair: "Leshan is a food town, and the saying goes ‘for food, Sichuan; for flavour, Leshan’. Streets such as Zhanggongqiao are lined with qiaojiao beef soup, bobo chicken (skewers steeped in chilli oil) and sweet-skinned duck. Mount Emei, the other half of the same World Heritage listing, is a short ride further down the same rail line. Stay a night there rather than squeeze both into one day.",
+      skip: "If steep, narrow stairs are hard for anyone in your group, skip the descent. The scenic area itself has asked people with heart trouble, high blood pressure or a fear of heights not to go down. The head platform alone, or a boat instead, still shows you the Buddha. With only two or three days in Chengdu, Leshan costs a whole day, so weigh it against the pandas and Sanxingdui first.",
+      faq: [
+        {
+          question: "Is the Leshan Giant Buddha worth visiting?",
+          answer: "Yes, if you can give it a full day. At 71 metres it is the world's largest stone-carved seated Buddha, cut into a river cliff more than 1,200 years ago. From his feet, when the way down is open, you feel what 71 metres means. From Chengdu it is about an hour each way by high-speed train.",
+        },
+        {
+          question: "How tall is the Leshan Giant Buddha?",
+          answer: "71 metres, roughly the height of a 20-storey building. His head is 14.7 metres tall, each ear is 7 metres long and his instep is 8.5 metres across. Because his head is level with the clifftop and his feet rest by the river, walking down to them means descending nearly his full height.",
+        },
+        {
+          question: "Can you visit the Leshan Giant Buddha as a day trip from Chengdu?",
+          answer: "Yes. High-speed trains reach Leshan in about an hour, followed by a road transfer to the scenic area. That leaves time for one way of seeing him at an easy pace, the land route or the boat. Keep a buffer before your return train, and don't let a suspended boat break the day.",
+        },
+        {
+          question: "Should I see the Leshan Giant Buddha from land or by boat?",
+          answer: "Choose the land route for scale and the chance to reach his feet; choose the boat for the whole seated figure. On land you stand beside the head and, when the way down is open, take steep cliff stairs down to his feet and back up. The boat is a separate ticket and can stop in high water or fog.",
+        },
+        {
+          question: "When is the best time to visit the Leshan Giant Buddha?",
+          answer: "A weekday in spring or autumn, early in the day. Avoid the national holidays in early May and early October, when the queue for the stairs to his feet alone can run past an hour. High water in the summer rains, or fog, can stop the boats.",
+        },
+      ],
+    },
+    zh: {
+      description: "乐山大佛：站到 71 米高的大佛头边，再下到佛脚仰望，或者坐船看他全身。从成都出发，要留足一整天。",
+      why: [
+        "从山顶的路上转出来，大佛的头就在身边，比四层楼还高，光一只耳朵就有 7 米长。往下看，三条江就在他面前汇到一起。下佛脚的路开放的话，再沿着崖壁上窄窄的石阶一路往下，到底了回头仰望：71 米高的石佛双手抚膝，静静望着江面。都说“山是一尊佛，佛是一座山”，站在这里就懂了。",
+        "这尊佛当年是为镇住江水而凿的。三江汇流的地方水急浪大，常常翻船，唐朝开元初年，海通和尚发愿在崖上凿一尊大佛。有个地方官想从修佛的钱里捞好处。据唐人韦皋的记载，海通答：“自目可剜，佛财难得。”那人恼了：“那你剜来看看！”他真就剜下自己的眼睛，捧在盘里递了过去，那人吓得转身就跑，连声认错。海通没能等到完工，大佛前后凿了约九十年。如今他的石像供在佛头上方一侧的海师洞里。",
+        "看大佛有两种方式。走山上，体会的是他有多大，一路还会经过大佛旁边山顶上的凌云寺和海师洞。坐船到江上，整尊坐佛一眼就能看全。他嵌在凿开的山崖里，像人坐进一张深深的扶手椅。从成都一天来回的话，二选一就好，怎么选，我们的攻略里写得很清楚。",
+      ],
+      highlights: [
+        {
+          name: "站在佛头旁边",
+          body: "佛头旁边的平台，是大家拍“摸”大佛合影的地方。佛头上一圈圈螺旋状的石雕发卷里，有三层藏着排水沟，修饰得远看根本看不出来；它们和耳后、衣领里的水道连成一套，把雨水引走。大佛能熬过一千二百多年的巴蜀风雨，这套水道功不可没。",
+        },
+        {
+          name: "下到佛脚",
+          body: "下佛脚的路开放时，可以沿着凿在崖壁上的窄石阶一路下到大佛脚边，光是脚背就宽 8.5 米。平时说“临时抱佛脚”，到了这里，佛脚真就在眼前。哪条栈道下、哪条栈道上，会随维修和人流调整，当天看指示牌走；下去了还得爬上来，记得留点力气。",
+        },
+        {
+          name: "江上看睡佛",
+          body: "坐船到江上，整尊大佛一下子都在眼前。再顺着岸边的山看过去：乌尤山是佛头，凌云山是胸，龟城山是脚，连起来是一尊约 1300 米长的睡佛，乐山大佛正好坐在它的心口，这就是“佛中有佛”。",
+        },
+      ],
+      time: "从成都出发要一整天：坐高铁到乐山约一小时，再坐车到景区；走山上这一线留三四个小时。节假日高峰，光排队下佛脚就可能要一个多小时。",
+      when: "挑春秋两季的平日，早点到。避开五一和国庆长假。夏天雨季水位高，或者起雾，游船都可能停航，所以把走山上当作主线。",
+      pair: "“食在四川，味在乐山”。张公桥一带的美食街上，跷脚牛肉、钵钵鸡、甜皮鸭一家挨一家。峨眉山和乐山大佛同属一项世界遗产，顺着同一条铁路再往前坐一小段就到，最好住一晚，别硬塞进同一天。",
+      skip: "同行有人走不了又陡又窄的台阶，就别下佛脚；景区也提醒过，有高血压、心脏病或恐高的游客不要下去。只在佛头旁看，或者改坐船看全身，大佛一样看得到。在成都只有两三天的话，乐山要占掉一整天，先和熊猫、三星堆比一比，哪个更想去。",
+      faq: [
+        {
+          question: "乐山大佛值得去吗？",
+          answer: "值得，前提是能留出一整天。大佛高 71 米，是世界上最大的石刻弥勒佛坐像，凿在江边崖壁上已经一千二百多年。下佛脚的路开放时，站到佛脚边仰头往上看，才知道 71 米有多高。从成都坐高铁过去约一小时。",
+        },
+        {
+          question: "乐山大佛有多高？",
+          answer: "高 71 米，差不多二十层楼高。佛头高 14.7 米，一只耳朵长 7 米，脚背宽 8.5 米。大佛“头与山齐，足踏大江”，所以从山顶下到佛脚，落差几乎就是大佛的全高。",
+        },
+        {
+          question: "从成都可以一天往返乐山大佛吗？",
+          answer: "可以。高铁到乐山约一小时，再坐车到景区。这点时间只够从容地选一种看法，走山上或者坐船。回程车次要留足余量，别让停航的游船打乱一整天。",
+        },
+        {
+          question: "乐山大佛走山上看好，还是坐船看好？",
+          answer: "想感受大佛有多大、有机会下到佛脚，就走山上；想看全身，就坐船。走山上能站到佛头旁，下佛脚的路开放时，还能沿陡峭的崖壁石阶下到佛脚、再爬上来。坐船要另外买票，水位高或起雾时可能停航。",
+        },
+        {
+          question: "什么时候去乐山大佛最好？",
+          answer: "春秋两季的平日，早点到。避开五一和国庆长假，那时光排队下佛脚就可能要一个多小时。夏天雨季水位高，或者起雾，游船都可能停航。",
+        },
+      ],
+    },
+    ko: {
+      description: "낙산대불: 71m 대불의 머리 옆에 서 보고, 발치에서 올려다보거나 배에서 전신을 봅니다. 청두에서 꼬박 하루를 잡는 당일 여행.",
+      why: [
+        "산 위 길을 돌아 나오면 대불의 머리가 바로 옆에 있습니다. 4층 건물보다 높고, 귀 하나만 7m입니다. 저 아래에서는 세 강이 대불 앞으로 모여듭니다. 발치로 내려가는 길이 열려 있다면 절벽에 붙은 좁은 돌계단을 따라 끝까지 내려가 뒤돌아 올려다보세요. 높이 71m의 돌부처가 두 손을 무릎에 얹고 강물을 조용히 바라보고 있습니다. 강가 절벽을 통째로 깎아 만든 마애불입니다. 현지에서는 ‘산이 곧 부처, 부처가 곧 산’이라고 하는데, 여기 서면 그 말이 이해됩니다.",
+        "이 부처는 강물을 잠재우려고 새긴 것입니다. 세 강이 만나는 이곳은 물살이 거세 배가 자주 뒤집혔고, 8세기 초에 해통(海通) 스님이 절벽에 대불을 새기기로 마음먹었습니다. 지방 관리가 불상을 지을 돈에서 뇌물을 요구하자, 당나라 위고(韋皋)가 남긴 기록에 따르면 해통은 ‘내 눈은 도려낼 수 있어도 부처님 재물은 내줄 수 없다’고 답했습니다. 관리가 화를 내며 ‘그럼 어디 해 보라’고 하자 해통은 정말로 자기 눈을 도려내 쟁반에 담아 내밀었고, 관리는 놀라 달아나며 용서를 빌었습니다. 해통은 완공을 보지 못했고, 대불은 약 90년에 걸쳐 완성되었습니다. 지금 그의 석상은 대불 머리 위쪽 한편의 작은 굴에 모셔져 있습니다.",
+        "대불을 보는 방법은 두 가지입니다. 산길로 가면 그 크기를 몸으로 느끼고, 대불 옆 산꼭대기의 링윈사와 해통 스님의 굴도 지납니다. 강에서 배를 타면 앉은 대불 전체가 한눈에 들어옵니다. 절벽을 파낸 자리에 들어앉은 모습이 마치 깊은 안락의자에 몸을 묻은 사람 같습니다. 청두에서 당일로 다녀온다면 하나만 고르세요. 어떻게 고를지는 가이드 글에 정리해 두었습니다.",
+      ],
+      highlights: [
+        {
+          name: "대불 머리 옆에서",
+          body: "머리 옆 전망대는 다들 대불을 ‘만지는’ 듯한 사진을 찍는 곳입니다. 돌 곱슬머리 가운데 세 줄에 배수로가 숨어 있는데, 감쪽같이 마감해 멀리서는 보이지 않습니다. 이 배수로는 귀 뒤와 옷깃의 물길과 이어져 빗물을 빼냅니다. 대불이 1,200년 넘는 쓰촨의 비바람을 견딘 비결 가운데 하나입니다.",
+        },
+        {
+          name: "절벽 계단으로 발치까지",
+          body: "내려가는 길이 열려 있으면 절벽에 깎아 낸 좁은 돌계단을 따라 대불의 발치까지 내려갈 수 있습니다. 발등 폭만 8.5m입니다. 중국어로 ‘부처님 발을 껴안는다(抱佛脚)’는 말은 벼락치기를 뜻하는데, 여기서는 그 발이 정말 눈앞에 있습니다. 어느 계단으로 내려가고 어느 계단으로 올라오는지는 보수 공사와 인파에 따라 바뀌니 당일 안내판을 따르고, 다시 올라올 힘도 남겨 두세요.",
+        },
+        {
+          name: "강에서 보는 잠자는 부처",
+          body: "배를 타고 강으로 나가면 대불 전신이 한눈에 들어옵니다. 이어서 강가의 산줄기를 따라가 보세요. 우유산이 머리, 링윈산이 가슴, 구이청산이 발이 되어 길이 약 1,300m의 누운 부처를 이루고, 낙산대불은 그 가슴 한가운데에 앉아 있습니다. 그래서 ‘부처 속의 부처’라고 부릅니다.",
+        },
+      ],
+      time: "청두에서 하루가 꼬박 걸립니다. 고속철로 낙산까지 편도 약 1시간, 다시 차로 관광구역까지 가고, 산길 관람에 3~4시간을 잡으세요. 연휴 성수기에는 발치로 내려가는 계단 줄만 한 시간이 넘게 걸리기도 합니다.",
+      when: "봄이나 가을의 평일, 이른 시간이 가장 좋습니다. 5월 초 노동절 연휴와 10월 초 국경절 연휴는 피하세요. 여름 장마철에 물이 불거나 안개가 끼면 유람선이 멈출 수 있으니, 산길을 기본 계획으로 삼으세요.",
+      pair: "중국에는 ‘먹는 건 쓰촨, 맛은 낙산’이라는 말이 있습니다. 장궁차오(張公橋) 일대 먹자골목에는 소고기탕인 차오자오뉴러우, 고추기름에 담근 꼬치 보보지, 껍질이 달콤한 오리 톈피야 가게가 줄지어 있습니다. 같은 세계유산으로 묶인 어메이산(아미산)은 같은 철도로 조금만 더 가면 되니, 하루에 몰아넣지 말고 하룻밤 묵어 가세요.",
+      skip: "일행 중 가파르고 좁은 계단이 힘든 분이 있다면 발치까지 내려가지 마세요. 관광구역도 고혈압·심장병이 있거나 고소공포증이 있는 사람은 내려가지 말라고 안내해 왔습니다. 머리 옆 전망대만 보거나 대신 배를 타도 대불은 충분히 보입니다. 청두에 2~3일뿐이라면 낙산대불에 하루가 통째로 들어가니, 판다와 싼싱두이 중 무엇이 더 보고 싶은지 먼저 따져 보세요.",
+      faq: [
+        {
+          question: "낙산대불은 가 볼 만한가요?",
+          answer: "네, 하루를 통째로 쓸 수 있다면 가 볼 만합니다. 높이 71m로 세계에서 가장 큰 돌로 새긴 미륵불 좌상이며, 강가 절벽에 새겨진 지 1,200년이 넘었습니다. 내려가는 길이 열려 있다면 발치에 서서 올려다보세요. 71m가 얼마나 높은지 실감합니다. 청두에서 고속철로 편도 약 1시간입니다.",
+        },
+        {
+          question: "낙산대불은 얼마나 큰가요?",
+          answer: "높이 71m로 20층 건물쯤 됩니다. 머리 높이 14.7m, 귀 길이 7m, 발등 폭 8.5m입니다. 머리는 산꼭대기와 나란하고 발은 강가에 닿아 있어, 발치까지 내려가려면 대불 키만큼을 거의 다 내려가야 합니다.",
+        },
+        {
+          question: "청두에서 낙산대불 당일치기가 가능한가요?",
+          answer: "가능합니다. 고속철로 낙산까지 약 1시간, 다시 차로 관광구역까지 갑니다. 산길이나 배 가운데 한 가지만 여유 있게 볼 시간이니 둘 다 욕심내지 마세요. 돌아오는 기차 시간은 넉넉히 잡고, 유람선이 멈춰도 하루 일정이 흔들리지 않게 하세요.",
+        },
+        {
+          question: "낙산대불은 산길과 배 중 어느 쪽으로 보는 게 좋나요?",
+          answer: "크기를 실감하고 발치까지 가 보고 싶다면 산길, 전신을 보고 싶다면 배입니다. 산길로 가면 머리 옆에 서 보고, 발치로 내려가는 길이 열려 있으면 가파른 절벽 계단으로 발치까지 내려갔다가 다시 올라올 수 있습니다. 배는 입장권이 따로이고, 물이 불거나 안개가 끼면 운항이 멈출 수 있습니다.",
+        },
+        {
+          question: "낙산대불은 언제 가는 게 가장 좋나요?",
+          answer: "봄이나 가을의 평일, 이른 시간입니다. 노동절과 국경절 연휴는 피하세요. 그때는 발치로 내려가는 줄만 한 시간이 넘게 걸리기도 합니다. 여름 장마철에 물이 불거나 안개가 끼면 유람선이 멈출 수 있습니다.",
+        },
+      ],
+    },
+  },
   hongyadong: {
     en: {
       description: "Hongyadong after dark: eleven storeys of stilt houses glow gold on a cliff above the Jialing. Where to see it from, and the walk from top floor to river.",
@@ -2570,6 +3008,42 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Archaeological Ruins of Liangzhu City", "Liangzhu Ancient City", "Liangzhu site", "良渚古城遗址", "良渚遗址", "良渚古城", "량주 고성 유적", "량주 유적", "Liangzhu Gucheng Yizhi"],
     sameAs: ["https://en.wikipedia.org/wiki/Archaeological_ruins_of_Liangzhu_City", "https://www.wikidata.org/wiki/Q15904183", "https://whc.unesco.org/en/list/1592/"],
+  },
+  "chengdu-panda-base": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Chengdu Research Base of Giant Panda Breeding: introduction", url: "https://www.panda.org.cn/en/about/introduction/" },
+      { title: "Chengdu Research Base of Giant Panda Breeding: 游客须知 (visitor notice)", url: "https://m.panda.org.cn/cn/service/notice/" },
+      { title: "Smithsonian's National Zoo: Giant panda", url: "https://nationalzoo.si.edu/animals/giant-panda" },
+      { title: "CCTV: the base's 2026 cubs meet the public (2026)", url: "https://city.news.cctv.com/2026/09/28/VIDE9ffLvCx0dg5MVibcCF0W260928.shtml" },
+      { title: "China Youth Daily via China News Service: queuing at dawn to see the pandas (2024)", url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml" },
+    ],
+    alternateName: ["Chengdu Research Base of Giant Panda Breeding", "Chengdu Panda Base", "Chengdu Giant Panda Base", "成都大熊猫繁育研究基地", "成都大熊猫基地", "熊猫基地", "청두 판다기지", "청두 판다 연구기지", "Chengdu Daxiongmao Fanyu Yanjiu Jidi"],
+    sameAs: ["https://en.wikipedia.org/wiki/Chengdu_Research_Base_of_Giant_Panda_Breeding", "https://www.wikidata.org/wiki/Q1067861"],
+  },
+  sanxingdui: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Sanxingdui Museum official website", url: "https://www.sxd.cn/" },
+      { title: "Sichuan Provincial Institute of Cultural Relics and Archaeology: the new Sanxingdui Museum (2023)", url: "https://www.sckg.com/dynamics/2898.html" },
+      { title: "Xinhua: new finds, new research, new methods at the new museum (2023)", url: "https://www.news.cn/politics/2023-07/27/c_1129770556.htm" },
+      { title: "National Ethnic Affairs Commission: the bronze mask with protruding eyes (2023)", url: "https://www.neac.gov.cn/seac/c103391/202306/1165481.shtml" },
+      { title: "Chinese Social Sciences Net: Sun Hua on the Sanxingdui pits (2022)", url: "https://www.cssn.cn/kgxc/kgxc_kgxl/202209/t20220930_5545307.shtml" },
+    ],
+    alternateName: ["Sanxingdui Museum", "Sanxingdui", "三星堆博物馆", "三星堆", "三星堆遗址", "싼싱두이박물관", "싼싱두이", "삼성퇴", "Sanxingdui Bowuguan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Sanxingdui_Museum", "https://www.wikidata.org/wiki/Q7420771"],
+  },
+  "leshan-giant-buddha": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Mount Emei Scenic Area, including Leshan Giant Buddha Scenic Area", url: "https://whc.unesco.org/en/list/779/" },
+      { title: "Xinhua: World Heritage in China, the Leshan Giant Buddha (2024)", url: "https://www.news.cn/photo/20240608/4658ec98d843495187fdeb43669037a5/c.html" },
+      { title: "Sichuan Local Chronicles Office (via The Paper): Haitong, who began the Buddha", url: "https://m.thepaper.cn/newsDetail_forward_17790959" },
+      { title: "Sichuan Local Chronicles Office (via The Paper): the sleeping Buddha in the hills", url: "https://m.thepaper.cn/baijiahao_6859719" },
+      { title: "Cover News: the 2020 flood and the Buddha's drainage channels", url: "https://news.qq.com/rain/a/20200818A0PUED00" },
+    ],
+    alternateName: ["Leshan Giant Buddha", "Grand Buddha of Leshan", "Lingyun Giant Buddha", "乐山大佛", "凌云大佛", "낙산대불", "러산 대불", "Leshan Dafo"],
+    sameAs: ["https://en.wikipedia.org/wiki/Leshan_Giant_Buddha", "https://www.wikidata.org/wiki/Q205131", "https://whc.unesco.org/en/list/779/"],
   },
   hongyadong: {
     reviewedAt: "2026-10-04",
