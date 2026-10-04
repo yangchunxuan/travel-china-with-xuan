@@ -33,6 +33,39 @@ That means:
 | `pair` | What fits around it the same day, with directions | |
 | `skip` | Who can leave it out, and what to do instead | Full sentences |
 
+## Make them want to go (owner's rule, 2026-10-04)
+
+The owner's words: "你要有让你看了很想去的冲动，而不是在这说黑话" (it should make you itch to go, not talk in jargon).
+
+- **Write the moment, not the monument.** Describe what being there looks, sounds and feels like:
+  - the moment you turn round on the wall and it runs to the horizon;
+  - the hush of the palace square at opening;
+  - mist on the lake at seven in the morning.
+- **Plain words, no jargon.** Never use a specialist term the reader has to look up: 空心敌楼, 垛口, 关城, 门额, 品级, 中轴线, 配殿, "parapet", "dougong" and the like. If the thing matters, describe it ("the small windows soldiers watched through"). Never lean on the term.
+- **Lead with desire, then help.** `why` opens with why this is worth crossing the world for. The practical judgement (which section, how long) comes after, briefly.
+- **Highlights are moments a visitor can have,** not architectural features: "turn round at the top of the steep climb", "duck into a tower and look out of the little window".
+- **Still true.** Every sensory claim must be something that is really there:
+  - mist, autumn colour and crowds are fine when sourced or common knowledge;
+  - never invent a first-person experience;
+  - no "we stood there and…" unless the owner gives it.
+
+## Every sentence serves the traveler (owner's rule, 2026-10-04)
+
+A sentence earns its place only if it helps the reader do one of these:
+- see something on site;
+- feel why the place matters;
+- decide whether to go, which part to see, or how to plan the day.
+
+History belongs only when it changes what they will look at. For example, "the courtyards open out, then close in" changes how you walk the Forbidden City. So do "the brick walls that held the emperor prisoner are still there" and "the lake was dug as a reservoir".
+
+Cut trivia that does none of those, however true or rare. The owner flagged this kind of line on the Great Wall page:
+- myth-busting ("you cannot see it from space; Yang Liwei looked and didn't");
+- counts and records with no use on site: 1,206 towers by 1572, 540 heads of state, 96 % vegetation;
+- an institution's history (founded 1912, merged 2003);
+- a string of founding dates.
+
+Lead `why` with the experience: what it looks and feels like to be there, and why it is worth the trip. Then give, briefly, what sets this place apart from the alternatives.
+
 ## Facts
 
 - **Source every fact.** Each one needs an official or reference source. Log it in `docs/homeground-sight-stories-sources.md`, one table per sight.
