@@ -30,6 +30,25 @@ export interface SightStory {
   readonly pair: string;
   /** Who can leave it out, said plainly. */
   readonly skip: string;
+  /**
+   * The questions travellers ask search engines and AI assistants, each
+   * answered in its first sentence with something concrete. Rendered as the
+   * page's FAQ and as FAQPage structured data (the two always match).
+   */
+  readonly faq?: readonly { readonly question: string; readonly answer: string }[];
+}
+
+/**
+ * Per-sight facts shared by the three languages: when the story was last
+ * fact-checked, the official or reference sources shown under it, and the
+ * names and identifiers that tell search engines and AI assistants which
+ * place this is (TouristAttraction alternateName and sameAs).
+ */
+export interface SightStoryMeta {
+  readonly reviewedAt: string;
+  readonly sources: readonly { readonly title: string; readonly url: string }[];
+  readonly alternateName: readonly string[];
+  readonly sameAs: readonly string[];
 }
 
 type Stories = Partial<Record<SightId, Readonly<Record<HomegroundLocale, SightStory>>>>;
@@ -117,6 +136,7 @@ export const sightStories: Stories = {
       description: "Stand on the Great Wall near Beijing and watch it ride the ridges to the horizon. Badaling or Mutianyu, the best season, and how to plan the day.",
       why: [
         "Climb to the first watchtower, turn round, and you will see why everyone wants to come once. The wall rides the ridgeline up, drops away, climbs the next mountain and runs on until it vanishes into the haze. The bricks underfoot have been walked for centuries, the hills fold away on both sides and the wind comes straight over the top. You have seen the photos a hundred times; standing on it is something else.",
+        "The Wall was never just a wall but a whole system of defence. It joined the ridges into one line, with a tower every so often where soldiers lived, and when they saw raiders, smoke and fire carried the warning from tower to tower. The sections near Beijing were mostly built under the Ming, to keep horsemen from the northern steppe away from the capital. Count the towers into the distance and you start to see how many people it took to hold this line.",
         "Badaling is the classic. You can get there by train, and for a first trip to Beijing it is the easiest place to climb, though peak-season weekends are crowded. Mutianyu is further out but greener and quieter: the wall rises and falls through woodland, the hills turn red and gold in autumn, and early in the morning the wall is still quiet.",
       ],
       highlights: [
@@ -137,11 +157,34 @@ export const sightStories: Stories = {
       when: "Autumn is the most beautiful season, with clear skies and the hills in red and gold. After snow the Wall looks like an ink painting, though it is windy and slippery. In any season, set off early on a weekday for the quietest wall.",
       pair: "Coming back from Badaling, stop at the Ming Tombs and walk the Sacred Way, lined with stone animals and officials. Near Mutianyu, Hongluo Temple has a bamboo grove and an old pair of ginkgo trees that turn gold in autumn.",
       skip: "If you want wild, unrestored wall, neither of these is it: both are well restored and busy. With only two days in Beijing, the Wall takes a whole one, so decide first whether it or the Forbidden City matters more to you.",
+      faq: [
+        {
+          question: "Is the Great Wall worth visiting?",
+          answer: "Yes, especially on a first trip to Beijing. However many photos you have seen, standing on the wall as it runs along the ridges to the horizon is a different thing. You don't need to be very fit: walk for an hour or two and turn back wherever you like.",
+        },
+        {
+          question: "Badaling or Mutianyu: which section should I choose?",
+          answer: "Choose Badaling for the easiest first visit: it is the classic section and you can get there by train, but it is crowded in peak season. Choose Mutianyu for greener, quieter wall and better photos: it is further from the city and usually less busy. Both are well restored and suit most visitors.",
+        },
+        {
+          question: "How long does a Great Wall trip take?",
+          answer: "Plan on most of a day from central Beijing, with two to three hours on the wall itself. Badaling by train can fit into a long half-day; Mutianyu is further out and usually takes the whole day.",
+        },
+        {
+          question: "When is the best time to visit the Great Wall?",
+          answer: "Autumn, around October, brings clear skies and red leaves on the hills, and spring is pleasant too. After snow the wall is beautiful but windy and slippery. In any season, avoid the October and May Day national holidays and set off early on a weekday.",
+        },
+        {
+          question: "Do I need to book Great Wall tickets in advance?",
+          answer: "Booking ahead is wise: peak-season weekends and holidays can sell out. At Mutianyu, the entry ticket, the shuttle bus and the cable car are bought separately. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+      ],
     },
     zh: {
       description: "站上北京的长城，城墙顺着山脊翻山越岭，一直延伸到天边。八达岭还是慕田峪、什么季节去、这一天怎么安排。",
       why: [
         "爬上第一座烽火楼、回头的那一刻，你就会明白为什么人人都想来一次：城墙顺着山脊翻上去、落下来，再翻上下一座山，一直延伸到看不见的天边。脚下的砖被人踩了几百年，两边是层层叠叠的群山，山风从城墙上吹过。照片里看过一百次的长城，真站在上面，完全是另一回事。",
+        "长城不只是一道墙，而是一整套守边的办法：城墙在山脊上连成一条线，每隔一段就有一座楼，士兵住在楼里，远远看到敌情，就用烽烟一处接一处地把消息传开。北京附近能登的这几段，大多是明朝修的，为的是挡住北方草原的骑兵、护住京城。站在楼上往远处数一数那些楼，你会明白当年为了守住这条线，花了多少人力。",
         "八达岭是最经典的一段，坐火车就能到，第一次来北京，从这里登长城最省心，只是旺季周末人多。慕田峪远一点，却更绿、更安静，城墙在山林里起起伏伏，秋天满山红黄；清晨去，城墙上还没什么人。",
       ],
       highlights: [
@@ -162,11 +205,34 @@ export const sightStories: Stories = {
       when: "秋天最美，天高气爽，满山红黄；冬天下过雪的长城像一幅水墨画，只是风大路滑。不管哪个季节，平日一早出发最清静。",
       pair: "从八达岭回城的路上，可以顺道去明十三陵，走一段两旁站满石像的神路；去慕田峪的话，附近的红螺寺有一片竹林和一对老银杏，秋天金黄一片。",
       skip: "想看没人修过的“野长城”的人：这两段都修得很完整，人也不少。在北京只有两天的话，长城要占掉一整天，先想好它和故宫哪个对你更重要。",
+      faq: [
+        {
+          question: "长城值得去吗？",
+          answer: "值得，尤其是第一次来北京。照片看过再多，真站在城墙上，看它顺着山脊一直延伸到天边，感受完全不同。体力一般也没关系：在城墙上走一两个小时，走到想停的地方再往回走就行。",
+        },
+        {
+          question: "八达岭和慕田峪，选哪一段？",
+          answer: "第一次来、想省心，选八达岭：最经典，坐火车就能到，缺点是旺季人多。想要更绿、更安静、照片更好看，选慕田峪：离市区远一些，人通常也少一些。两段都修缮得很完整，适合大多数人。",
+        },
+        {
+          question: "去一趟长城要多长时间？",
+          answer: "从北京市区出发，一般要一整天，其中在城墙上两到三个小时。八达岭可以坐火车去，安排紧凑的话大半天也能来回；慕田峪路程更远，通常就是一整天。",
+        },
+        {
+          question: "什么季节去长城最好？",
+          answer: "秋天最好，十月前后天高气爽，山上的红叶最漂亮；春天也很舒服。冬天下过雪的长城很美，但风大、路滑。不管哪个季节，都尽量避开国庆、五一这样的长假，挑平日一早出发。",
+        },
+        {
+          question: "去长城要提前订票吗？",
+          answer: "建议提前订好，旺季的周末和节假日可能订满。慕田峪的门票、景区摆渡车和缆车是分开买的。规则时常调整，我们可以按你的日期核实并代为预订。",
+        },
+      ],
     },
     ko: {
       description: "베이징 만리장성 위에 서면 성벽이 능선을 타고 하늘 끝까지 이어집니다. 팔달령과 무톈위 중 어디로, 언제, 하루를 어떻게 짜면 좋을지까지.",
       why: [
         "첫 번째 망루에 올라 뒤를 돌아보는 순간, 왜 다들 꼭 한 번은 오고 싶어 하는지 알게 됩니다. 성벽은 능선을 따라 오르고 내려가며 다음 산을 넘고, 눈이 닿지 않는 하늘 끝까지 이어집니다. 발밑의 벽돌은 수백 년 동안 사람들이 밟아 온 것이고, 양쪽으로는 산이 겹겹이 펼쳐지며, 바람이 성벽 위로 불어옵니다. 사진으로 백 번 본 만리장성도 직접 서 보면 전혀 다릅니다.",
+        "만리장성은 단순한 성벽이 아니라 국경을 지키는 하나의 체계였습니다. 성벽이 능선을 이어 하나의 선을 만들고, 일정한 간격마다 병사들이 머무는 망루가 섰습니다. 적이 보이면 연기와 불로 망루에서 망루로 소식을 전했습니다. 베이징 근교의 구간은 대부분 명나라 때 북방 초원의 기병을 막아 수도를 지키려고 쌓은 것입니다. 멀리까지 늘어선 망루를 세어 보면, 이 선을 지키는 데 얼마나 많은 사람이 필요했을지 짐작하게 됩니다.",
         "팔달령은 가장 대표적인 구간으로, 기차로 갈 수 있어 베이징이 처음이라면 가장 편하게 오를 수 있습니다. 다만 성수기 주말에는 사람이 많습니다. 무톈위는 조금 더 멀지만 더 푸르고 조용합니다. 성벽이 숲속을 오르내리고, 가을이면 산이 붉고 노랗게 물듭니다. 아침 일찍 가면 성벽 위가 아직 한산합니다.",
       ],
       highlights: [
@@ -187,6 +253,28 @@ export const sightStories: Stories = {
       when: "가을이 가장 아름답습니다. 하늘이 높고 산이 붉고 노랗게 물듭니다. 눈 내린 뒤의 장성은 수묵화 같지만 바람이 세고 길이 미끄럽습니다. 계절과 상관없이 평일 아침 일찍 출발하면 가장 한적합니다.",
       pair: "팔달령에서 돌아오는 길에는 명십삼릉에 들러 돌짐승과 문무관 석상이 늘어선 신도를 걸어 보세요. 무톈위 근처의 홍라사에는 대나무 숲과 오래된 은행나무 한 쌍이 있어, 가을이면 금빛으로 물듭니다.",
       skip: "손대지 않은 옛 성벽을 보고 싶다면 두 곳 모두 맞지 않습니다. 잘 복원되어 있고 사람도 많습니다. 베이징에 이틀뿐이라면 장성에 하루가 통째로 들어가니, 자금성과 어느 쪽이 더 중요한지 먼저 정하세요.",
+      faq: [
+        {
+          question: "만리장성은 가 볼 만한가요?",
+          answer: "네, 특히 베이징이 처음이라면 꼭 가 볼 만합니다. 사진을 아무리 많이 봤어도, 능선을 따라 하늘 끝까지 이어지는 성벽 위에 직접 서 보는 느낌은 전혀 다릅니다. 체력이 좋지 않아도 괜찮습니다. 한두 시간 걷다가 원하는 곳에서 돌아오면 됩니다.",
+        },
+        {
+          question: "팔달령과 무톈위 중 어디가 좋을까요?",
+          answer: "처음이고 편하게 가고 싶다면 팔달령입니다. 가장 대표적인 구간이고 기차로 갈 수 있지만, 성수기에는 사람이 많습니다. 더 푸르고 조용한 성벽과 멋진 사진을 원한다면 무톈위입니다. 시내에서 조금 더 멀고 대체로 덜 붐빕니다. 두 곳 모두 잘 복원되어 있어 대부분의 여행자에게 맞습니다.",
+        },
+        {
+          question: "만리장성에 다녀오려면 얼마나 걸리나요?",
+          answer: "베이징 시내에서 출발하면 거의 하루가 걸리고, 성벽 위에서는 2~3시간을 보냅니다. 기차로 가는 팔달령은 빠듯하게 잡으면 반나절 남짓, 무톈위는 거리가 멀어 보통 하루를 다 씁니다.",
+        },
+        {
+          question: "만리장성은 언제 가는 게 가장 좋나요?",
+          answer: "10월 전후의 가을이 가장 좋습니다. 하늘이 맑고 산에 단풍이 듭니다. 봄도 쾌적합니다. 눈 내린 뒤의 장성은 아름답지만 바람이 세고 미끄럽습니다. 어느 계절이든 중국의 국경절·노동절 연휴는 피하고, 평일 아침 일찍 출발하세요.",
+        },
+        {
+          question: "만리장성 입장권은 미리 예약해야 하나요?",
+          answer: "미리 예약하는 것이 좋습니다. 성수기 주말과 연휴에는 매진될 수 있습니다. 무톈위는 입장권, 셔틀버스, 케이블카를 따로 삽니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+      ],
     },
   },
   "temple-of-heaven": {
@@ -578,6 +666,25 @@ export const sightStories: Stories = {
     },
   },
 };
+
+export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
+  "great-wall": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: The Great Wall", url: "https://whc.unesco.org/en/list/438/" },
+      { title: "Beijing government: Badaling Great Wall", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260320_4562521.html" },
+      { title: "Beijing government: Mutianyu Great Wall", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566115.html" },
+      { title: "Mutianyu Great Wall official site", url: "https://en.mutianyugreatwall.com/" },
+      { title: "Visit Beijing: 八达岭长城", url: "https://s.visitbeijing.com.cn/attraction/101406" },
+    ],
+    alternateName: ["Great Wall of China", "长城", "万里长城", "만리장성", "Badaling Great Wall", "八达岭长城", "Mutianyu Great Wall", "慕田峪长城"],
+    sameAs: ["https://en.wikipedia.org/wiki/Great_Wall_of_China", "https://www.wikidata.org/wiki/Q12501", "https://whc.unesco.org/en/list/438/"],
+  },
+};
+
+export function getSightStoryMeta(id: SightId): SightStoryMeta | null {
+  return sightStoryMeta[id] ?? null;
+}
 
 export function getSightStory(id: SightId, locale: HomegroundLocale): SightStory | null {
   return sightStories[id]?.[locale] ?? null;

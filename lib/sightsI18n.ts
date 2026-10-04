@@ -14,7 +14,7 @@ export interface SightsCopy {
   page: {
     bookingTitle: string;
     /** The sight's own writing (lib/sightStories.ts). */
-    story: { whyTitle: string; highlightsTitle: string; fitTitle: string; time: string; when: string; pair: string; skip: string };
+    story: { whyTitle: string; highlightsTitle: string; fitTitle: string; time: string; when: string; pair: string; skip: string; faqTitle: string; sourcesTitle: string };
     bookingNote: string;
     guideLink: string;
     reserve: string;
@@ -76,7 +76,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "Booking at a glance",
-      story: { whyTitle: "Why it's worth the trip", highlightsTitle: "Don't miss", fitTitle: "Fitting it in", time: "Time to give it", when: "When to go", pair: "Pair it with", skip: "Who can skip it" },
+      story: { whyTitle: "Why it's worth the trip", highlightsTitle: "Don't miss", fitTitle: "Fitting it in", time: "Time to give it", when: "When to go", pair: "Pair it with", skip: "Who can skip it", faqTitle: "Questions travellers ask", sourcesTitle: "Sources" },
       bookingNote: "From our attraction-booking rules.",
       guideLink: "Full guide",
       reserve: "Book it with us",
@@ -148,7 +148,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "预约要点",
-      story: { whyTitle: "为什么值得去", highlightsTitle: "别错过", fitTitle: "怎么排进行程", time: "要留多久", when: "什么时候去", pair: "顺路去哪", skip: "谁可以不去" },
+      story: { whyTitle: "为什么值得去", highlightsTitle: "别错过", fitTitle: "怎么排进行程", time: "要留多久", when: "什么时候去", pair: "顺路去哪", skip: "谁可以不去", faqTitle: "常见问题", sourcesTitle: "资料来源" },
       bookingNote: "以下来自我们的景点代预约规则。",
       guideLink: "完整攻略",
       reserve: "我们帮你约",
@@ -220,7 +220,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "예약 안내",
-      story: { whyTitle: "가볼 만한 이유", highlightsTitle: "놓치지 마세요", fitTitle: "일정 짜기", time: "소요 시간", when: "가기 좋은 때", pair: "함께 가기 좋은 곳", skip: "건너뛰어도 되는 경우" },
+      story: { whyTitle: "가볼 만한 이유", highlightsTitle: "놓치지 마세요", fitTitle: "일정 짜기", time: "소요 시간", when: "가기 좋은 때", pair: "함께 가기 좋은 곳", skip: "건너뛰어도 되는 경우", faqTitle: "자주 묻는 질문", sourcesTitle: "참고 자료" },
       bookingNote: "관광지 예약 대행 기준입니다.",
       guideLink: "실용 가이드 보기",
       reserve: "예약 대행 문의",

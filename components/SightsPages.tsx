@@ -31,7 +31,8 @@ import {
 } from "../lib/sights";
 import { sightCityName } from "../lib/sightCityName";
 import { fillSightsCopy, getSightsCopy, sightsKeepWords } from "../lib/sightsI18n";
-import { getSightStory, type SightStory } from "../lib/sightStories";
+import { editorialPersonSchema, EDITORIAL_PERSON_ID } from "../lib/editorialIdentity";
+import { getSightStory, getSightStoryMeta, type SightStory, type SightStoryMeta } from "../lib/sightStories";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -48,6 +49,7 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { PhotoCreditLine, PhotoCredits, TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
+import { EditorialByline } from "./EditorialByline";
 import { RevealOnce } from "./motion/RevealOnce";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./TravelInspiration.module.css";
@@ -120,7 +122,7 @@ function StoryText({ text, locale }: { text: string; locale: HomegroundLocale })
  * The sight's own writing, between the hero and the booking facts: why it is
  * worth the trip and three things not to miss, then how it fits a day.
  */
-function SightStorySections({ story, locale }: { story: SightStory; locale: HomegroundLocale }) {
+function SightStorySections({ story, meta, locale }: { story: SightStory; meta: SightStoryMeta | null; locale: HomegroundLocale }) {
   const labels = getSightsCopy(locale).page.story;
   const facts = [
     { label: labels.time, text: story.time },
@@ -133,6 +135,7 @@ function SightStorySections({ story, locale }: { story: SightStory; locale: Home
       <section aria-labelledby="sight-why-title" className={styles.section} data-reveal="">
         <div className={sightStyles.why}>
           <h2 id="sight-why-title">{labels.whyTitle}</h2>
+          {meta ? <EditorialByline compact locale={locale} reviewedAt={meta.reviewedAt} /> : null}
           <div className={sightStyles.whyBody}>
             {story.why.map((paragraph) => <p key={paragraph}><StoryText locale={locale} text={paragraph} /></p>)}
           </div>
@@ -158,6 +161,32 @@ function SightStorySections({ story, locale }: { story: SightStory; locale: Home
           ))}
         </dl>
       </section>
+      {story.faq?.length ? (
+        <section aria-labelledby="sight-faq-title" className={styles.section} data-reveal="">
+          <div className={sightStyles.faq}>
+            <h2 id="sight-faq-title">{labels.faqTitle}</h2>
+            <div>
+              {story.faq.map((item) => (
+                <details key={item.question}>
+                  <summary>{item.question}<span aria-hidden="true">+</span></summary>
+                  <p><StoryText locale={locale} text={item.answer} /></p>
+                </details>
+              ))}
+            </div>
+          </div>
+          {meta?.sources.length ? (
+            <p className={sightStyles.sources}>
+              {labels.sourcesTitle}{locale === "zh" ? "：" : ": "}
+              {meta.sources.map((source, index) => (
+                <span key={source.url}>
+                  {index ? <span aria-hidden="true"> · </span> : null}
+                  <a href={source.url} rel="noreferrer">{source.title}</a>
+                </span>
+              ))}
+            </p>
+          ) : null}
+        </section>
+      ) : null}
     </>
   );
 }
@@ -415,6 +444,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
   const inspiration = getTravelInspirationCopy(locale);
   const sightCopy = copy.sights[sight.id];
   const story = getSightStory(sight.id, locale);
+  const storyMeta = getSightStoryMeta(sight.id);
   const { destinations, tours: allToursItem } = navigationFor(locale);
   const image = sightImage(sight, locale);
   // No guide of its own yet: no "Full guide" link until one is written.
@@ -524,7 +554,7 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
           </div>
         </header>
 
-        {story ? <SightStorySections locale={locale} story={story} /> : null}
+        {story ? <SightStorySections locale={locale} meta={storyMeta} story={story} /> : null}
 
         {rules.length ? (
           <section aria-labelledby="sight-booking-title" className={styles.section} data-reveal="" id={bookingAnchor}>
@@ -577,9 +607,17 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
       <JsonLd data={{
         "@context": "https://schema.org",
         "@graph": [
-          { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: sightCopy.line,
+          { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: story?.description ?? sightCopy.line,
             inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
-            about: { "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}`, ...(story ? { description: story.why[0] } : {}) } },
+            ...(storyMeta ? { dateModified: storyMeta.reviewedAt, reviewedBy: { "@id": EDITORIAL_PERSON_ID }, citation: storyMeta.sources.map((source) => source.url) } : {}),
+            about: {
+              "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}`,
+              ...(story ? { description: story.why[0] } : {}),
+              ...(storyMeta ? { alternateName: storyMeta.alternateName, sameAs: storyMeta.sameAs } : {}),
+              ...(sight.freeToVisit ? { isAccessibleForFree: true } : {}),
+            } },
+          ...(story?.faq?.length ? [{ "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: story.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }] : []),
+          ...(storyMeta ? [editorialPersonSchema(locale)] : []),
           breadcrumbJsonLd(url, crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path ?? paths[locale] }))),
         ],
       }} />

@@ -121,3 +121,28 @@ test("a sight's own writing is complete in all three languages, dates slowly, an
   const page = await source("components/SightsPages.tsx");
   assert.ok(page.indexOf("<SightStorySections") < page.indexOf('id={bookingAnchor}'), "the story sits above the booking facts");
 });
+
+test("a story's FAQ and sources are complete, and the FAQ markup is the visible FAQ", async () => {
+  const { sightStories, sightStoryMeta } = await import("../../lib/sightStories.ts");
+  for (const [id, byLocale] of Object.entries(sightStories)) {
+    const counts = locales.map((locale) => byLocale[locale].faq?.length ?? 0);
+    assert.equal(new Set(counts).size, 1, `${id}: the same number of questions in every language`);
+    if (counts[0]) {
+      assert.ok(counts[0] >= 4 && counts[0] <= 6, `${id}: four to six questions`);
+      for (const locale of locales) {
+        for (const item of byLocale[locale].faq) {
+          assert.match(item.question, /[?？]$/u, `${id} ${locale}: a question ends with a question mark`);
+          assert.ok(item.answer.length >= 40, `${id} ${locale}: a real answer`);
+        }
+      }
+      const meta = sightStoryMeta[id];
+      assert.ok(meta, `${id}: a story with an FAQ also has its sources and review date`);
+      assert.match(meta.reviewedAt, /^\d{4}-\d{2}-\d{2}$/u);
+      assert.ok(meta.sources.length >= 3 && meta.sources.every((source) => /^https:\/\//u.test(source.url)), `${id}: three or more https sources`);
+    }
+  }
+  const page = await source("components/SightsPages.tsx");
+  // The FAQPage markup is built from the same story.faq the page renders.
+  assert.match(page, /"@type": "FAQPage"[\s\S]{0,120}story\.faq\.map/u);
+  assert.match(page, /story\.faq\.map\(\(item\) => \(\s*<details/u);
+});

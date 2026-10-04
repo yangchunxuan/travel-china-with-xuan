@@ -488,6 +488,82 @@
   text-wrap: pretty;
 }
 
+/* Questions travellers ask: the heading beside the answers on wide screens (as on the services pages). */
+.faq {
+  display: grid;
+  gap: 1.5rem 3rem;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+}
+
+.faq h2 {
+  margin: 0;
+}
+
+.faq details {
+  border-top: 1px solid var(--rule);
+}
+
+.faq details:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.0625rem;
+  font-weight: 560;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 3.5rem;
+  padding: 0.85rem 0;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary span {
+  color: var(--muted);
+  flex: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 200ms ease;
+}
+
+.faq details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faq details p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  text-wrap: pretty;
+}
+
+.sources {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  margin: 2.5rem 0 0;
+  max-width: 60rem;
+}
+
+.sources a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+@media (max-width: 61.25rem) {
+  .faq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* A Korean quoted word and its particle stay on one line. */
 .together {
   white-space: nowrap;
