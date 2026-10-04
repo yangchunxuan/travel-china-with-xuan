@@ -250,6 +250,137 @@ Not used, or unsettled:
 | A riverside path to Chaotianmen (2.4 km, "20-odd minutes") opened in December 2025, with the Hongyadong section then closed for works, so the story says only "about twenty minutes along the river". The Jialing is usually clearer than the Yangtze, but the colours can swap after heavy rain upstream, hence "usually". | [Xinhua Chongqing](http://www.cq.xinhuanet.com/20251208/9eec344fd4cc4aeb89694374416a65ce/c.html); [China Daily](https://tech.chinadaily.com.cn/a/202306/14/WS64894110a310dbde06d234ca.html); [Chongqing government](https://www.cq.gov.cn/zt/yyztls/lsjcx/202512/t20251205_15213290.html) |
 | Chongqing is called the "8D city" (Trip.com KR: 충칭 8D 매직 시티). | [Trip.com KR](https://kr.trip.com/hotspoi/8d-magic-city-of-chongqing-150025879) |
 
+## Third paragraphs, FAQ and meta for the first seven (2026-10-04)
+
+### Shared: meta identifiers
+
+| Fact | Source |
+| --- | --- |
+| Wikidata items: Forbidden City Q80290 (P757 = 439-001), Temple of Heaven Q125445 (P757 = 881), Summer Palace Q4132 (P757 = 880), National Museum of China Q1074318 (not a World Heritage Site), West Lake Q502371 (the World Heritage Site is the separate "West Lake Cultural Landscape of Hangzhou", 1334), Hongyadong Q32171478 (enwiki "Hongya Cave", zhwiki 洪崖洞民俗风貌区). | Wikidata API (`wbgetentities`, `wbsearchentities`), checked 2026-10-04 |
+| UNESCO listings: 439 "Imperial Palaces of the Ming and Qing Dynasties in Beijing and Shenyang" (1987, extended 2004); 881 "Temple of Heaven: an Imperial Sacrificial Altar in Beijing" (1998); 880 "Summer Palace, an Imperial Garden in Beijing" (1998); 1334 "West Lake Cultural Landscape of Hangzhou" (2011, logged). | [UNESCO 439](https://whc.unesco.org/en/list/439/); [UNESCO 881](https://whc.unesco.org/en/list/881/); [UNESCO 880](https://whc.unesco.org/en/list/880/) (via search results); Wikidata P757 |
+| English Wikipedia titles: Forbidden_City, Temple_of_Heaven, Summer_Palace, National_Museum_of_China, West_Lake, Hongya_Cave (page titles fetched). | en.wikipedia.org |
+
+### Forbidden City
+
+| Fact | Source |
+| --- | --- |
+| Third paragraph: choose one side beyond the main route; crossing from east to west is the first thing to cut. | `forbidden-city-for-foreign-visitors` guide (side-choice callout, route-cuts "Crossing from east-side rooms to west-side rooms") |
+| The Clock Gallery is in the Fengxian Hall (奉先殿) on the palace's east side and needs its own ticket. The Qing court's clocks were mostly English ("以英国产品居多"), with French and Swiss pieces and clocks made in Guangzhou, Suzhou and the palace's own workshop. The story says "most of them from England and some made in China". | [Palace Museum: 钟表馆](https://www.dpm.org.cn/pavilion/225322.html); [Baidu Baike: 钟表馆](https://baike.baidu.com/item/%E9%92%9F%E8%A1%A8%E9%A6%86/5987729) |
+| Clock demonstrations no longer run regularly ("这些年没了这项表演"), so the story does not promise moving clocks or the writing-figure clock. | [Visit Beijing: 故宫钟表馆](https://www.visitbeijing.com.cn/article/4HRacJnG8Or) |
+| Chuxiu Palace (储秀宫), in the Six Western Palaces where empresses and consorts lived: "慈禧入宫后曾居住储秀宫后殿，并在此生下同治皇帝"; in 1884 she moved back for her fiftieth birthday after a rebuild; "现为宫廷生活原状陈列". Baidu Baike: the furnishings are as set out for her fiftieth birthday; the museum restored that state in the 1960s. The English text does not name the palace, so zh and ko do not either. | [Palace Museum: 储秀宫](https://www.dpm.org.cn/explore/building/236486.html); [Baidu Baike: 储秀宫](https://baike.baidu.com/item/%E5%82%A8%E7%A7%80%E5%AE%AB/2414752); [Palace Museum PDF: 储秀宫区域原状陈列发展沿革考](https://www.dpm.org.cn/Uploads/File/2024/07/22/u669dcd8dc5647.pdf) |
+| FAQ, booking: no same-day tickets; one ticket per identity document; bring the original passport used for the booking; release time and channel left out as volatile. | `forbidden-city-for-foreign-visitors` guide (official-check table, no-same-day callout); `lib/attractionReservations.ts` (`forbidden-city`) |
+| FAQ, time: the museum publishes two-hour, half-day and one-day trails; the guide's plan is three hours after inspection; Jingshan "in forty minutes" is the approved `skip` wording. | Guide (route-definition); approved `skip` |
+| FAQ, name: 紫 for the Pole Star, seat of the emperor of heaven, and 禁 for forbidden; the emperor as Son of Heaven; the Palace Museum opened in 1925 (logged). | [Wikipedia: Forbidden City](https://en.wikipedia.org/wiki/Forbidden_City) (logged) |
+| FAQ, season and crowds: busiest inside from about 10:00 to early afternoon (logged); April–May and September–October as the comfortable months, May Day and the first week of October as the crowded holidays (same months as the approved `when` and the Great Wall FAQ). | Logged (Beijing government, 2023); approved `when` |
+| Not mentioned: the Gate of Supreme Harmony is closed for conservation from 3 August 2026 (guide callout); nothing in the story depends on it. | Guide (taihemen-route-notice) |
+| `meta`: Beijing government Palace Museum page ("former home to the 24 Ming and Qing emperors … more than 720,000 square meters"). | [Beijing government: Palace Museum](https://english.beijing.gov.cn/travellinginbeijing/mustvisitsites/202306/t20230608_3127526.html) |
+
+### Temple of Heaven
+
+| Fact | Source |
+| --- | --- |
+| Third paragraph: outer wall round on the north and square on the south; Circular Mound inside a round low wall inside a square one; top tier paved in rings of 9, 18 … 81; nine as heaven's number; Qianlong made all three roofs of the hall blue in the 1750s. | Logged (Wikipedia zh: 天坛; Beijing Cultural Heritage Bureau; The Paper; Chinanews 2015) |
+| UNESCO: the layout "symbolizes the relationship between earth and heaven"; siting and design "based on ancient tenets relating numbers and spatial organisation to beliefs about heaven". | [UNESCO 881](https://whc.unesco.org/en/list/881/) (via search results) |
+| FAQ, tickets: the park ticket does not include the Hall of Prayer, Echo Wall or Circular Mound; the combo ticket does; passport real-name booking through the official WeChat account. | `temple-of-heaven-gates-and-ritual-sequence` guide; [Beijing government: Temple of Heaven](https://english.beijing.gov.cn/travellinginbeijing/parks/202603/t20260320_4562532.html) ("real-name reservations"; general admission vs combo ticket; 273 hectares); `lib/attractionReservations.ts` |
+| FAQ: two to three hours (guide); Danbi Bridge 360 m (logged); close to four times the Forbidden City (logged); card players fill the corridor especially on winter mornings (logged, Xiao Fuxing). | Guide; logged |
+| FAQ, comparison: the Summer Palace is "15 kilometers from downtown Beijing" in Haidian; three to four hours (approved Summer Palace `time`). | [Beijing government: Summer Palace](https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532659.html) |
+
+### Summer Palace
+
+| Fact | Source |
+| --- | --- |
+| Third paragraph: the lake was widened and deepened to twice its old size in 1749–1750 as a reservoir for the western imperial gardens; Suzhou Street, a rebuilt canal street where eunuchs and maids played shopkeepers. | Logged (Visit Beijing; Beijing Daily; Baidu Baike: 苏州街) |
+| Third paragraph, routes: the classic palace-to-lake route along the corridor and Longevity Hill; the North Gate route via Suzhou Street; the lake-first low-climb route via the Seventeen-Arch Bridge and the east shore. | `summer-palace-gates-route-and-boat-plan` guide (routes table) |
+| UNESCO: "first built in 1750, largely destroyed in the war of 1860, and restored on its original foundations in 1886". | [UNESCO 880](https://whc.unesco.org/en/list/880/) (via search results) |
+| FAQ: 15 km from the centre and about three quarters water. | [Beijing government: Summer Palace](https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532659.html) |
+| FAQ: magnolias and peach blossom in spring (logged); "golden light through the arches" around the winter solstice (logged, Xinhua 21 December 2025); 17 arches (logged). | Logged |
+| FAQ: Old Summer Palace burned in 1860 by the same troops and left as ruins of the European-style palaces; Line 4, one or two stops (logged). | Logged |
+| FAQ, tickets: admission ticket covers the main park, corridor, lake edges and bridges; the combined ticket adds the Tower of Buddhist Incense, Suzhou Street and others; passport booking through the official WeChat account or a gate window; real-name. | Guide (ticket-comparison, passport callout); `lib/attractionReservations.ts` (`summer-palace`, realName true) |
+
+### National Museum of China
+
+| Fact | Source |
+| --- | --- |
+| Third paragraph: the national unified (统编版) history textbook for year 7, the first year of junior secondary school, lesson 5 "青铜器与甲骨文", presents 司母戊鼎 (now Houmuwu Ding) and 四羊方尊. | [21cnjy lesson plan: 统编版七年级历史上册第5课](https://zy.21cnjy.com/7872840) ("代表：司母戊鼎……、四羊方尊、利簋"; "识读《四羊方尊》《司母戊鼎》…等图表") |
+| Third paragraph: both pieces are among the museum's ten 镇馆之宝. | [People's Daily, 25 July 2025: 国家博物馆的“镇馆之宝”](http://paper.people.com.cn/fcyym/pc/content/202507/25/content_30091823.html) |
+| Third paragraph and FAQ: summer visitors include many families; in summer 2025 "七天之内的门票均已约满". | [The Paper, 2025](https://www.thepaper.cn/newsdetail_forward_31119054) |
+| FAQ: basic admission free with a real-name reservation; original document at entry; paid special exhibitions separate; release time left out as volatile. | `national-museum-of-china-booking-and-route` guide; `lib/attractionReservations.ts` (`national-museum-of-china`) |
+| FAQ: about three hours is the balanced first visit, about two hours for one anchor (guide); 48 galleries (logged); about 2,000 objects in Ancient China (logged); Houmuwu Ding 832.84 kg, heaviest known bronze vessel (logged). | Guide; logged |
+| FAQ, same day as the Forbidden City: the palace's visitor exit is the north gate (Shenwumen) or the East Prosperity Gate; the museum is on the east side of Tiananmen Square, south of the palace; separate bookings and security. | `forbidden-city-for-foreign-visitors` guide; museum guide (separate-systems callout) |
+
+### West Lake
+
+| Fact | Source |
+| --- | --- |
+| Third paragraph: the Broken Bridge is at the east end of the Bai Causeway. In the best-known telling of the White Snake legend, Bai Suzhen and Xu Xian meet in the rain by the Broken Bridge and share a boat and an umbrella (游湖借伞), and later meet again there (断桥相会). The national intangible-heritage page tells the meeting in the rain without naming the bridge, so the story says only "meet in the rain" and not "first meet". | [Baidu Baike: 西湖断桥](https://baike.baidu.com/item/%E8%A5%BF%E6%B9%96%E6%96%AD%E6%A1%A5/1658381); [Wikipedia (zh): 白蛇传](https://zh.wikipedia.org/zh-hans/%E7%99%BD%E8%9B%87%E4%BC%A0); [cnpoc.cn: 白蛇传](https://www.cnpoc.cn/cnpoc/mbb/200806/ab27192d922a4586b11973bcaeed9aad.shtml) |
+| Third paragraph: the Broken Bridge–Bai Causeway area is the most crowded part of the lake on holidays; the bridge has had trial crowd control since 2015. | [Hangzhou News, 2015: 断桥将继续试行疏导举措](https://hznews.hangzhou.com.cn/chengshi/content/2015-09/29/content_5935316.htm); [Hangzhou News, 2015: 断桥实行“限流”](https://hznews.hangzhou.com.cn/chengshi/content/2015-10/02/content_5937922_0.htm) |
+| Third paragraph: the Yanggong Causeway lies west of the Su Causeway, under the hills, past the Maojiabu, Wuguitan and Yuhuwan backwaters, and is far quieter than the north and east shores. | [Hangzhou News, 2024: 杨公堤仅剩的一座古桥](https://hznews.hangzhou.com.cn/chengshi/content/2024-06/15/content_8744604_0.htm); [Zhihu: 杨公堤](https://www.zhihu.com/question/309811579) |
+| Third paragraph: hills on three sides, the city on the fourth (east). | [UNESCO 1334](https://whc.unesco.org/en/list/1334/) (logged) |
+| FAQ: the shore and causeways are free day and night (logged); boats, the island trip to Three Pools Mirroring the Moon and Leifeng Pagoda charge separately. | Logged (Hangzhou government, 2025); [Sina, 2025](https://www.sina.cn/news/detail/5221238962391520.html) |
+| FAQ: the full loop is about 15 km (logged); four hours of steady walking is our estimate at about 4 km/h. | Logged; Homeground judgment |
+| FAQ: Su Causeway peach blossom from late March to mid-April. | [Hangzhou Culture and Tourism: 2025 spring flower calendar](https://wgly.hangzhou.gov.cn/art/2025/3/18/art_1229505585_58959646.html) (via search results) |
+| FAQ, boats: the island trip includes the return boat and no time limit on the island ("岛上游览时间不限，含回程"); hand-rowed boats seat six ("手划船（6座）"); self-rowed boats since 1972. The island can be reached only by boat (logged). | [Zhejiang Online, 26 March 2025](https://zjnews.zjol.com.cn/zjnews/202503/t20250326_30901142.shtml) |
+| Korean names: 백제 (白堤), 단교 (斷橋), 양공제 (楊公堤). | [Korean Wikipedia: 서호](https://ko.wikipedia.org/wiki/%EC%84%9C%ED%98%B8); [visitchina.or.kr](https://visitchina.or.kr/travel/2938) |
+
+### Hongyadong
+
+| Fact | Source |
+| --- | --- |
+| FAQ, ticket: Hongyadong is free ("洪崖洞为免费景区"; zh Wikipedia cites 视界网 2018 "暂不收门票"). Entry uses a free online reservation through the official mini-program or Meituan; on ordinary days visitors can often book on site by scanning a code; on holidays the site limits numbers ("非节假日可能可以现场扫码预约，但是节假日人比较多，再加上景区限流，建议大家提前预约"). The Yuzhong district government asked visitors in January 2023 to book Hongyadong ahead ("到洪崖洞等景区游玩 请提前预约错峰出行"; page title from search, not fetchable here). | [Chongqing Bendibao: 洪崖洞门票](https://m.cq.bendibao.com/tour/116277.shtm); [Chongqing Bendibao: 没预约能进去吗](https://cq.bendibao.com/tour/2023816/134278.shtm); [Yuzhong district, 2023](http://www.cqyz.gov.cn/zwxx_229/yzyw/202301/t20230125_11533586.html) |
+| FAQ: we do not sell Hongyadong bookings (`reservationIds: []`), so the answer offers to check the rule, not to book. | `lib/sights.ts` |
+| 11 storeys: zh Wikipedia infobox and text ("高11层", citing 视界网 2018), en Wikipedia ("11-story"). The Yuzhong district page says "高13层"; the story keeps eleven, as logged. | [Wikipedia (zh)](https://zh.wikipedia.org/zh-hans/%E6%B4%AA%E5%B4%96%E6%B4%9E%E6%B0%91%E4%BF%97%E9%A3%8E%E8%B2%8C%E5%8C%BA); [Wikipedia: Hongya Cave](https://en.wikipedia.org/wiki/Hongya_Cave); [Yuzhong district: 洪崖洞](https://www.cqyz.gov.cn/zjyz/lyyz/rmdkd/202305/t20230530_12012596.html) |
+| FAQ, Spirited Away: built in 2006 in the style of Bayu stilt houses (logged); from 2016 its night views spread on Douyin and other short-video platforms, and netizens compared it with the bathhouse in Spirited Away ("网民常将夜景描述为与……《千与千寻》中的汤城相似"); China Daily already noted the likeness in 2014; the Yuzhong district page says media compare it with the film. | [Wikipedia (zh)](https://zh.wikipedia.org/zh-hans/%E6%B4%AA%E5%B4%96%E6%B4%9E%E6%B0%91%E4%BF%97%E9%A3%8E%E8%B2%8C%E5%8C%BA); [China Daily, 2014](https://www.chinadaily.com.cn/travel/2014-12/11/content_19065026.htm); [Yuzhong district: 洪崖洞](https://www.cqyz.gov.cn/zjyz/lyyz/rmdkd/202305/t20230530_12012596.html) |
+| FAQ, views: the middle of the Qiansimen Bridge footpath, the riverside road, the north bank; the crossing is about 800 m (logged). The footpaths were closed in turn for works in July–September 2025, and police sometimes close the bridge to traffic on holidays; the answer names the bridge as the viewpoint without promising the footpath is open on a given night. | Logged; [Chongqing Evening News: 千厮门大桥人行道封闭施工](https://www.cqdsrb.com.cn/article-61404-1.html); [The Paper, 2020: 千厮门大桥短暂封闭变“步行街”](https://m.thepaper.cn/wifiKey_detail.jsp?contid=9445705&from=wifiKey) |
+| FAQ, lights: a fixed evening schedule, later in summer; the clock time is left out (logged). Holidays: getting in can take an hour (approved `when`). | Logged; approved `when` |
+
+### Edits to approved wording
+
+- `west-lake` ko, highlight 3: the gloss 백사전(백낭자와 허선의 사랑 이야기) moved to the new third paragraph, which now introduces the legend first on the page. The highlight keeps "중국 4대 민간 전설 가운데 하나인 백사전에서…".
+- No other approved field was changed.
+
+### zh/ko review checks (2026-10-04)
+
+| Fact or name | Source |
+| --- | --- |
+| Korean market name for 苏州街 in the Summer Palace is 소주가 (not 쑤저우제): "후호(後湖)의 중심에 있는 소주가는 건륭제 때 건설되었으며… 지금의 모습은 1987~1990년에 재건". | [Triple: 소주가](https://triple.guide/attractions/09754fd5-cc8d-42c2-9ed6-5bd405a331d1); [Beijing Tourism Bureau (Korean)](http://www.visitbeijing.or.kr/detail.php?number=3654); [서울경제: 수도 베이징에도 '江南 풍경' 그대로](https://www.sedaily.com/NewsVIew/22JYJ3YNO2) |
+| Korean name for 储秀宫 is 저수궁; Cixi lived in its rear hall, gave birth to Tongzhi there (1856) and moved back in 1884 for her fiftieth birthday. | [Wikipedia (ko): 저수궁](https://ko.wikipedia.org/wiki/%EC%A0%80%EC%88%98%EA%B6%81); [Daum blog: 서태후는 왜 저수궁에 거주했을까](https://blog.daum.net/shanghaicrab/16156032) |
+| Korean names for West Lake causeways: 소제(苏堤), 백제(白堤), 양공제(杨公堤). | [Wikipedia (ko): 서호](https://ko.wikipedia.org/wiki/%EC%84%9C%ED%98%B8); [brunch: 항저우 서호 일주-백제](https://brunch.co.kr/@dindout/264) |
+| 紫禁城's 紫 comes from 紫微星 / 紫微垣, the Pole Star region believed to be the Heavenly Emperor's home; 禁 because commoners could not enter. | [Tencent News, 2024: 故宫旧称“紫禁城”的名字来源于星座](https://news.qq.com/rain/a/20240923A0486L00); [Chiculture HK: 細說「紫禁城」的故事](https://chiculture.org.hk/tc/china-five-thousand-years/4167) |
+| 后母戊鼎 was long taught as 司母戊鼎; current year-7 textbook materials use both names (optional zh hook only; not yet in the story). | [21cnjy: 统编版七年级历史上册第5课](https://zy.21cnjy.com/8007771) |
+
+### English/fact review checks (2026-10-04)
+
+| Fact | Source |
+| --- | --- |
+| Summer Palace: the four inner sights (Tower of Buddhist Incense, Suzhou Street, Garden of Virtue and Harmony, Summer Palace Museum) are sold on individual tickets as well as in the combined ticket. | [Summer Palace official site](https://summerpalace.net.cn/en/index.html); guide `ticket-comparison` ("Buy selectively") |
+| Forbidden City: the Clock Gallery (奉先殿) has its own ticket ("票价：10元"), like the Treasure Gallery. | [Palace Museum: 钟表馆](https://www.dpm.org.cn/pavilion/225322.html) |
+| Chuxiu Palace: the bronze dragons and deer below the hall were cast for Cixi's fiftieth birthday in 1884 ("戏珠铜龙和一对铜梅花鹿，为光绪十年慈禧五十大寿时所铸"). | [Palace Museum: 储秀宫](https://www.dpm.org.cn/explore/building/236486.html) |
+| Forbidden City exits: the north gate (Shenwumen) or the East Prosperity Gate (Donghuamen). | `forbidden-city-for-foreign-visitors` guide (official-check table) |
+| Palace Museum English Visit page is live (HTTP 200). | [intl.dpm.org.cn/visit.html](https://intl.dpm.org.cn/visit.html) |
+| Yanggong Causeway is the only one of West Lake's three causeways open to cars and buses (sold as a free "roller-coaster" drive); 3.4 km past Maojiabu, Wuguitan and Yuhuwan, whose backwaters are quiet. | [Hangzhou Culture and Tourism, 2025](https://wgly.hangzhou.gov.cn/art/2025/5/20/art_1229734166_58961039.html); [Baidu Baike: 杨公堤](https://baike.baidu.com/item/%E6%9D%A8%E5%85%AC%E5%A0%A4/1112861) |
+| Korean for 茅家埠: 마오자부 (Trip.com KR), 모가부 (skyticket); to confirm in the zh/ko market check. | [Trip.com KR](https://kr.trip.com/moments/detail/hangzhou-14-145544421/); [skyticket](https://ko.skyticket.com/guide/29155) |
+| Spirited Away was released in Japan on 20 July 2001, five years before Hongyadong opened (29 September 2006); the bathhouse's inspirations are Japanese. | [Wikipedia: Spirited Away](https://en.wikipedia.org/wiki/Spirited_Away); [Wikipedia (zh): 洪崖洞民俗风貌区](https://zh.wikipedia.org/zh-hans/%E6%B4%AA%E5%B4%96%E6%B4%9E%E6%B0%91%E4%BF%97%E9%A3%8E%E8%B2%8C%E5%8C%BA) |
+| Hongyadong booking: sources conflict. The same 2026 Bendibao page says "门票：免费，不需要预约" and "2026到重庆洪崖洞入园需网上预约"; 2025 pages describe time-slot booking via the mini-program or Meituan. Write "may need a free online booking". | [Chongqing Bendibao (2026)](https://m.cq.bendibao.com/jingdian/hongyadongshangyejie/); [Chongqing Bendibao (2025)](https://cq.bendibao.com/tour/2019628/77112.shtm) |
+| Korean variants for 洪崖洞: 훙야둥 (Namu Wiki title, Hankook Ilbo) and 홍애동 (Sino-Korean reading). | [Namu Wiki: 훙야둥](https://namu.wiki/w/%ED%9B%99%EC%95%BC%EB%91%A5); [Hankook Ilbo, 2014](https://www.hankookilbo.com/news/article/201410191360943576) |
+| Korean Wikipedia / Wikidata label for the National Museum: 중국국가박물관 (no space). | [Wikidata Q1074318](https://www.wikidata.org/wiki/Q1074318) |
+| Textbook: the 2024 national edition of the year-7 history book still lists 四羊方尊 and 司母戊鼎, now in lesson 8 (夏商周时期的科技与文化); the 2017 edition had them in lesson 5. | [Sohu: 七年级上册历史核心知识点（2024新教材）](https://m.sohu.com/a/848327669_629818/); [21cnjy (2017 edition)](https://zy.21cnjy.com/7872840) |
+| Link check: the China Daily 2014 Hongyadong article cited above now returns 404. Chongqing and Hangzhou government pages refuse connections or time out from outside mainland China. Candidate sight-level source: Chongqing Culture and Tourism Commission, 重庆洪崖洞民俗风貌区 (search index only). | [China Daily (404)](https://www.chinadaily.com.cn/travel/2014-12/11/content_19065026.htm); [whlyw.cq.gov.cn](https://whlyw.cq.gov.cn/zjwl/yzq/jqjd_1/202203/t20220304_10463056.html) |
+| Wikidata official-site URLs for the Temple of Heaven (tiantanpark.com) and Summer Palace (summerpalace-china.com) do not resolve; the draft's tiantanpark.cn and summerpalace.net.cn are live. | curl check, 2026-10-04 |
+
+### Reviser checks (2026-10-04)
+
+| Fact or name | Source |
+| --- | --- |
+| Chuxiu Palace: "慈禧入宫后曾居住储秀宫后殿，并在此生下同治皇帝"; "光绪十年慈禧五十大寿时又移居储秀宫"; "殿台基下东西两侧安置一对戏珠铜龙和一对铜梅花鹿，为光绪十年慈禧五十大寿时所铸"; "现为宫廷生活原状陈列" (re-fetched). The story now names the palace in all three languages and says the bronze dragons and deer in the courtyard were cast for that birthday. | [Palace Museum: 储秀宫](https://www.dpm.org.cn/explore/building/236486.html) |
+| English name used by the Palace Museum: "Palace of Gathered Elegance (Chuxiu gong)". Korean: 저수궁 (logged above). | [Palace Museum (English): Palace of Gathered Elegance](https://en.dpm.org.cn/collections/architecture/architecture/1789.html) |
+| Clock Gallery (奉先殿): own ticket ("票价：10元"; re-fetched); mostly English clocks, with French, Swiss and Chinese-made pieces. 2026 coverage still lists it as open, with its own ticket alongside the Treasure Gallery and the same Monday closure. | [Palace Museum: 钟表馆](https://www.dpm.org.cn/pavilion/225322.html); [Sina, 2026: 故宫开放时间全解析](https://k.sina.cn/article_7879777379_1d5abdc6306801ix1y.html) |
+| Palace Museum English Visit page (meta source) returns HTTP 200; it replaces the Chinese 导览 hub. | [intl.dpm.org.cn/visit.html](https://intl.dpm.org.cn/visit.html) (curl, 2026-10-04) |
+| Yanggong Causeway: the only one of West Lake's three causeways open to vehicles; 3.4 km, linking Maojiabu, Wuguitan and Yuhuwan; far fewer visitors than the Su and Bai causeways, with Maojiabu named as a quiet stop. | [Baidu Baike: 杨公堤](https://baike.baidu.com/item/%E6%9D%A8%E5%85%AC%E5%A0%A4/1112861); [NetEase: 西湖三堤](https://www.163.com/dy/article/K3IVR9GU05565BD1.html) |
+| Korean for 茅家埠: Trip.com KR's POI page and eastchinatrip KR use 마오자부; skyticket KR and a Trip.com KR user post use the Sino-Korean 모가부. The story writes 마오자부(茅家埠) once, so the hanja covers both forms. (This corrects the earlier row that attributed 마오자부 to the Trip.com KR moments post, which actually uses 모가부.) | [Trip.com KR: 마오자부](https://kr.trip.com/moments/theme/poi-maojiabu-scenic-area-81704-thorough-guides-993136/); [eastchinatrip KR](https://www.eastchinatrip.com/ko/hangzhou-west-lake-guide-for-korean-tourists/); [skyticket KR](https://ko.skyticket.com/guide/29155) ("7. 곽장(郭庄), 모가부(茅家埠)") |
+| Korean for the Summer Palace's 苏州街: Triple's POI page is titled 소주가 (also visitbeijing.or.kr and 서울경제, logged above); eastchinatrip KR and the site's own guide use 쑤저우제. The story writes 소주가(쑤저우 거리) once in `why` and 소주가 in the FAQ. | [Triple: 소주가](https://triple.guide/attractions/09754fd5-cc8d-42c2-9ed6-5bd405a331d1); [eastchinatrip KR](https://www.eastchinatrip.com/ko/summer-palace-beijing-guide-kr/) |
+| Summer Palace inner sights can be bought singly: the guide says "A base ticket plus one add-on can be better… Buy selectively"; the reservation note says "Admission or combined ticket; choose from the route you will walk". | `content/guides/summer-palace-gates-route-and-boat-plan/body.en.ts` (`ticket-comparison`); `lib/attractionReservations.ts` (`summer-palace`) |
+| Chongqing Culture and Tourism candidate source (whlyw.cq.gov.cn, 重庆洪崖洞民俗风貌区): connection failed from here (HTTP 000), so it was not swapped into `meta`. | curl, 2026-10-04 |
+
 ## Korean names
 
 Korean place names follow the forms used on the Korean travel market (see

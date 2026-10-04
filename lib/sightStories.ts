@@ -60,6 +60,7 @@ export const sightStories: Stories = {
       why: [
         "Pass through the towering Meridian Gate and the space opens into a vast square, golden roofs beyond, and the crowd falls quiet. For nearly five hundred years, twenty-four emperors lived behind these walls and ordinary people never got in. Now you can walk their route, one gate and one hall at a time.",
         "Heading north, the courtyards keep opening out until the great square before the Hall of Supreme Harmony, where the whole court once lined up by rank. Then you pass into the family's own quarters: smaller courtyards, trees and gardens, and the feeling changes from throne room to home. It is far too big to see in one visit, and you don't need to.",
+        "Beyond the main route, choose one side; trying to see both wears most people out before they reach the garden. Go east for treasure, from the jewels and jade of the Treasure Gallery to a hall of old clocks, most from England and some made in China. Each gallery has its own ticket. Go west for the small courtyards of the empresses and consorts. Cixi lived in one, the Palace of Gathered Elegance, as a young consort and gave birth to the future Tongzhi Emperor there. Decades later she moved back to celebrate her fiftieth birthday, and the bronze dragons and deer in the courtyard were cast for the occasion. Her rooms are still set out as they were then.",
       ],
       highlights: [
         {
@@ -79,12 +80,35 @@ export const sightStories: Stories = {
       when: "Take a morning slot and be in the queue before the gates open, so you reach the great halls ahead of the crowd; inside, it is busiest from about ten until early afternoon. Spring and autumn are the comfortable seasons; in July and August the stone courtyards are hot and almost shadeless.",
       pair: "Leave by the north gate and cross the road to Jingshan Park. If you still have the legs, climb to the top: the golden roofs of the whole palace spread out below you, everything you just walked through in one look. Tiananmen Square lies at the south end and has its own security check, so add it before your entry time only if the morning has room.",
       skip: "Repeat visitors with no interest in the collections. If three hours on stone paving is too much for someone in your group, don't drop it. The museum has its own two-hour route. And if your date is fully booked, go up Jingshan instead; in forty minutes it shows you the shape of the whole palace.",
+      faq: [
+        {
+          question: "Is the Forbidden City worth visiting?",
+          answer: "Yes, and on a first trip to Beijing it is the sight to put first. For nearly five hundred years 24 emperors lived here and ordinary people could not get in. Now you walk their route gate by gate, from the great squares to the family's own garden. You don't need to see it all: three hours for the main route and one side is plenty.",
+        },
+        {
+          question: "How long do you need at the Forbidden City?",
+          answer: "Plan on three hours inside for the main route through the middle and one side, plus time before that for security at the gate. If someone in your group tires easily, the museum's own two-hour route covers the essentials. If you still have the legs afterwards, climbing Jingshan for the view over the roofs takes about forty minutes more.",
+        },
+        {
+          question: "Do I need to book Forbidden City tickets in advance?",
+          answer: "Yes. No tickets are sold on the day, and each visitor books in their own name with the passport they will bring to the gate. Summer and holiday dates sell out fast, so be ready the moment tickets for your date are released. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+        {
+          question: "What is the best time to visit the Forbidden City?",
+          answer: "A weekday morning in spring or autumn, roughly April to May and September to October. Be in the queue before the gates open so you reach the great halls ahead of the crowd; inside, it is busiest from about ten until early afternoon. Avoid the May Day holiday and the first week of October, and expect hot, shadeless courtyards in July and August.",
+        },
+        {
+          question: "Why is it called the Forbidden City?",
+          answer: "Because for nearly five centuries ordinary people were forbidden to enter. Its Chinese name, Zijincheng, means the Purple Forbidden City. Purple stood for the Pole Star, where the emperor of heaven was believed to live, and this was the home of his son on earth. Since 1925 it has been the Palace Museum, the name you will see on tickets and signs.",
+        },
+      ],
     },
     zh: {
       description: "北京故宫：从午门走进去，一道门接一道门，一直走到皇帝一家住过的院子。别错过的三处、留多久，出门再上景山看全景。",
       why: [
         "穿过高大的午门，眼前突然空出一大片广场，远处是金黄屋顶的大殿，人会一下子安静下来。将近五百年里，24 位皇帝住在这道宫墙里，寻常百姓一步也进不来；如今，你可以沿着他们走过的路，一道门、一座殿地往里走。",
         "一路向北，院子先是越来越开阔，到太和殿前最大，当年文武百官就在这里排队朝拜；再往里，就走进了皇帝一家生活的小院子，房子变小了，花木多了起来，一下子从“朝廷”变成了“家”。它太大了，没人一次看得完，也不必看完。",
+        "除了中间这条主路，东西两边只挑一边逛；两边都想看，多半还没走到御花园就没力气了。往东看宝贝，有珍宝馆里的金银珠玉，也有一座摆满老钟表的展馆，钟大多是英国造的，少数是中国自己做的。这两个馆都要另外买票。往西走，看的是皇后、妃嫔们怎么过日子。慈禧年轻时就住在这边的储秀宫，在这里生下了后来的同治皇帝；几十年后，她为过五十大寿又搬了回来。屋里的摆设至今还是那时的样子，院子里那对铜龙和铜鹿，也是为那次大寿铸的。",
       ],
       highlights: [
         {
@@ -104,12 +128,35 @@ export const sightStories: Stories = {
       when: "预约上午场，开门前就排进队里，赶在人潮前面走到几座大殿；宫里大约十点到午后人最多。春秋两季最舒服；七八月，石头院子又晒又热，几乎找不到阴凉。",
       pair: "出了北门，过马路就是景山公园。还走得动的话就爬上山顶，整片金黄的宫殿屋顶都在脚下，刚走过的地方一眼看全，这是北京最值得看的一个画面。天安门广场在南头，要单独过安检，只有上午时间宽裕，才值得在进宫前先去一趟。",
       skip: "以前来过、对宫里的展览也没什么兴趣的人。同行有人走不了三个小时石板路，也不必放弃：故宫自己有一条两小时的参观路线。要是你想去的那天已经约满，景山就是最实在的替代，四十分钟就能看清整座故宫的样子。",
+      faq: [
+        {
+          question: "北京故宫值得去吗？",
+          answer: "值得，第一次来北京，最该先去的就是这里。这座宫城住过 24 位皇帝，将近五百年不许百姓进门；如今你可以穿过午门，一道门一道门往北走，直到皇帝一家的后花园。不必全部看完，中间的主路加上一边，三个小时就够了。",
+        },
+        {
+          question: "逛故宫需要多长时间？",
+          answer: "宫里留三个小时左右，走完中间的主路，再挑东边或西边逛一路；进门前的安检时间另算。同行有人体力一般的话，就走故宫自己推荐的两小时路线，主要的地方也都能看到。出来要是还走得动，再爬景山看全景，大约多留四十分钟。",
+        },
+        {
+          question: "故宫门票要提前预约吗？",
+          answer: "一定要，故宫不卖当天的票。每个人都要用自己的护照实名预约，入宫时带上预约用的那本护照。暑假和节假日的票很快约满，放票的时候就要准备好。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+        {
+          question: "什么时候去故宫最好？",
+          answer: "春秋两季的平日上午最好，大约是四五月和九、十月。开门前就排进队里，赶在人潮前面走到几座大殿；宫里大约十点到午后人最多。避开五一和国庆黄金周；七八月，石头院子又晒又热，几乎找不到阴凉。",
+        },
+        {
+          question: "故宫为什么叫“紫禁城”？",
+          answer: "因为将近五百年里，这里是寻常百姓不许进入的禁地。“紫”来自紫微星，也就是北极星，古人相信天帝就住在那里；皇帝是“天子”，他在人间的家，就叫紫禁城。1925 年起，这里改成了博物馆，门票和指示牌上写的都是“故宫博物院”。",
+        },
+      ],
     },
     ko: {
       description: "베이징 자금성: 오문으로 들어가 문 하나, 전각 하나를 지나 황제 가족이 살던 안뜰까지. 놓치지 말 세 곳과 관람 시간, 나와서 경산공원에 올라 보는 전경까지.",
       why: [
         "높은 오문을 지나면 눈앞에 거대한 광장이 갑자기 열리고, 저 멀리 황금빛 지붕의 전각이 보입니다. 사람들은 저절로 말수가 줄어듭니다. 500년 가까이 24명의 황제가 이 담장 안에서 살았고, 일반 백성은 한 번도 들어올 수 없었습니다. 이제는 그들이 걷던 길을 따라 문 하나, 전각 하나씩 안으로 걸어 들어갈 수 있습니다.",
         "북쪽으로 갈수록 마당은 점점 넓어져 태화전 앞에서 가장 크게 트입니다. 신하들이 품계대로 줄지어 서던 곳입니다. 더 안으로 들어가면 황제 가족이 살던 작은 안뜰이 나오고, 건물은 작아지고 나무와 정원이 많아지면서 ‘조정’이 ‘집’으로 바뀝니다. 한 번에 다 볼 수도 없고, 다 볼 필요도 없습니다.",
+        "가운데 큰길 외에는 동쪽과 서쪽 중 한쪽만 고르세요. 양쪽을 다 보려다가는 어화원에 닿기도 전에 지치기 쉽습니다. 동쪽은 보물을 보는 쪽입니다. 진보관의 금은보화와 옥, 그리고 옛 시계로 가득한 전시관이 있는데, 시계는 대부분 영국에서 왔고 중국에서 만든 것도 있습니다. 두 전시관 모두 입장권을 따로 사야 합니다. 서쪽에서는 황후와 후궁들이 어떻게 살았는지 볼 수 있습니다. 서태후는 젊은 후궁 시절 이쪽의 저수궁에 살며 훗날의 동치제를 낳았고, 수십 년 뒤 쉰 번째 생일을 맞아 다시 돌아왔습니다. 방 안은 지금도 그때 모습 그대로 꾸며져 있고, 앞뜰의 청동 용과 사슴도 그 생일을 위해 만든 것입니다.",
       ],
       highlights: [
         {
@@ -129,6 +176,28 @@ export const sightStories: Stories = {
       when: "오전 시간대로 예약하고 개장 전에 줄을 서서, 인파보다 먼저 큰 전각에 닿으세요. 궁 안은 10시쯤부터 이른 오후까지 가장 붐빕니다. 봄과 가을이 쾌적하고, 7~8월에는 돌마당이 뜨겁고 그늘이 거의 없습니다.",
       pair: "북문으로 나와 길을 건너면 경산공원입니다. 걸을 힘이 남았다면 꼭대기까지 올라가 보세요. 자금성의 노란 기와지붕이 발아래 한눈에 펼쳐지고, 방금 걸어온 길 전체가 보입니다. 톈안먼 광장은 남쪽 끝에 있고 보안 검색을 따로 거치므로, 오전 시간이 넉넉할 때만 입장 전에 들르세요.",
       skip: "전에 와 봤고 전시에도 큰 관심이 없다면 건너뛰어도 됩니다. 일행 중에 돌바닥을 3시간 걷기 힘든 분이 있어도 포기할 필요는 없습니다. 고궁박물원이 정한 2시간 관람 코스가 있습니다. 원하는 날짜의 예약이 다 찼다면 경산공원이 현실적인 대안입니다. 40분이면 궁 전체의 모습을 볼 수 있습니다.",
+      faq: [
+        {
+          question: "베이징 자금성은 가 볼 만한가요?",
+          answer: "네, 베이징이 처음이라면 가장 먼저 가야 할 곳입니다. 500년 가까이 24명의 황제가 이 담장 안에서 살았고, 일반 백성은 들어올 수 없었습니다. 이제는 그들이 걷던 길을 따라 문을 하나하나 지나, 거대한 광장에서 황제 가족의 정원까지 걸어 들어갈 수 있습니다. 다 볼 필요는 없고, 가운데 큰길과 한쪽 구역이면 3시간으로 충분합니다.",
+        },
+        {
+          question: "자금성 관람에는 시간이 얼마나 걸리나요?",
+          answer: "궁 안에서 3시간이면 가운데 큰길과 한쪽 구역을 둘러볼 수 있고, 그 전에 입구 보안 검색 시간을 따로 잡아야 합니다. 일행 중에 쉽게 지치는 분이 있다면 고궁박물원이 정한 2시간 코스로도 핵심은 다 봅니다. 나와서 걸을 힘이 남았다면 경산공원에 올라 지붕들을 내려다보세요. 40분쯤 더 잡으면 됩니다.",
+        },
+        {
+          question: "자금성 입장권은 미리 예약해야 하나요?",
+          answer: "네, 반드시 예약해야 합니다. 당일 표는 팔지 않습니다. 방문자마다 본인 여권 실명으로 예약하고, 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학과 연휴 날짜는 금방 매진되니 해당 날짜의 표가 풀리는 시점에 맞춰 준비하세요. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "자금성은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을, 대략 4~5월과 9~10월의 평일 오전이 가장 좋습니다. 개장 전에 줄을 서야 인파보다 먼저 큰 전각에 닿을 수 있고, 궁 안은 10시쯤부터 이른 오후까지 가장 붐빕니다. 5월 초 노동절 연휴와 10월 첫 주 국경절 연휴는 피하세요. 7~8월에는 돌마당이 뜨겁고 그늘이 거의 없습니다.",
+        },
+        {
+          question: "왜 ‘자금성’이라고 부르나요?",
+          answer: "500년 가까이 일반 백성의 출입이 금지된 곳이었기 때문입니다. ‘자(紫)’는 북극성을 가리킵니다. 옛사람들은 하늘의 황제가 그곳에 산다고 믿었고, 하늘의 아들인 황제가 땅에서 사는 집이라 ‘자’를, 아무나 들어올 수 없는 곳이라 ‘금(禁)’을 붙였습니다. 1925년부터는 고궁박물원이 되어, 입장권과 안내판에는 ‘고궁박물원’이라는 이름이 쓰입니다.",
+        },
+      ],
     },
   },
   "great-wall": {
@@ -283,6 +352,7 @@ export const sightStories: Stories = {
       why: [
         "The long stone avenue at the Temple of Heaven rises so gently you barely notice, until you realise you have been climbing towards the sky. At the top stands the Hall of Prayer for Good Harvests, three tiers of blue roof that almost melt into a clear sky. For five centuries, Ming and Qing emperors came here every year to pray for good harvests.",
         "What makes it special now is that it belongs to Beijing again. At first light the cypress woods fill with people doing tai chi, dancing, singing opera and kicking shuttlecocks, and the long covered walkway fills with card and chess games. The emperors' altar has become the neighbourhood park, and you see the city at its most relaxed.",
+        "The whole place is built on an old belief that heaven is round and the earth is square, and once you know it, you see it everywhere. On a map, the park's outer wall curves round the north side and runs straight along the south. The open-air altar, the Circular Mound, sits inside a round low wall inside a square one. Climb to its top and look down at the paving: nine stones ring the centre, then eighteen, all the way to eighty-one, because nine was heaven's number. Even the roofs play their part. The Qianlong Emperor had all three tiers of the Hall of Prayer's roof covered in blue tiles, the colour of the sky.",
       ],
       highlights: [
         {
@@ -302,12 +372,35 @@ export const sightStories: Stories = {
       when: "The earlier the better: the park opens well before the monuments, and the woods are liveliest first thing. On a clear autumn or winter day the blue roofs stand out against a blue sky. To try the Echo Wall, pick a quiet weekday morning, and even then it may not carry your voice.",
       pair: "From the North Gate it is a short taxi ride to Qianmen Street and the old lanes of Dashilar, good for a wander and lunch.",
       skip: "If you have only one day for Beijing's imperial sights, give it to the Forbidden City. If old buildings leave you cold, buy just the park ticket and walk the woods early in the morning. Watching Beijing start its day is worth the trip on its own.",
+      faq: [
+        {
+          question: "Is the Temple of Heaven worth visiting?",
+          answer: "Yes, especially early in the morning. The blue-roofed Hall of Prayer for Good Harvests is one of Beijing's great sights. The park around it, close to four times the size of the Forbidden City, fills at first light with people doing tai chi, dancing and playing cards. Two to three hours is enough.",
+        },
+        {
+          question: "How long do you need at the Temple of Heaven?",
+          answer: "Two to three hours for the Hall of Prayer, the Echo Wall and the Circular Mound. They lie on one line, joined in the middle by a raised stone avenue 360 metres long. The park around them is huge, so wear comfortable shoes. Come an hour earlier if you want the morning park life too.",
+        },
+        {
+          question: "What is the best time to visit the Temple of Heaven?",
+          answer: "Early morning, in any season. The park gates open well before the monuments, and the cypress woods are liveliest at first light. For photos, wait for a clear autumn or winter day, when the blue roofs stand out against a blue sky. Avoid the May Day holiday and the first week of October.",
+        },
+        {
+          question: "Which Temple of Heaven ticket should I buy?",
+          answer: "Buy the combined ticket on a first visit. The park-only ticket gets you into the park but not into the Hall of Prayer, the Echo Wall or the Circular Mound, the three sights most people come for. Tickets are booked in each visitor's own name with a passport, and we can check the rules for your date and book for you.",
+        },
+        {
+          question: "Temple of Heaven or Summer Palace: which should I choose?",
+          answer: "Choose the Temple of Heaven if you have two or three hours: it is close to the centre, and that is enough for the main sights. Choose the Summer Palace if you have half a day or more and want a lake and hills. It lies about 15 kilometres north-west of the centre, and the garden alone takes three to four hours. In winter, the Temple of Heaven's corridor of card players is the livelier choice.",
+        },
+      ],
     },
     zh: {
       description: "北京天坛：走上南低北高的长长大道，蓝顶的祈年殿在晴空下亮得耀眼；一大早，柏树林里全是晨练的北京人。",
       why: [
         "走上那条南低北高的长石板大道，人会不知不觉地慢慢升高，像是一步步往天上走。走到头，祈年殿就在眼前：三层蓝色的圆顶，晴天里几乎和天空融成一片。五百年间，明清两代的皇帝每年都来这里祭天，祈求五谷丰登。",
         "天坛最有意思的，是它如今也属于北京人。天刚亮，柏树林里就有人打太极、跳舞、唱京剧、踢毽子，长廊下坐满了打牌下棋的老人。皇帝祭天的地方成了家门口的公园，来这里，能看到北京最松弛的一面。",
+        "整座天坛，都是照着“天圆地方”的老说法修的，知道了这一点，处处都能看出来。在地图上看，最外面那圈围墙北边是圆的，南边是方的。露天的圜丘外面套着两道矮墙，里面一道圆，外面一道方。登上圜丘顶层，低头看脚下：围着中心那块圆石，第一圈铺了 9 块石板，第二圈 18 块，一直铺到第九圈 81 块，因为古人把九看作天的数字。连屋顶的颜色也有讲究，乾隆把祈年殿三层屋顶全换成了蓝瓦，取的就是天的颜色。",
       ],
       highlights: [
         {
@@ -327,12 +420,35 @@ export const sightStories: Stories = {
       when: "越早越好：公园比几座古建筑开门早得多，一早的柏树林最热闹。秋冬的晴天，蓝瓦衬着蓝天最好看。想试试回音壁的话，挑人少的平日上午；就算这样，声音也不一定传得过去。",
       pair: "从北门出来，打车一会儿就到前门大街和大栅栏的老胡同，正好接着逛、找地方吃饭。",
       skip: "如果在北京只有一天看皇家古迹，先去故宫。对古建筑没兴趣的话，只买公园门票，一早进来在柏树林里走走，看看北京人怎么过早晨，也很值得。",
+      faq: [
+        {
+          question: "北京天坛值得去吗？",
+          answer: "值得，尤其是一大早去。蓝顶的祈年殿，在北京的古建筑里数一数二；四周的公园将近故宫的四倍大，天刚亮，柏树林里就满是打太极、跳舞、打牌的北京人。留两三个小时就够了。",
+        },
+        {
+          question: "逛天坛需要多长时间？",
+          answer: "留两三个小时，就能看完祈年殿、回音壁和圜丘。三处连成一条线，中间是一条 360 米长、高出地面的石板大道；四周的公园很大，最好穿双好走的鞋。想看公园早上最热闹的样子，就再早来一个小时。",
+        },
+        {
+          question: "什么时候去天坛最好？",
+          answer: "不论哪个季节，都是一大早最好。公园比几座古建筑开门早得多，天刚亮时柏树林里最热闹。想拍照，就等秋冬的晴天，蓝瓦衬着蓝天最好看。五一和国庆长假人最多，尽量避开。",
+        },
+        {
+          question: "天坛要买联票，还是只买公园门票？",
+          answer: "第一次来，买联票。只买公园门票，进得了园子，却进不了祈年殿、回音壁和圜丘，而这三处正是大多数人专程来看的。门票要用护照实名预约，我们可以按你的日期核实规则并代为预约。",
+        },
+        {
+          question: "天坛和颐和园，选哪个？",
+          answer: "只有两三个小时，就选天坛，它离市中心近，看完主要的几处正好。能留出半天以上、想看湖和山，就选颐和园，它在城西北约 15 公里，光园里就要逛三四个小时。到了冬天，天坛长廊里坐满打牌下棋的老人，更有北京味儿。",
+        },
+      ],
     },
     ko: {
       description: "베이징 천단: 완만하게 오르는 긴 돌길 끝에 푸른 지붕의 기년전이 하늘과 맞닿고, 이른 아침 측백나무 숲은 운동하는 베이징 사람들로 가득합니다.",
       why: [
         "천단의 긴 돌길은 남쪽이 낮고 북쪽이 높아서, 걷다 보면 어느새 하늘을 향해 조금씩 올라가고 있습니다. 길 끝에 기년전이 나타납니다. 세 겹의 푸른 둥근 지붕이 맑은 날이면 하늘과 거의 하나가 됩니다. 500년 동안 명·청의 황제들이 해마다 이곳에서 하늘에 풍년을 빌었습니다.",
-        "지금의 천단이 특별한 건 베이징 사람들의 공원이기도 하기 때문입니다. 날이 밝으면 측백나무 숲에 태극권을 하고, 춤추고, 경극을 부르고, 제기를 차는 사람들이 모이고, 긴 회랑 아래는 카드놀이와 장기를 두는 노인들로 붐빕니다. 황제의 제단이 동네 공원이 된 이곳에서, 베이징의 가장 느긋한 얼굴을 볼 수 있습니다.",
+        "지금의 천단이 특별한 건 베이징 사람들의 공원이기도 하기 때문입니다. 날이 밝으면 측백나무 숲에 태극권을 하고, 춤추고, 경극을 부르고, 제기를 차는 사람들이 모이고, 긴 회랑 아래는 카드놀이를 하고 장기를 두는 노인들로 붐빕니다. 황제의 제단이 동네 공원이 된 이곳에서, 베이징의 가장 느긋한 얼굴을 볼 수 있습니다.",
+        "천단 전체가 ‘하늘은 둥글고 땅은 네모나다’는 옛 생각에 따라 지어졌고, 이를 알고 나면 곳곳에서 그 모습이 보입니다. 지도로 보면 공원 바깥 담장은 북쪽이 둥글고 남쪽이 네모납니다. 하늘로 트인 원구단은 낮은 담이 두 겹으로 둘러싸고 있는데, 안쪽 담은 둥글고 바깥쪽 담은 네모납니다. 원구단 맨 위층에 올라 발밑을 보세요. 가운데 둥근 돌을 첫 바퀴에 돌판 9장이 두르고, 다음 바퀴는 18장, 그렇게 아홉째 바퀴 81장까지 이어집니다. 옛사람들이 9를 하늘의 수로 여겼기 때문입니다. 지붕 색에도 뜻이 있습니다. 건륭제는 기년전의 세 겹 지붕을 모두 하늘빛 푸른 기와로 바꿨습니다.",
       ],
       highlights: [
         {
@@ -352,6 +468,28 @@ export const sightStories: Stories = {
       when: "일찍 올수록 좋습니다. 공원 문은 주요 건축물보다 훨씬 먼저 열리고, 이른 아침의 숲이 가장 활기찹니다. 맑은 가을이나 겨울날에는 푸른 기와가 파란 하늘과 어우러집니다. 회음벽을 해 보고 싶다면 한산한 평일 오전을 고르세요. 그래도 소리가 잘 전해지지 않을 때가 있습니다.",
       pair: "북문에서 택시로 금방인 전문대가와 다자란 옛 골목에서 이어서 걷고 점심을 먹기 좋습니다.",
       skip: "베이징 황실 유적에 하루밖에 없다면 자금성에 쓰세요. 옛 건축물에 큰 관심이 없다면 공원 입장권만 사서 아침 일찍 숲을 걸어 보세요. 베이징 사람들이 하루를 시작하는 모습만으로도 올 만합니다.",
+      faq: [
+        {
+          question: "베이징 천단은 가 볼 만한가요?",
+          answer: "네, 특히 이른 아침에 가 볼 만합니다. 푸른 지붕의 기년전은 베이징에서 손꼽히는 풍경이고, 자금성의 네 배 가까이 되는 공원은 날이 밝자마자 태극권, 춤, 카드놀이를 하는 사람들로 가득합니다. 2~3시간이면 충분합니다.",
+        },
+        {
+          question: "천단 관람에는 시간이 얼마나 걸리나요?",
+          answer: "기년전, 회음벽, 원구단을 보는 데 2~3시간이면 됩니다. 세 곳은 한 줄로 늘어서 있고, 가운데를 길이 360m의 높은 돌길이 잇습니다. 둘레의 공원이 워낙 넓으니 편한 신발을 신으세요. 아침 공원의 활기찬 풍경까지 보려면 한 시간 일찍 오세요.",
+        },
+        {
+          question: "천단은 언제 가는 게 가장 좋나요?",
+          answer: "계절과 상관없이 이른 아침이 가장 좋습니다. 공원 문은 주요 건축물보다 훨씬 먼저 열리고, 날이 밝을 무렵 측백나무 숲이 가장 활기찹니다. 사진을 찍으려면 맑은 가을이나 겨울날을 고르세요. 푸른 기와가 파란 하늘과 어우러집니다. 5월 초 노동절 연휴와 10월 초 국경절 연휴는 피하는 것이 좋습니다.",
+        },
+        {
+          question: "천단 입장권은 어떤 것을 사야 하나요?",
+          answer: "처음 간다면 통합권을 사세요. 공원 입장권만으로는 공원 안을 걸을 수는 있어도, 대부분의 여행자가 보러 오는 기년전, 회음벽, 원구단에는 들어갈 수 없습니다. 입장권은 여권으로 실명 예약하며, 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "천단과 이화원 중 어디가 좋을까요?",
+          answer: "두세 시간뿐이라면 천단입니다. 도심에서 가깝고, 주요 명소를 보기에 딱 맞는 시간입니다. 반나절 이상 낼 수 있고 호수와 산을 보고 싶다면 이화원입니다. 도심에서 서북쪽으로 약 15km 떨어져 있고, 정원 안에서만 3~4시간이 걸립니다. 겨울이라면 카드놀이를 하고 장기를 두는 노인들로 가득한 천단의 회랑이 더 베이징답습니다.",
+        },
+      ],
     },
   },
   "summer-palace": {
@@ -360,6 +498,7 @@ export const sightStories: Stories = {
       why: [
         "The Summer Palace brings a whole landscape of lake and hill inside the imperial walls. Kunming Lake fills three quarters of the grounds, a painted corridor runs along its shore, and the Tower of Buddhist Incense rises from Longevity Hill behind. On a summer day, with a breeze off the water and willows trailing in it, you understand why the Empress Dowager Cixi chose to spend long seasons here.",
         "It is a beautiful place with a sad history. British and French troops burned it in 1860; Cixi rebuilt it, reputedly with money taken from the navy's budget; and after his reforms failed in 1898, the young Guangxu Emperor was held prisoner in a small courtyard by the lake. Walking the shore with that in mind changes how it feels.",
+        "Even the lake was shaped by hand. In 1749 and 1750 the Qianlong Emperor had the old lake here widened and deepened to twice its size. It became a reservoir for the imperial gardens west of the city, and he laid out a new garden around it, so every view here was planned. It is too big to see in one go, so choose a side. The front of Longevity Hill, with the corridor, the tower and the Marble Boat, is the classic walk and the busiest. Behind the hill, Suzhou Street is a rebuilt canal street where eunuchs and palace maids once played shopkeepers for the court. For the least climbing, follow the east shore to the Seventeen-Arch Bridge.",
       ],
       highlights: [
         {
@@ -379,12 +518,35 @@ export const sightStories: Stories = {
       when: "Come in the morning and walk the lake shore while it is cool. Spring brings magnolias and peach blossom on the West Causeway, autumn turns the hill gold, and on a few clear evenings around the winter solstice the setting sun lights every arch of the Seventeen-Arch Bridge at once.",
       pair: "If you still have the legs, the Old Summer Palace is a stop or two south on Metro Line 4. The same army burned it in the same year, and only broken stone palaces remain. Standing among those ruins stays with you longer than any intact hall.",
       skip: "It is in the north-western suburbs, so even a quick visit takes half a day. If time is tight, Beihai Park beside Jingshan is a smaller imperial lake garden right in the centre. And if Hangzhou is on your route, you will see the original there: the West Lake this garden copies.",
+      faq: [
+        {
+          question: "Is the Summer Palace worth visiting?",
+          answer: "Yes, if you have half a day. It is Beijing's great lake garden: water covers about three quarters of the grounds, a 728-metre painted corridor follows the shore and a tower rises from the hill behind. On a fine day, with a breeze off the lake, it is the most relaxing of the imperial sights.",
+        },
+        {
+          question: "How long do you need at the Summer Palace?",
+          answer: "Three to four hours to walk in at one gate and out at another. It lies about 15 kilometres north-west of the centre, so even a quick visit takes half a day. A boat across the lake saves your legs, and adding the Old Summer Palace makes it a full day.",
+        },
+        {
+          question: "What is the best time to visit the Summer Palace?",
+          answer: "Morning, while the lake shore is cool. Spring, around April, brings magnolias and peach blossom, and autumn turns the hill gold. On a few clear evenings around the winter solstice in late December, the setting sun lights all 17 arches of the Seventeen-Arch Bridge at once.",
+        },
+        {
+          question: "What is the difference between the Summer Palace and the Old Summer Palace?",
+          answer: "The Summer Palace is a complete garden; the Old Summer Palace is a ruin. British and French troops burned both in 1860, and only the Summer Palace was rebuilt, so its halls, corridor and lake are all there. At the Old Summer Palace, a stop or two south on Metro Line 4, you walk among the broken stone of its European-style palaces. Seeing both in one day tells the whole story.",
+        },
+        {
+          question: "Do I need to book Summer Palace tickets in advance?",
+          answer: "Booking ahead is wise, especially at weekends and on holidays, and tickets are in each visitor's own name with a passport. The basic ticket covers the corridor, the lake shore and the bridges. A few places inside, such as the Tower of Buddhist Incense and Suzhou Street, have their own tickets, or you can buy the combined ticket that covers them all. We can check the rules for your date and book for you.",
+        },
+      ],
     },
     zh: {
       description: "北京颐和园：沿着湖边 728 米的长廊慢慢走，抬头是一万四千多幅彩画，湖上是十七孔桥和夕阳。怎么逛、几点来、能不能顺路去圆明园。",
       why: [
         "颐和园把一整片湖光山色搬进了皇家园林。昆明湖占了园子的四分之三，湖边是一条画满故事的长廊，背后的万寿山上，佛香阁高高立着。夏天湖上有风，柳枝低垂，你会明白慈禧为什么愿意在这里长住。",
         "这么美的园子也有它的伤痕：1860 年被英法联军烧毁，慈禧重修时据说挪用了部分海军经费；光绪皇帝变法失败后，就被软禁在湖边的一座小院里。走在湖边想起这些往事，滋味很不一样。",
+        "连这片湖，都是人工挖大的。1749 到 1750 年，乾隆命人把这里原有的湖拓宽一倍、挖深一倍，给西郊的皇家园林当水库，又围着湖修起了园子；你眼前这片山水，处处都是设计好的。园子太大，一次逛不完，挑一边就好。万寿山前，长廊、佛香阁和石舫一路排开，最经典，人也最多；山后的苏州街，是复建的江南水乡街市，当年太监、宫女在这里扮成店伙计，陪皇帝和后妃们逛街买东西；想少爬坡，就沿着东岸一路走到十七孔桥。",
       ],
       highlights: [
         {
@@ -404,12 +566,35 @@ export const sightStories: Stories = {
       when: "早上来，趁凉快先逛湖边。春天玉兰和西堤的桃花开，秋天满山金黄。冬至前后的晴天傍晚，夕阳会同时照亮十七孔桥的所有桥洞，叫“金光穿洞”，一年里只有那几天能看到。",
       pair: "还走得动的话，坐地铁 4 号线往南一两站就是圆明园。它和颐和园在同一年被同一支军队烧毁，如今只剩一片残破的石头宫殿。站在那片废墟前，比看任何完好的宫殿都更让人难忘。",
       skip: "颐和园在城西北，再快也要半天。时间紧的话，市中心景山旁边的北海公园也是皇家湖景园林，小一些、近一些。行程里有杭州的话，颐和园模仿的原版西湖，到时候就能亲眼看到。",
+      faq: [
+        {
+          question: "北京颐和园值得去吗？",
+          answer: "值得，前提是能留出半天。这是一座以湖为主的皇家园林：水面约占四分之三，728 米的彩画长廊沿着湖岸伸展，背后的山上立着佛香阁。天气好、湖上有风的日子，在北京的皇家古迹里，数它最让人放松。",
+        },
+        {
+          question: "逛颐和园需要多长时间？",
+          answer: "从一个门进、另一个门出，要三四个小时。颐和园在城西北，离市中心约 15 公里，再快也要半天。坐船过湖能省些脚力；再加上圆明园，就是一整天。",
+        },
+        {
+          question: "什么时候去颐和园最好？",
+          answer: "早上去，趁凉快先逛湖边。四月前后玉兰和桃花开，秋天满山金黄。冬至前后，也就是十二月下旬，只有少数几个晴天的傍晚，夕阳会同时照亮十七孔桥的 17 个桥洞，这就是“金光穿洞”。",
+        },
+        {
+          question: "颐和园和圆明园有什么区别？",
+          answer: "颐和园是完整的园子，圆明园是一片废墟。1860 年，英法联军把两处一起烧了：颐和园后来重修，殿堂、长廊和湖都还在；圆明园再没有重建，如今只能在西洋楼的残石之间走一走。两处坐地铁 4 号线只隔一两站，一天看完，前后的故事就连起来了。",
+        },
+        {
+          question: "颐和园门票要提前预约吗？",
+          answer: "最好提前订，尤其是周末和节假日；门票用护照实名预约。普通门票就能逛长廊、湖边和各座桥；园里几处单独收费的地方，比如佛香阁、苏州街，可以一处处单买，也可以买一张全包的联票。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+      ],
     },
     ko: {
       description: "베이징 이화원: 곤명호를 따라 728m 이어지는 그림 회랑을 걷고, 돌로 만든 배를 찾고, 십칠공교 아래로 비치는 석양을 만나 보세요.",
       why: [
         "이화원은 호수와 산 풍경을 통째로 황실 정원 안에 들여놓은 곳입니다. 곤명호가 정원의 4분의 3을 차지하고, 호숫가로는 그림으로 가득한 장랑이 이어지며, 뒤편 만수산 위로 불향각이 높이 솟아 있습니다. 호수 바람이 불고 버드나무가 물에 드리워진 여름날이면, 서태후가 왜 이곳에 오래 머물렀는지 알 것 같습니다.",
         "아름다운 만큼 아픈 역사도 있습니다. 1860년 영국·프랑스 연합군이 불태웠고, 서태후는 해군 경비 일부를 끌어다 다시 지었다고 전해집니다. 1898년 개혁이 실패한 뒤 젊은 광서제는 호숫가의 작은 안뜰에 갇혀 지냈습니다. 이 이야기를 알고 호숫가를 걸으면 느낌이 완전히 달라집니다.",
+        "호수마저 사람 손으로 넓힌 것입니다. 1749년부터 이듬해까지 건륭제는 이곳에 있던 옛 호수를 두 배로 넓히고 두 배로 깊게 파서, 서쪽 교외 황실 정원들에 물을 대는 저수지로 삼고 그 둘레에 정원을 꾸몄습니다. 눈앞의 산과 물은 모두 계획해서 만든 풍경입니다. 한 번에 다 보기에는 너무 넓으니 한쪽을 고르세요. 만수산 앞쪽은 장랑, 불향각, 석방이 이어지는 가장 대표적인 길이자 가장 붐비는 곳입니다. 산 뒤편의 소주가(쑤저우 거리)는 물길을 따라 가게가 늘어선 남방 물의 마을을 본떠 다시 지은 거리입니다. 옛날 환관과 궁녀가 이곳에서 가게 주인으로 분장해, 황제와 후궁들이 장 보는 기분을 내게 해 주었습니다. 오르막을 피하고 싶다면 동쪽 호숫가를 따라 십칠공교까지 걸으세요.",
       ],
       highlights: [
         {
@@ -429,6 +614,28 @@ export const sightStories: Stories = {
       when: "아침에 와서 선선할 때 호숫가부터 걸으세요. 봄에는 목련과 서제의 복숭아꽃이 피고, 가을에는 산이 금빛으로 물듭니다. 동지 전후 맑은 날 해 질 녘 며칠 동안은 지는 해가 십칠공교의 다리 구멍 17개를 한꺼번에 비춥니다.",
       pair: "걸을 힘이 남았다면 지하철 4호선으로 한두 정거장 남쪽인 원명원에 가 보세요. 같은 해 같은 군대에 불타, 지금은 부서진 돌 궁전만 남았습니다. 그 폐허 앞에 서 보면 어떤 온전한 궁전보다 오래 기억에 남습니다.",
       skip: "이화원은 베이징 서북쪽 교외에 있어 짧게 봐도 반나절이 걸립니다. 시간이 빠듯하다면 도심 경산공원 옆의 북해공원도 작은 황실 호수 정원입니다. 일정에 항저우가 있다면, 이 정원이 본뜬 원조 서호를 그곳에서 보게 됩니다.",
+      faq: [
+        {
+          question: "베이징 이화원은 가 볼 만한가요?",
+          answer: "네, 반나절을 낼 수 있다면 가 볼 만합니다. 호수가 정원의 약 4분의 3을 차지하고, 그림으로 가득한 728m의 장랑이 호숫가를 따라 이어지며, 뒤편 산 위로 불향각이 솟아 있습니다. 호수 바람이 부는 맑은 날이면 베이징 황실 유적 가운데 가장 느긋하게 즐길 수 있는 곳입니다.",
+        },
+        {
+          question: "이화원 관람에는 시간이 얼마나 걸리나요?",
+          answer: "한 문으로 들어가 다른 문으로 나오는 데 3~4시간이 걸립니다. 도심에서 서북쪽으로 약 15km 떨어져 있어 짧게 봐도 반나절이 필요합니다. 배로 호수를 건너면 다리가 덜 아프고, 원명원까지 더하면 하루 일정입니다.",
+        },
+        {
+          question: "이화원은 언제 가는 게 가장 좋나요?",
+          answer: "아침이 가장 좋습니다. 선선할 때 호숫가부터 걸으세요. 4월 전후에는 목련과 복숭아꽃이 피고, 가을에는 산이 금빛으로 물듭니다. 동지 전후인 12월 하순, 맑은 날 해 질 녘 며칠 동안은 지는 해가 십칠공교의 다리 구멍 17개를 한꺼번에 비춥니다.",
+        },
+        {
+          question: "이화원과 원명원은 무엇이 다른가요?",
+          answer: "이화원은 온전한 정원이고, 원명원은 폐허입니다. 1860년 영국·프랑스 연합군이 두 곳을 함께 불태웠는데, 이화원은 뒤에 다시 지어져 전각과 회랑, 호수가 그대로 남아 있습니다. 원명원은 끝내 다시 짓지 못해, 지금은 서양식 궁전의 부서진 돌 사이를 걷게 됩니다. 지하철 4호선으로 한두 정거장 거리라, 하루에 둘 다 보면 이야기 전체가 이어집니다.",
+        },
+        {
+          question: "이화원 입장권은 미리 예약해야 하나요?",
+          answer: "미리 예약하는 것이 좋고, 주말과 연휴에는 특히 그렇습니다. 입장권은 여권으로 실명 예약합니다. 기본 입장권으로 장랑, 호숫가, 다리를 모두 볼 수 있고, 불향각이나 소주가처럼 따로 요금을 받는 몇 곳은 입장권을 하나씩 따로 사도 되고, 모두 포함된 통합권을 사도 됩니다. 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+      ],
     },
   },
   "national-museum": {
@@ -437,6 +644,7 @@ export const sightStories: Stories = {
       why: [
         "If you want to understand China's long history in a single afternoon, come here. The Ancient China galleries lay it out as one walk: stone tools from the earliest settlers, Shang bronzes, Han pottery figures, then Ming and Qing porcelain. Some 2,000 objects stand in order, and by the end every dynasty has fallen into place.",
         "Come before Xi'an or any other old capital on your route, and everything you see there will slot into that timeline. On a rainy, sweltering or hazy day, it is also the most comfortable place in Beijing.",
+        "Many of these pieces are old friends to Chinese visitors. The giant bronze cauldron and the four-ram vessel are pictured in the national history textbook for the first year of secondary school. In the summer holidays you share them with families who have come to see the real thing. Follow that crowd. Where people press closest to the glass, you are standing in front of the treasures China itself values most.",
       ],
       highlights: [
         {
@@ -456,12 +664,35 @@ export const sightStories: Stories = {
       when: "Keep it for a day of rain, heat or haze. The summer school holidays are the busiest weeks and the hardest to book.",
       pair: "Tian'anmen East station on Metro Line 1 is just outside, and Wangfujing, for food and a stroll, is one stop east.",
       skip: "Anyone who is not a museum person, or who has only a day or two in Beijing with the Forbidden City still to see. If Xi'an is on your route, its Shaanxi History Museum tells the Zhou-to-Tang story close to where the objects were found.",
+      faq: [
+        {
+          question: "Is the National Museum of China worth visiting?",
+          answer: "Yes, if you want China's whole story in one place. The Ancient China galleries take you past about 2,000 objects, from the first settlers to the Ming and Qing, in a single walk of about three hours. If you have only a day or two in Beijing and haven't seen the Forbidden City yet, go there first.",
+        },
+        {
+          question: "Is the National Museum of China free, and do I need to book?",
+          answer: "Entry to the permanent galleries is free, but you must book a place ahead in your own passport name and bring that passport. In China's summer school holidays places are often gone days ahead, so book as soon as your date opens. Some special exhibitions charge separately, and we can check the rules for your date and book for you.",
+        },
+        {
+          question: "How long do you need at the National Museum of China?",
+          answer: "About three hours to see Ancient China at an easy pace, with a sit-down in the middle; two hours if you go straight to the best-known pieces. Don't try to see the whole building. It has 48 galleries, and a whole day would not cover them.",
+        },
+        {
+          question: "What should I not miss at the National Museum of China?",
+          answer: "Don't miss the Houmuwu Ding, the Four-Ram Square Zun and the laughing Han storyteller, all in the Ancient China galleries. The Houmuwu Ding weighs 832.84 kilograms, the heaviest bronze vessel known from ancient China; the four-ram vessel has a curly-horned ram at each corner; and the storyteller laughs as he beats his drum. The gallery around them is laid out as one walk through China's history, so give it time too.",
+        },
+        {
+          question: "Can I visit the National Museum and the Forbidden City on the same day?",
+          answer: "You can, but most people enjoy both more on separate days. Each needs about three hours, each has its own booking and security check, and the palace lets you out only by its north or east gate, both a long walk from the museum. If it has to be one day, do the Forbidden City in the morning and keep the museum for a slow afternoon.",
+        },
+      ],
     },
     zh: {
       description: "北京中国国家博物馆：一个下午从远古走到明清，看看巨大的后母戊鼎、四羊方尊，还有一个笑了两千年的说唱俑。",
       why: [
         "如果只有一个下午想读懂中国历史，就来这里。“古代中国”展厅把几千年排成了一条路：远古的石器、商朝的青铜、汉代的陶俑，一路走到明清的瓷器，两千多件文物按时间排开。走一圈出来，中国的朝代就在脑子里排好了队。",
         "在去西安这样的古都之前先来这里，之后看到的每一处古迹，都能放回这条时间线上。下雨、太热或空气不好的日子，这里也是北京最舒服的去处。",
+        "对中国人来说，这里不少文物都是“老熟人”。后母戊鼎、四羊方尊都印在初中一年级的历史课本上，所以一到暑假，展柜前常常挤满了带孩子来看“真东西”的一家人。跟着人群走准没错，围得最紧的那几件，正是中国人自己最看重的国宝。",
       ],
       highlights: [
         {
@@ -481,12 +712,35 @@ export const sightStories: Stories = {
       when: "把它留给下雨、酷暑或者空气不好的日子。暑假人最多，也最难约上。",
       pair: "出门就是地铁 1 号线天安门东站，往东坐一站到王府井，吃饭、逛街都方便。",
       skip: "对博物馆兴趣不大，或者在北京只有一两天、还没去故宫的人，可以先不去。行程里有西安的话，陕西历史博物馆讲的周秦汉唐，离文物出土的地方更近。",
+      faq: [
+        {
+          question: "中国国家博物馆值得去吗？",
+          answer: "值得，尤其适合想一次看懂中国历史的人。“古代中国”展厅里有两千多件文物，从远古一路排到明清，走一圈大约三个小时。要是在北京只有一两天，又还没去故宫，就先去故宫。",
+        },
+        {
+          question: "国家博物馆免费吗？要预约吗？",
+          answer: "常设展览免费，但要用本人护照提前实名预约，入馆时带上同一本护照。暑假期间，名额常常提前几天就约满了，一放出你那天的名额就赶紧约；部分特展另外收费。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+        {
+          question: "逛国家博物馆需要多长时间？",
+          answer: "从容看完“古代中国”，中间坐下歇一歇，留三个小时左右；只看几件最有名的国宝，两个小时也够。别想着把整座楼看完，国博有 48 个展厅，一天也走不完。",
+        },
+        {
+          question: "国家博物馆必看的文物有哪些？",
+          answer: "“古代中国”展厅里的后母戊鼎、四羊方尊和东汉击鼓说唱俑，一定要看。后母戊鼎重 832.84 公斤，是已知最重的中国古代青铜器；四羊方尊四个角上各伸出一只卷角羊头；说唱俑敲着鼓，笑得合不拢嘴。展厅其余部分也值得慢慢走，它本身就是一条贯穿中国历史的路。",
+        },
+        {
+          question: "国家博物馆和故宫能安排在同一天吗？",
+          answer: "可以，但分开两天去，两处都能看得更尽兴。每处都要三个小时左右，各自要预约、各自过安检；而且故宫只能从北门或东华门出来，走到国博都要绕一大段路。非要放在一天，就上午去故宫，下午慢慢逛国博。",
+        },
+      ],
     },
     ko: {
       description: "베이징 중국 국가박물관에서 오후 한나절에 중국 역사 전체를 걸어 보세요. 거대한 후모무정, 네 마리 양의 사양방존, 2천 년째 웃고 있는 설창용까지.",
       why: [
         "중국의 긴 역사를 오후 한나절에 이해하고 싶다면 이곳으로 오세요. ‘고대 중국’ 전시는 역사를 한 줄의 길로 펼쳐 놓았습니다. 선사 시대 석기에서 상나라 청동기, 한나라 토용을 지나 명·청 도자기까지 유물 2천여 점이 시대순으로 이어져, 다 걷고 나면 중국 왕조가 머릿속에 차례로 정리됩니다.",
         "시안 같은 옛 도읍에 가기 전에 먼저 들르면, 그곳에서 보는 모든 것이 이 연표 위에 자리를 잡습니다. 비 오는 날이나 몹시 덥고 공기가 탁한 날에는 베이징에서 가장 쾌적한 곳이기도 합니다.",
+        "중국 사람들에게 이곳 유물 상당수는 학창 시절부터 봐 온 낯익은 얼굴입니다. 후모무정과 사양방존은 중국 중학교 1학년 역사 교과서에 실려 있어, 여름방학이면 진품을 보러 온 가족들이 진열장 앞에 모여듭니다. 그 사람들을 따라가 보세요. 사람이 가장 많이 몰린 진열장 안에, 중국인이 가장 아끼는 국보가 있습니다.",
       ],
       highlights: [
         {
@@ -506,6 +760,28 @@ export const sightStories: Stories = {
       when: "비가 오거나 몹시 덥거나 공기가 탁한 날을 위해 남겨 두세요. 중국의 여름방학 기간이 가장 붐비고 예약도 가장 어렵습니다.",
       pair: "바로 앞이 지하철 1호선 톈안먼둥역이고, 동쪽으로 한 정거장 가면 식당과 상점이 모인 왕푸징입니다.",
       skip: "박물관에 큰 관심이 없거나, 베이징에 하루이틀뿐인데 아직 자금성도 못 봤다면 건너뛰어도 됩니다. 시안에 간다면 산시역사박물관에서 주·진·한·당의 유물을 출토지 가까이에서 볼 수 있습니다.",
+      faq: [
+        {
+          question: "중국 국가박물관은 가 볼 만한가요?",
+          answer: "네, 중국 역사를 한곳에서 한 번에 보고 싶다면 가 볼 만합니다. ‘고대 중국’ 전시는 유물 2천여 점으로 선사 시대부터 명·청까지를 한 줄로 이어 보여 주고, 다 보는 데 3시간쯤 걸립니다. 베이징에 하루이틀뿐인데 아직 자금성을 못 봤다면 자금성부터 가세요.",
+        },
+        {
+          question: "중국 국가박물관은 무료인가요? 예약이 필요한가요?",
+          answer: "상설 전시는 무료지만, 본인 여권으로 미리 실명 예약을 하고 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학에는 며칠 전에 자리가 다 차는 경우가 많으니, 원하는 날짜가 열리는 대로 바로 예약하세요. 일부 특별전은 따로 요금을 받습니다. 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "중국 국가박물관 관람에는 시간이 얼마나 걸리나요?",
+          answer: "‘고대 중국’을 여유 있게 보고 중간에 앉아 쉬려면 3시간쯤, 가장 유명한 유물만 골라 보면 2시간이면 됩니다. 건물 전체를 다 보려고 하지는 마세요. 전시실이 48개나 되어 하루를 다 써도 다 볼 수 없습니다.",
+        },
+        {
+          question: "중국 국가박물관에서 꼭 봐야 할 유물은 무엇인가요?",
+          answer: "‘고대 중국’ 전시의 후모무정, 사양방존, 그리고 북 치는 한나라 설창용은 꼭 보세요. 후모무정은 832.84kg으로 지금까지 알려진 중국 고대 청동 그릇 가운데 가장 무겁고, 사양방존은 네 모서리마다 뿔이 말린 양 머리가 튀어나와 있으며, 설창용은 북을 끼고 웃음을 터뜨립니다. 전시실의 나머지도 천천히 걸어 보세요. 전시 자체가 중국 역사를 한 줄로 잇는 길입니다.",
+        },
+        {
+          question: "국가박물관과 자금성을 하루에 볼 수 있나요?",
+          answer: "가능은 하지만, 날을 나누어야 두 곳 모두 더 즐겁게 볼 수 있습니다. 각각 3시간쯤 걸리고, 예약과 보안 검색도 따로 거쳐야 합니다. 게다가 자금성은 북문이나 동화문으로만 나올 수 있어, 어느 쪽이든 박물관까지 한참 걸어야 합니다. 꼭 하루에 봐야 한다면 오전에 자금성, 오후에 박물관을 여유 있게 보세요.",
+        },
+      ],
     },
   },
   "terracotta-warriors": {
@@ -952,6 +1228,7 @@ export const sightStories: Stories = {
       why: [
         "At six or seven in the morning, mist still hangs over the Su Causeway, willow branches trail in the water and the hills fade layer by layer into the distance, like an ink painting not quite dry. The poet Su Dongpo wrote that West Lake is lovely whether lightly or richly made up, and this is the face he meant.",
         "There is no ticket and no gate: the whole shore, about 15 kilometres round, is open park, day and night. The lake was shaped by people over a thousand years. Su Dongpo had mud dug from its bed and piled into the causeway that bears his name, and the Qianlong Emperor loved it so much he modelled a causeway at the Summer Palace in Beijing on it.",
+        "For a first visit, walk the Su Causeway and take a boat to the island. Beyond them, each shore has its own mood. The north shore, the busiest, has the Bai Causeway and the Broken Bridge, where the lovers of the Lady White Snake legend meet in the rain. The east shore is where the city meets the lake, lined with hotels and shops. For quiet, head west to the foot of the hills. Cars run along the Yanggong Causeway there, but step off it into the backwaters and woods of Maojiabu and the crowds fall away.",
       ],
       highlights: [
         {
@@ -971,12 +1248,35 @@ export const sightStories: Stories = {
       when: "Early morning, before eight, when the causeway is still quiet. Spring brings fresh willows and peach blossom on the Su Causeway; summer brings lotus, roughly late June to August. Avoid the May Day holiday and the first week of October, when the whole shore fills.",
       pair: "Lingyin Temple and the Buddhist rock carvings of Feilai Peak are about half an hour west by car. The Longjing tea villages lie in the hills south of the temple, on a back road to the lake, so they make an easy stop on the way back.",
       skip: "Anyone after drama: the hills are low, and on a hazy day they vanish altogether. With only an hour or two, take a boat to the island rather than trying to walk the shore.",
+      faq: [
+        {
+          question: "Is West Lake worth visiting?",
+          answer: "Yes, especially early in the morning, when mist hangs over the Su Causeway and willows trail in still water. Walk the causeway, almost 3 kilometres across the lake, then take a boat to the island, and you have one of the most peaceful half-days you can spend in China. The hills are low and the scenery gentle, and that calm is the point.",
+        },
+        {
+          question: "Is West Lake free to visit?",
+          answer: "Yes. The whole shore, about 15 kilometres round, the causeways and the lakeside parks are open day and night, with no ticket and no gate. You pay only for a few things on and around the lake, such as the boats, the trip to the island of Three Pools Mirroring the Moon and Leifeng Pagoda.",
+        },
+        {
+          question: "How long does it take to walk around West Lake?",
+          answer: "About four hours of steady walking for the full 15-kilometre loop, and most of a day with stops. Most visitors walk only part of it, and the Su Causeway, almost 3 kilometres from shore to shore, is the stretch not to miss. To see more without tiring, mix walking with a boat.",
+        },
+        {
+          question: "What is the best time to visit West Lake?",
+          answer: "Early morning, before eight, when the causeways are still quiet. From late March to mid-April the Su Causeway has peach blossom and fresh willows, and lotus covers parts of the lake from roughly late June to August. Avoid the May Day holiday and the first week of October, when the whole shore fills.",
+        },
+        {
+          question: "Should I take a boat on West Lake?",
+          answer: "Yes, at least once: a boat is the most relaxing way to see the lake and the only way to reach the island of Three Pools Mirroring the Moon. You can stay on the island as long as you like, and a boat brings you back. For a quieter ride, take a small boat rowed by a boatman, which seats up to six. Queues build on holidays, and we can book a boat for your date.",
+        },
+      ],
     },
     zh: {
       description: "杭州西湖：清晨苏堤上的薄雾和垂柳，不要门票，绕湖一圈就是一整座公园。别错过的三处，以及怎样和灵隐寺排在同一天。",
       why: [
         "清晨六七点，苏堤上的薄雾还没散，柳枝垂到水面，远处的山一层比一层淡，像一幅还没干透的水墨画。苏东坡写西湖“淡妆浓抹总相宜”，说的就是这副样子。",
         "西湖不要门票，环湖一圈约 15 公里，日夜开放，没有大门。这片湖是一千多年里一代代人修出来的：苏东坡把湖底挖出的泥堆成了今天的苏堤，乾隆喜欢得不得了，还在北京颐和园照着修了一道。",
+        "第一次来，走苏堤、坐船上岛，就是最好的开头。湖的四周，每一边都有自己的味道。北边是白堤和断桥，《白蛇传》里白娘子和许仙就在断桥边雨中相遇，这一带游人最多；东边挨着城区，酒店、商店都在这一侧；想清静，就往西走到山脚下。那里的杨公堤上跑着汽车，拐进旁边茅家埠一带的水湾和树林，人就少多了。",
       ],
       highlights: [
         {
@@ -996,12 +1296,35 @@ export const sightStories: Stories = {
       when: "最好清晨八点前到，苏堤上还很安静。春天看新柳和苏堤桃花；夏天看荷花，大约六月下旬到八月。避开五一和国庆黄金周，那几天整个湖边都挤满了人。",
       pair: "灵隐寺和刻满佛像的飞来峰在西边，开车约半小时。龙井村的茶园在灵隐寺南边的山里，那里有条小路直通湖边，返程正好顺路停一下。",
       skip: "只想看壮观风景的人：这里的山不高，赶上灰蒙蒙的天，远山干脆整个看不见。只有一两个小时的话，坐船上岛，比沿着湖岸走更值得。",
+      faq: [
+        {
+          question: "杭州西湖值得去吗？",
+          answer: "值得，尤其是清晨去：苏堤上薄雾未散，柳枝垂到平静的水面上。沿着近 3 公里的长堤横穿湖面，再坐船上岛，这半天会过得格外舒坦。这里山不高，景色也秀气，图的就是这份安静。",
+        },
+        {
+          question: "西湖要门票吗？",
+          answer: "不要。环湖一圈约 15 公里，湖岸、长堤和沿湖的公园都日夜开放，没有门票，也没有大门。只有少数几样另外收费，比如游船、坐船上三潭印月的小岛，还有雷峰塔。",
+        },
+        {
+          question: "西湖走一圈要多久？",
+          answer: "环湖 15 公里，不停地走大约四个小时，边走边玩就要大半天。多数人只走其中一段，从南岸通到北岸、近 3 公里的苏堤是最不该错过的。想多看又不想太累，就走一段、坐一段船。",
+        },
+        {
+          question: "什么时候去西湖最好？",
+          answer: "清晨八点前最好，几条长堤上还很安静。三月下旬到四月中旬，苏堤上桃花开、新柳绿；大约六月下旬到八月，湖里一片片都是荷花。避开五一和国庆黄金周，那几天整个湖边都挤满了人。",
+        },
+        {
+          question: "游西湖要坐船吗？",
+          answer: "值得坐一次。坐船看西湖最省力，也只有坐船才能上三潭印月的小岛；上了岛，想待多久都行，玩够了再坐船回来。想更安静，就坐船夫划的手划船，一条最多坐六人。节假日排队很长，我们可以按你的日期代订游船。",
+        },
+      ],
     },
     ko: {
       description: "항저우 서호: 이른 아침 소제 위의 물안개와 버드나무, 입장료도 문도 없이 호수 전체가 공원입니다. 꼭 볼 세 곳과 영은사와 함께 도는 하루까지.",
       why: [
         "아침 6~7시, 소제 위로 물안개가 아직 걷히지 않았고, 버드나무 가지가 수면까지 늘어지며, 먼 산은 겹겹이 옅어져 마르지 않은 수묵화 같습니다. 소동파가 서호를 ‘옅은 화장도 짙은 화장도 다 어울린다’고 읊은 게 바로 이런 모습입니다.",
         "서호에는 입장료도 문도 없습니다. 둘레 약 15km의 호숫가 전체가 밤낮으로 열려 있는 공원입니다. 이 호수는 천 년 넘게 사람들이 가꿔 온 풍경입니다. 동파육으로도 이름이 익숙한 소동파가 호수 바닥의 진흙을 퍼 올려 지금의 소제를 쌓았고, 건륭제는 이 풍경을 너무 좋아한 나머지 베이징 이화원에도 이를 본뜬 둑길을 만들었습니다.",
+        "처음이라면 소제를 걷고 배로 섬에 들르는 것이 가장 좋은 시작입니다. 그 밖의 호숫가는 방향마다 분위기가 다릅니다. 북쪽에는 백제(白堤)라는 둑길과 단교가 있습니다. 단교는 백사전(백낭자와 허선의 사랑 이야기)에서 두 사람이 빗속에 만나는 다리이고, 이 일대가 호숫가에서 가장 붐빕니다. 동쪽은 호텔과 상점이 늘어선 도시 쪽입니다. 조용한 곳을 원한다면 산자락이 닿는 서쪽으로 가세요. 그쪽 양공제는 차가 다니는 길이지만, 마오자부(茅家埠) 일대의 물굽이와 숲으로 들어서면 사람이 훨씬 적습니다.",
       ],
       highlights: [
         {
@@ -1014,13 +1337,35 @@ export const sightStories: Stories = {
         },
         {
           name: "뇌봉탑",
-          body: "중국 4대 민간 전설 가운데 하나인 백사전(백낭자와 허선의 사랑 이야기)에서 스님이 백낭자를 가둔 탑입니다. 꼭대기에 오르면 서호 전체가 내려다보이고, 해 질 녘 북쪽 호숫가에서 바라보면 노을에 물든 탑이 서호십경의 하나인 ‘뇌봉석조’입니다.",
+          body: "중국 4대 민간 전설 가운데 하나인 백사전에서 스님이 백낭자를 가둔 탑입니다. 꼭대기에 오르면 서호 전체가 내려다보이고, 해 질 녘 북쪽 호숫가에서 바라보면 노을에 물든 탑이 서호십경의 하나인 ‘뇌봉석조’입니다.",
         },
       ],
       time: "반나절이면 배로 섬에 들르고, 소제를 걷고, 탑 하나에 오를 수 있습니다. 서쪽의 영은사까지 더하면 하루 일정입니다.",
       when: "아침 8시 전, 소제가 아직 한산할 때가 좋습니다. 버드나무 잎이 돋고 소제에 복숭아꽃이 피는 봄, 연꽃이 피는 여름(대략 6월 하순~8월)이 대표적인 계절입니다. 5월 초 노동절 연휴와 10월 첫 주 국경절 연휴는 피하세요. 호숫가 전체가 사람으로 가득합니다.",
       pair: "영은사와 불상이 새겨진 비래봉은 서쪽으로 차로 30분 정도입니다. 용정차 마을은 영은사 남쪽 산속, 호수로 돌아오는 길목에 있어 잠깐 들르기 좋습니다.",
       skip: "웅장한 풍경을 기대한다면 굳이 가지 않아도 됩니다. 산은 나지막하고, 하늘이 뿌연 날에는 그마저 아예 보이지 않습니다. 한두 시간밖에 없다면 호숫가를 걷기보다 배를 타고 섬에 들르세요.",
+      faq: [
+        {
+          question: "항저우 서호는 가 볼 만한가요?",
+          answer: "네, 특히 이른 아침에 가 볼 만합니다. 소제 위로 아직 물안개가 깔려 있고, 버드나무 가지가 잔잔한 수면까지 늘어집니다. 3km 가까운 둑길을 걸어 호수를 가로지르고 배로 섬에 들르는 반나절은 중국 여행에서 손꼽을 만큼 평온합니다. 산은 나지막하고 풍경도 소박하지만, 바로 그 고요함이 서호의 매력입니다.",
+        },
+        {
+          question: "서호는 입장료가 있나요?",
+          answer: "없습니다. 둘레 약 15km의 호숫가와 둑길, 호반 공원이 밤낮으로 열려 있고, 입장권도 문도 없습니다. 유람선, 삼담인월 섬에 들어가는 배, 뇌봉탑처럼 몇 가지만 따로 요금을 받습니다.",
+        },
+        {
+          question: "서호를 한 바퀴 걸으면 얼마나 걸리나요?",
+          answer: "15km를 쉬지 않고 걸으면 4시간쯤, 구경하며 걸으면 거의 하루가 걸립니다. 대부분의 여행자는 일부 구간만 걷는데, 남쪽 호숫가에서 북쪽 호숫가까지 3km 가까이 이어지는 소제가 놓치면 안 될 구간입니다. 덜 지치면서 더 보고 싶다면 걷기와 배를 섞으세요.",
+        },
+        {
+          question: "서호는 언제 가는 게 가장 좋나요?",
+          answer: "둑길이 아직 한산한 아침 8시 전이 가장 좋습니다. 3월 하순부터 4월 중순까지는 소제에 복숭아꽃이 피고 버드나무 잎이 돋으며, 대략 6월 하순부터 8월까지는 호수 곳곳에 연꽃이 핍니다. 5월 초 노동절 연휴와 10월 첫 주 국경절 연휴는 피하세요. 호숫가 전체가 사람으로 가득합니다.",
+        },
+        {
+          question: "서호에서 배를 꼭 타 봐야 하나요?",
+          answer: "한 번은 타 볼 만합니다. 배를 타면 가장 편하게 호수를 둘러볼 수 있고, 삼담인월 섬에는 배로만 갈 수 있습니다. 섬에서는 원하는 만큼 머물다가 배로 돌아오면 됩니다. 더 조용히 즐기고 싶다면 뱃사공이 노를 젓는 6인승 작은 배를 타세요. 연휴에는 줄이 길어지니, 저희가 날짜에 맞춰 배를 예약해 드릴 수 있습니다.",
+        },
+      ],
     },
   },
   hongyadong: {
@@ -1049,6 +1394,28 @@ export const sightStories: Stories = {
       when: "Be there before the lights come on and stay until it is fully dark. The lights follow a fixed evening schedule rather than sunset, later in summer than in winter, so check the time for your date. Weekday evenings are busy; on long national holidays, just getting in can take an hour.",
       pair: "Jiefangbei, the pedestrian heart of the city centre, is about fifteen minutes' walk uphill. The other way, about twenty minutes along the river, is Chaotianmen, where the night river cruises leave and the Jialing meets the Yangtze, usually the clearer river against the muddier one.",
       skip: "If you came for old Chongqing, this is not it: the building dates from 2006. If you dislike crowds, skip the inside and look at it from across the river; all you lose is the walk from the top floor down to the river.",
+      faq: [
+        {
+          question: "Is Hongyadong worth visiting?",
+          answer: "Yes, for the view at night. When eleven storeys of stilt-house-style buildings light up gold above the Jialing River, you are looking at Chongqing's best-known night scene. Give it an hour or two in the evening. If you want old buildings, look elsewhere: it was built in 2006.",
+        },
+        {
+          question: "When is the best time to see Hongyadong?",
+          answer: "In the evening: arrive before the lights come on and stay until it is fully dark. The lights come on at a set time each evening, later in summer than in winter, so check it for your date. If you can, avoid the National Day holiday in early October and the Spring Festival holiday, when just getting in can take an hour.",
+        },
+        {
+          question: "Where is the best view of Hongyadong?",
+          answer: "From the middle of Qiansimen Bridge, right beside it. Turn round about halfway across and the whole lit building is in front of you. The riverside road below gives the angle people compare with Spirited Away. From the north bank, about 800 metres across the bridge, the building, the bridge and the skyline fit in one frame.",
+        },
+        {
+          question: "Do you need a ticket for Hongyadong?",
+          answer: "No, it is free. Entry may need a free online booking, and on public holidays numbers are capped, so book ahead for a holiday evening. Watching from the bridge or across the river needs no booking at all, and we can check the current rule for your date.",
+        },
+        {
+          question: "Was Spirited Away based on Hongyadong?",
+          answer: "No. The Miyazaki film Spirited Away came out in 2001, five years before Hongyadong opened, and the building is modelled on the stilt houses that once lined Chongqing's two rivers. The comparison with the film's bathhouse caught on through short videos online from around 2016. Stand on the riverside road at night and look up, and you will see why.",
+        },
+      ],
     },
     zh: {
       description: "重庆洪崖洞：天一黑，十一层吊脚楼沿着嘉陵江边的悬崖亮起金光，像动画里走出来的城。从哪看最美，怎么从顶楼一路走到江边。",
@@ -1075,6 +1442,28 @@ export const sightStories: Stories = {
       when: "亮灯前到，一直待到天全黑。灯按固定的时间表开，不跟着日落走，夏天比冬天晚，出发前查一下当天的时间。就连平日晚上人也不少；国庆、春节这样的长假，光排队进去就可能要一个小时。",
       pair: "往坡上走十几分钟就是解放碑步行街。往另一头，沿江走二十来分钟到朝天门：两江在那里交汇，平时嘉陵江清一些、长江黄一些，两江夜游的船也从那里出发。",
       skip: "想看老重庆的人：这栋楼是 2006 年建的。怕挤的话，可以不进去，到对岸远远地看；错过的，只是从顶楼一路走到江边的那一段。",
+      faq: [
+        {
+          question: "重庆洪崖洞值得去吗？",
+          answer: "值得，冲着夜景去。天黑后，十一层吊脚楼在嘉陵江边一层层亮起金光，这就是重庆最有名的那幅画面。傍晚来，留一两个小时就够；想看老房子就别来了，它是 2006 年才建的。",
+        },
+        {
+          question: "什么时候去洪崖洞最好？",
+          answer: "傍晚，亮灯前到，一直待到天全黑。灯每天按固定的时间开，夏天比冬天晚，出发前查一下当天的时间。能避开国庆和春节就尽量避开，那几天光排队进去就可能要一个小时。",
+        },
+        {
+          question: "洪崖洞夜景在哪里看最好？",
+          answer: "就在旁边的千厮门大桥上，走到桥中间一带回头，亮灯的整栋洪崖洞就在眼前。楼下江边的马路，是大家说像《千与千寻》的那个角度；过桥约 800 米到对岸江北嘴的江边，能把洪崖洞、大桥和天际线收进同一个画面。",
+        },
+        {
+          question: "去洪崖洞要门票吗？",
+          answer: "不要，洪崖洞不收门票。进去可能要先在网上免费预约；节假日会限流，那几天晚上去最好提前约好。只在桥上或对岸看夜景，不用预约；我们可以按你的日期帮你核实最新规定。",
+        },
+        {
+          question: "洪崖洞是《千与千寻》的原型吗？",
+          answer: "不是。宫崎骏的《千与千寻》2001 年就在日本上映了，比洪崖洞 2006 年建成还早五年；洪崖洞是照着当年沿两江随处可见的老吊脚楼新建的。说它像电影里的汤屋，是 2016 年前后在网上短视频里传开的说法；晚上站在江边马路上抬头看，你就明白为什么。",
+        },
+      ],
     },
     ko: {
       description: "충칭 홍야동: 해가 지면 11층 조각루가 자링강 절벽을 따라 금빛으로 빛나, 애니메이션 속 마을 같습니다. 가장 잘 보이는 자리와 꼭대기 층에서 강변까지 걷는 길.",
@@ -1101,11 +1490,45 @@ export const sightStories: Stories = {
       when: "조명이 켜지기 전에 도착해 완전히 어두워질 때까지 머무르세요. 점등 시각은 일몰이 아니라 정해진 시간표를 따르며, 여름이 겨울보다 늦습니다. 당일 시간을 확인하세요. 평일 저녁에도 사람이 많고, 국경절이나 춘절 같은 긴 연휴에는 들어가는 데만 한 시간이 걸릴 수 있습니다.",
       pair: "해방비 보행거리는 언덕길로 15분쯤 걸어 올라가면 나옵니다. 반대쪽으로는 강을 따라 20분 남짓 걸으면 조천문입니다. 두 강이 만나는 곳으로, 보통은 자링강이 더 맑고 장강이 더 누렇습니다. 양강 야경 유람선도 여기서 출발합니다.",
       skip: "옛 충칭을 보러 왔다면 이곳은 아닙니다. 2006년에 지은 건물입니다. 사람 많은 곳이 싫다면 안에 들어가지 말고 강 건너편에서 바라보세요. 놓치는 건 꼭대기 층에서 강변까지 걸어 내려가는 경험 하나뿐입니다.",
+      faq: [
+        {
+          question: "충칭 홍야동은 가 볼 만한가요?",
+          answer: "네, 야경을 보러 갈 만합니다. 해가 지면 11층 조각루 양식 건물이 자링강 절벽을 따라 금빛으로 빛나는데, 이것이 바로 충칭을 대표하는 풍경입니다. 저녁에 1~2시간을 잡으세요. 다만 옛 건물을 보고 싶다면 맞지 않습니다. 2006년에 지은 건물입니다.",
+        },
+        {
+          question: "홍야동은 언제 가는 게 가장 좋나요?",
+          answer: "저녁입니다. 조명이 켜지기 전에 도착해 완전히 어두워질 때까지 머무르세요. 조명은 매일 정해진 시각에 켜지고 여름이 겨울보다 늦으니, 당일 시간을 확인하세요. 국경절과 춘절 연휴는 가능하면 피하세요. 들어가는 데만 한 시간이 걸릴 수 있습니다.",
+        },
+        {
+          question: "홍야동 야경은 어디서 봐야 가장 멋진가요?",
+          answer: "바로 옆 천사문대교 위입니다. 다리 중간쯤에서 뒤돌아보면 불 켜진 건물 전체가 눈앞에 펼쳐집니다. 아래 강변 도로에서 올려다보면 ‘센과 치히로의 행방불명’ 속 온천장과 비교되는 바로 그 모습이고, 다리를 약 800m 건너 맞은편 강변으로 내려가면 홍야동, 다리, 스카이라인이 한 프레임에 담깁니다.",
+        },
+        {
+          question: "홍야동은 입장료가 있나요?",
+          answer: "아니요, 입장료는 없습니다. 다만 입장할 때 무료 온라인 예약이 필요할 수 있고, 연휴에는 인원을 제한하니 연휴 저녁이라면 미리 예약하세요. 다리 위나 강 건너편에서 바라보는 데는 예약이 필요 없고, 저희가 날짜에 맞춰 최신 규정을 확인해 드릴 수 있습니다.",
+        },
+        {
+          question: "홍야동이 ‘센과 치히로의 행방불명’의 배경인가요?",
+          answer: "아닙니다. 미야자키 하야오의 ‘센과 치히로의 행방불명’은 2001년 일본에서 개봉해, 홍야동이 문을 연 2006년보다 5년 앞섭니다. 홍야동은 예전에 충칭의 두 강을 따라 늘어서 있던 조각루를 본떠 새로 지은 건물입니다. 영화 속 온천장과 닮았다는 이야기는 2016년 무렵부터 짧은 동영상을 타고 널리 퍼졌고, 밤에 강변 도로에서 올려다보면 그 이유를 알 수 있습니다.",
+        },
+      ],
     },
   },
 };
 
 export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
+  "forbidden-city": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Imperial Palaces of the Ming and Qing Dynasties in Beijing and Shenyang", url: "https://whc.unesco.org/en/list/439/" },
+      { title: "The Palace Museum: Visit", url: "https://intl.dpm.org.cn/visit.html" },
+      { title: "The Palace Museum: 储秀宫 (Palace of Gathered Elegance)", url: "https://www.dpm.org.cn/explore/building/236486.html" },
+      { title: "The Palace Museum: 钟表馆 (Clock Gallery)", url: "https://www.dpm.org.cn/pavilion/225322.html" },
+      { title: "Beijing government: Palace Museum", url: "https://english.beijing.gov.cn/travellinginbeijing/mustvisitsites/202306/t20230608_3127526.html" },
+    ],
+    alternateName: ["Forbidden City", "Palace Museum", "故宫", "故宫博物院", "紫禁城", "北京故宫", "자금성", "고궁박물원", "Gugong", "Zijincheng"],
+    sameAs: ["https://en.wikipedia.org/wiki/Forbidden_City", "https://www.wikidata.org/wiki/Q80290", "https://whc.unesco.org/en/list/439/"],
+  },
   "great-wall": {
     reviewedAt: "2026-10-04",
     sources: [
@@ -1117,6 +1540,42 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Great Wall of China", "长城", "万里长城", "만리장성", "Badaling Great Wall", "八达岭长城", "Mutianyu Great Wall", "慕田峪长城"],
     sameAs: ["https://en.wikipedia.org/wiki/Great_Wall_of_China", "https://www.wikidata.org/wiki/Q12501", "https://whc.unesco.org/en/list/438/"],
+  },
+  "temple-of-heaven": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Temple of Heaven, an Imperial Sacrificial Altar in Beijing", url: "https://whc.unesco.org/en/list/881/" },
+      { title: "Temple of Heaven official site", url: "https://www.tiantanpark.cn/en/index.html" },
+      { title: "Beijing government: Temple of Heaven", url: "https://english.beijing.gov.cn/travellinginbeijing/parks/202603/t20260320_4562532.html" },
+      { title: "Beijing Park Management Centre: 祈年殿 (Hall of Prayer for Good Harvests)", url: "https://gygl.beijing.gov.cn/mlgy/mlgy_gyjg01/201912/t20191211_1048233.html" },
+      { title: "Beijing Park Management Centre: 丹陛桥 (Danbi Bridge)", url: "https://gygl.beijing.gov.cn/whgy/whgy_wsgc/201912/t20191206_885539.html" },
+    ],
+    alternateName: ["Temple of Heaven", "天坛", "天坛公园", "北京天坛", "천단", "천단공원", "Tiantan", "Tiantan Park"],
+    sameAs: ["https://en.wikipedia.org/wiki/Temple_of_Heaven", "https://www.wikidata.org/wiki/Q125445", "https://whc.unesco.org/en/list/881/"],
+  },
+  "summer-palace": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Summer Palace, an Imperial Garden in Beijing", url: "https://whc.unesco.org/en/list/880/" },
+      { title: "Summer Palace official site", url: "https://summerpalace.net.cn/en/index.html" },
+      { title: "Beijing government: Summer Palace", url: "https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532659.html" },
+      { title: "Visit Beijing: 颐和园长廊 (the Long Corridor)", url: "https://www.visitbeijing.com.cn/article/47Qs87fyYVC" },
+      { title: "Beijing Municipal Forestry and Parks Bureau: 宜芸馆 and the Hall of Jade Ripples", url: "https://yllhj.beijing.gov.cn/ztxx/lhysh/sh/202104/t20210423_2366890.shtml" },
+    ],
+    alternateName: ["Summer Palace", "Beijing Summer Palace", "颐和园", "北京颐和园", "이화원", "Yiheyuan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Summer_Palace", "https://www.wikidata.org/wiki/Q4132", "https://whc.unesco.org/en/list/880/"],
+  },
+  "national-museum": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "National Museum of China: Visit", url: "https://en.chnmuseum.cn/visit_692/" },
+      { title: "National Museum of China: 国博简介 (about the museum)", url: "https://www.chnmuseum.cn/gbgk/gbjj/" },
+      { title: "National Museum of China: Ancient China, Shang and Zhou", url: "https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/detail2.html" },
+      { title: "National Museum of China: Houmuwu Ding", url: "https://en.chnmuseum.cn/collections_577/collection_highlights_608/archaeological_discoveries_609/202109/t20210902_251133.html" },
+      { title: "National Museum of China: Pottery Storyteller Beating a Drum", url: "https://en.chnmuseum.cn/collections_577/collection_highlights_608/archaeological_discoveries_609/202008/t20200831_247541.html" },
+    ],
+    alternateName: ["National Museum of China", "中国国家博物馆", "国家博物馆", "国博", "중국 국가박물관", "중국국가박물관", "Zhongguo Guojia Bowuguan"],
+    sameAs: ["https://en.wikipedia.org/wiki/National_Museum_of_China", "https://www.wikidata.org/wiki/Q1074318"],
   },
   "terracotta-warriors": {
     reviewedAt: "2026-10-04",
@@ -1152,6 +1611,28 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Shaanxi History Museum", "陕西历史博物馆", "陕历博", "산시역사박물관", "섬서역사박물관", "Shaanxi Lishi Bowuguan"],
     sameAs: ["https://en.wikipedia.org/wiki/Shaanxi_History_Museum", "https://www.wikidata.org/wiki/Q1151210"],
+  },
+  "west-lake": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: West Lake Cultural Landscape of Hangzhou", url: "https://whc.unesco.org/en/list/1334/" },
+      { title: "UNESCO / ICOMOS evaluation: West Lake Cultural Landscape of Hangzhou", url: "https://whc.unesco.org/document/152404" },
+      { title: "West Lake Scenic Area Administration: 苏轼筑堤 (the Su Causeway)", url: "https://westlake.hangzhou.gov.cn/art/2022/7/8/art_1639430_59037825.html" },
+      { title: "Hangzhou government: West Lake (2025)", url: "https://www.hangzhou.gov.cn/art/2025/6/24/art_812270_59114316.html" },
+    ],
+    alternateName: ["West Lake", "Hangzhou West Lake", "西湖", "杭州西湖", "서호", "항저우 서호", "Xihu"],
+    sameAs: ["https://en.wikipedia.org/wiki/West_Lake", "https://www.wikidata.org/wiki/Q502371", "https://whc.unesco.org/en/list/1334/"],
+  },
+  hongyadong: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Yuzhong District government: 洪崖洞 (Hongyadong)", url: "https://www.cqyz.gov.cn/zjyz/lyyz/rmdkd/202305/t20230530_12012596.html" },
+      { title: "Chongqing Housing and Urban-Rural Development Commission: Hongyadong (2025)", url: "https://zfcxjw.cq.gov.cn/cqcjdag/csjy/202504/t20250416_14526589.html" },
+      { title: "Chongqing Civil Affairs Bureau: the Hongya cave and its name (2024)", url: "https://mzj.cq.gov.cn/sy_218/bmdt/mzyw/202401/t20240119_12841031.html" },
+      { title: "Chongqing government: the riverside path to Chaotianmen (2025)", url: "https://www.cq.gov.cn/zt/yyztls/lsjcx/202512/t20251205_15213290.html" },
+    ],
+    alternateName: ["Hongyadong", "Hongya Cave", "Hongya Dong", "洪崖洞", "洪崖洞民俗风貌区", "重庆洪崖洞", "홍야동", "훙야둥", "홍애동"],
+    sameAs: ["https://en.wikipedia.org/wiki/Hongya_Cave", "https://www.wikidata.org/wiki/Q32171478"],
   },
 };
 
