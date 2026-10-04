@@ -51,6 +51,19 @@ missing U+D1A1 glyph was added, converted to TrueType quadratics from NAVER's
 MaruBuri Regular OTF (v2.000, as redistributed in `@kfonts/maruburi-otf`). The
 next full regeneration from `maruburi.zip` supersedes this one-glyph patch.
 
+2026-10-04 (sight stories added 厮, 紫, 琉, 溥, 禹 and others): all three
+subsets were regenerated with `tools/rebuild-locale-fonts.mjs` from freshly
+downloaded upstream artifacts:
+- `NotoSerifSC[wght].ttf` from the Google Fonts `main` branch, Version 2.003;
+- `PretendardVariable.woff2` from the Pretendard `v1.3.9` tag (Version 1.309);
+- `MaruBuri-Regular.ttf` from NAVER's `maruburi.zip` (Version 1.000).
+
+This supersedes the 2026-09-29 one-glyph MaruBuri patch. The rebuild now also
+reads the production export (`out/`) when it exists. A few Japanese strings
+written without kana, such as 利用規約 and 事業者情報, sit in shared chunks
+and pages, and the export gate requires them in the Chinese font. Build once,
+rebuild the fonts, then build again.
+
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
 `pyftsubset --flavor=woff2` for all three outputs (`tools/rebuild-locale-fonts.mjs`
 does both). The required Han and Hangul

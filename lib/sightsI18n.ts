@@ -13,6 +13,8 @@ export interface SightsCopy {
   };
   page: {
     bookingTitle: string;
+    /** The sight's own writing (lib/sightStories.ts). */
+    story: { whyTitle: string; highlightsTitle: string; fitTitle: string; time: string; when: string; pair: string; skip: string; faqTitle: string; sourcesTitle: string };
     bookingNote: string;
     guideLink: string;
     reserve: string;
@@ -74,6 +76,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "Booking at a glance",
+      story: { whyTitle: "Why it's worth the trip", highlightsTitle: "Don't miss", fitTitle: "Fitting it in", time: "Time to give it", when: "When to go", pair: "Pair it with", skip: "Who can skip it", faqTitle: "Questions travellers ask", sourcesTitle: "Sources" },
       bookingNote: "From our attraction-booking rules.",
       guideLink: "Full guide",
       reserve: "Book it with us",
@@ -119,8 +122,8 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       "zhangjiajie-forest-park": { name: "Zhangjiajie National Forest Park", line: "Sandstone pillars at Yuanjiajie and Tianzi Mountain" },
       "the-bund": { name: "The Bund", line: "A riverfront of early-20th-century banks and hotels, facing the Pudong skyline" },
       "shanghai-tower": { name: "Shanghai Tower", line: "China's tallest building, with a 118th-floor deck over Lujiazui" },
-      "west-lake": { name: "West Lake", line: "Causeways, pagodas and lotus ponds, best seen from a boat" },
-      "lingyin": { name: "Lingyin Temple and Feilai Peak", line: "A temple founded in 328, beside cliffs carved with Buddhas" },
+      "west-lake": { name: "West Lake", line: "Causeways, pagodas and lotus ponds, on foot at dawn or from a boat" },
+      "lingyin": { name: "Lingyin Temple and Feilai Peak", line: "A temple nearly 1,700 years old, beside cliffs carved with Buddhas" },
       "leshan-giant-buddha": { name: "Leshan Giant Buddha", line: "A 71-metre Buddha cut into a river cliff, a day out from Chengdu" },
       "hongyadong": { name: "Hongyadong", line: "Stilt-house-style buildings stacked up a Jialing River cliff, lit after dark" },
       "wulong": { name: "Wulong Karst", line: "Three natural bridges in a deep gorge, a long day or a night from Chongqing" },
@@ -145,6 +148,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "预约要点",
+      story: { whyTitle: "为什么值得去", highlightsTitle: "别错过", fitTitle: "怎么排进行程", time: "要留多久", when: "什么时候去", pair: "顺路去哪", skip: "谁可以不去", faqTitle: "常见问题", sourcesTitle: "资料来源" },
       bookingNote: "以下来自我们的景点代预约规则。",
       guideLink: "完整攻略",
       reserve: "我们帮你约",
@@ -190,7 +194,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       "zhangjiajie-forest-park": { name: "张家界国家森林公园", line: "砂岩峰林，袁家界和天子山" },
       "the-bund": { name: "外滩", line: "黄浦江边的万国建筑，对岸就是陆家嘴" },
       "shanghai-tower": { name: "上海中心", line: "中国第一高楼，118 层观景台俯瞰陆家嘴" },
-      "west-lake": { name: "西湖", line: "苏堤、雷峰塔和荷塘，坐船看最好" },
+      "west-lake": { name: "西湖", line: "苏堤、雷峰塔和荷塘，清晨步行或坐船看" },
       "lingyin": { name: "灵隐寺与飞来峰", line: "千年古刹，旁边的石壁上刻满佛像" },
       "leshan-giant-buddha": { name: "乐山大佛", line: "江边崖壁上凿出的 71 米大佛，从成都出发玩一天" },
       "hongyadong": { name: "洪崖洞", line: "嘉陵江崖壁上的吊脚楼式建筑群，入夜亮灯" },
@@ -216,6 +220,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
     },
     page: {
       bookingTitle: "예약 안내",
+      story: { whyTitle: "가볼 만한 이유", highlightsTitle: "놓치지 마세요", fitTitle: "일정 짜기", time: "소요 시간", when: "가기 좋은 때", pair: "함께 가기 좋은 곳", skip: "건너뛰어도 되는 경우", faqTitle: "자주 묻는 질문", sourcesTitle: "참고 자료" },
       bookingNote: "관광지 예약 대행 기준입니다.",
       guideLink: "실용 가이드 보기",
       reserve: "예약 대행 문의",
@@ -261,7 +266,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       "zhangjiajie-forest-park": { name: "장가계 국가삼림공원", line: "원가계·천자산의 기암 봉우리" },
       "the-bund": { name: "와이탄", line: "황푸강변의 근대 건축 거리, 맞은편이 루자쭈이" },
       "shanghai-tower": { name: "상하이 타워", line: "중국에서 가장 높은 빌딩, 118층에서 루자쭈이를 내려다보는 곳" },
-      "west-lake": { name: "서호", line: "제방과 탑, 연꽃 연못을 배를 타고 둘러보는 호수" },
+      "west-lake": { name: "서호", line: "둑길과 탑, 연꽃밭을 이른 아침에 걷거나 배로 둘러보는 호수" },
       "lingyin": { name: "영은사와 비래봉", line: "불상이 새겨진 절벽 옆의 천년 사찰" },
       "leshan-giant-buddha": { name: "낙산대불", line: "강가 절벽에 새긴 71m 대불, 청두에서 당일치기" },
       "hongyadong": { name: "홍야동", line: "자링강 절벽을 따라 층층이 지은 조각루 양식 건물, 밤에 불이 켜지는 곳" },

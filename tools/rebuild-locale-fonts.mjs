@@ -1,9 +1,11 @@
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   collectLocaleFontSourceFiles,
+  collectProductionExportFontFiles,
   readChineseFontCorpus,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
@@ -33,7 +35,17 @@ for (const name of requiredArguments) {
 
 const sourceFiles = collectLocaleFontSourceFiles(projectRoot);
 const sourceText = readCollectedFiles(sourceFiles);
-const chineseSourceText = readChineseFontCorpus(sourceFiles);
+// The export gate (check:font-coverage:export) also reads the built HTML and
+// client JavaScript, where a few Japanese strings written without kana (利用規約,
+// 事業者情報, the 一覧 of ツアー一覧) sit in shared chunks and pages. When an
+// export exists, its characters are included too, so a rebuild never leaves the
+// export gate short: build once, rebuild the fonts, then build again.
+const exportDirectory = resolve(projectRoot, "out");
+const chineseSourceText = readChineseFontCorpus(
+  existsSync(exportDirectory)
+    ? [...sourceFiles, ...collectProductionExportFontFiles(projectRoot)]
+    : sourceFiles,
+);
 
 const commonCharacters = Array.from(
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 " +

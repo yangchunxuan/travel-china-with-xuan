@@ -29,7 +29,10 @@ import {
   type SightCityId,
   type SightId,
 } from "../lib/sights";
+import { sightCityName } from "../lib/sightCityName";
 import { fillSightsCopy, getSightsCopy, sightsKeepWords } from "../lib/sightsI18n";
+import { editorialPersonSchema, EDITORIAL_PERSON_ID } from "../lib/editorialIdentity";
+import { getSightStory, getSightStoryMeta, type SightStory, type SightStoryMeta } from "../lib/sightStories";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -46,16 +49,13 @@ import { HomegroundFooter } from "./HomegroundFooter";
 import { PhotoCreditLine, PhotoCredits, TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
+import { EditorialByline } from "./EditorialByline";
 import { RevealOnce } from "./motion/RevealOnce";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./TravelInspiration.module.css";
 import sightStyles from "./SightsPages.module.css";
 
-function cityName(city: SightCityId, locale: HomegroundLocale) {
-  // The booking service names its cities; Zhangjiajie, Chongqing and Guangzhou are named by their city pages.
-  const bookingCities: Partial<Record<SightCityId, string>> = getAttractionReservationCopy(locale).cities;
-  return bookingCities[city] ?? getDestinationHubEntry(city as DestinationHubId, locale).navTitle;
-}
+const cityName = sightCityName;
 
 function cityHubPath(city: SightCityId, locale: HomegroundLocale) {
   return isDestinationHubId(city) ? getDestinationHubEntry(city, locale).path : null;
@@ -99,6 +99,96 @@ function SightText({ text, locale }: { text: string; locale: HomegroundLocale })
 
 const bookingAnchor = "booking";
 const toursAnchor = "tours";
+
+/**
+ * Running text in the sight's own writing. Chinese paragraphs break between
+ * any two characters under the page's strict line-breaking rules (as books
+ * and the guides do); KeepWords' word-by-word breaking is for headings and
+ * short lines. Korean keeps a quoted word and its particle together (‘1층’이),
+ * which keep-all alone does not.
+ */
+function StoryText({ text, locale }: { text: string; locale: HomegroundLocale }) {
+  if (locale !== "ko") return <>{text}</>;
+  return (
+    <>
+      {text.split(/(‘[^’]+’[가-힣]*)/u).map((part, index) =>
+        index % 2 ? <span className={sightStyles.together} key={index}>{part}</span> : part,
+      )}
+    </>
+  );
+}
+
+/**
+ * The sight's own writing, between the hero and the booking facts: why it is
+ * worth the trip and three things not to miss, then how it fits a day.
+ */
+function SightStorySections({ story, meta, locale }: { story: SightStory; meta: SightStoryMeta | null; locale: HomegroundLocale }) {
+  const labels = getSightsCopy(locale).page.story;
+  const facts = [
+    { label: labels.time, text: story.time },
+    { label: labels.when, text: story.when },
+    { label: labels.pair, text: story.pair },
+    { label: labels.skip, text: story.skip },
+  ];
+  return (
+    <>
+      <section aria-labelledby="sight-why-title" className={styles.section} data-reveal="">
+        <div className={sightStyles.why}>
+          <h2 id="sight-why-title">{labels.whyTitle}</h2>
+          <div className={sightStyles.whyBody}>
+            {story.why.map((paragraph) => <p key={paragraph}><StoryText locale={locale} text={paragraph} /></p>)}
+          </div>
+        </div>
+        <h3 className={sightStyles.highlightsTitle}>{labels.highlightsTitle}</h3>
+        <ul className={sightStyles.highlights}>
+          {story.highlights.map((item) => (
+            <li key={item.name}>
+              <h4>{item.name}</h4>
+              <p><StoryText locale={locale} text={item.body} /></p>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section aria-labelledby="sight-fit-title" className={styles.section} data-reveal="">
+        <h2 id="sight-fit-title">{labels.fitTitle}</h2>
+        <dl className={sightStyles.fit}>
+          {facts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd><StoryText locale={locale} text={fact.text} /></dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      {story.faq?.length ? (
+        <section aria-labelledby="sight-faq-title" className={styles.section} data-reveal="">
+          <div className={sightStyles.faq}>
+            <h2 id="sight-faq-title">{labels.faqTitle}</h2>
+            <div>
+              {story.faq.map((item) => (
+                <details key={item.question}>
+                  <summary>{item.question}<span aria-hidden="true">+</span></summary>
+                  <p><StoryText locale={locale} text={item.answer} /></p>
+                </details>
+              ))}
+            </div>
+          </div>
+          {meta?.sources.length ? (
+            <p className={sightStyles.sources}>
+              {labels.sourcesTitle}{locale === "zh" ? "：" : ": "}
+              {meta.sources.map((source, index) => (
+                <span key={source.url}>
+                  {index ? <span aria-hidden="true"> · </span> : null}
+                  <a href={source.url} rel="noreferrer">{source.title}</a>
+                </span>
+              ))}
+            </p>
+          ) : null}
+        </section>
+      ) : null}
+    </>
+  );
+}
 
 /**
  * One reservation rule as a card, with exactly the facts the rules state (the
@@ -352,6 +442,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
   const copy = getSightsCopy(locale);
   const inspiration = getTravelInspirationCopy(locale);
   const sightCopy = copy.sights[sight.id];
+  const story = getSightStory(sight.id, locale);
+  const storyMeta = getSightStoryMeta(sight.id);
   const { destinations, tours: allToursItem } = navigationFor(locale);
   const image = sightImage(sight, locale);
   // No guide of its own yet: no "Full guide" link until one is written.
@@ -417,6 +509,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
               {showCity ? <p className={styles.eyebrow}>{city}</p> : null}
               <h1>{sightCopy.name}</h1>
               <p className={styles.lede}><SightText locale={locale} text={sightCopy.line} /></p>
+              {/* Who wrote it and when it was checked, where the city pages and guides put it. */}
+              {storyMeta ? <EditorialByline locale={locale} reviewedAt={storyMeta.reviewedAt} /> : null}
               <div className={sightStyles.heroActions}>
                 {heroAction ? (
                   <a className={styles.primaryButton} href={heroAction.href}>
@@ -460,6 +554,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
             </div>
           </div>
         </header>
+
+        {story ? <SightStorySections locale={locale} meta={storyMeta} story={story} /> : null}
 
         {rules.length ? (
           <section aria-labelledby="sight-booking-title" className={styles.section} data-reveal="" id={bookingAnchor}>
@@ -512,9 +608,20 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
       <JsonLd data={{
         "@context": "https://schema.org",
         "@graph": [
-          { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: sightCopy.line,
+          { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: story?.description ?? sightCopy.line,
             inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
-            about: { "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}` } },
+            // Undefined values drop out of the JSON; reviewedBy stays on the WebPage itself (its schema.org domain).
+            dateModified: storyMeta?.reviewedAt,
+            reviewedBy: storyMeta ? { "@id": EDITORIAL_PERSON_ID } : undefined,
+            citation: storyMeta?.sources.map((source) => source.url),
+            about: {
+              "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}`,
+              ...(story ? { description: story.why[0] } : {}),
+              ...(storyMeta ? { alternateName: storyMeta.alternateName, sameAs: storyMeta.sameAs } : {}),
+              ...(sight.freeToVisit ? { isAccessibleForFree: true } : {}),
+            } },
+          ...(story?.faq?.length ? [{ "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: story.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }] : []),
+          ...(storyMeta ? [editorialPersonSchema(locale)] : []),
           breadcrumbJsonLd(url, crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path ?? paths[locale] }))),
         ],
       }} />
