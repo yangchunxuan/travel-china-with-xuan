@@ -124,7 +124,7 @@ export const sights: readonly Sight[] = [
     guideId: "forbidden-city-for-foreign-visitors",
     reservationIds: ["forbidden-city", "tiananmen-square"],
     tourSlugs: ["beijing-highlights-5-day-private-tour", "beijing-xian-shanghai-8-day-private-tour", "beijing-xian-guilin-shanghai-10-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "great-wall",
@@ -142,7 +142,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["beijing-highlights-5-day-private-tour", "beijing-xian-shanghai-8-day-private-tour", "beijing-xian-shanghai-12-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "temple-of-heaven",
@@ -156,7 +156,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven,_Beijing,_China_-_009.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "summer-palace",
@@ -170,7 +170,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Kunming_Lake_(Summer_Palace,_Beijing)_in_summer.JPG",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "national-museum",
@@ -184,7 +184,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:National_Museum_of_China_west_facade,_straight_view.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "terracotta-warriors",
@@ -198,7 +198,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "xian-city-wall",
@@ -206,7 +206,7 @@ export const sights: readonly Sight[] = [
     guideId: "xian-city-wall-tickets-gates-walk-or-bike",
     reservationIds: ["xian-city-wall"],
     tourSlugs: ["xian-terracotta-warriors-5-day-private-tour", "beijing-xian-shanghai-8-day-private-tour", "beijing-xian-shanghai-12-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "shaanxi-history-museum",
@@ -220,7 +220,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Shaanxi_History_Museum_architecture.JPG",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "the-bund",
@@ -238,7 +238,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour", "shanghai-disneyland-5-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "shanghai-tower",
@@ -256,7 +256,7 @@ export const sights: readonly Sight[] = [
       objectPosition: "15% 50%",
     },
     tourSlugs: ["shanghai-suzhou-5-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "shanghai-museum-east",
@@ -264,7 +264,7 @@ export const sights: readonly Sight[] = [
     guideId: "shanghai-museum-east-entry-reservations",
     reservationIds: ["shanghai-museum-east", "shanghai-museum-east-experience-areas"],
     tourSlugs: [],
-    ready: false,
+    ready: true,
   },
   {
     id: "humble-administrators-garden",
@@ -278,7 +278,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "west-lake",
@@ -297,7 +297,7 @@ export const sights: readonly Sight[] = [
     },
     tourSlugs: ["shanghai-suzhou-hangzhou-6-day-private-tour", "beijing-hangzhou-suzhou-shanghai-11-day-private-tour", "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour"],
     freeToVisit: true,
-    ready: false,
+    ready: true,
   },
   {
     id: "lingyin",
@@ -314,7 +314,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["shanghai-suzhou-hangzhou-6-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "liangzhu",
@@ -328,7 +328,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Courtyard_of_Liangzhu_Museum,_2016-06-18.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "chengdu-panda-base",
@@ -347,7 +347,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["chengdu-pandas-sanxingdui-5-day-private-tour", "chengdu-chongqing-8-day-private-tour", "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "sanxingdui",
@@ -361,7 +361,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "leshan-giant-buddha",
@@ -370,7 +370,7 @@ export const sights: readonly Sight[] = [
     guideId: "leshan-giant-buddha-land-or-boat-visit",
     reservationIds: [],
     tourSlugs: ["chengdu-chongqing-8-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "hongyadong",
@@ -387,7 +387,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["beijing-xian-yangtze-cruise-shanghai-12-day-private-tour", "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "wulong",
@@ -404,7 +404,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["chongqing-wulong-5-day-private-tour", "chengdu-chongqing-8-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "dazu-rock-carvings",
@@ -421,7 +421,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["chengdu-chongqing-8-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "li-river",
@@ -429,7 +429,7 @@ export const sights: readonly Sight[] = [
     guideId: "li-river-cruise-tickets-piers-booking",
     reservationIds: ["li-river-cruise"],
     tourSlugs: ["guilin-yangshuo-5-day-private-tour", "beijing-xian-guilin-shanghai-10-day-private-tour", "beijing-xian-guilin-hong-kong-10-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "jade-dragon-snow-mountain",
@@ -443,7 +443,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "zhangjiajie-forest-park",
@@ -458,7 +458,7 @@ export const sights: readonly Sight[] = [
       licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
       sourceUrl: "https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg",
     },
-    ready: false,
+    ready: true,
   },
   {
     id: "tianmen-mountain",
@@ -467,7 +467,7 @@ export const sights: readonly Sight[] = [
     guideId: "tianmen-mountain-tickets-and-routes",
     reservationIds: [],
     tourSlugs: ["zhangjiajie-4-day-private-tour", "zhangjiajie-forest-4-day-private-tour", "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "zhangjiajie-grand-canyon",
@@ -486,7 +486,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["zhangjiajie-4-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "chen-clan-hall",
@@ -509,7 +509,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: [],
-    ready: false,
+    ready: true,
   },
   {
     id: "canton-tower",
@@ -532,7 +532,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["guangzhou-shunde-foshan-5-day-private-tour"],
-    ready: false,
+    ready: true,
   },
   {
     id: "shamian",
@@ -555,7 +555,7 @@ export const sights: readonly Sight[] = [
       },
     },
     tourSlugs: ["guangzhou-shunde-foshan-5-day-private-tour"],
-    ready: false,
+    ready: true,
   },
 ];
 
