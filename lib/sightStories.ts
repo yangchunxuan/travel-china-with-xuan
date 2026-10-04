@@ -3120,6 +3120,444 @@ export const sightStories: Stories = {
       ],
     },
   },
+  "zhangjiajie-forest-park": {
+    en: {
+      description: "Stand at the rim in Zhangjiajie National Forest Park and watch cloud drift between thousands of sandstone pillars. Which areas first, in one day or two.",
+      why: [
+        "Walk out to the rim at Yuanjiajie and the ground simply stops. Below, hundreds of sandstone pillars rise sheer from the forest. Many are over 200 metres tall, higher than a 60-storey tower, and pines cling to their tops. After rain, cloud lifts out of the valleys and drifts between them, so whole pillars fade and come back while you watch. Nothing holds still for long. A gap opens on one cluster of peaks, closes, then opens somewhere else.",
+        "Every pillar was once part of one solid slab of sandstone. Rain worked down the straight cracks that split it, widened them and broke blocks away, until walls of rock became rows of columns. You can still read that story on the spot. Huangshi Village is a broad table of rock that has not yet split apart. At Yuanjiajie, a natural stone bridge hangs more than 300 metres above the valley. It was once part of a solid wall whose weaker middle wore through, leaving a span you can walk across.",
+        "The park is big, linked inside by shuttle buses, lifts and cable cars, and no one sees it all in a day. Go high first. Yuanjiajie has the stone bridge and the pillar renamed after the film Avatar; Tianzi Mountain has the widest sweep. Then come down and walk Golden Whip Stream along the valley floor, looking up. With a second day, add Yangjiajie, or Huangshi Village, the table mountain a local saying tells you not to miss.",
+      ],
+      highlights: [
+        {
+          name: "Mihun Tai and the stone bridge",
+          body: "Mihun Tai means roughly the terrace that bewitches you. Come as the sky clears after rain, find a spot on this rock platform and wait for the cloud to move. Nearby, the path crosses the stone bridge, its railings hung with red ribbons and padlocks.",
+        },
+        {
+          name: "Golden Whip Stream on foot",
+          body: "Down on the valley floor, an almost level path follows a clear stream for two to three hours. Small fish dart in the pools and the trees ring with birdsong. The pillars rise straight up on both sides; as the park puts it, you walk the gorge and the mountains pass you by. Keep food out of sight, because wild monkeys here snatch it from hands and bags.",
+        },
+        {
+          name: "The Imperial Brush Peaks at Tianzi Mountain",
+          body: "From the rim of Tianzi Mountain you look over the densest crowd of pillars in the park. Find the Imperial Brush Peaks, a few slim columns with pines on top, like giant writing brushes planted handle-down. Around early November the hillsides near them usually turn red and gold.",
+        },
+      ],
+      time: "A full day covers the high viewpoints and Golden Whip Stream. Give it two days to add Huangshi Village or Yangjiajie at an easier pace.",
+      when: "Come on a morning after rain if you can, when cloud drifts between the pillars; on clear days you see further. Spring and autumn are the most comfortable, and around early November Tianzi Mountain usually turns red and gold. Summer is hot and busy up top, though the stream walk stays cool. Avoid the May Day holiday and the first week of October, when the queues for lifts and cable cars are longest.",
+      pair: "Wulingyuan town, just outside the East Gate, is the handiest base for the park. If your legs still allow after a park day, the Charming Xiangxi show of western Hunan song and dance is in the same town. Huanglong Cave, where a boat carries you along an underground river, suits a gentler next morning. So does Baofeng Lake, a boat trip on emerald water about 1.5 kilometres from town.",
+      skip: "Hardly anyone who comes to Zhangjiajie should leave it out, because the pillars are why people come. Slower walkers should see less of it instead. Lifts and cable cars remove the biggest climbs. They do not remove every stair, queue or gap between viewpoints, so choose one high area and let the rest go. If cloud hides everything up top, walk Golden Whip Stream, which stays lovely in mist and light rain. After heavy rain, check first that the paths are open.",
+      faq: [
+        {
+          question: "Is Zhangjiajie National Forest Park worth visiting?",
+          answer: "Yes, it is what Zhangjiajie is famous for. More than 3,000 sandstone pillars, many over 200 metres tall, rise from forested valleys, and after rain cloud drifts between them. Give it at least one full day. Look down from the rim at Yuanjiajie or Tianzi Mountain, then look up from the valley floor along Golden Whip Stream.",
+        },
+        {
+          question: "How many days do you need in Zhangjiajie National Forest Park?",
+          answer: "One full day for the highlights, two to see it without rushing. One long day covers Yuanjiajie, Tianzi Mountain and Golden Whip Stream, a walk of two to three hours. A second day adds Huangshi Village or Yangjiajie. Tianmen Mountain and the glass bridge are separate places that need their own time.",
+        },
+        {
+          question: "When is the best time to visit Zhangjiajie National Forest Park?",
+          answer: "Spring and autumn, ideally on a morning after rain, when cloud fills the valleys and drifts between the pillars. Tianzi Mountain's autumn colour is usually at its best around early November. Summer is hot and busy, and winter is cold, with occasional snow. Avoid the May Day holiday and the first week of October.",
+        },
+        {
+          question: "Where is the Avatar mountain in Zhangjiajie?",
+          answer: "At Yuanjiajie, on the high ground in the north of the park. Its old name is the Southern Sky Column, a pillar about 150 metres tall with trees on its top. In 2010 it was renamed Avatar Hallelujah Mountain for its likeness to the film's floating peaks. You see it across the valley from a viewing platform. With mist curling round its sides, the pillar looks straight out of the film. Yuanjiajie is reached by the Bailong Elevator or the park shuttle.",
+        },
+        {
+          question: "Do I need to book Zhangjiajie National Forest Park tickets in advance?",
+          answer: "Yes. Book ahead with your passport for a date and an entry gate, earlier still for holidays. The entry ticket does not include the cable cars or the Bailong Elevator, which lifts you 326 metres up the cliff in under two minutes. Our park ticket guide explains the gates and these add-ons.",
+        },
+      ],
+    },
+    zh: {
+      description: "站在张家界国家森林公园的崖边，看云雾在三千多根砂岩石柱之间飘。先去哪一片，留一天还是两天。",
+      why: [
+        "走到袁家界的崖边，脚下的地面一下子断了。底下是几百根直上直下的砂岩石柱，从树林里拔地而起，不少有两百多米高，比六十层的楼还高，柱顶上长着松树。下过雨，云从山谷里升起来，在石柱之间飘来飘去，眼看着一整根柱子没了，过一会儿又冒出来。眼前的景色时时刻刻都在变。这边的云散开，露出一片山峰，转眼又合上，那边又露了出来。",
+        "这些石柱原本连成一整块砂岩。岩石里有一道道竖直的裂缝，雨水顺着裂缝往下冲，缝越冲越宽，石块一块块崩落，一堵堵石墙就变成了一排排石柱。这个过程，现在站在景区里还看得出来。黄石寨是一整块还没裂开的大石台。袁家界的天下第一桥离谷底三百多米，原本是一面完整的石墙，中间较软的部分慢慢被风雨和流水掏空，才留下这道能走人的天然石桥。",
+        "公园很大，里面靠环保车、电梯和索道连起来，一天看不完。先上高处。袁家界有天下第一桥，还有那根以电影《阿凡达》命名的石柱；天子山看得最开阔。再下到谷底，沿着金鞭溪一路抬头看。有第二天，就加上杨家界或者黄石寨，老话说“不到黄石寨，枉到张家界”。",
+      ],
+      highlights: [
+        {
+          name: "迷魂台和天下第一桥",
+          body: "“迷魂台”，就是让人看得神魂颠倒的观景台。雨后天刚放晴的时候来，在这块石台上找个位置，等云动起来。旁边的步道会从天下第一桥上走过，桥边栏杆上挂满了红丝带和同心锁。",
+        },
+        {
+          name: "走一趟金鞭溪",
+          body: "谷底有一条几乎平坦的步道，沿着清澈的溪水走两到三个小时，水里有小鱼游来游去，树上鸟叫个不停。两边的石柱直直地立着，正是“人在峡谷走，山从两边过”。食物收进包里别露出来，这里的野猴会直接从人手里、包里抢东西吃。",
+        },
+        {
+          name: "天子山的御笔峰",
+          body: "站在天子山的崖边，眼前是全公园最密的一片石柱。找找御笔峰：几根细高的石柱顶上长着松树，像几支倒插在地上的毛笔。十一月初前后，附近的山坡通常会变得红一片、黄一片。",
+        },
+      ],
+      time: "一整天能看完高处的几个观景点和金鞭溪；想加上黄石寨或杨家界、走得从容些，就留两天。",
+      when: "最好挑一个雨后的早上，云在石柱之间飘；晴天则看得更远。春秋两季最舒服，十一月初前后，天子山通常满山红黄。夏天热，山上人也多，谷底的金鞭溪倒是凉快。避开五一和国庆，那几天坐电梯、索道排队最久。",
+      pair: "住在东门外的武陵源镇上，进出公园最方便。逛完一天还有力气的话，镇上就能看《魅力湘西》，演的是湘西的歌舞。黄龙洞要坐船走一段地下河，宝峰湖坐船游碧绿的湖水，离镇上约一公里半，都适合第二天上午轻松走走。",
+      skip: "来张家界的人，几乎都不该错过这里，大家就是冲着这些石柱来的。走不快的人也别放弃，少看几处就好。电梯和索道能省掉最累的爬坡，可台阶、排队和观景点之间的路省不掉，挑一处高处看就够了。要是山上云太厚，什么都看不见，就改走金鞭溪，起雾、下小雨也照样好看；大雨过后，先确认步道有没有开放。",
+      faq: [
+        {
+          question: "张家界国家森林公园值得去吗？",
+          answer: "值得，张家界最出名的就是这里。三千多根砂岩石柱从山谷的树林里拔地而起，不少有两百多米高；下过雨，云就在石柱之间飘。至少留一整天，先在袁家界或天子山的崖边往下看，再到谷底沿着金鞭溪往上看。",
+        },
+        {
+          question: "张家界国家森林公园要玩几天？",
+          answer: "看精华一天，想不赶就两天。一天安排得紧一点，能走袁家界、天子山，再加上两到三个小时的金鞭溪；第二天可以加黄石寨或杨家界。天门山和大峡谷玻璃桥在别处，要另外留时间。",
+        },
+        {
+          question: "什么时候去张家界国家森林公园最好？",
+          answer: "春秋两季，最好是雨后的早上，云从山谷里升起来，在石柱之间飘。天子山的秋色通常在十一月初前后最好看。夏天热、人多，冬天冷，偶尔下雪。尽量避开五一和国庆。",
+        },
+        {
+          question: "张家界的“阿凡达山”在哪里？",
+          answer: "在袁家界，森林公园北部的高处。这根石柱原名“南天一柱”，高约 150 米，顶上长满了树；因为太像电影里的悬浮山，2010 年被正式改名为《阿凡达》“哈利路亚山”。从观景台上隔着山谷望过去，云雾绕着它的时候，跟电影里一模一样。上袁家界可以坐百龙天梯，也可以坐景区环保车。",
+        },
+        {
+          question: "张家界国家森林公园要提前订票吗？",
+          answer: "要，用护照提前预约，选好日期和从哪个门进园，节假日更要早订。门票不含索道和百龙天梯；百龙天梯贴着崖壁往上升 326 米，不到两分钟就到顶。各个门和这些交通怎么买，看我们的门票指南。",
+        },
+      ],
+    },
+    ko: {
+      description: "장가계 국가삼림공원의 절벽 끝에 서서 수천 개의 사암 봉우리 사이로 흐르는 구름을 보세요. 어느 구역부터 볼지, 하루로 될지 이틀이 필요할지.",
+      why: [
+        "원가계의 절벽 끝으로 걸어 나가면 발밑의 땅이 뚝 끊깁니다. 그 아래로 사방이 깎아지른 사암 봉우리 수백 개가 숲에서 솟아 있고, 상당수는 높이가 200m를 넘어 60층 빌딩보다 높습니다. 꼭대기에는 소나무가 뿌리를 내렸습니다. 비가 그치면 골짜기에서 구름이 피어올라 봉우리 사이를 흘러 다니고, 보고 있는 사이에 봉우리 하나가 통째로 사라졌다가 다시 나타납니다. 풍경은 잠시도 가만있지 않습니다. 한쪽에서 구름이 걷혀 봉우리들이 드러났다가 다시 가려지고, 이내 다른 쪽이 열립니다.",
+        "이 봉우리들은 원래 단단한 사암 한 덩어리였습니다. 바위 속에 세로로 곧게 난 틈을 따라 빗물이 파고들어 틈을 넓혔고, 덩어리가 떨어져 나가면서 바위벽은 줄지어 선 기둥이 되었습니다. 그 흔적은 지금도 현장에서 볼 수 있습니다. 황석채는 아직 갈라지지 않은 넓은 바위 탁자입니다. 원가계의 천연 돌다리 천하제일교는 골짜기에서 300m 넘게 높이 걸려 있는데, 원래는 하나의 바위벽이었는데, 약한 가운데 부분이 깎여 나가면서 지금처럼 걸어서 건널 수 있는 다리가 되었습니다.",
+        "공원은 아주 넓어서 안에서도 셔틀버스와 엘리베이터, 케이블카로 이동하며, 하루에 다 볼 수는 없습니다. 먼저 높은 곳으로 가세요. 원가계에는 천하제일교와 영화 ‘아바타’의 이름을 딴 봉우리가 있고, 천자산에서는 가장 넓은 풍경이 펼쳐집니다. 그다음 골짜기로 내려와 금편계를 따라 걸으며 위를 올려다보세요. 하루가 더 있다면 양가계나, 현지 속담이 꼭 가 보라고 하는 평평한 바위산 황석채를 더하세요.",
+      ],
+      highlights: [
+        {
+          name: "미혼대와 천하제일교",
+          body: "미혼대는 넋을 잃게 한다는 뜻의 이름입니다. 비가 그치고 하늘이 개기 시작할 때 이 바위 전망대에 자리를 잡고, 구름이 움직이기를 기다려 보세요. 근처 산책로는 천하제일교 위를 지나가며, 다리 난간에는 빨간 리본과 자물쇠가 가득 걸려 있습니다.",
+        },
+        {
+          name: "금편계 걷기",
+          body: "골짜기 바닥에서는 거의 평탄한 길이 맑은 계곡물을 따라 2~3시간 이어집니다. 물웅덩이에는 작은 물고기가 오가고, 숲에는 새소리가 가득합니다. 양옆으로 봉우리가 곧게 솟아, ‘사람은 협곡을 걷고 산은 양옆으로 지나간다’는 말 그대로입니다. 이곳 야생 원숭이는 사람 손이나 가방 속 먹을 것을 낚아채니, 음식은 보이지 않게 넣어 두세요.",
+        },
+        {
+          name: "천자산의 어필봉",
+          body: "천자산 절벽 끝에 서면 공원에서 봉우리가 가장 빽빽한 풍경이 눈앞에 펼쳐집니다. 꼭대기에 소나무가 자란 가느다란 봉우리 몇 개, 어필봉을 찾아보세요. 커다란 붓을 거꾸로 꽂아 놓은 모양입니다. 보통 11월 초 무렵이면 주변 산비탈이 붉고 노랗게 물듭니다.",
+        },
+      ],
+      time: "하루면 높은 전망대들과 금편계를 볼 수 있습니다. 황석채나 양가계까지 여유 있게 보려면 이틀을 잡으세요.",
+      when: "가능하면 비 온 뒤의 아침을 고르세요. 구름이 봉우리 사이를 흘러 다닙니다. 맑은 날에는 더 멀리까지 보입니다. 봄과 가을이 가장 쾌적하고, 보통 11월 초 무렵에는 천자산이 붉고 노랗게 물듭니다. 여름에는 덥고 산 위가 붐비지만 금편계는 시원합니다. 노동절과 국경절 연휴는 엘리베이터와 케이블카 줄이 가장 길 때이니 피하세요.",
+      pair: "동문 밖 무릉원 시내에 묵으면 공원을 오가기가 가장 편합니다. 하루 종일 걷고도 힘이 남았다면 같은 동네에서 상서 지방의 노래와 춤을 보여 주는 ‘매력상서’ 공연을 볼 수 있습니다. 배를 타고 지하 강을 따라가는 황룡동, 시내에서 1.5km쯤 떨어져 에메랄드빛 호수를 배로 도는 보봉호는 다음 날 오전에 가볍게 다녀오기 좋습니다.",
+      skip: "장가계에 왔다면 이곳은 빼지 않는 것이 좋습니다. 사람들이 장가계를 찾는 이유가 바로 이 봉우리들입니다. 걸음이 느린 분도 포기하지 말고 볼 곳을 줄이세요. 엘리베이터와 케이블카가 큰 오르막은 덜어 주지만 계단, 대기 줄, 전망대 사이의 길까지 없애 주지는 않으니, 높은 곳은 한 군데만 골라도 충분합니다. 산 위가 구름에 가려 아무것도 보이지 않는 날에는 금편계를 걸으세요. 안개나 가랑비 속에서도 아름답습니다. 큰비 뒤에는 길이 열려 있는지 먼저 확인하세요.",
+      faq: [
+        {
+          question: "장가계 국가삼림공원은 가 볼 만한가요?",
+          answer: "네, 장가계가 유명한 이유가 바로 이곳입니다. 숲이 우거진 골짜기에서 3,000개가 넘는 사암 봉우리가 솟아 있고 상당수는 200m가 넘으며, 비가 그치면 그 사이로 구름이 흐릅니다. 한국에서 ‘사람이 태어나 장가계에 가 보지 않았다면 백 살이 되어도 어찌 늙었다고 하겠는가’라는 말이 돌 정도입니다. 최소 하루를 잡고, 원가계나 천자산 절벽 위에서 내려다본 뒤 금편계 골짜기에서 올려다보세요.",
+        },
+        {
+          question: "장가계 국가삼림공원은 며칠이 필요한가요?",
+          answer: "핵심만 보려면 하루, 여유 있게 보려면 이틀입니다. 하루를 빠듯하게 쓰면 원가계, 천자산, 그리고 2~3시간 걸리는 금편계를 볼 수 있고, 이틀째에는 황석채나 양가계를 더할 수 있습니다. 천문산과 대협곡 유리다리는 다른 곳이라 따로 시간을 잡아야 합니다.",
+        },
+        {
+          question: "장가계 국가삼림공원은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을, 그중에서도 비 온 뒤의 아침이 가장 좋습니다. 골짜기에 구름이 차올라 봉우리 사이를 흘러 다닙니다. 천자산 단풍은 보통 11월 초 무렵에 가장 아름답습니다. 여름은 덥고 붐비며 겨울은 춥고 가끔 눈이 옵니다. 노동절과 국경절 연휴는 되도록 피하세요.",
+        },
+        {
+          question: "장가계의 ‘아바타 산’은 어디에 있나요?",
+          answer: "공원 북쪽의 높은 지대인 원가계에 있습니다. 원래 이름이 ‘남천일주’인 높이 약 150m의 봉우리로, 꼭대기가 나무로 덮여 있습니다. 영화 속 떠다니는 산과 꼭 닮아 2010년 ‘아바타 할렐루야산’으로 공식 개명되었습니다. 전망대에서 건너다보게 되는데, 안개가 휘감을 때면 영화 속 장면 그대로입니다. 원가계에는 백룡엘리베이터나 공원 셔틀버스로 올라갑니다.",
+        },
+        {
+          question: "장가계 국가삼림공원 입장권은 미리 예약해야 하나요?",
+          answer: "네, 여권으로 날짜와 입장할 문을 정해 미리 예약하세요. 연휴라면 더 서둘러야 합니다. 입장권에는 케이블카와 백룡엘리베이터가 포함되지 않습니다. 백룡엘리베이터는 절벽을 따라 326m를 2분이 채 안 되어 올라갑니다. 문별 차이와 추가 교통편은 저희 입장권 가이드에 정리해 두었습니다.",
+        },
+      ],
+    },
+  },
+  "tianmen-mountain": {
+    en: {
+      description: "Climb 999 steps into a hole right through Tianmen Mountain, high above Zhangjiajie city, then walk paths pinned to its cliffs. Plan a full day for it.",
+      why: [
+        "Stand at the foot of the long stairway and look up. It climbs straight at a hole in the mountain, with sky showing through. Tianmen Cave is a natural arch 131.5 metres high, open right through the cliff far above the city. On damp days cloud can drift into the arch and pour out of the far side. Locals call this the gate breathing mist. Climb to the top of the steps, stand inside the arch and look back. The stairs fall away beneath your feet.",
+        "The hole opened more than 1,700 years ago, when part of the cliff fell away. The ruler of the day took it as a good omen and named the mountain Tianmen, Heaven's Gate. It rises more than 1,300 metres above Zhangjiajie city, only 8 kilometres away, so close that its cable car sets off from the city streets. The top comes as a surprise, flat and wooded, with old trees, hanging vines and moss. On summer days it stays around 26°C while the city sweats above 30°C.",
+        "Tianmen is one mountain seen up close, where the Forest Park is a whole crowd of pillars seen from the rim. Almost everything worth seeing here sits at a cliff edge: the arch, a path pinned along a sheer rock face, and walkways with glass floors. Cable cars, buses and escalators do most of the climbing for you. What they cannot take away is the drop beneath your feet, and that drop is the reason to come. Give the mountain a day of its own.",
+      ],
+      highlights: [
+        {
+          name: "The 999 steps to Heaven's Gate",
+          body: "The climb is steep, slow work. Stop now and then to catch your breath, and watch the arch grow larger overhead. Escalators beside the stairs carry anyone who would rather ride, though the ride up costs extra.",
+        },
+        {
+          name: "The Ghost Valley cliff path",
+          body: "This path runs about 1.6 kilometres along the middle of a sheer cliff, roughly 1,400 metres up. Rock rises above you, and below there is only air.",
+        },
+        {
+          name: "The glass walkway on Coiling Dragon Cliff",
+          body: "Step onto this 100-metre glass walkway and look straight down. Far below, the mountain road coils back and forth through its 99 bends. Glass sections close for repairs from time to time, so check before you go.",
+        },
+      ],
+      time: "Give it a full day from Zhangjiajie city, with time for queues at each stage of the way up and down. The routes up change with cable-car works and the weather, so read our route guide before you book. Keep a train or flight off the same day if you can.",
+      when: "Go on the clearest day you have, because in thick fog you may see little beyond the railings. After rain, watch the arch for drifting cloud. In summer the top is cool. From late December to early February thick white frost coats the summit trees, though ice and fog can change the route up. Avoid Chinese national holidays, when the queues are longest.",
+      pair: "Back in the city after dark, 72 Qilou lights up. The 110-metre tower is built to look like the wooden stilt houses of the local Tujia people. A great square hole runs through its middle, a nod to Tianmen Cave, and there is a food market in its grounds. In season, Tianmen Fox Fairy, an outdoor musical staged in a canyon of the mountain, is the other evening choice. Pick one only if your legs allow. Leave the Forest Park and the glass bridge for other days.",
+      skip: "With only one day in Zhangjiajie, spend it in the Forest Park, whose pillars make Zhangjiajie unlike anywhere else, and save Tianmen for a second day. People uneasy with heights may find much of it hard going, since the best parts are cliff-edge paths, glass floors and steep stairs. If fog closes in on your day, swap it for a boat on Baofeng Lake near Wulingyuan.",
+      faq: [
+        {
+          question: "Is Tianmen Mountain worth visiting?",
+          answer: "Yes, for the arch and the cliff walks. Tianmen Cave is a natural hole 131.5 metres high right through the mountain, reached by 999 steps or by escalator. The cliff paths run along sheer rock about 1,400 metres up. Give it a full day and pick a clear one, because in thick fog you will see little.",
+        },
+        {
+          question: "Tianmen Mountain or Zhangjiajie National Forest Park: which should I choose?",
+          answer: "Choose the Forest Park if you have only one day: its sandstone pillars are what make Zhangjiajie unlike anywhere else. Tianmen, 8 kilometres from the city, is one mountain seen up close, with a giant arch, cliff walkways and a forest on top. With two days, do both, on separate days.",
+        },
+        {
+          question: "How long do you need at Tianmen Mountain?",
+          answer: "Plan on a full day from Zhangjiajie city. The way up and down comes in stages, with a queue at each. The arch, a cliff walk and the summit forest then take a few hours more. Keep a train or flight off the same day, or leave a generous margin.",
+        },
+        {
+          question: "Is the Tianmen glass skywalk the same as the Zhangjiajie glass bridge?",
+          answer: "No, they are different places. Tianmen's glass walkways are short glass-floored sections fixed to cliffs high on the mountain, such as the 100-metre one on Coiling Dragon Cliff. The glass bridge, about 430 metres long, crosses a canyon at the Zhangjiajie Grand Canyon, about an hour from the city by road. Each needs its own ticket and its own day.",
+        },
+        {
+          question: "When is the best time to visit Tianmen Mountain?",
+          answer: "On a clear day in spring or autumn. Summer is cool on top, around 26°C when the city is above 30°C, and from late December to early February frost coats the summit trees white. Fog and ice can hide the views or change the way up, so keep the day flexible and avoid national holidays.",
+        },
+      ],
+    },
+    zh: {
+      description: "爬上 999 级台阶，钻进张家界天门山那个贯穿山体的大洞，再走走挂在绝壁上的栈道。给它留一整天。",
+      why: [
+        "站到那道长长的台阶下面，抬头看。台阶笔直地冲向山腰上的一个大洞，洞里透着天光。天门洞是一座天然的石门，高 131.5 米，把城区上方高高的绝壁整个打穿。水汽重的日子，云雾会飘进洞里，再从另一头涌出去，当地人管这叫“天门吐雾”。爬到台阶顶上，站进洞里往回看，台阶就在脚下一路落下去。",
+        "这个洞是一千七百多年前一段绝壁崩塌后开出来的。当时的君主把它看作吉兆，给这座山取名“天门山”。天门山离张家界城区只有 8 公里，比城区高出一千三百多米，近到索道直接从城里出发。山顶出人意料地平坦，长满了老树，藤蔓缠绕，到处是青苔；夏天城里三十多度的时候，山顶只有 26 度上下。",
+        "森林公园是站在崖边看一大片石柱，天门山则是凑近了看一座山。值得看的地方几乎都在悬崖边：天门洞、贴着绝壁修的栈道，还有玻璃铺成的路面。上山的力气活大多交给索道、汽车和扶梯，可脚下那份悬空感，什么也替你省不掉，这也正是来这里的理由。给天门山单独留一天。",
+      ],
+      highlights: [
+        {
+          name: "999 级台阶上天门",
+          body: "这段台阶又陡又长，往上爬很费力。不妨走走停停，喘口气，看头顶的天门洞一点点变大。旁边有扶梯，不想爬可以坐，上行要另外付费。",
+        },
+        {
+          name: "鬼谷栈道",
+          body: "这条栈道长约 1.6 公里，平均海拔 1400 米左右，整条修在万丈绝壁的半腰。头顶是石壁，脚下是空的。",
+        },
+        {
+          name: "盘龙崖玻璃栈道",
+          body: "走上这段 100 米长的玻璃栈道，低头往下看，九十九道弯的盘山公路在脚下来回盘绕。玻璃栈道不时会关闭检修，出发前先问一下。",
+        },
+      ],
+      time: "从张家界城区出发，留一整天，上山下山每一段都可能要排队。上山线路会随索道施工和天气调整，订票前先看看我们的线路指南。当天尽量别再赶火车、飞机。",
+      when: "挑行程里最晴的一天，大雾天可能连栏杆外面都看不清。雨后留意看看，有没有云雾从天门洞里穿过。夏天山顶凉快；十二月底到二月初，山顶的树挂满雾凇，不过结冰和大雾都可能让上山线路临时调整。避开国庆、五一这样的长假，那几天排队最久。",
+      pair: "天黑后回到城里，七十二奇楼亮起灯来。这座约 110 米高的楼照着土家族吊脚楼的样子建成，楼中间空出一个方方正正的大“门洞”，和天门洞遥相呼应，园里还有热闹的小吃集市。演出季里，还可以去看《天门狐仙》，一台在天门山峡谷里演的露天歌舞剧。还有力气再去，两样挑一样就够。森林公园和大峡谷玻璃桥留到别的日子。",
+      skip: "在张家界只有一天的话，就去森林公园，那些石柱才是张家界跟别处最不一样的地方，天门山正好放在第二天。怕高的人在这里会比较吃力，最好看的地方都是悬崖边的栈道、玻璃地面和陡峭的台阶。赶上大雾封山的日子，可以改去武陵源附近的宝峰湖坐船。",
+      faq: [
+        {
+          question: "张家界天门山值得去吗？",
+          answer: "值得，冲着天门洞和悬崖栈道去。天门洞是一个高 131.5 米、把山整个打穿的天然石洞，可以爬 999 级台阶上去，也可以坐扶梯；栈道修在海拔约 1400 米的绝壁上。留一整天，挑个晴天，大雾天几乎什么也看不见。",
+        },
+        {
+          question: "天门山和张家界国家森林公园，选哪个？",
+          answer: "只有一天就选森林公园：那些砂岩石柱，是张家界跟别处最不一样的地方。天门山离城区 8 公里，看的是一座山，有巨大的石门、悬崖栈道和山顶的林子。有两天，就两处都去，分开两天。",
+        },
+        {
+          question: "天门山要玩多长时间？",
+          answer: "从张家界城区出发，按一整天安排。上山下山分好几段，每段都可能排队；看天门洞、走一段悬崖栈道、逛山顶的林子，还要再花几个小时。当天最好别再赶火车或飞机，实在要赶就多留些余量。",
+        },
+        {
+          question: "天门山玻璃栈道和张家界玻璃桥是一个地方吗？",
+          answer: "不是。天门山的玻璃栈道是固定在山上悬崖边的几段玻璃路面，比如盘龙崖那段长 100 米。玻璃桥在张家界大峡谷，全长约 430 米，横跨整条峡谷，从城区开车过去大约一个小时。两处门票分开，也最好分开两天去。",
+        },
+        {
+          question: "什么时候去天门山最好？",
+          answer: "春秋两季的晴天最好。夏天山顶凉快，城里三十多度时山顶只有 26 度上下；十二月底到二月初，山顶的树挂满雾凇。大雾和结冰可能挡住风景，也可能改变上山线路，所以日子要留些余地，尽量避开长假。",
+        },
+      ],
+    },
+    ko: {
+      description: "장가계 천문산: 999계단을 올라 산을 꿰뚫은 거대한 구멍 천문동에 들어서고, 절벽에 매달린 길을 걷습니다. 하루를 통째로 잡으세요.",
+      why: [
+        "긴 계단 아래에 서서 올려다보세요. 계단은 산허리에 뚫린 커다란 구멍을 향해 곧장 뻗어 있고, 구멍 너머로 하늘이 보입니다. 천문동은 높이 131.5m의 천연 바위 문으로, 시내 위로 높이 솟은 절벽을 통째로 관통합니다. 습한 날에는 구름이 동굴 안으로 흘러들었다가 반대편으로 쏟아져 나갑니다. 현지 사람들은 이를 두고 ‘하늘 문이 안개를 토한다’고 말합니다. 계단 꼭대기까지 올라가 문 안에 서서 뒤돌아보면, 계단이 발아래로 아득히 떨어집니다.",
+        "이 구멍은 1,700여 년 전 절벽 일부가 무너지며 뚫렸습니다. 당시 군주는 이를 길조로 여겨 산 이름을 ‘하늘의 문’이라는 뜻의 천문산으로 지었습니다. 천문산은 장가계 시내에서 8km밖에 떨어져 있지 않고 시내보다 1,300m 넘게 높아, 케이블카가 시내 한복판에서 출발합니다. 꼭대기는 뜻밖에 평평한 숲입니다. 오래된 나무에 덩굴이 감기고 곳곳에 이끼가 덮여 있으며, 여름에 시내가 30도를 넘을 때도 정상은 26도 안팎입니다.",
+        "삼림공원이 절벽 위에서 수많은 봉우리를 내려다보는 곳이라면, 천문산은 산 하나에 바짝 다가가 보는 곳입니다. 볼 만한 곳은 거의 다 절벽 끝에 있습니다. 천문동과 깎아지른 바위벽을 따라 낸 잔도, 바닥이 유리로 된 잔도가 모두 그렇습니다. 오르는 수고는 케이블카와 버스, 에스컬레이터가 대부분 덜어 주지만, 발아래의 아찔함까지 덜어 주지는 못합니다. 이곳에 오는 이유가 바로 그 아찔함입니다. 천문산에는 하루를 따로 내주세요.",
+      ],
+      highlights: [
+        {
+          name: "천문동으로 오르는 999계단",
+          body: "계단은 가파르고 길어 오르기가 만만치 않습니다. 쉬엄쉬엄 숨을 고르며, 머리 위의 천문동이 점점 커지는 모습을 보세요. 옆에 에스컬레이터가 있어 걷기 싫다면 타고 올라갈 수 있지만, 올라가는 방향은 요금을 따로 냅니다.",
+        },
+        {
+          name: "귀곡잔도",
+          body: "길이 약 1.6km의 잔도가 해발 1,400m 안팎에서 깎아지른 절벽의 한가운데를 따라 이어집니다. 머리 위는 바위, 발아래는 허공입니다.",
+        },
+        {
+          name: "반룡애 유리잔도",
+          body: "길이 100m의 유리잔도에 올라 발아래를 내려다보면, 99굽이 산길이 구불구불 똬리를 틀고 있습니다. 유리잔도는 보수 때문에 가끔 문을 닫으니 가기 전에 확인하세요.",
+        },
+      ],
+      time: "장가계 시내에서 출발해 하루를 통째로 잡으세요. 올라가고 내려오는 구간마다 줄을 설 수 있습니다. 올라가는 노선은 케이블카 공사나 날씨에 따라 바뀌니, 예약 전에 저희 노선 가이드를 확인하세요. 같은 날 기차나 비행기 일정은 되도록 넣지 마세요.",
+      when: "일정 중 가장 맑은 날을 고르세요. 짙은 안개가 끼면 난간 너머도 잘 보이지 않습니다. 비 온 뒤에는 천문동 사이로 구름이 지나가는지 살펴보세요. 여름에는 정상이 시원하고, 12월 말부터 2월 초까지는 정상의 나무에 상고대가 하얗게 핍니다. 다만 결빙과 안개로 올라가는 노선이 바뀔 수 있습니다. 중국의 국경절·노동절 연휴는 줄이 가장 길 때이니 피하세요.",
+      pair: "해가 지고 시내로 돌아오면 72기루에 불이 켜집니다. 높이 약 110m의 이 건물은 토가족 조각루(비탈에 기둥을 세워 지은 전통 가옥)를 본떠 지었고, 가운데에는 천문동을 떠올리게 하는 커다란 네모 구멍이 뚫려 있으며, 안에서는 먹거리 장터가 열립니다. 공연 시즌에는 천문산 협곡을 무대로 한 야외 공연 ‘천문호선’도 있습니다. 체력이 남을 때 하나만 고르세요. 삼림공원과 대협곡 유리다리는 다른 날로 미루세요.",
+      skip: "장가계에 하루뿐이라면 삼림공원으로 가세요. 장가계를 다른 곳과 다르게 만드는 것이 그 봉우리들이고, 천문산은 이튿날로 두기 좋습니다. 높은 곳이 무서운 분에게는 힘든 곳입니다. 가장 좋은 곳이 절벽 길, 유리 바닥, 가파른 계단이기 때문입니다. 짙은 안개로 산이 막힌 날에는 무릉원 근처 보봉호에서 배를 타는 일정으로 바꾸세요.",
+      faq: [
+        {
+          question: "장가계 천문산은 가 볼 만한가요?",
+          answer: "네, 천문동과 절벽 잔도를 보러 갈 만합니다. 천문동은 높이 131.5m로 산을 통째로 뚫은 천연 동굴이며, 999계단이나 에스컬레이터로 올라갑니다. 잔도는 해발 약 1,400m 절벽에 걸려 있습니다. 하루를 잡되 맑은 날을 고르세요. 짙은 안개 속에서는 거의 아무것도 보이지 않습니다.",
+        },
+        {
+          question: "천문산과 장가계 국가삼림공원 중 어디가 좋을까요?",
+          answer: "하루뿐이라면 삼림공원입니다. 사암 봉우리 숲이야말로 장가계를 다른 곳과 다르게 만드는 풍경입니다. 천문산은 시내에서 8km 떨어진 산 하나를 가까이에서 보는 곳으로, 거대한 바위 문과 절벽 잔도, 정상의 숲이 있습니다. 이틀이 있다면 두 곳을 각각 다른 날에 보세요.",
+        },
+        {
+          question: "천문산은 얼마나 걸리나요?",
+          answer: "장가계 시내에서 출발해 하루를 잡으세요. 올라가고 내려오는 길이 여러 구간으로 나뉘고 구간마다 줄을 설 수 있으며, 천문동과 절벽 잔도, 정상의 숲을 보는 데 몇 시간이 더 듭니다. 같은 날 기차나 비행기는 되도록 잡지 말고, 꼭 타야 한다면 여유를 넉넉히 두세요.",
+        },
+        {
+          question: "천문산 유리잔도와 장가계 유리다리는 같은 곳인가요?",
+          answer: "아니요, 다른 곳입니다. 천문산 유리잔도는 산 위 절벽에 붙여 만든 짧은 유리 길로, 그중 반룡애 유리잔도는 길이 100m입니다. 유리다리는 장가계 대협곡에 있으며 길이 약 430m로 협곡 전체를 가로지르고, 시내에서 차로 약 1시간 걸립니다. 입장권이 따로이니 날도 따로 잡으세요.",
+        },
+        {
+          question: "천문산은 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을의 맑은 날이 가장 좋습니다. 여름에는 시내가 30도를 넘을 때도 정상은 26도 안팎으로 시원하고, 12월 말부터 2월 초까지는 정상의 나무에 상고대가 핍니다. 안개와 결빙으로 경치가 가려지거나 올라가는 노선이 바뀔 수 있으니 일정에 여유를 두고, 연휴는 피하세요.",
+        },
+      ],
+    },
+  },
+  "zhangjiajie-grand-canyon": {
+    en: {
+      description: "Zhangjiajie Grand Canyon: cross a glass bridge 300 metres above the canyon floor, then walk down to its waterfalls. How long it takes, and who can skip it.",
+      why: [
+        "Step out onto the glass bridge and only clear glass lies between your shoes and the drop. The canyon floor is about 300 metres down, and you can see the cliffs and the tops of the trees straight below, between your feet. The bridge runs some 430 metres from rim to rim. Stop halfway. The canyon falls away on both sides, and the far rim is still more than 200 metres off.",
+        "The bridge was meant to be hard to see. Its architect, Haim Dotan, said it was designed to be “as invisible as possible – a white bridge disappearing into the clouds”. Its Chinese name, Yuntiandu, means a crossing through cloud and sky. Before you cross, look up at it from below. On a sunny day it glints, almost lost against the sky. In mist it comes and goes like a long white ribbon.",
+        "The canyon is the other half of the day, and the reason to give it more than an hour. The full route crosses the bridge, then goes down the canyon wall on steps and paths fixed to the cliff. Down on the floor the air turns cool with spray, and cliffs rise on both sides. You follow the stream past waterfalls and pools to a lake, and a boat carries you out at the end.",
+      ],
+      highlights: [
+        {
+          name: "The glass lift down the cliff",
+          body: "Beyond the bridge, a lift with clear glass cabins drops down the canyon wall. From inside you can see the bridge hanging in the mist, and after rain the ride feels like sinking through cloud. It is optional and paid separately, and you can walk down instead.",
+        },
+        {
+          name: "Tianhe Waterfall",
+          body: "The first big waterfall on the canyon floor seems to burst straight out of the cliff, with no stream in sight above it. Cool air and spray reach you before you do, and when the sun is out there is often a rainbow. The platform below it is slippery.",
+        },
+        {
+          name: "The boat out across Shenquan Lake",
+          body: "The walk ends at Shenquan Lake, where a boat takes you over the water to the exit. After hours of stairs and spray, this is the gentlest stretch of the day.",
+        },
+      ],
+      time: "From Zhangjiajie city, about an hour away by road, the Grand Canyon fills most of a day. From Wulingyuan, which lies on the way, allow a long half-day. The full route over the bridge and down through the canyon takes about three and a half hours. A short route of about 1.5 kilometres goes down into the canyon first, comes back up by lift and ends on the bridge.",
+      when: "A bright, dry day shows the drop below the glass best. After rain the waterfalls run hardest and cloud drifts through the canyon. The cloud is lovely from the lifts, though it can hide the drop beneath the bridge. The shade and spray of the canyon floor are most welcome in summer. Avoid national holidays, when the bridge is at its busiest.",
+      pair: "Huanglong Cave lies on the road back towards Wulingyuan. In this vast limestone cave you ride a boat for about 15 minutes on an underground river. Look out for the Sea-Calming Needle, a stone column 20 metres tall and only 10 centimetres across at its narrowest point. Add it only with an early start and no evening train or flight. Do not put Tianmen Mountain on the same day.",
+      skip: "If heights frighten you, think twice. The scenic area advises people with a fear of heights or a heart condition not to cross, and the canyon-only route leaves the bridge out. It also asks people with limited mobility not to go on the bridge, and wheelchairs and walking frames are not allowed on it. If you want wild nature, know that this canyon comes with slides, zip lines and lifts; for the big natural sight, see the Forest Park first.",
+      faq: [
+        {
+          question: "Is the Zhangjiajie glass bridge worth it?",
+          answer: "Yes, if you want the thrill and will also walk the canyon below. The bridge runs about 430 metres across the canyon on a floor of clear glass about 300 metres up. The full route then takes you down to waterfalls and a stream, about three and a half hours in all. For a single photo on the glass, it is a long trip for a short moment.",
+        },
+        {
+          question: "Is the glass bridge in Zhangjiajie National Forest Park?",
+          answer: "No, it is at the Zhangjiajie Grand Canyon, a separate scenic area in Cili County, about an hour by road from Zhangjiajie city. It has its own ticket and entry time, and a Forest Park ticket does not cover it. Itineraries often blur the two, so check which one yours means.",
+        },
+        {
+          question: "Is the Zhangjiajie glass bridge scary?",
+          answer: "For many people, yes: the whole floor is clear glass, about 300 metres above the canyon floor. Each panel is three layers of toughened glass bonded together. Before the bridge opened in 2016, people struck one with sledgehammers until it cracked, then drove a loaded car over it, and it held. The scenic area advises people with a fear of heights or a heart condition not to cross.",
+        },
+        {
+          question: "How long do you need at the Zhangjiajie Grand Canyon?",
+          answer: "About three and a half hours for the full route over the bridge and down through the canyon, by the scenic area's own estimate. The canyon-only route takes about three. A short route of about 1.5 kilometres dips into the canyon, comes back up by lift and ends on the bridge. With about an hour each way by road from the city, plan on most of a day from there, or a long half-day from Wulingyuan.",
+        },
+        {
+          question: "Glass bridge or Tianmen glass skywalk: which is better?",
+          answer: "Choose the glass bridge for a full crossing of a canyon, about 430 metres of glass, followed by a canyon walk. Choose Tianmen for short glass sections on cliffs high on a mountain, along with the giant arch and the summit forest, 8 kilometres from the city. They are in different places. Tianmen takes a full day; the Grand Canyon takes a long half-day from Wulingyuan, or most of a day from the city.",
+        },
+      ],
+    },
+    zh: {
+      description: "张家界大峡谷：走上离谷底约 300 米的玻璃桥，再下到有瀑布的峡谷里走一走。要多长时间、哪些人可以不去。",
+      why: [
+        "一脚踏上玻璃桥，鞋底下只隔着一层透明玻璃，再往下就是空的。谷底在脚下约 300 米处，低头就能从两脚之间看见悬崖和树梢。整座桥从峡谷这边到那边约 430 米。走到桥中间停一停，两侧都是深深的峡谷，离对岸还有两百多米。",
+        "这座桥从一开始就是照着“看不太见”来设计的。设计师哈伊姆·多坦说，他想让桥“尽可能隐形，成为一座消失在云中的白色桥”。中文名“云天渡”，也是在云天之间渡人过去的意思。过桥之前，先抬头看看它。晴天它在阳光下闪着光，几乎和天空融在一起；起雾的时候，它像一条长长的白绸，在云雾里时隐时现。",
+        "峡谷占了这一天的另一半，也是别只待一个小时就走的理由。完整路线先过桥，再顺着崖壁上的台阶和栈道往下走。到了谷底，空气一下子凉下来，水雾扑面，两边是高高的崖壁。沿着溪水走过一处处瀑布和水潭，最后到湖边坐船出去。",
+      ],
+      highlights: [
+        {
+          name: "坐玻璃电梯下峡谷",
+          body: "过了桥，有一部玻璃观光电梯贴着崖壁往下走。从透明的轿厢里能看见云雾中的玻璃桥；雨后坐上去，就像在云里往下穿行。电梯是自选项目，要另外付费，也可以走下去。",
+        },
+        {
+          name: "天河瀑布",
+          body: "谷底的第一处大瀑布，像是突然从绝壁里喷出来，看不见水从哪里来。还没走到跟前，凉风和水雾就扑面而来；出太阳的时候，常常能看到彩虹。瀑布下的观景台很滑。",
+        },
+        {
+          name: "坐船过神泉湖",
+          body: "一路走到神泉湖，坐上船，过湖到出口。走了几个小时的台阶、淋了一路水雾，这一段最轻松。",
+        },
+      ],
+      time: "从张家界城区出发，单程开车约一个小时，基本要占大半天；住武陵源的话正好顺路，留一个宽裕的半天就行。过桥再走完整条峡谷约三个半小时。还有一条约 1.5 公里的短线，先下到峡谷里，再坐电梯上来，最后走过玻璃桥出园。",
+      when: "挑晴朗干爽的日子，最能看清玻璃底下有多深。雨后瀑布水最大，峡谷里云雾飘荡，从电梯里看很美，但可能挡住桥下的谷底。夏天谷底阴凉、水雾扑面，最舒服。避开节假日，那几天桥上人最多。",
+      pair: "回武陵源的路上会经过黄龙洞。这是一个巨大的溶洞，要坐大约 15 分钟的船走地下河，洞里有一根 20 米高、最细处只有 10 厘米的石柱“定海神针”。要加它，就得一早出发，晚上也别安排火车或飞机。不要和天门山排在同一天。",
+      skip: "怕高的人要想清楚。景区建议恐高和有心脏病的人不要上桥，不想过桥的话，可以选只走峡谷的路线。景区也建议行动不便的人不要上桥，轮椅和助行架也上不去。想看原生态的人也要有准备，这条峡谷里有滑道、滑索和电梯；要看张家界真正的自然奇观，先去森林公园。",
+      faq: [
+        {
+          question: "张家界大峡谷玻璃桥值得去吗？",
+          answer: "值得，前提是你想要那份刺激，也愿意下到峡谷里走一走。桥长约 430 米，桥面是透明玻璃，离谷底约 300 米；完整路线过桥后还要下到谷底看瀑布和溪流，全程约三个半小时。如果只想在玻璃上拍张照，跑这一趟就有点不划算。",
+        },
+        {
+          question: "张家界玻璃桥在国家森林公园里吗？",
+          answer: "不在。它在张家界大峡谷，是慈利县的另一个景区，从张家界城区开车约一个小时。它有自己的门票和入园时段，森林公园的门票不能用。很多行程单把两处混着写，订之前先看清楚说的是哪一个。",
+        },
+        {
+          question: "张家界玻璃桥吓人吗？",
+          answer: "对很多人来说确实吓人：整个桥面都是透明玻璃，离谷底约 300 米。每块桥面玻璃都是三层钢化玻璃粘合而成；2016 年开放之前，有人当众用大锤把一块砸出裂纹，再让坐满人的汽车从上面开过去，玻璃裂了也没碎，依然牢牢粘成一整块。景区也建议恐高和有心脏病的人不要上桥。",
+        },
+        {
+          question: "张家界大峡谷要玩多长时间？",
+          answer: "过桥再走完整条峡谷，景区自己估计约三个半小时；不上桥、只走峡谷约三个小时。还有一条约 1.5 公里的短线，先下到峡谷，再坐电梯上来，最后过桥出园。从城区开车单程约一个小时，从城区去按大半天安排，住武陵源的话留一个宽裕的半天。",
+        },
+        {
+          question: "玻璃桥和天门山玻璃栈道，哪个更值得去？",
+          answer: "想完整走过一条峡谷，选玻璃桥：约 430 米的玻璃桥面，过桥后还有一段峡谷步行。想看高山悬崖上的几段玻璃路，再加上天门洞和山顶的林子，选天门山，它离城区 8 公里。两处不在一个地方。天门山要一整天，大峡谷从武陵源去要一个宽裕的半天，从城区去要大半天。",
+        },
+      ],
+    },
+    ko: {
+      description: "장가계 대협곡 유리다리: 협곡 바닥에서 약 300m 높이의 유리다리를 건너, 폭포가 흐르는 협곡으로 내려갑니다. 걸리는 시간과 빼도 되는 사람.",
+      why: [
+        "유리다리에 한 발을 내딛으면 신발과 허공 사이에는 투명 유리 한 겹뿐입니다. 협곡 바닥은 약 300m 아래에 있어, 두 발 사이로 절벽과 나무 꼭대기가 그대로 내려다보입니다. 다리는 협곡 이쪽에서 저쪽까지 약 430m입니다. 한가운데에서 잠시 멈춰 보세요. 양옆은 깊은 협곡이고, 건너편까지는 아직 200m 넘게 남아 있습니다.",
+        "이 다리는 처음부터 잘 보이지 않게 설계되었습니다. 건축가 하임 도탄은 ‘최대한 보이지 않게, 구름 속으로 사라지는 흰 다리’로 설계했다고 말했습니다. 중국어 이름 운천도(雲天渡)도 구름과 하늘 사이로 사람을 건네준다는 뜻입니다. 다리를 건너기 전에 먼저 올려다보세요. 맑은 날에는 햇빛에 반짝이며 하늘에 거의 녹아들고, 안개 속에서는 긴 흰 비단처럼 보였다 사라집니다.",
+        "협곡은 이날의 나머지 절반이자, 한 시간만 보고 나오기엔 아까운 이유입니다. 전체 코스는 다리를 건넌 뒤 절벽에 붙여 낸 계단과 잔도를 따라 내려갑니다. 바닥에 닿으면 물보라에 공기가 서늘해지고, 양옆으로 절벽이 높이 솟아 있습니다. 계곡물을 따라 폭포와 물웅덩이를 지나고, 마지막에는 호수에서 배를 타고 나옵니다.",
+      ],
+      highlights: [
+        {
+          name: "유리 엘리베이터로 내려가기",
+          body: "다리를 건너면 투명한 유리 엘리베이터가 협곡 벽을 따라 내려갑니다. 안에서는 안개 속에 걸린 유리다리가 보이고, 비 온 뒤에 타면 구름 속을 뚫고 내려가는 듯합니다. 엘리베이터는 선택 사항이라 요금을 따로 내며, 걸어서 내려갈 수도 있습니다.",
+        },
+        {
+          name: "천하폭포(天河瀑布)",
+          body: "협곡 바닥에서 만나는 첫 번째 큰 폭포로, 물줄기가 절벽에서 갑자기 뿜어져 나오는 듯해 물이 어디서 오는지 보이지 않습니다. 가까이 가기도 전에 서늘한 바람과 물보라가 얼굴에 닿고, 해가 나면 무지개가 자주 걸립니다. 폭포 아래 전망대는 미끄럽습니다.",
+        },
+        {
+          name: "배를 타고 건너는 신천호",
+          body: "걸음 끝에 신천호에 닿으면 배를 타고 호수를 건너 출구로 나갑니다. 몇 시간 동안 계단을 내려오고 물보라를 맞은 뒤라, 하루 중 가장 편안한 구간입니다.",
+        },
+      ],
+      time: "장가계 시내에서는 차로 편도 약 1시간이라 하루의 대부분이 듭니다. 가는 길목에 있는 무릉원에 묵는다면 넉넉한 반나절이면 됩니다. 다리를 건너 협곡 전체를 걷는 코스는 약 3시간 반입니다. 약 1.5km의 짧은 코스는 먼저 협곡으로 내려갔다가 엘리베이터로 올라와 마지막에 유리다리를 건너 나옵니다.",
+      when: "맑고 건조한 날이 유리 아래 깊이를 가장 잘 보여 줍니다. 비 온 뒤에는 폭포가 가장 세차고 협곡에 구름이 흐릅니다. 그 구름은 엘리베이터에서 보면 아름답지만, 다리 아래 바닥을 가릴 수 있습니다. 협곡 바닥의 그늘과 물보라는 여름에 가장 반갑습니다. 연휴에는 다리가 가장 붐비니 피하세요.",
+      pair: "무릉원 쪽으로 돌아가는 길에 황룡동이 있습니다. 거대한 석회암 동굴로, 지하 강을 배로 15분쯤 지나고, 높이 20m에 가장 가는 곳이 10cm밖에 안 되는 돌기둥 ‘정해신침’을 볼 수 있습니다. 넣으려면 아침 일찍 출발하고 저녁 기차나 비행기는 잡지 마세요. 천문산과 같은 날 묶지는 마세요.",
+      skip: "높은 곳이 무섭다면 다시 생각해 보세요. 관광지 측은 고소공포증이나 심장 질환이 있는 사람은 다리를 건너지 말라고 권합니다. 다리를 빼고 싶다면 협곡만 걷는 코스가 있습니다. 거동이 불편한 사람에게도 다리에 오르지 말라고 하며, 휠체어와 보행 보조기는 다리에 올라갈 수 없습니다. 때 묻지 않은 자연을 기대한다면 미끄럼틀, 짚라인, 엘리베이터가 있는 곳이라는 점을 알아 두세요. 큰 자연 풍경을 보려면 삼림공원이 먼저입니다.",
+      faq: [
+        {
+          question: "장가계 유리다리는 가 볼 만한가요?",
+          answer: "네, 짜릿함을 원하고 아래 협곡까지 걸을 생각이라면 가 볼 만합니다. 다리는 약 430m 길이로 협곡을 가로지르고, 투명 유리 바닥은 협곡 바닥에서 약 300m 높이입니다. 전체 코스는 다리를 건넌 뒤 폭포와 계곡까지 내려가 모두 약 3시간 반이 걸립니다. 유리 위에서 사진 한 장만 원한다면 먼 길에 비해 짧은 순간입니다.",
+        },
+        {
+          question: "유리다리는 장가계 국가삼림공원 안에 있나요?",
+          answer: "아니요, 자리현에 있는 별도의 관광지 장가계 대협곡에 있으며, 장가계 시내에서 차로 약 1시간 걸립니다. 입장권과 입장 시간대가 따로이고 삼림공원 입장권으로는 들어갈 수 없습니다. 일정표에서 두 곳을 섞어 쓰는 일이 많으니 어느 쪽인지 확인하세요.",
+        },
+        {
+          question: "장가계 유리다리는 무섭나요?",
+          answer: "많은 사람에게 무섭습니다. 바닥 전체가 투명 유리이고 협곡 바닥에서 약 300m 높이입니다. 유리판마다 강화유리 세 겹을 붙여 만들었습니다. 2016년 개장 전 공개 시험에서는 유리판 하나를 큰 망치로 내리쳐 금이 가게 한 뒤 사람을 가득 태운 자동차로 그 위를 지나갔지만, 유리판은 깨지지 않고 버텼습니다. 관광지 측은 고소공포증이나 심장 질환이 있는 사람은 건너지 말라고 권합니다.",
+        },
+        {
+          question: "장가계 대협곡은 얼마나 걸리나요?",
+          answer: "다리를 건너 협곡 전체를 걷는 코스는 관광지 공식 안내 기준 약 3시간 반, 다리 없이 협곡만 걷는 코스는 약 3시간입니다. 약 1.5km의 짧은 코스는 협곡으로 잠깐 내려갔다가 엘리베이터로 올라와 마지막에 다리를 건넙니다. 시내에서는 차로 편도 1시간쯤 걸리니 시내에서 간다면 하루의 대부분을, 무릉원에서 간다면 넉넉한 반나절을 잡으세요.",
+        },
+        {
+          question: "유리다리와 천문산 유리잔도 중 어디가 좋을까요?",
+          answer: "협곡을 끝까지 건너고 싶다면 유리다리입니다. 약 430m의 유리 바닥을 걷고 이어서 협곡을 걷습니다. 높은 산 절벽에 붙은 짧은 유리 길과 함께 천문동, 정상의 숲까지 보고 싶다면 시내에서 8km 거리의 천문산입니다. 두 곳은 서로 다른 곳입니다. 천문산은 하루가 꼬박 걸리고, 대협곡은 무릉원에서 가면 넉넉한 반나절, 시내에서 가면 하루의 대부분이 걸립니다.",
+        },
+      ],
+    },
+  },
 };
 
 export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
@@ -3371,6 +3809,42 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Dazu Rock Carvings", "Dazu Grottoes", "Baodingshan Rock Carvings", "Beishan Rock Carvings", "大足石刻", "宝顶山石刻", "北山石刻", "대족석각", "다쭈 석각", "Dazu Shike"],
     sameAs: ["https://en.wikipedia.org/wiki/Dazu_Rock_Carvings", "https://www.wikidata.org/wiki/Q651278", "https://whc.unesco.org/en/list/912/"],
+  },
+  "zhangjiajie-forest-park": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Wulingyuan Scenic and Historic Interest Area", url: "https://whc.unesco.org/en/list/640/" },
+      { title: "Hunan Government: sea of clouds at Tianzi Mountain after spring rain (2026)", url: "https://www.enghunan.gov.cn/hneng/news_photo/202604/t20260402_33946691.html" },
+      { title: "Hunan Government: autumn colour at Tianzi Mountain (2025)", url: "https://www.hunan.gov.cn/hnszf/hnyw/jdt2/202511/t20251105_33842106.html" },
+      { title: "Hunan Daily (Voice of Hunan): how the Zhangjiajie pillars formed (2022)", url: "https://hunan.voc.com.cn/news/202209/23296682.html" },
+      { title: "Hunan Daily: Yuanjiajie, Golden Whip Stream and its monkeys (2022)", url: "https://m.voc.com.cn/xhn/news/202204/14246159.html" },
+    ],
+    alternateName: ["Zhangjiajie National Forest Park", "Wulingyuan Scenic Area", "Wulingyuan", "张家界国家森林公园", "武陵源", "武陵源风景名胜区", "장가계 국가삼림공원", "장자제 국가삼림공원", "무릉원", "Zhangjiajie Guojia Senlin Gongyuan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Zhangjiajie_National_Forest_Park", "https://www.wikidata.org/wiki/Q3895620", "https://whc.unesco.org/en/list/640/"],
+  },
+  "tianmen-mountain": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Hunan Department of Culture and Tourism: Zhangjiajie routes, Tianmen Mountain and Tianmen Cave", url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220826_27793507.html" },
+      { title: "New Hunan (Hunan Daily): the story behind Tianmen Mountain (2017)", url: "https://www.hunantoday.cn/news/xhn/201711/17379074.html" },
+      { title: "Rednet: summer on Tianmen Mountain (2025)", url: "https://hn.rednet.cn/content/646941/91/15112479.html" },
+      { title: "Hunan Daily (Voice of Hunan): glass walkways open and closed for repair (2026)", url: "https://m.voc.com.cn/xhn/news/202605/32637965.html" },
+      { title: "New Hunan (Hunan Daily): the mist and mysteries of Tianmen Cave (2021)", url: "https://www.hunantoday.cn/news/xhn/202110/17343146.html" },
+    ],
+    alternateName: ["Tianmen Mountain", "Tianmenshan", "Heaven's Gate Mountain", "Tianmen Mountain National Forest Park", "天门山", "张家界天门山", "天门山国家森林公园", "천문산", "톈먼산", "Tianmen Shan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Tianmen_Mountain", "https://www.wikidata.org/wiki/Q3861073"],
+  },
+  "zhangjiajie-grand-canyon": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Zhangjiajie Grand Canyon official site: visitor routes", url: "https://zjjdaxiagu.com/guide.html" },
+      { title: "Zhangjiajie Grand Canyon official site: Tianhe Waterfall", url: "https://zjjdaxiagu.com/detail/71.html" },
+      { title: "Xinhua: on the Zhangjiajie Grand Canyon glass bridge (2021)", url: "https://www.news.cn/photo/2021-11/12/c_1128059559_3.htm" },
+      { title: "Hunan Department of Culture and Tourism: the glass bridge is named Yuntiandu (2016)", url: "https://whhlyt.hunan.gov.cn/whhlyt/news/szyw/201909/t20190912_5483682.html" },
+      { title: "Dezeen: Haim Dotan's glass bridge opens in Zhangjiajie (2016)", url: "https://www.dezeen.com/2016/08/25/zhangjiajie-grand-canyon-glass-bridge-haim-dotan-walkway-china/" },
+    ],
+    alternateName: ["Zhangjiajie Grand Canyon", "Zhangjiajie Grand Canyon Glass Bridge", "Zhangjiajie Glass Bridge", "张家界大峡谷", "张家界大峡谷玻璃桥", "云天渡", "장가계 대협곡", "장가계 대협곡 유리다리", "Zhangjiajie Daxiagu", "Yuntiandu"],
+    sameAs: ["https://en.wikipedia.org/wiki/Zhangjiajie_Glass_Bridge", "https://www.wikidata.org/wiki/Q27925184", "https://www.wikidata.org/wiki/Q131315007"],
   },
 };
 
