@@ -94,3 +94,30 @@ test("the pages reuse the Destinations parts and booking rules, and reveal once"
   assert.match(pages, /<RevealOnce \/>/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
 });
+
+test("a sight's own writing is complete in all three languages, dates slowly, and comes before the booking facts", async () => {
+  const { sightStories } = await import("../../lib/sightStories.ts");
+  const ids = new Set(sightsModule.sights.map((sight) => sight.id));
+  for (const [id, byLocale] of Object.entries(sightStories)) {
+    assert.ok(ids.has(id), `${id}: a story for an unknown sight`);
+    for (const locale of locales) {
+      const story = byLocale[locale];
+      assert.ok(story, `${id}: ${locale} story`);
+      assert.ok(story.description.length >= 40, `${id} ${locale}: a real search description`);
+      assert.ok(story.why.length >= 2 && story.why.length <= 3, `${id} ${locale}: two or three paragraphs on why`);
+      assert.equal(story.highlights.length, 3, `${id} ${locale}: three things not to miss`);
+      for (const field of ["time", "when", "pair", "skip"]) assert.ok(story[field].trim(), `${id} ${locale}: ${field}`);
+      // Hours, prices and booking steps belong to the reservation rules and the guides.
+      const text = JSON.stringify(story);
+      assert.doesNotMatch(text, /(¥|CNY|RMB|元\b|위안\s*\d|\d{1,2}:\d{2})/u, `${id} ${locale}: no prices or clock times`);
+    }
+    // The same three highlights, in the same order, in every language.
+    assert.equal(new Set(locales.map((locale) => byLocale[locale].highlights.length)).size, 1);
+  }
+  // A sight is indexed only once its writing is in.
+  for (const sight of sightsModule.sights) {
+    if (sight.ready) assert.ok(sightStories[sight.id], `${sight.id} is ready but has no story`);
+  }
+  const page = await source("components/SightsPages.tsx");
+  assert.ok(page.indexOf("<SightStorySections") < page.indexOf('id={bookingAnchor}'), "the story sits above the booking facts");
+});

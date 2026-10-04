@@ -3,6 +3,7 @@ import type { HomegroundLocale } from "./homegroundI18n";
 import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
 import { getSight, sightPaths, sightsPath, type SightId } from "./sights";
+import { sightCityName } from "./sightCityName";
 import { getSightsCopy } from "./sightsI18n";
 import { getSightStory } from "./sightStories";
 
@@ -29,7 +30,10 @@ export function buildSightMetadata(id: SightId, locale: HomegroundLocale): Metad
   const copy = getSightsCopy(locale);
   const sight = getSight(id);
   const name = copy.sights[id].name;
-  const title = `${name} · ${copy.hub.h1}`;
+  // Searchers name the city ("杭州西湖", "항저우 서호"); a name that already starts with it keeps it once.
+  const city = sight ? sightCityName(sight.city, locale) : "";
+  const place = !city || name.includes(city) ? name : locale === "en" ? `${name}, ${city}` : locale === "zh" ? `${city}${name}` : `${city} ${name}`;
+  const title = `${place} · ${copy.hub.h1}`;
   // The story's own search description once it is written; until then the card line.
   const description = getSightStory(id, locale)?.description ?? copy.sights[id].line;
   const paths = sightPaths(id);

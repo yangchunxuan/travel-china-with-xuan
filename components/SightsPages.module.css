@@ -438,15 +438,9 @@
 
 /* ---------- The sight's own writing ---------- */
 
-/* Why: the heading beside the text on wide screens, above it on narrow ones. */
-.why {
-  display: grid;
-  gap: 1.5rem 4rem;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr);
-}
-
+/* Why: the heading above the text, as in "Fitting it in". */
 .why h2 {
-  margin: 0;
+  margin: 0 0 1.75rem;
 }
 
 .whyBody p {
@@ -463,9 +457,7 @@
 
 /* After .why, so it outranks the shared ".page h3 { margin: 0 }". */
 .why ~ .highlightsTitle {
-  color: var(--muted);
-  font-size: 0.875rem;
-  letter-spacing: 0.02em;
+  font-size: 0.9375rem;
   margin: 3.5rem 0 1.25rem;
 }
 
@@ -489,7 +481,7 @@
 }
 
 .highlights p {
-  color: var(--muted);
+  color: rgb(10 10 10 / 78%);
   font-size: 1rem;
   line-height: 1.65;
   margin: 0.6rem 0 0;
@@ -524,10 +516,6 @@
 }
 
 @media (max-width: 61.25rem) {
-  .why {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .highlights {
     grid-template-columns: minmax(0, 1fr);
   }

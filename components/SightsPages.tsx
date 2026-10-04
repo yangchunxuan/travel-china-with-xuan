@@ -29,6 +29,7 @@ import {
   type SightCityId,
   type SightId,
 } from "../lib/sights";
+import { sightCityName } from "../lib/sightCityName";
 import { fillSightsCopy, getSightsCopy, sightsKeepWords } from "../lib/sightsI18n";
 import { getSightStory, type SightStory } from "../lib/sightStories";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
@@ -52,11 +53,7 @@ import { KeepWords } from "./text/KeepWords";
 import styles from "./TravelInspiration.module.css";
 import sightStyles from "./SightsPages.module.css";
 
-function cityName(city: SightCityId, locale: HomegroundLocale) {
-  // The booking service names its cities; Zhangjiajie, Chongqing and Guangzhou are named by their city pages.
-  const bookingCities: Partial<Record<SightCityId, string>> = getAttractionReservationCopy(locale).cities;
-  return bookingCities[city] ?? getDestinationHubEntry(city as DestinationHubId, locale).navTitle;
-}
+const cityName = sightCityName;
 
 function cityHubPath(city: SightCityId, locale: HomegroundLocale) {
   return isDestinationHubId(city) ? getDestinationHubEntry(city, locale).path : null;
