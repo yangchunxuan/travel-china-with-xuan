@@ -31,15 +31,11 @@ import styles from "./FirstTripTenCityMapPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 const ASSET_LICENCE_URL = "https://creativecommons.org/licenses/by/4.0/";
-const ASSET_CREATOR_ID = `${SITE_URL}/#first-trip-map-v1-creator`;
-const ASSET_CREATOR_REGISTERED_NAME =
-  "张家界市永定区本境文化交流工作室";
 const ASSET_CREDIT_TEXT =
   "Homeground China, First Trip to China: 10-City Airport, Station and Stay Map, CC BY 4.0.";
-// This attribution belongs to the already published CC BY 4.0 asset release.
-// Keep it stable even if the website's current operating entity changes.
+// The site's one operating entity (lib/homegroundBusiness.ts) is the creator and licensor.
 const ASSET_COPYRIGHT_NOTICE =
-  `© 2026 ${ASSET_CREATOR_REGISTERED_NAME}, operating as Homeground China.`;
+  `© 2026 ${homegroundBusiness.registeredName}, operating as Homeground China.`;
 export const FIRST_TRIP_TEN_CITY_GUIDE_ID =
   "first-trip-china-airport-station-stay-map" as GuideId;
 
@@ -156,34 +152,12 @@ function assetMimeType(href: string) {
 
 function structuredData() {
   const guide = getGuideEntry(FIRST_TRIP_TEN_CITY_GUIDE_ID, "en");
-  const currentPublisher = {
-    ...editorialOrganizationSchema(),
-    legalName: homegroundBusiness.registeredName,
-    identifier: [
-      {
-        "@type": "PropertyValue",
-        propertyID: "Unified Social Credit Code",
-        value: homegroundBusiness.unifiedSocialCreditCode,
-      },
-      {
-        "@type": "PropertyValue",
-        propertyID: "Travel Agency Licence No.",
-        value: homegroundBusiness.travelAgencyLicenceNumber,
-      },
-    ],
-  };
+  const currentPublisher = editorialOrganizationSchema();
   return {
     "@context": "https://schema.org",
     "@graph": [
       editorialWebsiteSchema(),
       currentPublisher,
-      {
-        "@type": "Organization",
-        "@id": ASSET_CREATOR_ID,
-        name: "Homeground China",
-        legalName: ASSET_CREATOR_REGISTERED_NAME,
-        description: "Historical creator credit for the original v1 ten-city map asset; the site's current travel agency operator is identified separately.",
-      },
       editorialPersonSchema("en"),
       {
         "@type": "Article",
@@ -199,8 +173,6 @@ function structuredData() {
         inLanguage: "en",
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         author: { "@id": EDITORIAL_PERSON_ID },
-        // The current site publisher republished this existing article after
-        // the operator change; the v1 map asset keeps its historical creator.
         publisher: { "@id": EDITORIAL_ORGANIZATION_ID },
         mainEntityOfPage: editorialReviewedPageSchema(guide.canonicalUrl),
         citation: assetData.sources.map((source) => source.url),
@@ -214,7 +186,7 @@ function structuredData() {
         width: guide.imageWidth,
         height: guide.imageHeight,
         caption: "Ten-city arrive, stay and depart schematic by Homeground China",
-        creator: { "@id": ASSET_CREATOR_ID },
+        creator: { "@id": EDITORIAL_ORGANIZATION_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
         creditText: ASSET_CREDIT_TEXT,
@@ -231,7 +203,7 @@ function structuredData() {
         dateModified: assetData.reviewedAt,
         inLanguage: "en",
         isAccessibleForFree: true,
-        creator: { "@id": ASSET_CREATOR_ID },
+        creator: { "@id": EDITORIAL_ORGANIZATION_ID },
         license: ASSET_LICENCE_URL,
         acquireLicensePage: guide.canonicalUrl,
         creditText: ASSET_CREDIT_TEXT,

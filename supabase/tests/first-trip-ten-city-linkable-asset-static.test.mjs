@@ -15,8 +15,9 @@ const filePrefix = "homeground-china-10-city-arrival-stay-departure-v1";
 const downloadsRoot = "public/downloads/";
 const imageRoot =
   "public/images/guides/first-trip-china-airport-station-stay-map/";
-const historicalLicensor = "张家界市永定区本境文化交流工作室";
-const currentOperator = "盛世美达（北京）国际旅行社有限公司";
+// Owner, 2026-10-04: every page and file names one entity, 盛世美达, including the map's licensor.
+const licensor = "盛世美达（北京）国际旅行社有限公司";
+const formerStudio = "张家界市永定区本境文化交流工作室";
 
 function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
@@ -106,8 +107,8 @@ test("the asset builder derives review text from data and normalizes cross-platf
   assert.match(builder, /\.\.\.\[\.\.\.originalCityCards\]\.map/);
   assert.match(builder, /const packageNames = \[[\s\S]*?\]\.sort\(\)/);
   assert.match(builder, /storedZip\(packageEntries\)/);
-  assert.match(builder, new RegExp(historicalLicensor));
-  assert.doesNotMatch(builder, new RegExp(currentOperator));
+  assert.match(builder, new RegExp(licensor));
+  assert.doesNotMatch(builder, new RegExp(formerStudio));
 });
 
 test("all ten city cards and the national downloads exist as self-contained licensed assets", async () => {
@@ -247,7 +248,7 @@ test("the complete downloadable pack is deterministic, checksummed and contains 
   assert.match(creditText, /Homeground China[\s\S]*CC BY 4\.0/);
   assert.match(
     copyrightNotice,
-    /张家界市永定区本境文化交流工作室[\s\S]*Homeground China/,
+    /盛世美达（北京）国际旅行社有限公司[\s\S]*Homeground China/,
   );
 });
 
@@ -266,8 +267,8 @@ test("the reuse pack explains attribution, adaptation and third-party exclusions
     ["attribution", attribution],
     ["portable JSON", portableJson],
   ]) {
-    assert.match(value, new RegExp(historicalLicensor), `${label} must keep the v1 licensor`);
-    assert.doesNotMatch(value, new RegExp(currentOperator), `${label} must not rewrite the v1 licensor`);
+    assert.match(value, new RegExp(licensor), `${label} names 盛世美达 as licensor`);
+    assert.doesNotMatch(value, new RegExp(formerStudio), `${label} no longer names the former studio`);
   }
 
   assert.match(readme, /schematic, not a geographic map/i);
@@ -335,17 +336,15 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.match(component, /acquireLicensePage:/);
   assert.match(component, /creditText:/);
   assert.match(component, /copyrightNotice:/);
-  assert.match(component, /ASSET_CREATOR_REGISTERED_NAME/);
+  assert.doesNotMatch(component, new RegExp(formerStudio));
   assert.equal(
-    [...component.matchAll(/creator: \{ "@id": ASSET_CREATOR_ID \}/g)].length,
+    [...component.matchAll(/creator: \{ "@id": EDITORIAL_ORGANIZATION_ID \}/g)].length,
     2,
-    "the original image and dataset creator must remain separate from the current website operator",
+    "the image and the dataset are credited to the site's one operating entity",
   );
+  assert.match(component, /homegroundBusiness\.registeredName/);
   assert.match(component, /editorialWebsiteSchema\(\)/);
   assert.match(component, /editorialOrganizationSchema\(\)/);
-  assert.match(component, /legalName: homegroundBusiness\.registeredName/);
-  assert.match(component, /homegroundBusiness\.unifiedSocialCreditCode/);
-  assert.match(component, /homegroundBusiness\.travelAgencyLicenceNumber/);
   assert.match(
     component,
     /isPartOf: \{ "@id": EDITORIAL_WEBSITE_ID \}/,
@@ -378,7 +377,7 @@ test("the page emits linked Article, Dataset and licensed downloadable-asset sch
   assert.match(
     component.slice(articleStart, imageStart),
     /publisher: \{ "@id": EDITORIAL_ORGANIZATION_ID \}/,
-    "the updated article uses the current site publisher while the v1 asset keeps its historical creator",
+    "the article's publisher is the site's operating entity",
   );
   for (const schemaSlice of [
     component.slice(imageStart, datasetStart),
