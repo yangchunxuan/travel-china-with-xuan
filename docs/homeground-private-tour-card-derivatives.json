@@ -21,11 +21,11 @@
     },
     {
       "productId": "chengdu-pandas-sanxingdui-5-day-private-tour",
-      "sourcePath": "public/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
-      "sourceSha256": "5d0237c4981997802243d3730b547dc579d5118bb186063ebe8fda13c641bff6",
+      "sourcePath": "public/images/tours/photo-quality-20261004/panda.webp",
+      "sourceSha256": "a64b12c9b3243d416d265ae2dd67311810a713bbd9641affd9571e5731c3f89e",
       "rightsBasis": "Wikimedia Commons, George Lu, CC BY 2.0",
-      "provenancePath": "docs/homeground-photo-provenance.md",
-      "provenanceNeedle": "5d0237c4981997802243d3730b547dc579d5118bb186063ebe8fda13c641bff6",
+      "provenancePath": "docs/product-photo-quality-sources-20261004.json",
+      "provenanceNeedle": "a64b12c9b3243d416d265ae2dd67311810a713bbd9641affd9571e5731c3f89e",
       "rightsEvidenceNeedle": "CC BY 2.0",
       "dimensions": [
         "320x200",
@@ -33,7 +33,7 @@
         "960x600",
         "1380x862"
       ],
-      "familySha256": "cf3ec2fd3a5a385283d7cd25d9e6431cf9574a3e3e3002d5cc2aa597c90f6edd"
+      "familySha256": "74579f0ce823694cb80aa69b8e4ff8ede557f6288a634f00b7c8b69650e243c6"
     },
     {
       "productId": "xian-terracotta-warriors-5-day-private-tour",

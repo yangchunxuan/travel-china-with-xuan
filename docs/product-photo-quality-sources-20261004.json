@@ -1,0 +1,4246 @@
+[
+  {
+    "id": "zhenyuan",
+    "oldSrc": "/images/tours/shared-scenes/zhenyuan-1600.webp",
+    "title": "File:Wuyang River in Zhenyuan County 13.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/zhenyuan.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wuyang_River_in_Zhenyuan_County_13.jpg",
+    "sourceWidth": 4000,
+    "sourceHeight": 3000,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-01-15 12:27:26",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Wuyang River in Zhenyuan County 13",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Self-published work|Wu River in Zhenyuan County",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Residential buildings along the Wuyang River in Zhenyuan County, Guizhou, China.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2020-04-01 11:02:15",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Huangdan2060\" title=\"User:Huangdan2060\">Huangdan2060</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 636588,
+    "sha256": "b2db56db3214c38bf6f9b0023567914b00afc536e9ce09dd536c3769c208775a",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Wuyang_River_in_Zhenyuan_County_13.jpg",
+    "products": [
+      "guizhou-huangguoshu-libo-miao-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "chengqi",
+    "oldSrc": "/images/tours/shared-scenes/chengqi-1600.webp",
+    "title": "File:Chengqi Tulou 20140829.JPG",
+    "newSrc": "/images/tours/photo-quality-20261004/chengqi.webp",
+    "width": 2560,
+    "height": 1600,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chengqi_Tulou_20140829.JPG",
+    "sourceWidth": 2560,
+    "sourceHeight": 1600,
+    "metadata": {
+      "DateTime": {
+        "value": "2015-01-31 12:34:54",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Chengqi Tulou 20140829",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Chengqi Lou|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "​福建龙岩永定高北村承启楼",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2014-08-29 12:38:15",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E9%A2%90%E5%9B%AD%E6%96%B0%E5%B1%85\" title=\"User:颐园新居\">颐园新居</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 877126,
+    "sha256": "3ec4dc6fad994d0a60a1f9c3f77f69c928dc99bc49ceb421f7204a6bb22633c4",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Chengqi_Tulou_20140829.JPG",
+    "products": [
+      "xiamen-tulou-quanzhou-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "xidi",
+    "oldSrc": "/images/tours/shared-scenes/xidi-1600.webp",
+    "title": "File:Xidi 2.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/xidi.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xidi_2.jpg",
+    "sourceWidth": 4000,
+    "sourceHeight": 3000,
+    "metadata": {
+      "DateTime": {
+        "value": "2023-02-03 11:44:19",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Xidi 2",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Xidi|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Xidi, Anhui",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2022-10-22",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1064166,
+    "sha256": "92d59536ca145cbec870160e0b94b30d755c381fe44e6a97f0e26d5914f0e0f6",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Xidi_2.jpg",
+    "products": [
+      "huangshan-hongcun-huizhou-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "sanqingshan",
+    "oldSrc": "/images/tours/shared-scenes/sanqingshan-1600.webp",
+    "title": "File:Sanqing Mountain is surrounded by clouds and mists1.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/sanqingshan.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanqing_Mountain_is_surrounded_by_clouds_and_mists1.jpg",
+    "sourceWidth": 4032,
+    "sourceHeight": 3024,
+    "metadata": {
+      "DateTime": {
+        "value": "2016-11-07 05:49:38",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Sanqing Mountain is surrounded by clouds and mists1",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Mount Sanqing|CC-Zero|Self-published work|Files with coordinates missing SDC location of creation",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "28.910406",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "118.069764",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "The Sanqing Mountain is surrounded by clouds and mists in June 2016.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2016-06-19 08:16:49",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Huangdan2060\" title=\"User:Huangdan2060\">Huangdan2060</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Zero, Public Domain Dedication",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 381398,
+    "sha256": "930fdef58e64ee60c70d500cc2691a0ee07c59cb39f9dc85023e21a81934ef12",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Sanqing_Mountain_is_surrounded_by_clouds_and_mists1.jpg",
+    "products": [
+      "jingdezhen-wuyuan-wangxian-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "shangrao",
+    "oldSrc": "/images/tours/shared-scenes/shangrao-1600.webp",
+    "title": "File:201705 Station building and Tracks at Shangrao Station.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/shangrao.webp",
+    "width": 3200,
+    "height": 2127,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:201705_Station_building_and_Tracks_at_Shangrao_Station.jpg",
+    "sourceWidth": 4912,
+    "sourceHeight": 3264,
+    "metadata": {
+      "DateTime": {
+        "value": "2017-05-21 14:39:59",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "201705 Station building and Tracks at Shangrao Station",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2017-05-19|Shangrao Railway Station|May 2017 in rail transport in China|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "201705 Station building and Tracks at Shangrao Station",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2017-05-19 19:13:07",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:MNXANL\" title=\"User:MNXANL\">MNXANL</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1017504,
+    "sha256": "26fbce3febe2ad70ca2d41d8a07104cb8b0376b431f1a08071dd0cd691aa7123",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:201705_Station_building_and_Tracks_at_Shangrao_Station.jpg",
+    "products": [
+      "jingdezhen-wuyuan-wangxian-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "changbai",
+    "oldSrc": "/images/tours/shared-scenes/changbai-1600.webp",
+    "title": "File:Antu2.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/changbai.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antu2.jpg",
+    "sourceWidth": 3264,
+    "sourceHeight": 2448,
+    "metadata": {
+      "DateTime": {
+        "value": "2012-10-04 21:06:59",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Antu2",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Taken with Panasonic Lumix DMC-FX55|Antu|Panoramio images reviewed by trusted users|Photos from Panoramio|Files with coordinates missing SDC location of creation",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "42.282072",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "128.187447",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "远眺长白山（和平滑雪场）",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2008-12-13 07:28",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161012170432/http://www.panoramio.com/photo/16939628\">panoramio</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20160927170726/http://www.panoramio.com/user/890289\">冥想</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 551670,
+    "sha256": "71f2be3ba37abfa718558bccaaa3881561e81c540290764eabc8608a96980ddd",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Antu2.jpg",
+    "products": [
+      "changbaishan-yanji-winter-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "zhengzhou",
+    "oldSrc": "/images/tours/shared-scenes/zhengzhou-1600.webp",
+    "title": "File:Zhengzhou Greenland Central Plaza on 29 Oct 2018.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/zhengzhou.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhengzhou_Greenland_Central_Plaza_on_29_Oct_2018.jpg",
+    "sourceWidth": 4821,
+    "sourceHeight": 3214,
+    "metadata": {
+      "DateTime": {
+        "value": "2018-10-29 15:21:40",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Zhengzhou Greenland Central Plaza on 29 Oct 2018",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Zhengzhou Greenland Central Plaza|Self-published work|October 2018 in Zhengzhou|Skylines in Zhengzhou",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Zhengzhou Greenland Central Plaza",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2018-10-29 16:20:56",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Windmemories\" title=\"User:Windmemories\">Windmemories</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1019736,
+    "sha256": "5b0df61ee8c45169245186e6c0a6b1c6f6bd50480088f38aeda9fb6a0328ba23",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Zhengzhou_Greenland_Central_Plaza_on_29_Oct_2018.jpg",
+    "products": [
+      "luoyang-dengfeng-kaifeng-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "whitehorse",
+    "oldSrc": "/images/tours/shared-scenes/whitehorse-1600.webp",
+    "title": "File:2011-06 White Horse Temple 02.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/whitehorse.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011-06_White_Horse_Temple_02.jpg",
+    "sourceWidth": 3888,
+    "sourceHeight": 2592,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-01-03 08:14:32",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "2011-06 White Horse Temple 02",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "CC-Zero|White Horse Temple|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "34.722722",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "112.599703",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Buddhism entered China here in the first century AD, Luoyang, Henan. Complete indexed photo collection at WorldHistoryPics.com.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2008-11-22 14:18:16",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/101561334@N08/10225570794/\">https://www.flickr.com/photos/101561334@N08/10225570794/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "Gary Todd",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Zero, Public Domain Dedication",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 877642,
+    "sha256": "211252a5d9965c3607d84f2cf167b4f27562d979b39d8c6c635084fb6ca55922",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:2011-06_White_Horse_Temple_02.jpg",
+    "products": [
+      "luoyang-dengfeng-kaifeng-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "dam",
+    "oldSrc": "/images/tours/shared-scenes/dam-1600.webp",
+    "title": "File:Three Gorges Dam 2015-07-25.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/dam.webp",
+    "width": 3200,
+    "height": 1775,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_Gorges_Dam_2015-07-25.jpg",
+    "sourceWidth": 8149,
+    "sourceHeight": 4520,
+    "metadata": {
+      "DateTime": {
+        "value": "2024-06-17 09:31:35",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Three Gorges Dam 2015-07-25",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Three Gorges Dam|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "30.832578",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "111.012212",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Three Gorges Dam",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2015-07-25 09:49:43",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/baetho/20132029598/\">https://www.flickr.com/photos/baetho/20132029598/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "Thomas  Bächinger",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 828110,
+    "sha256": "7361068318f833130354f3a1a19839183607cca19fdbd13ecd5bdae322a49ce2",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Three_Gorges_Dam_2015-07-25.jpg",
+    "products": [
+      "chongqing-yangtze-cruise-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "datong",
+    "oldSrc": "/images/tours/shared-scenes/datong-1600.webp",
+    "title": "File:Datong Ancient City Wall 01.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/datong.webp",
+    "width": 2560,
+    "height": 1707,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Datong_Ancient_City_Wall_01.jpg",
+    "sourceWidth": 2560,
+    "sourceHeight": 1707,
+    "metadata": {
+      "DateTime": {
+        "value": "2025-11-15 21:38:35",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Datong Ancient City Wall 01",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Datong City Wall (reconstruction)",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "40.103118",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "113.282350",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "The Datong Ancient City Wall in Datong, Shanxi, China, originally built in 421 during the Northern Wei Dynasty, was reinforced in 1372 during the Ming Dynasty by General Xu Da. Standing 14 meters high with a perimeter of 7.24 kilometers, it features four main gates—Heyang, Yongtai, Qingyuan, and Wuding—along with watchtowers, barbicans, and a moat, forming a robust military defense system. Restored between 2008 and 2010, the wall showcases ancient Chinese architectural prowess and offers panoramic views of the city, blending historical significance with cultural heritage.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2025-06-01 10:28:02",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/xiquinho/54883343448/\">https://www.flickr.com/photos/xiquinho/54883343448/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "xiquinhosilva",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 757650,
+    "sha256": "675df293a798cfa4d49e1d3da1b711d74d53a8a7313904dc71ce3c3de43961b5",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Datong_Ancient_City_Wall_01.jpg",
+    "products": [
+      "datong-pingyao-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "jinci",
+    "oldSrc": "/images/tours/shared-scenes/jinci-1600.webp",
+    "title": "File:Jinci Temple 74032-Taiyuan (49222875647).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/jinci.webp",
+    "width": 3000,
+    "height": 1743,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jinci_Temple_74032-Taiyuan_(49222875647).jpg",
+    "sourceWidth": 3000,
+    "sourceHeight": 1743,
+    "metadata": {
+      "DateTime": {
+        "value": "2023-10-04 19:19:02",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Jinci Temple 74032-Taiyuan (49222875647)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Flickr images missing SDC inception|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Photographs by Xiquinho Silva|Flickr images missing SDC published in|Jinci Park",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "37.703116",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "112.444711",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "74032-Taiyuan",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2019-12-08 12:15",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/xiquinho/49222875647/\">74032-Taiyuan</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7138083@N04\">xiquinhosilva</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1062596,
+    "sha256": "2d9deed0dcacd855f7d647eadb50137001a24ad9cf04ba995b7f9475bc0f1257",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Jinci_Temple_74032-Taiyuan_(49222875647).jpg",
+    "products": [
+      "datong-pingyao-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "genhe",
+    "oldSrc": "/images/tours/shared-scenes/genhe-1600.webp",
+    "title": "File:Gegengol in Greater Khingan forest2017.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/genhe.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gegengol_in_Greater_Khingan_forest2017.jpg",
+    "sourceWidth": 5511,
+    "sourceHeight": 3674,
+    "metadata": {
+      "DateTime": {
+        "value": "2020-07-03 15:48:27",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Gegengol in Greater Khingan forest2017",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Autumn in China|Forests in China|Genhe|Greater Khingan|Self-published work|Unassessed QI candidates",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Greater Khingan range",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2017-10-03 17:20:59",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Charlie_fong\" title=\"User:Charlie fong\">Charlie fong</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1380746,
+    "sha256": "1f282d13b9f575aabb2ffc16218b7baff000452f0e0610c4cb52fe215de4790a",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Gegengol_in_Greater_Khingan_forest2017.jpg",
+    "products": [
+      "hulunbuir-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "manzhouli",
+    "oldSrc": "/images/tours/shared-scenes/manzhouli-1600.webp",
+    "title": "File:Manzhouli view.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/manzhouli.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manzhouli_view.jpg",
+    "sourceWidth": 3648,
+    "sourceHeight": 2736,
+    "metadata": {
+      "DateTime": {
+        "value": "2012-10-08 10:07:32",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Manzhouli view",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Manzhouli|Taken with Canon PowerShot A3000 IS|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Вид на Маньчжурию с птичьего полёта, Китай",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2012",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Yufereff\" title=\"User:Yufereff\">Alexander V. Solomin</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1461278,
+    "sha256": "bec01829672d5b5e133320d8718a4dbe8793d2b8888dc85fb591b4e1ea3a8ced",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Manzhouli_view.jpg",
+    "products": [
+      "hulunbuir-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "hulun",
+    "oldSrc": "/images/tours/shared-scenes/hulun-1600.webp",
+    "title": "File:HulunLake2.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/hulun.webp",
+    "width": 3200,
+    "height": 1874,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HulunLake2.jpg",
+    "sourceWidth": 3648,
+    "sourceHeight": 2136,
+    "metadata": {
+      "DateTime": {
+        "value": "2010-08-02 00:48:02",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "HulunLake2",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Lake Hulun|GFDL|Taken with Canon PowerShot G11|License migration redundant|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "<a href=\"https://zh.wikipedia.org/wiki/%E5%91%BC%E4%BC%A6%E6%B9%96\" class=\"extiw\" title=\"zh:呼伦湖\">Hulun Lake</a>, <a href=\"//commons.wikimedia.org/wiki/Inner_Mongolia\" class=\"mw-redirect\" title=\"Inner Mongolia\">Inner Mongolia</a>, <a href=\"//commons.wikimedia.org/wiki/China\" class=\"mw-redirect\" title=\"China\">China</a>",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2010-07-21",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Fanghong\" title=\"User:Fanghong\">Fanghong</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 226784,
+    "sha256": "edb54429e66e0901c601390b2cb7799852771a1735e789ac1bf47092f4cf66e4",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:HulunLake2.jpg",
+    "products": [
+      "hulunbuir-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "gorge",
+    "oldSrc": "/images/tours/shared-scenes/gorge-1600.webp",
+    "title": "File:Yunnan China Tiger-Leaping-Gorge-01.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/gorge.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yunnan_China_Tiger-Leaping-Gorge-01.jpg",
+    "sourceWidth": 3500,
+    "sourceHeight": 2333,
+    "metadata": {
+      "DateTime": {
+        "value": "2013-11-22 16:38:23",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Yunnan China Tiger-Leaping-Gorge-01",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Tiger Leaping Gorge|GFDL|Taken with Sony DSLR-A700|License migration redundant|Self-published work|Information field template with formatting|Images by Cccefalon|Files with coordinates missing SDC location of creation|Files by User:Cccefalon from de.wikipedia|Images of China by User:Cccefalon",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "quality",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "27.268020",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "100.176022",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Yunnan, China: Trail in the Tiger leaping gorge (虎跳峡, Hǔtiào Xiá))",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2012-04-03",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Cccefalon\" title=\"User:Cccefalon\">CEphoto, Uwe Aranas</a>",
+        "source": "commons-desc-page"
+      },
+      "Attribution": {
+        "value": "Photo by CEphoto, Uwe Aranas <b>or alternatively</b> © CEphoto, Uwe Aranas",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1591926,
+    "sha256": "9fa5cb112f894c21fef2d36efd0847fc0fbed3a0b77c0644f99ba555ad4420ab",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Yunnan_China_Tiger-Leaping-Gorge-01.jpg",
+    "products": [
+      "beijing-xian-yunnan-14-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "songzanlin",
+    "oldSrc": "/images/tours/shared-scenes/songzanlin-1600.webp",
+    "title": "File:1 songzanlin monastery yunnan 2018.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/songzanlin.webp",
+    "width": 3200,
+    "height": 1159,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_songzanlin_monastery_yunnan_2018.jpg",
+    "sourceWidth": 23397,
+    "sourceHeight": 8476,
+    "metadata": {
+      "DateTime": {
+        "value": "2018-06-30 14:52:14",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "1 songzanlin monastery yunnan 2018",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2018-06-28|Taken with Nikon D850|Self-published work|Large images|Ganden Sumtseling Monastery complex",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "panorama songzanlin monastery yunnan 2018",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2018-06-28 10:09:36",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Chensiyuan\" title=\"User:Chensiyuan\">Chensiyuan</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1110936,
+    "sha256": "c01890a52d9d0c711736a0ce0ac315c7ed3472147f245ad0dedbf01646b5e653",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:1_songzanlin_monastery_yunnan_2018.jpg",
+    "products": [
+      "beijing-xian-yunnan-14-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "jiaohe",
+    "oldSrc": "/images/tours/shared-scenes/jiaohe-1600.webp",
+    "title": "File:Jiaohe City(Yarkhoto),Turpan,Xinjiang HY7.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/jiaohe.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jiaohe_City(Yarkhoto),Turpan,Xinjiang_HY7.jpg",
+    "sourceWidth": 4032,
+    "sourceHeight": 3024,
+    "metadata": {
+      "DateTime": {
+        "value": "2020-04-27 01:30:44",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Jiaohe City(Yarkhoto),Turpan,Xinjiang HY7",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Jiaohe ruins|Self-published work|Files with coordinates missing SDC location of creation",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "42.951064",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "89.063392",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Ruins of the jiaohe city, Turpan",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2018-04-29 12:26:49",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hiroooooo\" title=\"User:Hiroooooo\">Hiroooooo</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1412282,
+    "sha256": "b2bdfc91b8dfb88f1c058137d0ba3707704e92047f33c67752337f76021ea9fe",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Jiaohe_City(Yarkhoto),Turpan,Xinjiang_HY7.jpg",
+    "products": [
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "urumqi",
+    "oldSrc": "/images/tours/shared-scenes/urumqi-1600.webp",
+    "title": "File:Urumqi skyline (3).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/urumqi.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Urumqi_skyline_(3).jpg",
+    "sourceWidth": 4000,
+    "sourceHeight": 3000,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-03-04 08:40:24",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Urumqi skyline (3)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Cityscapes in China|Tianshan District|Self-published work|August 2017 in Xinjiang|2017 in Ürümqi|Fundacja Kontroli Społecznej Nomos - Chiny - Sinciang",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Urumqi skyline - view from Hongshan, Xinjiang, China",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2017-08-05",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "own archive",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "Radosław Botev",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 3.0 pl",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 3.0 pl",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Attribution": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.forumviatoris.org.pl/\">Radosław Botev</a>",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-3.0-pl",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 692870,
+    "sha256": "d9a7e4e2288dacd8c73aff76050655a55a0b26682c4c9ff9db292b03893c40f6",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Urumqi_skyline_(3).jpg",
+    "products": [
+      "xinjiang-ili-sayram-8-day-private-tour",
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "panda",
+    "oldSrc": "/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
+    "title": "File:Panda in Chengdu Research Base of Giant Panda Breeding - 7708872342.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/panda.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg",
+    "sourceWidth": 4769,
+    "sourceHeight": 3179,
+    "metadata": {
+      "DateTime": {
+        "value": "2025-05-04 21:22:55",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Panda in Chengdu Research Base of Giant Panda Breeding - 7708872342",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Flickr images reviewed by FlickreviewR 2|Ailuropoda melanoleuca in Chengdu Research Base of Giant Panda Breeding|Flickr images missing SDC published in",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Panda in Chengdu Research Base of Giant Panda Breeding, China.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2011-06-04 11:54:03",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/gzlu/7708872342/\">https://www.flickr.com/photos/gzlu/7708872342/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "George Lu",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 737598,
+    "sha256": "a64b12c9b3243d416d265ae2dd67311810a713bbd9641affd9571e5731c3f89e",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg",
+    "products": [
+      "chengdu-pandas-sanxingdui-5-day-private-tour",
+      "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+      "chengdu-chongqing-8-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "china-grand-tour-21-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "sanxingdui",
+    "oldSrc": "/images/guides/sanxingdui-museum-booking-and-gallery-order/hero-1600.webp",
+    "title": "File:New Sandingdui Museum 02.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/sanxingdui.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
+    "sourceWidth": 4096,
+    "sourceHeight": 3072,
+    "metadata": {
+      "DateTime": {
+        "value": "2023-08-30 07:05:30",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "New Sandingdui Museum 02",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Sanxingdui Museum|Self-published work|Files with coordinates missing SDC location of creation",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "31.003826",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "104.219589",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "This is the new Sanxingdui Museum, which was officially opened to the public in July 2023.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2023-08-24 12:17:33",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:STW932&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:STW932 (page does not exist)\">STW932</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1021426,
+    "sha256": "9f65f8b7b6e6341b0af795022741bc9d80d8962f67076121866462c99a1a05ed",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
+    "products": [
+      "chengdu-pandas-sanxingdui-5-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "china-grand-tour-21-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "volga",
+    "oldSrc": "/images/tours/shared-scenes/volga-1600.webp",
+    "title": "File:哈尔滨圣尼古拉教堂 伏尔加庄园 20240519.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/volga.webp",
+    "width": 2880,
+    "height": 3840,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%93%88%E5%B0%94%E6%BB%A8%E5%9C%A3%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%95%99%E5%A0%82_%E4%BC%8F%E5%B0%94%E5%8A%A0%E5%BA%84%E5%9B%AD_20240519.jpg",
+    "sourceWidth": 3048,
+    "sourceHeight": 4064,
+    "metadata": {
+      "DateTime": {
+        "value": "2024-05-19 06:11:39",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "哈尔滨圣尼古拉教堂 伏尔加庄园 20240519",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Buildings in Harbin|Acheng District, Harbin|Self-published work|Files with coordinates missing SDC location of creation|Taken with Honor 90 Pro",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "45.671061",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "126.897041",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "​哈尔滨圣尼古拉教堂，摄于哈尔滨伏尔加庄园，2024.5.19",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2024-05-19 12:35:15",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hehua\" title=\"User:Hehua\">Hehua</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1616882,
+    "sha256": "ae4c189c99eee0cc2aa25989b23b832a312aaa0370de0e75914c8fa00a16b6a8",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%93%88%E5%B0%94%E6%BB%A8%E4%BC%8F%E5%B0%94%E5%8A%A0%E5%BA%84%E5%9B%AD%E4%B8%AD%E7%9A%84%E5%9C%A3%E2%80%A2%E5%B0%BC%E5%8F%A4%E6%8B%89%E5%A4%A7%E6%95%99%E5%A0%82.jpg",
+    "products": [
+      "harbin-winter-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "hailar",
+    "oldSrc": "/images/tours/shared-scenes/hailar-1600.webp",
+    "title": "File:海拉尔 俯瞰城区 03.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/hailar.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E6%8B%89%E5%B0%94_%E4%BF%AF%E7%9E%B0%E5%9F%8E%E5%8C%BA_03.jpg",
+    "sourceWidth": 6000,
+    "sourceHeight": 4000,
+    "metadata": {
+      "DateTime": {
+        "value": "2026-04-12 08:28:53",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "海拉尔 俯瞰城区 03",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Hailar|Self-published work|China photographs taken on 2025-07-18",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "​呼伦贝尔市海拉尔区俯瞰城区",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2025-07-18 12:32:51",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Liuxingy\" title=\"User:Liuxingy\">Liuxingy</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 882680,
+    "sha256": "84bc662978cb83cfd4511a6213bcbddb833fdc536ba6ce7517aa6684146ddff1",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E6%8B%89%E5%B0%94_Hailar_-_panoramio.jpg",
+    "products": [
+      "hulunbuir-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "taiyuan",
+    "oldSrc": "/images/tours/shared-scenes/taiyuan-1600.webp",
+    "title": "File:汾河 Fen River - panoramio.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/taiyuan.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B1%BE%E6%B2%B3_Fen_River_-_panoramio.jpg",
+    "sourceWidth": 4608,
+    "sourceHeight": 3456,
+    "metadata": {
+      "DateTime": {
+        "value": "2017-07-13 11:25:27",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "汾河 Fen River - panoramio",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2016-06-22|Fen River|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|Files with coordinates missing SDC location of creation|Photos from Panoramio ID 6452510",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "37.806920",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "112.534870",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "汾河  Fen River",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "Taken on 22 June 2016",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20161103143903/http://www.panoramio.com/photo/132101844\">https://web.archive.org/web/20161103143903/http://www.panoramio.com/photo/132101844</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161103143844/http://www.panoramio.com/user/6452510?with_photo_id=132101844\">lienyuan lee</a>",
+        "source": "commons-desc-page"
+      },
+      "Permission": {
+        "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-attr\" style=\"font-weight: bold;\">Attribution: <div style=\"display:inline;font-size:larger;\" class=\"licensetpl_attr\">lienyuan lee</div></div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>\n<style data-mw-deduplicate=\"TemplateStyles:r901585720\">.mw-parser-output .panoramioreview{width:100%;margin:0.5em 0;background-color:var(--background-color-warning-subtle,#fffff0);padding:5px;border:1px solid var(--border-color-warning,#aa8);color:inherit}.mw-parser-output .panoramioreview-failed{background-color:var(--background-color-error-subtle,#fcc);color:inherit}.mw-parser-output .panoramioreview-passed{background-color:var(--background-color-success-subtle,#efe);color:inherit}</style>\n<table class=\"panoramioreview panoramioreview-passed\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img alt=\"\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Panoramio\" class=\"extiw\" title=\"en:Panoramio\">Panoramio</a></span></b>, was automatically reviewed on 13 July 2017 by <b><a href=\"//commons.wikimedia.org/wiki/User:Panoramio_upload_bot\" title=\"User:Panoramio upload bot\">Panoramio upload bot</a></b>, who confirmed that it was available on Panoramio under the above license on that date.\n</td>\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Star_and_ring.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/60px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/120px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"75\" data-file-height=\"75\"></a></span>\n</td></tr></tbody></table>",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseShortName": {
+        "value": "CC BY 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Attribution": {
+        "value": "lienyuan lee",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1280016,
+    "sha256": "7eca5cddba4a4bb5d3ef99eff179c62bef4a4190c5e0f6105600c8d39328512e",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Fen_River_Park_Taiyuan_20110709.jpg",
+    "products": [
+      "datong-pingyao-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "tianchi",
+    "oldSrc": "/images/tours/shared-scenes/tianchi-1600.webp",
+    "title": "File:Tian Chi (8869581842).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/tianchi.webp",
+    "width": 3200,
+    "height": 1259,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tian_Chi_(8869581842).jpg",
+    "sourceWidth": 7717,
+    "sourceHeight": 3037,
+    "metadata": {
+      "DateTime": {
+        "value": "2015-11-26 23:37:32",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Tian Chi (8869581842)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Clouds in China|Water reflections of mountains in China|China photographs taken on 2013-05-05|Water reflections of clouds in China|Tianchi Lake of Tian Shan|Tone-mapped HDR images|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation|Reflections in lakes",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "43.892696",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "88.126316",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Tian Chi",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2013-05-05 08:07",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/mastababa/8869581842/\">Tian Chi</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/78303790@N00\">Babak Fakhamzadeh</a> from São Paulo, Brazil",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1269404,
+    "sha256": "93715adaa9f06b4eab3b631a7ed633bbbc12f9f3aef71737b555c8bbb09a393c",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Tianshan_tianchi.jpg",
+    "products": [
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "bund",
+    "oldSrc": "/images/destinations/shanghai/bund-architecture-1200.webp",
+    "title": "File:The Bund, Shanghai, China (December 2015) - 11.JPG",
+    "newSrc": "/images/tours/photo-quality-20261004/bund.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Bund,_Shanghai,_China_(December_2015)_-_11.JPG",
+    "sourceWidth": 4000,
+    "sourceHeight": 3000,
+    "metadata": {
+      "DateTime": {
+        "value": "2016-01-19 19:45:34",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "The Bund, Shanghai, China (December 2015) - 11",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Self-published work|December 2015 in Shanghai|Shanghai photographs taken on 2015-12-02|Customs House, Shanghai and HSBC Building, Shanghai|2015 photographs of Shanghai by Another Believer",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "The Bund, Shanghai, China (December 2015)",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2015-12-02 05:08:44",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Another_Believer\" title=\"User:Another Believer\">Another Believer</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 736530,
+    "downloadUrl": "https://live.staticflickr.com/6075/6057926946_2c18fd09f5_o.jpg",
+    "provider": "Flickr original via the photographer’s published sizes page",
+    "sha256": "b8b02bbd0c805e7db183ce7d60abfd3418e21594839ebb0e64c3e9f1bc991000",
+    "replacesSourceUrl": null,
+    "products": [
+      "shanghai-suzhou-hangzhou-6-day-private-tour",
+      "shanghai-disneyland-5-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+      "china-grand-tour-21-day-private-tour",
+      "beijing-xian-guilin-shanghai-10-day-private-tour",
+      "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+      "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
+      "beijing-xian-shanghai-8-day-private-tour",
+      "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "jinjiang",
+    "oldSrc": "/images/destinations/chengdu/jinjiang-bridge-1200.webp",
+    "title": "File:Anshun Bridge Chengdu.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/jinjiang.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anshun_Bridge_Chengdu.jpg",
+    "sourceWidth": 6000,
+    "sourceHeight": 4000,
+    "metadata": {
+      "DateTime": {
+        "value": "2020-03-18 12:31:31",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Anshun Bridge Chengdu",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Anshun Bridge|Flickr images reviewed by FlickreviewR 2",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Anshun Bridge (literal translation: peaceful &amp; quiet), Chengdu",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2016-12-30 11:37:14",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/wal-k/32173938271/\">https://www.flickr.com/photos/wal-k/32173938271/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "tyrosin",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 842952,
+    "sha256": "590391c9d2bda97b7a3d9db620fd4ee02e137f56c67b15eac2e221eb6fc1b948",
+    "replacesSourceUrl": null,
+    "products": [
+      "chengdu-pandas-sanxingdui-5-day-private-tour",
+      "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "china-grand-tour-21-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "dujiangyan",
+    "oldSrc": "/images/destinations/chengdu/dujiangyan-1200.webp",
+    "title": "File:Dujiangyan-kanalo 18.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/dujiangyan.webp",
+    "width": 3200,
+    "height": 1800,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dujiangyan-kanalo_18.jpg",
+    "sourceWidth": 4608,
+    "sourceHeight": 2592,
+    "metadata": {
+      "DateTime": {
+        "value": "2019-03-16 08:26:01",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Dujiangyan-kanalo 18",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2019-03-15|Self-published work|2019 in Chengdu|Dujiangyan irrigation system",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Dujiangyan-kanalo. Ĉengduo, Ĉinio.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2019-03-15 17:33:58",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:RG72\" title=\"User:RG72\">RG72</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1255004,
+    "sha256": "13380f937291373e2a3f7b23de2f0140a03022ada8f98f1fa130627dd53e1fee",
+    "replacesSourceUrl": null,
+    "products": [
+      "chengdu-pandas-sanxingdui-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "dayanta",
+    "oldSrc": "/images/destinations/xian/dayanta-1200.webp",
+    "title": "File:Giant Wild Goose Pagoda 20140502.JPG",
+    "newSrc": "/images/tours/photo-quality-20261004/dayanta.webp",
+    "width": 2560,
+    "height": 1920,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_Wild_Goose_Pagoda_20140502.JPG",
+    "sourceWidth": 2560,
+    "sourceHeight": 1920,
+    "metadata": {
+      "DateTime": {
+        "value": "2014-05-08 14:52:27",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Giant Wild Goose Pagoda 20140502",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Taken with Nikon D7000|Giant Wild Goose Pagoda|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "​西安市大慈恩寺内的大雁塔",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2014-05-02 13:57:36",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E9%A2%90%E5%9B%AD%E6%96%B0%E5%B1%85\" title=\"User:颐园新居\">颐园新居</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 530448,
+    "sha256": "e47ca4ec7678e88e9ce37c5650862f44a28cbf8be4cb2dc601097b2ad0ba28d1",
+    "replacesSourceUrl": null,
+    "products": [
+      "xian-terracotta-warriors-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "terracotta",
+    "oldSrc": "/images/destinations/xian/terracotta-pit-one-1200.webp",
+    "title": "File:Qin Terracotta Army, Pit 1 (9895750725).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/terracotta.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qin_Terracotta_Army,_Pit_1_(9895750725).jpg",
+    "sourceWidth": 4752,
+    "sourceHeight": 3168,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-08-18 21:42:53",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Qin Terracotta Army, Pit 1 (9895750725)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Taken with Canon EOS 600D|CC-Zero|Photographs by Gary Lee Todd|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan|Terracotta Army - Pit 1",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "34.385065",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "109.273409",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "2011 visit. Complete indexed photo collection at WorldHistoryPics.com.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2011-10-03 11:00",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9895750725/\">Qin Terracotta Army, Pit 1</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Zero, Public Domain Dedication",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 732198,
+    "downloadUrl": "https://live.staticflickr.com/3693/9895750725_6bbdc0ed61_o.jpg",
+    "provider": "Flickr original via the photographer’s published sizes page",
+    "sha256": "df4cc5478e64c2e4bf2193a144ad1f4c4719d5bb44a4a9e77cfb9145286a5215",
+    "replacesSourceUrl": null,
+    "products": [
+      "xian-terracotta-warriors-5-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour",
+      "beijing-xian-yunnan-14-day-private-tour",
+      "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+      "china-grand-tour-21-day-private-tour",
+      "beijing-xian-guilin-shanghai-10-day-private-tour",
+      "beijing-xian-shanghai-8-day-private-tour",
+      "beijing-xian-guilin-hong-kong-10-day-private-tour",
+      "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "wall",
+    "oldSrc": "/images/destinations/beijing/great-wall-1200.webp",
+    "title": "File:Mutianyu, grande muraglia cinese, veduta (autunno 2024) 11.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/wall.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mutianyu,_grande_muraglia_cinese,_veduta_(autunno_2024)_11.jpg",
+    "sourceWidth": 6720,
+    "sourceHeight": 4480,
+    "metadata": {
+      "DateTime": {
+        "value": "2026-06-18 13:14:06",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Mutianyu, grande muraglia cinese, veduta (autunno 2024) 11",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Great Wall of China at Mutianyu|Self-published work|Photographs by User:Sailko|All media supported by Wikimedia CH|Images by Sailko - Supported by Wikimedia CH",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Great Wall of China at Mutianyu",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2024-11-10 02:23:39",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Sailko\" title=\"User:Sailko\">Francesco Bini</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1778506,
+    "sha256": "1d6a652b75df5c48ecdccc9e1473d6bf344dcbfcf9f31ab655f77303024ce8c1",
+    "replacesSourceUrl": null,
+    "products": [
+      "beijing-highlights-5-day-private-tour",
+      "beijing-xian-shanghai-12-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+      "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
+      "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
+      "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-silk-road-15-day-small-group-tour",
+      "beijing-xian-yunnan-14-day-private-tour",
+      "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+      "china-grand-tour-21-day-private-tour",
+      "beijing-xian-guilin-shanghai-10-day-private-tour",
+      "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
+      "beijing-xian-shanghai-8-day-private-tour",
+      "beijing-xian-guilin-hong-kong-10-day-private-tour",
+      "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "wulong",
+    "oldSrc": "/images/destinations/chongqing/wulong-1200.webp",
+    "title": "File:重庆-武隆-天坑内天生桥 - panoramio.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/wulong.webp",
+    "width": 2848,
+    "height": 2136,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%87%8D%E5%BA%86-%E6%AD%A6%E9%9A%86-%E5%A4%A9%E5%9D%91%E5%86%85%E5%A4%A9%E7%94%9F%E6%A1%A5_-_panoramio.jpg",
+    "sourceWidth": 2848,
+    "sourceHeight": 2136,
+    "metadata": {
+      "DateTime": {
+        "value": "2016-12-01 12:58:28",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "重庆-武隆-天坑内天生桥 - panoramio",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2010-06-08|Three Natural Bridges|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|Files with coordinates missing SDC location of creation|Media needing category review as of 1 December 2016",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "29.436103",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "107.792809",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "重庆-武隆-天坑内天生桥",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "Taken on 8 June 2010",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20161103025058/http://www.panoramio.com/photo/55444623\">https://web.archive.org/web/20161103025058/http://www.panoramio.com/photo/55444623</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161103025101/http://www.panoramio.com/user/5727486?with_photo_id=55444623\">Nyx Ning</a>",
+        "source": "commons-desc-page"
+      },
+      "Permission": {
+        "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/3.0/deed.en\">Attribution-Share Alike 3.0 Unported</a> license.</div><div class=\"rlicense-attr\" style=\"font-weight: bold;\">Attribution: <div style=\"display:inline;font-size:larger;\" class=\"licensetpl_attr\">Nyx Ning</div></div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>\n<style data-mw-deduplicate=\"TemplateStyles:r901585720\">.mw-parser-output .panoramioreview{width:100%;margin:0.5em 0;background-color:var(--background-color-warning-subtle,#fffff0);padding:5px;border:1px solid var(--border-color-warning,#aa8);color:inherit}.mw-parser-output .panoramioreview-failed{background-color:var(--background-color-error-subtle,#fcc);color:inherit}.mw-parser-output .panoramioreview-passed{background-color:var(--background-color-success-subtle,#efe);color:inherit}</style>\n<table class=\"panoramioreview panoramioreview-passed\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img alt=\"\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Panoramio\" class=\"extiw\" title=\"en:Panoramio\">Panoramio</a></span></b>, was automatically reviewed on 1 December 2016 by <b><a href=\"//commons.wikimedia.org/wiki/User:Panoramio_upload_bot\" title=\"User:Panoramio upload bot\">Panoramio upload bot</a></b>, who confirmed that it was available on Panoramio under the above license on that date.\n</td>\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Star_and_ring.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/60px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/120px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"75\" data-file-height=\"75\"></a></span>\n</td></tr></tbody></table>",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Attribution": {
+        "value": "Nyx Ning",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1563508,
+    "sha256": "aef111b2f32046f15b41585e04471ccf0145a10755d39747f9c31bdfc126dcfe",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Wulongtianshengsanqiao.JPG",
+    "products": [
+      "chongqing-wulong-5-day-private-tour",
+      "chengdu-chongqing-8-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "chongqing-east",
+    "oldSrc": "/images/destinations/chongqing/chongqing-east-station-1200.webp",
+    "title": "File:September 2025 at Chongqing East Railway Station 02.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/chongqing-east.webp",
+    "width": 3200,
+    "height": 1802,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+    "sourceWidth": 4000,
+    "sourceHeight": 2252,
+    "metadata": {
+      "DateTime": {
+        "value": "2025-09-23 12:34:19",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "September 2025 at Chongqing East Railway Station 02",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "CC-Zero|Self-published work|Files with coordinates missing SDC location of creation|China photographs taken on 2025-09-06|Chongqingdong Railway Station|September 2025 in rail transport in Chongqing|Railway photographs taken on 2025-09-06",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "29.488573",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "106.665398",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "September 2025 at Chongqing East Railway Station",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2025-09-06 17:13:41",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Renek78\" title=\"User:Renek78\">Renek78</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Zero, Public Domain Dedication",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 586774,
+    "sha256": "57b369d26faaa3ee25bc60e1acc59ac2fc610084b39a762061d9650b4a2c983f",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:September_2025_at_Chongqing_East_Railway_Station_02.jpg",
+    "products": [
+      "chongqing-wulong-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "furong-waterfall",
+    "oldSrc": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+    "title": "File:1 furong panorama 2012.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/furong-waterfall.webp",
+    "width": 3200,
+    "height": 1855,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+    "sourceWidth": 12183,
+    "sourceHeight": 7062,
+    "metadata": {
+      "DateTime": {
+        "value": "2013-09-09 09:48:53",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "1 furong panorama 2012",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Waterfalls in China|GFDL|Taken with Nikon D800|Tujia people|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Self-published work|Images with extracted images|Large images|Panoramas of China|Waterfalls in Hunan|Furong waterfalls|Miao architecture",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Waterfall of the Furong ancient town (<div lang=\"zh\" dir=\"ltr\" class=\"description zh\" style=\"display:inline;\">芙蓉镇</div>) <a href=\"https://en.wikipedia.org/wiki/Yongshun_County\" class=\"extiw\" title=\"en:Yongshun County\">Yongshun County</a> hunan province china xiangxi tujia and miao autonomous region 2012 panorama day waterfall wangcun  (<div lang=\"zh\" dir=\"ltr\" class=\"description zh\" style=\"display:inline;\">王村镇</div>).",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "chensiyuan",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "chensiyuan",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1639062,
+    "sha256": "70a114f1071086fdbfb45bf8dbf93b6ef584ac652bc8f15ff07dca475af23d2c",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+    "products": [
+      "zhangjiajie-furong-fenghuang-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "furong-night",
+    "oldSrc": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-night-960.webp",
+    "title": "File:Furongzhen nuit.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/furong-night.webp",
+    "width": 2160,
+    "height": 3840,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Furongzhen_nuit.jpg",
+    "sourceWidth": 2322,
+    "sourceHeight": 4128,
+    "metadata": {
+      "DateTime": {
+        "value": "2017-11-10 22:43:35",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Furongzhen nuit",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Watermills in China|Waterfalls in China|Furong (Yongshun)|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Furong Town (<div lang=\"zh\" dir=\"ltr\" class=\"description zh\" style=\"display:inline;\">芙蓉镇</div>), Hunan province, China.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2017-05-30 23:16:12",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Popolon\" title=\"User:Popolon\">Popolon</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1186456,
+    "sha256": "511352898b79f8c06e10d62345436915084a12ae6d014490a8011adfa8995fa6",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Furongzhen_nuit.jpg",
+    "products": [
+      "zhangjiajie-furong-fenghuang-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "fenghuang-river",
+    "oldSrc": "/images/guides/border-town-fenghuang-chadong-shen-congwen/tuojiang-stepping-stones-1126.webp",
+    "title": "File:凤凰古城 2024-06-22 12.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/fenghuang-river.webp",
+    "width": 2560,
+    "height": 1707,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%87%A4%E5%87%B0%E5%8F%A4%E5%9F%8E_2024-06-22_12.jpg",
+    "sourceWidth": 2560,
+    "sourceHeight": 1707,
+    "metadata": {
+      "DateTime": {
+        "value": "2025-09-27 07:04:53",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "凤凰古城 2024-06-22 12",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Photographs by Xiquinho Silva|Fenghuang Ancient Town",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "27.952343",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "109.600653",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Fenghuang Ancient City, also known as Phoenix Ancient Town, is a historical gem located in the Hunan province of China. This well-preserved town is celebrated for its unique stilted houses, vibrant cultural tapestry woven by the Miao and Tujia ethnic minorities, and the picturesque Tuojiang River that meanders through it. \nVisitors to Fenghuang can explore the narrow alleys lined with traditional wooden houses, witness the daily life of locals along the riverbanks, and immerse themselves in a place where history and culture have remained largely intact through the centuries.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2024-06-22 13:32:38",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/7138083@N04/54686896376/\">https://www.flickr.com/photos/7138083@N04/54686896376/</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "xiquinhosilva",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1292538,
+    "sha256": "e1f4e839842fc3ed1b228ecc707b2b4b986d47daca8376f532992a1d5dc831d0",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Fenghuang_Ancient_Town.jpg",
+    "products": [
+      "zhangjiajie-furong-fenghuang-7-day-private-tour",
+      "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "huangguoshu",
+    "oldSrc": "/images/tours/guizhou-huangguoshu-libo-miao-7-day-private-tour/gallery-1.webp",
+    "title": "File:Huangguoshu Waterfall 2.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/huangguoshu.webp",
+    "width": 2061,
+    "height": 3840,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huangguoshu_Waterfall_2.jpg",
+    "sourceWidth": 2196,
+    "sourceHeight": 4091,
+    "metadata": {
+      "DateTime": {
+        "value": "2012-06-04 10:33:26",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Huangguoshu Waterfall 2",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Huangguoshu Waterfall|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Huangguoshu Waterfall Guizhou province",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2012-06-04",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Dounai&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Dounai (page does not exist)\">Dounai</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 821412,
+    "sha256": "61a1507266fd2f0c82bfbdeabc9dce9864351d0abba32ec77f4443fc546fe1e9",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Huangguoshu_Waterfall_2.jpg",
+    "products": [
+      "guizhou-huangguoshu-libo-miao-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "dazu",
+    "oldSrc": "/images/destinations/chongqing/dazu-1200.webp",
+    "title": "File:Dazu rock carvings - Baodingshan, 大足石刻-宝顶山摩崖造像, Chongqing, 2023 (53563776088).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/dazu.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_%E5%A4%A7%E8%B6%B3%E7%9F%B3%E5%88%BB-%E5%AE%9D%E9%A1%B6%E5%B1%B1%E6%91%A9%E5%B4%96%E9%80%A0%E5%83%8F,_Chongqing,_2023_(53563776088).jpg",
+    "sourceWidth": 6000,
+    "sourceHeight": 4000,
+    "metadata": {
+      "DateTime": {
+        "value": "2024-10-08 06:43:23",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Dazu rock carvings - Baodingshan, 大足石刻-宝顶山摩崖造像, Chongqing, 2023 (53563776088)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Flickr images reviewed by FlickreviewR 2|Dazu scene 11, Parinirvana|Flickr images missing SDC published in",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Dazu rock carvings - Baodingshan, 大足石刻-宝顶山摩崖造像, Chongqing, 2023",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2023-08-14 11:54",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/cogburnphoto/53563776088/\">Dazu rock carvings - Baodingshan, 大足石刻-宝顶山摩崖造像, Chongqing, 2023</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/193805610@N04\">JL Cogburn</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 2.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-2.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1922452,
+    "sha256": "e7db4ddf664d471b87f8e085b77bc9fe629ed9a39883ebe30c0dd7989e08ea31",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Dazu_rock_carvings_-_Baodingshan,_%E5%A4%A7%E8%B6%B3%E7%9F%B3%E5%88%BB-%E5%AE%9D%E9%A1%B6%E5%B1%B1%E6%91%A9%E5%B4%96%E9%80%A0%E5%83%8F,_Chongqing,_2023_(53563776088).jpg",
+    "products": [
+      "chengdu-chongqing-8-day-private-tour",
+      "chongqing-yangtze-cruise-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "hongcun",
+    "oldSrc": "/images/tours/huangshan-hongcun-huizhou-5-day-private-tour/gallery-1.webp",
+    "title": "File:Moon Pond, Hongcun.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/hongcun.webp",
+    "width": 3200,
+    "height": 2400,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moon_Pond,_Hongcun.jpg",
+    "sourceWidth": 4000,
+    "sourceHeight": 3000,
+    "metadata": {
+      "DateTime": {
+        "value": "2023-01-31 13:09:44",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Moon Pond, Hongcun",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Self-published work|Moon Pond",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Moon Pond",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2022-10-22",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1042720,
+    "sha256": "ffbe8a5e27eadb47d4b8a1c6e4a190fcc483d64dd40521751fc3b2212ba63e62",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Huangshan_11.jpg",
+    "products": [
+      "huangshan-hongcun-huizhou-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "greeting-pine",
+    "oldSrc": "/images/tours/huangshan-hongcun-huizhou-5-day-private-tour/route-day-2.webp",
+    "title": "File:Huangshan, September 2018 27.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/greeting-pine.webp",
+    "width": 3200,
+    "height": 2133,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huangshan,_September_2018_27.jpg",
+    "sourceWidth": 6000,
+    "sourceHeight": 4000,
+    "metadata": {
+      "DateTime": {
+        "value": "2020-05-31 11:21:30",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Huangshan, September 2018 27",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Cliff inscriptions of Huangshan|Self-published work|Yuping Peak|Greeting Pine of Huangshan",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "​玉屏峰迎客松",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2018-09-11 09:43:24",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "De-Shao Liu (<a href=\"//commons.wikimedia.org/wiki/User:Terry850324\" title=\"User:Terry850324\">Terry850324</a>)",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1467932,
+    "sha256": "1e0fc177927b07bf8a7da0271e00d8dc384e6ee3e8f15f12730a838cd432d72b",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Huangshan_Yingkesong.jpg",
+    "products": [
+      "huangshan-hongcun-huizhou-5-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "shaolin",
+    "oldSrc": "/images/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/gallery-1.webp",
+    "title": "File:Shaolin Temple (10199309404).jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/shaolin.webp",
+    "width": 2560,
+    "height": 3840,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199309404).jpg",
+    "sourceWidth": 2592,
+    "sourceHeight": 3888,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-08-21 18:59:44",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Shaolin Temple (10199309404)",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "CC-Zero|Photographs by Gary Lee Todd|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan|Shaolin Monastery drum tower",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "34.508671",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "112.935268",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Dengfeng, Henan Province. Complete indexed photo collection at WorldHistoryPics.com.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2007-12-15 12:38",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/10199309404/\">Shaolin Temple</a>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Zero, Public Domain Dedication",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "false",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1099950,
+    "sha256": "1ffee2562b335d25d243ce637d2a82bb42941e92148617c29bf0b90fe3622c29",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199309404).jpg",
+    "products": [
+      "luoyang-dengfeng-kaifeng-6-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "horses",
+    "oldSrc": "/images/tours/hulunbuir-7-day-private-tour/gallery-1.webp",
+    "title": "File:Hulunbuir.cheveaux steppe.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/horses.webp",
+    "width": 3200,
+    "height": 2119,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hulunbuir.cheveaux_steppe.jpg",
+    "sourceWidth": 4940,
+    "sourceHeight": 3272,
+    "metadata": {
+      "DateTime": {
+        "value": "2016-06-28 23:06:45",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Hulunbuir.cheveaux steppe",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Hulunbuir|GFDL|Files with no machine-readable source|License migration redundant|Mouse dun horses|Self-published work|Images without source|Files uploaded over 3 years ago in a speedy deletion subcategory|Horses of Inner Mongolia|Chinese Mongolian horse",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Chevaux en semi-liberté dans les steppes de Hulunbuir, Mongolie-Intérieure, en République populaire de Chine.",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2016-05-22 10:09",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Popolon\" title=\"User:Popolon\">User:Popolon</a>",
+        "source": "commons-desc-page"
+      },
+      "Permission": {
+        "value": "You may select the license of your choice.",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseShortName": {
+        "value": "CC BY 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1383436,
+    "sha256": "fd849ff9bdc777de679a6e1b0a0323e32a15b852cdd212f1b10a20e20158e7c5",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Horses_in_Zhalatu.jpg",
+    "products": [
+      "hulunbuir-7-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  },
+  {
+    "id": "huaqiangbei",
+    "oldSrc": "/images/tours/shenzhen-family-tech-4-day-private-tour/route-day-2.webp",
+    "title": "File:Huaqiangbei&Shennan Cross2021.jpg",
+    "newSrc": "/images/tours/photo-quality-20261004/huaqiangbei.webp",
+    "width": 2879,
+    "height": 3840,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huaqiangbei%26Shennan_Cross2021.jpg",
+    "sourceWidth": 3071,
+    "sourceHeight": 4096,
+    "metadata": {
+      "DateTime": {
+        "value": "2021-02-08 09:06:06",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Huaqiangbei&Shennan Cross2021",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "China photographs taken on 2021-02-08|SEG Plaza|Huaqiang North Station|Huaqiang North Road, Shenzhen|Huaqiang North|Self-published work|Files with coordinates missing SDC location of creation|Pedestrian zones in Shenzhen|Shennan Middle Road",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "quality",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "GPSLatitude": {
+        "value": "22.540850",
+        "source": "commons-desc-page"
+      },
+      "GPSLongitude": {
+        "value": "114.081711",
+        "source": "commons-desc-page"
+      },
+      "GPSMapDatum": {
+        "value": "WGS-84",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Huaqiangbei area is a major electronics manufacturing hub, and sprawling electronics marketplaces. The right Skyscraper is SEG Plaza",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2021-02-08 14:59:04",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Charlie_fong\" title=\"User:Charlie fong\">Charlie fong</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution-Share Alike 4.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-sa-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "bytes": 1464440,
+    "sha256": "8725caa5e641aaa2e7bc923bd22e04b34ca3f874ffd7f741894dfad8725f967d",
+    "replacesSourceUrl": "https://commons.wikimedia.org/wiki/File:Huaqiangbei%26Shennan_Cross2021.jpg",
+    "products": [
+      "shenzhen-family-tech-4-day-private-tour"
+    ],
+    "visualReview": "Selected photograph checked for the depicted subject, baked-in dates and advertising text. Original photographer credit, where present, is retained."
+  }
+]
