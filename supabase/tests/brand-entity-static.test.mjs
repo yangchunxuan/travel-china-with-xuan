@@ -74,7 +74,11 @@ test("homepage metadata, visible identity and social cards reinforce Homeground 
     assert.match(page, /card: "summary_large_image"/u);
   }
 
-  assert.match(header, /<strong lang="en">Homeground China<\/strong>/u);
+  // The header wordmark is split into folding runs ("Homeground China" folds to "Hi"), but still reads as the brand.
+  assert.match(header, /<HomegroundWordmark \/>/u);
+  const wordmark = await source("components/HomegroundWordmark.tsx");
+  const headerWordmark = wordmark.match(/<strong lang="en">([\s\S]*?)<\/strong>/u)?.[1] ?? "";
+  assert.equal(headerWordmark.replace(/<[^>]+>/gu, ""), "Homeground China");
   assert.match(header, /<small>\{copy\.businessDescriptor\}<\/small>/u);
   assert.match(footer, /<strong lang="en">Homeground China<\/strong>/u);
   assert.match(homepage, /<HomegroundHeader/u);

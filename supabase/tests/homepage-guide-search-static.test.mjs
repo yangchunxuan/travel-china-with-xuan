@@ -185,7 +185,10 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
     ]);
 
   assert.match(homepage, /<HomegroundHeader/);
-  assert.match(header, /<strong lang="en">Homeground China<\/strong>/);
+  // The wordmark lives in HomegroundWordmark (it folds to "Hi" on scroll) and still reads "Homeground China".
+  assert.match(header, /<HomegroundWordmark \/>/);
+  const wordmark = await source("components/HomegroundWordmark.tsx");
+  assert.equal((wordmark.match(/<strong lang="en">([\s\S]*?)<\/strong>/u)?.[1] ?? "").replace(/<[^>]+>/gu, ""), "Homeground China");
   assert.match(homepage, /<RotatingHeroTitle/);
   assert.match(homepage, /canonicalTitle=\{copy\.hero\.title\}/);
   assert.match(homepage, /fixedLines=\{showcase\.heroHeadline\.fixedLines\}/);
