@@ -1,5 +1,5 @@
 /* Read-only browser acceptance of the shared tour photo module. */
-const { chromium } = require('C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const { chromium } = require('playwright');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
@@ -376,7 +376,7 @@ async function runSpecialCases(browser, fixture) {
 (async () => {
   await fs.mkdir(destination, { recursive: true });
   const fixtures = readFixtures();
-  const browser = await chromium.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });
+  const browser = await chromium.launch({ executablePath: process.env.CHROME_BINARY, headless: true });
   const results = [];
   let special = [];
   try {

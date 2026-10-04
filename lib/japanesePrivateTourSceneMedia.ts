@@ -12,6 +12,29 @@ const subject = (label: string, alt: string): JapaneseSceneSubject => ({ label, 
 // These subjects describe the exact, previously reviewed source photograph.
 // They do not inherit another day's sightseeing or service promises.
 const subjects: Readonly<Record<string, JapaneseSceneSubject>> = {
+  "added-volga": subject("冬のヴォルガ・マナー", "ヴォルガ・マナーに再建された聖ニコライの建物と雪景色"),
+  "added-zhenyuan": subject("鎮遠古城の川辺", "鎮遠古城の川辺"),
+  "added-chengqi": subject("承啓楼", "承啓楼"),
+  "added-xidi": subject("西逓の古村", "西逓古村の入口"),
+  "added-chengkan": subject("呈坎の古村", "呈坎の古村"),
+  "added-sanqingshan": subject("三清山", "三清山"),
+  "added-shangrao": subject("上饒駅", "上饒駅"),
+  "added-changbai": subject("長白山の冬景色", "和平スキー場付近から望む長白山の冬景色"),
+  "added-zhengzhou": subject("鄭州の街並み", "鄭州の街並み"),
+  "added-whitehorse": subject("洛陽の白馬寺", "洛陽の白馬寺"),
+  "added-dam": subject("三峡ダム", "三峡ダム"),
+  "added-datong": subject("大同の城壁", "大同の城壁"),
+  "added-taiyuan": subject("太原の汾河公園", "太原の汾河公園"),
+  "added-jinci": subject("晋祠", "晋祠の橋と古建築"),
+  "added-hailar": subject("ハイラルの街並み", "ハイラルの街並み"),
+  "added-genhe": subject("根河の森林風景", "根河付近の大興安嶺の川と森林"),
+  "added-manzhouli": subject("満洲里の街並み", "満洲里の街並み"),
+  "added-hulun": subject("呼倫湖", "呼倫湖"),
+  "added-gorge": subject("虎跳峡", "虎跳峡"),
+  "added-songzanlin": subject("松賛林寺", "周囲の山々を背にした松賛林寺"),
+  "added-jiaohe": subject("トルファンの交河故城", "トルファン近郊に残る交河故城の土の遺構"),
+  "added-tianchi": subject("天山天池", "新疆・天山天池の湖水と山々"),
+  "added-urumqi": subject("紅山から望むウルムチ", "紅山から望むウルムチ"),
   "beijing-city": subject("北京の街並み", "夜の北京の高架道路と現代的な高層ビル群"),
   "beijing-departure": subject("北京の街並み", "北京の歴史的な屋根と、その向こうに見える現代のCBD"),
   "forbidden-city": subject("故宮", "北京の故宮にある赤い宮殿の回廊"),
@@ -106,6 +129,9 @@ for (const [id, asset] of Object.entries(privateTourSceneAssets)) {
 }
 
 function captionFor(id: string, copy: JapaneseSceneSubject, mode: "scene" | "preview" | "option"): string {
+  if (id === "added-changbai") {
+    return "長白山の冬景色｜実際のスキー場は旅行日程に合わせて確認";
+  }
   if (id === "great-wall") {
     return "北京近郊の長城の風景";
   }

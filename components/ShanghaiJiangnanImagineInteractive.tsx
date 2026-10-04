@@ -301,7 +301,7 @@ export function ShanghaiJiangnanHeroDeck({
                 priority={currentIndex === 0 && depth === 0}
                 sizes="(max-width: 760px) 92vw, (max-width: 1100px) 44vw, 500px"
                 src={image.src}
-                style={{ objectPosition: image.objectPosition }}
+                style={{ objectPosition: image.objectPosition, objectFit: image.height > image.width ? "contain" : "cover" }}
                 onError={() => setFailedPhotos((existing) => new Set([...existing, image.src]))}
               />
             </span>
@@ -540,6 +540,7 @@ function ShanghaiJiangnanDayMedia({
   title,
   unavailable,
   mobile = true,
+  onInteract,
 }: {
   dayLabel: string;
   scenesLabel: string;
@@ -547,6 +548,7 @@ function ShanghaiJiangnanDayMedia({
   title: string;
   unavailable: string;
   mobile?: boolean;
+  onInteract?: () => void;
 }) {
   const [activeVariant, setActiveVariant] = useState(0);
   const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
@@ -555,7 +557,7 @@ function ShanghaiJiangnanDayMedia({
   const selected = available[currentIndex];
 
   return (
-    <figure className={mobile ? styles.routeMobileMedia : styles.routeMedia} data-route-photo={mobile ? "mobile" : "desktop"}>
+    <figure className={mobile ? styles.routeMobileMedia : styles.routeMedia} data-route-photo={mobile ? "mobile" : "desktop"} onFocusCapture={onInteract} onPointerDownCapture={onInteract}>
       {!mobile ? <p className={styles.routePhotoHeading}>{dayLabel} · {title}</p> : null}
       <div className={mobile ? styles.routeMobileStage : styles.routeImageFrame} data-source-src={selected?.image.src ?? ""} data-empty={!selected ? "true" : undefined}>
         {selected ? (
@@ -568,7 +570,7 @@ function ShanghaiJiangnanDayMedia({
                 fill
                 sizes={mobile ? "(max-width: 760px) 92vw, 1px" : "(max-width: 1100px) 48vw, 650px"}
                 src={selected.image.src}
-                style={{ objectPosition: selected.image.objectPosition }}
+                style={{ objectPosition: selected.image.objectPosition, objectFit: selected.image.height > selected.image.width ? "contain" : "cover" }}
                 onError={() => setFailedPhotos((existing) => new Set([...existing, selected.image.src]))}
               />
             </span>
@@ -705,6 +707,7 @@ export function ShanghaiJiangnanRouteExplorer({
         title={activeDay.title}
         unavailable={controls.unavailable}
         mobile={false}
+        onInteract={() => selectDay(activeIndex)}
       /> : null}
     </div>
   );

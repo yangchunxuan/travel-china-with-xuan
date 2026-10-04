@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { stat } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import { execFileSync } from "node:child_process";
+import { pathToFileURL } from "node:url";
 
 import {
   collectPrivateTourPhotos,
@@ -16,9 +18,23 @@ import {
 import { privateTourAdditionalMediaBySlug } from "../../lib/privateTourPhotoAdditions.ts";
 
 const publicRoot = path.resolve(import.meta.dirname, "../../public");
-const locales = ["en", "zh", "ko"];
+const locales = ["en", "zh", "ko", "ja"];
 const photo = (src, caption = src) => ({ src, caption, alt: caption, width: 1600, height: 1000 });
 const variant = (src, label = src) => ({ label, image: photo(src, label) });
+
+// Japanese modules use the application's extensionless TS imports.
+const japaneseFixtures = new Map(JSON.parse(execFileSync(process.execPath, [
+  "--experimental-strip-types", "--no-warnings", "--loader",
+  pathToFileURL(path.resolve(import.meta.dirname, "../../tools/ts-extension-loader.mjs")).href,
+  "--input-type=module", "-e", `
+    import { privateTourProducts } from ${JSON.stringify(pathToFileURL(path.resolve(import.meta.dirname, "../../lib/privateTourProducts.ts")).href)};
+    import { localizeJapanesePrivateTourProduct } from ${JSON.stringify(pathToFileURL(path.resolve(import.meta.dirname, "../../lib/localizeJapanesePrivateTourProduct.ts")).href)};
+    console.log(JSON.stringify(privateTourProducts.map(product => {
+      const { heroImage, gallery, routeMedia } = localizeJapanesePrivateTourProduct(product);
+      return [product.slug, { heroImage, gallery, routeMedia }];
+    })));
+  `,
+], { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 })));
 
 test("route-media merging preserves the original scene and additions on the same day", () => {
   const primary = variant("/day-2-primary.webp", "Primary scene");
@@ -114,8 +130,8 @@ test("day photo assignments and image sources stay consistent in every product l
   for (const product of [...privateTourProducts, ...privateTourPreviewProducts]) {
     const expectedSources = collectPrivateTourPhotos(product).map(({ src }) => src);
     const expectedGroups = (product.routeMedia ?? []).map(({ day, variants }) => ({ day, sources: variants.map(({ image }) => image.src) }));
-    for (const locale of locales) {
-      const localized = localizePrivateTourProduct(product, locale);
+    for (const locale of locales.filter(value => value !== "ja" || privateTourProducts.includes(product))) {
+      const localized = locale === "ja" ? japaneseFixtures.get(product.slug) : localizePrivateTourProduct(product, locale);
       assert.deepEqual(collectPrivateTourPhotos(localized).map(({ src }) => src), expectedSources, `${product.slug}/${locale}: hero source drift`);
       assert.deepEqual(localized.routeMedia.map(({ day, variants }) => ({ day, sources: variants.map(({ image }) => image.src) })), expectedGroups, `${product.slug}/${locale}: day source drift`);
       for (const { day, variants } of localized.routeMedia) {

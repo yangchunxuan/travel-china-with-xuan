@@ -1667,7 +1667,7 @@ export const privateTourSceneAssets: Readonly<Record<string, SceneAsset>> = {
     "label": {
       "en": "Xijiang Miao Village",
       "zh": "西江苗寨",
-      "ko": "시쟝 먀오 마을"
+      "ko": "시장 먀오족 마을"
     },
     "credit": {
       "subject": {
@@ -2685,6 +2685,834 @@ export const privateTourSceneAssets: Readonly<Record<string, SceneAsset>> = {
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "provenance": "public/images/guides/guiyang-nanming-old-city-day-to-night-walk/image-plan.json",
+    "rightsBasis": "published-license"
+  },
+  "added-volga": {
+    "image": {
+      "src": "/images/tours/shared-scenes/volga-1600.webp",
+      "width": 945,
+      "height": 1260,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "The reconstructed St Nicholas building at Volga Manor in snow",
+        "zh": "伏尔加庄园内雪中的复建圣尼古拉建筑",
+        "ko": "볼가 장원의 눈 덮인 성 니콜라스 재건 건물"
+      },
+      "caption": {
+        "en": "Volga Manor in winter",
+        "zh": "冬季伏尔加庄园",
+        "ko": "겨울의 볼가 장원"
+      }
+    },
+    "label": {
+      "en": "Volga Manor in winter",
+      "zh": "冬季伏尔加庄园",
+      "ko": "겨울의 볼가 장원"
+    },
+    "credit": {
+      "subject": {
+        "en": "Volga Manor in winter",
+        "zh": "冬季伏尔加庄园",
+        "ko": "겨울의 볼가 장원"
+      },
+      "author": "Housl",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%93%88%E5%B0%94%E6%BB%A8%E4%BC%8F%E5%B0%94%E5%8A%A0%E5%BA%84%E5%9B%AD%E4%B8%AD%E7%9A%84%E5%9C%A3%E2%80%A2%E5%B0%BC%E5%8F%A4%E6%8B%89%E5%A4%A7%E6%95%99%E5%A0%82.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "哈尔滨伏尔加庄园中的圣•尼古拉大教堂.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-zhenyuan": {
+    "image": {
+      "src": "/images/tours/shared-scenes/zhenyuan-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Zhenyuan riverside",
+        "zh": "镇远古城河畔",
+        "ko": "전위안 강변"
+      },
+      "caption": {
+        "en": "Zhenyuan riverside",
+        "zh": "镇远古城河畔",
+        "ko": "전위안 강변"
+      }
+    },
+    "label": {
+      "en": "Zhenyuan riverside",
+      "zh": "镇远古城河畔",
+      "ko": "전위안 강변"
+    },
+    "credit": {
+      "subject": {
+        "en": "Zhenyuan riverside",
+        "zh": "镇远古城河畔",
+        "ko": "전위안 강변"
+      },
+      "author": "Huangdan2060",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wuyang_River_in_Zhenyuan_County_13.jpg",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "provenance": "Wuyang River in Zhenyuan County 13.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-chengqi": {
+    "image": {
+      "src": "/images/tours/shared-scenes/chengqi-1600.webp",
+      "width": 1600,
+      "height": 1000,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Chengqi Lou",
+        "zh": "承启楼",
+        "ko": "청치러우"
+      },
+      "caption": {
+        "en": "Chengqi Lou",
+        "zh": "承启楼",
+        "ko": "청치러우"
+      }
+    },
+    "label": {
+      "en": "Chengqi Lou",
+      "zh": "承启楼",
+      "ko": "청치러우"
+    },
+    "credit": {
+      "subject": {
+        "en": "Chengqi Lou",
+        "zh": "承启楼",
+        "ko": "청치러우"
+      },
+      "author": "颐园新居",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chengqi_Tulou_20140829.JPG",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "Chengqi Tulou 20140829.JPG",
+    "rightsBasis": "published-license"
+  },
+  "added-xidi": {
+    "image": {
+      "src": "/images/tours/shared-scenes/xidi-1600.webp",
+      "width": 960,
+      "height": 720,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "The entrance to Xidi village",
+        "zh": "西递古村入口",
+        "ko": "시디 마을 입구"
+      },
+      "caption": {
+        "en": "Xidi village",
+        "zh": "西递古村",
+        "ko": "시디 마을"
+      }
+    },
+    "label": {
+      "en": "Xidi village",
+      "zh": "西递古村",
+      "ko": "시디 마을"
+    },
+    "credit": {
+      "subject": {
+        "en": "Xidi village",
+        "zh": "西递古村",
+        "ko": "시디 마을"
+      },
+      "author": "EditQ",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xidi_2.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "Xidi 2.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-chengkan": {
+    "image": {
+      "src": "/images/tours/shared-scenes/chengkan-1600.webp",
+      "width": 1500,
+      "height": 1000,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Chengkan village",
+        "zh": "呈坎古村",
+        "ko": "청칸 마을"
+      },
+      "caption": {
+        "en": "Chengkan village",
+        "zh": "呈坎古村",
+        "ko": "청칸 마을"
+      }
+    },
+    "label": {
+      "en": "Chengkan village",
+      "zh": "呈坎古村",
+      "ko": "청칸 마을"
+    },
+    "credit": {
+      "subject": {
+        "en": "Chengkan village",
+        "zh": "呈坎古村",
+        "ko": "청칸 마을"
+      },
+      "author": "Zhangzhugang",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chengkan_2010.11.27_16-10-30.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "Chengkan 2010.11.27 16-10-30.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-sanqingshan": {
+    "image": {
+      "src": "/images/tours/shared-scenes/sanqingshan-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Sanqingshan",
+        "zh": "三清山",
+        "ko": "싼칭산"
+      },
+      "caption": {
+        "en": "Sanqingshan",
+        "zh": "三清山",
+        "ko": "싼칭산"
+      }
+    },
+    "label": {
+      "en": "Sanqingshan",
+      "zh": "三清山",
+      "ko": "싼칭산"
+    },
+    "credit": {
+      "subject": {
+        "en": "Sanqingshan",
+        "zh": "三清山",
+        "ko": "싼칭산"
+      },
+      "author": "Huangdan2060",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sanqing_Mountain_is_surrounded_by_clouds_and_mists1.jpg",
+      "licenseLabel": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "provenance": "Sanqing Mountain is surrounded by clouds and mists1.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-shangrao": {
+    "image": {
+      "src": "/images/tours/shared-scenes/shangrao-1600.webp",
+      "width": 1600,
+      "height": 1063,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Shangrao railway station",
+        "zh": "上饶站",
+        "ko": "상라오역"
+      },
+      "caption": {
+        "en": "Shangrao railway station",
+        "zh": "上饶站",
+        "ko": "상라오역"
+      }
+    },
+    "label": {
+      "en": "Shangrao railway station",
+      "zh": "上饶站",
+      "ko": "상라오역"
+    },
+    "credit": {
+      "subject": {
+        "en": "Shangrao railway station",
+        "zh": "上饶站",
+        "ko": "상라오역"
+      },
+      "author": "MNXANL",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:201705_Station_building_and_Tracks_at_Shangrao_Station.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "201705 Station building and Tracks at Shangrao Station.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-changbai": {
+    "image": {
+      "src": "/images/tours/shared-scenes/changbai-1600.webp",
+      "width": 1600,
+      "height": 1200,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Winter mountain scenery seen from Heping ski area, Changbai",
+        "zh": "从和平滑雪场一带远眺长白山冬景",
+        "ko": "허핑 스키장 일대에서 바라본 창바이산 겨울 풍경"
+      },
+      "caption": {
+        "en": "Changbai winter scenery",
+        "zh": "长白山冬景",
+        "ko": "창바이산 겨울 풍경"
+      }
+    },
+    "label": {
+      "en": "Changbai winter scenery",
+      "zh": "长白山冬景",
+      "ko": "창바이산 겨울 풍경"
+    },
+    "credit": {
+      "subject": {
+        "en": "Changbai winter scenery",
+        "zh": "长白山冬景",
+        "ko": "창바이산 겨울 풍경"
+      },
+      "author": "冥想",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antu2.jpg",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "provenance": "Antu2.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-zhengzhou": {
+    "image": {
+      "src": "/images/tours/shared-scenes/zhengzhou-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Zhengzhou city",
+        "zh": "郑州城市风景",
+        "ko": "정저우 도시 풍경"
+      },
+      "caption": {
+        "en": "Zhengzhou city",
+        "zh": "郑州城市风景",
+        "ko": "정저우 도시 풍경"
+      }
+    },
+    "label": {
+      "en": "Zhengzhou city",
+      "zh": "郑州城市风景",
+      "ko": "정저우 도시 풍경"
+    },
+    "credit": {
+      "subject": {
+        "en": "Zhengzhou city",
+        "zh": "郑州城市风景",
+        "ko": "정저우 도시 풍경"
+      },
+      "author": "Windmemories",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhengzhou_Greenland_Central_Plaza_on_29_Oct_2018.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "Zhengzhou Greenland Central Plaza on 29 Oct 2018.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-whitehorse": {
+    "image": {
+      "src": "/images/tours/shared-scenes/whitehorse-1600.webp",
+      "width": 1600,
+      "height": 1067,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "White Horse Temple",
+        "zh": "洛阳白马寺",
+        "ko": "뤄양 백마사"
+      },
+      "caption": {
+        "en": "White Horse Temple",
+        "zh": "洛阳白马寺",
+        "ko": "뤄양 백마사"
+      }
+    },
+    "label": {
+      "en": "White Horse Temple",
+      "zh": "洛阳白马寺",
+      "ko": "뤄양 백마사"
+    },
+    "credit": {
+      "subject": {
+        "en": "White Horse Temple",
+        "zh": "洛阳白马寺",
+        "ko": "뤄양 백마사"
+      },
+      "author": "Gary Todd",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011-06_White_Horse_Temple_02.jpg",
+      "licenseLabel": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "provenance": "2011-06 White Horse Temple 02.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-dam": {
+    "image": {
+      "src": "/images/tours/shared-scenes/dam-1600.webp",
+      "width": 1024,
+      "height": 568,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Three Gorges Dam",
+        "zh": "三峡大坝",
+        "ko": "싼샤댐"
+      },
+      "caption": {
+        "en": "Three Gorges Dam",
+        "zh": "三峡大坝",
+        "ko": "싼샤댐"
+      }
+    },
+    "label": {
+      "en": "Three Gorges Dam",
+      "zh": "三峡大坝",
+      "ko": "싼샤댐"
+    },
+    "credit": {
+      "subject": {
+        "en": "Three Gorges Dam",
+        "zh": "三峡大坝",
+        "ko": "싼샤댐"
+      },
+      "author": "Thomas  Bächinger",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_Gorges_Dam_2015-07-25.jpg",
+      "licenseLabel": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "provenance": "Three Gorges Dam 2015-07-25.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-datong": {
+    "image": {
+      "src": "/images/tours/shared-scenes/datong-1600.webp",
+      "width": 1024,
+      "height": 683,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Datong city wall",
+        "zh": "大同城墙",
+        "ko": "다퉁 성벽"
+      },
+      "caption": {
+        "en": "Datong city wall",
+        "zh": "大同城墙",
+        "ko": "다퉁 성벽"
+      }
+    },
+    "label": {
+      "en": "Datong city wall",
+      "zh": "大同城墙",
+      "ko": "다퉁 성벽"
+    },
+    "credit": {
+      "subject": {
+        "en": "Datong city wall",
+        "zh": "大同城墙",
+        "ko": "다퉁 성벽"
+      },
+      "author": "xiquinhosilva",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Datong_Ancient_City_Wall_01.jpg",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "provenance": "Datong Ancient City Wall 01.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-taiyuan": {
+    "image": {
+      "src": "/images/tours/shared-scenes/taiyuan-1600.webp",
+      "width": 960,
+      "height": 711,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Taiyuan riverside",
+        "zh": "太原汾河公园",
+        "ko": "타이위안 펀허 공원"
+      },
+      "caption": {
+        "en": "Taiyuan riverside",
+        "zh": "太原汾河公园",
+        "ko": "타이위안 펀허 공원"
+      }
+    },
+    "label": {
+      "en": "Taiyuan riverside",
+      "zh": "太原汾河公园",
+      "ko": "타이위안 펀허 공원"
+    },
+    "credit": {
+      "subject": {
+        "en": "Taiyuan riverside",
+        "zh": "太原汾河公园",
+        "ko": "타이위안 펀허 공원"
+      },
+      "author": "Roland Longbow",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fen_River_Park_Taiyuan_20110709.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "Fen River Park Taiyuan 20110709.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-jinci": {
+    "image": {
+      "src": "/images/tours/shared-scenes/jinci-1600.webp",
+      "width": 960,
+      "height": 558,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "The bridge and historic buildings at Jinci",
+        "zh": "晋祠的桥梁与古建",
+        "ko": "진츠의 다리와 고건축"
+      },
+      "caption": {
+        "en": "Jinci Temple",
+        "zh": "晋祠",
+        "ko": "진츠"
+      }
+    },
+    "label": {
+      "en": "Jinci Temple",
+      "zh": "晋祠",
+      "ko": "진츠"
+    },
+    "credit": {
+      "subject": {
+        "en": "Jinci Temple",
+        "zh": "晋祠",
+        "ko": "진츠"
+      },
+      "author": "xiquinhosilva",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jinci_Temple_74032-Taiyuan_(49222875647).jpg",
+      "licenseLabel": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "provenance": "Jinci Temple 74032-Taiyuan (49222875647).jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-hailar": {
+    "image": {
+      "src": "/images/tours/shared-scenes/hailar-1600.webp",
+      "width": 960,
+      "height": 705,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Hailar city",
+        "zh": "海拉尔城市风景",
+        "ko": "하이라얼 도시 풍경"
+      },
+      "caption": {
+        "en": "Hailar city",
+        "zh": "海拉尔城市风景",
+        "ko": "하이라얼 도시 풍경"
+      }
+    },
+    "label": {
+      "en": "Hailar city",
+      "zh": "海拉尔城市风景",
+      "ko": "하이라얼 도시 풍경"
+    },
+    "credit": {
+      "subject": {
+        "en": "Hailar city",
+        "zh": "海拉尔城市风景",
+        "ko": "하이라얼 도시 풍경"
+      },
+      "author": "wanghongliu",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B5%B7%E6%8B%89%E5%B0%94_Hailar_-_panoramio.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "海拉尔 Hailar - panoramio.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-genhe": {
+    "image": {
+      "src": "/images/tours/shared-scenes/genhe-1600.webp",
+      "width": 960,
+      "height": 640,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "A river and forest in the Greater Khingan range around Genhe",
+        "zh": "根河一带大兴安岭的河流与森林",
+        "ko": "건허 일대 다싱안링의 강과 숲"
+      },
+      "caption": {
+        "en": "Genhe forest country",
+        "zh": "根河森林风景",
+        "ko": "건허 산림 풍경"
+      }
+    },
+    "label": {
+      "en": "Genhe forest country",
+      "zh": "根河森林风景",
+      "ko": "건허 산림 풍경"
+    },
+    "credit": {
+      "subject": {
+        "en": "Genhe forest country",
+        "zh": "根河森林风景",
+        "ko": "건허 산림 풍경"
+      },
+      "author": "Charlie fong",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gegengol_in_Greater_Khingan_forest2017.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "Gegengol in Greater Khingan forest2017.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-manzhouli": {
+    "image": {
+      "src": "/images/tours/shared-scenes/manzhouli-1600.webp",
+      "width": 960,
+      "height": 720,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Manzhouli city",
+        "zh": "满洲里城市风景",
+        "ko": "만저우리 도시 풍경"
+      },
+      "caption": {
+        "en": "Manzhouli city",
+        "zh": "满洲里城市风景",
+        "ko": "만저우리 도시 풍경"
+      }
+    },
+    "label": {
+      "en": "Manzhouli city",
+      "zh": "满洲里城市风景",
+      "ko": "만저우리 도시 풍경"
+    },
+    "credit": {
+      "subject": {
+        "en": "Manzhouli city",
+        "zh": "满洲里城市风景",
+        "ko": "만저우리 도시 풍경"
+      },
+      "author": "Alexander V. Solomin",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manzhouli_view.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "Manzhouli view.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-hulun": {
+    "image": {
+      "src": "/images/tours/shared-scenes/hulun-1600.webp",
+      "width": 960,
+      "height": 562,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Hulun Lake",
+        "zh": "呼伦湖",
+        "ko": "후룬호"
+      },
+      "caption": {
+        "en": "Hulun Lake",
+        "zh": "呼伦湖",
+        "ko": "후룬호"
+      }
+    },
+    "label": {
+      "en": "Hulun Lake",
+      "zh": "呼伦湖",
+      "ko": "후룬호"
+    },
+    "credit": {
+      "subject": {
+        "en": "Hulun Lake",
+        "zh": "呼伦湖",
+        "ko": "후룬호"
+      },
+      "author": "Fanghong",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:HulunLake2.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "HulunLake2.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-gorge": {
+    "image": {
+      "src": "/images/tours/shared-scenes/gorge-1600.webp",
+      "width": 960,
+      "height": 640,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Tiger Leaping Gorge",
+        "zh": "虎跳峡",
+        "ko": "후탸오샤"
+      },
+      "caption": {
+        "en": "Tiger Leaping Gorge",
+        "zh": "虎跳峡",
+        "ko": "후탸오샤"
+      }
+    },
+    "label": {
+      "en": "Tiger Leaping Gorge",
+      "zh": "虎跳峡",
+      "ko": "후탸오샤"
+    },
+    "credit": {
+      "subject": {
+        "en": "Tiger Leaping Gorge",
+        "zh": "虎跳峡",
+        "ko": "후탸오샤"
+      },
+      "author": "CEphoto, Uwe Aranas",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yunnan_China_Tiger-Leaping-Gorge-01.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "Yunnan China Tiger-Leaping-Gorge-01.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-songzanlin": {
+    "image": {
+      "src": "/images/tours/shared-scenes/songzanlin-1600.webp",
+      "width": 960,
+      "height": 348,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Songzanlin Monastery with the surrounding hills",
+        "zh": "松赞林寺与周围群山",
+        "ko": "산으로 둘러싸인 쑹짠린쓰"
+      },
+      "caption": {
+        "en": "Songzanlin Monastery",
+        "zh": "松赞林寺",
+        "ko": "쑹짠린쓰"
+      }
+    },
+    "label": {
+      "en": "Songzanlin Monastery",
+      "zh": "松赞林寺",
+      "ko": "쑹짠린쓰"
+    },
+    "credit": {
+      "subject": {
+        "en": "Songzanlin Monastery",
+        "zh": "松赞林寺",
+        "ko": "쑹짠린쓰"
+      },
+      "author": "Chensiyuan",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1_songzanlin_monastery_yunnan_2018.jpg",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "provenance": "1 songzanlin monastery yunnan 2018.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-jiaohe": {
+    "image": {
+      "src": "/images/tours/shared-scenes/jiaohe-1600.webp",
+      "width": 960,
+      "height": 720,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "The earthen ruins of Jiaohe near Turpan",
+        "zh": "吐鲁番附近交河故城的夯土遗址",
+        "ko": "투루판 인근 자오허 고성의 흙 유적"
+      },
+      "caption": {
+        "en": "Jiaohe ruins, Turpan",
+        "zh": "吐鲁番交河故城",
+        "ko": "투루판 자오허 고성"
+      }
+    },
+    "label": {
+      "en": "Jiaohe ruins, Turpan",
+      "zh": "吐鲁番交河故城",
+      "ko": "투루판 자오허 고성"
+    },
+    "credit": {
+      "subject": {
+        "en": "Jiaohe ruins, Turpan",
+        "zh": "吐鲁番交河故城",
+        "ko": "투루판 자오허 고성"
+      },
+      "author": "Hiroooooo",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jiaohe_City(Yarkhoto),Turpan,Xinjiang_HY7.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "provenance": "Jiaohe City(Yarkhoto),Turpan,Xinjiang HY7.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-tianchi": {
+    "image": {
+      "src": "/images/tours/shared-scenes/tianchi-1600.webp",
+      "width": 960,
+      "height": 640,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "The lake and mountains at Tianchi in Xinjiang",
+        "zh": "新疆天山天池的湖水与群山",
+        "ko": "신장 톈산 톈츠의 호수와 산"
+      },
+      "caption": {
+        "en": "Tianshan Heavenly Lake",
+        "zh": "天山天池",
+        "ko": "톈산 톈츠"
+      }
+    },
+    "label": {
+      "en": "Tianshan Heavenly Lake",
+      "zh": "天山天池",
+      "ko": "톈산 톈츠"
+    },
+    "credit": {
+      "subject": {
+        "en": "Tianshan Heavenly Lake",
+        "zh": "天山天池",
+        "ko": "톈산 톈츠"
+      },
+      "author": "Yaoleilei",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tianshan_tianchi.jpg",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "provenance": "Tianshan tianchi.jpg",
+    "rightsBasis": "published-license"
+  },
+  "added-urumqi": {
+    "image": {
+      "src": "/images/tours/shared-scenes/urumqi-1600.webp",
+      "width": 960,
+      "height": 720,
+      "objectPosition": "50% 50%",
+      "alt": {
+        "en": "Urumqi from Hongshan",
+        "zh": "红山所见乌鲁木齐",
+        "ko": "훙산에서 본 우루무치"
+      },
+      "caption": {
+        "en": "Urumqi from Hongshan",
+        "zh": "红山所见乌鲁木齐",
+        "ko": "훙산에서 본 우루무치"
+      }
+    },
+    "label": {
+      "en": "Urumqi from Hongshan",
+      "zh": "红山所见乌鲁木齐",
+      "ko": "훙산에서 본 우루무치"
+    },
+    "credit": {
+      "subject": {
+        "en": "Urumqi from Hongshan",
+        "zh": "红山所见乌鲁木齐",
+        "ko": "훙산에서 본 우루무치"
+      },
+      "author": "Radosław Botev",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Urumqi_skyline_(3).jpg",
+      "licenseLabel": "CC BY 3.0 pl",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en"
+    },
+    "provenance": "Urumqi skyline (3).jpg",
     "rightsBasis": "published-license"
   }
 };
@@ -3885,6 +4713,42 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
       ]
     },
     {
+      "day": 10,
+      "items": [
+        {
+          "asset": "added-jiaohe",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "items": [
+        {
+          "asset": "added-jiaohe",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "items": [
+        {
+          "asset": "added-urumqi",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "items": [
+        {
+          "asset": "added-tianchi",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
       "day": 14,
       "items": [
         {
@@ -3988,6 +4852,42 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
         },
         {
           "asset": "dunhuang",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "items": [
+        {
+          "asset": "added-jiaohe",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "items": [
+        {
+          "asset": "added-jiaohe",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "items": [
+        {
+          "asset": "added-urumqi",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "items": [
+        {
+          "asset": "added-tianchi",
           "mode": "scene"
         }
       ]
@@ -4114,6 +5014,24 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
       "items": [
         {
           "asset": "jade-dragon",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "items": [
+        {
+          "asset": "added-gorge",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "items": [
+        {
+          "asset": "added-songzanlin",
           "mode": "scene"
         }
       ]
@@ -5348,6 +6266,15 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
       ]
     },
     {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-zhenyuan",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
       "day": 7,
       "items": [
         {
@@ -5358,6 +6285,15 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
     }
   ],
   "xiamen-tulou-quanzhou-6-day-private-tour": [
+    {
+      "day": 2,
+      "items": [
+        {
+          "asset": "added-chengqi",
+          "mode": "scene"
+        }
+      ]
+    },
     {
       "day": 5,
       "items": [
@@ -5517,6 +6453,24 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
           "mode": "preview"
         }
       ]
+    },
+    {
+      "day": 4,
+      "items": [
+        {
+          "asset": "added-xidi",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "asset": "added-chengkan",
+          "mode": "scene"
+        }
+      ]
     }
   ],
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": [
@@ -5530,6 +6484,15 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
       ]
     },
     {
+      "day": 4,
+      "items": [
+        {
+          "asset": "added-sanqingshan",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
       "day": 5,
       "items": [
         {
@@ -5537,9 +6500,36 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
           "mode": "scene"
         }
       ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-shangrao",
+          "mode": "preview"
+        }
+      ]
     }
   ],
   "changbaishan-yanji-winter-6-day-private-tour": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "asset": "added-changbai",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "items": [
+        {
+          "asset": "added-changbai",
+          "mode": "preview"
+        }
+      ]
+    },
     {
       "day": 4,
       "items": [
@@ -5599,6 +6589,15 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
   ],
   "luoyang-dengfeng-kaifeng-6-day-private-tour": [
     {
+      "day": 1,
+      "items": [
+        {
+          "asset": "added-zhengzhou",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
       "day": 3,
       "items": [
         {
@@ -5606,15 +6605,60 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
           "mode": "scene"
         }
       ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "asset": "added-whitehorse",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-zhengzhou",
+          "mode": "option"
+        }
+      ]
     }
   ],
   "datong-pingyao-6-day-private-tour": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "asset": "added-datong",
+          "mode": "preview"
+        }
+      ]
+    },
     {
       "day": 4,
       "items": [
         {
           "asset": "pingyao",
           "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "asset": "added-taiyuan",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-jinci",
+          "mode": "option"
         }
       ]
     }
@@ -5710,9 +6754,27 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
           "mode": "scene"
         }
       ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-dam",
+          "mode": "scene"
+        }
+      ]
     }
   ],
   "xinjiang-ili-sayram-8-day-private-tour": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "asset": "added-urumqi",
+          "mode": "preview"
+        }
+      ]
+    },
     {
       "day": 3,
       "items": [
@@ -5741,6 +6803,24 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
         {
           "asset": "nalati",
           "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "items": [
+        {
+          "asset": "added-urumqi",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "items": [
+        {
+          "asset": "added-urumqi",
+          "mode": "preview"
         }
       ]
     }
@@ -5814,10 +6894,73 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
         }
       ]
     }
+  ],
+  "harbin-winter-5-day-private-tour": [
+    {
+      "day": 3,
+      "items": [
+        {
+          "asset": "added-volga",
+          "mode": "option"
+        }
+      ]
+    }
+  ],
+  "hulunbuir-7-day-private-tour": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "asset": "added-hailar",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "items": [
+        {
+          "asset": "added-genhe",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "asset": "added-manzhouli",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "added-hulun",
+          "mode": "option"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "items": [
+        {
+          "asset": "added-hailar",
+          "mode": "preview"
+        }
+      ]
+    }
   ]
 };
 
 function captionFor(id: string, mode: SceneMode, label: LocalizedText): LocalizedText {
+  if (id === "added-changbai") return {
+    en: "Changbai Mountain winter scenery · Ski resort confirmed for your dates",
+    zh: "长白山冬景 · 具体雪场按出行日期确认",
+    ko: "창바이산 겨울 풍경 · 실제 스키장은 여행 날짜에 맞춰 확인",
+  };
   if (id === "great-wall") return {
     en: "Great Wall scenery near Beijing",
     zh: "北京附近长城风景",
@@ -5866,738 +7009,3 @@ export const privateTourSceneCreditsBySlug: Readonly<Record<string, readonly Pri
     return [slug, [...bySource.values()]];
   }),
 );
-
-// This records the published baseline plus these supplements, before aggregate deduplication.
-export const privateTourSceneMediaCoverage = {
-  "totals": {
-    "products": 47,
-    "itineraryDays": 414,
-    "beforeCoveredDays": 144,
-    "supplementedDays": 293,
-    "newlyCoveredDays": 235,
-    "afterCoveredDays": 379,
-    "uncoveredDays": 35,
-    "reusedAssets": 83,
-    "productsWithSupplements": 36
-  },
-  "products": [
-    {
-      "slug": "shanghai-suzhou-hangzhou-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 6,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 6,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 9,
-      "afterUniqueImages": 9
-    },
-    {
-      "slug": "chengdu-pandas-sanxingdui-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 7,
-      "afterUniqueImages": 7
-    },
-    {
-      "slug": "xian-terracotta-warriors-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 7,
-      "afterUniqueImages": 7
-    },
-    {
-      "slug": "chongqing-wulong-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 7,
-      "afterUniqueImages": 7
-    },
-    {
-      "slug": "guilin-yangshuo-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 8,
-      "afterUniqueImages": 8
-    },
-    {
-      "slug": "harbin-winter-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 4,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 4,
-      "uncoveredDays": [
-        {
-          "day": 3,
-          "title": "Winter culture day"
-        }
-      ],
-      "originalHeroGalleryImages": 1,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 5
-    },
-    {
-      "slug": "shanghai-suzhou-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 8,
-      "afterUniqueImages": 8
-    },
-    {
-      "slug": "beijing-highlights-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 5,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 8,
-      "afterUniqueImages": 8
-    },
-    {
-      "slug": "zhangjiajie-forest-4-day-private-tour",
-      "days": 4,
-      "beforeCoveredDays": 4,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 4,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 8,
-      "afterUniqueImages": 8
-    },
-    {
-      "slug": "zhangjiajie-furong-fenghuang-7-day-private-tour",
-      "days": 7,
-      "beforeCoveredDays": 7,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 7,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 9,
-      "afterUniqueImages": 9
-    },
-    {
-      "slug": "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 4,
-      "newlyCoveredDays": 4,
-      "afterCoveredDays": 6,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 8
-    },
-    {
-      "slug": "kunming-dali-lijiang-8-day-private-tour",
-      "days": 8,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 7,
-      "newlyCoveredDays": 6,
-      "afterCoveredDays": 8,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 7
-    },
-    {
-      "slug": "guizhou-huangguoshu-libo-miao-7-day-private-tour",
-      "days": 7,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 4,
-      "newlyCoveredDays": 4,
-      "afterCoveredDays": 6,
-      "uncoveredDays": [
-        {
-          "day": 6,
-          "title": "Xijiang to Zhenyuan"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 5
-    },
-    {
-      "slug": "xiamen-tulou-quanzhou-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 2,
-      "newlyCoveredDays": 2,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [
-        {
-          "day": 2,
-          "title": "Chengqi Lou and overnight in Nanjing"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 5
-    },
-    {
-      "slug": "chaozhou-shantou-nanao-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 3,
-      "newlyCoveredDays": 2,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 6,
-      "afterUniqueImages": 6
-    },
-    {
-      "slug": "chengdu-chongqing-8-day-private-tour",
-      "days": 8,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 7,
-      "newlyCoveredDays": 6,
-      "afterCoveredDays": 8,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 12
-    },
-    {
-      "slug": "guangzhou-shunde-foshan-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 3,
-      "newlyCoveredDays": 3,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 3,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 5
-    },
-    {
-      "slug": "huangshan-hongcun-huizhou-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 1,
-      "newlyCoveredDays": 1,
-      "afterCoveredDays": 3,
-      "uncoveredDays": [
-        {
-          "day": 4,
-          "title": "Xidi, Nanping and Guanlu, then Tangmo"
-        },
-        {
-          "day": 5,
-          "title": "Tangmo, Chengkan, Tangyue archways and departure"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "jingdezhen-wuyuan-wangxian-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 2,
-      "newlyCoveredDays": 2,
-      "afterCoveredDays": 4,
-      "uncoveredDays": [
-        {
-          "day": 4,
-          "title": "Sanqingshan mountain day"
-        },
-        {
-          "day": 6,
-          "title": "Depart from Shangrao"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "changbaishan-yanji-winter-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 2,
-      "newlyCoveredDays": 2,
-      "afterCoveredDays": 4,
-      "uncoveredDays": [
-        {
-          "day": 1,
-          "title": "Arrive at Changbaishan resort"
-        },
-        {
-          "day": 2,
-          "title": "Beginner ski lesson and free snow time"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "shanghai-disneyland-5-day-private-tour",
-      "days": 5,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 4,
-      "newlyCoveredDays": 3,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 7
-    },
-    {
-      "slug": "luoyang-dengfeng-kaifeng-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 1,
-      "newlyCoveredDays": 1,
-      "afterCoveredDays": 3,
-      "uncoveredDays": [
-        {
-          "day": 1,
-          "title": "Arrive in Zhengzhou"
-        },
-        {
-          "day": 5,
-          "title": "White Horse Temple and Luoyang"
-        },
-        {
-          "day": 6,
-          "title": "Depart Luoyang or Zhengzhou"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "datong-pingyao-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 1,
-      "newlyCoveredDays": 1,
-      "afterCoveredDays": 3,
-      "uncoveredDays": [
-        {
-          "day": 1,
-          "title": "Arrive in Datong"
-        },
-        {
-          "day": 5,
-          "title": "Shanxi courtyard and Taiyuan"
-        },
-        {
-          "day": 6,
-          "title": "Jinci and departure"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "zhangye-jiayuguan-dunhuang-7-day-private-tour",
-      "days": 7,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 5,
-      "newlyCoveredDays": 5,
-      "afterCoveredDays": 7,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "chongqing-yangtze-cruise-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 4,
-      "newlyCoveredDays": 3,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [
-        {
-          "day": 6,
-          "title": "Three Gorges Dam and Yichang departure"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 6
-    },
-    {
-      "slug": "xinjiang-ili-sayram-8-day-private-tour",
-      "days": 8,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 3,
-      "newlyCoveredDays": 3,
-      "afterCoveredDays": 5,
-      "uncoveredDays": [
-        {
-          "day": 1,
-          "title": "Arrive in Urumqi"
-        },
-        {
-          "day": 7,
-          "title": "Return to Urumqi"
-        },
-        {
-          "day": 8,
-          "title": "Depart Urumqi"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "hulunbuir-7-day-private-tour",
-      "days": 7,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 0,
-      "newlyCoveredDays": 0,
-      "afterCoveredDays": 2,
-      "uncoveredDays": [
-        {
-          "day": 1,
-          "title": "Arrive in Hailar"
-        },
-        {
-          "day": 3,
-          "title": "Wetland, reindeer culture and forest country"
-        },
-        {
-          "day": 5,
-          "title": "Border road to Manzhouli"
-        },
-        {
-          "day": 6,
-          "title": "Hulun Lake and return to Hailar"
-        },
-        {
-          "day": 7,
-          "title": "Depart Hailar"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "kunming-jianshui-yuanyang-6-day-private-tour",
-      "days": 6,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 4,
-      "newlyCoveredDays": 4,
-      "afterCoveredDays": 6,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 5
-    },
-    {
-      "slug": "shenzhen-family-tech-4-day-private-tour",
-      "days": 4,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 2,
-      "newlyCoveredDays": 2,
-      "afterCoveredDays": 4,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 4
-    },
-    {
-      "slug": "beijing-xian-shanghai-12-day-private-tour",
-      "days": 12,
-      "beforeCoveredDays": 2,
-      "supplementedDays": 12,
-      "newlyCoveredDays": 10,
-      "afterCoveredDays": 12,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 4,
-      "afterUniqueImages": 20
-    },
-    {
-      "slug": "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 14,
-      "newlyCoveredDays": 11,
-      "afterCoveredDays": 14,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 25
-    },
-    {
-      "slug": "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 14,
-      "newlyCoveredDays": 11,
-      "afterCoveredDays": 14,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 25
-    },
-    {
-      "slug": "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 14,
-      "newlyCoveredDays": 11,
-      "afterCoveredDays": 14,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 23
-    },
-    {
-      "slug": "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 14,
-      "newlyCoveredDays": 11,
-      "afterCoveredDays": 14,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 23
-    },
-    {
-      "slug": "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
-      "days": 17,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 17,
-      "newlyCoveredDays": 14,
-      "afterCoveredDays": 17,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 30
-    },
-    {
-      "slug": "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
-      "days": 17,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 17,
-      "newlyCoveredDays": 14,
-      "afterCoveredDays": 17,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 30
-    },
-    {
-      "slug": "beijing-xian-silk-road-15-day-private-tour",
-      "days": 15,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 10,
-      "newlyCoveredDays": 7,
-      "afterCoveredDays": 10,
-      "uncoveredDays": [
-        {
-          "day": 10,
-          "title": "High-speed train to Turpan"
-        },
-        {
-          "day": 11,
-          "title": "The Turpan oasis"
-        },
-        {
-          "day": 12,
-          "title": "High-speed train to Urumqi"
-        },
-        {
-          "day": 13,
-          "title": "Heavenly Lake"
-        },
-        {
-          "day": 15,
-          "title": "Depart"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 17
-    },
-    {
-      "slug": "beijing-xian-silk-road-15-day-small-group-tour",
-      "days": 15,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 11,
-      "newlyCoveredDays": 8,
-      "afterCoveredDays": 11,
-      "uncoveredDays": [
-        {
-          "day": 10,
-          "title": "High-speed train to Turpan"
-        },
-        {
-          "day": 11,
-          "title": "The Turpan oasis"
-        },
-        {
-          "day": 12,
-          "title": "High-speed train to Urumqi"
-        },
-        {
-          "day": 13,
-          "title": "Heavenly Lake"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 17
-    },
-    {
-      "slug": "beijing-xian-yunnan-14-day-private-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 12,
-      "newlyCoveredDays": 9,
-      "afterCoveredDays": 12,
-      "uncoveredDays": [
-        {
-          "day": 11,
-          "title": "Tiger Leaping Gorge to Shangri-La"
-        },
-        {
-          "day": 12,
-          "title": "Songzanlin Monastery and Pudacuo"
-        }
-      ],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 17
-    },
-    {
-      "slug": "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
-      "days": 14,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 14,
-      "newlyCoveredDays": 11,
-      "afterCoveredDays": 14,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 23
-    },
-    {
-      "slug": "china-grand-tour-21-day-private-tour",
-      "days": 21,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 21,
-      "newlyCoveredDays": 18,
-      "afterCoveredDays": 21,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 34
-    },
-    {
-      "slug": "beijing-xian-guilin-shanghai-10-day-private-tour",
-      "days": 10,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 10,
-      "newlyCoveredDays": 7,
-      "afterCoveredDays": 10,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 20
-    },
-    {
-      "slug": "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
-      "days": 11,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 11,
-      "newlyCoveredDays": 8,
-      "afterCoveredDays": 11,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 19
-    },
-    {
-      "slug": "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
-      "days": 13,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 13,
-      "newlyCoveredDays": 10,
-      "afterCoveredDays": 13,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 17
-    },
-    {
-      "slug": "beijing-xian-shanghai-8-day-private-tour",
-      "days": 8,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 8,
-      "newlyCoveredDays": 5,
-      "afterCoveredDays": 8,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 16
-    },
-    {
-      "slug": "beijing-xian-guilin-hong-kong-10-day-private-tour",
-      "days": 10,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 10,
-      "newlyCoveredDays": 7,
-      "afterCoveredDays": 10,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 15
-    },
-    {
-      "slug": "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
-      "days": 12,
-      "beforeCoveredDays": 3,
-      "supplementedDays": 12,
-      "newlyCoveredDays": 9,
-      "afterCoveredDays": 12,
-      "uncoveredDays": [],
-      "originalHeroGalleryImages": 2,
-      "originalUniqueImages": 5,
-      "afterUniqueImages": 23
-    }
-  ]
-} as const;

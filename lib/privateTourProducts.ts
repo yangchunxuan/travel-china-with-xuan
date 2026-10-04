@@ -3415,7 +3415,7 @@ function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
     routeMedia: mergePrivateTourRouteMedia([
       ...(product.routeMedia ?? []), ...(additions ?? []), ...(scenes ?? []),
     ]),
-    dateModified: scenes?.length ? "2026-10-03" : "2026-09-28",
+    dateModified: scenes?.length ? "2026-10-04" : "2026-09-28",
   };
 }
 

@@ -481,7 +481,7 @@ test("live-QA tour fact and safety corrections stay complete in all three locale
     return result;
   };
 
-  const harbin = product("harbin-winter-5-day-private-tour", "2026-09-28");
+  const harbin = product("harbin-winter-5-day-private-tour", "2026-10-04");
   const harbinRules = {
     en: {
       dayTwo: ["named, managed", "confirms open that day", "Never enter unmanaged river ice"],
