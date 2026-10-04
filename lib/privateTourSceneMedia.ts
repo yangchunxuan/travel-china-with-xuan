@@ -368,9 +368,9 @@ export const privateTourSceneAssets: Readonly<Record<string, SceneAsset>> = {
         "ko": "청두 자이언트판다 번식연구기지의 자이언트판다"
       },
       "caption": {
-        "en": "A real photo of Chengdu Panda Base, where you go on Day 2. Panda sightings and viewing conditions vary from day to day.",
-        "zh": "真实照片：D2 要去的成都熊猫基地。能看到哪只熊猫、观赏状态如何，要看当天情况。",
-        "ko": "D2에 방문하는 청두 판다기지의 실제 사진입니다. 볼 수 있는 판다와 관람 상태는 그날 상황에 따라 다릅니다."
+        "en": "Chengdu Panda Base",
+        "zh": "成都熊猫基地",
+        "ko": "청두 판다기지"
       }
     },
     "label": {
@@ -430,9 +430,9 @@ export const privateTourSceneAssets: Readonly<Record<string, SceneAsset>> = {
         "ko": "싼싱두이 신관 외관과 입장 광장"
       },
       "caption": {
-        "en": "Where you arrive at the new Sanxingdui Museum. Ticket availability and the gallery order are confirmed separately.",
-        "zh": "三星堆新馆的到达区域。门票能否订到、展厅参观顺序另行确认。",
-        "ko": "싼싱두이 신관에 도착하면 보이는 공간입니다. 입장권 예약 가능 여부와 전시 관람 순서는 별도로 확인합니다."
+        "en": "Sanxingdui Museum",
+        "zh": "三星堆博物馆",
+        "ko": "싼싱두이박물관"
       }
     },
     "label": {

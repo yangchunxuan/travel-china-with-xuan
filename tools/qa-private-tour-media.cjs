@@ -145,33 +145,20 @@ async function testHero(page, fixture, row) {
   // Hover pauses autoplay, making button and caption checks deterministic.
   await hero.hover();
   const before = await imageState(hero);
-  const next = hero.locator(selection.next);
-  const prev = hero.locator(selection.prev);
-  assert.equal(await next.count(), 1, 'Hero has one explicit next control');
-  assert.equal(await prev.count(), 1, 'Hero has one explicit previous control');
-  const counter = hero.locator(selection.counter);
-  assert.equal(await counter.count(), 1, 'Hero has a current / total counter');
-  const startCount = await counter.textContent();
-  await next.click();
+  const stage = hero.locator('button[class*="_deckStage_"]');
+  assert.equal(await stage.count(), 1, 'Hero retains the original clickable photo stack');
+  assert.equal(await hero.locator('[data-photo-next], [data-photo-prev], [data-photo-counter], [class*="_deckControls_"]').count(), 0, 'No added controls or counter');
+  await stage.click();
   await page.waitForFunction(({ selector, previous }) => {
-    const hero = document.querySelector(selector);
-    const active = hero?.querySelector('[data-active="true"], [data-hero-active="true"], [class*="_deckCard_"]:not([aria-hidden="true"])') || hero;
-    const image = active?.querySelector('img');
-    const source = image?.getAttribute('data-source-src') || image?.getAttribute('data-source') || image?.closest('[data-source-src]')?.getAttribute('data-source-src') || image?.getAttribute('src');
-    return source && source !== previous;
-  }, { selector: selection.hero, previous: before.source }, { timeout: 2000 });
-  const after = await checkImage(hero, null, 'Hero next', row);
-  assert.notEqual(await counter.textContent(), startCount, 'Hero next changes counter');
-  await prev.click();
-  await page.waitForTimeout(120);
-  const returned = await checkImage(hero, null, 'Hero previous', row);
-  assert.equal(normalizedImageSource(returned.source), normalizedImageSource(before.source), 'Hero previous returns to original source');
-  assert.equal(await counter.textContent(), startCount, 'Hero previous restores counter');
+    const active = document.querySelector(selector)?.querySelector('[class*="_deckCard_"]:not([aria-hidden="true"])');
+    return active?.getAttribute('data-source-src') !== previous;
+  }, { selector: selection.hero, previous: normalizedImageSource(before.source) }, { timeout: 2000 });
+  const after = await checkImage(hero, null, 'Hero photo click', row);
   const authoredSources = new Set([fixture.heroImage, ...fixture.gallery, ...fixture.routeMedia.flatMap(group => group.variants.map(item => item.image))].map(image => image.src));
   assert.ok(authoredSources.has(normalizedImageSource(after.source)), 'Hero next uses an authored product image');
   assert.equal(Number(await hero.getAttribute('data-photo-count')), authoredSources.size, 'Hero includes every unique verified product photo');
   await hero.screenshot({ path: path.join(destination, `${fixture.locale}-${row.size}-${fixture.slug}-hero.png`) });
-  row.hero = { initialSource: normalizedImageSource(before.source), nextSource: normalizedImageSource(after.source), counter: startCount?.trim() };
+  row.hero = { initialSource: normalizedImageSource(before.source), nextSource: normalizedImageSource(after.source), controlsRemoved: true };
 }
 
 async function runCase(browser, fixture, size) {
@@ -328,10 +315,10 @@ async function runSpecialCases(browser, fixture) {
         await page.waitForTimeout(6100);
         const later = await imageState(hero);
         assert.equal(first.source, later.source, 'Reduced motion disables automatic photo cycling');
-        await hero.locator(selection.next).click();
+        await hero.locator('button[class*="_deckStage_"]').click();
         await page.waitForTimeout(120);
         assert.notEqual((await imageState(hero)).source, first.source, 'Reduced motion retains manual photo controls');
-        row.assertions.push('No automatic transition with prefers-reduced-motion; manual next still works');
+        row.assertions.push('No automatic transition with prefers-reduced-motion; clicking the original photo stack still works');
       } else if (mode === 'broken-route-image') {
         assert.ok(failureDay, 'A dated photo exists for intentional failure check');
         const explorer = page.locator(selection.explorer).first();
@@ -357,8 +344,8 @@ async function runSpecialCases(browser, fixture) {
         await page.waitForTimeout(1300);
         assert.equal(brokenRequests, settledCount, 'Broken-image handling does not repeatedly retry the missing source');
         assert.ok(brokenRequests <= 12, `Bounded missing-image requests (${brokenRequests})`);
-        assert.ok(await hero.locator(selection.next).isEnabled(), 'Photo controls remain enabled after an image fails');
-        await hero.locator(selection.next).click();
+        assert.ok(await hero.locator('button[class*="_deckStage_"]').isEnabled(), 'Original photo stack remains clickable after an image fails');
+        await hero.locator('button[class*="_deckStage_"]').click();
         await checkImage(hero, null, 'After missing image', { media: [] });
         row.assertions.push(`Intentional missing hero image requested ${brokenRequests} times; bounded handling and usable navigation`);
       }

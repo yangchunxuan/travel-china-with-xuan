@@ -103,8 +103,8 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
         "variants": [
           {
             "label": "パンダ基地",
-            "alt": "成都パンダ基地内にある金色のパンダ像",
-            "caption": "写真は生きたパンダではなく像です。実際のパンダの飼育エリアは、朝のうちに見学します。"
+            "alt": "成都パンダ基地のジャイアントパンダ",
+            "caption": "成都パンダ基地"
           }
         ]
       },
@@ -114,7 +114,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
           {
             "label": "三星堆博物館 新館",
             "alt": "三星堆博物館の新館と入口前の広場",
-            "caption": "三星堆博物館新館の到着地点。入場券の空き状況と見学順序は別途確認します。"
+            "caption": "三星堆博物館"
           }
         ]
       },

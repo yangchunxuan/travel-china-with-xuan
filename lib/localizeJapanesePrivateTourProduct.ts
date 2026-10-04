@@ -7,6 +7,8 @@ import { japaneseSmallGroupOverrides } from "./japaneseSmallGroupOverrides";
 import { japanesePrivateTourPhotoAdditionsBySrc } from "./japanesePrivateTourPhotoAdditions";
 import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions";
+import { originalPrivateTourPhotoSource } from "./privateTourPhotoQuality";
+import { withJapanesePhotoQuality } from "./japanesePrivateTourPhotoQuality";
 import {
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
@@ -76,8 +78,8 @@ export function localizeJapanesePrivateTourProduct(
     exclusions: copy.exclusions,
     bookingNote: copy.bookingNote,
     faq: copy.faq,
-    heroImage: { ...source.heroImage, ...copy.heroImage },
-    gallery: source.gallery.map((image, index) => ({ ...image, ...copy.gallery[index] })),
+    heroImage: withJapanesePhotoQuality({ ...source.heroImage, ...copy.heroImage }),
+    gallery: source.gallery.map((image, index) => withJapanesePhotoQuality({ ...image, ...copy.gallery[index] })),
     routeMedia: source.routeMedia.map((group) => {
       const translated = copy.routeMedia?.find((item) => item.day === group.day);
       // Existing authored translations retain their position. Extra scenes
@@ -88,25 +90,26 @@ export function localizeJapanesePrivateTourProduct(
       return {
         day: group.day,
         variants: group.variants.map((variant, index) => {
+          const originalSource = originalPrivateTourPhotoSource(variant.image.src);
           const registeredLegacyAddition = privateTourAdditionalMediaBySlug[product.slug]?.some(
-            (addition) => addition.day === group.day && addition.variants.some((item) => item.image.src === variant.image.src),
+            (addition) => addition.day === group.day && addition.variants.some((item) => item.image.src === originalSource),
           );
           const addedPhotoCopy = registeredLegacyAddition
-            ? japanesePrivateTourPhotoAdditionsBySrc[variant.image.src]
+            ? japanesePrivateTourPhotoAdditionsBySrc[originalSource]
             : undefined;
           const originalPhotoCopy = translated?.variants[index];
-          const scenePhotoCopy = getJapanesePrivateTourSceneCopy(product.slug, group.day, variant.image.src);
+          const scenePhotoCopy = getJapanesePrivateTourSceneCopy(product.slug, group.day, originalSource);
           const photoCopy = addedPhotoCopy ?? originalPhotoCopy ?? scenePhotoCopy;
           if (!photoCopy) {
             throw new Error(`Japanese route photo copy is missing: ${product.slug}, day ${group.day}, ${variant.image.src}`);
           }
           return {
             label: photoCopy.label,
-            image: {
+            image: withJapanesePhotoQuality({
               ...variant.image,
               alt: photoCopy.alt,
               caption: photoCopy.caption,
-            },
+            }),
           };
         }),
       };
