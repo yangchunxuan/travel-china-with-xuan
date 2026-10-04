@@ -12,7 +12,7 @@ test("destination hubs keep each Chinese city name together on narrow screens", 
     source("components/content/EditorialGuidePage.module.css"),
   ]);
 
-  assert.match(page, /beijing: \["北京：", "先分配", "完整的一天，", "再安排景点"\]/);
+  assert.match(page, /beijing: \["北京：", "故宫、长城", "和胡同，", "留足四五晚"\]/);
   assert.match(page, /shanghai: \["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
   assert.match(page, /xian: \["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
   assert.match(page, /hangzhou: \["杭州：", "先决定", "一日往返，", "还是把杭州", "真正住下来"\]/);

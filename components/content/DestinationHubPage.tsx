@@ -46,6 +46,7 @@ import {
 } from "../../lib/attractionReservations";
 import { fillReservationCopy, getAttractionReservationCopy } from "../../lib/attractionReservationsI18n";
 import { cityPageV2 } from "../../lib/cityPage";
+import { getCityOpening, getCityOverviewCards } from "../../lib/cityOverview";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog";
 import { sights, sightsPath } from "../../lib/sights";
 import { getSightsCopy } from "../../lib/sightsI18n";
@@ -61,9 +62,10 @@ import inspirationStyles from "../TravelInspiration.module.css";
 import sightStyles from "../SightsPages.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+const overviewSignalIds = ["nights", "stay", "gateway", "next"] as const;
 
 const zhHeadingSegments = {
-  beijing: ["北京：", "先分配", "完整的一天，", "再安排景点"],
+  beijing: ["北京：", "故宫、长城", "和胡同，", "留足四五晚"],
   shanghai: ["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"],
   xian: ["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"],
   chengdu: ["成都：", "先把城市住稳，", "再搭四川路线"],
@@ -338,6 +340,18 @@ export function DestinationHubPage({
   const explorePath = getSearchSectionPath("explore", locale);
   const openingBody = projectDestinationOpening(body, hubId);
   const overviewSignals = projectDestinationOverview(body, hubId, locale);
+  // A city with hand-written decisions shows those: one answer, then why.
+  const overviewCards = getCityOverviewCards(hubId, locale);
+  const cityOpening = getCityOpening(hubId, locale);
+  const cityOpeningBody: StructuredPageBody | null = cityOpening
+    ? {
+        schemaVersion: body.schemaVersion,
+        blocks: [
+          { id: "city-opening-heading", type: "heading", level: 2, text: cityOpening.heading },
+          ...cityOpening.paragraphs.map((text, index) => ({ id: `city-opening-${index + 1}`, type: "paragraph" as const, text })),
+        ],
+      }
+    : null;
   const stayExample = projectDestinationStayExample(body, hubId);
   const dayTripLinks =
     hubId === "shanghai"
@@ -503,17 +517,28 @@ export function DestinationHubPage({
                   </Link>
                 </div>
                 <div className={destinationStyles.signalGrid}>
-                  {overviewSignals.map((signal, index) => (
-                    <section className={destinationStyles.signalCard} key={signal.id}>
-                      <p>
-                        <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                        {copy.signalLabels[signal.id]}
-                      </p>
-                      <h3>{signal.sourceHeading}</h3>
-                      {signal.emphasis ? <strong>{signal.emphasis}</strong> : null}
-                      <p>{signal.summary}</p>
-                    </section>
-                  ))}
+                  {overviewCards
+                    ? overviewSignalIds.map((id, index) => (
+                        <section className={`${destinationStyles.signalCard} ${destinationStyles.answerCard}`} key={id}>
+                          <p>
+                            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                            {copy.signalLabels[id]}
+                          </p>
+                          <h3>{overviewCards[id].answer}</h3>
+                          <p>{overviewCards[id].detail}</p>
+                        </section>
+                      ))
+                    : overviewSignals.map((signal, index) => (
+                        <section className={destinationStyles.signalCard} key={signal.id}>
+                          <p>
+                            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                            {copy.signalLabels[signal.id]}
+                          </p>
+                          <h3>{signal.sourceHeading}</h3>
+                          {signal.emphasis ? <strong>{signal.emphasis}</strong> : null}
+                          <p>{signal.summary}</p>
+                        </section>
+                      ))}
                 </div>
               </section>
               <DestinationGeographyDiagram
@@ -521,7 +546,11 @@ export function DestinationHubPage({
                 locale={locale}
                 nodes={hub.geometry}
               />
-              {openingBody.blocks.length > 0 ? (
+              {cityOpeningBody ? (
+                <div className={destinationStyles.destinationOpening}>
+                  <PageFamilyRenderer body={cityOpeningBody} />
+                </div>
+              ) : openingBody.blocks.length > 0 ? (
                 <div className={destinationStyles.destinationOpening}>
                   <PageFamilyRenderer body={openingBody} />
                 </div>

@@ -98,9 +98,9 @@ export const destinationHubRegistry = [
   {
     id: "beijing",
     entityId: "city-beijing",
-    heroImagePath: "/images/destinations/beijing/hero-1600.webp",
+    heroImagePath: "/images/destinations/beijing/gulou-hutong-hero-1600.webp",
     heroImageUrl:
-      "https://homegroundchina.com/images/destinations/beijing/hero-1600.webp",
+      "https://homegroundchina.com/images/destinations/beijing/gulou-hutong-hero-1600.webp",
     imageWidth: 1600,
     imageHeight: 1000,
     datePublished: "2026-08-16",
@@ -135,16 +135,16 @@ export const destinationHubRegistry = [
       en: {
         path: hubPath("beijing", "en"),
         title: "Beijing Travel Guide: Stays, Transport & Routes",
-        h1: "Beijing: build the city around complete days, not a landmark list",
+        h1: "Beijing: palaces, the Great Wall and hutongs, over four or five nights",
         description:
           "How many nights Beijing really needs, which area should be your base, how PEK, PKX and eight railway stations reshape the first and last day, and which city should follow.",
         navTitle: "Beijing",
         summary:
-          "Beijing is one municipality holding an imperial centre, a modern political core, hutong neighbourhoods, large gardens, two airports and eight major railway stations. Plan it as four or five nights that buy three or four complete sightseeing days, decide the job of your base before its reputation, and keep the Great Wall and the departure train independent of each other.",
+          "Walk north from Tiananmen through the Forbidden City, climb Jingshan, and a whole field of golden-tiled roofs spreads out below you. Give another day to the Great Wall on its mountain ridges outside the city, and spend your evenings eating and wandering the hutong lanes around the Drum Tower. Each of Beijing's big sights takes half a day to a full day, so four or five nights give you three or four real days without rushing.",
         heroAlt:
-          "Forbidden City roofs seen from the north, with central Beijing beyond.",
+          "Beijing's Drum Tower and Bell Tower rising above grey-tiled hutong roofs, with a busy lane on the right.",
         heroCaption:
-          "Seen from the north, the Forbidden City reads as a whole district rather than one building. That scale is the argument for giving the central axis a complete day.",
+          "Below the Drum Tower and the Bell Tower, grey-tiled hutongs spread in every direction. Come in the late afternoon, eat in the lanes, then walk a few minutes to the lakes at Shichahai.",
         openGraphLocale: "en_US",
         searchTerms: [
           "Beijing travel guide first time",
@@ -154,57 +154,57 @@ export const destinationHubRegistry = [
           "which Great Wall section from Beijing",
         ],
         geography: {
-          title: "Beijing as five directions, not a list of pins",
+          title: "Beijing's sights sit in five directions",
           caption:
-            "Orientation diagram, not to scale. It shows which Beijing tasks share a direction and which need a day of their own.",
+            "Not to scale. Sights in the same direction fit in the same day; the Great Wall needs a whole day of its own.",
           legend: {
-            core: "Central anchor",
-            cluster: "Own block of time",
-            outside: "Independent full day",
-            gateway: "Airport or rail gateway",
+            core: "City centre",
+            cluster: "Half a day or more",
+            outside: "A whole day",
+            gateway: "Airport",
           },
           nodes: {
             axis: {
               label: "Tiananmen · Forbidden City · Jingshan",
-              note: "One substantial central day, walked south to north",
+              note: "A full day, walking south to north",
             },
             south: {
               label: "Qianmen · Temple of Heaven",
-              note: "Southern axis; half to full day",
+              note: "Half a day to a full day",
             },
             northwest: {
               label: "Summer Palace · northwest",
-              note: "Strong half day, often most of a day",
+              note: "At least half a day, often most of one",
             },
             gulou: {
               label: "Gulou · Shichahai",
-              note: "Neighbourhood scale and evenings",
+              note: "Hutong walks and evening meals",
             },
             chaoyang: {
               label: "Chaoyang · CBD",
-              note: "Modern city, dining, late arrivals",
+              note: "Dinners, nightlife, easy after a late flight",
             },
             wall: {
               label: "Great Wall",
-              note: "Outward and return journey; never a companion task",
+              note: "Out and back takes the whole day; add nothing else",
             },
-            pek: { label: "PEK", note: "Northeast, via Dongzhimen" },
-            pkx: { label: "PKX", note: "Far south, via Caoqiao" },
+            pek: { label: "PEK", note: "Northeast; airport train to Dongzhimen" },
+            pkx: { label: "PKX", note: "Far south; airport train to Caoqiao" },
           },
         },
       },
       zh: {
         path: hubPath("beijing", "zh"),
         title: "北京旅行指南：住几晚、住哪里、机场车站与下一站",
-        h1: "北京：先分配完整的一天，再安排景点",
+        h1: "北京：故宫、长城和胡同，留足四五晚",
         description:
           "北京到底需要住几晚、选哪个区域做基地、首都机场与大兴机场和八座主要铁路站怎样改变首末两天，以及北京之后适合接哪座城市。",
         navTitle: "北京",
         summary:
-          "皇城中心、现代政治中心、胡同街区、大型园林、两座机场和八座主要铁路站都在同一个直辖市里。把北京规划成四到五晚、换来三到四个完整游览日；先问住宿区域承担什么任务，再看它的名气；并让长城日和离京车次互不牵连。",
-        heroAlt: "从北侧俯瞰故宫屋顶，远处是北京城区。",
+          "从天安门一路往北穿过故宫，再爬上景山，一片金黄的琉璃瓦屋顶就铺在脚下；另找一天出城，去山脊上走长城；傍晚钻进鼓楼一带的胡同，吃饭、散步。北京的大景点一个就要半天到一天，住四到五晚，才能真正玩满三四天，不用赶。",
+        heroAlt: "北京鼓楼与钟楼立在灰瓦胡同屋顶之上，右侧是热闹的街巷。",
         heroCaption:
-          "从北面看过去，故宫是一整片城区，而不是一座建筑。这个尺度就是中轴线值得留出完整一天的理由。",
+          "鼓楼和钟楼底下，是成片的灰瓦胡同。傍晚来这里，在巷子里吃顿饭，再走几分钟就到什刹海边。",
         openGraphLocale: "zh_CN",
         searchTerms: [
           "第一次去北京旅行攻略",
@@ -214,57 +214,57 @@ export const destinationHubRegistry = [
           "从北京去长城选哪一段",
         ],
         geography: {
-          title: "把北京看成五个方向，而不是一串坐标点",
+          title: "北京的景点分在五个方向",
           caption:
-            "方位示意图，非按比例。它说明哪些北京任务共享同一个方向，哪些必须独立成日。",
+            "示意图，不按比例。同一个方向的景点可以排在同一天；长城要单独留出一整天。",
           legend: {
-            core: "城市中心锚点",
-            cluster: "需要独立时段",
-            outside: "需要独立整天",
-            gateway: "机场或铁路门户",
+            core: "市中心",
+            cluster: "留半天以上",
+            outside: "留一整天",
+            gateway: "机场",
           },
           nodes: {
             axis: {
               label: "天安门 · 故宫 · 景山",
-              note: "一个扎实的中心日，由南向北走",
+              note: "由南往北走，留一整天",
             },
             south: {
               label: "前门 · 天坛",
-              note: "南部中轴；半天到一天",
+              note: "半天到一天",
             },
             northwest: {
               label: "颐和园 · 西北方向",
-              note: "扎实半天，常常接近一天",
+              note: "至少半天，常常要一整天",
             },
             gulou: {
               label: "鼓楼 · 什刹海",
-              note: "街区尺度与夜间时间",
+              note: "逛胡同、傍晚吃饭",
             },
             chaoyang: {
               label: "朝阳 · 国贸",
-              note: "现代城市、餐饮、晚到航班",
+              note: "吃饭、夜生活，晚到也方便",
             },
             wall: {
               label: "长城",
-              note: "需要完整往返；不能当作顺带项目",
+              note: "来回就是一整天，别再塞别的景点",
             },
-            pek: { label: "PEK 首都机场", note: "东北方向，经东直门" },
-            pkx: { label: "PKX 大兴机场", note: "远南方向，经草桥" },
+            pek: { label: "PEK 首都机场", note: "东北方向，坐机场线到东直门" },
+            pkx: { label: "PKX 大兴机场", note: "城南很远，坐机场线到草桥" },
           },
         },
       },
       ko: {
         path: hubPath("beijing", "ko"),
         title: "베이징 여행 가이드: 숙박 일수·지역·기차역·다음 도시",
-        h1: "베이징: 명소 목록보다 온전한 하루를 먼저 배분하세요",
+        h1: "베이징: 자금성, 만리장성, 후퉁까지 4~5박은 머무세요",
         description:
           "베이징에 몇 박이 필요한지, 어느 지역을 거점으로 삼을지, PEK·PKX와 여덟 개 주요 기차역이 첫날과 마지막 날을 어떻게 바꾸는지, 다음 도시는 어디가 좋은지 정리합니다.",
         navTitle: "베이징",
         summary:
-          "옛 황성의 중심, 현대 정치 중심, 후퉁 동네, 대형 정원, 두 공항과 여덟 개 주요 기차역이 하나의 직할시 안에 있습니다. 4~5박으로 3~4일의 온전한 관광일을 만들고, 숙소는 평판이 아니라 맡길 일로 고르며, 만리장성 하루와 출발 열차가 서로 의존하지 않게 하세요.",
-        heroAlt: "북쪽에서 내려다본 자금성 지붕과 그 너머의 베이징 도심.",
+          "톈안먼에서 북쪽으로 자금성을 지나 징산공원에 오르면, 황금빛 기와지붕이 발아래 끝없이 펼쳐집니다. 하루는 도시 밖으로 나가 산등성이를 따라 만리장성을 걷고, 저녁에는 구러우 일대 후퉁 골목에서 밥을 먹고 산책해 보세요. 베이징의 큰 명소는 한 곳에 반나절에서 하루가 걸리니, 4~5박은 머물러야 서두르지 않고 3~4일을 온전히 즐길 수 있습니다.",
+        heroAlt: "회색 기와 후퉁 지붕 위로 솟은 베이징의 고루와 종루, 오른쪽으로는 붐비는 골목.",
         heroCaption:
-          "북쪽에서 보면 자금성은 건물 하나가 아니라 하나의 구역으로 읽힙니다. 이 규모가 중앙축에 온전한 하루를 주어야 하는 이유입니다.",
+          "고루와 종루 아래로 회색 기와의 후퉁이 펼쳐집니다. 늦은 오후에 와서 골목에서 저녁을 먹고, 몇 분만 걸으면 스차하이 호숫가입니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
           "베이징 첫 여행 가이드",
@@ -274,42 +274,42 @@ export const destinationHubRegistry = [
           "베이징 만리장성 어느 구간",
         ],
         geography: {
-          title: "베이징은 목록이 아니라 다섯 방향입니다",
+          title: "베이징의 명소는 다섯 방향에 나뉘어 있습니다",
           caption:
-            "축척이 아닌 방위 개념도입니다. 어떤 과제가 같은 방향을 공유하고 어떤 과제가 하루를 통째로 요구하는지 보여 줍니다.",
+            "축척이 아닌 개념도입니다. 같은 방향의 명소는 하루에 묶을 수 있고, 만리장성은 하루를 따로 비워 두세요.",
           legend: {
-            core: "도심 중심축",
-            cluster: "별도 시간대 필요",
-            outside: "독립된 하루 필요",
-            gateway: "공항 또는 철도 관문",
+            core: "도심",
+            cluster: "반나절 이상",
+            outside: "하루 전체",
+            gateway: "공항",
           },
           nodes: {
             axis: {
               label: "톈안먼 · 자금성 · 징산",
-              note: "남에서 북으로 걷는 도심 하루",
+              note: "남에서 북으로 걷는 하루",
             },
             south: {
               label: "첸먼 · 천단공원",
-              note: "남부 축; 반나절에서 하루",
+              note: "반나절에서 하루",
             },
             northwest: {
               label: "이화원 · 서북부",
-              note: "충실한 반나절, 흔히 하루에 가까움",
+              note: "최소 반나절, 흔히 거의 하루",
             },
             gulou: {
               label: "구러우 · 스차하이",
-              note: "동네 규모와 저녁 시간",
+              note: "후퉁 산책과 저녁 식사",
             },
             chaoyang: {
               label: "차오양 · CBD",
-              note: "현대 도시, 식사, 늦은 도착",
+              note: "식사·밤 문화, 늦게 도착해도 편함",
             },
             wall: {
               label: "만리장성",
-              note: "왕복 이동이 필요; 곁들이는 일정이 될 수 없음",
+              note: "왕복만으로 하루, 다른 일정은 넣지 마세요",
             },
-            pek: { label: "PEK 서우두공항", note: "북동쪽, 둥즈먼 경유" },
-            pkx: { label: "PKX 다싱공항", note: "먼 남쪽, 차오차오 경유" },
+            pek: { label: "PEK 서우두공항", note: "북동쪽, 공항철도로 둥즈먼까지" },
+            pkx: { label: "PKX 다싱공항", note: "먼 남쪽, 공항철도로 차오차오까지" },
           },
         },
       },
