@@ -3,8 +3,8 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const projectRoot = new URL("../../", import.meta.url);
-const source = (relativePath) =>
-  readFile(new URL(relativePath, projectRoot), "utf8");
+const source = async (relativePath) =>
+  (await readFile(new URL(relativePath, projectRoot), "utf8")).replaceAll("\r\n", "\n");
 
 test("destination hubs keep each Chinese city name together on narrow screens", async () => {
   const [page, styles] = await Promise.all([

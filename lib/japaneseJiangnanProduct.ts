@@ -1,5 +1,6 @@
 import { jaPilot } from "./jaPilot";
 import { jaPilotCopy } from "./jaPilotCopy";
+import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
 import {
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
@@ -60,15 +61,20 @@ export function localizeJapaneseJiangnanProduct(
     })),
     routeMedia: source.routeMedia.map((group) => ({
       ...group,
-      variants: group.variants.map((variant) => {
-        const photo = copy.photos.route[group.day - 1];
+      variants: group.variants.map((variant, index) => {
+        const photo = index === 0
+          ? copy.photos.route[group.day - 1]
+          : getJapanesePrivateTourSceneCopy(product.slug, group.day, variant.image.src);
+        if (!photo) {
+          throw new Error(`Japanese Jiangnan photo copy is missing: day ${group.day}, ${variant.image.src}`);
+        }
         return {
           ...variant,
-          label: photo?.label ?? variant.label,
+          label: photo.label,
           image: {
             ...variant.image,
-            alt: photo?.alt ?? variant.image.alt,
-            caption: photo?.caption ?? variant.image.caption,
+            alt: photo.alt,
+            caption: photo.caption,
           },
         };
       }),

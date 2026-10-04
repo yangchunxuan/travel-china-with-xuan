@@ -10,6 +10,10 @@ import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { privateTourSceneMediaBySlug } from "./privateTourSceneMedia.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { mergePrivateTourRouteMedia } from "./privateTourMedia.ts";
 
 export type PrivateTourLocale = HomegroundLocale;
 export type PrivateTourCurrency = "CNY" | "USD" | "KRW";
@@ -3404,13 +3408,14 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
 
 function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
   const additions = privateTourAdditionalMediaBySlug[product.slug];
-  if (!additions?.length) return product;
+  const scenes = privateTourSceneMediaBySlug[product.slug];
+  if (!additions?.length && !scenes?.length) return product;
   return {
     ...product,
-    routeMedia: [...(product.routeMedia ?? []), ...additions].sort(
-      (left, right) => left.day - right.day,
-    ),
-    dateModified: "2026-09-28",
+    routeMedia: mergePrivateTourRouteMedia([
+      ...(product.routeMedia ?? []), ...(additions ?? []), ...(scenes ?? []),
+    ]),
+    dateModified: scenes?.length ? "2026-10-04" : "2026-09-28",
   };
 }
 

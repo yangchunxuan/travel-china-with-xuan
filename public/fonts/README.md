@@ -32,6 +32,12 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-04: added 冥 (U+51A5, photographer attribution) and 汾 (U+6C7E,
+Fen River photo copy) to the Chinese source subset from Noto Serif SC
+version 2.003-H1 at weight 500. Every existing code point and advance width
+was checked and preserved. The committed slice plan remains unchanged;
+the two extra glyphs join the on-demand slice rather than the primary preload.
+
 - `NotoSerifSC[wght].ttf` from the Google Fonts `main` branch, instantiated at
   `wght=500` before subsetting.
 - `PretendardVariable.woff2` from the official Pretendard `v1.3.9` tag.
