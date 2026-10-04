@@ -40,3 +40,20 @@ export function pickVisibleRouteDay(
   }
   return closest?.index ?? null;
 }
+
+/** Cover crops enlarge the rendered image beyond the visible frame width. */
+export function privateTourImageSizes(image: { width: number; height: number }, placement: "hero" | "day-mobile" | "day-desktop"): string {
+  const ratio = image.width / image.height;
+  const coverScale = (frameRatio: number) => image.height > image.width ? 1 : Math.max(1, ratio / frameRatio);
+  const vw = (width: number, scale: number) => `${Math.ceil(width * scale)}vw`;
+  const px = (width: number, scale: number) => `${Math.ceil(width * scale)}px`;
+  if (placement === "hero") {
+    const mobile = coverScale(4 / 3);
+    const desktop = coverScale(4 / 5);
+    return `(max-width: 760px) ${vw(92, mobile)}, (max-width: 1100px) ${vw(44, desktop)}, ${px(500, desktop)}`;
+  }
+  const scale = coverScale(16 / 10);
+  return placement === "day-mobile"
+    ? `(max-width: 760px) ${vw(92, scale)}, 1px`
+    : `(max-width: 1100px) ${vw(48, scale)}, ${px(650, scale)}`;
+}

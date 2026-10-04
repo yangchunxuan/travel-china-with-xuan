@@ -3,7 +3,7 @@
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
 
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   useEffect,
   useMemo,
@@ -24,7 +24,7 @@ import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { isJiangnanTour } from "../lib/tourContactDraft";
 import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
-import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay } from "../lib/privateTourMedia";
+import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
 const interactionCopy: Record<
@@ -221,7 +221,6 @@ export function ShanghaiJiangnanHeroDeck({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [manualPause, setManualPause] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
@@ -249,16 +248,15 @@ export function ShanghaiJiangnanHeroDeck({
   }, []);
 
   useEffect(() => {
-    if (paused || manualPause || hidden || reducedMotion || images.length < 2) return;
+    if (paused || hidden || reducedMotion || images.length < 2) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
-    }, 5000);
+    }, 3600);
     return () => window.clearInterval(timer);
-  }, [images.length, paused, manualPause, hidden, reducedMotion]);
+  }, [images.length, paused, hidden, reducedMotion]);
 
   const move = (delta: number) => {
     if (!images.length) return;
-    setManualPause(true);
     setActiveIndex((current) => (current + delta + images.length) % images.length);
   };
   const handleBlur = (event: FocusEvent<HTMLElement>) => {
@@ -299,7 +297,7 @@ export function ShanghaiJiangnanHeroDeck({
                 fetchPriority={currentIndex === 0 && depth === 0 ? "high" : undefined}
                 fill
                 priority={currentIndex === 0 && depth === 0}
-                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 44vw, 500px"
+                sizes={privateTourImageSizes(image, "hero")}
                 src={image.src}
                 style={{ objectPosition: image.objectPosition, objectFit: image.height > image.width ? "contain" : "cover" }}
                 onError={() => setFailedPhotos((existing) => new Set([...existing, image.src]))}
@@ -309,12 +307,6 @@ export function ShanghaiJiangnanHeroDeck({
         })}
         {!current ? <span className={styles.routeMediaEmpty}>{controls.unavailable}</span> : null}
       </button>
-      {images.length > 1 ? <div className={styles.deckControls}>
-        <button aria-label={controls.previous} data-photo-prev type="button" onClick={() => move(-1)}><ChevronLeft aria-hidden="true" size={18} /></button>
-        <span aria-label={controls.count} data-photo-counter>{currentIndex + 1} / {images.length}</span>
-        {!reducedMotion ? <button aria-label={manualPause ? controls.play : controls.pause} aria-pressed={manualPause} data-photo-pause type="button" onClick={() => setManualPause((value) => !value)}>{manualPause ? <Play aria-hidden="true" size={16} /> : <Pause aria-hidden="true" size={16} />}</button> : null}
-        <button aria-label={controls.next} data-photo-next type="button" onClick={() => move(1)}><ChevronRight aria-hidden="true" size={18} /></button>
-      </div> : null}
       <figcaption className={styles.deckCaption}>
         <span>{current?.caption ?? controls.unavailable}</span>
       </figcaption>
@@ -568,7 +560,7 @@ function ShanghaiJiangnanDayMedia({
               <Image
                 alt={selected.image.alt}
                 fill
-                sizes={mobile ? "(max-width: 760px) 92vw, 1px" : "(max-width: 1100px) 48vw, 650px"}
+                sizes={privateTourImageSizes(selected.image, mobile ? "day-mobile" : "day-desktop")}
                 src={selected.image.src}
                 style={{ objectPosition: selected.image.objectPosition, objectFit: selected.image.height > selected.image.width ? "contain" : "cover" }}
                 onError={() => setFailedPhotos((existing) => new Set([...existing, selected.image.src]))}
