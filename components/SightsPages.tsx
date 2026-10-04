@@ -610,7 +610,10 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
         "@graph": [
           { "@type": "WebPage", "@id": `${url}#webpage`, url, name: sightCopy.name, description: story?.description ?? sightCopy.line,
             inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
-            ...(storyMeta ? { dateModified: storyMeta.reviewedAt, reviewedBy: { "@id": EDITORIAL_PERSON_ID }, citation: storyMeta.sources.map((source) => source.url) } : {}),
+            // Undefined values drop out of the JSON; reviewedBy stays on the WebPage itself (its schema.org domain).
+            dateModified: storyMeta?.reviewedAt,
+            reviewedBy: storyMeta ? { "@id": EDITORIAL_PERSON_ID } : undefined,
+            citation: storyMeta?.sources.map((source) => source.url),
             about: {
               "@type": "TouristAttraction", name: sightCopy.name, image: `${SITE_URL}${image.src}`,
               ...(story ? { description: story.why[0] } : {}),

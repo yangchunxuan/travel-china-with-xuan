@@ -3850,6 +3850,444 @@ export const sightStories: Stories = {
       ],
     },
   },
+  "chen-clan-hall": {
+    en: {
+      description: "Clay figures crowd the roofs of Guangzhou's Chen Clan Ancestral Hall, and its brick is carved in lines as fine as thread. Where to look, and how long.",
+      why: [
+        "Stop in the square outside and look up before you go in. Bright glazed clay figures crowd the ridge above the gate, a whole opera cast among little pavilions, as if a troupe had climbed onto the roof. Find the balconies at its centre, where four tiny spectators lean on the rail to watch the show. Below, a painted door god four metres tall guards each of the black doors. Then step through and keep looking. Beams, screens, railings and walls are carved, moulded or cast, and a bare surface is hard to find.",
+        "Chen families from 72 counties across Guangdong built it in the 1890s. Their young men lodged here when they came to the provincial capital to sit the imperial exams, wait for a post, or deal with taxes and lawsuits. In effect it was a Guangzhou office for the Chens of every county, and its carvings are full of good wishes for the clan. On the carved screen just inside the gate, a big banana plant stands for a large and thriving household, and a hen leading her chicks for many descendants. At each end of the central hall's roof, a whiskered fish-dragon flicks its tail at the sky, the old sign for coming top in the exams.",
+        "Come for the building more than the collection. The Guangdong Folk Art Museum fills the side halls with ceramics, embroidery and carving, but the finest craft here is on the walls and roofs. Give most of your time to the three great halls down the middle. Then wander the side corridors and the narrow lanes between the buildings, where the grey brick is carved just as finely. In a demonstration hall, craftspeople carve olive stones or paint Canton porcelain, and you can stop and watch.",
+      ],
+      highlights: [
+        {
+          name: "The great ridge from the courtyard",
+          body: "Back away across the courtyard until the whole ridge on the central hall fits in view. It runs 27 metres and carries more than 200 clay figures. Scene follows scene, immortals at a birthday feast and officials winning promotion, like a picture story in three dimensions. It was fired in the Shiwan kilns of nearby Foshan.",
+        },
+        {
+          name: "Up close to the brick pictures",
+          body: "Six big panels of grey brick flank the entrance. One tells the folk tale of the Song general Liu Qing taming a wild horse sent by a rival kingdom, with more than 40 figures in a single scene. Stand close: hair, armour and leaves are cut in lines as fine as thread.",
+        },
+        {
+          name: "Light through the carved screens",
+          body: "The central hall is still set out as it was when the clan met here. At the back stands a row of tall wooden screens, carved on both faces with scenes from old tales such as the Three Kingdoms. The carving goes right through, so light falls between the figures. Outside, the stone railings round the terrace are set with cast-iron panels, a craft from Western gardens worked into Chinese patterns.",
+        },
+      ],
+      time: "About two hours covers the three great halls, the courtyards and the side corridors. Add up to an hour if the museum's galleries draw you in.",
+      when: "A weekday morning is the calmest and coolest time in the open courtyards. Weekends and public holidays are much busier, and on big public holidays numbers can be capped. October to December is Guangzhou's most comfortable season. In the wet months, roughly April to September, covered corridors link the halls, so a shower does little harm.",
+      pair: "Yongqingfang, the restored lanes of Xiguan, the old district west of the city walls, is about 25 minutes' walk to the south-west. Shamian is about 20 minutes beyond it on foot, or two stops on Metro Line 1 from Chen Clan Academy to Huangsha. Come here first while the courtyards are cool, then wander south through the lanes for lunch and reach the island late in the afternoon.",
+      skip: "If old buildings leave you cold, skip it and give the morning to the river or to morning tea. Foshan's Ancestral Temple carries an even longer ridge of Shiwan figures on its roof. If your trip already includes it, one of the two is enough unless carving is your passion.",
+      faq: [
+        {
+          question: "Is the Chen Clan Ancestral Hall worth visiting?",
+          answer: "Yes, if you have any interest in craft or old buildings. Chen families from 72 Guangdong counties built it in the 1890s. Decoration covers it, from roof ridges crowded with clay figures to brick scenes cut in lines as fine as thread. Two hours is enough, and it stands right by a metro station in the old west of the city.",
+        },
+        {
+          question: "How long do you need at the Chen Clan Ancestral Hall?",
+          answer: "About two hours for the three great halls, the courtyards and the side corridors, plus up to an hour if the folk-art galleries draw you in. Yongqingfang is about 25 minutes away on foot and Shamian two stops by metro. It works as a half-day or as the start of a full day in old Guangzhou.",
+        },
+        {
+          question: "Do I need to book the Chen Clan Ancestral Hall?",
+          answer: "Yes, plan to. Tickets are booked through the museum's official WeChat account, and visitors scan their ID at the gate, so bring the passport you booked with. On big public holidays numbers can be capped and tickets can run short. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+        {
+          question: "What is the best time to visit the Chen Clan Ancestral Hall?",
+          answer: "A weekday morning, ideally between October and December. Mornings are cooler in the open courtyards and calmer than weekends or public holidays. In the wet season, roughly April to September, covered corridors link the halls, so rain does little harm to a visit.",
+        },
+        {
+          question: "Why is it also called the Chen Clan Academy?",
+          answer: "Because it was built as a lodge and study hall for young Chen men who came to Guangzhou for the imperial exams. The board over the gate still reads Chen Clan Academy. After the exams were abolished it became a school. Today it houses the Guangdong Folk Art Museum, its third name on signs and maps.",
+        },
+      ],
+    },
+    zh: {
+      description: "广州陈家祠：屋脊上挤满彩色陶人，青砖上的雕刻，线条细得像丝线。去哪里看、留多久。",
+      why: [
+        "进门之前，先在门前广场上抬头看。大门的屋脊上挤满了彩色的陶人，亭台楼阁之间，一大群戏里的人物正在登场，像整个戏班爬上了屋顶。找找正中那几个小阳台：四个看客探出头来，倚着栏杆看戏。屋檐下，两扇黑漆大门上各画着一位四米高的门神。跨过门槛往里走，梁上、屏风上、栏杆上、墙上，不是雕的、塑的，就是铸的，很难找到一块空着的地方。",
+        "它是清末广东七十二个县的陈姓族人合资建起来的。陈家子弟到省城考科举、等着补官、交税、打官司，都在这里落脚，相当于各县设在广州的“办事处”。所以这里的雕刻，处处在替家族讨彩头。一进门，迎面那扇木屏门上，大芭蕉寓意家大业大，母鸡带着一群小鸡，寓意子孙兴旺。中间聚贤堂屋脊的两头，各立着一条鳌鱼，尾巴高高翘起，两根长须伸向天空，图的是“独占鳌头”，盼着子弟考个第一。",
+        "来这里，房子比展品更值得看。两边的厅如今是广东民间工艺博物馆的展厅，摆着陶瓷、广绣和各种雕刻，可最精彩的手艺，还是在墙上、屋顶上。时间多留给中间一路的三座大厅，再沿着两侧的长廊和房子之间的窄巷慢慢走，那里的青砖一样雕得很精细。馆里还有一个工艺展演厅，手艺人当场雕橄榄核、画广彩瓷，可以停下来看一会儿。",
+      ],
+      highlights: [
+        {
+          name: "退到院子里看大屋脊",
+          body: "往院子里退几步，中间聚贤堂上的那条屋脊才看得全：长 27 米，塑了两百多个人物，群仙祝寿、加官进爵，一段接一段，像一本立体的连环画。它是在佛山石湾的窑里烧出来的。",
+        },
+        {
+          name: "凑近看正门两边的砖雕",
+          body: "正门两侧的青砖墙上，嵌着六幅大砖雕。其中一幅《刘庆伏狼驹》，讲的是民间故事里宋朝大将刘庆降服西夏送来的烈马，一幅画里刻了四十多个人。凑近看，头发、盔甲、树叶，线条细得像丝线。",
+        },
+        {
+          name: "光从木屏风里透过来",
+          body: "聚贤堂里还照当年族人聚会议事时的样子摆着。堂后立着一排高大的木屏风，正面背面都刻满了三国这类老故事，而且刻得通透，光从人物之间漏过来。堂前石台四周的石栏杆上，嵌着铸铁的镂空栏板，手艺来自西方花园，花纹却是中国传统的。",
+        },
+      ],
+      time: "留两个小时左右，够看完中间三座大厅、几个院子和两边的长廊；要是被馆里的展品吸引住，最多再加一个小时。",
+      when: "平日上午最好，院子里还凉快，人也比周末少；周末和节假日人多得多，大的节假日有时会限流。广州最舒服的季节是十月到十二月；四到九月雨水多，好在几座大厅之间都有带顶的连廊，下雨也不太碍事。",
+      pair: "往西南走二十多分钟，就是西关老街巷修整后开满小店的永庆坊；从永庆坊再走二十分钟左右到沙面，或者从陈家祠站坐地铁 1 号线，两站到黄沙站。趁院子还凉快先来这里，再一路穿街过巷往南走，顺路吃午饭，傍晚上岛。",
+      skip: "对老房子实在提不起兴趣的人，可以不来，把上午留给珠江边或一顿早茶。行程里已经有佛山祖庙的话，那里屋顶上也有石湾烧的彩陶人物屋脊，比这里的还长；不是特别迷雕刻，两处看一处就够了。",
+      faq: [
+        {
+          question: "广州陈家祠值得去吗？",
+          answer: "值得，只要你对手艺或老房子有一点兴趣。它是清末广东七十二个县的陈姓族人合建的，处处是装饰：屋脊上挤满陶塑人物，青砖上的雕刻，线条细得像丝线。留两个小时就够，它在老西关，地铁站就在门口。",
+        },
+        {
+          question: "逛陈家祠要多长时间？",
+          answer: "两个小时左右，够看完中间三座大厅、几个院子和两边的长廊；被馆里的民间工艺展品吸引住的话，最多再加一个小时。永庆坊步行二十多分钟，沙面坐地铁两站，可以只安排半天，也可以连成老西关的一整天。",
+        },
+        {
+          question: "去陈家祠要提前预约吗？",
+          answer: "要，建议提前约好。门票在博物馆的官方微信公众号上预约购买，入馆要刷证件，外国游客记得带上预约时用的护照。大的节假日有时会限流，票可能不够。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+        {
+          question: "什么时候去陈家祠最好？",
+          answer: "平日上午最好，十月到十二月去最舒服。上午院子里还凉快，人也比周末和节假日少。四到九月前后是雨季，好在大厅之间有带顶的连廊相连，下雨也不太影响参观。",
+        },
+        {
+          question: "陈家祠为什么又叫“陈氏书院”？",
+          answer: "因为它当年就是陈氏子弟来广州考科举时住宿、读书的地方，大门上的匾额写的就是“陈氏书院”。科举废除以后，这里改成了学校；如今它是广东民间工艺博物馆，这也成了它的第三个名字，路牌和地图上三个都可能看到。",
+        },
+      ],
+    },
+    ko: {
+      description: "광저우 진가사: 용마루에는 채색 도자기 인형이 빼곡하고, 회색 벽돌에는 실처럼 가는 선으로 그림이 새겨져 있습니다. 어디를 보고 얼마나 머물지.",
+      why: [
+        "안으로 들어가기 전에 문 앞 광장에서 지붕을 올려다보세요. 대문 용마루 위에 색색의 도자기 인형이 빼곡합니다. 누각과 정자 사이로 옛 연극 속 인물들이 줄지어 등장해, 극단 하나가 통째로 지붕에 올라간 듯합니다. 한가운데의 작은 발코니들을 찾아보세요. 구경꾼 넷이 난간에 기대어 고개를 내밀고 연극을 보고 있습니다. 그 아래 검은 대문 두 짝에는 문을 지키는 신, 곧 문신(門神)이 키 4m로 하나씩 그려져 있습니다. 문지방을 넘어 들어가면 들보와 병풍, 난간과 벽까지 깎거나 빚거나 부어 만든 장식이 이어져, 빈 곳을 찾기 어렵습니다.",
+        "청나라 말, 광둥성 72개 현의 진(陳)씨 문중이 함께 돈을 모아 지었습니다. 집안 젊은이들이 성도 광저우로 과거를 보러 오거나, 벼슬자리를 기다리거나, 세금과 소송 일을 볼 때 머무는 곳이었습니다. 말하자면 각 현의 ‘광저우 연락사무소’였습니다. 그래서 이곳 조각 곳곳에 집안이 잘되기를 비는 마음이 담겨 있습니다. 대문을 들어서자마자 마주치는 나무 가림문에서 커다란 파초는 집안의 번창을, 병아리를 거느린 암탉은 자손의 번성을 뜻합니다. 가운데 취현당(聚賢堂) 지붕 양 끝에는 용머리를 한 물고기 오어(鰲魚)가 꼬리를 치켜들고 긴 수염을 하늘로 뻗은 채 한 마리씩 서 있습니다. 과거에서 장원 급제하기를 비는 뜻입니다.",
+        "이곳은 소장품보다 건물 자체가 주인공입니다. 양옆 전시실은 광둥 민간공예박물관으로 쓰여 도자기와 자수, 조각이 놓여 있지만, 가장 뛰어난 솜씨는 벽과 지붕에 있습니다. 가운데로 이어지는 큰 전각 세 채에 시간을 넉넉히 쓰고, 양옆 회랑과 건물 사이 좁은 골목을 천천히 걸어 보세요. 그곳의 회색 벽돌 조각도 못지않게 섬세합니다. 공예 시연관에서는 장인들이 올리브씨를 깎거나 광저우식 채색 도자기에 그림을 그리고 있어, 잠시 멈춰 구경할 수 있습니다.",
+      ],
+      highlights: [
+        {
+          name: "물러서서 보는 큰 용마루",
+          body: "마당 뒤쪽으로 물러서야 가운데 취현당의 용마루가 한눈에 들어옵니다. 길이 27m에 인물상 200여 점이 빚어져 있고, 신선들이 장수를 축하하고 관리가 승진하는 장면이 하나씩 이어져 입체 그림책을 보는 듯합니다. 이웃 도시 포산의 스완(石灣) 가마에서 구워 온 것입니다.",
+        },
+        {
+          name: "벽돌 그림 가까이 다가가기",
+          body: "정문 양쪽 회색 벽돌 벽에 큰 벽돌 조각 여섯 점이 박혀 있습니다. 그중 하나는 송나라 장수 유경이 서하가 보낸 사나운 말을 길들이는 민간 이야기로, 한 화면에 40명이 넘는 인물이 등장합니다. 가까이 다가가면 머리카락과 갑옷, 나뭇잎이 실처럼 가는 선으로 새겨져 있습니다.",
+        },
+        {
+          name: "빛이 스며드는 나무 병풍",
+          body: "문중 사람들이 모여 회의하던 취현당은 그때 모습대로 꾸며져 있습니다. 뒤쪽에 늘어선 키 큰 나무 병풍은 앞뒤 양면에 삼국지 같은 옛이야기를 속까지 뚫어 새겨, 인물들 사이로 빛이 스며듭니다. 전각 앞 돌 기단의 돌난간에는 무쇠로 부어 만든 장식판이 끼워져 있는데, 서양 정원에서 쓰던 솜씨에 중국 전통 문양을 입혔습니다.",
+        },
+      ],
+      time: "2시간쯤이면 가운데 큰 전각 세 채와 마당, 양옆 회랑까지 둘러볼 수 있습니다. 전시실에 빠져든다면 1시간까지 더 잡으세요.",
+      when: "평일 오전이 가장 좋습니다. 마당이 아직 선선하고 주말보다 한산합니다. 주말과 공휴일에는 훨씬 붐비고, 큰 연휴에는 입장 인원을 제한하기도 합니다. 광저우는 10~12월이 가장 쾌적합니다. 대략 4~9월은 비가 잦지만 전각 사이가 지붕 덮인 회랑으로 이어져 있어 비가 와도 크게 불편하지 않습니다.",
+      pair: "서남쪽으로 25분쯤 걸으면 융칭팡(永慶坊)입니다. 옛 성벽 서쪽의 오래된 동네 시관(西關)의 골목을 손질해 작은 가게가 들어선 곳입니다. 융칭팡에서 다시 20분쯤 걸으면 사면도이고, 지하철로는 진가사역에서 1호선으로 두 정거장 가면 황사역입니다. 마당이 선선한 오전에 먼저 이곳을 보고, 옛 골목을 따라 남쪽으로 걸으며 점심을 먹은 뒤, 늦은 오후에 섬에 닿으면 됩니다.",
+      skip: "옛 건물에 별 관심이 없다면 건너뛰고, 오전을 주강 강변이나 얌차(딤섬을 곁들인 아침 차)에 쓰세요. 일정에 포산 조묘(祖廟)가 들어 있다면 그곳 지붕에도 스완 가마에서 구운 인물 용마루가 있고 길이는 이곳보다 깁니다. 조각을 특별히 좋아하지 않는다면 둘 중 한 곳으로 충분합니다.",
+      faq: [
+        {
+          question: "광저우 진가사는 가 볼 만한가요?",
+          answer: "네, 공예나 옛 건물에 조금이라도 관심이 있다면 가 볼 만합니다. 청나라 말 광둥성 72개 현의 진씨 문중이 함께 지은 곳으로, 용마루에는 도자기 인형이 빼곡하고 벽돌에는 실처럼 가는 선으로 장면이 새겨져 있습니다. 2시간이면 충분하고, 옛 서쪽 동네인 시관에 있어 지하철역이 바로 앞입니다.",
+        },
+        {
+          question: "진가사 관람에는 시간이 얼마나 걸리나요?",
+          answer: "2시간쯤이면 가운데 큰 전각 세 채와 마당, 양옆 회랑을 둘러볼 수 있고, 민간공예 전시에 빠져든다면 1시간까지 더 잡으세요. 융칭팡은 걸어서 25분쯤, 사면도는 지하철로 두 정거장이라 반나절 코스로도, 옛 광저우를 도는 하루의 시작으로도 좋습니다.",
+        },
+        {
+          question: "진가사는 미리 예약해야 하나요?",
+          answer: "네, 미리 예약하는 것이 좋습니다. 입장권은 박물관 공식 위챗 계정에서 예약해 사고, 입장할 때 신분증을 스캔해야 하니 외국인은 예약에 쓴 여권을 꼭 챙기세요. 큰 연휴에는 입장 인원을 제한하기도 해 표가 모자랄 수 있습니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "진가사는 언제 가는 게 가장 좋나요?",
+          answer: "평일 오전, 가능하면 10~12월이 가장 좋습니다. 오전에는 마당이 선선하고 주말이나 공휴일보다 한산합니다. 대략 4~9월의 우기에도 전각 사이가 지붕 덮인 회랑으로 이어져 있어 비 때문에 관람이 크게 어렵지는 않습니다.",
+        },
+        {
+          question: "진가사를 왜 ‘진씨서원’이라고도 부르나요?",
+          answer: "진씨 집안 젊은이들이 광저우에 과거를 보러 와서 묵고 공부하던 곳이기 때문입니다. 대문 위 현판에도 ‘진씨서원(陳氏書院)’이라고 쓰여 있습니다. 과거제가 폐지된 뒤에는 학교가 되었고, 지금은 광둥 민간공예박물관이 들어서 있어, 표지판이나 지도에는 이 박물관 이름까지 세 이름이 섞여 쓰입니다.",
+        },
+      ],
+    },
+  },
+  "canton-tower": {
+    en: {
+      description: "Canton Tower twists 600 metres above Guangzhou's Pearl River, its lattice glowing in shifting colours at night. Whether to go up, and where to watch it.",
+      why: [
+        "Come down to the river at dusk and the tower fills the sky. Its 600 metres of steel lattice pinch in at the middle and flare out again above. After dark the lattice itself lights up, and colours ripple up and down its whole height. At its foot, look up through the open lattice to the grey core rising inside. From the open-air roof, more than 450 metres up, Guangzhou's new centre lies straight across the water, a long green square running away between the skyscrapers.",
+        "Guangzhou people call it Xiaomanyao, ‘Xiaoman’s waist’, after a Tang poem in which Bai Juyi praised his dancer Xiaoman’s willow-slim waist. The shape comes from two ovals, a big one at the ground and a smaller one at the top, turned against each other. The turn pulls the 24 steel columns in tight at the middle, like a wrung rope, then lets them open out again. Its outline changes as your angle changes, so watch it shift as you walk round it or cross the river.",
+        "Going up is optional, and the best view of the tower itself is free, from the far bank. If you do go up, choose a clear day; in haze or low cloud you may see little but grey. Tickets come in tiers. The basic one takes you only to the indoor halls at about 430 metres. The open-air roof, its glass cabins, the Sky Drop on the mast and the deck at the very top all cost more, so decide which you want before you book.",
+      ],
+      highlights: [
+        {
+          name: "A slow circuit in a glass cabin",
+          body: "Sixteen glass cabins, each about three metres across, creep round the edge of the roof on a tilted track. They stay level the whole way while the city turns slowly beneath you, and one circuit takes twenty minutes or more.",
+        },
+        {
+          name: "Stand on the highest deck",
+          body: "Go on up past the rides to the deck on the mast at 488 metres, the highest point visitors can reach, open to the sky. Look north across the river and the new city lines up in front of you: the Guangdong Museum, the opera house and the towers of Zhujiang New Town.",
+        },
+        {
+          name: "Turn round on the far bank",
+          body: "After dark, walk over the Haixin Bridge, the curving footbridge just west of the tower, to the north bank. Turn round on the far side and the lit tower stands over the river with its reflection beneath it, no ticket needed.",
+        },
+      ],
+      time: "About two hours at the tower, including security and the queues for the lifts; longer if you add a ride or stay from sunset into dark. Watching from the north bank takes as long as you like.",
+      when: "Pick the clearest day you have. In Guangzhou, October to December is the driest and clearest season, and March and April are usually the greyest months. Arrive about an hour before sunset to see the city by daylight and then lit up. The tower's lights come on in the evening and stay on until late, but the times shift with the season and on holidays, so check them for your date. Weekdays are calmer than weekends, and the early October and May Day holidays are very busy.",
+      pair: "Cross the Haixin Bridge, about 500 metres long, to the north bank near Haixinsha and Huacheng Square, ten minutes or so on foot. The Guangdong Museum stands beside the square, about half an hour's walk from the tower over the bridge. The museum in the afternoon and the tower at sunset make an easy pair, but the museum needs booking. Pearl River night cruises leave from a pier by the tower and take 50 to 90 minutes, depending on the route.",
+      skip: "If heights, queues or ticket prices put you off, stay on the ground. The lit tower seen from the north bank is the picture most people take home, and it is free. If you have already been up the Shanghai Tower or a deck like it, a second high view brings less of a thrill. Spend the evening on the river instead.",
+      faq: [
+        {
+          question: "Is Canton Tower worth going up?",
+          answer: "Yes, on a clear day. From about 430 metres up, the Pearl River and the new city centre spread out below you, and a dearer ticket takes you out onto the open-air roof above. The glass cabins and the Sky Drop add a thrill if you want one. On a hazy day, skip the ticket and watch the tower light up from the north bank, which is free.",
+        },
+        {
+          question: "What is there to do at the top of Canton Tower?",
+          answer: "The basic ticket covers the indoor viewing halls at about 430 metres, and everything higher costs more. Above them is the open-air roof at about 450 metres, where glass cabins circle the rim, a loop of twenty minutes or more. The Sky Drop on the mast plunges you 30 metres. The open deck at 488 metres is the highest point visitors can stand on.",
+        },
+        {
+          question: "When is the best time to visit Canton Tower?",
+          answer: "About an hour before sunset on a clear day, so you see the city in daylight and then lit up. October to December is Guangzhou's driest, clearest season, and March and April are usually the greyest months. Weekdays are calmer than weekends, and the national holidays in early October and early May are very busy.",
+        },
+        {
+          question: "Where is the best place to see Canton Tower at night?",
+          answer: "From the north bank of the Pearl River, around Haixinsha and Huacheng Square. Walk over the Haixin Bridge, the curving footbridge about 500 metres long just west of the tower, and turn round on the far side. A Pearl River night cruise, 50 to 90 minutes long, also passes right below the tower.",
+        },
+        {
+          question: "Do I need to book Canton Tower tickets in advance?",
+          answer: "Booking ahead is wise for a sunset visit, weekends and public holidays. Tickets are sold in each visitor's own name, so foreign visitors use their passport. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+      ],
+    },
+    zh: {
+      description: "广州塔“小蛮腰”：600 米高的镂空钢塔在珠江边扭身而起，入夜通体流光。上不上塔、玩什么、从哪里看最美。",
+      why: [
+        "傍晚走到珠江边，抬头就是它：600 米高的钢架塔，腰身收得细细的，往上又舒展开。天黑以后，整座钢架自己亮起来，颜色从塔脚一路流到塔顶。站在塔下往上看，能透过稀疏的钢架，看见中间直直升起的灰色塔芯。到了 450 多米高的露天塔顶，对岸的新城正对着你铺开，花城广场一条长长的绿地，在两排高楼中间一直伸向远方。",
+        "广州人叫它“小蛮腰”，出自白居易的诗句“樱桃樊素口，杨柳小蛮腰”，说的是他家里舞姬小蛮杨柳一样的细腰。塔的样子来自上下两个椭圆，底下大、顶上小，两者错开一个角度扭过去。这一扭，把 24 根钢柱在中段拧得紧紧的，像一股绞起来的绳子，往上又松开。换一个角度，它就换一副样子，不妨绕着它走一走，或者过江回头看看。",
+        "上不上塔，可以自己定：看塔最美的角度在对岸，不花一分钱。要上就挑晴天，雾霾天或者云压得低，上去可能只看到一片灰。门票分好几档，最基本的一档只到 430 米左右的室内观光厅；450 米的露天塔顶、绕塔顶转圈的透明球舱、桅杆上的“极速云霄”和 488 米的最高平台，都要买更贵的票，买之前先想好要玩哪样。",
+      ],
+      highlights: [
+        {
+          name: "坐透明球舱绕塔顶一圈",
+          body: "16 个直径三米多的透明球舱，沿着一条倾斜的轨道，绕着塔顶边缘慢慢走。球舱始终保持水平，整座城市在脚下缓缓转过去，绕一圈要二十分钟以上。",
+        },
+        {
+          name: "站上 488 米的最高平台",
+          body: "越过那些游乐项目，一直上到桅杆上 488 米的露天平台，这是游客能到的最高处，头顶就是天。往北看，对岸的新城一字排开：广东省博物馆、大剧院，还有珠江新城的高楼。",
+        },
+        {
+          name: "过江回头看塔",
+          body: "天黑以后，从塔西边的海心桥走到对岸。这座人行桥弯成一道弧线，走到北岸回头，亮灯的广州塔立在江上，倒影落在水里，不用买票。",
+        },
+      ],
+      time: "在塔上留两个小时左右，包括安检和排队等电梯；要是加玩项目，或者从日落一直待到天黑，就再多留些时间。只在北岸看塔，想待多久都行。",
+      when: "挑你在广州最晴的一天。十月到十二月是广州最干爽、天最透的季节，三四月通常最阴沉、阳光最少。日落前一个小时左右到，先看白天的城市，再看万家灯火。塔身的灯傍晚亮起，一直亮到夜里，具体时间随季节和节假日调整，出发前查一下当天的安排。平日比周末清静，国庆、五一长假人非常多。",
+      pair: "从海心桥过江，桥长约 500 米，走十来分钟就到北岸的海心沙和花城广场一带。广东省博物馆就在广场边，从塔下过桥走过去要半个小时左右。下午看博物馆、傍晚来看塔，正好连成半天；博物馆要提前预约。珠江夜游的船在塔边的码头就能上，按航线不同，大约 50 到 90 分钟。",
+      skip: "怕高、怕排队或者嫌票贵，就留在地面：从北岸看亮灯的广州塔，是大多数人记住的那个画面，而且不花钱。已经上过上海中心或者类似的观景台的话，再登一次高，新鲜感会少很多，不如把晚上留给珠江。",
+      faq: [
+        {
+          question: "广州塔值得上去吗？",
+          answer: "晴天值得。从 430 米左右的高处往下看，珠江和对岸的新城都在脚下；多花点钱，还能走到上面的露天塔顶。想要刺激，可以坐透明球舱、玩“极速云霄”。雾霾天就别买票了，到北岸看它亮灯，不花钱。",
+        },
+        {
+          question: "广州塔上面有什么好玩的？",
+          answer: "最基本的门票只到 430 米左右的室内观光厅，再往上都要另外加钱。上面是 450 米左右的露天塔顶，透明球舱沿着塔顶边缘绕圈，一圈要二十分钟以上；桅杆上的“极速云霄”，让你从高处急坠 30 米；488 米的露天平台，是游客能站到的最高处。",
+        },
+        {
+          question: "什么时候去广州塔最好？",
+          answer: "晴天，日落前一小时左右到，先看白天，再看夜景。十月到十二月是广州最干爽、天最透的季节，三四月通常最阴沉、阳光最少。平日比周末清静；国庆和五一长假人非常多。",
+        },
+        {
+          question: "广州塔夜景在哪里看最好？",
+          answer: "在珠江北岸的海心沙、花城广场一带。从塔西边约 500 米长的海心桥走过去，到对岸再回头看。坐 50 到 90 分钟的珠江夜游，船也会从塔下经过。",
+        },
+        {
+          question: "广州塔门票要提前买吗？",
+          answer: "傍晚、周末和节假日最好提前买。门票实名购买，外国游客用护照。规则时常调整，我们可以按你的日期核实并代为预订。",
+        },
+      ],
+    },
+    ko: {
+      description: "광저우 타워: 600m 철골 탑이 주강 위로 허리를 비틀며 솟고, 밤이면 색색으로 빛납니다. 올라갈지, 무엇을 탈지, 어디서 보면 좋을지.",
+      why: [
+        "해 질 녘 강가로 나가면 하늘을 채운 탑이 보입니다. 600m 높이의 철골 탑이 가운데서 잘록하게 조였다가 위로 다시 퍼집니다. 어두워지면 철골 자체에 불이 들어와, 색이 탑 아래부터 꼭대기까지 흘러갑니다. 탑 아래에서 올려다보면 성긴 철골 사이로 가운데 곧게 솟은 회색 기둥이 보입니다. 지상 450m가 넘는 야외 옥상에 서면 강 건너 새 도심이 정면으로 펼쳐지고, 화청광장의 긴 녹지가 양옆 고층 빌딩 사이로 멀리 뻗어 있습니다.",
+        "광저우 사람들은 이 탑을 ‘샤오만야오(小蠻腰)’, 곧 ‘소만의 허리’라고 부릅니다. 당나라 시인 백거이가 집안 무희 소만(小蠻)의 버들가지 같은 허리를 읊은 시구에서 따온 이름입니다. 탑의 모양은 아래의 큰 타원과 위의 작은 타원을 서로 비틀어 놓은 데서 나옵니다. 이 비틀림이 철 기둥 24개를 허리에서 꼬인 밧줄처럼 꽉 조였다가 위로 가며 다시 풀어 줍니다. 보는 각도가 바뀌면 윤곽도 달라지니, 탑 주위를 걷거나 강을 건너며 모양이 바뀌는 것을 지켜보세요.",
+        "꼭 올라갈 필요는 없습니다. 탑이 가장 멋지게 보이는 곳은 강 건너편이고, 돈도 들지 않습니다. 올라간다면 맑은 날을 고르세요. 스모그나 낮은 구름이 낀 날에는 회색밖에 보이지 않을 수 있습니다. 입장권은 여러 등급으로 나뉩니다. 기본권으로는 430m 안팎의 실내 전망층까지만 갑니다. 450m 야외 옥상과 옥상 가장자리를 도는 투명 캡슐, 안테나 기둥의 ‘스카이 드롭’, 488m 최고층 전망대는 모두 더 비싼 표가 필요하니, 예매 전에 무엇을 할지 정해 두세요.",
+      ],
+      highlights: [
+        {
+          name: "투명 캡슐로 옥상 한 바퀴",
+          body: "지름 3m가 넘는 투명 캡슐 16개가 기울어진 레일을 따라 탑 꼭대기 가장자리를 천천히 돕니다. 캡슐은 내내 수평을 유지하고 도시 전체가 발아래로 느릿느릿 돌아가며, 한 바퀴에 20분 넘게 걸립니다.",
+        },
+        {
+          name: "488m 최고층 전망대에 서기",
+          body: "놀이기구들을 지나 안테나 기둥 위 488m 전망대까지 올라가 보세요. 방문객이 갈 수 있는 가장 높은 곳으로, 머리 위가 바로 하늘입니다. 북쪽을 보면 강 건너 광둥성박물관과 오페라하우스, 주장 신도시의 빌딩들이 한 줄로 늘어섭니다.",
+        },
+        {
+          name: "강 건너에서 돌아보는 탑",
+          body: "어두워진 뒤 탑 서쪽의 보행교 하이신교(海心橋)를 건너 북쪽 강변으로 가 보세요. 곡선을 그리며 강을 건너는 다리 끝에서 뒤돌아보면 불 켜진 탑과 강물에 비친 그림자가 한눈에 들어옵니다. 입장권은 필요 없습니다.",
+        },
+      ],
+      time: "탑에서는 보안 검색과 엘리베이터 대기를 포함해 2시간쯤 잡으세요. 놀이기구를 타거나 해 질 녘부터 밤까지 머문다면 더 걸립니다. 북쪽 강변에서 바라보는 시간은 원하는 만큼 잡으면 됩니다.",
+      when: "머무는 동안 가장 맑은 날을 고르세요. 광저우는 10~12월이 가장 건조하고 시야가 좋으며, 3~4월은 대체로 가장 흐립니다. 해 지기 1시간쯤 전에 도착하면 낮 풍경과 야경을 함께 볼 수 있습니다. 탑의 조명은 저녁에 켜져 밤늦게까지 이어지는데, 시간은 계절과 연휴에 따라 바뀌니 날짜에 맞춰 확인하세요. 평일이 주말보다 한산하고, 10월 초 국경절과 5월 초 노동절 연휴에는 매우 붐빕니다.",
+      pair: "길이 약 500m의 하이신교를 건너면 10분쯤 걸려 북쪽 강변의 하이신사(海心沙)와 화청광장 쪽에 닿습니다. 광둥성박물관은 광장 옆에 있어, 탑에서 다리를 건너 걸으면 30분쯤 걸립니다. 오후에 박물관을 보고 해 질 녘에 탑으로 오면 잘 맞는데, 박물관은 미리 예약해야 합니다. 주강 야경 유람선은 탑 옆 선착장에서도 출발하고, 노선에 따라 50~90분 걸립니다.",
+      skip: "높은 곳이나 긴 줄, 입장료가 부담스럽다면 땅에 머무르세요. 북쪽 강변에서 보는 불 켜진 탑이 대부분의 사람이 기억하는 장면이고, 돈도 들지 않습니다. 상하이 타워 같은 전망대에 이미 올라 봤다면 또 한 번의 높은 전망은 감흥이 덜하니, 그 저녁을 주강 위에서 보내세요.",
+      faq: [
+        {
+          question: "광저우 타워는 올라가 볼 만한가요?",
+          answer: "맑은 날이라면 네. 430m 안팎 높이에서 주강과 강 건너 새 도심이 발아래 펼쳐지고, 더 비싼 표를 사면 그 위 야외 옥상까지 나갈 수 있습니다. 원하면 투명 캡슐이나 스카이 드롭으로 스릴을 더할 수 있습니다. 스모그가 낀 날에는 입장권을 사지 말고 북쪽 강변에서 불 켜진 탑을 보세요. 무료입니다.",
+        },
+        {
+          question: "광저우 타워 꼭대기에서는 무엇을 할 수 있나요?",
+          answer: "기본 입장권으로는 430m 안팎의 실내 전망층까지 가고, 그보다 높은 곳은 모두 추가 요금이 듭니다. 그 위 약 450m의 야외 옥상에서는 투명 캡슐이 가장자리를 따라 도는데, 한 바퀴에 20분 넘게 걸립니다. 안테나 기둥의 스카이 드롭은 30m를 수직으로 떨어지고, 488m 야외 전망대는 방문객이 설 수 있는 가장 높은 곳입니다.",
+        },
+        {
+          question: "광저우 타워는 언제 가는 게 가장 좋나요?",
+          answer: "맑은 날 해 지기 1시간쯤 전에 도착해 낮 풍경과 야경을 함께 보는 것이 가장 좋습니다. 광저우는 10~12월이 가장 건조하고 시야가 좋으며, 3~4월은 대체로 가장 흐립니다. 평일이 주말보다 한산하고, 10월 초 국경절과 5월 초 노동절 연휴에는 매우 붐빕니다.",
+        },
+        {
+          question: "광저우 타워 야경은 어디서 보는 게 가장 좋나요?",
+          answer: "주강 북쪽 강변의 하이신사와 화청광장 일대입니다. 탑 서쪽에 있는 길이 약 500m의 보행교 하이신교를 건너가 건너편에서 뒤돌아보세요. 50~90분짜리 주강 야경 유람선도 탑 바로 아래를 지나갑니다.",
+        },
+        {
+          question: "광저우 타워 입장권은 미리 예매해야 하나요?",
+          answer: "해 질 녘 방문이나 주말, 공휴일이라면 미리 예매하는 것이 좋습니다. 입장권은 실명으로 판매하므로 외국인은 여권을 사용합니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예매해 드릴 수 있습니다.",
+        },
+      ],
+    },
+  },
+  shamian: {
+    en: {
+      description: "Cross a little bridge to Guangzhou's Shamian Island and a quiet street of old consulates and banks under camphor and banyans. When to go, and how long.",
+      why: [
+        "Cross the little bridge over the canal and the traffic noise falls away. Shamian Street runs ahead under huge old trees, almost empty of cars, with flower beds and benches down the middle and grand houses with deep verandas on either side. Many people notice a faint scent in the air, and it comes from the island's camphor trees. Couples pose for wedding photos in front of the mansions, children sit sketching the buildings and students read on the benches.",
+        "That calm has a hard history. In 1859 Britain and France took this sandbank for themselves, and a canal 30 metres wide was dug along its north side to cut it off from the city. Its two bridges had iron gates, guarded and shut at night. Behind them grew a small foreign town, with consulates from more than ten countries and foreign banks and trading houses. Walk it with that in mind and the buildings take on names. There is the old French post office, an American bank, and the little Catholic chapel the French built at their east end of the island.",
+        "Shamian is small, about 900 metres end to end, and needs no plan beyond walking the main street one way and the riverside back. Many of the old buildings are now offices, hotels, cafés and shops, and you see most of them from outside. The chapel still holds services. About fifteen minutes' walk north, the old shopping streets around Shangxiajiu are loud and busy, and an afternoon that takes in both shows you two faces of old Guangzhou.",
+      ],
+      highlights: [
+        {
+          name: "The West Bridge",
+          body: "Arrive over the West Bridge, a short brick bridge of three arches from 1861, where British police once kept the island's iron gate. Stop halfway and look down at the canal dug to cut Shamian off, with the busy city behind you and the trees ahead.",
+        },
+        {
+          name: "The old camphor on Fourth Street",
+          body: "On Shamian Fourth Street, beside the Victory Hotel, stands a camphor more than 300 years old, older than any building on the island. Pick up a fallen leaf and crush it between your fingers, and you will smell the same faint scent that drifts along the street.",
+        },
+        {
+          name: "The White Swan's waterfall",
+          body: "The White Swan Hotel on the river side opened in 1983, in the first years of China's opening up. In those days even a modest guesthouse checked papers at the door, but the White Swan let anyone walk in, and its lobby is still open to all. Inside, a waterfall tumbles through a three-storey garden called Water of Home, where Guangzhou families have posed for photos for decades.",
+        },
+      ],
+      time: "An hour or two on foot. Stay longer for a coffee under the trees, or come early for morning tea at the White Swan.",
+      when: "Late afternoon into dusk is the loveliest time. The low sun falls on the old fronts, and after dark the new Greater Bay Area Art Centre lights up across the river. Weekday mornings are the quietest, if you want the trees to yourself. Guangzhou is hot and wet from April to September, but old trees shade most of the main street; October to December is the most comfortable season.",
+      pair: "Shamian is beside Huangsha station on Metro Lines 1 and 6. Yongqingfang, the restored lanes of Xiguan, the old district west of the city walls, is about 20 minutes' walk north-west, with Shangxiajiu shopping street close by. The Chen Clan Ancestral Hall is two stops up Line 1, so a morning there and an evening here make an easy day. Some Pearl River night cruises slow down on the water off the island, and one route boards at Huangsha pier, right beside it.",
+      skip: "If you have walked the Bund in Shanghai or the old streets of Macau, Shamian will feel small and gentle beside them. If you want things to do more than places to stroll, there is little here beyond the walk itself. Give the time to the Chen Clan Ancestral Hall or Yongqingfang instead.",
+      faq: [
+        {
+          question: "Is Shamian Island worth visiting?",
+          answer: "Yes, for a slow hour or two. The island is only about 900 metres long, with a quiet main street of old consulates and banks under camphor and banyan trees, the oldest more than 300 years old. It is free, and it pairs easily with the Chen Clan Ancestral Hall and Yongqingfang on the same day.",
+        },
+        {
+          question: "How long do you need on Shamian Island?",
+          answer: "One to two hours is enough to walk the main street, the riverside and the side streets. Add an hour for a coffee, or for morning tea at the White Swan Hotel. If you also want Yongqingfang, about 20 minutes away on foot, allow half a day for both.",
+        },
+        {
+          question: "Is there an entrance fee for Shamian Island?",
+          answer: "No. Shamian is a public neighbourhood where people live and work, so you can walk in at any time. Most of the old buildings are offices, hotels, cafés and shops, so you enjoy them from the street. The Catholic chapel of Our Lady of Lourdes still holds services, and the White Swan Hotel's lobby is open to everyone.",
+        },
+        {
+          question: "What is the best time to visit Shamian Island?",
+          answer: "Late afternoon into dusk, when the low sun falls on the old buildings and the far bank lights up after dark. Weekday mornings are the quietest. October to December is Guangzhou's most comfortable season; from April to September it is hot and wet, though old trees shade most of the main street.",
+        },
+        {
+          question: "Can you see Shamian, Yongqingfang and the Chen Clan Ancestral Hall in one day?",
+          answer: "Yes, it is one of the easiest days in Guangzhou. Start at the Chen Clan Ancestral Hall in the morning and walk about 25 minutes to Yongqingfang for the lanes and lunch. Then walk about 20 minutes more to Shamian for the late afternoon. By metro, Chen Clan Academy and Huangsha stations are two stops apart on Line 1.",
+        },
+      ],
+    },
+    zh: {
+      description: "广州沙面：过一座小桥上岛，一条几乎不见车的大街，两旁是老领事馆、老银行，头顶是樟树和榕树。什么时候去、留多久。",
+      why: [
+        "走过小河涌上的那座桥，车声一下子远了。沙面大街在眼前铺开，头顶是遮天的老树，路中间是花坛和长椅，两旁是带着深深外廊的老洋楼，街上几乎不见车。不少街坊都说，一上沙面就闻到一股淡淡的香味，那是岛上樟树的味道。有人穿着婚纱在洋楼前拍照，小朋友坐在路边画房子，学生在长椅上看书。",
+        "这份安静背后，是一段不太好受的历史。1859 年，英法两国把这片沙洲划成租界，在它北边挖了一条宽 30 米的河涌，把它和广州城隔开；进出只有两座桥，桥头装着铁闸，有人把守，夜里关闭。铁闸后面，慢慢长出一座小小的洋人城：十多个国家在这里设过领事馆，还有外国银行和洋行。带着这段往事再走一遍，房子就有了名字：这是法国邮政局旧址，那是美国人的万国宝通银行，路边那座小教堂，是法国人在岛东头建的露德圣母堂。",
+        "沙面不大，东西长约 900 米，不用做攻略，沿着大街走过去、顺着江边走回来就好。老楼如今不少是办公室、酒店、咖啡馆和小店，多半只能在外面看；露德圣母堂至今还在做弥撒。往北走十几分钟，就是人声鼎沸的上下九老商业街，一静一闹，一个下午就能看到老广州的两副面孔。",
+      ],
+      highlights: [
+        {
+          name: "沙面西桥",
+          body: "从西桥上岛。这座三孔砖拱小桥建于 1861 年，当年桥头有铁闸，由英国巡警把守。走到桥中间往下看，脚下就是当年为了隔开沙面挖的河涌；身后是车来车往的城市，前面是一片绿荫。",
+        },
+        {
+          name: "沙面四街的老樟树",
+          body: "沙面四街胜利宾馆旁边，有一棵三百多岁的樟树，比岛上任何一栋房子都老。捡一片落叶在指间揉一揉，闻到的就是街上那股淡淡的香味。",
+        },
+        {
+          name: "白天鹅宾馆的“故乡水”",
+          body: "江边的白天鹅宾馆 1983 年开业，正是改革开放之初。那个年代连普通招待所进门都要查证件、登记，它却“四门大开”，谁都能进，大堂至今对所有人开放。大堂中间那片三层楼高、带瀑布的园林叫“故乡水”，几十年来，广州人一家老小都爱在这里拍张合影。",
+        },
+      ],
+      time: "走一圈一到两个小时。想在树下喝杯咖啡，或者去白天鹅饮个早茶，就再多留些时间。",
+      when: "傍晚最美：斜阳照在老洋楼上，天黑以后，对岸新建的白鹅潭大湾区艺术中心亮起灯来。想一个人享受树荫，就挑平日早上。广州四到九月又热又多雨，好在沙面大街大半都在老树的树荫里；十月到十二月最舒服。",
+      pair: "沙面就在地铁 1 号线、6 号线黄沙站旁边。往西北走二十分钟左右是永庆坊，西关老街巷修整后开满了小店，旁边就是上下九步行街。陈家祠从黄沙站坐 1 号线只要两站，上午去那里，傍晚来这里，正好是轻松的一天。有些珠江夜游的船开到沙面前的江面会放慢速度，还有一条航线就在岛边的黄沙码头上客。",
+      skip: "走过上海外滩或者澳门老城区的人，会觉得沙面小巧、温和，谈不上气派。想找事情做、不只想散步的话，这里除了走走看看，没有太多别的，不如把时间留给陈家祠或永庆坊。",
+      faq: [
+        {
+          question: "广州沙面值得去吗？",
+          answer: "值得，适合慢慢走上一两个小时。整个岛东西长约 900 米，沙面大街上几乎不见车，两旁是老领事馆和老银行，头顶是樟树和榕树，最老的超过三百岁。不收门票，同一天还能顺路去陈家祠和永庆坊。",
+        },
+        {
+          question: "逛沙面要多长时间？",
+          answer: "一到两个小时，够走完沙面大街、江边和几条横街。想喝杯咖啡，或在白天鹅宾馆饮早茶，再多留一个小时。要是连永庆坊一起逛，两处之间步行二十分钟左右，留半天比较从容。",
+        },
+        {
+          question: "去沙面要门票吗？",
+          answer: "不要。沙面是有人住、有人上班的街区，什么时候都可以走进去。老楼大多是办公室、酒店、咖啡馆和小店，在街上看看外观就好；露德圣母堂还在做弥撒，白天鹅宾馆的大堂对所有人开放。",
+        },
+        {
+          question: "什么时候去沙面最好？",
+          answer: "傍晚最好，斜阳照着老洋楼，天黑后对岸亮起灯来；想清静就挑平日早上。十月到十二月是广州最舒服的季节；四到九月又热又多雨，好在沙面大街大半都在老树的树荫里。",
+        },
+        {
+          question: "沙面、永庆坊和陈家祠能一天逛完吗？",
+          answer: "能，这是在广州最轻松的一天。上午去陈家祠看雕刻，步行二十多分钟到永庆坊逛老街、吃午饭，再走二十分钟左右到沙面过傍晚。坐地铁的话，陈家祠站和黄沙站在 1 号线上只隔两站。",
+        },
+      ],
+    },
+    ko: {
+      description: "광저우 사면도: 작은 다리를 건너면 녹나무와 반얀나무 그늘 아래 옛 영사관과 은행이 늘어선 조용한 거리가 나옵니다. 언제 가고 얼마나 머물지.",
+      why: [
+        "좁은 물길 위의 작은 다리를 건너면 차 소리가 멀어집니다. 사면대가(沙面大街)가 커다란 고목 아래로 곧게 뻗어 있고, 길 가운데에는 화단과 벤치가, 양옆에는 깊은 베란다를 단 옛 양옥이 늘어서 있습니다. 차는 거의 다니지 않습니다. 섬에 들어서면 은은한 향이 난다는 사람이 많은데, 섬의 녹나무에서 나는 향입니다. 양옥 앞에서는 커플이 웨딩 사진을 찍고, 아이들은 길가에 앉아 건물을 스케치하고, 학생들은 벤치에서 책을 읽습니다.",
+        "이 고요함 뒤에는 아픈 역사가 있습니다. 1859년 영국과 프랑스는 이 모래톱을 조계지(외국이 행정권을 쥔 구역)로 삼고, 북쪽에 폭 30m의 물길을 파서 광저우 시내와 떼어 놓았습니다. 드나드는 길은 다리 두 개뿐이었고, 다리 어귀에는 철문을 달아 경비를 세우고 밤에는 닫았습니다. 그 문 안쪽에 작은 서양인 마을이 생겨나 열 개가 넘는 나라가 영사관을 두었고, 외국 은행과 상사도 들어섰습니다. 이 사실을 알고 다시 걸으면 건물마다 이름이 붙습니다. 옛 프랑스 우체국, 미국계 은행, 그리고 프랑스인들이 섬 동쪽 끝에 지은 작은 루르드 성모 성당입니다.",
+        "사면도는 동서로 900m 남짓한 작은 섬이라 따로 계획할 필요 없이, 큰길로 걸어갔다가 강변을 따라 돌아오면 충분합니다. 옛 건물은 상당수가 사무실과 호텔, 카페, 상점으로 쓰여 밖에서 보는 곳이 많고, 루르드 성모 성당은 지금도 미사를 드립니다. 북쪽으로 15분쯤 걸으면 늘 사람으로 붐비는 상하구(上下九) 옛 상점가가 나오니, 오후 한나절에 조용한 광저우와 시끌벅적한 광저우를 함께 볼 수 있습니다.",
+      ],
+      highlights: [
+        {
+          name: "사면 서교",
+          body: "서쪽 다리로 섬에 들어가 보세요. 1861년에 놓은 세 칸짜리 벽돌 아치교로, 예전에는 다리 어귀의 철문을 영국 경찰이 지켰습니다. 다리 한가운데서 내려다보면 섬을 떼어 놓으려고 판 물길이 발아래 흐르고, 등 뒤로는 차가 오가는 시내, 앞으로는 짙은 녹음이 펼쳐집니다.",
+        },
+        {
+          name: "사면 4가의 녹나무",
+          body: "사면 4가(沙面四街)의 승리호텔(勝利賓館) 옆에는 300살이 넘은 녹나무가 서 있습니다. 섬의 어느 건물보다도 오래된 나무입니다. 떨어진 잎을 하나 주워 손가락으로 비벼 보면, 거리에 감도는 은은한 향과 같은 냄새가 납니다.",
+        },
+        {
+          name: "화이트스완 호텔의 ‘고향의 물’",
+          body: "강가의 화이트스완 호텔(白天鵝賓館)은 개혁개방 초기인 1983년에 문을 열었습니다. 작은 여관도 문 앞에서 신분증을 확인하던 시절에 누구나 들어올 수 있게 했고, 지금도 로비는 누구에게나 열려 있습니다. 한가운데 3층 높이의 폭포 정원 ‘고향의 물(故鄉水)’ 앞은 수십 년째 광저우 가족들이 기념사진을 찍는 자리입니다.",
+        },
+      ],
+      time: "걸어서 1~2시간이면 충분합니다. 나무 그늘 아래서 커피를 마시거나 화이트스완 호텔에서 얌차(딤섬을 곁들인 아침 차)를 즐기려면 시간을 더 잡으세요.",
+      when: "해 질 녘이 가장 아름답습니다. 낮게 기운 햇살이 옛 건물 정면을 비추고, 어두워지면 강 건너 새로 지은 바이어탄 대만구 예술센터(白鵝潭大灣區藝術中心)에 불이 켜집니다. 나무 그늘을 한가롭게 누리고 싶다면 평일 아침이 가장 한적합니다. 광저우는 4~9월이 덥고 비가 많지만 사면대가는 대부분 고목 그늘 아래 있고, 10~12월이 가장 쾌적합니다.",
+      pair: "사면도는 지하철 1호선·6호선 황사역 바로 옆입니다. 북서쪽으로 20분쯤 걸으면 옛 성벽 서쪽의 오래된 동네 시관(西關)의 골목을 손질한 융칭팡(永慶坊)이 나오고, 상하구 보행거리도 가깝습니다. 진가사는 황사역에서 1호선으로 두 정거장이라, 오전에 그곳을 보고 저녁에 이곳에 오면 느긋한 하루가 됩니다. 일부 주강 야경 유람선은 사면도 앞 강 위에서 속도를 늦추고, 섬 바로 옆 황사 선착장에서 타는 노선도 있습니다.",
+      skip: "상하이 와이탄이나 마카오 옛 시가지를 걸어 봤다면 사면도는 웅장하다기보다 아담하고 순하게 느껴질 것입니다. 산책보다 즐길 거리를 찾는다면 걷는 것 말고는 할 게 많지 않으니, 그 시간을 진가사나 융칭팡에 쓰세요.",
+      faq: [
+        {
+          question: "광저우 사면도는 가 볼 만한가요?",
+          answer: "네, 한두 시간 천천히 걷기 좋은 곳입니다. 섬은 동서로 900m 남짓하고, 차가 거의 다니지 않는 사면대가 양옆으로 옛 영사관과 은행이 늘어서 있으며, 녹나무와 반얀나무가 그늘을 드리웁니다. 가장 오래된 나무는 300살이 넘습니다. 입장료가 없고, 같은 날 진가사와 융칭팡도 함께 둘러볼 수 있습니다.",
+        },
+        {
+          question: "사면도는 얼마나 둘러보면 되나요?",
+          answer: "1~2시간이면 사면대가와 강변, 옆 골목까지 걸어볼 수 있습니다. 커피를 마시거나 화이트스완 호텔에서 얌차를 즐긴다면 1시간쯤 더 잡으세요. 걸어서 20분쯤 거리의 융칭팡까지 함께 본다면 반나절이 여유롭습니다.",
+        },
+        {
+          question: "사면도는 입장료가 있나요?",
+          answer: "아니요, 없습니다. 사람들이 살고 일하는 동네라 언제든 걸어 들어갈 수 있습니다. 옛 건물은 대부분 사무실, 호텔, 카페, 상점이라 거리에서 겉모습을 즐기면 되고, 루르드 성모 성당은 지금도 미사를 드리며, 화이트스완 호텔 로비는 누구에게나 열려 있습니다.",
+        },
+        {
+          question: "사면도는 언제 가는 게 가장 좋나요?",
+          answer: "해 질 녘이 가장 좋습니다. 낮은 햇살이 옛 건물을 비추고, 어두워지면 강 건너편에 불이 켜집니다. 한적함을 원하면 평일 아침에 가세요. 광저우는 10~12월이 가장 쾌적하고, 4~9월은 덥고 비가 많지만 사면대가는 대부분 고목 그늘 아래 있습니다.",
+        },
+        {
+          question: "사면도, 융칭팡, 진가사를 하루에 볼 수 있나요?",
+          answer: "네, 광저우에서 가장 편하게 짤 수 있는 하루입니다. 오전에 진가사에서 조각을 보고, 25분쯤 걸어 융칭팡에서 골목을 구경하며 점심을 먹은 뒤, 다시 20분쯤 걸어 사면도에서 늦은 오후를 보내면 됩니다. 지하철로는 진가사역과 황사역이 1호선으로 두 정거장입니다.",
+        },
+      ],
+    },
+  },
 };
 
 export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
@@ -4160,6 +4598,42 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["Jade Dragon Snow Mountain", "Yulong Snow Mountain", "Mount Yulong", "Yulong Xueshan", "Mount Satseto", "玉龙雪山", "丽江玉龙雪山", "玉龍雪山", "옥룡설산", "리장 옥룡설산"],
     sameAs: ["https://en.wikipedia.org/wiki/Jade_Dragon_Snow_Mountain", "https://www.wikidata.org/wiki/Q1465660"],
+  },
+  "chen-clan-hall": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Guangdong Folk Arts Museum (Chen Clan Academy) official site", url: "https://www.gzcjc.com.cn/" },
+      { title: "Guangzhou Municipal Bureau of Culture, Radio, Television and Tourism: 陈家祠 (Chen Clan Ancestral Hall)", url: "https://wglj.gz.gov.cn/ztmb/gzhyn/ajjq/4a/content/post_9773088.html" },
+      { title: "Liwan District government: 陈家祠 (Chen Clan Ancestral Hall)", url: "https://www.lw.gov.cn/zjlw/lwdt/yzlw/content/post_9051669.html" },
+      { title: "China Daily: inside the Guangdong Folk Art Museum, with its senior guide (2020)", url: "https://cn.chinadaily.com.cn/a/202004/21/WS5e9e643aa310c00b73c78783.html" },
+      { title: "China News Service (People's Daily Overseas Edition): the seven crafts of the Chen Clan Ancestral Hall (2011)", url: "https://www.chinanews.com.cn/cul/2011/04-19/2983043.shtml" },
+    ],
+    alternateName: ["Chen Clan Ancestral Hall", "Chen Clan Academy", "Guangdong Folk Art Museum", "陈家祠", "陈氏书院", "陈家祠堂", "广州陈家祠", "广东民间工艺博物馆", "진가사", "진씨서원", "광저우 진가사", "Chenjia Ci", "Chenshi Shuyuan"],
+    sameAs: ["https://en.wikipedia.org/wiki/Chen_Clan_Ancestral_Hall", "https://www.wikidata.org/wiki/Q5090739"],
+  },
+  "canton-tower": {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Guangzhou Municipal Bureau of Culture, Radio, Television and Tourism: 广州塔 (Canton Tower)", url: "https://wglj.gz.gov.cn/ztmb/gzhyn/ajjq/4a/content/post_8928935.html" },
+      { title: "Guangzhou International (Foreign Affairs Office of Guangzhou): Canton Tower international neighbourhood", url: "https://www.eguangzhou.gov.cn/gzspecialreports/intlblocks/details/cantontower/content/post_31829.html" },
+      { title: "Haizhu District government: 广州塔 (Canton Tower)", url: "https://www.haizhu.gov.cn/hzdt/ztlm/tzhz/rjhj/lyjd/csmp/content/post_9190964.html" },
+      { title: "Guangzhou City Construction Investment Group: 海心桥 (Haixin Bridge)", url: "https://www.gzci.net/groupbusiness/info.aspx?itemid=282&lcid=7" },
+      { title: "China News Service: Guangzhou's ‘slender waist’ and the Bai Juyi line behind the name (2014)", url: "https://www.chinanews.com.cn/hb/2014/07-31/6446391.shtml" },
+    ],
+    alternateName: ["Canton Tower", "Guangzhou Tower", "Guangzhou TV Tower", "广州塔", "小蛮腰", "广州新电视塔", "광저우 타워", "광저우타워", "캔톤 타워", "Guangzhou Ta", "Xiaomanyao"],
+    sameAs: ["https://en.wikipedia.org/wiki/Canton_Tower", "https://www.wikidata.org/wiki/Q168400"],
+  },
+  shamian: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Guangzhou International (Foreign Affairs Office of Guangzhou): Shamian international neighbourhood", url: "https://www.eguangzhou.gov.cn/gzspecialreports/intlblocks/details/shamian/content/post_31831.html" },
+      { title: "Xinhua: Shamian's renewal, an old street story (2024)", url: "https://www.news.cn/politics/20240424/f4ace8da3c1a451b8c95a8c32981e3c3/c.html" },
+      { title: "Guangzhou Daily: the scent of Shamian's old camphor trees (2022)", url: "https://news.dayoo.com/guangzhou/202205/30/139995_54276613.htm" },
+      { title: "Yangcheng Evening News: the Shamian West Bridge and the canal of 1859–1861 (2021)", url: "https://ysln.ycwb.com/content/2021-12/23/content_40469952.html" },
+      { title: "Southern Daily: the White Swan Hotel and its open doors", url: "https://news.southcn.com/node_8e2690394f/a15b8ea403.shtml" },
+    ],
+    alternateName: ["Shamian Island", "Shamian", "Shameen", "沙面", "沙面岛", "广州沙面", "사면도", "샤몐다오", "광저우 사면도", "Shamian Dao"],
+    sameAs: ["https://en.wikipedia.org/wiki/Shamian", "https://www.wikidata.org/wiki/Q529977"],
   },
 };
 
