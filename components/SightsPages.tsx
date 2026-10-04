@@ -135,7 +135,6 @@ function SightStorySections({ story, meta, locale }: { story: SightStory; meta: 
       <section aria-labelledby="sight-why-title" className={styles.section} data-reveal="">
         <div className={sightStyles.why}>
           <h2 id="sight-why-title">{labels.whyTitle}</h2>
-          {meta ? <EditorialByline compact locale={locale} reviewedAt={meta.reviewedAt} /> : null}
           <div className={sightStyles.whyBody}>
             {story.why.map((paragraph) => <p key={paragraph}><StoryText locale={locale} text={paragraph} /></p>)}
           </div>
@@ -510,6 +509,8 @@ export function SightPage({ locale = "en", sightId }: { locale?: HomegroundLocal
               {showCity ? <p className={styles.eyebrow}>{city}</p> : null}
               <h1>{sightCopy.name}</h1>
               <p className={styles.lede}><SightText locale={locale} text={sightCopy.line} /></p>
+              {/* Who wrote it and when it was checked, where the city pages and guides put it. */}
+              {storyMeta ? <EditorialByline locale={locale} reviewedAt={storyMeta.reviewedAt} /> : null}
               <div className={sightStyles.heroActions}>
                 {heroAction ? (
                   <a className={styles.primaryButton} href={heroAction.href}>
