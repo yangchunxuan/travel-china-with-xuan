@@ -184,7 +184,7 @@ const body = {
       title: "계속 계획하기",
       items: [
         { label: "중국 여행 계획하기", href: "/ko/plan/", description: "여행 계획 컬렉션으로 돌아갑니다." },
-        { label: "푸둥 또는 훙차오 공항 선택하기", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "공항 선택 자체가 어려운 지상 구간을 없앨 수 있습니다." },
+        { label: "푸둥 또는 홍차오 공항 선택하기", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "공항 선택 자체가 어려운 지상 구간을 없앨 수 있습니다." },
         { label: "베이징남역과 서우두·다싱공항 연결하기", href: "/ko/guides/beijing-south-station-to-capital-or-daxing-airport/", description: "정확한 수단 실행은 지정 구간 가이드를 이용하세요." },
         { label: "호텔이 정말 지하철과 가까운지 확인하기", href: "/ko/guides/china-hotel-near-metro/", description: "정확한 출구와 마지막 구간을 점검합니다." },
         { label: "휠체어로 이용 가능한 중국 동선 계획하기", href: "/ko/guides/wheelchair-accessible-china-route-planning/", description: "휠체어 이용자를 위해 역, 차량, 호텔, 명소의 전체 사슬을 확인합니다." },

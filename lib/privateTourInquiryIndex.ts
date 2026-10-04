@@ -43,7 +43,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "chongqing-wulong-5-day-private-tour",
-    title: { en: "Chongqing & Wulong: 5-Day Private Tour", zh: "重庆·武隆 5 天 4 晚私家团", ko: "충칭·우룽 5일 프라이빗 투어", ja: "重慶・武隆 5日間（4泊）プライベートツアー" },
+    title: { en: "Chongqing & Wulong: 5-Day Private Tour", zh: "重庆·武隆 5 天 4 晚私家团", ko: "충칭·우롱 5일 프라이빗 투어", ja: "重慶・武隆 5日間（4泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
     ],
@@ -93,7 +93,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
-    title: { en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour", zh: "成都·九寨沟·黄龙 6 天 5 晚私家团", ko: "청두·주자이거우·황룽 6일 프라이빗 투어", ja: "成都・九寨溝・黄龍 6日間（5泊）プライベートツアー" },
+    title: { en: "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour", zh: "成都·九寨沟·黄龙 6 天 5 晚私家团", ko: "청두·구채구·황룡 6일 프라이빗 투어", ja: "成都・九寨溝・黄龍 6日間（5泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 6 }] },
     ],
@@ -128,7 +128,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "chengdu-chongqing-8-day-private-tour",
-    title: { en: "Chengdu, Leshan, Chongqing, Wulong & Dazu: 8-Day Private Tour", zh: "成都·乐山·重庆·武隆·大足 8 天 7 晚私家团", ko: "청두·러산·충칭·우룽·대족 8일 프라이빗 투어", ja: "成都・楽山・重慶・武隆・大足 8日間（7泊）プライベートツアー" },
+    title: { en: "Chengdu, Leshan, Chongqing, Wulong & Dazu: 8-Day Private Tour", zh: "成都·乐山·重庆·武隆·大足 8 天 7 晚私家团", ko: "청두·낙산·충칭·우롱·대족 8일 프라이빗 투어", ja: "成都・楽山・重慶・武隆・大足 8日間（7泊）プライベートツアー" },
     packages: [
       { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 6 }] },
     ],

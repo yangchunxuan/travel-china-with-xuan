@@ -29,16 +29,35 @@ test("Must-see Sights is the Destinations menu's third row, with a hub and one p
   assert.match(route, /dynamicParams = false/);
 });
 
-test("every sight names real reservation rules, a guide with a folder, published tours and copy in every language", async () => {
+test("every sight names real reservation rules, a real guide or its own photo, published tours and copy in every language", async () => {
   const ruleIds = new Set(attractionReservationRules.map((rule) => rule.id));
   const seenRules = new Set();
+  const componentGuides = await source("lib/guideRegistry.ts");
+  const provenance = await source("docs/homeground-photo-provenance.md");
+  const guideExists = (id) => access(path.join(projectRoot, "content/guides", id, "metadata.json")).then(() => true, () => componentGuides.includes(`id: "${id}"`));
   for (const sight of sightsModule.sights) {
     for (const id of sight.reservationIds) {
       assert.ok(ruleIds.has(id), `${sight.id}: reservation rule ${id} exists`);
       assert.ok(!seenRules.has(id), `${id} belongs to one sight only`);
       seenRules.add(id);
     }
-    await access(path.join(projectRoot, "content/guides", sight.guideId, "metadata.json"));
+    if (sight.guideId) assert.ok(await guideExists(sight.guideId), `${sight.id}: guide ${sight.guideId} exists`);
+    // A sight without its own guide yet carries its own photo.
+    else assert.ok(sight.image, `${sight.id}: no guide, so it carries its own photo`);
+    if (sight.image) {
+      await access(path.join(projectRoot, "public", sight.image.src));
+      for (const locale of locales) assert.ok(sight.image.alt[locale], `${sight.id} (${locale}): photo alt`);
+      // An openly licensed photo names its author, licence and source (shown under the photo).
+      const credit = sight.image.credit;
+      if (credit) for (const key of ["author", "license", "licenseUrl", "sourceUrl"]) assert.ok(credit[key], `${sight.id}: credit ${key}`);
+    }
+    // A guide photo under an attribution licence (per the provenance log) carries its credit onto every card.
+    if (!sight.image && sight.guideId) {
+      const logged = provenance.split("\n").find((line) => line.includes(`\`${sight.guideId}\``) && line.includes("commons.wikimedia.org"));
+      if (logged && /CC BY/u.test(logged)) {
+        for (const key of ["author", "license", "licenseUrl", "sourceUrl"]) assert.ok(sight.photoCredit?.[key], `${sight.id}: borrowed CC photo credit ${key}`);
+      }
+    }
     assert.ok(sightsModule.sightCityIds.includes(sight.city), `${sight.id}: city is listed on the hub`);
     for (const locale of locales) {
       const published = new Set(getPublishedPrivateTourCatalog(locale).map((item) => item.slug));

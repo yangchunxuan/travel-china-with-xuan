@@ -639,7 +639,7 @@ const body = {
     {
       id: "delta-day-trip-links",
       type: "internal-links",
-      title: "Plan the actual return journey",
+      title: "Day trips from Shanghai",
       items: [
         { label: "Shanghai to Suzhou day trip", href: "/guides/shanghai-to-suzhou-day-trip/", description: "Choose the stations, one focused Suzhou day and a workable return." },
         { label: "Shanghai to Hangzhou by train", href: "/guides/shanghai-hangzhou-transport-route/", description: "Compare station pairs before choosing a day trip or overnight stay." },

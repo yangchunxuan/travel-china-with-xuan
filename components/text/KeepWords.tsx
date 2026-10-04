@@ -106,7 +106,9 @@ export function KeepWords({ text, locale, keep }: {
     if (!piece) return;
     if (index % 2 === 1) {
       if (nodes.length) nodes.push(<wbr key={`kw-${index}`} />);
-      nodes.push(<span className={styles.keep} key={`k-${index}`}>{piece}</span>);
+      // Plain text: the wrapper's keep-all already forbids a break with no
+      // <wbr>, and a nowrap span inside a balanced heading froze Chrome.
+      nodes.push(<Fragment key={`k-${index}`}>{piece}</Fragment>);
       afterKept = true;
       return;
     }

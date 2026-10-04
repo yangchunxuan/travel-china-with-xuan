@@ -49,3 +49,57 @@ test("the homepage sample route photo carries no badge", async () => {
   assert.doesNotMatch(copy, /imageBadge/u);
   assert.doesNotMatch(styles, /\.sampleRouteImage (span|::after)|\.sampleRouteImage::after/u);
 });
+
+// Every openly licensed photo shown carries its credit, on a line under it (never on it).
+// A table row is one line; a bullet or paragraph runs to the next blank line, bullet or heading.
+const provenanceBlock = (doc, file) => {
+  const lines = doc.split("\n");
+  const index = lines.findIndex((line) => line.includes(file));
+  if (index < 0) return "";
+  if (lines[index].trim().startsWith("|")) return lines[index];
+  const block = [lines[index]];
+  for (let next = index + 1; next < lines.length && next < index + 12; next += 1) {
+    if (!lines[next].trim() || /^\s*(- |#|\|)/u.test(lines[next])) break;
+    block.push(lines[next]);
+  }
+  return block.join(" ");
+};
+
+test("every sight photo and city hero under an attribution licence has a credit", async () => {
+  const doc = await source("docs/homeground-photo-provenance.md");
+  const { sights } = await import("../../lib/sights.ts");
+  const hubsSource = await source("lib/destinationHubs.ts");
+  const registry = await source("lib/generated/guideRegistry.generated.ts");
+  for (const sight of sights) {
+    const src = sight.image?.src ?? (() => {
+      const at = registry.indexOf(`"id": "${sight.guideId}"`);
+      const match = registry.slice(at).match(/"heroImagePath": "([^"]+)"/u);
+      return match?.[1];
+    })();
+    assert.ok(src, `${sight.id}: photo found`);
+    const block = provenanceBlock(doc, src.replace(/^\//u, ""));
+    if (/CC BY/u.test(block)) {
+      const credit = sight.image ? sight.image.credit : sight.photoCredit;
+      assert.ok(credit?.author && credit?.license && credit?.sourceUrl && credit?.licenseUrl, `${sight.id}: ${src} is CC BY and needs a credit`);
+    }
+  }
+  for (const match of hubsSource.matchAll(/heroImagePath: "([^"]+)",\n(\s+heroCredit: \{)?/gu)) {
+    const block = provenanceBlock(doc, match[1].replace(/^\//u, ""));
+    if (/CC BY/u.test(block)) assert.ok(match[2], `${match[1]} is CC BY and needs a heroCredit`);
+  }
+});
+
+test("every tour card photo under an attribution licence has a credit for the rows that show it", async () => {
+  const { tourCardCredits } = await import("../../lib/photoCredits.ts");
+  const ledger = JSON.parse(await source("docs/homeground-private-tour-card-derivatives.json")).records;
+  for (const record of ledger) {
+    if (!/^Wikimedia Commons, .+ CC BY/u.test(record.rightsBasis)) continue;
+    const credit = tourCardCredits[record.productId];
+    assert.ok(credit?.author && credit?.license && credit?.sourceUrl && credit?.licenseUrl, `${record.productId}: card photo needs a credit`);
+  }
+  // Every page that renders tour cards also renders their credits.
+  for (const file of ["components/content/DestinationHubPage.tsx", "components/SightsPages.tsx", "components/TravelInspirationPages.tsx", "components/TourCollectionsPages.tsx"]) {
+    const page = await source(file);
+    assert.match(page, /<TourPhotoCredits /u, `${file} credits its tour cards`);
+  }
+});

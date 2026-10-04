@@ -103,7 +103,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "시안 숙소: 성벽 안인가 다옌타인가", href: "/ko/guides/xian-where-to-stay-city-wall-or-dayanta/", description: "어느 역이 편한지를 결정하는 시안 주소." },
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "역 조합을 정한 뒤의 예매·입장·탑승 절차." },
     { label: "중국 고속철도역은 왜 시내에서 먼가", href: "/ko/guides/why-china-high-speed-stations-are-far-away/", description: "마지막 구간에서 사람들이 놀라는 이유." },
-    { label: "청두에서 주자이거우 가는 법", href: "/ko/guides/chengdu-jiuzhaigou-transport-route/", description: "청두 다음이 산지 노선이라면 도착역보다 먼저 정하세요." },
+    { label: "청두에서 구채구 가는 법", href: "/ko/guides/chengdu-jiuzhaigou-transport-route/", description: "청두 다음이 산지 노선이라면 도착역보다 먼저 정하세요." },
     { label: "따로 끊은 항공권과 자가 환승 위험", href: "/ko/guides/china-separate-flight-tickets-self-transfer-risk/", description: "이 구간 앞뒤로 같은 날 항공 사슬을 짜기 전에 읽어 보세요." },
     { label: "보조배터리 기내·열차 반입 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "교통수단에 따라 달라지고 보안 검색에서 걸릴 수 있는 몇 안 되는 규정." },
   ]},

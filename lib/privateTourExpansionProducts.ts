@@ -152,22 +152,22 @@ const chengduJiuzhaigou: PrivateTourProduct = {
   title: l(
     "Chengdu, Jiuzhaigou & Huanglong: 6-Day Private Tour",
     "成都·九寨沟·黄龙 6 天 5 晚私家团",
-    "청두·주자이거우·황룽 6일 프라이빗 투어",
+    "청두·구채구·황룡 6일 프라이빗 투어",
   ),
   eyebrow: l(
     "Jiuzhaigou first, Huanglong on the return, Chengdu last",
     "先九寨沟、返程游黄龙，最后完整看成都",
-    "주자이거우부터, 귀환길 황룽, 마지막은 청두",
+    "구채구부터, 귀환길 황룡, 마지막은 청두",
   ),
   lede: l(
     "Arrive in Chengdu, travel straight to Jiuzhaigou on Day 2, visit Huanglong on the return journey and keep a full final touring day for Chengdu's pandas and city life.",
     "抵达成都后，第 2 天直接乘高铁前往九寨沟；返程途中游黄龙，最后用完整一天看熊猫与成都生活。",
-    "청두 도착 후 2일 차에 바로 주자이거우로 이동하고, 귀환길에 황룽을 방문한 뒤 마지막 종일 일정은 판다와 청두 도심에 씁니다.",
+    "청두 도착 후 2일 차에 바로 구채구로 이동하고, 귀환길에 황룡을 방문한 뒤 마지막 종일 일정은 판다와 청두 도심에 씁니다.",
   ),
   summary: l(
     "Three nights in Chengdu and two near Jiuzhaigou, with breakfast, high-speed rail, private station and scenic-area transfers and guided touring.",
     "成都 3 晚、九寨沟 2 晚，均含早餐。高铁和车站、景区接驳一并安排，核心景点按私家团的节奏游览。",
-    "청두 3박과 주자이거우 인근 2박, 조식, 열차와 역·관광지 이동, 가이드 관광을 함께 담은 프라이빗 일정입니다.",
+    "청두 3박과 구채구 인근 2박, 조식, 열차와 역·관광지 이동, 가이드 관광을 함께 담은 프라이빗 일정입니다.",
   ),
   highlights: lists(
     [
@@ -184,8 +184,8 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ],
     [
       "이른 판다기지 관람",
-      "주자이거우 종일 일정",
-      "고도를 고려한 황룽 일정",
+      "구채구 종일 일정",
+      "고도를 고려한 황룡 일정",
       "열차와 전용 차량을 잇는 이동",
     ],
   ),
@@ -201,29 +201,29 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ),
     day(
       2,
-      l("Train to Huanglongjiuzhai, then drive to Jiuzhaigou", "高铁到黄龙九寨站，再乘车去九寨沟", "황룽주자이역행 열차 후 주자이거우 이동"),
+      l("Train to Huanglongjiuzhai, then drive to Jiuzhaigou", "高铁到黄龙九寨站，再乘车去九寨沟", "황룡구채역행 열차 후 구채구 이동"),
       l(
         "Take the high-speed train to Huanglongjiuzhai station, where your local guide and driver meet you and take you by private vehicle to your Jiuzhaigou hotel. The rest of the day is for resting and getting used to the altitude.",
         "乘高铁到黄龙九寨站，当地导游和司机接站，专车送你到九寨沟酒店。余下时间好好休息，适应海拔。",
-        "고속철도로 황룽주자이역에 도착하면 현지 가이드와 기사가 맞이해 전용 차량으로 주자이거우 호텔까지 모셔다 드립니다. 남은 시간은 쉬면서 고도에 적응합니다.",
+        "고속철도로 황룡구채역에 도착하면 현지 가이드와 기사가 맞이해 전용 차량으로 구채구 호텔까지 모셔다 드립니다. 남은 시간은 쉬면서 고도에 적응합니다.",
       ),
     ),
     day(
       3,
-      l("A full day in Jiuzhaigou", "九寨沟完整一日", "주자이거우 종일"),
+      l("A full day in Jiuzhaigou", "九寨沟完整一日", "구채구 종일"),
       l(
         "Spend the day in Jiuzhaigou's open valleys, on the scenic buses and paths running that day. Your guide plans the exact route around the weather, crowd controls, your energy and what is open on the day.",
         "把完整一天留给九寨沟，坐当天运行的景区车，走开放的步道。具体怎么走，导游会看天气、客流、你的体力和当日开放情况来安排。",
-        "주자이거우에서 하루를 보냅니다. 당일 운행하는 관광지 버스와 개방된 길로 다니며, 구체적인 동선은 가이드가 날씨, 혼잡도, 체력, 당일 개방 상태를 보고 정합니다.",
+        "구채구에서 하루를 보냅니다. 당일 운행하는 관광지 버스와 개방된 길로 다니며, 구체적인 동선은 가이드가 날씨, 혼잡도, 체력, 당일 개방 상태를 보고 정합니다.",
       ),
     ),
     day(
       4,
-      l("Huanglong and return to Chengdu", "黄龙与返回成都", "황룽 후 청두 귀환"),
+      l("Huanglong and return to Chengdu", "黄龙与返回成都", "황룡 후 청두 귀환"),
       l(
         "When the road and site are open, drive to Huanglong, ride the uphill cable car as planned and walk down at a pace that suits the altitude. Then on to Huanglongjiuzhai station for your train back to Chengdu.",
         "道路和景区开放时前往黄龙，按安排乘上行索道，再根据高海拔情况步行下山。之后去黄龙九寨站，乘高铁回成都。",
-        "도로와 관광지가 운영할 때 황룽으로 가서 예약된 상행 케이블카로 올라간 뒤 고도에 맞춰 걸어 내려옵니다. 이후 황룽주자이역에서 열차로 청두에 돌아갑니다.",
+        "도로와 관광지가 운영할 때 황룡으로 가서 예약된 상행 케이블카로 올라간 뒤 고도에 맞춰 걸어 내려옵니다. 이후 황룡구채역에서 열차로 청두에 돌아갑니다.",
       ),
     ),
     day(
@@ -236,7 +236,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
       l(
         "Start early at Chengdu Panda Base, then on to Wenshu Temple, People's Park and Jinli Old Street. The listed lunch is included; how active the pandas are can vary.",
         "一早去成都大熊猫基地，之后逛文殊院、人民公园和锦里古街。含行程所列午餐；熊猫活不活跃，要看当天情况。",
-        "이른 시간에 청두 판다기지를 방문한 뒤 문수원, 인민공원, 진리거리를 둘러봅니다. 일정에 적힌 중식이 포함되며, 판다가 얼마나 활발한지는 그날그날 다를 수 있습니다.",
+        "이른 시간에 청두 판다기지를 방문한 뒤 문수원, 인민공원, 금리거리를 둘러봅니다. 일정에 적힌 중식이 포함되며, 판다가 얼마나 활발한지는 그날그날 다를 수 있습니다.",
       ),
     ),
     day(
@@ -252,12 +252,12 @@ const chengduJiuzhaigou: PrivateTourProduct = {
   hotelNote: l(
     "Five nights with breakfast, based on twin sharing: three in Chengdu and two near Jiuzhaigou. We confirm the four-star standard, exact hotels, room type and single supplement with you in writing.",
     "共 5 晚，含早餐，按两人同住一间计：成都 3 晚、九寨沟 2 晚。4 星标准、具体酒店、房型和单房差，付款前都会书面发给你确认。",
-    "조식 포함 5박, 2인 1실 기준으로 청두 3박과 주자이거우 인근 2박입니다. 4성급 기준, 정확한 호텔·객실 유형·1인실 추가금은 결제 전에 서면으로 보내 드립니다.",
+    "조식 포함 5박, 2인 1실 기준으로 청두 3박과 구채구 인근 2박입니다. 4성급 기준, 정확한 호텔·객실 유형·1인실 추가금은 결제 전에 서면으로 보내 드립니다.",
   ),
   serviceNote: l(
     "The tour includes a private English-speaking guide and driver, airport or station transfers, round-trip second-class high-speed rail, listed admissions and scenic buses, an uphill Huanglong cable car and the Day 5 lunch. We confirm final train times, hotels and any weather alternative with you in writing.",
     "行程包含私人英语导游和司机、机场或车站接送、往返高铁二等座、所列门票和景区车、黄龙上行索道，以及第 5 天午餐。最终车次、酒店和天气备用方案，付款前会书面发给你确认。",
-    "영어 전용 가이드와 기사, 공항·역 이동, 왕복 고속철도 2등석, 명시된 입장권과 관광지 버스, 황룽 상행 케이블카, 5일 차 중식이 포함됩니다. 최종 열차 시간, 호텔, 날씨에 따른 대체 일정은 서면으로 보내 드립니다.",
+    "영어 전용 가이드와 기사, 공항·역 이동, 왕복 고속철도 2등석, 명시된 입장권과 관광지 버스, 황룡 상행 케이블카, 5일 차 중식이 포함됩니다. 최종 열차 시간, 호텔, 날씨에 따른 대체 일정은 서면으로 보내 드립니다.",
   ),
   exclusions: commonExclusions(
     [
@@ -266,7 +266,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     ],
     ["未明确确认的九寨沟景区内餐食", "自选氧气、行李搬运及医疗费用"],
     [
-      "별도 확인되지 않은 주자이거우 내부 식사",
+      "별도 확인되지 않은 구채구 내부 식사",
       "선택 산소용품, 짐 운반 및 의료비",
     ],
   ),
@@ -279,7 +279,7 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     question: l(
       "What if our train to Huanglongjiuzhai Station is delayed?",
       "去黄龙九寨站的高铁晚点，接站车会一直等吗？",
-      "황룽주자이역행 열차가 늦으면 픽업 차량이 계속 기다리나요?",
+      "황룡구채역행 열차가 늦으면 픽업 차량이 계속 기다리나요?",
     ),
     answer: l(
       "The private transfer is planned around the train in your written itinerary; unlimited waiting is not included automatically. Before payment, we confirm the station and meeting point, and record any agreed waiting or changed-train terms in writing. If your train is delayed, contact us so we can check the revised pickup and agree any extra cost before arranging it.",
@@ -292,11 +292,11 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     "hero.webp",
     1600,
     1064,
-    l("Five Flower Lake in Jiuzhaigou", "九寨沟五花海", "주자이거우 오화해"),
+    l("Five Flower Lake in Jiuzhaigou", "九寨沟五花海", "구채구 오화해"),
     l(
       "A full day for Jiuzhaigou, on the routes open that day.",
       "为九寨沟留出完整一天，具体游线看当天开放情况。",
-      "주자이거우에 하루를 비워 두고, 동선은 당일 개방 상태에 따라 정합니다.",
+      "구채구에 하루를 비워 두고, 동선은 당일 개방 상태에 따라 정합니다.",
     ),
   ),
   gallery: [
@@ -320,17 +320,17 @@ const chengduJiuzhaigou: PrivateTourProduct = {
   routeMedia: [
     routeMedia(
       4,
-      l("Huanglong", "黄龙", "황룽"),
+      l("Huanglong", "黄龙", "황룡"),
       image(
         chengduJiuzhaigouSlug,
         "route-day-2.webp",
         1600,
         1066,
-        l("Colourful ponds in Huanglong", "黄龙彩池", "황룽의 다채로운 연못"),
+        l("Colourful ponds in Huanglong", "黄龙彩池", "황룡의 다채로운 연못"),
         l(
           "Your Huanglong visit depends on the weather, access and altitude.",
           "黄龙游览要看天气、道路开放情况和海拔。",
-          "황룽 일정은 날씨, 접근 상황과 고도의 영향을 받습니다.",
+          "황룡 일정은 날씨, 접근 상황과 고도의 영향을 받습니다.",
         ),
       ),
     ),
@@ -1193,17 +1193,17 @@ const chengduChongqing: PrivateTourProduct = {
   title: l(
     "Chengdu, Leshan, Chongqing, Wulong & Dazu: 8-Day Private Tour",
     "成都·乐山·重庆·武隆·大足 8 天 7 晚私家团",
-    "청두·러산·충칭·우룽·대족 8일 프라이빗 투어",
+    "청두·낙산·충칭·우롱·대족 8일 프라이빗 투어",
   ),
   eyebrow: l(
     "Two cities, Leshan, Wulong karst and Dazu carvings",
     "双城、乐山、武隆喀斯特与大足石刻",
-    "두 도시, 러산, 우룽 카르스트와 대족석각",
+    "두 도시, 낙산, 우롱 카르스트와 대족석각",
   ),
   lede: l(
     "Travel from Chengdu to Chongqing by high-speed rail, with a focused day in Leshan, a night in Wulong and a final day trip to the Dazu Rock Carvings.",
     "从成都坐高铁到重庆，乐山用一天看重点，武隆住一晚，最后以大足石刻一日游收尾，串起西南文化主线。",
-    "청두에서 충칭까지 고속열차로 이어지는 여정에 러산 하루, 우룽 1박, 대족석각 당일 여행을 담았습니다.",
+    "청두에서 충칭까지 고속열차로 이어지는 여정에 낙산 하루, 우롱 1박, 대족석각 당일 여행을 담았습니다.",
   ),
   summary: l(
     "Eight-day Chengdu, Leshan, Chongqing and Wulong private tour with seven breakfast-included nights, local transport, train and guided sightseeing.",
@@ -1218,7 +1218,7 @@ const chengduChongqing: PrivateTourProduct = {
       "Wulong Three Natural Bridges and Dazu Rock Carvings",
     ],
     ["成都大熊猫基地", "乐山重点一日", "重庆城市夜景", "武隆天生三桥与大足石刻"],
-    ["청두 판다기지", "러산 집중 일정", "충칭 야경", "우룽 천생삼교와 대족석각"],
+    ["청두 판다기지", "낙산 집중 일정", "충칭 야경", "우롱 천생삼교와 대족석각"],
   ),
   itinerary: [
     day(
@@ -1241,11 +1241,11 @@ const chengduChongqing: PrivateTourProduct = {
     ),
     day(
       3,
-      l("Leshan day trip", "乐山一日", "러산 당일 여행"),
+      l("Leshan day trip", "乐山一日", "낙산 당일 여행"),
       l(
         "Your private vehicle takes you to Leshan to see the Giant Buddha on the land route or by boat, whichever your confirmation names—we can't promise both. River and path access depend on operating conditions.",
         "专车送你去乐山，按确认单上的方式看大佛：走登山游线或坐游船观佛，两种不一定都能安排。水路和步道能否通行，要看运营情况。",
-        "전용 차량으로 러산에 가서, 확인서에 적힌 대로 육로 코스나 유람선으로 대불을 봅니다. 두 방식을 모두 한다고 약속드리지는 않으며, 수로와 길 이용은 운영 상황에 따라 달라집니다.",
+        "전용 차량으로 낙산에 가서, 확인서에 적힌 대로 육로 코스나 유람선으로 대불을 봅니다. 두 방식을 모두 한다고 약속드리지는 않으며, 수로와 길 이용은 운영 상황에 따라 달라집니다.",
       ),
     ),
     day(
@@ -1259,11 +1259,11 @@ const chengduChongqing: PrivateTourProduct = {
     ),
     day(
       5,
-      l("Three Natural Bridges", "武隆天生三桥", "우룽 천생삼교"),
+      l("Three Natural Bridges", "武隆天生三桥", "우롱 천생삼교"),
       l(
         "Travel to Wulong and visit the Three Natural Bridges, using the scenic transport and lifts named in your confirmation that are running on the day. Overnight in Wulong.",
         "前往武隆，使用确认单列明且当天运行的景区车与电梯游览天生三桥，当晚住武隆。",
-        "우룽으로 이동해 천생삼교를 둘러봅니다. 관광지 차량과 엘리베이터는 확인서에 적힌 것 중 당일 운영하는 것을 이용하며, 이날은 우룽에서 숙박합니다.",
+        "우롱으로 이동해 천생삼교를 둘러봅니다. 관광지 차량과 엘리베이터는 확인서에 적힌 것 중 당일 운영하는 것을 이용하며, 이날은 우롱에서 숙박합니다.",
       ),
     ),
     day(
@@ -1271,12 +1271,12 @@ const chengduChongqing: PrivateTourProduct = {
       l(
         "A lighter Wulong morning",
         "武隆轻松游，返回重庆",
-        "가벼운 우룽 일정 후 충칭 귀환",
+        "가벼운 우롱 일정 후 충칭 귀환",
       ),
       l(
         "Choose one light Wulong activity for the season, as set out in your confirmation, then return to Chongqing by private vehicle. We don't squeeze in another major sight when time is short.",
         "按季节选一项确认单上的武隆轻松活动，然后专车返回重庆。时间不够时，不会再硬塞一处大型景区。",
-        "계절에 맞는 가벼운 우룽 체험 한 가지를 확인서에 적힌 대로 한 뒤, 전용 차량으로 충칭에 돌아갑니다. 시간이 부족할 때는 큰 관광지를 무리하게 더 넣지 않습니다.",
+        "계절에 맞는 가벼운 우롱 체험 한 가지를 확인서에 적힌 대로 한 뒤, 전용 차량으로 충칭에 돌아갑니다. 시간이 부족할 때는 큰 관광지를 무리하게 더 넣지 않습니다.",
       ),
     ),
     day(
@@ -1305,19 +1305,19 @@ const chengduChongqing: PrivateTourProduct = {
   hotelNote: l(
     "Seven four-star-standard nights with breakfast, based on twin sharing. You get the exact hotels, including where you stay in Wulong, plus taxes, room type and single supplement in writing.",
     "共 7 晚 4 星标准含早，默认两人同住一间，武隆住在哪里也会写明。具体酒店、税费、房型和单房差，都会书面发给你确认。",
-    "조식 포함 4성급 기준 7박, 2인 1실입니다. 호텔과 우룽 숙박 위치, 세금, 객실 유형, 1인실 추가금은 서면으로 보내 드립니다.",
+    "조식 포함 4성급 기준 7박, 2인 1실입니다. 호텔과 우롱 숙박 위치, 세금, 객실 유형, 1인실 추가금은 서면으로 보내 드립니다.",
   ),
   serviceNote: l(
     "Your tour includes private transport, twin-share four-star-standard hotels with breakfast and tax, the listed admissions and scenic transfers, second-class Chengdu–Chongqing rail, private English-speaking guide service, basic China-based travel and health insurance and 24/7 local support. Every paid Wulong and Dazu item is named in your written confirmation.",
     "行程包含全程私车、4 星标准双人同住房含早及税费、所列门票与景区接驳、成都—重庆二等座高铁、私人英语导游、中国境内基础旅游与健康保险及 24/7 当地支持；武隆和大足的付费项目会逐项写进确认单。",
-    "이 투어에는 전용 교통, 4성급 기준 2인 1실 숙박과 조식·세금, 명시된 입장권과 관광지 이동, 청두-충칭 2등석 열차, 영어 전용 가이드, 중국 내 기본 여행·건강보험 및 24시간 현지 지원이 포함됩니다. 우룽과 대족의 유료 항목은 확인서에 항목별로 적어 드립니다.",
+    "이 투어에는 전용 교통, 4성급 기준 2인 1실 숙박과 조식·세금, 명시된 입장권과 관광지 이동, 청두-충칭 2등석 열차, 영어 전용 가이드, 중국 내 기본 여행·건강보험 및 24시간 현지 지원이 포함됩니다. 우롱과 대족의 유료 항목은 확인서에 항목별로 적어 드립니다.",
   ),
   exclusions: commonExclusions(
     [
       "Unlisted Wulong attractions and Chongqing paid activities",
     ],
     ["未列明的武隆景点与重庆付费活动"],
-    ["명시되지 않은 우룽 관광지와 충칭 유료 체험"],
+    ["명시되지 않은 우롱 관광지와 충칭 유료 체험"],
   ),
   bookingNote: pricingBookingNote(
     "The published per-person starting prices apply to 2 or 6 travellers; the single-room supplement and other group sizes require a separate quote.",
@@ -1332,7 +1332,7 @@ const chengduChongqing: PrivateTourProduct = {
     l(
       "Hongya Cave and the Chongqing riverfront at night",
       "洪崖洞与重庆滨江夜景",
-      "훙야둥과 충칭 강변 야경",
+      "홍야동과 충칭 강변 야경",
     ),
     l(
       "The night view we choose depends on your arrival time, local access and crowds.",
@@ -1362,7 +1362,7 @@ const chengduChongqing: PrivateTourProduct = {
       "gallery-2.webp",
       1600,
       1200,
-      l("Leshan Giant Buddha", "乐山大佛", "러산대불"),
+      l("Leshan Giant Buddha", "乐山大佛", "낙산대불"),
       l(
         "Your confirmation names the land route or the boat view; we can't promise both.",
         "确认单会写明走登山游线还是坐游船，两种不一定都能安排。",
@@ -1373,7 +1373,7 @@ const chengduChongqing: PrivateTourProduct = {
   routeMedia: [
     routeMedia(
       5,
-      l("Three Natural Bridges", "武隆天生三桥", "우룽 천생삼교"),
+      l("Three Natural Bridges", "武隆天生三桥", "우롱 천생삼교"),
       image(
         chengduChongqingSlug,
         "route-day-3.webp",
@@ -1382,7 +1382,7 @@ const chengduChongqing: PrivateTourProduct = {
         l(
           "Three Natural Bridges in Wulong",
           "武隆天生三桥景区",
-          "우룽 천생삼교",
+          "우롱 천생삼교",
         ),
         l(
           "We check which paths, lifts and scenic transport are open on your travel date.",
@@ -1469,7 +1469,7 @@ const guangzhou: PrivateTourProduct = {
       l(
         "See Huacheng Square, cross Haixin Bridge and view Canton Tower from outside, then continue through Yongqingfang and Shangxiajiu. Canton Tower admission is not included.",
         "游览花城广场、步行海心桥并从外部看广州塔，再前往永庆坊与上下九。广州塔登塔不包含在内。",
-        "화청광장과 하이신교를 걷고 광저우타워 외관을 본 뒤 융칭팡과 상샤주를 둘러봅니다. 광저우타워 입장은 포함되지 않습니다.",
+        "화청광장과 하이신교를 걷고 광저우 타워 외관을 본 뒤 융칭팡과 상샤주를 둘러봅니다. 광저우 타워 입장은 포함되지 않습니다.",
       ),
     ),
     day(
@@ -1503,12 +1503,12 @@ const guangzhou: PrivateTourProduct = {
       l(
         "Shamian, Beijing Road and departure",
         "沙面、北京路与送站",
-        "사몐, 베이징루와 출발",
+        "사면도, 베이징루와 출발",
       ),
       l(
         "Visit Shamian and Beijing Road, then transfer to the airport or station. If you leave early, the order may change or the time at each stop may be shorter.",
         "游览沙面和北京路，之后送你去机场或车站。如果出发时间较早，两处的顺序或停留时间会相应调整。",
-        "사몐과 베이징루를 둘러본 뒤 공항이나 역으로 모셔다 드립니다. 출발이 이르면 방문 순서나 머무는 시간을 조정합니다.",
+        "사면도와 베이징루를 둘러본 뒤 공항이나 역으로 모셔다 드립니다. 출발이 이르면 방문 순서나 머무는 시간을 조정합니다.",
       ),
     ),
   ],
@@ -1528,7 +1528,7 @@ const guangzhou: PrivateTourProduct = {
       "Canton Tower admission and Pearl River cruise, unless listed in your booking",
     ],
     ["全部餐厅账单与食物采购", "未列明的广州塔登塔与珠江夜游"],
-    ["모든 식당 비용과 음식 구매", "예약에 명시되지 않은 광저우타워 입장과 주강 유람선"],
+    ["모든 식당 비용과 음식 구매", "예약에 명시되지 않은 광저우 타워 입장과 주강 유람선"],
   ),
   bookingNote: pricingBookingNote(
     "The prices shown above are per person for groups of 2, 4 or 6 travellers. We still confirm rooms and vehicle class before sending the final total.",
@@ -1555,7 +1555,7 @@ const guangzhou: PrivateTourProduct = {
     l(
       "Canton Tower and the Pearl River at night",
       "夜色中的广州塔与珠江",
-      "밤의 광저우타워와 주강",
+      "밤의 광저우 타워와 주강",
     ),
     l(
       "Guangzhou's skyline; tower admission is separate unless your booking includes it.",

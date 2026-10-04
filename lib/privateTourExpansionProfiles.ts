@@ -20,17 +20,17 @@ export const privateTourExpansionProfiles: Readonly<Record<string, ComparisonPro
     route: l(
       "Chengdu · Jiuzhaigou · Huanglong",
       "成都 · 九寨沟 · 黄龙",
-      "청두 · 주자이거우 · 황룽",
+      "청두 · 구채구 · 황룡",
     ),
     appeal: l(
       "Travel north on Day 2, give Jiuzhaigou a full day, visit Huanglong on the return and finish with pandas and Chengdu city life.",
       "第 2 天进入川北，完整游九寨沟，返程途中游黄龙，最后用一天看熊猫与成都生活。",
-      "2일 차에 북부 쓰촨으로 이동해 주자이거우를 종일 보고, 귀환길 황룽을 거쳐 판다와 청두 도심 일정으로 마칩니다.",
+      "2일 차에 북부 쓰촨으로 이동해 구채구를 종일 보고, 귀환길 황룡을 거쳐 판다와 청두 도심 일정으로 마칩니다.",
     ),
     pace: l(
       "Three nights in Chengdu and two in Jiuzhaigou, with Huanglong between the park stay and the return train.",
       "成都 3 晚、九寨沟 2 晚，黄龙安排在九寨沟住宿之后、返程高铁之前。",
-      "청두 3박, 주자이거우 2박이며 황룽은 주자이거우 숙박 뒤 귀환 열차 전에 방문합니다.",
+      "청두 3박, 구채구 2박이며 황룡은 구채구 숙박 뒤 귀환 열차 전에 방문합니다.",
     ),
     fit: l(
       "Travellers who want pandas, Chengdu city life and Sichuan's mountain scenery in one route.",
@@ -130,17 +130,17 @@ export const privateTourExpansionProfiles: Readonly<Record<string, ComparisonPro
     route: l(
       "Chengdu · Leshan · Chongqing · Wulong · Dazu",
       "成都 · 乐山 · 重庆 · 武隆 · 大足",
-      "청두 · 러산 · 충칭 · 우룽 · 대족",
+      "청두 · 낙산 · 충칭 · 우롱 · 대족",
     ),
     appeal: l(
       "Pair Chengdu and Leshan with Chongqing, an overnight Wulong section and a final day at Dazu Rock Carvings.",
       "把成都与乐山、重庆、武隆住宿段和大足石刻串成 8 天路线。",
-      "청두와 러산, 충칭, 우룽 숙박 일정과 대족석각을 8일에 잇습니다.",
+      "청두와 낙산, 충칭, 우롱 숙박 일정과 대족석각을 8일에 잇습니다.",
     ),
     pace: l(
       "Eight days across Chengdu, Chongqing and one Wulong stay, with two days for the mountain section.",
       "8 天走成都、重庆和武隆三地，其中武隆山地段留出两天。",
-      "8일 동안 청두, 충칭, 우룽에 머물며 우룽 산악 구간에 이틀을 배정합니다.",
+      "8일 동안 청두, 충칭, 우롱에 머물며 우롱 산악 구간에 이틀을 배정합니다.",
     ),
     fit: l(
       "Travellers who want Sichuan culture, a riverfront megacity and karst mountain scenery in one trip.",

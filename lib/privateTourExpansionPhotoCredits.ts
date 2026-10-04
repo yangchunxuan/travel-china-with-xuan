@@ -32,7 +32,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Five Flower Lake, Jiuzhaigou",
       "九寨沟五花海",
-      "주자이거우 오화해",
+      "구채구 오화해",
       "Chensiyuan",
       "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
       "CC BY-SA 4.0",
@@ -50,7 +50,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Multicolored ponds, Huanglong",
       "黄龙五彩池群",
-      "황룽 오채지",
+      "황룡 오채지",
       "CEphoto, Uwe Aranas",
       "https://commons.wikimedia.org/wiki/File:Huanglong_Sichuan_China_Multicolored-ponds-02.jpg",
       "CC BY-SA 3.0",
@@ -186,7 +186,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Hongya Cave at night, Chongqing",
       "重庆洪崖洞夜景",
-      "충칭 훙야둥 야경",
+      "충칭 홍야동 야경",
       "Jonashtand",
       "https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg",
       "CC BY-SA 4.0",
@@ -204,7 +204,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Three Natural Bridges, Wulong",
       "武隆天生三桥景区",
-      "우룽 천생삼교",
+      "우롱 천생삼교",
       "RoyalCathayan",
       "https://commons.wikimedia.org/wiki/File:Three_Natural_Bridges.jpg",
       "CC BY-SA 4.0",
@@ -213,7 +213,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Leshan Giant Buddha",
       "乐山大佛全景",
-      "러산대불 전경",
+      "낙산대불 전경",
       "Ariel Steiner",
       "https://commons.wikimedia.org/wiki/File:Leshan_Buddha_Statue_View.JPG",
       "CC BY-SA 2.5",
@@ -224,7 +224,7 @@ export const privateTourExpansionPhotoCreditsBySlug: Readonly<
     credit(
       "Canton Tower and Pearl River at night",
       "广州塔与珠江夜景",
-      "광저우타워와 주장강 야경",
+      "광저우 타워와 주강 야경",
       "Daniel Lu（User:dllu）",
       "https://commons.wikimedia.org/wiki/File:Canton_Tower_at_night_Guangzhou_2024_dllu.jpg",
       "CC BY-SA 4.0",

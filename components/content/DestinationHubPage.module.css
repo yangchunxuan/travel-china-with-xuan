@@ -204,6 +204,29 @@
   width: calc(min(100%, 90rem) - 2 * clamp(1rem, 5vw, 5rem));
 }
 
+/* The hero photo's credit, a line under its caption. */
+.heroPhotoCredit {
+  margin: 0.25rem 0 0;
+}
+
+.heroPhotoCredit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+/* A table caption in the opening or the stay example repeats the heading above it: keep it for screen readers only. */
+.destinationOpening caption,
+.stayExample caption {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .stayExample {
   min-width: 0;
 }

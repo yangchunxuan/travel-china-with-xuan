@@ -52,7 +52,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     { question: "충칭에 늦은 밤 짐을 들고 도착하면 마지막 구간을 어떻게 잡나요?", answer: "조명이 있고 이용할 수 있는지 확인한 도로 높이 입구를 쓰세요. 운영 여부를 확인하지 않은 쇼핑몰, 건물 통로, 엘리베이터나 에스컬레이터에는 기대지 말고, 기사에게도 관광지 중심 핀이 아니라 도로 높이의 하차 입구를 알려 주세요. 큰 짐이 있다면 호텔을 나서기 전에 차량이 닿는 입구를 확인하세요." },
     { question: "충칭에서 목적지가 바로 위나 아래에 있는 것처럼 보이면 어떻게 하나요?", answer: "표지 없는 주거용 계단으로 들어가거나 차량용 경사로를 걸어 올라가지 마세요. 현재 도로명을 촬영하거나 저장한 뒤 직원이 있는 역 입구, 호텔 데스크 또는 큰 공공도로로 돌아가 이름이 명시된 상부·하부 입구를 물어보세요. 택시에도 관광지 중심 핀이 아니라 그 도로 높이의 입구를 알려 줘야 할 수 있습니다." },
   ] },
-  {id: "internal-links", type: "internal-links", title: "알맞은 숙소와 속도로 충칭 계획하기", items: [{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우룽·다쭈 포함 여부를 정하세요." },
+  {id: "internal-links", type: "internal-links", title: "알맞은 숙소와 속도로 충칭 계획하기", items: [{ label: "충칭 도시 가이드부터 시작하세요", href: "/ko/destinations/chongqing/", description: "이 전문 가이드에 들어가기 전에 숙박 일수, 숙소 거점, 교통 관문과 우롱·대족 포함 여부를 정하세요." },
     {label: "충칭에서 머물 지역 고르기", href: "/ko/guides/chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba/", description: "실제 일정과 역 접근성을 기준으로 거점을 고릅니다."},
     {label: "중국 지도 좌표와 실제 입구 확인", href: "/ko/guides/china-map-coordinate-offset-explained/", description: "중국어 주소와 이용 가능한 입구로 목적지를 다시 확인합니다."},
     {label: "중국 휠체어 접근 가능 경로 계획", href: "/ko/guides/wheelchair-accessible-china-route-planning/", description: "접근 가능 표시 하나가 전체 경로를 보장한다고 가정하지 말고 구간별로 확인합니다."}

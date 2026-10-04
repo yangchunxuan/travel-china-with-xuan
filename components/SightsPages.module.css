@@ -140,6 +140,58 @@
   aspect-ratio: 16 / 11;
 }
 
+/* The hero photo's column: the photo, and for an openly licensed one its credit on a line under it. */
+.plainHero,
+.creditedHero {
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+/* Credits sit under a photo or a grid, never on a photo. */
+.photoCredits {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+}
+
+.creditedHero .photoCredits {
+  margin: 0;
+}
+
+.photoCredits a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+/* An author or "CC BY-SA 4.0" never breaks across lines; a credit stays whole where it fits. */
+.photoCredits a {
+  white-space: nowrap;
+}
+
+.creditItem {
+  display: inline-block;
+}
+
+@media (max-width: 40rem) {
+  /* Phones: the label, then one credit per line, so "Name (" never splits from its author. */
+  .creditItem {
+    display: inline;
+  }
+
+  .creditItem::before {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .creditSeparator {
+    display: none;
+  }
+}
+
 .rules {
   display: grid;
   gap: 1rem;
