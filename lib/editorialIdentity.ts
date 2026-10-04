@@ -5,6 +5,7 @@ import {
   type HomegroundLocale,
 } from "./homegroundI18n";
 import { getHomegroundSocialProfileUrls } from "./homegroundSocial";
+import { homegroundBusiness } from "./homegroundBusiness";
 
 export const EDITORIAL_AUTHOR_ID = "evan" as const;
 export const EDITORIAL_PERSON_ID =
@@ -123,6 +124,12 @@ export function editorialOrganizationSchema() {
     "@type": "TravelAgency",
     "@id": EDITORIAL_ORGANIZATION_ID,
     name: HOMEGROUND_BRAND_NAME,
+    // The one operating entity, the same on every page (lib/homegroundBusiness.ts).
+    legalName: homegroundBusiness.registeredName,
+    identifier: [
+      { "@type": "PropertyValue", propertyID: "Unified Social Credit Code", value: homegroundBusiness.unifiedSocialCreditCode },
+      { "@type": "PropertyValue", propertyID: "Travel Agency Licence No.", value: homegroundBusiness.travelAgencyLicenceNumber },
+    ],
     alternateName: ["Homeground China Journeys", "homegroundchina.com"],
     url: EDITORIAL_SITE_URL,
     slogan: HOMEGROUND_BRAND_SLOGAN,
