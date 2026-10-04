@@ -1952,6 +1952,298 @@ export const sightStories: Stories = {
       ],
     },
   },
+  lingyin: {
+    en: {
+      description: "Hundreds of Buddhas carved into Hangzhou's Feilai Peak beside a shaded stream, then incense smoke at Lingyin Temple. Plan it with West Lake.",
+      why: [
+        "Inside the gate, the path follows a clear stream under a cliff of grey, pitted rock, and the rock is full of Buddhas. Some sit in little hollows, some are the size of a person, and one fat, laughing Buddha grins at you across the water. Cool air breathes out of the caves, even in summer. Further on, past the yellow walls, incense smoke drifts over the temple courtyards. In the main hall sits a gilded Buddha nearly 25 metres tall, throne included.",
+        "The peak's name is a question. About 1,700 years ago, an Indian monk called Huili looked at it and declared it a small hill from Vulture Peak in India, where the Buddha taught. When, he asked, did it fly here? So it became Feilai Feng, the Peak That Flew Here, and he founded the temple facing it. Unlike the hills around it, the peak is limestone, worn into odd shapes and caves. Over four centuries, starting about a thousand years ago, carvers cut hundreds of Buddhas into it. The Ming painter Dong Qichang put the question again in two lines for the pavilion by the spring: since when has the spring been cold, and from where did the peak fly?",
+        "Lingyin is a working temple, so its halls are for worship first, and you share them with monks and people bowing with incense. Give the peak as much time as the halls, because the carvings are the heart of the visit. Fans of Chinese folk tales can look for Jigong, the scruffy ‘mad monk’ who loved wine and meat. He became a monk here, and a hall beside the Medicine Buddha Hall tells his life in eighteen murals. For a quieter hour or two, walk about a kilometre uphill beyond the temple, on stone steps through the woods, to the small hillside temples of Yongfu and Taoguang.",
+      ],
+      highlights: [
+        {
+          name: "The laughing Buddha by the stream",
+          body: "He sits in the rock beside the stream, facing the path to the temple, leaning back with his belly bare and one hand on a big cloth sack. He laughs so hard his eyes have become two crescent moons, and eighteen of the Buddha's disciples crowd round him. Carved about eight hundred years ago, this is the largest group on the peak, and almost everyone stops here for a photo.",
+        },
+        {
+          name: "A thread of sky in Longhong Cave",
+          body: "Step into Longhong Cave and daylight falls through an opening in the roof like the mouth of a well. Climb the steps nearby to a smaller chamber, look up, and on a bright day a tiny round hole in the rock lets in a single thread of sky. The seven-storey stone pagoda at the cave mouth honours Huili, the monk who named the peak.",
+        },
+        {
+          name: "Behind the great Buddha",
+          body: "In the main hall, walk round behind the gilded Buddha. The whole back wall is a mountain of some 150 clay figures, more than 20 metres high, telling of a boy's journey to 53 teachers in search of wisdom. Guanyin, the goddess of mercy, rides a great sea creature at the bottom centre, with the boy himself beside her, palms together, in a little red bib.",
+        },
+      ],
+      time: "Two to three hours for Feilai Peak and the temple's main halls. Allow half a day if you walk on uphill to Yongfu and Taoguang.",
+      when: "Go on a weekday if you can, because weekends draw far more visitors. If West Lake is on the same day, take the morning slot. In summer the shaded stream path and the cool caves make this one of the easier places in Hangzhou on a hot day. Avoid the Spring Festival, the May Day holiday and the first week of October.",
+      pair: "West Lake is about half an hour east by car. Come back through the Longjing tea villages in the hills south of the temple, and stop for a cup of the green tea grown on those slopes. Lingyin in the morning, tea at midday and a boat on the lake in the afternoon make a classic Hangzhou day.",
+      skip: "With only a few hours in Hangzhou, give them to West Lake. If big temples leave you cold, skip the halls and spend your time on the Feilai Peak path. Entry needs a reservation, so if your date is full, spend the morning in the Longjing tea villages instead.",
+      faq: [
+        {
+          question: "Is Lingyin Temple worth visiting?",
+          answer: "Yes, above all for Feilai Peak opposite the temple, where hundreds of Buddhas were carved into the limestone, mostly between the 10th and 14th centuries. Lingyin itself is one of China's best-known Buddhist temples, founded about 1,700 years ago and still busy with worshippers. Two to three hours covers the peak and the main halls.",
+        },
+        {
+          question: "Do I need to book Lingyin Temple, and is it free?",
+          answer: "Yes, you need to book, and entry is currently free. Every visitor needs a booking in their own name for a morning or afternoon slot, made at least a day ahead, and a passport is accepted. One booking covers Feilai Peak, Lingyin Temple and the hillside temples of Yongfu and Taoguang. The rules change from time to time, and we can check them for your date and book for you.",
+        },
+        {
+          question: "How long do you need at Lingyin Temple and Feilai Peak?",
+          answer: "Plan on two to three hours: about an hour on the Feilai Peak path and in its caves, and the rest in the temple's main halls. Add an hour or two if you climb the stone steps to the Yongfu and Taoguang temples on the slope above. If West Lake is on the same day, keep Lingyin to the morning.",
+        },
+        {
+          question: "What is the best time to visit Lingyin Temple?",
+          answer: "A weekday, ideally in spring or autumn. From mid-May to mid-June 2026, about 26,000 people booked a visit on an average weekday and about 45,000 at weekends, so weekdays are noticeably calmer. In summer the shaded path and cool caves make it a good hot-day choice. Avoid the Spring Festival, the May Day holiday and the first week of October.",
+        },
+        {
+          question: "Can you visit Lingyin Temple and West Lake in one day?",
+          answer: "Yes, and it makes one of the best days in Hangzhou. Lingyin is about half an hour west of the lake by car. See the temple and Feilai Peak in the morning, stop in the Longjing tea villages on the way back, and spend the afternoon on the lake. Book Lingyin's morning slot ahead.",
+        },
+      ],
+    },
+    zh: {
+      description: "杭州灵隐寺对面的飞来峰，溪边石壁上刻着几百尊佛像；再往里走，寺里香烟袅袅。上午来这里，下午去西湖。",
+      why: [
+        "进了大门，小路沿着一条清亮的溪水走，一边是灰白色、满是孔洞的石壁，上面到处是佛像：有的坐在凿出来的小洞里，有的跟真人一般大，还有一尊大肚弥勒隔着溪水冲你哈哈大笑。山洞里吹出来的风，大夏天也是凉的。再往前，穿过黄墙进了寺，香烟在院子里飘着，大雄宝殿里坐着一尊贴金的大佛，连莲花座将近 25 米高。",
+        "这座山的名字，本身就是一句问话。大约一千七百年前，印度僧人慧理来到这里，说这本是佛陀说法的天竺灵鹫山上的一座小岭，还问：“不知何代飞来？”山从此叫作飞来峰，他在峰前建起了灵隐寺。和周围的山不同，飞来峰是石灰岩，石头奇形怪状，山洞一个连着一个，正所谓“无石不奇，无树不古，无洞不幽”。大约从一千年前起，前后四百来年，工匠们在山石上刻下了几百尊佛像。明代书画家董其昌给溪边的冷泉亭写过一副对联，把这个问题又问了一遍：“泉自几时冷起，峰从何处飞来。”",
+        "灵隐寺至今香火旺盛，殿堂首先是拜佛的地方，你会和僧人、举香礼拜的信众走在一起。给飞来峰留的时间，要和寺里一样多，那些石刻才是这一趟的重头戏。济公就是在灵隐寺出家的，药师殿右侧有一座济公殿，四面墙上十八幅壁画，画的就是他的一生。想走得清静些，就过了灵隐寺继续往山上走，沿着林间的石阶走一公里左右，到山腰上的永福寺和韬光寺。",
+      ],
+      highlights: [
+        {
+          name: "溪边的大肚弥勒",
+          body: "他刻在溪边的石壁上，正对着去灵隐寺的路。他斜靠着山岩，袒胸露腹，右手搭在一只大布袋上，笑得眼睛弯成了两道月牙，身边围着十八罗汉。这组石像刻于约八百年前的南宋，是飞来峰上最大的一组，几乎人人都要在这里停下来拍张照。",
+        },
+        {
+          name: "龙泓洞里的一线天",
+          body: "走进龙泓洞，洞顶有个像井口一样的开口，天光从上面漏下来。旁边有石阶通到一间小石室，天气晴朗时抬头看，岩顶一个小圆孔会透进一线天光，这就是大家要找的“一线天”。洞口那座七层的石塔叫理公塔，纪念的就是给飞来峰起名的慧理。",
+        },
+        {
+          name: "大佛背后",
+          body: "进了大雄宝殿，别只看前面的大佛，绕到佛像背后看看。整面后墙是一座二十多米高的泥塑，大大小小约 150 尊像，讲的是善财童子一路拜访五十三位老师、求取智慧的故事。最下层正中是脚踩鳌鱼的观音，她身旁那个双手合十、穿红肚兜的小孩，就是善财。",
+        },
+      ],
+      time: "飞来峰加上寺里几座主要的殿，两到三个小时。再往山上走到永福寺、韬光寺，就要留半天。",
+      when: "能挑平日就挑平日，周末来的人要多得多。同一天还要去西湖的话，就约上午场。夏天飞来峰下的溪边小路有树荫，山洞里凉快，是杭州大热天里比较舒服的去处。春节、五一和国庆长假，能避开就避开。",
+      pair: "西湖在东边，开车约半小时。回程可以走灵隐寺南边山里的小路，穿过龙井村回到湖边，在村里停下来，喝一杯就长在这片山坡上的龙井茶。上午灵隐寺，中午龙井村喝茶，下午西湖坐船，就是杭州最经典的一天。",
+      skip: "在杭州只有几个小时的话，先留给西湖。对大寺院没什么兴趣的，可以不进殿，把时间都花在飞来峰那条路上。没有预约进不去；要是你那天已经约满，就把上午留给龙井村。",
+      faq: [
+        {
+          question: "杭州灵隐寺值得去吗？",
+          answer: "值得，最值得看的是寺对面的飞来峰：石灰岩上刻了几百尊佛像，大多是五代到元朝、也就是 10 到 14 世纪留下的。灵隐寺本身是国内最有名的佛寺之一，建寺已有约一千七百年，至今香火旺盛。飞来峰加主要殿堂，两到三个小时就够。",
+        },
+        {
+          question: "灵隐寺要预约吗？要门票吗？",
+          answer: "要预约，目前不收门票。每位游客都要用本人证件实名预约上午场或下午场，至少提前一天，护照也可以用。一次预约就包括飞来峰、灵隐寺，以及山上的永福寺和韬光寺。规则时常调整，我们可以按你的日期核实并代为预约。",
+        },
+        {
+          question: "逛灵隐寺和飞来峰要多长时间？",
+          answer: "两到三个小时：飞来峰的小路和山洞大约一个小时，其余时间留给寺里的几座主殿。要是再沿石阶爬到山上的永福寺、韬光寺，就多留一两个小时。同一天还要去西湖的话，灵隐寺就安排在上午。",
+        },
+        {
+          question: "什么时候去灵隐寺最好？",
+          answer: "平日最好，春秋两季最舒服。2026 年 5 月中到 6 月中，平日每天约有 2.6 万人预约，周末约 4.5 万人，平日明显清静。夏天溪边有树荫，山洞里凉快，大热天来也不错。尽量避开春节、五一和国庆黄金周。",
+        },
+        {
+          question: "灵隐寺和西湖能安排在一天吗？",
+          answer: "能，这是杭州最好的一种走法。灵隐寺在西湖西边，开车约半小时：上午看灵隐寺和飞来峰，回程在龙井村停一停，下午留给西湖。记得提前约好灵隐寺的上午场。",
+        },
+      ],
+    },
+    ko: {
+      description: "항저우 영은사 맞은편 비래봉, 개울가 바위에 불상 수백 구가 새겨져 있고 절에는 향 연기가 피어오릅니다. 오전에 보고 오후에는 서호로.",
+      why: [
+        "입구를 지나면 맑은 개울을 따라 길이 이어지고, 한쪽에는 구멍이 숭숭 뚫린 잿빛 바위 절벽이 서 있습니다. 그 바위 곳곳에 불상이 있습니다. 작은 홈 안에 앉은 것도 있고 사람만 한 것도 있으며, 뚱뚱한 불상 하나는 개울 건너에서 이쪽을 보며 껄껄 웃습니다. 동굴에서는 한여름에도 서늘한 바람이 흘러나옵니다. 조금 더 가서 노란 담장을 지나면 절 마당에 향 연기가 떠돌고, 대웅보전에는 연꽃 받침까지 높이 25m 가까운 금빛 불상이 앉아 있습니다.",
+        "이 봉우리의 이름은 그 자체가 질문입니다. 약 1,700년 전, 인도에서 온 승려 혜리가 이 봉우리를 보고 석가모니가 설법하던 인도 영축산의 작은 봉우리라며 ‘언제 날아왔는가’ 하고 물었습니다. 그래서 ‘날아온 봉우리’ 비래봉이 되었고, 그는 그 앞에 영은사를 세웠습니다. 비래봉의 다른 이름인 영축봉(靈鷲峰)도 양산 통도사의 영축산처럼 그 인도의 산에서 온 이름입니다. 주변 산과 달리 석회암이라 바위가 기묘하고 동굴이 많으며, 약 천 년 전부터 400년에 걸쳐 사람들이 이 바위에 불상 수백 구를 새겼습니다. 명나라 서화가 동기창(董其昌)은 개울가 냉천정에 두 줄의 글귀를 지어 그 질문을 다시 던졌습니다. ‘샘은 언제부터 차가워졌고, 봉우리는 어디서 날아왔는가.’",
+        "영은사는 지금도 예불이 이어지는 절이라, 전각은 무엇보다 기도하는 곳입니다. 스님들, 향을 들고 절하는 사람들과 함께 둘러보게 됩니다. 비래봉에는 전각만큼 시간을 들이세요. 이 바위의 불상들이야말로 이곳에서 가장 볼 만한 것입니다. 술과 고기를 즐긴 괴짜 스님으로 중국 민간 이야기에 자주 나오는 제공(濟公)도 이 절에서 출가했고, 약사전 오른편의 제공전에는 그의 일생을 그린 벽화 18폭이 있습니다. 조금 더 조용히 걷고 싶다면 절을 지나 숲속 돌계단을 따라 1km쯤 올라가, 산 중턱의 작은 절인 영복사와 도광사까지 가 보세요.",
+      ],
+      highlights: [
+        {
+          name: "개울가의 포대화상",
+          body: "개울 옆 바위벽에 영은사로 가는 길을 마주 보고 새겨져 있습니다. 배를 드러낸 채 바위에 비스듬히 기대어 오른손을 커다란 자루에 얹었고, 얼마나 크게 웃는지 눈이 초승달처럼 휘었습니다. 둘레에는 18나한이 모여 있습니다. 약 800년 전 남송 때 새긴 것으로 비래봉에서 가장 큰 조각 무리이며, 거의 모두가 여기서 걸음을 멈추고 사진을 찍습니다.",
+        },
+        {
+          name: "용홍동의 한 줄기 하늘",
+          body: "용홍동에 들어서면 천장에 우물 입구처럼 뚫린 구멍으로 햇빛이 떨어집니다. 근처 돌계단을 올라 작은 석실에서 위를 보면, 맑은 날에는 바위의 작은 둥근 구멍으로 하늘빛이 한 줄기 새어 듭니다. 중국 사람들이 ‘일선천(一線天)’이라 부르며 찾는 곳입니다. 동굴 입구의 7층 돌탑은 이 봉우리에 이름을 붙인 혜리를 기리는 이공탑입니다.",
+        },
+        {
+          name: "대불 뒤편",
+          body: "대웅보전에 들어가면 금빛 대불 뒤로 돌아가 보세요. 뒷벽 전체가 높이 20m가 넘는 흙으로 빚은 산 같은 조각으로, 크고 작은 인물 약 150구가 한 소년이 지혜를 구해 스승 53명을 찾아가는 이야기를 펼칩니다. 맨 아래 단 한가운데에는 커다란 바다 짐승을 밟고 선 관음보살이 있고, 그 곁에 빨간 배두렁이를 두르고 두 손을 모은 소년이 바로 그 주인공 선재동자입니다.",
+        },
+      ],
+      time: "비래봉과 절의 주요 전각까지 2~3시간입니다. 위쪽의 영복사와 도광사까지 걸어 올라가면 반나절을 잡으세요.",
+      when: "가능하면 평일에 가세요. 주말에는 사람이 훨씬 많습니다. 같은 날 서호도 간다면 오전 시간대를 예약하세요. 여름에는 그늘진 개울길과 서늘한 동굴 덕분에 항저우에서 더위를 피하기 좋은 곳입니다. 춘절과 5월 초 노동절, 10월 첫 주 국경절 연휴는 피하세요.",
+      pair: "서호는 동쪽으로 차로 30분쯤입니다. 돌아올 때는 영은사 남쪽 산속 뒷길로 용정차 마을을 지나 호수로 나오세요. 오전에 영은사, 한낮에는 마을 비탈에서 자란 용정차 한 잔, 오후에는 서호 유람선이면 항저우의 대표적인 하루가 됩니다.",
+      skip: "항저우에 몇 시간밖에 없다면 서호에 쓰세요. 큰 절에 별 관심이 없다면 전각은 건너뛰고 비래봉 길만 천천히 걸어도 됩니다. 예약 없이는 들어갈 수 없으니, 원하는 날짜가 다 찼다면 그 오전은 용정차 마을에서 보내세요.",
+      faq: [
+        {
+          question: "항저우 영은사는 가 볼 만한가요?",
+          answer: "네, 무엇보다 절 맞은편의 비래봉 때문에 가 볼 만합니다. 석회암 바위에 불상 수백 구가 새겨져 있고, 대부분 10~14세기의 것입니다. 영은사 자체도 중국에서 가장 이름난 불교 사찰 가운데 하나로, 약 1,700년 전에 세워져 지금도 참배객이 끊이지 않습니다. 비래봉과 주요 전각은 2~3시간이면 충분합니다.",
+        },
+        {
+          question: "영은사는 예약해야 하나요? 입장료가 있나요?",
+          answer: "예약은 필요하고, 입장료는 현재 무료입니다. 방문자마다 본인 명의로 오전 또는 오후 시간대를 예약해야 하고, 예약은 적어도 하루 전까지 해야 합니다. 여권으로도 예약할 수 있습니다. 예약 한 번으로 비래봉, 영은사, 그리고 산 위의 영복사와 도광사까지 들어갈 수 있습니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+        },
+        {
+          question: "영은사와 비래봉을 보려면 시간이 얼마나 걸리나요?",
+          answer: "2~3시간을 잡으세요. 비래봉 산책로와 동굴에 1시간쯤, 나머지는 절의 주요 전각에 씁니다. 돌계단을 올라 위쪽의 영복사와 도광사까지 가려면 1~2시간을 더하세요. 같은 날 서호도 간다면 영은사는 오전에 두세요.",
+        },
+        {
+          question: "영은사는 언제 가는 게 가장 좋나요?",
+          answer: "평일, 계절로는 봄과 가을이 가장 좋습니다. 2026년 5월 중순부터 6월 중순까지 평일에는 하루 평균 약 2만 6천 명, 주말에는 약 4만 5천 명이 예약했으니 평일이 확실히 한산합니다. 여름에는 그늘진 길과 서늘한 동굴 덕분에 더운 날 가기에도 좋습니다. 춘절과 5월 초 노동절, 10월 첫 주 국경절 연휴는 피하세요.",
+        },
+        {
+          question: "영은사와 서호를 하루에 볼 수 있나요?",
+          answer: "네, 항저우에서 가장 알찬 하루 코스 가운데 하나입니다. 영은사는 서호에서 서쪽으로 차로 30분쯤이니, 오전에 영은사와 비래봉을 보고 돌아오는 길에 용정차 마을에 들른 뒤 오후는 서호에서 보내세요. 영은사 오전 시간대는 미리 예약해 두세요.",
+        },
+      ],
+    },
+  },
+  liangzhu: {
+    en: {
+      description: "Near Hangzhou, a 5,000-year-old water city survives as grassy banks in the rice fields. See the museum first, then climb its palace mound.",
+      why: [
+        "Cross the park past rice fields and ponds, and now and then an egret lifts out of the trees. Climb onto the great raised platform at its heart, and the wind blows in over open country. Long, low grassy banks run across the fields below. Those banks are the walls of a city built about five thousand years ago. The ground under your feet, some 670 metres long, was heaped up by hand, partly over a natural hill, to raise the palaces more than ten metres above the plain. The whole city is still here, drawn in earth and grass, and you are standing at its centre.",
+        "Chinese people often speak of five thousand years of civilisation, and at Liangzhu you can stand in a city that old. It was a water city. Eight of its nine gates were for boats, and people got about by dugout canoe and bamboo raft, so picture the fields around you laced with waterways. The walled inner city alone is about four times the size of Beijing's Forbidden City. Floods poured off the hills, so the builders dammed the valleys to the north-west. Their dams are among the oldest known anywhere, built from mud wrapped in reeds and grass and stacked crosswise like sandbags.",
+        "Split the day in two, and start at the museum. Its long, pale stone buildings sit on a lake, with quiet courtyards between the galleries. Inside are the jades, the pottery and a huge model of the city. Once you have seen them, the park's open fields start to read as palaces, riverside houses and landing stages. Without the museum, the park can feel like a pleasant meadow. Photographers and repeat visitors can reverse the order and catch the morning light in the park.",
+      ],
+      highlights: [
+        {
+          name: "On top of the palace platform",
+          body: "Climb Da Mojiaoshan, the highest of the three mounds that held the palaces, and turn slowly. From up here you can trace the city in rings: the palace area at the centre, the walls around it, and beyond them the raised ground where villagers lived.",
+        },
+        {
+          name: "The wall cut open",
+          body: "Walk to the south wall through fountain grass, and the wall comes and goes between the stems. Here a stretch has been cut open, the only place in the park where you can see inside a real five-thousand-year-old wall. Its base is stone laid in strips, each about what a few boats or rafts could carry, and each a little different, because the stone came from different hills.",
+        },
+        {
+          name: "The little god in the jade",
+          body: "In the museum's jade gallery, lean in close to the square jade tubes, round on the inside, that the Chinese call cong. Many carry the same tiny figure: someone in a feathered headdress above a beast with huge round eyes and bared fangs. Archaeologists see it as the god the people of Liangzhu shared, and it was carved five thousand years ago, without metal tools.",
+        },
+      ],
+      time: "A full day: the museum in the morning, lunch and the drive across, then the ruins park in the afternoon. With half a day, see the museum and one part of the park; the museum alone takes about two hours.",
+      when: "Spring and autumn. From March to April, rapeseed flowers turn stretches of the old city gold and cherry trees bloom by the west water gate; in autumn the rice ripens. The park is open ground with little shade, so summer afternoons are hard going, and heavy rain or typhoon warnings can close it at short notice. Check the latest notice the day before.",
+      pair: "Liangzhu lies about 25 kilometres north-west of central Hangzhou, so give it a day of its own. If the water story grips you, go to Laohuling, in the hills north-west of the old city. There you can stand by the cut face of a dam about 15 metres high and see the bundles of grass-wrapped mud stacked inside it. The Yaoshan altar, laid out in three colours of earth, is about 5 kilometres north-east of the city. Check that each is open before you go. The most celebrated Liangzhu jade, the King of Cong from the Fanshan royal tombs, is kept in Hangzhou at the Zhejiang Provincial Museum's Zhijiang branch, not at Liangzhu.",
+      skip: "If you need standing ruins to feel the past, this is not it: Liangzhu is earth mounds, grass and water, and most walls are only about two metres high. With two days in Hangzhou, give them to West Lake and Lingyin. If you are curious but short of time, the museum alone tells most of the story in about two hours.",
+      faq: [
+        {
+          question: "Is Liangzhu worth visiting?",
+          answer: "Yes, if you want to see one of the places where Chinese civilisation took shape. About 5,000 years ago Liangzhu was a planned water city, with palaces on a raised platform, walls, rice fields and some of the oldest known dams in the world. UNESCO listed it in 2019. The city survives as earth and grass, so see the museum first and give the two a full day.",
+        },
+        {
+          question: "What will I actually see at the Liangzhu ruins park?",
+          answer: "Mostly open country: rice fields, reeds and water, crossed by long grassy banks that were the city walls, broad but mostly only about two metres high. At the centre is the raised platform where the palaces stood, about 670 by 450 metres, and you can climb it. At the south wall one stretch is cut open to show how the wall was built, and the museum's model of the city helps you read the rest.",
+        },
+        {
+          question: "Should I visit Liangzhu Museum or the ruins park first?",
+          answer: "The museum first, for most first-time visitors. Its jades, pottery and huge model of the city show you what the park's fields once held, so the mounds and grassy banks make sense when you reach them. Going to the park first suits photographers, landscape lovers and repeat visitors who want the morning light. The two are run separately, so check each one's admission for your date.",
+        },
+        {
+          question: "How long do you need for Liangzhu?",
+          answer: "A full day for the museum and the ruins park: the museum in the morning, the park in the afternoon. Liangzhu is about 25 kilometres north-west of central Hangzhou, so allow for the road there and back. With half a day, see the museum, which takes about two hours, and one part of the park.",
+        },
+        {
+          question: "When is the best time to visit Liangzhu?",
+          answer: "Spring and autumn. From March to April rapeseed flowers turn parts of the old city gold and cherry trees bloom by the west water gate, and in autumn the rice ripens. Summer is hot on open ground with little shade, and heavy rain or typhoon warnings can close the park at short notice, so keep the museum as your fallback.",
+        },
+      ],
+    },
+    zh: {
+      description: "杭州良渚古城遗址，五千年前的一座水城，如今城墙化作稻田间一道道草坡。先去博物院，再登上宫殿大土台。",
+      why: [
+        "穿过遗址公园，稻田和池塘边的树林里不时飞起白鹭。登上正中那座大土台，旷野上的风迎面吹来，一道道又长又矮的草坡横在田野里，那就是五千年前的城墙。脚下这座土台东西约 670 米长，一部分借了天然的小山，其余全靠人力堆筑，把宫殿托到了十几米高。整座城其实都还在，只是化作了泥土和草坡，而你正站在它的正中央。",
+        "我们常说中华文明“上下五千年”，在良渚，你可以亲眼看到一座五千年前的城。这是一座水城：九座城门里有八座是水门，人们划着独木舟、撑着竹筏在城里来往，眼前这片田野，当年河道纵横。光是城墙围起来的内城，就有大约四个北京故宫那么大。山洪会从西北的山上冲下来，良渚人就在那边的山谷里筑坝。这是世界上已知最早的堤坝系统之一，坝体用芦荻、茅草把泥土裹成一个个“草裹泥”，再像沙袋一样横竖交错垒起来。",
+        "这一天最好分成两半，先去博物院：几座浅色石材的长条形建筑立在湖上，展厅之间是安静的庭院。里面有玉器、陶器，还有一座巨大的古城沙盘；看过这些，再到遗址公园，眼前的田野才会变成宫殿、临河的房屋和码头。不先看博物院，遗址公园很容易只像一片好看的草地。爱拍照、或者不是第一次来的人，也可以反过来，先去遗址公园赶早上的光线。",
+      ],
+      highlights: [
+        {
+          name: "登上大莫角山",
+          body: "大莫角山是宫殿区三座土台里最高的一座。站上去慢慢转一圈，古城一圈套一圈的样子就看出来了：正中是宫殿区，外面一圈是城墙，再往外，是当年村民垫高了住的土地。",
+        },
+        {
+          name: "剖开的南城墙",
+          body: "沿着步道走向南城墙，城墙在狼尾草丛中若隐若现。这里剖开了一段，是遗址公园里唯一能看到五千年前城墙真实剖面的地方。最底下的石头一条一条铺开，每一条大约是几条船或竹筏运一趟的量；石头取自不同的山，所以每条都略有不同。",
+        },
+        {
+          name: "玉琮上的小神像",
+          body: "在博物院的玉器展厅，凑近看看那些外方内圆的玉琮。很多上面都刻着同一个小小的图案：上方是头戴羽冠的神人，下方是圆睁大眼、露出獠牙的神兽。考古学者认为，这是良渚人共同信奉的神，刻于还没有金属工具的五千年前。",
+        },
+      ],
+      time: "一整天：上午看博物院，吃过午饭开车过去，下午逛遗址公园。只有半天的话，看博物院，再挑遗址公园的一段；光看博物院大约两个小时。",
+      when: "春秋两季最好。三四月，古城里成片的油菜花开得金黄，西水城门一带樱花盛开；秋天，稻子熟了。遗址公园是一片开阔地，几乎没有遮阴，夏天的下午很难熬；遇上暴雨或台风预警，还可能临时闭园，出发前一天看一下最新公告。",
+      pair: "良渚在杭州市区西北约 25 公里，自成一天，不适合和西湖排在同一天。对那段治水的故事感兴趣，可以去古城西北山里的老虎岭遗址公园：站在约 15 米高的水坝剖面前，能看清里面一层层横竖交错的“草裹泥”。瑶山遗址在古城东北约 5 公里，祭坛用三种颜色的土筑成。这两处都要先单独确认开放。被誉为“天下第一琮”的“琮王”出自反山王陵，收藏在杭州的浙江省博物馆之江馆，不在良渚。",
+      skip: "想看矗立的古建筑废墟，这里不合适：良渚只有土台、草坡和水，城墙大多只有两米来高。在杭州只有两天，先留给西湖和灵隐寺。好奇但时间紧，只看博物院，两个小时左右就能看懂大半个故事。",
+      faq: [
+        {
+          question: "杭州良渚古城遗址值得去吗？",
+          answer: "值得，如果你想亲眼看看中华文明的源头之一。五千年前，良渚是一座规划过的水城，有建在高台上的宫殿、城墙、稻田，还有世界上已知最早的一批水坝；2019 年列入世界遗产。整座城如今只剩泥土和草坡，所以先看博物院，两处加起来留一整天。",
+        },
+        {
+          question: "良渚古城遗址公园里能看到什么？",
+          answer: "主要是一片开阔的田野：稻田、芦苇和水面之间，横着一道道长长的草坡，那就是当年的城墙，很宽，但大多只有两米来高。正中是当年建宫殿的大土台，东西约 670 米、南北约 450 米，可以走上去。南城墙有一段剖开展示，能看到城墙是怎么筑起来的；其余部分，靠博物院的古城沙盘帮你看懂。",
+        },
+        {
+          question: "良渚博物院和遗址公园，先去哪个？",
+          answer: "第一次来的话，大多数人适合先去博物院。看过玉器、陶器和巨大的古城沙盘，知道那片田野当年是什么样子，到了遗址公园，那些土台和草坡才看得明白。爱拍照、喜欢看风景、或者不是第一次来，想赶早上的光线，可以先去遗址公园。两处分开管理，要按你的日期分别确认入园要求。",
+        },
+        {
+          question: "游良渚需要多长时间？",
+          answer: "博物院加遗址公园要一整天：上午博物院，下午遗址公园。良渚在杭州市区西北约 25 公里，来回路上的时间也要算进去。只有半天的话，看博物院，大约两个小时，再挑遗址公园的一段。",
+        },
+        {
+          question: "什么时候去良渚最好？",
+          answer: "春秋两季最好。三四月，古城里的油菜花开得金黄，西水城门一带樱花盛开；秋天稻子熟了。夏天开阔地上几乎没有遮阴，很晒；遇上暴雨或台风预警，遗址公园可能临时闭园，所以把博物院当作备选。",
+        },
+      ],
+    },
+    ko: {
+      description: "항저우 량주 고성 유적, 5천 년 전 물의 도시가 논 사이 풀 덮인 둑으로 남아 있습니다. 박물관을 먼저 보고 궁전 터 흙 대지에 올라 보세요.",
+      why: [
+        "공원을 지나다 보면 논과 연못가 숲에서 이따금 백로가 날아오릅니다. 한가운데의 커다란 흙 대지에 오르면 탁 트인 들판에서 바람이 불어오고, 길고 나지막한 풀 덮인 둑이 들판을 가로지릅니다. 그 둑이 바로 5천 년 전에 쌓은 성벽입니다. 발밑의 대지는 길이 약 670m로, 일부는 자연 언덕에 기대고 나머지는 사람 손으로 흙을 쌓아 궁전을 10여 m 높이로 들어 올렸습니다. 도시 전체가 흙과 풀의 모습으로 아직 여기 있고, 여러분은 그 한가운데에 서 있습니다.",
+        "중국 사람들은 흔히 ‘5천 년 문명’을 말하는데, 량주에서는 정말 5천 년 된 도시 안에 서 볼 수 있습니다. 이곳은 물의 도시였습니다. 성문 아홉 개 가운데 여덟 개가 배가 드나드는 수문이었고, 사람들은 통나무배와 대나무 뗏목을 타고 오갔습니다. 눈앞의 들판에 물길이 얽혀 있던 모습을 떠올려 보세요. 성벽으로 둘러싸인 내성만 해도 베이징 자금성의 약 네 배입니다. 북서쪽 산에서 홍수가 쏟아져 내려오자 사람들은 그 골짜기에 댐을 쌓았습니다. 지금까지 알려진 세계에서 가장 오래된 댐 체계 가운데 하나로, 갈대와 띠풀로 진흙을 감싼 덩이를 모래주머니처럼 가로세로 엇갈려 쌓아 만들었습니다.",
+        "하루를 둘로 나누고, 박물관부터 가세요. 호수 위에 연한 빛깔의 돌로 감싼 길쭉한 건물들이 놓여 있고, 전시실 사이사이에 조용한 안뜰이 있습니다. 안에는 옥기와 토기, 거대한 도시 모형이 있어서, 이것을 보고 나면 공원의 빈 들판이 궁전과 물가의 집, 나루터로 읽히기 시작합니다. 박물관을 건너뛰면 공원은 그저 보기 좋은 풀밭처럼 느껴질 수 있습니다. 사진을 찍으려는 분이나 다시 찾은 분이라면 순서를 바꿔, 아침 빛이 좋을 때 공원부터 가도 좋습니다.",
+      ],
+      highlights: [
+        {
+          name: "궁전 대지 위에 서기",
+          body: "궁전이 섰던 세 흙 대지 가운데 가장 높은 다모자오산(大莫角山)에 올라 천천히 한 바퀴 돌아보세요. 도시가 겹겹의 고리로 보입니다. 한가운데에 궁전 구역, 그 둘레에 성벽, 그 바깥으로 마을 사람들이 살던 돋운 땅이 이어집니다.",
+        },
+        {
+          name: "속을 드러낸 남쪽 성벽",
+          body: "산책로를 따라 남쪽 성벽으로 가면 수크령 풀숲 사이로 성벽이 보일 듯 말 듯합니다. 이곳은 한 구간을 잘라 놓아, 공원에서 5천 년 전 성벽의 실제 단면을 볼 수 있는 유일한 곳입니다. 맨 아래 돌은 줄지어 깔려 있는데, 한 줄이 배나 대나무 뗏목 몇 척이 한 번에 실어 나를 만한 양이고, 돌을 서로 다른 산에서 가져와 줄마다 조금씩 다릅니다.",
+        },
+        {
+          name: "옥종 속의 작은 신",
+          body: "박물관의 옥기 전시실에서 겉은 네모나고 속은 둥글게 뚫린 옥종에 바짝 다가가 보세요. 많은 옥종에 같은 작은 형상이 새겨져 있습니다. 위에는 깃털 관을 쓴 사람, 아래에는 눈을 둥글게 부릅뜨고 송곳니를 드러낸 짐승입니다. 고고학자들은 이것을 량주 사람들이 함께 믿던 신으로 봅니다. 금속 도구도 없던 5천 년 전에 새긴 것입니다.",
+        },
+      ],
+      time: "하루 종일 잡으세요. 오전에 박물관, 점심을 먹고 차로 이동해 오후에 유적공원을 봅니다. 반나절뿐이라면 박물관과 공원의 한 구역만 보세요. 박물관만 보는 데는 2시간쯤 걸립니다.",
+      when: "봄과 가을이 좋습니다. 3~4월에는 옛 도시 곳곳에 유채꽃이 노랗게 피고 서쪽 수문 근처에 벚꽃이 피며, 가을에는 벼가 익습니다. 공원은 그늘이 거의 없는 너른 들판이라 여름 오후에는 힘들고, 폭우나 태풍 특보가 내리면 갑자기 문을 닫기도 합니다. 전날 최신 공지를 확인하세요.",
+      pair: "량주는 항저우 시내에서 북서쪽으로 약 25km 떨어져 있으니 하루를 따로 잡으세요. 물을 다스린 이야기에 끌린다면 고성 북서쪽 산속의 라오후링 유적공원에 가 보세요. 높이 약 15m인 5천 년 전 댐의 단면 앞에 서면, 그 안에 가로세로 엇갈려 쌓은 ‘풀로 감싼 진흙’ 덩이가 보입니다. 세 가지 색 흙으로 쌓은 야오산 제단은 고성에서 북동쪽으로 약 5km입니다. 두 곳 모두 개방 여부를 먼저 따로 확인하세요. ‘천하제일 옥종’으로 불리는 반산 왕릉 출토 ‘종왕(琮王)’은 량주가 아니라 항저우의 저장성박물관 즈장관에 있습니다.",
+      skip: "우뚝 선 옛 건물 유적을 봐야 과거가 느껴진다면 이곳은 맞지 않습니다. 량주에는 흙 대지와 풀밭, 물뿐이고 성벽도 대부분 2m 남짓입니다. 항저우에 이틀뿐이라면 서호와 영은사에 쓰세요. 궁금하지만 시간이 빠듯하다면 박물관만 2시간쯤 봐도 이야기의 대부분을 알 수 있습니다.",
+      faq: [
+        {
+          question: "항저우 량주 고성 유적은 가 볼 만한가요?",
+          answer: "네, 중국 문명이 처음 모습을 갖춘 곳 가운데 하나를 직접 보고 싶다면 가 볼 만합니다. 5천 년 전 량주는 계획적으로 세운 물의 도시로, 높은 대지 위의 궁전과 성벽, 논, 그리고 세계에서 가장 오래된 축에 드는 댐들이 있었습니다. 2019년 세계유산에 올랐습니다. 도시는 이제 흙과 풀로만 남아 있으니 박물관을 먼저 보고, 두 곳에 하루를 다 쓰세요.",
+        },
+        {
+          question: "량주 고성 유적공원에서는 무엇을 볼 수 있나요?",
+          answer: "대부분 탁 트인 들판입니다. 논과 갈대, 물 사이로 옛 성벽인 긴 풀 둑이 이어지는데, 폭은 넓지만 높이는 대부분 2m 남짓입니다. 한가운데에는 궁전이 섰던 동서 약 670m, 남북 약 450m의 큰 흙 대지가 있고, 직접 올라가 볼 수 있습니다. 남쪽 성벽에는 단면을 드러낸 구간이 있어 어떻게 쌓았는지 볼 수 있고, 나머지는 박물관의 도시 모형이 읽는 법을 알려 줍니다.",
+        },
+        {
+          question: "량주박물관과 유적공원 중 어디를 먼저 가야 하나요?",
+          answer: "처음이라면 대부분 박물관부터 가는 편이 좋습니다. 옥기와 토기, 거대한 도시 모형을 보고 그 들판에 무엇이 있었는지 알고 가야, 공원의 흙 대지와 풀 둑이 눈에 들어옵니다. 사진을 찍거나 풍경을 즐기려는 분, 다시 찾은 분이라면 아침 빛을 위해 공원을 먼저 가도 좋습니다. 두 곳은 따로 운영되니 날짜에 맞춰 각각 입장 조건을 확인하세요.",
+        },
+        {
+          question: "량주를 보려면 시간이 얼마나 걸리나요?",
+          answer: "박물관과 유적공원을 함께 보려면 하루가 걸립니다. 오전에 박물관, 오후에 유적공원을 보세요. 량주는 항저우 시내에서 북서쪽으로 약 25km라 오가는 시간도 넉넉히 잡아야 합니다. 반나절뿐이라면 2시간쯤 걸리는 박물관과 공원의 한 구역만 보세요.",
+        },
+        {
+          question: "량주는 언제 가는 게 가장 좋나요?",
+          answer: "봄과 가을이 가장 좋습니다. 3~4월에는 옛 도시 곳곳에 유채꽃이 노랗게 피고 서쪽 수문 근처에 벚꽃이 피며, 가을에는 벼가 익습니다. 여름에는 그늘 없는 들판이 무척 덥고, 폭우나 태풍 특보로 공원이 갑자기 문을 닫을 수 있으니 박물관을 대안으로 남겨 두세요.",
+        },
+      ],
+    },
+  },
   hongyadong: {
     en: {
       description: "Hongyadong after dark: eleven storeys of stilt houses glow gold on a cliff above the Jialing. Where to see it from, and the walk from top floor to river.",
@@ -2254,6 +2546,30 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     ],
     alternateName: ["West Lake", "Hangzhou West Lake", "西湖", "杭州西湖", "서호", "항저우 서호", "Xihu"],
     sameAs: ["https://en.wikipedia.org/wiki/West_Lake", "https://www.wikidata.org/wiki/Q502371", "https://whc.unesco.org/en/list/1334/"],
+  },
+  lingyin: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "Lingyin Temple: 千年古寺 大慈灵隐 (the temple's founding, halls and great Buddha)", url: "https://www.lingyinsi.com/detail_44_7946.html" },
+      { title: "Lingyin Temple: 鹫峰从天竺飞来 (Huili and the name of Feilai Peak)", url: "https://lingyinsi.org/detail_14040.html" },
+      { title: "Lingyin Temple: 布袋和尚与弥勒佛造像 (the laughing Buddha of Feilai Peak)", url: "https://lingyinsi.org/detail_1694.html" },
+      { title: "Lingyin Temple: 龙泓洞 (Longhong Cave and its skylight)", url: "https://www.lingyinsi.com/detail_46_19385.html" },
+      { title: "Lingyin Feilai Peak Scenic Area: free admission and timed reservation notice", url: "https://en.lingyinsi.org/detail_15105.html" },
+    ],
+    alternateName: ["Lingyin Temple", "Lingyin Si", "Yunlin Chan Temple", "Feilai Peak", "Feilai Feng", "灵隐寺", "云林禅寺", "杭州灵隐寺", "飞来峰", "영은사", "링인쓰", "비래봉"],
+    sameAs: ["https://en.wikipedia.org/wiki/Lingyin_Temple", "https://www.wikidata.org/wiki/Q1070228"],
+  },
+  liangzhu: {
+    reviewedAt: "2026-10-04",
+    sources: [
+      { title: "UNESCO World Heritage Centre: Archaeological Ruins of Liangzhu City", url: "https://whc.unesco.org/en/list/1592/" },
+      { title: "Liangzhu Museum: about the museum", url: "https://www.lzmuseum.cn/BoWuYuanJianJie/index.html" },
+      { title: "Liangzhu Museum: the ancient city's palace platform, walls, gates and granary (2024)", url: "https://www.lzmuseum.cn/LiangBoXinWen/20246438161.html" },
+      { title: "Liangzhu Museum: how Liangzhu was built, from water gates to grass-wrapped mud (2024)", url: "https://www.lzmuseum.cn/LiangBoXinWen/2024304471300.html" },
+      { title: "Liangzhu Museum: 48 hours at the Liangzhu sites, from the museum to the Laohuling dam (2025)", url: "https://www.lzmuseum.cn/LiangBoXinWen/2025724933723.html" },
+    ],
+    alternateName: ["Archaeological Ruins of Liangzhu City", "Liangzhu Ancient City", "Liangzhu site", "良渚古城遗址", "良渚遗址", "良渚古城", "량주 고성 유적", "량주 유적", "Liangzhu Gucheng Yizhi"],
+    sameAs: ["https://en.wikipedia.org/wiki/Archaeological_ruins_of_Liangzhu_City", "https://www.wikidata.org/wiki/Q15904183", "https://whc.unesco.org/en/list/1592/"],
   },
   hongyadong: {
     reviewedAt: "2026-10-04",

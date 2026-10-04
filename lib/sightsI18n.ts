@@ -123,7 +123,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       "the-bund": { name: "The Bund", line: "A riverfront of early-20th-century banks and hotels, facing the Pudong skyline" },
       "shanghai-tower": { name: "Shanghai Tower", line: "China's tallest building, with a 118th-floor deck over Lujiazui" },
       "west-lake": { name: "West Lake", line: "Causeways, pagodas and lotus ponds, on foot at dawn or from a boat" },
-      "lingyin": { name: "Lingyin Temple and Feilai Peak", line: "A temple founded in 328, beside cliffs carved with Buddhas" },
+      "lingyin": { name: "Lingyin Temple and Feilai Peak", line: "A temple nearly 1,700 years old, beside cliffs carved with Buddhas" },
       "leshan-giant-buddha": { name: "Leshan Giant Buddha", line: "A 71-metre Buddha cut into a river cliff, a day out from Chengdu" },
       "hongyadong": { name: "Hongyadong", line: "Stilt-house-style buildings stacked up a Jialing River cliff, lit after dark" },
       "wulong": { name: "Wulong Karst", line: "Three natural bridges in a deep gorge, a long day or a night from Chongqing" },
