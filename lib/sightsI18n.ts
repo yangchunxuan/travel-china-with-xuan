@@ -266,7 +266,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
       "zhangjiajie-forest-park": { name: "장가계 국가삼림공원", line: "원가계·천자산의 기암 봉우리" },
       "the-bund": { name: "와이탄", line: "황푸강변의 근대 건축 거리, 맞은편이 루자쭈이" },
       "shanghai-tower": { name: "상하이 타워", line: "중국에서 가장 높은 빌딩, 118층에서 루자쭈이를 내려다보는 곳" },
-      "west-lake": { name: "서호", line: "둑길과 탑, 연꽃 연못을 이른 아침에 걷거나 배로 둘러보는 호수" },
+      "west-lake": { name: "서호", line: "둑길과 탑, 연꽃밭을 이른 아침에 걷거나 배로 둘러보는 호수" },
       "lingyin": { name: "영은사와 비래봉", line: "불상이 새겨진 절벽 옆의 천년 사찰" },
       "leshan-giant-buddha": { name: "낙산대불", line: "강가 절벽에 새긴 71m 대불, 청두에서 당일치기" },
       "hongyadong": { name: "홍야동", line: "자링강 절벽을 따라 층층이 지은 조각루 양식 건물, 밤에 불이 켜지는 곳" },
@@ -285,7 +285,7 @@ const copy: Record<HomegroundLocale, SightsCopy> = {
  * Names in the Chinese lines that the word segmenter would split across a
  * line (八|达|岭); KeepWords keeps each whole on these pages only.
  */
-export const sightsKeepWords = ["八达岭", "慕田峪", "袁家界", "天子山", "昆明湖", "万寿山", "回民街", "秦始皇陵", "喀斯特", "浦东", "古蜀", "明清", "陆家嘴", "雷峰塔", "吊脚楼", "嘉陵江", "天门洞", "玻璃桥", "摩崖", "岭南", "入夜亮灯", "岭南木雕、砖雕、石雕的代表", "从成都出发玩一天", "从重庆去要一整天或住一晚", "再到天门洞", "但须实名预约", "排进行程", "“文化景观”", "白蛇传", "十一层", "“行什”", "“西湖十景”", "“8D 城市”"] as const;
+export const sightsKeepWords = ["八达岭", "慕田峪", "袁家界", "天子山", "昆明湖", "万寿山", "回民街", "秦始皇陵", "喀斯特", "浦东", "古蜀", "明清", "陆家嘴", "雷峰塔", "吊脚楼", "嘉陵江", "天门洞", "玻璃桥", "摩崖", "岭南", "入夜亮灯", "岭南木雕、砖雕、石雕的代表", "从成都出发玩一天", "从重庆去要一整天或住一晚", "再到天门洞", "但须实名预约", "排进行程"] as const;
 
 export function getSightsCopy(locale: HomegroundLocale): SightsCopy {
   return copy[locale];

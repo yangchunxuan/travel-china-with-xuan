@@ -99,6 +99,24 @@ const bookingAnchor = "booking";
 const toursAnchor = "tours";
 
 /**
+ * Running text in the sight's own writing. Chinese paragraphs break between
+ * any two characters under the page's strict line-breaking rules (as books
+ * and the guides do); KeepWords' word-by-word breaking is for headings and
+ * short lines. Korean keeps a quoted word and its particle together (‘1층’이),
+ * which keep-all alone does not.
+ */
+function StoryText({ text, locale }: { text: string; locale: HomegroundLocale }) {
+  if (locale !== "ko") return <>{text}</>;
+  return (
+    <>
+      {text.split(/(‘[^’]+’[가-힣]*)/u).map((part, index) =>
+        index % 2 ? <span className={sightStyles.together} key={index}>{part}</span> : part,
+      )}
+    </>
+  );
+}
+
+/**
  * The sight's own writing, between the hero and the booking facts: why it is
  * worth the trip and three things not to miss, then how it fits a day.
  */
@@ -116,7 +134,7 @@ function SightStorySections({ story, locale }: { story: SightStory; locale: Home
         <div className={sightStyles.why}>
           <h2 id="sight-why-title">{labels.whyTitle}</h2>
           <div className={sightStyles.whyBody}>
-            {story.why.map((paragraph) => <p key={paragraph}><SightText locale={locale} text={paragraph} /></p>)}
+            {story.why.map((paragraph) => <p key={paragraph}><StoryText locale={locale} text={paragraph} /></p>)}
           </div>
         </div>
         <h3 className={sightStyles.highlightsTitle}>{labels.highlightsTitle}</h3>
@@ -124,7 +142,7 @@ function SightStorySections({ story, locale }: { story: SightStory; locale: Home
           {story.highlights.map((item) => (
             <li key={item.name}>
               <h4>{item.name}</h4>
-              <p><SightText locale={locale} text={item.body} /></p>
+              <p><StoryText locale={locale} text={item.body} /></p>
             </li>
           ))}
         </ul>
@@ -135,7 +153,7 @@ function SightStorySections({ story, locale }: { story: SightStory; locale: Home
           {facts.map((fact) => (
             <div key={fact.label}>
               <dt>{fact.label}</dt>
-              <dd><SightText locale={locale} text={fact.text} /></dd>
+              <dd><StoryText locale={locale} text={fact.text} /></dd>
             </div>
           ))}
         </dl>

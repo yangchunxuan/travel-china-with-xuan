@@ -488,6 +488,11 @@
   text-wrap: pretty;
 }
 
+/* A Korean quoted word and its particle stay on one line. */
+.together {
+  white-space: nowrap;
+}
+
 /* Fitting it in: four short answers, two to a row. */
 .fit {
   display: grid;

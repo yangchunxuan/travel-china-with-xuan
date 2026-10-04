@@ -25,6 +25,13 @@ export function buildSightsMetadata(locale: HomegroundLocale): Metadata {
   };
 }
 
+/**
+ * Sights whose title takes no city: Leshan and Sanxingdui (Guanghan) are day
+ * trips filed under Chengdu but are not in it, and the two national and
+ * provincial museums already say where they are.
+ */
+const titleWithoutCity = new Set<SightId>(["leshan-giant-buddha", "sanxingdui", "national-museum", "shaanxi-history-museum"]);
+
 /** A sight page is indexed only once its own writing is in (`ready`). */
 export function buildSightMetadata(id: SightId, locale: HomegroundLocale): Metadata {
   const copy = getSightsCopy(locale);
@@ -32,7 +39,9 @@ export function buildSightMetadata(id: SightId, locale: HomegroundLocale): Metad
   const name = copy.sights[id].name;
   // Searchers name the city ("杭州西湖", "항저우 서호"); a name that already starts with it keeps it once.
   const city = sight ? sightCityName(sight.city, locale) : "";
-  const place = !city || name.includes(city) ? name : locale === "en" ? `${name}, ${city}` : locale === "zh" ? `${city}${name}` : `${city} ${name}`;
+  const place = !city || name.includes(city) || titleWithoutCity.has(id)
+    ? name
+    : locale === "en" ? `${name}, ${city}` : locale === "zh" ? `${city}${name}` : `${city} ${name}`;
   const title = `${place} · ${copy.hub.h1}`;
   // The story's own search description once it is written; until then the card line.
   const description = getSightStory(id, locale)?.description ?? copy.sights[id].line;
