@@ -196,49 +196,49 @@ const body = {
       "id": "two-complete-days-heading",
       "type": "heading",
       "level": 3,
-      "text": "A first visit across two complete days"
+      "text": "Two full days: down the steps, then across the river"
     },
     {
       "id": "two-complete-days-context",
       "type": "paragraph",
-      "text": "Use this as a city-only plan with a Jiefangbei hotel base and two days free of arrival or departure transfers. Day 1 stays in Yuzhong; Day 2 crosses to one Nan’an cluster. The meals and rest stops are part of the plan, so Wulong, Dazu and a second cross-city photo circuit need another day."
+      "text": "Three nights in a Jiefangbei hotel give you two whole days with no train or flight to catch. Day 1 stays on the Yuzhong peninsula; Day 2 crosses the river to Danzishi. Meals and rests are built in, so Wulong and Dazu each need their own day."
     },
     {
       "id": "two-complete-days-plan",
       "type": "table",
       "caption": "A first visit across two complete days",
       "columns": [
-        "Part of the day",
-        "Day 1: Yuzhong, finishing in Jiefangbei",
-        "Day 2: Danzishi and Nanbin Road, finishing in Nan’an"
+        "Time of day",
+        "Day 1: Yuzhong peninsula",
+        "Day 2: Danzishi, south bank"
       ],
       "rows": [
         [
           "Morning",
-          "Start at the Liberation Monument in Jiefangbei. Continue to Shibati’s upper entrance and explore downhill towards the lower part of the old street. Arrange a car from the lower area if returning uphill would be tiring.",
-          "Start at the upper entrance of Danzishi Old Street after a car transfer from your hotel. Follow the courtyards and lanes downhill towards the Nanbin Road side; choose this direction before setting the drop-off point."
+          "Start at the Liberation Monument, then wander down Shibati's old street of steps from the top entrance. If you'd rather not climb back up, take a car from the bottom.",
+          "Have the driver drop you at the top entrance of Danzishi Old Street, then drift down its courtyards and lanes towards Nanbin Road."
         ],
         [
           "Lunch and early afternoon",
-          "Eat near Shibati or return by car to Jiefangbei for lunch and a hotel rest. In hot or wet weather, make this a proper indoor break.",
-          "Lunch in the Danzishi area, then visit Chongqing Planning Exhibition Gallery at Danzishi Square if it is open. Its city and landscape displays add context to the skyline; check the day’s admission arrangements before leaving the hotel."
+          "Eat near Shibati, or ride back to Jiefangbei for lunch and a hotel rest; in heat or rain, make it a proper indoor break.",
+          "Lunch in Danzishi, then visit the Chongqing Planning Exhibition Gallery on Danzishi Square if it's open. Its displays of the city, hills and rivers make the skyline easier to read; check the day's entry rules before you go."
         ],
         [
           "Late afternoon",
-          "Take a car to Chaotianmen for the river confluence and a short waterfront visit. Choose an actual entrance or road pickup point with the driver; a pin at the tip of the peninsula is not a vehicle meeting point.",
-          "Keep the rest of the afternoon on the Nan’an bank: a short Nanbin Road waterfront walk followed by a seated café break. If you want a higher viewpoint within Danzishi, make the extra uphill section an explicit choice."
+          "Take a car to Chaotianmen for a short walk where the Jialing, usually the clearer river, meets the muddier Yangtze. Agree a real entrance or roadside pickup with the driver; the map pin at the peninsula's tip is no place to meet a car.",
+          "Stroll a short way along the Nanbin Road riverside, then sit down with a coffee. A higher viewpoint in Danzishi means more climbing, so go only if you want it."
         ],
         [
-          "Evening and finish",
-          "Have dinner, then visit Hongyadong’s exterior for one night view. Confirm whether your entrance and exit are on the upper or river-road level. Return to Jiefangbei by car from a permitted pickup point; if crowds close the approach, finish with dinner instead of waiting for a specific photo.",
-          "Have dinner overlooking the river in the Danzishi/Nanbin Road area. Finish on this same bank at a pre-agreed roadside pickup point and return to the hotel by car. A river cruise or Nanshan detour is not needed to complete the day."
+          "Evening",
+          "After dinner, watch Hongyadong's eleven storeys glow gold from outside. Check whether you'll use the top street or the river road, and meet your car where cars may stop; if crowds close the way in, don't wait for the photo.",
+          "Dine by the river with Yuzhong's lights across the water, then meet your car at a pre-agreed roadside spot on this bank. The day is full without a river cruise or a trip up Nanshan."
         ]
       ]
     },
     {
       "id": "two-complete-days-terrain",
       "type": "paragraph",
-      "text": "Downhill saves climbing but still means steps and knee strain. If stairs are difficult, skip Shibati’s full descent and Danzishi’s full hill route: use short visits on a confirmed accessible level, cars between areas and seated river views. Do not assume a lift shown on a map is open or connects your two entrances. On Monday, when the planning gallery is normally closed, keep Danzishi, a longer lunch and the waterfront; in persistent rain or extreme heat, shorten the outdoor sections. Swap the two days if that gives the gallery an open day."
+      "text": "Going downhill saves climbing, but steps are still hard on the knees. If stairs are difficult, skip the full walks down Shibati and Danzishi; stroll on one level you know is step-free, take a car between stops and watch the river from a seat. Don't assume a lift on a map is open or links the two entrances you need. The planning gallery usually closes on Mondays, so swap the days, or give Monday to Danzishi, a long lunch and the riverside. In steady rain or fierce heat, cut the outdoor parts short."
     },
     {
       id: "heading-017",

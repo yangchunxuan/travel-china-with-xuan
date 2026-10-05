@@ -342,8 +342,17 @@
 .destinationHero p,
 .destinationHero figcaption,
 .signalCard > p:last-child,
-.destinationOpening p {
+.destinationOpening p,
+.stayExample p,
+.stayExample li,
+.stayExample th,
+.stayExample td {
   text-wrap: pretty;
+}
+
+/* The day-plan table's first column holds short labels (上午, 시간대): never split a word. */
+.stayExample tr > :first-child {
+  word-break: keep-all;
 }
 
 /* A hand-written card leads with its answer, so the heading carries a full sentence. */
