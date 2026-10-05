@@ -143,7 +143,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       ". Choose the right base for the daytime route first; only then compare evening entertainment.",
     downtown: {
       name: "Downtown Zhangjiajie",
-      role: "Tianmen Mountain · rail connections · 72 Qilou",
+      role: "Tianmen Mountain · rail connections · 72 Wonder Tower",
       detail:
         "Tianmen Fox Fairy is the more natural major-show candidate here, but “same zone” does not make a full mountain day plus a late outdoor production low effort.",
     },
@@ -236,9 +236,9 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
   },
   qilou: {
     sectionLabel: "A different kind of evening",
-    title: "Is 72 Qilou a fourth competing show?",
+    title: "Is 72 Wonder Tower a fourth competing show?",
     body:
-      "Not in the same sense. We treat 72 Qilou as a downtown night attraction combining architecture, lighting, food, shopping and smaller activities—not as a fourth fixed-seat headline production equivalent to the three above.",
+      "Not in the same sense. We treat 72 Wonder Tower (七十二奇楼, also listed as 72 Qilou) as a downtown night attraction combining architecture, lighting, food, shopping and smaller activities—not as a fourth fixed-seat headline production equivalent to the three above.",
     note:
       "That can make it more flexible, but it does not remove the same questions: where is the hotel, how tired is the group, what is operating, and how late will the evening become?",
   },

@@ -254,7 +254,7 @@ const english: ZhangjiajieGuideCopy = {
       {
         number: "02",
         name: "Downtown",
-        sights: "Tianmen Mountain · Zhangjiajie 72 Qilou · West railway station",
+        sights: "Tianmen Mountain · Zhangjiajie 72 Wonder Tower · West railway station",
         role: "Switch base before the Tianmen day.",
       },
       {
@@ -360,7 +360,7 @@ const english: ZhangjiajieGuideCopy = {
         coreVisit: "Tianmen Mountain",
         sleepBase: "Downtown or onward after a safe buffer",
         condition:
-          "Confirm the entry period, queues and weather; 72 Qilou is optional.",
+          "Confirm the entry period, queues and weather; 72 Wonder Tower is optional.",
       },
     ],
     replacementLabel: "Replacement decision",
@@ -418,7 +418,7 @@ const english: ZhangjiajieGuideCopy = {
             coreVisit: "Tianmen Mountain",
             sleepBase: "Downtown or onward after a safe buffer",
             condition:
-              "Tianmen slot, weather and departure align; 72 Qilou is optional.",
+              "Tianmen slot, weather and departure align; 72 Wonder Tower is optional.",
           },
         ],
         tradeoff: "Furong and Fenghuang stay out of this four-day route.",
@@ -434,7 +434,7 @@ const english: ZhangjiajieGuideCopy = {
             zone: "Downtown",
             coreVisit: "Tianmen Mountain",
             sleepBase: "Downtown",
-            condition: "A workable entry slot; 72 Qilou stays optional.",
+            condition: "A workable entry slot; 72 Wonder Tower stays optional.",
           },
           {
             day: "Day 4",
@@ -470,7 +470,7 @@ const english: ZhangjiajieGuideCopy = {
         label: "Can combine after checks",
         items: [
           {
-            title: "Tianmen Mountain + Zhangjiajie 72 Qilou",
+            title: "Tianmen Mountain + Zhangjiajie 72 Wonder Tower",
             detail:
               "Possible when the Tianmen slot, queues and traveller energy leave a comfortable evening.",
           },
@@ -598,7 +598,7 @@ const english: ZhangjiajieGuideCopy = {
       {
         question: "Should I stay in Wulingyuan or downtown Zhangjiajie?",
         answer:
-          "Use Wulingyuan for the national park, Grand Canyon and Huanglong Cave. Downtown is more practical for Tianmen Mountain, Zhangjiajie 72 Qilou and the main rail connections. A split stay often saves repeated backtracking.",
+          "Use Wulingyuan for the national park, Grand Canyon and Huanglong Cave. Downtown is more practical for Tianmen Mountain, Zhangjiajie 72 Wonder Tower and the main rail connections. A split stay often saves repeated backtracking.",
       },
       {
         question: "Can all seven wishlist stops fit in four days?",
@@ -618,7 +618,7 @@ const english: ZhangjiajieGuideCopy = {
       "Zhangjiajie UNESCO Global Geopark: official two-day route",
       "Hunan Department of Culture and Tourism: Zhangjiajie transport baseline",
       "Hunan Department of Culture and Tourism: three-day planning guidance",
-      "Hunan Government: Zhangjiajie 72 Qilou as an evening experience",
+      "Hunan Government: Zhangjiajie 72 Wonder Tower as an evening experience",
       "Ministry of Culture and Tourism: Zhangjiajie–Furong–Fenghuang rail connections",
       "Hunan Government: Fenghuang station transfer guide",
       "Zhangjiajie Grand Canyon: official visitor routes and estimated duration",

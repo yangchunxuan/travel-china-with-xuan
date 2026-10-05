@@ -39,7 +39,7 @@ const body = {
         "Day 6 — Liziba and river-city viewpoints; the confirmed museum or Hongya Cave exterior option. Overnight: Chongqing.",
         "Day 7 — Travel to Wulong, visit the Three Natural Bridges and stay overnight. Overnight: Wulong.",
         "Day 8 — Fairy Mountain or Furong Cave, then return by road to Chongqing. Overnight: Chongqing.",
-        "Day 9 — Transfer day: Chongqing hotel → rail journey → Zhangjiajie; evening at Seventy-Two Wonder Tower. Overnight: Zhangjiajie villa or 4-star hotel.",
+        "Day 9 — Transfer day: Chongqing hotel → rail journey → Zhangjiajie; evening at 72 Wonder Tower. Overnight: Zhangjiajie villa or 4-star hotel.",
         "Day 10 — Forest Park full day: Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery. Overnight: Same base.",
         "Day 11 — Tianmen Mountain, or Baofeng Lake in bad weather. Overnight: Same base.",
         "Day 12 — Breakfast, checkout and the confirmed airport or railway-station transfer."
@@ -79,7 +79,7 @@ const body = {
         },
         {
           "question": "Does the Zhangjiajie section include Tianmen Mountain or the Glass Bridge?",
-          "answer": "Tianmen Mountain, yes; the Glass Bridge, no. Day 11 rides the cable car up Tianmen Mountain, and if the mountain is closed or fogged in, the day switches to a boat on Baofeng Lake at no extra charge. The English-speaking guide accompanies all of Day 10 and the daytime on Day 11, while the Seventy-Two Wonder Tower evening is self-guided, with private drop-off, pickup and remote assistance."
+          "answer": "Tianmen Mountain, yes; the Glass Bridge, no. Day 11 rides the cable car up Tianmen Mountain, and if the mountain is closed or fogged in, the day switches to a boat on Baofeng Lake at no extra charge. The English-speaking guide accompanies all of Day 10 and the daytime on Day 11, while the 72 Wonder Tower evening is self-guided, with private drop-off, pickup and remote assistance."
         },
         {
           "question": "How much walking do the two Zhangjiajie days involve?",
@@ -136,7 +136,7 @@ const body = {
     {
       "id": "forest-copy",
       "type": "paragraph",
-      "text": "This version finishes with the Zhangjiajie private route: three nights in one villa or 4-star hotel, Seventy-Two Wonder Tower lit up on arrival, a full Forest Park day, then Tianmen Mountain. The Forest Park day links Tianzi Mountain, Yangjiajie and Yuanjiajie by scenic shuttle before heading down to Golden Whip Stream and Ten-Mile Gallery. Allow roughly 10–11 hours door to door."
+      "text": "This version finishes with the Zhangjiajie private route: three nights in one villa or 4-star hotel, 72 Wonder Tower lit up on arrival, a full Forest Park day, then Tianmen Mountain. The Forest Park day links Tianzi Mountain, Yangjiajie and Yuanjiajie by scenic shuttle before heading down to Golden Whip Stream and Ten-Mile Gallery. Allow roughly 10–11 hours door to door."
     },
     {
       "id": "forest-scope",
