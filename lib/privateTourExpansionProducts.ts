@@ -767,6 +767,81 @@ const guizhou: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Guizhou Private Tour, 7 Days: Huangguoshu, Libo & Xijiang", "贵州7天6晚私家团：黄果树·荔波·西江千户苗寨", "구이양·황궈수·리보·시장·전위안 7일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much does this 7-day Guizhou private tour cost per person?",
+        "这条贵州 7 天私家团每人多少钱？",
+        "이 7일 구이저우 프라이빗 투어는 1인당 얼마인가요?",
+      ),
+      answer: l(
+        "From USD 1,888 per person for 2 adults, or from USD 1,858 per person for 6 adults, sharing twin rooms in low season. Other group sizes are quoted on request. Before you pay, we confirm your hotels, transport, guide arrangements, any seasonal supplement and the final total in writing.",
+        "淡季双人同住：2 人同行每人 ¥12,272 起，6 人同行每人 ¥12,072 起；其他人数需询价。付款前，我们会书面确认酒店、交通、导游安排、旺季附加费和最终总价。",
+        "비수기 2인 1실 기준으로 성인 2명이면 1인 ₩2,640,000부터, 성인 6명이면 1인 ₩2,600,000부터입니다. 다른 인원은 별도 견적입니다. 결제 전에 호텔, 교통, 가이드 동행 범위, 성수기 추가금과 최종 총액을 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include, and what costs extra?",
+        "价格包含什么？哪些要另外付？",
+        "요금에 무엇이 포함되고, 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "Six nights with breakfast, a licensed private English-speaking guide and a dedicated driver throughout, airport or station transfers, listed admissions and scenic transport, daily bottled water and basic China-based travel accident insurance. Lunches, dinners, international flights, tips and single-room supplements are extra.",
+        "包含 6 晚含早住宿、全程持证私人英语导游和专属司机、机场或车站接送、所列门票和景区交通、每日瓶装水，以及中国境内基础旅游意外险。午餐、晚餐、国际机票、小费和单房差另付。",
+        "조식 포함 6박, 전 일정 자격 있는 영어 전용 가이드와 전담 기사, 공항·역 이동, 명시된 입장권과 관광지 교통, 매일 생수, 중국 내 기본 여행상해보험이 포함됩니다. 중식·석식, 국제선 항공, 팁, 1인실 추가금은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay each night, and what are the hotels like?",
+        "每晚住在哪里？酒店是什么水平？",
+        "매일 밤 어디에서 묵고, 숙소는 어떤가요?",
+      ),
+      answer: l(
+        "Six nights with breakfast, based on twin sharing: one in Guiyang, one near Huangguoshu or in Anshun, one in Libo, two in Xijiang and one in Zhenyuan. Local boutique stays may differ from city four-star hotels.",
+        "共 6 晚含早，默认两人同住：贵阳 1 晚、黄果树附近或安顺 1 晚、荔波 1 晚、西江 2 晚、镇远 1 晚。当地精品客栈的设施可能和城市 4 星酒店不太一样。",
+        "조식 포함 6박, 2인 1실 기준으로 구이양 1박, 황궈수 인근 또는 안순 1박, 리보 1박, 시장 2박, 전위안 1박입니다. 현지 부티크 숙소는 도시 4성급 호텔과 시설이 다를 수 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are there long drives on this route?",
+        "路上要坐很久的车吗？",
+        "이 일정에는 긴 차량 이동이 있나요?",
+      ),
+      answer: l(
+        "Yes. You move to a new base by road on Days 2, 3, 4 and 6, and on Day 7 you drive from Zhenyuan back to Guiyang airport or station. Transfers are in your private vehicle with rest stops, so book a departure that leaves enough time for the road journey.",
+        "是的。第 2、3、4、6 天都要坐车换到下一站，第 7 天从镇远开回贵阳机场或车站。全程私车，途中安排休息；返程航班或火车要给公路转场留足时间。",
+        "네. 2·3·4·6일 차에는 차로 다음 숙박지로 이동하고, 7일 차에는 전위안에서 구이양 공항이나 역까지 갑니다. 전용 차량으로 이동하며 중간에 휴식을 하니, 도로 이동 시간을 충분히 두고 출발편을 예약해 주세요.",
+      ),
+    },
+    {
+      question: l(
+        "Can we see all of Huangguoshu Waterfall and Small Seven Holes?",
+        "黄果树瀑布和小七孔都能全部走到吗？",
+        "황궈수폭포와 소칠공을 전부 볼 수 있나요?",
+      ),
+      answer: l(
+        "It depends on the day. At Huangguoshu, the water volume and which paths are open vary with weather and operations. At Small Seven Holes your route is mostly downhill, using the trails and scenic buses running that day, so exact stops depend on that day's operation.",
+        "要看当天情况。黄果树的水量和步道开放范围会随天气和运营变化。小七孔路线以顺势下行为主，走当天开放的步道、坐景区车，具体点位视当天运营而定。",
+        "그날 상황에 따라 다릅니다. 황궈수는 날씨와 운영에 따라 수량과 개방 탐방로가 달라집니다. 소칠공은 완만한 내리막 위주로 그날 열려 있는 길과 운행하는 관광지 버스를 이용하므로, 세부 방문지는 당일 운영에 따라 정해집니다.",
+      ),
+    },
+    {
+      question: l(
+        "What do we do in Xijiang, and are shows or a Zhenyuan river cruise included?",
+        "在西江做什么？演出和镇远游船包含吗？",
+        "시장에서는 무엇을 하나요? 공연이나 전위안 유람선도 포함되나요?",
+      ),
+      answer: l(
+        "You stay two nights in Xijiang, with a guided village walk, a museum visit and one silverwork or batik experience arranged in advance. Unlisted performances, optional night tours and private home visits are not included. A river cruise in Zhenyuan is included only if your confirmation names it.",
+        "西江连住两晚，含导游带你走村寨、参观博物馆，以及一项提前定好的银饰或蜡染体验。未列明的演出、夜游和私人家访不含；镇远游船只在确认单写明时才包含。",
+        "시장에서 2박하며 가이드와 마을 걷기, 박물관 관람, 미리 정한 은공예 또는 납염 체험 한 가지를 합니다. 일정에 없는 공연, 야간 관광, 개인 가정 방문은 포함되지 않습니다. 전위안 유람선은 확인서에 적혀 있을 때만 포함됩니다.",
+      ),
+    },
+  ],
 };
 
 const fujianSlug = "xiamen-tulou-quanzhou-6-day-private-tour";
@@ -1181,6 +1256,81 @@ const chaoshan: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Chaozhou & Shantou Private Tour: 5 Days with Nan'ao Island", "潮汕旅游5天私家团：潮州·汕头·南澳岛", "산터우·난아오·차오저우 5일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much is this Chaozhou and Shantou tour per person?",
+        "潮州汕头这条线每人多少钱？",
+        "차오저우·산터우 투어는 1인당 얼마인가요?",
+      ),
+      answer: l(
+        "Starting prices per person are USD 420 for 2 travellers, USD 280 for 4 and USD 250 for 6. Each booking has one private vehicle, so in a bigger group its cost is shared by more people. Other group sizes are quoted on request, and we confirm the room plan and vehicle class before sending your final total.",
+        "每人起价：2 人同行 ¥2,730，4 人 ¥1,820，6 人 ¥1,620。每单一辆私车，人越多，每人分摊越少。其他人数需询价；最终总价按房间数与车型确认后发给你。",
+        "1인 시작가는 2명 ₩590,000, 4명 ₩400,000, 6명 ₩350,000입니다. 예약마다 전용 차량 한 대를 쓰므로 인원이 많을수록 그 비용을 더 많은 사람이 나눕니다. 다른 인원은 별도 견적이며, 객실 구성과 차량 등급을 확인한 뒤 최종 총액을 보내 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include?",
+        "价格包含什么？",
+        "가격에 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "Four Ctrip 4-Diamond-standard hotel nights with breakfast (two sharing a room), one private vehicle with bridge tolls and parking, airport or station transfers, the listed admissions and fish-raft or cultural experiences, daily bottled water and basic China-based travel accident insurance. No shopping stops.",
+        "含 4 晚携程 4 钻标准酒店含早（双人同住）、一单一车及路桥停车费、机场或车站接送、所列门票与鱼排或文化体验、每日瓶装水及中国境内基础旅游意外险。无购物店安排。",
+        "조식 포함 중국 씨트립 4다이아 기준 호텔 4박(2인 1실), 통행료·주차비가 포함된 전용 차량 한 대, 공항·역 이동, 명시된 입장권과 양식장 또는 문화 체험, 매일 생수, 중국 내 기본 여행상해보험이 포함됩니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are lunches and dinners included?",
+        "午餐和晚餐包含吗？",
+        "점심과 저녁이 포함되나요?",
+      ),
+      answer: l(
+        "No. Hotel breakfasts are included, but all other food and restaurant bills are yours to pay, so you can eat where you like. You'll get local tips on what to eat, and Day 5 leaves time for a food stop before you leave.",
+        "不包含。酒店早餐已含，其余餐饮和餐厅账单都由你自付，想吃什么自己选。向导会帮你选吃什么，第 5 天也留出了自由觅食的时间。",
+        "아니요. 호텔 조식은 포함되지만 그 밖의 음식과 식당 비용은 직접 내시므로 원하는 곳에서 드실 수 있습니다. 무엇을 먹을지 현지 추천을 받을 수 있고, 5일 차에는 출발 전에 음식을 즐길 시간이 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Does the Nan'ao island day depend on the weather?",
+        "南澳岛那天会受天气影响吗？",
+        "난아오섬 일정은 날씨의 영향을 받나요?",
+      ),
+      answer: l(
+        "Yes. The island day depends on weather and safe operating conditions, and going out to sea depends on weather and permission. Your confirmation shows whether your Nan'ao room has a direct sea view; boat or fish-raft activities not listed there are not included.",
+        "会。岛上行程要看天气和安全运营条件，能否出海要看天气和运营许可。南澳房间是不是正面海景，确认单上会写明；确认单以外的出海或鱼排活动不包含。",
+        "네. 섬 일정은 날씨와 안전 운영 조건에 따라 달라지고, 출항은 날씨와 허가에 따라 정해집니다. 난아오 객실의 정면 바다 전망 여부는 확인서에 적어 드리며, 확인서에 없는 출항이나 양식장 체험은 포함되지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which language does the guide speak, and on which days?",
+        "导游讲什么语言？哪几天有导游？",
+        "가이드는 어떤 언어를 쓰고, 어느 날 함께하나요?",
+      ),
+      answer: l(
+        "Your quote spells out the guide language, which days include guide service and the vehicle class, and we confirm them in writing before you pay. On Day 1 the driver meets you and takes you to your Shantou hotel, with no set sightseeing.",
+        "导游语言、哪几天有导游服务以及车型，都会在报价里写明，付款前书面确认。第 1 天由司机接你直接送到汕头酒店，不安排固定游览。",
+        "가이드 언어, 가이드 서비스가 있는 날과 차량 등급은 견적에 적어 드리며, 결제 전에 서면으로 확인해 드립니다. 1일 차에는 기사가 맞이해 산터우 호텔까지 모셔다 드리며, 정해진 관광 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do booking and payment work?",
+        "怎么预订和付款？",
+        "예약과 결제는 어떻게 하나요?",
+      ),
+      answer: l(
+        "Send your dates, rooming, arrival details and luggage count. We confirm the hotels, transport, guide coverage, any seasonal supplements and the final total in writing before you pay. Single-room supplements, room upgrades and holiday surcharges are extra.",
+        "请发来日期、房间配置、到离信息和行李数量。我们会在付款前书面确认酒店、交通、导游覆盖、旺季附加费和最终总价。单房差、房型升级和节假日附加费另计。",
+        "날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주세요. 결제 전에 호텔, 교통, 가이드 범위, 성수기 추가금과 최종 총액을 서면으로 확인해 드립니다. 1인실 추가금, 객실 업그레이드와 공휴일 추가금은 별도입니다.",
+      ),
+    },
+  ],
 };
 
 const chengduChongqingSlug = "chengdu-chongqing-8-day-private-tour";
@@ -1400,6 +1550,81 @@ const chengduChongqing: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Chengdu & Chongqing 8-Day Private Tour: Leshan, Wulong, Dazu", "成都重庆旅游8天私家团：乐山·武隆·大足", "청두·낙산·충칭·우롱·대족 8일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much does this 8-day Chengdu and Chongqing tour cost?",
+        "成都重庆 8 天私家团每人多少钱？",
+        "청두·충칭 8일 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "Starting prices per person are USD 1,520 for 2 travellers and USD 1,490 for 6. Other group sizes and the single-room supplement are quoted separately. We confirm the hotels, transport, guide coverage, any seasonal supplements and the final total in writing before you pay.",
+        "每人起价：2 人同行 ¥9,880，6 人同行 ¥9,680。其他人数和单房差需单独询价。付款前，我们会书面确认酒店、交通、导游覆盖、旺季附加费和最终总价。",
+        "1인 시작가는 2명 ₩2,130,000, 6명 ₩2,090,000입니다. 다른 인원과 1인실 추가금은 별도 견적입니다. 결제 전에 호텔, 교통, 가이드 범위, 성수기 추가금과 최종 총액을 서면으로 확인해 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include?",
+        "价格包含什么？",
+        "가격에 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "Private transport, seven four-star-standard hotel nights with breakfast and tax (two sharing), the listed admissions and scenic transfers, second-class Chengdu–Chongqing rail, a private English-speaking guide, basic China-based travel and health insurance and 24/7 local support. Lunches, dinners and tips are extra.",
+        "含全程私车、7 晚 4 星标准酒店含早及税费（双人同住）、所列门票与景区接驳、成都—重庆二等座高铁、私人英语导游、中国境内基础旅游与健康保险及 24/7 当地支持。午餐、晚餐和小费自理。",
+        "전용 교통, 조식과 세금이 포함된 4성급 기준 호텔 7박(2인 1실), 명시된 입장권과 관광지 이동, 청두-충칭 2등석 열차, 영어 전용 가이드, 중국 내 기본 여행·건강보험과 24시간 현지 지원이 포함됩니다. 중식, 석식과 팁은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Do we see the Leshan Giant Buddha on foot or by boat?",
+        "乐山大佛是走登山游线还是坐游船看？",
+        "낙산대불은 걸어서 보나요, 유람선으로 보나요?",
+      ),
+      answer: l(
+        "Your confirmation names one: the land route or the boat view. We can't promise both, and river and path access depend on operating conditions.",
+        "确认单会写明其中一种：登山游线或游船观佛，两种不一定都能安排。水路和步道能否通行，要看运营情况。",
+        "확인서에 육로 코스와 유람선 중 하나를 적어 드립니다. 두 가지를 모두 약속드리지는 않으며, 수로와 길 이용은 운영 상황에 따라 달라집니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do we travel between the cities?",
+        "城市之间怎么走？",
+        "도시 사이는 어떻게 이동하나요?",
+      ),
+      answer: l(
+        "Chengdu to Chongqing is by second-class high-speed train, with transfers at both stations. Otherwise you travel by private vehicle, including the Leshan and Dazu day trips and the Wulong section.",
+        "成都到重庆坐二等座高铁，两头车站都有接送；其余行程坐私车，包括乐山、大足一日游和武隆段。",
+        "청두에서 충칭까지는 2등석 고속열차를 타며, 양쪽 역 이동도 포함됩니다. 그 밖에는 낙산·대족 당일 여행과 우롱 구간을 포함해 전용 차량으로 이동합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is covered at Wulong's Three Natural Bridges?",
+        "武隆天生三桥包含哪些？",
+        "우롱 천생삼교에서는 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "On Day 5 you tour the Three Natural Bridges using the scenic transport and lifts named in your confirmation that are running that day, then stay the night in Wulong. Every paid Wulong item is listed in writing; unlisted Wulong sights are not included. If time is short on Day 6, we don't squeeze in another major sight.",
+        "第 5 天按确认单列明且当天运行的景区车与电梯游览天生三桥，当晚住武隆。武隆的付费项目会逐项写进确认单，未列明的景点不包含；第 6 天时间不够时，不会硬塞另一处大型景区。",
+        "5일 차에 확인서에 적힌 관광지 차량과 엘리베이터 중 당일 운영하는 것을 이용해 천생삼교를 둘러보고 우롱에서 1박합니다. 우롱의 유료 항목은 서면으로 하나하나 적어 드리며, 명시되지 않은 우롱 관광지는 포함되지 않습니다. 6일 차에 시간이 부족하면 큰 관광지를 무리하게 더 넣지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Will the pandas be active when we visit Chengdu?",
+        "去成都时熊猫会很活跃吗？",
+        "청두를 방문할 때 판다가 활발하게 움직일까요?",
+      ),
+      answer: l(
+        "You visit Chengdu Panda Base early on Day 2. Which pandas you see, and how active they are, can vary.",
+        "第 2 天早场游览成都大熊猫基地。能看到哪只熊猫、熊猫是否活跃，要看当天情况。",
+        "2일 차 이른 시간에 청두 판다기지를 방문합니다. 어떤 판다를 볼지, 판다가 얼마나 활발할지는 그날 상황에 따라 다를 수 있습니다.",
+      ),
+    },
+  ],
 };
 
 const guangzhouSlug = "guangzhou-shunde-foshan-5-day-private-tour";
@@ -1813,6 +2038,81 @@ const huangshan: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Huangshan Private Tour, 5 Days: Hongcun, Xidi & Huizhou", "黄山5天4晚私家团：宏村·西递·徽州古村", "황산·홍춘·후이저우 5일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much is this Huangshan tour per person, and can two of us book it?",
+        "这条黄山线每人多少钱？两个人能订吗？",
+        "이 황산 투어는 1인당 얼마이며, 두 명도 예약할 수 있나요?",
+      ),
+      answer: l(
+        "From USD 769 per person for 4 travellers, or from USD 740 per person for 6, sharing twin rooms. For 2 travellers or any other group size, we prepare a quote. Before you pay, we confirm your rooms, dates, vehicle, any seasonal supplement and the final total in writing.",
+        "按双人同住计，4 人同行每人 ¥4,998 起，6 人同行每人 ¥4,798 起；2 人或其他人数需单独询价。付款前，我们会书面确认房间、日期、车型、旺季附加费和最终总价。",
+        "2인 1실 기준으로 4명이면 1인 ₩1,080,000부터, 6명이면 1인 ₩1,040,000부터입니다. 2명이나 다른 인원은 별도 견적을 드립니다. 결제 전에 객실, 날짜, 차량, 성수기 추가금과 최종 총액을 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include, and what costs extra?",
+        "价格包含什么？哪些要另外付？",
+        "요금에 무엇이 포함되고, 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "A private English-speaking guide, a private vehicle, all listed admissions, four nights with breakfast, and lunch on Days 2–5. Scenic buses, the up and down cableways and luggage handling on the mountain are listed separately in your confirmation. Dinners, international flights, tips and single-room supplements are extra.",
+        "包含私家英语导游、专属用车、所列景点门票、4 晚含早住宿和第 2—5 天午餐。景区车、上下行索道和山上行李处理，会在确认单里单独列明。晚餐、国际机票、小费和单房差另付。",
+        "영어 전용 가이드, 전용 차량, 명시된 모든 입장권, 조식 포함 4박과 2~5일 차 중식이 포함됩니다. 관광지 버스, 상·하행 케이블카, 산 위 짐 처리는 확인서에 따로 적습니다. 석식, 국제선 항공, 팁, 1인실 추가금은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is there a lot of climbing on Huangshan?",
+        "黄山上要爬很多台阶吗？",
+        "황산에서는 많이 올라가야 하나요?",
+      ),
+      answer: l(
+        "The scenic bus and uphill cableway take you up, and your route on the mountain is planned around your walking ability and the paths open that day. Cableways cut the climbing but not the stairs, and some seasonal sections may close.",
+        "上山坐景区车和上行索道，山上路线按你的步行能力和当天开放的步道安排。索道能减少爬坡，但台阶还是要走；部分季节性区域可能关闭。",
+        "관광지 버스와 상행 케이블카로 올라가며, 산 위 동선은 보행 능력과 그날 열려 있는 길에 맞춰 정합니다. 케이블카로 오르막은 줄어도 계단은 남으며, 일부 계절 구간은 닫힐 수 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are sunrise and the sea of clouds guaranteed?",
+        "一定能看到日出和云海吗？",
+        "일출과 운해는 꼭 볼 수 있나요?",
+      ),
+      answer: l(
+        "No. You try for sunrise at a viewpoint only if the weather, access and how you feel allow, and both sunrise and the sea of clouds depend on the day. Which viewpoints you visit also depends on the route being open and suitable for you.",
+        "不能保证。只有天气、景区开放和身体状况都允许，才去日出观景点；日出和云海都要看当天情况。去哪些观景点，也要看游线是否开放、是否适合你。",
+        "보장되지 않습니다. 날씨, 접근 여건, 몸 상태가 허락할 때만 일출 전망대에 가 보며, 일출과 운해는 그날 상황에 따라 다릅니다. 어느 전망지에 갈지도 동선 개방 여부와 여행객에게 맞는지를 보고 정합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we sleep, and what happens to our luggage on the mountain?",
+        "住在哪里？上山时行李怎么办？",
+        "어디에서 묵고, 산 위에서는 짐을 어떻게 하나요?",
+      ),
+      answer: l(
+        "Four nights with breakfast, based on twin sharing: one each below Huangshan, at a named hotel on the mountain, in Hongcun and in Tangmo. We send the hotel grade, room type, single supplement and how luggage is handled on the mountain in writing. Porters and luggage transfers not in your confirmation cost extra.",
+        "共 4 晚含早，按两人同住一间计：黄山山下、山上指定酒店、宏村和唐模各 1 晚。酒店等级、房型、单房差和山上行李怎么处理，都会书面发给你；确认单以外的挑夫和行李搬运另付。",
+        "조식 포함 4박, 2인 1실 기준으로 황산 아래, 산 위 지정 호텔, 홍춘, 탕모에서 각 1박합니다. 호텔 등급, 객실, 1인실 추가 요금과 산 위 짐 처리 방법은 서면으로 보내 드립니다. 확인서에 없는 짐 운반 서비스와 짐 이동은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which Huizhou villages do we see after the mountain?",
+        "下山后去哪些徽州古村？",
+        "하산 후에는 어떤 후이저우 고촌을 보나요?",
+      ),
+      answer: l(
+        "After the descent you have a slower afternoon in Hongcun. On Day 4 your private guide takes you to Xidi, Nanping and Guanlu before a night in Tangmo. Day 5 covers Tangmo, Chengkan, the Tangyue Memorial Archways and Bao Garden, then your private transfer to Huangshan North station or the airport.",
+        "下山后，下午慢慢逛宏村。第 4 天私家导游陪你游西递、南屏和关麓，晚上住唐模；第 5 天游唐模、呈坎、棠樾牌坊群和鲍家花园，之后专车送你到黄山北站或机场。",
+        "하산 후 오후에는 홍춘을 천천히 둘러봅니다. 4일 차에는 전용 가이드와 서제, 난핑, 관루를 보고 탕모에서 묵습니다. 5일 차에는 탕모, 정감, 탕웨 패방군과 포가화원을 본 뒤 전용 차량으로 황산북역이나 공항으로 이동합니다.",
+      ),
+    },
+  ],
 };
 
 const jiangxiSlug = "jingdezhen-wuyuan-wangxian-6-day-private-tour";
@@ -2011,6 +2311,81 @@ const jiangxi: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  metadataTitle: l("Jiangxi Private Tour, 6 Days: Jingdezhen to Wangxian Valley", "江西6天5晚私家团：景德镇·婺源·三清山·望仙谷", "징더전·우위안·삼청산·왕셴구 6일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much does this tour cost, and why is no price shown?",
+        "这条线多少钱？为什么页面没有标价？",
+        "이 투어는 얼마인가요? 왜 가격이 표시되지 않나요?",
+      ),
+      answer: l(
+        "We price this route after your travel dates, rooming and group size are confirmed, so the page shows no fixed price. Send those with your arrival details and luggage count, and we confirm hotels, transport, guide arrangements, any seasonal supplement and the final total in writing before you pay.",
+        "这条线要先确认出行日期、房间配置和同行人数，再给完整报价，所以页面不标价。请一并发来到离信息和行李数量；付款前，我们会书面确认酒店、交通、导游安排、旺季附加费和最终总价。",
+        "이 상품은 여행 날짜, 객실 구성과 인원을 확인한 뒤 요금을 정하므로 페이지에 정해진 가격이 없습니다. 이 정보와 함께 도착·출발 정보와 수하물 수량을 보내 주시면 결제 전에 호텔, 교통, 가이드 동행 범위, 성수기 추가금과 최종 총액을 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is included, and what costs extra?",
+        "包含什么？哪些要另外付？",
+        "무엇이 포함되고, 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "A private English-speaking guide and private vehicle, five nights with hotel breakfast, the listed admissions, the ceramic experience and basic local travel accident insurance. Lunches, dinners, international flights, tips and single-room supplements are extra.",
+        "包含私家英语导游、专属用车、5 晚酒店早餐、所列门票、陶瓷体验和当地基础旅游意外险。午餐、晚餐、国际机票、小费和单房差另付。",
+        "영어 전용 가이드와 전용 차량, 조식 포함 5박, 명시된 입장권, 도자기 체험과 현지 기본 여행상해보험이 포함됩니다. 중식·석식, 국제선 항공, 팁, 1인실 추가금은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Can we take home the ceramic piece we make in Jingdezhen?",
+        "在景德镇做的瓷器能带回家吗？",
+        "징더전에서 만든 도자기를 가져갈 수 있나요?",
+      ),
+      answer: l(
+        "What happens to your finished piece is confirmed before you book, along with the materials for your half-day making session. Firing, glazing, remakes, packing and international shipping are not included unless your confirmation lists each one.",
+        "成品怎么处理，连同半天动手制作要用的材料，预订前都会跟你写清楚。烧制、上釉、失败重做、包装和国际邮寄，确认单没有逐项列明就不包含。",
+        "완성품 처리 방식은 반나절 제작 체험의 재료와 함께 예약 전에 확인해 드립니다. 소성, 유약, 재제작, 포장과 국제 배송은 확인서에 하나하나 적혀 있지 않으면 포함되지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is Wangxian Valley like, and when do we visit?",
+        "望仙谷是什么样的地方？什么时候去？",
+        "왕셴구는 어떤 곳이고, 언제 가나요?",
+      ),
+      answer: l(
+        "It is a developed scenic area with a night-time experience, not an untouched ancient village. On Day 5 you go in during the afternoon-to-evening window on your ticket, then stay inside the scenic area or nearby, as booked.",
+        "说实话，望仙谷是商业化的夜游景区，不是原生态古村。第 5 天按确认的票种，把下午到亮灯时段留给这里，之后入住订好的景区内或附近住宿。",
+        "왕셴구는 옛 모습 그대로의 고촌이 아니라 개발된 야간 관광지입니다. 5일 차에 예약된 오후-저녁 입장 시간에 둘러본 뒤 관광지 안 또는 인근의 예약 숙소에서 묵습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is the Sanqingshan day like, and do we use cableways?",
+        "三清山这一天怎么安排？坐索道吗？",
+        "삼청산 일정은 어떤가요? 케이블카를 타나요?",
+      ),
+      answer: l(
+        "On Day 4 you follow the cableway-assisted mountain route in your written confirmation, which also sets out your Sanqingshan ticket and cableways, then stay near the mountain. Which viewpoints you reach depends on the weather, which trails are open and how much walking suits you.",
+        "第 4 天按确认单走索道辅助的山岳路线，三清山门票和索道也会在确认单上写清楚，之后住在山下或周边。能到哪些观景点，要看天气、步道开放情况和你的步行能力。",
+        "4일 차에는 확인서에 적힌 케이블카 이용 산악 동선을 둘러보며, 삼청산 입장권과 케이블카도 확인서에 적어 드립니다. 이후 산 인근에서 묵습니다. 어느 전망지까지 갈지는 날씨, 개방 구간, 걸으실 수 있는 정도에 따라 달라집니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where does the tour start and end, and where do we stay?",
+        "从哪里开始、在哪里结束？住在哪里？",
+        "어디에서 시작하고 끝나며, 어디에서 묵나요?",
+      ),
+      answer: l(
+        "Your private guide and driver meet you at the station in Jingdezhen, and on Day 6 your private vehicle takes you to Shangrao station. You have five nights with breakfast, based on twin sharing: one in Jingdezhen, two in Wuyuan, one near Sanqingshan and one in or near Wangxian Valley.",
+        "私家导游和司机在景德镇车站接你，第 6 天专车送你到上饶站。共住 5 晚含早，默认双人同住：景德镇 1 晚、婺源 2 晚、三清山周边 1 晚、望仙谷内或附近 1 晚。",
+        "전용 가이드와 기사가 징더전 역에서 맞이하고, 6일 차에는 전용 차량으로 상라오역까지 모셔다 드립니다. 조식 포함 5박, 2인 1실 기준으로 징더전 1박, 우위안 2박, 삼청산 인근 1박, 왕셴구 안 또는 인근 1박입니다.",
+      ),
+    },
+  ],
 };
 
 const changbaishanSlug = "changbaishan-yanji-winter-6-day-private-tour";
@@ -2213,6 +2588,81 @@ const changbaishan: PrivateTourProduct = {
   packages: [standardPackage([], "standard-guided-winter")],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  metadataTitle: l("Changbaishan Winter Private Tour: 6 Days, North Slope, Yanji", "长白山冬季旅游6天私家团：北坡·延吉", "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much does this Changbaishan winter tour cost?",
+        "这条长白山冬季线多少钱？",
+        "이 백두산 겨울 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "It's quoted on request. We price this winter tour once your dates, rooming, group size and snow activities are confirmed. Send those with your arrival details and luggage count, and we confirm the hotels, transport, guide coverage, seasonal supplements and final total in writing before you pay.",
+        "本产品不公开固定价格，需先确认日期、房间配置、同行人数和雪地项目，再提供完整报价。请一并告诉我们到离信息和行李数量；付款前，我们会书面确认酒店、交通、导游覆盖、旺季附加费与最终总价。",
+        "견적 요청으로 안내합니다. 날짜, 객실 구성, 인원과 설상 체험이 확인되면 이 겨울 투어의 가격을 산정합니다. 이 정보와 함께 도착·출발 정보와 수하물 수량을 보내 주시면 결제 전에 호텔, 교통, 가이드 범위, 성수기 추가금과 최종 총액을 서면으로 확인해 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are the lift ticket, ski equipment and lesson included?",
+        "雪票、雪具和滑雪课包含吗？",
+        "리프트권, 스키 장비와 강습이 포함되나요?",
+      ),
+      answer: l(
+        "Day 2 is planned around one age-appropriate beginner lesson. Your confirmation lists the lift ticket, ski or snowboard equipment, helmet, instructor language, lesson length and eligible ages one by one. Anything not named there is not included, and a general 'unlimited skiing' label does not by itself cover these items.",
+        "第 2 天安排一节适龄的初学滑雪课。雪票、双板或单板雪具、头盔、教练语言、课程时长和适用年龄，确认单上会逐项写明；没写进去的不包含，“无限滑雪”这类概括说法也不代表这些项目都包含。",
+        "2일 차는 연령에 맞는 초급 강습 한 번을 중심으로 계획되어 있습니다. 리프트권, 스키 또는 보드 장비, 헬멧, 강습 언어, 강습 시간과 대상 연령은 확인서에 하나하나 적어 드립니다. 확인서에 없는 항목은 포함되지 않으며, '무제한 스키' 같은 표현만으로 이 항목들이 포함되는 것은 아닙니다.",
+      ),
+    },
+    {
+      question: l(
+        "What if snow or wind closes the North Slope?",
+        "如果风雪导致北坡封闭怎么办？",
+        "눈이나 바람으로 북파가 통제되면 어떻게 되나요?",
+      ),
+      answer: l(
+        "We head for the North Slope on Day 3 only when the roads and scenic area are open, and whether you can see Tianchi depends on the day. If wind, snow or closures shut the route, we switch to the alternative agreed in advance. The Day 4 rime drift or snow activity also runs only when the season and safety conditions allow.",
+        "第 3 天只在道路和景区开放时前往北坡，能否看到天池要看当天情况。如遇风雪或封闭，就改走提前确认的备用方案。第 4 天的雾凇漂流或雪地活动，也只在季节和安全条件允许时进行。",
+        "3일 차 북파는 도로와 관광지가 운영할 때만 가며, 천지를 볼 수 있을지는 당일 상황에 따라 다릅니다. 강풍, 폭설 또는 통제로 길이 막히면 미리 합의한 대체 일정으로 진행합니다. 4일 차 상고대 래프팅이나 설상 체험도 계절과 안전 조건이 맞을 때만 진행합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Will we have an English-speaking guide?",
+        "有英语导游吗？",
+        "영어 가이드가 함께하나요?",
+      ),
+      answer: l(
+        "Yes, this route has an English-speaking guide. The guide days and the ski instructor's language are priced once your group is confirmed, and your written confirmation lists both.",
+        "有，这条线配英语导游。英语导游服务日与滑雪教练语言，会在确认同行信息后核算，并写进书面确认单。",
+        "네, 이 코스에는 영어 가이드가 함께합니다. 가이드 일정과 스키 강습 언어는 일행을 확인한 뒤 비용을 산정하며, 서면 확인서에 둘 다 적어 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay on this Changbaishan trip?",
+        "这条长白山线路住哪里？",
+        "이 백두산 여행에서는 어디에 묵나요?",
+      ),
+      answer: l(
+        "Five nights with breakfast, two sharing a room: two at a named Changbaishan resort hotel, one near the North Slope or in Erdaobaihe, and two in Yanji. We send you the hotel brand, room type, breakfast, hot-spring access and single supplement in writing.",
+        "共 5 晚含早，按双人同住：长白山度假区指定品牌酒店 2 晚、北坡周边或二道白河 1 晚、延吉 2 晚。酒店品牌、房型、早餐、温泉权益和单房差都会书面发给你。",
+        "조식 포함 5박, 2인 1실 기준입니다. 지정 백두산 리조트 호텔 2박, 북파 인근 또는 이도백하 1박, 연길 2박입니다. 호텔 브랜드, 객실 유형, 조식, 온천 이용과 1인실 추가금은 서면으로 보내 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is cold-weather clothing provided?",
+        "提供防寒衣物吗？",
+        "방한복이 제공되나요?",
+      ),
+      answer: l(
+        "No. Cold-weather clothing is not included, and this route suits travellers prepared for severe cold. Day 1 leaves time to settle in and check your clothing and equipment, and road transfers use a winter-equipped private vehicle.",
+        "不提供。防寒服装不在费用内，这条线适合能应对严寒的旅客。第 1 天留出时间入住、适应天气并检查衣物和装备；各段路程使用适合冬季路况的私车。",
+        "아니요. 방한복은 포함되지 않으며, 이 코스는 매서운 추위에 대비한 여행자에게 맞습니다. 1일 차에는 숙소에 자리를 잡고 복장과 장비를 점검할 시간이 있고, 도로 이동은 겨울 장비를 갖춘 전용 차량으로 합니다.",
+      ),
+    },
+  ],
 };
 
 export const privateTourExpansionProducts: readonly PrivateTourProduct[] =
