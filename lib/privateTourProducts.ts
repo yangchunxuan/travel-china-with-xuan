@@ -2692,18 +2692,18 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "빌라 또는 4성급 호텔 한 곳에서 3박 · 국가삼림공원 종일 · 천문산, 악천후 시 보봉호로 무료 변경",
   ),
   lede: l(
-    "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See Seventy-Two Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
+    "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See 72 Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
     "四天从容游览张家界的砂岩峰林、碧绿峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
-    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 칠십이기루를 보고, 둘째 날은 국가삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
+    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 72기루를 보고, 둘째 날은 국가삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
   ),
   summary: l(
-    "Three nights in one designated villa or a 4-star hotel in Wulingyuan with breakfast, private station or airport transfers, private transport on the route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions, including Tianmen Mountain with its cable car, or Baofeng Lake with its boat in bad weather. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+    "Three nights in one designated villa or a 4-star hotel in Wulingyuan with breakfast, private station or airport transfers, private transport on the route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions, including Tianmen Mountain with its cable car, or Baofeng Lake with its boat in bad weather. The 72 Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
     "含武陵源指定别墅或四星酒店 3 晚及早餐、机场或车站接送、行程私车、D2 全天与 D3 白天英语导游，以及行程所列成人门票：含天门山门票与索道，天气不好时改为宝峰湖门票与游船。七十二奇楼夜场为自由活动，含专车送达、夜间接回与远程协助。",
-    "무릉원의 지정 빌라 또는 4성급 호텔 3박과 조식, 공항·역 픽업 및 샌딩, 일정 전용 차량, D2 종일과 D3 주간 한국어 가이드, 명시된 성인 입장권이 포함됩니다. 천문산 입장권과 케이블카가 포함되며, 악천후 시에는 보봉호 입장권과 유람선으로 바꿉니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다.",
+    "무릉원의 지정 빌라 또는 4성급 호텔 3박과 조식, 공항·역 픽업 및 샌딩, 일정 전용 차량, D2 종일과 D3 주간 한국어 가이드, 명시된 성인 입장권이 포함됩니다. 천문산 입장권과 케이블카가 포함되며, 악천후 시에는 보봉호 입장권과 유람선으로 바꿉니다. 72기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다.",
   ),
   highlights: lists(
     [
-      "Seventy-Two Wonder Tower lit up on your arrival night",
+      "72 Wonder Tower lit up on your arrival night",
       "A full Forest Park day: Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery",
       "Tianmen Mountain by cable car, with Baofeng Lake as a free weather backup",
       "Three nights in one base: a boutique villa or a 4-star hotel",
@@ -2715,7 +2715,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       "三晚同住一处：精品别墅或四星酒店",
     ],
     [
-      "도착한 밤 불 밝힌 칠십이기루 관람",
+      "도착한 밤 불 밝힌 72기루 관람",
       "국가삼림공원 종일: 천자산·양가계·원가계·금편계·십리화랑",
       "케이블카로 오르는 천문산, 악천후 시 보봉호로 무료 변경",
       "빌라 또는 4성급 호텔 한 곳에서 3박",
@@ -2725,14 +2725,14 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     day(
       1,
       l(
-        "Arrive, then Seventy-Two Wonder Tower at night",
+        "Arrive, then 72 Wonder Tower at night",
         "抵达张家界，顺路看七十二奇楼夜景",
-        "장가계 도착, 칠십이기루 야경",
+        "장가계 도착, 72기루 야경",
       ),
       l(
-        "Our driver meets you at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station, including evening arrivals. On the way to Wulingyuan, stop at Seventy-Two Wonder Tower to see it lit up; the visit is self-guided, with your driver waiting and remote assistance. Then check in to your villa or 4-star hotel, your base for all three nights. Evening entry closes at about 22:30, so if you land too late we move this visit to the evening of Day 3.",
+        "Our driver meets you at Zhangjiajie Hehua Airport or Zhangjiajie West Railway Station, including evening arrivals. On the way to Wulingyuan, stop at 72 Wonder Tower to see it lit up; the visit is self-guided, with your driver waiting and remote assistance. Then check in to your villa or 4-star hotel, your base for all three nights. Evening entry closes at about 22:30, so if you land too late we move this visit to the evening of Day 3.",
         "司机在张家界荷花机场或张家界西站接你，晚班航班也接。去武陵源的路上，顺路在七十二奇楼看夜景；夜场为自由游览，司机等候并提供远程协助。之后入住别墅或四星酒店，三晚都住这里，中途不换住处。夜场约 22:30 停止入场；如果落地太晚，这一站改到 D3 晚上。",
-        "기사가 장가계 허화공항이나 장가계서역에서 맞이하며, 저녁 도착편도 마중합니다. 무릉원으로 가는 길에 칠십이기루에 들러 야경을 봅니다. 야간 관람은 자유 일정이며 기사가 기다리고 원격 지원을 제공합니다. 이후 빌라 또는 4성급 호텔에 체크인하며, 3박 모두 이곳에 머뭅니다. 야간 입장은 22:30경 마감되므로 너무 늦게 도착하면 이 일정을 D3 저녁으로 옮깁니다.",
+        "기사가 장가계 허화공항이나 장가계서역에서 맞이하며, 저녁 도착편도 마중합니다. 무릉원으로 가는 길에 72기루에 들러 야경을 봅니다. 야간 관람은 자유 일정이며 기사가 기다리고 원격 지원을 제공합니다. 이후 빌라 또는 4성급 호텔에 체크인하며, 3박 모두 이곳에 머뭅니다. 야간 입장은 22:30경 마감되므로 너무 늦게 도착하면 이 일정을 D3 저녁으로 옮깁니다.",
       ),
     ),
     day(
@@ -2777,15 +2777,15 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "무릉원 한 곳에서 3박하며 조식이 포함되고 중간에 숙소를 옮기지 않습니다. 가족 여행에 맞는 공용 거실과 정원이 있는 지정 컨트리 가든 패밀리 빌라, 또는 4성급 호텔 중에서 고를 수 있으며 모두 2인 1실 기준입니다. 정확한 빌라 동 또는 호텔 이름, 객실 배정, 외국인 숙박 등록, 조식과 1인실 차액은 결제 전에 확정해 드립니다.",
   ),
   serviceNote: l(
-    "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, Tianmen Mountain admission with its cable car (or Baofeng Lake admission with its boat in bad weather), standard evening admission to Seventy-Two Wonder Tower with insurance, and local tour accident insurance. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
+    "Includes driver transfers on Days 1 and 4, private transport throughout the listed route, an English-speaking guide for all of Day 2 and the daytime route on Day 3, the adult Wulingyuan admission-and-shuttle package with required insurance, Tianmen Mountain admission with its cable car (or Baofeng Lake admission with its boat in bad weather), standard evening admission to 72 Wonder Tower with insurance, and local tour accident insurance. The 72 Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance. No shopping stops.",
     "含 D1/D4 司机接送、行程所列私车、D2 全天及 D3 白天英语导游、成人武陵源门票与环保车联票及必买保险、天门山门票与索道（天气不好时改为宝峰湖门票与游船）、七十二奇楼普通夜场票及保险，以及当地旅游意外险。七十二奇楼夜场为自由活动，含专车送达、接回和远程协助。全程无购物店安排。",
-    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 무릉원 입장권·셔틀 패키지, 천문산 입장권과 케이블카(악천후 시 보봉호 입장권과 유람선), 보험이 포함된 칠십이기루 일반 야간 입장권, 현지 여행자 상해보험이 포함됩니다. 칠십이기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
+    "D1·D4 전용 차량 픽업·샌딩, 명시된 일정의 전용 차량, D2 종일 및 D3 주간 한국어 가이드, 필수 보험이 포함된 성인 무릉원 입장권·셔틀 패키지, 천문산 입장권과 케이블카(악천후 시 보봉호 입장권과 유람선), 보험이 포함된 72기루 일반 야간 입장권, 현지 여행자 상해보험이 포함됩니다. 72기루 야간 관람은 자유 일정이며 전용 차량 왕복과 원격 지원을 제공합니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: commonExclusions(
     [
       "Bailong Elevator, Tianzi Mountain and Yangjiajie cableways, the Ten-Mile Gallery mini-train and other optional scenic transport (the Wulingyuan admission-and-shuttle package and the Tianmen Mountain cable car are included)",
       "Other optional paid items inside the scenic areas",
-      "An on-site guide during the Seventy-Two Wonder Tower evening",
+      "An on-site guide during the 72 Wonder Tower evening",
       "A Day 4 morning at Yellow Dragon Cave or Baofeng Lake for later departures, quoted separately",
     ],
     [
@@ -2797,13 +2797,13 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     [
       "백룡 엘리베이터, 천자산·양가계 케이블카, 십리화랑 미니 열차 및 기타 선택 관광지 교통 (무릉원 입장권·셔틀 패키지와 천문산 케이블카는 포함)",
       "관광지 안의 기타 선택 유료 항목",
-      "칠십이기루 야간 현장 가이드",
+      "72기루 야간 현장 가이드",
       "늦게 출발할 때 D4 오전 황룡동 또는 보봉호 추가 일정, 별도 견적",
     ],
     l(
-      "Holiday, unlisted night-time, overtime and other unlisted services; the Seventy-Two Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
+      "Holiday, unlisted night-time, overtime and other unlisted services; the 72 Wonder Tower standard evening admission with insurance, private transfers and remote assistance remain included",
       "节假日、未列出的夜间服务、超时及其他未列服务（七十二奇楼普通夜场票及保险、专车往返与远程协助已含）",
-      "공휴일, 일정 외 야간 서비스, 초과 시간 및 기타 일정 외 서비스 (칠십이기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함)",
+      "공휴일, 일정 외 야간 서비스, 초과 시간 및 기타 일정 외 서비스 (72기루 일반 야간 입장권·보험, 전용 차량 왕복과 원격 지원은 포함)",
     ),
   ),
   bookingNote: l(
@@ -2957,9 +2957,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
           "한국어 가이드 포함 고정 코스",
         ),
         l(
-          "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The Seventy-Two Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
+          "An English-speaking guide accompanies all of Day 2 and the daytime route on Day 3. The 72 Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
           "D2 全天与 D3 白天由英语导游陪同；七十二奇楼夜场为自由活动，含专车送达、接回与远程协助。",
-          "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 칠십이기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
+          "D2 종일과 D3 주간 일정에는 한국어 가이드가 동행합니다. 72기루 야간은 자유 관람이며 전용 차량 왕복과 원격 지원이 포함됩니다.",
         ),
         [3980, 3280],
       ),
@@ -3011,14 +3011,14 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     "무릉원의 사암 봉우리와 계곡을 이틀 동안 둘러본 뒤 부용진과 봉황고성으로 이어갑니다. D2~D5는 한국어 가이드와 여행하고 D6는 봉황에서 자유롭게 보냅니다.",
   ),
   summary: l(
-    "Six hotel nights, a private vehicle for the transfers and touring times listed in the itinerary, and an English-speaking guide on Days 2–5. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "Six hotel nights, a private vehicle for the transfers and touring times listed in the itinerary, and an English-speaking guide on Days 2–5. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to 72 Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
     "含 6 晚住宿、行程逐日列出的接送和游览时段专车，以及 D2–D5 英语导游。基础门票包括武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
-    "6박 숙박, 일정에 명시된 이동·관광 시간대의 전용 차량, D2~D5 한국어 가이드가 포함됩니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+    "6박 숙박, 일정에 명시된 이동·관광 시간대의 전용 차량, D2~D5 한국어 가이드가 포함됩니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 72기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
   ),
   highlights: lists(
     [
       "Tianzi Mountain, Yangjiajie and Yuanjiajie in one guided Wulingyuan day",
-      "Ten-Mile Gallery, Golden Whip Stream and Seventy-Two Wonder Tower",
+      "Ten-Mile Gallery, Golden Whip Stream and 72 Wonder Tower",
       "One night in Furong Town, followed by two nights in Fenghuang",
       "Four English-guided touring days, plus a free day in Fenghuang",
     ],
@@ -3030,7 +3030,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ],
     [
       "천자산·양가계·원가계를 하루에 연결하는 가이드 일정",
-      "십리화랑 미니 열차, 금편계 산책과 칠십이기루 야경",
+      "십리화랑 미니 열차, 금편계 산책과 72기루 야경",
       "부용진 1박 후 봉황고성에서 2박",
       "D2~D5 한국어 가이드 관광과 D6 봉황 자유 일정",
     ],
@@ -3067,12 +3067,12 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       l(
         "Ten-Mile Gallery, Golden Whip Stream and the night lights",
         "十里画廊、金鞭溪与七十二奇楼夜景",
-        "십리화랑·금편계·칠십이기루 야경",
+        "십리화랑·금편계·72기루 야경",
       ),
       l(
-        "Your guide and private vehicle take you to Ten-Mile Gallery, mini-train included, and to the walking section of Golden Whip Stream set out in your written confirmation. Then on to the standard evening session at Seventy-Two Wonder Tower, and back to your Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are extra unless confirmed in writing.",
+        "Your guide and private vehicle take you to Ten-Mile Gallery, mini-train included, and to the walking section of Golden Whip Stream set out in your written confirmation. Then on to the standard evening session at 72 Wonder Tower, and back to your Wulingyuan hotel by private vehicle. Upgraded night programmes and other paid activities are extra unless confirmed in writing.",
         "英语导游陪你乘专车从酒店出发，游览十里画廊（含小火车），再步行走书面确认单上的金鞭溪路段。之后去七十二奇楼普通夜场，结束后专车送回武陵源酒店。升级夜场和其他收费体验，写进确认方案才包含。",
-        "한국어 가이드와 전용 차량으로 호텔을 나서 미니 열차가 포함된 십리화랑을 둘러보고, 서면 확인서에 적힌 금편계 구간을 걷습니다. 이어서 칠십이기루 일반 야간 관람을 하고 전용 차량으로 무릉원 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면 확인서에 있을 때만 포함됩니다.",
+        "한국어 가이드와 전용 차량으로 호텔을 나서 미니 열차가 포함된 십리화랑을 둘러보고, 서면 확인서에 적힌 금편계 구간을 걷습니다. 이어서 72기루 일반 야간 관람을 하고 전용 차량으로 무릉원 호텔에 돌아옵니다. 업그레이드 야간 프로그램과 기타 유료 체험은 서면 확인서에 있을 때만 포함됩니다.",
       ),
     ),
     day(
@@ -3130,9 +3130,9 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     "6박은 무릉원 3박, 부용진 1박, 봉황 2박입니다. 결제 전에 최종 호텔, 객실 유형, 침대 구성, 조식 포함 여부, 외국인 투숙 가능 여부, 업그레이드나 1인실 차액을 서면 확인서로 보내 드립니다.",
   ),
   serviceNote: l(
-    "Your private vehicle covers only the pickups, transfers and touring times set out in the itinerary and your written confirmation; it is not on standby outside those hours. An English-speaking guide joins you on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time without a guide or vehicle. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to Seventy-Two Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
+    "Your private vehicle covers only the pickups, transfers and touring times set out in the itinerary and your written confirmation; it is not on standby outside those hours. An English-speaking guide joins you on Days 2–5. Day 1 and Day 7 are driver-only transfers, and Day 6 is free time without a guide or vehicle. The base price includes Wulingyuan entry with the park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening entry to 72 Wonder Tower and first-entry admission to Furong Town. No shopping stops.",
     "专车只负责逐日行程和书面确认中列明的接送与游览时段，这些时段之外不安排候车。D2–D5 含英语导游；D1 与 D7 为司机接送，D6 为不含车导的自由活动。基础门票包括武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。全程无购物店安排。",
-    "전용 차량은 일정과 서면 확인서에 적힌 픽업, 이동, 관광 시간에만 운행하며, 그 밖의 시간에는 대기하지 않습니다. 한국어 가이드는 D2~D5에 포함됩니다. D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만 제공하고 D6는 차량과 가이드가 없는 자유 일정입니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
+    "전용 차량은 일정과 서면 확인서에 적힌 픽업, 이동, 관광 시간에만 운행하며, 그 밖의 시간에는 대기하지 않습니다. 한국어 가이드는 D2~D5에 포함됩니다. D1과 D7에는 가이드 없이 전용 차량 픽업·샌딩만 제공하고 D6는 차량과 가이드가 없는 자유 일정입니다. 기본 입장권은 무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 72기루 일반 야간 입장권, 부용진 첫 입장권입니다. 쇼핑 일정은 없습니다.",
   ),
   exclusions: lists(
     [
@@ -3185,9 +3185,9 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
         "어떤 입장권이 기본 요금에 포함되나요?",
       ),
       answer: l(
-        "Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to Seventy-Two Wonder Tower and first-entry admission to Furong Town are included. Fenghuang’s public streets have no first-entry gate ticket. Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions are separate.",
+        "Wulingyuan admission with park eco-shuttles, the Ten-Mile Gallery mini-train, standard evening admission to 72 Wonder Tower and first-entry admission to Furong Town are included. Fenghuang’s public streets have no first-entry gate ticket. Unlisted cable cars, the Bailong Elevator, boat rides and paid smaller attractions are separate.",
         "包含武陵源门票与环保车、十里画廊小火车、七十二奇楼普通夜场和芙蓉镇首道门票。凤凰古城公共街区没有首道大门票。未列索道、百龙天梯、游船和收费小景点另计。",
-        "무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 칠십이기루 일반 야간 입장권, 부용진 첫 입장권이 포함됩니다. 봉황고성 공공 구역에는 첫 입장권이 없습니다. 명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소는 별도입니다.",
+        "무릉원 입장권과 관광 셔틀, 십리화랑 미니 열차, 72기루 일반 야간 입장권, 부용진 첫 입장권이 포함됩니다. 봉황고성 공공 구역에는 첫 입장권이 없습니다. 명시되지 않은 케이블카, 백룡 엘리베이터, 유람선과 유료 소규모 명소는 별도입니다.",
       ),
     },
     {

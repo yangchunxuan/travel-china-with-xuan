@@ -273,9 +273,9 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "장가계 · 원가계 · 금편계 · 천문산",
     ),
     appeal: l(
-      "See Seventy-Two Wonder Tower lit up on arrival, spend a full day in the Forest Park, then ride up Tianmen Mountain, with Baofeng Lake as a free weather backup.",
+      "See 72 Wonder Tower lit up on arrival, spend a full day in the Forest Park, then ride up Tianmen Mountain, with Baofeng Lake as a free weather backup.",
       "抵达当晚看七十二奇楼夜景，森林公园玩一整天，再乘索道上天门山；天气不好免费改游宝峰湖。",
-      "도착한 밤 칠십이기루 야경을 보고, 국가삼림공원에서 하루를 보낸 뒤 케이블카로 천문산에 오릅니다. 악천후 시에는 보봉호로 무료 변경합니다.",
+      "도착한 밤 72기루 야경을 보고, 국가삼림공원에서 하루를 보낸 뒤 케이블카로 천문산에 오릅니다. 악천후 시에는 보봉호로 무료 변경합니다.",
     ),
     pace: l(
       "Three nights in one villa or 4-star hotel, two full sightseeing days, and an easy arrival and departure.",

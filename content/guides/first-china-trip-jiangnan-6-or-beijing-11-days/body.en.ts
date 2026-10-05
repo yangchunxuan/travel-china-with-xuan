@@ -40,7 +40,7 @@ const body = {
       type: "callout",
       tone: "neutral",
       title: "The eleven-day tour is a different route, not the six-day tour plus Beijing",
-      body: "The six-day plan lists Suzhou Museum subject to reservations and a Hangzhou day with Lingyin–Feilai Peak, a tea stop and a West Lake cruise. The eleven-day plan lists one Suzhou garden, a canal town and a West Lake boat. Lingyin Temple can replace the tea village if a visit slot is available. The scenic area currently has free admission but requires a real-name timed reservation; confirm the change for your dates before paying. Check the included stops on both product pages before comparing price."
+      body: "The six-day plan lists Suzhou Museum subject to reservations and a Hangzhou day with Lingyin–Feilai Peak, a tea stop and a West Lake cruise. The eleven-day plan lists one Suzhou garden, a canal town and a West Lake boat. Lingyin Temple can replace the tea village if a visit slot is available. The scenic area currently has free admission but requires a real-name timed reservation, and passports are accepted; confirm the change for your dates before paying. Check the included stops on both product pages before comparing price."
     },
     { id: "effort-heading", type: "heading", level: 2, text: "Count the effort as well as the days" },
     {

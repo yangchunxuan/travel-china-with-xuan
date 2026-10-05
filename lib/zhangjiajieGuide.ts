@@ -23,7 +23,7 @@ export const ZHANGJIAJIE_GUIDE_SOURCES = [
     url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220816_27584142.html",
   },
   {
-    name: "Hunan Government: Zhangjiajie 72 Qilou as an evening experience",
+    name: "Hunan Government: Zhangjiajie 72 Wonder Tower as an evening experience",
     url: "https://www.hunan.gov.cn/hnszf/hnyw/szdt/202405/t20240505_33292041.html",
   },
   {

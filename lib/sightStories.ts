@@ -2993,7 +2993,7 @@ export const sightStories: Stories = {
         },
         {
           name: "Beishan's Guanyin with prayer beads",
-          body: "At Beishan, look for niche 125, a small Guanyin with her hands crossed at her waist around a string of prayer beads. Her thin robe clings, her ribbons lift as if in a breeze, and she seems about to smile. Then visit cave 136, which faces west. On a sunny afternoon, light slants in past the stone scripture case at its centre, and the shadows on the figures shift as you move.",
+          body: "At Beishan, look for niche 125, a small Guanyin with her hands crossed at her waist around a string of prayer beads. Her thin robe clings, her ribbons lift as if in a breeze, and she seems about to smile. Then visit cave 136, the Revolving Sutra Cave. You don't walk in: you look in over a waist-high wooden rail across the mouth, which replaced a metal grille in 2025. The cave faces west, and on a sunny afternoon light can slant in past the stone scripture case at its centre and fall on the figures. Step slowly along the rail and different figures slip out from behind the case.",
         },
       ],
       time: "About two hours each way by road from central Chongqing. Allow two to three hours for the carvings at Baodingshan, more if you want the museum beside it, and one to two hours at Beishan. The two together fill the day.",
@@ -3041,7 +3041,7 @@ export const sightStories: Stories = {
         },
         {
           name: "北山的数珠手观音",
-          body: "到了北山，找到编号 125 的那尊观音：个子不大，双手交叉在腹前，握着一串念珠，薄薄的衣裳贴着身子，飘带像被风吹起，神情似笑非笑。再去 136 号石窟看看。窟口朝西，晴天的下午，阳光斜斜照进来，越过窟中央那座石刻的经柜，落在一尊尊像上，人一走动，光影也跟着变。",
+          body: "到了北山，找到编号 125 的那尊观音：个子不大，双手交叉在腹前，握着一串念珠，薄薄的衣裳贴着身子，飘带像被风吹起，神情似笑非笑。再去 136 号转轮经藏窟。人进不去，站在窟口那道齐腰高的木栏杆外往里看；这道栏杆是 2025 年才换下原来的金属栅栏的，现在看得清楚多了。窟口朝西，晴天的下午，阳光能斜斜照进来，越过窟中央那座石刻的经柜，落在一尊尊像上。沿着栏杆慢慢挪几步，被经柜挡住的像就一尊尊露出来。",
         },
       ],
       time: "从重庆市区开车，单程两个小时左右。宝顶山的石刻留两三个小时，想看景区里的大足石刻博物馆就再多留些；北山一到两个小时。两处都去，正好一整天。",
@@ -3089,7 +3089,7 @@ export const sightStories: Stories = {
         },
         {
           name: "북산의 염주 든 관음",
-          body: "북산에서는 125번 관음상을 찾아보세요. 아담한 크기에, 두 손을 배 앞에서 엇갈려 염주를 쥐고 있습니다. 얇은 옷이 몸에 착 붙고 옷자락은 바람에 날리는 듯하며, 얼굴은 웃을 듯 말 듯합니다. 이어서 136번 굴에도 들러 보세요. 서쪽을 향한 굴이라 맑은 날 오후에는 햇살이 비스듬히 들어와, 한가운데 돌로 새긴 경전 책장을 지나 조각들 위로 떨어집니다. 걸음을 옮길 때마다 빛과 그림자가 달라집니다.",
+          body: "북산에서는 125번 관음상을 찾아보세요. 아담한 크기에, 두 손을 배 앞에서 엇갈려 염주를 쥐고 있습니다. 얇은 옷이 몸에 착 붙고 옷자락은 바람에 날리는 듯하며, 얼굴은 웃을 듯 말 듯합니다. 이어서 136번 굴에도 들러 보세요. 안으로 들어갈 수는 없고, 굴 입구를 가로지른 허리 높이의 나무 난간 밖에서 들여다봅니다. 2025년에 예전 금속 창살을 이 난간으로 바꿔서 지금은 조각이 훨씬 잘 보입니다. 서쪽을 향한 굴이라 맑은 날 오후에는 햇살이 비스듬히 들어와, 한가운데 돌로 새긴 경전 책장을 지나 조각들 위로 떨어지기도 합니다. 난간을 따라 천천히 몇 걸음 옮기면, 책장에 가려 있던 조각들이 하나씩 모습을 드러냅니다.",
         },
       ],
       time: "충칭 시내에서 차로 편도 2시간쯤 걸립니다. 보정산 석각에는 2~3시간, 같은 경내의 대족석각박물관까지 보려면 더 잡고, 북산에는 1~2시간을 쓰세요. 두 곳을 함께 보면 하루가 꽉 찹니다.",
@@ -3290,7 +3290,7 @@ export const sightStories: Stories = {
       ],
       time: "Give it a full day from Zhangjiajie city, with time for queues at each stage of the way up and down. The routes up change with cable-car works and the weather, so read our route guide before you book. Keep a train or flight off the same day if you can.",
       when: "Go on the clearest day you have, because in thick fog you may see little beyond the railings. After rain, watch the arch for drifting cloud. In summer the top is cool. From late December to early February thick white frost coats the summit trees, though ice and fog can change the route up. Avoid Chinese national holidays, when the queues are longest.",
-      pair: "Back in the city after dark, 72 Qilou lights up. The 110-metre tower is built to look like the wooden stilt houses of the local Tujia people. A great square hole runs through its middle, a nod to Tianmen Cave, and there is a food market in its grounds. In season, Tianmen Fox Fairy, an outdoor musical staged in a canyon of the mountain, is the other evening choice. Pick one only if your legs allow. Leave the Forest Park and the glass bridge for other days.",
+      pair: "Back in the city after dark, 72 Wonder Tower lights up. The 110-metre tower is built to look like the wooden stilt houses of the local Tujia people. A great square hole runs through its middle, a nod to Tianmen Cave, and there is a food market in its grounds. In season, Tianmen Fox Fairy, an outdoor musical staged in a canyon of the mountain, is the other evening choice. Pick one only if your legs allow. Leave the Forest Park and the glass bridge for other days.",
       skip: "With only one day in Zhangjiajie, spend it in the Forest Park, whose pillars make Zhangjiajie unlike anywhere else, and save Tianmen for a second day. People uneasy with heights may find much of it hard going, since the best parts are cliff-edge paths, glass floors and steep stairs. If fog closes in on your day, swap it for a boat on Baofeng Lake near Wulingyuan.",
       faq: [
         {
@@ -4529,13 +4529,15 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     sameAs: ["https://en.wikipedia.org/wiki/Three_Natural_Bridges", "https://www.wikidata.org/wiki/Q7797661", "https://whc.unesco.org/en/list/1248/"],
   },
   "dazu-rock-carvings": {
-    reviewedAt: "2026-10-04",
+    reviewedAt: "2026-10-05",
     sources: [
       { title: "UNESCO World Heritage Centre: Dazu Rock Carvings", url: "https://whc.unesco.org/en/list/912/" },
       { title: "Dazu District government: Zhao Zhifeng and the Baodingshan carvings (2022)", url: "https://www.dazu.gov.cn/rsdz/dzwh/dzsk/202202/t20220225_10434462.html" },
       { title: "Dazu District government: the reclining Buddha and the Nine Dragons (2023)", url: "https://www.dazu.gov.cn/rsdz/dzwh/dzsk/202303/t20230321_11791450.html" },
       { title: "Xinhua: the Thousand-Hand Guanyin restored (2021)", url: "https://www.xinhuanet.com/2021-04/12/c_1127321754.htm" },
       { title: "Chongqing Municipal Commission of Culture and Tourism Development: 北山摩崖造像 (Beishan)", url: "https://whlyw.cq.gov.cn/zjwl/yzq/cqwlzy/zqwwzy/202405/t20240507_13182671.html" },
+      { title: "Dazu News: cave 136 at Beishan gets a waist-high wooden rail (2025)", url: "https://www.txdzw.com/xw/dzxw/content_90608" },
+      { title: "CNR Chongqing: Beishan cave 136's iron gate comes off (2025)", url: "https://cq.cnr.cn/cq/20250923/t20250923_527372385.shtml" },
     ],
     alternateName: ["Dazu Rock Carvings", "Dazu Grottoes", "Baodingshan Rock Carvings", "Beishan Rock Carvings", "大足石刻", "宝顶山石刻", "北山石刻", "대족석각", "다쭈 석각", "Dazu Shike"],
     sameAs: ["https://en.wikipedia.org/wiki/Dazu_Rock_Carvings", "https://www.wikidata.org/wiki/Q651278", "https://whc.unesco.org/en/list/912/"],

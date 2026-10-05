@@ -89,7 +89,7 @@ const body = {
         [
           "3",
           "Wulingyuan night 3",
-          "Guided Ten-Mile Gallery and Golden Whip Stream plan, followed by the standard Seventy-Two Wonder Tower evening."
+          "Guided Ten-Mile Gallery and Golden Whip Stream plan, followed by the standard 72 Wonder Tower evening."
         ],
         [
           "4",
