@@ -1800,3 +1800,15 @@ The Hongyadong photo shows the building's own lit signs; nothing is added to it.
 Tour-card photos under an attribution licence are credited from
 `lib/photoCredits.ts` on every row that shows them (city, sight, inspiration and
 collection pages), matched to `docs/homeground-private-tour-card-derivatives.json`.
+
+### Canton Tower sight photo (from 2026-10-05)
+
+- Source: [Hai Xin Bridge of Guangzhou 01.jpg](https://commons.wikimedia.org/wiki/File:Hai_Xin_Bridge_of_Guangzhou_01.jpg),
+  Shujianyang, photographed 2024-02-14, CC0 1.0 (public domain dedication); 2400 × 1600; source SHA-256
+  `d86a5cd35dc08124688f8d35e1392349530fee6f6a34d9939615d915b413e113`.
+- Derivative: `public/images/sights/canton-tower-1200.webp`; 1200 × 800, resized and converted to WebP
+  without EXIF; SHA-256 `811188f66beef7b78a4c72cb0a367c482a8cf6130a17b3d32930fecd8b15386f`.
+- Why: the Guangzhou city page showed the same night photo twice (the Canton Tower sight card and the
+  Guangzhou–Shunde–Foshan tour card). Canton Tower by day, with Haixin Bridge and the Pearl River.
+- Evidence boundary: the tower and bridge only; no claim about opening hours, lighting times or ticketing.
+

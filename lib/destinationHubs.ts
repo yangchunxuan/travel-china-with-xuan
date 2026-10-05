@@ -134,10 +134,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("beijing", "en"),
-        title: "Beijing Travel Guide: Stays, Transport & Routes",
+        title: "Beijing Travel Guide: 4–5 Nights and Where to Stay",
         h1: "Beijing: palaces, the Great Wall and hutongs, over four or five nights",
         description:
-          "How many nights Beijing really needs, which area should be your base, how PEK, PKX and eight railway stations reshape the first and last day, and which city should follow.",
+          "Give Beijing four or five nights: the Forbidden City, the Great Wall, the hutongs. See where to stay, which airport and station to use, and where to go next.",
         navTitle: "Beijing",
         summary:
           "Walk north from Tiananmen through the Forbidden City, climb Jingshan, and a whole field of golden-tiled roofs spreads out below you. Give another day to the Great Wall on its mountain ridges outside the city, and spend your evenings eating and wandering the hutong lanes around the Drum Tower. Each of Beijing's big sights takes half a day to a full day, so four or five nights give you three or four real days without rushing.",
@@ -147,11 +147,13 @@ export const destinationHubRegistry = [
           "Below the Drum Tower and the Bell Tower, grey-tiled hutongs spread in every direction. Come in the late afternoon, eat in the lanes, then walk a few minutes to the lakes at Shichahai.",
         openGraphLocale: "en_US",
         searchTerms: [
-          "Beijing travel guide first time",
+          "Beijing travel guide",
           "how many days in Beijing",
+          "4 days in Beijing",
           "where to stay in Beijing first time",
-          "Tiananmen Square and Forbidden City itinerary",
+          "Great Wall day trip from Beijing",
           "which Great Wall section from Beijing",
+          "Beijing Capital or Daxing airport",
         ],
         geography: {
           title: "Beijing's sights sit in five directions",
@@ -195,10 +197,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("beijing", "zh"),
-        title: "北京旅行指南：住几晚、住哪里、机场车站与下一站",
+        title: "北京旅游攻略：故宫长城胡同，四五晚怎么玩、住哪里",
         h1: "北京：故宫、长城和胡同，留足四五晚",
         description:
-          "北京到底需要住几晚、选哪个区域做基地、首都机场与大兴机场和八座主要铁路站怎样改变首末两天，以及北京之后适合接哪座城市。",
+          "故宫、长城和胡同，留足四五晚才玩得从容。第一次来住哪里方便，两座机场、八座火车站怎么认，下一站去西安还是上海，这里一次讲清。",
         navTitle: "北京",
         summary:
           "从天安门一路往北穿过故宫，再爬上景山，一片金黄的琉璃瓦屋顶就铺在脚下；另找一天出城，去山脊上走长城；傍晚钻进鼓楼一带的胡同，吃饭、散步。北京的大景点一个就要半天到一天，住四到五晚，才能真正玩满三四天，不用赶。",
@@ -207,11 +209,12 @@ export const destinationHubRegistry = [
           "鼓楼和钟楼底下，是成片的灰瓦胡同。傍晚来这里，在巷子里吃顿饭，再走几分钟就到什刹海边。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "第一次去北京旅行攻略",
-          "北京需要玩几天",
+          "北京旅游攻略",
+          "北京自由行攻略",
+          "北京玩几天合适",
           "第一次去北京住哪里",
-          "天安门和故宫怎么安排",
-          "从北京去长城选哪一段",
+          "北京长城哪段好玩",
+          "首都机场还是大兴机场",
         ],
         geography: {
           title: "北京的景点分在五个方向",
@@ -255,10 +258,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("beijing", "ko"),
-        title: "베이징 여행 가이드: 숙박 일수·지역·기차역·다음 도시",
+        title: "베이징 여행: 자금성·만리장성·후퉁, 4~5박 일정과 숙소",
         h1: "베이징: 자금성, 만리장성, 후퉁까지 4~5박은 머무세요",
         description:
-          "베이징에 몇 박이 필요한지, 어느 지역을 거점으로 삼을지, PEK·PKX와 여덟 개 주요 기차역이 첫날과 마지막 날을 어떻게 바꾸는지, 다음 도시는 어디가 좋은지 정리합니다.",
+          "자금성과 만리장성, 후퉁 골목까지 제대로 보려면 4~5박은 머무세요. 처음 묵기 좋은 지역, 공항과 기차역 확인법, 다음 도시 시안·상하이까지 정리했습니다.",
         navTitle: "베이징",
         summary:
           "톈안먼에서 북쪽으로 자금성을 지나 징산공원에 오르면, 황금빛 기와지붕이 발아래 끝없이 펼쳐집니다. 하루는 도시 밖으로 나가 산등성이를 따라 만리장성을 걷고, 저녁에는 구러우 일대 후퉁 골목에서 밥을 먹고 산책해 보세요. 베이징의 큰 명소는 한 곳에 반나절에서 하루가 걸리니, 4~5박은 머물러야 서두르지 않고 3~4일을 온전히 즐길 수 있습니다.",
@@ -267,11 +270,12 @@ export const destinationHubRegistry = [
           "고루와 종루 아래로 회색 기와의 후퉁이 펼쳐집니다. 늦은 오후에 와서 골목에서 저녁을 먹고, 몇 분만 걸으면 스차하이 호숫가입니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "베이징 첫 여행 가이드",
-          "베이징 며칠",
-          "베이징 첫 여행 숙소",
-          "톈안먼 자금성 일정",
-          "베이징 만리장성 어느 구간",
+          "베이징 여행",
+          "베이징 여행 코스",
+          "베이징 자유여행",
+          "베이징 4박5일",
+          "베이징 여행 며칠",
+          "베이징 숙소 추천",
         ],
         geography: {
           title: "베이징의 명소는 다섯 방향에 나뉘어 있습니다",
@@ -351,10 +355,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("shanghai", "en"),
-        title: "Shanghai Travel Guide: Stays, Airports & Routes",
+        title: "Shanghai Travel Guide: 4 Nights and Where to Stay",
         h1: "Shanghai: the Bund at dusk, old lanes and skyscrapers, over four nights",
         description:
-          "Decide how many complete Shanghai days you have, whether to base in Puxi or Pudong, how PVG, SHA and the Airport Link change arrival, and whether Suzhou or Hangzhou is a day trip or the next hotel.",
+          "Give Shanghai four nights for the Bund at dusk, Yu Garden and the old lanes. See where to stay, Pudong or Hongqiao, and why Hangzhou comes next.",
         navTitle: "Shanghai",
         summary:
           "Wander Yu Garden and the market lanes of the Old City, then walk on to the Bund as the light fades. Century-old stone banks stand behind you, Pudong's glass towers rise across the river, and then both banks light up. Give another day to the tree-lined streets of the Former French Concession, with their lane houses, shops and cafés. Arrival and departure days mostly go to travel, so four nights give you three full days; a trip to Disneyland or Suzhou takes up a whole one.",
@@ -364,12 +368,12 @@ export const destinationHubRegistry = [
           "Older Puxi buildings line Suzhou Creek, with the Oriental Pearl Tower and Shanghai Tower beyond. Follow the creek to the Huangpu, then walk south along the Bund as the lights come on.",
         openGraphLocale: "en_US",
         searchTerms: [
-          "Shanghai travel guide first time",
-          "Shanghai itinerary 5 days",
+          "Shanghai travel guide",
           "how many days in Shanghai",
+          "3 days in Shanghai",
           "where to stay in Shanghai first time",
           "Pudong or Hongqiao airport",
-          "Shanghai Disneyland and city itinerary",
+          "Suzhou day trip from Shanghai",
         ],
         geography: {
           title: "Shanghai's sights on both banks of the Huangpu",
@@ -419,10 +423,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("shanghai", "zh"),
-        title: "上海旅行指南：几个完整日、住哪一岸、机场与下一站",
+        title: "上海旅游攻略：外滩夜景和老弄堂，四晚怎么玩、住哪里",
         h1: "上海：外滩夜景、老弄堂和摩天楼，留足四晚",
         description:
-          "上海真正能有几个完整游览日、住浦西还是浦东、浦东与虹桥机场和机场联络线怎样改变抵达，以及苏州杭州应当当日往返还是直接换城。",
+          "外滩夜景、豫园老街和原法租界的林荫道，住四晚才能玩满三天。第一次来住哪里方便，浦东和虹桥别跑错，杭州为什么值得住下、苏州为什么一天就够，这里一次讲清。",
         navTitle: "上海",
         summary:
           "逛完豫园和老城厢的小街，走到外滩时天正暗下来：身后是百年石头老楼，对岸是浦东的玻璃高楼，接着两岸的灯一起亮了。另找一天，去原法租界的林荫道上，在老弄堂、小店和咖啡馆之间走走。到达和离开那两天基本花在路上，住四晚才能玩满三天；去迪士尼或苏州，要占掉其中一整天。",
@@ -431,12 +435,12 @@ export const destinationHubRegistry = [
           "苏州河边是浦西老楼，远处是东方明珠和上海中心。沿河走到黄浦江边，再顺着外滩往南，看两岸亮灯。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "第一次去上海旅行攻略",
-          "上海5天行程",
-          "上海需要玩几天",
+          "上海旅游攻略",
+          "上海自由行攻略",
+          "上海玩几天合适",
           "第一次去上海住哪里",
           "浦东机场还是虹桥机场",
-          "上海迪士尼和市区怎么安排",
+          "上海去苏州一日游",
         ],
         geography: {
           title: "上海的景点分在黄浦江两岸",
@@ -486,10 +490,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("shanghai", "ko"),
-        title: "상하이 여행 가이드: 온전한 일수·지역·공항·다음 도시",
+        title: "상하이 여행: 와이탄 야경·옛 골목, 4박 일정과 숙소",
         h1: "상하이: 와이탄 야경, 옛 골목, 마천루까지 4박은 머무세요",
         description:
-          "상하이에서 온전한 관광일이 며칠인지, 푸시와 푸둥 중 어디에 묵을지, PVG·SHA와 공항연락선이 도착을 어떻게 바꾸는지, 쑤저우와 항저우는 당일치기인지 다음 도시인지 정리합니다.",
+          "와이탄 야경과 예원, 옛 프랑스 조계 골목까지 보려면 4박은 머무세요. 처음 묵기 좋은 지역, 푸둥공항과 홍차오 차이, 다음 도시 항저우와 쑤저우 당일치기까지 정리했습니다.",
         navTitle: "상하이",
         summary:
           "예원과 구시가 골목을 둘러본 뒤 해 질 녘 와이탄에 서면, 등 뒤로 백 년 된 석조 건물이, 강 건너로 푸둥의 유리 빌딩이 보이고 곧 양쪽 강변에 불이 들어옵니다. 다른 하루는 옛 프랑스 조계의 가로수길과 옛 골목, 가게와 카페 사이를 걸어 보세요. 도착일과 출발일은 대부분 이동에 쓰이니 4박은 해야 온전한 3일이 남고, 디즈니랜드나 쑤저우에 가면 그중 하루를 다 씁니다.",
@@ -499,12 +503,13 @@ export const destinationHubRegistry = [
           "푸시의 옛 건물 너머로 동방명주와 상하이 타워가 보입니다. 쑤저우강을 따라 황푸강까지 간 뒤, 불이 켜지는 와이탄을 남쪽으로 걸어 보세요.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "상하이 첫 여행 가이드",
-          "상하이 4박 5일 일정",
-          "상하이 며칠",
-          "상하이 첫 여행 숙소",
+          "상하이 여행",
+          "상하이 여행 코스",
+          "상하이 자유여행",
+          "상하이 4박5일",
+          "상하이 숙소 추천",
           "푸둥공항 홍차오공항 차이",
-          "상하이 디즈니랜드 시내 일정",
+          "상하이 쑤저우 당일치기",
         ],
         geography: {
           title: "상하이의 명소는 황푸강 양쪽에 있습니다",
@@ -586,10 +591,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("xian", "en"),
-        title: "Xi'an Travel Guide: Stays, Trains & Routes",
+        title: "Xi'an Travel Guide: 3 Nights and Where to Stay",
         h1: "Xi'an: Terracotta Warriors, the city wall and food lanes, over three nights",
         description:
-          "Three nights is the balanced Xi'an stay. Compare bases inside and south of the City Wall, read XIY and three railway stations correctly, and decide whether Mount Hua earns another day.",
+          "Give Xi'an three nights: a day for the Terracotta Warriors, one for the city wall and food lanes. See where to stay, which station to use, and where to go next.",
         navTitle: "Xi'an",
         summary:
           "Step into the hall over Pit 1 in Lintong and the army is suddenly below you: life-size clay soldiers, rank after rank, their faces and beards changing from one to the next. Back in the city, walk the top of the wall, wide as a road, then end the evening around the Bell and Drum Towers, eating in the lanes of the Muslim Quarter. The warriors take most of a day, so three nights give you one full day for them and one for Xi'an itself.",
@@ -598,6 +603,14 @@ export const destinationHubRegistry = [
         heroCaption:
           "The Bell Tower stands at the heart of the walled city. Walk past the Drum Tower to eat in the lanes of the Muslim Quarter, or fifteen minutes down South Street to climb the wall at the South Gate.",
         openGraphLocale: "en_US",
+        searchTerms: [
+          "Xi'an travel guide",
+          "how many days in Xi'an",
+          "where to stay in Xi'an first time",
+          "how to get to the Terracotta Warriors",
+          "Xi'an North railway station",
+          "Xi'an to Chengdu train",
+        ],
         geography: {
           title: "Xi'an's sights run south and east from the wall",
           caption:
@@ -642,10 +655,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("xian", "zh"),
-        title: "西安旅行指南：住几晚、住哪里、车站与下一站",
+        title: "西安旅游攻略：兵马俑城墙回民街，三晚怎么玩、住哪里",
         h1: "西安：兵马俑、古城墙和回民街，留足三晚",
         description:
-          "西安通常三晚最平衡。比较城墙内与城南两类住宿基地，正确理解咸阳机场与三座铁路站，并判断华山值不值得再加一天。",
+          "兵马俑、古城墙和回民街，留足三晚：一天给兵马俑，一天给城里。第一次来住哪里方便，三个火车站怎么认，下一站去成都还是北京，这里一次讲清。",
         navTitle: "西安",
         summary:
           "走进临潼一号坑的展厅，整支军队一下子出现在脚下：真人大小的陶俑一排接一排，脸型、胡须一个个都不一样。回到城里，登上城墙，墙顶宽得像一条大路；傍晚走到钟楼、鼓楼一带，钻进回民街的小巷吃饭。兵马俑一去就是大半天，住三晚，才能一天给它、一天给西安城。",
@@ -654,6 +667,14 @@ export const destinationHubRegistry = [
         heroCaption:
           "钟楼立在城墙围起的老城正中。走过鼓楼，就是回民街的小吃巷子；沿南大街往南走 15 分钟，到南门登城墙。",
         openGraphLocale: "zh_CN",
+        searchTerms: [
+          "西安旅游攻略",
+          "西安自由行攻略",
+          "西安玩几天合适",
+          "第一次去西安住哪里",
+          "西安住钟楼还是大雁塔",
+          "西安兵马俑怎么去",
+        ],
         geography: {
           title: "西安景点从城墙往南、往东铺开",
           caption:
@@ -698,10 +719,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("xian", "ko"),
-        title: "시안 여행 가이드: 숙박 일수·거점·기차역·다음 도시",
+        title: "시안 여행: 병마용·성벽·회족거리, 3박 일정과 숙소",
         h1: "시안: 병마용, 성벽, 회족거리까지 3박은 머무세요",
         description:
-          "시안은 보통 3박이 균형점입니다. 성벽 안과 성 남쪽 거점을 비교하고, XIY 공항과 세 기차역을 정확히 읽고, 화산에 하루를 더 쓸지 판단하세요.",
+          "병마용에 하루, 성벽과 회족거리에 하루를 쓰려면 3박은 머무세요. 처음 묵기 좋은 지역, 세 기차역과 공항 확인법, 다음 도시 청두·베이징까지 정리했습니다.",
         navTitle: "시안",
         summary:
           "린퉁 1호갱 전시관에 들어서면 군대 전체가 갑자기 발아래 펼쳐집니다. 실물 크기의 흙 병사들이 줄지어 서 있고, 얼굴도 수염도 하나하나 다릅니다. 시내로 돌아와서는 큰길처럼 넓은 성벽 위를 걷고, 저녁에는 종루와 고루 일대 회족거리 골목에서 밥을 먹어 보세요. 병마용만으로 하루가 거의 다 가니, 3박은 머물러야 병마용에 하루, 시내에 하루를 온전히 쓸 수 있습니다.",
@@ -710,6 +731,14 @@ export const destinationHubRegistry = [
         heroCaption:
           "종루는 성벽 안 한가운데에 있습니다. 여기서 고루를 지나 회족거리 골목에서 저녁을 먹거나, 남대가를 따라 15분 걸어 남문에서 성벽에 올라 보세요.",
         openGraphLocale: "ko_KR",
+        searchTerms: [
+          "시안 여행",
+          "시안 여행 코스",
+          "시안 자유여행",
+          "시안 3박4일",
+          "시안 병마용 가는 법",
+          "시안 숙소 추천",
+        ],
         geography: {
           title: "시안 명소는 성벽에서 남쪽·동쪽으로 이어집니다",
           caption:
@@ -790,10 +819,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("chengdu", "en"),
-        title: "Chengdu Travel Guide: Stays & Sichuan Routes",
+        title: "Chengdu Travel Guide: 3 Nights and Where to Stay",
         h1: "Chengdu: pandas, tea houses and Sichuan hotpot, over three nights",
         description:
-          "How many complete days Chengdu itself needs, which base protects them, why TFU and CTU are separate decisions, and which Sichuan trips are branches rather than half-days.",
+          "Give Chengdu three nights for the pandas, tea in People's Park and Sichuan hotpot. See where to stay, Tianfu or Shuangliu airport, and why Chongqing is next.",
         navTitle: "Chengdu",
         summary:
           "Be at the Panda Base as the gates open. Round a bend and you may find a giant panda sitting back against a log like a person, working through a stalk of bamboo held in both paws. Another morning, take a bamboo chair at a tea house in People's Park and let an hour or two slip by, then end the day over hotpot. The pandas alone fill a morning, so three nights give you two full days, one for each, without rushing.",
@@ -803,11 +832,12 @@ export const destinationHubRegistry = [
           "Linger over your tea and the life of the park drifts past your table. In this park, at the century-old Heming teahouse, you can even have your ears cleaned, if you dare.",
         openGraphLocale: "en_US",
         searchTerms: [
+          "Chengdu travel guide",
           "how many days in Chengdu",
           "where to stay in Chengdu first time",
+          "Chengdu panda base",
           "Tianfu or Shuangliu airport",
           "Chengdu to Dujiangyan day trip",
-          "Chengdu Sichuan itinerary",
         ],
         geography: {
           title: "Chengdu's sights, and three cities beyond it",
@@ -861,10 +891,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("chengdu", "zh"),
-        title: "成都旅行指南：住几晚、住哪里、机场与四川下一站",
+        title: "成都旅游攻略：熊猫茶馆火锅，三晚怎么玩、住哪里",
         h1: "成都：熊猫、茶馆和火锅，留足三晚",
         description:
-          "成都本身需要几个完整日、哪个基地能保住这些日子、天府与双流为什么是两个独立决定，以及哪些四川行程是独立支线而不是半天。",
+          "开园就去看熊猫、在人民公园喝茶、晚上吃火锅，留足三晚。第一次来住哪里方便，机票上是天府还是双流，下一站去重庆还是四川周边，这里一次讲清。",
         navTitle: "成都",
         summary:
           "开园就进熊猫基地，拐个弯，也许就能看见一只大熊猫靠着木头坐着，两只前掌抱着竹子，一节一节往嘴里送。换一个上午，在人民公园的茶馆找把竹椅坐下，一坐就是一两个小时，晚上再吃顿火锅。熊猫一去就是一个上午，住三晚，它和茶馆才能各占一天，不用赶。",
@@ -873,11 +903,12 @@ export const destinationHubRegistry = [
           "泡上一杯茶多坐一会儿，看公园里人来人往。这座公园里的百年老店鹤鸣茶社，胆子大的还能掏个耳朵。",
         openGraphLocale: "zh_CN",
         searchTerms: [
+          "成都旅游攻略",
           "成都要玩几天",
           "第一次去成都住哪里",
+          "成都大熊猫基地攻略",
           "天府机场还是双流机场",
           "成都到都江堰一日游",
-          "成都四川行程怎么排",
         ],
         geography: {
           title: "成都城里，和城外三个去处",
@@ -931,10 +962,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("chengdu", "ko"),
-        title: "청두 여행 가이드: 숙박 일수·거점·공항·쓰촨 다음 코스",
+        title: "청두 여행: 판다·찻집·훠궈, 3박 일정과 숙소",
         h1: "청두: 판다, 찻집, 훠궈까지 3박은 머무세요",
         description:
-          "청두 자체에 온전한 며칠이 필요한지, 어느 거점이 그 시간을 지켜 주는지, TFU와 CTU가 왜 별개의 결정인지, 어떤 쓰촨 일정이 반나절이 아니라 독립된 갈래인지 정리합니다.",
+          "판다기지, 인민공원 찻집, 저녁 훠궈까지 즐기려면 3박은 머무세요. 처음 묵기 좋은 지역, 톈푸·솽류공항 확인법, 다음 도시 충칭까지 정리했습니다.",
         navTitle: "청두",
         summary:
           "문이 열리자마자 청두 판다기지에 들어가면, 통나무에 기대앉은 판다가 두 앞발로 대나무를 쥐고 한 마디씩 먹고 있을지도 모릅니다. 다른 날 오전에는 인민공원 찻집의 대나무 의자에 앉아 한두 시간 차를 마시고, 저녁은 훠궈로 마무리하세요. 판다기지 하나에 오전이 통째로 들어가니, 3박은 머물러야 판다와 찻집에 하루씩 주고 이틀을 온전히 즐길 수 있습니다.",
@@ -944,11 +975,13 @@ export const destinationHubRegistry = [
           "차 한 잔 앞에 두고 오래 앉아 있으면 공원의 일상이 눈앞을 지나갑니다. 이 공원의 100년 넘은 찻집 학명다사에서는 용기가 있다면 귀 청소도 받아 볼 수 있습니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "청두 며칠",
-          "청두 첫 여행 숙소",
+          "청두 여행",
+          "청두 여행 코스",
+          "청두 자유여행",
+          "청두 판다기지",
+          "청두 숙소 추천",
           "톈푸공항 솽류공항 차이",
           "청두 도강언 당일치기",
-          "청두 쓰촨 일정",
         ],
         geography: {
           title: "청두 시내, 그리고 시외 세 곳",
@@ -1035,10 +1068,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("guangzhou", "en"),
-        title: "Guangzhou Travel Guide: Stays & Transport",
+        title: "Guangzhou Travel Guide: 3 Nights and Where to Stay",
         h1: "Guangzhou: morning tea, old lanes and the Pearl River, over three nights",
         description:
-          "Whether Guangzhou deserves its own nights, which district to base in, how Baiyun's terminals and five railway stations change the plan, and what Foshan, Shunde or Chimelong really cost.",
+          "Give Guangzhou three nights for morning tea, old lanes and Canton Tower by night. See where to stay, which terminal and station to use, and where to go next.",
         navTitle: "Guangzhou",
         summary:
           "Start the day with morning tea in Liwan, bamboo steamers of dim sum crowding the table. Then look up at the Chen Clan Ancestral Hall, where clay figures fill the roof ridges, and wander the lanes of Yongqingfang to Shamian's quiet street under camphor trees. After dark, Canton Tower lights up over the Pearl River. Arriving and leaving take more of the day than you expect, so three nights let you enjoy the old city and the new one by the river without rushing either.",
@@ -1048,11 +1081,12 @@ export const destinationHubRegistry = [
           "Morning tea at Pan Xi Restaurant in Liwan, baskets shared round the table. Then give the day to the old west, from the Chen Clan Ancestral Hall through Yongqingfang to Shamian by late afternoon.",
         openGraphLocale: "en_US",
         searchTerms: [
-          "how many nights in Guangzhou",
+          "Guangzhou travel guide",
+          "how many days in Guangzhou",
           "where to stay in Guangzhou first time",
-          "Baiyun airport terminal T2 or T3",
-          "which Guangzhou railway station",
-          "Guangzhou to Hong Kong or Macao",
+          "Guangzhou Baiyun airport T2 or T3",
+          "Guangzhou South railway station",
+          "Guangzhou to Hong Kong train",
         ],
         geography: {
           title: "Old Guangzhou lies west, the new city east",
@@ -1106,10 +1140,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("guangzhou", "zh"),
-        title: "广州旅行指南：住不住、住哪里、哪个航站楼、哪个车站",
+        title: "广州旅游攻略：早茶老街和珠江，三晚怎么玩、住哪里",
         h1: "广州：早茶、老街和珠江，留足三晚",
         description:
-          "广州值不值得单独住几晚、以哪个城区为基地、白云机场航站楼与五个火车站怎样改变计划，以及佛山、顺德和长隆真正要花多少时间。",
+          "荔湾饮早茶、走永庆坊老街到沙面、夜看珠江边的广州塔，留足三晚。第一次来住哪个区，白云机场航站楼和火车站怎么认，下一站为什么去香港，这里一次讲清。",
         navTitle: "广州",
         summary:
           "早上在荔湾饮早茶，一笼笼点心摆满一桌；再去陈家祠，抬头看屋脊上挤满的彩色陶人，然后穿过永庆坊的老街巷走到沙面，沿着樟树成荫的安静大街慢慢逛。天黑以后，广州塔在珠江边亮起灯来。到达和离开那两天总比想的更费时间，住三晚，老城和江边新城才都能从容逛到。",
@@ -1118,11 +1152,12 @@ export const destinationHubRegistry = [
           "荔湾泮溪酒家的早茶，几笼点心大家分着吃。吃完就把一天留给西边老城：陈家祠、永庆坊，傍晚到沙面。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "广州要住几晚",
+          "广州旅游攻略",
+          "广州玩几天合适",
           "第一次去广州住哪个区",
-          "白云机场 T2 还是 T3",
-          "广州哪个火车站",
-          "广州去香港澳门怎么走",
+          "广州住哪里方便",
+          "白云机场T2还是T3",
+          "广州去香港怎么走",
         ],
         geography: {
           title: "老城在西，新城在东",
@@ -1176,10 +1211,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("guangzhou", "ko"),
-        title: "광저우 여행 가이드: 숙박 여부·지역·터미널·기차역",
+        title: "광저우 여행: 딤섬·옛 골목·주강 야경, 3박 일정과 숙소",
         h1: "광저우: 아침 딤섬, 옛 골목, 주강까지 3박은 머무세요",
         description:
-          "광저우에 따로 묵을 가치가 있는지, 어느 지역을 거점으로 삼을지, 바이윈공항 터미널과 다섯 기차역이 계획을 어떻게 바꾸는지, 포산·순더·침롱이 실제로 얼마를 쓰는지 정리합니다.",
+          "리완의 아침 딤섬, 사면도 가는 옛 골목, 주강 야경까지 보려면 3박은 머무세요. 처음 묵기 좋은 지역, 공항 터미널과 기차역, 다음 도시 홍콩까지 정리했습니다.",
         navTitle: "광저우",
         summary:
           "아침은 리완에서 얌차(딤섬을 곁들인 아침 차)로 시작하세요. 대나무 찜기가 식탁을 가득 채웁니다. 진가사에서 도자기 인형이 빼곡한 용마루를 올려다보고, 융칭팡 골목을 지나 녹나무 그늘 아래 사면도 거리를 걷습니다. 어두워지면 주강 위로 광저우 타워에 불이 들어옵니다. 오가는 날은 생각보다 시간이 많이 드니, 3박은 해야 옛 도심과 강변 새 도심을 서두르지 않고 둘러봅니다.",
@@ -1188,11 +1223,12 @@ export const destinationHubRegistry = [
           "리완 판시 레스토랑의 얌차입니다. 딤섬 몇 판을 나눠 먹고 나면 하루는 서쪽 옛 도심에 쓰세요. 진가사와 융칭팡을 거쳐 늦은 오후에 사면도에 닿으면 됩니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "광저우 몇 박",
-          "광저우 첫 여행 숙소 지역",
+          "광저우 여행",
+          "광저우 여행 코스",
+          "광저우 자유여행",
+          "광저우 숙소 추천",
           "바이윈공항 T2 T3",
-          "광저우 어느 기차역",
-          "광저우 홍콩 마카오 이동",
+          "광저우 홍콩 고속철",
         ],
         geography: {
           title: "옛 도심은 서쪽, 새 도심은 동쪽",
@@ -1278,10 +1314,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("hangzhou", "en"),
-        title: "Hangzhou Travel Guide: Day Trips & Stays",
+        title: "Hangzhou Travel Guide: 2 Nights or a Day Trip from Shanghai",
         h1: "Hangzhou: West Lake, Lingyin and the Longjing tea villages, over two nights",
         description:
-          "Choose a Shanghai day trip or two- to three-night Hangzhou stay, then match the hotel area, station, West Lake cluster, western hills, Grand Canal and Liangzhu.",
+          "Give Hangzhou two nights, not a day trip: West Lake at dawn and dusk, Lingyin and the Longjing tea villages. See where to stay, which station and what's next.",
         navTitle: "Hangzhou",
         summary:
           "Be on the Su Causeway early, while mist still hangs over the water and willows trail into it. Take a boat out to the three little stone pagodas pictured on the back of the one-yuan note. Give a morning to Lingyin, where a clear stream runs beneath a cliff full of carved Buddhas, then stop in the Longjing villages for tea grown on the slopes around you. A day trip from Shanghai can't hold all that; two nights give you the lake at dusk and dawn as well.",
@@ -1290,11 +1326,12 @@ export const destinationHubRegistry = [
           "Small boats cross West Lake beneath low, wooded hills. When the shore gets busy, head west to the foot of the hills, where the crowds thin out among backwaters and woods.",
         openGraphLocale: "en_US",
         searchTerms: [
-          "Hangzhou day trip or overnight",
-          "how many nights in Hangzhou",
-          "where to stay in Hangzhou first visit",
-          "which Hangzhou railway station",
-          "West Lake Lingyin Longjing route",
+          "Hangzhou travel guide",
+          "Hangzhou day trip from Shanghai",
+          "how many days in Hangzhou",
+          "where to stay in Hangzhou",
+          "West Lake Hangzhou",
+          "Hangzhou East railway station",
         ],
         geography: {
           title: "Around West Lake, and two places further north",
@@ -1344,10 +1381,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("hangzhou", "zh"),
-        title: "杭州旅行指南：一日往返、住几晚、住宿区域与路线",
+        title: "杭州旅游攻略：西湖灵隐龙井，两晚怎么玩、住哪里",
         h1: "杭州：西湖、灵隐和龙井茶园，住上两晚",
         description:
-          "判断从上海一日往返还是在杭州住两至三晚，再选择住宿区域、铁路站、西湖分区、西部山地、大运河与良渚。",
+          "苏堤晨雾、灵隐石壁上的佛像、龙井村的茶，从上海一日往返装不下，住上两晚才从容。第一次来住哪里，高铁坐到哪个站，下一站去上海还是苏州，这里一次讲清。",
         navTitle: "杭州",
         summary:
           "一早走上苏堤，薄雾还浮在水面，柳枝垂进湖里；再坐船去看一元人民币背面那三座小石塔。留一个上午给灵隐，沿着清亮的溪水走，石壁上到处是佛像；回程在龙井村停一停，喝一杯身边山坡上长出来的茶。从上海一日往返装不下这些，住两晚，西湖的傍晚和清晨也都赶得上。",
@@ -1356,10 +1393,11 @@ export const destinationHubRegistry = [
           "小船从西湖上驶过，远处是低低的青山。湖边人多时，就往西走到山脚下，拐进水湾和树林，人就少多了。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "杭州一日游还是住一晚",
-          "杭州第一次住几晚",
-          "杭州住哪个区域",
-          "杭州哪个火车站方便",
+          "杭州旅游攻略",
+          "上海到杭州一日游",
+          "杭州玩几天合适",
+          "杭州住哪里方便",
+          "杭州东站到西湖",
           "西湖灵隐龙井怎么安排",
         ],
         geography: {
@@ -1410,10 +1448,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("hangzhou", "ko"),
-        title: "항저우 여행 가이드: 당일치기·숙박 일수·지역·동선",
+        title: "항저우 여행: 서호·영은사·용정차 마을, 2박 일정과 숙소",
         h1: "항저우: 서호, 영은사, 용정차 마을까지 2박은 머무세요",
         description:
-          "상하이 당일치기와 항저우 2~3박을 비교하고 숙소 지역, 기차역, 서호 구역, 서쪽 구릉, 대운하와 량주를 맞춥니다.",
+          "서호의 아침과 저녁, 영은사, 용정차 마을은 상하이 당일치기로 다 담기 어려우니 2박은 머무세요. 처음 묵기 좋은 지역, 어느 역에 내릴지, 다음 도시 상하이·쑤저우까지 정리했습니다.",
         navTitle: "항저우",
         summary:
           "이른 아침 소제에는 물안개가 깔리고 버들가지가 물에 닿습니다. 배로 섬에 가면 1위안 지폐 뒷면의 돌탑 세 개가 물 위에 서 있습니다. 오전에는 영은사에서 맑은 개울을 따라 불상이 가득한 바위 절벽을 지나고, 돌아오는 길에 용정차 마을에 들러 주변 비탈에서 자란 차를 마셔 보세요. 상하이 당일치기로는 다 담기 어려우니, 2박은 머물러야 서호의 저녁과 아침까지 누립니다.",
@@ -1422,11 +1460,12 @@ export const destinationHubRegistry = [
           "작은 배들이 나지막한 숲 언덕 아래로 서호를 건넙니다. 호숫가가 붐비면 서쪽 산자락으로 가 보세요. 물굽이와 숲으로 들어서면 사람이 훨씬 적습니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "항저우 당일치기 숙박",
-          "항저우 몇 박",
-          "항저우 첫 여행 숙소 지역",
-          "항저우 어느 기차역",
-          "서호 영은사 용정 동선",
+          "항저우 여행",
+          "항저우 여행 코스",
+          "상하이 항저우 당일치기",
+          "항저우 2박3일",
+          "항저우 숙소 추천",
+          "항저우 서호 여행",
         ],
         geography: {
           title: "서호를 둘러싼 명소와 북쪽의 두 곳",
@@ -1512,10 +1551,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("zhangjiajie", "en"),
-        title: "Zhangjiajie Travel Guide: Parks, Stays & Routes",
+        title: "Zhangjiajie Travel Guide: 4–5 Nights and Where to Stay",
         h1: "Zhangjiajie: sandstone pillars in the clouds, over four or five nights",
         description:
-          "Choose 2, 3 or 4 full days, Zhangjiajie city or Wulingyuan as a base, then connect the National Forest Park, Tianmen Mountain, Grand Canyon and the next city.",
+          "Give Zhangjiajie four or five nights for the sandstone pillars and Tianmen Mountain. See where to stay, which airport and station to use, and where to go next.",
         navTitle: "Zhangjiajie",
         summary:
           "Walk out to the rim at Yuanjiajie and the ground drops away. Hundreds of sandstone pillars rise sheer from the forest below, pines clinging to their tops. Then go down to Golden Whip Stream and walk the valley floor, looking up at them. On another day, climb Tianmen Mountain's 999 steps into a hole right through the cliff. The Forest Park deserves two days and Tianmen one. Four nights give you those three full days; five leave a spare one in case fog hides the view.",
@@ -1526,9 +1565,11 @@ export const destinationHubRegistry = [
         searchTerms: [
           "Zhangjiajie travel guide",
           "how many days in Zhangjiajie",
+          "where to stay in Zhangjiajie",
           "Zhangjiajie city or Wulingyuan",
-          "Zhangjiajie National Forest Park entrances",
-          "Zhangjiajie Tianmen Mountain Grand Canyon route",
+          "Zhangjiajie National Forest Park",
+          "Tianmen Mountain Zhangjiajie",
+          "Avatar mountains Zhangjiajie",
         ],
         geography: {
           title: "Zhangjiajie's sights sit in three areas",
@@ -1578,10 +1619,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("zhangjiajie", "zh"),
-        title: "张家界旅行指南：玩几天、住哪里、景区关系与路线",
+        title: "张家界旅游攻略：森林公园天门山，四五晚怎么玩、住哪里",
         h1: "张家界：云雾里的石柱，留足四五晚",
         description:
-          "选择2、3或4个完整游览日，决定住张家界市区还是武陵源，再串联森林公园、天门山、大峡谷与下一座城市。",
+          "袁家界的石柱、金鞭溪的溪谷、天门山的999级台阶，留足四五晚。住武陵源还是市区，机场和高铁站在哪，看完山为什么去凤凰住一晚，这里一次讲清。",
         navTitle: "张家界",
         summary:
           "走到袁家界崖边，脚下的地面一下子断了，几百根砂岩石柱从林子里直直立起，柱顶长着松树。再下到谷底，沿着金鞭溪边走边抬头看。另挑一天上天门山，爬 999 级台阶，钻进把山打穿的大洞。森林公园值得玩两天，天门山一天；住四晚刚好玩满这三天，住五晚还能多留一天等雾散。",
@@ -1590,11 +1631,12 @@ export const destinationHubRegistry = [
           "雨后，云从山谷里升起来，在石柱间飘，整根柱子忽隐忽现。挑个雨后的早上，到袁家界或天子山的崖边看看。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "张家界旅行指南",
-          "张家界玩几天",
-          "张家界市区还是武陵源",
-          "张家界国家森林公园入口",
-          "张家界天门山大峡谷怎么安排",
+          "张家界旅游攻略",
+          "张家界玩几天合适",
+          "张家界住市区还是武陵源",
+          "张家界国家森林公园攻略",
+          "天门山怎么玩",
+          "张家界大峡谷玻璃桥",
         ],
         geography: {
           title: "张家界的景点分在三片",
@@ -1644,10 +1686,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("zhangjiajie", "ko"),
-        title: "장가계 여행 가이드: 일정·숙소 거점·공원·다음 도시",
+        title: "장가계 여행: 원가계·천문산, 4~5박 일정과 숙소",
         h1: "장가계: 구름 속 봉우리 숲, 4~5박은 머무세요",
         description:
-          "2·3·4일의 온전한 관광일과 장가계 시내 또는 무릉원 거점을 정한 뒤 국가삼림공원, 천문산, 대협곡과 다음 도시를 연결합니다.",
+          "원가계 봉우리 숲과 금편계, 천문산까지 보려면 4~5박은 머무세요. 무릉원과 시내 중 숙소 고르기, 공항과 기차역, 다음 도시 봉황고성까지 정리했습니다.",
         navTitle: "장가계",
         summary:
           "원가계 절벽 끝에 서면 발밑의 땅이 뚝 끊기고, 꼭대기에 소나무가 자란 사암 봉우리 수백 개가 숲에서 곧게 솟아 있습니다. 골짜기로 내려가 금편계를 걸으며 봉우리를 올려다보고, 다른 날에는 천문산 999계단을 올라 산을 꿰뚫은 천문동에 들어서 보세요. 삼림공원에 이틀, 천문산에 하루를 쓰니 4박이면 그 사흘을 채우고, 5박이면 안개가 걷히길 기다릴 하루가 더 생깁니다.",
@@ -1656,11 +1698,13 @@ export const destinationHubRegistry = [
           "비가 그치면 골짜기에서 구름이 피어올라 봉우리 사이를 흐르고, 봉우리가 사라졌다 다시 나타납니다. 비 온 뒤 아침에 원가계나 천자산 절벽 끝에 서 보세요.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "장가계 여행 가이드",
-          "장가계 며칠",
-          "장가계 시내 무릉원 숙소",
-          "장가계 국가삼림공원 입구",
-          "장가계 천문산 대협곡 일정",
+          "장가계 여행",
+          "장가계 여행 코스",
+          "장가계 자유여행",
+          "장가계 4박5일",
+          "장가계 무릉원 숙소",
+          "장가계 원가계 천문산",
+          "장가계 대협곡 유리다리",
         ],
         geography: {
           title: "장가계의 명소는 세 곳에 나뉘어 있습니다",
@@ -1742,10 +1786,10 @@ export const destinationHubRegistry = [
     locales: {
       en: {
         path: hubPath("chongqing", "en"),
-        title: "Chongqing Travel Guide: Stays, Transport & Routes",
+        title: "Chongqing Travel Guide: 3 Nights and Where to Stay",
         h1: "Chongqing: stepped lanes, two rivers and city lights, over three nights",
         description:
-          "Decide how many nights Chongqing needs, where to stay, which airport or railway station is on the ticket, and whether Wulong, Dazu, Chengdu or a cruise belongs next.",
+          "Give Chongqing three nights for its stepped lanes, two rivers and Hongyadong lit up at night. See where to stay, which station to use, and why Chengdu is next.",
         navTitle: "Chongqing",
         summary:
           "Start at the Liberation Monument and wander down Shibati's old street of steps. At Chaotianmen, watch the Jialing meet the Yangtze, usually the clearer river against the muddier one. After dinner, Hongyadong's eleven storeys glow gold above the water. Next day, cross to the south bank, drift down through Danzishi's lanes and eat by the river, looking back at Yuzhong's towers. Three nights give you those two full days; add at least one more for Wulong's stone bridges or Dazu's carvings.",
@@ -1756,10 +1800,11 @@ export const destinationHubRegistry = [
         openGraphLocale: "en_US",
         searchTerms: [
           "Chongqing travel guide",
-          "how many nights in Chongqing",
-          "where to stay in Chongqing first trip",
-          "which Chongqing railway station",
-          "Chongqing Wulong or Dazu itinerary",
+          "how many days in Chongqing",
+          "where to stay in Chongqing first time",
+          "Hongyadong Chongqing",
+          "Chongqing to Wulong",
+          "Chongqing to Chengdu train",
         ],
         geography: {
           title: "Two rivers split Chongqing's centre into three",
@@ -1809,10 +1854,10 @@ export const destinationHubRegistry = [
       },
       zh: {
         path: hubPath("chongqing", "zh"),
-        title: "重庆旅行指南：住几晚、住哪里、车站与下一站",
+        title: "重庆旅游攻略：洪崖洞两江夜景，三晚怎么玩、住哪里",
         h1: "重庆：爬坡上坎、两江夜色，留足三晚",
         description:
-          "判断重庆需要住几晚、住哪个区域、票面对应哪座机场或铁路站，以及武隆、大足、成都或长江游轮是否适合作为下一段。",
+          "十八梯老街、朝天门两江交汇、洪崖洞夜景，留足三晚。住哪里方便，四个火车站和机场怎么认，去武隆要不要加一晚，下一站为什么是成都，这里一次讲清。",
         navTitle: "重庆",
         summary:
           "从解放碑出发，顺着十八梯老街一级级往下走；到朝天门，看嘉陵江和长江汇合，平时一清一黄。天黑后，洪崖洞十一层吊脚楼沿江亮起金光。第二天过江到南岸，顺着弹子石老街的巷子往下逛，坐在江边吃晚饭，回望渝中的高楼。住三晚，正好玩满这两天；想去武隆或大足，至少再加一晚。",
@@ -1821,11 +1866,12 @@ export const destinationHubRegistry = [
           "日落时，渝中的高楼隔着嘉陵江亮起来，千厮门大桥也亮成红色。天黑后走到桥中间回头，整栋亮灯的洪崖洞就在眼前。",
         openGraphLocale: "zh_CN",
         searchTerms: [
-          "重庆旅行指南",
-          "重庆住几晚",
+          "重庆旅游攻略",
+          "重庆玩几天合适",
           "第一次去重庆住哪里",
-          "重庆用哪个火车站",
-          "重庆武隆还是大足行程",
+          "重庆住解放碑还是观音桥",
+          "重庆到武隆怎么去",
+          "重庆去成都高铁",
         ],
         geography: {
           title: "两条江把重庆城区分成三块",
@@ -1875,10 +1921,10 @@ export const destinationHubRegistry = [
       },
       ko: {
         path: hubPath("chongqing", "ko"),
-        title: "충칭 여행 가이드: 숙박 일수·지역·역·다음 동선",
+        title: "충칭 여행: 홍야동 야경·계단 골목, 3박 일정과 숙소",
         h1: "충칭: 계단 골목과 두 강의 야경, 3박은 머무세요",
         description:
-          "충칭에 몇 박 머물지, 어느 지역에 숙박할지, 승차권의 공항·기차역이 어디인지, 우롱·대족·청두·크루즈 중 무엇을 다음에 넣을지 결정합니다.",
+          "스바티 계단길, 두 강이 만나는 조천문, 홍야동 야경까지 보려면 3박은 머무세요. 처음 묵기 좋은 지역, 네 기차역과 공항, 다음 도시 청두까지 정리했습니다.",
         navTitle: "충칭",
         summary:
           "해방비에서 출발해 스바티 옛 계단길을 한 칸씩 내려갑니다. 조천문에서는 대개 더 맑은 자링강과 누런 장강이 만나는 모습이 보입니다. 해가 지면 홍야동 11층 건물이 강가에서 금빛으로 빛납니다. 다음 날은 강 건너 단쯔스 골목을 내려가 강변에서 저녁을 먹으며 위중의 빌딩숲을 바라보세요. 3박이면 이 이틀을 온전히 쓸 수 있고, 우롱이나 대족에 가려면 최소 1박을 더하세요.",
@@ -1887,11 +1933,12 @@ export const destinationHubRegistry = [
           "해 질 녘 자링강 건너 위중의 빌딩에 불이 들어오고 천사문대교도 붉게 빛납니다. 어두워지면 다리 한가운데까지 걸어가 뒤돌아보세요. 불 켜진 홍야동이 한눈에 들어옵니다.",
         openGraphLocale: "ko_KR",
         searchTerms: [
-          "충칭 여행 가이드",
-          "충칭 몇 박",
-          "첫 충칭 여행 숙소 지역",
-          "충칭 어느 기차역",
-          "충칭 우롱 대족 일정",
+          "충칭 여행",
+          "충칭 여행 코스",
+          "충칭 자유여행",
+          "충칭 홍야동 야경",
+          "충칭 숙소 추천",
+          "충칭 우롱 천생삼교",
         ],
         geography: {
           title: "두 강이 충칭 도심을 셋으로 나눕니다",
