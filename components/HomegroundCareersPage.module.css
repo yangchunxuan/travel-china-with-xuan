@@ -1,0 +1,263 @@
+/*
+ * /zh/careers/ only: the role cards, the WeChat apply panel and the FAQ.
+ * The hero, section heads and tiles come from HomegroundAboutPages.module.css;
+ * the tokens below repeat its values so this file stands on its own.
+ */
+.roles,
+.apply,
+.faq {
+  --about-paper: #fff;
+  --about-tile: #f9f8f6;
+  --about-rule: rgb(10 10 10 / 10%);
+  --about-ink: #0a0a0a;
+  --about-muted: rgb(10 10 10 / 60%);
+  --about-rust: #a84731;
+  --about-focus: var(--hg-color-focus, #b14f37);
+  --about-pill: 2.75rem;
+}
+
+/* Chinese headings: medium weight, no negative tracking. */
+.role h3,
+.apply h2 {
+  font-family: var(--hg-editorial);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.apply h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  margin: 0.75rem 0 0;
+}
+
+.steps p,
+.faq p {
+  color: var(--about-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.copyButton {
+  align-items: center;
+  background: var(--about-ink);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--hg-color-on-dark, #fff);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.6rem;
+  min-height: var(--about-pill);
+  padding: 0 1.25rem;
+  transition: background-color 150ms ease, scale 150ms ease;
+}
+
+.roles {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.role {
+  background: var(--about-tile);
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.role header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+}
+
+.role h3 {
+  font-size: clamp(1.625rem, 2.6vw, 2.125rem);
+  margin: 0;
+}
+
+
+.roleSummary {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 44rem;
+}
+
+.roleLists {
+  border-top: 1px solid var(--about-rule);
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-top: 1.25rem;
+}
+
+.roleLists h4 {
+  color: var(--about-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.roleLists ul {
+  display: grid;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roleLists li {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  line-height: 1.55;
+}
+
+.roleLists svg {
+  color: var(--about-rust);
+  margin-top: 0.3rem;
+}
+
+.apply {
+  background: var(--about-tile);
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 2.5rem clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  scroll-margin-top: 6rem;
+}
+
+.wechat {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 2rem;
+}
+
+.wechatLabel {
+  color: var(--about-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.wechatId {
+  font-family: var(--hg-font-editorial, Georgia, serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  user-select: all;
+}
+
+.copyStatus {
+  color: var(--about-rust);
+  font-size: 0.875rem;
+  margin: 0;
+  min-height: 1.25rem;
+  width: 100%;
+}
+
+.applyNote {
+  color: var(--about-muted);
+  font-size: 0.9375rem;
+  margin: 0.25rem 0 0;
+}
+
+.steps {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.steps li {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+}
+
+.steps li > span {
+  align-items: center;
+  background: var(--about-paper);
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.steps h3 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin: 0.4rem 0 0.25rem;
+}
+
+.faq {
+  border-top: 1px solid var(--about-ink);
+  max-width: 52rem;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--about-rule);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding: 1.25rem 0;
+}
+
+.faq p {
+  padding: 0 0 1.25rem;
+}
+
+@media (hover: hover) {
+  .copyButton:hover {
+    background: #242424;
+  }
+}
+
+.copyButton:active {
+  scale: 0.98;
+}
+
+.copyButton:focus-visible,
+.faq summary:focus-visible {
+  outline: 2px solid var(--about-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 960px) {
+  .apply {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .roleLists {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copyButton {
+    transition: none;
+  }
+}
