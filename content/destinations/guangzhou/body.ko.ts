@@ -587,7 +587,7 @@ const body = {
           reviewedAt: "2026-08-17",
         },
         {
-          label: "대표 이미지: 진가사, 촬영 Shujianyang, CC BY-SA 4.0; 자르기 및 변환",
+          label: "진가사 사진: 촬영 Shujianyang, CC BY-SA 4.0; 자르기 및 변환",
           url: "https://commons.wikimedia.org/wiki/File:Chen_Clan_Ancestral_Hall_2025.06_01.jpg",
           publisher: "Wikimedia Commons",
           reviewedAt: "2026-08-17",

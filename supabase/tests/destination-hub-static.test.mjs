@@ -12,12 +12,12 @@ test("destination hubs keep each Chinese city name together on narrow screens", 
     source("components/content/EditorialGuidePage.module.css"),
   ]);
 
-  assert.match(page, /beijing: \["北京：", "先分配", "完整的一天，", "再安排景点"\]/);
-  assert.match(page, /shanghai: \["上海：", "先算", "完整游览日，", "再决定", "住哪一岸"\]/);
-  assert.match(page, /xian: \["西安：", "住几晚、", "以哪里为基地、", "下一站去哪"\]/);
-  assert.match(page, /hangzhou: \["杭州：", "先决定", "一日往返，", "还是把杭州", "真正住下来"\]/);
-  assert.match(page, /zhangjiajie: \["张家界：", "先分清市区、", "武陵源", "和不同山岳系统"\]/);
-  assert.match(page, /chongqing: \["重庆：", "选对住宿基地、", "车站和停留晚数"\]/);
+  assert.match(page, /beijing: \["北京：", "故宫、长城", "和胡同，", "留足四五晚"\]/);
+  assert.match(page, /shanghai: \["上海：", "外滩夜景、", "老弄堂", "和摩天楼，", "留足四晚"\]/);
+  assert.match(page, /xian: \["西安：", "兵马俑、古城墙", "和回民街，", "留足三晚"\]/);
+  assert.match(page, /hangzhou: \["杭州：", "西湖、灵隐", "和龙井茶园，", "住上两晚"\]/);
+  assert.match(page, /zhangjiajie: \["张家界：", "云雾里的石柱，", "留足四五晚"\]/);
+  assert.match(page, /chongqing: \["重庆：", "爬坡上坎、", "两江夜色，", "留足三晚"\]/);
   assert.match(page, /titleSegments\.map\(\(segment, index\) =>/);
   assert.match(page, /className=\{styles\.keepTogether\}/);
   assert.match(styles, /\.keepTogether\s*\{[\s\S]*?white-space:\s*nowrap;/);
@@ -124,8 +124,8 @@ test("Shanghai Songjiang copy records both the rename and expanded-hub opening",
 test("batch two hubs keep their Chinese city names together on narrow screens", async () => {
   const page = await source("components/content/DestinationHubPage.tsx");
 
-  assert.match(page, /chengdu: \["成都：", "先把城市住稳，", "再搭四川路线"\]/);
-  assert.match(page, /guangzhou: \["广州：", "住几晚、", "住哪个区、", "走哪个门户"\]/);
+  assert.match(page, /chengdu: \["成都：", "熊猫、茶馆", "和火锅，", "留足三晚"\]/);
+  assert.match(page, /guangzhou: \["广州：", "早茶、老街", "和珠江，", "留足三晚"\]/);
 });
 
 test("strict city projections do not emit empty or duplicated opening decisions", async () => {

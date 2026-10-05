@@ -1002,12 +1002,6 @@ const body = {
           reviewedAt: "2026-08-21"
         },
         {
-          label: "Hero: Yuzhong by Kingswang192, CC BY 4.0; cropped, resized and converted",
-          url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons",
-          reviewedAt: "2026-08-21"
-        },
-        {
           label: "Yangtze–Jialing confluence by Tauno Tõhk, CC BY-SA 2.0; cropped, resized and converted",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
           publisher: "Wikimedia Commons",

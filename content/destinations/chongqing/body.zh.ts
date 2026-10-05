@@ -1002,12 +1002,6 @@ const body = {
           reviewedAt: "2026-08-21"
         },
         {
-          label: "首图：渝中，摄影 Kingswang192，CC BY 4.0；已裁切、缩放并转码",
-          url: "https://commons.wikimedia.org/wiki/File:Yuzhong,_Chongqing.jpg",
-          publisher: "Wikimedia Commons",
-          reviewedAt: "2026-08-21"
-        },
-        {
           label: "长江—嘉陵江交汇处，摄影 Tauno Tõhk，CC BY-SA 2.0；已裁切、缩放并转码",
           url: "https://commons.wikimedia.org/wiki/File:The_junction_of_Yangtze_River_and_Jialing_River.jpg",
           publisher: "Wikimedia Commons",
