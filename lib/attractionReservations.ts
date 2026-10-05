@@ -352,7 +352,7 @@ export const attractionReservationRules = [
     notes: {
       en: "One ticket covers the museum and Lishan Garden, with the shuttle between them. The museum's English ticket link routes to Trip.com. Sales can stop at capacity.",
       zh: "一张门票含兵马俑博物馆和丽山园及两地间摆渡车。官网英文购票入口转至携程。满额即停售。",
-      ko: "한 장으로 박물관과 리산위안, 그 사이 셔틀까지 포함됩니다. 박물원 영문 예매 링크는 Trip.com으로 연결됩니다. 정원이 차면 판매가 중단됩니다.",
+      ko: "한 장으로 박물관과 여산원, 그 사이 셔틀까지 포함됩니다. 박물원 영문 예매 링크는 Trip.com으로 연결됩니다. 정원이 차면 판매가 중단됩니다.",
     },
     verifiedAt: "2026-08-11",
     source: "terracotta-warriors-without-tour",
@@ -419,7 +419,7 @@ export const attractionReservationRules = [
     id: "huaqing-palace",
     city: "xian",
     status: "offered",
-    name: { en: "Huaqing Palace", zh: "华清宫", ko: "화칭궁" },
+    name: { en: "Huaqing Palace", zh: "华清宫", ko: "화청지" },
     channels: null,
     passportAccepted: null,
     realName: null,

@@ -317,7 +317,7 @@ const body = {
           description: "역시 목록에 오른 성악 전통. 방과 언어가 듣는 내용을 좌우합니다.",
         },
         {
-          label: "맥락과 함께 보는 촨극 변검",
+          label: "맥락과 함께 보는 천극 변검",
           href: "/ko/guides/sichuan-opera-face-changing-with-context/",
           description: "대부분이 먼저 볼거리로 만나는 공연. 틀을 알고 나면 달라집니다.",
         },

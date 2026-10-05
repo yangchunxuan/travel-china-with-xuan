@@ -140,27 +140,27 @@ const body = {
       id: "first-stay-plan-heading",
       type: "heading",
       level: 2,
-      text: "A first Chengdu stay: four calendar days, three nights"
+      text: "Your first Chengdu trip: three nights, four days"
     },
     {
       id: "first-stay-plan-intro",
       type: "paragraph",
-      text: "This example leaves two complete sightseeing days between arrival and departure. It suits a first visit focused on pandas, neighbourhood life and one substantial cultural visit."
+      text: "Arrive on day one and leave on day four, with two full days between. Give one to the pandas, the other to tea in People's Park and Wuhou Shrine."
     },
     {
       id: "first-stay-plan",
       type: "list",
       items: [
-        "Day 1 — Arrive, reach your central hotel and have dinner nearby. An evening landing is a transport day; do not make a prepaid show depend on it.",
-        "Day 2 — Visit Chengdu Panda Base in your reserved morning session, then return to town for lunch and a lighter afternoon. Keep a short neighbourhood walk optional; the base visit and transfers are the main commitment.",
-        "Day 3 — Begin with tea at People's Park, then give Wuhou Shrine the main cultural block and time to understand its Three Kingdoms story. Have a Sichuan meal at a spice level the party enjoys. An opera evening is an optional addition after checking the day’s energy and travel time.",
-        "Day 4 — Check out and travel onward. Add breakfast or a nearby walk only after protecting the transfer to the exact airport or railway station on the ticket."
+        "Day 1 — Check in to a central hotel and have dinner nearby. Land in the evening and dinner is the whole day, so don't prepay a show that needs an on-time flight.",
+        "Day 2 — Go to the Panda Base at your booked morning entry and watch the pandas eat breakfast, bamboo in both paws. The visit and the ride there and back are enough for one day, so have lunch in town and take the afternoon easy.",
+        "Day 3 — Start with tea in a bamboo chair at a People's Park tea house, then give Wuhou Shrine time to tell its Three Kingdoms story. Have hotpot as spicy as your group enjoys, and add Sichuan opera only if you have the energy and the theatre isn't far.",
+        "Day 4 — Check out and move on. First check how long it takes to reach the exact airport or station on your ticket; add breakfast or a short walk only if there's time."
       ]
     },
     {
       id: "first-stay-plan-extra-night",
       type: "paragraph",
-      text: "With one extra night, this becomes five calendar days and three complete sightseeing days: keep the two city days and choose one branch to Sanxingdui, Dujiangyan or Leshan. Compare the branch guides below before reserving it. For a two-night visit, keep the panda morning and one city block, and leave the regional excursion for another trip. If the panda morning session is unavailable, move the city day rather than squeezing both into the same afternoon."
+      text: "A fourth night adds a third full day. Keep both city days and add a day out to Sanxingdui, Dujiangyan or Leshan, after reading its guide below. With two nights, keep the panda morning and one day in town, and leave day trips for next time. If you can't get a Day 2 morning panda entry, swap Days 2 and 3; don't squeeze both into one afternoon."
     },
     {
       id: "stay-heading",
