@@ -668,7 +668,8 @@ test("small links keep 44px tap targets and tile-shaped links cover their tile",
   assert.match(pageFamily, /\.internalLinks a::before \{[^}]*content:\s*"";[^}]*inset:\s*0;[^}]*position:\s*absolute;/);
   assert.match(pageFamily, /\.internalLinks a::after \{\s*content:\s*" →";/);
   assert.match(tourCard, /\.card\.grok \{[^}]*isolation:\s*isolate;[^}]*position:\s*relative;/);
-  assert.match(tourCard, /\.grok \.action::after \{[^}]*content:\s*"";[^}]*inset:\s*0;[^}]*position:\s*absolute;[^}]*z-index:\s*1;/);
+  assert.match(tourCard, /\.card \{[^}]*position:\s*relative;/);
+  assert.match(tourCard, /\.titleLink::after \{[^}]*content:\s*"";[^}]*inset:\s*0;[^}]*position:\s*absolute;[^}]*z-index:\s*1;/);
 
   // Invisible extenders take text-sized links to 44px without moving layout.
   assert.match(pageFamily, /\.sources summary::before \{[^}]*inset:\s*-0\.375rem 0;[^}]*position:\s*absolute;/);
