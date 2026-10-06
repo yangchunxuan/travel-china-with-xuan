@@ -26,10 +26,13 @@ export function GuideReservationCta({
   guideId,
   locale,
   rule,
+  position = "footer",
 }: {
   guideId: string;
   locale: HomegroundLocale;
   rule: AttractionReservationRule;
+  /** "inline" when it sits inside the article after the first section. */
+  position?: "inline" | "footer";
 }) {
   const copy = getAttractionReservationCopy(locale).guideCta;
   const values = {
@@ -42,7 +45,7 @@ export function GuideReservationCta({
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
       <p className={styles.body}>{fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
       {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
-      <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position="footer">
+      <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position={position}>
         {copy.action}
         <ArrowRight aria-hidden="true" size={18} />
       </GuideCtaLink>

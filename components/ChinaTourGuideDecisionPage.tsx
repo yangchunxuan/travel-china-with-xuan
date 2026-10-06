@@ -21,6 +21,7 @@ import { GuideCtaLink } from "./GuideCtaLink";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { LegacyGuideTourCard } from "./content/LegacyGuideTourCard";
+import { GuideServiceCta } from "./content/GuideServiceCta";
 import styles from "./ChinaTourGuideDecisionPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
@@ -456,6 +457,9 @@ export function ChinaTourGuideDecisionPage({
               </div>
             </div>
           </section>
+
+          {/* A reader deciding whether to hire a guide sees the guide service first. */}
+          <GuideServiceCta guideId={tourGuideDecisionGuideId} locale={locale} />
 
           <LegacyGuideTourCard guideId={tourGuideDecisionGuideId} locale={locale} />
 
