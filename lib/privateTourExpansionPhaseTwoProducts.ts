@@ -126,8 +126,8 @@ const shanghaiDisney: PrivateTourProduct = {
     "상하이·디즈니랜드 5일 프라이빗 투어",
   ),
   metadataTitle: l(
-    "Shanghai Disneyland Private Tour: 5 Days",
-    "上海迪士尼5天私家团",
+    "Shanghai Disneyland Package: 5-Day Private Shanghai Tour",
+    "上海迪士尼5天4夜私家团",
     "상하이 디즈니랜드 5일 프라이빗 투어",
   ),
   metadataDescription: l(
@@ -172,6 +172,68 @@ const shanghaiDisney: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does the Shanghai Disneyland tour cost?",
+        "上海迪士尼私家团多少钱？",
+        "상하이 디즈니랜드 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "There is no fixed published price. We quote for your exact dates after checking live availability, and park ticket prices follow the official date-based calendar. Send your dates, rooming, arrival details and luggage count; the hotel, transport, guide language and final total are confirmed in writing before you pay.",
+        "这条路线没有固定公开价，按你的日期核对实时库存后报价，迪士尼门票按官方日期票价确认。请发来日期、房间配置、到离信息和行李数量；酒店、交通、导游语种与总价在付款前书面确认。",
+        "고정 공개 요금은 없습니다. 날짜별 실시간 재고를 확인한 뒤 견적을 드리며, 디즈니랜드 입장권은 공식 날짜별 요금을 따릅니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 호텔, 교통, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do the Shanghai Disneyland tickets work?",
+        "迪士尼门票怎么安排？",
+        "디즈니랜드 입장권은 어떻게 준비하나요?",
+      ),
+      answer: l(
+        "We book a date-specific park ticket for Day 3 once your travel date and passport details are confirmed; its price follows the official date-based calendar. Disney Premier Access, paid shows and in-park meals are not included unless your confirmation lists them.",
+        "出发日期和护照信息确认后，我们为第3天预订日期票，票价按官方日期票价。迪士尼尊享卡、收费演出和园内餐食不含，确认单列明的除外。",
+        "여행 날짜와 여권 정보가 확인되면 3일 차 날짜 지정권을 예약하며, 요금은 공식 날짜별 요금을 따릅니다. 디즈니 프리미어 액세스, 유료 공연과 파크 내 식사는 확인서에 명시되지 않으면 포함되지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Does a guide come with us inside Disneyland?",
+        "导游会陪我们进迪士尼吗？",
+        "디즈니랜드 안에서도 가이드가 함께하나요?",
+      ),
+      answer: l(
+        "No, an in-park guide is not included unless separately confirmed. On Day 3 a private transfer takes you to the park and back, and you explore at your own pace. Your private English-speaking guide and vehicle are with you on the city days, Days 2 and 4.",
+        "不含园内导游，另行确认的除外。第3天专车往返乐园，入园后自由游玩；第2天和第4天的城市游览有私人英语导游和专车。",
+        "아니요. 파크 안 가이드는 별도로 확정하지 않으면 포함되지 않습니다. 3일 차에는 전용 차량으로 파크를 왕복하고 안에서는 자유롭게 즐깁니다. 도심 일정인 2일·4일 차에는 한국어 가이드와 전용 차량이 함께합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay, and what else is included?",
+        "住哪里？还包含什么？",
+        "숙소는 어디이고 그 밖에 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "All four nights are in one breakfast-included Shanghai hotel, twin sharing, so you never change hotels. The exact hotel, room type, child bedding and single supplement are confirmed before you pay. Private airport or station transfers are included; flights, lunches, dinners, insurance and tips are not.",
+        "4晚都住上海同一家含早酒店，默认双人同住，不用换酒店。具体酒店、房型、儿童占床和单房差在付款前确认。含机场或车站专车接送；不含航班、午晚餐、保险和小费。",
+        "4박 모두 상하이의 조식 포함 호텔 한 곳에서 2인 1실로 머물러 호텔을 옮기지 않습니다. 호텔, 객실, 어린이 침대와 1인실 추가금은 결제 전에 확인합니다. 공항·역 전용 이동은 포함되며 항공편, 중식·석식, 보험과 팁은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "How busy are the five days?",
+        "5天的节奏紧吗？",
+        "5일 일정은 얼마나 빡빡한가요?",
+      ),
+      answer: l(
+        "Day 1 has no fixed sightseeing, leaving room for flight or train delays. Day 2 covers the Bund, Yu Garden and old-city lanes with your guide; Day 3 is the full park day; Day 4 is a gentle walk in the former French Concession with a free afternoon; Day 5 is departure only. There are no shopping stops.",
+        "第1天不排固定景点，为航班或列车延误留余地；第2天随导游游外滩、豫园和老城街巷；第3天整天迪士尼；第4天梧桐街区轻松步行，下午自由；第5天只送机送站。全程无购物店。",
+        "1일 차는 항공편이나 열차 지연에 대비해 고정 관광이 없습니다. 2일 차는 가이드와 와이탄, 예원과 구시가 골목을, 3일 차는 디즈니랜드 종일, 4일 차는 프랑스 조계지 가벼운 산책과 자유 오후, 5일 차는 출발 이동만 있습니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+  ],
 };
 
 const henanSlug = "luoyang-dengfeng-kaifeng-6-day-private-tour";
@@ -182,7 +244,7 @@ const henan: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Luoyang, Dengfeng & Kaifeng: 6-Day Private Tour", "洛阳·登封·开封 6 天 5 晚私家团", "뤄양·덩펑·카이펑 6일 프라이빗 투어"),
-  metadataTitle: l("Henan Heritage Private Tour: 6 Days", "河南洛阳登封开封6天私家团", "허난 뤄양·덩펑·카이펑 6일 투어"),
+  metadataTitle: l("Luoyang Tour: Shaolin, Longmen & Kaifeng 6-Day Private Tour", "河南6日游私家团：洛阳开封少林寺", "허난 뤄양·덩펑·카이펑 6일 투어"),
   metadataDescription: l("A six-day Henan private route linking Kaifeng, Shaolin Temple and Longmen Grottoes with five hotel nights, private transport and guide service.", "河南 6 天私家路线，串联开封、少林寺与龙门石窟，含 5 晚住宿、私车与导游服务。", "카이펑, 소림사와 용문석굴을 잇는 허난 6일 프라이빗 일정으로 5박, 전용 차량과 가이드가 포함됩니다."),
   eyebrow: l("Three historic capitals, one route without backtracking", "三座古都顺路串联，尽量不折返", "세 역사 도시를 되돌아가지 않고 연결"),
   lede: l("Enter through Zhengzhou, give Kaifeng one full day, cross Dengfeng for Shaolin Temple and finish with two substantial Luoyang touring days.", "从郑州进入，给开封一个完整游览日，经登封看少林寺，最后用两个充足的游览日看洛阳。", "정저우로 들어와 카이펑에 하루를 쓰고 덩펑 소림사를 거쳐 뤄양에서 이틀간 핵심 유적을 봅니다."),
@@ -206,6 +268,80 @@ const henan: PrivateTourProduct = {
   packages: [standardPackage([{ travelers: 2, cnyPerPerson: 8980, usdPerPerson: 1390 }, { travelers: 4, cnyPerPerson: 6480, usdPerPerson: 1000 }, { travelers: 6, cnyPerPerson: 6280 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much is the 6-day Luoyang, Shaolin and Kaifeng private tour?",
+        "洛阳、少林寺、开封 6 天私家团每人多少钱？",
+        "뤄양·소림사·카이펑 6일 프라이빗 투어는 1인 요금이 얼마인가요?",
+      ),
+      answer: l(
+        "Per person, sharing twin rooms: USD 1,390 for 2 travellers, USD 1,000 for 4 and USD 970 for 6. The guide, driver and vehicle serve only your group, so a larger group splits their cost. These are starting prices; any seasonal supplement and the final total are confirmed in writing before you pay.",
+        "按双人同住，每人价格：2 人 ¥8,980，4 人 ¥6,480，6 人 ¥6,280。导游、司机和车只服务你们一组，人数越多，每人分摊越少。以上为每人起价；如有旺季附加费，会与最终总价一起在付款前书面确认。",
+        "2인 1실 기준 1인 요금은 2명 ₩1,940,000, 4명 ₩1,400,000, 6명 ₩1,360,000입니다. 가이드, 기사와 차량은 일행만 이용하므로 인원이 많을수록 비용을 나누어 부담합니다. 시작가이며, 성수기 추가금이 있으면 최종 금액과 함께 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include, and what costs extra?",
+        "价格包含什么？哪些另付？",
+        "요금에 무엇이 포함되고 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "It covers five nights with breakfast in four-star-standard hotels (Zhengzhou 1, Kaifeng 1, Luoyang 3), arrival and departure transfers, a private English-speaking guide, driver and vehicle on Days 2–5, and the main entry tickets named in your itinerary. Flights, lunches, dinners, tips, single rooms and optional shows are extra.",
+        "包含 5 晚 4 星标准酒店及早餐（郑州 1 晚、开封 1 晚、洛阳 3 晚）、抵离接送，以及第 2–5 天的私人英语导游、司机和用车，另含书面行程列明的首道门票。机票、未列明的跨城交通、午晚餐、小费、单房差和自选演出另付。",
+        "4성급 기준 호텔 조식 포함 5박(정저우 1박, 카이펑 1박, 뤄양 3박), 도착·출발 이동, 2~5일 차의 한국어 가이드·기사·전용 차량, 그리고 일정에 명시된 기본 입장권이 포함됩니다. 한국어 가이드는 날짜별 가능 여부를 확인합니다. 항공권, 중식·석식, 팁, 1인실 추가금과 선택 공연은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Will we see a kung fu show at Shaolin Temple?",
+        "在少林寺能看到武术表演吗？",
+        "소림사에서 무술 공연을 볼 수 있나요?",
+      ),
+      answer: l(
+        "Shaolin Temple and the Pagoda Forest are on Day 3, via Dengfeng on the way to Luoyang. Any martial-arts performance depends on that day's operating timetable, so we can't promise you will see one.",
+        "第 3 天前往洛阳途中，经登封游览少林寺与塔林。武术表演以当天运行时刻为准，无法保证一定能看到。",
+        "3일 차에 뤄양으로 가는 길에 덩펑을 거쳐 소림사와 탑림을 방문합니다. 무술 공연은 당일 운영 시간표에 따르므로 보실 수 있다고 약속드릴 수 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "How much time is there for Longmen Grottoes and the rest of Luoyang?",
+        "龙门石窟和洛阳其他景点能看多久？",
+        "용문석굴과 뤄양의 다른 명소는 얼마나 보나요?",
+      ),
+      answer: l(
+        "Longmen Grottoes gets the main part of Day 4, following the site's visitor route and shuttle plan rather than a quick photo stop, with an easy old-town walk if time and energy allow. Day 5 covers White Horse Temple and one confirmed Luoyang museum or city stop, with closing days and reservations checked for your dates.",
+        "第 4 天主要时间留给龙门石窟，按开放游线与景区接驳参观，不是匆匆打卡；时间与体力允许时再走走洛阳老城。第 5 天游览白马寺和一处已确认的洛阳博物馆或城市景点，闭馆日与预约按出行日期核对。",
+        "4일 차의 중심은 용문석굴로, 짧은 사진 정류장이 아니라 운영 중인 관람 동선과 셔틀에 맞춰 둘러보며 시간과 체력이 되면 뤄양 구시가를 가볍게 걷습니다. 5일 차에는 백마사와 확정된 뤄양 박물관 또는 도심 명소 한 곳을 방문하며, 휴관일과 예약은 여행 날짜에 맞춰 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Can we arrive in Zhengzhou and fly home from Zhengzhou?",
+        "可以郑州进、郑州出吗？",
+        "정저우로 도착해서 정저우에서 떠날 수 있나요?",
+      ),
+      answer: l(
+        "Yes. Day 1 is an arrival day in Zhengzhou with no fixed sightseeing. On Day 6 we take you to Luoyang station or Zhengzhou airport; the drive to Zhengzhou airport is the longer one, so we set its timing once your flight is known.",
+        "可以。第 1 天在郑州接机或接站，不安排固定景点；第 6 天送往洛阳车站或郑州机场。去郑州机场路程较长，确认返程航班后再定出发时间。",
+        "네. 1일 차는 정저우 도착일로 고정 관광이 없습니다. 6일 차에는 뤄양역 또는 정저우공항으로 모셔다 드리며, 정저우공항까지는 이동 거리가 더 길어 항공편이 정해진 뒤 출발 시간을 정합니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do we book, and when do we pay?",
+        "怎么预订？什么时候付款？",
+        "예약과 결제는 어떻게 하나요?",
+      ),
+      answer: l(
+        "Send us your dates, rooming, arrival details and luggage count. We confirm the hotels, transport, guide language, any seasonal supplement and the final total in writing before you pay. There are no shopping stops, and nothing extra is added without your agreement.",
+        "请发来出行日期、房间配置、到离信息和行李数量。酒店、交通、导游语种、旺季附加费与最终总价，都会在付款前书面确认。全程无购物店，任何额外服务须事先征得你同意。",
+        "날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주세요. 호텔, 교통, 가이드 언어, 성수기 추가금(있는 경우)과 최종 금액을 결제 전에 서면으로 확인합니다. 쇼핑 일정은 없으며, 동의 없이 추가되는 서비스도 없습니다.",
+      ),
+    },
+  ],
 };
 
 const shanxiSlug = "datong-pingyao-6-day-private-tour";
@@ -216,7 +352,7 @@ const shanxi: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Datong & Pingyao: 6-Day Private Tour", "大同·平遥 6 天 5 晚私家团", "다퉁·핑야오 6일 프라이빗 투어"),
-  metadataTitle: l("Datong & Pingyao Private Tour: 6 Days", "大同平遥6天私家团", "다퉁·핑야오 6일 프라이빗 투어"),
+  metadataTitle: l("Datong & Pingyao 6-Day Private Tour with Hanging Temple", "山西6日游私家团：大同悬空寺平遥", "다퉁·핑야오 6일 프라이빗 투어"),
   metadataDescription: l("Six days from Datong to Pingyao and Taiyuan with Yungang Grottoes, Hanging Temple, five hotel nights, private vehicle and guide service.", "从大同经悬空寺到平遥与太原的 6 天私家路线，含云冈石窟、5 晚住宿、私车与导游服务。", "다퉁에서 현공사, 핑야오와 타이위안으로 이어지는 6일 일정으로 운강석굴, 5박, 전용 차량과 가이드를 포함합니다."),
   eyebrow: l("Datong in, Taiyuan out, with Pingyao in between", "大同进、太原出，中间连住平遥", "다퉁에서 시작해 핑야오를 거쳐 타이위안으로"),
   lede: l("Start with Yungang and Datong's old city, cross south via Hanging Temple and Yingxian, stay two nights in Pingyao and finish in Taiyuan without driving back north.", "先看云冈石窟与大同古城，经悬空寺和应县一路向南，在平遥连住两晚，最后从太原离开，不再向北折返。", "운강석굴과 다퉁 구시가에서 시작해 현공사와 잉셴을 거쳐 남쪽으로 이동하고 핑야오 2박 후 타이위안에서 마칩니다."),
@@ -240,6 +376,80 @@ const shanxi: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does the 6-day Datong and Pingyao private tour cost?",
+        "大同平遥 6 天私家团多少钱？",
+        "다퉁·핑야오 6일 프라이빗 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "This route has no published price; we quote it after checking your travel dates and live availability. Send your dates, rooming, arrival details and luggage count, and we confirm the route, hotels, transport, guide language and final total in writing before you pay. There are no shopping stops.",
+        "这条路线不公开标价，需按出发日期与实时库存报价。请提供日期、房间配置、到离信息和行李数量；实际路线、酒店、交通、导游语种与最终总价，都会在付款前书面确认。全程无购物店。",
+        "이 일정은 공개 요금이 없으며, 여행 날짜와 실시간 재고를 확인한 뒤 견적을 드립니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 일정, 호텔, 교통, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is included, and what costs extra?",
+        "包含什么？哪些另付？",
+        "무엇이 포함되고 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "It covers five nights with breakfast, twin sharing (Datong 2, Pingyao 2, Taiyuan 1), arrival and departure transfers, a private English-speaking guide, driver and vehicle on Days 2–6 as your departure time allows, and the main entry tickets named in your booking. Flights, lunches, dinners, tips and single rooms are extra.",
+        "含 5 晚住宿及早餐，默认双人同住（大同 2 晚、平遥 2 晚、太原 1 晚），抵离接送，以及第 2–6 天按返程时间安排的私人英语导游、司机、用车和所列首道门票。机票、午晚餐、小费和单房差另付。",
+        "조식 포함 5박(2인 1실, 다퉁 2박·핑야오 2박·타이위안 1박), 도착·출발 이동, 출발 시간에 맞춘 2~6일 차의 한국어 가이드·기사·전용 차량, 그리고 예약에 명시된 기본 입장권이 포함됩니다. 한국어 가이드는 날짜별 가능 여부를 확인합니다. 항공권, 중식·석식, 팁과 1인실 추가금은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "How much time is there for Yungang Grottoes?",
+        "云冈石窟能看多久？",
+        "운강석굴은 얼마나 보나요?",
+      ),
+      answer: l(
+        "The whole morning of Day 2 is for Yungang Grottoes. Afterwards you visit confirmed Datong old-city sites such as Huayan Temple and the Nine-Dragon Screen, in an order set by opening hours and crowd controls.",
+        "第 2 天整个上午留给云冈石窟，之后游览华严寺、九龙壁等已确认的大同古城景点，顺序随开放时间与客流调整。",
+        "2일 차 오전 전체를 운강석굴에 씁니다. 이후 화엄사와 구룡벽 등 확정된 다퉁 구시가 명소를 운영 시간과 혼잡에 맞춘 순서로 둘러봅니다.",
+      ),
+    },
+    {
+      question: l(
+        "Can we go up into the Hanging Temple?",
+        "悬空寺能上到高处吗？",
+        "현공사 위쪽까지 올라갈 수 있나요?",
+      ),
+      answer: l(
+        "Hanging Temple is on Day 3, with a confirmed stop in Yingxian, on the drive south to Pingyao. Whether you can enter its upper sections depends on the site's controls that day, so we can't promise it.",
+        "第 3 天南下前往平遥途中，游览悬空寺和已确认的应县景点。悬空寺高处区域能否进入以景区当天管控为准，无法保证。",
+        "3일 차에 핑야오로 남하하는 길에 현공사와 확정된 잉셴 명소를 방문합니다. 현공사 상부 구역 입장은 당일 관광지 통제에 따르므로 약속드릴 수 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What are the rooms like in Pingyao?",
+        "平遥住的是什么样的房间？",
+        "핑야오 숙소 객실은 어떤가요?",
+      ),
+      answer: l(
+        "You stay two nights inside or beside Pingyao's old town. Traditional rooms there vary in stairs, bed type and sound insulation, so tell us what matters to you; the exact room is confirmed before you pay.",
+        "在平遥古城内或古城旁连住两晚。传统客栈的楼梯、床型与隔音差异较大，请告诉我们你在意什么；具体房型在付款前确认。",
+        "핑야오고성 안이나 바로 옆에서 2박합니다. 전통 숙소는 계단, 침대 종류와 방음이 서로 달라, 중요하게 생각하시는 점을 알려 주세요. 정확한 객실은 결제 전에 확정합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Do we have to go back to Datong to fly home?",
+        "最后要回大同乘飞机吗？",
+        "떠날 때 다퉁으로 되돌아가야 하나요?",
+      ),
+      answer: l(
+        "No. You arrive in Datong on Day 1, travel one way south, and on Day 6 we take you to Taiyuan airport or railway station. Jinci is visited first only if your departure time leaves enough spare time.",
+        "不用。第 1 天抵达大同，之后一路向南，第 6 天送往太原机场或车站。只有返程时间足够宽裕时，才先去晋祠。",
+        "아닙니다. 1일 차에 다퉁에 도착해 남쪽으로 한 방향으로 이동하고, 6일 차에 타이위안 공항 또는 역으로 모셔다 드립니다. 진사는 출발 시간에 충분한 여유가 있을 때만 먼저 방문합니다.",
+      ),
+    },
+  ],
 };
 
 const silkRoadSlug = "zhangye-jiayuguan-dunhuang-7-day-private-tour";
@@ -250,7 +460,7 @@ const silkRoad: PrivateTourProduct = {
   nights: 6,
   servicePolicy,
   title: l("Zhangye, Jiayuguan & Dunhuang: 7-Day Private Tour", "张掖·嘉峪关·敦煌 7 天 6 晚私家团", "장예·자위관·둔황 7일 프라이빗 투어"),
-  metadataTitle: l("Hexi Corridor Private Tour: 7 Days", "张掖嘉峪关敦煌7天私家团", "장예·자위관·둔황 7일 프라이빗 투어"),
+  metadataTitle: l("China Silk Road Tour: Zhangye to Dunhuang 7-Day Private Tour", "甘肃7日游私家团：张掖嘉峪关敦煌", "장예·자위관·둔황 7일 프라이빗 투어"),
   metadataDescription: l("A seven-day private route from Zhangye to Dunhuang via Jiayuguan, with six hotel nights, private transport, guide service and named admissions.", "从张掖经嘉峪关到敦煌的 7 天私家路线，含 6 晚住宿、私车、导游及所列门票。", "장예에서 자위관을 거쳐 둔황으로 가는 7일 일정으로 6박, 전용 차량, 가이드와 명시된 입장권을 포함합니다."),
   eyebrow: l("Follow the Hexi Corridor west, without returning to the start", "沿河西走廊一路向西，不走回头路", "허시회랑을 따라 서쪽으로, 출발지로 되돌아가지 않는 동선"),
   lede: l("Begin with Zhangye's landforms, cross Jiayuguan and keep three nights in Dunhuang for Mogao Caves, the desert and a buffer against ticket or weather changes.", "从张掖丹霞出发，经嘉峪关一路向西，在敦煌连住三晚，为莫高窟、沙漠与票务或天气变化留出余量。", "장예 단샤에서 시작해 자위관을 거쳐 서쪽으로 이동하고 둔황에서 3박하며 막고굴, 사막과 예약·날씨 변동에 여유를 둡니다."),
@@ -275,6 +485,80 @@ const silkRoad: PrivateTourProduct = {
   packages: [standardPackage([{ travelers: 2, cnyPerPerson: 9620, usdPerPerson: 1480 }, { travelers: 4, cnyPerPerson: 8580, usdPerPerson: 1320 }, { travelers: 6, cnyPerPerson: 8380 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much is the 7-day Zhangye, Jiayuguan and Dunhuang private tour?",
+        "张掖、嘉峪关、敦煌 7 天私家团每人多少钱？",
+        "장예·자위관·둔황 7일 프라이빗 투어는 1인 요금이 얼마인가요?",
+      ),
+      answer: l(
+        "Per person, sharing twin rooms: USD 1,480 for 2 travellers, USD 1,320 for 4 and USD 1,290 for 6. The guide, driver and vehicle serve only your group, so a larger group splits their cost. These are starting prices; the hotel standard, any seasonal supplement and the final total are confirmed in writing before you pay.",
+        "按双人同住，每人价格：2 人 ¥9,620，4 人 ¥8,580，6 人 ¥8,380。导游、司机和车只服务你们一组，人数越多，每人分摊越少。以上为每人起价；酒店标准、旺季附加费与最终总价在付款前书面确认。",
+        "2인 1실 기준 1인 요금은 2명 ₩2,070,000, 4명 ₩1,850,000, 6명 ₩1,810,000입니다. 가이드, 기사와 차량은 일행만 이용하므로 인원이 많을수록 비용을 나누어 부담합니다. 시작가이며, 호텔 등급, 성수기 추가금(있는 경우)과 최종 금액은 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include, and what costs extra?",
+        "价格包含什么？哪些另付？",
+        "요금에 무엇이 포함되고 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "It covers six nights with breakfast (Zhangye 2, Jiayuguan 1, Dunhuang 3), arrival and departure transfers, and on Days 2–6 a private English-speaking guide, driver, vehicle, required site shuttles and main entry tickets named in your booking. Flights, lunches, dinners, tips, single rooms and optional desert activities are extra.",
+        "含 6 晚住宿及早餐（张掖 2 晚、嘉峪关 1 晚、敦煌 3 晚）、抵离接送，以及第 2–6 天的私人英语导游、司机、用车、所列首道门票与必要景区车。机票、未列明的跨城交通、午晚餐、小费、单房差和沙漠自选项目另付。",
+        "조식 포함 6박(장예 2박, 자위관 1박, 둔황 3박), 도착·출발 이동, 그리고 2~6일 차의 한국어 가이드, 기사, 전용 차량, 필수 셔틀과 예약에 명시된 기본 입장권이 포함됩니다. 한국어 가이드는 가능 여부를 확인합니다. 항공권, 중식·석식, 팁, 1인실 추가금과 사막 선택 체험은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do Mogao Caves tickets and cave visits work?",
+        "莫高窟门票和参观怎么安排？",
+        "막고굴 입장권과 관람은 어떻게 되나요?",
+      ),
+      answer: l(
+        "Mogao is on Day 5, with the official ticket type and time slot confirmed for your booking. Which caves you enter, and the language they are explained in, follow the ticket issued. Upgraded tickets and special caves cost extra; three nights in Dunhuang leave room if ticket times or weather change.",
+        "第 5 天按为你确认的官方票种与时段参观莫高窟，开放洞窟与讲解语种以出票信息为准。升级票种或特窟另付；敦煌连住三晚，为票务或天气变化留出余地。",
+        "5일 차에 예약에 맞춰 확정된 공식 입장권 유형과 시간대로 막고굴을 방문합니다. 관람 동굴과 해설 언어는 발권 내용에 따릅니다. 업그레이드 입장권과 특별굴은 별도이며, 둔황에서 3박하므로 입장 시간이나 날씨가 바뀌어도 여유가 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are camel rides at Mingsha Mountain included?",
+        "鸣沙山骑骆驼包含吗？",
+        "명사산 낙타 체험이 포함되나요?",
+      ),
+      answer: l(
+        "No. Camel rides, helicopter flights and other optional desert activities are not in the base package. Mingsha Mountain and Crescent Moon Spring themselves are visited on Day 6, at a time chosen around the weather and temperature.",
+        "不包含。骑骆驼、直升机等沙漠自选项目不在基础套餐内。鸣沙山与月牙泉安排在第 6 天，按天气与温度选择游览时段。",
+        "아닙니다. 낙타, 헬기 등 선택 사막 체험은 기본 패키지에 포함되지 않습니다. 명사산과 월아천은 6일 차에 날씨와 기온을 고려한 시간에 방문합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What if weather or a closure changes the plan?",
+        "遇到天气或景区关闭怎么办？",
+        "날씨나 폐쇄로 일정이 바뀌면 어떻게 하나요?",
+      ),
+      answer: l(
+        "Pingshanhu Grand Canyon on Day 3 is visited only when it is operating; if weather or access closes it, we use a simpler Zhangye alternative. Zhangye Danxia on Day 2 is timed to a confirmed light and entry window, and the viewing platforms follow that day's shuttle route.",
+        "第 3 天的平山湖大峡谷开放时才去；如天气或管控导致关闭，改用较简单的张掖备用行程。第 2 天的张掖丹霞按已确认的光线与入园时段进入，观景台顺序按当天景区车路线安排。",
+        "3일 차 핑산후 대협곡은 운영할 때만 방문하며, 날씨나 통제로 폐쇄되면 더 간단한 장예 대체 일정을 사용합니다. 2일 차 장예 단샤는 확정된 빛·입장 시간대에 방문하고, 전망대 순서는 당일 셔틀 동선에 따릅니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where does the tour start and end, and how do we book?",
+        "从哪里开始、在哪里结束？怎么预订？",
+        "어디서 시작해 어디서 끝나나요? 예약은 어떻게 하나요?",
+      ),
+      answer: l(
+        "You arrive in Zhangye on Day 1 and leave from Dunhuang airport or railway station on Day 7, travelling west without going back. Send your dates, rooming, arrival details and luggage count; we confirm hotels, transport, guide language and the final total in writing before you pay. There are no shopping stops.",
+        "第 1 天抵达张掖，第 7 天从敦煌机场或车站离开，一路向西不走回头路。请提供日期、房间配置、到离信息和行李数量；酒店、交通、导游语种与最终总价在付款前书面确认。全程无购物店。",
+        "1일 차에 장예에 도착하고 7일 차에 둔황 공항 또는 역에서 출발하며, 서쪽으로 이동해 되돌아가지 않습니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 호텔, 교통, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+  ],
 };
 
 const yangtzeSlug = "chongqing-yangtze-cruise-6-day-private-tour";
@@ -285,7 +569,7 @@ const yangtze: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Chongqing & Yangtze Three Gorges: 6-Day Private Tour", "重庆与长江三峡游轮 6 天 5 晚私家团", "충칭·장강삼협 크루즈 6일 프라이빗 투어"),
-  metadataTitle: l("Chongqing & Yangtze Cruise: 6 Days", "重庆长江三峡游轮6天私家团", "충칭·장강삼협 크루즈 6일 투어"),
+  metadataTitle: l("Yangtze River Cruise from Chongqing: 6-Day Private Tour", "长江三峡游轮重庆到宜昌6天私家团", "충칭·장강삼협 크루즈 6일 투어"),
   metadataDescription: l("Two nights in Chongqing followed by a three-night Yangtze cruise to Yichang. Ship, cabin, sailing direction and shore excursions are date-checked.", "重庆住 2 晚，再乘三晚长江游轮到宜昌；船型、舱房、航向与岸上项目按日期确认。", "충칭 2박 후 3박 장강 크루즈로 이창까지 이동하며 선박, 객실, 운항 방향과 육상 관광은 날짜별 확인합니다."),
   eyebrow: l("Two Chongqing nights, then three nights on the river", "重庆住两晚，再在游轮住三晚", "충칭 2박 뒤 강 위에서 3박"),
   lede: l("See Chongqing before boarding a date-confirmed downstream cruise, then pass the Three Gorges and finish in Yichang without retracing the route.", "先看重庆，再登上按日期确认的下水游轮，穿过长江三峡后从宜昌离开，不走回头路。", "충칭을 둘러본 뒤 날짜가 확정된 하행 크루즈에 승선해 삼협을 지나 이창에서 마칩니다."),
@@ -309,6 +593,68 @@ const yangtze: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does the Chongqing and Yangtze cruise tour cost?",
+        "重庆长江三峡游轮私家团多少钱？",
+        "충칭·장강 크루즈 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "There is no fixed published price. We quote for your sailing date after checking live availability. Send your dates, rooming, arrival details and luggage count; the actual route, ship, cabin, hotels, guide language and final total are confirmed in writing before you pay.",
+        "没有固定公开价，按你的航期核对实时库存后报价。请发来日期、房间配置、到离信息和行李数量；实际路线、船名、舱房、酒店、导游语种与总价在付款前书面确认。",
+        "고정 공개 요금은 없으며, 운항일의 실시간 재고를 확인한 뒤 견적을 드립니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 실제 운행 일정, 선박, 객실, 호텔, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we sleep, and which ship and cabin will we have?",
+        "住哪里？坐哪艘船、什么舱？",
+        "숙박은 어디에서 하고 어떤 선박과 객실인가요?",
+      ),
+      answer: l(
+        "Two nights in a breakfast-included Chongqing hotel, then three nights in a twin balcony cabin on the cruise. The ship, deck, cabin size and single supplement vary by sailing date; we confirm the ship, pier, cabin and included shore excursions before you pay.",
+        "重庆含早酒店2晚，再住游轮双人阳台舱3晚。船名、楼层、舱房面积和单房差随航期而定；船名、码头、舱房和所含岸上项目在付款前确认。",
+        "충칭 조식 포함 호텔에서 2박한 뒤 크루즈의 2인 발코니 객실에서 3박합니다. 선박, 갑판, 객실 크기와 1인실 추가금은 운항일에 따라 다르며, 선박, 부두, 객실과 포함 육상 관광은 결제 전에 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which way does the cruise sail, and where does the trip end?",
+        "游轮往哪个方向开？在哪结束？",
+        "크루즈는 어느 방향으로 가고 여행은 어디서 끝나나요?",
+      ),
+      answer: l(
+        "Downstream. You transfer to the confirmed pier and board on the evening of Day 3, pass Qutang Gorge and Wu Gorge, and leave the ship on Day 6 for the included Three Gorges Dam visit. The trip ends in Yichang, not back in Chongqing; your onward train or flight time is checked against the ship's schedule.",
+        "下水航行：第3天傍晚送到当天运行码头登船，途经瞿塘峡和巫峡，第6天离船参加所含三峡大坝项目。行程在宜昌结束，不回重庆；返程车次或航班须与游轮时刻核对。",
+        "하행으로 운항합니다. 3일 차 저녁 확정된 부두로 이동해 승선하고 구당협과 무협을 지나며, 6일 차에 하선해 포함된 삼협댐 일정을 진행합니다. 여행은 충칭으로 돌아가지 않고 이창에서 끝나며, 출발 열차나 항공편 시간은 크루즈 시간표와 맞춰 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is there a guide on the cruise, and how do meals work?",
+        "游轮上有导游吗？餐食怎么安排？",
+        "크루즈에도 가이드가 있나요? 식사는 어떻게 되나요?",
+      ),
+      answer: l(
+        "Your private English-speaking guide and private transfers cover the land days in Chongqing, Days 1–3. On board, the ship's confirmed programme sets the commentary language, meals and shore excursions. Cruise service fees, optional shore excursions and cabin upgrades are extra unless listed.",
+        "私人英语导游和私车接送负责重庆陆上第1–3天。船上讲解语种、餐食和岸上项目以已确认的船方计划为准；未列明的游轮服务费、自选岸上项目和舱房升级另付。",
+        "한국어 가이드와 전용 이동은 충칭 육상 일정인 1~3일 차에 포함되며, 한국어 지원은 운항일별로 확인합니다. 선상 해설 언어, 식사와 육상 관광은 확정된 선박 프로그램을 따릅니다. 명시되지 않은 크루즈 서비스 비용, 선택 육상 관광과 객실 업그레이드는 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "What do we see in Chongqing before boarding?",
+        "登船前在重庆看什么？",
+        "승선 전에 충칭에서는 무엇을 보나요?",
+      ),
+      answer: l(
+        "Day 2 is a guided city day around places such as Liziba, the Shancheng lanes, Jiefangbei and the riverside, in an order your guide adjusts to traffic. On Day 3 you take either the Dazu Rock Carvings excursion or a shorter Chongqing day, whichever is confirmed in writing, then board in the evening.",
+        "第2天游览李子坝、山城巷、解放碑和江边等地，导游按交通调整顺序；第3天按书面确认去大足石刻一日游或走较轻松的重庆行程，傍晚登船。",
+        "2일 차에는 리쯔바, 산청 골목, 해방비와 강변 등을 둘러보며 가이드가 교통에 맞춰 순서를 조정합니다. 3일 차에는 서면 확인에 따라 대족석각 당일 일정 또는 짧은 충칭 대체 일정을 진행한 뒤 저녁에 승선합니다.",
+      ),
+    },
+  ],
 };
 
 const iliSlug = "xinjiang-ili-sayram-8-day-private-tour";
@@ -319,7 +665,7 @@ const ili: PrivateTourProduct = {
   nights: 7,
   servicePolicy,
   title: l("Ili, Sayram Lake & Nalati: 8-Day Private Tour", "伊犁·赛里木湖·那拉提 8 天 7 晚私家团", "이리·싸이리무호·나라티 8일 프라이빗 투어"),
-  metadataTitle: l("Ili & Sayram Lake Private Tour: 8 Days", "新疆伊犁赛里木湖8天私家团", "신장 이리·싸이리무호 8일 투어"),
+  metadataTitle: l("Northern Xinjiang Private Tour: 8 Days, Sayram Lake & Nalati", "新疆8天私家团：伊犁赛里木湖·那拉提", "신장 이리·싸이리무호 8일 투어"),
   metadataDescription: l("An eight-day seasonal Ili route linking Sayram Lake, Yining, Tekes and Nalati. Road openings, pasture access and hotels are checked by date.", "8 天季节性伊犁路线，串联赛里木湖、伊宁、特克斯与那拉提；道路、草原开放与酒店按日期核对。", "싸이리무호, 이닝, 터커스와 나라티를 잇는 계절형 8일 일정으로 도로, 초원 개방과 호텔을 날짜별 확인합니다."),
   eyebrow: l("A seasonal circuit with a written road-closure alternative", "季节性环线，同时准备封路备用方案", "도로 폐쇄 대안을 함께 준비하는 계절형 순환 일정"),
   lede: l("Travel from Urumqi to Sayram Lake, Yining, Tekes and Nalati, while keeping the exact grassland and return road flexible around seasonal opening conditions.", "从乌鲁木齐进入赛里木湖、伊宁、特克斯与那拉提，并按季节开放情况调整具体草原与返程道路。", "우루무치에서 싸이리무호, 이닝, 터커스와 나라티를 잇되 계절별 개방에 맞춰 초원과 귀환 도로를 조정합니다."),
@@ -345,6 +691,80 @@ const ili: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does this 8-day Ili and Sayram Lake tour cost?",
+        "这条伊犁赛里木湖 8 天私家团多少钱？",
+        "이 8일 이리·싸이리무호 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "There is no fixed published price. Mountain roads, grassland access, lavender and hotel space all change by season, so we quote after checking your dates and availability. Send your dates, rooming, arrival details and luggage count; the route, hotels, transport, guide language and total are confirmed in writing before you pay.",
+        "这条线没有固定公开价。山区道路、草原开放、薰衣草花期和酒店库存随季节变化很大，须按你的日期和实时库存报价。请发来日期、房间配置、到离信息和行李数量；实际路线、酒店、交通、导游语种与最终总价会在付款前书面确认。",
+        "이 일정은 고정 공개 요금이 없습니다. 산악 도로, 초원 개방, 라벤더 시기와 호텔 재고가 계절에 따라 달라 날짜와 재고를 확인한 뒤 견적을 드립니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 일정, 호텔, 교통, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which days have a guide, and which are transfer days?",
+        "哪几天有导游？哪几天是转场？",
+        "가이드는 어느 날 함께하고, 어느 날이 이동일인가요?",
+      ),
+      answer: l(
+        "Days 3–6 include a private English-speaking guide, driver, vehicle and basic entry tickets to the listed sights. Days 1–2 and 7–8 are driver and transfer days unless your written confirmation says otherwise. Whether a Korean-speaking guide is available is checked for your exact dates. There are no shopping stops.",
+        "第 3–6 天包含私人英语导游、司机、用车与所列景点的首道门票。第 1–2 天和第 7–8 天默认是司机接送与转场日，书面确认另有列明的除外。导游语种按你的准确日期核对，全程无购物店。",
+        "3~6일 차에는 전용 가이드, 기사, 차량과 명시된 명소의 기본 입장권이 포함됩니다. 1~2일 차와 7~8일 차는 서면 확인서에 달리 적지 않는 한 기사 이동·환승 일정입니다. 한국어 가이드는 정확한 날짜에 맞춰 가능 여부를 확인합니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay, and what are the hotels like?",
+        "住在哪里？酒店条件怎么样？",
+        "어디에서 묵고, 호텔은 어떤가요?",
+      ),
+      answer: l(
+        "You have seven nights with breakfast in Urumqi, the Sayram Lake or Bole area, Yining, Tekes and Nalati. In the remoter areas, the hotel standard, heating or cooling and room type are confirmed for your season, and every hotel is confirmed in writing before you pay.",
+        "共 7 晚含早，分住乌鲁木齐、赛里木湖或博乐、伊宁、特克斯与那拉提。偏远地区的酒店标准、冷暖设备与房型按出行季节确认，所有酒店都在付款前书面确认。",
+        "우루무치, 싸이리무호 또는 보러 지역, 이닝, 터커스와 나라티에서 조식 포함 7박합니다. 외곽 지역의 호텔 등급, 냉난방과 객실 유형은 여행 시기에 맞춰 확인하며 모든 호텔은 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What happens if a mountain road or grassland is closed?",
+        "遇到山路封闭或草原不开放怎么办？",
+        "산악 도로나 초원이 폐쇄되면 어떻게 되나요?",
+      ),
+      answer: l(
+        "We use the written backup plan, with no improvised surcharge. On Day 5 we take Kalajun, Kurding or a replacement grassland, depending on seasonal access and driving time. On Day 7 you return to Urumqi by the confirmed seasonal road or another transport plan; it is a long transfer day, so no sightseeing is promised.",
+        "使用书面备用方案，不临时加价改线。第 5 天按季节通行与车程选择喀拉峻、库尔德宁或替代草原；第 7 天按已确认的季节性公路或替代交通返回乌鲁木齐，这是长距离转场日，不承诺固定景点。",
+        "즉석 추가금 없이 서면 대안을 적용합니다. 5일 차는 계절 개방과 이동 시간에 따라 카라준, 쿠얼더닝 또는 대체 초원을 이용합니다. 7일 차는 확정된 계절 도로 또는 다른 교통편으로 우루무치에 돌아가며, 장거리 이동일이라 관광은 약속하지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Will we see the lavender fields?",
+        "能看到薰衣草吗？",
+        "라벤더 밭을 볼 수 있나요?",
+      ),
+      answer: l(
+        "Only if your dates are right. Lavender is added on Day 4, the day from Yining to Tekes, only when the date and bloom conditions are suitable, so it is not promised.",
+        "要看日期。薰衣草安排在第 4 天（伊宁前往特克斯），只有日期与花期合适时才加入，不作承诺。",
+        "날짜가 맞을 때만 볼 수 있습니다. 라벤더는 이닝에서 터커스로 가는 4일 차에 날짜와 개화 상태가 맞을 때만 넣으므로 약속하지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is not included?",
+        "哪些费用不包含？",
+        "포함되지 않는 것은 무엇인가요?",
+      ),
+      answer: l(
+        "Flights and any intercity transport not named in your confirmation; lunches, dinners and drinks unless listed; insurance, visas, tips, single-room supplements and holiday surcharges. Horse riding, cruises and other grassland activities are extra unless listed, and Sayram Lake vehicle-access fees are confirmed separately.",
+        "不含国际及国内航班和确认单未列明的跨城交通、未列明的午晚餐与饮料、旅行保险、签证、小费、单房差与节假日附加费。未列明的骑马、游船等草原自选项目另计；赛里木湖车辆进景区费用是否包含另行确认。",
+        "항공편과 확인서에 없는 도시 간 교통, 명시되지 않은 중식·석식·음료, 여행자 보험, 비자, 팁, 1인실 추가금과 공휴일 추가금은 포함되지 않습니다. 승마, 유람선 등 초원 선택 체험은 명시되지 않으면 별도이며 싸이리무호 차량 진입 비용은 따로 확인합니다.",
+      ),
+    },
+  ],
 };
 
 const hulunbuirSlug = "hulunbuir-7-day-private-tour";
@@ -355,7 +775,7 @@ const hulunbuir: PrivateTourProduct = {
   nights: 6,
   servicePolicy,
   title: l("Hulunbuir Grassland & Forest: 7-Day Private Tour", "呼伦贝尔草原与森林 7 天 6 晚私家团", "후룬베이얼 초원·숲 7일 프라이빗 투어"),
-  metadataTitle: l("Hulunbuir Private Tour: 7 Days", "呼伦贝尔7天私家团", "후룬베이얼 7일 프라이빗 투어"),
+  metadataTitle: l("Inner Mongolia Private Tour: 7 Days in Hulunbuir Grassland", "呼伦贝尔草原环线7天私家团：额尔古纳·满洲里", "후룬베이얼 7일 프라이빗 투어"),
   metadataDescription: l("A seven-day seasonal route from Hailar through grassland, wetland, forest villages and Manzhouli. Rooms, activities and road access are date-checked.", "从海拉尔出发，串联草原、湿地、森林村落与满洲里的 7 天季节性路线；住宿、体验与道路按日期确认。", "하이라얼에서 초원, 습지, 숲 마을과 만저우리로 이어지는 계절형 7일 일정입니다."),
   eyebrow: l("Grassland, wetland, forest and border city in one circuit", "草原、湿地、森林与边城一次走完", "초원·습지·숲·국경 도시를 한 순환 코스로"),
   lede: l("Travel from Hailar to the Mergel River, Erguna, forest settlements and Manzhouli, with summer road and accommodation details confirmed before sale.", "从海拉尔进入莫日格勒河、额尔古纳、森林村落与满洲里，并在售前确认夏季道路与住宿细节。", "하이라얼에서 모리거러강, 얼구나, 숲 마을과 만저우리로 이어지며 여름 도로와 숙박 세부를 판매 전에 확인합니다."),
@@ -380,6 +800,80 @@ const hulunbuir: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does this 7-day Hulunbuir tour cost?",
+        "这条呼伦贝尔 7 天私家团多少钱？",
+        "이 7일 후룬베이얼 투어는 얼마인가요?",
+      ),
+      answer: l(
+        "This seasonal summer route has no fixed published price; we quote once your dates and live availability are checked. Send your dates, rooming, arrival details and luggage count; the route, hotels, transport, guide language and final total are confirmed in writing before you pay.",
+        "这条夏季季节性路线没有固定公开价，须按你的日期与实时库存报价。请发来日期、房间配置、到离信息和行李数量；实际路线、酒店、交通、导游语种与最终总价会在付款前书面确认。",
+        "여름 계절형 일정이라 고정 공개 요금이 없으며 날짜와 실시간 재고를 확인한 뒤 견적을 드립니다. 날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주시면 일정, 호텔, 교통, 가이드 언어와 최종 금액을 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which days include a guide?",
+        "哪几天有导游？",
+        "가이드는 어느 날 함께하나요?",
+      ),
+      answer: l(
+        "Days 2–6 include a private English-speaking guide, driver, vehicle and basic entry tickets to the listed sights. Days 1 and 7 are driver transfer days unless your written confirmation says otherwise. Whether a Korean-speaking guide is available is checked for your exact summer dates. There are no shopping stops.",
+        "第 2–6 天包含私人英语导游、司机、用车与所列景点的首道门票；第 1 天和第 7 天默认是司机接送日，书面确认另有列明的除外。导游语种按准确的夏季日期核对，全程无购物店。",
+        "2~6일 차에는 전용 가이드, 기사, 차량과 명시된 명소의 기본 입장권이 포함됩니다. 1일 차와 7일 차는 서면 확인서에 달리 적지 않는 한 기사 이동일입니다. 한국어 가이드는 정확한 여름 날짜에 맞춰 가능 여부를 확인합니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What are the rooms like in the forest and border villages?",
+        "森林和边境村落的住宿怎么样？",
+        "숲 마을과 국경 마을 숙소는 어떤가요?",
+      ),
+      answer: l(
+        "You have six nights with breakfast in Hailar, Erguna, forest or border villages, Heishantou and Manzhouli. For the rural rooms, the bathroom, beds, heating or cooling and accessibility are confirmed before you pay, and luggage handling is checked before booking.",
+        "共 6 晚含早，分住海拉尔、额尔古纳、森林或边境村落、黑山头与满洲里。乡村住宿的卫浴、床型、冷暖设备与无障碍条件在付款前确认，行李搬运在预订前核对。",
+        "하이라얼, 얼구나, 숲 또는 국경 마을, 헤이산터우와 만저우리에서 조식 포함 6박합니다. 외곽 숙소의 욕실, 침대, 냉난방과 접근성은 결제 전에 확인하고, 수하물 운반은 예약 전에 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Are horse riding and reindeer visits included?",
+        "骑马和看驯鹿包含吗？",
+        "승마와 순록 방문이 포함되나요?",
+      ),
+      answer: l(
+        "Horse riding, archery, bonfires, grass sliding and other optional activities are not included unless your confirmation lists them. On Day 3 you visit a confirmed wetland or reindeer-culture site, but animal encounters are never guaranteed.",
+        "确认单未列明的骑马、射箭、篝火、滑草等自选项目不包含。第 3 天游览已确认的湿地或驯鹿文化点，但不承诺动物互动。",
+        "승마, 양궁, 모닥불, 초원 썰매 등 선택 체험은 확인서에 명시되지 않으면 포함되지 않습니다. 3일 차에는 확정된 습지 또는 순록 문화 장소를 방문하지만 동물 만남은 보장하지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Can weather or road conditions change the route?",
+        "天气或路况会影响行程吗？",
+        "날씨나 도로 상황 때문에 일정이 바뀔 수 있나요?",
+      ),
+      answer: l(
+        "Yes. Grassland viewpoints depend on road conditions and local access, and the next day's road and grassland access is checked on arrival day. On Day 6, wind, road works or access changes may mean another stop replaces the Hulun Lake viewpoint.",
+        "会。草原观景点随道路与当地开放情况调整，抵达当天会复核次日道路与草原开放情况。第 6 天如遇大风、施工或管控，呼伦湖观景点可能改为替代停靠点。",
+        "네. 초원 전망지는 도로 상황과 현지 접근에 따라 정해지며, 도착일에 다음 날 도로와 초원 접근을 확인합니다. 6일 차에는 강풍, 도로 공사나 통제 때문에 후룬호 전망지 대신 다른 정류장을 이용할 수 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is not included?",
+        "哪些费用不包含？",
+        "포함되지 않는 것은 무엇인가요?",
+      ),
+      answer: l(
+        "Flights and any intercity transport not named in your confirmation; lunches, dinners and drinks unless listed; travel insurance, visas, tips, single-room supplements and holiday surcharges. Optional grassland activities are extra unless your confirmation lists them.",
+        "不含国际及国内航班和确认单未列明的跨城交通、未列明的午晚餐与饮料、旅行保险、签证、小费、单房差与节假日附加费；确认单未列明的草原自选项目另计。",
+        "항공편과 확인서에 없는 도시 간 교통, 명시되지 않은 중식·석식·음료, 여행자 보험, 비자, 팁, 1인실 추가금과 공휴일 추가금은 포함되지 않습니다. 초원 선택 체험은 확인서에 명시되지 않으면 별도입니다.",
+      ),
+    },
+  ],
 };
 
 const yuanyangSlug = "kunming-jianshui-yuanyang-6-day-private-tour";
@@ -390,7 +884,7 @@ const yuanyang: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Kunming, Jianshui & Yuanyang: 6-Day Private Tour", "昆明·建水·元阳 6 天 5 晚私家团", "쿤밍·젠수이·위안양 6일 프라이빗 투어"),
-  metadataTitle: l("Jianshui & Yuanyang Private Tour: 6 Days", "昆明建水元阳6天私家团", "쿤밍·젠수이·위안양 6일 투어"),
+  metadataTitle: l("Yunnan 6-Day Private Tour: Yuanyang Rice Terraces & Jianshui", "云南6天私家团：元阳梯田·建水·昆明", "쿤밍·젠수이·위안양 6일 투어"),
   metadataDescription: l("A six-day private route through Kunming, Jianshui and Yuanyang rice terraces, with two Yuanyang nights, private transport and guide service.", "昆明、建水与元阳梯田 6 天私家路线，元阳连住两晚，含私车与导游服务。", "쿤밍, 젠수이와 위안양 계단식 논을 잇는 6일 일정으로 위안양 2박, 전용 차량과 가이드를 포함합니다."),
   eyebrow: l("Two Yuanyang nights give weather a second chance", "元阳连住两晚，为天气留出第二次机会", "위안양 2박으로 날씨에 두 번의 기회"),
   lede: l("Link Kunming's gateway, Jianshui's courtyards and two nights among Yuanyang's cultural landscape, without promising a particular sunrise, cloud sea or reflection.", "串联昆明门户、建水院落与元阳文化景观连住两晚，不承诺固定日出、云海或倒影。", "쿤밍, 젠수이의 안뜰과 위안양 문화 경관 2박을 잇되 특정 일출, 운해나 반영을 보장하지 않습니다."),
@@ -414,6 +908,80 @@ const yuanyang: PrivateTourProduct = {
   packages: [standardPackage([{ travelers: 2, cnyPerPerson: 7280, usdPerPerson: 1120 }, { travelers: 4, cnyPerPerson: 6880, usdPerPerson: 1060 }, { travelers: 6, cnyPerPerson: 6680 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does this 6-day Yuanyang tour cost per person?",
+        "这条元阳 6 天私家团每人多少钱？",
+        "이 6일 위안양 투어는 1인당 얼마인가요?",
+      ),
+      answer: l(
+        "Per person: USD 1,120 for 2 travellers, USD 1,060 for 4 and USD 1,030 for 6. In a larger group more people share the private guide, driver and vehicle, so each person pays less. These are starting prices; hotels, seasonal supplements and the final total are confirmed in writing for your dates before you pay.",
+        "每人价格：2 人 ¥7,280，4 人 ¥6,880，6 人 ¥6,680。人数越多，私人导游、司机和用车由更多人分摊，每人价格越低。这是起价，酒店、旺季附加费与最终总价会按你的日期在付款前书面确认。",
+        "1인 요금은 2명 ₩1,570,000, 4명 ₩1,480,000, 6명 ₩1,440,000입니다. 인원이 많을수록 전용 가이드, 기사와 차량을 더 많은 사람이 나누어 1인 요금이 낮아집니다. 시작가이며 호텔, 성수기 추가금과 최종 금액은 날짜에 맞춰 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include?",
+        "价格包含哪些？",
+        "요금에 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "Five nights with breakfast in twin rooms (Kunming 2, Jianshui 1, Yuanyang 2), transfers on Days 1 and 6, and on Days 2–5 a private English-speaking guide, driver, vehicle, basic entry tickets to the listed sights and required local shuttles. A Korean-speaking guide costs the same, subject to availability. No shopping stops.",
+        "含 5 晚含早住宿（双人同住：昆明 2 晚、建水 1 晚、元阳 2 晚）、第 1 天和第 6 天的接送，以及第 2–5 天的私人英语导游、司机、用车、所列景点首道门票与必要接驳。导游语种按订单确认，全程无购物店。",
+        "조식 포함 5박(2인 1실, 쿤밍 2박·젠수이 1박·위안양 2박), 1일 차와 6일 차 이동, 그리고 2~5일 차의 전용 가이드, 기사, 차량, 명시된 명소의 기본 입장권과 필수 셔틀이 포함됩니다. 한국어 가이드는 같은 기본 가격이며 가능 여부를 확인합니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is not included?",
+        "哪些费用不包含？",
+        "포함되지 않는 것은 무엇인가요?",
+      ),
+      answer: l(
+        "Flights and any intercity transport not named in your confirmation; lunches, dinners and drinks unless listed; travel insurance, visas, tips, single-room supplements and holiday surcharges. Photography permits, private village activities and any sunrise transfer not in your confirmation are also extra.",
+        "不含国际及国内航班和确认单未列明的跨城交通、未列明的午晚餐与饮料、旅行保险、签证、小费、单房差与节假日附加费，以及摄影许可、私人村寨活动和确认单未列明的日出接送。",
+        "항공편과 확인서에 없는 도시 간 교통, 명시되지 않은 중식·석식·음료, 여행자 보험, 비자, 팁, 1인실 추가금과 공휴일 추가금은 포함되지 않습니다. 촬영 허가, 비공개 마을 체험과 확인서에 없는 일출 이동도 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Will we see a sunrise, cloud sea or reflections on the terraces?",
+        "一定能看到梯田日出、云海或倒影吗？",
+        "계단식 논에서 일출, 운해나 반영을 볼 수 있나요?",
+      ),
+      answer: l(
+        "We can't promise any of them. Two nights in Yuanyang give you more than one weather window, and a sunrise is attempted only when conditions and your departure time allow. Terrace water and colour change by season; the main photo on this page was taken in December.",
+        "不能保证。元阳连住两晚，多一次天气机会；只有天气与出发时间合适时才尝试日出。梯田水面与颜色随季节变化，本页主图拍摄于 12 月。",
+        "어느 것도 보장할 수 없습니다. 위안양 2박으로 날씨 기회를 한 번 이상 두며, 일출은 조건과 출발 시간이 맞을 때만 시도합니다. 계단식 논의 물과 색은 계절에 따라 달라지며 이 페이지의 대표 사진은 12월에 촬영했습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What if someone in our group walks slowly or finds stairs hard?",
+        "同行有人走得慢或不便爬楼梯怎么办？",
+        "일행 중 걸음이 느리거나 계단이 힘든 사람이 있으면 어떻게 하나요?",
+      ),
+      answer: l(
+        "At the Stone Forest, the guide chooses a path that suits your group's walking ability. In Yuanyang, your room's location, stairs, heating or cooling and view are confirmed before you pay.",
+        "石林由导游按你们的步行能力选择合适游线。元阳的房间位置、楼梯、冷暖设备与景观在付款前确认。",
+        "석림에서는 가이드가 일행의 걷기 능력에 맞는 길을 고릅니다. 위안양에서는 객실 위치, 계단, 냉난방과 전망을 결제 전에 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do booking and payment work?",
+        "怎么预订和付款？",
+        "예약과 결제는 어떻게 하나요?",
+      ),
+      answer: l(
+        "Send your dates, rooming, arrival details and luggage count. We confirm hotels, transport, guide language, seasonal supplements and the final total in writing before you pay. Prices are shown in USD; the payment currency and exchange rate are confirmed in that written quote.",
+        "请发来日期、房间配置、到离信息和行李数量。酒店、交通、导游语种、旺季附加费与最终总价会在付款前书面确认；价格以人民币计，如需以其他币种付款，币种与汇率也在书面报价中确认。",
+        "날짜, 객실 구성, 도착·출발 정보와 수하물 수량을 보내 주세요. 호텔, 교통, 가이드 언어, 성수기 추가금과 최종 금액을 결제 전에 서면으로 확인합니다. 원화 금액은 참고용 환산가이며 결제 통화와 환율은 서면 견적에서 확정합니다.",
+      ),
+    },
+  ],
 };
 
 const shenzhenSlug = "shenzhen-family-tech-4-day-private-tour";
@@ -474,7 +1042,7 @@ const classicChina: PrivateTourProduct = {
   nights: 11,
   servicePolicy,
   title: l("Beijing, Xi'an & Shanghai: 12-Day Private Tour", "北京·西安·上海 12 天 11 晚私家团", "베이징·시안·상하이 12일 프라이빗 투어"),
-  metadataTitle: l("Beijing, Xi'an & Shanghai: 12 Days", "北京西安上海12天私家团", "베이징·시안·상하이 12일 투어"),
+  metadataTitle: l("Beijing, Xi'an & Shanghai Itinerary: 12-Day Private Tour", "北京西安上海12天私家团", "베이징·시안·상하이 12일 투어"),
   metadataDescription: l("A 12-day first-China private route with four Beijing nights, three Xi'an nights and four Shanghai nights, plus confirmed high-speed rail between cities.", "第一次来中国的 12 天私家路线：北京 4 晚、西安 3 晚、上海 4 晚，并确认两段跨城高铁。", "중국 첫 여행을 위한 12일 일정으로 베이징 4박, 시안 3박, 상하이 4박과 도시 간 고속철도를 포함합니다."),
   eyebrow: l("Four Beijing nights, three Xi'an nights and four Shanghai nights", "北京 4 晚、西安 3 晚、上海 4 晚", "베이징 4박, 시안 3박, 상하이 4박"),
   lede: l("Give Beijing, Xi'an and Shanghai enough time to stand on their own, then connect them by confirmed high-speed rail instead of turning the trip into a sequence of airport days.", "让北京、西安与上海各自拥有充足时间，再用已确认高铁串联，避免把旅行变成连续赶机场。", "베이징, 시안과 상하이에 충분한 시간을 두고 고속철도로 연결해 공항 이동만 반복하지 않습니다."),
@@ -504,6 +1072,80 @@ const classicChina: PrivateTourProduct = {
   packages: [standardPackage([{ travelers: 2, cnyPerPerson: 18720, usdPerPerson: 2880 }, { travelers: 4, cnyPerPerson: 14300, usdPerPerson: 2200 }, { travelers: 6, cnyPerPerson: 14100 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
+  faq: [
+    {
+      question: l(
+        "How much does the 12-day private tour cost per person?",
+        "这条12天私家团每人多少钱？",
+        "12일 프라이빗 투어는 1인당 얼마인가요?",
+      ),
+      answer: l(
+        "Per person, sharing a twin room, prices start at USD 2,880 for 2 travellers, USD 2,200 for 4 and USD 2,170 for 6. The guide and vehicle serve only your group, so the per-person price is higher when fewer of you travel. Single-room supplements and holiday surcharges are extra.",
+        "按双人同住，每人起价：2人¥18,720，4人¥14,300，6人¥14,100。导游和车只服务你们一行，人数越少，每人价格越高。单房差和节假日附加费另计。",
+        "2인 1실 기준 1인 시작가는 2명 ₩4,030,000, 4명 ₩3,080,000, 6명 ₩3,040,000입니다. 가이드와 차량은 일행만 이용하므로 인원이 적을수록 1인 요금이 높아집니다. 1인실 추가금과 공휴일 추가금은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "What does the price include, and what is extra?",
+        "价格包含什么？哪些另付？",
+        "요금에 무엇이 포함되고 무엇이 별도인가요?",
+      ),
+      answer: l(
+        "Included: 11 nights with breakfast in four-star-standard hotels, private guides and vehicles on touring days, arrival and departure transfers, main entrance tickets to listed sights and second-class trains between cities. Extra: flights, lunches, dinners, insurance, visas, tips, and Great Wall cable cars unless named in writing.",
+        "包含：11晚含早4星标准酒店、游览日私人导游与用车、抵离接送、所列景点首道门票、城市间二等座高铁。另付：航班、午晚餐、保险、签证和小费；长城索道或滑车只有书面确认单列明才包含。",
+        "포함: 4성급 기준 호텔 조식 포함 11박, 관광일의 전용 가이드와 차량, 도착·출발 이동, 명시된 명소의 기본 입장권, 도시 간 고속철도 2등석. 별도: 항공편, 중식·석식, 보험, 비자, 팁, 그리고 서면에 명시되지 않은 만리장성 케이블카.",
+      ),
+    },
+    {
+      question: l(
+        "How do we travel between Beijing, Xi'an and Shanghai?",
+        "北京、西安、上海之间怎么走？",
+        "베이징, 시안, 상하이 사이는 어떻게 이동하나요?",
+      ),
+      answer: l(
+        "By confirmed second-class high-speed train, included in the base price: Beijing to Xi'an on Day 5 and Xi'an North to Shanghai on Day 8. You are transferred to the station, and a local driver meets you on arrival and takes you to your hotel. No major sightseeing is planned on Day 8.",
+        "乘已确认的二等座高铁，车票含在基础价格内：第5天北京到西安，第8天西安北站到上海。我们送你到车站，抵达后由当地司机接站送酒店；第8天不安排大型景点。",
+        "기본 요금에 포함된 확정 고속철도 2등석으로 이동합니다. 5일 차에 베이징에서 시안, 8일 차에 시안북역에서 상하이로 갑니다. 역까지 모셔다 드리고, 도착하면 현지 기사가 맞이해 호텔로 모십니다. 8일 차에는 큰 관광 일정이 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Why do you need our passports, and are Forbidden City tickets certain?",
+        "为什么要护照信息？故宫门票一定能订到吗？",
+        "왜 여권 정보가 필요하고, 자금성 입장권은 확실한가요?",
+      ),
+      answer: l(
+        "Forbidden City and Terracotta Warriors tickets are booked with each traveller's full passport name, number, expiry date and date of birth, so we ask for these once your route and dates are agreed, before tickets go on sale. Tickets depend on availability; we confirm them and the final total in writing before you pay.",
+        "故宫和兵马俑门票要用每位客人的护照姓名、号码、有效期和出生日期预订，所以路线和日期定好后、门票开售前我们会向你收集。能否订到要看余票，门票和总价在付款前书面确认。",
+        "자금성과 병마용 입장권은 각 여행자의 여권상 성명, 여권 번호, 만료일과 생년월일로 예약하므로, 일정과 날짜가 정해지면 발권이 열리기 전에 요청드립니다. 입장권은 재고에 따라 달라지며, 입장권과 최종 금액은 결제 전에 서면으로 확인합니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is the guide just for us, and which days do we have one?",
+        "导游只带我们吗？哪几天有导游？",
+        "가이드는 우리 일행만 안내하나요? 어느 날 함께하나요?",
+      ),
+      answer: l(
+        "Yes. A private English-speaking local guide and vehicle serve only your group on the touring days in each city. Days 1 and 12 are airport or station transfers, Days 5 and 8 are train days, and there are no shopping stops.",
+        "是的。各城市的游览日，由私人英语当地导游和车只为你们一行服务。第1天和第12天是接送机或接送站，第5天和第8天乘高铁；全程不进购物店。",
+        "네. 도시별 관광일에는 한국어 현지 가이드와 전용 차량이 일행만 안내하며, 한국어 가이드는 같은 기본 가격으로 도시별 가능 여부를 확인합니다. 1일 차와 12일 차는 공항·역 이동, 5일 차와 8일 차는 기차 이동일이며 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What can we do on the flexible Day 11 in Shanghai?",
+        "上海第11天的弹性日可以做什么？",
+        "상하이 11일 차 선택 하루에는 무엇을 하나요?",
+      ),
+      answer: l(
+        "Choose one: Zhujiajiao water town, a Suzhou day trip or free time in Shanghai. Transport and admissions are included only for the option written into your booking, so tell us your choice when you send your dates.",
+        "三选一：朱家角水乡、苏州一日游或上海自由活动。交通和门票只按写进确认单的那一项包含，发日期时请一并告诉我们你的选择。",
+        "주자자오 수향마을, 쑤저우 당일 여행, 상하이 자유 시간 중 하나를 고릅니다. 교통과 입장권은 예약서에 적힌 선택안에만 포함되니 날짜를 보내실 때 선택도 함께 알려 주세요.",
+      ),
+    },
+  ],
 };
 
 export const privateTourExpansionPhaseTwoProducts: readonly PrivateTourProduct[] =

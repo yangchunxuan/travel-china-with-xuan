@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      indexnow_all:
+        description: "Also send every sitemap URL to IndexNow (Bing, Naver, Yandex), not only pages changed in the last two days"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -123,3 +128,41 @@ jobs:
           purge_cache
           sleep 60
           purge_cache
+      - name: Tell IndexNow which pages changed
+        # Bing (which ChatGPT search and Copilot use), Naver, Yandex and Seznam share
+        # IndexNow, so one request reaches all of them. The key is public by design:
+        # it is served at /df33475b7eb248a2bbaa8ff8d55d0b5a.txt. A failure here never fails the deployment.
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: df33475b7eb248a2bbaa8ff8d55d0b5a
+          SUBMIT_ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.indexnow_all && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error https://homegroundchina.com/sitemap.xml > sitemap.xml
+          python3 - <<'PY' > indexnow.json
+          import datetime, json, os, re
+          xml = open("sitemap.xml", encoding="utf-8").read()
+          since = (datetime.datetime.now(datetime.timezone.utc).date() - datetime.timedelta(days=2)).isoformat()
+          everything = os.environ["SUBMIT_ALL"] == "true"
+          urls = []
+          for block in re.findall(r"<url>(.*?)</url>", xml, re.S):
+              loc = re.search(r"<loc>([^<]+)</loc>", block)
+              lastmod = re.search(r"<lastmod>([^<]+)</lastmod>", block)
+              if loc and (everything or (lastmod and lastmod.group(1)[:10] >= since)):
+                  urls.append(loc.group(1).strip())
+          key = os.environ["INDEXNOW_KEY"]
+          print(json.dumps({"host": "homegroundchina.com", "key": key, "keyLocation": f"https://homegroundchina.com/{key}.txt", "urlList": urls[:10000]}))
+          PY
+          count="$(jq '.urlList | length' indexnow.json)"
+          if [ "$count" -eq 0 ]; then
+            echo "No sitemap URL changed in the last two days; nothing to send."
+            exit 0
+          fi
+          status="$(curl --silent --show-error --output indexnow-response.txt --write-out '%{http_code}' \
+            --request POST --url https://api.indexnow.org/indexnow \
+            --header 'Content-Type: application/json; charset=utf-8' --data @indexnow.json)"
+          echo "IndexNow answered HTTP ${status} for ${count} URL(s)."
+          if [ "$status" != "200" ] && [ "$status" != "202" ]; then
+            cat indexnow-response.txt
+            exit 1
+          fi

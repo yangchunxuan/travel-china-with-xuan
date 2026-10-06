@@ -1557,6 +1557,81 @@ const chongqingWulong: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Chongqing Wulong Private Tour: 5 Days, Three Natural Bridges", "重庆武隆5天4晚私家团：李子坝+天生三桥", "충칭·우롱 5일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much is it per person, and what's included?",
+        "每人多少钱？包含什么？",
+        "1인 요금은 얼마이고 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "From USD 699 per person for 2 travellers, USD 509 for 4 and USD 480 for 6. It covers 4 nights in Ctrip 4-Diamond hotels with breakfast (twin sharing), private air-conditioned transport, an English-speaking guide on Days 2–4 and the listed adult admissions. Flights, lunches, dinners and night cruises or shows are extra.",
+        "每人起价：2 人 ¥4,543，4 人 ¥3,308，6 人 ¥3,108。含携程 4 钻酒店 4 晚及早餐（两人一间）、空调专车接送和游览、D2–D4 英语导游和列明的基础门票。往返机票、午晚餐和夜游、演出另计。",
+        "1인 시작가는 2명 ₩980,000, 4명 ₩720,000, 6명 ₩670,000입니다. 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식(2인 1실), 에어컨을 갖춘 전용 차량 이동, D2~D4 영어 가이드와 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 야간 유람선·공연은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Do we see both Fairy Mountain and Furong Cave?",
+        "仙女山和芙蓉洞都能去吗？",
+        "선녀산과 부용동을 모두 가나요?",
+      ),
+      answer: l(
+        "No. You choose one for Day 4: the Fairy Mountain admission ticket or the Furong Cave admission-and-ropeway package, and your written confirmation names which. Day 2 also adds just one of the Three Gorges Museum or the exterior of Hongya Cave, in line with the confirmed operating plan.",
+        "不能，D4 两者选一：仙女山门票，或芙蓉洞门票及索道套票，确认单上会写明是哪一项。D2 也是按确认好的开放和执行安排，在三峡博物馆和洪崖洞外观中只去一处。",
+        "아닙니다. D4에는 선녀산 입장권 또는 부용동 입장권·케이블카 패키지 중 하나를 고르시며, 어느 쪽인지 서면 확인서에 적어 드립니다. D2도 확정된 운영 계획에 따라 삼협박물관 또는 홍야동 외관 중 한 곳만 더합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is included at the Three Natural Bridges?",
+        "天生三桥门票包含什么？",
+        "천생삼교 입장권에는 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "The current standard admission includes the official transfer bus and the Tianlong revolving elevator, and you follow the site's route, including its walking sections. The exit battery car and glass viewing platform are included only when written in your confirmation.",
+        "当前标准票包含官方中转车和天龙旋梯，按景区实际运营路线和步行路段游览。出口电瓶车和玻璃眺台，只有确认单写明时才包含。",
+        "현재 표준 입장권에는 공식 환승버스와 톈룽 회전 엘리베이터가 포함되며, 도보 구간을 포함한 현장 운영 동선을 따라 둘러봅니다. 출구 전동카트와 유리 전망대는 확인서에 적힌 경우에만 포함됩니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay, and do we change hotels?",
+        "住在哪里？要换酒店吗？",
+        "어디에서 묵고, 호텔을 옮기나요?",
+      ),
+      answer: l(
+        "Yes, you change hotels. You spend nights 1–2 in Chongqing, night 3 in Wulong's Fairy Mountain resort area and night 4 back in Chongqing, all in Ctrip 4-Diamond hotels with breakfast. Your luggage rides with you in the private vehicle, and the Wulong night means the mountain trip isn't squeezed into one day.",
+        "要换。前两晚住重庆，第三晚住武隆仙女山度假区，第四晚回重庆，均为携程 4 钻酒店，含早餐。行李随专车走；在武隆住一晚，不把山地往返硬塞进一天。",
+        "네, 호텔을 옮깁니다. 1~2박은 충칭, 3박째는 우롱 선녀산 리조트 지역, 4박째는 다시 충칭에서 묵으며 모두 조식 포함 중국 씨트립 기준 4다이아 등급 호텔입니다. 짐은 전용 차량에 싣고 함께 이동하며, 우롱에서 1박하므로 산악 일정을 하루에 몰아넣지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is it private, and when is the guide with us?",
+        "是私家团吗？导游哪几天陪同？",
+        "프라이빗 투어인가요? 가이드는 언제 함께하나요?",
+      ),
+      answer: l(
+        "Yes. The vehicle and guide serve only your group, which is why 2 travellers pay more per person than 6. Your English-speaking guide tours with you on Days 2–4 and helps with your arrival and departure transfers on Days 1 and 5, which have no fixed sightseeing. There are no shopping stops.",
+        "是。车和导游只服务你们一组，所以 2 人的人均价比 6 人高。D2–D4 有英语导游和空调专车，含重庆—武隆段；D1、D5 司机接送，英语导游协助抵达和返程，当天不安排固定景点。全程无购物店。",
+        "네. 차량과 가이드는 일행만을 위한 것이어서 2명이면 6명보다 1인 요금이 높습니다. D2~D4에는 영어 가이드가 함께 관광하고, 고정 관광 일정이 없는 D1·D5에는 도착과 출발 이동을 도와 드립니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Can weather change the plan, and how do we book?",
+        "天气会影响行程吗？怎么预订？",
+        "날씨에 따라 일정이 바뀌나요? 예약은 어떻게 하나요?",
+      ),
+      answer: l(
+        "Mountain weather and walking ability can affect the final plan. Send us your dates, room needs, arrival details and luggage count; we confirm availability and send your final quote before you pay.",
+        "山区天气与体力可能影响最终安排。把日期、房间需求、到离信息和行李数量发给我们，我们先核对酒店、车辆和景点预约，再在你付款前发出最终报价。",
+        "산악 날씨와 보행 능력에 따라 최종 일정이 조정될 수 있습니다. 날짜, 객실 구성, 도착·출발편과 수하물 수량을 알려 주시면 예약 가능 여부를 확인한 뒤 결제 전에 최종 견적을 보내 드립니다.",
+      ),
+    },
+  ],
 };
 
 const guilinYangshuo: PrivateTourProduct = {
@@ -2056,6 +2131,81 @@ const harbinWinter: PrivateTourProduct = {
   ],
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
+  metadataTitle: l("Harbin Ice Festival 2027: 5-Day Private Tour", "哈尔滨5天4晚私家团：冰雪大世界+中央大街", "하얼빈 빙설 5일 프라이빗 투어"),
+  faq: [
+    {
+      question: l(
+        "How much is it per person, and what's included?",
+        "每人多少钱？包含什么？",
+        "1인 요금은 얼마이고 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "From USD 1,459 per person for 2 travellers, USD 1,180 for 4 and USD 1,150 for 6. It covers 4 nights in a Ctrip 4-Diamond hotel with breakfast (twin sharing), an English-speaking guide and heated vehicle on Days 2–4, and adult tickets to the listed sights, including Ice and Snow World. Flights, lunches and dinners are extra.",
+        "每人起价：2 人 ¥9,483，4 人 ¥7,670，6 人 ¥7,470。含携程 4 钻酒店 4 晚及早餐（两人一间）、D2–D4 英语导游和暖风车辆，以及所列景点成人门票（含冰雪大世界）。往返机票、午餐和晚餐另计。",
+        "1인 시작가는 2명 ₩2,040,000, 4명 ₩1,650,000, 6명 ₩1,610,000입니다. 중국 씨트립 기준 4다이아 등급 호텔 4박과 조식(2인 1실), D2~D4 영어 가이드와 난방 차량, 빙설대세계를 포함한 명시된 관광지 성인 입장권이 포함됩니다. 항공권, 중식과 석식은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Which travel dates does this price cover?",
+        "这个价格适用哪些日期？",
+        "이 요금은 어떤 날짜에 적용되나요?",
+      ),
+      answer: l(
+        "Only Sunday–Thursday check-ins from 6 January to 5 February 2027, on non-holiday dates after the main ice attractions have opened. Friday or Saturday stays, Christmas, New Year, Spring Festival, major Ice Festival weekends or different operating dates need a new quote. Other group sizes are priced individually.",
+        "只适用于 2027 年 1 月 6 日至 2 月 5 日、周日至周四入住、核心冰雪景区已开放的非节假日。周五/周六、圣诞、元旦、春节、冰雪节重点周末，或景区开放日期有变，需要重新报价；其他人数单独确认价格。",
+        "주요 빙설 관광지가 개장한 뒤인 2027년 1월 6일~2월 5일 중 공휴일이 아닌 일~목요일 체크인에만 적용됩니다. 금·토요일 숙박, 크리스마스, 신정, 춘절, 빙설제 핵심 주말 또는 개장일이 바뀌는 경우에는 다시 견적을 드립니다. 그 외 인원의 요금은 따로 확인해 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "How cold will it be, and what should we bring?",
+        "会有多冷？要带什么？",
+        "얼마나 춥고, 무엇을 챙겨야 하나요?",
+      ),
+      answer: l(
+        "Harbin can fall below −20°C, so bring professional cold-weather clothing, insulated snow boots, gloves and face protection (not included). Heated vehicles, hot water and heat patches help but don't replace that gear. Outdoor time may be shortened or cancelled for wind chill, ice conditions or an operator safety decision.",
+        "哈尔滨冬季可能低于 −20°C，请自备专业防寒服、保暖雪地靴、手套和面部防护（不在费用内）。暖风车辆、热水和基础暖贴只能辅助，不能替代这些装备。室外项目可能因风寒、冰面状态或运营方安全决定缩短或取消。",
+        "하얼빈은 영하 20°C 이하로 내려갈 수 있습니다. 전문 방한복, 보온 방한화, 장갑과 얼굴 보호 장비를 준비하세요(포함되지 않음). 난방 차량, 온수와 기본 핫팩은 도움이 되지만 이러한 장비를 대신하지는 않습니다. 체감온도, 빙면 상태 또는 운영자의 안전 판단에 따라 야외 일정이 단축되거나 취소될 수 있습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Do we go out onto the frozen Songhua River?",
+        "会上松花江冰面吗？",
+        "얼어붙은 송화강 위로 나가나요?",
+      ),
+      answer: l(
+        "Yes, on Day 2, but only for a named, managed ice-and-snow activity that its operator confirms is open that day. You never go onto unmanaged river ice.",
+        "会，在 D2，但只参加书面列名、由正规机构管理且经运营方确认当天开放的冰雪项目，不进入未管理的冰面。",
+        "네, D2에 나가지만 이름이 서면에 명시되고 정식으로 관리되며 운영자가 당일 개장을 확인한 빙설 프로그램만 이용합니다. 관리되지 않는 강 얼음 위에는 들어가지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "What is the winter culture visit on Day 3?",
+        "D3 的冬季文化项目是什么？",
+        "D3 겨울 문화 일정은 무엇인가요?",
+      ),
+      answer: l(
+        "Before you pay, your written confirmation names Volga Manor and one specific alternative winter-culture programme, and you choose one of the two. We don't sell Day 3 as an unnamed 'comparable programme'.",
+        "付款前的书面确认会写明伏尔加庄园和另一项具体的冬季文化项目，你从这两项里选一项。我们不会只写一句笼统的“同等级项目”。",
+        "결제 전 서면 확인서에 볼가장원과 구체적인 다른 겨울 문화 프로그램 한 곳을 함께 적어 드리며, 그중 한 곳을 고르시면 됩니다. D3를 이름 없는 '동급 프로그램'으로 판매하지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is it private, and which days have a guide?",
+        "是私家团吗？导游哪几天陪同？",
+        "프라이빗 투어인가요? 가이드는 언제 함께하나요?",
+      ),
+      answer: l(
+        "Yes. The vehicle and guide serve only your group, which is why 2 travellers pay more per person than 6. On Day 1 your English-speaking guide meets you and helps you check in; Days 2–4 have the guide and a heated vehicle. Day 5 is a driver transfer to the airport or station, with no guide or sightseeing. No shopping stops.",
+        "是。车和导游只服务你们一组，所以 2 人的人均价比 6 人高。D1 英语导游接机/站并协助入住；D2–D4 有英语导游和暖风车辆；D5 司机送机/站，不安排导游和景点。全程无购物店。",
+        "네. 차량과 가이드는 일행만을 위한 것이어서 2명이면 6명보다 1인 요금이 높습니다. D1에는 영어 가이드가 마중 나가 체크인을 도와 드리고, D2~D4에는 가이드와 난방 차량이 함께합니다. D5는 기사가 공항이나 기차역까지 모셔다 드리며 가이드와 관광 일정은 없습니다. 쇼핑 일정은 없습니다.",
+      ),
+    },
+  ],
 };
 
 const shanghaiSuzhou: PrivateTourProduct = {
@@ -2674,8 +2824,8 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "장가계 국가삼림공원 4일 고정 코스 프라이빗 투어",
   ),
   metadataTitle: l(
-    "Zhangjiajie National Forest Park: 4-Day Private Tour",
-    "张家界森林公园4天私家团：固定徒步路线",
+    "Zhangjiajie Forest Park & Tianmen: 4-Day Private Tour",
+    "张家界森林公园+天门山4天3晚纯玩私家团",
     "장가계 국가삼림공원 3박 4일 프라이빗 투어",
   ),
   // 2026-09-24: route, stay and inclusions follow the owner's 4D3N card (Day 1 tower at night,
@@ -2977,6 +3127,80 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   datePublished: "2026-08-31",
   dateModified: "2026-09-24",
   lastReviewed: "2026-08-31",
+  faq: [
+    {
+      question: l(
+        "How much is it per person, and what does the price include?",
+        "每人多少钱？包含哪些内容？",
+        "1인 요금은 얼마이고 무엇이 포함되나요?",
+      ),
+      answer: l(
+        "From USD 620 per person for 2 travellers, USD 510 for 4 and USD 460 for 6. It covers 3 nights with breakfast, private transport, an English-speaking guide on Day 2 and Day 3 daytime, and listed adult admissions, including Tianmen Mountain and its cable car. Flights, lunches, dinners and optional scenic transport are extra.",
+        "每人起价：2 人 ¥3,980，4 人 ¥3,280，6 人 ¥2,980。含 3 晚住宿及早餐、全程私车接送、D2 全天和 D3 白天英语导游，以及所列成人门票（含天门山门票与索道）。往返机票、午晚餐和自选景区交通另计。",
+        "1인 시작가는 2명 ₩860,000, 4명 ₩710,000, 6명 ₩650,000입니다. 조식 포함 3박, 전용 차량 이동, D2 종일과 D3 주간 한국어 가이드, 천문산 입장권과 케이블카를 포함한 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 선택 관광지 교통은 별도입니다.",
+      ),
+    },
+    {
+      question: l(
+        "Is it just our group, and when is the guide with us?",
+        "只有我们一组吗？导游哪几天陪同？",
+        "우리 일행만 이용하나요? 가이드는 언제 함께하나요?",
+      ),
+      answer: l(
+        "Yes. The vehicle, driver and guide serve only your group, which is why 2 travellers pay more per person than 6. Your English-speaking guide is with you all of Day 2 and the daytime of Day 3. Days 1 and 4 are driver transfers, and the 72 Wonder Tower evening is self-guided, with private drop-off, pickup and remote help.",
+        "是。车、司机和导游只服务你们一组，所以 2 人出行的人均价比 6 人高。D2 全天和 D3 白天有英语导游陪同；D1、D4 为司机接送，七十二奇楼夜场自由游览，含专车送达、接回和远程协助。",
+        "네. 차량과 기사, 가이드는 일행만을 위한 것이어서 2명이면 6명보다 1인 요금이 높습니다. 한국어 가이드는 D2 종일과 D3 주간에 동행합니다. D1·D4는 기사 픽업·샌딩이며, 72기루 야간 관람은 자유 일정으로 전용 차량 왕복과 원격 지원을 제공합니다.",
+      ),
+    },
+    {
+      question: l(
+        "How long and tiring is the Forest Park day?",
+        "森林公园那天会很累吗？",
+        "국가삼림공원 일정은 얼마나 길고 힘든가요?",
+      ),
+      answer: l(
+        "Day 2 is a full day, roughly 10–11 hours door to door, with an afternoon walk along Golden Whip Stream. Scenic shuttles are included. The Bailong Elevator, cableways and Ten-Mile Gallery mini-train are optional and paid on the spot if you want to walk less, and your guide sets a pace that suits your group.",
+        "D2 门到门约 10–11 小时，下午要走金鞭溪。景区环保车已含；百龙天梯、索道和十里画廊小火车为自选，想少走路可以现场自费乘坐。导游会按你们的体力安排节奏。",
+        "D2는 숙소 출발부터 귀환까지 약 10~11시간인 종일 일정이며 오후에는 금편계를 걷습니다. 관광 셔틀은 포함됩니다. 백룡 엘리베이터, 케이블카, 십리화랑 미니 열차는 선택 사항으로 걷는 거리를 줄이고 싶을 때 현장에서 직접 결제하며, 가이드가 일행에 맞춰 속도를 조절합니다.",
+      ),
+    },
+    {
+      question: l(
+        "What happens if Tianmen Mountain is closed or foggy?",
+        "天门山关闭或大雾怎么办？",
+        "천문산이 폐쇄되거나 안개가 짙으면 어떻게 되나요?",
+      ),
+      answer: l(
+        "We switch Day 3 to a boat trip on Baofeng Lake near Wulingyuan, at no extra charge. That is the only planned change: the rest of the route is fixed, nothing is added on the spot, and the Grand Canyon Glass Bridge is not part of it.",
+        "D3 改去武陵源附近的宝峰湖坐船游湖，不另外收费。这是唯一预设的调整：其余路线固定，现场不临时加项，也不含大峡谷玻璃桥。",
+        "D3를 무릉원 근처 보봉호 유람선으로 바꾸며 추가 요금은 없습니다. 미리 정해 둔 변경은 이것뿐입니다. 나머지 코스는 고정이며 현장에서 옵션을 추가하지 않고, 대협곡 유리다리는 포함되지 않습니다.",
+      ),
+    },
+    {
+      question: l(
+        "Where do we stay: a villa or a hotel?",
+        "住别墅还是酒店？中途换住处吗？",
+        "빌라와 호텔 중 어디에서 묵나요?",
+      ),
+      answer: l(
+        "All three nights are in one place in Wulingyuan with breakfast, with no hotel changes. Choose the designated Country Garden family villa, with a shared living room and garden, or a 4-star hotel; both are priced for twin sharing. Before you pay, we confirm the exact unit or hotel, bedrooms and any single-room difference.",
+        "三晚都住武陵源同一处，含早餐，中途不换。可选指定碧桂园家庭别墅（有共享客厅和花园）或四星酒店，都按两人一间计价。具体别墅单元或酒店名称、卧室分配和单房差，付款前和你确认。",
+        "3박 모두 무릉원 한 곳에서 조식과 함께 머물며 숙소를 옮기지 않습니다. 공용 거실과 정원이 있는 지정 컨트리 가든 패밀리 빌라 또는 4성급 호텔 중에서 고를 수 있으며 모두 2인 1실 기준입니다. 정확한 빌라 동 또는 호텔, 객실 배정과 1인실 차액은 결제 전에 확정해 드립니다.",
+      ),
+    },
+    {
+      question: l(
+        "How do booking and payment work?",
+        "怎么预订和付款？",
+        "예약과 결제는 어떻게 하나요?",
+      ),
+      answer: l(
+        "Send us your travel dates and group size. Before you pay, we reconfirm the villa or hotel, room plan, vehicle and ticket availability for your non-holiday dates. Other group sizes and all child prices are quoted individually, based on age, bed use and vehicle seats.",
+        "把出行日期和人数发给我们。付款前，我们会按你的非节假日日期，再次确认别墅或酒店、房间分配、车型和票源。其他人数和所有儿童价格，按年龄、占床和车辆座位单独核价。",
+        "여행 날짜와 인원을 알려 주세요. 결제 전에 공휴일이 아닌 해당 날짜의 빌라 또는 호텔, 객실 구성, 차량과 입장권 재고를 다시 확인해 드립니다. 다른 인원과 모든 아동 요금은 나이, 침대 사용, 차량 좌석에 따라 따로 견적을 내 드립니다.",
+      ),
+    },
+  ],
 };
 
 const zhangjiajieFurongFenghuang: PrivateTourProduct = {
