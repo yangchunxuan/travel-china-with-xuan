@@ -1,0 +1,500 @@
+/*
+ * /company/ and /zh/careers/. Same tokens as /studio/ (white page, #f9f8f6
+ * tiles, ink #0a0a0a, 14px / 500 / 44px pills, Georgia at -2%), laid out
+ * after x.ai/company: a centred mission over the masked grid, a 1px-gap
+ * numbers tile, numbered values on hairlines, then a timeline on a rail.
+ */
+.page {
+  --about-paper: #fff;
+  --about-tile: #f9f8f6;
+  --about-warm: #f2f1ef;
+  --about-warm-hover: #e9e7e3;
+  --about-grid: rgb(213 217 226 / 45%);
+  --about-rule: rgb(10 10 10 / 10%);
+  --about-ink: #0a0a0a;
+  --about-muted: rgb(10 10 10 / 60%);
+  --about-rust: #a84731;
+  --about-glow: rgb(242 193 173 / 22%);
+  --about-focus: var(--hg-color-focus, #b14f37);
+  --about-content: 77rem;
+  --about-gutter: 1.5rem;
+  --about-section: 6.5rem;
+  --about-pill: 2.75rem;
+  --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--about-paper);
+  color: var(--about-ink);
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.hero,
+.band {
+  padding-inline: max(var(--about-gutter), calc((100% - var(--about-content)) / 2));
+}
+
+.eyebrow {
+  color: var(--about-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.hero h1,
+.sectionHead h2,
+.values h3,
+.tiles h3,
+.timeline h3,
+.nextLinks h3 {
+  font-family: var(--hg-editorial);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* ---------- Hero: the mission over x.ai's masked grid ---------- */
+
+.hero {
+  display: grid;
+  isolation: isolate;
+  justify-items: center;
+  padding-block: clamp(5rem, 10vw, 8rem) clamp(3.5rem, 7vw, 5.5rem);
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(var(--about-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--about-grid) 1px, transparent 1px);
+  background-position: center;
+  background-size: 60px 60px;
+  content: "";
+  inset: 0;
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 45%, #000 25%, transparent 100%);
+  mask-image: radial-gradient(70% 70% at 50% 45%, #000 25%, transparent 100%);
+  position: absolute;
+  z-index: -2;
+}
+
+.hero::after {
+  background: radial-gradient(34rem 20rem at 50% 50%, var(--about-glow), transparent 70%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5.4vw, 4.75rem);
+  line-height: 1.04;
+  margin: 1rem 0 0;
+  max-width: 18ch;
+}
+
+.heroBody {
+  color: var(--about-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 0;
+  max-width: 38rem;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-block-start: 2rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.6rem;
+  justify-content: center;
+  min-height: var(--about-pill);
+  padding: 0 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease, scale 150ms ease;
+}
+
+.primaryAction {
+  background: var(--about-ink);
+  color: var(--hg-color-on-dark, #fff);
+}
+
+.secondaryAction {
+  background: var(--about-warm);
+  color: var(--about-ink);
+}
+
+/* ---------- Sections ---------- */
+
+.band {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: var(--about-section) 0;
+}
+
+.band[data-last] {
+  padding-block-end: var(--about-section);
+}
+
+.sectionHead {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 44rem;
+}
+
+.sectionHead h2 {
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.sectionHead > p:not(.eyebrow) {
+  color: var(--about-muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Numbers row: x.ai's 1px gaps inside one rounded tile. */
+.proof {
+  background: var(--about-rule);
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.proof li {
+  background: var(--about-tile);
+  display: grid;
+  gap: 0.6rem;
+  padding: 2rem 1.75rem;
+}
+
+.proof b {
+  font-family: var(--hg-editorial);
+  font-size: clamp(2.75rem, 4.6vw, 4.25rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.proof li > span {
+  color: var(--about-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* Values: x.ai's numbered rows on hairlines. */
+.values {
+  border-top: 1px solid var(--about-ink);
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.values li {
+  align-items: baseline;
+  border-bottom: 1px solid var(--about-rule);
+  display: grid;
+  gap: 0.5rem 2rem;
+  grid-template-columns: 4rem minmax(0, 0.9fr) minmax(0, 1.1fr);
+  padding: 2rem 0;
+}
+
+.values span {
+  color: var(--about-rust);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.values h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.values p,
+.tiles p,
+.timeline p:not(.timelineDate),
+.nextLinks p {
+  color: var(--about-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.values[data-compact] li {
+  padding: 1.5rem 0;
+}
+
+/* Promises and work modes: light tiles. */
+.tiles {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tiles[data-columns="3"] {
+  --cols: 3;
+}
+
+.tiles li {
+  background: var(--about-tile);
+  border-radius: 1.25rem;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1.75rem;
+}
+
+.tiles h3 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Cities: each photo at its own shape. */
+.cities {
+  align-items: start;
+  display: grid;
+  gap: 1.25rem 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cities a {
+  color: var(--about-ink);
+  display: grid;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.cities img {
+  border-radius: 0.9rem;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.cities span { font-size: 0.9375rem; font-weight: 500; }
+
+/* Timeline: dates on the left of a rail. */
+.timeline {
+  border-left: 1px solid var(--about-rule);
+  display: grid;
+  gap: 2rem;
+  list-style: none;
+  margin: 0 0 0 0.35rem;
+  padding: 0 0 0 2rem;
+}
+
+.timeline li {
+  display: grid;
+  gap: 0.4rem 2rem;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  position: relative;
+}
+
+.timeline li::before {
+  background: var(--about-ink);
+  border-radius: 50%;
+  content: "";
+  height: 0.6rem;
+  left: calc(-2rem - 0.3rem - 0.5px);
+  position: absolute;
+  top: 0.45rem;
+  width: 0.6rem;
+}
+
+.timelineDate {
+  color: var(--about-muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  margin: 0;
+}
+
+.timeline h3 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0 0 0.35rem;
+}
+
+/* Next: three link cards. */
+.nextLinks {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nextLinks a {
+  background: var(--about-tile);
+  border-radius: 1.25rem;
+  color: var(--about-ink);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  padding: 1.75rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.nextLinks h3 {
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.nextLinks svg { transition: transform 300ms var(--about-ease); }
+
+/* The service a help card opens, named under its text. */
+.linkLabel { align-items: center; display: inline-flex; font-size: 0.875rem; font-weight: 500; gap: 0.4rem; }
+
+/* ---------- Hover, focus and press ---------- */
+
+@media (hover: hover) {
+  .primaryAction:hover {
+    background: #242424;
+  }
+
+  .secondaryAction:hover,
+  .nextLinks a:hover {
+    background: var(--about-warm-hover);
+  }
+
+  .nextLinks a:hover svg {
+    transform: translateX(4px);
+  }
+
+  .cities a:hover span {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.primaryAction:active,
+.secondaryAction:active {
+  scale: 0.98;
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.nextLinks a:focus-visible,
+.cities a:focus-visible {
+  outline: 2px solid var(--about-focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Chinese and Korean ---------- */
+
+/* Sized by the viewport so the longest half (9 characters) stays on one line on phones. */
+.page[data-homeground-locale="zh"] .hero h1 {
+  font-size: clamp(1.5rem, 8.6vw, 4.25rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+  max-width: 12em;
+}
+
+.page[data-homeground-locale="ko"] .hero h1 {
+  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  max-width: 14em;
+}
+
+.page[data-homeground-locale="zh"] :is(.sectionHead h2, .values h3, .tiles h3, .timeline h3, .nextLinks h3) {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.page[data-homeground-locale="ko"] :is(.sectionHead h2, .values h3, .tiles h3, .timeline h3, .nextLinks h3) {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+/* "ch" is half an ideograph wide, so CJK headings measure in em. */
+.page:is([data-homeground-locale="zh"], [data-homeground-locale="ko"]) .sectionHead h2 {
+  max-width: 16em;
+}
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 960px) {
+  .proof {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nextLinks,
+  .tiles[data-columns="3"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .page {
+    --about-gutter: 1rem;
+    --about-section: 4.5rem;
+  }
+
+  .values li {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .values p {
+    grid-column: 2;
+  }
+
+  .tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .proof li {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .timeline li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.primaryAction, .secondaryAction, .nextLinks a, .nextLinks svg) { transition: none; }
+}

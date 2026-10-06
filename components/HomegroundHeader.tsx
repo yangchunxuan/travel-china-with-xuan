@@ -68,6 +68,9 @@ export type HomegroundPageContext =
   | "tour-collection"
   | "destinations"
   | "destination"
+  /** /company/ and /zh/careers/, under About Us with /studio/. */
+  | "company"
+  | "careers"
   | "content";
 
 type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja";
@@ -249,7 +252,10 @@ export function HomegroundHeader({
   const servicesAreCurrent =
     pageContext === "services" || pageContext === "reservations";
   const planningIsCurrent = pageContext === "studio";
-  const planningIsExact = pageContext === "studio";
+  // About Us opens /company/; /studio/ and careers sit under it.
+  const aboutIsCurrent =
+    planningIsCurrent || pageContext === "company" || pageContext === "careers";
+  const aboutIsExact = pageContext === "company";
   const submenuFor = (id: HomegroundPrimaryNavigationId) => primaryNavigation.menus[id];
   const navItemState = (id: HomegroundPrimaryNavigationId) => {
     switch (id) {
@@ -268,7 +274,7 @@ export function HomegroundHeader({
       case "guides":
         return { active: guidesAreCurrent, exact: guidesAreExact };
       case "studio":
-        return { active: planningIsCurrent, exact: planningIsExact };
+        return { active: aboutIsCurrent, exact: aboutIsExact };
     }
   };
   const plannerFlowHashes = new Set([
@@ -490,10 +496,10 @@ export function HomegroundHeader({
     item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq",
     surface:
       | "desktop-primary"
-      | `desktop-${"destinations" | "tours" | "services"}-menu`
+      | `desktop-${"destinations" | "tours" | "services" | "studio"}-menu`
       | "desktop-utility"
       | "mobile-primary"
-      | `mobile-${"destinations" | "tours" | "services"}-menu`
+      | `mobile-${"destinations" | "tours" | "services" | "studio"}-menu`
       | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
@@ -633,7 +639,7 @@ export function HomegroundHeader({
             const current = state.exact ? "page" : state.active ? "location" : undefined;
             const menu = submenuFor(item.id);
             if (menu) {
-              const menuId = item.id as "destinations" | "tours" | "services";
+              const menuId = item.id as "destinations" | "tours" | "services" | "studio";
               return (
                 <HeaderNavMenu
                   active={state.active}
@@ -774,7 +780,7 @@ export function HomegroundHeader({
               if (!menu) return link;
               // A menu's other rows sit right under its item, one tap away; the
               // row for the item's own page is the item itself.
-              const menuId = item.id as "destinations" | "tours" | "services";
+              const menuId = item.id as "destinations" | "tours" | "services" | "studio";
               return (
                 <Fragment key={item.id}>
                   {link}

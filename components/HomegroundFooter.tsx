@@ -8,6 +8,8 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { homegroundCareersCopy } from "../lib/homegroundCareersCopy";
+import { getHomegroundCompanyCopy } from "../lib/homegroundCompanyI18n";
 import {
   getHomegroundLegalCopy,
   getHomegroundLegalPath,
@@ -156,6 +158,7 @@ export function HomegroundFooter({
   const sectionLabels = footerSections[locale];
   const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
+  const companyCopy = getHomegroundCompanyCopy(locale);
   const facebookPageUrl = getHomegroundFacebookPageUrl();
   const socialProfiles = getHomegroundSocialProfiles().filter(
     (profile) => Boolean(profile.url),
@@ -251,8 +254,16 @@ export function HomegroundFooter({
               </h2>
               <ul>
                 <li>
+                  <Link href={companyCopy.path}>{companyCopy.navLabel}</Link>
+                </li>
+                <li>
                   <Link href={studioPath}>{copy.navigation.studio}</Link>
                 </li>
+                {locale === "zh" ? (
+                  <li>
+                    <Link href={homegroundCareersCopy.path}>{homegroundCareersCopy.navLabel}</Link>
+                  </li>
+                ) : null}
                 <li>
                   <Link
                     aria-current={
@@ -403,11 +414,23 @@ export function HomegroundFooter({
               {sectionLabels.services}
             </Link>
           )}
+          {pageContext === "company" ? (
+            <span aria-current="page">{companyCopy.navLabel}</span>
+          ) : (
+            <Link href={companyCopy.path}>{companyCopy.navLabel}</Link>
+          )}
           {pageContext === "studio" ? (
             <span aria-current="page">{copy.navigation.studio}</span>
           ) : (
             <Link href={studioPath}>{copy.navigation.studio}</Link>
           )}
+          {locale === "zh" ? (
+            pageContext === "careers" ? (
+              <span aria-current="page">{homegroundCareersCopy.navLabel}</span>
+            ) : (
+              <Link href={homegroundCareersCopy.path}>{homegroundCareersCopy.navLabel}</Link>
+            )
+          ) : null}
           <Link
             aria-current={
               activeHash === "#faq" ? "location" : undefined

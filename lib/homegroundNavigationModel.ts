@@ -33,10 +33,19 @@ export type HomegroundDestinationNavigationId = "cities" | "inspiration" | "sigh
  */
 export type HomegroundTourNavigationId = "all-tours" | "multi-city" | "regions" | "seasonal";
 
+/**
+ * The about menu: "About Us" opens /company/ (why Homeground exists), and the
+ * rows add who plans your trip (/studio/), the registered details and, on
+ * Chinese pages only, careers. The item keeps the id "studio" it had when it
+ * opened /studio/ directly.
+ */
+export type HomegroundAboutNavigationId = "company" | "planning" | "credentials" | "careers";
+
 export type HomegroundSubmenuId =
   | HomegroundServiceNavigationId
   | HomegroundDestinationNavigationId
-  | HomegroundTourNavigationId;
+  | HomegroundTourNavigationId
+  | HomegroundAboutNavigationId;
 
 interface HomegroundPrimaryNavigationItemCopy {
   label: string;
@@ -53,10 +62,13 @@ interface HomegroundNavigationModelCopy {
   services: Record<HomegroundServiceNavigationId, HomegroundPrimaryNavigationItemCopy>;
   destinations: Record<HomegroundDestinationNavigationId, HomegroundPrimaryNavigationItemCopy>;
   tours: Record<HomegroundTourNavigationId, HomegroundPrimaryNavigationItemCopy>;
+  /** Careers is published in Chinese only, so the other languages leave it out. */
+  about: Partial<Record<HomegroundAboutNavigationId, HomegroundPrimaryNavigationItemCopy>>;
   /** The accessible names of the buttons that open each menu. */
   servicesToggle: string;
   destinationsToggle: string;
   toursToggle: string;
+  aboutToggle: string;
 }
 
 export interface HomegroundPrimaryNavigationItem
@@ -98,6 +110,13 @@ export const homegroundTourNavigationIds = [
   "seasonal",
 ] as const satisfies readonly HomegroundTourNavigationId[];
 
+export const homegroundAboutNavigationIds = [
+  "company",
+  "planning",
+  "credentials",
+  "careers",
+] as const satisfies readonly HomegroundAboutNavigationId[];
+
 export const homegroundDestinationNavigationIds = [
   "cities",
   "inspiration",
@@ -129,9 +148,9 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "guides/",
       },
       studio: {
-        label: "How We Plan",
-        description: "How Homeground judges a workable trip",
-        pathSegment: "studio/",
+        label: "About Us",
+        description: "Our mission, our team and our licences",
+        pathSegment: "company/",
       },
     },
     services: {
@@ -190,9 +209,27 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/seasonal/",
       },
     },
+    about: {
+      company: {
+        label: "Our Mission",
+        description: "Why Homeground exists and what we promise",
+        pathSegment: "company/",
+      },
+      planning: {
+        label: "How We Plan",
+        description: "How Homeground judges a workable trip",
+        pathSegment: "studio/",
+      },
+      credentials: {
+        label: "Licences & Registration",
+        description: "Registered details you can check yourself",
+        pathSegment: "business-information/",
+      },
+    },
     servicesToggle: "Services menu",
     destinationsToggle: "Destinations menu",
     toursToggle: "Private tours menu",
+    aboutToggle: "About us menu",
   },
   zh: {
     mobileCta: "规划",
@@ -218,9 +255,9 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "guides/",
       },
       studio: {
-        label: "我们如何规划",
-        description: "了解 Homeground 怎样判断行程是否合理",
-        pathSegment: "studio/",
+        label: "关于我们",
+        description: "使命与理念、团队、资质，以及加入我们",
+        pathSegment: "company/",
       },
     },
     services: {
@@ -279,9 +316,32 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/seasonal/",
       },
     },
+    about: {
+      company: {
+        label: "使命与理念",
+        description: "我们为什么做这件事，承诺什么",
+        pathSegment: "company/",
+      },
+      planning: {
+        label: "我们如何规划",
+        description: "了解 Homeground 怎样判断行程是否合理",
+        pathSegment: "studio/",
+      },
+      credentials: {
+        label: "资质与登记",
+        description: "可以自行核查的公司登记信息",
+        pathSegment: "business-information/",
+      },
+      careers: {
+        label: "加入我们",
+        description: "旅行顾问、导游、内容运营",
+        pathSegment: "careers/",
+      },
+    },
     servicesToggle: "服务菜单",
     destinationsToggle: "目的地菜单",
     toursToggle: "私家团菜单",
+    aboutToggle: "关于我们菜单",
   },
   ko: {
     mobileCta: "상담",
@@ -307,9 +367,9 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "guides/",
       },
       studio: {
-        label: "여행 설계 방식",
-        description: "Homeground가 현실적인 일정을 판단하는 법",
-        pathSegment: "studio/",
+        label: "회사 소개",
+        description: "사명과 가치, 팀, 허가 정보",
+        pathSegment: "company/",
       },
     },
     services: {
@@ -368,9 +428,27 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "tours/seasonal/",
       },
     },
+    about: {
+      company: {
+        label: "사명과 가치",
+        description: "Homeground가 하는 일과 약속",
+        pathSegment: "company/",
+      },
+      planning: {
+        label: "여행 설계 방식",
+        description: "Homeground가 현실적인 일정을 판단하는 법",
+        pathSegment: "studio/",
+      },
+      credentials: {
+        label: "허가 및 등록 정보",
+        description: "직접 확인할 수 있는 회사 등록 정보",
+        pathSegment: "business-information/",
+      },
+    },
     servicesToggle: "서비스 메뉴",
     destinationsToggle: "여행지 메뉴",
     toursToggle: "프라이빗 투어 메뉴",
+    aboutToggle: "회사 소개 메뉴",
   },
 };
 
@@ -396,6 +474,13 @@ export function getHomegroundNavigationModel(
     services: {
       entries: homegroundServiceNavigationIds.map((id) => entry(id, copy.services[id])),
       toggle: copy.servicesToggle,
+    },
+    studio: {
+      entries: homegroundAboutNavigationIds.flatMap((id) => {
+        const item = copy.about[id];
+        return item ? [entry(id, item)] : [];
+      }),
+      toggle: copy.aboutToggle,
     },
   };
 
