@@ -212,19 +212,25 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
 export function PageFamilyRenderer({
   body,
   interstitial,
+  interstitials,
   guideTracking,
 }: {
   body: StructuredPageBody;
   guideTracking?: GuideTracking;
   /** One extra node rendered after the block at `afterIndex` (e.g. the matching tour card). */
   interstitial?: { afterIndex: number; node: ReactNode };
+  /** Several such nodes; two at the same index render in the order given. */
+  interstitials?: readonly { afterIndex: number; node: ReactNode }[];
 }) {
+  const inserts = [...(interstitial ? [interstitial] : []), ...(interstitials ?? [])];
   return (
     <div className={styles.body}>
       {body.blocks.map((block, index) => (
         <Fragment key={block.id}>
           <BodyBlock block={block} guideTracking={guideTracking} />
-          {interstitial && interstitial.afterIndex === index ? interstitial.node : null}
+          {inserts.filter((insert) => insert.afterIndex === index).map((insert, order) => (
+            <Fragment key={`insert-${index}-${order}`}>{insert.node}</Fragment>
+          ))}
         </Fragment>
       ))}
     </div>

@@ -123,6 +123,15 @@ export function getGuideTourCard(
  * before they have read anything. With four or more headings it sits before
  * the third; with two or three, before the second; otherwise at the end.
  */
+/** The last block of the guide's first section (just before its second heading). */
+export function guideFirstSectionEndIndex(body: StructuredPageBody): number {
+  const headings = body.blocks
+    .map((block, index) => (block.type === "heading" ? index : -1))
+    .filter((index) => index >= 0);
+  if (headings.length >= 2) return headings[1] - 1;
+  return guideTourCardBlockIndex(body);
+}
+
 export function guideTourCardBlockIndex(body: StructuredPageBody): number {
   const headings = body.blocks
     .map((block, index) => (block.type === "heading" ? index : -1))

@@ -261,7 +261,7 @@ function sanitizeEventParameters(parameters: EventParameters) {
       return;
     }
     if (key === "cta_target") {
-      if (value === "private_tour" || value === "planner" || value === "other") {
+      if (value === "private_tour" || value === "service" || value === "planner" || value === "other") {
         sanitized[key] = value;
       }
       return;

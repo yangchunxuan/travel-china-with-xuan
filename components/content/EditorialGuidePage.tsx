@@ -25,9 +25,10 @@ import {
   getSearchSectionPath,
 } from "../../lib/searchPlatformI18n";
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
-import { getGuideTourCard, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
+import { getGuideTourCard, guideFirstSectionEndIndex, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
 import { GuideTourCard } from "./GuideTourCard";
 import { GuideReservationCta } from "./GuideReservationCta";
+import { GuideServiceCta } from "./GuideServiceCta";
 import { getGuideAttractionReservationTarget } from "../../lib/attractionReservations";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
@@ -365,20 +366,26 @@ export function EditorialGuidePage({
           <PageFamilyRenderer
             body={body}
             guideTracking={{ guideId: guide.id, locale }}
-            interstitial={
-              tourCard
-                ? {
+            interstitials={[
+              // Readers come to an attraction guide to get in; the booking offer
+              // follows the first section, before the route card.
+              ...(reservationTarget
+                ? [{
+                    afterIndex: guideFirstSectionEndIndex(body),
+                    node: <GuideReservationCta guideId={guide.id} locale={locale} position="inline" rule={reservationTarget} />,
+                  }]
+                : []),
+              ...(tourCard
+                ? [{
                     afterIndex: guideTourCardBlockIndex(body),
                     node: <GuideTourCard card={tourCard} guideId={guide.id} locale={locale} variant="grok" />,
-                  }
-                : undefined
-            }
+                  }]
+                : []),
+            ]}
           />
         </article>
 
-        {reservationTarget ? (
-          <GuideReservationCta guideId={guide.id} locale={locale} rule={reservationTarget} />
-        ) : null}
+        <GuideServiceCta guideId={guide.id} locale={locale} />
 
         {relatedDestinations.length > 0 ? (
           <aside className={styles.relatedDestinations}>
