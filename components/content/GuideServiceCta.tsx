@@ -9,7 +9,16 @@ import styles from "./GuideReservationCta.module.css";
  * the private guide service at that city's rate. It shares the reservation
  * offer's quiet card style and never replaces the guide's inline tour card.
  */
-export function GuideServiceCta({ guideId, locale }: { guideId: string; locale: HomegroundLocale }) {
+export function GuideServiceCta({
+  guideId,
+  locale,
+  position = "footer",
+}: {
+  guideId: string;
+  locale: HomegroundLocale;
+  /** "inline" when it sits inside the article, after the guide's own content. */
+  position?: "inline" | "footer";
+}) {
   const cta = getGuideServiceCta(guideId, locale);
   if (!cta) return null;
   return (
@@ -17,7 +26,7 @@ export function GuideServiceCta({ guideId, locale }: { guideId: string; locale: 
       <p className={styles.label}>{cta.label}</p>
       <p className={styles.title}>{cta.title}</p>
       <p className={styles.body}>{cta.body}</p>
-      <GuideCtaLink className={styles.action} guideId={guideId} href={cta.href} locale={locale} position="footer">
+      <GuideCtaLink className={styles.action} guideId={guideId} href={cta.href} locale={locale} position={position}>
         {cta.action}
         <ArrowRight aria-hidden="true" size={18} />
       </GuideCtaLink>

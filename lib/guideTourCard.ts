@@ -123,6 +123,13 @@ export function getGuideTourCard(
  * before they have read anything. With four or more headings it sits before
  * the third; with two or three, before the second; otherwise at the end.
  */
+/** The last block of the guide's own content, before its closing related links and sources. */
+export function guideContentEndIndex(body: StructuredPageBody): number {
+  let index = body.blocks.length - 1;
+  while (index > 0 && (body.blocks[index].type === "sources" || body.blocks[index].type === "internal-links")) index -= 1;
+  return index;
+}
+
 /** The last block of the guide's first section (just before its second heading). */
 export function guideFirstSectionEndIndex(body: StructuredPageBody): number {
   const headings = body.blocks

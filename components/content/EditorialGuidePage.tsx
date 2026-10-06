@@ -25,10 +25,11 @@ import {
   getSearchSectionPath,
 } from "../../lib/searchPlatformI18n";
 import type { StructuredPageBody } from "../../lib/content-system/page-body";
-import { getGuideTourCard, guideFirstSectionEndIndex, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
+import { getGuideTourCard, guideContentEndIndex, guideFirstSectionEndIndex, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
 import { GuideTourCard } from "./GuideTourCard";
 import { GuideReservationCta } from "./GuideReservationCta";
 import { GuideServiceCta } from "./GuideServiceCta";
+import { getGuideServiceCta } from "../../lib/privateGuideServiceCta";
 import { getGuideAttractionReservationTarget } from "../../lib/attractionReservations";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
@@ -381,11 +382,16 @@ export function EditorialGuidePage({
                     node: <GuideTourCard card={tourCard} guideId={guide.id} locale={locale} variant="grok" />,
                   }]
                 : []),
+              // A guide for the day closes the guide's own content, before its related links and sources.
+              ...(getGuideServiceCta(guide.id, locale)
+                ? [{
+                    afterIndex: guideContentEndIndex(body),
+                    node: <GuideServiceCta guideId={guide.id} locale={locale} position="inline" />,
+                  }]
+                : []),
             ]}
           />
         </article>
-
-        <GuideServiceCta guideId={guide.id} locale={locale} />
 
         {relatedDestinations.length > 0 ? (
           <aside className={styles.relatedDestinations}>
