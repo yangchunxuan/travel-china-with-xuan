@@ -22,7 +22,6 @@ import { TourPriceScope } from "./TourPriceScope";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
-import { isJiangnanTour } from "../lib/tourContactDraft";
 import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
 import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
@@ -506,12 +505,12 @@ function PublishedPrivateTourPriceConsole({
         <div className={styles.otherGroupCopy}>
           <strong>{copy.otherGroups}</strong>
           <span>{copy.otherGroupsBody}</span>
-          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink ignoreSelection hrefs={japaneseContactHrefs}>
+          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink hrefs={japaneseContactHrefs}>
             {copy.requestQuote}
             <ArrowRight aria-hidden="true" size={15} />
           </JapaneseTourContactLink> : <GuideCtaLink
             guideId={product.id}
-            href={isJiangnanTour(product.slug) ? inquiryHref : selectedInquiryHref}
+            href={selectedInquiryHref}
             locale={product.locale}
             position="inline"
           >

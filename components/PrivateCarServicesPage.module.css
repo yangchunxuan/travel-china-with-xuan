@@ -1,0 +1,82 @@
+.page {
+  --ink: #0a0a0a;
+  --muted: rgb(10 10 10 / 65%);
+  --tile: #f9f8f6;
+  --rule: rgb(10 10 10 / 14%);
+  --accent: #a84731;
+  background: #fff;
+  color: var(--ink);
+  min-height: 100vh;
+}
+.page main { margin-inline: auto; max-width: 76rem; padding: 0 1.5rem 5rem; }
+.hero { padding-top: 2rem; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 0.65rem; list-style: none; margin: 0 0 2.5rem; padding: 0; color: var(--muted); font-size: 0.8125rem; line-height: 1.6; }
+.breadcrumb li + li::before { content: "/"; margin-right: 0.65rem; }
+.breadcrumb a, .legalLinks a, .note a { text-underline-offset: 0.2em; }
+.eyebrow { color: var(--muted); font-size: 0.875rem; line-height: 1.5; margin: 0; }
+.page h1, .page h2 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
+.page h1 { font-size: clamp(2.5rem, 5.3vw, 4.5rem); line-height: 1.08; max-width: 20ch; margin: 1rem 0 0; }
+.page h2 { font-size: clamp(1.9rem, 3.3vw, 2.7rem); line-height: 1.15; margin: 0; }
+.page h3 { font-size: 1.1rem; font-weight: 500; line-height: 1.4; margin: 0 0 0.75rem; }
+.lede { font-size: 1.0625rem; line-height: 1.7; color: var(--muted); max-width: 43rem; margin: 1.5rem 0; text-wrap: pretty; }
+.primaryButton, .secondaryButton { align-items: center; border: 1px solid transparent; border-radius: 999px; display: inline-flex; font-size: 0.875rem; font-weight: 500; gap: 0.7rem; justify-content: center; min-height: 2.875rem; padding: 0.7rem 1.15rem; text-align: center; text-decoration: none; }
+.primaryButton { background: var(--ink); color: #fff; }
+.primaryButton:hover { background: #343434; }
+.secondaryButton { border-color: var(--rule); background: #fff; color: var(--ink); }
+.secondaryButton:hover { background: var(--tile); }
+.facts { border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; list-style: none; margin: 2rem 0 0; padding: 1.25rem 0 0; color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+.section { margin-top: 4.5rem; scroll-margin-top: 7rem; }
+.sectionIntro { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; align-items: end; margin-bottom: 1.75rem; }
+.sectionIntro p, .kindCard p, .quoteSection p, .relatedGrid p, .enquirySection > div > p { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; margin: 1rem 0 0; text-wrap: pretty; }
+.sectionIntro p { margin-top: 0; }
+.kindGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.kindCard { background: var(--tile); border-radius: 1rem; padding: 1.5rem; min-width: 0; }
+.kindCard h3 { margin: 1rem 0 0; }
+.quoteSection, .faq, .enquirySection { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.written { list-style: none; margin: 0; padding: 0; }
+.written li { font-size: 0.9375rem; line-height: 1.65; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); }
+.written li:first-child { padding-top: 0; }
+.note { color: var(--muted); font-size: 0.875rem; line-height: 1.65; margin: 1rem 0 0; overflow-wrap: anywhere; }
+.legalLinks { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.relatedGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 1.75rem; }
+.relatedGrid article { border-top: 1px solid var(--rule); padding-top: 1.25rem; min-width: 0; }
+.relatedGrid p { margin: 0; }
+.textLink { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 2.875rem; font-size: 0.875rem; font-weight: 500; margin-top: 0.75rem; text-underline-offset: 0.2em; }
+.faq { border-top: 0; padding-top: 0; }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-child { border-bottom: 1px solid var(--rule); }
+.faq summary { align-items: center; cursor: pointer; display: flex; gap: 1rem; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; line-height: 1.5; list-style: none; min-height: 3.5rem; padding: 0.85rem 0; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary span { color: var(--accent); font-size: 1.5rem; font-weight: 400; flex-shrink: 0; }
+.faq details[open] summary span { transform: rotate(45deg); }
+.faq details p { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; margin: 0 0 1.25rem; }
+.enquirySection h2 { margin-top: 0.75rem; }
+.requiredNotice { color: var(--muted); font-size: 0.875rem; line-height: 1.65; margin: 0 0 1.25rem; }
+.enquiryForm { min-width: 0; }
+.enquiryForm form { display: grid; gap: 1.15rem; }
+.fieldRow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
+.field { display: grid; gap: 0.5rem; font-size: 0.9375rem; line-height: 1.5; min-width: 0; }
+.field input, .field select, .field textarea { background: #fff; border: 1px solid rgb(10 10 10 / 28%); border-radius: 0.65rem; color: var(--ink); font-family: inherit; font-size: 1rem; min-height: 2.875rem; min-width: 0; padding: 0.7rem; width: 100%; }
+.field textarea { resize: vertical; }
+.optional { color: var(--muted); font-size: 0.8125rem; }
+.dateGroup { display: grid; gap: 0.5rem; }
+.checkboxRow { display: flex; align-items: center; gap: 0.65rem; min-height: 2.875rem; font-size: 0.9375rem; line-height: 1.5; }
+.checkboxRow input { accent-color: var(--accent); width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
+.page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .page input:focus-visible, .page select:focus-visible, .page textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 55rem) {
+  .kindGrid { grid-template-columns: 1fr; }
+  .sectionIntro, .quoteSection, .faq, .enquirySection { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+@media (max-width: 40rem) {
+  .page main { padding-inline: 1rem; padding-bottom: 3.5rem; }
+  .hero { padding-top: 1.5rem; }
+  .breadcrumb ol { margin-bottom: 2rem; }
+  .section { margin-top: 3rem; }
+  .relatedGrid, .fieldRow { grid-template-columns: 1fr; }
+  .quoteSection, .enquirySection { padding-top: 2rem; }
+}
+@media (max-width: 30rem) {
+  .actions > a, .actions > div { width: 100%; }
+  .actions > div > button { width: 100%; }
+}

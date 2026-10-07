@@ -446,9 +446,9 @@ export function HomegroundFooter({
         <p>
           {sectionLabels.operatorPrefix}{" "}
           <Link href={businessPath} lang="zh-Hans">
-            {homegroundBusiness.publicName}
+            {homegroundBusiness.publicName}{locale === "en" ? sectionLabels.operatorSuffix : ""}
           </Link>
-          {sectionLabels.operatorSuffix}
+          {locale !== "en" ? sectionLabels.operatorSuffix : null}
           <span>
             {sectionLabels.codeLabel}:{" "}
             {homegroundBusiness.unifiedSocialCreditCode}

@@ -37,6 +37,6 @@ test("attraction guides show the booking offer after their first section, and cl
   assert.match(page, /afterIndex: guideContentEndIndex\(body\),\s*node: <GuideServiceCta[^>]*position="inline"/u);
   assert.match(renderer, /interstitials\?: readonly \{ afterIndex: number; node: ReactNode \}\[\]/u);
   assert.match(location, /export type GuideCtaTarget = "private_tour" \| "service" \| "planner" \| "other";/u);
-  assert.match(location, /services\\\/\(\?:private-english-speaking-guides\|china-attraction-reservations\)\\\/\$\/u\.test\(url\.pathname\)\) return "service"/u);
+  assert.match(location, /services\\\/\(\?:private-english-speaking-guides\|china-attraction-reservations\|private-car-and-driver\)\\\/\$\/u\.test\(url\.pathname\)\) return "service"/u);
   assert.match(analytics, /value === "service"/u);
 });

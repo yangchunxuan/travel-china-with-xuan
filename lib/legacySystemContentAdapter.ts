@@ -28,6 +28,8 @@ import { attractionReservationPath } from "./attractionReservations";
 import { getAttractionReservationCopy } from "./attractionReservationsI18n";
 import { privateGuideCities, privateGuideServicePath } from "./privateGuideServices";
 import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
+import { privateCarServicePath } from "./privateCarServices";
+import { getPrivateCarServiceCopy } from "./privateCarServicesI18n";
 import { fullTripSupportPath } from "./fullTripSupport";
 import { getFullTripSupportCopy } from "./fullTripSupportI18n";
 import { travelInspirationPath, travelInspirationThemePath, travelInspirationThemes } from "./travelInspiration";
@@ -432,9 +434,26 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     primaryIntent: "compare",
   }));
 
+  const privateCarNode: ContentNode = {
+    id: "private-car-and-driver", section: "services", family: "service",
+    primaryIntent: "purchase", entityIds: ["country-china"], relationIds: [],
+    parentContentId: "hub-services", status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions("private-car-and-driver", Object.fromEntries(locales.map((locale) => {
+      const copy = getPrivateCarServiceCopy(locale);
+      return [locale, { path: privateCarServicePath[locale], title: copy.metadata.title,
+        description: copy.metadata.description, h1: copy.h1 }];
+    }))),
+    factIds: [], sourceIds: [], mediaIds: [],
+    schemaTypes: ["WebPage", "Service", "FAQPage", "BreadcrumbList"],
+    legacyAliases: [], dates: {},
+    updatePolicy: { volatility: "medium", refreshCadence: "quarterly", owner: "homeground-platform" },
+  };
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
+    privateCarNode,
     ...inspirationNodes,
     ...sightNodes,
     ...tourCollectionNodes,

@@ -61,6 +61,7 @@ async function loadComponent(path, overrides = {}, window) {
   };
   vm.runInNewContext(code, {
     module, exports: module.exports, window, URL, URLSearchParams,
+    process: { env: {} },
     require(id) {
       if (id.endsWith(".module.css")) return { __esModule: true, default: new Proxy({}, { get: (_, key) => key }) };
       if (!(id in modules)) throw new Error(`Unexpected component dependency: ${id}`);
@@ -354,7 +355,7 @@ test("server-rendered homepage labels and detail price controls share the starti
   }
 });
 
-test("Jiangnan comparison preserves the selected party and the other-size quote stays unpriced", async () => {
+test("Jiangnan comparison and both inquiry actions preserve the selected party and package", async () => {
   const selection = await loadComponent("components/PrivateTourSelection.tsx");
   const comparison = await loadComponent("components/JiangnanTourComparison.tsx", { "./PrivateTourSelection": selection });
   const priceScope = await loadComponent("components/TourPriceScope.tsx");
@@ -379,8 +380,70 @@ test("Jiangnan comparison preserves the selected party and the other-size quote 
     assert.equal(inquiry.getPrivateTourDetailSelectionFromSearchParams(target, targetUrl.searchParams)?.travelers, travelers);
     const quoteLinks = links.map(href => new URL(href, "https://homegroundchina.com")).filter(url => url.searchParams.get("tour") === origin);
     assert.equal(quoteLinks.length, 2);
-    assert.equal(quoteLinks.filter(url => inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection?.travelers === travelers).length, 1);
-    assert.equal(quoteLinks.filter(url => inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection === undefined).length, 1);
+    for (const url of quoteLinks) {
+      assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection, chosen);
+    }
+  }
+});
+
+test("published price-console inquiry actions retain each selected package and party, including Japanese contact drafts", async () => {
+  const selection = await loadComponent("components/PrivateTourSelection.tsx");
+  const priceScope = await loadComponent("components/TourPriceScope.tsx");
+  const japaneseContact = await loadComponent("components/JapaneseJiangnanInteraction.tsx", {
+    "./PrivateTourSelection": selection,
+    "../lib/japaneseContactFlow": {
+      japaneseDirectWhatsAppEnabled: () => true,
+      openJapaneseContact: () => false,
+    },
+  });
+  const { japaneseTourContactHrefs } = await loadComponent("lib/japaneseTourContact.ts", {
+    "./homegroundBusiness": { homegroundBusiness: { serviceEmail: "test@example.invalid" } },
+  });
+  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", {
+    "./PrivateTourSelection": selection,
+    "./TourPriceScope": priceScope,
+    "./JapaneseJiangnanInteraction": japaneseContact,
+  });
+  for (const sourceProduct of privateTourProducts) for (const option of sourceProduct.packages) for (const row of option.prices) {
+    const chosen = { packageId: option.id, travelers: row.travelers };
+    for (const locale of locales) {
+      const product = localizePrivateTourProduct(sourceProduct, locale);
+      const homePath = locale === "en" ? "/" : "/" + locale + "/";
+      const inquiryHref = inquiry.buildPrivateTourInquiryHref(homePath, product.slug, "private_tour_product");
+      const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
+        slug: product.slug, initialSelection: chosen,
+      }, React.createElement(interactive.ShanghaiJiangnanPriceConsole, { product, inquiryHref })));
+      const quoteUrls = nodes(parse(html)).filter(node => node.tagName === "a")
+        .map(node => new URL(attr(node, "href"), "https://homegroundchina.com"))
+        .filter(url => url.searchParams.get("tour") === product.slug);
+      assert.equal(quoteUrls.length, 2, locale + ":" + product.slug + " keeps both inquiry actions");
+      for (const url of quoteUrls) {
+        assert.equal(url.pathname, homePath);
+        assert.equal(url.hash, "#planner-contact");
+        assert.equal(url.searchParams.get("utm_source"), "private_tour_product");
+        assert.equal(url.searchParams.get("utm_medium"), "website");
+        assert.equal(url.searchParams.get("utm_campaign"), product.slug);
+        assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection, chosen);
+      }
+    }
+    if (![beijingSlug, "shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"].includes(sourceProduct.slug)) continue;
+    const product = { ...localizePrivateTourProduct(sourceProduct, "en"), path: "/ja/tours/" + sourceProduct.slug + "/" };
+    const hrefs = japaneseTourContactHrefs(product);
+    const japaneseCopy = {
+      choosePackage: "プラン", chooseGroup: "人数", publishedPrice: "料金",
+      perPerson: "1名あたり", groupUnit: "名", privateTour: "プライベートツアー",
+      checkDates: "日程を確認", otherGroups: "別の人数", otherGroupsBody: "条件を確認します",
+      requestQuote: "日本語で相談する", emailLabel: "メール",
+    };
+    const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
+      slug: product.slug, initialSelection: chosen,
+    }, React.createElement(interactive.ShanghaiJiangnanPriceConsole, {
+      product, inquiryHref: product.path + "#contact", japaneseCopy, japaneseContactHrefs: hrefs,
+    })));
+    const contactHrefs = nodes(parse(html)).filter(node => node.tagName === "a").map(node => attr(node, "href"));
+    const key = option.id + ":" + row.travelers;
+    assert.deepEqual(contactHrefs, [hrefs.whatsapp[key], hrefs.email[key], hrefs.whatsapp[key]],
+      "Japanese primary, email and secondary drafts retain " + product.slug + ":" + key);
   }
 });
 
