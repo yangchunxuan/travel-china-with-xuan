@@ -17,6 +17,7 @@ export type HomegroundPrimaryNavigationId =
 export type HomegroundServiceNavigationId =
   | "attraction-tickets"
   | "english-guides"
+  | "private-car"
   | "trip-support";
 
 /**
@@ -100,6 +101,7 @@ export const homegroundPrimaryNavigationIds = [
 export const homegroundServiceNavigationIds = [
   "attraction-tickets",
   "english-guides",
+  "private-car",
   "trip-support",
 ] as const satisfies readonly HomegroundServiceNavigationId[];
 
@@ -139,7 +141,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       },
       services: {
         label: "Services",
-        description: "Attraction tickets, English-speaking guides and full-trip support",
+        description: "Attraction tickets, guides, private cars and full-trip support",
         pathSegment: "services/full-trip-support/",
       },
       guides: {
@@ -163,6 +165,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         label: "Private English-speaking Guides",
         description: "One guide by the day, in four cities",
         pathSegment: "services/private-english-speaking-guides/",
+      },
+      "private-car": {
+        label: "Private Car & Driver",
+        description: "Airport transfers and private car days",
+        pathSegment: "services/private-car-and-driver/",
       },
       "trip-support": {
         label: "Full Trip Planning & Ground Support",
@@ -246,7 +253,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       },
       services: {
         label: "服务",
-        description: "景点代预约、英文导游与全程规划支持",
+        description: "景点代预约、导游、包车与全程规划支持",
         pathSegment: "services/full-trip-support/",
       },
       guides: {
@@ -270,6 +277,11 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         label: "私人英文导游",
         description: "上海、北京、西安、张家界，按天预订",
         pathSegment: "services/private-english-speaking-guides/",
+      },
+      "private-car": {
+        label: "包车与接送",
+        description: "机场、车站接送和包车出行",
+        pathSegment: "services/private-car-and-driver/",
       },
       "trip-support": {
         label: "全程规划与落地支持",
@@ -358,7 +370,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       },
       services: {
         label: "서비스",
-        description: "관광지 예약 대행, 영어 가이드, 전체 여행 지원",
+        description: "관광지 예약 대행, 가이드, 차량과 전체 여행 지원",
         pathSegment: "services/full-trip-support/",
       },
       guides: {
@@ -379,9 +391,14 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
         pathSegment: "services/china-attraction-reservations/",
       },
       "english-guides": {
-        label: "프라이빗 영어 가이드",
+        label: "프라이빗 한국어 가이드",
         description: "상하이·베이징·시안·장가계, 하루 단위 예약",
         pathSegment: "services/private-english-speaking-guides/",
+      },
+      "private-car": {
+        label: "차량·기사 및 픽업·샌딩",
+        description: "공항·역 이동과 프라이빗 차량 일정",
+        pathSegment: "services/private-car-and-driver/",
       },
       "trip-support": {
         label: "전체 여행 설계 및 현지 지원",

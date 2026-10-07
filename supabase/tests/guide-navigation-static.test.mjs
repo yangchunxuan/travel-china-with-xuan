@@ -40,7 +40,7 @@ test("global navigation keeps one distinct five-item information architecture", 
     "관광지 예약 대행",
     "English-speaking Guides",
     "私人英文导游",
-    "프라이빗 영어 가이드",
+    "프라이빗 한국어 가이드",
     "Travel Advice",
     "实用指南",
     "실용 가이드",
@@ -194,7 +194,7 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
     source("lib/homegroundNavigationModel.ts"),
   ]);
   // One header slot for all services; new services join the list, not the header.
-  assert.match(model, /homegroundServiceNavigationIds = \[\s*"attraction-tickets",\s*"english-guides",\s*"trip-support",\s*\]/);
+  assert.match(model, /homegroundServiceNavigationIds = \[\s*"attraction-tickets",\s*"english-guides",\s*"private-car",\s*"trip-support",\s*\]/);
   // Full-trip support has its own page.
   assert.match(model, /pathSegment: "services\/full-trip-support\/"/);
   // Every item with a menu (Destinations, Services) renders the same component.

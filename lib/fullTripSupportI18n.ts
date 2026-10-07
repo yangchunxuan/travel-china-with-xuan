@@ -122,7 +122,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       ground: { title: "On-the-ground coordination", body: "The providers in your proposal, coordinated while you are in China" },
     },
     pickTitle: "Choose only the parts you need.",
-    compareLink: "Only need tickets or a guide? Compare services",
+    compareLink: "Only need tickets, a guide or a car? Compare services",
     pickBody: "You do not have to hand over everything. Pick what you want help with and do the rest yourself; the proposal says what we are responsible for and what is outside the scope.",
     stepsTitle: "How it works",
     steps: [
@@ -147,7 +147,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     compareTitle: "Which service fits?",
     compare: {
       tours: { title: "Private tours", body: "A route we have already designed, with public starting prices and a clear day-by-day plan.", action: "See private tours" },
-      single: { title: "Single services", body: "You only need attraction reservations or an English-speaking guide for a day.", tickets: "Attraction reservations", guides: "Private English-speaking guides" },
+      single: { title: "Single services", body: "You only need attraction reservations, a guide for a day or a private car and driver.", tickets: "Attraction reservations", guides: "Private English-speaking guides" },
       full: { title: "Full Trip Planning & Ground Support", body: "Your dates and your route, with the services you choose, quoted for your trip.", badge: "This page", action: "Send your trip brief" },
     },
     faqTitle: "Questions about full-trip support",
@@ -227,7 +227,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       ground: { title: "落地协调", body: "你在中国期间，协调方案里的各项安排" },
     },
     pickTitle: "需要哪部分，就交哪部分。",
-    compareLink: "只要门票或导游？比较各项服务",
+    compareLink: "只要门票、导游或包车？比较各项服务",
     pickBody: "其余的你自己安排；方案里会写清哪些由我们负责、哪些不在范围内。",
     stepsTitle: "服务流程",
     steps: [
@@ -252,7 +252,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     compareTitle: "该选哪一种？",
     compare: {
       tours: { title: "私家团", body: "我们已经设计好的路线，公开起价，每天怎么走写得清楚。", action: "查看私家团" },
-      single: { title: "单项服务", body: "只需要景点代预约，或一天的英文导游。", tickets: "景点代预约", guides: "私人英文导游" },
+      single: { title: "单项服务", body: "只需要景点代预约、一天的英文导游，或包车与接送。", tickets: "景点代预约", guides: "私人英文导游" },
       full: { title: "全程规划与落地支持", body: "你的日期、你的路线，按需组合服务，单独报价。", badge: "本页", action: "说说你的行程" },
     },
     faqTitle: "关于全程支持的问题",
@@ -332,7 +332,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       ground: { title: "현지 일정 조율", body: "중국에 계시는 동안 제안서에 담긴 각 서비스를 조율" },
     },
     pickTitle: "필요한 부분만 맡기세요.",
-    compareLink: "입장권이나 가이드만 필요하세요? 서비스 비교하기",
+    compareLink: "입장권, 가이드 또는 차량만 필요하세요? 서비스 비교하기",
     pickBody: "전부 맡기지 않아도 됩니다. 도움이 필요한 부분만 고르고 나머지는 직접 준비하셔도 됩니다. 제안서에 저희가 책임지는 부분과 범위 밖인 부분을 적어 드립니다.",
     stepsTitle: "진행 방식",
     steps: [
@@ -357,7 +357,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     compareTitle: "어떤 서비스가 맞을까요?",
     compare: {
       tours: { title: "프라이빗 투어", body: "이미 설계된 일정으로, 공개 시작가와 일자별 계획이 정리되어 있습니다.", action: "프라이빗 투어 보기" },
-      single: { title: "개별 서비스", body: "관광지 예약 대행이나 하루 영어 가이드만 필요할 때 이용하세요.", tickets: "관광지 예약 대행", guides: "프라이빗 영어 가이드" },
+      single: { title: "개별 서비스", body: "관광지 예약 대행, 하루 가이드 또는 차량·기사 서비스만 필요할 때 이용하세요.", tickets: "관광지 예약 대행", guides: "프라이빗 한국어 가이드" },
       full: { title: "전체 여행 설계 및 현지 지원", body: "내 날짜와 동선에 필요한 서비스만 골라 맞춤 견적을 받습니다.", badge: "현재 페이지", action: "여행 요청 보내기" },
     },
     faqTitle: "전체 여행 지원, 자주 묻는 질문",

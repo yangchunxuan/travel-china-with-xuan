@@ -613,6 +613,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
       assert.equal(location.guideCtaTarget(`${prefix}?planner=destinations#route-finder`), "planner");
       assert.equal(location.guideCtaTarget(`${prefix}tours/unknown-private-text/`), "other");
       assert.equal(location.guideCtaTarget(`${prefix}guides/`), "other");
+      assert.equal(location.guideCtaTarget(`${prefix}services/private-car-and-driver/`), "service");
     }
     assert.equal(location.guideCtaTarget("https://elsewhere.example/tours/beijing-highlights-5-day-private-tour/"), "other");
     assert.equal(location.guideCtaTarget("mailto:private@example.com"), "other");

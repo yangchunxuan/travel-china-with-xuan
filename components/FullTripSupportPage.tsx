@@ -6,6 +6,8 @@ import { fullTripSupportEnquiryAnchor, fullTripSupportNeeds, fullTripSupportPath
 import { fillFullTripSupportCopy, getFullTripSupportCopy } from "../lib/fullTripSupportI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
+import { privateCarServicePath } from "../lib/privateCarServices";
+import { getPrivateCarServiceCopy } from "../lib/privateCarServicesI18n";
 import { privateGuideServicePath } from "../lib/privateGuideServices";
 import { FullTripSupportEnquiry } from "./FullTripSupportEnquiry";
 import { fullTripNeedIcons } from "./fullTripNeedIcons";
@@ -170,6 +172,7 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
                 <span className={styles.compareLinks}>
                   <Link href={attractionReservationPath[locale]}>{copy.compare.single.tickets}<ArrowRight aria-hidden="true" size={15} /></Link>
                   <Link href={privateGuideServicePath[locale]}>{copy.compare.single.guides}<ArrowRight aria-hidden="true" size={15} /></Link>
+                  <Link href={privateCarServicePath[locale]}>{getPrivateCarServiceCopy(locale).name}<ArrowRight aria-hidden="true" size={15} /></Link>
                 </span>
               </div>
             </li>

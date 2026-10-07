@@ -75,6 +75,7 @@ const lines = [
   link("/services/full-trip-support/"),
   link("/services/china-attraction-reservations/"),
   link("/services/private-english-speaking-guides/"),
+  link("/services/private-car-and-driver/"),
   link("/services/transfers-hotels-bookings/"),
   "",
   "## Destinations",
