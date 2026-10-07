@@ -31,6 +31,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Test IndexNow sitemap selection offline
+        run: node --test tools/tests/indexnow-sitemap.test.mjs
       - name: Test first-party traffic operations
         run: npm run test:traffic-ops
       - name: Test inquiry contract

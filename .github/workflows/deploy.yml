@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       indexnow_all:
-        description: "Also send every sitemap URL to IndexNow (Bing, Naver, Yandex), not only pages changed in the last two days"
+        description: "Also send every sitemap URL to IndexNow, not only new URLs and pages changed in the last two days"
         type: boolean
         default: false
 
@@ -28,7 +28,25 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Capture the previous public sitemap
+        # Only a bounded GET, before the build/deploy. A failed or invalid
+        # baseline disables new-URL comparison; it never enables a full send.
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          directory="${RUNNER_TEMP}/indexnow-sitemaps"
+          mkdir -p "$directory"
+          if curl --fail --silent --show-error --connect-timeout 10 --max-time 30 \
+            --max-filesize 10485760 --proto '=https' \
+            --output "$directory/baseline.tmp" https://homegroundchina.com/sitemap.xml; then
+            mv "$directory/baseline.tmp" "$directory/baseline.xml"
+          else
+            rm -f "$directory/baseline.tmp" "$directory/baseline.xml"
+            echo "Previous sitemap unavailable; recent-lastmod selection remains available."
+          fi
       - run: npm ci
+      - name: Test IndexNow sitemap selection offline
+        run: node --test tools/tests/indexnow-sitemap.test.mjs
       - name: Test first-party traffic operations
         run: npm run test:traffic-ops
       - name: Test inquiry contract
@@ -87,6 +105,22 @@ jobs:
         run: npm run check:ten-day-guide-export
       - name: Check priority indexable exports
         run: npm run check:indexable-export
+      - name: Prepare IndexNow sitemap comparison
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          directory="${RUNNER_TEMP}/indexnow-sitemaps"
+          mkdir -p "$directory"
+          cp tools/indexnow_sitemap.py "$directory/indexnow_sitemap.py"
+          cp out/sitemap.xml "$directory/sitemap.xml"
+      - name: Save IndexNow files for the deployment job
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: indexnow-sitemaps
+          path: ${{ runner.temp }}/indexnow-sitemaps
+          if-no-files-found: warn
+          retention-days: 1
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: out
@@ -128,37 +162,34 @@ jobs:
           purge_cache
           sleep 60
           purge_cache
+      - name: Download the build's IndexNow files
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: indexnow-sitemaps
+          path: ${{ runner.temp }}/indexnow-sitemaps
       - name: Tell IndexNow which pages changed
-        # Bing (which ChatGPT search and Copilot use), Naver, Yandex and Seznam share
-        # IndexNow, so one request reaches all of them. The key is public by design:
-        # it is served at /df33475b7eb248a2bbaa8ff8d55d0b5a.txt. A failure here never fails the deployment.
+        # Use the validated build sitemap, not a possibly stale CDN copy. The
+        # previous live sitemap supplies new-URL detection without inventing
+        # lastmod dates. IndexNow receipt is not proof of crawling or indexing.
+        # The key is public by design; a failure never fails the deployment.
         continue-on-error: true
         env:
           INDEXNOW_KEY: df33475b7eb248a2bbaa8ff8d55d0b5a
           SUBMIT_ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.indexnow_all && 'true' || 'false' }}
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error https://homegroundchina.com/sitemap.xml > sitemap.xml
-          python3 - <<'PY' > indexnow.json
-          import datetime, json, os, re
-          xml = open("sitemap.xml", encoding="utf-8").read()
-          since = (datetime.datetime.now(datetime.timezone.utc).date() - datetime.timedelta(days=2)).isoformat()
-          everything = os.environ["SUBMIT_ALL"] == "true"
-          urls = []
-          for block in re.findall(r"<url>(.*?)</url>", xml, re.S):
-              loc = re.search(r"<loc>([^<]+)</loc>", block)
-              lastmod = re.search(r"<lastmod>([^<]+)</lastmod>", block)
-              if loc and (everything or (lastmod and lastmod.group(1)[:10] >= since)):
-                  urls.append(loc.group(1).strip())
-          key = os.environ["INDEXNOW_KEY"]
-          print(json.dumps({"host": "homegroundchina.com", "key": key, "keyLocation": f"https://homegroundchina.com/{key}.txt", "urlList": urls[:10000]}))
-          PY
+          directory="${RUNNER_TEMP}/indexnow-sitemaps"
+          python3 "$directory/indexnow_sitemap.py" \
+            --current "$directory/sitemap.xml" --baseline "$directory/baseline.xml" \
+            --as-of "$(date -u +%F)" --key "$INDEXNOW_KEY" --submit-all "$SUBMIT_ALL" > indexnow.json
           count="$(jq '.urlList | length' indexnow.json)"
           if [ "$count" -eq 0 ]; then
-            echo "No sitemap URL changed in the last two days; nothing to send."
+            echo "No new or recently modified canonical sitemap URL; nothing to send."
             exit 0
           fi
-          status="$(curl --silent --show-error --output indexnow-response.txt --write-out '%{http_code}' \
+          status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 \
+            --output indexnow-response.txt --write-out '%{http_code}' \
             --request POST --url https://api.indexnow.org/indexnow \
             --header 'Content-Type: application/json; charset=utf-8' --data @indexnow.json)"
           echo "IndexNow answered HTTP ${status} for ${count} URL(s)."
