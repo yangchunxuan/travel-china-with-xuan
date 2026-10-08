@@ -111,7 +111,7 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
   });
   assert.deepEqual(forest?.dates, {
     datePublished: "2026-08-31",
-    dateModified: "2026-09-24",
+    dateModified: "2026-10-08",
     lastReviewed: "2026-08-31",
   });
 
@@ -119,7 +119,9 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
     "zhangjiajie-4-day-private-tour",
   );
   assert.equal(classic.datePublished, "2026-08-16");
-  assert.equal(classic.dateModified, "2026-09-23");
+  assert.equal(classic.dateModified, "2026-10-08");
   assert.equal(classic.lastReviewed, "2026-08-16");
-  assert.equal(classic.evidence.commit, "166e4ad247e50c4dfe3d9f6185a1411537cb7982");
+  assert.equal(classic.evidence.commit, "e288c0499661ad735e2788df87ab9866bfcdc239");
+  const towns = nodes.find(node => node.locales.en?.path === "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/");
+  assert.equal(towns?.dates.dateModified, "2026-10-08");
 });

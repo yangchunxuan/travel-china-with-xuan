@@ -3125,7 +3125,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     },
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-24",
+  dateModified: "2026-10-08",
   lastReviewed: "2026-08-31",
   faq: [
     {
@@ -3628,7 +3628,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-26",
+  dateModified: "2026-10-08",
   lastReviewed: "2026-09-20",
 };
 
@@ -3636,12 +3636,13 @@ function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
   const additions = privateTourAdditionalMediaBySlug[product.slug];
   const scenes = privateTourSceneMediaBySlug[product.slug];
   if (!additions?.length && !scenes?.length) return withPrivateTourPhotoQuality(product);
+  const mediaModified = scenes?.length ? "2026-10-04" : "2026-09-28";
   return withPrivateTourPhotoQuality({
     ...product,
     routeMedia: mergePrivateTourRouteMedia([
       ...(product.routeMedia ?? []), ...(additions ?? []), ...(scenes ?? []),
     ]),
-    dateModified: scenes?.length ? "2026-10-04" : "2026-09-28",
+    dateModified: product.dateModified > mediaModified ? product.dateModified : mediaModified,
   });
 }
 
