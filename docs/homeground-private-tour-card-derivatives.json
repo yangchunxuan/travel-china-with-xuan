@@ -770,6 +770,38 @@
         "1380x863"
       ],
       "familySha256": "cbb7e384d7cc0d180c9fbd24cccefae5665f23f17a2d367f0f55f060d5f5922b"
+    },
+    {
+      "productId": "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+      "sourcePath": "public/images/home/hangzhou-1600.jpg",
+      "sourceSha256": "c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/home/hangzhou-1600.jpg",
+      "rightsEvidenceNeedle": "City photograph supplied by the project owner for Homeground website use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "eeedffb343e91f26cb029adecedb5d384e4f05b2b95cc2fe730d86970ddcf8a8"
+    },
+    {
+      "productId": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+      "sourcePath": "public/images/guides/beijing-to-mutianyu-great-wall-transfer/hero-1600.webp",
+      "sourceSha256": "d010e2403207a01478b9bcea95b27bea40a4634b15287f7458f095158b8f2af7",
+      "rightsBasis": "Wikimedia Commons, Lloyd Tudor, CC BY-SA 4.0; derivative crop shared under CC BY-SA 4.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "The Mutianyu section of the Great Wall of China",
+      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "c309cacdead597d5d429fa94f0680df50503e6ebdf340d8f5815e2f3950b5b46"
     }
   ]
 }

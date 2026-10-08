@@ -44,6 +44,7 @@ export const guideProductMarketForecast = {
   // of the pool for whole-China guides with no destination signal; the other
   // long-haul routes are reached through curated links and product pages.
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": 10,
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": 0,
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": 0,
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": 0,
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": 0,
@@ -56,6 +57,7 @@ export const guideProductMarketForecast = {
   "beijing-xian-silk-road-15-day-small-group-tour": 0,
   "beijing-xian-guilin-shanghai-10-day-private-tour": 8,
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": 0,
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": 0,
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": 0,
   "beijing-xian-shanghai-8-day-private-tour": 6,
   "beijing-xian-guilin-hong-kong-10-day-private-tour": 3,
@@ -218,6 +220,7 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
     topics: ["first-trip", "multi-city"],
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": { destinations: [] },
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": { destinations: [] },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": { destinations: [] },
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": { destinations: [] },
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": { destinations: [] },
@@ -230,6 +233,7 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": { destinations: [] },
   "beijing-xian-guilin-shanghai-10-day-private-tour": { destinations: [] },
   "beijing-hangzhou-suzhou-shanghai-11-day-private-tour": { destinations: [] },
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": { destinations: [] },
   "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour": { destinations: [] },
   "beijing-xian-shanghai-8-day-private-tour": { destinations: [] },
   "beijing-xian-guilin-hong-kong-10-day-private-tour": { destinations: [] },

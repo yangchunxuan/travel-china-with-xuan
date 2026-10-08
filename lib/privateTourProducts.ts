@@ -8,6 +8,10 @@ import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhas
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { jiangnanArtPrivateTour } from "./privateTourJiangnanArtProduct.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { fiveCityPrivateTour } from "./privateTourFiveCityProduct.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -3662,6 +3666,8 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
     ...privateTourLongHaulProducts,
+    jiangnanArtPrivateTour,
+    fiveCityPrivateTour,
   ].map(withAdditionalMedia),
 );
 

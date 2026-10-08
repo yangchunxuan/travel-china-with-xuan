@@ -16,6 +16,8 @@ import { privateTourExpansionProfiles } from "./privateTourExpansionProfiles.ts"
 import { privateTourExpansionPhaseTwoProfiles } from "./privateTourExpansionPhaseTwoProfiles.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { privateTourLongHaulProfiles } from "./privateTourLongHaulProfiles.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { privateTourClientInspiredProfiles } from "./privateTourClientInspiredProfiles.ts";
 
 type LocalizedText = Readonly<Record<HomegroundLocale, string>>;
 
@@ -337,6 +339,7 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
   ...privateTourExpansionProfiles,
   ...privateTourExpansionPhaseTwoProfiles,
   ...privateTourLongHaulProfiles,
+  ...privateTourClientInspiredProfiles,
 };
 
 const zhangjiajieContentLocale = {
