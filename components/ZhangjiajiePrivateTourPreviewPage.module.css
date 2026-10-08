@@ -608,7 +608,8 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 1.5rem;
+  padding: 3.25rem 1.5rem 1.5rem;
+  position: relative;
 }
 
 .priceCard:last-child {
@@ -617,79 +618,120 @@
 
 .priceCardFeatured {
   background: var(--hg-color-soft);
+  box-shadow: inset 0 3px 0 var(--hg-color-dark-rust);
 }
 
+/* Sits in the card's top padding so every stay name starts on one line. */
 .featuredLabel {
+  background: var(--hg-color-rust-soft);
+  border-radius: 999px;
   color: var(--hg-color-dark-rust);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 760;
+  inset-block-start: 1.3rem;
+  inset-inline-start: 1.5rem;
   letter-spacing: 0.07em;
-  margin-block-end: 1.25rem;
+  line-height: 1.4;
+  padding: 0.2rem 0.65rem;
+  position: absolute;
   text-transform: uppercase;
 }
 
+.featuredLabel:is(:lang(zh), :lang(ko)) {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.stayHeader {
+  padding-block-end: 1.25rem;
+}
+
+.stayHeader h3 {
+  font-size: 1.12rem;
+}
+
+.stayDescription {
+  color: var(--hg-color-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+.priceBlock {
+  border-block-start: 1px solid var(--hg-color-line);
+  padding-block: 1.15rem 1rem;
+}
+
 .priceValue {
-  display: grid;
-  gap: 0.25rem;
-  margin: 1.75rem 0 0;
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  margin: 0;
 }
 
 .priceValue > span,
 .priceValue > small {
   color: var(--hg-color-muted);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
 }
 
 .priceValue > strong {
   font-family: var(--hg-editorial);
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-size: clamp(2rem, 3vw, 2.6rem);
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1;
+}
+
+.priceGroup {
+  color: var(--hg-color-muted);
+  font-size: 0.78rem;
+  margin: 0.5rem 0 0;
 }
 
 .regularPrice {
   color: var(--hg-color-dark-rust);
   font-size: 0.8rem;
   font-weight: 700;
-  margin: 0.65rem 0 0;
+  margin: 0.3rem 0 0;
 }
 
-.priceGroup {
-  color: var(--hg-color-muted);
-  font-size: 0.76rem;
-  margin: 0.45rem 0 0;
+.sixPersonBlock {
+  border-block-start: 1px solid var(--hg-color-line);
+  padding-block: 0.95rem 1.25rem;
 }
 
 .sixPersonRate {
   align-items: baseline;
-  border-block-start: 1px solid var(--hg-color-line);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.6rem;
-  margin: 1rem 0 0;
-  padding-block-start: 1rem;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
 }
 
 .sixPersonRate > span,
 .sixPersonRate > small {
   color: var(--hg-color-muted);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
 }
 
 .sixPersonRate > strong {
   font-family: var(--hg-editorial);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 500;
+  line-height: 1.1;
 }
 
 .sixPersonInquiry {
   color: var(--hg-color-dark-rust);
+  display: inline-block;
   font-size: 0.8rem;
   font-weight: 700;
-  margin-block: 0.65rem 1rem;
+  margin-block-start: 0.55rem;
   position: relative;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
 
@@ -699,16 +741,88 @@
   position: absolute;
 }
 
+.sixPersonInquiry:hover {
+  color: var(--hg-color-rust);
+}
+
 .sixPersonInquiry:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
 
+.stayActions {
+  margin-block-start: auto;
+  padding-block-end: 1.1rem;
+}
+
+.stayActions:empty {
+  display: none;
+}
+
+.stayInquiry {
+  align-items: center;
+  border: 1px solid var(--hg-color-ink);
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: var(--hg-color-ink);
+  display: flex;
+  font-size: 0.86rem;
+  font-weight: 650;
+  gap: 0.5rem;
+  justify-content: center;
+  line-height: 1.3;
+  min-block-size: 2.75rem;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+  width: 100%;
+}
+
+.stayInquiry svg {
+  flex: none;
+  transition: transform 160ms ease;
+}
+
+.stayInquiry:hover {
+  background: var(--hg-color-ink);
+  color: var(--hg-color-card);
+}
+
+.stayInquiry:hover svg {
+  transform: translateX(2px);
+}
+
+.stayInquiry:focus-visible {
+  outline: 2px solid var(--hg-color-rust);
+  outline-offset: 3px;
+}
+
+.priceCardFeatured .stayInquiry {
+  background: var(--hg-color-ink);
+  color: var(--hg-color-card);
+}
+
+.priceCardFeatured .stayInquiry:hover {
+  background: #333;
+}
+
 .confirmationLine {
   border-block-start: 1px solid var(--hg-color-line);
-  font-size: 0.78rem;
-  margin-block-start: auto;
-  padding-block-start: 1rem;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-block-start: 0.9rem;
+}
+
+/* The three stays share rows, so prices, six-person rates and actions line up. */
+@supports (grid-template-rows: subgrid) {
+  .priceCard {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
 }
 
 .priceFootnote {
@@ -979,8 +1093,104 @@
     grid-template-columns: 1fr;
   }
 
+  /* One stay per row: base and six-person prices side by side, action below. */
   .priceCard {
     border-inline-end: 0;
+    column-gap: 1rem;
+    display: grid;
+    grid-row: auto;
+    grid-template-areas:
+      "header header"
+      "price six"
+      "actions actions"
+      "confirm confirm";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: none;
+    padding: 1.4rem 1.25rem 1.25rem;
+  }
+
+  .featuredLabel {
+    align-self: start;
+    display: inline-block;
+    margin-block-end: 0.75rem;
+    position: static;
+  }
+
+  .stayHeader {
+    grid-area: header;
+  }
+
+  .priceBlock {
+    grid-area: price;
+  }
+
+  .sixPersonBlock {
+    grid-area: six;
+  }
+
+  .stayActions {
+    grid-area: actions;
+  }
+
+  .confirmationLine {
+    grid-area: confirm;
+  }
+
+  /* Both columns read the same way: party size, price, per person. */
+  .priceBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .priceGroup {
+    margin: 0 0 0.2rem;
+    order: -1;
+  }
+
+  .priceValue,
+  .sixPersonRate {
+    align-items: start;
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .priceGroup,
+  .sixPersonRate > span {
+    color: var(--hg-color-muted);
+    font-size: 0.78rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .priceValue > span {
+    line-height: 1.4;
+  }
+
+  .priceValue > strong {
+    font-size: 2rem;
+  }
+
+  .sixPersonRate > strong {
+    font-size: 1.6rem;
+  }
+
+  /* Keeps the six-person price level with a base price that has a "From" line. */
+  .priceCard:has(.priceValue > span) .sixPersonRate > strong {
+    margin-block-start: calc(0.74rem * 1.4 + 0.2rem);
+  }
+
+  .sixPersonRate > small {
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+
+  .sixPersonInquiry {
+    text-wrap: balance;
+  }
+
+  .priceBlock,
+  .sixPersonBlock {
+    padding-block: 1.1rem 1rem;
   }
 }
 
