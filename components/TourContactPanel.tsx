@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Mail, MessageCircle, X } from "lucide-react";
+import { ArrowRight, BedDouble, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, getPrivateTourInquiryContextFromSearchParams, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, privateTourInquiryStayPreference, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
@@ -269,7 +269,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
           {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale={locale} headingId={`${id}-title`} headingRef={titleRef}><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></InquiryReceipt> : <>
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.title}</h2>
             <p className={styles.intro}>{context ? enabled ? directText.intro : text.unavailable : text.guideBody}</p>
-            {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}{stayLabel ? <p>{locale === "zh" ? "住宿偏好（待确认）" : locale === "ko" ? "숙소 선호(확인 예정)" : "Stay preference (to confirm)"}: {stayLabel}</p> : null}</div> : null}
+            {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}{stayLabel ? <p className={styles.contextPreference}><BedDouble size={14} aria-hidden="true" /><span>{locale === "zh" ? "住宿偏好（待确认）" : locale === "ko" ? "숙소 선호(확인 예정)" : "Stay preference (to confirm)"}:</span> <strong>{stayLabel}</strong></p> : null}</div> : null}
             {!context && guideTitle ? <div className={styles.context}><span>{locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide"}</span><strong>{guideTitle}</strong></div> : null}
             {context && enabled ? <div className={styles.directFirst}>
               <div className={styles.directChoices}>

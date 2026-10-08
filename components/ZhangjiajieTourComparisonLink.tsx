@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import styles from "./ZhangjiajieTourComparisonLink.module.css";
 
@@ -88,9 +89,9 @@ export function ZhangjiajieTourComparisonLink({
       </header>
       <div className={styles.routes}>
         {routes.map((route, index) => (
-          <article className={styles.route} key={route}>
-            <header>
-              <h4>{route === currentRoute ? text.headings[index] : <Link href={paths[route][locale]}>{text.headings[index]}</Link>}</h4>
+          <article className={route === currentRoute ? `${styles.route} ${styles.currentRoute}` : styles.route} key={route}>
+            <header className={styles.routeHeader}>
+              <h4>{route === currentRoute ? text.headings[index] : <Link href={paths[route][locale]}>{text.headings[index]}<ArrowRight aria-hidden="true" size={16} strokeWidth={1.8} /></Link>}</h4>
               {route === currentRoute ? <p className={styles.current}>{text.current}</p> : null}
             </header>
             <dl className={styles.facts}>

@@ -153,45 +153,53 @@ export function ZhangjiajiePrivateTourPriceWindow({
               }`}
               key={tier.id}
             >
-              {tier.featured ? (
-                <span className={styles.featuredLabel}>{copy.featured}</span>
-              ) : null}
-              <h3>{tier.name}</h3>
-              <p className={styles.priceValue}>
-                {fromPrice ? <span>{copy.fromLabel}</span> : null}
-                <strong>{tier.formattedPrice}</strong>
-                <small>{copy.perPerson}</small>
-              </p>
-              <p className={styles.priceGroup}>{copy.baseGroupLabel}</p>
-              {regularPrice ? (
-                <p className={styles.regularPrice}>
-                  {copy.regularLabel}: {tier.formattedRegularPrice}
+              <div className={styles.stayHeader}>
+                {tier.featured ? (
+                  <span className={styles.featuredLabel}>{copy.featured}</span>
+                ) : null}
+                <h3>{tier.name}</h3>
+                <p className={styles.stayDescription}>{tier.description}</p>
+              </div>
+              <div className={styles.priceBlock}>
+                <p className={styles.priceValue}>
+                  {fromPrice ? <span>{copy.fromLabel}</span> : null}
+                  <strong>{tier.formattedPrice}</strong>
+                  <small>{copy.perPerson}</small>
                 </p>
-              ) : null}
-              <p className={styles.sixPersonRate}>
-                <span>{copy.sixPersonLabel}</span>
-                <strong>{tier.formattedSixPersonPrice}</strong>
-                <small>{copy.perPerson}</small>
-              </p>
-              {tier.sixPersonInquiryHref ? (
-                <GuideCtaLink
-                  className={styles.sixPersonInquiry}
+                <p className={styles.priceGroup}>{copy.baseGroupLabel}</p>
+                {regularPrice ? (
+                  <p className={styles.regularPrice}>
+                    {copy.regularLabel}: {tier.formattedRegularPrice}
+                  </p>
+                ) : null}
+              </div>
+              <div className={styles.sixPersonBlock}>
+                <p className={styles.sixPersonRate}>
+                  <span>{copy.sixPersonLabel}</span>
+                  <strong>{tier.formattedSixPersonPrice}</strong>
+                  <small>{copy.perPerson}</small>
+                </p>
+                {tier.sixPersonInquiryHref ? (
+                  <GuideCtaLink
+                    className={styles.sixPersonInquiry}
+                    guideId="zhangjiajie-4-day-private-tour"
+                    href={tier.sixPersonInquiryHref}
+                    locale={locale}
+                    position="inline"
+                  >
+                    {copy.sixPersonInquiryLabel}
+                  </GuideCtaLink>
+                ) : null}
+              </div>
+              <div className={styles.stayActions}>
+                {tier.groupInquiryHref ? <GuideCtaLink
+                  className={styles.stayInquiry}
                   guideId="zhangjiajie-4-day-private-tour"
-                  href={tier.sixPersonInquiryHref}
+                  href={tier.groupInquiryHref}
                   locale={locale}
                   position="inline"
-                >
-                  {copy.sixPersonInquiryLabel}
-                </GuideCtaLink>
-              ) : null}
-              {tier.groupInquiryHref ? <GuideCtaLink
-                className={styles.sixPersonInquiry}
-                guideId="zhangjiajie-4-day-private-tour"
-                href={tier.groupInquiryHref}
-                locale={locale}
-                position="inline"
-              >{locale === "zh" ? "按我的人数询问这档住宿" : locale === "ko" ? "우리 인원으로 이 숙소 문의" : "Ask for this stay with my group"}</GuideCtaLink> : null}
-              <p>{tier.description}</p>
+                >{locale === "zh" ? "按我的人数询问这档住宿" : locale === "ko" ? "우리 인원으로 이 숙소 문의" : "Ask for this stay with my group"}<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7" /></svg></GuideCtaLink> : null}
+              </div>
               <p className={styles.confirmationLine}>{copy.exactStayNote}</p>
             </article>
           );
