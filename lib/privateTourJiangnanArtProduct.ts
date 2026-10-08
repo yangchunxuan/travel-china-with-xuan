@@ -35,6 +35,28 @@ const routePhoto = (
 
 const slug = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 
+const pingjiangPhoto = photo(
+  "/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/pingjiang-road-1600.webp",
+  1600,
+  1000,
+  l("A bridge, canal and houses along Suzhou's Pingjiang Road", "苏州平江路的石桥、河道与临水民居", "쑤저우 핑장루의 다리와 운하, 물가 주택"),
+  l("A Pingjiang walk is possible if your arrival time allows.", "抵达时间合适时，可在平江路散步。", "도착 시간이 허락하면 핑장루를 걸을 수 있습니다."),
+);
+const humbleGardenPhoto = photo(
+  "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+  1600,
+  1000,
+  l("Pavilion and pond in Suzhou's Humble Administrator's Garden", "苏州拙政园的亭子与池水", "쑤저우 졸정원의 정자와 연못"),
+  l("Visit time and admission are confirmed for your travel date.", "参观时段和门票按实际出行日期确认。", "방문 시간과 입장권은 여행 날짜에 맞춰 확인합니다."),
+);
+const gongchenPhoto = photo(
+  "/images/guides/grand-canal-everyday-urban-history/hero-1600.webp",
+  1600,
+  1000,
+  l("Gongchen Bridge crossing the Grand Canal in Hangzhou", "杭州拱宸桥横跨大运河", "항저우 대운하를 가로지르는 궁천교"),
+  l("The Hangzhou canal afternoon follows Gongchen Bridge and nearby old streets.", "杭州的大运河下午从拱宸桥延伸到周边老街。", "항저우 대운하 오후 일정은 궁천교와 주변 옛 거리를 잇습니다."),
+);
+
 const westLakePhoto = photo(
   "/images/home/hangzhou-1600.jpg",
   1600,
@@ -67,6 +89,13 @@ const pudongPhoto = photo(
     "行程后段把上海老街区与浦东新城连起来看。",
     "상하이 후반 일정에서는 옛 동네와 계획적으로 개발된 푸둥의 스카이라인을 함께 봅니다.",
   ),
+);
+const museumEastPhoto = photo(
+  "/images/guides/shanghai-museum-east-entry-reservations/hero-1600.webp",
+  1600,
+  1000,
+  l("Exterior of Shanghai Museum East", "上海博物馆东馆外观", "상하이박물관 동관 외관"),
+  l("The museum galleries are self-guided or use a museum-approved interpreter.", "馆内自行参观或使用馆方批准的讲解。", "전시실은 자유 관람하거나 박물관이 승인한 해설을 이용합니다."),
 );
 
 /** The public route is adapted from a dated private proposal; prices and rooms are requoted. */
@@ -230,32 +259,15 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     "请按出行日期询价；这条路线目前没有公开固定价。提供意向日期、人数、房间配置、到离信息与行李数量后，我们核对酒店、导游、高铁及景点实时余量，在付款前书面确认具体服务和最终总价。",
     "여행 날짜별 견적을 요청해 주세요. 이 일정에는 현재 공개 고정 요금이 없습니다. 희망 날짜, 인원, 객실 구성, 도착·출발편과 짐 개수를 알려 주시면 호텔, 가이드, 열차와 관광지 예약 가능 여부를 확인한 뒤 결제 전에 서비스와 최종 가격을 서면으로 보내 드립니다.",
   ),
-  heroImage: westLakePhoto,
-  gallery: [pudongPhoto],
+  heroImage: pingjiangPhoto,
+  gallery: [humbleGardenPhoto, gongchenPhoto, westLakePhoto, bundPhoto, museumEastPhoto, pudongPhoto],
   routeMedia: [
-    routePhoto(1, l("Pingjiang Road", "平江路", "핑장루"), photo(
-      "/images/tours/shanghai-suzhou-hangzhou-6-day-private-tour/pingjiang-road-1600.webp",
-      1600,
-      1000,
-      l("A bridge, canal and houses along Suzhou's Pingjiang Road", "苏州平江路的石桥、河道与临水民居", "쑤저우 핑장루의 다리와 운하, 물가 주택"),
-      l("A Pingjiang walk is possible if your arrival time allows.", "抵达时间合适时，可在平江路散步。", "도착 시간이 허락하면 핑장루를 걸을 수 있습니다."),
-    )),
-    routePhoto(2, l("Humble Administrator's Garden", "拙政园", "졸정원"), photo(
-      "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
-      1600,
-      1000,
-      l("Pavilion and pond in Suzhou's Humble Administrator's Garden", "苏州拙政园的亭子与池水", "쑤저우 졸정원의 정자와 연못"),
-      l("Visit time and admission are confirmed for your travel date.", "参观时段和门票按实际出行日期确认。", "방문 시간과 입장권은 여행 날짜에 맞춰 확인합니다."),
-    )),
-    routePhoto(5, l("Gongchen Bridge", "拱宸桥", "궁천교"), photo(
-      "/images/guides/grand-canal-everyday-urban-history/hero-1600.webp",
-      1600,
-      1000,
-      l("Gongchen Bridge crossing the Grand Canal in Hangzhou", "杭州拱宸桥横跨大运河", "항저우 대운하를 가로지르는 궁천교"),
-      l("The Hangzhou canal afternoon follows Gongchen Bridge and nearby old streets.", "杭州的大运河下午从拱宸桥延伸到周边老街。", "항저우 대운하 오후 일정은 궁천교와 주변 옛 거리를 잇습니다."),
-    )),
+    routePhoto(1, l("Pingjiang Road", "平江路", "핑장루"), pingjiangPhoto),
+    routePhoto(2, l("Humble Administrator's Garden", "拙政园", "졸정원"), humbleGardenPhoto),
+    routePhoto(5, l("Gongchen Bridge", "拱宸桥", "궁천교"), gongchenPhoto),
     routePhoto(6, l("West Lake", "西湖", "서호"), westLakePhoto),
     routePhoto(8, l("The Bund", "外滩", "와이탄"), bundPhoto),
+    routePhoto(10, l("Shanghai Museum East", "上海博物馆东馆", "상하이박물관 동관"), museumEastPhoto),
   ],
   packages: [{
     id: "private-guided",
@@ -323,7 +335,7 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
   dateModified: "2026-10-09",
 };
 
-/** Credits for the three third-party route photographs reused above. */
+/** Credits for the third-party route photographs reused above. */
 export const jiangnanArtPrivateTourPhotoCreditsBySlug: Readonly<
   Record<string, readonly PrivateTourPhotoCredit[]>
 > = {
@@ -348,6 +360,13 @@ export const jiangnanArtPrivateTourPhotoCreditsBySlug: Readonly<
       sourceUrl: "https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg",
       licenseLabel: "CC BY-SA 4.0",
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+    {
+      subject: l("Shanghai Museum East exterior", "上海博物馆东馆外观", "상하이박물관 동관 외관"),
+      author: "Alexey Yakovlev",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_East.jpg",
+      licenseLabel: "CC0 1.0",
+      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
     },
   ],
 };

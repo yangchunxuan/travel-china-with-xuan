@@ -348,6 +348,13 @@ const staySources: readonly (string | null)[] = [
   null,
 ];
 
+const chapterIds = [
+  "jiangnan-suzhou",
+  "jiangnan-tongli",
+  "jiangnan-hangzhou",
+  "jiangnan-shanghai",
+] as const;
+
 export function JiangnanArtStory({ locale }: { locale: Locale }) {
   const content = copy[locale];
   return (
@@ -361,7 +368,11 @@ export function JiangnanArtStory({ locale }: { locale: Locale }) {
         </header>
         <div className={styles.chapters}>
           {content.chapters.map((chapter, index) => (
-            <article className={styles.chapter} key={chapter.place}>
+            <article
+              className={styles.chapter}
+              id={chapterIds[index]}
+              key={chapter.place}
+            >
               <div className={styles.chapterIndex} aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </div>
@@ -392,17 +403,19 @@ export function JiangnanArtStays({ locale }: { locale: Locale }) {
           <h2 id="jiangnan-art-stays-title">{content.staysTitle}</h2>
           <p>{content.staysIntro}</p>
         </header>
-        <div className={styles.staysGrid}>
+        <ol className={styles.stayRoute}>
           {content.stays.map((stay, index) => (
-            <article className={styles.stayCard} key={stay.city}>
-              <div className={styles.stayTop}>
+            <li className={styles.stayStop} key={stay.city}>
+              <div className={styles.stayPlace}>
                 <span className={styles.stayIndex} aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className={styles.stayCity}>{stay.city}</span>
-                <span className={styles.stayNights}>{stay.nights}</span>
+                <div>
+                  <p className={styles.stayCity}>{stay.city}</p>
+                  <p className={styles.stayNights}>{stay.nights}</p>
+                </div>
               </div>
-              <div className={styles.stayBody}>
+              <article className={styles.stayBody}>
                 <h3>{stay.name}</h3>
                 <p>{stay.reason}</p>
                 {staySources[index] ? (
@@ -410,10 +423,10 @@ export function JiangnanArtStays({ locale }: { locale: Locale }) {
                     {content.sourceLabel} <span aria-hidden="true">↗</span>
                   </a>
                 ) : null}
-              </div>
-            </article>
+              </article>
+            </li>
           ))}
-        </div>
+        </ol>
         <p className={styles.stayNote}>{content.stayNote}</p>
       </div>
     </section>

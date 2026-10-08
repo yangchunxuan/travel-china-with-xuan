@@ -103,10 +103,15 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       },
     ],
     heroImage: {
-      alt: "杭州・西湖の水辺",
-      caption: "杭州では西湖と茶文化に1日を充てます。",
+      alt: "蘇州・平江路の石橋と運河沿いの家並み",
+      caption: "到着時刻に余裕があれば、平江路を歩きます。",
     },
     gallery: [
+      { alt: "蘇州・拙政園の池とあずまや", caption: "拙政園の見学時間と入場は旅行日に合わせて確認します。" },
+      { alt: "杭州の京杭大運河に架かる拱宸橋", caption: "杭州到着後は大運河沿いの歴史街区を歩きます。" },
+      { alt: "杭州・西湖の水辺", caption: "杭州では西湖と茶文化に1日を充てます。" },
+      { alt: "上海・外灘の歴史的建築", caption: "建物内部への入場は公開状況を確認してから決めます。" },
+      { alt: "上海博物館東館の外観", caption: "館内は自由見学、または博物館が承認した解説を利用します。" },
       {
         alt: "上海・浦東の高層ビル群",
         caption: "旅の最後は上海へ。歴史的な外灘と川向こうの現代都市を見比べます。",
@@ -118,6 +123,7 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       { day: 5, variants: [{ label: "拱宸橋", alt: "杭州の京杭大運河に架かる拱宸橋", caption: "杭州到着後は大運河沿いの歴史街区を歩きます。" }] },
       { day: 6, variants: [{ label: "西湖", alt: "杭州・西湖の風景", caption: "西湖の遊覧船と湖畔の散策を行程に組み込みます。" }] },
       { day: 8, variants: [{ label: "外灘", alt: "上海・外灘の歴史的建築", caption: "建物内部への入場は公開状況を確認してから決めます。" }] },
+      { day: 10, variants: [{ label: "上海博物館東館", alt: "上海博物館東館の外観", caption: "館内は自由見学、または博物館が承認した解説を利用します。" }] },
     ],
     packages: [{
       id: "private-guided",

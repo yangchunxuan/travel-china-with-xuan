@@ -296,6 +296,29 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", Partial<ImaginePageC
   },
 };
 
+const jiangnanRouteStops = [
+  { id: "jiangnan-suzhou", days: "01–03", nights: 3, city: { en: "Suzhou", zh: "苏州", ko: "쑤저우", ja: "蘇州" } },
+  { id: "jiangnan-tongli", days: "04", nights: 1, city: { en: "Tongli", zh: "同里", ko: "퉁리", ja: "同里" } },
+  { id: "jiangnan-hangzhou", days: "05–06", nights: 2, city: { en: "Hangzhou", zh: "杭州", ko: "항저우", ja: "杭州" } },
+  { id: "jiangnan-shanghai", days: "07–12", nights: 5, city: { en: "Shanghai", zh: "上海", ko: "상하이", ja: "上海" } },
+] as const;
+
+const jiangnanRouteNavLabel: Record<PrivateTourLocale | "ja", string> = {
+  en: "Jump to a city in this journey",
+  zh: "跳转到行程中的城市",
+  ko: "여정의 도시로 이동",
+  ja: "旅の各都市へ移動",
+};
+
+function jiangnanNightLabel(nights: number, locale: PrivateTourLocale | "ja"): string {
+  switch (locale) {
+    case "zh": return `${nights} 晚`;
+    case "ko": return `${nights}박`;
+    case "ja": return `${nights}泊`;
+    default: return `${nights} ${nights === 1 ? "night" : "nights"}`;
+  }
+}
+
 const forestFinalCopy: Record<PrivateTourLocale, Pick<ImaginePageCopy, "finalEyebrow" | "finalTitle" | "finalBody" | "contact">> = {
   en: {
     finalEyebrow: "This fixed route on your dates",
@@ -1001,7 +1024,7 @@ export function ShanghaiJiangnanImaginePage({
         : startingPrice?.selection ?? null}
     >
     <div
-      className={`${localeStyles.root} hg-locale-root ${styles.page}${japanese ? ` ${jaStyles.productPage}` : ""}`}
+      className={`${localeStyles.root} hg-locale-root ${styles.page}${jiangnanArt ? ` ${styles.jiangnanArtPage}` : ""}${japanese ? ` ${jaStyles.productPage}` : ""}`}
       data-homeground-locale={locale}
       lang={copy.htmlLang}
     >
@@ -1024,7 +1047,7 @@ export function ShanghaiJiangnanImaginePage({
       />}
 
       <main id="tour-details">
-        <section aria-labelledby="product-title" className={styles.hero}>
+        <section aria-labelledby="product-title" className={`${styles.hero}${jiangnanArt ? ` ${styles.jiangnanArtHero}` : ""}`}>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
               <nav
@@ -1077,6 +1100,18 @@ export function ShanghaiJiangnanImaginePage({
             </div>
           ))}
         </dl>
+
+        {jiangnanArt ? <nav aria-label={jiangnanRouteNavLabel[locale]} className={styles.jiangnanRouteNav}>
+          <ol>
+            {jiangnanRouteStops.map((stop) => <li key={stop.id}>
+              <a href={`#${stop.id}`}>
+                <span className={styles.jiangnanNavDays}>{stop.days}</span>
+                <strong>{stop.city[locale]}</strong>
+                <small>{jiangnanNightLabel(stop.nights, locale)}</small>
+              </a>
+            </li>)}
+          </ol>
+        </nav> : null}
 
         {jiangnanArt ? <JiangnanArtStory locale={locale} /> : <section className={styles.section} data-tour-reveal>
           <div className={styles.sectionInner}>
