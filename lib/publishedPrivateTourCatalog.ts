@@ -506,9 +506,9 @@ export function getPublishedPrivateTourCatalog(
         ...zhangjiajieStartingPrice,
         travelers: zhangjiajieProduct.price_display.starting_group_size,
         serviceLabel: {
-          en: "Two days of English-speaking guide service included",
-          zh: "已含两天英文导游服务",
-          ko: "이틀간의 영어 가이드 서비스 포함",
+          en: "English-speaking guide included on Days 2 and 3",
+          zh: "第2、3天已含英文导游",
+          ko: "2·3일 차 영어 가이드 포함",
         }[locale],
         validityNote: {
           en: `Reference price through ${zhangjiajiePriceEnd}; other dates need a new quote.`,

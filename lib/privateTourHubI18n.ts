@@ -240,7 +240,7 @@ export const englishMarketPlanning = {
     },
     {
       title: "Will I have an English-speaking guide?",
-      body: "Check the named service option and guided days on each route. Beijing offers English-guided and no-onsite-guide options. Both Zhangjiajie tours include two days of English-speaking guide service in the published price.",
+      body: "Check the named service option and guided days on each route. Beijing offers English-guided and no-onsite-guide options. The Classic Zhangjiajie four-day tour includes an English-speaking guide on Days 2 and 3; Day 4 English guide service is outside its base price. Other Zhangjiajie routes follow their published guide coverage.",
     },
     {
       title: "Can we travel with children or older family members?",

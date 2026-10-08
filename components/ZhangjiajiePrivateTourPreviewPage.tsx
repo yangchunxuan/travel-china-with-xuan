@@ -490,7 +490,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
                         <span className={styles.dayStatus}>
                           {day.guide_planned
                             ? copy.guideLabel
-                            : copy.arrivalLabel}
+                            : day.day === 1
+                              ? copy.arrivalLabel
+                              : copy.departureSightseeingLabel}
                         </span>
                       </div>
                       <p>{copy.daySummaries[index]}</p>
