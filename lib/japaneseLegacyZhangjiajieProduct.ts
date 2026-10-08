@@ -78,7 +78,7 @@ export const japaneseLegacyZhangjiajieProduct: PrivateTourProduct = {
     description: { en: day.summary_en, zh: day.summary_zh, ko: day.summary_ko },
   })),
   hotelNote: l("Three nights in the selected stay tier. The exact hotel, room type, breakfast and availability are confirmed in writing before payment."),
-  serviceNote: l("Private local vehicle and agreed transfers. Two days of English-speaking guide service are included in the published price; guide arrangements for the other sightseeing day are confirmed in writing."),
+  serviceNote: l("Private local vehicle and agreed transfers. English-speaking guide service is included on Days 2 and 3. Day 4 English guide service is outside the base price; additional guide arrangements are confirmed separately before booking."),
   exclusions: {
     en: [
       "Travel to and from Zhangjiajie",
@@ -111,7 +111,7 @@ export const japaneseLegacyZhangjiajieProduct: PrivateTourProduct = {
     prices: [],
   })),
   datePublished: pricing.valid_from,
-  dateModified: "2026-09-23",
+  dateModified: "2026-10-08",
   lastReviewed: "2026-09-23",
 };
 
@@ -125,12 +125,12 @@ export const japaneseLegacyZhangjiajieCopy = {
   highlights: ["張家界国家森林公園の砂岩峰林", "大峡谷のガラス橋", "天門山", "3種類の宿泊プラン"],
   itinerary: [
     { title: "張家界に到着", description: "空港または鉄道駅でドライバーがお迎えし、荷物とともにホテルへお送りします。初日はガイドの同行も観光もなく、到着後はゆっくりお休みいただけます。" },
-    { title: "国家森林公園：袁家界・天子山", description: "ガイドと専用車で張家界国家森林公園へ。百龍エレベーター、袁家界、天子山とロープウェイを、当日の運行状況に応じた順序で巡り、専用車でホテルに戻ります。" },
-    { title: "大峡谷のガラス橋と洞窟または湖", description: "ガイドと専用車で大峡谷のガラス橋へ。その後は黄龍洞または宝峰湖のいずれか一か所を訪れます。含まれる訪問先はお支払い前の書面で確認します。" },
-    { title: "天門山を訪ねて出発", description: "チェックアウト後、荷物を専用車に載せ、予約できたA・B・Cいずれかのコースで天門山へ。終了後、空港または駅へお送りします。入場時刻と便の間に十分な余裕がある場合に限り、同日に組み合わせます。" },
+    { title: "国家森林公園：袁家界・天子山", description: "英語ガイドと専用車で張家界国家森林公園へ。百龍エレベーター、袁家界、天子山とロープウェイを、当日の運行状況に応じた順序で巡り、専用車でホテルに戻ります。" },
+    { title: "大峡谷のガラス橋と洞窟または湖", description: "英語ガイドと専用車で大峡谷のガラス橋へ。その後は黄龍洞または宝峰湖のいずれか一か所を訪れます。含まれる訪問先はお支払い前の書面で確認します。" },
+    { title: "天門山を訪ねて出発", description: "チェックアウト後、荷物を専用車に載せ、予約できたA・B・Cいずれかのコースで天門山へ。終了後、空港または駅へお送りします。4日目の基本料金には英語ガイドは含まれません。追加のガイド手配は予約前に別途確認します。入場時刻と便の間に十分な余裕がある場合に限り、同日に組み合わせます。" },
   ],
   hotelNote: "選んだ宿泊プランで3泊します。具体的なホテル、客室、朝食、空室状況は、お支払い前に書面で確認します。掲載写真は候補の参考です。",
-  serviceNote: "現地の専用車と合意した範囲の送迎を手配します。基本プランには英語ガイド2日分が含まれます。もう1日のガイド手配と、日本語ガイドをご希望の場合の対応・料金は、日程に合わせて書面で確認します。",
+  serviceNote: "現地の専用車と合意した範囲の送迎を手配します。英語ガイドは2日目・3日目に含まれます。4日目の基本料金には英語ガイドは含まれません。追加のガイド手配や日本語ガイドをご希望の場合の対応・料金は、予約前に別途確認します。",
   exclusions: [
     "張家界までの往復交通費",
     "昼食・夕食と個人的な支出。朝食の有無は宿泊先ごとに確認します",
@@ -140,6 +140,7 @@ export const japaneseLegacyZhangjiajieCopy = {
   ],
   bookingNote: "料金は旅行日・人数・宿泊プランに合わせて個別にお見積もりします。宿泊先、部屋数、朝食、車両、最終総額はお支払い前に書面で確認します。",
   faq: [
+    { question: "英語ガイドは何日目に含まれますか？", answer: "英語ガイドは2日目・3日目に含まれます。4日目は天門山観光の専用車と出発時の送迎を含みますが、基本料金に英語ガイドは含まれません。追加のガイド手配は予約前に別途確認します。" },
     { question: "張家界は4日間で回れますか？", answer: "はい、初めての張家界なら、初日を到着に充て、国家森林公園、大峡谷、天門山にそれぞれ1日ずつ使う形で回れます。周辺をすべて急がずに巡るには、さらに日数が必要です。" },
     { question: "大峡谷のガラス橋と天門山のガラスの遊歩道は同じ場所ですか？", answer: "別の場所です。大峡谷のガラス橋と天門山のガラスの遊歩道は異なる日に訪れます。" },
     { question: "天門山は帰りの飛行機や列車の前に訪れられますか？", answer: "予約できる入場時刻と出発便を照らし合わせ、安全な余裕がある場合に限ります。早い時間の便や遅い入場枠の場合は、同じ日に組み合わせることはおすすめしません。" },

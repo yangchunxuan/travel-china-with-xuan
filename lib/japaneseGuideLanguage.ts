@@ -15,5 +15,6 @@ const japaneseLabels: Readonly<Record<PrivateTourGuideLanguageBase, string>> = {
 };
 
 export function getJapaneseGuideLanguageLabel(slug: string): string {
+  if (slug === "zhangjiajie-4-day-private-tour") return "英語ガイド（2・3日目）";
   return japaneseLabels[getPrivateTourGuideLanguageBase(slug)];
 }

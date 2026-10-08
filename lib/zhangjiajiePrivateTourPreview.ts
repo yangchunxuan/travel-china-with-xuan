@@ -83,8 +83,9 @@ export const productPreviewCopy = {
     ],
     routeEyebrow: "The 4-day Zhangjiajie itinerary",
     routeTitle: "One arrival day, then three completely different landscapes",
-    guideLabel: "Guided sightseeing planned",
+    guideLabel: "English-speaking guide included",
     arrivalLabel: "Arrival and private transfer",
+    departureSightseeingLabel: "Private transport · English guide not included",
     daySummaries: zhangjiajiePrivateTourDaySummaries.en,
     staysEyebrow: "A sample of possible stays",
     staysTitle: "Choose how the journey feels after the mountains",
@@ -311,6 +312,10 @@ export const productPreviewCopy = {
     faqTitle: "The questions that change the itinerary",
     faqItems: [
       [
+        "Which days include an English-speaking guide?",
+        "The price includes an English-speaking guide on Days 2 and 3. Day 1 is an arrival transfer. Day 4 includes private transport for Tianmen Mountain and your departure transfer; an English-speaking guide is outside the base price. Ask us to confirm any additional guide arrangements before booking.",
+      ],
+      [
         "Is four days enough for Zhangjiajie?",
         "Yes, for a focused first visit: Day 1 for arriving, then the Forest Park, the Grand Canyon area and Tianmen Mountain get a day each. Seeing every nearby sight without rushing takes more days.",
       ],
@@ -337,7 +342,7 @@ export const productPreviewCopy = {
     plannedTitle: "Included in the quote",
     plannedItems: [
       "Private local transport and agreed arrival and departure transfers",
-      "Two days of private English-speaking guide service",
+      "Private English-speaking guide service on Days 2 and 3",
       "Three nights in the selected accommodation tier",
       "Adult admission and standard scenic transport named in the confirmation",
       "No shopping stops; optional upgrades or added services require your agreement before they are charged",
@@ -451,8 +456,9 @@ export const productPreviewCopy = {
     ],
     routeEyebrow: "张家界4天3晚行程",
     routeTitle: "一天抵达，三天进入完全不同的山水",
-    guideLabel: "计划安排导游",
+    guideLabel: "已含英文导游",
     arrivalLabel: "抵达与私人接送",
+    departureSightseeingLabel: "专车游览与送站；基础价不含英文导游",
     daySummaries: zhangjiajiePrivateTourDaySummaries.zh,
     staysEyebrow: "部分住宿选择",
     staysTitle: "山水之后，选择更适合你们的停留方式",
@@ -666,6 +672,10 @@ export const productPreviewCopy = {
     faqTitle: "真正会改变行程的几个问题",
     faqItems: [
       [
+        "哪几天包含英文导游？",
+        "价格包含第2、3天的英文导游。第1天为抵达接送；第4天包含天门山游览用车和离开接送，基础价不含英文导游。如需额外导游安排，请在预订前和我们确认。",
+      ],
+      [
         "四天够不够玩张家界？",
         "第一次来、只看重点的话，够了：第1天抵达，之后森林公园、大峡谷一带和天门山各留一天。想不赶路地把周边景点都看完，就得多留几天。",
       ],
@@ -691,7 +701,7 @@ export const productPreviewCopy = {
     plannedTitle: "报价包含",
     plannedItems: [
       "当地私人车辆与约定范围内的抵达、离开接送",
-      "两天私人英语导游服务",
+      "第2、3天私人英文导游服务",
       "所选住宿档位的3晚住宿",
       "确认单中逐项列明的成人门票与标准景交",
       "不安排购物店；任何升级或新增服务都须在收费前由你确认",
@@ -808,8 +818,9 @@ export const productPreviewCopy = {
     ],
     routeEyebrow: "장가계 4일 3박 일정",
     routeTitle: "도착하는 하루, 서로 다른 풍경으로 이어지는 사흘",
-    guideLabel: "가이드 동행 관광",
+    guideLabel: "영어 가이드 포함",
     arrivalLabel: "도착 및 전용 차량 이동",
+    departureSightseeingLabel: "전용 차량 관광·샌딩 · 영어 가이드 불포함",
     daySummaries: zhangjiajiePrivateTourDaySummaries.ko,
     staysEyebrow: "숙소 선택 예시",
     staysTitle: "산을 내려온 뒤의 분위기까지 고르세요",
@@ -1030,6 +1041,10 @@ export const productPreviewCopy = {
     faqTitle: "실제로 일정을 바꾸는 질문",
     faqItems: [
       [
+        "영어 가이드는 며칠 차에 포함되나요?",
+        "요금에는 2·3일 차 영어 가이드가 포함됩니다. 1일 차는 도착 픽업입니다. 4일 차에는 천문산 관광을 위한 전용 차량과 출발 샌딩이 포함되며, 영어 가이드는 기본 요금에 포함되지 않습니다. 추가 가이드가 필요하면 예약 전에 별도로 확인해 주세요.",
+      ],
+      [
         "장가계 여행에 4일이면 충분한가요?",
         "첫 방문으로 핵심을 보기에는 충분합니다. 1일 차는 도착, 2·3일 차는 국가삼림공원과 대협곡 일대, 4일 차는 출발 시간이 허락하는 범위에서 천문산을 둘러봅니다. 주변 명소까지 여유 있게 보려면 일정이 더 필요합니다.",
       ],
@@ -1056,7 +1071,7 @@ export const productPreviewCopy = {
     plannedTitle: "견적에 포함",
     plannedItems: [
       "현지 전용 차량과 합의된 범위의 도착·출발 이동",
-      "이틀간의 전담 영어 가이드 서비스",
+      "2·3일 차 전담 영어 가이드 서비스",
       "선택한 숙소 등급의 3박",
       "확인서에 명시한 성인 입장권과 기본 관광지 내 교통",
       "쇼핑 일정 없음; 선택 업그레이드나 추가 서비스는 비용 청구 전에 동의를 받음",
@@ -1149,9 +1164,9 @@ export function getZhangjiajiePrivateTourPublicPricing(
     }[locale],
     currencyNote: privateTourCurrencyNote[locale],
     guideLanguageNote: {
-      en: "The price includes two days of English-speaking guide service.",
-      zh: "价格已含两天英文导游服务。",
-      ko: "요금에 이틀간의 영어 가이드 서비스가 포함되어 있습니다.",
+      en: "The price includes English-speaking guide service on Days 2 and 3.",
+      zh: "价格已含第2、3天英文导游服务。",
+      ko: "요금에 2·3일 차 영어 가이드 서비스가 포함되어 있습니다.",
     }[locale],
     publicNote: {
       en: pricing.public_notes.en,
