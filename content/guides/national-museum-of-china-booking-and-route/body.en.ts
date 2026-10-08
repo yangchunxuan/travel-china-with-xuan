@@ -4,6 +4,17 @@ const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "answer-first", type: "lead", text: "Treat the National Museum of China as a booked museum visit, not as a casual add-on to Tiananmen Square. Reserve the free basic admission with the identity document you will carry, arrive for the selected window, and use the North Gate visitor entrance. Inside, choose one anchor exhibition and at most one second theme. The building is too large for a useful ‘see everything’ plan, and a confirmed museum reservation does not automatically create a reservation for every separately managed site around Tiananmen Square." },
+    {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "Free admission still needs a confirmed place",
+      "body": "Entry is free, but places are released on a schedule and you cannot enter without one. If the museum matters to your trip, secure its entry window first and plan the rest of the day around it. For a group, check that everyone is on the confirmed booking.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
     { id: "booking-heading", type: "heading", level: 2, text: "Book the museum itself" },
     { id: "booking-rules", type: "table", caption: "Current National Museum rules checked on 12 August 2026", columns: ["Step", "Official rule", "Planning consequence"], rows: [
       ["Reservation", "Free basic admission can be reserved through the museum's official website and official WeChat channels within seven days of the visit.", "Use the museum's own English reservation page rather than a search advertisement or an unrelated Tiananmen service."],
@@ -13,6 +24,30 @@ const body: StructuredPageBody = {
       ["Weekly closure", "The museum normally closes on Mondays, except when an official national-holiday notice says otherwise.", "A holiday Monday is not a guess: read the dated museum notice for that week."],
     ] },
     { id: "separate-systems", type: "callout", title: "Do not merge the museum and Tiananmen into one booking", body: "The National Museum controls its own reservation and North Gate entry. Tiananmen Square and nearby monuments can use separate access rules and security arrangements. A museum confirmation proves only the museum booking stated on it. Check any other place on its own official channel and allow for security routing around the square.", tone: "warning" },
+    {
+      "id": "reservation-recovery-heading",
+      "type": "heading",
+      "level": 2,
+      "text": "If the reservation doesn’t go to plan"
+    },
+    {
+      "id": "reservation-recovery-options",
+      "type": "comparison",
+      "columns": [
+        {
+          "heading": "Your slot isn’t available",
+          "body": "Look for another official date or time slot before you commit to transport, and keep an unconfirmed museum day flexible. Queuing at the entrance cannot replace a reservation."
+        },
+        {
+          "heading": "Only some are confirmed",
+          "body": "Keep the reservations you have while you check the missing person’s status and options. Cancellations still count towards the museum’s booking limits, so cancelling and rebooking the whole group is not a free reset."
+        },
+        {
+          "heading": "The status is unclear",
+          "body": "Check the museum’s own reservation record and published contact route first. Then tell us your date, group size and who is already confirmed: we’ll look at workable arrangements and alternatives, and fit the confirmed window or another Beijing visit into your itinerary."
+        }
+      ]
+    },
     { id: "time-heading", type: "heading", level: 2, text: "Choose the visit length before choosing galleries" },
     { id: "time-options", type: "comparison", columns: [
       { heading: "About two hours", body: "Choose one anchor: the Ancient China basic exhibition or a current special exhibition that matters more to you. Add time for security, orientation and the walk back to the exit; do not bolt on another major museum." },

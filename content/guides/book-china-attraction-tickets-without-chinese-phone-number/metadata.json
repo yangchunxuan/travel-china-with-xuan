@@ -1,0 +1,87 @@
+{
+  "id": "book-china-attraction-tickets-without-chinese-phone-number",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "china-attraction-booking",
+    "foreign-phone-number",
+    "wechat-booking",
+    "passport-booking",
+    "reservation-confirmation"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "shanghai",
+    "xian",
+    "chengdu",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/temple-of-heaven-gates-and-ritual-sequence/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/temple-of-heaven-gates-and-ritual-sequence/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "sourceReviewedDate": "2026-10-08",
+  "search": {
+    "section": "essentials",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+      "title": "Book China Attraction Tickets Without a Chinese Phone Number",
+      "headline": "China Attraction Booking Without a Chinese Phone Number or WeChat",
+      "description": "Find official foreign-visitor booking routes without assuming a Chinese number is required. Resolve passport, contact and payment barriers before travel.",
+      "heroAlt": "Hall of Prayer for Good Harvests at the Temple of Heaven in Beijing",
+      "navTitle": "Book without a Chinese phone number",
+      "featuredLinkLabel": "Find a booking route that fits your passport and phone",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Reservations",
+        "Before you fly"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+      "title": "没有中国手机号或微信，怎么预约中国景点？",
+      "headline": "没有中国手机号或微信，先找对景点预约渠道",
+      "description": "没有中国手机号或微信，先找景点官方外籍渠道，区分验证码、护照、支付和预约确认问题；出发前按实际障碍匹配支持。",
+      "heroAlt": "北京天坛公园祈年殿",
+      "navTitle": "没有中国手机号预约景点",
+      "featuredLinkLabel": "找到适配护照与手机号的预约渠道",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "景点预约",
+        "出发前"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+      "title": "중국 전화번호 없이 관광지 입장권 예약하기",
+      "headline": "중국 번호·위챗 없이 이용할 관광지 예약 경로",
+      "description": "중국 번호가 항상 필요하다고 가정하지 말고 공식 외국인 경로를 찾으세요. 여권·연락처·결제 문제를 출발 전에 확인하세요.",
+      "heroAlt": "베이징 천단공원의 기년전",
+      "navTitle": "중국 번호 없이 관광지 예약",
+      "featuredLinkLabel": "내 여권·번호에 맞는 예약 경로 찾기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "관광지 예약",
+        "출발 전"
+      ]
+    }
+  }
+}

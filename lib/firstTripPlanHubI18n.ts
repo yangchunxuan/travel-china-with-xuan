@@ -26,6 +26,7 @@ export const firstTripPlanOwnerPaths = {
   stay: "/stay/",
   hotelNearMetro: "/guides/china-hotel-near-metro/",
   tickets: "/guides/official-or-reseller-china-tickets/",
+  reservationChecklist: "/guides/china-attractions-advance-booking-checklist/",
   arrivalBuffer:
     "/guides/china-arrival-day-booked-anchor-or-flexible-block/",
   departureBuffer:
@@ -155,7 +156,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
           "Identify reservations that can make or break a day, then verify the official channel, passport details and release window before using a reseller.",
         doneWhen:
           "The hardest fixed booking is secured before flexible activities are placed around it.",
-        links: [{ ownerId: "tickets", label: "Choose official ticketing or a reseller" }],
+        links: [
+          { ownerId: "reservationChecklist", label: "Check which attractions to arrange before you go" },
+          { ownerId: "tickets", label: "Choose official ticketing or a reseller" },
+        ],
       },
       {
         id: "buffers",
@@ -267,7 +271,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
         title: "按依赖顺序预订固定门票",
         task: "先找出会决定当天成败的预约，再核实官方渠道、护照信息和放票时间，然后才考虑代订平台。",
         doneWhen: "最难取得的固定预约已经落实，弹性活动再围绕它安排。",
-        links: [{ ownerId: "tickets", label: "选择官方票务或代订平台" }],
+        links: [
+          { ownerId: "reservationChecklist", label: "先看哪些景点需要提前准备" },
+          { ownerId: "tickets", label: "选择官方票务或代订平台" },
+        ],
       },
       {
         id: "buffers",
@@ -373,7 +380,10 @@ const copies: Record<HomegroundLocale, FirstTripPlanHubCopy> = {
         title: "의존 순서대로 고정 티켓 예약",
         task: "하루의 성패를 좌우하는 예약을 찾고, 공식 채널·여권 정보·판매 시작 시점을 확인한 뒤 리셀러를 검토하세요.",
         doneWhen: "가장 어려운 고정 예약을 먼저 확보하고 유동적인 활동은 그 주변에 배치했습니다.",
-        links: [{ ownerId: "tickets", label: "공식 티켓과 리셀러 선택" }],
+        links: [
+          { ownerId: "reservationChecklist", label: "출발 전에 준비할 관광지 확인" },
+          { ownerId: "tickets", label: "공식 티켓과 리셀러 선택" },
+        ],
       },
       {
         id: "buffers",

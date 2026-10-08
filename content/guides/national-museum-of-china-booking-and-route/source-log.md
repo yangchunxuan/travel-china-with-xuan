@@ -28,3 +28,9 @@ Links are limited to live Beijing accommodation, Forbidden City, older-parent pa
 ## Pre-publication trigger
 
 Recheck the Visit page, English booking flow, latest notices, North Gate wording, release time, entry periods and exhibition list immediately before publication. Update all three languages and `sourceReviewedDate` together if anything changes.
+
+## 2026-10-08 reservation recovery and planning links
+
+Rechecked the current [2025 admission notice](https://www.chnmuseum.cn/gbgg/202507/t20250725_272247.shtml) and [English admission page](https://en.chnmuseum.cn/visit_692/). Successful real-name reservation, booked original document and the correct entry period remain required. Cancellation still counts towards booking limits. The English entry points to an official English reservation system; no registration, passport form or payment transaction was tested.
+
+Added the pre-trip checklist and three recovery choices in EN/ZH/KO. Keeping existing valid confirmations while checking a missing traveller is Homeground editorial planning advice, not an official add-member or rebooking procedure. No walk-up replacement, released cancellation stock, extra inventory or paid proxy-grab permission is asserted. We have not confirmed attraction-specific permission for outside paid booking assistance; this addition offers itinerary coordination and alternatives, without expanding the existing service guarantee. Other gallery/visit facts and the full-guide source review date were not refreshed.

@@ -7,6 +7,17 @@ export default {
       text: "不跟团也可以完整参观兵马俑，但要把它当作一整天的连续任务，而不是四个互不相干的问题。先用每位游客的护照姓名预约秦始皇帝陵博物院，带上护照原件，从西安前往兵马俑博物馆北门；入院后按当天允许的动线和自己的重点参观一、二、三号坑，再乘票内包含的接驳车去丽山园，最后回到兵马俑一侧的交通区域返回西安。导游不是购票和乘车的前提，最有价值的作用是讲解。",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "先确认兵马俑预约，再把西安这一天排满",
+      "body": "博物院实行实名预约预购，达到容量上限时可能停止售票。先核对每位同行者的成功预约和入场时段，再围绕参观安排接送，让这一天对全组都行得通。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
+    {
       id: "execution-summary",
       type: "callout",
       title: "八个动作完成一次兵马俑自由行",

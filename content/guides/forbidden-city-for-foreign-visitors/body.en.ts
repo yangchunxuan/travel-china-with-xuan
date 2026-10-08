@@ -7,6 +7,17 @@ export default {
       text: "To visit the Forbidden City, book a Palace Museum ticket in advance with the passport details of each traveller and bring the original documents used for the reservation. Enter through the Meridian Gate (Wumen) on the south side, then explore towards the north exit. If you also want to visit Tiananmen Square, check its access arrangements separately. This guide explains the booking steps, how to reach the entrance and what to do if your reservation is not confirmed.",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "Protect the Forbidden City day before filling the rest of Beijing",
+      "body": "The Palace Museum sells no tickets on the day. If this is a visit you’d hate to miss, note when bookings open and keep the day flexible until every traveller is confirmed. Museum tickets, Tiananmen Square access and security checks are separate parts of the plan.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
+    {
       id: "execution-summary",
       type: "callout",
       title: "The visit in seven decisions",
@@ -66,27 +77,43 @@ export default {
       text: "Step 1: book the Palace Museum, not a generic Forbidden City product",
     },
     {
-      id: "booking-rules",
-      type: "paragraph",
-      text: "For a visitor booking with a passport, start with the Palace Museum's current official English Tickets page rather than assuming every language uses the same checkout. At the 22 August review, that page instructed international visitors to submit each visitor's full name, passport number and intended date to bookingticket@dpm.org.cn within the seven-day booking window and at least one calendar day in advance. The Chinese official rules separately identify the Palace Museum WeChat mini-program, a 20:00 release seven days before the visit and no same-day tickets. Treat these as distinct official channel instructions, follow the one currently addressed to your booking case, and require a completed reservation record before fixing the day. The museum has not authorised third-party ticket agents, so treat a ticket offered by a reseller or scalper as unverified: what counts is a completed Palace Museum reservation record in the visitor's own name.",
+      "id": "booking-rules",
+      "type": "paragraph",
+      "text": "For a foreign-passport booking, start at the Palace Museum’s official English Visit page and follow Book Tickets to its own online portal. At the 8 October 2026 review, that portal showed an English sign-in/registration flow with email verification and stated that reservations open at 20:00 China time seven days before the visit. The email bookingticket@dpm.org.cn is currently published for ticketing questions, not as the default way to submit a booking. Use the live portal’s instructions for the visitor, document, date and period, and keep the completed reservation record. The museum has not authorised third-party ticket agents for individual tickets or exhibition reservations. Treat a ticket offered by a reseller or scalper as unverified until you have the museum’s completed reservation in the visitor’s own name."
     },
     {
-      id: "booking-paths",
-      type: "table",
-      caption: "Official channel instructions are not identical across language pages",
-      columns: ["Official path", "What it currently says", "Boundary"],
-      rows: [
-        ["Official English Tickets page", "International visitors are told to email each full name, passport number and intended visit date to bookingticket@dpm.org.cn, within seven days and at least one calendar day before the visit", "Use only the exact museum address, send only the fields the current official page requests, and do not treat a sent email as confirmation"],
-        ["Palace Museum WeChat mini-program", "The Chinese rules identify the official mini-program as the advance-purchase channel and state the 20:00 seven-day release", "Use the exact official account, verify every traveller before payment and do not assume the English email timeline describes mini-program inventory"],
-        ["Official ticket links and service help", "The Palace website links to its ticket service and publishes customer-service contacts; Beijing 12345 also confirms passport and original-document use", "Interfaces and access from abroad can change. Follow the current official instruction shown for the chosen channel and ask the museum if the status is unclear"],
+      "id": "booking-paths",
+      "type": "table",
+      "caption": "Current official booking and enquiry channels reviewed on 8 October 2026",
+      "columns": [
+        "Official path",
+        "What it currently says",
+        "Boundary"
       ],
+      "rows": [
+        [
+          "Official English Visit page → Book Tickets",
+          "The museum links to its online booking portal; the English flow shows email verification and accepts foreign-passport information",
+          "Follow the live prompts and save the completed booking for every visitor; an account alone does not reserve a place"
+        ],
+        [
+          "Palace Museum official ticketing portal / mini-program",
+          "The official ticket rules state 20:00 China-time release seven days before the visit and no same-day tickets",
+          "Inventory, document categories and the reserved period still control the actual visit"
+        ],
+        [
+          "Official ticketing enquiry email",
+          "bookingticket@dpm.org.cn is published for ticketing questions",
+          "An enquiry or reply is not a ticket; do not use an archived email-booking instruction as the current default"
+        ]
+      ]
     },
     {
-      id: "email-boundary",
-      type: "callout",
-      title: "Sending an email or opening a booking page is not the same as holding a ticket",
-      body: "Keep the museum's response or completed booking record and check every visitor, passport number, date and time period before treating the visit as secured. Passport data is sensitive: when you book yourself, send it only through the exact official route currently published by the Palace Museum, do not copy Homeground or an unrelated seller, and do not forward the record publicly. If the result is unclear, use the contact details on the museum site.",
-      tone: "warning",
+      "id": "email-boundary",
+      "type": "callout",
+      "title": "An account or enquiry is not a confirmed museum ticket",
+      "body": "Keep the completed museum reservation and check the visitors, booked documents, date and period before treating the day as secured. When booking yourself, submit passport details only through the museum’s current official route. Use its published contact details if the status is unclear; do not send a second payment until the first order’s status is known.",
+      "tone": "warning"
     },
     {
       id: "family-booking-heading",
@@ -130,7 +157,7 @@ export default {
       columns: ["What happened", "What it means", "Recovery"],
       rows: [
         ["The date is sold out", "There is no official same-day walk-up inventory to rely on", "Move the Palace Museum to another available Beijing day, use the official cancellation inventory if it reappears, or replace it with a different confirmed attraction; do not let an unofficial promise anchor the itinerary"],
-        ["Email, payment or foreign-phone flow fails", "A sent message or failed screen is not a reservation", "Keep screenshots that hide sensitive details, retry only through the current official route, and use the Palace Museum contact details or Beijing 12345 if the status remains unclear"],
+        ["Verification, payment or contact flow fails", "An account, payment notice or failed screen is not a confirmed reservation", "Keep screenshots that hide sensitive details, retry only through the current official route, and use the Palace Museum contact details or Beijing 12345 if the status remains unclear"],
         ["A name or passport number is wrong", "The visitor identity cannot simply be edited after purchase", "Read the live cancellation rule before acting. A corrected rebooking needs available inventory; never cancel a scarce valid order until the consequence is understood"],
         ["One traveller has no confirmed record", "Real-name entry applies person by person", "Treat that traveller as unbooked and redesign the group day rather than assuming staff can add a companion at the gate"],
         ["A reseller says the ticket is included", "The reseller product is not proof of museum issuance", "Ask for the Palace Museum booking record, visit date, period and document match before treating the visit as secured"],
@@ -467,77 +494,77 @@ export default {
       ],
     },
     {
-      id: "official-sources",
-      type: "sources",
-      title: "Official sources reviewed",
-      items: [
+      "id": "official-sources",
+      "type": "sources",
+      "title": "Official sources reviewed",
+      "items": [
         {
-          label: "Palace Museum official English ticket and international-visitor booking instructions",
-          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum current English Visit page and online booking link",
+          "url": "https://intl.dpm.org.cn/visit.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "Palace Museum official ticket-service link",
-          url: "https://bookingticket.dpm.org.cn/",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum official ticket-service link",
+          "url": "https://bookingticket.dpm.org.cn/",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "Palace Museum ticketing and identity-document rules",
-          url: "https://www.dpm.org.cn/subject_booking/",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum ticketing and identity-document rules",
+          "url": "https://www.dpm.org.cn/subject_booking/",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Palace Museum current Chinese ticket policy and concession eligibility",
-          url: "https://www.dpm.org.cn/singles_detail/257830.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-09-08",
+          "label": "Palace Museum current Chinese ticket policy and concession eligibility",
+          "url": "https://www.dpm.org.cn/singles_detail/257830.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "Palace Museum Taihemen conservation notice, dated 31 July 2026",
-          url: "https://www.dpm.org.cn/announce_detail/379422.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-09-08",
+          "label": "Palace Museum Taihemen conservation notice, dated 31 July 2026",
+          "url": "https://www.dpm.org.cn/announce_detail/379422.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "Palace Museum opening hours, visitor trails, gates and transport",
-          url: "https://www.dpm.org.cn/Visit.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum opening hours, visitor trails, gates and transport",
+          "url": "https://www.dpm.org.cn/Visit.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Palace Museum visitor, security and luggage rules",
-          url: "https://www.dpm.org.cn/singles_detail/259831.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum visitor, security and luggage rules",
+          "url": "https://www.dpm.org.cn/singles_detail/259831.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Palace Museum prohibited-items catalogue",
-          url: "https://www.dpm.org.cn/singles_detail/259832.html",
-          publisher: "The Palace Museum",
-          reviewedAt: "2026-08-22",
+          "label": "Palace Museum prohibited-items catalogue",
+          "url": "https://www.dpm.org.cn/singles_detail/259832.html",
+          "publisher": "The Palace Museum",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Beijing 12345 guidance for Palace Museum booking with a foreign passport",
-          url: "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
-          publisher: "People's Government of Beijing Municipality",
-          reviewedAt: "2026-08-22",
+          "label": "Beijing 12345 guidance for Palace Museum booking with a foreign passport",
+          "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+          "publisher": "People's Government of Beijing Municipality",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Tiananmen Square trial reservation measures and Palace Museum exemption",
-          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
-          publisher: "Tiananmen Area Management Committee",
-          reviewedAt: "2026-08-22",
+          "label": "Tiananmen Square trial reservation measures and Palace Museum exemption",
+          "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          "publisher": "Tiananmen Area Management Committee",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "Current official Tiananmen Square reservation channels",
-          url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
-          publisher: "People's Government of Beijing Municipality",
-          reviewedAt: "2026-08-22",
-        },
-      ],
+          "label": "Current official Tiananmen Square reservation channels",
+          "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
+          "publisher": "People's Government of Beijing Municipality",
+          "reviewedAt": "2026-08-22"
+        }
+      ]
     },
   ],
 } as const;
