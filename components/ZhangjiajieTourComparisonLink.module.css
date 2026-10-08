@@ -6,6 +6,7 @@
 }
 
 .heading h3 {
+  scroll-margin-block-start: 6rem;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.35;
   margin: 0;

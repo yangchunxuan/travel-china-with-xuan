@@ -293,7 +293,7 @@ export function ShanghaiJiangnanHeroDeck({
               style={{ "--deck-depth": depth } as DeckStyle}
             >
               <Image
-                alt={depth === 0 ? image.alt : ""}
+                alt={image.alt}
                 fetchPriority={currentIndex === 0 && depth === 0 ? "high" : undefined}
                 fill
                 priority={currentIndex === 0 && depth === 0}

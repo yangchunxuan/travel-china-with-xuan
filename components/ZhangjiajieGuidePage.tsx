@@ -20,6 +20,7 @@ import {
   type ZhangjiajieGuideCopy,
 } from "../lib/zhangjiajieGuideI18n";
 import { getGuideTourCard } from "../lib/guideTourCard";
+import { zhangjiajieTourComparisonHref } from "../lib/zhangjiajieTourComparison";
 import { GuideCtaLink } from "./GuideCtaLink";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
@@ -458,6 +459,12 @@ export function ZhangjiajieGuidePage({
                   <p className={styles.fullDayExample}>
                     <span>{copy.quick.fullDayExampleLabel}</span>{" "}
                     {copy.quick.fullDayExample}
+                  </p>
+                  <p>
+                    {copy.quick.productComparison.note}{" "}
+                    <Link href={zhangjiajieTourComparisonHref(locale)}>
+                      {copy.quick.productComparison.action}
+                    </Link>
                   </p>
                 </div>
               </div>
