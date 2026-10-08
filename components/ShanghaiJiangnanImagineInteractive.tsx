@@ -22,6 +22,7 @@ import { TourPriceScope } from "./TourPriceScope";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
+import { buildZhangjiajieCustomGroupInquiryHref, isZhangjiajieCustomGroupTour } from "../lib/privateTourInquiryContext";
 import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
 import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
@@ -383,6 +384,9 @@ function PublishedPrivateTourPriceConsole({
   const packageId = selection.packageId;
   const travellers = selection.travelers;
   const selectedInquiryHref = useSelectedPrivateTourInquiryHref(inquiryHref) ?? inquiryHref;
+  const otherGroupInquiryHref = isZhangjiajieCustomGroupTour(product.slug)
+    ? buildZhangjiajieCustomGroupInquiryHref(product.locale === "en" ? "/" : `/${product.locale}/`, product.slug)
+    : selectedInquiryHref;
   const copy = japaneseCopy
     ? {
         ...interactionCopy.en,
@@ -510,7 +514,7 @@ function PublishedPrivateTourPriceConsole({
             <ArrowRight aria-hidden="true" size={15} />
           </JapaneseTourContactLink> : <GuideCtaLink
             guideId={product.id}
-            href={selectedInquiryHref}
+            href={otherGroupInquiryHref}
             locale={product.locale}
             position="inline"
           >

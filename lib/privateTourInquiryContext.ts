@@ -75,6 +75,8 @@ export interface PrivateTourInquiryContext {
   readonly slug: PrivateTourInquirySlug;
   readonly name: string;
   readonly selection?: PrivateTourInquirySelection;
+  /** A quote request, not a published price selection. Never sent as productInterest. */
+  readonly customGroup?: { readonly stayId?: keyof typeof legacyZhangjiajieStayLabels };
 }
 
 export interface PrivateTourInquirySelection {
@@ -149,6 +151,24 @@ const legacyZhangjiajieStayLabels = {
   "spacious-premium-stay": { en: "Spacious Premium Stay", zh: "宽敞高级住宿", ko: "넉넉한 프리미엄 숙소", ja: "ゆとりのある上級宿泊" },
   "distinctive-mountain-stay": { en: "Distinctive Mountain Stay", zh: "精品山景住宿", ko: "특색 있는 산악 숙소", ja: "山の景色を楽しむ宿泊" },
 } as const;
+
+export function isZhangjiajieCustomGroupTour(slug?: string): boolean {
+  return slug === "zhangjiajie-4-day-private-tour" ||
+    slug === "zhangjiajie-forest-4-day-private-tour" ||
+    slug === "zhangjiajie-furong-fenghuang-7-day-private-tour";
+}
+
+export function privateTourInquiryStayPreference(context: PrivateTourInquiryContext, locale: PrivateTourInquiryLocale): string | null {
+  const stay = context.customGroup?.stayId;
+  return stay ? legacyZhangjiajieStayLabels[stay][locale] : null;
+}
+
+/** Only the existing Zhangjiajie stay names can enter a quote preference. */
+function validateCustomGroup(slug: string, request?: PrivateTourInquiryContext["customGroup"]): PrivateTourInquiryContext["customGroup"] | null {
+  if (!request || !isZhangjiajieCustomGroupTour(slug)) return null;
+  if (request.stayId !== undefined && (slug !== "zhangjiajie-4-day-private-tour" || !Object.hasOwn(legacyZhangjiajieStayLabels, request.stayId))) return null;
+  return request.stayId ? { stayId: request.stayId } : {};
+}
 
 export function getPrivateTourInquirySelection(
   slug: string | null | undefined,
@@ -564,7 +584,10 @@ export function getPrivateTourInquirySubmissionContext(
       // canonical inquiry name. Keep submitted inquiries compatible.
       ? privateTourInquiryNames[context.slug].en
       : undefined;
-  return previousName ? { ...context, name: previousName } : context;
+  // Custom party sizes and stay preferences belong in the note, keeping the
+  // deployed price-selection and database contract unchanged.
+  const { customGroup, ...submitted } = context;
+  return previousName ? { ...submitted, name: previousName } : submitted;
 }
 
 export function isPrivateTourInquiryNameForSlug(
@@ -627,12 +650,15 @@ export function getPrivateTourInquiryContext(
   value: string | null | undefined,
   locale: PrivateTourInquiryLocale,
   selection?: PrivateTourInquirySelection,
+  customGroup?: PrivateTourInquiryContext["customGroup"],
 ): PrivateTourInquiryContext | null {
   if (!isPrivateTourInquirySlug(value)) return null;
   const validatedSelection = selection
     ? getPrivateTourInquirySelection(value, selection.packageId, selection.travelers)
     : null;
   if (selection && !validatedSelection) return null;
+  const validatedCustomGroup = validateCustomGroup(value, customGroup);
+  if (customGroup && (!validatedCustomGroup || selection)) return null;
   const structuredProduct = privateTourInquiryIndex.find(
     (candidate) => candidate.slug === value,
   );
@@ -643,6 +669,7 @@ export function getPrivateTourInquiryContext(
       ? "張家界4日間｜奇岩の峰林・ガラス橋・天門山"
       : privateTourInquiryNames[value][locale]),
     ...(validatedSelection ? { selection: validatedSelection } : {}),
+    ...(validatedCustomGroup ? { customGroup: validatedCustomGroup } : {}),
   };
 }
 
@@ -650,11 +677,17 @@ export function getPrivateTourInquiryContextFromSearchParams(
   parameters: URLSearchParams,
   locale: PrivateTourInquiryLocale,
 ): PrivateTourInquiryContext | null {
-  const keys = [privateTourInquiryQueryKey, ...Object.values(privateTourInquirySelectionQueryKeys)];
+  const keys = [privateTourInquiryQueryKey, ...Object.values(privateTourInquirySelectionQueryKeys), "quote", "stay"];
   if (keys.some((key) => parameters.getAll(key).length > 1)) return null;
   const slug = parameters.get(privateTourInquiryQueryKey);
   const packageId = parameters.get(privateTourInquirySelectionQueryKeys.packageId);
   const travelers = parameters.get(privateTourInquirySelectionQueryKeys.travelers);
+  const quote = parameters.get("quote");
+  const stay = parameters.get("stay");
+  if (quote !== null || stay !== null) {
+    if (quote !== "custom-group" || packageId !== null || travelers !== null) return null;
+    return getPrivateTourInquiryContext(slug, locale, undefined, stay === null ? {} : { stayId: stay as keyof typeof legacyZhangjiajieStayLabels });
+  }
   if (packageId === null && travelers === null) return getPrivateTourInquiryContext(slug, locale);
   const selection = getPrivateTourInquirySelection(slug, packageId, travelers);
   return selection ? getPrivateTourInquiryContext(slug, locale, selection) : null;
@@ -679,6 +712,14 @@ export function buildPrivateTourInquiryHref(
     parameters.set(privateTourInquirySelectionQueryKeys.travelers, String(validated.travelers));
   }
   return `${homePath}?${parameters.toString()}#planner-contact`;
+}
+
+export function buildZhangjiajieCustomGroupInquiryHref(homePath: string, slug: string, stayId?: string): string {
+  if (!isPrivateTourInquirySlug(slug) || !validateCustomGroup(slug, stayId ? { stayId: stayId as keyof typeof legacyZhangjiajieStayLabels } : {})) throw new Error("Invalid Zhangjiajie quote preference");
+  const url = new URL(buildPrivateTourInquiryHref(homePath, slug, "private_tour"), "https://homegroundchina.com");
+  url.searchParams.set("quote", "custom-group");
+  if (stayId) url.searchParams.set("stay", stayId);
+  return `${homePath}tours/${slug}/${url.search}${url.hash}`;
 }
 
 export function buildPrivateTourMailtoHref(

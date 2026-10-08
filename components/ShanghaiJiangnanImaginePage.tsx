@@ -227,6 +227,27 @@ const jiangnanPageCopy: Record<
 
 type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
 
+const forestFinalCopy: Record<PrivateTourLocale, Pick<ImaginePageCopy, "finalEyebrow" | "finalTitle" | "finalBody" | "contact">> = {
+  en: {
+    finalEyebrow: "This fixed route on your dates",
+    finalTitle: "Want to check this fixed route for your dates?",
+    finalBody: "Share your travel dates, group size and preferred villa or 4-star hotel. We will check accommodation and availability for this fixed route, then confirm your quote in writing.",
+    contact: "Check dates and request a quote",
+  },
+  zh: {
+    finalEyebrow: "按你的日期核对固定路线",
+    finalTitle: "想按你的日期走这条固定路线吗？",
+    finalBody: "告诉我们出行日期、人数，以及想住别墅还是四星酒店。我们按这条固定路线核对住宿与可安排情况，再书面确认报价。",
+    contact: "核对日期与报价",
+  },
+  ko: {
+    finalEyebrow: "내 날짜로 고정 코스 확인",
+    finalTitle: "내 날짜에 이 고정 코스가 가능한지 확인할까요?",
+    finalBody: "여행 날짜, 인원, 빌라 또는 4성급 호텔 중 선호하는 숙소를 알려 주세요. 이 고정 코스를 기준으로 숙소와 예약 가능 여부를 확인한 뒤 견적을 서면으로 안내합니다.",
+    contact: "날짜 확인 및 견적 요청",
+  },
+};
+
 function japanesePageCopy(): ImaginePageCopy {
   const tour = jaPilotCopy.tour;
   const copy = tour.presentation;
@@ -482,9 +503,11 @@ function buildGenericPageCopy(
 
 function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
   if (product.visibility === "preview") return buildPreviewPageCopy(product);
-  return product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG
-    ? jiangnanPageCopy[product.locale]
-    : buildGenericPageCopy(product);
+  if (product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG) return jiangnanPageCopy[product.locale];
+  const copy = buildGenericPageCopy(product);
+  return product.slug === "zhangjiajie-forest-4-day-private-tour"
+    ? { ...copy, ...forestFinalCopy[product.locale] }
+    : copy;
 }
 
 /**
@@ -1059,14 +1082,14 @@ export function ShanghaiJiangnanImaginePage({
               <h2>{copy.scopeTitle}</h2>
               <p>
                 {localized.bookingNote}
-                {product.slug === "zhangjiajie-forest-4-day-private-tour" && !japanese ? (
-                  <ZhangjiajieTourComparisonLink
-                    currentRoute="forest"
-                    locale={sourceLocale}
-                  />
-                ) : null}
               </p>
             </div>
+            {product.slug === "zhangjiajie-forest-4-day-private-tour" && !japanese ? (
+              <ZhangjiajieTourComparisonLink currentRoute="forest" locale={sourceLocale} />
+            ) : null}
+            {product.slug === "zhangjiajie-furong-fenghuang-7-day-private-tour" && !japanese ? (
+              <ZhangjiajieTourComparisonLink currentRoute="ancientTowns" locale={sourceLocale} />
+            ) : null}
             <div className={styles.scopeGrid}>
               <section>
                 <h3>{copy.exclusionsTitle}</h3>
