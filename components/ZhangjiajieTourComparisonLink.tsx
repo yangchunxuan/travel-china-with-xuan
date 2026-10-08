@@ -8,11 +8,11 @@ type ZhangjiajieComparisonRoute = (typeof routes)[number];
 const copy = {
   en: {
     title: "Glass Bridge, one stay base, or ancient towns?",
-    intro: "The two four-day routes use their time differently. Seven days adds Furong Town and Fenghuang after the Forest Park.",
+    intro: "The two four-day routes start and finish in Zhangjiajie. Seven days continues to Furong Town and Fenghuang and ends at Fenghuang Ancient City Railway Station. A return to Zhangjiajie needs its route and quote agreed in writing before payment.",
     current: "You’re viewing this route",
     headings: ["Classic · 4 days", "Forest · 4 days", "Furong & Fenghuang · 7 days"],
     rows: [
-      ["Sightseeing time", "3 sightseeing days, Days 2–4; the last day is checked against your departure.", "2 full sightseeing days, Days 2–3; arrival and departure are separate.", "2 full Forest Park days, then towns on Days 4–5 and a free day in Fenghuang on Day 6."],
+      ["Sightseeing time", "3 sightseeing days, Days 2–4; the last day is checked against your departure.", "2 full sightseeing days, Days 2–3; Day 2 is roughly 10–11 hours door to door, including a Golden Whip Stream walk. Arrival and departure are separate.", "2 full Forest Park days, then towns on Days 4–5 and a free day in Fenghuang on Day 6."],
       ["Glass Bridge & Tianmen", "Grand Canyon Glass Bridge on Day 3; Tianmen Mountain on Day 4.", "No Grand Canyon Glass Bridge. Tianmen Mountain on Day 3, or Baofeng Lake in bad weather.", "Neither the Grand Canyon Glass Bridge nor Tianmen Mountain is in the published route."],
       ["Forest Park transport", "The route uses the Bailong Elevator and a park cableway; included ticket items are confirmed in writing.", "Park shuttles included; the Bailong Elevator, park cableways and Ten-Mile Gallery mini-train are optional extras.", "Park shuttles and Ten-Mile Gallery mini-train included; unlisted cableways and the Bailong Elevator are extra."],
       ["Stay bases", "3 nights in your chosen city, premium or mountain stay tier; the exact property is confirmed for your dates.", "3 nights in one Wulingyuan base: the designated villa or a 4-star hotel.", "Wulingyuan 3 nights · Furong Town 1 night · Fenghuang 2 nights."],
@@ -23,11 +23,11 @@ const copy = {
   },
   zh: {
     title: "玻璃桥、连住一地，还是加上古镇？",
-    intro: "两条四天路线的观光日安排不同。七天路线则在森林公园之后，继续去芙蓉镇和凤凰古城。",
+    intro: "两条四天路线均在张家界抵达和离开。七天路线继续去芙蓉镇和凤凰古城，标准送站在凤凰古城站结束；若想送回张家界，须在付款前书面确认路线及报价。",
     current: "你正在看的路线",
     headings: ["经典 · 4 天", "Forest · 4 天", "芙蓉镇与凤凰 · 7 天"],
     rows: [
-      ["观光时间", "D2–D4 共 3 个观光日；最后一天须按离开班次核对。", "D2–D3 为 2 个完整观光日，抵达与离开日另安排。", "森林公园 2 个完整观光日，D4–D5 游古镇，D6 在凤凰自由活动。"],
+      ["观光时间", "D2–D4 共 3 个观光日；最后一天须按离开班次核对。", "D2–D3 为 2 个完整观光日；D2 门到门约 10–11 小时，含金鞭溪步行。抵达与离开日另安排。", "森林公园 2 个完整观光日，D4–D5 游古镇，D6 在凤凰自由活动。"],
       ["玻璃桥与天门山", "D3 大峡谷玻璃桥；D4 天门山。", "不含大峡谷玻璃桥。D3 天门山，天气不好改游宝峰湖。", "已公布路线不含大峡谷玻璃桥和天门山。"],
       ["森林公园交通", "路线安排百龙天梯与园内索道；具体已含票种写入确认方案。", "含环保车；百龙天梯、园内索道和十里画廊小火车为自选自费。", "含环保车与十里画廊小火车；未列索道和百龙天梯另计。"],
       ["住宿基地", "3 晚可选城市、宽敞高阶或特色山景住宿档；具体酒店按日期确认。", "武陵源同一基地连住 3 晚：指定别墅或四星酒店。", "武陵源 3 晚 · 芙蓉镇 1 晚 · 凤凰 2 晚。"],
@@ -38,11 +38,11 @@ const copy = {
   },
   ko: {
     title: "유리다리, 한 숙소, 아니면 고성까지?",
-    intro: "두 4일 코스는 관광일을 다르게 씁니다. 7일 코스는 국가삼림공원 이후 부용진과 봉황고성으로 이어집니다.",
+    intro: "두 4일 코스는 장가계에서 시작하고 끝납니다. 7일 코스는 부용진과 봉황고성으로 이어지며 기본 이동은 봉황고성역에서 끝납니다. 장가계로 돌아가려면 결제 전에 이동 계획과 견적을 서면으로 확정해야 합니다.",
     current: "현재 보고 있는 코스",
     headings: ["클래식 · 4일", "Forest · 4일", "부용진·봉황 · 7일"],
     rows: [
-      ["관광 시간", "D2~D4 관광 3일. 마지막 날은 출발편 시간과 함께 확인합니다.", "D2~D3 온전한 관광 2일. 도착일과 출발일은 따로 둡니다.", "국가삼림공원 종일 2일, D4~D5 고성 관광, D6 봉황 자유 일정."],
+      ["관광 시간", "D2~D4 관광 3일. 마지막 날은 출발편 시간과 함께 확인합니다.", "D2~D3 온전한 관광 2일. D2는 숙소 출발부터 귀환까지 약 10~11시간이며 금편계 걷기가 포함됩니다. 도착일과 출발일은 따로 둡니다.", "국가삼림공원 종일 2일, D4~D5 고성 관광, D6 봉황 자유 일정."],
       ["유리다리·천문산", "D3 대협곡 유리다리, D4 천문산.", "대협곡 유리다리는 제외됩니다. D3 천문산, 악천후 시 보봉호로 변경합니다.", "공개된 코스에는 대협곡 유리다리와 천문산이 없습니다."],
       ["삼림공원 교통", "백룡 엘리베이터와 공원 케이블카를 이용하는 코스. 포함 입장권은 서면으로 확인합니다.", "관광 셔틀 포함. 백룡 엘리베이터, 공원 케이블카와 십리화랑 미니 열차는 선택·별도 결제.", "관광 셔틀과 십리화랑 미니 열차 포함. 명시되지 않은 케이블카와 백룡 엘리베이터는 별도."],
       ["숙박 거점", "시내, 넓은 프리미엄, 개성 있는 산 전망 숙소 등급 중 선택해 3박. 최종 숙소는 날짜별로 확인합니다.", "무릉원 한 곳에서 3박: 지정 빌라 또는 4성급 호텔.", "무릉원 3박 · 부용진 1박 · 봉황 2박."],

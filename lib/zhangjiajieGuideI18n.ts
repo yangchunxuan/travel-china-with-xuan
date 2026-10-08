@@ -52,6 +52,7 @@ export interface ZhangjiajieGuideCopy {
     fullDayBody: string;
     fullDayExampleLabel: string;
     fullDayExample: string;
+    productComparison: { note: string; action: string };
     action: string;
     decisions: readonly {
       days: string;
@@ -218,6 +219,10 @@ const english: ZhangjiajieGuideCopy = {
     fullDayExample:
       "Arrive Monday evening and tour Tuesday plus Wednesday: that is 2 full days. Two nights work only with a safe Wednesday-evening departure; three nights is more comfortable. Apply the same rule to 3 or 4 full sightseeing days. A Day 4 transfer to Fenghuang is a four-day regional route, not four full Zhangjiajie sightseeing days.",
     action: "Talk to a China trip planner",
+    productComparison: {
+      note: "Package days also include arrival and departure arrangements. Check the actual sightseeing days, hotel bases and guide coverage before choosing.",
+      action: "Compare three published Zhangjiajie private tours",
+    },
     decisions: [
       {
         days: "2 days",
@@ -683,6 +688,10 @@ const chinese: ZhangjiajieGuideCopy = {
     fullDayExample:
       "周一晚抵达，周二和周三游览，才算 2 个完整游览日。只有周三晚能安全离开时，2 晚才成立；更舒适是住 3 晚。3 或 4 个完整游览日也按同一规则计算。若第 4 天前往凤凰，那是四日区域路线，不是四个完整的张家界游览日。",
     action: "联系旅行规划师",
+    productComparison: {
+      note: "套餐总天数还包含抵达和离开安排。选路线时，请一起核对实际观光日、住宿基地与导游范围。",
+      action: "比较三条已公布的张家界私家路线",
+    },
     decisions: [
       {
         days: "2 天",
@@ -1121,6 +1130,10 @@ const korean: ZhangjiajieGuideCopy = {
     fullDayExample:
       "월요일 저녁 도착 후 화요일과 수요일에 관광하면 온전한 2일입니다. 수요일 저녁 안전하게 출발할 수 있을 때만 2박이 가능하고, 3박이 더 편합니다. 온전한 3일이나 4일도 같은 방식으로 계산하세요. 4일 차에 봉황으로 이동하면 4일 지역 일정이지 장가계에서 온전히 관광하는 4일은 아닙니다.",
     action: "중국 여행 플래너와 상담하기",
+    productComparison: {
+      note: "패키지 일수에는 도착과 출발 일정도 포함됩니다. 실제 관광일, 숙박 거점과 가이드 범위를 함께 확인한 뒤 선택하세요.",
+      action: "공개된 장가계 프라이빗 투어 3개 비교하기",
+    },
     decisions: [
       {
         days: "2일",

@@ -17,6 +17,7 @@ export interface PrivateGuideServiceCopy {
   unit: string;
   priceNote: string;
   cities: Record<PrivateGuideCity, { name: string; description: string }>;
+  zhangjiajieRoutes: { note: string; action: string };
   scopeTitle: string;
   includedTitle: string;
   included: readonly string[];
@@ -54,6 +55,10 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
       xian: { name: "Xi’an", description: "Visit the Terracotta Army or explore the historic city. Share the places you want to see so we can review the route and travel time." },
       zhangjiajie: { name: "Zhangjiajie", description: "Get help navigating Zhangjiajie National Forest Park or planning a Tianmen Mountain day. Tell us your starting point and preferred walking pace." },
     },
+    zhangjiajieRoutes: {
+      note: "Need hotels and a private vehicle as well? Guide-only days and complete tour packages are quoted separately.",
+      action: "Compare Zhangjiajie private tours",
+    },
     scopeTitle: "A guide for the day you have in mind.", includedTitle: "Guide service", separateTitle: "Confirmed separately",
     included: ["A private, licensed English-speaking guide for up to 8 hours", "A sightseeing route discussed around your interests and pace", "Local explanations and help navigating your chosen stops"],
     separate: ["Your transport, including a car and driver if needed", "Guest admission tickets and meals", "Longer days, special routes and group arrangements"],
@@ -89,6 +94,10 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
       xian: { name: "西安", description: "参观兵马俑，或探索古城里的历史景点。告诉我们你的选择，我们一起核对路线及路途时间。" },
       zhangjiajie: { name: "张家界", description: "游览张家界国家森林公园，或安排天门山一天。告诉我们你的出发地点、想去的区域和能接受的步行强度。" },
     },
+    zhangjiajieRoutes: {
+      note: "还需要住宿与专车一起安排？单日导游服务与完整旅游套餐分别报价。",
+      action: "比较张家界私家路线",
+    },
     scopeTitle: "为你想游览的这一天，安排导游。", includedTitle: "导游服务", separateTitle: "另外确认的安排",
     included: ["一位持证的私人英文导游，每天最多8小时", "根据兴趣和节奏一起商定游览路线", "景点讲解及游览路线上的本地协助"],
     separate: ["交通；需要的话可另报专车及司机", "客人的景区门票和餐食", "超过8小时、特殊路线及具体人数安排"],
@@ -119,6 +128,10 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
       beijing: { name: "베이징", description: "베이징 시내나 만리장성 방문을 계획해 보세요. 출발 장소와 희망 관광지를 바탕으로 소요 시간과 필요한 교통을 확인합니다." },
       xian: { name: "시안", description: "병마용을 방문하거나 역사적인 시내를 둘러보세요. 원하는 장소를 알려주시면 동선과 이동 시간을 확인합니다." },
       zhangjiajie: { name: "장가계", description: "장가계 국가삼림공원 이동을 돕거나 천문산 하루 일정을 상의합니다. 출발 장소, 방문 구역과 원하는 도보 강도를 알려 주세요." },
+    },
+    zhangjiajieRoutes: {
+      note: "숙소와 전용 차량도 함께 필요하신가요? 하루 가이드 서비스와 전체 투어 패키지는 따로 견적을 안내합니다.",
+      action: "장가계 프라이빗 투어 비교하기",
     },
     scopeTitle: "원하는 관광일에 필요한 가이드를.", includedTitle: "가이드 서비스", separateTitle: "별도 확인 사항",
     included: ["하루 최대 8시간의 자격증 보유 프라이빗 한국어 가이드 1명", "관심사와 여행 속도에 맞춰 상의한 관광 동선", "현지 설명과 방문 장소 이동에 필요한 도움"],
