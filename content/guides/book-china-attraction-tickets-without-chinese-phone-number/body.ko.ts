@@ -20,7 +20,12 @@ const body: StructuredPageBody = {
       "text": "관광지의 공식 경로부터 시작하세요"
     },
     {
-      "id": "routes-table",
+      "id": "routes-intro",
+      "type": "paragraph",
+      "text": "관광지가 외국인 방문객에게 안내하는 경로에서 시작하고, 방문 날짜에 맞춰 아래 내용을 확인하세요."
+    },
+    {
+      "id": "reservation-routes-table",
       "type": "table",
       "caption": "외국인 방문객을 위한 공식 시작점",
       "columns": [
@@ -31,7 +36,7 @@ const body: StructuredPageBody = {
       "rows": [
         [
           "자금성",
-          "공식 영문 Visit 페이지 → Book Tickets",
+          "공식 영문 Visit 페이지 → Book Tickets",
           "여권 경로를 이용하고 현재 로그인, 시간대, 결제 안내를 따르세요."
         ],
         [

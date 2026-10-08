@@ -25,7 +25,7 @@ const body: StructuredPageBody = {
       "text": "下面对比主要景点的预约规则。放票时间均为北京时间（UTC+8），换算到你所在的时区，可能是完全不同的钟点。"
     },
     {
-      "id": "priority-table",
+      "id": "reservation-priority-table",
       "type": "table",
       "caption": "景点预约规则一览",
       "columns": [

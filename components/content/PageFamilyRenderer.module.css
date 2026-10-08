@@ -313,6 +313,18 @@
   text-align: start;
 }
 
+/* The attraction-reservation guides head each table with an H2 and an intro,
+   so the caption is a quiet label rather than a second headline. */
+.tableScroll:is([data-table="reservation-priority-table"], [data-table="reservation-routes-table"]) caption {
+  color: var(--body-muted);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  padding-block-end: 0.75rem;
+}
+
 .tableScroll th,
 .tableScroll td {
   border-block-end: 1px solid var(--body-line);

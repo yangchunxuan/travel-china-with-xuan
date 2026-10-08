@@ -20,7 +20,12 @@ const body: StructuredPageBody = {
       "text": "先从景点自己的渠道开始"
     },
     {
-      "id": "routes-table",
+      "id": "routes-intro",
+      "type": "paragraph",
+      "text": "先从景点自己为外籍游客指明的渠道开始，再按出行日期核对下面这些细节。"
+    },
+    {
+      "id": "reservation-routes-table",
       "type": "table",
       "caption": "外籍游客的官方起点",
       "columns": [
@@ -31,7 +36,7 @@ const body: StructuredPageBody = {
       "rows": [
         [
           "故宫",
-          "官方英语Visit页面→Book Tickets",
+          "官方英语Visit页面→Book Tickets",
           "走护照渠道，按当前的登录、时段和付款提示操作。"
         ],
         [

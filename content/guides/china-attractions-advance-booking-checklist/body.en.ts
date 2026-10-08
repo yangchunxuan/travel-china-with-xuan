@@ -25,7 +25,7 @@ const body: StructuredPageBody = {
       "text": "Here is how the main sights compare. Release times are China time (UTC+8), which may be a very different hour where you live."
     },
     {
-      "id": "priority-table",
+      "id": "reservation-priority-table",
       "type": "table",
       "caption": "Reservation rules at a glance",
       "columns": [
@@ -89,15 +89,15 @@ const body: StructuredPageBody = {
       "title": "Why one booking can shape the whole day",
       "columns": [
         {
-          "heading": "Entry follows a timetable",
+          "heading": "Entry runs on a timetable",
           "body": "At the strictest attractions, places open at a set China time a few days ahead, and the Forbidden City sells nothing on the day. Availability changes by date and time slot, so a holiday week leaves less room to move."
         },
         {
-          "heading": "Everyone needs their own place",
+          "heading": "Everyone needs a place",
           "body": "Reservations are made person by person against each traveller's document. A parent's booking does not automatically cover a child, so a group is ready only when every traveller is confirmed."
         },
         {
-          "heading": "The rest of the day follows the slot",
+          "heading": "The day follows the slot",
           "body": "Your entry time sets the pickup, the easiest hotel area and what else fits that day. If only part of a family secures a place, the whole day needs rethinking."
         }
       ]

@@ -20,7 +20,12 @@ const body: StructuredPageBody = {
       "text": "Start with the attraction's own route"
     },
     {
-      "id": "routes-table",
+      "id": "routes-intro",
+      "type": "paragraph",
+      "text": "Begin where the attraction itself points foreign visitors, then check the details below for your date."
+    },
+    {
+      "id": "reservation-routes-table",
       "type": "table",
       "caption": "Official starting points for foreign visitors",
       "columns": [
@@ -31,7 +36,7 @@ const body: StructuredPageBody = {
       "rows": [
         [
           "Forbidden City",
-          "Official English Visit page → Book Tickets",
+          "Official English Visit page → Book Tickets",
           "Use the passport route and follow the current sign-in, slot and payment prompts."
         ],
         [

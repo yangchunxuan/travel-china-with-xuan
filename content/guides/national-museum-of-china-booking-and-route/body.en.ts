@@ -35,11 +35,11 @@ const body: StructuredPageBody = {
       "type": "comparison",
       "columns": [
         {
-          "heading": "Your preferred slot is unavailable",
+          "heading": "Your slot isn’t available",
           "body": "Look for another official date or time slot before you commit to transport, and keep an unconfirmed museum day flexible. Queuing at the entrance cannot replace a reservation."
         },
         {
-          "heading": "Only part of the group is confirmed",
+          "heading": "Only some are confirmed",
           "body": "Keep the reservations you have while you check the missing person’s status and options. Cancellations still count towards the museum’s booking limits, so cancelling and rebooking the whole group is not a free reset."
         },
         {

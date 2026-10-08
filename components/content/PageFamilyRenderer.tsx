@@ -115,7 +115,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
       return (
         // Explicit roles keep table semantics when phones restyle each row as
         // a card; data-label lets that card show the column name per value.
-        <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={block.caption}>
+        <div className={styles.tableScroll} data-table={block.id} tabIndex={0} role="region" aria-label={block.caption}>
           <table role="table">
             <caption>{block.caption}</caption>
             <thead role="rowgroup">
