@@ -2,6 +2,7 @@ import type { LocalizedText, PrivateTourLocale } from "./privateTourProducts";
 import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPhotoCredits";
 import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExpansionPhaseTwoPhotoCredits";
 import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
+import { jiangnanArtPrivateTourPhotoCreditsBySlug } from "./privateTourJiangnanArtProduct";
 import { privateTourNortheastWinterPreviewPhotoCreditsBySlug } from "./privateTourNortheastWinterPreviewProducts";
 import { privateTourAdditionalCreditsBySlug } from "./privateTourPhotoAdditions";
 import { privateTourSceneCreditsBySlug } from "./privateTourSceneMedia";
@@ -56,7 +57,24 @@ export const privateTourPhotoCreditsBySlug: Readonly<
   ...privateTourExpansionPhotoCreditsBySlug,
   ...privateTourExpansionPhaseTwoPhotoCreditsBySlug,
   ...privateTourLongHaulPhotoCreditsBySlug,
+  ...jiangnanArtPrivateTourPhotoCreditsBySlug,
   ...privateTourNortheastWinterPreviewPhotoCreditsBySlug,
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": [
+    credit(
+      text("Mutianyu Great Wall", "慕田峪长城", "무톈위 만리장성"),
+      "Lloyd Tudor",
+      "https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+    credit(
+      text("Terracotta Army Pit 1", "兵马俑一号坑", "병마용 1호 갱"),
+      "BrokenSphere",
+      "https://commons.wikimedia.org/wiki/File:Terracotta_Army_Pit_1.JPG",
+      "CC BY-SA 3.0",
+      "https://creativecommons.org/licenses/by-sa/3.0/",
+    ),
+  ],
   "shanghai-suzhou-hangzhou-6-day-private-tour": [
     credit(
       text("Pan Men, Suzhou", "苏州盘门", "쑤저우 판먼"),

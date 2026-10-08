@@ -67,6 +67,10 @@ const northeastPreviewSlugs = [
   "harbin-mohe-arctic-village-7-day-private-tour",
   "harbin-snow-town-mohe-9-day-private-tour",
 ];
+const clientInspiredSlugs = [
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -203,7 +207,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 
 test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = (await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate) && !clientInspiredSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -253,7 +257,7 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
 
 test("phase-two migration extends canonical identities and exact priced selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate) && !northeastPreviewSlugs.includes(candidate) && !clientInspiredSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -322,7 +326,7 @@ test("final selection migration preserves every published price row after both r
 
 test("long-haul migration keeps every canonical identity and adds all long-haul selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !northeastPreviewSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !northeastPreviewSlugs.includes(candidate) && !clientInspiredSlugs.includes(candidate))) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -389,7 +393,7 @@ test("Northeast preview migration keeps every identity and adds exact eight-trav
   // Every earlier identity, including the Japanese names, is carried over verbatim.
   const previousNames = japaneseSql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
   assert.ok(productNames.startsWith(previousNames.replace(/    else null\n  end;\n\$\$;$/u, "")));
-  for (const slug of privateTourInquirySlugs) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !clientInspiredSlugs.includes(candidate))) {
     const branch = productNames.match(new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"))?.[1];
     assert.ok(branch, slug);
     for (const locale of ["en", "zh", "ko"]) {

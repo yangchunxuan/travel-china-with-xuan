@@ -351,6 +351,21 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
     ],
   },
   {
+    slug: "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+    title: { en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai", zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程", ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행", ja: "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー" },
+    packages: [
+      { id: "private-guided", prices: [] },
+    ],
+  },
+  {
+    slug: "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 13-Day Private Tour", zh: "北京·西安·成都·桂林·上海 13 天 12 晚私家团", ko: "베이징·시안·청두·계림·상하이 13일 프라이빗 투어", ja: "北京・西安・成都・桂林・上海 13日間（12泊）プライベートツアー" },
+    packages: [
+      { id: "with-hotels", prices: [] },
+      { id: "without-hotels", prices: [] },
+    ],
+  },
+  {
     slug: "harbin-yabuli-snow-town-6-day-private-tour",
     visibility: "preview",
     title: { en: "Harbin, Yabuli & Snow Town: 6-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡 6 天 5 晚冬季私家团", ko: "하얼빈·야부리·설향 6일 겨울 프라이빗 투어" },

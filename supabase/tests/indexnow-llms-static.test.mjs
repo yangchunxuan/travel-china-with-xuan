@@ -6,7 +6,7 @@ const root = new URL("../../", import.meta.url);
 const source = (relativePath) => readFile(new URL(relativePath, root), "utf8");
 
 test("the IndexNow key file matches the key the deploy step sends", async () => {
-  const workflow = await source(".github/workflows/deploy.yml");
+  const workflow = (await source(".github/workflows/deploy.yml")).replace(/\r\n/gu, "\n");
   const key = workflow.match(/INDEXNOW_KEY: ([a-f0-9]{32})\n/u)?.[1];
   assert.ok(key, "deploy.yml sets a 32-character hex IndexNow key");
   const keyFiles = (await readdir(new URL("public/", root))).filter((name) => /^[a-f0-9]{32}\.txt$/u.test(name));

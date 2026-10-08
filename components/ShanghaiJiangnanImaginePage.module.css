@@ -77,6 +77,15 @@
   padding: clamp(4.5rem, 8vw, 7rem) 1.5rem clamp(4rem, 7vw, 6rem);
 }
 
+.jiangnanArtHero {
+  background: #f7f4ed;
+}
+
+.jiangnanArtHero .deckCard {
+  border-radius: 0.15rem;
+  box-shadow: none;
+}
+
 .heroGrid {
   align-items: center;
   display: grid;
@@ -147,6 +156,30 @@
   margin: 1.25rem 0 0;
   max-width: 13ch;
   text-wrap: balance;
+}
+
+.hero h1.jiangnanArtTitle {
+  font-size: clamp(2.7rem, 4.2vw, 3.8rem);
+  line-height: 1.04;
+  max-width: 18ch;
+}
+
+.jiangnanArtName,
+.jiangnanArtRoute {
+  display: block;
+}
+
+.jiangnanArtRoute {
+  font-size: 0.72em;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin-block-start: 0.45em;
+}
+
+.jiangnanArtCities,
+.jiangnanArtLength {
+  display: block;
+  white-space: nowrap;
 }
 
 .titleUnit {
@@ -519,6 +552,70 @@
   font-size: 0.82rem;
   line-height: 1.5;
   margin: 0;
+}
+
+.jiangnanRouteNav {
+  background: #eee9df;
+  border-block: 1px solid #d6ccbe;
+  color: #1e211f;
+}
+
+.jiangnanRouteNav ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0 auto;
+  max-width: 77rem;
+  padding: 0;
+}
+
+.jiangnanRouteNav li {
+  min-width: 0;
+  border-inline-end: 1px solid #d6ccbe;
+}
+
+.jiangnanRouteNav li:last-child {
+  border-inline-end: 0;
+}
+
+.jiangnanRouteNav a {
+  display: grid;
+  gap: 0.25rem;
+  min-height: 6.25rem;
+  padding: 1rem 1.5rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.jiangnanRouteNav a:hover {
+  background: #e4ddd0;
+}
+
+.jiangnanRouteNav a:focus-visible {
+  outline: 3px solid var(--hg-color-focus);
+  outline-offset: -4px;
+}
+
+.jiangnanNavDays {
+  color: #946f5c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.jiangnanRouteNav strong {
+  font-family: var(--hg-font-editorial, var(--serif));
+  font-size: clamp(1.2rem, 1.75vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.jiangnanRouteNav small {
+  color: #62605b;
+  font-size: 0.75rem;
+  line-height: 1.25;
 }
 
 .section {
@@ -1129,6 +1226,10 @@
     padding: 2.75rem 1rem 4.5rem;
   }
 
+  .jiangnanArtHero {
+    padding: 0 1rem 3rem;
+  }
+
   .heroGrid {
     gap: 2.25rem;
     grid-template-areas:
@@ -1152,6 +1253,66 @@
   .hero h1.compactRouteTitle {
     font-size: clamp(1.75rem, 8.2vw, 2.4rem);
     letter-spacing: -0.025em;
+    line-height: 1.08;
+    max-width: none;
+  }
+
+  .jiangnanArtHero .heroGrid {
+    gap: 1.5rem;
+    grid-template-areas:
+      "deck"
+      "copy"
+      "price";
+  }
+
+  .jiangnanArtHero .heroDeck {
+    margin-inline: -1rem;
+    max-width: none;
+    width: calc(100% + 2rem);
+  }
+
+  .jiangnanArtHero .deckStage {
+    aspect-ratio: auto;
+    height: clamp(20rem, 56svh, 32rem);
+    margin-block-end: 0.7rem;
+  }
+
+  .jiangnanArtHero .deckCard {
+    border-radius: 0;
+    transform: none;
+  }
+
+  .jiangnanArtHero .deckCaption {
+    margin-inline: 1rem;
+    min-height: 0;
+  }
+
+  .jiangnanArtHero .breadcrumb ol {
+    margin-block-end: 0.75rem;
+  }
+
+  .jiangnanArtHero .breadcrumb li[aria-current="page"] {
+    display: none;
+  }
+
+  .jiangnanArtHero h1.jiangnanArtTitle {
+    margin-block-start: 0.7rem;
+  }
+
+  .jiangnanArtHero .heroPromise {
+    font-size: clamp(1.3rem, 5.5vw, 1.6rem);
+    line-height: 1.22;
+    margin-block-start: 1rem;
+    max-width: 27ch;
+  }
+
+  .jiangnanArtHero .heroLede {
+    font-size: 0.94rem;
+    margin-block-start: 0.85rem;
+  }
+
+  .hero h1.jiangnanArtTitle {
+    font-size: clamp(2.05rem, 8vw, 2.75rem);
     line-height: 1.08;
     max-width: none;
   }
@@ -1186,6 +1347,29 @@
   .factsRail {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-inline: 1rem;
+  }
+
+  .jiangnanRouteNav {
+    position: sticky;
+    top: 4rem;
+    z-index: 30;
+  }
+
+  .jiangnanRouteNav a {
+    align-content: center;
+    gap: 0.2rem;
+    min-height: 4.35rem;
+    padding: 0.45rem 0.25rem;
+    text-align: center;
+  }
+
+  .jiangnanRouteNav strong {
+    font-size: clamp(0.78rem, 3vw, 0.98rem);
+  }
+
+  .jiangnanRouteNav small,
+  .jiangnanNavDays {
+    font-size: 0.62rem;
   }
 
   .factsRail > div:nth-child(2) {
@@ -1243,6 +1427,10 @@
 
   .routeList {
     gap: 4.5rem;
+  }
+
+  .jiangnanArtPage .routeList {
+    gap: 3rem;
   }
 
   .routeList li,
