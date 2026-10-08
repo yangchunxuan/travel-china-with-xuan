@@ -139,7 +139,7 @@ export const legacyGuideRegistry = [
     imageWidth: 1600,
     imageHeight: 954,
     datePublished: "2026-07-20",
-    dateModified: "2026-09-09",
+    dateModified: "2026-10-08",
     sourceReviewedDate: "2026-07-21",
     locales: {
       en: {

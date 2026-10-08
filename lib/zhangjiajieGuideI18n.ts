@@ -201,7 +201,7 @@ const english: ZhangjiajieGuideCopy = {
     publishedLabel: "Published",
     publishedDate: "20 July 2026",
     updatedLabel: "Updated",
-    updatedDate: "21 July 2026",
+    updatedDate: "8 October 2026",
     liveCheck: "Live details rechecked before booking",
   },
   quick: {
@@ -567,6 +567,18 @@ const english: ZhangjiajieGuideCopy = {
     title: "Zhangjiajie planning questions",
     items: [
       {
+        question: "How much does a private Zhangjiajie tour cost?",
+        answer: "Compare the two-adult and four-adult per-person reference prices in the budget section above, alongside each route's nights, guide days, tickets and optional scenic transport. Arrival and departure are included in package days. The classic route uses a dated city-hotel price window; other hotel tiers, children, single rooms, holidays and changes outside an included weather backup need confirmation or a separate quote. The forest route's published Tianmen-to-Baofeng weather backup has no extra charge. A guide's daily fee is a different service and is not the cost of a complete trip.",
+      },
+      {
+        question: "Do I need a guide for Zhangjiajie, or can I travel independently?",
+        answer: "You can arrange an independent trip and book your own accommodation, transport and tickets. A separate English-speaking guide suits travellers who want local help on selected sightseeing days while keeping those bookings. A private-tour package arranges the published route and its listed services, with guide coverage on specified days. Choose by how much you want to organise yourself, the park route and your group's pace.",
+      },
+      {
+        question: "Are the Bailong Elevator, cableways and mini-train included?",
+        answer: "It depends on the package. The forest four-day route includes Forest Park admission and eco-shuttles plus Tianmen's cableway, but not the Bailong Elevator, park cableways or Ten-Mile Gallery mini-train. The seven-day route includes the Ten-Mile Gallery mini-train; unlisted lifts and cableways remain extra. For the classic route, confirm the exact adult-ticket and standard scenic-transport list in writing. Do not assume every ride is covered just because admission is included.",
+      },
+      {
         "question": "When is the best time to visit Zhangjiajie?",
         "answer": "For a first walking-focused visit, start by comparing April and October outside the public-holiday peaks. Spring offers green valleys, while autumn is a useful alternative to summer heat; neither guarantees clear viewpoints. Summer brings showers, slippery paths and busy school-holiday dates. Winter can bring snow and cold at mountain level, so build in more flexibility and follow current opening notices. Rain or fog can hide the pillars in any season. Check the holiday dates before booking and leave a spare local day where possible; choose by your tolerance for crowds and weather rather than a promise of a perfect month."
       },
@@ -671,7 +683,7 @@ const chinese: ZhangjiajieGuideCopy = {
     publishedLabel: "发布于",
     publishedDate: "2026年7月20日",
     updatedLabel: "更新于",
-    updatedDate: "2026年7月21日",
+    updatedDate: "2026年10月8日",
     liveCheck: "预订前会重新核对实时信息",
   },
   quick: {
@@ -1015,6 +1027,18 @@ const chinese: ZhangjiajieGuideCopy = {
     title: "张家界路线常见问题",
     items: [
       {
+        question: "张家界私家团需要多少钱？",
+        answer: "请把上面预算区的2位与4位成人每人参考价，和各路线住宿晚数、导游日期、门票及自选景区交通一起比较。套餐天数包含抵达与离开日。经典线采用所列有效期内的市区酒店档价格；其他住宿档、儿童、单房、节假日及已含天气备选之外的调整需要确认或另行报价。森林线预设的天门山改宝峰湖天气备选不加价。导游日费是另一种服务，不能当作完整旅行成本。",
+      },
+      {
+        question: "张家界需要请导游吗，可以自己自由行吗？",
+        answer: "可以自己安排自由行，自行预订住宿、交通和门票。如果保留自己的预订，只想在指定游览日获得本地帮助，可以单独请英文导游。私家团则按公开路线安排所列服务，导游仅覆盖指定日期。根据你愿意自己安排多少、森林公园路线和同行人的节奏选择。",
+      },
+      {
+        question: "百龙天梯、索道和小火车都含在价格里吗？",
+        answer: "要看具体套餐。森林四天线含森林公园门票与环保车、天门山索道，不含百龙天梯、公园内索道或十里画廊小火车。七天线已含十里画廊小火车，未列出的电梯与索道仍需另付。经典线的成人门票与标准景区交通清单需要书面确认。含景区门票不等于每一种交通项目都包含。",
+      },
+      {
         "question": "张家界几月份去比较合适？",
         "answer": "第一次以步行为主，可以先比较避开公共假日高峰的4月和10月。春天适合看绿色溪谷，秋天可避开夏季炎热，但两季都不能保证观景台晴朗。夏季有阵雨、湿滑山路和暑假客流；冬季山上可能有雪且更冷，要增加机动时间并按最新开放通知安排。任何季节的雨雾都可能遮住峰林。订票前核对假期，条件允许就多留一个当地机动日，按自己对人流和天气的接受程度选，不要把某个月当成好天气保证。"
       },
@@ -1113,7 +1137,7 @@ const korean: ZhangjiajieGuideCopy = {
     publishedLabel: "게시",
     publishedDate: "2026년 7월 20일",
     updatedLabel: "업데이트",
-    updatedDate: "2026년 7월 21일",
+    updatedDate: "2026년 10월 8일",
     liveCheck: "예약 전 최신 운영 정보를 다시 확인합니다",
   },
   quick: {
@@ -1454,6 +1478,18 @@ const korean: ZhangjiajieGuideCopy = {
     sectionLabel: "예약 전에",
     title: "장가계 일정에서 자주 묻는 질문",
     items: [
+      {
+        question: "장가계 프라이빗 투어 비용은 얼마나 드나요?",
+        answer: "위 예산 항목에서 성인 2명·4명 여행의 1인 참고 요금을 숙박 수·가이드 날짜·입장권·선택 관광지 교통과 함께 비교하세요. 상품 일수에는 도착·출발일도 포함됩니다. 클래식은 표시된 적용 기간의 시내 호텔 등급 요금이며, 다른 숙소 등급·아동·1인실·공휴일·포함된 날씨 대안 외의 변경은 확인 또는 별도 견적이 필요합니다. 삼림공원 일정의 천문산→보봉호 날씨 대안에는 추가 요금이 없습니다. 가이드 하루 요금은 다른 서비스이며 전체 여행 비용이 아닙니다.",
+      },
+      {
+        question: "장가계는 가이드가 필요한가요, 자유여행도 가능한가요?",
+        answer: "숙소·교통·입장권을 직접 예약해 자유여행으로 갈 수 있습니다. 직접 예약한 일정은 유지하면서 지정 관광일에 현지 도움을 원한다면 가이드만 따로 이용할 수 있습니다. 이 페이지의 가이드 단독 서비스와 삼림공원·7일 상품은 한국어 가이드이며, 클래식 상품은 2·3일 차 영어 가이드입니다. 투어도 지정 날짜에만 가이드가 포함되므로 직접 준비할 범위·공원 동선·일행의 속도에 맞춰 선택하세요.",
+      },
+      {
+        question: "백룡 엘리베이터·케이블카·미니열차도 포함인가요?",
+        answer: "상품마다 다릅니다. 삼림공원 4일 일정은 공원 입장권·셔틀과 천문산 케이블카를 포함하지만 백룡 엘리베이터·공원 내 케이블카·십리화랑 미니열차는 별도입니다. 7일 일정에는 십리화랑 미니열차가 포함되며, 명시되지 않은 엘리베이터·케이블카는 별도입니다. 클래식의 성인 입장권과 기본 관광지 교통 목록은 서면으로 확인하세요. 입장권 포함이 모든 교통 포함을 뜻하지는 않습니다.",
+      },
       {
         "question": "장가계는 몇 월에 가는 것이 좋나요?",
         "answer": "첫 도보 중심 여행이라면 공휴일 성수기를 피한 4월과 10월부터 비교하세요. 봄에는 초록 계곡을 즐길 수 있고 가을은 여름 더위를 피하는 선택이지만, 어느 쪽도 맑은 전망을 보장하지 않습니다. 여름에는 소나기와 미끄러운 길, 방학 인파를 고려하세요. 겨울 산 위는 춥고 눈이 올 수 있어 여유 일정과 최신 개방 안내가 중요합니다. 어느 계절이든 비와 안개가 봉우리를 가릴 수 있습니다. 예약 전에 휴일을 확인하고 가능하면 현지 여유일을 남기세요. 완벽한 달을 기대하기보다 날씨와 인파를 얼마나 감수할지로 고르세요."
