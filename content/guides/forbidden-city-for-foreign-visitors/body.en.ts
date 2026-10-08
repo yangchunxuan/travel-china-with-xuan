@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "Protect the Forbidden City day before filling the rest of Beijing",
-      "body": "The Palace Museum does not sell same-day tickets. If this is a visit you would regret missing, check the release window and keep the day flexible until every traveller is confirmed. Museum admission, Square access and security queues are different parts of the plan.",
+      "body": "The Palace Museum sells no tickets on the day. If this is a visit you’d hate to miss, note when bookings open and keep the day flexible until every traveller is confirmed. Museum tickets, Tiananmen Square access and security checks are separate parts of the plan.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",

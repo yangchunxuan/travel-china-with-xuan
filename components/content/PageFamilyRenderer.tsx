@@ -59,7 +59,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
     }
     case "callout":
       return (
-        <aside className={styles.callout} data-tone={block.tone ?? "neutral"}>
+        <aside className={styles.callout} data-callout={block.id} data-tone={block.tone ?? "neutral"}>
           {block.title ? <strong>{block.title}</strong> : null}
           <p>{block.body}</p>
           {block.link ? <a className={styles.calloutLink} href={block.link.href}>{block.link.label}</a> : null}

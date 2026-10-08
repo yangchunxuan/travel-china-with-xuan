@@ -8,7 +8,7 @@ const body: StructuredPageBody = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "Free admission still needs a confirmed place",
-      "body": "National Museum reservations open on a schedule; arriving in Beijing is not enough to enter. If the museum matters to your trip, make its confirmed entry window part of the plan before arranging the surrounding day. For a group, check who is included in the successful reservation.",
+      "body": "Entry is free, but places are released on a schedule and you cannot enter without one. If the museum matters to your trip, secure its entry window first and plan the rest of the day around it. For a group, check that everyone is on the confirmed booking.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
@@ -28,7 +28,7 @@ const body: StructuredPageBody = {
       "id": "reservation-recovery-heading",
       "type": "heading",
       "level": 2,
-      "text": "When the reservation does not settle the day"
+      "text": "If the reservation doesn’t go to plan"
     },
     {
       "id": "reservation-recovery-options",
@@ -36,15 +36,15 @@ const body: StructuredPageBody = {
       "columns": [
         {
           "heading": "Your preferred slot is unavailable",
-          "body": "Check another official date or period before committing to transport. Treat an unconfirmed museum day as flexible; walking to the entrance does not replace a successful reservation."
+          "body": "Look for another official date or time slot before you commit to transport, and keep an unconfirmed museum day flexible. Queuing at the entrance cannot replace a reservation."
         },
         {
           "heading": "Only part of the group is confirmed",
-          "body": "Keep the valid reservations while you check the missing person’s status and options. Cancelling counts towards the museum’s booking limits, so do not assume a full-group cancellation and rebooking is harmless."
+          "body": "Keep the reservations you have while you check the missing person’s status and options. Cancellations still count towards the museum’s booking limits, so cancelling and rebooking the whole group is not a free reset."
         },
         {
           "heading": "The status is unclear",
-          "body": "Use the museum’s own reservation record and published contact route to clarify it. Homeground can help fit a confirmed museum window or a different Beijing visit into the itinerary; that planning support does not create extra museum inventory."
+          "body": "Check the museum’s own reservation record and published contact route first. Then tell us your date, group size and who is already confirmed: we’ll look at workable arrangements and alternatives, and fit the confirmed window or another Beijing visit into your itinerary."
         }
       ]
     },

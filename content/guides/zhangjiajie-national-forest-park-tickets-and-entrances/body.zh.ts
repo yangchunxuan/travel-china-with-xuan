@@ -12,7 +12,7 @@ const body: StructuredPageBody = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "先把森林公园的票与路线对上，再确定接送",
-      "body": "票种、入口和山上交通需要配合同一条游览路线。提前一起核对，才能安排合适的起点，减少买到不适合自己行程的组合。门票不会消除索道、电梯或安检排队。",
+      "body": "票种、入口和山上交通要配合同一条游览路线。一起核对，才能定下合适的起点，也不会白花钱买到用不上的组合。即使有票，索道、电梯和安检仍可能排队。",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",

@@ -7,8 +7,8 @@ const body = {
     {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
-      "title": "톈먼산 티켓 선택이 하루 이동도 결정합니다",
-      "body": "날짜, 코스, 입장 시간대와 출발 입구에 따라 픽업과 귀환 동선이 달라집니다. 원하는 조합의 선택지가 적다면 실제 예약 가능한 조합부터 확인한 뒤 나머지 일정을 확정하세요. 티켓이 확정돼도 케이블카에 바로 탈 수 있다는 뜻은 아닙니다.",
+      "title": "천문산 티켓 선택이 하루 이동도 결정합니다",
+      "body": "날짜, 코스, 입장 시간대, 출발 입구에 따라 어디서 픽업하고 어떻게 돌아올지가 정해집니다. 실제 예약 가능한 조합부터 확인한 뒤 나머지 일정을 확정하세요. 티켓이 확정돼도 당일 케이블카 대기 시간은 넉넉히 잡으세요.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",

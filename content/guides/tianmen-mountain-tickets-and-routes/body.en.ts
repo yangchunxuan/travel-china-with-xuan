@@ -8,7 +8,7 @@ const body = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "A Tianmen ticket also decides how your day moves",
-      "body": "Your date, route, entry slot and starting gate shape the pickup and return journey. Check the available combination before fixing the rest of the day, especially when your preferred choice is limited. A confirmed ticket still does not mean immediate cableway boarding.",
+      "body": "Your date, route, entry slot and starting gate decide where you are picked up and how you get back. Check which combination is available before fixing the rest of the day. On the day, allow time for the cableway queue even with a confirmed ticket.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",

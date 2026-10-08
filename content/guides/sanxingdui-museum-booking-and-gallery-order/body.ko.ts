@@ -5,7 +5,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "청두에서 이동을 확정하기 전에 싼싱두이 방문일을 확인하세요",
-      "body": "박물관 예약과 광한까지의 이동은 하루 일정으로 맞아야 합니다. 현재 예약 가능 기간과 실제 확정 결과를 확인한 뒤 빠듯한 교통편을 정하세요. 공식 외국인 방문객 채널이 있어도 원하는 날짜의 표가 무제한이라는 뜻은 아닙니다.",
+      "body": "박물관 방문과 광한까지의 이동은 하루 일정으로 함께 맞춰야 합니다. 현재 예약 기간과 실제 확정 결과를 확인한 뒤 빠듯한 교통편을 정하세요. 외국인 방문객용 공식 채널 덕분에 예약은 쉬워졌지만, 원하는 날짜에 자리가 있는지는 확정 결과로 확인해야 합니다.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
@@ -24,7 +24,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
       "id": "reservation-window-check",
       "type": "callout",
       "title": "예매 오픈은 실제 방문일에 맞춰 확인하세요",
-      "body": "박물관의 외국인 방문 서비스 안내에는 영어 여권 예약 경로가 소개돼 있습니다. 이 정보만으로 영구적인 예매 오픈 시각이나 방문일의 잔여 수량을 알 수는 없습니다. 결제 전 해당 날짜의 공식 화면을 확인하고 자리가 확정되지 않으면 표가 있다고 가정해 이동을 고정하지 말고 청두 일정에 여유를 두세요.",
+      "body": "박물관은 입경 여행객을 위한 영어 여권 예약 경로를 제공합니다. 방문 날짜의 예매 오픈 시각과 잔여 자리는 공식 예약 화면에서 확인할 수 있으니 결제 전에 꼭 보세요. 자리가 확정되기 전에는 그 표에 맞춰 이동을 고정하지 말고 청두 일정을 유연하게 두세요.",
       "tone": "decision"
     },
     {id:"arrival-heading",type:"heading",level:2,text:"빠듯한 귀환 열차표를 사기 전에 청두-광한 이동을 계획하세요"},

@@ -12,7 +12,7 @@ const body: StructuredPageBody = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "삼림공원의 티켓과 동선을 맞춘 뒤 픽업을 정하세요",
-      "body": "티켓 구성, 입구와 산 위 교통은 같은 관람 동선에 맞아야 합니다. 함께 확인해야 출발 지점을 정하고 일정에 맞지 않는 조합을 사는 일을 줄일 수 있습니다. 입장권이 있어도 케이블카, 엘리베이터나 보안 검색 대기는 남습니다.",
+      "body": "입장권 구성, 입구, 산 위 교통은 하나의 동선에 맞아야 합니다. 함께 확인하면 출발 지점을 제대로 정하고, 쓰지 못할 조합에 돈을 쓰는 일도 피할 수 있습니다. 입장권이 있어도 케이블카, 엘리베이터, 보안 검색 대기는 예상해 두세요.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",

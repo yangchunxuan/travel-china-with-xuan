@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "先确认兵马俑预约，再把西安这一天排满",
-      "body": "博物院实行实名预约预购，达到容量上限时可停止售票。先核对同行者的成功预约与入场时段，再围绕参观安排接送。多人出行时，行程需要照顾每一位同行者实际确认的预约。",
+      "body": "博物院实行实名预约预购，达到容量上限时可能停止售票。先核对每位同行者的成功预约和入场时段，再围绕参观安排接送，让这一天对全组都行得通。",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",

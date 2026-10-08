@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "Confirm the museum visit before fixing a tight Xi’an day",
-      "body": "The museum uses real-name advance reservations and can stop sales at capacity. Check each traveller’s confirmation and entry window before building transfers around the visit. With a group, the most useful plan is one that works for everyone’s confirmed booking.",
+      "body": "The museum sells real-name tickets in advance and can stop sales once it reaches capacity. Check every traveller’s confirmation and entry time before building transfers around the visit, so the day works for the whole group.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",

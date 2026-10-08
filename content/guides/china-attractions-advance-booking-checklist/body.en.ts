@@ -6,129 +6,141 @@ const body: StructuredPageBody = {
     {
       "id": "direct-answer",
       "type": "lead",
-      "text": "Some of China's most memorable days start with a reservation decision before you fly. The Forbidden City has no same-day tickets; the National Museum needs a free real-name reservation; Tianmen Mountain needs the right dated route and entry slot. Shanghai Museum East, however, admits individual visitors to its general galleries without advance booking. Start with the places your party would most regret missing, then shape the trip around their confirmed availability."
+      "text": "Some of China's best-known sights run on reservations, and it helps to know which ones before you fly. The Forbidden City opens bookings seven days ahead at 20:00 China time and sells no tickets on the day. The National Museum is free but needs a real-name reservation. Tianmen Mountain sells dated routes with entry slots. Others are simpler: Shanghai Museum East admits individual visitors to its general galleries without booking."
     },
     {
       "id": "party-scenario",
       "type": "paragraph",
-      "text": "Imagine a family with two Beijing sightseeing days and one must-see museum. If only part of the family has a confirmed slot, the shared day needs repair. A holiday or fixed departure leaves less room to move. Preparing the party list and watching the China-time release deserves attention before travel."
-    },
-    {
-      "id": "early-support",
-      "type": "callout",
-      "tone": "decision",
-      "title": "Let the booking plan lead the day",
-      "body": "Share your must-see dates, full party size and pickup needs with Homeground. We can check how the reservation plan fits the day, including alternatives if the preferred slot is unavailable. The service page lists supported attractions, fees and terms; matching scope and channel are confirmed in writing before payment.",
-      "link": {
-        "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "Check matching reservation support"
-      }
+      "text": "A popular reservation rarely affects just one visit. It decides when your car should collect you, which hotel area works best and what else fits into the day. Start with the places your group would most regret missing, then build the trip around their confirmed entry."
     },
     {
       "id": "priority-heading",
       "type": "heading",
       "level": 2,
-      "text": "Which places deserve attention first?"
+      "text": "Which attractions to plan for first"
+    },
+    {
+      "id": "priority-intro",
+      "type": "paragraph",
+      "text": "Here is how the main sights compare. Release times are China time (UTC+8), which may be a very different hour where you live."
     },
     {
       "id": "priority-table",
       "type": "table",
-      "caption": "A booking shortlist for your China trip; release times are China time (UTC+8)",
+      "caption": "Reservation rules at a glance",
       "columns": [
         "Attraction",
-        "Booking priority",
-        "Key decision"
+        "Booking rule",
+        "What to plan around"
       ],
       "rows": [
         [
           "Forbidden City",
-          "Book in advance",
-          "Opens 7 days ahead at 20:00; no same-day tickets."
+          "Book ahead: opens 7 days before your visit at 20:00; no same-day tickets",
+          "Build your Beijing days around the confirmed date."
         ],
         [
           "Tiananmen Square",
-          "Free, advance reservation",
-          "Current notice says 1–7 days ahead; verify any linked-reservation exception."
+          "Free real-name reservation, 1–7 days ahead under the current notice",
+          "Separate from the Palace Museum ticket; check whether a linked-reservation exception still applies."
         ],
         [
           "National Museum of China",
-          "Free, real-name reservation",
-          "Up to 7 days ahead, daily at 17:00; select an entry window."
+          "Free real-name reservation, up to 7 days ahead; new places daily at 17:00",
+          "Choose an entry window; every visitor needs a confirmed place."
         ],
         [
           "Terracotta Warriors",
-          "Real-name prepurchase",
-          "Prebook every visitor; check current availability before fixing transport."
+          "Real-name advance purchase for every visitor",
+          "Confirm tickets before you fix transport from Xi'an."
         ],
         [
           "Sanxingdui Museum",
-          "Prepare the official passport route",
-          "English passport services are documented; confirm the current release window."
+          "Official passport booking route for inbound visitors",
+          "Check the current release window for your date before booking the Guanghan transfer."
         ],
         [
           "Tianmen Mountain",
-          "Choose a dated route and slot",
-          "Match your travel date, operating route, entry slot and entrance."
+          "Dated route, entry slot and entrance",
+          "Your route and gate decide where the day starts and how pickup works."
         ],
         [
           "Zhangjiajie Forest Park",
-          "Check the exact product",
-          "Keep gate, time, validity and separate transport coverage together."
+          "Check the exact ticket product",
+          "Keep gate, time, validity and park transport together."
         ],
         [
           "Shanghai Museum East",
           "General individual entry: no reservation",
-          "Special experience areas need separate bookings; exhibitions have their own terms."
+          "Special experience areas need their own booking; exhibitions have separate terms."
         ]
       ]
     },
     {
       "id": "separate-venues",
-      "type": "paragraph",
-      "text": "Be exact about the venue. Tiananmen Square, the Rostrum and the Palace Museum are different visits. Shanghai's East and People's Square buildings have different rules. A mountain-entry ticket can leave a cable car unbooked. Free admission can still require a scarce reservation, while a walk-in gallery may need no booking at all."
+      "type": "callout",
+      "tone": "neutral",
+      "title": "Same area, different tickets",
+      "body": "Tiananmen Square, the Tiananmen Rostrum and the Palace Museum are separate visits, and Shanghai Museum's East and People's Square buildings follow different rules. A mountain entry ticket may not include the cable car. Free admission can still need a reservation, while a walk-in gallery needs none."
+    },
+    {
+      "id": "why-it-matters",
+      "type": "comparison",
+      "title": "Why one booking can shape the whole day",
+      "columns": [
+        {
+          "heading": "Entry follows a timetable",
+          "body": "At the strictest attractions, places open at a set China time a few days ahead, and the Forbidden City sells nothing on the day. Availability changes by date and time slot, so a holiday week leaves less room to move."
+        },
+        {
+          "heading": "Everyone needs their own place",
+          "body": "Reservations are made person by person against each traveller's document. A parent's booking does not automatically cover a child, so a group is ready only when every traveller is confirmed."
+        },
+        {
+          "heading": "The rest of the day follows the slot",
+          "body": "Your entry time sets the pickup, the easiest hotel area and what else fits that day. If only part of a family secures a place, the whole day needs rethinking."
+        }
+      ]
     },
     {
       "id": "prepare-heading",
       "type": "heading",
       "level": 2,
-      "text": "Prepare before the booking window opens"
+      "text": "Get ready before the booking window opens"
     },
     {
       "id": "prepare-list",
       "type": "list",
+      "ordered": true,
       "items": [
-        "Choose the must-see date and one workable alternative. Keep arrival day flexible instead of placing your most fragile reservation immediately after a flight.",
-        "Gather the names, document types and visitor count privately. Each companion needs the correct booking; a parent’s reservation does not automatically cover a child.",
-        "Check the official channel, China-time release and any exhibit add-on before the window opens. Preparing early does not mean tickets are already on sale.",
-        "Keep the booked original passport available and protect the account and payment method you will use. Resolve a rejected document field before committing to the day."
+        "Pick the date that matters most and one alternative. Avoid placing your hardest-to-move visit straight after a long flight.",
+        "Gather each traveller's name, document type and passport details privately, so every person in the group can be booked.",
+        "Check the official channel, the China-time release and any exhibition add-on in advance. Preparing early does not mean tickets are already on sale.",
+        "Make sure you can use the booking account and payment method, and resolve any document field the form rejects before you commit to the day."
       ]
-    },
-    {
-      "id": "popular-dates-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "Popular dates call for flexible plans"
-    },
-    {
-      "id": "popular-dates",
-      "type": "paragraph",
-      "text": "A release window lets you request available slots; it does not reserve places for the whole party. Keep one alternative date or period. If the priority booking is unavailable, move a flexible walk or meal instead of crowding several fixed visits into one afternoon. Allow time for the correct entrance, security and cable-car boarding even after your tickets are confirmed."
     },
     {
       "id": "confirmed-heading",
       "type": "heading",
       "level": 2,
-      "text": "What makes the day ready?"
+      "text": "When is the day really secured?"
     },
     {
       "id": "confirmed-copy",
       "type": "paragraph",
-      "text": "Look for a completed reservation record covering every visitor, the right attraction, date and entry period. A payment notification or a sent request is insufficient. Carry the matching original documents and save the confirmation offline. If a date is sold out or an order is pending, use the attraction's own support and the linked guide before buying a second uncertain ticket."
+      "text": "Look for a completed reservation that lists every visitor, the right attraction, the date and the entry period. A payment notice or a submitted request is not enough. Save the confirmation offline and carry the original passport each person booked with. On the day, still allow time for the right entrance, security checks and any cable-car queue."
+    },
+    {
+      "id": "popular-dates",
+      "type": "callout",
+      "tone": "neutral",
+      "title": "If your first choice is unavailable",
+      "body": "Keep one backup date or time. Move a flexible walk or meal before squeezing several fixed visits into one afternoon. If an order is pending or a date shows as sold out, check with the attraction's own support before buying a second ticket."
     },
     {
       "id": "attraction-guides",
       "type": "internal-links",
-      "title": "Use the detailed guide for your attraction",
+      "title": "Detailed booking guides by attraction",
       "items": [
         {
           "label": "Forbidden City and Tiananmen",
@@ -172,27 +184,48 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "Choose support for the job you need done"
+      "text": "How Homeground can help"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "One ticket can suit reservation support; several cities, hotels and fixed departures need a wider itinerary plan. Homeground private-tour guests have itinerary reservations included without an extra reservation-service fee. Zhangjiajie is outside the standalone eight-city reservation catalogue: choose its existing private-tour or guide support for a coordinated mountain day. For the National Museum and Sanxingdui, start with the official route; any outside booking assistance needs attraction-specific confirmation."
+      "text": "A popular reservation can pull the rest of the itinerary with it. Tell us your travel dates, who is travelling and the places you most want to see. We look at each attraction and the service that fits it, then help you coordinate the plan."
+    },
+    {
+      "id": "support-list",
+      "type": "list",
+      "items": [
+        "Line up visit dates for everyone in your group, with each traveller's booking details checked.",
+        "Fit entry times around pickups, hotels, trains and the rest of the route.",
+        "Explain which kind of help applies to each attraction or tour.",
+        "Confirm the scope, cost and backup options in writing before you pay."
+      ]
+    },
+    {
+      "id": "reservation-service",
+      "type": "callout",
+      "tone": "decision",
+      "title": "Reservation support in eight cities",
+      "body": "Our reservation service covers selected attractions in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang: USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "link": {
+        "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
+        "label": "See attractions, fees and terms"
+      }
     },
     {
       "id": "support-links",
       "type": "internal-links",
-      "title": "Match the service to your trip",
+      "title": "Planning more than one attraction?",
       "items": [
         {
           "label": "Private China tours",
           "href": "/tours/",
-          "description": "Coordinate reservations with hotels, transfers and the wider route."
+          "description": "Reservations for attractions in your itinerary are included at no extra service fee, coordinated with hotels, transfers and the wider route."
         },
         {
           "label": "Zhangjiajie private guide",
           "href": "/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "Guide-only service; transport and tickets are quoted separately."
+          "description": "Tianmen Mountain and Forest Park are outside the eight-city reservation service: plan them with a Zhangjiajie private tour or guide. Guide-only service quotes transport and tickets separately."
         }
       ]
     },
@@ -203,15 +236,19 @@ const body: StructuredPageBody = {
       "items": [
         {
           "question": "How far ahead should I reserve China attractions?",
-          "answer": "There is no single national window. Prepare before travel, then use the named attraction’s current release rule. The Forbidden City opens seven days ahead; that is its sales window, not a requirement to buy exactly seven days early."
+          "answer": "There is no single national rule. Prepare before you travel, then follow each attraction's current release rule. The Forbidden City opens bookings seven days ahead; that is when sales open, not a requirement to buy exactly seven days early."
         },
         {
           "question": "Do all museums need an advance reservation?",
-          "answer": "No. Shanghai Museum East’s general individual entry needs no reservation. Its special experience areas and ticketed exhibitions have separate arrangements; check the exact building and product."
+          "answer": "No. General individual entry to Shanghai Museum East needs no reservation, although its special experience areas and paid exhibitions have their own arrangements. Check the exact building and ticket."
         },
         {
           "question": "Does a reservation let me skip queues?",
-          "answer": "No. Security, passport inspection, visitor controls and cable-car boarding remain separate. Reserve the visit, then allow time for the on-site process."
+          "answer": "No. Security, passport checks, visitor-flow controls and cable-car boarding still apply. Book the visit, then allow time on site."
+        },
+        {
+          "question": "Can Homeground book attractions for me?",
+          "answer": "For selected attractions in eight cities, yes: the reservation service costs USD 7 per person per attraction plus the official ticket price, and we confirm the scope and channel in writing before you pay. Attractions in a Homeground private-tour itinerary are reserved at no extra service fee. For Tianmen Mountain and Zhangjiajie Forest Park, choose a Zhangjiajie private tour or our private guide service; guide-only bookings quote tickets and transport separately."
         }
       ]
     },

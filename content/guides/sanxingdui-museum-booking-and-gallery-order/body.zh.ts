@@ -5,7 +5,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "先落实三星堆参观日期，再固定成都接驳",
-      "body": "博物馆预约与前往广汉的交通，需要配合成同一天的安排。先核对当前预约窗口和实际确认结果，再固定紧凑的接驳。官方入境游客渠道提供了预约途径，但不代表首选日期的门票没有数量限制。",
+      "body": "博物馆预约和前往广汉的交通，要按同一天来安排。先核对当前预约窗口和实际确认结果，再固定紧凑的接驳。官方入境游客渠道让预约更方便，但首选日期是否还有名额，仍要以确认结果为准。",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
@@ -24,7 +24,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
       "id": "reservation-window-check",
       "type": "callout",
       "title": "放票窗口要按你的参观日期核对",
-      "body": "馆方入境服务资料介绍了英语护照预约途径，但不能据此确定永久适用的放票时刻或你当天可用的名额。付款前查看当前日期对应的官方页面。如果名额没有确认，先给成都这一天保留调整余地，不要围绕一张假定能拿到的票固定接送。",
+      "body": "博物馆为入境游客提供英语护照预约渠道。你参观日期的放票时间和名额，以官方预约页面显示为准，付款前先查看。名额确认之前，成都这一天先保留调整余地，不要围绕一张还没拿到的票固定接送。",
       "tone": "decision"
     },
     {id:"arrival-heading",type:"heading",level:2,text:"买紧张返程票前，先搭好成都—广汉交通链"},

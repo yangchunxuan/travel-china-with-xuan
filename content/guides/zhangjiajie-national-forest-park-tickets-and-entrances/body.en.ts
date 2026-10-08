@@ -12,7 +12,7 @@ const body: StructuredPageBody = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "Choose the park visit before locking in the pickup",
-      "body": "The ticket package, entrance and mountain transport need to fit the same route. Planning them together gives the day a workable starting point and avoids paying for a combination that does not fit your visit. Admission does not remove cableway, elevator or security queues.",
+      "body": "Your ticket, entrance and mountain transport need to fit one route. Planning them together gives the day a sensible starting point and saves paying for a combination you can’t use. Expect queues for cableways, the elevator and security even with tickets in hand.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",

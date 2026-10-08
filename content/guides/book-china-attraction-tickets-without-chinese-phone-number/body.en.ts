@@ -6,81 +6,77 @@ const body: StructuredPageBody = {
     {
       "id": "direct-answer",
       "type": "lead",
-      "text": "You can book some China attractions without a Chinese phone number or WeChat. Start with the attraction's own foreign-visitor route: the Palace Museum links to an English booking website, the National Museum links to an English reservation system, and some venues offer a staffed alternative. The useful question is which channel accepts your passport and contact details for your date. Check that before a release window, rather than discovering a blocked form after building the whole day around one ticket."
+      "text": "You can book some of China's major attractions without a Chinese phone number or WeChat. Start with the attraction's own route for foreign visitors: the Palace Museum links to an English booking website, the National Museum to an English reservation system, and some sites offer help from staff at the entrance. What matters is whether that channel accepts your passport and contact details for your date, so check it well before tickets are released."
     },
     {
       "id": "party-scenario",
       "type": "paragraph",
-      "text": "If you are arranging a visit for parents, children or friends, a working phone is only the beginning. The channel also needs to accept each passport and complete the booking for the same day. Sorting that out before tickets are released leaves you free to choose an available slot instead of troubleshooting an account while the rest of the itinerary waits."
-    },
-    {
-      "id": "matching-support",
-      "type": "callout",
-      "tone": "decision",
-      "title": "Get help before the date becomes difficult to move",
-      "body": "Homeground's published reservation fee is USD 7 per person per attraction, plus the official ticket face value. If a real channel or coordination barrier remains, send your attractions, dates and party size. We confirm matching scope, channel, fee and terms in writing before payment. Check the service page for its lead-time guarantee and refund conditions.",
-      "link": {
-        "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "See reservation support and terms"
-      }
+      "text": "If you are booking for parents, children or friends, a phone that opens the page is only the start. The channel also has to accept every passport and complete everyone's booking for the same day. Sorting that out early lets you choose from the slots that are actually available, instead of fixing an account while the rest of the trip waits."
     },
     {
       "id": "routes-heading",
       "type": "heading",
       "level": 2,
-      "text": "Different attractions offer different ways in"
+      "text": "Start with the attraction's own route"
     },
     {
       "id": "routes-table",
       "type": "table",
-      "caption": "Start with the channel the attraction itself names",
+      "caption": "Official starting points for foreign visitors",
       "columns": [
         "Attraction",
-        "Starting route",
-        "What to verify"
+        "Where to start",
+        "What to check"
       ],
       "rows": [
         [
           "Forbidden City",
-          "Official English visitor page → booking website",
-          "Use the passport route; check current registration, slot and payment prompts."
+          "Official English Visit page → Book Tickets",
+          "Use the passport route and follow the current sign-in, slot and payment prompts."
         ],
         [
           "National Museum of China",
-          "Official English Admission → reservation system",
-          "Free entry still needs a confirmed booking; follow current admission rules."
+          "Official English Admission page → reservation system",
+          "Entry is free but still needs a confirmed reservation under the current rules."
         ],
         [
           "Sanxingdui Museum",
-          "Official website; documented English passport services",
-          "Confirm the current passport, contact and payment route for your date."
+          "Official website, with documented English passport services",
+          "Confirm the current passport, contact and payment steps for your date."
         ],
         [
           "Summer Palace",
-          "Officially documented staffed gate assistance",
-          "A 2025 Beijing answer says its online route required a mainland number; passport users could buy with staff at the gate. Recheck for your date."
+          "Staff assistance at the park entrance",
+          "A 2025 Beijing government answer says its online route needed a mainland number, while passport holders could buy with staff at the gate. Check again for your date."
         ]
       ]
     },
     {
       "id": "walk-in-boundary",
-      "type": "paragraph",
-      "text": "Shanghai Museum East's ordinary individual entry is simpler: no advance reservation is needed, and the museum asks for an original valid identity document. Special experience areas and exhibitions have separate rules. A staffed counter elsewhere is also an alternative, not a promise of holiday inventory or instant entry."
+      "type": "callout",
+      "tone": "neutral",
+      "title": "Sometimes no booking is needed",
+      "body": "Shanghai Museum East is simpler: individual visitors enter the general galleries without a reservation, carrying an original valid ID. Special experience areas and exhibitions follow their own rules. A staffed counter elsewhere is a useful alternative, though not a promise of holiday availability or instant entry."
     },
     {
       "id": "barrier-heading",
       "type": "heading",
       "level": 2,
-      "text": "Identify the barrier before changing your phone setup"
+      "text": "Work out what is actually blocking you"
+    },
+    {
+      "id": "barrier-intro",
+      "type": "paragraph",
+      "text": "“I don't have a Chinese number” can mean four different problems. Pin down which one you have before changing your phone setup."
     },
     {
       "id": "barrier-list",
       "type": "list",
       "items": [
-        "Connectivity: a data eSIM may get the page online without providing a mainland number or SMS. Being connected is only the first requirement.",
-        "Account or contact: check the country-code and verification route the owner actually offers. Do not assume that a Chinese interface means foreign numbers are rejected.",
-        "Identity: an accepted phone number does not prove the form accepts your passport. Resolve unclear names or document fields through official support.",
-        "Payment and confirmation: a linked card or payment receipt does not allocate a slot. You need a completed order matching every visitor and the visit date."
+        "Connectivity: a data eSIM can get you online, but it may not give you a mainland number or SMS. Being online is only the first step.",
+        "Account or contact: check which country codes and verification methods the attraction actually offers. A Chinese-language screen does not mean foreign numbers are refused.",
+        "Identity: a phone number that works does not prove the form accepts your passport. Ask the attraction's official support about unclear name or document fields.",
+        "Payment and confirmation: linking a card or receiving a payment notice does not give you a place. You need a completed order that matches every visitor and the visit date."
       ]
     },
     {
@@ -92,17 +88,19 @@ const body: StructuredPageBody = {
     {
       "id": "stuck-copy",
       "type": "paragraph",
-      "text": "Keep a redacted error screenshot and the order status, then ask the attraction about its current foreign-document route. Avoid repeatedly paying while an earlier order is unresolved, and do not replace your passport with someone else's identity. If the date is unavailable, look at another slot or day before committing to travel. The National Museum and Sanxingdui have official foreign-visitor routes; any outside booking assistance needs attraction-specific confirmation."
+      "text": "Keep a screenshot of the error, with personal details hidden, and the order status. Then ask the attraction about its current route for foreign documents. Don't pay again while an earlier order is unresolved, and never book under someone else's identity in place of your passport. If your date is full, look at another slot or day before you commit to travel."
     },
     {
       "id": "preflight-copy",
-      "type": "paragraph",
-      "text": "Do this before the hardest release window: confirm the party list, a usable official channel and one fallback day. Keep access to the contact account you used abroad, save the completed booking offline and bring the original passport. This preparation helps a family stay together and keeps a booking problem from becoming a rushed change to hotels, trains and transfers."
+      "type": "callout",
+      "tone": "neutral",
+      "title": "Before the release window",
+      "body": "Confirm the party list, a working official channel and one backup day. Keep access to the contact account you use abroad, save the completed booking offline and bring the original passport. A little preparation keeps the group on one plan and stops a booking problem from turning into rushed changes to hotels, trains and transfers."
     },
     {
       "id": "related-guides",
       "type": "internal-links",
-      "title": "Read the part that matches your problem",
+      "title": "Guides for each part of the problem",
       "items": [
         {
           "label": "Which attractions need booking first?",
@@ -130,27 +128,38 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "When the whole day needs coordinating"
+      "text": "How Homeground can help"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "A booking barrier is sometimes a route-planning problem: the available museum slot, hotel location and departure train may not fit. Homeground can help match support to that wider day. Private-tour itinerary reservations carry no extra reservation-service fee. For Tianmen Mountain and Forest Park, use the existing Zhangjiajie private-tour or guide service; they are outside the standalone eight-city reservation catalogue. A guide's fee alone does not include transport or admission."
+      "text": "Sometimes the real problem is the day around the ticket: the museum slot, the hotel location and the train out don't line up. Tell us your dates, who is travelling and the places you want to see. We check which of our services fits each attraction, then confirm the scope, fee and backup options in writing before you pay."
+    },
+    {
+      "id": "reservation-service",
+      "type": "callout",
+      "tone": "decision",
+      "title": "When a channel or group booking gets stuck",
+      "body": "Our reservation service covers selected attractions in eight cities for USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "link": {
+        "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
+        "label": "See the service and terms"
+      }
     },
     {
       "id": "support-links",
       "type": "internal-links",
-      "title": "Support for a coordinated trip",
+      "title": "Planning the whole trip?",
       "items": [
         {
           "label": "Private China tours",
           "href": "/tours/",
-          "description": "Arrange the booking within the wider itinerary."
+          "description": "Reservations for attractions in your itinerary are included at no extra service fee and arranged with the wider route."
         },
         {
           "label": "Zhangjiajie private guide",
           "href": "/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "Guide-only help; confirm tickets and transport separately."
+          "description": "Tianmen Mountain and Forest Park are outside the eight-city reservation service: plan them with a Zhangjiajie private tour or guide. A guide's fee does not include transport or admission."
         }
       ]
     },
@@ -161,15 +170,15 @@ const body: StructuredPageBody = {
       "items": [
         {
           "question": "Must foreigners have a Chinese phone number to book attractions?",
-          "answer": "Requirements vary by attraction and channel. Start with its official foreign-visitor route and check the current contact fields before deciding you need a mainland number."
+          "answer": "Not always. Requirements vary by attraction and channel. Start with the attraction's official route for foreign visitors and check its current contact fields before deciding you need a mainland number."
         },
         {
           "question": "Can I book without WeChat?",
-          "answer": "At some attractions, yes: start with an owner-linked English website or documented staffed route. Others use mini-programs. Check the official alternative before making the date fixed."
+          "answer": "At some attractions, yes. Start with the English website the attraction links to, or a documented staffed route; others rely on WeChat mini-programs. Check the official alternative before you fix the date."
         },
         {
           "question": "Will a data eSIM solve the booking problem?",
-          "answer": "It may solve connectivity, but may provide neither a +86 number nor SMS. It does not establish passport acceptance, payment support or ticket availability."
+          "answer": "It may get you online, but it may not give you a +86 number or SMS. It doesn't settle passport acceptance, payment or availability."
         }
       ]
     },

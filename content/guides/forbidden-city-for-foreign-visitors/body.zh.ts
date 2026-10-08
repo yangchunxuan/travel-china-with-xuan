@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "先落实故宫参观日，再安排北京其他行程",
-      "body": "故宫不售当日票。如果这是你最不想错过的一站，先留意放票窗口，在同行者的预约都确认前保留当天调整的余地。故宫门票、广场通行与现场安检，是这一天需要分别处理的事情。",
+      "body": "故宫不售当日票。如果这是你最不想错过的一站，先记下放票时间，在所有同行者都约上之前，给这一天留出调整余地。故宫门票、天安门广场通行和现场安检，是这一天要分别安排的几件事。",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",

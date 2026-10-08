@@ -5,7 +5,7 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "Arrange the Sanxingdui date before committing to the Chengdu transfer",
-      "body": "A museum reservation and a journey to Guanghan need to work as one day. Check the museum’s current booking window and the actual confirmation before making a tight transport commitment. Its official inbound-visitor channel is useful, but it is not proof of unlimited tickets for a preferred date.",
+      "body": "The museum visit and the journey to Guanghan work as one day. Check the current booking window and your actual confirmation before committing to tight transport times. The official channel for inbound visitors makes booking easier, but availability on your preferred date still has to be confirmed.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
@@ -23,8 +23,8 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {
       "id": "reservation-window-check",
       "type": "callout",
-      "title": "The booking window belongs to your visit date",
-      "body": "The museum’s inbound service information describes an English passport-booking route. It does not establish a permanent release hour or the number of places available for your day. Check the dated official screen before paying. If a place cannot be confirmed, keep the Chengdu day flexible rather than booking a transfer around an assumed ticket.",
+      "title": "Check the booking window for your own date",
+      "body": "The museum offers an English passport-booking route for inbound visitors. Release times and availability for your date are shown on its official booking screen, so check there before you pay. Until your place is confirmed, keep the Chengdu day flexible rather than booking a transfer around it.",
       "tone": "decision"
     },
     {id:"arrival-heading",type:"heading",level:2,text:"Build the Chengdu–Guanghan chain before buying a tight return"},

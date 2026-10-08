@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "베이징 일정을 채우기 전에 자금성 방문일을 먼저 확인하세요",
-      "body": "고궁박물원은 당일 입장권을 판매하지 않습니다. 꼭 보고 싶은 곳이라면 예매 오픈 시간을 확인하고 일행의 예약이 모두 확정될 때까지 그날 일정에 여유를 두세요. 박물원 입장권, 광장 통행과 현장 보안 검색은 각각 확인해야 합니다.",
+      "body": "고궁박물원은 당일 입장권을 팔지 않습니다. 꼭 보고 싶은 곳이라면 예매가 열리는 시간을 확인하고, 일행 모두의 예약이 확정될 때까지 그날 일정에 여유를 두세요. 박물원 입장권, 톈안먼 광장 통행, 현장 보안 검색은 각각 따로 챙겨야 합니다.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",

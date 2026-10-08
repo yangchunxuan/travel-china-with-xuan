@@ -8,7 +8,7 @@ const body = {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "天门山订哪种票，也决定这一天怎么走",
-      "body": "日期、线路、入场时段和起点，会影响接送位置与返回安排。尤其在首选组合余量有限时，先确认实际可订的组合，再固定其他行程。门票确认也不等于到场后可以马上乘坐索道。",
+      "body": "日期、线路、入场时段和起点，决定在哪里接送、怎么返回。先确认实际可订的组合，再固定其他行程。即使门票已确认，当天也要给索道排队留出时间。",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",

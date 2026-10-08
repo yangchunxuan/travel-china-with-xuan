@@ -10,7 +10,7 @@ export default {
       "id": "reservation-pretrip-reminder",
       "type": "callout",
       "title": "시안 하루 일정을 확정하기 전에 병마용 예약부터 확인하세요",
-      "body": "박물원은 실명 사전 예약을 운영하며 수용 한도에 도달하면 판매를 중단할 수 있습니다. 일행의 예약 확정과 입장 시간대를 확인한 뒤 이동을 맞추세요. 여러 명이 함께라면 모두의 확정된 예약에 맞는 일정이 필요합니다.",
+      "body": "박물원은 실명 사전 구매로 운영되며, 수용 한도에 이르면 판매를 멈출 수 있습니다. 일행 전원의 예약 확정과 입장 시간을 확인한 뒤 이동을 맞추면 그날 일정이 모두에게 무리 없이 돌아갑니다.",
       "tone": "decision",
       "link": {
         "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
