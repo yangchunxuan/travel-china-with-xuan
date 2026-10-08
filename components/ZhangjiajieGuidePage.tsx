@@ -22,6 +22,7 @@ import {
 import { getGuideTourCard } from "../lib/guideTourCard";
 import { zhangjiajieTourComparisonHref } from "../lib/zhangjiajieTourComparison";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { ZhangjiajieGuideBudget } from "./ZhangjiajieGuideBudget";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -753,6 +754,8 @@ export function ZhangjiajieGuidePage({
                 ))}
               </div>
             </section>
+
+            <ZhangjiajieGuideBudget locale={locale} />
 
             <section className={styles.faqSection} id="faq" aria-labelledby="guide-faq-title">
               <div className={styles.sectionHeading}>
