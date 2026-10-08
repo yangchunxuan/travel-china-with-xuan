@@ -786,6 +786,20 @@ export function ShanghaiJiangnanImaginePage({
   const startingPrice = getPrivateTourStartingPrice(localized);
   const baseCopy = japanese ? japanesePilot ? japanesePageCopy() : genericJapanesePageCopy(localized) : getPageCopy(localized);
   const jiangnanArt = product.slug === JIANGNAN_ART_TOUR_SLUG;
+  // The product keeps its independently reviewed West Lake catalog cover.
+  // This page opens with the Day 1 Pingjiang scene and then follows the route.
+  const openingScene = jiangnanArt
+    ? localized.routeMedia.find(({ day }) => day === 1)?.variants[0]?.image
+    : undefined;
+  const heroDeckProduct = openingScene ? {
+    ...localized,
+    heroImage: openingScene,
+    gallery: [
+      ...localized.routeMedia.flatMap(({ variants }) => variants.map(({ image }) => image))
+        .filter(({ src }) => src !== openingScene.src),
+      ...localized.gallery,
+    ],
+  } : localized;
   const copy = jiangnanArt ? { ...baseCopy, ...jiangnanArtPageCopy[locale] } : baseCopy;
   const jaPresentation = jaPilotCopy.tour.presentation;
   const photoCreditCopy = japanese ? {
@@ -1088,7 +1102,11 @@ export function ShanghaiJiangnanImaginePage({
                 japaneseContactHrefs={japaneseContactHrefs}
               />
             </div>
-            <ShanghaiJiangnanHeroDeck product={localized} photoCopy={jaPhotoCopy} />
+            <ShanghaiJiangnanHeroDeck
+              product={heroDeckProduct}
+              photoCopy={jaPhotoCopy}
+              autoAdvance={!jiangnanArt}
+            />
           </div>
         </section>
 

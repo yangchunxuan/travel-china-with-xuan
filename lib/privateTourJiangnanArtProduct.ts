@@ -259,8 +259,8 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     "请按出行日期询价；这条路线目前没有公开固定价。提供意向日期、人数、房间配置、到离信息与行李数量后，我们核对酒店、导游、高铁及景点实时余量，在付款前书面确认具体服务和最终总价。",
     "여행 날짜별 견적을 요청해 주세요. 이 일정에는 현재 공개 고정 요금이 없습니다. 희망 날짜, 인원, 객실 구성, 도착·출발편과 짐 개수를 알려 주시면 호텔, 가이드, 열차와 관광지 예약 가능 여부를 확인한 뒤 결제 전에 서비스와 최종 가격을 서면으로 보내 드립니다.",
   ),
-  heroImage: pingjiangPhoto,
-  gallery: [humbleGardenPhoto, gongchenPhoto, westLakePhoto, bundPhoto, museumEastPhoto, pudongPhoto],
+  heroImage: westLakePhoto,
+  gallery: [pudongPhoto],
   routeMedia: [
     routePhoto(1, l("Pingjiang Road", "平江路", "핑장루"), pingjiangPhoto),
     routePhoto(2, l("Humble Administrator's Garden", "拙政园", "졸정원"), humbleGardenPhoto),
