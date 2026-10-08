@@ -255,7 +255,7 @@ test("all production same-page links preserve planner history depth", async () =
 
   assert.match(header, /getHomegroundNavigationModel\(locale, copy\.path\)/);
   assert.doesNotMatch(header, /href="#studio"/);
-  assert.match(header, /className=\{styles\.mobileUtilityLink\}/);
+  assert.match(header, /className=\{styles\.mobileSectionLink\}[\s\S]*copy\.navigation\.faq/);
   assert.match(header, /handleHomegroundHashClick\(event, "#faq"\)/);
   assert.match(header, /\? "location"/);
 });
