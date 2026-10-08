@@ -386,7 +386,7 @@ test("Jiangnan comparison and both inquiry actions preserve the selected party a
   }
 });
 
-test("published price-console inquiry actions retain each selected package and party, including Japanese contact drafts", async () => {
+test("published price consoles retain selected quotes and separate Zhangjiajie custom-party requests, including Japanese contact drafts", async () => {
   const selection = await loadComponent("components/PrivateTourSelection.tsx");
   const priceScope = await loadComponent("components/TourPriceScope.tsx");
   const japaneseContact = await loadComponent("components/JapaneseJiangnanInteraction.tsx", {
@@ -404,6 +404,10 @@ test("published price-console inquiry actions retain each selected package and p
     "./TourPriceScope": priceScope,
     "./JapaneseJiangnanInteraction": japaneseContact,
   });
+  const customPartySlugs = new Set([
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+  ]);
   for (const sourceProduct of privateTourProducts) for (const option of sourceProduct.packages) for (const row of option.prices) {
     const chosen = { packageId: option.id, travelers: row.travelers };
     for (const locale of locales) {
@@ -413,17 +417,42 @@ test("published price-console inquiry actions retain each selected package and p
       const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
         slug: product.slug, initialSelection: chosen,
       }, React.createElement(interactive.ShanghaiJiangnanPriceConsole, { product, inquiryHref })));
-      const quoteUrls = nodes(parse(html)).filter(node => node.tagName === "a")
+      const renderedNodes = nodes(parse(html));
+      const quoteUrls = renderedNodes.filter(node => node.tagName === "a")
         .map(node => new URL(attr(node, "href"), "https://homegroundchina.com"))
         .filter(url => url.searchParams.get("tour") === product.slug);
       assert.equal(quoteUrls.length, 2, locale + ":" + product.slug + " keeps both inquiry actions");
+      const otherGroupNode = renderedNodes.find(node => attr(node, "class")?.split(/\s+/u).includes("otherGroupCopy"));
+      assert.ok(otherGroupNode, "the other-group action has its own section");
+      const otherGroupUrls = nodes(otherGroupNode).filter(node => node.tagName === "a")
+        .map(node => new URL(attr(node, "href"), "https://homegroundchina.com"))
+        .filter(url => url.searchParams.get("tour") === product.slug);
+      assert.equal(otherGroupUrls.length, 1);
+      assert.equal(otherGroupUrls[0].searchParams.get("quote"), customPartySlugs.has(product.slug) ? "custom-group" : null);
+      const customQuoteUrls = quoteUrls.filter(url => url.searchParams.get("quote") === "custom-group");
+      assert.equal(customQuoteUrls.length, customPartySlugs.has(product.slug) ? 1 : 0,
+        locale + ":" + product.slug + " only the Zhangjiajie other-group action is a custom request");
       for (const url of quoteUrls) {
-        assert.equal(url.pathname, homePath);
         assert.equal(url.hash, "#planner-contact");
-        assert.equal(url.searchParams.get("utm_source"), "private_tour_product");
         assert.equal(url.searchParams.get("utm_medium"), "website");
         assert.equal(url.searchParams.get("utm_campaign"), product.slug);
-        assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection, chosen);
+        const context = inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
+        if (url.searchParams.get("quote") === "custom-group") {
+          assert.ok(customPartySlugs.has(product.slug));
+          assert.equal(url.pathname, `${homePath}tours/${product.slug}/`);
+          assert.equal(url.searchParams.get("tour"), product.slug);
+          assert.equal(url.searchParams.get("utm_source"), "private_tour");
+          assert.equal(url.searchParams.has("package"), false);
+          assert.equal(url.searchParams.has("travelers"), false);
+          assert.deepEqual(context?.customGroup, {});
+          assert.equal(context?.selection, undefined);
+        } else {
+          assert.equal(url.pathname, homePath);
+          assert.equal(url.searchParams.get("utm_source"), "private_tour_product");
+          assert.equal(url.searchParams.has("quote"), false);
+          assert.equal(context?.customGroup, undefined);
+          assert.deepEqual(context?.selection, chosen);
+        }
       }
     }
     if (![beijingSlug, "shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"].includes(sourceProduct.slug)) continue;
