@@ -5,6 +5,18 @@ interface StorySection {
   paragraphs: string[];
   bullets?: string[];
   quote?: string;
+  routeChoices?: {
+    title: string;
+    options: {
+      tourSlug:
+        | "zhangjiajie-4-day-private-tour"
+        | "zhangjiajie-forest-4-day-private-tour"
+        | "zhangjiajie-furong-fenghuang-7-day-private-tour";
+      title: string;
+      description: string;
+    }[];
+    comparisonLabel: string;
+  };
 }
 
 export interface TantanZhangjiajieStoryCopy {
@@ -106,6 +118,30 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
           "A traveller once asked Tantan to look over an itinerary they had already received. Their priority was the Zhangjiajie Grand Canyon Glass Bridge. When they saw “National Forest Park” on the itinerary, they assumed the bridge was included. It was not: the itinerary referred to Zhangjiajie National Forest Park, home to areas such as Yuanjiajie and Tianzi Mountain.",
           "Because the misunderstanding was caught before arrival, Tantan could explain the difference and help the guest reconsider how to use their available time. She sees this less as finding fault with someone else’s itinerary and more as translating the words on a page into the journey that will happen on the ground.",
         ],
+        routeChoices: {
+          title: "Which private route includes the places you want?",
+          options: [
+            {
+              tourSlug: "zhangjiajie-4-day-private-tour",
+              title: "Classic 4-day private tour",
+              description:
+                "Choose this route for Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain in one trip.",
+            },
+            {
+              tourSlug: "zhangjiajie-forest-4-day-private-tour",
+              title: "Forest 4-day private tour",
+              description:
+                "Includes Forest Park and Tianmen Mountain, but skips the Grand Canyon Glass Bridge. Tianmen’s glass skywalks are a different attraction.",
+            },
+            {
+              tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
+              title: "Zhangjiajie, Furong & Fenghuang 7-day private tour",
+              description:
+                "Combines two Forest Park days with Furong and Fenghuang. Neither the Grand Canyon Glass Bridge nor Tianmen Mountain is included.",
+            },
+          ],
+          comparisonLabel: "Compare the three routes, prices and inclusions",
+        },
       },
       {
         title: "Being there is not the same as experiencing it",
@@ -254,6 +290,29 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
           "一位客人曾请 Tantan 帮忙看已经拿到的行程。客人最想去的是张家界大峡谷玻璃桥，看到行程里写有“国家森林公园”，便以为玻璃桥也包含在内。但行程指的是拥有袁家界、天子山等区域的张家界国家森林公园，并不是大峡谷。",
           "好在误解在客人抵达前被发现，Tantan 可以先解释两者的区别，再根据已有时间一起调整。她并不把这件事看成挑别人的行程毛病，更像是把纸面上的词，翻译成客人到了现场真正会经历的旅程。",
         ],
+        routeChoices: {
+          title: "哪条私家团路线包含你想去的地方？",
+          options: [
+            {
+              tourSlug: "zhangjiajie-4-day-private-tour",
+              title: "经典 4 天私家团",
+              description: "想一次游览森林公园、大峡谷玻璃桥和天门山，可以选这条路线。",
+            },
+            {
+              tourSlug: "zhangjiajie-forest-4-day-private-tour",
+              title: "森林 4 天私家团",
+              description:
+                "包含森林公园和天门山，不去大峡谷玻璃桥。天门山玻璃栈道是另一处景点，不能与大峡谷玻璃桥混为一谈。",
+            },
+            {
+              tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
+              title: "张家界、芙蓉与凤凰 7 天私家团",
+              description:
+                "安排两天森林公园，再游览芙蓉和凤凰；不包含大峡谷玻璃桥，也不包含天门山。",
+            },
+          ],
+          comparisonLabel: "比较三条路线、价格与包含项目",
+        },
       },
       {
         title: "“去过”不等于真正游览过",
@@ -398,6 +457,30 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
           "탄탄은 한 여행자가 미리 준비한 일정을 함께 살펴본 적이 있습니다. 그 여행자가 가장 기대한 곳은 대협곡 유리다리였습니다. 일정표에 ‘국가삼림공원’이 적혀 있어 유리다리도 포함된 것으로 이해했지만, 실제로는 원가계와 천자산 등을 둘러보는 장가계 국가삼림공원을 뜻했습니다.",
           "현지 도착 전에 차이를 확인했기 때문에, 탄탄은 두 관광지의 위치와 경험을 설명하고 확보된 시간에 맞춰 동선을 다시 조율할 수 있었습니다. 그에게 이 과정은 종이 위의 이름을 현장에서 실제로 만날 경험으로 풀어 주는 일에 가깝습니다.",
         ],
+        routeChoices: {
+          title: "가고 싶은 관광지가 포함된 프라이빗 코스는?",
+          options: [
+            {
+              tourSlug: "zhangjiajie-4-day-private-tour",
+              title: "클래식 4일 프라이빗 투어",
+              description:
+                "국가삼림공원, 대협곡 유리다리, 천문산을 한 여행에서 둘러보고 싶다면 이 코스를 선택하세요.",
+            },
+            {
+              tourSlug: "zhangjiajie-forest-4-day-private-tour",
+              title: "삼림 4일 프라이빗 투어",
+              description:
+                "국가삼림공원과 천문산이 포함되며 대협곡 유리다리는 방문하지 않습니다. 천문산 유리잔도는 대협곡 유리다리와 다른 관광지입니다.",
+            },
+            {
+              tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
+              title: "장가계·부용진·봉황고성 7일 프라이빗 투어",
+              description:
+                "국가삼림공원 이틀과 부용진·봉황고성을 함께 둘러봅니다. 대협곡 유리다리와 천문산은 모두 포함되지 않습니다.",
+            },
+          ],
+          comparisonLabel: "세 코스의 일정·가격·포함 항목 비교하기",
+        },
       },
       {
         title: "일정표에 있다는 것과 제대로 둘러보는 것은 다릅니다",
