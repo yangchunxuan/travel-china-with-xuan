@@ -46,10 +46,12 @@ import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePriva
 import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
 import { japaneseTourContactHrefs } from "../lib/japaneseTourContact";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
+import { JiangnanArtStory, JiangnanArtStays } from "./JiangnanArtEditorial";
 import jaStyles from "./JapaneseJiangnanPage.module.css";
 
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
+const JIANGNAN_ART_TOUR_SLUG = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 
 const beforeYouChooseTitle: Record<PrivateTourLocale, string> = {
   en: "Before you choose",
@@ -226,6 +228,73 @@ const jiangnanPageCopy: Record<
 };
 
 type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
+
+const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", Partial<ImaginePageCopy>> = {
+  en: {
+    facts: [
+      { label: "Route", value: "Suzhou 3 · Tongli 1 · Hangzhou 2 · Shanghai 5 nights" },
+      { label: "Length", value: "12 days / 11 nights" },
+      { label: "Guided time", value: "8 full days + Tongli half-day" },
+      { label: "Price", value: "Quoted for your dates and group" },
+    ],
+    routeEyebrow: "Twelve days, four places",
+    routeTitle: "A story you can actually travel.",
+    routeBody: "The named places and service days are the proposed route; the order can move around museum closures, weather and your pace. Each day's final reservations are checked for your dates.",
+    serviceEyebrow: "The practical side of the story",
+    serviceTitle: "A beautiful route needs careful arrangements.",
+    serviceBody: "Here is the proposed service scope behind the journey. We check the four hotels, guides, train, admission and boats for your dates before issuing the written price.",
+    hotelTitle: "The proposed stays",
+    transportTitle: "Guides, transport and admissions",
+  },
+  zh: {
+    facts: [
+      { label: "路线", value: "苏州 3 晚 · 同里 1 晚 · 杭州 2 晚 · 上海 5 晚" },
+      { label: "天数", value: "12 天 11 晚" },
+      { label: "导览", value: "8 个全天 + 同里半天" },
+      { label: "价格", value: "按日期与人数报价" },
+    ],
+    routeEyebrow: "十二天，四处落脚",
+    routeTitle: "把故事落到每天的路上。",
+    routeBody: "这里写清拟访地点与服务日。遇到博物馆闭馆、天气变化或你想放慢脚步，可以调整先后；实际预约与门票按出行日期核对。",
+    serviceEyebrow: "诗意背后的安排",
+    serviceTitle: "走得从容，靠的是把细节接好。",
+    serviceBody: "四处住宿、导游、私车、高铁、门票与游船会按你的日期逐项核实；确认可订后，再给出书面的服务范围与价格。",
+    hotelTitle: "候选住宿",
+    transportTitle: "导游、交通与门票",
+  },
+  ko: {
+    facts: [
+      { label: "동선", value: "쑤저우 3박 · 퉁리 1박 · 항저우 2박 · 상하이 5박" },
+      { label: "기간", value: "11박 12일" },
+      { label: "가이드", value: "전일 8일 + 퉁리 반일" },
+      { label: "가격", value: "날짜와 인원별 견적" },
+    ],
+    routeEyebrow: "12일, 네 도시",
+    routeTitle: "이야기를 실제 여행 동선으로 엮었습니다.",
+    routeBody: "방문 장소와 서비스일을 날짜별로 보여 드립니다. 박물관 휴관, 날씨, 여행 속도에 따라 순서를 조정할 수 있으며 실제 예약은 출발 날짜에 맞춰 확인합니다.",
+    serviceEyebrow: "여정 뒤의 세심한 준비",
+    serviceTitle: "편안한 여행을 위해 필요한 것을 잇습니다.",
+    serviceBody: "네 숙소, 가이드, 전용 차량, 열차, 입장권과 보트의 가능 여부를 날짜별로 확인한 뒤 서비스 범위와 금액을 서면으로 안내합니다.",
+    hotelTitle: "후보 숙소",
+    transportTitle: "가이드, 교통과 입장권",
+  },
+  ja: {
+    facts: [
+      { label: "行程", value: "蘇州3泊 · 同里1泊 · 杭州2泊 · 上海5泊" },
+      { label: "日数", value: "12日間／11泊" },
+      { label: "案内", value: "終日8日間＋同里半日" },
+      { label: "料金", value: "日程と人数に応じた見積もり" },
+    ],
+    routeEyebrow: "十二日間、四つの土地",
+    routeTitle: "物語を、一日ずつ歩く旅へ。",
+    routeBody: "訪問候補とサービス日を示しています。休館日や天候、歩くペースに合わせて順序を調整し、予約内容は実際の旅行日に確認します。",
+    serviceEyebrow: "旅を支える手配",
+    serviceTitle: "ゆとりある旅は、細やかな準備から。",
+    serviceBody: "四つの宿、ガイド、専用車、列車、入場券と船を日程に合わせて確認し、サービスと料金を書面でご案内します。",
+    hotelTitle: "宿泊候補",
+    transportTitle: "ガイド・交通・入場券",
+  },
+};
 
 const forestFinalCopy: Record<PrivateTourLocale, Pick<ImaginePageCopy, "finalEyebrow" | "finalTitle" | "finalBody" | "contact">> = {
   en: {
@@ -620,9 +689,23 @@ const compactChineseRouteTitleSlugs = new Set([
 
 function displayTourTitle(
   title: string,
-  locale: PrivateTourLocale,
+  locale: PrivateTourLocale | "ja",
   slug: string,
 ) {
+  if (slug === JIANGNAN_ART_TOUR_SLUG) {
+    const separator = title.includes("｜") ? "｜" : ": ";
+    const [name, route] = title.split(separator);
+    if (name && route) {
+      const chineseRoute = locale === "zh" ? route.match(/^(.+) (12 天私家旅程)$/u) : null;
+      return <>
+        <span className={styles.jiangnanArtName}>{name}</span>{" "}
+        <span className={styles.jiangnanArtRoute}>{chineseRoute ? <>
+          <span className={styles.jiangnanArtCities}>{chineseRoute[1]}</span>{" "}
+          <span className={styles.jiangnanArtLength}>{chineseRoute[2]}</span>
+        </> : route}</span>
+      </>;
+    }
+  }
   if (
     locale === "zh" &&
     slug === "zhangjiajie-furong-fenghuang-7-day-private-tour"
@@ -678,7 +761,9 @@ export function ShanghaiJiangnanImaginePage({
     ? localizeJapanesePrivateTourProduct(product, japaneseCopyOverride)
     : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
-  const copy = japanese ? japanesePilot ? japanesePageCopy() : genericJapanesePageCopy(localized) : getPageCopy(localized);
+  const baseCopy = japanese ? japanesePilot ? japanesePageCopy() : genericJapanesePageCopy(localized) : getPageCopy(localized);
+  const jiangnanArt = product.slug === JIANGNAN_ART_TOUR_SLUG;
+  const copy = jiangnanArt ? { ...baseCopy, ...jiangnanArtPageCopy[locale] } : baseCopy;
   const jaPresentation = jaPilotCopy.tour.presentation;
   const photoCreditCopy = japanese ? {
     title: japanesePilot ? jaPresentation.photoCreditsTitle : "写真クレジット",
@@ -961,11 +1046,13 @@ export function ShanghaiJiangnanImaginePage({
               <p className={styles.heroMeta}>{copy.heroMeta}</p>
               <h1
                 id="product-title"
-                className={locale === "zh" && compactChineseRouteTitleSlugs.has(product.slug)
-                  ? styles.compactRouteTitle
-                  : undefined}
+                className={jiangnanArt
+                  ? styles.jiangnanArtTitle
+                  : locale === "zh" && compactChineseRouteTitleSlugs.has(product.slug)
+                    ? styles.compactRouteTitle
+                    : undefined}
               >
-                {displayTourTitle(localized.title, sourceLocale, product.slug)}
+                {displayTourTitle(localized.title, locale, product.slug)}
               </h1>
               <p className={styles.heroPromise}>{copy.heroPromise}</p>
               <p className={styles.heroLede}>{localized.lede}</p>
@@ -991,7 +1078,7 @@ export function ShanghaiJiangnanImaginePage({
           ))}
         </dl>
 
-        <section className={styles.section} data-tour-reveal>
+        {jiangnanArt ? <JiangnanArtStory locale={locale} /> : <section className={styles.section} data-tour-reveal>
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeading}>
               <p className={styles.sectionEyebrow}>{copy.overviewEyebrow}</p>
@@ -1007,7 +1094,7 @@ export function ShanghaiJiangnanImaginePage({
               ))}
             </ol>
           </div>
-        </section>
+        </section>}
 
         <section
           className={`${styles.section} ${styles.routeSection}`}
@@ -1022,6 +1109,8 @@ export function ShanghaiJiangnanImaginePage({
             <ShanghaiJiangnanRouteExplorer product={localized} photoCopy={jaPhotoCopy} />
           </div>
         </section>
+
+        {jiangnanArt ? <JiangnanArtStays locale={locale} /> : null}
 
         <section className={styles.section} data-tour-reveal>
           <div className={styles.sectionInner}>

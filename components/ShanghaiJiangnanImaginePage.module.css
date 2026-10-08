@@ -149,6 +149,30 @@
   text-wrap: balance;
 }
 
+.hero h1.jiangnanArtTitle {
+  font-size: clamp(2.7rem, 4.2vw, 3.8rem);
+  line-height: 1.04;
+  max-width: 18ch;
+}
+
+.jiangnanArtName,
+.jiangnanArtRoute {
+  display: block;
+}
+
+.jiangnanArtRoute {
+  font-size: 0.72em;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin-block-start: 0.45em;
+}
+
+.jiangnanArtCities,
+.jiangnanArtLength {
+  display: block;
+  white-space: nowrap;
+}
+
 .titleUnit {
   white-space: nowrap;
 }
@@ -1152,6 +1176,12 @@
   .hero h1.compactRouteTitle {
     font-size: clamp(1.75rem, 8.2vw, 2.4rem);
     letter-spacing: -0.025em;
+    line-height: 1.08;
+    max-width: none;
+  }
+
+  .hero h1.jiangnanArtTitle {
+    font-size: clamp(2.05rem, 8vw, 2.75rem);
     line-height: 1.08;
     max-width: none;
   }

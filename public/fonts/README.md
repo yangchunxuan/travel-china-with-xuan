@@ -32,6 +32,12 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-09 (Jiangnan editorial revision): rebuilt the Chinese serif slices
+from the same verified Noto Serif SC source below after the new Chinese and
+Japanese route copy added 仕, 庐, 枕, 畑, 盏, 終, 翌, 補 and 運. The Korean source
+subsets remained unchanged. Both source and production-export coverage checks
+pass after the rebuild.
+
 2026-10-09 (new 12-day Jiangnan and 13-day five-city private-tour copy):
 regenerated all three subsets with `tools/rebuild-locale-fonts.mjs` from the
 same official upstream versions listed below. Added 妙, 恩, 枯, 泠, 霍 and 웡.

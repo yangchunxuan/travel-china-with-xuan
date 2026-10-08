@@ -352,7 +352,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
-    title: { en: "Suzhou, Tongli, Hangzhou & Shanghai: 12-Day Private Tour", zh: "苏州·同里·杭州·上海 12 天 11 晚私家团", ko: "쑤저우·퉁리·항저우·상하이 12일 프라이빗 투어", ja: "蘇州・同里・杭州・上海 12日間（11泊）プライベートツアー" },
+    title: { en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai", zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程", ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행", ja: "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー" },
     packages: [
       { id: "private-guided", prices: [] },
     ],

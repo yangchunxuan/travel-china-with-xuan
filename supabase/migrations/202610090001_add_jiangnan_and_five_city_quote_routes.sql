@@ -317,10 +317,10 @@ as $$
       when 'ko' then '하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어'
       else null end
     when 'suzhou-tongli-hangzhou-shanghai-12-day-private-tour' then case p_locale
-      when 'en' then 'Suzhou, Tongli, Hangzhou & Shanghai: 12-Day Private Tour'
-      when 'zh' then '苏州·同里·杭州·上海 12 天 11 晚私家团'
-      when 'ko' then '쑤저우·퉁리·항저우·상하이 12일 프라이빗 투어'
-      when 'ja' then '蘇州・同里・杭州・上海 12日間（11泊）プライベートツアー'
+      when 'en' then 'Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai'
+      when 'zh' then '江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程'
+      when 'ko' then '중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행'
+      when 'ja' then '江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー'
       else null end
     when 'beijing-xian-chengdu-guilin-shanghai-13-day-private-tour' then case p_locale
       when 'en' then 'Beijing, Xi''an, Chengdu, Guilin & Shanghai: 13-Day Private Tour'
