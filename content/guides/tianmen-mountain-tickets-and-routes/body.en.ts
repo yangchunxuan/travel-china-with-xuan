@@ -4,6 +4,17 @@ const body = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "lead", type: "lead", text: "Choose your Tianmen Mountain ticket by its transport route, entry point and time slot. A, B and C are different ways through the same mountain visit. During the cableway upgrade, A no longer takes you straight from the city to the summit: you change at the middle station. Compare the complete package price before paying, then save the instructions for your passport and entrance." },
+    {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "A Tianmen ticket also decides how your day moves",
+      "body": "Your date, route, entry slot and starting gate shape the pickup and return journey. Check the available combination before fixing the rest of the day, especially when your preferred choice is limited. A confirmed ticket still does not mean immediate cableway boarding.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
     { id: "price-heading", type: "comparison", title: "How much are Tianmen Mountain tickets?", columns: [
       { heading: "RMB 72: admission", body: "The government-guided admission price, effective from 1 August 2025.", items: ["The Hunan price notice sets the admission component. It is not a quote for the full cableway, bus and escalator journey."] },
       { heading: "RMB 285: published adult package", body: "Tongcheng’s published construction-period notice lists this adult price for A, B and C.", items: ["Reference checked 13 September 2026. Confirm the dated product, additions and final payment total with your seller."] }

@@ -4,6 +4,17 @@ const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "answer-first", type: "lead", text: "중국 국가박물관은 톈안먼광장을 걷다가 즉흥적으로 들어가는 곳이 아니라 예약·입구·관람 범위를 미리 정해야 하는 박물관입니다. 당일 지참할 신분증으로 무료 기본 관람을 예약하고, 지정 시간에 북문 관람객 입구로 가세요. 안에서는 핵심 전시 하나와 보조 주제 하나만 고르는 편이 좋습니다. 건물 전체를 한 번에 보려는 계획은 실용적이지 않으며, 박물관 예약이 톈안먼 주변의 다른 시설 예약까지 대신하지도 않습니다." },
+    {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "무료 입장도 예약 확정이 먼저입니다",
+      "body": "국가박물관 예약은 정해진 시간에 열립니다. 베이징에 도착했다고 입장할 수 있는 것은 아닙니다. 여행에서 중요한 방문이라면 입장 시간대부터 확정한 뒤 주변 일정을 잡고, 성공한 예약에 일행 중 누가 포함됐는지도 확인하세요.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
+        "label": "중국 여행 전 관광지 예약 준비 확인"
+      }
+    },
     { id: "booking-heading", type: "heading", level: 2, text: "박물관 자체를 먼저 예약하세요" },
     { id: "booking-rules", type: "table", caption: "2026년 8월 12일 확인한 현행 규정", columns: ["단계", "공식 규정", "여행자에게 미치는 영향"], rows: [
       ["예약", "무료 기본 관람은 방문일 기준 7일 이내에 공식 웹사이트와 공식 위챗 채널에서 실명 예약합니다.", "검색 광고나 톈안먼 관련 대행 페이지가 아니라 박물관 공식 영문 예약 페이지를 사용하세요."],
@@ -13,6 +24,30 @@ const body: StructuredPageBody = {
       ["월요일", "법정 공휴일의 별도 공지가 없는 한 보통 월요일 휴관입니다.", "공휴일 월요일은 추측하지 말고 그 주의 날짜가 적힌 공지를 확인하세요."],
     ] },
     { id: "separate-systems", type: "callout", title: "박물관과 톈안먼 예약은 하나가 아닙니다", body: "중국 국가박물관은 자체 예약과 북문 입장을 운영합니다. 톈안먼광장과 주변 기념 시설은 별도 출입·보안 규정을 쓸 수 있습니다. 박물관 확인서는 박물관만 보장하므로 다른 장소는 각각 공식 채널을 확인하고 광장 주변 보안 동선에도 시간을 남겨 두세요.", tone: "warning" },
+    {
+      "id": "reservation-recovery-heading",
+      "type": "heading",
+      "level": 2,
+      "text": "예약이 확정되지 않았을 때 베이징 하루를 지키는 방법"
+    },
+    {
+      "id": "reservation-recovery-options",
+      "type": "comparison",
+      "columns": [
+        {
+          "heading": "원하는 시간대에 자리가 없을 때",
+          "body": "교통편을 확정하기 전에 공식 채널의 다른 날짜나 시간대를 확인하세요. 미확정 박물관 일정에는 여유를 두어야 합니다. 입구에서 기다린다고 성공한 예약을 대신할 수는 없습니다."
+        },
+        {
+          "heading": "일행 일부만 확정됐을 때",
+          "body": "유효한 예약을 유지하면서 빠진 사람의 상태와 선택지를 확인하세요. 취소도 박물관 예약 횟수 제한에 포함되므로 모두 취소한 뒤 다시 예약해도 영향이 없다고 생각하지 마세요."
+        },
+        {
+          "heading": "예약 상태가 불분명할 때",
+          "body": "박물관의 예약 기록과 공식 연락처로 확인하세요. Homeground는 확정된 관람 시간대나 다른 베이징 방문을 전체 일정에 맞추는 일을 도울 수 있습니다. 이런 일정 지원이 박물관의 추가 좌석을 만들지는 않습니다."
+        }
+      ]
+    },
     { id: "time-heading", type: "heading", level: 2, text: "전시보다 먼저 관람 시간을 정하세요" },
     { id: "time-options", type: "comparison", columns: [
       { heading: "약 2시간", body: "고대 중국 기본 전시 또는 정말 보고 싶은 현재 특별전 중 하나만 중심으로 삼습니다. 보안 검색, 길 찾기, 퇴장 시간까지 포함하고 다른 대형 박물관을 덧붙이지 마세요." },

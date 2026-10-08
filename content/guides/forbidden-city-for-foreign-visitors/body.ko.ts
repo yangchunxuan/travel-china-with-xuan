@@ -7,6 +7,17 @@ export default {
       text: "톈안먼 광장과 고궁박물원은 붙어 있지만 한 장의 표나 하나의 예약 과제가 아닙니다. 모든 방문자의 정확한 여권 정보로 고궁박물원을 예약하고, 광장을 볼지는 별도로 결정하세요. 당일에는 예약에 사용한 신분증 원본을 들고 남쪽 오문으로 갑니다. 검표를 통과한 뒤부터 남쪽에서 북쪽으로 이동하며 중앙축을 지키고 추가 관람 구역은 한 곳만 고른 다음, 신무문 또는 동화문으로 나가 다음 이동을 이어 가세요.",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "베이징 일정을 채우기 전에 자금성 방문일을 먼저 확인하세요",
+      "body": "고궁박물원은 당일 입장권을 판매하지 않습니다. 꼭 보고 싶은 곳이라면 예매 오픈 시간을 확인하고 일행의 예약이 모두 확정될 때까지 그날 일정에 여유를 두세요. 박물원 입장권, 광장 통행과 현장 보안 검색은 각각 확인해야 합니다.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
+        "label": "중국 여행 전 관광지 예약 준비 확인"
+      }
+    },
+    {
       id: "execution-summary",
       type: "callout",
       title: "일곱 가지 결정으로 완성하는 방문",
@@ -66,27 +77,43 @@ export default {
       text: "1단계: 일반 관광 상품이 아니라 고궁박물원 공식 입장권을 확인하세요",
     },
     {
-      id: "booking-rules",
-      type: "paragraph",
-      text: "여권으로 예약할 때 모든 언어 페이지가 같은 결제 절차라고 가정하면 안 됩니다. 2026년 8월 22일 확인한 고궁박물원 공식 영문 Tickets 페이지는 국제 방문객에게 방문 7일 전부터 최소 1일 전까지 각 방문자의 이름, 여권 번호와 방문 예정일을 bookingticket@dpm.org.cn으로 보내라고 안내합니다. 중국어 공식 규정은 별도로 ‘고궁박물원’ 위챗 미니 프로그램, 방문 7일 전 20시 판매와 당일 표 없음이라는 기준을 제시합니다. 서로 다른 공식 채널의 현행 안내로 구분해 본인 채널의 최신 절차를 따르고, 완료된 예약 기록을 받은 뒤에만 날짜를 확정하세요. 박물원은 제3자 티켓 대리점을 승인하지 않았습니다. 따라서 재판매처나 암표상이 파는 표는 확인되지 않은 것으로 보고, 방문자 본인 이름으로 완료된 고궁박물원 예약 기록만 기준으로 삼으세요.",
+      "id": "booking-rules",
+      "type": "paragraph",
+      "text": "외국 여권으로 예약할 때는 고궁박물원 공식 영어Visit 페이지에서 Book Tickets를 눌러 박물원 온라인 예매 포털로 이동하세요. 2026년10월8일 확인 당시 영어 로그인／가입과 이메일 인증 절차가 보였고, 방문일 7일 전 중국 시간20:00에 예약이 열린다고 안내했습니다. bookingticket@dpm.org.cn은 현재 티켓 문의용이며 기본 예약 신청 경로가 아닙니다. 현재 화면의 방문자, 신분증, 날짜와 시간대 지침을 따르고 완료된 예약 기록을 보관하세요. 박물원은 개인 입장권이나 전시 예약의 제3자 대리인을 승인하지 않았습니다. 재판매처나 암표상의 표는 방문자 본인 명의로 박물원이 발급한 완료 예약을 확인하기 전까지 미확인으로 보세요."
     },
     {
-      id: "booking-paths",
-      type: "table",
-      caption: "언어별 공식 페이지의 예약 안내가 완전히 같지는 않습니다",
-      columns: ["공식 경로", "현재 안내", "경계"],
-      rows: [
-        ["공식 영문 Tickets 페이지", "국제 방문객은 7일 예약 범위 안에서 최소 1일 전에 각 이름, 여권 번호와 방문일을 bookingticket@dpm.org.cn으로 보내도록 안내됨", "페이지의 정확한 박물원 주소만 사용하고 현재 요구 필드만 보내며, 이메일 전송을 확정으로 보지 말 것"],
-        ["‘고궁박물원(故宫博物院)’ 위챗 미니 프로그램", "중국어 규정은 공식 미니 프로그램과 방문 7일 전 20시 판매를 안내함", "공식 계정과 전원 정보를 확인하고 영문 이메일 기한을 미니 프로그램 재고 규칙으로 해석하지 말 것"],
-        ["공식 티켓 링크와 상담", "박물원 사이트는 티켓 서비스와 고객센터를 공개하고 베이징 12345도 여권·원본 사용을 확인함", "해외 접속 화면은 바뀔 수 있으므로 선택한 채널의 현재 공식 지침을 따르고 상태가 불명확하면 박물원에 문의할 것"],
+      "id": "booking-paths",
+      "type": "table",
+      "caption": "2026년10월8일 확인한 공식 예약과 문의 경로",
+      "columns": [
+        "공식 경로",
+        "현재 안내",
+        "경계"
       ],
+      "rows": [
+        [
+          "공식 영어Visit 페이지→Book Tickets",
+          "박물원 온라인 예매 포털로 연결되며 영어 화면에 이메일 인증과 외국 여권 입력이 있습니다",
+          "현재 화면의 안내를 따르고 모든 방문자의 완료 예약을 보관하세요. 계정만으로 자리가 예약되지는 않습니다"
+        ],
+        [
+          "고궁박물원 공식 예매 포털／미니프로그램",
+          "공식 규칙은 방문일 7일 전 중국 시간20:00 오픈과 당일 티켓 미판매를 안내합니다",
+          "실제 입장은 잔여 수량, 신분증 종류와 예약 시간대에 달려 있습니다"
+        ],
+        [
+          "공식 티켓 문의 이메일",
+          "bookingticket@dpm.org.cn은 티켓 문의에 사용합니다",
+          "문의나 답변은 티켓이 아닙니다. 과거 이메일 예약 안내를 현재 기본 절차로 사용하지 마세요"
+        ]
+      ]
     },
     {
-      id: "email-boundary",
-      type: "callout",
-      title: "이메일을 보내거나 예매 화면을 열었다고 표가 확보된 것은 아닙니다",
-      body: "박물원의 답변 또는 완료된 예약 기록을 보관하고 모든 방문자의 이름, 여권 번호, 날짜와 시간대를 확인한 뒤에만 확정으로 보세요. 여권 정보는 민감합니다. 직접 예약할 때는 고궁박물원이 현재 공개한 정확한 공식 경로로만 보내고 Homeground나 무관한 판매자를 참조에 넣거나 기록을 공개 전달하지 마세요. 결과가 모호하면 박물원 사이트의 연락처를 이용하세요.",
-      tone: "warning",
+      "id": "email-boundary",
+      "type": "callout",
+      "title": "계정 가입이나 문의만으로 티켓이 확정되지는 않습니다",
+      "body": "완료된 박물원 예약 기록에서 방문자, 예약 신분증, 날짜와 시간대를 확인한 뒤 일정을 확정하세요. 직접 예약할 때는 현재 공식 경로로만 여권 정보를 제출하세요. 상태가 불분명하면 박물원의 공식 연락처에 문의하고, 첫 주문 상태를 알기 전에는 다시 결제하지 마세요.",
+      "tone": "warning"
     },
     {
       id: "family-booking-heading",
@@ -130,7 +157,7 @@ export default {
       columns: ["상황", "의미", "대응"],
       rows: [
         ["원하는 날짜가 매진", "공식 당일 현장표를 기대할 수 없음", "다른 베이징 체류일의 공식 재고로 옮기거나, 공식 취소표가 다시 보일 때만 예약하거나, 확정 가능한 다른 관광지로 바꾸세요. 비공식 약속을 일정의 기준으로 삼지 마세요"],
-        ["이메일·결제·해외 전화번호 절차 실패", "전송 메시지나 실패 화면은 예약이 아님", "민감 정보를 가린 화면을 보관하고 현재 공식 경로에서만 재시도하세요. 상태가 불분명하면 고궁박물원 연락처나 베이징 12345를 이용하세요"],
+        ["인증·결제·연락처 절차 실패", "계정·결제 알림이나 실패 화면은 예약 확정이 아님", "민감 정보를 가린 화면을 보관하고 현재 공식 경로에서만 재시도하세요. 상태가 불분명하면 고궁박물원 연락처나 베이징 12345를 이용하세요"],
         ["이름이나 여권 번호 오류", "구매 뒤 방문자 신원을 바로 수정할 수 없음", "조치 전에 실시간 취소 규정을 읽으세요. 정정 재예약에는 재고가 필요하므로 결과를 모른 채 희소한 유효 주문을 취소하지 마세요"],
         ["일행 한 명의 확정 기록 없음", "실명 입장은 사람마다 확인함", "그 사람은 미예약자로 보고 일행의 하루를 다시 짜세요. 현장에서 동반자를 추가해 줄 것이라 기대하지 마세요"],
         ["재판매처가 ‘표 포함’이라고 안내", "상품 페이지가 박물원 발권 증명은 아님", "각 방문자의 고궁박물원 예약 기록, 날짜, 시간대와 신분증 일치 여부를 받은 뒤에만 확정으로 보세요"],
@@ -467,77 +494,77 @@ export default {
       ],
     },
     {
-      id: "official-sources",
-      type: "sources",
-      title: "이번 글에서 확인한 공식 자료",
-      items: [
+      "id": "official-sources",
+      "type": "sources",
+      "title": "이번 글에서 확인한 공식 자료",
+      "items": [
         {
-          label: "고궁박물원 공식 영문 티켓·국제 방문객 예약 안내",
-          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 현재 공식 영어Visit 및 온라인 예매 링크",
+          "url": "https://intl.dpm.org.cn/visit.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "고궁박물원 공식 티켓 서비스 링크",
-          url: "https://bookingticket.dpm.org.cn/",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 공식 티켓 서비스 링크",
+          "url": "https://bookingticket.dpm.org.cn/",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "고궁박물원 티켓·실명 신분증 규정",
-          url: "https://www.dpm.org.cn/subject_booking/",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 티켓·실명 신분증 규정",
+          "url": "https://www.dpm.org.cn/subject_booking/",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "고궁박물원 현행 중국어 요금 정책과 할인 자격",
-          url: "https://www.dpm.org.cn/singles_detail/257830.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-09-08",
+          "label": "고궁박물원 현행 중국어 요금 정책과 할인 자격",
+          "url": "https://www.dpm.org.cn/singles_detail/257830.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "고궁박물원 태화문 보수 공사 공지, 2026년 7월 31일",
-          url: "https://www.dpm.org.cn/announce_detail/379422.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-09-08",
+          "label": "고궁박물원 태화문 보수 공사 공지, 2026년 7월 31일",
+          "url": "https://www.dpm.org.cn/announce_detail/379422.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "고궁박물원 운영 시간, 추천 동선, 출입문과 교통",
-          url: "https://www.dpm.org.cn/Visit.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 운영 시간, 추천 동선, 출입문과 교통",
+          "url": "https://www.dpm.org.cn/Visit.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "고궁박물원 관람·보안 검색·짐 보관 규정",
-          url: "https://www.dpm.org.cn/singles_detail/259831.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 관람·보안 검색·짐 보관 규정",
+          "url": "https://www.dpm.org.cn/singles_detail/259831.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "고궁박물원 반입 금지 물품 목록",
-          url: "https://www.dpm.org.cn/singles_detail/259832.html",
-          publisher: "고궁박물원",
-          reviewedAt: "2026-08-22",
+          "label": "고궁박물원 반입 금지 물품 목록",
+          "url": "https://www.dpm.org.cn/singles_detail/259832.html",
+          "publisher": "고궁박물원",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "외국인 여권 예약에 관한 베이징 12345 답변",
-          url: "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
-          publisher: "베이징시 인민정부",
-          reviewedAt: "2026-08-22",
+          "label": "외국인 여권 예약에 관한 베이징 12345 답변",
+          "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+          "publisher": "베이징시 인민정부",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "톈안먼 광장 예약 시범 규정과 고궁박물원 예약 면제 조항",
-          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
-          publisher: "톈안먼지구관리위원회",
-          reviewedAt: "2026-08-22",
+          "label": "톈안먼 광장 예약 시범 규정과 고궁박물원 예약 면제 조항",
+          "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          "publisher": "톈안먼지구관리위원회",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "톈안먼 광장의 현재 공식 예약 채널",
-          url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
-          publisher: "베이징시 인민정부",
-          reviewedAt: "2026-08-22",
-        },
-      ],
+          "label": "톈안먼 광장의 현재 공식 예약 채널",
+          "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
+          "publisher": "베이징시 인민정부",
+          "reviewedAt": "2026-08-22"
+        }
+      ]
     },
   ],
 } as const;

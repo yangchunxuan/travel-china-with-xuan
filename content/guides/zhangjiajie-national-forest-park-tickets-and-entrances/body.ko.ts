@@ -9,6 +9,17 @@ const body: StructuredPageBody = {
       text: "2026년 8월 20일 확인 기준 공식 페이지에는 입장권 165위안과 입장권·셔틀버스 결합 상품 236위안이 표시됐고, 둘 다 4일 연속 유효했으며 케이블카와 엘리베이터는 포함하지 않았습니다. 상품과 가격은 바뀔 수 있으므로 결제 전 실시간 주문을 다시 확인하세요. 그다음 표와 첫 입장 게이트·시간을 맞추세요. 무릉원 숙박은 보통 동문, 금편계나 황스자이 시작은 남문, 양가계부터 시작할 때는 서문을 검토합니다.",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "삼림공원의 티켓과 동선을 맞춘 뒤 픽업을 정하세요",
+      "body": "티켓 구성, 입구와 산 위 교통은 같은 관람 동선에 맞아야 합니다. 함께 확인해야 출발 지점을 정하고 일정에 맞지 않는 조합을 사는 일을 줄일 수 있습니다. 입장권이 있어도 케이블카, 엘리베이터나 보안 검색 대기는 남습니다.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
+        "label": "중국 여행 전 관광지 예약 준비 확인"
+      }
+    },
+    {
       id: "canonical-boundary",
       type: "callout",
       title: "이 글에서 다루는 범위",

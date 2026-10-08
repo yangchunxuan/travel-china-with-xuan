@@ -24,6 +24,14 @@ export const toursWithTransport: GuideProductTarget = {
 
 /** Curated links that take precedence over the market-weighted fallback. */
 export const guideTargets = {
+  "china-attractions-advance-booking-checklist": [
+    productTarget("beijing-xian-shanghai-12-day-private-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
+  "book-china-attraction-tickets-without-chinese-phone-number": [
+    productTarget("beijing-xian-shanghai-12-day-private-tour"),
+    productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
+  ],
   "singapore-to-zhangjiajie-itinerary": [
     classicZhangjiajie,
     productTarget("zhangjiajie-furong-fenghuang-7-day-private-tour"),

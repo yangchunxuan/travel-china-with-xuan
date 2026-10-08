@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 199);
+  assert.equal(inventory.generatedIdentityCount, 201);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 218);
-  assert.equal(inventory.localeUrlCount, 646);
+  assert.equal(inventory.identityCount, 220);
+  assert.equal(inventory.localeUrlCount, 652);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
@@ -59,12 +59,13 @@ test("the Search Map complete inventory covers every current guide directory", a
   );
 
   const latestIncrement = inventory.repositoryIncrements.at(-1);
-  assert.equal(latestIncrement.checkedAt, "2026-09-26");
+  assert.equal(latestIncrement.checkedAt, "2026-10-08");
   assert.equal(latestIncrement.publicationStatus, "not-published");
-  assert.equal(latestIncrement.identityDelta, 1);
-  assert.equal(latestIncrement.localeUrlDelta, 3);
+  assert.equal(latestIncrement.identityDelta, 2);
+  assert.equal(latestIncrement.localeUrlDelta, 6);
   assert.deepEqual(latestIncrement.identities.map((entry) => entry.id), [
-    "suzhou-with-older-parents-garden-museum-transfer-day",
+    "book-china-attraction-tickets-without-chinese-phone-number",
+    "china-attractions-advance-booking-checklist",
   ]);
   for (const entry of latestIncrement.identities) {
     const metadata = await loadJson(entry.metadataPath);

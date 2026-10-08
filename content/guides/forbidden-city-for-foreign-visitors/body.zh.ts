@@ -7,6 +7,17 @@ export default {
       text: "天安门广场和故宫虽然相邻，却不是同一张票，也不是同一项预约任务。先用每位游客护照上的准确资料完成故宫博物院预约，再单独决定当天是否参观广场；所有人携带预约所用证件原件，从南侧抵达午门。通过检票后才开始故宫参观：路线始终从南向北，保留中轴，只选一处侧线，最后从神武门或东华门离院，并提前安排好下一段交通。",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "先落实故宫参观日，再安排北京其他行程",
+      "body": "故宫不售当日票。如果这是你最不想错过的一站，先留意放票窗口，在同行者的预约都确认前保留当天调整的余地。故宫门票、广场通行与现场安检，是这一天需要分别处理的事情。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
+    {
       id: "execution-summary",
       type: "callout",
       title: "七个决定完成一次参观",
@@ -66,27 +77,43 @@ export default {
       text: "第一步：通过故宫官方渠道预约，不要只看旅游商品名称",
     },
     {
-      id: "booking-rules",
-      type: "paragraph",
-      text: "使用护照预约时，不要先假设不同语言页面都采用同一个结算流程。2026 年 8 月 22 日复核时，故宫官方英文 Tickets 页面要求国际游客在参观前 7 日内、且至少提前一个自然日，把每位游客的姓名、护照号和参观日期发送至 bookingticket@dpm.org.cn。中文官方规则则单独列出“故宫博物院”微信小程序、参观前 7 日 20:00 开售和不售当日票。应把它们视为不同官方渠道的现行指引，按自己所用渠道的最新页面完成操作，并在获得完整预约记录后才锁定行程。故宫未授权第三方代理门票，因此经销商或黄牛兜售的门票均应视为未经核实，应以游客本人身份完成的故宫预约记录为准。",
+      "id": "booking-rules",
+      "type": "paragraph",
+      "text": "持外国护照预约时，从故宫官方英语Visit页面进入，并通过Book Tickets前往馆方在线订票门户。2026年10月8日核对时，门户显示英语登录／注册及邮箱验证流程，并写明参观日前第七天北京时间20:00开放预约。bookingticket@dpm.org.cn目前用于票务咨询，不再作为默认提交预约的方式。按照当前页面填写参观者、证件、日期与时段，并保存完整成功预约记录。故宫未授权第三方代理个人门票或展览预约。经销商或黄牛出售的门票，需要核实馆方以参观者本人实名签发的成功预约，不能只凭代售方付款收据判断入场资格。"
     },
     {
-      id: "booking-paths",
-      type: "table",
-      caption: "不同语言官方页面的预约指引并不完全相同",
-      columns: ["官方路径", "当前页面怎么写", "使用边界"],
-      rows: [
-        ["故宫官方英文 Tickets 页面", "国际游客须在 7 日窗口内且至少提前一个自然日，将每位游客姓名、护照号和日期发送到 bookingticket@dpm.org.cn", "只使用页面列出的准确官方邮箱，只发送当前官方要求的字段；邮件发出不等于预约确认"],
-        ["“故宫博物院”微信小程序", "中文规则把官方小程序列为提前购票渠道，并写明参观前 7 日 20:00 开售", "认准官方账号，付款前逐位核对；不要把英文邮件时限当成小程序库存规则"],
-        ["官网票务链接及官方咨询", "故宫官网列出官方票务入口和客服；北京 12345 也确认护照预约及原件检票", "境外访问界面可能调整。按所选渠道实时显示的官方说明操作，状态不清楚就咨询故宫"],
+      "id": "booking-paths",
+      "type": "table",
+      "caption": "2026年10月8日核对的官方预约与咨询渠道",
+      "columns": [
+        "官方路径",
+        "当前页面怎么写",
+        "使用边界"
       ],
+      "rows": [
+        [
+          "官方英语Visit页面→Book Tickets",
+          "馆方链接至在线订票门户；英语流程提供邮箱验证并接受外国护照资料",
+          "按照当前页面操作，保存每位参观者的成功预约；只有账号还没有预约名额"
+        ],
+        [
+          "故宫官方订票门户／小程序",
+          "官方规则写明参观日前第七天北京时间20:00放票，不售当日票",
+          "实际参观仍取决于名额、证件类别与预约时段"
+        ],
+        [
+          "官方票务咨询邮箱",
+          "bookingticket@dpm.org.cn用于票务问题咨询",
+          "咨询或回复不等于门票，不把历史邮件订票说明作为当前默认流程"
+        ]
+      ]
     },
     {
-      id: "email-boundary",
-      type: "callout",
-      title: "发出邮件或打开订票页，都不等于已经拿到门票",
-      body: "必须保存故宫回复或完整预约记录，并逐位核对姓名、护照号、日期和时段，才能把行程视为确认。护照资料属于敏感信息：自行预约时，只通过故宫当前公布的准确官方路径提交，不要抄送 Homeground 或无关卖家，也不要公开转发订单。如果结果含糊，使用故宫官网列出的联系方式询问。",
-      tone: "warning",
+      "id": "email-boundary",
+      "type": "callout",
+      "title": "注册账号或发出咨询，都不等于门票已确认",
+      "body": "保存完整的故宫预约记录，核对同行者、预约证件、日期与时段后，再把这一天视为落实。自行预约时，只通过故宫当前官方路径提交护照资料。状态不清楚就使用馆方公布的联系方式询问，第一次订单状态未明前不要再次付款。",
+      "tone": "warning"
     },
     {
       id: "family-booking-heading",
@@ -130,7 +157,7 @@ export default {
       columns: ["发生了什么", "实际含义", "恢复办法"],
       rows: [
         ["所选日期售罄", "没有可依赖的官方当日现场票", "把故宫移到北京其他有票日期，关注官方重新出现的退票余量，或换成已确认的其他景点；不要让非官方承诺锁死整条行程"],
-        ["邮件、支付或境外手机号流程失败", "邮件已发或失败页面都不等于预约成功", "保存已遮挡敏感信息的截图，只通过当前官方路径重试；状态仍不清楚时联系故宫官方或北京 12345"],
+        ["验证、支付或联系方式流程失败", "注册账号、付款通知或失败页面都不等于预约成功", "保存已遮挡敏感信息的截图，只通过当前官方路径重试；状态仍不清楚时联系故宫官方或北京 12345"],
         ["姓名或护照号填错", "购买后不能直接修改游客身份", "采取任何操作前先读实时退票规则。重新填写需要还有库存；没弄清后果前，不要取消一张稀缺的有效订单"],
         ["同行者中有一人没有确认记录", "实名入院按人核验", "把此人视为未预约，重新安排全组当天计划；不要假设现场可以临时加同行人"],
         ["经销商说“包含门票”", "旅游商品页不能证明故宫已出票", "先索取每位游客对应的故宫预约记录、日期、时段及证件匹配结果，再把参观视为确认"],
@@ -467,77 +494,77 @@ export default {
       ],
     },
     {
-      id: "official-sources",
-      type: "sources",
-      title: "本次复核的官方来源",
-      items: [
+      "id": "official-sources",
+      "type": "sources",
+      "title": "本次复核的官方来源",
+      "items": [
         {
-          label: "故宫官方英文票务与国际游客预约指引",
-          url: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫当前官方英语Visit页面及在线订票入口",
+          "url": "https://intl.dpm.org.cn/visit.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "故宫官网票务服务链接",
-          url: "https://bookingticket.dpm.org.cn/",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫官网票务服务链接",
+          "url": "https://bookingticket.dpm.org.cn/",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-10-08"
         },
         {
-          label: "故宫票务与实名证件规则",
-          url: "https://www.dpm.org.cn/subject_booking/",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫票务与实名证件规则",
+          "url": "https://www.dpm.org.cn/subject_booking/",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "故宫博物院现行中文票务政策与优惠资格",
-          url: "https://www.dpm.org.cn/singles_detail/257830.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-09-08",
+          "label": "故宫博物院现行中文票务政策与优惠资格",
+          "url": "https://www.dpm.org.cn/singles_detail/257830.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "故宫博物院关于太和门施工的公告（2026年7月31日）",
-          url: "https://www.dpm.org.cn/announce_detail/379422.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-09-08",
+          "label": "故宫博物院关于太和门施工的公告（2026年7月31日）",
+          "url": "https://www.dpm.org.cn/announce_detail/379422.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-09-08"
         },
         {
-          label: "故宫开放时间、推荐路线、出入口与交通",
-          url: "https://www.dpm.org.cn/Visit.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫开放时间、推荐路线、出入口与交通",
+          "url": "https://www.dpm.org.cn/Visit.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "故宫参观、安检与行李寄存规则",
-          url: "https://www.dpm.org.cn/singles_detail/259831.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫参观、安检与行李寄存规则",
+          "url": "https://www.dpm.org.cn/singles_detail/259831.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "故宫禁止携带物品目录",
-          url: "https://www.dpm.org.cn/singles_detail/259832.html",
-          publisher: "故宫博物院",
-          reviewedAt: "2026-08-22",
+          "label": "故宫禁止携带物品目录",
+          "url": "https://www.dpm.org.cn/singles_detail/259832.html",
+          "publisher": "故宫博物院",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "北京 12345 关于外国游客使用护照预约故宫的答复",
-          url: "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
-          publisher: "北京市人民政府",
-          reviewedAt: "2026-08-22",
+          "label": "北京 12345 关于外国游客使用护照预约故宫的答复",
+          "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+          "publisher": "北京市人民政府",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "天安门广场预约试行办法及故宫预约免重复预约规则",
-          url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
-          publisher: "北京市人民政府天安门地区管理委员会",
-          reviewedAt: "2026-08-22",
+          "label": "天安门广场预约试行办法及故宫预约免重复预约规则",
+          "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+          "publisher": "北京市人民政府天安门地区管理委员会",
+          "reviewedAt": "2026-08-22"
         },
         {
-          label: "天安门广场当前官方预约渠道",
-          url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
-          publisher: "北京市人民政府",
-          reviewedAt: "2026-08-22",
-        },
-      ],
+          "label": "天安门广场当前官方预约渠道",
+          "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
+          "publisher": "北京市人民政府",
+          "reviewedAt": "2026-08-22"
+        }
+      ]
     },
   ],
 } as const;

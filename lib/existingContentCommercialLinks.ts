@@ -57,6 +57,8 @@ const destinationTargets = {
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const approvedCommercialGuideIds = [
+  "china-attractions-advance-booking-checklist",
+  "book-china-attraction-tickets-without-chinese-phone-number",
   "best-2-week-china-tour",
   "china-2-week-tour-cost",
   "china-small-group-tours-2027",

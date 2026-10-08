@@ -4,6 +4,17 @@ const body = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "lead", type: "lead", text: "买天门山门票，先选上下山交通、入园地点和时段。A、B、C线是游览同一座山的不同交通组合。索道改造期间，A线需要在中站换车，不能从市区直接坐索道到山顶。付款前比较完整套票总价，再保存与本人证件、实际入口对应的使用说明。" },
+    {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "天门山订哪种票，也决定这一天怎么走",
+      "body": "日期、线路、入场时段和起点，会影响接送位置与返回安排。尤其在首选组合余量有限时，先确认实际可订的组合，再固定其他行程。门票确认也不等于到场后可以马上乘坐索道。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
     { id: "price-heading", type: "comparison", title: "天门山门票多少钱？", columns: [
       { heading: "72元：景区门票", body: "2025年8月1日起执行的门票政府指导价。", items: ["湖南省发改委通知规定的是门票项目，不是含索道、游览车和扶梯的全程报价。"] },
       { heading: "285元：公告所列成人套票", body: "同程所载施工期公告列明，A、B、C线普通成人套票执行价为285元。", items: ["资料复核日期为2026年9月13日。请向卖家核对出行日期、附加项目及最终支付金额。"] }

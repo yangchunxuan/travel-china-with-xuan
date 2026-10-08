@@ -1,7 +1,18 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"answer-first",type:"lead",text:"Sanxingdui Museum requires a real-name ticket booking before you go. Foreign visitors should start from a channel linked by the museum, enter each traveller's passport details exactly and carry the original passport. Two hours can cover the main story selectively; about three hours allows more time for labels, a break and the high-demand objects. Read the site and excavation story before the famous bronzes."},
- {id:"booking-heading",type:"heading",level:2,text:"Book from the museum, not from a look-alike"},
+ {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "Arrange the Sanxingdui date before committing to the Chengdu transfer",
+      "body": "A museum reservation and a journey to Guanghan need to work as one day. Check the museum’s current booking window and the actual confirmation before making a tight transport commitment. Its official inbound-visitor channel is useful, but it is not proof of unlimited tickets for a preferred date.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
+    {id:"booking-heading",type:"heading",level:2,text:"Book from the museum, not from a look-alike"},
  {id:"booking",type:"table",caption:"Sanxingdui booking decisions",columns:["Question","Reliable answer","Boundary"],rows:[
   ["Can a foreign passport be used?","Inbound-visitor service information published by Guanghan Municipal Government says the museum provides an inbound-visitor pool and English booking/payment pages using valid passports and other accepted travel documents.","The live interface, accepted payment and inventory must still be tested for the actual date."],
   ["Where should booking begin?","The Sanxingdui Museum website, official WeChat account or official mini-program. The museum and Guanghan government warn against unofficial channels.","A search result that uses the museum name is not proof of authorisation."],
@@ -9,7 +20,14 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   ["When are tickets released?","Release windows and extended summer or holiday hours are dynamic and announced on official platforms.","This guide does not preserve an old five-day or 20:00 rule as permanent."],
  ]},
  {id:"hours-callout",type:"callout",title:"Recheck the live notice, not an old New Museum announcement",body:"The 2023 Guanghan government notice is useful for the opening of the current New Museum and the official-channel rule. It is not enough to prove a 2026 visit-day closing time. Immediately before publication and travel, read the museum's current ticket screen and latest dated notice for hours, last entry, temporary extension and gallery access.",tone:"warning"},
- {id:"arrival-heading",type:"heading",level:2,text:"Build the Chengdu–Guanghan chain before buying a tight return"},
+ {
+      "id": "reservation-window-check",
+      "type": "callout",
+      "title": "The booking window belongs to your visit date",
+      "body": "The museum’s inbound service information describes an English passport-booking route. It does not establish a permanent release hour or the number of places available for your day. Check the dated official screen before paying. If a place cannot be confirmed, keep the Chengdu day flexible rather than booking a transfer around an assumed ticket.",
+      "tone": "decision"
+    },
+    {id:"arrival-heading",type:"heading",level:2,text:"Build the Chengdu–Guanghan chain before buying a tight return"},
  {id:"arrival",type:"comparison",columns:[
   {heading:"Rail plus local transfer",body:"A train to Guanghan North can shorten the intercity segment, but the station is not the museum entrance. Confirm both train station names, allow for the local road transfer and do not buy a return that assumes instant boarding after the galleries."},
   {heading:"Official/direct visitor service",body:"When a current official or clearly identified operator service runs from Chengdu, verify its exact departure point, return time and whether it is transport only. Seasonal and holiday adjustments must come from a dated operator notice."},
@@ -42,11 +60,47 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   { label: "Understand China’s museum-stamp habit before looking for one", href: "/guides/why-china-museums-have-stamps/", description: "Do not assume Sanxingdui offers a current stamp; check the museum’s own channel and keep the gallery route primary." }
  ]},
  {id:"consultation",type:"callout",title:"Need Sanxingdui fitted into a Sichuan route?",body:"A Homeground travel consultant can review the real ticket window, Chengdu hotel, group pace and onward transport. Share the date, passport types, preferred transport and how much museum interpretation matters.",tone:"neutral"},
- {id:"sources",type:"sources",title:"Official and image sources reviewed",items:[
-  {label:"Sanxingdui Museum official website and current notices",url:"https://www.sxd.cn/index.asp",publisher:"Sanxingdui Museum",reviewedAt:"2026-08-12"},
-  {label:"New Museum opening, official booking channels and real-name entry",url:"https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
-  {label:"Inbound-visitor passport booking, ticket pool and English payment service information",url:"https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
-  {label:"Hero: Sanxingdui New Museum by STW932, CC BY-SA 4.0; cropped and converted to WebP",url:"https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},
-  {label:"Hero image licence: CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}
- ]}
+ {
+      "id": "sources",
+      "type": "sources",
+      "title": "Official and image sources reviewed",
+      "items": [
+        {
+          "label": "Sanxingdui Museum official website and current notices",
+          "url": "https://www.sxd.cn/index.asp",
+          "publisher": "Sanxingdui Museum",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "New Museum opening, official booking channels and real-name entry",
+          "url": "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",
+          "publisher": "Guanghan Municipal Government",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "Inbound-visitor passport booking, ticket pool and English payment service information",
+          "url": "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",
+          "publisher": "Guanghan Municipal Government",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "Hero: Sanxingdui New Museum by STW932, CC BY-SA 4.0; cropped and converted to WebP",
+          "url": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "Hero image licence: CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "publisher": "Creative Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "Inbound visitor booking services reported on 18 June 2025; not a current release timetable",
+          "url": "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html",
+          "publisher": "People’s Daily",
+          "reviewedAt": "2026-10-08"
+        }
+      ]
+    }
 ]};export default body;
