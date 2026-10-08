@@ -21,11 +21,17 @@ afterEach(() => {
   }
 });
 
-function page(path, ready = true) {
+function page(path, ready = true, { modal = true, receiver = true } = {}) {
   const events = [];
-  const window = { location: new URL(path, "https://homegroundchina.com"), dispatchEvent(event) { events.push(event); return true; } };
-  const document = { querySelector(selector) { return ready && selector === '[data-homeground-contact-ready="true"]' ? {} : null; } };
-  class ContactEvent { constructor(type, init) { this.type = type; this.detail = init.detail; } }
+  const window = { location: new URL(path, "https://homegroundchina.com"), dispatchEvent(event) { events.push(event); if (receiver) event.preventDefault(); return !event.defaultPrevented; } };
+  const document = {
+    querySelector(selector) { return ready && selector === '[data-homeground-contact-ready="true"]' ? {} : null; },
+    createElement() { return modal ? { showModal() {}, close() {} } : {}; },
+  };
+  class ContactEvent {
+    constructor(type, init) { this.type = type; this.detail = init.detail; this.cancelable = init.cancelable; this.defaultPrevented = false; }
+    preventDefault() { if (this.cancelable) this.defaultPrevented = true; }
+  }
   for (const [key, value] of Object.entries({ window, document, CustomEvent: ContactEvent })) Object.defineProperty(globalThis, key, { configurable: true, writable: true, value });
   return { window, events };
 }
@@ -136,6 +142,26 @@ test("modifier clicks and server/no-window execution preserve normal link behavi
   const press = click();
   assert.equal(openTourContactFromLink(press.event, href, "en"), false);
   assert.equal(press.wasPrevented(), false);
+});
+
+test("a missing modal or a receiver that cannot open never takes over the original contextual href", () => {
+  const href = buildPrivateTourInquiryHref("/zh/", beijing, "private_tour_product", { packageId: "no-guide", travelers: 4 });
+  for (const options of [{ modal: false }, { receiver: false }]) {
+    const { events } = page(pathFor("zh", beijing), true, options);
+    const press = click();
+    assert.equal(openTourContactFromLink(press.event, href, "zh"), false);
+    assert.equal(press.wasPrevented(), false);
+    assert.equal(events.length, options.modal === false ? 0 : 1);
+    if (events.length) assert.deepEqual(events[0].detail.selection, { packageId: "no-guide", travelers: 4 });
+    const guide = page("/zh/guides/china-travel-guide/", true, options);
+    const guidePress = click();
+    assert.equal(openGuideContactFromLink(guidePress.event, "/zh/#planner-contact", "zh"), false);
+    assert.equal(guidePress.wasPrevented(), false);
+    assert.equal(guide.events.length, options.modal === false ? 0 : 1);
+  }
+  const { events } = page(pathFor("zh", beijing));
+  assert.equal(openTourContactFromLink(click({ defaultPrevented: true }).event, href, "zh"), false);
+  assert.equal(events.length, 0, "another handler's completed click does not open twice");
 });
 
 test("guide consultation stays on the article and passes only its clean path in all locales", () => {

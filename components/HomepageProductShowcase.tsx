@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
 import { ArrowRight } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
@@ -141,9 +142,9 @@ export function HomepageProductShowcase({
       pick();
     };
     sync();
-    wide.addEventListener("change", sync);
+    const unsubscribe = subscribeMediaQuery(wide, sync);
     return () => {
-      wide.removeEventListener("change", sync);
+      unsubscribe();
       stop();
     };
   }, [activate, products.length]);

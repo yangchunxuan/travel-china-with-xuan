@@ -44,7 +44,7 @@ test("the card answers WhatsApp and mail clicks on desktop only, planner links e
   assert.match(host, /if \(!onDesktop && next\.trigger !== "planner"\) return;/);
   // Only navigation is replaced: hrefs stay, and the link's analytics handler still runs.
   assert.doesNotMatch(host, /setAttribute\("href"|\.href\s*=|stopPropagation|stopImmediatePropagation/);
-  assert.match(host, /event\.preventDefault\(\);\s*show\(next, anchor, onDesktop \? "card" : "sheet"\);/);
+  assert.match(host, /if \(show\(next, anchor, onDesktop \? "card" : "sheet"\)\) event\.preventDefault\(\);/);
   // Links inside the card, and links marked as direct, work normally.
   assert.match(host, /anchor\.closest\("\[data-contact-card-dialog\], \[data-contact-card-direct\]"\)/);
 });
@@ -216,8 +216,10 @@ test("the first open answers the press at once: the card's frame, then the card 
   // With the code there the card opens straight away; otherwise the frame opens
   // in the press itself, outside React's commit, goes as the card opens in its
   // place, and a failed load closes it.
-  assert.match(host, /if \(loadedDialog\) \{\s*mountCard\(\);\s*setFrameShownAt\(null\);\s*return;\s*\}/);
-  assert.match(host, /removeFrameRef\.current = openContactCardFrame\(locale, nextLayout, close\);\s*setFrameShownAt\(performance\.now\(\)\);\s*loadDialog\(\)\.then\(\s*mountCard,/);
+  assert.match(host, /if \(loadedDialog\) \{\s*mountCard\(\);\s*return true;\s*\}/);
+  assert.match(host, /const removeNextFrame = openContactCardFrame\(locale, nextLayout, close\);\s*if \(!removeNextFrame\) \{ close\(\); return false; \}\s*removeFrameRef\.current = removeNextFrame;/);
+  assert.match(host, /setFrameShownAt\(removeFrameRef\.current \? performance\.now\(\) : null\);/);
+  assert.match(host, /loadDialog\(\)\.then\(\s*mountCard,/);
   assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(cardMounted && open\) removeFrame\(\);/);
   assert.match(host, /The code did not arrive[\s\S]*?removeFrame\(\);\s*setOpen\(false\);/);
   // The frame is the card's outer shape: a modal dialog, its close button, no words of its own.
@@ -225,18 +227,19 @@ test("the first open answers the press at once: the card's frame, then the card 
   assert.match(frame, /close\.setAttribute\("aria-label", copy\.close\);/);
   assert.match(frame, /addEventListener\("cancel", \(event\) => \{\s*event\.preventDefault\(\);\s*onClose\(\);/);
   assert.match(frame, /setAttribute\("aria-busy", "true"\)/);
-  assert.match(frame, /return \(\) => \{\s*dialog\.remove\(\);\s*releaseScroll\(\);\s*\};/);
+  assert.match(frame, /const remove = \(\) => \{\s*try \{\s*dialog\.remove\(\);\s*\} finally \{\s*releaseScroll\(\);/);
+  assert.match(frame, /return remove;/);
   // The page stops scrolling from the press, under the frame as under the card,
   // and the card takes its hold in the same commit that opens it.
   assert.match(frame, /const releaseScroll = holdPageScroll\(\);[\s\S]*?document\.body\.append\(dialog\);/);
-  assert.match(dialog, /useLayoutEffect\(\(\) => \(open \? holdPageScroll\(\) : undefined\), \[open\]\);/);
+  assert.match(dialog, /if \(!open \|\| !dialogRef\.current\?\.open\) return;\s*const release = holdPageScroll\(\);/);
   assert.doesNotMatch(dialog, /document\.body\.style\.overflow/);
   // Focus goes back to the link in the commit that closes the card, whichever
   // way it opened (the frame's close button, the card's own return target then, is gone).
   assert.doesNotMatch(host, /requestAnimationFrame/);
   assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(open\) \{\s*shownRef\.current = true;\s*return;\s*\}[\s\S]*?const previous = returnFocusRef\.current;[\s\S]*?target\?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open\]\);/);
   // The card opens before the browser paints and carries on the frame's entrance.
-  assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?dialog\.showModal\(\);[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt\]\);/);
+  assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?tryOpenModalDialog\(dialog\)[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt, onOpenError\]\);/);
   assert.match(dialog, /dialog\.style\.setProperty\("--card-enter-delay"/);
   // The guide's "ask a planner" button warms the card up as its links do.
   assert.match(await source("components/TourContactPanel.tsx"), /className=\{styles\.launcher\}[^>]*data-contact-card-trigger=""/);

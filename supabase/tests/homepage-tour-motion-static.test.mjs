@@ -43,11 +43,11 @@ test("wide screens scroll through the tours beside one still photo, as on x.ai's
   assert.match(showcase, /warm\.has\(index\) \? \(/);
   assert.match(showcase, /window\.matchMedia\(wideIndexQuery\)/);
   assert.match(showcase, /if \(!wide\.matches\) return;/);
-  assert.match(showcase, /wide\.addEventListener\("change", sync\)/);
+  assert.match(showcase, /const unsubscribe = subscribeMediaQuery\(wide, sync\)/);
   // Measured on every scrolled frame, so a fast scroll cannot skip a route.
   assert.match(showcase, /window\.addEventListener\("scroll", onScroll, \{ passive: true \}\)/);
   assert.match(showcase, /window\.requestAnimationFrame\(pick\)/);
-  assert.match(showcase, /wide\.removeEventListener\("change", sync\);\s*stop\(\);/);
+  assert.match(showcase, /unsubscribe\(\);\s*stop\(\);/);
   // Phones keep their list and tablets their two-column cards; the photo and
   // row numbers only appear in the wide-screen index.
   assert.match(styles, /^\.productGrid \{[^}]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/m);

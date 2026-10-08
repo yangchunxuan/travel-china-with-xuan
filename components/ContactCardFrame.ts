@@ -1,5 +1,6 @@
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { contactCardFrameCopy, holdPageScroll, type ContactCardLayout } from "../lib/contactCard";
+import { supportsModalDialog } from "../lib/browserCapabilities";
 import styles from "./ContactCardFrame.module.css";
 
 // The card's height in pixels, so it takes the frame's place without a jump,
@@ -43,56 +44,65 @@ const closeIcon =
  * stylesheets of routes Next.js has just prefetched have loaded, for
  * instance), and the frame is what answers the press meanwhile. The card then
  * opens in its place and carries on its entrance from where the frame got to.
- * Returns a function that removes the frame.
+ * Returns a function that removes the frame, or null when it cannot open.
  */
 export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCardLayout, onClose: () => void) {
   const copy = contactCardFrameCopy[locale];
   const sheet = layout === "sheet";
   const named = /\/(tours|guides)\/[a-z0-9-]+\/$/u.test(window.location.pathname);
+  const dialog = document.createElement("dialog");
+  if (!supportsModalDialog(dialog)) return null;
   // From the press on, as under the card: the page's scrollbar goes before
   // the frame first paints, and the card, holding it in turn, opens exactly
   // where the frame is.
   const releaseScroll = holdPageScroll();
+  const remove = () => {
+    try {
+      dialog.remove();
+    } finally {
+      releaseScroll();
+    }
+  };
+  try {
+    dialog.className = sheet ? `${styles.dialog} ${styles.sheet}` : styles.dialog;
+    dialog.setAttribute("data-contact-card-dialog", "");
+    dialog.setAttribute("data-contact-card-frame", "");
+    dialog.setAttribute("data-layout", layout);
+    dialog.setAttribute("aria-label", copy.title);
+    dialog.setAttribute("aria-busy", "true");
+    dialog.style.setProperty("--frame-height", `${frameHeight(locale, layout, named)}px`);
 
-  const dialog = document.createElement("dialog");
-  dialog.className = sheet ? `${styles.dialog} ${styles.sheet}` : styles.dialog;
-  dialog.setAttribute("data-contact-card-dialog", "");
-  dialog.setAttribute("data-contact-card-frame", "");
-  dialog.setAttribute("data-layout", layout);
-  dialog.setAttribute("aria-label", copy.title);
-  dialog.setAttribute("aria-busy", "true");
-  dialog.style.setProperty("--frame-height", `${frameHeight(locale, layout, named)}px`);
+    const card = dialog.appendChild(document.createElement("div"));
+    card.className = styles.card;
+    if (sheet) {
+      const grabber = card.appendChild(document.createElement("span"));
+      grabber.className = styles.grabber;
+      grabber.setAttribute("aria-hidden", "true");
+    }
+    const head = card.appendChild(document.createElement("header"));
+    head.className = styles.head;
+    head.appendChild(document.createElement("span")).setAttribute("aria-hidden", "true");
+    const close = head.appendChild(document.createElement("button"));
+    close.type = "button";
+    close.className = styles.close;
+    close.setAttribute("aria-label", copy.close);
+    close.innerHTML = closeIcon;
 
-  const card = dialog.appendChild(document.createElement("div"));
-  card.className = styles.card;
-  if (sheet) {
-    const grabber = card.appendChild(document.createElement("span"));
-    grabber.className = styles.grabber;
-    grabber.setAttribute("aria-hidden", "true");
+    close.addEventListener("click", onClose);
+    dialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      onClose();
+    });
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) onClose();
+    });
+    document.body.append(dialog);
+    dialog.showModal();
+  } catch {
+    remove();
+    return null;
   }
-  const head = card.appendChild(document.createElement("header"));
-  head.className = styles.head;
-  head.appendChild(document.createElement("span")).setAttribute("aria-hidden", "true");
-  const close = head.appendChild(document.createElement("button"));
-  close.type = "button";
-  close.className = styles.close;
-  close.setAttribute("aria-label", copy.close);
-  close.innerHTML = closeIcon;
-
-  close.addEventListener("click", onClose);
-  dialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    onClose();
-  });
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) onClose();
-  });
-  document.body.append(dialog);
-  dialog.showModal();
   // Removed rather than closed: closing a modal dialog would hand focus back
   // to the link while the card, opening in its place, is taking it.
-  return () => {
-    dialog.remove();
-    releaseScroll();
-  };
+  return remove;
 }

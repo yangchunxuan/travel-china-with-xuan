@@ -206,7 +206,8 @@ export function HomegroundHeader({
   const brandFold = useBrandFold();
   const [activeHash, setActiveHash] = useState("");
   const [languageQuery, setLanguageQuery] = useState("");
-  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const menuButtonRef = useRef<HTMLElement | null>(null);
+  const mobileMenuRef = useRef<HTMLDetailsElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
   const copy = getHomegroundCopy(locale);
   const plannerCta = resolvePlannerCta(
@@ -450,7 +451,7 @@ export function HomegroundHeader({
       if (!header) return;
       const focusable = Array.from(
         header.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+          'a[href], summary, button:not([disabled]), [tabindex]:not([tabindex="-1"])',
         ),
       ).filter((element) => element.getClientRects().length > 0);
       const first = focusable[0];
@@ -491,7 +492,10 @@ export function HomegroundHeader({
     };
   }, [open]);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    if (mobileMenuRef.current) mobileMenuRef.current.open = false;
+    setOpen(false);
+  };
   const trackNavigationClick = (
     item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq",
     surface:
@@ -717,40 +721,29 @@ export function HomegroundHeader({
               {primaryNavigation.mobileCta}
             </span>
           </Link>
-          <button
+          <details
+            ref={mobileMenuRef}
+            className={styles.mobileMenu}
+            open={open}
+            onToggle={(event) => setOpen(event.currentTarget.open)}
+          >
+          <summary
             ref={menuButtonRef}
             className={styles.menuButton}
-            type="button"
-            aria-label={
-              open
-                ? copy.navigation.closeMenu
-                : copy.navigation.openMenu
-            }
-            aria-expanded={open}
             aria-controls="homeground-mobile-navigation"
-            onClick={() => setOpen((current) => !current)}
-            onKeyDown={(event) => {
-              if (
-                event.repeat ||
-                (event.key !== "Enter" && event.key !== " ")
-              ) {
-                return;
-              }
-              event.preventDefault();
-              setOpen((current) => !current);
-            }}
           >
-            {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
-          </button>
-        </div>
-        </div>
+            <span className={`${styles.menuLabel} ${styles.menuOpenIcon}`}>{copy.navigation.openMenu}</span>
+            <span className={`${styles.menuLabel} ${styles.menuCloseIcon}`}>{copy.navigation.closeMenu}</span>
+            <Menu aria-hidden="true" className={styles.menuOpenIcon} size={21} />
+            <X aria-hidden="true" className={styles.menuCloseIcon} size={21} />
+          </summary>
+          </details>
 
         <nav
           ref={mobileNavRef}
           id="homeground-mobile-navigation"
           className={styles.mobileNav}
           aria-label={copy.navigation.mobileLabel}
-          hidden={!open}
         >
           <div className={styles.mobilePrimaryLinks}>
             {primaryNavigation.items.map((item) => {
@@ -861,6 +854,8 @@ export function HomegroundHeader({
             </Link>
           </div>
         </nav>
+        </div>
+        </div>
       </div>
     </header>
     {articleId ? <GuideTourEntry locale={locale} guideId={articleId} menuOpen={open} /> : null}

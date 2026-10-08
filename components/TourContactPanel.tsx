@@ -1,5 +1,7 @@
 "use client";
 
+import { closeModalDialog, supportsModalDialog, tryOpenModalDialog } from "../lib/browserCapabilities";
+
 import { useEffect, useId, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowRight, BedDouble, Mail, MessageCircle, X } from "lucide-react";
@@ -65,6 +67,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const statusRef = useRef<Status>("idle");
   const formStartedRef = useRef(false);
   const [open, setOpen] = useState(false);
+  const [modalReady, setModalReady] = useState(false);
   // Each opening gets a fresh KakaoTalk hint, so a revealed number or copied message never carries over.
   const [openCount, setOpenCount] = useState(0);
   const [closing, setClosing] = useState(false);
@@ -107,6 +110,13 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
 
   function show(next: PrivateTourInquiryContext | null, returnFocus?: HTMLElement | null) {
+    if (!tryOpenModalDialog(dialogRef.current)) {
+      setModalReady(false);
+      setOpen(false);
+      setClosing(false);
+      setInquiryOpen(false);
+      return false;
+    }
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setClosing(false);
     // An unresolved dispatch owns its immutable context and retry key, even after closing.
@@ -122,6 +132,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     setInquiryOpen(true);
     setOpen(true);
     trackEvent("contact_options_viewed", { page_language: locale }, { firstPartyContext: { productSlug: next?.slug, packageId: next?.selection?.packageId, travelers: next?.selection?.travelers, surface: next ? "product" : "contact_options" } });
+    return true;
   }
 
   useEffect(() => {
@@ -129,11 +140,11 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       const candidate = (event as CustomEvent<PrivateTourInquiryContext>).detail;
       const valid = candidate && getPrivateTourInquiryContext(candidate.slug, locale, candidate.selection, candidate.customGroup);
       if (!valid || pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${valid.slug}/`) return;
-      show(valid, consumeTourContactReturnFocus());
+      if (show(valid, consumeTourContactReturnFocus())) event.preventDefault();
     };
     const receiveGuide = (event: Event) => {
       if (!isGuide || (event as CustomEvent<{ path?: string }>).detail?.path !== pathname) return;
-      show(null, consumeTourContactReturnFocus());
+      if (show(null, consumeTourContactReturnFocus())) event.preventDefault();
     };
     window.addEventListener(tourContactOpenEvent, receive);
     window.addEventListener(guideContactOpenEvent, receiveGuide);
@@ -158,12 +169,18 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    if (!open || !dialog) { dialog?.close(); return; }
-    if (!dialog.open) dialog.showModal();
+    const supported = Boolean(dialog && supportsModalDialog(dialog));
+    setModalReady(supported);
+    if (!dialog || !supported) return;
+    if (!open) { closeModalDialog(dialog); return; }
+    if (!tryOpenModalDialog(dialog)) {
+      setModalReady(false); setOpen(false); setClosing(false); setInquiryOpen(false);
+      return;
+    }
     titleRef.current?.focus({ preventScroll: true });
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = previousOverflow; dialog.close(); };
+    return () => { document.body.style.overflow = previousOverflow; closeModalDialog(dialog); };
   }, [open]);
 
   useEffect(() => {
@@ -174,7 +191,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     if (closing) return;
     setClosing(true);
     closeTimer.current = setTimeout(() => {
-      dialogRef.current?.close();
+      closeModalDialog(dialogRef.current);
       setOpen(false); setClosing(false); setInquiryOpen(false);
       requestAnimationFrame(() => {
         const previous = triggerRef.current;
@@ -260,9 +277,9 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const needsGroup = Boolean(context?.customGroup) && !contactLinkReady;
   const askForGroup = () => { setGroupTouched(true); document.getElementById(`${id}-group`)?.focus(); };
 
-  return <div data-homeground-contact-ready={isTour || isGuide ? "true" : undefined}>
-    {isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} data-contact-card-trigger="" ref={launcherRef} onClick={event => { if (!openContactCard({ trigger: "planner" }, event.currentTarget)) show(null); }} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
-    <dialog ref={dialogRef} className={styles.dialog} data-closing={closing} data-compact={!context || status === "saved"} aria-labelledby={`${id}-title`} onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }}>
+  return <div data-homeground-contact-ready={modalReady && (isTour || isGuide) ? "true" : undefined}>
+    {modalReady && isGuide && !open && !privacy && !menu && !newsletter && !consentPending ? <button type="button" className={styles.launcher} data-newsletter-side={dockSide} data-contact-card-trigger="" ref={launcherRef} onClick={event => { if (!openContactCard({ trigger: "planner" }, event.currentTarget) && !show(null)) window.location.assign(emailHref); }} aria-haspopup="dialog"><MessageCircle size={20} strokeWidth={1.7} aria-hidden="true" /><span>{text.ask}</span></button> : null}
+    <dialog ref={dialogRef} hidden={!open} className={styles.dialog} data-closing={closing} data-compact={!context || status === "saved"} aria-labelledby={`${id}-title`} onCancel={event => { event.preventDefault(); close(); }} onClick={event => { if (event.target === event.currentTarget) close(); }}>
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label={text.close} onClick={close}><X size={20} strokeWidth={1.7} aria-hidden="true" /></button></div>
         <div className={styles.body}>

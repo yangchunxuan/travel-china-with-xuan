@@ -1,7 +1,8 @@
 "use client";
 
 import { ArrowRight, ArrowUpRight, LoaderCircle, MessagesSquare, X } from "lucide-react";
-import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent, type MutableRefObject } from "react";
+import { closeModalDialog, tryOpenModalDialog } from "../lib/browserCapabilities";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundMessengerUrl } from "../lib/homegroundSocial";
@@ -74,6 +75,8 @@ export function ContactCardDialog({
   layout,
   open,
   onClose,
+  onOpenError = onClose,
+  nativeDialogRef,
   frameShownAt = null,
 }: {
   locale: HomegroundLocale;
@@ -81,6 +84,8 @@ export function ContactCardDialog({
   layout: ContactCardLayout;
   open: boolean;
   onClose: () => void;
+  onOpenError?: () => void;
+  nativeDialogRef?: MutableRefObject<HTMLDialogElement | null>;
   /** When the card's frame (ContactCardFrame) appeared for this open, if the card is taking its place. */
   frameShownAt?: number | null;
 }) {
@@ -95,6 +100,7 @@ export function ContactCardDialog({
   const desk = getHomepagePlanningDeskCopy(locale).contactStart;
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const releaseScrollRef = useRef<(() => void) | null>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -126,30 +132,50 @@ export function ContactCardDialog({
   const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
   const messengerHref = sheet ? homegroundMessengerUrl() : "";
 
+  useLayoutEffect(() => {
+    if (nativeDialogRef) nativeDialogRef.current = dialogRef.current;
+    return () => {
+      if (nativeDialogRef) nativeDialogRef.current = null;
+      closeModalDialog(dialogRef.current);
+    };
+  }, [nativeDialogRef]);
+
   // Opened before the browser paints, so a card taking its frame's place
   // never leaves a painted frame with neither on screen.
   useLayoutEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
     if (!open) {
-      if (dialog.open) dialog.close();
+      closeModalDialog(dialog);
+      return;
+    }
+    if (!tryOpenModalDialog(dialog)) {
+      releaseScrollRef.current?.();
+      releaseScrollRef.current = null;
+      setClosing(false);
+      setInquiryOpen(false);
+      onOpenError();
       return;
     }
     // Carry on the frame's entrance (and its backdrop's) instead of starting again.
     if (frameShownAt === null) dialog.style.removeProperty("--card-enter-delay");
     else dialog.style.setProperty("--card-enter-delay", `${Math.round(frameShownAt - performance.now())}ms`);
-    if (!dialog.open) dialog.showModal();
     // From a mail link, start in the email field; otherwise at the title.
     const emailField = request.trigger === "email" ? emailRef.current : null;
     (emailField && !emailField.disabled ? emailField : titleRef.current)?.focus({ preventScroll: true });
-  }, [open, request, frameShownAt]);
+  }, [open, request, frameShownAt, onOpenError]);
 
   // The page stops scrolling in the same moment, before the frame the card
   // replaces lets go of its own hold (see holdPageScroll).
-  useLayoutEffect(() => (open ? holdPageScroll() : undefined), [open]);
+  useLayoutEffect(() => {
+    if (!open || !dialogRef.current?.open) return;
+    const release = holdPageScroll();
+    releaseScrollRef.current = release;
+    return () => { release(); if (releaseScrollRef.current === release) releaseScrollRef.current = null; };
+  }, [open]);
 
   useEffect(() => {
-    if (!open) return;
+    if (!open || !dialogRef.current?.open) return;
     const opened = pageContext(locale);
     setContext(opened);
     markNewsletterPromptHandled();
@@ -402,6 +428,7 @@ export function ContactCardDialog({
   return (
     <dialog
       ref={dialogRef}
+      hidden={!open}
       className={withSheet(styles.dialog, sheetStyles.sheet)}
       data-contact-card-dialog=""
       data-layout={layout}

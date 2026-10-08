@@ -1,5 +1,7 @@
 "use client";
 
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
+
 import {
   type CSSProperties,
   useEffect,
@@ -177,9 +179,7 @@ export function RotatingHeroTitle({
       setPrefersReducedMotion(mediaQuery.matches);
 
     updatePreference();
-    mediaQuery.addEventListener("change", updatePreference);
-    return () =>
-      mediaQuery.removeEventListener("change", updatePreference);
+    return subscribeMediaQuery(mediaQuery, updatePreference);
   }, []);
 
   useEffect(() => {

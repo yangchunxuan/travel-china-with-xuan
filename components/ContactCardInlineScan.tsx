@@ -3,6 +3,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { contactCardDesktopQuery } from "../lib/contactCard";
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
 
 const ContactCardScan = lazy(() =>
   import("./ContactCardScan").then((module) => ({ default: module.ContactCardScan })),
@@ -15,8 +16,7 @@ export function useContactCardDesktop() {
     const query = window.matchMedia(contactCardDesktopQuery);
     const sync = () => setDesktop(query.matches);
     sync();
-    query.addEventListener("change", sync);
-    return () => query.removeEventListener("change", sync);
+    return subscribeMediaQuery(query, sync);
   }, []);
   return desktop;
 }

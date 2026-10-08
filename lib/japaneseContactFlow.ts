@@ -1,4 +1,5 @@
 import type { PrivateTourInquirySelection } from "./privateTourInquiryContext";
+import { supportsModalDialog } from "./browserCapabilities.ts";
 
 export const japaneseContactOpenEvent = "homeground:open-japanese-contact";
 
@@ -17,14 +18,15 @@ export function setJapaneseContactReady(ready: boolean) {
 }
 
 export function japaneseContactReady() {
-  return typeof window !== "undefined" && (window as JapaneseContactWindow).__homegroundJapaneseContactReady === true;
+  return typeof window !== "undefined" && supportsModalDialog() && (window as JapaneseContactWindow).__homegroundJapaneseContactReady === true;
 }
 
 export function openJapaneseContact(request: JapaneseContactRequest): boolean {
   if (!japaneseContactReady()) return false;
   if (request.slug && window.location.pathname !== `/ja/tours/${request.slug}/`) return false;
-  window.dispatchEvent(new CustomEvent(japaneseContactOpenEvent, { detail: request }));
-  return true;
+  const event = new CustomEvent(japaneseContactOpenEvent, { detail: request, cancelable: true });
+  window.dispatchEvent(event);
+  return event.defaultPrevented;
 }
 
 export function japaneseDirectWhatsAppEnabled() {

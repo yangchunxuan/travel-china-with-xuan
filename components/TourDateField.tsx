@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ComponentType } from "react";
 import { CalendarDays, X } from "lucide-react";
 import type { TourCalendarProps } from "./TourCalendar";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { closeModalDialog, supportsModalDialog, tryOpenModalDialog } from "../lib/browserCapabilities";
 import { dateFromIso, dateToIso, formatTourDate, parseTourDate, tourDateCopy } from "../lib/tourDate";
 import styles from "./TourDateField.module.css";
 
@@ -18,6 +19,7 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
   const [raw, setRaw] = useState(() => formatTourDate(value, locale));
   const [touched, setTouched] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarSupported, setCalendarSupported] = useState(false);
   const [Calendar, setCalendar] = useState<ComponentType<TourCalendarProps> | null>(null);
   const [calendarLoadFailed, setCalendarLoadFailed] = useState(false);
   const [month, setMonth] = useState(() => dateFromIso(value) || new Date());
@@ -60,20 +62,40 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
   useEffect(() => {
     const dialog = calendarRef.current;
     if (!dialog) return;
+    const supported = supportsModalDialog(dialog);
+    setCalendarSupported(supported);
+    if (!supported) return;
     if (!calendarOpen || !active || disabled) {
-      dialog.close();
+      closeModalDialog(dialog);
       if (calendarOpen) setCalendarOpen(false);
       return;
     }
-    dialog.showModal();
+    if (!tryOpenModalDialog(dialog)) {
+      setCalendarSupported(false);
+      setCalendarOpen(false);
+      inputRef.current?.focus({ preventScroll: true });
+      return;
+    }
     dialog.querySelector<HTMLButtonElement>('button[tabindex="0"]')?.focus();
-    return () => dialog.close();
+    return () => closeModalDialog(dialog);
   }, [calendarOpen, active, disabled]);
 
   function closeCalendar() {
-    calendarRef.current?.close();
+    closeModalDialog(calendarRef.current);
     setCalendarOpen(false);
     if (active && !disabled) inputRef.current?.focus({ preventScroll: true });
+  }
+
+  function openCalendar() {
+    if (disabled || !active) return;
+    if (!tryOpenModalDialog(calendarRef.current)) {
+      setCalendarSupported(false);
+      setCalendarOpen(false);
+      inputRef.current?.focus({ preventScroll: true });
+      return;
+    }
+    setMonth(dateFromIso(value) || new Date());
+    setCalendarOpen(true);
   }
 
   function chooseDate(selected: Date | undefined) {
@@ -105,15 +127,15 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
         }}
         onBlur={() => { setTouched(true); if (iso) setRaw(formatTourDate(iso, locale)); }}
         onInvalid={event => { event.preventDefault(); setTouched(true); event.currentTarget.focus(); }} />
-      <button type="button" className={styles.open} disabled={disabled} aria-label={copy.openCalendar}
+      {calendarSupported ? <button type="button" className={styles.open} disabled={disabled || !active} aria-label={copy.openCalendar}
         aria-haspopup="dialog" aria-expanded={calendarOpen} aria-controls={`${id}-calendar`}
-        onClick={() => { setMonth(dateFromIso(value) || new Date()); setCalendarOpen(true); }}>
+        onClick={openCalendar}>
         <CalendarDays size={19} strokeWidth={1.7} aria-hidden="true" />
-      </button>
+      </button> : null}
     </div>
     <p id={`${id}-hint`} className={styles.hint}>{copy.formatHint}</p>
     {touched && invalid ? <p id={`${id}-error`} className={styles.error} role="alert">{copy.invalid}</p> : null}
-    <dialog ref={calendarRef} id={`${id}-calendar`} className={styles.calendar} aria-labelledby={`${id}-calendar-title`}
+    <dialog ref={calendarRef} hidden={!calendarOpen} id={`${id}-calendar`} className={styles.calendar} aria-labelledby={`${id}-calendar-title`}
       onCancel={event => { event.preventDefault(); event.stopPropagation(); closeCalendar(); }}
       onClick={event => { if (event.target === event.currentTarget) closeCalendar(); }}>
       <div className={styles.heading}><strong id={`${id}-calendar-title`}>{copy.title}</strong>

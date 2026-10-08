@@ -12,6 +12,10 @@
   overflow-x: clip;
 }
 
+.previewRoot :where(h2[id], section[id]) {
+  scroll-margin-block-start: calc(var(--homeground-header-height, 4.25rem) + 1rem);
+}
+
 .previewBar {
   align-items: center;
   background: var(--hg-color-soft);

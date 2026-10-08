@@ -1,5 +1,7 @@
 "use client";
 
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
+
 import { ArrowRight, Search } from "lucide-react";
 import {
   useCallback,
@@ -190,7 +192,7 @@ export function GuideSearchForm({
 
     updateMotionPreference();
     updateVisibility();
-    motionQuery.addEventListener("change", updateMotionPreference);
+    const unsubscribeMotion = subscribeMediaQuery(motionQuery, updateMotionPreference);
     document.addEventListener("visibilitychange", updateVisibility);
 
     const experience = searchExperienceRef.current;
@@ -204,7 +206,7 @@ export function GuideSearchForm({
     if (experience && observer) observer.observe(experience);
 
     return () => {
-      motionQuery.removeEventListener("change", updateMotionPreference);
+      unsubscribeMotion();
       document.removeEventListener("visibilitychange", updateVisibility);
       observer?.disconnect();
     };

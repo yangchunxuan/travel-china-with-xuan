@@ -38,12 +38,13 @@ test("compact desktop header preserves the reviewed navigation CSS contract", as
   assert.match(guides, /navigationIsExact=\{page === 1\}/);
 });
 
-test("mobile navigation button guarantees Enter and Space activation", async () => {
+test("mobile navigation uses native disclosure before hydration and native keyboard activation", async () => {
   const header = await source("components/HomegroundHeader.tsx");
-
-  assert.match(header, /aria-expanded=\{open\}/);
-  assert.match(header, /event\.key !== "Enter" && event\.key !== " "/);
-  assert.match(header, /event\.preventDefault\(\);\s*setOpen\(\(current\) => !current\);/);
+  assert.match(header, /<details[\s\S]*?ref=\{mobileMenuRef\}[\s\S]*?onToggle=\{\(event\) => setOpen\(event\.currentTarget\.open\)\}/);
+  assert.match(header, /<summary[\s\S]*?aria-controls="homeground-mobile-navigation"/);
+  assert.match(header, /'a\[href\], summary, button:not\(\[disabled\]\)/);
+  assert.doesNotMatch(header, /hidden=\{!open\}/);
+  assert.doesNotMatch(header, /event\.key !== "Enter" && event\.key !== " "/);
 });
 
 test("section hubs use local breadcrumbs and traveler questions instead of build language", async () => {

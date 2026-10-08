@@ -1,5 +1,7 @@
 "use client";
 
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
+
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
 
 import Image from "next/image";
@@ -239,10 +241,10 @@ export function ShanghaiJiangnanHeroDeck({
     const updateVisibility = () => setHidden(document.hidden);
     updateMotion();
     updateVisibility();
-    preference.addEventListener("change", updateMotion);
+    const unsubscribeMotion = subscribeMediaQuery(preference, updateMotion);
     document.addEventListener("visibilitychange", updateVisibility);
     return () => {
-      preference.removeEventListener("change", updateMotion);
+      unsubscribeMotion();
       document.removeEventListener("visibilitychange", updateVisibility);
     };
   }, []);
