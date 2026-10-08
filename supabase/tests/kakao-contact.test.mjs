@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { afterEach, test } from "node:test";
 import { homegroundBusiness, homegroundKakaoTalkPhone } from "../../lib/homegroundBusiness.ts";
 import { kakaoTalkCopy, kakaoTalkInquiryText, tourContactMessageText, tourWhatsAppHref, whatsAppHrefText } from "../../lib/tourContact.ts";
-import { tourContactDraftText, tourContactNote, tourContactNoteMaxLength, referralSources } from "../../lib/tourContactDraft.ts";
+import { tourContactDraftText, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, referralSources } from "../../lib/tourContactDraft.ts";
 import { getPrivateTourInquiryContext, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext.ts";
 import { currentPrivateTourQuoteFormVersion, privateTourQuoteSchemaVersion, homepageEmailPrivacyNoticeVersion, validateAndNormalizeInquiry } from "../../lib/inquiryContract.ts";
 
@@ -82,7 +82,10 @@ test("the product quote form records one form start per opening with product con
   assert.match(panel, /value=\{requestedTravelersInput\} onChange=\{event => \{ setRequestedTravelersInput/u);
   assert.match(panel, /<KakaoTalkContact key=\{`\$\{openCount\}-\$\{context\?\.slug \?\? ""\}`\}/u);
   assert.match(panel, /\{context \? <label htmlFor=\{`\$\{id\}-source`\}>/u);
-  assert.match(panel, /maxLength=\{tourContactNoteMaxLength\}/u);
+  assert.equal(tourContactNoteMaxLength, 900);
+  assert.equal(customTourContactNoteMaxLength, 800);
+  assert.match(panel, /const noteMaxLength = context\?\.customGroup \? customTourContactNoteMaxLength : tourContactNoteMaxLength;/u);
+  assert.match(panel, /maxLength=\{noteMaxLength\}/u);
 });
 
 test("the forward migration accepts KakaoTalk for v2 events and reports it as a fifth contact slice", async () => {

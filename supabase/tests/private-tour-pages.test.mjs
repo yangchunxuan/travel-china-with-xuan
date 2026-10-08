@@ -376,9 +376,9 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.match(ko.serviceNote, /D2 종일 및 D3 주간 한국어 가이드/);
   assert.doesNotMatch(ko.summary, /영어 가이드/);
   assert.doesNotMatch(ko.serviceNote, /영어 가이드/);
-  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-09-24");
-  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-09-24");
-  assert.equal(ko.dateModified, "2026-09-24");
+  assert.equal(localizePrivateTourProduct(product, "en").dateModified, "2026-10-08");
+  assert.equal(localizePrivateTourProduct(product, "zh").dateModified, "2026-10-08");
+  assert.equal(ko.dateModified, "2026-10-08");
 });
 
 test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days and ticket boundary", () => {

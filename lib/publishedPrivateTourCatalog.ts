@@ -306,9 +306,9 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "6박 7일 동안 세 곳에 머물며 D2~D5는 가이드 관광, D6는 봉황 자유 일정입니다.",
     ),
     fit: l(
-      "Travellers who want Zhangjiajie’s forest landscapes and two western Hunan ancient towns in one unhurried private route.",
-      "想把张家界峰林与湘西两座古镇连成一条从容私家路线的旅客。",
-      "장가계 산림 풍경과 후난 서부의 두 고성을 한 번의 여유로운 프라이빗 여정으로 보고 싶은 여행자.",
+      "Two full Forest Park days, then Furong Town for one night and Fenghuang for two; three stay bases, without Tianmen Mountain or the Glass Bridge.",
+      "森林公园两个完整观光日，再到芙蓉镇住一晚、凤凰住两晚；三地住宿，不含天门山与大峡谷玻璃桥。",
+      "국가삼림공원 종일 2일 후 부용진 1박, 봉황 2박. 세 곳에서 숙박하며 천문산과 대협곡 유리다리는 제외됩니다.",
     ),
   },
   "zhangjiajie-4-day-private-tour": {

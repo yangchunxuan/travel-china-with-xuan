@@ -18,6 +18,7 @@ interface PublicPriceTier {
   sixPersonPrice: number;
   formattedSixPersonPrice: string;
   sixPersonInquiryHref?: string;
+  groupInquiryHref?: string;
   formattedRegularPrice?: string;
   featured: boolean;
 }
@@ -183,6 +184,13 @@ export function ZhangjiajiePrivateTourPriceWindow({
                   {copy.sixPersonInquiryLabel}
                 </GuideCtaLink>
               ) : null}
+              {tier.groupInquiryHref ? <GuideCtaLink
+                className={styles.sixPersonInquiry}
+                guideId="zhangjiajie-4-day-private-tour"
+                href={tier.groupInquiryHref}
+                locale={locale}
+                position="inline"
+              >{locale === "zh" ? "按我的人数询问这档住宿" : locale === "ko" ? "우리 인원으로 이 숙소 문의" : "Ask for this stay with my group"}</GuideCtaLink> : null}
               <p>{tier.description}</p>
               <p className={styles.confirmationLine}>{copy.exactStayNote}</p>
             </article>

@@ -125,13 +125,13 @@ export const legacySystemContentLifecycle = {
   },
   "zhangjiajie-4-day-private-tour": {
     datePublished: "2026-08-16",
-    dateModified: "2026-09-23",
+    dateModified: "2026-10-08",
     lastReviewed: "2026-08-16",
     evidence: {
-      commit: "166e4ad247e50c4dfe3d9f6185a1411537cb7982",
-      changedAt: "2026-09-23",
+      commit: "e288c0499661ad735e2788df87ab9866bfcdc239",
+      changedAt: "2026-10-08",
       summary:
-        "Published a six-person price for every stay tier and linked each tier to a validated six-traveller inquiry in all three supported languages.",
+        "Added a three-route Zhangjiajie comparison and controlled stay preferences with actual party sizes in product enquiries across English, Chinese and Korean.",
     },
   },
   "entry-requirements": {

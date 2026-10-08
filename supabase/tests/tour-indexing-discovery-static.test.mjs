@@ -15,18 +15,21 @@ const localizedTargets = {
     xian: "/tours/xian-terracotta-warriors-5-day-private-tour/",
     forest: "/tours/zhangjiajie-forest-4-day-private-tour/",
     classic: "/tours/zhangjiajie-4-day-private-tour/",
+    ancientTowns: "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
   },
   zh: {
     shanghai: "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
     xian: "/zh/tours/xian-terracotta-warriors-5-day-private-tour/",
     forest: "/zh/tours/zhangjiajie-forest-4-day-private-tour/",
     classic: "/zh/tours/zhangjiajie-4-day-private-tour/",
+    ancientTowns: "/zh/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
   },
   ko: {
     shanghai: "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
     xian: "/ko/tours/xian-terracotta-warriors-5-day-private-tour/",
     forest: "/ko/tours/zhangjiajie-forest-4-day-private-tour/",
     classic: "/ko/tours/zhangjiajie-4-day-private-tour/",
+    ancientTowns: "/ko/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
   },
 };
 
@@ -63,7 +66,7 @@ test("decision guides expose localized product links in rendered content", () =>
   }
 });
 
-test("the two Zhangjiajie products expose one localized comparison link each", () => {
+test("the three Zhangjiajie products share a localized route comparison", () => {
   const comparisonSource = source("components/ZhangjiajieTourComparisonLink.tsx");
   const classicPage = source("components/ZhangjiajiePrivateTourPreviewPage.tsx");
   const sharedProductPage = source("components/ShanghaiJiangnanImaginePage.tsx");
@@ -71,6 +74,7 @@ test("the two Zhangjiajie products expose one localized comparison link each", (
   assert.match(classicPage, /currentRoute="classic"/u);
   assert.match(classicPage, /ZhangjiajieTourComparisonLink/u);
   assert.match(sharedProductPage, /currentRoute="forest"/u);
+  assert.match(sharedProductPage, /currentRoute="ancientTowns"/u);
   assert.match(
     sharedProductPage,
     /product\.slug === "zhangjiajie-forest-4-day-private-tour"/u,
@@ -84,6 +88,10 @@ test("the two Zhangjiajie products expose one localized comparison link each", (
     assert.match(
       comparisonSource,
       new RegExp(targets.classic.replaceAll("/", "\\/"), "u"),
+    );
+    assert.match(
+      comparisonSource,
+      new RegExp(targets.ancientTowns.replaceAll("/", "\\/"), "u"),
     );
   }
 });
@@ -103,7 +111,7 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
   });
   assert.deepEqual(forest?.dates, {
     datePublished: "2026-08-31",
-    dateModified: "2026-09-24",
+    dateModified: "2026-10-08",
     lastReviewed: "2026-08-31",
   });
 
@@ -111,7 +119,9 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
     "zhangjiajie-4-day-private-tour",
   );
   assert.equal(classic.datePublished, "2026-08-16");
-  assert.equal(classic.dateModified, "2026-09-23");
+  assert.equal(classic.dateModified, "2026-10-08");
   assert.equal(classic.lastReviewed, "2026-08-16");
-  assert.equal(classic.evidence.commit, "166e4ad247e50c4dfe3d9f6185a1411537cb7982");
+  assert.equal(classic.evidence.commit, "e288c0499661ad735e2788df87ab9866bfcdc239");
+  const towns = nodes.find(node => node.locales.en?.path === "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/");
+  assert.equal(towns?.dates.dateModified, "2026-10-08");
 });

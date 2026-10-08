@@ -13,6 +13,15 @@ export function isJiangnanTour(slug?: string) {
 export const referralSources = ["ChatGPT", "Google", "Naver", "Gemini", "Perplexity", "KakaoTalk", "Instagram", "YouTube", "friend", "other"] as const;
 /** The self-reported source line can add ~45 characters, so every product's note keeps this headroom under the 1,000-character contract. */
 export const tourContactNoteMaxLength = 900;
+// Leave room for party size, a controlled stay preference and discovery source.
+export const customTourContactNoteMaxLength = 800;
+export const zhangjiajieStayPreferences = ["Selected City Stay", "Spacious Premium Stay", "Distinctive Mountain Stay"] as const;
+export type ZhangjiajieStayPreference = (typeof zhangjiajieStayPreferences)[number];
+const stayPreferenceCopy = {
+  en: { label: "Preferred stay (please confirm)", names: ["Selected City Stay", "Spacious Premium Stay", "Distinctive Mountain Stay"] },
+  zh: { label: "住宿偏好（请确认）", names: ["精选市区酒店", "宽敞高级住宿", "精品山景住宿"] },
+  ko: { label: "숙소 선호(확인 요청)", names: ["엄선한 시내 숙소", "넉넉한 프리미엄 숙소", "특색 있는 산악 숙소"] },
+} as const;
 export type ReferralSource = "" | (typeof referralSources)[number];
 export const jiangnanContactCopy = {
   en: { placeholder: "Room preferences, children’s ages, arrival/departure plans or walking needs…", source: "How did you find us?", blank: "Choose if you’d like", friend: "Friends or family", other: "Other", group: "How many people are travelling?", groupHint: "Enter your group size to get in touch; we’ll quote for that group.", groupError: "Please enter a group size from 1 to 99." },
@@ -25,6 +34,7 @@ export interface TourContactDraft {
   note: string;
   referralSource?: ReferralSource;
   requestedTravelers?: number | null;
+  stayPreference?: ZhangjiajieStayPreference | null;
 }
 
 /** Unpriced group requests are kept separate from published 2/4-person price tiers. */
@@ -35,12 +45,13 @@ export function parseRequestedTravelers(value: string): number | null {
 }
 
 /** A traveller's self-report stays in their note, never in measured attribution. */
-export function tourContactNote(note: string, source: ReferralSource = "", requestedTravelers?: number | null): string | null {
+export function tourContactNote(note: string, source: ReferralSource = "", requestedTravelers?: number | null, stayPreference?: ZhangjiajieStayPreference | null): string | null {
   const known = referralSources.find(value => value === source);
   const group = requestedTravelers != null && Number.isInteger(requestedTravelers) && requestedTravelers >= 1 && requestedTravelers <= 99
     ? `[Requested group size: ${requestedTravelers} travellers]`
     : "";
-  return [group, note.trim(), known ? `[Traveller-reported discovery: ${known}]` : ""].filter(Boolean).join("\n\n") || null;
+  const stay = zhangjiajieStayPreferences.find(value => value === stayPreference);
+  return [group, stay ? `[Preferred stay: ${stay}; subject to confirmation]` : "", note.trim(), known ? `[Traveller-reported discovery: ${known}]` : ""].filter(Boolean).join("\n\n") || null;
 }
 
 export function tourContactDraftText(locale: HomegroundLocale, draft?: TourContactDraft): string {
@@ -52,9 +63,11 @@ export function tourContactDraftText(locale: HomegroundLocale, draft?: TourConta
   }[locale];
   const source = referralSources.find(value => value === draft.referralSource);
   const sourceLabel = source === "friend" || source === "other" ? jiangnanContactCopy[locale][source] : source;
+  const stayIndex = zhangjiajieStayPreferences.findIndex(value => value === draft.stayPreference);
   return [
     `${copy.date}: ${draft.travelDate || copy.undecided}`,
     draft.requestedTravelers != null ? `${copy.group}: ${draft.requestedTravelers}` : "",
+    stayIndex >= 0 ? `${stayPreferenceCopy[locale].label}: ${stayPreferenceCopy[locale].names[stayIndex]}` : "",
     draft.note.trim() ? `${copy.note}: ${draft.note.trim()}` : "",
     sourceLabel ? `${copy.source}: ${sourceLabel}` : "",
   ].filter(Boolean).join("\n");
