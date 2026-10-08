@@ -8,6 +8,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "parse5";
 import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
+import * as browserCapabilities from "../../lib/browserCapabilities.ts";
 import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog.ts";
@@ -41,6 +42,7 @@ async function loadComponent(path, overrides = {}, window) {
     react: React,
     "react/jsx-runtime": require("react/jsx-runtime"),
     "../lib/privateTourInquiryContext": inquiry,
+    "../lib/browserCapabilities": browserCapabilities,
     "../lib/tourContactDraft": { isJiangnanTour },
     "../lib/privateTourCurrencyNote": { privateTourCurrencyNote },
     "../lib/privateTourMedia": privateTourMedia,

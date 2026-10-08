@@ -1,4 +1,5 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+import { supportsModalDialog } from "./browserCapabilities.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -15,11 +16,25 @@ export const guideContactOpenEvent = "homeground:open-guide-contact";
 
 type ContactLinkEvent = { preventDefault: () => void; defaultPrevented?: boolean; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; button?: number; currentTarget?: EventTarget | null };
 
+function claimContactRequest(event: ContactLinkEvent, type: string, detail: unknown, returnFocus?: HTMLElement | null) {
+  returnFocusTarget = returnFocus ?? (typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null);
+  // The receiver cancels the native-link fallback only after its dialog opens.
+  const request = new CustomEvent(type, { detail, cancelable: true });
+  window.dispatchEvent(request);
+  if (!request.defaultPrevented) {
+    returnFocusTarget = null;
+    return false;
+  }
+  event.preventDefault();
+  return true;
+}
+
 /** Open only a guide's generic consultation link, not product or service navigation. */
 export function openGuideContactFromLink(event: ContactLinkEvent, href: string, locale: HomegroundLocale) {
   // On desktop the contact card has already answered this click.
   if (event.defaultPrevented) return false;
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
+  if (!supportsModalDialog()) return false;
   const prefix = locale === "en" ? "" : `/${locale}`;
   if (!new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(window.location.pathname)) return false;
   let url: URL;
@@ -30,10 +45,7 @@ export function openGuideContactFromLink(event: ContactLinkEvent, href: string, 
     if (!key.startsWith("utm_") && !(key === "planner" && value === "destinations")) return false;
   }
   if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;
-  event.preventDefault();
-  returnFocusTarget = typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
-  window.dispatchEvent(new CustomEvent(guideContactOpenEvent, { detail: { path: window.location.pathname } }));
-  return true;
+  return claimContactRequest(event, guideContactOpenEvent, { path: window.location.pathname });
 }
 export const tourContactCopy = {
   en: { title: "Let’s plan your trip.", intro: "Tell us when you’d like to travel. We’ll email you a personal quote.", ask: "Ask a trip planner", close: "Close enquiry", whatsapp: "Chat on WhatsApp", email: "Email address", date: "Preferred arrival date", undecided: "Dates not decided yet", note: "Anything you’d like us to know?", optional: "Optional", placeholder: "Your group, interests or a change to this itinerary…", submit: "Request my quote", sending: "Sending…", privacy: "Privacy notice", consent: "We’ll use these details to reply to your enquiry.", manual: "Your planner will confirm availability and the final price.", success: "Your enquiry is saved.", successBody: "We’ll review your plans and reply by email.", reference: "Reference", done: "Back to the itinerary", failed: "We couldn’t save your enquiry. Please try again, or contact us below.", uncertain: "We couldn’t confirm whether your enquiry was saved. Check again to safely retry the same request.", retry: "Check & retry", fallback: "Prefer to get in touch directly?", unavailable: "Send us a message about this trip. Your itinerary will be included.", guideBody: "Planning a trip to China? Talk to our team about routes, stays and private tours.", guideEmail: "Send us an email", tours: "Browse itineraries & prices", selected: "Your itinerary", alternative: "Or chat on WhatsApp" },
@@ -91,16 +103,15 @@ export function kakaoTalkInquiryText(inquiry: string, phone: KakaoTalkPhone = ho
 
 /** Retain a real link for no-JS / modifier-key navigation. Only tour pages open a quote. */
 export function openTourContactFromLink(event: ContactLinkEvent, href: string, locale: HomegroundLocale, returnFocus?: HTMLElement | null) {
+  if (event.defaultPrevented) return false;
   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
+  if (!supportsModalDialog()) return false;
   const url = new URL(href, window.location.origin);
   if (url.origin !== window.location.origin) return false;
   const context = getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
   if (!context || window.location.pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`) return false;
   if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;
-  event.preventDefault();
-  returnFocusTarget = returnFocus ?? (typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null);
-  window.dispatchEvent(new CustomEvent(tourContactOpenEvent, { detail: context }));
-  return true;
+  return claimContactRequest(event, tourContactOpenEvent, context, returnFocus);
 }
 
 export function privateTourQuoteApiUrl() {

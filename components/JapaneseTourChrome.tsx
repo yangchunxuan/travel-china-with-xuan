@@ -68,7 +68,8 @@ export function JapaneseSiteHeader({
   const [open, setOpen] = useState(false);
   // The logo folds to "Hi" on scroll, as on the other languages' headers.
   const brandFold = useBrandFold();
-  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const menuButtonRef = useRef<HTMLElement | null>(null);
+  const mobileMenuRef = useRef<HTMLDetailsElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -113,7 +114,7 @@ export function JapaneseSiteHeader({
       }
       if (event.key !== "Tab" || !header) return;
       const focusable = Array.from(
-        header.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+        header.querySelectorAll<HTMLElement>('a[href], summary, button:not([disabled])'),
       ).filter((element) => element.getClientRects().length > 0);
       const first = focusable[0];
       const last = focusable.at(-1);
@@ -144,7 +145,10 @@ export function JapaneseSiteHeader({
     };
   }, [open]);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    if (mobileMenuRef.current) mobileMenuRef.current.open = false;
+    setOpen(false);
+  };
   const ctaHref = selectedHref(contactHref);
   const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -219,24 +223,27 @@ export function JapaneseSiteHeader({
               <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
             </a>
-            <button
-              aria-controls="japanese-tour-mobile-navigation"
-              aria-expanded={open}
-              aria-label={open ? "メニューを閉じる" : "メニューを開く"}
-              className={headerStyles.menuButton}
-              onClick={() => setOpen((current) => !current)}
-              ref={menuButtonRef}
-              type="button"
+            <details
+              ref={mobileMenuRef}
+              className={headerStyles.mobileMenu}
+              open={open}
+              onToggle={(event) => setOpen(event.currentTarget.open)}
             >
-              {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
-            </button>
-          </div>
-        </div>
+            <summary
+              aria-controls="japanese-tour-mobile-navigation"
+              className={headerStyles.menuButton}
+              ref={menuButtonRef}
+            >
+              <span className={`${headerStyles.menuLabel} ${headerStyles.menuOpenIcon}`}>メニューを開く</span>
+              <span className={`${headerStyles.menuLabel} ${headerStyles.menuCloseIcon}`}>メニューを閉じる</span>
+              <Menu aria-hidden="true" className={headerStyles.menuOpenIcon} size={21} />
+              <X aria-hidden="true" className={headerStyles.menuCloseIcon} size={21} />
+            </summary>
+            </details>
 
         <nav
           aria-label="モバイルメニュー"
           className={headerStyles.mobileNav}
-          hidden={!open}
           id="japanese-tour-mobile-navigation"
           ref={mobileNavRef}
         >
@@ -286,6 +293,8 @@ export function JapaneseSiteHeader({
             </a>
           </div>
         </nav>
+          </div>
+        </div>
       </div>
     </header>
   );

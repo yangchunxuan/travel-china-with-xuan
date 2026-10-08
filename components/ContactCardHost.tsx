@@ -13,6 +13,7 @@ import {
 } from "../lib/contactCard";
 import type { ContactCardDialog as ContactCardDialogComponent } from "./ContactCardDialog";
 import { openContactCardFrame } from "./ContactCardFrame";
+import { subscribeMediaQuery, supportsModalDialog, tryOpenModalDialog } from "../lib/browserCapabilities";
 
 type DialogComponent = typeof ContactCardDialogComponent;
 
@@ -33,6 +34,12 @@ function loadDialog() {
 
 function preloadDialog() {
   if (!loadedDialog && !loadingDialog) loadDialog().catch(() => {});
+}
+
+function followOriginalLink(target: HTMLElement | null) {
+  if (!(target instanceof HTMLAnchorElement)) return;
+  if (target.target === "_blank") window.open(target.href, "_blank", "noopener,noreferrer");
+  else window.location.assign(target.href);
 }
 
 /**
@@ -59,6 +66,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
   const [frameShownAt, setFrameShownAt] = useState<number | null>(null);
   const removeFrameRef = useRef<(() => void) | null>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
+  const nativeDialogRef = useRef<HTMLDialogElement | null>(null);
 
   const removeFrame = useCallback(() => {
     removeFrameRef.current?.();
@@ -69,6 +77,12 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
     removeFrame();
     setOpen(false);
   }, [removeFrame]);
+
+  const handleOpenError = useCallback(() => {
+    setReady(false);
+    close();
+    followOriginalLink(returnFocusRef.current);
+  }, [close]);
 
   // Focus goes back to the link once the card (or its frame) has closed, in
   // the same commit: the card's own layout effect has just closed its dialog,
@@ -97,9 +111,12 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
 
   useEffect(() => {
     const desktop = window.matchMedia(contactCardDesktopQuery);
-    const sync = () => setReady(desktop.matches);
+    const modalSupported = supportsModalDialog();
+    const sync = () => setReady(modalSupported && desktop.matches);
     sync();
-    desktop.addEventListener("change", sync);
+    const unsubscribeDesktop = subscribeMediaQuery(desktop, sync);
+    // Do not intercept links or preload a card that this WebView cannot open.
+    if (!modalSupported) return unsubscribeDesktop;
 
     // Small (about 6 KB compressed), so every screen fetches it once idle
     // and the card or the sheet opens at once.
@@ -126,20 +143,34 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
 
     const mountCard = () => setCardMounted(true);
     const show = (next: ContactCardRequest, returnFocus: HTMLElement | null, nextLayout: ContactCardLayout) => {
+      if (nativeDialogRef.current) {
+        if (!tryOpenModalDialog(nativeDialogRef.current)) {
+          setReady(false);
+          close();
+          return false;
+        }
+      } else {
+        removeFrame();
+        try {
+          const removeNextFrame = openContactCardFrame(locale, nextLayout, close);
+          if (!removeNextFrame) { close(); return false; }
+          removeFrameRef.current = removeNextFrame;
+        } catch {
+          close();
+          return false;
+        }
+      }
       returnFocusRef.current = returnFocus;
       setRequest(next);
       setLayout(nextLayout);
       setOpen(true);
+      setFrameShownAt(removeFrameRef.current ? performance.now() : null);
       if (loadedDialog) {
         mountCard();
-        setFrameShownAt(null);
-        return;
+        return true;
       }
       // The code is still on its way: the frame answers the press in the
       // next frame, and the card takes its place when the code arrives.
-      removeFrame();
-      removeFrameRef.current = openContactCardFrame(locale, nextLayout, close);
-      setFrameShownAt(performance.now());
       loadDialog().then(
         mountCard,
         () => {
@@ -149,11 +180,10 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
           const waiting = removeFrameRef.current !== null;
           removeFrame();
           setOpen(false);
-          if (!waiting || !(returnFocus instanceof HTMLAnchorElement)) return;
-          if (returnFocus.target === "_blank") window.open(returnFocus.href, "_blank", "noopener,noreferrer");
-          else window.location.assign(returnFocus.href);
+          if (waiting) followOriginalLink(returnFocus);
         },
       );
+      return true;
     };
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0) return;
@@ -166,19 +196,20 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       const onDesktop = desktop.matches;
       if (!onDesktop && next.trigger !== "planner") return;
       // The link's own click handlers (analytics) still run; only the navigation is replaced.
-      event.preventDefault();
-      show(next, anchor, onDesktop ? "card" : "sheet");
+      if (show(next, anchor, onDesktop ? "card" : "sheet")) event.preventDefault();
     };
     const onOpen = (event: Event) => {
       const detail = (event as CustomEvent<ContactCardRequest>).detail;
-      if (detail) show(detail, consumeContactCardReturnFocus(), "card");
+      if (!detail) return;
+      const returnFocus = consumeContactCardReturnFocus();
+      if (!show(detail, returnFocus, "card")) followOriginalLink(returnFocus);
     };
 
     for (const type of approaches) document.addEventListener(type, onApproach, { capture: true, passive: true });
     document.addEventListener("click", onClick, true);
     window.addEventListener(contactCardOpenEvent, onOpen);
     return () => {
-      desktop.removeEventListener("change", sync);
+      unsubscribeDesktop();
       for (const type of approaches) document.removeEventListener(type, onApproach, { capture: true });
       document.removeEventListener("click", onClick, true);
       window.removeEventListener(contactCardOpenEvent, onOpen);
@@ -193,7 +224,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
   return (
     <div {...{ [contactCardReadyAttribute]: ready ? "ready" : undefined }}>
       {request && ContactCardDialog ? (
-        <ContactCardDialog locale={locale} request={request} layout={layout} open={open} onClose={close} frameShownAt={frameShownAt} />
+        <ContactCardDialog locale={locale} request={request} layout={layout} open={open} onClose={close} onOpenError={handleOpenError} nativeDialogRef={nativeDialogRef} frameShownAt={frameShownAt} />
       ) : null}
     </div>
   );

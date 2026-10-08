@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useLayoutEffect, useRef, useState, type FormEvent } from "react";
+import { closeModalDialog, supportsModalDialog, tryOpenModalDialog } from "../lib/browserCapabilities";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ArrowUpRight, Mail, MessageCircle, MessagesSquare, X } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
@@ -109,6 +110,13 @@ export function JapaneseInquiryDialog() {
     const receive = (event: Event) => {
       const detail = (event as CustomEvent<JapaneseContactRequest>).detail ?? {};
       if (detail.slug && pathname !== `/ja/tours/${detail.slug}/`) return;
+      if (!tryOpenModalDialog(dialogRef.current)) {
+        setJapaneseContactReady(false);
+        setOpen(false);
+        setInquiryOpen(false);
+        return;
+      }
+      event.preventDefault();
       returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       // Keep the original retry key and immutable submission if receipt is uncertain.
       if (snapshotRef.current && (statusRef.current === "uncertain" || sendingRef.current)) {
@@ -129,7 +137,7 @@ export function JapaneseInquiryDialog() {
       setOpen(true);
     };
     window.addEventListener(japaneseContactOpenEvent, receive);
-    setJapaneseContactReady(true);
+    setJapaneseContactReady(Boolean(dialogRef.current && supportsModalDialog(dialogRef.current)));
     return () => {
       setJapaneseContactReady(false);
       window.removeEventListener(japaneseContactOpenEvent, receive);
@@ -138,18 +146,21 @@ export function JapaneseInquiryDialog() {
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    if (!dialog) return;
-    if (open && !dialog.open) {
-      dialog.showModal();
-      setInquiryOpen(true);
-      dialog.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
-    } else if (!open && dialog.open) {
-      dialog.close();
+    if (!dialog || !supportsModalDialog(dialog)) return;
+    if (!open) {
+      closeModalDialog(dialog);
       setInquiryOpen(false);
       if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus({ preventScroll: true });
+      return;
     }
+    if (!tryOpenModalDialog(dialog)) {
+      setJapaneseContactReady(false); setOpen(false); setInquiryOpen(false);
+      return;
+    }
+    setInquiryOpen(true);
+    dialog.querySelector<HTMLElement>("h2")?.focus({ preventScroll: true });
     return () => {
-      if (dialog.open) dialog.close();
+      closeModalDialog(dialog);
       setInquiryOpen(false);
     };
   }, [open]);
@@ -248,7 +259,7 @@ export function JapaneseInquiryDialog() {
     trackEvent("contact_option_clicked", { channel, page_language: "ja" });
 
   return (
-    <dialog ref={dialogRef} className={scanHref ? cardStyles.dialog : styles.dialog} data-homeground-contact-ready="true" data-contact-card-dialog={scanHref ? "" : undefined} data-compact={!context || status === "saved"} aria-labelledby={`${id}-${scanHref ? "scan-title" : "title"}`}
+    <dialog ref={dialogRef} hidden={!open} className={scanHref ? cardStyles.dialog : styles.dialog} data-contact-card-dialog={scanHref ? "" : undefined} data-compact={!context || status === "saved"} aria-labelledby={`${id}-${scanHref ? "scan-title" : "title"}`}
       onCancel={event => { event.preventDefault(); if (scanHref) setScanHref(null); else close(); }}
       onClick={event => { if (event.target === event.currentTarget) { if (scanHref) setScanHref(null); else close(); } }}
       onClickCapture={event => {

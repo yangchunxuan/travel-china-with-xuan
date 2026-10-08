@@ -18,6 +18,11 @@
   z-index: 1400;
 }
 
+/* Native disclosure still answers a tap while page scripts are loading. */
+.siteHeader:has(.mobileMenu[open]) {
+  z-index: 1400;
+}
+
 .headerDialog {
   position: relative;
 }
@@ -593,6 +598,10 @@
   display: inline;
 }
 
+.mobileMenu {
+  display: none;
+}
+
 .menuButton {
   align-items: center;
   background: #fff;
@@ -605,6 +614,34 @@
   inline-size: 2.75rem;
   justify-content: center;
   padding: 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  touch-action: manipulation;
+  z-index: 100;
+}
+
+.menuButton::-webkit-details-marker {
+  display: none;
+}
+
+.menuLabel {
+  block-size: 1px;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.menuCloseIcon,
+.mobileMenu[open] .menuOpenIcon,
+.mobileMenu:not([open]) + .mobileNav {
+  display: none;
+}
+
+.mobileMenu[open] .menuCloseIcon {
+  display: block;
 }
 
 .menuButton:hover,
@@ -663,7 +700,7 @@
   color: #fff;
 }
 
-.siteHeader :where(a, button):focus-visible {
+.siteHeader :where(a, button, summary):focus-visible {
   outline: 2px solid var(--hg-color-focus, #b14f37);
   outline-offset: 3px;
 }
@@ -743,6 +780,10 @@
 
   .menuButton {
     display: inline-flex;
+  }
+
+  .mobileMenu {
+    display: block;
   }
 
   .mobileNav {
@@ -947,6 +988,16 @@
   }
 
   .siteHeader[data-menu-open="true"] .headerCta {
+    display: none;
+  }
+
+  .siteHeader:has(.mobileMenu[open]) .headerInner {
+    background: #fff;
+    position: relative;
+    z-index: 100;
+  }
+
+  .siteHeader:has(.mobileMenu[open]) .headerCta {
     display: none;
   }
 }

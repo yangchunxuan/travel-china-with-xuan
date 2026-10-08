@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { subscribeMediaQuery } from "../lib/browserCapabilities";
 import styles from "./HomegroundHeader.module.css";
 
 /**
@@ -36,11 +37,11 @@ export function useBrandFold() {
     let ready = window.requestAnimationFrame(() => {
       ready = window.requestAnimationFrame(syncMotion);
     });
-    reducedMotion.addEventListener("change", syncMotion);
+    const unsubscribeMotion = subscribeMediaQuery(reducedMotion, syncMotion);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      reducedMotion.removeEventListener("change", syncMotion);
+      unsubscribeMotion();
       window.cancelAnimationFrame(ready);
       if (frame) window.cancelAnimationFrame(frame);
     };
