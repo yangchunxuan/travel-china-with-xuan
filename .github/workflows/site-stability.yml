@@ -1,0 +1,48 @@
+name: Site certificates and availability
+
+on:
+  schedule:
+    - cron: '19 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-certificates-and-availability
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: main
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Check both TLS layers and key pages
+        id: site
+        continue-on-error: true
+        run: node tools/check-site-stability.mjs --output site-stability.json
+      - name: Save public diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: site-stability-${{ github.run_id }}
+          path: site-stability.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Report completed check to independent heartbeat
+        if: always()
+        env:
+          SITE_CERTIFICATE_30_DAY_HEARTBEAT_URL: ${{ secrets.SITE_CERTIFICATE_30_DAY_HEARTBEAT_URL }}
+          SITE_CERTIFICATE_14_DAY_HEARTBEAT_URL: ${{ secrets.SITE_CERTIFICATE_14_DAY_HEARTBEAT_URL }}
+          SITE_CERTIFICATE_7_DAY_HEARTBEAT_URL: ${{ secrets.SITE_CERTIFICATE_7_DAY_HEARTBEAT_URL }}
+        run: node tools/report-certificate-heartbeats.mjs site-stability.json
+      - name: Preserve warning or failure result
+        if: steps.site.outcome != 'success'
+        run: exit 1

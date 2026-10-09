@@ -31,6 +31,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Require isolated PostgreSQL checks
+        run: |
+          set -euo pipefail
+          pg_config --bindir >> "$GITHUB_PATH"
+          echo 'REQUIRE_ISOLATED_POSTGRES=1' >> "$GITHUB_ENV"
+          sudo apt-get update -qq
+          sudo apt-get install -y age
       - name: Test first-party traffic operations
         run: npm run test:traffic-ops
       - name: Test inquiry contract
