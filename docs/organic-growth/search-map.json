@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 221,
-      "localeUrlCount": 655,
-      "generatedIdentityCount": 202,
+      "identityCount": 222,
+      "localeUrlCount": 658,
+      "generatedIdentityCount": 203,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2096,10 +2096,55 @@
               "boundary": "Harbin Ice Festival season facts: Ice and Snow World, Sun Island and the ice lantern fair dates and prices, best month, cold-weather clothing, access and entry routes. china-in-winter keeps the national winter-destination choice; tour pages keep product prices. No 2026–27 date or price is claimed before official notices."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "zjj-rescue",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Avatar Mountains (Zhangjiajie National Forest Park) guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "avatar-mountains-zhangjiajie",
+              "title": "Avatar Mountains in China: Where They Are and How to Visit",
+              "metadataPath": "content/guides/avatar-mountains-zhangjiajie/metadata.json",
+              "canonicalPath": "/guides/avatar-mountains-zhangjiajie/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/avatar-mountains-zhangjiajie/",
+                "/zh/guides/avatar-mountains-zhangjiajie/",
+                "/ko/guides/avatar-mountains-zhangjiajie/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "zhangjiajie"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-zhangjiajie"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Avatar Mountains intent: what and where they are, the Yuanjiajie Hallelujah pillar and the film claim, where to see the scenery, cost, the park's one-day route, days and season. Ticket mechanics stay with zhangjiajie-national-forest-park-tickets-and-entrances; the 2/3/4-day route stays with zhangjiajie-itinerary; tour pages keep product prices."
+            }
+          ]
         }
       ],
       "identityIds": [
         "anshun-dixi-mask-performance-guide",
+        "avatar-mountains-zhangjiajie",
         "beijing-copper-pot-mutton-ordering-workflow",
         "beijing-courtyard-hotel-or-modern-hotel",
         "beijing-south-station-to-capital-or-daxing-airport",

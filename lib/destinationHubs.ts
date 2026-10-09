@@ -1528,6 +1528,7 @@ export const destinationHubRegistry = [
     supportGuideIds: [
       "chengdu-chongqing-zhangjiajie-itinerary",
       "zhangjiajie-itinerary",
+      "avatar-mountains-zhangjiajie",
       "zhangjiajie-national-forest-park-tickets-and-entrances",
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-glass-bridge-vs-skywalk",

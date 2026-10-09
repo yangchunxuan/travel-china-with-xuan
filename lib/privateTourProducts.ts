@@ -2824,7 +2824,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "장가계 국가삼림공원 4일 고정 코스 프라이빗 투어",
   ),
   metadataTitle: l(
-    "Zhangjiajie Forest Park & Tianmen: 4-Day Private Tour",
+    "Zhangjiajie Avatar Mountains & Tianmen: 4-Day Private Tour",
     "张家界森林公园+天门山4天3晚纯玩私家团",
     "장가계 국가삼림공원 3박 4일 프라이빗 투어",
   ),
@@ -2832,7 +2832,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
   // Day 2 full Forest Park day, Day 3 Tianmen Mountain with Baofeng Lake as a free weather backup,
   // villa or 4-star hotel). Titles and slug are unchanged.
   metadataDescription: l(
-    "4-day Zhangjiajie private tour: a full Forest Park day, Tianmen Mountain with a free weather backup, and three nights in one villa or 4-star hotel.",
+    "4-day Zhangjiajie private tour: a guided day in the Avatar Mountains, including Yuanjiajie's Hallelujah pillar, then Tianmen Mountain. Three nights in one base.",
     "张家界4天3晚私家团：森林公园玩一整天，第三天上天门山，天气不好免费改游宝峰湖；三晚同住一处别墅或四星酒店，含行程私车、D2全天和D3白天英语导游。",
     "장가계 3박 4일 프라이빗 투어. 국가삼림공원 종일, 천문산(악천후 시 보봉호로 무료 변경), 빌라 또는 4성급 호텔 한 곳에서 3박, D2 종일·D3 주간 한국어 가이드 포함.",
   ),
