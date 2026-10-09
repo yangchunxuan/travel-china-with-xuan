@@ -1,0 +1,47 @@
+name: Isolated inquiry and recovery drill
+
+on:
+  schedule:
+    - cron: '43 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isolated-inquiry-recovery-drill
+  cancel-in-progress: false
+
+jobs:
+  drill:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: main
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Enable disposable PostgreSQL
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y age
+          pg_config --bindir >> "$GITHUB_PATH"
+      - name: Run isolated submission and restore checks
+        id: drill
+        continue-on-error: true
+        env:
+          REQUIRE_ISOLATED_POSTGRES: '1'
+        run: node --experimental-strip-types --test supabase/tests/inquiry-end-to-end.test.mjs supabase/tests/backup-recovery-integration.test.mjs
+      - name: Notify independent heartbeat
+        if: always()
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.RECOVERY_DRILL_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ steps.drill.outcome == 'success' && 'success' || 'failure' }}
+        run: node tools/report-stability-heartbeat.mjs
+      - name: Preserve failed drill result
+        if: steps.drill.outcome != 'success'
+        run: exit 1
