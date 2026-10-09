@@ -435,6 +435,12 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     "哈尔滨·亚布力·雪乡 6 天 5 晚冬季私家团",
     "하얼빈·야부리·설향 6일 겨울 프라이빗 투어",
   ),
+  // Search copy: the names people search (Ice Festival, China Snow Town), not the route list.
+  metadataTitle: l(
+    "Harbin Ice Festival & China Snow Town Tour: 6-Day Private",
+    "哈尔滨冰雪大世界+亚布力+雪乡 6天5晚私家团",
+    "하얼빈·야부리·설향 6일 겨울 프라이빗 투어",
+  ),
   metadataDescription: l(
     "Six-day private winter route: Harbin Ice and Snow World, a Yabuli ski day and Snow Town, with five hotel nights, a private vehicle and a driver-guide.",
     "6 天冬季私家路线：哈尔滨冰雪大世界、亚布力滑雪和雪乡，住 5 晚酒店、不坐夜车，私车和司机兼向导只服务你们一行。",
@@ -621,7 +627,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어",
   ),
   metadataTitle: l(
-    "Harbin, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour",
+    "Harbin, Snow Town & Changbai Mountain Winter Tour: 8 Days",
     "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团",
     "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어",
   ),
@@ -888,6 +894,11 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     "哈尔滨·漠河·北红村·北极村 7 天 6 晚冬季私家团",
     "하얼빈·모허·베이훙촌·북극촌 7일 겨울 프라이빗 투어",
   ),
+  metadataTitle: l(
+    "Mohe Arctic Village Winter Tour from Harbin: 7-Day Private",
+    "漠河北极村冬季私家团：哈尔滨出发 7天",
+    "하얼빈·모허·북극촌 7일 겨울 프라이빗 투어",
+  ),
   metadataDescription: l(
     "Seven-day private winter route from Harbin to Mohe, Beihong Village and Arctic Village: four hotel nights plus two hard-sleeper train nights, driver-guide.",
     "7 天冬季私家路线：哈尔滨到漠河、北红村和北极村，4 晚酒店加 2 晚硬卧夜车（铺位随机），私车和司机兼向导。",
@@ -1148,6 +1159,11 @@ const harbinSnowTownMohe: PrivateTourProduct = {
   title: l(
     "Harbin, Yabuli, Snow Town & Mohe: 9-Day Winter Private Tour",
     "哈尔滨·亚布力·雪乡·漠河 9 天 8 晚冬季私家团",
+    "하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어",
+  ),
+  metadataTitle: l(
+    "Harbin, China Snow Town & Mohe Arctic Village Tour: 9 Days",
+    "哈尔滨+亚布力+雪乡+漠河北极村 9天冬季私家团",
     "하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어",
   ),
   metadataDescription: l(
@@ -1418,6 +1434,11 @@ const yanjiChangbaishanWanda: PrivateTourProduct = {
   title: l(
     "Yanji, Changbai Mountain & Wanda Resort: 6-Day Winter Private Tour",
     "延吉·长白山·万达度假区 6 天 5 晚冬季私家团",
+    "연길·백두산·완다 리조트 6일 겨울 프라이빗 투어",
+  ),
+  metadataTitle: l(
+    "Changbai Mountain & Wanda Resort Winter Tour: 6 Days",
+    "长白山+万达度假区 冬季6天私家团（延吉出发）",
     "연길·백두산·완다 리조트 6일 겨울 프라이빗 투어",
   ),
   metadataDescription: l(
