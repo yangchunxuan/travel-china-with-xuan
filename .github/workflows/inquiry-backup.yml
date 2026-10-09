@@ -32,6 +32,10 @@ jobs:
           echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt noble-pgdg main' | sudo tee /etc/apt/sources.list.d/pgdg.list > /dev/null
           sudo apt-get update
           sudo apt-get install -y postgresql-client-17
+          node --test supabase/tests/supabase-root-ca.test.mjs
+          sudo install -m 0644 tools/certificates/supabase-root-2021.crt /usr/local/share/ca-certificates/homeground-supabase-root-2021.crt
+          sudo update-ca-certificates
+          openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt /usr/local/share/ca-certificates/homeground-supabase-root-2021.crt
           echo '/usr/lib/postgresql/17/bin' >> "$GITHUB_PATH"
       - name: Export read-only snapshot directly into public-key encryption
         id: backup
