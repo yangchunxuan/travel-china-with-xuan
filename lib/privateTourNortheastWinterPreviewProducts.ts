@@ -81,6 +81,7 @@ const seasonPackages = (low: SeasonPrices, peak: SeasonPrices): readonly Private
 
 const harbinImages = "/images/tours/harbin-winter-5-day-private-tour";
 const changbaishanImages = "/images/tours/changbaishan-yanji-winter-6-day-private-tour";
+const winterImages = "/images/tours/northeast-winter-2026-27";
 
 const image = (
   src: string,
@@ -95,6 +96,36 @@ const routePhoto = (
   dayNumber: number,
   ...variants: readonly { label: LocalizedText; image: PrivateTourImage }[]
 ): PrivateTourRouteMediaGroup => ({ day: dayNumber, variants });
+
+const winterImage = (
+  name: string,
+  alt: LocalizedText,
+  caption: LocalizedText,
+  width = 1600,
+  height = 1200,
+) => image(`${winterImages}/${name}.webp`, alt, caption, width, height);
+
+const snowTownBlue = winterImage(
+  "xuexiang-blue",
+  l("Snow-covered rooftops in China Snow Town at blue hour", "蓝调时刻的中国雪乡雪屋屋顶", "푸른 저녁빛 아래 눈 덮인 중국 설향의 지붕"),
+  l("China Snow Town in December 2023. This is a village view, not the accommodation booked for your trip.", "2023 年 12 月的中国雪乡村景；照片中的房屋不代表本团预订住宿。", "2023년 12월 중국 설향 마을 풍경입니다. 사진 속 건물은 실제 예약 숙소를 뜻하지 않습니다."),
+);
+
+const yabuliChairlift = winterImage(
+  "yabuli-chairlift",
+  l("Snowy Yabuli ski hills seen from a chairlift", "从缆车俯瞰积雪的亚布力雪场", "리프트에서 내려다본 눈 덮인 야부리 스키장"),
+  l("Yabuli ski area, January 2013. Slope and lift operations vary by season and weather.", "2013 年 1 月拍摄的亚布力雪场；雪道及缆车是否开放以当季天气和运营为准。", "2013년 1월 야부리 스키장입니다. 슬로프와 리프트 운영은 시즌과 날씨에 따라 달라집니다."),
+  1600,
+  1067,
+);
+
+const baekduWinter = winterImage(
+  "baekdu-winter",
+  l("Frozen Heaven Lake on Changbai Mountain in winter", "冬季冰封的长白山天池", "겨울에 얼어붙은 백두산 천지"),
+  l("Changbai Mountain's Tianchi in December 2009. Access and visibility are weather-dependent; this view is not guaranteed.", "2009 年 12 月的长白山天池。能否上山及看见天池取决于天气，不保证看到此景。", "2009년 12월 백두산 천지입니다. 입장과 조망은 날씨에 따라 달라지며 이 풍경을 보장하지 않습니다."),
+  1320,
+  880,
+);
 
 const snowTownHero = image(
   "/images/tours/northeast-winter-2026-27/snow-town-morning-1600.webp",
@@ -355,10 +386,6 @@ const snowTownDay = day(
   ),
 );
 
-const harbinSnowTownRoutePhotos = [
-  routePhoto(2, centralStreet, iceSlide),
-] as const;
-
 const harbinSnowTownCredits: readonly PrivateTourPhotoCredit[] = [
   {
     subject: l("Harbin Ice and Snow World", "哈尔滨冰雪大世界", "하얼빈 빙설대세계"),
@@ -521,20 +548,29 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     notStatedFaq,
   ],
   heroImage: snowTownHero,
-  gallery: [],
+  gallery: [winterImage(
+    "xuexiang-market",
+    l("Evening food stall and snow-covered street in China Snow Town", "中国雪乡夜晚的餐饮摊与雪街", "중국 설향의 겨울밤 먹거리 가게와 눈길"),
+    l("A Snow Town street in December 2023. Shops, meals and the scene may differ on your trip.", "2023 年 12 月的雪乡街景；商铺、餐食和现场布置以出行时为准。", "2023년 12월 설향 거리입니다. 상점, 식사와 현장 모습은 여행 시점에 따라 달라집니다."),
+  )],
   routeMedia: [
-    ...harbinSnowTownRoutePhotos,
-    routePhoto(
-      6,
-      harbinStation(
-        l(
-          "Harbin Railway Station; if you fly out, you leave from the airport instead.",
-          "照片为哈尔滨站；如坐飞机返程，则从机场出发。",
-          "사진은 하얼빈역입니다. 항공편으로 떠나시면 공항에서 출발합니다.",
-        ),
-        l("Depart Harbin", "哈尔滨返程", "하얼빈 출발"),
+    routePhoto(2, centralStreet, iceSlide),
+    routePhoto(3, {
+      label: l("Yabuli ski day", "亚布力滑雪日", "야부리 스키 날"),
+      image: winterImage(
+        "yabuli-skiers",
+        l("Skiers on a snow-covered beginner slope in Yabuli", "亚布力雪道上的滑雪者", "야부리 눈 덮인 슬로프의 스키어들"),
+        l("Skiers in Yabuli, January 2010. Your ski session and instruction are confirmed in writing.", "2010 年 1 月的亚布力滑雪场景；本团滑雪时长和教学安排以书面确认为准。", "2010년 1월 야부리 스키장입니다. 스키 시간과 강습은 서면 확인서를 따릅니다."),
       ),
-    ),
+    }),
+    routePhoto(4, {
+      label: l("China Snow Town", "中国雪乡", "중국 설향"),
+      image: winterImage(
+        "xuexiang-entry",
+        l("Visitors beside the China Snow Town entrance marker in winter", "冬季中国雪乡入口标志旁的游客", "겨울 중국 설향 입구 표지 옆의 방문객들"),
+        l("Snow Town entrance in December 2023; this photo does not show your accommodation.", "2023 年 12 月的雪乡入口；照片不展示本团住宿。", "2023년 12월 설향 입구입니다. 사진은 실제 예약 숙소를 보여 주지 않습니다."),
+      ),
+    }),
   ],
   packages: seasonPackages([5600, 4900, 4600, 4300], [7200, 6300, 6000, 5700]),
   datePublished: PUBLISHED,
@@ -712,10 +748,43 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: iceSlide.image,
-  gallery: [],
+  heroImage: snowTownBlue,
+  gallery: [winterImage(
+    "yabuli-sunset",
+    l("Red sunset above snowy ski runs at Yabuli Sun Mountain", "亚布力阳光度假村雪道上方的红色晚霞", "야부리 선마운틴 눈 덮인 슬로프 위로 붉은 노을"),
+    l("Yabuli ski slopes at sunset in December 2008; snow and operating runs depend on the season.", "2008 年 12 月亚布力雪道的晚霞；积雪与开放雪道以当季情况为准。", "2008년 12월 야부리 슬로프의 노을입니다. 적설과 운영 슬로프는 시즌에 따라 달라집니다."),
+    1600,
+    1063,
+  )],
   routeMedia: [
-    ...harbinSnowTownRoutePhotos,
+    routePhoto(2, {
+      label: l("Ice and Snow World entrance", "冰雪大世界入口", "빙설대세계 입구"),
+      image: winterImage(
+        "harbin-ice-entrance",
+        l("Purple-lit ice structures at Harbin Ice and Snow World", "哈尔滨冰雪大世界紫色灯光下的冰建筑", "하얼빈 빙설대세계의 보라색 조명 얼음 구조물"),
+        l("Harbin Ice and Snow World in January 2026; design and opening dates change each winter.", "2026 年 1 月的哈尔滨冰雪大世界；每年造型和开放日期均可能变化。", "2026년 1월 하얼빈 빙설대세계입니다. 디자인과 개장일은 겨울마다 달라집니다."),
+        1600,
+        2133,
+      ),
+    }),
+    routePhoto(3, {
+      label: l("Yabuli ski hills", "亚布力雪山", "야부리 스키장 산자락"),
+      image: winterImage(
+        "yabuli-mountain",
+        l("Snow-covered ski runs across Yabuli's mountain slopes", "亚布力山坡上的积雪雪道", "야부리 산에 펼쳐진 눈 덮인 슬로프"),
+        l("Yabuli ski area in February 2009. The slopes open according to weather and resort operations.", "2009 年 2 月的亚布力雪场；雪道开放情况以天气和雪场运营为准。", "2009년 2월 야부리 스키장입니다. 슬로프 운영은 날씨와 리조트 운영에 따릅니다."),
+        1392,
+        924,
+      ),
+    }),
+    routePhoto(4, {
+      label: l("Snow Town forest walkway", "雪乡林间步道", "설향 숲길"),
+      image: winterImage(
+        "xuexiang-forest-path",
+        l("Visitors walking a snowy forest path in China Snow Town", "中国雪乡雪地林间步道上的游客", "중국 설향의 눈 덮인 숲길을 걷는 방문객"),
+        l("A Snow Town walkway in December 2023; this is a village scene, not the Ten-mile Ice and Snow Gallery.", "2023 年 12 月的雪乡步道；这张照片是雪乡村景，不是十里冰雪画廊。", "2023년 12월 설향 산책로입니다. 십리 빙설화랑 사진은 아닙니다."),
+      ),
+    }),
     routePhoto(6, {
       label: l("Changbai Mountain Tianchi", "长白山天池", "백두산 천지"),
       image: image(
@@ -729,17 +798,15 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       ),
     }),
     routePhoto(7, {
-      label: l("Yanji at night", "延吉夜景", "연길 야경"),
-      image: image(
-        `${changbaishanImages}/gallery-1.webp`,
-        l("Yanji city lights at night", "延吉城市夜景", "연길 야경"),
+      label: l("Yanji in winter", "冬季延吉市区", "겨울 연길 시내"),
+      image: winterImage(
+        "yanji-city-winter",
+        l("Yanji streets after light snowfall in December 2008", "2008年12月薄雪后的延吉街景", "2008년 12월 옅은 눈이 내린 뒤의 연길 시가지"),
         l(
-          "Yanji at night; you stay one night here before departing.",
-          "延吉夜景；返程前在这里住一晚。",
-          "연길의 밤 풍경입니다. 출발 전 이곳에서 1박합니다.",
+          "Historical view of Yanji in December 2008. Buildings and streets may have changed, and snow conditions vary.",
+          "2008年12月的延吉旧照；建筑和街道如今可能已变化，积雪情况也因时而异。",
+          "2008년 12월 연길의 과거 사진입니다. 건물과 거리는 현재 달라졌을 수 있으며 적설 상태도 시기에 따라 다릅니다.",
         ),
-        1920,
-        1235,
       ),
     }),
   ],
@@ -937,21 +1004,43 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     notStatedFaq,
   ],
   heroImage: beijiVillageHero,
-  gallery: [],
+  gallery: [winterImage(
+    "beiji-frozen-river-marker",
+    l("Shenzhou North Pole landmark beside a frozen river near Beiji Village", "北极村附近冰河畔的神州北极石碑", "북극촌 부근 얼어붙은 강 옆의 선저우 북극 표석"),
+    l("A March 2005 photo near Beiji Village; the landmark and riverbank may have changed, and this is not a confirmed stop on your tour.", "2005 年 3 月北极村附近的旧照；石碑和河岸如今可能变化，此处也不是本团确认的停留点。", "2005년 3월 북극촌 부근의 과거 사진입니다. 표석과 강변은 현재 달라졌을 수 있으며 이번 여행의 확정 방문 지점은 아닙니다."),
+  )],
   routeMedia: [
-    routePhoto(2, centralStreet, iceSlide),
-    routePhoto(3, sophiaExterior),
-    routePhoto(
-      7,
-      harbinStation(
-        l(
-          "Harbin Railway Station; your arrival station in Harbin is shown on your train ticket.",
-          "照片为哈尔滨站；实际到达哪个车站，以车票为准。",
-          "사진은 하얼빈역입니다. 실제 도착역은 기차표에 적힌 곳을 따릅니다.",
-        ),
-        l("Arrive in Harbin", "抵达哈尔滨", "하얼빈 도착"),
+    routePhoto(2, {
+      label: l("Harbin snow sculptures", "哈尔滨雪雕", "하얼빈 눈 조각"),
+      image: winterImage(
+        "harbin-snow-sculpture",
+        l("Snow sculpture at Harbin's 2026 Ice and Snow Festival", "2026 年哈尔滨冰雪节雪雕", "2026년 하얼빈 빙설 축제 눈 조각"),
+        l("A Harbin snow sculpture in January 2026. The photographed venue is not verified; displays and dates change each season.", "2026 年 1 月的哈尔滨雪雕。照片的具体场馆未经核实；展品和开放日期每季可能变化。", "2026년 1월 하얼빈의 눈 조각입니다. 사진의 정확한 행사장은 확인되지 않았으며 전시와 날짜는 시즌마다 달라집니다."),
+        1600,
+        2133,
       ),
-    ),
+    }),
+    routePhoto(3, sophiaExterior),
+    routePhoto(4, {
+      label: l("Snowy northern forest", "北方雪林", "북부 설림"),
+      image: winterImage(
+        "daxinganling-snow-forest",
+        l("Snow-covered forest in the Greater Khingan Range", "大兴安岭地区的覆雪林海", "다싱안링 지역의 눈 덮인 숲"),
+        l("A winter forest in the Greater Khingan region; this does not show the First Bend or a particular stop on your route.", "大兴安岭地区冬季林海；照片不是龙江第一湾，也不代表本团的某个指定停留点。", "다싱안링 지역의 겨울 숲입니다. 헤이룽장 제1만이나 특정 방문 지점의 사진은 아닙니다."),
+        1100,
+        733,
+      ),
+    }),
+    routePhoto(5, {
+      label: l("Arctic Village in winter", "冬季北极村", "겨울 북극촌"),
+      image: winterImage(
+        "beiji-red-street",
+        l("Red-lit snowy street in Beiji Village at night", "北极村夜晚灯光映红的雪街", "북극촌 밤의 붉은 조명과 눈 덮인 거리"),
+        l("A historic winter street photo from Beiji Village; the reindeer park and ski slope are not pictured.", "北极村冬季街景旧照；照片没有展示驯鹿园或滑雪场。", "북극촌의 과거 겨울 거리 사진입니다. 순록 공원이나 스키 슬로프 사진은 아닙니다."),
+        1280,
+        853,
+      ),
+    }),
   ],
   packages: seasonPackages([5900, 4900, 4600, 4400], [7000, 5900, 5400, 5200]),
   datePublished: PUBLISHED,
@@ -1126,22 +1215,41 @@ const harbinSnowTownMohe: PrivateTourProduct = {
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: image(
-    `${harbinImages}/saint-sophia-winter-1600.jpg`,
-    l(
-      "Saint Sophia Cathedral and a snow-covered square in Harbin at night",
-      "夜色中的哈尔滨圣索菲亚教堂与积雪广场",
-      "밤의 하얼빈 성 소피아 성당과 눈 덮인 광장",
-    ),
-    l(
-      "Saint Sophia Cathedral in Harbin, where this route starts, photographed in January 2018; lighting and snow vary.",
-      "路线起点哈尔滨的圣索菲亚教堂，2018 年 1 月拍摄；灯光和积雪情况会变化。",
-      "이 코스가 시작되는 하얼빈의 성 소피아 성당으로, 2018년 1월에 촬영했습니다. 조명과 눈 상태는 달라질 수 있습니다.",
-    ),
-  ),
-  gallery: [],
+  heroImage: yabuliChairlift,
+  gallery: [winterImage(
+    "xuexiang-street",
+    l("Visitors on a snowy night street in China Snow Town", "中国雪乡冬夜街道上的游客", "중국 설향의 눈 덮인 밤거리 방문객들"),
+    l("China Snow Town in December 2023. The shops and crowds shown are not part of the tour service.", "2023 年 12 月的中国雪乡；画面中的商铺和人流不属于本团服务内容。", "2023년 12월 중국 설향입니다. 사진 속 상점과 인파는 투어 제공 서비스가 아닙니다."),
+  )],
   routeMedia: [
-    ...harbinSnowTownRoutePhotos,
+    routePhoto(2, {
+      label: l("Ice and Snow World", "冰雪大世界", "빙설대세계"),
+      image: winterImage(
+        "harbin-ice-view",
+        l("Ice buildings and a Ferris wheel at Harbin Ice and Snow World", "哈尔滨冰雪大世界的冰建筑与摩天轮", "하얼빈 빙설대세계의 얼음 건물과 관람차"),
+        l("Harbin Ice and Snow World in January 2026. The layout and attractions change each winter.", "2026 年 1 月的哈尔滨冰雪大世界；园区布局和项目每年可能变化。", "2026년 1월 하얼빈 빙설대세계입니다. 구역 배치와 시설은 겨울마다 바뀝니다."),
+        1600,
+        2133,
+      ),
+    }),
+    routePhoto(3, {
+      label: l("Skiers at Yabuli", "亚布力滑雪场景", "야부리 스키장 풍경"),
+      image: winterImage(
+        "yabuli-race",
+        l("Skiers preparing on snow at Yabuli's Sun Mountain", "亚布力阳光度假村雪地上准备滑雪的人", "야부리 선마운틴 설원에서 스키를 준비하는 사람들"),
+        l("An event photo at Yabuli's Sun Mountain in March 2009. It does not depict this tour's ski lesson or equipment package.", "2009 年 3 月亚布力阳光度假村活动旧照；不是本团滑雪教学或雪具套餐的照片。", "2009년 3월 야부리 선마운틴 행사 사진입니다. 이번 여행의 강습이나 장비 패키지 사진은 아닙니다."),
+        1600,
+        1067,
+      ),
+    }),
+    routePhoto(4, {
+      label: l("Snow Town village", "雪乡村景", "설향 마을"),
+      image: winterImage(
+        "xuexiang-snow-house",
+        l("Snow-covered wooden buildings at night in China Snow Town", "中国雪乡夜晚覆雪的木屋", "중국 설향 밤의 눈 덮인 목조 건물"),
+        l("Snow Town village in December 2023. The building shown does not represent your booked hotel.", "2023 年 12 月的雪乡村景；画面中的建筑不代表本团预订酒店。", "2023년 12월 설향 마을입니다. 사진 속 건물은 실제 예약 호텔을 나타내지 않습니다."),
+      ),
+    }),
     routePhoto(
       5,
       harbinStation(
@@ -1153,6 +1261,26 @@ const harbinSnowTownMohe: PrivateTourProduct = {
         l("Night train from Harbin", "哈尔滨夜车出发", "하얼빈에서 야간열차 출발"),
       ),
     ),
+    routePhoto(6, {
+      label: l("Mohe area in winter", "冬季漠河一带", "겨울 모허 일대"),
+      image: winterImage(
+        "mohe-winter-panorama",
+        l("Snow-covered settlement and forest in the Mohe area", "漠河一带覆雪的房屋与林地", "모허 일대의 눈 덮인 마을과 숲"),
+        l("A Mohe-area winter panorama from January 2016; it is not Beihong Village or a confirmed stop on your tour.", "2016 年 1 月的漠河一带冬景；照片不是北红村，也不代表本团确认的某个停留点。", "2016년 1월 모허 일대 겨울 전경입니다. 베이훙촌이나 확정 방문 지점 사진은 아닙니다."),
+        1600,
+        1000,
+      ),
+    }),
+    routePhoto(7, {
+      label: l("Beihong Village area at daybreak", "北红村一带的黎明", "베이훙촌 일대의 새벽"),
+      image: winterImage(
+        "beihong-daybreak",
+        l("Starry winter dawn over snowy land near Beihong Village", "北红村附近星空下的冬季黎明雪景", "베이훙촌 부근 별이 빛나는 겨울 새벽 설경"),
+        l("Near Beihong Village in January 2016. This is a starry sky, not an aurora; clear skies and this view are not guaranteed.", "2016 年 1 月北红村附近的星空雪景。这不是极光，晴朗天空及此景都不能保证。", "2016년 1월 베이훙촌 부근의 별이 빛나는 설경입니다. 오로라가 아니며 맑은 하늘과 이 풍경은 보장되지 않습니다."),
+        1600,
+        1068,
+      ),
+    }),
   ],
   packages: seasonPackages([8000, 6600, 6200, 5700], [9000, 7400, 6900, 6400]),
   datePublished: PUBLISHED,
@@ -1319,16 +1447,12 @@ const yanjiChangbaishanWanda: PrivateTourProduct = {
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: image(
-    `${changbaishanImages}/route-day-3-extra.webp`,
-    l("Snow around Heaven Lake on Changbai Mountain", "长白山积雪环绕的天池", "눈에 둘러싸인 백두산 천지"),
-    l(
-      "Changbai Mountain Tianchi in winter. Access and visibility depend on weather; the photo does not guarantee this view on your date.",
-      "长白山冬季天池实景。能否进入、能见度都取决于天气，照片不代表出行当天一定能看到。",
-      "겨울 백두산 천지입니다. 입장과 시야는 날씨에 좌우되며 사진의 풍경을 여행 날짜에 보장하지 않습니다.",
-    ),
-  ),
-  gallery: [],
+  heroImage: baekduWinter,
+  gallery: [winterImage(
+    "yanji-river-winter",
+    l("Frozen Yanji River and city buildings in winter", "冬季冰封的延吉河与市区建筑", "겨울에 얼어붙은 연길 강과 시가지"),
+    l("Yanji in December 2017; river ice and the cityscape vary by date.", "2017 年 12 月的延吉；河面冰况和城市景象以出行当天为准。", "2017년 12월 연길입니다. 강의 결빙 상태와 도시 풍경은 날짜에 따라 달라집니다."),
+  )],
   routeMedia: [
     routePhoto(1, {
       label: l("Yanji at night", "延吉夜景", "연길 야경"),
@@ -1350,6 +1474,14 @@ const yanjiChangbaishanWanda: PrivateTourProduct = {
         1440,
       ),
     }),
+    routePhoto(5, {
+      label: l("Wanda ski slopes", "万达滑雪道", "완다 스키 슬로프"),
+      image: winterImage(
+        "wanda-ski-base",
+        l("Ski lift base and slopes at Changbaishan Wanda Resort", "长白山万达度假区的缆车站与雪道", "창바이산 완다 리조트의 리프트 탑승장과 슬로프"),
+        l("Wanda Resort ski area in December 2013. The complimentary ski experience and lift operation are confirmed before payment.", "2013 年 12 月的万达度假区雪场；赠送滑雪体验及缆车运营情况付款前确认。", "2013년 12월 완다 리조트 스키장입니다. 무료 스키 체험과 리프트 운영은 결제 전에 확인합니다."),
+      ),
+    }),
   ],
   packages: seasonPackages([5400, 4900, 4600, 4300], [7200, 6300, 6000, 5700]),
   datePublished: PUBLISHED,
@@ -1365,6 +1497,27 @@ export const privateTourNortheastWinterProducts: readonly PrivateTourProduct[] =
     yanjiChangbaishanWanda,
   ]);
 
+const commonsCredit = (
+  subject: LocalizedText,
+  fileTitle: string,
+  author: string,
+  licenseLabel: string,
+  licenseUrl: string,
+): PrivateTourPhotoCredit => ({
+  subject,
+  author,
+  sourceUrl: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(fileTitle).replaceAll("%20", "_")}`,
+  licenseLabel,
+  licenseUrl,
+});
+
+const cc0 = "https://creativecommons.org/publicdomain/zero/1.0/";
+const ccBy2 = "https://creativecommons.org/licenses/by/2.0/";
+const ccBy3 = "https://creativecommons.org/licenses/by/3.0/";
+const ccBySa2 = "https://creativecommons.org/licenses/by-sa/2.0/";
+const ccBySa3 = "https://creativecommons.org/licenses/by-sa/3.0/";
+const ccBySa4 = "https://creativecommons.org/licenses/by-sa/4.0/";
+
 export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
   Record<string, readonly PrivateTourPhotoCredit[]>
 > = Object.freeze({
@@ -1377,10 +1530,22 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
       licenseLabel: "CC BY 2.0",
       licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     },
-    harbinStationCredit,
+    commonsCredit(l("Snow Town evening street", "雪乡夜间街景", "설향 밤거리"), "Xuexiang_8.jpg", "EditQ", "CC0 1.0", cc0),
+    commonsCredit(l("Yabuli ski slope", "亚布力雪道", "야부리 스키장"), "亚布力风光 - panoramio - 江上清风1961 (17).jpg", "江上清风1961", "CC BY 3.0", ccBy3),
+    commonsCredit(l("Snow Town entrance", "雪乡入口", "설향 입구"), "Xuexiang_19.jpg", "EditQ", "CC0 1.0", cc0),
   ],
   [changbaiSlug]: [
-    ...harbinSnowTownCredits.slice(1),
+    commonsCredit(l("Snow Town at blue hour", "蓝调时刻的雪乡", "푸른 저녁빛의 설향"), "Xuexiang_4.jpg", "EditQ", "CC0 1.0", cc0),
+    {
+      subject: l("Yabuli ski slopes at sunset", "亚布力雪道晚霞", "야부리 스키장 노을"),
+      author: "Ski China",
+      sourceUrl: "https://www.flickr.com/photos/skichina/3803147042/",
+      licenseLabel: "CC BY 2.0",
+      licenseUrl: ccBy2,
+    },
+    commonsCredit(l("Harbin Ice and Snow World entrance", "冰雪大世界入口", "빙설대세계 입구"), "Harbin Ice & Snow Festival 2026 - Entrance.jpg", "Garosio33", "CC0 1.0", cc0),
+    commonsCredit(l("Yabuli ski hills", "亚布力雪山", "야부리 스키장"), "Sun Mountain Yabuli.jpg", "Ski China", "CC BY 2.0", ccBy2),
+    commonsCredit(l("Snow Town forest walkway", "雪乡林间步道", "설향 숲길"), "Xuexiang_1.jpg", "EditQ", "CC0 1.0", cc0),
     {
       subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"),
       author: "Charlie fong",
@@ -1388,16 +1553,13 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
       licenseLabel: "Public domain",
       licenseUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg#Licensing",
     },
-    {
-      subject: l("Yanji at night", "延吉夜景", "연길 야경"),
-      author: "EditQ",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Yanji_at_night.jpg",
-      licenseLabel: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-    },
+    commonsCredit(l("Yanji city in December 2008", "2008年12月的延吉市区", "2008년 12월 연길 시내"), "Yanbian Rural Commercial Bank, January 2009.jpg", "China Q-H", "CC BY 3.0", ccBy3),
   ],
   [moheSlug]: [
-    ...harbinSnowTownCredits.slice(1),
+    commonsCredit(l("Shenzhou North Pole landmark", "神州北极石碑", "선저우 북극 표석"), "神州北极 - panoramio.jpg", "fsyzh", "CC BY 3.0", ccBy3),
+    commonsCredit(l("Harbin snow sculpture", "哈尔滨雪雕", "하얼빈 눈 조각"), "Harbin Ice & Snow Festival 2026 - Snow sculpture.jpg", "Garosio33", "CC0 1.0", cc0),
+    commonsCredit(l("Greater Khingan winter forest", "大兴安岭冬季林海", "다싱안링 겨울 숲"), "大兴安岭林海.jpg", "shengjingyoujian", "CC BY-SA 2.0", ccBySa2),
+    commonsCredit(l("Beiji Village snowy street", "北极村雪街", "북극촌 눈길"), "北极村的童话世界 QQ696847 - panoramio (1).jpg", "funcn", "CC BY 3.0", ccBy3),
     {
       subject: l("Beiji Village in winter", "冬季的北极村", "겨울의 북극촌"),
       author: "funcn",
@@ -1412,27 +1574,26 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
       licenseLabel: "CC BY-SA 4.0",
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     },
-    harbinStationCredit,
   ],
   [snowTownMoheSlug]: [
-    ...harbinSnowTownCredits.slice(1),
+    commonsCredit(l("Yabuli ski hills", "亚布力雪山", "야부리 스키장"), "Yabuli Ski Resort.jpg", "Cameraton Cleric", "CC BY-SA 3.0", ccBySa3),
+    commonsCredit(l("Snow Town night street", "雪乡夜间街景", "설향 밤거리"), "Xuexiang_10.jpg", "EditQ", "CC0 1.0", cc0),
+    commonsCredit(l("Harbin Ice and Snow World", "哈尔滨冰雪大世界", "하얼빈 빙설대세계"), "Harbin Ice & Snow Festival 2026 - View.jpg", "Garosio33", "CC0 1.0", cc0),
     {
-      subject: l("Saint Sophia Cathedral in winter", "冬季的圣索菲亚教堂", "겨울의 성 소피아 성당"),
-      author: "Yan Enming",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Saint_Sophia_Cathedral,_Harbin_4.jpg",
-      licenseLabel: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      subject: l("Skiers at Yabuli Sun Mountain", "亚布力阳光度假村滑雪者", "야부리 선마운틴 스키어"),
+      author: "Ski China",
+      sourceUrl: "https://www.flickr.com/photos/skichina/3802245431/",
+      licenseLabel: "CC BY 2.0",
+      licenseUrl: ccBy2,
     },
+    commonsCredit(l("Snow Town wooden buildings", "雪乡木屋", "설향 목조 건물"), "Xuexiang_18.jpg", "EditQ", "CC0 1.0", cc0),
+    commonsCredit(l("Mohe-area winter panorama", "漠河一带冬景", "모허 일대 겨울 전경"), "The Most North Of China (184511827).jpeg", "M Kwow", "CC BY 3.0", ccBy3),
+    commonsCredit(l("Beihong Village area daybreak", "北红村一带的黎明", "베이훙촌 일대 새벽"), "Daybreak (184517531).jpeg", "M Kwow", "CC BY 3.0", ccBy3),
     harbinStationCredit,
   ],
   [yanjiWandaSlug]: [
-    {
-      subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"),
-      author: "Charlie fong",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg",
-      licenseLabel: "Public domain",
-      licenseUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg#Licensing",
-    },
+    commonsCredit(l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"), "Baekdu Mountain Winter.jpg", "Farm", "CC BY-SA 3.0", ccBySa3),
+    commonsCredit(l("Winter Yanji River", "冬季延吉河", "겨울 연길 강"), "Yanji River in Winter.jpg", "Theodore Xu", "CC BY-SA 4.0", ccBySa4),
     {
       subject: l("Heaven Lake, Changbai Mountain", "长白山天池", "백두산 천지"),
       author: "Wang65",
@@ -1447,5 +1608,6 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
       licenseLabel: "CC BY-SA 4.0",
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     },
+    commonsCredit(l("Changbaishan Wanda ski area", "长白山万达雪场", "창바이산 완다 스키장"), "Fusong, Baishan, Jilin, China - panoramio (1).jpg", "Chen Zhi", "CC BY 3.0", ccBy3),
   ],
 });

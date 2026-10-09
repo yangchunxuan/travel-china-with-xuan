@@ -1804,16 +1804,61 @@ collection pages), matched to `docs/homeground-private-tour-card-derivatives.jso
 ### Northeast winter route photographs (2026-10-09)
 
 The five published Northeast winter routes use distinct real photographs for
-their catalog covers. Existing Harbin and Changbai photographs retain the
-source and license records above. Two additional photographs were downloaded
-from Wikimedia Commons, center-cropped to 16:10, resized to 1600 × 1000, and
-converted to WebP with `sharp` at quality 84. EXIF and location metadata were
-not retained. No visual content was generated, added, or redrawn.
+their catalog covers. The two original covers below remain. The other three
+covers and the newly filled galleries and itinerary days use openly licensed
+photographs from Wikimedia Commons and Flickr listed below. Website files were downscaled to at most 1600 pixels
+wide and converted to WebP with `sharp` at quality 84; the Mohe panorama was
+cropped to exclude a corner watermark. Card derivatives use 16:10 crops.
+No visual content was generated, added, or redrawn. Dates and hotel caveats
+appear in the localized image captions. Days without a trustworthy photo of
+the relevant activity show a text itinerary card instead of an unrelated scene.
 
 | Route cover | Source, creator, and license | Original SHA-256 | Published asset and SHA-256 | Evidence boundary |
 | --- | --- | --- | --- | --- |
 | Harbin–Yabuli–Snow Town 6D | [Morning in China Snow Town](https://commons.wikimedia.org/wiki/File:Morning_in_China_Snow_Town.jpg), Chen Wu, photographed 2010-02-18; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `f13b085b271c770dcbbdb0f417a69e83323674975339ac5ccd051728e580b1a6` | `public/images/tours/northeast-winter-2026-27/snow-town-morning-1600.webp`; `d7f65c68fbf8daf340b25b7db82a8b707117767b7cd5d0e4e3fdcb1576a35b9d` | Snow-covered wooden buildings in Snow Town on the source date; no present snow depth, access, lodging quality, or itinerary inclusion beyond the written route is implied. |
 | Harbin–Mohe–Arctic Village 7D | [北极村的童话世界 QQ696847 - panoramio (2)](https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C_QQ696847_-_panoramio_(2).jpg), funcn, original upload 2011-09-13; [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | `458f9998f94339df5a89a2ffca95389f081b775114914f4f7c6fb449a4a56183` | `public/images/tours/northeast-winter-2026-27/beiji-village-night-1600.webp`; `0c8b390ee2ab9390450d9554a3f0137e31a9e30980f12663db06c084a826f839` | A snowy building in Beiji Village at night on the source date; it is not a promised accommodation or current weather scene. |
+
+The following asset names are relative to `public/images/tours/northeast-winter-2026-27/`.
+The three replacement card sources are
+`public/images/tours/northeast-winter-2026-27/xuexiang-blue.webp`,
+`public/images/tours/northeast-winter-2026-27/yabuli-chairlift.webp`, and
+`public/images/tours/northeast-winter-2026-27/baekdu-winter.webp`.
+Each source page records the photographer and reuse terms. The digest is the
+SHA-256 of the published WebP. CC BY and CC BY-SA photographers are also named
+in the product page photo-credit disclosure; cover credits appear on catalog
+cards through `lib/photoCredits.ts`.
+
+| Published WebP | Original source and creator | License | WebP SHA-256 |
+| --- | --- | --- | --- |
+| `baekdu-winter.webp` | [Baekdu Mountain Winter](https://commons.wikimedia.org/wiki/File:Baekdu_Mountain_Winter.jpg), Farm, 2009-12-23 | CC BY-SA 3.0 | `436a659e6ce24122e534ccc1217853853ef6a7f5b343d65fab8eca646df39e4d` |
+| `beihong-daybreak.webp` | [Daybreak](https://commons.wikimedia.org/wiki/File:Daybreak_(184517531).jpeg), M Kwow, 2016-01-20 | CC BY 3.0 | `a8a28c0446993592a13b8821d0d06b2d04a53df66df7225a783d7ba8d37d1653` |
+| `beiji-frozen-river-marker.webp` | [神州北极](https://commons.wikimedia.org/wiki/File:%E7%A5%9E%E5%B7%9E%E5%8C%97%E6%9E%81_-_panoramio.jpg), fsyzh, 2005-03-13 | CC BY 3.0 | `e4277b4139f765bb80b77835dfba97dcfd42fd7e574c38a08da5732b630c09de` |
+| `beiji-red-street.webp` | [北极村的童话世界 (1)](https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C_QQ696847_-_panoramio_(1).jpg), funcn | CC BY 3.0 | `6033f6542b5d16370589e6d53ff7abab1741c03ed3ed098cd7c20c0d85b5b1b2` |
+| `daxinganling-snow-forest.webp` | [大兴安岭林海](https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E5%85%B4%E5%AE%89%E5%B2%AD%E6%9E%97%E6%B5%B7.jpg), shengjingyoujian | CC BY-SA 2.0 | `479b633dd4a98d786de7bc839a52f54a78b72231238954a48fc1c1aa1086da15` |
+| `harbin-ice-entrance.webp` | [Harbin Ice & Snow Festival 2026 - Entrance](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Entrance.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `2b40f266b32c9c2e20302d343f7b66d8674eac85efa65a1012df20f4bb8cbd76` |
+| `harbin-ice-view.webp` | [Harbin Ice & Snow Festival 2026 - View](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_View.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `3554baf5a43515b5cbd7812974fbbe8c4feceb84b5ac27d3d466517197100ca2` |
+| `harbin-snow-sculpture.webp` | [Harbin Ice & Snow Festival 2026 - Snow sculpture](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Snow_sculpture.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `786ed167d97b67af41a8c60e075a82dbd9129a1c41e414b5b20b0849f98090b4` |
+| `mohe-winter-panorama.webp` | [The Most North Of China](https://commons.wikimedia.org/wiki/File:The_Most_North_Of_China_(184511827).jpeg), M Kwow, 2016-01-18 | CC BY 3.0 | `7620b0ae442be3bfe8135251f5d116b7f21caec826a18d2f7555f0ddee219b3c` |
+| `wanda-ski-base.webp` | [Fusong, Baishan, Jilin, China (1)](https://commons.wikimedia.org/wiki/File:Fusong,_Baishan,_Jilin,_China_-_panoramio_(1).jpg), Chen Zhi, 2013-12-06 | CC BY 3.0 | `b2fb8dd088341379bab31076565c3829a70a93fb9b56f4d4573464d5d58f11ec` |
+| `xuexiang-blue.webp` | [Xuexiang 4](https://commons.wikimedia.org/wiki/File:Xuexiang_4.jpg), EditQ, 2023-12-24 | CC0 1.0 | `359842c92b5e494e92619dfc33c54521455d39b05b73fc330d31481fc8873014` |
+| `xuexiang-entry.webp` | [Xuexiang 19](https://commons.wikimedia.org/wiki/File:Xuexiang_19.jpg), EditQ, 2023-12-24 | CC0 1.0 | `35283b1c72f9bacbaed8d9265931e98b91cf4d20ee55d505388183192b1e3d11` |
+| `xuexiang-forest-path.webp` | [Xuexiang 1](https://commons.wikimedia.org/wiki/File:Xuexiang_1.jpg), EditQ, 2023-12-24 | CC0 1.0 | `8371ffa92152aedfabcc848e61d70421fe9f2e76474385b471946cd173f5f09d` |
+| `xuexiang-market.webp` | [Xuexiang 8](https://commons.wikimedia.org/wiki/File:Xuexiang_8.jpg), EditQ, 2023-12-24 | CC0 1.0 | `62082ba28370df01b817b600535d064d370f2a3c386ad2dfa9d28626b3e1a455` |
+| `xuexiang-snow-house.webp` | [Xuexiang 18](https://commons.wikimedia.org/wiki/File:Xuexiang_18.jpg), EditQ, 2023-12-24 | CC0 1.0 | `9daf3460e132e16b21d48f5d07b9b024244a3958b892d3a9fabba89f09b51462` |
+| `xuexiang-street.webp` | [Xuexiang 10](https://commons.wikimedia.org/wiki/File:Xuexiang_10.jpg), EditQ, 2023-12-24 | CC0 1.0 | `629be0ccd3f79acc345b391a03d6a26edc79e5dd8aefa5a842d57d3a5b66bb72` |
+| `yabuli-chairlift.webp` | [Yabuli Ski Resort](https://commons.wikimedia.org/wiki/File:Yabuli_Ski_Resort.jpg), Cameraton Cleric, 2013-01-05 | CC BY-SA 3.0 | `70c6bd72432fd4dc4c7414b1e227ebe5255e7d7afff0d618b7711011f96b8e66` |
+| `yabuli-mountain.webp` | [Sun Mountain Yabuli](https://commons.wikimedia.org/wiki/File:Sun_Mountain_Yabuli.jpg), Ski China, 2009-02-26 | CC BY 2.0 | `a6f8fe77533cb50c417f204fc19a86429081bb5acfd20a258917ba0d6b3fcd18` |
+| `yabuli-race.webp` | [Sun Mountain Yabuli — Media Ski Races](https://www.flickr.com/photos/skichina/3802245431/), Ski China, 2009-03-15 | CC BY 2.0 | `8677fea27ee1c0a70466e0a38c7485f7e997c25673659e3a09ee2da83e483c78` |
+| `yabuli-skiers.webp` | [亚布力风光 (17)](https://commons.wikimedia.org/wiki/File:%E4%BA%9A%E5%B8%83%E5%8A%9B%E9%A3%8E%E5%85%89_-_panoramio_-_%E6%B1%9F%E4%B8%8A%E6%B8%85%E9%A3%8E1961_(17).jpg), 江上清风1961, 2010-01-08 | CC BY 3.0 | `1e8a9daf96e3cdb3526390b46c083d722a9f8f2ba921ac0012c7916a8b682249` |
+| `yabuli-sunset.webp` | [Sun Mountain Yabuli](https://www.flickr.com/photos/skichina/3803147042/), Ski China, 2008-12-23 | CC BY 2.0 | `63172548ba0564d8e1e1c1fbfc8eb59e1b3e9f388b19b1290541de5cc9f36aa0` |
+| `yanji-city-winter.webp` | [Yanbian Rural Commercial Bank, January 2009](https://commons.wikimedia.org/wiki/File:Yanbian_Rural_Commercial_Bank,_January_2009.jpg), China Q-H, photographed 2008-12-04 | CC BY 3.0 | `f2dd3ececc71deeb4f342f6d05487a1f26400e14c99c9531ab78d61b71802056` |
+| `yanji-river-winter.webp` | [Yanji River in Winter](https://commons.wikimedia.org/wiki/File:Yanji_River_in_Winter.jpg), Theodore Xu, 2017-12-02 | CC BY-SA 4.0 | `eea7d252ac14a57195ed967c8e86b4795b149c1d00bdc2bf556dc8a20eb03392` |
+
+The Mohe panorama is a regional view rather than Beihong Village or a tour hotel.
+The Beihong photo shows stars at dawn, not an aurora; viewing conditions cannot be promised.
+The Wanda photo shows a ski area photographed in 2013; it does not establish
+current resort operation. Neither a Xueling nor a reindeer-park photo with
+verified location and reuse rights was available for this repair.
 
 ### Canton Tower sight photo (from 2026-10-05)
 
