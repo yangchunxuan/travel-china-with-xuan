@@ -73,3 +73,11 @@ The article instructs travellers to recheck at booking, 24–48 hours before the
 ## 2026-09-09 independent-audit follow-up
 
 2026-09-09 GSC tail question: whether Tiananmen Rostrum and Square reservations differ. Actually opened the live official Square platform in Chrome: its notice explicitly says this booking is for the Square and directs Rostrum visitors to the Rostrum account. https://yuyue2026.tamgw.beijing.gov.cn/web/ . Beijing government 2025-09-06 Rostrum notice independently read: https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html . Direct Rostrum website returned 403 GeoBL in Chrome and web; not claimed fully read, available stock or current hours not asserted. Old 2022 cross-admission shortcut is not generalized to current visits. Existing Palace Museum policy review dates retained.
+
+## 2026-10-08 booking-channel correction
+
+The current [official English Visit page](https://intl.dpm.org.cn/visit.html) links Book Tickets directly to [the museum booking portal](https://bookingticket.dpm.org.cn/). Both current pages were read on 8 October. The portal displays an English sign-in/registration flow with email verification and the seven-day, 20:00 China-time release. Account creation, verification receipt, payment and a completed reservation were not transaction-tested.
+
+This current observation supersedes the archived August email-booking direction above: `bookingticket@dpm.org.cn` is now listed for ticketing questions, not as the default booking-submission route. The three locale bodies, recovery wording and visible source list now use the current official online route. The museum's statement about no authorised third-party individual-ticket or exhibition agents is preserved; no company authorisation or special inventory is inferred.
+
+Added a contextual link to the new pre-trip reservation checklist. Full-gallery, transport and access-policy review dates remain unchanged because this round rechecked the booking channel rather than the complete visit. `dateModified` records the content change; newly reviewed source entries carry 2026-10-08 individually.

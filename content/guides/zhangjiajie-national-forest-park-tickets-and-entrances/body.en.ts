@@ -9,6 +9,17 @@ const body: StructuredPageBody = {
       text: "As checked on 20 August 2026, the official page listed RMB 165 admission or RMB 236 with eco-bus, each valid for four consecutive days; cableways and elevators were not included. Recheck the live order before paying because products and prices can change. Then match the exact product to the first-entry gate and time: East Gate usually suits Wulingyuan stays, South Gate a Golden Whip Stream or Huangshi Village start, and West Gate a deliberate Yangjiajie start.",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "Choose the park visit before locking in the pickup",
+      "body": "Your ticket, entrance and mountain transport need to fit one route. Planning them together gives the day a sensible starting point and saves paying for a combination you can’t use. Expect queues for cableways, the elevator and security even with tickets in hand.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
+    {
       id: "canonical-boundary",
       type: "callout",
       title: "What this guide covers",

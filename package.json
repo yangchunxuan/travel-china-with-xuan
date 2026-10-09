@@ -35,14 +35,15 @@
     "generate:image-variants": "node tools/generate-image-variants.mjs",
     "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
     "build": "next build",
-    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && node --experimental-strip-types --no-warnings tools/generate-llms-txt.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:ja-pilot-export && npm run check:guide-sales-card-export",
-    "start": "next start"
+    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && node --experimental-strip-types --no-warnings tools/generate-llms-txt.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:ja-pilot-export && npm run check:guide-sales-card-export && npm run check:private-car-export && node tools/generate-inquiry-contract.mjs",
+    "start": "next start",
+    "check:private-car-export": "node tools/check-private-car-export.mjs"
   },
   "dependencies": {
     "@daypicker/react": "10.0.1",
     "@supabase/supabase-js": "^2.110.7",
     "lucide-react": "^0.468.0",
-    "next": "^15.5.24",
+    "next": "^15.5.27",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-draggable": "4.7.1",
@@ -54,13 +55,13 @@
     "ajv": "8.20.0",
     "fontkit": "^2.0.4",
     "parse5": "7.3.0",
-    "sharp": "0.35.4",
+    "sharp": "0.35.5",
     "typescript": "5.8.2"
   },
   "overrides": {
     "nanoid": "3.3.18",
     "postcss": "8.5.23",
-    "sharp": "0.35.4",
+    "sharp": "0.35.5",
     "source-map-js": "1.2.2"
   }
 }

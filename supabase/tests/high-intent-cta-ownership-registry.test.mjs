@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 84 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 86 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -135,6 +135,7 @@ test("commercial links keep the approved 8 hub, 84 curated guide and 48 product 
       "beijing-zhangjiajie-shanghai-transport",
       "best-2-week-china-tour",
       "best-zhangjiajie-night-show",
+      "book-china-attraction-tickets-without-chinese-phone-number",
       "border-town-fenghuang-chadong-shen-congwen",
       "chaozhou-ancient-city-gates-bridge-lanes-route",
       "chengdu-chongqing-zhangjiajie-itinerary",
@@ -146,6 +147,7 @@ test("commercial links keep the approved 8 hub, 84 curated guide and 48 product 
       "china-2-week-tour-cost",
       "china-240-hour-visa-free-transit-route-check",
       "china-7-day-itinerary",
+      "china-attractions-advance-booking-checklist",
       "china-climate-regions-for-trip-timing",
       "china-online-arrival-card",
       "china-power-plugs-voltage-and-adapters",

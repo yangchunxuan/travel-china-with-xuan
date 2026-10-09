@@ -77,6 +77,30 @@ export const tourCardCredits: Readonly<Partial<Record<string, PhotoCredit>>> = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Xijiang_Miao_Village.jpg",
   },
+  "harbin-yabuli-snow-town-6-day-private-tour": {
+    author: "Chen Wu",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Morning_in_China_Snow_Town.jpg",
+  },
+  "harbin-mohe-arctic-village-7-day-private-tour": {
+    author: "funcn",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C_QQ696847_-_panoramio_(2).jpg",
+  },
+  "harbin-snow-town-mohe-9-day-private-tour": {
+    author: "Cameraton Cleric",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Yabuli_Ski_Resort.jpg",
+  },
+  "yanji-changbaishan-wanda-6-day-private-tour": {
+    author: "Farm",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Baekdu_Mountain_Winter.jpg",
+  },
   "hulunbuir-7-day-private-tour": {
     author: "Sergio Tittarini",
     license: "CC BY 2.0",

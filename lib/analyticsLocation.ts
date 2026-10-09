@@ -208,8 +208,8 @@ export function guideCtaTarget(href: string): GuideCtaTarget {
     const tourPath = url.pathname.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u);
     if (tourPath && isPrivateTourInquirySlug(tourPath[1])) return "private_tour";
     if (/^\/(?:zh\/|ko\/)?tours\/$/u.test(url.pathname)) return "private_tour";
-    // The two bookable services a guide can open: attraction tickets and a private guide.
-    if (/^\/(?:zh\/|ko\/)?services\/(?:private-english-speaking-guides|china-attraction-reservations)\/$/u.test(url.pathname)) return "service";
+    // Explicit public service paths; never classify arbitrary URL input as a service.
+    if (/^\/(?:zh\/|ko\/)?services\/(?:private-english-speaking-guides|china-attraction-reservations|private-car-and-driver)\/$/u.test(url.pathname)) return "service";
     if (
       publicHomePaths.has(url.pathname) &&
       ((url.hash !== "" && publicHomeFragments.has(url.hash)) ||

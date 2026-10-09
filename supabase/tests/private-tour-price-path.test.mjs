@@ -61,6 +61,7 @@ async function loadComponent(path, overrides = {}, window) {
   };
   vm.runInNewContext(code, {
     module, exports: module.exports, window, URL, URLSearchParams,
+    process: { env: {} },
     require(id) {
       if (id.endsWith(".module.css")) return { __esModule: true, default: new Proxy({}, { get: (_, key) => key }) };
       if (!(id in modules)) throw new Error(`Unexpected component dependency: ${id}`);
@@ -160,7 +161,7 @@ test("every published service/group survives detail links, language changes and 
   ]);
 });
 
-test("six-traveller prices are exactly CNY 200 per person below each published four-traveller tier", () => {
+test("legacy fixed-gap six-traveller tiers keep their approved discount", () => {
   // Owner-approved exception (2026-09-24): the forest fixed-route 4D3N card sets 6 travellers
   // at CNY 2,980, which is CNY 300 below the CNY 3,280 four-traveller rate.
   const sixPersonGapExceptions = { "zhangjiajie-forest-4-day-private-tour:fixed-route-english-guided": 300 };
@@ -168,7 +169,14 @@ test("six-traveller prices are exactly CNY 200 per person below each published f
   // Long-haul routes publish USD tiers (for example USD 3,390 / 3,190) set as
   // market targets; their CNY basis is derived from USD rather than this rule.
   const longHaulSlugs = new Set(privateTourLongHaulSlugs);
-  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
+  const winterSlugs = new Set([
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+    "yanji-changbaishan-wanda-6-day-private-tour",
+  ]);
+  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug) && !winterSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
     const four = tourPackage.prices.find((row) => row.travelers === 4);
     if (!four) continue;
     const six = tourPackage.prices.find((row) => row.travelers === 6);
@@ -354,7 +362,7 @@ test("server-rendered homepage labels and detail price controls share the starti
   }
 });
 
-test("Jiangnan comparison preserves the selected party and the other-size quote stays unpriced", async () => {
+test("Jiangnan comparison and both inquiry actions preserve the selected party and package", async () => {
   const selection = await loadComponent("components/PrivateTourSelection.tsx");
   const comparison = await loadComponent("components/JiangnanTourComparison.tsx", { "./PrivateTourSelection": selection });
   const priceScope = await loadComponent("components/TourPriceScope.tsx");
@@ -379,8 +387,99 @@ test("Jiangnan comparison preserves the selected party and the other-size quote 
     assert.equal(inquiry.getPrivateTourDetailSelectionFromSearchParams(target, targetUrl.searchParams)?.travelers, travelers);
     const quoteLinks = links.map(href => new URL(href, "https://homegroundchina.com")).filter(url => url.searchParams.get("tour") === origin);
     assert.equal(quoteLinks.length, 2);
-    assert.equal(quoteLinks.filter(url => inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection?.travelers === travelers).length, 1);
-    assert.equal(quoteLinks.filter(url => inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection === undefined).length, 1);
+    for (const url of quoteLinks) {
+      assert.deepEqual(inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale)?.selection, chosen);
+    }
+  }
+});
+
+test("published price consoles retain selected quotes and separate Zhangjiajie custom-party requests, including Japanese contact drafts", async () => {
+  const selection = await loadComponent("components/PrivateTourSelection.tsx");
+  const priceScope = await loadComponent("components/TourPriceScope.tsx");
+  const japaneseContact = await loadComponent("components/JapaneseJiangnanInteraction.tsx", {
+    "./PrivateTourSelection": selection,
+    "../lib/japaneseContactFlow": {
+      japaneseDirectWhatsAppEnabled: () => true,
+      openJapaneseContact: () => false,
+    },
+  });
+  const { japaneseTourContactHrefs } = await loadComponent("lib/japaneseTourContact.ts", {
+    "./homegroundBusiness": { homegroundBusiness: { serviceEmail: "test@example.invalid" } },
+  });
+  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", {
+    "./PrivateTourSelection": selection,
+    "./TourPriceScope": priceScope,
+    "./JapaneseJiangnanInteraction": japaneseContact,
+  });
+  const customPartySlugs = new Set([
+    "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
+  ]);
+  for (const sourceProduct of privateTourProducts) for (const option of sourceProduct.packages) for (const row of option.prices) {
+    const chosen = { packageId: option.id, travelers: row.travelers };
+    for (const locale of locales) {
+      const product = localizePrivateTourProduct(sourceProduct, locale);
+      const homePath = locale === "en" ? "/" : "/" + locale + "/";
+      const inquiryHref = inquiry.buildPrivateTourInquiryHref(homePath, product.slug, "private_tour_product");
+      const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
+        slug: product.slug, initialSelection: chosen,
+      }, React.createElement(interactive.ShanghaiJiangnanPriceConsole, { product, inquiryHref })));
+      const renderedNodes = nodes(parse(html));
+      const quoteUrls = renderedNodes.filter(node => node.tagName === "a")
+        .map(node => new URL(attr(node, "href"), "https://homegroundchina.com"))
+        .filter(url => url.searchParams.get("tour") === product.slug);
+      assert.equal(quoteUrls.length, 2, locale + ":" + product.slug + " keeps both inquiry actions");
+      const otherGroupNode = renderedNodes.find(node => attr(node, "class")?.split(/\s+/u).includes("otherGroupCopy"));
+      assert.ok(otherGroupNode, "the other-group action has its own section");
+      const otherGroupUrls = nodes(otherGroupNode).filter(node => node.tagName === "a")
+        .map(node => new URL(attr(node, "href"), "https://homegroundchina.com"))
+        .filter(url => url.searchParams.get("tour") === product.slug);
+      assert.equal(otherGroupUrls.length, 1);
+      assert.equal(otherGroupUrls[0].searchParams.get("quote"), customPartySlugs.has(product.slug) ? "custom-group" : null);
+      const customQuoteUrls = quoteUrls.filter(url => url.searchParams.get("quote") === "custom-group");
+      assert.equal(customQuoteUrls.length, customPartySlugs.has(product.slug) ? 1 : 0,
+        locale + ":" + product.slug + " only the Zhangjiajie other-group action is a custom request");
+      for (const url of quoteUrls) {
+        assert.equal(url.hash, "#planner-contact");
+        assert.equal(url.searchParams.get("utm_medium"), "website");
+        assert.equal(url.searchParams.get("utm_campaign"), product.slug);
+        const context = inquiry.getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
+        if (url.searchParams.get("quote") === "custom-group") {
+          assert.ok(customPartySlugs.has(product.slug));
+          assert.equal(url.pathname, `${homePath}tours/${product.slug}/`);
+          assert.equal(url.searchParams.get("tour"), product.slug);
+          assert.equal(url.searchParams.get("utm_source"), "private_tour");
+          assert.equal(url.searchParams.has("package"), false);
+          assert.equal(url.searchParams.has("travelers"), false);
+          assert.deepEqual(context?.customGroup, {});
+          assert.equal(context?.selection, undefined);
+        } else {
+          assert.equal(url.pathname, homePath);
+          assert.equal(url.searchParams.get("utm_source"), "private_tour_product");
+          assert.equal(url.searchParams.has("quote"), false);
+          assert.equal(context?.customGroup, undefined);
+          assert.deepEqual(context?.selection, chosen);
+        }
+      }
+    }
+    if (![beijingSlug, "shanghai-suzhou-5-day-private-tour", "shanghai-suzhou-hangzhou-6-day-private-tour"].includes(sourceProduct.slug)) continue;
+    const product = { ...localizePrivateTourProduct(sourceProduct, "en"), path: "/ja/tours/" + sourceProduct.slug + "/" };
+    const hrefs = japaneseTourContactHrefs(product);
+    const japaneseCopy = {
+      choosePackage: "プラン", chooseGroup: "人数", publishedPrice: "料金",
+      perPerson: "1名あたり", groupUnit: "名", privateTour: "プライベートツアー",
+      checkDates: "日程を確認", otherGroups: "別の人数", otherGroupsBody: "条件を確認します",
+      requestQuote: "日本語で相談する", emailLabel: "メール",
+    };
+    const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider, {
+      slug: product.slug, initialSelection: chosen,
+    }, React.createElement(interactive.ShanghaiJiangnanPriceConsole, {
+      product, inquiryHref: product.path + "#contact", japaneseCopy, japaneseContactHrefs: hrefs,
+    })));
+    const contactHrefs = nodes(parse(html)).filter(node => node.tagName === "a").map(node => attr(node, "href"));
+    const key = option.id + ":" + row.travelers;
+    assert.deepEqual(contactHrefs, [hrefs.whatsapp[key], hrefs.email[key], hrefs.whatsapp[key]],
+      "Japanese primary, email and secondary drafts retain " + product.slug + ":" + key);
   }
 });
 

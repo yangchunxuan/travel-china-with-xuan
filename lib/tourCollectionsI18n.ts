@@ -61,14 +61,14 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
       },
       seasonal: {
         metadata: {
-          title: "This Season: Winter in Northeast China, Private Tours",
+          title: "Northeast China Winter Private Tours 2026–27 | Homeground China",
           description:
-            "Winter in the Northeast: Harbin's ice and snow, Changbai Mountain and Yanji. Dates and peak-period conditions are on each tour page.",
+            "Compare five priced 2026–27 winter private tours through Harbin, Yabuli, Snow Town, Mohe, Changbai Mountain and Yanji, plus one route quoted on request.",
         },
         name: "This Season",
-        h1Lines: ["This winter:", "the Northeast."],
+        h1Lines: ["Northeast China winter tours", "for 2026–27."],
         lede:
-          "Two winter routes in the Northeast: Harbin for ice and snow, or Changbai Mountain and Yanji. Opening dates for the ice and snow sights, and peak-period conditions, are on each tour page.",
+          "Choose Harbin's ice sights, Yabuli or Changbai Mountain skiing, Snow Town, or the overnight train to Mohe. Compare hotel and sleeper-train nights, travel pace and two-traveller low-season prices before opening each route's full terms.",
         groups: { "winter-northeast": { title: "Winter in the Northeast" } },
       },
     },
@@ -110,12 +110,12 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
       },
       seasonal: {
         metadata: {
-          title: "当季推荐：冬季东北私家团，哈尔滨冰雪与长白山",
-          description: "冬天去东北：哈尔滨的冰雪，再到长白山和延吉。具体日期和高峰期条件写在各自的路线页上。",
+          title: "2026–27 东北冬季私家团｜哈尔滨·雪乡·漠河·长白山",
+          description: "比较五条明码报价的 2026–27 东北冬季私家路线：哈尔滨、亚布力、雪乡、漠河、长白山与延吉；另有一条询价路线。",
         },
         name: "当季推荐",
-        h1Lines: ["今年冬天，", "去东北。"],
-        lede: "冬天去东北，有两条线：哈尔滨看冰雪，或者去长白山玩雪、逛延吉。冰雪项目的开放日期和高峰期条件，以各自路线页写明的为准。",
+        h1Lines: ["2026–27 冬季，", "去东北。"],
+        lede: "从哈尔滨冰雪、亚布力或长白山滑雪、雪乡住宿，到乘卧铺去漠河，先比较酒店与夜车晚数、转场强度及两人同行淡季每人价，再看各路线的完整条款。",
         groups: { "winter-northeast": { title: "冬季东北" } },
       },
     },
@@ -157,12 +157,12 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
       },
       seasonal: {
         metadata: {
-          title: "이번 시즌 추천: 겨울 동북 프라이빗 투어, 하얼빈과 백두산(창바이산)",
-          description: "겨울 동북으로: 하얼빈의 얼음과 눈, 그리고 백두산과 연길. 날짜와 성수기 조건은 각 투어 페이지에 있습니다.",
+          title: "2026~27 중국 동북 겨울 프라이빗 투어 | 하얼빈·모허·백두산",
+          description: "가격이 공개된 2026~27 동북 겨울 프라이빗 코스 5개를 비교하세요. 하얼빈·야부리·설향·모허·백두산·연길, 별도 견적 코스 1개도 있습니다.",
         },
         name: "이번 시즌 추천",
-        h1Lines: ["올겨울엔,", "동북으로."],
-        lede: "겨울 동북 일정은 두 가지입니다. 하얼빈에서 빙설을 보거나, 백두산(창바이산)에서 눈을 즐기고 연길을 둘러봅니다. 빙설 명소 운영 날짜와 성수기 조건은 각 투어 페이지를 따릅니다.",
+        h1Lines: ["2026~27 겨울,", "중국 동북으로."],
+        lede: "하얼빈 빙설 명소, 야부리 또는 백두산 스키, 설향 숙박, 모허행 야간열차 중 선택하세요. 호텔·침대열차 숙박, 이동 부담과 성인 2명 비수기 1인 요금을 비교한 뒤 각 코스의 상세 조건을 확인할 수 있습니다.",
         groups: { "winter-northeast": { title: "겨울 동북" } },
       },
     },

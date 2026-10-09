@@ -1341,6 +1341,12 @@
   }
 }
 
+@media (max-width: 359.98px) {
+  .toursPage[data-homeground-locale="en"] .quickIdentity > p:first-child span {
+    white-space: normal;
+  }
+}
+
 /* ---------- Japanese ---------- */
 
 .toursPage[data-homeground-locale="ja"] :is(.hero h1, .quickIntro h2, .quickIdentity h3, .finalInner h2) {

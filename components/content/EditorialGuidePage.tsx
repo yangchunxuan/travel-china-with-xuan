@@ -29,6 +29,8 @@ import { getGuideTourCard, guideContentEndIndex, guideFirstSectionEndIndex, guid
 import { GuideTourCard } from "./GuideTourCard";
 import { GuideReservationCta } from "./GuideReservationCta";
 import { GuideServiceCta } from "./GuideServiceCta";
+import { GuideCarServiceCta } from "./GuideCarServiceCta";
+import { getPrivateCarServiceCta } from "../../lib/privateCarServiceCta";
 import { getGuideServiceCta } from "../../lib/privateGuideServiceCta";
 import { getGuideAttractionReservationTarget } from "../../lib/attractionReservations";
 import { HomegroundFooter } from "../HomegroundFooter";
@@ -383,10 +385,16 @@ export function EditorialGuidePage({
                   }]
                 : []),
               // A guide for the day closes the guide's own content, before its related links and sources.
-              ...(getGuideServiceCta(guide.id, locale)
+              ...(getGuideServiceCta(guide.id, locale) && !getPrivateCarServiceCta(guide.id, locale)
                 ? [{
                     afterIndex: guideContentEndIndex(body),
                     node: <GuideServiceCta guideId={guide.id} locale={locale} position="inline" />,
+                  }]
+                : []),
+              ...(getPrivateCarServiceCta(guide.id, locale)
+                ? [{
+                    afterIndex: guideContentEndIndex(body),
+                    node: <GuideCarServiceCta guideId={guide.id} locale={locale} />,
                   }]
                 : []),
             ]}

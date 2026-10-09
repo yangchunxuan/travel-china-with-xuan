@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { getGuideEntry } from "../lib/guideRegistry";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { zhangjiajieTourComparisonHref } from "../lib/zhangjiajieTourComparison";
 import {
   EDITORIAL_ORGANIZATION_ID,
   EDITORIAL_PERSON_ID,
@@ -194,7 +195,7 @@ export function TantanZhangjiajieStoryPage({
                 <dl className={styles.storyMeta}>
                   <div>
                     <dt>{copy.updatedLabel}</dt>
-                    <dd><time dateTime={guide.dateModified}>{copy.updatedDate}</time></dd>
+                    <dd><time dateTime={guide.datePublished}>{copy.updatedDate}</time></dd>
                   </div>
                   <div>
                     <dt aria-hidden="true">—</dt>
@@ -255,6 +256,34 @@ export function TantanZhangjiajieStoryPage({
                       {section.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
+                      {section.routeChoices ? (
+                        <div className={styles.routeChoices}>
+                          <h3>{section.routeChoices.title}</h3>
+                          {section.routeChoices.options.map((option) => (
+                            <p key={option.tourSlug}>
+                              <GuideCtaLink
+                                href={`${locale === "en" ? "" : `/${locale}`}/tours/${option.tourSlug}/`}
+                                guideId={guideId}
+                                locale={locale}
+                                position="inline"
+                              >
+                                {option.title}
+                              </GuideCtaLink>
+                              {" — "}{option.description}
+                            </p>
+                          ))}
+                          <p>
+                            <GuideCtaLink
+                              href={zhangjiajieTourComparisonHref(locale)}
+                              guideId={guideId}
+                              locale={locale}
+                              position="inline"
+                            >
+                              {section.routeChoices.comparisonLabel}
+                            </GuideCtaLink>
+                          </p>
+                        </div>
+                      ) : null}
                       {section.bullets ? (
                         <ul>
                           {section.bullets.map((bullet) => (

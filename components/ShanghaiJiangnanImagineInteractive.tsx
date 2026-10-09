@@ -22,7 +22,7 @@ import { TourPriceScope } from "./TourPriceScope";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
-import { isJiangnanTour } from "../lib/tourContactDraft";
+import { buildZhangjiajieCustomGroupInquiryHref, isZhangjiajieCustomGroupTour } from "../lib/privateTourInquiryContext";
 import { privateTourCurrencyNote } from "../lib/privateTourCurrencyNote";
 import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
@@ -293,7 +293,7 @@ export function ShanghaiJiangnanHeroDeck({
               style={{ "--deck-depth": depth } as DeckStyle}
             >
               <Image
-                alt={depth === 0 ? image.alt : ""}
+                alt={image.alt}
                 fetchPriority={currentIndex === 0 && depth === 0 ? "high" : undefined}
                 fill
                 priority={currentIndex === 0 && depth === 0}
@@ -384,6 +384,9 @@ function PublishedPrivateTourPriceConsole({
   const packageId = selection.packageId;
   const travellers = selection.travelers;
   const selectedInquiryHref = useSelectedPrivateTourInquiryHref(inquiryHref) ?? inquiryHref;
+  const otherGroupInquiryHref = isZhangjiajieCustomGroupTour(product.slug)
+    ? buildZhangjiajieCustomGroupInquiryHref(product.locale === "en" ? "/" : `/${product.locale}/`, product.slug)
+    : selectedInquiryHref;
   const copy = japaneseCopy
     ? {
         ...interactionCopy.en,
@@ -506,12 +509,12 @@ function PublishedPrivateTourPriceConsole({
         <div className={styles.otherGroupCopy}>
           <strong>{copy.otherGroups}</strong>
           <span>{copy.otherGroupsBody}</span>
-          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink ignoreSelection hrefs={japaneseContactHrefs}>
+          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink hrefs={japaneseContactHrefs}>
             {copy.requestQuote}
             <ArrowRight aria-hidden="true" size={15} />
           </JapaneseTourContactLink> : <GuideCtaLink
             guideId={product.id}
-            href={isJiangnanTour(product.slug) ? inquiryHref : selectedInquiryHref}
+            href={otherGroupInquiryHref}
             locale={product.locale}
             position="inline"
           >
@@ -527,6 +530,7 @@ function PublishedPrivateTourPriceConsole({
 
 function ShanghaiJiangnanDayMedia({
   dayLabel,
+  description,
   scenesLabel,
   variants,
   title,
@@ -535,6 +539,7 @@ function ShanghaiJiangnanDayMedia({
   onInteract,
 }: {
   dayLabel: string;
+  description: string;
   scenesLabel: string;
   variants: LocalizedPrivateTourProduct["routeMedia"][number]["variants"];
   title: string;
@@ -547,6 +552,19 @@ function ShanghaiJiangnanDayMedia({
   const available = variants.filter((variant) => !failedPhotos.has(variant.image.src));
   const currentIndex = available.length ? activeVariant % available.length : 0;
   const selected = available[currentIndex];
+
+  // Some itineraries have no verified photograph for this day. Show the
+  // authored itinerary copy instead of an empty photo frame or another place.
+  if (!mobile && !selected) {
+    return (
+      <aside aria-hidden="true" className={styles.routeTextCard} data-route-text-card>
+        <span>{dayLabel}</span>
+        <h4>{title}</h4>
+        <p>{description}</p>
+        {variants.length > 0 ? <small>{unavailable}</small> : null}
+      </aside>
+    );
+  }
 
   return (
     <figure className={mobile ? styles.routeMobileMedia : styles.routeMedia} data-route-photo={mobile ? "mobile" : "desktop"} onFocusCapture={onInteract} onPointerDownCapture={onInteract}>
@@ -679,6 +697,7 @@ export function ShanghaiJiangnanRouteExplorer({
                   <ShanghaiJiangnanDayMedia
                     key={day.day}
                     dayLabel={copy.dayLabel(day.day)}
+                    description={day.description}
                     scenesLabel={copy.routeScenes}
                     variants={dayMedia.variants}
                     title={day.title}
@@ -694,6 +713,7 @@ export function ShanghaiJiangnanRouteExplorer({
       {activeDay ? <ShanghaiJiangnanDayMedia
         key={`desktop-${activeDay.day}`}
         dayLabel={copy.dayLabel(activeDay.day)}
+        description={activeDay.description}
         scenesLabel={copy.routeScenes}
         variants={routeMedia[activeIndex]?.variants ?? []}
         title={activeDay.title}

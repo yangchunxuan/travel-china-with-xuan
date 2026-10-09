@@ -8,7 +8,7 @@ import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhas
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
-import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
+import { privateTourNortheastWinterProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourSceneMediaBySlug } from "./privateTourSceneMedia.ts";
@@ -2842,9 +2842,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     "빌라 또는 4성급 호텔 한 곳에서 3박 · 국가삼림공원 종일 · 천문산, 악천후 시 보봉호로 무료 변경",
   ),
   lede: l(
-    "Four unhurried days among Zhangjiajie’s sandstone peaks, emerald valleys and cliff-top views. See 72 Wonder Tower lit up on your arrival night, spend a full day in the Forest Park, then ride up Tianmen Mountain—or cruise Baofeng Lake if the weather turns. Your own vehicle and driver every day, an English-speaking guide on both sightseeing days, and no shopping stops.",
-    "四天从容游览张家界的砂岩峰林、碧绿峡谷和悬崖绝景。抵达当晚顺路看七十二奇楼夜景，第二天在森林公园玩一整天，第三天乘索道上天门山；天气不好就改游宝峰湖。每天专车专司机，两个游览日有英语导游，全程不进购物店。",
-    "장가계의 사암 봉우리와 에메랄드빛 계곡, 절벽 전망을 여유롭게 둘러보는 4일입니다. 도착한 밤에는 불 밝힌 72기루를 보고, 둘째 날은 국가삼림공원에서 종일, 셋째 날은 케이블카로 천문산에 오릅니다. 날씨가 나쁘면 보봉호 유람으로 바꿉니다. 매일 전용 차량과 기사, 두 관광일에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
+    "Stay three nights in one Wulingyuan base, with two full sightseeing days. Day 2 is a full Forest Park day, roughly 10–11 hours door to door, including a Golden Whip Stream walk; the Bailong Elevator, park cableways and mini-train are optional extras. See 72 Wonder Tower on arrival night, then Tianmen Mountain on Day 3—or Baofeng Lake if the weather turns. Private transport throughout, an English-speaking guide on Day 2 and Day 3 daytime, and no shopping stops.",
+    "武陵源同一住宿连住 3 晚，安排 2 个完整游览日。D2 森林公园门到门约 10–11 小时，含金鞭溪步行；百龙天梯、园内索道和小火车为自选自费。抵达当晚看七十二奇楼，D3 上天门山，天气不好改游宝峰湖。每天专车专司机，D2 全天与 D3 白天有英语导游，全程不进购物店。",
+    "무릉원 한 숙소에서 3박하며 온전한 관광일은 2일입니다. D2 국가삼림공원은 숙소 출발부터 귀환까지 약 10~11시간이며 금편계 걷기가 포함됩니다. 백룡 엘리베이터, 공원 케이블카와 미니 열차는 선택·별도 결제입니다. 도착한 밤에는 72기루, D3에는 천문산을 보고 악천후 시 보봉호로 변경합니다. 매일 전용 차량과 기사, D2 종일과 D3 주간에는 한국어 가이드가 함께하며 쇼핑 일정은 없습니다.",
   ),
   summary: l(
     "Three nights in one designated villa or a 4-star hotel in Wulingyuan with breakfast, private station or airport transfers, private transport on the route, an English-speaking guide on Day 2 and during the daytime on Day 3, and the listed adult admissions, including Tianmen Mountain with its cable car, or Baofeng Lake with its boat in bad weather. The 72 Wonder Tower evening is self-guided with private drop-off, pickup and remote assistance.",
@@ -3125,7 +3125,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
     },
   ],
   datePublished: "2026-08-31",
-  dateModified: "2026-09-24",
+  dateModified: "2026-10-08",
   lastReviewed: "2026-08-31",
   faq: [
     {
@@ -3628,7 +3628,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     ),
   ],
   datePublished: "2026-09-19",
-  dateModified: "2026-09-26",
+  dateModified: "2026-10-08",
   lastReviewed: "2026-09-20",
 };
 
@@ -3636,12 +3636,13 @@ function withAdditionalMedia(product: PrivateTourProduct): PrivateTourProduct {
   const additions = privateTourAdditionalMediaBySlug[product.slug];
   const scenes = privateTourSceneMediaBySlug[product.slug];
   if (!additions?.length && !scenes?.length) return withPrivateTourPhotoQuality(product);
+  const mediaModified = scenes?.length ? "2026-10-04" : "2026-09-28";
   return withPrivateTourPhotoQuality({
     ...product,
     routeMedia: mergePrivateTourRouteMedia([
       ...(product.routeMedia ?? []), ...(additions ?? []), ...(scenes ?? []),
     ]),
-    dateModified: scenes?.length ? "2026-10-04" : "2026-09-28",
+    dateModified: product.dateModified > mediaModified ? product.dateModified : mediaModified,
   });
 }
 
@@ -3661,6 +3662,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
     ...privateTourLongHaulProducts,
+    ...privateTourNortheastWinterProducts,
   ].map(withAdditionalMedia),
 );
 
@@ -3669,14 +3671,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
  * their direct /tours/, /zh/tours/ and /ko/tours/ URLs with robots noindex;
  * nothing that lists or links published products reads this array.
  */
-export const privateTourPreviewProducts: readonly PrivateTourProduct[] = Object.freeze(
-  privateTourNortheastWinterPreviewProducts.map((product: PrivateTourProduct) => {
-    if (product.visibility !== "preview") {
-      throw new Error(`Preview product must set visibility "preview": ${product.slug}`);
-    }
-    return withAdditionalMedia(product);
-  }),
-);
+export const privateTourPreviewProducts: readonly PrivateTourProduct[] = Object.freeze([]);
 
 const englishMetadataDescriptions: Readonly<Record<string, string>> =
   Object.freeze({

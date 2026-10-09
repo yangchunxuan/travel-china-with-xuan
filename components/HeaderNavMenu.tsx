@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BadgeCheck, Briefcase, CalendarDays, ChevronDown, Compass, Flag, Landmark, LayoutGrid, Map as MapIcon, MapPin, Route, Ticket, UserRound, Users, Waypoints } from "lucide-react";
+import { BadgeCheck, Briefcase, CalendarDays, Car, ChevronDown, Compass, Flag, Landmark, LayoutGrid, Map as MapIcon, MapPin, Route, Ticket, UserRound, Users, Waypoints } from "lucide-react";
 import {
   useEffect,
   useId,
@@ -30,6 +30,7 @@ const menuIcons = {
   seasonal: CalendarDays,
   "attraction-tickets": Ticket,
   "english-guides": UserRound,
+  "private-car": Car,
   "trip-support": Route,
   company: Flag,
   planning: Users,

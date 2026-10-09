@@ -190,6 +190,41 @@
   background: var(--hg-color-rust);
 }
 
+/* The attraction-reservation guides' one service offer takes the reservation
+   card's look (GuideReservationCta) so it reads as an offer, not another tip. */
+.callout[data-callout="reservation-service"] {
+  background: var(--hg-color-rust-soft, #f2e7de);
+}
+
+.callout[data-callout="reservation-service"] strong {
+  font-family: var(--hg-editorial);
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-block-end: 0.625rem;
+  text-wrap: balance;
+}
+
+.callout[data-callout="reservation-service"] strong::before {
+  content: none;
+}
+
+.callout[data-callout="reservation-service"] .calloutLink {
+  background: var(--hg-color-ink);
+  border-radius: 999px;
+  color: var(--hg-color-on-dark, #fff);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-block-start: 1rem;
+  padding: 0.625rem 1.125rem;
+  text-decoration: none;
+}
+
+.callout[data-callout="reservation-service"] .calloutLink:hover {
+  background: #333;
+}
+
 @keyframes calloutBeam {
   to {
     --beam-angle: 360deg;
@@ -276,6 +311,18 @@
   line-height: 1.2;
   padding-block-end: 1rem;
   text-align: start;
+}
+
+/* The attraction-reservation guides head each table with an H2 and an intro,
+   so the caption is a quiet label rather than a second headline. */
+.tableScroll:is([data-table="reservation-priority-table"], [data-table="reservation-routes-table"]) caption {
+  color: var(--body-muted);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  padding-block-end: 0.75rem;
 }
 
 .tableScroll th,

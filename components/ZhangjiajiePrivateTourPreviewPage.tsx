@@ -26,6 +26,7 @@ import {
 import styles from "./ZhangjiajiePrivateTourPreviewPage.module.css";
 import {
   buildPrivateTourInquiryHref,
+  buildZhangjiajieCustomGroupInquiryHref,
   getPrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
 import { getLegacySystemContentLifecycle } from "../lib/legacySystemContentLifecycle";
@@ -99,6 +100,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
       ...tier,
       ...(published
         ? {
+            groupInquiryHref: buildZhangjiajieCustomGroupInquiryHref(homePath, inquiryContext.slug, tier.id),
             sixPersonInquiryHref: buildPrivateTourInquiryHref(
               homePath,
               inquiryContext.slug,
@@ -488,7 +490,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
                         <span className={styles.dayStatus}>
                           {day.guide_planned
                             ? copy.guideLabel
-                            : copy.arrivalLabel}
+                            : day.day === 1
+                              ? copy.arrivalLabel
+                              : copy.departureSightseeingLabel}
                         </span>
                       </div>
                       <p>{copy.daySummaries[index]}</p>
@@ -664,13 +668,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </div>
             <p className={styles.scopeNote}>
               {copy.confirmationNote}
-              {published ? (
-                <ZhangjiajieTourComparisonLink
-                  currentRoute="classic"
-                  locale={locale}
-                />
-              ) : null}
             </p>
+            {published ? (
+              <ZhangjiajieTourComparisonLink
+                currentRoute="classic"
+                locale={locale}
+              />
+            ) : null}
           </section>
 
           <section

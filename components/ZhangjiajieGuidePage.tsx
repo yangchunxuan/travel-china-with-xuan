@@ -20,7 +20,9 @@ import {
   type ZhangjiajieGuideCopy,
 } from "../lib/zhangjiajieGuideI18n";
 import { getGuideTourCard } from "../lib/guideTourCard";
+import { zhangjiajieTourComparisonHref } from "../lib/zhangjiajieTourComparison";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { ZhangjiajieGuideBudget } from "./ZhangjiajieGuideBudget";
 import { AuthorityHubLinks } from "./AuthorityHubLinks";
 import { LegacyEditorialByline } from "./LegacyEditorialByline";
 import { HomegroundFooter } from "./HomegroundFooter";
@@ -459,6 +461,12 @@ export function ZhangjiajieGuidePage({
                     <span>{copy.quick.fullDayExampleLabel}</span>{" "}
                     {copy.quick.fullDayExample}
                   </p>
+                  <p>
+                    {copy.quick.productComparison.note}{" "}
+                    <Link href={zhangjiajieTourComparisonHref(locale)}>
+                      {copy.quick.productComparison.action}
+                    </Link>
+                  </p>
                 </div>
               </div>
               <GuideCtaLink
@@ -746,6 +754,8 @@ export function ZhangjiajieGuidePage({
                 ))}
               </div>
             </section>
+
+            <ZhangjiajieGuideBudget locale={locale} />
 
             <section className={styles.faqSection} id="faq" aria-labelledby="guide-faq-title">
               <div className={styles.sectionHeading}>

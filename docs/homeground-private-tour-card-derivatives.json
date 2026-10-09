@@ -770,6 +770,86 @@
         "1380x863"
       ],
       "familySha256": "cbb7e384d7cc0d180c9fbd24cccefae5665f23f17a2d367f0f55f060d5f5922b"
+    },
+    {
+      "productId": "harbin-yabuli-snow-town-6-day-private-tour",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/snow-town-morning-1600.webp",
+      "sourceSha256": "d7f65c68fbf8daf340b25b7db82a8b707117767b7cd5d0e4e3fdcb1576a35b9d",
+      "rightsBasis": "Wikimedia Commons, Chen Wu, CC BY 2.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "d7f65c68fbf8daf340b25b7db82a8b707117767b7cd5d0e4e3fdcb1576a35b9d",
+      "rightsEvidenceNeedle": "CC BY 2.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
+      "familySha256": "2abd084bb6456206b1242f43fd482a23576accf49340558931719f39b5280d8e"
+    },
+    {
+      "productId": "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/xuexiang-blue.webp",
+      "sourceSha256": "359842c92b5e494e92619dfc33c54521455d39b05b73fc330d31481fc8873014",
+      "rightsBasis": "Wikimedia Commons, EditQ, CC0 1.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/xuexiang-blue.webp",
+      "rightsEvidenceNeedle": "CC0 1.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "d0bb8ca0773ee40d305bf8e28afaf94393e9534ff8136aba3526f0ce39a16711"
+    },
+    {
+      "productId": "harbin-mohe-arctic-village-7-day-private-tour",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/beiji-village-night-1600.webp",
+      "sourceSha256": "0c8b390ee2ab9390450d9554a3f0137e31a9e30980f12663db06c084a826f839",
+      "rightsBasis": "Wikimedia Commons, funcn, CC BY 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "0c8b390ee2ab9390450d9554a3f0137e31a9e30980f12663db06c084a826f839",
+      "rightsEvidenceNeedle": "CC BY 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
+      "familySha256": "9a6418591749bfdb21c7d24edaf93721a316d846ceb16bb4e2f36114d2734f9d"
+    },
+    {
+      "productId": "harbin-snow-town-mohe-9-day-private-tour",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/yabuli-chairlift.webp",
+      "sourceSha256": "70c6bd72432fd4dc4c7414b1e227ebe5255e7d7afff0d618b7711011f96b8e66",
+      "rightsBasis": "Wikimedia Commons, Cameraton Cleric, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/yabuli-chairlift.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "c5c714138cf7eab3e17c661b45d1f8043392e7dfcb52fd8f44aa7eedb1511428"
+    },
+    {
+      "productId": "yanji-changbaishan-wanda-6-day-private-tour",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/baekdu-winter.webp",
+      "sourceSha256": "436a659e6ce24122e534ccc1217853853ef6a7f5b343d65fab8eca646df39e4d",
+      "rightsBasis": "Wikimedia Commons, Farm, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/baekdu-winter.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "28e758cd38ee731ed1de6ff3caa17e6e01aa68794237e8b6779ddb66503eed53"
     }
   ]
 }

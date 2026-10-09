@@ -59,7 +59,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
     }
     case "callout":
       return (
-        <aside className={styles.callout} data-tone={block.tone ?? "neutral"}>
+        <aside className={styles.callout} data-callout={block.id} data-tone={block.tone ?? "neutral"}>
           {block.title ? <strong>{block.title}</strong> : null}
           <p>{block.body}</p>
           {block.link ? <a className={styles.calloutLink} href={block.link.href}>{block.link.label}</a> : null}
@@ -115,7 +115,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
       return (
         // Explicit roles keep table semantics when phones restyle each row as
         // a card; data-label lets that card show the column name per value.
-        <div className={styles.tableScroll} tabIndex={0} role="region" aria-label={block.caption}>
+        <div className={styles.tableScroll} data-table={block.id} tabIndex={0} role="region" aria-label={block.caption}>
           <table role="table">
             <caption>{block.caption}</caption>
             <thead role="rowgroup">

@@ -40,7 +40,7 @@ test("global navigation keeps one distinct five-item information architecture", 
     "관광지 예약 대행",
     "English-speaking Guides",
     "私人英文导游",
-    "프라이빗 영어 가이드",
+    "프라이빗 한국어 가이드",
     "Travel Advice",
     "实用指南",
     "실용 가이드",
@@ -71,7 +71,7 @@ test("global navigation keeps one distinct five-item information architecture", 
   assert.match(header, /const toursAreExact = pageContext === "tours"/);
   assert.doesNotMatch(header, /copy\.cities\.eyebrow/);
   assert.match(header, /className=\{styles\.desktopUtilityLink\}[\s\S]*copy\.navigation\.faq/);
-  assert.match(header, /className=\{styles\.mobileUtilityLink\}[\s\S]*copy\.navigation\.faq/);
+  assert.match(header, /data-tier="secondary"[\s\S]*className=\{styles\.mobileSectionLink\}[\s\S]*copy\.navigation\.faq/);
   assert.match(header, /\? "location"/);
   assert.doesNotMatch(header, /getGuideSearchCopy|Trip planning services|旅行规划服务|여행 설계 서비스/);
   assert.doesNotMatch(header, /String\(index \+ 1\)\.padStart/);
@@ -115,16 +115,13 @@ test("global navigation keeps one distinct five-item information architecture", 
     /@media \(max-width: 1179\.98px\)[\s\S]*?\.desktopUtilityLink,[\s\S]*?display: none;[\s\S]*?\.mobileNav \{[\s\S]*?position: fixed;/,
   );
   assert.match(css, /:focus-visible/);
-  assert.match(css, /\.mobileNavCopy small \{/);
-  assert.match(css, /\.mobileUtilityLink \{/);
-  assert.match(css, /\.mobileLanguageNav a \{[\s\S]*?white-space: nowrap;/);
-  // Five items plus the menu rows: phones up to 960px tall get label-only
-  // rows; from 820px down the services rows go, from 700px down the tour rows.
-  assert.match(css, /max-height: 960px\) \{[\s\S]*?\.mobilePrimaryLinks > a \{[\s\S]*?min-block-size: 3\.6rem;[\s\S]*?\.mobileNavCopy small \{\s*display: none;/);
-  assert.match(css, /max-height: 820px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="services"\] \{\s*display: none;/);
-  // Tour rows become a sideways chip strip from 820px down, and go from 650px down.
-  assert.match(css, /max-height: 820px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="tours"\] \{\s*display: flex;[\s\S]*?overflow-x: auto;/);
-  assert.match(css, /max-height: 650px\) \{[\s\S]*?\.mobileSubmenu\[data-menu="tours"\] \{\s*display: none;/);
+  assert.match(css, /\.mobileEntryDescription \{/);
+  assert.match(css, /\.mobileSectionPanel \{[^}]*grid-template-rows:\s*0fr;/);
+  assert.match(css, /\.mobileLanguageNav a \{[^}]*min-block-size:\s*3\.125rem;/);
+  // Expanded sections remain available at every height; the old chip strip
+  // and rules that removed whole service and tour menus are gone.
+  assert.doesNotMatch(css, /\.mobilePrimaryLinks|\.mobileNavCopy|\.mobileUtilityRow|\.mobileUtilityLink/);
+  assert.doesNotMatch(css, /max-height:\s*(?:960|820|650)px/);
 });
 
 test("all public page families use the shared header", async () => {
@@ -194,7 +191,7 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
     source("lib/homegroundNavigationModel.ts"),
   ]);
   // One header slot for all services; new services join the list, not the header.
-  assert.match(model, /homegroundServiceNavigationIds = \[\s*"attraction-tickets",\s*"english-guides",\s*"trip-support",\s*\]/);
+  assert.match(model, /homegroundServiceNavigationIds = \[\s*"attraction-tickets",\s*"english-guides",\s*"private-car",\s*"trip-support",\s*\]/);
   // Full-trip support has its own page.
   assert.match(model, /pathSegment: "services\/full-trip-support\/"/);
   // Every item with a menu (Destinations, Services) renders the same component.
@@ -204,14 +201,15 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   // Every /services/ page and the reservation page sit under Services.
   assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
   assert.match(header, /const planningIsCurrent = pageContext === "studio";/);
-  // Phones list the services under the item, one tap away.
-  assert.match(header, /<ul aria-label=\{item\.label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);
+  // Phones list every entry inside the section's collapsible panel.
+  assert.match(header, /className=\{styles\.mobileSectionPanel\}[\s\S]*<ul aria-label=\{label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);
   // One menu open at a time: opening one closes the others without a fade.
   assert.match(menu, /window\.dispatchEvent\(new CustomEvent\(menuOpenEvent, \{ detail: panelId \}\)\)/);
   assert.match(css, /\.navGroup\[data-replaced\] :is\(\.menuPanel, \.menuSurface, \.menuList li\) \{\s*transition: none;/);
   assert.match(header, /trackNavigationClick\(entry\.id, `mobile-\$\{menuId\}-menu`\)/);
-  // The row for the item's own page is the item itself on phones.
-  assert.match(header, /menu\.entries\.filter\(\(entry\) => entry\.href !== item\.href\)/);
+  // A mobile section toggles, so its own-page entry stays in the full list.
+  assert.match(header, /menu\.entries\.map\(/);
+  assert.doesNotMatch(header, /menu\.entries\.filter\(\(entry\) => entry\.href !== item\.href\)/);
 
   // Disclosure pattern: link + chevron button with aria-expanded/controls; Escape returns focus.
   assert.match(menu, /aria-controls=\{panelId\}\s*aria-expanded=\{open\}\s*aria-label=\{toggleLabel\}/);

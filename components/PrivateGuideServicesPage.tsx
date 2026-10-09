@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { privateGuideCities, privateGuideHours, privateGuideRates, privateGuideServicePath, privateGuideEnquiryAnchor, privateGuidePeakPrice, formatPrivateGuidePrice } from "../lib/privateGuideServices";
 import { getPrivateGuideServiceCopy } from "../lib/privateGuideServicesI18n";
+import { zhangjiajieTourComparisonHref } from "../lib/zhangjiajieTourComparison";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { PrivateGuideEnquiry } from "./PrivateGuideEnquiry";
@@ -69,7 +70,10 @@ export function PrivateGuideServicesPage({ locale = "en" }: { locale?: Homegroun
           <ol className={styles.cityGrid}>
             {privateGuideCities.map((city, index) => <li className={styles.cityCard} id={city} key={city}>
               <div className={styles.cityHeading}><span className={styles.eyebrow}>{String(index + 1).padStart(2, "0")}</span><h3>{copy.cities[city].name}</h3></div>
-              <p className={styles.cityDescription}>{copy.cities[city].description}</p>
+              <p className={styles.cityDescription}>
+                {copy.cities[city].description}
+                {city === "zhangjiajie" ? <>{" "}{copy.zhangjiajieRoutes.note}{" "}<Link href={zhangjiajieTourComparisonHref(locale)}>{copy.zhangjiajieRoutes.action}</Link></> : null}
+              </p>
               <dl><div><dt>{copy.standard}</dt><dd className={styles.price}>{formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale)}</dd></div><div><dt>{copy.peak}</dt><dd>{privateGuidePeakPrice(city, locale)}</dd></div></dl>
               <p className={styles.unit}>{copy.unit}</p>
               <a className={styles.textLink} href={enquire}>{copy.ask}<ArrowRight aria-hidden="true" size={17} /></a>

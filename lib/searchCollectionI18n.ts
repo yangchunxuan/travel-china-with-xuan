@@ -276,6 +276,8 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "lost-passport-in-china-exit-recovery": "essentials-entry-transit",
   "official-or-reseller-china-tickets": "essentials-booking-registration-recovery",
   "passport-name-across-china-bookings": "essentials-booking-registration-recovery",
+  "china-attractions-advance-booking-checklist": "essentials-booking-registration-recovery",
+  "book-china-attraction-tickets-without-chinese-phone-number": "essentials-booking-registration-recovery",
   "beijing-xian-chengdu-route-order": "plan-trip-length-city-order",
   "china-arrival-day-booked-anchor-or-flexible-block": "plan-budget-pace-decisions",
   "china-hub-and-spoke-or-multi-base-route": "plan-trip-length-city-order",

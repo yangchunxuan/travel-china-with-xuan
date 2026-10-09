@@ -76,7 +76,7 @@ export interface PublishedPrivateTourCatalogItem {
   readonly guideLanguage: string;
   /** Present only on fixed-departure small groups, whose price is one twin-share place. */
   readonly tourFormat?: "small-group";
-  /** Published service policy: true only if a route includes shopping stops. */
+  /** True only where the route explicitly lists shopping stops; false may mean unspecified. */
   readonly shoppingStops: boolean;
   readonly dateModified: string;
 }
@@ -306,9 +306,9 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "6박 7일 동안 세 곳에 머물며 D2~D5는 가이드 관광, D6는 봉황 자유 일정입니다.",
     ),
     fit: l(
-      "Travellers who want Zhangjiajie’s forest landscapes and two western Hunan ancient towns in one unhurried private route.",
-      "想把张家界峰林与湘西两座古镇连成一条从容私家路线的旅客。",
-      "장가계 산림 풍경과 후난 서부의 두 고성을 한 번의 여유로운 프라이빗 여정으로 보고 싶은 여행자.",
+      "Two full Forest Park days, then Furong Town for one night and Fenghuang for two; three stay bases, without Tianmen Mountain or the Glass Bridge.",
+      "森林公园两个完整观光日，再到芙蓉镇住一晚、凤凰住两晚；三地住宿，不含天门山与大峡谷玻璃桥。",
+      "국가삼림공원 종일 2일 후 부용진 1박, 봉황 2박. 세 곳에서 숙박하며 천문산과 대협곡 유리다리는 제외됩니다.",
     ),
   },
   "zhangjiajie-4-day-private-tour": {
@@ -332,6 +332,96 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "Three sightseeing days, one each for the Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain, with a choice of three stays.",
       "三个游览日，森林公园、大峡谷玻璃桥和天门山各一天，住宿有三档可选。",
       "관광 3일 동안 국가삼림공원, 대협곡 유리다리, 천문산을 하루씩 보며, 숙소는 세 가지 중에서 고릅니다.",
+    ),
+  },
+  "harbin-yabuli-snow-town-6-day-private-tour": {
+    route: l("Harbin · Yabuli · Snow Town", "哈尔滨 · 亚布力 · 雪乡", "하얼빈 · 야부리 · 설향"),
+    appeal: l(
+      "Combine Harbin's winter city sights with a Yabuli ski stop and an overnight visit to Snow Town.",
+      "把哈尔滨的冬季城市景点、亚布力滑雪和雪乡住宿串成一条线。",
+      "하얼빈의 겨울 도심 명소와 야부리 스키, 설향 숙박을 한 코스로 잇습니다.",
+    ),
+    pace: l(
+      "Six days with road transfers between Harbin, Yabuli and Snow Town.",
+      "6 天串起哈尔滨、亚布力和雪乡，含城际公路移动。",
+      "6일 동안 하얼빈·야부리·설향을 잇고 지역 간 차량 이동이 있습니다.",
+    ),
+    fit: l(
+      "Travellers who want both a ski stop and Snow Town without taking a longer Northeast loop.",
+      "想一次体验滑雪和雪乡，又不打算走更长东北环线的旅客。",
+      "긴 동북 일주 대신 스키와 설향을 함께 경험하고 싶은 여행자.",
+    ),
+  },
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
+    route: l("Harbin · Yabuli · Snow Town · Changbai Mountain · Yanji", "哈尔滨 · 亚布力 · 雪乡 · 长白山 · 延吉", "하얼빈 · 야부리 · 설향 · 백두산 · 연길"),
+    appeal: l(
+      "Travel from Harbin's ice attractions through Yabuli and Snow Town to Changbai Mountain and Yanji.",
+      "从哈尔滨冰雪景点出发，经亚布力与雪乡，到长白山和延吉。",
+      "하얼빈의 빙설 명소에서 야부리와 설향을 거쳐 백두산과 연길까지 갑니다.",
+    ),
+    pace: l(
+      "Eight days across several winter bases, including a long road transfer after Snow Town.",
+      "8 天跨越多处冬季目的地，离开雪乡后有较长的公路转场。",
+      "8일 동안 여러 겨울 여행지를 옮겨 다니며 설향 이후 긴 차량 이동이 있습니다.",
+    ),
+    fit: l(
+      "Travellers who want Snow Town and Changbai Mountain in one trip and are comfortable with a longer driving day.",
+      "想一趟走雪乡和长白山，能接受较长乘车日的旅客。",
+      "설향과 백두산을 한 여행에 담고 긴 차량 이동도 괜찮은 여행자.",
+    ),
+  },
+  "harbin-mohe-arctic-village-7-day-private-tour": {
+    route: l("Harbin · Mohe · Beihong · Arctic Village", "哈尔滨 · 漠河 · 北红村 · 北极村", "하얼빈 · 모허 · 베이훙촌 · 북극촌"),
+    appeal: l(
+      "Head north from Harbin to Mohe, Beihong Village and Arctic Village by overnight sleeper train and local vehicle.",
+      "从哈尔滨乘夜间卧铺火车北上，再由当地车辆走漠河、北红村和北极村。",
+      "하얼빈에서 야간 침대열차로 북상해 현지 차량으로 모허·베이훙촌·북극촌을 돌아봅니다.",
+    ),
+    pace: l(
+      "Seven days, including two nights on a hard-sleeper train.",
+      "7 天里有两晚在硬卧火车上度过。",
+      "7일 일정 중 2박은 일반 침대열차에서 보냅니다.",
+    ),
+    fit: l(
+      "Travellers drawn to China's far north who are comfortable with overnight rail travel.",
+      "想走中国最北地区、能接受夜间卧铺火车的旅客。",
+      "중국 최북단을 찾고 야간 침대열차 이동도 괜찮은 여행자.",
+    ),
+  },
+  "harbin-snow-town-mohe-9-day-private-tour": {
+    route: l("Harbin · Yabuli · Snow Town · Mohe", "哈尔滨 · 亚布力 · 雪乡 · 漠河", "하얼빈 · 야부리 · 설향 · 모허"),
+    appeal: l(
+      "Combine Harbin, a Yabuli ski stop and Snow Town with the far-north villages around Mohe.",
+      "把哈尔滨、亚布力滑雪、雪乡和漠河周边的极北村落放在一趟旅行里。",
+      "하얼빈·야부리 스키·설향과 모허 주변의 최북단 마을을 한 코스로 묶습니다.",
+    ),
+    pace: l(
+      "Nine days with road travel and two nights on a hard-sleeper train.",
+      "9 天，兼有公路转场和两晚硬卧火车。",
+      "9일 동안 차량 이동과 일반 침대열차 2박이 포함됩니다.",
+    ),
+    fit: l(
+      "Travellers who want the broadest Snow Town–Mohe route and can allow time for sleeper trains.",
+      "想把雪乡与漠河一起走、能为卧铺火车留出时间的旅客。",
+      "설향과 모허를 모두 보고 침대열차 이동 시간을 낼 수 있는 여행자.",
+    ),
+  },
+  "yanji-changbaishan-wanda-6-day-private-tour": {
+    route: l("Yanji · Changbai Mountain · Wanda Resort", "延吉 · 长白山 · 万达度假区", "연길 · 백두산 · 완다 리조트"),
+    appeal: l(
+      "Begin in Yanji, visit the Changbai Mountain area and finish with time at Wanda's ski resort.",
+      "从延吉出发，走长白山地区，再到万达度假区安排滑雪时间。",
+      "연길에서 출발해 백두산 일대를 둘러보고 완다 리조트에서 스키 시간을 보냅니다.",
+    ),
+    pace: l(
+      "Six days focused on the Yanji–Changbai Mountain winter corridor.",
+      "6 天集中走延吉—长白山冬季路线。",
+      "6일 동안 연길과 백두산의 겨울 코스에 집중합니다.",
+    ),
+    fit: l(
+      "Travellers who prefer Changbai Mountain and resort skiing without starting in Harbin.",
+      "想看长白山、在度假区滑雪，但不从哈尔滨出发的旅客。",
+      "하얼빈을 거치지 않고 백두산과 리조트 스키를 즐기고 싶은 여행자.",
     ),
   },
   ...privateTourExpansionProfiles,
@@ -506,9 +596,9 @@ export function getPublishedPrivateTourCatalog(
         ...zhangjiajieStartingPrice,
         travelers: zhangjiajieProduct.price_display.starting_group_size,
         serviceLabel: {
-          en: "Two days of English-speaking guide service included",
-          zh: "已含两天英文导游服务",
-          ko: "이틀간의 영어 가이드 서비스 포함",
+          en: "English-speaking guide included on Days 2 and 3",
+          zh: "第2、3天已含英文导游",
+          ko: "2·3일 차 영어 가이드 포함",
         }[locale],
         validityNote: {
           en: `Reference price through ${zhangjiajiePriceEnd}; other dates need a new quote.`,

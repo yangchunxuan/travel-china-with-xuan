@@ -42,6 +42,7 @@ function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId === "system-itinerary-review") return entry.locale === "en" ? 0.65 : 0.6;
   if (entry.contentId === "system-attraction-reservations") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId === "private-english-speaking-guides") return entry.locale === "en" ? 0.72 : 0.67;
+  if (entry.contentId === "private-car-and-driver") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId === "full-trip-support") return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "travel-inspiration") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId.startsWith("travel-inspiration-")) return entry.locale === "en" ? 0.7 : 0.65;
@@ -210,7 +211,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter((product) => product.slug !== jaPilot.tourSlug)
       .map((product) => ({
         url: `${base}/ja/tours/${product.slug}/`,
-        lastModified: "2026-09-27",
+        lastModified: product.dateModified,
         changeFrequency: "weekly" as const,
         priority: 0.7,
         alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },

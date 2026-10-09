@@ -57,6 +57,8 @@ const destinationTargets = {
 } as const satisfies Record<DestinationHubId, readonly ProductTarget[]>;
 
 const approvedCommercialGuideIds = [
+  "china-attractions-advance-booking-checklist",
+  "book-china-attraction-tickets-without-chinese-phone-number",
   "best-2-week-china-tour",
   "china-2-week-tour-cost",
   "china-small-group-tours-2027",
@@ -774,15 +776,43 @@ export function getProductPlanningContext(
   };
 }
 
-/**
- * Preview products (`visibility: "preview"`) are not commercial link owners
- * and are never link targets. Their pages link out only to published
- * Northeast winter routes and the climate-timing guide.
- */
-export function getPreviewProductPlanningContext(locale: HomegroundLocale) {
+/** Give each winter route alternatives for the actual trade-off it presents. */
+const northeastWinterRelatedSlugs: Readonly<Record<string, readonly string[]>> = {
+  "harbin-yabuli-snow-town-6-day-private-tour": [
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+  ],
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": [
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "yanji-changbaishan-wanda-6-day-private-tour",
+  ],
+  "harbin-mohe-arctic-village-7-day-private-tour": [
+    "harbin-snow-town-mohe-9-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+  "harbin-snow-town-mohe-9-day-private-tour": [
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+  "yanji-changbaishan-wanda-6-day-private-tour": [
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+};
+
+/** Link the current winter route to nearby published tours and timing advice. */
+export function getNortheastWinterProductPlanningContext(locale: HomegroundLocale, currentSlug: string) {
+  const relatedSlugs = northeastWinterRelatedSlugs[currentSlug];
+  if (!relatedSlugs) throw new Error(`Unknown Northeast winter route: ${currentSlug}`);
+  const comparisonLabel: Record<HomegroundLocale, string> = {
+    en: "Compare the 2026–27 Northeast winter routes",
+    zh: "比较 2026—27 雪季东北路线",
+    ko: "2026–27 중국 동북 겨울 코스 비교",
+  };
+
   return {
     destinations: [] as ExistingContentCommercialLink[],
-    guides: (["china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {
+    guides: (["china-in-winter", "china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {
       const guide = getGuideEntry(id, locale);
       return {
         id,
@@ -791,9 +821,13 @@ export function getPreviewProductPlanningContext(locale: HomegroundLocale) {
       } satisfies ExistingContentCommercialLink;
     }),
     relatedProducts: [
-      p("harbin-winter-5-day-private-tour"),
-      p("changbaishan-yanji-winter-6-day-private-tour"),
-    ].map((target) => toProductLink(target, locale)),
+      {
+        id: "northeast-winter-route-comparison",
+        href: `${locale === "en" ? "" : `/${locale}`}/tours/seasonal/`,
+        label: comparisonLabel[locale],
+      },
+      ...relatedSlugs.map((slug) => toProductLink(p(slug), locale)),
+    ],
   };
 }
 

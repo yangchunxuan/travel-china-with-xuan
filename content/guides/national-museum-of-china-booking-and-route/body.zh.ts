@@ -4,6 +4,17 @@ const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
     { id: "answer-first", type: "lead", text: "参观中国国家博物馆，要把它当成一次有预约、有入口、有取舍的博物馆任务，而不是逛完天安门广场顺便进去。先用当天会携带的证件预约免费基本陈列，按预约时段从北门观众入口核验；进馆后只定一个主展，再选一个次要主题。国博大到不适合“全部看完”，而且国博预约也不等于周边每一处场所都已预约。" },
+    {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "免费入馆，也需要先确认预约名额",
+      "body": "国博免费，但名额按时放出，没有预约无法入馆。如果国博是这趟旅行的重要一站，先落实入馆时段，再围绕它安排当天行程；多人同行时，确认每个人都在成功预约里。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
     { id: "booking-heading", type: "heading", level: 2, text: "先预约国博本身" },
     { id: "booking-rules", type: "table", caption: "2026年8月12日核验的国博现行规则", columns: ["环节", "官方规则", "实际影响"], rows: [
       ["预约", "基本陈列免费，可在参观日前7日内通过官网及官方微信渠道实名预约。", "从国博官方英文预约页进入，不要把搜索广告或其他天安门服务当成票务入口。"],
@@ -13,6 +24,30 @@ const body: StructuredPageBody = {
       ["周一", "通常周一闭馆，国家法定节假日另有公告时除外。", "碰到节假日周一，应看当周正式公告，而不是自行推断开闭馆。"],
     ] },
     { id: "separate-systems", type: "callout", title: "国博与天安门不是同一套预约", body: "国博管理自己的预约与北门入馆。天安门广场及周边纪念场所可能采用各自的预约和安检规则。国博确认信息只证明国博这一项；其他场所要分别查官方渠道，并给广场周边的安检与绕行留时间。", tone: "warning" },
+    {
+      "id": "reservation-recovery-heading",
+      "type": "heading",
+      "level": 2,
+      "text": "预约没有落实时，怎么保住北京这一天"
+    },
+    {
+      "id": "reservation-recovery-options",
+      "type": "comparison",
+      "columns": [
+        {
+          "heading": "首选时段没有名额",
+          "body": "先在官方渠道查看其他日期或时段，再固定接送；尚未确认的国博参观要留出调整余地。到门口排队不能代替预约。"
+        },
+        {
+          "heading": "只有部分同行者约上",
+          "body": "先保留已有的有效预约，再核对缺少成员的状态和其他选择。取消也计入馆方的预约次数限制，全组取消重约并不是没有代价。"
+        },
+        {
+          "heading": "预约状态不清楚",
+          "body": "先通过馆方预约记录和公布的联系方式核实。再告诉我们参观日期、人数，以及哪些成员已经预约成功，我们会核对可行安排和备选方案，把确认的国博时段或北京其他参观排进整体行程。"
+        }
+      ]
+    },
     { id: "time-heading", type: "heading", level: 2, text: "先决定参观多久，再决定看什么" },
     { id: "time-options", type: "comparison", columns: [
       { heading: "约两小时", body: "只选一个主展：古代中国基本陈列，或一场你真正重视的当期特展。安检、找路和离场也要算时间，不要再塞进另一座大型博物馆。" },
