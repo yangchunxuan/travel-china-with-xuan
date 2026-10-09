@@ -34,6 +34,7 @@ export interface HomegroundCopy {
   navigation: {
     primaryLabel: string;
     mobileLabel: string;
+    mobileServicesLabel: string;
     menuTagline: string;
     footerLabel: string;
     languageLabel: string;
@@ -348,6 +349,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     navigation: {
       primaryLabel: "Primary navigation",
       mobileLabel: "Mobile navigation",
+      mobileServicesLabel: "Travel Services",
       menuTagline: "Tailored journeys, planned with context.",
       footerLabel: "Footer navigation",
       languageLabel: "Choose language",
@@ -891,6 +893,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     navigation: {
       primaryLabel: "主导航",
       mobileLabel: "移动端导航",
+      mobileServicesLabel: "旅行服务",
       menuTagline: "每一段旅程，都从真实需求出发。",
       footerLabel: "页脚导航",
       languageLabel: "选择语言",
@@ -1399,6 +1402,7 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
     navigation: {
       primaryLabel: "주요 메뉴",
       mobileLabel: "모바일 메뉴",
+      mobileServicesLabel: "여행 서비스",
       menuTagline: "실제 조건을 바탕으로 설계하는 맞춤 여행.",
       footerLabel: "하단 메뉴",
       languageLabel: "언어 선택",

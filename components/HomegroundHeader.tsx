@@ -706,6 +706,7 @@ export function HomegroundHeader({
     }
 
     const menuId = item.id as MobileSectionId;
+    const label = menuId === "services" ? copy.navigation.mobileServicesLabel : item.label;
     const expanded = expandedSection === menuId;
     return (
       <li
@@ -726,7 +727,7 @@ export function HomegroundHeader({
             currentSection === menuId ? null : menuId,
           )}
         >
-          <span className={styles.mobileSectionLabel}>{item.label}</span>
+          <span className={styles.mobileSectionLabel}>{label}</span>
         </button>
         <div
           id={`mobile-section-${menuId}`}
@@ -736,7 +737,7 @@ export function HomegroundHeader({
           inert={!expanded}
         >
           <div>
-            <ul aria-label={item.label} className={styles.mobileSubmenu} data-menu={menuId}>
+            <ul aria-label={label} className={styles.mobileSubmenu} data-menu={menuId}>
               {menu.entries.map((entry, entryIndex) => (
                 <li
                   key={entry.id}

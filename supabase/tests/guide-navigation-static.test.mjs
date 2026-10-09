@@ -202,7 +202,7 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
   assert.match(header, /const planningIsCurrent = pageContext === "studio";/);
   // Phones list every entry inside the section's collapsible panel.
-  assert.match(header, /className=\{styles\.mobileSectionPanel\}[\s\S]*<ul aria-label=\{item\.label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);
+  assert.match(header, /className=\{styles\.mobileSectionPanel\}[\s\S]*<ul aria-label=\{label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);
   // One menu open at a time: opening one closes the others without a fade.
   assert.match(menu, /window\.dispatchEvent\(new CustomEvent\(menuOpenEvent, \{ detail: panelId \}\)\)/);
   assert.match(css, /\.navGroup\[data-replaced\] :is\(\.menuPanel, \.menuSurface, \.menuList li\) \{\s*transition: none;/);
