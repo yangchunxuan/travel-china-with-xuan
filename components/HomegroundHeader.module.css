@@ -848,7 +848,7 @@
     letter-spacing: 0.04em;
   }
 
-  .mobileSection:is([data-open="true"], [data-current="true"]) .mobileSectionLabel {
+  .mobileSection[data-open="true"] .mobileSectionLabel {
     background-size: 100% 2px;
   }
 
