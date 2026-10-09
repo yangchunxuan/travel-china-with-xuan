@@ -14,6 +14,7 @@ import {
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { privateTourNortheastWinterProducts } from "../../lib/privateTourNortheastWinterPreviewProducts.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 
 const repositoryRoot = new URL("../../", import.meta.url);
@@ -532,6 +533,7 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     ko: "/ko/tours/",
   });
 
+  const winterSlugs = new Set(privateTourNortheastWinterProducts.map((product) => product.slug));
   for (const product of privateTourProducts) {
     assert.equal(product.servicePolicy.shoppingStops, false);
     assert.equal(product.servicePolicy.addedServicesRequirePriorAgreement, true);
@@ -555,9 +557,11 @@ test("the homepage shows six stable private tours while the hub keeps the comple
       zh: [product.serviceNote.zh, ...product.packages.map((item) => item.summary.zh)].join(" "),
       ko: [product.serviceNote.ko, ...product.packages.map((item) => item.summary.ko)].join(" "),
     };
-    assert.match(publicPolicyCopy.en, /No shopping stops/);
-    assert.match(publicPolicyCopy.zh, /无购物店安排/);
-    assert.match(publicPolicyCopy.ko, /쇼핑 일정은 없습니다|쇼핑 일정이 없습니다/);
+    if (!winterSlugs.has(product.slug)) {
+      assert.match(publicPolicyCopy.en, /No shopping stops/);
+      assert.match(publicPolicyCopy.zh, /无购物店安排/);
+      assert.match(publicPolicyCopy.ko, /쇼핑 일정은 없습니다|쇼핑 일정이 없습니다/);
+    }
   }
 
   assert.equal(zhangjiajieProduct.service_policy.shopping_stops, false);

@@ -1,6 +1,9 @@
 /** Japanese customer copy for structured tours outside the separately authored Jiangnan pilot.
  * Route, price rows, inclusions flags and package IDs stay in privateTourProducts.
  */
+// @ts-ignore TS5097: the inquiry-index generator runs this through Node type stripping.
+import { japaneseNortheastWinterCopy } from "./japaneseNortheastWinterCopy.ts";
+
 export interface JapaneseTourCopy {
   readonly title: string;
   readonly metadataTitle: string;
@@ -5235,5 +5238,5 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
 );
 
 export function getJapaneseTourCopy(slug: string): JapaneseTourCopy | undefined {
-  return japaneseTourCopyBySlug[slug];
+  return japaneseTourCopyBySlug[slug] ?? japaneseNortheastWinterCopy[slug];
 }

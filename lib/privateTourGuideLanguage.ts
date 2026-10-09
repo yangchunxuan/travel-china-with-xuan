@@ -9,9 +9,9 @@
  * - "english-or-none": the traveller chooses an English-guided version or a
  *   version with no on-site guide.
  * - "quote": the published text leaves the guide language to the written quote.
- * - "driver-guide": an English-speaking driver who also helps with logistics
- *   (司机兼向导) who runs the day and goes with travellers around city sights;
- *   travellers explore large scenic areas on their own.
+ * - "driver-guide": an English-speaking driver-host who helps with logistics
+ *   and accompanies city stops. They are not a licensed sightseeing guide and
+ *   do not provide commentary inside attractions.
  *
  * Korean pages differ only where the Korean package label publishes a
  * Korean-speaking guide (`koreanGuide`). "availability" marks products whose
@@ -93,11 +93,12 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "beijing-xian-shanghai-8-day-private-tour": koreanByDate,
   "beijing-xian-guilin-hong-kong-10-day-private-tour": koreanByDate,
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour": koreanByDateLand,
-  // Preview products (visibility "preview"); never shown on a public card.
+  // Northeast winter products use a driver-host, not a licensed guide.
   "harbin-yabuli-snow-town-6-day-private-tour": driverGuide,
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": driverGuide,
   "harbin-mohe-arctic-village-7-day-private-tour": driverGuide,
   "harbin-snow-town-mohe-9-day-private-tour": driverGuide,
+  "yanji-changbaishan-wanda-6-day-private-tour": driverGuide,
 };
 
 const baseLabels: Readonly<
@@ -124,9 +125,9 @@ const baseLabels: Readonly<
     ko: "가이드 언어 견적 시 확인",
   },
   "driver-guide": {
-    en: "English-speaking driver-guide",
-    zh: "司机兼向导（中英文）",
-    ko: "영어 가능 운전기사 겸 안내인",
+    en: "English-speaking driver-host",
+    zh: "英语沟通司机兼行程协助",
+    ko: "영어 가능 운전기사 겸 일정 지원",
   },
 };
 

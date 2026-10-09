@@ -776,12 +776,8 @@ export function getProductPlanningContext(
   };
 }
 
-/**
- * Preview products (`visibility: "preview"`) are not commercial link owners
- * and are never link targets. Their pages link out only to published
- * Northeast winter routes and the climate-timing guide.
- */
-export function getPreviewProductPlanningContext(locale: HomegroundLocale) {
+/** Links the Northeast winter routes to nearby published tours and timing advice. */
+export function getNortheastWinterProductPlanningContext(locale: HomegroundLocale) {
   return {
     destinations: [] as ExistingContentCommercialLink[],
     guides: (["china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {

@@ -33,6 +33,7 @@ import { japaneseInquiryReceiptCopy } from "../lib/japaneseInquiryReceiptCopy";
 import { contactCardDesktopQuery, contactCardRequestForLink } from "../lib/contactCard";
 import { ContactCardScan, type ContactCardScanCopy } from "./ContactCardScan";
 import cardStyles from "./ContactCard.module.css";
+import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
 
 const japaneseScanCopy = {
   scanTitle: "スマートフォンでスキャンして相談する",
@@ -78,10 +79,12 @@ export function JapaneseInquiryDialog() {
     : null;
   const customGroup = context && isJiangnanTour(context.slug) && !context.selection;
   const requestedTravelers = customGroup ? parseRequestedTravelers(group) : null;
+  const winterDirectContact = isNortheastWinterTour(request?.slug);
   const apiUrl = privateTourQuoteApiUrl();
   const formEnabled = Boolean(apiUrl) &&
     process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" &&
     process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true" &&
+    !winterDirectContact &&
     (context
       ? process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true"
       : process.env.NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED === "true");
@@ -91,7 +94,7 @@ export function JapaneseInquiryDialog() {
     `希望する旅行：${context.name}`,
     context.selection ? `希望するプラン・人数：${privateTourInquirySelectionLabel(context, "ja")}` : "参加人数：",
     customGroup && requestedTravelers ? `参加人数：${requestedTravelers}名` : "",
-    `旅行予定の時期：${datesUndecided ? "未定" : date}`,
+    `旅行予定の時期：${winterDirectContact ? "" : datesUndecided ? "未定" : date}`,
     note.trim() ? `ご希望：${note.trim()}` : "",
     `参照ページ：https://homegroundchina.com/ja/tours/${context.slug}/`,
   ].filter(Boolean).join("\n") : "";
@@ -280,7 +283,7 @@ export function JapaneseInquiryDialog() {
             <button type="button" className={styles.primary} onClick={close}>旅程に戻る <ArrowRight size={18} aria-hidden="true" /></button>
           </InquiryReceipt> : <>
             <h2 id={`${id}-title`} tabIndex={-1}>日本語で旅を相談する</h2>
-            <p className={styles.intro}>{context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
+            <p className={styles.intro}>{winterDirectContact ? "ご希望の出発時期と人数を、WhatsApp またはメールでお知らせください。空き状況と最終料金を確認して返信します。" : context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
@@ -299,7 +302,7 @@ export function JapaneseInquiryDialog() {
               {status === "uncertain" ? <p className={styles.error} role="alert">保存できたか確認できませんでした。二重送信を避けるため、同じ内容を安全に再確認してください。</p> : null}
               {status === "uncertain" ? <button type="button" className={styles.primary} onClick={() => snapshotRef.current && void send(snapshotRef.current)}>確認して再試行 <ArrowRight size={18} aria-hidden="true" /></button>
                 : <button type="submit" className={styles.primary} disabled={status === "sending"}>{status === "sending" ? "送信中…" : "見積もり・相談を送る"}{status !== "sending" ? <ArrowRight size={18} aria-hidden="true" /> : null}</button>}
-            </form> : <p className={styles.manual}>現在、サイト内のフォームは利用できません。下の方法で直接ご連絡ください。</p>}
+            </form> : <p className={styles.manual}>{winterDirectContact ? "この冬季プランは、下の連絡方法から直接お問い合わせください。" : "現在、サイト内のフォームは利用できません。下の方法で直接ご連絡ください。"}</p>}
             <div className={styles.direct}>
               {japaneseDirectWhatsAppEnabled() ? <a className={styles.whatsappButton} href={whatsappHref} target="_blank" rel="noopener noreferrer" onClick={() => recordClick("whatsapp")}><MessageCircle size={18} aria-hidden="true" />WhatsAppで相談</a> : null}
               <a className={styles.directLink} href={emailHref} onClick={() => recordClick("email")}><Mail size={18} aria-hidden="true" />メールアプリで送る</a>

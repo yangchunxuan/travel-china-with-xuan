@@ -7,6 +7,7 @@ import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, getPrivateTourInquiryContextFromSearchParams, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, privateTourInquiryStayPreference, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
 import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, tourContactMessageText, privateTourQuoteApiUrl } from "../lib/tourContact";
+import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
 import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, travellerAckPrivacyNoticeVersion } from "../lib/inquiryVersions";
@@ -89,7 +90,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const isGuide = /^\/(?:zh\/|ko\/)?guides\/[a-z0-9-]+\/$/.test(pathname || "");
   const isTour = /^\/(?:zh\/|ko\/)?tours\/[a-z0-9-]+\/$/.test(pathname || "");
   const apiUrl = privateTourQuoteApiUrl();
-  const enabled = Boolean(apiUrl) && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true";
+  const enabled = Boolean(apiUrl) && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true" && !isNortheastWinterTour(context?.slug);
   const whatsappEnabled = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
   const locked = status === "sending" || status === "uncertain" || status === "saved";
   const jiangnan = isJiangnanTour(context?.slug);

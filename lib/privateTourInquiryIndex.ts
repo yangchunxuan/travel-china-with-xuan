@@ -352,8 +352,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "harbin-yabuli-snow-town-6-day-private-tour",
-    visibility: "preview",
-    title: { en: "Harbin, Yabuli & Snow Town: 6-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡 6 天 5 晚冬季私家团", ko: "하얼빈·야부리·설향 6일 겨울 프라이빗 투어" },
+    title: { en: "Harbin, Yabuli & Snow Town: 6-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡 6 天 5 晚冬季私家团", ko: "하얼빈·야부리·설향 6일 겨울 프라이빗 투어", ja: "ハルビン・亜布力・雪郷 6日間（5泊）冬季プライベートツアー" },
     packages: [
       { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
@@ -361,8 +360,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
-    visibility: "preview",
-    title: { en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团", ko: "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어" },
+    title: { en: "Harbin, Yabuli, Snow Town, Changbai Mountain & Yanji: 8-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·长白山·延吉 8 天 7 晚冬季私家团", ko: "하얼빈·야부리·설향·백두산·연길 8일 겨울 프라이빗 투어", ja: "ハルビン・亜布力・雪郷・長白山・延吉 8日間（7泊）冬季プライベートツアー" },
     packages: [
       { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
@@ -370,8 +368,7 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "harbin-mohe-arctic-village-7-day-private-tour",
-    visibility: "preview",
-    title: { en: "Harbin, Mohe, Beihong & Arctic Village: 7-Day Winter Private Tour", zh: "哈尔滨·漠河·北红村·北极村 7 天 6 晚冬季私家团", ko: "하얼빈·모허·베이훙촌·북극촌 7일 겨울 프라이빗 투어" },
+    title: { en: "Harbin, Mohe, Beihong & Arctic Village: 7-Day Winter Private Tour", zh: "哈尔滨·漠河·北红村·北极村 7 天 6 晚冬季私家团", ko: "하얼빈·모허·베이훙촌·북극촌 7일 겨울 프라이빗 투어", ja: "ハルビン・漠河・北紅村・北極村 7日間（6泊）冬季プライベートツアー" },
     packages: [
       { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
@@ -379,8 +376,15 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
   },
   {
     slug: "harbin-snow-town-mohe-9-day-private-tour",
-    visibility: "preview",
-    title: { en: "Harbin, Yabuli, Snow Town & Mohe: 9-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·漠河 9 天 8 晚冬季私家团", ko: "하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어" },
+    title: { en: "Harbin, Yabuli, Snow Town & Mohe: 9-Day Winter Private Tour", zh: "哈尔滨·亚布力·雪乡·漠河 9 天 8 晚冬季私家团", ko: "하얼빈·야부리·설향·모허 9일 겨울 프라이빗 투어", ja: "ハルビン・亜布力・雪郷・漠河 9日間（8泊）冬季プライベートツアー" },
+    packages: [
+      { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
+      { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
+    ],
+  },
+  {
+    slug: "yanji-changbaishan-wanda-6-day-private-tour",
+    title: { en: "Yanji, Changbai Mountain & Wanda Resort: 6-Day Winter Private Tour", zh: "延吉·长白山·万达度假区 6 天 5 晚冬季私家团", ko: "연길·백두산·완다 리조트 6일 겨울 프라이빗 투어", ja: "延吉・長白山・ワンダリゾート 6日間（5泊）冬季プライベートツアー" },
     packages: [
       { id: "low-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },

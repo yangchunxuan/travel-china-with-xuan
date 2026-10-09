@@ -21,8 +21,8 @@ one traveller at its direct URL, without being published.
   en/zh-Hans/ko/x-default alternates only. There is no Japanese page, so the
   header's language switch shows no Japanese link, and a Japanese inquiry
   cannot name a preview (the inquiry index carries no Japanese title for it).
-- A preview page links out only to published routes and guides
-  (`getPreviewProductPlanningContext`); nothing published links to it.
+- A preview page links out only to published routes and guides; nothing
+  published links to it.
 
 `noindex` and an unlisted URL are not access control: anyone with the link can
 open the page. Do not put confidential supplier costs or terms in preview copy.
@@ -59,13 +59,18 @@ Move the product into a published product list (so it joins
 product needs: comparison profile, catalogue facet, commercial links, Japanese
 copy and name (index and SQL), and any published-only test expectations.
 
-## Current previews
+## Northeast winter route history
 
-The four Northeast China winter supplier proposals of 2026-09-29, defined in
-`lib/privateTourNortheastWinterPreviewProducts.ts` and accepted by migration
-`202609300001_add_northeast_winter_preview_tours.sql`:
+Four Northeast China supplier proposals were created as previews on
+2026-09-29 and accepted by migration
+`202609300001_add_northeast_winter_preview_tours.sql`. They were later
+published with an additional Yanji–Changbaishan–Wanda route. The historical
+module and migration names retain “preview” because other modules import them
+and applied migrations are immutable. The five winter routes now belong to
+`privateTourProducts`; this document continues to describe the preview
+mechanism for future proposals.
 
-- `harbin-yabuli-snow-town-6-day-private-tour`
-- `harbin-snow-town-changbaishan-yanji-8-day-private-tour`
-- `harbin-mohe-arctic-village-7-day-private-tour`
-- `harbin-snow-town-mohe-9-day-private-tour`
+The winter products use direct WhatsApp and email enquiries until
+`202610090001_publish_northeast_winter_products.sql` has been applied to the
+live inquiry database and its five route identities and Japanese names have
+been verified. The GitHub Pages deployment does not apply database migrations.
