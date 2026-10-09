@@ -1,12 +1,11 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import test from 'node:test';
-import worker, {CanaryError, INQUIRY_ENDPOINT, SITE_ORIGIN, runIntakeCanary} from '../../ops/inquiry-canary/worker.mjs';
+import worker, {CanaryError, INQUIRY_ENDPOINT, MANIFEST_PATH, SITE_ORIGIN, runIntakeCanary} from '../../ops/inquiry-canary/worker.mjs';
 
 const heartbeat = 'https://uptime.betterstack.com/api/v1/heartbeat/fixture_private_token';
 const env = {INTAKE_HEARTBEAT_URL:heartbeat};
 const instant = () => new Date('2026-10-09T12:00:00Z');
-const script = (endpoint = INQUIRY_ENDPOINT, privacy = false) => JSON.stringify([endpoint,'2026-07-21.1','2026-07-26.1','2099-01-01.1',...(privacy ? ['2026-09-28.1'] : [])]);
 const json = value => new Response(JSON.stringify(value),{status:422,headers:{'Content-Type':'application/json'}});
 
 function fixture(options = {}) {
@@ -29,14 +28,12 @@ function fixture(options = {}) {
       if (options.bodyTimeout) return new Response(new ReadableStream({start(){}}),{headers:{'Content-Type':'text/html'}});
       return new Response(html,{status:options.homepageStatus ?? 200,headers:{'Content-Type':'text/html'}});
     }
-    if (scriptUrls.includes(url)) {
-      if (options.brokenLastScript && url === scriptUrls.at(-1)) return new Response('broken',{status:503});
-      const body = options.scriptBody ?? (url === scriptUrls[0] ? script(options.endpoint,options.privacy) : 'export const unused=1;');
-      if (options.fragments) {
-        const chunks = options.fragments;
-        return new Response(new ReadableStream({start(controller){for(const chunk of chunks)controller.enqueue(new TextEncoder().encode(chunk));controller.close();}}),{headers:{'Content-Type':'application/javascript'}});
-      }
-      return new Response(body,{headers:{'Content-Type':options.scriptType ?? 'application/javascript'}});
+    if (url === SITE_ORIGIN+MANIFEST_PATH) {
+      const manifest = {schemaVersion:1,siteOrigin:SITE_ORIGIN,endpoint:options.endpoint ?? INQUIRY_ENDPOINT,
+        destinationVersion:'2026-07-21.1',homepageVersion:'2026-07-26.1',updatedPrivacy:options.privacy ?? false,
+        scripts:scriptUrls.map(url=>new URL(url).pathname).sort(),...options.manifest};
+      return new Response(options.manifestBody ?? JSON.stringify(manifest),{
+        status:options.manifestStatus ?? 200,headers:{'Content-Type':options.manifestType ?? 'application/json'}});
     }
     if (url === INQUIRY_ENDPOINT && init.method === 'POST') {
       const body = JSON.parse(init.body);
@@ -90,21 +87,26 @@ test('old and new privacy preserve all six deliberately incomplete public payloa
   });
 });
 
-test('streamed scans preserve split contracts without reclassifying truncated old windows', async()=>{
-  const body = script(INQUIRY_ENDPOINT,true)+' '.repeat(300);
-  const cuts = [INQUIRY_ENDPOINT.length/2|0,100,190,body.length];
-  let previous = 0;
-  const fragments = cuts.map(end=>{const part=body.slice(previous,end);previous=end;return part;});
-  const f = await run({fragments});
-  assert.equal(f.result.ok,true); assert.equal(probes(f.calls).length,6);
-});
-
-test('wrong or ambiguous published endpoint fails before any POST', async t => {
-  for(const endpoint of ['https://wrong.supabase.co/functions/v1/v1-inquiries',INQUIRY_ENDPOINT+'/unexpected','http://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries']) await t.test(endpoint,async()=>{
-    const f = await run({endpoint});failed(f,'WRONG_PUBLISHED_ENDPOINT');assert.equal(probes(f.calls).length,0);
+test('published manifest must match this homepage and supported contract before any POST', async t=>{
+  for (const [options,code] of [
+    [{endpoint:'https://wrong.supabase.co/functions/v1/v1-inquiries'},'WRONG_PUBLISHED_ENDPOINT'],
+    [{endpoint:INQUIRY_ENDPOINT+'/unexpected'},'WRONG_PUBLISHED_ENDPOINT'],
+    [{manifest:{schemaVersion:2}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{enabled:false}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{siteOrigin:'https://foreign.invalid'}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{destinationVersion:'2099-01-01.1'}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{homepageVersion:undefined}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{updatedPrivacy:'true'}},'MANIFEST_CONTRACT_INVALID'],
+    [{manifest:{scripts:['/_next/static/chunks/stale.js']}},'MANIFEST_BUILD_MISMATCH'],
+    [{manifest:{scripts:[]}},'MANIFEST_BUILD_MISMATCH'],
+    [{scripts:2,manifest:{scripts:['/_next/static/chunks/app/fixture-0.js','/_next/static/chunks/app/fixture-0.js']}},'MANIFEST_BUILD_MISMATCH'],
+    [{manifestBody:'{bad'},'MANIFEST_CONTRACT_INVALID'],
+    [{manifestStatus:404},'MANIFEST_RESPONSE_INVALID'],
+    [{manifestType:'text/html'},'MANIFEST_RESPONSE_INVALID'],
+    [{manifestStatus:302},'REDIRECT_BLOCKED'],
+  ]) await t.test(JSON.stringify(options),async()=>{
+    const f=await run(options);failed(f,code);assert.equal(probes(f.calls).length,0);
   });
-  const f = await run({scriptBody:script()+' '+script('https://wrong.supabase.co/functions/v1/v1-inquiries')});
-  failed(f,'WRONG_PUBLISHED_ENDPOINT');assert.equal(probes(f.calls).length,0);
 });
 
 test('dangerous acceptance, persistence and missing rejection fields stop the first probe', async t => {
@@ -121,12 +123,16 @@ test('every version, locale and attribution contract error fails even with safe 
   const f=await run({malformedJson:true});failed(f,'PROBE_RESPONSE_INVALID');assert.equal(probes(f.calls).length,1);
 });
 
-test('every listed script is checked; missing contracts and redirect/foreign assets fail closed', async()=>{
-  const last=await run({scripts:2,brokenLastScript:true});failed(last,'SCRIPT_RESPONSE_INVALID');assert.equal(probes(last.calls).length,0);
-  const missing=await run({scriptBody:JSON.stringify([INQUIRY_ENDPOINT,'2026-07-21.1'])});failed(missing,'MISSING_PUBLISHED_CONTRACT');
+test('foreign, malformed and excessive homepage assets fail closed without fetching scripts', async()=>{
   const foreign=await run({html:'<script src="https://foreign.invalid/_next/static/chunks/a.js"></script>'});failed(foreign,'SCRIPT_MANIFEST_INVALID');assert.equal(foreign.calls.length,2);
+  const empty=await run({html:'<html></html>'});failed(empty,'SCRIPT_MANIFEST_INVALID');
+  for (const html of ['<script '.repeat(65000),'<script '+' '.repeat(5000)+'>']) {
+    const malformed=await run({html});failed(malformed,'SCRIPT_MANIFEST_INVALID');assert.equal(malformed.calls.length,2);
+  }
   const redirected=await run({homepageStatus:302});failed(redirected,'REDIRECT_BLOCKED');
   const denied=await run({homepageStatus:403});failed(denied,'SITE_RESPONSE_INVALID');
+  const many=await run({scripts:24});assert.equal(many.result.ok,true);assert.equal(many.calls.length,9);
+  assert.equal(many.calls.some(call=>call.url.includes('/_next/')),false);
 });
 
 test('network and both header/body timeouts send failure without logging the raw error', async()=>{
@@ -135,11 +141,11 @@ test('network and both header/body timeouts send failure without logging the raw
 });
 
 test('request, script and body budgets include and reserve the final heartbeat', async()=>{
-  const maximum=await run({scripts:42});assert.equal(maximum.result.ok,true);assert.equal(maximum.calls.length,50);
+  const maximum=await run({scripts:42});assert.equal(maximum.result.ok,true);assert.equal(maximum.calls.length,9);
   const extra=await run({scripts:43});failed(extra,'SCRIPT_LIMIT_EXCEEDED');assert.equal(extra.calls.length,2);
   const limited=await run({}, {maxRequests:4});failed(limited,'SUBREQUEST_BUDGET_EXCEEDED');assert.equal(limited.calls.length,4);assert.equal(limited.result.completedChecks,1);
-  for(const limits of [{htmlBytes:10},{scriptBytes:10},{responseBytes:10},{totalBytes:10}]){const f=await run({},limits);failed(f,'BODY_LIMIT_EXCEEDED');}
-  const f=fixture();await assert.rejects(runIntakeCanary(env,{fetchImpl:f.fetchImpl,limits:{maxRequests:51}}),{code:'LIMITS_INVALID'});assert.equal(f.calls.length,0);
+  for(const limits of [{htmlBytes:10},{manifestBytes:10},{responseBytes:10},{totalBytes:10}]){const f=await run({},limits);failed(f,'BODY_LIMIT_EXCEEDED');}
+  const f=fixture();await assert.rejects(runIntakeCanary(env,{fetchImpl:f.fetchImpl,limits:{maxRequests:10}}),{code:'LIMITS_INVALID'});assert.equal(f.calls.length,0);
 });
 
 test('missing or invalid heartbeat is rejected before accessing production', async()=>{

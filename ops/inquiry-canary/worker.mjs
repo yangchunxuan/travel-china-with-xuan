@@ -1,10 +1,11 @@
 export const SITE_ORIGIN = 'https://homegroundchina.com';
+export const MANIFEST_PATH = '/inquiry-contract.json';
 export const INQUIRY_ENDPOINT = 'https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries';
 const destinationVersion = '2026-07-21.1';
 const homepageVersion = '2026-07-26.1';
 const updatedPrivacy = '2026-09-28.1';
-const defaults = Object.freeze({maxRequests:50,maxScripts:42,htmlBytes:524288,scriptBytes:1048576,totalBytes:8388608,responseBytes:16384,timeoutMs:8000});
-const codes = new Set(['HEALTHY','HEARTBEAT_NOT_CONFIGURED','HEARTBEAT_DESTINATION_INVALID','HEARTBEAT_FAILED','LIMITS_INVALID','NETWORK_FAILURE','REQUEST_TIMEOUT','REDIRECT_BLOCKED','SUBREQUEST_BUDGET_EXCEEDED','BODY_LIMIT_EXCEEDED','SITE_RESPONSE_INVALID','SCRIPT_MANIFEST_INVALID','SCRIPT_LIMIT_EXCEEDED','SCRIPT_RESPONSE_INVALID','MISSING_PUBLISHED_CONTRACT','WRONG_PUBLISHED_ENDPOINT','PROBE_RESPONSE_INVALID','CONTRACT_REJECTED','UNSAFE_REJECTION','INTERNAL_CHECK_FAILED']);
+const defaults = Object.freeze({maxRequests:9,maxScripts:42,htmlBytes:524288,manifestBytes:16384,totalBytes:655360,responseBytes:16384,timeoutMs:8000});
+const codes = new Set(['HEALTHY','HEARTBEAT_NOT_CONFIGURED','HEARTBEAT_DESTINATION_INVALID','HEARTBEAT_FAILED','LIMITS_INVALID','NETWORK_FAILURE','REQUEST_TIMEOUT','REDIRECT_BLOCKED','SUBREQUEST_BUDGET_EXCEEDED','BODY_LIMIT_EXCEEDED','SITE_RESPONSE_INVALID','SCRIPT_MANIFEST_INVALID','SCRIPT_LIMIT_EXCEEDED','MANIFEST_RESPONSE_INVALID','MANIFEST_CONTRACT_INVALID','MANIFEST_BUILD_MISMATCH','MISSING_PUBLISHED_CONTRACT','WRONG_PUBLISHED_ENDPOINT','PROBE_RESPONSE_INVALID','CONTRACT_REJECTED','UNSAFE_REJECTION','INTERNAL_CHECK_FAILED']);
 
 export class CanaryError extends Error {
   constructor(code, completedChecks = 0) {
@@ -43,8 +44,14 @@ export function probePayload(surface, locale, newPrivacy) {
 function scriptManifest(html, maximum) {
   const scripts = new Set();
   const attribute = (tag,name) => tag.match(new RegExp(`\\b${name}\\s*=\\s*["']([^"']+)["']`,'iu'))?.[1];
-  for (const match of html.matchAll(/<(?:script|link)\b[^>]*>/giu)) {
-    const tag = match[0];
+  const tagStart = /<(?:script|link)\b/giu;
+  let match;
+  while ((match = tagStart.exec(html))) {
+    const end = html.indexOf('>',tagStart.lastIndex);
+    const nested = html.indexOf('<',tagStart.lastIndex);
+    if (end < 0 || end-match.index > 4096 || nested >= 0 && nested < end) throw new CanaryError('SCRIPT_MANIFEST_INVALID');
+    const tag = html.slice(match.index,end+1);
+    tagStart.lastIndex = end+1;
     const src = /^<script\b/iu.test(tag) ? attribute(tag,'src')
       : (attribute(tag,'as') === 'script' || attribute(tag,'rel') === 'modulepreload') ? attribute(tag,'href') : null;
     if (!src || !src.includes('/_next/static/')) continue;
@@ -52,28 +59,22 @@ function scriptManifest(html, maximum) {
     try { url = new URL(src,SITE_ORIGIN); } catch { throw new CanaryError('SCRIPT_MANIFEST_INVALID'); }
     if (url.origin !== SITE_ORIGIN || url.username || url.password || url.search || url.hash
         || !url.pathname.startsWith('/_next/static/') || !url.pathname.endsWith('.js')) throw new CanaryError('SCRIPT_MANIFEST_INVALID');
-    scripts.add(url.href);
+    scripts.add(url.pathname);
     if (scripts.size > maximum) throw new CanaryError('SCRIPT_LIMIT_EXCEEDED');
   }
   if (!scripts.size) throw new CanaryError('SCRIPT_MANIFEST_INVALID');
   return scripts;
 }
 
-function inspectFragment(text, found, previousLength = 0) {
-  found.destination ||= text.includes(destinationVersion);
-  found.homepage ||= text.includes(homepageVersion);
-  found.privacy ||= text.includes(updatedPrivacy);
-  found.endpoint ||= text.includes(INQUIRY_ENDPOINT);
-  const suffix = '.supabase.co/functions/v1/v1-inquiries';
-  let cursor = 0, index;
-  while ((index = text.indexOf(suffix,cursor)) >= 0) {
-    cursor = index+suffix.length;
-    if (cursor < previousLength) continue;
-    const start = text.lastIndexOf('https://',index);
-    const following = text[cursor];
-    if (start < 0 || index-start > 100 || text.slice(start,cursor) !== INQUIRY_ENDPOINT
-        || following && !/["'`\s,;)}\]\\]/u.test(following)) found.wrongEndpoint = true;
-  }
+function verifyManifest(manifest, scripts) {
+  if (!manifest || manifest.enabled === false || manifest.schemaVersion !== 1 || manifest.siteOrigin !== SITE_ORIGIN
+      || manifest.destinationVersion !== destinationVersion || manifest.homepageVersion !== homepageVersion
+      || typeof manifest.updatedPrivacy !== 'boolean') throw new CanaryError('MANIFEST_CONTRACT_INVALID');
+  if (manifest.endpoint !== INQUIRY_ENDPOINT) throw new CanaryError('WRONG_PUBLISHED_ENDPOINT');
+  const expected = [...scripts].sort();
+  if (!Array.isArray(manifest.scripts) || manifest.scripts.length !== expected.length
+      || manifest.scripts.some((path,index) => path !== expected[index])) throw new CanaryError('MANIFEST_BUILD_MISMATCH');
+  return manifest.updatedPrivacy;
 }
 
 export async function runIntakeCanary(env, {fetchImpl = globalThis.fetch, now = () => new Date(), uuid = () => crypto.randomUUID(), limits = {}} = {}) {
@@ -98,11 +99,11 @@ export async function runIntakeCanary(env, {fetchImpl = globalThis.fetch, now = 
       throw error instanceof CanaryError ? error : new CanaryError(controller.signal.aborted ? 'REQUEST_TIMEOUT' : 'NETWORK_FAILURE');
     } finally { clearTimeout(timer); }
   }
-  async function consume(response, maximum, found) {
+  async function consume(response, maximum) {
     const reader = response.body?.getReader();
     if (!reader) throw new CanaryError('BODY_LIMIT_EXCEEDED');
     const decoder = new TextDecoder();
-    let bytes = 0, tail = '';
+    let bytes = 0;
     let timer;
     const parts = [];
     try {
@@ -116,12 +117,11 @@ export async function runIntakeCanary(env, {fetchImpl = globalThis.fetch, now = 
         bytes += item.value.byteLength; totalBytes += item.value.byteLength;
         if (bytes > maximum || totalBytes > bounds.totalBytes) throw new CanaryError('BODY_LIMIT_EXCEEDED');
         const text = decoder.decode(item.value,{stream:true});
-        if (found) {const window = tail+text;inspectFragment(window,found,tail.length);tail=window.slice(-160);}
-        else parts.push(text);
+        parts.push(text);
       }
       const last = decoder.decode();
-      if (found) inspectFragment(tail+last,found,tail.length); else parts.push(last);
-      return found ? undefined : parts.join('');
+      parts.push(last);
+      return parts.join('');
     } catch (error) {throw error instanceof CanaryError ? error : new CanaryError('NETWORK_FAILURE');}
     finally {clearTimeout(timer);await reader.cancel().catch(()=>{});}
   }
@@ -138,19 +138,18 @@ export async function runIntakeCanary(env, {fetchImpl = globalThis.fetch, now = 
     const homepage = await request(SITE_ORIGIN+'/',{headers});
     if (homepage.status !== 200 || !/^text\/html\b/iu.test(homepage.headers.get('content-type') ?? '')) throw new CanaryError('SITE_RESPONSE_INVALID');
     const html = await consume(homepage,bounds.htmlBytes);
-    const found = {};
-    inspectFragment(html,found);
-    // Fetch EVERY listed same-origin Next script. Never combine whole bundles.
-    for (const script of scriptManifest(html,bounds.maxScripts)) {
-      const response = await request(script,{headers});
-      if (response.status !== 200 || !/^(?:text|application)\/(?:javascript|x-javascript|ecmascript)\b/iu.test(response.headers.get('content-type') ?? '')) throw new CanaryError('SCRIPT_RESPONSE_INVALID');
-      await consume(response,bounds.scriptBytes,found);
-    }
-    if (found.wrongEndpoint || !found.endpoint) throw new CanaryError('WRONG_PUBLISHED_ENDPOINT');
-    if (!found.destination || !found.homepage) throw new CanaryError('MISSING_PUBLISHED_CONTRACT');
+    // Full JavaScript inspection happens during the build. Bind the small public
+    // result to this homepage's exact script set before using its contract.
+    const scripts = scriptManifest(html,bounds.maxScripts);
+    const response = await request(SITE_ORIGIN+MANIFEST_PATH,{headers});
+    if (response.status !== 200 || !/^application\/json\b/iu.test(response.headers.get('content-type') ?? '')) throw new CanaryError('MANIFEST_RESPONSE_INVALID');
+    let manifest;
+    try { manifest = JSON.parse(await consume(response,bounds.manifestBytes)); }
+    catch (error) { throw error instanceof CanaryError ? error : new CanaryError('MANIFEST_CONTRACT_INVALID'); }
+    const newPrivacy = verifyManifest(manifest,scripts);
     for (const surface of ['destination','homepage-email']) for (const locale of ['en','zh','ko']) {
       // No contact, antiAbuse, journey or email fields: validation must precede persistence.
-      const response = await request(INQUIRY_ENDPOINT,{method:'POST',headers:{Origin:SITE_ORIGIN,'Content-Type':'application/json','idempotency-key':uuid()},body:JSON.stringify(probePayload(surface,locale,found.privacy))});
+      const response = await request(INQUIRY_ENDPOINT,{method:'POST',headers:{Origin:SITE_ORIGIN,'Content-Type':'application/json','idempotency-key':uuid()},body:JSON.stringify(probePayload(surface,locale,newPrivacy))});
       if (response.status !== 422) throw new CanaryError('UNSAFE_REJECTION');
       let result;
       try {result = JSON.parse(await consume(response,bounds.responseBytes));} catch (error) {throw error instanceof CanaryError ? error : new CanaryError('PROBE_RESPONSE_INVALID');}
