@@ -104,6 +104,11 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
       caption: "2023年12月の雪郷の街並みです。店舗、食事、現地の様子は旅行時期によって異なります。",
     }],
     routeMedia: [
+      { day: 1, variants: [{
+        label: "冬のハルビン",
+        alt: "雪に覆われたハルビンの通りと街路樹",
+        caption: "ハルビンの冬景色です。到着日に観光の予定はありません。",
+      }] },
       harbinIceMedia,
       { day: 3, variants: [{
         label: "亜布力でのスキー",
@@ -114,6 +119,16 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
         label: "中国雪郷",
         alt: "冬の中国雪郷の入口標識のそばに立つ旅行者",
         caption: "2023年12月の雪郷の入口です。写真はこのツアーで予約する宿泊施設を示すものではありません。",
+      }] },
+      { day: 5, variants: [{
+        label: "ハルビンへ戻る",
+        alt: "ハルビンの松花江沿いの冬景色",
+        caption: "ハルビンの冬景色です。この日は雪郷から車で戻る移動日です。",
+      }] },
+      { day: 6, variants: [{
+        label: "ハルビン出発",
+        alt: "ハルビン駅南側の駅舎",
+        caption: "ハルビン駅の写真です。空港・駅への送迎は書面の見積もりで確認します。",
       }] },
     ],
   }),
@@ -151,6 +166,11 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
       caption: "2008年12月、夕暮れの亜布力スキー場です。積雪や営業中のゲレンデはシーズンによって異なります。",
     }],
     routeMedia: [
+      { day: 1, variants: [{
+        label: "冬のハルビン",
+        alt: "夜のハルビンで灯りがともる冬の通り",
+        caption: "ハルビンの冬景色です。到着日に観光の予定はありません。",
+      }] },
       { day: 2, variants: [{
         label: "氷雪大世界の入口",
         alt: "紫色に照らされたハルビン氷雪大世界の氷の建造物",
@@ -166,8 +186,18 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
         alt: "中国雪郷の雪の積もった林道を歩く人々",
         caption: "2023年12月の雪郷の歩道です。十里氷雪画廊を写した写真ではありません。",
       }] },
+      { day: 5, variants: [{
+        label: "長白山方面へ",
+        alt: "冬の鏡泊湖・吊水楼瀑布",
+        caption: "鏡泊湖は移動中の経由地です。景区への入場は別途手配します。",
+      }] },
       { day: 6, variants: [{ label: "長白山天池", alt: "雪に囲まれた長白山の天池", caption: "冬の長白山天池。立ち入りと見通しは天候次第で、見学は保証されません。" }] },
       { day: 7, variants: [{ label: "冬の延吉市街", alt: "2008年12月、薄雪が残る延吉の街並み", caption: "2008年12月の延吉を写した過去の写真です。現在の建物や街路、旅行当日の積雪を示すものではありません。" }] },
+      { day: 8, variants: [{
+        label: "延吉出発",
+        alt: "延吉西駅の外観",
+        caption: "延吉西駅の写真です。その後の交通と駅への送迎は見積もりで確認します。",
+      }] },
     ],
   }),
   "harbin-mohe-arctic-village-7-day-private-tour": winterCopy({
@@ -204,6 +234,11 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
       caption: "2005年3月に北極村近くで撮影された過去の写真です。石碑や川岸は現在変わっている可能性があり、このツアーで確定した立ち寄り場所ではありません。",
     }],
     routeMedia: [
+      { day: 1, variants: [{
+        label: "冬のハルビン",
+        alt: "雪の降る夜のハルビンの通り",
+        caption: "ハルビンの冬景色です。到着日に観光の予定はありません。",
+      }] },
       { day: 2, variants: [{
         label: "ハルビンの雪像",
         alt: "2026年のハルビン氷雪祭で撮影された雪像",
@@ -219,6 +254,16 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
         label: "冬の北極村",
         alt: "夜の北極村で赤い光に照らされた雪の通り",
         caption: "北極村の過去の冬の街並みです。トナカイ園やスキー場を写した写真ではありません。",
+      }] },
+      { day: 6, variants: [{
+        label: "北極村の郵便局",
+        alt: "北極村の郵便局の室内",
+        caption: "2024年秋に撮影された写真です。営業状況と入館の可否は当日ご確認ください。",
+      }] },
+      { day: 7, variants: [{
+        label: "ハルビンに到着",
+        alt: "冬の日のハルビン駅",
+        caption: "2026年冬のハルビン駅です。実際の到着駅と送迎は乗車券と見積書で確認します。",
       }] },
     ],
   }),
@@ -257,6 +302,11 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
       caption: "2023年12月の中国雪郷です。写っている店舗や人混みは、このツアーのサービス内容を示すものではありません。",
     }],
     routeMedia: [
+      { day: 1, variants: [{
+        label: "冬のハルビン",
+        alt: "凍った松花江の上で過ごす人々",
+        caption: "ハルビンの冬景色です。到着日に観光の予定はありません。",
+      }] },
       { day: 2, variants: [{
         label: "氷雪大世界",
         alt: "ハルビン氷雪大世界の氷の建物と観覧車",
@@ -282,6 +332,16 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
         label: "北紅村周辺の夜明け",
         alt: "北紅村近くの雪原と星空が広がる冬の夜明け",
         caption: "2016年1月の北紅村近くの風景です。オーロラではありません。晴天やこの眺めを保証するものではありません。",
+      }] },
+      { day: 8, variants: [{
+        label: "漠河からの夜行列車",
+        alt: "夜に明かりがともる漠河駅",
+        caption: "2019年夏の漠河駅です。実際の列車と出発駅は乗車券で確認します。",
+      }] },
+      { day: 9, variants: [{
+        label: "ハルビンの冬の鉄道",
+        alt: "冬のハルビン西駅付近を走る線路",
+        caption: "2026年冬のハルビンの鉄道風景です。実際の到着駅と送迎は乗車券と見積書で確認します。",
       }] },
     ],
   }),
@@ -318,11 +378,26 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
     }],
     routeMedia: [
       { day: 1, variants: [{ label: "夜の延吉", alt: "夜の延吉市街の灯り", caption: "このルートの出発地、延吉の夜景です。" }] },
+      { day: 2, variants: [{
+        label: "長白山方面の冬道",
+        alt: "吉林省の雪に覆われた道路",
+        caption: "吉林省の冬道です。雪嶺の訪問時間は天候や道路状況によります。",
+      }] },
       { day: 3, variants: [{ label: "長白山天池", alt: "長白山の火口湖・天池", caption: "旅行日に天池が見えるかどうかは天候に左右されます。" }] },
+      { day: 4, variants: [{
+        label: "ワンダリゾート周辺",
+        alt: "ワンダリゾート周辺の雪に覆われた建物",
+        caption: "リゾート周辺の風景です。実際の宿泊ホテルは書面の確認書でお知らせします。",
+      }] },
       { day: 5, variants: [{
         label: "ワンダのスキーゲレンデ",
         alt: "長白山ワンダリゾートのリフト乗り場とゲレンデ",
         caption: "2013年12月のワンダリゾートのスキー場です。無料スキー体験とリフトの営業は、お支払い前に確認します。",
+      }] },
+      { day: 6, variants: [{
+        label: "延吉に戻る",
+        alt: "延吉朝陽川空港のターミナル",
+        caption: "延吉空港の写真です。航空券と送迎は書面の見積もりで確認します。",
       }] },
     ],
   }),

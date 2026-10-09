@@ -1838,6 +1838,10 @@ cards through `lib/photoCredits.ts`.
 | `harbin-ice-entrance.webp` | [Harbin Ice & Snow Festival 2026 - Entrance](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Entrance.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `2b40f266b32c9c2e20302d343f7b66d8674eac85efa65a1012df20f4bb8cbd76` |
 | `harbin-ice-view.webp` | [Harbin Ice & Snow Festival 2026 - View](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_View.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `3554baf5a43515b5cbd7812974fbbe8c4feceb84b5ac27d3d466517197100ca2` |
 | `harbin-snow-sculpture.webp` | [Harbin Ice & Snow Festival 2026 - Snow sculpture](https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Snow_sculpture.jpg), Garosio33, 2026-01-15 | CC0 1.0 | `786ed167d97b67af41a8c60e075a82dbd9129a1c41e414b5b20b0849f98090b4` |
+| `harbin-arrival-snowy-street.webp` | [20191216 哈尔滨1 2](https://commons.wikimedia.org/wiki/File:20191216_%E5%93%88%E5%B0%94%E6%BB%A81_2.jpg), WFan, 2019 winter | CC BY-SA 4.0 | `8966d5a2180a232910e08166e0b4e867496657b837692f1bd0dbed93917c8c13` |
+| `harbin-arrival-central-street-night.webp` | [Harbin 2014-02 28](https://commons.wikimedia.org/wiki/File:Harbin_2014-02_28.jpg), Tomskyhaha, 2014-02-03 | CC BY-SA 4.0 | `f1777975468fd374c87a46f804f9f07b3b654544b33ca3ca9204a4870e4b1c58` |
+| `harbin-arrival-snow-night.webp` | [雪夜](https://commons.wikimedia.org/wiki/File:%E9%9B%AA%E5%A4%9C_-_panoramio.jpg), Zhang Xiaopeng, 2009-11-13 | CC BY-SA 3.0 | `e327e46b9cc65565a0c31ff7ed92b0f54069de0f68109a4cbfaaf2b7f165ba6a` |
+| `harbin-arrival-songhua-river.webp` | [Frozen Songhua River](https://commons.wikimedia.org/wiki/File:Frozen_Songhua_River.jpg), ChiralJon | CC BY 2.0 | `3cace4ceecf7c001aabd6c43256c8c6b35d6b23eee28316a4545e842c1a3cd06` |
 | `mohe-winter-panorama.webp` | [The Most North Of China](https://commons.wikimedia.org/wiki/File:The_Most_North_Of_China_(184511827).jpeg), M Kwow, 2016-01-18 | CC BY 3.0 | `7620b0ae442be3bfe8135251f5d116b7f21caec826a18d2f7555f0ddee219b3c` |
 | `wanda-ski-base.webp` | [Fusong, Baishan, Jilin, China (1)](https://commons.wikimedia.org/wiki/File:Fusong,_Baishan,_Jilin,_China_-_panoramio_(1).jpg), Chen Zhi, 2013-12-06 | CC BY 3.0 | `b2fb8dd088341379bab31076565c3829a70a93fb9b56f4d4573464d5d58f11ec` |
 | `xuexiang-blue.webp` | [Xuexiang 4](https://commons.wikimedia.org/wiki/File:Xuexiang_4.jpg), EditQ, 2023-12-24 | CC0 1.0 | `359842c92b5e494e92619dfc33c54521455d39b05b73fc330d31481fc8873014` |
@@ -1853,12 +1857,27 @@ cards through `lib/photoCredits.ts`.
 | `yabuli-sunset.webp` | [Sun Mountain Yabuli](https://www.flickr.com/photos/skichina/3803147042/), Ski China, 2008-12-23 | CC BY 2.0 | `63172548ba0564d8e1e1c1fbfc8eb59e1b3e9f388b19b1290541de5cc9f36aa0` |
 | `yanji-city-winter.webp` | [Yanbian Rural Commercial Bank, January 2009](https://commons.wikimedia.org/wiki/File:Yanbian_Rural_Commercial_Bank,_January_2009.jpg), China Q-H, photographed 2008-12-04 | CC BY 3.0 | `f2dd3ececc71deeb4f342f6d05487a1f26400e14c99c9531ab78d61b71802056` |
 | `yanji-river-winter.webp` | [Yanji River in Winter](https://commons.wikimedia.org/wiki/File:Yanji_River_in_Winter.jpg), Theodore Xu, 2017-12-02 | CC BY-SA 4.0 | `eea7d252ac14a57195ed967c8e86b4795b149c1d00bdc2bf556dc8a20eb03392` |
+| `beiji-post-office-interior.webp` | [北极村邮局内饰](https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E9%82%AE%E5%B1%80%E5%86%85%E9%A5%B0.jpg), HCCB3947, 2024-09-05 | CC BY-SA 4.0 | `b92ea53a4a5e3dcb36e5b50a28fb6bf6e661490b5dde20ea0581ac487d0589be` |
+| `harbin-station-january-2026.webp` | [Harbin railway station 08.01.2026 (2)](https://commons.wikimedia.org/wiki/File:Harbin_railway_station_08.01.2026_(2).jpg), SmallSonMarex, 2026-01-08 | CC0 1.0 | `df7ad2352e1ed717182519e219d658af654b05a6f59146d929aa1b447bdb86bc` |
+| `harbin-west-tracks-january-2026.webp` | [Harbin West railway station 08.01.2026 (2)](https://commons.wikimedia.org/wiki/File:Harbin_West_railway_station_08.01.2026_(2).jpg), SmallSonMarex, 2026-01-08 | CC0 1.0 | `bd8ec4ada1ccc170d5dc6cc9d717057c77ebdbd2d65227aaecdb29eb1ed2844c` |
+| `mohe-station-night.webp` | [Night view of Mohe Railway Station, Aug 2019](https://commons.wikimedia.org/wiki/File:Night_view_of_Mohe_Railway_Station,_Aug_2019.jpg), 颜邯 (romanized as Yan Han in page credits), 2019-08-17 | CC BY-SA 4.0 | `4b516a0a88524602e2c580bf97fdf82e756b575a60ad8881fe7d993c77a088ff` |
+| `songhua-return.webp` | [Songhua River in Harbin 2](https://commons.wikimedia.org/wiki/File:Songhua_River_in_Harbin_2.jpg), EditQ, 2023-12-23 | CC0 1.0 | `7dccd50c02410fa7ed634264100a3337502da90610f2ce0fc8a7675ceaf4d493` |
+| `harbin-departure.webp` | [Harbin Railway Station South Facede 20251101](https://commons.wikimedia.org/wiki/File:Harbin_Railway_Station_South_Facede_20251101.jpg), 1969社论, 2025-11-01 | CC BY-SA 4.0 | `75794261443587db9324398570fa3d23703cc15ae92d7bdadbe3ebc426cf73c0` |
+| `jingpo-transfer.webp` | [Jingpo Lake Winter](https://commons.wikimedia.org/wiki/File:Jingpo_Lake_Winter.jpg), Kelly Zhang120, uploaded 2021-07-01; depicted winter waterfall, capture date not independently confirmed | CC BY-SA 4.0 | `f5016757358bfbdc2586428ce0e4ffc66fcb80ee08a2bb338c79001958d5b776` |
+| `yanji-west-departure.webp` | [Exterior, Yanjixi Railway Station 20250524](https://commons.wikimedia.org/wiki/File:Exterior,_Yanjixi_Railway_Station_20250524.jpg), Genius DING, 2025-05-24 | CC BY 4.0 | `f68b9fabba17a9569971de8a2295d1c17f084409ca90b34a671c0941ffef15eb` |
+| `jilin-snow-road.webp` | [Road covered by snow](https://commons.wikimedia.org/wiki/File:Road_covered_by_snow.jpg), Jacky Lee, 2008-12-24 | CC BY 3.0 | `a0e14f588a220d16336e5be5611c791f4765f20b40eb0a8ca20a43e11c08f241` |
+| `wanda-resort-arrival.webp` | [Fusong, Baishan, Jilin, China – panoramio (3)](https://commons.wikimedia.org/wiki/File:Fusong,_Baishan,_Jilin,_China_-_panoramio_(3).jpg), Chen Zhi, 2013-12-06 | CC BY 3.0 | `ff881517d4ca70c95614aa6c43092c979286a4e356065a219fc9630721081a10` |
+| `yanji-airport-departure.webp` | [YNJ Terminal](https://commons.wikimedia.org/wiki/File:YNJ_Terminal.jpg), Muso555, 2013-10-22 | CC0 1.0 | `8738244593269b2357300b9ad4e05152d69bb2388e8fd59e010fcbc261ed8726` |
 
 The Mohe panorama is a regional view rather than Beihong Village or a tour hotel.
 The Beihong photo shows stars at dawn, not an aurora; viewing conditions cannot be promised.
 The Wanda photo shows a ski area photographed in 2013; it does not establish
 current resort operation. Neither a Xueling nor a reindeer-park photo with
 verified location and reuse rights was available for this repair.
+The Jilin road scene illustrates winter driving conditions, not Xueling itself or the
+precise Yanji–Erdaobaihe road. The Wanda resort-area photo does not identify the
+traveler's confirmed hotel. Station and airport photos illustrate departure options;
+the quoted transport and transfers remain subject to written confirmation.
 
 ### Canton Tower sight photo (from 2026-10-05)
 
