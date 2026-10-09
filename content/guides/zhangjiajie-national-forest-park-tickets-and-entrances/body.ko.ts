@@ -335,6 +335,7 @@ const body: StructuredPageBody = {
         { label: "천문산 입장권과 A/B/C 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
         { label: "4일 국가삼림공원 고정 코스 비교", href: "/ko/tours/zhangjiajie-forest-4-day-private-tour/", description: "고산 봉우리부터 금편계까지 국가삼림공원 종일, D3 천문산, 3박 모두 빌라 또는 4성급 호텔 한 곳에 머뭅니다." },
         { label: "장가계 4일 클래식 프라이빗 투어 비교", href: "/ko/tours/zhangjiajie-4-day-private-tour/", description: "백룡 엘리베이터, 대협곡 유리다리와 천문산을 포함한 대표 명소 코스를 선택합니다." },
+        { label: "장가계 아바타 산은 어디?", href: "/ko/guides/avatar-mountains-zhangjiajie/", description: "원가계 할렐루야산 위치와 하루에 핵심을 보는 코스." },
         { label: "장가계에 며칠이 필요할까?", href: "/ko/guides/zhangjiajie-itinerary/", description: "일정 글에서 공원 이동 사슬을 전체 여행에 배분하세요." },
         { label: "장가계 시내와 무릉원 중 어디에 숙박할까?", href: "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "숙박 거점은 공원 거래와 별도로 선택하세요." },
         { label: "장가계 유리다리와 산 정상 유리잔도 비교", href: "/ko/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "대협곡과 산악 관광지를 구분하세요." },

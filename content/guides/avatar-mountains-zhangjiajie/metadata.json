@@ -1,0 +1,101 @@
+{
+  "id": "avatar-mountains-zhangjiajie",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "zhangjiajie",
+    "national-forest-park",
+    "avatar-mountains",
+    "yuanjiajie",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-mist-pillars-1600.jpg",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/zhangjiajie-forest-4-day-private-tour/gallery-mist-pillars-1600.jpg",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "avatar mountains",
+      "avatar mountains china",
+      "avatar mountains zhangjiajie",
+      "avatar hallelujah mountain",
+      "hallelujah mountains china"
+    ],
+    "zh": [
+      "张家界阿凡达",
+      "阿凡达哈利路亚山",
+      "袁家界哈利路亚山"
+    ],
+    "ko": [
+      "장가계 아바타",
+      "원가계 할렐루야산"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/avatar-mountains-zhangjiajie/",
+      "title": "Avatar Mountains in China: Where They Are and How to Visit",
+      "headline": "The Avatar Mountains in Zhangjiajie: Where to See Them, What It Costs and How Many Days",
+      "description": "The Avatar Mountains are Zhangjiajie's sandstone pillars. See where the Hallelujah pillar stands, what tickets cost, the park's own one-day route and how many days to plan.",
+      "heroAlt": "Mist drifting between sheer sandstone pillars topped with pine forest in Zhangjiajie National Forest Park",
+      "navTitle": "Avatar Mountains",
+      "featuredLinkLabel": "See the real Avatar Mountains",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Zhangjiajie",
+        "Avatar Mountains",
+        "Yuanjiajie"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/avatar-mountains-zhangjiajie/",
+      "title": "张家界阿凡达山在哪：哈利路亚山、门票与一日路线",
+      "headline": "张家界“阿凡达山”：哈利路亚山在哪、门票多少、玩几天",
+      "description": "“阿凡达山”就是张家界国家森林公园的砂岩峰林。哈利路亚山原型在袁家界：怎么上去、门票 165 元还是 236 元、景区官方一日路线，以及要留几天。",
+      "heroAlt": "云雾在张家界国家森林公园顶上长满松林的陡峭砂岩石柱间飘动",
+      "navTitle": "张家界阿凡达山",
+      "featuredLinkLabel": "去看真实的“阿凡达山”",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "张家界",
+        "阿凡达山",
+        "袁家界"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/avatar-mountains-zhangjiajie/",
+      "title": "장가계 아바타 산: 할렐루야산 위치, 입장료, 코스",
+      "headline": "장가계 ‘아바타 산’: 할렐루야산은 어디에 있고, 얼마이며, 며칠이 필요할까",
+      "description": "‘아바타 산’은 장가계 국가삼림공원의 사암 봉우리입니다. 원가계 할렐루야산 위치, 입장료, 공원 공식 1일 코스와 필요한 일수를 정리했습니다.",
+      "heroAlt": "장가계 국가삼림공원에서 소나무가 덮인 사암 봉우리 사이로 흐르는 안개",
+      "navTitle": "장가계 아바타 산",
+      "featuredLinkLabel": "실제 ‘아바타 산’ 보러 가기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "장가계",
+        "아바타 산",
+        "원가계"
+      ]
+    }
+  }
+}

@@ -49,6 +49,7 @@ const copies = {
     readingTitle: "Continue with the canonical owner for the next decision",
     links: [
       ["See what fits in 2, 3 or 4 days", "zhangjiajie-itinerary", "The exact day allocation and what to omit."],
+      ["Find the Avatar Mountains", "avatar-mountains-zhangjiajie", "Where the Hallelujah pillar stands and the park's one-day route."],
       ["Choose Zhangjiajie city or Wulingyuan", "zhangjiajie-city-or-wulingyuan-hotel-base", "Compare the two hotel bases and when a split is worth the luggage move."],
       ["Choose National Forest Park tickets, entrances and transport", "zhangjiajie-national-forest-park-tickets-and-entrances", "Gate, passport, booking and in-park failure recovery."],
       ["Separate the Glass Bridge from glass skywalks", "zhangjiajie-glass-bridge-vs-skywalk", "Three different locations, ticket systems and physical experiences."],
@@ -145,6 +146,7 @@ const copies = {
     readingTitle: "下一步交给对应 canonical owner",
     links: [
       ["查看2、3、4天到底能安排什么", "zhangjiajie-itinerary", "逐日分配与主动舍弃。"],
+      ["找到“阿凡达山”", "avatar-mountains-zhangjiajie", "哈利路亚山原型在哪，景区一日路线怎么走。"],
       ["选择张家界市区还是武陵源", "zhangjiajie-city-or-wulingyuan-hotel-base", "比较两个住宿基地，以及什么时候值得搬行李。"],
       ["选择森林公园门票、入口与园内交通", "zhangjiajie-national-forest-park-tickets-and-entrances", "入口、护照、预订与园内失败补救。"],
       ["分清玻璃桥与玻璃栈道", "zhangjiajie-glass-bridge-vs-skywalk", "三个不同地点、票务系统与身体体验。"],
@@ -234,6 +236,7 @@ const copies = {
     readingTitle: "다음 결정은 해당 canonical owner로 이어가세요",
     links: [
       ["2·3·4일에 가능한 것 보기", "zhangjiajie-itinerary", "정확한 날짜 배분과 뺄 것."],
+      ["‘아바타 산’ 찾기", "avatar-mountains-zhangjiajie", "할렐루야산 위치와 공원 1일 코스."],
       ["장가계 시내 또는 무릉원 고르기", "zhangjiajie-city-or-wulingyuan-hotel-base", "두 숙소 거점과 짐 이동 가치 비교."],
       ["국가삼림공원 티켓·입구·교통 고르기", "zhangjiajie-national-forest-park-tickets-and-entrances", "게이트·여권·예약과 공원 안 실패 대처."],
       ["유리다리와 유리잔도 나누기", "zhangjiajie-glass-bridge-vs-skywalk", "서로 다른 세 장소·티켓·신체 경험."],
