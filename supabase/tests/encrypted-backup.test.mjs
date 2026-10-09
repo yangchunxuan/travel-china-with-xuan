@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import { spawn, execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { EventEmitter } from 'node:events';
 import { mkdtempSync, readFileSync, readdirSync, rmSync, statSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { PassThrough } from 'node:stream';
 import test from 'node:test';
 import { BACKUP_EXTENSIONS, BACKUP_SCHEMAS, PROJECT_REF, buildPgDumpInvocation, createEncryptedBackup, parseDatabaseUrl, runCli, validateAgeRecipient } from '../../tools/create-encrypted-backup.mjs';
 
@@ -23,6 +25,27 @@ function fakeDump(program, inspect = () => {}) {
     if (command !== 'pg_dump') return spawn(command, args, spawnOptions);
     inspect(args, spawnOptions);
     return spawn(process.execPath, ['-e', program], spawnOptions);
+  };
+}
+
+// Each write is a distinct stderr data event, even when OS pipe buffering would
+// coalesce a real process's writes. age still runs as the real encryption tool.
+function chunkedDump(chunks) {
+  return (command, args, childOptions) => {
+    if (command !== 'pg_dump') return spawn(command, args, childOptions);
+    const child = new EventEmitter();
+    child.stdout = new PassThrough(); child.stderr = new PassThrough();
+    child.exitCode = null; child.signalCode = null;
+    child.kill = signal => {
+      if (child.exitCode !== null || child.signalCode !== null) return false;
+      child.signalCode = signal; child.stdout.destroy(); child.stderr.destroy(); child.emit('close', null); return true;
+    };
+    queueMicrotask(() => {
+      child.stdout.end(fixtureBytes);
+      for (const chunk of chunks) child.stderr.write(chunk);
+      child.stderr.end(); child.exitCode = 1; child.emit('close', 1);
+    });
+    return child;
   };
 }
 
@@ -117,6 +140,55 @@ test('untrusted/expired TLS failures are classified without persisting credentia
     assert.deepEqual(readdirSync(configuration.outputDir), []);
     assert.ok(!JSON.stringify(result).includes('top-secret-password'));
     assert.ok(!JSON.stringify(result).includes('alice-fixture@example.invalid'));
+  }
+});
+
+const diagnosticCases = [
+  ['DATABASE_AUTH_FAILED', ['password authentication failed for user "fixture-user"', 'fe_sendauth: no password supplied', 'FATAL: Tenant or user not found']],
+  ['DATABASE_PERMISSION_DENIED', ['query failed: ERROR: permission denied for table refresh_tokens', 'query failed: ERROR: permission denied for schema auth', 'query would be affected by row-level security policy for table inquiries']],
+  ['DATABASE_VERSION_MISMATCH', ['aborting because of server version mismatch', 'unsupported server version: 18.0']],
+  ['DATABASE_SCHEMA_MISSING', ['no matching schemas were found for pattern "auth"', 'no matching extensions were found for pattern "pgcrypto"']],
+  ['DATABASE_CONNECTION_FAILED', ['could not translate host name "fixture.invalid" to address: Name or service not known', 'connection to server failed: Connection refused', 'connection to server failed: timeout expired', 'server closed the connection unexpectedly']],
+  ['DATABASE_STARTUP_REJECTED', ['FATAL: unsupported startup parameter: options', 'FATAL: unrecognized startup option: options']],
+];
+for (const [expected, reasons] of diagnosticCases) {
+  test(`pg_dump ${expected} is classified across split chunks without leaking or leaving partial files`, async () => {
+    for (const reason of reasons) {
+      const configuration = options(), split = Math.floor(reason.length / 2);
+      const chunks = [Buffer.from(`pg_dump: error: ${reason.slice(0, split)}`),
+        Buffer.from(`${reason.slice(split)}\n${dbUrl}\nalice-fixture@example.invalid\n`)];
+      const result = await createEncryptedBackup(configuration, {spawnProcess: chunkedDump(chunks)});
+      assert.equal(result.ok, false); assert.equal(result.status, 'critical'); assert.equal(codeOf(result), expected);
+      assert.deepEqual(readdirSync(configuration.outputDir), []);
+      assert.deepEqual(Object.keys(result).sort(), ['details','ok','severity','status']);
+      for (const forbidden of [reason, dbUrl, 'top-secret-password', 'alice-fixture@example.invalid']) {
+        assert.ok(!JSON.stringify(result).includes(forbidden), 'only a fixed diagnostic code may be returned');
+      }
+    }
+  });
+}
+
+test('split TLS errors override another recognized failure and unknown errors remain generic', async () => {
+  for (const [chunks, expected] of [
+    [['password authentication failed for user fixture\nSSL error: certifi', 'cate verify failed\n'], 'DATABASE_TLS_FAILED'],
+    [['unexpected dump failure: top-secret-password alice-fixture@example.invalid'], 'PG_DUMP_FAILED'],
+  ]) {
+    const configuration = options();
+    const result = await createEncryptedBackup(configuration, {spawnProcess: chunkedDump(chunks.map(chunk => Buffer.from(chunk)))});
+    assert.equal(codeOf(result), expected); assert.deepEqual(readdirSync(configuration.outputDir), []);
+    assert.ok(!JSON.stringify(result).includes('top-secret-password'));
+    assert.ok(!JSON.stringify(result).includes('alice-fixture@example.invalid'));
+  }
+});
+
+test('stderr classification never inspects bytes beyond the fixed 8192-byte prefix', async () => {
+  for (const chunks of [
+    [Buffer.alloc(8192, 120), Buffer.from('SSL error: certificate verify failed')],
+    [Buffer.concat([Buffer.alloc(8192, 120), Buffer.from('password authentication failed')])],
+  ]) {
+    const configuration = options();
+    const result = await createEncryptedBackup(configuration, {spawnProcess: chunkedDump(chunks)});
+    assert.equal(codeOf(result), 'PG_DUMP_FAILED'); assert.deepEqual(readdirSync(configuration.outputDir), []);
   }
 });
 
