@@ -66,7 +66,7 @@ const body = {
       "items": [
         "Ice and Snow World, 2025–26: RMB 328 standard adult; RMB 298 during the opening week (17–23 December 2025).",
         "Concession, RMB 240: children over 6 or taller than 1.2 m, full-time students aged 24 and under, and disabled visitors. The published rules name Chinese identity documents, so whether a foreign passport qualifies for a concession is not confirmed.",
-        "Free: children 1.2 m or shorter or aged 6 and under with a paying adult, and visitors aged 65 and over. Free places are reserved in the park’s official WeChat shop and identity is checked at entry.",
+        "2025–26 free admission: children 1.2 m or shorter or aged 6 and under with a paying adult, and visitors aged 65 and over. Eligible children did not need a reservation. Seniors needed their original Chinese ID card and an advance free-ticket reservation in the park’s official WeChat shop; whether a foreign passport qualifies for senior free admission is unconfirmed.",
         "Booking with a foreign passport: a Xinhua release at the 2025–26 opening said foreign visitors can book with a passport and overseas payment. Book only through the park’s official channels or a platform you trust, in each traveller’s passport name."
       ]
     },
