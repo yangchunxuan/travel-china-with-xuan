@@ -7,6 +7,7 @@ import {
   type TourCollectionId,
 } from "../lib/tourCollections";
 import { getTourCollectionsCopy } from "../lib/tourCollectionsI18n";
+import { getPrivateTourHubCopy } from "../lib/privateTourHubI18n";
 import {
   getNortheastWinterComparisonRows,
   northeastWinterComparisonCopy,
@@ -50,6 +51,7 @@ export function TourCollectionPage({ locale = "en", collectionId }: { locale?: H
         rows: getNortheastWinterComparisonRows(tours, locale),
       }
     : null;
+  const winterCardPriceCopy = winterComparison ? getPrivateTourHubCopy(locale, tours.length) : undefined;
   const days = tours.map((tour) => tour.days);
   const { tours: toursItem } = navigationFor(locale);
   // The other ways in (the Private Tours menu's rows), so phones that hide the menu rows still reach them.
@@ -105,7 +107,16 @@ export function TourCollectionPage({ locale = "en", collectionId }: { locale?: H
                   </div>
                 ) : null}
                 <ul className={[styles.tours, collectionId === "regions" ? sightStyles.denseTours : "", group.tours.length === 2 ? sightStyles.pairTours : ""].join(" ")}>
-                  {group.tours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
+                  {group.tours.map((tour, index) => (
+                    <TourCard
+                      index={index}
+                      key={tour.slug}
+                      locale={locale}
+                      priceCopy={winterCardPriceCopy}
+                      priceSeasonLabel={winterComparison?.copy.cardSeasonLabel}
+                      tour={tour}
+                    />
+                  ))}
                 </ul>
                 <TourPhotoCredits locale={locale} tours={group.tours} />
               </div>
