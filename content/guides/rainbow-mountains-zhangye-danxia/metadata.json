@@ -1,0 +1,102 @@
+{
+  "id": "rainbow-mountains-zhangye-danxia",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "zhangye",
+    "danxia",
+    "rainbow-mountains",
+    "tickets",
+    "sunset",
+    "silk-road"
+  ],
+  "destinations": [
+    "zhangye",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/zhangye-jiayuguan-dunhuang-7-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/zhangye-jiayuguan-dunhuang-7-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1067,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "rainbow mountains china",
+      "rainbow mountain china",
+      "zhangye danxia",
+      "zhangye danxia landform",
+      "zhangye national geopark"
+    ],
+    "zh": [
+      "张掖七彩丹霞",
+      "七彩丹霞门票",
+      "七彩丹霞日落时间"
+    ],
+    "ko": [
+      "장예 단샤",
+      "중국 무지개산"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/rainbow-mountains-zhangye-danxia/",
+      "title": "Rainbow Mountains in China: Zhangye Danxia Guide & Tickets",
+      "headline": "China's Rainbow Mountains at Zhangye Danxia: Where They Are, Tickets, Sunset and How to Visit",
+      "description": "China's Rainbow Mountains are the striped hills of Zhangye Danxia in Gansu. Where they are, ticket options, sunset times by month and how to fit them into a trip.",
+      "heroAlt": "Red and orange sandstone ridges under storm clouds at Zhangye Danxia, Gansu, with a visitor boardwalk on the right",
+      "navTitle": "Rainbow Mountains (Zhangye)",
+      "featuredLinkLabel": "Plan the Rainbow Mountains",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Zhangye",
+        "Rainbow Mountains",
+        "Silk Road"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/rainbow-mountains-zhangye-danxia/",
+      "title": "张掖七彩丹霞攻略：门票、观景台与日落时间",
+      "headline": "张掖七彩丹霞：在哪、门票怎么选、几点看日落、怎么安排",
+      "description": "张掖七彩丹霞就是外国人说的“中国彩虹山”。景区位置、普通票和深度游怎么选、每月日落时间，以及怎么放进河西走廊行程。",
+      "heroAlt": "乌云下甘肃张掖丹霞的红色砂岩山脊，右侧是游客栈道",
+      "navTitle": "张掖七彩丹霞",
+      "featuredLinkLabel": "规划七彩丹霞",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "张掖",
+        "七彩丹霞",
+        "丝绸之路"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/rainbow-mountains-zhangye-danxia/",
+      "title": "중국 무지개산 장예 단샤: 입장료, 전망대, 일몰 시간",
+      "headline": "중국 ‘무지개산’ 장예 칠채단샤: 위치, 입장권, 일몰, 가는 법",
+      "description": "중국 무지개산은 간쑤성 장예 단샤의 줄무늬 언덕입니다. 위치, 입장권 선택, 월별 일몰 시간과 여행 일정에 넣는 법을 정리했습니다.",
+      "heroAlt": "먹구름 아래 간쑤성 장예 단샤의 붉은 주황색 사암 능선과 오른쪽의 관람 데크",
+      "navTitle": "장예 단샤",
+      "featuredLinkLabel": "장예 단샤 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "장예",
+        "무지개산",
+        "실크로드"
+      ]
+    }
+  }
+}

@@ -88,6 +88,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "Continue planning", items: [
     { label: "Visiting the Mogao Caves independently", href: "/guides/mogao-caves-independent-visit-workflow/", description: "The reservation workflow itself, which this route guide deliberately does not repeat." },
+    { label: "Rainbow Mountains at Zhangye Danxia", href: "/guides/rainbow-mountains-zhangye-danxia/", description: "The striped hills between Lanzhou and Jiayuguan: tickets, sunset times and how long to stop." },
     { label: "Hub-and-spoke or multi-base routes in China", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Whether this corridor should be one line or two bases." },
     { label: "Building a rail-only route in China", href: "/guides/china-rail-only-route/", description: "If you would rather not fly any leg of this." },
     { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "The long leg is exactly the case this decision was written for." },
