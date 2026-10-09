@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import test from "node:test";
 import {
@@ -68,6 +68,7 @@ const northeastPreviewSlugs = [
   "harbin-snow-town-mohe-9-day-private-tour",
 ];
 const winterPublishedSlugs = [...northeastPreviewSlugs, "yanji-changbaishan-wanda-6-day-private-tour"];
+const jiangnanQuoteSlug = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,
@@ -204,7 +205,7 @@ test("legacy email-only and identity-only payloads retain their original semanti
 
 test("phase-one migration keeps canonical names, narrow JSON, atomic persistence and service-role grants", async () => {
   const sql = (await readFile(new URL("../migrations/202609210001_add_homeground_private_tour_expansion.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate) && !winterPublishedSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !phaseTwoSlugs.includes(candidate) && !longHaulSlugs.includes(candidate) && !winterPublishedSlugs.includes(candidate) && candidate !== jiangnanQuoteSlug)) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -254,7 +255,7 @@ test("phase-one migration keeps canonical names, narrow JSON, atomic persistence
 
 test("phase-two migration extends canonical identities and exact priced selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609210002_add_homeground_private_tour_expansion_phase_two.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate) && !winterPublishedSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !longHaulSlugs.includes(candidate) && !winterPublishedSlugs.includes(candidate) && candidate !== jiangnanQuoteSlug)) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -301,7 +302,7 @@ test("long-haul selection migration preserves every price row published at that 
     /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
   )?.[1];
   assert.ok(selectionCase);
-  for (const product of privateTourProducts.filter((candidate) => !winterPublishedSlugs.includes(candidate.slug))) {
+  for (const product of privateTourProducts.filter((candidate) => !winterPublishedSlugs.includes(candidate.slug) && candidate.slug !== jiangnanQuoteSlug)) {
     const branch = selectionCase.match(
       new RegExp(`when '${product.slug}' then\\s+([^\\n]+)`, "u"),
     )?.[1];
@@ -323,7 +324,7 @@ test("long-haul selection migration preserves every price row published at that 
 
 test("long-haul migration keeps every canonical identity and adds all long-haul selections", async () => {
   const sql = (await readFile(new URL("../migrations/202609250001_add_homeground_long_haul_tours.sql", import.meta.url), "utf8")).replace(/\r\n/g, "\n");
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !winterPublishedSlugs.includes(candidate))) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !winterPublishedSlugs.includes(candidate) && candidate !== jiangnanQuoteSlug)) {
     assert.ok(sql.includes(`when '${slug}'`), slug);
     for (const locale of ["en", "zh", "ko"]) {
       const context = getPrivateTourInquiryContext(slug, locale);
@@ -390,7 +391,7 @@ test("Northeast preview migration keeps every identity and adds exact eight-trav
   // Every earlier identity, including the Japanese names, is carried over verbatim.
   const previousNames = japaneseSql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
   assert.ok(productNames.startsWith(previousNames.replace(/    else null\n  end;\n\$\$;$/u, "")));
-  for (const slug of privateTourInquirySlugs.filter((candidate) => candidate !== "yanji-changbaishan-wanda-6-day-private-tour")) {
+  for (const slug of privateTourInquirySlugs.filter((candidate) => candidate !== "yanji-changbaishan-wanda-6-day-private-tour" && candidate !== jiangnanQuoteSlug)) {
     const branch = productNames.match(new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"))?.[1];
     assert.ok(branch, slug);
     for (const locale of ["en", "zh", "ko"]) {
@@ -410,7 +411,7 @@ test("Northeast preview migration keeps every identity and adds exact eight-trav
     /create or replace function homeground_private\.is_valid_private_tour_selection_v1[\s\S]*?select case p_slug([\s\S]*?)else false\s+end is true;/u,
   )?.[1];
   assert.ok(selectionCase.startsWith(previousSelection));
-  for (const product of [...privateTourProducts, ...privateTourPreviewProducts].filter((candidate) => candidate.slug !== "yanji-changbaishan-wanda-6-day-private-tour")) {
+  for (const product of [...privateTourProducts, ...privateTourPreviewProducts].filter((candidate) => candidate.slug !== "yanji-changbaishan-wanda-6-day-private-tour" && candidate.slug !== jiangnanQuoteSlug)) {
     const branch = selectionCase.match(new RegExp(`when '${product.slug}' then\\s+([^\\n]+)`, "u"))?.[1];
     const pricedPackages = product.packages.filter((tourPackage) => tourPackage.prices.length > 0);
     if (pricedPackages.length === 0) {
@@ -490,6 +491,37 @@ test("winter publication migration accepts all five routes and Japanese product 
   assert.match(sql, /begin;[\s\S]*commit;/u);
   assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
   assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
+});
+
+test("Jiangnan quote migration adds one identity after the winter release", async () => {
+  const migrations = new URL("../migrations/", import.meta.url);
+  const filename = "202610100001_add_jiangnan_quote_route.sql";
+  const [previous, sql, filenames] = await Promise.all([
+    readFile(new URL("202610090001_publish_northeast_winter_products.sql", migrations), "utf8"),
+    readFile(new URL(filename, migrations), "utf8"),
+    readdir(migrations),
+  ]);
+  assert.deepEqual(filenames.filter((name) => name.startsWith("202610100001_")), [filename]);
+  const nameFunction = /create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u;
+  const earlierNames = previous.replace(/\r\n/g, "\n").match(nameFunction)?.[0];
+  const currentNames = sql.replace(/\r\n/g, "\n").match(nameFunction)?.[0];
+  assert.ok(earlierNames && currentNames);
+  const added = currentNames.match(/    when 'suzhou-tongli-hangzhou-shanghai-12-day-private-tour' then case p_locale\n[\s\S]*?      else null end\n/u)?.[0];
+  assert.ok(added);
+  assert.equal(currentNames.replace(added, ""), earlierNames, "all earlier names, including Yanji, remain byte-for-byte unchanged");
+  for (const [locale, name] of Object.entries({
+    en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai",
+    zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程",
+    ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행",
+    ja: "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー",
+  })) {
+    assert.ok(added.includes(`when '${locale}' then '${name}'`), locale);
+  }
+  assert.doesNotMatch(sql, /beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/u);
+  assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
+  assert.doesNotMatch(sql, /create or replace function public\./u);
+  assert.match(sql, /begin;[\s\S]*commit;/u);
+  assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {
