@@ -776,11 +776,43 @@ export function getProductPlanningContext(
   };
 }
 
-/** Links the Northeast winter routes to nearby published tours and timing advice. */
-export function getNortheastWinterProductPlanningContext(locale: HomegroundLocale) {
+/** Give each winter route alternatives for the actual trade-off it presents. */
+const northeastWinterRelatedSlugs: Readonly<Record<string, readonly string[]>> = {
+  "harbin-yabuli-snow-town-6-day-private-tour": [
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+  ],
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": [
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "yanji-changbaishan-wanda-6-day-private-tour",
+  ],
+  "harbin-mohe-arctic-village-7-day-private-tour": [
+    "harbin-snow-town-mohe-9-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+  "harbin-snow-town-mohe-9-day-private-tour": [
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+  "yanji-changbaishan-wanda-6-day-private-tour": [
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+  ],
+};
+
+/** Link the current winter route to nearby published tours and timing advice. */
+export function getNortheastWinterProductPlanningContext(locale: HomegroundLocale, currentSlug: string) {
+  const relatedSlugs = northeastWinterRelatedSlugs[currentSlug];
+  if (!relatedSlugs) throw new Error(`Unknown Northeast winter route: ${currentSlug}`);
+  const comparisonLabel: Record<HomegroundLocale, string> = {
+    en: "Compare the 2026–27 Northeast winter routes",
+    zh: "比较 2026—27 雪季东北路线",
+    ko: "2026–27 중국 동북 겨울 코스 비교",
+  };
+
   return {
     destinations: [] as ExistingContentCommercialLink[],
-    guides: (["china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {
+    guides: (["china-in-winter", "china-climate-regions-for-trip-timing"] as const satisfies readonly GuideId[]).map((id) => {
       const guide = getGuideEntry(id, locale);
       return {
         id,
@@ -789,9 +821,13 @@ export function getNortheastWinterProductPlanningContext(locale: HomegroundLocal
       } satisfies ExistingContentCommercialLink;
     }),
     relatedProducts: [
-      p("harbin-winter-5-day-private-tour"),
-      p("changbaishan-yanji-winter-6-day-private-tour"),
-    ].map((target) => toProductLink(target, locale)),
+      {
+        id: "northeast-winter-route-comparison",
+        href: `${locale === "en" ? "" : `/${locale}`}/tours/seasonal/`,
+        label: comparisonLabel[locale],
+      },
+      ...relatedSlugs.map((slug) => toProductLink(p(slug), locale)),
+    ],
   };
 }
 
