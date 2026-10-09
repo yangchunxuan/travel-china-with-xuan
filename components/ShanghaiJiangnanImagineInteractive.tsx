@@ -215,11 +215,9 @@ type DeckStyle = CSSProperties & { "--deck-depth": number };
 export function ShanghaiJiangnanHeroDeck({
   product,
   photoCopy,
-  autoAdvance = true,
 }: {
   product: LocalizedPrivateTourProduct;
   photoCopy?: PhotoCopy;
-  autoAdvance?: boolean;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -250,12 +248,12 @@ export function ShanghaiJiangnanHeroDeck({
   }, []);
 
   useEffect(() => {
-    if (!autoAdvance || paused || hidden || reducedMotion || images.length < 2) return;
+    if (paused || hidden || reducedMotion || images.length < 2) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
     }, 3600);
     return () => window.clearInterval(timer);
-  }, [autoAdvance, images.length, paused, hidden, reducedMotion]);
+  }, [images.length, paused, hidden, reducedMotion]);
 
   const move = (delta: number) => {
     if (!images.length) return;

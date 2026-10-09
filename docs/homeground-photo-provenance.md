@@ -1812,3 +1812,26 @@ collection pages), matched to `docs/homeground-private-tour-card-derivatives.jso
   Guangzhou–Shunde–Foshan tour card). Canton Tower by day, with Haixin Bridge and the Pearl River.
 - Evidence boundary: the tower and bridge only; no claim about opening hours, lighting times or ticketing.
 
+## Jiangnan 12-day private tour: day photos (October 9, 2026)
+
+Five Wikimedia Commons photographs fill the itinerary days that had no
+photograph in the site library. Each source is the Commons 2400-pixel rendition
+(or the original where smaller); derivatives are resized to 1600 pixels wide at
+the source aspect ratio, not cropped, and saved as WebP without EXIF under
+`public/images/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/`.
+Credits are listed in `lib/privateTourJiangnanArtProduct.ts`.
+
+| Derivative | Source | Licence | Source SHA-256 | Derivative SHA-256 |
+| --- | --- | --- | --- | --- |
+| `yipu-1600.webp` (Day 3) | [China - Suzhou - Garden of Cultivation - Yanguang ge](https://commons.wikimedia.org/wiki/File:China_-_Suzhou_-_Garden_of_Cultivation_-_Yanguang_ge.jpg), Herr Klugbeisser, 2018-11 | CC BY-SA 4.0 | `950e346a1ae596289384daf146b2209a29f753ed8179427b533c02f0fb8f8ac0` | `971448cc5d206718555759f35fe1526b7ecf0c79bb946aedc3d7cb010b54671e` |
+| `tongli-canal-1600.webp` (Day 4) | [Tongli, China 20160331](https://commons.wikimedia.org/wiki/File:Tongli,_China_20160331.jpg), Jonathan Suh, 2016-03-31 | CC BY-SA 4.0 | `64b90d68c2f1b196849169874ec3ab55fe49046ecf8e76531fb6ed3eafd6fe21` | `29417168e14cd4f3b9ad2946f99e32cfadf0e1681e5173de5b68acc34198a6ce` |
+| `tongli-tuisi-1600.webp` (Day 4) | [2015-09-25-080503 - Tongli, Tuisi Yuan](https://commons.wikimedia.org/wiki/File:2015-09-25-080503_-_Tongli,_Tuisi_Yuan_-_%E2%80%9EGarten_des_Pension%C3%A4rs%E2%80%9C.jpg), Zossolino, 2015-09-25 | CC BY-SA 4.0 | `bc506790c664206d4692c25ee6ec0a9e78a05c41195b4558a7bc762f495fb170` | `287b4420ff365576aa509ccf9441cf78bfae3abca491ee38cdf48106e49148a9` |
+| `jewish-refugees-museum-1600.webp` (Day 9) | [Shanghai Jewish Refugees Museum courtyard](https://commons.wikimedia.org/wiki/File:Shanghai_Jewish_Refugees_Museum_courtyard.jpg), Difference engine, 2014-11-08 | CC BY-SA 4.0 | `072c426ce2289fdf879cd8baa8bf231ba79f2575f5730a28cb1ae58049db5c16` | `f2c77228134ce46c100315dd6ea24649c3dba0356bf5100f3a3b6e6db8e63d2c` |
+| `yangshupu-waterworks-1600.webp` (Day 11) | [YangshupuWaterworks4](https://commons.wikimedia.org/wiki/File:YangshupuWaterworks4.jpg), Poiuytre, 2017-12-01 | CC0 1.0 | `a847ea0bb016209c31f03a4a6d35512d9fb3e178d0888a2eb12af5342f288b94` | `fd5f771de96ccd3d0b39625bf09f32bc73948f6bb6abfa206e54cd03e08907a3` |
+
+The Yipu photo shows the garden's pond and waterside buildings; the caption does
+not identify which hall is the teahouse. The Jewish Refugees Museum photo
+predates the museum's 2020 refurbishment. The waterworks is a working plant seen
+from the street; the caption suggests the public riverside path, not entry.
+The Day 6 tea-hill photo already in the library was taken at Meijiawu; its
+caption names only the West Lake hills.
