@@ -2588,7 +2588,7 @@ const changbaishan: PrivateTourProduct = {
   packages: [standardPackage([], "standard-guided-winter")],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
-  metadataTitle: l("Changbaishan Winter Private Tour: 6 Days, North Slope, Yanji", "长白山冬季旅游6天私家团：北坡·延吉", "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어"),
+  metadataTitle: l("Changbai Mountain Winter Tour: 6-Day Private, North Slope", "长白山冬季旅游6天私家团：北坡·延吉", "백두산(창바이산)·북파·연길 6일 겨울 프라이빗 투어"),
   faq: [
     {
       question: l(

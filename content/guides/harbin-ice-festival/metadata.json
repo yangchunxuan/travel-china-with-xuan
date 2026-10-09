@@ -1,0 +1,101 @@
+{
+  "id": "harbin-ice-festival",
+  "type": "planning",
+  "pillar": "timing-events-natural-calendar",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "event-season-guide",
+  "topics": [
+    "ice-festival",
+    "winter",
+    "tickets",
+    "weather",
+    "trip-timing"
+  ],
+  "destinations": [
+    "harbin",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "when-to-go",
+    "family": "time",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "harbin ice festival",
+      "harbin ice festival 2027",
+      "harbin ice and snow world tickets",
+      "harbin ice festival dates"
+    ],
+    "zh": [
+      "哈尔滨冰雪节",
+      "哈尔滨冰雪大世界门票",
+      "冰雪大世界开园时间"
+    ],
+    "ko": [
+      "하얼빈 빙설제",
+      "하얼빈 빙설대세계 입장료",
+      "하얼빈 빙설제 기간"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/harbin-ice-festival/",
+      "title": "Harbin Ice Festival 2026–2027: Dates, Tickets & How to Visit",
+      "headline": "Harbin Ice Festival 2026–27: When It Opens, What It Costs and How to Visit",
+      "description": "Ice and Snow World opened 17–21 December in each of the last three seasons, and adult tickets were RMB 328 last winter. Dates, prices, weather and travel.",
+      "heroAlt": "Long ice slides at Harbin Ice and Snow World seen from above during the 2025–26 season, with the frozen Songhua River behind",
+      "navTitle": "Harbin Ice Festival",
+      "featuredLinkLabel": "Plan the Harbin Ice Festival",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Harbin",
+        "Ice and Snow World",
+        "December–February"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/harbin-ice-festival/",
+      "title": "2026–27 哈尔滨冰雪节：开园时间、门票价格与攻略",
+      "headline": "2026–27 哈尔滨冰雪节：什么时候开园、门票多少钱、怎么玩",
+      "description": "冰雪大世界过去三季都在 12 月 17 日至 21 日之间开园，上一季成人票 328 元。开园时间、票价、气温、交通和外国人入境一次看清。",
+      "heroAlt": "2025–26 季从高处看哈尔滨冰雪大世界的长冰滑梯，远处是封冻的松花江",
+      "navTitle": "哈尔滨冰雪节",
+      "featuredLinkLabel": "规划哈尔滨冰雪节行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "哈尔滨",
+        "冰雪大世界",
+        "12–2 月"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/harbin-ice-festival/",
+      "title": "2026–27 하얼빈 빙설제: 기간, 입장료, 가는 법",
+      "headline": "2026–27 하얼빈 빙설제: 언제 열리고 얼마이며 어떻게 가나",
+      "description": "빙설대세계는 지난 세 시즌 12월 17~21일에 개장했고 지난 시즌 성인 요금은 328위안이었습니다. 기간, 요금, 날씨, 교통을 정리했습니다.",
+      "heroAlt": "2025–26 시즌 위에서 내려다본 하얼빈 빙설대세계의 긴 얼음 미끄럼틀과 얼어붙은 쑹화강",
+      "navTitle": "하얼빈 빙설제",
+      "featuredLinkLabel": "하얼빈 빙설제 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "하얼빈",
+        "빙설대세계",
+        "12~2월"
+      ]
+    }
+  }
+}

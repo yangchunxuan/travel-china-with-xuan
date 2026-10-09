@@ -128,6 +128,10 @@ const body = {
       "title": "先核对出行时间",
       "items": [
         {
+          "label": "2026–27 哈尔滨冰雪节：开园时间与门票",
+          "href": "/zh/guides/harbin-ice-festival/"
+        },
+        {
           "label": "中国公共假日与旅行安排",
           "href": "/zh/guides/china-public-holidays-travel-calendar/"
         },
