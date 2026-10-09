@@ -211,7 +211,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter((product) => product.slug !== jaPilot.tourSlug)
       .map((product) => ({
         url: `${base}/ja/tours/${product.slug}/`,
-        lastModified: "2026-09-27",
+        lastModified: product.dateModified,
         changeFrequency: "weekly" as const,
         priority: 0.7,
         alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },

@@ -174,6 +174,41 @@ const body = {
       "body": "截至2026年9月10日，我们尚未确认2026—27雪季冰雪大世界的开园日期及活动安排。上一季公告和照片不能证明本季的日期、冰建筑或票价。若这个景点是此行核心，请等新公告确认后再锁定相关安排。"
     },
     {
+      "id": "northeast-routes-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "五条东北冬季路线，怎么选？"
+    },
+    {
+      "id": "northeast-routes-intro",
+      "type": "paragraph",
+      "text": "先看移动强度，再比较价格。两条漠河路线各有两晚硬卧夜车；另外三条住酒店。冰雪景点是否开放、滑雪安排和冬季路况，都要按你的日期在付款前核对。"
+    },
+    {
+      "id": "northeast-routes-compare",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "哈尔滨·亚布力·雪乡 6 天：滑一天雪、去雪乡，住 5 晚酒店，不坐夜车。",
+        "哈尔滨至长白山、延吉 8 天：在雪乡之后继续去长白山和延吉，住 7 晚酒店，但第 5 天有长途公路转场。",
+        "哈尔滨·漠河 7 天：去北红村和北极村，不去亚布力或雪乡；两晚住硬卧夜车。",
+        "哈尔滨·雪乡·漠河 9 天：雪乡和漠河都走，住 6 晚酒店、坐两晚硬卧夜车。",
+        "延吉·长白山·万达度假区 6 天：集中游览东北东部，不绕去哈尔滨。"
+      ]
+    },
+    {
+      "id": "northeast-routes-links",
+      "type": "internal-links",
+      "title": "比较五条 2026—27 雪季私家路线",
+      "items": [
+        { "label": "6 天：哈尔滨、亚布力、雪乡", "href": "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/" },
+        { "label": "8 天：哈尔滨、雪乡、长白山、延吉", "href": "/zh/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/" },
+        { "label": "7 天：哈尔滨、漠河、北极村", "href": "/zh/tours/harbin-mohe-arctic-village-7-day-private-tour/" },
+        { "label": "9 天：哈尔滨、雪乡、漠河", "href": "/zh/tours/harbin-snow-town-mohe-9-day-private-tour/" },
+        { "label": "6 天：延吉、长白山、万达度假区", "href": "/zh/tours/yanji-changbaishan-wanda-6-day-private-tour/" }
+      ]
+    },
+    {
       "id": "cities-heading",
       "type": "heading",
       "level": 2,

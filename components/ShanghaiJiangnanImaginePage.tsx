@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { ArrowRight, Check, Mail } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import {
+  getPrivateTourProduct,
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
   type PrivateTourLocale,
@@ -642,6 +643,20 @@ function schemaLanguage(locale: PrivateTourLocale | "ja") {
   return locale === "zh" ? "zh-Hans" : locale;
 }
 
+function japaneseNortheastWinterRelatedProducts(currentSlug: string) {
+  return getNortheastWinterProductPlanningContext("en", currentSlug).relatedProducts
+    .filter((link) => link.id !== "northeast-winter-route-comparison")
+    .map((link) => {
+      const relatedProduct = getPrivateTourProduct(link.id);
+      if (!relatedProduct) throw new Error(`Unknown related winter route: ${link.id}`);
+      return {
+        id: link.id,
+        href: `/ja/tours/${link.id}/`,
+        label: localizeJapanesePrivateTourProduct(relatedProduct).title,
+      };
+    });
+}
+
 const compactChineseRouteTitleSlugs = new Set([
   "beijing-xian-shanghai-8-day-private-tour",
   "beijing-xian-guilin-hong-kong-10-day-private-tour",
@@ -731,12 +746,16 @@ export function ShanghaiJiangnanImaginePage({
     destinations: [],
     guides: [{ id: jaPilot.guideId, href: jaPilot.guide, label: jaPresentation.planningGuideLabel }],
     relatedProducts: [],
+  } : japanese && isNortheastWinterTour(product.slug) ? {
+    destinations: [],
+    guides: [],
+    relatedProducts: japaneseNortheastWinterRelatedProducts(product.slug),
   } : japanese ? {
     destinations: [],
     guides: [],
     relatedProducts: [{ id: "ja-tour-hub", href: "/ja/tours/", label: "中国ツアー一覧を見る" }],
   } : isNortheastWinterTour(product.slug)
-    ? getNortheastWinterProductPlanningContext(sourceLocale)
+    ? getNortheastWinterProductPlanningContext(sourceLocale, product.slug)
     : localized.visibility === "preview"
       ? { destinations: [], guides: [], relatedProducts: [] }
     : getProductPlanningContext(
@@ -754,7 +773,7 @@ export function ShanghaiJiangnanImaginePage({
     productLabel: "ほかの旅も見る",
     productTitle: "中国各地の旅を比べる。",
     productBody: "行き先や日数の異なるツアーもご覧いただけます。",
-    related: "ツアー一覧",
+    related: isNortheastWinterTour(product.slug) ? "ほかの冬ツアー" : "ツアー一覧",
   } : getExistingContentCommercialCopy(sourceLocale);
   const homePath = locale === "en" ? "/" : `/${locale}/`;
   const tourHubPath = japanesePilot ? homePath : `${homePath}tours/`;

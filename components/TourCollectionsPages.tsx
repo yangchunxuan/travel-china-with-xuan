@@ -7,6 +7,10 @@ import {
   type TourCollectionId,
 } from "../lib/tourCollections";
 import { getTourCollectionsCopy } from "../lib/tourCollectionsI18n";
+import {
+  getNortheastWinterComparisonRows,
+  northeastWinterComparisonCopy,
+} from "../lib/northeastWinterComparison";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -40,6 +44,12 @@ export function TourCollectionPage({ locale = "en", collectionId }: { locale?: H
   const collection = copy.collections[collectionId];
   const groups = getTourCollectionGroups(collectionId, locale);
   const tours = groups.flatMap((group) => group.tours);
+  const winterComparison = collectionId === "seasonal"
+    ? {
+        copy: northeastWinterComparisonCopy[locale],
+        rows: getNortheastWinterComparisonRows(tours, locale),
+      }
+    : null;
   const days = tours.map((tour) => tour.days);
   const { tours: toursItem } = navigationFor(locale);
   // The other ways in (the Private Tours menu's rows), so phones that hide the menu rows still reach them.
@@ -110,6 +120,41 @@ export function TourCollectionPage({ locale = "en", collectionId }: { locale?: H
             </nav>
           ) : null}
         </section>
+
+        {winterComparison ? (
+          <section aria-labelledby="winter-route-comparison" className={`${styles.section} ${styles.winterComparison}`}>
+            <h2 id="winter-route-comparison">{winterComparison.copy.title}</h2>
+            <p className={styles.winterComparisonIntro}>{winterComparison.copy.intro}</p>
+            <div className={styles.winterComparisonScroll} role="region" aria-label={winterComparison.copy.title} tabIndex={0}>
+              <table className={styles.winterComparisonTable}>
+                <thead>
+                  <tr>
+                    <th scope="col">{winterComparison.copy.route}</th>
+                    <th scope="col">{winterComparison.copy.nights}</th>
+                    <th scope="col">{winterComparison.copy.fit}</th>
+                    <th scope="col">{winterComparison.copy.travel}</th>
+                    <th scope="col">{winterComparison.copy.price}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {winterComparison.rows.map(({ tour, nights }) => (
+                    <tr key={tour.slug}>
+                      <th scope="row"><Link href={tour.href}>{tour.title}</Link></th>
+                      <td>{nights}</td>
+                      <td>{tour.comparison.fit}</td>
+                      <td>{tour.comparison.pace}</td>
+                      <td className={styles.winterComparisonPrice}>
+                        <strong>{tour.twoTravellerPrice!.formatted}</strong>
+                        <span>{winterComparison.copy.priceBasis}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className={styles.winterComparisonNote}>{winterComparison.copy.priceNote}</p>
+          </section>
+        ) : null}
 
         <section aria-labelledby="collection-services-title" className={styles.cta} data-reveal="">
           <div>
