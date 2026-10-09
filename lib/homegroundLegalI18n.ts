@@ -93,9 +93,9 @@ const serviceTermsReviewed = {
 const guaranteeDays = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 
 const reservationGuarantee = {
-  en: `Guaranteed booking: if the request is sent and paid at least ${guaranteeDays} days before the visit date, Homeground guarantees the reservation. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full.`,
-  zh: `预约保证：在参观日前至少 ${guaranteeDays} 天提交需求并完成付款的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
-  ko: `예약 보장: 방문일 최소 ${guaranteeDays}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다.`,
+  en: `Guaranteed booking: if the request is sent and paid at least ${guaranteeDays} days before the visit date, Homeground guarantees the reservation, except at an attraction marked “best effort” on the service page. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full.`,
+  zh: `预约保证：在参观日前至少 ${guaranteeDays} 天提交需求并完成付款的，我们保证约到（服务页标注“尽力预约”的景点除外）；万一没约到，全额退还该景点的服务费和门票款。`,
+  ko: `예약 보장: 방문일 최소 ${guaranteeDays}일 전까지 요청과 결제를 마치시면 예약을 보장합니다(서비스 페이지에 ‘최선 시도’로 표시된 관광지는 제외). 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다.`,
 } as const;
 
 const reservationLate = {

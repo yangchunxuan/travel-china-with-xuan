@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 223,
-      "localeUrlCount": 661,
-      "generatedIdentityCount": 204,
+      "identityCount": 224,
+      "localeUrlCount": 664,
+      "generatedIdentityCount": 205,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2187,6 +2187,53 @@
               "boundary": "The Rainbow Mountains / Zhangye Danxia intent: where, the World Heritage mix-up, viewpoints, ticket types, sunset times, season, rules, access and days. Route order stays with xian-lanzhou-dunhuang-silk-road-route; Mogao booking with mogao-caves-independent-visit-workflow; tour pages keep product prices. Ticket prices are labelled as a June 2026 media report."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "hanging-temple",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Hanging Temple (Datong) guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "hanging-temple-datong",
+              "title": "Hanging Temple in China: Climbing Tickets and How to Visit",
+              "metadataPath": "content/guides/hanging-temple-datong/metadata.json",
+              "canonicalPath": "/guides/hanging-temple-datong/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/hanging-temple-datong/",
+                "/zh/guides/hanging-temple-datong/",
+                "/ko/guides/hanging-temple-datong/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "datong",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "datong"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Hanging Temple visit intent: entry versus climbing ticket, the 2026 daily cap and how it is sold, foreign-visitor booking, resale, the view without a climbing ticket, access and timing. Yungang stays with yungang-grottoes-cave-order-and-museum; general booking help with the booking guides; tour pages keep product prices. Prices are labelled as 2026 news reports."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2293,6 +2340,7 @@
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
         "guizhou-village-basketball-culture",
+        "hanging-temple-datong",
         "harbin-ice-festival",
         "hong-kong-macau-mainland-reentry-count",
         "hong-kong-macau-transport-route",

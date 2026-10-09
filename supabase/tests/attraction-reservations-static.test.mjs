@@ -76,7 +76,7 @@ test("every reservation rule is dated and traced to an existing guide", async ()
     assert.ok(reservations.attractionReservationCityIds.includes(rule.city), `${rule.id}: city`);
     if (rule.source) {
       assert.match(rule.verifiedAt, isoDate, `${rule.id}: verifiedAt`);
-      assert.ok(rule.verifiedAt <= "2026-09-30", `${rule.id}: verifiedAt is not in the future`);
+      assert.ok(rule.verifiedAt <= "2026-10-10", `${rule.id}: verifiedAt is not in the future`);
     } else {
       assert.equal(rule.verifiedAt, null, `${rule.id}: a row without a source guide has no check date`);
     }
@@ -127,6 +127,7 @@ test("published face values and release rules are copied from the source guide",
     "humble-administrators-garden": [/¥80 in April, May and July–October/u, /1–7 days before visiting/u],
     "li-river-cruise": [/RMB 215/u, /RMB 360/u, /15 days ahead/u],
     "jade-dragon-snow-mountain": [/RMB 100 entry plus a RMB 20 eco-bus/u, /RMB 120/u, /RMB 40/u, /daily at 20:00/u, /21:00/u, /4 March 2026/u],
+    "hanging-temple": [/"Climbing", "RMB 100"/u, /"RMB 15"/u, /up to 7 days ahead between 07:20 and 21:00/u, /half an hour before opening/u, /afternoon batch at 12:00/u, /2,475/u],
   };
   for (const [id, patterns] of Object.entries(expectedEvidence)) {
     const rule = reservations.getAttractionReservationRule(id);
@@ -290,9 +291,9 @@ test("the 8-day booking guarantee is stated once as data and repeated everywhere
   assert.doesNotMatch(legal, /\b8 days|8 天|8일/u);
   // Terms and refund & delivery: the guarantee and the later-request rule in every language.
   const { sections, constants } = legalReservationSections(legal);
-  assert.match(constants, /at least \$\{guaranteeDays\} days before the visit date, Homeground guarantees the reservation\. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full\./u);
-  assert.match(constants, /在参观日前至少 \$\{guaranteeDays\} 天提交需求并完成付款的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。/u);
-  assert.match(constants, /방문일 최소 \$\{guaranteeDays\}일 전까지 요청과 결제를 마치시면 예약을 보장합니다\. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다\./u);
+  assert.match(constants, /at least \$\{guaranteeDays\} days before the visit date, Homeground guarantees the reservation, except at an attraction marked “best effort” on the service page\. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full\./u);
+  assert.match(constants, /在参观日前至少 \$\{guaranteeDays\} 天提交需求并完成付款的，我们保证约到（服务页标注“尽力预约”的景点除外）；万一没约到，全额退还该景点的服务费和门票款。/u);
+  assert.match(constants, /방문일 최소 \$\{guaranteeDays\}일 전까지 요청과 결제를 마치시면 예약을 보장합니다\(서비스 페이지에 ‘최선 시도’로 표시된 관광지는 제외\)\. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다\./u);
   assert.match(constants, /later than \$\{guaranteeDays\} days before the visit is attempted but not guaranteed/u);
   assert.doesNotMatch(constants, bannedAbsolute);
   for (const locale of locales) {
@@ -545,4 +546,27 @@ test("the summary total is the displayed unit fee times people and attractions",
     assert.equal(total.replace(/\D/gu, ""), String(display.amount * 6), `${locale}: ${total}`);
     assert.throws(() => feeFormat.formatAttractionReservationFeeDisplay(display, 0));
   }
+});
+
+test("a best-effort attraction is tagged everywhere it is sold and promises a refund, not a booking", async () => {
+  const bestEffort = reservations.attractionReservationRules.filter((rule) => rule.bestEffort);
+  assert.deepEqual(bestEffort.map((rule) => rule.id), ["hanging-temple"]);
+  for (const rule of bestEffort) {
+    assert.equal(rule.status, "offered");
+    for (const locale of locales) {
+      assert.match(rule.disclosure[locale], { en: /^Best effort, not guaranteed/u, zh: /^尽力预约，不作保证/u, ko: /^최선 시도, 보장하지 않음/u }[locale]);
+      assert.match(rule.disclosure[locale], guaranteeRefund[locale]);
+    }
+  }
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    assert.match(copy.guarantee, { en: /except at an attraction marked “best effort”/u, zh: /标注“尽力预约”的景点除外/u, ko: /‘최선 시도’로 표시된 관광지는 제외/u }[locale]);
+    assert.ok(copy.bestEffortTag.trim(), `${locale}: tag`);
+    assert.match(copy.guideCta.bodyBestEffort, guaranteeRefund[locale]);
+    assert.doesNotMatch(copy.guideCta.bodyBestEffort, guaranteeLead[locale], `${locale}: no lead-time guarantee on a best-effort CTA`);
+  }
+  const [page, cta] = await Promise.all([source("components/AttractionReservationsPage.tsx"), source("components/content/GuideReservationCta.tsx")]);
+  assert.match(page, /rule\.bestEffort \? <span className=\{styles\.status\} data-status="best-effort">\{copy\.bestEffortTag\}<\/span>/u);
+  assert.match(page, /label: rule\.bestEffort \? `\$\{rule\.name\[locale\]\} · \$\{copy\.bestEffortTag\}`/u);
+  assert.match(cta, /rule\.bestEffort \? copy\.bodyBestEffort/u);
 });
