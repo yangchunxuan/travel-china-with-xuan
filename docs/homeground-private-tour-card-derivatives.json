@@ -789,19 +789,19 @@
     },
     {
       "productId": "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
-      "sourcePath": "public/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp",
-      "sourceSha256": "6ff4eb7ce5b59edef2dca421ab061696cf312fa7af37736ab70ac7adc9d55a72",
-      "rightsBasis": "Wikimedia Commons, Garosio33, CC0 1.0",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/xuexiang-blue.webp",
+      "sourceSha256": "359842c92b5e494e92619dfc33c54521455d39b05b73fc330d31481fc8873014",
+      "rightsBasis": "Wikimedia Commons, EditQ, CC0 1.0",
       "provenancePath": "docs/homeground-photo-provenance.md",
-      "provenanceNeedle": "public/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/xuexiang-blue.webp",
       "rightsEvidenceNeedle": "CC0 1.0",
       "dimensions": [
         "320x200",
         "640x400",
         "960x600",
-        "1380x862"
+        "1380x863"
       ],
-      "familySha256": "dcad1c2d6a89a812353aaf89b007cad50e31fa937207354c97d8ccd7490a733f"
+      "familySha256": "d0bb8ca0773ee40d305bf8e28afaf94393e9534ff8136aba3526f0ce39a16711"
     },
     {
       "productId": "harbin-mohe-arctic-village-7-day-private-tour",
@@ -821,35 +821,35 @@
     },
     {
       "productId": "harbin-snow-town-mohe-9-day-private-tour",
-      "sourcePath": "public/images/tours/harbin-winter-5-day-private-tour/saint-sophia-winter-1600.jpg",
-      "sourceSha256": "3939ff07079a4eb2b58ef427f5a23b569d056ae70dc47ad8eb809233e68e9003",
-      "rightsBasis": "Wikimedia Commons, Yan Enming, CC BY-SA 4.0",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/yabuli-chairlift.webp",
+      "sourceSha256": "70c6bd72432fd4dc4c7414b1e227ebe5255e7d7afff0d618b7711011f96b8e66",
+      "rightsBasis": "Wikimedia Commons, Cameraton Cleric, CC BY-SA 3.0",
       "provenancePath": "docs/homeground-photo-provenance.md",
-      "provenanceNeedle": "public/images/tours/harbin-winter-5-day-private-tour/saint-sophia-winter-1600.jpg",
-      "rightsEvidenceNeedle": "CC BY-SA 4.0",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/yabuli-chairlift.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
       "dimensions": [
         "320x200",
         "640x400",
         "960x600",
         "1380x863"
       ],
-      "familySha256": "be8ccb85751f1f1215fa53dacb4db1d6c76cc2f5d5e61407749c726809f1d9e6"
+      "familySha256": "c5c714138cf7eab3e17c661b45d1f8043392e7dfcb52fd8f44aa7eedb1511428"
     },
     {
       "productId": "yanji-changbaishan-wanda-6-day-private-tour",
-      "sourcePath": "public/images/tours/changbaishan-yanji-winter-6-day-private-tour/route-day-3-extra.webp",
-      "sourceSha256": "7f0a9165cdccec7e4a3564406807f658f0b416067c6df33861a804a163a2e355",
-      "rightsBasis": "Wikimedia Commons, Charlie fong, public domain dedication",
-      "provenancePath": "docs/homeground-photo-additions-2026-09-28-b.md",
-      "provenanceNeedle": "public/images/tours/changbaishan-yanji-winter-6-day-private-tour/route-day-3-extra.webp",
-      "rightsEvidenceNeedle": "public domain dedication",
+      "sourcePath": "public/images/tours/northeast-winter-2026-27/baekdu-winter.webp",
+      "sourceSha256": "436a659e6ce24122e534ccc1217853853ef6a7f5b343d65fab8eca646df39e4d",
+      "rightsBasis": "Wikimedia Commons, Farm, CC BY-SA 3.0",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/northeast-winter-2026-27/baekdu-winter.webp",
+      "rightsEvidenceNeedle": "CC BY-SA 3.0",
       "dimensions": [
         "320x200",
         "640x400",
         "960x600",
-        "1380x862"
+        "1380x863"
       ],
-      "familySha256": "e7f54500a2fbc2d706fd51bf12a5cedfb64be93996d8b2b297807bdbdcbfc10a"
+      "familySha256": "28e758cd38ee731ed1de6ff3caa17e6e01aa68794237e8b6779ddb66503eed53"
     }
   ]
 }

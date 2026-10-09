@@ -617,6 +617,48 @@
   top: 6.5rem;
 }
 
+.routeTextCard {
+  align-self: start;
+  background: var(--im-soft);
+  border: 1px solid var(--im-line);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  position: sticky;
+  top: 6.5rem;
+}
+
+.routeTextCard span {
+  color: var(--im-muted);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routeTextCard h4 {
+  color: var(--im-ink);
+  font-family: var(--font-editorial-serif), serif;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  font-weight: 520;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 1.5rem 0 1rem;
+}
+
+.routeTextCard p {
+  color: var(--im-muted);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 55ch;
+}
+
+.routeTextCard small {
+  color: var(--im-muted);
+  display: block;
+  margin-block-start: 1.5rem;
+}
+
 .routeImageFrame {
   aspect-ratio: 16 / 10;
   background: #e9e9e7;
@@ -1237,7 +1279,8 @@
     grid-template-columns: 1fr;
   }
 
-  .routeMedia {
+  .routeMedia,
+  .routeTextCard {
     display: none;
   }
 
