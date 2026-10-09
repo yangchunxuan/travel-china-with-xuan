@@ -44,6 +44,7 @@ import { japaneseDraftNote } from "../lib/japaneseSite";
 import { japaneseCurrencyNote } from "../lib/japaneseCurrencyNote";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
 import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
+import { japaneseJiangnanPhotoCreditSubjectsBySourceUrl } from "../lib/japaneseClientInspiredTourCopy";
 import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
 import { japaneseTourContactHrefs } from "../lib/japaneseTourContact";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
@@ -864,14 +865,18 @@ export function ShanghaiJiangnanImaginePage({
   const jaPresentation = jaPilotCopy.tour.presentation;
   const photoCreditCopy = japanese ? {
     title: japanesePilot ? jaPresentation.photoCreditsTitle : "写真クレジット",
-    intro: japanesePilot ? jaPresentation.photoCreditsIntro : "写真の出典と利用条件を掲載しています。",
+    intro: japanesePilot ? jaPresentation.photoCreditsIntro : "場所が確認できる外部写真の撮影者とライセンスを以下に記載しています。加えた変更は通常のトリミング、サイズ変更とWebP形式への変換のみです。CC BY-SA写真の変更版はリンク先と同じライセンスで公開します。",
     by: japanesePilot ? jaPresentation.photoCreditsBy : "撮影者：",
-    localNote: "",
+    localNote: japanesePilot ? "" : "その他の写真はHomegroundの素材ライブラリから選ばれ、サイト所有者がこのサイトでの使用を許可しています。",
   } : privateTourPhotoCreditCopy[sourceLocale];
   const photoCredits = getLocalizedPrivateTourPhotoCredits(product.slug, sourceLocale)
     .map((credit, index) => japanese ? {
       ...credit,
-      subject: japanesePilot ? jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject : `写真 ${index + 1}`,
+      subject: japanesePilot
+        ? jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject
+        : product.slug === JIANGNAN_ART_TOUR_SLUG
+          ? japaneseJiangnanPhotoCreditSubjectsBySourceUrl[credit.sourceUrl] ?? credit.subject
+          : `写真 ${index + 1}`,
     } : credit);
   const planningContext = japanesePilot ? {
     destinations: [],

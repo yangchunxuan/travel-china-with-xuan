@@ -7,12 +7,12 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
     metadataTitle: "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間",
     metadataDescription: "開園と同時に入る蘇州の庭園、同里での一泊、西湖と龍井の茶畑、そして上海での5泊。江南をたどる12日間・11泊のプライベートツアーを、日程に合わせてお見積もりします。",
     eyebrow: "文人の庭園、水郷の夜、茶畑、そして最後に上海",
-    lede: "開園と同時に拙政園へ、団体客より先に入ります。日帰り客が去った後も同里に泊まり、翌朝まで運河を独り占め。朝7時30分、西湖がにぎわう前に断橋へ。そして最後に上海で、この街が江南をどう作り変えたのかを見ます。",
-    summary: "蘇州3泊、同里1泊、杭州2泊、上海5泊を一方向にたどる12日間・11泊のプライベートツアーです。各都市の現地英語ガイドが終日8日間と同里の半日を担当し、全行程に専用車とドライバーが付きます。上海に自由行動日が1日あり、ショッピングの立ち寄りはありません。日程と人数に合わせてお見積もりします。",
+    lede: "開園と同時に拙政園へ、団体客より先に入ります。日帰り客が減る夕方も同里に泊まり、翌朝の静かな運河を歩きます。朝7時30分、西湖がにぎわう前に断橋へ。そして最後に上海で、この街が江南をどう作り変えたのかを見ます。",
+    summary: "蘇州3泊、同里1泊、杭州2泊、上海5泊を一方向にたどる12日間・11泊のプライベートツアーです。各都市の現地英語ガイドが終日8日間と同里の半日を担当し、送迎日とガイド付き観光日には専用車とドライバーが付きます。上海の自由行動日にはガイドも車も付かず、ショッピングの立ち寄りはありません。日程と人数に合わせてお見積もりします。",
     highlights: [
       "開園と同時に入る拙政園",
-      "日帰り客が去った後の同里に一泊",
-      "朝7時30分の西湖と、茶農家での1時間",
+      "日帰り客が減る夕方の同里に一泊",
+      "朝7時30分の西湖と、茶畑を歩く午後",
       "内側から見る上海：外灘の建物、里弄、虹口",
     ],
     itinerary: [
@@ -30,7 +30,7 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       },
       {
         title: "同里：水郷に一泊",
-        description: "車で40分。古い町には車が入れないため、荷物は運んでもらえます。現地ガイドと半日歩きます。官職を退いた官僚が造った退思園、今も婚礼の一行が縁起を担いで渡る太平・吉利・長慶の三橋、古い商家、そして舟。舟から見ると、運河は景色ではなく通りになります。ガイドは午後早くに離れます。夕方には日帰り客が帰り、翌朝まで町はあなたのもの。町での夕食1回を含みます。",
+        description: "車で40分。古い町には車が入れないため、荷物は運んでもらえます。現地ガイドと半日歩きます。官職を退いた官僚が造った退思園、今も婚礼の一行が縁起を担いで渡る太平・吉利・長慶の三橋、古い商家、そして舟。舟から見ると、運河は景色ではなく通りになります。ガイドは午後早くに離れます。夕方には日帰り客が減り、町に泊まって、より静かな夜と翌朝を味わえます。町での夕食1回を含みます。",
       },
       {
         title: "杭州へ：働く大運河",
@@ -38,7 +38,7 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       },
       {
         title: "朝7時30分の西湖、そして茶畑へ",
-        description: "朝7時30分、湖畔がにぎわう前に断橋から歩き始め、白堤を通って孤山と西泠印社へ。ガイドが千年以上にわたってこの湖に詠まれてきた詩を紹介します。舟で湖の島に渡り、蘇堤の一部を歩きます。昼食後は翁家山と龍井村の茶畑へ上り、茶農家で、いま歩いてきた斜面のお茶をいただきながら1時間過ごします。お茶を売るための立ち寄り先には行きません。続いて中国茶葉博物館へ。夕食は本格的な杭州料理で、料金に含まれます。",
+        description: "朝7時30分、湖畔がにぎわう前に断橋から歩き始め、白堤を通って孤山と西泠印社へ。ガイドが千年以上にわたってこの湖に詠まれてきた詩を紹介します。舟で湖の島に渡り、蘇堤の一部を歩きます。昼食後は翁家山と龍井村周辺の茶畑を歩きます。日程に合わせて茶農家の受け入れが可能なら、お茶をいただきながら1時間ほど過ごします。難しい場合は茶畑と中国茶葉博物館により長く立ち寄ります。お茶の販売を目的とした立ち寄り先には行きません。夕食は本格的な杭州料理で、料金に含まれます。",
       },
       {
         title: "高速鉄道で上海へ：旧城と豫園",
@@ -86,7 +86,7 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       },
       {
         question: "なぜ同里に一泊するのですか？",
-        answer: "日帰り客が帰ると、同里はまったく違う表情になるからです。半日のガイドと退思園や三橋を見て、さらに夕暮れと翌朝の静かな町も味わえます。蘇州から杭州へ後戻りせずに進める点でも自然なルートです。",
+        answer: "日帰り客が減ると、同里は違う表情を見せるからです。半日のガイドと退思園や三橋を見て、さらに夕暮れと翌朝のより静かな町も味わえます。蘇州から杭州へ後戻りせずに進める点でも自然なルートです。",
       },
       {
         question: "4つのホテルは確定ですか？",
@@ -94,7 +94,7 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       },
       {
         question: "日によって、季節によって変わることは？",
-        answer: "いくつかあり、一文ごとに注記するより、ここでまとめてお伝えします。博物館の休館日はご旅行日に照らして確認し、日ごとの順番を調整します。舟、茶館、網師園の夜の公演はそれぞれの運営時間によります。外灘の建物内部に入れるかは当日の公開状況次第です。上海博物館東館の展示室でのガイド解説には博物館の事前承認が必要なため、自由見学か、博物館が承認した解説員を利用します。歩高里は住民が暮らしているため通りから見ます。上海タワー展望台は空気が澄んだ夕方にだけおすすめします。龍井の上質な春茶は主に3〜4月に摘まれます。ほかの時期も茶畑を歩き茶農家で過ごせますが、茶摘みの様子はお約束できません。",
+        answer: "いくつかあり、一文ごとに注記するより、ここでまとめてお伝えします。博物館の休館日はご旅行日に照らして確認し、日ごとの順番を調整します。舟、茶館、網師園の夜の公演はそれぞれの運営時間によります。外灘の建物内部に入れるかは当日の公開状況次第です。上海博物館東館の展示室でのガイド解説には博物館の事前承認が必要なため、自由見学か、博物館が承認した解説員を利用します。歩高里は住民が暮らしているため通りから見ます。上海タワー展望台は空気が澄んだ夕方にだけおすすめします。龍井の春茶は主に3〜4月に摘まれます。茶農家への訪問は受け入れ状況を確認し、書面の行程で確定します。ほかの時期も茶畑を歩けますが、茶摘みや特定の斜面で採れたお茶はお約束できません。",
       },
       {
         question: "料金はどう決まりますか？",
@@ -119,13 +119,13 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       ] },
       { day: 3, variants: [{ label: "芸圃", alt: "蘇州・芸圃の池と、対岸に連なる水辺の建物", caption: "芸圃は小さく静かな庭園。地元の人がお茶を飲みに来ます。" }] },
       { day: 4, variants: [
-        { label: "同里の運河", alt: "同里の石積みの運河に並ぶ木の舟", caption: "夕方、日帰り客が帰っても、あなたは町に残ります。" },
+        { label: "同里の運河", alt: "同里の石積みの運河に並ぶ木の舟", caption: "日帰り客が減る夕方も、あなたは町に残ります。" },
         { label: "退思園", alt: "同里・退思園の楼閣と池", caption: "退思園、「退いて思う」という名の庭園。" },
       ] },
       { day: 5, variants: [{ label: "拱宸橋", alt: "杭州の大運河に架かる拱宸橋の三つの石のアーチ", caption: "運河の午後は拱宸橋から始まります。" }] },
       { day: 6, variants: [
         { label: "断橋", alt: "霧の朝の西湖、白堤東端の断橋", caption: "朝7時30分の断橋、湖畔がにぎわう前です。" },
-        { label: "茶畑", alt: "西湖周辺の山あい、古木の下で茶畑を抜ける石の小道", caption: "午後は茶畑に上り、茶農家で過ごします。" },
+        { label: "茶畑", alt: "西湖周辺の山あい、古木の下で茶畑を抜ける石の小道", caption: "午後は茶畑を歩き、可能であれば茶農家を訪ねます。" },
       ] },
       { day: 7, variants: [{ label: "豫園", alt: "上海・豫園の伝統的な建物と池", caption: "商人の街の庭園は、蘇州のすぐ後に見るのがいちばん面白い。" }] },
       { day: 8, variants: [
@@ -146,4 +146,21 @@ export const japaneseClientInspiredTourCopyBySlug: Readonly<Record<string, Japan
       summary: "朝食付き11泊、各都市の現地英語ガイド（終日8日間と同里の半日）、専用車とドライバー、杭州〜上海の高速鉄道、行程中のすべての入場券と舟、2回の夕食を含みます。日程に合わせてお見積もりします。",
     }],
   },
+});
+
+/** Source-keyed names for the Jiangnan page's Japanese photo credits. */
+export const japaneseJiangnanPhotoCreditSubjectsBySourceUrl: Readonly<Record<string, string>> = Object.freeze({
+  "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_Pingjiang_Road,_Suzhou.jpg": "蘇州・平江路",
+  "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg": "蘇州・拙政園",
+  "https://commons.wikimedia.org/wiki/File:Suzhoumuseum.jpg": "蘇州博物館の中庭",
+  "https://commons.wikimedia.org/wiki/File:China_-_Suzhou_-_Garden_of_Cultivation_-_Yanguang_ge.jpg": "蘇州・芸圃",
+  "https://commons.wikimedia.org/wiki/File:Tongli,_China_20160331.jpg": "同里の運河",
+  "https://commons.wikimedia.org/wiki/File:2015-09-25-080503_-_Tongli,_Tuisi_Yuan_-_%E2%80%9EGarten_des_Pension%C3%A4rs%E2%80%9C.jpg": "同里・退思園",
+  "https://commons.wikimedia.org/wiki/File:20231122_Gongchen_Bridge_01.jpg": "杭州・拱宸橋",
+  "https://commons.wikimedia.org/wiki/File:Broken_Bridge_(Hangzhou)_20250505.jpg": "西湖・断橋",
+  "https://commons.wikimedia.org/wiki/File:Yu_Garden_Shanghai_November_2017_002.jpg": "上海・豫園",
+  "https://commons.wikimedia.org/wiki/File:French_Concession,_Shanghai,_China_(9740638438).jpg": "上海・旧フランス租界",
+  "https://commons.wikimedia.org/wiki/File:Shanghai_Jewish_Refugees_Museum_courtyard.jpg": "上海ユダヤ難民記念館の中庭",
+  "https://commons.wikimedia.org/wiki/File:Shanghai_Museum_East.jpg": "上海博物館東館の外観",
+  "https://commons.wikimedia.org/wiki/File:YangshupuWaterworks4.jpg": "上海・楊樹浦浄水場",
 });

@@ -68,7 +68,7 @@ const tongliCanalPhoto = photo(
   1600,
   900,
   l("Wooden boats moored along a stone-lined canal in Tongli", "同里石砌河道里停靠的木船", "퉁리의 돌 운하에 정박한 나무배들"),
-  l("By late afternoon the day-trippers leave; you stay.", "傍晚一日游的人走了，你还在。", "늦은 오후 당일치기 여행객이 떠나도, 여러분은 남습니다."),
+  l("As day visits wind down, you stay the night.", "傍晚一日游的客人渐少，你还在镇上住一晚。", "저녁에 당일치기 방문객이 줄어들어도, 여러분은 마을에 머뭅니다."),
 );
 const tuisiGardenPhoto = photo(
   "/images/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/tongli-tuisi-1600.webp",
@@ -110,7 +110,7 @@ const teaHillsPhoto = photo(
   1600,
   1000,
   l("A stone path under old trees through tea terraces in the West Lake hills", "西湖群山里，老树下穿过茶垄的石板路", "서호 주변 산자락, 오래된 나무 아래 차밭 사이로 난 돌길"),
-  l("In the afternoon you climb into the tea hills and sit with a grower.", "下午上茶山，在茶农家坐一坐。", "오후에는 차밭에 올라 차 농가에 앉아 봅니다."),
+  l("The afternoon is for the tea hills; a grower visit is arranged if available.", "下午走茶山；能否到茶农家做客，要按日期确认。", "오후에는 차밭을 걷습니다. 차 농가 방문은 가능 여부에 따라 준비합니다."),
 );
 const yuGardenPhoto = photo(
   "/images/tours/shanghai-disneyland-5-day-private-tour/route-day-3.webp",
@@ -207,32 +207,32 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     "문인의 정원과 수향마을의 밤, 차밭을 지나 마지막에 상하이로",
   ),
   lede: l(
-    "Walk into the Humble Administrator's Garden as the gates open, ahead of the tour groups. Stay the night in Tongli after the day-trippers leave, so the canals are yours until morning. Reach Broken Bridge at 7:30, before West Lake fills up. Then let Shanghai show you what it made of all this.",
-    "拙政园一开门就进去，赶在旅行团前头。一日游的人散了，你还住在同里，整晚的河道都是你的。早上 7:30 走到断桥，西湖还没热闹起来。最后到上海，看这座城把江南变成了什么样。",
-    "졸정원 문이 열리자마자 단체 관광객보다 먼저 들어갑니다. 당일치기 여행객이 떠난 뒤에도 퉁리에 머물러, 다음 날 아침까지 물길을 온전히 누립니다. 아침 7시 30분, 서호가 붐비기 전에 단교에 닿습니다. 그리고 마지막으로 상하이에서, 이 도시가 강남을 어떻게 새로 만들었는지 봅니다.",
+    "Walk into the Humble Administrator's Garden as the gates open, ahead of the tour groups. Stay the night in Tongli as day visits wind down, and see its quieter canals at dusk and again in the morning. Reach Broken Bridge at 7:30, before West Lake fills up. Then let Shanghai show you what it made of all this.",
+    "拙政园一开门就进去，赶在旅行团前头。一日游的客人渐渐散去，你还住在同里，能看见傍晚和清晨更安静的河道。早上 7:30 走到断桥，西湖还没热闹起来。最后到上海，看这座城把江南变成了什么样。",
+    "졸정원 문이 열리자마자 단체 관광객보다 먼저 들어갑니다. 당일치기 방문객이 줄어드는 저녁에도 퉁리에 머물며, 이튿날 아침의 한결 조용한 운하를 만납니다. 아침 7시 30분, 서호가 붐비기 전에 단교에 닿습니다. 그리고 마지막으로 상하이에서, 이 도시가 강남을 어떻게 새로 만들었는지 봅니다.",
   ),
   summary: l(
-    "A 12-day, 11-night private journey in one direction: Suzhou 3 nights, Tongli 1, Hangzhou 2 and Shanghai 5. A local English-speaking guide in each city for eight full days and a Tongli half-day, a private car and driver throughout, one open day in Shanghai and no shopping stops. Quoted for your dates and group.",
-    "12 天 11 晚单向私家旅程：苏州 3 晚、同里 1 晚、杭州 2 晚、上海 5 晚。每座城市一位当地英语导游，共 8 个全天加同里半天；全程私车司机，上海留 1 天自由活动，不进购物店。按你的日期和人数报价。",
-    "쑤저우 3박, 퉁리 1박, 항저우 2박, 상하이 5박을 한 방향으로 잇는 11박 12일 프라이빗 여행입니다. 도시마다 현지 영어 가이드가 전일 8일과 퉁리 반일을 함께하고, 전 일정 전용 차량과 기사가 이동을 맡습니다. 상하이에는 자유일 하루가 있으며 쇼핑 일정은 없습니다. 날짜와 인원에 맞춰 견적을 드립니다.",
+    "A 12-day, 11-night private journey in one direction: Suzhou 3 nights, Tongli 1, Hangzhou 2 and Shanghai 5. A local English-speaking guide in each city for eight full days and a Tongli half-day, with a private car and driver on transfer and guided touring days. Shanghai has one open day without a guide or car, and there are no shopping stops. Quoted for your dates and group.",
+    "12 天 11 晚单向私家旅程：苏州 3 晚、同里 1 晚、杭州 2 晚、上海 5 晚。每座城市一位当地英语导游，共 8 个全天加同里半天；接送和导览日安排私车司机。上海留 1 天无导游、无车的自由活动，不进购物店。按你的日期和人数报价。",
+    "쑤저우 3박, 퉁리 1박, 항저우 2박, 상하이 5박을 한 방향으로 잇는 11박 12일 프라이빗 여행입니다. 도시마다 현지 영어 가이드가 전일 8일과 퉁리 반일을 함께하며, 이동일과 가이드 동행 관광일에는 전용 차량과 기사가 배정됩니다. 상하이 자유일에는 가이드와 차량이 없으며 쇼핑 일정도 없습니다. 날짜와 인원에 맞춰 견적을 드립니다.",
   ),
   highlights: lists(
     [
       "The Humble Administrator's Garden as the gates open",
-      "A night inside Tongli, after the day-trippers leave",
-      "West Lake at 7:30, then an hour in a tea grower's house",
+      "A night inside Tongli, as day visits wind down",
+      "West Lake at 7:30, then a walk in the tea hills",
       "Shanghai from the inside: Bund halls, lilong lanes, Hongkou",
     ],
     [
       "拙政园开门即入，赶在旅行团之前",
-      "在同里住一晚，一日游的人走后才是你的",
-      "7:30 的西湖，再到茶农家坐一小时",
+      "在同里住一晚，看看游客渐少后的水乡",
+      "7:30 的西湖，再到茶山走一走",
       "走进上海：外滩大楼、石库门里弄与虹口",
     ],
     [
       "개장과 동시에 들어가는 졸정원",
-      "당일치기 여행객이 떠난 뒤 퉁리에서 보내는 하룻밤",
-      "아침 7시 30분의 서호, 그리고 차 농가에서의 한 시간",
+      "당일치기 방문객이 줄어든 뒤 퉁리에서 보내는 하룻밤",
+      "아침 7시 30분의 서호, 그리고 차밭 산책",
       "안에서 보는 상하이: 와이탄 건물, 리룽 골목, 훙커우",
     ],
   ),
@@ -253,9 +253,9 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
       "오늘은 작은 것들을 봅니다. 그것이 이날의 의미입니다. 평범한 골목 끝에 숨은 명나라 정원 예포에는 물가 누각이 있어 쑤저우 사람들이 차를 마시러 오고, 여러분도 그 사이에 앉습니다. 이어 창랑정과 산탕제 중 한 곳을 그날 가이드와 함께 고릅니다. 오후에는 핑장루 옆 골목의 작은 곤극 박물관과 평탄 박물관에서 쑤저우의 소리를 듣고, 관첸제와 현묘관에서 평범한 쑤저우 사람들이 장을 보고 향을 올리는 모습으로 하루를 마칩니다.",
     )),
     day(4, l("Tongli: a night in the water town", "同里：在水乡住一晚", "퉁리: 수향마을에서 하룻밤"), l(
-      "Forty minutes by car. Cars stop outside the old town, so your bags are carried in for you. A local guide walks with you for half a day: Tuisi Garden, the Retreat and Reflection Garden, built by an official sent home from his post; the three bridges that local wedding parties still walk across for luck; an old merchant house; and a boat, so the canals read as streets, not scenery. Your guide leaves in the early afternoon. By late afternoon the day-trippers have gone, and the town is yours until morning. Dinner in town is included.",
-      "车程四十分钟。车开不进古镇，行李会有人帮你送进去。当地导游陪你走半天：退思园，一位丢了官职回乡的官员所造，名字取「退思补过」；太平、吉利、长庆三座桥，本地人办喜事至今还要走一遍讨个吉利；一处商人老宅；再坐一段船，让河道读起来像街道，而不是风景。导游午后离开。到了傍晚，一日游的人都走了，直到第二天早上，整座镇子都是你的。镇上晚餐包含在内。",
-      "차로 40분. 차는 옛 마을 안으로 들어갈 수 없어, 짐은 따로 옮겨 드립니다. 현지 가이드가 반나절 함께 걷습니다. 벼슬에서 물러난 관리가 지은 퇴사원, 지금도 결혼 행렬이 복을 빌며 건너는 태평·길리·장경 세 다리, 옛 상인의 집 한 채, 그리고 배. 배 위에서 보면 운하는 풍경이 아니라 거리입니다. 가이드는 이른 오후에 떠납니다. 늦은 오후가 되면 당일치기 여행객이 모두 돌아가고, 다음 날 아침까지 마을은 여러분의 것입니다. 마을에서의 저녁 식사가 포함됩니다.",
+      "Forty minutes by car. Cars stop outside the old town, so your bags are carried in for you. A local guide walks with you for half a day: Tuisi Garden, the Retreat and Reflection Garden, built by an official sent home from his post; the three bridges that local wedding parties still walk across for luck; an old merchant house; and a boat, so the canals read as streets, not scenery. Your guide leaves in the early afternoon. As day visits taper off, you can see a quieter evening and morning in town. Dinner in town is included.",
+      "车程四十分钟。车开不进古镇，行李会有人帮你送进去。当地导游陪你走半天：退思园，一位丢了官职回乡的官员所造，名字取「退思补过」；太平、吉利、长庆三座桥，本地人办喜事至今还要走一遍讨个吉利；一处商人老宅；再坐一段船，让河道读起来像街道，而不是风景。导游午后离开。傍晚一日游的客人渐渐少了，你留在镇上，看较安静的夜晚和第二天清晨。镇上晚餐包含在内。",
+      "차로 40분. 차는 옛 마을 안으로 들어갈 수 없어, 짐은 따로 옮겨 드립니다. 현지 가이드가 반나절 함께 걷습니다. 벼슬에서 물러난 관리가 지은 퇴사원, 지금도 결혼 행렬이 복을 빌며 건너는 태평·길리·장경 세 다리, 옛 상인의 집 한 채, 그리고 배. 배 위에서 보면 운하는 풍경이 아니라 거리입니다. 가이드는 이른 오후에 떠납니다. 늦은 오후에는 당일치기 방문객이 줄어들고, 여러분은 마을에 머물며 한결 조용한 저녁과 이튿날 아침을 맞습니다. 마을에서의 저녁 식사가 포함됩니다.",
     )),
     day(5, l("To Hangzhou: the Grand Canal at work", "去杭州：干活的大运河", "항저우로: 일하는 대운하"), l(
       "Two hours by car, with the same driver who met you at Hongqiao, so your bags never come out of the car. You are in Hangzhou by late morning. The afternoon is at Gongchen Bridge, Qiaoxi and Xiaohe Street: warehouses, boatmen's houses and the shops that once served the barges. This is water as work. Tomorrow is water as landscape.",
@@ -263,9 +263,9 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
       "차로 두 시간. 훙차오에서 맞이한 그 기사가 그대로 모시기 때문에 짐을 차에서 내릴 일이 없습니다. 오전 늦게 항저우에 닿습니다. 오후에는 궁천교, 차오시, 샤오허제를 걷습니다. 창고와 뱃사람들이 살던 집, 그리고 운하의 배들을 상대하던 가게들. 오늘은 일하는 물을, 내일은 풍경이 된 물을 봅니다.",
     )),
     day(6, l("West Lake at 7:30, then the tea hills", "7:30 的西湖，然后上茶山", "아침 7시 30분의 서호, 그리고 차밭"), l(
-      "Start at Broken Bridge at 7:30, before the lake fills with people, and walk Bai Causeway to Solitary Hill and the Xiling Seal Society while your guide brings the poems written about this water for more than a thousand years. Take a boat to the island, then walk a stretch of Su Causeway. After lunch, climb into the terraces above Wengjiashan and Longjing village and spend an hour in a grower's house, drinking tea from the slope you have just walked. We skip the stops that exist to sell you tea. Then the China National Tea Museum, and a proper Hangzhou dinner, included.",
-      "早上 7:30 从断桥出发，赶在湖边热闹起来之前；沿白堤走到孤山和西泠印社，导游一路讲一千多年来写给这片湖的诗。坐船上湖心的岛，再走一段苏堤。午饭后上翁家山、龙井村的茶山，在茶农家里坐一个小时，喝的就是你刚走过的那片坡上的茶。专门卖茶的点，我们不去。之后去中国茶叶博物馆，晚上一顿地道的杭州菜，包含在内。",
-      "아침 7시 30분, 호숫가가 붐비기 전에 단교에서 시작해 백제를 따라 고산과 서령인사까지 걷습니다. 가이드는 천 년 넘게 이 호수를 두고 쓰인 시들을 들려줍니다. 배를 타고 호수 가운데 섬에 들른 뒤 소제의 한 구간을 걷습니다. 점심 후에는 옹가산과 용정촌 위의 차밭에 올라, 차 농가에서 방금 걸어온 비탈의 차를 마시며 한 시간을 보냅니다. 차를 팔기 위한 곳에는 들르지 않습니다. 이어 중국차엽박물관을 둘러보고, 제대로 된 항저우 요리로 저녁을 먹습니다. 저녁 식사는 포함입니다.",
+      "Start at Broken Bridge at 7:30, before the lake fills with people, and walk Bai Causeway to Solitary Hill and the Xiling Seal Society while your guide brings the poems written about this water for more than a thousand years. Take a boat to the island, then walk a stretch of Su Causeway. After lunch, walk the tea terraces above Wengjiashan and Longjing village. If a grower can host you on your dates, sit down for about an hour over tea; otherwise, spend more time in the hills and at the China National Tea Museum. We skip stops that exist to sell you tea. A proper Hangzhou dinner is included.",
+      "早上 7:30 从断桥出发，赶在湖边热闹起来之前；沿白堤走到孤山和西泠印社，导游一路讲一千多年来写给这片湖的诗。坐船上湖心的岛，再走一段苏堤。午饭后走翁家山、龙井村一带的茶山。若茶农在你的日期方便接待，就坐下来喝约一小时茶；否则在茶山和中国茶叶博物馆多留些时间。专门卖茶的点，我们不去。晚上一顿地道的杭州菜，包含在内。",
+      "아침 7시 30분, 호숫가가 붐비기 전에 단교에서 시작해 백제를 따라 고산과 서령인사까지 걷습니다. 가이드는 천 년 넘게 이 호수를 두고 쓰인 시들을 들려줍니다. 배를 타고 호수 가운데 섬에 들른 뒤 소제의 한 구간을 걷습니다. 점심 후에는 옹가산과 용정촌 일대의 차밭을 걷습니다. 날짜에 맞춰 차 농가 방문이 가능하면 약 한 시간 동안 차를 마시고, 그렇지 않으면 차밭과 중국차엽박물관에서 더 시간을 보냅니다. 차 판매를 목적으로 한 곳에는 들르지 않습니다. 저녁에는 포함된 항저우 요리를 즐깁니다.",
     )),
     day(7, l("Fast train to Shanghai; the old city and Yu Garden", "高铁到上海：老城厢与豫园", "고속철로 상하이, 옛 성안과 예원"), l(
       "About an hour on the fast train, with a car waiting at both ends. The afternoon is in the old walled city and Yu Garden, and seeing it straight after Suzhou is the point. A Ming official built it for his parents; in the Qing dynasty the city's merchants bought it back, and by the late 1800s more than twenty trade guilds kept their halls here. A garden in a trading port, not a scholar's retreat, and it shows.",
@@ -404,9 +404,9 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     {
       question: l("Why spend a night in Tongli rather than visit for a few hours?", "为什么在同里住一晚，而不是半日往返？", "퉁리에서 당일치기 대신 왜 1박하나요?"),
       answer: l(
-        "Because Tongli changes once the day-trippers leave. With your half-day guide you see Tuisi Garden and the three bridges; by staying the night you also have the town at dusk, and again in the quiet of the next morning. It keeps the route moving forward from Suzhou to Hangzhou, too, with no doubling back.",
-        "因为一日游的人走了之后，同里就换了一副样子。半天导览看退思园和三桥；住一晚，你还能看到黄昏的同里，和第二天清早安静的同里。路线也顺着从苏州往杭州走，不用折返。",
-        "당일치기 여행객이 떠나면 퉁리는 전혀 다른 얼굴이 되기 때문입니다. 반일 가이드와 퇴사원, 세 다리를 보고, 하룻밤 머물며 해 질 녘과 이튿날 고요한 아침의 퉁리까지 만납니다. 쑤저우에서 항저우로 향하는 동선도 되돌아가는 일 없이 자연스럽게 이어집니다.",
+        "Because Tongli changes as day visits wind down. With your half-day guide you see Tuisi Garden and the three bridges; by staying the night you also have the town at dusk, and again in the quieter morning. It keeps the route moving forward from Suzhou to Hangzhou, too, with no doubling back.",
+        "一日游的客人渐少时，同里有另一种节奏。半天导览看退思园和三桥；住一晚，你还能看到黄昏的同里，和第二天清早较安静的同里。路线也顺着从苏州往杭州走，不用折返。",
+        "당일치기 방문객이 줄어들면 퉁리의 분위기도 달라지기 때문입니다. 반일 가이드와 퇴사원, 세 다리를 보고, 하룻밤 머물며 해 질 녘과 이튿날 한결 조용한 아침의 퉁리까지 만납니다. 쑤저우에서 항저우로 향하는 동선도 되돌아가는 일 없이 자연스럽게 이어집니다.",
       ),
     },
     {
@@ -420,9 +420,9 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     {
       question: l("What depends on the day or the season?", "哪些要看当天或季节？", "날짜나 계절에 따라 달라지는 것은 무엇인가요?"),
       answer: l(
-        "A few things, and we would rather say so once here than in every line. Museum closing days are checked against your dates, and the order of the days moves around them. Boats, teahouses and the evening performance at the Master of the Nets Garden keep their own schedules. Access inside the Bund buildings depends on the day. At Shanghai Museum East, guiding in the galleries needs the museum's approval, so you explore on your own or with a museum-approved guide. Bugaoli is lived in, so it is seen from the street. Top of Shanghai is worth it only on a clear evening. And Longjing's prized spring tea is picked mainly in March and April; at other times you still walk the terraces and sit with a grower, but we cannot promise a harvest to watch.",
-        "有几样，我们宁可在这里一次说清，也不在每一行里加注。博物馆闭馆日会按你的日期核对，每天的先后顺序围着它调整。游船、茶馆和网师园的晚间演出各有各的时间。外滩几栋大楼能不能进内部，要看当天开放情况。上海博物馆东馆的展厅讲解需要馆方事先批准，所以馆内自行参观，或请馆方认可的讲解员。步高里有居民，只在街上看。上海之巅只在天气通透的傍晚才值得上。龙井最好的春茶主要在三、四月采；其他时候你一样能走茶山、去茶农家坐，但能不能看到采茶，我们不保证。",
-        "몇 가지가 있으며, 문장마다 단서를 달기보다 여기서 한 번에 말씀드립니다. 박물관 휴관일은 여행 날짜에 맞춰 확인하고, 일정 순서를 그에 맞춰 조정합니다. 배, 찻집, 망사원의 저녁 공연은 각자의 운영 시간이 있습니다. 와이탄 건물의 실내 출입은 그날의 개방 상황에 따라 다릅니다. 상하이박물관 동관의 전시실 해설은 박물관의 사전 승인이 필요해 자유 관람하거나 박물관이 승인한 해설사를 이용합니다. 부가오리는 주민이 사는 곳이라 거리에서만 봅니다. 상하이 타워 전망대는 하늘이 맑은 저녁에만 권합니다. 용정의 귀한 봄차는 주로 3~4월에 수확합니다. 다른 때에도 차밭을 걷고 차 농가에 앉을 수 있지만, 찻잎 따는 모습은 약속드릴 수 없습니다.",
+        "A few things, and we would rather say so once here than in every line. Museum closing days are checked against your dates, and the order of the days moves around them. Boats, teahouses and the evening performance at the Master of the Nets Garden keep their own schedules. Access inside the Bund buildings depends on the day. At Shanghai Museum East, guiding in the galleries needs the museum's approval, so you explore on your own or with a museum-approved guide. Bugaoli is lived in, so it is seen from the street. Top of Shanghai is worth it only on a clear evening. Longjing's prized spring tea is picked mainly in March and April; a grower visit depends on availability and is confirmed in your written plan. You can still walk the terraces at other times, but neither tea picking nor tea from a particular slope is promised.",
+        "有几样，我们宁可在这里一次说清，也不在每一行里加注。博物馆闭馆日会按你的日期核对，每天的先后顺序围着它调整。游船、茶馆和网师园的晚间演出各有各的时间。外滩几栋大楼能不能进内部，要看当天开放情况。上海博物馆东馆的展厅讲解需要馆方事先批准，所以馆内自行参观，或请馆方认可的讲解员。步高里有居民，只在街上看。上海之巅只在天气通透的傍晚才值得上。龙井春茶主要在三、四月采；茶农能否接待，要看当时情况，并写进你的书面行程。其他时候仍可走茶山，但不保证能看到采茶，也不承诺喝到来自某一片山坡的茶。",
+        "몇 가지가 있으며, 문장마다 단서를 달기보다 여기서 한 번에 말씀드립니다. 박물관 휴관일은 여행 날짜에 맞춰 확인하고, 일정 순서를 그에 맞춰 조정합니다. 배, 찻집, 망사원의 저녁 공연은 각자의 운영 시간이 있습니다. 와이탄 건물의 실내 출입은 그날의 개방 상황에 따라 다릅니다. 상하이박물관 동관의 전시실 해설은 박물관의 사전 승인이 필요해 자유 관람하거나 박물관이 승인한 해설사를 이용합니다. 부가오리는 주민이 사는 곳이라 거리에서만 봅니다. 상하이 타워 전망대는 하늘이 맑은 저녁에만 권합니다. 용정 봄차는 주로 3~4월에 수확합니다. 차 농가 방문은 가능 여부를 확인해 서면 일정에 넣으며, 다른 시기에도 차밭을 걸을 수 있지만 찻잎 따기나 특정 비탈에서 난 차를 약속하지는 않습니다.",
       ),
     },
     {
@@ -434,8 +434,8 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
       ),
     },
   ],
-  datePublished: "2026-10-09",
-  dateModified: "2026-10-09",
+  datePublished: "2026-10-10",
+  dateModified: "2026-10-10",
 };
 
 const ccBy2 = "https://creativecommons.org/licenses/by/2.0/";
