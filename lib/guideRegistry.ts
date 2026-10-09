@@ -1076,10 +1076,10 @@ export const legacyGuideRegistry = [
     locales: {
       en: {
         path: "/guides/do-you-need-a-tour-guide-in-china/",
-        title: "Do You Need a Tour Guide in China? When It’s Worth It",
+        title: "Do You Need a Tour Guide in China? Which Days It's Worth It",
         headline: "Do You Need a Tour Guide in China—or Better Trip Support?",
         description:
-          "You do not need a guide every day in China. See when a private guide, driver or full-trip planning support is worth it for a first visit.",
+          "Most days, no. A guide pays off at places like the Forbidden City and the Terracotta Warriors; a driver or planning help solves other days. How to choose.",
         heroAlt:
           "Historic Buddhist sculptures carved into the rock at the Longmen Grottoes in Luoyang.",
         navTitle: "China tour guide decision guide",

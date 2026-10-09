@@ -35,9 +35,9 @@
   "locales": {
     "en": {
       "path": "/guides/passport-name-across-china-bookings/",
-      "title": "Use Your Passport Name for China Flights, Trains and Hotels",
+      "title": "Passport Name on China Train, Flight and Hotel Bookings",
       "headline": "Passport Names Across China Bookings: Flights, Trains, Hotels and Apps",
-      "description": "Create one passport-based identity record, handle name-field limits carefully and correct mismatches before travel instead of guessing.",
+      "description": "Book in the name on the passport you will carry, but follow each system's fields. What must match for 12306, airlines and hotels, and if a name gets cut off.",
       "heroAlt": "Editorial illustration of one passport identity line connecting flight, train and hotel bookings.",
       "navTitle": "Passport name on bookings",
       "featuredLinkLabel": "Keep booking names consistent",
