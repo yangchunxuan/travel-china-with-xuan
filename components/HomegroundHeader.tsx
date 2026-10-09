@@ -7,12 +7,11 @@ import { requestNewsletterLanguageTransfer } from "../lib/newsletterPrompt";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import {
-  Fragment,
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type MouseEvent as ReactMouseEvent,
 } from "react";
 import {
@@ -32,6 +31,7 @@ import {
 import {
   getHomegroundNavigationModel,
   type HomegroundPrimaryNavigationId,
+  type HomegroundPrimaryNavigationItem,
   type HomegroundSubmenuId,
 } from "../lib/homegroundNavigationModel";
 import { routeServiceIds } from "../lib/routeServiceInterest";
@@ -74,6 +74,7 @@ export type HomegroundPageContext =
   | "content";
 
 type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja";
+type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
 
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
@@ -198,6 +199,8 @@ export function HomegroundHeader({
   const pathname = usePathname();
   const articleId = guideTourEntryId(pathname);
   const [open, setOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<MobileSectionId | null>(null);
+  const [entered, setEntered] = useState(false);
   useEffect(() => {
     setNavigationMenuOpen(open);
     return () => setNavigationMenuOpen(false);
@@ -208,6 +211,7 @@ export function HomegroundHeader({
   const [languageQuery, setLanguageQuery] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
+  const mobileMenuScrollRef = useRef<HTMLDivElement | null>(null);
   const copy = getHomegroundCopy(locale);
   const plannerCta = resolvePlannerCta(
     copy,
@@ -405,6 +409,70 @@ export function HomegroundHeader({
   }, [pageContext]);
 
   useEffect(() => {
+    setExpandedSection(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) {
+      setExpandedSection(null);
+      setEntered(false);
+      return;
+    }
+
+    let enteredFrame = 0;
+    const firstFrame = window.requestAnimationFrame(() => {
+      enteredFrame = window.requestAnimationFrame(() => setEntered(true));
+    });
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(enteredFrame);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open || !expandedSection) return;
+
+    const keepExpandedSectionVisible = () => {
+      const scrollArea = mobileMenuScrollRef.current;
+      const section = scrollArea?.querySelector<HTMLElement>(
+        `[data-section="${expandedSection}"]`,
+      );
+      if (!scrollArea || !section) return;
+
+      const scrollBounds = scrollArea.getBoundingClientRect();
+      const sectionBounds = section.getBoundingClientRect();
+      const panel = section.querySelector<HTMLElement>(`#mobile-section-${expandedSection}`);
+      const panelContent = panel?.firstElementChild;
+      // At 260ms the grid is still opening. Measure the content's full height
+      // so the scroll target accounts for the rest of the expansion.
+      const expandedHeight = sectionBounds.height - (panel?.getBoundingClientRect().height ?? 0)
+        + (panelContent instanceof HTMLElement ? panelContent.scrollHeight : 0);
+      const sectionBottom = sectionBounds.top + expandedHeight;
+      const sectionStartsAboveView = sectionBounds.top < scrollBounds.top + 12;
+      if (sectionBottom <= scrollBounds.bottom && !sectionStartsAboveView) return;
+
+      const sectionTop = scrollArea.scrollTop + sectionBounds.top - scrollBounds.top;
+      const targetTop = expandedHeight > scrollArea.clientHeight || sectionStartsAboveView
+        ? sectionTop - 12
+        : scrollArea.scrollTop + sectionBottom - scrollBounds.bottom + 12;
+      scrollArea.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    };
+    const scrollTimer = window.setTimeout(keepExpandedSectionVisible, 260);
+    // A still-growing scroll area can clamp the first target. Once the grid
+    // settles, correct only if the section's bottom remains out of view.
+    const settleTimer = window.setTimeout(keepExpandedSectionVisible, 520);
+    return () => {
+      window.clearTimeout(scrollTimer);
+      window.clearTimeout(settleTimer);
+    };
+  }, [expandedSection, open]);
+
+  useEffect(() => {
     if (!open) return;
 
     const previousRootOverflow = document.documentElement.style.overflow;
@@ -452,7 +520,7 @@ export function HomegroundHeader({
         header.querySelectorAll<HTMLElement>(
           'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
         ),
-      ).filter((element) => element.getClientRects().length > 0);
+      ).filter((element) => element.getClientRects().length > 0 && !element.closest("[inert]"));
       const first = focusable[0];
       const last = focusable.at(-1);
       if (!first || !last) return;
@@ -562,6 +630,14 @@ export function HomegroundHeader({
       (locale === "en") !== (targetLocale === "en");
     const handleClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
       handleLanguageChange(event, targetLocale);
+    const label = (
+      <>
+        <span className={styles.languageChoiceShort}>{target.languageShort}</span>
+        <span className={styles.languageChoiceEndonym}>
+          {targetLocale === "en" ? target.languageName : target.languageShort}
+        </span>
+      </>
+    );
 
     // English and localized pages use different root layouts. A plain anchor
     // lets the browser perform that required document navigation reliably;
@@ -575,7 +651,7 @@ export function HomegroundHeader({
         lang={target.htmlLang}
         onClick={handleClick}
       >
-        {target.languageShort}
+        {label}
       </a>
     ) : (
       <Link
@@ -586,7 +662,7 @@ export function HomegroundHeader({
         lang={target.htmlLang}
         onClick={handleClick}
       >
-        {target.languageShort}
+        {label}
       </Link>
     );
   };
@@ -600,6 +676,100 @@ export function HomegroundHeader({
       日本語
     </a>
   ) : null;
+
+  const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
+    const state = navItemState(item.id);
+    const current = state.exact ? "page" : state.active ? "location" : undefined;
+    const menu = submenuFor(item.id);
+    if (!menu) {
+      return (
+        <li
+          className={styles.mobileSection}
+          data-section={item.id}
+          data-current={state.active ? "true" : undefined}
+          key={item.id}
+          style={{ "--menu-index": index } as CSSProperties}
+        >
+          <Link
+            aria-current={current}
+            className={styles.mobileSectionLink}
+            href={item.href}
+            onClick={() => {
+              trackNavigationClick(item.id, "mobile-primary");
+              close();
+            }}
+          >
+            <span className={styles.mobileSectionLabel}>{item.label}</span>
+          </Link>
+        </li>
+      );
+    }
+
+    const menuId = item.id as MobileSectionId;
+    const label = menuId === "services" ? copy.navigation.mobileServicesLabel : item.label;
+    const expanded = expandedSection === menuId;
+    return (
+      <li
+        className={styles.mobileSection}
+        data-section={item.id}
+        data-open={expanded ? "true" : undefined}
+        data-current={state.active ? "true" : undefined}
+        key={item.id}
+        style={{ "--menu-index": index } as CSSProperties}
+      >
+        <button
+          type="button"
+          id={`mobile-section-toggle-${menuId}`}
+          className={styles.mobileSectionToggle}
+          aria-expanded={expanded}
+          aria-controls={`mobile-section-${menuId}`}
+          onClick={() => setExpandedSection((currentSection) =>
+            currentSection === menuId ? null : menuId,
+          )}
+        >
+          <span className={styles.mobileSectionLabel}>{label}</span>
+        </button>
+        <div
+          id={`mobile-section-${menuId}`}
+          className={styles.mobileSectionPanel}
+          role="region"
+          aria-labelledby={`mobile-section-toggle-${menuId}`}
+          inert={!expanded}
+        >
+          <div>
+            <ul aria-label={label} className={styles.mobileSubmenu} data-menu={menuId}>
+              {menu.entries.map((entry, entryIndex) => (
+                <li
+                  key={entry.id}
+                  style={{ "--entry-index": entryIndex } as CSSProperties}
+                >
+                  <MenuLink
+                    aria-current={
+                      entry.href.includes("?")
+                        ? undefined
+                        : entry.href.split(/[?#]/u)[0] === pathname
+                          ? "page"
+                          : pathname?.startsWith(entry.href.split(/[?#]/u)[0])
+                            ? "location"
+                            : undefined
+                    }
+                    href={entry.href}
+                    onClick={() => {
+                      trackNavigationClick(entry.id, `mobile-${menuId}-menu`);
+                      close();
+                    }}
+                  >
+                    <span className={styles.mobileEntryLabel}>{entry.label}</span>
+                    <span className={styles.mobileEntryDescription}>{entry.description}</span>
+                  </MenuLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </li>
+    );
+  };
 
   return (
     <>
@@ -740,7 +910,9 @@ export function HomegroundHeader({
               setOpen((current) => !current);
             }}
           >
-            {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
           </button>
         </div>
         </div>
@@ -751,114 +923,78 @@ export function HomegroundHeader({
           className={styles.mobileNav}
           aria-label={copy.navigation.mobileLabel}
           hidden={!open}
+          data-entered={entered ? "true" : undefined}
         >
-          <div className={styles.mobilePrimaryLinks}>
-            {primaryNavigation.items.map((item) => {
-              const state = navItemState(item.id);
-              const link = (
+          <div
+            ref={mobileMenuScrollRef}
+            className={styles.mobileMenuScroll}
+            data-has-open={expandedSection ? "true" : undefined}
+          >
+            <ul className={styles.mobileSections} data-tier="primary">
+              {primaryNavigation.items
+                .filter((item) => item.id !== "guides" && item.id !== "studio")
+                .map((item, index) => renderMobileSection(item, index))}
+            </ul>
+            <ul className={styles.mobileSections} data-tier="secondary">
+              {primaryNavigation.items
+                .filter((item) => item.id === "guides" || item.id === "studio")
+                .map((item, index) => renderMobileSection(item, index + 3))}
+              <li
+                className={styles.mobileSection}
+                data-section="faq"
+                data-current={pageContext === "home" && activeHash === "#faq" ? "true" : undefined}
+                style={{ "--menu-index": 5 } as CSSProperties}
+              >
                 <Link
                   aria-current={
-                    state.exact ? "page" : state.active ? "location" : undefined
+                    pageContext === "home" && activeHash === "#faq"
+                      ? "location"
+                      : undefined
                   }
-                  data-active={state.active ? "true" : undefined}
-                  data-has-submenu={submenuFor(item.id) ? item.id : undefined}
-                  href={item.href}
-                  key={item.id}
-                  onClick={() => {
-                    trackNavigationClick(item.id, "mobile-primary");
+                  className={styles.mobileSectionLink}
+                  href={faqHref}
+                  onClick={(event) => {
+                    trackNavigationClick("faq", "mobile-utility");
                     close();
+                    if (pageContext === "home") {
+                      handleHomegroundHashClick(event, "#faq");
+                    }
                   }}
                 >
-                  <span className={styles.mobileNavCopy}>
-                    <strong>{item.label}</strong>
-                    <small>{item.description}</small>
-                  </span>
-                  <span aria-hidden="true">→</span>
+                  <span className={styles.mobileSectionLabel}>{copy.navigation.faq}</span>
                 </Link>
-              );
-              const menu = submenuFor(item.id);
-              if (!menu) return link;
-              // A menu's other rows sit right under its item, one tap away; the
-              // row for the item's own page is the item itself.
-              const menuId = item.id as "destinations" | "tours" | "services" | "studio";
-              return (
-                <Fragment key={item.id}>
-                  {link}
-                  <ul aria-label={item.label} className={styles.mobileSubmenu} data-menu={menuId}>
-                    {menu.entries.filter((entry) => entry.href !== item.href).map((entry) => (
-                      <li key={entry.id}>
-                        <MenuLink
-                          aria-current={
-                            entry.href.includes("?")
-                              ? undefined
-                              : entry.href.split(/[?#]/u)[0] === pathname
-                                ? "page"
-                                : pathname?.startsWith(entry.href.split(/[?#]/u)[0])
-                                  ? "location"
-                                  : undefined
-                          }
-                          href={entry.href}
-                          onClick={() => {
-                            trackNavigationClick(entry.id, `mobile-${menuId}-menu`);
-                            close();
-                          }}
-                        >
-                          <span>{entry.label}</span>
-                          <span aria-hidden="true">→</span>
-                        </MenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </Fragment>
-              );
-            })}
+              </li>
+            </ul>
+            <p className={styles.mobileTagline} style={{ "--menu-index": 6 } as CSSProperties}>
+              {copy.navigation.menuTagline}
+            </p>
           </div>
-          <div className={styles.mobileUtility}>
-            <div className={styles.mobileUtilityRow}>
-              <Link
-                aria-current={
-                  pageContext === "home" && activeHash === "#faq"
-                    ? "location"
-                    : undefined
-                }
-                className={styles.mobileUtilityLink}
-                href={faqHref}
-                onClick={(event) => {
-                  trackNavigationClick("faq", "mobile-utility");
-                  close();
-                  if (pageContext === "home") {
-                    handleHomegroundHashClick(event, "#faq");
-                  }
-                }}
-              >
-                <span>{copy.navigation.faq}</span>
-                <span aria-hidden="true">→</span>
-              </Link>
-              <div
-                className={styles.mobileLanguageNav}
-                role="group"
-                aria-label={copy.navigation.languageLabel}
-                hidden={!showLanguageNav}
-                style={showLanguageNav ? undefined : { display: "none" }}
-              >
-                {availableLanguageLocales.map(renderLanguageChoice)}
-                {renderJapaneseLanguageChoice()}
-              </div>
-            </div>
+          <div className={styles.mobileUtility} style={{ "--menu-index": 7 } as CSSProperties}>
             <Link
               className={styles.mobileCta}
               href={plannerHref}
               onClick={(event) => {
                 trackPlannerClick();
-              openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
+                openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
                 close();
                 if (pageContext === "home") {
                   handleHomegroundHashClick(event, plannerTarget);
                 }
               }}
             >
-              {plannerCta}
+              <span>{plannerCta}</span>
+              <span className={styles.mobileCtaArrow} aria-hidden="true" />
             </Link>
+            <div
+              className={styles.mobileLanguageNav}
+              role="group"
+              aria-label={copy.navigation.languageLabel}
+              hidden={!showLanguageNav}
+              style={showLanguageNav ? undefined : { display: "none" }}
+            >
+              {availableLanguageLocales.map(renderLanguageChoice)}
+              {renderJapaneseLanguageChoice()}
+            </div>
           </div>
         </nav>
       </div>
