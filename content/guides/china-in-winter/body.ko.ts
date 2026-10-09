@@ -128,6 +128,10 @@ const body = {
       "title": "날짜부터 확인하기",
       "items": [
         {
+          "label": "2026–27 하얼빈 빙설제: 기간과 입장료",
+          "href": "/ko/guides/harbin-ice-festival/"
+        },
+        {
           "label": "중국 공휴일과 여행 일정",
           "href": "/ko/guides/china-public-holidays-travel-calendar/"
         },

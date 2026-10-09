@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 220,
-      "localeUrlCount": 652,
-      "generatedIdentityCount": 201,
+      "identityCount": 221,
+      "localeUrlCount": 655,
+      "generatedIdentityCount": 202,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2049,6 +2049,53 @@
               "boundary": "Pre-trip prioritisation of date-sensitive reservations, entry windows and group coordination; detailed attraction booking manuals retain their owners. No privileged inventory, queue removal or universal booking rule is claimed."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "winter-big-words",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Harbin Ice Festival season guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "harbin-ice-festival",
+              "title": "Harbin Ice Festival 2026–2027: Dates, Tickets & How to Visit",
+              "metadataPath": "content/guides/harbin-ice-festival/metadata.json",
+              "canonicalPath": "/guides/harbin-ice-festival/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/harbin-ice-festival/",
+                "/zh/guides/harbin-ice-festival/",
+                "/ko/guides/harbin-ice-festival/"
+              ],
+              "section": "when-to-go",
+              "pageFamily": "time",
+              "targetIntent": "plan",
+              "primaryCollectionId": "timing-events-natural-calendar",
+              "pillar": "timing-events-natural-calendar",
+              "destinations": [
+                "harbin",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+              "harbin"
+            ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "Harbin Ice Festival season facts: Ice and Snow World, Sun Island and the ice lantern fair dates and prices, best month, cold-weather clothing, access and entry routes. china-in-winter keeps the national winter-destination choice; tour pages keep product prices. No 2026–27 date or price is claimed before official notices."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2154,6 +2201,7 @@
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
         "guizhou-village-basketball-culture",
+        "harbin-ice-festival",
         "hong-kong-macau-mainland-reentry-count",
         "hong-kong-macau-transport-route",
         "hongshan-jade-context-and-symbols",

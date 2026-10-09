@@ -128,6 +128,10 @@ const body = {
       "title": "Check your dates",
       "items": [
         {
+          "label": "Harbin Ice Festival 2026–27: dates and tickets",
+          "href": "/guides/harbin-ice-festival/"
+        },
+        {
           "label": "China public holidays and travel dates",
           "href": "/guides/china-public-holidays-travel-calendar/"
         },
