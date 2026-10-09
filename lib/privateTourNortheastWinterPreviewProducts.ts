@@ -1556,7 +1556,6 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
     commonsCredit(l("Yanji city in December 2008", "2008年12月的延吉市区", "2008년 12월 연길 시내"), "Yanbian Rural Commercial Bank, January 2009.jpg", "China Q-H", "CC BY 3.0", ccBy3),
   ],
   [moheSlug]: [
-    commonsCredit(l("Beiji Village winter night", "北极村冬夜", "북극촌 겨울밤"), "北极村的童话世界 QQ696847 - panoramio.jpg", "funcn", "CC BY 3.0", ccBy3),
     commonsCredit(l("Shenzhou North Pole landmark", "神州北极石碑", "선저우 북극 표석"), "神州北极 - panoramio.jpg", "fsyzh", "CC BY 3.0", ccBy3),
     commonsCredit(l("Harbin snow sculpture", "哈尔滨雪雕", "하얼빈 눈 조각"), "Harbin Ice & Snow Festival 2026 - Snow sculpture.jpg", "Garosio33", "CC0 1.0", cc0),
     commonsCredit(l("Greater Khingan winter forest", "大兴安岭冬季林海", "다싱안링 겨울 숲"), "大兴安岭林海.jpg", "shengjingyoujian", "CC BY-SA 2.0", ccBySa2),
