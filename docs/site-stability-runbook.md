@@ -6,7 +6,8 @@
 | --- | --- | --- |
 | 首页、中韩首页、私家团、预约服务、预约清单、张家界产品、备用站 | Better Stack 免费监测，每 3 分钟；欧洲、北美、亚洲、澳洲 | HTTPS、HTTP 和正文关键词；邮箱通知。免费方案不包含电话/SMS，手机是否提醒取决于邮箱客户端设置。 |
 | Cloudflare 边缘与 GitHub Pages 源站证书 | `site-stability.yml`，每 12 小时 | 对两个主机名和四个源站地址验证证书链、域名、有效期；30 / 14 / 7 天分别告警。检查超过 24 小时没有回报也告警。 |
-| 询盘接收合约、邮件通知队列 | 原有 canary / outbox 工作流 + `stability-workflow-alerts.yml` | 失败由独立监测通知；超过 105 分钟未回报告警。GitHub 定时任务可能延迟，因此此类告警也可能表示检查迟到，不能直接认定网站故障。 |
+| 询盘接收合约 | Cloudflare Cron Worker `homeground-intake-monitor`，每 15 分钟；原 GitHub canary 保留备用诊断 | 六项检查全部通过才报告成功；明确失败立即告警。Better Stack 预期 15 分钟、宽限 15 分钟，连续 30 分钟无回报告警。只有 Worker 可向此心跳上报，GitHub 不再重置其时钟。配置与实际定时记录都验收后才算完成切换。 |
+| 邮件通知队列 | 原 outbox 工作流 + `stability-workflow-alerts.yml` | 失败由独立监测通知；超过 105 分钟未回报告警。此项仍依赖 GitHub 调度，迟到不能直接认定网站故障。 |
 | 每次发布 | `deploy.yml` | 发布后清缓存，再核对真实线上提交标识、六个关键页面、canonical 和 JavaScript。失败告警。部署是事件检查，没有部署时不要求频繁心跳。 |
 | 隔离询盘与备份恢复 | `inquiry-recovery-drill.yml`，每周 | 临时数据库、无外发网络接收器；真实 Edge handler/RPC/SQL 入库、后台读取、通知队列、重试与恢复。八天无完成记录告警。 |
 | 加密数据库备份 | `inquiry-backup.yml`，每日 | 需要业主批准并填写数据库连接 Secret；成功上传档案后才报告成功。36 小时没有成功备份告警。未配置连接不能视为已启用。 |
@@ -27,6 +28,19 @@ Supabase 免费计划没有自动平台备份；本手册的每日备份是单�
 - GitHub variable `BACKUP_AGE_RECIPIENT`：公开加密收件者，可以上传。
 - 本机 `~/.homeground-stability/keys/backup-age.key`：私钥，目录 700、文件 600。不得提交到仓库、日志、聊天或上传 GitHub；离线另存一份后才能承担本机损坏时的恢复。
 - `*_HEARTBEAT_URL`：仅用于向独立监测报告状态，保存在 GitHub Secrets。发送内容只有成功或失败，没有客户数据。
+- 询盘主检查的 `INTAKE_HEARTBEAT_URL` 单独保存在 Cloudflare Worker 的 Secret 绑定中；不得写入源代码、明文配置、日志或公开接口。原 GitHub `INQUIRY_INTAKE_HEARTBEAT_URL` 不再被工作流读取；不能恢复两处同时上报。
+
+## 独立询盘定时检查
+
+实现及可复现配置：`ops/inquiry-canary/worker.mjs`、`ops/inquiry-canary/wrangler.jsonc`。Cron 为 UTC 每小时第 7、22、37、52 分钟。Cloudflare 免费档有 CPU 和请求限额；不得通过升级付费方案绕过失败，必须先报告实际用量和具体价格。
+
+检查只读取正式首页及其同源 JavaScript，核实公开表单版本和固定 Supabase 接口，再按顺序检查两类表单 × 中英韩。请求始终不包含 contact、antiAbuse、journey 或真实邮箱；响应必须为 422、validation_failed、not_persisted，并准确指出缺少的必要字段。遇到首个不符合条件的响应即停止。该检查证明接口合约可用，不能证明真实询盘入库、邮件收件或客户成交；原隔离演练和通知队列检查继续保留。
+
+Worker 不绑定正式域名、不修改 DNS，关闭 workers.dev 和预览 URL；即使误开 HTTP 入口也只返回 404，不能从外部触发探针。定时日志仅保留固定错误代号、时间和检查计数，不记录上报地址、请求体或响应内容。源站、脚本、接口和心跳均不跟随重定向，下载有大小和请求数上限。
+
+切换顺序：先通过离线夹具与独立代码复核，发布 Worker 代码但暂不启用 Cron；移除 GitHub 对询盘主心跳的上报，再绑定 Worker Secret、启用 Cron、将原心跳改名并设置 15 + 15 分钟。至少核对实际 Scheduled 事件及 Better Stack 收报时间，不能将本机模拟、手动执行或配置已保存称为定时运行成功。Cron 变更可能需要最多 15 分钟传播。
+
+如果主检查停止：先查 Worker Scheduled 事件的状态、CPU 用量和固定错误代号，再对照 Better Stack 最近心跳。GitHub 手动 canary 可以提供诊断证据，但不能清除 Worker 漏跑事件。需要回退时恢复旧 GitHub 上报前，先停用 Worker 定时上报，并按旧流程重新核对告警阈值；始终保持同一个主心跳只有一个报告来源。
 
 ## 每日备份的实际范围
 

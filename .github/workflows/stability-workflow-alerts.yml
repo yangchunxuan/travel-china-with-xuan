@@ -3,7 +3,9 @@ name: Independent workflow alerts
 # Runs trusted main code only; a PR cannot obtain heartbeat tokens.
 on:
   workflow_run:
-    workflows: ['Inquiry intake canary', 'Inquiry outbox health', 'Deploy to GitHub Pages']
+    # Intake now has one independent Cloudflare reporter. A delayed GitHub
+    # success must never reset the independent monitor's missing-run timer.
+    workflows: ['Inquiry outbox health', 'Deploy to GitHub Pages']
     branches: [main]
     types: [completed]
   workflow_dispatch:
@@ -52,12 +54,6 @@ jobs:
           else
             echo 'current=false' >> "$GITHUB_OUTPUT"
           fi
-      - name: Report inquiry intake check
-        if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Inquiry intake canary'
-        env:
-          STABILITY_HEARTBEAT_URL: ${{ secrets.INQUIRY_INTAKE_HEARTBEAT_URL }}
-          STABILITY_OUTCOME: ${{ github.event.workflow_run.conclusion == 'success' && 'success' || 'failure' }}
-        run: node tools/report-stability-heartbeat.mjs
       - name: Report notification queue check
         if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Inquiry outbox health'
         env:

@@ -6,7 +6,10 @@ name: Inquiry intake canary
 # rejected with 422 for two and a half days: the traveller saw an error, no row
 # was stored, and no notification was sent, so nothing anywhere went red.
 #
-# This check closes that specific gap. It reads the version the live site
+# This is the best-effort GitHub backup/diagnostic check. The primary 15-minute
+# check is ops/inquiry-canary/worker.mjs on Cloudflare Cron, with its own
+# missing-run timer. This workflow must not report to that heartbeat.
+# It reads the version the live site
 # actually publishes, offers that version to the live endpoint, and fails if the
 # endpoint says it does not support it. It needs no secret and no repository
 # variable: everything it uses is already public in the deployed page, which
@@ -14,7 +17,7 @@ name: Inquiry intake canary
 
 on:
   schedule:
-    # Keep a 15-minute cadence, but avoid GitHub Actions' busiest clock marks.
+    # Requested backup cadence only: GitHub schedules are not punctuality guarantees.
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
