@@ -269,6 +269,10 @@ test("pages render the card inline, tracked, and never twice with the same plann
   assert.match(cardComponent, /<GuideCtaLink/u);
   assert.match(cardComponent, /data-guide-cta-kind=\{card\.kind\}/u);
   assert.match(cardComponent, /data-guide-tour-card=\{card\.ctaId\}/u);
+  // The card's one link is the route's own name, not a generic "View itinerary",
+  // so every guide passes descriptive anchor text to the tour it recommends.
+  assert.match(cardComponent, /<GuideCtaLink className=\{styles\.titleLink\}[^>]*>\s*\{card\.title\}\s*<\/GuideCtaLink>/u);
+  assert.match(cardComponent, /<span aria-hidden="true" className=\{styles\.action\}>/u);
   assert.match(editorialPage, /getGuideTourCard\(guide\.id, locale\)/u);
   assert.doesNotMatch(editorialPage, /showFooterCta|trip-consultation/u);
   for (const page of [olderTravellersPage, olderParentsPage, singaporeVisaPage]) {

@@ -37,12 +37,19 @@ export function GuideTourCard({
         />
       </div>
       <div className={styles.copy}>
-        <p className={styles.title}>{card.title}</p>
+        {/* The route's own name is the link, so each guide tells search engines
+            which tour it recommends instead of a generic "View itinerary". Its
+            ::after covers the card, so the photo and the pill still open it. */}
+        <p className={styles.title}>
+          <GuideCtaLink className={styles.titleLink} guideId={guideId} href={card.href} locale={locale} position="inline">
+            {card.title}
+          </GuideCtaLink>
+        </p>
         {card.note ? <p className={styles.note}>{card.note}</p> : null}
-        <GuideCtaLink className={styles.action} guideId={guideId} href={card.href} locale={locale} position="inline">
+        <span aria-hidden="true" className={styles.action}>
           {card.action}
           <ArrowRight aria-hidden="true" size={18} />
-        </GuideCtaLink>
+        </span>
       </div>
     </aside>
   );
