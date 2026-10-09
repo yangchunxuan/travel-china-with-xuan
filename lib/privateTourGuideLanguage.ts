@@ -46,6 +46,7 @@ const driverGuide: GuideLanguageEntry = { base: "driver-guide" };
 
 export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLanguageEntry>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": english,
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": english,
   "chengdu-pandas-sanxingdui-5-day-private-tour": english,
   "xian-terracotta-warriors-5-day-private-tour": english,
   "chongqing-wulong-5-day-private-tour": english,

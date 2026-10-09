@@ -79,6 +79,7 @@ export const guideTargets = {
   "how-to-read-a-suzhou-garden": [
     productTarget("shanghai-suzhou-5-day-private-tour"),
     productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    productTarget("suzhou-tongli-hangzhou-shanghai-12-day-private-tour"),
   ],
   "chengdu-panda-base-or-dujiangyan-panda-valley": [productTarget("chengdu-pandas-sanxingdui-5-day-private-tour")],
   "sanxingdui-museum-booking-and-gallery-order": [productTarget("chengdu-pandas-sanxingdui-5-day-private-tour")],
@@ -193,6 +194,7 @@ export const guideTargets = {
   ],
   "shanghai-suzhou-hangzhou-nanjing-route-order": [
     productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    productTarget("suzhou-tongli-hangzhou-shanghai-12-day-private-tour"),
   ],
   "xian-lanzhou-dunhuang-silk-road-route": [
     productTarget("beijing-xian-silk-road-15-day-private-tour"),

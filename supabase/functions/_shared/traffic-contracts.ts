@@ -31,6 +31,7 @@ export const trafficErrorCodes = [
 // Keep aligned with the published-product inquiry selection contract.
 export const trafficProductPackages: Readonly<Record<string, readonly string[]>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": ["standard-guided"],
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": ["private-guided"],
   "chengdu-pandas-sanxingdui-5-day-private-tour": ["standard-guided"],
   "xian-terracotta-warriors-5-day-private-tour": ["standard-guided"],
   "chongqing-wulong-5-day-private-tour": ["standard-guided"],
@@ -88,6 +89,7 @@ export const trafficProductTravelerCounts: Readonly<
   Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
 > = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": [2, 4, 6],
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": [],
   "chengdu-pandas-sanxingdui-5-day-private-tour": [2, 4, 6],
   "xian-terracotta-warriors-5-day-private-tour": [2, 4, 6],
   "chongqing-wulong-5-day-private-tour": [2, 4, 6],

@@ -2,6 +2,7 @@ import type { LocalizedText, PrivateTourLocale } from "./privateTourProducts";
 import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPhotoCredits";
 import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExpansionPhaseTwoPhotoCredits";
 import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
+import { jiangnanArtPrivateTourPhotoCreditsBySlug } from "./privateTourJiangnanArtProduct";
 import { privateTourNortheastWinterPreviewPhotoCreditsBySlug } from "./privateTourNortheastWinterPreviewProducts";
 import { privateTourAdditionalCreditsBySlug } from "./privateTourPhotoAdditions";
 import { privateTourSceneCreditsBySlug } from "./privateTourSceneMedia";
@@ -56,6 +57,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
   ...privateTourExpansionPhotoCreditsBySlug,
   ...privateTourExpansionPhaseTwoPhotoCreditsBySlug,
   ...privateTourLongHaulPhotoCreditsBySlug,
+  ...jiangnanArtPrivateTourPhotoCreditsBySlug,
   ...privateTourNortheastWinterPreviewPhotoCreditsBySlug,
   "shanghai-suzhou-hangzhou-6-day-private-tour": [
     credit(

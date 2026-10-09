@@ -850,6 +850,22 @@
         "1380x863"
       ],
       "familySha256": "28e758cd38ee731ed1de6ff3caa17e6e01aa68794237e8b6779ddb66503eed53"
+    },
+    {
+      "productId": "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+      "sourcePath": "public/images/home/hangzhou-1600.jpg",
+      "sourceSha256": "c2833ac865a0652cc932e5e5aea6b5e9e04f06b486a9e5c1ca3d8f1664a1e057",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/home/hangzhou-1600.jpg",
+      "rightsEvidenceNeedle": "City photograph supplied by the project owner for Homeground website use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x863"
+      ],
+      "familySha256": "eeedffb343e91f26cb029adecedb5d384e4f05b2b95cc2fe730d86970ddcf8a8"
     }
   ]
 }

@@ -390,4 +390,11 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
       { id: "peak-season", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }, { travelers: 8 }] },
     ],
   },
+  {
+    slug: "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+    title: { en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai", zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程", ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행", ja: "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー" },
+    packages: [
+      { id: "private-guided", prices: [] },
+    ],
+  },
 ];

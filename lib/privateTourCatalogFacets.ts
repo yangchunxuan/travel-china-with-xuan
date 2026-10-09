@@ -51,6 +51,7 @@ const regionLabels: Readonly<Record<PrivateTourRegionId, LocalizedText>> = {
  */
 const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": "east",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": "east",
   "shanghai-suzhou-5-day-private-tour": "east",
   "huangshan-hongcun-huizhou-5-day-private-tour": "east",
   "jingdezhen-wuyuan-wangxian-6-day-private-tour": "east",

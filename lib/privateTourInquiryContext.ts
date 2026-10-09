@@ -14,6 +14,7 @@ export const privateTourInquiryQueryKey = "tour";
 
 export const privateTourInquirySlugs = [
   "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",
   "xian-terracotta-warriors-5-day-private-tour",
   "chongqing-wulong-5-day-private-tour",
@@ -284,6 +285,11 @@ const privateTourInquiryNames: Readonly<
     en: "Shanghai, Suzhou & Hangzhou: 6-Day Private Tour",
     zh: "上海·苏州·杭州 6 天 5 晚私家团",
     ko: "상하이·쑤저우·항저우 6일 프라이빗 투어",
+  },
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": {
+    en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai",
+    zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程",
+    ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행",
   },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {
     en: "Chengdu, Pandas & Sanxingdui: 5-Day Private Tour",

@@ -5,7 +5,7 @@ localized pages and guides. They are self-hosted so the English page does not
 request CJK fonts and the Chinese and Korean pages do not depend on a
 third-party font CDN at runtime.
 
-- `homeground-serif-sc-00.<hash>.woff2` to `homeground-serif-sc-06.<hash>.woff2`
+- `homeground-serif-sc-00.<hash>.woff2` to `homeground-serif-sc-07.<hash>.woff2`
   and `homeground-serif-sc-slices.<hash>.css` — Noto Serif SC, weight 500,
   sourced from the
   [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/notoserifsc),
@@ -31,6 +31,28 @@ JavaScript against the copied production fonts, so missing glyphs cannot
 silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
+
+2026-10-09 (Jiangnan editorial revision): rebuilt the Chinese serif slices
+from the same verified Noto Serif SC source below after the new Chinese and
+Japanese route copy added 仕, 庐, 枕, 畑, 盏, 終, 翌, 補 and 運. The Korean source
+subsets remained unchanged. Both source and production-export coverage checks
+pass after the rebuild.
+
+2026-10-09 (new 12-day Jiangnan and 13-day five-city private-tour copy):
+regenerated all three subsets with `tools/rebuild-locale-fonts.mjs` from the
+same official upstream versions listed below. Added 妙, 恩, 枯, 泠, 霍 and 웡.
+Compared the previous and rebuilt `cmap` and horizontal advances: no previous
+code point was lost and no previous advance width changed. A source-only
+rebuild initially omitted 11 glyphs used by the published export's shared
+Japanese-without-kana strings, so `retainedPublishedChineseCharacters` now
+preserves 別動報後業様約規覧許談 until an export is available locally. Source SHA-256:
+
+- Google Fonts `main`, `NotoSerifSC[wght].ttf` (Version 2.003):
+  `050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9`
+- Pretendard `v1.3.9`, `PretendardVariable.woff2` (Version 1.309):
+  `9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4`
+- NAVER `maruburi.zip`, `MaruBuri-Regular.ttf` (Version 1.000):
+  `803429881927c79dbb49497274244e72b672c56e0503f28262503f77524cba7a`
 
 2026-10-04: added 冥 (U+51A5, photographer attribution) and 汾 (U+6C7E,
 Fen River photo copy) to the Chinese source subset from Noto Serif SC

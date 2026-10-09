@@ -229,6 +229,120 @@ const jiangnanPageCopy: Record<
 
 type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
 
+const JIANGNAN_ART_TOUR_SLUG = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
+
+type JiangnanArtPageCopy = Pick<
+  ImaginePageCopy,
+  | "heroPromise"
+  | "facts"
+  | "overviewEyebrow"
+  | "overviewTitle"
+  | "overviewBody"
+  | "routeEyebrow"
+  | "routeTitle"
+  | "routeBody"
+  | "serviceEyebrow"
+  | "serviceTitle"
+  | "serviceBody"
+  | "hotelTitle"
+  | "transportTitle"
+>;
+
+const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", JiangnanArtPageCopy> = {
+  en: {
+    heroPromise: "Meet old Jiangnan first. Then watch Shanghai remake it.",
+    facts: [
+      { label: "Route", value: "Suzhou 3 · Tongli 1 · Hangzhou 2 · Shanghai 5 nights" },
+      { label: "Guides", value: "A local guide in each city: 8 full days + a Tongli half-day" },
+      { label: "Stay", value: "11 nights: two old houses, two modern hotels" },
+      { label: "Price", value: "Quoted for your dates and group" },
+    ],
+    overviewEyebrow: "Why this order",
+    overviewTitle: "The tradition first. Shanghai makes more sense last.",
+    overviewBody:
+      "Start in Suzhou's scholar gardens, sleep a night inside a water town, follow the canal to West Lake and the tea hills. By the time you reach Shanghai, you can see where its gardens, lanes and waterfront came from, and what the city chose to do with them.",
+    routeEyebrow: "Day by day",
+    routeTitle: "Four places, one direction, no backtracking.",
+    routeBody:
+      "Times are a rhythm, not a schedule. Every guide has one standing instruction: if a lane, a gallery or a conversation is going well, you stay, and something smaller is dropped.",
+    serviceEyebrow: "Where you sleep, who walks with you",
+    serviceTitle: "Two old houses, two modern hotels, and a local guide in every city.",
+    serviceBody:
+      "In Suzhou and Tongli you sleep inside the old town. In Hangzhou and Shanghai, everything simply works. One driver carries you from Hongqiao all the way to Hangzhou, so your bags never leave the car.",
+    hotelTitle: "Eleven nights, four addresses",
+    transportTitle: "Guides, car, train and tickets",
+  },
+  zh: {
+    heroPromise: "先见老江南，再看上海怎样把它重新做一遍。",
+    facts: [
+      { label: "路线", value: "苏州 3 晚 · 同里 1 晚 · 杭州 2 晚 · 上海 5 晚" },
+      { label: "导游", value: "每城一位当地导游：8 个全天 + 同里半天" },
+      { label: "住宿", value: "11 晚：两处老宅、两家新式酒店" },
+      { label: "价格", value: "按日期与人数报价" },
+    ],
+    overviewEyebrow: "为什么这样排",
+    overviewTitle: "先看传统，最后到上海才看得明白。",
+    overviewBody:
+      "从苏州的文人园林开始，在水乡里住一晚，顺着运河到西湖和茶山。等你到了上海，就看得出它的园子、里弄和江岸从哪里来，又被这座城做成了什么。",
+    routeEyebrow: "每日安排",
+    routeTitle: "四个地方，一路向前，不走回头路。",
+    routeBody:
+      "时间是节奏，不是日程表。每位导游都有同一条规矩：哪条巷子、哪间展厅、哪段聊天正投入，就多待一会儿，把小一点的安排拿掉。",
+    serviceEyebrow: "住在哪里，谁陪你走",
+    serviceTitle: "两处老宅、两家新式酒店，每座城市一位当地导游。",
+    serviceBody:
+      "在苏州和同里，你睡在古城里；在杭州和上海，一切都省心。从虹桥一路到杭州是同一位司机，行李始终不用下车。",
+    hotelTitle: "十一晚，四个地址",
+    transportTitle: "导游、用车、高铁与门票",
+  },
+  ko: {
+    heroPromise: "옛 강남을 먼저 만나고, 상하이가 그것을 어떻게 다시 만들었는지 봅니다.",
+    facts: [
+      { label: "동선", value: "쑤저우 3박 · 퉁리 1박 · 항저우 2박 · 상하이 5박" },
+      { label: "가이드", value: "도시별 현지 가이드: 전일 8일 + 퉁리 반일" },
+      { label: "숙박", value: "11박: 옛집 두 곳, 현대식 호텔 두 곳" },
+      { label: "가격", value: "날짜와 인원별 견적" },
+    ],
+    overviewEyebrow: "왜 이 순서인가",
+    overviewTitle: "전통을 먼저, 상하이는 마지막에 봐야 더 잘 보입니다.",
+    overviewBody:
+      "쑤저우 문인의 정원에서 시작해 수향마을에서 하룻밤을 보내고, 운하를 따라 서호와 차밭으로 갑니다. 상하이에 닿을 즈음이면 이 도시의 정원과 골목, 강변이 어디에서 왔고 상하이가 그것으로 무엇을 만들었는지 보이기 시작합니다.",
+    routeEyebrow: "날짜별 일정",
+    routeTitle: "네 곳, 한 방향, 되돌아가지 않는 여정.",
+    routeBody:
+      "시간은 일정표가 아니라 리듬입니다. 모든 가이드에게는 같은 원칙이 있습니다. 골목이든 전시실이든 대화든 흐름이 좋으면 더 머물고, 작은 일정 하나를 덜어 냅니다.",
+    serviceEyebrow: "어디서 자고, 누구와 걷는가",
+    serviceTitle: "옛집 두 곳, 현대식 호텔 두 곳, 그리고 도시마다 현지 가이드.",
+    serviceBody:
+      "쑤저우와 퉁리에서는 옛 마을 안에서 잠들고, 항저우와 상하이에서는 모든 것이 편합니다. 훙차오에서 항저우까지 같은 기사가 모시기 때문에 짐은 계속 차에 있습니다.",
+    hotelTitle: "11박, 네 곳의 숙소",
+    transportTitle: "가이드, 차량, 열차와 입장권",
+  },
+  ja: {
+    heroPromise: "まず江南の伝統に出会い、最後に上海がそれをどう作り変えたかを見る。",
+    facts: [
+      { label: "行程", value: "蘇州3泊 · 同里1泊 · 杭州2泊 · 上海5泊" },
+      { label: "案内", value: "各都市に現地ガイド：終日8日間＋同里半日" },
+      { label: "宿泊", value: "11泊：古い邸宅2軒と現代的なホテル2軒" },
+      { label: "料金", value: "日程と人数に応じたお見積もり" },
+    ],
+    overviewEyebrow: "この順番にした理由",
+    overviewTitle: "伝統を先に。上海は最後に見るほうがよくわかる。",
+    overviewBody:
+      "蘇州の文人庭園から始め、水郷に一泊し、運河をたどって西湖と茶畑へ。上海に着くころには、この街の庭園や路地、川辺がどこから来て、上海がそれを何に変えたのかが見えてきます。",
+    routeEyebrow: "日ごとの行程",
+    routeTitle: "四つの土地を一方向に、後戻りなし。",
+    routeBody:
+      "時刻は予定表ではなくリズムです。どのガイドにも同じ決まりがあります。路地でも展示室でも会話でも、良い流れなら留まり、小さな予定をひとつ外します。",
+    serviceEyebrow: "泊まる場所と、一緒に歩く人",
+    serviceTitle: "古い邸宅2軒、現代的なホテル2軒、そして各都市に現地ガイド。",
+    serviceBody:
+      "蘇州と同里では古い町の中で眠り、杭州と上海ではすべてが快適です。虹橋から杭州までは同じドライバーなので、荷物は車に載せたままです。",
+    hotelTitle: "11泊、四つの宿",
+    transportTitle: "ガイド・車・列車・入場券",
+  },
+};
+
 const forestFinalCopy: Record<PrivateTourLocale, Pick<ImaginePageCopy, "finalEyebrow" | "finalTitle" | "finalBody" | "contact">> = {
   en: {
     finalEyebrow: "This fixed route on your dates",
@@ -534,6 +648,7 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
   }
   if (product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG) return jiangnanPageCopy[product.locale];
   const copy = buildGenericPageCopy(product);
+  if (product.slug === JIANGNAN_ART_TOUR_SLUG) return { ...copy, ...jiangnanArtPageCopy[product.locale] };
   return product.slug === "zhangjiajie-forest-4-day-private-tour"
     ? { ...copy, ...forestFinalCopy[product.locale] }
     : copy;
@@ -682,6 +797,20 @@ function displayTourTitle(
       </>
     );
   }
+  if (locale === "zh" && slug === JIANGNAN_ART_TOUR_SLUG) {
+    const units = title.match(/^(江南，)(生活的艺术｜)(苏州·同里·)(杭州·上海) (12 天私家旅程)$/u);
+    if (units) {
+      return (
+        <>
+          <span className={styles.titleUnit}>{units[1]}</span>
+          <span className={styles.titleUnit}>{units[2]}</span>
+          <span className={styles.titleUnit}>{units[3]}</span>
+          <span className={styles.titleUnit}>{units[4]}</span>{" "}
+          <span className={styles.titleUnit}>{units[5]}</span>
+        </>
+      );
+    }
+  }
   if (locale === "zh" && compactChineseRouteTitleSlugs.has(slug)) {
     const match = title.match(/^(.+) (\d+ 天 \d+ 晚)(私家团)$/u);
     if (match) {
@@ -728,6 +857,8 @@ export function ShanghaiJiangnanImaginePage({
       ? japanesePageCopy()
       : isNortheastWinterTour(product.slug)
         ? northeastWinterJapanesePageCopy(localized)
+      : product.slug === JIANGNAN_ART_TOUR_SLUG
+        ? { ...genericJapanesePageCopy(localized), ...jiangnanArtPageCopy.ja }
         : genericJapanesePageCopy(localized)
     : getPageCopy(localized);
   const jaPresentation = jaPilotCopy.tour.presentation;

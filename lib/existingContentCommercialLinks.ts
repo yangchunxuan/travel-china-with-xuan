@@ -155,7 +155,19 @@ const productContexts = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": {
     destinations: ["shanghai", "hangzhou"],
     guides: ["shanghai-suzhou-hangzhou-nanjing-route-order", "shanghai-hangzhou-transport-route", "first-china-trip-jiangnan-6-or-beijing-11-days", "suzhou-with-older-parents-garden-museum-transfer-day"],
-    relatedProducts: [p("shanghai-suzhou-5-day-private-tour")],
+    relatedProducts: [p("shanghai-suzhou-5-day-private-tour"), p("suzhou-tongli-hangzhou-shanghai-12-day-private-tour")],
+  },
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": {
+    destinations: ["shanghai", "hangzhou"],
+    guides: [
+      "shanghai-suzhou-hangzhou-nanjing-route-order",
+      "how-to-read-a-suzhou-garden",
+      "shanghai-where-to-stay-first-trip",
+    ],
+    relatedProducts: [
+      p("shanghai-suzhou-hangzhou-6-day-private-tour"),
+      p("beijing-hangzhou-suzhou-shanghai-11-day-private-tour"),
+    ],
   },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {
     destinations: ["chengdu"],
@@ -558,6 +570,7 @@ const productContexts = {
 
 const approvedCommercialProductSlugs = [
   "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",
   "xian-terracotta-warriors-5-day-private-tour",
   "chongqing-wulong-5-day-private-tour",
