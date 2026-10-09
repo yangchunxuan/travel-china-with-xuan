@@ -13,19 +13,11 @@ import type {
 } from "./privateTourProducts";
 import type { PrivateTourPhotoCredit } from "./privateTourPhotoCredits";
 
-// Northeast China winter routes from a supplier proposal (2026-09-29). They
-// are previews (`visibility: "preview"`): direct URL only, robots noindex, and
-// outside every published list. See docs/private-tour-previews.md.
+// Northeast China winter routes for the 2026–27 season.
 //
-// Only the supplier sheet's facts are stated. Service is by an English-speaking
-// driver-guide (司机兼向导). Owner confirmed on 2026-09-30: the driver-guide
-// speaks English and goes with travellers around city sights; at large scenic
-// areas such as Ice and Snow World travellers explore on their own, as is
-// usual, and any ski instruction is by the resort's own instructors. Meals,
-// transfers, admissions, children's prices, single rooms and cancellation
-// terms are left to the written quote.
-// Prices are the owner-approved CNY per person (supplier cost x 1.30, rounded
-// up to CNY 100); USD and KRW follow the site-wide conversion.
+// The driver handles travel logistics and speaks English (owner confirmation,
+// 2026-09-30), but is not a licensed guide and does not provide commentary
+// inside scenic areas. Site-wide conversion supplies USD and KRW displays.
 
 const l = (en: string, zh: string, ko: string): LocalizedText => ({ en, zh, ko });
 const lists = (
@@ -46,13 +38,13 @@ const facts = (
 ): LocalizedValue<readonly PrivateTourFact[]> => ({ en, zh, ko });
 const fact = (label: string, value: string): PrivateTourFact => ({ label, value });
 
-// The template's structural field; preview pages do not render a shopping claim.
+// The template's structural field; shopping policy is confirmed in the quote.
 const servicePolicy = Object.freeze({
   shoppingStops: false,
   addedServicesRequirePriorAgreement: true,
 } as const);
 
-const PUBLISHED = "2026-09-29";
+const PUBLISHED = "2026-10-09";
 
 type SeasonPrices = readonly [twoTravellers: number, fourTravellers: number, sixTravellers: number, eightTravellers: number];
 
@@ -66,11 +58,11 @@ const seasonPackages = (low: SeasonPrices, peak: SeasonPrices): readonly Private
   {
     id: "low-season",
     guideMode: "standard",
-    label: l("Low season", "淡季", "비수기"),
+    label: l("Low season · 10 Nov–19 Dec / 15 Feb–10 Mar", "淡季 · 11月10日–12月19日 / 2月15日–3月10日", "비수기 · 11월 10일~12월 19일 / 2월 15일~3월 10일"),
     summary: l(
-      "Departures outside 20 December – 14 February. Your own vehicle and driver-guide, reference hotels with two adults sharing a room, and the inclusions listed on this page. We check the operating dates of ski slopes and snow attractions for your dates before you pay.",
-      "12 月 20 日至次年 2 月 14 日以外出发。私车和司机兼向导只服务你们一行，参考酒店按两位成人同住一间计，另含本页列明的项目。雪场和冰雪景点的开放日期，付款前按你的日期核对。",
-      "12월 20일~2월 14일 이외의 출발일입니다. 일행 전용 차량과 운전기사 겸 안내인, 성인 2명 1실 기준 참고 호텔, 이 페이지에 적힌 포함 항목으로 구성됩니다. 스키장과 빙설 명소의 운영 기간은 결제 전 여행 날짜에 맞춰 확인합니다.",
+      "Departures 10 November–19 December 2026 or 15 February–10 March 2027. Your own vehicle and driver, twin-share reference hotels, and the named inclusions on this page. We check ski slopes and snow attractions for your dates before payment.",
+      "2026 年 11 月 10 日至 12 月 19 日，或 2027 年 2 月 15 日至 3 月 10 日出发。含私车和司机、双人同住的参考酒店，以及本页列明项目。雪场和冰雪景点的开放日期，付款前按你的日期核对。",
+      "2026년 11월 10일~12월 19일 또는 2027년 2월 15일~3월 10일 출발입니다. 일행 전용 차량과 운전기사, 성인 2명 1실 기준 참고 호텔 및 이 페이지에 적힌 포함 항목으로 구성됩니다. 스키장과 빙설 명소의 운영 기간은 결제 전에 확인합니다.",
     ),
     prices: tiers(low),
   },
@@ -79,9 +71,9 @@ const seasonPackages = (low: SeasonPrices, peak: SeasonPrices): readonly Private
     guideMode: "standard",
     label: l("Peak season · 20 Dec–14 Feb", "旺季 · 12月20日–2月14日", "성수기 · 12월 20일~2월 14일"),
     summary: l(
-      "Departures from 20 December to 14 February. The service scope is the same as in low season; we confirm hotel and vehicle availability for your dates before you pay.",
-      "12 月 20 日至次年 2 月 14 日出发。服务内容与淡季相同；酒店和车辆能否预订，付款前按你的日期确认。",
-      "12월 20일~2월 14일 출발입니다. 서비스 범위는 비수기와 같으며, 호텔과 차량 예약 가능 여부는 결제 전 여행 날짜에 맞춰 확인합니다.",
+      "Departures 20 December 2026–14 February 2027. The same service scope applies; we confirm hotels, vehicle and winter attractions for your dates before payment.",
+      "2026 年 12 月 20 日至 2027 年 2 月 14 日出发。服务内容与淡季相同；付款前确认酒店、车辆和冬季项目在出行日期的安排。",
+      "2026년 12월 20일~2027년 2월 14일 출발입니다. 서비스 범위는 비수기와 같으며, 결제 전 호텔·차량·겨울 명소 운영을 확인합니다.",
     ),
     prices: tiers(peak),
   },
@@ -104,21 +96,32 @@ const routePhoto = (
   ...variants: readonly { label: LocalizedText; image: PrivateTourImage }[]
 ): PrivateTourRouteMediaGroup => ({ day: dayNumber, variants });
 
-const iceWorldHero = image(
-  `${harbinImages}/hero-ice-world-1600.webp`,
+const snowTownHero = image(
+  "/images/tours/northeast-winter-2026-27/snow-town-morning-1600.webp",
   l(
-    "A colourful ice train and illuminated ice buildings at Harbin Ice and Snow World in 2026",
-    "2026 年哈尔滨冰雪大世界的彩色冰火车与亮灯冰建筑",
-    "2026년 하얼빈 빙설대세계의 화려한 얼음 기차와 조명 건축",
+    "Snow-covered wooden houses and red lanterns in China Snow Town",
+    "中国雪乡覆雪的木屋和红灯笼",
+    "중국 설향의 눈 덮인 목조 가옥과 붉은 등불",
   ),
   l(
-    "Harbin Ice and Snow World in 2026; its opening dates and ice displays change every season.",
-    "2026 年的哈尔滨冰雪大世界；开放日期和冰雕内容每季都会变化。",
-    "2026년 하얼빈 빙설대세계입니다. 개장일과 얼음 조형물은 시즌마다 달라집니다.",
+    "China Snow Town, photographed in February 2010. Snow depth and village facilities vary on your date.",
+    "2010 年 2 月拍摄的中国雪乡；积雪深度和村内设施以出行时为准。",
+    "2010년 2월에 촬영한 중국 설향입니다. 적설량과 마을 시설은 여행 날짜에 따라 달라집니다.",
   ),
-  1600,
-  1000,
-  "75% 50%",
+);
+
+const beijiVillageHero = image(
+  "/images/tours/northeast-winter-2026-27/beiji-village-night-1600.webp",
+  l(
+    "A snow-covered wooden house at night in Beiji Village, Mohe",
+    "漠河北极村夜晚覆雪的木屋",
+    "모허 북극촌의 밤, 눈 덮인 목조 가옥",
+  ),
+  l(
+    "A winter night in Beiji Village; this historic photo does not show current accommodation or weather.",
+    "北极村冬夜旧照；不代表如今的住宿条件或出行当天的天气。",
+    "북극촌의 과거 겨울밤 사진입니다. 현재 숙소 상태나 여행 당일 날씨를 나타내지는 않습니다.",
+  ),
 );
 
 const centralStreet = {
@@ -188,9 +191,9 @@ const driverGuideFaq = faq(
     "운전기사 겸 안내인은 무엇을 하나요?",
   ),
   l(
-    "The driver-guide (司机兼向导) drives your private vehicle, speaks English and runs the day for you: timings, getting you to each stop and going with you around the city sights. At large scenic areas such as Harbin Ice and Snow World, you explore at your own pace, as most visitors do, and meet the driver-guide again afterwards. Any ski instruction is by the ski resort's own instructors; what your ski package includes is set out in your written confirmation.",
-    "司机兼向导负责开你们的私车，会说中文和英语，全天帮你们安排时间、衔接各站，市区景点陪同游览。冰雪大世界这类大景区，和大多数游客一样由你们自己游玩，结束后再与司机兼向导会合。滑雪由雪场的专业教练指导，滑雪套餐包含哪些内容以书面确认为准。",
-    "운전기사 겸 안내인은 일행의 전용 차량을 운전하고 영어로 소통하며, 시간 조율과 각 장소로의 이동 등 하루 일정을 챙기고 시내 명소는 함께 둘러봅니다. 하얼빈 빙설대세계 같은 큰 관광지는 대부분의 여행자처럼 자유롭게 둘러본 뒤 안내인과 다시 만납니다. 스키 강습은 스키장 소속 강사가 맡으며, 스키 패키지 포함 내용은 서면 확인서에 적어 드립니다. 한국어 안내는 포함되지 않습니다.",
+    "Your driver speaks English and helps with timings, transfers and city stops. The driver is not a licensed tour guide and does not provide scenic-area commentary. At large sites you explore independently and meet the driver afterwards. Ski instruction, if part of the confirmed package, is provided by the resort's instructors.",
+    "司机会说中文和英语，负责行程时间、各站接送和市区游览的衔接。司机不是持证导游，不提供景区讲解；大型景区内自行游玩，结束后与司机会合。若确认的滑雪套餐包含教学，由雪场教练负责。",
+    "운전기사는 영어로 소통하며 시간 조율, 이동 및 시내 방문을 돕습니다. 공인 관광 가이드는 아니며 관광지 해설은 제공하지 않습니다. 넓은 관광지는 자유롭게 둘러본 뒤 운전기사와 다시 만납니다. 확정된 스키 패키지에 강습이 포함된다면 스키장 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
   ),
 );
 
@@ -201,9 +204,9 @@ const priceFaq = faq(
     "내 날짜와 인원에는 어떤 요금이 적용되나요?",
   ),
   l(
-    "Peak-season prices apply from 20 December to 14 February; other dates use low-season prices. Prices are per person for 2, 4, 6 or 8 travellers, with two adults sharing a room. Other group sizes, children's prices and single-room supplements are quoted separately, and you receive the final total in writing before payment.",
-    "12 月 20 日至次年 2 月 14 日适用旺季价，其他日期适用淡季价。价格为 2、4、6 或 8 人同行时的每人价，按两位成人同住一间计算。其他人数、儿童价和单房差另行报价，最终总价在付款前书面发给你。",
-    "12월 20일~2월 14일에는 성수기 요금, 그 외 날짜에는 비수기 요금이 적용됩니다. 요금은 2명·4명·6명·8명 기준 1인 요금이며 성인 2명 1실 기준입니다. 그 외 인원, 아동 요금과 1인실 추가금은 따로 견적을 드리며, 최종 총액은 결제 전에 서면으로 보내 드립니다.",
+    "The published season runs 10 November 2026–10 March 2027: low season is 10 November–19 December and 15 February–10 March; peak season is 20 December–14 February. Prices are per person for 2, 4, 6 or 8 travellers, with two adults sharing a room. Other group sizes, children's prices and single-room supplements are quoted separately; you receive the final total in writing before payment.",
+    "本季报价适用 2026 年 11 月 10 日至 2027 年 3 月 10 日：11 月 10 日至 12 月 19 日、2 月 15 日至 3 月 10 日为淡季；12 月 20 日至次年 2 月 14 日为旺季。页面为 2、4、6 或 8 人同行时的每人价，按两位成人同住一间计算。其他人数、儿童价和单房差另行报价，付款前书面确认最终总价。",
+    "이 요금은 2026년 11월 10일~2027년 3월 10일에 적용됩니다. 비수기는 11월 10일~12월 19일과 2월 15일~3월 10일, 성수기는 12월 20일~2월 14일입니다. 표시는 2·4·6·8명 기준 1인 요금이며 성인 2명 1실 기준입니다. 그 외 인원, 아동 요금과 1인실 추가금은 따로 견적을 드리고 최종 총액을 결제 전에 서면으로 확인합니다.",
   ),
 );
 
@@ -214,9 +217,9 @@ const notStatedFaq = faq(
     "식사와 공항 픽업·샌딩이 포함되나요?",
   ),
   l(
-    "Only if your written quote lists them. Meals, airport and station transfers, admission tickets, children's prices and cancellation terms are not fixed on this page; we confirm each of them in writing before you pay.",
-    "只有书面报价列明时才包含。餐食、机场和车站接送、景点门票、儿童价以及取消条款，本页都没有固定写死，付款前会逐项书面确认。",
-    "서면 견적에 적힌 경우에만 포함됩니다. 식사, 공항·역 이동, 입장권, 아동 요금과 취소 규정은 이 페이지에서 확정하지 않으며, 결제 전에 항목별로 서면 확인해 드립니다.",
+    "The admission tickets named in the service section are included. Meals and airport or station transfers are confirmed, along with any additional tickets and cancellation terms, in writing before payment.",
+    "服务内容列明的门票已包含。餐食、机场或车站接送、额外门票及取消条款，付款前会逐项书面确认。",
+    "서비스 항목에 명시된 입장권은 포함됩니다. 식사, 공항·역 이동, 추가 입장권 및 취소 규정은 결제 전에 서면으로 확인합니다.",
   ),
 );
 
@@ -240,9 +243,9 @@ const coldWeatherNote = l(
 );
 
 const bookingNote = l(
-  `${coldWeatherNote.en} The per-person prices shown are for 2, 4, 6 or 8 travellers, with two adults sharing a room, and exclude flights. Low-season prices apply outside 20 December – 14 February and peak-season prices within it. Other group sizes are quoted on request; children's prices, single rooms and cancellation terms are confirmed in your written quote before you pay.`,
-  `${coldWeatherNote.zh}页面价格为 2、4、6 或 8 人同行时的每人价，按两位成人同住一间计算，不含机票。12 月 20 日至次年 2 月 14 日以外适用淡季价，期间适用旺季价。其他人数按需报价；儿童价、单房和取消条款，付款前在书面报价中确认。`,
-  `${coldWeatherNote.ko} 표시된 1인 요금은 2명·4명·6명·8명 기준이며 성인 2명 1실 기준이고 항공권은 포함되지 않습니다. 12월 20일~2월 14일 이외에는 비수기 요금, 그 기간에는 성수기 요금이 적용됩니다. 그 외 인원은 요청 시 견적을 드리며, 아동 요금, 1인실과 취소 규정은 결제 전 서면 견적에서 확정합니다.`,
+  `${coldWeatherNote.en} The starting prices shown are per person for 2, 4, 6 or 8 travellers sharing twin rooms, on departures 10 November 2026–10 March 2027 only. Ice attractions, ski areas and weather-sensitive activities are checked for your dates before payment. Other group sizes, children's prices, single rooms and cancellation terms are confirmed in your written quote.`,
+  `${coldWeatherNote.zh}页面所示起价为 2、4、6 或 8 人同行、两人同住一间时的每人价，仅适用于 2026 年 11 月 10 日至 2027 年 3 月 10 日出发。冰雪景点、雪场及受天气影响的项目，付款前按你的日期核对。其他人数、儿童价、单房和取消条款，以书面报价确认为准。`,
+  `${coldWeatherNote.ko} 표시된 시작가는 2·4·6·8명, 성인 2명 1실 기준 1인 요금이며 2026년 11월 10일~2027년 3월 10일 출발에만 적용됩니다. 빙설 명소, 스키장 및 날씨에 좌우되는 활동은 결제 전에 확인합니다. 그 외 인원, 아동 요금, 1인실과 취소 규정은 서면 견적에서 확정합니다.`,
 );
 
 const exclusions = (
@@ -251,47 +254,54 @@ const exclusions = (
   extraKo: readonly string[],
 ) => lists(
   [
-    "Flights or trains to the start and from the end of the route",
-    "Meals, unless your written quote lists them",
-    "Airport and station transfers, unless your written quote lists them",
-    "Admission tickets not named in your written quote",
+    "Meals, arrival and departure transfers, and transport to the starting city or onward from the ending city: confirm the scope and price in your written quote",
+    "Any admission or optional activity beyond the named inclusions: confirm in your written quote",
     ...extraEn,
-    "Single-room supplement and children's prices (quoted separately)",
-    "Cold-weather clothing and personal snow gear",
-    "Travel insurance, visas, tips and personal expenses",
+    "Children's prices, single-room supplements and cancellation terms: quoted separately before payment",
   ],
   [
-    "往返行程起点与终点的机票或火车票",
-    "餐食（书面报价列明的除外）",
-    "机场与车站接送（书面报价列明的除外）",
-    "书面报价未列明的景点门票",
+    "餐食、抵离接送及往返行程起终点的交通：服务范围和价格以书面报价确认为准",
+    "已列明项目以外的门票和自选活动：以书面报价确认为准",
     ...extraZh,
-    "单房差与儿童价（另行报价）",
-    "防寒服装与个人雪具",
-    "旅游保险、签证、小费及个人消费",
+    "儿童价、单房差与取消条款：付款前另行书面确认",
   ],
   [
-    "코스 출발지·도착지까지의 항공권 또는 기차표",
-    "식사(서면 견적에 적힌 경우 제외)",
-    "공항·역 이동(서면 견적에 적힌 경우 제외)",
-    "서면 견적에 적히지 않은 입장권",
+    "식사, 도착·출발 이동 및 코스 출발지·종료지까지의 교통: 범위와 요금은 서면 견적에서 확인",
+    "명시된 포함 항목 이외의 입장권과 선택 활동: 서면 견적에서 확인",
     ...extraKo,
-    "1인실 추가금과 아동 요금(별도 견적)",
-    "방한복과 개인 설상 장비",
-    "여행자 보험, 비자, 팁과 개인 경비",
+    "아동 요금, 1인실 추가금과 취소 규정: 결제 전에 별도 서면 확인",
   ],
+);
+
+const iceWorldOpeningFaq = faq(
+  l(
+    "What if Ice and Snow World is not open on my dates?",
+    "如果出行时冰雪大世界还没开放怎么办？",
+    "여행 날짜에 빙설대세계가 개장하지 않았다면 어떻게 되나요?",
+  ),
+  l(
+    "The 2026–27 opening date has not been confirmed. For departures before the official opening, the visit and ticket cannot be assumed; we agree a revised itinerary and price in writing before payment.",
+    "2026–27 雪季的开放日期尚未确定。若出行时尚未正式开放，不能默认包含入园和门票；付款前会书面确认调整后的行程与价格。",
+    "2026~27 시즌 개장일은 아직 확정되지 않았습니다. 공식 개장 전 출발이라면 방문과 입장권을 보장할 수 없으며, 결제 전에 변경 일정과 요금을 서면으로 합의합니다.",
+  ),
 );
 
 const serviceNote = (inclusions: LocalizedText) => l(
-  `Your party has its own vehicle, sized to the group, and an English-speaking driver-guide (司机兼向导) who drives, runs the day's timings and goes with you around the city sights. At large scenic areas such as Harbin Ice and Snow World you explore at your own pace, and any ski instruction is by the resort's own instructors. Included: the private vehicle and driver-guide on the route days in your written confirmation, the reference hotels, ${inclusions.en}. Meals, airport and station transfers and admissions are included only where your written quote lists them.`,
-  `私车按人数安排，只服务你们一行，司机兼向导会说中文和英语，负责开车、安排当天行程，市区景点陪同游览。冰雪大世界这类大景区由你们自己游玩，滑雪由雪场的专业教练指导。包含：书面确认单所列行程日的私车和司机兼向导、参考酒店，${inclusions.zh}。餐食、机场和车站接送以及景点门票，只有书面报价列明时才包含。`,
-  `일행 인원에 맞춘 전용 차량과 영어로 소통하는 운전기사 겸 안내인이 함께합니다. 안내인은 운전과 하루 일정을 챙기고 시내 명소는 함께 둘러봅니다. 하얼빈 빙설대세계 같은 큰 관광지는 자유롭게 둘러보며, 스키 강습은 스키장 소속 강사가 맡습니다. 한국어 안내는 포함되지 않습니다. 포함: 서면 확인서에 적힌 일정일의 전용 차량과 운전기사 겸 안내인, 참고 호텔, ${inclusions.ko}. 식사, 공항·역 이동과 입장권은 서면 견적에 적힌 경우에만 포함됩니다.`,
+  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, airport and station transfers, and any tickets not named here are confirmed in your written quote.`,
+  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、机场和车站接送及未列明的门票，付款前在书面报价中确认。`,
+  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, 공항·역 이동 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다.`,
 );
 
 const yabuliSkiPackage = l(
-  "and the Yabuli ski package (ski time, equipment and instruction as stated in your written confirmation)",
-  "以及亚布力滑雪套餐（滑雪时长、雪具和教练以书面确认为准）",
-  "야부리 스키 패키지(스키 시간, 장비와 강습은 서면 확인서 기준)",
+  "Harbin Ice and Snow World and Snow Town tickets, plus the Yabuli ski package (ski time, equipment and any instruction as stated in your written confirmation)",
+  "哈尔滨冰雪大世界和雪乡门票，以及亚布力滑雪套票（时长、雪具和是否含教练以书面确认为准）",
+  "하얼빈 빙설대세계와 설향 입장권, 야부리 스키 패키지(시간·장비·강습 포함 여부는 서면 확인서 기준)",
+);
+
+const yabuliChangbaiTickets = l(
+  "Harbin Ice and Snow World, Snow Town, Changbai Mountain North Slope and Xueling tickets, plus the Yabuli ski package (ski time, equipment and any instruction as stated in your written confirmation)",
+  "哈尔滨冰雪大世界、雪乡、长白山北坡和雪岭门票，以及亚布力滑雪套票（时长、雪具和是否含教练以书面确认为准）",
+  "하얼빈 빙설대세계·설향·백두산 북파·쉐링 입장권, 야부리 스키 패키지(시간·장비·강습 포함 여부는 서면 확인서 기준)",
 );
 
 const servicePrices = {
@@ -315,9 +325,9 @@ const harbinIceDay = day(
   2,
   l("Central Street and Ice and Snow World", "中央大街与冰雪大世界", "중앙대가와 빙설대세계"),
   l(
-    "Walk Central Street with your driver-guide, then head to Harbin Ice and Snow World, which you explore at your own pace; your driver-guide meets you afterwards. Admission is included only if your written quote lists it. Overnight in Harbin.",
-    "司机兼向导陪你们逛中央大街，之后送你们去哈尔滨冰雪大世界，园区内自由游玩，结束后再会合。门票是否包含，以书面报价为准。住哈尔滨。",
-    "운전기사 겸 안내인과 함께 중앙대가를 걸은 뒤 하얼빈 빙설대세계로 이동해 자유롭게 둘러보고, 관람 후 안내인과 다시 만납니다. 입장권은 서면 견적에 적힌 경우에만 포함됩니다. 하얼빈에서 숙박합니다.",
+    "Walk Central Street, then visit Harbin Ice and Snow World with admission included when open. Explore independently and meet the driver afterwards. Before its official opening, we reconfirm the itinerary and price in writing before payment. Overnight in Harbin.",
+    "逛中央大街后，在冰雪大世界正式开放时入园游玩，门票包含在内；园区内自行游玩，结束后与司机会合。若出行时尚未开放，付款前会书面确认调整后的行程与价格。住哈尔滨。",
+    "중앙대가를 걷고 빙설대세계가 개장했다면 포함된 입장권으로 방문합니다. 공원 안은 자유롭게 둘러본 뒤 운전기사와 만납니다. 공식 개장 전 출발은 결제 전에 일정과 요금을 다시 서면 확인합니다. 하얼빈에서 숙박합니다.",
   ),
 );
 
@@ -391,7 +401,6 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
   slug: snowTownSlug,
   days: 6,
   nights: 5,
-  visibility: "preview",
   routePhotoFallback: false,
   servicePolicy,
   title: l(
@@ -423,19 +432,19 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Harbin"),
       fact("Nights", "5 hotel nights · no night trains"),
-      fact("Service", "Private vehicle · driver-guide"),
+      fact("Service", "Private vehicle · driver (not a licensed guide)"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 哈尔滨"),
       fact("住宿", "5 晚酒店 · 不坐夜车"),
-      fact("服务", "私车 · 司机兼向导"),
+      fact("服务", "私车 · 司机接待（非持证导游）"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 하얼빈"),
       fact("숙박", "호텔 5박 · 야간열차 없음"),
-      fact("서비스", "전용 차량 · 운전기사 겸 안내인"),
+      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -480,9 +489,9 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
   ),
   serviceNote: serviceNote(yabuliSkiPackage),
   exclusions: exclusions(
-    ["Ski time, equipment or instruction beyond the Yabuli ski package in your confirmation"],
-    ["确认单所列亚布力滑雪套餐以外的滑雪时长、雪具或教练"],
-    ["확인서의 야부리 스키 패키지를 넘는 스키 시간, 장비 또는 강습"],
+    ["Extra Yabuli ski time, equipment or instruction beyond the included package: confirm any added price before payment"],
+    ["亚布力套餐以外的滑雪时长、雪具或教练：如需增加，付款前确认差价"],
+    ["포함된 야부리 패키지를 넘는 스키 시간·장비·강습: 추가 요금을 결제 전에 확인"],
   ),
   bookingNote,
   faq: [
@@ -507,10 +516,11 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
         "스키 패키지는 요금에 포함되지만, 스키 시간, 장비와 강습은 이 페이지에서 확정하지 않습니다. 결제 전 서면 확인서에 적어 드리며, 패키지를 넘는 부분은 별도입니다.",
       ),
     ),
+    iceWorldOpeningFaq,
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: iceWorldHero,
+  heroImage: snowTownHero,
   gallery: [],
   routeMedia: [
     ...harbinSnowTownRoutePhotos,
@@ -526,7 +536,7 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
       ),
     ),
   ],
-  packages: seasonPackages([5100, 4400, 4200, 3900], [6500, 5700, 5500, 5200]),
+  packages: seasonPackages([5600, 4900, 4600, 4300], [7200, 6300, 6000, 5700]),
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
 };
@@ -541,7 +551,6 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
   slug: changbaiSlug,
   days: 8,
   nights: 7,
-  visibility: "preview",
   routePhotoFallback: false,
   servicePolicy,
   title: l(
@@ -578,19 +587,19 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Changbai Mountain → Yanji"),
       fact("Nights", "7 hotel nights · long transfer on Day 5"),
-      fact("Service", "Private vehicle · driver-guide"),
+      fact("Service", "Private vehicle · driver (not a licensed guide)"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 长白山 → 延吉"),
       fact("住宿", "7 晚酒店 · 第 5 天长途转场"),
-      fact("服务", "私车 · 司机兼向导"),
+      fact("服务", "私车 · 司机接待（非持证导游）"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 백두산 → 연길"),
       fact("숙박", "호텔 7박 · 5일차 장거리 이동"),
-      fact("서비스", "전용 차량 · 운전기사 겸 안내인"),
+      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -626,9 +635,9 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       6,
       l("Changbai Mountain North Slope", "长白山北坡", "백두산 북파"),
       l(
-        "Visit the North Slope of Changbai Mountain when the roads and scenic area are open; weather decides access and whether Tianchi is visible. Whether North Slope admission and scenic-area buses are included is stated in your written quote. Your hotel tonight is named in your confirmation.",
-        "道路和景区开放时游览长白山北坡；能否上山、能否看到天池，都取决于当天天气。北坡门票和景区交通车是否包含，以书面报价为准。当晚酒店写在确认单上。",
-        "도로와 관광지가 운영할 때 백두산 북파를 방문합니다. 입장 여부와 천지가 보일지는 당일 날씨에 달려 있습니다. 북파 입장권과 관광지 셔틀버스 포함 여부는 서면 견적을 따릅니다. 이날 호텔은 확인서에 적어 드립니다.",
+        "Visit the North Slope of Changbai Mountain when the roads and scenic area are open. North Slope admission is included; scenic-area transport is confirmed in your written quote. Weather decides access and whether Tianchi is visible. Return to Erdaobaihe for the night; the exact hotel is named in your confirmation.",
+        "道路和景区开放时游览长白山北坡，北坡门票已包含；景区交通车以书面报价为准。能否上山、能否看到天池，取决于当天天气。当晚返回二道白河住宿，具体酒店写在确认单上。",
+        "도로와 관광지가 운영할 때 백두산 북파를 방문하며 입장권은 포함됩니다. 관광지 셔틀버스는 서면 견적에서 확인합니다. 입장 가능 여부와 천지 전망은 날씨에 좌우됩니다. 저녁에는 이도백하로 돌아와 숙박하며 정확한 호텔은 확인서에 적어 드립니다.",
       ),
     ),
     day(
@@ -651,18 +660,18 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     ),
   ],
   hotelNote: l(
-    "Seven hotel nights and no night trains: two in Harbin, one at Yabuli, one in the Snow Town area, one in Erdaobaihe, one on Day 6 as named in your confirmation, and one in Yanji. Prices are based on reference hotels with two adults sharing one room; single rooms are quoted separately.",
-    "共 7 晚酒店、不坐夜车：哈尔滨 2 晚、亚布力 1 晚、雪乡一带 1 晚、二道白河 1 晚、第 6 天按确认单入住 1 晚、延吉 1 晚。价格按参考酒店、两位成人同住一间计算；单住另行报价。",
-    "호텔 7박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 이도백하 1박, 6일차에 확인서에 적힌 호텔 1박, 연길 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며 1인실은 따로 견적을 드립니다.",
+    "Seven hotel nights and no night trains: two in Harbin, one at Yabuli, one in the Snow Town area, two in Erdaobaihe and one in Yanji. Prices are based on reference hotels with two adults sharing one room; exact hotels are named in your written confirmation, and single rooms are quoted separately.",
+    "共 7 晚酒店、不坐夜车：哈尔滨 2 晚、亚布力 1 晚、雪乡一带 1 晚、二道白河 2 晚、延吉 1 晚。价格按参考酒店、两位成人同住一间计算；具体酒店写在书面确认单上，单住另行报价。",
+    "호텔 7박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 이도백하 2박, 연길 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며, 실제 호텔은 서면 확인서에 적어 드리고 1인실은 따로 견적을 드립니다.",
   ),
-  serviceNote: serviceNote(yabuliSkiPackage),
+  serviceNote: serviceNote(yabuliChangbaiTickets),
   exclusions: exclusions(
     [
-      "Jingpo Lake admission (the route passes by; it is not a paid visit)",
-      "Ski time, equipment or instruction beyond the Yabuli ski package in your confirmation",
+      "An optional paid visit inside Jingpo Lake, which the route otherwise passes by: confirm separately before payment",
+      "Extra Yabuli ski time, equipment or instruction beyond the included package: confirm any added price before payment",
     ],
-    ["镜泊湖门票（途经停留，不安排入园游览）", "确认单所列亚布力滑雪套餐以外的滑雪时长、雪具或教练"],
-    ["징포호 입장료(지나가며 들르는 곳으로 입장 관람 아님)", "확인서의 야부리 스키 패키지를 넘는 스키 시간, 장비 또는 강습"],
+    ["如想入园游览途经的镜泊湖，付款前另行确认安排和费用", "亚布力套餐以外的滑雪时长、雪具或教练：如需增加，付款前确认差价"],
+    ["경유지 징포호 내부에 유료로 방문하려면 결제 전에 일정과 요금 확인", "포함된 야부리 패키지를 넘는 스키 시간·장비·강습: 추가 요금을 결제 전에 확인"],
   ),
   bookingNote,
   faq: [
@@ -694,28 +703,17 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
         "백두산 북파는 꼭 갈 수 있나요?",
       ),
       l(
-        "No. Access depends on the weather and road conditions that day, and the scenic area can close; Tianchi may not be visible even when it is open. Whether North Slope admission and scenic-area buses are included is confirmed in your written quote.",
-        "不能保证。能否上山取决于当天天气和路况，景区也可能关闭；即使开放，也不一定能看到天池。北坡门票和景区交通车是否包含，以书面报价为准。",
-        "보장할 수 없습니다. 입장은 당일 날씨와 도로 상황에 달려 있고 관광지가 문을 닫을 수도 있으며, 운영하더라도 천지가 보이지 않을 수 있습니다. 북파 입장권과 셔틀버스 포함 여부는 서면 견적에서 확인합니다.",
+        "No. Access depends on the weather and roads, and Tianchi may not be visible even when the scenic area is open. North Slope admission is included; any scenic-area transport is confirmed in your written quote.",
+        "不能保证。要看当天的天气和路况；即使景区开放，也不一定看得到天池。北坡门票已包含，景区交通车以书面报价为准。",
+        "아니요. 입장은 날씨와 도로 상황에 달려 있으며, 관광지가 개방해도 천지가 보이지 않을 수 있습니다. 북파 입장권은 포함되고 관광지 셔틀버스는 서면 견적에서 확인합니다.",
       ),
     ),
+    iceWorldOpeningFaq,
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: iceWorldHero,
-  gallery: [
-    image(
-      `${changbaishanImages}/hero.webp`,
-      l("Tianchi crater lake on Changbai Mountain", "长白山天池", "백두산 천지"),
-      l(
-        "Tianchi on Changbai Mountain; whether it is visible depends on the day.",
-        "长白山天池；能否看到，要看当天情况。",
-        "백두산 천지입니다. 볼 수 있을지는 당일 상황에 따라 다릅니다.",
-      ),
-      1920,
-      1440,
-    ),
-  ],
+  heroImage: iceSlide.image,
+  gallery: [],
   routeMedia: [
     ...harbinSnowTownRoutePhotos,
     routePhoto(6, {
@@ -745,7 +743,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
       ),
     }),
   ],
-  packages: seasonPackages([7000, 6000, 5600, 5200], [9300, 8100, 7700, 7300]),
+  packages: seasonPackages([7700, 6600, 6200, 5700], [10200, 8900, 8400, 8000]),
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
 };
@@ -760,7 +758,6 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
   slug: moheSlug,
   days: 7,
   nights: 6,
-  visibility: "preview",
   routePhotoFallback: false,
   servicePolicy,
   title: l(
@@ -792,36 +789,39 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Mohe → Beihong Village → Arctic Village → Harbin"),
       fact("Nights", "4 hotel nights + 2 hard-sleeper train nights"),
-      fact("Service", "Private vehicle · driver-guide"),
+      fact("Service", "Private vehicle · driver (not a licensed guide)"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 漠河 → 北红村 → 北极村 → 哈尔滨"),
       fact("住宿", "4 晚酒店 + 2 晚硬卧夜车"),
-      fact("服务", "私车 · 司机兼向导"),
+      fact("服务", "私车 · 司机接待（非持证导游）"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 모허 → 베이훙촌 → 북극촌 → 하얼빈"),
       fact("숙박", "호텔 4박 + 경와 야간열차 2박"),
-      fact("서비스", "전용 차량 · 운전기사 겸 안내인"),
+      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
       fact("요금", servicePrices.ko),
     ],
   ),
   highlights: lists(
     [
+      "Central Street and Harbin Ice and Snow World when open",
       "Siberian Tiger Park and Saint Sophia Cathedral",
       "Birch forest and the First Bend of the Heilongjiang",
       "Beihong Village, the reindeer park and Christmas Village",
       "Arctic Village, a beginner-slope ski session and the northernmost post office",
     ],
     [
+      "中央大街与开放期间的哈尔滨冰雪大世界",
       "虎园与圣索菲亚教堂",
       "北方林海与龙江第一湾",
       "北红村、驯鹿园与圣诞村",
       "北极村、初级道滑雪与最北邮局",
     ],
     [
+      "중앙대가와 개장 시 하얼빈 빙설대세계",
       "시베리아 호랑이 공원과 성 소피아 성당",
       "자작나무 숲과 헤이룽장 제1만",
       "베이훙촌, 순록 공원과 크리스마스 마을",
@@ -830,15 +830,7 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
   ),
   itinerary: [
     arriveHarbin,
-    day(
-      2,
-      l("Harbin", "哈尔滨", "하얼빈"),
-      l(
-        "A day in Harbin with your private vehicle and driver-guide; the stops are listed in your written itinerary. Overnight in Harbin.",
-        "私车和司机兼向导陪同，在哈尔滨游览一天，具体停留点写在书面行程里。住哈尔滨。",
-        "전용 차량과 운전기사 겸 안내인과 함께 하얼빈에서 하루를 보냅니다. 방문 장소는 서면 일정에 적어 드립니다. 하얼빈에서 숙박합니다.",
-      ),
-    ),
+    harbinIceDay,
     day(
       3,
       l(
@@ -847,9 +839,9 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
         "시베리아 호랑이 공원, 성 소피아 성당과 야간열차",
       ),
       l(
-        "Visit the Siberian Tiger Park (虎园) and Saint Sophia Cathedral, then board the evening sleeper train to Mohe. Tonight is in a hard-sleeper berth, allocated at random; there is no hotel.",
-        "游览虎园和圣索菲亚教堂，傍晚坐卧铺夜车前往漠河。当晚睡硬卧，铺位随机分配，不住酒店。",
-        "시베리아 호랑이 공원(虎园)과 성 소피아 성당을 둘러본 뒤 저녁 침대열차로 모허에 갑니다. 이날 밤은 무작위로 배정되는 경와 침대에서 보내며 호텔 숙박은 없습니다.",
+        "Stop at Siberian Tiger Park and Saint Sophia Cathedral, then board the evening sleeper train to Mohe. Tiger Park admission is not among the named tickets and is confirmed in your written quote. Tonight is in a randomly allocated hard-sleeper berth, with no hotel.",
+        "前往虎园和圣索菲亚教堂，傍晚坐卧铺夜车前往漠河。虎园门票不在已列明门票中，是否入园以书面报价为准。当晚睡随机分配的硬卧铺位，不住酒店。",
+        "시베리아 호랑이 공원과 성 소피아 성당에 들른 뒤 저녁 침대열차로 모허에 갑니다. 호랑이 공원 입장권은 명시된 포함 항목에 없어 서면 견적에서 확인합니다. 이날 밤은 무작위 배정 경와 침대에서 보내며 호텔은 없습니다.",
       ),
     ),
     day(
@@ -907,14 +899,14 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     "호텔 4박과 침대열차 2박: 1·2일차는 하얼빈, 4·5일차는 최북단 지역 호텔(확인서에 기재)입니다. 3·6일차는 하얼빈과 모허 사이 경와 야간열차에서 보내며 침대는 무작위로 배정됩니다. 호텔은 성인 2명 1실 기준이며 1인실은 따로 견적을 드립니다.",
   ),
   serviceNote: serviceNote(l(
-    "two hard-sleeper train nights between Harbin and Mohe (berths allocated at random) and one beginner-slope ski session (ski time and equipment as stated in your written confirmation)",
-    "哈尔滨与漠河之间两晚硬卧夜车（铺位随机分配），以及一次初级道滑雪（滑雪时长和雪具以书面确认为准）",
-    "하얼빈–모허 경와 야간열차 2박(침대 무작위 배정), 초급 코스 스키 1회(스키 시간과 장비는 서면 확인서 기준)",
+    "round-trip Harbin–Mohe hard-sleeper train tickets (random berths); Harbin Ice and Snow World, First Bay of Heilongjiang, Reindeer Park, Christmas Village and Arctic Village tickets; and a beginner-slope ski session with poles, skis and boots (duration confirmed in writing)",
+    "哈尔滨—漠河往返硬卧车票（铺位随机）；冰雪大世界、龙江第一湾、驯鹿园、圣诞村和北极村门票；以及一次含雪杖、雪板和雪鞋的初级道滑雪（时长书面确认）",
+    "하얼빈–모허 왕복 경와열차표(침대 무작위 배정), 빙설대세계·헤이룽장 제1만·순록 공원·크리스마스 마을·북극촌 입장권, 폴·스키·부츠가 포함된 초급 코스 스키 1회(시간은 서면 확인)",
   )),
   exclusions: exclusions(
-    ["A choice of berth on the sleeper trains (berths are allocated at random)"],
-    ["卧铺铺位的指定（铺位随机分配）"],
-    ["침대열차 자리 지정(침대는 무작위 배정)"],
+    ["Sleeper berths are assigned at random; ask before payment if a specific berth or upgrade is important"],
+    ["硬卧铺位随机分配；如需指定铺位或升级，请在付款前提出"],
+    ["침대는 무작위 배정됩니다. 자리 지정이나 업그레이드가 필요하면 결제 전에 문의하세요"],
   ),
   bookingNote,
   faq: [
@@ -935,29 +927,19 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     faq(
       l("Is skiing included?", "包含滑雪吗？", "스키가 포함되나요?"),
       l(
-        "Yes, one beginner-slope ski session on Day 5. Ski time and equipment are not fixed on this page; we state them in your written confirmation before you pay.",
-        "包含，第 5 天有一次初级道滑雪。滑雪时长和雪具本页没有写定，付款前会在书面确认单上写明。",
-        "네, 5일차에 초급 코스 스키가 1회 포함됩니다. 스키 시간과 장비는 이 페이지에서 확정하지 않으며, 결제 전 서면 확인서에 적어 드립니다.",
+        "Yes, one beginner-slope ski session on Day 5 includes poles, skis and boots. The duration and any other equipment or lesson are confirmed in writing before payment.",
+        "包含，第 5 天有一次初级道滑雪，含雪杖、雪板和雪鞋。滑雪时长，以及其他雪具或教练安排，付款前书面确认。",
+        "네, 5일차 초급 코스 스키 1회에 폴·스키·부츠가 포함됩니다. 이용 시간과 그 밖의 장비 또는 강습은 결제 전에 서면으로 확인합니다.",
       ),
     ),
+    iceWorldOpeningFaq,
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: image(
-    `${harbinImages}/saint-sophia-winter-1600.jpg`,
-    l(
-      "Saint Sophia Cathedral and a snow-covered square in Harbin at night",
-      "夜色中的哈尔滨圣索菲亚教堂与积雪广场",
-      "밤의 하얼빈 성 소피아 성당과 눈 덮인 광장",
-    ),
-    l(
-      "Saint Sophia Cathedral in Harbin, where the route starts, photographed in January 2018; lighting and snow vary.",
-      "路线起点哈尔滨的圣索菲亚教堂，2018 年 1 月拍摄；灯光和积雪情况会变化。",
-      "코스가 시작되는 하얼빈의 성 소피아 성당으로, 2018년 1월에 촬영했습니다. 조명과 눈 상태는 달라질 수 있습니다.",
-    ),
-  ),
+  heroImage: beijiVillageHero,
   gallery: [],
   routeMedia: [
+    routePhoto(2, centralStreet, iceSlide),
     routePhoto(3, sophiaExterior),
     routePhoto(
       7,
@@ -971,7 +953,7 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
       ),
     ),
   ],
-  packages: seasonPackages([5400, 4400, 4200, 4100], [6400, 5400, 5000, 4700]),
+  packages: seasonPackages([5900, 4900, 4600, 4400], [7000, 5900, 5400, 5200]),
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
 };
@@ -986,7 +968,6 @@ const harbinSnowTownMohe: PrivateTourProduct = {
   slug: snowTownMoheSlug,
   days: 9,
   nights: 8,
-  visibility: "preview",
   routePhotoFallback: false,
   servicePolicy,
   title: l(
@@ -1010,27 +991,27 @@ const harbinSnowTownMohe: PrivateTourProduct = {
     "하얼빈 빙설 풍경, 야부리 스키와 설향을 본 뒤 야간열차로 모허, 베이훙촌과 북극촌에 갑니다. 숙박은 호텔 6박과 경와 야간열차 2박이며, 침대는 무작위로 배정됩니다.",
   ),
   summary: l(
-    "Nine days: six hotel nights (Harbin, Yabuli, the Snow Town area and two far-north nights) and two nights on hard-sleeper trains between Harbin and Mohe, with berths allocated at random. It covers the most of the four Northeast routes, but it is long.",
-    "9 天行程：6 晚酒店（哈尔滨、亚布力、雪乡一带和最北端 2 晚）加 2 晚往返哈尔滨与漠河的硬卧夜车，铺位随机分配。四条东北路线里它走得最全，但行程也最长。",
-    "9일 일정: 호텔 6박(하얼빈, 야부리, 설향 일대, 최북단 2박)과 하얼빈–모허 왕복 경와 야간열차 2박이며, 침대는 무작위로 배정됩니다. 네 가지 동북 코스 중 가장 많이 보지만 일정이 깁니다.",
+    "Nine days: six hotel nights (Harbin, Yabuli, the Snow Town area and two far-north nights) and two nights on hard-sleeper trains between Harbin and Mohe, with berths allocated at random. It covers the most of the five Northeast routes, but it is long.",
+    "9 天行程：6 晚酒店（哈尔滨、亚布力、雪乡一带和最北端 2 晚）加 2 晚往返哈尔滨与漠河的硬卧夜车，铺位随机分配。五条东北路线里它走得最全，但行程也最长。",
+    "9일 일정: 호텔 6박(하얼빈, 야부리, 설향 일대, 최북단 2박)과 하얼빈–모허 왕복 경와 야간열차 2박이며, 침대는 무작위로 배정됩니다. 다섯 가지 동북 코스 중 가장 많이 보지만 일정이 깁니다.",
   ),
   facts: facts(
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Harbin → Mohe → Harbin"),
       fact("Nights", "6 hotel nights + 2 hard-sleeper train nights"),
-      fact("Service", "Private vehicle · driver-guide"),
+      fact("Service", "Private vehicle · driver (not a licensed guide)"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 哈尔滨 → 漠河 → 哈尔滨"),
       fact("住宿", "6 晚酒店 + 2 晚硬卧夜车"),
-      fact("服务", "私车 · 司机兼向导"),
+      fact("服务", "私车 · 司机接待（非持证导游）"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 하얼빈 → 모허 → 하얼빈"),
       fact("숙박", "호텔 6박 + 경와 야간열차 2박"),
-      fact("서비스", "전용 차량 · 운전기사 겸 안내인"),
+      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -1105,17 +1086,17 @@ const harbinSnowTownMohe: PrivateTourProduct = {
     "호텔 6박과 침대열차 2박: 1·2일차 하얼빈, 3일차 야부리, 4일차 설향 일대, 6·7일차 최북단 지역 호텔(확인서에 기재)입니다. 5·8일차는 하얼빈과 모허 사이 경와 야간열차에서 보내며 침대는 무작위로 배정됩니다. 호텔은 성인 2명 1실 기준이며 1인실은 따로 견적을 드립니다.",
   ),
   serviceNote: serviceNote(l(
-    "the Yabuli ski package (ski time, equipment and instruction as stated in your written confirmation) and two hard-sleeper train nights between Harbin and Mohe (berths allocated at random)",
-    "亚布力滑雪套餐（滑雪时长、雪具和教练以书面确认为准），以及哈尔滨与漠河之间两晚硬卧夜车（铺位随机分配）",
-    "야부리 스키 패키지(스키 시간, 장비와 강습은 서면 확인서 기준), 하얼빈–모허 경와 야간열차 2박(침대 무작위 배정)",
+    "round-trip Harbin–Mohe hard-sleeper train tickets (random berths); Harbin Ice and Snow World, Snow Town, First Bay of Heilongjiang, Reindeer Park, Christmas Village and Arctic Village tickets; the Yabuli ski package; and a beginner-slope ski session with poles, skis and boots (ski durations confirmed in writing)",
+    "哈尔滨—漠河往返硬卧车票（铺位随机）；冰雪大世界、雪乡、龙江第一湾、驯鹿园、圣诞村和北极村门票；亚布力滑雪套票；以及一次含雪杖、雪板和雪鞋的初级道滑雪（滑雪时长书面确认）",
+    "하얼빈–모허 왕복 경와열차표(침대 무작위 배정), 빙설대세계·설향·헤이룽장 제1만·순록 공원·크리스마스 마을·북극촌 입장권, 야부리 스키 패키지, 폴·스키·부츠가 포함된 초급 코스 스키 1회(시간은 서면 확인)",
   )),
   exclusions: exclusions(
     [
-      "Ski time, equipment or instruction beyond the Yabuli ski package in your confirmation",
-      "A choice of berth on the sleeper trains (berths are allocated at random)",
+      "Extra Yabuli ski time, equipment or instruction beyond the included package: confirm any added price before payment",
+      "Sleeper berths are assigned at random; ask before payment if a specific berth or upgrade is important",
     ],
-    ["确认单所列亚布力滑雪套餐以外的滑雪时长、雪具或教练", "卧铺铺位的指定（铺位随机分配）"],
-    ["확인서의 야부리 스키 패키지를 넘는 스키 시간, 장비 또는 강습", "침대열차 자리 지정(침대는 무작위 배정)"],
+    ["亚布力套餐以外的滑雪时长、雪具或教练：如需增加，付款前确认差价", "硬卧铺位随机分配；如需指定铺位或升级，请在付款前提出"],
+    ["포함된 야부리 패키지를 넘는 스키 시간·장비·강습: 추가 요금을 결제 전에 확인", "침대는 무작위 배정됩니다. 자리 지정이나 업그레이드가 필요하면 결제 전에 문의하세요"],
   ),
   bookingNote,
   faq: [
@@ -1141,10 +1122,23 @@ const harbinSnowTownMohe: PrivateTourProduct = {
         "이 코스에는 오로라 관측 일정이 없으며, 볼 수 있다고 보장하지 않습니다. 여행은 겨울의 모허, 베이훙촌과 북극촌을 중심으로 짜였으며 오로라 관측이 목적이 아닙니다.",
       ),
     ),
+    iceWorldOpeningFaq,
     priceFaq,
     notStatedFaq,
   ],
-  heroImage: iceWorldHero,
+  heroImage: image(
+    `${harbinImages}/saint-sophia-winter-1600.jpg`,
+    l(
+      "Saint Sophia Cathedral and a snow-covered square in Harbin at night",
+      "夜色中的哈尔滨圣索菲亚教堂与积雪广场",
+      "밤의 하얼빈 성 소피아 성당과 눈 덮인 광장",
+    ),
+    l(
+      "Saint Sophia Cathedral in Harbin, where this route starts, photographed in January 2018; lighting and snow vary.",
+      "路线起点哈尔滨的圣索菲亚教堂，2018 年 1 月拍摄；灯光和积雪情况会变化。",
+      "이 코스가 시작되는 하얼빈의 성 소피아 성당으로, 2018년 1월에 촬영했습니다. 조명과 눈 상태는 달라질 수 있습니다.",
+    ),
+  ),
   gallery: [],
   routeMedia: [
     ...harbinSnowTownRoutePhotos,
@@ -1160,32 +1154,233 @@ const harbinSnowTownMohe: PrivateTourProduct = {
       ),
     ),
   ],
-  packages: seasonPackages([7300, 6000, 5600, 5200], [8200, 6800, 6300, 5900]),
+  packages: seasonPackages([8000, 6600, 6200, 5700], [9000, 7400, 6900, 6400]),
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
 };
 
-export const privateTourNortheastWinterPreviewProducts: readonly PrivateTourProduct[] =
+// ---------------------------------------------------------------------------
+// 5. Yanji, Changbai Mountain & Wanda Resort — 6 days / 5 nights
+// ---------------------------------------------------------------------------
+
+const yanjiWandaSlug = "yanji-changbaishan-wanda-6-day-private-tour";
+const yanjiChangbaishanWanda: PrivateTourProduct = {
+  id: "private-tour-yanji-changbaishan-wanda-6d5n",
+  slug: yanjiWandaSlug,
+  days: 6,
+  nights: 5,
+  routePhotoFallback: false,
+  servicePolicy,
+  title: l(
+    "Yanji, Changbai Mountain & Wanda Resort: 6-Day Winter Private Tour",
+    "延吉·长白山·万达度假区 6 天 5 晚冬季私家团",
+    "연길·백두산·완다 리조트 6일 겨울 프라이빗 투어",
+  ),
+  metadataDescription: l(
+    "Six-day private tour from Yanji through Xueling and Changbai Mountain to Wanda Resort, with five hotel nights and conditional skiing.",
+    "6 天冬季私家路线：从延吉经雪岭、长白山北坡到万达度假区，住 5 晚酒店；度假区滑雪体验依运营情况安排。",
+    "6일 겨울 프라이빗 코스: 연길에서 쉐링과 백두산 북파를 거쳐 완다 리조트까지. 호텔 5박, 운영 상황에 따른 스키 체험.",
+  ),
+  eyebrow: l(
+    "Snow landscapes, Changbai Mountain and time at a ski resort",
+    "雪岭、长白山和度假区滑雪时光",
+    "설경과 백두산, 스키 리조트에서 보내는 시간",
+  ),
+  lede: l(
+    "Start in Yanji, cross snowy Xueling to Erdaobaihe, visit Changbai Mountain's North Slope when conditions allow, then spend two nights by Wanda Resort. The complimentary ski experience depends on resort operation and is confirmed before payment.",
+    "从延吉出发，经雪岭到二道白河，天气允许时游览长白山北坡，最后在万达度假区一带住两晚。赠送的滑雪体验依雪场运营情况安排，付款前确认。",
+    "연길에서 출발해 눈 덮인 쉐링을 지나 이도백하로 이동하고, 여건이 허락하면 백두산 북파를 방문합니다. 마지막 이틀은 완다 리조트 일대에서 보냅니다. 무료 스키 체험은 운영 상황에 따라 결제 전 확인합니다.",
+  ),
+  summary: l(
+    "Six days and five hotel nights: one in Yanji, two in Erdaobaihe and two near Wanda Resort. Xueling and the North Slope have named admission tickets included. Weather and resort operation determine the mountain visit and ski experience.",
+    "6 天住 5 晚酒店：延吉 1 晚、二道白河 2 晚、万达度假区一带 2 晚。含雪岭和长白山北坡门票；能否上山及滑雪体验安排，要看天气和雪场运营。",
+    "6일 동안 호텔 5박: 연길 1박, 이도백하 2박, 완다 리조트 인근 2박입니다. 쉐링과 백두산 북파 입장권이 포함되며, 산행과 스키 체험은 날씨와 운영 상황에 따릅니다.",
+  ),
+  facts: facts(
+    [
+      fact("Route", "Yanji → Xueling → Changbai Mountain → Wanda Resort → Yanji"),
+      fact("Nights", "5 hotel nights · no night trains"),
+      fact("Service", "Private vehicle · driver"),
+      fact("Prices", servicePrices.en),
+    ],
+    [
+      fact("路线", "延吉 → 雪岭 → 长白山 → 万达度假区 → 延吉"),
+      fact("住宿", "5 晚酒店 · 不坐夜车"),
+      fact("服务", "私车 · 司机接待"),
+      fact("价格", servicePrices.zh),
+    ],
+    [
+      fact("동선", "연길 → 쉐링 → 백두산 → 완다 리조트 → 연길"),
+      fact("숙박", "호텔 5박 · 야간열차 없음"),
+      fact("서비스", "전용 차량 · 운전기사"),
+      fact("요금", servicePrices.ko),
+    ],
+  ),
+  highlights: lists(
+    [
+      "Xueling on the way from Yanji to Erdaobaihe",
+      "Changbai Mountain North Slope, subject to weather",
+      "Two nights in the Wanda Resort area",
+      "A complimentary resort ski experience when operating",
+    ],
+    ["从延吉经雪岭到二道白河", "天气允许时游览长白山北坡", "万达度假区一带住两晚", "雪场运营时安排赠送滑雪体验"],
+    ["연길에서 쉐링을 거쳐 이도백하로", "날씨가 허락하면 백두산 북파 방문", "완다 리조트 일대 2박", "운영 시 무료 리조트 스키 체험"],
+  ),
+  itinerary: [
+    day(
+      1,
+      l("Arrive in Yanji", "抵达延吉", "연길 도착"),
+      l(
+        "Arrive in Yanji and check in. No fixed sightseeing is listed for today. Airport or station transfer is confirmed in your written quote; overnight in Yanji.",
+        "抵达延吉后入住酒店。当天没有固定游览项目；接机或接站以书面报价为准，住延吉。",
+        "연길에 도착해 호텔에 체크인합니다. 이날 정해진 관광 일정은 없으며 공항·역 픽업은 서면 견적에서 확인합니다. 연길에서 숙박합니다.",
+      ),
+    ),
+    day(
+      2,
+      l("Xueling to Erdaobaihe", "经雪岭到二道白河", "쉐링을 지나 이도백하로"),
+      l(
+        "Travel from Yanji via Xueling to Erdaobaihe. Xueling admission is included; the order and time outdoors depend on winter roads and weather. Overnight in Erdaobaihe.",
+        "从延吉经雪岭前往二道白河，雪岭门票已包含。冬季路况和天气会影响游览时间及先后顺序，住二道白河。",
+        "연길에서 쉐링을 거쳐 이도백하로 이동합니다. 쉐링 입장권이 포함됩니다. 야외 체류 시간과 순서는 겨울 도로 및 날씨에 따라 달라질 수 있습니다. 이도백하에서 숙박합니다.",
+      ),
+    ),
+    day(
+      3,
+      l("Changbai Mountain North Slope", "长白山北坡", "백두산 북파"),
+      l(
+        "Visit Changbai Mountain's North Slope if the road and scenic area are open. Admission is included; scenic-area transport is confirmed in the written quote. Tianchi visibility is weather-dependent. Return to Erdaobaihe for the night.",
+        "道路和景区开放时游览长白山北坡，门票已包含；景区交通车以书面报价为准。能否看到天池取决于天气。返回二道白河住宿。",
+        "도로와 관광지가 운영하면 백두산 북파를 방문합니다. 입장권은 포함되며 관광지 셔틀버스는 서면 견적에서 확인합니다. 천지 전망은 날씨에 달려 있습니다. 이도백하에서 숙박합니다.",
+      ),
+    ),
+    day(
+      4,
+      l("To Wanda Resort", "前往万达度假区", "완다 리조트로 이동"),
+      l(
+        "Drive from Erdaobaihe to the Wanda Resort area and check in to your confirmed hotel. The written itinerary sets any activities for the afternoon; overnight by the resort.",
+        "从二道白河前往万达度假区一带，入住确认单所列酒店。下午是否安排活动以书面行程为准，住度假区一带。",
+        "이도백하에서 완다 리조트 일대로 이동해 확정된 호텔에 체크인합니다. 오후 활동은 서면 일정에서 확인하며 리조트 일대에서 숙박합니다.",
+      ),
+    ),
+    day(
+      5,
+      l("Wanda ski experience", "万达滑雪体验", "완다 스키 체험"),
+      l(
+        "Spend the day in the Wanda Resort area. A complimentary ski experience is planned, subject to resort operation and snow conditions; ski duration and equipment are confirmed in writing before payment. Overnight by the resort.",
+        "在万达度假区一带活动。计划安排赠送滑雪体验，须以雪场运营及雪况为准；滑雪时长和雪具内容，付款前书面确认。住度假区一带。",
+        "완다 리조트 일대에서 하루를 보냅니다. 무료 스키 체험은 스키장 운영과 적설 상태에 따르며, 시간과 장비는 결제 전에 서면으로 확인합니다. 리조트 일대에서 숙박합니다.",
+      ),
+    ),
+    day(
+      6,
+      l("Return to Yanji and depart", "返回延吉并返程", "연길로 돌아와 출발"),
+      l(
+        "Drive back to Yanji and continue your onward journey. Allow enough time between the road transfer and your flight or train; onward tickets and airport or station drop-off are confirmed in your quote.",
+        "乘车返回延吉后返程。请在公路转场与航班或火车之间留足时间；返程车票和送机、送站安排，以书面报价为准。",
+        "차량으로 연길에 돌아와 다음 여정을 이어갑니다. 이동과 항공편·열차 사이에 충분한 여유를 두세요. 이후 교통편과 공항·역 샌딩은 서면 견적에서 확인합니다.",
+      ),
+    ),
+  ],
+  hotelNote: l(
+    "Five twin-share hotel nights: Yanji on Day 1, Erdaobaihe on Days 2–3 and the Wanda Resort area on Days 4–5. The accommodation list contains alternatives, so your hotel names and room type are fixed in your written confirmation; single rooms are quoted separately.",
+    "共 5 晚双人同住酒店：第 1 晚延吉，第 2–3 晚二道白河，第 4–5 晚万达度假区一带。参考酒店为备选名单，具体酒店和房型以书面确认单为准；单住另行报价。",
+    "성인 2명 1실 기준 호텔 5박: 1일차 연길, 2~3일차 이도백하, 4~5일차 완다 리조트 일대입니다. 호텔 목록에는 대체 숙소가 있어 실제 호텔과 객실 유형은 서면 확인서에서 확정하며 1인실은 따로 견적을 드립니다.",
+  ),
+  serviceNote: serviceNote(l(
+    "Xueling and Changbai Mountain North Slope admission tickets",
+    "雪岭及长白山北坡门票",
+    "쉐링과 백두산 북파 입장권",
+  )),
+  exclusions: exclusions(
+    ["The complimentary Wanda ski experience and any extra time, equipment or instruction: confirm availability and scope in writing before payment"],
+    ["赠送的万达滑雪体验及额外时长、雪具或教练：付款前书面确认可安排情况和范围"],
+    ["무료 완다 스키 체험과 추가 시간·장비·강습: 결제 전에 가능 여부와 범위를 서면으로 확인"],
+  ),
+  bookingNote,
+  faq: [
+    driverGuideFaq,
+    faq(
+      l("Is the Wanda ski experience included?", "万达滑雪体验包含吗？", "완다 스키 체험이 포함되나요?"),
+      l(
+        "It is listed as a complimentary activity, subject to the resort operating on your dates and suitable snow conditions. We confirm the duration, equipment and any alternative in writing before payment.",
+        "这项体验列为赠送项目，须以出行日期雪场开放及雪况合适为前提。付款前会书面确认时长、雪具及无法安排时的替代方式。",
+        "무료 체험 항목이지만 여행 날짜에 스키장이 운영하고 적설 상태가 적합해야 합니다. 시간·장비·대체 일정은 결제 전에 서면으로 확인합니다.",
+      ),
+    ),
+    faq(
+      l("Can we definitely visit Tianchi?", "一定能看到天池吗？", "천지를 꼭 볼 수 있나요?"),
+      l(
+        "No. North Slope access depends on weather, roads and scenic-area operations; Tianchi can be hidden even when the area is open. North Slope admission is included, with scenic-area transport confirmed in the quote.",
+        "不能保证。北坡能否开放取决于天气、道路和景区运营；即使开放，天池也可能看不见。北坡门票已包含，景区交通车以书面报价为准。",
+        "보장할 수 없습니다. 북파 입장은 날씨·도로·관광지 운영에 달려 있고, 개방하더라도 천지가 보이지 않을 수 있습니다. 북파 입장권은 포함되며 셔틀버스는 서면 견적에서 확인합니다.",
+      ),
+    ),
+    priceFaq,
+    notStatedFaq,
+  ],
+  heroImage: image(
+    `${changbaishanImages}/route-day-3-extra.webp`,
+    l("Snow around Heaven Lake on Changbai Mountain", "长白山积雪环绕的天池", "눈에 둘러싸인 백두산 천지"),
+    l(
+      "Changbai Mountain Tianchi in winter. Access and visibility depend on weather; the photo does not guarantee this view on your date.",
+      "长白山冬季天池实景。能否进入、能见度都取决于天气，照片不代表出行当天一定能看到。",
+      "겨울 백두산 천지입니다. 입장과 시야는 날씨에 좌우되며 사진의 풍경을 여행 날짜에 보장하지 않습니다.",
+    ),
+  ),
+  gallery: [],
+  routeMedia: [
+    routePhoto(1, {
+      label: l("Yanji at night", "延吉夜景", "연길 야경"),
+      image: image(
+        `${changbaishanImages}/gallery-1.webp`,
+        l("Yanji city lights at night", "延吉城市夜景", "연길 야경"),
+        l("Yanji at night, the starting city for this route.", "路线起点延吉的夜景。", "이 코스의 출발지 연길 야경입니다."),
+        1920,
+        1235,
+      ),
+    }),
+    routePhoto(3, {
+      label: l("Changbai Mountain Tianchi", "长白山天池", "백두산 천지"),
+      image: image(
+        `${changbaishanImages}/hero.webp`,
+        l("Tianchi crater lake on Changbai Mountain", "长白山天池", "백두산 천지"),
+        l("Tianchi on Changbai Mountain; whether it is visible depends on the day.", "长白山天池；能否看到以当天情况为准。", "백두산 천지입니다. 전망은 당일 상황에 달려 있습니다."),
+        1920,
+        1440,
+      ),
+    }),
+  ],
+  packages: seasonPackages([5400, 4900, 4600, 4300], [7200, 6300, 6000, 5700]),
+  datePublished: PUBLISHED,
+  dateModified: PUBLISHED,
+};
+
+export const privateTourNortheastWinterProducts: readonly PrivateTourProduct[] =
   Object.freeze([
     harbinYabuliSnowTown,
     harbinSnowTownChangbaishanYanji,
     harbinMoheArcticVillage,
     harbinSnowTownMohe,
+    yanjiChangbaishanWanda,
   ]);
 
 export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
   Record<string, readonly PrivateTourPhotoCredit[]>
 > = Object.freeze({
-  [snowTownSlug]: [...harbinSnowTownCredits, harbinStationCredit],
-  [changbaiSlug]: [
-    ...harbinSnowTownCredits,
+  [snowTownSlug]: [
+    ...harbinSnowTownCredits.slice(1),
     {
-      subject: l("Heaven Lake, Changbai Mountain", "长白山天池", "백두산 천지"),
-      author: "Wang65",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Tianchi_Changbai.JPG",
-      licenseLabel: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      subject: l("China Snow Town in winter", "冬季的中国雪乡", "겨울의 중국 설향"),
+      author: "Chen Wu",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Morning_in_China_Snow_Town.jpg",
+      licenseLabel: "CC BY 2.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     },
+    harbinStationCredit,
+  ],
+  [changbaiSlug]: [
+    ...harbinSnowTownCredits.slice(1),
     {
       subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"),
       author: "Charlie fong",
@@ -1202,6 +1397,14 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
     },
   ],
   [moheSlug]: [
+    ...harbinSnowTownCredits.slice(1),
+    {
+      subject: l("Beiji Village in winter", "冬季的北极村", "겨울의 북극촌"),
+      author: "funcn",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C_QQ696847_-_panoramio_(2).jpg",
+      licenseLabel: "CC BY 3.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    },
     {
       subject: l("Saint Sophia Cathedral in winter", "冬季的圣索菲亚教堂", "겨울의 성 소피아 성당"),
       author: "Yan Enming",
@@ -1209,14 +1412,40 @@ export const privateTourNortheastWinterPreviewPhotoCreditsBySlug: Readonly<
       licenseLabel: "CC BY-SA 4.0",
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     },
+    harbinStationCredit,
+  ],
+  [snowTownMoheSlug]: [
+    ...harbinSnowTownCredits.slice(1),
     {
-      subject: l("Saint Sophia Cathedral", "圣索菲亚教堂", "성 소피아 성당"),
-      author: "ChiralJon",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:St._Sophia_Cathedral,_Harbin,_China.jpg",
-      licenseLabel: "CC BY 2.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      subject: l("Saint Sophia Cathedral in winter", "冬季的圣索菲亚教堂", "겨울의 성 소피아 성당"),
+      author: "Yan Enming",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Saint_Sophia_Cathedral,_Harbin_4.jpg",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     },
     harbinStationCredit,
   ],
-  [snowTownMoheSlug]: [...harbinSnowTownCredits, harbinStationCredit],
+  [yanjiWandaSlug]: [
+    {
+      subject: l("Changbai Mountain Tianchi in winter", "长白山冬季天池", "겨울 백두산 천지"),
+      author: "Charlie fong",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg",
+      licenseLabel: "Public domain",
+      licenseUrl: "https://commons.wikimedia.org/wiki/File:Heaven_Lake,_Changbai.jpg#Licensing",
+    },
+    {
+      subject: l("Heaven Lake, Changbai Mountain", "长白山天池", "백두산 천지"),
+      author: "Wang65",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Tianchi_Changbai.JPG",
+      licenseLabel: "CC BY-SA 3.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    },
+    {
+      subject: l("Yanji at night", "延吉夜景", "연길 야경"),
+      author: "EditQ",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Yanji_at_night.jpg",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+  ],
 });

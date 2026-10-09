@@ -161,7 +161,7 @@ test("every published service/group survives detail links, language changes and 
   ]);
 });
 
-test("six-traveller prices are exactly CNY 200 per person below each published four-traveller tier", () => {
+test("legacy fixed-gap six-traveller tiers keep their approved discount", () => {
   // Owner-approved exception (2026-09-24): the forest fixed-route 4D3N card sets 6 travellers
   // at CNY 2,980, which is CNY 300 below the CNY 3,280 four-traveller rate.
   const sixPersonGapExceptions = { "zhangjiajie-forest-4-day-private-tour:fixed-route-english-guided": 300 };
@@ -169,7 +169,14 @@ test("six-traveller prices are exactly CNY 200 per person below each published f
   // Long-haul routes publish USD tiers (for example USD 3,390 / 3,190) set as
   // market targets; their CNY basis is derived from USD rather than this rule.
   const longHaulSlugs = new Set(privateTourLongHaulSlugs);
-  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
+  const winterSlugs = new Set([
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+    "yanji-changbaishan-wanda-6-day-private-tour",
+  ]);
+  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug) && !winterSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
     const four = tourPackage.prices.find((row) => row.travelers === 4);
     if (!four) continue;
     const six = tourPackage.prices.find((row) => row.travelers === 6);

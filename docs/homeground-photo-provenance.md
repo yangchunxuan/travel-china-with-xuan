@@ -1801,6 +1801,20 @@ Tour-card photos under an attribution licence are credited from
 `lib/photoCredits.ts` on every row that shows them (city, sight, inspiration and
 collection pages), matched to `docs/homeground-private-tour-card-derivatives.json`.
 
+### Northeast winter route photographs (2026-10-09)
+
+The five published Northeast winter routes use distinct real photographs for
+their catalog covers. Existing Harbin and Changbai photographs retain the
+source and license records above. Two additional photographs were downloaded
+from Wikimedia Commons, center-cropped to 16:10, resized to 1600 × 1000, and
+converted to WebP with `sharp` at quality 84. EXIF and location metadata were
+not retained. No visual content was generated, added, or redrawn.
+
+| Route cover | Source, creator, and license | Original SHA-256 | Published asset and SHA-256 | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Harbin–Yabuli–Snow Town 6D | [Morning in China Snow Town](https://commons.wikimedia.org/wiki/File:Morning_in_China_Snow_Town.jpg), Chen Wu, photographed 2010-02-18; [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | `f13b085b271c770dcbbdb0f417a69e83323674975339ac5ccd051728e580b1a6` | `public/images/tours/northeast-winter-2026-27/snow-town-morning-1600.webp`; `d7f65c68fbf8daf340b25b7db82a8b707117767b7cd5d0e4e3fdcb1576a35b9d` | Snow-covered wooden buildings in Snow Town on the source date; no present snow depth, access, lodging quality, or itinerary inclusion beyond the written route is implied. |
+| Harbin–Mohe–Arctic Village 7D | [北极村的童话世界 QQ696847 - panoramio (2)](https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%9E%81%E6%9D%91%E7%9A%84%E7%AB%A5%E8%AF%9D%E4%B8%96%E7%95%8C_QQ696847_-_panoramio_(2).jpg), funcn, original upload 2011-09-13; [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | `458f9998f94339df5a89a2ffca95389f081b775114914f4f7c6fb449a4a56183` | `public/images/tours/northeast-winter-2026-27/beiji-village-night-1600.webp`; `0c8b390ee2ab9390450d9554a3f0137e31a9e30980f12663db06c084a826f839` | A snowy building in Beiji Village at night on the source date; it is not a promised accommodation or current weather scene. |
+
 ### Canton Tower sight photo (from 2026-10-05)
 
 - Source: [Hai Xin Bridge of Guangzhou 01.jpg](https://commons.wikimedia.org/wiki/File:Hai_Xin_Bridge_of_Guangzhou_01.jpg),

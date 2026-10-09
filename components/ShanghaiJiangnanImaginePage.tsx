@@ -35,7 +35,7 @@ import { JiangnanTourComparison, JiangnanBookingTrust } from "./JiangnanTourComp
 import { isJiangnanTour } from "../lib/tourContactDraft";
 import {
   getExistingContentCommercialCopy,
-  getPreviewProductPlanningContext,
+  getNortheastWinterProductPlanningContext,
   getProductPlanningContext,
 } from "../lib/existingContentCommercialLinks";
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
@@ -47,6 +47,7 @@ import type { JapaneseTourCopy } from "../lib/japaneseTourCopy";
 import { japaneseTourContactHrefs } from "../lib/japaneseTourContact";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import jaStyles from "./JapaneseJiangnanPage.module.css";
+import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
 
 export const SHANGHAI_JIANGNAN_TOUR_SLUG =
   "shanghai-suzhou-hangzhou-6-day-private-tour";
@@ -333,6 +334,31 @@ function genericJapanesePageCopy(product: LocalizedPrivateTourProduct): ImagineP
   };
 }
 
+function northeastWinterJapanesePageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
+  const generic = genericJapanesePageCopy(product);
+  return {
+    ...generic,
+    heroMeta: `${product.days}日間・${product.nights}泊 · プライベートツアー · 運転手兼現地サポート`,
+    facts: generic.facts.map((fact) => fact.label === "サービス"
+      ? { ...fact, value: "専用車・運転手兼現地サポート" }
+      : fact),
+    routeBody: "行程は現地手配会社の提案に基づきます。冬季の施設営業日、道路状況や天候により順番が変わる場合は、重要な変更を事前にご相談します。",
+    serviceTitle: "専用車と英語で対応できる運転手兼現地サポート",
+    serviceBody: "人数に応じた専用車を手配します。運転手は移動と当日の進行を担当し、市街地の観光スポットには同行しますが、有資格ガイドではなく、施設内での観光解説は行いません。大型観光施設はご自身のペースで見学します。含まれる入場券やスキー体験の条件は、このページのサービス内容とお支払い前の書面見積もりでご確認ください。",
+    transportTitle: "専用車・運転手兼現地サポート・含まれる項目",
+    scopeTitle: "お見積もりで確認する項目",
+    exclusionsTitle: "お見積もりで確認すること",
+    confirmedTitle: "お支払い前に書面で確認",
+    confirmations: [
+      "旅行日と適用される料金期間",
+      "宿泊施設、客室、人数と荷物に合う車両",
+      "施設の営業状況、入場券とスキー体験の内容",
+      "子ども料金、1人部屋追加料金と取消条件",
+    ],
+    finalBody: "旅行日、人数、お子さまの年齢をお知らせください。現地の予約状況を確認し、お支払い前に書面で最終料金をご案内します。",
+  };
+}
+
 function buildGenericPageCopy(
   product: LocalizedPrivateTourProduct,
 ): ImaginePageCopy {
@@ -502,7 +528,9 @@ function buildGenericPageCopy(
 }
 
 function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
-  if (product.visibility === "preview") return buildPreviewPageCopy(product);
+  if (isNortheastWinterTour(product.slug)) {
+    return buildNortheastWinterPageCopy(product);
+  }
   if (product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG) return jiangnanPageCopy[product.locale];
   const copy = buildGenericPageCopy(product);
   return product.slug === "zhangjiajie-forest-4-day-private-tour"
@@ -511,11 +539,10 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
 }
 
 /**
- * Preview products are unconfirmed supplier proposals served by a
- * driver-guide. The generic copy promises guided days, transfers and no
- * shopping stops, so previews state only what their own data publishes.
+ * Northeast winter routes use a driver-host rather than a licensed guide.
+ * Their service copy stays route-specific when the products are published.
  */
-function buildPreviewPageCopy(
+function buildNortheastWinterPageCopy(
   product: LocalizedPrivateTourProduct,
 ): ImaginePageCopy {
   const generic = buildGenericPageCopy(product);
@@ -523,21 +550,22 @@ function buildPreviewPageCopy(
   if (product.locale === "zh") {
     return {
       ...generic,
-      heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 司机兼向导`,
+      heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 司机兼接待`,
       facts,
       routeBody:
         "每日安排依据地接方案逐日列出。东北冬季的开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会与你沟通。",
       serviceEyebrow: "服务范围",
-      serviceTitle: "私车加司机兼向导：市区陪同，景区自由玩。",
+      serviceTitle: "私车加司机兼接待：负责交通和行程衔接。",
       serviceBody:
-        "车辆按人数安排，只服务你们一行；司机兼向导会说中文和英语，负责开车、安排当天行程，市区景点陪同游览。冰雪大世界这类大景区由你们自己游玩，滑雪由雪场的专业教练指导。",
-      transportTitle: "车辆、司机兼向导与包含项目",
-      exclusionsTitle: "书面报价未列明则不包含",
+        "车辆按人数安排，只服务你们一行；司机会说英语，负责开车和当天的行程安排，在市区景点陪同，但不是持证导游，也不提供景区讲解。冰雪大世界等大型景区由你们自行游览。包含的门票和滑雪项目以本页列明内容及付款前书面确认的安排为准。",
+      transportTitle: "车辆、司机兼接待与包含项目",
+      scopeTitle: "付款前，把待确认的项目写进最终报价。",
+      exclusionsTitle: "报价待确认项目",
       confirmedTitle: "付款前书面确认",
       confirmations: [
         "出行日期，以及适用淡季价还是旺季价",
         "酒店、房间安排与适合实际人数的车辆",
-        "包含哪些门票和接送",
+        "景区开放情况、所列门票与滑雪项目的具体内容",
         "儿童价、单房差与取消条款",
       ],
       finalEyebrow: "咨询这条路线",
@@ -550,21 +578,22 @@ function buildPreviewPageCopy(
   if (product.locale === "ko") {
     return {
       ...generic,
-      heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 운전기사 겸 안내인`,
+      heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 운전기사 겸 현지 진행자`,
       facts,
       routeBody:
         "날짜별 일정은 현지 협력사의 제안을 따릅니다. 동북의 겨울에는 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 고객과 상의합니다.",
       serviceEyebrow: "서비스 범위",
-      serviceTitle: "전용 차량과 운전기사 겸 안내인: 시내는 함께, 큰 관광지는 자유롭게.",
+      serviceTitle: "전용 차량과 운전기사 겸 현지 진행자",
       serviceBody:
-        "일행 인원에 맞춘 전용 차량을 이용하며, 영어로 소통하는 운전기사 겸 안내인이 운전과 하루 일정을 챙기고 시내 명소는 함께 둘러봅니다. 하얼빈 빙설대세계 같은 큰 관광지는 자유롭게 둘러보며, 스키 강습은 스키장 소속 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
-      transportTitle: "차량, 운전기사 겸 안내인과 포함 항목",
-      exclusionsTitle: "서면 견적에 없으면 불포함",
+        "인원에 맞춘 전용 차량을 이용합니다. 영어로 소통하는 운전기사가 이동과 일정 진행을 맡고 시내 명소에 동행하지만, 공인 관광 가이드가 아니며 관광지 해설은 제공하지 않습니다. 하얼빈 빙설대세계 같은 대형 관광지는 자유롭게 둘러봅니다. 포함된 입장권과 스키 체험의 조건은 이 페이지와 결제 전 서면 견적에서 확인해 주세요. 한국어 안내는 포함되지 않습니다.",
+      transportTitle: "차량, 운전기사 겸 현지 진행자와 포함 항목",
+      scopeTitle: "최종 견적에서 확인할 항목을 살펴보세요.",
+      exclusionsTitle: "견적에서 확인할 항목",
       confirmedTitle: "결제 전 서면 확인",
       confirmations: [
         "여행 날짜와 비수기·성수기 요금 적용 여부",
         "호텔과 객실 구성, 실제 인원에 맞는 차량",
-        "포함되는 입장권과 이동",
+        "관광지 운영 여부, 명시된 입장권과 스키 체험의 세부 조건",
         "아동 요금, 1인실 추가금과 취소 규정",
       ],
       finalEyebrow: "이 코스 문의하기",
@@ -576,21 +605,22 @@ function buildPreviewPageCopy(
   }
   return {
     ...generic,
-    heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · DRIVER-GUIDE`,
+    heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · DRIVER-HOST`,
     facts,
     routeBody:
       "The day plan follows our local partner's proposal. Opening dates, roads and weather in a Northeast winter can change the order; if anything important has to change, we discuss it with you.",
     serviceEyebrow: "What the service covers",
-    serviceTitle: "Your own vehicle and an English-speaking driver-guide.",
+    serviceTitle: "Your own vehicle and an English-speaking driver-host.",
     serviceBody:
-      "Your party has its own vehicle, sized to the group, and an English-speaking driver-guide who drives, runs the day's timings and goes with you around the city sights. At large scenic areas such as Harbin Ice and Snow World you explore at your own pace, and any ski instruction is by the resort's own instructors.",
-    transportTitle: "Vehicle, driver-guide and inclusions",
-    exclusionsTitle: "Not included unless your written quote lists it",
+      "Your party has its own vehicle, sized to the group. The English-speaking driver-host handles the route and daily timings and accompanies you around city sights, but is not a licensed tour guide and does not provide attraction commentary. At large scenic areas such as Harbin Ice and Snow World, you explore at your own pace. The listed admissions and ski activities, including their conditions, are confirmed in writing before payment.",
+    transportTitle: "Vehicle, driver-host and inclusions",
+    scopeTitle: "Review the details your final quote will specify.",
+    exclusionsTitle: "Items to confirm in your quote",
     confirmedTitle: "Confirmed in writing before payment",
     confirmations: [
       "Your dates, and whether low- or peak-season prices apply",
       "Hotels, room arrangement and the vehicle for your actual group",
-      "Which admissions and transfers are included",
+      "Attraction operating dates, listed admissions and ski-activity details",
       "Children's prices, single-room supplement and cancellation terms",
     ],
     finalEyebrow: "Ask about this route",
@@ -678,7 +708,13 @@ export function ShanghaiJiangnanImaginePage({
     ? localizeJapanesePrivateTourProduct(product, japaneseCopyOverride)
     : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
-  const copy = japanese ? japanesePilot ? japanesePageCopy() : genericJapanesePageCopy(localized) : getPageCopy(localized);
+  const copy = japanese
+    ? japanesePilot
+      ? japanesePageCopy()
+      : isNortheastWinterTour(product.slug)
+        ? northeastWinterJapanesePageCopy(localized)
+        : genericJapanesePageCopy(localized)
+    : getPageCopy(localized);
   const jaPresentation = jaPilotCopy.tour.presentation;
   const photoCreditCopy = japanese ? {
     title: japanesePilot ? jaPresentation.photoCreditsTitle : "写真クレジット",
@@ -699,8 +735,10 @@ export function ShanghaiJiangnanImaginePage({
     destinations: [],
     guides: [],
     relatedProducts: [{ id: "ja-tour-hub", href: "/ja/tours/", label: "中国ツアー一覧を見る" }],
-  } : localized.visibility === "preview"
-    ? getPreviewProductPlanningContext(sourceLocale)
+  } : isNortheastWinterTour(product.slug)
+    ? getNortheastWinterProductPlanningContext(sourceLocale)
+    : localized.visibility === "preview"
+      ? { destinations: [], guides: [], relatedProducts: [] }
     : getProductPlanningContext(
       product.slug as Parameters<typeof getProductPlanningContext>[0],
       sourceLocale,

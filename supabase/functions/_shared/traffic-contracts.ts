@@ -82,6 +82,7 @@ export const trafficProductPackages: Readonly<Record<string, readonly string[]>>
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": ["low-season", "peak-season"],
   "harbin-mohe-arctic-village-7-day-private-tour": ["low-season", "peak-season"],
   "harbin-snow-town-mohe-9-day-private-tour": ["low-season", "peak-season"],
+  "yanji-changbaishan-wanda-6-day-private-tour": ["low-season", "peak-season"],
 };
 export const trafficProductTravelerCounts: Readonly<
   Record<string, readonly (2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)[]>
@@ -138,6 +139,7 @@ export const trafficProductTravelerCounts: Readonly<
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": [2, 4, 6, 8],
   "harbin-mohe-arctic-village-7-day-private-tour": [2, 4, 6, 8],
   "harbin-snow-town-mohe-9-day-private-tour": [2, 4, 6, 8],
+  "yanji-changbaishan-wanda-6-day-private-tour": [2, 4, 6, 8],
 };
 export function isTrafficProductSlug(value: unknown): value is string {
   return typeof value === "string" &&

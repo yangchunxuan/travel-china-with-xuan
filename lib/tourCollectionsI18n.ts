@@ -63,12 +63,12 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
         metadata: {
           title: "This Season: Winter in Northeast China, Private Tours",
           description:
-            "Winter in the Northeast: Harbin's ice and snow, Changbai Mountain and Yanji. Dates and peak-period conditions are on each tour page.",
+            "Compare Northeast winter private tours through Harbin, Yabuli, Snow Town, Mohe, Changbai Mountain and Yanji. Check each route's departure dates and winter conditions.",
         },
         name: "This Season",
         h1Lines: ["This winter:", "the Northeast."],
         lede:
-          "Two winter routes in the Northeast: Harbin for ice and snow, or Changbai Mountain and Yanji. Opening dates for the ice and snow sights, and peak-period conditions, are on each tour page.",
+          "Choose from Harbin's ice sights, skiing near Yabuli or Changbai Mountain, Snow Town, and sleeper-train journeys toward Mohe. Each route page lists its own dates, group prices and winter conditions.",
         groups: { "winter-northeast": { title: "Winter in the Northeast" } },
       },
     },
@@ -111,11 +111,11 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
       seasonal: {
         metadata: {
           title: "当季推荐：冬季东北私家团，哈尔滨冰雪与长白山",
-          description: "冬天去东北：哈尔滨的冰雪，再到长白山和延吉。具体日期和高峰期条件写在各自的路线页上。",
+          description: "比较哈尔滨、亚布力、雪乡、漠河、长白山和延吉的冬季私家路线；出发日期、人数价格及冬季条件见各路线页。",
         },
         name: "当季推荐",
         h1Lines: ["今年冬天，", "去东北。"],
-        lede: "冬天去东北，有两条线：哈尔滨看冰雪，或者去长白山玩雪、逛延吉。冰雪项目的开放日期和高峰期条件，以各自路线页写明的为准。",
+        lede: "想看哈尔滨冰雪、到亚布力或长白山滑雪、住雪乡，或乘卧铺去漠河，可以从下面的路线挑。每条的适用日期、人数价格和冬季条件都写在详情页。",
         groups: { "winter-northeast": { title: "冬季东北" } },
       },
     },
@@ -158,11 +158,11 @@ const copy: Record<HomegroundLocale, TourCollectionsCopy> = {
       seasonal: {
         metadata: {
           title: "이번 시즌 추천: 겨울 동북 프라이빗 투어, 하얼빈과 백두산(창바이산)",
-          description: "겨울 동북으로: 하얼빈의 얼음과 눈, 그리고 백두산과 연길. 날짜와 성수기 조건은 각 투어 페이지에 있습니다.",
+          description: "하얼빈·야부리·설향·모허·백두산·연길의 겨울 프라이빗 일정을 비교해 보세요. 출발 기간과 인원별 요금은 각 상세 페이지에서 확인할 수 있습니다.",
         },
         name: "이번 시즌 추천",
         h1Lines: ["올겨울엔,", "동북으로."],
-        lede: "겨울 동북 일정은 두 가지입니다. 하얼빈에서 빙설을 보거나, 백두산(창바이산)에서 눈을 즐기고 연길을 둘러봅니다. 빙설 명소 운영 날짜와 성수기 조건은 각 투어 페이지를 따릅니다.",
+        lede: "하얼빈 빙설 명소, 야부리 또는 백두산 스키, 설향 숙박, 모허로 가는 침대열차 일정 중 골라 보세요. 각 상품의 적용 기간과 인원별 요금, 겨울 운영 조건은 상세 페이지에 있습니다.",
         groups: { "winter-northeast": { title: "겨울 동북" } },
       },
     },
