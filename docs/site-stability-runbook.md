@@ -4,7 +4,7 @@
 
 | 检查 | 执行位置 / 周期 | 故障通知与边界 |
 | --- | --- | --- |
-| 首页、中韩首页、私家团、预约服务、预约清单、张家界产品 | Better Stack 免费监测，每 3 分钟；欧洲、北美、亚洲、澳洲 | HTTPS、HTTP 和正文关键词；邮箱通知。免费方案不包含电话/SMS，手机是否提醒取决于邮箱客户端设置。 |
+| 首页、中韩首页、私家团、预约服务、预约清单、张家界产品、备用站 | Better Stack 免费监测，每 3 分钟；欧洲、北美、亚洲、澳洲 | HTTPS、HTTP 和正文关键词；邮箱通知。免费方案不包含电话/SMS，手机是否提醒取决于邮箱客户端设置。 |
 | Cloudflare 边缘与 GitHub Pages 源站证书 | `site-stability.yml`，每 12 小时 | 对两个主机名和四个源站地址验证证书链、域名、有效期；30 / 14 / 7 天分别告警。检查超过 24 小时没有回报也告警。 |
 | 询盘接收合约、邮件通知队列 | 原有 canary / outbox 工作流 + `stability-workflow-alerts.yml` | 失败由独立监测通知；超过 105 分钟未回报告警。GitHub 定时任务可能延迟，因此此类告警也可能表示检查迟到，不能直接认定网站故障。 |
 | 每次发布 | `deploy.yml` | 发布后清缓存，再核对真实线上提交标识、六个关键页面、canonical 和 JavaScript。失败告警。部署是事件检查，没有部署时不要求频繁心跳。 |
@@ -31,6 +31,10 @@ Supabase 免费计划没有自动平台备份；本手册的每日备份是单�
 ## 每日备份的实际范围
 
 `pg_dump` 对 public、homeground_private、auth、storage、extensions 五个 schema 做一致的只读快照，显式包含询盘需要的 pgcrypto 扩展定义；直接流入 age 公钥加密。工作目录中不产生明文数据库档案。TLS 验证失败、命令失败、超时、超过大小上限或上传失败均报失败。
+
+Session pooler 的证书链使用 Supabase Root 2021 CA。仓库中的 `tools/certificates/supabase-root-2021.crt` 是从已登录 Supabase Database Settings 的 Download certificate 获取并核对指纹的公开根证书，[官方公开下载地址](https://supabase-downloads.s3-ap-southeast-1.amazonaws.com/prod/ssl/prod-ca-2021.crt)与该证书一致，不含私钥。备份工作流先检查 DER SHA-256 指纹、CA 属性和有效期，再将单个 `.crt` 安装到该次 Ubuntu runner 的系统信任；继续使用 `PGSSLMODE=verify-full` 和 `PGSSLROOTCERT=system`，同时验证证书链及真实主机名。安装或检查失败会阻止导出并报告失败。
+
+该 CA 有效至 2031-04-26；Supabase 轮换 CA 或证书检查接近到期时，按[官方 SSL 文档](https://supabase.com/docs/guides/platform/ssl-enforcement)重新取得公开证书、核对来源并更新固定指纹，不改为 `require`、`verify-ca` 或关闭验证。
 
 档案与不含凭证的 manifest 保留 30 天。manifest 记录范围、时间、文件大小与 SHA-256。它不包含全局角色、Supabase 平台完整配置、Storage 对象文件、pg_cron/pg_net 扩展定义；恢复目标需要相应的平台角色及扩展。不能把该档案称为整个 Supabase 平台的自包含备份。
 
@@ -63,10 +67,14 @@ Supabase 免费计划没有自动平台备份；本手册的每日备份是单�
 
 ## 备用托管验收与费用
 
-备用选择为 Cloudflare Pages 静态站：完整导出目前 6676 个文件、约 670 MiB，无单文件超过 25 MiB，符合 Wrangler 20,000 文件 / 25 MiB 单文件限制；浏览器拖放只有 1000 文件，不能上传完整站点。
+2026-10-09 已发布 [Cloudflare Pages 免费备用站](https://homeground-standby.pages.dev/)，代码快照为 `011f87aab89511a1824314432bc17ee52ad986cd`。在本机按该版本和正式部署工作流的 33 项公开配置重新构建，所有 postbuild 导出检查通过。导出包含 6678 个文件、约 671 MiB（6677 个上传资产及 `_headers` 规则），无单文件超过 25 MiB，符合 Wrangler 20,000 文件 / 25 MiB 单文件限制。
 
-完成备用环境必须取得 Pages 部署权限并发布实际导出。仅准备目录或创建项目不算可用备用站。备用 URL 应设置 noindex、保留正式 canonical，并验证语言路径、图片、脚本、404 与询价入口；未经另行核对不要改变正式域名或 DNS。Cloudflare Pages Free 没有付费 SLA，仍需要独立监测和恢复流程。
+备用站已实测 18 个中英韩页面、23 个图片/脚本/样式/字体资源、404、robots 和版本记录，共 44 项通过。资源内容与导出哈希一致；响应带 noindex、robots 禁止抓取、canonical 保留正式网址。正式域名和 DNS 没有改变。
 
-正式切换前记录五条原 DNS，准备可逆回退方案，核对 HTTPS、URL/重定向、CORS 与询盘配置。任何付费升级先给业主具体价格和限制，取得同意再执行。
+备用域名不在生产询盘与统计的 Origin 允许清单中。该域名的安全不完整询盘探测返回 `403 origin_not_allowed/not_persisted`，正式 Origin 返回 `422 validation_failed/not_persisted`；没有创建客户询盘或发送邮件。正式域名切换时 Origin 保持不变，但仍须重新验证表单与后台接收；若需让备用域名直接接收客户询盘，必须另行明确授权允许该 Origin。
+
+这是经过验收的静态快照，目前不自动同步后续发布，也不自动切换 DNS。部署钥匙仅有 Pages Write 权限，在本机私有目录保管，七天到期；到期不影响已有备用站浏览，但后续上传需重新取得部署权限。正式发布后应更新备用快照并核对版本。Cloudflare Pages Free 没有付费 SLA，仍需要独立监测和恢复流程。
+
+正式切换前记录五条原 DNS，准备可逆回退方案，核对 HTTPS、URL/重定向、CORS 与询盘配置，并将源站证书检查的目标调整为实际托管源站。GitHub Actions 已核对账户预算为 0 美元、Stop usage 为 Yes；不提高额度或启用付费服务。任何付费升级先给业主具体价格和限制，取得同意再执行。
 
 参考：[Cloudflare Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)、[Pages limits](https://developers.cloudflare.com/pages/platform/limits/)、[Supabase backups](https://supabase.com/docs/guides/platform/backups)、[PostgreSQL pg_dump](https://www.postgresql.org/docs/17/app-pgdump.html)、[GitHub Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions)。
