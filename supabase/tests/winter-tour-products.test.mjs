@@ -104,9 +104,18 @@ test("winter copy avoids an aurora guarantee and records overnight train limits"
 });
 
 test("winter photos resolve to licensed and credited route assets", async () => {
+  const usedAcrossRoutes = new Set();
   for (const slug of winterSlugs) {
     const product = getPrivateTourProduct(slug);
     assert.equal(product.routePhotoFallback, false, slug);
+    assert.deepEqual(
+      (product.routeMedia ?? []).map((group) => group.day),
+      product.itinerary.map((day) => day.day),
+      `${slug}: every itinerary day has a photograph`,
+    );
+    for (const group of product.routeMedia ?? []) {
+      assert.ok(group.variants.length > 0, `${slug}: day ${group.day} has a photograph`);
+    }
     const images = [product.heroImage, ...product.gallery,
       ...(product.routeMedia ?? []).flatMap((group) => group.variants.map((variant) => variant.image))];
     const credits = privateTourNortheastWinterPreviewPhotoCreditsBySlug[slug];
@@ -114,6 +123,8 @@ test("winter photos resolve to licensed and credited route assets", async () => 
     assert.equal(credits.length, new Set(images.map((image) => image.src)).size, slug);
     assert.equal(new Set(credits.map((credit) => credit.sourceUrl)).size, credits.length, slug);
     for (const image of images) {
+      assert.equal(usedAcrossRoutes.has(image.src), false, `${slug}: reused photo ${image.src}`);
+      usedAcrossRoutes.add(image.src);
       assert.match(image.src, /^\/images\/tours\/(harbin-winter-5-day-private-tour|changbaishan-yanji-winter-6-day-private-tour|northeast-winter-2026-27)\//u);
       const fileStats = await stat(path.join(projectRoot, "public", image.src.slice(1))).catch(() => undefined);
       assert.ok(fileStats?.isFile(), image.src);
