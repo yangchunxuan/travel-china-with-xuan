@@ -154,6 +154,11 @@ const chengduJiuzhaigou: PrivateTourProduct = {
     "成都·九寨沟·黄龙 6 天 5 晚私家团",
     "청두·구채구·황룡 6일 프라이빗 투어",
   ),
+  metadataTitle: l(
+    "Jiuzhaigou Tour from Chengdu: 6 Days with Huanglong & Pandas",
+    "九寨沟黄龙6日游私家团：成都出发含熊猫基地",
+    "청두·구채구·황룡 6일 프라이빗 투어",
+  ),
   eyebrow: l(
     "Jiuzhaigou first, Huanglong on the return, Chengdu last",
     "先九寨沟、返程游黄龙，最后完整看成都",

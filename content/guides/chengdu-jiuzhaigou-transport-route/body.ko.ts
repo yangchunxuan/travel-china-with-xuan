@@ -47,7 +47,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { question: "도착한 날에 계곡을 볼 수 있나요?", answer: "도착일은 관광일이 아니라 이동일로 보세요. 2시간 도로 예상은 관광지 입장 시각이 아니고, 오후 열차라면 역 인계와 산길에 남은 일광을 다 쓸 수 있습니다. 호텔 프런트 도착 시간을 먼저 지키고 다음 날 이른 아침에 전체 관광을 배치하는 편이 안전합니다." },
     { question: "돌아오는 교통도 따로 계획해야 하나요?", answer: "별도의 연결로 계획하세요. 일반적인 '구채구'가 아니라 숙소나 관광지 출구에서 시작해, 도로 환승의 픽업 지점과 그 차량이 실제로 서비스하는 철도역·공항을 확인합니다. 별도 철도·항공권 앞에는 산길 중단에 대비한 여유를 두고, 항공편을 대체할 수 없다면 마지막 가능한 연결 대신 더 일찍 청두나 출발 공항 쪽으로 이동하세요." },
   ] },
-  { id: "links", type: "internal-links", title: "계속 계획하기", items: [ { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
+  { id: "links", type: "internal-links", title: "계속 계획하기", items: [ { label: "구채구 입장료, 예약, 코스", href: "/ko/guides/jiuzhaigou-valley/", description: "2026년 요금, 여권 예약, 운영 시간, 1일 코스." }, { label: "청두 도시 허브", href: "/ko/destinations/chengdu/", description: "도시에 며칠을 줄지, 어디를 거점으로 삼을지, 어떤 쓰촨 일정이 별개 갈래인지 먼저 정하세요." },
     { label: "중국 고속철도 첫 이용 안내", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "정확한 역 조합을 고른 뒤 이용합니다." },
     { label: "야간열차 또는 주간 고속철도", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "시간보다 일정 모양을 비교합니다." },
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "산악 환승에 실제 여유를 둡니다." },

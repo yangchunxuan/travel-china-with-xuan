@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 224,
-      "localeUrlCount": 664,
-      "generatedIdentityCount": 205,
+      "identityCount": 225,
+      "localeUrlCount": 667,
+      "generatedIdentityCount": 206,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2234,6 +2234,53 @@
               "boundary": "The Hanging Temple visit intent: entry versus climbing ticket, the 2026 daily cap and how it is sold, foreign-visitor booking, resale, the view without a climbing ticket, access and timing. Yungang stays with yungang-grottoes-cave-order-and-museum; general booking help with the booking guides; tour pages keep product prices. Prices are labelled as 2026 news reports."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "jiuzhaigou-guide",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Jiuzhaigou Valley guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "jiuzhaigou-valley",
+              "title": "Jiuzhaigou Valley 2026: Tickets, Booking, Best Time & Route",
+              "metadataPath": "content/guides/jiuzhaigou-valley/metadata.json",
+              "canonicalPath": "/guides/jiuzhaigou-valley/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/jiuzhaigou-valley/",
+                "/zh/guides/jiuzhaigou-valley/",
+                "/ko/guides/jiuzhaigou-valley/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "jiuzhaigou",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "jiuzhaigou"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Jiuzhaigou Valley visit intent: what it is, 2026 tickets, booking including passports, hours, the official one-day route, days, season, altitude and access in brief. The door-to-door Chengdu journey stays with chengdu-jiuzhaigou-transport-route; tour pages keep product prices."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2363,6 +2410,7 @@
         "is-your-china-itinerary-too-rushed",
         "jade-dragon-snow-mountain-cable-car-booking",
         "jingxian-xuan-paper-museum-workshop-choice",
+        "jiuzhaigou-valley",
         "kaifeng-song-dynasty-urban-landscape",
         "kevin-before-the-hotel-pickup",
         "kunming-dali-lijiang-shangri-la-route-order",
