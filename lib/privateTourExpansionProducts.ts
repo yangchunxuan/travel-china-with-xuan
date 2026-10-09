@@ -2311,7 +2311,7 @@ const jiangxi: PrivateTourProduct = {
   packages: [standardPackage([])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
-  metadataTitle: l("Jiangxi Private Tour, 6 Days: Jingdezhen to Wangxian Valley", "江西6天5晚私家团：景德镇·婺源·三清山·望仙谷", "징더전·우위안·삼청산·왕셴구 6일 프라이빗 투어"),
+  metadataTitle: l("Wangxian Valley & Wuyuan: Jiangxi Private Tour, 6 Days", "江西6天5晚私家团：景德镇·婺源·三清山·望仙谷", "징더전·우위안·삼청산·왕셴구 6일 프라이빗 투어"),
   faq: [
     {
       question: l(

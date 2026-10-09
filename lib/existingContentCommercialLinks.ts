@@ -137,6 +137,7 @@ const approvedCommercialGuideIds = [
   "chaozhou-ancient-city-gates-bridge-lanes-route",
   "how-guangzhou-morning-tea-works",
   "yuanyang-rice-terraces-viewpoint-and-village-route",
+  "wangxian-valley",
   "yangtze-cruise-fit-china-itinerary",
   "li-river-cruise-tickets-piers-booking",
   "jade-dragon-snow-mountain-cable-car-booking",

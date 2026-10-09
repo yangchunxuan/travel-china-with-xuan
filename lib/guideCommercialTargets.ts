@@ -221,6 +221,9 @@ export const guideTargets = {
   "yuanyang-rice-terraces-viewpoint-and-village-route": [
     productTarget("kunming-jianshui-yuanyang-6-day-private-tour"),
   ],
+  "wangxian-valley": [
+    productTarget("jingdezhen-wuyuan-wangxian-6-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),

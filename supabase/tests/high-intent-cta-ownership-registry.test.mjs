@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 86 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 87 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -198,6 +198,7 @@ test("commercial links keep the approved 8 hub, 86 curated guide and 48 product 
       "temple-of-heaven-gates-and-ritual-sequence",
       "terracotta-warriors-without-tour",
       "tianmen-mountain-tickets-and-routes",
+      "wangxian-valley",
       "xiamen-hubs-to-gulangyu-ferry-terminal",
       "xiamen-tulou-quanzhou-six-day-route",
       "xian-city-wall-tickets-gates-walk-or-bike",
