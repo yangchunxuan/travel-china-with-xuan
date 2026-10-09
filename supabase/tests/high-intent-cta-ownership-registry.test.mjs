@@ -263,6 +263,7 @@ test("commercial links keep the approved 8 hub, 86 curated guide and 49 product 
       "shanghai-suzhou-hangzhou-6-day-private-tour",
       "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
       "shenzhen-family-tech-4-day-private-tour",
+      "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
       "xiamen-tulou-quanzhou-6-day-private-tour",
       "xian-terracotta-warriors-5-day-private-tour",
       "xinjiang-ili-sayram-8-day-private-tour",
