@@ -90,7 +90,8 @@ export async function runIntakeCanary(env, {fetchImpl = globalThis.fetch, now = 
     let timer;
     try {
       const timeout = new Promise((_,reject) => {timer = setTimeout(() => {controller.abort();reject(new CanaryError('REQUEST_TIMEOUT'));},bounds.timeoutMs);});
-      const response = await Promise.race([fetchImpl(url,{...init,redirect:'error',signal:controller.signal}),timeout]);
+      // workerd accepts manual/follow; reject 3xx ourselves without following it.
+      const response = await Promise.race([fetchImpl(url,{...init,redirect:'manual',signal:controller.signal}),timeout]);
       if (response.redirected || response.status >= 300 && response.status < 400) throw new CanaryError('REDIRECT_BLOCKED');
       return response;
     } catch (error) {
