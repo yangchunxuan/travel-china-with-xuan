@@ -29,6 +29,8 @@ import { getAttractionReservationCopy } from "./attractionReservationsI18n";
 import { privateGuideCities, privateGuideServicePath } from "./privateGuideServices";
 import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
 import { privateCarServicePath } from "./privateCarServices";
+import { ticketReleaseToolPath } from "./ticketReleaseTimes";
+import { getTicketReleaseMetadataCopy, getTicketReleaseTimeCopy } from "./ticketReleaseTimeI18n";
 import { getPrivateCarServiceCopy } from "./privateCarServicesI18n";
 import { fullTripSupportPath } from "./fullTripSupport";
 import { getFullTripSupportCopy } from "./fullTripSupportI18n";
@@ -450,10 +452,28 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     updatePolicy: { volatility: "medium", refreshCadence: "quarterly", owner: "homeground-platform" },
   };
 
+  // Free tool: when timed-release tickets go on sale, in the visitor's time zone.
+  const ticketReleaseToolNode: ContentNode = {
+    id: "tool-forbidden-city-ticket-release-time", section: "tools", family: "tool",
+    primaryIntent: "execute", entityIds: ["country-china"], relationIds: [],
+    parentContentId: "hub-tools", status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions("tool-forbidden-city-ticket-release-time", Object.fromEntries(locales.map((locale) => {
+      const meta = getTicketReleaseMetadataCopy(locale);
+      return [locale, { path: ticketReleaseToolPath[locale], title: meta.title,
+        description: meta.description, h1: getTicketReleaseTimeCopy(locale).h1 }];
+    }))),
+    factIds: [], sourceIds: [], mediaIds: [],
+    schemaTypes: ["WebPage", "WebApplication", "FAQPage", "BreadcrumbList"],
+    legacyAliases: [], dates: {},
+    updatePolicy: { volatility: "high", refreshCadence: "monthly", owner: "homeground-platform" },
+  };
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
     privateCarNode,
+    ticketReleaseToolNode,
     ...inspirationNodes,
     ...sightNodes,
     ...tourCollectionNodes,

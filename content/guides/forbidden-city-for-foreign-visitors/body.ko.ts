@@ -137,6 +137,7 @@ export default {
       type: "callout",
       title: "방문 전에 예약을 확인하세요",
       body: "고궁박물원은 당일 입장권을 판매하지 않습니다. 입구로 향하기 전에 모든 방문자의 예약이 확정됐는지 확인하세요. 예약 내역이 불완전하거나 상태가 불명확하다면 출발 전에 박물원 공식 채널로 문의하세요.",
+      link: { href: "https://homegroundchina.com/ko/tools/forbidden-city-ticket-release-time/", label: "내 시간대 기준 티켓 오픈 시각 보기" },
       tone: "warning",
     },
     {

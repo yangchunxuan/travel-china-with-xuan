@@ -137,6 +137,7 @@ export default {
       type: "callout",
       title: "先确认预约，再前往故宫",
       body: "故宫博物院不售当日门票。出发前确认每位游客的预约已经成功。如果预约记录不完整或状态不明确，请先通过故宫官方渠道联系确认，再前往参观。",
+      link: { href: "https://homegroundchina.com/zh/tools/forbidden-city-ticket-release-time/", label: "查看放票时刻换算成你所在时区是几点" },
       tone: "warning",
     },
     {

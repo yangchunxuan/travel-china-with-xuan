@@ -1,0 +1,107 @@
+.page {
+  --ink: #0a0a0a;
+  --muted: rgb(10 10 10 / 65%);
+  --tile: #f9f8f6;
+  --rule: rgb(10 10 10 / 14%);
+  --accent: #a84731;
+  background: #fff;
+  color: var(--ink);
+  min-height: 100vh;
+}
+.page main { margin-inline: auto; max-width: 76rem; padding: 0 1.5rem 5rem; }
+.hero { padding-top: 2rem; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 0.65rem; list-style: none; margin: 0 0 2.5rem; padding: 0; color: var(--muted); font-size: 0.8125rem; line-height: 1.6; }
+.breadcrumb li + li::before { content: "/"; margin-right: 0.65rem; }
+.breadcrumb a { display: inline-block; margin-block: -0.75rem; padding-block: 0.75rem; text-underline-offset: 0.2em; }
+.eyebrow { color: var(--muted); font-size: 0.875rem; line-height: 1.5; margin: 0; }
+.page h1, .page h2 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
+.page h1 { font-size: clamp(2.4rem, 5vw, 4.25rem); line-height: 1.08; max-width: 20ch; margin: 1rem 0 0; }
+.page h2 { font-size: clamp(1.9rem, 3.3vw, 2.7rem); line-height: 1.15; margin: 0; }
+.lede { font-size: 1.0625rem; line-height: 1.7; color: var(--muted); max-width: 43rem; margin: 1.5rem 0 0; text-wrap: pretty; }
+.facts { border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; list-style: none; margin: 2rem 0 0; padding: 1.25rem 0 0; color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+
+/* The tool itself: one warm tile, fields on top, the answer below. */
+.toolSection { margin-top: 2.5rem; }
+.calculator { background: var(--tile); border-radius: 1rem; padding: clamp(1.25rem, 3vw, 2rem); }
+.calculatorFields { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+.field { display: grid; gap: 0.5rem; font-size: 0.9375rem; line-height: 1.5; min-width: 0; }
+.field input, .field select { background: #fff; border: 1px solid rgb(10 10 10 / 28%); border-radius: 0.65rem; color: var(--ink); font-family: inherit; font-size: 1rem; min-height: 2.875rem; min-width: 0; padding: 0.6rem 0.7rem; width: 100%; }
+.result { border-top: 1px solid var(--rule); margin-top: 1.5rem; min-height: 6rem; padding-top: 1.5rem; }
+.result p { margin: 0; }
+.resultLead { font-family: var(--hg-editorial); font-size: clamp(1.35rem, 2.4vw, 1.9rem); font-variant-numeric: lining-nums tabular-nums; line-height: 1.3; text-wrap: pretty; }
+.resultLocal { font-size: 1.0625rem; line-height: 1.6; margin-top: 0.75rem !important; }
+.countdown { color: var(--muted); font-size: 0.9375rem; line-height: 1.6; margin-top: 0.35rem !important; }
+.warning { border-left: 3px solid var(--accent); color: var(--ink); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1rem !important; padding-left: 0.85rem; text-wrap: pretty; }
+.reminder { align-items: center; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.25rem; }
+.reminder .textLink { margin-top: 0; }
+.reminder .note { margin: 0; }
+.note { color: var(--muted); font-size: 0.875rem; line-height: 1.65; margin: 1rem 0 0; text-wrap: pretty; }
+
+.primaryButton { align-items: center; background: var(--ink); border: 1px solid transparent; border-radius: 999px; color: #fff; cursor: pointer; display: inline-flex; font-family: inherit; font-size: 0.875rem; font-weight: 500; gap: 0.6rem; justify-content: center; min-height: 2.875rem; padding: 0.7rem 1.15rem; text-align: center; text-decoration: none; }
+.primaryButton:hover { background: #343434; }
+.textLink { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 2.875rem; font-size: 0.875rem; font-weight: 500; margin-top: 0.75rem; text-underline-offset: 0.2em; color: var(--ink); }
+
+.section { margin-top: 4.5rem; scroll-margin-top: 7rem; }
+.split { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.split p, .sectionIntro p { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; margin: 1rem 0 0; text-wrap: pretty; }
+.steps { counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps li { border-bottom: 1px solid var(--rule); counter-increment: step; display: grid; gap: 1rem; grid-template-columns: 2rem minmax(0, 1fr); font-size: 0.9375rem; line-height: 1.65; padding: 0.9rem 0; }
+.steps li:first-child { padding-top: 0; }
+.steps li::before { color: var(--accent); content: counter(step, decimal-leading-zero); font-size: 0.8125rem; line-height: 1.9; }
+
+.service { align-items: end; background: var(--ink); border-radius: 1rem; color: #fff; display: grid; gap: 1.5rem 3rem; grid-template-columns: minmax(0, 1fr) auto; margin-top: 4.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); }
+.service .eyebrow { color: rgb(255 255 255 / 70%); }
+.service h2 { margin-top: 0.75rem; }
+.service p:not(.eyebrow) { color: rgb(255 255 255 / 80%); font-size: 0.9375rem; line-height: 1.7; margin: 1rem 0 0; max-width: 46rem; text-wrap: pretty; }
+.service a:focus-visible { outline-color: #fff; }
+.service .primaryButton { background: #fff; color: var(--ink); }
+.service .primaryButton:hover { background: #ececea; }
+
+.sectionIntro { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1.5rem 3rem; align-items: end; margin-bottom: 1.75rem; }
+.sectionIntro p { margin-top: 0; }
+.tableWrap { overflow-x: auto; }
+.table { border-collapse: collapse; font-size: 0.9375rem; line-height: 1.6; min-width: 34rem; width: 100%; }
+.table th, .table td { border-bottom: 1px solid var(--rule); padding: 0.85rem 1rem 0.85rem 0; text-align: left; vertical-align: top; }
+.table thead th { color: var(--muted); font-size: 0.8125rem; font-weight: 500; }
+.table tbody th { font-weight: 500; }
+.table td:last-child { white-space: nowrap; color: var(--muted); }
+.table a { color: var(--ink); display: inline-block; margin-block: -0.6rem; padding-block: 0.6rem; text-underline-offset: 0.2em; }
+
+.faq { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 3rem; }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-child { border-bottom: 1px solid var(--rule); }
+.faq summary { align-items: center; cursor: pointer; display: flex; gap: 1rem; justify-content: space-between; font-size: 0.9375rem; font-weight: 500; line-height: 1.5; list-style: none; min-height: 3.5rem; padding: 0.85rem 0; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary span { color: var(--accent); font-size: 1.5rem; font-weight: 400; flex-shrink: 0; }
+.faq details[open] summary span { transform: rotate(45deg); }
+.faq details p { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; margin: 0 0 1.25rem; }
+
+.page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .page input:focus-visible, .page select:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Korean breaks between 어절, and the Chinese heading at its comma, not inside words. */
+.page:lang(ko) { word-break: keep-all; overflow-wrap: anywhere; }
+.page:lang(zh) h1 { word-break: keep-all; overflow-wrap: anywhere; }
+
+@media (max-width: 55rem) {
+  .calculatorFields { grid-template-columns: 1fr 1fr; }
+  .calculatorFields > :first-child { grid-column: 1 / -1; }
+  .split, .faq, .sectionIntro, .service { grid-template-columns: 1fr; gap: 1.5rem; }
+  .service { align-items: start; }
+  .service .primaryButton { justify-self: start; }
+}
+@media (max-width: 40rem) {
+  .page main { padding-inline: 1rem; padding-bottom: 3.5rem; }
+  .hero { padding-top: 1.5rem; }
+  .breadcrumb ol { margin-bottom: 2rem; }
+  .calculatorFields { grid-template-columns: 1fr; }
+  .section, .service { margin-top: 3rem; }
+  .reminder .primaryButton { width: 100%; }
+  /* The release table becomes one stacked card per attraction. */
+  .table { min-width: 0; }
+  .table thead { display: none; }
+  .table tr { border-bottom: 1px solid var(--rule); display: block; padding: 0.85rem 0; }
+  .table th, .table td { border: 0; display: block; padding: 0; }
+  .table td { margin-top: 0.35rem; }
+  .table td:last-child { white-space: normal; font-size: 0.8125rem; }
+  .table td[data-label]::before { content: attr(data-label) " · "; }
+}

@@ -137,6 +137,7 @@ export default {
       type: "callout",
       title: "Confirm your reservation before visiting",
       body: "The Palace Museum does not sell same-day tickets. Confirm every visitor's reservation before travelling to the entrance. If your booking is incomplete or unclear, contact the museum through its official channels before making the trip.",
+      link: { href: "https://homegroundchina.com/tools/forbidden-city-ticket-release-time/", label: "See when tickets open in your time zone" },
       tone: "warning",
     },
     {

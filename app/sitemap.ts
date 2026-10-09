@@ -43,6 +43,7 @@ function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId === "system-attraction-reservations") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId === "private-english-speaking-guides") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId === "private-car-and-driver") return entry.locale === "en" ? 0.72 : 0.67;
+  if (entry.contentId === "tool-forbidden-city-ticket-release-time") return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "full-trip-support") return entry.locale === "en" ? 0.7 : 0.65;
   if (entry.contentId === "travel-inspiration") return entry.locale === "en" ? 0.72 : 0.67;
   if (entry.contentId.startsWith("travel-inspiration-")) return entry.locale === "en" ? 0.7 : 0.65;

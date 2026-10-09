@@ -370,9 +370,9 @@ export const attractionReservationRules = [
     passportAccepted: true,
     realName: true,
     release: {
-      en: "5 days ahead at 17:00 (checked 12 August 2026)",
-      zh: "提前 5 天 17:00 放票（2026 年 8 月 12 日核实）",
-      ko: "5일 전 17:00 오픈(2026년 8월 12일 확인)",
+      en: "5 days ahead at 17:00 China time",
+      zh: "提前 5 天北京时间 17:00 放票",
+      ko: "5일 전 중국 시간 17:00 오픈",
     },
     price: { kind: "free-reservation" },
     notes: {
