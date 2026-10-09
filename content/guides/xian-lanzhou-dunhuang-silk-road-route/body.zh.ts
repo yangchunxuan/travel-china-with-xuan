@@ -88,6 +88,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "自由行参观莫高窟", href: "/zh/guides/mogao-caves-independent-visit-workflow/", description: "预约流程本身，本文刻意不重复。" },
+    { label: "张掖七彩丹霞", href: "/zh/guides/rainbow-mountains-zhangye-danxia/", description: "兰州和嘉峪关之间的彩色丘陵：门票、日落时间、停留多久。" },
     { label: "中国旅行用单中心还是多基地路线", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "这条走廊该排成一条线，还是两个基地。" },
     { label: "只坐火车的中国路线", href: "/zh/guides/china-rail-only-route/", description: "如果你不打算飞其中任何一段。" },
     { label: "夜行列车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "长途那一段正是这个判断被写出来要解决的情况。" },
