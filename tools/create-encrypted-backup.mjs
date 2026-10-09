@@ -20,7 +20,7 @@ export const BACKUP_SCHEMAS = Object.freeze(['public', 'homeground_private', 'au
 // digest functions need pgcrypto during restore (PostgreSQL 17 pg_dump -n/-e).
 export const BACKUP_EXTENSIONS = Object.freeze(['pgcrypto']);
 const CHECKOUT = fileURLToPath(new URL('..', import.meta.url));
-const SAFE_CODES = new Set(['DATABASE_URL_MISSING', 'DATABASE_URL_INVALID', 'DATABASE_URL_OPTION_NOT_ALLOWED', 'DATABASE_PROJECT_MISMATCH', 'DATABASE_TLS_REQUIRED', 'AGE_RECIPIENT_MISSING', 'AGE_RECIPIENT_INVALID', 'OUTPUT_DIRECTORY_REQUIRED', 'OUTPUT_DIRECTORY_IN_CHECKOUT', 'BACKUP_TIMEOUT', 'PG_DUMP_UNAVAILABLE', 'PG_DUMP_FAILED', 'DATABASE_TLS_FAILED', 'AGE_UNAVAILABLE', 'AGE_ENCRYPTION_FAILED', 'OUTPUT_LIMIT_EXCEEDED', 'BACKUP_IO_FAILED', 'INVALID_ARGUMENT']);
+const SAFE_CODES = new Set(['DATABASE_URL_MISSING', 'DATABASE_URL_INVALID', 'DATABASE_URL_OPTION_NOT_ALLOWED', 'DATABASE_PROJECT_MISMATCH', 'DATABASE_TLS_REQUIRED', 'AGE_RECIPIENT_MISSING', 'AGE_RECIPIENT_INVALID', 'OUTPUT_DIRECTORY_REQUIRED', 'OUTPUT_DIRECTORY_IN_CHECKOUT', 'BACKUP_TIMEOUT', 'PG_DUMP_UNAVAILABLE', 'PG_DUMP_FAILED', 'DATABASE_TLS_FAILED', 'DATABASE_AUTH_FAILED', 'DATABASE_PERMISSION_DENIED', 'DATABASE_VERSION_MISMATCH', 'DATABASE_SCHEMA_MISSING', 'DATABASE_CONNECTION_FAILED', 'DATABASE_STARTUP_REJECTED', 'AGE_UNAVAILABLE', 'AGE_ENCRYPTION_FAILED', 'OUTPUT_LIMIT_EXCEEDED', 'BACKUP_IO_FAILED', 'INVALID_ARGUMENT']);
 export class BackupError extends Error {
   constructor(code) { super(SAFE_CODES.has(code) ? code : 'BACKUP_IO_FAILED'); this.code = this.message; }
 }
@@ -98,16 +98,34 @@ async function outputDirectory(value) {
   return destination;
 }
 function watchChild(child, kind) {
-  let tlsFailure = false, inspected = 0;
-  // Inspect a bounded prefix only to classify TLS errors; never persist stderr.
+  const prefix = Buffer.alloc(kind === 'pg' ? 8192 : 0);
+  let inspected = 0;
+  // Keep only a small in-memory prefix so phrases spanning data chunks can be
+  // recognized. Never persist, log or attach the raw text to a returned error.
   child.stderr?.on('data', chunk => {
-    if (inspected >= 8192) return;
-    const prefix = chunk.subarray(0, 8192 - inspected).toString(); inspected += chunk.length;
-    if (/certificate verify failed|certificate.*(expired|verify|does not match)|SSL error|TLS handshake/iu.test(prefix)) tlsFailure = true;
+    if (inspected >= prefix.length) return;
+    const bytes = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
+    inspected += bytes.copy(prefix, inspected, 0, Math.min(bytes.length, prefix.length - inspected));
   });
+  const classifyPgFailure = () => {
+    const text = prefix.toString('utf8', 0, inspected);
+    // TLS takes precedence when libpq includes another connection error too.
+    if (/certificate verify failed|certificate.*(expired|verify|does not match)|SSL error|TLS handshake/iu.test(text)) return 'DATABASE_TLS_FAILED';
+    if (/password authentication failed|authentication failed for user|no password supplied|no pg_hba\.conf entry|FATAL:\s*Tenant or user not found/iu.test(text)) return 'DATABASE_AUTH_FAILED';
+    if (/permission denied for (?:table|sequence|relation|schema|database|function|large object)|must be (?:owner of|superuser)|query would be affected by row-level security policy/iu.test(text)) return 'DATABASE_PERMISSION_DENIED';
+    if (/server version mismatch|unsupported server version/iu.test(text)) return 'DATABASE_VERSION_MISMATCH';
+    if (/no matching (?:schemas|extensions) were found/iu.test(text)) return 'DATABASE_SCHEMA_MISSING';
+    if (/(?:unsupported|unrecognized) startup (?:parameters?|options?)\b|(?:unsupported|unrecognized) (?:parameter|option)\s*:\s*["']?options?\b/iu.test(text)) return 'DATABASE_STARTUP_REJECTED';
+    if (/could not translate host name|could not connect to server|connection refused|network is unreachable|no route to host|connection timed out|timeout expired|temporary failure in name resolution|name or service not known|server closed the connection unexpectedly|connection reset by peer|could not (?:receive data from|send data to) server/iu.test(text)) return 'DATABASE_CONNECTION_FAILED';
+    return 'PG_DUMP_FAILED';
+  };
   return new Promise((resolvePromise, reject) => {
-    child.once('error', () => reject(new BackupError(kind === 'pg' ? 'PG_DUMP_UNAVAILABLE' : 'AGE_UNAVAILABLE')));
-    child.once('close', code => code === 0 ? resolvePromise() : reject(new BackupError(kind === 'pg' ? (tlsFailure ? 'DATABASE_TLS_FAILED' : 'PG_DUMP_FAILED') : 'AGE_ENCRYPTION_FAILED')));
+    child.once('error', () => { prefix.fill(0); reject(new BackupError(kind === 'pg' ? 'PG_DUMP_UNAVAILABLE' : 'AGE_UNAVAILABLE')); });
+    child.once('close', code => {
+      const failure = code === 0 ? null : kind === 'pg' ? classifyPgFailure() : 'AGE_ENCRYPTION_FAILED';
+      prefix.fill(0);
+      failure ? reject(new BackupError(failure)) : resolvePromise();
+    });
   });
 }
 
