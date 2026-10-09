@@ -15,6 +15,8 @@ function fixture(options = {}) {
   const scriptUrls = Array.from({length:count},(_,i)=>`${SITE_ORIGIN}/_next/static/chunks/app/fixture-${i}.js`);
   const html = options.html ?? scriptUrls.map(url=>`<script src="${url}"></script>`).join('');
   const fetchImpl = async (url,init = {}) => {
+    // Match workerd's Request constructor: redirect:error fails before network I/O.
+    if (!['manual','follow'].includes(init.redirect)) throw new TypeError('Unsupported redirect mode');
     calls.push({url,method:init.method ?? 'GET',headers:init.headers,body:init.body,redirect:init.redirect});
     // Every destination is intercepted; the fixture never falls through to fetch.
     if (url === heartbeat || url === heartbeat+'/fail') {
@@ -84,7 +86,7 @@ test('old and new privacy preserve all six deliberately incomplete public payloa
       assert.equal(call.headers.Origin,SITE_ORIGIN);
     }
     assert.equal(new Set(probes(f.calls).map(call=>call.headers['idempotency-key'])).size,6);
-    assert.equal(f.calls.every(call=>call.redirect === 'error'),true);
+    assert.equal(f.calls.every(call=>call.redirect === 'manual'),true);
   });
 });
 
