@@ -38,6 +38,7 @@ export const northeastWinterComparisonCopy: Record<HomegroundLocale, {
   travel: string;
   price: string;
   priceBasis: string;
+  cardSeasonLabel: string;
   priceNote: string;
 }> = {
   en: {
@@ -49,6 +50,7 @@ export const northeastWinterComparisonCopy: Record<HomegroundLocale, {
     travel: "Travel commitment",
     price: "Low-season price",
     priceBasis: "Per person · 2 adults",
+    cardSeasonLabel: "low season",
     priceNote: "These are per-person low-season prices for two adults sharing a room, on departures 10 Nov–19 Dec 2026 or 15 Feb–10 Mar 2027. Other party sizes, children, single rooms and the final total are confirmed in writing before payment. The separate Changbaishan–Yanji winter route in this collection is quoted on request.",
   },
   zh: {
@@ -60,6 +62,7 @@ export const northeastWinterComparisonCopy: Record<HomegroundLocale, {
     travel: "交通取舍",
     price: "淡季参考价",
     priceBasis: "每人 · 两位成人同行",
+    cardSeasonLabel: "淡季",
     priceNote: "表中为两位成人同住一间时的淡季每人价，适用于 2026 年 11 月 10 日至 12 月 19 日或 2027 年 2 月 15 日至 3 月 10 日出发。其他人数、儿童、单房及最终总价，付款前书面确认。本页另有一条长白山—延吉冬季路线，价格需另行询问。",
   },
   ko: {
@@ -71,6 +74,7 @@ export const northeastWinterComparisonCopy: Record<HomegroundLocale, {
     travel: "이동 조건",
     price: "비수기 요금",
     priceBasis: "1인 · 성인 2명",
+    cardSeasonLabel: "비수기",
     priceNote: "표의 요금은 성인 2명 1실 기준 비수기 1인 요금으로, 2026년 11월 10일~12월 19일 또는 2027년 2월 15일~3월 10일 출발에 적용됩니다. 다른 인원, 아동, 1인실 및 최종 총액은 결제 전 서면으로 확인합니다. 이 목록의 별도 백두산–연길 겨울 코스는 문의 후 견적을 드립니다.",
   },
 };
