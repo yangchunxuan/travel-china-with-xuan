@@ -174,6 +174,41 @@ const body = {
       "body": "2026년 9월 10일 확인 기준, 2026–27 시즌 빙설대세계의 개장일과 프로그램은 확인하지 못했습니다. 이전 시즌의 공지와 사진은 새 시즌의 날짜·구조물·요금을 보장하지 않습니다. 그 명소가 여행의 핵심이라면 새 공지를 확인한 뒤 관련 일정을 확정하세요."
     },
     {
+      "id": "northeast-routes-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "중국 동북 겨울 코스 다섯 가지, 어떻게 고를까요?"
+    },
+    {
+      "id": "northeast-routes-intro",
+      "type": "paragraph",
+      "text": "가격보다 이동 강도를 먼저 비교하세요. 모허를 포함한 두 코스는 각각 일반 침대열차에서 2박을 하고, 다른 세 코스는 호텔에서 숙박합니다. 빙설 명소 개장, 스키 일정과 겨울 도로 상황은 여행 날짜에 맞춰 결제 전에 확인해야 합니다."
+    },
+    {
+      "id": "northeast-routes-compare",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "하얼빈·야부리·설향 6일: 스키 하루와 설향을 넣고 호텔에서 5박하며 야간열차는 타지 않습니다.",
+        "하얼빈에서 백두산·연길까지 8일: 설향 이후 백두산과 연길로 이어집니다. 호텔 7박이지만 5일차에는 장거리 차량 이동이 있습니다.",
+        "하얼빈·모허 7일: 야부리와 설향 대신 베이훙촌과 북극촌을 찾습니다. 일반 침대열차에서 2박합니다.",
+        "하얼빈·설향·모허 9일: 설향과 모허를 한 번에 돌며 호텔 6박과 일반 침대열차 2박을 합니다.",
+        "연길·백두산·완다 리조트 6일: 하얼빈을 넣지 않고 동북 동부의 겨울 일정에 집중합니다."
+      ]
+    },
+    {
+      "id": "northeast-routes-links",
+      "type": "internal-links",
+      "title": "2026–27 시즌 프라이빗 코스 다섯 가지 비교하기",
+      "items": [
+        { "label": "6일: 하얼빈·야부리·설향", "href": "/ko/tours/harbin-yabuli-snow-town-6-day-private-tour/" },
+        { "label": "8일: 하얼빈·설향·백두산·연길", "href": "/ko/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/" },
+        { "label": "7일: 하얼빈·모허·북극촌", "href": "/ko/tours/harbin-mohe-arctic-village-7-day-private-tour/" },
+        { "label": "9일: 하얼빈·설향·모허", "href": "/ko/tours/harbin-snow-town-mohe-9-day-private-tour/" },
+        { "label": "6일: 연길·백두산·완다 리조트", "href": "/ko/tours/yanji-changbaishan-wanda-6-day-private-tour/" }
+      ]
+    },
+    {
       "id": "cities-heading",
       "type": "heading",
       "level": 2,

@@ -9,6 +9,17 @@ const body: StructuredPageBody = {
       text: "截至 2026 年 8 月 20 日，官方页面列出 165 元门票和 236 元门票加环保车两种产品，均连续 4 日有效；索道与电梯另计。商品和价格可能调整，付款前仍要核对实时订单。再把票种与首次入园门和时段对应起来：住武陵源通常先看东门，从金鞭溪或黄石寨开始看南门，明确从杨家界开始才看西门。",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "先把森林公园的票与路线对上，再确定接送",
+      "body": "票种、入口和山上交通要配合同一条游览路线。一起核对，才能定下合适的起点，也不会白花钱买到用不上的组合。即使有票，索道、电梯和安检仍可能排队。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
+    {
       id: "canonical-boundary",
       type: "callout",
       title: "这篇只处理景区购票与入园衔接",

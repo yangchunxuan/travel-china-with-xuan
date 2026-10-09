@@ -1,7 +1,18 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"answer-first",type:"lead",text:"싼싱두이박물관은 방문 전에 실명 입장권을 예약해야 합니다. 외국인 여행자는 박물관이 연결한 공식 채널에서 각 여행자의 여권 정보를 정확히 입력하고 원본 여권을 가져가세요. 주 동선을 골라 보면 약 2시간, 설명을 읽고 쉬며 인기 유물을 서두르지 않으려면 약 3시간을 잡으세요. 유명 청동기보다 유적과 발굴 맥락부터 읽는 편이 좋습니다."},
- {id:"booking-heading",type:"heading",level:2,text:"비슷한 이름이 아니라 박물관에서 예약을 시작하세요"},
+ {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "청두에서 이동을 확정하기 전에 싼싱두이 방문일을 확인하세요",
+      "body": "박물관 방문과 광한까지의 이동은 하루 일정으로 함께 맞춰야 합니다. 현재 예약 기간과 실제 확정 결과를 확인한 뒤 빠듯한 교통편을 정하세요. 외국인 방문객용 공식 채널 덕분에 예약은 쉬워졌지만, 원하는 날짜에 자리가 있는지는 확정 결과로 확인해야 합니다.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/ko/guides/china-attractions-advance-booking-checklist/",
+        "label": "중국 여행 전 관광지 예약 준비 확인"
+      }
+    },
+    {id:"booking-heading",type:"heading",level:2,text:"비슷한 이름이 아니라 박물관에서 예약을 시작하세요"},
  {id:"booking",type:"table",caption:"싼싱두이 예약 판단",columns:["질문","신뢰할 답","한계"],rows:[
   ["외국 여권을 쓸 수 있나?","광한시 정부가 공개한 해외 방문객 서비스 정보는 박물관이 해외 방문객용 입장권과 영문 예약·결제 페이지를 제공하고 유효한 여권 등을 받는다고 설명합니다.","방문일의 실제 예약 화면, 결제와 잔여 입장권은 직접 확인해야 합니다."],
   ["어디서 시작하나?","싼싱두이박물관 공식 웹사이트, 위챗 계정 또는 미니프로그램입니다. 박물관과 광한시 정부는 비공식 채널을 경고합니다.","검색 결과에 박물관 이름이 있어도 공식 판매처라는 뜻은 아닙니다."],
@@ -9,7 +20,14 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   ["표는 언제 열리나?","공개 시각, 여름 연장, 공휴일 운영은 공식 플랫폼의 동적 공지입니다.","오래된 5일 전·20시 규칙을 영구 규정으로 쓰지 않습니다."],
  ]},
  {id:"hours-callout",type:"callout",title:"2023년 신관 공지만으로 현재 시간을 판단하지 마세요",body:"2023년 광한시 공지는 현재 신관 개관과 공식 채널을 입증하지만 2026년 특정 방문일의 폐관 시각은 입증하지 못합니다. 게시 직전과 여행 전 박물관 실시간 표 화면과 최신 날짜 공지에서 운영, 입장 마감, 임시 연장, 전시실 접근을 확인하세요.",tone:"warning"},
- {id:"arrival-heading",type:"heading",level:2,text:"빠듯한 귀환 열차표를 사기 전에 청두-광한 이동을 계획하세요"},
+ {
+      "id": "reservation-window-check",
+      "type": "callout",
+      "title": "예매 오픈은 실제 방문일에 맞춰 확인하세요",
+      "body": "박물관은 입경 여행객을 위한 영어 여권 예약 경로를 제공합니다. 방문 날짜의 예매 오픈 시각과 잔여 자리는 공식 예약 화면에서 확인할 수 있으니 결제 전에 꼭 보세요. 자리가 확정되기 전에는 그 표에 맞춰 이동을 고정하지 말고 청두 일정을 유연하게 두세요.",
+      "tone": "decision"
+    },
+    {id:"arrival-heading",type:"heading",level:2,text:"빠듯한 귀환 열차표를 사기 전에 청두-광한 이동을 계획하세요"},
  {id:"arrival",type:"comparison",columns:[
   {heading:"철도+현지 이동",body:"광한북역까지 열차를 쓰면 도시 간 이동은 줄지만 역이 박물관 입구는 아닙니다. 역 전체 이름과 도로 이동을 확인하고 퇴장 즉시 귀환 열차에 탈 수 있다고 가정하지 마세요."},
   {heading:"운영 주체가 분명한 공식 직행 교통",body:"청두 출발 서비스가 운행할 때 정확한 승차점, 귀환 시각, 교통만 포함하는지 확인하세요. 계절·공휴일 조정은 날짜가 있는 운영자 공지가 필요합니다."},
@@ -36,11 +54,47 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   { label: "도장을 찾기 전에 중국 박물관 도장 문화를 이해하기", href: "/ko/guides/why-china-museums-have-stamps/", description: "싼싱두이에 현재 도장이 있다고 가정하지 말고 박물관 자체 채널을 확인하며 전시실 동선을 우선합니다." }
  ]},
  {id:"consultation",type:"callout",title:"싼싱두이를 실제 쓰촨 동선에 넣어야 하나요?",body:"Homeground 여행 상담가는 실제 예매 일정, 청두 숙소, 그룹 속도와 다음 교통을 검토할 수 있습니다. 날짜, 여권 종류, 선호 교통, 박물관 해설의 중요도를 알려 주세요.",tone:"neutral"},
- {id:"sources",type:"sources",title:"확인한 공식·이미지 출처",items:[
-  {label:"싼싱두이박물관 공식 웹사이트와 최신 공지",url:"https://www.sxd.cn/index.asp",publisher:"Sanxingdui Museum",reviewedAt:"2026-08-12"},
-  {label:"신관 개관, 공식 예약 채널과 실명 입장",url:"https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
-  {label:"해외 방문객 여권 예약·별도 입장권·영문 결제 서비스 정보",url:"https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",publisher:"Guanghan Municipal Government",reviewedAt:"2026-08-12"},
-  {label:"대표 사진: STW932가 촬영한 싼싱두이박물관 신관, CC BY-SA 4.0, 크롭 및 WebP 변환",url:"https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},
-  {label:"대표 사진 라이선스: CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}
- ]}
+ {
+      "id": "sources",
+      "type": "sources",
+      "title": "확인한 공식·이미지 출처",
+      "items": [
+        {
+          "label": "싼싱두이박물관 공식 웹사이트와 최신 공지",
+          "url": "https://www.sxd.cn/index.asp",
+          "publisher": "Sanxingdui Museum",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "신관 개관, 공식 예약 채널과 실명 입장",
+          "url": "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",
+          "publisher": "Guanghan Municipal Government",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "해외 방문객 여권 예약·별도 입장권·영문 결제 서비스 정보",
+          "url": "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",
+          "publisher": "Guanghan Municipal Government",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "대표 사진: STW932가 촬영한 싼싱두이박물관 신관, CC BY-SA 4.0, 크롭 및 WebP 변환",
+          "url": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "대표 사진 라이선스: CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "publisher": "Creative Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "2025년6월18일 외국인 예약 서비스 보도이며 현재 예매 오픈 시간표는 아닙니다",
+          "url": "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html",
+          "publisher": "인민일보",
+          "reviewedAt": "2026-10-08"
+        }
+      ]
+    }
 ]};export default body;

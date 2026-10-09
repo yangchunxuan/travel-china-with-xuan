@@ -7,6 +7,17 @@ export default {
       text: "You can visit the Terracotta Warriors without joining a tour, but treat it as one linked day rather than four separate questions. Reserve the Emperor Qinshihuang's Mausoleum Site Museum in the passport name of every visitor, carry those original passports, reach the museum's North Gate from Xi'an, choose a permitted order through Pits 1, 2 and 3, take the included shuttle to Lishan Garden, return to the museum transport area, and only then travel back to Xi'an. A guide is optional for entry and transport; the strongest reason to hire one is interpretation.",
     },
     {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "Confirm the museum visit before fixing a tight Xi’an day",
+      "body": "The museum sells real-name tickets in advance and can stop sales once it reaches capacity. Check every traveller’s confirmation and entry time before building transfers around the visit, so the day works for the whole group.",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+        "label": "See what to arrange before your China trip"
+      }
+    },
+    {
       id: "execution-summary",
       type: "callout",
       title: "The independent visit in eight actions",

@@ -1,7 +1,18 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
  {id:"answer-first",type:"lead",text:"参观三星堆博物馆需要先实名预约购票。外籍游客应从博物馆链接的官方渠道开始，逐字填写每位旅客的护照资料，并在当天携带护照原件。有选择地看主线约需 2 小时，想读说明、休息并从容看热门文物可留约 3 小时；先看遗址与发掘，再进入大型青铜器展区。"},
- {id:"booking-heading",type:"heading",level:2,text:"从博物馆官方渠道开始，而不是从相似名称开始"},
+ {
+      "id": "reservation-pretrip-reminder",
+      "type": "callout",
+      "title": "先落实三星堆参观日期，再固定成都接驳",
+      "body": "博物馆预约和前往广汉的交通，要按同一天来安排。先核对当前预约窗口和实际确认结果，再固定紧凑的接驳。官方入境游客渠道让预约更方便，但首选日期是否还有名额，仍要以确认结果为准。",
+      "tone": "decision",
+      "link": {
+        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        "label": "查看赴华前需要准备的景点预约"
+      }
+    },
+    {id:"booking-heading",type:"heading",level:2,text:"从博物馆官方渠道开始，而不是从相似名称开始"},
  {id:"booking",type:"table",caption:"三星堆预约决策",columns:["问题","可靠答案","边界"],rows:[
   ["外国护照能否预约？","广汉市人民政府发布的入境游客服务信息显示，博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。","实际日期仍要测试当期页面、支付方式与库存。"],
   ["从哪里购票？","三星堆博物馆官网、官方微信公众号或官方小程序。博物馆与广汉市政府均提醒使用官方渠道。","搜索结果带有“三星堆”不等于获得官方授权。"],
@@ -9,7 +20,14 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   ["什么时候放票？","放票窗口、暑期延时和节假日安排均由官方平台动态公告。","本文不把旧的“提前五天、20点放票”保存成永久规则。"],
  ]},
  {id:"hours-callout",type:"callout",title:"不要只看2023年新馆试运行公告",body:"2023年广汉市政府公告可以证明现新馆启用与官方购票渠道，但不能单独证明2026年某一天的闭馆时间。上线前和出行前必须打开博物馆实时购票页面与最新日期公告，核验开闭馆、停止入馆、临时延时和展厅开放。",tone:"warning"},
- {id:"arrival-heading",type:"heading",level:2,text:"买紧张返程票前，先搭好成都—广汉交通链"},
+ {
+      "id": "reservation-window-check",
+      "type": "callout",
+      "title": "放票窗口要按你的参观日期核对",
+      "body": "博物馆为入境游客提供英语护照预约渠道。你参观日期的放票时间和名额，以官方预约页面显示为准，付款前先查看。名额确认之前，成都这一天先保留调整余地，不要围绕一张还没拿到的票固定接送。",
+      "tone": "decision"
+    },
+    {id:"arrival-heading",type:"heading",level:2,text:"买紧张返程票前，先搭好成都—广汉交通链"},
  {id:"arrival",type:"comparison",columns:[
   {heading:"铁路加市内接驳",body:"到广汉北站可缩短城际段，但车站不是博物馆入口。要核对车站全名、预留道路接驳，不要假设出馆就能立即检票返程。"},
   {heading:"官方或明确运营方直通服务",body:"若当期有从成都出发的服务，需核对准确上车点、返程时刻及是否只含交通。季节与节假日调整必须有日期明确的运营方公告。"},
@@ -36,11 +54,47 @@ const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
   { label: "找章前先读懂中国博物馆盖章", href: "/zh/guides/why-china-museums-have-stamps/", description: "不要假定三星堆当前一定有章；查博物馆自有渠道，并以展厅路线为主。" }
  ]},
  {id:"consultation",type:"callout",title:"需要把三星堆放进真实四川路线？",body:"Homeground 真人旅行顾问可以按当期票务、成都酒店、团队节奏与后续交通检查当天安排。请提供日期、证件类型、交通偏好和你对博物馆讲解的重视程度。",tone:"neutral"},
- {id:"sources",type:"sources",title:"已核验的官方与图片来源",items:[
-  {label:"三星堆博物馆官网与最新公告",url:"https://www.sxd.cn/index.asp",publisher:"三星堆博物馆",reviewedAt:"2026-08-12"},
-  {label:"新馆开放、官方购票渠道与实名核验",url:"https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",publisher:"广汉市人民政府",reviewedAt:"2026-08-12"},
-  {label:"入境游客护照预约、专门票池与英文支付服务信息",url:"https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",publisher:"广汉市人民政府",reviewedAt:"2026-08-12"},
-  {label:"首图：STW932拍摄的三星堆博物馆新馆，CC BY-SA 4.0；经裁切并转为WebP",url:"https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",publisher:"Wikimedia Commons",reviewedAt:"2026-08-12"},
-  {label:"首图许可：CC BY-SA 4.0",url:"https://creativecommons.org/licenses/by-sa/4.0/",publisher:"Creative Commons",reviewedAt:"2026-08-12"}
- ]}
+ {
+      "id": "sources",
+      "type": "sources",
+      "title": "已核验的官方与图片来源",
+      "items": [
+        {
+          "label": "三星堆博物馆官网与最新公告",
+          "url": "https://www.sxd.cn/index.asp",
+          "publisher": "三星堆博物馆",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "新馆开放、官方购票渠道与实名核验",
+          "url": "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",
+          "publisher": "广汉市人民政府",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "入境游客护照预约、专门票池与英文支付服务信息",
+          "url": "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",
+          "publisher": "广汉市人民政府",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "首图：STW932拍摄的三星堆博物馆新馆，CC BY-SA 4.0；经裁切并转为WebP",
+          "url": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "首图许可：CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "publisher": "Creative Commons",
+          "reviewedAt": "2026-08-12"
+        },
+        {
+          "label": "2025年6月18日入境游客预约服务报道；不作为当前放票时间表",
+          "url": "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html",
+          "publisher": "人民日报",
+          "reviewedAt": "2026-10-08"
+        }
+      ]
+    }
 ]};export default body;

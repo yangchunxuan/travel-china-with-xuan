@@ -6,6 +6,7 @@ import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel, type HomegroundSubmenuId } from "../lib/homegroundNavigationModel";
 import type { PublishedPrivateTourCatalogItem } from "../lib/publishedPrivateTourCatalog";
+import type { PrivateTourHubCopy } from "../lib/privateTourHubI18n";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import { privateTourCardImageSource, privateTourCardImageSrcSet } from "./privateTourCardImages";
 import { KeepStops, KeepWords } from "./text/KeepWords";
@@ -142,7 +143,17 @@ export function PlanTile({ count, locale }: { count: number; locale: HomegroundL
   );
 }
 
-export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCatalogItem; locale: HomegroundLocale; index: number }) {
+type TourCardPriceCopy = Pick<PrivateTourHubCopy,
+  "startingPriceLabel" | "quoteOnlyLabel" | "quoteOnlyBody" | "partySize" | "perPersonPriceNote"
+>;
+
+export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel }: {
+  tour: PublishedPrivateTourCatalogItem;
+  locale: HomegroundLocale;
+  index: number;
+  priceCopy?: TourCardPriceCopy;
+  priceSeasonLabel?: string;
+}) {
   const copy = getTravelInspirationCopy(locale);
   return (
     <li style={revealDelay(index)}>
@@ -162,6 +173,29 @@ export function TourCard({ tour, locale, index }: { tour: PublishedPrivateTourCa
         </span>
         <span className={styles.tourText}>
           <h4><KeepWords keep={tourTitleKeepWords} locale={locale} text={tourTitle(tour.title, locale)} /></h4>
+          {priceCopy ? (
+            <span className={styles.tourPrice}>
+              {tour.startingPrice ? (
+                <>
+                  <span className={styles.tourPriceLabel}>{priceCopy.startingPriceLabel}</span>
+                  {tour.twoTravellerPrice ? (
+                    <span className={styles.tourPriceTiers}>
+                      <span><small>{priceCopy.partySize(2)}</small> <strong>{tour.twoTravellerPrice.formatted}</strong></span>
+                      <span><small>{priceCopy.partySize(tour.startingPrice.travelers)}</small> <strong>{tour.startingPrice.formatted}</strong></span>
+                    </span>
+                  ) : (
+                    <strong>{tour.startingPrice.formatted}</strong>
+                  )}
+                  <small>{priceCopy.perPersonPriceNote}{priceSeasonLabel ? ` · ${priceSeasonLabel}` : ""}</small>
+                </>
+              ) : (
+                <>
+                  <strong>{priceCopy.quoteOnlyLabel}</strong>
+                  <small>{priceCopy.quoteOnlyBody}</small>
+                </>
+              )}
+            </span>
+          ) : null}
           <span className={styles.route}><KeepStops route={tour.comparison.route} /></span>
           <span className={styles.fit}><KeepWords locale={locale} text={tour.comparison.fit} /></span>
         </span>

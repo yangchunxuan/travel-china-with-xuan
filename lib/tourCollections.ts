@@ -33,12 +33,19 @@ export function isTourCollectionId(value: string): value is TourCollectionId {
  */
 export const currentSeason = {
   id: "winter-northeast",
-  tourSlugs: ["harbin-winter-5-day-private-tour", "changbaishan-yanji-winter-6-day-private-tour"],
+  tourSlugs: [
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+    "changbaishan-yanji-winter-6-day-private-tour",
+    "yanji-changbaishan-wanda-6-day-private-tour",
+  ],
   /**
    * The last day this pick is offered. The export check fails a build after
    * it, so a spring deploy cannot keep selling winter.
    */
-  until: "2027-02-28",
+  until: "2027-03-10",
 } as const;
 
 /** Multi-city lengths: a week to ten days, up to two weeks, longer. */

@@ -1,0 +1,78 @@
+name: Independent workflow alerts
+
+# Runs trusted main code only; a PR cannot obtain heartbeat tokens.
+on:
+  workflow_run:
+    workflows: ['Inquiry intake canary', 'Inquiry outbox health', 'Deploy to GitHub Pages']
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      drill_outcome:
+        description: 'Dedicated TEST heartbeat result (never interrupts production)'
+        required: true
+        type: choice
+        options: [failure, success]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: independent-workflow-alert-${{ github.event.workflow_run.workflow_id || 'test-drill' }}
+  cancel-in-progress: false
+
+jobs:
+  alert:
+    if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_run' && github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: main
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Ignore superseded workflow results
+        id: latest
+        if: github.event_name == 'workflow_run'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
+          EVENT_RUN_ID: ${{ github.event.workflow_run.id }}
+          EVENT_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+          EVENT_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: |
+          set -euo pipefail
+          latest_run=$(gh api "repos/${REPOSITORY}/actions/workflows/${WORKFLOW_ID}/runs?branch=main&status=completed&per_page=1" --jq '.workflow_runs[0] | "\(.id):\(.run_attempt):\(.conclusion)"')
+          if [[ "$latest_run" == "${EVENT_RUN_ID}:${EVENT_ATTEMPT}:${EVENT_CONCLUSION}" ]]; then
+            echo 'current=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'current=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Report inquiry intake check
+        if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Inquiry intake canary'
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.INQUIRY_INTAKE_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ github.event.workflow_run.conclusion == 'success' && 'success' || 'failure' }}
+        run: node tools/report-stability-heartbeat.mjs
+      - name: Report notification queue check
+        if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Inquiry outbox health'
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.INQUIRY_OUTBOX_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ github.event.workflow_run.conclusion == 'success' && 'success' || 'failure' }}
+        run: node tools/report-stability-heartbeat.mjs
+      - name: Report deployment verification
+        if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Deploy to GitHub Pages'
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.DEPLOY_VERIFICATION_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ github.event.workflow_run.conclusion == 'success' && 'success' || 'failure' }}
+        run: node tools/report-stability-heartbeat.mjs
+      - name: Send explicitly labelled alert drill
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.STABILITY_DRILL_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ inputs.drill_outcome }}
+        run: node tools/report-stability-heartbeat.mjs

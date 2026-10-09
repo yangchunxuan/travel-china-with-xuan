@@ -530,6 +530,7 @@ function PublishedPrivateTourPriceConsole({
 
 function ShanghaiJiangnanDayMedia({
   dayLabel,
+  description,
   scenesLabel,
   variants,
   title,
@@ -538,6 +539,7 @@ function ShanghaiJiangnanDayMedia({
   onInteract,
 }: {
   dayLabel: string;
+  description: string;
   scenesLabel: string;
   variants: LocalizedPrivateTourProduct["routeMedia"][number]["variants"];
   title: string;
@@ -550,6 +552,19 @@ function ShanghaiJiangnanDayMedia({
   const available = variants.filter((variant) => !failedPhotos.has(variant.image.src));
   const currentIndex = available.length ? activeVariant % available.length : 0;
   const selected = available[currentIndex];
+
+  // Some itineraries have no verified photograph for this day. Show the
+  // authored itinerary copy instead of an empty photo frame or another place.
+  if (!mobile && !selected) {
+    return (
+      <aside aria-hidden="true" className={styles.routeTextCard} data-route-text-card>
+        <span>{dayLabel}</span>
+        <h4>{title}</h4>
+        <p>{description}</p>
+        {variants.length > 0 ? <small>{unavailable}</small> : null}
+      </aside>
+    );
+  }
 
   return (
     <figure className={mobile ? styles.routeMobileMedia : styles.routeMedia} data-route-photo={mobile ? "mobile" : "desktop"} onFocusCapture={onInteract} onPointerDownCapture={onInteract}>
@@ -682,6 +697,7 @@ export function ShanghaiJiangnanRouteExplorer({
                   <ShanghaiJiangnanDayMedia
                     key={day.day}
                     dayLabel={copy.dayLabel(day.day)}
+                    description={day.description}
                     scenesLabel={copy.routeScenes}
                     variants={dayMedia.variants}
                     title={day.title}
@@ -697,6 +713,7 @@ export function ShanghaiJiangnanRouteExplorer({
       {activeDay ? <ShanghaiJiangnanDayMedia
         key={`desktop-${activeDay.day}`}
         dayLabel={copy.dayLabel(activeDay.day)}
+        description={activeDay.description}
         scenesLabel={copy.routeScenes}
         variants={routeMedia[activeIndex]?.variants ?? []}
         title={activeDay.title}

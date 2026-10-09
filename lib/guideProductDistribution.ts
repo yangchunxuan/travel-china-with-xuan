@@ -24,6 +24,11 @@ export const guideProductMarketForecast = {
   "zhangjiajie-4-day-private-tour": 3,
   "harbin-winter-5-day-private-tour": 2,
   "changbaishan-yanji-winter-6-day-private-tour": 1,
+  "harbin-yabuli-snow-town-6-day-private-tour": 0,
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": 0,
+  "harbin-mohe-arctic-village-7-day-private-tour": 0,
+  "harbin-snow-town-mohe-9-day-private-tour": 0,
+  "yanji-changbaishan-wanda-6-day-private-tour": 0,
   "guangzhou-shunde-foshan-5-day-private-tour": 2,
   "xiamen-tulou-quanzhou-6-day-private-tour": 2,
   "chaozhou-shantou-nanao-5-day-private-tour": 1,
@@ -144,6 +149,26 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
   },
   "changbaishan-yanji-winter-6-day-private-tour": {
     destinations: ["changbai-mountain", "jilin", "yanji"],
+    topics: ["winter", "snow", "ski"],
+  },
+  "harbin-yabuli-snow-town-6-day-private-tour": {
+    destinations: ["harbin", "heilongjiang", "yabuli", "snow-town"],
+    topics: ["winter", "snow", "ski"],
+  },
+  "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
+    destinations: ["harbin", "heilongjiang", "yabuli", "snow-town", "changbai-mountain", "jilin", "yanji"],
+    topics: ["winter", "snow", "ski", "multi-city"],
+  },
+  "harbin-mohe-arctic-village-7-day-private-tour": {
+    destinations: ["harbin", "heilongjiang", "mohe", "arctic-village"],
+    topics: ["winter", "snow", "sleeper-train"],
+  },
+  "harbin-snow-town-mohe-9-day-private-tour": {
+    destinations: ["harbin", "heilongjiang", "yabuli", "snow-town", "mohe", "arctic-village"],
+    topics: ["winter", "snow", "ski", "sleeper-train"],
+  },
+  "yanji-changbaishan-wanda-6-day-private-tour": {
+    destinations: ["yanji", "jilin", "changbai-mountain", "wanda-resort"],
     topics: ["winter", "snow", "ski"],
   },
   "guangzhou-shunde-foshan-5-day-private-tour": {

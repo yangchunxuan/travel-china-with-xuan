@@ -5,6 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      deploy_ref:
+        description: "Recovery only: full 40-character SHA of a previously verified main release (blank deploys current main)"
+        type: string
+        required: false
+        default: ""
       indexnow_all:
         description: "Also send every sitemap URL to IndexNow (Bing, Naver, Yandex), not only pages changed in the last two days"
         type: boolean
@@ -22,13 +27,40 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      deploy_sha: ${{ steps.resolve.outputs.deploy_sha }}
+      main_sha: ${{ steps.resolve.outputs.main_sha }}
+      rollback: ${{ steps.resolve.outputs.rollback }}
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           cache: npm
+      - name: Resolve a main release or verified recovery point
+        id: resolve
+        env:
+          DEPLOY_REF: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_ref || '' }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/resolve-pages-release.mjs
+      - name: Check out the validated deployment commit
+        env:
+          DEPLOY_SHA: ${{ steps.resolve.outputs.deploy_sha }}
+        run: git checkout --detach "$DEPLOY_SHA"
       - run: npm ci
+      - name: Require isolated PostgreSQL checks
+        run: |
+          set -euo pipefail
+          pg_config --bindir >> "$GITHUB_PATH"
+          echo 'REQUIRE_ISOLATED_POSTGRES=1' >> "$GITHUB_ENV"
+          sudo apt-get update -qq
+          sudo apt-get install -y age
       - name: Test first-party traffic operations
         run: npm run test:traffic-ops
       - name: Test inquiry contract
@@ -87,6 +119,21 @@ jobs:
         run: npm run check:ten-day-guide-export
       - name: Check priority indexable exports
         run: npm run check:indexable-export
+      - name: Mark the exact release being published
+        env:
+          DEPLOY_SHA: ${{ steps.resolve.outputs.deploy_sha }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { writeFile } from "node:fs/promises";
+          const release = {
+            schemaVersion: 1,
+            commit: process.env.DEPLOY_SHA,
+            runId: process.env.GITHUB_RUN_ID,
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+            builtAt: new Date().toISOString(),
+          };
+          await writeFile("out/release.json", JSON.stringify(release) + "\n");
+          NODE
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: out
@@ -94,13 +141,35 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     permissions:
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Always retain the verifier from this workflow revision, including when
+      # build checked out a recovery commit that predates the verifier itself.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Refuse to overwrite a newer main release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAIN_SHA_AT_BUILD: ${{ needs.build.outputs.main_sha }}
+        run: |
+          set -euo pipefail
+          current_main="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          if [[ "$current_main" != "$MAIN_SHA_AT_BUILD" ]]; then
+            echo "::error::main advanced while this release was building; deploy current main or choose the recovery point again."
+            exit 1
+          fi
       - id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
       - name: Purge Cloudflare cache after Pages deployment
@@ -128,6 +197,43 @@ jobs:
           purge_cache
           sleep 60
           purge_cache
+      - name: Verify the published release and critical pages
+        id: live
+        env:
+          EXPECTED_DEPLOY_SHA: ${{ needs.build.outputs.deploy_sha }}
+          LIVE_RELEASE_REPORT: live-release-verification.json
+        run: node tools/verify-live-release.mjs
+      - name: Retain live verification diagnostics
+        if: ${{ always() && (steps.live.outcome == 'success' || steps.live.outcome == 'failure') }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: live-release-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: live-release-verification.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Retain the verified recovery point
+        if: ${{ success() && steps.live.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: verified-release-${{ needs.build.outputs.deploy_sha }}
+          path: live-release-verification.json
+          if-no-files-found: error
+          retention-days: 90
+          overwrite: true
+      - name: Record recovery instructions
+        if: ${{ always() }}
+        env:
+          DEPLOY_SHA: ${{ needs.build.outputs.deploy_sha }}
+        run: |
+          {
+            echo '### Pages release verification and recovery'
+            echo "Attempted website commit: \`$DEPLOY_SHA\`."
+            echo 'A green deploy requires the matching uncached release marker, six critical pages and their JavaScript assets.'
+            echo 'For recovery, open a successful Deploy to GitHub Pages run, find its verified-release-<SHA> artifact, then run this workflow on main with deploy_ref set to that full SHA.'
+            echo 'Only unexpired, successful main release artifacts are accepted (90 days). The previous release is rebuilt with current configuration and verified again.'
+            echo 'No database, inquiry or DNS changes are made by this recovery. There is no recursive automatic rollback.'
+            echo 'Before the first successful verified run, historical commits have no recovery artifact and this shortcut is unavailable.'
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Tell IndexNow which pages changed
         # Bing (which ChatGPT search and Copilot use), Naver, Yandex and Seznam share
         # IndexNow, so one request reaches all of them. The key is public by design:

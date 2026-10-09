@@ -8,7 +8,7 @@ import { privateTourExpansionPhaseTwoProducts } from "./privateTourExpansionPhas
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourLongHaulProducts } from "./privateTourLongHaulProducts.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
-import { privateTourNortheastWinterPreviewProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
+import { privateTourNortheastWinterProducts } from "./privateTourNortheastWinterPreviewProducts.ts";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourSceneMediaBySlug } from "./privateTourSceneMedia.ts";
@@ -3662,6 +3662,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     ...privateTourExpansionProducts,
     ...privateTourExpansionPhaseTwoProducts,
     ...privateTourLongHaulProducts,
+    ...privateTourNortheastWinterProducts,
   ].map(withAdditionalMedia),
 );
 
@@ -3670,14 +3671,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
  * their direct /tours/, /zh/tours/ and /ko/tours/ URLs with robots noindex;
  * nothing that lists or links published products reads this array.
  */
-export const privateTourPreviewProducts: readonly PrivateTourProduct[] = Object.freeze(
-  privateTourNortheastWinterPreviewProducts.map((product: PrivateTourProduct) => {
-    if (product.visibility !== "preview") {
-      throw new Error(`Preview product must set visibility "preview": ${product.slug}`);
-    }
-    return withAdditionalMedia(product);
-  }),
-);
+export const privateTourPreviewProducts: readonly PrivateTourProduct[] = Object.freeze([]);
 
 const englishMetadataDescriptions: Readonly<Record<string, string>> =
   Object.freeze({

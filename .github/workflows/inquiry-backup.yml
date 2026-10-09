@@ -1,0 +1,65 @@
+name: Encrypted inquiry database backup
+
+on:
+  schedule:
+    - cron: '43 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: encrypted-inquiry-database-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Install official age and PostgreSQL 17 clients
+        id: clients
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y age ca-certificates curl
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl --fail --silent --show-error --output /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt noble-pgdg main' | sudo tee /etc/apt/sources.list.d/pgdg.list > /dev/null
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client-17
+          node --test supabase/tests/supabase-root-ca.test.mjs
+          sudo install -m 0644 tools/certificates/supabase-root-2021.crt /usr/local/share/ca-certificates/homeground-supabase-root-2021.crt
+          sudo update-ca-certificates
+          openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt /usr/local/share/ca-certificates/homeground-supabase-root-2021.crt
+          echo '/usr/lib/postgresql/17/bin' >> "$GITHUB_PATH"
+      - name: Export read-only snapshot directly into public-key encryption
+        id: backup
+        env:
+          SUPABASE_BACKUP_DB_URL: ${{ secrets.SUPABASE_BACKUP_DB_URL }}
+          BACKUP_AGE_RECIPIENT: ${{ vars.BACKUP_AGE_RECIPIENT }}
+        run: node tools/create-encrypted-backup.mjs --output-dir "${{ runner.temp }}/homeground-encrypted-backup"
+      - name: Store encrypted backup and non-sensitive manifest
+        id: upload
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: inquiry-backup-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/homeground-encrypted-backup/*.dump.age
+            ${{ runner.temp }}/homeground-encrypted-backup/manifest.json
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+      - name: Report backup outcome after artifact storage
+        if: always()
+        env:
+          STABILITY_HEARTBEAT_URL: ${{ secrets.BACKUP_HEARTBEAT_URL }}
+          STABILITY_OUTCOME: ${{ steps.clients.outcome == 'success' && steps.backup.outcome == 'success' && steps.upload.outcome == 'success' && 'success' || 'failure' }}
+        run: node tools/report-stability-heartbeat.mjs
+      - name: Remove runner backup files
+        if: always()
+        run: rm -rf -- "${{ runner.temp }}/homeground-encrypted-backup"

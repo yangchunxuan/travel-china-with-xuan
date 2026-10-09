@@ -174,6 +174,41 @@ const body = {
       "body": "As checked on 10 September 2026, we have not confirmed the 2026–27 Ice and Snow World opening date or programme. The previous season’s announcement and photographs do not confirm this season’s dates, structures or ticket prices. Check the new announcement before making a visit to that attraction the fixed centre of your trip."
     },
     {
+      "id": "northeast-routes-heading",
+      "type": "heading",
+      "level": 3,
+      "text": "Which Northeast winter route fits your group?"
+    },
+    {
+      "id": "northeast-routes-intro",
+      "type": "paragraph",
+      "text": "Compare travel pace before price. Both Mohe routes include two nights on hard-sleeper trains; the other three use hotel nights. Check attraction openings, ski arrangements and winter road conditions for your dates before paying."
+    },
+    {
+      "id": "northeast-routes-compare",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Harbin, Yabuli and Snow Town, 6 days: a ski day and Snow Town with five hotel nights and no sleeper train.",
+        "Harbin to Changbai Mountain and Yanji, 8 days: add the eastern mountains and Yanji, with seven hotel nights but a long road transfer on Day 5.",
+        "Harbin and Mohe, 7 days: reach Beihong and Arctic Village without Yabuli or Snow Town; two nights are on hard-sleeper trains.",
+        "Harbin, Snow Town and Mohe, 9 days: cover both the Snow Town route and the far north, with six hotel nights and two hard-sleeper nights.",
+        "Yanji, Changbai Mountain and Wanda Resort, 6 days: focus on the eastern winter corridor without adding Harbin."
+      ]
+    },
+    {
+      "id": "northeast-routes-links",
+      "type": "internal-links",
+      "title": "Compare the five 2026–27 private routes",
+      "items": [
+        { "label": "6 days: Harbin, Yabuli and Snow Town", "href": "/tours/harbin-yabuli-snow-town-6-day-private-tour/" },
+        { "label": "8 days: Harbin, Snow Town, Changbai Mountain and Yanji", "href": "/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/" },
+        { "label": "7 days: Harbin, Mohe and Arctic Village", "href": "/tours/harbin-mohe-arctic-village-7-day-private-tour/" },
+        { "label": "9 days: Harbin, Snow Town and Mohe", "href": "/tours/harbin-snow-town-mohe-9-day-private-tour/" },
+        { "label": "6 days: Yanji, Changbai Mountain and Wanda Resort", "href": "/tours/yanji-changbaishan-wanda-6-day-private-tour/" }
+      ]
+    },
+    {
       "id": "cities-heading",
       "type": "heading",
       "level": 2,

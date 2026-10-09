@@ -1,0 +1,87 @@
+{
+  "id": "china-attractions-advance-booking-checklist",
+  "type": "planning",
+  "pillar": "entry-practicalities",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "china-attraction-reservations",
+    "advance-booking",
+    "release-windows",
+    "passport-booking",
+    "travel-party-planning"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "shanghai",
+    "xian",
+    "chengdu",
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/forbidden-city-for-foreign-visitors/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "sourceReviewedDate": "2026-10-08",
+  "search": {
+    "section": "essentials",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-attractions-advance-booking-checklist/",
+      "title": "China Attractions That Need Advance Booking: A Checklist",
+      "headline": "China Attraction Reservations: What to Prepare Before You Fly",
+      "description": "Plan release windows, passport bookings and your party’s entry before flying. See which attractions need reservations and where Homeground can help.",
+      "heroAlt": "Hall of Supreme Harmony and its courtyard in the Forbidden City, with visitors in view",
+      "navTitle": "China attraction booking checklist",
+      "featuredLinkLabel": "Prepare the reservations that shape your China trip",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "China",
+        "Reservations",
+        "Before you fly"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-attractions-advance-booking-checklist/",
+      "title": "中国景点提前预约清单：出发前先安排哪些",
+      "headline": "去中国旅行，哪些景点预约要提前安排？",
+      "description": "出发前安排热门景点放票、护照实名与同行人名额，分清必须提前、普通免预约和具体票种要求，按行程匹配预约或私团支持。",
+      "heroAlt": "故宫太和殿及院落，画面中可见游客",
+      "navTitle": "中国景点预约清单",
+      "featuredLinkLabel": "先安排会影响行程的景点预约",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "中国旅行",
+        "景点预约",
+        "出发前"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-attractions-advance-booking-checklist/",
+      "title": "중국 관광지 사전예약 체크리스트: 출발 전 준비",
+      "headline": "중국 여행, 어떤 관광지 예약을 먼저 준비할까요?",
+      "description": "출발 전에 관광지 오픈 시각·여권 실명·일행 예약을 준비하세요. 사전예약과 일반 자유 입장을 구분하고 일정에 맞는 지원을 확인하세요.",
+      "heroAlt": "관람객이 보이는 자금성 태화전과 뜰",
+      "navTitle": "중국 관광지 예약 체크리스트",
+      "featuredLinkLabel": "중국 일정을 결정하는 예약 준비하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "중국 여행",
+        "관광지 예약",
+        "출발 전"
+      ]
+    }
+  }
+}

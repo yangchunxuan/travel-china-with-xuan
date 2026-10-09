@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 218,
-      "localeUrlCount": 646,
-      "generatedIdentityCount": 199,
+      "identityCount": 220,
+      "localeUrlCount": 652,
+      "generatedIdentityCount": 201,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1952,6 +1952,103 @@
               "boundary": "Older-parent pace and the published Suzhou-to-Hangzhou transfer-day decision; garden and museum entry remain separate date-dependent reservations, and changes to the route require a written quote."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-08",
+          "sourceBranch": "codex/attraction-reservation-content-20261008",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "First reservation content matrix prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 2,
+          "localeUrlDelta": 6,
+          "identities": [
+            {
+              "id": "book-china-attraction-tickets-without-chinese-phone-number",
+              "title": "Book China Attraction Tickets Without a Chinese Phone Number",
+              "metadataPath": "content/guides/book-china-attraction-tickets-without-chinese-phone-number/metadata.json",
+              "canonicalPath": "/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+                "/zh/guides/book-china-attraction-tickets-without-chinese-phone-number/",
+                "/ko/guides/book-china-attraction-tickets-without-chinese-phone-number/"
+              ],
+              "section": "essentials",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "essentials-booking-registration-recovery",
+              "pillar": "entry-practicalities",
+              "destinations": [
+                "china",
+                "beijing",
+                "shanghai",
+                "xian",
+                "chengdu",
+                "zhangjiajie"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-shanghai",
+                  "city-xian",
+                  "city-chengdu",
+                  "city-zhangjiajie"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "critical",
+              "boundary": "Foreign visitor channel selection, contact and passport barriers before a release window; detailed SIM, payment and attraction guides retain their owners. No completed booking transaction or universal phone-number requirement is claimed."
+            },
+            {
+              "id": "china-attractions-advance-booking-checklist",
+              "title": "China Attractions That Need Advance Booking: A Checklist",
+              "metadataPath": "content/guides/china-attractions-advance-booking-checklist/metadata.json",
+              "canonicalPath": "/guides/china-attractions-advance-booking-checklist/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-attractions-advance-booking-checklist/",
+                "/zh/guides/china-attractions-advance-booking-checklist/",
+                "/ko/guides/china-attractions-advance-booking-checklist/"
+              ],
+              "section": "essentials",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "essentials-booking-registration-recovery",
+              "pillar": "entry-practicalities",
+              "destinations": [
+                "china",
+                "beijing",
+                "shanghai",
+                "xian",
+                "chengdu",
+                "zhangjiajie"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-shanghai",
+                  "city-xian",
+                  "city-chengdu",
+                  "city-zhangjiajie"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "critical",
+              "boundary": "Pre-trip prioritisation of date-sensitive reservations, entry windows and group coordination; detailed attraction booking manuals retain their owners. No privileged inventory, queue removal or universal booking rule is claimed."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -1967,6 +2064,7 @@
         "beijing-zhangjiajie-shanghai-transport",
         "best-2-week-china-tour",
         "best-zhangjiajie-night-show",
+        "book-china-attraction-tickets-without-chinese-phone-number",
         "border-town-fenghuang-chadong-shen-congwen",
         "changbai-mountain-hubs-to-park-gates",
         "chaozhou-ancient-city-gates-bridge-lanes-route",
@@ -1985,6 +2083,7 @@
         "china-accessible-hotel-room-verification",
         "china-arrival-day-booked-anchor-or-flexible-block",
         "china-atm-cash-not-dispensed",
+        "china-attractions-advance-booking-checklist",
         "china-booking-dispute-evidence-pack",
         "china-climate-regions-for-trip-timing",
         "china-community-canteens-explained",
