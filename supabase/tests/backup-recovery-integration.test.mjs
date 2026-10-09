@@ -80,7 +80,8 @@ test('real TLS PostgreSQL streams an encrypted backup that restores inquiry data
   const required = process.env.CI === 'true' || ['1','true'].includes(process.env.REQUIRE_ISOLATED_POSTGRES);
   let database;
   try {
-    for (const command of ['openssl','age','age-keygen','pg_dump','pg_restore']) run(command, ['--version']);
+    run('openssl', ['version']);
+    for (const command of ['age','age-keygen','pg_dump','pg_restore']) run(command, ['--version']);
     database = createIsolatedInquiryDatabase();
   } catch (error) {
     if (error.code === 'ENOENT' && !required) { t.skip('PostgreSQL, age and OpenSSL are required for this disposable drill'); return; }
