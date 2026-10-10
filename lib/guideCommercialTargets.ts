@@ -242,6 +242,18 @@ export const guideTargets = {
   "shaolin-temple": [
     productTarget("luoyang-dengfeng-kaifeng-6-day-private-tour"),
   ],
+  "luoyang-longmen-grottoes": [
+    productTarget("luoyang-dengfeng-kaifeng-6-day-private-tour"),
+  ],
+  "dunhuang-china": [
+    productTarget("zhangye-jiayuguan-dunhuang-7-day-private-tour"),
+  ],
+  "dali-old-town-erhai-lake": [
+    productTarget("kunming-dali-lijiang-8-day-private-tour"),
+  ],
+  "dazu-rock-carvings": [
+    productTarget("chengdu-chongqing-8-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),

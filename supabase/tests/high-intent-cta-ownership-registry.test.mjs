@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 93 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 97 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -159,7 +159,10 @@ test("commercial links keep the approved 8 hub, 93 curated guide and 48 product 
       "china-visa-free-uk-citizens-2026",
       "chongqing-railway-station-selector",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
+      "dali-old-town-erhai-lake",
+      "dazu-rock-carvings",
       "do-us-citizens-need-visa-china-2026",
+      "dunhuang-china",
       "fenghuang-ancient-town",
       "first-china-trip-jiangnan-6-or-beijing-11-days",
       "food-plants-and-animal-products-into-china",
@@ -185,6 +188,7 @@ test("commercial links keep the approved 8 hub, 93 curated guide and 48 product 
       "lijiang-old-town",
       "lijiang-shangri-la-transport-route",
       "lunar-new-year-customs-for-visitors",
+      "luoyang-longmen-grottoes",
       "national-museum-of-china-booking-and-route",
       "pingyao-ancient-city",
       "sanxingdui-museum-booking-and-gallery-order",

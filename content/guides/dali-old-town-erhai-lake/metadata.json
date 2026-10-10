@@ -1,0 +1,105 @@
+{
+  "id": "dali-old-town-erhai-lake",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "yunnan",
+    "dali",
+    "erhai-lake",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "dali",
+    "yunnan",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/dali-old-town-erhai-lake/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dali-old-town-erhai-lake/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "dali china",
+      "dali yunnan",
+      "dali old town",
+      "erhai lake",
+      "dali things to do"
+    ],
+    "zh": [
+      "大理",
+      "大理古城",
+      "洱海",
+      "大理玩几天"
+    ],
+    "ko": [
+      "다리",
+      "대리",
+      "다리고성",
+      "얼하이 호수"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dali-old-town-erhai-lake/",
+      "title": "Dali, China: Old Town, Erhai Lake & How Many Days",
+      "headline": "Dali: The Old Town, Erhai Lake, the Three Pagodas and How to Split Three Days",
+      "description": "Dali in Yunnan is an old town between the Cangshan mountains and Erhai Lake. What is free, what the Three Pagodas and cable cars cost, and how many days to stay.",
+      "heroAlt": "The Three Pagodas of Chongsheng Temple in Dali, with the snow-covered Cangshan mountains behind them",
+      "navTitle": "Dali",
+      "featuredLinkLabel": "Plan Dali",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Yunnan",
+        "Dali",
+        "Erhai Lake"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/dali-old-town-erhai-lake/",
+      "title": "大理攻略：古城、洱海、三塔与苍山怎么安排",
+      "headline": "大理：古城、洱海、三塔，以及三天怎么分",
+      "description": "云南大理是苍山和洱海之间的一座古城。哪些免费、三塔和苍山索道多少钱、喜洲怎么去，以及住几晚。",
+      "heroAlt": "大理崇圣寺三塔，背后是积雪的苍山",
+      "navTitle": "大理",
+      "featuredLinkLabel": "规划大理",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "云南",
+        "大理",
+        "洱海"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/dali-old-town-erhai-lake/",
+      "title": "중국 다리: 고성, 얼하이 호수, 며칠 일정",
+      "headline": "다리: 고성, 얼하이 호수, 삼탑, 사흘 일정 나누기",
+      "description": "윈난성 다리는 창산과 얼하이 호수 사이의 옛 도시입니다. 무료인 곳, 삼탑과 케이블카 요금, 며칠이 필요한지.",
+      "heroAlt": "다리 숭성사 삼탑과 뒤편의 눈 덮인 창산",
+      "navTitle": "다리",
+      "featuredLinkLabel": "다리 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "윈난",
+        "다리",
+        "얼하이"
+      ]
+    }
+  }
+}

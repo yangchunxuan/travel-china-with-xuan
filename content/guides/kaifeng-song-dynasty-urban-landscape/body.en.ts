@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "Use material evidence, reconstruction and city planning as separate layers at another kind of urban site.",
         },
         {
+          label: "Luoyang and the Longmen Grottoes: tickets and what to see",
+          href: "/guides/luoyang-longmen-grottoes/",
+          description: "The RMB 90 timed ticket, the one-way route and two days in the city.",
+        },
+        {
           label: "Shaolin Temple: tickets, kung fu show and how to visit",
           href: "/guides/shaolin-temple/",
           description: "What the RMB 80 ticket covers and how long to allow.",

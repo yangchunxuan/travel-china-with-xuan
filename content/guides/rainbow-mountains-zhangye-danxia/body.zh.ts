@@ -140,6 +140,11 @@ const body = {
           "description": "在合适的光线时段看张掖丹霞，游嘉峪关关城，再在敦煌连住三晚看莫高窟和沙漠。"
         },
         {
+          "label": "敦煌攻略：莫高窟、鸣沙山月牙泉与玩几天",
+          "href": "/zh/guides/dunhuang-china/",
+          "description": "先订什么、各处所列票价，以及三个容易混的车站。"
+        },
+        {
           "label": "北京、西安与丝绸之路 15 天",
           "href": "/zh/tours/beijing-xian-silk-road-15-day-private-tour/",
           "description": "北京、西安之后坐火车向西，到张掖、嘉峪关、敦煌，再去新疆。"

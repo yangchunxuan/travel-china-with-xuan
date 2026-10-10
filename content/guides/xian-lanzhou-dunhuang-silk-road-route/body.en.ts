@@ -88,6 +88,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "Continue planning", items: [
     { label: "Visiting the Mogao Caves independently", href: "/guides/mogao-caves-independent-visit-workflow/", description: "The reservation workflow itself, which this route guide deliberately does not repeat." },
+    { label: "Dunhuang: Mogao Caves, Crescent Lake and how long", href: "/guides/dunhuang-china/", description: "What to book first, listed prices and the three stations." },
     { label: "Rainbow Mountains at Zhangye Danxia", href: "/guides/rainbow-mountains-zhangye-danxia/", description: "The striped hills between Lanzhou and Jiayuguan: tickets, sunset times and how long to stop." },
     { label: "Hub-and-spoke or multi-base routes in China", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Whether this corridor should be one line or two bases." },
     { label: "Building a rail-only route in China", href: "/guides/china-rail-only-route/", description: "If you would rather not fly any leg of this." },

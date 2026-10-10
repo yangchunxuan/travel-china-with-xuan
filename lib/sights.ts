@@ -392,6 +392,7 @@ export const sights: readonly Sight[] = [
   {
     id: "wulong",
     city: "chongqing",
+    guideId: "wulong-karst",
     reservationIds: [],
     image: {
       src: "/images/destinations/chongqing/wulong-1200.webp",
@@ -409,6 +410,7 @@ export const sights: readonly Sight[] = [
   {
     id: "dazu-rock-carvings",
     city: "chongqing",
+    guideId: "dazu-rock-carvings",
     reservationIds: [],
     image: {
       src: "/images/sights/dazu-rock-carvings-1200.webp",

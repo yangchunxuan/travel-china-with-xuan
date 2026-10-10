@@ -64,6 +64,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "Continue planning", items: [
     { label: "Homeground transport and planning guides", href: "/guides/", description: "Return to the parent guide collection." },
+    { label: "Dali: Old Town, Erhai Lake and how many days", href: "/guides/dali-old-town-erhai-lake/", description: "What is free, what is ticketed and how to split three days." },
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare the rail arrival before this last mile." },
     { label: "Kunming, Dali, Lijiang and Shangri-La route order", href: "/guides/kunming-dali-lijiang-shangri-la-route-order/", description: "Place Dali correctly in the wider Yunnan route." },
     { label: "China hub-and-spoke or multi-base route", href: "/guides/china-hub-and-spoke-or-multi-base-route/", description: "Decide whether moving the luggage base is worthwhile." },

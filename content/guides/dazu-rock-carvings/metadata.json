@@ -1,0 +1,103 @@
+{
+  "id": "dazu-rock-carvings",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "chongqing",
+    "dazu-rock-carvings",
+    "tickets",
+    "world-heritage",
+    "trip-planning"
+  ],
+  "destinations": [
+    "chongqing",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/dazu-rock-carvings/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dazu-rock-carvings/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "dazu rock carvings",
+      "dazu",
+      "dazu rock carvings tickets",
+      "baodingshan",
+      "chongqing to dazu"
+    ],
+    "zh": [
+      "大足石刻",
+      "大足石刻门票",
+      "宝顶山石刻",
+      "重庆到大足石刻"
+    ],
+    "ko": [
+      "대족석각",
+      "다쭈석각",
+      "보정산 석각"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dazu-rock-carvings/",
+      "title": "Dazu Rock Carvings: Tickets, Baodingshan & Day Trip Guide",
+      "headline": "Dazu Rock Carvings: Baodingshan or Beishan, Tickets and Hours, and the Day Trip from Chongqing",
+      "description": "The Dazu Rock Carvings near Chongqing are a UNESCO site of 9th–13th century cliff sculpture. Which of the five sites to see, tickets, hours and the day trip.",
+      "heroAlt": "Painted cliff carvings in tiers at Baodingshan, Dazu, with rows of seated and standing figures under a rock overhang",
+      "navTitle": "Dazu Rock Carvings",
+      "featuredLinkLabel": "Plan Dazu",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Chongqing",
+        "Dazu",
+        "World Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/dazu-rock-carvings/",
+      "title": "大足石刻攻略：宝顶山北山门票、开放时间与重庆出发",
+      "headline": "大足石刻：宝顶山还是北山、门票和开放时间，以及从重庆一日往返",
+      "description": "重庆大足石刻是 9 到 13 世纪的摩崖造像，世界遗产。五处石刻先看哪两处、门票、开放时间，以及从重庆怎么一日往返。",
+      "heroAlt": "大足宝顶山崖壁上层层排列的彩绘造像，岩檐下是成排的坐像和立像",
+      "navTitle": "大足石刻",
+      "featuredLinkLabel": "规划大足石刻",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "重庆",
+        "大足石刻",
+        "世界遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/dazu-rock-carvings/",
+      "title": "대족석각: 입장권, 보정산·북산, 충칭 당일치기",
+      "headline": "대족석각: 보정산과 북산, 입장권과 운영 시간, 충칭에서의 당일치기",
+      "description": "충칭 근처 대족석각은 9~13세기의 마애 조각으로 유네스코 세계유산입니다. 다섯 곳 중 어디를 볼지, 입장권, 운영 시간, 당일치기 방법.",
+      "heroAlt": "다쭈 보정산 절벽에 층층이 새겨진 채색 조각. 바위 처마 아래 줄지은 좌상과 입상",
+      "navTitle": "대족석각",
+      "featuredLinkLabel": "대족석각 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "충칭",
+        "대족석각",
+        "세계유산"
+      ]
+    }
+  }
+}

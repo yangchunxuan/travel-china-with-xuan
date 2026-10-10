@@ -1,0 +1,105 @@
+{
+  "id": "dunhuang-china",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "gansu",
+    "dunhuang",
+    "mogao-caves",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "dunhuang",
+    "gansu",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/dunhuang-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/dunhuang-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "dunhuang",
+      "dunhuang china",
+      "crescent lake dunhuang",
+      "mingsha mountain",
+      "dunhuang things to do"
+    ],
+    "zh": [
+      "敦煌",
+      "敦煌攻略",
+      "鸣沙山月牙泉门票",
+      "敦煌玩几天"
+    ],
+    "ko": [
+      "둔황",
+      "돈황",
+      "명사산 월아천",
+      "둔황 여행"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/dunhuang-china/",
+      "title": "Dunhuang, China: Mogao Caves, Crescent Lake & How Long",
+      "headline": "Dunhuang: The Mogao Caves, Crescent Lake, the Desert West Line and How Many Days to Stay",
+      "description": "Dunhuang is the Silk Road oasis of the Mogao Caves and Crescent Lake. What to book first, ticket prices and hours, the desert west line and how many days.",
+      "heroAlt": "Crescent Lake and its pavilion seen from the top of the dunes of Mingsha Mountain in Dunhuang, with visitors small on the sand below",
+      "navTitle": "Dunhuang",
+      "featuredLinkLabel": "Plan Dunhuang",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Gansu",
+        "Dunhuang",
+        "Silk Road"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/dunhuang-china/",
+      "title": "敦煌攻略：莫高窟、鸣沙山月牙泉门票与玩几天",
+      "headline": "敦煌：莫高窟、鸣沙山月牙泉、西线戈壁，以及住几晚",
+      "description": "敦煌是丝绸之路上的绿洲，有莫高窟和鸣沙山月牙泉。先订什么、门票和开放时间、西线怎么走、玩几天。",
+      "heroAlt": "从鸣沙山沙丘顶上俯瞰月牙泉和泉边的亭阁，下面沙地上的游客显得很小",
+      "navTitle": "敦煌",
+      "featuredLinkLabel": "规划敦煌",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "甘肃",
+        "敦煌",
+        "丝绸之路"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/dunhuang-china/",
+      "title": "중국 둔황: 막고굴, 명사산 월아천, 며칠 일정",
+      "headline": "둔황: 막고굴, 월아천, 서쪽 사막 코스, 몇 박이 좋은지",
+      "description": "둔황은 막고굴과 월아천이 있는 실크로드의 오아시스입니다. 무엇부터 예약할지, 입장권과 운영 시간, 서쪽 사막 코스, 며칠이 필요한지.",
+      "heroAlt": "둔황 명사산 모래언덕 위에서 내려다본 월아천과 누각, 아래 모래 위의 작은 방문객들",
+      "navTitle": "둔황",
+      "featuredLinkLabel": "둔황 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "간쑤",
+        "둔황",
+        "실크로드"
+      ]
+    }
+  }
+}

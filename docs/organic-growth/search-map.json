@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 232,
-      "localeUrlCount": 688,
-      "generatedIdentityCount": 213,
+      "identityCount": 236,
+      "localeUrlCount": 700,
+      "generatedIdentityCount": 217,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2620,6 +2620,199 @@
               "boundary": "The Shaolin Temple visit intent: what the ticket covers, the kung fu show, the Pagoda Forest and side sights, hours, the 2025 changes as they affect visitors, how long and where to stay. Tour pages keep product prices. The ticket price is labelled with its 2025 source."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch3",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Luoyang and Longmen Grottoes guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "luoyang-longmen-grottoes",
+              "title": "Luoyang, China: Longmen Grottoes Tickets & What to See",
+              "metadataPath": "content/guides/luoyang-longmen-grottoes/metadata.json",
+              "canonicalPath": "/guides/luoyang-longmen-grottoes/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/luoyang-longmen-grottoes/",
+                "/zh/guides/luoyang-longmen-grottoes/",
+                "/ko/guides/luoyang-longmen-grottoes/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "luoyang",
+                "henan",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "luoyang",
+                  "henan"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Luoyang and Longmen Grottoes visit intent: what the grottoes are, the one-way route, ticket and booking, hours, the city's other main sights, which station and how many days. The Shaolin Temple guide keeps Dengfeng. Tour pages keep product prices. Prices are labelled as third-party listings."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch3",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Dunhuang guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "dunhuang-china",
+              "title": "Dunhuang, China: Mogao Caves, Crescent Lake & How Long",
+              "metadataPath": "content/guides/dunhuang-china/metadata.json",
+              "canonicalPath": "/guides/dunhuang-china/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/dunhuang-china/",
+                "/zh/guides/dunhuang-china/",
+                "/ko/guides/dunhuang-china/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "dunhuang",
+                "gansu",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "dunhuang",
+                  "gansu"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Dunhuang visit intent: what to book first, the main sights, listed prices and hours, the three similarly named stations and how many days. The Mogao guide keeps the full Mogao workflow and the Silk Road route guide keeps the rail legs. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch3",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Dali guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "dali-old-town-erhai-lake",
+              "title": "Dali, China: Old Town, Erhai Lake & How Many Days",
+              "metadataPath": "content/guides/dali-old-town-erhai-lake/metadata.json",
+              "canonicalPath": "/guides/dali-old-town-erhai-lake/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/dali-old-town-erhai-lake/",
+                "/zh/guides/dali-old-town-erhai-lake/",
+                "/ko/guides/dali-old-town-erhai-lake/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "dali",
+                "yunnan",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "dali",
+                  "yunnan"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Dali visit intent: what is free and what is ticketed, the Old Town, Erhai Lake, the Three Pagodas, Xizhou and Cangshan, listed prices and hours and how many days. The station guide keeps the last kilometre and the Lijiang guide keeps Lijiang. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch3",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Dazu Rock Carvings guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "dazu-rock-carvings",
+              "title": "Dazu Rock Carvings: Tickets, Baodingshan & Day Trip Guide",
+              "metadataPath": "content/guides/dazu-rock-carvings/metadata.json",
+              "canonicalPath": "/guides/dazu-rock-carvings/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/dazu-rock-carvings/",
+                "/zh/guides/dazu-rock-carvings/",
+                "/ko/guides/dazu-rock-carvings/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "chongqing",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-chongqing",
+                  "country-china"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Dazu Rock Carvings visit intent: the five sites and which two to see, reported prices, hours and the order of a day trip from Chongqing. The sight page keeps its short story and links here. Tour pages keep product prices. Prices are labelled as reported."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2699,12 +2892,15 @@
         "chongqing-upper-lower-city-orientation",
         "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
         "commercial-aparthotel-or-residential-rental-china",
+        "dali-old-town-erhai-lake",
         "dali-station-to-old-town",
+        "dazu-rock-carvings",
         "desert-restoration-travellers-can-see",
         "do-singaporeans-need-visa-china",
         "do-us-citizens-need-visa-china-2026",
         "do-you-need-a-tour-guide-in-china",
         "dougong-and-chinese-timber-frame-reading",
+        "dunhuang-china",
         "fenghuang-ancient-town",
         "first-china-trip-jiangnan-6-or-beijing-11-days",
         "first-shared-meal-in-china",
@@ -2767,6 +2963,7 @@
         "lost-passport-in-china-exit-recovery",
         "lost-phone-in-china-digital-recovery",
         "lunar-new-year-customs-for-visitors",
+        "luoyang-longmen-grottoes",
         "luxun-shaoxing-literary-walk",
         "maijishan-grottoes-cliff-walk-visit",
         "meizhou-mazu-ancestral-temple-reading-guide",

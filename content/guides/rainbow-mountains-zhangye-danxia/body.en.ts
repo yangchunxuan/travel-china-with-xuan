@@ -140,6 +140,11 @@ const body = {
           "description": "Zhangye Danxia at a good light window, Jiayuguan Fort, then three nights in Dunhuang for the Mogao Caves and the dunes."
         },
         {
+          "label": "Dunhuang: Mogao Caves, Crescent Lake and how long",
+          "href": "/guides/dunhuang-china/",
+          "description": "What to book first, listed prices and the three stations."
+        },
+        {
           "label": "Beijing, Xi’an & the Silk Road: 15 days",
           "href": "/tours/beijing-xian-silk-road-15-day-private-tour/",
           "description": "Beijing and Xi’an, then west by train to Zhangye, Jiayuguan, Dunhuang and on to Xinjiang."
