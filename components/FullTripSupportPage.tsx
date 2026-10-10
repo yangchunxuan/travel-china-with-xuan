@@ -134,7 +134,7 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
           </div>
         </section>
 
-        {/* "Services" opens this page; anyone after a set route or one service gets a direct way there. */}
+        {/* People comparing full-trip support with a set route or single service can switch here. */}
         <section aria-labelledby="full-trip-other-title" className={styles.block} data-reveal="" id="which-service">
           <h2 id="full-trip-other-title">{copy.otherTitle}</h2>
           <ul className={styles.other}>
