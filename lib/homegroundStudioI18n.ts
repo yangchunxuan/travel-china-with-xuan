@@ -302,7 +302,7 @@ export const homegroundStudioCopy: Record<
       body:
         "Use WhatsApp or leave your email. A planner can ask what is still open and explain the suitable next step; paid work begins only after scope, fee and delivery timing are confirmed.",
       button: "Talk to a China trip planner",
-      secondaryButton: "Compare planning services",
+      secondaryButton: "View all services",
     },
     homeLink: "Meet the people behind the plan",
   },
@@ -472,7 +472,7 @@ export const homegroundStudioCopy: Record<
       body:
         "可以通过 WhatsApp 直接聊，或只留下一个邮箱。规划师会继续确认必要信息并说明适合怎样继续；任何付费工作开始前都会先确认范围、费用和交付时间。",
       button: "联系旅行规划师",
-      secondaryButton: "比较旅行规划服务",
+      secondaryButton: "查看服务总览",
     },
     homeLink: "认识参与规划与落地的人",
   },
@@ -642,7 +642,7 @@ export const homegroundStudioCopy: Record<
       body:
         "WhatsApp으로 바로 문의하거나 이메일을 남겨 주세요. 플래너가 필요한 내용을 이어서 확인하고 알맞은 다음 단계를 안내합니다. 유료 작업 전에는 범위, 요금과 납품 일정을 먼저 확인합니다.",
       button: "중국 여행 플래너와 상담하기",
-      secondaryButton: "여행 설계 서비스 비교",
+      secondaryButton: "전체 서비스 보기",
     },
     homeLink: "여행을 설계하고 실행하는 팀 만나기",
   },

@@ -41,7 +41,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     h1: "A car and driver for the route you have in mind.",
     eyebrow: "Private transport · China",
     lede: "Need an airport pickup, a sightseeing car or a journey between cities? Tell us where you want to go, when and who is travelling. We check the route and quote the arrangements for your trip.",
-    home: "Home", services: "Travel services", breadcrumb: "Breadcrumb",
+    home: "Home", services: "All services", breadcrumb: "Breadcrumb",
     ask: "Ask about your transport",
     facts: ["One transfer or part of your trip", "Quoted for your itinerary", "Written scope before payment"],
     kindsTitle: "What journey do you need?",
@@ -100,7 +100,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     name: "中国包车与司机服务", h1: "需要接送或包车？先把路线告诉我们。",
     eyebrow: "私人用车 · 中国",
     lede: "机场接送、景点包车，或从一座城市去另一座城市。告诉我们去哪里、哪天出发、几个人同行，我们先核对路线，再按你的行程报价。",
-    home: "首页", services: "旅行服务", breadcrumb: "当前位置", ask: "咨询用车安排",
+    home: "首页", services: "服务总览", breadcrumb: "当前位置", ask: "咨询用车安排",
     facts: ["只安排一段接送也可以", "按你的行程单独报价", "付款前书面确认服务范围"],
     kindsTitle: "这趟用车，要怎么走？", kindsBody: "选择你需要协助的部分。日期、上车地点、人数和行李会影响具体安排。",
     kinds: {
@@ -156,7 +156,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     name: "중국 전용 차량·기사 서비스", h1: "중국에서 필요한 이동을, 내 동선에 맞춰.",
     eyebrow: "전용 차량 · 중국",
     lede: "공항 픽업, 관광 차량 또는 도시 간 이동이 필요하신가요? 어디로, 언제, 몇 명이 이동하는지 알려 주세요. 동선을 확인한 뒤 여행에 맞춰 견적을 안내합니다.",
-    home: "홈", services: "여행 서비스", breadcrumb: "현재 위치", ask: "차량 이동 문의",
+    home: "홈", services: "전체 서비스", breadcrumb: "현재 위치", ask: "차량 이동 문의",
     facts: ["한 번의 픽업만 문의해도 됩니다", "여행 동선에 따른 개별 견적", "결제 전 서면으로 범위 확인"],
     kindsTitle: "어떤 이동이 필요한가요?", kindsBody: "도움이 필요한 부분을 선택하세요. 날짜, 픽업 장소, 인원과 짐에 맞춰 구체적인 준비 사항을 확인합니다.",
     kinds: {

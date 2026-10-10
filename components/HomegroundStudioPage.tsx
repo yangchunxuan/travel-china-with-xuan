@@ -233,7 +233,7 @@ export function HomegroundStudioPage({
               </a>
               <a className={styles.secondaryAction} href={planningServicesHref}>
                 {isEnglish
-                  ? "Compare planning services"
+                  ? "View all services"
                   : copy.cta.secondaryButton}
               </a>
             </div>
@@ -405,7 +405,7 @@ export function HomegroundStudioPage({
               </a>
               <a className={styles.ctaSecondary} href={planningServicesHref}>
                 {isEnglish
-                  ? "Compare planning services"
+                  ? "View all services"
                   : copy.cta.secondaryButton}
               </a>
             </div>
