@@ -73,7 +73,7 @@ export type HomegroundPageContext =
   | "careers"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es";
 type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
 
 interface HomegroundHeaderProps {
@@ -586,7 +586,7 @@ export function HomegroundHeader({
   };
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetLocale: HomegroundLocale | "ja",
+    targetLocale: HomegroundLocale | "ja" | "es",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -607,8 +607,8 @@ export function HomegroundHeader({
 
     if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
-      // The Japanese site has no newsletter or planner form to receive state.
-      if (targetLocale !== "ja") {
+      // The Japanese and Spanish pages have no newsletter or planner form to receive state.
+      if (targetLocale !== "ja" && targetLocale !== "es") {
         requestNewsletterLanguageTransfer(event.currentTarget.pathname);
         if ((locale === "en") !== (targetLocale === "en")) {
           markHomegroundInternalReload(event.currentTarget.href);
@@ -674,6 +674,20 @@ export function HomegroundHeader({
       onClick={(event) => handleLanguageChange(event, "ja")}
     >
       日本語
+    </a>
+  ) : null;
+  // Shown where the page passes a Spanish address: pages with a Spanish
+  // version, and tour pages, which fall back to the Spanish tour list.
+  const spanishLanguageHref = languagePaths?.es;
+  const renderSpanishLanguageChoice = () => spanishLanguageHref ? (
+    <a
+      href={spanishLanguageHref}
+      hrefLang="es"
+      lang="es"
+      onClick={(event) => handleLanguageChange(event, "es")}
+    >
+      <span className={styles.languageChoiceShort}>ES</span>
+      <span className={styles.languageChoiceEndonym}>Español</span>
     </a>
   ) : null;
 
@@ -866,6 +880,7 @@ export function HomegroundHeader({
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
             {renderJapaneseLanguageChoice()}
+            {renderSpanishLanguageChoice()}
           </nav>
           <Link
             className={styles.headerCta}
@@ -994,6 +1009,7 @@ export function HomegroundHeader({
             >
               {availableLanguageLocales.map(renderLanguageChoice)}
               {renderJapaneseLanguageChoice()}
+              {renderSpanishLanguageChoice()}
             </div>
           </div>
         </nav>

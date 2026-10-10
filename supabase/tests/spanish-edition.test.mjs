@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
@@ -134,4 +134,21 @@ test("Spanish guides link only to pages that exist and name their sources", () =
       }
     }
   }
+});
+
+test("the language switch offers Spanish on the home page, the lists, the guides with a Spanish page and every tour page", () => {
+  const read = (file) => readFileSync(resolve(root, file), "utf8");
+  const header = read("components/HomegroundHeader.tsx");
+  // Once in the desktop switch and once in the mobile menu.
+  assert.equal(header.match(/\{renderSpanishLanguageChoice\(\)\}/g)?.length, 2);
+  assert.match(header, /const spanishLanguageHref = languagePaths\?\.es;/);
+  assert.match(header, /hrefLang="es"\s+lang="es"/);
+  assert.match(read("components/HomegroundHomePage.tsx"), /languagePaths=\{\{[^}]*es: "\/es\/"/);
+  // A tour with a Spanish page opens it; any other tour opens the Spanish tour list.
+  assert.match(
+    read("components/ShanghaiJiangnanImaginePage.tsx"),
+    /es: spanishTourPagePath\(product\.slug\) \?\? spanishSite\.tours,/,
+  );
+  const css = read("components/HomegroundHeader.module.css");
+  assert.match(css, /\.mobileLanguageNav:has\(> a:nth-child\(5\)\)\s*\{\s*grid-template-columns: repeat\(5,/);
 });

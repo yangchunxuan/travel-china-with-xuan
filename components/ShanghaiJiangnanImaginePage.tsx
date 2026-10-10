@@ -50,7 +50,8 @@ import { japaneseTourContactHrefs } from "../lib/japaneseTourContact";
 import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJiangnanInteraction";
 import jaStyles from "./JapaneseJiangnanPage.module.css";
 import { localizeSpanishPrivateTourProduct } from "../lib/localizeSpanishPrivateTourProduct";
-import { spanishDraftNote } from "../lib/spanishSite";
+import { spanishTourPagePath } from "../lib/spanishEditionIndex";
+import { spanishDraftNote, spanishSite } from "../lib/spanishSite";
 import {
   spanishBeforeYouChooseTitle,
   spanishCommercialCopy,
@@ -1258,6 +1259,8 @@ export function ShanghaiJiangnanImaginePage({
             ja: product.slug === jaPilot.tourSlug
               ? jaPilot.tour
               : `/ja/tours/${product.slug}/`,
+            // A tour without a Spanish page sends Spanish readers to the Spanish tour list.
+            es: spanishTourPagePath(product.slug) ?? spanishSite.tours,
           }}
         locale={sourceLocale}
         pageContext="tour"
