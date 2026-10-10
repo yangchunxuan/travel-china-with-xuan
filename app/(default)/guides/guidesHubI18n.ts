@@ -420,6 +420,7 @@ export function getGuidesHubLanguagePaths() {
     ko: copies.ko.path,
     "zh-Hans": copies.zh.path,
     ja: "/ja/guides/",
+    es: "/es/guias/",
     "x-default": copies.en.path,
   } as const;
 }

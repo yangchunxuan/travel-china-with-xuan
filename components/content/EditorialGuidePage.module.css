@@ -12,7 +12,7 @@
  * stylesheet the bundler loads last. Chinese and Korean use their own
  * locale rules.
  */
-.pageRoot.pageRoot[data-homeground-locale="en"] {
+.pageRoot.pageRoot:is([data-homeground-locale="en"], [data-homeground-locale="es"]) {
   --hg-editorial: var(--hg-font-editorial);
 }
 

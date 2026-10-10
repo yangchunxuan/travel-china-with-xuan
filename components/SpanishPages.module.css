@@ -1,0 +1,14 @@
+/* Layout adjustments for the Spanish pages, which reuse the tours-page and
+   guides-page stylesheets. */
+
+/* A short list of tours reads better two to a row than three with one left over. */
+@media (min-width: 64.0625rem) {
+  .tourList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Keep a licence number or similar code on one line. */
+.code {
+  white-space: nowrap;
+}

@@ -144,6 +144,10 @@ type PhotoCopy = Readonly<{
   routeLabel: string;
   routeScenes: string;
   dayUnit: string;
+  /** Languages that put the word first ("Día 3") set this instead of `dayUnit`. */
+  dayPrefix?: string;
+  /** Which photo-control labels to use; Japanese when not set. */
+  controls?: "ja" | "es";
 }>;
 
 const mediaControlCopy = {
@@ -151,6 +155,7 @@ const mediaControlCopy = {
   zh: { previous: "上一张照片", next: "下一张照片", pause: "暂停轮播", play: "播放轮播", unavailable: "照片暂时无法显示", count: "行程照片" },
   ko: { previous: "이전 사진", next: "다음 사진", pause: "슬라이드쇼 일시 정지", play: "슬라이드쇼 재생", unavailable: "사진을 표시할 수 없습니다", count: "여행 사진" },
   ja: { previous: "前の写真", next: "次の写真", pause: "スライドショーを一時停止", play: "スライドショーを再生", unavailable: "写真を表示できません", count: "旅の写真" },
+  es: { previous: "Fotografía anterior", next: "Fotografía siguiente", pause: "Pausar el pase de fotografías", play: "Reanudar el pase de fotografías", unavailable: "Fotografía no disponible", count: "Fotografías del viaje" },
 };
 
 /** Scoped copy supplied by the Japanese page; pricing and selection stay shared. */
@@ -225,7 +230,7 @@ export function ShanghaiJiangnanHeroDeck({
   const [hidden, setHidden] = useState(false);
   const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
   const copy = photoCopy ?? interactionCopy[product.locale];
-  const controls = mediaControlCopy[photoCopy ? "ja" : product.locale];
+  const controls = mediaControlCopy[photoCopy ? photoCopy.controls ?? "ja" : product.locale];
   const images = useMemo(
     () => collectPrivateTourPhotos(product).filter((image) => !failedPhotos.has(image.src)),
     [product.gallery, product.heroImage, product.routeMedia, failedPhotos],
@@ -627,9 +632,9 @@ export function ShanghaiJiangnanRouteExplorer({
     setActiveIndex(index);
   };
   const copy = photoCopy
-    ? { ...photoCopy, dayLabel: (day: number) => `${day}${photoCopy.dayUnit}` }
+    ? { ...photoCopy, dayLabel: (day: number) => photoCopy.dayPrefix ? `${photoCopy.dayPrefix}${day}` : `${day}${photoCopy.dayUnit}` }
     : interactionCopy[product.locale];
-  const controls = mediaControlCopy[photoCopy ? "ja" : product.locale];
+  const controls = mediaControlCopy[photoCopy ? photoCopy.controls ?? "ja" : product.locale];
   const routeMedia = useMemo(() => {
     const groups = mergePrivateTourRouteMedia(product.routeMedia);
     return product.itinerary.map((day) => groups.find((group) => group.day === day.day) ?? null);

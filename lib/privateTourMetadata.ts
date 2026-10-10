@@ -5,6 +5,8 @@ import type { HomegroundLocale } from "./homegroundI18n";
 import { jaPilot } from "./jaPilot.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { localizePrivateTourProduct, privateTourPreviewProducts, privateTourProducts, type PrivateTourProduct } from "./privateTourProducts.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { spanishTourPagePath } from "./spanishEditionIndex.ts";
 
 export const RESERVED_PRIVATE_TOUR_SLUGS = [
   "zhangjiajie-4-day-private-tour",
@@ -48,6 +50,7 @@ export function getPrivateTourPreviewLanguagePaths(product: PrivateTourProduct) 
 
 export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
   const paths = localizePrivateTourProduct(product, "en").paths;
+  const es = spanishTourPagePath(product.slug);
   return {
     en: paths.en,
     "zh-Hans": paths.zh,
@@ -55,6 +58,8 @@ export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
     ja: product.slug === jaPilot.tourSlug
       ? jaPilot.tour
       : `/ja/tours/${product.slug}/`,
+    // Only tours with a Spanish page get the Spanish hreflang link.
+    ...(es ? { es } : {}),
     "x-default": paths.en,
   } as const;
 }

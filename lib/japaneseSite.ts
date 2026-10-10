@@ -1,4 +1,5 @@
 import { homegroundBusiness } from "./homegroundBusiness";
+import { spanishSitePagePathByEnglishPath } from "./spanishEditionIndex";
 
 /** Japanese site routes outside the article system. */
 export const japaneseSite = {
@@ -88,11 +89,14 @@ export function japaneseAlternates(
   overrides: Partial<Record<"zh" | "ko", string>> = {},
 ) {
   const [en, zh, ko, ja] = japaneseLanguagePaths(enPath, jaPath, overrides);
+  // The home and guides pages also have a Spanish page; hreflang only.
+  const es = spanishSitePagePathByEnglishPath[enPath];
   return {
     en: en.path,
     "zh-Hans": zh.path,
     ko: ko.path,
     ja: ja.path,
+    ...(es ? { es } : {}),
     "x-default": en.path,
   } as const;
 }

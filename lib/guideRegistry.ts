@@ -1293,6 +1293,14 @@ export function getGuideLanguagePaths(id: GuideId) {
     "how-much-does-a-china-trip-cost": "/ja/guides/how-much-does-a-china-trip-cost/",
   };
   if (japaneseGuidePaths[id]) paths.ja = japaneseGuidePaths[id];
+  // Spanish guides have their own pages under /es/guias/; this adds the
+  // hreflang link only, the visible language switch does not list Spanish.
+  // A test holds this list to the Spanish guide registry.
+  const spanishGuidePaths: Partial<Record<GuideId, string>> = {
+    "avatar-mountains-zhangjiajie": "/es/guias/montanas-de-avatar-china/",
+    "yangshuo-china": "/es/guias/yangshuo-que-ver/",
+  };
+  if (spanishGuidePaths[id]) paths.es = spanishGuidePaths[id];
 
   return paths;
 }
