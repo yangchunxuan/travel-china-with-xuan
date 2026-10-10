@@ -382,7 +382,8 @@ const body = {
         {
           "label": "Ask a China trip planner",
           "href": "/#planner-contact"
-        }
+        },
+        {"label":"Changbai Mountain: Heaven Lake, which slope and ticket prices","href":"/guides/changbai-mountain-heaven-lake/","description":"North or West Slope, official prices, booking rules and winter visits."},
       ]
     },
     {

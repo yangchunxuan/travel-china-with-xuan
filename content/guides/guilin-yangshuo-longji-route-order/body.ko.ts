@@ -194,7 +194,8 @@ const body = {
           "label": "계림·양삭 5일 프라이빗 투어",
           "href": "/ko/tours/guilin-yangshuo-5-day-private-tour/",
           "description": "이 공개 상품은 계림·양삭과 이강 유람선을 포함하며 용척은 포함하지 않습니다. 계단식 논을 추가하려면 일정과 견적을 다시 정해야 합니다. 위의 일정은 여행 계획 예시입니다."
-        }
+        },
+        {"label":"양삭: 볼거리, 우룡하 뗏목, 며칠 일정","href":"/ko/guides/yangshuo-china/","description":"무료인 곳, 뗏목과 야간 공연 요금, 이틀을 나누는 법."},
       ]
     },
     {

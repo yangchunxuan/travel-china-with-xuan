@@ -83,6 +83,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "푸둥과 홍차오 비교", href: "/ko/guides/shanghai-pudong-or-hongqiao-airport/", description: "항공 공항이 최적 동선을 뒤집을 수 있습니다." },
     { label: "오늘의 대운하 이해하기", href: "/ko/guides/grand-canal-everyday-urban-history/", description: "세계유산, 지금도 작동하는 수로와 오늘의 동네 생활을 구분하고 세 관계가 함께 보이는 공개 구간을 고릅니다." },
     { label: "황해 습지 거점 고르기", href: "/ko/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "흩어진 옌청 습지 방문 구역을 구분하고 둥타이·다펑·옌청 도심 중 거점을 선택한 뒤 새를 못 볼 때의 대안까지 준비합니다." },
+    { label: "항저우 서호: 볼거리, 유람선, 소요 시간", href: "/ko/guides/west-lake-hangzhou/", description: "무료인 곳, 섬으로 가는 배, 뇌봉탑, 하루 코스." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "상하이 철도역 안내", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "상하이시 인민정부", reviewedAt: "2026-08-12" },

@@ -44,6 +44,7 @@ const body = {
       { label: "Li River cruise booking and piers", href: "/guides/li-river-cruise-tickets-piers-booking/", description: "Check the boat, booking channel and Guilin-to-Yangshuo luggage chain." },
       { label: "Yangshuo town or Yulong River: where to stay", href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "Choose a hotel area by door access, evenings and the group's need to rest." },
       { label: "Longji day trip or overnight", href: "/guides/longji-rice-terraces-day-trip-or-overnight/", description: "If Longji is non-negotiable, decide what extra time it needs." },
+      { label: "Yangshuo: what to see, Yulong River rafts and how many days", href: "/guides/yangshuo-china/", description: "What is free, what the rafts and the night show cost, and how to split two days." },
     ] },
     { id: "inquiry", type: "callout", tone: "decision", title: "Ask for a version that fits your family", body: "Send the travel month, number and ages of travellers, arrival and departure points, room needs and any walking or boarding concerns. If bamboo rafting matters, add the children's heights. We can then confirm the actual pier, cruise, luggage handover and what the five-day plan includes before quoting." },
     { id: "sources", type: "sources", title: "Operator rules checked 26 September 2026", items: [

@@ -1,0 +1,107 @@
+{
+  "id": "changbai-mountain-heaven-lake",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "jilin",
+    "changbai-mountain",
+    "heaven-lake",
+    "tickets",
+    "winter"
+  ],
+  "destinations": [
+    "changbai-mountain",
+    "jilin",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/changbai-mountain-heaven-lake/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/changbai-mountain-heaven-lake/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "changbai mountain",
+      "changbaishan",
+      "heaven lake china",
+      "changbai mountain north slope",
+      "mount paektu china side"
+    ],
+    "zh": [
+      "长白山",
+      "长白山攻略",
+      "长白山天池",
+      "长白山北坡西坡",
+      "长白山门票"
+    ],
+    "ko": [
+      "백두산",
+      "백두산 천지",
+      "백두산 북파 서파",
+      "창바이산",
+      "백두산 입장권"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/changbai-mountain-heaven-lake/",
+      "title": "Changbai Mountain: Heaven Lake, Which Slope & Ticket Prices",
+      "headline": "Changbai Mountain (Changbaishan): Heaven Lake, Which Slope, Ticket Prices and Winter Visits",
+      "description": "Changbai Mountain in Jilin is a dormant volcano with Heaven Lake in its crater. North or West Slope, ticket and bus prices, booking rules and winter visits.",
+      "heroAlt": "Heaven Lake in the crater of Changbai Mountain, deep blue under a clear sky, with snow on the peaks of the far rim",
+      "navTitle": "Changbai Mountain",
+      "featuredLinkLabel": "Plan Changbai Mountain",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jilin",
+        "Changbai Mountain",
+        "Heaven Lake"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/changbai-mountain-heaven-lake/",
+      "title": "长白山攻略：天池、北坡还是西坡、门票和冬季怎么玩",
+      "headline": "长白山：天池、选哪个坡、门票价格和冬季游览",
+      "description": "吉林长白山是一座休眠火山，火山口里是天池。走北坡还是西坡、门票和车票价格、预约规则和冬季怎么去。",
+      "heroAlt": "长白山火山口里的天池，晴空下一片深蓝，对面的山峰上有积雪",
+      "navTitle": "长白山",
+      "featuredLinkLabel": "规划长白山",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "吉林",
+        "长白山",
+        "天池"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/changbai-mountain-heaven-lake/",
+      "title": "백두산(창바이산): 천지, 북파·서파 선택, 입장권",
+      "headline": "백두산(창바이산): 천지, 어느 쪽으로 오를지, 요금, 겨울 방문",
+      "description": "지린성 백두산(창바이산)은 분화구에 천지를 품은 휴화산입니다. 북파와 서파 선택, 입장권과 차량 요금, 예약 규칙, 겨울 방문.",
+      "heroAlt": "백두산 분화구의 천지. 맑은 하늘 아래 짙은 파란빛이고 건너편 봉우리에 눈이 쌓여 있습니다",
+      "navTitle": "백두산",
+      "featuredLinkLabel": "백두산 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "지린",
+        "백두산",
+        "천지"
+      ]
+    }
+  }
+}

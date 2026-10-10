@@ -351,6 +351,7 @@ const body = {
           href: "/zh/guides/foreigners-china-hotel/",
           description: "全国住宿登记与入住失败恢复交给专门指南。",
         },
+        { label: "阳朔攻略：看什么、遇龙河竹筏、玩几天", href: "/zh/guides/yangshuo-china/", description: "哪些免费、竹筏和夜间演出多少钱，以及两天怎么分。" },
       ],
     },
     {

@@ -182,7 +182,8 @@ const body = {
           "label": "중국 겨울 여행지 고르기",
           "href": "/ko/guides/china-in-winter/",
           "description": "하얼빈을 겨울의 베이징·상하이 도시 여행, 따뜻한 싼야와 비교합니다."
-        }
+        },
+        {"label":"백두산(창바이산): 천지, 북파·서파 선택, 요금","href":"/ko/guides/changbai-mountain-heaven-lake/","description":"북파와 서파 선택, 공식 요금, 예약 규칙, 겨울 방문."},
       ]
     },
     {

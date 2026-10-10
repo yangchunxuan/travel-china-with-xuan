@@ -100,7 +100,8 @@ const body = {
         { label: "上海、苏州、杭州 6 天私家团", href: "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", description: "上海进、杭州出，第 2–5 天安排导游游览。" },
         { label: "北京、杭州、苏州、上海 11 天私家团", href: "/zh/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/", description: "北京进、上海出，两段高铁二等座，不安排国内航班。" },
         { label: "北京、西安、黄山、杭州、上海 14 天私家团", href: "/zh/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/", description: "若西安和黄山也是重点，单独比较这条更长的路线。" },
-        { label: "上海、苏州、杭州和南京怎样排顺序", href: "/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "江南地区内部怎么串联、是否从上海往返，看这篇。" }
+        { label: "上海、苏州、杭州和南京怎样排顺序", href: "/zh/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "江南地区内部怎么串联、是否从上海往返，看这篇。" },
+        { label: "杭州西湖攻略：看什么、游船、玩多久", href: "/zh/guides/west-lake-hangzhou/", description: "哪些免费、上岛的游船、雷峰塔和一天的走法。" },
       ]
     },
     {

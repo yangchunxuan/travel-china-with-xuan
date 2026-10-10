@@ -46,6 +46,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "강이나 도로 하루에 충분한 공간을 둡니다." },
     { label: "중국 여행자 결제", href: "/ko/guides/how-to-pay-in-china-as-a-tourist/", description: "마지막 구간의 결제 대안을 둡니다." },
     { label: "중국 호텔과 지하철", href: "/ko/guides/china-hotel-near-metro/", description: "역 이름이 숙소에 언제 도움이 되는지 봅니다." },
+    { label: "양삭: 볼거리, 우룡하 뗏목, 며칠 일정", href: "/ko/guides/yangshuo-china/", description: "무료인 곳, 뗏목과 야간 공연 요금, 이틀을 나누는 법." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처와 사진 표기", items: [
     { label: "이강 교통과 선착장 공식 안내", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "계림 이강 풍경명승구", reviewedAt: "2026-08-13" },

@@ -62,7 +62,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Homeground transport and planning guides", href: "/guides/", description: "Return to the parent guide collection." },
     { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare for the rail segment without repeating the station process here." },
     { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Plan the final departure after a weather-sensitive mountain trip." },
-    { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Check whether the cross-mountain transfer has enough spare time." }
+    { label: "Is your China itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Check whether the cross-mountain transfer has enough spare time." },
+    { label: "Changbai Mountain: Heaven Lake, which slope and ticket prices", href: "/guides/changbai-mountain-heaven-lake/", description: "North or West Slope, official prices, booking rules and winter visits." },
   ]},
   { id: "sources", type: "sources", title: "Official sources", items: [
     { label: "Changbai Mountain official North/West transport guide", url: "https://www.changbaishan.gov.cn/zbsly/lyzn/bpgl/202106/t20210625_210152.html", publisher: "Changbai Mountain Protection and Development Zone", reviewedAt: "2026-08-13" },

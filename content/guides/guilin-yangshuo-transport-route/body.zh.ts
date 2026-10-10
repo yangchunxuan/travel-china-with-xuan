@@ -46,6 +46,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给水路或公路日足够空间。" },
     { label: "外国游客如何在中国付款", href: "/zh/guides/how-to-pay-in-china-as-a-tourist/", description: "为最后一段保留付款备选。" },
     { label: "中国酒店靠近地铁是否重要", href: "/zh/guides/china-hotel-near-metro/", description: "理解车站标签何时真正帮助住宿。" },
+    { label: "阳朔攻略：看什么、遇龙河竹筏、玩几天", href: "/zh/guides/yangshuo-china/", description: "哪些免费、竹筏和夜间演出多少钱，以及两天怎么分。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "漓江官方交通与码头指引", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "桂林漓江风景名胜区", reviewedAt: "2026-08-13" },

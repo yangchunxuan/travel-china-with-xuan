@@ -382,7 +382,8 @@ const body = {
         {
           "label": "联系中国旅行规划师",
           "href": "/zh/#planner-contact"
-        }
+        },
+        {"label":"长白山攻略：天池、选哪个坡、门票价格","href":"/zh/guides/changbai-mountain-heaven-lake/","description":"北坡还是西坡、官方价格、预约规则和冬季游览。"},
       ]
     },
     {

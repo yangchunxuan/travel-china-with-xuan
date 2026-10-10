@@ -361,7 +361,8 @@ const body = {
       items: [
         {"label":"上海—杭州交通怎么选","href":"/zh/guides/shanghai-hangzhou-transport-route/","description":"处理跨城方式，不把这篇文化比较写成第二篇杭州交通攻略。"},
         {"label":"第一次乘坐中国高铁","href":"/zh/guides/china-high-speed-train-first-time-guide/","description":"确定镇江值得换城后，再核对车站、证件与乘车流程。"},
-        {"label":"你的中国行程是不是太赶","href":"/zh/guides/is-your-china-itinerary-too-rushed/","description":"检查增加一个故事地点后，是否还剩真正可用的半天。"}
+        {"label":"你的中国行程是不是太赶","href":"/zh/guides/is-your-china-itinerary-too-rushed/","description":"检查增加一个故事地点后，是否还剩真正可用的半天。"},
+        {"label":"杭州西湖攻略：看什么、游船、玩多久","href":"/zh/guides/west-lake-hangzhou/","description":"哪些免费、上岛的游船、雷峰塔和一天的走法。"},
       ],
     },
     {

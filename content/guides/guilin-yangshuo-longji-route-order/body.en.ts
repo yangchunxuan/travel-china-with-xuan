@@ -194,7 +194,8 @@ const body = {
           "label": "Guilin & Yangshuo: 5-day private tour",
           "href": "/tours/guilin-yangshuo-5-day-private-tour/",
           "description": "This published route includes Guilin and Yangshuo, with a Li River cruise, and does not include Longji. Adding the terraces requires a revised itinerary and quote; the examples above are planning suggestions."
-        }
+        },
+        {"label":"Yangshuo: what to see, Yulong River rafts and how many days","href":"/guides/yangshuo-china/","description":"What is free, what the rafts and the night show cost, and how to split two days."},
       ]
     },
     {

@@ -111,6 +111,13 @@ subset merged with PR #320. All 3,026 earlier code points and their advance
 widths are preserved, the slice plan is
 unchanged and the 11 new glyphs join the extra slice. Korean subsets untouched.
 
+2026-10-10, third pass (the Yangshuo, Huangshan, Jingdezhen, Changbai Mountain
+and West Lake guides added 匣, 厄, 坯, 柴, 浚, 皖, 矿, 葫, 蛟, 锥, 骥 and 黟): the
+Chinese source subset was regenerated the same way from the same
+`NotoSerifSC[wght].ttf` (git blob `eab063fa`). All 3,037 earlier code points
+and their advance widths are preserved, the slice plan is unchanged and the 12
+new glyphs join the extra slice. Korean subsets untouched.
+
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
 `pyftsubset --flavor=woff2` for all three outputs (`tools/rebuild-locale-fonts.mjs`
 does both). The required Han and Hangul

@@ -100,7 +100,8 @@ const body = {
         { label: "Shanghai, Suzhou & Hangzhou: 6-day private tour", href: "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", description: "Shanghai arrival, Hangzhou departure and four guided touring days." },
         { label: "Beijing, Hangzhou, Suzhou & Shanghai: 11-day private tour", href: "/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/", description: "Beijing arrival, Shanghai departure, two second-class trains and no domestic flight." },
         { label: "Beijing, Xi'an, Huangshan, Hangzhou & Shanghai: 14-day private tour", href: "/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/", description: "A separate extension if Xi'an and Huangshan are also priorities." },
-        { label: "Plan the Shanghai, Suzhou and Hangzhou city order", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "For the regional route-order decision, including Shanghai round trips." }
+        { label: "Plan the Shanghai, Suzhou and Hangzhou city order", href: "/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "For the regional route-order decision, including Shanghai round trips." },
+        { label: "West Lake, Hangzhou: what to see, boats and how long", href: "/guides/west-lake-hangzhou/", description: "What is free, the island boat, Leifeng Pagoda and a one-day route." },
       ]
     },
     {

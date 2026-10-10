@@ -1,0 +1,105 @@
+{
+  "id": "west-lake-hangzhou",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "zhejiang",
+    "hangzhou",
+    "west-lake",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "hangzhou",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/west-lake-hangzhou/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/west-lake-hangzhou/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "west lake hangzhou",
+      "west lake china",
+      "hangzhou west lake boat",
+      "leifeng pagoda",
+      "west lake things to do"
+    ],
+    "zh": [
+      "杭州西湖",
+      "西湖攻略",
+      "西湖游船",
+      "雷峰塔门票",
+      "西湖一日游"
+    ],
+    "ko": [
+      "항저우 서호",
+      "서호 유람선",
+      "뇌봉탑",
+      "서호 하루 코스"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/west-lake-hangzhou/",
+      "title": "West Lake, Hangzhou: What to See, Boats & How Long to Spend",
+      "headline": "West Lake in Hangzhou: What Is Free, the Island Boat, Leifeng Pagoda and a One-Day Route",
+      "description": "West Lake in Hangzhou is a free World Heritage landscape of causeways, islands and pagodas. What to see, boat and pagoda prices, and how to fit it into a day.",
+      "heroAlt": "West Lake in Hangzhou from the air at sunset, with garden roofs in the foreground, islands in the water and the city skyline beyond",
+      "navTitle": "West Lake",
+      "featuredLinkLabel": "Plan West Lake",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Zhejiang",
+        "Hangzhou",
+        "West Lake"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/west-lake-hangzhou/",
+      "title": "杭州西湖攻略：看什么、游船怎么坐、哪些要门票",
+      "headline": "杭州西湖：哪些免费、上岛的游船、雷峰塔，以及一天怎么走",
+      "description": "杭州西湖是免费开放的世界遗产：长堤、湖心岛和古塔。看什么、游船和雷峰塔多少钱、一天怎么安排。",
+      "heroAlt": "日落时分从空中看杭州西湖：近处是园林屋顶，湖中有小岛，远处是城市天际线",
+      "navTitle": "西湖",
+      "featuredLinkLabel": "规划西湖",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "浙江",
+        "杭州",
+        "西湖"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/west-lake-hangzhou/",
+      "title": "항저우 서호: 볼거리, 유람선, 얼마나 걸릴까",
+      "headline": "항저우 서호: 무료인 곳, 섬으로 가는 배, 뇌봉탑, 하루 코스",
+      "description": "항저우 서호는 둑길, 섬, 탑이 어우러진 무료 세계유산 경관입니다. 볼거리, 유람선과 탑 요금, 하루에 둘러보는 법.",
+      "heroAlt": "해 질 녘 하늘에서 본 항저우 서호. 앞쪽에 정원 지붕, 호수 가운데 섬, 멀리 도시의 스카이라인",
+      "navTitle": "서호",
+      "featuredLinkLabel": "서호 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "저장",
+        "항저우",
+        "서호"
+      ]
+    }
+  }
+}

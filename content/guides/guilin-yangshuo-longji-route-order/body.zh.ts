@@ -194,7 +194,8 @@ const body = {
           "label": "桂林·阳朔5天私家团",
           "href": "/zh/tours/guilin-yangshuo-5-day-private-tour/",
           "description": "这条已发布路线包含桂林、阳朔与漓江游船，不含龙脊。增加梯田需要重新安排和报价；上面的日程属于规划示例。"
-        }
+        },
+        {"label":"阳朔攻略：看什么、遇龙河竹筏、玩几天","href":"/zh/guides/yangshuo-china/","description":"哪些免费、竹筏和夜间演出多少钱，以及两天怎么分。"},
       ]
     },
     {

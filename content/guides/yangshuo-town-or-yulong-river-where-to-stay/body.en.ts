@@ -351,6 +351,7 @@ const body = {
           href: "/guides/foreigners-china-hotel/",
           description: "Keep national accommodation-registration and failed-check-in recovery in its dedicated guide.",
         },
+        { label: "Yangshuo: what to see, Yulong River rafts and how many days", href: "/guides/yangshuo-china/", description: "What is free, what the rafts and the night show cost, and how to split two days." },
       ],
     },
     {

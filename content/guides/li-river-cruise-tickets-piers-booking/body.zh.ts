@@ -43,7 +43,8 @@ const body = {
     { id: "internal-links", type: "internal-links", title: "把游船接进整段桂林行程", items: [
       { label: "桂林阳朔五日私家团", href: "/zh/tours/guilin-yangshuo-5-day-private-tour/", description: "看游船日如何和酒店、专车衔接。" },
       { label: "桂林到阳朔选游船、汽车还是火车", href: "/zh/guides/guilin-yangshuo-transport-route/", description: "先决定两地交通，再确定码头接送。" },
-      { label: "阳朔住县城还是遇龙河", href: "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "按下船后的活动来定酒店位置。" }
+      { label: "阳朔住县城还是遇龙河", href: "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "按下船后的活动来定酒店位置。" },
+      { label: "阳朔攻略：看什么、遇龙河竹筏、玩几天", href: "/zh/guides/yangshuo-china/", description: "哪些免费、竹筏和夜间演出多少钱，以及两天怎么分。" },
     ] },
     { id: "consultation", type: "callout", tone: "neutral", title: "不想自己拆开订船和接送？", body: "告诉我们出行日期与人数，Homeground 可以把桂林接车、确认后的游船类别和阳朔接送放到同一份行程里。船票是否有位、包含什么，报价前按实际日期核对清楚。" },
     { id: "sources", type: "sources", title: "漓江景区官方资料", items: [

@@ -44,6 +44,7 @@ const body = {
       { label: "이강 유람선 예약과 선착장", href: "/ko/guides/li-river-cruise-tickets-piers-booking/", description: "계림 출발, 양삭 도착과 짐 인계 과정을 따져 보세요." },
       { label: "양삭 시내와 우룡하 숙소 선택", href: "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "차량 접근, 저녁 식사, 쉬는 시간을 기준으로 숙소 지역을 고르세요." },
       { label: "용척 계단식 논 당일치기 또는 1박", href: "/ko/guides/longji-rice-terraces-day-trip-or-overnight/", description: "용척이 꼭 필요하다면 추가 시간이 얼마나 드는지 먼저 확인하세요." },
+      { label: "양삭: 볼거리, 우룡하 뗏목, 며칠 일정", href: "/ko/guides/yangshuo-china/", description: "무료인 곳, 뗏목과 야간 공연 요금, 이틀을 나누는 법." },
     ] },
     { id: "inquiry", type: "callout", tone: "decision", title: "가족에게 맞는 동선을 물어보세요", body: "여행할 달, 인원과 나이, 도착·출발 공항 또는 역, 객실 구성, 걷기와 승하선에서 걱정되는 점을 알려 주세요. 뗏목이 중요하다면 아이의 키도 필요합니다. 실제 선착장, 유람선, 짐 인계와 포함 내용을 확인한 뒤 견적을 드릴 수 있습니다." },
     { id: "sources", type: "sources", title: "2026년 9월 26일 확인한 운영사 자료", items: [

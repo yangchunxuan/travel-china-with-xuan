@@ -1,0 +1,106 @@
+{
+  "id": "yangshuo-china",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "guangxi",
+    "yangshuo",
+    "li-river",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "yangshuo",
+    "guilin",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/yangshuo-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/yangshuo-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "yangshuo",
+      "yangshuo china",
+      "things to do in yangshuo",
+      "yulong river bamboo rafting",
+      "yangshuo west street"
+    ],
+    "zh": [
+      "阳朔",
+      "阳朔攻略",
+      "遇龙河竹筏",
+      "阳朔西街",
+      "阳朔玩几天"
+    ],
+    "ko": [
+      "양삭",
+      "양숴",
+      "우룡하 뗏목",
+      "양삭 서가"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/yangshuo-china/",
+      "title": "Yangshuo, China: What to See, Yulong River & How Many Days",
+      "headline": "Yangshuo: West Street, the Yulong River, Xingping and How to Split Two Days",
+      "description": "Yangshuo is a small town among karst peaks on the Li River, south of Guilin. What is free, what rafts and the night show cost, and how many days to stay.",
+      "heroAlt": "An old stone arch bridge reflected in still water below karst peaks in the Yangshuo countryside",
+      "navTitle": "Yangshuo",
+      "featuredLinkLabel": "Plan Yangshuo",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Guangxi",
+        "Yangshuo",
+        "Li River"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/yangshuo-china/",
+      "title": "阳朔攻略：西街、遇龙河竹筏、兴坪和相公山怎么安排",
+      "headline": "阳朔：西街、遇龙河、兴坪，以及两天怎么分",
+      "description": "阳朔是桂林南面、漓江边喀斯特山峰之间的小城。哪些免费、竹筏和夜间演出多少钱、住几晚合适。",
+      "heroAlt": "阳朔乡间的一座古石拱桥倒映在水面上，背后是喀斯特山峰",
+      "navTitle": "阳朔",
+      "featuredLinkLabel": "规划阳朔",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "广西",
+        "阳朔",
+        "漓江"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/yangshuo-china/",
+      "title": "중국 양삭: 볼거리, 우룡하 뗏목, 며칠 일정",
+      "headline": "양삭: 서가, 우룡하, 싱핑, 이틀 일정 나누기",
+      "description": "양삭은 계림 남쪽, 이강 변 카르스트 봉우리 사이의 작은 도시입니다. 무료인 곳, 뗏목과 야간 공연 요금, 며칠이 필요한지.",
+      "heroAlt": "양삭 시골의 오래된 돌 아치교가 잔잔한 물에 비치고 뒤로 카르스트 봉우리가 서 있는 풍경",
+      "navTitle": "양삭",
+      "featuredLinkLabel": "양삭 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "광시",
+        "양삭",
+        "이강"
+      ]
+    }
+  }
+}

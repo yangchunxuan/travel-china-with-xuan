@@ -374,6 +374,7 @@ const body = {
           href: "/guides/is-your-china-itinerary-too-rushed/",
           description: "Test whether an extra story stop leaves a usable half-day rather than another fragmented transfer.",
         },
+        { label: "West Lake, Hangzhou: what to see, boats and how long", href: "/guides/west-lake-hangzhou/", description: "What is free, the island boat, Leifeng Pagoda and a one-day route." },
       ],
     },
     {

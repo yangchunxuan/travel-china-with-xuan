@@ -273,6 +273,24 @@ export const guideTargets = {
     productTarget("xian-terracotta-warriors-5-day-private-tour"),
     productTarget("beijing-xian-shanghai-8-day-private-tour"),
   ],
+  "yangshuo-china": [
+    productTarget("guilin-yangshuo-5-day-private-tour"),
+  ],
+  "huangshan-yellow-mountain": [
+    productTarget("huangshan-hongcun-huizhou-5-day-private-tour"),
+    productTarget("beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour"),
+  ],
+  "jingdezhen-china": [
+    productTarget("jingdezhen-wuyuan-wangxian-6-day-private-tour"),
+  ],
+  "changbai-mountain-heaven-lake": [
+    productTarget("changbaishan-yanji-winter-6-day-private-tour"),
+    productTarget("harbin-snow-town-changbaishan-yanji-8-day-private-tour"),
+  ],
+  "west-lake-hangzhou": [
+    productTarget("shanghai-suzhou-hangzhou-6-day-private-tour"),
+    productTarget("beijing-hangzhou-suzhou-shanghai-11-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),

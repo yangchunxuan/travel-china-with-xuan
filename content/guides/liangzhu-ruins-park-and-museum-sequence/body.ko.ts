@@ -34,7 +34,8 @@ const body:StructuredPageBody={schemaVersion:"1.0.0",blocks:[
 {label:"중국 고속철 첫 이용",href:"/ko/guides/china-high-speed-train-first-time-guide/",description:"항저우 철도 이동에 정확한 여권 정보를 씁니다."},
 {label:"현장 맥락을 놓치지 않고 고고 유적 박물관 보기",href:"/ko/guides/how-to-visit-an-archaeological-site-museum/",description:"량주의 박물관–유적 경관 구분을 재사용할 수 있는 증거 확인법으로 이어 가세요."},
 {label:"중국 박물관 도장 수집 이해하기",href:"/ko/guides/why-china-museums-have-stamps/",description:"도장을 선택적인 해석 도구로 보고 량주에서 특정 도장을 현재 제공한다고 단정하지 마세요."},
-{label:"지하철 공사가 고고 유적을 만나면 생기는 일",href:"/ko/guides/when-metro-construction-meets-archaeology/",description:"계획된 유산 방문과 기반시설 공사 중 우연한 발견을 비교하되 공개 전시를 전제하지 마세요."}
+{label:"지하철 공사가 고고 유적을 만나면 생기는 일",href:"/ko/guides/when-metro-construction-meets-archaeology/",description:"계획된 유산 방문과 기반시설 공사 중 우연한 발견을 비교하되 공개 전시를 전제하지 마세요."},
+        { label: "항저우 서호: 볼거리, 유람선, 소요 시간", href: "/ko/guides/west-lake-hangzhou/", description: "무료인 곳, 섬으로 가는 배, 뇌봉탑, 하루 코스." },
 ]},
 {id:"consultation",type:"callout",title:"항저우·상하이 일정에 량주를 넣어야 하나요?",body:"Homeground 여행 상담가는 두 장소의 현재 입장 절차, 교외 이동, 날씨 대안과 이후 열차 일정을 점검할 수 있습니다. 날짜, 출발 숙소, 보행 제한, 유적 풍경과 박물관 소장품 중 우선순위를 알려 주세요.",tone:"neutral"},
 {id:"sources",type:"sources",title:"확인한 공식·유산·이미지 출처",items:[
