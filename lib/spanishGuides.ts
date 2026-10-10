@@ -29,9 +29,10 @@ export function getSpanishGuidePathForSource(guideId: string): string | undefine
   return guide ? spanishGuidePath(guide.slug) : undefined;
 }
 
-/** Guides that lead to a tour, in catalogue order. */
+/** Guides about a tour's places first, then the guides every traveller needs. */
 export function spanishGuidesForTour(tourSlug: string) {
-  return spanishGuides
-    .filter((guide) => guide.tourSlugs.includes(tourSlug))
+  const specific = spanishGuides.filter((guide) => !guide.general && guide.tourSlugs.includes(tourSlug));
+  const general = spanishGuides.filter((guide) => guide.general);
+  return [...specific, ...general]
     .map((guide) => ({ slug: guide.slug, path: spanishGuidePath(guide.slug), navTitle: guide.navTitle }));
 }

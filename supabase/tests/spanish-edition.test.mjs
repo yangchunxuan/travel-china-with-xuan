@@ -41,7 +41,7 @@ test("the Spanish page index matches the Spanish tour copy and the Spanish guide
   );
   assert.deepEqual(registryLinks, { ...spanishGuidePathBySourceId });
   for (const slug of spanishTourSlugs) assert.equal(spanishTourPagePath(slug), spanishTourPath(slug));
-  assert.equal(spanishTourPagePath("chengdu-pandas-sanxingdui-5-day-private-tour"), undefined);
+  assert.equal(spanishTourPagePath("harbin-winter-5-day-private-tour"), undefined);
 });
 
 test("every Spanish tour keeps the source days, photographs, options and published prices", () => {

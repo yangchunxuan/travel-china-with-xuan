@@ -5,9 +5,15 @@
  */
 export const spanishTourPageSlugs: readonly string[] = Object.freeze([
   "beijing-xian-shanghai-8-day-private-tour",
+  "beijing-xian-guilin-shanghai-10-day-private-tour",
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
   "zhangjiajie-forest-4-day-private-tour",
+  "zhangjiajie-furong-fenghuang-7-day-private-tour",
   "guilin-yangshuo-5-day-private-tour",
+  "beijing-highlights-5-day-private-tour",
+  "xian-terracotta-warriors-5-day-private-tour",
+  "chengdu-pandas-sanxingdui-5-day-private-tour",
 ]);
 
 /** English guide id → its Spanish page. */
