@@ -64,6 +64,17 @@ written without kana, such as 利用規約 and 事業者情報, sit in shared ch
 and pages, and the export gate requires them in the Chinese font. Build once,
 rebuild the fonts, then build again.
 
+2026-10-10 (guides added 嵩, 庵, 澎, 湃, 猛, 缴, 衙, 袭, 镖, 儒, 卢, 牡, 粑, 缅, 诏,
+谐 and 隘): only the Chinese source subset was regenerated, from a freshly
+downloaded `NotoSerifSC[wght].ttf` (Google Fonts `main`, git blob `eab063fa`,
+Version 2.003-H1) at weight 500, with the character collection, instancing and
+subset options of `tools/rebuild-locale-fonts.mjs`, and then re-sliced with
+`tools/slice-serif-sc-font.mjs`. All 3,004 earlier code points and their
+advance widths are preserved. The committed slice plan is unchanged: slices
+`00` to `06` hold the same characters as before, and the 17 new glyphs join
+the on-demand extra slice. The Pretendard and MaruBuri subsets were not
+regenerated.
+
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
 `pyftsubset --flavor=woff2` for all three outputs (`tools/rebuild-locale-fonts.mjs`
 does both). The required Han and Hangul

@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "The Dazu Rock Carvings (大足石刻) are five groups of cliff sculpture in Dazu District, Chongqing, carved between the 9th and 13th centuries and a UNESCO World Heritage site since 1999. Two of them fill a visitor’s day: Baodingshan, a U-shaped gorge with about 500 m of carved cliff, and Beishan, 2 km from Dazu town. They are ticketed separately or together; widely reported 2026 peak-season prices are RMB 115, RMB 70 and RMB 140 for both. Ticket sales at Baodingshan stop at 16:00. From central Chongqing it is a full day trip."
+      "text": "The Dazu Rock Carvings (大足石刻) are five groups of cliff sculpture in Dazu District, Chongqing, carved between the 9th and 13th centuries and a UNESCO World Heritage site since 1999. Two of them fill a visitor’s day: Baodingshan, a U-shaped gorge with about 500 m of carved cliff, and Beishan, 2 km from Dazu town. They are ticketed separately or together: the official peak-season prices, 1 March to 30 November, are RMB 115, RMB 70 and RMB 140 for both. Baodingshan tickets are sold at the visitor centre until 16:00, and passport holders buy at its staffed window. From central Chongqing it is a full day trip."
     },
     {
       "id": "what-heading",
@@ -69,15 +69,79 @@ const body = {
       "text": "Tickets and opening hours"
     },
     {
+      "id": "prices-table",
+      "type": "table",
+      "caption": "Official posted prices, RMB per person at full price",
+      "columns": [
+        "Ticket",
+        "1 March to 30 November",
+        "1 December to end of February"
+      ],
+      "rows": [
+        [
+          "Baodingshan, with Shengshou Temple",
+          "115",
+          "100"
+        ],
+        [
+          "Beishan",
+          "70",
+          "50"
+        ],
+        [
+          "Baodingshan and Beishan",
+          "140",
+          "120"
+        ],
+        [
+          "Nanshan, Shimenshan or Shizhuanshan, each",
+          "30",
+          "30"
+        ],
+        [
+          "Digital film",
+          "80",
+          "80"
+        ],
+        [
+          "Baodingshan scenic-area bus and cart",
+          "22 return, 12 one way",
+          "22 return, 12 one way"
+        ],
+        [
+          "Package A: Baodingshan, film and return transport",
+          "170",
+          "165"
+        ],
+        [
+          "Package B: Baodingshan and return transport",
+          "130",
+          "115"
+        ],
+        [
+          "Package C: Baodingshan, Beishan, film and return transport",
+          "190",
+          "180"
+        ],
+        [
+          "Package D: Baodingshan, Beishan and return transport",
+          "150",
+          "130"
+        ]
+      ]
+    },
+    {
       "id": "tickets-list",
       "type": "list",
       "items": [
-        "Prices: several 2026 reports give the same peak-season figures, 1 March to 30 November: Baodingshan RMB 115, Beishan RMB 70, both RMB 140. Off-season they give RMB 100, RMB 50 and RMB 120. We could not open the official price page, so confirm on the official WeChat account 大足石刻.",
-        "Baodingshan: 08:30–18:00, ticket sales to 16:00 and last entry 16:10.",
-        "Beishan: 09:00–18:00, ticket sales 08:30–16:00 and last check 17:00. The evening session is 19:30–23:00, with sales to 21:00.",
-        "At Baodingshan: the museum opens Tuesday to Sunday 09:00–17:00 and is closed on Mondays. The digital film has seven screenings between 09:30 and 15:10, and tourist buses and carts run inside the scenic area.",
-        "Concessions listed: under 18 free, ages 60–64 half price, 65 and over free. Ask whether a passport is accepted.",
-        "Ticket office: 023-43766699."
+        "How to buy: the official WeChat account 大足石刻 sells online to holders of a Chinese resident ID card. With a passport, buy at the staffed ticket window in the Dazu Rock Carvings Visitor Centre. Entry is by ID check and a face scan, so carry the passport.",
+        "Baodingshan: tickets are sold and checked at the visitor centre, open 08:30–16:30, with sales to 16:00 and ticket check to 16:10. The carvings are open 09:00–18:00, with last entry at 16:30.",
+        "Beishan: 09:00–18:00, ticket sales 08:30–16:00 and last check 17:00. The evening session is 19:30–23:00, with sales 19:30–21:00 and last check 21:30. It closed for equipment maintenance on 20 July 2026, with reopening announced for 21 September, so check the academy’s notices before planning an evening visit.",
+        "Museum and film: the museum is open 09:00–17:00 with last check 16:30, and Ctrip lists it as closed on Mondays. The digital film screens at 09:30, 10:20, 11:10, 12:00, 13:30, 14:20 and 15:10.",
+        "Concessions: free under 18 and from 65, half price for ages 60–64, with ID; the academy’s notice lists a passport among the valid documents. Student half price is for full-time students at schools in China. Concessions do not cover the film or the transport.",
+        "Guides: the academy’s English-language guide costs RMB 260 per session at Baodingshan, Beishan or the museum, and RMB 480 for Baodingshan with the museum.",
+        "Refunds: an online order can be refunded only before the ticket is checked, and cannot be moved to another date.",
+        "Phone: Baodingshan tickets 023-43785339, online ticketing 023-43766699."
       ]
     },
     {
@@ -91,10 +155,10 @@ const body = {
       "type": "list",
       "ordered": true,
       "items": [
-        "Leave early. Baodingshan stops selling tickets at 16:00, and the two sites are more than 10 km apart.",
+        "Leave early. Baodingshan ticket sales stop at 16:00, and the two sites are more than 10 km apart; transport between them is yours to arrange.",
         "Start at Baodingshan: the museum, a film screening if the time fits, then the gorge.",
-        "Go on to Beishan only if you can arrive before its 17:00 last check.",
-        "By train, the high-speed station is Dazu South (大足南); check 12306 for trains from Chongqing and take a taxi from the station. A private car from Chongqing covers both sites without the transfers."
+        "For Beishan, buy the combined ticket in the morning: Beishan’s own window closes at 16:00 and its last check is 17:00.",
+        "By train, the high-speed station is Dazu South (大足南); check 12306 for trains from Chongqing. The academy’s route from the station is bus 204 or 206 into town, then bus 205 to the visitor centre; a taxi is simpler. A private car from Chongqing covers both sites without the transfers."
       ]
     },
     {
@@ -135,7 +199,11 @@ const body = {
         },
         {
           "question": "How much are Dazu Rock Carvings tickets?",
-          "answer": "Reported 2026 peak-season prices are RMB 115 for Baodingshan, RMB 70 for Beishan and RMB 140 for both; off-season RMB 100, RMB 50 and RMB 120. Confirm on the official WeChat account."
+          "answer": "The official peak-season prices, 1 March to 30 November, are RMB 115 for Baodingshan, RMB 70 for Beishan and RMB 140 for both; from 1 December to the end of February they are RMB 100, RMB 50 and RMB 120. The film is RMB 80 and the Baodingshan bus RMB 22 return."
+        },
+        {
+          "question": "Can foreign visitors buy Dazu Rock Carvings tickets online?",
+          "answer": "The official online sale is for holders of a Chinese resident ID card. With a passport, buy at the staffed window in the visitor centre; entry is by ID check and a face scan."
         },
         {
           "question": "Baodingshan or Beishan, which should I see?",
@@ -143,11 +211,11 @@ const body = {
         },
         {
           "question": "Can I visit Dazu as a day trip from Chongqing?",
-          "answer": "Yes, as a full day. Leave early, see Baodingshan first because its ticket sales stop at 16:00, and add Beishan if you can reach it before 17:00."
+          "answer": "Yes, as a full day. Leave early, see Baodingshan first because its ticket sales stop at 16:00, and add Beishan on a combined ticket if you can reach it before the 17:00 last check."
         },
         {
           "question": "What are the opening hours?",
-          "answer": "Baodingshan 08:30–18:00 with last entry 16:10; Beishan 09:00–18:00 with last check 17:00 and an evening session 19:30–23:00. The museum is closed on Mondays."
+          "answer": "Baodingshan 09:00–18:00 with last entry 16:30; its tickets are sold at the visitor centre from 08:30 to 16:00. Beishan 09:00–18:00 with last check 17:00, and an evening session 19:30–23:00. The museum is open 09:00–17:00."
         },
         {
           "question": "Are the Dazu Rock Carvings a UNESCO World Heritage site?",
@@ -167,7 +235,37 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "Dazu Rock Carvings listing: Baodingshan, hours, museum, film and concessions",
+          "label": "Visitor information: opening hours, posted prices, film times, routes and phone numbers",
+          "url": "https://www.dzskyjy.cn/web/column/col5008928.html",
+          "publisher": "Dazu Rock Carvings Academy",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Ticket booking notes: online and window sales, entry check and refunds",
+          "url": "https://www.dzskyjy.cn/web/article/1412466592988614656/web/content_1412466592988614656.html",
+          "publisher": "Dazu Rock Carvings Academy",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Ticket concessions",
+          "url": "https://www.dzskyjy.cn/web/article/1412466738929422336/web/content_1412466738929422336.html",
+          "publisher": "Dazu Rock Carvings Academy",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Guide service fees",
+          "url": "https://www.dzskyjy.cn/web/article/1412466421778370560/web/content_1412466421778370560.html",
+          "publisher": "Dazu Rock Carvings Academy",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Notice of 13 July 2026: Beishan evening visits closed for maintenance",
+          "url": "https://www.dzskyjy.cn/web/article/1528780842882523136/web/content_1528780842882523136.html",
+          "publisher": "Dazu Rock Carvings Academy",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Dazu Rock Carvings listing: museum hours and Monday closure",
           "url": "https://you.ctrip.com/sight/chongqing158/10330.html",
           "publisher": "Trip.com Group (Ctrip)",
           "reviewedAt": "2026-10-10"

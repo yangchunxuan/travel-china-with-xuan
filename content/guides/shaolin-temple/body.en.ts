@@ -97,7 +97,7 @@ const body = {
         "Combined tickets reported in July 2025: with the return cable car RMB 180; with zone A of the Kung Fu World Show RMB 238. The evening Zen Music Shaolin Grand Ceremony is a separate show.",
         "Hours: 08:00–17:00, last entry 16:30, on the Ctrip listing in October 2026.",
         "Foreign visitors: the listed free and half-price concessions apply to Chinese citizens only, so plan on the full price. Bring your passport; the withdrawn 2025 notice would have sent foreign visitors to a service window for a document check.",
-        "Buy through the operator’s official WeChat account or mini-program, or ask the ticket office: 0371-62745000."
+        "Official channels named by the operator: the 嵩山旅游 WeChat account and the 漫游嵩山 mini-program. Ticket office: 0371-62745000."
       ]
     },
     {
