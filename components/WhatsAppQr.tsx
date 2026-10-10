@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import { encode } from "uqr";
-import { whatsappQrCandidates } from "../lib/contactCard";
+import { selectWhatsAppQr } from "../lib/whatsappQr";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import styles from "./ContactCard.module.css";
 
-const maximumComfortableVersion = 15;
 const finderSize = 7;
 
 function roundedSquare(x: number, y: number, size: number, radius: number) {
@@ -16,12 +14,9 @@ function roundedSquare(x: number, y: number, size: number, radius: number) {
 }
 
 function drawCode(href: string) {
-  const candidates = whatsappQrCandidates(href);
-  let qr = encode(candidates[0], { ecc: "M", border: 0 });
-  for (const candidate of candidates.slice(1)) {
-    if (qr.version <= maximumComfortableVersion) break;
-    qr = encode(candidate, { ecc: "M", border: 0 });
-  }
+  const selected = selectWhatsAppQr(href);
+  if (!selected) return null;
+  const { qr } = selected;
 
   const { size, data } = qr;
   // An odd-sized clear square in the middle, about a fifth of the width.

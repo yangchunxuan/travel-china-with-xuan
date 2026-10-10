@@ -1,1120 +1,768 @@
 /*
- * /services/full-trip-support/. The services hub's Grok language: white page,
- * #f9f8f6 tiles, ink #0a0a0a, editorial headlines, 44px pills. The hero's
- * signature is an ink panel listing what we can take on; its rows settle in
- * turn on load. Below the fold each section reveals once (RevealOnce): the
- * steps' line draws through the four dots, the written-confirmation ticks
- * arrive one by one. Every movement is opacity/transform only, and reduced
- * motion shows the finished state.
+ * /services/full-trip-support/, set in the mobile menu's language
+ * (HomegroundHeader.module.css below 1180px): white ground, large serif
+ * words at weight 400, #6b6b66 notes in small sans, #e7e5df hairlines, the
+ * rust underline that draws from the left, and one way forward marked by a
+ * thin arrow that lengthens. Nothing is boxed, filled, pilled or given an
+ * icon. The brief is a sentence with blanks; each section is a heading with a
+ * plain list beside it; the questions unfold in place, one at a time, and
+ * quiet the others while open. Motion is the menu's: things rise 12px and
+ * fade in, one after another, on one easing. Reduced motion shows the
+ * finished state.
  */
 .page {
-  --ink: #0a0a0a;
-  --muted: rgb(10 10 10 / 62%);
-  --rule: rgb(10 10 10 / 10%);
-  --tile: #f9f8f6;
-  --warm: #f2f1ef;
-  --paper: #fff;
-  --accent: #a84731;
+  --ink: var(--hg-color-ink, #141413);
+  --muted: #6b6b66;
+  --dim: #938f87;
+  --rule: #e7e5df;
+  --blank: #c9c6bd;
+  --draw: linear-gradient(90deg, #d8d8d1, var(--hg-color-rust, #a74731) 70%, #e0a58f);
   --focus: var(--hg-color-focus, #b14f37);
-  --content: 77rem;
-  --gutter: 1.5rem;
-  --section: 6rem;
-  --pill: 2.75rem;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  background: var(--paper);
+  --display: var(--hg-editorial, Georgia, "Times New Roman", serif);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --content: 72rem;
+  --gutter: clamp(1.25rem, 6vw, 4rem);
+  --section: clamp(4rem, 9vw, 7rem);
+  background: #fff;
   color: var(--ink);
   min-height: 100vh;
 }
 
-.page main > * {
+.main > * {
   padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
 }
 
-.page h1,
-.page h2 {
-  font-family: var(--hg-editorial);
+.main :where(h1, h2, h3) {
+  font-family: var(--display);
   font-weight: 400;
-  letter-spacing: -0.03em;
-  text-wrap: balance;
-}
-
-.page h2 {
-  font-size: clamp(2rem, 3.6vw, 2.875rem);
-  line-height: 1.08;
-  margin: 0 0 2rem;
-}
-
-.page h3 {
-  font-size: 1.0625rem;
-  font-weight: 620;
-  line-height: 1.35;
   margin: 0;
 }
 
-.page :where(a, summary, input, textarea, button):focus-visible {
+.main :where(p, ul, ol) {
+  margin: 0;
+}
+
+.main :where(ul, ol) {
+  list-style: none;
+  padding: 0;
+}
+
+.main :where(a, summary, button):focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
-.eyebrow {
-  color: var(--muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.4;
-  margin: 0;
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero: the headline, one sentence, the brief ---------- */
 
 .hero {
-  padding-block: clamp(1.5rem, 3vw, 2.5rem) var(--section);
+  padding-block: clamp(1.25rem, 3vw, 2rem) var(--section);
 }
 
 .breadcrumb ol {
+  color: var(--muted);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0 0 clamp(2rem, 4vw, 3.5rem);
-  padding: 0;
+  font-size: 0.8125rem;
+  gap: 0.25rem 0.5rem;
+  line-height: 1.4;
 }
 
 .breadcrumb li {
-  align-items: center;
-  color: var(--muted);
   display: flex;
-  font-size: 0.8125rem;
   gap: 0.5rem;
 }
 
 .breadcrumb a {
-  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  transition: color 250ms var(--ease);
+}
+
+.breadcrumb a:hover {
   color: var(--ink);
-  display: inline-flex;
-  min-height: 2.75rem;
-  text-underline-offset: 0.25rem;
 }
 
-.heroGrid {
-  align-items: stretch;
-  display: grid;
-  gap: 2.5rem clamp(2.5rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+.hero h1 {
+  font-size: clamp(2.375rem, 8.4vw, 4.75rem);
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+  text-wrap: balance;
 }
 
-.heroCopy {
-  display: flex;
-  flex-direction: column;
-}
-
-.heroCopy h1 {
-  font-size: clamp(2.75rem, 5.6vw, 4.75rem);
-  line-height: 1.02;
-  margin: 1rem 0 0;
-}
-
-.heroCopy h1 > span {
+.hero h1 span {
   display: block;
 }
 
 .lede {
   color: var(--muted);
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  margin: 1.5rem 0 0;
-  max-width: 38rem;
-  text-wrap: pretty;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.6;
+  margin-block-start: clamp(1.125rem, 2vw, 1.5rem);
+  max-inline-size: 30rem;
+  text-wrap: balance;
 }
 
-.heroActions {
-  align-items: center;
+/* Everything in the hero arrives the way the menu's rows do. */
+.hero h1 span,
+.lede,
+.clause,
+.sendRow,
+.fine {
+  animation: rise 650ms var(--ease) both;
+  animation-delay: calc(60ms + var(--n, 0) * 50ms);
+}
+
+.hero h1 span:nth-child(2) { --n: 1; }
+.lede { --n: 2; }
+.clause:nth-of-type(1) { --n: 3; }
+.clause:nth-of-type(2) { --n: 4; }
+.clause:nth-of-type(3) { --n: 5; }
+.clause:nth-of-type(6) { --n: 6; }
+.clause:nth-of-type(7) { --n: 7; }
+.clause:nth-of-type(8) { --n: 8; }
+.sendRow { --n: 9; }
+.fine { --n: 10; }
+
+/* ---------- The brief: a sentence with blanks ---------- */
+
+.brief {
+  margin-block-start: clamp(2.5rem, 4.5vw, 3.5rem);
+  max-inline-size: 50rem;
+  scroll-margin-top: 7rem;
+}
+
+.sentence {
+  column-gap: 0.45em;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin: 2rem 0 3rem;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 3.3vw, 2.25rem);
+  /* Tall lines, so every blank is a comfortable thing to tap. */
+  line-height: 1.85;
 }
 
-.primaryButton,
-.secondaryButton {
-  align-items: center;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  box-sizing: border-box;
+.clause {
+  align-items: baseline;
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-inline-size: 100%;
+  transition: color 350ms var(--ease);
+  white-space: nowrap;
+}
+
+/* The space sits after each piece, so a clause that wraps starts flush; pieces the template joins sit together. */
+.clause > * {
+  margin-inline-end: 0.3em;
+}
+
+.clause > :last-child,
+.clause > :has(+ .hug) {
+  margin-inline-end: 0;
+}
+
+/* The clauses for cities and "anything else" take a whole line: the blank is everything after the words. */
+.clause.wide {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: nowrap;
+  white-space: normal;
+}
+
+.clause.wide > :first-child {
+  flex: none;
+  white-space: nowrap;
+}
+
+.clause.wide > :last-child {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+/* While one blank is being filled, or a word's choices are open, the other clauses step back. */
+.sentence:has(:is(input, textarea):focus) .clause:not(:focus-within),
+.sentence:has(.tray[data-open="true"]) .clause:not([data-choosing]) {
+  color: var(--dim);
+}
+
+.blank,
+.lines,
+.pick {
+  position: relative;
+}
+
+/* An open blank: the hidden twin wraps as the words do and sets the height. */
+.lines {
+  display: grid;
+}
+
+.lines > span,
+.lines > textarea {
+  font: inherit;
+  grid-area: 1 / 1;
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+  padding: 0 0.2em;
+  white-space: pre-wrap;
+}
+
+.lines > span {
+  visibility: hidden;
+}
+
+.lines > textarea {
+  background: none;
+  block-size: 100%;
+  border: 0;
+  border-radius: 0;
+  color: var(--ink);
+  inline-size: 100%;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+}
+
+/* Guidance inside an empty blank: small, grey and sans, so it is never taken for an answer. */
+.blank i,
+.lines i,
+.blank input::placeholder,
+.lines textarea::placeholder {
+  color: var(--muted);
+  font-family: var(--sans, system-ui, sans-serif);
+  font-size: 0.62em;
+  font-style: normal;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+/* The smaller words keep the sentence's line, so they sit on its baseline. */
+.lines textarea::placeholder {
+  line-height: calc(1.85 / 0.62);
+}
+
+.blank {
+  display: inline-grid;
+  min-inline-size: 2.75em;
+}
+
+.blank:has(input[name="budget"]) {
+  min-inline-size: 4.5em;
+}
+
+.blank > span,
+.blank > input {
+  grid-area: 1 / 1;
+  padding-inline: 0.2em;
+}
+
+.blank > span {
+  visibility: hidden;
+  white-space: pre;
+}
+
+.blank > input {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--ink);
+  font: inherit;
+  /* No width of its own: the hidden twin beside it sets the blank's width. */
+  inline-size: 0;
+  margin: 0;
+  min-inline-size: 100%;
+  outline: none;
+  padding-block: 0;
+  text-align: center;
+}
+
+/* A blank is a hairline; the menu's underline draws over it while it has focus. */
+.blank::before,
+.blank::after,
+.lines::before,
+.lines::after,
+.pick::before,
+.pick::after {
+  background: var(--blank);
+  block-size: 1px;
+  content: "";
+  inset-block-end: 0.3em;
+  inset-inline: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.blank::after,
+.lines::after,
+.pick::after {
+  background: var(--draw);
+  block-size: 2px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 500ms var(--ease);
+}
+
+.blank:focus-within::after,
+.lines:focus-within::after,
+.pick:has(button:focus-visible)::after,
+.pick[data-open="true"]::after {
+  transform: scaleX(1);
+}
+
+/* A word that can be changed: it looks like the sentence, with a small chevron; no box, no system menu. */
+.pick {
+  display: inline-flex;
+}
+
+.pick button {
+  align-items: baseline;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 0.9375rem;
-  font-weight: 550;
-  gap: 0.625rem;
-  justify-content: center;
+  gap: 0.25em;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pick i {
+  block-size: 0.3em;
+  border-block-end: 1px solid currentColor;
+  border-inline-end: 1px solid currentColor;
+  flex: none;
+  inline-size: 0.3em;
+  margin-inline-end: 0.12em;
+  opacity: 0.55;
+  transform: translateY(-0.3em) rotate(45deg);
+  transition: transform 350ms var(--ease);
+}
+
+.pick[data-open="true"] i {
+  transform: translateY(-0.1em) rotate(225deg);
+}
+
+/* Its choices unfold in place under the line, as a section of the menu does. */
+.tray {
+  display: grid;
+  flex: 1 1 100%;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 450ms var(--ease);
+}
+
+.tray[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.0625rem;
+  gap: 0 1.5rem;
   line-height: 1.3;
-  min-height: 3rem;
-  padding: 0.75rem 1.375rem;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 150ms ease;
+  min-block-size: 0;
+  overflow: hidden;
 }
 
-.primaryButton {
-  background: var(--ink);
-  color: var(--paper);
+.choices button {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  min-block-size: 2.75rem;
+  opacity: 0;
+  outline: none;
+  padding: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease), color 250ms var(--ease);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.secondaryButton {
-  background: var(--paper);
+.tray[data-open="true"] .choices button {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(120ms + var(--i, 0) * 30ms), calc(120ms + var(--i, 0) * 30ms), 0ms;
+}
+
+.choices button span {
+  background-image: var(--draw);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  padding-block-end: 0.2em;
+  transition: background-size 400ms var(--ease);
+}
+
+.choices button:is(:hover, :focus-visible, [aria-checked="true"]) {
   color: var(--ink);
 }
 
-.primaryButton svg {
-  transition: transform 300ms var(--ease);
+.choices button:is(:hover, :focus-visible, [aria-checked="true"]) span {
+  background-size: 100% 1.5px;
+}
+
+/* ---------- The one way to send: words, then a thin arrow ---------- */
+
+.sendRow {
+  border-block-start: 1px solid var(--rule);
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+.page .send {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--display);
+  font-size: clamp(1.125rem, 1.7vw, 1.375rem);
+  font-weight: 400;
+  gap: 1rem;
+  inline-size: 100%;
+  justify-content: space-between;
+  letter-spacing: 0;
+  line-height: 1.3;
+  min-block-size: 4rem;
+  padding: 0;
+  position: relative;
+  text-align: start;
+  text-decoration: none;
+}
+
+.page .send:hover {
+  background: none;
+}
+
+.page .send svg {
+  display: none;
+}
+
+.page .send::after {
+  background: currentColor;
+  block-size: 1px;
+  content: "";
+  flex: none;
+  inline-size: 2.625rem;
+  transition: inline-size 300ms var(--ease);
+}
+
+.page .send::before {
+  block-size: 7px;
+  border-block-start: 1px solid currentColor;
+  border-inline-end: 1px solid currentColor;
+  content: "";
+  inline-size: 7px;
+  inset-block-start: calc(50% - 3.5px);
+  inset-inline-end: 0;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.page .send:is(:hover, :focus-visible)::after {
+  inline-size: 3.375rem;
+}
+
+.fine {
+  border-block-start: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.9;
+  padding-block-start: 0.75rem;
+}
+
+/* Each sentence stays whole: a line never ends inside one when the next line has room for it. */
+.fine span {
+  display: inline-block;
+  margin-inline-end: 0.75em;
+}
+
+.fine .textLink {
+  margin-inline-end: 1rem;
+  white-space: nowrap;
 }
 
 .textLink {
-  align-items: center;
   color: var(--ink);
-  display: inline-flex;
-  font-size: 0.9375rem;
-  min-height: 2.75rem;
-  text-underline-offset: 0.25rem;
+  text-decoration: underline;
+  text-decoration-color: var(--blank);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 250ms var(--ease);
 }
 
-/* Three facts on one hairline row, at the foot of the copy column. */
-.heroFacts {
-  border-top: 1px solid var(--rule);
+.textLink:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- Sections: a heading, and a plain list beside it ---------- */
+
+.block {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: auto 0 0;
-  padding-top: 1.5rem;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  padding-block-end: var(--section);
+  scroll-margin-top: 6rem;
 }
 
-.heroFacts dt {
-  color: var(--muted);
-  font-size: 0.8125rem;
+.block h2 {
+  font-size: clamp(1.625rem, 2.6vw, 2.125rem);
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  text-wrap: balance;
 }
 
-.heroFacts dd {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 0.35rem 0 0;
-}
-
-/* The ink panel: what we can take on. */
-.handles {
-  background: var(--ink);
-  border-radius: 1.25rem;
-  color: var(--hg-color-on-dark, #fff);
-  display: flex;
-  flex-direction: column;
-  padding: 1.75rem;
-}
-
-.handlesTitle {
-  color: rgb(255 255 255 / 60%);
-  font-size: 0.875rem;
-  margin: 0 0 0.75rem;
-}
-
-.handles ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.handles li {
-  align-items: center;
-  border-top: 1px solid rgb(255 255 255 / 10%);
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  padding-block: 0.85rem;
-}
-
-.handles li:first-child {
-  border-top: 0;
-}
-
-.handleIcon {
-  align-items: center;
-  background: rgb(255 255 255 / 7%);
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: 0.6rem;
-  block-size: 2.5rem;
-  box-sizing: border-box;
-  display: flex;
-  inline-size: 2.5rem;
-  justify-content: center;
-}
-
-.handleText {
-  display: grid;
-  gap: 0.2rem;
-}
-
-.handleText strong {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.handleText span {
-  color: rgb(255 255 255 / 62%);
-  font-size: 0.875rem;
-  line-height: 1.45;
-}
-
-.pick {
-  border-top: 1px solid rgb(255 255 255 / 10%);
-  color: rgb(255 255 255 / 62%);
-  font-size: 0.875rem;
-  line-height: 1.55;
-  margin: auto 0 0;
-  padding-top: 1.25rem;
-}
-
-.handles ul + .pick {
-  margin-top: 1rem;
-}
-
-.pick strong {
-  color: var(--hg-color-on-dark, #fff);
-  font-weight: 600;
-}
-
-.compareJump {
-  align-items: center;
-  align-self: start;
-  color: var(--hg-color-on-dark, #fff);
-  display: inline-flex;
-  font-size: 0.875rem;
-  font-weight: 550;
-  gap: 0.45rem;
-  margin-top: 0.5rem;
-  min-height: 2.75rem;
-  text-underline-offset: 0.2rem;
-}
-
-.compareJump svg {
-  transition: transform 300ms var(--ease);
-}
-
-.compare {
-  scroll-margin-top: 5rem;
-}
-
-/*
- * Wide screens: the panel is in the first view, so it fades in on load and its
- * rows settle in turn. Phones get the same rows settling when the panel
- * scrolls into view (the [data-reveal] rules below).
- */
-@media (min-width: 61.3125rem) and (prefers-reduced-motion: no-preference) {
-  .handles li {
-    animation: settle 560ms var(--ease) both;
-    animation-delay: calc(140ms + var(--i, 0) * 45ms);
-  }
-}
-
-@keyframes settle {
-  from {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
-}
-
-.page .handles[data-reveal="pending"] {
-  transform: none;
-}
-
-.page .handles[data-reveal="in"] {
-  transition: opacity 400ms ease-out;
-}
-
-.handles[data-reveal="pending"] li {
-  opacity: 0;
-  transform: translateY(0.75rem);
-}
-
-.handles[data-reveal="in"] li {
-  transition:
-    opacity 500ms var(--ease),
-    transform 560ms var(--ease);
-  transition-delay: calc(120ms + var(--i, 0) * 45ms);
-}
-
-/* ---------- One-shot reveal (RevealOnce) ---------- */
-
-.page [data-reveal="pending"] {
-  opacity: 0;
-  transform: translateY(1.75rem);
-}
-
-.page [data-reveal="in"] {
-  transition:
-    opacity 700ms var(--ease),
-    transform 800ms var(--ease);
-}
-
-/* ---------- How it works ---------- */
-
-.steps {
-  padding-block: 0 var(--section);
-  scroll-margin-top: 5rem;
-}
-
-.steps ol {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-/* The line through the four dots; it draws when the section arrives. */
-/* The line runs from dot 1 to dot 4 (4 columns, 2rem gaps) and draws as the dots arrive. */
-.steps ol::before {
-  background: var(--rule);
-  block-size: 1px;
-  content: "";
-  inset-block-start: 1.125rem;
-  inset-inline: 1.125rem calc((100% - 6rem) / 4 - 1.125rem);
-  position: absolute;
-  transform-origin: left center;
-}
-
-.steps[data-reveal="pending"] ol::before {
-  transform: scaleX(0);
-}
-
-.steps[data-reveal="in"] ol::before {
-  transition: transform 900ms cubic-bezier(0.45, 0, 0.25, 1) 200ms;
-}
-
-.stepDot {
-  align-items: center;
-  background: var(--ink);
-  border-radius: 999px;
-  color: var(--paper);
-  display: flex;
-  font-size: 0.8125rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  height: 2.25rem;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  position: relative;
-  width: 2.25rem;
-}
-
-.steps li p {
-  color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin: 0.6rem 0 0;
-  text-wrap: pretty;
-}
-
-/* Each dot pops as the line reaches it; its text follows a beat later. */
-.steps[data-reveal="pending"] .stepDot {
-  opacity: 0;
-  transform: scale(0.6);
-}
-
-.steps[data-reveal="pending"] li > :not(.stepDot) {
-  opacity: 0;
-  transform: translateY(0.5rem);
-}
-
-.steps[data-reveal="in"] .stepDot {
-  transition:
-    opacity 250ms ease-out,
-    transform 300ms var(--ease);
-  transition-delay: calc(200ms + var(--i, 0) * 225ms);
-}
-
-.steps[data-reveal="in"] li > :not(.stepDot) {
-  transition:
-    opacity 500ms var(--ease),
-    transform 560ms var(--ease);
-  transition-delay: calc(280ms + var(--i, 0) * 225ms);
-}
-
-/* ---------- Written before payment ---------- */
-
-.written {
-  align-items: start;
-  display: grid;
-  gap: 2.5rem clamp(2.5rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  padding-block: 0 var(--section);
-}
-
-.written h2 {
-  margin-bottom: 1rem;
-}
-
-.written h2 > span {
+.block h2 span {
   display: block;
 }
 
-.written > div:first-child > p {
+.block h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.block p {
   color: var(--muted);
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
-  margin: 0;
 }
 
-.noOnlinePayment {
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.55;
-  margin: 1rem 0 0;
-}
-
-.writtenList {
-  background: var(--tile);
-  border-radius: 1.25rem;
+/* What the whole trip covers: set like the menu's entries. */
+.covers {
   display: grid;
-  gap: 0;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  list-style: none;
-  margin: 0;
-  padding: 0.75rem 1.5rem;
+  gap: 1.375rem 3rem;
 }
 
-.writtenList li {
-  align-items: baseline;
-  border-top: 1px solid var(--rule);
-  display: grid;
-  font-size: 0.9375rem;
-  gap: 0.75rem;
-  grid-template-columns: 1rem minmax(0, 1fr);
-  line-height: 1.45;
-  padding: 1rem 0.5rem 1rem 0;
-}
-
-.writtenList li:nth-child(-n + 2) {
-  border-top: 0;
-}
-
-/* An odd count ends on one full-width row instead of a ragged half row. */
-.writtenList li:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-}
-
-.writtenList svg {
-  color: var(--accent);
-  transform: translateY(0.15rem);
-}
-
-.written[data-reveal="pending"] .writtenList li {
-  opacity: 0;
-}
-
-.written[data-reveal="in"] .writtenList li {
-  transition: opacity 500ms ease;
-  transition-delay: calc(300ms + var(--i, 0) * 60ms);
-}
-
-/* ---------- Which service fits ---------- */
-
-.compare {
-  padding-block: 0 var(--section);
-}
-
-.compare ul {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.compare li > a,
-.compareCard {
-  background: var(--tile);
-  border-radius: 1rem;
-  box-sizing: border-box;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  isolation: isolate;
-  padding: 1.75rem 1.5rem 1.5rem;
-  position: relative;
-  text-decoration: none;
-  transition: background-color 150ms ease;
-}
-
-.compare li[data-current] .compareCard {
-  background: var(--ink);
-  color: var(--hg-color-on-dark, #fff);
-}
-
-.compare h3 {
-  font-family: var(--hg-editorial);
-  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-
-.compare p {
-  color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  margin: 0.75rem 0 1.5rem;
-  text-wrap: pretty;
-}
-
-.compare li[data-current] p {
-  color: rgb(255 255 255 / 66%);
-}
-
-.compareAction,
-.compareLinks a {
-  align-items: center;
-  color: var(--ink);
-  display: inline-flex;
-  font-size: 0.875rem;
-  font-weight: 550;
-  gap: 0.5rem;
-  margin-top: auto;
-  min-height: 2.75rem;
-}
-
-.compareLinks {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-}
-
-.compareLinks a {
-  margin-top: 0;
-  text-decoration: none;
-}
-
-.compareAction svg,
-.compareLinks svg,
-.compareCta svg {
-  transition: transform 300ms var(--ease);
-}
-
-/* The current card leads to the trip brief: a white pill on ink. */
-.compareCta {
-  align-items: center;
-  align-self: start;
-  background: var(--paper);
-  border-radius: 999px;
-  color: var(--ink);
-  display: inline-flex;
-  font-size: 0.875rem;
-  font-weight: 550;
-  gap: 0.6rem;
-  margin-top: auto;
-  min-height: var(--pill);
-  padding: 0 1.25rem;
-  text-decoration: none;
-}
-
-.badge {
-  align-self: start;
-  border: 1px solid rgb(255 255 255 / 28%);
-  border-radius: 999px;
-  font-size: 0.75rem;
-  margin-bottom: 1rem;
-  padding: 0.2rem 0.65rem;
-}
-
-/* Cursor light (PointerSpotlight writes --spot-x / --spot-y). */
-.compare [data-spotlight]::before {
-  background: radial-gradient(20rem circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(255 255 255 / 85%), transparent 65%);
-  border-radius: inherit;
-  content: "";
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  transition: opacity 300ms ease;
-  z-index: -1;
-}
-
-/* ---------- Trip brief ---------- */
-
-.enquirySection {
-  align-items: start;
-  display: grid;
-  gap: 2.5rem clamp(2.5rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  padding-block: 0 var(--section);
-  scroll-margin-top: 5rem;
-}
-
-/* The heading stays beside the long form while it scrolls. */
-.enquiryIntro {
-  position: sticky;
-  top: 6rem;
-}
-
-.enquiryIntro h2 {
-  margin: 0.75rem 0 1rem;
-}
-
-.enquiryIntro > p:last-child {
-  color: var(--muted);
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.enquiry {
-  background: var(--tile);
-  border-radius: 1.25rem;
-  display: grid;
-  gap: 1.75rem;
-  padding: clamp(1.25rem, 3vw, 2rem);
-}
-
-.enquiryForm {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.field {
-  display: grid;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  gap: 0.5rem;
-}
-
-.field input,
-.field textarea {
-  appearance: none;
-  background: var(--paper);
-  border: 1px solid #d8d8d8;
-  border-radius: 0.625rem;
-  box-sizing: border-box;
-  color: #171717;
-  font: 400 1rem/1.4 var(--sans, system-ui, sans-serif);
-  min-height: 2.875rem;
-  padding: 0.6875rem 0.8125rem;
-  width: 100%;
-}
-
-.field textarea {
-  resize: vertical;
-}
-
-.fieldGroup .hint {
-  margin-top: 0.5rem;
-}
-
-.field input.short {
-  max-width: 9rem;
-}
-
-.optional {
-  color: var(--muted);
-  font-size: 0.75rem;
-  font-weight: 400;
-}
-
-.dates {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.fieldRow {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.checkboxRow {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  font-size: 0.9375rem;
-  gap: 0.625rem;
-  min-height: 2.75rem;
-}
-
-.checkboxRow input {
-  accent-color: var(--ink);
-  height: 1.0625rem;
-  width: 1.0625rem;
-}
-
-.needs {
-  border: 0;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-}
-
-.needs legend {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  padding: 0;
-}
-
-.hint {
-  color: var(--muted);
+.covers p,
+.other p {
   font-size: 0.8125rem;
   line-height: 1.5;
-  margin: 0.25rem 0 0;
+  margin-block-start: 0.25rem;
 }
 
-.needs .hint {
-  margin-bottom: 0.75rem;
-}
-
-/* Equal columns: 3 + 3 for the short Chinese and Korean names, 2 + 2 + 2 for English. */
-.chips {
+.steps li {
+  border-block-start: 1px solid var(--rule);
   display: grid;
-  gap: 0.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  padding-block: 1.25rem;
 }
 
-.page:lang(en) .chips {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.chip {
-  cursor: pointer;
-  position: relative;
-}
-
-.chip input {
-  height: 1px;
-  opacity: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.chip span {
-  align-items: center;
-  background: var(--paper);
-  box-sizing: border-box;
-  width: 100%;
-  border: 1px solid rgb(10 10 10 / 14%);
-  border-radius: 999px;
-  display: inline-flex;
-  font-size: 0.9375rem;
-  gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0 1rem 0 0.875rem;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease;
-}
-
-.chip input:checked + span {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
-
-.chip input:focus-visible + span {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-}
-
-.send {
-  border-top: 1px solid var(--rule);
-  padding-top: 1.5rem;
-}
-
-.sendTitle {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
-}
-
-.sendButtons {
-  display: grid;
-  gap: 0.625rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.sendButtons[data-kakao-first] > :first-child {
-  grid-column: 1 / -1;
-}
-
-.sendLinks {
+.stepNumber {
   color: var(--muted);
-  font-size: 0.875rem;
-  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.625rem;
 }
 
-.sendLinks a {
-  align-items: center;
-  color: var(--ink);
-  display: inline-flex;
-  min-height: 2.75rem;
-  text-underline-offset: 0.2rem;
+.steps p {
+  margin-block-start: 0.375rem;
+  max-inline-size: 38rem;
 }
 
-/* ---------- Questions ---------- */
+.written {
+  margin-block-start: 1.25rem;
+}
+
+.written li {
+  border-block-start: 1px solid var(--rule);
+  font-family: var(--display);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  padding-block: 0.75rem;
+}
+
+.block .small {
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  padding-block-start: 0.875rem;
+}
+
+/* ---------- Questions: unfold in place, one at a time ---------- */
 
 .faq {
-  display: grid;
-  gap: 2rem clamp(2.5rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  padding-block: 0 var(--section);
-}
-
-.faq > div {
-  border-top: 1px solid var(--rule);
+  interpolate-size: allow-keywords;
 }
 
 .faq details {
-  border-bottom: 1px solid var(--rule);
+  border-block-start: 1px solid var(--rule);
 }
 
 .faq summary {
+  align-items: center;
   cursor: pointer;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
   list-style: none;
-  padding: 1.125rem 2.25rem 1.125rem 0;
-  position: relative;
+  min-block-size: 2.75rem;
+  padding-block: 1.125rem;
+  transition: color 350ms var(--ease);
 }
 
 .faq summary::-webkit-details-marker {
   display: none;
 }
 
+.faq summary span {
+  background-image: var(--draw);
+  background-position: 0 96%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 500ms var(--ease);
+}
+
+/* A thin plus that turns into a cross, as the menu button's bars do. */
 .faq summary::after {
-  content: "+";
-  font-size: 1.25rem;
-  inset-block-start: 1rem;
-  inset-inline-end: 0.25rem;
-  position: absolute;
-  transition: transform 300ms var(--ease);
+  background:
+    linear-gradient(currentColor, currentColor) 50% 50% / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) 50% 50% / 1px 100% no-repeat;
+  block-size: 0.75rem;
+  content: "";
+  flex: none;
+  inline-size: 0.75rem;
+  opacity: 0.6;
+  transition: transform 350ms var(--ease);
 }
 
 .faq details[open] summary::after {
   transform: rotate(45deg);
 }
 
-.faq summary h3 {
-  display: inline;
+.faq details[open] summary span {
+  background-size: 100% 1.5px;
+}
+
+.faq:has(details[open]) details:not([open]) summary {
+  color: var(--muted);
+}
+
+.faq details::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 500ms var(--ease), content-visibility 500ms allow-discrete;
+}
+
+.faq details[open]::details-content {
+  block-size: auto;
 }
 
 .faq details p {
-  color: var(--muted);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  margin: 0 0 1.25rem;
+  max-inline-size: 40rem;
+  padding-block-end: 1.375rem;
 }
 
-/* ---------- Hover and press ---------- */
+.faq details[open] p {
+  animation: rise 500ms var(--ease) 120ms both;
+}
 
-@media (hover: hover) {
-  .primaryButton:hover {
-    background: #2b2b2b;
-  }
+/* ---------- Closing note: less than the whole trip ---------- */
 
-  .primaryButton:hover svg {
-    transform: translateX(4px);
-  }
+.other {
+  display: grid;
+  gap: 1.75rem;
+}
 
-  .secondaryButton:hover,
-  .compare li > a:hover {
-    background: var(--warm);
-  }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.5rem;
+  margin-block-start: 0.625rem;
+}
 
-  .compare [data-spotlight]:hover::before {
-    opacity: 1;
-  }
+.block .links .textLink {
+  font-size: 0.875rem;
+}
 
-  .compareAction:hover svg,
-  .compareLinks a:hover svg,
-  .compareCta:hover svg {
-    transform: translateX(4px);
-  }
+/* ---------- One-shot reveal (RevealOnce): the section, then its rows ---------- */
 
-  .compareJump:hover svg {
-    transform: translateY(3px);
-  }
+.page [data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
 
-  .compareLinks a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2rem;
-  }
+.page [data-reveal="in"] {
+  transition: opacity 550ms var(--ease), transform 550ms var(--ease);
+}
 
-  .chip:hover span {
-    border-color: rgb(10 10 10 / 32%);
+.page [data-reveal="pending"] :is(.covers, .steps, .written, .other) > li {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page [data-reveal="in"] :is(.covers, .steps, .written, .other) > li {
+  transition: opacity 500ms var(--ease), transform 500ms var(--ease);
+  transition-delay: calc(140ms + var(--i, 0) * 50ms);
+}
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 40rem) {
+  .covers,
+  .written {
+    column-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.primaryButton:active,
-.secondaryButton:active,
-.compare li > a:active {
-  scale: 0.985;
+@media (min-width: 62rem) {
+  .block {
+    column-gap: 4rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
 }
 
 /* ---------- Chinese and Korean ---------- */
 
-.page[data-homeground-locale="zh"] h1,
-.page[data-homeground-locale="ko"] h1,
-.page[data-homeground-locale="zh"] h2,
-.page[data-homeground-locale="ko"] h2 {
-  letter-spacing: 0;
-  line-height: 1.2;
+.page[data-homeground-locale="zh"] .hero h1 {
+  font-size: clamp(2rem, 9.2vw, 4.25rem);
+  letter-spacing: 0.02em;
+  line-height: 1.22;
 }
 
-.page[data-homeground-locale="ko"] .heroCopy h1 {
+.page[data-homeground-locale="ko"] .hero h1 {
+  font-size: clamp(2rem, 8.4vw, 4rem);
+  letter-spacing: -0.01em;
+  line-height: 1.24;
   word-break: keep-all;
 }
 
-.page[data-homeground-locale="zh"] .compare h3,
-.page[data-homeground-locale="ko"] .compare h3 {
-  font-family: var(--sans, system-ui, sans-serif);
-  font-weight: 600;
+.page[data-homeground-locale="zh"] .block h2,
+.page[data-homeground-locale="ko"] .block h2 {
   letter-spacing: 0;
+  line-height: 1.3;
 }
 
-/* ---------- Narrow screens ---------- */
-
-@media (max-width: 61.25rem) {
-  .heroGrid,
-  .written,
-  .enquirySection,
-  .faq {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .heroActions {
-    margin-bottom: 2rem;
-  }
-
-  .enquiryIntro {
-    position: static;
-  }
-
-  .steps ol {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .steps ol::before {
-    display: none;
-  }
-
-  .compare ul {
-    grid-template-columns: minmax(0, 1fr);
-  }
+.page[data-homeground-locale="zh"] .block h2 {
+  letter-spacing: 0.02em;
 }
 
-@media (max-width: 40rem) {
-  .page {
-    --gutter: 1rem;
-    --section: 4rem;
-  }
-
-  .heroFacts,
-  .fieldRow,
-  .sendButtons,
-  .writtenList {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .writtenList li:nth-child(2) {
-    border-top: 1px solid var(--rule);
-  }
-
-  /* Phones: the dot sits beside its step on a rail that draws downward. */
-  .steps ol {
-    gap: 1.5rem;
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .steps ol::before {
-    display: none;
-  }
-
-  .steps li {
-    column-gap: 1rem;
-    display: grid;
-    grid-template-columns: 2.25rem minmax(0, 1fr);
-    grid-template-rows: minmax(2.25rem, auto) auto;
-    position: relative;
-  }
-
-  /* Each step's connector runs from its dot to the next dot, drawn in turn. */
-  .steps li:not(:last-child)::before {
-    background: var(--rule);
-    content: "";
-    inset-block: 2.25rem -1.5rem;
-    inset-inline-start: 1.125rem;
-    inline-size: 1px;
-    position: absolute;
-    transform-origin: center top;
-  }
-
-  .steps[data-reveal="pending"] li::before {
-    transform: scaleY(0);
-  }
-
-  .steps[data-reveal="in"] li::before {
-    transition: transform 360ms cubic-bezier(0.45, 0, 0.25, 1);
-    transition-delay: calc(300ms + var(--i, 0) * 225ms);
-  }
-
-  .stepDot {
-    align-self: center;
-    grid-row: 1;
-    margin-bottom: 0;
-  }
-
-  .steps h3 {
-    align-self: center;
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .steps li p {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  /* Two columns of compact choices; a chosen one never looks like a send button. */
-  .chips {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .chip span {
-    border-radius: 0.875rem;
-    line-height: 1.25;
-    padding-block: 0.5rem;
-  }
-
-  .sendLinks {
-    display: grid;
-  }
-
-  .sendLinks > span {
-    display: none;
-  }
-
-  .handles {
-    padding: 1.25rem;
-  }
-
-  .handles li {
-    gap: 0.85rem;
-  }
+.page[data-homeground-locale="ko"] :is(.block h2, .block h3, .lede, .block p) {
+  word-break: keep-all;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryButton,
-  .primaryButton svg,
-  .secondaryButton,
-  .chip span,
-  .compare li > a,
-  .faq summary::after {
-    transition: none;
+  .main *,
+  .main *::before,
+  .main *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
