@@ -34,6 +34,7 @@ import {
   type HomegroundPrimaryNavigationItem,
   type HomegroundSubmenuId,
 } from "../lib/homegroundNavigationModel";
+import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
   isPrivateTourInquirySlug,
@@ -752,10 +753,25 @@ export function HomegroundHeader({
         >
           <div>
             <ul aria-label={label} className={styles.mobileSubmenu} data-menu={menuId}>
+              {menuId === "services" && (
+                <li style={{ "--entry-index": 0 } as CSSProperties}>
+                  <MenuLink
+                    aria-current={pathname === item.href ? "page" : undefined}
+                    href={item.href}
+                    onClick={() => {
+                      trackNavigationClick(item.id, "mobile-services-menu");
+                      close();
+                    }}
+                  >
+                    <span className={styles.mobileEntryLabel}>{getTravelServicesHubCopy(locale).overview}</span>
+                    <span className={styles.mobileEntryDescription}>{item.description}</span>
+                  </MenuLink>
+                </li>
+              )}
               {menu.entries.map((entry, entryIndex) => (
                 <li
                   key={entry.id}
-                  style={{ "--entry-index": entryIndex } as CSSProperties}
+                  style={{ "--entry-index": entryIndex + (menuId === "services" ? 1 : 0) } as CSSProperties}
                 >
                   <MenuLink
                     aria-current={

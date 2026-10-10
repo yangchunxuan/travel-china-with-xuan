@@ -71,7 +71,7 @@ export function MenuLink({ href, children, ...props }: {
 /**
  * A desktop primary item with a menu, after x.ai's "Products" menu. Every
  * menu works the same way: the label opens the item's own page ("Services"
- * opens Full Trip Planning & Ground Support, "Destinations" the city index),
+ * opens the services overview, "Destinations" the city index),
  * and a panel beneath it lists the rows. Disclosure-navigation pattern: the
  * panel opens on hover (short intent
  * delay) or from the chevron button; a hover-opened menu that is then clicked

@@ -223,8 +223,10 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   assert.match(css, /\.navGroup\[data-open\] \.menuPanel \{[\s\S]*?visibility: visible;/);
   // Motion: lift-in panel, staggered rows, gliding highlight; all off with reduced motion.
   assert.match(css, /transition-delay: calc\(var\(--i, 0\) \* 25ms\), calc\(var\(--i, 0\) \* 25ms\), 0s;/);
-  // "Services" itself opens the full-trip page; the menu lists only the services.
-  assert.match(model, /services: \{\s*label: "服务",[\s\S]{0,120}pathSegment: "services\/full-trip-support\/"/);
+  // The primary link opens the overview; full-trip support stays in the service menu.
+  assert.match(model, /services: \{\s*label: "服务",[\s\S]{0,120}pathSegment: "services\/"/);
+  assert.match(model, /"trip-support": \{[\s\S]{0,180}pathSegment: "services\/full-trip-support\/"/);
+  assert.match(header, /menuId === "services" && \([\s\S]*?href=\{item\.href\}[\s\S]*?getTravelServicesHubCopy\(locale\)\.overview/);
   assert.doesNotMatch(menu, /allServices|servicesAll/);
   // The highlight only glides once it is showing (no sweep in from the top).
   assert.match(css, /\.menuListWrap\[data-glide\] \.menuHighlight \{/);

@@ -8,11 +8,9 @@ export type HomegroundPrimaryNavigationId =
   | "studio";
 
 /**
- * The services menu (x.ai's "Products" pattern): one primary item, with every
- * standalone service listed beneath it. The item's own link opens Full Trip
- * Planning & Ground Support, whose "Which service fits?" section also routes
- * to tours and the single services, so a separate overview page is not in
- * the way. New services join this list instead of taking another header slot.
+ * The services menu has one primary item that opens the services overview,
+ * with each standalone service (including full-trip support) listed beneath
+ * it. New services join this list instead of taking another header slot.
  */
 export type HomegroundServiceNavigationId =
   | "attraction-tickets"
@@ -142,7 +140,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       services: {
         label: "Services",
         description: "Attraction tickets, guides, private cars and full-trip support",
-        pathSegment: "services/full-trip-support/",
+        pathSegment: "services/",
       },
       guides: {
         label: "Travel Advice",
@@ -254,7 +252,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       services: {
         label: "服务",
         description: "景点代预约、导游、包车与全程规划支持",
-        pathSegment: "services/full-trip-support/",
+        pathSegment: "services/",
       },
       guides: {
         label: "实用指南",
@@ -371,7 +369,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
       services: {
         label: "서비스",
         description: "관광지 예약 대행, 가이드, 차량과 전체 여행 지원",
-        pathSegment: "services/full-trip-support/",
+        pathSegment: "services/",
       },
       guides: {
         label: "실용 가이드",
