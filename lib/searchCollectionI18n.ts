@@ -233,6 +233,7 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "china-14-day-itinerary": "plan-trip-length-city-order",
   "best-2-week-china-tour": "plan-trip-length-city-order",
   "china-2-week-tour-cost": "plan-budget-pace-decisions",
+  "china-private-tour-prices": "plan-budget-pace-decisions",
   "china-small-group-tours-2027": "plan-traveller-theme-itineraries",
   "chengdu-zhangjiajie-itinerary": "plan-trip-length-city-order",
   "guilin-yangshuo-longji-route-order": "plan-trip-length-city-order",

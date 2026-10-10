@@ -61,6 +61,7 @@ const approvedCommercialGuideIds = [
   "book-china-attraction-tickets-without-chinese-phone-number",
   "best-2-week-china-tour",
   "china-2-week-tour-cost",
+  "china-private-tour-prices",
   "china-small-group-tours-2027",
   "singapore-to-zhangjiajie-itinerary",
   "chengdu-zhangjiajie-itinerary",
