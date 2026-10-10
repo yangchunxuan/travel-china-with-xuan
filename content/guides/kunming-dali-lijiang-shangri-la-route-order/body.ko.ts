@@ -73,6 +73,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "more-planning", type: "internal-links", title: "계속 계획하기", items: [
     { label: "리장 구시가지와 수허 비교", href: "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "리장의 역할을 정한 뒤 숙소를 고르세요." },
+    { label: "다리: 고성, 얼하이 호수, 며칠 일정", href: "/ko/guides/dali-old-town-erhai-lake/", description: "무료인 곳과 유료인 곳, 사흘 일정 나누기." },
     { label: "리장: 고성 유지비, 볼거리, 며칠 일정", href: "/ko/guides/lijiang-old-town/", description: "먼저 읽기: 세계유산 세 구역, 50위안 유지비, 옥룡설산." },
     { label: "중국 철도 준비", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "여객 절차를 동선 설계와 별도로 확인하세요." },
     { label: "동선이 너무 빡빡한지 점검", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "이동과 회복에 드는 시간을 빼고 실제로 쓸 수 있는 날을 세어 보세요." },

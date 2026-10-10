@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "또 다른 도시 유적에서 물질적 증거, 복원, 도시 계획을 서로 다른 층위로 구분하세요.",
         },
         {
+          label: "뤄양과 용문석굴: 입장권과 볼거리",
+          href: "/ko/guides/luoyang-longmen-grottoes/",
+          description: "90위안 시간제 입장권, 일방향 동선, 뤄양 이틀 일정.",
+        },
+        {
           label: "소림사: 입장권, 쿵푸 공연, 가는 법",
           href: "/ko/guides/shaolin-temple/",
           description: "80위안 입장권에 포함된 것과 필요한 시간.",

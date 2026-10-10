@@ -96,6 +96,11 @@ const body = {
           "description": "Chongqing’s city sights, then a night in Wulong with the Three Natural Bridges and your choice of Fairy Mountain or Furong Cave."
         },
         {
+          "label": "Dazu Rock Carvings: tickets, Baodingshan and the day trip",
+          "href": "/guides/dazu-rock-carvings/",
+          "description": "Which two of the five sites to see, and in what order."
+        },
+        {
           "label": "China’s tiankeng: geology and public sites",
           "href": "/guides/china-tiankeng-sinkholes-explained/",
           "description": "How giant sinkholes form, and which ones you can visit."

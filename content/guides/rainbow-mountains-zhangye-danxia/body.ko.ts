@@ -140,6 +140,11 @@ const body = {
           "description": "좋은 빛 시간대의 장예 단샤, 자위관성, 그리고 둔황 3박으로 막고굴과 사막."
         },
         {
+          "label": "둔황: 막고굴, 월아천, 며칠 일정",
+          "href": "/ko/guides/dunhuang-china/",
+          "description": "무엇부터 예약할지, 표시 가격, 헷갈리는 세 역."
+        },
+        {
           "label": "베이징·시안·실크로드 15일",
           "href": "/ko/tours/beijing-xian-silk-road-15-day-private-tour/",
           "description": "베이징과 시안 다음 기차로 서쪽의 장예, 자위관, 둔황을 거쳐 신장까지."

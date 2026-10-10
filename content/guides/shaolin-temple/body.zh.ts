@@ -92,7 +92,7 @@ const body = {
       "id": "tickets-list",
       "type": "list",
       "items": [
-        "全价门票：80 元（2025 年 7 月媒体引用的景区票务信息）。",
+        "全价门票：80 元（2025 年 7 月媒体引用的景区票务信息；2026 年 10 月去哪儿网仍是这个价）。",
         "功夫表演：包含在内。河南省政府网站写明持票游客可免费观看武术表演。",
         "2025 年 7 月报道的套票：含往返索道 180 元；含“功夫天下秀”A 区 238 元。晚上的《禅宗少林音乐大典》是另外的演出。",
         "开放时间：08:00–17:00，16:30 停止入园（2026 年 10 月携程页面）。",
@@ -125,6 +125,11 @@ const body = {
           "label": "洛阳·登封·开封 6 天私家团",
           "href": "/zh/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/",
           "description": "先到开封，去洛阳的路上看少林寺和塔林，再用一整天看龙门石窟，全程私人导游和用车。"
+        },
+        {
+          "label": "洛阳攻略：龙门石窟门票预约与看什么",
+          "href": "/zh/guides/luoyang-longmen-grottoes/",
+          "description": "90 元分时预约门票、单向游览路线，以及洛阳两天怎么安排。"
         },
         {
           "label": "中国哪些景点要提前预约",
@@ -207,6 +212,12 @@ const body = {
           "label": "少林景区：开放时间、表演、路线与优待政策",
           "url": "https://you.ctrip.com/sight/dengfeng1014/7954.html",
           "publisher": "携程",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "2026 年 10 月所列少林景区门票价格",
+          "url": "https://touch.piao.qunar.com/touch/detail.htm?id=5948",
+          "publisher": "去哪儿网",
           "reviewedAt": "2026-10-10"
         },
         {

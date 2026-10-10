@@ -108,6 +108,11 @@ const body = {
           "description": "쿤밍 2박, 다리 3박, 리장 2박. 여유 있는 설산 하루와 쿤밍으로 돌아가는 기차."
         },
         {
+          "label": "다리: 고성, 얼하이 호수, 며칠 일정",
+          "href": "/ko/guides/dali-old-town-erhai-lake/",
+          "description": "무료인 곳과 유료인 곳, 사흘 일정 나누기."
+        },
+        {
           "label": "다옌고성 vs 수허고진, 어디서 잘까",
           "href": "/ko/guides/lijiang-old-town-or-shuhe-where-to-stay/",
           "description": "짐 이동, 공항·기차역 교통, 밤 분위기, 북쪽 당일 코스."

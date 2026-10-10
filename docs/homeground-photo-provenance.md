@@ -1910,3 +1910,25 @@ Evidence boundary: the Pingyao wall photo dates from 2008 and the street photo f
 South Street, not current stalls, crowds or opening arrangements. The Shaolin gate photo dates from 2012 and shows
 the mountain gate only. People in the Pingyao street photo are small and not identifiable; a brighter street-level
 photo of the Market Tower was rejected because stallholders' faces were prominent.
+
+### Luoyang, Dunhuang, Dali and Dazu guide photos (October 10, 2026)
+
+Six photographs from the owner's organised `/Users/yangchunxuan/Desktop/Facebook图片素材` library and two from
+Wikimedia Commons (downloaded on 2026-10-10 at the owner's request). Each derivative is resized (heroes also cropped
+to 16:10) and converted to WebP without EXIF. Nothing is written on any of them.
+
+| Use | Source; source SHA-256 | Derivative; SHA-256 |
+| --- | --- | --- |
+| `luoyang-longmen-grottoes` — hero — Fengxian Temple | `洛阳优选素材/01_龙门石窟/六妹素材 (9).jpg`; `14e432744e0e7b8ed824996117f26fb7b97949863c2c9d2ef6f3863d567fa18b` | `public/images/guides/luoyang-longmen-grottoes/hero-1600.webp`, 1600 × 1000; `f0ed614b06c55d2a47f255a17bec237ff1bbbb0b0307179ddd5b7d37199dd634` |
+| `luoyang-longmen-grottoes` — figure — West Hill across the Yi River | `洛阳优选素材/01_龙门石窟/河南洛阳龙门石窟远景.jpg`; `9f97ad0241a09bbad29670cf7c8dda02d91e86e3d251618ae70a697d193cbef3` | `public/images/guides/luoyang-longmen-grottoes/west-hill-1600.webp`, 1600 × 900; `54d01a699aa32a25cb98576e001a7fa1f6b1a206573991b97b8fd79f6af29973` |
+| `dali-old-town-erhai-lake` — hero — Three Pagodas and Cangshan | `大理优选素材/04_崇圣寺三塔与寺院/大理三塔.jpg`; `a0d22318e7ff7e3535252327a47efa03308e64e3922ff782f8c56bd1c13df0b9` | `public/images/guides/dali-old-town-erhai-lake/hero-1600.webp`, 1600 × 1000; `5f02e98253eb87783db50d2f99fbb59abc3cbfbb4e850b3ded09a037838087d1` |
+| `dali-old-town-erhai-lake` — figure — Old Town roofs | `大理优选素材/03_大理古城与夜景/古城大理.jpg`; `387e87bada263c99e8d323bd50fd6a0f157e1d4c6baf873ffc550bc9f1f3b798` | `public/images/guides/dali-old-town-erhai-lake/old-town-1600.webp`, 1600 × 1000; `083e6c504f503c25f1e5340c96ed9263395b3b93b93ffc4d69f2ed027dbf59f1` |
+| `dali-old-town-erhai-lake` — figure — Erhai Lake | `大理优选素材/01_洱海湖景与苍山/大理苍山洱海风光.jpg`; `3f89e671a0cba4f3c17851d55f77f9cb77db54b8ff23a5c1d1ebe8f8d156dc00` | `public/images/guides/dali-old-town-erhai-lake/erhai-1600.webp`, 1600 × 1067; `6b785dd0e33df6c1cadc8efea280ffd8b9bcd1ff496a0334d2d4fb520ce52d35` |
+| `dazu-rock-carvings` — hero — Baodingshan carvings | `重庆优选素材/04_重庆人文与古镇/大足石刻_02.jpg`; `2fd16ea9856e72180080742b811f377ba176d795a9b4dae501610ee78c23e8b4` | `public/images/guides/dazu-rock-carvings/hero-1600.webp`, 1600 × 1000; `6b9546a78fae3e69b78e079003b7a31d5e9c9443ed7c3f85c5bf6e25f4961d2a` |
+| `dunhuang-china` — hero — Crescent Lake | [Crescent Lake from the Singing Sand Dunes (20230918101214).jpg](https://commons.wikimedia.org/wiki/File:Crescent_Lake_from_the_Singing_Sand_Dunes_(20230918101214).jpg), N509FZ, 2023-09-18, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); 6601 × 4401; `87f6bd20c7021afb55dc7b606ad21c10d2c2f4724e1649dc4ac2c757255fff0a` | `public/images/guides/dunhuang-china/hero-1600.webp`, 1600 × 1000; `d9280cace5667d05d4218fa41cd3a4f91b6c61026efc0cd71aa1624e0a2f2e4c` |
+| `dunhuang-china` — figure — yardang | [Yardang at Dunhuang.jpg](https://commons.wikimedia.org/wiki/File:Yardang_at_Dunhuang.jpg), 慕尼黑啤酒, October 2015, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/); 3264 × 2448; `0b7d2943aefce86a75ffcb07fcdd141a4d70efc18c60647f440930d28aad71f2` | `public/images/guides/dunhuang-china/yardang-1600.webp`, 1600 × 1200; `95db82355fd8ac60f6a619389b3cb1bcccc4a64d0e27bc486105f4203d31d8a6` |
+
+Evidence boundary: the Dazu hero shows painted carvings at Baodingshan and is a different photograph from the one on
+the sight page (`大足石刻_01.jpg`). The Longmen distant view shows a rainy day with visitors small on the steps; it
+illustrates the site from the East Hill side, not current crowd levels. The two Commons photos carry their credits
+in the Dunhuang guide's caption and sources.

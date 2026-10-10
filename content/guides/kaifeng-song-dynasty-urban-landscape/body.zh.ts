@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "在另一类城市遗址中，继续把实物证据、重建与城市规划分层理解。",
         },
         {
+          label: "洛阳攻略：龙门石窟门票预约与看什么",
+          href: "/zh/guides/luoyang-longmen-grottoes/",
+          description: "90 元分时预约门票、单向游览路线，以及洛阳两天怎么安排。",
+        },
+        {
           label: "少林寺攻略：门票、功夫表演与路线",
           href: "/zh/guides/shaolin-temple/",
           description: "80 元门票包含什么，要留多少时间。",

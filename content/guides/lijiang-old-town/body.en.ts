@@ -108,6 +108,11 @@ const body = {
           "description": "Two nights in Kunming, three in Dali and two in Lijiang, with one paced snow-mountain day and the train back to Kunming."
         },
         {
+          "label": "Dali: Old Town, Erhai Lake and how many days",
+          "href": "/guides/dali-old-town-erhai-lake/",
+          "description": "What is free, what is ticketed and how to split three days."
+        },
+        {
           "label": "Dayan Old Town or Shuhe: where to stay",
           "href": "/guides/lijiang-old-town-or-shuhe-where-to-stay/",
           "description": "Luggage access, airport and rail links, evenings and day trips north."

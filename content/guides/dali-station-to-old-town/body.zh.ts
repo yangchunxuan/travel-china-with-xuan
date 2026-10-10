@@ -64,6 +64,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "继续规划", items: [
     { label: "Homeground 交通与行程指南", href: "/zh/guides/", description: "返回上级指南集合页。" },
+    { label: "大理攻略：古城、洱海、三塔与苍山", href: "/zh/guides/dali-old-town-erhai-lake/", description: "哪些免费、哪些要买票，三天怎么分。" },
     { label: "第一次坐中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "先准备铁路到达，再完成最后一公里。" },
     { label: "昆明、大理、丽江、香格里拉顺序", href: "/zh/guides/kunming-dali-lijiang-shangri-la-route-order/", description: "把大理放进正确的云南路线顺序。" },
     { label: "中国行程用单一基地还是多地换住宿", href: "/zh/guides/china-hub-and-spoke-or-multi-base-route/", description: "判断拖行李换基地是否值得。" },

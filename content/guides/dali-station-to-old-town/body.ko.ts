@@ -64,6 +64,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "다음 계획", items: [
     { label: "Homeground 교통·여행 가이드", href: "/ko/guides/", description: "상위 가이드 모음으로 돌아갑니다." },
+    { label: "다리: 고성, 얼하이 호수, 며칠 일정", href: "/ko/guides/dali-old-town-erhai-lake/", description: "무료인 곳과 유료인 곳, 사흘 일정 나누기." },
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "철도 도착을 준비한 뒤 마지막 이동을 진행합니다." },
     { label: "쿤밍·다리·리장·샹그릴라 순서", href: "/ko/guides/kunming-dali-lijiang-shangri-la-route-order/", description: "다리를 전체 윈난 동선에 맞게 배치합니다." },
     { label: "중국 여행의 한 거점 또는 여러 숙박 거점", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "짐을 옮겨 거점을 바꾸는 가치가 있는지 결정합니다." },

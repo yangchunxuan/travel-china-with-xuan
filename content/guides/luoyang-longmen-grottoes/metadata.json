@@ -1,0 +1,105 @@
+{
+  "id": "luoyang-longmen-grottoes",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "henan",
+    "luoyang",
+    "longmen-grottoes",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "luoyang",
+    "henan",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/luoyang-longmen-grottoes/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/luoyang-longmen-grottoes/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "luoyang",
+      "luoyang china",
+      "longmen grottoes",
+      "longmen grottoes tickets",
+      "luoyang things to do"
+    ],
+    "zh": [
+      "洛阳",
+      "龙门石窟",
+      "龙门石窟门票",
+      "洛阳玩几天"
+    ],
+    "ko": [
+      "뤄양",
+      "낙양",
+      "용문석굴",
+      "룽먼석굴"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/luoyang-longmen-grottoes/",
+      "title": "Luoyang, China: Longmen Grottoes Tickets & What to See",
+      "headline": "Luoyang: The Longmen Grottoes, the White Horse Temple and How to Plan Two Days in the Old Capital",
+      "description": "Luoyang’s Longmen Grottoes hold almost 110,000 Buddhist statues. The RMB 90 timed ticket, opening hours, what else to see and which railway station to use.",
+      "heroAlt": "The great Vairocana Buddha and attendant figures carved into the cliff at Fengxian Temple, Longmen Grottoes",
+      "navTitle": "Luoyang & Longmen Grottoes",
+      "featuredLinkLabel": "Plan Luoyang",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Henan",
+        "Luoyang",
+        "World Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/luoyang-longmen-grottoes/",
+      "title": "洛阳攻略：龙门石窟门票预约、看什么、玩几天",
+      "headline": "洛阳：龙门石窟、白马寺，以及古都两天怎么安排",
+      "description": "洛阳龙门石窟有近 11 万尊佛教造像。90 元实名分时预约门票、开放时间、还看什么，以及坐到哪个火车站。",
+      "heroAlt": "龙门石窟奉先寺崖壁上的大佛和两侧的弟子、菩萨像",
+      "navTitle": "洛阳与龙门石窟",
+      "featuredLinkLabel": "规划洛阳",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "河南",
+        "洛阳",
+        "世界遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/luoyang-longmen-grottoes/",
+      "title": "중국 뤄양: 용문석굴 입장권, 볼거리, 며칠 일정",
+      "headline": "뤄양: 용문석굴, 백마사, 옛 수도에서의 이틀 일정",
+      "description": "뤄양 용문석굴에는 약 11만 구의 불상이 있습니다. 90위안 시간제 예약 입장권, 운영 시간, 다른 볼거리, 어느 역을 이용할지.",
+      "heroAlt": "용문석굴 봉선사 절벽에 새겨진 노사나불과 좌우의 협시상",
+      "navTitle": "뤄양과 용문석굴",
+      "featuredLinkLabel": "뤄양 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "허난",
+        "뤄양",
+        "세계유산"
+      ]
+    }
+  }
+}

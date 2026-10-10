@@ -108,6 +108,11 @@ const body = {
           "description": "昆明 2 晚、大理 3 晚、丽江 2 晚，安排一天从容的雪山行程，最后坐动车回昆明。"
         },
         {
+          "label": "大理攻略：古城、洱海、三塔与苍山",
+          "href": "/zh/guides/dali-old-town-erhai-lake/",
+          "description": "哪些免费、哪些要买票，三天怎么分。"
+        },
+        {
           "label": "住大研古城还是束河古镇？",
           "href": "/zh/guides/lijiang-old-town-or-shuhe-where-to-stay/",
           "description": "行李接驳、机场和火车站交通、夜间环境和往北的一日游。"

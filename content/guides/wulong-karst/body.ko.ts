@@ -96,6 +96,11 @@ const body = {
           "description": "충칭 도심 다음 우롱 1박, 천생삼교와 선녀산 또는 부용동 중 선택."
         },
         {
+          "label": "대족석각: 입장권, 보정산, 당일치기",
+          "href": "/ko/guides/dazu-rock-carvings/",
+          "description": "다섯 곳 중 어느 두 곳을 어떤 순서로 볼지."
+        },
+        {
           "label": "중국의 톈컹: 지질과 공개 장소",
           "href": "/ko/guides/china-tiankeng-sinkholes-explained/",
           "description": "거대 싱크홀이 생기는 방식과 갈 수 있는 곳."

@@ -92,7 +92,7 @@ const body = {
       "id": "tickets-list",
       "type": "list",
       "items": [
-        "Full ticket: RMB 80, the price in the operator’s ticketing information reported in July 2025.",
+        "Full ticket: RMB 80, the price in the operator’s ticketing information reported in July 2025 and still listed on Qunar in October 2026.",
         "Kung fu show: included. Henan’s government page says martial arts performances are free for visitors with tickets.",
         "Combined tickets reported in July 2025: with the return cable car RMB 180; with zone A of the Kung Fu World Show RMB 238. The evening Zen Music Shaolin Grand Ceremony is a separate show.",
         "Hours: 08:00–17:00, last entry 16:30, on the Ctrip listing in October 2026.",
@@ -125,6 +125,11 @@ const body = {
           "label": "Luoyang, Dengfeng & Kaifeng: 6-day private tour",
           "href": "/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/",
           "description": "Kaifeng, then Shaolin Temple and the Pagoda Forest on the way to Luoyang, and a full day at Longmen Grottoes, with a private guide and vehicle."
+        },
+        {
+          "label": "Luoyang and the Longmen Grottoes: tickets and what to see",
+          "href": "/guides/luoyang-longmen-grottoes/",
+          "description": "The RMB 90 timed ticket, the one-way route and two days in the city."
         },
         {
           "label": "China attractions that need advance booking",
@@ -207,6 +212,12 @@ const body = {
           "label": "Songshan Shaolin scenic area listing: hours, show, routes and concessions",
           "url": "https://you.ctrip.com/sight/dengfeng1014/7954.html",
           "publisher": "Trip.com Group (Ctrip)",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Shaolin scenic area ticket prices listed in October 2026",
+          "url": "https://touch.piao.qunar.com/touch/detail.htm?id=5948",
+          "publisher": "Qunar",
           "reviewedAt": "2026-10-10"
         },
         {

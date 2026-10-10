@@ -96,6 +96,11 @@ const body = {
           "description": "先看重庆城市，再在武隆住一晚，游天生三桥，仙女山或芙蓉洞二选一。"
         },
         {
+          "label": "大足石刻攻略：宝顶山、北山与一日往返",
+          "href": "/zh/guides/dazu-rock-carvings/",
+          "description": "五处石刻先看哪两处，按什么顺序走。"
+        },
+        {
           "label": "中国的天坑：地质与可参观地点",
           "href": "/zh/guides/china-tiankeng-sinkholes-explained/",
           "description": "巨型天坑怎么形成，哪些可以去。"

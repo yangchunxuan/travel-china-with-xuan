@@ -73,6 +73,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
     { label: "Choose Lijiang Old Town or Shuhe", href: "/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "Place the hotel after deciding Lijiang's role." },
+    { label: "Dali: Old Town, Erhai Lake and how many days", href: "/guides/dali-old-town-erhai-lake/", description: "What is free, what is ticketed and how to split three days." },
     { label: "Lijiang: Old Town fee, what to see and how many days", href: "/guides/lijiang-old-town/", description: "Start here: the three World Heritage parts, the RMB 50 maintenance fee and the snow mountain." },
     { label: "Prepare for China rail", href: "/guides/china-high-speed-train-first-time-guide/", description: "Check the passenger process separately from route design." },
     { label: "Test whether the route is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count usable days after transfers and recovery." },
