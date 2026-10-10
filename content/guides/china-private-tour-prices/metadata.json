@@ -1,0 +1,105 @@
+{
+  "id": "china-private-tour-prices",
+  "type": "planning",
+  "pillar": "budget-and-tradeoffs",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "budget",
+    "trip-planning",
+    "first-trip",
+    "route-design"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "guilin",
+    "zhangjiajie",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/tours/beijing-xian-shanghai-8-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/beijing-xian-shanghai-8-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "sourceReviewedDate": "2026-10-11",
+  "searchTerms": {
+    "en": [
+      "china private tour cost",
+      "china private tour price",
+      "how much is a private tour in china",
+      "private tour china cost per day"
+    ],
+    "zh": [
+      "中国私家团价格",
+      "中国私家团多少钱",
+      "中国私人定制旅游费用"
+    ],
+    "ko": [
+      "중국 프라이빗 투어 가격",
+      "중국 프라이빗 투어 비용",
+      "중국 개인 투어 요금"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "combined-decision",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-private-tour-prices/",
+      "title": "China Private Tour Prices 2026: 41 Routes, 4–21 Days",
+      "headline": "What a private tour in China costs",
+      "description": "Published per-person prices for 41 private China tours of 4–21 days, from USD 250 with six travellers to USD 5,890 for two. Costs per day too.",
+      "heroAlt": "A main hall of the Forbidden City on its marble terrace",
+      "navTitle": "China private tour prices",
+      "featuredLinkLabel": "See every published private tour price",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Published prices",
+        "By group size",
+        "Per person, land only"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-private-tour-prices/",
+      "title": "中国私家团价格 2026：41 条线路，4–21 天",
+      "headline": "中国私家团要多少钱",
+      "description": "Homeground 41 条 4–21 天中国私家团的公布价：6 人同行每人 ¥1,620 起，2 人同行最高每人 ¥38,280。按天数和人数列出，并算出每天费用。",
+      "heroAlt": "故宫汉白玉台基上的大殿",
+      "navTitle": "中国私家团价格",
+      "featuredLinkLabel": "查看全部私家团公布价",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "公布价",
+        "按人数",
+        "每人，不含国际机票"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-private-tour-prices/",
+      "title": "중국 프라이빗 투어 요금 2026: 41개 일정, 4~21일",
+      "headline": "중국 프라이빗 투어는 얼마인가요",
+      "description": "4~21일 중국 프라이빗 투어 41개의 공개 요금입니다. 6명 기준 1인 ₩350,000부터 2명 기준 최고 ₩8,240,000까지, 하루 비용도 정리했습니다.",
+      "heroAlt": "자금성 대리석 기단 위의 전각",
+      "navTitle": "중국 프라이빗 투어 요금",
+      "featuredLinkLabel": "공개된 프라이빗 투어 요금 전체 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "공개 요금",
+        "인원별",
+        "1인 기준, 국제선 별도"
+      ]
+    }
+  }
+}

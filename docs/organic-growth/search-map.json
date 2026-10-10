@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 245,
-      "localeUrlCount": 727,
-      "generatedIdentityCount": 226,
+      "identityCount": 246,
+      "localeUrlCount": 730,
+      "generatedIdentityCount": 227,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -1581,6 +1581,24 @@
               "primaryCollectionId": "plan-budget-pace-decisions",
               "destinations": ["china", "beijing", "xian", "chengdu", "guilin", "zhangjiajie", "shanghai"],
               "boundary": "Published per-person prices for Homeground's 10- to 21-day private tours and 2027 small groups, what they include and why they change with group size; excludes independent-travel budgets, owned by how-much-does-a-china-trip-cost."
+            },
+            {
+              "id": "china-private-tour-prices",
+              "title": "China Private Tour Prices 2026: Every Published Route",
+              "metadataPath": "content/guides/china-private-tour-prices/metadata.json",
+              "canonicalPath": "/guides/china-private-tour-prices/",
+              "locales": ["en", "zh", "ko"],
+              "localePaths": [
+                "/guides/china-private-tour-prices/",
+                "/zh/guides/china-private-tour-prices/",
+                "/ko/guides/china-private-tour-prices/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-budget-pace-decisions",
+              "destinations": ["china", "beijing", "xian", "chengdu", "guilin", "zhangjiajie", "shanghai"],
+              "boundary": "Published per-person prices for every Homeground private tour with a public price, by group size, trip length and per day; excludes route detail for 10- to 21-day tours and small-group departures (china-2-week-tour-cost, china-small-group-tours-2027) and independent-travel budgets (how-much-does-a-china-trip-cost)."
             },
             {
               "id": "china-small-group-tours-2027",
@@ -3251,6 +3269,62 @@
               "boundary": "The West Lake visit intent: what is free and what is ticketed, the main sights, boats, listed prices and hours and a one-day route. The sight page keeps its short story and links here; the White Snake guide keeps the legend. Tour pages keep product prices."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-11",
+          "sourceBranch": "geo-private-tour-prices",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Private tour price guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "china-private-tour-prices",
+              "title": "China Private Tour Prices 2026: Every Published Route",
+              "metadataPath": "content/guides/china-private-tour-prices/metadata.json",
+              "canonicalPath": "/guides/china-private-tour-prices/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-private-tour-prices/",
+                "/zh/guides/china-private-tour-prices/",
+                "/ko/guides/china-private-tour-prices/"
+              ],
+              "section": "plan",
+              "pageFamily": "combined-decision",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-budget-pace-decisions",
+              "pillar": "budget-and-tradeoffs",
+              "destinations": [
+                "china",
+                "beijing",
+                "xian",
+                "chengdu",
+                "guilin",
+                "zhangjiajie",
+                "shanghai"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-xian",
+                  "city-chengdu",
+                  "city-guilin",
+                  "city-zhangjiajie",
+                  "city-shanghai"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "Published per-person prices for every Homeground private tour with a public price, by group size, trip length and per day; excludes route detail for 10- to 21-day tours and small-group departures (china-2-week-tour-cost, china-small-group-tours-2027) and independent-travel budgets (how-much-does-a-china-trip-cost)."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3312,6 +3386,7 @@
         "china-passport-validity-and-blank-pages",
         "china-power-bank-rules-flights-trains",
         "china-power-plugs-voltage-and-adapters",
+        "china-private-tour-prices",
         "china-private-transfer-or-public-transport",
         "china-public-holidays-travel-calendar",
         "china-public-welfare-slow-trains",

@@ -123,6 +123,10 @@ export const guideTargets = {
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
   ],
+  "china-private-tour-prices": [
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+  ],
   "china-small-group-tours-2027": [
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
     productTarget("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"),

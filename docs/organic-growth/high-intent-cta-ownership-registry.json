@@ -80,9 +80,9 @@
   "requiredCoverage": {
     "stay": 20,
     "high-intent-transport": 27,
-    "plan": 33,
+    "plan": 34,
     "purchase-ticket": 3,
-    "uniqueContentIds": 83
+    "uniqueContentIds": 84
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1332,6 +1332,20 @@
       "targetServiceId": null,
       "ctaPlacement": "existing-guide-footer",
       "originContentId": "china-2-week-tour-cost",
+      "authorizationStatus": "authorized-generic-conversation",
+      "forbiddenClaims": [
+        "automatic-or-instant-result",
+        "paid-work-before-scope-payment",
+        "guaranteed-booking-or-availability"
+      ]
+    },
+    {
+      "contentId": "china-private-tour-prices",
+      "ownerClass": "plan",
+      "intentCode": "route_shape",
+      "targetServiceId": null,
+      "ctaPlacement": "existing-guide-footer",
+      "originContentId": "china-private-tour-prices",
       "authorizationStatus": "authorized-generic-conversation",
       "forbiddenClaims": [
         "automatic-or-instant-result",

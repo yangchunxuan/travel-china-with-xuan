@@ -70,12 +70,12 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.deepEqual(report.counts, {
     stay: 20,
     "high-intent-transport": 27,
-    plan: 33,
+    plan: 34,
     "purchase-ticket": 3,
   });
-  assert.equal(report.uniqueContentIds, 83);
+  assert.equal(report.uniqueContentIds, 84);
   assert.equal(report.authorizedExistingService, 23);
-  assert.equal(report.authorizedGenericConversation, 21);
+  assert.equal(report.authorizedGenericConversation, 22);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 7);
   assert.equal(report.blockedPendingAuthorization, 39);
@@ -152,6 +152,7 @@ test("commercial links keep the approved 8 hub, 106 curated guide and 50 product
       "china-climate-regions-for-trip-timing",
       "china-online-arrival-card",
       "china-power-plugs-voltage-and-adapters",
+      "china-private-tour-prices",
       "china-private-transfer-or-public-transport",
       "china-public-holidays-travel-calendar",
       "china-small-group-tours-2027",
