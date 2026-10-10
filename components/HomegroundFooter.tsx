@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   getHomegroundCopy,
@@ -37,6 +38,7 @@ const footerSections: Record<
   {
     guides: string;
     services: string;
+    fullTripSupport: string;
     attractionReservations: string;
     legalLabel: string;
     legalHeading: string;
@@ -54,7 +56,8 @@ const footerSections: Record<
 > = {
   en: {
     guides: "Travel Advice",
-    services: "Trip planning services",
+    services: "All services",
+    fullTripSupport: "Full-trip planning",
     attractionReservations: "Attraction tickets",
     legalLabel: "Business and service information",
     legalHeading: "Legal",
@@ -71,7 +74,8 @@ const footerSections: Record<
   },
   zh: {
     guides: "实用指南",
-    services: "旅行规划服务",
+    services: "服务总览",
+    fullTripSupport: "全程规划",
     attractionReservations: "景点代预约",
     legalLabel: "经营与服务信息",
     legalHeading: "法律与经营信息",
@@ -88,7 +92,8 @@ const footerSections: Record<
   },
   ko: {
     guides: "실용 가이드",
-    services: "여행 설계 서비스",
+    services: "전체 서비스",
+    fullTripSupport: "전체 여행 설계",
     attractionReservations: "관광지 예약 대행",
     legalLabel: "사업자 및 서비스 안내",
     legalHeading: "법률 및 사업자 정보",
@@ -134,6 +139,8 @@ export function HomegroundFooter({
   destinationHubItems?: readonly HomepageDestinationHubItem[];
 }) {
   const copy = getHomegroundCopy(locale);
+  const pathname = usePathname();
+  const currentPath = pathname?.replace(/\/?$/, "/");
   const privacyPath =
     locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
   const businessPath = getHomegroundLegalPath(
@@ -149,7 +156,8 @@ export function HomegroundFooter({
     "business-information",
     locale,
   );
-  const planningServicesPath = `${copy.path}services/`;
+  const servicesOverviewPath = `${copy.path}services/`;
+  const fullTripSupportPath = `${copy.path}services/full-trip-support/`;
   const attractionReservationsPath = `${copy.path}services/china-attraction-reservations/`;
   const guideHubPath = `${copy.path}guides/`;
   const tourHubPath = `${copy.path}tours/`;
@@ -242,8 +250,16 @@ export function HomegroundFooter({
                 </li>
                 <li>
                   <Link
-                    aria-current={pageContext === "services" ? "page" : undefined}
-                    href={planningServicesPath}
+                    aria-current={currentPath === fullTripSupportPath ? "page" : undefined}
+                    href={fullTripSupportPath}
+                  >
+                    {sectionLabels.fullTripSupport}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    aria-current={currentPath === servicesOverviewPath ? "page" : undefined}
+                    href={servicesOverviewPath}
                   >
                     {sectionLabels.services}
                   </Link>
@@ -430,4 +446,3 @@ export function HomegroundFooter({
       </footer>
   );
 }
-
