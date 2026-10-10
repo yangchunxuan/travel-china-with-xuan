@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spanishTourPageSlugs } from "../../lib/spanishEditionIndex.ts";
 import { createHash } from "node:crypto";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
@@ -906,8 +907,8 @@ test("product-page motion degrades safely and the Jiangnan body stays white abov
   }
   assert.match(
     jiangnanPage,
-    /<\/main>\s*\{japanese \? japaneseChrome\?\.footer : <HomegroundFooter\b/s,
-    "the shared page keeps its standard footer and uses Japanese chrome only for JA",
+    /<\/main>\s*\{edition \? editionChrome\?\.footer : <HomegroundFooter\b/s,
+    "the shared page keeps its standard footer and uses edition chrome only for the Japanese and Spanish pages",
   );
   assert.match(footerCss, /\.footer\s*\{[^}]*background: #141413/s);
 });
@@ -1046,7 +1047,8 @@ test("manifest distinguishes one tours hub from every registry product and detai
     },
   );
   for (const hubEntry of hubEntries) {
-    const { ja: _ja, ...manifestLanguages } = getPrivateTourHubLanguagePaths();
+    // The manifest covers English, Chinese and Korean; Japanese and Spanish pages add their links in the page head.
+    const { ja: _ja, es: _es, ...manifestLanguages } = getPrivateTourHubLanguagePaths();
     assert.deepEqual(hubEntry.alternates, manifestLanguages);
   }
 
@@ -1057,6 +1059,8 @@ test("manifest distinguishes one tours hub from every registry product and detai
       "zh-Hans": `/zh/tours/${product.slug}/`,
       ko: `/ko/tours/${product.slug}/`,
       ja: `/ja/tours/${product.slug}/`,
+      // Only the tours with a Spanish page link one.
+      ...(spanishTourPageSlugs.includes(product.slug) ? { es: `/es/tours/${product.slug}/` } : {}),
       "x-default": `/tours/${product.slug}/`,
     });
 
@@ -1086,9 +1090,9 @@ test("manifest distinguishes one tours hub from every registry product and detai
       );
       assert.ok(manifestEntry, `${product.slug}/${locale} manifest entry`);
       assert.equal(manifestEntry.canonicalPath, localized.path);
-      // Japanese tours are added to route metadata and sitemap separately;
-      // the three-language content-node schema remains unchanged.
-      const { ja: _japanesePath, ...manifestLanguages } = languages;
+      // Japanese and Spanish tours are added to route metadata and sitemap
+      // separately; the three-language content-node schema remains unchanged.
+      const { ja: _japanesePath, es: _spanishPath, ...manifestLanguages } = languages;
       assert.deepEqual(manifestEntry.alternates, manifestLanguages);
     }
   }

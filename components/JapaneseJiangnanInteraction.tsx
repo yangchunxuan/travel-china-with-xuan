@@ -48,7 +48,7 @@ export function JapaneseTourContactLink({
       target={channel === "whatsapp" && directWhatsapp ? "_blank" : undefined}
       onClick={(event) => {
         if (channel === "whatsapp" && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
-          const slug = selected?.slug ?? window.location.pathname.match(/^\/ja\/tours\/([^/]+)\/$/)?.[1];
+          const slug = selected?.slug ?? window.location.pathname.match(/^\/(?:ja|es)\/tours\/([^/]+)\/$/)?.[1];
           if (slug) {
             if (openJapaneseContact({
               slug,
@@ -61,7 +61,8 @@ export function JapaneseTourContactLink({
         }
         trackEvent("contact_option_clicked", {
           channel: channel === "whatsapp" && !directWhatsapp ? "email" : channel,
-          page_language: "ja",
+          // Spanish tour pages reuse these links; they have no on-site dialog.
+          page_language: window.location.pathname.startsWith("/es/") ? "es" : "ja",
         }, {
           firstPartyContext: {
             productSlug: selected?.slug,

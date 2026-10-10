@@ -1,0 +1,18 @@
+/* Header and footer of the Spanish pages; layout comes from the shared header
+   and single-row footer stylesheets. */
+.spanishHeader .brand small {
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.spanishFooter {
+  --hg-brand: var(--hg-font-brand);
+}
+
+.spanishFooter .footerTop > div:first-child span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}

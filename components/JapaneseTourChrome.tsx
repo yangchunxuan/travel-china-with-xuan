@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
+import { EditionMobileNav } from "./EditionMobileNav";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
@@ -145,6 +146,11 @@ export function JapaneseSiteHeader({
   }, [open]);
 
   const close = () => setOpen(false);
+  const mobileLink = (item: (typeof primaryLinks)[number]) => ({
+    href: item.href === currentPath ? selectedHref(item.href) : item.href,
+    label: item.label,
+    current: item.href === currentPath,
+  });
   const ctaHref = selectedHref(contactHref);
   const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -233,59 +239,27 @@ export function JapaneseSiteHeader({
           </div>
         </div>
 
-        <nav
-          aria-label="モバイルメニュー"
-          className={headerStyles.mobileNav}
-          hidden={!open}
+        <EditionMobileNav
+          cta={{ href: ctaHref, label: "旅について相談する", onClick: openTourInquiry }}
           id="japanese-tour-mobile-navigation"
-          ref={mobileNavRef}
-        >
-          <div className={`${headerStyles.mobilePrimaryLinks} ${styles.mobilePrimaryLinks}`}>
-            {primaryLinks.map((item) => (
-              <a
-                aria-current={item.href === currentPath ? "page" : undefined}
-                href={item.href === currentPath ? selectedHref(item.href) : item.href}
-                key={item.href}
-                onClick={close}
-              >
-                <span className={headerStyles.mobileNavCopy}>
-                  <strong>{item.label}</strong>
-                  <small>{item.description}</small>
-                </span>
-                <span aria-hidden="true">→</span>
-              </a>
-            ))}
-          </div>
-          <div className={headerStyles.mobileUtility}>
-            <div className={headerStyles.mobileUtilityRow}>
-              <a className={headerStyles.mobileUtilityLink} href={`${japaneseSite.home}#faq`} onClick={close}>
-                <span>よくある質問</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <div
-                aria-label="言語を選ぶ"
-                className={`${headerStyles.mobileLanguageNav} ${styles.mobileLanguageNav}`}
-                role="group"
-              >
-                {languagePaths.map((item) => (
-                  <a
-                    aria-current={item.lang === "ja" ? "page" : undefined}
-                    href={selectedHref(item.path)}
-                    hrefLang={item.lang}
-                    key={item.lang}
-                    lang={item.lang}
-                    onClick={close}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <a className={headerStyles.mobileCta} href={ctaHref} onClick={openTourInquiry}>
-              旅について相談する
-            </a>
-          </div>
-        </nav>
+          label="モバイルメニュー"
+          labelClassName={styles.mobileLabel}
+          languageLabel="言語を選ぶ"
+          languages={languagePaths.map((item) => ({
+            label: item.label,
+            lang: item.lang,
+            path: selectedHref(item.path),
+            current: item.lang === "ja",
+          }))}
+          navRef={mobileNavRef}
+          onClose={close}
+          open={open}
+          primaryLinks={primaryLinks.slice(0, 4).map(mobileLink)}
+          secondaryLinks={[
+            ...primaryLinks.slice(4).map(mobileLink),
+            { href: `${japaneseSite.home}#faq`, label: "よくある質問" },
+          ]}
+        />
       </div>
     </header>
   );

@@ -1,4 +1,5 @@
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
+import { spanishSite } from "../lib/spanishSite";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Check, CircleAlert } from "lucide-react";
@@ -337,7 +338,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
         </div>
       ) : null}
       <HomegroundHeader
-        languagePaths={languagePaths}
+        // Published: Spanish readers get the Spanish tour list from the language switch.
+        languagePaths={published ? { ...languagePaths, es: spanishSite.tours } : languagePaths}
         locale={locale}
         pageContext={published ? "tour" : "guide"}
         plannerHrefOverride={published ? inquiryHref : undefined}

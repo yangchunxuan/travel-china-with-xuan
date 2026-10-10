@@ -7,6 +7,8 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
 import { homegroundBusiness } from "../lib/homegroundBusiness.ts";
+import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides.ts";
+import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy.ts";
 
 const SITE = "https://homegroundchina.com";
 const out = path.join(process.cwd(), "out");
@@ -17,7 +19,7 @@ function exportedPage(route) {
   const html = readFileSync(file, "utf8");
   const decode = (text) =>
     text.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-  const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? "").replace(/\s+—\s+Homeground China$/u, "").trim();
+  const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? "").replace(/\s+[—|]\s+Homeground China$/u, "").trim();
   const description = decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "").trim();
   return { url: `${SITE}${route}`, title, description };
 }
@@ -64,7 +66,7 @@ const lines = [
   "- Attraction tickets (Forbidden City, Terracotta Warriors, museums) can be booked on their own on official systems in the traveller's name.",
   `- Contact: ${homegroundBusiness.serviceEmail}, or the trip brief form at ${SITE}/plan/.`,
   "- Dietary needs (vegetarian, vegan, Jain, halal): any private tour can be booked with a meal plan, lunch and dinner at restaurants chosen for the traveller's standard, priced in the written quote. The standard is asked before quoting, and meals supplied by third parties, such as Yangtze cruise ships, are confirmed in writing before payment. Homeground does not certify food.",
-  "- Pages are published in English, Chinese (/zh/) and Korean (/ko/).",
+  "- Pages are published in English, Chinese (/zh/) and Korean (/ko/). A Spanish edition (/es/) covers selected tours and guides; those tours include an English-speaking guide, and a Spanish-speaking guide can be arranged at a supplement confirmed in the written quote.",
   "",
   "## Private tours",
   "",
@@ -96,6 +98,14 @@ const lines = [
   "## Company",
   "",
   link("/business-information/"),
+  "",
+  "## En español",
+  "",
+  link("/es/"),
+  link("/es/tours/"),
+  ...spanishTourSlugs.map((slug) => link(spanishTourPath(slug))),
+  link("/es/guias/"),
+  ...spanishGuides.map((guide) => link(spanishGuidePath(guide.slug))),
   "",
   "## Optional",
   "",

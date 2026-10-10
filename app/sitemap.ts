@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getIndexableManifestEntries } from "../lib/content-system/manifest";
 import type { ContentManifestEntry } from "../lib/content-system/types";
-import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
+import { getGuideEntry, getGuideLanguagePaths, type GuideId } from "../lib/guideRegistry";
 import {
   getGuidesHubIndexablePaginationPages,
   getGuidesHubPageLastModified,
@@ -18,6 +18,10 @@ import {
   jaPilotTourAlternates,
 } from "../lib/jaPilot";
 import { japaneseAlternates } from "../lib/japaneseSite";
+import { spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
+import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides";
+import { spanishSite } from "../lib/spanishSite";
+import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy";
 import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
@@ -97,7 +101,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const guideAlternates = jaPilotGuideAlternates();
   const tourAlternates = jaPilotTourAlternates();
   const japaneseGuideAlternatesByPath = new Map(
-    [guideAlternates, getGuideLanguagePaths("how-much-does-a-china-trip-cost")].flatMap((alternates) =>
+    [
+      guideAlternates,
+      getGuideLanguagePaths("how-much-does-a-china-trip-cost"),
+      // Guides with a Spanish page carry it as an alternate too.
+      ...Object.keys(spanishGuidePathBySourceId).map((id) => getGuideLanguagePaths(id as GuideId)),
+    ].flatMap((alternates) =>
       Object.values(alternates).map((path) => [path, alternates] as const),
     ),
   );
@@ -225,5 +234,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries];
+  // The Spanish pages went up on this date; a tour edited later carries its own date.
+  const spanishPublished = "2026-10-11";
+  const spanishSiteAlternates = (enPath: string) =>
+    absoluteJaPilotAlternates(japaneseSiteAlternatesByPath.get(enPath)!);
+  const spanishEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${base}${spanishSite.home}`,
+      lastModified: spanishPublished,
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: { languages: spanishSiteAlternates("/") },
+    },
+    {
+      url: `${base}${spanishSite.tours}`,
+      lastModified: spanishPublished,
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(hubAlternates) },
+    },
+    {
+      url: `${base}${spanishSite.guides}`,
+      lastModified: spanishPublished,
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: spanishSiteAlternates("/guides/") },
+    },
+    ...spanishTourSlugs.map((slug) => {
+      const product = privateTourProducts.find((candidate) => candidate.slug === slug)!;
+      return {
+        url: `${base}${spanishTourPath(slug)}`,
+        lastModified: product.dateModified > spanishPublished ? product.dateModified : spanishPublished,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+        alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
+      };
+    }),
+    ...spanishGuides.map((guide) => ({
+      url: `${base}${spanishGuidePath(guide.slug)}`,
+      lastModified: guide.dateModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+      // A guide written only in Spanish has no other-language versions.
+      ...(guide.sourceGuideId
+        ? { alternates: { languages: absoluteJaPilotAlternates(getGuideLanguagePaths(guide.sourceGuideId as GuideId)) } }
+        : {}),
+    })),
+  ];
+
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries];
 }
