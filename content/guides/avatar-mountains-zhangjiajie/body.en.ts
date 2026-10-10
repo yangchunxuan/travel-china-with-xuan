@@ -66,7 +66,7 @@ const body = {
     {
       "id": "not-tianmen-copy",
       "type": "paragraph",
-      "text": "Three different places are sold under the Zhangjiajie name, and many photos mix them up. The Avatar pillars are in Zhangjiajie National Forest Park at Wulingyuan. Tianmen Mountain, with the cave arch called Heaven’s Gate, cliff walkways and a cable car from the city, is a separate mountain beside downtown Zhangjiajie, about 40 minutes by car from Wulingyuan. The famous glass bridge spans the Zhangjiajie Grand Canyon, a third attraction with its own ticket. Each needs its own day or half day."
+      "text": "Three different places are sold under the Zhangjiajie name, and many photos mix them up. The Avatar pillars are in Zhangjiajie National Forest Park at Wulingyuan. Tianmen Mountain, with the cave arch called Heaven’s Gate, cliff walkways and a cable car up from the mountain gate, is a separate mountain beside downtown Zhangjiajie, about 40 minutes by car from Wulingyuan. The famous glass bridge spans the Zhangjiajie Grand Canyon, a third attraction with its own ticket. Each needs its own day or half day."
     },
     {
       "id": "tickets-heading",
