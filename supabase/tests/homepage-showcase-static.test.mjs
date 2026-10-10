@@ -385,9 +385,9 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     ...homepageSelectionSource[1].matchAll(/"([^"]+)"/g),
   ].map((match) => match[1]);
   assert.deepEqual(homepageTourSlugs, [
-    "zhangjiajie-forest-4-day-private-tour",
+    "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
     "beijing-highlights-5-day-private-tour",
-    "shanghai-suzhou-hangzhou-6-day-private-tour",
+    "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
     "chengdu-pandas-sanxingdui-5-day-private-tour",
     "xian-terracotta-warriors-5-day-private-tour",
     "guilin-yangshuo-5-day-private-tour",
@@ -408,8 +408,13 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     assert.equal(new Set(homepageItems.map((product) => product.image.src)).size, 6, locale);
     assert.ok(homepageItems.every((product) => product.appeal.length > 20), locale);
     assert.ok(
-      homepageItems.every((product) => product.startingPrice.formatted.length > 0),
+      homepageItems.filter((product) => product.startingPrice).every((product) => product.startingPrice.formatted.length > 0),
       locale,
+    );
+    assert.deepEqual(
+      homepageItems.filter((product) => !product.startingPrice).map((product) => product.id),
+      [homepageTourSlugs[0], homepageTourSlugs[2]],
+      `${locale}: only the two new routes are quote-only`,
     );
   }
   assert.match(catalog, /getPublishedPrivateTourCatalog\(locale\)/);

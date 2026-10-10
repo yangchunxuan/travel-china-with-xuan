@@ -8,6 +8,8 @@ export interface HomepageProductShowcaseCopy {
   readonly durationLabel: (days: number, nights: number) => string;
   readonly productLabel: string;
   readonly startingPriceLabel: string;
+  readonly quoteOnlyLabel: string;
+  readonly quoteOnlyNote: string;
   readonly perPersonLabel: string;
   readonly groupBasis: (travelers: number) => string;
   readonly actionLabel: string;
@@ -26,6 +28,8 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
       `${days} ${days === 1 ? "day" : "days"} · ${nights} ${nights === 1 ? "night" : "nights"}`,
     productLabel: "Private tour",
     startingPriceLabel: "Published starting price",
+    quoteOnlyLabel: "Quote on request",
+    quoteOnlyNote: "Based on your dates and group",
     perPersonLabel: "per person",
     groupBasis: (travelers) => `${travelers}-traveller basis`,
     actionLabel: "Explore this journey",
@@ -41,6 +45,8 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
     durationLabel: (days, nights) => `${days}天 · ${nights}晚`,
     productLabel: "私家行程",
     startingPriceLabel: "公开起价",
+    quoteOnlyLabel: "按需报价",
+    quoteOnlyNote: "按日期与人数确认",
     perPersonLabel: "每人",
     groupBasis: (travelers) => `按 ${travelers} 人同行`,
     actionLabel: "走进这条路线",
@@ -56,6 +62,8 @@ const copies: Record<HomegroundLocale, HomepageProductShowcaseCopy> = {
     durationLabel: (days, nights) => `${nights}박 ${days}일`,
     productLabel: "프라이빗 투어",
     startingPriceLabel: "시작가",
+    quoteOnlyLabel: "맞춤 견적",
+    quoteOnlyNote: "날짜와 인원에 맞춰 안내",
     perPersonLabel: "1인",
     groupBasis: (travelers) => `${travelers}인 기준`,
     actionLabel: "이 여정 살펴보기",

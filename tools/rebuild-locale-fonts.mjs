@@ -54,7 +54,9 @@ const commonCharacters = Array.from(
 // Keep glyphs used by the currently published privacy copy during a staged
 // content rollout, even when newer local wording no longer contains them.
 // 昨 also appears in DayPicker's bundled Chinese relative-date labels.
-const retainedPublishedChineseCharacters = "卷守履径遵昨";
+// The other retained glyphs come from Japanese strings without kana in the
+// currently published export; keep them through source-only local rebuilds.
+const retainedPublishedChineseCharacters = "卷守履径遵昨別動報後業様約規覧許談";
 
 function characterSet(text, pattern) {
   return [...new Set(`${commonCharacters}${text.match(pattern)?.join("") ?? ""}`)]

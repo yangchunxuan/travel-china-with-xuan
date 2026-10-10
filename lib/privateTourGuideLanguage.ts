@@ -46,6 +46,7 @@ const driverGuide: GuideLanguageEntry = { base: "driver-guide" };
 
 export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLanguageEntry>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour": english,
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": english,
   "chengdu-pandas-sanxingdui-5-day-private-tour": english,
   "xian-terracotta-warriors-5-day-private-tour": english,
   "chongqing-wulong-5-day-private-tour": english,
@@ -77,6 +78,7 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "shenzhen-family-tech-4-day-private-tour": koreanByDate,
   "beijing-xian-shanghai-12-day-private-tour": koreanByDate,
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": koreanByDate,
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": english,
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": english,
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": koreanByDate,
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": english,

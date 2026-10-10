@@ -3,6 +3,8 @@ import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import sharp from "sharp";
+import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog.ts";
+import { privateTourProducts, privateTourPreviewProducts } from "../../lib/privateTourProducts.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const source = (relativePath) =>
@@ -112,7 +114,7 @@ test("published product has indexable EN/ZH/KO routes while local previews stay 
   );
 });
 
-test("manifest, sitemap and homepage expose the product independently of the guide", async () => {
+test("manifest and sitemap retain the published product independently of homepage selection and the guide", async () => {
   const [
     adapter,
     manifest,
@@ -153,8 +155,22 @@ test("manifest, sitemap and homepage expose the product independently of the gui
   assert.match(homepageEditorial, /\.\.\.orderedGuides\.map/);
   assert.doesNotMatch(homepageEditorial, /\{ \.\.\.guide, \.\.\.tour \}/);
   assert.match(homepageCatalog, /getPublishedPrivateTourCatalog\(locale\)/);
-  assert.match(homepageCatalog, /"zhangjiajie-forest-4-day-private-tour"/);
+  assert.match(homepageCatalog, /"beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"/);
+  assert.match(homepageCatalog, /"suzhou-tongli-hangzhou-shanghai-12-day-private-tour"/);
   assert.doesNotMatch(homepageCatalog, /getZhangjiajiePrivateTourHomeCard/);
+  const publishedBySlug = new Map(privateTourProducts.map((product) => [product.slug, product]));
+  const previewSlugs = new Set(privateTourPreviewProducts.map((product) => product.slug));
+  for (const locale of ["en", "zh", "ko"]) {
+    const homepageItems = getHomepagePrivateTourItems(locale);
+    assert.equal(homepageItems.length, 6, locale);
+    for (const item of homepageItems) {
+      const product = publishedBySlug.get(item.id);
+      assert.ok(product, `${locale}:${item.id} must be a published product`);
+      assert.notEqual(product.visibility, "preview", `${locale}:${item.id} must not be noindex preview content`);
+      assert.equal(previewSlugs.has(item.id), false, `${locale}:${item.id} must stay outside the preview registry`);
+      assert.doesNotMatch(item.href, /\/preview\//u);
+    }
+  }
   assert.match(publishedCatalog, /getZhangjiajiePrivateTourHomeCard\(locale\)/);
   assert.match(publishedCatalog, /zhangjiajieProduct\.duration\.days/);
   assert.equal(
