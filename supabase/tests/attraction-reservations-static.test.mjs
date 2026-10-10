@@ -556,6 +556,8 @@ test("a best-effort attraction is tagged everywhere it is sold and promises a re
     for (const locale of locales) {
       assert.match(rule.disclosure[locale], { en: /^Best effort, not guaranteed/u, zh: /^尽力预约，不作保证/u, ko: /^최선 시도, 보장하지 않음/u }[locale]);
       assert.match(rule.disclosure[locale], guaranteeRefund[locale]);
+      assert.match(rule.disclosure[locale], { en: /service fee and ticket money are refunded in full/u, zh: /全额退还服务费和门票款/u, ko: /수수료와 입장료를 전액 환불/u }[locale]);
+      assert.doesNotMatch(rule.disclosure[locale], /not spent|未使用|사용하지 않은/u, `${locale}: best-effort failure refunds all ticket money`);
     }
   }
   for (const locale of locales) {
@@ -563,10 +565,78 @@ test("a best-effort attraction is tagged everywhere it is sold and promises a re
     assert.match(copy.guarantee, { en: /except at an attraction marked “best effort”/u, zh: /标注“尽力预约”的景点除外/u, ko: /‘최선 시도’로 표시된 관광지는 제외/u }[locale]);
     assert.ok(copy.bestEffortTag.trim(), `${locale}: tag`);
     assert.match(copy.guideCta.bodyBestEffort, guaranteeRefund[locale]);
+    assert.match(copy.guideCta.bodyBestEffort, { en: /both are refunded in full/u, zh: /两者全额退还/u, ko: /둘 다 전액 환불/u }[locale]);
     assert.doesNotMatch(copy.guideCta.bodyBestEffort, guaranteeLead[locale], `${locale}: no lead-time guarantee on a best-effort CTA`);
+    const label = `${bestEffort[0].name[locale]} · ${copy.bestEffortTag}`;
+    const message = messageModule.attractionReservationMessageText(copy.enquiry.message, {
+      cities: [copy.cities.datong],
+      visits: [{ label, date: "2026-11-01" }],
+      travellers: 2,
+      note: "",
+      pageUrl: "https://example.invalid/",
+    });
+    assert.ok(message.includes(label), `${locale}: prepared contact message retains the best-effort label`);
   }
   const [page, cta] = await Promise.all([source("components/AttractionReservationsPage.tsx"), source("components/content/GuideReservationCta.tsx")]);
   assert.match(page, /rule\.bestEffort \? <span className=\{styles\.status\} data-status="best-effort">\{copy\.bestEffortTag\}<\/span>/u);
   assert.match(page, /label: rule\.bestEffort \? `\$\{rule\.name\[locale\]\} · \$\{copy\.bestEffortTag\}`/u);
   assert.match(cta, /rule\.bestEffort \? copy\.bodyBestEffort/u);
+});
+
+test("every generic guarantee entry point explicitly excludes best-effort attractions", () => {
+  const exceptions = {
+    en: /except at an attraction marked “best effort”/u,
+    zh: /标注“尽力预约”的景点除外/u,
+    ko: /‘최선 시도’로 표시된 관광지는 제외/u,
+  };
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    const faq = copy.faqs.find(({ question }) => /guaranteed\?|有保证吗|보장되나요/u.test(question));
+    assert.ok(faq, `${locale}: generic guarantee FAQ`);
+    for (const [entry, text] of [
+      ["hero", copy.guarantee],
+      ["request step", copy.steps[0].body],
+      ["pricing lead", copy.pricingLead],
+      ["rules intro", copy.rulesIntro],
+      ["guarantee FAQ", faq.answer],
+      ["enquiry intro", copy.enquiry.intro],
+    ]) {
+      assert.match(text, exceptions[locale], `${locale} ${entry}: exception cannot be omitted`);
+      assert.match(text, /8/u, `${locale} ${entry}: existing lead time is preserved`);
+    }
+    const forbiddenCityFaq = copy.faqs.find(({ question }) => /Forbidden City|故宫|자금성/u.test(question));
+    for (const unchanged of [forbiddenCityFaq.answer, copy.guideCta.body, copy.guideCta.bodyPassportUnchecked]) {
+      assert.match(unchanged, guaranteeLead[locale], `${locale}: normal attraction guarantees remain`);
+      assert.doesNotMatch(unchanged, exceptions[locale], `${locale}: no best-effort exception added to an ordinary attraction CTA`);
+    }
+  }
+});
+
+test("Hanging Temple lists climbing and distant-view prices without requiring a combined purchase", () => {
+  const rule = reservations.getAttractionReservationRule("hanging-temple");
+  assert.equal(rule.price.kind, "cny");
+  assert.equal(rule.price.amount, 100);
+  assert.equal(reservations.attractionReservationServiceFeeCny, 45);
+  for (const locale of locales) {
+    const basis = rule.price.basis[locale];
+    assert.match(basis, { en: /climbing ticket; distant-view entry ticket CNY 15/u, zh: /登临票；远观入园票 ¥15/u, ko: /등반 티켓; 원경 관람 입장권 15위안/u }[locale]);
+    assert.match(basis, /2026/u, `${locale}: historical news-report date retained`);
+    assert.doesNotMatch(basis, /plus|must|both|另加|必须|合买|별도|필수|함께 구매/iu, `${locale}: no unsupported mandatory combination`);
+  }
+});
+
+test("terms and refund city lists include Datong without replacing the existing cities", async () => {
+  const legal = await source("lib/homegroundLegalI18n.ts");
+  const lists = {
+    en: { prefix: "Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin", complete: "Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin, Lijiang and Datong" },
+    zh: { prefix: "北京、上海、苏州、杭州、西安、成都、桂林", complete: "北京、上海、苏州、杭州、西安、成都、桂林、丽江、大同" },
+    ko: { prefix: "베이징·상하이·쑤저우·항저우·시안·청두·계림", complete: "베이징·상하이·쑤저우·항저우·시안·청두·계림·리장·다퉁" },
+  };
+  for (const locale of locales) {
+    const paragraphs = legal.split("\n").filter((line) => line.includes(lists[locale].prefix));
+    assert.equal(paragraphs.length, 3, `${locale}: terms intro, terms scope and refund intro`);
+    for (const paragraph of paragraphs) {
+      assert.ok(paragraph.includes(lists[locale].complete), `${locale}: policy city list matches the service scope`);
+    }
+  }
 });

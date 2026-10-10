@@ -696,9 +696,9 @@ export const attractionReservationRules = [
       kind: "cny",
       amount: 100,
       basis: {
-        en: "climbing ticket, plus CNY 15 entry ticket (2026 news reports)",
-        zh: "登临票，另加入园票 ¥15（2026 年新闻报道）",
-        ko: "등반 티켓, 입장권 15위안 별도(2026년 보도)",
+        en: "climbing ticket; distant-view entry ticket CNY 15 (2026 news reports)",
+        zh: "登临票；远观入园票 ¥15（2026 年新闻报道）",
+        ko: "등반 티켓; 원경 관람 입장권 15위안(2026년 보도)",
       },
     },
     notes: {
