@@ -113,6 +113,11 @@ const body = {
           "description": "윈강석굴과 다퉁 고성, 남쪽으로 가며 현공사, 그다음 핑야오와 타이위안. 전용 차량과 가이드."
         },
         {
+          "label": "핑야오고성: 통합권, 볼거리, 가는 법",
+          "href": "/ko/guides/pingyao-ancient-city/",
+          "description": "125위안 통합권, 성벽, 어느 역을 이용할지."
+        },
+        {
           "label": "윈강석굴: 관람 순서와 입장권",
           "href": "/ko/guides/yungang-grottoes-cave-order-and-museum/",
           "description": "다퉁의 또 다른 필수 명소와 오전 시간 배분."

@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 227,
-      "localeUrlCount": 673,
-      "generatedIdentityCount": 208,
+      "identityCount": 232,
+      "localeUrlCount": 688,
+      "generatedIdentityCount": 213,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2375,6 +2375,251 @@
               "boundary": "The Wulong Karst visit intent: what it is, the sights, the films, what the ticket covers, seasonal hours, getting there, day trip or overnight. The Chongqing hub keeps the whether-to-go decision; the tiankeng guide keeps the geology; tour pages keep product prices."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch2",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Lijiang Old Town guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "lijiang-old-town",
+              "title": "Lijiang, China: Old Town Fee, What to See & How Many Days",
+              "metadataPath": "content/guides/lijiang-old-town/metadata.json",
+              "canonicalPath": "/guides/lijiang-old-town/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/lijiang-old-town/",
+                "/zh/guides/lijiang-old-town/",
+                "/ko/guides/lijiang-old-town/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "lijiang",
+                "yunnan",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "lijiang",
+                  "yunnan"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Lijiang and Lijiang Old Town visit intent: the three World Heritage parts, the maintenance fee, the snow mountain in brief, how many days and how to arrive. The Dayan-or-Shuhe, Jade Dragon and route guides keep their own decisions. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch2",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Furong Ancient Town guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "furong-ancient-town",
+              "title": "Furong Ancient Town, China: Waterfall, Tickets & Night Visit",
+              "metadataPath": "content/guides/furong-ancient-town/metadata.json",
+              "canonicalPath": "/guides/furong-ancient-town/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/furong-ancient-town/",
+                "/zh/guides/furong-ancient-town/",
+                "/ko/guides/furong-ancient-town/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "xiangxi",
+                "zhangjiajie",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-zhangjiajie",
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "xiangxi"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Furong Ancient Town visit intent: what it is, the waterfall and sights, tickets and hours, why the evening, access from Zhangjiajie and Fenghuang and how long. The route-order guide keeps the seven-day sequence. Tour pages keep product prices. Ticket prices are labelled as third-party listings."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch2",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Fenghuang Ancient Town guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "fenghuang-ancient-town",
+              "title": "Fenghuang Ancient Town: Tickets, Night Boats & Getting There",
+              "metadataPath": "content/guides/fenghuang-ancient-town/metadata.json",
+              "canonicalPath": "/guides/fenghuang-ancient-town/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/fenghuang-ancient-town/",
+                "/zh/guides/fenghuang-ancient-town/",
+                "/ko/guides/fenghuang-ancient-town/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "fenghuang",
+                "xiangxi",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "fenghuang",
+                  "xiangxi"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Fenghuang Ancient Town visit intent: what is free and what is ticketed, boat and combined-ticket prices, access from Zhangjiajie by rail and maglev and how long. The Border Town guide keeps Shen Congwen and Chadong. Tour pages keep product prices. Prices are labelled as third-party listings."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch2",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Pingyao Ancient City guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "pingyao-ancient-city",
+              "title": "Pingyao Ancient City: Tickets, What to See & Getting There",
+              "metadataPath": "content/guides/pingyao-ancient-city/metadata.json",
+              "canonicalPath": "/guides/pingyao-ancient-city/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/pingyao-ancient-city/",
+                "/zh/guides/pingyao-ancient-city/",
+                "/ko/guides/pingyao-ancient-city/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "pingyao",
+                "shanxi",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "pingyao",
+                  "shanxi"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Pingyao Ancient City visit intent: free entry versus the pass, what the pass covers, the main sights, hours, which station and how long. The Hanging Temple and Yungang guides keep those sites. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch2",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Shaolin Temple guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "shaolin-temple",
+              "title": "Shaolin Temple: Tickets, Kung Fu Show Times & How to Visit",
+              "metadataPath": "content/guides/shaolin-temple/metadata.json",
+              "canonicalPath": "/guides/shaolin-temple/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/shaolin-temple/",
+                "/zh/guides/shaolin-temple/",
+                "/ko/guides/shaolin-temple/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "dengfeng",
+                "henan",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "dengfeng",
+                  "henan"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Shaolin Temple visit intent: what the ticket covers, the kung fu show, the Pagoda Forest and side sights, hours, the 2025 changes as they affect visitors, how long and where to stay. Tour pages keep product prices. The ticket price is labelled with its 2025 source."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2460,6 +2705,7 @@
         "do-us-citizens-need-visa-china-2026",
         "do-you-need-a-tour-guide-in-china",
         "dougong-and-chinese-timber-frame-reading",
+        "fenghuang-ancient-town",
         "first-china-trip-jiangnan-6-or-beijing-11-days",
         "first-shared-meal-in-china",
         "first-trip-china-airport-station-stay-map",
@@ -2468,6 +2714,7 @@
         "foreigners-china-hotel",
         "foshan-lion-dance-first-performance-workflow",
         "fujian-tulou-cluster-selection",
+        "furong-ancient-town",
         "grand-canal-everyday-urban-history",
         "great-wall-section-selector-from-beijing",
         "guangzhou-baiyun-airport-t2-t3",
@@ -2512,6 +2759,7 @@
         "li-river-cruise-tickets-piers-booking",
         "liangzhu-ruins-park-and-museum-sequence",
         "liaozhai-zibo-former-residence-liqu-liaozhai-city",
+        "lijiang-old-town",
         "lijiang-old-town-or-shuhe-where-to-stay",
         "lijiang-shangri-la-transport-route",
         "liye-qin-slips-local-government-records",
@@ -2530,6 +2778,7 @@
         "northern-jiangsu-yellow-sea-wetland-coast",
         "official-or-reseller-china-tickets",
         "passport-name-across-china-bookings",
+        "pingyao-ancient-city",
         "pudong-airport-to-shanghai-disneyland",
         "puzhehei-lotus-bloom-and-boat-access",
         "qiaopi-letters-remittances-and-migration",
@@ -2551,6 +2800,7 @@
         "shanghai-suzhou-hangzhou-nanjing-route-order",
         "shanghai-to-suzhou-day-trip",
         "shanghai-where-to-stay-first-trip",
+        "shaolin-temple",
         "shenzhen-airport-railway-station-border-port-selector",
         "shenzhen-hong-kong-transport-route",
         "shenzhen-low-altitude-city-infrastructure",

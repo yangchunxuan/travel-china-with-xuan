@@ -340,6 +340,11 @@ const body = {
           description: "把张家界住宿基地的选择单独处理，不把本文扩写成湘西区域行程。"
         },
         {
+          label: "凤凰古城攻略：门票、游船与交通",
+          href: "/zh/guides/fenghuang-ancient-town/",
+          description: "哪些免费、哪些要买票，以及高铁站到古城的磁浮。"
+        },
+        {
           label: "在湖南点一顿均衡的第一餐",
           href: "/zh/guides/hunan-cuisine-balanced-first-meal/",
           description: "从文学地理继续进入一个可执行的地方饮食选择。"

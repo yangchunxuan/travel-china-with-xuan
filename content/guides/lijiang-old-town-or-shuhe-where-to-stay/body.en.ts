@@ -321,6 +321,11 @@ export default {
           description: "Browse destination-led guides and practical comparisons.",
         },
         {
+          label: "Lijiang: Old Town fee, what to see and how many days",
+          href: "/guides/lijiang-old-town/",
+          description: "Start here: the three World Heritage parts, the RMB 50 maintenance fee and the snow mountain.",
+        },
+        {
           label: "Is your China itinerary too rushed?",
           href: "/guides/is-your-china-itinerary-too-rushed/",
           description: "Check whether a hotel change or extra day trip creates more transfer pressure than value.",

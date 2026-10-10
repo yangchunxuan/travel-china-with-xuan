@@ -167,6 +167,11 @@ const body = {
           "description": "가이드와 함께하는 공원 하루: 천자산, 양가계, 원가계 할렐루야산, 금편계곡. 그다음 천문산, 우링위안 한 곳에서 3박."
         },
         {
+          "label": "부용진: 폭포, 입장권, 야경",
+          "href": "/ko/guides/furong-ancient-town/",
+          "description": "입장권, 자정까지의 운영, 조명을 보려면 머물러야 하는 이유."
+        },
+        {
           "label": "장가계, 부용진, 봉황 7일",
           "href": "/ko/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
           "description": "우링위안 사암 봉우리에서 온전한 이틀, 그다음 후난 서부를 지나 부용진과 봉황으로."

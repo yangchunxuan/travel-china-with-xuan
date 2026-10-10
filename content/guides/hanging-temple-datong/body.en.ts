@@ -113,6 +113,11 @@ const body = {
           "description": "Yungang Grottoes and old Datong, the Hanging Temple on the drive south, then Pingyao and Taiyuan, with a private vehicle and guide."
         },
         {
+          "label": "Pingyao Ancient City: tickets, what to see and getting there",
+          "href": "/guides/pingyao-ancient-city/",
+          "description": "The RMB 125 pass, the wall and which station to use."
+        },
+        {
           "label": "Yungang Grottoes: cave order and tickets",
           "href": "/guides/yungang-grottoes-cave-order-and-museum/",
           "description": "Datong’s other must-see, and how to give it a proper morning."

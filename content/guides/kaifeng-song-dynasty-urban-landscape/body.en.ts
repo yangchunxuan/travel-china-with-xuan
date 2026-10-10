@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "Use material evidence, reconstruction and city planning as separate layers at another kind of urban site.",
         },
         {
+          label: "Shaolin Temple: tickets, kung fu show and how to visit",
+          href: "/guides/shaolin-temple/",
+          description: "What the RMB 80 ticket covers and how long to allow.",
+        },
+        {
           label: "Learn to read dougong and timber frames",
           href: "/guides/dougong-and-chinese-timber-frame-reading/",
           description: "Ask structural questions without deciding a building's age from its silhouette.",

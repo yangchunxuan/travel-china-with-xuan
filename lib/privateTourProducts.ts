@@ -3215,7 +3215,7 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
     "장가계, 부용진, 봉황 6박 7일 프라이빗 투어",
   ),
   metadataTitle: l(
-    "7-Day Zhangjiajie, Furong & Fenghuang Private Tour",
+    "Zhangjiajie, Furong Ancient Town & Fenghuang: 7-Day Tour",
     "张家界芙蓉镇凤凰古城7天6晚私家团",
     "장가계·부용진·봉황 6박 7일 프라이빗 투어",
   ),

@@ -340,6 +340,11 @@ const body = {
           description: "Handle the Zhangjiajie base decision separately instead of turning this literary comparison into a regional itinerary."
         },
         {
+          label: "Fenghuang Ancient Town: tickets, boats and getting there",
+          href: "/guides/fenghuang-ancient-town/",
+          description: "What is free, what is ticketed, and the maglev from the high-speed station."
+        },
+        {
           label: "Order a balanced first meal in Hunan",
           href: "/guides/hunan-cuisine-balanced-first-meal/",
           description: "Continue from literary geography to a practical regional-food decision."

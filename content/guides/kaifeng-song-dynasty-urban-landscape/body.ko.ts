@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "또 다른 도시 유적에서 물질적 증거, 복원, 도시 계획을 서로 다른 층위로 구분하세요.",
         },
         {
+          label: "소림사: 입장권, 쿵푸 공연, 가는 법",
+          href: "/ko/guides/shaolin-temple/",
+          description: "80위안 입장권에 포함된 것과 필요한 시간.",
+        },
+        {
           label: "더우궁과 중국 목구조 읽는 법",
           href: "/ko/guides/dougong-and-chinese-timber-frame-reading/",
           description: "건물의 윤곽만 보고 연대를 정하지 않으면서 구조적 질문을 해 보세요.",

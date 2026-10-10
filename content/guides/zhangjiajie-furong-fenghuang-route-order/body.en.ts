@@ -188,6 +188,16 @@ const body = {
           "description": "See the daily services, hotel-night split, included admissions and published prices."
         },
         {
+          "label": "Furong Ancient Town: waterfall, tickets and night visit",
+          "href": "/guides/furong-ancient-town/",
+          "description": "Tickets, the midnight closing and why to stay for the lights."
+        },
+        {
+          "label": "Fenghuang Ancient Town: tickets, boats and getting there",
+          "href": "/guides/fenghuang-ancient-town/",
+          "description": "What is free, what is ticketed, and the maglev from the high-speed station."
+        },
+        {
           "label": "Choose the correct arrival and departure station",
           "href": "/guides/zhangjiajie-arrival-departure-stations/",
           "description": "Match the airport or railway station to the hotel and final ticket."

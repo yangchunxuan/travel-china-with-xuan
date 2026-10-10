@@ -244,7 +244,7 @@ const henan: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Luoyang, Dengfeng & Kaifeng: 6-Day Private Tour", "洛阳·登封·开封 6 天 5 晚私家团", "뤄양·덩펑·카이펑 6일 프라이빗 투어"),
-  metadataTitle: l("Luoyang Tour: Shaolin, Longmen & Kaifeng 6-Day Private Tour", "河南6日游私家团：洛阳开封少林寺", "허난 뤄양·덩펑·카이펑 6일 투어"),
+  metadataTitle: l("Shaolin Temple & Luoyang Tour: 6 Days with Longmen & Kaifeng", "河南6日游私家团：洛阳开封少林寺", "허난 뤄양·덩펑·카이펑 6일 투어"),
   metadataDescription: l("A six-day Henan private route linking Kaifeng, Shaolin Temple and Longmen Grottoes with five hotel nights, private transport and guide service.", "河南 6 天私家路线，串联开封、少林寺与龙门石窟，含 5 晚住宿、私车与导游服务。", "카이펑, 소림사와 용문석굴을 잇는 허난 6일 프라이빗 일정으로 5박, 전용 차량과 가이드가 포함됩니다."),
   eyebrow: l("Three historic capitals, one route without backtracking", "三座古都顺路串联，尽量不折返", "세 역사 도시를 되돌아가지 않고 연결"),
   lede: l("Enter through Zhengzhou, give Kaifeng one full day, cross Dengfeng for Shaolin Temple and finish with two substantial Luoyang touring days.", "从郑州进入，给开封一个完整游览日，经登封看少林寺，最后用两个充足的游览日看洛阳。", "정저우로 들어와 카이펑에 하루를 쓰고 덩펑 소림사를 거쳐 뤄양에서 이틀간 핵심 유적을 봅니다."),

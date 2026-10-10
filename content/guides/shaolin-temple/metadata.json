@@ -1,0 +1,104 @@
+{
+  "id": "shaolin-temple",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "henan",
+    "shaolin-temple",
+    "tickets",
+    "kung-fu",
+    "trip-planning"
+  ],
+  "destinations": [
+    "dengfeng",
+    "henan",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/gallery-1.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/gallery-1.webp",
+  "imageWidth": 800,
+  "imageHeight": 1200,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "shaolin temple",
+      "shaolin temple china",
+      "shaolin temple tickets",
+      "shaolin kung fu show",
+      "visit shaolin temple"
+    ],
+    "zh": [
+      "少林寺",
+      "少林寺门票",
+      "少林寺武术表演时间",
+      "洛阳到少林寺"
+    ],
+    "ko": [
+      "소림사",
+      "소림사 입장료",
+      "소림사 무술 공연"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/shaolin-temple/",
+      "title": "Shaolin Temple: Tickets, Kung Fu Show Times & How to Visit",
+      "headline": "Shaolin Temple: The 80-Yuan Ticket, the Kung Fu Show, the Pagoda Forest and How to Fit It In",
+      "description": "Shaolin Temple’s RMB 80 ticket covers the temple, the Pagoda Forest and the kung fu show. Hours, what changed in 2025 and how to visit from Luoyang or Zhengzhou.",
+      "heroAlt": "A multi-eaved tower with green glazed tiles rising behind red walls and stone steles at Shaolin Temple",
+      "navTitle": "Shaolin Temple",
+      "featuredLinkLabel": "Plan Shaolin Temple",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Henan",
+        "Shaolin Temple",
+        "Kung fu"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/shaolin-temple/",
+      "title": "少林寺攻略：门票80元含什么、武术表演与游览路线",
+      "headline": "登封少林寺：80 元门票含什么、功夫表演、塔林，以及怎么安排",
+      "description": "少林寺 80 元门票包含常住院、塔林和武术表演。开放时间、2025 年以来的变化，以及从洛阳、郑州怎么安排。",
+      "heroAlt": "少林寺里绿琉璃瓦的重檐楼阁，前面是红墙和石碑",
+      "navTitle": "少林寺",
+      "featuredLinkLabel": "规划少林寺",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "河南",
+        "少林寺",
+        "功夫"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/shaolin-temple/",
+      "title": "소림사: 입장료 80위안, 무술 공연, 가는 법",
+      "headline": "숭산 소림사: 80위안 입장권, 쿵푸 공연, 탑림, 일정 넣는 법",
+      "description": "소림사 80위안 입장권에는 사찰, 탑림, 무술 공연이 포함됩니다. 운영 시간, 2025년 이후 달라진 점, 뤄양·정저우에서 가는 법.",
+      "heroAlt": "소림사의 붉은 담과 비석 뒤로 솟은 녹색 유리기와 누각",
+      "navTitle": "소림사",
+      "featuredLinkLabel": "소림사 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "허난",
+        "소림사",
+        "쿵푸"
+      ]
+    }
+  }
+}

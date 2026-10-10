@@ -167,6 +167,11 @@ const body = {
           "description": "A full guided park day for Tianzi Mountain, Yangjiajie, Yuanjiajie’s Hallelujah Mountain and Golden Whip Stream, then Tianmen Mountain, with three nights in one Wulingyuan base."
         },
         {
+          "label": "Furong Ancient Town: waterfall, tickets and night visit",
+          "href": "/guides/furong-ancient-town/",
+          "description": "Tickets, the midnight closing and why to stay for the lights."
+        },
+        {
           "label": "Zhangjiajie, Furong Town & Fenghuang: 7 days",
           "href": "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
           "description": "Two full days among Wulingyuan’s sandstone peaks, then on through western Hunan to Furong Town and Fenghuang."

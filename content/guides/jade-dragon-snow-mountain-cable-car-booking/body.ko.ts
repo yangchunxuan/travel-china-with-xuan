@@ -37,6 +37,7 @@ const body = {
     ] },
     { id: "internal-links", type: "internal-links", title: "리장 일정과 함께 보기", items: [
       { label: "쿤밍·다리·리장 8일 프라이빗 투어", href: "/ko/tours/kunming-dali-lijiang-8-day-private-tour/", description: "공개된 윈산핑과 블루문밸리 일정을 보고 빙천공원 추가는 따로 문의하세요." },
+      { label: "리장: 고성 유지비, 볼거리, 며칠 일정", href: "/ko/guides/lijiang-old-town/", description: "먼저 읽기: 세계유산 세 구역, 50위안 유지비, 옥룡설산." },
       { label: "리장에서 샹그릴라까지 이동 순서", href: "/ko/guides/lijiang-shangri-la-transport-route/", description: "산 방문일을 정하기 전에 전체 여행 동선을 살펴보세요." }
     ] },
     { id: "sources", type: "sources", title: "공식 기관 및 운영사 자료", items: [

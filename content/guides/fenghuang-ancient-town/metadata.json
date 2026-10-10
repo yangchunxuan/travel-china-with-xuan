@@ -1,0 +1,104 @@
+{
+  "id": "fenghuang-ancient-town",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "xiangxi",
+    "fenghuang-ancient-town",
+    "tickets",
+    "night-visit",
+    "trip-planning"
+  ],
+  "destinations": [
+    "fenghuang",
+    "xiangxi",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "fenghuang ancient town",
+      "fenghuang china",
+      "fenghuang ancient city",
+      "phoenix ancient town",
+      "zhangjiajie to fenghuang"
+    ],
+    "zh": [
+      "凤凰古城",
+      "凤凰古城门票",
+      "凤凰古城免费吗",
+      "张家界到凤凰古城"
+    ],
+    "ko": [
+      "봉황고성",
+      "봉황고성 입장료",
+      "장가계 봉황고성"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/fenghuang-ancient-town/",
+      "title": "Fenghuang Ancient Town: Tickets, Night Boats & Getting There",
+      "headline": "Fenghuang Ancient Town: What Is Free, What Needs a Ticket and How to Get There from Zhangjiajie",
+      "description": "Fenghuang’s streets are free; the old-town sights and Tuo River boats are ticketed. Prices, hours, the maglev from the high-speed station and how long to stay.",
+      "heroAlt": "Wooden stilt houses and the Wanming Pagoda reflected in the Tuo River in Fenghuang Ancient Town in morning light",
+      "navTitle": "Fenghuang Ancient Town",
+      "featuredLinkLabel": "Plan Fenghuang",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hunan",
+        "Fenghuang",
+        "Tickets"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/fenghuang-ancient-town/",
+      "title": "凤凰古城攻略：要不要门票、游船价格与高铁磁浮",
+      "headline": "凤凰古城：哪些免费、哪些要买票，从张家界怎么去",
+      "description": "凤凰古城的街巷和江边免费，景点和沱江游船要买票。价格、开放时间、高铁站到古城的磁浮，以及住几晚。",
+      "heroAlt": "晨光里的凤凰古城，沱江边的木结构吊脚楼和万名塔倒映在水面上",
+      "navTitle": "凤凰古城",
+      "featuredLinkLabel": "规划凤凰古城",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "湖南",
+        "凤凰古城",
+        "门票"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/fenghuang-ancient-town/",
+      "title": "봉황고성: 입장료, 야간 유람선, 장가계에서 가는 법",
+      "headline": "봉황고성: 무료인 곳과 표가 필요한 곳, 장가계에서 가는 법",
+      "description": "봉황고성의 거리와 강변은 무료이고, 고성 안 명소와 타강 유람선은 표가 필요합니다. 가격, 운영 시간, 고속철도역에서 오는 자기부상열차, 몇 박이 좋은지.",
+      "heroAlt": "아침 햇살 속 봉황고성, 타강에 비친 목조 가옥과 만명탑",
+      "navTitle": "봉황고성",
+      "featuredLinkLabel": "봉황고성 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "후난",
+        "봉황고성",
+        "입장권"
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "lijiang-old-town",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "yunnan",
+    "lijiang-old-town",
+    "tickets",
+    "world-heritage",
+    "trip-planning"
+  ],
+  "destinations": [
+    "lijiang",
+    "yunnan",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/kunming-dali-lijiang-8-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/kunming-dali-lijiang-8-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 747,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "lijiang",
+      "lijiang china",
+      "lijiang old town",
+      "lijiang old town fee",
+      "lijiang yunnan"
+    ],
+    "zh": [
+      "丽江古城",
+      "丽江古城维护费",
+      "丽江玩几天",
+      "丽江攻略"
+    ],
+    "ko": [
+      "리장",
+      "리장고성",
+      "여강고성",
+      "리장 여행"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/lijiang-old-town/",
+      "title": "Lijiang, China: Old Town Fee, What to See & How Many Days",
+      "headline": "Lijiang: The Old Town, the RMB 50 Maintenance Fee, Jade Dragon Snow Mountain and How Long to Stay",
+      "description": "Lijiang Old Town in Yunnan is a UNESCO site at 2,400 m. The RMB 50 maintenance fee, what to see in Dayan, Shuhe and Baisha, the snow mountain and how many days.",
+      "heroAlt": "Grey-tiled timber houses filling the slope of Lijiang Old Town, with hills behind",
+      "navTitle": "Lijiang Old Town",
+      "featuredLinkLabel": "Plan Lijiang",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Yunnan",
+        "Lijiang",
+        "World Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/lijiang-old-town/",
+      "title": "丽江古城攻略：古城维护费50元、看什么、玩几天",
+      "headline": "丽江：古城、50 元古城维护费、玉龙雪山，以及住几晚",
+      "description": "云南丽江古城是海拔 2,400 米的世界遗产。50 元古城维护费怎么收，大研、束河、白沙看什么，玉龙雪山怎么安排，玩几天。",
+      "heroAlt": "丽江古城依坡而建的成片灰瓦木楼，远处是山",
+      "navTitle": "丽江古城",
+      "featuredLinkLabel": "规划丽江",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "云南",
+        "丽江古城",
+        "世界遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/lijiang-old-town/",
+      "title": "중국 리장: 고성 유지비 50위안, 볼거리, 며칠 일정",
+      "headline": "리장: 고성, 50위안 유지비, 옥룡설산, 몇 박이 좋은지",
+      "description": "윈난성 리장고성은 해발 2,400m의 유네스코 세계유산입니다. 50위안 유지비, 다옌·수허·바이사의 볼거리, 옥룡설산, 며칠이 필요한지.",
+      "heroAlt": "언덕을 따라 회색 기와 목조 가옥이 빼곡한 리장고성과 뒤편의 산",
+      "navTitle": "리장고성",
+      "featuredLinkLabel": "리장 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "윈난",
+        "리장",
+        "세계유산"
+      ]
+    }
+  }
+}

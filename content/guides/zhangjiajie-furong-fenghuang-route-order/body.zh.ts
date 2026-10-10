@@ -188,6 +188,16 @@ const body = {
           "description": "查看逐日服务、住宿晚数、已含门票与网页价格。"
         },
         {
+          "label": "芙蓉镇攻略：瀑布、门票与夜景",
+          "href": "/zh/guides/furong-ancient-town/",
+          "description": "门票、开放到午夜，以及为什么要留到亮灯以后。"
+        },
+        {
+          "label": "凤凰古城攻略：门票、游船与交通",
+          "href": "/zh/guides/fenghuang-ancient-town/",
+          "description": "哪些免费、哪些要买票，以及高铁站到古城的磁浮。"
+        },
+        {
           "label": "选对抵达与离开的机场、车站",
           "href": "/zh/guides/zhangjiajie-arrival-departure-stations/",
           "description": "把准确节点、住宿地址与最后一张交通票接起来。"

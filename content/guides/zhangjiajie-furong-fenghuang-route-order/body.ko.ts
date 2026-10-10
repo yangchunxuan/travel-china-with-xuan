@@ -188,6 +188,16 @@ const body = {
           "description": "일자별 서비스, 숙박 구성, 포함 입장권과 공개 가격을 확인하세요."
         },
         {
+          "label": "부용진: 폭포, 입장권, 야경",
+          "href": "/ko/guides/furong-ancient-town/",
+          "description": "입장권, 자정까지의 운영, 조명을 보려면 머물러야 하는 이유."
+        },
+        {
+          "label": "봉황고성: 입장권, 유람선, 가는 법",
+          "href": "/ko/guides/fenghuang-ancient-town/",
+          "description": "무료인 곳과 유료인 곳, 고속철도역에서 오는 자기부상열차."
+        },
+        {
           "label": "정확한 도착·출발 공항과 역 고르기",
           "href": "/ko/guides/zhangjiajie-arrival-departure-stations/",
           "description": "교통 거점, 호텔 주소와 마지막 교통편을 연결하세요."
