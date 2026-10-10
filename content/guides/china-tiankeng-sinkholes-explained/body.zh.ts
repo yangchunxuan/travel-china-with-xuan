@@ -59,7 +59,7 @@ const body = {schemaVersion:"1.0.0",blocks:[
     { question: "和长辈同行，还值得去看天坑吗？", answer: "值得，先用坑口和游客中心这一层。优先核验准入、栏杆、休息点、卫生间和地面替代方案，核对阶梯和返程体力之后再决定要不要下降。只写“轻松”、没有可测准入证据的路线不要选；遇到这种情况，可以换一处有明确准入证据的正式喀斯特地点。" },
     { question: "遇到大雾看不见凹地怎么办？", answer: "改看游客中心、地质剖面、模型和坑口植被，等待也只在交通余量之内。这样不用虚构视野，也能理解形成过程与生境。如果雨后下层路线关闭，就只留在明确开放的地面路线，或者直接离开，不要跟着脚印绕过围挡。" },
   ] },
-  {id:"links",type:"internal-links",title:"负责任地安排自然准入",items:[{ label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
+  {id:"links",type:"internal-links",title:"负责任地安排自然准入",items:[{ label: "武隆天生三桥攻略", href: "/zh/guides/wulong-karst/", description: "从重庆去武隆：门票包含什么、开放时间、怎么去。" }, { label: "先从重庆城市旅行指南开始", href: "/zh/destinations/chongqing/", description: "进入本专题前，先决定住几晚、住宿基地、交通门户，以及是否加入武隆或大足。" },
     {label:"选择祁连山公共入口",href:"/zh/guides/qilian-mountains-public-gateways-and-access/",description:"在大型保护景观中使用同样严格的边界方法。"},
     {label:"理解中国气候区",href:"/zh/guides/china-climate-regions-for-trip-timing/",description:"不要把一个地区的天气结论套到所有喀斯特区域。"},
     {label:"规划中国轮椅可达路线",href:"/zh/guides/wheelchair-accessible-china-route-planning/",description:"用可测路线证据替换模糊无障碍标签。"},

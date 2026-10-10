@@ -138,6 +138,7 @@ const approvedCommercialGuideIds = [
   "how-guangzhou-morning-tea-works",
   "yuanyang-rice-terraces-viewpoint-and-village-route",
   "hanging-temple-datong",
+  "wangxian-valley",
   "yangtze-cruise-fit-china-itinerary",
   "li-river-cruise-tickets-piers-booking",
   "jade-dragon-snow-mountain-cable-car-booking",

@@ -1,0 +1,101 @@
+{
+  "id": "wulong-karst",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "chongqing",
+    "wulong",
+    "karst",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "chongqing",
+    "wulong"
+  ],
+  "heroImagePath": "/images/tours/chongqing-wulong-5-day-private-tour/gallery-wulong-canyon-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/chongqing-wulong-5-day-private-tour/gallery-wulong-canyon-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "wulong karst",
+      "three natural bridges wulong",
+      "wulong china",
+      "wulong day trip from chongqing",
+      "transformers wulong"
+    ],
+    "zh": [
+      "武隆天生三桥",
+      "武隆一日游",
+      "龙水峡地缝"
+    ],
+    "ko": [
+      "우롱 천생삼교",
+      "충칭 우롱"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wulong-karst/",
+      "title": "Wulong Karst: Three Natural Bridges, Tickets & Day Trip",
+      "headline": "Wulong Karst from Chongqing: The Three Natural Bridges, the Fissure Gorge and Whether to Stay the Night",
+      "description": "Wulong's Three Natural Bridges span a gorge in a UNESCO karst area and starred in Transformers. Opening hours by season, what the ticket covers and how to get there.",
+      "heroAlt": "Sheer limestone cliffs above a green pool and a visitor walkway in Wulong's karst gorge",
+      "navTitle": "Wulong Karst",
+      "featuredLinkLabel": "Plan Wulong",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Chongqing",
+        "Wulong",
+        "Karst"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/wulong-karst/",
+      "title": "武隆天生三桥攻略：开放时间、门票与一日游",
+      "headline": "从重庆去武隆：天生三桥、龙水峡地缝，以及要不要住一晚",
+      "description": "武隆天生三桥横跨峡谷，属世界遗产“中国南方喀斯特”，也是《变形金刚4》取景地。各季开放时间、门票包含什么、怎么去。",
+      "heroAlt": "武隆喀斯特峡谷中陡峭的石灰岩崖壁、碧绿水潭和游客步道",
+      "navTitle": "武隆天生三桥",
+      "featuredLinkLabel": "规划武隆",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "重庆",
+        "武隆",
+        "喀斯特"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/wulong-karst/",
+      "title": "우롱 카르스트: 천생삼교, 입장권, 충칭 당일치기",
+      "headline": "충칭에서 우롱으로: 천생삼교, 용수협 지협, 그리고 1박을 할지",
+      "description": "우롱 천생삼교는 유네스코 카르스트 지역의 협곡에 걸린 천연 다리로 트랜스포머 촬영지입니다. 계절별 운영 시간, 입장권 포함 내용, 가는 법.",
+      "heroAlt": "우롱 카르스트 협곡의 깎아지른 석회암 절벽과 초록 웅덩이, 관람 데크",
+      "navTitle": "우롱 카르스트",
+      "featuredLinkLabel": "우롱 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "충칭",
+        "우롱",
+        "카르스트"
+      ]
+    }
+  }
+}
