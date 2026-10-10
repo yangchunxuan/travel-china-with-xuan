@@ -1,0 +1,101 @@
+{
+  "id": "jiuzhaigou-valley",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "jiuzhaigou",
+    "tickets",
+    "booking",
+    "trip-timing",
+    "altitude"
+  ],
+  "destinations": [
+    "jiuzhaigou",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/hero.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1064,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "jiuzhaigou",
+      "jiuzhaigou valley",
+      "jiuzhaigou national park",
+      "jiuzhaigou tickets",
+      "jiuzhaigou best time to visit"
+    ],
+    "zh": [
+      "九寨沟门票",
+      "九寨沟预约",
+      "九寨沟一日游路线"
+    ],
+    "ko": [
+      "구채구",
+      "구채구 입장료"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/jiuzhaigou-valley/",
+      "title": "Jiuzhaigou Valley 2026: Tickets, Booking, Best Time & Route",
+      "headline": "Jiuzhaigou Valley: How to Book, What It Costs, When to Go and the Route Through the Three Valleys",
+      "description": "Peak-season Jiuzhaigou costs RMB 190 plus RMB 90 for the bus, with 41,000 places a day. Booking with a passport, opening hours, best time and the one-day route.",
+      "heroAlt": "Turquoise water and submerged tree trunks at Five Flower Lake in Jiuzhaigou, framed by autumn forest",
+      "navTitle": "Jiuzhaigou Valley",
+      "featuredLinkLabel": "Plan Jiuzhaigou",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jiuzhaigou",
+        "Tickets",
+        "Sichuan"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/jiuzhaigou-valley/",
+      "title": "九寨沟攻略 2026：门票、预约、开放时间与一日游路线",
+      "headline": "九寨沟：怎么预约、门票多少、什么时候去、三条沟怎么走",
+      "description": "2026 年九寨沟旺季门票 190 元、观光车 90 元，每天限 4.1 万人。护照能否预约、入园时间、最佳季节和官方一日游路线。",
+      "heroAlt": "九寨沟五花海碧绿的湖水和水下的倒木，四周是秋色树林",
+      "navTitle": "九寨沟",
+      "featuredLinkLabel": "规划九寨沟",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "九寨沟",
+        "门票",
+        "四川"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/jiuzhaigou-valley/",
+      "title": "구채구 2026: 입장료, 예약, 가기 좋은 때, 코스",
+      "headline": "구채구: 예약 방법, 비용, 가기 좋은 시기, 세 골짜기 동선",
+      "description": "2026년 성수기 구채구는 입장료 190위안과 셔틀버스 90위안, 하루 4만 1,000명 제한입니다. 여권 예약, 입장 시간, 시기와 1일 코스.",
+      "heroAlt": "가을 숲에 둘러싸인 구채구 오화해의 청록빛 물과 물속 나무줄기",
+      "navTitle": "구채구",
+      "featuredLinkLabel": "구채구 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "구채구",
+        "입장료",
+        "쓰촨"
+      ]
+    }
+  }
+}
