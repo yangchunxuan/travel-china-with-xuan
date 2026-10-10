@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 import test from "node:test";
 import React from "react";
@@ -10,7 +12,7 @@ import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
 import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
-import { getHomepagePrivateTourItems } from "../../lib/homepagePrivateTourCatalog.ts";
+import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../../lib/homepagePrivateTourCatalog.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
@@ -111,19 +113,17 @@ test("all three-language catalog cards quote the lowest row but open the smalles
     }
     for (const item of getHomepagePrivateTourItems(locale)) {
       const published = catalog.find((candidate) => candidate.slug === item.id);
-      if (item.id === "zhangjiajie-forest-4-day-private-tour") {
-        const selection = { packageId: "fixed-route-english-guided", travelers: 4 };
-        assert.equal(item.href, inquiry.buildPrivateTourDetailHref(published.href, item.id, selection));
-        assert.equal(item.startingPrice.travelers, 4);
-        assert.equal(item.startingPrice.formatted, { en: "USD\u00a0510", zh: "¥3,280", ko: "₩710,000" }[locale]);
-        assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
-        assert.equal(published.startingPrice.travelers, 6, "catalog uses the lowest published per-person tier and states its group basis");
-        assert.equal(published.startingPrice.formatted, { en: "USD\u00a0460", zh: "¥2,980", ko: "₩650,000" }[locale]);
+      if (!published.startingPrice) {
+        assert.equal(item.startingPrice, null);
+        assert.equal(item.twoTravellerPrice, undefined);
+        assert.equal(item.href, published.href, "quote-only tours open without a priced selection");
         continue;
       }
       assert.equal(item.href, published.startingPriceHref);
       assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
+      assert.deepEqual(item.startingPrice.selection, published.startingPrice.selection);
+      assert.equal(item.twoTravellerPrice?.formatted, published.twoTravellerPrice?.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
     assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].six_person_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
@@ -319,20 +319,29 @@ test("server-rendered homepage labels and detail price controls share the starti
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);
-    assert.equal(products[0].id, "zhangjiajie-forest-4-day-private-tour");
+    assert.equal(products[0].id, "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour");
+    assert.equal(products.length, 6);
     const homepageDom = parse(renderToStaticMarkup(React.createElement(homepage.HomepageProductShowcase, { locale, products })));
     for (const item of products) {
       const link = nodes(homepageDom).find((node) => node.tagName === "a" && attr(node, "href") === item.href);
       assert.ok(link);
+      if (!item.startingPrice) {
+        const copy = getHomepageProductShowcaseCopy(locale);
+        const price = nodes(link).find((node) => attr(node, "class") === "cardPrice");
+        assert.ok(text(price).includes(copy.quoteOnlyLabel));
+        assert.ok(text(price).includes(copy.quoteOnlyNote));
+        assert.ok(!text(price).includes(copy.startingPriceLabel));
+        assert.ok(!text(price).includes(copy.perPersonLabel));
+        assert.doesNotMatch(text(price), /USD|CNY|¥|₩|\d/u);
+        const image = nodes(link).find((node) => node.tagName === "img");
+        assert.ok(image);
+        assert.ok(attr(image, "src").includes(item.id));
+        assert.ok(attr(image, "srcset").includes(item.id));
+        continue;
+      }
       assert.ok(text(link).includes(item.startingPrice.serviceLabel), `${locale}:${item.id} service basis is server-rendered`);
       assert.ok(text(link).includes(item.startingPrice.formatted));
       assert.ok(text(link).includes(getHomepageProductShowcaseCopy(locale).groupBasis(item.startingPrice.travelers)), `${locale}:${item.id} group basis stays beside the promoted price`);
-      if (item.id === "zhangjiajie-forest-4-day-private-tour") {
-        const image = nodes(link).find((node) => node.tagName === "img");
-        assert.ok(image);
-        assert.match(attr(image, "src"), /zhangjiajie-forest-4-day-private-tour-/);
-        assert.match(attr(image, "srcset"), /zhangjiajie-forest-4-day-private-tour-/);
-      }
     }
     const product = localizePrivateTourProduct(privateTourProducts.find((p) => p.slug === beijingSlug), locale);
     const starting = getPrivateTourStartingPrice(product);
@@ -360,6 +369,92 @@ test("server-rendered homepage labels and detail price controls share the starti
     assert.ok(inquiryLinks >= 2, "both existing inquiry actions must retain the starting selection");
     assert.equal(whatsappLinks, 1, "the mocked secondary contact remains a real contextual link");
   }
+});
+
+test("the actual Japanese homepage retains all six routes and renders both new routes without prices", async () => {
+  // Load the real authored Japanese tour copy using the repository's existing
+  // Node resolver; no build, production request or invented Japanese offer.
+  const fixtures = new Map(JSON.parse(execFileSync(process.execPath, [
+    "--experimental-strip-types", "--no-warnings", "--loader",
+    new URL("../../tools/ts-extension-loader.mjs", import.meta.url).href,
+    "--input-type=module", "-e", `
+      import { homepagePrivateTourSlugs } from ${JSON.stringify(new URL("../../lib/homepagePrivateTourCatalog.ts", import.meta.url).href)};
+      import { getPrivateTourProduct } from ${JSON.stringify(new URL("../../lib/privateTourProducts.ts", import.meta.url).href)};
+      import { localizeJapanesePrivateTourProduct } from ${JSON.stringify(new URL("../../lib/localizeJapanesePrivateTourProduct.ts", import.meta.url).href)};
+      console.log(JSON.stringify(homepagePrivateTourSlugs.map(slug => {
+        const tour = localizeJapanesePrivateTourProduct(getPrivateTourProduct(slug));
+        return [slug, { tour }];
+      })));
+    `,
+  ], { cwd: fileURLToPath(new URL("../../", import.meta.url)), encoding: "utf8", timeout: 30_000, maxBuffer: 2 * 1024 * 1024 })));
+  const { japaneseTourEntryHref } = await loadComponent("lib/japaneseTourCatalog.ts", {
+    "./japaneseLegacyZhangjiajieProduct": {},
+    "./localizeJapanesePrivateTourProduct": { localizeJapanesePrivateTourProduct: (product) => fixtures.get(product.slug).tour },
+    "./privateTourProducts": { privateTourProducts },
+    "./privateTourInquiryContext": inquiry,
+    "./privateTourStartingPrice": { getPrivateTourEntrySelection },
+  });
+  for (const fixture of fixtures.values()) fixture.href = japaneseTourEntryHref(fixture.tour);
+  const { japaneseHomeCopy } = await loadComponent("lib/japaneseHomeCopy.ts");
+  const keepWords = await loadComponent("components/text/KeepWords.tsx");
+  const charReveal = await loadComponent("components/motion/CharReveal.tsx");
+  const showcase = await loadComponent("components/HomepageProductShowcase.tsx", {
+    "../lib/homepageProductShowcaseI18n": { getHomepageProductShowcaseCopy },
+    "../lib/privateTourHubI18n": { privateTourHubPaths },
+    "./privateTourCardImages": cardImages,
+    "./text/KeepWords": keepWords,
+    "./motion/CharReveal": charReveal,
+  });
+  let projected;
+  const home = await loadComponent("app/(japanese)/ja/page.tsx", {
+    "../../../components/JapaneseHomePage": { JapaneseHomePage: ({ products }) => {
+      projected = products;
+      return React.createElement(showcase.HomepageProductShowcase, {
+        locale: "en", products,
+        japanese: { copy: japaneseHomeCopy.showcase, hubHref: "/ja/tours/" },
+      });
+    } },
+    "../../../lib/japaneseHomeCopy": { japaneseHomeCopy },
+    "../../../lib/japaneseSite": { japaneseSite: { home: "/ja/" }, japaneseAlternates: () => ({}), buildJapaneseSocialMetadata: () => ({}) },
+    "../../../lib/homepagePrivateTourCatalog": { homepagePrivateTourSlugs },
+    "../../../lib/homegroundStudioI18n": { getHomepageTeamFaces: () => [] },
+    "../../../lib/localizeJapanesePrivateTourProduct": { localizeJapanesePrivateTourProduct: (product) => fixtures.get(product.slug).tour },
+    "../../../lib/privateTourProducts": { getPrivateTourProduct: (slug) => privateTourProducts.find((product) => product.slug === slug) },
+    "../../../lib/privateTourStartingPrice": { getPrivateTourStartingPrice, getPrivateTourTwoTravellerPrice },
+    "../../../lib/japaneseTourCatalog": { japaneseTourEntryHref: (tour) => fixtures.get(tour.slug).href },
+  });
+  const dom = parse(renderToStaticMarkup(React.createElement(home.default)));
+  assert.deepEqual(normalize(projected.map((product) => product.id)), [...homepagePrivateTourSlugs]);
+  const rows = nodes(dom).filter((node) => attr(node, "data-homepage-product-slug"));
+  assert.equal(rows.length, 6);
+  for (const product of projected) {
+    const fixture = fixtures.get(product.id);
+    const row = rows.find((node) => attr(node, "data-homepage-product-slug") === product.id);
+    const link = nodes(row).find((node) => node.tagName === "a");
+    const price = nodes(row).find((node) => attr(node, "class") === "cardPrice");
+    assert.equal(product.title, fixture.tour.title);
+    assert.equal(product.appeal, fixture.tour.lede);
+    assert.equal(attr(link, "href"), fixture.href);
+    assert.equal(product.image.src, fixture.tour.heroImage.src);
+    if (!getPrivateTourStartingPrice(fixture.tour)) {
+      assert.equal(product.startingPrice, null);
+      assert.equal(product.twoTravellerPrice, undefined);
+      assert.equal(attr(link, "href"), `/ja/tours/${product.id}/`);
+      assert.ok(text(price).includes(japaneseHomeCopy.showcase.quoteOnlyLabel));
+      assert.ok(text(price).includes(japaneseHomeCopy.showcase.quoteOnlyNote));
+      assert.ok(!text(price).includes(japaneseHomeCopy.showcase.perPersonLabel));
+      assert.doesNotMatch(text(price), /CNY|USD|¥|₩|\d/u);
+    } else {
+      const starting = getPrivateTourStartingPrice(fixture.tour);
+      assert.equal(product.startingPrice.formatted, starting.formatted);
+      assert.equal(product.startingPrice.travelers, starting.travelers);
+      assert.equal(product.startingPrice.serviceLabel, starting.serviceLabel);
+      assert.ok(text(price).includes(starting.formatted));
+      assert.ok(text(price).includes(starting.serviceLabel));
+      assert.equal(product.twoTravellerPrice?.formatted, getPrivateTourTwoTravellerPrice(fixture.tour)?.formatted);
+    }
+  }
+  assert.equal(projected.filter((product) => product.startingPrice).length, 4);
 });
 
 test("Jiangnan comparison and both inquiry actions preserve the selected party and package", async () => {

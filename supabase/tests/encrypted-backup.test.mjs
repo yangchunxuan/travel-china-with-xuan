@@ -51,7 +51,11 @@ function chunkedDump(chunks) {
 
 test('strict known-project URLs and standard age recipient reject unsafe configuration', () => {
   assert.equal(validateAgeRecipient(recipient), recipient);
-  for (const value of ['', 'AGE-SECRET-KEY-1fixture', 'ssh-ed25519 fixture', `${recipient.slice(0, -1)}q`]) assert.throws(() => validateAgeRecipient(value));
+  for (const value of ['', 'AGE-SECRET-KEY-1fixture', 'ssh-ed25519 fixture']) assert.throws(() => validateAgeRecipient(value));
+  // A randomly generated valid recipient may already end in q.
+  const corruptedRecipient = `${recipient.slice(0, -1)}${recipient.endsWith('q') ? 'p' : 'q'}`;
+  assert.notEqual(corruptedRecipient, recipient);
+  assert.throws(() => validateAgeRecipient(corruptedRecipient), { code: 'AGE_RECIPIENT_INVALID' });
   assert.throws(() => parseDatabaseUrl(), /DATABASE_URL_MISSING/);
   for (const value of ['not-a-url', 'https://postgres:secret@example.invalid/postgres', `postgresql://postgres@db.${PROJECT_REF}.supabase.co/postgres`]) assert.throws(() => parseDatabaseUrl(value), /DATABASE_URL_INVALID/);
   assert.throws(() => parseDatabaseUrl(dbUrl.replace(PROJECT_REF, 'wrong-project')), /DATABASE_PROJECT_MISMATCH/);

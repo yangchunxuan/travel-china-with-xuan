@@ -38,6 +38,8 @@ export const japaneseHomeCopy = {
     durationLabel: "{days}日間・{nights}泊",
     productLabel: "プライベートツアー",
     startingPriceLabel: "公開料金の目安",
+    quoteOnlyLabel: "日程別のお見積もり",
+    quoteOnlyNote: "日程と人数に合わせてご案内",
     perPersonLabel: "1名あたり",
     groupBasis: "{travelers}名参加時",
     actionLabel: "この旅を見る",

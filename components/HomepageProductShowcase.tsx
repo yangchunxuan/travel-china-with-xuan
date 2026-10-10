@@ -224,41 +224,50 @@ export function HomepageProductShowcase({
                       <KeepWords locale={japanese ? "ja" : locale} text={product.title} />
                     </h3>
                     <p className={styles.cardPrice}>
-                      <span>{copy.startingPriceLabel}</span>
-                      {product.twoTravellerPrice ? (
+                      {product.startingPrice ? (
                         <>
-                          {/* A couple sees its own per-person price beside
-                              the lower larger-group starting price. */}
-                          <strong className={styles.cardPriceTiers}>
-                            <span>
-                              <small>{copy.groupBasis(2)}</small>{" "}
-                              <CharReveal text={product.twoTravellerPrice.formatted} />
-                            </span>
-                            <span>
-                              <small>{copy.groupBasis(product.startingPrice.travelers)}</small>{" "}
-                              <CharReveal text={product.startingPrice.formatted} />
-                            </span>
-                          </strong>
-                          <small>{copy.perPersonLabel}</small>
+                          <span>{copy.startingPriceLabel}</span>
+                          {product.twoTravellerPrice ? (
+                            <>
+                              {/* A couple sees its own per-person price beside
+                                  the lower larger-group starting price. */}
+                              <strong className={styles.cardPriceTiers}>
+                                <span>
+                                  <small>{copy.groupBasis(2)}</small>{" "}
+                                  <CharReveal text={product.twoTravellerPrice.formatted} />
+                                </span>
+                                <span>
+                                  <small>{copy.groupBasis(product.startingPrice.travelers)}</small>{" "}
+                                  <CharReveal text={product.startingPrice.formatted} />
+                                </span>
+                              </strong>
+                              <small>{copy.perPersonLabel}</small>
+                            </>
+                          ) : (
+                            <>
+                              <strong>
+                                <CharReveal text={product.startingPrice.formatted} />
+                              </strong>
+                              <small>
+                                {copy.perPersonLabel} ·{" "}
+                                {copy.groupBasis(product.startingPrice.travelers)}
+                              </small>
+                            </>
+                          )}
+                          {product.startingPrice.serviceLabel && (
+                            <small>{product.startingPrice.serviceLabel}</small>
+                          )}
+                          {product.startingPrice.validityNote && (
+                            <small className={styles.cardValidity}>
+                              {product.startingPrice.validityNote}
+                            </small>
+                          )}
                         </>
                       ) : (
                         <>
-                          <strong>
-                            <CharReveal text={product.startingPrice.formatted} />
-                          </strong>
-                          <small>
-                            {copy.perPersonLabel} ·{" "}
-                            {copy.groupBasis(product.startingPrice.travelers)}
-                          </small>
+                          <strong>{copy.quoteOnlyLabel}</strong>
+                          <small>{copy.quoteOnlyNote}</small>
                         </>
-                      )}
-                      {product.startingPrice.serviceLabel && (
-                        <small>{product.startingPrice.serviceLabel}</small>
-                      )}
-                      {product.startingPrice.validityNote && (
-                        <small className={styles.cardValidity}>
-                          {product.startingPrice.validityNote}
-                        </small>
                       )}
                     </p>
                     <p className={styles.cardDescription}>

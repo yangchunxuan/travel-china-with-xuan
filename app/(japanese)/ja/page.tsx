@@ -30,7 +30,6 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
     if (!product) return [];
     const tour = localizeJapanesePrivateTourProduct(product);
     const starting = getPrivateTourStartingPrice(tour);
-    if (!starting) return [];
     const twoTravellers = getPrivateTourTwoTravellerPrice(tour);
     return [{
       id: tour.slug,
@@ -40,12 +39,12 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
       days: tour.days,
       nights: tour.nights,
       href: japaneseTourEntryHref(tour),
-      startingPrice: {
+      startingPrice: starting ? {
         formatted: starting.formatted,
         travelers: starting.travelers,
         serviceLabel: starting.serviceLabel,
         selection: starting.selection,
-      },
+      } : null,
       ...(twoTravellers ? { twoTravellerPrice: { formatted: twoTravellers.formatted } } : {}),
       image: {
         src: tour.heroImage.src,

@@ -1,6 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: export checks execute this module via type stripping.
-import { getPublishedPrivateTourCatalog, selectPublishedPrivateTourPrice } from "./publishedPrivateTourCatalog.ts";
+import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
 import type { PrivateTourInquirySelection } from "./privateTourInquiryContext";
 
 export interface HomepagePrivateTourItem {
@@ -17,7 +17,7 @@ export interface HomepagePrivateTourItem {
     readonly serviceLabel: string;
     readonly selection?: PrivateTourInquirySelection;
     readonly validityNote?: string;
-  };
+  } | null;
   /** Two-traveller per-person price shown beside a larger-group starting price. */
   readonly twoTravellerPrice?: {
     readonly formatted: string;
@@ -36,13 +36,18 @@ export interface HomepagePrivateTourItem {
  * The complete published catalog remains available on the tours hub.
  */
 export const homepagePrivateTourSlugs = [
-  "zhangjiajie-forest-4-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "beijing-highlights-5-day-private-tour",
-  "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",
   "xian-terracotta-warriors-5-day-private-tour",
   "guilin-yangshuo-5-day-private-tour",
 ] as const;
+
+const quoteOnlyHomepageSlugs = new Set<string>([
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+]);
 
 /**
  * Backwards-compatible homepage projection of the single published catalog.
@@ -61,24 +66,14 @@ export function getHomepagePrivateTourItems(
     if (!product) {
       throw new Error(`Missing homepage private tour: ${slug}`);
     }
-    // The owner selected the forest tour's four-person offer for the homepage.
-    // Resolve its price from the published row; the full catalog keeps its two-person basis.
-    const selected = slug === "zhangjiajie-forest-4-day-private-tour"
-      ? selectPublishedPrivateTourPrice(product, locale, {
-        packageId: "fixed-route-english-guided",
-        travelers: 4,
-      })
-      : product;
-    if (!selected.startingPrice) {
+    if (quoteOnlyHomepageSlugs.has(slug)) {
+      if (product.startingPrice || product.twoTravellerPrice) {
+        throw new Error(`Homepage quote-only tour must not publish a price: ${slug}`);
+      }
+    } else if (!product.startingPrice) {
       throw new Error(`Homepage tour requires a published price: ${slug}`);
     }
-    // Its card links to that four-person offer, so it shows only that price:
-    // a two-person figure beside it would not match the page it opens.
-    if (slug === "zhangjiajie-forest-4-day-private-tour") {
-      const { twoTravellerPrice: _twoTravellers, ...fourPersonOffer } = selected;
-      return { ...fourPersonOffer, startingPrice: selected.startingPrice };
-    }
-    return { ...selected, startingPrice: selected.startingPrice };
+    return product;
   });
 
   return Object.freeze(
@@ -92,13 +87,13 @@ export function getHomepagePrivateTourItems(
           days: product.days,
           nights: product.nights,
           href: product.startingPriceHref,
-          startingPrice: {
+          startingPrice: product.startingPrice ? {
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,
             serviceLabel: product.startingPrice.serviceLabel,
             selection: product.startingPrice.selection,
             validityNote: product.startingPrice.validityNote,
-          },
+          } : null,
           ...(product.twoTravellerPrice
             ? { twoTravellerPrice: { formatted: product.twoTravellerPrice.formatted } }
             : {}),

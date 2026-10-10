@@ -14,6 +14,7 @@ export const privateTourInquiryQueryKey = "tour";
 
 export const privateTourInquirySlugs = [
   "shanghai-suzhou-hangzhou-6-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",
   "xian-terracotta-warriors-5-day-private-tour",
   "chongqing-wulong-5-day-private-tour",
@@ -45,6 +46,7 @@ export const privateTourInquirySlugs = [
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
@@ -285,6 +287,11 @@ const privateTourInquiryNames: Readonly<
     zh: "上海·苏州·杭州 6 天 5 晚私家团",
     ko: "상하이·쑤저우·항저우 6일 프라이빗 투어",
   },
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": {
+    en: "Jiangnan, The Art of Living: 12 Days in Suzhou, Tongli, Hangzhou & Shanghai",
+    zh: "江南，生活的艺术｜苏州·同里·杭州·上海 12 天私家旅程",
+    ko: "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행",
+  },
   "chengdu-pandas-sanxingdui-5-day-private-tour": {
     en: "Chengdu, Pandas & Sanxingdui: 5-Day Private Tour",
     zh: "成都·大熊猫·三星堆 5 天 4 晚私家团",
@@ -439,6 +446,11 @@ const privateTourInquiryNames: Readonly<
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour",
     zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团",
     ko: "베이징·시안·청두·계림·상하이 14일 프라이빗 투어",
+  },
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": {
+    en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 13-Day Private Tour",
+    zh: "北京·西安·成都·桂林·上海 13 天 12 晚私家团",
+    ko: "베이징·시안·청두·계림·상하이 13일 프라이빗 투어",
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour",

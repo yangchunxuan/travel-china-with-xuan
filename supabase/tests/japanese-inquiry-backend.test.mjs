@@ -6,12 +6,14 @@ import {
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 
-const laterWinterSlugs = new Set([
+const laterProductSlugs = new Set([
   "harbin-yabuli-snow-town-6-day-private-tour",
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
   "harbin-mohe-arctic-village-7-day-private-tour",
   "harbin-snow-town-mohe-9-day-private-tour",
   "yanji-changbaishan-wanda-6-day-private-tour",
+  "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
 ]);
 
 const migrationPath = new URL(
@@ -25,8 +27,8 @@ test("Japanese SQL identity matches every published Japanese tour title", async 
     /create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u,
   )?.[0];
   assert.ok(productNames);
-  // This historical migration predates the five winter products.
-  for (const slug of privateTourInquirySlugs.filter((candidate) => !laterWinterSlugs.has(candidate))) {
+  // This historical migration predates the five winter products, Jiangnan and the five-city route.
+  for (const slug of privateTourInquirySlugs.filter((candidate) => !laterProductSlugs.has(candidate))) {
     const branch = productNames.match(
       new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"),
     )?.[1];
@@ -37,6 +39,26 @@ test("Japanese SQL identity matches every published Japanese tour title", async 
       assert.match(branch, new RegExp(`when '${locale}' then`, "u"), `${locale}:${slug}`);
     }
   }
+});
+
+test("Jiangnan quote migration adds its exact Japanese title without a priced selection", async () => {
+  const sql = await readFile(new URL("../migrations/202610100001_add_jiangnan_quote_route.sql", import.meta.url), "utf8");
+  const names = sql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
+  assert.ok(names);
+  const branch = names.match(/when 'suzhou-tongli-hangzhou-shanghai-12-day-private-tour' then case p_locale([\s\S]*?)else null end/u)?.[1];
+  assert.ok(branch);
+  assert.match(branch, /when 'ja' then '江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー'/u);
+  assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
+});
+
+test("Five-city quote migration adds its exact Japanese title without a priced selection", async () => {
+  const sql = await readFile(new URL("../migrations/202610100002_add_five_city_quote_route.sql", import.meta.url), "utf8");
+  const names = sql.match(/create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u)?.[0];
+  assert.ok(names);
+  const branch = names.match(/when 'beijing-xian-chengdu-guilin-shanghai-13-day-private-tour' then case p_locale([\s\S]*?)else null end/u)?.[1];
+  assert.ok(branch);
+  assert.match(branch, /when 'ja' then '北京・西安・成都・桂林・上海 13日間（12泊）プライベートツアー'/u);
+  assert.doesNotMatch(sql, /create or replace function homeground_private\.is_valid_private_tour_selection_v1/u);
 });
 
 test("Japanese persistence stays restricted to email and quote with exact paths and selections", async () => {

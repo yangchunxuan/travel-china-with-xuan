@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 97 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 97 curated guide and 50 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -235,6 +235,7 @@ test("commercial links keep the approved 8 hub, 97 curated guide and 48 product 
     [
       "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
       "beijing-highlights-5-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
       "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
       "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
@@ -274,6 +275,7 @@ test("commercial links keep the approved 8 hub, 97 curated guide and 48 product 
       "shanghai-suzhou-hangzhou-6-day-private-tour",
       "shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour",
       "shenzhen-family-tech-4-day-private-tour",
+      "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
       "xiamen-tulou-quanzhou-6-day-private-tour",
       "xian-terracotta-warriors-5-day-private-tour",
       "xinjiang-ili-sayram-8-day-private-tour",

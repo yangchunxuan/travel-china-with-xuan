@@ -1,3 +1,6 @@
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { japaneseClientInspiredTourCopyBySlug } from "./japaneseClientInspiredTourCopy.ts";
+
 /** Japanese customer copy for structured tours outside the separately authored Jiangnan pilot.
  * Route, price rows, inclusions flags and package IDs stay in privateTourProducts.
  */
@@ -5238,5 +5241,5 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
 );
 
 export function getJapaneseTourCopy(slug: string): JapaneseTourCopy | undefined {
-  return japaneseTourCopyBySlug[slug] ?? japaneseNortheastWinterCopy[slug];
+  return japaneseTourCopyBySlug[slug] ?? japaneseNortheastWinterCopy[slug] ?? japaneseClientInspiredTourCopyBySlug[slug];
 }
