@@ -97,6 +97,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "中国的气候分区与出行时间", href: "/zh/guides/china-climate-regions-for-trip-timing/", description: "这条走廊的季节不是华东的季节。" },
     { label: "北京、西安、成都应该按什么顺序走？", href: "/zh/guides/beijing-xian-chengdu-route-order/", description: "如果西安是一个枢纽，而不是行程的起点。" },
     { label: "中国的平季：真实的取舍", href: "/zh/guides/china-shoulder-season-value-tradeoff/", description: "这条走廊在平季更好走，而这是你要为此付出的代价。" },
+    { label: "中国的清真饮食与穆斯林旅行", href: "/zh/guides/halal-food-muslim-travel-china/", description: "清真标志怎么看、哪里方便哪里少，以及清真寺。" },
   ]},
 
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [

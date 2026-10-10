@@ -47,7 +47,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "北京—西安—长江—上海 12 天私家团", href: "/zh/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/", description: "登船日从西安飞重庆的多城市路线。" },
     { label: "北京—西安—成都—长江—上海 17 天私家团", href: "/zh/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/", description: "登船前在重庆住一晚的较长路线。" },
     { label: "检查中国行程是不是太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "把每个跨城日的完整耗时算进去。" },
-    { label: "规划中国不同城市进出的机票", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "减少旅程两端不必要的折返。" }
+    { label: "规划中国不同城市进出的机票", href: "/zh/guides/china-open-jaw-flights-route-planning/", description: "减少旅程两端不必要的折返。" },
+    { label: "在中国吃素", href: "/zh/guides/vegetarian-vegan-china-travel/", description: "菜里可能藏着什么、给厨房看的卡片，以及怎么安排用餐。" },
   ] },
   { id: "sources", type: "sources", title: "船方与图片来源", items: [
     { label: "黄金游轮经典三峡产品与运营方介绍", url: "https://www.ccqctg.com/col1916449.html", publisher: "重庆文旅集团", reviewedAt: "2026-09-26" },

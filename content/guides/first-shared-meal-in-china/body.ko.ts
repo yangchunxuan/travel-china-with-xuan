@@ -438,6 +438,8 @@ const body: StructuredPageBody = {
         { label: "방문객이 알아 둘 춘절 풍습", href: "/ko/guides/lunar-new-year-customs-for-visitors/", description: "먼저 관찰하고 참여하는 태도를 가족 명절에도 적용하되, 한 가정의 방식을 전국 공통으로 여기지 마세요." },
         { label: "중국의 지역사회 식당 이해하기", href: "/ko/guides/china-community-canteens-explained/", description: "여럿이 둘러앉는 식당 식탁과 지역사회 식당의 공공서비스 방식을 비교하되, 방문객이 이용할 수 있다거나 자격이 된다고 단정하지 마세요." },
         { label: "전장의 살아 있는 식초 문화 읽기", href: "/ko/guides/zhenjiang-vinegar-living-fermentation/", description: "익숙한 조미료를 발효 기술과 도시 정체성으로 확장하되 건강 효과나 진위를 단정하지 마세요." },
+        { label: "중국 채식·비건 여행", href: "/ko/guides/vegetarian-vegan-china-travel/", description: "요리에 숨은 재료, 주방에 보여 줄 카드, 식사 계획 방법." },
+        { label: "중국의 할랄 음식과 무슬림 여행", href: "/ko/guides/halal-food-muslim-travel-china/", description: "清真 표지, 할랄 음식이 쉬운 곳과 드문 곳, 모스크." },
       ],
     },
     {

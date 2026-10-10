@@ -47,7 +47,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Beijing, Xi'an, Yangtze & Shanghai: 12 days", href: "/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/", description: "A shorter multi-city route with a flight into Chongqing on boarding day." },
     { label: "Beijing, Xi'an, Chengdu, Yangtze & Shanghai: 17 days", href: "/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/", description: "A longer route with a Chongqing hotel night before the ship." },
     { label: "Check whether the whole itinerary is too rushed", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count complete travel blocks before adding another region." },
-    { label: "Plan an open-jaw China flight route", href: "/guides/china-open-jaw-flights-route-planning/", description: "Avoid unnecessary backtracking at the trip's outer gateways." }
+    { label: "Plan an open-jaw China flight route", href: "/guides/china-open-jaw-flights-route-planning/", description: "Avoid unnecessary backtracking at the trip's outer gateways." },
+    { label: "Vegetarian and vegan in China", href: "/guides/vegetarian-vegan-china-travel/", description: "What hides in dishes, a card to show the kitchen, and how meals are planned." },
   ] },
   { id: "sources", type: "sources", title: "Operator and image sources", items: [
     { label: "Gold Cruises classic Three Gorges product and operator overview", url: "https://www.ccqctg.com/col1916449.html", publisher: "Chongqing Culture and Tourism Group", reviewedAt: "2026-09-26" },

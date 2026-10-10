@@ -257,6 +257,14 @@ export const guideTargets = {
   "dazu-rock-carvings": [
     productTarget("chengdu-chongqing-8-day-private-tour"),
   ],
+  "vegetarian-vegan-china-travel": [
+    productTarget("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
+  ],
+  "halal-food-muslim-travel-china": [
+    productTarget("xian-terracotta-warriors-5-day-private-tour"),
+    productTarget("beijing-xian-silk-road-15-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),

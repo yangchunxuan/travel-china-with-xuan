@@ -364,6 +364,7 @@ const body = {
           href: "/zh/guides/how-to-pay-in-china-as-a-tourist/",
           description: "在人多的收银台把账结掉，是这套流程的最后一步。",
         },
+        { label: "中国的清真饮食与穆斯林旅行", href: "/zh/guides/halal-food-muslim-travel-china/", description: "清真标志怎么看、哪里方便哪里少，以及清真寺。" },
       ],
     },
     {

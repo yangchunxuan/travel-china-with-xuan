@@ -438,6 +438,8 @@ const body: StructuredPageBody = {
         { label: "Prepare for Lunar New Year customs as a visitor", href: "/guides/lunar-new-year-customs-for-visitors/", description: "Carry the same observe-first approach into a family festival without treating one household as a national script." },
         { label: "Understand China's community canteens", href: "/guides/china-community-canteens-explained/", description: "Compare a shared restaurant table with a neighbourhood public-service model without assuming access or eligibility." },
         { label: "Read Zhenjiang's living vinegar culture", href: "/guides/zhenjiang-vinegar-living-fermentation/", description: "Follow one familiar condiment into fermentation craft and city identity, not a health or authenticity shortcut." },
+        { label: "Vegetarian and vegan in China", href: "/guides/vegetarian-vegan-china-travel/", description: "What hides in dishes, a card to show the kitchen, and how meals are planned." },
+        { label: "Halal food and Muslim travel in China", href: "/guides/halal-food-muslim-travel-china/", description: "The 清真 sign, where halal food is easy or scarce, and mosques." },
       ],
     },
     {

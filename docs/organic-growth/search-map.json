@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 236,
-      "localeUrlCount": 700,
-      "generatedIdentityCount": 217,
+      "identityCount": 238,
+      "localeUrlCount": 706,
+      "generatedIdentityCount": 219,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2813,6 +2813,104 @@
               "boundary": "The Dazu Rock Carvings visit intent: the five sites and which two to see, reported prices, hours and the order of a day trip from Chongqing. The sight page keeps its short story and links here. Tour pages keep product prices. Prices are labelled as reported."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "dietary-geo-guides",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Vegetarian and vegan travel in China guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "vegetarian-vegan-china-travel",
+              "title": "Is China Vegetarian-Friendly? A Vegetarian & Vegan Guide",
+              "metadataPath": "content/guides/vegetarian-vegan-china-travel/metadata.json",
+              "canonicalPath": "/guides/vegetarian-vegan-china-travel/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/vegetarian-vegan-china-travel/",
+                "/zh/guides/vegetarian-vegan-china-travel/",
+                "/ko/guides/vegetarian-vegan-china-travel/"
+              ],
+              "section": "culture",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "culture-regional-food",
+              "pillar": "culture-regional-food",
+              "destinations": [
+                "china",
+                "beijing",
+                "shanghai",
+                "chengdu"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-shanghai",
+                  "city-chengdu"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "The vegetarian and vegan travel intent: the standards and their Chinese words, hidden animal ingredients, a written card by standard, each kind of meal, and how Homeground plans a private tour for vegetarians. The halal guide owns the Muslim standard and china-regional-food-route keeps the regional-cuisine route decision. Tour pages keep product prices and inclusions."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "dietary-geo-guides",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Halal food and Muslim travel in China guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "halal-food-muslim-travel-china",
+              "title": "Is China Muslim-Friendly? Halal Food, Mosques & Tours",
+              "metadataPath": "content/guides/halal-food-muslim-travel-china/metadata.json",
+              "canonicalPath": "/guides/halal-food-muslim-travel-china/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/halal-food-muslim-travel-china/",
+                "/zh/guides/halal-food-muslim-travel-china/",
+                "/ko/guides/halal-food-muslim-travel-china/"
+              ],
+              "section": "culture",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "culture-regional-food",
+              "pillar": "culture-regional-food",
+              "destinations": [
+                "china",
+                "xian",
+                "beijing"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-xian",
+                  "city-beijing"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "The Muslim-friendly travel intent: the index ranking, the halal sign and one local regulation as an example, four standards, where halal food is easy and hard, flights and hotels, and how Homeground plans a private tour for Muslim travellers. zhangjiajie-from-malaysia keeps that trip and the vegetarian guide owns the vegetarian standard. Tour pages keep product prices and inclusions."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -2924,6 +3022,7 @@
         "guiyang-airport-and-rail-hubs",
         "guiyang-nanming-old-city-day-to-night-walk",
         "guizhou-village-basketball-culture",
+        "halal-food-muslim-travel-china",
         "hanging-temple-datong",
         "harbin-ice-festival",
         "hong-kong-macau-mainland-reentry-count",
@@ -3012,6 +3111,7 @@
         "terracotta-warriors-without-tour",
         "three-literary-towers-comparison",
         "tianmen-mountain-tickets-and-routes",
+        "vegetarian-vegan-china-travel",
         "wangxian-valley",
         "wenchang-commercial-space-city",
         "wheelchair-accessible-china-route-planning",

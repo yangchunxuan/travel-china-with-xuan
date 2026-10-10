@@ -148,6 +148,8 @@ const approvedCommercialGuideIds = [
   "dunhuang-china",
   "dali-old-town-erhai-lake",
   "dazu-rock-carvings",
+  "vegetarian-vegan-china-travel",
+  "halal-food-muslim-travel-china",
   "yangtze-cruise-fit-china-itinerary",
   "li-river-cruise-tickets-piers-booking",
   "jade-dragon-snow-mountain-cable-car-booking",

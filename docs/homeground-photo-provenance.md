@@ -1955,3 +1955,16 @@ predates the museum's 2020 refurbishment. The waterworks is a working plant seen
 from the street; the caption suggests the public riverside path, not entry.
 The Day 6 tea-hill photo already in the library was taken at Meijiawu; its
 caption names only the West Lake hills.
+
+### Vegetarian and halal guide photos (October 10, 2026)
+
+Four photographs from the owner's organised `/Users/yangchunxuan/Desktop/Facebook图片素材` library. Each derivative is
+cropped to 16:10, resized and converted to WebP without EXIF. Nothing is written on any of them; the shop signs and the
+temple plaque are part of the scene.
+
+| Use | Source; source SHA-256 | Derivative; SHA-256 |
+| --- | --- | --- |
+| `vegetarian-vegan-china-travel` — hero — a bowl of liangpi | `西安优选素材/05_街巷美食与人文/凉皮.jpg`; `3125d3dfc134da7e3e15a75667bcbe4591bc8af4486f490c23295ea4bd187ba2` | `public/images/guides/vegetarian-vegan-china-travel/hero-1600.webp`, 1600 × 1000; `84ff9fb6de288ad61fc154d9f560788ad2f7d14abf9fa7e9b0f97fc4b2e4fc7b` |
+| `vegetarian-vegan-china-travel` — figure — Daci Temple gate, Chengdu | `成都优选素材/07_饮食火锅与文化/六妹素材 (55).jpg`; `91223005ccfee363d83d4b52362aa711c2126e174c85546a6f7b5b38721d897a` | `public/images/guides/vegetarian-vegan-china-travel/temple-1600.webp`, 1600 × 1000; `f58c31ab1b3fa3cccd6c572f4340cd5289bf2d8e81db7d96a2871f2e81fe629c` |
+| `halal-food-muslim-travel-china` — hero — Xi'an Muslim Quarter after rain | `西安优选素材/05_街巷美食与人文/六妹素材 (8).jpg`; `ee96b973f2f88846dd2f43f9e8179e1ce4dab078b43cb2232d5685a0d50af5a8` | `public/images/guides/halal-food-muslim-travel-china/hero-1600.webp`, 1600 × 1000; `d1ae4bd59ca6a544e3352fa5a38ebf235b58d2e670e9d6e2ae86edbc1b8d7978` |
+| `halal-food-muslim-travel-china` — figure — yangrou paomo | `西安优选素材/05_街巷美食与人文/西安美食羊肉泡馍.jpg`; `82fbe3a314792ec0aa54e635b2787df066cf7d75c1ab2229b32328e5a1e89503` | `public/images/guides/halal-food-muslim-travel-china/paomo-1600.webp`, 1600 × 1000; `15fbb9c19015a404ace8b73e5a51e0b5c9aaadd232a4147d5164544c1bde08c1` |

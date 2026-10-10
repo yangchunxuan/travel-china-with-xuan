@@ -364,6 +364,7 @@ const body = {
           href: "/ko/guides/how-to-pay-in-china-as-a-tourist/",
           description: "붐비는 계산대에서 계산을 마치는 것, 이 흐름의 마지막 단계.",
         },
+        { label: "중국의 할랄 음식과 무슬림 여행", href: "/ko/guides/halal-food-muslim-travel-china/", description: "清真 표지, 할랄 음식이 쉬운 곳과 드문 곳, 모스크." },
       ],
     },
     {

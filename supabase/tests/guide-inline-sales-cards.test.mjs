@@ -152,7 +152,7 @@ test("every guide in the final fallback cohort gets one stable localized product
       getDefaultGuideProductAssignment(guideId),
     );
   }
-  assert.equal(guideIds.length, 236);
+  assert.equal(guideIds.length, 238);
   assert.equal(legacyGuideIds.length, 19);
   assert.equal(combinations, guideProductFallbackGuideIds.length * locales.length);
   assert.equal(Object.values(guideProductMarketForecast).reduce((sum, value) => sum + value, 0), 100);

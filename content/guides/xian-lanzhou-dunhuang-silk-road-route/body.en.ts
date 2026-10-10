@@ -97,6 +97,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "China's climate regions and when to travel", href: "/guides/china-climate-regions-for-trip-timing/", description: "The corridor's seasons are not the seasons of eastern China." },
     { label: "Beijing, Xi'an and Chengdu in what order?", href: "/guides/beijing-xian-chengdu-route-order/", description: "If Xi'an is a junction rather than the start of the trip." },
     { label: "Shoulder season in China: the real trade-off", href: "/guides/china-shoulder-season-value-tradeoff/", description: "This corridor rewards the shoulder months, and this is what you give up for them." },
+    { label: "Halal food and Muslim travel in China", href: "/guides/halal-food-muslim-travel-china/", description: "The 清真 sign, where halal food is easy or scarce, and mosques." },
   ]},
 
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [

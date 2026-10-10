@@ -44,7 +44,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "铁路行程本身请使用对应指南", items: [
     {label: "第一次乘中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "购票、证件和乘车流程请参考这篇首次乘车指南。"},
     {label: "航班和火车的充电宝规定", href: "/zh/guides/china-power-bank-rules-flights-trains/", description: "长途出行前核对当前电源携带规则。"},
-    {label: "在中国吃第一顿合餐", href: "/zh/guides/first-shared-meal-in-china/", description: "把更完整的饮食体验放在非换乘日。"}
+    {label: "在中国吃第一顿合餐", href: "/zh/guides/first-shared-meal-in-china/", description: "把更完整的饮食体验放在非换乘日。"},
+    { label: "在中国吃素", href: "/zh/guides/vegetarian-vegan-china-travel/", description: "菜里可能藏着什么、给厨房看的卡片，以及怎么安排用餐。" },
   ]},
   {id: "sources", type: "sources", title: "官方与独立来源", items: [
     {label: "餐饮及特产预订服务协议", url: "https://kyfw.12306.cn/otn/gonggao/excater.html", publisher: "中国铁路 12306", reviewedAt: "2026-08-13"},

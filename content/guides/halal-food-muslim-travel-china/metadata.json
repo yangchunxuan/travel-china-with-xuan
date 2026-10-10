@@ -1,0 +1,106 @@
+{
+  "id": "halal-food-muslim-travel-china",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "halal",
+    "muslim-travel",
+    "dietary-restrictions",
+    "food",
+    "trip-planning"
+  ],
+  "destinations": [
+    "china",
+    "xian",
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/halal-food-muslim-travel-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/halal-food-muslim-travel-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "is china muslim friendly",
+      "halal food in china",
+      "halal china tour",
+      "muslim friendly china",
+      "is there halal food in china",
+      "halal food xian",
+      "halal food zhangjiajie"
+    ],
+    "zh": [
+      "中国清真餐厅",
+      "穆斯林中国旅游",
+      "清真食品 中国旅行",
+      "张家界 清真"
+    ],
+    "ko": [
+      "중국 할랄 음식",
+      "중국 무슬림 여행",
+      "시안 회족 거리"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/halal-food-muslim-travel-china/",
+      "title": "Is China Muslim-Friendly? Halal Food, Mosques & Tours",
+      "headline": "Is China Muslim-Friendly? Halal Food by City, How to Check a Restaurant, Mosques and Tours",
+      "description": "Easy in Xi’an, Beijing’s Niujie and the north-west; scarce in scenic areas. How to read the halal sign, four halal standards, airline meals and tour planning.",
+      "heroAlt": "A wet stone street in Xi’an’s Muslim Quarter under tall trees, lined with restaurant signs for beef noodles, roujiamo and lamb soup",
+      "navTitle": "Halal & Muslim travel",
+      "featuredLinkLabel": "Plan a Muslim-friendly trip",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Halal",
+        "Muslim travel",
+        "Food"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/halal-food-muslim-travel-china/",
+      "title": "中国对穆斯林游客友好吗？清真餐厅、清真寺与行程安排",
+      "headline": "中国对穆斯林游客友好吗？各地清真饮食、怎么辨认清真餐厅、清真寺与行程",
+      "description": "西安、北京牛街和西北很方便，景区里很少。清真标志怎么看、人们说的“清真”有哪四种标准、航班上的清真餐，以及私家团怎么安排。",
+      "heroAlt": "雨后的西安回民街石板路，大树下两侧是牛肉面、肉夹馍和羊肉泡馍的店招",
+      "navTitle": "清真饮食与穆斯林旅行",
+      "featuredLinkLabel": "规划穆斯林友好行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "清真",
+        "穆斯林旅行",
+        "饮食"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/halal-food-muslim-travel-china/",
+      "title": "중국은 무슬림 여행자에게 편할까? 할랄 음식·모스크·투어",
+      "headline": "중국은 무슬림 여행자에게 편할까? 도시별 할랄 음식, 식당 확인법, 모스크와 투어",
+      "description": "시안, 베이징 뉴제, 서북 지역은 쉽고 관광지는 드뭅니다. 清真 표지 보는 법, 할랄이라 부르는 네 가지 기준, 기내식, 프라이빗 투어 준비 방법.",
+      "heroAlt": "비 온 뒤 시안 회족 거리의 돌길. 큰 나무 아래 양쪽으로 소고기 국수, 러우자모, 양고기 탕 간판이 늘어서 있다",
+      "navTitle": "할랄·무슬림 여행",
+      "featuredLinkLabel": "무슬림 친화 여행 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "할랄",
+        "무슬림 여행",
+        "음식"
+      ]
+    }
+  }
+}

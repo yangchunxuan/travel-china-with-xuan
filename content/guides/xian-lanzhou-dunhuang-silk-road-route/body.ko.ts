@@ -97,6 +97,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "중국의 기후권과 여행 시기", href: "/ko/guides/china-climate-regions-for-trip-timing/", description: "이 회랑의 계절은 동부의 계절이 아닙니다." },
     { label: "베이징·시안·청두, 어떤 순서로?", href: "/ko/guides/beijing-xian-chengdu-route-order/", description: "시안이 출발점이 아니라 분기점이라면." },
     { label: "중국의 어깨철, 실제 손익", href: "/ko/guides/china-shoulder-season-value-tradeoff/", description: "이 회랑은 어깨철에 더 낫지만, 그 대가로 무엇을 내주는지." },
+    { label: "중국의 할랄 음식과 무슬림 여행", href: "/ko/guides/halal-food-muslim-travel-china/", description: "清真 표지, 할랄 음식이 쉬운 곳과 드문 곳, 모스크." },
   ]},
 
   { id: "sources", type: "sources", title: "공식 출처와 사진 제공", items: [

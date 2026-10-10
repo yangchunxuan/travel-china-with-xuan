@@ -1,0 +1,106 @@
+{
+  "id": "vegetarian-vegan-china-travel",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "vegetarian",
+    "vegan",
+    "dietary-restrictions",
+    "food",
+    "trip-planning"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "shanghai",
+    "chengdu"
+  ],
+  "heroImagePath": "/images/guides/vegetarian-vegan-china-travel/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/vegetarian-vegan-china-travel/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "is china vegetarian friendly",
+      "vegetarian food in china",
+      "vegan in china",
+      "china tour for vegetarians",
+      "jain food in china",
+      "does china have vegetarian food"
+    ],
+    "zh": [
+      "中国吃素",
+      "外国人在中国吃素",
+      "素食者中国旅游",
+      "纯素中国旅行"
+    ],
+    "ko": [
+      "중국 채식",
+      "중국 비건 여행",
+      "중국 채식 식당"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/vegetarian-vegan-china-travel/",
+      "title": "Is China Vegetarian-Friendly? A Vegetarian & Vegan Guide",
+      "headline": "Is China Vegetarian-Friendly? How to Eat Vegetarian, Vegan or Jain on a China Trip",
+      "description": "Yes, with planning. What hides in Chinese dishes, a card to show the kitchen, airline and cruise meals, and how a private tour is planned for vegetarians.",
+      "heroAlt": "A bowl of liangpi cold noodles with coriander, cucumber and chilli oil on a red checked tablecloth",
+      "navTitle": "Vegetarian in China",
+      "featuredLinkLabel": "Plan a vegetarian trip",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Vegetarian",
+        "Vegan",
+        "Food"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/vegetarian-vegan-china-travel/",
+      "title": "中国对素食者友好吗？吃素、纯素旅行怎么安排",
+      "headline": "中国对素食者友好吗？素食、纯素和不吃葱蒜的旅行者怎么吃",
+      "description": "可以，但要提前安排。哪些菜里藏着荤、该怎么说、给厨房看的中文卡片、飞机和游轮上的素食，以及私家团怎么为素食者安排。",
+      "heroAlt": "红格桌布上的一碗凉皮，上面是香菜、黄瓜丝和辣椒油",
+      "navTitle": "在中国吃素",
+      "featuredLinkLabel": "规划素食行程",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "素食",
+        "纯素",
+        "饮食"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/vegetarian-vegan-china-travel/",
+      "title": "중국은 채식하기 좋을까? 채식·비건 여행 가이드",
+      "headline": "중국은 채식하기 좋을까? 채식, 비건, 자이나교 식단으로 여행하는 법",
+      "description": "계획하면 가능합니다. 중국 요리에 숨은 동물성 재료, 주방에 보여 줄 중국어 카드, 항공·크루즈 식사, 채식 여행자를 위한 프라이빗 투어 준비 방법.",
+      "heroAlt": "빨간 체크 식탁보 위의 량피 한 그릇. 고수, 오이채, 고추기름이 올라가 있다",
+      "navTitle": "중국에서 채식",
+      "featuredLinkLabel": "채식 여행 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "채식",
+        "비건",
+        "음식"
+      ]
+    }
+  }
+}

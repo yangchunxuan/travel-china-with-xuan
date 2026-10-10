@@ -48,7 +48,8 @@ const body = {
       id: "links", type: "internal-links", title: "接着看具体安排", items: [
         { label: "厦门、土楼、安溪、泉州六天私家团", href: "/zh/tours/xiamen-tulou-quanzhou-6-day-private-tour/", description: "看实际住宿、包含项目和咨询方式。" },
         { label: "福建土楼群怎么选", href: "/zh/guides/fujian-tulou-cluster-selection/", description: "只留一个土楼日时，先挑地理区域。" },
-        { label: "厦门到鼓浪屿的码头与船票", href: "/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "知道抵达时间后再核对码头与船班。" }
+        { label: "厦门到鼓浪屿的码头与船票", href: "/zh/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "知道抵达时间后再核对码头与船班。" },
+        { label: "中国的清真饮食与穆斯林旅行", href: "/zh/guides/halal-food-muslim-travel-china/", description: "清真标志怎么看、哪里方便哪里少，以及清真寺。" },
       ]
     },
     {

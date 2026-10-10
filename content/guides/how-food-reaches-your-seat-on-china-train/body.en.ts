@@ -33,7 +33,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "Keep the rail journey itself in the right guide", items: [
     {label: "China high-speed rail first-trip guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Use the canonical guide for booking, documents and boarding."},
     {label: "Power-bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "Check current power rules before a long travel day."},
-    {label: "First shared meal in China", href: "/guides/first-shared-meal-in-china/", description: "Plan a fuller food experience away from the transfer day."}
+    {label: "First shared meal in China", href: "/guides/first-shared-meal-in-china/", description: "Plan a fuller food experience away from the transfer day."},
+    { label: "Vegetarian and vegan in China", href: "/guides/vegetarian-vegan-china-travel/", description: "What hides in dishes, a card to show the kitchen, and how meals are planned." },
   ]},
   {id: "sources", type: "sources", title: "Official and independent sources", items: [
     {label: "Catering and specialty-ordering service agreement", url: "https://kyfw.12306.cn/otn/gonggao/excater.html", publisher: "China Railway 12306", reviewedAt: "2026-08-13"},
