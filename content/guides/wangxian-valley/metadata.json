@@ -1,0 +1,100 @@
+{
+  "id": "wangxian-valley",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "shangrao",
+    "wangxian-valley",
+    "night-visit",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "shangrao",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/jingdezhen-wuyuan-wangxian-6-day-private-tour/hero.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/jingdezhen-wuyuan-wangxian-6-day-private-tour/hero.webp",
+  "imageWidth": 1920,
+  "imageHeight": 1080,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "wangxian valley",
+      "wangxian valley china",
+      "wangxian valley tickets",
+      "wangxian valley night"
+    ],
+    "zh": [
+      "望仙谷",
+      "望仙谷夜景",
+      "望仙谷门票"
+    ],
+    "ko": [
+      "왕셴구",
+      "망선곡"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/wangxian-valley/",
+      "title": "Wangxian Valley, China: Night Visit, Tickets & Getting There",
+      "headline": "Wangxian Valley: The Cliffside Town in Jiangxi, Why to Go at Night and How to Fit It In",
+      "description": "Wangxian Valley's cliff houses were built where a granite quarry once worked. When to arrive for the evening lights, tickets and hours, and how to pair it with Wuyuan.",
+      "heroAlt": "Lanterns on a suspension bridge across Wangxian Valley at sunset, with lit wooden buildings stacked on the cliff",
+      "navTitle": "Wangxian Valley",
+      "featuredLinkLabel": "Plan Wangxian Valley",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jiangxi",
+        "Wangxian Valley",
+        "Night visit"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/wangxian-valley/",
+      "title": "望仙谷攻略：几点进最好看夜景、门票与交通",
+      "headline": "江西望仙谷：悬崖上的“仙侠小镇”，为什么要晚上去、怎么安排",
+      "description": "望仙谷的悬崖建筑建在过去的花岗岩采石场上。几点入园看灯、门票和开放时间、怎么和婺源、三清山连起来玩。",
+      "heroAlt": "傍晚的望仙谷，吊桥上挂满灯笼，悬崖上层层叠叠的木楼亮起灯",
+      "navTitle": "望仙谷",
+      "featuredLinkLabel": "规划望仙谷",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "江西",
+        "望仙谷",
+        "夜游"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/wangxian-valley/",
+      "title": "중국 왕셴구(望仙谷): 야경, 입장권, 가는 법",
+      "headline": "장시성 왕셴구: 절벽 마을, 밤에 가야 하는 이유와 일정 넣는 법",
+      "description": "왕셴구의 절벽 건물은 옛 화강암 채석장 자리에 지어졌습니다. 불빛을 보러 언제 들어갈지, 입장권과 운영 시간, 우위안과 함께 가는 법.",
+      "heroAlt": "해 질 녘 왕셴구 협곡을 가로지르는 등불 걸린 출렁다리와 불 밝힌 절벽 위 목조 건물들",
+      "navTitle": "왕셴구",
+      "featuredLinkLabel": "왕셴구 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "장시",
+        "왕셴구",
+        "야경"
+      ]
+    }
+  }
+}

@@ -47,7 +47,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { question: "抵达当天还能进沟游览吗？", answer: "把抵达日当成交通日，不要当成游览日。两小时公路估算不是景区入园时间；下午的列车加上车站交接和山路，可能把余下日照用完。更稳妥的是先保住酒店接待时间，把完整游览放到第二天清早。" },
     { question: "回程也要单独安排吗？", answer: "要当成一条独立的交通链来安排。起点是住宿或景区出口，不能是笼统的“九寨沟”；先确认公路接驳的上车点，以及它实际服务的火车站或机场，再在任何独立铁路或机票前留出山路中断的余量。航班不可替代时，应更早向成都或出发机场移动，而不是使用最后可能衔接。" },
   ] },
-  { id: "links", type: "internal-links", title: "继续规划", items: [ { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
+  { id: "links", type: "internal-links", title: "继续规划", items: [ { label: "九寨沟门票、预约与路线", href: "/zh/guides/jiuzhaigou-valley/", description: "2026 年票价、护照预约、开放时间和一日游路线。" }, { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
     { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选定准确站点后再使用。" },
     { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "比较时间表形状，不只看时长。" },
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "给山区接驳真实缓冲。" },
