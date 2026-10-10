@@ -216,12 +216,12 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "How it works",
     steps: [
-      { title: "1. Send a request", body: `Choose the attractions, dates and number of travellers below and send the request by WhatsApp or email, at least ${days} days before your visit for a guaranteed booking. Do not send passport details yet.` },
+      { title: "1. Send a request", body: `Choose the attractions, dates and number of travellers below and send the request by WhatsApp or email, at least ${days} days before your visit for a guaranteed booking, except at an attraction marked “best effort”. Do not send passport details yet.` },
       { title: "2. Written confirmation", body: "A planner checks the booking window and availability, then confirms in writing what we will book, the service fee, the face value and the payment instructions." },
       { title: "3. Payment, then booking", body: "After payment we ask for each traveller's passport details, book through the official channel and send you the confirmation record. Carry the same original passports on the day." },
     ],
     pricingTitle: "Price",
-    pricingLead: `No online checkout. You pay only after the written confirmation; pay at least ${days} days before your visit for a guaranteed booking.`,
+    pricingLead: `No online checkout. You pay only after the written confirmation; pay at least ${days} days before your visit for a guaranteed booking, except at an attraction marked “best effort”.`,
     pricing: [
       { title: "{fee} per person per attraction", body: "The service fee for each traveller at each attraction we reserve. A free-admission museum still carries the fee, because the work is the reservation." },
       { title: "Tickets at official face value", body: "Admission is charged at the attraction's own price with no mark-up and paid together with the fee. Where the table shows no price, it is confirmed when you enquire." },
@@ -251,7 +251,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "Refund & delivery",
     rulesTitle: "Booking rules by attraction",
     rulesIntro:
-      `Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. The ${days}-day booking guarantee covers every attraction we book.`,
+      `Each row with a source guide repeats what that dated guide found on the attraction's official source; a row marked “not yet checked” has no guide behind it yet. Rules change: we recheck the live rule for your dates before confirming. The ${days}-day booking guarantee covers the attractions we book, except at an attraction marked “best effort”.`,
     columns: {
       attraction: "Attraction",
       channel: "Official channel",
@@ -295,7 +295,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "How much does the attraction reservation service cost?", answer: "{fee} per person per attraction, plus the attraction's official ticket price with no mark-up. Both are paid together after we confirm in writing. Reservations for attractions in a Homeground private-tour itinerary are included at no extra fee." },
       { question: "Can you book the Forbidden City?", answer: `Yes. We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. Tickets open seven days ahead at 20:00 China time and there are no same-day tickets, so send your request early. Send your request and payment at least ${days} days before your visit and we guarantee the reservation; if we ever miss it, you get a full refund of the service fee and ticket money. We do not resell tickets or add a mark-up: tickets are charged at face value, and the museum's real-name and cancellation rules apply.` },
       { question: "Can you book the Shaanxi History Museum?", answer: "Yes, on the museum's official WeChat system in your own passport name. Basic admission is free, so you pay only our fee for the reservation work, plus the separate ticket at face value if you add the Tang mural gallery. We do not resell tickets, and you can also book it yourself with our guide. A no-show brings a 180-day booking restriction, so tell us early if plans change." },
-      { question: "Is the reservation guaranteed?", answer: `Yes, if you send your request and payment at least ${days} days before your visit: we guarantee the reservation, and if we ever miss one, you get a full refund of that attraction's service fee and ticket money. Later than that, we still try but cannot guarantee it; if we cannot secure it, we refund that attraction's service fee in full together with any ticket money not spent.` },
+      { question: "Is the reservation guaranteed?", answer: `Yes, if you send your request and payment at least ${days} days before your visit: we guarantee the reservation, except at an attraction marked “best effort”, and if we ever miss one, you get a full refund of that attraction's service fee and ticket money. Later than that, we still try but cannot guarantee it; if we cannot secure it, we refund that attraction's service fee in full together with any ticket money not spent.` },
       { question: "Why don't you ask for my passport number in the form?", answer: "Because it is not needed to check availability. We ask for passport details only after you accept the written confirmation, use them only for the booking and delete them after the trip." },
       { question: "Can I cancel after the ticket is issued?", answer: "Cancellation and changes then follow the attraction's own rules, and the service fee for an issued ticket is not refundable. Some attractions also restrict future bookings after a no-show, so tell us early if plans change." },
       { question: "Do I still need my passport at the gate?", answer: "Yes. Real-name attractions check the original passport used for the booking. A photo or photocopy of the passport is not a substitute." },
@@ -303,7 +303,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
-      intro: `Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once. Send it and pay at least ${days} days before your first visit for a guaranteed booking.`,
+      intro: `Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once. Send it and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
       attractions: "Attractions",
       attractionsHint: "Choose as many as you like; you will pick a date for each one below.",
       visitDates: "Visit dates",
@@ -387,12 +387,12 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "流程",
     steps: [
-      { title: "1. 发送需求", body: `在下方选择景点、日期和人数，通过 WhatsApp 或邮件发给我们；在参观日前至少 ${days} 天发送，才能享受预约保证。此时不要发送护照信息。` },
+      { title: "1. 发送需求", body: `在下方选择景点、日期和人数，通过 WhatsApp 或邮件发给我们；在参观日前至少 ${days} 天发送，才能享受预约保证（标注“尽力预约”的景点除外）。此时不要发送护照信息。` },
       { title: "2. 书面确认", body: "规划师核实预约时间窗与余量，书面确认预约内容、服务费、票面价和付款方式。" },
       { title: "3. 付款后预约", body: "收款后我们再索取每位游客的护照信息，通过官方渠道预约，并把预约记录发给你。当天请携带同一本护照原件。" },
     ],
     pricingTitle: "价格",
-    pricingLead: `网站不设在线收银台。书面确认后才需要付款；在参观日前至少 ${days} 天付款，即享预约保证。`,
+    pricingLead: `网站不设在线收银台。书面确认后才需要付款；在参观日前至少 ${days} 天付款，即享预约保证（标注“尽力预约”的景点除外）。`,
     pricing: [
       { title: "每人每个景点 {fee}", body: "我们为每位游客预约每个景点收取的服务费。免费预约的博物馆同样收取服务费，因为我们提供的是预约服务。" },
       { title: "门票按官方票面价", body: "门票按景点官方价格收取，不加价，与服务费一起支付。表中未列价格的，在你咨询时确认。" },
@@ -422,7 +422,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "退款与交付",
     rulesTitle: "各景点预约规则",
     rulesIntro:
-      `有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。提前 ${days} 天的预约保证适用于我们代约的每个景点。`,
+      `有来源攻略的每一行，都来自我们一篇注明日期、依据景点官方来源的攻略；标为“尚未核实”的行还没有攻略支撑。规则会变：确认前我们会按你的日期重新核实。提前 ${days} 天的预约保证适用于我们代约的景点（标注“尽力预约”的景点除外）。`,
     columns: {
       attraction: "景点",
       channel: "官方渠道",
@@ -466,7 +466,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "景点代预约怎么收费？", answer: "每人每个景点服务费 {fee}，另加景点官方票价，门票不加价。两者在书面确认后一起支付。Homeground 私家团行程内的景点预约不另收服务费。" },
       { question: "可以代约故宫吗？", answer: `可以。我们在故宫官方渠道以每位游客本人的护照实名提交预约。故宫提前 7 天北京时间 20:00 开放预约，不售当日票，请尽早告诉我们。在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到；万一没约到，全额退还服务费和门票款。我们不转售、不加价，门票按票面价收取；故宫的实名与退改规则照常适用。` },
       { question: "可以代约陕西历史博物馆吗？", answer: "可以，我们在博物馆官方微信系统以你本人的护照实名预约。基本陈列免费，所以你只需支付预约服务费；如加选唐代壁画珍品馆，另按票面价支付门票。我们不转售门票；你也可以按我们的攻略自行预约。爽约会被限制预约 180 天，行程有变请尽早告诉我们。" },
-      { question: "预约有保证吗？", answer: `在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。晚于这个时间，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。` },
+      { question: "预约有保证吗？", answer: `在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到（标注“尽力预约”的景点除外）；万一没约到，全额退还该景点的服务费和门票款。晚于这个时间，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。` },
       { question: "为什么表单里不填护照号码？", answer: "核实余量不需要护照号码。只有在你接受书面确认后，我们才索取护照信息，只用于预约，并在行程结束后删除。" },
       { question: "出票后还能取消吗？", answer: "出票后的取消和改期按景点自己的规则处理，已出票门票的服务费不予退还。有些景点对爽约会限制之后的预约，行程有变请尽早告诉我们。" },
       { question: "入园时还需要护照吗？", answer: "需要。实名景点会核验预约所用的护照原件，护照照片或复印件不能代替。" },
@@ -474,7 +474,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "代预约需求",
       title: "告诉我们要预约什么",
-      intro: `在你选择 WhatsApp 或邮件之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证。`,
+      intro: `在你选择 WhatsApp 或邮件之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证（标注“尽力预约”的景点除外）。`,
       attractions: "景点",
       attractionsHint: "可多选。选好后，在下方为每个景点选日期。",
       visitDates: "参观日期",
@@ -558,12 +558,12 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "진행 방식",
     steps: [
-      { title: "1. 요청 보내기", body: `아래에서 관광지, 날짜, 인원을 고르고 카카오톡, WhatsApp 또는 이메일로 보내 주세요. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 보내 주세요. 여권 정보는 아직 보내지 마세요.` },
+      { title: "1. 요청 보내기", body: `아래에서 관광지, 날짜, 인원을 고르고 카카오톡, WhatsApp 또는 이메일로 보내 주세요. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 보내 주세요(‘최선 시도’로 표시된 관광지는 제외). 여권 정보는 아직 보내지 마세요.` },
       { title: "2. 서면 확인", body: "플래너가 예약 가능 기간과 잔여분을 확인하고, 예약할 내용, 수수료, 입장료, 결제 방법을 서면으로 안내합니다." },
       { title: "3. 결제 후 예약", body: "결제 후 각 여행자의 여권 정보를 받아 공식 채널에서 예약하고 예약 기록을 보내 드립니다. 당일에는 같은 여권 원본을 지참하세요." },
     ],
     pricingTitle: "가격",
-    pricingLead: `온라인 결제는 없습니다. 서면 확인 후에만 결제하며, 방문일 최소 ${days}일 전까지 결제하시면 예약을 보장합니다.`,
+    pricingLead: `온라인 결제는 없습니다. 서면 확인 후에만 결제하며, 방문일 최소 ${days}일 전까지 결제하시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외).`,
     pricing: [
       { title: "관광지당 1인 {fee}", body: "예약하는 관광지마다 여행자 1인당 받는 수수료입니다. 무료 예약 박물관도 예약 업무이므로 수수료가 있습니다." },
       { title: "입장료는 공식 가격 그대로", body: "입장료는 관광지 공식 가격 그대로 받으며 추가 금액이 없고, 수수료와 함께 결제합니다. 표에 가격이 없는 곳은 문의 시 확인합니다." },
@@ -593,7 +593,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     refundLink: "환불 및 제공",
     rulesTitle: "관광지별 예약 규칙",
     rulesIntro:
-      `출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. ${days}일 전 예약 보장은 저희가 예약하는 모든 관광지에 적용됩니다.`,
+      `출처 가이드가 있는 행은 날짜가 표시된 저희 가이드가 관광지 공식 자료에서 확인한 내용이며, ‘미확인’으로 표시된 행은 아직 가이드가 없습니다. 규칙은 바뀌므로 확정 전에 여행 날짜 기준으로 다시 확인합니다. ${days}일 전 예약 보장은 저희가 예약하는 관광지에 적용됩니다(‘최선 시도’로 표시된 관광지는 제외).`,
     columns: {
       attraction: "관광지",
       channel: "공식 채널",
@@ -637,7 +637,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "관광지 예약 대행 비용은 얼마인가요?", answer: "관광지당 1인 {fee} 수수료와 관광지 공식 입장료입니다. 입장료에 금액을 더하지 않으며, 서면 확인 후 함께 결제합니다. Homeground 프라이빗 투어 일정의 관광지 예약은 수수료가 없습니다." },
       { question: "자금성도 예약해 주나요?", answer: `네. 고궁박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 예약은 7일 전 중국 시간 20:00에 열리고 당일권은 없으니 일찍 알려 주세요. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장하며, 만약 예약하지 못하면 수수료와 입장료를 전액 환불해 드립니다. 표를 되팔거나 금액을 더하지 않고 입장료는 공식 가격 그대로 받으며, 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.` },
       { question: "산시역사박물관도 예약해 주나요?", answer: "네. 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약합니다. 기본 관람은 무료이므로 예약 업무 수수료만 내시면 되고, 당대 벽화관을 더하면 그 입장권을 공식 가격으로 따로 냅니다. 저희는 표를 되팔지 않으며, 가이드를 보고 직접 예약하셔도 됩니다. 노쇼 시 180일 동안 예약이 제한되니 일정이 바뀌면 빨리 알려 주세요." },
-      { question: "예약이 보장되나요?", answer: `방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다. 그보다 늦으면 예약을 시도하되 보장하지는 않으며, 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.` },
+      { question: "예약이 보장되나요?", answer: `방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외). 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다. 그보다 늦으면 예약을 시도하되 보장하지는 않으며, 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.` },
       { question: "왜 양식에 여권 번호를 적지 않나요?", answer: "잔여분 확인에는 여권 번호가 필요 없기 때문입니다. 서면 확인을 수락하신 뒤에만 여권 정보를 받고, 예약에만 쓰며, 여행이 끝나면 삭제합니다." },
       { question: "발권 후에도 취소할 수 있나요?", answer: "발권 후 취소와 변경은 관광지 자체 규칙을 따르고, 발권된 티켓의 수수료는 환불되지 않습니다. 노쇼 시 이후 예약을 제한하는 관광지도 있으니 일정이 바뀌면 빨리 알려 주세요." },
       { question: "입장할 때도 여권이 필요한가요?", answer: "네. 실명제 관광지는 예약에 쓴 여권 원본을 확인합니다. 여권 사진이나 사본으로는 대신할 수 없습니다." },
@@ -645,7 +645,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "예약 요청",
       title: "예약할 내용을 알려 주세요",
-      intro: `카카오톡, WhatsApp, 이메일 중 하나를 고르기 전에는 아무것도 전송되지 않습니다. 선택한 내용이 메시지에 들어가 플래너가 바로 확인합니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다.`,
+      intro: `카카오톡, WhatsApp, 이메일 중 하나를 고르기 전에는 아무것도 전송되지 않습니다. 선택한 내용이 메시지에 들어가 플래너가 바로 확인합니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외).`,
       attractions: "관광지",
       attractionsHint: "여러 곳을 고를 수 있어요. 고른 뒤 아래에서 관광지마다 날짜를 정해 주세요.",
       visitDates: "방문일",

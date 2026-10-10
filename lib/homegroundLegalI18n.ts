@@ -542,7 +542,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "Service terms",
         title: "Clear scope before payment",
         intro:
-          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking. Homeground also offers a paid attraction reservation service in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang; its scope, price and refund rules are set out below.",
+          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking. Homeground also offers a paid attraction reservation service in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin, Lijiang and Datong; its scope, price and refund rules are set out below.",
       },
       callout: {
         label: "First principle",
@@ -624,7 +624,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. Attraction reservation service",
           paragraphs: [
-            "Homeground reserves attraction admission for travellers in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang by submitting each reservation through the official channel the attraction names, in each traveller's own real name and passport. We do not use automated booking tools or multiple accounts, do not resell tickets or add a mark-up, and charge admission at the attraction's official face value; each attraction's own real-name, cancellation and no-show rules apply.",
+            "Homeground reserves attraction admission for travellers in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin, Lijiang and Datong by submitting each reservation through the official channel the attraction names, in each traveller's own real name and passport. We do not use automated booking tools or multiple accounts, do not resell tickets or add a mark-up, and charge admission at the attraction's official face value; each attraction's own real-name, cancellation and no-show rules apply.",
             "Price: a service fee of CNY 45 per person per attraction, plus admission charged at the attraction's official face value with no mark-up, paid together after written confirmation. Reservations for attractions in a confirmed Homeground private-tour itinerary are included without a service fee.",
           ],
           bullets: [
@@ -655,7 +655,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "服务条款",
         title: "付款前先把范围说清楚",
         intro:
-          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。Homeground 另提供北京、上海、苏州、杭州、西安、成都、桂林、丽江的收费景点代预约服务，其范围、价格和退款规则见下文。",
+          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。Homeground 另提供北京、上海、苏州、杭州、西安、成都、桂林、丽江、大同的收费景点代预约服务，其范围、价格和退款规则见下文。",
       },
       callout: {
         label: "首要原则",
@@ -737,7 +737,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. 景点代预约服务",
           paragraphs: [
-            "Homeground 通过各景点公布的官方渠道，以每位游客本人的真实姓名和护照提交预约，为游客预约北京、上海、苏州、杭州、西安、成都、桂林、丽江的景点门票。我们不使用自动抢票工具或多个账号，不转售门票、不加价，门票按景点官方票面价收取；各景点自己的实名、退改和爽约规则照常适用。",
+            "Homeground 通过各景点公布的官方渠道，以每位游客本人的真实姓名和护照提交预约，为游客预约北京、上海、苏州、杭州、西安、成都、桂林、丽江、大同的景点门票。我们不使用自动抢票工具或多个账号，不转售门票、不加价，门票按景点官方票面价收取；各景点自己的实名、退改和爽约规则照常适用。",
             "价格：每人每个景点服务费 45 元人民币，门票按景点官方票面价收取、不加价，书面确认后一并支付。已确认的 Homeground 私家团行程内景点，预约不收服务费。",
           ],
           bullets: [
@@ -768,7 +768,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "서비스 이용약관",
         title: "결제 전에 범위를 명확하게",
         intro:
-          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다. Homeground는 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장에서 유료 관광지 예약 대행 서비스도 제공하며, 범위와 가격, 환불 규칙은 아래와 같습니다.",
+          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다. Homeground는 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장·다퉁에서 유료 관광지 예약 대행 서비스도 제공하며, 범위와 가격, 환불 규칙은 아래와 같습니다.",
       },
       callout: {
         label: "첫 번째 원칙",
@@ -850,7 +850,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
           id: "attraction-reservations",
           title: "9. 관광지 예약 대행 서비스",
           paragraphs: [
-            "Homeground는 각 관광지가 안내하는 공식 채널에서 여행자 본인의 실명과 여권으로 예약을 제출하여 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장 관광지 입장 예약을 대신합니다. 자동 예매 도구나 여러 계정을 쓰지 않고, 티켓을 되팔거나 금액을 더하지 않으며, 입장료는 관광지 공식 가격 그대로 받습니다. 각 관광지의 실명·취소·노쇼 규칙이 그대로 적용됩니다.",
+            "Homeground는 각 관광지가 안내하는 공식 채널에서 여행자 본인의 실명과 여권으로 예약을 제출하여 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장·다퉁 관광지 입장 예약을 대신합니다. 자동 예매 도구나 여러 계정을 쓰지 않고, 티켓을 되팔거나 금액을 더하지 않으며, 입장료는 관광지 공식 가격 그대로 받습니다. 각 관광지의 실명·취소·노쇼 규칙이 그대로 적용됩니다.",
             "가격: 관광지당 1인 45위안의 수수료와 관광지 공식 가격 그대로의 입장료이며, 서면 확인 후 함께 결제합니다. 확정된 Homeground 프라이빗 투어 일정의 관광지 예약에는 수수료가 없습니다.",
           ],
           bullets: [
@@ -907,7 +907,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "Refund & delivery",
         title: "The date and terms come before payment",
         intro:
-          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking. Homeground also offers a paid attraction reservation service in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang; its scope, price and refund rules are set out below.",
+          "Standalone paid route reviews and route builds are no longer offered. Existing accepted services remain subject to their original written agreement. Private-tour arrangements, inclusions, price and payment conditions are confirmed in writing before booking. Homeground also offers a paid attraction reservation service in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin, Lijiang and Datong; its scope, price and refund rules are set out below.",
       },
       callout: {
         label: "Current checkout status",
@@ -1031,7 +1031,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "退款与交付",
         title: "先确认日期和条件，再付款",
         intro:
-          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。Homeground 另提供北京、上海、苏州、杭州、西安、成都、桂林、丽江的收费景点代预约服务，其范围、价格和退款规则见下文。",
+          "单独收费的路线审核和路线规划已停止提供。已经接受的服务仍按原书面约定处理。私家团的安排、包含项、价格与付款条件会在预订前书面确认。Homeground 另提供北京、上海、苏州、杭州、西安、成都、桂林、丽江、大同的收费景点代预约服务，其范围、价格和退款规则见下文。",
       },
       callout: {
         label: "当前付款状态",
@@ -1152,7 +1152,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
         eyebrow: "환불 및 제공",
         title: "결제 전에 날짜와 조건을 확인합니다",
         intro:
-          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다. Homeground는 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장에서 유료 관광지 예약 대행 서비스도 제공하며, 범위와 가격, 환불 규칙은 아래와 같습니다.",
+          "별도 유료 일정 검토와 동선 설계는 더 이상 제공하지 않습니다. 이미 수락된 서비스에는 기존 서면 약정이 적용됩니다. 프라이빗 투어의 준비, 포함 사항, 가격과 결제 조건은 예약 전에 서면으로 확인합니다. Homeground는 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장·다퉁에서 유료 관광지 예약 대행 서비스도 제공하며, 범위와 가격, 환불 규칙은 아래와 같습니다.",
       },
       callout: {
         label: "현재 결제 상태",
