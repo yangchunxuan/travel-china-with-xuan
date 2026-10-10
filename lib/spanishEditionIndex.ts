@@ -18,6 +18,11 @@ export const spanishTourPageSlugs: readonly string[] = Object.freeze([
 
 /** English guide id → its Spanish page. */
 export const spanishGuidePathBySourceId: Readonly<Record<string, string>> = Object.freeze({
+  "how-to-pay-in-china-as-a-tourist": "/es/guias/como-pagar-en-china/",
+  "china-online-arrival-card": "/es/guias/tarjeta-de-llegada-china/",
+  "great-wall-section-selector-from-beijing": "/es/guias/muralla-china-desde-pekin/",
+  "terracotta-warriors-without-tour": "/es/guias/guerreros-de-terracota-xian/",
+  "chengdu-panda-base-or-dujiangyan-panda-valley": "/es/guias/osos-panda-chengdu/",
   "avatar-mountains-zhangjiajie": "/es/guias/montanas-de-avatar-china/",
   "yangshuo-china": "/es/guias/yangshuo-que-ver/",
 });

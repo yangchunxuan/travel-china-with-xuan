@@ -90,13 +90,14 @@ export function SpanishHomePage() {
                 <h2 id="es-home-guides-title">Antes de reservar, lea esto.</h2>
               </div>
               <div className={guideStyles.catalogSummary}>
-                <p>El visado con pasaporte español, las montañas de Avatar y Yangshuo, con precios, fuentes y la fecha en que las comprobamos.</p>
+                <p>El visado con pasaporte español, cómo pagar, la tarjeta de llegada y los lugares de cada ruta, con precios, fuentes y la fecha en que las comprobamos.</p>
                 <p className={guideStyles.guideCount}>
                   <Link href={spanishSite.guides}>Todas las guías →</Link>
                 </p>
               </div>
             </div>
-            <SpanishGuideCards guides={spanishGuides} />
+            {/* The home page shows the first few; the guides page lists them all. */}
+            <SpanishGuideCards guides={spanishGuides.slice(0, 5)} />
           </section>
         </div>
 

@@ -16,7 +16,7 @@ const site = "https://homegroundchina.com";
 
 export const spanishGuidesHubTitle = "Guías para viajar a China en español";
 export const spanishGuidesHubDescription =
-  "Guías para un primer viaje a China: visado con pasaporte español, las montañas de Avatar en Zhangjiajie y Yangshuo, con precios y fuentes comprobadas.";
+  "Guías para un primer viaje a China: visado, pagos, tarjeta de llegada, Gran Muralla, Guerreros de Terracota y pandas, con precios y fuentes comprobadas.";
 
 export function SpanishGuidesHubPage() {
   const contact = spanishGeneralContactHrefs(spanishSite.guides);
@@ -67,7 +67,7 @@ export function SpanishGuidesHubPage() {
               <h2 id="guides-catalog-title">Lo que conviene saber antes de reservar.</h2>
             </div>
             <div className={styles.catalogSummary}>
-              <p>Empezamos por lo que más se pregunta: el visado, Zhangjiajie y Yangshuo. Iremos añadiendo más guías.</p>
+              <p>Primero lo práctico: el visado, los pagos y la tarjeta de llegada. Después, los lugares: la Gran Muralla, los Guerreros de Terracota, los pandas, Zhangjiajie y Yangshuo.</p>
               <p className={styles.guideCount}>Publicadas: {spanishGuides.length}</p>
             </div>
           </div>
