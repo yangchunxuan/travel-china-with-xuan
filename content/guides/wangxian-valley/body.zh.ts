@@ -92,7 +92,9 @@ const body = {
           "label": "中国哪些景点要提前预约",
           "href": "/zh/guides/china-attractions-advance-booking-checklist/",
           "description": "哪些景点会约满，要提前多久。"
-        }
+        },
+        {"label":"景德镇攻略：瓷都和 2026 年的世界遗产","href":"/zh/guides/jingdezhen-china/","description":"列入世界遗产的是什么、城里看什么、哪天别去。"},
+        {"label":"黄山攻略：门票、索道和宏村","href":"/zh/guides/huangshan-yellow-mountain/","description":"2026 年价格、山门和索道，以及安排几天。"},
       ]
     },
     {

@@ -62,7 +62,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Homeground 交通与行程指南", href: "/zh/guides/", description: "返回上级指南集合页。" },
     { label: "第一次坐中国高铁指南", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "铁路乘车流程在这篇单独处理。" },
     { label: "国际航班前最后一晚怎么安排", href: "/zh/guides/china-last-night-before-international-flight/", description: "给天气敏感的山地行程保住最终离境。" },
-    { label: "你的中国行程是不是太赶？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "检查跨区移动是否真的留有余量。" }
+    { label: "你的中国行程是不是太赶？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "检查跨区移动是否真的留有余量。" },
+    { label: "长白山攻略：天池、选哪个坡、门票价格", href: "/zh/guides/changbai-mountain-heaven-lake/", description: "北坡还是西坡、官方价格、预约规则和冬季游览。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源", items: [
     { label: "长白山北、西景区交通基础信息", url: "https://www.changbaishan.gov.cn/zbsly/lyzn/bpgl/202106/t20210625_210152.html", publisher: "长白山保护开发区管理委员会", reviewedAt: "2026-08-13" },

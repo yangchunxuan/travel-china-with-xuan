@@ -83,6 +83,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Choose Pudong or Hongqiao", href: "/guides/shanghai-pudong-or-hongqiao-airport/", description: "The flight airport can reverse the best route." },
     { label: "Read the Grand Canal today", href: "/guides/grand-canal-everyday-urban-history/", description: "Separate protected heritage, working waterways and neighbourhood life, then choose a public section where their relationship is visible." },
     { label: "Choose a Yellow Sea wetland base", href: "/guides/northern-jiangsu-yellow-sea-wetland-coast/", description: "Separate Yancheng's dispersed wetland areas, choose Dongtai, Dafeng or the city as a practical base, and plan ethical birding with a no-sighting alternative." },
+    { label: "West Lake, Hangzhou: what to see, boats and how long", href: "/guides/west-lake-hangzhou/", description: "What is free, the island boat, Leifeng Pagoda and a one-day route." },
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
     { label: "Guide to railway stations in Shanghai", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-12" },

@@ -374,6 +374,7 @@ const body = {
           href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "이야기 장소를 하나 더 넣고도 쓸 수 있는 반나절이 남는지 점검하세요.",
         },
+        { label: "항저우 서호: 볼거리, 유람선, 소요 시간", href: "/ko/guides/west-lake-hangzhou/", description: "무료인 곳, 섬으로 가는 배, 뇌봉탑, 하루 코스." },
       ],
     },
     {

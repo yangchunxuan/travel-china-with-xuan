@@ -52,6 +52,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "你的行程是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "计算大城市首尾接驳。" },
     { label: "按证据读杭州与镇江的《白蛇传》地点", href: "/zh/guides/white-snake-legend-hangzhou-zhenjiang/", description: "解决车站组合后，再判断这则传说是否值得增加一个文化停留城市。" },
     { label: "从市场之外理解义乌", href: "/zh/guides/yiwu-market-to-factory-network/", description: "理解义乌商品陈列背后的不同角色，不把商位当成工厂证明，也不把旧目录当成当前指引。" },
+    { label: "杭州西湖攻略：看什么、游船、玩多久", href: "/zh/guides/west-lake-hangzhou/", description: "哪些免费、上岛的游船、雷峰塔和一天的走法。" },
   ]},
   { id: "sources", type: "sources", title: "官方来源与图片署名", items: [
     { label: "上海火车站指引", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "上海市政府", reviewedAt: "2026-08-12" },

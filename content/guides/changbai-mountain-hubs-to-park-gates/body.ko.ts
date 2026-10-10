@@ -62,7 +62,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Homeground 교통·여행 가이드", href: "/ko/guides/", description: "상위 가이드 모음으로 돌아갑니다." },
     { label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "철도 탑승 절차는 이 별도 글에서 준비하세요." },
     { label: "국제선 출발 전 중국에서의 마지막 밤", href: "/ko/guides/china-last-night-before-international-flight/", description: "날씨 변수 뒤에도 최종 출국을 지키는 방법입니다." },
-    { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "두 구역 사이 이동에 충분한 여유가 있는지 점검합니다." }
+    { label: "중국 일정이 너무 빠듯한가요?", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "두 구역 사이 이동에 충분한 여유가 있는지 점검합니다." },
+    { label: "백두산(창바이산): 천지, 북파·서파 선택, 요금", href: "/ko/guides/changbai-mountain-heaven-lake/", description: "북파와 서파 선택, 공식 요금, 예약 규칙, 겨울 방문." },
   ]},
   { id: "sources", type: "sources", title: "공식 출처", items: [
     { label: "백두산 북쪽·서쪽 경구 교통 기본 안내", url: "https://www.changbaishan.gov.cn/zbsly/lyzn/bpgl/202106/t20210625_210152.html", publisher: "창바이산 보호개발구 관리위원회", reviewedAt: "2026-08-13" },

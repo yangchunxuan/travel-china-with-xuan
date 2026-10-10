@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 101 curated guide and 50 product owners", () => {
+test("commercial links keep the approved 8 hub, 106 curated guide and 50 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -137,6 +137,7 @@ test("commercial links keep the approved 8 hub, 101 curated guide and 50 product
       "best-zhangjiajie-night-show",
       "book-china-attraction-tickets-without-chinese-phone-number",
       "border-town-fenghuang-chadong-shen-congwen",
+      "changbai-mountain-heaven-lake",
       "chaozhou-ancient-city-gates-bridge-lanes-route",
       "chengdu-chongqing-zhangjiajie-itinerary",
       "chengdu-jiuzhaigou-transport-route",
@@ -182,8 +183,10 @@ test("commercial links keep the approved 8 hub, 101 curated guide and 50 product
       "how-to-pay-in-china-as-a-tourist",
       "how-to-read-a-suzhou-garden",
       "huangshan-summit-or-gateway-base",
+      "huangshan-yellow-mountain",
       "humble-administrators-garden-tickets-entry",
       "jade-dragon-snow-mountain-cable-car-booking",
+      "jingdezhen-china",
       "kunming-dali-lijiang-shangri-la-route-order",
       "li-river-cruise-tickets-piers-booking",
       "lijiang-old-town",
@@ -213,11 +216,13 @@ test("commercial links keep the approved 8 hub, 101 curated guide and 50 product
       "vegetarian-china-private-tours",
       "vegetarian-vegan-china-travel",
       "wangxian-valley",
+      "west-lake-hangzhou",
       "xiamen-hubs-to-gulangyu-ferry-terminal",
       "xiamen-tulou-quanzhou-six-day-route",
       "xian-city-wall-tickets-gates-walk-or-bike",
       "xian-lanzhou-dunhuang-silk-road-route",
       "xian-where-to-stay-city-wall-or-dayanta",
+      "yangshuo-china",
       "yangshuo-town-or-yulong-river-where-to-stay",
       "yangtze-cruise-fit-china-itinerary",
       "yuanyang-rice-terraces-viewpoint-and-village-route",

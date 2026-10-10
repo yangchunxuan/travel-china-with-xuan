@@ -44,7 +44,8 @@ const body = {
     { id: "internal-links", type: "internal-links", title: "Fit the boat into a Guilin trip", items: [
       { label: "Guilin & Yangshuo five-day private tour", href: "/tours/guilin-yangshuo-5-day-private-tour/", description: "See how the river day fits the hotel and driver plan." },
       { label: "Guilin to Yangshuo: boat, car or train?", href: "/guides/guilin-yangshuo-transport-route/", description: "Choose the transport route before reserving a pier pickup." },
-      { label: "Where to stay in Yangshuo", href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "Decide the hotel base after the boat lands." }
+      { label: "Where to stay in Yangshuo", href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "Decide the hotel base after the boat lands." },
+      { label: "Yangshuo: what to see, Yulong River rafts and how many days", href: "/guides/yangshuo-china/", description: "What is free, what the rafts and the night show cost, and how to split two days." },
     ] },
     { id: "consultation", type: "callout", tone: "neutral", title: "Want the cruise to fit the whole journey?", body: "Homeground can plan the Guilin pickup, the confirmed boat class and the Yangshuo onward drive as one route. Share your date and group size; we will check actual availability and the written inclusions before quoting." },
     { id: "sources", type: "sources", title: "Official Li River references", items: [

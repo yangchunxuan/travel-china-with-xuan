@@ -92,7 +92,9 @@ const body = {
           "label": "미리 예약해야 하는 중국 명소",
           "href": "/ko/guides/china-attractions-advance-booking-checklist/",
           "description": "매진되는 명소와 예약 시점."
-        }
+        },
+        {"label":"징더전: 도자기의 도시와 2026년 세계유산","href":"/ko/guides/jingdezhen-china/","description":"유네스코가 등재한 것, 시내 볼거리, 피해야 할 요일."},
+        {"label":"황산: 입장권, 케이블카, 홍춘","href":"/ko/guides/huangshan-yellow-mountain/","description":"2026년 요금, 입구와 케이블카, 며칠이 필요한지."},
       ]
     },
     {

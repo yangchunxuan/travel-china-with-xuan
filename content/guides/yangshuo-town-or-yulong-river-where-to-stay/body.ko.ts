@@ -351,6 +351,7 @@ const body = {
           href: "/ko/guides/foreigners-china-hotel/",
           description: "전국 숙박 등록과 체크인 실패 복구는 전용 안내에서 확인합니다.",
         },
+        { label: "양삭: 볼거리, 우룡하 뗏목, 며칠 일정", href: "/ko/guides/yangshuo-china/", description: "무료인 곳, 뗏목과 야간 공연 요금, 이틀을 나누는 법." },
       ],
     },
     {

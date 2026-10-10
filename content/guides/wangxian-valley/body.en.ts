@@ -92,7 +92,9 @@ const body = {
           "label": "China attractions that need advance booking",
           "href": "/guides/china-attractions-advance-booking-checklist/",
           "description": "Which sights sell out, and how far ahead to book."
-        }
+        },
+        {"label":"Jingdezhen: the porcelain city and its 2026 World Heritage listing","href":"/guides/jingdezhen-china/","description":"What UNESCO listed, what to see in town and which day to avoid."},
+        {"label":"Huangshan (Yellow Mountain): tickets, cable cars and Hongcun","href":"/guides/huangshan-yellow-mountain/","description":"The 2026 prices, the gates and cableways, and how many days."},
       ]
     },
     {

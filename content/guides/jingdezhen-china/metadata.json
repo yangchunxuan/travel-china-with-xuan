@@ -1,0 +1,106 @@
+{
+  "id": "jingdezhen-china",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "jiangxi",
+    "jingdezhen",
+    "porcelain",
+    "world-heritage",
+    "tickets"
+  ],
+  "destinations": [
+    "jingdezhen",
+    "jiangxi",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/jingdezhen-china/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/jingdezhen-china/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "jingdezhen",
+      "jingdezhen china",
+      "jingdezhen porcelain",
+      "jingdezhen world heritage",
+      "things to do in jingdezhen"
+    ],
+    "zh": [
+      "景德镇",
+      "景德镇攻略",
+      "景德镇世界遗产",
+      "御窑博物馆",
+      "陶溪川"
+    ],
+    "ko": [
+      "징더전",
+      "경덕진",
+      "징더전 도자기",
+      "징더전 세계유산"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/jingdezhen-china/",
+      "title": "Jingdezhen, China: Porcelain City & 2026 World Heritage Site",
+      "headline": "Jingdezhen: What the 2026 World Heritage Listing Covers, What to See and How Long to Stay",
+      "description": "Jingdezhen in Jiangxi has made porcelain for a thousand years and joined the World Heritage List in July 2026. What to see, prices, hours and how many days.",
+      "heroAlt": "An old brick wood-fired kiln under a timber shed in Jingdezhen, with stacked firewood and clay saggers beside it",
+      "navTitle": "Jingdezhen",
+      "featuredLinkLabel": "Plan Jingdezhen",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Jiangxi",
+        "Jingdezhen",
+        "World Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/jingdezhen-china/",
+      "title": "景德镇攻略：2026 新晋世界遗产，御窑、古窑和陶溪川怎么逛",
+      "headline": "景德镇：2026 年列入世界遗产的是什么、看什么、住几晚",
+      "description": "江西景德镇烧了一千年瓷器，2026 年 7 月列入世界遗产。看什么、门票和开放时间、哪天闭馆、住几晚。",
+      "heroAlt": "景德镇木棚下的一座砖砌老柴窑，旁边码着木柴和匣钵",
+      "navTitle": "景德镇",
+      "featuredLinkLabel": "规划景德镇",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "江西",
+        "景德镇",
+        "世界遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/jingdezhen-china/",
+      "title": "중국 징더전: 도자기의 도시, 2026년 새 세계유산",
+      "headline": "징더전: 2026년 세계유산 등재 내용, 볼거리, 며칠 일정",
+      "description": "장시성 징더전은 천 년 동안 도자기를 구워 왔고 2026년 7월 세계유산이 되었습니다. 볼거리, 요금, 운영 시간, 며칠이 필요한지.",
+      "heroAlt": "징더전의 나무 지붕 아래에 있는 오래된 벽돌 장작 가마와 옆에 쌓인 장작, 갑발",
+      "navTitle": "징더전",
+      "featuredLinkLabel": "징더전 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "장시",
+        "징더전",
+        "세계유산"
+      ]
+    }
+  }
+}

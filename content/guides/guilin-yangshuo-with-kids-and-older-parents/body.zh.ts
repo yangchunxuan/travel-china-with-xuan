@@ -44,6 +44,7 @@ const body = {
       { label: "漓江游船购票与码头", href: "/zh/guides/li-river-cruise-tickets-piers-booking/", description: "核对游船、购票渠道和行李从桂林到阳朔的交接。" },
       { label: "阳朔住县城还是遇龙河", href: "/zh/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "按酒店门口能否到车、夜间用餐与休息需求选住宿区。" },
       { label: "龙脊梯田当天往返还是住一晚", href: "/zh/guides/longji-rice-terraces-day-trip-or-overnight/", description: "如果龙脊一定要去，先判断需要增加多少时间。" },
+      { label: "阳朔攻略：看什么、遇龙河竹筏、玩几天", href: "/zh/guides/yangshuo-china/", description: "哪些免费、竹筏和夜间演出多少钱，以及两天怎么分。" },
     ] },
     { id: "inquiry", type: "callout", tone: "decision", title: "让路线按你的家人来调整", body: "告诉我们出发月份、同行人数和年龄、到离车站或机场、房间要求，以及步行或上下船有没有顾虑。若特别想坐竹筏，再补充孩子身高。这样才能在报价前核对实际码头、游船、行李交接和五天团包含的内容。" },
     { id: "sources", type: "sources", title: "2026年9月26日核对的景区资料", items: [

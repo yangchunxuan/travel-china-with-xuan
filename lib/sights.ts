@@ -285,6 +285,7 @@ export const sights: readonly Sight[] = [
     city: "hangzhou",
     // The lake is free to walk around; the boat is what we book.
     reservationIds: ["west-lake-boat"],
+    guideId: "west-lake-hangzhou",
     image: {
       src: "/images/sights/west-lake-1200.webp",
       width: 1200,

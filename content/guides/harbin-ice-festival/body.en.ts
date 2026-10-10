@@ -182,7 +182,8 @@ const body = {
           "label": "China in winter: where to go",
           "href": "/guides/china-in-winter/",
           "description": "Compare Harbin with a winter city trip to Beijing and Shanghai or a warm break in Sanya."
-        }
+        },
+        {"label":"Changbai Mountain: Heaven Lake, which slope and ticket prices","href":"/guides/changbai-mountain-heaven-lake/","description":"North or West Slope, official prices, booking rules and winter visits."},
       ]
     },
     {

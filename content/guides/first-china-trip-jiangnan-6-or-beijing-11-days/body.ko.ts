@@ -100,7 +100,8 @@ const body = {
         { label: "상하이·쑤저우·항저우 6일 프라이빗 투어", href: "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", description: "상하이 도착, 항저우 출발, 2~5일차 가이드 관광." },
         { label: "베이징·항저우·쑤저우·상하이 11일 프라이빗 투어", href: "/ko/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/", description: "베이징 도착, 상하이 출발, 고속철도 2등석 두 구간." },
         { label: "베이징·시안·황산·항저우·상하이 14일 프라이빗 투어", href: "/ko/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/", description: "시안과 황산도 중요하다면 살펴볼 별도의 긴 일정." },
-        { label: "상하이·쑤저우·항저우·난징 방문 순서", href: "/ko/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "동부 지역 안에서 도시를 어떤 순서로 갈지, 상하이 왕복은 어떻게 할지 알아보세요." }
+        { label: "상하이·쑤저우·항저우·난징 방문 순서", href: "/ko/guides/shanghai-suzhou-hangzhou-nanjing-route-order/", description: "동부 지역 안에서 도시를 어떤 순서로 갈지, 상하이 왕복은 어떻게 할지 알아보세요." },
+        { label: "항저우 서호: 볼거리, 유람선, 소요 시간", href: "/ko/guides/west-lake-hangzhou/", description: "무료인 곳, 섬으로 가는 배, 뇌봉탑, 하루 코스." },
       ]
     },
     {

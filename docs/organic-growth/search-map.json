@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 240,
-      "localeUrlCount": 712,
-      "generatedIdentityCount": 221,
+      "identityCount": 245,
+      "localeUrlCount": 727,
+      "generatedIdentityCount": 226,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -3009,6 +3009,248 @@
               "boundary": "The commercial intent for halal and Muslim-friendly China tours: what a private tour includes with the halal meal plan, which published routes suit, the limits and how booking works. halal-food-muslim-travel-china owns the informational intent. Tour pages keep itineraries and prices."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch4",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Yangshuo guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "yangshuo-china",
+              "title": "Yangshuo, China: What to See, Yulong River & How Many Days",
+              "metadataPath": "content/guides/yangshuo-china/metadata.json",
+              "canonicalPath": "/guides/yangshuo-china/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/yangshuo-china/",
+                "/zh/guides/yangshuo-china/",
+                "/ko/guides/yangshuo-china/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "yangshuo",
+                "guilin",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-guilin",
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "yangshuo"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Yangshuo visit intent: what is free and what is ticketed, the main sights, Yulong River raft sections with listed prices, the station in Xingping and how many days. The where-to-stay, Li River cruise and transport guides keep their own decisions. Tour pages keep product prices. Prices are labelled as listings."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch4",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Huangshan (Yellow Mountain) guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "huangshan-yellow-mountain",
+              "title": "Huangshan (Yellow Mountain): Tickets, Cable Cars & Hongcun",
+              "metadataPath": "content/guides/huangshan-yellow-mountain/metadata.json",
+              "canonicalPath": "/guides/huangshan-yellow-mountain/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/huangshan-yellow-mountain/",
+                "/zh/guides/huangshan-yellow-mountain/",
+                "/ko/guides/huangshan-yellow-mountain/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "huangshan",
+                "anhui",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "huangshan",
+                  "anhui"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Huangshan visit intent: what the mountain is, the 2026 ticket and cableway prices, gates and routes, Hongcun and Xidi, which station and how many days. The base guide keeps the where-to-sleep decision. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch4",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Jingdezhen guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "jingdezhen-china",
+              "title": "Jingdezhen, China: Porcelain City & 2026 World Heritage Site",
+              "metadataPath": "content/guides/jingdezhen-china/metadata.json",
+              "canonicalPath": "/guides/jingdezhen-china/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/jingdezhen-china/",
+                "/zh/guides/jingdezhen-china/",
+                "/ko/guides/jingdezhen-china/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "jingdezhen",
+                "jiangxi",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "jingdezhen",
+                  "jiangxi"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Jingdezhen visit intent: what the July 2026 World Heritage listing covers, the main sights with listed prices and hours, the Monday closures, the station and how many days. The Wangxian Valley guide keeps that sight. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch4",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Changbai Mountain guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "changbai-mountain-heaven-lake",
+              "title": "Changbai Mountain: Heaven Lake, Which Slope & Ticket Prices",
+              "metadataPath": "content/guides/changbai-mountain-heaven-lake/metadata.json",
+              "canonicalPath": "/guides/changbai-mountain-heaven-lake/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/changbai-mountain-heaven-lake/",
+                "/zh/guides/changbai-mountain-heaven-lake/",
+                "/ko/guides/changbai-mountain-heaven-lake/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "changbai-mountain",
+                "jilin",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china"
+                ],
+                "unmappedTokens": [
+                  "changbai-mountain",
+                  "jilin"
+                ],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Changbai Mountain visit intent: what the mountain is, which slope, official prices, booking rules, winter visits and how many days. The hub guide keeps the station, airport and town match for each gate. Tour pages keep product prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "product-guides-batch4",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "West Lake guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "west-lake-hangzhou",
+              "title": "West Lake, Hangzhou: What to See, Boats & How Long to Spend",
+              "metadataPath": "content/guides/west-lake-hangzhou/metadata.json",
+              "canonicalPath": "/guides/west-lake-hangzhou/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/west-lake-hangzhou/",
+                "/zh/guides/west-lake-hangzhou/",
+                "/ko/guides/west-lake-hangzhou/"
+              ],
+              "section": "explore",
+              "pageFamily": "entity",
+              "targetIntent": "understand",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "hangzhou",
+                "china"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-hangzhou",
+                  "country-china"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The West Lake visit intent: what is free and what is ticketed, the main sights, boats, listed prices and hours and a one-day route. The sight page keeps its short story and links here; the White Snake guide keeps the legend. Tour pages keep product prices."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3027,6 +3269,7 @@
         "best-zhangjiajie-night-show",
         "book-china-attraction-tickets-without-chinese-phone-number",
         "border-town-fenghuang-chadong-shen-congwen",
+        "changbai-mountain-heaven-lake",
         "changbai-mountain-hubs-to-park-gates",
         "chaozhou-ancient-city-gates-bridge-lanes-route",
         "chengdu-chongqing-zhangjiajie-itinerary",
@@ -3137,12 +3380,14 @@
         "how-to-read-heritage-sites-in-china",
         "how-to-visit-an-archaeological-site-museum",
         "huangshan-summit-or-gateway-base",
+        "huangshan-yellow-mountain",
         "humble-administrators-garden-tickets-entry",
         "hunan-cuisine-balanced-first-meal",
         "inner-mongolia-long-song-first-performance",
         "international-chain-or-local-hotel-china",
         "is-your-china-itinerary-too-rushed",
         "jade-dragon-snow-mountain-cable-car-booking",
+        "jingdezhen-china",
         "jingxian-xuan-paper-museum-workshop-choice",
         "jiuzhaigou-valley",
         "kaifeng-song-dynasty-urban-landscape",
@@ -3214,6 +3459,7 @@
         "vegetarian-vegan-china-travel",
         "wangxian-valley",
         "wenchang-commercial-space-city",
+        "west-lake-hangzhou",
         "wheelchair-accessible-china-route-planning",
         "when-metro-construction-meets-archaeology",
         "which-beijing-railway-station",
@@ -3235,6 +3481,7 @@
         "xian-where-to-stay-city-wall-or-dayanta",
         "xixia-script-and-imperial-tombs-context",
         "yangshan-automated-port-explained",
+        "yangshuo-china",
         "yangshuo-town-or-yulong-river-where-to-stay",
         "yangtze-cruise-fit-china-itinerary",
         "yingge-dance-beyond-the-viral-clips",

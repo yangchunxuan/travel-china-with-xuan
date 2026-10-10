@@ -52,6 +52,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count the large-city access legs." },
     { label: "Read the White Snake sites in Hangzhou and Zhenjiang", href: "/guides/white-snake-legend-hangzhou-zhenjiang/", description: "After solving the station pair, decide whether the legend merits a second-city cultural stop." },
     { label: "Read Yiwu beyond the market", href: "/guides/yiwu-market-to-factory-network/", description: "Understand the roles behind Yiwu's product displays without treating a booth as proof of a factory or an old directory as current guidance." },
+    { label: "West Lake, Hangzhou: what to see, boats and how long", href: "/guides/west-lake-hangzhou/", description: "What is free, the island boat, Leifeng Pagoda and a one-day route." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "Guide to Shanghai railway stations", url: "https://english.shanghai.gov.cn/en-Transportation/20250126/484b92f86eeb49d7b26086d25010d782.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-12" },

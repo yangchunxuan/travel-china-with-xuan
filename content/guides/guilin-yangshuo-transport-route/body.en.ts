@@ -46,6 +46,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "Is your itinerary too rushed?", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Give the river or road day enough space." },
     { label: "How to pay in China", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Keep a payment fallback for the last mile." },
     { label: "Hotel near a metro station", href: "/guides/china-hotel-near-metro/", description: "Understand when a station label actually helps a stay." },
+    { label: "Yangshuo: what to see, Yulong River rafts and how many days", href: "/guides/yangshuo-china/", description: "What is free, what the rafts and the night show cost, and how to split two days." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
     { label: "Official Li River transport and pier guidance", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "Guilin Li River Scenic Area", reviewedAt: "2026-08-13" },

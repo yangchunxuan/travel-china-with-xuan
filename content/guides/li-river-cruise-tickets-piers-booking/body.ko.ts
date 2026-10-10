@@ -43,7 +43,8 @@ const body = {
     { id: "internal-links", type: "internal-links", title: "계림 여행에 유람선 넣기", items: [
       { label: "계림·양삭 5일 프라이빗 투어", href: "/ko/tours/guilin-yangshuo-5-day-private-tour/", description: "유람선과 호텔, 전용 차량을 어떻게 연결하는지 보세요." },
       { label: "계림에서 양삭까지: 배·차·기차", href: "/ko/guides/guilin-yangshuo-transport-route/", description: "선착장 픽업을 정하기 전에 이동 방식을 선택하세요." },
-      { label: "양삭 숙소는 시내와 우룡하 중 어디?", href: "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "하선 후 동선에 맞춰 숙소를 고르세요." }
+      { label: "양삭 숙소는 시내와 우룡하 중 어디?", href: "/ko/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "하선 후 동선에 맞춰 숙소를 고르세요." },
+      { label: "양삭: 볼거리, 우룡하 뗏목, 며칠 일정", href: "/ko/guides/yangshuo-china/", description: "무료인 곳, 뗏목과 야간 공연 요금, 이틀을 나누는 법." },
     ] },
     { id: "consultation", type: "callout", tone: "neutral", title: "배와 차량을 한 동선으로 맞추고 싶다면", body: "여행 날짜와 인원을 알려 주세요. Homeground가 계림 픽업, 확정한 배 등급, 양삭 이동을 한 일정에 맞춰 보고 실제 좌석과 포함 사항을 확인한 뒤 견적을 드립니다." },
     { id: "sources", type: "sources", title: "이강 관광지 공식 자료", items: [

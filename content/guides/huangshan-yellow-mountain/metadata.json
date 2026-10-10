@@ -1,0 +1,106 @@
+{
+  "id": "huangshan-yellow-mountain",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "anhui",
+    "huangshan",
+    "hongcun",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "huangshan",
+    "anhui",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/huangshan-yellow-mountain/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/huangshan-yellow-mountain/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "huangshan",
+      "yellow mountain china",
+      "huangshan mountain",
+      "huangshan tickets",
+      "hongcun"
+    ],
+    "zh": [
+      "黄山",
+      "黄山攻略",
+      "黄山门票",
+      "黄山索道",
+      "宏村"
+    ],
+    "ko": [
+      "황산",
+      "중국 황산",
+      "황산 케이블카",
+      "홍춘"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/huangshan-yellow-mountain/",
+      "title": "Huangshan (Yellow Mountain): Tickets, Cable Cars & Hongcun",
+      "headline": "Huangshan, the Yellow Mountain: 2026 Tickets, Cableways, Hongcun and How Many Days",
+      "description": "Huangshan (Yellow Mountain) in Anhui is a World Heritage range of granite peaks. 2026 ticket and cableway prices, the gates, Hongcun and how long to stay.",
+      "heroAlt": "Granite peaks of Huangshan with pines on their ledges, above a sea of clouds in low sunlight",
+      "navTitle": "Huangshan",
+      "featuredLinkLabel": "Plan Huangshan",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Anhui",
+        "Huangshan",
+        "Hongcun"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/huangshan-yellow-mountain/",
+      "title": "黄山攻略：2026 门票、索道、宏村和住几晚",
+      "headline": "黄山：2026 年门票、索道、宏村，以及安排几天",
+      "description": "安徽黄山是云海之上的花岗岩群峰，也是世界遗产。2026 年门票和索道价格、从哪个门进、宏村怎么加、住几晚。",
+      "heroAlt": "斜阳下的黄山花岗岩群峰，岩壁上长着松树，脚下是云海",
+      "navTitle": "黄山",
+      "featuredLinkLabel": "规划黄山",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "安徽",
+        "黄山",
+        "宏村"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/huangshan-yellow-mountain/",
+      "title": "황산(Yellow Mountain): 입장권, 케이블카, 홍춘",
+      "headline": "황산: 2026년 입장권, 케이블카, 홍춘, 며칠 일정",
+      "description": "안후이성 황산은 운해 위로 솟은 화강암 봉우리로 세계유산입니다. 2026년 입장권과 케이블카 요금, 입구, 홍춘, 며칠이 필요한지.",
+      "heroAlt": "낮게 비치는 햇빛 속 황산의 화강암 봉우리와 바위 턱의 소나무, 그 아래 운해",
+      "navTitle": "황산",
+      "featuredLinkLabel": "황산 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "안후이",
+        "황산",
+        "홍춘"
+      ]
+    }
+  }
+}

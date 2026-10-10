@@ -382,7 +382,8 @@ const body = {
         {
           "label": "중국 여행 플래너에게 문의",
           "href": "/ko/#planner-contact"
-        }
+        },
+        {"label":"백두산(창바이산): 천지, 북파·서파 선택, 요금","href":"/ko/guides/changbai-mountain-heaven-lake/","description":"북파와 서파 선택, 공식 요금, 예약 규칙, 겨울 방문."},
       ]
     },
     {

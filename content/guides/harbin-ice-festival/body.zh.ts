@@ -182,7 +182,8 @@ const body = {
           "label": "中国冬季去哪玩",
           "href": "/zh/guides/china-in-winter/",
           "description": "把哈尔滨和冬天的北京、上海城市游或三亚暖冬放在一起比较。"
-        }
+        },
+        {"label":"长白山攻略：天池、选哪个坡、门票价格","href":"/zh/guides/changbai-mountain-heaven-lake/","description":"北坡还是西坡、官方价格、预约规则和冬季游览。"},
       ]
     },
     {
