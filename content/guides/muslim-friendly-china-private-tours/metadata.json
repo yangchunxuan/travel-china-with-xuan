@@ -1,0 +1,104 @@
+{
+  "id": "muslim-friendly-china-private-tours",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "halal",
+    "muslim-travel",
+    "private-tour",
+    "meal-plan",
+    "trip-planning"
+  ],
+  "destinations": [
+    "china",
+    "xian",
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/muslim-friendly-china-private-tours/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/muslim-friendly-china-private-tours/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "halal china tour",
+      "muslim friendly china tour",
+      "china muslim tour",
+      "halal tour china",
+      "muslim tour china packages",
+      "halal china private tour"
+    ],
+    "zh": [
+      "清真中国旅游团",
+      "穆斯林友好旅行团",
+      "清真私家团",
+      "穆斯林中国旅游"
+    ],
+    "ko": [
+      "중국 할랄 투어",
+      "무슬림 중국 여행 패키지"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/muslim-friendly-china-private-tours/",
+      "title": "Muslim-Friendly China Private Tours with Halal Meals",
+      "headline": "Muslim-Friendly Private Tours of China: Halal Meals Included, Prayer Stops, Your Own Guide",
+      "description": "Private China tours for Muslim travellers: lunch and dinner at halal restaurants included, stops planned around prayer times, no shopping stops.",
+      "heroAlt": "Stacks of embroidered Muslim prayer caps in white, blue and gold on a stall in Xi’an’s Muslim Quarter",
+      "navTitle": "Muslim-friendly tours",
+      "featuredLinkLabel": "Plan a Muslim-friendly tour",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Halal meals",
+        "Private tour",
+        "Muslim travel"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/muslim-friendly-china-private-tours/",
+      "title": "穆斯林友好中国私家团：清真餐全包",
+      "headline": "穆斯林友好的中国私家团：清真餐全包、按礼拜时间安排、专属导游",
+      "description": "为穆斯林游客安排的中国私家团：午餐和晚餐全包，安排在清真餐厅；行程按礼拜时间停留；不进购物店。适合的线路和预订方式。",
+      "heroAlt": "西安回民街摊位上堆着的绣花礼拜帽，有白色、蓝色和金色",
+      "navTitle": "穆斯林友好私家团",
+      "featuredLinkLabel": "规划穆斯林友好私家团",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "清真餐",
+        "私家团",
+        "穆斯林旅行"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/muslim-friendly-china-private-tours/",
+      "title": "무슬림 친화 중국 프라이빗 투어: 할랄 식사 포함",
+      "headline": "무슬림 친화 중국 프라이빗 투어: 할랄 식사 포함, 예배 시간 배려, 전담 가이드",
+      "description": "무슬림 여행자를 위한 중국 프라이빗 투어. 할랄 식당의 점심·저녁 포함, 예배 시간에 맞춘 일정, 쇼핑 없음. 추천 일정과 예약 방법.",
+      "heroAlt": "시안 회족 거리 노점에 쌓인 자수 예배 모자. 흰색, 파란색, 금색",
+      "navTitle": "무슬림 친화 투어",
+      "featuredLinkLabel": "무슬림 친화 투어 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "할랄 식사",
+        "프라이빗 투어",
+        "무슬림 여행"
+      ]
+    }
+  }
+}

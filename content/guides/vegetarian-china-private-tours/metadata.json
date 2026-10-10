@@ -1,0 +1,105 @@
+{
+  "id": "vegetarian-china-private-tours",
+  "type": "planning",
+  "pillar": "culture-regional-food",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "vegetarian",
+    "vegan",
+    "private-tour",
+    "meal-plan",
+    "trip-planning"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "shanghai",
+    "chengdu"
+  ],
+  "heroImagePath": "/images/guides/vegetarian-china-private-tours/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/vegetarian-china-private-tours/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "culture",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "vegetarian china tour",
+      "china tour for vegetarians",
+      "vegan china tour",
+      "china tour with indian food",
+      "china tour for indians vegetarian",
+      "jain china tour"
+    ],
+    "zh": [
+      "素食中国旅游团",
+      "素食私家团",
+      "全程素食 中国旅行",
+      "素食团"
+    ],
+    "ko": [
+      "중국 채식 투어",
+      "비건 중국 여행 패키지"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/vegetarian-china-private-tours/",
+      "title": "Vegetarian China Private Tours with Meals Included",
+      "headline": "Vegetarian Private Tours of China: Lunch and Dinner Included, Vegan and Jain Standards Planned",
+      "description": "Private China tours for vegetarians: lunch and dinner included at restaurants chosen for your standard, vegan and Jain too, with a guide who orders in Chinese.",
+      "heroAlt": "A hall of Lingyin Temple in Hangzhou seen through old trees, with yellow plaques over the doorway",
+      "navTitle": "Vegetarian tours",
+      "featuredLinkLabel": "Plan a vegetarian tour",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Vegetarian meals",
+        "Private tour",
+        "Vegan"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/vegetarian-china-private-tours/",
+      "title": "素食中国私家团：餐食全包",
+      "headline": "素食者的中国私家团：午晚餐全包，纯素和不吃葱蒜也能安排",
+      "description": "为素食者安排的中国私家团：午餐和晚餐全包，按你的标准选餐厅，纯素和耆那教素食也可以；导游用中文点菜。",
+      "heroAlt": "从古树间望见的杭州灵隐寺殿堂，门上挂着黄色匾额",
+      "navTitle": "素食私家团",
+      "featuredLinkLabel": "规划素食私家团",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "素食餐",
+        "私家团",
+        "纯素"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/vegetarian-china-private-tours/",
+      "title": "채식 중국 프라이빗 투어: 식사 포함",
+      "headline": "채식 중국 프라이빗 투어: 점심·저녁 포함, 비건과 자이나교 식단도 준비",
+      "description": "채식 여행자를 위한 중국 프라이빗 투어. 기준에 맞춰 고른 식당의 점심·저녁 포함, 비건과 자이나교 식단도 가능, 가이드가 중국어로 주문합니다.",
+      "heroAlt": "오래된 나무 사이로 보이는 항저우 영은사의 전각. 문 위에 노란 현판이 걸려 있다",
+      "navTitle": "채식 투어",
+      "featuredLinkLabel": "채식 투어 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "채식 식사",
+        "프라이빗 투어",
+        "비건"
+      ]
+    }
+  }
+}

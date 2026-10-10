@@ -44,7 +44,8 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
   {id: "internal-links", type: "internal-links", title: "철도 여행 자체는 알맞은 가이드에서 준비하기", items: [
     {label: "중국 고속철도 첫 이용 가이드", href: "/ko/guides/china-high-speed-train-first-time-guide/", description: "예약, 신분증과 탑승 절차는 대표 가이드에서 확인합니다."},
     {label: "항공기·열차 보조배터리 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "긴 이동일을 앞두고 최신 전원 규정을 확인합니다."},
-    {label: "중국에서 처음 함께 먹는 식사", href: "/ko/guides/first-shared-meal-in-china/", description: "더 풍성한 음식 경험은 환승일이 아닌 때에 계획합니다."}
+    {label: "중국에서 처음 함께 먹는 식사", href: "/ko/guides/first-shared-meal-in-china/", description: "더 풍성한 음식 경험은 환승일이 아닌 때에 계획합니다."},
+    { label: "중국 채식·비건 여행", href: "/ko/guides/vegetarian-vegan-china-travel/", description: "요리에 숨은 재료, 주방에 보여 줄 카드, 식사 계획 방법." },
   ]},
   {id: "sources", type: "sources", title: "공식 및 독립 자료", items: [
     {label: "음식·특산품 주문 서비스 약관", url: "https://kyfw.12306.cn/otn/gonggao/excater.html", publisher: "중국철도 12306", reviewedAt: "2026-08-13"},

@@ -48,7 +48,8 @@ const body = {
       id: "links", type: "internal-links", title: "다음 계획에 필요한 페이지", items: [
         { label: "샤먼·토루·안시·취안저우 6일 프라이빗 투어", href: "/ko/tours/xiamen-tulou-quanzhou-6-day-private-tour/", description: "실제 숙박, 포함 항목과 문의 방법을 확인하세요." },
         { label: "푸젠 토루 군락 고르기", href: "/ko/guides/fujian-tulou-cluster-selection/", description: "토루에 하루만 쓸 때 어느 지역을 볼지 결정하세요." },
-        { label: "샤먼에서 구랑위로 가는 배편", href: "/ko/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "도착편에 맞는 부두와 배표를 확인하세요." }
+        { label: "샤먼에서 구랑위로 가는 배편", href: "/ko/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "도착편에 맞는 부두와 배표를 확인하세요." },
+        { label: "중국의 할랄 음식과 무슬림 여행", href: "/ko/guides/halal-food-muslim-travel-china/", description: "清真 표지, 할랄 음식이 쉬운 곳과 드문 곳, 모스크." },
       ]
     },
     {

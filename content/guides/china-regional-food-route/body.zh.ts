@@ -263,6 +263,8 @@ const body = {
         { label: "了解 12306 列车订餐配送", href: "/zh/guides/how-food-reaches-your-seat-on-china-train/", description: "看懂 12306 餐食从供餐站到车厢座位的接力流程、截止时间、座位信息和安全回退方案。" },
         { label: "搭配南昌拌粉和瓦罐汤", href: "/zh/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "区分南昌拌粉、炒粉与汤粉，按口味和份量搭配瓦罐汤，使用现场点单语言，并处理辣度不合或汤品售罄。" },
         { label: "选择一处茶乡景观", href: "/zh/guides/tea-landscape-regions-of-china/", description: "不按名茶排名，而是从现场能看见的景观、工序与社区关系，选择适合自己的中国茶产地。" },
+        {"label":"在中国吃素","href":"/zh/guides/vegetarian-vegan-china-travel/","description":"菜里可能藏着什么、给厨房看的卡片，以及怎么安排用餐。"},
+        {"label":"中国的清真饮食与穆斯林旅行","href":"/zh/guides/halal-food-muslim-travel-china/","description":"清真标志怎么看、哪里方便哪里少，以及清真寺。"},
       ]
     },
     {

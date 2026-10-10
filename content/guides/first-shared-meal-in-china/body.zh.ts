@@ -438,6 +438,8 @@ const body: StructuredPageBody = {
         { label: "以访客身份准备春节习俗", href: "/zh/guides/lunar-new-year-customs-for-visitors/", description: "把先观察再参与的方法带进家庭节庆，但不要把一家人的做法写成全国脚本。" },
         { label: "理解中国社区食堂", href: "/zh/guides/china-community-canteens-explained/", description: "比较多人围桌吃饭与社区公共服务模式，不预设访客一定能够使用或符合资格。" },
         { label: "读懂镇江仍在延续的醋文化", href: "/zh/guides/zhenjiang-vinegar-living-fermentation/", description: "从熟悉的调味品走向发酵工艺与城市身份，不用它推导健康或真伪。" },
+        { label: "在中国吃素", href: "/zh/guides/vegetarian-vegan-china-travel/", description: "菜里可能藏着什么、给厨房看的卡片，以及怎么安排用餐。" },
+        { label: "中国的清真饮食与穆斯林旅行", href: "/zh/guides/halal-food-muslim-travel-china/", description: "清真标志怎么看、哪里方便哪里少，以及清真寺。" },
       ],
     },
     {

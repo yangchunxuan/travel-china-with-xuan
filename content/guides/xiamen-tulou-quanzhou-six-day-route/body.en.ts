@@ -52,7 +52,8 @@ const body = {
       id: "links", type: "internal-links", title: "Make the next decision", items: [
         { label: "Six-day Xiamen, Tulou, Anxi and Quanzhou private tour", href: "/tours/xiamen-tulou-quanzhou-6-day-private-tour/", description: "Read the actual nights, inclusions and enquiry options." },
         { label: "Which Fujian tulou cluster should you visit?", href: "/guides/fujian-tulou-cluster-selection/", description: "Choose a cluster when the tulou part is only one day." },
-        { label: "Xiamen arrival to Gulangyu ferry", href: "/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "Check the pier and booking workflow once you know your arrival." }
+        { label: "Xiamen arrival to Gulangyu ferry", href: "/guides/xiamen-hubs-to-gulangyu-ferry-terminal/", description: "Check the pier and booking workflow once you know your arrival." },
+        { label: "Halal food and Muslim travel in China", href: "/guides/halal-food-muslim-travel-china/", description: "The 清真 sign, where halal food is easy or scarce, and mosques." },
       ]
     },
     {

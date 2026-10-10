@@ -263,6 +263,8 @@ const body = {
         { label: "12306 열차 음식 배달 이해하기", href: "/ko/guides/how-food-reaches-your-seat-on-china-train/", description: "12306 음식이 배송역에서 객차 좌석까지 전달되는 과정과 주문 마감, 좌석 정보, 안전한 대안을 알아봅니다." },
         { label: "난창 반펀과 와관탕 맞추기", href: "/ko/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "난창 반펀, 볶음 쌀국수, 국물 쌀국수를 구별하고 양과 매운맛에 맞춰 와관탕을 고르며 매진 시 대체하는 주문법입니다." },
         { label: "차 산지 풍경 고르기", href: "/ko/guides/tea-landscape-regions-of-china/", description: "최고의 차 순위가 아니라 현장에서 볼 수 있는 풍경, 작업과 공동체의 관계로 중국 차 산지를 고릅니다." },
+        {"label":"중국 채식·비건 여행","href":"/ko/guides/vegetarian-vegan-china-travel/","description":"요리에 숨은 재료, 주방에 보여 줄 카드, 식사 계획 방법."},
+        {"label":"중국의 할랄 음식과 무슬림 여행","href":"/ko/guides/halal-food-muslim-travel-china/","description":"清真 표지, 할랄 음식이 쉬운 곳과 드문 곳, 모스크."},
       ]
     },
     {

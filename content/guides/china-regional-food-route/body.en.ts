@@ -263,6 +263,8 @@ const body = {
         { label: "Understand 12306 train meal delivery", href: "/guides/how-food-reaches-your-seat-on-china-train/", description: "Follow a 12306 meal from an eligible delivery station to your carriage and understand cutoffs, seat details and safe fallbacks." },
         { label: "Pair Nanchang banfen and crock soup", href: "/guides/nanchang-breakfast-rice-noodles-clay-pot-soup/", description: "Decode Nanchang mixed rice noodles and earthenware-crock soup, control chilli and portion size, use practical ordering phrases, and switch soups when stock runs out." },
         { label: "Choose a tea landscape", href: "/guides/tea-landscape-regions-of-china/", description: "Choose a Chinese tea region by the landscape, work and community relationships you can actually observe—not by a best-tea ranking." },
+        {"label":"Vegetarian and vegan in China","href":"/guides/vegetarian-vegan-china-travel/","description":"What hides in dishes, a card to show the kitchen, and how meals are planned."},
+        {"label":"Halal food and Muslim travel in China","href":"/guides/halal-food-muslim-travel-china/","description":"The 清真 sign, where halal food is easy or scarce, and mosques."},
       ]
     },
     {

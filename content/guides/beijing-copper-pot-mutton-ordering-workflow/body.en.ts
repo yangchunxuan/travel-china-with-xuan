@@ -364,6 +364,7 @@ const body = {
           href: "/guides/how-to-pay-in-china-as-a-tourist/",
           description: "Settling the bill at a busy counter, the last step of this workflow.",
         },
+        { label: "Halal food and Muslim travel in China", href: "/guides/halal-food-muslim-travel-china/", description: "The 清真 sign, where halal food is easy or scarce, and mosques." },
       ],
     },
     {

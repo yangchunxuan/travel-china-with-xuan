@@ -47,7 +47,8 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "베이징·시안·장강·상하이 12일", href: "/ko/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/", description: "승선일에 시안에서 충칭으로 이동하는 다도시 일정입니다." },
     { label: "베이징·시안·청두·장강·상하이 17일", href: "/ko/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/", description: "승선 전에 충칭 호텔에서 하루를 보내는 더 긴 일정입니다." },
     { label: "중국 여행 일정이 너무 빠듯한지 확인하기", href: "/ko/guides/is-your-china-itinerary-too-rushed/", description: "도시를 옮기는 날에 드는 전체 시간을 계산하세요." },
-    { label: "중국 입출국 도시를 다르게 잡는 항공편 계획", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "여행 양쪽 끝에서 불필요한 역주행을 줄이세요." }
+    { label: "중국 입출국 도시를 다르게 잡는 항공편 계획", href: "/ko/guides/china-open-jaw-flights-route-planning/", description: "여행 양쪽 끝에서 불필요한 역주행을 줄이세요." },
+    { label: "중국 채식·비건 여행", href: "/ko/guides/vegetarian-vegan-china-travel/", description: "요리에 숨은 재료, 주방에 보여 줄 카드, 식사 계획 방법." },
   ] },
   { id: "sources", type: "sources", title: "선사 및 사진 출처", items: [
     { label: "골드 크루즈 운영사와 삼협 크루즈 상품 소개", url: "https://www.ccqctg.com/col1916449.html", publisher: "충칭 문화관광그룹", reviewedAt: "2026-09-26" },
