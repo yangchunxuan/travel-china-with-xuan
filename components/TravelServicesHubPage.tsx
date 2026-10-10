@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { destinationHubRegistry } from "../lib/destinationHubs";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
-import { getKevinPreparationStoryCopy } from "../lib/kevinPreparationStoryI18n";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
 import { getTravelServicesHubCopy, type TravelServiceCardCopy } from "../lib/travelServicesHubI18n";
@@ -32,43 +30,17 @@ function serviceHref(
 }
 
 /*
- * Reuse existing photographs with their original alt text. Kevin's editorial
- * photograph illustrates guide help and support; it does not promise that
- * Kevin is the guide assigned to an enquiry.
+ * One drawing per service, each of a different thing on a panel of a
+ * different colour: a flat ground, one off-white cut-paper shape for the
+ * thing itself, and thick black brush lines for its details and for the
+ * hand that holds it. Tours are a folded map with a dotted route and a pin;
+ * guides, a hand holding up a guide's flag; reservations, a ticket for a set
+ * hour; full-trip support, a hand carrying the suitcase. They are 1600 x
+ * 1000, the card's own shape, so nothing is cropped. They are decoration and
+ * carry no alt text: the card's heading names the service.
  */
-function serviceImage(id: TravelServiceCardCopy["id"], locale: HomegroundLocale) {
-  if (id === "reservations") {
-    // The Chengdu tour's panda photograph, with that product's alt text.
-    return {
-      src: "/images/tours/chengdu-pandas-sanxingdui-5-day-private-tour/hero-panda-1600.webp",
-      width: 1600,
-      height: 1000,
-      alt: {
-        en: "A giant panda at Chengdu Research Base of Giant Panda Breeding",
-        zh: "成都大熊猫繁育研究基地内的大熊猫",
-        ko: "청두 자이언트판다 번식연구기지의 자이언트판다",
-      }[locale],
-      position: "50% 45%",
-    };
-  }
-  if (id === "tours") {
-    const hub = destinationHubRegistry.find((entry) => entry.id === "zhangjiajie");
-    if (!hub) throw new Error("Missing Zhangjiajie destination hub.");
-    return {
-      src: hub.heroImagePath,
-      width: hub.imageWidth,
-      height: hub.imageHeight,
-      alt: hub.locales[locale].heroAlt,
-      position: "50% 50%",
-    };
-  }
-  return {
-    src: "/images/guides/kevin-preparation/kevin-guiding-1080.jpg",
-    width: 1080,
-    height: 1440,
-    alt: getKevinPreparationStoryCopy(locale).images.action.alt,
-    position: "50% 38%",
-  };
+function serviceImage(id: TravelServiceCardCopy["id"]) {
+  return { src: `/images/services/hub/${id}-1600.webp`, width: 1600, height: 1000, alt: "" };
 }
 
 function schemaForServices(locale: HomegroundLocale) {
@@ -167,7 +139,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
           </div>
           <ol className={styles.cardGrid} data-count={copy.cards.length}>
             {copy.cards.map((card) => {
-              const image = serviceImage(card.id, locale);
+              const image = serviceImage(card.id);
               return (
                 <li key={card.id}>
                   <Link data-spotlight href={serviceHref(card.id, locale)}>
@@ -179,7 +151,6 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
                         loading="lazy"
                         sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 80rem) calc((100vw - 4rem) / 2), 38rem"
                         src={image.src}
-                        style={{ objectPosition: image.position }}
                         width={image.width}
                       />
                     </figure>
