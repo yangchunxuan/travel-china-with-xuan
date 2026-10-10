@@ -316,7 +316,7 @@
   line-height: 1.55;
 }
 
-/* Currency and settlement disclosure, one small line under the price. */
+/* Price basis, written-quote and currency disclosure: small text under the price. */
 .currencyNote {
   color: var(--im-muted);
   font-size: 0.72rem;
