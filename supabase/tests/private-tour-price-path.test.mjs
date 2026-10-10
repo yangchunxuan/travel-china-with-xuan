@@ -56,7 +56,7 @@ async function loadComponent(path, overrides = {}, window) {
       const context = inquiry.getPrivateTourInquiryContext(slug, locale, selected?.slug === slug ? selected.selection : undefined);
       return React.createElement("a", { href: tourWhatsAppHref(locale, context) }, tourContactCopy[locale].alternative);
     } },
-    "lucide-react": { ArrowRight: () => null },
+    "lucide-react": { ArrowRight: () => null, MessageCircle: () => null },
     "next/image": () => null,
     "next/link": ({ children, href, ...props }) => React.createElement("a", { ...props, href }, children),
     ...overrides,
@@ -315,7 +315,7 @@ test("server-rendered homepage labels and detail price controls share the starti
     "./privateTourCardImages": cardImages,
     "./text/KeepWords": keepWords,
     "./motion/CharReveal": charReveal,
-    "lucide-react": { ArrowRight: () => null },
+    "lucide-react": { ArrowRight: () => null, MessageCircle: () => null },
   });
   for (const locale of locales) {
     const products = getHomepagePrivateTourItems(locale);
@@ -497,6 +497,8 @@ test("published price consoles retain selected quotes and separate Zhangjiajie c
       japaneseDirectWhatsAppEnabled: () => true,
       openJapaneseContact: () => false,
     },
+    // Spanish tour pages open the main quote dialog from these links.
+    "../lib/tourContact": { openTourContactForContext: () => false },
   });
   const { japaneseTourContactHrefs } = await loadComponent("lib/japaneseTourContact.ts", {
     "./homegroundBusiness": { homegroundBusiness: { serviceEmail: "test@example.invalid" } },

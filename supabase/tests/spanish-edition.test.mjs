@@ -5,6 +5,24 @@ import { test } from "node:test";
 import { fileURLToPath } from "node:url";
 
 import { getGuideLanguagePaths, guideRegistry } from "../../lib/guideRegistry.ts";
+import { validateAndNormalizeInquiry } from "../../lib/inquiryContract.ts";
+import {
+  currentHomepageEmailFormVersion,
+  currentPrivateTourQuoteFormVersion,
+  homepageEmailInquirySchemaVersion,
+  privateTourQuoteSchemaVersion,
+  travellerAckPrivacyNoticeVersion,
+} from "../../lib/inquiryVersions.ts";
+import {
+  getPrivateTourInquiryContext,
+  getPrivateTourInquirySubmissionContext,
+} from "../../lib/privateTourInquiryContext.ts";
+import {
+  spanishContactEdition,
+  spanishContactPackageLabels,
+  spanishContactTourNames,
+} from "../../lib/spanishContactEdition.ts";
+import { tourContactNote, tourContactNoteMaxLength } from "../../lib/tourContactDraft.ts";
 import { localizeSpanishPrivateTourProduct } from "../../lib/localizeSpanishPrivateTourProduct.ts";
 import { getPrivateTourProduct, localizePrivateTourProduct } from "../../lib/privateTourProducts.ts";
 import {
@@ -151,4 +169,135 @@ test("the language switch offers Spanish on the home page, the lists, the guides
   );
   const css = read("components/HomegroundHeader.module.css");
   assert.match(css, /\.mobileLanguageNav:has\(> a:nth-child\(5\)\)\s*\{\s*grid-template-columns: repeat\(5,/);
+});
+
+test("the contact flow names every Spanish tour and option as its Spanish page does", () => {
+  assert.deepEqual(Object.keys(spanishContactTourNames), [...spanishTourSlugs]);
+  for (const slug of spanishTourSlugs) {
+    const { spanish } = spanishTour(slug);
+    assert.equal(spanishContactTourNames[slug], spanish.title, slug);
+    assert.equal(spanishContactEdition.tourPath(slug), spanishTourPath(slug));
+    assert.equal(spanishContactEdition.tourSlugFromPath(spanishTourPath(slug)), slug);
+    for (const tourPackage of spanish.packages) {
+      assert.equal(spanishContactPackageLabels[tourPackage.id], tourPackage.label, `${slug} ${tourPackage.id}`);
+      for (const row of tourPackage.rows) {
+        const context = getPrivateTourInquiryContext(slug, "en", { packageId: tourPackage.id, travelers: row.travelers });
+        assert.ok(context, `${slug} ${tourPackage.id} ${row.travelers}`);
+        assert.equal(spanishContactEdition.tourName(context), spanish.title);
+        assert.equal(spanishContactEdition.selectionLabel(context), `${tourPackage.label} · ${row.travelers} viajeros`);
+      }
+    }
+  }
+  for (const guide of spanishGuides) {
+    assert.ok(spanishContactEdition.isGuidePath(spanishGuidePath(guide.slug)), guide.slug);
+  }
+  // English pages are not the Spanish edition's.
+  assert.equal(spanishContactEdition.tourSlugFromPath("/tours/beijing-highlights-5-day-private-tour/"), null);
+  assert.equal(spanishContactEdition.isGuidePath("/guides/how-to-pay-in-china-as-a-tourist/"), false);
+
+  // The loading frame's heights: lower as the sheet widens, taller with the line naming a tour or guide.
+  const { sheetSteps, sheetHeights } = spanishContactEdition;
+  assert.deepEqual([...sheetSteps].sort((a, b) => a - b), [...sheetSteps]);
+  assert.ok(sheetSteps.every((at) => at > 320 && at < 576));
+  assert.equal(sheetHeights.length, sheetSteps.length + 1);
+  for (let index = 1; index < sheetHeights.length; index += 1) {
+    assert.ok(sheetHeights[index][0] < sheetHeights[index - 1][0]);
+  }
+  assert.ok(sheetHeights.every(([without, withLine]) => withLine > without));
+
+  const words = (value) => typeof value === "string" ? [value] : Array.isArray(value) ? value : [];
+  for (const group of ["frame", "card", "desk", "tourContact", "direct", "quote", "fieldErrors", "labels", "date", "receipt"]) {
+    for (const [key, value] of Object.entries(spanishContactEdition[group])) {
+      for (const text of words(value)) assert.ok(text.trim(), `${group}.${key} is empty`);
+    }
+  }
+});
+
+test("an enquiry saved from a Spanish page passes the intake contract and a quote says which page it came from", () => {
+  const config = {
+    allowedFormVersions: [currentPrivateTourQuoteFormVersion, currentHomepageEmailFormVersion],
+    allowedPrivacyNoticeVersions: [travellerAckPrivacyNoticeVersion],
+  };
+  const common = {
+    locale: "en",
+    contact: { channel: "email", email: "traveller@example.com" },
+    privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
+    experiment: null,
+    antiAbuse: { companyWebsite: "" },
+  };
+  for (const slug of spanishTourSlugs) {
+    const { spanish } = spanishTour(slug);
+    const tourPackage = spanish.packages[0];
+    const context = getPrivateTourInquiryContext(slug, "en", { packageId: tourPackage.id, travelers: tourPackage.rows[0].travelers });
+    const marker = spanishContactEdition.noteMarker(spanishTourPath(slug));
+    assert.ok(marker.includes(`https://homegroundchina.com/es/tours/${slug}/`), slug);
+    assert.match(marker, /Spanish/);
+    // The longest note the Spanish form accepts, with the traveller's own source line.
+    const longest = "x".repeat(tourContactNoteMaxLength - marker.length - 2);
+    const quote = validateAndNormalizeInquiry({
+      ...common,
+      schemaVersion: privateTourQuoteSchemaVersion,
+      formVersion: currentPrivateTourQuoteFormVersion,
+      entryPath: "private_tour_quote",
+      productInterest: getPrivateTourInquirySubmissionContext(context, "en"),
+      travelDate: "2027-03-12",
+      note: [marker, tourContactNote(longest, "Instagram")].join("\n\n"),
+      attribution: { landingPath: `/tours/${slug}/` },
+    }, config);
+    assert.equal(quote.ok, true, `${slug}: ${JSON.stringify(quote.fieldErrors ?? {})}`);
+    assert.ok(quote.value.note.startsWith(marker), slug);
+
+    const emailOnly = validateAndNormalizeInquiry({
+      ...common,
+      schemaVersion: homepageEmailInquirySchemaVersion,
+      formVersion: currentHomepageEmailFormVersion,
+      entryPath: "homepage_email",
+      productInterest: getPrivateTourInquirySubmissionContext(getPrivateTourInquiryContext(slug, "en"), "en"),
+      attribution: { landingPath: "/" },
+    }, config);
+    assert.equal(emailOnly.ok, true, `${slug}: ${JSON.stringify(emailOnly.fieldErrors ?? {})}`);
+  }
+});
+
+test("Spanish pages mount the main contact flow and their buttons open it", () => {
+  const read = (file) => readFileSync(resolve(root, file), "utf8");
+  assert.match(read("app/(spanish)/es/layout.tsx"), /<body>\{children\}<SpanishContactHost \/><\/body>/);
+  const host = read("components/SpanishContactHost.tsx");
+  assert.match(host, /<TourContactPanel locale="en" edition=\{spanishContactEdition\} \/>/);
+  assert.match(host, /<ContactCardHost locale="en" edition=\{spanishContactEdition\} \/>/);
+
+  // The header button is the planner link the contact card answers; the home
+  // page's contact section answers it without JavaScript.
+  assert.match(read("lib/spanishSite.ts"), /contact: "\/es\/#planner-contact",/);
+  assert.equal(spanishContactEdition.homePath, "/es/");
+  assert.match(read("components/SpanishHomePage.tsx"), /id="planner-contact"/);
+  const chrome = read("components/SpanishChrome.tsx");
+  assert.match(chrome, /contactHref = spanishSite\.contact,/);
+  assert.match(chrome, /href=\{contactHref\} onClick=\{openTourQuote\}/);
+
+  // On a tour page the buttons open that tour's quote dialog; "another group
+  // size" on the Zhangjiajie tours asks for the group, as on the main pages.
+  const links = read("components/JapaneseJiangnanInteraction.tsx");
+  assert.match(links, /startsWith\("\/es\/"\)\) \{[\s\S]*?openTourContactForContext\(event, getPrivateTourInquiryContext\(/);
+  assert.match(links, /const customGroup = otherGroup && isZhangjiajieCustomGroupTour\(slug\);/);
+
+  // Drafts are written in Spanish and point at the Spanish page.
+  const context = getPrivateTourInquiryContext("guilin-yangshuo-5-day-private-tour", "en", { packageId: "standard-guided", travelers: 2 });
+  const message = spanishContactEdition.messageText(context, undefined, { travelDate: "2027-03-12", note: "Dos habitaciones" });
+  assert.deepEqual(message.split("\n"), [
+    "Hola. Me gustaría organizar un viaje privado a China.",
+    "Guilin y Yangshuo: viaje privado de 5 días",
+    "Viaje privado · 2 viajeros",
+    "https://homegroundchina.com/es/tours/guilin-yangshuo-5-day-private-tour/",
+    "Llegada prevista: 2027-03-12",
+    "Detalles del viaje: Dos habitaciones",
+    "Idioma del guía (inglés, o español con suplemento):",
+  ]);
+  const mail = new URL(spanishContactEdition.mailtoHref(context));
+  assert.equal(mail.pathname, "hello@homegroundchina.com");
+  assert.equal(mail.searchParams.get("subject"), "Consulta de viaje privado: Guilin y Yangshuo: viaje privado de 5 días");
+  // A guide's general message names the guide and its Spanish page.
+  const general = spanishContactEdition.messageText(null, "/es/guias/yangshuo-que-ver/");
+  assert.ok(general.includes("https://homegroundchina.com/es/guias/yangshuo-que-ver/"));
+  assert.equal(spanishContactEdition.messageText(null, "/es/").includes("homegroundchina.com"), false);
 });

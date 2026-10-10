@@ -1,5 +1,6 @@
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { contactCardFrameCopy, holdPageScroll, type ContactCardLayout } from "../lib/contactCard";
+import type { ContactEdition } from "../lib/contactEdition";
 import styles from "./ContactCardFrame.module.css";
 
 // The card's height in pixels, so it takes the frame's place without a jump,
@@ -22,13 +23,13 @@ const sheetHeights: Record<HomegroundLocale, [number, number][]> = {
   ko: [[748, 796], [721, 769], [700, 739], [680, 719]],
 };
 
-function frameHeight(locale: HomegroundLocale, layout: ContactCardLayout, named: boolean) {
+function frameHeight(locale: HomegroundLocale, layout: ContactCardLayout, named: boolean, edition?: ContactEdition) {
   if (layout === "card") return cardHeight[named ? 1 : 0];
   // The page's scrollbar has gone by now (holdPageScroll), so the sheet is
   // as wide as the window, up to 36rem.
   const width = window.innerWidth;
-  const step = sheetSteps[locale].filter((at) => width >= at).length;
-  return sheetHeights[locale][step][named ? 1 : 0];
+  const step = (edition?.sheetSteps ?? sheetSteps[locale]).filter((at) => width >= at).length;
+  return (edition?.sheetHeights ?? sheetHeights[locale])[step][named ? 1 : 0];
 }
 
 // The card's close icon (lucide X at 18 px, stroke 1.8).
@@ -45,10 +46,11 @@ const closeIcon =
  * opens in its place and carries on its entrance from where the frame got to.
  * Returns a function that removes the frame.
  */
-export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCardLayout, onClose: () => void) {
-  const copy = contactCardFrameCopy[locale];
+export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCardLayout, onClose: () => void, edition?: ContactEdition) {
+  const copy = edition?.frame ?? contactCardFrameCopy[locale];
   const sheet = layout === "sheet";
-  const named = /\/(tours|guides)\/[a-z0-9-]+\/$/u.test(window.location.pathname);
+  const path = window.location.pathname;
+  const named = edition ? Boolean(edition.tourSlugFromPath(path)) || edition.isGuidePath(path) : /\/(tours|guides)\/[a-z0-9-]+\/$/u.test(path);
   // From the press on, as under the card: the page's scrollbar goes before
   // the frame first paints, and the card, holding it in turn, opens exactly
   // where the frame is.
@@ -61,7 +63,7 @@ export function openContactCardFrame(locale: HomegroundLocale, layout: ContactCa
   dialog.setAttribute("data-layout", layout);
   dialog.setAttribute("aria-label", copy.title);
   dialog.setAttribute("aria-busy", "true");
-  dialog.style.setProperty("--frame-height", `${frameHeight(locale, layout, named)}px`);
+  dialog.style.setProperty("--frame-height", `${frameHeight(locale, layout, named, edition)}px`);
 
   const card = dialog.appendChild(document.createElement("div"));
   card.className = styles.card;

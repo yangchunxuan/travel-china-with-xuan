@@ -8,7 +8,8 @@ import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
 import { holdPageScroll, type ContactCardLayout, type ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
-import { privateTourQuoteApiUrl, tourContactMessageText, tourWhatsAppHref, whatsAppHrefText } from "../lib/tourContact";
+import { homegroundWhatsAppHref, privateTourQuoteApiUrl, tourContactMessageText, tourWhatsAppHref, whatsAppHrefText } from "../lib/tourContact";
+import type { ContactEdition } from "../lib/contactEdition";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import {
   buildPrivateTourMailtoHref,
@@ -29,7 +30,7 @@ import { setInquiryOpen } from "../lib/siteOverlayState";
 import { ContactCardScan, CopyButton } from "./ContactCardScan";
 import styles from "./ContactCard.module.css";
 import sheetStyles from "./ContactSheet.module.css";
-import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { createInquiryReceipt, relabelInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
 import { InquiryReceipt } from "./InquiryReceipt";
 import { EmailTypoHint } from "./EmailTypoHint";
 
@@ -48,8 +49,8 @@ function privacyPath(locale: HomegroundLocale) {
   return locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
 }
 
-function chinaTime(locale: HomegroundLocale) {
-  return new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB", {
+function chinaTime(locale: HomegroundLocale, editionLocale?: string) {
+  return new Intl.DateTimeFormat(editionLocale ?? (locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB"), {
     timeZone: "Asia/Shanghai",
     hour: "2-digit",
     minute: "2-digit",
@@ -58,18 +59,19 @@ function chinaTime(locale: HomegroundLocale) {
 }
 
 /** The page the card was opened on: a tour gives the itinerary, a guide its title. */
-function pageContext(locale: HomegroundLocale) {
+function pageContext(locale: HomegroundLocale, edition?: ContactEdition) {
   const prefix = locale === "en" ? "" : `/${locale}`;
   const path = window.location.pathname;
-  const tourSlug = path.match(new RegExp(`^${prefix}/tours/([a-z0-9-]+)/$`))?.[1];
+  const tourSlug = edition ? edition.tourSlugFromPath(path) : path.match(new RegExp(`^${prefix}/tours/([a-z0-9-]+)/$`))?.[1];
   const tour = tourSlug ? getPrivateTourInquiryContext(tourSlug, locale) : null;
-  const isGuide = new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(path);
+  const isGuide = edition ? edition.isGuidePath(path) : new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(path);
   const guideTitle = !tour && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "";
   return { path, tour, guideTitle };
 }
 
 export function ContactCardDialog({
   locale,
+  edition,
   request,
   layout,
   open,
@@ -77,6 +79,8 @@ export function ContactCardDialog({
   frameShownAt = null,
 }: {
   locale: HomegroundLocale;
+  /** A language edition's words and pages; the enquiry is still filed under `locale`. */
+  edition?: ContactEdition;
   request: ContactCardRequest;
   layout: ContactCardLayout;
   open: boolean;
@@ -84,7 +88,7 @@ export function ContactCardDialog({
   /** When the card's frame (ContactCardFrame) appeared for this open, if the card is taking its place. */
   frameShownAt?: number | null;
 }) {
-  const copy = contactCardCopy[locale];
+  const copy = edition?.card ?? contactCardCopy[locale];
   // A fresh KakaoTalk hint per opening or request, so a revealed number or copied message never carries over.
   const [kakaoKey, setKakaoKey] = useState(0);
   useEffect(() => { if (open) setKakaoKey(key => key + 1); }, [open, request]);
@@ -92,7 +96,7 @@ export function ContactCardDialog({
   const sheet = layout === "sheet";
   const contactVariant = sheet ? "mobile_sheet" : "desktop_card";
   const withSheet = (base: string, extra: string) => (sheet ? `${base} ${extra}` : base);
-  const desk = getHomepagePlanningDeskCopy(locale).contactStart;
+  const desk = edition?.desk ?? getHomepagePlanningDeskCopy(locale).contactStart;
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -104,8 +108,8 @@ export function ContactCardDialog({
   const submittedRef = useRef(false);
   const [closing, setClosing] = useState(false);
   // Re-read on every open: the card outlives client-side navigation.
-  const [context, setContext] = useState(() => pageContext(locale));
-  const [clock, setClock] = useState(() => chinaTime(locale));
+  const [context, setContext] = useState(() => pageContext(locale, edition));
+  const [clock, setClock] = useState(() => chinaTime(locale, edition?.intlLocale));
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<EmailStatus>("idle");
@@ -122,8 +126,12 @@ export function ContactCardDialog({
       process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true",
   );
   const directWhatsApp = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
-  const whatsappHref = request.whatsappHref ?? (directWhatsApp ? tourWhatsAppHref(locale, tour, context.path) : "");
-  const mailtoHref = request.mailtoHref ?? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour);
+  const whatsappHref = request.whatsappHref ?? (directWhatsApp
+    ? edition ? homegroundWhatsAppHref(edition.messageText(tour, context.path)) : tourWhatsAppHref(locale, tour, context.path)
+    : "");
+  const mailtoHref = request.mailtoHref ?? (edition
+    ? edition.mailtoHref(tour, undefined, context.guideTitle ? { title: context.guideTitle, path: context.path } : undefined)
+    : buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour));
   const messengerHref = sheet ? homegroundMessengerUrl() : "";
 
   // Opened before the browser paints, so a card taking its frame's place
@@ -150,19 +158,19 @@ export function ContactCardDialog({
 
   useEffect(() => {
     if (!open) return;
-    const opened = pageContext(locale);
+    const opened = pageContext(locale, edition);
     setContext(opened);
     markNewsletterPromptHandled();
     setInquiryOpen(true);
-    setClock(chinaTime(locale));
-    const tick = window.setInterval(() => setClock(chinaTime(locale)), 20_000);
+    setClock(chinaTime(locale, edition?.intlLocale));
+    const tick = window.setInterval(() => setClock(chinaTime(locale, edition?.intlLocale)), 20_000);
     trackEvent("contact_options_viewed", { page_language: locale, contact_variant: contactVariant }, { firstPartyContext: { productSlug: opened.tour?.slug, surface: opened.tour ? "product" : "contact_options" } });
     return () => {
       window.clearInterval(tick);
       // A tour's quote sheet may still be open underneath.
       if (!document.querySelector("dialog[open]:not([data-contact-card-dialog])")) setInquiryOpen(false);
     };
-  }, [open, locale, request, contactVariant]);
+  }, [open, locale, edition, request, contactVariant]);
 
   useEffect(() => {
     if (status !== "success") return;
@@ -181,7 +189,8 @@ export function ContactCardDialog({
   }
 
   const payload = () => ({
-    trafficSessionToken: getTrafficSessionToken() ?? null,
+    // An edition's pages mint no traffic session; never attach another language's.
+    trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null,
     schemaVersion: homepageEmailInquirySchemaVersion,
     formVersion: currentHomepageEmailFormVersion,
     entryPath: "homepage_email",
@@ -225,7 +234,10 @@ export function ContactCardDialog({
       try { result = text ? JSON.parse(text) : null; } catch { result = null; }
       if (response.ok) {
         if (result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-          setReceipt(createInquiryReceipt(result, snapshot.body, locale, undefined, snapshot.key));
+          const saved = createInquiryReceipt(result, snapshot.body, locale, undefined, snapshot.key);
+          setReceipt(saved && edition && tour && saved.productName
+            ? relabelInquiryReceipt(saved, { productName: edition.tourName(tour), selectionLabel: edition.selectionLabel(tour) })
+            : saved);
           setStatus("success");
           if (!submittedRef.current) {
             submittedRef.current = true;
@@ -302,7 +314,7 @@ export function ContactCardDialog({
   }
 
   const aboutLabel = tour ? copy.tourLabel : context.guideTitle ? copy.guideLabel : "";
-  const aboutName = tour ? tour.name : context.guideTitle;
+  const aboutName = tour ? edition?.tourName(tour) ?? tour.name : context.guideTitle;
   const openedApp = (channel: "whatsapp" | "messenger" | "kakao") => () =>
     trackEvent("contact_option_clicked", { channel, contact_variant: contactVariant, page_language: locale });
   // Korean pages: KakaoTalk copies the same prepared text the WhatsApp link carries.
@@ -336,7 +348,7 @@ export function ContactCardDialog({
       {!emailReady ? (
         <p className={styles.note}>{desk.emailUnavailable}</p>
       ) : status === "success" && receipt ? (
-        <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} headingId={`${id}-mail`} hideWhatsApp />
+        <InquiryReceipt receipt={receipt} locale={locale} localizedCopy={edition?.receipt} dateLocale={edition?.intlLocale} containerRef={successRef} headingId={`${id}-mail`} hideWhatsApp />
       ) : (
         <form className={styles.form} onSubmit={submit} noValidate aria-busy={status === "submitting"}>
           <label className={styles.visuallyHidden} htmlFor={`${id}-email`}>{desk.emailLabel}</label>
@@ -369,7 +381,7 @@ export function ContactCardDialog({
               setInvalid(false);
             }}
           />
-          <EmailTypoHint email={email} locale={locale} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setInvalid(false); }} />
+          <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setInvalid(false); }} />
           <div className={styles.honeypot} aria-hidden="true">
             <label htmlFor={`${id}-company`}>Company website</label>
             <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />
@@ -391,7 +403,7 @@ export function ContactCardDialog({
           <p className={styles.error} id={`${id}-error`} role="alert">{error}</p>
           <p className={styles.privacy}>
             {desk.emailUse} {desk.privacyLead}{" "}
-            <a href={privacyPath(locale)} target="_blank" rel="noopener noreferrer">{desk.privacyAction}</a>
+            <a href={edition?.privacyHref ?? privacyPath(locale)} target="_blank" rel="noopener noreferrer">{desk.privacyAction}</a>
           </p>
         </form>
       )}
@@ -463,7 +475,7 @@ export function ContactCardDialog({
         ) : (
           <div className={styles.columns} data-single={!whatsappHref || request.scanOnly || undefined}>
             {whatsappHref ? (
-              <ContactCardScan locale={locale} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
+              <ContactCardScan locale={locale} localizedCopy={edition?.card} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   {copy.useHere}
                   <ArrowUpRight size={16} aria-hidden="true" />

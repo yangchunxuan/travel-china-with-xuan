@@ -3,7 +3,7 @@
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import {
   useEffect,
   useMemo,
@@ -178,6 +178,8 @@ export type JapanesePriceCopy = Readonly<{
   quoteOnlyTitle?: string;
   quoteOnlyBody?: string;
   emailLabel: string;
+  /** Spanish only: the second button is a WhatsApp chat link, as on the main tour pages. */
+  whatsappLabel?: string;
   /** Japanese only: says the WhatsApp/email buttons open a draft that is not sent yet. */
   draftNote?: string;
   /** Currency and settlement note shown under the selected price. */
@@ -508,13 +510,15 @@ function PublishedPrivateTourPriceConsole({
           {copy.checkDates}
           <ArrowRight aria-hidden="true" size={17} />
         </GuideCtaLink>}
-        {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink channel="email" className={tourContactStyles.secondaryLink} hrefs={japaneseContactHrefs}>
+        {japaneseCopy && japaneseContactHrefs ? japaneseCopy.whatsappLabel ? <JapaneseTourContactLink direct className={tourContactStyles.secondaryLink} hrefs={japaneseContactHrefs}>
+          <MessageCircle aria-hidden="true" size={18} />{japaneseCopy.whatsappLabel}
+        </JapaneseTourContactLink> : <JapaneseTourContactLink channel="email" className={tourContactStyles.secondaryLink} hrefs={japaneseContactHrefs}>
           {japaneseCopy.emailLabel}
         </JapaneseTourContactLink> : <TourWhatsAppLink locale={product.locale} slug={product.slug} />}
         <div className={styles.otherGroupCopy}>
           <strong>{copy.otherGroups}</strong>
           <span>{copy.otherGroupsBody}</span>
-          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink hrefs={japaneseContactHrefs}>
+          {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink otherGroup hrefs={japaneseContactHrefs}>
             {copy.requestQuote}
             <ArrowRight aria-hidden="true" size={15} />
           </JapaneseTourContactLink> : <GuideCtaLink

@@ -138,6 +138,14 @@ export function createInquiryReceipt(response: unknown, submittedBody: string, l
   return receipt;
 }
 
+/** A language edition shows its own tour and option names; the saved enquiry and its correction key stay the same. */
+export function relabelInquiryReceipt(receipt: InquiryReceiptData, labels: { productName: string | null; selectionLabel: string | null }): InquiryReceiptData {
+  const relabelled: InquiryReceiptData = { ...receipt, productName: labels.productName, selectionLabel: labels.selectionLabel };
+  const key = inquiryReceiptAccessKey(receipt);
+  if (key) receiptAccessKeys.set(relabelled, key);
+  return relabelled;
+}
+
 /** A confirmed correction changes only contact state; the saved itinerary and deadline survive. */
 export function correctedInquiryReceipt(receipt: InquiryReceiptData, response: unknown): InquiryReceiptData | null {
   const result = record(response);

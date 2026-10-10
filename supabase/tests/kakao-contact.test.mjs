@@ -84,7 +84,7 @@ test("the product quote form records one form start per opening with product con
   assert.match(panel, /\{context \? <label htmlFor=\{`\$\{id\}-source`\}>/u);
   assert.equal(tourContactNoteMaxLength, 900);
   assert.equal(customTourContactNoteMaxLength, 800);
-  assert.match(panel, /const noteMaxLength = context\?\.customGroup \? customTourContactNoteMaxLength : tourContactNoteMaxLength;/u);
+  assert.match(panel, /const noteMaxLength = \(context\?\.customGroup \? customTourContactNoteMaxLength : tourContactNoteMaxLength\) - \(noteMarker \? noteMarker\.length \+ 2 : 0\);/u);
   assert.match(panel, /maxLength=\{noteMaxLength\}/u);
 });
 

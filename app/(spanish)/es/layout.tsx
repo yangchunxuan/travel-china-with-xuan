@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpanishContactHost } from "../../../components/SpanishContactHost";
 import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
 import "../../globals.css";
 
@@ -9,15 +10,15 @@ export const metadata: Metadata = {
   openGraph: { siteName: "Homeground China", type: "website" },
 };
 
-// Spanish pages contact us by WhatsApp or email, so the layout mounts no
-// enquiry form, analytics or consent banner.
+// Spanish pages use the main site's contact flow (SpanishContactHost). They
+// carry no analytics, consent banner or newsletter prompt.
 export default function SpanishLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
       </head>
-      <body>{children}</body>
+      <body>{children}<SpanishContactHost /></body>
     </html>
   );
 }

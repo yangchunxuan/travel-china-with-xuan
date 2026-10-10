@@ -1,11 +1,14 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { EditionMobileNav } from "./EditionMobileNav";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
+import { getPrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
+import { openTourContactForContext } from "../lib/tourContact";
+import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import {
   spanishLanguagePaths,
@@ -25,26 +28,39 @@ export function SpanishTourHeader({ tourSlug }: { tourSlug: string }) {
     <SpanishSiteHeader
       contactHref={`${currentPath}#contact`}
       currentPath={currentPath}
+      tourSlug={tourSlug}
       languagePaths={spanishLanguagePaths(`/tours/${tourSlug}/`, currentPath)}
     />
   );
 }
 
 /**
- * Site header for the Spanish pages. The contact button is a plain link to the
- * page's contact section: Spanish enquiries go by WhatsApp or email, so there
- * is no on-site form to open.
+ * Site header for the Spanish pages. Its contact button does what the main
+ * header's does: on a tour page it opens that tour's quote dialog with the
+ * chosen option and group; elsewhere it is the planner link the contact card
+ * answers. Both keep a real href for visits without JavaScript.
  */
 export function SpanishSiteHeader({
-  contactHref,
+  contactHref = spanishSite.contact,
   currentPath,
   languagePaths,
+  tourSlug,
 }: {
-  contactHref: string;
+  contactHref?: string;
   currentPath: string;
   languagePaths: readonly SpanishLanguagePath[];
+  tourSlug?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const selected = usePrivateTourSelection();
+  const openTourQuote = (event: MouseEvent<HTMLAnchorElement>, returnFocus?: HTMLElement | null) => {
+    if (!tourSlug) return;
+    openTourContactForContext(
+      event,
+      getPrivateTourInquiryContext(tourSlug, "en", selected?.slug === tourSlug ? selected.selection : undefined),
+      returnFocus,
+    );
+  };
   // The logo folds to "Hi" on scroll, as on the other languages' headers.
   const brandFold = useBrandFold();
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -180,7 +196,7 @@ export function SpanishSiteHeader({
                 </a>
               ))}
             </nav>
-            <a aria-label="Consultar un viaje" className={headerStyles.headerCta} href={contactHref}>
+            <a aria-label="Consultar un viaje" className={headerStyles.headerCta} href={contactHref} onClick={openTourQuote}>
               <span className={headerStyles.headerCtaLong} aria-hidden="true">Consultar un viaje</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">Consultar</span>
             </a>
@@ -199,7 +215,7 @@ export function SpanishSiteHeader({
         </div>
 
         <EditionMobileNav
-          cta={{ href: contactHref, label: "Consultar un viaje" }}
+          cta={{ href: contactHref, label: "Consultar un viaje", onClick: (event) => openTourQuote(event, menuButtonRef.current) }}
           id="spanish-mobile-navigation"
           label="Menú"
           languageLabel="Elegir idioma"

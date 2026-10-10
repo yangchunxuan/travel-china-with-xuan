@@ -3,6 +3,8 @@
 import type { ReactNode } from "react";
 import { trackEvent } from "../lib/analytics";
 import { japaneseDirectWhatsAppEnabled, openJapaneseContact } from "../lib/japaneseContactFlow";
+import { getPrivateTourInquiryContext, isZhangjiajieCustomGroupTour } from "../lib/privateTourInquiryContext";
+import { openTourContactForContext } from "../lib/tourContact";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 
 export type JapaneseContactHrefs = Readonly<{
@@ -16,12 +18,18 @@ export function JapaneseTourContactLink({
   className,
   children,
   ignoreSelection = false,
+  direct = false,
+  otherGroup = false,
   hrefs,
 }: {
   channel?: "whatsapp" | "email";
   className?: string;
   children: ReactNode;
   ignoreSelection?: boolean;
+  /** A plain chat link: never opens the on-site dialog. */
+  direct?: boolean;
+  /** Spanish pages: asks for a group size no published price covers, as the main tour pages do. */
+  otherGroup?: boolean;
   hrefs: JapaneseContactHrefs;
 }) {
   const selected = usePrivateTourSelection();
@@ -47,9 +55,18 @@ export function JapaneseTourContactLink({
       rel={channel === "whatsapp" && directWhatsapp ? "noopener noreferrer" : undefined}
       target={channel === "whatsapp" && directWhatsapp ? "_blank" : undefined}
       onClick={(event) => {
-        if (channel === "whatsapp" && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+        if (channel === "whatsapp" && !direct && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
           const slug = selected?.slug ?? window.location.pathname.match(/^\/(?:ja|es)\/tours\/([^/]+)\/$/)?.[1];
-          if (slug) {
+          if (slug && window.location.pathname.startsWith("/es/")) {
+            // Spanish tour pages open the main site's quote dialog (SpanishContactHost).
+            const customGroup = otherGroup && isZhangjiajieCustomGroupTour(slug);
+            openTourContactForContext(event, getPrivateTourInquiryContext(
+              slug,
+              "en",
+              customGroup || ignoreSelection ? undefined : selected?.selection,
+              customGroup ? {} : undefined,
+            ));
+          } else if (slug) {
             if (openJapaneseContact({
               slug,
               selection: ignoreSelection ? undefined : selected?.selection,
@@ -61,7 +78,7 @@ export function JapaneseTourContactLink({
         }
         trackEvent("contact_option_clicked", {
           channel: channel === "whatsapp" && !directWhatsapp ? "email" : channel,
-          // Spanish tour pages reuse these links; they have no on-site dialog.
+          // Spanish tour pages reuse these links.
           page_language: window.location.pathname.startsWith("/es/") ? "es" : "ja",
         }, {
           firstPartyContext: {

@@ -1,6 +1,6 @@
 import type { LocalizedPrivateTourProduct } from "./privateTourProducts";
 import {
-  spanishDraftNote,
+  spanishTourContactNote,
   spanishEmailHref,
   spanishGuideLanguageNote,
   spanishPublishedPriceNote,
@@ -95,7 +95,8 @@ export const spanishPriceCopy = {
   quoteOnlyBody:
     "Esta ruta no tiene un precio público estable. Díganos sus fechas, el número de viajeros y las habitaciones que necesita, y le damos un total por escrito antes de pagar.",
   emailLabel: "Escribir por correo",
-  draftNote: spanishDraftNote,
+  whatsappLabel: "O chatear por WhatsApp",
+  draftNote: spanishTourContactNote,
   currencyNote: spanishPublishedPriceNote,
 } as const;
 
