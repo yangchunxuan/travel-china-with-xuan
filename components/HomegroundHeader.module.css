@@ -512,67 +512,92 @@
   color: var(--hg-color-ink, #141413);
 }
 
+/*
+ * The header's right side speaks the mobile menu's language: nothing is
+ * filled, pilled or circled. Languages are plain words with the menu's short
+ * rust line under the one in use; the way to a planner is a word (no arrow:
+ * beside the menu button it read as pointing at it); the menu button is its
+ * three bars.
+ */
 .languageNav {
   align-items: center;
-  background: #f4f4f1;
-  border: 1px solid #e1e1dc;
-  border-radius: 999px;
   display: flex;
   flex: none;
-  padding: 0.15rem;
 }
 
 .languageNav a {
   align-items: center;
-  border-radius: 999px;
-  color: #5f5f5a;
+  color: #6b6b66;
   display: inline-flex;
-  font-size: 0.72rem;
-  font-weight: 720;
+  font-size: 0.75rem;
+  font-weight: 500;
   justify-content: center;
+  letter-spacing: 0.02em;
   min-block-size: 2.75rem;
   min-inline-size: 2.75rem;
-  padding-inline: 0.55rem;
+  padding-inline: 0.5rem;
+  position: relative;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(.2, .7, .2, 1);
   white-space: nowrap;
 }
 
-.languageNav a:hover,
-.languageNav a:focus-visible {
+.languageNav a::after {
+  background: linear-gradient(90deg, #d8d8d1, var(--hg-color-rust, #a74731) 70%, #e0a58f);
+  block-size: 1.5px;
+  border-radius: 1px;
+  content: "";
+  inline-size: 1rem;
+  inset-block-end: 0.5rem;
+  inset-inline-start: calc(50% - 0.5rem);
+  position: absolute;
+  transform: scaleX(0);
+  transition: transform 350ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.languageNav a:is(:hover, :focus-visible, [aria-current]) {
   color: var(--hg-color-ink, #141413);
 }
 
-.languageNav a[aria-current] {
-  background: #fff;
-  box-shadow: 0 1px 3px rgb(10 10 10 / 10%);
-  color: var(--hg-color-ink, #141413);
+.languageNav a:is(:hover, :focus-visible, [aria-current])::after {
+  transform: scaleX(1);
 }
 
 .headerCta,
 .mobileCta {
   align-items: center;
-  background: #111;
-  border: 1px solid #111;
-  border-radius: 999px;
-  color: #fff;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--hg-color-ink, #141413);
   display: inline-flex;
   flex: none;
-  font-size: 0.8rem;
-  font-weight: 680;
+  font-family: var(--hg-font-editorial, Georgia, "Times New Roman", serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
   justify-content: center;
   min-block-size: 2.75rem;
-  padding-inline: 1rem;
   text-decoration: none;
-  transition: background-color 140ms ease, border-color 140ms ease;
   white-space: nowrap;
 }
 
-.headerCta:hover,
-.headerCta:focus-visible,
-.mobileCta:hover,
-.mobileCta:focus-visible {
-  background: #333;
-  border-color: #333;
+.headerCta {
+  padding-inline: 0.25rem;
+}
+
+/* The same rust line the languages have draws under the word on hover and focus. */
+.headerCta > span {
+  background-image: linear-gradient(90deg, #d8d8d1, var(--hg-color-rust, #a74731) 70%, #e0a58f);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  /* Equal above and below, so the word stays on the header's centre line. */
+  padding-block: 0.25em;
+  transition: background-size 350ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.headerCta:is(:hover, :focus-visible) > span {
+  background-size: 100% 1.5px;
 }
 
 .headerCtaShort {
@@ -595,10 +620,11 @@
 
 .menuButton {
   align-items: center;
-  background: #fff;
-  border: 1px solid #d6d6d1;
-  border-radius: 50%;
+  background: none;
+  border: 0;
+  border-radius: 0;
   color: var(--hg-color-ink, #141413);
+  cursor: pointer;
   display: none;
   flex: none;
   block-size: 2.75rem;
@@ -607,10 +633,9 @@
   padding: 0;
 }
 
-.menuButton:hover,
-.menuButton:focus-visible {
-  background: #f4f4f1;
-  border-color: #bdbdb7;
+/* Where the button holds an icon instead of bars (the Japanese pages), its lines are as thin. */
+.menuButton svg {
+  stroke-width: 1.4px;
 }
 
 .mobileNav {
@@ -664,12 +689,7 @@
   }
 
   .headerActions {
-    gap: 0.5rem;
-  }
-
-  .headerCta {
-    font-size: 0.76rem;
-    padding-inline: 0.85rem;
+    gap: 0.75rem;
   }
 }
 
@@ -708,27 +728,27 @@
     position: relative;
   }
 
+  /* Bars as thin as the arrow beside them. */
   .menuButton > span {
     background: currentColor;
-    block-size: 1.6px;
-    border-radius: 2px;
-    inline-size: 18px;
-    inset-block-start: calc(50% - 0.8px);
-    inset-inline-start: calc(50% - 9px);
+    block-size: 1px;
+    inline-size: 20px;
+    inset-block-start: calc(50% - 0.5px);
+    inset-inline-start: calc(50% - 10px);
     position: absolute;
     transition: transform 350ms cubic-bezier(.2, .7, .2, 1), opacity 350ms cubic-bezier(.2, .7, .2, 1);
   }
 
   .menuButton > span:first-child {
-    margin-block-start: -5px;
+    margin-block-start: -6px;
   }
 
   .menuButton > span:last-child {
-    margin-block-start: 5px;
+    margin-block-start: 6px;
   }
 
   .siteHeader[data-menu-open="true"] .menuButton > span:first-child {
-    transform: translateY(5px) rotate(45deg);
+    transform: translateY(6px) rotate(45deg);
   }
 
   .siteHeader[data-menu-open="true"] .menuButton > span:nth-child(2) {
@@ -736,7 +756,7 @@
   }
 
   .siteHeader[data-menu-open="true"] .menuButton > span:last-child {
-    transform: translateY(-5px) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .mobileNav {
@@ -1075,8 +1095,12 @@
     letter-spacing: 0.04em;
   }
 
+  .headerActions {
+    gap: 0.25rem;
+  }
+
   .headerCta {
-    transition: background-color 140ms ease, border-color 140ms ease, opacity 200ms cubic-bezier(.2, .7, .2, 1), visibility 200ms cubic-bezier(.2, .7, .2, 1);
+    transition: opacity 200ms cubic-bezier(.2, .7, .2, 1), visibility 200ms cubic-bezier(.2, .7, .2, 1);
   }
 
   .siteHeader[data-menu-open="true"] {
@@ -1168,7 +1192,6 @@
 
   .headerCta {
     min-block-size: 2.75rem;
-    padding-inline: 0.8rem;
   }
 
   .headerCtaLong {
@@ -1209,12 +1232,12 @@
   }
 
   .headerActions {
-    gap: 0.35rem;
+    gap: 0;
   }
 
   .headerCta {
     min-block-size: 2.75rem;
-    padding-inline: 0.65rem;
+    padding-inline: 0.125rem;
   }
 
   .menuButton {
@@ -1227,6 +1250,9 @@
   .brandMark,
   .desktopNav a,
   .headerCta,
+  .headerCta > span,
+  .languageNav a,
+  .languageNav a::after,
   .mobileCta,
   .navGroup,
   .navGroupToggle svg,
@@ -1248,11 +1274,11 @@
 
 @media (forced-colors: active) {
   .siteHeader,
-  .languageNav,
-  .menuButton,
-  .mobileLanguageNav a,
-  .headerCta,
-  .mobileCta {
+  .mobileLanguageNav a {
     border: 1px solid CanvasText;
+  }
+
+  .languageNav a[aria-current] {
+    text-decoration: underline;
   }
 }
