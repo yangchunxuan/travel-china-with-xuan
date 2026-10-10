@@ -127,9 +127,9 @@ const frenchConcessionPhoto = photo(
   l("The morning is a slow walk under the plane trees.", "上午在梧桐树下慢慢走。", "오전에는 플라타너스 아래를 천천히 걷습니다."),
 );
 const bundPhoto = photo(
-  "/images/destinations/shanghai/bund-architecture-1200.webp",
-  1200,
-  750,
+  "/images/tours/photo-quality-20261004/bund.webp",
+  3200,
+  2400,
   l("The domed former HSBC building and the Custom House clock tower on Shanghai's Bund", "外滩的原汇丰银行大楼穹顶与海关钟楼", "와이탄의 옛 HSBC 건물 돔과 세관 시계탑"),
   l("In the afternoon you go inside these buildings, not just past them.", "下午走进这些大楼里面，而不只是从门前经过。", "오후에는 이 건물들 앞을 지나치는 대신 안으로 들어갑니다."),
 );
@@ -519,6 +519,13 @@ export const jiangnanArtPrivateTourPhotoCreditsBySlug: Readonly<
       sourceUrl: "https://commons.wikimedia.org/wiki/File:French_Concession,_Shanghai,_China_(9740638438).jpg",
       licenseLabel: "CC BY 2.0",
       licenseUrl: ccBy2,
+    },
+    {
+      subject: l("The Bund, Shanghai", "上海外滩", "상하이 와이탄"),
+      author: "Another Believer",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Bund,_Shanghai,_China_(December_2015)_-_11.JPG",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: ccBySa4,
     },
     {
       subject: l("Shanghai Jewish Refugees Museum courtyard", "上海犹太难民纪念馆庭院", "상하이 유대인 난민 기념관 안뜰"),
