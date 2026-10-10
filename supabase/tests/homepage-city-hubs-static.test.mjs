@@ -66,13 +66,53 @@ test("the homepage footer consumes the complete published hub registry", async (
   assert.match(homepage, /variant="homepage"/);
   assert.doesNotMatch(homepage, /destinationHubItems\.map\(\(city\) =>/);
   assert.doesNotMatch(homepage, /<section[\s\S]{0,160}id="destinations"/);
-  assert.match(footer, /destinationHubItems\.map\(\(city\) =>/);
+  // The homepage passes the registry-built list; other pages fall back to the
+  // light mirror in lib/footerDestinationLinks.ts (checked below).
+  assert.match(
+    footer,
+    /destinationHubItems\.length > 0\s*\? destinationHubItems\s*: footerDestinationLinks\[locale\]/,
+  );
+  assert.match(footer, /cityLinks\.map\(\(city\) =>/);
   assert.match(footer, /<Link href=\{city\.href\}>\{city\.label\}<\/Link>/);
   assert.match(footer, /aria-label=\{copy\.cities\.listLabel\}/);
-  assert.match(footer, /id="destinations"/);
-  assert.match(footer, /id="homepage-city-hubs-title"/);
+  assert.match(footer, /id=\{isHomepage \? "destinations" : undefined\}/);
+  assert.match(footer, /id=\{isHomepage \? "homepage-city-hubs-title" : undefined\}/);
   assert.match(footer, /<li key=\{city\.id\}>/);
   assert.doesNotMatch(homepage, /destinations\/(?:guilin|shenzhen)/);
+});
+
+test("the footer on every other page links the same city hubs as the registry", async () => {
+  // The footer is a client component on every page, so it reads a light list
+  // instead of importing the destination catalogue. This keeps the two equal.
+  const [registry, links, footer] = await Promise.all([
+    source("lib/destinationHubs.ts"),
+    source("lib/footerDestinationLinks.ts"),
+    source("components/HomegroundFooter.tsx"),
+  ]);
+
+  const rows = [...links.matchAll(/\["([a-z]+)", "([^"]+)", "([^"]+)", "([^"]+)"\]/g)].map(
+    ([, id, en, zh, ko]) => ({ id, en, zh, ko }),
+  );
+  assert.deepEqual(rows.map((row) => row.id), expectedHubIds);
+
+  // The registry lists each hub's navTitle in the order en, zh, ko.
+  const navTitles = [...registry.matchAll(/navTitle: "([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(navTitles.length, expectedHubIds.length * 3);
+  rows.forEach((row, index) => {
+    assert.deepEqual(
+      [row.en, row.zh, row.ko],
+      navTitles.slice(index * 3, index * 3 + 3),
+      `${row.id}: footer labels must equal the registry's navTitle values`,
+    );
+  });
+
+  // Same path rule as hubPath() in the registry.
+  assert.match(registry, /locale === "en"\s*\? `\/destinations\/\$\{id\}\/`\s*: `\/\$\{locale\}\/destinations\/\$\{id\}\/`/);
+  assert.match(links, /prefix[^=]*= \{ en: "", zh: "\/zh", ko: "\/ko" \}/);
+  assert.match(links, /href: `\$\{prefix\[locale\]\}\/destinations\/\$\{city\[0\]\}\/`/);
+
+  assert.match(footer, /from "\.\.\/lib\/footerDestinationLinks"/);
+  assert.doesNotMatch(footer, /from "\.\.\/lib\/destinationHubs"/);
 });
 
 test("homepage footer city discovery has localized labels and keyboard-visible links", async () => {

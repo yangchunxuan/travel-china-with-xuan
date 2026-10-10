@@ -886,7 +886,7 @@ test("product-page motion degrades safely and the Jiangnan body stays white abov
       source("components/ShanghaiJiangnanImagineInteractive.tsx"),
       source("components/ShanghaiJiangnanImaginePage.tsx"),
       source("components/ShanghaiJiangnanImaginePage.module.css"),
-      source("components/HomegroundFooter.module.css"),
+      source("components/HomepageFooter.module.css"),
     ]);
 
   assert.match(motion, /prefers-reduced-motion: reduce/);
@@ -909,7 +909,7 @@ test("product-page motion degrades safely and the Jiangnan body stays white abov
     /<\/main>\s*\{japanese \? japaneseChrome\?\.footer : <HomegroundFooter\b/s,
     "the shared page keeps its standard footer and uses Japanese chrome only for JA",
   );
-  assert.match(footerCss, /\.footer\s*\{[^}]*background: var\(--hg-color-ink\)/s);
+  assert.match(footerCss, /\.footer\s*\{[^}]*background: #141413/s);
 });
 
 test("traveler-facing product data does not expose internal commercial terms", () => {
