@@ -93,7 +93,7 @@ test("English Studio keeps its service comparison and uses the unified planner c
     /const plannerHref = `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
   );
   assert.match(page, /const isEnglish = locale === "en"/);
-  assert.match(page, /Compare planning services/);
+  assert.match(page, /View all services/);
   assert.match(page, /Talk to a China trip planner/);
   assert.doesNotMatch(page, /free wishlist check/i);
   assert.doesNotMatch(page, /(?:\?|&)utm_[a-z_]+=/i);
@@ -124,11 +124,15 @@ test("global navigation puts service pages under the Services item, beside the p
   assert.doesNotMatch(header, /"#build-my-route"/);
   assert.match(header, /"#full-trip-support"/);
 
-  assert.match(footer, /planningServicesPath = `\$\{copy.path\}services\//);
-  assert.match(footer, /services: "Trip planning services"/);
-  assert.match(footer, /services: "旅行规划服务"/);
-  assert.match(footer, /services: "여행 설계 서비스"/);
-  assert.match(footer, /aria-current=\{pageContext === "services" \? "page" : undefined\}/);
+  assert.match(footer, /servicesOverviewPath = `\$\{copy.path\}services\//);
+  assert.match(footer, /fullTripSupportPath = `\$\{copy.path\}services\/full-trip-support\//);
+  assert.match(footer, /href=\{fullTripSupportPath\}/);
+  assert.match(footer, /href=\{servicesOverviewPath\}/);
+  assert.match(footer, /services: "All services"/);
+  assert.match(footer, /services: "服务总览"/);
+  assert.match(footer, /services: "전체 서비스"/);
+  assert.match(footer, /aria-current=\{currentPath === fullTripSupportPath \? "page" : undefined\}/);
+  assert.match(footer, /aria-current=\{currentPath === servicesOverviewPath \? "page" : undefined\}/);
   assert.match(footer, /homegroundBusiness\.publicName/);
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
   assert.match(footer, /const privacyPath\s*=/);

@@ -73,9 +73,6 @@ function serviceImage(id: TravelServiceCardCopy["id"], locale: HomegroundLocale)
 
 function schemaForServices(locale: HomegroundLocale) {
   const home = getHomegroundCopy(locale);
-  const navigation = getHomegroundNavigationModel(locale, home.path);
-  const planning = navigation.items.find((item) => item.id === "studio");
-  if (!planning) throw new Error("Missing studio navigation item.");
   const entry = getSearchHubEntry("services", locale);
   const copy = getTravelServicesHubCopy(locale);
   const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
@@ -96,8 +93,7 @@ function schemaForServices(locale: HomegroundLocale) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: home.navigation.homeLabel, item: `${SITE_URL}${home.path}` },
-          { "@type": "ListItem", position: 2, name: planning.label, item: `${SITE_URL}${planning.href}` },
-          { "@type": "ListItem", position: 3, name: entry.h1, item: canonicalUrl },
+          { "@type": "ListItem", position: 2, name: copy.overview, item: canonicalUrl },
         ],
       },
       {
@@ -139,8 +135,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
               <ol>
                 <li><Link href={home.path}>{home.navigation.homeLabel}</Link></li>
-                <li><span aria-hidden="true">/</span><Link href={planning.href}>{planning.label}</Link></li>
-                <li aria-current="page"><span aria-hidden="true">/</span>{section.navLabel}</li>
+                <li aria-current="page"><span aria-hidden="true">/</span>{copy.overview}</li>
               </ol>
             </nav>
             <div className={styles.heroGrid}>
