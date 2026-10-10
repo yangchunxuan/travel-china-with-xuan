@@ -46,7 +46,6 @@ export function SpanishToursHubPage() {
     <div className={`${localeStyles.root} hg-locale-root ${styles.toursPage}`} data-homeground-locale="es" lang="es">
       <a className={localeStyles.skipLink} href="#private-tours-main">Ir a la lista de viajes</a>
       <SpanishSiteHeader
-        contactHref="#contact"
         currentPath={spanishSite.tours}
         languagePaths={spanishLanguagePaths("/tours/", spanishSite.tours)}
       />

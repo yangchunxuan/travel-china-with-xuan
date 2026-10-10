@@ -13,24 +13,26 @@ type CorrectionState = "idle" | "saving" | "failed" | "uncertain" | "busy" | "bl
 const intlLocale = (locale: InquiryReceiptLocale) => locale === "zh" ? "zh-CN" : locale === "en" ? "en-GB" : locale;
 
 /** A calendar date the traveller picked, shown in their language; the ISO value stays in dateTime. */
-function travelDateLabel(value: string, locale: InquiryReceiptLocale) {
+function travelDateLabel(value: string, locale: InquiryReceiptLocale, dateLocale?: string) {
   const [year, month, day] = value.split("-").map(Number);
-  return new Intl.DateTimeFormat(intlLocale(locale), { timeZone: "UTC", year: "numeric", month: locale === "en" ? "short" : "long", day: "numeric" })
+  return new Intl.DateTimeFormat(dateLocale ?? intlLocale(locale), { timeZone: "UTC", year: "numeric", month: locale === "en" ? "short" : "long", day: "numeric" })
     .format(new Date(Date.UTC(year, month - 1, day)));
 }
 
 /** The promised reply time, rounded up to the hour so it reads as a commitment rather than a timestamp. */
-function replyByLabel(value: string, locale: InquiryReceiptLocale) {
+function replyByLabel(value: string, locale: InquiryReceiptLocale, dateLocale?: string) {
   const hour = 3_600_000;
-  return new Intl.DateTimeFormat(intlLocale(locale), {
+  return new Intl.DateTimeFormat(dateLocale ?? intlLocale(locale), {
     timeZone: "Asia/Shanghai", weekday: "short", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
   }).format(new Date(Math.ceil(Date.parse(value) / hour) * hour));
 }
 
-export function InquiryReceipt({ receipt: originalReceipt, locale, localizedCopy, containerRef, headingRef, headingId, hideWhatsApp = false, children }: {
+export function InquiryReceipt({ receipt: originalReceipt, locale, localizedCopy, dateLocale, containerRef, headingRef, headingId, hideWhatsApp = false, children }: {
   receipt: InquiryReceiptData;
   locale: InquiryReceiptLocale;
   localizedCopy?: InquiryReceiptCopy;
+  /** A language edition's Intl locale for the dates shown, when it is not the receipt's own. */
+  dateLocale?: string;
   containerRef?: Ref<HTMLDivElement>;
   headingRef?: Ref<HTMLHeadingElement>;
   headingId?: string;
@@ -186,7 +188,7 @@ export function InquiryReceipt({ receipt: originalReceipt, locale, localizedCopy
   const directEmail = `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(receipt.publicReference)}`;
   const hasTripDetails = Boolean(receipt.productName || receipt.requestedDateCollected || receipt.requestedTravelers !== null || receipt.destinationNames.length || receipt.nights !== null);
   const space = locale === "zh" || locale === "ja" ? "" : " ";
-  const due = receipt.firstResponseDueAt && !emailSuppressed ? replyByLabel(receipt.firstResponseDueAt, locale) : null;
+  const due = receipt.firstResponseDueAt && !emailSuppressed ? replyByLabel(receipt.firstResponseDueAt, locale, dateLocale) : null;
   return <div className={styles.receipt} ref={containerRef} tabIndex={-1} role="status" aria-live="polite" data-inquiry-receipt="">
     <span className={styles.mark} aria-hidden="true"><Check size={20} strokeWidth={2.25} /></span>
     <h3 id={headingId} ref={headingRef} tabIndex={-1}>{copy.title}</h3>
@@ -246,7 +248,7 @@ export function InquiryReceipt({ receipt: originalReceipt, locale, localizedCopy
       <dl>
         {receipt.productName ? <div><dt>{copy.tour}</dt><dd>{receipt.productName}</dd></div> : null}
         {receipt.selectionLabel ? <div><dt>{copy.selection}</dt><dd>{receipt.selectionLabel}</dd></div> : null}
-        {receipt.requestedDateCollected ? <div><dt>{copy.date}</dt><dd>{receipt.requestedDate ? <time dateTime={receipt.requestedDate}>{travelDateLabel(receipt.requestedDate, locale)}</time> : copy.undecided}</dd></div> : null}
+        {receipt.requestedDateCollected ? <div><dt>{copy.date}</dt><dd>{receipt.requestedDate ? <time dateTime={receipt.requestedDate}>{travelDateLabel(receipt.requestedDate, locale, dateLocale)}</time> : copy.undecided}</dd></div> : null}
         {receipt.requestedTravelers !== null ? <div><dt>{copy.party}</dt><dd>{receipt.requestedTravelers}</dd></div> : null}
         {receipt.destinationNames.length ? <div><dt>{copy.destinations}</dt><dd>{receipt.destinationNames.join(" · ")}</dd></div> : null}
         {receipt.nights !== null ? <div><dt>{copy.nights}</dt><dd>{receipt.nights}</dd></div> : null}

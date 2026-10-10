@@ -13,6 +13,7 @@ import {
 } from "../lib/contactCard";
 import type { ContactCardDialog as ContactCardDialogComponent } from "./ContactCardDialog";
 import { openContactCardFrame } from "./ContactCardFrame";
+import type { ContactEdition } from "../lib/contactEdition";
 
 type DialogComponent = typeof ContactCardDialogComponent;
 
@@ -48,7 +49,11 @@ function preloadDialog() {
  * after its fallback appeared, which was the blank first open. The card stays
  * mounted after the first open so a half-typed email survives closing it.
  */
-export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
+export function ContactCardHost({ locale, edition }: {
+  locale: HomegroundLocale;
+  /** A language edition's words and pages; its enquiries are filed under `locale`. */
+  edition?: ContactEdition;
+}) {
   const [ready, setReady] = useState(false);
   const [request, setRequest] = useState<ContactCardRequest | null>(null);
   const [layout, setLayout] = useState<ContactCardLayout>("card");
@@ -115,7 +120,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       const target = event.target instanceof Element ? event.target.closest("a[href], [data-contact-card-trigger]") : null;
       if (!target || target.closest("[data-contact-card-dialog], [data-contact-card-direct]")) return;
       if (target instanceof HTMLAnchorElement) {
-        const next = contactCardRequestForLink(target, locale);
+        const next = contactCardRequestForLink(target, locale, edition?.homePath);
         if (!next || (!desktop.matches && next.trigger !== "planner")) return;
       } else if (!desktop.matches) {
         return;
@@ -138,7 +143,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       // The code is still on its way: the frame answers the press in the
       // next frame, and the card takes its place when the code arrives.
       removeFrame();
-      removeFrameRef.current = openContactCardFrame(locale, nextLayout, close);
+      removeFrameRef.current = openContactCardFrame(locale, nextLayout, close, edition);
       setFrameShownAt(performance.now());
       loadDialog().then(
         mountCard,
@@ -160,7 +165,7 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const anchor = event.target instanceof Element ? event.target.closest("a[href]") : null;
       if (!(anchor instanceof HTMLAnchorElement) || anchor.closest("[data-contact-card-dialog], [data-contact-card-direct]")) return;
-      const next = contactCardRequestForLink(anchor, locale);
+      const next = contactCardRequestForLink(anchor, locale, edition?.homePath);
       if (!next) return;
       // Phones and tablets open WhatsApp and mail links in their own apps.
       const onDesktop = desktop.matches;
@@ -186,14 +191,14 @@ export function ContactCardHost({ locale }: { locale: HomegroundLocale }) {
       else window.clearTimeout(idle);
       removeFrame();
     };
-  }, [locale, close, removeFrame]);
+  }, [locale, edition, close, removeFrame]);
 
   const ContactCardDialog = cardMounted ? loadedDialog : null;
 
   return (
     <div {...{ [contactCardReadyAttribute]: ready ? "ready" : undefined }}>
       {request && ContactCardDialog ? (
-        <ContactCardDialog locale={locale} request={request} layout={layout} open={open} onClose={close} frameShownAt={frameShownAt} />
+        <ContactCardDialog locale={locale} edition={edition} request={request} layout={layout} open={open} onClose={close} frameShownAt={frameShownAt} />
       ) : null}
     </div>
   );

@@ -5,16 +5,19 @@ import { CalendarDays, X } from "lucide-react";
 import type { TourCalendarProps } from "./TourCalendar";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { dateFromIso, dateToIso, formatTourDate, parseTourDate, tourDateCopy } from "../lib/tourDate";
+import type { ContactEdition } from "../lib/contactEdition";
 import styles from "./TourDateField.module.css";
 
 /** A visible, editable field; neither its text nor its calendar uses the OS locale. */
-export function TourDateField({ id, label, locale, value, onChange, disabled, active, required = true }: {
+export function TourDateField({ id, label, locale, edition, value, onChange, disabled, active, required = true }: {
   id: string; label: string; locale: HomegroundLocale; value: string;
+  /** A language edition keeps `locale`'s date order and brings its own words and calendar language. */
+  edition?: Pick<ContactEdition, "language" | "date">;
   onChange: (iso: string) => void; disabled: boolean; active: boolean;
   /** Optional dates (a trip brief) accept an empty field without an error; tour pages keep the default. */
   required?: boolean;
 }) {
-  const copy = tourDateCopy[locale];
+  const copy = edition?.date ?? tourDateCopy[locale];
   const [raw, setRaw] = useState(() => formatTourDate(value, locale));
   const [touched, setTouched] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -88,7 +91,7 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
     closeCalendar();
   }
 
-  return <div className={styles.field} lang={locale === "zh" ? "zh-CN" : locale}>
+  return <div className={styles.field} lang={edition?.language ?? (locale === "zh" ? "zh-CN" : locale)}>
     <label htmlFor={id} className={styles.label}>{label}</label>
     <div className={styles.row}>
       <input ref={inputRef} id={id} type="text" inputMode="numeric" autoComplete="off"
@@ -119,7 +122,7 @@ export function TourDateField({ id, label, locale, value, onChange, disabled, ac
       <div className={styles.heading}><strong id={`${id}-calendar-title`}>{copy.title}</strong>
         <button type="button" className={styles.close} aria-label={copy.closeCalendar} onClick={closeCalendar}><X size={19} aria-hidden="true" /></button>
       </div>
-      {calendarOpen ? Calendar ? <Calendar locale={locale} value={value} onSelect={chooseDate}
+      {calendarOpen ? Calendar ? <Calendar locale={locale} language={edition?.language} title={edition?.date.title} value={value} onSelect={chooseDate}
         month={month} onMonthChange={setMonth} disabled={disabled} />
         : <p className={styles.calendarStatus} role={calendarLoadFailed ? "alert" : "status"}>
           {calendarLoadFailed ? copy.calendarUnavailable : copy.loadingCalendar}

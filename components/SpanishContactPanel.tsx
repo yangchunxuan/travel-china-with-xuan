@@ -4,8 +4,9 @@ import { spanishDraftNote } from "../lib/spanishSite";
 import styles from "./JapaneseContactPanel.module.css";
 
 /**
- * Spanish enquiry panel. Both actions open a draft the traveller sends from
- * WhatsApp or their mail app; the site stores nothing.
+ * Spanish enquiry panel. On a phone both actions open a draft in WhatsApp or
+ * the mail app; on a computer the contact card answers them, as it does on
+ * the main site (SpanishContactHost).
  */
 export function SpanishContactPanel({
   title,

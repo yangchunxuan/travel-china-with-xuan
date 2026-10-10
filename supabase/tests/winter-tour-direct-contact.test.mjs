@@ -40,7 +40,7 @@ test("winter routes offer direct inquiry with the selected route and party size"
     readFile(path.join(root, "components/JapaneseInquiryDialog.tsx"), "utf8"),
   ]);
   assert.match(main, /&& !isNortheastWinterTour\(context\?\.slug\)/u);
-  assert.match(main, /\(!context \|\| !enabled\).*tourWhatsAppHref/su);
+  assert.match(main, /\(!context \|\| !enabled\).*href=\{whatsappHref\(customGroup \? draft : undefined\)\}/su);
   assert.match(japanese, /const winterDirectContact = isNortheastWinterTour\(request\?\.slug\)/u);
   assert.match(japanese, /!winterDirectContact &&/u);
   assert.match(japanese, /context\s*\?\s*`https:\/\/wa\.me\/\$\{phone\}\?text=/u);

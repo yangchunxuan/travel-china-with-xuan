@@ -51,7 +51,7 @@ import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJi
 import jaStyles from "./JapaneseJiangnanPage.module.css";
 import { localizeSpanishPrivateTourProduct } from "../lib/localizeSpanishPrivateTourProduct";
 import { spanishTourPagePath } from "../lib/spanishEditionIndex";
-import { spanishDraftNote, spanishSite } from "../lib/spanishSite";
+import { spanishSite, spanishTourContactNote } from "../lib/spanishSite";
 import {
   spanishBeforeYouChooseTitle,
   spanishCommercialCopy,
@@ -1555,7 +1555,7 @@ export function ShanghaiJiangnanImaginePage({
                 <JapaneseTourContactLink channel="email" className={styles.finalEmail} hrefs={japaneseContactHrefs!}>
                   <Mail aria-hidden="true" size={16} />{copy.email}
                 </JapaneseTourContactLink>
-                <p className={styles.draftNote}>{spanish ? spanishDraftNote : japaneseDraftNote}</p>
+                <p className={styles.draftNote}>{spanish ? spanishTourContactNote : japaneseDraftNote}</p>
               </> : <>
               <SelectedPrivateTourCta
                 className={styles.finalPrimary}

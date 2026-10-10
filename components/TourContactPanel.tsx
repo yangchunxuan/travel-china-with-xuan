@@ -6,7 +6,8 @@ import { ArrowRight, BedDouble, Mail, MessageCircle, X } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getPrivateTourInquiryContext, getPrivateTourInquiryContextFromSearchParams, getPrivateTourInquirySubmissionContext, privateTourInquirySelectionLabel, privateTourInquiryStayPreference, buildPrivateTourMailtoHref, type PrivateTourInquiryContext } from "../lib/privateTourInquiryContext";
-import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, tourContactMessageText, privateTourQuoteApiUrl } from "../lib/tourContact";
+import { tourContactCopy, tourContactOpenEvent, guideContactOpenEvent, consumeTourContactReturnFocus, tourWhatsAppHref, tourContactMessageText, privateTourQuoteApiUrl, homegroundWhatsAppHref } from "../lib/tourContact";
+import type { ContactEdition } from "../lib/contactEdition";
 import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
@@ -24,7 +25,7 @@ import { TourDateField } from "./TourDateField";
 import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, type ZhangjiajieStayPreference, type ReferralSource } from "../lib/tourContactDraft";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./TourContactPanel.module.css";
-import { createInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
+import { createInquiryReceipt, relabelInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
 import { InquiryReceipt } from "./InquiryReceipt";
 import { EmailTypoHint } from "./EmailTypoHint";
 
@@ -52,10 +53,14 @@ const directTourContactCopy = {
   },
 } as const;
 
-export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
+export function TourContactPanel({ locale, edition }: {
+  locale: HomegroundLocale;
+  /** A language edition's words and pages; its enquiries are filed under `locale`. */
+  edition?: ContactEdition;
+}) {
   const pathname = usePathname();
-  const text = tourContactCopy[locale];
-  const directText = directTourContactCopy[locale];
+  const text = edition?.tourContact ?? tourContactCopy[locale];
+  const directText = edition?.direct ?? directTourContactCopy[locale];
   const id = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -87,14 +92,16 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   const consentPending = useSyncExternalStore(subscribeConsentBanner, getConsentBannerPending, getServerConsentBannerPending);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const dockSide = useSyncExternalStore(subscribeNewsletterDock, getNewsletterDockSide, getServerNewsletterDockSide);
-  const isGuide = /^\/(?:zh\/|ko\/)?guides\/[a-z0-9-]+\/$/.test(pathname || "");
-  const isTour = /^\/(?:zh\/|ko\/)?tours\/[a-z0-9-]+\/$/.test(pathname || "");
+  const isGuide = edition ? edition.isGuidePath(pathname || "") : /^\/(?:zh\/|ko\/)?guides\/[a-z0-9-]+\/$/.test(pathname || "");
+  const isTour = edition ? Boolean(edition.tourSlugFromPath(pathname || "")) : /^\/(?:zh\/|ko\/)?tours\/[a-z0-9-]+\/$/.test(pathname || "");
+  // The page a tour's quote opens on; the saved enquiry keeps the contract's own path.
+  const tourPagePath = (slug: string) => edition ? edition.tourPath(slug) : `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
   const apiUrl = privateTourQuoteApiUrl();
   const enabled = Boolean(apiUrl) && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true" && !isNortheastWinterTour(context?.slug);
   const whatsappEnabled = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
   const locked = status === "sending" || status === "uncertain" || status === "saved";
   const jiangnan = isJiangnanTour(context?.slug);
-  const jiangnanText = jiangnanContactCopy[locale];
+  const jiangnanText = edition?.quote ?? jiangnanContactCopy[locale];
   const customGroup = Boolean(context?.customGroup) || (jiangnan && Boolean(context) && !context?.selection);
   const requestedTravelers = customGroup ? parseRequestedTravelers(requestedTravelersInput) : null;
   // A Jiangnan custom group names its size first, so the WhatsApp message carries it (as on the live site).
@@ -102,9 +109,11 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   // Every product quote may carry the traveller's self-reported source; guides have no quote form.
   const stayPreference = context ? privateTourInquiryStayPreference(context, "en") as ZhangjiajieStayPreference | null : null;
   const stayLabel = context ? privateTourInquiryStayPreference(context, locale) : null;
-  const noteMaxLength = context?.customGroup ? customTourContactNoteMaxLength : tourContactNoteMaxLength;
+  // An edition's saved quote starts with a line naming its page, which shares the note's limit.
+  const noteMarker = edition && isTour && pathname ? edition.noteMarker(pathname) : "";
+  const noteMaxLength = (context?.customGroup ? customTourContactNoteMaxLength : tourContactNoteMaxLength) - (noteMarker ? noteMarker.length + 2 : 0);
   const draft = { travelDate: undecided ? null : date, note, referralSource: context ? referralSource : "" as const, requestedTravelers, stayPreference };
-  const privacyHref = `${locale === "en" ? "" : `/${locale}`}/privacy/`;
+  const privacyHref = edition?.privacyHref ?? `${locale === "en" ? "" : `/${locale}`}/privacy/`;
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
 
   function show(next: PrivateTourInquiryContext | null, returnFocus?: HTMLElement | null) {
@@ -129,7 +138,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     const receive = (event: Event) => {
       const candidate = (event as CustomEvent<PrivateTourInquiryContext>).detail;
       const valid = candidate && getPrivateTourInquiryContext(candidate.slug, locale, candidate.selection, candidate.customGroup);
-      if (!valid || pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${valid.slug}/`) return;
+      if (!valid || pathname !== tourPagePath(valid.slug)) return;
       show(valid, consumeTourContactReturnFocus());
     };
     const receiveGuide = (event: Event) => {
@@ -142,7 +151,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       window.removeEventListener(tourContactOpenEvent, receive);
       window.removeEventListener(guideContactOpenEvent, receiveGuide);
     };
-  }, [pathname, locale, isGuide]);
+  }, [pathname, locale, isGuide, edition]);
 
   useEffect(() => {
     setOpen(false); setClosing(false); setInquiryOpen(false);
@@ -154,8 +163,8 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   useEffect(() => {
     if (!isTour || window.location.hash !== "#planner-contact") return;
     const linked = getPrivateTourInquiryContextFromSearchParams(new URLSearchParams(window.location.search), locale);
-    if (linked?.customGroup && pathname === `${locale === "en" ? "" : `/${locale}`}/tours/${linked.slug}/`) show(linked);
-  }, [pathname, locale, isTour]);
+    if (linked?.customGroup && pathname === tourPagePath(linked.slug)) show(linked);
+  }, [pathname, locale, isTour, edition]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -201,12 +210,13 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json", "Idempotency-Key": snapshot.key }, body: inquiryBodyWithCurrentTrafficConsent(snapshot.body), signal: controller.signal });
       const result = await response.json();
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
-        setReceipt(createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers, snapshot.key)); updateStatus("saved");
+        const saved = createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers, snapshot.key);
+        setReceipt(saved && edition ? relabelInquiryReceipt(saved, { productName: edition.tourName(submitted.productInterest), selectionLabel: edition.selectionLabel(submitted.productInterest) }) : saved); updateStatus("saved");
         if (stillOnSource()) trackEnquirySubmitted({ ...parameters, reply_channel: "email", form_version: currentPrivateTourQuoteFormVersion }, { firstPartyContext: journey });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         updateStatus("failed"); snapshotRef.current = null;
         const fields = result.error?.fieldErrors;
-        const messages = {
+        const messages = edition?.fieldErrors ?? {
           en: { email: "Please check your email address.", date: "Please enter a valid arrival date, or choose dates not decided.", note: "Please keep your note within 1,000 characters.", control: "Please remove unusual control characters from your note." },
           zh: { email: "请检查邮箱地址是否正确。", date: "请填写有效的抵达日期，或选择日期还没确定。", note: "请将备注控制在 1,000 字以内。", control: "请移除备注中复制进来的特殊控制字符。" },
           ko: { email: "이메일 주소를 확인해 주세요.", date: "올바른 도착일을 입력하거나 날짜 미정을 선택해 주세요.", note: "메모는 1,000자 이내로 입력해 주세요.", control: "메모에 포함된 특수 제어 문자를 삭제해 주세요." },
@@ -228,7 +238,7 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     if (!context || locked || !enabled) return;
     if (customGroup && requestedTravelers === null) { setGroupTouched(true); return; }
     if (note.length > noteMaxLength) {
-      setFieldError(locale === "zh" ? `请将备注控制在 ${noteMaxLength} 字以内。` : locale === "ko" ? `메모는 ${noteMaxLength}자 이내로 입력해 주세요.` : `Please keep your note within ${noteMaxLength} characters.`);
+      setFieldError(edition ? edition.noteTooLong(noteMaxLength) : locale === "zh" ? `请将备注控制在 ${noteMaxLength} 字以内。` : locale === "ko" ? `메모는 ${noteMaxLength}자 이내로 입력해 주세요.` : `Please keep your note within ${noteMaxLength} characters.`);
       updateStatus("failed");
       return;
     }
@@ -236,9 +246,10 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
     const data = new FormData(event.currentTarget);
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: getPrivateTourInquirySubmissionContext(context, locale),
-      travelDate: draft.travelDate, note: tourContactNote(note, draft.referralSource, requestedTravelers, stayPreference), privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
+      travelDate: draft.travelDate, note: [noteMarker, tourContactNote(note, draft.referralSource, requestedTravelers, stayPreference)].filter(Boolean).join("\n\n") || null, privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
-      experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: getTrafficSessionToken() ?? null });
+      // An edition's pages mint no traffic session; never attach another language's.
+      experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null });
     snapshotRef.current = { body, key: crypto.randomUUID(), requestedTravelers };
     void send(snapshotRef.current);
   }
@@ -255,9 +266,14 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
   }
   // Korean pages only; follows the WhatsApp rule for a Jiangnan custom group.
   const kakao = (fallback: boolean) => locale === "ko" && contactLinkReady ? <KakaoTalkContact key={`${openCount}-${context?.slug ?? ""}`} className={fallback ? undefined : styles.kakaoChoice} inquiry={() => tourContactMessageText(locale, context, pathname || undefined, !fallback || customGroup ? draft : undefined)} onOpen={() => trackContact("kakao")} /> : null;
-  const emailHref = context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled || customGroup ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent([guideTitle, `https://homegroundchina.com${pathname}`].filter(Boolean).join("\n"))}`;
-  const selectedLabel = context ? privateTourInquirySelectionLabel(context, locale) : null;
-  const groupLabel = requestedTravelers !== null ? locale === "zh" ? `${requestedTravelers} 人同行` : locale === "ko" ? `${requestedTravelers}명 동행` : `${requestedTravelers} travellers` : null;
+  const whatsappHref = (prepared?: typeof draft) => edition
+    ? homegroundWhatsAppHref(edition.messageText(context, pathname || undefined, prepared))
+    : tourWhatsAppHref(locale, context, pathname || undefined, prepared);
+  const emailHref = edition
+    ? edition.mailtoHref(context, context && (enabled || customGroup) ? draft : undefined, !context && guideTitle && pathname ? { title: guideTitle, path: pathname } : undefined)
+    : context ? buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, context, enabled || customGroup ? draft : undefined) : `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(text.ask)}&body=${encodeURIComponent([guideTitle, `https://homegroundchina.com${pathname}`].filter(Boolean).join("\n"))}`;
+  const selectedLabel = context ? edition ? edition.selectionLabel(context) : privateTourInquirySelectionLabel(context, locale) : null;
+  const groupLabel = requestedTravelers !== null ? edition ? edition.travellersLabel(requestedTravelers) : locale === "zh" ? `${requestedTravelers} 人同行` : locale === "ko" ? `${requestedTravelers}명 동행` : `${requestedTravelers} travellers` : null;
   const needsGroup = Boolean(context?.customGroup) && !contactLinkReady;
   const askForGroup = () => { setGroupTouched(true); document.getElementById(`${id}-group`)?.focus(); };
 
@@ -267,15 +283,15 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
       <div className={styles.sheet}>
         <div className={styles.header}><span>HOMEGROUND CHINA</span><button type="button" className={styles.close} aria-label={text.close} onClick={close}><X size={20} strokeWidth={1.7} aria-hidden="true" /></button></div>
         <div className={styles.body}>
-          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale={locale} headingId={`${id}-title`} headingRef={titleRef}><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></InquiryReceipt> : <>
+          {status === "saved" && receipt ? <InquiryReceipt receipt={receipt} locale={locale} localizedCopy={edition?.receipt} dateLocale={edition?.intlLocale} headingId={`${id}-title`} headingRef={titleRef}><button type="button" className={styles.primary} onClick={close}>{text.done}<ArrowRight size={18} aria-hidden="true" /></button></InquiryReceipt> : <>
             <h2 id={`${id}-title`} ref={titleRef} tabIndex={-1}>{text.title}</h2>
             <p className={styles.intro}>{context ? enabled ? directText.intro : text.unavailable : text.guideBody}</p>
-            {context ? <div className={styles.context}><span>{text.selected}</span><strong>{context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}{stayLabel ? <p className={styles.contextPreference}><BedDouble size={14} aria-hidden="true" /><span>{locale === "zh" ? "住宿偏好（待确认）" : locale === "ko" ? "숙소 선호(확인 예정)" : "Stay preference (to confirm)"}:</span> <strong>{stayLabel}</strong></p> : null}</div> : null}
-            {!context && guideTitle ? <div className={styles.context}><span>{locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide"}</span><strong>{guideTitle}</strong></div> : null}
+            {context ? <div className={styles.context}><span>{text.selected}</span><strong>{edition?.tourName(context) ?? context.name}</strong>{selectedLabel || groupLabel ? <p>{selectedLabel || groupLabel}</p> : null}{stayLabel ? <p className={styles.contextPreference}><BedDouble size={14} aria-hidden="true" /><span>{edition?.labels.stayPreference ?? (locale === "zh" ? "住宿偏好（待确认）" : locale === "ko" ? "숙소 선호(확인 예정)" : "Stay preference (to confirm)")}:</span> <strong>{stayLabel}</strong></p> : null}</div> : null}
+            {!context && guideTitle ? <div className={styles.context}><span>{edition?.labels.guide ?? (locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide")}</span><strong>{guideTitle}</strong></div> : null}
             {context && enabled ? <div className={styles.directFirst}>
               <div className={styles.directChoices}>
                 {needsGroup ? <button type="button" className={styles.emailButton} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{directText.email}</button> : <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>}
-                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={tourWhatsAppHref(locale, context, pathname || undefined, draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
+                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={whatsappHref(draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
                 {kakao(false)}
               </div>
               <span className={styles.emailAddress}>{homegroundBusiness.serviceEmail}</span>
@@ -289,9 +305,9 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
             {context && enabled ? <p className={styles.formIntro}>{directText.formIntro}</p> : null}
             {context && enabled ? <form id={`${id}-quote-form`} className={styles.form} onSubmit={submit} onFocus={trackFormStart} onChange={trackFormStart} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
-                <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder="you@example.com" value={email} onChange={event => setEmail(event.target.value)} /></label>
-                <EmailTypoHint email={email} locale={locale} disabled={locked} onAccept={setEmail} />
-                {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
+                <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder={edition?.desk.emailPlaceholder ?? "you@example.com"} value={email} onChange={event => setEmail(event.target.value)} /></label>
+                <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={locked} onAccept={setEmail} />
+                {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} edition={edition} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
                 <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={noteMaxLength} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => setNote(event.target.value)} /></label>
                 {context ? <label htmlFor={`${id}-source`}>{jiangnanText.source} <span className={styles.optional}>{text.optional}</span><select id={`${id}-source`} value={referralSource} onChange={event => setReferralSource(event.target.value as ReferralSource)}><option value="">{jiangnanText.blank}</option>{referralSources.map(source => <option key={source} value={source}>{source === "friend" || source === "other" ? jiangnanText[source] : source}</option>)}</select></label> : null}
@@ -303,10 +319,10 @@ export function TourContactPanel({ locale }: { locale: HomegroundLocale }) {
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
             {(!context || !enabled) ? <div className={styles.direct}>
-              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={tourWhatsAppHref(locale, context, pathname || undefined, customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
+              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={whatsappHref(customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               {kakao(true)}
               {needsGroup ? <button type="button" className={styles.directLink} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{text.guideEmail}</button> : <a className={styles.directLink} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a>}
-              {!context ? <a className={styles.catalog} href={`${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
+              {!context ? <a className={styles.catalog} href={edition?.toursPath ?? `${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
             </div> : null}
           </>}
         </div>

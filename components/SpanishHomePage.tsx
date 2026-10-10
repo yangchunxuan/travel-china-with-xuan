@@ -46,7 +46,6 @@ export function SpanishHomePage() {
     <div className={`${localeStyles.root} hg-locale-root ${styles.toursPage}`} data-homeground-locale="es" lang="es">
       <a className={localeStyles.skipLink} href="#main-content">Ir al contenido</a>
       <SpanishSiteHeader
-        contactHref="#contact"
         currentPath={spanishSite.home}
         languagePaths={spanishLanguagePaths("/", spanishSite.home)}
       />
@@ -100,7 +99,7 @@ export function SpanishHomePage() {
           </section>
         </div>
 
-        <section className={styles.finalSection} id="contact">
+        <section className={styles.finalSection} id="planner-contact">
           <div className={styles.finalInner}>
             <div>
               <p className={styles.finalEyebrow}>Consultar un viaje</p>

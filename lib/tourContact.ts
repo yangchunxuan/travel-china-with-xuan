@@ -103,6 +103,19 @@ export function openTourContactFromLink(event: ContactLinkEvent, href: string, l
   return true;
 }
 
+/**
+ * Opens the quote dialog for a tour context the caller already holds. Used by
+ * language editions whose tour links carry no English query string.
+ */
+export function openTourContactForContext(event: ContactLinkEvent, context: PrivateTourInquiryContext | null, returnFocus?: HTMLElement | null) {
+  if (!context || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.button != null && event.button !== 0) || typeof window === "undefined") return false;
+  if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;
+  event.preventDefault();
+  returnFocusTarget = returnFocus ?? (typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null);
+  window.dispatchEvent(new CustomEvent(tourContactOpenEvent, { detail: context }));
+  return true;
+}
+
 export function privateTourQuoteApiUrl() {
   const raw = process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL || "";
   try {

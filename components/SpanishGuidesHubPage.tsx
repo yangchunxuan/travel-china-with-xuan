@@ -45,7 +45,6 @@ export function SpanishGuidesHubPage() {
     <div className={`${localeStyles.root} hg-locale-root ${styles.guidesPage}`} data-homeground-locale="es" lang="es">
       <a className={localeStyles.skipLink} href="#guides-main">Ir al contenido</a>
       <SpanishSiteHeader
-        contactHref="#contact"
         currentPath={spanishSite.guides}
         languagePaths={spanishLanguagePaths("/guides/", spanishSite.guides)}
       />

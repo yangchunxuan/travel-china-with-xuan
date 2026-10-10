@@ -9,7 +9,10 @@ export const spanishSite = {
   home: "/es/",
   tours: "/es/tours/",
   guides: "/es/guias/",
-  contact: "/es/#contact",
+  // The same link the main site uses for "talk to a planner": the contact card
+  // answers it on every Spanish page, and without JavaScript it lands on the
+  // home page's contact section.
+  contact: "/es/#planner-contact",
 } as const;
 
 export interface SpanishNavLink {
@@ -96,7 +99,11 @@ export const spanishGuideLanguageBadge = "Guía en inglés · en español con su
 
 /** Says the contact buttons open a draft that the traveller sends. */
 export const spanishDraftNote =
-  "Los botones abren un borrador en WhatsApp o en su correo. No se envía nada hasta que usted lo envíe.";
+  "WhatsApp y el correo abren un borrador: no se envía nada hasta que usted lo envíe.";
+
+/** Tour pages also open the on-site quote form, which says on screen when it has saved. */
+export const spanishTourContactNote =
+  "El formulario del sitio confirma en pantalla cuando su consulta queda guardada. WhatsApp y el correo solo abren un borrador que usted mismo envía.";
 
 /** Spanish wording of the price note the owner approved for the tour pages. */
 export const spanishPublishedPriceNote =

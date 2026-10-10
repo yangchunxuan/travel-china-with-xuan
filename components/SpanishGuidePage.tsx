@@ -122,7 +122,6 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
       <a className={styles.skipLink} href="#editorial-guide-body">Ir al artículo</a>
       <ReadingProgress />
       <SpanishSiteHeader
-        contactHref="#contact"
         currentPath={path}
         languagePaths={spanishGuideLanguagePaths(guide)}
       />

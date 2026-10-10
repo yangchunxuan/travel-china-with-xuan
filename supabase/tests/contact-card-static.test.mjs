@@ -217,7 +217,7 @@ test("the first open answers the press at once: the card's frame, then the card 
   // in the press itself, outside React's commit, goes as the card opens in its
   // place, and a failed load closes it.
   assert.match(host, /if \(loadedDialog\) \{\s*mountCard\(\);\s*setFrameShownAt\(null\);\s*return;\s*\}/);
-  assert.match(host, /removeFrameRef\.current = openContactCardFrame\(locale, nextLayout, close\);\s*setFrameShownAt\(performance\.now\(\)\);\s*loadDialog\(\)\.then\(\s*mountCard,/);
+  assert.match(host, /removeFrameRef\.current = openContactCardFrame\(locale, nextLayout, close, edition\);\s*setFrameShownAt\(performance\.now\(\)\);\s*loadDialog\(\)\.then\(\s*mountCard,/);
   assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(cardMounted && open\) removeFrame\(\);/);
   assert.match(host, /The code did not arrive[\s\S]*?removeFrame\(\);\s*setOpen\(false\);/);
   // The frame is the card's outer shape: a modal dialog, its close button, no words of its own.
@@ -291,7 +291,7 @@ test("the card's QR code is drawn just after the card first paints, in a square 
   assert.match(qr, /drawAfterPaint = false/);
   assert.match(scan, /drawQrAfterPaint = false,/);
   assert.match(scan, /<WhatsAppQr href=\{href\} label=\{[^}]*\} drawAfterPaint=\{drawQrAfterPaint\} \/>/);
-  assert.match(dialog, /<ContactCardScan locale=\{locale\} href=\{whatsappHref\} headingId=\{`\$\{id\}-scan`\} drawQrAfterPaint>/);
+  assert.match(dialog, /<ContactCardScan locale=\{locale\} localizedCopy=\{edition\?\.card\} href=\{whatsappHref\} headingId=\{`\$\{id\}-scan`\} drawQrAfterPaint>/);
   assert.doesNotMatch(inline, /drawQrAfterPaint/);
   assert.match(qr, /useEffect\(\(\) => \{[\s\S]*?requestAnimationFrame\([\s\S]*?setTimeout\(\(\) => setDrawn\(true\)\)/);
   assert.match(qr, /const code = useMemo\(\(\) => \(drawn \? drawCode\(href\) : null\), \[drawn, href\]\);/);
@@ -345,7 +345,7 @@ test("the frame is as tall as the card or sheet that replaces it, at every width
     assert.ok(heights[locale].every(([without, withLine]) => withLine > without), locale);
   }
   assert.match(frame, /const cardHeight = \[537, 579\];/);
-  assert.match(frame, /dialog\.style\.setProperty\("--frame-height", `\$\{frameHeight\(locale, layout, named\)\}px`\);/);
+  assert.match(frame, /dialog\.style\.setProperty\("--frame-height", `\$\{frameHeight\(locale, layout, named, edition\)\}px`\);/);
 });
 
 test("a guide link the card already answered does not also open the guide panel", () => {

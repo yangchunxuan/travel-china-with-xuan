@@ -108,6 +108,8 @@ function localePrefix(locale: HomegroundLocale | "ja") {
 export function contactCardRequestForLink(
   anchor: HTMLAnchorElement,
   locale: HomegroundLocale | "ja",
+  /** A language edition's home page, when it is not the locale's own. */
+  homePath?: string,
 ): ContactCardRequest | null {
   const href = anchor.href;
   if (/^https:\/\/wa\.me\/[1-9][0-9]{6,14}(?:\?|$)/u.test(href)) {
@@ -129,10 +131,9 @@ export function contactCardRequestForLink(
   } catch {
     return null;
   }
-  const prefix = localePrefix(locale);
   if (
     url.origin !== window.location.origin ||
-    url.pathname !== `${prefix}/` ||
+    url.pathname !== (homePath ?? `${localePrefix(locale)}/`) ||
     url.hash !== "#planner-contact"
   ) {
     return null;
