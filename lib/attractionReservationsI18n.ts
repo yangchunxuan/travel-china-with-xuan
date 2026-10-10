@@ -25,9 +25,9 @@ const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 
 /** The guarantee as published, one sentence pair per language. */
 const guarantee = {
-  en: `Guaranteed booking: send your request and payment at least ${days} days before your visit and we guarantee the reservation. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
-  zh: `预约保证：在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
-  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
+  en: `Guaranteed booking: send your request and payment at least ${days} days before your visit and we guarantee the reservation, except at an attraction marked “best effort”. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
+  zh: `预约保证：在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到（标注“尽力预约”的景点除外）；万一没约到，全额退还该景点的服务费和门票款。`,
+  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외). 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
 } as const satisfies Record<HomegroundLocale, string>;
 
 /** What happens to a request or payment made later than the guarantee lead time. */
@@ -141,6 +141,8 @@ export interface AttractionReservationCopy {
     verified: string;
   };
   status: Record<AttractionReservationStatus, string>;
+  /** Tag on an attraction outside the booking guarantee. */
+  bestEffortTag: string;
   channel: Record<AttractionReservationChannelType, string>;
   cities: Record<AttractionReservationCityId, string>;
   unknown: string;
@@ -170,6 +172,8 @@ export interface AttractionReservationCopy {
     body: string;
     /** For an attraction whose passport handling online is not confirmed. */
     bodyPassportUnchecked: string;
+    /** For an attraction outside the booking guarantee. */
+    bodyBestEffort: string;
     action: string;
   };
   hubLink: string;
@@ -186,7 +190,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     home: "Home",
     services: "Services",
     navLabel: "Attraction reservations",
-    eyebrow: "Beijing · Shanghai · Suzhou · Hangzhou · Xi'an · Chengdu · Guilin · Lijiang",
+    eyebrow: "Beijing · Shanghai · Suzhou · Hangzhou · Xi'an · Chengdu · Guilin · Lijiang · Datong",
     h1: "Forbidden City and China attraction reservations for foreign travellers",
     lede:
       "The Forbidden City, the Terracotta Warriors and many other Chinese museums and heritage sites need a real-name reservation made days ahead, often through a Chinese-language app. Tell us the attractions, dates and number of travellers. We check availability, confirm the price in writing and, after payment, submit each reservation on the attraction's own official system in every traveller's own passport name.",
@@ -262,6 +266,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "We can book",
       "not-needed": "No booking needed",
     },
+    bestEffortTag: "Best effort, not guaranteed",
     channel: {
       "official-website": "Official website",
       wechat: "Official WeChat account",
@@ -272,7 +277,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "Ticket window",
       email: "Official email",
     },
-    cities: { beijing: "Beijing", shanghai: "Shanghai", suzhou: "Suzhou", hangzhou: "Hangzhou", xian: "Xi'an", chengdu: "Chengdu", guilin: "Guilin", lijiang: "Lijiang" },
+    cities: { beijing: "Beijing", shanghai: "Shanghai", suzhou: "Suzhou", hangzhou: "Hangzhou", xian: "Xi'an", chengdu: "Chengdu", guilin: "Guilin", lijiang: "Lijiang", datong: "Datong" },
     unknown: "Confirmed when you enquire",
     notApplicable: "Not applicable: walk-in entry",
     notChecked: "Not yet checked",
@@ -341,6 +346,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       title: "We can book {attraction} for you",
       body: `We submit the reservation on the official system in your own passport name, not a resold ticket: {fee} per person plus the official ticket price, confirmed in writing before payment. Request and pay at least ${days} days before your visit and the booking is guaranteed.`,
       bodyPassportUnchecked: `Before payment we check whether the official system accepts your passport for your date and confirm in writing: {fee} per person plus the official ticket price, never a resold ticket. Request and pay at least ${days} days before your visit and the booking is guaranteed.`,
+      bodyBestEffort: `This one is best effort, not guaranteed: we try through the official channels in your own name for {fee} per person plus the official ticket price, confirmed in writing before payment. If we cannot secure it, both are refunded in full.`,
       action: "See the reservation service",
     },
     hubLink: "Attraction reservations in {city}",
@@ -349,13 +355,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "外国游客代预约故宫、兵马俑与博物馆门票",
       description:
-        "Homeground 在各景点官方系统中、以游客本人护照实名，代外国游客预约故宫、兵马俑、陕西历史博物馆、漓江游船、玉龙雪山等北京、上海、苏州、杭州、西安、成都、桂林、丽江景点。每人每个景点服务费 {fee}，门票按官方票面价收取，不加价。",
+        "Homeground 在各景点官方系统中、以游客本人护照实名，代外国游客预约故宫、兵马俑、陕西历史博物馆、漓江游船、玉龙雪山等北京、上海、苏州、杭州、西安、成都、桂林、丽江、大同景点。每人每个景点服务费 {fee}，门票按官方票面价收取，不加价。",
     },
     breadcrumb: "当前位置",
     home: "首页",
     services: "服务",
     navLabel: "景点代预约",
-    eyebrow: "北京 · 上海 · 苏州 · 杭州 · 西安 · 成都 · 桂林 · 丽江",
+    eyebrow: "北京 · 上海 · 苏州 · 杭州 · 西安 · 成都 · 桂林 · 丽江 · 大同",
     h1: "为外国游客代预约故宫与中国景点",
     lede:
       "故宫、兵马俑和中国不少博物馆、古迹都需要提前数天实名预约，而且常常只能在中文应用里完成。告诉我们想去的景点、日期和人数，我们核实余量、书面确认价格，收款后在各景点自己的官方系统中、以每位游客本人的护照实名提交预约。",
@@ -431,6 +437,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "可代预约",
       "not-needed": "无需预约",
     },
+    bestEffortTag: "尽力预约，不作保证",
     channel: {
       "official-website": "官网",
       wechat: "官方微信公众号",
@@ -441,7 +448,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "售票窗口",
       email: "官方邮箱",
     },
-    cities: { beijing: "北京", shanghai: "上海", suzhou: "苏州", hangzhou: "杭州", xian: "西安", chengdu: "成都", guilin: "桂林", lijiang: "丽江" },
+    cities: { beijing: "北京", shanghai: "上海", suzhou: "苏州", hangzhou: "杭州", xian: "西安", chengdu: "成都", guilin: "桂林", lijiang: "丽江", datong: "大同" },
     unknown: "咨询时确认",
     notApplicable: "不适用：免预约入馆",
     notChecked: "尚未核实",
@@ -510,6 +517,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       title: "我们可以帮你预约{attraction}",
       body: `在官方系统以你本人护照实名提交预约，不是转售门票：每人服务费 {fee}，另加官方票价，付款前先书面确认。在参观日前至少 ${days} 天提交需求并付款，我们保证约到。`,
       bodyPassportUnchecked: `付款前，我们会按你的日期核实官方系统是否接受你的护照，并书面确认每人服务费 {fee} 与官方票价；我们不经手转售门票。在参观日前至少 ${days} 天提交需求并付款，我们保证约到。`,
+      bodyBestEffort: `这一项是尽力预约，不作保证：我们通过官方渠道以你本人名义尝试预约，每人服务费 {fee} 加官方票价，付款前书面确认；如未能约到，两者全额退还。`,
       action: "查看代预约服务",
     },
     hubLink: "{city}景点代预约",
@@ -518,13 +526,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "외국인 자금성·병마용·중국 박물관 예약 대행",
       description:
-        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관, 이강 유람선, 옥룡설산 등 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
+        "Homeground가 각 관광지 공식 시스템에서 본인 여권 실명으로 자금성, 병마용, 산시역사박물관, 이강 유람선, 옥룡설산 등 베이징·상하이·쑤저우·항저우·시안·청두·계림·리장·다퉁 관광지를 예약해 드립니다. 관광지당 1인 {fee} 수수료와 공식 입장료(추가 금액 없음).",
     },
     breadcrumb: "현재 위치",
     home: "홈",
     services: "서비스",
     navLabel: "관광지 예약 대행",
-    eyebrow: "베이징 · 상하이 · 쑤저우 · 항저우 · 시안 · 청두 · 계림 · 리장",
+    eyebrow: "베이징 · 상하이 · 쑤저우 · 항저우 · 시안 · 청두 · 계림 · 리장 · 다퉁",
     h1: "외국인을 위한 자금성·중국 관광지 예약 대행",
     lede:
       "자금성과 병마용을 비롯한 중국의 많은 박물관과 유적지는 며칠 전에 실명 예약을 해야 하고, 대개 중국어 앱에서만 가능합니다. 가고 싶은 관광지, 날짜, 인원을 알려 주세요. 잔여분을 확인하고 가격을 서면으로 안내한 뒤, 결제 후 각 관광지의 공식 시스템에서 여행자 본인의 여권 실명으로 예약을 제출합니다.",
@@ -600,6 +608,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "예약 가능",
       "not-needed": "예약 불필요",
     },
+    bestEffortTag: "최선 시도, 보장 안 됨",
     channel: {
       "official-website": "공식 웹사이트",
       wechat: "공식 위챗 계정",
@@ -610,7 +619,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       "ticket-window": "매표 창구",
       email: "공식 이메일",
     },
-    cities: { beijing: "베이징", shanghai: "상하이", suzhou: "쑤저우", hangzhou: "항저우", xian: "시안", chengdu: "청두", guilin: "계림", lijiang: "리장" },
+    cities: { beijing: "베이징", shanghai: "상하이", suzhou: "쑤저우", hangzhou: "항저우", xian: "시안", chengdu: "청두", guilin: "계림", lijiang: "리장", datong: "다퉁" },
     unknown: "문의 시 확인",
     notApplicable: "해당 없음: 예약 없이 입장",
     notChecked: "미확인",
@@ -682,6 +691,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       title: "{attraction} 예약을 대신해 드립니다",
       body: `되판 표가 아니라 공식 시스템에서 본인 여권 실명으로 직접 예약을 제출합니다. 1인 {fee} 수수료와 공식 입장료는 결제 전에 서면으로 확인합니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
       bodyPassportUnchecked: `결제 전에 공식 시스템이 해당 날짜에 여권을 받는지 확인하고 서면으로 안내합니다. 되판 표는 다루지 않으며, 1인 {fee} 수수료와 공식 입장료가 듭니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
+      bodyBestEffort: `이 항목은 최선 시도이며 보장하지 않습니다. 공식 채널에서 본인 명의로 시도하며 1인 {fee} 수수료와 공식 입장료가 들고 결제 전에 서면으로 확인합니다. 예약하지 못하면 둘 다 전액 환불합니다.`,
       action: "예약 대행 서비스 보기",
     },
     hubLink: "{city} 관광지 예약 대행",
