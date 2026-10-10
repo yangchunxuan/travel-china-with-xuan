@@ -23,9 +23,13 @@ export const visadoChinaEspanoles: SpanishGuide = {
   datePublished: "2026-10-11",
   dateModified: "2026-10-11",
   sourceReviewedDate: "2026-10-11",
+  // Entry rules matter for every trip, so every Spanish tour page links this guide.
+  general: true,
   tourSlugs: [
     "beijing-xian-shanghai-8-day-private-tour",
+    "beijing-xian-guilin-shanghai-10-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
   ],
   body: {
     schemaVersion: "1.0.0",

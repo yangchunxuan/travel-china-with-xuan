@@ -37,5 +37,7 @@ export interface SpanishGuide {
   readonly sourceReviewedDate: string;
   /** Spanish tours this guide leads to, most relevant first. */
   readonly tourSlugs: readonly string[];
+  /** A guide every traveller needs; every Spanish tour page links it. */
+  readonly general?: true;
   readonly body: StructuredPageBody;
 }

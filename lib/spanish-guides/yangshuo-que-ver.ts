@@ -19,7 +19,9 @@ export const yangshuoQueVer: SpanishGuide = {
   sourceReviewedDate: "2026-10-10",
   tourSlugs: [
     "guilin-yangshuo-5-day-private-tour",
+    "beijing-xian-guilin-shanghai-10-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
   ],
   body: {
     schemaVersion: "1.0.0",

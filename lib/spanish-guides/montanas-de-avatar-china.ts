@@ -19,6 +19,7 @@ export const montanasDeAvatarChina: SpanishGuide = {
   sourceReviewedDate: "2026-10-10",
   tourSlugs: [
     "zhangjiajie-forest-4-day-private-tour",
+    "zhangjiajie-furong-fenghuang-7-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
   ],
   body: {
