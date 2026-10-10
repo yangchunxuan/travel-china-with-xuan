@@ -335,6 +335,7 @@ const body: StructuredPageBody = {
         { label: "天门山门票与A/B/C线路", href: "/zh/guides/tianmen-mountain-tickets-and-routes/" },
         { label: "比较 4 天森林公园固定路线私家团", href: "/zh/tours/zhangjiajie-forest-4-day-private-tour/", description: "森林公园一整天，从高山峰林走到金鞭溪；第三天上天门山，三晚同住一处别墅或四星酒店。" },
         { label: "比较张家界 4 天经典私家游", href: "/zh/tours/zhangjiajie-4-day-private-tour/", description: "选择包含百龙天梯、大峡谷玻璃桥与天门山的经典景点组合。" },
+        { label: "张家界阿凡达山在哪？", href: "/zh/guides/avatar-mountains-zhangjiajie/", description: "袁家界哈利路亚山原型在哪，一天怎么看精华。" },
         { label: "张家界需要几天？", href: "/zh/guides/zhangjiajie-itinerary/", description: "由行程页把公园交通链分配到整趟旅行。" },
         { label: "住张家界市区还是武陵源？", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/", description: "酒店基地与景区交易分开决定。" },
         { label: "张家界玻璃桥还是山顶玻璃栈道？", href: "/zh/guides/zhangjiajie-glass-bridge-vs-skywalk/", description: "分清大峡谷与山岳景点。" },

@@ -1,0 +1,101 @@
+{
+  "id": "hanging-temple-datong",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "datong",
+    "hanging-temple",
+    "tickets",
+    "reservation",
+    "trip-planning"
+  ],
+  "destinations": [
+    "datong",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/datong-pingyao-6-day-private-tour/route-day-3.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/datong-pingyao-6-day-private-tour/route-day-3.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1200,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "hanging temple china",
+      "hanging temple datong",
+      "hanging monastery",
+      "hanging temple tickets",
+      "xuankong temple"
+    ],
+    "zh": [
+      "悬空寺登临票",
+      "悬空寺门票",
+      "悬空寺预约"
+    ],
+    "ko": [
+      "현공사",
+      "현공사 입장권"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/hanging-temple-datong/",
+      "title": "Hanging Temple in China: Climbing Tickets and How to Visit",
+      "headline": "The Hanging Temple near Datong: Getting a Climbing Ticket in 2026, and What You See Without One",
+      "description": "Since April 2026 the Hanging Temple sells only 2,475 climbing tickets a day. How the two tickets work, what foreign visitors should know and how to fit it in.",
+      "heroAlt": "Glazed-tile roofs and wooden balconies of the Hanging Temple built against a sheer cliff, with visitors on the galleries",
+      "navTitle": "Hanging Temple",
+      "featuredLinkLabel": "Plan the Hanging Temple",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Datong",
+        "Hanging Temple",
+        "Tickets"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/hanging-temple-datong/",
+      "title": "悬空寺登临票怎么买：限流、价格与外国游客须知",
+      "headline": "大同悬空寺：2026 年登临票怎么抢，抢不到还能看什么",
+      "description": "2026 年 4 月起悬空寺每天只卖 2,475 张登临票。入园票和登临票怎么买、外国游客要注意什么、怎么放进大同平遥行程。",
+      "heroAlt": "依绝壁而建的悬空寺，琉璃瓦屋顶和木栏廊道上有游客",
+      "navTitle": "悬空寺",
+      "featuredLinkLabel": "规划悬空寺",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "大同",
+        "悬空寺",
+        "门票"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/hanging-temple-datong/",
+      "title": "중국 현공사: 등반 티켓, 하루 인원 제한, 가는 법",
+      "headline": "다퉁 현공사: 2026년 등반 티켓 구하는 법과 티켓 없이 볼 수 있는 것",
+      "description": "2026년 4월부터 현공사 등반 티켓은 하루 2,475장만 판매합니다. 두 가지 입장권, 외국인 여행자가 알아야 할 점, 일정에 넣는 법.",
+      "heroAlt": "깎아지른 절벽에 붙여 지은 현공사의 유약 기와지붕과 목조 회랑, 회랑 위의 관광객",
+      "navTitle": "현공사",
+      "featuredLinkLabel": "현공사 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "다퉁",
+        "현공사",
+        "입장권"
+      ]
+    }
+  }
+}

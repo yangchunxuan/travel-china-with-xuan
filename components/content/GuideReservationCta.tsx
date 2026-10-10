@@ -43,7 +43,7 @@ export function GuideReservationCta({
     <aside aria-label={copy.label} className={styles.card} data-guide-reservation-cta={rule.id} data-similarity-ignore>
       <p className={styles.label}>{copy.label}</p>
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
-      <p className={styles.body}>{fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
+      <p className={styles.body}>{fillReservationCopy(rule.bestEffort ? copy.bodyBestEffort : rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
       {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position={position}>
         {copy.action}

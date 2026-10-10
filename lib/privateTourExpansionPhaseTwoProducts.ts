@@ -352,7 +352,7 @@ const shanxi: PrivateTourProduct = {
   nights: 5,
   servicePolicy,
   title: l("Datong & Pingyao: 6-Day Private Tour", "大同·平遥 6 天 5 晚私家团", "다퉁·핑야오 6일 프라이빗 투어"),
-  metadataTitle: l("Datong & Pingyao 6-Day Private Tour with Hanging Temple", "山西6日游私家团：大同悬空寺平遥", "다퉁·핑야오 6일 프라이빗 투어"),
+  metadataTitle: l("Hanging Temple, Datong & Pingyao: 6-Day Private Tour", "山西6日游私家团：大同悬空寺平遥", "다퉁·핑야오 6일 프라이빗 투어"),
   metadataDescription: l("Six days from Datong to Pingyao and Taiyuan with Yungang Grottoes, Hanging Temple, five hotel nights, private vehicle and guide service.", "从大同经悬空寺到平遥与太原的 6 天私家路线，含云冈石窟、5 晚住宿、私车与导游服务。", "다퉁에서 현공사, 핑야오와 타이위안으로 이어지는 6일 일정으로 운강석굴, 5박, 전용 차량과 가이드를 포함합니다."),
   eyebrow: l("Datong in, Taiyuan out, with Pingyao in between", "大同进、太原出，中间连住平遥", "다퉁에서 시작해 핑야오를 거쳐 타이위안으로"),
   lede: l("Start with Yungang and Datong's old city, cross south via Hanging Temple and Yingxian, stay two nights in Pingyao and finish in Taiyuan without driving back north.", "先看云冈石窟与大同古城，经悬空寺和应县一路向南，在平遥连住两晚，最后从太原离开，不再向北折返。", "운강석굴과 다퉁 구시가에서 시작해 현공사와 잉셴을 거쳐 남쪽으로 이동하고 핑야오 2박 후 타이위안에서 마칩니다."),

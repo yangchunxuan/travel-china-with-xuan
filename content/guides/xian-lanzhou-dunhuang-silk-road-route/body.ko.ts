@@ -88,6 +88,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "links", type: "internal-links", title: "이어서 계획하기", items: [
     { label: "막고굴 개별 관람하기", href: "/ko/guides/mogao-caves-independent-visit-workflow/", description: "예약 절차 자체. 이 글은 일부러 반복하지 않습니다." },
+    { label: "장예 단샤 무지개산", href: "/ko/guides/rainbow-mountains-zhangye-danxia/", description: "란저우와 자위관 사이의 줄무늬 언덕: 입장권, 일몰 시간, 머무는 시간." },
     { label: "중국 여행, 거점형인가 다거점형인가", href: "/ko/guides/china-hub-and-spoke-or-multi-base-route/", description: "이 회랑을 한 줄로 볼지 두 거점으로 볼지." },
     { label: "철도만으로 짜는 중국 동선", href: "/ko/guides/china-rail-only-route/", description: "어느 구간도 비행하지 않을 생각이라면." },
     { label: "야간열차인가 주간 고속철도인가", href: "/ko/guides/china-night-train-or-daytime-high-speed-rail/", description: "긴 구간이야말로 이 판단이 쓰이라고 쓰인 상황입니다." },
