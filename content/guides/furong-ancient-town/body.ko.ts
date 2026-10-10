@@ -63,6 +63,15 @@ const body = {
       ]
     },
     {
+      "id": "aerial-figure",
+      "type": "figure",
+      "src": "/images/guides/furong-ancient-town/aerial-1600.webp",
+      "alt": "강 위 언덕에 자리한 부용진 항공 사진. 마을 한가운데에서 폭포가 떨어짐",
+      "width": 1600,
+      "height": 703,
+      "caption": "하늘에서 본 부용진: 폭포가 마을 한가운데에서 강으로 떨어집니다. 사진: Chensiyuan, CC BY-SA 4.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -231,6 +240,12 @@ const body = {
         {
           "label": "대표 사진: 1 furong panorama 2012, Chensiyuan(CC BY-SA 4.0), Homeground 크기 조정",
           "url": "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "항공 사진: 1 furong aerial panorama 2017, Chensiyuan(CC BY-SA 4.0), Homeground 크기 조정",
+          "url": "https://commons.wikimedia.org/wiki/File:1_furong_aerial_panorama_2017.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

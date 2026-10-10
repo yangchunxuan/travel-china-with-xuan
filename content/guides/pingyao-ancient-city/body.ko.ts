@@ -68,6 +68,15 @@ const body = {
       ]
     },
     {
+      "id": "street-figure",
+      "type": "figure",
+      "src": "/images/guides/pingyao-ancient-city/south-street-1600.webp",
+      "alt": "시루에서 내려다본 핑야오 남대가. 양쪽에 회색 기와 지붕, 거리에는 노점 파라솔",
+      "width": 1600,
+      "height": 1063,
+      "caption": "시루에서 본 남대가. 사진: severin.stalder, CC BY-SA 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -218,8 +227,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "대표 사진: 1 pingyao ancient city aerial pano 2019, Chensiyuan(CC BY-SA 4.0), Homeground 크기 조정",
-          "url": "https://commons.wikimedia.org/wiki/File:1_pingyao_ancient_city_aerial_pano_2019.jpg",
+          "label": "대표 사진: Pingyao city wall, Gisling(CC BY 3.0), Homeground 자르기·크기 조정",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_city_wall.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "거리 사진: Pingyao marketstreet, severin.stalder(CC BY-SA 3.0), Homeground 크기 조정",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_marketstreet.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

@@ -74,6 +74,15 @@ const body = {
       ]
     },
     {
+      "id": "pagoda-figure",
+      "type": "figure",
+      "src": "/images/guides/shaolin-temple/pagoda-forest-1600.webp",
+      "alt": "Brick tomb pagodas of different heights among cypress trees in the Pagoda Forest at Shaolin Temple",
+      "width": 1600,
+      "height": 1200,
+      "caption": "The Pagoda Forest, a short walk west of the temple. Photo: 江上清风1961, CC BY 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -201,8 +210,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "Hero photo: Shaolin Temple (10199309404), Gary Todd (CC0), resized by Homeground",
-          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199309404).jpg",
+          "label": "Hero photo: Shaolin Temple (10200955683), Gary Todd (CC0), cropped and resized by Homeground",
+          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10200955683).jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Pagoda Forest photo: 少林寺塔林 - panoramio (1), 江上清风1961 (CC BY 3.0), resized by Homeground",
+          "url": "https://commons.wikimedia.org/wiki/File:%E5%B0%91%E6%9E%97%E5%AF%BA%E5%A1%94%E6%9E%97_-_panoramio_(1).jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

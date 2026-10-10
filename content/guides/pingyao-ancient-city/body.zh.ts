@@ -68,6 +68,15 @@ const body = {
       ]
     },
     {
+      "id": "street-figure",
+      "type": "figure",
+      "src": "/images/guides/pingyao-ancient-city/south-street-1600.webp",
+      "alt": "从市楼上看平遥南大街，两边是成片的灰瓦屋顶，街上撑着摊位的伞",
+      "width": 1600,
+      "height": 1063,
+      "caption": "从市楼上看南大街。摄影：severin.stalder，CC BY-SA 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -218,8 +227,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "头图：1 pingyao ancient city aerial pano 2019，Chensiyuan（CC BY-SA 4.0），Homeground 调整尺寸",
-          "url": "https://commons.wikimedia.org/wiki/File:1_pingyao_ancient_city_aerial_pano_2019.jpg",
+          "label": "头图：Pingyao city wall，Gisling（CC BY 3.0），Homeground 裁剪并调整尺寸",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_city_wall.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "街景图：Pingyao marketstreet，severin.stalder（CC BY-SA 3.0），Homeground 调整尺寸",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_marketstreet.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

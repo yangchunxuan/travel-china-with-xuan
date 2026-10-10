@@ -63,6 +63,15 @@ const body = {
       ]
     },
     {
+      "id": "aerial-figure",
+      "type": "figure",
+      "src": "/images/guides/furong-ancient-town/aerial-1600.webp",
+      "alt": "芙蓉镇航拍：古镇建在河边的高地上，瀑布从镇子中间落下",
+      "width": 1600,
+      "height": 703,
+      "caption": "航拍芙蓉镇：瀑布从镇子中间落进河里。摄影：Chensiyuan，CC BY-SA 4.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -231,6 +240,12 @@ const body = {
         {
           "label": "头图：1 furong panorama 2012，Chensiyuan（CC BY-SA 4.0），Homeground 调整尺寸",
           "url": "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "航拍图：1 furong aerial panorama 2017，Chensiyuan（CC BY-SA 4.0），Homeground 调整尺寸",
+          "url": "https://commons.wikimedia.org/wiki/File:1_furong_aerial_panorama_2017.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

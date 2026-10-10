@@ -1,5 +1,6 @@
 # Image plan
 
-- Hero: reuse `/images/tours/datong-pingyao-6-day-private-tour/gallery-1.webp` (1600×398 panorama), from [1 pingyao ancient city aerial pano 2019](https://commons.wikimedia.org/wiki/File:1_pingyao_ancient_city_aerial_pano_2019.jpg), Chensiyuan, CC BY-SA 4.0, already recorded in docs/homeground-photo-provenance.md. Viewed 2026-10-10: hazy aerial view of the wall, a gate tower and the courtyard roofs. No text on the image.
-- A wide panorama is a weak hero on a phone. Replace it with one of the owner's own Pingyao photographs when there is one.
-- No new download, edit, overlay text or AI image. Credit appears in the page sources.
+- Hero: `/images/guides/pingyao-ancient-city/hero-1600.webp` (1600×1000), from [Pingyao city wall](https://commons.wikimedia.org/wiki/File:Pingyao_city_wall.jpg), Gisling, October 2008, CC BY 3.0; cropped from 2000×1333 and converted to WebP without metadata. Viewed 2026-10-10: the brick wall and a line of watchtowers in low light, a dirt path and trees outside the wall. No people in the foreground and no text.
+- Figure: `/images/guides/pingyao-ancient-city/south-street-1600.webp` (1600×1063), from [Pingyao marketstreet](https://commons.wikimedia.org/wiki/File:Pingyao_marketstreet.jpg), severin.stalder, 2012-06-19, CC BY-SA 3.0 ("View from Market Tower"); resized from 4201×2790. Viewed 2026-10-10: South Street from above, tiled roofs and stall umbrellas; people are small and not identifiable. The only text is printed on the umbrellas in the scene.
+- Both downloaded from Wikimedia Commons on 2026-10-10 at the owner's request and recorded in docs/homeground-photo-provenance.md. No overlay text, no AI image. Credits appear in the caption and the page sources.
+- The earlier 1600×398 aerial panorama is no longer used on this page.

@@ -74,6 +74,15 @@ const body = {
       ]
     },
     {
+      "id": "pagoda-figure",
+      "type": "figure",
+      "src": "/images/guides/shaolin-temple/pagoda-forest-1600.webp",
+      "alt": "측백나무 사이로 높이가 제각각인 소림사 탑림의 벽돌탑",
+      "width": 1600,
+      "height": 1200,
+      "caption": "사찰 서쪽 가까이의 탑림. 사진: 江上清风1961, CC BY 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -201,8 +210,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "대표 사진: Shaolin Temple (10199309404), Gary Todd(CC0), Homeground 크기 조정",
-          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199309404).jpg",
+          "label": "대표 사진: Shaolin Temple (10200955683), Gary Todd(CC0), Homeground 자르기·크기 조정",
+          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10200955683).jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "탑림 사진: 少林寺塔林 - panoramio (1), 江上清风1961(CC BY 3.0), Homeground 크기 조정",
+          "url": "https://commons.wikimedia.org/wiki/File:%E5%B0%91%E6%9E%97%E5%AF%BA%E5%A1%94%E6%9E%97_-_panoramio_(1).jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

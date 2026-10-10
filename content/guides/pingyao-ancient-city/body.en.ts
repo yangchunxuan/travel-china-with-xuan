@@ -68,6 +68,15 @@ const body = {
       ]
     },
     {
+      "id": "street-figure",
+      "type": "figure",
+      "src": "/images/guides/pingyao-ancient-city/south-street-1600.webp",
+      "alt": "South Street in Pingyao seen from the Market Tower, with grey-tiled roofs on both sides and market umbrellas along the street",
+      "width": 1600,
+      "height": 1063,
+      "caption": "South Street from the Market Tower. Photo: severin.stalder, CC BY-SA 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -218,8 +227,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "Hero photo: 1 pingyao ancient city aerial pano 2019, Chensiyuan (CC BY-SA 4.0), resized by Homeground",
-          "url": "https://commons.wikimedia.org/wiki/File:1_pingyao_ancient_city_aerial_pano_2019.jpg",
+          "label": "Hero photo: Pingyao city wall, Gisling (CC BY 3.0), cropped and resized by Homeground",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_city_wall.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Street photo: Pingyao marketstreet, severin.stalder (CC BY-SA 3.0), resized by Homeground",
+          "url": "https://commons.wikimedia.org/wiki/File:Pingyao_marketstreet.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

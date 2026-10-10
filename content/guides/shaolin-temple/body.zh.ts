@@ -74,6 +74,15 @@ const body = {
       ]
     },
     {
+      "id": "pagoda-figure",
+      "type": "figure",
+      "src": "/images/guides/shaolin-temple/pagoda-forest-1600.webp",
+      "alt": "少林寺塔林里高低不一的砖塔，周围是柏树",
+      "width": 1600,
+      "height": 1200,
+      "caption": "寺院西边不远处的塔林。摄影：江上清风1961，CC BY 3.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -201,8 +210,14 @@ const body = {
           "reviewedAt": "2026-10-10"
         },
         {
-          "label": "头图：Shaolin Temple (10199309404)，Gary Todd（CC0），Homeground 调整尺寸",
-          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199309404).jpg",
+          "label": "头图：Shaolin Temple (10200955683)，Gary Todd（CC0），Homeground 裁剪并调整尺寸",
+          "url": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10200955683).jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "塔林图：少林寺塔林 - panoramio (1)，江上清风1961（CC BY 3.0），Homeground 调整尺寸",
+          "url": "https://commons.wikimedia.org/wiki/File:%E5%B0%91%E6%9E%97%E5%AF%BA%E5%A1%94%E6%9E%97_-_panoramio_(1).jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }

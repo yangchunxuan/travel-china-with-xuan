@@ -63,6 +63,15 @@ const body = {
       ]
     },
     {
+      "id": "aerial-figure",
+      "type": "figure",
+      "src": "/images/guides/furong-ancient-town/aerial-1600.webp",
+      "alt": "Aerial view of Furong Ancient Town on its headland above the river, with the waterfall dropping from the middle of the town",
+      "width": 1600,
+      "height": 703,
+      "caption": "Furong Ancient Town from the air: the waterfall drops from the middle of the town into the river. Photo: Chensiyuan, CC BY-SA 4.0"
+    },
+    {
       "id": "tickets-heading",
       "type": "heading",
       "level": 2,
@@ -231,6 +240,12 @@ const body = {
         {
           "label": "Hero photo: 1 furong panorama 2012, Chensiyuan (CC BY-SA 4.0), resized by Homeground",
           "url": "https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg",
+          "publisher": "Wikimedia Commons",
+          "reviewedAt": "2026-10-10"
+        },
+        {
+          "label": "Aerial photo: 1 furong aerial panorama 2017, Chensiyuan (CC BY-SA 4.0), resized by Homeground",
+          "url": "https://commons.wikimedia.org/wiki/File:1_furong_aerial_panorama_2017.jpg",
           "publisher": "Wikimedia Commons",
           "reviewedAt": "2026-10-10"
         }
