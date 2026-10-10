@@ -20,6 +20,18 @@ const body = {
       "text": "Partly. The Mastercard-CrescentRating index for 2026 gives China 44 points out of 100: 70th of 150 destinations and 30th among those outside the Organisation of Islamic Cooperation, up from 74th in 2025. It scores 70 for access and 27 for communication. On the ground, halal restaurants and mosques exist in every large city, but little will point you to them in English."
     },
     {
+      "id": "offer",
+      "type": "internal-links",
+      "title": "Want it handled for you?",
+      "items": [
+        {
+          "label": "Muslim-friendly China private tours with halal meals",
+          "href": "/guides/muslim-friendly-china-private-tours/",
+          "description": "Lunch and dinner at halal restaurants included, stops planned around prayer times."
+        }
+      ]
+    },
+    {
       "id": "sign-heading",
       "type": "heading",
       "level": 2,
@@ -189,7 +201,7 @@ const body = {
       "ordered": true,
       "items": [
         "Before we quote, we ask which standard you keep: licensed halal restaurants only, Muslim-run restaurants, or no pork and no lard.",
-        "Lunch and dinner are not included in most of our tours, so they are planned day by day around restaurants that show the 清真 sign. We mark the days where none is near the route.",
+        "Lunch and dinner can be added as a meal plan at restaurants that show the 清真 sign, or left open to choose each day with the guide. We mark the days where none is near the route.",
         "Hotel breakfast is included and is not halal. If that matters, we look for a hotel that can meet it or plan breakfast outside.",
         "Meals supplied by third parties, such as a Yangtze ship, are checked with the supplier and confirmed to you in writing before you pay.",
         "We are a licensed Chinese travel agency, not a halal certification body. We tell you what a restaurant displays and claims; we do not certify it."
@@ -266,7 +278,7 @@ const body = {
         },
         {
           "question": "Do your tours include halal meals?",
-          "answer": "Lunch and dinner are not included in most of our tours, so they are chosen day by day at restaurants that meet your standard. We tell you what each restaurant displays; we do not certify food."
+          "answer": "They can. With the meal plan, lunch and dinner are included at restaurants that show the 清真 sign, and its price is in your written quote. We tell you what each restaurant displays; we do not certify food."
         }
       ]
     },

@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 238,
-      "localeUrlCount": 706,
-      "generatedIdentityCount": 219,
+      "identityCount": 240,
+      "localeUrlCount": 712,
+      "generatedIdentityCount": 221,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -2911,6 +2911,104 @@
               "boundary": "The Muslim-friendly travel intent: the index ranking, the halal sign and one local regulation as an example, four standards, where halal food is easy and hard, flights and hotels, and how Homeground plans a private tour for Muslim travellers. zhangjiajie-from-malaysia keeps that trip and the vegetarian guide owns the vegetarian standard. Tour pages keep product prices and inclusions."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "dietary-geo-guides",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Vegetarian China private tours guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "vegetarian-china-private-tours",
+              "title": "Vegetarian China Private Tours with Meals Included",
+              "metadataPath": "content/guides/vegetarian-china-private-tours/metadata.json",
+              "canonicalPath": "/guides/vegetarian-china-private-tours/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/vegetarian-china-private-tours/",
+                "/zh/guides/vegetarian-china-private-tours/",
+                "/ko/guides/vegetarian-china-private-tours/"
+              ],
+              "section": "culture",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "culture-regional-food",
+              "pillar": "culture-regional-food",
+              "destinations": [
+                "china",
+                "beijing",
+                "shanghai",
+                "chengdu"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-shanghai",
+                  "city-chengdu"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "The commercial intent for vegetarian China tours: what a private tour includes with the vegetarian meal plan, which published routes suit, the limits and how booking works. vegetarian-vegan-china-travel owns the informational intent. Tour pages keep itineraries and prices."
+            }
+          ]
+        },
+        {
+          "checkedAt": "2026-10-10",
+          "sourceBranch": "dietary-geo-guides",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Muslim-friendly China private tours guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "muslim-friendly-china-private-tours",
+              "title": "Muslim-Friendly China Private Tours with Halal Meals",
+              "metadataPath": "content/guides/muslim-friendly-china-private-tours/metadata.json",
+              "canonicalPath": "/guides/muslim-friendly-china-private-tours/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/muslim-friendly-china-private-tours/",
+                "/zh/guides/muslim-friendly-china-private-tours/",
+                "/ko/guides/muslim-friendly-china-private-tours/"
+              ],
+              "section": "culture",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "culture-regional-food",
+              "pillar": "culture-regional-food",
+              "destinations": [
+                "china",
+                "xian",
+                "beijing"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-xian",
+                  "city-beijing"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "The commercial intent for halal and Muslim-friendly China tours: what a private tour includes with the halal meal plan, which published routes suit, the limits and how booking works. halal-food-muslim-travel-china owns the informational intent. Tour pages keep itineraries and prices."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3068,6 +3166,7 @@
         "meizhou-mazu-ancestral-temple-reading-guide",
         "minsu-homestay-or-hotel-china",
         "mogao-caves-independent-visit-workflow",
+        "muslim-friendly-china-private-tours",
         "nanchang-breakfast-rice-noodles-clay-pot-soup",
         "nanhai-one-shipwreck-cargo-and-conservation",
         "national-museum-of-china-booking-and-route",
@@ -3111,6 +3210,7 @@
         "terracotta-warriors-without-tour",
         "three-literary-towers-comparison",
         "tianmen-mountain-tickets-and-routes",
+        "vegetarian-china-private-tours",
         "vegetarian-vegan-china-travel",
         "wangxian-valley",
         "wenchang-commercial-space-city",

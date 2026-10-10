@@ -37,10 +37,10 @@ test("the Search Map complete inventory covers every current guide directory", a
     "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
   );
   assert.equal(inventory.generatedIdentityCount, guideDirectories.length);
-  assert.equal(inventory.generatedIdentityCount, 219);
+  assert.equal(inventory.generatedIdentityCount, 221);
   assert.equal(inventory.protectedLegacyIdentityCount, 19);
-  assert.equal(inventory.identityCount, 238);
-  assert.equal(inventory.localeUrlCount, 706);
+  assert.equal(inventory.identityCount, 240);
+  assert.equal(inventory.localeUrlCount, 712);
   assert.equal(inventory.identityIds.length, inventory.identityCount);
   assert.equal(inventoryIds.size, inventory.identityCount);
   assert.deepEqual(
@@ -64,7 +64,7 @@ test("the Search Map complete inventory covers every current guide directory", a
   assert.equal(latestIncrement.identityDelta, 1);
   assert.equal(latestIncrement.localeUrlDelta, 3);
   assert.deepEqual(latestIncrement.identities.map((entry) => entry.id), [
-    "halal-food-muslim-travel-china",
+    "muslim-friendly-china-private-tours",
   ]);
   for (const entry of latestIncrement.identities) {
     const metadata = await loadJson(entry.metadataPath);

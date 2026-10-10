@@ -20,6 +20,18 @@ const body = {
       "text": "Yes in the big cities, with care elsewhere. The Michelin Guide lists starred vegetarian restaurants in Beijing, Shanghai and Chengdu, and Chinese map apps show ordinary vegetarian restaurants under 素食 in most cities. In small towns and scenic areas there may be none, and you order vegetable dishes in ordinary restaurants. Strict vegans and Jain travellers need the most planning, because egg, onion and garlic are harder to keep out of a dish than meat."
     },
     {
+      "id": "offer",
+      "type": "internal-links",
+      "title": "Want it handled for you?",
+      "items": [
+        {
+          "label": "Vegetarian China private tours with meals included",
+          "href": "/guides/vegetarian-china-private-tours/",
+          "description": "Lunch and dinner included at restaurants chosen for your standard, with a guide who orders in Chinese."
+        }
+      ]
+    },
+    {
       "id": "words-heading",
       "type": "heading",
       "level": 2,
@@ -201,7 +213,7 @@ const body = {
       "ordered": true,
       "items": [
         "Before we quote, we ask what each traveller does not eat: eggs, dairy, onion and garlic, root vegetables.",
-        "On most of our tours hotel breakfast is included and lunch and dinner are not. Nothing is ordered in advance: the guide chooses the restaurant with you each day and orders in Chinese.",
+        "Hotel breakfast is included in our tours. Lunch and dinner can be added as a meal plan at restaurants chosen for your standard, or left open for you to choose each day with the guide, who orders in Chinese.",
         "Where a meal is included, such as a listed lunch or the meals on a Yangtze ship, we ask the supplier for vegetarian food in advance and tell you in writing what they confirmed, before you pay.",
         "If a town on the route cannot meet your standard, we say so at the planning stage and change the meal plan or the stop.",
         "We do not certify food, and in an ordinary restaurant we cannot rule out shared woks and oil. If that matters to you, we plan around fully vegetarian kitchens and tell you where none exists."
@@ -215,7 +227,7 @@ const body = {
         {
           "label": "Beijing, Xi’an, Chengdu, Yangtze cruise & Shanghai: 17-day private tour",
           "href": "/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/",
-          "description": "The long classic route. Breakfast at every hotel and the ship’s meals are included; lunch and dinner on land are chosen day by day."
+          "description": "The long classic route. Breakfast at every hotel and the ship’s meals are included; lunch and dinner on land can be added as a meal plan."
         },
         {
           "label": "Beijing, Xi’an & Shanghai: 8-day private tour",
@@ -274,7 +286,7 @@ const body = {
         },
         {
           "question": "Can a China tour be fully vegetarian?",
-          "answer": "Yes on a private tour, because lunch and dinner are chosen day by day. The limits are meals supplied by third parties, such as cruise ships, which we confirm in writing first."
+          "answer": "Yes on a private tour. With the meal plan, lunch and dinner are included at restaurants chosen for your standard. The limits are meals supplied by third parties, such as cruise ships, which we confirm in writing first."
         }
       ]
     },

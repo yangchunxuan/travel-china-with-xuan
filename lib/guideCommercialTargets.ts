@@ -265,6 +265,14 @@ export const guideTargets = {
     productTarget("xian-terracotta-warriors-5-day-private-tour"),
     productTarget("beijing-xian-silk-road-15-day-private-tour"),
   ],
+  "vegetarian-china-private-tours": [
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
+    productTarget("beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour"),
+  ],
+  "muslim-friendly-china-private-tours": [
+    productTarget("xian-terracotta-warriors-5-day-private-tour"),
+    productTarget("beijing-xian-shanghai-8-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),
