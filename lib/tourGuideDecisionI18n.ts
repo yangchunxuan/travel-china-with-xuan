@@ -1,4 +1,13 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+import {
+  formatPrivateGuidePrice,
+  privateGuideCities,
+  privateGuideHours,
+  privateGuidePeakPrice,
+  privateGuideRates,
+  type PrivateGuideCity,
+  // @ts-ignore Source-TypeScript tests require the explicit extension.
+} from "./privateGuideServices.ts";
 
 export const tourGuideDecisionGuideId =
   "do-you-need-a-tour-guide-in-china" as const;
@@ -85,6 +94,7 @@ export interface TourGuideDecisionCopy {
 
   independent: TourGuideDecisionSection;
   guideWorth: TourGuideDecisionSection;
+  guideCost: TourGuideDecisionSection;
   driverEnough: TourGuideDecisionSection;
   fullTrip: TourGuideDecisionSection;
   hybrid: TourGuideDecisionSection;
@@ -137,6 +147,35 @@ const SOURCE_URLS = {
   selectedDaysDiscussion:
     "https://www.reddit.com/r/chinatravel/comments/1qanpzx/advice_for_itinerary_for_november_2026/",
 } as const;
+
+// The guide-only rates shown on /services/private-english-speaking-guides/,
+// read from the same table so this article cannot drift from that page.
+const guideCityNames: Record<HomegroundLocale, Record<PrivateGuideCity, string>> = {
+  en: { shanghai: "Shanghai", beijing: "Beijing", xian: "Xi’an", zhangjiajie: "Zhangjiajie" },
+  zh: { shanghai: "上海", beijing: "北京", xian: "西安", zhangjiajie: "张家界" },
+  ko: { shanghai: "상하이", beijing: "베이징", xian: "시안", zhangjiajie: "장가계" },
+};
+const guideCities: readonly PrivateGuideCity[] = privateGuideCities;
+function guideRateRange(locale: HomegroundLocale, low: number, high: number) {
+  const first = formatPrivateGuidePrice(low, locale);
+  return low === high ? first : `${first}–${new Intl.NumberFormat("en-GB").format(high)}`;
+}
+const guideStandardRange = (locale: HomegroundLocale) => guideRateRange(
+  locale,
+  Math.min(...guideCities.map((city) => privateGuideRates[city].standardCny)),
+  Math.max(...guideCities.map((city) => privateGuideRates[city].standardCny)),
+);
+const guidePeakRange = (locale: HomegroundLocale) => guideRateRange(
+  locale,
+  Math.min(...guideCities.map((city) => privateGuideRates[city].peakMinCny)),
+  Math.max(...guideCities.map((city) => privateGuideRates[city].peakMaxCny)),
+);
+const guideRateLines = (locale: HomegroundLocale, line: (city: string, standard: string, peak: string) => string) =>
+  guideCities.map((city) => line(
+    guideCityNames[locale][city],
+    formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale),
+    privateGuidePeakPrice(city, locale),
+  ));
 
 const en: TourGuideDecisionCopy = {
   htmlLang: "en",
@@ -316,6 +355,19 @@ const en: TourGuideDecisionCopy = {
       "Ask what the guide will do that you would not do alone. Specifics matter more than a sight list.",
   },
 
+  guideCost: {
+    title: "What a private guide costs in China",
+    intro: `As a reference, Homeground’s guide-only rates run ${guideStandardRange("en")} per guide for a day of up to ${privateGuideHours} hours, depending on the city.`,
+    paragraphs: [
+      "The rate is per guide, not per person: a couple and a family of six pay the same guide fee for the day. Peak-season dates carry a higher reference rate, shown below.",
+      "It covers the English-speaking guide’s service for the day. Transport, your admission tickets and meals are confirmed separately, and a written quote sets out the full inclusions and any guide-related expenses before you book. Homeground guides hold a Chinese tour-guide licence.",
+    ],
+    listLabel: `Guide-only reference rates, per guide per day of up to ${privateGuideHours} hours:`,
+    items: guideRateLines("en", (city, standard, peak) => `${city}: ${standard}; peak season ${peak}.`),
+    closing:
+      "These are reference rates. We confirm the applicable rate and the guide’s availability for your date before you book.",
+  },
+
   driverEnough: {
     title: "When a driver may be enough",
     intro:
@@ -431,6 +483,10 @@ const en: TourGuideDecisionCopy = {
         question: "Can a guide get tickets that I cannot buy myself?",
         answer:
           "Do not assume so. Attractions have real-name rules. The Palace Museum does not authorize third-party ticket agents. A guide may explain the process but cannot promise unavailable inventory.",
+      },
+      {
+        question: "How much does a private tour guide cost in China?",
+        answer: `Homeground’s guide-only reference rates are ${guideStandardRange("en")} per guide for a day of up to ${privateGuideHours} hours in Shanghai, Beijing, Xi’an and Zhangjiajie, and ${guidePeakRange("en")} in peak season. The rate is per guide, not per person. Transport, tickets and meals are confirmed separately in a written quote.`,
       },
       {
         question: "Is a driver the same as a guide?",
@@ -676,6 +732,19 @@ const zh: TourGuideDecisionCopy = {
       "预订前直接问：这名导游会做哪些我自己做不到或不想做的事？具体回答比一串景点名称更有用。",
   },
 
+  guideCost: {
+    title: "在中国请一位私人导游要多少钱",
+    intro: `作为参考，Homeground 单独英文导游的价格是每位导游每天 ${guideStandardRange("zh")}（最多 ${privateGuideHours} 小时），不同城市价格不同。`,
+    paragraphs: [
+      "这个价格按导游算，不按人头算：两个人和一家六口，当天付的导游费是一样的。旺季日期的参考价更高，见下方。",
+      "价格包含导游当天的服务。用车、你们的景点门票和餐费另行确认；预订前会有一份书面报价，写清包含的内容和与导游有关的其他费用。Homeground 的导游持有中国导游证。",
+    ],
+    listLabel: `单独导游参考价，每位导游每天最多 ${privateGuideHours} 小时：`,
+    items: guideRateLines("zh", (city, standard, peak) => `${city}：${standard}；旺季 ${peak}。`),
+    closing:
+      "以上为参考价。具体日期适用的价格和导游能否安排，会在预订前确认。",
+  },
+
   driverEnough: {
     title: "什么时候只要司机就够了",
     intro:
@@ -790,6 +859,10 @@ const zh: TourGuideDecisionCopy = {
         question: "导游能买到我自己买不到的门票吗？",
         answer:
           "不要这样假设。大型景点有自己的实名预约规则。故宫博物院明确表示未授权任何第三方机构或个人代理门票。导游可以帮助理解流程，但不能承诺并不存在的余票。",
+      },
+      {
+        question: "在中国请私人导游一天多少钱？",
+        answer: `Homeground 单独英文导游的参考价是每位导游每天 ${guideStandardRange("zh")}（最多 ${privateGuideHours} 小时），覆盖上海、北京、西安和张家界；旺季为 ${guidePeakRange("zh")}。价格按导游算，不按人头算。用车、门票和餐费在书面报价里另行确认。`,
       },
       {
         question: "司机和导游是一回事吗？",
@@ -1046,6 +1119,19 @@ const ko: TourGuideDecisionCopy = {
       "예약 전에 ‘혼자였다면 하지 못했거나 하지 않았을 일을 이 가이드가 무엇을 해 주는가?’라고 물어보세요. 구체적인 답이 유명 관광지 목록보다 중요합니다.",
   },
 
+  guideCost: {
+    title: "중국에서 프라이빗 가이드 비용은 얼마인가요",
+    intro: `참고로 Homeground의 한국어 가이드 단독 요금은 가이드 1명당 하루(최대 ${privateGuideHours}시간) ${guideStandardRange("ko")}이며 도시에 따라 다릅니다.`,
+    paragraphs: [
+      "이 요금은 인원이 아니라 가이드 기준입니다. 두 명이든 여섯 명 가족이든 그날의 가이드 요금은 같습니다. 성수기 날짜에는 아래의 더 높은 참고 요금이 적용됩니다.",
+      "요금에는 그날의 가이드 서비스가 포함됩니다. 차량, 여행자 입장권과 식사는 별도로 확인하며, 예약 전에 포함 내용과 가이드 관련 추가 비용을 서면 견적으로 안내합니다. Homeground 가이드는 중국 가이드 자격증을 보유하고 있습니다.",
+    ],
+    listLabel: `가이드 단독 참고 요금, 가이드 1명당 하루 최대 ${privateGuideHours}시간:`,
+    items: guideRateLines("ko", (city, standard, peak) => `${city}: ${standard}, 성수기 ${peak}.`),
+    closing:
+      "위 금액은 참고 요금입니다. 해당 날짜에 적용되는 요금과 가이드 배정 가능 여부는 예약 전에 확인해 드립니다.",
+  },
+
   driverEnough: {
     title: "기사만 있어도 충분한 경우",
     intro:
@@ -1162,6 +1248,10 @@ const ko: TourGuideDecisionCopy = {
         question: "가이드가 제가 못 구하는 표를 구해 줄 수 있나요?",
         answer:
           "그렇게 가정하면 안 됩니다. 주요 관광지는 자체 실명 예약 규정이 있습니다. 고궁박물원은 제3자 기관이나 개인에게 입장권 판매를 위임하지 않았다고 안내합니다. 가이드는 절차 이해를 도울 수 있지만 없는 재고를 약속할 수 없습니다.",
+      },
+      {
+        question: "중국에서 프라이빗 가이드는 하루에 얼마인가요?",
+        answer: `Homeground의 한국어 가이드 단독 참고 요금은 상하이·베이징·시안·장가계에서 가이드 1명당 하루(최대 ${privateGuideHours}시간) ${guideStandardRange("ko")}, 성수기에는 ${guidePeakRange("ko")}입니다. 인원이 아니라 가이드 기준 요금이며, 차량·입장권·식사는 서면 견적에서 별도로 확인합니다.`,
       },
       {
         question: "기사와 가이드는 같은가요?",

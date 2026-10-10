@@ -188,6 +188,7 @@ export function ChinaTourGuideDecisionPage({
       days: "Decide by the day",
       independent: "Independent time",
       guide: "Selected guide days",
+      cost: "What a guide costs",
       driver: "Transport-only help",
       fullTrip: "Joined-up support",
       hybrid: "A mixed trip",
@@ -207,6 +208,7 @@ export function ChinaTourGuideDecisionPage({
       days: "按天判断",
       independent: "独立旅行",
       guide: "关键日导游",
+      cost: "导游费用",
       driver: "只解决交通",
       fullTrip: "贯穿全程的协助",
       hybrid: "混合式旅行",
@@ -226,6 +228,7 @@ export function ChinaTourGuideDecisionPage({
       days: "하루씩 판단하기",
       independent: "자유 일정",
       guide: "필요한 날의 가이드",
+      cost: "가이드 비용",
       driver: "교통만 지원",
       fullTrip: "연결된 전체 지원",
       hybrid: "혼합형 여행",
@@ -377,6 +380,7 @@ export function ChinaTourGuideDecisionPage({
 
           <EditorialSection copy={copy.independent} eyebrow={ui.independent} />
           <EditorialSection copy={copy.guideWorth} eyebrow={ui.guide} soft />
+          <EditorialSection copy={copy.guideCost} eyebrow={ui.cost} />
           <EditorialSection copy={copy.driverEnough} eyebrow={ui.driver} />
 
           <section className={styles.fullTrip}>
