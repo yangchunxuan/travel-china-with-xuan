@@ -1,0 +1,104 @@
+{
+  "id": "pingyao-ancient-city",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "shanxi",
+    "pingyao-ancient-city",
+    "tickets",
+    "world-heritage",
+    "trip-planning"
+  ],
+  "destinations": [
+    "pingyao",
+    "shanxi",
+    "china"
+  ],
+  "heroImagePath": "/images/guides/pingyao-ancient-city/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/pingyao-ancient-city/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1000,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "pingyao",
+      "pingyao ancient city",
+      "pingyao china",
+      "pingyao tickets",
+      "pingyao old town"
+    ],
+    "zh": [
+      "平遥古城",
+      "平遥古城门票",
+      "平遥古城通票",
+      "平遥古城高铁站"
+    ],
+    "ko": [
+      "핑야오고성",
+      "평요고성",
+      "핑야오 입장료"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/pingyao-ancient-city/",
+      "title": "Pingyao Ancient City: Tickets, What to See & Getting There",
+      "headline": "Pingyao Ancient City: The 125-Yuan Pass, the Wall, the Old Banks and How to Arrive by Train",
+      "description": "Pingyao Ancient City is free to walk; a RMB 125 pass covers the wall and 22 sights for three days. What to see, opening hours and which railway station to use.",
+      "heroAlt": "Pingyao’s brick city wall and a line of watchtowers running into the distance in low autumn light",
+      "navTitle": "Pingyao Ancient City",
+      "featuredLinkLabel": "Plan Pingyao",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Shanxi",
+        "Pingyao",
+        "World Heritage"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/pingyao-ancient-city/",
+      "title": "平遥古城攻略：通票125元怎么用、看什么、高铁怎么到",
+      "headline": "平遥古城：125 元通票、城墙、票号，以及坐高铁怎么到",
+      "description": "平遥古城进城不要票，125 元通票三天内可看城墙和 22 个景点。看什么、开放时间、该坐到哪个火车站。",
+      "heroAlt": "秋日斜阳下的平遥古城墙，一排敌楼向远处延伸",
+      "navTitle": "平遥古城",
+      "featuredLinkLabel": "规划平遥古城",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "山西",
+        "平遥古城",
+        "世界遗产"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/pingyao-ancient-city/",
+      "title": "핑야오고성: 통합권 125위안, 볼거리, 가는 법",
+      "headline": "핑야오고성: 125위안 통합권, 성벽, 옛 은행, 기차로 가는 법",
+      "description": "핑야오고성은 걸어 다니는 데 표가 필요 없고, 125위안 통합권으로 3일간 성벽과 22개 명소를 봅니다. 볼거리, 운영 시간, 어느 역을 이용할지.",
+      "heroAlt": "가을 햇살 속 핑야오 성벽과 멀리 이어지는 망루들",
+      "navTitle": "핑야오고성",
+      "featuredLinkLabel": "핑야오 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "산시",
+        "핑야오",
+        "세계유산"
+      ]
+    }
+  }
+}

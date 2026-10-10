@@ -340,6 +340,11 @@ const body = {
           description: "장가계 숙소 거점 선택은 따로 해결하고 이 문학 비교를 지역 일정으로 확장하지 않는다."
         },
         {
+          label: "봉황고성: 입장권, 유람선, 가는 법",
+          href: "/ko/guides/fenghuang-ancient-town/",
+          description: "무료인 곳과 유료인 곳, 고속철도역에서 오는 자기부상열차."
+        },
+        {
           label: "후난에서 균형 잡힌 첫 끼 주문하기",
           href: "/ko/guides/hunan-cuisine-balanced-first-meal/",
           description: "문학 지리 다음에는 실제로 쓸 수 있는 지역 음식 선택으로 이어 간다."

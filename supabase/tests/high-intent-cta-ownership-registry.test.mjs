@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 88 curated guide and 48 product owners", () => {
+test("commercial links keep the approved 8 hub, 93 curated guide and 48 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -160,10 +160,12 @@ test("commercial links keep the approved 8 hub, 88 curated guide and 48 product 
       "chongqing-railway-station-selector",
       "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba",
       "do-us-citizens-need-visa-china-2026",
+      "fenghuang-ancient-town",
       "first-china-trip-jiangnan-6-or-beijing-11-days",
       "food-plants-and-animal-products-into-china",
       "forbidden-city-for-foreign-visitors",
       "fujian-tulou-cluster-selection",
+      "furong-ancient-town",
       "great-wall-section-selector-from-beijing",
       "guangzhou-macau-transport-route",
       "guangzhou-shenzhen-hong-kong-route-order",
@@ -180,9 +182,11 @@ test("commercial links keep the approved 8 hub, 88 curated guide and 48 product 
       "jade-dragon-snow-mountain-cable-car-booking",
       "kunming-dali-lijiang-shangri-la-route-order",
       "li-river-cruise-tickets-piers-booking",
+      "lijiang-old-town",
       "lijiang-shangri-la-transport-route",
       "lunar-new-year-customs-for-visitors",
       "national-museum-of-china-booking-and-route",
+      "pingyao-ancient-city",
       "sanxingdui-museum-booking-and-gallery-order",
       "shaanxi-history-museum-booking-and-collection-plan",
       "shanghai-hangzhou-transport-route",
@@ -191,6 +195,7 @@ test("commercial links keep the approved 8 hub, 88 curated guide and 48 product 
       "shanghai-suzhou-hangzhou-nanjing-route-order",
       "shanghai-to-suzhou-day-trip",
       "shanghai-where-to-stay-first-trip",
+      "shaolin-temple",
       "shenzhen-airport-railway-station-border-port-selector",
       "shenzhen-where-to-stay-futian-luohu-nanshan",
       "singapore-to-zhangjiajie-itinerary",

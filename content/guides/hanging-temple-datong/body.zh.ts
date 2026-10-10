@@ -113,6 +113,11 @@ const body = {
           "description": "云冈石窟和大同古城，南下途中看悬空寺，再到平遥和太原，私车和导游全程。"
         },
         {
+          "label": "平遥古城攻略：通票、看什么、怎么到",
+          "href": "/zh/guides/pingyao-ancient-city/",
+          "description": "125 元通票、城墙，以及该坐到哪个火车站。"
+        },
+        {
           "label": "云冈石窟：参观顺序与门票",
           "href": "/zh/guides/yungang-grottoes-cave-order-and-museum/",
           "description": "大同另一个必看景点，怎么留出一个完整的上午。"

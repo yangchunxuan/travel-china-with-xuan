@@ -167,6 +167,11 @@ const body = {
           "description": "导游陪同玩一整天森林公园：天子山、杨家界、袁家界哈利路亚山和金鞭溪，再上天门山；三晚同住武陵源一处。"
         },
         {
+          "label": "芙蓉镇攻略：瀑布、门票与夜景",
+          "href": "/zh/guides/furong-ancient-town/",
+          "description": "门票、开放到午夜，以及为什么要留到亮灯以后。"
+        },
+        {
           "label": "张家界、芙蓉镇与凤凰 7 天",
           "href": "/zh/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
           "description": "在武陵源砂岩峰林里玩两整天，再穿过湘西去芙蓉镇和凤凰。"

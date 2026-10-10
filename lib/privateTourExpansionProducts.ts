@@ -362,6 +362,11 @@ const yunnan: PrivateTourProduct = {
     "昆明·大理·丽江 8 天 7 晚私家团",
     "쿤밍·다리·리장 8일 프라이빗 투어",
   ),
+  metadataTitle: l(
+    "Lijiang, Dali & Kunming: 8-Day Yunnan Private Tour",
+    "昆明·大理·丽江 8 天 7 晚私家团",
+    "쿤밍·다리·리장 8일 프라이빗 투어",
+  ),
   eyebrow: l(
     "Kunming to Dali and Lijiang, then back for an easier departure",
     "昆明进，经大理与丽江，再回昆明从容返程",

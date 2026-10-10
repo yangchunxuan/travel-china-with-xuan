@@ -321,6 +321,11 @@ export default {
           description: "浏览目的地资料和实用对比指南。",
         },
         {
+          label: "丽江古城攻略：维护费、看什么、玩几天",
+          href: "/zh/guides/lijiang-old-town/",
+          description: "先看这篇：世界遗产的三个部分、50 元古城维护费和玉龙雪山。",
+        },
+        {
           label: "你的中国行程是不是太赶？",
           href: "/zh/guides/is-your-china-itinerary-too-rushed/",
           description: "判断换酒店或再加一日游，是否让转场成本超过收益。",

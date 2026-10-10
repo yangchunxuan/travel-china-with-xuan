@@ -73,6 +73,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "more-planning", type: "internal-links", title: "继续规划", items: [
     { label: "选择丽江古城还是束河", href: "/zh/guides/lijiang-old-town-or-shuhe-where-to-stay/", description: "确定丽江角色后再选酒店。" },
+    { label: "丽江古城攻略：维护费、看什么、玩几天", href: "/zh/guides/lijiang-old-town/", description: "先看这篇：世界遗产的三个部分、50 元古城维护费和玉龙雪山。" },
     { label: "准备中国铁路旅行", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "把旅客流程与路线设计分开核对。" },
     { label: "测试路线是否太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "转场与恢复后再计算可用日。" },
     { label: "选择正确的大理古城下车点", href: "/zh/guides/dali-station-to-old-town/", description: "按住宿位置选择南门、洱海门、苍山门或北门下车点，保存中文目的地卡，避免下错地点后拖着行李横穿古城。" },

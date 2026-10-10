@@ -37,6 +37,7 @@ const body = {
     ] },
     { id: "internal-links", type: "internal-links", title: "Put the mountain day into a Lijiang journey", items: [
       { label: "Kunming, Dali & Lijiang eight-day private tour", href: "/tours/kunming-dali-lijiang-8-day-private-tour/", description: "See the published Spruce Meadow and Blue Moon Valley plan; Glacier Park needs a separate check." },
+      { label: "Lijiang: Old Town fee, what to see and how many days", href: "/guides/lijiang-old-town/", description: "Start here: the three World Heritage parts, the RMB 50 maintenance fee and the snow mountain." },
       { label: "Lijiang or Shangri-La route order", href: "/guides/lijiang-shangri-la-transport-route/", description: "Check the wider journey before fixing your mountain date." }
     ] },
     { id: "sources", type: "sources", title: "Official and operator references", items: [

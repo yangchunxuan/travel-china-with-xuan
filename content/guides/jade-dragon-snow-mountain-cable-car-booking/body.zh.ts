@@ -37,6 +37,7 @@ const body = {
     ] },
     { id: "internal-links", type: "internal-links", title: "把雪山放进丽江行程", items: [
       { label: "昆明—大理—丽江 8 日私家团", href: "/zh/tours/kunming-dali-lijiang-8-day-private-tour/", description: "查看已发布的云杉坪与蓝月谷安排；冰川公园须单独核实。" },
+      { label: "丽江古城攻略：维护费、看什么、玩几天", href: "/zh/guides/lijiang-old-town/", description: "先看这篇：世界遗产的三个部分、50 元古城维护费和玉龙雪山。" },
       { label: "丽江和香格里拉怎么安排顺序", href: "/zh/guides/lijiang-shangri-la-transport-route/", description: "先看整体线路，再固定雪山游览日。" }
     ] },
     { id: "sources", type: "sources", title: "官方与运营方资料", items: [

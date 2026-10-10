@@ -1,0 +1,104 @@
+{
+  "id": "furong-ancient-town",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "xiangxi",
+    "furong-ancient-town",
+    "night-visit",
+    "tickets",
+    "trip-planning"
+  ],
+  "destinations": [
+    "xiangxi",
+    "zhangjiajie",
+    "china"
+  ],
+  "heroImagePath": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/furong-waterfall-1280.webp",
+  "imageWidth": 1280,
+  "imageHeight": 742,
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "sourceReviewedDate": "2026-10-10",
+  "search": {
+    "section": "explore",
+    "family": "entity",
+    "primaryIntent": "understand"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "searchTerms": {
+    "en": [
+      "furong ancient town",
+      "furong town",
+      "furong town china",
+      "furong zhen",
+      "hibiscus town china"
+    ],
+    "zh": [
+      "芙蓉镇",
+      "芙蓉镇门票",
+      "芙蓉镇夜景",
+      "张家界到芙蓉镇"
+    ],
+    "ko": [
+      "부용진",
+      "부용진 입장료",
+      "부용진 야경"
+    ]
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/furong-ancient-town/",
+      "title": "Furong Ancient Town, China: Waterfall, Tickets & Night Visit",
+      "headline": "Furong Ancient Town: The Town on a Waterfall, When to Go and How to Reach It from Zhangjiajie",
+      "description": "Furong Ancient Town in western Hunan stands on a 60 m waterfall. Tickets, the 08:00–midnight hours, why to stay for the lights and how to get there.",
+      "heroAlt": "Furong Ancient Town's wooden stilt houses above the waterfall and the river on an overcast day",
+      "navTitle": "Furong Ancient Town",
+      "featuredLinkLabel": "Plan Furong Ancient Town",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Hunan",
+        "Furong Town",
+        "Night visit"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/furong-ancient-town/",
+      "title": "芙蓉镇攻略：瀑布古镇门票、夜景与张家界怎么去",
+      "headline": "湘西芙蓉镇：挂在瀑布上的古镇，几点去、怎么从张家界过去",
+      "description": "湘西芙蓉镇建在约 60 米高的瀑布上。门票、08:00 到午夜的开放时间、为什么要留到亮灯以后，以及从张家界、凤凰怎么过去。",
+      "heroAlt": "阴天的芙蓉镇，木结构吊脚楼建在瀑布和河岸上方",
+      "navTitle": "芙蓉镇",
+      "featuredLinkLabel": "规划芙蓉镇",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "湖南",
+        "芙蓉镇",
+        "夜游"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/furong-ancient-town/",
+      "title": "중국 부용진: 폭포 마을 입장권, 야경, 가는 법",
+      "headline": "후난성 부용진: 폭포 위 마을, 언제 가고 장가계에서 어떻게 가나",
+      "description": "후난성 서부의 부용진은 높이 약 60m 폭포 위에 서 있습니다. 입장권, 08:00~자정 운영, 조명을 보려면 왜 머물러야 하는지, 장가계에서 가는 법.",
+      "heroAlt": "흐린 날 폭포와 강 위로 목조 가옥이 늘어선 부용진",
+      "navTitle": "부용진",
+      "featuredLinkLabel": "부용진 계획하기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "후난",
+        "부용진",
+        "야경"
+      ]
+    }
+  }
+}

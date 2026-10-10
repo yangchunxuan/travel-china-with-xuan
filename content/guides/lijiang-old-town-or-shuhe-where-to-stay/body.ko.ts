@@ -321,6 +321,11 @@ export default {
           description: "목적지 중심 가이드와 실용적인 비교 글을 살펴보세요.",
         },
         {
+          label: "리장: 고성 유지비, 볼거리, 며칠 일정",
+          href: "/ko/guides/lijiang-old-town/",
+          description: "먼저 읽기: 세계유산 세 구역, 50위안 유지비, 옥룡설산.",
+        },
+        {
           label: "중국 일정이 너무 빠듯한가요?",
           href: "/ko/guides/is-your-china-itinerary-too-rushed/",
           description: "호텔 이동이나 당일치기 추가가 얻는 것보다 이동 부담을 더 키우는지 확인하세요.",

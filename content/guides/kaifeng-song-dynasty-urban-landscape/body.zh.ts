@@ -496,6 +496,11 @@ const body: StructuredPageBody = {
           description: "在另一类城市遗址中，继续把实物证据、重建与城市规划分层理解。",
         },
         {
+          label: "少林寺攻略：门票、功夫表演与路线",
+          href: "/zh/guides/shaolin-temple/",
+          description: "80 元门票包含什么，要留多少时间。",
+        },
+        {
           label: "学习观察斗拱与中国木构",
           href: "/zh/guides/dougong-and-chinese-timber-frame-reading/",
           description: "提出结构问题，而不是只凭建筑轮廓判断年代。",

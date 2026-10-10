@@ -1890,3 +1890,23 @@ the quoted transport and transfers remain subject to written confirmation.
   Guangzhou–Shunde–Foshan tour card). Canton Tower by day, with Haixin Bridge and the Pearl River.
 - Evidence boundary: the tower and bridge only; no claim about opening hours, lighting times or ticketing.
 
+
+### Pingyao, Shaolin Temple and Furong guide photos (October 10, 2026)
+
+Downloaded from Wikimedia Commons on 2026-10-10 at the owner's request, to replace a 1600×398 panorama hero
+(Pingyao) and an 800×1200 portrait hero (Shaolin Temple) and to give the Furong guide a landscape body photo.
+Each derivative is resized (heroes also cropped to 16:10) and converted to WebP without EXIF. Nothing is written
+on any of them; credits are in the caption or the page sources.
+
+| Use | Source | Licence | Source SHA-256 | Derivative; SHA-256 |
+| --- | --- | --- | --- | --- |
+| `pingyao-ancient-city` — hero | [Pingyao city wall.jpg](https://commons.wikimedia.org/wiki/File:Pingyao_city_wall.jpg), Gisling, October 2008; 2000 × 1333 | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | `28e133c5a0fd0c9359eee15a77804e3a811b99b38439f107e6a831212d21b10a` | `public/images/guides/pingyao-ancient-city/hero-1600.webp`, 1600 × 1000; `4a14d327121036c3654e05c2f5fdebf11b09dce3d607893d94237bf6aa5ef458` |
+| `pingyao-ancient-city` — South Street figure | [Pingyao marketstreet.jpg](https://commons.wikimedia.org/wiki/File:Pingyao_marketstreet.jpg) ("View from Market Tower"), severin.stalder, 2012-06-19; 4201 × 2790 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | `c4940ae7f3fe197082243885744a58b0d5c719adbc112811dc4104730dec7302` | `public/images/guides/pingyao-ancient-city/south-street-1600.webp`, 1600 × 1063; `a6c12907253cc2932365c22034289e05bc45f6d9c35c8a110591d2dc90c7ae0a` |
+| `shaolin-temple` — hero | [Shaolin Temple (10200955683).jpg](https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10200955683).jpg), Gary Todd, 2012-11-14; 5184 × 3456 | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `4696d51719b6721a5411c4db95ca30fd615226c3d38f9adc8fa1e4e2fafb5274` | `public/images/guides/shaolin-temple/hero-1600.webp`, 1600 × 1000; `6d358004b9c443de9079e153dce94c1eb7589d0510828f4d3164b7ab56b633cf` |
+| `shaolin-temple` — Pagoda Forest figure | [少林寺塔林 - panoramio (1).jpg](https://commons.wikimedia.org/wiki/File:%E5%B0%91%E6%9E%97%E5%AF%BA%E5%A1%94%E6%9E%97_-_panoramio_(1).jpg), 江上清风1961, 2013-04-23; 2272 × 1704 | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | `5f4c7a313286f012a14676fb1ab236d5ea6e8bac2addabda43e6fdf59a4b7cf3` | `public/images/guides/shaolin-temple/pagoda-forest-1600.webp`, 1600 × 1200; `10a80554eb057e29570e1a27ae234ac1d7f92c0709afc63f56c2d354bf1b2e82` |
+| `furong-ancient-town` — aerial figure | [1 furong aerial panorama 2017.jpg](https://commons.wikimedia.org/wiki/File:1_furong_aerial_panorama_2017.jpg), Chensiyuan, 2016-12-30; 8056 × 3543 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `9edee0ecd7f1fba25fb4f8c0fd1309c2ee69733cf29a403463357d333bdc0f14` | `public/images/guides/furong-ancient-town/aerial-1600.webp`, 1600 × 703; `bf67684e38ae312c64f4d77b631a929f5a89c8a14af0a9e94dddc3cf64f552a3` |
+
+Evidence boundary: the Pingyao wall photo dates from 2008 and the street photo from 2012; they show the wall and
+South Street, not current stalls, crowds or opening arrangements. The Shaolin gate photo dates from 2012 and shows
+the mountain gate only. People in the Pingyao street photo are small and not identifiable; a brighter street-level
+photo of the Market Tower was rejected because stallholders' faces were prominent.

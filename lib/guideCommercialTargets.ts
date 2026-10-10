@@ -227,6 +227,21 @@ export const guideTargets = {
   "wangxian-valley": [
     productTarget("jingdezhen-wuyuan-wangxian-6-day-private-tour"),
   ],
+  "lijiang-old-town": [
+    productTarget("kunming-dali-lijiang-8-day-private-tour"),
+  ],
+  "furong-ancient-town": [
+    productTarget("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
+  "fenghuang-ancient-town": [
+    productTarget("zhangjiajie-furong-fenghuang-7-day-private-tour"),
+  ],
+  "pingyao-ancient-city": [
+    productTarget("datong-pingyao-6-day-private-tour"),
+  ],
+  "shaolin-temple": [
+    productTarget("luoyang-dengfeng-kaifeng-6-day-private-tour"),
+  ],
   "yangtze-cruise-fit-china-itinerary": [
     productTarget("chongqing-yangtze-cruise-6-day-private-tour"),
     productTarget("beijing-xian-yangtze-cruise-shanghai-12-day-private-tour"),
