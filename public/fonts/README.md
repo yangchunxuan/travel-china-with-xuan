@@ -106,8 +106,9 @@ regenerated.
 
 2026-10-10, second pass (the vegetarian and halal guides added 婆, 尹, 煸, 瓜, 耆,
 茄, 茎, 荤, 谧, 酋 and 馍): the Chinese source subset was regenerated the same way
-from the same `NotoSerifSC[wght].ttf` (git blob `eab063fa`). All 3,021 earlier
-code points and their advance widths are preserved, the slice plan is
+from the same `NotoSerifSC[wght].ttf` (git blob `eab063fa`), on top of the
+subset merged with PR #320. All 3,026 earlier code points and their advance
+widths are preserved, the slice plan is
 unchanged and the 11 new glyphs join the extra slice. Korean subsets untouched.
 
 Use `fonttools varLib.instancer` for the fixed Noto Serif SC instance and
