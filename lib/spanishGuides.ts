@@ -1,5 +1,15 @@
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { comoPagarEnChina } from "./spanish-guides/como-pagar-en-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { guerrerosDeTerracotaXian } from "./spanish-guides/guerreros-de-terracota-xian.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { montanasDeAvatarChina } from "./spanish-guides/montanas-de-avatar-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { murallaChinaDesdePekin } from "./spanish-guides/muralla-china-desde-pekin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { ososPandaChengdu } from "./spanish-guides/osos-panda-chengdu.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { tarjetaDeLlegadaChina } from "./spanish-guides/tarjeta-de-llegada-china.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { visadoChinaEspanoles } from "./spanish-guides/visado-china-espanoles.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -10,7 +20,14 @@ export type { SpanishGuide } from "./spanishGuideTypes";
 
 /** Spanish guides, in the order the Spanish guides page lists them. */
 export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
+  // Before the trip.
   visadoChinaEspanoles,
+  comoPagarEnChina,
+  tarjetaDeLlegadaChina,
+  // Places.
+  murallaChinaDesdePekin,
+  guerrerosDeTerracotaXian,
+  ososPandaChengdu,
   montanasDeAvatarChina,
   yangshuoQueVer,
 ]);
