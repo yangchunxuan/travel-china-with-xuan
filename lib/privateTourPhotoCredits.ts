@@ -3,6 +3,7 @@ import { privateTourExpansionPhotoCreditsBySlug } from "./privateTourExpansionPh
 import { privateTourExpansionPhaseTwoPhotoCreditsBySlug } from "./privateTourExpansionPhaseTwoPhotoCredits";
 import { privateTourLongHaulPhotoCreditsBySlug } from "./privateTourLongHaulPhotoCredits";
 import { jiangnanArtPrivateTourPhotoCreditsBySlug } from "./privateTourJiangnanArtProduct";
+import { fiveCityPrivateTourPhotoCreditsBySlug } from "./privateTourFiveCityProduct";
 import { privateTourNortheastWinterPreviewPhotoCreditsBySlug } from "./privateTourNortheastWinterPreviewProducts";
 import { privateTourAdditionalCreditsBySlug } from "./privateTourPhotoAdditions";
 import { privateTourSceneCreditsBySlug } from "./privateTourSceneMedia";
@@ -58,6 +59,7 @@ export const privateTourPhotoCreditsBySlug: Readonly<
   ...privateTourExpansionPhaseTwoPhotoCreditsBySlug,
   ...privateTourLongHaulPhotoCreditsBySlug,
   ...jiangnanArtPrivateTourPhotoCreditsBySlug,
+  ...fiveCityPrivateTourPhotoCreditsBySlug,
   ...privateTourNortheastWinterPreviewPhotoCreditsBySlug,
   "shanghai-suzhou-hangzhou-6-day-private-tour": [
     credit(

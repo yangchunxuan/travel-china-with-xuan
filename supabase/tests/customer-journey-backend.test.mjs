@@ -50,9 +50,10 @@ test("v2 accepts exact version/notice pairs and bounded journey types without ch
 });
 
 test("v2 product selections use published products and exact package/numeric party combinations", () => {
-  // Published inquiry products include five Northeast winter routes and the
-  // Jiangnan art route, plus the classic Zhangjiajie identity.
-  assert.equal(Object.keys(trafficProductPackages).length, 54);
+  // Published inquiry products include five Northeast winter routes, the
+  // Jiangnan art route and the five-city 13-day route, plus the classic
+  // Zhangjiajie identity.
+  assert.equal(Object.keys(trafficProductPackages).length, 55);
   assert.deepEqual(
     Object.keys(trafficProductTravelerCounts).sort(),
     Object.keys(trafficProductPackages).sort(),

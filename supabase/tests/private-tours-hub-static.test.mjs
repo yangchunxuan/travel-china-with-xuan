@@ -88,7 +88,7 @@ test("every card carries a guide-language badge and one currency per language", 
   );
 });
 const reviewedDerivativeRightsSha256 =
-  "ba0715adeff8deba100ec8d08eee11464f3fb18fd024345a73dd3d5f8ce76fa8";
+  "45a4bc9acdd9f883ab996ea164d8140c22d59ef337bf7b32f2b7b3cb91dc2830";
 
 test("published private-tour catalog contains every current source in every locale", async () => {
   assert.equal(assertPublishedPrivateTourCatalogIntegrity(), true);

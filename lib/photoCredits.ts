@@ -17,6 +17,12 @@ export interface PhotoCredit {
  * credit for that file. Owner photos and CC0 need none.
  */
 export const tourCardCredits: Readonly<Partial<Record<string, PhotoCredit>>> = {
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": {
+    author: "Lloyd Tudor",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Mutianyu_section_of_the_Great_Wall_of_China.jpg",
+  },
   "beijing-xian-shanghai-12-day-private-tour": {
     author: "Pixelflake",
     license: "CC BY-SA 3.0",

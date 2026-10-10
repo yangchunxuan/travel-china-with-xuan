@@ -338,9 +338,23 @@ const productContexts = {
       "guilin-yangshuo-transport-route",
     ],
     relatedProducts: [
+      p("beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"),
       p("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
       p("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour"),
       p("beijing-xian-shanghai-12-day-private-tour"),
+    ],
+  },
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": {
+    destinations: ["beijing", "xian", "chengdu", "shanghai"],
+    guides: [
+      "china-14-day-itinerary",
+      "beijing-xian-chengdu-route-order",
+      "great-wall-section-selector-from-beijing",
+      "guilin-yangshuo-transport-route",
+    ],
+    relatedProducts: [
+      p("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+      p("beijing-xian-guilin-shanghai-10-day-private-tour"),
     ],
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
@@ -603,6 +617,7 @@ const approvedCommercialProductSlugs = [
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",

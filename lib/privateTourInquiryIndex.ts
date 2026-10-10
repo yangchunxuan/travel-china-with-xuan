@@ -397,4 +397,12 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
       { id: "private-guided", prices: [] },
     ],
   },
+  {
+    slug: "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 13-Day Private Tour", zh: "北京·西安·成都·桂林·上海 13 天 12 晚私家团", ko: "베이징·시안·청두·계림·상하이 13일 프라이빗 투어", ja: "北京・西安・成都・桂林・上海 13日間（12泊）プライベートツアー" },
+    packages: [
+      { id: "with-hotels", prices: [] },
+      { id: "without-hotels", prices: [] },
+    ],
+  },
 ];

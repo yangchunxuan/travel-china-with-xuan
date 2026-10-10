@@ -176,6 +176,7 @@ export const guideTargets = {
   ],
   "beijing-xian-chengdu-route-order": [
     productTarget("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
+    productTarget("beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"),
   ],
   "chengdu-chongqing-zhangjiajie-itinerary": [
     productTarget("chengdu-chongqing-8-day-private-tour"),

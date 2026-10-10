@@ -232,7 +232,7 @@ type ImaginePageCopy = (typeof jiangnanPageCopy)[PrivateTourLocale];
 
 const JIANGNAN_ART_TOUR_SLUG = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 
-type JiangnanArtPageCopy = Pick<
+type RouteSectionCopy = Pick<
   ImaginePageCopy,
   | "heroPromise"
   | "facts"
@@ -249,7 +249,7 @@ type JiangnanArtPageCopy = Pick<
   | "transportTitle"
 >;
 
-const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", JiangnanArtPageCopy> = {
+const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
   en: {
     heroPromise: "Meet old Jiangnan first. Then watch Shanghai remake it.",
     facts: [
@@ -342,6 +342,108 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", JiangnanArtPageCopy>
     hotelTitle: "11泊、四つの宿",
     transportTitle: "ガイド・車・列車・入場券",
   },
+};
+
+const FIVE_CITY_TOUR_SLUG = "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour";
+
+const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
+  en: {
+    heroPromise: "Five cities in one line across China, from the Great Wall to the Bund.",
+    facts: [
+      { label: "Route", value: "Beijing 3 · Xi'an 2 · Chengdu 2 · Guilin 3 · Shanghai 2 nights" },
+      { label: "Between cities", value: "2 high-speed trains + 2 flights, booked by us" },
+      { label: "Stay", value: "12 nights in 4-star hotels, or book your own" },
+      { label: "Price", value: "Quoted for your dates and group" },
+    ],
+    overviewEyebrow: "Why this order",
+    overviewTitle: "Emperors first, Shanghai last.",
+    overviewBody:
+      "Beijing and Xi'an tell the imperial story: the Wall, the palace, the first emperor's army. Chengdu slows everything down with pandas and tea. Guilin is the landscape printed on the 20-yuan note. Shanghai comes last, so the trip ends in the China of today. The route runs one way, and no day is spent going back.",
+    routeEyebrow: "Day by day",
+    routeTitle: "Thirteen days, four long hops, no backtracking.",
+    routeBody:
+      "The two shorter crossings are about four hours by high-speed train, the two longer ones are short flights, and someone from our team is waiting at every station and airport. Times are a guide, not a timetable: if a place deserves more of your day, you stay longer.",
+    serviceEyebrow: "Where you sleep, who looks after you",
+    serviceTitle: "4-star hotels, and a local guide in every city.",
+    serviceBody:
+      "Each city has its own English-speaking guide and a private vehicle sized to your group. We book every train and flight in your passport names, with a checked bag on both flights. Prefer your own hotels? Everything else stays the same.",
+    hotelTitle: "Twelve nights, five cities",
+    transportTitle: "Guides, vehicles, trains, flights and tickets",
+  },
+  zh: {
+    heroPromise: "一条线横穿中国五座城，从长城一路走到外滩。",
+    facts: [
+      { label: "路线", value: "北京 3 晚 · 西安 2 晚 · 成都 2 晚 · 桂林 3 晚 · 上海 2 晚" },
+      { label: "城际交通", value: "2 段高铁 + 2 段航班，由我们来订" },
+      { label: "住宿", value: "12 晚四星酒店，也可自己订" },
+      { label: "价格", value: "按日期与人数报价" },
+    ],
+    overviewEyebrow: "为什么这样排",
+    overviewTitle: "从帝王说起，最后到上海。",
+    overviewBody:
+      "北京和西安讲帝王的故事：长城、故宫、秦始皇的军阵。成都用熊猫和茶把节奏放慢。桂林就是印在 20 元人民币上的那片山水。上海放在最后，旅程结束在今天的中国。路线一路向前，没有一天花在走回头路上。",
+    routeEyebrow: "每日安排",
+    routeTitle: "四段长路，一路向前。",
+    routeBody:
+      "两段较短的路坐高铁，约四个小时；两段较长的坐飞机。每个车站、每个机场都有我们的人在等你。时间是参考，不是时刻表：哪里值得多待，就多待一会儿。",
+    serviceEyebrow: "住在哪里，谁照顾你",
+    serviceTitle: "住四星酒店，每城有导游。",
+    serviceBody:
+      "每座城市有自己的英语导游和按人数安排的专车。高铁和航班都由我们用你的护照实名订好，两段航班都含托运行李。想自己订酒店？其余一切不变。",
+    hotelTitle: "十二晚，五座城市",
+    transportTitle: "导游、用车、高铁、航班与门票",
+  },
+  ko: {
+    heroPromise: "중국을 한 줄로 가로지르는 다섯 도시, 만리장성에서 와이탄까지.",
+    facts: [
+      { label: "동선", value: "베이징 3박 · 시안 2박 · 청두 2박 · 계림 3박 · 상하이 2박" },
+      { label: "도시간 이동", value: "고속철도 2회 + 항공편 2회, 저희가 예약" },
+      { label: "숙박", value: "4성급 호텔 12박 또는 직접 예약" },
+      { label: "가격", value: "날짜와 인원별 견적" },
+    ],
+    overviewEyebrow: "왜 이 순서인가",
+    overviewTitle: "황제의 도시를 먼저, 상하이는 마지막에.",
+    overviewBody:
+      "베이징과 시안은 황제의 이야기를 들려줍니다. 만리장성, 자금성, 진시황의 군대. 청두는 판다와 차로 속도를 늦추고, 계림은 20위안 지폐에 그려진 바로 그 풍경입니다. 상하이를 마지막에 두어 여행은 오늘의 중국에서 끝납니다. 동선은 한 방향이라 되돌아가는 날이 없습니다.",
+    routeEyebrow: "날짜별 일정",
+    routeTitle: "13일, 긴 이동 네 번, 되돌아가지 않는 여정.",
+    routeBody:
+      "짧은 두 구간은 고속철도로 약 네 시간, 긴 두 구간은 짧은 비행입니다. 모든 역과 공항에서 저희 쪽 사람이 기다립니다. 시간은 기준일 뿐 시간표가 아닙니다. 더 머물 만한 곳이면 더 머뭅니다.",
+    serviceEyebrow: "어디서 자고, 누가 챙기는가",
+    serviceTitle: "4성급 호텔, 그리고 도시마다 현지 가이드.",
+    serviceBody:
+      "도시마다 영어 가이드와 인원에 맞춘 전용차가 있습니다. 열차와 항공편은 저희가 여권 이름으로 예약하고, 두 항공편 모두 위탁 수하물이 포함됩니다. 호텔을 직접 예약하셔도 나머지는 그대로입니다.",
+    hotelTitle: "12박, 다섯 도시",
+    transportTitle: "가이드, 차량, 열차, 항공편과 입장권",
+  },
+  ja: {
+    heroPromise: "中国を一本の線で横断する5都市、万里の長城から外灘まで。",
+    facts: [
+      { label: "行程", value: "北京3泊 · 西安2泊 · 成都2泊 · 桂林3泊 · 上海2泊" },
+      { label: "都市間移動", value: "高速鉄道2区間＋国内線2区間、手配は当社" },
+      { label: "宿泊", value: "4つ星ホテル12泊、またはご自身で手配" },
+      { label: "料金", value: "日程と人数に応じたお見積もり" },
+    ],
+    overviewEyebrow: "この順番にした理由",
+    overviewTitle: "皇帝が先で、上海は最後。",
+    overviewBody:
+      "北京と西安は皇帝の物語。長城、故宮、始皇帝の軍団です。成都ではパンダとお茶で旅のペースを落とし、桂林は20元札に描かれたあの風景。上海を最後に置くので、旅は今の中国で終わります。ルートは一方向で、来た道を戻る日はありません。",
+    routeEyebrow: "日ごとの行程",
+    routeTitle: "移動は4回、後戻りなし。",
+    routeBody:
+      "短い2区間は高速鉄道で約4時間、長い2区間は短いフライトです。どの駅にもどの空港にも当社のスタッフが待っています。時刻は目安で、時刻表ではありません。もっと居たい場所なら、長く留まります。",
+    serviceEyebrow: "泊まる場所と、旅を支える人",
+    serviceTitle: "宿は4つ星、案内は現地。",
+    serviceBody:
+      "各都市に英語ガイドと人数に合わせた専用車がつきます。列車と国内線はパスポートの名前で当社が予約し、2回のフライトとも受託手荷物込みです。ホテルをご自身で手配しても、それ以外は変わりません。",
+    hotelTitle: "12泊、5つの都市",
+    transportTitle: "ガイド・車・列車・国内線・入場券",
+  },
+};
+
+const routeSectionCopyBySlug: Readonly<Record<string, Record<PrivateTourLocale | "ja", RouteSectionCopy>>> = {
+  [JIANGNAN_ART_TOUR_SLUG]: jiangnanArtPageCopy,
+  [FIVE_CITY_TOUR_SLUG]: fiveCityPageCopy,
 };
 
 const forestFinalCopy: Record<PrivateTourLocale, Pick<ImaginePageCopy, "finalEyebrow" | "finalTitle" | "finalBody" | "contact">> = {
@@ -649,7 +751,8 @@ function getPageCopy(product: LocalizedPrivateTourProduct): ImaginePageCopy {
   }
   if (product.slug === SHANGHAI_JIANGNAN_TOUR_SLUG) return jiangnanPageCopy[product.locale];
   const copy = buildGenericPageCopy(product);
-  if (product.slug === JIANGNAN_ART_TOUR_SLUG) return { ...copy, ...jiangnanArtPageCopy[product.locale] };
+  const sectionCopy = routeSectionCopyBySlug[product.slug];
+  if (sectionCopy) return { ...copy, ...sectionCopy[product.locale] };
   return product.slug === "zhangjiajie-forest-4-day-private-tour"
     ? { ...copy, ...forestFinalCopy[product.locale] }
     : copy;
@@ -777,6 +880,7 @@ const compactChineseRouteTitleSlugs = new Set([
   "beijing-xian-shanghai-8-day-private-tour",
   "beijing-xian-guilin-hong-kong-10-day-private-tour",
   "beijing-xian-yangtze-cruise-shanghai-12-day-private-tour",
+  FIVE_CITY_TOUR_SLUG,
 ]);
 
 function displayTourTitle(
@@ -858,8 +962,8 @@ export function ShanghaiJiangnanImaginePage({
       ? japanesePageCopy()
       : isNortheastWinterTour(product.slug)
         ? northeastWinterJapanesePageCopy(localized)
-      : product.slug === JIANGNAN_ART_TOUR_SLUG
-        ? { ...genericJapanesePageCopy(localized), ...jiangnanArtPageCopy.ja }
+      : routeSectionCopyBySlug[product.slug]
+        ? { ...genericJapanesePageCopy(localized), ...routeSectionCopyBySlug[product.slug].ja }
         : genericJapanesePageCopy(localized)
     : getPageCopy(localized);
   const jaPresentation = jaPilotCopy.tour.presentation;
@@ -874,7 +978,7 @@ export function ShanghaiJiangnanImaginePage({
       ...credit,
       subject: japanesePilot
         ? jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject
-        : product.slug === JIANGNAN_ART_TOUR_SLUG
+        : routeSectionCopyBySlug[product.slug]
           ? japaneseJiangnanPhotoCreditSubjectsBySourceUrl[credit.sourceUrl] ?? credit.subject
           : `写真 ${index + 1}`,
     } : credit);

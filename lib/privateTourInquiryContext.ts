@@ -46,6 +46,7 @@ export const privateTourInquirySlugs = [
   "shenzhen-family-tech-4-day-private-tour",
   "beijing-xian-shanghai-12-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
@@ -445,6 +446,11 @@ const privateTourInquiryNames: Readonly<
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Private Tour",
     zh: "北京·西安·成都·桂林·上海 14 天 13 晚私家团",
     ko: "베이징·시안·청두·계림·상하이 14일 프라이빗 투어",
+  },
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": {
+    en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 13-Day Private Tour",
+    zh: "北京·西安·成都·桂林·上海 13 天 12 晚私家团",
+    ko: "베이징·시안·청두·계림·상하이 13일 프라이빗 투어",
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     en: "Beijing, Xi'an, Chengdu, Guilin & Shanghai: 14-Day Small-Group Tour",
