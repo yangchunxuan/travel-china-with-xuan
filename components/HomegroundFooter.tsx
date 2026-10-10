@@ -21,14 +21,13 @@ import {
   type HomegroundHashTarget,
 } from "../lib/homegroundNavigation";
 import {
-  getHomegroundFacebookPageUrl,
   getHomegroundSocialProfiles,
   type HomegroundSocialPlatform,
 } from "../lib/homegroundSocial";
+import { footerDestinationLinks } from "../lib/footerDestinationLinks";
 import type { HomepageDestinationHubItem } from "../lib/homepageEditorial";
 import type { HomegroundPageContext } from "./HomegroundHeader";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
-import styles from "./HomegroundFooter.module.css";
 import homepageStyles from "./HomepageFooter.module.css";
 import { NewsletterFooterLink } from "./NewsletterFooterLink";
 import { getNewsletterConfig } from "../lib/newsletter";
@@ -159,7 +158,6 @@ export function HomegroundFooter({
   const consentCopy = getAnalyticsConsentCopy(locale);
   const studioPath = `${copy.path}studio/`;
   const companyCopy = getHomegroundCompanyCopy(locale);
-  const facebookPageUrl = getHomegroundFacebookPageUrl();
   const socialProfiles = getHomegroundSocialProfiles().filter(
     (profile) => Boolean(profile.url),
   );
@@ -193,11 +191,22 @@ export function HomegroundFooter({
     };
   }, [pageContext]);
 
-  if (variant === "homepage") {
-    return (
+  // One structured dark footer on every page. The homepage keeps the anchors
+  // its header links to (#destinations, #studio) and passes its own city
+  // list; every other page gets the same layout without those ids, so they
+  // cannot collide with ids in page content, and falls back to the shared
+  // list of city hubs.
+  const isHomepage = variant === "homepage";
+  const cityLinks =
+    destinationHubItems.length > 0
+      ? destinationHubItems
+      : footerDestinationLinks[locale];
+
+  return (
       <footer
         className={homepageStyles.footer}
-        data-homeground-homepage-footer="structured-dark"
+        data-homeground-footer="structured-dark"
+        data-homeground-homepage-footer={isHomepage ? "structured-dark" : undefined}
       >
         <div className={homepageStyles.inner}>
           <Link
@@ -216,15 +225,28 @@ export function HomegroundFooter({
               <h2>{sectionLabels.exploreHeading}</h2>
               <ul>
                 <li>
-                  <Link href={guideHubPath}>{sectionLabels.guides}</Link>
+                  <Link
+                    aria-current={pageContext === "guides" ? "page" : undefined}
+                    href={guideHubPath}
+                  >
+                    {sectionLabels.guides}
+                  </Link>
                 </li>
                 <li>
-                  <Link href={tourHubPath}>
+                  <Link
+                    aria-current={pageContext === "tours" ? "page" : undefined}
+                    href={tourHubPath}
+                  >
                     {sectionLabels.privateTours}
                   </Link>
                 </li>
                 <li>
-                  <Link href={planningServicesPath}>{sectionLabels.services}</Link>
+                  <Link
+                    aria-current={pageContext === "services" ? "page" : undefined}
+                    href={planningServicesPath}
+                  >
+                    {sectionLabels.services}
+                  </Link>
                 </li>
                 <li>
                   <Link href={attractionReservationsPath}>{sectionLabels.attractionReservations}</Link>
@@ -232,15 +254,26 @@ export function HomegroundFooter({
               </ul>
             </nav>
 
-            <nav aria-label={copy.cities.listLabel} id="destinations">
-              <h2 id="homepage-city-hubs-title" tabIndex={-1}>
+            <nav
+              aria-label={copy.cities.listLabel}
+              id={isHomepage ? "destinations" : undefined}
+            >
+              <h2
+                id={isHomepage ? "homepage-city-hubs-title" : undefined}
+                tabIndex={isHomepage ? -1 : undefined}
+              >
                 {sectionLabels.destinationsHeading}
               </h2>
               <ul>
                 <li>
-                  <Link href={destinationsHubPath}>{sectionLabels.allDestinations}</Link>
+                  <Link
+                    aria-current={pageContext === "destinations" ? "page" : undefined}
+                    href={destinationsHubPath}
+                  >
+                    {sectionLabels.allDestinations}
+                  </Link>
                 </li>
-                {destinationHubItems.map((city) => (
+                {cityLinks.map((city) => (
                   <li key={city.id}>
                     <Link href={city.href}>{city.label}</Link>
                   </li>
@@ -248,20 +281,41 @@ export function HomegroundFooter({
               </ul>
             </nav>
 
-            <nav aria-label={sectionLabels.homegroundHeading} id="studio">
-              <h2 id="studio-title" tabIndex={-1}>
+            <nav
+              aria-label={sectionLabels.homegroundHeading}
+              id={isHomepage ? "studio" : undefined}
+            >
+              <h2
+                id={isHomepage ? "studio-title" : undefined}
+                tabIndex={isHomepage ? -1 : undefined}
+              >
                 {sectionLabels.homegroundHeading}
               </h2>
               <ul>
                 <li>
-                  <Link href={companyCopy.path}>{companyCopy.navLabel}</Link>
+                  <Link
+                    aria-current={pageContext === "company" ? "page" : undefined}
+                    href={companyCopy.path}
+                  >
+                    {companyCopy.navLabel}
+                  </Link>
                 </li>
                 <li>
-                  <Link href={studioPath}>{copy.navigation.studio}</Link>
+                  <Link
+                    aria-current={pageContext === "studio" ? "page" : undefined}
+                    href={studioPath}
+                  >
+                    {copy.navigation.studio}
+                  </Link>
                 </li>
                 {locale === "zh" ? (
                   <li>
-                    <Link href={homegroundCareersCopy.path}>{homegroundCareersCopy.navLabel}</Link>
+                    <Link
+                      aria-current={pageContext === "careers" ? "page" : undefined}
+                      href={homegroundCareersCopy.path}
+                    >
+                      {homegroundCareersCopy.navLabel}
+                    </Link>
                   </li>
                 ) : null}
                 <li>
@@ -374,114 +428,6 @@ export function HomegroundFooter({
           </svg>
         </div>
       </footer>
-    );
-  }
-
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.footerTop}>
-        <div>
-          <strong lang="en">Homeground China</strong>
-          <span>{copy.footer.studioLabel}</span>
-        </div>
-        <nav aria-label={copy.navigation.footerLabel}>
-          {pageContext === "destinations" ? (
-            <span aria-current="page">{sectionLabels.allDestinations}</span>
-          ) : (
-            <Link href={destinationsHubPath}>{sectionLabels.allDestinations}</Link>
-          )}
-          {pageContext === "guides" ? (
-            <span aria-current="page">{sectionLabels.guides}</span>
-          ) : (
-            <Link href={guideHubPath}>{sectionLabels.guides}</Link>
-          )}
-          {pageContext === "tours" ? (
-            <span aria-current="page">{sectionLabels.privateTours}</span>
-          ) : (
-            <Link href={tourHubPath}>{sectionLabels.privateTours}</Link>
-          )}
-          {locale === "en" ? (
-            <Link href="/guides/china-entry-requirements/">
-              {copy.navigation.visa}
-            </Link>
-          ) : null}
-          {pageContext === "services" ? (
-            <span aria-current="page">
-              {sectionLabels.services}
-            </span>
-          ) : (
-            <Link href={planningServicesPath}>
-              {sectionLabels.services}
-            </Link>
-          )}
-          {pageContext === "company" ? (
-            <span aria-current="page">{companyCopy.navLabel}</span>
-          ) : (
-            <Link href={companyCopy.path}>{companyCopy.navLabel}</Link>
-          )}
-          {pageContext === "studio" ? (
-            <span aria-current="page">{copy.navigation.studio}</span>
-          ) : (
-            <Link href={studioPath}>{copy.navigation.studio}</Link>
-          )}
-          {locale === "zh" ? (
-            pageContext === "careers" ? (
-              <span aria-current="page">{homegroundCareersCopy.navLabel}</span>
-            ) : (
-              <Link href={homegroundCareersCopy.path}>{homegroundCareersCopy.navLabel}</Link>
-            )
-          ) : null}
-          <Link
-            aria-current={
-              activeHash === "#faq" ? "location" : undefined
-            }
-            href={sectionHref("#faq")}
-            onClick={(event) => handleSectionClick(event, "#faq")}
-          >
-            {copy.navigation.faq}
-          </Link>
-        </nav>
-      </div>
-      <div className={styles.footerLegal}>
-        <p>
-          {sectionLabels.operatorPrefix}{" "}
-          <Link href={businessPath} lang="zh-Hans">
-            {homegroundBusiness.publicName}{locale === "en" ? sectionLabels.operatorSuffix : ""}
-          </Link>
-          {locale !== "en" ? sectionLabels.operatorSuffix : null}
-          <span>
-            {sectionLabels.codeLabel}:{" "}
-            {homegroundBusiness.unifiedSocialCreditCode}
-          </span>
-          <span>
-            {sectionLabels.licenceLabel}:{" "}
-            {homegroundBusiness.travelAgencyLicenceNumber}
-          </span>
-        </p>
-        <nav aria-label={sectionLabels.legalLabel}>
-          <Link href={businessPath}>{legalCopy.related.business}</Link>
-          <Link href={termsPath}>{legalCopy.related.terms}</Link>
-          <Link href={privacyPath}>{legalCopy.related.privacy}</Link>
-          <NewsletterFooterLink locale={locale} className={styles.footerPrivacyButton} />
-          <button
-            className={styles.footerPrivacyButton}
-            type="button"
-            onClick={openAnalyticsConsentPreferences}
-          >
-            {consentCopy.manage}
-          </button>
-          <Link href={refundPath}>{legalCopy.related.refund}</Link>
-          <a href={`mailto:${homegroundBusiness.serviceEmail}`}>
-            {legalCopy.related.contact}
-          </a>
-          {facebookPageUrl && (
-            <a href={facebookPageUrl}>{copy.footer.facebook}</a>
-          )}
-        </nav>
-      </div>
-      <p className={styles.footerNote}>
-        {copy.footer.copyright(new Date().getFullYear())}
-      </p>
-    </footer>
   );
 }
+

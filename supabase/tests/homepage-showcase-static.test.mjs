@@ -197,9 +197,9 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.doesNotMatch(page, /<section[\s\S]{0,160}id="destinations"/);
   assert.match(page, /destinationHubItems=\{destinationHubItems\}/);
   assert.match(page, /variant="homepage"/);
-  assert.match(footer, /data-homeground-homepage-footer="structured-dark"/);
-  assert.match(footer, /id="destinations"/);
-  assert.match(footer, /id="studio"/);
+  assert.match(footer, /data-homeground-homepage-footer=\{isHomepage \? "structured-dark" : undefined\}/);
+  assert.match(footer, /id=\{isHomepage \? "destinations" : undefined\}/);
+  assert.match(footer, /id=\{isHomepage \? "studio" : undefined\}/);
   assert.match(footerStyles, /\.footer \{[\s\S]{0,100}background: #141413/);
   assert.match(page, /copy\.faq\.items\.slice\(0, 7\)\.map/);
   assert.match(footerStyles, /\.navGrid h2:focus-visible,[\s\S]{0,180}outline:/);

@@ -20,35 +20,42 @@ test("CSS is chunked per webpack chunk, not merged into shared cross-page files"
 });
 
 test("the shared footer carries its own stylesheet instead of the homepage one", async () => {
-  const [footer, footerCss, homeCss] = await Promise.all([
+  const [footer, footerCss, homeCss, japaneseChrome, singleRowCss] = await Promise.all([
     source("components/HomegroundFooter.tsx"),
-    source("components/HomegroundFooter.module.css"),
+    source("components/HomepageFooter.module.css"),
     source("components/HomegroundHomePage.module.css"),
+    source("components/JapaneseTourChrome.tsx"),
+    source("components/HomegroundFooter.module.css"),
   ]);
 
-  assert.match(footer, /import styles from "\.\/HomegroundFooter\.module\.css";/);
+  // 2026-10-10: the owner asked for the homepage footer on every page. The
+  // shared footer is styled by HomepageFooter.module.css alone; it still must
+  // not pull in the homepage's own ~80 KB stylesheet.
+  assert.match(footer, /import homepageStyles from "\.\/HomepageFooter\.module\.css";/);
   assert.doesNotMatch(footer, /HomegroundHomePage\.module\.css/);
+  assert.doesNotMatch(footer, /HomegroundFooter\.module\.css/);
   assert.doesNotMatch(homeCss, /\.footer/);
 
   const usedClasses = new Set(
-    [...footer.matchAll(/\bstyles\.([A-Za-z]+)/g)].map((match) => match[1]),
+    [...footer.matchAll(/\bhomepageStyles\.([A-Za-z]+)/g)].map((match) => match[1]),
   );
   assert.deepEqual(
     [...usedClasses].sort(),
-    ["footer", "footerLegal", "footerNote", "footerPrivacyButton", "footerTop"],
+    ["brand", "brandMark", "copyrightSocial", "footer", "inner", "meta", "navGrid", "operator", "wordmark"],
   );
   for (const className of usedClasses) {
     assert.match(footerCss, new RegExp(`\\.${className}\\b[^{]*\\{`), `.${className} is styled`);
   }
-  for (const locale of ["zh", "ko"]) {
-    assert.match(
-      footerCss,
-      new RegExp(
-        `:global\\(\\.hg-locale-root\\)\\[data-homeground-locale="${locale}"\\] \\.footerTop > div:first-child span \\{[^}]*text-transform: none`,
-      ),
-    );
+  // Pages outside the homepage define the two font variables on their own
+  // roots; the fallbacks cover any root that does not.
+  assert.match(footerCss, /font-family: var\(--hg-brand, var\(--hg-font-brand\)\)/);
+  assert.match(footerCss, /font-family: var\(--hg-editorial, var\(--hg-font-editorial\)\)/);
+
+  // The single-row styles remain only for the Japanese tour pages' own footer.
+  assert.match(japaneseChrome, /import footerStyles from "\.\/HomegroundFooter\.module\.css";/);
+  for (const className of ["footer", "footerLegal", "footerNote", "footerTop"]) {
+    assert.match(singleRowCss, new RegExp(`\\.${className}\\b[^{]*\\{`), `.${className} is styled`);
   }
-  assert.match(footerCss, /@media \(max-width: 680px\) \{\s*\.footerTop \{/);
 });
 
 test("product-preview photos get the same responsive variants as /images/", async () => {

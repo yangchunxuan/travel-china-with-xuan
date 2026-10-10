@@ -1,8 +1,10 @@
 /*
- * Shared footer used by every page except the homepage (which renders the
- * homepage variant from HomepageFooter.module.css). These rules used to live
- * in HomegroundHomePage.module.css, so every page loaded the whole ~80 KB
- * homepage stylesheet just to style five footer classes.
+ * The single-row footer. Until 2026-10-10 every page except the homepage
+ * rendered it; the shared footer (HomegroundFooter.tsx) now renders the
+ * structured layout from HomepageFooter.module.css everywhere, and these
+ * rules remain only for the Japanese tour pages' own footer
+ * (JapaneseTourChrome.tsx). They used to live in HomegroundHomePage.module.css,
+ * so every page loaded the whole ~80 KB homepage stylesheet for five classes.
  *
  * Page roots carry the global marker "hg-locale-root" (see
  * LocaleRoot.module.css); the Chinese and Korean tagline rules key on it.

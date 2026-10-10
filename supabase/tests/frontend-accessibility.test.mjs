@@ -270,7 +270,6 @@ test("same-page navigation moves keyboard focus to its content target", async ()
   assert.match(page, /<main id="main-content" tabIndex=\{-1\}>/);
   for (const headingId of [
     "planning-proof-title",
-    "studio-title",
     "faq-title",
   ]) {
     assert.match(
@@ -278,6 +277,12 @@ test("same-page navigation moves keyboard focus to its content target", async ()
       new RegExp(`<h2 id="${headingId}" tabIndex=\\{-1\\}>`),
     );
   }
+  // 2026-10-10: every page renders the same footer, so the Studio anchor and
+  // its focus target exist only where the header links to them, on the homepage.
+  assert.match(
+    footer,
+    /id=\{isHomepage \? "studio-title" : undefined\}\s*tabIndex=\{isHomepage \? -1 : undefined\}/,
+  );
 });
 
 test("language changes preserve a completed planner result", async () => {

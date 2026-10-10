@@ -128,8 +128,7 @@ test("global navigation puts service pages under the Services item, beside the p
   assert.match(footer, /services: "Trip planning services"/);
   assert.match(footer, /services: "旅行规划服务"/);
   assert.match(footer, /services: "여행 설계 서비스"/);
-  assert.match(footer, /pageContext === "services"/);
-  assert.match(footer, /aria-current="page"/);
+  assert.match(footer, /aria-current=\{pageContext === "services" \? "page" : undefined\}/);
   assert.match(footer, /homegroundBusiness\.publicName/);
   assert.match(footer, /homegroundBusiness\.unifiedSocialCreditCode/);
   assert.match(footer, /const privacyPath\s*=/);

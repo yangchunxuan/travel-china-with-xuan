@@ -38,7 +38,7 @@
 }
 
 .brand strong {
-  font-family: var(--hg-brand);
+  font-family: var(--hg-brand, var(--hg-font-brand));
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.1;
@@ -209,7 +209,7 @@
 
 .wordmark text {
   fill: #2b2b28;
-  font-family: var(--hg-editorial);
+  font-family: var(--hg-editorial, var(--hg-font-editorial));
   font-size: 169px;
 }
 
