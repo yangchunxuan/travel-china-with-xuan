@@ -20,7 +20,7 @@ import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice
 import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.ts";
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
-import { privateTourCurrencyNote } from "../../lib/privateTourCurrencyNote.ts";
+import { privateTourPublishedPriceNote } from "../../lib/privateTourCurrencyNote.ts";
 import * as privateTourMedia from "../../lib/privateTourMedia.ts";
 import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
@@ -44,7 +44,7 @@ async function loadComponent(path, overrides = {}, window) {
     "react/jsx-runtime": require("react/jsx-runtime"),
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/tourContactDraft": { isJiangnanTour },
-    "../lib/privateTourCurrencyNote": { privateTourCurrencyNote },
+    "../lib/privateTourCurrencyNote": { privateTourPublishedPriceNote },
     "../lib/privateTourMedia": privateTourMedia,
     "../lib/analytics": { trackEvent() {} },
     // KeepWords splits Japanese headings into phrases.
@@ -673,7 +673,9 @@ test("the selected-price line names the tour type once and the currency note sit
       assert.equal(new Set(parts.map((part) => part.toLocaleLowerCase())).size, parts.length, `${locale}:${slug} ${line}`);
       assert.ok(!/(프라이빗 투어|private tour|私家团).*\1/iu.test(line), `${locale}:${slug} ${line}`);
       const note = dom.find((node) => attr(node, "class") === "currencyNote");
-      assert.equal(text(note), privateTourCurrencyNote[locale]);
+      assert.equal(text(note), privateTourPublishedPriceNote[locale]);
+      // The note must say the figure is a starting price and that the written quote decides.
+      assert.match(text(note), { en: /starting price.*written quote/u, zh: /每人起价.*书面报价为准/u, ko: /시작가.*서면 견적/u }[locale]);
     }
   }
 });
