@@ -1080,9 +1080,9 @@ const classicChina: PrivateTourProduct = {
         "12일 프라이빗 투어는 1인당 얼마인가요?",
       ),
       answer: l(
-        "Per person, sharing a twin room, prices start at USD 2,880 for 2 travellers, USD 2,200 for 4 and USD 2,170 for 6. The guide and vehicle serve only your group, so the per-person price is higher when fewer of you travel. Single-room supplements and holiday surcharges are extra.",
-        "按双人同住，每人起价：2人¥18,720，4人¥14,300，6人¥14,100。导游和车只服务你们一行，人数越少，每人价格越高。单房差和节假日附加费另计。",
-        "2인 1실 기준 1인 시작가는 2명 ₩4,030,000, 4명 ₩3,080,000, 6명 ₩3,040,000입니다. 가이드와 차량은 일행만 이용하므로 인원이 적을수록 1인 요금이 높아집니다. 1인실 추가금과 공휴일 추가금은 별도입니다.",
+        "Per person, sharing a twin room, prices start at USD 2,890 for 2 travellers, USD 1,960 for 4 and USD 1,730 for 6. The guide and vehicle serve only your group, so the per-person price is higher when fewer of you travel. Single-room supplements and holiday surcharges are extra.",
+        "按双人同住，每人起价：2人¥18,780，4人¥12,740，6人¥11,240。导游和车只服务你们一行，人数越少，每人价格越高。单房差和节假日附加费另计。",
+        "2인 1실 기준 1인 시작가는 2명 ₩4,040,000, 4명 ₩2,740,000, 6명 ₩2,420,000입니다. 가이드와 차량은 일행만 이용하므로 인원이 적을수록 1인 요금이 높아집니다. 1인실 추가금과 공휴일 추가금은 별도입니다.",
       ),
     },
     {

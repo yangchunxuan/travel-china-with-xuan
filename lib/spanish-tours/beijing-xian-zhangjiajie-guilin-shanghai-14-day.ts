@@ -4,10 +4,10 @@ export const beijingXianZhangjiajieGuilinShanghai14DayCopy: SpanishTourCopy = {
   title: "Pekín, Xi'an, Zhangjiajie, Guilin y Shanghái: viaje privado de 14 días",
   metadataTitle: "China en 14 días con Zhangjiajie y Guilin, en privado",
   metadataDescription:
-    "Viaje privado de 14 días: Pekín, Xi'an, Zhangjiajie, río Li y Shanghái. Por persona, 3.890 USD para 2 viajeros y 3.090 para 6; vuelos internos incluidos.",
+    "Viaje privado de 14 días: Pekín, Xi'an, Zhangjiajie, río Li y Shanghái. Por persona, 3.680 USD para 2 viajeros y 2.430 para 6; vuelos internos incluidos.",
   eyebrow: "Zhangjiajie y sus días de caminata, en lugar de los pandas",
   lede:
-    "Dos personas que viajan juntas pagan desde 3.890 USD cada una, en habitación doble, en la ruta privada de 14 días Pekín–Xi'an–Zhangjiajie–Guilin–Shanghái; los vuelos internacionales van aparte. Zhangjiajie tiene tres noches, pero el tren directo de allí a Guilin tarda unas siete horas. Cuente con un día entero de viaje.",
+    "Dos personas que viajan juntas pagan desde 3.680 USD cada una, en habitación doble, en la ruta privada de 14 días Pekín–Xi'an–Zhangjiajie–Guilin–Shanghái; los vuelos internacionales van aparte. Zhangjiajie tiene tres noches, pero el tren directo de allí a Guilin tarda unas siete horas. Cuente con un día entero de viaje.",
   summary:
     "El desayuno está incluido en las 13 noches de hotel. El precio cubre guías locales privados y vehículo en los días de visita, los traslados, las entradas indicadas (también la montaña Tianmen), dos trenes y dos vuelos en clase turista. En Zhangjiajie hay que contar con varias horas de senderos y escaleras, incluso con el ascensor y el teleférico.",
   highlights: [
@@ -107,7 +107,7 @@ export const beijingXianZhangjiajieGuilinShanghai14DayCopy: SpanishTourCopy = {
     {
       question: "¿Cuánto cuesta este viaje de 14 días?",
       answer:
-        "La ruta privada de 14 días Pekín–Xi'an–Zhangjiajie–Guilin–Shanghái cuesta 3.890 USD por persona para dos viajeros en habitación doble, 7.780 USD la pareja. Con cuatro viajeros son 3.290 USD por persona y con seis, 3.090 USD. Incluye 13 noches de hotel con desayuno, guías locales privados y vehículo en los días de visita, las entradas del Parque Forestal y de la montaña Tianmen, dos trenes y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas van aparte. Para otros tamaños de grupo enviamos un presupuesto por escrito.",
+        "La ruta privada de 14 días Pekín–Xi'an–Zhangjiajie–Guilin–Shanghái cuesta 3.680 USD por persona para dos viajeros en habitación doble, 7.360 USD la pareja. Con cuatro viajeros son 2.670 USD por persona y con seis, 2.430 USD. Incluye 13 noches de hotel con desayuno, guías locales privados y vehículo en los días de visita, las entradas del Parque Forestal y de la montaña Tianmen, dos trenes y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas van aparte. Para otros tamaños de grupo enviamos un presupuesto por escrito.",
     },
     {
       question: "¿El guía habla español?",
