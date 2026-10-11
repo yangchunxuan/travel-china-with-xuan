@@ -591,6 +591,14 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
       ),
     },
     {
+      question: l("Do we stay overnight in Yangshuo?", "这条路线会在阳朔过夜吗？", "이 일정에서 양삭에 숙박하나요?"),
+      answer: l(
+        "The published itinerary uses Guilin as the base for three nights. Day 9 is planned as a Li River cruise, visits to Moon Hill and West Street in Yangshuo, then a private drive back to Guilin. There is no overnight stay in Yangshuo in this route.",
+        "公布的行程以桂林为基地，连续住三晚。第 9 天计划乘漓江游船，游览阳朔的月亮山和西街，再乘专车返回桂林。这条路线不安排在阳朔过夜。",
+        "공개된 일정은 계림을 거점으로 3박을 합니다. 9일차에는 이강 유람선을 타고 양삭의 월량산과 서가를 둘러본 뒤 전용차로 계림에 돌아오는 계획입니다. 이 일정에는 양삭 숙박이 없습니다.",
+      ),
+    },
+    {
       question: l("What happens if the Li River is low?", "漓江水位低怎么办？", "이강 수위가 낮으면 어떻게 되나요?"),
       answer: l(
         "In dry winters the operator sometimes shortens the cruise to a round trip on the middle stretch from Yangdi, which keeps the best-known scenery. We check the water a few days before; if that happens, we drive you on to Yangshuo, and Moon Hill and West Street stay in the plan.",

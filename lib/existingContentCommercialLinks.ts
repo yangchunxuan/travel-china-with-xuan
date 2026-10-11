@@ -211,7 +211,7 @@ const productContexts = {
   },
   "harbin-winter-5-day-private-tour": {
     destinations: [],
-    guides: ["china-climate-regions-for-trip-timing"],
+    guides: ["harbin-ice-festival", "china-in-winter", "china-climate-regions-for-trip-timing"],
   },
   "shanghai-suzhou-5-day-private-tour": {
     destinations: ["shanghai"],
@@ -224,7 +224,7 @@ const productContexts = {
   },
   "zhangjiajie-forest-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "zhangjiajie-arrival-departure-stations"],
+    guides: ["avatar-mountains-zhangjiajie", "chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "zhangjiajie-arrival-departure-stations"],
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     destinations: ["zhangjiajie"],

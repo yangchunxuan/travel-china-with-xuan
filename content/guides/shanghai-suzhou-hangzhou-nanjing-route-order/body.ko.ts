@@ -66,6 +66,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "switch-heading", type: "heading", level: 2, text: "다른 형태를 고를 때" },
   { id: "switch-rule", type: "paragraph", text: "관문 배치가 귀환을 없애고 모든 도시가 현지 시간을 받을 가치가 있을 때 한 방향을 쓰세요. 같은 방의 안정성이 왕복 통근의 총비용보다 클 때 상하이 거점을 쓰세요. 이동 한 번으로 지리 이익 대부분을 얻을 때 두 거점을 쓰세요. 고유 목적이 가장 약한 도시를 빼고 네 이름을 지키려고 모든 도시를 도착 저녁과 서두른 아침으로 줄이지 마세요." },
+  {"id": "jiangnan-12-day-route-option", "type": "internal-links", "title": "수향마을에서 하룻밤 머무는 긴 동선", "items": [{"label": "강남 12일 프라이빗 동선 비교", "href": "/ko/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/", "description": "쑤저우 → 퉁리 → 항저우 → 상하이에서 각각 3박, 1박, 2박, 5박을 합니다. 수향마을 1박이 있는 긴 지역 여행이며, 공개된 동선에 난징은 포함되지 않습니다."}]},
   { id: "booking-checklist", type: "list", ordered: false, items: [
     "실제 공항과 정확한 철도역이 동선에 있습니다.",
     "모든 도시에 삭제 후에도 남을 고유 목적이 있습니다.",

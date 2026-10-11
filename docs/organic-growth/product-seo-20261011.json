@@ -1,0 +1,1583 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-10-11",
+  "baseMain": "a13a32e281f6a3fd01f3884d37aee6a1f67624d1",
+  "releaseBoundary": "User authorized publication on 11 October 2026, after preservation of the latest Claude pricing is verified; merge and deploy only after updated checks pass.",
+  "scope": [
+    "jiangnan12",
+    "fivecity13",
+    "forest4",
+    "harbin5"
+  ],
+  "gsc": {
+    "observedAt": "2026-10-11T07:51:39.806563+00:00",
+    "source": "Google Search Console official UI and CSV export",
+    "property": "sc-domain:homegroundchina.com",
+    "searchType": "Web",
+    "periods": {
+      "recent": [
+        "2026-09-11",
+        "2026-10-08"
+      ],
+      "previous": [
+        "2026-08-14",
+        "2026-09-10"
+      ]
+    },
+    "latestAvailableData": "2026-10-08",
+    "uiReportedLagHours": 61,
+    "aggregation": "Page filter contains /tours/SLUG/; all locale versions, all countries and devices",
+    "limitations": [
+      "Country/device/query rows are incomplete after page filtering; they do not reconcile to page totals. Do not interpret omitted categories as zero.",
+      "Jiangnan and five-city have no observations in either window; this is not proof of no search demand or of bad ranking.",
+      "No-impression position and CTR are unavailable, not a rank of zero.",
+      "Small samples cannot establish CTR trends or ranking decline."
+    ],
+    "products": [
+      {
+        "id": "jiangnan12",
+        "slug": "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+        "totals": {
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 0,
+          "previousImpressions": 0,
+          "averagePositionUiRounded": null,
+          "previousPositionUiRounded": null
+        },
+        "dimensions": {
+          "查询数.csv": [],
+          "网页.csv": [],
+          "国家_地区.csv": [],
+          "设备.csv": []
+        },
+        "officialExport": "gsc/jiangnan12/official-export.zip",
+        "observation": "gsc/jiangnan12-observation.txt"
+      },
+      {
+        "id": "fivecity13",
+        "slug": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+        "totals": {
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 0,
+          "previousImpressions": 0,
+          "averagePositionUiRounded": null,
+          "previousPositionUiRounded": null
+        },
+        "dimensions": {
+          "查询数.csv": [],
+          "网页.csv": [],
+          "国家_地区.csv": [],
+          "设备.csv": []
+        },
+        "officialExport": "gsc/fivecity13/official-export.zip",
+        "observation": "gsc/fivecity13-observation.txt"
+      },
+      {
+        "id": "forest4",
+        "slug": "zhangjiajie-forest-4-day-private-tour",
+        "totals": {
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 6,
+          "previousImpressions": 2,
+          "averagePositionUiRounded": 8.8,
+          "previousPositionUiRounded": 4
+        },
+        "dimensions": {
+          "查询数.csv": [
+            {
+              "热门查询": "four points by sheraton zhangjiajie national forest park",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "0",
+              "先前 28 天 展示": "1",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "0",
+              "先前 28 天 排名": "7"
+            }
+          ],
+          "网页.csv": [
+            {
+              "排名靠前的网页": "https://homegroundchina.com/tours/zhangjiajie-forest-4-day-private-tour/",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "6",
+              "先前 28 天 展示": "2",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "8.83",
+              "先前 28 天 排名": "4"
+            }
+          ],
+          "国家_地区.csv": [
+            {
+              "国家/地区": "俄罗斯",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "0",
+              "先前 28 天 展示": "1",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "0",
+              "先前 28 天 排名": "7"
+            }
+          ],
+          "设备.csv": [
+            {
+              "设备": "桌面",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "0",
+              "先前 28 天 展示": "1",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "0",
+              "先前 28 天 排名": "7"
+            }
+          ]
+        },
+        "officialExport": "gsc/forest4/official-export.zip",
+        "observation": "gsc/forest4-observation.txt"
+      },
+      {
+        "id": "harbin5",
+        "slug": "harbin-winter-5-day-private-tour",
+        "totals": {
+          "clicks": 0,
+          "previousClicks": 0,
+          "impressions": 6,
+          "previousImpressions": 2,
+          "averagePositionUiRounded": 13.7,
+          "previousPositionUiRounded": 10.5
+        },
+        "dimensions": {
+          "查询数.csv": [
+            {
+              "热门查询": "빙설대세계",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "1",
+              "先前 28 天 展示": "0",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "2",
+              "先前 28 天 排名": "0"
+            }
+          ],
+          "网页.csv": [
+            {
+              "排名靠前的网页": "https://homegroundchina.com/ko/tours/harbin-winter-5-day-private-tour/",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "3",
+              "先前 28 天 展示": "2",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "5.33",
+              "先前 28 天 排名": "10.5"
+            },
+            {
+              "排名靠前的网页": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "3",
+              "先前 28 天 展示": "0",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "22",
+              "先前 28 天 排名": "0"
+            }
+          ],
+          "国家_地区.csv": [
+            {
+              "国家/地区": "韩国",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "1",
+              "先前 28 天 展示": "0",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "2",
+              "先前 28 天 排名": "0"
+            }
+          ],
+          "设备.csv": [
+            {
+              "设备": "平板电脑",
+              "过去 28 天 点击次数": "0",
+              "先前 28 天 点击次数": "0",
+              "过去 28 天 展示": "1",
+              "先前 28 天 展示": "0",
+              "过去 28 天 点击率": "0%",
+              "先前 28 天 点击率": "0%",
+              "过去 28 天 排名": "2",
+              "先前 28 天 排名": "0"
+            }
+          ]
+        },
+        "officialExport": "gsc/harbin5/official-export.zip",
+        "observation": "gsc/harbin5-observation.txt"
+      }
+    ]
+  },
+  "semrush": {
+    "observations": [
+      {
+        "keyword": "suzhou private tour",
+        "intent": [],
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0.0,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "suzhou tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 1.17,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "shanghai private tour",
+        "intent": [
+          "商务"
+        ],
+        "volume": 40,
+        "kd": 31,
+        "cpcUsd": 3.34,
+        "freshness": "1 个月",
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "hangzhou tour",
+        "intent": [
+          "商务"
+        ],
+        "volume": 50,
+        "kd": 23,
+        "cpcUsd": 1.3,
+        "freshness": "1 个月",
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "harbin tours",
+        "intent": [
+          "信息",
+          "商务"
+        ],
+        "volume": 90,
+        "kd": 14,
+        "cpcUsd": 1.53,
+        "freshness": "1 个月",
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "china private tours",
+        "intent": [
+          "商务"
+        ],
+        "volume": 390,
+        "kd": 32,
+        "cpcUsd": 6.45,
+        "freshness": "1 个月",
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "china tour packages",
+        "intent": [
+          "信息"
+        ],
+        "volume": 880,
+        "kd": 25,
+        "cpcUsd": 2.15,
+        "freshness": "1 个月",
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "beijing xian chengdu guilin shanghai tour",
+        "intent": [],
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0.0,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "shanghai hangzhou suzhou tour",
+        "intent": [],
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0.0,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "suzhou hangzhou shanghai private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "jiangnan private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "china 13 day private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "zhangjiajie 4 day private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "zhangjiajie national forest park private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "harbin 5 day private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "harbin ice festival private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "US",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/us-longtail-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "suzhou tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0.62,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "hangzhou tour",
+        "intent": [
+          "商务"
+        ],
+        "volume": 30,
+        "kd": 26,
+        "cpcUsd": 0.66,
+        "freshness": "1 个月",
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "shanghai private tour",
+        "intent": [
+          "商务"
+        ],
+        "volume": 30,
+        "kd": 20,
+        "cpcUsd": 1.75,
+        "freshness": "1 个月",
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "harbin tours",
+        "intent": [],
+        "volume": 170,
+        "kd": null,
+        "cpcUsd": 0.64,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "china private tours",
+        "intent": [
+          "商务"
+        ],
+        "volume": 210,
+        "kd": 24,
+        "cpcUsd": 2.09,
+        "freshness": "1 个月",
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "china tour packages",
+        "intent": [
+          "商务"
+        ],
+        "volume": 720,
+        "kd": 22,
+        "cpcUsd": 0.81,
+        "freshness": "1 个月",
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "suzhou private tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-broad-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "harbin ice festival tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0.48,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "harbin private tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 1.45,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "jiangnan tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0.38,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "shanghai suzhou hangzhou tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0.75,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "zhangjiajie national forest park tour",
+        "intent": [],
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0.81,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "zhangjiajie private tour",
+        "intent": [
+          "信息",
+          "商务"
+        ],
+        "volume": 70,
+        "kd": 13,
+        "cpcUsd": 2.25,
+        "freshness": "1 个月",
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "available",
+        "refreshStatus": "UI shows 1 month"
+      },
+      {
+        "keyword": "china private tour",
+        "intent": [],
+        "volume": 210,
+        "kd": null,
+        "cpcUsd": 2.09,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "china 13 day tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "beijing xian chengdu guilin shanghai tour",
+        "intent": [],
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "freshness": null,
+        "region": "SG",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "source": "semrush/sg-product-bulk.txt",
+        "metricsStatus": "partial",
+        "refreshStatus": "not requested; UI says refresh needed"
+      },
+      {
+        "keyword": "상해 항주 소주 여행",
+        "volume": 20,
+        "kd": null,
+        "intent": [],
+        "cpcUsd": 0,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "partial",
+        "source": "semrush/kr-jiangnan.png"
+      },
+      {
+        "keyword": "중국 패키지 여행",
+        "volume": 320,
+        "kd": 14,
+        "intent": [
+          "Information"
+        ],
+        "cpcUsd": 0.26,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "available",
+        "source": "semrush/kr-china-package.png"
+      },
+      {
+        "keyword": "장가계 패키지",
+        "volume": 1600,
+        "kd": 13,
+        "intent": [
+          "Information"
+        ],
+        "cpcUsd": 0.26,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "available; volume display rounded as 1.6K",
+        "source": "semrush/kr-zhangjiajie-package.png"
+      },
+      {
+        "keyword": "하얼빈 패키지",
+        "volume": null,
+        "kd": null,
+        "intent": [],
+        "cpcUsd": null,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "unavailable; not zero",
+        "source": "semrush/kr-harbin-package.png"
+      },
+      {
+        "keyword": "하얼빈 투어",
+        "volume": null,
+        "kd": 30,
+        "intent": [
+          "Information"
+        ],
+        "cpcUsd": null,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "partial; refresh completed; search volume and CPC unavailable, not zero",
+        "source": "semrush/kr-harbin-tour-after-refresh.txt",
+        "refreshStatus": "completed once using existing trial quota"
+      },
+      {
+        "keyword": "중국 프라이빗 투어",
+        "volume": null,
+        "kd": 17,
+        "intent": [
+          "Information"
+        ],
+        "cpcUsd": null,
+        "region": "KR",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportDate": "2026-10-11",
+        "metricsStatus": "partial; refresh completed; search volume and CPC unavailable, not zero",
+        "source": "semrush/kr-china-private-after-refresh.txt",
+        "refreshStatus": "completed once using existing trial quota"
+      },
+      {
+        "keyword": "china private tours",
+        "volume": 70,
+        "kd": 21,
+        "cpcUsd": 2.7,
+        "intent": [
+          "Commercial"
+        ],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "available",
+        "freshness": "1 个月",
+        "refreshStatus": "UI shows 1 month",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "zhangjiajie national forest park tour",
+        "volume": 70,
+        "kd": 17,
+        "cpcUsd": 1.51,
+        "intent": [
+          "Information"
+        ],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "available",
+        "freshness": "1 个月",
+        "refreshStatus": "UI shows 1 month",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "shanghai suzhou hangzhou tour",
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin ice festival tour",
+        "volume": 10,
+        "kd": null,
+        "cpcUsd": 1.34,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin tours",
+        "volume": 10,
+        "kd": null,
+        "cpcUsd": 1.33,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "jiangnan tour",
+        "volume": 10,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "zhangjiajie private tour",
+        "volume": 10,
+        "kd": null,
+        "cpcUsd": 2.34,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin private tour",
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "china 13 day tour",
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "intent": [],
+        "region": "AU",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "unavailable; not zero",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/au-product-bulk.txt"
+      },
+      {
+        "keyword": "zhangjiajie national forest park tour",
+        "volume": 70,
+        "kd": 19,
+        "cpcUsd": 1.36,
+        "intent": [
+          "Information",
+          "Commercial"
+        ],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "available",
+        "freshness": "1 个月",
+        "refreshStatus": "UI shows 1 month",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "china private tours",
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 3.42,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "zhangjiajie private tour",
+        "volume": 20,
+        "kd": null,
+        "cpcUsd": 1.61,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "shanghai suzhou hangzhou tour",
+        "volume": 10,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin ice festival tour",
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin private tour",
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "harbin tours",
+        "volume": 0,
+        "kd": null,
+        "cpcUsd": 0.78,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "partial",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "jiangnan tour",
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "unavailable; not zero",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      },
+      {
+        "keyword": "china 13 day tour",
+        "volume": null,
+        "kd": null,
+        "cpcUsd": null,
+        "intent": [],
+        "region": "CA",
+        "searchEngine": "Google",
+        "device": "desktop",
+        "observedDate": "2026-10-11",
+        "reportMonth": "2026-10",
+        "metricsStatus": "unavailable; not zero",
+        "freshness": null,
+        "refreshStatus": "not requested; UI says refresh needed",
+        "source": "semrush/ca-product-bulk.txt"
+      }
+    ],
+    "reusedResearch": [
+      "continuation-state.json",
+      "reviewed-sources.json",
+      "jiangnan-13day-competitor-review.md",
+      "zjj-harbin-competitor-review.md",
+      "semrush-trial-20261011/bulk-us-observation.txt"
+    ],
+    "limitations": [
+      "Search volumes are Semrush estimates, not Homeground traffic or leads. Do not add overlapping keyword variants.",
+      "Missing metrics are null, not zero. A displayed zero is retained separately.",
+      "KD is general keyword difficulty, not a predicted Homeground rank; no new personal KD was requested.",
+      "Complete bulk entries show approximately one month since update. Refresh-needed entries have no precise freshness.",
+      "KR is Google Korea, not Naver. Broad package terms have informational intent.",
+      "Exact-product long tails can lack metrics; this does not prove absent demand."
+    ],
+    "accountBoundary": "Existing trial only. No upgrade, no export-limit workaround, no changes to the nine existing Korean monitored keywords or their history. Claude-owned guide/service/AI/backlink research excluded.",
+    "refreshesUsedThisTask": 2,
+    "globalDistribution": {
+      "keyword": "china private tours",
+      "observedDate": "2026-10-11",
+      "globalVolumeDisplay": "1.7K",
+      "countries": {
+        "US": 390,
+        "SG": 210,
+        "ID": 140,
+        "HK": 110,
+        "UK": 90,
+        "AU": 70,
+        "otherDisplayedBucket": 650
+      },
+      "source": "semrush/au-private-overview.png",
+      "limitations": [
+        "Distribution is for this English query only, not all private-tour demand or all four products.",
+        "Canada is not broken out in the top-country view; its separate bulk record is20.",
+        "Global headline is rounded; no market-size sum is calculated."
+      ]
+    }
+  },
+  "keywordToProductChanges": [
+    {
+      "priority": "P1",
+      "keyword": "jiangnan tour",
+      "product": "jiangnan12",
+      "target": "https://homegroundchina.com/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "英文搜索标题写明12天、Jiangnan及主要城市；保留H1和产品身份。园林与区域路线攻略三语新增12天产品入口，明确同里过夜及不含南京。",
+      "files": [
+        "lib/privateTourJiangnanArtProduct.ts",
+        "content/guides/how-to-read-a-suzhou-garden/body.{en,zh,ko}.ts",
+        "content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "SG两词各20；KR组合20但KD缺失。适配既有路线，不为低量词另建重复页。 AU10、CA缺失。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "shanghai suzhou hangzhou tour",
+      "product": "jiangnan12",
+      "target": "https://homegroundchina.com/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "英文搜索标题写明12天、Jiangnan及主要城市；保留H1和产品身份。园林与区域路线攻略三语新增12天产品入口，明确同里过夜及不含南京。",
+      "files": [
+        "lib/privateTourJiangnanArtProduct.ts",
+        "content/guides/how-to-read-a-suzhou-garden/body.{en,zh,ko}.ts",
+        "content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "SG两词各20；KR组合20但KD缺失。适配既有路线，不为低量词另建重复页。 AU20、CA10，KD缺失；适配同一英文产品页。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "상해 항주 소주 여행",
+      "product": "jiangnan12",
+      "target": "https://homegroundchina.com/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "英文搜索标题写明12天、Jiangnan及主要城市；保留H1和产品身份。园林与区域路线攻略三语新增12天产品入口，明确同里过夜及不含南京。",
+      "files": [
+        "lib/privateTourJiangnanArtProduct.ts",
+        "content/guides/how-to-read-a-suzhou-garden/body.{en,zh,ko}.ts",
+        "content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "SG两词各20；KR组合20但KD缺失。适配既有路线，不为低量词另建重复页。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "shanghai private tour",
+      "product": "jiangnan12",
+      "target": "https://homegroundchina.com/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "在已有区域攻略中提供长线选择，保留5天与6天产品；关键词范围较宽，仅作为城市入口依据。",
+      "files": [
+        "content/guides/how-to-read-a-suzhou-garden/body.{en,zh,ko}.ts",
+        "content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US40/50，SG30/30；不能把城市单日需求全算成12天客户。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "hangzhou tour",
+      "product": "jiangnan12",
+      "target": "https://homegroundchina.com/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "在已有区域攻略中提供长线选择，保留5天与6天产品；关键词范围较宽，仅作为城市入口依据。",
+      "files": [
+        "content/guides/how-to-read-a-suzhou-garden/body.{en,zh,ko}.ts",
+        "content/guides/shanghai-suzhou-hangzhou-nanjing-route-order/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US40/50，SG30/30；不能把城市单日需求全算成12天客户。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "china private tours",
+      "product": "fivecity13",
+      "target": "https://homegroundchina.com/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语现有产品交通段说明D4/D6二等座高铁与D8/D11经济舱航班；添加阳朔不过夜FAQ。14天及桂林交通攻略新增相符产品链接，说明13天五城不同于攻略的14天四城建议。",
+      "files": [
+        "components/ShanghaiJiangnanImaginePage.tsx",
+        "lib/privateTourFiveCityProduct.ts",
+        "content/guides/china-14-day-itinerary/body.{en,zh,ko}.ts",
+        "content/guides/guilin-yangshuo-transport-route/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数390、SG复数210/单数210；KR320属信息意图。具体13天组合US为0或缺失、SG缺失，不能宣称精确词有已知需求。 AU70/KD21、CA20/KD缺失；全球分布另见UK90，不能等同产品实际流量。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "china private tour",
+      "product": "fivecity13",
+      "target": "https://homegroundchina.com/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语现有产品交通段说明D4/D6二等座高铁与D8/D11经济舱航班；添加阳朔不过夜FAQ。14天及桂林交通攻略新增相符产品链接，说明13天五城不同于攻略的14天四城建议。",
+      "files": [
+        "components/ShanghaiJiangnanImaginePage.tsx",
+        "lib/privateTourFiveCityProduct.ts",
+        "content/guides/china-14-day-itinerary/body.{en,zh,ko}.ts",
+        "content/guides/guilin-yangshuo-transport-route/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数390、SG复数210/单数210；KR320属信息意图。具体13天组合US为0或缺失、SG缺失，不能宣称精确词有已知需求。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P1",
+      "keyword": "중국 패키지 여행",
+      "product": "fivecity13",
+      "target": "https://homegroundchina.com/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语现有产品交通段说明D4/D6二等座高铁与D8/D11经济舱航班；添加阳朔不过夜FAQ。14天及桂林交通攻略新增相符产品链接，说明13天五城不同于攻略的14天四城建议。",
+      "files": [
+        "components/ShanghaiJiangnanImaginePage.tsx",
+        "lib/privateTourFiveCityProduct.ts",
+        "content/guides/china-14-day-itinerary/body.{en,zh,ko}.ts",
+        "content/guides/guilin-yangshuo-transport-route/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数390、SG复数210/单数210；KR320属信息意图。具体13天组合US为0或缺失、SG缺失，不能宣称精确词有已知需求。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "zhangjiajie private tour",
+      "product": "forest4",
+      "target": "https://homegroundchina.com/tours/zhangjiajie-forest-4-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "产品相关攻略增加Avatar Mountains链接，与已存在的攻略→森林4天产品入口组成双向链接。现有价格、Avatar/Tianmen标题及导游语言不动。",
+      "files": [
+        "lib/existingContentCommercialLinks.ts"
+      ],
+      "evidenceBoundary": "SG70/KD13与20/KD缺失；KR1.6K为宽泛信息词，非私家团销量。US国家森林公园590为接续资料中的近月估算，不重复查询。 AU10、CA20，均KD缺失。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "zhangjiajie national forest park tour",
+      "product": "forest4",
+      "target": "https://homegroundchina.com/tours/zhangjiajie-forest-4-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "产品相关攻略增加Avatar Mountains链接，与已存在的攻略→森林4天产品入口组成双向链接。现有价格、Avatar/Tianmen标题及导游语言不动。",
+      "files": [
+        "lib/existingContentCommercialLinks.ts"
+      ],
+      "evidenceBoundary": "SG70/KD13与20/KD缺失；KR1.6K为宽泛信息词，非私家团销量。US国家森林公园590为接续资料中的近月估算，不重复查询。 AU70/KD17（信息）、CA70/KD19（信息+商务）。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "장가계 패키지",
+      "product": "forest4",
+      "target": "https://homegroundchina.com/tours/zhangjiajie-forest-4-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "产品相关攻略增加Avatar Mountains链接，与已存在的攻略→森林4天产品入口组成双向链接。现有价格、Avatar/Tianmen标题及导游语言不动。",
+      "files": [
+        "lib/existingContentCommercialLinks.ts"
+      ],
+      "evidenceBoundary": "SG70/KD13与20/KD缺失；KR1.6K为宽泛信息词，非私家团销量。US国家森林公园590为接续资料中的近月估算，不重复查询。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "harbin tours",
+      "product": "harbin5",
+      "target": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语导语和搜索摘要明确同酒店4晚及3个英语导游游览日；新增不含雪乡/亚布力FAQ及D1/D5安排；冬季攻略增产品链接，产品增冰雪节/冬季攻略链接。",
+      "files": [
+        "lib/privateTourProducts.ts",
+        "lib/existingContentCommercialLinks.ts",
+        "content/guides/china-in-winter/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数90，SG170；SG私家/冰雪节各20但KD缺失。KR包价词无数据、tour词刷新后KD30而搜索量不可用，不视为零需求。 AU10、CA显示0；不能以单个估算词判断整个市场。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "harbin private tour",
+      "product": "harbin5",
+      "target": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语导语和搜索摘要明确同酒店4晚及3个英语导游游览日；新增不含雪乡/亚布力FAQ及D1/D5安排；冬季攻略增产品链接，产品增冰雪节/冬季攻略链接。",
+      "files": [
+        "lib/privateTourProducts.ts",
+        "lib/existingContentCommercialLinks.ts",
+        "content/guides/china-in-winter/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数90，SG170；SG私家/冰雪节各20但KD缺失。KR包价词无数据、tour词刷新后KD30而搜索量不可用，不视为零需求。 AU/CA均显示0，不为该词创建新页。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "harbin ice festival tour",
+      "product": "harbin5",
+      "target": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语导语和搜索摘要明确同酒店4晚及3个英语导游游览日；新增不含雪乡/亚布力FAQ及D1/D5安排；冬季攻略增产品链接，产品增冰雪节/冬季攻略链接。",
+      "files": [
+        "lib/privateTourProducts.ts",
+        "lib/existingContentCommercialLinks.ts",
+        "content/guides/china-in-winter/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数90，SG170；SG私家/冰雪节各20但KD缺失。KR包价词无数据、tour词刷新后KD30而搜索量不可用，不视为零需求。 AU10、CA显示0。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "하얼빈 패키지",
+      "product": "harbin5",
+      "target": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语导语和搜索摘要明确同酒店4晚及3个英语导游游览日；新增不含雪乡/亚布力FAQ及D1/D5安排；冬季攻略增产品链接，产品增冰雪节/冬季攻略链接。",
+      "files": [
+        "lib/privateTourProducts.ts",
+        "lib/existingContentCommercialLinks.ts",
+        "content/guides/china-in-winter/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数90，SG170；SG私家/冰雪节各20但KD缺失。KR包价词无数据、tour词刷新后KD30而搜索量不可用，不视为零需求。",
+      "status": "implemented; verified; ready for draft review"
+    },
+    {
+      "priority": "P2",
+      "keyword": "하얼빈 투어",
+      "product": "harbin5",
+      "target": "https://homegroundchina.com/tours/harbin-winter-5-day-private-tour/",
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "concreteChange": "三语导语和搜索摘要明确同酒店4晚及3个英语导游游览日；新增不含雪乡/亚布力FAQ及D1/D5安排；冬季攻略增产品链接，产品增冰雪节/冬季攻略链接。",
+      "files": [
+        "lib/privateTourProducts.ts",
+        "lib/existingContentCommercialLinks.ts",
+        "content/guides/china-in-winter/body.{en,zh,ko}.ts"
+      ],
+      "evidenceBoundary": "US复数90，SG170；SG私家/冰雪节各20但KD缺失。KR包价词无数据、tour词刷新后KD30而搜索量不可用，不视为零需求。",
+      "status": "implemented; verified; ready for draft review"
+    }
+  ],
+  "validation": {
+    "status": "all local checks and independent visual reviews passed",
+    "typecheck": "passed (typecheck-final.log)",
+    "affectedTests": {
+      "passed": 58,
+      "failed": 0,
+      "log": "affected-tests.log"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "baseMain": "a13a32e281f6a3fd01f3884d37aee6a1f67624d1",
+      "log": "build-final.log",
+      "fontCoverage": "passed",
+      "postbuildExports": "all passed"
+    },
+    "exportedPages": {
+      "passed": 27,
+      "checked": 27,
+      "faqPairsMatched": 75,
+      "visibleTextMethod": "HTMLParser DOM; body text only; script/style/template and hidden or aria-hidden=true subtrees excluded. FAQ headings and answers must match in the same visible article; FAQ section count/order also checked. New guide links must be inside the specifically titled new nav block."
+    },
+    "browser": {
+      "productStates": 28,
+      "guideStates": 30,
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "viewports": [
+        "1365x900",
+        "390x844",
+        "360x780 (EN products and route-order guide)"
+      ],
+      "horizontalOverflowFailures": 0,
+      "consoleErrors": [],
+      "manualChecks": [
+        "Five-city new FAQ and transfer paragraph desktop/mobile reviewed",
+        "Harbin new FAQ mobile reviewed",
+        "English route-order link label stays with arrow at 360px and 390px",
+        "Forest comparison container horizontally scrolls (scrollLeft430 of788 vs358 width)",
+        "Forest visible Day2 image complete with naturalWidth358; full-page gray placeholders are lazy off-screen media"
+      ],
+      "visibleMediaCaptionsChecked": 38,
+      "visibleMediaFailures": 0
+    },
+    "confirmedProductFacts": {
+      "productsCompared": 54,
+      "result": "unchanged outside explicit approved copy fields; original FAQ entries retained"
+    },
+    "independentVisualReview": {
+      "products": "no confirmed blocker; image and horizontal comparison checks completed in actual browser",
+      "guides": "12 guide-entry/transfer screenshots reviewed; no layout blocker",
+      "records": [
+        "screenshots/blind-visual-review.txt",
+        "screenshots/blind-guide-visual-review.txt"
+      ],
+      "nonBlockingObservations": "Existing long editorial headings, fixed planner button at viewport edge and intentional collapsed Hi brand are outside this copy/link scope."
+    },
+    "releaseBoundary": "draft PR only; no merge or deployment; no real inquiry or customer contact"
+  },
+  "marketFocus": {
+    "primary": "English",
+    "markets": [
+      "US",
+      "AU",
+      "CA"
+    ],
+    "additionalResearch": [
+      "SG",
+      "global distribution incl UK/ID/HK"
+    ],
+    "korean": "Limited baseline and aligned facts only; no expanded keyword queries or monitoring after user steering."
+  },
+  "researchBaselineMain": "888eb0b74ba90947337f9d5d42d3904fa2747726",
+  "releaseIntegration": {
+    "authorizedOn": "2026-10-11",
+    "pricingPr": 347,
+    "pricingMergeCommit": "fb5297a8dba316f4c78797726ef5c28ed226a813",
+    "integratedMain": "7dd7afa71f4549782ad9146824315a3819aac243",
+    "integrationCommit": "b1fbb560d08883e2224cbd60c8512f9c8ff3dcd7",
+    "pricePreservation": {
+      "status": "passed independent source audit",
+      "pricingFilesCompared": 29,
+      "pricingFilesIdenticalToMain": 29,
+      "fourScopedProductsRetainPricingCurrencyPackagesAndOriginalFaq": true,
+      "jiangnan12AndFiveCity13RemainQuoteOnly": true
+    },
+    "historicalValidation": "The validation section above records the pre-integration draft checks on a13a32e. Updated integration tests, CI, deployment and live verification are recorded separately in the release evidence directory.",
+    "releaseEvidenceDirectory": "~/Desktop/Homeground-SEO/product-seo-release-20261011/",
+    "notAuthorized": "No real inquiry, email, WhatsApp, paid upgrade, pricing change or unrelated PR merge."
+  }
+}

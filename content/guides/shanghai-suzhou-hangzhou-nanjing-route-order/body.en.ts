@@ -66,6 +66,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "switch-heading", type: "heading", level: 2, text: "When to choose another shape" },
   { id: "switch-rule", type: "paragraph", text: "Use a one-way chain when gateway geometry removes a return and each city merits local time. Use a Shanghai hub when the room stability outweighs complete commute blocks. Use two bases when it captures most of the geographical gain with one move. Cut the city with the weakest distinct purpose; do not keep four names by reducing every city to an arrival evening and rushed morning." },
+  {"id": "jiangnan-12-day-route-option", "type": "internal-links", "title": "A longer route with a water-town overnight", "items": [{"label": "12-day Jiangnan private tour", "href": "/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/", "description": "Suzhou → Tongli → Hangzhou → Shanghai, with 3, 1, 2 and 5 nights. This is a longer regional journey with a water-town overnight; Nanjing is not part of this published route."}]},
   { id: "booking-checklist", type: "list", ordered: false, items: [
     "Actual airports and exact railway stations appear in the route.",
     "Every city has a distinct purpose that survives cuts.",

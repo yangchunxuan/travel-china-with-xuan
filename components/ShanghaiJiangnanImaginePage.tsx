@@ -375,7 +375,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     routeEyebrow: "Day by day",
     routeTitle: "Thirteen days, four long hops, no backtracking.",
     routeBody:
-      "The two shorter crossings are about four hours by high-speed train, the two longer ones are short flights, and someone from our team is waiting at every station and airport. Times are a guide, not a timetable: if a place deserves more of your day, you stay longer.",
+      "The four intercity connections are Beijing–Xi’an by second-class high-speed train on Day 4 and Xi’an–Chengdu by second-class high-speed train on Day 6, each about four hours, followed by short economy flights from Chengdu to Guilin on Day 8 and Guilin to Shanghai on Day 11. Our team arranges the station and airport transfers at both ends. The actual trains and flights are confirmed for your dates; sightseeing times can be adjusted around those bookings.",
     serviceEyebrow: "Where you sleep, who looks after you",
     serviceTitle: "4-star hotels, and a local guide in every city.",
     serviceBody:
@@ -398,7 +398,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     routeEyebrow: "每日安排",
     routeTitle: "四段长路，一路向前。",
     routeBody:
-      "两段较短的路坐高铁，约四个小时；两段较长的坐飞机。每个车站、每个机场都有我们的人在等你。时间是参考，不是时刻表：哪里值得多待，就多待一会儿。",
+      "四段城际连接分别是：第 4 天北京到西安、第 6 天西安到成都，均乘高铁二等座，各约四小时；第 8 天成都飞桂林、第 11 天桂林飞上海，均乘短程航班经济舱。每段两端的车站和机场接送都由我们安排。实际车次和航班按你的日期确认，游览时间可在这些已订交通的前后调整。",
     serviceEyebrow: "住在哪里，谁照顾你",
     serviceTitle: "住四星酒店，每城有导游。",
     serviceBody:
@@ -421,7 +421,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     routeEyebrow: "날짜별 일정",
     routeTitle: "13일, 긴 이동 네 번, 되돌아가지 않는 여정.",
     routeBody:
-      "짧은 두 구간은 고속철도로 약 네 시간, 긴 두 구간은 짧은 비행입니다. 모든 역과 공항에서 저희 쪽 사람이 기다립니다. 시간은 기준일 뿐 시간표가 아닙니다. 더 머물 만한 곳이면 더 머뭅니다.",
+      "도시 간 이동은 네 구간입니다. 4일차 베이징–시안과 6일차 시안–청두는 고속철도 2등석으로 각각 약 네 시간, 8일차 청두–계림과 11일차 계림–상하이는 단거리 항공편 이코노미석으로 이동합니다. 각 구간 양쪽의 역·공항 이동은 저희가 준비합니다. 실제 열차와 항공편은 여행 날짜에 맞춰 확정하며, 관광 시간은 예약된 교통편에 맞춰 조정할 수 있습니다.",
     serviceEyebrow: "어디서 자고, 누가 챙기는가",
     serviceTitle: "4성급 호텔, 그리고 도시마다 현지 가이드.",
     serviceBody:

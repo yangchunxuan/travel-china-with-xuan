@@ -28,6 +28,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ]},
   { id: "return-heading", type: "heading", level: 2, text: "返程不应依赖去程体验" },
   { id: "return-plan", type: "list", ordered: true, items: ["住宿行程应确认准确上车地址和酒店接待，不能默认回到抵达点。", "一日游应按已订火车、航班或公路班次以及真实末端接驳设置离开阳朔的时间。", "把完整中文站名、码头和酒店名称离线保存，提供给司机和现场人员。", "天气改变漓江方案时，切换到预先核实的公路或铁路结构，不要没有截止时间地等待。", "不要把不可退国际航班紧接在单向观光游船和不确定的公路返程之后。"] },
+  {"id": "five-city-guilin-base-option", "type": "internal-links", "title": "以桂林为基地，接入中国长线旅程", "items": [{"label": "查看五城 13 天私家游的桂林段", "href": "/zh/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/", "description": "在桂林住三晚，乘漓江游船前往阳朔，下午游览后乘专车返回。公布的行程在这一段以桂林的同一家酒店为基地。"}]},
   { id: "recovery-heading", type: "heading", level: 2, text: "两端不匹配时" },
   { id: "recovery", type: "list", ordered: true, items: ["读取预订中的完整车站、码头或站点。", "把酒店准确定位发给授权运营方。", "换方式前先确认酒店接待时间与下一班固定列车。", "实时变化只看铁路与当地交通官方通知。", "不要因为路边车辆写着阳朔就乘坐不明车。"] },
   { id: "facts", type: "callout", title: "动态交通信息核验于2026年8月13日", tone: "neutral", body: "漓江景区官方资料把精华游写为约60公里、约4小时的单程行程，三星船与四星船使用不同出发港，均到阳朔龙头山码头。官方提示建议旺季至少提前一天购票，并明确前往码头和从阳朔返回的交通费不包含在船票中，单程游船也不提供行李寄存。列车须按日期查12306。未找到可验证的阳朔站到住宿的当前官方固定班线时刻或票价，因此这一段必须另行确认，不能引用旧价格或旧时刻。" },

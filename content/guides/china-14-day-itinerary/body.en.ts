@@ -227,6 +227,18 @@ const body = {
     "text": "Yes—replace both Xi’an and Chengdu if nature is the priority. One three-base outline is Beijing 4 nights, Zhangjiajie 5 and Shanghai 4: 13 nights in total. Keep day 5 for reaching Zhangjiajie and day 10 for reaching Shanghai. Days 6–9 then allow two forest-park days, a separately booked Tianmen Mountain day and one flexible day. You give up the Terracotta Warriors and pandas. Confirm the dated transport first; this outline does not assume a direct flight is operating. Prefer Guilin and Yangshuo? Use that region instead of Zhangjiajie, with the same five-night allowance, and decide the Guilin/Yangshuo hotel split before booking. Do not add both nature regions to this two-week plan."
   },
   {
+    "id": "five-city-13-day-route-option",
+    "type": "internal-links",
+    "title": "Compare a five-city route with Guilin",
+    "items": [
+      {
+        "label": "Compare the 13-day Beijing, Xi’an, Chengdu, Guilin and Shanghai private tour",
+        "href": "/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/",
+        "description": "A different five-city plan with four intercity connections, 12 nights and optional hotels. Compare its shorter stays and transfer days with this four-city guide before choosing; the price is quoted for your dates and group."
+      }
+    ]
+  },
+  {
     "id": "three-weeks-heading",
     "type": "heading",
     "level": 3,

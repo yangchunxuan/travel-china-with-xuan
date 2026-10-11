@@ -1951,9 +1951,9 @@ const harbinWinter: PrivateTourProduct = {
     "기간이 정해진 겨울 여행",
   ),
   lede: l(
-    "Experience Harbin's winter architecture, frozen river activities and Ice and Snow World with heated private transport and an itinerary timed for daylight and the night display.",
-    "在标明的冰雪季日期内，坐暖风车辆串起哈尔滨城市建筑、松花江冰雪体验和冰雪大世界夜景。",
-    "정해진 빙설 시즌에 난방 전용 차량으로 도심 건축과 송화강 체험, 빙설대세계 야경까지 둘러봅니다.",
+    "Stay four nights at one Harbin hotel and explore winter architecture, the frozen river and Ice and Snow World when open. Heated private transport and three English-guided sightseeing days keep the trip focused on Harbin.",
+    "在哈尔滨同一家酒店住4晚，D2–D4由英语导游陪同，坐暖风车辆串起城市建筑、松花江冰雪体验和冰雪大世界夜景。按标明的冰雪季日期安排，景区须确认开放。",
+    "하얼빈의 같은 호텔에서 4박하며 D2~D4에는 영어 가이드와 난방 전용 차량으로 도심 건축, 송화강 체험과 빙설대세계 야경을 둘러봅니다. 정해진 빙설 시즌에 운영이 확인된 명소를 방문합니다.",
   ),
   summary: l(
     "Four nights with breakfast, heated private transport and three touring days with an English-speaking guide. The price shown is for Sunday–Thursday check-ins within the stated dates only, excluding holidays and peak Ice Festival weekends.",
@@ -2136,7 +2136,24 @@ const harbinWinter: PrivateTourProduct = {
   datePublished: PUBLISHED,
   dateModified: "2026-09-23",
   metadataTitle: l("Harbin Ice Festival 2027: 5-Day Private Tour", "哈尔滨5天4晚私家团：冰雪大世界+中央大街", "하얼빈 빙설 5일 프라이빗 투어"),
+  metadataDescription: l(
+    "Harbin 5-day private winter tour with 4 hotel nights, 3 English-guided sightseeing days, heated transport and Ice and Snow World, subject to opening.",
+    "哈尔滨5天4晚私家团：同一家酒店住4晚，D2–D4英语导游及暖风车辆游览，含已列明景点门票。冰雪大世界须确认开放，适用日期及最终价格以产品说明和书面报价为准。",
+    "하얼빈 4박 5일 프라이빗 겨울 여행. 같은 호텔 4박, D2~D4 영어 가이드와 난방 차량, 명시된 관광지 입장권 포함. 빙설대세계 운영 여부와 여행 날짜를 확인한 뒤 서면 견적을 드립니다.",
+  ),
   faq: [
+    {
+      question: l(
+        "Does this 5-day tour include Snow Town or Yabuli?",
+        "这条5天路线包含雪乡或亚布力吗？",
+        "이 5일 일정에 쉐샹이나 야부리가 포함되나요?",
+      ),
+      answer: l(
+        "No. This is a Harbin-based private winter tour with four nights at one hotel. Day 1 is arrival and check-in assistance with an English-speaking guide; Days 2–4 are the three sightseeing days. Day 5 is a driver transfer to the airport or railway station, with no sightseeing or guide. Snow Town and Yabuli are not part of this route.",
+        "不包含。这条私家冰雪路线以哈尔滨为基地，在同一家酒店住4晚。D1由英语导游协助抵达和入住，D2–D4为三个游览日；D5只有司机送机场或车站，不安排游览或导游。雪乡和亚布力不在这条路线内。",
+        "포함되지 않습니다. 하얼빈을 거점으로 같은 호텔에서 4박하는 프라이빗 겨울 일정입니다. D1은 영어 가이드의 도착·체크인 도움, D2~D4는 관광일입니다. D5는 기사와 함께 공항이나 기차역으로 이동하며 관광과 가이드는 없습니다. 쉐샹과 야부리는 이 동선에 포함되지 않습니다.",
+      ),
+    },
     {
       question: l(
         "How much is it per person, and what's included?",
