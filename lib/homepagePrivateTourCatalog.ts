@@ -45,7 +45,6 @@ export const homepagePrivateTourSlugs = [
 ] as const;
 
 const quoteOnlyHomepageSlugs = new Set<string>([
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
 ]);
 
