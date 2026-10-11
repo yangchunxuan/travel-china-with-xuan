@@ -81,6 +81,7 @@ const body = {
     { id: "next-links", type: "internal-links", title: "장가계 일정에 천문산 넣기", items: [
       { label: "장가계 관광 일수 정하기", href: "/ko/guides/zhangjiajie-itinerary/" },
       { label: "국가삼림공원 입장권과 입구", href: "/ko/guides/zhangjiajie-national-forest-park-tickets-and-entrances/" },
+      { label: "대협곡 유리다리 입장권과 코스", href: "/ko/guides/zhangjiajie-glass-bridge-tickets/" },
       { label: "장가계 시내와 무릉원 숙소 비교", href: "/ko/guides/zhangjiajie-city-or-wulingyuan-hotel-base/" }
     ] },
     { id: "sources", type: "sources", title: "가격과 경로 참고 자료", items: [

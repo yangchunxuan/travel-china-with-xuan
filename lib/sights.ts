@@ -475,8 +475,7 @@ export const sights: readonly Sight[] = [
   {
     id: "zhangjiajie-grand-canyon",
     city: "zhangjiajie",
-    // The guide's own photo is of a person, so the canyon floor stands in.
-    guideId: "zhangjiajie-glass-bridge-vs-skywalk",
+    guideId: "zhangjiajie-glass-bridge-tickets",
     reservationIds: [],
     image: {
       src: "/images/sights/zhangjiajie-grand-canyon-1200.webp",

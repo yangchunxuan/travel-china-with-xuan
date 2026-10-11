@@ -18,6 +18,7 @@ export const privateGuideServiceCtaTargets = {
   "shanghai-museum-east-entry-reservations": "shanghai",
   "zhangjiajie-national-forest-park-tickets-and-entrances": "zhangjiajie",
   "tianmen-mountain-tickets-and-routes": "zhangjiajie",
+  "zhangjiajie-glass-bridge-tickets": "zhangjiajie",
   // The "do I need a guide?" decision guide covers every city the service does.
   "do-you-need-a-tour-guide-in-china": "all",
 } as const satisfies Record<string, PrivateGuideCity | "all">;

@@ -333,6 +333,7 @@ const body: StructuredPageBody = {
       title: "Continue planning without mixing up separate decisions",
       items: [
         { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "Glass Bridge tickets and routes", href: "/guides/zhangjiajie-glass-bridge-tickets/" },
         { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "A full Forest Park day from the high peaks to Golden Whip Stream, Tianmen Mountain on Day 3, and one villa or 4-star hotel for all three nights." },
         { label: "Compare the classic 4-day private tour", href: "/tours/zhangjiajie-4-day-private-tour/", description: "Choose the broader route with Bailong Elevator, the Glass Bridge and Tianmen Mountain." },
         { label: "Avatar Mountains: where they are and the one-day route", href: "/guides/avatar-mountains-zhangjiajie/", description: "Find the Hallelujah pillar at Yuanjiajie and see the park's highlights in one day." },
