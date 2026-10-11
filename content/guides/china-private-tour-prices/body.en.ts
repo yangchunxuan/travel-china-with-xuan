@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 41 published routes of 4–21 days. That is about USD 84–294 per person per day, with a middle value near USD 190. When six travel together the same routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
+      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 42 published routes of 4–21 days. That is about USD 84–294 per person per day, with a middle value near USD 190. When six travel together the same routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
     },
     {
       "id": "glance-heading",
@@ -42,7 +42,7 @@ const body = {
         ],
         [
           "10- to 21-day tours",
-          "13",
+          "14",
           "USD 2,510–5,920",
           "USD 1,540–4,010",
           "USD 241–294"
@@ -318,6 +318,13 @@ const body = {
           "USD 2,340"
         ],
         [
+          "Beijing, Xi'an, Chengdu, Guilin & Shanghai",
+          "13 days",
+          "on request",
+          "USD 2,580",
+          "USD 2,310"
+        ],
+        [
           "Shanghai, Zhangjiajie, Fenghuang & Guilin",
           "13 days",
           "USD 3,300",
@@ -495,7 +502,7 @@ const body = {
       "items": [
         {
           "question": "How much does a private tour in China cost per day?",
-          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 41 published private routes, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
+          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 42 published private routes, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
         },
         {
           "question": "Is a private China tour cheaper per person with more people?",
@@ -503,7 +510,7 @@ const body = {
         },
         {
           "question": "Do these prices include flights?",
-          "answer": "No price includes flights to and from China. 12 of the 41 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
+          "answer": "No price includes flights to and from China. 13 of the 42 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
         },
         {
           "question": "Can I get a price for a different group size?",

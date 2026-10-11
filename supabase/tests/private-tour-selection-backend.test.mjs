@@ -19,6 +19,7 @@ import {
   privateTourInquirySlugs,
 } from "../../lib/privateTourInquiryContext.ts";
 import {
+  trafficProductPackages,
   trafficProductTravelerCounts,
 } from "../functions/_shared/traffic-contracts.ts";
 import { privateTourPreviewProducts, privateTourProducts } from "../../lib/privateTourProducts.ts";
@@ -70,7 +71,8 @@ const northeastPreviewSlugs = [
 const winterPublishedSlugs = [...northeastPreviewSlugs, "yanji-changbaishan-wanda-6-day-private-tour"];
 const jiangnanQuoteSlug = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 const fiveCityQuoteSlug = "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour";
-// Quote-only routes added after the winter release; earlier migrations predate them.
+// Routes added after the winter release (the five-city route published prices on 2026-10-11);
+// earlier migrations predate them.
 const laterQuoteSlugs = [jiangnanQuoteSlug, fiveCityQuoteSlug];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
@@ -553,6 +555,60 @@ test("Five-city quote migration adds one identity after the Jiangnan route", asy
   assert.doesNotMatch(sql, /create or replace function public\./u);
   assert.match(sql, /begin;[\s\S]*commit;/u);
   assert.match(sql, /revoke all on function homeground_private\.private_tour_product_name_v1/u);
+});
+
+test("Five-city price migration adds one selection branch after the winter release", async () => {
+  const migrations = new URL("../migrations/", import.meta.url);
+  const filename = "202610110001_publish_five_city_route_prices.sql";
+  const [previous, sql, filenames, quoteSql] = await Promise.all([
+    readFile(new URL("202610090001_publish_northeast_winter_products.sql", migrations), "utf8"),
+    readFile(new URL(filename, migrations), "utf8"),
+    readdir(migrations),
+    readFile(new URL("202609300001_add_northeast_winter_preview_tours.sql", migrations), "utf8"),
+  ]);
+  assert.deepEqual(filenames.filter((name) => name.startsWith("202610110001_")), [filename]);
+  const selectionFunction = /create or replace function homeground_private\.is_valid_private_tour_selection_v1\([\s\S]*?\n\$\$;/u;
+  const earlierSelection = previous.replace(/\r\n/g, "\n").match(selectionFunction)?.[0];
+  const currentSelection = sql.replace(/\r\n/g, "\n").match(selectionFunction)?.[0];
+  assert.ok(earlierSelection && currentSelection);
+  const product = privateTourProducts.find((candidate) => candidate.slug === fiveCityQuoteSlug);
+  assert.deepEqual(product.packages.map((tourPackage) => tourPackage.id), ["standard-guided"]);
+  const travelers = product.packages[0].prices.map((row) => row.travelers);
+  assert.deepEqual(travelers, [4, 6, 8]);
+  const added = `    when '${fiveCityQuoteSlug}' then\n      p_package_id = 'standard-guided' and p_travelers in (${travelers.join(", ")})\n`;
+  assert.ok(currentSelection.includes(added));
+  assert.equal(currentSelection.replace(added, ""), earlierSelection, "every earlier selection rule remains byte-for-byte unchanged");
+  // The inquiry functions in force since the winter preview already accept four, six and eight travellers.
+  for (const name of ["create_homeground_homepage_email_v1", "create_homeground_private_tour_quote_v1"]) {
+    const body = quoteSql.match(new RegExp(`create or replace function public\\.${name}\\([\\s\\S]*?\\n\\$\\$;`, "u"))?.[0];
+    assert.ok(body, name);
+    for (const count of travelers) assert.ok(body.includes(`when '${count}'::jsonb then ${count}`), `${name}: ${count}`);
+  }
+  assert.doesNotMatch(sql, /private_tour_product_name_v1\(\s*p_slug/u);
+  assert.doesNotMatch(sql, /create or replace function public\./u);
+  assert.match(sql, /begin;[\s\S]*commit;/u);
+  assert.match(sql, /revoke all on function homeground_private\.is_valid_private_tour_selection_v1/u);
+});
+
+test("five-city selections survive intake, labels and traffic metadata for 4, 6 and 8 travellers", () => {
+  for (const travelers of [4, 6, 8]) {
+    for (const locale of ["en", "zh", "ko"]) {
+      const context = getPrivateTourInquiryContext(fiveCityQuoteSlug, locale, { packageId: "standard-guided", travelers });
+      assert.deepEqual(context.selection, { packageId: "standard-guided", travelers });
+      const result = validateAndNormalizeInquiry(payload(context, locale), config);
+      assert.equal(result.ok, true, `${locale}:${travelers}`);
+      const label = privateTourInquirySelectionLabel(context, locale);
+      assert.match(label, locale === "en" ? new RegExp(`${travelers} travellers`, "u")
+        : locale === "zh" ? new RegExp(`${travelers} 人同行`, "u") : new RegExp(`${travelers}명 기준`, "u"));
+    }
+    assert.ok(getPrivateTourInquiryContext(fiveCityQuoteSlug, "ja", { packageId: "standard-guided", travelers }));
+  }
+  assert.equal(getPrivateTourInquirySelection(fiveCityQuoteSlug, "standard-guided", 2), null);
+  for (const retired of ["with-hotels", "without-hotels"]) {
+    assert.equal(getPrivateTourInquirySelection(fiveCityQuoteSlug, retired, 6), null);
+  }
+  assert.deepEqual(trafficProductPackages[fiveCityQuoteSlug], ["standard-guided"]);
+  assert.deepEqual(trafficProductTravelerCounts[fiveCityQuoteSlug], [4, 6, 8]);
 });
 
 test("Edge intake forwards selections, preserves retry identity, and notification renders only validated selections", async () => {

@@ -365,8 +365,8 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     facts: [
       { label: "Route", value: "Beijing 3 · Xi'an 2 · Chengdu 2 · Guilin 3 · Shanghai 2 nights" },
       { label: "Between cities", value: "2 high-speed trains + 2 flights, booked by us" },
-      { label: "Stay", value: "12 nights in 4-star hotels, or book your own" },
-      { label: "Price", value: "Quoted for your dates and group" },
+      { label: "Stay", value: "12 nights in 4-star hotels, breakfast included" },
+      { label: "Price", value: "Published for 4, 6 and 8 travellers" },
     ],
     overviewEyebrow: "Why this order",
     overviewTitle: "Emperors first, Shanghai last.",
@@ -379,7 +379,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     serviceEyebrow: "Where you sleep, who looks after you",
     serviceTitle: "4-star hotels, and a local guide in every city.",
     serviceBody:
-      "Each city has its own English-speaking guide and a private vehicle sized to your group. We book every train and flight in your passport names, with a checked bag on both flights. Prefer your own hotels? Everything else stays the same.",
+      "Each city has its own English-speaking guide and a private vehicle sized to your group. We book every train and flight in your passport names, with a checked bag on both flights.",
     hotelTitle: "Twelve nights, five cities",
     transportTitle: "Guides, vehicles, trains, flights and tickets",
   },
@@ -388,8 +388,8 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     facts: [
       { label: "路线", value: "北京 3 晚 · 西安 2 晚 · 成都 2 晚 · 桂林 3 晚 · 上海 2 晚" },
       { label: "城际交通", value: "2 段高铁 + 2 段航班，由我们来订" },
-      { label: "住宿", value: "12 晚四星酒店，也可自己订" },
-      { label: "价格", value: "按日期与人数报价" },
+      { label: "住宿", value: "12 晚四星酒店，含早餐" },
+      { label: "价格", value: "4、6、8 人公开价" },
     ],
     overviewEyebrow: "为什么这样排",
     overviewTitle: "从帝王说起，最后到上海。",
@@ -402,7 +402,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     serviceEyebrow: "住在哪里，谁照顾你",
     serviceTitle: "住四星酒店，每城有导游。",
     serviceBody:
-      "每座城市有自己的英语导游和按人数安排的专车。高铁和航班都由我们用你的护照实名订好，两段航班都含托运行李。想自己订酒店？其余一切不变。",
+      "每座城市有自己的英语导游和按人数安排的专车。高铁和航班都由我们用你的护照实名订好，两段航班都含托运行李。",
     hotelTitle: "十二晚，五座城市",
     transportTitle: "导游、用车、高铁、航班与门票",
   },
@@ -411,8 +411,8 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     facts: [
       { label: "동선", value: "베이징 3박 · 시안 2박 · 청두 2박 · 계림 3박 · 상하이 2박" },
       { label: "도시간 이동", value: "고속철도 2회 + 항공편 2회, 저희가 예약" },
-      { label: "숙박", value: "4성급 호텔 12박 또는 직접 예약" },
-      { label: "가격", value: "날짜와 인원별 견적" },
+      { label: "숙박", value: "4성급 호텔 12박, 조식 포함" },
+      { label: "가격", value: "4·6·8명 공개 가격" },
     ],
     overviewEyebrow: "왜 이 순서인가",
     overviewTitle: "황제의 도시를 먼저, 상하이는 마지막에.",
@@ -425,7 +425,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     serviceEyebrow: "어디서 자고, 누가 챙기는가",
     serviceTitle: "4성급 호텔, 그리고 도시마다 현지 가이드.",
     serviceBody:
-      "도시마다 영어 가이드와 인원에 맞춘 전용차가 있습니다. 열차와 항공편은 저희가 여권 이름으로 예약하고, 두 항공편 모두 위탁 수하물이 포함됩니다. 호텔을 직접 예약하셔도 나머지는 그대로입니다.",
+      "도시마다 영어 가이드와 인원에 맞춘 전용차가 있습니다. 열차와 항공편은 저희가 여권 이름으로 예약하고, 두 항공편 모두 위탁 수하물이 포함됩니다.",
     hotelTitle: "12박, 다섯 도시",
     transportTitle: "가이드, 차량, 열차, 항공편과 입장권",
   },
@@ -434,8 +434,8 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     facts: [
       { label: "行程", value: "北京3泊 · 西安2泊 · 成都2泊 · 桂林3泊 · 上海2泊" },
       { label: "都市間移動", value: "高速鉄道2区間＋国内線2区間、手配は当社" },
-      { label: "宿泊", value: "4つ星ホテル12泊、またはご自身で手配" },
-      { label: "料金", value: "日程と人数に応じたお見積もり" },
+      { label: "宿泊", value: "4つ星ホテル12泊、朝食付き" },
+      { label: "料金", value: "4・6・8名参加時の掲載料金" },
     ],
     overviewEyebrow: "この順番にした理由",
     overviewTitle: "皇帝が先で、上海は最後。",
@@ -448,7 +448,7 @@ const fiveCityPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = {
     serviceEyebrow: "泊まる場所と、旅を支える人",
     serviceTitle: "宿は4つ星、案内は現地。",
     serviceBody:
-      "各都市に英語ガイドと人数に合わせた専用車がつきます。列車と国内線はパスポートの名前で当社が予約し、2回のフライトとも受託手荷物込みです。ホテルをご自身で手配しても、それ以外は変わりません。",
+      "各都市に英語ガイドと人数に合わせた専用車がつきます。列車と国内線はパスポートの名前で当社が予約し、2回のフライトとも受託手荷物込みです。",
     hotelTitle: "12泊、5つの都市",
     transportTitle: "ガイド・車・列車・国内線・入場券",
   },

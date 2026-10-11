@@ -234,7 +234,7 @@ const body = {
       {
         "label": "Compare the 13-day Beijing, Xi’an, Chengdu, Guilin and Shanghai private tour",
         "href": "/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/",
-        "description": "A different five-city plan with four intercity connections, 12 nights and optional hotels. Compare its shorter stays and transfer days with this four-city guide before choosing; the price is quoted for your dates and group."
+        "description": "A different five-city plan with four intercity connections and 12 nights in 4-star hotels. Compare its shorter stays and transfer days with this four-city guide before choosing; prices are published for 4, 6 and 8 travellers."
       }
     ]
   },

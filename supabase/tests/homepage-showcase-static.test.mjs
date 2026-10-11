@@ -413,8 +413,8 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     );
     assert.deepEqual(
       homepageItems.filter((product) => !product.startingPrice).map((product) => product.id),
-      [homepageTourSlugs[0], homepageTourSlugs[2]],
-      `${locale}: only the two new routes are quote-only`,
+      [homepageTourSlugs[2]],
+      `${locale}: only the Jiangnan route is quote-only`,
     );
   }
   assert.match(catalog, /getPublishedPrivateTourCatalog\(locale\)/);

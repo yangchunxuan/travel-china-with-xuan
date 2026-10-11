@@ -43,9 +43,9 @@ export const privateTourClientInspiredProfiles: Readonly<Record<string, Comparis
       "다섯 도시에 머물며 고속철도 두 구간과 국내선 두 구간으로 이동합니다. 실제 시간표는 날짜에 맞춰 확인합니다.",
     ),
     fit: l(
-      "A private party that wants the classic five cities with lunches and tickets included, and the choice of our hotels or their own.",
-      "想走经典五城、午餐和门票都含好，酒店可以由我们订也可以自己订的私家团。",
-      "점심과 입장권이 포함된 대표 다섯 도시 코스를 원하고, 호텔은 저희 호텔이나 직접 예약 중에서 고르고 싶은 프라이빗 여행객.",
+      "A private party that wants the classic five cities with 4-star hotels, lunches and tickets included.",
+      "想走经典五城、四星酒店、午餐和门票都含好的私家团。",
+      "4성급 호텔, 점심과 입장권이 포함된 대표 다섯 도시 코스를 원하는 프라이빗 여행객.",
     ),
   },
 };
