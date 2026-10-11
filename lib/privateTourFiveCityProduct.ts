@@ -494,9 +494,9 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     day(9,
       l("The Li River to Yangshuo", "漓江到阳朔", "이강을 따라 양삭으로"),
       l(
-        "About four hours on a three-star cruise boat through the limestone hills printed on the back of the 20-yuan note, with lunch on board. From Yangshuo, drive through the countryside to Moon Hill, then walk West Street before the drive back to Guilin, about ninety minutes.",
-        "坐三星游船在漓江上走大约四个小时，两岸就是印在 20 元人民币背面的石灰岩山峰，午餐在船上。到了阳朔，专车穿过田野去月亮山，再到西街走走，然后开车约一个半小时回桂林。",
-        "3성급 유람선을 타고 약 네 시간, 20위안 지폐 뒷면에 그려진 석회암 봉우리 사이를 지나며 점심은 배에서 합니다. 양삭에서는 전용차로 들판을 지나 월량산에 가고 서가를 걸은 뒤 약 한 시간 반 차로 계림에 돌아옵니다.",
+        "About four hours on a three-star cruise boat through the limestone hills printed on the back of the 20-yuan note, with lunch on board. From Yangshuo, drive through the countryside and view Moon Hill from a distance, either from the vehicle or the roadside outside the scenic area, then walk West Street before the drive back to Guilin, about ninety minutes.",
+        "坐三星游船在漓江上走大约四个小时，两岸就是印在 20 元人民币背面的石灰岩山峰，午餐在船上。到了阳朔，专车穿过田野，从车上或景区外路边远看月亮山，再到西街走走，然后开车约一个半小时回桂林。",
+        "3성급 유람선을 타고 약 네 시간, 20위안 지폐 뒷면에 그려진 석회암 봉우리 사이를 지나며 점심은 배에서 합니다. 양삭에서는 전용차로 들판을 지나 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보고 서가를 걸은 뒤 약 한 시간 반 차로 계림에 돌아옵니다.",
       ),
     ),
     day(10,
@@ -582,25 +582,25 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     {
       question: l("Which meals and tickets are included?", "具体包含哪几顿饭和哪些门票？", "어떤 식사와 입장권이 포함되나요?"),
       answer: l(
-        "Lunch is included on Days 2, 3, 4, 5, 7, 9, 10 and 12; Day 9 lunch is on the Li River boat. The named admissions include Mutianyu with return cable car and shuttle, Forbidden City, Temple of Heaven, Xi'an City Wall, Terracotta Warriors with shuttle and headsets, Big Wild Goose Pagoda grounds, Panda Base with shuttle, Li River cruise, Moon Hill, Reed Flute Cave and Yu Garden. Sun and Moon Pagodas are seen from outside; dinners and other lunches are separate.",
-        "含第 2、3、4、5、7、9、10、12 天午餐；第 9 天为漓江船餐。所列门票含慕田峪及往返缆车、接驳车，故宫、天坛、西安城墙、兵马俑及接驳车和讲解耳机、大雁塔院区、熊猫基地及接驳车、漓江游船、月亮山、芦笛岩和豫园。日月双塔从外面看；晚餐及其余午餐另计。",
-        "2·3·4·5·7·9·10·12일차 점심이 포함되며 9일차는 이강 선상 식사입니다. 명시된 입장권에는 무톈위 왕복 케이블카·셔틀, 자금성, 천단, 시안 성벽, 병마용 셔틀·헤드셋, 대안탑 경내, 판다 기지 셔틀, 이강 유람선, 월량산, 노적암과 예원이 들어갑니다. 일월쌍탑은 외관을 보며 저녁과 다른 점심은 별도입니다.",
+        "Lunch is included on Days 2, 3, 4, 5, 7, 9, 10 and 12; Day 9 lunch is on the Li River boat. The named admissions include Mutianyu with return cable car and shuttle, Forbidden City, Temple of Heaven, Xi'an City Wall, Terracotta Warriors with shuttle and headsets, Big Wild Goose Pagoda grounds, Panda Base with shuttle, Li River cruise, Reed Flute Cave and Yu Garden. Moon Hill is viewed from a distance, from the vehicle or the roadside outside the scenic area. Sun and Moon Pagodas are seen from outside; dinners and other lunches are separate.",
+        "含第 2、3、4、5、7、9、10、12 天午餐；第 9 天为漓江船餐。所列门票含慕田峪及往返缆车、接驳车，故宫、天坛、西安城墙、兵马俑及接驳车和讲解耳机、大雁塔院区、熊猫基地及接驳车、漓江游船、芦笛岩和豫园。月亮山从车上或景区外路边远看。日月双塔从外面看；晚餐及其余午餐另计。",
+        "2·3·4·5·7·9·10·12일차 점심이 포함되며 9일차는 이강 선상 식사입니다. 명시된 입장권에는 무톈위 왕복 케이블카·셔틀, 자금성, 천단, 시안 성벽, 병마용 셔틀·헤드셋, 대안탑 경내, 판다 기지 셔틀, 이강 유람선, 노적암과 예원이 들어갑니다. 월량산은 차 안이나 관광지 밖 길가에서 멀리 바라봅니다. 일월쌍탑은 외관을 보며 저녁과 다른 점심은 별도입니다.",
       ),
     },
     {
       question: l("Do we stay overnight in Yangshuo?", "这条路线会在阳朔过夜吗？", "이 일정에서 양삭에 숙박하나요?"),
       answer: l(
-        "The published itinerary uses Guilin as the base for three nights. Day 9 is planned as a Li River cruise, visits to Moon Hill and West Street in Yangshuo, then a private drive back to Guilin. There is no overnight stay in Yangshuo in this route.",
-        "公布的行程以桂林为基地，连续住三晚。第 9 天计划乘漓江游船，游览阳朔的月亮山和西街，再乘专车返回桂林。这条路线不安排在阳朔过夜。",
-        "공개된 일정은 계림을 거점으로 3박을 합니다. 9일차에는 이강 유람선을 타고 양삭의 월량산과 서가를 둘러본 뒤 전용차로 계림에 돌아오는 계획입니다. 이 일정에는 양삭 숙박이 없습니다.",
+        "The published itinerary uses Guilin as the base for three nights. Day 9 is planned as a Li River cruise, distant views of Moon Hill from the vehicle or the roadside outside the scenic area and a walk along West Street in Yangshuo, then a private drive back to Guilin. There is no overnight stay in Yangshuo in this route.",
+        "公布的行程以桂林为基地，连续住三晚。第 9 天计划乘漓江游船，到阳朔后从车上或景区外路边远看月亮山，再游览西街，乘专车返回桂林。这条路线不安排在阳朔过夜。",
+        "공개된 일정은 계림을 거점으로 3박을 합니다. 9일차에는 이강 유람선을 타고 양삭에서 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보고 서가를 둘러본 뒤 전용차로 계림에 돌아오는 계획입니다. 이 일정에는 양삭 숙박이 없습니다.",
       ),
     },
     {
       question: l("What happens if the Li River is low?", "漓江水位低怎么办？", "이강 수위가 낮으면 어떻게 되나요?"),
       answer: l(
-        "In dry winters the operator sometimes shortens the cruise to a round trip on the middle stretch from Yangdi, which keeps the best-known scenery. We check the water a few days before; if that happens, we drive you on to Yangshuo, and Moon Hill and West Street stay in the plan.",
-        "冬季枯水时，船方有时会把航程改成从杨堤出发的中段往返，最有名的那段山水仍在其中。我们开船前几天会核对水位；真改了，就开车送你继续去阳朔，月亮山和西街照常游览。",
-        "겨울 갈수기에는 운영사가 가장 잘 알려진 풍경이 있는 양디 출발 중간 구간 왕복으로 유람선을 줄이기도 합니다. 출항 며칠 전에 수위를 확인하고, 그렇게 되면 차로 양삭까지 모시며 월량산과 서가 일정은 그대로 갑니다.",
+        "In dry winters the operator sometimes shortens the cruise to a round trip on the middle stretch from Yangdi, which keeps the best-known scenery. We check the water a few days before; if that happens, we drive you on to Yangshuo, and distant views of Moon Hill from the vehicle or the roadside outside the scenic area and the West Street visit stay in the plan.",
+        "冬季枯水时，船方有时会把航程改成从杨堤出发的中段往返，最有名的那段山水仍在其中。我们开船前几天会核对水位；真改了，就开车送你继续去阳朔，保留从车上或景区外路边远看月亮山和游览西街的安排。",
+        "겨울 갈수기에는 운영사가 가장 잘 알려진 풍경이 있는 양디 출발 중간 구간 왕복으로 유람선을 줄이기도 합니다. 출항 며칠 전에 수위를 확인하고, 그렇게 되면 차로 양삭까지 모시며 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보는 일정과 서가 방문은 그대로 유지합니다.",
       ),
     },
     {
