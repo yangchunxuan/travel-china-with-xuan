@@ -2091,3 +2091,28 @@ the two guides' `image-plan.md`.
 | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp` | `f9fe8e22f1dcbd1a0a259041a0f73b9d1d0c5c1859b65a1583329d36fac7adc2` | Spring Festival pressure chart, Korean |
 
 <!-- charts-reset-20261011:end -->
+
+<!-- unsourced-root-removed-20261011:start -->
+
+## Unsourced legacy pictures removed (October 11, 2026)
+
+At the project owner's request, the eleven JPEG files that sat directly in `public/images/` were
+deleted from the repository. None has a source, creator or licence record in this document, several
+look like generated composites, and no route on the site uses them. The only code that still names
+them is the unrouted legacy home page (`components/HomePage.tsx`, `components/RouteExplorer.tsx`,
+`components/HeroCarousel.tsx` and `slideStatics` in `lib/i18n.ts`), which is left unchanged. Do not
+restore any of them from history without a documented source.
+
+- `public/images/beijing-forbidden-city.jpg`
+- `public/images/chaoshan-lantern-street.jpg`
+- `public/images/china-classic.jpg`
+- `public/images/chongqing-monorail.jpg`
+- `public/images/family-journey.jpg`
+- `public/images/food-journey.jpg`
+- `public/images/gentle-journey.jpg`
+- `public/images/hangzhou-west-lake.jpg`
+- `public/images/hero-zhangjiajie.jpg`
+- `public/images/lijiang-old-town.jpg`
+- `public/images/shanghai-bund-sunset.jpg`
+
+<!-- unsourced-root-removed-20261011:end -->
