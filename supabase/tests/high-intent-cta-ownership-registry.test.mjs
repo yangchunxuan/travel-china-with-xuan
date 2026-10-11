@@ -195,6 +195,7 @@ test("commercial links keep the approved 8 hub, 106 curated guide and 50 product
       "lunar-new-year-customs-for-visitors",
       "luoyang-longmen-grottoes",
       "muslim-friendly-china-private-tours",
+      "mutianyu-great-wall-tickets",
       "national-museum-of-china-booking-and-route",
       "pingyao-ancient-city",
       "sanxingdui-museum-booking-and-gallery-order",
