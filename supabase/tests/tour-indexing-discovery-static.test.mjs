@@ -4,6 +4,8 @@ import test from "node:test";
 
 import { getLegacySystemContentLifecycle } from "../../lib/legacySystemContentLifecycle.ts";
 import { buildPrivateTourContentNodes } from "../../lib/privateTourContentAdapter.ts";
+import { getPrivateTourHubLastModified, latestTourHubChange } from "../../lib/privateTourHubLifecycle.ts";
+import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 
 function source(path) {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -106,7 +108,7 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
 
   assert.deepEqual(hub?.dates, {
     datePublished: "2026-08-24",
-    dateModified: "2026-09-06",
+    dateModified: getPrivateTourHubLastModified(),
     lastReviewed: "2026-08-31",
   });
   assert.deepEqual(forest?.dates, {
@@ -124,4 +126,23 @@ test("tour hub and forest product publish truthful lifecycle dates", () => {
   assert.equal(classic.evidence.commit, "e288c0499661ad735e2788df87ab9866bfcdc239");
   const towns = nodes.find(node => node.locales.en?.path === "/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/");
   assert.equal(towns?.dates.dateModified, "2026-10-08");
+});
+
+test("tour hub dates follow public card changes without using build or review dates", () => {
+  const published = getPublishedPrivateTourCatalog("en");
+  for (const locale of ["en", "zh", "ko", "ja"]) {
+    const modified = getPrivateTourHubLastModified(locale);
+    assert.ok(modified >= "2026-10-11", `${locale}: includes the October catalogue release`);
+    assert.ok(published.every((tour) => modified >= tour.dateModified));
+  }
+  assert.equal(
+    latestTourHubChange([
+      { dateModified: "2026-09-01", lastReviewed: "2030-01-01" },
+      { dateModified: "2026-11-20" },
+    ], "2026-10-11"),
+    "2026-11-20",
+    "a future published card edit advances the hub; a review alone does not",
+  );
+  assert.equal(latestTourHubChange([{ dateModified: "2026-09-01" }], "2026-12-01"), "2026-12-01", "a hub-only edit or removal retains its own public change date");
+  assert.equal(latestTourHubChange([], "2026-12-01"), "2026-12-01");
 });

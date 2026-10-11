@@ -165,7 +165,7 @@ test("only an unexpired artifact from a completed successful main Deploy run aut
 });
 
 test("workflow keeps prechecks, restores only validated commits and verifies after both cache purges", async () => {
-  const workflow = await readFile(new URL("../../.github/workflows/deploy.yml", import.meta.url), "utf8");
+  const workflow = (await readFile(new URL("../../.github/workflows/deploy.yml", import.meta.url), "utf8")).replace(/\r\n/gu, "\n");
   for (const check of ["npm run test:traffic-ops", "npm run test:inquiry", "npm run test:guide-search", "npx tsc --noEmit", "npm audit --omit=dev", "npm run check:indexable-export"]) assert.ok(workflow.includes(check));
   assert.ok(workflow.indexOf("Mark the exact release being published") < workflow.indexOf("actions/upload-pages-artifact"));
   assert.ok(workflow.indexOf("sleep 60") < workflow.indexOf("run: node tools/verify-live-release.mjs"));

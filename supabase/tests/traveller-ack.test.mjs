@@ -120,8 +120,7 @@ test("saved intake stays successful on optional receipt failures and exposes onl
   globalThis.fetch = async (url, init) => {
     const name = new URL(String(url)).pathname.split("/").at(-1); const args = JSON.parse(init.body); calls.push({ name, args });
     let data;
-    if (name === "prepare_homeground_traveller_ack_v1") { if (failAuxiliary) throw new Error("optional prepare failed"); data = true; }
-    else if (name === "create_homeground_homepage_email_v1") data = { outcome: "created", inquiryId: "66c78072-5792-4573-9668-93c8e2e88c89", publicReference: reference, receivedAt: "2026-09-28T00:00:00Z" };
+    if (name === "create_homeground_inquiry_with_receipt_v1") data = { outcome: "created", inquiryId: "66c78072-5792-4573-9668-93c8e2e88c89", publicReference: reference, receivedAt: "2026-09-28T00:00:00Z" };
     else if (name === "get_homeground_traveller_ack_receipt_v1") { if (failAuxiliary) return new Response("", { status: 503 }); data = { ackStatus: "suppressed", firstResponseDueAt: "2026-09-30T00:00:00Z" }; }
     else throw new Error(`Unexpected call ${url}`);
     return new Response(JSON.stringify(data), { status: 200 });
@@ -132,12 +131,19 @@ test("saved intake stays successful on optional receipt failures and exposes onl
     await import(new URL(`../functions/v1-inquiries/index.ts?ack-tests=${Date.now()}`, import.meta.url));
     const response = await send(); assert.equal(response.status, 201);
     const body = await response.json(); assert.equal(body.ackQueued, false); assert.equal(body.ackStatus, "suppressed"); assert.equal(body.firstResponseDueAt, "2026-09-30T00:00:00Z");
-    assert.equal(calls[0].name, "prepare_homeground_traveller_ack_v1");
-    assert.equal(calls[0].args.p_recipient_hash, createHmac("sha256", "local-idempotency-secret").update("traveller-ack:guest@example.test").digest("hex"));
-    assert.match(calls[0].args.p_payload_hash, /^[a-f0-9]{64}$/);
+    assert.equal(calls[0].name, "create_homeground_inquiry_with_receipt_v1");
+    assert.equal(calls[0].args.p_rpc_name, "create_homeground_homepage_email_v1");
+    assert.equal(calls[0].args.p_ack_enabled, true);
+    assert.equal(calls[0].args.p_ack_recipient_hash, createHmac("sha256", "local-idempotency-secret").update("traveller-ack:guest@example.test").digest("hex"));
+    assert.match(calls[0].args.p_arguments.p_payload_hash, /^[a-f0-9]{64}$/);
     failAuxiliary = true;
     const failed = await send(); assert.equal(failed.status, 201);
     const fallback = await failed.json(); assert.equal(fallback.state, "submitted"); assert.equal(fallback.publicReference, reference); assert.equal(fallback.ackStatus, "unavailable");
+    env.set("TRAVELLER_ACK_ENABLED", "invalid"); calls.length = 0;
+    assert.equal((await send()).status, 201, "invalid optional receipt configuration cannot lose a valid enquiry");
+    assert.equal(calls[0].args.p_ack_enabled, false);
+    assert.equal(calls[0].args.p_ack_recipient_hash, null);
+    assert.ok(calls.every(call => call.name !== "prepare_homeground_traveller_ack_v1"), "no pre-rate-limit allocation RPC");
   } finally { globalThis.Deno = originalDeno; globalThis.fetch = originalFetch; }
 });
 

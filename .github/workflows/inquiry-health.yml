@@ -14,56 +14,23 @@ concurrency:
 
 jobs:
   check:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
       - name: Check aggregate outbox health
         env:
           OUTBOX_HEALTH_URL: ${{ vars.OUTBOX_HEALTH_URL }}
           OUTBOX_MONITOR_SECRET: ${{ secrets.OUTBOX_MONITOR_SECRET }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          if [[ -z "${OUTBOX_HEALTH_URL}" || -z "${OUTBOX_MONITOR_SECRET}" ]]; then
-            echo "::error::Inquiry health URL or monitor secret is not configured."
-            exit 1
-          fi
-
-          response_file="$(mktemp)"
-          trap 'rm -f "${response_file}"' EXIT
-
-          http_status="$(
-            curl \
-              --silent \
-              --show-error \
-              --connect-timeout 10 \
-              --max-time 30 \
-              --retry 2 \
-              --retry-all-errors \
-              --output "${response_file}" \
-              --write-out "%{http_code}" \
-              --header "x-monitor-secret: ${OUTBOX_MONITOR_SECRET}" \
-              "${OUTBOX_HEALTH_URL}"
-          )"
-
-          if [[ "${http_status}" != "200" ]]; then
-            echo "::error::Inquiry outbox health check failed with HTTP ${http_status}."
-            exit 1
-          fi
-
-          if ! jq -e '
-            .ok == true and
-            .status == "healthy" and
-            (.counts.pending | type == "number") and
-            (.counts.processing | type == "number") and
-            (.counts.failed == 0) and
-            (.counts.overduePending == 0) and
-            (.counts.expiredProcessing == 0) and
-            (.counts.createdLast10Minutes | type == "number") and
-            (.counts.createdLast1Hour | type == "number") and
-            (.counts.createdLast24Hours | type == "number")
-          ' "${response_file}" >/dev/null; then
-            echo "::error::Inquiry health endpoint returned an invalid or unhealthy response."
-            exit 1
-          fi
+        run: node tools/check-outbox-health.mjs
+      - name: Save successful sample identity without queue contents
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: outbox-sample-${{ github.run_id }}-${{ github.run_attempt }}
+          path: outbox-sample.json
+          if-no-files-found: error
+          retention-days: 7

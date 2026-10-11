@@ -6,6 +6,7 @@ import { mkdtempSync, readFileSync, readdirSync, rmSync, statSync, symlinkSync, 
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { PassThrough } from 'node:stream';
+import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import { BACKUP_EXTENSIONS, BACKUP_SCHEMAS, PROJECT_REF, buildPgDumpInvocation, createEncryptedBackup, parseDatabaseUrl, runCli, validateAgeRecipient } from '../../tools/create-encrypted-backup.mjs';
 
@@ -86,7 +87,7 @@ test('backup uses env credentials, consistent read-only snapshot, and all inquir
   assert.ok(invocation.args.includes('--serializable-deferrable'));
   assert.ok(invocation.args.includes('--no-password'));
   assert.ok(invocation.args.includes('--format=custom'));
-  assert.deepEqual(BACKUP_SCHEMAS, ['public', 'homeground_private', 'auth', 'storage', 'extensions']);
+  assert.deepEqual(BACKUP_SCHEMAS, ['public', 'homeground_private', 'homeground_recovery', 'auth', 'storage', 'extensions']);
   assert.ok(invocation.args.includes('--schema=homeground_private'));
   assert.deepEqual(BACKUP_EXTENSIONS, ['pgcrypto']);
   assert.ok(invocation.args.includes('--extension=pgcrypto'), 'the schema filter must include the inquiry UUID/digest extension definition');
@@ -116,9 +117,13 @@ test('real age encrypt/decrypt roundtrip writes only ciphertext and safe manifes
   assert.deepEqual(manifest.scope.extensions, ['pgcrypto']);
   assert.equal(manifest.scope.storageObjectFilesIncluded, false);
   assert.equal(manifest.scope.globalRolesIncluded, false);
-  assert.deepEqual(manifest.scope.restorePrerequisites, { destinationRolesRequired: true, platformExtensionDefinitionsNotIncluded: ['pg_cron', 'pg_net'] });
-  assert.equal(statSync(result.encryptedPath).mode & 0o777, 0o600);
-  assert.equal(statSync(result.manifestPath).mode & 0o777, 0o600);
+  assert.deepEqual(manifest.scope.restorePrerequisites, { destinationRolesRequired: true, latestIndependentDeletionTombstonesRequired: true, platformExtensionDefinitionsNotIncluded: ['pg_cron', 'pg_net'] });
+  // Windows reports synthetic POSIX mode bits; CI/Linux enforces the real
+  // owner-only mode. Encryption, contents and path checks still run everywhere.
+  if (process.platform !== 'win32') {
+    assert.equal(statSync(result.encryptedPath).mode & 0o777, 0o600);
+    assert.equal(statSync(result.manifestPath).mode & 0o777, 0o600);
+  }
   const serialized = JSON.stringify(result) + JSON.stringify(manifest) + ciphertext.toString();
   for (const secret of ['top-secret-password', 'alice-fixture@example.invalid', 'AGE-SECRET-KEY-', dbUrl]) assert.ok(!serialized.includes(secret), `must not expose ${secret === dbUrl ? 'database URL' : 'fixture secret'}`);
 });
@@ -233,12 +238,12 @@ test('missing client binaries fail rather than treating a zero-byte export as he
 });
 
 test('output refuses checkout paths and symlinks into the checkout', async () => {
-  const checkout = new URL('../..', import.meta.url).pathname;
+  const checkout = fileURLToPath(new URL('../..', import.meta.url));
   for (const output of [join(checkout, 'backup-fixture'), join(checkout, '..backup-fixture')]) {
     const result = await createEncryptedBackup({ ...options(), outputDir: output });
     assert.equal(codeOf(result), 'OUTPUT_DIRECTORY_IN_CHECKOUT');
   }
-  const link = join(directory, 'checkout-link'); symlinkSync(checkout, link);
+  const link = join(directory, 'checkout-link'); symlinkSync(checkout, link, process.platform === 'win32' ? 'junction' : 'dir');
   assert.equal(codeOf(await createEncryptedBackup({ ...options(), outputDir: join(link, 'backups') })), 'OUTPUT_DIRECTORY_IN_CHECKOUT');
 });
 
@@ -253,7 +258,7 @@ test('CLI emits non-sensitive failed JSON and exits nonzero for absent configura
 });
 
 test('workflow uploads only encrypted artifacts and requires upload success for heartbeat health', () => {
-  const workflow = readFileSync(new URL('../../.github/workflows/inquiry-backup.yml', import.meta.url), 'utf8');
+  const workflow = readFileSync(new URL('../../.github/workflows/inquiry-backup.yml', import.meta.url), 'utf8').replace(/\r\n/gu, '\n');
   assert.match(workflow, /github\.ref == 'refs\/heads\/main'/u);
   assert.match(workflow, /retention-days: 30/u);
   assert.match(workflow, /steps\.upload\.outcome == 'success'/u);

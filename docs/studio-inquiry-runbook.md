@@ -184,7 +184,11 @@ failure, use the narrower response in the following subsection instead:
    no longer see a form that cannot be accepted;
 3. check the notification schedule, Edge Function and Resend configuration
    using `inquiry-deployment.md`;
-4. restore the cause before retrying failed jobs;
+4. restore the cause before retrying failed jobs. A job marked
+   `provider_retry_window_expired` must not be automatically requeued: inspect
+   the provider's records and the saved enquiry before any manual follow-up.
+   Internal mail retries stop 23 hours after their first provider attempt;
+   the 72-hour creation deadline still limits never-attempted backlog;
 5. repeat the aggregate query and confirm the workflow returns green;
 6. set `INQUIRY_ACCEPTING_SUBMISSIONS=true`, make one labelled QA submission,
    and only then re-enable and redeploy the public form.
@@ -217,8 +221,10 @@ failure, use the narrower response in the following subsection instead:
   It stores the reason and timestamps without trip notes and needs authorised
   review before removal. Deleting an enquiry must not silently remove this
   restriction. The owner must accept and disclose this separate retention
-  policy before enabling confirmations. Confirmation preparation records become
-  eligible for deletion after 48 hours and the daily cleanup removes them;
+  policy before enabling confirmations. New receipt intent is carried inside
+  the enquiry transaction; rejected and rate-limited requests create no
+  preparation records. Legacy preparation records become eligible for deletion
+  after 48 hours and the daily cleanup removes them;
   confirmation jobs and events follow enquiry
   deletion. Resolving a delivery issue does not itself resend the message.
 - For a wrong-address report, verify the requester and link the correction to
@@ -239,6 +245,8 @@ confirm who checks `hello@` and uses it to reply, approve the actual public
 reply time, verify the selected From address with the sending provider and
 approve the release. Keep automated sending off while any gate is unresolved.
 Local previews and test-provider events do not establish real inbox placement.
+For the migration-first rollout and original-mail retry compatibility details,
+see [receipt and retry hardening](inquiry-receipt-retry-hardening.md).
 
 ### Malicious traffic and account incident response
 

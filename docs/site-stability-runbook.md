@@ -7,7 +7,7 @@
 | 首页、中韩首页、私家团、预约服务、预约清单、张家界产品、备用站 | Better Stack 免费监测，每 3 分钟；欧洲、北美、亚洲、澳洲 | HTTPS、HTTP 和正文关键词；邮箱通知。免费方案不包含电话/SMS，手机是否提醒取决于邮箱客户端设置。 |
 | Cloudflare 边缘与 GitHub Pages 源站证书 | `site-stability.yml`，每 12 小时 | 对两个主机名和四个源站地址验证证书链、域名、有效期；30 / 14 / 7 天分别告警。检查超过 24 小时没有回报也告警。 |
 | 询盘接收合约 | Cloudflare Cron Worker `homeground-intake-monitor`，每 15 分钟；原 GitHub canary 保留备用诊断 | 六项检查全部通过才报告成功；明确失败立即告警。Better Stack 预期 15 分钟、宽限 15 分钟，连续 30 分钟无回报告警。只有 Worker 可向此心跳上报，GitHub 不再重置其时钟。配置与实际定时记录都验收后才算完成切换。 |
-| 邮件通知队列 | 原 outbox 工作流 + `stability-workflow-alerts.yml` | 失败由独立监测通知；超过 105 分钟未回报告警。此项仍依赖 GitHub 调度，迟到不能直接认定网站故障。 |
+| 邮件通知队列 | 当前仍为 outbox 工作流 + `stability-workflow-alerts.yml`；独立 Cloudflare Worker 已备好，默认无 Cron、未启用 | GitHub 只为当前 run/attempt 的真实新鲜采样回报成功，旧成功不能重置时钟；当前仍按超过 105 分钟未回报告警。独立 Worker 需按下文完成定时验收和切换后，才改为每 15 分钟检查、连续 30 分钟无回报告警。GitHub 迟到不能直接认定网站故障。 |
 | 每次发布 | `deploy.yml` | 发布后清缓存，再核对真实线上提交标识、六个关键页面、canonical 和 JavaScript。失败告警。部署是事件检查，没有部署时不要求频繁心跳。 |
 | 隔离询盘与备份恢复 | `inquiry-recovery-drill.yml`，每周 | 临时数据库、无外发网络接收器；真实 Edge handler/RPC/SQL 入库、后台读取、通知队列、重试与恢复。八天无完成记录告警。 |
 | 加密数据库备份 | `inquiry-backup.yml`，每日 | 需要业主批准并填写数据库连接 Secret；成功上传档案后才报告成功。36 小时没有成功备份告警。未配置连接不能视为已启用。 |
@@ -29,6 +29,7 @@ Supabase 免费计划没有自动平台备份；本手册的每日备份是单�
 - 本机 `~/.homeground-stability/keys/backup-age.key`：私钥，目录 700、文件 600。不得提交到仓库、日志、聊天或上传 GitHub；离线另存一份后才能承担本机损坏时的恢复。
 - `*_HEARTBEAT_URL`：仅用于向独立监测报告状态，保存在 GitHub Secrets。发送内容只有成功或失败，没有客户数据。
 - 询盘主检查的 `INTAKE_HEARTBEAT_URL` 单独保存在 Cloudflare Worker 的 Secret 绑定中；不得写入源代码、明文配置、日志或公开接口。原 GitHub `INQUIRY_INTAKE_HEARTBEAT_URL` 不再被工作流读取；不能恢复两处同时上报。
+- 通知队列独立 Worker 只绑定 `OUTBOX_MONITOR_SECRET` 和专用的 `OUTBOX_HEARTBEAT_URL`；不需要 Supabase service-role、数据库连接或 Resend 密钥。专用心跳必须新建，不能把现有 GitHub `INQUIRY_OUTBOX_HEARTBEAT_URL` 复制给 Worker。GitHub 仓库变量 `OUTBOX_HEARTBEAT_REPORTER` 未填或为 `github` 时保留原上报；明确为 `cloudflare` 才停用 GitHub 队列上报，其他值失败关闭。
 
 ## 独立询盘定时检查
 
@@ -44,9 +45,27 @@ Worker 不绑定正式域名、不修改 DNS，关闭 workers.dev 和预览 URL�
 
 如果主检查停止：先查 Worker Scheduled 事件的状态、CPU 用量和固定错误代号，再对照 Better Stack 最近心跳。GitHub 手动 canary 可以提供诊断证据，但不能清除 Worker 漏跑事件。需要回退时恢复旧 GitHub 上报前，先停用 Worker 定时上报，并按旧流程重新核对告警阈值；始终保持同一个主心跳只有一个报告来源。
 
+## 通知队列：新鲜采样与独立调度切换
+
+`inquiry-health.yml` 仍每 15 分钟执行，调用与 Worker 共用的严格只读采样器。只有固定的 `https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/inquiry-health` 能收到 `x-monitor-secret`；不跟随重定向，无重试，单次包含正文读取的截止时间 8 秒、正文 16 KiB。要求全部八个计数是非负安全整数、键集合准确、计数关系合理，队列整体及旅客确认邮件状态正常；并要求接口 `checkedAt` 距当前不超过 2 分钟，拒绝未来、缺失或无效时间。接口还负责按生产配置判断短期询盘量是否超阈值。
+
+成功检查只保存一个小型 `outbox-sample-<run id>-<attempt>` artifact，包含版本、run ID、attempt、提交 SHA、实际 `checkedAt`，没有计数、请求 ID 或客户信息。GitHub 通知工作流再次核对同仓库 main 的当前 run、attempt、SHA、工作流路径和结果；新的排队/运行中任务也会阻止旧任务上报。成功回报还要求采样时间处于该次运行内、距现在不超过 20 分钟且不在未来。找不到 artifact、旧 attempt、迟到的成功或时间异常均不发成功心跳，保留原本的漏报计时，而不是用工作流最近更新时间冒充新采样。部署验证、证书和 TEST 告警沿用原流程。
+
+独立实现位于 `ops/outbox-monitor/worker.mjs` 和 `wrangler.jsonc`。当前配置 `crons: []`、`OUTBOX_HEARTBEAT_REPORTER: disabled`，关闭 workers.dev 和预览 URL，无正式域名或 DNS 变更；HTTP 入口一律 404，不能触发检查。启用后每次 Scheduled 事件最多两个外部 GET：一次受保护的汇总健康读取、一次专用 Better Stack 成功或失败心跳。两次各有 8 秒截止时间；心跳失败不重试、不再补发成功。日志只含固定错误代号和时间，不输出密钥、心跳地址、接口正文或客户信息。配置错误不开始网络请求，由缺少回报的告警发现。
+
+激活检查表（代码合并不等于已完成）：
+
+1. 先通过离线 mock 测试、代码复核和 Worker 打包检查；保持 GitHub 原心跳正常上报，明确仓库变量为 `github`。核对生产健康接口已返回当前完整字段和合法采样时间。
+2. 新建专用于 Cloudflare 通知队列检查的 Better Stack 心跳及通知，设置预期 15 分钟、宽限 15 分钟。在私有配置中核对其地址与原 GitHub 心跳不同，不能在日志或聊天里打印。先部署无 Cron 的 Worker，再绑定专用心跳与现有只读 monitor secret；不得新增高权限数据库密钥。
+3. 将 Worker 自己的 reporter 变量设为 `cloudflare`，启用 UTC `11,26,41,56 * * * *`；此时 GitHub 仍向旧的独立心跳上报，两个来源没有共享心跳。至少核对两轮真实 Scheduled 事件、Better Stack 对应收报时间、固定代号、CPU 和免费用量余量；本机 mock、手动执行不能代替定时验收。实际免费额度不足时报告，不自动购买升级。
+4. 专用监测实测正常后，将 GitHub 仓库变量 `OUTBOX_HEARTBEAT_REPORTER` 设为 `cloudflare`，确认随后 `Independent workflow alerts` 不再读取原队列心跳 Secret；再暂停旧 GitHub 心跳的缺失通知。保留原 health 工作流作为诊断备用。记录操作时间、Worker 版本、两轮 Scheduled 证据和 Better Stack 最近收报，才宣布切换完成。这一顺序保证新监测验收前旧监测仍在。
+5. 回退时先恢复原 GitHub 心跳通知、变量改回 `github`，确认一轮新鲜采样成功上报，再停独立 Worker Cron 并暂停其专用心跳通知。两个来源始终使用不同心跳；不要通过复制 Secret 来合并来源。若改为复用旧心跳，必须先完全停用原发报源并移除其 Secret，确认无运行中的上报后才能绑定新源。
+
+上线此改动后的第一轮旧格式 GitHub 成功没有新 artifact，会被拒绝；下一次新格式采样完成后才能恢复成功上报。若连续没有新鲜采样，查看检查日志、artifact 的 run/attempt 和实际采样时间，不能通过手动补发成功来消除告警。
+
 ## 每日备份的实际范围
 
-`pg_dump` 对 public、homeground_private、auth、storage、extensions 五个 schema 做一致的只读快照，显式包含询盘需要的 pgcrypto 扩展定义；直接流入 age 公钥加密。工作目录中不产生明文数据库档案。TLS 验证失败、命令失败、超时、超过大小上限或上传失败均报失败。
+`pg_dump` 对 public、homeground_private、homeground_recovery、auth、storage、extensions 六个 schema 做一致的只读快照，显式包含询盘需要的 pgcrypto 扩展定义；直接流入 age 公钥加密。homeground_recovery 包含删除记录和删除、重放函数。工作目录中不产生明文数据库档案。TLS 验证失败、命令失败、超时、超过大小上限或上传失败均报失败。
 
 Session pooler 的证书链使用 Supabase Root 2021 CA。仓库中的 `tools/certificates/supabase-root-2021.crt` 是从已登录 Supabase Database Settings 的 Download certificate 获取并核对指纹的公开根证书，[官方公开下载地址](https://supabase-downloads.s3-ap-southeast-1.amazonaws.com/prod/ssl/prod-ca-2021.crt)与该证书一致，不含私钥。备份工作流先检查 DER SHA-256 指纹、CA 属性和有效期，再将单个 `.crt` 安装到该次 Ubuntu runner 的系统信任；继续使用 `PGSSLMODE=verify-full` 和 `PGSSLROOTCERT=system`，同时验证证书链及真实主机名。安装或检查失败会阻止导出并报告失败。
 
@@ -75,9 +94,13 @@ Session pooler 的证书链使用 Supabase Root 2021 CA。仓库中的 `tools/ce
 
 ## 隔离恢复演练
 
-每周演练使用 disposable PostgreSQL、临时 TLS CA 和一次性 age 钥匙，运行真实 `pg_dump → age → 解密 → pg_restore`。比较全部 26 个 private 表的数据哈希、函数定义、函数/ schema 权限、forced RLS 与后台 RPC；验证错误 CA、域名和损坏档案会失败。
+每周演练使用 disposable PostgreSQL、临时 TLS CA 和一次性 age 钥匙，运行真实 `pg_dump → age → 解密 → pg_restore`。比较 private 与 recovery 表的数据哈希、函数定义、函数/schema 有效权限、forced RLS 与后台 RPC；验证错误 CA、域名和损坏档案会失败。恢复后实际执行删除、删除记录重放和过期清理，并验证 anon/authenticated 无权读取恢复的数据。
 
 恢复只针对新建的隔离目标数据库。保留其 PostgreSQL 标准 public schema 和默认权限，从 `pg_restore --list` 的 TOC 中仅排除重复的 `CREATE SCHEMA public` 条目；其他权限与注释照常恢复。不要删除生产 public，不要直接向有业务数据的库恢复，不要扩大 PUBLIC 权限来掩盖恢复错误。相关可执行示例见 `supabase/tests/backup-recovery-integration.test.mjs`。
+
+快照内的删除记录只覆盖备份时刻。恢复库重新接受业务查询前，必须导入独立保存的最新删除记录（包括备份后发生的删除），执行 `replay_homeground_deletion_tombstones`，再验证已删除询盘不可恢复访问、删除与保留期限清理可用。缺少最新记录时，保持恢复库隔离；不能把旧快照自带的记录视为完整删除历史。manifest 的 `latestIndependentDeletionTombstonesRequired: true` 明确记录这一前提。演练会模拟备份后删除，再导入最新记录并重放，避免只验证“档案能打开”。
+
+本地 Windows 与 WSL 的完整验证前置条件见 [local-validation.md](local-validation.md)。
 
 邮件提供商在演练中为测试接收器：能够验证通知任务、请求格式、接受记录和幂等重试，不能证明真实客户收到或阅读邮件。独立告警邮件另用明确标记的 TEST 心跳实测收件及恢复。
 

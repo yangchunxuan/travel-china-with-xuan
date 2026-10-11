@@ -23,6 +23,7 @@ import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides";
 import { spanishSite } from "../lib/spanishSite";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy";
 import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
+import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
 
@@ -190,7 +191,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: `${base}/ja/tours/`,
-      lastModified: "2026-09-27",
+      lastModified: getPrivateTourHubLastModified("ja"),
       changeFrequency: "weekly",
       priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(hubAlternates) },
@@ -248,7 +249,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}${spanishSite.tours}`,
-      lastModified: spanishPublished,
+      lastModified: getPrivateTourHubLastModified("es"),
       changeFrequency: "weekly",
       priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(hubAlternates) },
