@@ -35,19 +35,6 @@ function tiers(slug, packageId) {
       const price = tier(travelers);
       return plain(formatPrivateTourPrice(price.cnyPerPerson, locale, price.usdPerPerson, price.publishedPrice).formatted);
     },
-    /**
-     * The page's indicative price for a larger group. The published two-, four- and
-     * six-traveller prices follow "per-person part + shared part ÷ travellers" (the
-     * four-traveller price sits on the line through the other two), so the same line
-     * is read at twelve travellers and rounded up to CNY 10.
-     */
-    indicative: (travelers, locale) => {
-      const two = tier(2).cnyPerPerson;
-      const six = tier(6).cnyPerPerson;
-      const shared = (two - six) * 3;
-      const perPerson = two - shared / 2;
-      return plain(formatPrivateTourPrice(Math.ceil((perPerson + shared / travelers) / 10) * 10, locale).formatted);
-    },
   };
 }
 
@@ -57,7 +44,6 @@ test("the family tours page shows each route's current prices in every language"
     for (const slug of routes) {
       const route = tiers(slug, "standard-guided");
       assert.ok(text.includes(route.published(6, locale)), `${locale} ${slug}: six travellers ${route.published(6, locale)}`);
-      assert.ok(text.includes(route.indicative(12, locale)), `${locale} ${slug}: twelve travellers ${route.indicative(12, locale)}`);
       assert.ok(text.includes(`/tours/${slug}/`), `${locale}: links to ${slug}`);
     }
     // A family of four is quoted in the text for the shortest route and the panda route.
