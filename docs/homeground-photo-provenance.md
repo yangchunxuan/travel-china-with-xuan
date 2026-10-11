@@ -2061,3 +2061,33 @@ only and no longer correspond to a published picture.
 | `public/images/guides/when-metro-construction-meets-archaeology/hero-1600.webp` | `552f4b4bd47bfc1c033a7e2903e223fa1c87352b9d5554a287ccf5ddbc09836a` | Illustration of a cracked old jar standing on a stretch of railway track. |
 
 <!-- hand-drawn-20261011:end -->
+
+<!-- charts-reset-20261011:start -->
+
+## Decision charts re-set in the site's typography (October 11, 2026)
+
+The project owner asked for the two sets of in-body charts below to be made better looking. Each was
+re-set as a typeset chart in the manner of the site's own pages: ivory ground, serif headings, hairline
+rules and one rust accent. The gradient ground, the coloured rounded panels and the decorative strokes
+of the August 22 versions are gone. Each chart is text laid out locally as HTML and rasterised with
+headless Chrome at 1440 × 900; no image model, photograph, logo, map tile or identifiable person is
+involved. The text is set in Georgia (English), Noto Serif SC (Chinese) and MaruBuri with Pretendard
+(Korean); no font file is shipped inside an asset.
+
+The wording is carried over unchanged from the charts published on August 22, 2026, with one exception
+made at the owner's request: the Korean Great Wall chart now names Badaling as 팔달령, as the Korean
+article does throughout, instead of 바다링. File names, pixel dimensions, alternative text and captions
+are unchanged. The evidence boundaries recorded for these assets under “Evergreen decision graphics
+(August 22, 2026)” still apply. The SHA-256 values below supersede the values recorded there and in
+the two guides' `image-plan.md`.
+
+| File | SHA-256 | Chart |
+|---|---|---|
+| `public/images/guides/great-wall-section-selector-from-beijing/section-decision-en-1440.webp` | `430574bbf5bc81095160a757ede31a8fb4d67759937732fa9a39d0f1c1061190` | Great Wall decision chart, English |
+| `public/images/guides/great-wall-section-selector-from-beijing/section-decision-zh-1440.webp` | `468e12fa6147ad0cba65933a7292125e19121a2086f0da3bea4ff89b699654e0` | Great Wall decision chart, Simplified Chinese |
+| `public/images/guides/great-wall-section-selector-from-beijing/section-decision-ko-1440.webp` | `dce9b4f92239098f809c9ee81df1913f38ba4a1d2bc87e84539e4c4c3e205771` | Great Wall decision chart, Korean |
+| `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-en-1440.webp` | `ed6da771f351d982cde89ecf7b41c67b607c42a2c188618676b821c48dafc8ea` | Spring Festival pressure chart, English |
+| `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-zh-1440.webp` | `7908693f9f188a4f7f02e0252a4a757aebe4aab4ebcf9cab0b6cad215d21e18b` | Spring Festival pressure chart, Simplified Chinese |
+| `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp` | `f9fe8e22f1dcbd1a0a259041a0f73b9d1d0c5c1859b65a1583329d36fac7adc2` | Spring Festival pressure chart, Korean |
+
+<!-- charts-reset-20261011:end -->
