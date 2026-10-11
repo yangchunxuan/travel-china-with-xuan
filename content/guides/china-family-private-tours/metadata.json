@@ -1,0 +1,109 @@
+{
+  "id": "china-family-private-tours",
+  "type": "planning",
+  "pillar": "traveller-fit",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "decision-guide",
+  "topics": [
+    "family-travel",
+    "children",
+    "private-tour",
+    "trip-planning",
+    "tour-prices"
+  ],
+  "destinations": [
+    "china",
+    "beijing",
+    "xian",
+    "chengdu",
+    "guilin",
+    "shanghai"
+  ],
+  "heroImagePath": "/images/guides/china-family-private-tours/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/china-family-private-tours/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1066,
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "sourceReviewedDate": "2026-10-11",
+  "searchTerms": {
+    "en": [
+      "china family tours",
+      "family china tours",
+      "family tour to china",
+      "china family vacation",
+      "family trip to china",
+      "china tour with kids"
+    ],
+    "zh": [
+      "中国亲子私家团",
+      "带孩子去中国旅游",
+      "中国家庭旅游线路",
+      "中国亲子游价格"
+    ],
+    "ko": [
+      "중국 가족 여행",
+      "중국 가족 프라이빗 투어",
+      "아이와 중국 여행",
+      "중국 가족 여행 비용"
+    ]
+  },
+  "search": {
+    "section": "plan",
+    "family": "task",
+    "primaryIntent": "plan"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/china-family-private-tours/",
+      "title": "China Family Tours: Private Routes, Prices & Kids' Pace",
+      "headline": "China Family Tours: Private Routes for Travelling with Children",
+      "description": "Private China family tours on five routes of 8 to 14 days, from USD 2,030 per person for four. Your own guide, vehicle and pace; children quoted by age.",
+      "heroAlt": "A young giant panda sitting on a wooden platform at the Chengdu panda base",
+      "navTitle": "China family tours",
+      "featuredLinkLabel": "See China family tours",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Family routes",
+        "Published prices",
+        "Private guide"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/china-family-private-tours/",
+      "title": "中国亲子私家团：适合带孩子的线路与价格",
+      "headline": "中国亲子私家团：带孩子怎么走、多少钱",
+      "description": "带孩子去中国的私家团：五条8至14天线路，4人同行每人¥13,190起。专属导游、专车和自己的节奏，儿童按年龄单独报价。",
+      "heroAlt": "成都大熊猫基地里坐在木台上的一只熊猫幼仔",
+      "navTitle": "中国亲子私家团",
+      "featuredLinkLabel": "查看亲子私家团",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "亲子线路",
+        "公布价格",
+        "专属导游"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/china-family-private-tours/",
+      "title": "중국 가족 프라이빗 투어: 아이와 가는 코스와 가격",
+      "headline": "중국 가족 프라이빗 투어: 아이와 함께 가는 코스와 비용",
+      "description": "아이와 함께하는 중국 프라이빗 투어 다섯 코스(8~14일). 4인 기준 1인 ₩2,840,000부터. 전담 가이드와 전용 차량, 가족의 속도로 움직이며 어린이는 나이에 따라 따로 견적합니다.",
+      "heroAlt": "청두 판다 기지의 나무 단 위에 앉아 있는 어린 자이언트 판다",
+      "navTitle": "중국 가족 투어",
+      "featuredLinkLabel": "중국 가족 투어 보기",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "가족 코스",
+        "공개 가격",
+        "전담 가이드"
+      ]
+    }
+  }
+}

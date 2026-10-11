@@ -72,6 +72,7 @@ const lines = [
   "",
   link("/tours/"),
   link("/guides/china-private-tour-prices/"),
+  link("/guides/china-family-private-tours/"),
   ...tours.map(tourLine),
   "",
   "## Services",
