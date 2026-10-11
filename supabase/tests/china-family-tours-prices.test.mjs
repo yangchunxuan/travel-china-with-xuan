@@ -51,7 +51,10 @@ test("the family tours page shows each route's current prices in every language"
       const route = tiers(slug, "standard-guided");
       assert.ok(text.includes(route.published(4, locale)), `${locale} ${slug}: four travellers`);
     }
-    const smallGroup = tiers("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour", "small-group-departure");
-    assert.ok(text.includes(smallGroup.published(2, locale)), `${locale}: small-group from-price`);
+    // The page gives the lower of the two 14-day small-group prices as the "from" price.
+    const smallGroups = ["beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour", "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"]
+      .map((slug) => tiers(slug, "small-group-departure"))
+      .sort((left, right) => Number(left.published(2, "en").replace(/\D/g, "")) - Number(right.published(2, "en").replace(/\D/g, "")));
+    assert.ok(text.includes(smallGroups[0].published(2, locale)), `${locale}: small-group from-price`);
   }
 });
