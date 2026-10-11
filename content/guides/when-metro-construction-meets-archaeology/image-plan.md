@@ -41,3 +41,5 @@
 - An operating station photo presented as the discovery location without source proof.
 
 Status: COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a cracked old jar standing on a stretch of railway track. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

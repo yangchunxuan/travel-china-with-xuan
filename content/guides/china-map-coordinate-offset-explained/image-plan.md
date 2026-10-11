@@ -31,3 +31,5 @@ Use a restrained teal, warm amber and graphite palette, generous negative space 
 - EN: Editorial diagnostic diagram comparing a destination pin, an address card and two safe recovery paths.
 - ZH: 对比目的地标记、地址卡片与两条安全恢复路径的编辑示意图。
 - KO: 목적지 핀, 주소 카드, 두 가지 안전 복구 경로를 비교한 편집용 진단 그림.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a street map with a solid pin on one spot and a dotted outline of the same pin a short distance away. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

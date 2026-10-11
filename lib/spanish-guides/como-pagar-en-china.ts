@@ -12,7 +12,7 @@ export const comoPagarEnChina: SpanishGuide = {
     src: "/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp",
     width: 1600,
     height: 1000,
-    alt: "Ilustración de un teléfono, una tarjeta bancaria y billetes, dispuestos como kit de pago de reserva para un viaje",
+    alt: "Ilustración de un teléfono sostenido con un dedo que muestra un código de pago en la pantalla",
   },
   datePublished: "2026-10-11",
   dateModified: "2026-10-11",

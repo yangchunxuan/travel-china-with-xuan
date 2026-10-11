@@ -37,3 +37,5 @@
 - A beautiful seal impression copied from a museum collection object without artwork clearance.
 
 Status: COPY READY — AI-ASSISTED EXPLANATORY HERO VISUALLY CHECKED — REAL DOCUMENTARY RIGHTS NOT CLEARED
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a hand pressing a wooden stamp down toward a page that already has two stamp marks. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

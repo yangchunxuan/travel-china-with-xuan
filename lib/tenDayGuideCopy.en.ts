@@ -290,7 +290,7 @@ export const tenDayGuideEnglish: TenDayGuideCopy = {
     intro:
       "We would not start by forcing your dates into a fixed package. We would first test whether the route protects what matters to your group—and tell you where it does not.",
     imageAlt:
-      "Illustration of a folded route map, calendar, travel ticket, luggage tag and pencil",
+      "Illustration of a calendar page with three days circled and joined by a dotted line, with a finger on the last one.",
     imageCaption: "Illustration: how Homeground stress-tests a route before pricing.",
     methods: [
       {
