@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "Allow USD 3,790–3,990 per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to USD 2,990 each. If fixed dates suit you, the two 14-day small groups cost USD 2,790–2,890 each and carry 8–12 guests."
+      "text": "Allow USD 3,580–4,110 per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to USD 2,200 each. If fixed dates suit you, the two 14-day small groups cost USD 2,140–2,230 each and carry 8–12 guests."
     },
     {
       "id": "private-heading",
@@ -29,79 +29,79 @@ const body = {
         [
           "Beijing, Xi'an, Guilin, Shanghai",
           "10 days",
-          "USD 2,990",
-          "USD 2,540",
-          "USD 2,390"
+          "USD 2,510",
+          "USD 1,820",
+          "USD 1,670"
         ],
         [
           "Beijing, Hangzhou, Suzhou, Shanghai (no flights)",
           "11 days",
-          "USD 2,690",
-          "USD 2,290",
-          "USD 2,140"
+          "USD 2,670",
+          "USD 1,760",
+          "USD 1,540"
         ],
         [
           "Shanghai, Zhangjiajie, Fenghuang, Guilin",
           "13 days",
-          "USD 3,590",
-          "USD 3,040",
-          "USD 2,890"
+          "USD 3,300",
+          "USD 2,340",
+          "USD 2,120"
         ],
         [
           "Beijing, Xi'an, Yellow Mountain, Hangzhou, Suzhou, Shanghai",
           "14 days",
-          "USD 3,790",
-          "USD 3,190",
-          "USD 2,990"
+          "USD 3,580",
+          "USD 2,470",
+          "USD 2,200"
         ],
         [
           "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
           "14 days",
-          "USD 3,890",
-          "USD 3,290",
-          "USD 3,090"
+          "USD 3,680",
+          "USD 2,670",
+          "USD 2,430"
         ],
         [
           "Beijing, Xi'an, Dali, Lijiang, Shangri-La",
           "14 days",
-          "USD 3,890",
-          "USD 3,290",
-          "USD 3,090"
+          "USD 4,110",
+          "USD 2,920",
+          "USD 2,640"
         ],
         [
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 3,990",
-          "USD 3,390",
-          "USD 3,190"
+          "USD 3,720",
+          "USD 2,620",
+          "USD 2,360"
         ],
         [
           "Beijing, Xi'an, Silk Road to Urumqi",
           "15 days",
-          "USD 4,590",
-          "USD 3,890",
-          "USD 3,690"
+          "USD 4,370",
+          "USD 3,040",
+          "USD 2,730"
         ],
         [
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
-          "USD 4,690",
-          "USD 3,990",
-          "USD 3,790"
+          "USD 4,580",
+          "USD 3,340",
+          "USD 3,040"
         ],
         [
           "Grand China with Zhangjiajie and the Yangtze",
           "21 days",
-          "USD 5,890",
-          "USD 4,990",
-          "USD 4,690"
+          "USD 5,920",
+          "USD 4,370",
+          "USD 4,010"
         ]
       ]
     },
     {
       "id": "per-day",
       "type": "paragraph",
-      "text": "For two travellers, the four 14-day routes work out to about USD 271–285 per person per day. The 11-day Beijing–Hangzhou–Suzhou–Shanghai route comes in lower at about USD 245 a day: it uses trains and a private car, with no domestic flights. The 15-day Silk Road route is about USD 306 a day. Its long road sections take more vehicle time."
+      "text": "For two travellers, the four 14-day routes work out to about USD 256–294 per person per day. The 11-day Beijing–Hangzhou–Suzhou–Shanghai route comes in lower at about USD 243 a day: it uses trains and a private car, with no domestic flights. The 15-day Silk Road route is about USD 291 a day. Its long road sections take more vehicle time."
     },
     {
       "id": "group-size-heading",
@@ -133,30 +133,30 @@ const body = {
       ],
       "rows": [
         [
-          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
-          "14 days",
-          "USD 2,790",
-          "USD 690",
-          "17–30 Apr 2027; 16–29 Oct 2027"
-        ],
-        [
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 2,890",
+          "USD 2,140",
           "USD 690",
           "10–23 Apr 2027; 8–21 May 2027; 11–24 Sep 2027; 9–22 Oct 2027"
         ],
         [
+          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
+          "14 days",
+          "USD 2,230",
+          "USD 690",
+          "17–30 Apr 2027; 16–29 Oct 2027"
+        ],
+        [
           "Beijing, Xi'an, Silk Road to Urumqi",
           "15 days",
-          "USD 3,390",
+          "USD 2,470",
           "USD 690",
           "12–26 Jun 2027; 11–25 Sep 2027"
         ],
         [
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
-          "USD 3,490",
+          "USD 2,800",
           "USD 1,090",
           "19 May–4 Jun 2027; 1–17 Sep 2027"
         ]
@@ -203,7 +203,7 @@ const body = {
     {
       "id": "compare",
       "type": "paragraph",
-      "text": "On the Beijing–Xi'an–Chengdu–Guilin–Shanghai 14-day route, a private departure for two is USD 3,990 each. The fixed-date group is USD 2,890 each. A private guide and vehicle give your party more control over the pace; the group follows one plan with 8–12 guests. Eight friends travelling together can also set their own group date at the small-group price."
+      "text": "On the Beijing–Xi'an–Chengdu–Guilin–Shanghai 14-day route, a private departure for two is USD 3,720 each. The fixed-date group is USD 2,140 each. A private guide and vehicle give your party more control over the pace; the group follows one plan with 8–12 guests. Eight friends travelling together can also set their own group date at the small-group price."
     },
     {
       "id": "price-note",
@@ -219,11 +219,11 @@ const body = {
       "items": [
         {
           "question": "How much is a two-week China tour for two people?",
-          "answer": "Budget USD 7,580–7,980 for two people on Homeground's four 14-day private China routes. With a shared twin room, that is USD 3,790–3,990 each. Add flights to and from China, lunch and dinner."
+          "answer": "Budget USD 7,160–8,220 for two people on Homeground's four 14-day private China routes. With a shared twin room, that is USD 3,580–4,110 each. Add flights to and from China, lunch and dinner."
         },
         {
           "question": "Is a private China tour cheaper with more people?",
-          "answer": "On the 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private route, the published per-person price falls from USD 3,990 for two travellers to USD 3,390 for four and USD 3,190 for six. The guide and vehicle cost is shared across more people."
+          "answer": "On the 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private route, the published per-person price falls from USD 3,720 for two travellers to USD 2,620 for four and USD 2,360 for six. The guide and vehicle cost is shared across more people."
         },
         {
           "question": "Do the prices include international flights?",

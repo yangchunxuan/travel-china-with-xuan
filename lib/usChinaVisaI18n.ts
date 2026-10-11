@@ -161,7 +161,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "Is there a China tour built around the 240-hour rule?",
         answer:
-          "Homeground's 10-day Beijing–Xi’an–Guilin–Hong Kong private tour enters the mainland at Beijing on Day 1 and plans to leave on Day 9 by train for Hong Kong West Kowloon, inside the 10-day limit. It starts at USD 3,090 per person for two sharing a twin room. This route can only be considered for 240-hour transit if you arrived from a country or region other than Hong Kong, hold a confirmed onward ticket to Hong Kong and meet the other entry conditions. The border officer makes the entry decision on arrival.",
+          "Homeground's 10-day Beijing–Xi’an–Guilin–Hong Kong private tour enters the mainland at Beijing on Day 1 and plans to leave on Day 9 by train for Hong Kong West Kowloon, inside the 10-day limit. It starts at USD 2,610 per person for two sharing a twin room. This route can only be considered for 240-hour transit if you arrived from a country or region other than Hong Kong, hold a confirmed onward ticket to Hong Kong and meet the other entry conditions. The border officer makes the entry decision on arrival.",
       },
       {
         question: "Can I use the 240 hours twice in one trip?",
@@ -269,7 +269,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "有没有按 240 小时过境免签设计的中国行程?",
         answer:
-          "Homeground 的北京、西安、桂林到香港 10 天私家团，计划第 1 天从北京入境、第 9 天乘高铁前往香港西九龙，在 10 天时限以内。2 人同行、两人一间，每人 ¥20,080 起。只有入境前的出发地不是香港、持有日期和座位已确认的赴港续程票，且满足其他条件时，才可考虑按 240 小时过境免签走；能不能入境由边检当场决定。",
+          "Homeground 的北京、西安、桂林到香港 10 天私家团，计划第 1 天从北京入境、第 9 天乘高铁前往香港西九龙，在 10 天时限以内。2 人同行、两人一间，每人 ¥16,960 起。只有入境前的出发地不是香港、持有日期和座位已确认的赴港续程票，且满足其他条件时，才可考虑按 240 小时过境免签走；能不能入境由边检当场决定。",
       },
       {
         question: "一趟旅行能用两次 240 小时吗?",
@@ -370,7 +370,7 @@ const copies: Record<HomegroundLocale, UsChinaVisaCopy> = {
       {
         question: "240시간 규정에 맞춘 중국 일정이 있나요?",
         answer:
-          "Homeground의 베이징·시안·계림·홍콩 10일 프라이빗 투어는 1일 차 베이징으로 본토에 들어와 9일 차 열차로 홍콩 웨스트카오룽에 가도록 계획합니다. 2명, 2인 1실 기준 1인 ₩4,320,000부터입니다. 본토 입국 전 출발지가 홍콩이 아니고, 날짜와 좌석이 확정된 홍콩행 표를 소지하며 다른 조건도 충족해야 240시간 무비자 환승을 검토할 수 있습니다. 최종 입국 여부는 도착 시 심사관이 결정합니다.",
+          "Homeground의 베이징·시안·계림·홍콩 10일 프라이빗 투어는 1일 차 베이징으로 본토에 들어와 9일 차 열차로 홍콩 웨스트카오룽에 가도록 계획합니다. 2명, 2인 1실 기준 1인 ₩3,650,000부터입니다. 본토 입국 전 출발지가 홍콩이 아니고, 날짜와 좌석이 확정된 홍콩행 표를 소지하며 다른 조건도 충족해야 240시간 무비자 환승을 검토할 수 있습니다. 최종 입국 여부는 도착 시 심사관이 결정합니다.",
       },
       {
         question: "한 여행에서 240시간을 두 번 쓸 수 있나요?",

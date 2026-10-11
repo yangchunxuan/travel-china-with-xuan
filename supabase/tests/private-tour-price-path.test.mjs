@@ -169,6 +169,9 @@ test("legacy fixed-gap six-traveller tiers keep their approved discount", () => 
   // Long-haul routes publish USD tiers (for example USD 3,390 / 3,190) set as
   // market targets; their CNY basis is derived from USD rather than this rule.
   const longHaulSlugs = new Set(privateTourLongHaulSlugs);
+  // Owner-approved 2026-10-11: this 12-day route is priced from the same cost table
+  // as the long-haul routes, so its six-traveller tier no longer follows the fixed gap.
+  const costTableSlugs = new Set(["beijing-xian-shanghai-12-day-private-tour"]);
   const winterSlugs = new Set([
     "harbin-yabuli-snow-town-6-day-private-tour",
     "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
@@ -176,7 +179,7 @@ test("legacy fixed-gap six-traveller tiers keep their approved discount", () => 
     "harbin-snow-town-mohe-9-day-private-tour",
     "yanji-changbaishan-wanda-6-day-private-tour",
   ]);
-  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug) && !winterSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
+  for (const product of privateTourProducts.filter((candidate) => !longHaulSlugs.has(candidate.slug) && !costTableSlugs.has(candidate.slug) && !winterSlugs.has(candidate.slug))) for (const tourPackage of product.packages) {
     const four = tourPackage.prices.find((row) => row.travelers === 4);
     if (!four) continue;
     const six = tourPackage.prices.find((row) => row.travelers === 6);
@@ -185,7 +188,7 @@ test("legacy fixed-gap six-traveller tiers keep their approved discount", () => 
     assert.equal(six.cnyPerPerson, four.cnyPerPerson - gap, `${product.slug}:${tourPackage.id}`);
     sixPersonPackages += 1;
   }
-  assert.equal(sixPersonPackages, 19);
+  assert.equal(sixPersonPackages, 18);
 });
 
 test("owner-approved USD prices survive localization without USD10 rounding", () => {

@@ -144,7 +144,7 @@ assert.match(costGuide, /中国旅行の費用はいくら？/u);
 for (const price of ["US$1,462.71", "A$2,470", "A$5,130"]) {
   assert.ok(costGuide.includes(price), `Japanese cost guide is missing ${price}`);
 }
-assert.match(costGuide, /CNY[\s\u00a0]19,430/u);
+assert.match(costGuide, /CNY[\s\u00a0]16,310/u);
 hasTag(costGuide, 'id="contact"');
 hasTag(costGuide, 'href="#contact"');
 hasTag(costGuide, 'href="/ja/studio/evan/"');
