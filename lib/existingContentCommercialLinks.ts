@@ -62,6 +62,7 @@ const approvedCommercialGuideIds = [
   "best-2-week-china-tour",
   "china-2-week-tour-cost",
   "china-private-tour-prices",
+  "china-family-private-tours",
   "china-small-group-tours-2027",
   "singapore-to-zhangjiajie-itinerary",
   "chengdu-zhangjiajie-itinerary",
