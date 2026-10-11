@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 247,
-      "localeUrlCount": 733,
-      "generatedIdentityCount": 228,
+      "identityCount": 248,
+      "localeUrlCount": 736,
+      "generatedIdentityCount": 229,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -3369,6 +3369,50 @@
               "boundary": "The Zhangjiajie Grand Canyon Glass Bridge ticket intent: official-shop prices by route and age, whether a bridge-only ticket exists, routes A, B and B1, paid extras, passport booking, refunds and entry hours. The Tantan field note keeps the bridge-versus-skywalk comparison; the Tianmen and Forest Park ticket guides keep their own scenic areas; the sight page keeps the short story."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-11",
+          "sourceBranch": "mutianyu-tickets",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Mutianyu Great Wall ticket guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "mutianyu-great-wall-tickets",
+              "title": "Mutianyu Great Wall Tickets: Prices, Cable Car & Booking",
+              "metadataPath": "content/guides/mutianyu-great-wall-tickets/metadata.json",
+              "canonicalPath": "/guides/mutianyu-great-wall-tickets/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/mutianyu-great-wall-tickets/",
+                "/zh/guides/mutianyu-great-wall-tickets/",
+                "/ko/guides/mutianyu-great-wall-tickets/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "execute",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "explore-attractions-nature-heritage",
+              "destinations": [
+                "beijing"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-beijing"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Mutianyu Great Wall ticket intent: official-shop prices for admission, shuttle, cable car and bundles, concession limits, the separate chairlift and toboggan company, passport booking, the 30-day window, refunds and seasonal hours. The transfer guide keeps how to get there; the section selector keeps which section to choose; the reservation service page keeps the paid booking offer."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3531,6 +3575,7 @@
         "minsu-homestay-or-hotel-china",
         "mogao-caves-independent-visit-workflow",
         "muslim-friendly-china-private-tours",
+        "mutianyu-great-wall-tickets",
         "nanchang-breakfast-rice-noodles-clay-pot-soup",
         "nanhai-one-shipwreck-cargo-and-conservation",
         "national-museum-of-china-booking-and-route",

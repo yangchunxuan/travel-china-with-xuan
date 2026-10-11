@@ -165,6 +165,7 @@ const approvedCommercialGuideIds = [
   "shanghai-museum-east-entry-reservations",
   "humble-administrators-garden-tickets-entry",
   "xian-city-wall-tickets-gates-walk-or-bike",
+  "mutianyu-great-wall-tickets",
 ] as const satisfies readonly GuideId[];
 
 interface ProductContextDefinition {

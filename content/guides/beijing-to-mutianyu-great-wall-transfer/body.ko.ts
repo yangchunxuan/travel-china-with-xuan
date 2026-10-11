@@ -51,7 +51,7 @@ const body = {
       { question: "무톈위에 다녀온 뒤 같은 날 저녁 열차를 탈 수 있나요?", answer: "통제된 차량을 택하거나 당일 연결을 없애는 편이 낫습니다. 정체, 역 혼동, 보안검색이 여유를 없애기 때문입니다. 연결을 유지한다면 더 이른 하산 시각을 정하고 도심 마지막 구간을 따로 계산하세요. 버스 도착을 역 도착으로 보면 안 됩니다." },
       { question: "직행버스를 놓치거나 화이러우에서 잘못 내리면 어떻게 하나요?", answer: "먼저 운영사의 공식 변경 규정과 현재 대중교통 노선을 확인하세요. 정류장을 잘못 내렸다면 저장해 둔 중국어 목적지를 직원에게 보여 주고, 방향을 확인하지 않은 채 노선 번호만 보고 타지 마세요. 이름 없는 차량을 권하는 호객은 따라가지 말고, 귀환편이 위험해지면 관광지를 나와 다음 확인된 교통을 확보하세요." },
     ] },
-    { id: "internal-links", type: "internal-links", title: "베이징 계획을 이어서", items: [ { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
+    { id: "internal-links", type: "internal-links", title: "베이징 계획을 이어서", items: [ { label: "무톈위 입장권, 케이블카, 예약", href: "/ko/guides/mutianyu-great-wall-tickets/", description: "공식 가격, 여권 예약, 환불·변경, 운영 시간." }, { label: "베이징 도시 허브", href: "/ko/destinations/beijing/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 관문, 다음 도시를 먼저 결정하세요." },
       { label: "맞는 만리장성 구간 고르기", href: "/ko/guides/great-wall-section-selector-from-beijing/", description: "이 이동편을 확정하기 전에 무톈위·팔달령·진산링·쓰마타이를 비교하세요." },
       { label: "첫 베이징 여행 숙소 지역", href: "/ko/guides/beijing-where-to-stay-first-trip/", description: "숙소 지역이 첫 이동과 귀환을 바꿉니다." },
       { label: "어느 베이징 기차역인가요?", href: "/ko/guides/which-beijing-railway-station/", description: "올바른 터미널로 후속 열차를 지킵니다." },

@@ -12,6 +12,7 @@ export const privateGuideServiceCtaTargets = {
   "temple-of-heaven-gates-and-ritual-sequence": "beijing",
   "summer-palace-gates-route-and-boat-plan": "beijing",
   "beijing-to-mutianyu-great-wall-transfer": "beijing",
+  "mutianyu-great-wall-tickets": "beijing",
   "terracotta-warriors-without-tour": "xian",
   "shaanxi-history-museum-booking-and-collection-plan": "xian",
   "xian-city-wall-tickets-gates-walk-or-bike": "xian",
