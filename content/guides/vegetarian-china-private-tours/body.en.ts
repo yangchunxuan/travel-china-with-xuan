@@ -18,7 +18,7 @@ const body = {
       "id": "included-list",
       "type": "list",
       "items": [
-        "A published private route: the hotels with breakfast, private vehicle, guide and admission tickets listed on that tour’s page.",
+        "A published private route: the private vehicle, guide and admission tickets listed on that tour’s page. Hotels and breakfast are included only with a hotel-included option, as listed in your written confirmation.",
         "The meal plan: lunch and dinner on touring days, at vegetarian restaurants where the city has them and at ordinary restaurants briefed in advance elsewhere. Its price per person is set out in your written quote.",
         "Your standard, written down: before the trip we record what each traveller does not eat, including egg, dairy, onion and garlic, and root vegetables, and the guide carries it in Chinese.",
         "Mixed groups: tell us how many of you are vegetarian. Restaurants are chosen so that everyone can eat, and the guide orders for both.",
@@ -141,7 +141,7 @@ const body = {
         },
         {
           "question": "Are vegetarian meals included in the price?",
-          "answer": "Yes, when you choose the meal plan: lunch and dinner on touring days. Its price per person is in your written quote. Hotel breakfast is included in every tour."
+          "answer": "Yes, when you choose the meal plan: lunch and dinner on touring days. Its price per person is in your written quote. Hotel breakfast is included only with a hotel-included option, as listed in your written confirmation."
         },
         {
           "question": "Can you arrange a vegan or Jain tour?",

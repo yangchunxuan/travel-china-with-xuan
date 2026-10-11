@@ -11,6 +11,8 @@
 
 ## Company statements that need the owner's sign-off
 
+- Breakfast scope clarification: hotel breakfast is included only with a hotel-included option, within the written confirmation. The five-city 13-day route in `lib/privateTourFiveCityProduct.ts` also has a without-hotels option that excludes hotel breakfasts; the included list and FAQ reflect that distinction.
+
 - Lunch and dinner on touring days are included when the meal plan is chosen, at vegetarian restaurants where a city has them and at ordinary restaurants briefed in advance elsewhere; the price per person is in the written quote (no price is published here).
 - Each traveller's standard is recorded before the trip and carried by the guide in Chinese.
 - Mixed groups are handled at the same restaurants.

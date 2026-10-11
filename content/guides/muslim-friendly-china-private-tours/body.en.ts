@@ -18,10 +18,10 @@ const body = {
       "id": "included-list",
       "type": "list",
       "items": [
-        "A published private route: the hotels with breakfast, private vehicle, guide and admission tickets listed on that tour’s page.",
+        "A published private route: the private vehicle, guide and admission tickets listed on that tour’s page. Hotels and breakfast are included only with a hotel-included option, as listed in your written confirmation.",
         "The meal plan: lunch and dinner on touring days at halal restaurants, ordered by your guide. Its price per person is set out in your written quote.",
         "Prayer: the day’s stops are planned around your prayer times, with mosque visits where the route has them.",
-        "Breakfast on request: hotel breakfast is included but is not halal, so we choose a hotel that can provide one where it exists, or plan breakfast outside.",
+        "Breakfast on request: hotel breakfast is included only with a hotel-included option, as listed in your written confirmation, but is not halal. On request, we choose a hotel that can provide halal breakfast where it exists, or plan breakfast outside.",
         "Before you pay: a written quote that names any day or meal where a halal restaurant is not available near the route, and the alternative we propose."
       ]
     },
@@ -160,7 +160,7 @@ const body = {
         },
         {
           "question": "Are halal meals included in the price?",
-          "answer": "Yes, when you choose the meal plan: lunch and dinner on touring days. Its price per person is in your written quote. Hotel breakfast is included in every tour but is not halal."
+          "answer": "Yes, when you choose the meal plan: lunch and dinner on touring days. Its price per person is in your written quote. Hotel breakfast is included only with a hotel-included option, as listed in your written confirmation, but is not halal."
         },
         {
           "question": "How do you check that a restaurant is halal?",

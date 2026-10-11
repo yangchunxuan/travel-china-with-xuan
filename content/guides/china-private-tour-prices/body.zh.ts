@@ -165,6 +165,21 @@ const body = {
           "¥7,670",
           "¥7,470"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/zhangjiajie-forest-4-day-private-tour/",
+        "/zh/tours/shenzhen-family-tech-4-day-private-tour/",
+        "/zh/tours/chaozhou-shantou-nanao-5-day-private-tour/",
+        "/zh/tours/xian-terracotta-warriors-5-day-private-tour/",
+        "/zh/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+        "/zh/tours/chongqing-wulong-5-day-private-tour/",
+        "/zh/tours/huangshan-hongcun-huizhou-5-day-private-tour/",
+        "/zh/tours/beijing-highlights-5-day-private-tour/",
+        "/zh/tours/guilin-yangshuo-5-day-private-tour/",
+        "/zh/tours/shanghai-suzhou-5-day-private-tour/",
+        "/zh/tours/beijing-highlights-5-day-private-tour/",
+        "/zh/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+        "/zh/tours/harbin-winter-5-day-private-tour/"
       ]
     },
     {
@@ -262,6 +277,19 @@ const body = {
           "¥13,190",
           "¥12,280"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/kunming-jianshui-yuanyang-6-day-private-tour/",
+        "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+        "/zh/tours/luoyang-dengfeng-kaifeng-6-day-private-tour/",
+        "/zh/tours/chengdu-jiuzhaigou-huanglong-6-day-private-tour/",
+        "/zh/tours/xiamen-tulou-quanzhou-6-day-private-tour/",
+        "/zh/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
+        "/zh/tours/zhangye-jiayuguan-dunhuang-7-day-private-tour/",
+        "/zh/tours/guizhou-huangguoshu-libo-miao-7-day-private-tour/",
+        "/zh/tours/kunming-dali-lijiang-8-day-private-tour/",
+        "/zh/tours/chengdu-chongqing-8-day-private-tour/",
+        "/zh/tours/beijing-xian-shanghai-8-day-private-tour/"
       ]
     },
     {
@@ -373,6 +401,21 @@ const body = {
           "¥32,430",
           "¥30,480"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "/zh/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/",
+        "/zh/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/",
+        "/zh/tours/beijing-xian-shanghai-12-day-private-tour/",
+        "/zh/tours/beijing-xian-yangtze-cruise-shanghai-12-day-private-tour/",
+        "/zh/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/",
+        "/zh/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-silk-road-15-day-private-tour/",
+        "/zh/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/",
+        "/zh/tours/china-grand-tour-21-day-private-tour/"
       ]
     },
     {
@@ -468,6 +511,18 @@ const body = {
           "¥7,400",
           "¥6,900"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/yanji-changbaishan-wanda-6-day-private-tour/",
+        "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/",
+        "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/",
+        "/zh/tours/yanji-changbaishan-wanda-6-day-private-tour/",
+        "/zh/tours/harbin-mohe-arctic-village-7-day-private-tour/",
+        "/zh/tours/harbin-mohe-arctic-village-7-day-private-tour/",
+        "/zh/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/",
+        "/zh/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/",
+        "/zh/tours/harbin-snow-town-mohe-9-day-private-tour/",
+        "/zh/tours/harbin-snow-town-mohe-9-day-private-tour/"
       ]
     },
     {

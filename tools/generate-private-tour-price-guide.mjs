@@ -89,7 +89,8 @@ function body(loc) {
     "公布的每人起价；往返中国的国际机票另计",
     "공개된 1인 시작가; 중국 왕복 국제선은 별도");
   const table = (which) => ({ id: `${which}-table`, type: "table", caption, columns,
-    rows: allLines(loc, which).map((line) => [label(line), lengthLabel(line), cell(line, 2), cell(line, 4), cell(line, 6)]) });
+    rows: allLines(loc, which).map((line) => [label(line), lengthLabel(line), cell(line, 2), cell(line, 4), cell(line, 6)]),
+    rowLinks: allLines(loc, which).map((line) => tourHref(loc, line.tour.product.slug)) });
   const glance = BANDS.map((which) => {
     const set = allLines(loc, which);
     const count = tours.filter((tour) => band(tour) === which).length;

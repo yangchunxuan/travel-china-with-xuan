@@ -121,6 +121,27 @@ test("structured page family body rejects malformed tables", () => {
   );
 });
 
+test("table row links are optional and require one safe internal path per row", () => {
+  const table = {
+    id: "routes", type: "table", caption: "Routes and prices",
+    columns: ["Route", "Price"], rows: [["Forest", "USD 620"], ["Beijing", "USD 770"]],
+  };
+  const bodyWith = (block) => ({ schemaVersion: "1.0.0", blocks: [block] });
+  assert.doesNotThrow(() => assertStructuredPageBody(bodyWith(table)));
+  assert.doesNotThrow(() => assertStructuredPageBody(bodyWith({
+    ...table, rowLinks: ["/tours/forest/", "/zh/tours/beijing/"],
+  })));
+  for (const rowLinks of [
+    ["/tours/forest/"],
+    ["/tours/forest/", "/tours/beijing/", "/tours/extra/"],
+    ["/tours/forest/", "javascript:alert(1)"],
+    ["/tours/forest/", "//other.example/tours/"],
+    ["/tours/forest/", null],
+  ]) {
+    assert.throws(() => assertStructuredPageBody(bodyWith({ ...table, rowLinks })), /one internal path per row/u);
+  }
+});
+
 test("structured page family body rejects unsafe nested values before rendering", () => {
   for (const block of [
     {

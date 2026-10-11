@@ -230,7 +230,7 @@ const body = {
         },
         {
           "question": "How much does Changbai Mountain cost?",
-          "answer": "Entry is RMB 105 and the park bus RMB 85 in each area. On the North Slope the summit vehicle adds RMB 80, RMB 270 in all."
+          "answer": "Entry is RMB 105 and the park bus RMB 85 in each area. On the North Slope the summit vehicle adds RMB 80, a subtotal of RMB 270 excluding the shuttle from the visitor centre to the gate. Check the official booking page for the current shuttle fare."
         },
         {
           "question": "Can foreign visitors book tickets?",

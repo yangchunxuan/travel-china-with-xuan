@@ -15,6 +15,6 @@
 ## Deliberately unclaimed
 
 - No lake depth or area, no summit height beyond "above 2,400 m", no temperatures, no daily visitor caps.
-- The RMB 270 total is arithmetic on the official prices (105 + 85 + 80).
+- The RMB 270 subtotal is arithmetic on the official prices (105 + 85 + 80), excluding the visitor-centre-to-gate shuttle. The FAQ now states that exclusion and directs readers to official booking for the current shuttle fare; the August 2025 table is not presented as a newly verified 2026 total.
 - Reported 2026 cuts to the shuttle fares are mentioned as reports only.
 - The South Slope winter closure follows from the official statement that only North and West open all year.
