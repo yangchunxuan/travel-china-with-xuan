@@ -51,7 +51,7 @@ const body = {
       { question: "当天去慕田峪，晚上还能赶火车吗？", answer: "建议改用可控车辆，或者干脆取消当天的衔接。拥堵、车站弄错和安检会把余量吃掉。如果一定要保留，就把离开城墙的时间提前，并把市内最后一段单独计时，不要把巴士到站当成已经到了车站。" },
       { question: "错过直通车或下错怀柔站怎么办？", answer: "先查运营方的官方退改规定和当下的公交路线。站点搞错时，把存好的中文目的地给工作人员看，不要只看线路号、不确认方向就上车。不要跟着不明司机上未确认的车；如果回程本身有风险，就离开景区，锁定下一段已确认交通。" },
     ] },
-    { id: "internal-links", type: "internal-links", title: "让北京行程接得起来", items: [ { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
+    { id: "internal-links", type: "internal-links", title: "让北京行程接得起来", items: [ { label: "慕田峪门票、缆车与预约", href: "/zh/guides/mutianyu-great-wall-tickets/", description: "官网票价、护照预约、退改规则和开放时间。" }, { label: "北京城市总览", href: "/zh/destinations/beijing/", description: "在敲定这类细节之前，先决定住几晚、住哪个区域、走哪个门户和下一站。" },
       { label: "先选对长城段", href: "/zh/guides/great-wall-section-selector-from-beijing/", description: "在确定这条接驳前，先比较慕田峪、八达岭、金山岭和司马台。" },
       { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "住宿区域会改变第一段与最后一段。" },
       { label: "北京应该选哪个火车站", href: "/zh/guides/which-beijing-railway-station/", description: "用正确车站保护后续列车。" },

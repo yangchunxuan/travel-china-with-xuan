@@ -1,0 +1,104 @@
+{
+  "id": "mutianyu-great-wall-tickets",
+  "type": "planning",
+  "pillar": "explore-attractions-nature-heritage",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "practical-guide",
+  "topics": [
+    "great-wall",
+    "mutianyu",
+    "tickets",
+    "cable-car",
+    "passport-booking"
+  ],
+  "destinations": [
+    "beijing"
+  ],
+  "heroImagePath": "/images/guides/mutianyu-great-wall-tickets/hero-1600.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/mutianyu-great-wall-tickets/hero-1600.webp",
+  "imageWidth": 1600,
+  "imageHeight": 1066,
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "sourceReviewedDate": "2026-10-11",
+  "searchTerms": {
+    "en": [
+      "mutianyu great wall tickets",
+      "mutianyu tickets price",
+      "mutianyu cable car price",
+      "mutianyu great wall booking",
+      "mutianyu great wall opening hours",
+      "mutianyu toboggan ticket"
+    ],
+    "zh": [
+      "慕田峪长城门票",
+      "慕田峪缆车价格",
+      "慕田峪长城护照预约",
+      "慕田峪长城开放时间"
+    ],
+    "ko": [
+      "무톈위 만리장성 입장권",
+      "무톈위 케이블카 가격",
+      "무톈위 장성 예약",
+      "무톈위 만리장성 운영 시간"
+    ]
+  },
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "execute"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/mutianyu-great-wall-tickets/",
+      "title": "Mutianyu Great Wall Tickets: Prices, Cable Car & Booking",
+      "headline": "Mutianyu Great Wall Tickets: Prices, Cable Car and Passport Booking",
+      "description": "Mutianyu Great Wall tickets on the official shop, read 11 October 2026: admission RMB 40, shuttle 15, cable car 100 or 140. Passport booking, refunds, hours.",
+      "heroAlt": "The Mutianyu Great Wall running along a wooded ridge past a watchtower in autumn",
+      "navTitle": "Mutianyu tickets",
+      "featuredLinkLabel": "Check Mutianyu tickets",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Ticket prices",
+        "Cable car",
+        "Passport booking"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/mutianyu-great-wall-tickets/",
+      "title": "慕田峪长城门票：价格、缆车与护照预约",
+      "headline": "慕田峪长城门票：多少钱、缆车怎么买、护照怎么订",
+      "description": "慕田峪长城官网购票系统票价（2026年10月11日读取）：门票40元、摆渡车15元、缆车单程100元或往返140元。说明护照预约、退改规则和淡旺季开放时间。",
+      "heroAlt": "秋天的慕田峪长城沿着山脊延伸，经过一座敌楼",
+      "navTitle": "慕田峪门票",
+      "featuredLinkLabel": "查看慕田峪门票",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "门票价格",
+        "缆车",
+        "护照预约"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/mutianyu-great-wall-tickets/",
+      "title": "무톈위 만리장성 입장권: 가격·케이블카·여권 예약",
+      "headline": "무톈위 만리장성 입장권: 가격, 케이블카, 여권 예약",
+      "description": "무톈위 만리장성 공식 예매 시스템 가격(2026년 10월 11일 확인): 입장권 40위안, 셔틀버스 15위안, 케이블카 편도 100위안·왕복 140위안. 여권 예약, 환불·변경, 운영 시간을 정리했습니다.",
+      "heroAlt": "가을 산등성이를 따라 망루를 지나 이어지는 무톈위 만리장성",
+      "navTitle": "무톈위 입장권",
+      "featuredLinkLabel": "무톈위 입장권 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "입장권 가격",
+        "케이블카",
+        "여권 예약"
+      ]
+    }
+  }
+}

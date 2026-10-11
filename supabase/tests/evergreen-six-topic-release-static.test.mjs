@@ -39,6 +39,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
       "forbidden-city-for-foreign-visitors",
       "great-wall-section-selector-from-beijing",
       "lunar-new-year-customs-for-visitors",
+      "mutianyu-great-wall-tickets",
     ],
   );
 

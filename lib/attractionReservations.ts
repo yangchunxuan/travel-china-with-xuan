@@ -250,18 +250,30 @@ export const attractionReservationRules = [
     city: "beijing",
     status: "offered",
     name: { en: "Mutianyu Great Wall", zh: "慕田峪长城", ko: "무톈위 만리장성" },
-    channels: null,
-    passportAccepted: null,
-    realName: null,
-    release: null,
-    price: null,
-    notes: {
-      en: "Admission, shuttle and cable car are separate purchases. Our travel articles do not record the booking rule yet, so we check it for your date before the written confirmation.",
-      zh: "门票、摆渡车与缆车分开购买。攻略尚未核实预约规则；书面确认前，我们会按你的日期核实。",
-      ko: "입장권, 셔틀, 케이블카는 따로 구매합니다. 예약 규칙은 아직 실용 가이드 글에서 확인하지 않았으므로 서면 확인 전에 날짜 기준으로 확인합니다.",
+    channels: ["official-website"],
+    passportAccepted: true,
+    realName: true,
+    release: {
+      en: "Up to 30 days before the visit",
+      zh: "参观前 30 天内可订",
+      ko: "방문 30일 전부터 예약 가능",
     },
-    verifiedAt: "2026-08-13",
-    source: "beijing-to-mutianyu-great-wall-transfer",
+    price: {
+      kind: "cny",
+      amount: 40,
+      basis: {
+        en: "adult standard admission; the shuttle (CNY 15 return) and the cable car (CNY 100 one way, CNY 140 return) are separate",
+        zh: "成人普通门票；摆渡车（往返 ¥15）和缆车（单程 ¥100、往返 ¥140）另计",
+        ko: "성인 일반 입장권 기준, 셔틀버스(왕복 15위안)와 케이블카(편도 100위안, 왕복 140위안)는 별도",
+      },
+    },
+    notes: {
+      en: "Admission, the shuttle and the cable car are separate purchases on the scenic area's official shop. Admission is real-name, one ticket per passport per day, with entry by time window. Tell us whether you also want the shuttle and the cable car.",
+      zh: "门票、摆渡车与缆车在景区官网购票系统分开购买。门票实名制，每本护照每天限购一张，按入园时段入园。请告诉我们是否同时需要摆渡车和缆车。",
+      ko: "입장권, 셔틀버스, 케이블카는 관광지 공식 예매 시스템에서 따로 구매합니다. 입장권은 실명제이며 여권 하나로 하루 한 장, 입장 시간대별로 입장합니다. 셔틀버스와 케이블카도 필요한지 알려 주세요.",
+    },
+    verifiedAt: "2026-10-11",
+    source: "mutianyu-great-wall-tickets",
   },
   // Shanghai
   {
@@ -740,6 +752,7 @@ export function getBookableAttractionReservationRules(): readonly AttractionRese
  */
 export const attractionReservationGuideTargets = {
   "forbidden-city-for-foreign-visitors": "forbidden-city",
+  "mutianyu-great-wall-tickets": "great-wall-mutianyu",
   "national-museum-of-china-booking-and-route": "national-museum-of-china",
   "summer-palace-gates-route-and-boat-plan": "summer-palace",
   "temple-of-heaven-gates-and-ritual-sequence": "temple-of-heaven",
