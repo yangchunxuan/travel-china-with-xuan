@@ -501,9 +501,9 @@ const classicPrivate: PrivateTourProduct = {
     "중국 14일 프라이빗 투어: 베이징에서 상하이까지",
   ),
   metadataDescription: l(
-    "14-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. Per person USD 3,990 for 2 travellers, 3,190 for 6; domestic flights included.",
-    "14 天私家团：长城、兵马俑、大熊猫、漓江与上海。每人价格：2 人同行 ¥25,930，6 人同行 ¥20,730；含国内航班与高铁。",
-    "14일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이. 1인 요금 2명 ₩5,580,000, 6명 ₩4,460,000. 국내선·고속철도 포함.",
+    "14-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. Per person USD 3,720 for 2 travellers, 2,360 for 6; domestic flights included.",
+    "14 天私家团：长城、兵马俑、大熊猫、漓江与上海。每人价格：2 人同行 ¥24,180，6 人同行 ¥15,340；含国内航班与高铁。",
+    "14일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이. 1인 요금 2명 ₩5,200,000, 6명 ₩3,300,000. 국내선·고속철도 포함.",
   ),
   eyebrow: l(
     "Beijing to Shanghai in 14 days, with time for pandas and the Li River",
@@ -511,9 +511,9 @@ const classicPrivate: PrivateTourProduct = {
     "베이징에서 상하이까지 14일, 판다와 이강에도 시간을 씁니다",
   ),
   lede: l(
-    "For two sharing a twin room, our 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private route starts at USD 3,990 each; international flights are extra. Two trains and two short domestic flights keep the long crossings from eating up the sightseeing days.",
-    "2 人住一间，走北京、西安、成都、桂林到上海的 14 天私家团，每人 ¥25,930 起，国际机票另计。两段高铁和两段国内航班把跨城时间压下来，才有整天看兵马俑和坐漓江船。",
-    "2명이 2인 1실로 가는 베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 1인 ₩5,580,000부터입니다. 국제선은 별도입니다. 고속철도 2번과 국내선 2번으로 도시 간 이동 시간을 줄여 병마용과 이강에 하루씩 씁니다.",
+    "For two sharing a twin room, our 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private route starts at USD 3,720 each; international flights are extra. Two trains and two short domestic flights keep the long crossings from eating up the sightseeing days.",
+    "2 人住一间，走北京、西安、成都、桂林到上海的 14 天私家团，每人 ¥24,180 起，国际机票另计。两段高铁和两段国内航班把跨城时间压下来，才有整天看兵马俑和坐漓江船。",
+    "2명이 2인 1실로 가는 베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 1인 ₩5,200,000부터입니다. 국제선은 별도입니다. 고속철도 2번과 국내선 2번으로 도시 간 이동 시간을 줄여 병마용과 이강에 하루씩 씁니다.",
   ),
   summary: l(
     "Thirteen hotel nights include breakfast. In each city a local guide and vehicle are for your party on touring days; the named tickets, transfers, two second-class trains and two economy flights are included. On travel days, a driver sees you off and another meets you at the next stop.",
@@ -557,25 +557,25 @@ const classicPrivate: PrivateTourProduct = {
     faq(
       l("How much does a 14-day private China tour cost?", "中国 14 天私家团大概多少钱？", "중국 14일 프라이빗 투어는 얼마인가요?"),
       l(
-        "For the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip, two people sharing a twin room pay USD 3,990 each, or USD 7,980 together. Four pay USD 3,390 each; six pay USD 3,190. Your land price covers 13 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains and two domestic flights. Add international flights, lunches and dinners separately. Eight or more travelling together can choose their own dates at USD 2,890 each; ask us for a written price at other group sizes.",
-        "北京、西安、成都、桂林到上海的 14 天私家团，2 人住一间每人 ¥25,930，两人共 ¥51,860；4 人每人 ¥22,030，6 人每人 ¥20,730。这个价格含 13 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁及两段国内航班。国际机票和午晚餐另付。8 人以上一起出行，可自选日期按每人 ¥18,780 走；其他人数我们书面报价。",
-        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실이면 1인 ₩5,580,000, 두 명 합계 ₩11,160,000입니다. 4명은 1인 ₩4,740,000, 6명은 ₩4,460,000입니다. 조식 포함 호텔 13박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상 함께 가면 원하는 날짜에 1인 ₩4,040,000이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip, two people sharing a twin room pay USD 3,720 each, or USD 7,440 together. Four pay USD 2,620 each; six pay USD 2,360. Your land price covers 13 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains and two domestic flights. Add international flights, lunches and dinners separately. Eight or more travelling together can choose their own dates at USD 2,140 each; ask us for a written price at other group sizes.",
+        "北京、西安、成都、桂林到上海的 14 天私家团，2 人住一间每人 ¥24,180，两人共 ¥48,360；4 人每人 ¥17,030，6 人每人 ¥15,340。这个价格含 13 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁及两段国内航班。国际机票和午晚餐另付。8 人以上一起出行，可自选日期按每人 ¥13,910 走；其他人数我们书面报价。",
+        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실이면 1인 ₩5,200,000, 두 명 합계 ₩10,400,000입니다. 4명은 1인 ₩3,670,000, 6명은 ₩3,300,000입니다. 조식 포함 호텔 13박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상 함께 가면 원하는 날짜에 1인 ₩3,000,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,990 each. The 2027 small group is USD 2,890 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",
-        "北京、西安、成都、桂林到上海这条线可选私家团或小团。私家团由你选日期，导游和车只带你们，节奏及部分景点能调整；2 人同行每人 ¥25,930 起。2027 年小团每人 ¥18,780，4 月 10 日、5 月 8 日、9 月 11 日或 10 月 9 日出发，8–12 人一起按固定行程走。",
-        "베이징·시안·청두·계림·상하이 일정은 프라이빗과 소규모 그룹으로 운영합니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 속도와 일부 방문지를 바꿀 수 있습니다. 2명 기준 1인 ₩5,580,000부터입니다. 2027년 소규모 그룹은 1인 ₩4,040,000으로 4월 10일, 5월 8일, 9월 11일 또는 10월 9일에 8~12명이 같은 계획으로 갑니다.",
+        "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,720 each. The 2027 small group is USD 2,140 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",
+        "北京、西安、成都、桂林到上海这条线可选私家团或小团。私家团由你选日期，导游和车只带你们，节奏及部分景点能调整；2 人同行每人 ¥24,180 起。2027 年小团每人 ¥13,910，4 月 10 日、5 月 8 日、9 月 11 日或 10 月 9 日出发，8–12 人一起按固定行程走。",
+        "베이징·시안·청두·계림·상하이 일정은 프라이빗과 소규모 그룹으로 운영합니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 속도와 일부 방문지를 바꿀 수 있습니다. 2명 기준 1인 ₩5,200,000부터입니다. 2027년 소규모 그룹은 1인 ₩3,000,000으로 4월 10일, 5월 8일, 9월 11일 또는 10월 9일에 8~12명이 같은 계획으로 갑니다.",
       ),
     ),
     faq(
       l("Which 14-day China route should we choose?", "14 天中国线路该选哪条？", "14일 중국 일정은 어느 것을 고르면 되나요?"),
       l(
-        "All four 14-day private routes begin in Beijing and Xi’an. For a first trip with Chengdu pandas and the Li River, the Beijing–Shanghai classic starts at USD 3,990 each for two. Zhangjiajie in place of Chengdu starts at USD 3,890; Yunnan’s old towns and Shangri-La at about 3,300 metres also start at USD 3,890. For Huangshan, West Lake and Suzhou, start at USD 3,790. Choose the stop you would regret missing.",
-        "四条 14 天私家团都先走北京、西安。第一次来，想看熊猫和漓江，经典线 2 人同行每人 ¥25,930 起；想把成都换成张家界，每人 ¥25,280 起。云南古城加海拔约 3,300 米的香格里拉，也是每人 ¥25,280 起；黄山、西湖、苏州线每人 ¥24,630 起。先选你最不想错过的地方。",
-        "14일 프라이빗 일정 네 가지는 모두 베이징과 시안부터 시작합니다. 첫 여행에 청두 판다와 이강을 넣는 기본 일정은 2명 기준 1인 ₩5,580,000부터입니다. 청두 대신 장가계는 ₩5,440,000부터, 윈난 고성과 해발 약 3,300미터 샹그릴라도 ₩5,440,000부터입니다. 황산·서호·쑤저우는 ₩5,300,000부터입니다. 가장 놓치기 싫은 지역을 먼저 고르세요.",
+        "All four 14-day private routes begin in Beijing and Xi’an. For a first trip with Chengdu pandas and the Li River, the Beijing–Shanghai classic starts at USD 3,720 each for two. Zhangjiajie in place of Chengdu starts at USD 3,680; Yunnan’s old towns and Shangri-La at about 3,300 metres start at USD 4,110. For Huangshan, West Lake and Suzhou, start at USD 3,580. Choose the stop you would regret missing.",
+        "四条 14 天私家团都先走北京、西安。第一次来，想看熊猫和漓江，经典线 2 人同行每人 ¥24,180 起；想把成都换成张家界，每人 ¥23,920 起。云南古城加海拔约 3,300 米的香格里拉，每人 ¥26,710 起；黄山、西湖、苏州线每人 ¥23,270 起。先选你最不想错过的地方。",
+        "14일 프라이빗 일정 네 가지는 모두 베이징과 시안부터 시작합니다. 첫 여행에 청두 판다와 이강을 넣는 기본 일정은 2명 기준 1인 ₩5,200,000부터입니다. 청두 대신 장가계는 ₩5,150,000부터, 윈난 고성과 해발 약 3,300미터 샹그릴라는 ₩5,750,000부터입니다. 황산·서호·쑤저우는 ₩5,010,000부터입니다. 가장 놓치기 싫은 지역을 먼저 고르세요.",
       ),
     ),
     faq(
@@ -643,7 +643,7 @@ const classicPrivate: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3990), usd(4, 3390), usd(6, 3190)])],
+  packages: [privatePackage([usd(2, 3720), usd(4, 2620), usd(6, 2360)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -671,9 +671,9 @@ const classicSmallGroup: PrivateTourProduct = {
     "중국 14일 소규모 그룹 투어: 최대 12명",
   ),
   metadataDescription: l(
-    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, pandas, Li River, Shanghai. USD 2,890 per person twin share; departs 10 Apr, 8 May, 11 Sep, 9 Oct.",
-    "2027 年 14 天小团，8–12 人：北京、西安、成都大熊猫、漓江与上海。每人 ¥18,780（两人一间），4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发。",
-    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 청두 판다, 이강, 상하이. 1인 ₩4,040,000(2인 1실), 4월 10일·5월 8일·9월 11일·10월 9일 출발.",
+    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, pandas, Li River, Shanghai. USD 2,140 per person twin share; departs 10 Apr, 8 May, 11 Sep, 9 Oct.",
+    "2027 年 14 天小团，8–12 人：北京、西安、成都大熊猫、漓江与上海。每人 ¥13,910（两人一间），4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发。",
+    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 청두 판다, 이강, 상하이. 1인 ₩3,000,000(2인 1실), 4월 10일·5월 8일·9월 11일·10월 9일 출발.",
   ),
   eyebrow: l(
     "Four 2027 departures; 8 guests to run, 12 at most",
@@ -681,9 +681,9 @@ const classicSmallGroup: PrivateTourProduct = {
     "2027년 네 차례 출발, 8명부터 최대 12명까지",
   ),
   lede: l(
-    "A twin-share place on the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai 14-day small group starts at USD 2,890 per person; international flights are extra. It follows the 14-day private route on four fixed departures, with no more than 12 guests and an English-speaking local guide in each city.",
-    "北京、西安、成都、桂林到上海的 2027 年 14 天小团，每人 ¥18,780，按两人一间计算，国际机票另付。四个固定团期走同一条经典线，每团最多 12 人，各地由英语导游带团。",
-    "베이징·시안·청두·계림·상하이 2027년 14일 소규모 그룹은 2인 1실에 1인 ₩4,040,000입니다. 국제선은 별도입니다. 네 번의 정해진 출발일에 최대 12명이 함께 가고, 도시별 영어 현지 가이드가 안내합니다.",
+    "A twin-share place on the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai 14-day small group starts at USD 2,140 per person; international flights are extra. It follows the 14-day private route on four fixed departures, with no more than 12 guests and an English-speaking local guide in each city.",
+    "北京、西安、成都、桂林到上海的 2027 年 14 天小团，每人 ¥13,910，按两人一间计算，国际机票另付。四个固定团期走同一条经典线，每团最多 12 人，各地由英语导游带团。",
+    "베이징·시안·청두·계림·상하이 2027년 14일 소규모 그룹은 2인 1실에 1인 ₩3,000,000입니다. 국제선은 별도입니다. 네 번의 정해진 출발일에 최대 12명이 함께 가고, 도시별 영어 현지 가이드가 안내합니다.",
   ),
   summary: l(
     "Choose 10–23 April, 8–21 May, 11–24 September or 9–22 October 2027. We confirm the group once 8 people book and close it at 12. If it is still short of 8 at 45 days out, we quote a private tour for your actual party size in writing. You can accept that price and keep the dates, or take a full refund of everything paid to us.",
@@ -712,9 +712,9 @@ const classicSmallGroup: PrivateTourProduct = {
   ),
   itinerary: classicItinerary("group"),
   hotelNote: l(
-    "The 13 hotel nights include breakfast: Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 and Shanghai 2. We use the four-star standard (4 diamonds on Trip.com, also called Ctrip) and name the hotels in your confirmation. USD 2,890 is per person sharing a twin room; a room alone adds a single supplement from USD 690.",
-    "13 晚酒店都含早餐：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、上海 2 晚。按携程 4 钻标准安排，酒店名称写在确认单上。每人 ¥18,780 按两人一间算；独住单房差 ¥4,490 起。",
-    "호텔 13박에는 모두 조식이 포함됩니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 2박이며 씨트립 4다이아 등급 기준입니다. 호텔 이름은 확인서에 적습니다. 1인 ₩4,040,000은 2인 1실 기준이며 혼자 쓰는 객실은 추가금 ₩970,000부터입니다.",
+    "The 13 hotel nights include breakfast: Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 and Shanghai 2. We use the four-star standard (4 diamonds on Trip.com, also called Ctrip) and name the hotels in your confirmation. USD 2,140 is per person sharing a twin room; a room alone adds a single supplement from USD 690.",
+    "13 晚酒店都含早餐：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、上海 2 晚。按携程 4 钻标准安排，酒店名称写在确认单上。每人 ¥13,910 按两人一间算；独住单房差 ¥4,490 起。",
+    "호텔 13박에는 모두 조식이 포함됩니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 2박이며 씨트립 4다이아 등급 기준입니다. 호텔 이름은 확인서에 적습니다. 1인 ₩3,000,000은 2인 1실 기준이며 혼자 쓰는 객실은 추가금 ₩970,000부터입니다.",
   ),
   serviceNote: l(
     "English-speaking local guides take the group around each city on touring days. The price includes a group vehicle, one Beijing airport pickup and one Shanghai airport drop-off on the group dates, named admissions, the Li River cruise and one Yulong River raft, second-class trains Beijing–Xi’an–Chengdu, and economy flights Chengdu–Guilin and Guilin–Shanghai.",
@@ -727,41 +727,41 @@ const classicSmallGroup: PrivateTourProduct = {
     ["1인실 추가금(₩970,000부터)", "그룹 도착일·출발일 외 날짜의 이동", "항공사 무료 허용량을 넘는 위탁 수하물"],
   ),
   bookingNote: l(
-    "USD 2,890 is the per-person starting price for one place on a fixed departure, sharing a twin room. We need 8 booked guests to run and stop at 12. At 45 days out, if fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more. The September departure is in Xi’an for the Mid-Autumn Festival on 15 September 2027, when trains and the Terracotta Warriors are busier. We confirm hotels, flights and the total in writing before payment.",
-    "每人 ¥18,780 是固定团期一个名额、两人一间的起价。满 8 人走，最多 12 人。出发前 45 天还不到 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。9 月团在西安遇上 2027 年 9 月 15 日中秋节，火车和兵马俑会更挤。酒店、航班和最终总价在付款前书面确认。",
-    "1인 ₩4,040,000은 정기 출발 1자리, 2인 1실 기준 시작가입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다. 9월 그룹은 2027년 9월 15일 중추절에 시안에 있어 열차와 병마용이 더 붐빕니다. 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인합니다.",
+    "USD 2,140 is the per-person starting price for one place on a fixed departure, sharing a twin room. We need 8 booked guests to run and stop at 12. At 45 days out, if fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more. The September departure is in Xi’an for the Mid-Autumn Festival on 15 September 2027, when trains and the Terracotta Warriors are busier. We confirm hotels, flights and the total in writing before payment.",
+    "每人 ¥13,910 是固定团期一个名额、两人一间的起价。满 8 人走，最多 12 人。出发前 45 天还不到 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。9 月团在西安遇上 2027 年 9 月 15 日中秋节，火车和兵马俑会更挤。酒店、航班和最终总价在付款前书面确认。",
+    "1인 ₩3,000,000은 정기 출발 1자리, 2인 1실 기준 시작가입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다. 9월 그룹은 2027년 9월 15일 중추절에 시안에 있어 열차와 병마용이 더 붐빕니다. 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인합니다.",
   ),
   faq: [
     faq(
       l("What happens if the group does not reach 8 guests?", "不到 8 人怎么办？", "8명이 모이지 않으면 어떻게 되나요?"),
       l(
-        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 45 days before departure. If fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. For two travellers, the private price is USD 3,990 each, against the USD 2,890 small-group price. Until we confirm the group, book international flights you can change or refund.",
-        "2027 年北京、西安、成都、桂林到上海的小团，我们在出发前 45 天确认人数。若不足 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。2 人私家团每人 ¥25,930，小团每人 ¥18,780；成团前建议订能改退的国际机票。",
-        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 45일 전에 인원을 확인합니다. 8명 미만이면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 가거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 프라이빗은 2명 기준 1인 ₩5,580,000, 그룹은 ₩4,040,000입니다. 출발 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
+        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 45 days before departure. If fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. For two travellers, the private price is USD 3,720 each, against the USD 2,140 small-group price. Until we confirm the group, book international flights you can change or refund.",
+        "2027 年北京、西安、成都、桂林到上海的小团，我们在出发前 45 天确认人数。若不足 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。2 人私家团每人 ¥24,180，小团每人 ¥13,910；成团前建议订能改退的国际机票。",
+        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 45일 전에 인원을 확인합니다. 8명 미만이면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 가거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 프라이빗은 2명 기준 1인 ₩5,200,000, 그룹은 ₩3,000,000입니다. 출발 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
       ),
     ),
     faq(
       l("Can I join on my own?", "一个人可以报名吗？", "혼자 참가할 수 있나요?"),
       l(
-        "Solo travellers can join the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai small group. The USD 2,890 price assumes two sharing; a room of your own costs a single supplement from USD 690. We do not assign strangers to share.",
-        "一个人也能报名北京、西安、成都、桂林到上海的 14 天小团。每人 ¥18,780 是两人一间的价格；想独住，单房差 ¥4,490 起。我们不会安排陌生人拼房。",
-        "베이징·시안·청두·계림·상하이 14일 소규모 그룹에는 혼자도 참가할 수 있습니다. 1인 ₩4,040,000은 2인 1실 기준이며 혼자 객실을 쓰면 추가금이 ₩970,000부터입니다. 모르는 사람과 합실시키지 않습니다.",
+        "Solo travellers can join the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai small group. The USD 2,140 price assumes two sharing; a room of your own costs a single supplement from USD 690. We do not assign strangers to share.",
+        "一个人也能报名北京、西安、成都、桂林到上海的 14 天小团。每人 ¥13,910 是两人一间的价格；想独住，单房差 ¥4,490 起。我们不会安排陌生人拼房。",
+        "베이징·시안·청두·계림·상하이 14일 소규모 그룹에는 혼자도 참가할 수 있습니다. 1인 ₩3,000,000은 2인 1실 기준이며 혼자 객실을 쓰면 추가금이 ₩970,000부터입니다. 모르는 사람과 합실시키지 않습니다.",
       ),
     ),
     faq(
       l("We are a group of 8 or more. Can we have our own departure?", "我们有 8 人以上，可以单独成团吗？", "8명 이상인데 단독 출발이 가능한가요?"),
       l(
-        "Eight to twelve travelling together can book the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai route on their own dates at USD 2,890 per person. For 13 or more, ask us for a separate quote. We confirm the hotel rooms and tickets for those dates before booking.",
-        "8–12 人同行，可以自选日期单独走北京、西安、成都、桂林到上海的 14 天路线，每人按小团价 ¥18,780 计算。13 人及以上请另询价。酒店房间和门票要先按你的日期确认。",
-        "8~12명 일행이면 베이징·시안·청두·계림·상하이 14일 일정을 원하는 날짜에 단독으로 갈 수 있습니다. 요금은 1인 ₩4,040,000이며 13명 이상은 별도 견적이 필요합니다. 해당 날짜의 호텔과 입장권을 확인합니다.",
+        "Eight to twelve travelling together can book the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai route on their own dates at USD 2,140 per person. For 13 or more, ask us for a separate quote. We confirm the hotel rooms and tickets for those dates before booking.",
+        "8–12 人同行，可以自选日期单独走北京、西安、成都、桂林到上海的 14 天路线，每人按小团价 ¥13,910 计算。13 人及以上请另询价。酒店房间和门票要先按你的日期确认。",
+        "8~12명 일행이면 베이징·시안·청두·계림·상하이 14일 일정을 원하는 날짜에 단독으로 갈 수 있습니다. 요금은 1인 ₩3,000,000이며 13명 이상은 별도 견적이 필요합니다. 해당 날짜의 호텔과 입장권을 확인합니다.",
       ),
     ),
     faq(
       l("How is this different from the private version?", "和私家团有什么不同？", "프라이빗 투어와 무엇이 다른가요?"),
       l(
-        "On the Beijing–Xi’an–Chengdu–Guilin–Shanghai route, hotels and inclusions stay the same. The 2027 small group is USD 2,890 per person on fixed dates and has one Day 8 and Day 13 plan for everyone. Private dates and a guide and car just for your party start at USD 3,990 each for two travellers or USD 3,190 each for six.",
-        "北京、西安、成都、桂林到上海这条线，两种版本的酒店和包含内容相同。2027 年小团按固定日期走，第 8 天和第 13 天方案统一，每人 ¥18,780。私家团可选日期，导游和车只服务你们；2 人同行每人 ¥25,930 起，6 人每人 ¥20,730。",
-        "베이징·시안·청두·계림·상하이 일정은 두 상품의 호텔과 포함 내역이 같습니다. 2027년 소규모 그룹은 정해진 날짜와 8일 차, 13일 차 계획으로 1인 ₩4,040,000입니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩5,580,000, 6명 기준 ₩4,460,000부터입니다.",
+        "On the Beijing–Xi’an–Chengdu–Guilin–Shanghai route, hotels and inclusions stay the same. The 2027 small group is USD 2,140 per person on fixed dates and has one Day 8 and Day 13 plan for everyone. Private dates and a guide and car just for your party start at USD 3,720 each for two travellers or USD 2,360 each for six.",
+        "北京、西安、成都、桂林到上海这条线，两种版本的酒店和包含内容相同。2027 年小团按固定日期走，第 8 天和第 13 天方案统一，每人 ¥13,910。私家团可选日期，导游和车只服务你们；2 人同行每人 ¥24,180 起，6 人每人 ¥15,340。",
+        "베이징·시안·청두·계림·상하이 일정은 두 상품의 호텔과 포함 내역이 같습니다. 2027년 소규모 그룹은 정해진 날짜와 8일 차, 13일 차 계획으로 1인 ₩3,000,000입니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩5,200,000, 6명 기준 ₩3,300,000부터입니다.",
       ),
     ),
     faq(
@@ -822,7 +822,7 @@ const classicSmallGroup: PrivateTourProduct = {
       "2027 年出发日为 4 月 10 日、5 月 8 日、9 月 11 日和 10 月 9 日。满 8 人走，最多 12 人；未成团就退还已付给我们的全款。全程无购物店安排。",
       "2027년 출발일은 4월 10일, 5월 8일, 9월 11일, 10월 9일입니다. 8명부터 출발하고 12명에서 마감합니다. 출발하지 못하면 저희에게 낸 금액을 전액 환불하며 쇼핑 일정은 없습니다.",
     ),
-    prices: [usd(2, 2890)],
+    prices: [usd(2, 2140)],
   }],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
@@ -852,9 +852,9 @@ const landscapes: PrivateTourProduct = {
     "장가계 포함 중국 14일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "14-day private tour: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. Per person USD 3,890 for 2 travellers, 3,090 for 6; domestic flights included.",
-    "14 天私家团：北京、西安、张家界、漓江与上海。每人价格：2 人同行 ¥25,280，6 人同行 ¥20,080；含国内航班与高铁。",
-    "14일 프라이빗 투어: 베이징, 시안, 장가계, 이강, 상하이. 1인 요금 2명 ₩5,440,000, 6명 ₩4,320,000. 국내선·고속철도 포함.",
+    "14-day private tour: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. Per person USD 3,680 for 2 travellers, 2,430 for 6; domestic flights included.",
+    "14 天私家团：北京、西安、张家界、漓江与上海。每人价格：2 人同行 ¥23,920，6 人同行 ¥15,790；含国内航班与高铁。",
+    "14일 프라이빗 투어: 베이징, 시안, 장가계, 이강, 상하이. 1인 요금 2명 ₩5,150,000, 6명 ₩3,400,000. 국내선·고속철도 포함.",
   ),
   eyebrow: l(
     "Swap the panda stop for Zhangjiajie’s long walking days",
@@ -862,9 +862,9 @@ const landscapes: PrivateTourProduct = {
     "청두 판다 대신 장가계, 산길을 더 걷는 일정",
   ),
   lede: l(
-    "Two travelling together pay from USD 3,890 each, twin share, on the 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route; international flights are extra. Zhangjiajie gets three nights, but the direct train from there to Guilin takes about seven hours. Plan on a full travel day.",
-    "想走北京、西安、张家界、桂林到上海这 14 天，2 人同行、两人一间每人 ¥25,280 起，国际机票另计。张家界住三晚，但到桂林的直达高铁约 7 小时，那一天基本都在路上。",
-    "장가계를 넣은 베이징·시안·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,440,000부터입니다. 국제선은 별도입니다. 장가계에서 3박하지만 계림 직통 열차가 약 7시간 걸려 그날은 거의 이동에 씁니다.",
+    "Two travelling together pay from USD 3,680 each, twin share, on the 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route; international flights are extra. Zhangjiajie gets three nights, but the direct train from there to Guilin takes about seven hours. Plan on a full travel day.",
+    "想走北京、西安、张家界、桂林到上海这 14 天，2 人同行、两人一间每人 ¥23,920 起，国际机票另计。张家界住三晚，但到桂林的直达高铁约 7 小时，那一天基本都在路上。",
+    "장가계를 넣은 베이징·시안·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,150,000부터입니다. 국제선은 별도입니다. 장가계에서 3박하지만 계림 직통 열차가 약 7시간 걸려 그날은 거의 이동에 씁니다.",
   ),
   summary: l(
     "Breakfast is included on all 13 hotel nights. The price covers local private guides and vehicles on touring days, transfers, named tickets including Tianmen Mountain, two trains and two economy flights. In Zhangjiajie, allow several hours on paths and steps even with the elevator and cable car.",
@@ -927,25 +927,25 @@ const landscapes: PrivateTourProduct = {
     faq(
       l("How much does this 14-day tour cost?", "这条 14 天线路多少钱？", "이 14일 일정은 얼마인가요?"),
       l(
-        "The 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route is USD 3,890 each for two sharing a twin room, USD 7,780 for the pair. With four it is USD 3,290 each; with six, USD 3,090. That pays for 13 breakfasts and hotel nights, private local guides and vehicles on touring days, Forest Park and Tianmen Mountain tickets, two trains and two domestic flights. International flights and lunches and dinners are separate. If eight or more go together, the own-date small-group price is USD 2,790 each. We quote other party sizes in writing.",
-        "北京、西安、张家界、桂林到上海的 14 天私家团，2 人住一间每人 ¥25,280，两人共 ¥50,560；4 人每人 ¥21,380，6 人每人 ¥20,080。价格含 13 晚早餐酒店、游览日各地私人导游和车、森林公园和天门山等门票、两段高铁与两段国内航班。国际机票、午餐和晚餐不含。8 人及以上可自选日期，按小团价每人 ¥18,130；其他人数书面报价。",
-        "베이징·시안·장가계·계림·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,440,000, 두 명 합계 ₩10,880,000입니다. 4명은 1인 ₩4,600,000, 6명은 ₩4,320,000입니다. 조식 포함 호텔 13박과 관광일의 도시별 전용 가이드·차량, 삼림공원과 천문산 등 입장권, 열차 2구간과 국내선 2구간을 포함합니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩3,900,000이며 다른 인원은 서면 견적을 드립니다.",
+        "The 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route is USD 3,680 each for two sharing a twin room, USD 7,360 for the pair. With four it is USD 2,670 each; with six, USD 2,430. That pays for 13 breakfasts and hotel nights, private local guides and vehicles on touring days, Forest Park and Tianmen Mountain tickets, two trains and two domestic flights. International flights and lunches and dinners are separate. If eight or more go together, the own-date small-group price is USD 2,230 each. We quote other party sizes in writing.",
+        "北京、西安、张家界、桂林到上海的 14 天私家团，2 人住一间每人 ¥23,920，两人共 ¥47,840；4 人每人 ¥17,350，6 人每人 ¥15,790。价格含 13 晚早餐酒店、游览日各地私人导游和车、森林公园和天门山等门票、两段高铁与两段国内航班。国际机票、午餐和晚餐不含。8 人及以上可自选日期，按小团价每人 ¥14,490；其他人数书面报价。",
+        "베이징·시안·장가계·계림·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,150,000, 두 명 합계 ₩10,300,000입니다. 4명은 1인 ₩3,740,000, 6명은 ₩3,400,000입니다. 조식 포함 호텔 13박과 관광일의 도시별 전용 가이드·차량, 삼림공원과 천문산 등 입장권, 열차 2구간과 국내선 2구간을 포함합니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩3,120,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "The Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route is the same in both versions. Two on a private departure pay from USD 3,890 each and choose their dates, pace and some stops. The 2027 small group is USD 2,790 each on 17 April or 16 October, with 8–12 guests following one plan.",
-        "北京、西安、张家界、桂林到上海，两种版本走同一条路线。2 人私家团每人 ¥25,280 起，日期、节奏和部分景点可以商量；2027 年小团每人 ¥18,130，4 月 17 日或 10 月 16 日出发，8–12 人统一行动。",
-        "베이징·시안·장가계·계림·상하이의 경로는 두 상품이 같습니다. 프라이빗은 2명 기준 1인 ₩5,440,000부터이며 날짜와 속도, 일부 방문지를 고릅니다. 2027년 소규모 그룹은 1인 ₩3,900,000으로 4월 17일 또는 10월 16일에 8~12명이 같은 일정으로 갑니다.",
+        "The Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route is the same in both versions. Two on a private departure pay from USD 3,680 each and choose their dates, pace and some stops. The 2027 small group is USD 2,230 each on 17 April or 16 October, with 8–12 guests following one plan.",
+        "北京、西安、张家界、桂林到上海，两种版本走同一条路线。2 人私家团每人 ¥23,920 起，日期、节奏和部分景点可以商量；2027 年小团每人 ¥14,490，4 月 17 日或 10 月 16 日出发，8–12 人统一行动。",
+        "베이징·시안·장가계·계림·상하이의 경로는 두 상품이 같습니다. 프라이빗은 2명 기준 1인 ₩5,150,000부터이며 날짜와 속도, 일부 방문지를 고릅니다. 2027년 소규모 그룹은 1인 ₩3,120,000으로 4월 17일 또는 10월 16일에 8~12명이 같은 일정으로 갑니다.",
       ),
     ),
     faq(
       l("Is Zhangjiajie worth adding instead of Chengdu?", "用张家界换掉成都值得吗？", "청두 대신 장가계를 넣을 만한가요?"),
       l(
-        "On the 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route, choose Zhangjiajie if you would rather spend two walking days among sandstone peaks than visit Chengdu’s pandas. To include both, the 21-day private route adds Chengdu and a three-night Yangtze cruise, from USD 5,890 per person for two.",
-        "北京、西安、张家界、桂林到上海这条 14 天线，适合愿意在砂岩峰林里走两天、把成都熊猫留到下次的人。想两处都看，21 天私家团还加成都和三晚长江游轮，2 人同行每人 ¥38,280 起。",
-        "베이징·시안·장가계·계림·상하이 14일 일정은 청두 판다보다 사암 봉우리 사이를 이틀 걷고 싶은 분에게 맞습니다. 둘 다 보려면 청두와 장강 크루즈 3박을 더한 21일 프라이빗 투어가 있으며 2명 기준 1인 ₩8,240,000부터입니다.",
+        "On the 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route, choose Zhangjiajie if you would rather spend two walking days among sandstone peaks than visit Chengdu’s pandas. To include both, the 21-day private route adds Chengdu and a three-night Yangtze cruise, from USD 5,920 per person for two.",
+        "北京、西安、张家界、桂林到上海这条 14 天线，适合愿意在砂岩峰林里走两天、把成都熊猫留到下次的人。想两处都看，21 天私家团还加成都和三晚长江游轮，2 人同行每人 ¥38,480 起。",
+        "베이징·시안·장가계·계림·상하이 14일 일정은 청두 판다보다 사암 봉우리 사이를 이틀 걷고 싶은 분에게 맞습니다. 둘 다 보려면 청두와 장강 크루즈 3박을 더한 21일 프라이빗 투어가 있으며 2명 기준 1인 ₩8,280,000부터입니다.",
       ),
     ),
     faq(
@@ -1005,7 +1005,7 @@ const landscapes: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3890), usd(4, 3290), usd(6, 3090)])],
+  packages: [privatePackage([usd(2, 3680), usd(4, 2670), usd(6, 2430)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -1034,9 +1034,9 @@ const yangtzeLongHaul: PrivateTourProduct = {
     "장강 크루즈 포함 중국 17일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "17-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, pandas, Three Gorges, Shanghai. Per person USD 4,690 for 2 travellers, 3,790 for 6.",
-    "17 天私家团含三晚长江游轮：北京、西安、成都大熊猫、三峡与上海。每人价格：2 人同行 ¥30,480，6 人同行 ¥24,630。",
-    "3박 장강 크루즈 포함 17일 프라이빗 투어: 베이징, 시안, 청두 판다, 삼협, 상하이. 1인 요금 2명 ₩6,560,000, 6명 ₩5,300,000.",
+    "17-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, pandas, Three Gorges, Shanghai. Per person USD 4,580 for 2 travellers, 3,040 for 6.",
+    "17 天私家团含三晚长江游轮：北京、西安、成都大熊猫、三峡与上海。每人价格：2 人同行 ¥29,770，6 人同行 ¥19,760。",
+    "3박 장강 크루즈 포함 17일 프라이빗 투어: 베이징, 시안, 청두 판다, 삼협, 상하이. 1인 요금 2명 ₩6,410,000, 6명 ₩4,250,000.",
   ),
   eyebrow: l(
     "Three river nights break up the train journey between cities",
@@ -1044,9 +1044,9 @@ const yangtzeLongHaul: PrivateTourProduct = {
     "도시 이동 중간에 장강 크루즈 3박",
   ),
   lede: l(
-    "A pair sharing hotel rooms and a standard balcony cabin pays from USD 4,690 each on the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour; international flights are extra. The three-night cruise runs downstream from Chongqing to Yichang, so the land route follows the sailing date.",
-    "2 人走北京、西安、成都、长江到上海的 17 天私家团，酒店两人一间并住标准阳台舱，每人 ¥30,480 起，国际机票另计。游轮从重庆下水到宜昌，住三晚；陆上日期得跟着船期排。",
-    "호텔 2인 1실과 기본 발코니 객실을 쓰는 2명은 베이징·시안·청두·장강·상하이 17일 프라이빗 투어를 1인 ₩6,560,000부터 예약할 수 있습니다. 국제선은 별도입니다. 충칭에서 이창까지 내려가는 크루즈가 3박이어서 육상 일정도 운항일에 맞춥니다.",
+    "A pair sharing hotel rooms and a standard balcony cabin pays from USD 4,580 each on the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour; international flights are extra. The three-night cruise runs downstream from Chongqing to Yichang, so the land route follows the sailing date.",
+    "2 人走北京、西安、成都、长江到上海的 17 天私家团，酒店两人一间并住标准阳台舱，每人 ¥29,770 起，国际机票另计。游轮从重庆下水到宜昌，住三晚；陆上日期得跟着船期排。",
+    "호텔 2인 1실과 기본 발코니 객실을 쓰는 2명은 베이징·시안·청두·장강·상하이 17일 프라이빗 투어를 1인 ₩6,410,000부터 예약할 수 있습니다. 국제선은 별도입니다. 충칭에서 이창까지 내려가는 크루즈가 3박이어서 육상 일정도 운항일에 맞춥니다.",
   ),
   summary: l(
     "Of the 16 nights, 13 are in breakfast-included hotels and three are aboard the ship. The price covers private local guides and vehicles on land touring days, transfers, named tickets, trains, the cruise with onboard meals, and the train or flight from Yichang to Shanghai. The ship and cabin are confirmed for your sailing.",
@@ -1117,17 +1117,17 @@ const yangtzeLongHaul: PrivateTourProduct = {
     faq(
       l("How much does a China tour with a Yangtze cruise cost?", "带长江游轮的中国行要多少钱？", "장강 크루즈가 포함된 중국 여행은 얼마인가요?"),
       l(
-        "For the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour, two sharing hotel rooms and a standard balcony cabin pay USD 4,690 each, USD 9,380 together. The rate falls to USD 3,990 each for four and USD 3,790 for six. Included are 13 breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, local private guides and vehicles on land, tickets, high-speed trains and a train or flight from Yichang to Shanghai. Land meals and international flights cost extra; peak sailings can raise the total. Eight or more may depart on their own dates at USD 3,490 each. Other party sizes need a written quote.",
-        "北京、西安、成都、长江到上海的 17 天私家团，2 人住一间并用标准阳台舱，每人 ¥30,480，两人共 ¥60,960。4 人每人 ¥25,930，6 人每人 ¥24,630。价格含 13 晚早餐酒店、三晚长江游轮及船上餐食和已含岸上项目、陆上私人导游与车、门票、高铁，以及宜昌到上海的火车或航班。国际机票、陆上午晚餐另付，旺季船期也可能加价。8 人以上可自选日期按每人 ¥22,680 走；其他人数书面报价。",
-        "베이징·시안·청두·장강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,560,000, 합계 ₩13,120,000입니다. 4명은 1인 ₩5,580,000, 6명은 ₩5,300,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩4,880,000이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour, two sharing hotel rooms and a standard balcony cabin pay USD 4,580 each, USD 9,160 together. The rate falls to USD 3,340 each for four and USD 3,040 for six. Included are 13 breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, local private guides and vehicles on land, tickets, high-speed trains and a train or flight from Yichang to Shanghai. Land meals and international flights cost extra; peak sailings can raise the total. Eight or more may depart on their own dates at USD 2,800 each. Other party sizes need a written quote.",
+        "北京、西安、成都、长江到上海的 17 天私家团，2 人住一间并用标准阳台舱，每人 ¥29,770，两人共 ¥59,540。4 人每人 ¥21,710，6 人每人 ¥19,760。价格含 13 晚早餐酒店、三晚长江游轮及船上餐食和已含岸上项目、陆上私人导游与车、门票、高铁，以及宜昌到上海的火车或航班。国际机票、陆上午晚餐另付，旺季船期也可能加价。8 人以上可自选日期按每人 ¥18,200 走；其他人数书面报价。",
+        "베이징·시안·청두·장강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,410,000, 합계 ₩12,820,000입니다. 4명은 1인 ₩4,670,000, 6명은 ₩4,250,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩3,920,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "Both 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai versions use a shared cruise ship. On land, the private guide and vehicle serve only your party on dates you choose, from USD 4,690 each for two. The 2027 small group costs USD 3,490 each with 8–12 guests, departing 19 May or 1 September on one fixed plan.",
-        "北京、西安、成都、长江到上海的两种 17 天版本，游轮都是共乘。陆上私家团的导游和车只带你们，可选日期，2 人同行每人 ¥30,480 起；2027 年小团每人 ¥22,680，5 月 19 日或 9 月 1 日出发，8–12 人按固定行程走。",
-        "베이징·시안·청두·장강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,560,000부터입니다. 2027년 소규모 그룹은 1인 ₩4,880,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
+        "Both 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai versions use a shared cruise ship. On land, the private guide and vehicle serve only your party on dates you choose, from USD 4,580 each for two. The 2027 small group costs USD 2,800 each with 8–12 guests, departing 19 May or 1 September on one fixed plan.",
+        "北京、西安、成都、长江到上海的两种 17 天版本，游轮都是共乘。陆上私家团的导游和车只带你们，可选日期，2 人同行每人 ¥29,770 起；2027 年小团每人 ¥18,200，5 月 19 日或 9 月 1 日出发，8–12 人按固定行程走。",
+        "베이징·시안·청두·장강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,410,000부터입니다. 2027년 소규모 그룹은 1인 ₩3,920,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
       ),
     ),
     faq(
@@ -1203,7 +1203,7 @@ const yangtzeLongHaul: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 4690), usd(4, 3990), usd(6, 3790)])],
+  packages: [privatePackage([usd(2, 4580), usd(4, 3340), usd(6, 3040)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -1342,9 +1342,9 @@ const silkRoadLongHaul: PrivateTourProduct = {
     "중국 실크로드 15일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "15-day private Silk Road tour: Beijing, Xi'an, Zhangye, Mogao Caves, Turpan, Urumqi. Per person USD 4,590 for 2 travellers, 3,690 for 6.",
-    "15 天丝绸之路私家团：北京、西安、张掖、嘉峪关、莫高窟、吐鲁番与乌鲁木齐。每人价格：2 人同行 ¥29,830，6 人同行 ¥23,980。",
-    "15일 실크로드 프라이빗 투어: 베이징, 시안, 장예, 자위관, 막고굴, 투루판, 우루무치. 1인 요금 2명 ₩6,420,000, 6명 ₩5,160,000.",
+    "15-day private Silk Road tour: Beijing, Xi'an, Zhangye, Mogao Caves, Turpan, Urumqi. Per person USD 4,370 for 2 travellers, 2,730 for 6.",
+    "15 天丝绸之路私家团：北京、西安、张掖、嘉峪关、莫高窟、吐鲁番与乌鲁木齐。每人价格：2 人同行 ¥28,400，6 人同行 ¥17,740。",
+    "15일 실크로드 프라이빗 투어: 베이징, 시안, 장예, 자위관, 막고굴, 투루판, 우루무치. 1인 요금 2명 ₩6,110,000, 6명 ₩3,820,000.",
   ),
   eyebrow: l(
     "The old Silk Road means long westbound train and road days",
@@ -1352,9 +1352,9 @@ const silkRoadLongHaul: PrivateTourProduct = {
     "실크로드 서쪽 길은 열차와 차량 이동이 깁니다",
   ),
   lede: l(
-    "Budget from USD 4,590 each for two in twin rooms on the 15-day Beijing–Xi’an–Silk Road private journey; international flights are extra. After the capitals, the route goes west to Zhangye, Jiayuguan, the Mogao Caves, Turpan and Urumqi. Several days are built around trains and desert roads.",
-    "北京、西安到丝绸之路的 15 天私家团，2 人住一间每人 ¥29,830 起，国际机票另付。过了两座古都，继续往张掖、嘉峪关、莫高窟、吐鲁番和乌鲁木齐走；其中几天主要花在火车和戈壁公路上。",
-    "베이징·시안·실크로드 15일 프라이빗 여행은 2명이 2인 1실로 갈 때 1인 ₩6,420,000부터입니다. 국제선은 별도입니다. 두 옛 수도를 지나 장예, 자위관, 막고굴, 투루판, 우루무치로 갑니다. 며칠은 열차와 사막 도로 이동이 중심입니다.",
+    "Budget from USD 4,370 each for two in twin rooms on the 15-day Beijing–Xi’an–Silk Road private journey; international flights are extra. After the capitals, the route goes west to Zhangye, Jiayuguan, the Mogao Caves, Turpan and Urumqi. Several days are built around trains and desert roads.",
+    "北京、西安到丝绸之路的 15 天私家团，2 人住一间每人 ¥28,400 起，国际机票另付。过了两座古都，继续往张掖、嘉峪关、莫高窟、吐鲁番和乌鲁木齐走；其中几天主要花在火车和戈壁公路上。",
+    "베이징·시안·실크로드 15일 프라이빗 여행은 2명이 2인 1실로 갈 때 1인 ₩6,110,000부터입니다. 국제선은 별도입니다. 두 옛 수도를 지나 장예, 자위관, 막고굴, 투루판, 우루무치로 갑니다. 며칠은 열차와 사막 도로 이동이 중심입니다.",
   ),
   summary: l(
     "Fourteen hotel nights include breakfast. Local private guides and vehicles on touring days, transfers, named admissions including the Mogao Caves, four second-class train journeys and the flight back east from Urumqi are included. Mogao tickets are date limited; we tell you before payment if only the four-cave emergency ticket remains.",
@@ -1438,17 +1438,17 @@ const silkRoadLongHaul: PrivateTourProduct = {
     faq(
       l("How much does a Silk Road tour cost?", "丝绸之路旅行要多少钱？", "실크로드 여행은 얼마인가요?"),
       l(
-        "The 15-day Beijing–Xi’an–Silk Road private tour starts at USD 4,590 each for two sharing a twin room, or USD 9,180 for the pair. Four travellers pay USD 3,890 each and six pay USD 3,690. In the land price are 14 breakfast hotel nights, private guides and vehicles on touring days, Mogao Caves and other named tickets, four high-speed train legs, the Gobi crossings by train or private car, and the flight east from Urumqi. International flights and lunches and dinners are extra. Eight or more can take their own date at USD 3,390 each; we quote other numbers in writing.",
-        "北京、西安到丝绸之路的 15 天私家团，2 人住一间每人 ¥29,830，两人共 ¥59,660；4 人每人 ¥25,280，6 人每人 ¥23,980。14 晚早餐酒店、游览日私人导游和车、莫高窟等所列门票、四段高铁、戈壁路段火车或私车，以及乌鲁木齐飞回东部的航班都在价格内。国际机票和午晚餐另付。8 人及以上可自选日期按每人 ¥22,030 走，其他人数书面报价。",
-        "베이징·시안·실크로드 15일 프라이빗 투어는 2명, 2인 1실에 1인 ₩6,420,000, 두 명 합계 ₩12,840,000입니다. 4명은 1인 ₩5,440,000, 6명은 ₩5,160,000입니다. 조식 포함 호텔 14박, 관광일의 전용 가이드와 차량, 막고굴 등 명시된 입장권, 고속철도 4구간, 고비 구간의 열차 또는 전용 차량, 우루무치에서 동부로 가는 항공편이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩4,740,000이며 다른 인원은 서면으로 견적을 드립니다.",
+        "The 15-day Beijing–Xi’an–Silk Road private tour starts at USD 4,370 each for two sharing a twin room, or USD 8,740 for the pair. Four travellers pay USD 3,040 each and six pay USD 2,730. In the land price are 14 breakfast hotel nights, private guides and vehicles on touring days, Mogao Caves and other named tickets, four high-speed train legs, the Gobi crossings by train or private car, and the flight east from Urumqi. International flights and lunches and dinners are extra. Eight or more can take their own date at USD 2,470 each; we quote other numbers in writing.",
+        "北京、西安到丝绸之路的 15 天私家团，2 人住一间每人 ¥28,400，两人共 ¥56,800；4 人每人 ¥19,760，6 人每人 ¥17,740。14 晚早餐酒店、游览日私人导游和车、莫高窟等所列门票、四段高铁、戈壁路段火车或私车，以及乌鲁木齐飞回东部的航班都在价格内。国际机票和午晚餐另付。8 人及以上可自选日期按每人 ¥16,050 走，其他人数书面报价。",
+        "베이징·시안·실크로드 15일 프라이빗 투어는 2명, 2인 1실에 1인 ₩6,110,000, 두 명 합계 ₩12,220,000입니다. 4명은 1인 ₩4,250,000, 6명은 ₩3,820,000입니다. 조식 포함 호텔 14박, 관광일의 전용 가이드와 차량, 막고굴 등 명시된 입장권, 고속철도 4구간, 고비 구간의 열차 또는 전용 차량, 우루무치에서 동부로 가는 항공편이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩3,460,000이며 다른 인원은 서면으로 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "The 15-day Beijing–Xi’an–Silk Road private tour starts at USD 4,590 each for two, with dates you choose, a guide and car for your party, and a return flight to Beijing or Shanghai that fits your international ticket. The 2027 small group is USD 3,390 each, with 8–12 guests on 12 June or 11 September; everyone flies back to Beijing on Day 14.",
-        "北京、西安到丝绸之路的 15 天私家团，2 人同行每人 ¥29,830 起，可选日期，导游和车只带你们，最后按国际机票飞回北京或上海。2027 年小团每人 ¥22,030，6 月 12 日或 9 月 11 日出发，8–12 人一起走，第 14 天统一飞回北京。",
-        "베이징·시안·실크로드 15일 프라이빗 투어는 2명 기준 1인 ₩6,420,000부터이며 날짜를 고르고 가이드와 차량을 일행만 씁니다. 국제선에 맞춰 베이징이나 상하이로 돌아올 수 있습니다. 2027년 소규모 그룹은 1인 ₩4,740,000으로 6월 12일 또는 9월 11일에 8~12명이 출발해 14일 차에 함께 베이징으로 돌아옵니다.",
+        "The 15-day Beijing–Xi’an–Silk Road private tour starts at USD 4,370 each for two, with dates you choose, a guide and car for your party, and a return flight to Beijing or Shanghai that fits your international ticket. The 2027 small group is USD 2,470 each, with 8–12 guests on 12 June or 11 September; everyone flies back to Beijing on Day 14.",
+        "北京、西安到丝绸之路的 15 天私家团，2 人同行每人 ¥28,400 起，可选日期，导游和车只带你们，最后按国际机票飞回北京或上海。2027 年小团每人 ¥16,050，6 月 12 日或 9 月 11 日出发，8–12 人一起走，第 14 天统一飞回北京。",
+        "베이징·시안·실크로드 15일 프라이빗 투어는 2명 기준 1인 ₩6,110,000부터이며 날짜를 고르고 가이드와 차량을 일행만 씁니다. 국제선에 맞춰 베이징이나 상하이로 돌아올 수 있습니다. 2027년 소규모 그룹은 1인 ₩3,460,000으로 6월 12일 또는 9월 11일에 8~12명이 출발해 14일 차에 함께 베이징으로 돌아옵니다.",
       ),
     ),
     faq(
@@ -1516,7 +1516,7 @@ const silkRoadLongHaul: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 4590), usd(4, 3890), usd(6, 3690)], { koreanGuide: false })],
+  packages: [privatePackage([usd(2, 4370), usd(4, 3040), usd(6, 2730)], { koreanGuide: false })],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -1545,9 +1545,9 @@ const yunnanLongHaul: PrivateTourProduct = {
     "베이징·시안·윈난 14일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "14-day private tour: Beijing, Xi'an, Dali, Lijiang, Tiger Leaping Gorge, Shangri-La. Per person USD 3,890 for 2 travellers, 3,090 for 6.",
-    "14 天私家团：北京、西安、石林、大理、丽江、虎跳峡与香格里拉。每人价格：2 人同行 ¥25,280，6 人同行 ¥20,080。",
-    "14일 프라이빗 투어: 베이징, 시안, 석림, 다리, 리장, 호도협, 샹그릴라. 1인 요금 2명 ₩5,440,000, 6명 ₩4,320,000.",
+    "14-day private tour: Beijing, Xi'an, Dali, Lijiang, Tiger Leaping Gorge, Shangri-La. Per person USD 4,110 for 2 travellers, 2,640 for 6.",
+    "14 天私家团：北京、西安、石林、大理、丽江、虎跳峡与香格里拉。每人价格：2 人同行 ¥26,710，6 人同行 ¥17,160。",
+    "14일 프라이빗 투어: 베이징, 시안, 석림, 다리, 리장, 호도협, 샹그릴라. 1인 요금 2명 ₩5,750,000, 6명 ₩3,690,000.",
   ),
   eyebrow: l(
     "Old towns first, then the climb to Shangri-La",
@@ -1555,9 +1555,9 @@ const yunnanLongHaul: PrivateTourProduct = {
     "고성을 지나 샹그릴라 고도로 올라갑니다",
   ),
   lede: l(
-    "At USD 3,890 each for two sharing a twin room, the 14-day Beijing–Xi’an–Yunnan private tour leaves international flights to you. After the capitals, Dali and Lijiang give way to Tiger Leaping Gorge and Shangri-La at about 3,300 metres. The altitude is a real part of the route.",
-    "北京、西安加云南的 14 天私家团，2 人同行住一间，每人 ¥25,280 起，国际机票自己另订。走过大理、丽江后，还要经虎跳峡上到海拔约 3,300 米的香格里拉；选这条线要把海拔算进去。",
-    "베이징·시안·윈난 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,440,000부터입니다. 국제선은 따로 예약해야 합니다. 다리와 리장을 지나 호도협, 해발 약 3,300미터 샹그릴라까지 오릅니다. 고도를 생각하고 고를 일정입니다.",
+    "At USD 4,110 each for two sharing a twin room, the 14-day Beijing–Xi’an–Yunnan private tour leaves international flights to you. After the capitals, Dali and Lijiang give way to Tiger Leaping Gorge and Shangri-La at about 3,300 metres. The altitude is a real part of the route.",
+    "北京、西安加云南的 14 天私家团，2 人同行住一间，每人 ¥26,710 起，国际机票自己另订。走过大理、丽江后，还要经虎跳峡上到海拔约 3,300 米的香格里拉；选这条线要把海拔算进去。",
+    "베이징·시안·윈난 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,750,000부터입니다. 국제선은 따로 예약해야 합니다. 다리와 리장을 지나 호도협, 해발 약 3,300미터 샹그릴라까지 오릅니다. 고도를 생각하고 고를 일정입니다.",
   ),
   summary: l(
     "All 13 hotel nights include breakfast. The price covers local private guides and vehicles on touring days, transfers, named tickets, four train journeys, the drive through Tiger Leaping Gorge and two economy flights. At Jade Dragon Snow Mountain, the high cable car depends on the day’s quota and weather.",
@@ -1684,9 +1684,9 @@ const yunnanLongHaul: PrivateTourProduct = {
     faq(
       l("How much does a Yunnan tour with Beijing and Xi'an cost?", "北京西安加云南要多少钱？", "베이징·시안과 윈난을 함께 가면 얼마인가요?"),
       l(
-        "Two sharing a twin room on the 14-day Beijing–Xi’an–Yunnan private tour pay USD 3,890 each, or USD 7,780 together. The per-person price is USD 3,290 for four and USD 3,090 for six. It covers 13 breakfast hotel nights, local private guides and vehicles on touring days, tickets including one Jade Dragon Snow Mountain cable car, four train journeys, the private drive to Shangri-La and two domestic flights. International flights and lunches and dinners are separate. We send a written quote for other group sizes.",
-        "北京、西安加云南的 14 天私家团，2 人住一间每人 ¥25,280，两人共 ¥50,560；4 人每人 ¥21,380，6 人每人 ¥20,080。价格含 13 晚早餐酒店、各地游览日的私人导游和车、玉龙雪山一段索道等门票、四段火车、去香格里拉的私车和两段国内航班。国际机票、午晚餐另计；其他人数我们书面报价。",
-        "베이징·시안·윈난 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,440,000, 두 명 합계 ₩10,880,000입니다. 4명은 1인 ₩4,600,000, 6명은 ₩4,320,000입니다. 조식 포함 호텔 13박, 관광일의 도시별 전용 가이드와 차량, 옥룡설산 케이블카 1회 등 입장권, 열차 4구간, 샹그릴라까지 전용 차량과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "Two sharing a twin room on the 14-day Beijing–Xi’an–Yunnan private tour pay USD 4,110 each, or USD 8,220 together. The per-person price is USD 2,920 for four and USD 2,640 for six. It covers 13 breakfast hotel nights, local private guides and vehicles on touring days, tickets including one Jade Dragon Snow Mountain cable car, four train journeys, the private drive to Shangri-La and two domestic flights. International flights and lunches and dinners are separate. We send a written quote for other group sizes.",
+        "北京、西安加云南的 14 天私家团，2 人住一间每人 ¥26,710，两人共 ¥53,420；4 人每人 ¥18,980，6 人每人 ¥17,160。价格含 13 晚早餐酒店、各地游览日的私人导游和车、玉龙雪山一段索道等门票、四段火车、去香格里拉的私车和两段国内航班。国际机票、午晚餐另计；其他人数我们书面报价。",
+        "베이징·시안·윈난 14일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,750,000, 두 명 합계 ₩11,500,000입니다. 4명은 1인 ₩4,090,000, 6명은 ₩3,690,000입니다. 조식 포함 호텔 13박, 관광일의 도시별 전용 가이드와 차량, 옥룡설산 케이블카 1회 등 입장권, 열차 4구간, 샹그릴라까지 전용 차량과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
@@ -1716,9 +1716,9 @@ const yunnanLongHaul: PrivateTourProduct = {
     faq(
       l("Who is this route for?", "这条线适合谁？", "이 일정은 누구에게 맞나요?"),
       l(
-        "The 14-day Beijing–Xi’an–Yunnan route suits travellers who want mountains and old towns after the two capitals. It has more altitude and driving than the 14-day Beijing–Shanghai classic, which starts at USD 3,990 each for two. If Shangri-La’s 3,300 metres worries you, ask us for the version that stops at Lijiang.",
-        "北京、西安加云南的 14 天线，适合看完两座古都后想走雪山和古城的人。它比北京到上海的经典 14 天线车程更长、海拔更高；经典线 2 人同行每人 ¥25,930 起。担心香格里拉约 3,300 米的海拔，可以问我们不去香格里拉的版本。",
-        "베이징·시안·윈난 14일 일정은 두 옛 수도 뒤에 산과 고성을 보고 싶은 분에게 맞습니다. 2명 기준 1인 ₩5,580,000부터인 베이징–상하이 14일 기본 일정보다 차를 오래 타고 고도도 높습니다. 샹그릴라 약 3,300미터가 걱정되면 리장에서 마치는 구성을 요청하세요.",
+        "The 14-day Beijing–Xi’an–Yunnan route suits travellers who want mountains and old towns after the two capitals. It has more altitude and driving than the 14-day Beijing–Shanghai classic, which starts at USD 3,720 each for two. If Shangri-La’s 3,300 metres worries you, ask us for the version that stops at Lijiang.",
+        "北京、西安加云南的 14 天线，适合看完两座古都后想走雪山和古城的人。它比北京到上海的经典 14 天线车程更长、海拔更高；经典线 2 人同行每人 ¥24,180 起。担心香格里拉约 3,300 米的海拔，可以问我们不去香格里拉的版本。",
+        "베이징·시안·윈난 14일 일정은 두 옛 수도 뒤에 산과 고성을 보고 싶은 분에게 맞습니다. 2명 기준 1인 ₩5,200,000부터인 베이징–상하이 14일 기본 일정보다 차를 오래 타고 고도도 높습니다. 샹그릴라 약 3,300미터가 걱정되면 리장에서 마치는 구성을 요청하세요.",
       ),
     ),
   ],
@@ -1762,7 +1762,7 @@ const yunnanLongHaul: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3890), usd(4, 3290), usd(6, 3090)])],
+  packages: [privatePackage([usd(2, 4110), usd(4, 2920), usd(6, 2640)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -1791,9 +1791,9 @@ const huangshanLongHaul: PrivateTourProduct = {
     "황산 포함 중국 14일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "14-day private tour: Beijing, Xi'an, Yellow Mountain, Hongcun, West Lake, Suzhou, Shanghai. Per person USD 3,790 for 2 travellers, 2,990 for 6.",
-    "14 天私家团：北京、西安、黄山、宏村、西湖、苏州与上海。每人价格：2 人同行 ¥24,630，6 人同行 ¥19,430。",
-    "14일 프라이빗 투어: 베이징, 시안, 황산, 훙촌, 서호, 쑤저우, 상하이. 1인 요금 2명 ₩5,300,000, 6명 ₩4,180,000.",
+    "14-day private tour: Beijing, Xi'an, Yellow Mountain, Hongcun, West Lake, Suzhou, Shanghai. Per person USD 3,580 for 2 travellers, 2,200 for 6.",
+    "14 天私家团：北京、西安、黄山、宏村、西湖、苏州与上海。每人价格：2 人同行 ¥23,270，6 人同行 ¥14,300。",
+    "14일 프라이빗 투어: 베이징, 시안, 황산, 훙촌, 서호, 쑤저우, 상하이. 1인 요금 2명 ₩5,010,000, 6명 ₩3,080,000.",
   ),
   eyebrow: l(
     "A full Huangshan day, then the lakes and gardens of the east",
@@ -1801,9 +1801,9 @@ const huangshanLongHaul: PrivateTourProduct = {
     "황산에서 하루를 보낸 뒤 서호와 쑤저우로",
   ),
   lede: l(
-    "The 14-day Beijing–Xi’an–Yellow Mountain–Hangzhou–Shanghai private route is from USD 3,790 each when two share a twin room; international flights are extra. Two nights in Tangkou at the foot of Huangshan leave one full mountain day before the route turns to Hongcun, West Lake and Suzhou.",
-    "北京、西安、黄山、杭州到上海的 14 天私家团，2 人住一间每人 ¥24,630 起，国际机票另付。在山脚汤口住两晚，留一个整天登黄山，之后再去宏村、西湖和苏州。",
-    "베이징·시안·황산·항저우·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,300,000부터입니다. 국제선은 별도입니다. 황산 아래 탕커우에서 2박해 산에 하루를 쓰고 훙촌, 서호, 쑤저우로 이어갑니다.",
+    "The 14-day Beijing–Xi’an–Yellow Mountain–Hangzhou–Shanghai private route is from USD 3,580 each when two share a twin room; international flights are extra. Two nights in Tangkou at the foot of Huangshan leave one full mountain day before the route turns to Hongcun, West Lake and Suzhou.",
+    "北京、西安、黄山、杭州到上海的 14 天私家团，2 人住一间每人 ¥23,270 起，国际机票另付。在山脚汤口住两晚，留一个整天登黄山，之后再去宏村、西湖和苏州。",
+    "베이징·시안·황산·항저우·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,010,000부터입니다. 국제선은 별도입니다. 황산 아래 탕커우에서 2박해 산에 하루를 쓰고 훙촌, 서호, 쑤저우로 이어갑니다.",
   ),
   summary: l(
     "Breakfast is included on all 13 hotel nights. Local private guides and vehicles on touring days, transfers, named tickets including the Huangshan cable cars, and the trains or flight between stops are included. The mountain walk is shortened if weather or mobility calls for it.",
@@ -1890,9 +1890,9 @@ const huangshanLongHaul: PrivateTourProduct = {
     faq(
       l("How much does this 14-day tour cost?", "这条 14 天线路多少钱？", "이 14일 일정은 얼마인가요?"),
       l(
-        "On the 14-day Beijing–Xi’an–Huangshan–Hangzhou–Shanghai private tour, two sharing a twin room pay USD 3,790 each, USD 7,580 together. It is USD 3,190 each for four or USD 2,990 for six. The land price includes 13 breakfast hotel nights, city guides and vehicles on touring days, named tickets and Huangshan cable cars, plus the trains between stops. Xi’an to Huangshan can be by flight if the weekly service fits your date. Add international flights and lunches and dinners separately. We quote other party sizes in writing.",
-        "北京、西安、黄山、杭州到上海的 14 天私家团，2 人住一间每人 ¥24,630，两人共 ¥49,260；4 人每人 ¥20,730，6 人每人 ¥19,430。价格含 13 晚早餐酒店、各地游览日的私人导游和车、黄山索道等门票，以及城际高铁。西安到黄山若刚好对上每周航班，也可改飞。国际机票和午晚餐另付；其他人数书面报价。",
-        "베이징·시안·황산·항저우·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,300,000, 두 명 합계 ₩10,600,000입니다. 4명은 1인 ₩4,460,000, 6명은 ₩4,180,000입니다. 조식 포함 호텔 13박, 관광일의 도시별 전용 가이드와 차량, 황산 케이블카 등 입장권과 도시 간 열차가 포함됩니다. 시안–황산은 주 1회 정도 항공편이 날짜에 맞으면 비행기로 바꿀 수 있습니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "On the 14-day Beijing–Xi’an–Huangshan–Hangzhou–Shanghai private tour, two sharing a twin room pay USD 3,580 each, USD 7,160 together. It is USD 2,470 each for four or USD 2,200 for six. The land price includes 13 breakfast hotel nights, city guides and vehicles on touring days, named tickets and Huangshan cable cars, plus the trains between stops. Xi’an to Huangshan can be by flight if the weekly service fits your date. Add international flights and lunches and dinners separately. We quote other party sizes in writing.",
+        "北京、西安、黄山、杭州到上海的 14 天私家团，2 人住一间每人 ¥23,270，两人共 ¥46,540；4 人每人 ¥16,050，6 人每人 ¥14,300。价格含 13 晚早餐酒店、各地游览日的私人导游和车、黄山索道等门票，以及城际高铁。西安到黄山若刚好对上每周航班，也可改飞。国际机票和午晚餐另付；其他人数书面报价。",
+        "베이징·시안·황산·항저우·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,010,000, 두 명 합계 ₩10,020,000입니다. 4명은 1인 ₩3,460,000, 6명은 ₩3,080,000입니다. 조식 포함 호텔 13박, 관광일의 도시별 전용 가이드와 차량, 황산 케이블카 등 입장권과 도시 간 열차가 포함됩니다. 시안–황산은 주 1회 정도 항공편이 날짜에 맞으면 비행기로 바꿀 수 있습니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
@@ -1922,9 +1922,9 @@ const huangshanLongHaul: PrivateTourProduct = {
     faq(
       l("Why choose this route over the classic 14-day tour?", "为什么选这条而不是经典 14 天线？", "대표 14일 일정 대신 이 일정을 고르는 이유는?"),
       l(
-        "The 14-day Beijing–Xi’an–Huangshan–Hangzhou–Shanghai route replaces Chengdu and Guilin with Huangshan, Hongcun, West Lake and Suzhou. For two sharing a twin room it starts at USD 3,790 each, against USD 3,990 for the 14-day classic. Here the extra day goes to Huangshan and eastern gardens; the classic route spends that time on pandas and the Li River.",
-        "北京、西安、黄山、杭州到上海的 14 天线，用黄山、宏村、西湖和苏州代替成都、桂林。2 人同行、两人一间每人 ¥24,630 起；经典 14 天线每人 ¥25,930 起。想用整天走黄山、看江南园林，就选这条；想看熊猫和漓江，选经典线。",
-        "베이징·시안·황산·항저우·상하이 14일 일정은 청두와 계림 대신 황산, 훙촌, 서호, 쑤저우를 봅니다. 2명, 2인 1실 기준 1인 ₩5,300,000부터이고 기본 14일 일정은 ₩5,580,000부터입니다. 판다와 이강보다 황산에서 보내는 하루와 동부 정원을 원할 때 맞습니다.",
+        "The 14-day Beijing–Xi’an–Huangshan–Hangzhou–Shanghai route replaces Chengdu and Guilin with Huangshan, Hongcun, West Lake and Suzhou. For two sharing a twin room it starts at USD 3,580 each, against USD 3,720 for the 14-day classic. Here the extra day goes to Huangshan and eastern gardens; the classic route spends that time on pandas and the Li River.",
+        "北京、西安、黄山、杭州到上海的 14 天线，用黄山、宏村、西湖和苏州代替成都、桂林。2 人同行、两人一间每人 ¥23,270 起；经典 14 天线每人 ¥24,180 起。想用整天走黄山、看江南园林，就选这条；想看熊猫和漓江，选经典线。",
+        "베이징·시안·황산·항저우·상하이 14일 일정은 청두와 계림 대신 황산, 훙촌, 서호, 쑤저우를 봅니다. 2명, 2인 1실 기준 1인 ₩5,010,000부터이고 기본 14일 일정은 ₩5,200,000부터입니다. 판다와 이강보다 황산에서 보내는 하루와 동부 정원을 원할 때 맞습니다.",
       ),
     ),
   ],
@@ -1968,7 +1968,7 @@ const huangshanLongHaul: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3790), usd(4, 3190), usd(6, 2990)])],
+  packages: [privatePackage([usd(2, 3580), usd(4, 2470), usd(6, 2200)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -1997,9 +1997,9 @@ const grandChina: PrivateTourProduct = {
     "중국 일주 21일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "21-day private tour: Beijing, Xi'an, pandas, Li River, Zhangjiajie, 3-night Yangtze cruise, Shanghai. Per person USD 5,890 for 2 travellers, 4,690 for 6.",
-    "21 天私家团：北京、西安、大熊猫、漓江、张家界、三晚长江游轮与上海。每人价格：2 人同行 ¥38,280，6 人同行 ¥30,480。",
-    "21일 프라이빗 투어: 베이징, 시안, 판다, 이강, 장가계, 3박 장강 크루즈, 상하이. 1인 요금 2명 ₩8,240,000, 6명 ₩6,560,000.",
+    "21-day private tour: Beijing, Xi'an, pandas, Li River, Zhangjiajie, 3-night Yangtze cruise, Shanghai. Per person USD 5,920 for 2 travellers, 4,010 for 6.",
+    "21 天私家团：北京、西安、大熊猫、漓江、张家界、三晚长江游轮与上海。每人价格：2 人同行 ¥38,480，6 人同行 ¥26,060。",
+    "21일 프라이빗 투어: 베이징, 시안, 판다, 이강, 장가계, 3박 장강 크루즈, 상하이. 1인 요금 2명 ₩8,280,000, 6명 ₩5,610,000.",
   ),
   eyebrow: l(
     "Three weeks across the cities, mountains and the Yangtze",
@@ -2007,9 +2007,9 @@ const grandChina: PrivateTourProduct = {
     "3주 동안 도시와 산을 돌고 장강에서 3박",
   ),
   lede: l(
-    "Two sharing twin hotel rooms and a standard balcony cabin pay USD 5,890 each to take the 21-day China private tour; international flights are extra. It joins Beijing and Xi’an, Chengdu’s pandas, the Li River, Zhangjiajie and a three-night downstream Yangtze cruise. Expect several full travel days between them.",
-    "走 21 天中国私家团，2 人住一间并用标准阳台舱，每人 ¥38,280 起，国际机票另付。北京、西安、成都大熊猫、漓江、张家界和三晚长江下水游轮都走到；中间也有几天几乎整天在转场。",
-    "중국 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실을 쓰는 2명일 때 1인 ₩8,240,000부터입니다. 국제선은 별도입니다. 베이징, 시안, 청두 판다, 이강, 장가계와 장강 하행 크루즈 3박을 잇습니다. 중간에는 하루를 거의 이동에 쓰는 날도 있습니다.",
+    "Two sharing twin hotel rooms and a standard balcony cabin pay USD 5,920 each to take the 21-day China private tour; international flights are extra. It joins Beijing and Xi’an, Chengdu’s pandas, the Li River, Zhangjiajie and a three-night downstream Yangtze cruise. Expect several full travel days between them.",
+    "走 21 天中国私家团，2 人住一间并用标准阳台舱，每人 ¥38,480 起，国际机票另付。北京、西安、成都大熊猫、漓江、张家界和三晚长江下水游轮都走到；中间也有几天几乎整天在转场。",
+    "중국 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실을 쓰는 2명일 때 1인 ₩8,280,000부터입니다. 국제선은 별도입니다. 베이징, 시안, 청두 판다, 이강, 장가계와 장강 하행 크루즈 3박을 잇습니다. 중간에는 하루를 거의 이동에 쓰는 날도 있습니다.",
   ),
   summary: l(
     "The 20 nights comprise 17 breakfast-included hotel nights and three in a balcony cruise cabin. Local private guides and vehicles on land touring days, transfers, named tickets, trains, domestic flights and the cruise with onboard meals are included. Guides change by city; the ship runs its own programme.",
@@ -2100,17 +2100,17 @@ const grandChina: PrivateTourProduct = {
     faq(
       l("How much does a three-week China tour cost?", "中国三周游要多少钱？", "중국 3주 여행은 얼마인가요?"),
       l(
-        "A 21-day private China trip covering Beijing, Xi’an, Chengdu, Guilin, Zhangjiajie, the Yangtze and Shanghai is USD 5,890 each for two sharing hotel rooms and a standard balcony cabin, USD 11,780 together. Four pay USD 4,990 each and six USD 4,690. Included are 17 hotel nights with breakfast, a three-night Yangtze cruise with onboard meals, the Li River boat, local private guides and vehicles on land, tickets, route trains and domestic flights. International flights and land meals are separate; peak sailings may raise the total. Ask for a written quote for another group size.",
-        "这条走北京、西安、成都、桂林、张家界、长江和上海的 21 天私家团，2 人住一间并用标准阳台舱，每人 ¥38,280，两人共 ¥76,560；4 人每人 ¥32,430，6 人每人 ¥30,480。价格含 17 晚早餐酒店、三晚长江游轮及船上餐食、漓江游船、陆上私人导游和车、门票、路线上的火车和国内航班。国际机票和陆上午晚餐另付，旺季船期可能加价；其他人数书面报价。",
-        "베이징·시안·청두·계림·장가계·장강·상하이를 잇는 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩8,240,000, 합계 ₩16,480,000입니다. 4명은 1인 ₩6,980,000, 6명은 ₩6,560,000입니다. 조식 포함 호텔 17박, 선상 식사가 있는 장강 크루즈 3박, 이강 유람선, 육상 도시별 전용 가이드와 차량, 입장권, 열차와 국내선이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 다른 인원은 서면으로 견적을 드립니다.",
+        "A 21-day private China trip covering Beijing, Xi’an, Chengdu, Guilin, Zhangjiajie, the Yangtze and Shanghai is USD 5,920 each for two sharing hotel rooms and a standard balcony cabin, USD 11,840 together. Four pay USD 4,370 each and six USD 4,010. Included are 17 hotel nights with breakfast, a three-night Yangtze cruise with onboard meals, the Li River boat, local private guides and vehicles on land, tickets, route trains and domestic flights. International flights and land meals are separate; peak sailings may raise the total. Ask for a written quote for another group size.",
+        "这条走北京、西安、成都、桂林、张家界、长江和上海的 21 天私家团，2 人住一间并用标准阳台舱，每人 ¥38,480，两人共 ¥76,960；4 人每人 ¥28,400，6 人每人 ¥26,060。价格含 17 晚早餐酒店、三晚长江游轮及船上餐食、漓江游船、陆上私人导游和车、门票、路线上的火车和国内航班。国际机票和陆上午晚餐另付，旺季船期可能加价；其他人数书面报价。",
+        "베이징·시안·청두·계림·장가계·장강·상하이를 잇는 21일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩8,280,000, 합계 ₩16,560,000입니다. 4명은 1인 ₩6,110,000, 6명은 ₩5,610,000입니다. 조식 포함 호텔 17박, 선상 식사가 있는 장강 크루즈 3박, 이강 유람선, 육상 도시별 전용 가이드와 차량, 입장권, 열차와 국내선이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 다른 인원은 서면으로 견적을 드립니다.",
       ),
     ),
     faq(
       l("Is three weeks too much moving?", "三周会不会太赶？", "3주는 이동이 너무 많지 않나요?"),
       l(
-        "The 21-day China private tour still has several full travel days, even though most stops get at least one full day and the three Yangtze cruise nights reduce hotel changes. If that pace feels heavy, the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai tour leaves out Guilin and Zhangjiajie and starts at USD 4,690 each for two.",
-        "21 天中国私家团多数地方至少留一个完整游览日，三晚长江游轮也省了换酒店，但仍有几天几乎都在转场。觉得太赶，可以选不去桂林和张家界的 17 天北京、西安、成都、长江到上海线，2 人同行每人 ¥30,480 起。",
-        "중국 21일 프라이빗 투어는 대부분의 지역에 관광 하루 이상을 두고 장강 크루즈 3박 동안 호텔을 옮기지 않습니다. 그래도 하루를 거의 이동에 쓰는 날이 있습니다. 부담스럽다면 계림과 장가계를 뺀 베이징·시안·청두·장강·상하이 17일 일정이 2명 기준 1인 ₩6,560,000부터입니다.",
+        "The 21-day China private tour still has several full travel days, even though most stops get at least one full day and the three Yangtze cruise nights reduce hotel changes. If that pace feels heavy, the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai tour leaves out Guilin and Zhangjiajie and starts at USD 4,580 each for two.",
+        "21 天中国私家团多数地方至少留一个完整游览日，三晚长江游轮也省了换酒店，但仍有几天几乎都在转场。觉得太赶，可以选不去桂林和张家界的 17 天北京、西安、成都、长江到上海线，2 人同行每人 ¥29,770 起。",
+        "중국 21일 프라이빗 투어는 대부분의 지역에 관광 하루 이상을 두고 장강 크루즈 3박 동안 호텔을 옮기지 않습니다. 그래도 하루를 거의 이동에 쓰는 날이 있습니다. 부담스럽다면 계림과 장가계를 뺀 베이징·시안·청두·장강·상하이 17일 일정이 2명 기준 1인 ₩6,410,000부터입니다.",
       ),
     ),
     faq(
@@ -2162,7 +2162,7 @@ const grandChina: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 5890), usd(4, 4990), usd(6, 4690)])],
+  packages: [privatePackage([usd(2, 5920), usd(4, 4370), usd(6, 4010)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -2191,9 +2191,9 @@ const classicTen: PrivateTourProduct = {
     "계림 포함 중국 10일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "10-day private tour: Great Wall, Terracotta Warriors, Li River, Shanghai. Per person USD 2,990 for 2 travellers, 2,390 for 6; domestic flights included.",
-    "10 天私家团：长城、兵马俑、漓江与上海。每人价格：2 人同行 ¥19,430，6 人同行 ¥15,530；含国内航班与高铁。",
-    "10일 프라이빗 투어: 만리장성, 병마용, 이강, 상하이. 1인 요금 2명 ₩4,180,000, 6명 ₩3,340,000. 국내선·고속철도 포함.",
+    "10-day private tour: Great Wall, Terracotta Warriors, Li River, Shanghai. Per person USD 2,510 for 2 travellers, 1,670 for 6; domestic flights included.",
+    "10 天私家团：长城、兵马俑、漓江与上海。每人价格：2 人同行 ¥16,310，6 人同行 ¥10,850；含国内航班与高铁。",
+    "10일 프라이빗 투어: 만리장성, 병마용, 이강, 상하이. 1인 요금 2명 ₩3,510,000, 6명 ₩2,340,000. 국내선·고속철도 포함.",
   ),
   eyebrow: l(
     "Ten days for Beijing, Xi’an, the Li River and Shanghai",
@@ -2201,9 +2201,9 @@ const classicTen: PrivateTourProduct = {
     "10일 동안 베이징·시안·이강·상하이",
   ),
   lede: l(
-    "The 10-day Beijing–Xi’an–Guilin–Shanghai private trip is priced from USD 2,990 each for two in twin rooms, excluding international flights. The route still gives the Great Wall, Terracotta Warriors and Li River their own days, but it moves on quickly after each stop.",
-    "10 天从北京、西安走到桂林、上海，2 人同行住一间，每人 ¥19,430 起，国际机票另计。长城、兵马俑和漓江都各留一天，但每站看完就继续走，节奏会比 14 天线快。",
-    "베이징·시안·계림·상하이 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩4,180,000부터입니다. 국제선은 별도입니다. 만리장성, 병마용, 이강에 각각 하루를 쓰지만 각 도시에서 오래 머물지는 않습니다.",
+    "The 10-day Beijing–Xi’an–Guilin–Shanghai private trip is priced from USD 2,510 each for two in twin rooms, excluding international flights. The route still gives the Great Wall, Terracotta Warriors and Li River their own days, but it moves on quickly after each stop.",
+    "10 天从北京、西安走到桂林、上海，2 人同行住一间，每人 ¥16,310 起，国际机票另计。长城、兵马俑和漓江都各留一天，但每站看完就继续走，节奏会比 14 天线快。",
+    "베이징·시안·계림·상하이 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩3,510,000부터입니다. 국제선은 별도입니다. 만리장성, 병마용, 이강에 각각 하루를 쓰지만 각 도시에서 오래 머물지는 않습니다.",
   ),
   summary: l(
     "Nine hotel nights include breakfast. The price covers local private guides and vehicles on touring days, transfers, named tickets, the Li River cruise, one second-class train and two economy flights. If you want a rest day, the 14-day route gives you more room.",
@@ -2270,17 +2270,17 @@ const classicTen: PrivateTourProduct = {
     faq(
       l("How much does a 10-day private China tour cost?", "中国 10 天私家团多少钱？", "중국 10일 프라이빗 투어는 얼마인가요?"),
       l(
-        "The 10-day Beijing–Xi’an–Guilin–Shanghai private tour is USD 2,990 each for two sharing a twin room, or USD 5,980 for the pair. Four travellers pay USD 2,540 each; six pay USD 2,390. Nine hotel nights with breakfast, guides and vehicles in each city on touring days, entrance tickets, the Li River boat, one high-speed train and two domestic flights are included. International flights and lunches and dinners are extra. We price other party sizes in writing.",
-        "北京、西安、桂林到上海的 10 天私家团，2 人住一间每人 ¥19,430，两人共 ¥38,860；4 人每人 ¥16,510，6 人每人 ¥15,530。9 晚早餐酒店、各地游览日的私人导游和车、门票、漓江游船、一段高铁与两段国内航班都含。国际机票和午晚餐不含，其他人数书面报价。",
-        "베이징·시안·계림·상하이 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩4,180,000, 두 명 합계 ₩8,360,000입니다. 4명은 1인 ₩3,550,000, 6명은 ₩3,340,000입니다. 조식 포함 호텔 9박, 도시별 관광일의 전용 가이드와 차량, 입장권, 이강 배, 고속철도 1구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "The 10-day Beijing–Xi’an–Guilin–Shanghai private tour is USD 2,510 each for two sharing a twin room, or USD 5,020 for the pair. Four travellers pay USD 1,820 each; six pay USD 1,670. Nine hotel nights with breakfast, guides and vehicles in each city on touring days, entrance tickets, the Li River boat, one high-speed train and two domestic flights are included. International flights and lunches and dinners are extra. We price other party sizes in writing.",
+        "北京、西安、桂林到上海的 10 天私家团，2 人住一间每人 ¥16,310，两人共 ¥32,620；4 人每人 ¥11,830，6 人每人 ¥10,850。9 晚早餐酒店、各地游览日的私人导游和车、门票、漓江游船、一段高铁与两段国内航班都含。国际机票和午晚餐不含，其他人数书面报价。",
+        "베이징·시안·계림·상하이 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩3,510,000, 두 명 합계 ₩7,020,000입니다. 4명은 1인 ₩2,550,000, 6명은 ₩2,340,000입니다. 조식 포함 호텔 9박, 도시별 관광일의 전용 가이드와 차량, 입장권, 이강 배, 고속철도 1구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("Is ten days enough for China?", "十天够玩中国吗？", "중국은 10일이면 충분한가요?"),
       l(
-        "Ten days let the Beijing–Xi’an–Guilin–Shanghai private route cover four stops, with travel time between each. It is enough for the Great Wall, Terracotta Warriors and Li River, but it moves quickly. To avoid domestic flights, the 11-day Hangzhou–Suzhou train route starts at USD 2,690 each for two. With two weeks, routes adding Chengdu, Zhangjiajie, Yunnan or Huangshan start at USD 3,790.",
-        "北京、西安、桂林到上海的 10 天私家团能走完四站，长城、兵马俑和漓江都留了时间，但每站之间要转场，节奏快。不想坐国内航班，经杭州、苏州的 11 天高铁线 2 人同行每人 ¥17,480 起。有两周的话，加成都、张家界、云南或黄山的线路每人 ¥24,630 起。",
-        "베이징·시안·계림·상하이 10일 프라이빗 일정은 네 지역과 그 사이 이동을 담습니다. 만리장성, 병마용, 이강을 볼 수 있지만 이동은 빠릅니다. 국내선을 피하려면 항저우·쑤저우를 지나는 11일 열차 일정이 2명 기준 1인 ₩3,760,000부터입니다. 2주가 있으면 청두, 장가계, 윈난 또는 황산을 더한 일정이 ₩5,300,000부터입니다.",
+        "Ten days let the Beijing–Xi’an–Guilin–Shanghai private route cover four stops, with travel time between each. It is enough for the Great Wall, Terracotta Warriors and Li River, but it moves quickly. To avoid domestic flights, the 11-day Hangzhou–Suzhou train route starts at USD 2,670 each for two. With two weeks, routes adding Chengdu, Zhangjiajie, Yunnan or Huangshan start at USD 3,580.",
+        "北京、西安、桂林到上海的 10 天私家团能走完四站，长城、兵马俑和漓江都留了时间，但每站之间要转场，节奏快。不想坐国内航班，经杭州、苏州的 11 天高铁线 2 人同行每人 ¥17,350 起。有两周的话，加成都、张家界、云南或黄山的线路每人 ¥23,270 起。",
+        "베이징·시안·계림·상하이 10일 프라이빗 일정은 네 지역과 그 사이 이동을 담습니다. 만리장성, 병마용, 이강을 볼 수 있지만 이동은 빠릅니다. 국내선을 피하려면 항저우·쑤저우를 지나는 11일 열차 일정이 2명 기준 1인 ₩3,740,000부터입니다. 2주가 있으면 청두, 장가계, 윈난 또는 황산을 더한 일정이 ₩5,010,000부터입니다.",
       ),
     ),
     faq(
@@ -2340,7 +2340,7 @@ const classicTen: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 2990), usd(4, 2540), usd(6, 2390)])],
+  packages: [privatePackage([usd(2, 2510), usd(4, 1820), usd(6, 1670)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -2368,9 +2368,9 @@ const beijingJiangnan: PrivateTourProduct = {
     "베이징·항저우·쑤저우·상하이 11일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "11-day private tour with no domestic flights: Beijing, West Lake, Suzhou, a water town, Shanghai. Per person USD 2,690 for 2 travellers, 2,140 for 6.",
-    "11 天私家团，不坐国内航班：北京、西湖、苏州、水乡古镇与上海。每人价格：2 人同行 ¥17,480，6 人同行 ¥13,910。",
-    "국내선 없는 11일 프라이빗 투어: 베이징, 서호, 쑤저우, 수향마을, 상하이. 1인 요금 2명 ₩3,760,000, 6명 ₩3,000,000.",
+    "11-day private tour with no domestic flights: Beijing, West Lake, Suzhou, a water town, Shanghai. Per person USD 2,670 for 2 travellers, 1,540 for 6.",
+    "11 天私家团，不坐国内航班：北京、西湖、苏州、水乡古镇与上海。每人价格：2 人同行 ¥17,350，6 人同行 ¥10,010。",
+    "국내선 없는 11일 프라이빗 투어: 베이징, 서호, 쑤저우, 수향마을, 상하이. 1인 요금 2명 ₩3,740,000, 6명 ₩2,160,000.",
   ),
   eyebrow: l(
     "Beijing, then Jiangnan by train; no domestic flights",
@@ -2378,9 +2378,9 @@ const beijingJiangnan: PrivateTourProduct = {
     "베이징 뒤에는 열차로 강남을 갑니다. 국내선은 없습니다",
   ),
   lede: l(
-    "For a pair in twin rooms, our 11-day Beijing–Hangzhou–Suzhou–Shanghai private route starts at USD 2,690 each; international flights are extra. There are no domestic flights. The longer Beijing-to-Hangzhou train day buys a slower stretch around West Lake, Suzhou’s gardens and a canal town.",
-    "两人一间走北京、杭州、苏州到上海的 11 天私家团，每人 ¥17,480 起，国际机票另付。全程不坐国内航班；北京到杭州的高铁坐得久一些，后面换来西湖、苏州园林和水乡比较慢的节奏。",
-    "2명이 2인 1실로 가는 베이징·항저우·쑤저우·상하이 11일 프라이빗 투어는 1인 ₩3,760,000부터입니다. 국제선은 별도입니다. 국내선은 타지 않습니다. 베이징에서 항저우까지 열차 이동은 길지만 뒤에는 서호, 쑤저우 정원과 수향마을을 천천히 봅니다.",
+    "For a pair in twin rooms, our 11-day Beijing–Hangzhou–Suzhou–Shanghai private route starts at USD 2,670 each; international flights are extra. There are no domestic flights. The longer Beijing-to-Hangzhou train day buys a slower stretch around West Lake, Suzhou’s gardens and a canal town.",
+    "两人一间走北京、杭州、苏州到上海的 11 天私家团，每人 ¥17,350 起，国际机票另付。全程不坐国内航班；北京到杭州的高铁坐得久一些，后面换来西湖、苏州园林和水乡比较慢的节奏。",
+    "2명이 2인 1실로 가는 베이징·항저우·쑤저우·상하이 11일 프라이빗 투어는 1인 ₩3,740,000부터입니다. 국제선은 별도입니다. 국내선은 타지 않습니다. 베이징에서 항저우까지 열차 이동은 길지만 뒤에는 서호, 쑤저우 정원과 수향마을을 천천히 봅니다.",
   ),
   summary: l(
     "Ten hotel nights include breakfast. Local private guides and vehicles on touring days, transfers, named tickets, a West Lake boat and two second-class train journeys are included. This route stays in eastern China after Beijing and skips Xi’an.",
@@ -2470,17 +2470,17 @@ const beijingJiangnan: PrivateTourProduct = {
     faq(
       l("How much does this 11-day tour cost?", "这条 11 天线路多少钱？", "이 11일 일정은 얼마인가요?"),
       l(
-        "The 11-day Beijing–Hangzhou–Suzhou–Shanghai private route costs USD 2,690 each for two in a twin room, USD 5,380 for the pair. Four pay USD 2,290 each and six USD 2,140. Your land price covers 10 hotel nights with breakfast, local private guides and vehicles on touring days, tickets, a West Lake boat and two high-speed trains. There are no domestic flights. International flights and lunches and dinners are extra; ask us for a written quote at another group size.",
-        "北京、杭州、苏州到上海的 11 天私家团，2 人住一间每人 ¥17,480，两人共 ¥34,960；4 人每人 ¥14,880，6 人每人 ¥13,910。10 晚早餐酒店、各地游览日的私人导游和车、门票、西湖游船及两段高铁都含，全程没有国内航班。国际机票和午晚餐另付；其他人数我们书面报价。",
-        "베이징·항저우·쑤저우·상하이 11일 프라이빗 일정은 2명, 2인 1실에 1인 ₩3,760,000, 두 명 합계 ₩7,520,000입니다. 4명은 1인 ₩3,200,000, 6명은 ₩3,000,000입니다. 조식 포함 호텔 10박, 관광일의 도시별 전용 가이드와 차량, 입장권, 서호 유람선과 고속철도 2구간이 포함됩니다. 국내선은 없으며 국제선과 중식·석식은 별도입니다. 다른 인원은 서면 견적을 드립니다.",
+        "The 11-day Beijing–Hangzhou–Suzhou–Shanghai private route costs USD 2,670 each for two in a twin room, USD 5,340 for the pair. Four pay USD 1,760 each and six USD 1,540. Your land price covers 10 hotel nights with breakfast, local private guides and vehicles on touring days, tickets, a West Lake boat and two high-speed trains. There are no domestic flights. International flights and lunches and dinners are extra; ask us for a written quote at another group size.",
+        "北京、杭州、苏州到上海的 11 天私家团，2 人住一间每人 ¥17,350，两人共 ¥34,700；4 人每人 ¥11,440，6 人每人 ¥10,010。10 晚早餐酒店、各地游览日的私人导游和车、门票、西湖游船及两段高铁都含，全程没有国内航班。国际机票和午晚餐另付；其他人数我们书面报价。",
+        "베이징·항저우·쑤저우·상하이 11일 프라이빗 일정은 2명, 2인 1실에 1인 ₩3,740,000, 두 명 합계 ₩7,480,000입니다. 4명은 1인 ₩2,460,000, 6명은 ₩2,160,000입니다. 조식 포함 호텔 10박, 관광일의 도시별 전용 가이드와 차량, 입장권, 서호 유람선과 고속철도 2구간이 포함됩니다. 국내선은 없으며 국제선과 중식·석식은 별도입니다. 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("Why no Xi'an on this route?", "这条线为什么不去西安？", "이 일정에는 왜 시안이 없나요?"),
       l(
-        "The 11-day Beijing–Hangzhou–Suzhou–Shanghai tour stays in the east after Beijing and uses trains instead of domestic flights. That leaves time for West Lake, a Suzhou garden and a canal town. If you want the Terracotta Warriors, the 10-day route includes Xi’an from USD 2,990 per person for two sharing a twin room; the 14-day routes also include Xi’an.",
-        "北京、杭州、苏州到上海的 11 天线，北京之后只走华东，城际坐高铁，不坐国内航班。这样才有时间去西湖、苏州园林和水乡。想看兵马俑，可以选含西安的 10 天线，2 人住一间每人 ¥19,430 起；14 天线路也经过西安。",
-        "베이징·항저우·쑤저우·상하이 11일 일정은 베이징 뒤 중국 동부에 머물며 국내선 대신 열차를 탑니다. 그래서 서호, 쑤저우 정원과 수향마을에 시간을 쓸 수 있습니다. 병마용을 보려면 시안이 들어간 10일 일정이 2명, 2인 1실에 1인 ₩4,180,000부터이며, 14일 일정에도 시안이 있습니다.",
+        "The 11-day Beijing–Hangzhou–Suzhou–Shanghai tour stays in the east after Beijing and uses trains instead of domestic flights. That leaves time for West Lake, a Suzhou garden and a canal town. If you want the Terracotta Warriors, the 10-day route includes Xi’an from USD 2,510 per person for two sharing a twin room; the 14-day routes also include Xi’an.",
+        "北京、杭州、苏州到上海的 11 天线，北京之后只走华东，城际坐高铁，不坐国内航班。这样才有时间去西湖、苏州园林和水乡。想看兵马俑，可以选含西安的 10 天线，2 人住一间每人 ¥16,310 起；14 天线路也经过西安。",
+        "베이징·항저우·쑤저우·상하이 11일 일정은 베이징 뒤 중국 동부에 머물며 국내선 대신 열차를 탑니다. 그래서 서호, 쑤저우 정원과 수향마을에 시간을 쓸 수 있습니다. 병마용을 보려면 시안이 들어간 10일 일정이 2명, 2인 1실에 1인 ₩3,510,000부터이며, 14일 일정에도 시안이 있습니다.",
       ),
     ),
     faq(
@@ -2532,7 +2532,7 @@ const beijingJiangnan: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 2690), usd(4, 2290), usd(6, 2140)])],
+  packages: [privatePackage([usd(2, 2670), usd(4, 1760), usd(6, 1540)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -2561,9 +2561,9 @@ const southLandscapes: PrivateTourProduct = {
     "장가계·봉황·계림 13일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "13-day private tour from Shanghai: Zhangjiajie, Fenghuang, Longji rice terraces, Li River. Per person USD 3,590 for 2 travellers, 2,890 for 6.",
-    "13 天私家团，从上海进出：张家界、凤凰古城、龙脊梯田与漓江。每人价格：2 人同行 ¥23,330，6 人同行 ¥18,780。",
-    "상하이를 오가는 13일 프라이빗 투어: 장가계, 봉황고성, 용척 다랑논, 이강. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
+    "13-day private tour from Shanghai: Zhangjiajie, Fenghuang, Longji rice terraces, Li River. Per person USD 3,300 for 2 travellers, 2,120 for 6.",
+    "13 天私家团，从上海进出：张家界、凤凰古城、龙脊梯田与漓江。每人价格：2 人同行 ¥21,450，6 人同行 ¥13,780。",
+    "상하이를 오가는 13일 프라이빗 투어: 장가계, 봉황고성, 용척 다랑논, 이강. 1인 요금 2명 ₩4,620,000, 6명 ₩2,970,000.",
   ),
   eyebrow: l(
     "From Shanghai to Zhangjiajie, Fenghuang and the Li River",
@@ -2571,9 +2571,9 @@ const southLandscapes: PrivateTourProduct = {
     "상하이에서 출발해 장가계·봉황고성·이강으로",
   ),
   lede: l(
-    "The starting price for the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route is USD 3,590 each for two sharing a twin room; international flights are extra. It trades the northern capitals for more time in the south, including Longji’s rice terraces. The Fenghuang-to-Guilin train alone takes about six hours.",
-    "上海进出，走张家界、凤凰和桂林 13 天，2 人住一间每人 ¥23,330 起，国际机票另计。它把北京、西安换成了南方山水和龙脊梯田；凤凰到桂林的直达高铁就要约 6 小时。",
-    "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 일정의 시작가는 2명, 2인 1실에 1인 ₩5,020,000입니다. 국제선은 별도입니다. 북쪽 수도 대신 용척 다랑논까지 남쪽 풍경에 시간을 씁니다. 봉황고성에서 계림까지 직통 열차만 약 6시간 걸립니다.",
+    "The starting price for the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route is USD 3,300 each for two sharing a twin room; international flights are extra. It trades the northern capitals for more time in the south, including Longji’s rice terraces. The Fenghuang-to-Guilin train alone takes about six hours.",
+    "上海进出，走张家界、凤凰和桂林 13 天，2 人住一间每人 ¥21,450 起，国际机票另计。它把北京、西安换成了南方山水和龙脊梯田；凤凰到桂林的直达高铁就要约 6 小时。",
+    "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 일정의 시작가는 2명, 2인 1실에 1인 ₩4,620,000입니다. 국제선은 별도입니다. 북쪽 수도 대신 용척 다랑논까지 남쪽 풍경에 시간을 씁니다. 봉황고성에서 계림까지 직통 열차만 약 6시간 걸립니다.",
   ),
   summary: l(
     "Twelve hotel nights include breakfast. Local private guides and vehicles on touring days, transfers, named tickets including Tianmen Mountain and the Li River cruise, two second-class trains and two economy flights are included. Zhangjiajie has long walking days, so tell us early if steps are difficult.",
@@ -2687,17 +2687,17 @@ const southLandscapes: PrivateTourProduct = {
     faq(
       l("How much does this 13-day tour cost?", "这条 13 天线路多少钱？", "이 13일 일정은 얼마인가요?"),
       l(
-        "For the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route, two sharing a twin room pay USD 3,590 each, or USD 7,180 together. Four pay USD 3,040 each and six USD 2,890. The price includes 12 breakfast hotel nights, local private guides and vehicles on touring days, named tickets including Tianmen Mountain and Longji, the Li River cruise, two high-speed trains and two domestic flights. International flights and lunches and dinners cost extra; other party sizes are quoted in writing.",
-        "上海进出、走张家界、凤凰和桂林的 13 天私家团，2 人住一间每人 ¥23,330，两人共 ¥46,660；4 人每人 ¥19,760，6 人每人 ¥18,780。价格含 12 晚早餐酒店、各地游览日的私人导游和车、天门山与龙脊等门票、漓江游船、两段高铁及两段国内航班。国际机票、午晚餐另付；其他人数书面报价。",
-        "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 투어는 2명, 2인 1실에 1인 ₩5,020,000, 두 명 합계 ₩10,040,000입니다. 4명은 1인 ₩4,250,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 12박, 관광일의 도시별 전용 가이드와 차량, 천문산과 용척 등 입장권, 이강 유람선, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin private route, two sharing a twin room pay USD 3,300 each, or USD 6,600 together. Four pay USD 2,340 each and six USD 2,120. The price includes 12 breakfast hotel nights, local private guides and vehicles on touring days, named tickets including Tianmen Mountain and Longji, the Li River cruise, two high-speed trains and two domestic flights. International flights and lunches and dinners cost extra; other party sizes are quoted in writing.",
+        "上海进出、走张家界、凤凰和桂林的 13 天私家团，2 人住一间每人 ¥21,450，两人共 ¥42,900；4 人每人 ¥15,210，6 人每人 ¥13,780。价格含 12 晚早餐酒店、各地游览日的私人导游和车、天门山与龙脊等门票、漓江游船、两段高铁及两段国内航班。国际机票、午晚餐另付；其他人数书面报价。",
+        "상하이 왕복 장가계·봉황고성·계림 13일 프라이빗 투어는 2명, 2인 1실에 1인 ₩4,620,000, 두 명 합계 ₩9,240,000입니다. 4명은 1인 ₩3,280,000, 6명은 ₩2,970,000입니다. 조식 포함 호텔 12박, 관광일의 도시별 전용 가이드와 차량, 천문산과 용척 등 입장권, 이강 유람선, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("Is this a good second trip to China?", "适合第二次来中国吗？", "두 번째 중국 여행으로 괜찮나요?"),
       l(
-        "The 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin route is a useful second China trip if you have already seen Beijing and Xi’an. It starts and ends in Shanghai, spending the middle days on mountains, Fenghuang and the Li River. For a first trip with Zhangjiajie and Guilin, the 14-day route adds Beijing and Xi’an from USD 3,890 per person for two sharing a twin room.",
-        "如果北京和西安已经去过，上海进出、走张家界、凤凰和桂林的 13 天线很适合第二次来。中间的时间留给山、凤凰古城和漓江。第一次来又想去张家界、桂林，可选加了北京和西安的 14 天线，2 人住一间每人 ¥25,280 起。",
-        "베이징과 시안에 이미 가 봤다면 상하이 왕복 장가계·봉황고성·계림 13일 일정이 두 번째 중국 여행에 맞습니다. 북쪽 도시를 다시 가지 않고 산, 봉황고성과 이강에 시간을 씁니다. 첫 여행에 장가계와 계림을 함께 보려면 베이징과 시안이 들어간 14일 일정이 2명, 2인 1실에 1인 ₩5,440,000부터입니다.",
+        "The 13-day Shanghai–Zhangjiajie–Fenghuang–Guilin route is a useful second China trip if you have already seen Beijing and Xi’an. It starts and ends in Shanghai, spending the middle days on mountains, Fenghuang and the Li River. For a first trip with Zhangjiajie and Guilin, the 14-day route adds Beijing and Xi’an from USD 3,680 per person for two sharing a twin room.",
+        "如果北京和西安已经去过，上海进出、走张家界、凤凰和桂林的 13 天线很适合第二次来。中间的时间留给山、凤凰古城和漓江。第一次来又想去张家界、桂林，可选加了北京和西安的 14 天线，2 人住一间每人 ¥23,920 起。",
+        "베이징과 시안에 이미 가 봤다면 상하이 왕복 장가계·봉황고성·계림 13일 일정이 두 번째 중국 여행에 맞습니다. 북쪽 도시를 다시 가지 않고 산, 봉황고성과 이강에 시간을 씁니다. 첫 여행에 장가계와 계림을 함께 보려면 베이징과 시안이 들어간 14일 일정이 2명, 2인 1실에 1인 ₩5,150,000부터입니다.",
       ),
     ),
     faq(
@@ -2757,7 +2757,7 @@ const southLandscapes: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3590), usd(4, 3040), usd(6, 2890)])],
+  packages: [privatePackage([usd(2, 3300), usd(4, 2340), usd(6, 2120)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -2944,14 +2944,14 @@ const landscapesSmallGroup = smallGroup({
     "장가계 포함 중국 14일 소규모 그룹 투어",
   ),
   metadataDescription: l(
-    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. USD 2,790 per person twin share; departs 17 Apr and 16 Oct.",
-    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥18,130（两人一间），4 月 17 日、10 月 16 日出发，不成团全额退款。",
-    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,900,000(2인 1실), 4월 17일·10월 16일 출발, 인원 미달 시 전액 환불.",
+    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. USD 2,230 per person twin share; departs 17 Apr and 16 Oct.",
+    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥14,490（两人一间），4 月 17 日、10 月 16 日出发，不成团全额退款。",
+    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,120,000(2인 1실), 4월 17일·10월 16일 출발, 인원 미달 시 전액 환불.",
   ),
   lede: l(
-    "At USD 2,790 each in twin rooms, the 2027 Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai 14-day small group excludes international flights. It leaves on 17 April or 16 October with 8–12 guests. The direct Zhangjiajie–Guilin train takes about seven hours, so one day is mostly travel.",
-    "2027 年北京、西安、张家界、桂林到上海的 14 天小团，按两人一间每人 ¥18,130，国际机票另付。4 月 17 日或 10 月 16 日出发，每团 8–12 人；张家界到桂林的直达高铁约 7 小时，那天主要在赶路。",
-    "2027년 베이징·시안·장가계·계림·상하이 14일 소규모 그룹은 2인 1실에 1인 ₩3,900,000입니다. 국제선은 별도입니다. 4월 17일 또는 10월 16일에 8~12명이 출발합니다. 장가계에서 계림까지 직통 열차가 약 7시간이라 하루 대부분을 이동에 씁니다.",
+    "At USD 2,230 each in twin rooms, the 2027 Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai 14-day small group excludes international flights. It leaves on 17 April or 16 October with 8–12 guests. The direct Zhangjiajie–Guilin train takes about seven hours, so one day is mostly travel.",
+    "2027 年北京、西安、张家界、桂林到上海的 14 天小团，按两人一间每人 ¥14,490，国际机票另付。4 月 17 日或 10 月 16 日出发，每团 8–12 人；张家界到桂林的直达高铁约 7 小时，那天主要在赶路。",
+    "2027년 베이징·시안·장가계·계림·상하이 14일 소규모 그룹은 2인 1실에 1인 ₩3,120,000입니다. 국제선은 별도입니다. 4월 17일 또는 10월 16일에 8~12명이 출발합니다. 장가계에서 계림까지 직통 열차가 약 7시간이라 하루 대부분을 이동에 씁니다.",
   ),
   routeHighlight: l("Zhangjiajie, Tianmen Mountain and the Li River", "张家界、天门山与漓江", "장가계, 천문산과 이강"),
   itinerary: [
@@ -2982,8 +2982,8 @@ const landscapesSmallGroup = smallGroup({
   ),
   departures: l("17–30 April and 16–29 October", "4 月 17–30 日、10 月 16–29 日", "4월 17~30일, 10월 16~29일"),
   departureHighlight: l("Departs 17 April and 16 October 2027", "2027 年 4 月 17 日、10 月 16 日出发", "2027년 4월 17일, 10월 16일 출발"),
-  priceUsd: 2790,
-  privateUsd: [3890, 3090],
+  priceUsd: 2230,
+  privateUsd: [3680, 2430],
   supplementUsd: 690,
   fixedPlan: l("the Day 13 Shanghai plan is set", "第 13 天的上海安排是固定的", "13일 차 상하이 일정이 고정됩니다"),
   bookingCaveat: l(
@@ -3052,14 +3052,14 @@ const yangtzeSmallGroup = smallGroup({
     "장강 크루즈 17일 소규모 그룹 투어",
   ),
   metadataDescription: l(
-    "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 3,490 per person twin share; departs 19 May, 1 Sep.",
-    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥22,680（两人一间），5 月 19 日、9 月 1 日出发，不成团全额退款。",
-    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩4,880,000(2인 1실), 5월 19일·9월 1일 출발, 인원 미달 시 전액 환불.",
+    "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 2,800 per person twin share; departs 19 May, 1 Sep.",
+    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥18,200（两人一间），5 月 19 日、9 月 1 日出发，不成团全额退款。",
+    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩3,920,000(2인 1실), 5월 19일·9월 1일 출발, 인원 미달 시 전액 환불.",
   ),
   lede: l(
-    "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 3,490 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
-    "2027 年北京、西安、成都、长江到上海的 17 天小团，酒店两人一间并住标准阳台舱，每人 ¥22,680，国际机票另计。5 月 19 日或 9 月 1 日出发，每团 8–12 人；船上和其他客人共乘，活动按船方安排。",
-    "2027년 베이징·시안·청두·장강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩4,880,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
+    "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 2,800 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
+    "2027 年北京、西安、成都、长江到上海的 17 天小团，酒店两人一间并住标准阳台舱，每人 ¥18,200，国际机票另计。5 月 19 日或 9 月 1 日出发，每团 8–12 人；船上和其他客人共乘，活动按船方安排。",
+    "2027년 베이징·시안·청두·장강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩3,920,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
   ),
   routeHighlight: l("A three-night Three Gorges cruise", "三晚长江三峡游轮", "3박 삼협 크루즈"),
   itinerary: [
@@ -3093,8 +3093,8 @@ const yangtzeSmallGroup = smallGroup({
   ),
   departures: l("19 May–4 June and 1–17 September", "5 月 19 日–6 月 4 日、9 月 1–17 日", "5월 19일~6월 4일, 9월 1~17일"),
   departureHighlight: l("Departs 19 May and 1 September 2027", "2027 年 5 月 19 日、9 月 1 日出发", "2027년 5월 19일, 9월 1일 출발"),
-  priceUsd: 3490,
-  privateUsd: [4690, 3790],
+  priceUsd: 2800,
+  privateUsd: [4580, 3040],
   supplementUsd: 1090,
   cruise: true,
   fixedPlan: l("the Day 8 afternoon at Sanxingdui Museum is set", "第 8 天下午固定去三星堆博物馆", "8일 차 오후 싼싱두이 박물관 일정이 고정됩니다"),
@@ -3164,14 +3164,14 @@ const silkRoadSmallGroup = smallGroup({
     "실크로드 15일 소규모 그룹 투어",
   ),
   metadataDescription: l(
-    "2027 Silk Road small-group tour, 15 days, 8–12 guests: Beijing, Xi'an, Dunhuang, Turpan, Urumqi. USD 3,390 per person twin share; departs 12 Jun, 11 Sep.",
-    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥22,030（两人一间），6 月 12 日、9 月 11 日出发，不成团全额退款。",
-    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩4,740,000(2인 1실), 6월 12일·9월 11일 출발, 인원 미달 시 전액 환불.",
+    "2027 Silk Road small-group tour, 15 days, 8–12 guests: Beijing, Xi'an, Dunhuang, Turpan, Urumqi. USD 2,470 per person twin share; departs 12 Jun, 11 Sep.",
+    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥16,050（两人一间），6 月 12 日、9 月 11 日出发，不成团全额退款。",
+    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩3,460,000(2인 1실), 6월 12일·9월 11일 출발, 인원 미달 시 전액 환불.",
   ),
   lede: l(
-    "A 2027 Beijing–Xi’an–Silk Road 15-day small-group place is USD 3,390 per person in a twin room; international flights are extra. It leaves on 12 June or 11 September with 8–12 guests. The westbound trains and desert drives are long; Mogao Caves admission also depends on the date-limited ticket release.",
-    "北京、西安到丝绸之路的 2027 年 15 天小团，按两人一间每人 ¥22,030，国际机票另付。6 月 12 日或 9 月 11 日出发，每团 8–12 人；一路向西火车、戈壁公路都坐得久，莫高窟还要看限量放票情况。",
-    "베이징·시안·실크로드 2027년 15일 소규모 그룹은 2인 1실에 1인 ₩4,740,000입니다. 국제선은 별도입니다. 6월 12일 또는 9월 11일에 8~12명이 출발합니다. 서쪽으로 가는 열차와 사막 도로 이동이 길고 막고굴 입장은 날짜별 한정 입장권에 따릅니다.",
+    "A 2027 Beijing–Xi’an–Silk Road 15-day small-group place is USD 2,470 per person in a twin room; international flights are extra. It leaves on 12 June or 11 September with 8–12 guests. The westbound trains and desert drives are long; Mogao Caves admission also depends on the date-limited ticket release.",
+    "北京、西安到丝绸之路的 2027 年 15 天小团，按两人一间每人 ¥16,050，国际机票另付。6 月 12 日或 9 月 11 日出发，每团 8–12 人；一路向西火车、戈壁公路都坐得久，莫高窟还要看限量放票情况。",
+    "베이징·시안·실크로드 2027년 15일 소규모 그룹은 2인 1실에 1인 ₩3,460,000입니다. 국제선은 별도입니다. 6월 12일 또는 9월 11일에 8~12명이 출발합니다. 서쪽으로 가는 열차와 사막 도로 이동이 길고 막고굴 입장은 날짜별 한정 입장권에 따릅니다.",
   ),
   routeHighlight: l("The Mogao Caves and the Turpan oasis", "莫高窟与吐鲁番绿洲", "막고굴과 투루판 오아시스"),
   itinerary: [
@@ -3219,8 +3219,8 @@ const silkRoadSmallGroup = smallGroup({
   ),
   departures: l("12–26 June and 11–25 September", "6 月 12–26 日、9 月 11–25 日", "6월 12~26일, 9월 11~25일"),
   departureHighlight: l("Departs 12 June and 11 September 2027", "2027 年 6 月 12 日、9 月 11 日出发", "2027년 6월 12일, 9월 11일 출발"),
-  priceUsd: 3390,
-  privateUsd: [4590, 3690],
+  priceUsd: 2470,
+  privateUsd: [4370, 2730],
   supplementUsd: 690,
   fixedPlan: l("the group flies back to Beijing on Day 14", "第 14 天全团统一飞回北京", "14일 차에 그룹이 함께 베이징으로 돌아갑니다"),
   bookingCaveat: l(
@@ -3295,9 +3295,9 @@ const goldenTriangleEight: PrivateTourProduct = {
     "베이징·시안·상하이 8일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "8-day private tour: Great Wall, Terracotta Warriors, Shanghai. Per person USD 2,390 for 2 travellers, 1,890 for 6; Xi'an–Shanghai flight included.",
-    "8 天私家团：长城、兵马俑与上海。每人价格：2 人同行 ¥15,530，6 人同行 ¥12,280；含高铁和西安飞上海航班。",
-    "8일 프라이빗 투어: 만리장성, 병마용, 상하이. 1인 요금 2명 ₩3,340,000, 6명 ₩2,650,000. 고속철도·시안–상하이 항공 포함.",
+    "8-day private tour: Great Wall, Terracotta Warriors, Shanghai. Per person USD 1,840 for 2 travellers, 1,190 for 6; Xi'an–Shanghai flight included.",
+    "8 天私家团：长城、兵马俑与上海。每人价格：2 人同行 ¥11,960，6 人同行 ¥7,730；含高铁和西安飞上海航班。",
+    "8일 프라이빗 투어: 만리장성, 병마용, 상하이. 1인 요금 2명 ₩2,580,000, 6명 ₩1,670,000. 고속철도·시안–상하이 항공 포함.",
   ),
   eyebrow: l(
     "Beijing, Xi’an and Shanghai in eight days",
@@ -3305,9 +3305,9 @@ const goldenTriangleEight: PrivateTourProduct = {
     "8일 동안 베이징·시안·상하이",
   ),
   lede: l(
-    "This 8-day Beijing–Xi’an–Shanghai private tour starts at USD 2,390 per person for two sharing a twin room; international flights are extra. It is the shortest way we run the three cities: three nights in Beijing, two in Xi’an and two in Shanghai, with a flight at the end instead of a six-hour train.",
-    "北京、西安、上海 8 天私家团，2 人同行、两人一间，每人 ¥15,530 起，不含国际机票。这是我们走这三座城市最短的排法：北京 3 晚、西安 2 晚、上海 2 晚，西安到上海坐飞机，不坐 6 小时左右的高铁。",
-    "베이징·시안·상하이 8일 프라이빗 투어는 2명, 2인 1실 기준 1인 ₩3,340,000부터이며 국제선은 별도입니다. 세 도시를 가장 짧게 도는 일정으로 베이징 3박, 시안 2박, 상하이 2박이며 시안에서 상하이까지는 6시간 안팎의 열차 대신 항공편으로 갑니다.",
+    "This 8-day Beijing–Xi’an–Shanghai private tour starts at USD 1,840 per person for two sharing a twin room; international flights are extra. It is the shortest way we run the three cities: three nights in Beijing, two in Xi’an and two in Shanghai, with a flight at the end instead of a six-hour train.",
+    "北京、西安、上海 8 天私家团，2 人同行、两人一间，每人 ¥11,960 起，不含国际机票。这是我们走这三座城市最短的排法：北京 3 晚、西安 2 晚、上海 2 晚，西安到上海坐飞机，不坐 6 小时左右的高铁。",
+    "베이징·시안·상하이 8일 프라이빗 투어는 2명, 2인 1실 기준 1인 ₩2,580,000부터이며 국제선은 별도입니다. 세 도시를 가장 짧게 도는 일정으로 베이징 3박, 시안 2박, 상하이 2박이며 시안에서 상하이까지는 6시간 안팎의 열차 대신 항공편으로 갑니다.",
   ),
   summary: l(
     "Seven hotel nights include breakfast. The price covers local private guides and vehicles on touring days, transfers, named tickets, the Beijing–Xi’an high-speed train and the Xi’an–Shanghai economy flight. The Temple of Heaven, the Summer Palace and a rest day do not fit; the 12-day version has room for them.",
@@ -3364,17 +3364,17 @@ const goldenTriangleEight: PrivateTourProduct = {
     faq(
       l("How much is an 8-day Beijing, Xi’an and Shanghai private tour?", "北京西安上海 8 天私家团多少钱？", "베이징·시안·상하이 8일 프라이빗 투어는 얼마인가요?"),
       l(
-        "The 8-day Beijing–Xi’an–Shanghai private tour is USD 2,390 each for two sharing a twin room, USD 4,780 for the pair. Four travellers pay USD 2,030 each and six pay USD 1,890. Seven breakfast hotel nights, guides and vehicles in each city on touring days, entrance tickets, the Beijing–Xi’an train and the Xi’an–Shanghai flight are included. International flights, lunches and dinners are not. Other party sizes get a written quote.",
-        "北京、西安、上海 8 天私家团，2 人住一间每人 ¥15,530，两人共 ¥31,060；4 人每人 ¥13,190，6 人每人 ¥12,280。7 晚早餐酒店、各地游览日的私人导游和车、门票、北京到西安的高铁和西安飞上海的航班都含。国际机票和午晚餐不含，其他人数书面报价。",
-        "베이징·시안·상하이 8일 프라이빗 투어는 2명, 2인 1실에 1인 ₩3,340,000, 두 명 합계 ₩6,680,000입니다. 4명은 1인 ₩2,840,000, 6명은 ₩2,650,000입니다. 조식 포함 호텔 7박, 도시별 관광일의 전용 가이드와 차량, 입장권, 베이징–시안 고속철도와 시안–상하이 항공편이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "The 8-day Beijing–Xi’an–Shanghai private tour is USD 1,840 each for two sharing a twin room, USD 3,680 for the pair. Four travellers pay USD 1,310 each and six pay USD 1,190. Seven breakfast hotel nights, guides and vehicles in each city on touring days, entrance tickets, the Beijing–Xi’an train and the Xi’an–Shanghai flight are included. International flights, lunches and dinners are not. Other party sizes get a written quote.",
+        "北京、西安、上海 8 天私家团，2 人住一间每人 ¥11,960，两人共 ¥23,920；4 人每人 ¥8,510，6 人每人 ¥7,730。7 晚早餐酒店、各地游览日的私人导游和车、门票、北京到西安的高铁和西安飞上海的航班都含。国际机票和午晚餐不含，其他人数书面报价。",
+        "베이징·시안·상하이 8일 프라이빗 투어는 2명, 2인 1실에 1인 ₩2,580,000, 두 명 합계 ₩5,160,000입니다. 4명은 1인 ₩1,830,000, 6명은 ₩1,670,000입니다. 조식 포함 호텔 7박, 도시별 관광일의 전용 가이드와 차량, 입장권, 베이징–시안 고속철도와 시안–상하이 항공편이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("Is eight days enough for Beijing, Xi’an and Shanghai?", "8 天够玩北京、西安、上海吗？", "베이징·시안·상하이는 8일이면 충분한가요?"),
       l(
-        "Eight days cover the core of the Beijing–Xi’an–Shanghai route: the Forbidden City, the Great Wall at Mutianyu, the Terracotta Warriors and one full Shanghai day. What gets cut is the Temple of Heaven, the Summer Palace and any spare day. The 12-day Beijing–Xi’an–Shanghai private tour adds those from USD 2,880 each for two, and the 10-day route with the Li River starts at USD 2,990.",
-        "8 天能看完北京、西安、上海这条线的重点：故宫、慕田峪长城、兵马俑，再加上海完整一天。砍掉的是天坛、颐和园和空闲日。想要这些，北京西安上海 12 天私家团 2 人同行每人 ¥18,720 起；加漓江的 10 天线每人 ¥19,430 起。",
-        "8일이면 베이징·시안·상하이 일정의 핵심인 자금성, 무톈위 만리장성, 병마용과 상하이 하루를 볼 수 있습니다. 빠지는 것은 천단, 이화원, 여유 있는 하루입니다. 이것까지 원하면 베이징·시안·상하이 12일 프라이빗 투어가 2명 기준 1인 ₩4,030,000부터, 이강을 넣은 10일 일정이 ₩4,180,000부터입니다.",
+        "Eight days cover the core of the Beijing–Xi’an–Shanghai route: the Forbidden City, the Great Wall at Mutianyu, the Terracotta Warriors and one full Shanghai day. What gets cut is the Temple of Heaven, the Summer Palace and any spare day. The 12-day Beijing–Xi’an–Shanghai private tour adds those from USD 2,890 each for two, and the 10-day route with the Li River starts at USD 2,510.",
+        "8 天能看完北京、西安、上海这条线的重点：故宫、慕田峪长城、兵马俑，再加上海完整一天。砍掉的是天坛、颐和园和空闲日。想要这些，北京西安上海 12 天私家团 2 人同行每人 ¥18,780 起；加漓江的 10 天线每人 ¥16,310 起。",
+        "8일이면 베이징·시안·상하이 일정의 핵심인 자금성, 무톈위 만리장성, 병마용과 상하이 하루를 볼 수 있습니다. 빠지는 것은 천단, 이화원, 여유 있는 하루입니다. 이것까지 원하면 베이징·시안·상하이 12일 프라이빗 투어가 2명 기준 1인 ₩4,040,000부터, 이강을 넣은 10일 일정이 ₩3,510,000부터입니다.",
       ),
     ),
     faq(
@@ -3434,7 +3434,7 @@ const goldenTriangleEight: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 2390), usd(4, 2030), usd(6, 1890)])],
+  packages: [privatePackage([usd(2, 1840), usd(4, 1310), usd(6, 1190)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -3463,9 +3463,9 @@ const hongKongExitTen: PrivateTourProduct = {
     "베이징 입국 홍콩 출국 10일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "10-day private tour, Beijing in, Hong Kong out: Great Wall, Terracotta Warriors, Li River. Per person USD 3,090 for 2, 2,470 for 6. Train to Hong Kong included.",
-    "10 天私家团，北京进、香港出：长城、兵马俑、漓江。每人价格：2 人同行 ¥20,080，6 人同行 ¥16,050；含桂林到香港高铁。",
-    "베이징 입국, 홍콩 출국 10일 프라이빗 투어: 만리장성, 병마용, 이강. 1인 요금 2명 ₩4,320,000, 6명 ₩3,460,000. 계림–홍콩 고속철도 포함.",
+    "10-day private tour, Beijing in, Hong Kong out: Great Wall, Terracotta Warriors, Li River. Per person USD 2,610 for 2, 1,720 for 6. Train to Hong Kong included.",
+    "10 天私家团，北京进、香港出：长城、兵马俑、漓江。每人价格：2 人同行 ¥16,960，6 人同行 ¥11,180；含桂林到香港高铁。",
+    "베이징 입국, 홍콩 출국 10일 프라이빗 투어: 만리장성, 병마용, 이강. 1인 요금 2명 ₩3,650,000, 6명 ₩2,410,000. 계림–홍콩 고속철도 포함.",
   ),
   eyebrow: l(
     "Fly into Beijing, leave from Hong Kong",
@@ -3473,9 +3473,9 @@ const hongKongExitTen: PrivateTourProduct = {
     "베이징으로 들어와 홍콩에서 출국",
   ),
   lede: l(
-    "This 10-day private tour flies into Beijing and leaves from Hong Kong, from USD 3,090 per person for two sharing a twin room; international flights are extra. The mainland part ends on Day 9 with a train to Hong Kong, so travellers from the US and other eligible countries may be able to use China’s 240-hour visa-free transit instead of a tourist visa.",
-    "北京进、香港出的 10 天私家团，2 人同行、两人一间，每人 ¥20,080 起，不含国际机票。内地行程在第 9 天坐高铁去香港结束，所以美国等适用国家的旅客，有机会用 240 小时过境免签，不用办旅游签证。",
-    "베이징으로 들어와 홍콩에서 출국하는 10일 프라이빗 투어로, 2명, 2인 1실 기준 1인 ₩4,320,000부터이며 국제선은 별도입니다. 중국 본토 일정이 9일 차에 홍콩행 열차로 끝나므로 미국 등 대상 국가 여행자는 관광 비자 대신 240시간 경유 무비자를 쓸 수도 있습니다.",
+    "This 10-day private tour flies into Beijing and leaves from Hong Kong, from USD 2,610 per person for two sharing a twin room; international flights are extra. The mainland part ends on Day 9 with a train to Hong Kong, so travellers from the US and other eligible countries may be able to use China’s 240-hour visa-free transit instead of a tourist visa.",
+    "北京进、香港出的 10 天私家团，2 人同行、两人一间，每人 ¥16,960 起，不含国际机票。内地行程在第 9 天坐高铁去香港结束，所以美国等适用国家的旅客，有机会用 240 小时过境免签，不用办旅游签证。",
+    "베이징으로 들어와 홍콩에서 출국하는 10일 프라이빗 투어로, 2명, 2인 1실 기준 1인 ₩3,650,000부터이며 국제선은 별도입니다. 중국 본토 일정이 9일 차에 홍콩행 열차로 끝나므로 미국 등 대상 국가 여행자는 관광 비자 대신 240시간 경유 무비자를 쓸 수도 있습니다.",
   ),
   summary: l(
     "Nine hotel nights include breakfast, the last one in Hong Kong. The price covers local private guides and vehicles on mainland touring days, transfers, named tickets, the Li River cruise, the Beijing–Xi’an train, the Xi’an–Guilin flight and the Guilin–Hong Kong train. There is no guided sightseeing in Hong Kong; extra nights there can be added.",
@@ -3538,9 +3538,9 @@ const hongKongExitTen: PrivateTourProduct = {
     faq(
       l("How much is the 10-day Beijing to Hong Kong private tour?", "北京进香港出 10 天私家团多少钱？", "베이징–홍콩 10일 프라이빗 투어는 얼마인가요?"),
       l(
-        "The 10-day Beijing–Xi’an–Guilin–Hong Kong private tour is USD 3,090 each for two sharing a twin room, USD 6,180 for the pair. Four travellers pay USD 2,630 each and six pay USD 2,470. Nine breakfast hotel nights, mainland guides and vehicles on touring days, tickets, the Li River boat, two high-speed trains, one domestic flight and the Hong Kong transfers are included. International flights, lunches and dinners are not.",
-        "北京、西安、桂林到香港的 10 天私家团，2 人住一间每人 ¥20,080，两人共 ¥40,160；4 人每人 ¥17,090，6 人每人 ¥16,050。9 晚早餐酒店、内地游览日的私人导游和车、门票、漓江游船、两段高铁、一段国内航班和香港接送都含。国际机票和午晚餐不含。",
-        "베이징·시안·계림·홍콩 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩4,320,000, 두 명 합계 ₩8,640,000입니다. 4명은 1인 ₩3,680,000, 6명은 ₩3,460,000입니다. 조식 포함 호텔 9박, 본토 관광일의 전용 가이드와 차량, 입장권, 이강 배, 고속철도 2구간, 국내선 1구간과 홍콩 이동이 포함됩니다. 국제선과 중식·석식은 별도입니다.",
+        "The 10-day Beijing–Xi’an–Guilin–Hong Kong private tour is USD 2,610 each for two sharing a twin room, USD 5,220 for the pair. Four travellers pay USD 1,880 each and six pay USD 1,720. Nine breakfast hotel nights, mainland guides and vehicles on touring days, tickets, the Li River boat, two high-speed trains, one domestic flight and the Hong Kong transfers are included. International flights, lunches and dinners are not.",
+        "北京、西安、桂林到香港的 10 天私家团，2 人住一间每人 ¥16,960，两人共 ¥33,920；4 人每人 ¥12,220，6 人每人 ¥11,180。9 晚早餐酒店、内地游览日的私人导游和车、门票、漓江游船、两段高铁、一段国内航班和香港接送都含。国际机票和午晚餐不含。",
+        "베이징·시안·계림·홍콩 10일 프라이빗 투어는 2명, 2인 1실에 1인 ₩3,650,000, 두 명 합계 ₩7,300,000입니다. 4명은 1인 ₩2,630,000, 6명은 ₩2,410,000입니다. 조식 포함 호텔 9박, 본토 관광일의 전용 가이드와 차량, 입장권, 이강 배, 고속철도 2구간, 국내선 1구간과 홍콩 이동이 포함됩니다. 국제선과 중식·석식은 별도입니다.",
       ),
     ),
     faq(
@@ -3562,9 +3562,9 @@ const hongKongExitTen: PrivateTourProduct = {
     faq(
       l("How is this different from the 10-day tour ending in Shanghai?", "和上海结束的 10 天线有什么不同？", "상하이에서 끝나는 10일 일정과 무엇이 다른가요?"),
       l(
-        "Both 10-day routes start in Beijing and include Xi’an and the Li River. The Beijing–Xi’an–Guilin–Shanghai tour, from USD 2,990 each for two, ends with a Shanghai or Suzhou day and flies home from Shanghai. This one, from USD 3,090, adds a second Yangshuo night and ends in Hong Kong, which is the version that can fit 240-hour visa-free transit. Flying in from and back to the same country does not qualify.",
-        "两条 10 天线都从北京开始，都有西安和漓江。北京、西安、桂林到上海那条，2 人同行每人 ¥19,430 起，最后一天在上海或苏州，从上海回国。这条每人 ¥20,080 起，阳朔多住一晚，最后到香港，能配合 240 小时过境免签。从同一个国家飞来又飞回，不符合过境免签条件。",
-        "두 10일 일정 모두 베이징에서 시작해 시안과 이강을 봅니다. 베이징·시안·계림·상하이 일정은 2명 기준 1인 ₩4,180,000부터이며 상하이나 쑤저우에서 하루를 보내고 상하이에서 귀국합니다. 이 일정은 ₩4,320,000부터이며 양삭에서 하루 더 묵고 홍콩에서 끝나므로 240시간 경유 무비자에 맞출 수 있습니다. 같은 나라에서 와서 같은 나라로 돌아가는 일정은 경유 무비자 조건에 맞지 않습니다.",
+        "Both 10-day routes start in Beijing and include Xi’an and the Li River. The Beijing–Xi’an–Guilin–Shanghai tour, from USD 2,510 each for two, ends with a Shanghai or Suzhou day and flies home from Shanghai. This one, from USD 2,610, adds a second Yangshuo night and ends in Hong Kong, which is the version that can fit 240-hour visa-free transit. Flying in from and back to the same country does not qualify.",
+        "两条 10 天线都从北京开始，都有西安和漓江。北京、西安、桂林到上海那条，2 人同行每人 ¥16,310 起，最后一天在上海或苏州，从上海回国。这条每人 ¥16,960 起，阳朔多住一晚，最后到香港，能配合 240 小时过境免签。从同一个国家飞来又飞回，不符合过境免签条件。",
+        "두 10일 일정 모두 베이징에서 시작해 시안과 이강을 봅니다. 베이징·시안·계림·상하이 일정은 2명 기준 1인 ₩3,510,000부터이며 상하이나 쑤저우에서 하루를 보내고 상하이에서 귀국합니다. 이 일정은 ₩3,650,000부터이며 양삭에서 하루 더 묵고 홍콩에서 끝나므로 240시간 경유 무비자에 맞출 수 있습니다. 같은 나라에서 와서 같은 나라로 돌아가는 일정은 경유 무비자 조건에 맞지 않습니다.",
       ),
     ),
   ],
@@ -3608,7 +3608,7 @@ const hongKongExitTen: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3090), usd(4, 2630), usd(6, 2470)])],
+  packages: [privatePackage([usd(2, 2610), usd(4, 1880), usd(6, 1720)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
@@ -3637,9 +3637,9 @@ const yangtzeTwelve: PrivateTourProduct = {
     "장강 크루즈 포함 중국 12일 프라이빗 투어",
   ),
   metadataDescription: l(
-    "12-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, Three Gorges, Shanghai. Per person USD 3,590 for 2 travellers, 2,890 for 6.",
-    "12 天私家团含三晚长江游轮：北京、西安、三峡与上海。每人价格：2 人同行 ¥23,330，6 人同行 ¥18,780。",
-    "3박 장강 크루즈 포함 12일 프라이빗 투어: 베이징, 시안, 삼협, 상하이. 1인 요금 2명 ₩5,020,000, 6명 ₩4,040,000.",
+    "12-day private tour with a 3-night Yangtze cruise: Beijing, Xi'an, Three Gorges, Shanghai. Per person USD 3,190 for 2 travellers, 2,340 for 6.",
+    "12 天私家团含三晚长江游轮：北京、西安、三峡与上海。每人价格：2 人同行 ¥20,730，6 人同行 ¥15,210。",
+    "3박 장강 크루즈 포함 12일 프라이빗 투어: 베이징, 시안, 삼협, 상하이. 1인 요금 2명 ₩4,460,000, 6명 ₩3,280,000.",
   ),
   eyebrow: l(
     "The Three Gorges in twelve days",
@@ -3647,9 +3647,9 @@ const yangtzeTwelve: PrivateTourProduct = {
     "12일 안에 담은 삼협",
   ),
   lede: l(
-    "This 12-day Beijing–Xi’an–Yangtze–Shanghai private tour starts at USD 3,590 per person for two sharing a twin room and a standard balcony cabin; international flights are extra. It keeps the three-night downstream cruise from Chongqing to Yichang and leaves out Chengdu, which is what the 17-day version adds.",
-    "北京、西安、长江到上海的 12 天私家团，2 人同行、酒店两人一间并住标准阳台舱，每人 ¥23,330 起，不含国际机票。重庆到宜昌三晚下水游轮保留，成都拿掉；成都放在 17 天版本里。",
-    "베이징·시안·장강·상하이 12일 프라이빗 투어는 2명, 호텔 2인 1실과 기본 발코니 객실 기준 1인 ₩5,020,000부터이며 국제선은 별도입니다. 충칭에서 이창까지 내려가는 3박 크루즈는 그대로 두고 청두는 넣지 않았습니다. 청두는 17일 일정에 들어 있습니다.",
+    "This 12-day Beijing–Xi’an–Yangtze–Shanghai private tour starts at USD 3,190 per person for two sharing a twin room and a standard balcony cabin; international flights are extra. It keeps the three-night downstream cruise from Chongqing to Yichang and leaves out Chengdu, which is what the 17-day version adds.",
+    "北京、西安、长江到上海的 12 天私家团，2 人同行、酒店两人一间并住标准阳台舱，每人 ¥20,730 起，不含国际机票。重庆到宜昌三晚下水游轮保留，成都拿掉；成都放在 17 天版本里。",
+    "베이징·시안·장강·상하이 12일 프라이빗 투어는 2명, 호텔 2인 1실과 기본 발코니 객실 기준 1인 ₩4,460,000부터이며 국제선은 별도입니다. 충칭에서 이창까지 내려가는 3박 크루즈는 그대로 두고 청두는 넣지 않았습니다. 청두는 17일 일정에 들어 있습니다.",
   ),
   summary: l(
     "Of the 11 nights, eight are in breakfast-included hotels and three are aboard the ship. The price covers private local guides and vehicles on land touring days, transfers, named tickets, the Beijing–Xi’an train, the Xi’an–Chongqing flight, the cruise with onboard meals and three included shore visits, the train or flight from Yichang to Shanghai, and the Suzhou day trip.",
@@ -3715,17 +3715,17 @@ const yangtzeTwelve: PrivateTourProduct = {
     faq(
       l("How much is a 12-day China tour with a Yangtze cruise?", "带长江游轮的 12 天中国行多少钱？", "장강 크루즈가 있는 12일 중국 여행은 얼마인가요?"),
       l(
-        "The 12-day Beijing–Xi’an–Yangtze–Shanghai private tour is USD 3,590 each for two sharing hotel rooms and a standard balcony cabin, USD 7,180 together. Four pay USD 3,050 each and six pay USD 2,890. Eight breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, land guides and vehicles, tickets, trains and two domestic transfers are included. International flights and land lunches and dinners are extra, and peak sailings can cost more.",
-        "北京、西安、长江到上海的 12 天私家团，2 人住一间并用标准阳台舱，每人 ¥23,330，两人共 ¥46,660。4 人每人 ¥19,820，6 人每人 ¥18,780。8 晚早餐酒店、三晚游轮及船上餐食和已含岸上项目、陆上导游与车、门票、高铁和两段国内转场都含。国际机票和陆上午晚餐另付，旺季船期可能加价。",
-        "베이징·시안·장강·상하이 12일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩5,020,000, 합계 ₩10,040,000입니다. 4명은 1인 ₩4,270,000, 6명은 ₩4,040,000입니다. 조식 포함 호텔 8박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 가이드와 차량, 입장권, 고속철도와 국내 이동 2구간이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다.",
+        "The 12-day Beijing–Xi’an–Yangtze–Shanghai private tour is USD 3,190 each for two sharing hotel rooms and a standard balcony cabin, USD 6,380 together. Four pay USD 2,500 each and six pay USD 2,340. Eight breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, land guides and vehicles, tickets, trains and two domestic transfers are included. International flights and land lunches and dinners are extra, and peak sailings can cost more.",
+        "北京、西安、长江到上海的 12 天私家团，2 人住一间并用标准阳台舱，每人 ¥20,730，两人共 ¥41,460。4 人每人 ¥16,250，6 人每人 ¥15,210。8 晚早餐酒店、三晚游轮及船上餐食和已含岸上项目、陆上导游与车、门票、高铁和两段国内转场都含。国际机票和陆上午晚餐另付，旺季船期可能加价。",
+        "베이징·시안·장강·상하이 12일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩4,460,000, 합계 ₩8,920,000입니다. 4명은 1인 ₩3,500,000, 6명은 ₩3,280,000입니다. 조식 포함 호텔 8박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 가이드와 차량, 입장권, 고속철도와 국내 이동 2구간이 포함됩니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다.",
       ),
     ),
     faq(
       l("Should I choose the 12-day or the 17-day Yangtze tour?", "长江线选 12 天还是 17 天？", "장강 일정은 12일과 17일 중 무엇이 좋을까요?"),
       l(
-        "Both use the same three-night Chongqing–Yichang cruise. The 12-day Beijing–Xi’an–Yangtze–Shanghai tour, from USD 3,590 each for two, flies from Xi’an straight to Chongqing on boarding day. The 17-day version, from USD 4,690, adds Chengdu’s pandas, a Temple of Heaven day, a night in Chongqing and a free Shanghai afternoon. Pick the 12-day route if your time off is short, and the 17-day route if you want the pandas.",
-        "两条线用的都是重庆到宜昌三晚的游轮。北京、西安、长江到上海 12 天线，2 人同行每人 ¥23,330 起，登船当天从西安直接飞重庆。17 天版本每人 ¥30,480 起，多了成都大熊猫、天坛一天、重庆一晚和上海半天空闲。假期短就选 12 天，想看熊猫就选 17 天。",
-        "두 일정 모두 충칭–이창 3박 크루즈를 탑니다. 베이징·시안·장강·상하이 12일 일정은 2명 기준 1인 ₩5,020,000부터이며 승선일에 시안에서 충칭으로 바로 갑니다. 17일 일정은 ₩6,560,000부터이며 청두 판다, 천단 하루, 충칭 1박, 상하이 자유 오후가 더해집니다. 휴가가 짧으면 12일, 판다를 보고 싶으면 17일을 고르세요.",
+        "Both use the same three-night Chongqing–Yichang cruise. The 12-day Beijing–Xi’an–Yangtze–Shanghai tour, from USD 3,190 each for two, flies from Xi’an straight to Chongqing on boarding day. The 17-day version, from USD 4,580, adds Chengdu’s pandas, a Temple of Heaven day, a night in Chongqing and a free Shanghai afternoon. Pick the 12-day route if your time off is short, and the 17-day route if you want the pandas.",
+        "两条线用的都是重庆到宜昌三晚的游轮。北京、西安、长江到上海 12 天线，2 人同行每人 ¥20,730 起，登船当天从西安直接飞重庆。17 天版本每人 ¥29,770 起，多了成都大熊猫、天坛一天、重庆一晚和上海半天空闲。假期短就选 12 天，想看熊猫就选 17 天。",
+        "두 일정 모두 충칭–이창 3박 크루즈를 탑니다. 베이징·시안·장강·상하이 12일 일정은 2명 기준 1인 ₩4,460,000부터이며 승선일에 시안에서 충칭으로 바로 갑니다. 17일 일정은 ₩6,410,000부터이며 청두 판다, 천단 하루, 충칭 1박, 상하이 자유 오후가 더해집니다. 휴가가 짧으면 12일, 판다를 보고 싶으면 17일을 고르세요.",
       ),
     ),
     faq(
@@ -3785,7 +3785,7 @@ const yangtzeTwelve: PrivateTourProduct = {
       }],
     },
   ],
-  packages: [privatePackage([usd(2, 3590), usd(4, 3050), usd(6, 2890)])],
+  packages: [privatePackage([usd(2, 3190), usd(4, 2500), usd(6, 2340)])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
 };
