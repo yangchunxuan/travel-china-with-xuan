@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-11",
+  "scope": "Matching-city discovery links for two priority private tours, plus accurate shared city-card quote labels; draft only",
+  "baseline": "431861dd95400a09f514ad6c815b3d93d681071e",
+  "evidence": {
+    "observation": "Live city-page HTML and active cityPageV2 list omitted these two matching routes. Homepage, full catalog and PR349 guide links already work.",
+    "regions": [
+      "US",
+      "AU",
+      "CA"
+    ],
+    "languageFocus": "English; shared cards retain existing Chinese and Korean localization",
+    "priorResearch": "docs/organic-growth/product-seo-20261011.json",
+    "metricsInterpretation": "Reuse the dated research; no new search-volume, ranking, indexing or traffic-growth claim.",
+    "googleProductIndexing": "Not verified this iteration: Chrome concurrent navigation interrupted inspection.",
+    "semrushFreshKeywordQueries": 0
+  },
+  "priority": "P1",
+  "mapping": [
+    {
+      "city": "shanghai",
+      "product": "jiangnan12",
+      "slug": "suzhou-tongli-hangzhou-shanghai-12-day-private-tour"
+    },
+    {
+      "city": "hangzhou",
+      "product": "jiangnan12",
+      "slug": "suzhou-tongli-hangzhou-shanghai-12-day-private-tour"
+    },
+    {
+      "city": "beijing",
+      "product": "fivecity13",
+      "slug": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"
+    },
+    {
+      "city": "xian",
+      "product": "fivecity13",
+      "slug": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"
+    },
+    {
+      "city": "chengdu",
+      "product": "fivecity13",
+      "slug": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"
+    },
+    {
+      "city": "shanghai",
+      "product": "fivecity13",
+      "slug": "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour"
+    }
+  ],
+  "implementation": [
+    "Append matching routes without replacing the current city cards",
+    "Describe published prices or quote options accurately in three languages",
+    "Use Itinerary & quote on city cards without a public starting price; preserve other TourCard callers"
+  ],
+  "preserved": [
+    "All product prices, packages, route and service facts",
+    "Product titles, metadata and original FAQs",
+    "Inquiry links, selections and event behavior",
+    "Existing nine-keyword Korean monitoring history",
+    "Claude guide, service, AI tracking and backlink scope"
+  ],
+  "validation": {
+    "typecheck": "passed",
+    "affectedTests": {
+      "passed": 22,
+      "failed": 0
+    },
+    "build": "passed including all postbuild export checks",
+    "exportLinks": {
+      "pagesPassed": 15,
+      "pagesChecked": 15,
+      "addedLocalizedLinks": 18,
+      "canonicalHreflangSitemap": "passed",
+      "existingCardOrder": "preserved"
+    },
+    "desktopMobile": {
+      "statesPassed": 42,
+      "statesChecked": 42,
+      "viewports": [
+        "1365x900",
+        "390x844",
+        "360x780"
+      ],
+      "languages": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "horizontalOverflow": 0,
+      "brokenImages": 0,
+      "browserConsoleErrors": 0,
+      "clickThroughs": [
+        "Shanghai city → Jiangnan12",
+        "Beijing city → FiveCity13"
+      ]
+    },
+    "independentReview": "Passed: independent screenshot-only review of 17 desktop/mobile/narrow views; no visual blockers. Does not establish indexing or traffic."
+  },
+  "deployment": "Not authorized in this iteration; keep draft PR",
+  "implementationScope": "New links: five cities in three languages. Shared description and quote-only CTA: all eight current city hubs. Priced cards and non-city TourCard callers keep the original CTA."
+}
