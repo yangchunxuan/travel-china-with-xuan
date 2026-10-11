@@ -70,6 +70,19 @@ const PRIVATE_ORDER = [S.c10, S.j11, S.s13, S.h14, S.l14, S.y14, S.c14, S.silk, 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MON = MONTHS.map((month) => month.slice(0, 3));
 const GROUP_ROUTES = [S.c14g, S.l14g, S.yzg, S.silkg];
+// Lowest and highest are read from the product data, so a repricing cannot leave a
+// range or a "from" price pointing at the wrong route.
+const usdOf = (slug, travelers) => rows(slug).find((x) => x.travelers === travelers).usdPerPerson;
+const byPrice = (slugs, travelers) => [...slugs].sort((a, b) => usdOf(a, travelers) - usdOf(b, travelers));
+const FOUR14 = [S.h14, S.l14, S.y14, S.c14];
+const LOW14 = byPrice(FOUR14, 2)[0];
+const HIGH14 = byPrice(FOUR14, 2)[3];
+const LOW14_SIX = byPrice(FOUR14, 6)[0];
+const SG14 = byPrice([S.c14g, S.l14g], 2);
+const SG_ALL = byPrice(GROUP_ROUTES, 2);
+const GROUP_PAIRS = [[S.c14g, S.c14], [S.l14g, S.l14], [S.silkg, S.silk], [S.yzg, S.yz]].sort((a, b) => usdOf(a[0], 2) - usdOf(b[0], 2));
+// The Huangshan paragraph says it is the lowest-priced 14-day route.
+if (LOW14 !== S.h14 || LOW14_SIX !== S.h14) throw new Error("Huangshan is no longer the lowest-priced 14-day route: rewrite its paragraph");
 const singleSupplementUsd = (slug) => {
   const match = bySlug[slug].hotelNote.en.match(/single supplement[^.]*?USD\s+([\d,]+)/i);
   if (!match) throw new Error(`single supplement missing from ${slug}`);
@@ -131,7 +144,7 @@ function costBody(loc) {
   const P = (slug, n) => price(slug, loc, n);
   const tr = (en, zh, ko) => ({ en, zh, ko })[loc];
   const privateRows = PRIVATE_ORDER.map((slug) => [route[slug][loc], daysLabel(loc, slug), P(slug, 2), P(slug, 4), P(slug, 6)]);
-  const sgRows = [S.l14g, S.c14g, S.silkg, S.yzg].map((slug) => {
+  const sgRows = SG_ALL.map((slug) => {
     const dates = departures.filter((d) => d[0] === slug).map((d) => dateRange(loc, d[1], d[2])).join(loc === "en" ? "; " : loc === "zh" ? "；" : "; ");
     const sup = departures.find((d) => d[0] === slug)[3];
     return [route[slug][loc], daysLabel(loc, slug), sgPrice(loc, slug), supplementMoney(loc, sup), dates];
@@ -141,9 +154,9 @@ function costBody(loc) {
   const hi = fmtPlain(loc, Math.max(...two14));
   return [
     { id: "lead", type: "lead", text: tr(
-      `Allow ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))} per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to ${P(S.h14, 6)} each. If fixed dates suit you, the two 14-day small groups cost ${priceRange(loc, sgPrice(loc, S.l14g), sgPrice(loc, S.c14g))} each and carry 8–12 guests.`,
-      `两个人订 Homeground 的 14 天中国私家团，按两人一间算，每人准备 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}。酒店、各地导游和行程写明的境内交通在里面，国际机票要自己另买。一起走的有 6 人，14 天线最低每人 ${P(S.h14, 6)}。能配合固定日期的话，两条 14 天小团每人 ${priceRange(loc, sgPrice(loc, S.l14g), sgPrice(loc, S.c14g))}，每团 8–12 人。`,
-      `Homeground의 공개된 14일 중국 프라이빗 투어는 두 사람이 한 방을 쓸 때 1인 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}입니다. 호텔과 도시별 가이드, 일정에 적힌 중국 내 교통편은 이 금액에 들어가고 국제선은 따로 예약합니다. 6명이 함께 가면 14일 일정의 가장 낮은 1인 요금은 ${P(S.h14, 6)}입니다. 날짜를 맞출 수 있다면 8~12명이 함께하는 14일 정기 출발 그룹 두 가지가 있으며 1인 ${priceRange(loc, sgPrice(loc, S.l14g), sgPrice(loc, S.c14g))}입니다.`) },
+      `Allow ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))} per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to ${P(LOW14_SIX, 6)} each. If fixed dates suit you, the two 14-day small groups cost ${priceRange(loc, sgPrice(loc, SG14[0]), sgPrice(loc, SG14[1]))} each and carry 8–12 guests.`,
+      `两个人订 Homeground 的 14 天中国私家团，按两人一间算，每人准备 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}。酒店、各地导游和行程写明的境内交通在里面，国际机票要自己另买。一起走的有 6 人，14 天线最低每人 ${P(LOW14_SIX, 6)}。能配合固定日期的话，两条 14 天小团每人 ${priceRange(loc, sgPrice(loc, SG14[0]), sgPrice(loc, SG14[1]))}，每团 8–12 人。`,
+      `Homeground의 공개된 14일 중국 프라이빗 투어는 두 사람이 한 방을 쓸 때 1인 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}입니다. 호텔과 도시별 가이드, 일정에 적힌 중국 내 교통편은 이 금액에 들어가고 국제선은 따로 예약합니다. 6명이 함께 가면 14일 일정의 가장 낮은 1인 요금은 ${P(LOW14_SIX, 6)}입니다. 날짜를 맞출 수 있다면 8~12명이 함께하는 14일 정기 출발 그룹 두 가지가 있으며 1인 ${priceRange(loc, sgPrice(loc, SG14[0]), sgPrice(loc, SG14[1]))}입니다.`) },
     { id: "private-heading", type: "heading", level: 2, text: tr("Private tour prices by route", "私家团各线路价格", "프라이빗 투어 일정별 요금") },
     { id: "private-table", type: "table",
       caption: tr("Starting price per person, twin share; international flights and possible holiday surcharges extra", "每人起价，两人一间；国际机票另计，节假日可能有附加费", "2인 1실 기준 1인 시작가; 국제선과 공휴일 추가금은 별도"),
@@ -185,9 +198,9 @@ function costBody(loc) {
     { id: "faq", type: "faq", title: tr("Questions about China tour prices", "关于中国行价格的常见问题", "중국 여행 요금에 대해 자주 묻는 질문"), items: [
       { question: tr("How much is a two-week China tour for two people?", "两个人去中国玩两周要多少钱？", "두 사람이 중국 2주 여행을 하면 얼마인가요?"),
         answer: tr(
-          `Budget ${priceRange(loc, pair(loc, S.h14), pair(loc, S.c14))} for two people on Homeground's four 14-day private China routes. With a shared twin room, that is ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))} each. Add flights to and from China, lunch and dinner.`,
-          `两个人走 Homeground 四条 14 天中国私家线，总价是 ${priceRange(loc, pair(loc, S.h14), pair(loc, S.c14))}。按两人一间分摊，每人 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}。往返中国的机票和午晚餐还要另算。`,
-          `두 사람이 Homeground의 14일 중국 프라이빗 일정 네 가지 중 하나를 예약하면 합계 ${priceRange(loc, pair(loc, S.h14), pair(loc, S.c14))}입니다. 2인 1실로 나누면 한 사람당 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}입니다. 중국 왕복 항공편과 중식·석식은 여기에 더해야 합니다.`) },
+          `Budget ${priceRange(loc, pair(loc, LOW14), pair(loc, HIGH14))} for two people on Homeground's four 14-day private China routes. With a shared twin room, that is ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))} each. Add flights to and from China, lunch and dinner.`,
+          `两个人走 Homeground 四条 14 天中国私家线，总价是 ${priceRange(loc, pair(loc, LOW14), pair(loc, HIGH14))}。按两人一间分摊，每人 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}。往返中国的机票和午晚餐还要另算。`,
+          `두 사람이 Homeground의 14일 중국 프라이빗 일정 네 가지 중 하나를 예약하면 합계 ${priceRange(loc, pair(loc, LOW14), pair(loc, HIGH14))}입니다. 2인 1실로 나누면 한 사람당 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}입니다. 중국 왕복 항공편과 중식·석식은 여기에 더해야 합니다.`) },
       { question: tr("Is a private China tour cheaper with more people?", "私家团人多会更便宜吗？", "프라이빗 투어는 인원이 많으면 더 저렴한가요?"),
         answer: tr(
           `On the 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private route, the published per-person price falls from ${P(S.c14, 2)} for two travellers to ${P(S.c14, 4)} for four and ${P(S.c14, 6)} for six. The guide and vehicle cost is shared across more people.`,
@@ -238,9 +251,9 @@ function smallGroupBody(loc) {
   const table = departures.map(([slug, a, b, sup]) => [dateRange(loc, a, b), route[slug][loc], daysLabel(loc, slug), sgPrice(loc, slug), supplementMoney(loc, sup)]);
   return [
     { id: "lead", type: "lead", text: tr(
-      `A place on Homeground's 2027 China small groups starts at ${sgPrice(loc, S.l14g)} per person, sharing a room; international flights are extra. There are ${departures.length} departures across four routes between April and October, with 8–12 people on each. We check the numbers 45 days before departure. If fewer than eight guests have booked, you can take back everything paid to us or ask for a written private-tour quote for your own party on the same dates.`,
-      `Homeground 2027 年中国小团，两人一间每人 ${sgPrice(loc, S.l14g)} 起，不含国际机票。4 月到 10 月有四条线路、${departures.length} 个出发日，每团 8–12 人。我们会在出发前 45 天核对人数。若还不到 8 人，你可拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，原日期出发。`,
-      `Homeground의 2027년 중국 소규모 그룹은 2인 1실 기준 1인 ${sgPrice(loc, S.l14g)}부터입니다. 국제선은 별도입니다. 4월부터 10월까지 네 일정에서 ${departures.length}회 출발하고 한 그룹에 8~12명이 함께합니다. 출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 모두 돌려받거나, 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.`) },
+      `A place on Homeground's 2027 China small groups starts at ${sgPrice(loc, SG_ALL[0])} per person, sharing a room; international flights are extra. There are ${departures.length} departures across four routes between April and October, with 8–12 people on each. We check the numbers 45 days before departure. If fewer than eight guests have booked, you can take back everything paid to us or ask for a written private-tour quote for your own party on the same dates.`,
+      `Homeground 2027 年中国小团，两人一间每人 ${sgPrice(loc, SG_ALL[0])} 起，不含国际机票。4 月到 10 月有四条线路、${departures.length} 个出发日，每团 8–12 人。我们会在出发前 45 天核对人数。若还不到 8 人，你可拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，原日期出发。`,
+      `Homeground의 2027년 중국 소규모 그룹은 2인 1실 기준 1인 ${sgPrice(loc, SG_ALL[0])}부터입니다. 국제선은 별도입니다. 4월부터 10월까지 네 일정에서 ${departures.length}회 출발하고 한 그룹에 8~12명이 함께합니다. 출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 모두 돌려받거나, 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.`) },
     { id: "dates-heading", type: "heading", level: 2, text: tr("All 2027 departures", "2027 年全部出发日期", "2027년 전체 출발일") },
     { id: "dates", type: "table",
       caption: tr("Starting price per person, twin share; international flights and possible holiday surcharges extra", "每人起价，两人一间；国际机票另计，节假日可能有附加费", "2인 1실 기준 1인 시작가; 국제선과 공휴일 추가금은 별도"),
@@ -260,7 +273,7 @@ function smallGroupBody(loc) {
     { id: "choose", type: "table",
       caption: tr("Per person for two travellers, twin share", "两人同行每人价格，两人一间", "2명 기준 1인 요금, 2인 1실"),
       columns: tr(["Route", "Small group", "Private tour"], ["路线", "小团", "私家团"], ["일정", "소규모 그룹", "프라이빗 투어"]),
-      rows: [[S.l14g, S.l14], [S.c14g, S.c14], [S.silkg, S.silk], [S.yzg, S.yz]].map(([g, p]) => [route[g][loc], sgPrice(loc, g), P(p, 2)]) },
+      rows: GROUP_PAIRS.map(([g, p]) => [route[g][loc], sgPrice(loc, g), P(p, 2)]) },
     { id: "choose-note", type: "paragraph", text: tr(
       "Fixed dates work well for a solo guest or couple who likes company on the road. If you have children or older parents, a private departure lets the guide adjust the walking and the start time for your party.",
       "一个人或两个人出行，日期能配合，也想有旅伴，小团很合适。带孩子或年长父母的话，私家团更方便调整步行量和每天出发时间。",
@@ -343,9 +356,9 @@ function compareBody(loc) {
   ]);
   return [
     { id: "lead", type: "lead", text: tr(
-      `Homeground's four 14-day private China tours have published starting prices of ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))} per person for two sharing a room, before international flights. All begin in Beijing and Xi'an. For a first visit, we would start with Chengdu and the Li River; Zhangjiajie adds longer walking days, Yunnan adds altitude, and Huangshan trades a long train day for gardens and West Lake.`,
-      `Homeground 四条 14 天中国私家线，2 人同行、两人一间，每人 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}，国际机票另算。四条都先走北京和西安。第一次来，我们会先推成都加漓江的经典线。张家界要多走台阶，云南要适应海拔，黄山线则用一段长高铁换来园林和西湖。`,
-      `Homeground의 14일 중국 프라이빗 투어 네 가지는 2명, 2인 1실 기준 1인 ${priceRange(loc, P(S.h14, 2), P(S.c14, 2))}이며 국제선은 별도입니다. 모두 베이징과 시안에서 시작합니다. 첫 여행에는 청두와 이강을 넣은 대표 일정을 권합니다. 장가계는 걷는 양이 많고, 윈난은 고도에 적응해야 합니다. 황산 일정에는 긴 열차 이동일이 있지만 정원과 서호도 볼 수 있습니다.`) },
+      `Homeground's four 14-day private China tours have published starting prices of ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))} per person for two sharing a room, before international flights. All begin in Beijing and Xi'an. For a first visit, we would start with Chengdu and the Li River; Zhangjiajie adds longer walking days, Yunnan adds altitude, and Huangshan trades a long train day for gardens and West Lake.`,
+      `Homeground 四条 14 天中国私家线，2 人同行、两人一间，每人 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}，国际机票另算。四条都先走北京和西安。第一次来，我们会先推成都加漓江的经典线。张家界要多走台阶，云南要适应海拔，黄山线则用一段长高铁换来园林和西湖。`,
+      `Homeground의 14일 중국 프라이빗 투어 네 가지는 2명, 2인 1실 기준 1인 ${priceRange(loc, P(LOW14, 2), P(HIGH14, 2))}이며 국제선은 별도입니다. 모두 베이징과 시안에서 시작합니다. 첫 여행에는 청두와 이강을 넣은 대표 일정을 권합니다. 장가계는 걷는 양이 많고, 윈난은 고도에 적응해야 합니다. 황산 일정에는 긴 열차 이동일이 있지만 정원과 서호도 볼 수 있습니다.`) },
     { id: "compare-heading", type: "heading", level: 2, text: tr("The four routes side by side", "四条线路对比", "네 일정 한눈에 비교") },
     { id: "compare", type: "table", caption: tr("14 days and 13 nights each; per person, twin share, land only", "每条 14 天 13 晚；每人价格，两人一间，不含国际机票", "모두 13박 14일; 1인 요금, 2인 1실, 국제선 별도"), columns: cols,
       rows: four.map((slug) => [route[slug][loc], ...facts[slug], P(slug, 2)]) },
@@ -393,9 +406,9 @@ const GUIDES = [
     heroSlug: S.c14,
     searchTerms: { en: ["china tour cost 2 weeks", "how much is a 14 day china tour", "china private tour price", "china tour package price 2027"], zh: ["中国两周游多少钱", "中国私家团价格", "中国14天旅游费用"], ko: ["중국 2주 여행 비용", "중국 패키지 여행 가격", "중국 프라이빗 투어 가격"] },
     locales: {
-      en: { title: "2-Week China Tour Cost: Private and 2027 Group Prices", headline: "What a 2-week China tour costs", description: `Published 14-day private tours from ${price(S.h14, "en", 2)} per person for two; 2027 small groups from ${sgPrice("en", S.l14g)}. See what the price covers.`, navTitle: "2-week China tour cost", featuredLinkLabel: "See what a 2-week China tour costs", cardTags: ["Published prices", "Private and small group", "Per person, land only"] },
-      zh: { title: "中国两周游多少钱？私家团与 2027 年小团价格", headline: "中国两周游要多少钱", description: `14 天私家团公布价，2 人同行每人 ${price(S.h14, "zh", 2)} 起；2027 年小团每人 ${sgPrice("zh", S.l14g)} 起。看清人数、住宿和交通怎么算。`, navTitle: "中国两周游价格", featuredLinkLabel: "看看中国两周游要多少钱", cardTags: ["公布价格", "私家团与小团", "每人价格"] },
-      ko: { title: "중국 2주 투어 비용: 프라이빗·2027년 그룹 요금", headline: "중국 2주 투어 비용 알아보기", description: `14일 프라이빗 투어는 2명 기준 1인 ${price(S.h14, "ko", 2)}부터, 2027년 소규모 그룹은 ${sgPrice("ko", S.l14g)}부터입니다. 포함 내역과 인원별 요금을 비교하세요.`, navTitle: "중국 2주 투어 비용", featuredLinkLabel: "중국 2주 투어 비용 보기", cardTags: ["공개 요금", "프라이빗·소규모 그룹", "1인 요금"] },
+      en: { title: "2-Week China Tour Cost: Private and 2027 Group Prices", headline: "What a 2-week China tour costs", description: `Published 14-day private tours from ${price(LOW14, "en", 2)} per person for two; 2027 small groups from ${sgPrice("en", SG_ALL[0])}. See what the price covers.`, navTitle: "2-week China tour cost", featuredLinkLabel: "See what a 2-week China tour costs", cardTags: ["Published prices", "Private and small group", "Per person, land only"] },
+      zh: { title: "中国两周游多少钱？私家团与 2027 年小团价格", headline: "中国两周游要多少钱", description: `14 天私家团公布价，2 人同行每人 ${price(LOW14, "zh", 2)} 起；2027 年小团每人 ${sgPrice("zh", SG_ALL[0])} 起。看清人数、住宿和交通怎么算。`, navTitle: "中国两周游价格", featuredLinkLabel: "看看中国两周游要多少钱", cardTags: ["公布价格", "私家团与小团", "每人价格"] },
+      ko: { title: "중국 2주 투어 비용: 프라이빗·2027년 그룹 요금", headline: "중국 2주 투어 비용 알아보기", description: `14일 프라이빗 투어는 2명 기준 1인 ${price(LOW14, "ko", 2)}부터, 2027년 소규모 그룹은 ${sgPrice("ko", SG_ALL[0])}부터입니다. 포함 내역과 인원별 요금을 비교하세요.`, navTitle: "중국 2주 투어 비용", featuredLinkLabel: "중국 2주 투어 비용 보기", cardTags: ["공개 요금", "프라이빗·소규모 그룹", "1인 요금"] },
     },
     boundary: "Published per-person prices for Homeground's 10- to 21-day private tours and 2027 small groups, what they include and why they change with group size; excludes independent-travel budgets, owned by how-much-does-a-china-trip-cost.",
   },
@@ -406,9 +419,9 @@ const GUIDES = [
     heroSlug: S.c14g,
     searchTerms: { en: ["china small group tour 2027", "small group tours of china", "china group tour dates 2027"], zh: ["中国小团 2027", "中国小团游", "中国精品小团"], ko: ["중국 소규모 그룹 투어", "중국 소그룹 여행 2027", "중국 패키지 출발일"] },
     locales: {
-      en: { title: "China Small-Group Tours 2027: Dates, Prices and Rules", headline: "Every 2027 China small-group departure", description: `${departures.length} departures in 2027 on 14- to 17-day China routes for 8–12 guests, from ${sgPrice("en", S.l14g)} per person. Dates and refund rule inside.`, navTitle: "China small-group tours 2027", featuredLinkLabel: "See 2027 small-group dates", cardTags: [`${departures.length} departures`, "8–12 guests", "Full refund if it does not run"] },
-      zh: { title: "2027 年中国小团：出团日期、价格与规则", headline: "2027 年中国小团全部出发日期", description: `Homeground 2027 年 ${departures.length} 个小团出发日，14–17 天，8–12 人，每人 ${sgPrice("zh", S.l14g)} 起。查看日期、单房差与不足 8 人的退款规则。`, navTitle: "2027 中国小团", featuredLinkLabel: "查看 2027 年小团日期", cardTags: [`${departures.length} 个出发日`, "8–12 人", "不成团全额退款"] },
-      ko: { title: "2027 중국 소규모 그룹 투어: 출발일·요금·규칙", headline: "2027년 중국 소규모 그룹 전체 출발일", description: `Homeground 2027년 소규모 그룹 ${departures.length}회 출발, 14~17일, 8~12명, 1인 ${sgPrice("ko", S.l14g)}부터. 날짜와 인원 미달 시 환불 규칙을 확인하세요.`, navTitle: "2027 중국 소규모 그룹", featuredLinkLabel: "2027 소규모 그룹 날짜 보기", cardTags: [`${departures.length}회 출발`, "8~12명", "미출발 시 전액 환불"] },
+      en: { title: "China Small-Group Tours 2027: Dates, Prices and Rules", headline: "Every 2027 China small-group departure", description: `${departures.length} departures in 2027 on 14- to 17-day China routes for 8–12 guests, from ${sgPrice("en", SG_ALL[0])} per person. Dates and refund rule inside.`, navTitle: "China small-group tours 2027", featuredLinkLabel: "See 2027 small-group dates", cardTags: [`${departures.length} departures`, "8–12 guests", "Full refund if it does not run"] },
+      zh: { title: "2027 年中国小团：出团日期、价格与规则", headline: "2027 年中国小团全部出发日期", description: `Homeground 2027 年 ${departures.length} 个小团出发日，14–17 天，8–12 人，每人 ${sgPrice("zh", SG_ALL[0])} 起。查看日期、单房差与不足 8 人的退款规则。`, navTitle: "2027 中国小团", featuredLinkLabel: "查看 2027 年小团日期", cardTags: [`${departures.length} 个出发日`, "8–12 人", "不成团全额退款"] },
+      ko: { title: "2027 중국 소규모 그룹 투어: 출발일·요금·규칙", headline: "2027년 중국 소규모 그룹 전체 출발일", description: `Homeground 2027년 소규모 그룹 ${departures.length}회 출발, 14~17일, 8~12명, 1인 ${sgPrice("ko", SG_ALL[0])}부터. 날짜와 인원 미달 시 환불 규칙을 확인하세요.`, navTitle: "2027 중국 소규모 그룹", featuredLinkLabel: "2027 소규모 그룹 날짜 보기", cardTags: [`${departures.length}회 출발`, "8~12명", "미출발 시 전액 환불"] },
     },
     boundary: "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail (china-2-week-tour-cost) and route choice (best-2-week-china-tour).",
   },
@@ -419,9 +432,9 @@ const GUIDES = [
     heroSlug: S.y14,
     searchTerms: { en: ["best 2 week china tour", "14 day china tour", "china tour 14 days", "best china tour itinerary 2 weeks"], zh: ["中国两周游路线", "中国14天私家团", "中国两周旅游路线推荐"], ko: ["중국 2주 투어 추천", "중국 14일 여행 코스", "중국 13박 14일 투어"] },
     locales: {
-      en: { title: "Best 2-Week China Tour: Four 14-Day Routes Compared", headline: "Which 2-week China tour fits you?", description: `Four 14-day private China routes from ${price(S.h14, "en", 2)} per person for two. Compare Chengdu, Zhangjiajie, Yunnan and Huangshan by travel and walking time.`, navTitle: "Best 2-week China tour", featuredLinkLabel: "Compare four 14-day China tours", cardTags: ["Four routes", "Side-by-side table", "Prices for two"] },
-      zh: { title: "中国两周游怎么选：四条 14 天私家线对比", headline: "哪条中国两周游线路适合你", description: `四条 14 天中国私家线，2 人同行每人 ${price(S.h14, "zh", 2)} 起。比较成都、张家界、云南和黄山线的交通、步行量与价格。`, navTitle: "中国两周游路线对比", featuredLinkLabel: "对比四条 14 天线路", cardTags: ["四条线路", "并排对比", "两人价格"] },
-      ko: { title: "중국 2주 투어 비교: 14일 일정 4가지", headline: "나에게 맞는 중국 2주 투어는?", description: `14일 중국 프라이빗 일정 4가지, 2명 기준 1인 ${price(S.h14, "ko", 2)}부터. 청두, 장가계, 윈난, 황산의 이동과 걷기, 요금을 비교하세요.`, navTitle: "중국 2주 투어 비교", featuredLinkLabel: "14일 투어 4가지 비교하기", cardTags: ["일정 4가지", "한눈에 비교", "2명 요금"] },
+      en: { title: "Best 2-Week China Tour: Four 14-Day Routes Compared", headline: "Which 2-week China tour fits you?", description: `Four 14-day private China routes from ${price(LOW14, "en", 2)} per person for two. Compare Chengdu, Zhangjiajie, Yunnan and Huangshan by travel and walking time.`, navTitle: "Best 2-week China tour", featuredLinkLabel: "Compare four 14-day China tours", cardTags: ["Four routes", "Side-by-side table", "Prices for two"] },
+      zh: { title: "中国两周游怎么选：四条 14 天私家线对比", headline: "哪条中国两周游线路适合你", description: `四条 14 天中国私家线，2 人同行每人 ${price(LOW14, "zh", 2)} 起。比较成都、张家界、云南和黄山线的交通、步行量与价格。`, navTitle: "中国两周游路线对比", featuredLinkLabel: "对比四条 14 天线路", cardTags: ["四条线路", "并排对比", "两人价格"] },
+      ko: { title: "중국 2주 투어 비교: 14일 일정 4가지", headline: "나에게 맞는 중국 2주 투어는?", description: `14일 중국 프라이빗 일정 4가지, 2명 기준 1인 ${price(LOW14, "ko", 2)}부터. 청두, 장가계, 윈난, 황산의 이동과 걷기, 요금을 비교하세요.`, navTitle: "중국 2주 투어 비교", featuredLinkLabel: "14일 투어 4가지 비교하기", cardTags: ["일정 4가지", "한눈에 비교", "2명 요금"] },
     },
     boundary: "Compares Homeground's four bookable 14-day private routes by cities, transport, walking, season and price; excludes a self-planned day-by-day itinerary, owned by china-14-day-itinerary.",
   },

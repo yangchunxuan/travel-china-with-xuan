@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 248,
-      "localeUrlCount": 736,
-      "generatedIdentityCount": 229,
+      "identityCount": 249,
+      "localeUrlCount": 739,
+      "generatedIdentityCount": 230,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -3413,6 +3413,60 @@
               "boundary": "The Mutianyu Great Wall ticket intent: official-shop prices for admission, shuttle, cable car and bundles, concession limits, the separate chairlift and toboggan company, passport booking, the 30-day window, refunds and seasonal hours. The transfer guide keeps how to get there; the section selector keeps which section to choose; the reservation service page keeps the paid booking offer."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-11",
+          "sourceBranch": "family-seniors-tours",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "China family private tours landing guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "china-family-private-tours",
+              "title": "China Family Tours: Private Routes, Prices & Kids' Pace",
+              "metadataPath": "content/guides/china-family-private-tours/metadata.json",
+              "canonicalPath": "/guides/china-family-private-tours/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/china-family-private-tours/",
+                "/zh/guides/china-family-private-tours/",
+                "/ko/guides/china-family-private-tours/"
+              ],
+              "section": "plan",
+              "pageFamily": "task",
+              "targetIntent": "plan",
+              "primaryCollectionId": "plan-traveller-theme-itineraries",
+              "pillar": "traveller-fit",
+              "destinations": [
+                "china",
+                "beijing",
+                "xian",
+                "chengdu",
+                "guilin",
+                "shanghai"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "country-china",
+                  "city-beijing",
+                  "city-xian",
+                  "city-chengdu",
+                  "city-guilin",
+                  "city-shanghai"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "low",
+              "boundary": "The family buying intent for long private tours: what a family gets, five published routes with per-person prices, how children are quoted and how booking works. The young-children guide keeps planning advice by age; the price guide keeps every route's price; tour pages keep itineraries and inclusions."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3457,6 +3511,7 @@
         "china-domestic-flight-fare-bundle-baggage",
         "china-domestic-flight-schedule-change",
         "china-esim-vs-local-sim",
+        "china-family-private-tours",
         "china-high-speed-train-first-time-guide",
         "china-hotel-emergency-exit-fire-safety-check",
         "china-hotel-near-metro",

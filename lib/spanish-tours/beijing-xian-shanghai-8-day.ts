@@ -4,10 +4,10 @@ export const beijingXianShanghai8DayCopy: SpanishTourCopy = {
   title: "Pekín, Xi'an y Shanghái: viaje privado de 8 días",
   metadataTitle: "China en 8 días: Pekín, Xi'an y Shanghái en privado",
   metadataDescription:
-    "Viaje privado de 8 días: Gran Muralla, Guerreros de Terracota y Shanghái. Por persona, 2.390 USD para 2 viajeros y 1.890 para 6; vuelo Xi'an–Shanghái incluido.",
+    "Viaje privado de 8 días: Gran Muralla, Guerreros de Terracota y Shanghái. Por persona, 1.840 USD para 2 viajeros y 1.190 para 6; vuelo Xi'an–Shanghái incluido.",
   eyebrow: "Pekín, Xi'an y Shanghái en ocho días",
   lede:
-    "Este viaje privado de 8 días por Pekín, Xi'an y Shanghái cuesta desde 2.390 USD por persona para dos viajeros en habitación doble; los vuelos internacionales van aparte. Es la forma más corta en que hacemos las tres ciudades: tres noches en Pekín, dos en Xi'an y dos en Shanghái, con un vuelo al final en lugar de un tren de seis horas.",
+    "Este viaje privado de 8 días por Pekín, Xi'an y Shanghái cuesta desde 1.840 USD por persona para dos viajeros en habitación doble; los vuelos internacionales van aparte. Es la forma más corta en que hacemos las tres ciudades: tres noches en Pekín, dos en Xi'an y dos en Shanghái, con un vuelo al final en lugar de un tren de seis horas.",
   summary:
     "Las siete noches de hotel incluyen desayuno. El precio cubre guías locales privados y vehículo en los días de visita, los traslados, las entradas indicadas, el tren de alta velocidad Pekín–Xi'an y el vuelo Xi'an–Shanghái en clase turista. El Templo del Cielo, el Palacio de Verano y un día de descanso no caben; la versión de 12 días tiene sitio para ellos.",
   highlights: [
@@ -77,7 +77,7 @@ export const beijingXianShanghai8DayCopy: SpanishTourCopy = {
     {
       question: "¿Cuánto cuesta un viaje privado de 8 días por Pekín, Xi'an y Shanghái?",
       answer:
-        "El viaje privado de 8 días por Pekín, Xi'an y Shanghái cuesta 2.390 USD por persona para dos viajeros en habitación doble, 4.780 USD la pareja. Con cuatro viajeros son 2.030 USD por persona y con seis, 1.890 USD. Incluye siete noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas, el tren Pekín–Xi'an y el vuelo Xi'an–Shanghái. No incluye los vuelos internacionales ni las comidas y cenas. Para otros tamaños de grupo enviamos un presupuesto por escrito.",
+        "El viaje privado de 8 días por Pekín, Xi'an y Shanghái cuesta 1.840 USD por persona para dos viajeros en habitación doble, 3.680 USD la pareja. Con cuatro viajeros son 1.310 USD por persona y con seis, 1.190 USD. Incluye siete noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas, el tren Pekín–Xi'an y el vuelo Xi'an–Shanghái. No incluye los vuelos internacionales ni las comidas y cenas. Para otros tamaños de grupo enviamos un presupuesto por escrito.",
     },
     {
       question: "¿Son suficientes ocho días para Pekín, Xi'an y Shanghái?",

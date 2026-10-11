@@ -3,9 +3,9 @@ import type { SpanishTourCopy } from "../spanishTourCopy";
 export const beijingXianGuilinShanghai10DayCopy: SpanishTourCopy = {
   title: "Pekín, Xi'an, Guilin y Shanghái: viaje privado de 10 días",
   metadataTitle: "China en 10 días: Pekín, Xi'an, Guilin y Shanghái",
-  metadataDescription: "Viaje privado de 10 días: Gran Muralla, Guerreros de Terracota, río Li y Shanghái. Por persona, 2.990 USD para 2 y 2.390 para 6; vuelos internos incluidos.",
+  metadataDescription: "Viaje privado de 10 días: Gran Muralla, Guerreros de Terracota, río Li y Shanghái. Por persona, 2.510 USD para 2 y 1.670 para 6; vuelos internos incluidos.",
   eyebrow: "Diez días para Pekín, Xi'an, el río Li y Shanghái",
-  lede: "El viaje privado de 10 días Pekín–Xi'an–Guilin–Shanghái cuesta desde 2.990 USD por persona para dos viajeros en habitación doble, sin los vuelos internacionales. La ruta sigue dando un día propio a la Gran Muralla, a los Guerreros de Terracota y al río Li, pero después de cada parada se sigue viaje enseguida.",
+  lede: "El viaje privado de 10 días Pekín–Xi'an–Guilin–Shanghái cuesta desde 2.510 USD por persona para dos viajeros en habitación doble, sin los vuelos internacionales. La ruta sigue dando un día propio a la Gran Muralla, a los Guerreros de Terracota y al río Li, pero después de cada parada se sigue viaje enseguida.",
   summary: "Las nueve noches de hotel incluyen desayuno. El precio cubre guías locales privados y vehículo en los días de visita, los traslados, las entradas indicadas, el crucero por el río Li, un tren en segunda clase y dos vuelos en clase turista. Si quiere un día de descanso, la ruta de 14 días deja más margen.",
   highlights: [
     "La Gran Muralla en Mutianyu",
@@ -70,7 +70,7 @@ export const beijingXianGuilinShanghai10DayCopy: SpanishTourCopy = {
   faq: [
     {
       question: "¿Cuánto cuesta un viaje privado de 10 días por China?",
-      answer: "El viaje privado de 10 días Pekín–Xi'an–Guilin–Shanghái cuesta 2.990 USD por persona para dos viajeros en habitación doble, 5.980 USD la pareja. Con cuatro viajeros son 2.540 USD por persona y con seis, 2.390 USD. Incluye nueve noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas van aparte. Para otros tamaños de grupo damos el precio por escrito."
+      answer: "El viaje privado de 10 días Pekín–Xi'an–Guilin–Shanghái cuesta 2.510 USD por persona para dos viajeros en habitación doble, 5.020 USD la pareja. Con cuatro viajeros son 1.820 USD por persona y con seis, 1.670 USD. Incluye nueve noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas van aparte. Para otros tamaños de grupo damos el precio por escrito."
     },
     {
       question: "¿Son suficientes diez días para China?",
