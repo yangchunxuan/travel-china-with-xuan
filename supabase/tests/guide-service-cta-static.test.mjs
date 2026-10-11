@@ -26,14 +26,16 @@ test("guide service CTAs point at a covered city, at that city's live rate", asy
   assert.ok(privateGuideRates.xian.standardCny < privateGuideRates.beijing.standardCny);
 });
 
-test("attraction guides show the booking offer after their first section, and clicks on services are counted as services", async () => {
+test("ticket pilots place one booking offer after the lead, other attraction guides retain the first-section position", async () => {
   const [page, renderer, location, analytics] = await Promise.all([
     source("components/content/EditorialGuidePage.tsx"),
     source("components/content/PageFamilyRenderer.tsx"),
     source("lib/analyticsLocation.ts"),
     source("lib/analytics.ts"),
   ]);
-  assert.match(page, /afterIndex: guideFirstSectionEndIndex\(body\),\s*node: <GuideReservationCta[^>]*position="inline"/u);
+  assert.match(page, /getPriorityTicketGuideEntry\(guide\.id, locale\) && leadIndex >= 0\s*\? leadIndex\s*: guideFirstSectionEndIndex\(body\)/u);
+  assert.match(page, /afterIndex: reservationCtaIndex,\s*node: <GuideReservationCta[^>]*position="inline"/u);
+  assert.equal((page.match(/<GuideReservationCta /gu) ?? []).length, 1, "the existing card moves; no duplicate is inserted");
   assert.match(page, /afterIndex: guideContentEndIndex\(body\),\s*node: <GuideServiceCta[^>]*position="inline"/u);
   assert.match(renderer, /interstitials\?: readonly \{ afterIndex: number; node: ReactNode \}\[\]/u);
   assert.match(location, /export type GuideCtaTarget = "private_tour" \| "service" \| "planner" \| "other";/u);

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import vm from "node:vm";
+import { getPriorityTicketGuideEntry } from "../../lib/priorityTicketGuide.ts";
 import {
   guideTourEntryId,
   guideTourEntryBootstrap,
@@ -58,4 +59,19 @@ test("another article suppresses a dismissed entry before hydration and does not
 
 test("blocked session storage keeps the direct catalog entry usable", () => {
   assert.equal(bootstrap({}, true).attributes.size, 0);
+});
+
+test("only the three English ticket pilots replace the tour entry with an offered attraction referral", async () => {
+  const { getGuideAttractionReservationTarget, attractionReservationHref } = await import("../../lib/attractionReservations.ts");
+  for (const guideId of ["forbidden-city-for-foreign-visitors", "terracotta-warriors-without-tour", "humble-administrators-garden-tickets-entry"]) {
+    const entry = getPriorityTicketGuideEntry(guideId, "en");
+    const rule = getGuideAttractionReservationTarget(guideId);
+    assert.equal(rule.status, "offered");
+    assert.equal(entry.attractionId, rule.id);
+    assert.equal(entry.href, attractionReservationHref("en", rule.id));
+    for (const locale of ["zh", "ko"]) assert.equal(getPriorityTicketGuideEntry(guideId, locale), null);
+  }
+  for (const guideId of ["china-trip-cost", "national-museum-of-china-reservation", "tianmen-mountain-tickets-routes", "unknown"]) {
+    assert.equal(getPriorityTicketGuideEntry(guideId, "en"), null);
+  }
 });

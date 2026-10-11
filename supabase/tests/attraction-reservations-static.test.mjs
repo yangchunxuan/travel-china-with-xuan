@@ -431,17 +431,17 @@ test("public copy avoids checkout language", async () => {
   }
 });
 
-test("search copy leads with the Forbidden City and the owner's refund and privacy clauses stay", async () => {
+test("English search copy identifies the booking service; the Forbidden City answer, refund and privacy clauses stay", async () => {
   const lead = { en: /Forbidden City/u, zh: /故宫/u, ko: /자금성/u };
   const yes = { en: /^Yes\./u, zh: /^可以。/u, ko: /^네\./u };
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);
-    assert.match(copy.metadata.title, lead[locale], `${locale}: title`);
+    assert.match(copy.metadata.title, locale === "en" ? /China Attraction Ticket Booking Service/u : lead[locale], `${locale}: title`);
     if (locale === "en") {
       assert.ok(copy.metadata.title.length <= 60, "en: title fits a search result");
       assert.ok(copy.metadata.description.replace("{fee}", "USD 7").length <= 155, "en: description fits a search result");
     }
-    assert.match(copy.metadata.description, lead[locale], `${locale}: description`);
+    assert.match(copy.metadata.description, locale === "en" ? /selected China attractions.*\{fee\}.*official ticket price.*before payment/u : lead[locale], `${locale}: description`);
     assert.match(copy.h1, lead[locale], `${locale}: h1`);
     const forbiddenCityFaq = copy.faqs.find((item) => lead[locale].test(item.question));
     assert.ok(forbiddenCityFaq, `${locale}: Forbidden City FAQ`);

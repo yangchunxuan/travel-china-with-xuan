@@ -65,6 +65,9 @@ export function AttractionReservationEnquiry({
 }) {
   const id = useId();
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
+  const [compactReferral, setCompactReferral] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const pickerSummary = useRef<HTMLElement>(null);
   // One date per attraction id: a ticket is for a single day, not a range.
   const [dates, setDates] = useState<Record<string, string>>({});
   const [undecided, setUndecided] = useState(false);
@@ -84,7 +87,9 @@ export function AttractionReservationEnquiry({
     const match = attractions.find((attraction) => attraction.id === requested);
     if (!match) return;
     setSelectedAttractions((current) => (current.includes(match.id) ? current : [...current, match.id]));
-  }, [attractions, queryKey]);
+    // Do not collapse the ordinary picker after its first checkbox is selected.
+    if (locale === "en") setCompactReferral(true);
+  }, [attractions, queryKey, locale]);
 
   // "Request this attraction" in a rules row ticks it here, then shows the
   // result: the new date field (or the chip, with dates undecided) is scrolled
@@ -111,8 +116,9 @@ export function AttractionReservationEnquiry({
     if (!revealRequest) return;
     const { attractionId } = revealRequest;
     const field = undecided ? null : document.getElementById(`${id}-date-${attractionId}`);
+    const selectedRow = document.querySelector(`[data-selected-attraction="${CSS.escape(attractionId)}"]`);
     const chip = document.querySelector(`input[name="attraction"][value="${CSS.escape(attractionId)}"]`)?.closest("label");
-    (field ?? chip)?.scrollIntoView({ block: "center" });
+    (field ?? selectedRow ?? chip)?.scrollIntoView({ block: "center" });
     // Runs once per click: undecided is only read here, so toggling it never scrolls.
   }, [revealRequest]);
 
@@ -189,31 +195,62 @@ export function AttractionReservationEnquiry({
 
   const kakao = locale === "ko" ? <KakaoTalkContact className={styles.kakao} inquiry={() => message} key={kakaoKey} label={copy.kakaoAction} onOpen={() => trackChannel("kakao")} /> : null;
 
+  const attractionChoices = (
+    <fieldset aria-describedby={`${id}-attractions-hint`} className={styles.choiceGroup}>
+      <legend>{copy.attractions}</legend>
+      <p className={styles.fieldHint} id={`${id}-attractions-hint`}>{copy.attractionsHint}</p>
+      <div className={styles.cityGroups}>
+        {groups.map((group) => (
+          <div aria-labelledby={`${id}-city-${group.id}`} className={styles.cityGroup} key={group.id} role="group">
+            <p className={styles.cityLabel} id={`${id}-city-${group.id}`}>{group.label}</p>
+            <div className={styles.attractionList}>
+              {group.attractions.map((attraction) => (
+                <label className={styles.attractionOption} key={attraction.id}>
+                  <input checked={selectedAttractions.includes(attraction.id)} name="attraction" onChange={() => setSelectedAttractions((current) => toggle(current, attraction.id))} type="checkbox" value={attraction.id} />
+                  <span>{attraction.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </fieldset>
+  );
+
   return (
     <>
       {intro}
       <p className={styles.visuallyHidden} role="status">{addedMessage}</p>
       <div className={styles.enquiryLayout} id={formId}>
         <form className={styles.enquiryForm} onSubmit={(event) => event.preventDefault()} onFocus={markStarted} onChange={(event) => { markStarted(event); setKakaoKey((key) => key + 1); }}>
-          <fieldset aria-describedby={`${id}-attractions-hint`} className={styles.choiceGroup}>
-            <legend>{copy.attractions}</legend>
-            <p className={styles.fieldHint} id={`${id}-attractions-hint`}>{copy.attractionsHint}</p>
-            <div className={styles.cityGroups}>
-              {groups.map((group) => (
-                <div aria-labelledby={`${id}-city-${group.id}`} className={styles.cityGroup} key={group.id} role="group">
-                  <p className={styles.cityLabel} id={`${id}-city-${group.id}`}>{group.label}</p>
-                  <div className={styles.attractionList}>
-                    {group.attractions.map((attraction) => (
-                      <label className={styles.attractionOption} key={attraction.id}>
-                        <input checked={selectedAttractions.includes(attraction.id)} name="attraction" onChange={() => setSelectedAttractions((current) => toggle(current, attraction.id))} type="checkbox" value={attraction.id} />
-                        <span>{attraction.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </fieldset>
+          {compactReferral ? (
+            <>
+              <fieldset className={styles.choiceGroup}>
+                <legend>{copy.selectedAttractions}</legend>
+                {chosen.length ? <ul className={styles.selectedAttractions}>
+                  {chosen.map((attraction) => (
+                    <li data-selected-attraction={attraction.id} key={attraction.id}>
+                      <span>{attraction.label}</span>
+                      <button
+                        aria-label={copy.removeAttraction?.replace("{name}", attraction.label)}
+                        onClick={() => {
+                          // The remove control unmounts: focus the persistent picker first.
+                          pickerSummary.current?.focus({ preventScroll: true });
+                          setPickerOpen(true);
+                          setSelectedAttractions((current) => current.filter((item) => item !== attraction.id));
+                        }}
+                        type="button"
+                      >{copy.removeLabel}</button>
+                    </li>
+                  ))}
+                </ul> : <p className={styles.fieldHint}>{copy.noneSelected}</p>}
+              </fieldset>
+              <details className={styles.referralPicker} onToggle={(event) => setPickerOpen(event.currentTarget.open)} open={pickerOpen}>
+                <summary ref={pickerSummary}>{copy.addAttractions}</summary>
+                {attractionChoices}
+              </details>
+            </>
+          ) : attractionChoices}
 
           {/* One visit date per chosen attraction, as Klook, GetYourGuide and
               the official systems ask: a ticket is for one day. The site's own

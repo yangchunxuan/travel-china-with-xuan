@@ -48,6 +48,11 @@ export interface AttractionReservationEnquiryCopy {
   intro: string;
   attractions: string;
   attractionsHint: string;
+  /** English guide referrals can start with their already-selected attraction. */
+  selectedAttractions?: string;
+  addAttractions?: string;
+  removeAttraction?: string;
+  removeLabel?: string;
   /** One date per chosen attraction: a ticket is for a single day. */
   visitDates: string;
   visitDatesHint: string;
@@ -182,9 +187,9 @@ export interface AttractionReservationCopy {
 const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
   en: {
     metadata: {
-      title: "Book Forbidden City & China Museum Tickets as a Foreigner",
+      title: "China Attraction Ticket Booking Service for Foreigners",
       description:
-        "We reserve the Forbidden City, Terracotta Warriors and other museums on official systems in your own name: {fee} per person per attraction plus face value.",
+        "Request bookings for selected China attractions: {fee} per person per attraction plus official ticket price. Written quote before payment.",
     },
     breadcrumb: "Breadcrumb",
     home: "Home",
@@ -303,9 +308,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
-      intro: `Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once. Send it and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
+      intro: `Choose WhatsApp or email to review and send your prepared request. Opening a contact option does not send it. Send it and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
       attractions: "Attractions",
       attractionsHint: "Choose as many as you like; you will pick a date for each one below.",
+      selectedAttractions: "Selected attractions",
+      addAttractions: "Add or change attractions",
+      removeAttraction: "Remove {name}",
+      removeLabel: "Remove",
       visitDates: "Visit dates",
       visitDatesHint: "Each ticket is for one day. Pick the day you will visit each attraction.",
       visitDatesEmpty: "Choose an attraction above, then pick the day you will visit it.",
