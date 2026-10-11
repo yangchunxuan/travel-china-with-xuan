@@ -23,3 +23,5 @@ Alipay, Alipay+, Weixin Pay, Visa, Mastercard, UnionPay and other marks belong t
 The Alipay/Weixin Pay/card/cash comparison, minimum viable setup, 2026 fee-and-limit table, family backup plan and payment-failure recovery flow should remain HTML tables, callouts and short flow cards. They are dynamic and should not be frozen into hard-to-update graphics.
 
 No documentary payment photo has been fabricated. The article uses the clearly described editorial illustration until a properly cleared real photograph becomes available.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a phone held up by one finger, showing a payment code on its screen. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A private tour in China costs USD 420–5,890 per person for two travellers on Homeground's 41 published routes of 4–21 days. That is about USD 84–309 per person per day, with a middle value near USD 190. When six travel together the same routes cost USD 250–4,690 each. Flights to and from China are extra, and each tour page lists what its price covers."
+      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 41 published routes of 4–21 days. That is about USD 84–294 per person per day, with a middle value near USD 190. When six travel together the same routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
     },
     {
       "id": "glance-heading",
@@ -36,16 +36,16 @@ const body = {
         [
           "6- to 9-day tours",
           "11",
-          "USD 899–2,390",
-          "USD 720–1,890",
-          "USD 128–299"
+          "USD 899–1,888",
+          "USD 720–1,858",
+          "USD 128–270"
         ],
         [
           "10- to 21-day tours",
           "13",
-          "USD 2,690–5,890",
-          "USD 2,140–4,690",
-          "USD 240–309"
+          "USD 2,510–5,920",
+          "USD 1,540–4,010",
+          "USD 241–294"
         ],
         [
           "Northeast China winter tours",
@@ -258,9 +258,9 @@ const body = {
         [
           "Beijing, Xi'an & Shanghai",
           "8 days",
-          "USD 2,390",
-          "USD 2,030",
-          "USD 1,890"
+          "USD 1,840",
+          "USD 1,310",
+          "USD 1,190"
         ]
       ]
     },
@@ -285,93 +285,93 @@ const body = {
         [
           "Beijing, Xi'an, Guilin & Shanghai",
           "10 days",
-          "USD 2,990",
-          "USD 2,540",
-          "USD 2,390"
+          "USD 2,510",
+          "USD 1,820",
+          "USD 1,670"
         ],
         [
           "Beijing, Xi'an, Guilin & Hong Kong",
           "10 days",
-          "USD 3,090",
-          "USD 2,630",
-          "USD 2,470"
+          "USD 2,610",
+          "USD 1,880",
+          "USD 1,720"
         ],
         [
           "Beijing, Hangzhou, Suzhou & Shanghai",
           "11 days",
-          "USD 2,690",
-          "USD 2,290",
-          "USD 2,140"
+          "USD 2,670",
+          "USD 1,760",
+          "USD 1,540"
         ],
         [
           "Beijing, Xi'an & Shanghai",
           "12 days",
-          "USD 2,880",
-          "USD 2,200",
-          "USD 2,170"
+          "USD 2,890",
+          "USD 1,960",
+          "USD 1,730"
         ],
         [
           "Beijing, Xi'an, Yangtze Cruise & Shanghai",
           "12 days",
-          "USD 3,590",
-          "USD 3,050",
-          "USD 2,890"
+          "USD 3,190",
+          "USD 2,500",
+          "USD 2,340"
         ],
         [
           "Shanghai, Zhangjiajie, Fenghuang & Guilin",
           "13 days",
-          "USD 3,590",
-          "USD 3,040",
-          "USD 2,890"
+          "USD 3,300",
+          "USD 2,340",
+          "USD 2,120"
         ],
         [
           "Beijing, Xi'an, Yellow Mountain, Hangzhou & Shanghai",
           "14 days",
-          "USD 3,790",
-          "USD 3,190",
-          "USD 2,990"
+          "USD 3,580",
+          "USD 2,470",
+          "USD 2,200"
         ],
         [
           "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai",
           "14 days",
-          "USD 3,890",
-          "USD 3,290",
-          "USD 3,090"
-        ],
-        [
-          "Beijing, Xi'an & Yunnan",
-          "14 days",
-          "USD 3,890",
-          "USD 3,290",
-          "USD 3,090"
+          "USD 3,680",
+          "USD 2,670",
+          "USD 2,430"
         ],
         [
           "Beijing, Xi'an, Chengdu, Guilin & Shanghai",
           "14 days",
-          "USD 3,990",
-          "USD 3,390",
-          "USD 3,190"
+          "USD 3,720",
+          "USD 2,620",
+          "USD 2,360"
+        ],
+        [
+          "Beijing, Xi'an & Yunnan",
+          "14 days",
+          "USD 4,110",
+          "USD 2,920",
+          "USD 2,640"
         ],
         [
           "Beijing, Xi'an & the Silk Road",
           "15 days",
-          "USD 4,590",
-          "USD 3,890",
-          "USD 3,690"
+          "USD 4,370",
+          "USD 3,040",
+          "USD 2,730"
         ],
         [
           "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai",
           "17 days",
-          "USD 4,690",
-          "USD 3,990",
-          "USD 3,790"
+          "USD 4,580",
+          "USD 3,340",
+          "USD 3,040"
         ],
         [
           "Grand China with Zhangjiajie & the Yangtze",
           "21 days",
-          "USD 5,890",
-          "USD 4,990",
-          "USD 4,690"
+          "USD 5,920",
+          "USD 4,370",
+          "USD 4,010"
         ]
       ]
     },
@@ -479,7 +479,7 @@ const body = {
     {
       "id": "group-size",
       "type": "paragraph",
-      "text": "Across the 41 published price lines that list two, four and six travellers, the price per person for four travellers is typically 16% lower than for two, and for six it is 21% lower. The guide and vehicle are shared by your party, so more people split those costs. Hotel rooms, tickets and transport seats are still paid for each traveller, which is why the saving gets smaller as the party grows."
+      "text": "Across the 41 published price lines that list two, four and six travellers, the price per person for four travellers is typically 22% lower than for two, and for six it is 26% lower. The guide and vehicle are shared by your party, so more people split those costs. Hotel rooms, tickets and transport seats are still paid for each traveller, which is why the saving gets smaller as the party grows."
     },
     {
       "id": "price-note",
@@ -495,11 +495,11 @@ const body = {
       "items": [
         {
           "question": "How much does a private tour in China cost per day?",
-          "answer": "Two travellers pay about USD 84–309 per person per day on Homeground's 41 published private routes, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an, Guilin & Hong Kong (10 days). Flights to and from China are extra."
+          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 41 published private routes, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
         },
         {
           "question": "Is a private China tour cheaper per person with more people?",
-          "answer": "Yes. Where Homeground publishes prices for two, four and six travellers, the price per person for six is typically 21% lower than for two, because the guide and vehicle cost is shared across more people."
+          "answer": "Yes. Where Homeground publishes prices for two, four and six travellers, the price per person for six is typically 26% lower than for two, because the guide and vehicle cost is shared across more people."
         },
         {
           "question": "Do these prices include flights?",
@@ -560,8 +560,8 @@ const body = {
           "reviewedAt": "2026-10-11"
         },
         {
-          "label": "Beijing, Xi'an, Guilin & Hong Kong: 10-Day Private Tour",
-          "url": "https://homegroundchina.com/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/",
+          "label": "Beijing, Xi'an & Yunnan: 14-Day Private Tour",
+          "url": "https://homegroundchina.com/tours/beijing-xian-yunnan-14-day-private-tour/",
           "publisher": "Homeground China",
           "reviewedAt": "2026-10-11"
         }

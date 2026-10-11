@@ -310,7 +310,7 @@ export const tenDayGuideChinese: TenDayGuideCopy = {
     title: "先核对日历，再谈报价。",
     intro:
       "我们不会先把你的日期硬塞进固定套餐，而是先检查路线能否保住同行者真正重视的内容，并明确告诉你哪里无法兼顾。",
-    imageAlt: "规划图插画：折叠路线图、日历、车票、行李牌和铅笔",
+    imageAlt: "一页日历上圈出三天并用虚线连起来，一根手指点在最后一天上的插画。",
     imageCaption: "插画：Homeground 如何在报价前检验一条路线是否成立。",
     methods: [
       {

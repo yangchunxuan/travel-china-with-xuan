@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "Homeground's four 14-day private China tours have published starting prices of USD 3,790–3,990 per person for two sharing a room, before international flights. All begin in Beijing and Xi'an. For a first visit, we would start with Chengdu and the Li River; Zhangjiajie adds longer walking days, Yunnan adds altitude, and Huangshan trades a long train day for gardens and West Lake."
+      "text": "Homeground's four 14-day private China tours have published starting prices of USD 3,580–4,110 per person for two sharing a room, before international flights. All begin in Beijing and Xi'an. For a first visit, we would start with Chengdu and the Li River; Zhangjiajie adds longer walking days, Yunnan adds altitude, and Huangshan trades a long train day for gardens and West Lake."
     },
     {
       "id": "compare-heading",
@@ -33,7 +33,7 @@ const body = {
           "2 trains, 2 flights",
           "Easy to moderate",
           "Apr–May, Sep–Oct",
-          "USD 3,990"
+          "USD 3,720"
         ],
         [
           "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
@@ -41,7 +41,7 @@ const body = {
           "2 trains incl. a 7-hour one, 2 flights",
           "Moderate: stairs in Zhangjiajie",
           "Apr–May, Sep–Oct",
-          "USD 3,890"
+          "USD 3,680"
         ],
         [
           "Beijing, Xi'an, Dali, Lijiang, Shangri-La",
@@ -49,7 +49,7 @@ const body = {
           "4 trains, 2 flights, 1 long drive",
           "Moderate; Shangri-La nights around 3,300 m; mountain cable car may go higher",
           "Mar–May, Sep–Nov",
-          "USD 3,890"
+          "USD 4,110"
         ],
         [
           "Beijing, Xi'an, Yellow Mountain, Hangzhou, Suzhou, Shanghai",
@@ -57,7 +57,7 @@ const body = {
           "4 trains incl. a 7-hour one, flight only when it fits",
           "Moderate: a stair-heavy summit day",
           "Apr–May, Sep–Nov",
-          "USD 3,790"
+          "USD 3,580"
         ]
       ]
     },
@@ -70,7 +70,7 @@ const body = {
     {
       "id": "classic",
       "type": "paragraph",
-      "text": "For a first visit, we would start with Beijing, Xi'an, Chengdu, Guilin and Shanghai. You see the Great Wall and Terracotta Warriors, then pandas and the Li River without the longer mountain walking days. It is USD 3,990 per person for two, or USD 3,190 for six."
+      "text": "For a first visit, we would start with Beijing, Xi'an, Chengdu, Guilin and Shanghai. You see the Great Wall and Terracotta Warriors, then pandas and the Li River without the longer mountain walking days. It is USD 3,720 per person for two, or USD 2,360 for six."
     },
     {
       "id": "landscapes-heading",
@@ -81,7 +81,7 @@ const body = {
     {
       "id": "landscapes",
       "type": "paragraph",
-      "text": "The Zhangjiajie route spends three nights near Zhangjiajie National Forest Park and Tianmen Mountain before continuing to the Li River. You trade the Chengdu panda stop for sandstone peaks, more stone steps and a direct train to Guilin that takes about seven hours. It starts at USD 3,890 per person for two, or USD 3,090 for six."
+      "text": "The Zhangjiajie route spends three nights near Zhangjiajie National Forest Park and Tianmen Mountain before continuing to the Li River. You trade the Chengdu panda stop for sandstone peaks, more stone steps and a direct train to Guilin that takes about seven hours. It starts at USD 3,680 per person for two, or USD 2,430 for six."
     },
     {
       "id": "yunnan-heading",
@@ -92,7 +92,7 @@ const body = {
     {
       "id": "yunnan",
       "type": "paragraph",
-      "text": "Yunnan is for travellers who want Dali, Lijiang and Shangri-La more than Shanghai. The road via Tiger Leaping Gorge takes about five to six hours with stops, and Shangri-La is around 3,300 metres above sea level. Allow for the altitude. The 14-day route is USD 3,890 per person for two and USD 3,090 for six."
+      "text": "Yunnan is for travellers who want Dali, Lijiang and Shangri-La more than Shanghai. The road via Tiger Leaping Gorge takes about five to six hours with stops, and Shangri-La is around 3,300 metres above sea level. Allow for the altitude. The 14-day route is USD 4,110 per person for two and USD 2,640 for six."
     },
     {
       "id": "huangshan-heading",
@@ -103,7 +103,7 @@ const body = {
     {
       "id": "huangshan",
       "type": "paragraph",
-      "text": "Huangshan takes a full mountain day, then the route eases into West Lake, Suzhou and three nights in Shanghai. The Xi'an–Huangshan train takes about seven hours; a flight is used only if it runs on your dates. At USD 3,790 per person for two or USD 2,990 for six, this is the lowest-priced of the four."
+      "text": "Huangshan takes a full mountain day, then the route eases into West Lake, Suzhou and three nights in Shanghai. The Xi'an–Huangshan train takes about seven hours; a flight is used only if it runs on your dates. At USD 3,580 per person for two or USD 2,200 for six, this is the lowest-priced of the four."
     },
     {
       "id": "length-heading",
@@ -115,18 +115,18 @@ const body = {
       "id": "length",
       "type": "list",
       "items": [
-        "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour: from USD 2,990 per person for two travellers",
-        "Beijing, Hangzhou, Suzhou & Shanghai: 11-Day Private Tour: from USD 2,690 per person for two travellers",
-        "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour: from USD 3,590 per person for two travellers",
-        "Beijing, Xi'an & the Silk Road: 15-Day Private Tour: from USD 4,590 per person for two travellers",
-        "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour: from USD 4,690 per person for two travellers",
-        "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour: from USD 5,890 per person for two travellers"
+        "Beijing, Xi'an, Guilin & Shanghai: 10-Day Private Tour: from USD 2,510 per person for two travellers",
+        "Beijing, Hangzhou, Suzhou & Shanghai: 11-Day Private Tour: from USD 2,670 per person for two travellers",
+        "Shanghai, Zhangjiajie, Fenghuang & Guilin: 13-Day Private Tour: from USD 3,300 per person for two travellers",
+        "Beijing, Xi'an & the Silk Road: 15-Day Private Tour: from USD 4,370 per person for two travellers",
+        "Beijing, Xi'an, Chengdu, Yangtze Cruise & Shanghai: 17-Day Private Tour: from USD 4,580 per person for two travellers",
+        "Grand China with Zhangjiajie & the Yangtze: 21-Day Private Tour: from USD 5,920 per person for two travellers"
       ]
     },
     {
       "id": "small-group",
       "type": "paragraph",
-      "text": "The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is USD 2,790 per person, twin share. Check the departure table before choosing a route; dates may settle the decision."
+      "text": "The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is USD 2,230 per person, twin share. Check the departure table before choosing a route; dates may settle the decision."
     },
     {
       "id": "faq",
@@ -135,7 +135,7 @@ const body = {
       "items": [
         {
           "question": "Which 14-day China tour is best for a first trip?",
-          "answer": "For a first visit, we would choose Homeground's 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour. It puts the Great Wall, Terracotta Warriors, pandas and Li River into one route without Zhangjiajie's long stair days. The published price is USD 3,990 per person for two sharing a room, before international flights."
+          "answer": "For a first visit, we would choose Homeground's 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour. It puts the Great Wall, Terracotta Warriors, pandas and Li River into one route without Zhangjiajie's long stair days. The published price is USD 3,720 per person for two sharing a room, before international flights."
         },
         {
           "question": "Which route has the least travel time?",
@@ -147,7 +147,7 @@ const body = {
         },
         {
           "question": "Can we combine two routes?",
-          "answer": "Homeground's 21-day Grand China private tour already joins the classic cities with Zhangjiajie and a three-night Yangtze cruise. It starts at USD 5,890 per person for two sharing a room, before international flights. For a different combination, we prepare a written quote."
+          "answer": "Homeground's 21-day Grand China private tour already joins the classic cities with Zhangjiajie and a three-night Yangtze cruise. It starts at USD 5,920 per person for two sharing a room, before international flights. For a different combination, we prepare a written quote."
         }
       ]
     },
@@ -179,10 +179,6 @@ const body = {
         {
           "label": "What a 2-week China tour costs",
           "href": "/guides/china-2-week-tour-cost/"
-        },
-        {
-          "label": "Should you add a Yangtze cruise to your China itinerary?",
-          "href": "/guides/yangtze-cruise-fit-china-itinerary/"
         },
         {
           "label": "China small-group tours 2027: dates and prices",

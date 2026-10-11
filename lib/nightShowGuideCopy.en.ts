@@ -17,9 +17,9 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     quickBody:
       "Start with Tianmen Fox Fairy when you sleep downtown and want an outdoor story. In Wulingyuan, compare Charming Xiangxi for folk-variety content with Eternal Love for a large theatre production. If the group is tired or starts early tomorrow, choose no show.",
     figureAlt:
-      "Editorial illustration of an outdoor canyon stage, folk-performance objects and an indoor theatre connected by a folded route line.",
+      "Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon.",
     figureCaption:
-      "Editorial illustration—not a photograph of any venue. The three objects represent the formats you are comparing.",
+      "Editorial illustration—not a photograph of any venue.",
     checkedLabel: "Key sources sampled",
     checkedDate: "22 July 2026",
   },

@@ -64,3 +64,5 @@ No documentary photograph is supplied. Do not use AI to fabricate a vinegar work
 - Five living-evidence objects
 - Museum provenance checklist
 - Health/heritage boundaries and recovery actions
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a round jar with a cloth cap and a paper label, and a small bowl beside it. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

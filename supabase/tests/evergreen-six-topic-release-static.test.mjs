@@ -126,14 +126,17 @@ test("the Great Wall selector has reciprocal localized links and compliant asset
     }
   }
 
-  for (const name of [
-    "hero-1600.webp",
-    "section-decision-en-1440.webp",
-    "section-decision-zh-1440.webp",
-    "section-decision-ko-1440.webp",
+  // The hero is a flat hand-drawn illustration (redrawn 2026-10-11): two colours and black line,
+  // stored losslessly, so it is far smaller than the diagrams. An empty placeholder would still be
+  // well under 5 KB.
+  for (const [name, minimumBytes] of [
+    ["hero-1600.webp", 5_000],
+    ["section-decision-en-1440.webp", 20_000],
+    ["section-decision-zh-1440.webp", 20_000],
+    ["section-decision-ko-1440.webp", 20_000],
   ]) {
     const details = await stat(path.join(projectRoot, `public/images/guides/${slug}/${name}`));
-    assert.ok(details.size > 20_000, `${name} is not a placeholder`);
+    assert.ok(details.size > minimumBytes, `${name} is not a placeholder`);
   }
   assert.match(selectorBodies.en, /do not send passport, payment, medical or detailed mobility information/iu);
 });

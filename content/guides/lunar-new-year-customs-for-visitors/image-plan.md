@@ -44,3 +44,5 @@
 - Do not use generative crowd extension, face enhancement or synthetic station detail.
 - Keep the pressure-map caption stating that annual official dates belong to the State Council, transport authorities and named venues.
 - Do not add dates to the pressure-map artwork. Annual dates remain editable text on the public-holiday owner.
+
+- 2026-10-11 (charts): the three in-body charts were re-set in the site's own typography (ivory ground, serif headings, hairline rules, one rust accent; no gradient, coloured panels or decorative strokes). They now show the four phases as four columns under one rule. Wording is unchanged and no dates were added. Same file names and dimensions. Each is HTML text rasterised locally; no image model was used. Current SHA-256 values and the full record: `docs/homeground-photo-provenance.md`, “Decision charts re-set in the site's typography (October 11, 2026)”. Earlier descriptions of the charts' look in this plan are history.

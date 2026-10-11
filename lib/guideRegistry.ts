@@ -440,7 +440,7 @@ export const legacyGuideRegistry = [
         description:
           "Compare Tianmen Fox Fairy, Charming Xiangxi and Eternal Love by hotel base, weather, English support and next-day timing—and when to skip all three.",
         heroAlt:
-          "Editorial illustration comparing an outdoor canyon stage, folk-performance objects and an indoor theatre.",
+          "Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon.",
         navTitle: "Zhangjiajie night-show guide",
         featuredLinkLabel: "Compare three shows against the whole evening",
         openGraphLocale: "en_US",
@@ -451,7 +451,7 @@ export const legacyGuideRegistry = [
         headline: "哪一场张家界夜间演出真正适合你的行程？",
         description:
           "按酒店位置、天气、英语支持和次日安排，对比天门狐仙、魅力湘西与张家界千古情，并判断什么时候三场都不看更合理。",
-        heroAlt: "对比峡谷实景舞台、民俗演艺意象与室内剧场的编辑插画。",
+        heroAlt: "夜色中的一座山，山顶附近有一个发光的门洞，一条长阶梯通向它，旁边是月亮的插画。",
         navTitle: "张家界夜间演出指南",
         featuredLinkLabel: "把三场演出放进整个晚上再比较",
         openGraphLocale: "zh_CN",
@@ -463,7 +463,7 @@ export const legacyGuideRegistry = [
         description:
           "숙소 위치, 날씨, 영어 지원, 다음 날 일정으로 천문호선·매력상서·장가계 천고정을 비교하고, 세 공연을 모두 건너뛰는 편이 나은 경우도 확인하세요.",
         heroAlt:
-          "야외 협곡 무대, 민속 공연 소품, 실내 극장을 비교하는 편집 일러스트.",
+          "밤의 산 일러스트. 정상 가까이에 빛나는 문 모양 구멍이 있고, 긴 계단이 그곳까지 이어지며, 달이 떠 있다.",
         navTitle: "장가계 야간 공연 가이드",
         featuredLinkLabel: "세 공연을 저녁 전체 일정과 함께 비교하기",
         openGraphLocale: "ko_KR",
@@ -673,7 +673,7 @@ export const legacyGuideRegistry = [
         description:
           "Planning China with older parents? Compare realistic 12- and 14-day routes, with hotel changes, walking, transfer days and recovery time built in.",
         heroAlt:
-          "A cut-paper illustration of a China map with three route markers, luggage and a calendar.",
+          "Illustration of a bench with a sun hat on the seat and a walking stick hooked over its end.",
         navTitle: "China with older parents",
         featuredLinkLabel:
           "Compare realistic 12- and 14-day routes with older parents",
@@ -685,7 +685,7 @@ export const legacyGuideRegistry = [
         headline: "带父母来中国旅行？围绕体力，而不只是城市来设计路线",
         description:
           "带年长父母规划中国旅行？比较现实可行的 12 天与 14 天路线，把换酒店、步行、转场日和恢复时间一起算进去。",
-        heroAlt: "纸艺风格的中国地图、三个路线标记、行李箱和日历插图。",
+        heroAlt: "一张长椅，椅面上放着一顶遮阳帽，椅子一端挂着一根手杖的插画。",
         navTitle: "带父母游中国",
         featuredLinkLabel: "比较带父母旅行的 12 天与 14 天现实路线",
         openGraphLocale: "zh_CN",
@@ -698,7 +698,7 @@ export const legacyGuideRegistry = [
         description:
           "부모님과 중국 여행을 준비한다면 12일·14일 현실 일정을 비교해 보세요. 숙소 이동, 걷기, 도시 간 이동일과 회복 시간까지 함께 계산합니다.",
         heroAlt:
-          "중국 지도와 세 개의 경로 표식, 여행 가방, 달력을 표현한 종이 공예 일러스트.",
+          "앉는 자리에 햇빛 가리개 모자가 놓이고 한쪽 끝에 지팡이가 걸린 벤치 일러스트.",
         navTitle: "부모님과 중국 여행",
         featuredLinkLabel: "부모님과 함께하는 현실적인 12일·14일 일정 비교하기",
         openGraphLocale: "ko_KR",

@@ -40,3 +40,5 @@ Rights status: not yet licensed; do not scrape social media or reuse government/
 ## What remains HTML
 
 The five-layer system table, evidence-state table, delivery chain, trade-off table, recovery actions and final verification stay in accessible HTML. They are not baked into the hero.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a delivery drone carrying a parcel above city rooftops. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

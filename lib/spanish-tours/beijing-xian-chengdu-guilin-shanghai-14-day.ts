@@ -3,9 +3,9 @@ import type { SpanishTourCopy } from "../spanishTourCopy";
 export const beijingXianChengduGuilinShanghai14DayCopy: SpanishTourCopy = {
   title: "Pekín, Xi'an, Chengdu, Guilin y Shanghái: viaje privado de 14 días",
   metadataTitle: "China en 2 semanas: Pekín, pandas, Guilin y Shanghái",
-  metadataDescription: "Viaje privado de 14 días: Gran Muralla, Guerreros de Terracota, pandas, río Li y Shanghái. Por persona, 3.990 USD para 2 y 3.190 para 6, con vuelos internos.",
+  metadataDescription: "Viaje privado de 14 días: Gran Muralla, Guerreros de Terracota, pandas, río Li y Shanghái. Por persona, 3.720 USD para 2 y 2.360 para 6, con vuelos internos.",
   eyebrow: "De Pekín a Shanghái en 14 días, con tiempo para los pandas y el río Li",
-  lede: "Para dos personas en habitación doble, nuestra ruta privada de 14 días Pekín–Xi'an–Chengdu–Guilin–Shanghái cuesta desde 3.990 USD por persona; los vuelos internacionales van aparte. Dos trenes y dos vuelos internos cortos evitan que los trayectos largos se coman los días de visita.",
+  lede: "Para dos personas en habitación doble, nuestra ruta privada de 14 días Pekín–Xi'an–Chengdu–Guilin–Shanghái cuesta desde 3.720 USD por persona; los vuelos internacionales van aparte. Dos trenes y dos vuelos internos cortos evitan que los trayectos largos se coman los días de visita.",
   summary: "Las trece noches de hotel incluyen desayuno. En cada ciudad, un guía local y un vehículo son solo para su grupo los días de visita; están incluidas las entradas indicadas, los traslados, dos trenes en segunda clase y dos vuelos en clase turista. Los días de viaje, un conductor le despide y otro le recibe en la siguiente parada.",
   highlights: [
     "Cuatro noches en Pekín, con la Gran Muralla en Mutianyu",
@@ -86,7 +86,7 @@ export const beijingXianChengduGuilinShanghai14DayCopy: SpanishTourCopy = {
   faq: [
     {
       question: "¿Cuánto cuesta un viaje privado de 14 días por China?",
-      answer: "En el viaje privado de 14 días Pekín–Xi'an–Chengdu–Guilin–Shanghái, dos personas en habitación doble pagan 3.990 USD cada una, 7.980 USD en total. Con cuatro viajeros son 3.390 USD por persona y con seis, 3.190 USD. El precio de los servicios en tierra cubre 13 noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas indicadas, dos trenes de alta velocidad y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas se añaden aparte. Para otros tamaños de grupo, pídanos el precio por escrito."
+      answer: "En el viaje privado de 14 días Pekín–Xi'an–Chengdu–Guilin–Shanghái, dos personas en habitación doble pagan 3.720 USD cada una, 7.440 USD en total. Con cuatro viajeros son 2.620 USD por persona y con seis, 2.360 USD. El precio de los servicios en tierra cubre 13 noches de hotel con desayuno, guías y vehículo en cada ciudad los días de visita, las entradas indicadas, dos trenes de alta velocidad y dos vuelos internos. Los vuelos internacionales, las comidas y las cenas se añaden aparte. Para otros tamaños de grupo, pídanos el precio por escrito."
     },
     {
       question: "¿El guía habla español?",

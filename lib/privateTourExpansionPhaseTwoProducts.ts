@@ -1069,7 +1069,7 @@ const classicChina: PrivateTourProduct = {
   heroImage: image(classicChinaSlug, "hero.webp", 1600, 800, l("Forbidden City seen from Jingshan", "从景山看故宫", "경산에서 본 자금성"), l("Four Beijing nights protect three full touring days and a light arrival day.", "北京连住 4 晚，保留 3 个完整游览日与轻松抵达日。", "베이징 4박으로 종일 관광 3일과 가벼운 도착일을 확보합니다.")),
   gallery: [image(classicChinaSlug, "gallery-1.webp", 1600, 1200, l("Terracotta Warriors in Xi'an", "西安兵马俑", "시안 병마용"), l("Xi'an receives three nights and a full Terracotta Warriors day.", "西安住 3 晚，并把完整一天留给兵马俑。", "시안에서 3박하고 병마용에 하루를 온전히 씁니다."))],
   routeMedia: [{ day: 9, variants: [{ label: l("Shanghai", "上海", "상하이"), image: image(classicChinaSlug, "route-day-9.webp", 1600, 901, l("Shanghai skyline from the Bund", "从外滩看上海天际线", "와이탄에서 본 상하이 스카이라인"), l("Four Shanghai nights leave one flexible day after the core city route.", "上海连住 4 晚，核心城市游览后仍保留一个弹性日。", "상하이 4박으로 핵심 도심 일정 뒤 선택 하루를 남깁니다.")) }] }],
-  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 18720, usdPerPerson: 2880 }, { travelers: 4, cnyPerPerson: 14300, usdPerPerson: 2200 }, { travelers: 6, cnyPerPerson: 14100 }])],
+  packages: [standardPackage([{ travelers: 2, cnyPerPerson: 18780, usdPerPerson: 2890 }, { travelers: 4, cnyPerPerson: 12740, usdPerPerson: 1960 }, { travelers: 6, cnyPerPerson: 11240, usdPerPerson: 1730 }])],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
   faq: [
@@ -1080,9 +1080,9 @@ const classicChina: PrivateTourProduct = {
         "12일 프라이빗 투어는 1인당 얼마인가요?",
       ),
       answer: l(
-        "Per person, sharing a twin room, prices start at USD 2,880 for 2 travellers, USD 2,200 for 4 and USD 2,170 for 6. The guide and vehicle serve only your group, so the per-person price is higher when fewer of you travel. Single-room supplements and holiday surcharges are extra.",
-        "按双人同住，每人起价：2人¥18,720，4人¥14,300，6人¥14,100。导游和车只服务你们一行，人数越少，每人价格越高。单房差和节假日附加费另计。",
-        "2인 1실 기준 1인 시작가는 2명 ₩4,030,000, 4명 ₩3,080,000, 6명 ₩3,040,000입니다. 가이드와 차량은 일행만 이용하므로 인원이 적을수록 1인 요금이 높아집니다. 1인실 추가금과 공휴일 추가금은 별도입니다.",
+        "Per person, sharing a twin room, prices start at USD 2,890 for 2 travellers, USD 1,960 for 4 and USD 1,730 for 6. The guide and vehicle serve only your group, so the per-person price is higher when fewer of you travel. Single-room supplements and holiday surcharges are extra.",
+        "按双人同住，每人起价：2人¥18,780，4人¥12,740，6人¥11,240。导游和车只服务你们一行，人数越少，每人价格越高。单房差和节假日附加费另计。",
+        "2인 1실 기준 1인 시작가는 2명 ₩4,040,000, 4명 ₩2,740,000, 6명 ₩2,420,000입니다. 가이드와 차량은 일행만 이용하므로 인원이 적을수록 1인 요금이 높아집니다. 1인실 추가금과 공휴일 추가금은 별도입니다.",
       ),
     },
     {

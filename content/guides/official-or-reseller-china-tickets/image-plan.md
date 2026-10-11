@@ -14,3 +14,5 @@
 - Derivative treatment: centred 16:10 crop, Lanczos resize, sRGB RGB export and metadata-stripped WebP encoding at quality 88.
 - Superseded source retained for history only: `hero-source.svg`; it no longer generates the production hero.
 - Evidence boundary: no real venue, seller, ticket, booking state, availability, price, refund policy or admission outcome is shown.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: an admission ticket passing from one hand to another. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

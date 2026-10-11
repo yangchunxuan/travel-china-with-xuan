@@ -11,7 +11,7 @@ export const visadoChinaEspanoles: SpanishGuide = {
     src: "/images/guides/china-passport-validity-and-blank-pages/hero-1600.webp",
     width: 1600,
     height: 1000,
-    alt: "Diagrama de un pasaporte junto a dos tarjetas de documentos, una de ellas marcada con un visto",
+    alt: "Ilustración de un pasaporte abierto: a la izquierda la página con foto y, a la derecha, una página en blanco con un recuadro punteado que señala un dedo",
   },
   datePublished: "2026-10-11",
   dateModified: "2026-10-11",

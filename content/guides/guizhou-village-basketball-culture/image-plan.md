@@ -37,3 +37,5 @@ The preferred documentary replacement is **not cleared in this production pack**
 - Alt text identifies an AI-assisted symbolic basketball-court illustration and states that it is not documentary; it must not present Taipan or a named event as visibly verified.
 - A caption may identify the article topic, but it must not assign an exact competition, date, crowd or venue to this illustration.
 - Do not call an image “traditional,” “spontaneous,” “all-night” or “free” unless the image record and dated event notice support that wording.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a basketball spinning on one finger. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.
