@@ -9,3 +9,5 @@
 - Accuracy: depict state transitions only—submitted, confirmed, delivered, refund requested and posted—without implying a successful refund or legal finding.
 - Rights: original Homeground abstract artwork created 2026-08-13; no external source, screenshot, logo or third-party licence; documentary-neutral.
 - Duplicate rule: unique composition and palette for this article; verify SHA-256 against the site and this batch before publication.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a stack of papers held together by a paper clip, with a tick on the top sheet. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

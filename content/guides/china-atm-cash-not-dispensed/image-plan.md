@@ -9,3 +9,5 @@
 - Rights: original Homeground abstract artwork created 2026-08-13; no external photo, screenshot, interface capture, source or third-party license
 - Documentary boundary: explanatory and documentary-neutral; no real person, device interface, account or location is depicted
 - Duplicate rule: unique composition and palette; verify SHA-256 against existing guide assets before publication
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: a cash machine with a cross on its screen, and a hand taking a bank card back from its slot. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

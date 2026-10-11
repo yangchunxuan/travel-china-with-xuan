@@ -35,3 +35,5 @@ All assets are original Homeground editorial graphics created locally on 2026-08
 - Do not crop the hero into a card that removes the “editorial illustration” alt boundary.
 - Do not add a stock wall photograph unless its exact section, creator, licence and date are documented.
 - Do not use the graphic to imply that night tours, cable cars or any gate operate every day.
+
+- 2026-10-11: the published picture was redrawn by hand as an original Homeground vector drawing (flat panel, cut-paper shape, brush line) and now shows: the Great Wall climbing a ridge past three watchtowers, with a map pin above the middle tower. Same file name and dimensions. Current SHA-256 and the full record: `docs/homeground-photo-provenance.md`, “Hand-drawn replacements of generated guide illustrations (October 11, 2026)”. Earlier descriptions and hashes of this picture in this plan are history.

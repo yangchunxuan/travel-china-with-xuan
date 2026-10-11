@@ -12,7 +12,7 @@ export const murallaChinaDesdePekin: SpanishGuide = {
     src: "/images/guides/great-wall-section-selector-from-beijing/hero-1600.webp",
     width: 1600,
     height: 1000,
-    alt: "Ilustración de la Gran Muralla sobre crestas de montaña, con cuatro torres que representan cuatro tramos; es un gráfico de decisión, no un mapa",
+    alt: "Ilustración de la Gran Muralla subiendo por una cresta con tres torres de vigilancia y un marcador de mapa sobre la torre central",
   },
   datePublished: "2026-10-11",
   dateModified: "2026-10-11",

@@ -1994,3 +1994,70 @@ figure captions and in each guide's image plan.
 | `jingdezhen-china` — figure — blue-and-white wares | [Changjiang, Jingdezhen, Jiangxi, China - panoramio (23).jpg](https://commons.wikimedia.org/wiki/File:Changjiang,_Jingdezhen,_Jiangxi,_China_-_panoramio_(23).jpg), ping lin, 29 March 2014, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/); 3264 × 2448; `ed29f01238164f31ac5ac9e81183725f55f19dab136d1ea9d25220f85583cb05` | `public/images/guides/jingdezhen-china/porcelain-1600.webp`, 1600 × 1000; `63c1722aecf420e40d4eeef91cf7e68f6c4fb7318cc81c16bfa82810e3de1174` |
 | `changbai-mountain-heaven-lake` — figure — Changbai Waterfall | [安图 长白山之长白瀑布 03.jpg](https://commons.wikimedia.org/wiki/File:%E5%AE%89%E5%9B%BE_%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B9%8B%E9%95%BF%E7%99%BD%E7%80%91%E5%B8%83_03.jpg), Liuxingy, 2025-07-11, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); 6000 × 4000; `b702528450efc5fd66c70f1d4a08d9e19f91a16f815abb6099c46bc95f97b6f9` | `public/images/guides/changbai-mountain-heaven-lake/waterfall-1600.webp`, 1600 × 1000; `2e147bda1e1d9ed62e9b4e1e821329c92d960238f4f869e57cecd1d18c6c77ad` |
 | `changbai-mountain-heaven-lake` — hero — Heaven Lake | `public/images/tours/changbaishan-yanji-winter-6-day-private-tour/hero.webp` (already in the repository; [Tianchi Changbai.JPG](https://commons.wikimedia.org/wiki/File:Tianchi_Changbai.JPG), Wang65, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)); 1920 × 1440; `4d271b23b7eb16396f030867f9b146cc5246c294871fd2b136eb8f933ba975da` | `public/images/guides/changbai-mountain-heaven-lake/hero-1600.webp`, 1600 × 1000; `f9b126653a2652d6ec9fc4606ecffa1eba5d811138e0ae39db40bfa8f133075d` |
+
+<!-- hand-drawn-20261011:start -->
+
+## Hand-drawn replacements of generated guide illustrations (October 11, 2026)
+
+The project owner asked for every guide picture that had been produced by an image model or as an
+abstract generated vector to be redrawn by hand in one manner, leaving every real photograph untouched.
+The 39 pictures below were redrawn as original Homeground vector drawings: a flat panel colour, an
+off-white cut-paper shape for the object, black brush line for its details and for the hand. The manner
+follows the four service-hub drawings already on the site. No photograph, third-party artwork, logo,
+map data or generated image is incorporated; no text is embedded in any of them. File names, pixel
+dimensions and page markup are unchanged; the descriptive alternative text of each was rewritten to say
+what the new drawing shows. The drawings were put through two blind recognition reviews before release.
+
+The SHA-256 values below supersede any earlier value recorded for the same path in this document or in
+a guide's `image-plan.md`. The earlier `hero-source.*` files under `content/guides/` are kept as history
+only and no longer correspond to a published picture.
+
+| File | SHA-256 | Shows |
+|---|---|---|
+| `public/images/guides/china-esim-vs-local-sim/hero-1600.webp` | `0eb40c2db9a5d70537a0d4a5cb7ec60f8ac343091fc7c3b45060a19ff4a0562e` | Illustration of a SIM card held up by one finger, with signal waves at its corner. |
+| `public/images/guides/china-power-plugs-voltage-and-adapters/hero-1600.webp` | `964e320322052a934a33b00bb01bf6878d0d0aa4b3b91783d0c38d9879566b05` | Illustration of a Chinese wall socket with two-pin and three-pin openings, and a plug about to go in. |
+| `public/images/guides/china-passport-validity-and-blank-pages/hero-1600.webp` | `07035bbe5e7fc5a56bbe2689b1f58c7c531869fbcb8e43c016ae525defe7b334` | Illustration of an open passport: a photo page on the left and, on the right, a blank page with a dotted square that a finger points to. |
+| `public/images/guides/great-wall-section-selector-from-beijing/hero-1600.webp` | `30072c5f1ee937293224d10667d4d69e1d03962d611b72c1732b3d954afa5d51` | Illustration of the Great Wall climbing a ridge past three watchtowers, with a map pin above the middle tower. |
+| `public/images/guides/why-china-museums-have-stamps/hero-1600.webp` | `99a664efb29bcffdf1d50da6d16deca7099fb715a8f736b4101cb8221e80313b` | Illustration of a hand pressing a wooden stamp down toward a page that already has two stamp marks. |
+| `public/images/guides/china-rail-only-route/hero-1600.webp` | `1b818bf2443119a9719c74d04badb4caa0257dca0da287c85b9d4ae5817ff5c5` | Illustration of a high-speed train entering from the left along a straight track. |
+| `public/images/guides/zhenjiang-vinegar-living-fermentation/hero-1600.webp` | `c08a82e4c46cc1433111f1bac20226e6c1119291b0814fa5ace51e1095ebd3ca` | Illustration of a round jar with a cloth cap and a paper label, and a small bowl beside it. |
+| `public/images/guides/how-to-pay-in-china-as-a-tourist/hero-1600.webp` | `24fe7edfd4b69db32515f3f49d13b2200f8715da2473e4a0a4e293351be1e02c` | Illustration of a phone held up by one finger, showing a payment code on its screen. |
+| `public/images/guides/china-climate-regions-for-trip-timing/hero-1600.webp` | `03b7da8b8b03dadbc4ee26561235b6d0cae749f05a718b8c1ae379d0090ca51c` | Illustration of a hand holding an umbrella, with sun on one side and rain on the other. |
+| `public/images/guides/china-booking-dispute-evidence-pack/hero-1600.webp` | `b1ec358d0bd1a33ed1623c3fb773f83a35d3fe99e7774242ef07f60dc90371cb` | Illustration of a stack of papers held together by a paper clip, with a tick on the top sheet. |
+| `public/images/guides/china-domestic-flight-fare-bundle-baggage/hero-1600.webp` | `52fb9d95860c066c0fdaffbad6ea1c3049379344f32a82bb8e301a247e1fe4f1` | Illustration of a boarding pass held by one finger, with a baggage tag hanging from it on a string. |
+| `public/images/guides/china-hub-and-spoke-or-multi-base-route/hero-1600.webp` | `a1babfc6b75c735f94be927050637eb3ffcc8ca61c5bb1f4a275bc58e13cd5b4` | Illustration of a small house with dotted paths leading out to a pagoda, a sailing boat and a pair of peaks. |
+| `public/images/guides/china-itinerary-with-young-children/hero-1600.webp` | `ff485b70c8956a36d4c054b1f242df30988243a9f278246bfb1ce53d52feabdb` | Illustration of a small fist holding a paper windmill. |
+| `public/images/guides/beijing-courtyard-hotel-or-modern-hotel/hero-1600.webp` | `1620d2a9855bb7e10ec4fb4ca17d5209e1d036dadbf743b5c624ab581ba18ddb` | Illustration of a low courtyard house with a tiled roof and two lanterns beside a tall modern hotel block, with a suitcase between them. |
+| `public/images/guides/china-atm-cash-not-dispensed/hero-1600.webp` | `cf309a74bad684e538211de81217bf140bdd464c06bb17beaa2dee0e3d4fbaa0` | Illustration of a cash machine with a cross on its screen, and a hand taking a bank card back from its slot. |
+| `public/images/guides/china-customs-red-green-channels/hero-1600.webp` | `1248845ba2d4ad7c255bf73c8fe32669c0715e6f5df07f9a9fa97b28c75a66bc` | Illustration of a suitcase on a conveyor belt, half way into a baggage scanner. |
+| `public/images/guides/china-map-coordinate-offset-explained/hero-1600.webp` | `1afd3d5613e607952b2738674642d62907dc37d0a4998923a6705d721cb04b54` | Illustration of a street map with a solid pin on one spot and a dotted outline of the same pin a short distance away. |
+| `public/images/guides/china-power-bank-rules-flights-trains/hero-1600.webp` | `d1fe67d3996892b7667e1b7e70063740b6d62611774dd790046444ac364bca27` | Illustration of a power bank with a lightning mark, connected by a cable to a phone. |
+| `public/images/guides/china-public-wifi-passport-login/hero-1600.webp` | `19b24a7e5c40873be0411c3e99697d112a8c3ffa811ab215247194717a07c69c` | Illustration of a phone showing a Wi-Fi symbol and a login box, with a passport beside it. |
+| `public/images/guides/china-separate-flight-tickets-self-transfer-risk/hero-1600.webp` | `a92b0a7118f43e0e75840de0bc4deae96e8700607cd8507496991ecd52fca8f4` | Illustration of two separate boarding passes with a clock in the gap between them. |
+| `public/images/guides/china-shoulder-season-value-tradeoff/hero-1600.webp` | `3fa75b8d6986db6485358b3f29b1aa68800c4224733d43a24a23d8af5a1e94b7` | Illustration of a ginkgo leaf held up by its stalk. |
+| `public/images/guides/commercial-aparthotel-or-residential-rental-china/hero-1600.webp` | `bc2d1bcdbe05a3ea701746bea41b151e36e2dd3b32e6b274bebe2e32f590438c` | Illustration of a key with a tag shaped like an apartment building. |
+| `public/images/guides/food-plants-and-animal-products-into-china/hero-1600.webp` | `01abb51de7415fc8a56609386a400a82102ba4df5185a4914cefda5be1f5846b` | Illustration of an open suitcase with an apple, a leaf and a sausage sticking out of it. |
+| `public/images/guides/guangzhou-shenzhen-hong-kong-route-order/hero-1600.webp` | `930778e053b6b6d812a081093e5f1b1cfde5e4d11e26f6f1ced619a711dbc186` | Illustration of a signpost with three arrow boards marked with one, two and three dots. |
+| `public/images/guides/hong-kong-macau-mainland-reentry-count/hero-1600.webp` | `436b99d7cb70c2e77ccf077a28c326b759be343739be78b0c27b348fce4bb011` | Illustration of a ferry under way on the water, smoke rising from its funnel. |
+| `public/images/guides/kunming-dali-lijiang-shangri-la-route-order/hero-1600.webp` | `4fb1b3bc22106f8bc89e2a58860fe336918ac328eb0ef704fe8377dea8055fc2` | Illustration of a mountain with a road winding up past three stops to a flag on the summit. |
+| `public/images/guides/lost-passport-in-china-exit-recovery/hero-1600.webp` | `ba52a55da6b35cf08fc19e03ba5f953255af12970a1d70567b746b98b6183010` | Illustration of an empty pocket with the dotted outline of a passport above it. |
+| `public/images/guides/lost-phone-in-china-digital-recovery/hero-1600.webp` | `76fe9b2dacb68ed9a0e42cd4cd1c943b164199d2ce786776631148d870b3e733` | Illustration of a phone with a padlock on its screen. |
+| `public/images/guides/minsu-homestay-or-hotel-china/hero-1600.webp` | `7374da001874ae58c5d6199b2fe94d4c551f428db230dc578d6e0de8b8b4ae5d` | Illustration of a finger pressing a reception desk bell. |
+| `public/images/guides/passport-name-across-china-bookings/hero-1600.webp` | `cf1bd7b2f580260422ada0c6ba3e6c42a14a0882ea8aca2e71e28aaa9a355464` | Illustration of a hand holding a passport with a ticket tucked into it, the same name line on both. |
+| `public/images/guides/serviced-apartment-or-hotel-china/hero-1600.webp` | `d48e02fab0ccfa33f175337e8b5a0b3a54c7a733cf81dd0d5ff6075de9f3dd8d` | Illustration of a hand holding the floor plan of a small flat with a bed, a sofa, a table and a kitchen counter. |
+| `public/images/guides/shanghai-suzhou-hangzhou-nanjing-route-order/hero-1600.webp` | `03ec87956d8c1df88d6d0abf2e83df0999d5138b74d398d67ba2213e7fb2ef37` | Illustration of a strip of four tickets, each with a different landmark and one to four dots beneath. |
+| `public/images/guides/shenzhen-low-altitude-city-infrastructure/hero-1600.webp` | `317bce8aa029245530e4181fc287e6aa36179fcdaf1bf052bfb75218fd7995a5` | Illustration of a delivery drone carrying a parcel above city rooftops. |
+| `public/images/guides/beijing-zhangjiajie-shanghai-10-days/planning-method-1536.png` | `ac03201d87726c4fadaa99cf15515b0016c0e0da2660aad3d2a20f59dd517b00` | Illustration of a calendar page with three days circled and joined by a dotted line, with a finger on the last one. |
+| `public/images/guides/beijing-zhangjiajie-shanghai-10-days/planning-method-1536.webp` | `44c2bae43b28e7d7112dc277a4713e36982450347911dd4ae5854f0f35ec57ac` | Illustration of a calendar page with three days circled and joined by a dotted line, with a finger on the last one. |
+| `public/images/guides/beijing-zhangjiajie-shanghai-10-days/planning-method-1200.webp` | `de8462297254009cca27faf6963ccff069198009ed75672320d0487298ec4ff7` | Illustration of a calendar page with three days circled and joined by a dotted line, with a finger on the last one. |
+| `public/images/guides/beijing-zhangjiajie-shanghai-10-days/planning-method-720.webp` | `6734b0db4eb08292ec43075067ee495d73ce75d86f61194a0221e84fda221480` | Illustration of a calendar page with three days circled and joined by a dotted line, with a finger on the last one. |
+| `public/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.jpg` | `9e42b2b10e147be155c5c377f17d7b2e06e6a51320e8556a4ea9f95968df3607` | Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon. |
+| `public/images/guides/best-zhangjiajie-night-show/night-show-decision-1536.webp` | `3dcba990c374eda118886d8203f67abe612f3424cc7e7307b7f0582182a01616` | Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon. |
+| `public/images/guides/best-zhangjiajie-night-show/night-show-decision-1200.webp` | `05c9305c9a582661c9ba078369d2c8b686fe1d6a4b682ab6a8e9b6c0ede0ef78` | Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon. |
+| `public/images/guides/best-zhangjiajie-night-show/night-show-decision-768.webp` | `bd71d24ab67c4a3c0f04f491cb705e35178ef7faacf1b1c5425515b79489bf30` | Illustration of a mountain at night with a glowing gate near its top, a long stair up to it, and the moon. |
+| `public/images/guides/china-itinerary-with-older-parents/route-comparison-og-1200.jpg` | `ccd5b011b1f0b422739811116efa763106f5e263f8e7b5fb4b7955d7660b115f` | Illustration of a bench with a sun hat on the seat and a walking stick hooked over its end. |
+| `public/images/guides/guizhou-village-basketball-culture/hero-1600.webp` | `88d9ca4d19e148c7e9470a41496a90160ac66e9eb9b751ae9565f7a09f1f5aae` | Illustration of a basketball spinning on one finger. |
+| `public/images/guides/official-or-reseller-china-tickets/hero-1600.webp` | `55870a9c4e58022eedd0ea82d48b3d4080c0e426b0edf517fbf9350b12778dba` | Illustration of an admission ticket passing from one hand to another. |
+| `public/images/guides/when-metro-construction-meets-archaeology/hero-1600.webp` | `552f4b4bd47bfc1c033a7e2903e223fa1c87352b9d5554a287ccf5ddbc09836a` | Illustration of a cracked old jar standing on a stretch of railway track. |
+
+<!-- hand-drawn-20261011:end -->
