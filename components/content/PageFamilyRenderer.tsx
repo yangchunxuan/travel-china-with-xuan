@@ -133,7 +133,13 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
                   {row.map((cell, cellIndex) =>
                     cellIndex === 0 ? (
                       <th key={`${block.id}-${rowIndex}-${cellIndex}`} scope="row" role="rowheader">
-                        {cell}
+                        {block.rowLinks?.[rowIndex] ? (
+                          guideTracking && isPublishedTourLink(block.rowLinks[rowIndex]) ? (
+                            <GuideCtaLink href={block.rowLinks[rowIndex]} {...guideTracking} position="inline" className={styles.tableRouteLink}>{cell}</GuideCtaLink>
+                          ) : (
+                            <Link href={block.rowLinks[rowIndex]} className={styles.tableRouteLink}>{cell}</Link>
+                          )
+                        ) : cell}
                       </th>
                     ) : (
                       <td

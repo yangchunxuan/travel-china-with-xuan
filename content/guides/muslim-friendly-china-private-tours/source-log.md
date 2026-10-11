@@ -11,6 +11,8 @@
 
 ## Company statements that need the owner's sign-off
 
+- Breakfast scope clarification: hotel breakfast is included only with a hotel-included option, within the written confirmation. The five-city 13-day route in `lib/privateTourFiveCityProduct.ts` also has a without-hotels option that excludes hotel breakfasts; the included list and FAQ reflect that distinction. The existing on-request halal-breakfast service is unchanged.
+
 - Lunch and dinner on touring days at restaurants showing the 清真 sign are included when the meal plan is chosen; the price per person is in the written quote (no price is published on this page).
 - Stops are planned around prayer times; mosque visits where the route has them.
 - A halal breakfast is arranged on request (hotel choice or breakfast outside).

@@ -46,6 +46,8 @@ function tourLine(tour) {
         ? `from ${tour.startingPrice.formatted} per person (twin share)`
         : `from ${tour.startingPrice.formatted} per person for ${tour.startingPrice.travelers}`,
     );
+  } else {
+    parts.push("quoted for your dates and group; no public starting price");
   }
   return `- [${tour.title}](${SITE}${tour.href}): ${parts.join(" · ")}. ${tour.comparison.fit}`;
 }
@@ -58,11 +60,11 @@ const cities = readdirSync(path.join(out, "destinations"), { withFileTypes: true
 const lines = [
   "# Homeground China",
   "",
-  `> Homeground China is the English brand of ${homegroundBusiness.englishName} (${homegroundBusiness.registeredName}), a licensed Chinese travel agency (travel agency licence ${homegroundBusiness.travelAgencyLicenceNumber}; inbound and domestic tourism) based in Beijing. It runs private tours of China for foreign travellers, plus a few small-group departures (private means only your own group; no shopping stops, published per-person prices; most routes have an English-speaking guide, and the guide language is confirmed in each quote), and it books attraction tickets and private guides on their own.`,
+  `> Homeground China is the English brand of ${homegroundBusiness.englishName} (${homegroundBusiness.registeredName}), a licensed Chinese travel agency (travel agency licence ${homegroundBusiness.travelAgencyLicenceNumber}; inbound and domestic tourism) based in Beijing. It runs private tours of China for foreign travellers, plus a few small-group departures (private means only your own group; no shopping stops, published itineraries with starting prices where available; most routes have an English-speaking guide, and the guide language is confirmed in each quote), and it books attraction tickets and private guides on their own.`,
   "",
   "Key facts:",
-  `- ${tours.length} published routes with per-person prices in USD. Each price is confirmed for your dates in writing before you pay.`,
-  "- Prices are shown for 2 travellers and for the largest group size; private tours carry only your own group.",
+  `- ${tours.length} published routes. Some have public per-person starting prices in USD; others are quoted for your dates and group. The final price is confirmed in writing before you pay.`,
+  "- Published prices apply to the group size, service option and season shown on each tour page; private tours carry only your own group.",
   "- Attraction tickets (Forbidden City, Terracotta Warriors, museums) can be booked on their own on official systems in the traveller's name.",
   `- Contact: ${homegroundBusiness.serviceEmail}, or the trip brief form at ${SITE}/plan/.`,
   "- Dietary needs (vegetarian, vegan, Jain, halal): any private tour can be booked with a meal plan, lunch and dinner at restaurants chosen for the traveller's standard, priced in the written quote. The standard is asked before quoting, and meals supplied by third parties, such as Yangtze cruise ships, are confirmed in writing before payment. Homeground does not certify food.",

@@ -346,6 +346,24 @@
   font-weight: 500;
 }
 
+.tableRouteLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(10 10 10 / 30%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.tableRouteLink:hover {
+  text-decoration-color: currentColor;
+}
+
+.tableRouteLink:focus-visible {
+  border-radius: 0.2rem;
+  outline: 2px solid var(--hg-color-focus, #b14f37);
+  outline-offset: 4px;
+}
+
 .tableScroll tbody tr {
   transition: background-color 150ms ease;
 }
@@ -719,6 +737,12 @@
     border: 0;
     font-size: 1rem;
     padding: 0 0 0.35rem;
+  }
+
+  .tableRouteLink {
+    align-items: center;
+    display: flex;
+    min-block-size: 2.75rem;
   }
 
   .tableScroll td {
