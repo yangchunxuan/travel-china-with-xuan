@@ -236,7 +236,7 @@ test("the first open answers the press at once: the card's frame, then the card 
   assert.doesNotMatch(host, /requestAnimationFrame/);
   assert.match(host, /useLayoutEffect\(\(\) => \{\s*if \(open\) \{\s*shownRef\.current = true;\s*return;\s*\}[\s\S]*?const previous = returnFocusRef\.current;[\s\S]*?target\?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open\]\);/);
   // The card opens before the browser paints and carries on the frame's entrance.
-  assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?dialog\.showModal\(\);[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt\]\);/);
+  assert.match(dialog, /useLayoutEffect\(\(\) => \{\s*const dialog = dialogRef\.current;[\s\S]*?dialog\.showModal\(\);[\s\S]*?\.focus\(\{ preventScroll: true \}\);\s*\}, \[open, request, frameShownAt, contextKey\]\);/);
   assert.match(dialog, /dialog\.style\.setProperty\("--card-enter-delay"/);
   // The guide's "ask a planner" button warms the card up as its links do.
   assert.match(await source("components/TourContactPanel.tsx"), /className=\{styles\.launcher\}[^>]*data-contact-card-trigger=""/);

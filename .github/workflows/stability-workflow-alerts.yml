@@ -54,12 +54,31 @@ jobs:
           else
             echo 'current=false' >> "$GITHUB_OUTPUT"
           fi
-      - name: Report notification queue check
-        if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Inquiry outbox health'
+      # Empty mode preserves the existing GitHub reporter during rollout. Switch
+      # to cloudflare only after a dedicated Worker heartbeat is verified.
+      - name: Load notification queue sample and latest run
+        if: github.event.workflow_run.name == 'Inquiry outbox health' && vars.OUTBOX_HEARTBEAT_REPORTER != 'cloudflare'
         env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
+          EVENT_RUN_ID: ${{ github.event.workflow_run.id }}
+          EVENT_ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+          EVENT_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: |
+          set -euo pipefail
+          if [[ "${EVENT_CONCLUSION}" == 'success' ]]; then
+            gh run download "${EVENT_RUN_ID}" --repo "${REPOSITORY}" --name "outbox-sample-${EVENT_RUN_ID}-${EVENT_ATTEMPT}" --dir outbox-receipt || true
+          fi
+          # Include newer queued/in-progress runs so an older completed run
+          # cannot supersede the current attempt. Fetch after artifact download.
+          gh api "repos/${REPOSITORY}/actions/workflows/${WORKFLOW_ID}/runs?branch=main&per_page=1" --jq '.workflow_runs[0]' > latest-outbox-run.json
+      - name: Report fresh notification queue check
+        if: github.event.workflow_run.name == 'Inquiry outbox health' && vars.OUTBOX_HEARTBEAT_REPORTER != 'cloudflare'
+        env:
+          OUTBOX_HEARTBEAT_REPORTER: ${{ vars.OUTBOX_HEARTBEAT_REPORTER }}
           STABILITY_HEARTBEAT_URL: ${{ secrets.INQUIRY_OUTBOX_HEARTBEAT_URL }}
-          STABILITY_OUTCOME: ${{ github.event.workflow_run.conclusion == 'success' && 'success' || 'failure' }}
-        run: node tools/report-stability-heartbeat.mjs
+        run: node tools/report-outbox-heartbeat.mjs
       - name: Report deployment verification
         if: steps.latest.outputs.current == 'true' && github.event.workflow_run.name == 'Deploy to GitHub Pages'
         env:

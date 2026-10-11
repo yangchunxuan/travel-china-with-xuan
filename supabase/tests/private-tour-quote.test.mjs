@@ -124,7 +124,11 @@ test("actual intake and notification handlers preserve quote fields, replay iden
   const response = (body) => new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json" } });
   globalThis.Deno = { env: { get: (name) => env.get(name) }, serve: (fn) => { handler = fn; } };
   globalThis.fetch = async (url, init) => {
-    const path = new URL(String(url)).pathname; const body = JSON.parse(init.body);
+    let path = new URL(String(url)).pathname; let body = JSON.parse(init.body);
+    if (path.endsWith("/create_homeground_inquiry_with_receipt_v1")) {
+      assert.match(body.p_rpc_name, /^create_homeground_private_tour_quote(?:_with_traffic)?_v1$/);
+      path = `/rpc/${body.p_rpc_name}`; body = body.p_arguments;
+    }
     if (String(url) === "https://api.resend.com/emails") { messages.push(body); return response({ id: randomUUID() }); }
     if (/\/create_homeground_private_tour_quote(?:_with_traffic)?_v1$/.test(path)) {
       writes.push({ path, body });

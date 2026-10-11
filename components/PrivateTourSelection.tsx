@@ -106,5 +106,5 @@ export function SelectedPrivateTourEmailLink({
   const selectedContext = context
     ? getPrivateTourInquiryContext(context.slug, locale, context.selection)
     : null;
-  return <a className={className} href={selectedContext ? buildPrivateTourMailtoHref(email, locale, selectedContext) : href} onClick={() => trackEvent("contact_option_clicked", { channel: "email", page_language: locale }, { firstPartyContext: { productSlug: selectedContext?.slug, packageId: selectedContext?.selection?.packageId, travelers: selectedContext?.selection?.travelers, surface: "product" } })}>{children}</a>;
+  return <a className={className} href={selectedContext ? buildPrivateTourMailtoHref(email, locale, selectedContext) : href} data-contact-tour={selectedContext?.slug} data-contact-package={selectedContext?.selection?.packageId} data-contact-travelers={selectedContext?.selection?.travelers} onClick={() => trackEvent("contact_option_clicked", { channel: "email", page_language: locale }, { firstPartyContext: { productSlug: selectedContext?.slug, packageId: selectedContext?.selection?.packageId, travelers: selectedContext?.selection?.travelers, surface: "product" } })}>{children}</a>;
 }

@@ -38,7 +38,7 @@ test('trusted root is currently valid with at least 30 days for reviewed rotatio
 });
 
 test('backup installs reviewed CA before export and includes installation in health outcome', () => {
-  const workflow = readFileSync(new URL('../../.github/workflows/inquiry-backup.yml', import.meta.url), 'utf8');
+  const workflow = readFileSync(new URL('../../.github/workflows/inquiry-backup.yml', import.meta.url), 'utf8').replace(/\r\n/gu, '\n');
   const clients = workflow.match(/id: clients\n\s+run: \|\n((?: {10}.*\n)+)/u)?.[1];
   assert.ok(clients, 'CA installation must belong to the existing clients step');
   const check = clients.indexOf('node --test supabase/tests/supabase-root-ca.test.mjs');

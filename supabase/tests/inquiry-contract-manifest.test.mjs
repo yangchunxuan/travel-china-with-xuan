@@ -68,7 +68,13 @@ test('script origins, malformed tags, count and filesystem boundaries are reject
     const f=await fixture(t,{html});await assert.rejects(generateInquiryContract({outputDir:f.directory,env:enabled}));await absent(f.file);
   });
   const f=await fixture(t);const outside=await mkdtemp(join(tmpdir(),'outside-contract-'));t.after(()=>rm(outside,{recursive:true,force:true}));
-  await writeFile(join(outside,'synthetic.js'),body());const target=join(f.directory,f.paths[0].slice(1));await rm(target);await symlink(join(outside,'synthetic.js'),target);
+  const target=join(f.directory,f.paths[0].slice(1));
+  if(process.platform==='win32'){
+    // Junctions test the same realpath escape without Windows symlink privileges.
+    await writeFile(join(outside,'z.js'),body());await rm(dirname(target),{recursive:true});await symlink(outside,dirname(target),'junction');
+  }else{
+    await writeFile(join(outside,'synthetic.js'),body());await rm(target);await symlink(join(outside,'synthetic.js'),target);
+  }
   await assert.rejects(generateInquiryContract({outputDir:f.directory,env:enabled}),{message:'EXPORT_PATH_INVALID'});
 });
 

@@ -15,7 +15,7 @@ import { Transform } from 'node:stream';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const PROJECT_REF = 'xbymvlxethfzqcgyoieb';
-export const BACKUP_SCHEMAS = Object.freeze(['public', 'homeground_private', 'auth', 'storage', 'extensions']);
+export const BACKUP_SCHEMAS = Object.freeze(['public', 'homeground_private', 'homeground_recovery', 'auth', 'storage', 'extensions']);
 // Schema selection alone omits extension definitions. The inquiries' UUID and
 // digest functions need pgcrypto during restore (PostgreSQL 17 pg_dump -n/-e).
 export const BACKUP_EXTENSIONS = Object.freeze(['pgcrypto']);
@@ -165,7 +165,7 @@ export async function createEncryptedBackup({
       scope: {
         schemas: [...BACKUP_SCHEMAS], extensions: [...BACKUP_EXTENSIONS], format: 'postgresql-custom',
         storageObjectFilesIncluded: false, globalRolesIncluded: false,
-        restorePrerequisites: { destinationRolesRequired: true, platformExtensionDefinitionsNotIncluded: ['pg_cron', 'pg_net'] },
+        restorePrerequisites: { destinationRolesRequired: true, latestIndependentDeletionTombstonesRequired: true, platformExtensionDefinitionsNotIncluded: ['pg_cron', 'pg_net'] },
       },
       encryption: 'age-X25519', encryptedFile: name, encryptedBytes, sha256,
     };

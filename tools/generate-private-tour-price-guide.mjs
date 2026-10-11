@@ -6,8 +6,8 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
-const { privateTourProducts, localizePrivateTourProduct } = await import(path.join(ROOT, "lib/privateTourProducts.ts"));
-const { privateTourPublishedPriceNote } = await import(path.join(ROOT, "lib/privateTourCurrencyNote.ts"));
+const { privateTourProducts, localizePrivateTourProduct } = await import(new URL("../lib/privateTourProducts.ts", import.meta.url));
+const { privateTourPublishedPriceNote } = await import(new URL("../lib/privateTourCurrencyNote.ts", import.meta.url));
 
 const ID = "china-private-tour-prices";
 const TODAY = "2026-10-11";

@@ -361,8 +361,10 @@ export function GuideSearchForm({
   const handleKeyDownCapture = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "Escape") {
       event.preventDefault();
-      setSuggestionsDismissed(true);
       if (event.target !== inputRef.current) inputRef.current?.focus();
+      // Restoring focus fires onFocusCapture synchronously; dismiss afterward
+      // so that handler cannot reopen the list during the same key event.
+      setSuggestionsDismissed(true);
       return;
     }
     if (!showSuggestions || (event.key !== "ArrowDown" && event.key !== "ArrowUp")) {

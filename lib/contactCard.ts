@@ -1,6 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { homegroundBusiness } from "./homegroundBusiness.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, type PrivateTourInquiryContext } from "./privateTourInquiryContext.ts";
 
 /**
  * The contact card. On a computer, WhatsApp links usually land on a
@@ -24,6 +26,8 @@ export type ContactCardLayout = "card" | "sheet";
 
 export interface ContactCardRequest {
   trigger: ContactCardTrigger;
+  /** Validated option displayed by the clicked product control, including its initial option. */
+  tour?: PrivateTourInquiryContext;
   /** The exact wa.me link that was clicked, message included. */
   whatsappHref?: string;
   /** The exact mailto link that was clicked, subject and draft included. */
@@ -112,17 +116,24 @@ export function contactCardRequestForLink(
   homePath?: string,
 ): ContactCardRequest | null {
   const href = anchor.href;
+  const selection = getPrivateTourInquirySelection(
+    anchor.getAttribute?.("data-contact-tour"),
+    anchor.getAttribute?.("data-contact-package"),
+    anchor.getAttribute?.("data-contact-travelers"),
+  );
+  const tour = selection ? getPrivateTourInquiryContext(anchor.getAttribute("data-contact-tour"), locale, selection) : null;
+  const selected = tour ? { tour } : {};
   if (/^https:\/\/wa\.me\/[1-9][0-9]{6,14}(?:\?|$)/u.test(href)) {
     return anchor.hasAttribute?.("data-contact-card-scan-only")
       ? { trigger: "whatsapp", whatsappHref: href, scanOnly: true }
-      : { trigger: "whatsapp", whatsappHref: href };
+      : { trigger: "whatsapp", whatsappHref: href, ...selected };
   }
   if (
     href
       .toLowerCase()
       .startsWith(`mailto:${homegroundBusiness.serviceEmail.toLowerCase()}`)
   ) {
-    return { trigger: "email", mailtoHref: href };
+    return { trigger: "email", mailtoHref: href, ...selected };
   }
 
   let url: URL;
