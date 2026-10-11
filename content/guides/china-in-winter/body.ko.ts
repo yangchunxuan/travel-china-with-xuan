@@ -171,6 +171,16 @@ const body = {
       ]
     },
     {
+      "id": "harbin-city-private-tour",
+      "type": "internal-links",
+      "title": "하얼빈을 거점으로 빙설 여행하기",
+      "items": [{
+        "label": "하얼빈 4박 5일 프라이빗 겨울 일정 비교",
+        "href": "/ko/tours/harbin-winter-5-day-private-tour/",
+        "description": "공개된 상품은 하얼빈의 같은 호텔에서 4박하며 영어 가이드와 관광하는 3일, 난방 전용 차량이 포함됩니다. 도착·출발일에는 이동을 돕습니다. 상품의 일별 계획을 위 예시와 비교하세요. 쉐샹과 야부리는 포함되지 않으며 빙설 명소의 운영 여부를 확인해야 합니다."
+      }]
+    },
+    {
       "id": "season-status",
       "type": "callout",
       "tone": "neutral",

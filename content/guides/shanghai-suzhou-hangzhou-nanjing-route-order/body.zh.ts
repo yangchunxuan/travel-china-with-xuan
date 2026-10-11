@@ -66,6 +66,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   ] },
   { id: "switch-heading", type: "heading", level: 2, text: "什么时候改用另一种形状" },
   { id: "switch-rule", type: "paragraph", text: "口岸布局能消除折返，且每座城市都值得本地时间时，用单向走廊。同一房间的稳定性大于往返通勤的总成本时，用上海基地。一次移动就能获得大部分地理收益时，用双基地。删除独特目的最弱的城市；不要为了保住四个名字，把每城都缩成抵达晚间和仓促早晨。" },
+  {"id": "jiangnan-12-day-route-option", "type": "internal-links", "title": "多留一些时间，在水乡住一晚", "items": [{"label": "比较江南 12 天私家路线", "href": "/zh/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/", "description": "苏州 → 同里 → 杭州 → 上海，分别住 3、1、2、5 晚。这条区域长线安排了一晚水乡住宿；公布的路线不包含南京。"}]},
   { id: "booking-checklist", type: "list", ordered: false, items: [
     "真实机场和准确铁路车站已经进入路线。",
     "每座城市都有经受删减的不同目的。",

@@ -171,6 +171,16 @@ const body = {
       ]
     },
     {
+      "id": "harbin-city-private-tour",
+      "type": "internal-links",
+      "title": "Keep the winter trip based in Harbin",
+      "items": [{
+        "label": "Compare our 5-day Harbin private winter tour",
+        "href": "/tours/harbin-winter-5-day-private-tour/",
+        "description": "The published product uses one Harbin hotel for four nights, with three English-guided sightseeing days and heated private transport. Arrival and departure are transfer days. Compare its day-by-day plan with the outline above; Snow Town and Yabuli are not included, and ice attractions depend on opening."
+      }]
+    },
+    {
       "id": "season-status",
       "type": "callout",
       "tone": "neutral",

@@ -237,6 +237,7 @@ const body: StructuredPageBody = {
   {"id": "garden-route-options", "type": "comparison", "title": "졸정원을 전체 여행에 넣는 두 가지 방식", "columns": [{"heading": "상하이 호텔 유지", "body": "Homeground 상하이·쑤저우 5일 일정은 고속철도 당일 왕복으로 졸정원·한산사·핑장루를 방문합니다. 숙소를 옮기지 않고 쑤저우를 집중해서 보는 방식이며 쑤저우박물관은 포함하지 않습니다."}, {"heading": "쑤저우 1박", "body": "상하이·쑤저우·항저우 6일 일정은 쑤저우 1박, 산탕제, 졸정원, 핑장루와 예약 확인이 필요한 쑤저우박물관을 포함합니다. 정원 하나를 더 보기보다 쑤저우에 더 머물고 항저우로 이어가려 할 때 비교하세요."}]},
   {"id": "garden-route-scope", "type": "paragraph", "text": "두 상품의 관광일에는 영어 가이드가 포함됩니다. 한국어 페이지가 한국어 가이드 포함을 뜻하지는 않습니다. 느리게 걷거나 방문지를 줄이는 요청은 예약 전에 상의하고, 확정 동선과 입장권·요금 변경 여부를 확인하세요."},
   {"id": "garden-route-products", "type": "internal-links", "title": "쑤저우 일정 비교", "items": [{"label": "상하이 거점 4박 5일 프라이빗 투어", "href": "/ko/tours/shanghai-suzhou-5-day-private-tour/", "description": "정원·사찰·옛 거리를 보고 같은 상하이 호텔로 돌아옵니다."}, {"label": "세 도시 5박 6일 프라이빗 투어", "href": "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "쑤저우 1박과 예약 확인 후 박물관 관람을 거쳐 항저우로 갑니다."}]},
+  {"id": "garden-route-jiangnan-12-day", "type": "internal-links", "title": "정원과 옛 거리에 더 많은 시간을", "items": [{"label": "쑤저우·퉁리·항저우·상하이 12일 프라이빗 여행", "href": "/ko/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/", "description": "쑤저우 3박과 퉁리 1박 뒤 항저우를 거쳐 상하이에서 5박을 합니다. 정원과 옛 거리가 여행의 주된 목적이라면 이 지역에 더 많은 시간을 쓰는 동선을 비교해 보세요."}]},
   {
     "id": "garden-visit-check",
     "type": "paragraph",

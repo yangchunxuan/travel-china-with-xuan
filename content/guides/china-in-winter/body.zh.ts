@@ -171,6 +171,16 @@ const body = {
       ]
     },
     {
+      "id": "harbin-city-private-tour",
+      "type": "internal-links",
+      "title": "以哈尔滨为基地安排冰雪假期",
+      "items": [{
+        "label": "比较哈尔滨5天4晚私家冰雪路线",
+        "href": "/zh/tours/harbin-winter-5-day-private-tour/",
+        "description": "公布的产品在哈尔滨同一家酒店住4晚，含三个英语导游游览日和暖风车辆。抵达与离开日安排接送。可把产品逐日行程与上方规划示例作比较；不含雪乡或亚布力，冰雪景点须确认开放。"
+      }]
+    },
+    {
       "id": "season-status",
       "type": "callout",
       "tone": "neutral",

@@ -192,7 +192,7 @@ export const jiangnanArtPrivateTour: PrivateTourProduct = {
     "중국 강남, 물길에 머무는 12일｜쑤저우·퉁리·항저우·상하이 프라이빗 여행",
   ),
   metadataTitle: l(
-    "Jiangnan Art of Living: 12-Day Suzhou–Shanghai Private Tour",
+    "12-Day Jiangnan Private Tour: Suzhou, Hangzhou & Shanghai",
     "江南生活的艺术｜苏州·同里·杭州·上海 12 天私家游",
     "중국 강남 12일 프라이빗 여행｜쑤저우·퉁리·항저우·상하이",
   ),
