@@ -91,7 +91,7 @@ const body = {
     {
       "id": "tianmen-dated-notices",
       "type": "paragraph",
-      "text": "Under the scenic area's 31 August 2026 notice, the upper cableway section remains closed for upgrading. Route A requires a bus transfer at the middle station to Tianmen Cave. Check your ticket’s actual entry and exit before arranging a ride; use the Tianmen Mountain ticket guide below for prices and A/B/C routes."
+      "text": "From 13 October 2026 the cableway from Zhangjiajie city is closed along its whole length for rebuilding, and only route C is sold: the fast cableway from the mountain gate to Tianmen Cave, then escalators to the summit. Start at the mountain gate, not the city cableway station; use the Tianmen Mountain ticket guide below for prices and what is open on your date."
     },
     {
     "id": "five-heading",
@@ -211,7 +211,7 @@ const body = {
         },
         {
           "question": "Is the Tianmen Mountain cable car running all the way up?",
-          "answer": "Not the whole way. Under the scenic area's 31 August 2026 notice, the upper cableway section remains closed for upgrading, and Route A requires a bus transfer at the middle station to Tianmen Cave. Check your ticket's actual entry and exit before arranging a ride; the Tianmen Mountain ticket guide covers prices and the A/B/C routes."
+          "answer": "No. The upper half of the city cableway has been closed since 6 November 2025, and from 13 October 2026 the lower half stops as well. Only route C is sold: the fast cableway from the mountain gate to Tianmen Cave, then escalators to the summit. Start at the mountain gate; the Tianmen Mountain ticket guide covers prices and what is open on your date."
         },
         {
           "question": "I live in Singapore on a PR or work pass — does the visa exemption cover me?",
@@ -262,10 +262,10 @@ const body = {
       "title": "Sources and photograph",
       "items": [
         {
-          "label": "Tianmen Mountain operating routes: 31 August 2026 notice",
-          "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
-          "publisher": "Rednet; source: Tianmen Mountain scenic area",
-          "reviewedAt": "2026-09-13"
+          "label": "Tianmen Mountain notice for 13 October 2026 onwards",
+          "url": "https://www.ly.com/scenery/BookSceneryTicket_922.html",
+          "publisher": "Tongcheng Travel",
+          "reviewedAt": "2026-10-11"
         },
         {
           "label": "Singapore–Changsha flight search",

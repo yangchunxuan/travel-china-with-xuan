@@ -103,7 +103,7 @@ export const montanasDeAvatarChina: SpanishGuide = {
       {
         id: "not-tianmen-copy",
         type: "paragraph",
-        text: "Con el nombre de Zhangjiajie se venden tres lugares distintos, y muchas fotos los mezclan. Los pilares de Avatar están en el Parque Forestal Nacional de Zhangjiajie, en Wulingyuan. La montaña Tianmen, con el arco natural llamado Puerta del Cielo, las pasarelas del acantilado y un teleférico que sale de la ciudad, es otra montaña, junto al centro de Zhangjiajie, a unos 40 minutos en coche de Wulingyuan. El famoso puente de cristal cruza el Gran Cañón de Zhangjiajie, una tercera atracción con su propia entrada. Cada una necesita su día o su medio día.",
+        text: "Con el nombre de Zhangjiajie se venden tres lugares distintos, y muchas fotos los mezclan. Los pilares de Avatar están en el Parque Forestal Nacional de Zhangjiajie, en Wulingyuan. La montaña Tianmen, con el arco natural llamado Puerta del Cielo, las pasarelas del acantilado y un teleférico que sube desde la entrada de la montaña, es otra montaña, junto al centro de Zhangjiajie, a unos 40 minutos en coche de Wulingyuan. El famoso puente de cristal cruza el Gran Cañón de Zhangjiajie, una tercera atracción con su propia entrada. Cada una necesita su día o su medio día.",
       },
       { id: "tickets-heading", type: "heading", level: 2, text: "¿Cuánto cuesta ver las montañas de Avatar?" },
       {

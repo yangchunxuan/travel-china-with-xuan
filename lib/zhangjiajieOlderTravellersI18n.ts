@@ -98,7 +98,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
         "Three things break a day for an older traveller. What they share is not that they are hard — it is that you cannot look them up.",
       ],
       paragraphs: [
-        "The upper section of the Tianmen Mountain cable car has been closed since 6 November 2025, dismantled and being rebuilt. The lower section still runs; reaching the summit now means the lower cable car, road transport up the switchbacks, then escalators. Most English itineraries still describe riding the cable car straight to the top — including some updated only months ago. Anyone arriving with one of those learns the truth at the foot of the mountain. Until then, the plan in their hand looks entirely reasonable.",
+        "The upper section of the Tianmen Mountain cable car has been closed since 6 November 2025, dismantled and being rebuilt. The lower section stops as well from 13 October 2026; reaching the summit now means a separate, shorter cable car from the mountain gate to Tianmen Cave, then escalators. Most English itineraries still describe riding the cable car straight to the top — including some updated only months ago. Anyone arriving with one of those learns the truth at the foot of the mountain. Until then, the plan in their hand looks entirely reasonable.",
         "The Zhangjiajie Grand Canyon glass bridge does not admit wheelchairs, walking frames or similar mobility aids. The English pages disagree with each other on this, and it is not something you want to discover at the entrance.",
         "The shuttle buses inside the park have no published last departure. Services move with the day's crowds. You ask staff, or your guide, on the day — you ask the person standing beside the bus. Every itinerary you will read assumes a timetable exists. It does not.",
       ],
@@ -201,7 +201,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
         "有三件事会毁掉长辈的一天。它们的共同点不是“难”,是你查不到。",
       ],
       paragraphs: [
-        "天门山的索道上段,自 2025 年 11 月 6 日起停运,正在拆除重建。下段还在跑,登顶改成索道下段、换车走盘山路、再坐扶梯。市面上大多数英文行程仍在写“坐索道直上山顶”——包括几个月前刚更新过的那些。拿着那种行程来的人,到山脚才知道。而在那之前,那份东西看起来完全合理。",
+        "天门山的索道上段,自 2025 年 11 月 6 日起停运,正在拆除重建。下段也从 2026 年 10 月 13 日起停运,登顶改成从山门坐另一条较短的索道到天门洞、再坐扶梯。市面上大多数英文行程仍在写“坐索道直上山顶”——包括几个月前刚更新过的那些。拿着那种行程来的人,到山脚才知道。而在那之前,那份东西看起来完全合理。",
         "大峡谷玻璃桥不允许轮椅、助行架或类似器具。网上说法不一,而这不是你想在检票口才知道的事。",
         "公园里的摆渡车没有公开的末班时间。车次随当天客流走。你得当天问,问站在车边的那个人。你读到的每一份行程都默认存在一张时刻表——它不存在。",
       ],
@@ -295,7 +295,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
         "연세 있는 분의 하루를 무너뜨리는 것은 세 가지입니다. 공통점은 어렵다는 게 아니라, 미리 찾아볼 수 없다는 것입니다.",
       ],
       paragraphs: [
-        "천문산 케이블카 상부 구간은 2025년 11월 6일부터 운행이 중단되어 철거·재건 중입니다. 하부 구간은 여전히 운행하며, 정상까지는 하부 케이블카, 굽잇길 차량 이동, 그다음 에스컬레이터를 거칩니다. 대부분의 영문 일정은 아직도 케이블카로 정상까지 곧장 오른다고 적어 두었습니다 — 불과 몇 달 전에 갱신된 것들까지도요. 그런 일정을 들고 온 사람은 산 아래에서야 사실을 알게 됩니다. 그 전까지 손에 든 일정은 완전히 그럴듯해 보입니다.",
+        "천문산 케이블카 상부 구간은 2025년 11월 6일부터 운행이 중단되어 철거·재건 중입니다. 하부 구간도 2026년 10월 13일부터 운행을 멈춥니다. 이제 정상까지는 산문에서 천문동까지 가는 별도의 짧은 케이블카, 그다음 에스컬레이터를 거칩니다. 대부분의 영문 일정은 아직도 케이블카로 정상까지 곧장 오른다고 적어 두었습니다 — 불과 몇 달 전에 갱신된 것들까지도요. 그런 일정을 들고 온 사람은 산 아래에서야 사실을 알게 됩니다. 그 전까지 손에 든 일정은 완전히 그럴듯해 보입니다.",
         "장가계 대협곡 유리다리는 휠체어, 보행 보조기 등 이동 보조기구의 진입을 허용하지 않습니다. 영문 페이지들은 이 점에서 서로 어긋나며, 이는 입구에서 알게 되고 싶은 일이 아닙니다.",
         "공원 안 셔틀버스에는 공개된 막차 시간이 없습니다. 운행은 그날의 인파에 따라 움직입니다. 당일에 직원이나 가이드에게 — 버스 옆에 서 있는 사람에게 물어야 합니다. 당신이 읽는 모든 일정은 시간표가 있다고 전제합니다. 시간표는 없습니다.",
       ],
