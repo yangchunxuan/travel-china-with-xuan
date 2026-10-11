@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "observedDate": "2026-10-11",
   "baseMain": "a13a32e281f6a3fd01f3884d37aee6a1f67624d1",
-  "releaseBoundary": "draft PR only; no deployment",
+  "releaseBoundary": "User authorized publication on 11 October 2026, after preservation of the latest Claude pricing is verified; merge and deploy only after updated checks pass.",
   "scope": [
     "jiangnan12",
     "fivecity13",
@@ -1562,5 +1562,22 @@
     ],
     "korean": "Limited baseline and aligned facts only; no expanded keyword queries or monitoring after user steering."
   },
-  "researchBaselineMain": "888eb0b74ba90947337f9d5d42d3904fa2747726"
+  "researchBaselineMain": "888eb0b74ba90947337f9d5d42d3904fa2747726",
+  "releaseIntegration": {
+    "authorizedOn": "2026-10-11",
+    "pricingPr": 347,
+    "pricingMergeCommit": "fb5297a8dba316f4c78797726ef5c28ed226a813",
+    "integratedMain": "7dd7afa71f4549782ad9146824315a3819aac243",
+    "integrationCommit": "b1fbb560d08883e2224cbd60c8512f9c8ff3dcd7",
+    "pricePreservation": {
+      "status": "passed independent source audit",
+      "pricingFilesCompared": 29,
+      "pricingFilesIdenticalToMain": 29,
+      "fourScopedProductsRetainPricingCurrencyPackagesAndOriginalFaq": true,
+      "jiangnan12AndFiveCity13RemainQuoteOnly": true
+    },
+    "historicalValidation": "The validation section above records the pre-integration draft checks on a13a32e. Updated integration tests, CI, deployment and live verification are recorded separately in the release evidence directory.",
+    "releaseEvidenceDirectory": "~/Desktop/Homeground-SEO/product-seo-release-20261011/",
+    "notAuthorized": "No real inquiry, email, WhatsApp, paid upgrade, pricing change or unrelated PR merge."
+  }
 }
