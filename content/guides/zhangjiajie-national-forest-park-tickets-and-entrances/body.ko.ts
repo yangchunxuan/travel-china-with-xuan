@@ -333,6 +333,7 @@ const body: StructuredPageBody = {
       title: "장가계의 다른 여행 결정도 이어서 확인하세요",
       items: [
         { label: "천문산 입장권과 A/B/C 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "대협곡 유리다리 입장권과 코스", href: "/ko/guides/zhangjiajie-glass-bridge-tickets/" },
         { label: "4일 국가삼림공원 고정 코스 비교", href: "/ko/tours/zhangjiajie-forest-4-day-private-tour/", description: "고산 봉우리부터 금편계까지 국가삼림공원 종일, D3 천문산, 3박 모두 빌라 또는 4성급 호텔 한 곳에 머뭅니다." },
         { label: "장가계 4일 클래식 프라이빗 투어 비교", href: "/ko/tours/zhangjiajie-4-day-private-tour/", description: "백룡 엘리베이터, 대협곡 유리다리와 천문산을 포함한 대표 명소 코스를 선택합니다." },
         { label: "장가계 아바타 산은 어디?", href: "/ko/guides/avatar-mountains-zhangjiajie/", description: "원가계 할렐루야산 위치와 하루에 핵심을 보는 코스." },

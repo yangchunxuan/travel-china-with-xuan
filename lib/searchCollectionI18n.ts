@@ -245,6 +245,7 @@ const guideCollectionOverrides: Partial<Record<GuideId, SearchCollectionId>> = {
   "zhangjiajie-glass-bridge-vs-skywalk": "explore-attractions-nature-heritage",
   "zhangjiajie-national-forest-park-tickets-and-entrances": "explore-attractions-nature-heritage",
   "tianmen-mountain-tickets-and-routes": "explore-attractions-nature-heritage",
+  "zhangjiajie-glass-bridge-tickets": "explore-attractions-nature-heritage",
   "kevin-before-the-hotel-pickup": "essentials-booking-registration-recovery",
   "zhangjiajie-older-travellers": "plan-traveller-theme-itineraries",
   "best-zhangjiajie-night-show": "explore-attractions-nature-heritage",

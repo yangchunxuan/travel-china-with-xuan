@@ -81,6 +81,7 @@ const body = {
     { id: "next-links", type: "internal-links", title: "把天门山放进张家界行程", items: [
       { label: "安排张家界游览天数", href: "/zh/guides/zhangjiajie-itinerary/" },
       { label: "森林公园门票与入口", href: "/zh/guides/zhangjiajie-national-forest-park-tickets-and-entrances/" },
+      { label: "大峡谷玻璃桥门票与线路", href: "/zh/guides/zhangjiajie-glass-bridge-tickets/" },
       { label: "住张家界市区还是武陵源？", href: "/zh/guides/zhangjiajie-city-or-wulingyuan-hotel-base/" }
     ] },
     { id: "sources", type: "sources", title: "票价与路线参考", items: [

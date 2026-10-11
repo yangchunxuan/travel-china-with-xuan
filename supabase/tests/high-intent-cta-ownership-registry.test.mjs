@@ -71,14 +71,14 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
     stay: 20,
     "high-intent-transport": 27,
     plan: 34,
-    "purchase-ticket": 3,
+    "purchase-ticket": 4,
   });
-  assert.equal(report.uniqueContentIds, 84);
+  assert.equal(report.uniqueContentIds, 85);
   assert.equal(report.authorizedExistingService, 23);
   assert.equal(report.authorizedGenericConversation, 22);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 7);
-  assert.equal(report.blockedPendingAuthorization, 39);
+  assert.equal(report.blockedPendingAuthorization, 40);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
   assert.deepEqual(
@@ -231,6 +231,7 @@ test("commercial links keep the approved 8 hub, 106 curated guide and 50 product
       "zhangjiajie-city-or-wulingyuan-hotel-base",
       "zhangjiajie-from-malaysia",
       "zhangjiajie-furong-fenghuang-route-order",
+      "zhangjiajie-glass-bridge-tickets",
       "zhangjiajie-glass-bridge-vs-skywalk",
       "zhangjiajie-itinerary",
       "zhangjiajie-national-forest-park-tickets-and-entrances",

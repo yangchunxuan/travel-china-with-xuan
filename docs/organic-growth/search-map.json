@@ -1129,9 +1129,9 @@
     "publishedInventory": {
       "authority": "audited-current-main-runtime-guide-registry-and-content-metadata",
       "baseCommit": "c0020bfa6905b496bb8398c6104e8377d7d26a4b",
-      "identityCount": 246,
-      "localeUrlCount": 730,
-      "generatedIdentityCount": 227,
+      "identityCount": 247,
+      "localeUrlCount": 733,
+      "generatedIdentityCount": 228,
       "protectedLegacyIdentityCount": 19,
       "detailedOwnerRecordCountBelow": 59,
       "detailedOwnerRecordSemantics": "coverage.published retains the previously hand-audited canonical boundaries. It is not the complete inventory; identityIds combines the audited baseline at commit c0020bf with the explicitly recorded repositoryIncrements below. The baseline date, commit and live verification do not establish publication of those later additions.",
@@ -3325,6 +3325,50 @@
               "boundary": "Published per-person prices for every Homeground private tour with a public price, by group size, trip length and per day; excludes route detail for 10- to 21-day tours and small-group departures (china-2-week-tour-cost, china-small-group-tours-2027) and independent-travel budgets (how-much-does-a-china-trip-cost)."
             }
           ]
+        },
+        {
+          "checkedAt": "2026-10-11",
+          "sourceBranch": "glass-bridge-tickets",
+          "status": "repository-content-integrated-release-verification-pending",
+          "publicationStatus": "not-published",
+          "statusScope": "Zhangjiajie Glass Bridge ticket guide prepared in the repository; merge, deployment, indexing, AI citations and inquiries require separate evidence.",
+          "identityDelta": 1,
+          "localeUrlDelta": 3,
+          "identities": [
+            {
+              "id": "zhangjiajie-glass-bridge-tickets",
+              "title": "Zhangjiajie Glass Bridge Tickets: Price, Routes & Booking",
+              "metadataPath": "content/guides/zhangjiajie-glass-bridge-tickets/metadata.json",
+              "canonicalPath": "/guides/zhangjiajie-glass-bridge-tickets/",
+              "locales": [
+                "en",
+                "zh",
+                "ko"
+              ],
+              "localePaths": [
+                "/guides/zhangjiajie-glass-bridge-tickets/",
+                "/zh/guides/zhangjiajie-glass-bridge-tickets/",
+                "/ko/guides/zhangjiajie-glass-bridge-tickets/"
+              ],
+              "section": "explore",
+              "pageFamily": "task",
+              "targetIntent": "purchase",
+              "primaryCollectionId": "explore-attractions-nature-heritage",
+              "pillar": "destination-ticketing-and-navigation",
+              "destinations": [
+                "zhangjiajie"
+              ],
+              "entityResolution": {
+                "entityIds": [
+                  "city-zhangjiajie"
+                ],
+                "unmappedTokens": [],
+                "usedCountryFallback": false
+              },
+              "freshnessMinimum": "high",
+              "boundary": "The Zhangjiajie Grand Canyon Glass Bridge ticket intent: official-shop prices by route and age, whether a bridge-only ticket exists, routes A, B and B1, paid extras, passport booking, refunds and entry hours. The Tantan field note keeps the bridge-versus-skywalk comparison; the Tianmen and Forest Park ticket guides keep their own scenic areas; the sight page keeps the short story."
+            }
+          ]
         }
       ],
       "identityIds": [
@@ -3568,6 +3612,7 @@
         "zhangjiajie-city-or-wulingyuan-hotel-base",
         "zhangjiajie-from-malaysia",
         "zhangjiajie-furong-fenghuang-route-order",
+        "zhangjiajie-glass-bridge-tickets",
         "zhangjiajie-glass-bridge-vs-skywalk",
         "zhangjiajie-itinerary",
         "zhangjiajie-national-forest-park-tickets-and-entrances",

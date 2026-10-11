@@ -1,0 +1,104 @@
+{
+  "id": "zhangjiajie-glass-bridge-tickets",
+  "type": "planning",
+  "pillar": "destination-ticketing-and-navigation",
+  "audienceMarkets": [
+    "global"
+  ],
+  "format": "ticket-route-decision-guide",
+  "topics": [
+    "zhangjiajie",
+    "grand-canyon",
+    "glass-bridge",
+    "tickets",
+    "passport-booking"
+  ],
+  "destinations": [
+    "zhangjiajie"
+  ],
+  "heroImagePath": "/images/guides/zhangjiajie/glass-bridge-ticket-guide.webp",
+  "heroImageUrl": "https://homegroundchina.com/images/guides/zhangjiajie/glass-bridge-ticket-guide.webp",
+  "imageWidth": 1280,
+  "imageHeight": 1600,
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "sourceReviewedDate": "2026-10-11",
+  "searchTerms": {
+    "en": [
+      "zhangjiajie glass bridge tickets",
+      "zhangjiajie glass bridge ticket price",
+      "zhangjiajie grand canyon tickets",
+      "zhangjiajie glass bridge booking",
+      "zhangjiajie grand canyon glass bridge",
+      "glass bridge china tickets"
+    ],
+    "zh": [
+      "张家界玻璃桥门票",
+      "张家界大峡谷门票",
+      "大峡谷玻璃桥A线B线",
+      "玻璃桥护照预约"
+    ],
+    "ko": [
+      "장가계 유리다리 입장권",
+      "장가계 대협곡 입장료",
+      "장가계 유리다리 예약",
+      "장가계 대협곡 A B 코스"
+    ]
+  },
+  "search": {
+    "section": "explore",
+    "family": "task",
+    "primaryIntent": "purchase"
+  },
+  "layout": {
+    "mode": "template",
+    "templateId": "editorial-v1"
+  },
+  "locales": {
+    "en": {
+      "path": "/guides/zhangjiajie-glass-bridge-tickets/",
+      "title": "Zhangjiajie Glass Bridge Tickets: Price, Routes & Booking",
+      "headline": "Zhangjiajie Glass Bridge Tickets: Price, Routes and Passport Booking",
+      "description": "Glass Bridge tickets at Zhangjiajie Grand Canyon: RMB 175 on the official shop, read 11 October 2026. Route A or B, hours, passport booking, refunds and extras.",
+      "heroAlt": "Visitors crossing the white suspension Glass Bridge above the Zhangjiajie Grand Canyon",
+      "navTitle": "Glass Bridge tickets",
+      "featuredLinkLabel": "Check Glass Bridge tickets",
+      "openGraphLocale": "en_US",
+      "cardTags": [
+        "Ticket prices",
+        "A/B routes",
+        "Passport booking"
+      ]
+    },
+    "zh": {
+      "path": "/zh/guides/zhangjiajie-glass-bridge-tickets/",
+      "title": "张家界大峡谷玻璃桥门票：价格、A/B线与护照预约",
+      "headline": "张家界大峡谷玻璃桥门票：多少钱、买哪条线、护照怎么订",
+      "description": "张家界大峡谷玻璃桥门票：景区官网购票系统B线全票175元（2026年10月11日读取）。说明A线与B线、开放时间、护照预约、退票规则和自费项目。",
+      "heroAlt": "游客走在张家界大峡谷上方的白色悬索玻璃桥上",
+      "navTitle": "玻璃桥门票",
+      "featuredLinkLabel": "查看玻璃桥门票",
+      "openGraphLocale": "zh_CN",
+      "cardTags": [
+        "门票价格",
+        "A/B线",
+        "护照预约"
+      ]
+    },
+    "ko": {
+      "path": "/ko/guides/zhangjiajie-glass-bridge-tickets/",
+      "title": "장가계 유리다리 입장권: 가격·A/B 코스·여권 예약",
+      "headline": "장가계 대협곡 유리다리 입장권: 가격, 코스, 여권 예약",
+      "description": "장가계 대협곡 유리다리 입장권은 관광지 공식 예매 시스템에서 B코스 성인 175위안입니다(2026년 10월 11일 확인). A·B 코스, 운영 시간, 여권 예약, 환불, 유료 체험을 정리했습니다.",
+      "heroAlt": "장가계 대협곡 위에 놓인 흰색 현수 유리다리를 건너는 방문객들",
+      "navTitle": "유리다리 입장권",
+      "featuredLinkLabel": "유리다리 입장권 확인",
+      "openGraphLocale": "ko_KR",
+      "cardTags": [
+        "입장권 가격",
+        "A/B 코스",
+        "여권 예약"
+      ]
+    }
+  }
+}

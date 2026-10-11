@@ -51,6 +51,7 @@ export const guideTargets = {
     classicZhangjiajie,
   ],
   "tianmen-mountain-tickets-and-routes": [classicZhangjiajie],
+  "zhangjiajie-glass-bridge-tickets": [classicZhangjiajie],
   "zhangjiajie-national-forest-park-tickets-and-entrances": [
     productTarget("zhangjiajie-forest-4-day-private-tour"),
     classicZhangjiajie,

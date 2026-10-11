@@ -81,6 +81,7 @@ const body = {
     { id: "next-links", type: "internal-links", title: "Fit Tianmen Mountain into your Zhangjiajie trip", items: [
       { label: "Choose your Zhangjiajie sightseeing days", href: "/guides/zhangjiajie-itinerary/" },
       { label: "Forest park tickets and entrances", href: "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/" },
+      { label: "Glass Bridge tickets and routes", href: "/guides/zhangjiajie-glass-bridge-tickets/" },
       { label: "Stay in Zhangjiajie city or Wulingyuan?", href: "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/" }
     ] },
     { id: "sources", type: "sources", title: "Price and route references", items: [

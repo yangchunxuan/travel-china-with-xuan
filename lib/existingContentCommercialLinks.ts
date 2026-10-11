@@ -70,6 +70,7 @@ const approvedCommercialGuideIds = [
   "zhangjiajie-from-malaysia",
   "zhangjiajie-itinerary",
   "tianmen-mountain-tickets-and-routes",
+  "zhangjiajie-glass-bridge-tickets",
   "zhangjiajie-national-forest-park-tickets-and-entrances",
   "beijing-courtyard-hotel-or-modern-hotel",
   "beijing-where-to-stay-first-trip",

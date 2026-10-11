@@ -81,8 +81,8 @@
     "stay": 20,
     "high-intent-transport": 27,
     "plan": 34,
-    "purchase-ticket": 3,
-    "uniqueContentIds": 84
+    "purchase-ticket": 4,
+    "uniqueContentIds": 85
   },
   "forbiddenClaimDefinitions": {
     "automatic-or-instant-result": "Do not promise an automatic, instant or no-human-review result.",
@@ -1388,6 +1388,21 @@
       "targetServiceId": null,
       "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
       "originContentId": "tianmen-mountain-tickets-and-routes",
+      "authorizationStatus": "blocked-pending-central-authorization",
+      "forbiddenClaims": [
+        "ticket-availability-price-guarantee",
+        "booking-entry-guarantee",
+        "reseller-official-equivalence",
+        "sensitive-data-first-contact"
+      ]
+    },
+    {
+      "contentId": "zhangjiajie-glass-bridge-tickets",
+      "ownerClass": "purchase-ticket",
+      "intentCode": "ticket_workflow",
+      "targetServiceId": null,
+      "ctaPlacement": "specialized-cta-blocked-generic-footer-only",
+      "originContentId": "zhangjiajie-glass-bridge-tickets",
       "authorizationStatus": "blocked-pending-central-authorization",
       "forbiddenClaims": [
         "ticket-availability-price-guarantee",
