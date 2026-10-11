@@ -60,6 +60,7 @@ export const guideTargets = {
   "beijing-where-to-stay-first-trip": [productTarget("beijing-highlights-5-day-private-tour")],
   "beijing-to-badaling-great-wall-transfer": [productTarget("beijing-highlights-5-day-private-tour")],
   "great-wall-section-selector-from-beijing": [productTarget("beijing-highlights-5-day-private-tour")],
+  "mutianyu-great-wall-tickets": [productTarget("beijing-highlights-5-day-private-tour")],
   "forbidden-city-for-foreign-visitors": [productTarget("beijing-highlights-5-day-private-tour")],
   "national-museum-of-china-booking-and-route": [productTarget("beijing-highlights-5-day-private-tour")],
   "temple-of-heaven-gates-and-ritual-sequence": [productTarget("beijing-highlights-5-day-private-tour")],

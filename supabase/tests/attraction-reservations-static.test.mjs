@@ -17,7 +17,6 @@ const isoDate = /^\d{4}-\d{2}-\d{2}$/u;
 /** Offered attractions whose booking rule no guide records yet. */
 const unverifiedRuleIds = [
   "great-wall-badaling",
-  "great-wall-mutianyu",
   "shanghai-museum-peoples-square",
   "shanghai-tower",
   "huaqing-palace",
@@ -76,7 +75,7 @@ test("every reservation rule is dated and traced to an existing guide", async ()
     assert.ok(reservations.attractionReservationCityIds.includes(rule.city), `${rule.id}: city`);
     if (rule.source) {
       assert.match(rule.verifiedAt, isoDate, `${rule.id}: verifiedAt`);
-      assert.ok(rule.verifiedAt <= "2026-10-10", `${rule.id}: verifiedAt is not in the future`);
+      assert.ok(rule.verifiedAt <= "2026-10-11", `${rule.id}: verifiedAt is not in the future`);
     } else {
       assert.equal(rule.verifiedAt, null, `${rule.id}: a row without a source guide has no check date`);
     }
@@ -127,6 +126,7 @@ test("published face values and release rules are copied from the source guide",
     "humble-administrators-garden": [/¥80 in April, May and July–October/u, /1–7 days before visiting/u],
     "li-river-cruise": [/RMB 215/u, /RMB 360/u, /15 days ahead/u],
     "jade-dragon-snow-mountain": [/RMB 100 entry plus a RMB 20 eco-bus/u, /RMB 120/u, /RMB 40/u, /daily at 20:00/u, /21:00/u, /4 March 2026/u],
+    "great-wall-mutianyu": [/admission, RMB 40/u, /RMB 15 return/u, /RMB 100 one way or RMB 140 return/u, /booked up to 30 days ahead/u, /foreign passport does not exchange anything/u],
     "hanging-temple": [/"Climbing", "RMB 100"/u, /"RMB 15"/u, /up to 7 days ahead between 07:20 and 21:00/u, /half an hour before opening/u, /afternoon batch at 12:00/u, /2,475/u],
   };
   for (const [id, patterns] of Object.entries(expectedEvidence)) {
