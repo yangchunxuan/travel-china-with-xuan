@@ -449,30 +449,31 @@ async function handleRequest(request: Request): Promise<Response> {
     }
   }
 
-  // Optional receipt enrollment is recorded BEFORE the atomic inquiry write.
-  // The insert trigger consumes immutable intent in that transaction, closing
-  // the saved-inquiry/enqueue crash gap without emailing historical submissions.
-  // A receipt setup failure must never prevent the actual inquiry from saving.
+  // Receipt intent stays in memory until the atomic, rate-limited inquiry RPC.
+  // Configuration failure disables only the auxiliary receipt, never intake.
+  let ackEnabled = false;
+  let ackRecipientHash: string | null = null;
   if (payload.privacyNoticeVersion === travellerAckPrivacyVersion) {
     try {
       const email = payload.contact.channel === "email" ? payload.contact.email : null;
-      const recipientHash = email ? await hmacSha256Hex(requiredEnv("IDEMPOTENCY_HASH_SECRET"), `traveller-ack:${email.toLowerCase()}`) : null;
-      await callSupabaseRpc<boolean>("prepare_homeground_traveller_ack_v1", {
-        p_idempotency_key_hash: idempotencyKeyHash,
-        p_payload_hash: payloadHash,
-        p_enabled: booleanEnv("TRAVELLER_ACK_ENABLED", false),
-        p_recipient_hash: recipientHash,
-        p_privacy_notice_version: payload.privacyNoticeVersion,
-      });
-    } catch { /* Intake remains available; receipt status is read after saving. */ }
+      ackRecipientHash = email ? await hmacSha256Hex(requiredEnv("IDEMPOTENCY_HASH_SECRET"), `traveller-ack:${email.toLowerCase()}`) : null;
+      ackEnabled = booleanEnv("TRAVELLER_ACK_ENABLED", false);
+    } catch { ackEnabled = false; ackRecipientHash = null; }
   }
+  const persistInquiry = (rpcName: string, argumentsObject: Record<string, unknown>) =>
+    payload.privacyNoticeVersion === travellerAckPrivacyVersion
+      ? callSupabaseRpc<CreateInquiryRpcResponse>("create_homeground_inquiry_with_receipt_v1", {
+          p_rpc_name: rpcName, p_arguments: argumentsObject,
+          p_ack_enabled: ackEnabled, p_ack_recipient_hash: ackRecipientHash,
+        })
+      : callSupabaseRpc<CreateInquiryRpcResponse>(rpcName, argumentsObject);
 
   let persistenceResult;
   try {
     if (payload.schemaVersion === privateTourQuoteSchemaVersion) {
       // One atomic write path, including auxiliary attribution when present.
       // An uncertain write must never fall back through a different RPC.
-      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+      persistenceResult = await persistInquiry(
         trafficSessionHash
           ? "create_homeground_private_tour_quote_with_traffic_v1"
           : "create_homeground_private_tour_quote_v1",
@@ -496,7 +497,7 @@ async function handleRequest(request: Request): Promise<Response> {
         },
       );
     } else if (payload.schemaVersion === homepageEmailInquirySchemaVersion) {
-      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+      persistenceResult = await persistInquiry(
         trafficSessionHash
           ? "create_homeground_homepage_email_with_traffic_v1"
           : "create_homeground_homepage_email_v1",
@@ -565,7 +566,7 @@ async function handleRequest(request: Request): Promise<Response> {
               ? "create_homeground_destination_inquiry"
               : "create_homeground_inquiry";
 
-      persistenceResult = await callSupabaseRpc<CreateInquiryRpcResponse>(
+      persistenceResult = await persistInquiry(
         trafficSessionHash
           ? isDestinationInquiry
             ? "create_homeground_destination_inquiry_with_traffic_v1"

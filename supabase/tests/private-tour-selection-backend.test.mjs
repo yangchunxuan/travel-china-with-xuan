@@ -636,8 +636,12 @@ test("Edge intake forwards selections, preserves retry identity, and notificatio
   globalThis.Deno = { env: { get: (name) => env.get(name) }, serve: (value) => { handler = value; } };
   const response = (body) => new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json" } });
   globalThis.fetch = async (url, init) => {
-    const body = JSON.parse(init.body);
-    const path = new URL(String(url)).pathname;
+    let body = JSON.parse(init.body);
+    let path = new URL(String(url)).pathname;
+    if (path.endsWith("/create_homeground_inquiry_with_receipt_v1")) {
+      assert.equal(body.p_rpc_name, "create_homeground_homepage_email_v1");
+      path = `/rpc/${body.p_rpc_name}`; body = body.p_arguments;
+    }
     if (String(url) === "https://api.resend.com/emails") {
       messages.push(body);
       return response({ id: "test-message" });

@@ -11,7 +11,7 @@ test("the private tour price guide matches the current product prices", async ()
   // Three bodies and the metadata, whose title and description carry counts and prices.
   assert.equal(Object.keys(files).length, 4);
   for (const [relativePath, expected] of Object.entries(files)) {
-    const actual = await readFile(path.join(projectRoot, relativePath), "utf8");
+    const actual = (await readFile(path.join(projectRoot, relativePath), "utf8")).replace(/\r\n/gu, "\n");
     assert.equal(
       actual,
       expected,
