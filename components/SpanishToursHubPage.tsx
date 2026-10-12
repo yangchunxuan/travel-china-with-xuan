@@ -63,7 +63,7 @@ export function SpanishToursHubPage() {
               <h1>Viajes privados a China, con el precio a la vista.</h1>
             </div>
             <div className={styles.heroAside}>
-              <p>Cada página muestra el itinerario día a día, lo que incluye el precio y lo que va aparte. El guía y el vehículo son solo para su grupo, y no hay paradas de compras.</p>
+              <p>Cada página muestra el itinerario día a día, lo que incluye el precio y lo que va aparte. El vehículo es solo para su grupo; cuando la opción incluye guía, este también es exclusivo. No hay paradas de compras.</p>
               <a className={styles.heroAction} href="#tour-quick-compare-title">Ver los viajes <span aria-hidden="true">↓</span></a>
             </div>
           </div>

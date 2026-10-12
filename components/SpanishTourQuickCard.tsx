@@ -11,6 +11,11 @@ import styles from "./PrivateToursHubPage.module.css";
 export function SpanishTourQuickCard({ tour }: { tour: SpanishCatalogTour }) {
   const starting = getPrivateTourStartingPrice(tour);
   const twoTravellers = getPrivateTourTwoTravellerPrice(tour);
+  const startsWithoutGuide = starting?.selection.packageId === "no-guide";
+  const guidedTwoTravellers = startsWithoutGuide
+    ? tour.packages.find((tourPackage) => tourPackage.id === "english-guided")
+      ?.rows.find((row) => row.travelers === 2)
+    : null;
   return (
     <li className={styles.quickItem}>
       <Link className={styles.quickLink} href={tour.path}>
@@ -47,7 +52,14 @@ export function SpanishTourQuickCard({ tour }: { tour: SpanishCatalogTour }) {
             <strong>Presupuesto según fechas</strong>
             <span>Confirmamos grupo, habitaciones y servicios</span>
           </>}
-          <span className={styles.guideBadge} data-guide-language="">{spanishGuideLanguageBadge}</span>
+          <span className={styles.guideBadge} data-guide-language="">
+            {startsWithoutGuide ? starting.serviceLabel : spanishGuideLanguageBadge}
+          </span>
+          {guidedTwoTravellers ? (
+            <span className={styles.priceService}>
+              Con guía en inglés: {guidedTwoTravellers.formatted} por persona (2 viajeros)
+            </span>
+          ) : null}
         </p>
         <div className={styles.quickMeta}>
           <dl className={styles.quickDetails}>
