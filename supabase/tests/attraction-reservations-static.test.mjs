@@ -640,3 +640,34 @@ test("terms and refund city lists include Datong without replacing the existing 
     }
   }
 });
+
+test("a guide referral opens on its attraction in every language, set like the full-trip page with no pill or icon", async () => {
+  const [enquiry, cta, ctaStyles, pageStyles] = await Promise.all([
+    source("components/AttractionReservationEnquiry.tsx"),
+    source("components/content/GuideReservationCta.tsx"),
+    source("components/content/GuideReservationCta.module.css"),
+    source("components/AttractionReservationsPage.module.css"),
+  ]);
+  // Any ?attraction= referral starts compact, whatever the language.
+  assert.match(enquiry, /if \(!match\) return;[\s\S]{0,260}setCompactReferral\(true\);/u);
+  assert.doesNotMatch(enquiry, /locale === "en"\) setCompactReferral/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    for (const key of ["selectedAttractions", "addAttractions", "removeAttraction", "removeLabel"]) {
+      assert.ok(copy.enquiry[key]?.trim(), `${locale}: enquiry.${key}`);
+    }
+    assert.match(copy.enquiry.removeAttraction, /\{name\}/u, `${locale}: the remove control names its attraction`);
+    assert.ok(copy.guideCta.feeUnit.trim(), `${locale}: the fee line says what the fee covers`);
+  }
+  // No icon library and no pill on the guide card or in the send area.
+  assert.doesNotMatch(cta, /lucide-react/u);
+  assert.doesNotMatch(enquiry, /lucide-react/u);
+  assert.doesNotMatch(ctaStyles, /border-radius:\s*999px|background:\s*var\(--hg-color-rust-soft/u);
+  assert.match(cta, /<span className=\{styles\.feeAmount\}>\{values\.fee\}<\/span>/u);
+  const primary = pageStyles.match(/\.page \.primaryButton \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(primary, /background: none;/u);
+  assert.match(primary, /border-radius: 0;/u);
+  assert.match(pageStyles, /\.page :is\(\.primaryButton, \.secondaryButton\) svg \{\s*display: none;/u);
+  // KakaoTalk leads on Korean pages as the same line of words and arrow.
+  assert.match(enquiry, /<KakaoTalkContact buttonClassName=\{styles\.primaryButton\}/u);
+});
