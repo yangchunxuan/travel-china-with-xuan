@@ -62,6 +62,7 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": "southwest",
   "chengdu-chongqing-8-day-private-tour": "southwest",
   "guilin-yangshuo-5-day-private-tour": "south",
+  "guilin-li-river-yangshuo-4-day-private-tour": "south",
   "xiamen-tulou-quanzhou-6-day-private-tour": "south",
   "chaozhou-shantou-nanao-5-day-private-tour": "south",
   "guangzhou-shunde-foshan-5-day-private-tour": "south",

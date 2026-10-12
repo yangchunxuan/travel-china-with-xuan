@@ -2091,3 +2091,12 @@ the two guides' `image-plan.md`.
 | `public/images/guides/lunar-new-year-customs-for-visitors/spring-festival-pressure-ko-1440.webp` | `f9fe8e22f1dcbd1a0a259041a0f73b9d1d0c5c1859b65a1583329d36fac7adc2` | Spring Festival pressure chart, Korean |
 
 <!-- charts-reset-20261011:end -->
+
+
+### Guilin, Li River and Yangshuo 4-day product — 13 October 2026
+
+The cover is selected from the existing owner-authorized Guilin local photo library. The owner's authorization establishes Homeground project use permission; this is not an independent third-party authorship claim. The scene was visually checked as karst hills and countryside; the caption does not identify a particular village or promise a stop at the small bridge shown. This is a conventional 16:10 crop and WebP resize, without generated scene elements or retained EXIF/GPS.
+
+| Role | Local source and SHA-256 | Website derivative and SHA-256 |
+| --- | --- | --- |
+| 4-day product cover — Yangshuo countryside | `/Users/yangchunxuan/Desktop/Facebook图片素材/桂林优选素材/01_漓江与阳朔山水/六妹素材 (39).jpg`; `9002a0e3bacc3e6fc8eeff3a0d60126ab24a0eff860f26d5b030c03a50f667ef` | `public/images/tours/guilin-li-river-yangshuo-4-day-private-tour/hero.webp`; `b060a64b98b4fbde971315ea0eebbcfc284c7f580c231dc3f2bdc33f37876b01` |

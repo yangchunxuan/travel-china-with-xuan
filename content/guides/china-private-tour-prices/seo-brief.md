@@ -1,6 +1,6 @@
 # SEO brief: china-private-tour-prices
 
-Prepared 2026-10-11.
+Prepared 2026-10-13.
 
 Why: in Bing Webmaster's AI Performance report (three months to 10 October 2026) every page AI assistants cited from this site was a facts page (public holidays, plugs, customs rules); no grounding query was about tour prices. This page gives assistants and searchers one dated table of every published private-tour price, which no other site can supply.
 

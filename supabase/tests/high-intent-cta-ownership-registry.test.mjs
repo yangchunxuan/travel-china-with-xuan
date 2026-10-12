@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 106 curated guide and 50 product owners", () => {
+test("commercial links keep the approved 8 hub, 106 curated guide and 51 product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -274,6 +274,7 @@ test("commercial links keep the approved 8 hub, 106 curated guide and 50 product
       "chongqing-yangtze-cruise-6-day-private-tour",
       "datong-pingyao-6-day-private-tour",
       "guangzhou-shunde-foshan-5-day-private-tour",
+      "guilin-li-river-yangshuo-4-day-private-tour",
       "guilin-yangshuo-5-day-private-tour",
       "guizhou-huangguoshu-libo-miao-7-day-private-tour",
       "harbin-winter-5-day-private-tour",

@@ -147,6 +147,15 @@ export const privateTourPhotoCreditsBySlug: Readonly<
       cc0,
     ),
   ],
+  "guilin-li-river-yangshuo-4-day-private-tour": [
+    credit(
+      text("Guilin Railway Station", "桂林站", "계림역"),
+      "Rat2",
+      "https://commons.wikimedia.org/wiki/File:Guilin_Railway_Station_202102.jpg",
+      "CC BY-SA 4.0",
+      ccBySa4,
+    ),
+  ],
   "guilin-yangshuo-5-day-private-tour": [
     credit(
       text("Yulong River, Yangshuo", "阳朔遇龙河", "양삭 우룡하"),
