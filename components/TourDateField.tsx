@@ -9,13 +9,15 @@ import type { ContactEdition } from "../lib/contactEdition";
 import styles from "./TourDateField.module.css";
 
 /** A visible, editable field; neither its text nor its calendar uses the OS locale. */
-export function TourDateField({ id, label, locale, edition, value, onChange, disabled, active, required = true }: {
+export function TourDateField({ id, label, locale, edition, value, onChange, disabled, active, required = true, appearance = "box" }: {
   id: string; label: string; locale: HomegroundLocale; value: string;
   /** A language edition keeps `locale`'s date order and brings its own words and calendar language. */
   edition?: Pick<ContactEdition, "language" | "date">;
   onChange: (iso: string) => void; disabled: boolean; active: boolean;
   /** Optional dates (a trip brief) accept an empty field without an error; tour pages keep the default. */
   required?: boolean;
+  /** "line": a hairline blank in the full-trip page's language, no box and no icon. Tour pages keep the box. */
+  appearance?: "box" | "line";
 }) {
   const copy = edition?.date ?? tourDateCopy[locale];
   const [raw, setRaw] = useState(() => formatTourDate(value, locale));
@@ -91,7 +93,7 @@ export function TourDateField({ id, label, locale, edition, value, onChange, dis
     closeCalendar();
   }
 
-  return <div className={styles.field} lang={edition?.language ?? (locale === "zh" ? "zh-CN" : locale)}>
+  return <div className={appearance === "line" ? `${styles.field} ${styles.line}` : styles.field} lang={edition?.language ?? (locale === "zh" ? "zh-CN" : locale)}>
     <label htmlFor={id} className={styles.label}>{label}</label>
     <div className={styles.row}>
       <input ref={inputRef} id={id} type="text" inputMode="numeric" autoComplete="off"

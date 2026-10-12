@@ -671,3 +671,25 @@ test("a guide referral opens on its attraction in every language, set like the f
   // KakaoTalk leads on Korean pages as the same line of words and arrow.
   assert.match(enquiry, /<KakaoTalkContact buttonClassName=\{styles\.primaryButton\}/u);
 });
+
+test("the reservation form's date and party fields are hairline blanks; other forms keep the boxed date field", async () => {
+  const [enquiry, dateField, dateStyles, pageStyles, ...others] = await Promise.all([
+    source("components/AttractionReservationEnquiry.tsx"),
+    source("components/TourDateField.tsx"),
+    source("components/TourDateField.module.css"),
+    source("components/AttractionReservationsPage.module.css"),
+    source("components/TourContactPanel.tsx"),
+    source("components/PrivateGuideEnquiry.tsx"),
+    source("components/PrivateCarServiceEnquiry.tsx"),
+  ]);
+  assert.match(enquiry, /<TourDateField active appearance="line"/u);
+  assert.match(dateField, /appearance = "box"/u, "the boxed field stays the default");
+  for (const other of others) assert.doesNotMatch(other, /appearance="line"/u);
+  assert.match(dateStyles, /\.line \.row \{[^}]*border: 0;[^}]*border-radius: 0;/u);
+  assert.match(dateStyles, /\.line \.open svg \{ display: none; \}/u);
+  assert.match(dateStyles, /forced-colors: active\) \{ \.line \.row \{ border-bottom: 1px solid ButtonText; \}/u);
+  const blank = pageStyles.match(/\.field input,\n\.field textarea,\n\.noteToggle textarea \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(blank, /border: 0;/u);
+  assert.match(blank, /border-radius: 0;/u);
+  assert.match(pageStyles, /input\[type="number"\]::-webkit-inner-spin-button/u);
+});

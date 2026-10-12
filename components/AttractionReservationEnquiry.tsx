@@ -273,7 +273,7 @@ export function AttractionReservationEnquiry({
               chosen.length ? (
                 <div className={styles.fieldRow}>
                   {chosen.map((attraction) => (
-                    <TourDateField active disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
+                    <TourDateField active appearance="line" disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
                   ))}
                 </div>
               ) : null
