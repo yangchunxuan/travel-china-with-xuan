@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
-import { terracottaHalfDayCopy, terracottaHalfDayImage, terracottaHalfDayPreviewPaths, terracottaHalfDayReadHref } from "../lib/terracottaHalfDayDraft";
+import { terracottaHalfDayCopy, terracottaHalfDayEnquiryAnchor, terracottaHalfDayImage, terracottaHalfDayPaths, terracottaHalfDayReadHref } from "../lib/terracottaHalfDayTour";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import localeStyles from "./LocaleRoot.module.css";
-import styles from "./TerracottaHalfDayDraftPage.module.css";
+import { TerracottaHalfDaySend } from "./TerracottaHalfDaySend";
+import styles from "./TerracottaHalfDayPage.module.css";
 
 function AttractionHeading({ text }: { text: string }) {
   return text.split(/(兵马俑|陶俑)/u).map((part, index) =>
@@ -16,19 +17,18 @@ function AttractionHeading({ text }: { text: string }) {
 }
 
 /**
- * Owner-review draft of the half-day product, set in the full-trip page's
+ * The quote-on-request half-day tour at /tours/, set in the full-trip page's
  * language (FullTripSupportPage.module.css): white ground, large serif words
  * at weight 400, grey notes in small sans, hairlines, and one way forward
  * marked by a thin arrow. Nothing is boxed, filled, pilled or given an icon.
  * Each section is a heading with a plain list beside it.
  */
-export function TerracottaHalfDayDraftPage({ locale }: { locale: HomegroundLocale }) {
+export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) {
   const copy = terracottaHalfDayCopy[locale];
   return (
     <div className={`${styles.page} ${localeStyles.root} hg-locale-root`} data-homeground-locale={locale}>
       <a className={styles.skip} href="#terracotta-main">{copy.skip}</a>
-      <HomegroundHeader locale={locale} pageContext="tour" languagePaths={terracottaHalfDayPreviewPaths} />
-      <p className={styles.draft}>{copy.draft}</p>
+      <HomegroundHeader locale={locale} pageContext="tour" languagePaths={terracottaHalfDayPaths} />
       <main className={styles.main} id="terracotta-main">
         {/* The photograph sits beside the headline on a wide screen and under it on a phone, never wider than the words. */}
         <section className={styles.hero} aria-labelledby="terracotta-title">
@@ -38,7 +38,7 @@ export function TerracottaHalfDayDraftPage({ locale }: { locale: HomegroundLocal
             </nav>
             <h1 id="terracotta-title"><AttractionHeading text={copy.title} /></h1>
             <p className={styles.promise}>{copy.promise}</p>
-            <a className={styles.send} href="#half-day-enquiry">{copy.primaryCta}</a>
+            <a className={styles.send} href={`#${terracottaHalfDayEnquiryAnchor}`}>{copy.primaryCta}</a>
           </div>
           <figure className={styles.heroImage}>
             <Image src={terracottaHalfDayImage.src} width={1280} height={853} alt={copy.heroAlt} priority sizes="(min-width: 62rem) 34rem, 100vw" />
@@ -92,7 +92,7 @@ export function TerracottaHalfDayDraftPage({ locale }: { locale: HomegroundLocal
         </section>
 
         {/* The price and what to send for it, together: the one place the page asks for anything. */}
-        <section id="half-day-enquiry" className={styles.block} aria-labelledby="price-title">
+        <section id={terracottaHalfDayEnquiryAnchor} className={styles.block} aria-labelledby="price-title">
           <div className={styles.blockHead}>
             <h2 id="price-title">{copy.priceTitle}</h2>
             <p>{copy.priceBody}</p>
@@ -106,6 +106,7 @@ export function TerracottaHalfDayDraftPage({ locale }: { locale: HomegroundLocal
                 </li>
               ))}
             </ol>
+            <TerracottaHalfDaySend locale={locale} />
             <p className={styles.small}>{copy.enquiryNote}</p>
           </div>
         </section>

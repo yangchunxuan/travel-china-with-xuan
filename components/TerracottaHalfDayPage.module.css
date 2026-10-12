@@ -1,5 +1,5 @@
 /*
- * The half-day draft, set in the full-trip page's language
+ * The half-day tour page, set in the full-trip page's language
  * (FullTripSupportPage.module.css): white ground, large serif words at
  * weight 400, #6b6b66 notes in small sans, #e7e5df hairlines, the rust
  * underline that draws from the left, and one way forward marked by a thin
@@ -59,16 +59,6 @@
     opacity: 0;
     transform: translateY(12px);
   }
-}
-
-/* A draft, said once in small print under the header. */
-.draft {
-  border-block-end: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0.625rem max(var(--gutter), calc((100% - var(--content)) / 2));
 }
 
 /* ---------- Hero: the headline, one sentence, one way forward ---------- */
@@ -365,6 +355,85 @@
 
 .textLink:hover {
   text-decoration-color: currentColor;
+}
+
+/* ---------- The one way to send, then the other ways as small words ---------- */
+
+.sendRow {
+  border-block-start: 1px solid var(--rule);
+  margin-block-start: 0.5rem;
+}
+
+/* ".page" outranks the KakaoTalk button's own styles; its icon is hidden. */
+.page .sendLine {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--display);
+  font-size: clamp(1.125rem, 1.7vw, 1.375rem);
+  font-weight: 400;
+  gap: 1rem;
+  inline-size: 100%;
+  justify-content: space-between;
+  letter-spacing: 0;
+  line-height: 1.3;
+  min-block-size: 4rem;
+  padding: 0;
+  position: relative;
+  text-align: start;
+  text-decoration: none;
+}
+
+.page .sendLine:hover {
+  background: none;
+}
+
+.page .sendLine svg {
+  display: none;
+}
+
+.page .sendLine::after {
+  background: currentColor;
+  block-size: 1px;
+  content: "";
+  flex: none;
+  inline-size: 2.625rem;
+  transition: inline-size 300ms var(--ease);
+}
+
+.page .sendLine::before {
+  block-size: 7px;
+  border-block-start: 1px solid currentColor;
+  border-inline-end: 1px solid currentColor;
+  content: "";
+  inline-size: 7px;
+  inset-block-start: calc(50% - 3.5px);
+  inset-inline-end: 0;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.page .sendLine:is(:hover, :focus-visible)::after {
+  inline-size: 3.375rem;
+}
+
+.fine {
+  border-block-start: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  gap: 0.25rem 1.25rem;
+  line-height: 1.9;
+  padding-block: 0.75rem 1.25rem;
+}
+
+.fine .textLink {
+  white-space: nowrap;
 }
 
 /* ---------- Questions: unfold in place, one at a time ---------- */

@@ -10,6 +10,8 @@ import { spanishTourPagePath } from "./spanishEditionIndex.ts";
 
 export const RESERVED_PRIVATE_TOUR_SLUGS = [
   "zhangjiajie-4-day-private-tour",
+  // Standalone quote-on-request page (app/(default)/tours/<slug>/), not a catalogue product.
+  "xian-terracotta-warriors-half-day-private-tour",
 ] as const;
 
 const reservedPrivateTourSlugs = new Set<string>(RESERVED_PRIVATE_TOUR_SLUGS);
