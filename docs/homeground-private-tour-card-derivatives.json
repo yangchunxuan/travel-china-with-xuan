@@ -882,6 +882,22 @@
         "1380x863"
       ],
       "familySha256": "c309cacdead597d5d429fa94f0680df50503e6ebdf340d8f5815e2f3950b5b46"
+    },
+    {
+      "productId": "guilin-li-river-yangshuo-4-day-private-tour",
+      "sourcePath": "public/images/tours/guilin-li-river-yangshuo-4-day-private-tour/hero.webp",
+      "sourceSha256": "b060a64b98b4fbde971315ea0eebbcfc284c7f580c231dc3f2bdc33f37876b01",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "public/images/tours/guilin-li-river-yangshuo-4-day-private-tour/hero.webp",
+      "rightsEvidenceNeedle": "the owner's authorization establishes Homeground project use",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
+      "familySha256": "52e5e50e361bee147c72a843f616c644418cf2e7ec785024ec2beb6213e71e1a"
     }
   ]
 }

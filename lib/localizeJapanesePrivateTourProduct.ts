@@ -1,4 +1,5 @@
 import { jaPilot } from "./jaPilot";
+import { japaneseGuilinFourDayFacts } from "./japaneseGuilinFourDayProduct";
 import { localizeJapaneseJiangnanProduct } from "./japaneseJiangnanProduct";
 import { getJapaneseTourCopy, type JapaneseTourCopy } from "./japaneseTourCopy";
 import { japaneseCruiseOverrides } from "./japaneseCruiseOverrides";
@@ -60,6 +61,7 @@ export function localizeJapanesePrivateTourProduct(
   const packageCopy = new Map(copy.packages.map((item) => [item.id, item]));
   return {
     ...source,
+    ...(product.slug === "guilin-li-river-yangshuo-4-day-private-tour" ? { facts: japaneseGuilinFourDayFacts } : {}),
     path: `/ja/tours/${product.slug}/`,
     title: copy.title,
     metadataTitle: copy.metadataTitle,

@@ -180,6 +180,12 @@ const comparisonProfiles: Readonly<Record<string, ComparisonProfile>> = {
       "대도시 풍경과 웅장한 카르스트 지형을 한 여행에서 보고 싶은 여행자.",
     ),
   },
+  "guilin-li-river-yangshuo-4-day-private-tour": {
+    route: l("Guilin · Li River · Yangshuo", "桂林 · 漓江 · 阳朔", "계림 · 이강 · 양삭"),
+    appeal: l("A shared Li River cruise and a full private countryside day, with two consecutive Yangshuo nights. Six-adult reference price; final written quote before payment.", "漓江共乘游船与完整一天私人乡村游览，阳朔连住两晚。6名成人参考价，付款前确认最终书面报价。", "이강 공용 유람선과 프라이빗 전원 관광 하루, 양삭 연속 2박. 성인 6명 참고 가격이며 결제 전 최종 서면 견적을 확인합니다."),
+    pace: l("One Guilin night, two nights in the same Yangshuo hotel; Days 1 and 4 are transfers.", "桂林1晚，阳朔同一家酒店2晚；D1和D4以接送为主。", "계림 1박, 양삭 같은 호텔 2박. D1·D4는 이동일입니다."),
+    fit: l("Travellers with four days who want the river and countryside arranged together.", "有四天时间，希望把漓江、乡村和接送一起安排的旅客。", "4일 동안 강과 전원 풍경, 이동을 함께 준비하고 싶은 여행자."),
+  },
   "guilin-yangshuo-5-day-private-tour": {
     route: l(
       "Guilin · Li River · Yangshuo",

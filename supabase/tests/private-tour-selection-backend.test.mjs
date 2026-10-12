@@ -71,9 +71,9 @@ const northeastPreviewSlugs = [
 const winterPublishedSlugs = [...northeastPreviewSlugs, "yanji-changbaishan-wanda-6-day-private-tour"];
 const jiangnanQuoteSlug = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 const fiveCityQuoteSlug = "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour";
-// Routes added after the winter release (the five-city route published prices on 2026-10-11);
-// earlier migrations predate them.
-const laterQuoteSlugs = [jiangnanQuoteSlug, fiveCityQuoteSlug];
+// Routes added after the winter release; earlier migrations predate them.
+// Their own incremental migration regressions verify the later identities and selections.
+const laterQuoteSlugs = [jiangnanQuoteSlug, fiveCityQuoteSlug, "guilin-li-river-yangshuo-4-day-private-tour"];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,

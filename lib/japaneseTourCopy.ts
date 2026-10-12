@@ -1,6 +1,9 @@
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { japaneseClientInspiredTourCopyBySlug } from "./japaneseClientInspiredTourCopy.ts";
 
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { japaneseGuilinFourDayCopy } from "./japaneseGuilinFourDayProduct.ts";
+
 /** Japanese customer copy for structured tours outside the separately authored Jiangnan pilot.
  * Route, price rows, inclusions flags and package IDs stay in privateTourProducts.
  */
@@ -5241,5 +5244,6 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
 );
 
 export function getJapaneseTourCopy(slug: string): JapaneseTourCopy | undefined {
+  if (slug === "guilin-li-river-yangshuo-4-day-private-tour") return japaneseGuilinFourDayCopy;
   return japaneseTourCopyBySlug[slug] ?? japaneseNortheastWinterCopy[slug] ?? japaneseClientInspiredTourCopyBySlug[slug];
 }

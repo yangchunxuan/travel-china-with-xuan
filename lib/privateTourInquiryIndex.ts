@@ -56,6 +56,13 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
     ],
   },
   {
+    slug: "guilin-li-river-yangshuo-4-day-private-tour",
+    title: { en: "Guilin, Li River & Yangshuo: 4-Day Private Tour", zh: "桂林·漓江·阳朔 4 天 3 晚私家团", ko: "계림·이강·양삭 3박 4일 프라이빗 투어", ja: "桂林・漓江・陽朔 4日間（3泊）プライベートツアー" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 6 }] },
+    ],
+  },
+  {
     slug: "harbin-winter-5-day-private-tour",
     title: { en: "Harbin Ice & Snow: 5-Day Private Tour", zh: "哈尔滨冰雪 5 天 4 晚私家团", ko: "하얼빈 빙설 5일 프라이빗 투어", ja: "ハルビン氷雪 5日間（4泊）プライベートツアー" },
     packages: [

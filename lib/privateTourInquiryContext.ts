@@ -19,6 +19,7 @@ export const privateTourInquirySlugs = [
   "xian-terracotta-warriors-5-day-private-tour",
   "chongqing-wulong-5-day-private-tour",
   "guilin-yangshuo-5-day-private-tour",
+  "guilin-li-river-yangshuo-4-day-private-tour",
   "harbin-winter-5-day-private-tour",
   "shanghai-suzhou-5-day-private-tour",
   "beijing-highlights-5-day-private-tour",
@@ -306,6 +307,11 @@ const privateTourInquiryNames: Readonly<
     en: "Chongqing & Wulong: 5-Day Private Tour",
     zh: "重庆·武隆 5 天 4 晚私家团",
     ko: "충칭·우롱 5일 프라이빗 투어",
+  },
+  "guilin-li-river-yangshuo-4-day-private-tour": {
+    en: "Guilin, Li River & Yangshuo: 4-Day Private Tour",
+    zh: "桂林·漓江·阳朔 4 天 3 晚私家团",
+    ko: "계림·이강·양삭 3박 4일 프라이빗 투어",
   },
   "guilin-yangshuo-5-day-private-tour": {
     en: "Guilin & Yangshuo: 5-Day Private Tour",
