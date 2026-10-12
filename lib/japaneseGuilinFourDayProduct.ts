@@ -87,8 +87,8 @@ export const japaneseGuilinFourDayCopy: JapaneseTourCopy = {
       "variants": [
         {
           "label": "漓江クルーズ",
-          "alt": "陽朔の田園のカルストの山々と緑の畑",
-          "caption": "陽朔の山々の間でゆっくりと。漓江クルーズ、陽朔連続2泊とガイド付きの田園観光を組み合わせます。"
+          "alt": "漓江のカルスト峰の間を進むクルーズ船",
+          "caption": "陽朔への船旅。船は他のお客様と共乗で、運航便、桟橋と船室等級は日程に合わせて確認します。"
         }
       ]
     },
