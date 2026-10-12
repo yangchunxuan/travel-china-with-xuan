@@ -33,6 +33,7 @@ import { GuideCarServiceCta } from "./GuideCarServiceCta";
 import { getPrivateCarServiceCta } from "../../lib/privateCarServiceCta";
 import { getGuideServiceCta } from "../../lib/privateGuideServiceCta";
 import { getGuideAttractionReservationTarget } from "../../lib/attractionReservations";
+import { getPriorityTicketGuideEntry } from "../../lib/priorityTicketGuide";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
@@ -271,6 +272,10 @@ export function EditorialGuidePage({
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const serviceCta = getAuthorizedGuideServiceCta(guide.id, locale);
   const reservationTarget = getGuideAttractionReservationTarget(guide.id);
+  const leadIndex = body.blocks.findIndex((block) => block.type === "lead");
+  const reservationCtaIndex = getPriorityTicketGuideEntry(guide.id, locale) && leadIndex >= 0
+    ? leadIndex
+    : guideFirstSectionEndIndex(body);
   const relatedDestinationCopy =
     locale === "zh"
       ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
@@ -370,11 +375,11 @@ export function EditorialGuidePage({
             body={body}
             guideTracking={{ guideId: guide.id, locale }}
             interstitials={[
-              // Readers come to an attraction guide to get in; the booking offer
-              // follows the first section, before the route card.
+              // The three English ticket pilots keep one booking card after the
+              // opening answer. Other attraction guides keep their existing placement.
               ...(reservationTarget
                 ? [{
-                    afterIndex: guideFirstSectionEndIndex(body),
+                    afterIndex: reservationCtaIndex,
                     node: <GuideReservationCta guideId={guide.id} locale={locale} position="inline" rule={reservationTarget} />,
                   }]
                 : []),

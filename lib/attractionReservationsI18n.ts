@@ -48,6 +48,11 @@ export interface AttractionReservationEnquiryCopy {
   intro: string;
   attractions: string;
   attractionsHint: string;
+  /** A guide referral starts with its already-selected attraction; the full list opens from "add". */
+  selectedAttractions: string;
+  addAttractions: string;
+  removeAttraction: string;
+  removeLabel: string;
   /** One date per chosen attraction: a ticket is for a single day. */
   visitDates: string;
   visitDatesHint: string;
@@ -168,6 +173,8 @@ export interface AttractionReservationCopy {
   guideCta: {
     label: string;
     title: string;
+    /** Beside the large per-person fee: "per person, plus the official ticket price". */
+    feeUnit: string;
     /** For an attraction whose guide confirms the official system accepts passports. */
     body: string;
     /** For an attraction whose passport handling online is not confirmed. */
@@ -182,9 +189,9 @@ export interface AttractionReservationCopy {
 const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
   en: {
     metadata: {
-      title: "Book Forbidden City & China Museum Tickets as a Foreigner",
+      title: "China Attraction Ticket Booking Service for Foreigners",
       description:
-        "We reserve the Forbidden City, Terracotta Warriors and other museums on official systems in your own name: {fee} per person per attraction plus face value.",
+        "Request bookings for selected China attractions: {fee} per person per attraction plus official ticket price. Written quote before payment.",
     },
     breadcrumb: "Breadcrumb",
     home: "Home",
@@ -303,9 +310,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
-      intro: `Nothing is sent until you choose WhatsApp or email. Your choices are written into the message so the planner sees them at once. Send it and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
+      intro: `Nothing is sent until you press send in WhatsApp or email. Request and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
       attractions: "Attractions",
       attractionsHint: "Choose as many as you like; you will pick a date for each one below.",
+      selectedAttractions: "Your tickets",
+      addAttractions: "Add another attraction",
+      removeAttraction: "Remove {name}",
+      removeLabel: "Remove",
       visitDates: "Visit dates",
       visitDatesHint: "Each ticket is for one day. Pick the day you will visit each attraction.",
       visitDatesEmpty: "Choose an attraction above, then pick the day you will visit it.",
@@ -344,10 +355,11 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     guideCta: {
       label: "Attraction reservation service",
       title: "We can book {attraction} for you",
-      body: `We submit the reservation on the official system in your own passport name, not a resold ticket: {fee} per person plus the official ticket price, confirmed in writing before payment. Request and pay at least ${days} days before your visit and the booking is guaranteed.`,
-      bodyPassportUnchecked: `Before payment we check whether the official system accepts your passport for your date and confirm in writing: {fee} per person plus the official ticket price, never a resold ticket. Request and pay at least ${days} days before your visit and the booking is guaranteed.`,
+      feeUnit: "per person, plus the official ticket price",
+      body: `Booked on the official system in your own passport name, never resold, confirmed in writing before you pay. Guaranteed if you request and pay at least ${days} days before your visit.`,
+      bodyPassportUnchecked: `Before payment we check that the official system takes your passport for your date and confirm in writing; never a resold ticket. Guaranteed if you request and pay at least ${days} days before your visit.`,
       bodyBestEffort: `This one is best effort, not guaranteed: we try through the official channels in your own name for {fee} per person plus the official ticket price, confirmed in writing before payment. If we cannot secure it, both are refunded in full.`,
-      action: "See the reservation service",
+      action: "Request a booking",
     },
     hubLink: "Attraction reservations in {city}",
   },
@@ -474,9 +486,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "代预约需求",
       title: "告诉我们要预约什么",
-      intro: `在你选择 WhatsApp 或邮件之前，什么都不会发送。你的选择会写进消息，规划师一眼就能看到。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证（标注“尽力预约”的景点除外）。`,
+      intro: `在 WhatsApp 或邮件里按下发送之前，什么都不会发出。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证（标注“尽力预约”的景点除外）。`,
       attractions: "景点",
       attractionsHint: "可多选。选好后，在下方为每个景点选日期。",
+      selectedAttractions: "已选门票",
+      addAttractions: "再加一个景点",
+      removeAttraction: "移除{name}",
+      removeLabel: "移除",
       visitDates: "参观日期",
       visitDatesHint: "门票按天预约，请为每个景点选一个参观日。",
       visitDatesEmpty: "先在上方选择景点，再为每个景点选日期。",
@@ -515,10 +531,11 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     guideCta: {
       label: "景点代预约服务",
       title: "我们可以帮你预约{attraction}",
-      body: `在官方系统以你本人护照实名提交预约，不是转售门票：每人服务费 {fee}，另加官方票价，付款前先书面确认。在参观日前至少 ${days} 天提交需求并付款，我们保证约到。`,
-      bodyPassportUnchecked: `付款前，我们会按你的日期核实官方系统是否接受你的护照，并书面确认每人服务费 {fee} 与官方票价；我们不经手转售门票。在参观日前至少 ${days} 天提交需求并付款，我们保证约到。`,
+      feeUnit: "/人，另付官方票价",
+      body: `在官方系统以你本人护照实名提交，不转售门票，付款前书面确认。参观日前至少 ${days} 天提交并付款，保证约到。`,
+      bodyPassportUnchecked: `付款前核实官方系统是否接受你的护照并书面确认，不转售门票。参观日前至少 ${days} 天提交并付款，保证约到。`,
       bodyBestEffort: `这一项是尽力预约，不作保证：我们通过官方渠道以你本人名义尝试预约，每人服务费 {fee} 加官方票价，付款前书面确认；如未能约到，两者全额退还。`,
-      action: "查看代预约服务",
+      action: "提交预约需求",
     },
     hubLink: "{city}景点代预约",
   },
@@ -645,9 +662,13 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     enquiry: {
       eyebrow: "예약 요청",
       title: "예약할 내용을 알려 주세요",
-      intro: `카카오톡, WhatsApp, 이메일 중 하나를 고르기 전에는 아무것도 전송되지 않습니다. 선택한 내용이 메시지에 들어가 플래너가 바로 확인합니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외).`,
+      intro: `카카오톡, WhatsApp, 이메일에서 보내기를 누르기 전에는 아무것도 전송되지 않습니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외).`,
       attractions: "관광지",
       attractionsHint: "여러 곳을 고를 수 있어요. 고른 뒤 아래에서 관광지마다 날짜를 정해 주세요.",
+      selectedAttractions: "선택한 입장권",
+      addAttractions: "관광지 추가",
+      removeAttraction: "{name} 빼기",
+      removeLabel: "빼기",
       visitDates: "방문일",
       visitDatesHint: "입장권은 하루 단위로 예약돼요. 관광지마다 방문할 날짜를 하나씩 골라 주세요.",
       visitDatesEmpty: "위에서 관광지를 고르면 방문일을 고를 수 있어요.",
@@ -689,10 +710,11 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     guideCta: {
       label: "관광지 예약 대행",
       title: "{attraction} 예약을 대신해 드립니다",
-      body: `되판 표가 아니라 공식 시스템에서 본인 여권 실명으로 직접 예약을 제출합니다. 1인 {fee} 수수료와 공식 입장료는 결제 전에 서면으로 확인합니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
-      bodyPassportUnchecked: `결제 전에 공식 시스템이 해당 날짜에 여권을 받는지 확인하고 서면으로 안내합니다. 되판 표는 다루지 않으며, 1인 {fee} 수수료와 공식 입장료가 듭니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
+      feeUnit: "1인당 · 공식 입장료 별도",
+      body: `되판 표가 아니라 공식 시스템에서 본인 여권 실명으로 예약하고, 결제 전에 서면으로 확인합니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
+      bodyPassportUnchecked: `결제 전에 공식 시스템이 여권을 받는지 확인해 서면으로 안내하며, 되판 표는 다루지 않습니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
       bodyBestEffort: `이 항목은 최선 시도이며 보장하지 않습니다. 공식 채널에서 본인 명의로 시도하며 1인 {fee} 수수료와 공식 입장료가 들고 결제 전에 서면으로 확인합니다. 예약하지 못하면 둘 다 전액 환불합니다.`,
-      action: "예약 대행 서비스 보기",
+      action: "예약 요청하기",
     },
     hubLink: "{city} 관광지 예약 대행",
   },

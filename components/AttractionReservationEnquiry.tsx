@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
-import { Mail, MessageCircle } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type { AttractionReservationEnquiryCopy } from "../lib/attractionReservationsI18n";
 import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "../lib/attractionReservationFeeFormat";
@@ -65,6 +64,9 @@ export function AttractionReservationEnquiry({
 }) {
   const id = useId();
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
+  const [compactReferral, setCompactReferral] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const pickerSummary = useRef<HTMLElement>(null);
   // One date per attraction id: a ticket is for a single day, not a range.
   const [dates, setDates] = useState<Record<string, string>>({});
   const [undecided, setUndecided] = useState(false);
@@ -84,6 +86,8 @@ export function AttractionReservationEnquiry({
     const match = attractions.find((attraction) => attraction.id === requested);
     if (!match) return;
     setSelectedAttractions((current) => (current.includes(match.id) ? current : [...current, match.id]));
+    // A referral starts from its attraction; the ordinary picker never collapses after a first tick.
+    setCompactReferral(true);
   }, [attractions, queryKey]);
 
   // "Request this attraction" in a rules row ticks it here, then shows the
@@ -111,8 +115,9 @@ export function AttractionReservationEnquiry({
     if (!revealRequest) return;
     const { attractionId } = revealRequest;
     const field = undecided ? null : document.getElementById(`${id}-date-${attractionId}`);
+    const selectedRow = document.querySelector(`[data-selected-attraction="${CSS.escape(attractionId)}"]`);
     const chip = document.querySelector(`input[name="attraction"][value="${CSS.escape(attractionId)}"]`)?.closest("label");
-    (field ?? chip)?.scrollIntoView({ block: "center" });
+    (field ?? selectedRow ?? chip)?.scrollIntoView({ block: "center" });
     // Runs once per click: undecided is only read here, so toggling it never scrolls.
   }, [revealRequest]);
 
@@ -187,7 +192,33 @@ export function AttractionReservationEnquiry({
       : <button className={styles.summaryPickDate} onClick={() => focusDateField(attractionId)} type="button">{copy.summaryPickDate}</button>;
   }
 
-  const kakao = locale === "ko" ? <KakaoTalkContact className={styles.kakao} inquiry={() => message} key={kakaoKey} label={copy.kakaoAction} onOpen={() => trackChannel("kakao")} /> : null;
+  const kakao = locale === "ko" ? <KakaoTalkContact buttonClassName={styles.primaryButton} className={styles.kakao} inquiry={() => message} key={kakaoKey} label={copy.kakaoAction} onOpen={() => trackChannel("kakao")} /> : null;
+
+  const noteField = <textarea aria-describedby={`${id}-note-hint`} aria-label={compactReferral ? copy.note : undefined} id={`${id}-note`} maxLength={attractionReservationNoteMaxLength} name="note" onChange={(event) => setNote(event.target.value)} placeholder={copy.notePlaceholder} rows={3} value={note} />;
+
+  const noteHint = <p className={styles.fieldHint} id={`${id}-note-hint`}>{copy.noteHint}</p>;
+
+  const attractionChoices = (
+    <fieldset aria-describedby={`${id}-attractions-hint`} className={styles.choiceGroup}>
+      <legend>{copy.attractions}</legend>
+      <p className={styles.fieldHint} id={`${id}-attractions-hint`}>{copy.attractionsHint}</p>
+      <div className={styles.cityGroups}>
+        {groups.map((group) => (
+          <div aria-labelledby={`${id}-city-${group.id}`} className={styles.cityGroup} key={group.id} role="group">
+            <p className={styles.cityLabel} id={`${id}-city-${group.id}`}>{group.label}</p>
+            <div className={styles.attractionList}>
+              {group.attractions.map((attraction) => (
+                <label className={styles.attractionOption} key={attraction.id}>
+                  <input checked={selectedAttractions.includes(attraction.id)} name="attraction" onChange={() => setSelectedAttractions((current) => toggle(current, attraction.id))} type="checkbox" value={attraction.id} />
+                  <span>{attraction.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </fieldset>
+  );
 
   return (
     <>
@@ -195,25 +226,34 @@ export function AttractionReservationEnquiry({
       <p className={styles.visuallyHidden} role="status">{addedMessage}</p>
       <div className={styles.enquiryLayout} id={formId}>
         <form className={styles.enquiryForm} onSubmit={(event) => event.preventDefault()} onFocus={markStarted} onChange={(event) => { markStarted(event); setKakaoKey((key) => key + 1); }}>
-          <fieldset aria-describedby={`${id}-attractions-hint`} className={styles.choiceGroup}>
-            <legend>{copy.attractions}</legend>
-            <p className={styles.fieldHint} id={`${id}-attractions-hint`}>{copy.attractionsHint}</p>
-            <div className={styles.cityGroups}>
-              {groups.map((group) => (
-                <div aria-labelledby={`${id}-city-${group.id}`} className={styles.cityGroup} key={group.id} role="group">
-                  <p className={styles.cityLabel} id={`${id}-city-${group.id}`}>{group.label}</p>
-                  <div className={styles.attractionList}>
-                    {group.attractions.map((attraction) => (
-                      <label className={styles.attractionOption} key={attraction.id}>
-                        <input checked={selectedAttractions.includes(attraction.id)} name="attraction" onChange={() => setSelectedAttractions((current) => toggle(current, attraction.id))} type="checkbox" value={attraction.id} />
-                        <span>{attraction.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </fieldset>
+          {compactReferral ? (
+            <>
+              <fieldset className={styles.choiceGroup}>
+                <legend>{copy.selectedAttractions}</legend>
+                {chosen.length ? <ul className={styles.selectedAttractions}>
+                  {chosen.map((attraction) => (
+                    <li data-selected-attraction={attraction.id} key={attraction.id}>
+                      <span>{attraction.label}</span>
+                      <button
+                        aria-label={copy.removeAttraction.replace("{name}", attraction.label)}
+                        onClick={() => {
+                          // The remove control unmounts: focus the persistent picker first.
+                          pickerSummary.current?.focus({ preventScroll: true });
+                          setPickerOpen(true);
+                          setSelectedAttractions((current) => current.filter((item) => item !== attraction.id));
+                        }}
+                        type="button"
+                      >{copy.removeLabel}</button>
+                    </li>
+                  ))}
+                </ul> : <p className={styles.fieldHint}>{copy.noneSelected}</p>}
+              </fieldset>
+              <details className={styles.referralPicker} onToggle={(event) => setPickerOpen(event.currentTarget.open)} open={pickerOpen}>
+                <summary ref={pickerSummary}>{copy.addAttractions}</summary>
+                {attractionChoices}
+              </details>
+            </>
+          ) : attractionChoices}
 
           {/* One visit date per chosen attraction, as Klook, GetYourGuide and
               the official systems ask: a ticket is for one day. The site's own
@@ -221,9 +261,10 @@ export function AttractionReservationEnquiry({
               the OS language (a Chinese page showed Korean placeholders in a
               Korean-language Chrome). */}
           {/* "Dates not decided" sits above the fields it hides, so it never jumps under the finger. */}
-          <fieldset aria-describedby={`${id}-dates-hint`} className={styles.choiceGroup}>
+          {/* A referral already names its attraction, and each date field carries its name: no hint is needed. */}
+          <fieldset aria-describedby={compactReferral ? undefined : `${id}-dates-hint`} className={styles.choiceGroup}>
             <legend>{copy.visitDates}</legend>
-            <p className={styles.fieldHint} id={`${id}-dates-hint`}>{chosen.length ? copy.visitDatesHint : copy.visitDatesEmpty}</p>
+            {compactReferral ? null : <p className={styles.fieldHint} id={`${id}-dates-hint`}>{chosen.length ? copy.visitDatesHint : copy.visitDatesEmpty}</p>}
             <label className={styles.checkboxRow}>
               <input checked={undecided} onChange={(event) => setUndecided(event.target.checked)} type="checkbox" />
               {copy.undecided}
@@ -244,17 +285,28 @@ export function AttractionReservationEnquiry({
             <input id={`${id}-travellers`} inputMode="numeric" max={99} min={1} name="travellers" onChange={(event) => setTravellers(event.target.value)} step={1} type="number" value={travellers} />
           </label>
 
-          <label className={styles.field} htmlFor={`${id}-note`}>
-            <span>{copy.note} <span className={styles.optional}>{copy.optional}</span></span>
-            <textarea aria-describedby={`${id}-note-hint`} id={`${id}-note`} maxLength={attractionReservationNoteMaxLength} name="note" onChange={(event) => setNote(event.target.value)} placeholder={copy.notePlaceholder} rows={3} value={note} />
-          </label>
-          <p className={styles.fieldHint} id={`${id}-note-hint`}>{copy.noteHint}</p>
+          {compactReferral ? (
+            <details className={styles.noteToggle} open={note.length > 0 || undefined}>
+              <summary>{copy.note} <span className={styles.optional}>{copy.optional}</span></summary>
+              {noteField}
+              {noteHint}
+            </details>
+          ) : (
+            <>
+              <label className={styles.field} htmlFor={`${id}-note`}>
+                <span>{copy.note} <span className={styles.optional}>{copy.optional}</span></span>
+                {noteField}
+              </label>
+              {noteHint}
+            </>
+          )}
         </form>
 
       <aside aria-labelledby={`${id}-summary`} className={styles.enquiryAside}>
         <div className={styles.summary}>
-          <h3 id={`${id}-summary`}>{copy.summaryTitle}</h3>
-          {chosen.length ? (
+          {/* On a referral the attraction, date and party sit just above: the summary keeps to the fee. */}
+          <h3 className={compactReferral ? styles.visuallyHidden : undefined} id={`${id}-summary`}>{copy.summaryTitle}</h3>
+          {compactReferral ? null : chosen.length ? (
             <ul className={styles.summaryList}>
               {chosen.map((attraction) => (
                 <li key={attraction.id}>
@@ -265,14 +317,16 @@ export function AttractionReservationEnquiry({
             </ul>
           ) : <p className={styles.summaryEmpty} role="status">{copy.noneSelected}</p>}
           <dl className={styles.summaryFacts}>
-            <div>
-              <dt>{copy.travellers}</dt>
-              <dd>{draft.travellers ?? "—"}</dd>
-            </div>
+            {compactReferral ? null : (
+              <div>
+                <dt>{copy.travellers}</dt>
+                <dd>{draft.travellers ?? "—"}</dd>
+              </div>
+            )}
             <div>
               <dt>{copy.summaryFee}</dt>
               <dd>
-                {feeTotal ?? "—"}
+                <span className={styles.summaryFeeValue}>{feeTotal ?? "—"}</span>
                 {feeFormula ? <span className={styles.summaryFormula}>{feeFormula}</span> : null}
               </dd>
             </div>
@@ -285,15 +339,16 @@ export function AttractionReservationEnquiry({
         </div>
 
         <div className={styles.send} aria-labelledby={`${id}-send`} ref={visibleRef} role="group">
-          <p className={styles.sendTitle} id={`${id}-send`}>{copy.send}</p>
-          {/* Korean visitors use KakaoTalk first; WhatsApp and email then sit side by side. */}
+          <p className={styles.visuallyHidden} id={`${id}-send`}>{copy.send}</p>
+          {/* The one way to send, as on the full-trip page: words, then a thin arrow.
+              Korean visitors use KakaoTalk first; WhatsApp and email then follow as small words. */}
           <div className={styles.sendButtons} data-kakao-first={kakao ? "" : undefined}>
             {kakao}
             <a aria-label={kakao && copy.whatsappShort ? copy.whatsapp : undefined} className={kakao ? styles.secondaryButton : styles.primaryButton} data-reservation-channel="whatsapp" href={whatsappHref} onClick={() => trackChannel("whatsapp")} rel="noopener noreferrer" target="_blank">
-              <MessageCircle aria-hidden="true" size={18} />{kakao ? copy.whatsappShort ?? copy.whatsapp : copy.whatsapp}
+              {kakao ? copy.whatsappShort ?? copy.whatsapp : copy.whatsapp}
             </a>
             <a aria-label={kakao && copy.emailShort ? copy.email : undefined} className={styles.secondaryButton} data-reservation-channel="email" href={mailtoHref} onClick={() => trackChannel("email")}>
-              <Mail aria-hidden="true" size={18} />{kakao ? copy.emailShort ?? copy.email : copy.email}
+              {kakao ? copy.emailShort ?? copy.email : copy.email}
             </a>
           </div>
           <p className={styles.replyFrom}>{copy.emailAddress} <span>{email}</span><a href={privacyHref}>{copy.privacy}</a></p>
