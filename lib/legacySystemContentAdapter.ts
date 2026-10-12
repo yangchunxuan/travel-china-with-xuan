@@ -31,6 +31,7 @@ import { getPrivateGuideServiceCopy } from "./privateGuideServicesI18n";
 import { privateCarServicePath } from "./privateCarServices";
 import { getPrivateCarServiceCopy } from "./privateCarServicesI18n";
 import { fullTripSupportPath } from "./fullTripSupport";
+import { terracottaHalfDayCopy, terracottaHalfDayPaths, terracottaHalfDaySlug } from "./terracottaHalfDayTour";
 import { getFullTripSupportCopy } from "./fullTripSupportI18n";
 import { travelInspirationPath, travelInspirationThemePath, travelInspirationThemes } from "./travelInspiration";
 import { sightPath, sights, sightsPath } from "./sights";
@@ -450,9 +451,35 @@ export function buildLegacySystemContentNodes(): ContentNode[] {
     updatePolicy: { volatility: "medium", refreshCadence: "quarterly", owner: "homeground-platform" },
   };
 
+  // A standalone quote-on-request tour page under /tours/ (as the Zhangjiajie
+  // four-day page is): not a catalogue product, and new, so no release date.
+  const terracottaHalfDayNode: ContentNode = {
+    id: terracottaHalfDaySlug,
+    section: "services",
+    family: "service",
+    primaryIntent: "purchase",
+    entityIds: ["city-xian"],
+    relationIds: [],
+    parentContentId: "tour-hub",
+    status: "published",
+    indexability: { index: true, follow: true },
+    locales: localizedVersions(terracottaHalfDaySlug, Object.fromEntries(locales.map((locale) => {
+      const copy = terracottaHalfDayCopy[locale];
+      return [locale, { path: terracottaHalfDayPaths[locale], title: copy.title, description: copy.description, h1: copy.title }];
+    }))),
+    factIds: [],
+    sourceIds: [],
+    mediaIds: [],
+    schemaTypes: ["WebPage", "TouristTrip"],
+    legacyAliases: [],
+    dates: {},
+    updatePolicy: { volatility: "high", refreshCadence: "monthly", owner: "homeground-platform" },
+  };
+
   const nodes = [
     privateGuidesNode,
     fullTripNode,
+    terracottaHalfDayNode,
     privateCarNode,
     ...inspirationNodes,
     ...sightNodes,
