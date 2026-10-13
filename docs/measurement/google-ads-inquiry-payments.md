@@ -6,6 +6,8 @@ The website and private administrator workflow can ship independently of Google 
 
 The browser collects an eligible Google click only after the 2026-10-13.1 marketing measurement consent and the configured production Ads gate. It preserves exact click-ID case for up to 90 days and sends `adAttribution` as auxiliary inquiry metadata. There is no browser Google Ads conversion event and no parallel CSV upload path.
 
+The two public Ads settings live in the reviewed `.env.production`, which Next.js reads during production builds. It explicitly enables click attribution and leaves the optional AW identifier empty. No workflow permission change is needed. The existing workflow still supplies the analytics master switch; if it is absent or false, collection stays off. Development/test builds do not load this production file. An explicit build environment or local override takes precedence. To disable attribution for the deployed site, set the production file flag to `false` and rebuild, or turn off the already-wired analytics master switch and rebuild. A repository variable not passed by the workflow does not override the file. This file must contain only the two public keys, never backend credentials.
+
 ## Storage and operator behavior
 
 - `inquiry_ad_attribution` stores one immutable click association per inquiry, plus consent version/time and a hashed withdrawal bearer token. It never enters public receipts, email notifications, or aggregate analytics.
