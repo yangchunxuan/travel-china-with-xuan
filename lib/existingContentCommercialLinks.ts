@@ -300,6 +300,7 @@ const productContexts = {
     guides: [
       "shanghai-where-to-stay-first-trip",
       "shanghai-pudong-or-hongqiao-airport",
+      "pudong-airport-to-shanghai-disneyland",
     ],
     relatedProducts: [
       p("shanghai-suzhou-5-day-private-tour"),

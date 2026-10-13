@@ -24,6 +24,16 @@ type CuratedCardCopy = { readonly label: string; readonly note: string; readonly
 
 /** Make the difference visible when a published tour extends a planning example. */
 const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedCardCopy>>> = {
+  "mutianyu-great-wall-tickets": {
+    en: { label: "Beijing’s imperial sights and Badaling", note: "Explore Beijing on our five-day private tour, including Badaling Great Wall. Mutianyu is not on this route; ask us for a separate quote if that is your choice.", action: "View 5-day tour" },
+    zh: { label: "北京古都与八达岭长城", note: "这条 5 天私家团走北京主要景点和八达岭，不含慕田峪。想去慕田峪，可以按你的日期另行询价。", action: "查看北京 5 天私家团" },
+    ko: { label: "베이징 명소와 팔달령 만리장성", note: "베이징 주요 명소와 팔달령 만리장성을 둘러보는 5일 프라이빗 투어입니다. 무톈위는 포함하지 않으며, 원하면 날짜에 맞춰 별도 견적을 요청해 주세요.", action: "베이징 5일 투어 보기" },
+  },
+  "chengdu-panda-base-or-dujiangyan-panda-valley": {
+    en: { label: "Chengdu pandas, Sanxingdui and Dujiangyan", note: "Our five-day private tour visits Chengdu Panda Base, Sanxingdui Museum and Dujiangyan’s irrigation works. It does not visit Panda Valley.", action: "View 5-day tour" },
+    zh: { label: "成都熊猫、三星堆与都江堰", note: "这条 5 天私家团去成都大熊猫繁育研究基地、三星堆博物馆和都江堰水利工程，不含熊猫谷。", action: "查看成都 5 天私家团" },
+    ko: { label: "청두 판다·싼싱두이·도강언", note: "청두 판다번식연구기지, 싼싱두이박물관과 도강언 수리시설을 방문하는 5일 프라이빗 투어입니다. 판다밸리는 포함하지 않습니다.", action: "청두 5일 투어 보기" },
+  },
   "shanghai-museum-east-entry-reservations": {
     en: { label: "Shanghai and Suzhou private tour", note: "The 5-day route does not include East. Ask us to adjust the Shanghai day; we'll check opening rules and any special-area booking first.", action: "View the 5-day route" },
     zh: { label: "上海—苏州私家团", note: "现有 5 天行程不含上博东馆。想去可调整上海当天安排，再核对开放与专项区域预约。", action: "查看 5 天路线" },
