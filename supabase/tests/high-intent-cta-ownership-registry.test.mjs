@@ -101,7 +101,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.doesNotMatch(itineraryReviewSource, /id: "review-my-route"|"@type": "Offer"/u);
 });
 
-test("commercial links keep the approved 8 hub, 106 curated guide and 51 product owners", () => {
+test("commercial links keep the approved hub, curated guide and product owners", () => {
   assert.deepEqual(
     keysFromCommercialBlock(
       "const destinationTargets = {",
@@ -129,6 +129,7 @@ test("commercial links keep the approved 8 hub, 106 curated guide and 51 product
     [
       "beijing-courtyard-hotel-or-modern-hotel",
       "beijing-to-badaling-great-wall-transfer",
+      "beijing-to-mutianyu-great-wall-transfer",
       "beijing-where-to-stay-first-trip",
       "beijing-xian-chengdu-route-order",
       "beijing-zhangjiajie-shanghai-10-days",

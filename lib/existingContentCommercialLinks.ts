@@ -76,6 +76,7 @@ const approvedCommercialGuideIds = [
   "beijing-courtyard-hotel-or-modern-hotel",
   "beijing-where-to-stay-first-trip",
   "beijing-to-badaling-great-wall-transfer",
+  "beijing-to-mutianyu-great-wall-transfer",
   "great-wall-section-selector-from-beijing",
   "forbidden-city-for-foreign-visitors",
   "national-museum-of-china-booking-and-route",
@@ -796,6 +797,21 @@ export function getGuidePublishedRouteLinks(
   locale: HomegroundLocale,
 ) {
   const links = (guideTargets[guideId] ?? []).map((target) => toProductLink(target, locale));
+  if (["great-wall-section-selector-from-beijing", "beijing-to-mutianyu-great-wall-transfer", "mutianyu-great-wall-tickets"].includes(guideId)) {
+    const wallRouteLabels: Record<string, Record<HomegroundLocale, string>> = {
+      "beijing-highlights-5-day-private-tour": {
+        en: "Beijing & Badaling: 5-day private tour",
+        zh: "北京与八达岭：5 天私家团",
+        ko: "베이징·팔달령: 5일 프라이빗 투어",
+      },
+      "beijing-xian-shanghai-8-day-private-tour": {
+        en: "Beijing, Xi’an & Shanghai: 8-day private tour with Mutianyu",
+        zh: "北京—西安—上海：含慕田峪的 8 天私家团",
+        ko: "베이징·시안·상하이: 무톈위를 포함한 8일 프라이빗 투어",
+      },
+    };
+    return links.map((link) => ({ ...link, label: wallRouteLabels[link.id]?.[locale] ?? link.label }));
+  }
   if (guideId !== "china-7-day-itinerary") return links;
 
   const alternativeLabel: Record<HomegroundLocale, string> = {
