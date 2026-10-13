@@ -285,6 +285,7 @@ export const guideTargets = {
   ],
   "yangshuo-china": [
     productTarget("guilin-yangshuo-5-day-private-tour"),
+    productTarget("guilin-li-river-yangshuo-4-day-private-tour"),
   ],
   "huangshan-yellow-mountain": [
     productTarget("huangshan-hongcun-huizhou-5-day-private-tour"),
