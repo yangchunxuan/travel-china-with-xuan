@@ -59,6 +59,12 @@ const body = {
           "4–5 月、9–11 月",
           "¥23,270"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/zh/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/"
       ]
     },
     {

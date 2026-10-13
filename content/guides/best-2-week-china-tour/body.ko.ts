@@ -59,6 +59,12 @@ const body = {
           "4~5월, 9~11월",
           "₩5,010,000"
         ]
+      ],
+      "rowLinks": [
+        "/ko/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "/ko/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "/ko/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/ko/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/"
       ]
     },
     {

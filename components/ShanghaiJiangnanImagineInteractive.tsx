@@ -23,7 +23,7 @@ import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJi
 import tourContactStyles from "./TourContactPanel.module.css";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { buildZhangjiajieCustomGroupInquiryHref, isZhangjiajieCustomGroupTour } from "../lib/privateTourInquiryContext";
-import { privateTourPublishedPriceNote } from "../lib/privateTourCurrencyNote";
+import { privateTourPublishedPriceNote, smallGroupPublishedPriceNote } from "../lib/privateTourCurrencyNote";
 import { collectPrivateTourPhotos, mergePrivateTourRouteMedia, pickVisibleRouteDay, privateTourImageSizes } from "../lib/privateTourMedia";
 import styles from "./ShanghaiJiangnanImaginePage.module.css";
 
@@ -488,7 +488,7 @@ function PublishedPrivateTourPriceConsole({
       {/* Outside the live region: the note is static and need not be re-read. */}
       {japaneseCopy && !japaneseCopy.currencyNote ? null : (
         <p className={styles.currencyNote}>
-          {japaneseCopy ? japaneseCopy.currencyNote : privateTourPublishedPriceNote[product.locale]}
+          {japaneseCopy ? japaneseCopy.currencyNote : (smallGroup ? smallGroupPublishedPriceNote : privateTourPublishedPriceNote)[product.locale]}
         </p>
       )}
 

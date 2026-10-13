@@ -25,6 +25,7 @@ import {
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
 } from "../_shared/runtime.ts";
 import { travellerAckPrivacyVersion } from "../_shared/traveller-ack.ts";
+import { normalizeAdAttribution, type AdAttribution } from "../../../lib/adAttributionContract.ts";
 
 declare const Deno: {
   serve(handler: (request: Request) => Response | Promise<Response>): void;
@@ -58,6 +59,7 @@ type PersistenceState = "not_persisted" | "unknown";
 interface InquiryTransportEnvelope {
   payloadForValidation: unknown;
   trafficSessionToken: string | null;
+  adAttribution: AdAttribution | null;
 }
 
 function inquiryTransportEnvelope(
@@ -66,16 +68,16 @@ function inquiryTransportEnvelope(
   if (
     typeof input !== "object" ||
     input === null ||
-    Array.isArray(input) ||
-    !Object.prototype.hasOwnProperty.call(input, "trafficSessionToken")
+    Array.isArray(input)
   ) {
-    return { payloadForValidation: input, trafficSessionToken: null };
+    return { payloadForValidation: input, trafficSessionToken: null, adAttribution: null };
   }
 
   const payload = input as Record<string, unknown>;
   const token = payload.trafficSessionToken;
   const payloadForValidation = { ...payload };
   delete payloadForValidation.trafficSessionToken;
+  delete payloadForValidation.adAttribution;
 
   // Attribution is auxiliary. A missing, stale or malformed browser token
   // must never prevent a real inquiry from reaching the planner.
@@ -85,6 +87,7 @@ function inquiryTransportEnvelope(
       typeof token === "string" && uuidV4Pattern.test(token)
         ? token.toLowerCase()
         : null,
+    adAttribution: normalizeAdAttribution(payload.adAttribution),
   };
 }
 
@@ -461,7 +464,13 @@ async function handleRequest(request: Request): Promise<Response> {
     } catch { ackEnabled = false; ackRecipientHash = null; }
   }
   const persistInquiry = (rpcName: string, argumentsObject: Record<string, unknown>) =>
-    payload.privacyNoticeVersion === travellerAckPrivacyVersion
+    transportEnvelope.adAttribution
+      ? callSupabaseRpc<CreateInquiryRpcResponse>("create_homeground_inquiry_with_ads_v1", {
+          p_rpc_name: rpcName, p_arguments: argumentsObject,
+          p_ack_enabled: ackEnabled, p_ack_recipient_hash: ackRecipientHash,
+          p_ad_attribution: transportEnvelope.adAttribution,
+        })
+      : payload.privacyNoticeVersion === travellerAckPrivacyVersion
       ? callSupabaseRpc<CreateInquiryRpcResponse>("create_homeground_inquiry_with_receipt_v1", {
           p_rpc_name: rpcName, p_arguments: argumentsObject,
           p_ack_enabled: ackEnabled, p_ack_recipient_hash: ackRecipientHash,

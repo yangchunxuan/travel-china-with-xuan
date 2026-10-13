@@ -16,6 +16,9 @@ const typescriptCli = fileURLToPath(
 );
 const compiledModuleNames = [
   "analytics.js",
+  "googleAdsAttribution.js",
+  "googleAdsAttributionRevocation.js",
+  "adAttributionContract.js",
   "analyticsConsent.js",
   "analyticsLocation.js",
   "analyticsPageViews.js",
@@ -30,7 +33,7 @@ function preferences({
   updatedAt = "2026-08-23T00:00:00.000Z",
 }) {
   return {
-    version: "2026-09-05.1",
+    version: "2026-10-13.1",
     necessary: true,
     analytics,
     marketing,
@@ -147,6 +150,9 @@ function setAnalyticsEnvironment() {
   process.env.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED = "true";
   process.env.NEXT_PUBLIC_HOMEGROUND_GA4_MEASUREMENT_ID = "G-TEST1234";
   process.env.NEXT_PUBLIC_HOMEGROUND_META_PIXEL_ID = "123456789";
+  process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+  process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_API_URL = "https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/v1-inquiries";
   process.env.NEXT_PUBLIC_HOMEGROUND_WEB_EVENTS_URL =
     "http://localhost:8787/events";
 }
@@ -158,6 +164,8 @@ function loadCompiledModules(outputDirectory) {
   }
   return {
     inquiryTraffic: require(join(outputDirectory, "inquiryTrafficConsent.js")),
+    googleAds: require(join(outputDirectory, "googleAdsAttribution.js")),
+    adsWithdrawal: require(join(outputDirectory, "googleAdsAttributionRevocation.js")),
     runtime: require(join(outputDirectory, "analyticsRuntime.js")),
     visibility: require(join(outputDirectory, "analyticsVisibility.js")),
     analytics: require(join(outputDirectory, "analytics.js")),
@@ -509,7 +517,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     assert.equal(window.dataLayer.at(-1)[1], "enquiry_submitted");
     for (const command of window.dataLayer) {
       const payload = command[0] === "event" ? command[2] : command[0] === "set" ? command[1] : null;
-      if (!payload) continue;
+      if (!payload || typeof payload !== "object") continue;
       assert.equal(payload.page_location, "https://homegroundchina.com/zh/");
       assert.equal(payload.page_referrer, "https://homegroundchina.com");
       assert.doesNotMatch(JSON.stringify(payload), /PRIVATEEMAIL|PRIVATEFRAGMENT|\?|#planner-contact/u);
@@ -1801,4 +1809,172 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     assert.deepEqual(requests[1].events[0], { eventId: requests[1].events[0].eventId, type: "email_form_started", pagePath: "/ko/tours/shanghai-suzhou-5-day-private-tour/", actionCode: null, clientSequence: 1, ...context, errorCode: null });
     await settleAsyncTurns();
   });
+
+  await context.test("Google Ads captures only the newly consented click before cleanup and never sends it to analytics", () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "AW-123456789";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "true";
+    for (const consent of [null, preferences({ analytics: true, marketing: false }),
+      { ...preferences({ analytics: true, marketing: true }), version: "2026-09-05.1" }]) {
+      const browser = installBrowser({ href: "https://homegroundchina.com/tours/?gclid=FixtureClick_123", consent });
+      const { googleAds, analytics } = loadCompiledModules(outputDirectory);
+      googleAds.captureGoogleAdsAttribution();
+      assert.equal(googleAds.readGoogleAdsAttribution(), null);
+      assert.equal(browser.localStorage.getItem("homeground-google-ads-attribution.v1"), null);
+      assert.equal(analytics.initializeGoogleAds(), false);
+    }
+    const browser = installBrowser({ href: "https://homegroundchina.com/tours/?gclid=FixtureClick_123&gbraid=Secondary_123", consent: preferences({ analytics: false, marketing: true }) });
+    const { googleAds, analytics } = loadCompiledModules(outputDirectory);
+    googleAds.captureGoogleAdsAttribution();
+    const attribution = googleAds.readGoogleAdsAttribution();
+    assert.equal(attribution.clickId, "FixtureClick_123");
+    assert.equal(attribution.clickIdType, "gclid");
+    assert.equal(attribution.landingPath, "/tours/");
+    assert.equal(attribution.consentVersion, "2026-10-13.1");
+    assert.match(attribution.revocationToken, /^[0-9a-f-]{36}$/u);
+    assert.equal(browser.sessionStorage.getItem("homeground-entry-attribution"), null);
+    analytics.removeAttributionParametersFromAddressBar();
+    assert.equal(window.location.href, "https://homegroundchina.com/tours/");
+    assert.equal(analytics.initializeGoogleAds(), true);
+    assert.equal(analytics.initializeGoogleAnalytics(), false);
+    assert.equal(googleAds.readGoogleAdsAttribution().clickId, "FixtureClick_123");
+    assert.doesNotMatch(JSON.stringify(window.dataLayer), /FixtureClick_123|Secondary_123|revocationToken/u);
+    assert.deepEqual(Array.from(window.dataLayer.find((command) => command[0] === "consent")), ["consent", "default", {
+      analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+    }]);
+    const updates = window.dataLayer.filter((command) => command[0] === "consent" && command[1] === "update");
+    assert.deepEqual(updates.at(-1)[2], { analytics_storage: "denied", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "denied" });
+    assert.equal(window.dataLayer.filter((command) => command[0] === "config" && command[1] === "AW-123456789").length, 1);
+    assert.equal(window.dataLayer.some((command) => command[0] === "event" && command[1] === "conversion"), false);
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
+  await context.test("ad clicks persist across visits, expire at 90 days, and share one withdrawal capability", () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "AW-123456789";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "true";
+    const browser = installBrowser({ href: "https://homegroundchina.com/?wbraid=FirstWebClick" });
+    let { googleAds } = loadCompiledModules(outputDirectory);
+    googleAds.captureGoogleAdsAttribution();
+    const first = googleAds.readGoogleAdsAttribution();
+    window.location = "https://homegroundchina.com/ko/tours/";
+    ({ googleAds } = loadCompiledModules(outputDirectory));
+    assert.equal(googleAds.readGoogleAdsAttribution().clickId, "FirstWebClick");
+    window.location = "https://homegroundchina.com/newsletter/";
+    assert.equal(googleAds.readGoogleAdsAttribution(), null);
+    assert.ok(browser.localStorage.getItem("homeground-google-ads-attribution.v1"), "excluded pages must retain the capability for later withdrawal");
+    window.location = "https://homegroundchina.com/ko/tours/?gbraid=SecondAppClick";
+    googleAds.captureGoogleAdsAttribution();
+    const second = googleAds.readGoogleAdsAttribution();
+    assert.equal(second.clickIdType, "gbraid");
+    assert.equal(second.revocationToken, first.revocationToken);
+    assert.equal(googleAds.inquiryAdAttributionWithCurrentConsent(first), null);
+    const stale = { ...second, capturedAt: new Date(Date.now() - 91 * 86400000).toISOString(), consentUpdatedAt: new Date(Date.now() - 92 * 86400000).toISOString() };
+    browser.localStorage.setItem("homeground-google-ads-attribution.v1", JSON.stringify(stale));
+    assert.equal(googleAds.readGoogleAdsAttribution(), null);
+    assert.equal(browser.localStorage.getItem("homeground-google-ads-attribution.v1"), null);
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
+  await context.test("malformed, duplicate, disabled and preview ad attribution fails closed", () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "AW-123456789";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "true";
+    for (const href of ["https://homegroundchina.com/?gclid=one&gclid=two", "https://homegroundchina.com/?gclid=email%40example.test", "https://homegroundchina.com/?gclid=" + "a".repeat(513), "http://localhost:3000/?gclid=FixtureClick", "https://preview.example.test/?gclid=FixtureClick", "https://homegroundchina.com/ja/?gclid=FixtureClick", "https://homegroundchina.com/es/?gclid=FixtureClick"]) {
+      installBrowser({ href });
+      const { googleAds } = loadCompiledModules(outputDirectory);
+      googleAds.captureGoogleAdsAttribution();
+      assert.equal(googleAds.readGoogleAdsAttribution(), null);
+    }
+    for (const id of ["", "AW-bad", "G-TEST1234"]) {
+      process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = id;
+      installBrowser({ href: "https://homegroundchina.com/?gclid=FixtureClick" });
+      const { googleAds, analytics } = loadCompiledModules(outputDirectory);
+      googleAds.captureGoogleAdsAttribution();
+      assert.equal(googleAds.readGoogleAdsAttribution()?.clickId, "FixtureClick", "collection can work before an Ads tag ID is configured");
+      assert.equal(analytics.initializeGoogleAds(), false);
+    }
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
+  await context.test("Google destinations keep consent separate and GA inquiry never creates an Ads conversion", () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "AW-123456789";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "true";
+    const browser = installBrowser();
+    const { analytics } = loadCompiledModules(outputDirectory);
+    assert.equal(analytics.initializeGoogleAnalytics(), true);
+    assert.equal(analytics.initializeGoogleAds(), true);
+    analytics.trackEnquirySubmitted({ page_language: "en", reply_channel: "email" });
+    const gaInquiry = window.dataLayer.find((command) => command[0] === "event" && command[1] === "enquiry_submitted");
+    assert.equal(gaInquiry[2].send_to, "G-TEST1234");
+    assert.equal(window.dataLayer.some((command) => command[0] === "event" && command[1] === "conversion"), false);
+    browser.emitStorage(preferences({ analytics: true, marketing: false }));
+    const updates = window.dataLayer.filter((command) => command[0] === "consent" && command[1] === "update");
+    assert.deepEqual(updates.at(-1)[2], { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
+    assert.equal(analytics.trafficAnalyticsNoticeVersion, "2026-09-05.1");
+    assert.notEqual(analytics.trafficAnalyticsNoticeVersion, preferences({ analytics: true, marketing: true }).version);
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
+  await context.test("withdrawal erases click data and retries server cancellation without sending the business snapshot", async () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "AW-123456789";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "true";
+    const browser = installBrowser({ href: "https://homegroundchina.com/?gclid=PrivateClickForWithdrawal" });
+    const { googleAds, inquiryTraffic, adsWithdrawal, analytics } = loadCompiledModules(outputDirectory);
+    googleAds.captureGoogleAdsAttribution();
+    const attribution = googleAds.readGoogleAdsAttribution();
+    const body = JSON.stringify({ adAttribution: attribution, contact: { channel: "email", email: "fixture@example.test" }, schemaVersion: "example" });
+    assert.equal(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body), body);
+    analytics.removeAttributionParametersFromAddressBar();
+    analytics.initializeGoogleAds();
+    const requests = [];
+    globalThis.fetch = async (url, init) => { requests.push({ url, init }); return new Response(null, { status: 503 }); };
+    browser.emitStorage(preferences({ analytics: true, marketing: false }));
+    await adsWithdrawal.flushGoogleAdsAttributionWithdrawals();
+    assert.equal(googleAds.readGoogleAdsAttribution(), null);
+    assert.equal(browser.localStorage.getItem("homeground-google-ads-attribution.v1"), null);
+    const redacted = JSON.parse(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body));
+    assert.equal(redacted.adAttribution, null);
+    assert.deepEqual(redacted.contact, JSON.parse(body).contact);
+    const pending = browser.localStorage.getItem("homeground-google-ads-withdrawals.v1");
+    assert.deepEqual(JSON.parse(pending), [attribution.revocationToken]);
+    assert.doesNotMatch(pending, /PrivateClickForWithdrawal|fixture@example/u);
+    assert.ok(requests.length >= 1);
+    for (const { url, init } of requests) {
+      assert.match(url, /\/functions\/v1\/v1-ad-attribution-consent$/u);
+      assert.deepEqual(JSON.parse(init.body), { revocationToken: attribution.revocationToken });
+      assert.equal(init.referrerPolicy, "no-referrer");
+    }
+    globalThis.fetch = async () => new Response(null, { status: 204 });
+    await adsWithdrawal.flushGoogleAdsAttributionWithdrawals();
+    assert.equal(browser.localStorage.getItem("homeground-google-ads-withdrawals.v1"), null);
+    browser.emitStorage(preferences({ analytics: true, marketing: true }));
+    assert.equal(JSON.parse(inquiryTraffic.inquiryBodyWithCurrentTrafficConsent(body)).adAttribution, null);
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
+
+  await context.test("click capture can run without an AW ID but both explicit capture and master gates default off", () => {
+    process.env.NEXT_PUBLIC_HOMEGROUND_GOOGLE_ADS_ID = "";
+    for (const captureGate of [undefined, "", "false", "true"]) {
+      if (captureGate === undefined) delete process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED;
+      else process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = captureGate;
+      installBrowser({ href: "https://homegroundchina.com/?gclid=NoAdsAccountFixture", consent: preferences({ analytics: false, marketing: true }) });
+      const { googleAds, analytics } = loadCompiledModules(outputDirectory);
+      googleAds.captureGoogleAdsAttribution();
+      assert.equal(Boolean(googleAds.readGoogleAdsAttribution()), captureGate === "true");
+      assert.equal(analytics.initializeGoogleAds(), false);
+      assert.equal(window.dataLayer, undefined);
+    }
+    process.env.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED = "false";
+    installBrowser({ href: "https://homegroundchina.com/?gclid=MasterDisabledFixture" });
+    const { googleAds } = loadCompiledModules(outputDirectory);
+    googleAds.captureGoogleAdsAttribution();
+    assert.equal(googleAds.readGoogleAdsAttribution(), null);
+    process.env.NEXT_PUBLIC_HOMEGROUND_ANALYTICS_ENABLED = "true";
+    process.env.NEXT_PUBLIC_HOMEGROUND_AD_ATTRIBUTION_ENABLED = "false";
+  });
+
 });

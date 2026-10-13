@@ -20,6 +20,7 @@ import {
   getPublishedPrivateTourCatalog,
   type PublishedPrivateTourCatalogItem,
 } from "../lib/publishedPrivateTourCatalog";
+import { getPrivateTourPriorityEntrances, privateTourPriorityCopy } from "../lib/privateTourPriorityEntrances";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -249,6 +250,8 @@ export function PrivateToursHubPage({
   const schema = buildPrivateToursHubJsonLd(locale);
   const facets = getPrivateTourFacets(products, locale, copy.quoteOnlyLabel);
   const stats = getPrivateTourHubStats(products);
+  const priorityEntrances = getPrivateTourPriorityEntrances(products, locale);
+  const priorityCopy = privateTourPriorityCopy[locale];
 
   return (
     <div
@@ -310,6 +313,31 @@ export function PrivateToursHubPage({
           </dl>
           <PlaceMarquee places={getPrivateTourPlaces(products)} />
         </header>
+
+        <nav className={styles.priorityRoutes} aria-labelledby="tour-priority-title">
+          <p className={styles.eyebrow}>{priorityCopy.eyebrow}</p>
+          <h2 id="tour-priority-title">{priorityCopy.title}</h2>
+          <p className={styles.priorityIntroduction}>{priorityCopy.introduction}</p>
+          <ul>
+            {priorityEntrances.map(({ product, catalogPosition, reason }) => (
+              <li key={product.slug}>
+                <PrivateTourCatalogLink
+                  href={product.href}
+                  locale={locale}
+                  position={catalogPosition}
+                  productSlug={product.slug}
+                  className={styles.priorityLink}
+                  ariaLabelledBy={`priority-tour-${product.slug}`}
+                >
+                  <span className={styles.priorityDuration}>{copy.duration(product.days, product.nights)}</span>
+                  <h3 id={`priority-tour-${product.slug}`}><KeepWords locale={locale} text={product.title} /></h3>
+                  <p><KeepWords locale={locale} text={reason} /></p>
+                  <span className={styles.priorityAction}>{copy.viewLabel}<span aria-hidden="true"> →</span></span>
+                </PrivateTourCatalogLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <section className={styles.quickCompare} aria-labelledby="tour-quick-compare-title">
           <div className={styles.quickIntro}>

@@ -55,6 +55,7 @@ import { canCommitAdminResponse } from "../../lib/adminRequestEpoch";
 import { InternalTrafficControl } from "./InternalTrafficControl";
 import { AdminContactAnalytics } from "./AdminContactAnalytics";
 import { AdminNewsletterSection } from "./AdminNewsletterSection";
+import { AdminConversions } from "./AdminConversions";
 import { getPrivateTourInquiryContext, getPrivateTourInquirySelection, privateTourAggregateSelectionLabel } from "../../lib/privateTourInquiryContext";
 import styles from "./AdminInsightsPage.module.css";
 
@@ -2275,10 +2276,12 @@ export function AdminInsightsPage() {
         )}
         {stage === "ready" && session && configResult.config && !accessDenied ?
           <AdminNewsletterSection key={session.user.id} session={session} supabaseUrl={configResult.config.supabaseUrl} /> : null}
+        {stage === "ready" && session && configResult.config && !accessDenied ?
+          <AdminConversions key={`conversions-${session.user.id}`} session={session} supabaseUrl={configResult.config.supabaseUrl} publishableKey={configResult.config.publishableKey} /> : null}
       </main>
       <footer className={styles.footer}>
         <p>
-          私有后台 · 咨询只显示汇总，简报订阅单独管理；无导出或跨窗口追踪。
+          私有后台 · 咨询汇总、首次收款和简报订阅分别管理。
         </p>
       </footer>
     </div>

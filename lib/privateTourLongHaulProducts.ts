@@ -563,6 +563,14 @@ const classicPrivate: PrivateTourProduct = {
       ),
     ),
     faq(
+      l("How is this different from the 13-day five-city private tour?", "和同五城的 13 天私家团有什么不同？", "같은 다섯 도시를 도는 13일 프라이빗 투어와 무엇이 다른가요?"),
+      l(
+        "Both private tours visit Beijing, Xi'an, Chengdu, Guilin and Shanghai. This 14-day route spends four nights in Beijing, one in Guilin and two in Yangshuo, with the Summer Palace and a Yulong River bamboo raft; lunches and dinners are extra. The 13-day route spends three nights in Beijing and three in Guilin, visits Yangshuo without staying overnight, and includes eight lunches. Compare written quotes for the same party size, room type and inclusions, rather than starting prices for different groups.",
+        "两条私家团都走北京、西安、成都、桂林和上海。这条 14 天线在北京住 4 晚、桂林住 1 晚、阳朔住 2 晚，含颐和园和一次遇龙河竹筏，午晚餐另计。13 天线在北京住 3 晚、桂林住 3 晚，阳朔只日游不过夜，含 8 顿午餐。请按相同人数、房型和包含项目比较书面报价，不能直接拿不同人数的起价作同规格比较。",
+        "두 프라이빗 일정 모두 베이징·시안·청두·계림·상하이를 방문합니다. 이 14일 일정은 베이징 4박, 계림 1박, 양삭 2박으로 이화원과 우룡하 대나무 뗏목 1회가 포함되며 중식·석식은 별도입니다. 13일 일정은 베이징 3박과 계림 3박이며 양삭은 당일 방문만 하고 숙박하지 않으며 점심 8회가 포함됩니다. 인원, 객실 유형과 포함 항목을 같게 맞춘 서면 견적을 비교하세요. 인원이 다른 시작가를 같은 조건의 요금으로 비교할 수는 없습니다.",
+      ),
+    ),
+    faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
         "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,720 each. The 2027 small group is USD 2,140 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",
@@ -3372,9 +3380,9 @@ const goldenTriangleEight: PrivateTourProduct = {
     faq(
       l("Is eight days enough for Beijing, Xi’an and Shanghai?", "8 天够玩北京、西安、上海吗？", "베이징·시안·상하이는 8일이면 충분한가요?"),
       l(
-        "Eight days cover the core of the Beijing–Xi’an–Shanghai route: the Forbidden City, the Great Wall at Mutianyu, the Terracotta Warriors and one full Shanghai day. What gets cut is the Temple of Heaven, the Summer Palace and any spare day. The 12-day Beijing–Xi’an–Shanghai private tour adds those from USD 2,890 each for two, and the 10-day route with the Li River starts at USD 2,510.",
-        "8 天能看完北京、西安、上海这条线的重点：故宫、慕田峪长城、兵马俑，再加上海完整一天。砍掉的是天坛、颐和园和空闲日。想要这些，北京西安上海 12 天私家团 2 人同行每人 ¥18,780 起；加漓江的 10 天线每人 ¥16,310 起。",
-        "8일이면 베이징·시안·상하이 일정의 핵심인 자금성, 무톈위 만리장성, 병마용과 상하이 하루를 볼 수 있습니다. 빠지는 것은 천단, 이화원, 여유 있는 하루입니다. 이것까지 원하면 베이징·시안·상하이 12일 프라이빗 투어가 2명 기준 1인 ₩4,040,000부터, 이강을 넣은 10일 일정이 ₩3,510,000부터입니다.",
+        "Eight days cover the core of the Beijing–Xi’an–Shanghai route: the Forbidden City, the Great Wall at Mutianyu, the Terracotta Warriors and the Day 7 choice of Shanghai or Suzhou, agreed before booking. The main sightseeing days in the published plan are Days 2, 3, 5 and 7. Day 1 is arrival and Day 8 is departure; Days 4 and 6 include the Beijing–Xi’an train and Xi’an–Shanghai flight. Time for lighter activities around these journeys depends on the confirmed train or flight. What gets cut is the Temple of Heaven, the Summer Palace and any spare day. The 12-day Beijing–Xi’an–Shanghai private tour adds those from USD 2,890 each for two, and the 10-day route with the Li River starts at USD 2,510.",
+        "8 天能看完北京、西安、上海这条线的重点：故宫、慕田峪长城、兵马俑；第 7 天在上海或苏州中选一天观光，订团前确认。公开行程的主要观光安排在第 2、3、5、7 天。第 1 天抵达、第 8 天离开，第 4 天有北京—西安高铁，第 6 天有西安—上海航班；转场前后是否有时间安排轻松活动，要看最终确认的火车或航班时刻。砍掉的是天坛、颐和园和空闲日。想要这些，北京西安上海 12 天私家团 2 人同行每人 ¥18,780 起；加漓江的 10 天线每人 ¥16,310 起。",
+        "8일이면 베이징·시안·상하이 일정의 핵심인 자금성, 무톈위 만리장성과 병마용을 볼 수 있습니다. 7일차에는 상하이 또는 쑤저우 관광 중 하나를 예약 전에 정합니다. 공개 일정에서 주요 관광일은 2·3·5·7일차입니다. 1일차는 도착, 8일차는 출발이며, 4일차에는 베이징–시안 고속철도, 6일차에는 시안–상하이 항공 이동이 있습니다. 이동 전후의 가벼운 활동에 쓸 수 있는 시간은 확정된 열차나 항공편 시각에 따라 달라집니다. 빠지는 것은 천단, 이화원, 여유 있는 하루입니다. 이것까지 원하면 베이징·시안·상하이 12일 프라이빗 투어가 2명 기준 1인 ₩4,040,000부터, 이강을 넣은 10일 일정이 ₩3,510,000부터입니다.",
       ),
     ),
     faq(

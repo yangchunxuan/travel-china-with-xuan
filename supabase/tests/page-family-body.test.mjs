@@ -121,6 +121,32 @@ test("structured page family body rejects malformed tables", () => {
   );
 });
 
+test("table row links preserve plain tables and reject incomplete or unsafe targets", () => {
+  const table = {
+    id: "routes",
+    type: "table",
+    caption: "Published routes",
+    columns: ["Route", "Length"],
+    rows: [["Beijing", "5 days"], ["Shanghai", "5 days"]],
+  };
+  const bodyWith = (block) => ({ schemaVersion: "1.0.0", blocks: [block] });
+  assert.doesNotThrow(() => assertStructuredPageBody(bodyWith(table)));
+  assert.doesNotThrow(() => assertStructuredPageBody(bodyWith({
+    ...table,
+    rowLinks: ["/tours/beijing-highlights-5-day-private-tour/", "/tours/shanghai-suzhou-5-day-private-tour/"],
+  })));
+  for (const rowLinks of [
+    [],
+    ["/tours/beijing-highlights-5-day-private-tour/"],
+    ["/tours/beijing-highlights-5-day-private-tour/", "javascript:alert(1)"],
+    ["/tours/beijing-highlights-5-day-private-tour/", "//example.com/tours/"],
+    ["/tours/beijing-highlights-5-day-private-tour/", "https://example.com/tours/"],
+    null,
+  ]) {
+    assert.throws(() => assertStructuredPageBody(bodyWith({ ...table, rowLinks })), /one internal path per row/u);
+  }
+});
+
 test("structured page family body rejects unsafe nested values before rendering", () => {
   for (const block of [
     {

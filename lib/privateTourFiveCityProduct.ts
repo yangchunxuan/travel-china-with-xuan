@@ -387,7 +387,7 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     "중국 13일 프라이빗 투어｜베이징·시안·청두·계림·상하이",
   ),
   metadataDescription: l(
-    "13-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. USD 2,580 per person for 4, 2,090 for 8; 4-star hotels and flights included.",
+    "13-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. USD 2,580 each for 4, 2,090 for 8; 4-star hotels, domestic flights included.",
     "13 天私家团：长城、兵马俑、大熊猫、漓江与上海。每人价格：4 人同行 ¥16,770，8 人同行 ¥13,580；含四星酒店、国内航班与高铁。",
     "13일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이. 1인 요금 4명 ₩3,610,000, 8명 ₩2,920,000. 4성급 호텔·국내선·고속철도 포함.",
   ),
@@ -577,6 +577,14 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
         "Per person, two sharing a room: USD 2,580 for 4 travellers, USD 2,310 for 6 and USD 2,090 for 8. That includes the 4-star hotels with breakfast, guides, vehicles, both trains, both flights, the named tickets and eight lunches. Other group sizes and single rooms are quoted separately, and the total for your dates is confirmed in writing before you pay anything.",
         "两人一间的每人价格：4 人同行 ¥16,770，6 人同行 ¥15,010，8 人同行 ¥13,580，含四星酒店和早餐、导游、用车、两段高铁、两段航班、所列门票和 8 顿午餐。其他人数和单人间另行报价；按你的日期算出的总价，付任何钱之前先书面发给你。",
         "2인 1실 기준 1인 요금은 4명 ₩3,610,000, 6명 ₩3,230,000, 8명 ₩2,920,000입니다. 4성급 호텔과 조식, 가이드, 차량, 열차 2회, 항공편 2회, 명시된 입장권과 점심 8회가 포함됩니다. 다른 인원과 1인실은 따로 견적하며, 여행 날짜에 맞춘 총액은 어떤 비용도 받기 전에 서면으로 보내 드립니다.",
+      ),
+    },
+    {
+      question: l("How is this different from the 14-day five-city private tour?", "和同五城的 14 天私家团有什么不同？", "같은 다섯 도시를 도는 14일 프라이빗 투어와 무엇이 다른가요?"),
+      answer: l(
+        "Both private tours visit Beijing, Xi'an, Chengdu, Guilin and Shanghai. This 13-day route spends three nights in Beijing and three in Guilin, visits Yangshuo without staying overnight, and includes eight lunches. The 14-day route spends four nights in Beijing, one in Guilin and two in Yangshuo, with the Summer Palace and a Yulong River bamboo raft; lunches and dinners are extra. Compare written quotes for the same party size, room type and inclusions, rather than starting prices for different groups.",
+        "两条私家团都走北京、西安、成都、桂林和上海。这条 13 天线在北京住 3 晚、桂林住 3 晚，阳朔只日游不过夜，含 8 顿午餐。14 天线在北京住 4 晚、桂林住 1 晚、阳朔住 2 晚，含颐和园和一次遇龙河竹筏，午晚餐另计。请按相同人数、房型和包含项目比较书面报价，不能直接拿不同人数的起价作同规格比较。",
+        "두 프라이빗 일정 모두 베이징·시안·청두·계림·상하이를 방문합니다. 이 13일 일정은 베이징 3박과 계림 3박이며 양삭은 당일 방문만 하고 숙박하지 않으며 점심 8회가 포함됩니다. 14일 일정은 베이징 4박, 계림 1박, 양삭 2박으로 이화원과 우룡하 대나무 뗏목 1회가 포함되며 중식·석식은 별도입니다. 인원, 객실 유형과 포함 항목을 같게 맞춘 서면 견적을 비교하세요. 인원이 다른 시작가를 같은 조건의 요금으로 비교할 수는 없습니다.",
       ),
     },
     {

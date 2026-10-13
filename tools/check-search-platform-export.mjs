@@ -3,6 +3,7 @@ import path from "node:path";
 import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../lib/homepagePrivateTourCatalog.ts";
 import { EDITORIAL_AUTHOR_PROFILE_MODIFIED_AT } from "../lib/legacySystemContentLifecycle.ts";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
+import { getPrivateTourPriorityEntrances } from "../lib/privateTourPriorityEntrances.ts";
 import { getPrivateTourInquirySelection } from "../lib/privateTourInquiryContext.ts";
 import { isIsoDateTimeWithTimezone } from "./lib/iso-date-time.mjs";
 
@@ -208,8 +209,25 @@ function assertSameStringSet(actualValues, expectedValues, context) {
   }
 }
 
-function assertPrivateTourPriceLinks(html, products, context) {
-  const actualHrefs = [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/giu)]
+function assertPrivateTourPriceLinks(html, products, context, locale) {
+  // Route discovery opens the canonical itinerary; the full price catalogue
+  // must still retain each card's published service and party selection.
+  // Only the tours hub has priority navigation; homepage price cards do not.
+  let priceCatalogueHtml = html;
+  if (locale) {
+    const priorityNavPattern = /<nav\b[^>]*\baria-labelledby="tour-priority-title"[^>]*>([\s\S]*?)<\/nav>/u;
+    const priorityNav = html.match(priorityNavPattern)?.[1];
+    if (!priorityNav) throw new Error(`${context}: priority route navigation is missing`);
+    const priorityHrefs = [...priorityNav.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/giu)]
+      .map((match) => match[1].replaceAll("&amp;", "&"));
+    const priorityProducts = getPrivateTourPriorityEntrances(products, locale);
+    if (priorityHrefs.length !== 6 || priorityProducts.length !== 6) {
+      throw new Error(`${context}: priority route navigation must link six published products`);
+    }
+    assertSameStringSet(priorityHrefs, priorityProducts.map(({ product }) => product.href), `${context} canonical priority route links`);
+    priceCatalogueHtml = html.replace(priorityNavPattern, "");
+  }
+  const actualHrefs = [...priceCatalogueHtml.matchAll(/<a\b[^>]*\bhref="([^"]+)"[^>]*>/giu)]
     .map((match) => match[1].replaceAll("&amp;", "&"))
     .filter((href) => /^\/(?:zh\/|ko\/)?tours\/[^/?#]+\/(?:\?[^#]*)?(?:#.*)?$/u.test(href))
     // The header's Private Tours menu links its collections, which are not tours.
@@ -454,7 +472,7 @@ for (const locale of locales) {
     `${context} structured private-tour details`,
   );
 
-  assertPrivateTourPriceLinks(html, getPublishedPrivateTourCatalog(locale.runtime), context);
+  assertPrivateTourPriceLinks(html, getPublishedPrivateTourCatalog(locale.runtime), context, locale.runtime);
 
   for (const slug of publishedTourSlugs) {
     const detailRoute = tourDetailRoute(slug, locale);
