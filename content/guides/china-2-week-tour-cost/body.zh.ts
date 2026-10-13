@@ -96,6 +96,18 @@ const body = {
           "¥28,400",
           "¥26,060"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "/zh/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/",
+        "/zh/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/",
+        "/zh/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "/zh/tours/beijing-xian-silk-road-15-day-private-tour/",
+        "/zh/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/",
+        "/zh/tours/china-grand-tour-21-day-private-tour/"
       ]
     },
     {
@@ -160,6 +172,12 @@ const body = {
           "¥7,090",
           "2027 年 5 月 19 日–6 月 4 日；2027 年 9 月 1–17 日"
         ]
+      ],
+      "rowLinks": [
+        "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/",
+        "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour/",
+        "/zh/tours/beijing-xian-silk-road-15-day-small-group-tour/",
+        "/zh/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour/"
       ]
     },
     {

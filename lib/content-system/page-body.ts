@@ -54,6 +54,8 @@ export type PageBodyBlock =
       readonly caption: string;
       readonly columns: readonly string[];
       readonly rows: readonly (readonly string[])[];
+      /** Optional internal link for each row heading, in the same order as rows. */
+      readonly rowLinks?: readonly string[];
     }
   | {
       readonly id: string;
@@ -165,7 +167,7 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
       list: ["id", "type", "ordered", "items"],
       callout: ["id", "type", "title", "body", "tone", "link"],
       comparison: ["id", "type", "title", "columns"],
-      table: ["id", "type", "caption", "columns", "rows"],
+      table: ["id", "type", "caption", "columns", "rows", "rowLinks"],
       "internal-links": ["id", "type", "title", "items"],
       faq: ["id", "type", "title", "items"],
       sources: ["id", "type", "title", "items"],
@@ -271,6 +273,14 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
           )
         ) {
           throw new Error(`${candidate.id} rows must match the table column count.`);
+        }
+        if (
+          candidate.rowLinks !== undefined &&
+          (!Array.isArray(candidate.rowLinks) ||
+            candidate.rowLinks.length !== candidate.rows.length ||
+            !candidate.rowLinks.every(validInternalPath))
+        ) {
+          throw new Error(`${candidate.id} row links must provide one internal path per row.`);
         }
         break;
       }

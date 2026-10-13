@@ -31,6 +31,7 @@
 }
 
 .hero,
+.priorityRoutes,
 .quickCompare,
 .arrivalPlanning,
 .finalSection {
@@ -41,6 +42,95 @@
 
 .hero {
   padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 4vw, 4rem);
+}
+
+.priorityRoutes {
+  padding-block: 0 clamp(2.5rem, 4vw, 4rem);
+}
+
+.priorityRoutes h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.125rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0.5rem 0 0;
+}
+
+.priorityIntroduction {
+  color: var(--tour-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0.75rem 0 1.5rem;
+  max-width: 44rem;
+}
+
+.priorityRoutes ul {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.priorityRoutes li {
+  display: flex;
+  min-width: 0;
+}
+
+.priorityLink {
+  background: var(--tour-subtle);
+  border-radius: 1rem;
+  color: var(--tour-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: var(--tour-pill);
+  min-width: 0;
+  padding: 1.25rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.priorityDuration {
+  color: var(--tour-muted);
+  font-size: 0.8125rem;
+}
+
+.priorityLink h3 {
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.priorityLink p {
+  color: var(--tour-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.priorityAction {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.priorityLink:hover {
+  background: var(--tour-warm);
+}
+
+.priorityLink:focus-visible {
+  outline: 2px solid var(--tour-focus);
+  outline-offset: 3px;
+}
+
+@media (max-width: 64rem) {
+  .priorityRoutes ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 40rem) {
+  .priorityRoutes ul { grid-template-columns: minmax(0, 1fr); }
 }
 
 .breadcrumb ol {

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-10-13",
+  "baseMain": "ab289694c218d515fd8a938161de59fc52a3f858",
+  "scope": "Priority product discovery across the catalog, matching cities, route/price guides and factual product comparison FAQs. Draft PR 351; publication requires the existing release approval.",
+  "problem": {
+    "catalog": "Six priority routes were 32nd-55th in the full 56-route catalog. Existing filters and links work; routes needed an earlier discovery section.",
+    "guides": "49 published-price rows and 18 two-week comparison rows per EN/ZH/KO had unlinked route headings. Existing sales cards and footer links were already present.",
+    "cities": "Jiangnan 12-day and five-city 13-day routes were absent from matching featured city lists.",
+    "indexing": {
+      "enCanonicalProductsChecked": 6,
+      "indexed": 4,
+      "unknownToGoogle": 2,
+      "liveIndexable": 2,
+      "indexRequestsAccepted": 2,
+      "status": "Requests accepted on 2026-10-13; indexation pending.",
+      "sitemap": "Successful last read on 2026-10-13. All six canonical products exist in the downloaded XML."
+    }
+  },
+  "implementation": {
+    "catalog": "Six localized canonical itinerary links before the full comparison/filter catalog. Reuses product titles, durations and existing click tracking. Original price cards retain their published group/service query parameters.",
+    "guides": {
+      "guideSlugs": [
+        "china-private-tour-prices",
+        "best-2-week-china-tour",
+        "china-2-week-tour-cost"
+      ],
+      "locales": [
+        "en",
+        "zh",
+        "ko"
+      ],
+      "rowsPerLocale": 67,
+      "localizedAnchors": 201,
+      "tracking": "Existing GuideCtaLink ownership; optional rowLinks remains backward-compatible."
+    },
+    "cities": {
+      "cityIds": [
+        "shanghai",
+        "hangzhou",
+        "beijing",
+        "xian",
+        "chengdu"
+      ],
+      "localizedPages": 15,
+      "localizedAnchors": 18,
+      "originalCardsRetained": 45,
+      "quoteOnlyLabels": "Itinerary & quote in EN/ZH/KO; priced cards keep price labels."
+    },
+    "productFaqs": {
+      "products": [
+        "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
+        "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"
+      ],
+      "locales": [
+        "en",
+        "zh",
+        "ko",
+        "ja"
+      ],
+      "newQuestions": 8,
+      "content": "Published Beijing/Guilin/Yangshuo overnight, included meals and activity differences; compare equal party size, room type and inclusions."
+    }
+  },
+  "preserved": [
+    "56 original catalog routes, order, filters, ItemList and price-card selection paths",
+    "All product amounts, price basis, daily itineraries, inclusions, images and contact paths",
+    "Existing guide table text, amount cells, row order and original FAQ content",
+    "Existing metadata and author/reviewer data; no invented availability or ranking claim"
+  ],
+  "validation": {
+    "typecheck": "passed",
+    "affectedPureTests": {
+      "passed": 82,
+      "failed": 0
+    },
+    "build": "passed: production static build plus every postbuild export check",
+    "exportInspection": {
+      "tableAnchors": 201,
+      "sameLocaleTargetsPresent": 201,
+      "tableRowsTextAndAmountsCompared": 213,
+      "cityPages": 15,
+      "cityAnchorsAdded": 18,
+      "oldCityCardsRetained": 45,
+      "catalogLocales": 3,
+      "priorityCanonicalEntrances": 18,
+      "originalCardsPerLocale": 56,
+      "itemListPerLocale": 56,
+      "productFaqPages": 8,
+      "productSearchMetadataPages": 24,
+      "alternateTargets": 27
+    },
+    "browser": {
+      "states": 70,
+      "locales": [
+        "en",
+        "zh",
+        "ko",
+        "ja"
+      ],
+      "viewports": [
+        "1440x900",
+        "360x800"
+      ],
+      "horizontalOverflow": 0,
+      "brokenImages": 0,
+      "mobileTableLinkMinHeightPx": 44,
+      "note": "70 visual states cover 6 catalog, 18 guide, 30 city and 16 FAQ views; canonical-link click check is recorded separately.",
+      "consoleErrors": 0,
+      "clickThroughs": [
+        "priority route navigation → eight-day itinerary without query parameters",
+        "price guide row → five-city 13-day itinerary",
+        "Shanghai city route card → Jiangnan 12-day quote-only itinerary"
+      ],
+      "filters": "North & Northwest shows 5 of 56 catalog cards, keeps six priority entrances; clearing restores all 56."
+    },
+    "independentReview": "No blocking implementation issue in bounded review; export verification by two independent agents.",
+    "githubChecks": "Inspect the PR check run for the final head; do not infer deployment from CI."
+  },
+  "releaseState": "Draft only. No merge or deployment of this revision. PR 361 and 362 remain separate drafts.",
+  "measurement": "Existing dated search research and current index inspection inform scope. No claim of new traffic, ranking, AI citations or inquiries.",
+  "evidenceFiles": [
+    "gsc-priority-product-index-status.json",
+    "entrance-export-verification.json",
+    "product-export-verification.json",
+    "entrance-code-review.json",
+    "browser-acceptance.json",
+    "affected-tests.log",
+    "typecheck.log",
+    "build-final.log"
+  ],
+  "priorCityRevision": "docs/organic-growth/product-city-discovery-20261011.json"
+}

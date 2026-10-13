@@ -99,5 +99,7 @@
     "independentReview": "Passed: independent screenshot-only review of 17 desktop/mobile/narrow views; no visual blockers. Does not establish indexing or traffic."
   },
   "deployment": "Not authorized in this iteration; keep draft PR",
-  "implementationScope": "New links: five cities in three languages. Shared description and quote-only CTA: all eight current city hubs. Priced cards and non-city TourCard callers keep the original CTA."
+  "implementationScope": "New links: five cities in three languages. Shared description and quote-only CTA: all eight current city hubs. Priced cards and non-city TourCard callers keep the original CTA.",
+  "supersededBy": "docs/organic-growth/product-direct-entrances-20261013.json",
+  "recordInterpretation": "This file records the original 2026-10-11 city-only revision. Read the superseding record for the current expanded PR scope and 2026-10-13 validation."
 }
