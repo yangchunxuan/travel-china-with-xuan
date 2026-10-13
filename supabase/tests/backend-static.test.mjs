@@ -365,12 +365,14 @@ test("GitHub Actions checks outbox health every fifteen minutes without Resend",
     workflow,
     /OUTBOX_MONITOR_SECRET: \$\{\{ secrets\.OUTBOX_MONITOR_SECRET \}\}/,
   );
-  assert.match(workflow, /x-monitor-secret/);
-  assert.match(workflow, /http_status/);
-  assert.match(workflow, /\.counts\.failed == 0/);
-  assert.match(workflow, /\.counts\.createdLast10Minutes/);
-  assert.match(workflow, /\.counts\.createdLast1Hour/);
-  assert.match(workflow, /\.counts\.createdLast24Hours/);
+  assert.match(workflow, /node tools\/check-outbox-health\.mjs/);
+  assert.match(workflow, /outbox-sample-\$\{\{ github\.run_id \}\}-\$\{\{ github\.run_attempt \}\}/);
+  const sampler = await source('ops/outbox-monitor/health.mjs');
+  assert.match(sampler, /'x-monitor-secret':env\.OUTBOX_MONITOR_SECRET/);
+  assert.match(sampler, /c\.failed !== 0/);
+  assert.match(sampler, /createdLast10Minutes/);
+  assert.match(sampler, /createdLast1Hour/);
+  assert.match(sampler, /createdLast24Hours/);
   assert.doesNotMatch(
     workflow,
     /RESEND_API_KEY|NOTIFICATION_WORKER_SECRET|BRAND_NOTIFICATION_EMAIL/,

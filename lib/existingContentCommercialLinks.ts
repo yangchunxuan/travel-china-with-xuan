@@ -205,9 +205,15 @@ const productContexts = {
     destinations: ["chongqing"],
     guides: ["chengdu-chongqing-zhangjiajie-itinerary", "chongqing-where-to-stay-jiefangbei-guanyinqiao-shapingba", "chongqing-railway-station-selector"],
   },
+  "guilin-li-river-yangshuo-4-day-private-tour": {
+    destinations: [],
+    guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "li-river-cruise-tickets-piers-booking", "yangshuo-town-or-yulong-river-where-to-stay"],
+    relatedProducts: [p("guilin-yangshuo-5-day-private-tour")],
+  },
   "guilin-yangshuo-5-day-private-tour": {
     destinations: [],
     guides: ["guilin-airport-or-railway-station-arrival-guide", "guilin-yangshuo-transport-route", "li-river-cruise-tickets-piers-booking", "yangshuo-town-or-yulong-river-where-to-stay", "guilin-yangshuo-with-kids-and-older-parents"],
+    relatedProducts: [p("guilin-li-river-yangshuo-4-day-private-tour")],
   },
   "harbin-winter-5-day-private-tour": {
     destinations: [],
@@ -294,6 +300,7 @@ const productContexts = {
     guides: [
       "shanghai-where-to-stay-first-trip",
       "shanghai-pudong-or-hongqiao-airport",
+      "pudong-airport-to-shanghai-disneyland",
     ],
     relatedProducts: [
       p("shanghai-suzhou-5-day-private-tour"),
@@ -607,6 +614,7 @@ const productContexts = {
 } as const satisfies Record<string, ProductContextDefinition>;
 
 const approvedCommercialProductSlugs = [
+  "guilin-li-river-yangshuo-4-day-private-tour",
   "shanghai-suzhou-hangzhou-6-day-private-tour",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "chengdu-pandas-sanxingdui-5-day-private-tour",

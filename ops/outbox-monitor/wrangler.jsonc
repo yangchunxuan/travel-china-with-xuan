@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "homeground-outbox-monitor",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-09",
+  "workers_dev": false,
+  "preview_urls": false,
+  // Deliberately inactive until dedicated secrets and the handoff are verified.
+  "triggers": {"crons": []},
+  "vars": {
+    "OUTBOX_HEALTH_URL": "https://xbymvlxethfzqcgyoieb.supabase.co/functions/v1/inquiry-health",
+    "OUTBOX_HEARTBEAT_REPORTER": "disabled"
+  },
+  "observability": {"enabled": true}
+}

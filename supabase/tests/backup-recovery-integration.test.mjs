@@ -56,22 +56,23 @@ function enableFixtureTls(database) {
 
 function inventory(database, name) {
   const metadata = JSON.parse(database.sql(`select jsonb_build_object(
-    'schemas',(select jsonb_agg(jsonb_build_object('name',nspname,'acl',nspacl::text) order by nspname)
-      from pg_namespace where nspname in ('public','homeground_private','auth','storage','extensions')),
-    'tables',(select jsonb_agg(jsonb_build_object('name',relname,'rls',relrowsecurity,
-      'forced',relforcerowsecurity,'acl',coalesce(relacl,acldefault('r',relowner))::text) order by relname)
+    'schemas',(select jsonb_agg(jsonb_build_object('name',nspname,'acl',coalesce(nspacl,acldefault('n',nspowner))::text) order by nspname)
+      from pg_namespace where nspname in ('public','homeground_private','homeground_recovery','auth','storage','extensions')),
+    'tables',(select jsonb_agg(jsonb_build_object('schema',nspname,'name',relname,'rls',relrowsecurity,
+      'forced',relforcerowsecurity,'acl',coalesce(relacl,acldefault('r',relowner))::text) order by nspname,relname)
       from pg_class c join pg_namespace n on n.oid=c.relnamespace
-      where n.nspname='homeground_private' and relkind='r'),
+      where n.nspname in ('homeground_private','homeground_recovery') and relkind='r'),
     'functions',(select jsonb_agg(jsonb_build_object('name',proname,
       'signature',pg_get_function_identity_arguments(p.oid),'definition',md5(pg_get_functiondef(p.oid)),
       'acl',proacl::text) order by proname,pg_get_function_identity_arguments(p.oid))
       from pg_proc p join pg_namespace n on n.oid=p.pronamespace
-      where n.nspname in ('public','homeground_private') and prokind='f'))`, name));
-  const data = metadata.tables.map(({name: table}) => {
+      where n.nspname in ('public','homeground_private','homeground_recovery') and prokind='f'))`, name));
+  const data = metadata.tables.map(({schema, name: table}) => {
+    assert.ok(['homeground_private','homeground_recovery'].includes(schema));
     assert.match(table, /^[a-z][a-z0-9_]+$/u);
-    return {table, ...JSON.parse(database.sql(`select jsonb_build_object('count',count(*),
+    return {schema, table, ...JSON.parse(database.sql(`select jsonb_build_object('count',count(*),
       'hash',md5(coalesce(jsonb_agg(to_jsonb(t) order by to_jsonb(t)::text)::text,'[]')))
-      from homeground_private.${table} t;`, name))};
+      from ${schema}.${table} t;`, name))};
   });
   return {metadata, data};
 }
@@ -171,4 +172,37 @@ test('real TLS PostgreSQL streams an encrypted backup that restores inquiry data
     }
     assert.equal(count('inquiries'), 1);
   });
+  await t.test('restored recovery objects replay post-backup deletions and execute rights deletion and retention', () => {
+    // The newest external ledger must win over old archived customer records.
+    // Keep it in fixture memory only; never read a production deletion ledger.
+    assert.equal(database.sql(`select homeground_recovery.delete_homeground_inquiry('${submission.inquiryId}','verified_rights_request');`), 't');
+    const latestLedger = JSON.parse(database.sql("select jsonb_agg(to_jsonb(t)) from homeground_recovery.deletion_tombstones t;"));
+    assert.equal(count('inquiries'), 0);
+    assert.equal(count('inquiries','restored'), 1, 'the archive predates the rights deletion');
+    database.sql(`insert into homeground_recovery.deletion_tombstones
+      select * from jsonb_populate_recordset(null::homeground_recovery.deletion_tombstones,${database.quote(latestLedger)}::jsonb)
+      on conflict(inquiry_id) do update set deleted_at=excluded.deleted_at,reason_code=excluded.reason_code,
+        purge_after=excluded.purge_after,replicated_at=excluded.replicated_at;`, 'restored');
+    assert.equal(database.sql('select homeground_recovery.replay_homeground_deletion_tombstones();','restored'), '1');
+    assert.equal(count('inquiries','restored'), 0);
+    const create = () => database.rpc('create_homeground_homepage_email_v1', {
+      p_schema_version: 3,p_form_version:'2026-07-26.1',p_locale:'en',p_contact_email:'restored@example.invalid',
+      p_privacy_notice_version:'2026-07-26.1',p_landing_path:'/',p_attribution:{},
+      p_idempotency_key_hash:digest(randomUUID()),p_payload_hash:digest(randomUUID()),
+      p_rate_limit_subject_hash:digest(randomUUID()),p_short_rate_limit:5,p_daily_rate_limit:20,
+      p_first_response_due_at:new Date(Date.now()+86_400_000).toISOString(),
+    },'restored');
+    const rights = create();
+    assert.equal(database.sql(`select homeground_recovery.delete_homeground_inquiry('${rights.inquiryId}','verified_rights_request');`,'restored'),'t');
+    const expired = create();
+    database.sql(`update homeground_private.inquiries set created_at=now()-interval '13 months' where inquiry_id='${expired.inquiryId}';`,'restored');
+    const cleanup = JSON.parse(database.sql('select homeground_private.run_homeground_retention_cleanup();','restored'));
+    assert.equal(cleanup.outcome,'succeeded',JSON.stringify(cleanup));
+    assert.equal(cleanup.inquiriesDeleted,1);
+    assert.equal(count('inquiries','restored'),0);
+    assert.equal(database.sql("select count(*) from homeground_recovery.deletion_tombstones;",'restored'),'3');
+    assert.throws(() => database.sql('set role anon; select * from homeground_recovery.deletion_tombstones;','restored'));
+    assert.throws(() => database.sql('set role authenticated; select homeground_recovery.replay_homeground_deletion_tombstones();','restored'));
+  });
+
 });

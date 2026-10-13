@@ -18,6 +18,7 @@ export const guideProductMarketForecast = {
   "chengdu-chongqing-8-day-private-tour": 3,
   "chongqing-wulong-5-day-private-tour": 1,
   "guilin-yangshuo-5-day-private-tour": 4,
+  "guilin-li-river-yangshuo-4-day-private-tour": 0,
   "kunming-dali-lijiang-8-day-private-tour": 3,
   "zhangjiajie-furong-fenghuang-7-day-private-tour": 4,
   "zhangjiajie-forest-4-day-private-tour": 3,
@@ -121,6 +122,7 @@ const productAffinities: Readonly<Record<GuideProductId, ProductAffinity>> = {
     destinations: ["chongqing", "wulong"],
     topics: ["karst", "mountain-scenery"],
   },
+  "guilin-li-river-yangshuo-4-day-private-tour": { destinations: ["guilin", "yangshuo", "guangxi"], topics: ["li-river", "yulong-river"] },
   "guilin-yangshuo-5-day-private-tour": {
     destinations: ["guilin", "yangshuo", "guangxi", "longsheng", "longji"],
     topics: ["karst", "river", "rice-terraces"],

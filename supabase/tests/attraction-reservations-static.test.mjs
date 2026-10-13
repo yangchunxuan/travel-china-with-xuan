@@ -431,17 +431,17 @@ test("public copy avoids checkout language", async () => {
   }
 });
 
-test("search copy leads with the Forbidden City and the owner's refund and privacy clauses stay", async () => {
+test("English search copy identifies the booking service; the Forbidden City answer, refund and privacy clauses stay", async () => {
   const lead = { en: /Forbidden City/u, zh: /故宫/u, ko: /자금성/u };
   const yes = { en: /^Yes\./u, zh: /^可以。/u, ko: /^네\./u };
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);
-    assert.match(copy.metadata.title, lead[locale], `${locale}: title`);
+    assert.match(copy.metadata.title, locale === "en" ? /China Attraction Ticket Booking Service/u : lead[locale], `${locale}: title`);
     if (locale === "en") {
       assert.ok(copy.metadata.title.length <= 60, "en: title fits a search result");
       assert.ok(copy.metadata.description.replace("{fee}", "USD 7").length <= 155, "en: description fits a search result");
     }
-    assert.match(copy.metadata.description, lead[locale], `${locale}: description`);
+    assert.match(copy.metadata.description, locale === "en" ? /selected China attractions.*\{fee\}.*official ticket price.*before payment/u : lead[locale], `${locale}: description`);
     assert.match(copy.h1, lead[locale], `${locale}: h1`);
     const forbiddenCityFaq = copy.faqs.find((item) => lead[locale].test(item.question));
     assert.ok(forbiddenCityFaq, `${locale}: Forbidden City FAQ`);
@@ -639,4 +639,57 @@ test("terms and refund city lists include Datong without replacing the existing 
       assert.ok(paragraph.includes(lists[locale].complete), `${locale}: policy city list matches the service scope`);
     }
   }
+});
+
+test("a guide referral opens on its attraction in every language, set like the full-trip page with no pill or icon", async () => {
+  const [enquiry, cta, ctaStyles, pageStyles] = await Promise.all([
+    source("components/AttractionReservationEnquiry.tsx"),
+    source("components/content/GuideReservationCta.tsx"),
+    source("components/content/GuideReservationCta.module.css"),
+    source("components/AttractionReservationsPage.module.css"),
+  ]);
+  // Any ?attraction= referral starts compact, whatever the language.
+  assert.match(enquiry, /if \(!match\) return;[\s\S]{0,260}setCompactReferral\(true\);/u);
+  assert.doesNotMatch(enquiry, /locale === "en"\) setCompactReferral/u);
+  for (const locale of locales) {
+    const copy = copyModule.getAttractionReservationCopy(locale);
+    for (const key of ["selectedAttractions", "addAttractions", "removeAttraction", "removeLabel"]) {
+      assert.ok(copy.enquiry[key]?.trim(), `${locale}: enquiry.${key}`);
+    }
+    assert.match(copy.enquiry.removeAttraction, /\{name\}/u, `${locale}: the remove control names its attraction`);
+    assert.ok(copy.guideCta.feeUnit.trim(), `${locale}: the fee line says what the fee covers`);
+  }
+  // No icon library and no pill on the guide card or in the send area.
+  assert.doesNotMatch(cta, /lucide-react/u);
+  assert.doesNotMatch(enquiry, /lucide-react/u);
+  assert.doesNotMatch(ctaStyles, /border-radius:\s*999px|background:\s*var\(--hg-color-rust-soft/u);
+  assert.match(cta, /<span className=\{styles\.feeAmount\}>\{values\.fee\}<\/span>/u);
+  const primary = pageStyles.match(/\.page \.primaryButton \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(primary, /background: none;/u);
+  assert.match(primary, /border-radius: 0;/u);
+  assert.match(pageStyles, /\.page :is\(\.primaryButton, \.secondaryButton\) svg \{\s*display: none;/u);
+  // KakaoTalk leads on Korean pages as the same line of words and arrow.
+  assert.match(enquiry, /<KakaoTalkContact buttonClassName=\{styles\.primaryButton\}/u);
+});
+
+test("the reservation form's date and party fields are hairline blanks; other forms keep the boxed date field", async () => {
+  const [enquiry, dateField, dateStyles, pageStyles, ...others] = await Promise.all([
+    source("components/AttractionReservationEnquiry.tsx"),
+    source("components/TourDateField.tsx"),
+    source("components/TourDateField.module.css"),
+    source("components/AttractionReservationsPage.module.css"),
+    source("components/TourContactPanel.tsx"),
+    source("components/PrivateGuideEnquiry.tsx"),
+    source("components/PrivateCarServiceEnquiry.tsx"),
+  ]);
+  assert.match(enquiry, /<TourDateField active appearance="line"/u);
+  assert.match(dateField, /appearance = "box"/u, "the boxed field stays the default");
+  for (const other of others) assert.doesNotMatch(other, /appearance="line"/u);
+  assert.match(dateStyles, /\.line \.row \{[^}]*border: 0;[^}]*border-radius: 0;/u);
+  assert.match(dateStyles, /\.line \.open svg \{ display: none; \}/u);
+  assert.match(dateStyles, /forced-colors: active\) \{ \.line \.row \{ border-bottom: 1px solid ButtonText; \}/u);
+  const blank = pageStyles.match(/\.field input,\n\.field textarea,\n\.noteToggle textarea \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(blank, /border: 0;/u);
+  assert.match(blank, /border-radius: 0;/u);
+  assert.match(pageStyles, /input\[type="number"\]::-webkit-inner-spin-button/u);
 });

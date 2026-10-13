@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import {
   attractionReservationHref,
   attractionReservationServiceFeeCny,
@@ -21,6 +20,10 @@ import styles from "./GuideReservationCta.module.css";
  * promises a booking in the traveller's own passport name only where the
  * source guide confirms the official system accepts passports; otherwise it
  * says we check that before payment.
+ *
+ * Set as the full-trip page is: no box, no pill, no icon. Hairlines above and
+ * below, the fee in large serif figures, and one way forward marked by a thin
+ * arrow; the disclosure follows as small print.
  */
 export function GuideReservationCta({
   guideId,
@@ -43,12 +46,12 @@ export function GuideReservationCta({
     <aside aria-label={copy.label} className={styles.card} data-guide-reservation-cta={rule.id} data-similarity-ignore>
       <p className={styles.label}>{copy.label}</p>
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
+      <p className={styles.fee}><span className={styles.feeAmount}>{values.fee}</span> <span className={styles.feeUnit}>{copy.feeUnit}</span></p>
       <p className={styles.body}>{fillReservationCopy(rule.bestEffort ? copy.bodyBestEffort : rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
-      {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position={position}>
         {copy.action}
-        <ArrowRight aria-hidden="true" size={18} />
       </GuideCtaLink>
+      {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
     </aside>
   );
 }

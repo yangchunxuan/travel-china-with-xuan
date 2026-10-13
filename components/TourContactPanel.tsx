@@ -291,7 +291,7 @@ export function TourContactPanel({ locale, edition }: {
             {context && enabled ? <div className={styles.directFirst}>
               <div className={styles.directChoices}>
                 {needsGroup ? <button type="button" className={styles.emailButton} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{directText.email}</button> : <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>}
-                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={whatsappHref(draft)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
+                {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={whatsappHref(draft)} data-contact-tour={context?.slug} data-contact-package={context?.selection?.packageId} data-contact-travelers={context?.selection?.travelers} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
                 {kakao(false)}
               </div>
               <span className={styles.emailAddress}>{homegroundBusiness.serviceEmail}</span>
@@ -319,7 +319,7 @@ export function TourContactPanel({ locale, edition }: {
               <p className={styles.manual}>{text.manual}</p>
             </form> : null}
             {(!context || !enabled) ? <div className={styles.direct}>
-              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={whatsappHref(customGroup ? draft : undefined)} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
+              {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={whatsappHref(customGroup ? draft : undefined)} data-contact-tour={context?.slug} data-contact-package={context?.selection?.packageId} data-contact-travelers={context?.selection?.travelers} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               {kakao(true)}
               {needsGroup ? <button type="button" className={styles.directLink} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{text.guideEmail}</button> : <a className={styles.directLink} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a>}
               {!context ? <a className={styles.catalog} href={edition?.toursPath ?? `${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}

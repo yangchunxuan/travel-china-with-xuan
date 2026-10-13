@@ -6,11 +6,11 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
-const { privateTourProducts, localizePrivateTourProduct } = await import(path.join(ROOT, "lib/privateTourProducts.ts"));
-const { privateTourPublishedPriceNote } = await import(path.join(ROOT, "lib/privateTourCurrencyNote.ts"));
+const { privateTourProducts, localizePrivateTourProduct } = await import(new URL("../lib/privateTourProducts.ts", import.meta.url));
+const { privateTourPublishedPriceNote } = await import(new URL("../lib/privateTourCurrencyNote.ts", import.meta.url));
 
 const ID = "china-private-tour-prices";
-const TODAY = "2026-10-11";
+const TODAY = "2026-10-13";
 const L = ["en", "zh", "ko"];
 const HERO_SLUG = "beijing-xian-shanghai-8-day-private-tour";
 const tourHref = (loc, slug) => `${loc === "en" ? "" : `/${loc}`}/tours/${slug}/`;
@@ -27,7 +27,7 @@ const median = (values) => {
 
 // The route name is the tour title without its length and format.
 function routeName(loc, title) {
-  const match = loc === "en" ? /^(.*?):\s/u.exec(title) : loc === "zh" ? /^(.*?)\s*\d+\s*天/u.exec(title) : /^(.*?)\s*\d+일/u.exec(title);
+  const match = loc === "en" ? /^(.*?):\s/u.exec(title) : loc === "zh" ? /^(.*?)\s*\d+\s*天/u.exec(title) : /^(.*?)\s*(?:\d+박\s*)?\d+일/u.exec(title);
   if (!match?.[1]) throw new Error(`cannot read the route name from "${title}"`);
   return match[1].trim();
 }
@@ -51,7 +51,7 @@ function lines(loc, tour) {
   return priced.map((tourPackage) => ({
     tour,
     name: routeName(loc, product.title),
-    option: priced.length > 1 ? tourPackage.label : "",
+    option: priced.length > 1 || tourPackage.rows.length === 1 ? tourPackage.label : "",
     days: tour.product.days,
     nights: tour.product.nights,
     price: (travelers) => tourPackage.rows.find((row) => row.travelers === travelers) ?? null,
@@ -96,13 +96,14 @@ function body(loc) {
     return [bandName[which], String(count), range(loc, Math.min(...amounts(set, 2)), Math.max(...amounts(set, 2))), range(loc, Math.min(...amounts(set, 6)), Math.max(...amounts(set, 6))), range(loc, Math.min(...daily(set)), Math.max(...daily(set)))];
   });
   const n = tours.length;
+  const twoRouteCount = tours.filter((tour) => lines(loc, tour).some((line) => line.price(2))).length;
   const dayRange = `${Math.min(...days)}${loc === "ko" ? "~" : "–"}${Math.max(...days)}`;
 
   return [
     { id: "lead", type: "lead", text: tr(
-      `A private tour in China costs ${range(loc, Math.min(...two), Math.max(...two))} per person for two travellers on Homeground's ${n} published routes of ${dayRange} days. That is about ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))} per person per day, with a middle value near ${fmt(loc, median(dailyAll))}. When six travel together the same routes cost ${range(loc, Math.min(...six), Math.max(...six))} each. Flights to and from China are extra, and each tour page lists what its price covers.`,
-      `Homeground 公布了 ${n} 条 ${dayRange} 天中国私家团的价格：2 人同行，每人 ${range(loc, Math.min(...two), Math.max(...two))}，折合每人每天约 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}，中间值约 ${fmt(loc, median(dailyAll))}。6 人同行，同样的线路每人 ${range(loc, Math.min(...six), Math.max(...six))}。往返中国的国际机票另计，每条线路的页面写明价格包含什么。`,
-      `Homeground이 요금을 공개한 중국 프라이빗 투어는 ${dayRange}일 일정 ${n}개입니다. 2명이 함께 가면 1인 ${range(loc, Math.min(...two), Math.max(...two))}, 하루로 나누면 1인 약 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}이고 중간값은 약 ${fmt(loc, median(dailyAll))}입니다. 6명이 함께 가면 같은 일정이 1인 ${range(loc, Math.min(...six), Math.max(...six))}입니다. 중국 왕복 국제선은 별도이며, 요금에 포함된 내용은 각 상품 페이지에 적혀 있습니다.`) },
+      `A private tour in China costs ${range(loc, Math.min(...two), Math.max(...two))} per person for two travellers on Homeground's ${twoRouteCount} routes with two-person prices (${dayRange} days). That is about ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))} per person per day, with a middle value near ${fmt(loc, median(dailyAll))}. Published six-person prices across all ${n} routes cost ${range(loc, Math.min(...six), Math.max(...six))} each. Flights to and from China are extra, and each tour page lists what its price covers.`,
+      `Homeground 公布了 ${n} 条 ${dayRange} 天中国私家团的价格；其中 ${twoRouteCount} 条有 2 人价格，每人 ${range(loc, Math.min(...two), Math.max(...two))}，折合每人每天约 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}，中间值约 ${fmt(loc, median(dailyAll))}。全部 ${n} 条线路的 6 人价格为每人 ${range(loc, Math.min(...six), Math.max(...six))}。往返中国的国际机票另计，每条线路的页面写明价格包含什么。`,
+      `Homeground이 요금을 공개한 중국 프라이빗 투어는 ${dayRange}일 일정 ${n}개입니다. 2명 요금이 있는 ${twoRouteCount}개 일정은 1인 ${range(loc, Math.min(...two), Math.max(...two))}, 하루로 나누면 1인 약 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}이고 중간값은 약 ${fmt(loc, median(dailyAll))}입니다. 전체 ${n}개 일정의 6명 요금은 1인 ${range(loc, Math.min(...six), Math.max(...six))}입니다. 중국 왕복 국제선은 별도이며, 요금에 포함된 내용은 각 상품 페이지에 적혀 있습니다.`) },
     { id: "glance-heading", type: "heading", level: 2, text: tr("Prices at a glance", "价格一览", "요금 한눈에 보기") },
     { id: "glance-table", type: "table",
       caption: tr("Per person, by trip length; per-day figures are for two travellers", "每人价格，按行程天数分组；每天金额按 2 人同行计算", "1인 요금, 일정 길이별; 하루 금액은 2명 기준"),
@@ -127,9 +128,9 @@ function body(loc) {
     { id: "faq", type: "faq", title: tr("Questions about private tour prices in China", "关于中国私家团价格的常见问题", "중국 프라이빗 투어 요금에 대해 자주 묻는 질문"), items: [
       { question: tr("How much does a private tour in China cost per day?", "中国私家团每天要多少钱？", "중국 프라이빗 투어는 하루에 얼마인가요?"),
         answer: tr(
-          `Two travellers pay about ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))} per person per day on Homeground's ${n} published private routes, with a middle value near ${fmt(loc, median(dailyAll))}. The lowest per-day figure is ${cheapestDay.name} (${cheapestDay.days} days) and the highest is ${dearestDay.name} (${dearestDay.days} days). Flights to and from China are extra.`,
-          `Homeground 公布价格的 ${n} 条私家线路，2 人同行每人每天约 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}，中间值约 ${fmt(loc, median(dailyAll))}。每天金额最低的是${cheapestDay.name}（${cheapestDay.days} 天），最高的是${dearestDay.name}（${dearestDay.days} 天）。往返中国的国际机票另计。`,
-          `Homeground이 요금을 공개한 프라이빗 일정 ${n}개는 2명 기준 1인 하루 약 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}이고 중간값은 약 ${fmt(loc, median(dailyAll))}입니다. 하루 금액이 가장 낮은 일정은 ${cheapestDay.name}(${cheapestDay.days}일), 가장 높은 일정은 ${dearestDay.name}(${dearestDay.days}일)입니다. 중국 왕복 국제선은 별도입니다.`) },
+          `Two travellers pay about ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))} per person per day on Homeground's ${twoRouteCount} routes with two-person prices, with a middle value near ${fmt(loc, median(dailyAll))}. The lowest per-day figure is ${cheapestDay.name} (${cheapestDay.days} days) and the highest is ${dearestDay.name} (${dearestDay.days} days). Flights to and from China are extra.`,
+          `Homeground 公布 2 人价格的 ${twoRouteCount} 条私家线路，2 人同行每人每天约 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}，中间值约 ${fmt(loc, median(dailyAll))}。每天金额最低的是${cheapestDay.name}（${cheapestDay.days} 天），最高的是${dearestDay.name}（${dearestDay.days} 天）。往返中国的国际机票另计。`,
+          `Homeground이 2명 요금을 공개한 프라이빗 일정 ${twoRouteCount}개는 2명 기준 1인 하루 약 ${range(loc, Math.min(...dailyAll), Math.max(...dailyAll))}이고 중간값은 약 ${fmt(loc, median(dailyAll))}입니다. 하루 금액이 가장 낮은 일정은 ${cheapestDay.name}(${cheapestDay.days}일), 가장 높은 일정은 ${dearestDay.name}(${dearestDay.days}일)입니다. 중국 왕복 국제선은 별도입니다.`) },
       { question: tr("Is a private China tour cheaper per person with more people?", "私家团人多会更便宜吗？", "프라이빗 투어는 인원이 많으면 더 저렴한가요?"),
         answer: tr(
           `Yes. Where Homeground publishes prices for two, four and six travellers, the price per person for six is typically ${saving(6)}% lower than for two, because the guide and vehicle cost is shared across more people.`,

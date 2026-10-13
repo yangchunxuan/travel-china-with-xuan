@@ -1,5 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { guilinFourDayPrivateTour } from "./privateTourGuilinFourDayProduct.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { shanghaiSuzhouAnswers, shanghaiSuzhouHangzhouAnswers } from "./jiangnanTourAnswers.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { privateTourExpansionProducts } from "./privateTourExpansionProducts.ts";
@@ -3675,6 +3677,7 @@ export const privateTourProducts: readonly PrivateTourProduct[] = Object.freeze(
     xian,
     chongqingWulong,
     guilinYangshuo,
+    guilinFourDayPrivateTour,
     harbinWinter,
     shanghaiSuzhou,
     beijing,

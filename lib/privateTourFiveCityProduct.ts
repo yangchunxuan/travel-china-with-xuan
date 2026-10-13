@@ -3,6 +3,7 @@ import type {
   LocalizedText,
   PrivateTourDay,
   PrivateTourImage,
+  PrivateTourPriceTier,
   PrivateTourProduct,
   PrivateTourRouteMediaGroup,
 } from "./privateTourProducts";
@@ -26,6 +27,12 @@ const image = (
   alt: LocalizedText,
   caption: LocalizedText,
 ): PrivateTourImage => ({ src, width, height, objectPosition: "50% 50%", alt, caption });
+// Owner-approved USD selling price (2026-10-11 cost table); CNY follows the long-haul rule.
+const usd = (travelers: PrivateTourPriceTier["travelers"], usdPerPerson: number): PrivateTourPriceTier => ({
+  travelers,
+  cnyPerPerson: Math.floor((usdPerPerson * 6.5) / 10) * 10,
+  usdPerPerson,
+});
 const scene = (label: LocalizedText, photo: PrivateTourImage) => ({ label, image: photo });
 const routePhoto = (
   number: number,
@@ -334,8 +341,9 @@ const departurePhoto = image(
 );
 
 /**
- * A public route based on a date-specific private-group plan. Both choices are
- * quoted afresh, so the client's negotiated fare is never a website price.
+ * A public route based on a date-specific private-group plan. The published
+ * prices come from the owner's 2026-10-11 cost table, never from the client's
+ * negotiated fare.
  */
 export const fiveCityPrivateTour: PrivateTourProduct = {
   id: "private-tour-beijing-xian-chengdu-guilin-shanghai-13d12n",
@@ -352,20 +360,20 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     en: [
       { label: "Route", value: "Beijing · Xi'an · Chengdu · Guilin · Shanghai" },
       { label: "Travel", value: "2 high-speed trains + 2 domestic flights" },
-      { label: "Stay", value: "12 nights · our 4-star hotels or your own" },
-      { label: "Price", value: "Quoted for your dates and group" },
+      { label: "Stay", value: "12 nights · 4-star hotels with breakfast" },
+      { label: "Price", value: "Published for 4, 6 and 8 travellers" },
     ],
     zh: [
       { label: "路线", value: "北京 · 西安 · 成都 · 桂林 · 上海" },
       { label: "城际交通", value: "2 段高铁 + 2 段国内航班" },
-      { label: "住宿", value: "12 晚 · 四星酒店或自己订" },
-      { label: "价格", value: "按日期与人数报价" },
+      { label: "住宿", value: "12 晚 · 四星酒店含早" },
+      { label: "价格", value: "4、6、8 人公开价" },
     ],
     ko: [
       { label: "동선", value: "베이징 · 시안 · 청두 · 계림 · 상하이" },
       { label: "도시간 이동", value: "고속철도 2회 + 국내선 2회" },
-      { label: "숙박", value: "12박 · 4성급 호텔 또는 직접 예약" },
-      { label: "가격", value: "날짜와 인원별 견적" },
+      { label: "숙박", value: "12박 · 4성급 호텔 조식 포함" },
+      { label: "가격", value: "4·6·8명 공개 가격" },
     ],
   },
   title: l(
@@ -379,9 +387,9 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     "중국 13일 프라이빗 투어｜베이징·시안·청두·계림·상하이",
   ),
   metadataDescription: l(
-    "13-day private China tour: Mutianyu Great Wall, Forbidden City, Terracotta Warriors, Chengdu pandas, the Li River and Shanghai. Hotels optional, quoted by date.",
-    "13 天私家团走北京、西安、成都、桂林、上海：慕田峪长城、故宫、兵马俑、熊猫、漓江与外滩。可含四星酒店或自己订，按日期报价。",
-    "무톈위 만리장성, 자금성, 병마용, 청두 판다, 이강과 상하이를 잇는 13일 프라이빗 투어. 호텔 포함 또는 직접 예약, 날짜별 견적.",
+    "13-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. USD 2,580 per person for 4, 2,090 for 8; 4-star hotels and flights included.",
+    "13 天私家团：长城、兵马俑、大熊猫、漓江与上海。每人价格：4 人同行 ¥16,770，8 人同行 ¥13,580；含四星酒店、国内航班与高铁。",
+    "13일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이. 1인 요금 4명 ₩3,610,000, 8명 ₩2,920,000. 4성급 호텔·국내선·고속철도 포함.",
   ),
   eyebrow: l(
     "Five cities in 13 days, from the Great Wall to the Bund",
@@ -389,14 +397,14 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     "13일 동안 다섯 도시, 만리장성에서 와이탄까지",
   ),
   lede: l(
-    "Ride the cable car up to the Great Wall at Mutianyu. Look down on the first emperor's army in Xi'an. Reach the panda base early, while the pandas are still awake. Spend four hours on the Li River among the hills on the back of the 20-yuan note, then finish on the Bund. Twelve nights, in our 4-star hotels or your own.",
-    "坐缆车上慕田峪长城；在西安俯看秦始皇的军阵；一早赶到熊猫基地，趁熊猫还醒着；在漓江上坐四个小时船，穿过印在 20 元人民币背面的山水；最后走上外滩。12 晚住我们安排的四星酒店，也可以自己订。",
-    "케이블카를 타고 무톈위 만리장성에 오릅니다. 시안에서는 진시황의 군대를 내려다보고, 청두에서는 판다가 깨어 있는 이른 아침에 판다 기지에 닿습니다. 20위안 지폐 뒷면에 그려진 산수 사이로 이강을 네 시간 내려간 뒤, 마지막은 와이탄입니다. 12박은 저희가 고른 4성급 호텔이나 직접 예약한 숙소에서 묵습니다.",
+    "Ride the cable car up to the Great Wall at Mutianyu. Look down on the first emperor's army in Xi'an. Reach the panda base early, while the pandas are still awake. Spend four hours on the Li River among the hills on the back of the 20-yuan note, then finish on the Bund. Twelve nights in 4-star hotels, breakfast included.",
+    "坐缆车上慕田峪长城；在西安俯看秦始皇的军阵；一早赶到熊猫基地，趁熊猫还醒着；在漓江上坐四个小时船，穿过印在 20 元人民币背面的山水；最后走上外滩。12 晚住我们安排的四星酒店，含早餐。",
+    "케이블카를 타고 무톈위 만리장성에 오릅니다. 시안에서는 진시황의 군대를 내려다보고, 청두에서는 판다가 깨어 있는 이른 아침에 판다 기지에 닿습니다. 20위안 지폐 뒷면에 그려진 산수 사이로 이강을 네 시간 내려간 뒤, 마지막은 와이탄입니다. 12박은 저희가 고른 4성급 호텔에서 조식과 함께 묵습니다.",
   ),
   summary: l(
-    "Three nights in Beijing, two in Xi'an, two in Chengdu, three in Guilin and two in Shanghai. Two second-class high-speed trains and two economy flights with a checked bag, an English-speaking local guide on every sightseeing day, a private vehicle, the named admissions and eight lunches. Hotels are optional; the total is confirmed in writing before payment.",
-    "北京 3 晚、西安 2 晚、成都 2 晚、桂林 3 晚、上海 2 晚。两段高铁二等座、两段含托运行李的国内经济舱航班，每个游览日都有当地英语导游和专车，含列明门票与 8 顿午餐。酒店可含可不含，总价付款前书面确认。",
-    "베이징 3박, 시안 2박, 청두 2박, 계림 3박, 상하이 2박. 고속철도 2등석 2회와 위탁 수하물이 포함된 국내선 이코노미 2회, 관광일마다 현지 영어 가이드와 전용차, 명시된 입장권과 점심 8회가 들어갑니다. 호텔은 선택이며 총액은 결제 전에 서면으로 확정합니다.",
+    "Three nights in Beijing, two in Xi'an, two in Chengdu, three in Guilin and two in Shanghai. Two second-class high-speed trains and two economy flights with a checked bag, an English-speaking local guide on every sightseeing day, a private vehicle, the named admissions and eight lunches. The 4-star hotels and breakfasts are included; the total is confirmed in writing before payment.",
+    "北京 3 晚、西安 2 晚、成都 2 晚、桂林 3 晚、上海 2 晚。两段高铁二等座、两段含托运行李的国内经济舱航班，每个游览日都有当地英语导游和专车，含列明门票与 8 顿午餐。含四星酒店和早餐，总价付款前书面确认。",
+    "베이징 3박, 시안 2박, 청두 2박, 계림 3박, 상하이 2박. 고속철도 2등석 2회와 위탁 수하물이 포함된 국내선 이코노미 2회, 관광일마다 현지 영어 가이드와 전용차, 명시된 입장권과 점심 8회가 들어갑니다. 4성급 호텔과 조식도 포함되며 총액은 결제 전에 서면으로 확정합니다.",
   ),
   highlights: lists(
     [
@@ -486,9 +494,9 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     day(9,
       l("The Li River to Yangshuo", "漓江到阳朔", "이강을 따라 양삭으로"),
       l(
-        "About four hours on a three-star cruise boat through the limestone hills printed on the back of the 20-yuan note, with lunch on board. From Yangshuo, drive through the countryside to Moon Hill, then walk West Street before the drive back to Guilin, about ninety minutes.",
-        "坐三星游船在漓江上走大约四个小时，两岸就是印在 20 元人民币背面的石灰岩山峰，午餐在船上。到了阳朔，专车穿过田野去月亮山，再到西街走走，然后开车约一个半小时回桂林。",
-        "3성급 유람선을 타고 약 네 시간, 20위안 지폐 뒷면에 그려진 석회암 봉우리 사이를 지나며 점심은 배에서 합니다. 양삭에서는 전용차로 들판을 지나 월량산에 가고 서가를 걸은 뒤 약 한 시간 반 차로 계림에 돌아옵니다.",
+        "About four hours on a three-star cruise boat through the limestone hills printed on the back of the 20-yuan note, with lunch on board. From Yangshuo, drive through the countryside and view Moon Hill from a distance, either from the vehicle or the roadside outside the scenic area, then walk West Street before the drive back to Guilin, about ninety minutes.",
+        "坐三星游船在漓江上走大约四个小时，两岸就是印在 20 元人民币背面的石灰岩山峰，午餐在船上。到了阳朔，专车穿过田野，从车上或景区外路边远看月亮山，再到西街走走，然后开车约一个半小时回桂林。",
+        "3성급 유람선을 타고 약 네 시간, 20위안 지폐 뒷면에 그려진 석회암 봉우리 사이를 지나며 점심은 배에서 합니다. 양삭에서는 전용차로 들판을 지나 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보고 서가를 걸은 뒤 약 한 시간 반 차로 계림에 돌아옵니다.",
       ),
     ),
     day(10,
@@ -518,16 +526,16 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     day(13,
       l("Depart Shanghai", "上海送机", "상하이 출발"),
       l(
-        "The driver takes you to the airport in time for your flight. If you chose our hotels, breakfast is at the hotel. Departure day is the transfer only.",
-        "司机按你的航班时间送你去机场。选了我们安排的酒店，早餐在酒店吃。这天只送机，不排景点。",
-        "기사가 항공편 시간에 맞춰 공항으로 모십니다. 저희 호텔을 선택하셨다면 조식은 호텔에서 드십니다. 이날은 공항 이동만 있습니다.",
+        "The driver takes you to the airport in time for your flight. Breakfast is at the hotel. Departure day is the transfer only.",
+        "司机按你的航班时间送你去机场。早餐在酒店吃。这天只送机，不排景点。",
+        "기사가 항공편 시간에 맞춰 공항으로 모십니다. 조식은 호텔에서 드십니다. 이날은 공항 이동만 있습니다.",
       ),
     ),
   ],
   hotelNote: l(
-    "Twelve nights in central 4-star hotels (four diamonds on Trip.com), with breakfast every morning: three in central Beijing, two inside Xi'an's old city wall, two in central Chengdu, three in central Guilin and two in central Shanghai. We send the hotel names and room types for your approval before you pay a deposit. Prefer to book your own? Choose the without-hotels option: you book and pay for the twelve nights and breakfasts, and we plan the pickups around your addresses.",
-    "12 晚住市中心的四星酒店（携程四钻标准），每天含早：北京市中心 3 晚、西安老城墙内 2 晚、成都市中心 2 晚、桂林市中心 3 晚、上海市中心 2 晚。付定金前，我们把酒店名和房型发给你确认。想自己订酒店？选「自行预订酒店」：12 晚住宿和早餐你自己订、自己付，我们按你的地址安排接送。",
-    "도심의 4성급 호텔(트립닷컴 4다이아 기준)에서 조식 포함 12박: 베이징 도심 3박, 시안 옛 성벽 안 2박, 청두 도심 2박, 계림 도심 3박, 상하이 도심 2박입니다. 계약금을 내시기 전에 호텔 이름과 객실 유형을 보내 확인받습니다. 직접 예약하고 싶으시면 '호텔 개별 예약'을 고르세요. 12박과 조식은 직접 예약·결제하시고, 픽업은 숙소 주소에 맞춰 계획합니다.",
+    "Twelve nights in central 4-star hotels (four diamonds on Trip.com), with breakfast every morning: three in central Beijing, two inside Xi'an's old city wall, two in central Chengdu, three in central Guilin and two in central Shanghai. We send the hotel names and room types for your approval before you pay a deposit.",
+    "12 晚住市中心的四星酒店（携程四钻标准），每天含早：北京市中心 3 晚、西安老城墙内 2 晚、成都市中心 2 晚、桂林市中心 3 晚、上海市中心 2 晚。付定金前，我们把酒店名和房型发给你确认。",
+    "도심의 4성급 호텔(트립닷컴 4다이아 기준)에서 조식 포함 12박: 베이징 도심 3박, 시안 옛 성벽 안 2박, 청두 도심 2박, 계림 도심 3박, 상하이 도심 2박입니다. 계약금을 내시기 전에 호텔 이름과 객실 유형을 보내 확인받습니다.",
   ),
   serviceNote: l(
     "A private vehicle sized to your group in every city, an English-speaking local guide on every sightseeing day, and a driver on the transfer-only legs. Two second-class high-speed trains and two economy flights with a checked bag, all booked by us in your passport names. Every admission on the plan, eight lunches (Days 2, 3, 4, 5, 7, 9, 10 and 12), travel accident insurance while you tour in China, and one WhatsApp contact before and during the trip. No shopping stops: no factory visits and no sales talks anywhere on the route. A tour escort who travels with you from Beijing to Shanghai can be added at extra cost.",
@@ -540,7 +548,6 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
       "Dinners, drinks and lunches other than the eight specified days",
       "Tips, visas, personal medical/cancellation insurance and personal spending",
       "Single-room supplements and optional evening shows or meals",
-      "All hotels and hotel breakfasts in the without-hotels option",
       "Anything added outside the confirmed itinerary",
     ],
     [
@@ -548,7 +555,6 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
       "晚餐、饮料及上述 8 天以外的午餐",
       "司导小费、签证、个人医疗及取消保障保险和个人消费",
       "单房差以及自选的夜间演出或餐食",
-      "不含酒店方案中的全部住宿与酒店早餐",
       "最终确认行程以外新增的服务",
     ],
     [
@@ -556,54 +562,45 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
       "저녁 식사·음료 및 명시된 8일 외의 점심",
       "팁·비자·개인 의료 및 취소 보험·개인 경비",
       "1인실 추가금과 선택 저녁 공연·식사",
-      "호텔 제외 상품의 모든 숙박과 호텔 조식",
       "확정 일정 밖에 추가하는 서비스",
     ],
   ),
   bookingNote: l(
-    "This route is quoted for your dates. Send your travel dates, group size, rooms, arrival and departure flights, luggage, and whether you want our hotels. We check every hotel or pickup address, guide, vehicle, ticket and seat, then send the total and the booking terms in writing before any deposit. An inquiry does not hold flights, trains or timed tickets.",
-    "本线路按日期报价。请告诉我们出行日期、人数、房间、到离航班、行李件数，以及要不要含酒店。我们逐项核对酒店或接送地址、导游、用车、门票和座位，再在收定金前书面发给你总价和预订条款。咨询本身不会占住机票、火车票或实名预约门票。",
-    "이 여행은 날짜에 맞춰 견적을 드립니다. 여행 날짜, 인원, 객실, 도착·출발 항공편, 수하물, 저희 호텔 포함 여부를 알려 주세요. 호텔 또는 픽업 주소, 가이드, 차량, 입장권과 좌석을 하나하나 확인한 뒤 계약금 전에 총액과 예약 조건을 서면으로 보내 드립니다. 문의만으로 항공편·열차·시간 지정 입장권이 확보되지는 않습니다.",
+    "The listed starting prices are per person for 4, 6 or 8 travellers, two sharing a room; other group sizes are quoted separately. Send your travel dates, group size, rooms, arrival and departure flights and luggage. We check every hotel, guide, vehicle, ticket and seat, then send the total and the booking terms in writing before any deposit. An inquiry does not hold flights, trains or timed tickets.",
+    "页面起价按 4、6、8 人同行、两人一间的每人价格算，其他人数单独报价。请告诉我们出行日期、人数、房间、到离航班和行李件数。我们逐项核对酒店、导游、用车、门票和座位，再在收定金前书面发给你总价和预订条款。咨询本身不会占住机票、火车票或实名预约门票。",
+    "표시 시작가는 4·6·8명이 2인 1실을 쓸 때의 1인 요금이며, 다른 인원은 따로 견적합니다. 여행 날짜, 인원, 객실, 도착·출발 항공편과 수하물을 알려 주세요. 호텔, 가이드, 차량, 입장권과 좌석을 하나하나 확인한 뒤 계약금 전에 총액과 예약 조건을 서면으로 보내 드립니다. 문의만으로 항공편·열차·시간 지정 입장권이 확보되지는 않습니다.",
   ),
   faq: [
     {
-      question: l("Why is there no fixed price on this page?", "为什么这页没有固定价格？", "왜 이 페이지에 고정 가격이 없나요?"),
+      question: l("How much does this tour cost?", "这条线路多少钱？", "이 투어는 얼마인가요?"),
       answer: l(
-        "Two flights, two trains and up to twelve hotel nights change price with your dates, and the vehicle and guide cost depends on how many of you travel. So we price your actual dates and group, with or without our hotels, and send the total in writing before you pay anything.",
-        "两段航班、两段高铁和最多 12 晚酒店的价格随日期变，车和导游的费用又随人数变。所以我们按你的实际日期和人数报价，含不含酒店都算，付任何钱之前先把总价书面发给你。",
-        "항공편 2회, 열차 2회, 최대 12박의 호텔 가격은 날짜에 따라 달라지고 차량과 가이드 비용은 인원에 따라 달라집니다. 그래서 실제 날짜와 인원으로, 호텔 포함·불포함 모두 견적을 내고 어떤 비용도 받기 전에 총액을 서면으로 보내 드립니다.",
-      ),
-    },
-    {
-      question: l("What changes if we book our own hotels?", "如果我们自己订酒店，有什么不同？", "호텔을 직접 예약하면 무엇이 달라지나요?"),
-      answer: l(
-        "Only the hotels and breakfasts come out. The route, guides, vehicles, trains, flights, tickets and eight lunches stay in. Send us your addresses before we price the transfers; a hotel well outside the centre can change the quote.",
-        "只拿掉酒店和早餐，行程、导游、用车、高铁、航班、门票和 8 顿午餐都不变。报接送价之前请把酒店地址发给我们；离市中心太远的酒店可能影响报价。",
-        "호텔과 조식만 빠지고 일정, 가이드, 차량, 열차, 항공편, 입장권과 점심 8회는 그대로입니다. 이동 요금을 정하기 전에 숙소 주소를 보내 주세요. 도심에서 많이 떨어진 숙소라면 견적이 달라질 수 있습니다.",
+        "Per person, two sharing a room: USD 2,580 for 4 travellers, USD 2,310 for 6 and USD 2,090 for 8. That includes the 4-star hotels with breakfast, guides, vehicles, both trains, both flights, the named tickets and eight lunches. Other group sizes and single rooms are quoted separately, and the total for your dates is confirmed in writing before you pay anything.",
+        "两人一间的每人价格：4 人同行 ¥16,770，6 人同行 ¥15,010，8 人同行 ¥13,580，含四星酒店和早餐、导游、用车、两段高铁、两段航班、所列门票和 8 顿午餐。其他人数和单人间另行报价；按你的日期算出的总价，付任何钱之前先书面发给你。",
+        "2인 1실 기준 1인 요금은 4명 ₩3,610,000, 6명 ₩3,230,000, 8명 ₩2,920,000입니다. 4성급 호텔과 조식, 가이드, 차량, 열차 2회, 항공편 2회, 명시된 입장권과 점심 8회가 포함됩니다. 다른 인원과 1인실은 따로 견적하며, 여행 날짜에 맞춘 총액은 어떤 비용도 받기 전에 서면으로 보내 드립니다.",
       ),
     },
     {
       question: l("Which meals and tickets are included?", "具体包含哪几顿饭和哪些门票？", "어떤 식사와 입장권이 포함되나요?"),
       answer: l(
-        "Lunch is included on Days 2, 3, 4, 5, 7, 9, 10 and 12; Day 9 lunch is on the Li River boat. The named admissions include Mutianyu with return cable car and shuttle, Forbidden City, Temple of Heaven, Xi'an City Wall, Terracotta Warriors with shuttle and headsets, Big Wild Goose Pagoda grounds, Panda Base with shuttle, Li River cruise, Moon Hill, Reed Flute Cave and Yu Garden. Sun and Moon Pagodas are seen from outside; dinners and other lunches are separate.",
-        "含第 2、3、4、5、7、9、10、12 天午餐；第 9 天为漓江船餐。所列门票含慕田峪及往返缆车、接驳车，故宫、天坛、西安城墙、兵马俑及接驳车和讲解耳机、大雁塔院区、熊猫基地及接驳车、漓江游船、月亮山、芦笛岩和豫园。日月双塔从外面看；晚餐及其余午餐另计。",
-        "2·3·4·5·7·9·10·12일차 점심이 포함되며 9일차는 이강 선상 식사입니다. 명시된 입장권에는 무톈위 왕복 케이블카·셔틀, 자금성, 천단, 시안 성벽, 병마용 셔틀·헤드셋, 대안탑 경내, 판다 기지 셔틀, 이강 유람선, 월량산, 노적암과 예원이 들어갑니다. 일월쌍탑은 외관을 보며 저녁과 다른 점심은 별도입니다.",
+        "Lunch is included on Days 2, 3, 4, 5, 7, 9, 10 and 12; Day 9 lunch is on the Li River boat. The named admissions include Mutianyu with return cable car and shuttle, Forbidden City, Temple of Heaven, Xi'an City Wall, Terracotta Warriors with shuttle and headsets, Big Wild Goose Pagoda grounds, Panda Base with shuttle, Li River cruise, Reed Flute Cave and Yu Garden. Moon Hill is viewed from a distance, from the vehicle or the roadside outside the scenic area. Sun and Moon Pagodas are seen from outside; dinners and other lunches are separate.",
+        "含第 2、3、4、5、7、9、10、12 天午餐；第 9 天为漓江船餐。所列门票含慕田峪及往返缆车、接驳车，故宫、天坛、西安城墙、兵马俑及接驳车和讲解耳机、大雁塔院区、熊猫基地及接驳车、漓江游船、芦笛岩和豫园。月亮山从车上或景区外路边远看。日月双塔从外面看；晚餐及其余午餐另计。",
+        "2·3·4·5·7·9·10·12일차 점심이 포함되며 9일차는 이강 선상 식사입니다. 명시된 입장권에는 무톈위 왕복 케이블카·셔틀, 자금성, 천단, 시안 성벽, 병마용 셔틀·헤드셋, 대안탑 경내, 판다 기지 셔틀, 이강 유람선, 노적암과 예원이 들어갑니다. 월량산은 차 안이나 관광지 밖 길가에서 멀리 바라봅니다. 일월쌍탑은 외관을 보며 저녁과 다른 점심은 별도입니다.",
       ),
     },
     {
       question: l("Do we stay overnight in Yangshuo?", "这条路线会在阳朔过夜吗？", "이 일정에서 양삭에 숙박하나요?"),
       answer: l(
-        "The published itinerary uses Guilin as the base for three nights. Day 9 is planned as a Li River cruise, visits to Moon Hill and West Street in Yangshuo, then a private drive back to Guilin. There is no overnight stay in Yangshuo in this route.",
-        "公布的行程以桂林为基地，连续住三晚。第 9 天计划乘漓江游船，游览阳朔的月亮山和西街，再乘专车返回桂林。这条路线不安排在阳朔过夜。",
-        "공개된 일정은 계림을 거점으로 3박을 합니다. 9일차에는 이강 유람선을 타고 양삭의 월량산과 서가를 둘러본 뒤 전용차로 계림에 돌아오는 계획입니다. 이 일정에는 양삭 숙박이 없습니다.",
+        "The published itinerary uses Guilin as the base for three nights. Day 9 is planned as a Li River cruise, distant views of Moon Hill from the vehicle or the roadside outside the scenic area and a walk along West Street in Yangshuo, then a private drive back to Guilin. There is no overnight stay in Yangshuo in this route.",
+        "公布的行程以桂林为基地，连续住三晚。第 9 天计划乘漓江游船，到阳朔后从车上或景区外路边远看月亮山，再游览西街，乘专车返回桂林。这条路线不安排在阳朔过夜。",
+        "공개된 일정은 계림을 거점으로 3박을 합니다. 9일차에는 이강 유람선을 타고 양삭에서 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보고 서가를 둘러본 뒤 전용차로 계림에 돌아오는 계획입니다. 이 일정에는 양삭 숙박이 없습니다.",
       ),
     },
     {
       question: l("What happens if the Li River is low?", "漓江水位低怎么办？", "이강 수위가 낮으면 어떻게 되나요?"),
       answer: l(
-        "In dry winters the operator sometimes shortens the cruise to a round trip on the middle stretch from Yangdi, which keeps the best-known scenery. We check the water a few days before; if that happens, we drive you on to Yangshuo, and Moon Hill and West Street stay in the plan.",
-        "冬季枯水时，船方有时会把航程改成从杨堤出发的中段往返，最有名的那段山水仍在其中。我们开船前几天会核对水位；真改了，就开车送你继续去阳朔，月亮山和西街照常游览。",
-        "겨울 갈수기에는 운영사가 가장 잘 알려진 풍경이 있는 양디 출발 중간 구간 왕복으로 유람선을 줄이기도 합니다. 출항 며칠 전에 수위를 확인하고, 그렇게 되면 차로 양삭까지 모시며 월량산과 서가 일정은 그대로 갑니다.",
+        "In dry winters the operator sometimes shortens the cruise to a round trip on the middle stretch from Yangdi, which keeps the best-known scenery. We check the water a few days before; if that happens, we drive you on to Yangshuo, and distant views of Moon Hill from the vehicle or the roadside outside the scenic area and the West Street visit stay in the plan.",
+        "冬季枯水时，船方有时会把航程改成从杨堤出发的中段往返，最有名的那段山水仍在其中。我们开船前几天会核对水位；真改了，就开车送你继续去阳朔，保留从车上或景区外路边远看月亮山和游览西街的安排。",
+        "겨울 갈수기에는 운영사가 가장 잘 알려진 풍경이 있는 양디 출발 중간 구간 왕복으로 유람선을 줄이기도 합니다. 출항 며칠 전에 수위를 확인하고, 그렇게 되면 차로 양삭까지 모시며 차 안이나 관광지 밖 길가에서 월량산을 멀리 바라보는 일정과 서가 방문은 그대로 유지합니다.",
       ),
     },
     {
@@ -655,33 +652,20 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
   ],
   packages: [
     {
-      id: "with-hotels",
+      id: "standard-guided",
       guideMode: "standard",
       label: l("With hotels and breakfast", "含酒店与早餐", "호텔·조식 포함"),
       summary: l(
-        "Twelve nights in central 4-star hotels with breakfast, plus the private guides and vehicles, two trains, two flights, the admissions and eight lunches. Hotel names and the total are confirmed in your written quote.",
-        "12 晚市中心四星酒店含早，加上私家导游与专车、两段高铁、两段航班、门票和 8 顿午餐。酒店名与总价在书面报价中确认。",
-        "도심 4성급 호텔 조식 포함 12박에 전용 가이드·차량, 열차 2회, 항공편 2회, 입장권과 점심 8회가 포함됩니다. 호텔 이름과 총액은 서면 견적에서 확정합니다.",
+        "Twelve nights in central 4-star hotels with breakfast, plus the private guides and vehicles, two trains, two flights, the admissions and eight lunches. Hotel names and the total are confirmed in writing before you pay.",
+        "12 晚市中心四星酒店含早，加上私家导游与专车、两段高铁、两段航班、门票和 8 顿午餐。酒店名与总价在付款前书面确认。",
+        "도심 4성급 호텔 조식 포함 12박에 전용 가이드·차량, 열차 2회, 항공편 2회, 입장권과 점심 8회가 포함됩니다. 호텔 이름과 총액은 결제 전에 서면으로 확정합니다.",
       ),
-      quoteOnly: true,
-      prices: [],
-    },
-    {
-      id: "without-hotels",
-      guideMode: "standard",
-      label: l("Arrange your own hotels", "自行预订酒店", "호텔 개별 예약"),
-      summary: l(
-        "Everything else stays the same: guides, vehicles, trains, flights, admissions and eight lunches. You book and pay for the twelve hotel nights and breakfasts; pickups and the total are confirmed in your written quote.",
-        "其余全部不变：导游、专车、高铁、航班、门票和 8 顿午餐。12 晚酒店和早餐由你自己订、自己付；接送安排和总价在书面报价中确认。",
-        "가이드, 차량, 열차, 항공편, 입장권, 점심 8회는 그대로입니다. 호텔 12박과 조식은 직접 예약·결제하시고, 픽업과 총액은 서면 견적에서 확정합니다.",
-      ),
-      quoteOnly: true,
-      prices: [],
+      prices: [usd(4, 2580), usd(6, 2310), usd(8, 2090)],
     },
   ],
   datePublished: "2026-10-09",
-  dateModified: "2026-10-10",
-  lastReviewed: "2026-10-10",
+  dateModified: "2026-10-11",
+  lastReviewed: "2026-10-11",
 };
 
 const credit = (

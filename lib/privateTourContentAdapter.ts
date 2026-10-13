@@ -12,6 +12,8 @@ import { localizePrivateTourProduct, privateTourProducts } from "./privateTourPr
 import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { isReservedPrivateTourSlug } from "./privateTourMetadata.ts";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { getPrivateTourHubLastModified } from "./privateTourHubLifecycle.ts";
 
 const locales = ["en", "zh", "ko"] as const;
 const schemaLocale: Record<HomegroundLocale, SchemaLocale> = {
@@ -79,7 +81,7 @@ function buildPrivateTourHubNode(): ContentNode {
     legacyAliases: [],
     dates: {
       datePublished: "2026-08-24",
-      dateModified: "2026-09-06",
+      dateModified: getPrivateTourHubLastModified(),
       lastReviewed: "2026-08-31",
     },
     updatePolicy: {

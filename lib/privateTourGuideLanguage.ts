@@ -51,6 +51,7 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "xian-terracotta-warriors-5-day-private-tour": english,
   "chongqing-wulong-5-day-private-tour": english,
   "guilin-yangshuo-5-day-private-tour": english,
+  "guilin-li-river-yangshuo-4-day-private-tour": englishLand,
   "harbin-winter-5-day-private-tour": english,
   "shanghai-suzhou-5-day-private-tour": english,
   "beijing-highlights-5-day-private-tour": { base: "english-or-none" },

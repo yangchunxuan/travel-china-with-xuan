@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 41 published routes of 4–21 days. That is about USD 84–294 per person per day, with a middle value near USD 190. When six travel together the same routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
+      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 39 routes with two-person prices (4–21 days). That is about USD 84–294 per person per day, with a middle value near USD 190. Published six-person prices across all 43 routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
     },
     {
       "id": "glance-heading",
@@ -28,7 +28,7 @@ const body = {
       "rows": [
         [
           "4- and 5-day tours",
-          "12",
+          "13",
           "USD 420–1,459",
           "USD 250–1,150",
           "USD 84–292"
@@ -42,7 +42,7 @@ const body = {
         ],
         [
           "10- to 21-day tours",
-          "13",
+          "14",
           "USD 2,510–5,920",
           "USD 1,540–4,010",
           "USD 241–294"
@@ -74,6 +74,13 @@ const body = {
         "6 travellers"
       ],
       "rows": [
+        [
+          "Guilin, Li River & Yangshuo (English-guided private tour · reference price)",
+          "4 days",
+          "on request",
+          "on request",
+          "USD 450"
+        ],
         [
           "Zhangjiajie Forest",
           "4 days",
@@ -242,7 +249,7 @@ const body = {
           "USD 1,858"
         ],
         [
-          "Yunnan 8-Day Private Tour",
+          "Yunnan 8-Day Private Tour (Private tour package)",
           "8 days",
           "on request",
           "on request",
@@ -316,6 +323,13 @@ const body = {
           "USD 3,190",
           "USD 2,500",
           "USD 2,340"
+        ],
+        [
+          "Beijing, Xi'an, Chengdu, Guilin & Shanghai",
+          "13 days",
+          "on request",
+          "USD 2,580",
+          "USD 2,310"
         ],
         [
           "Shanghai, Zhangjiajie, Fenghuang & Guilin",
@@ -495,7 +509,7 @@ const body = {
       "items": [
         {
           "question": "How much does a private tour in China cost per day?",
-          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 41 published private routes, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
+          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 39 routes with two-person prices, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
         },
         {
           "question": "Is a private China tour cheaper per person with more people?",
@@ -503,7 +517,7 @@ const body = {
         },
         {
           "question": "Do these prices include flights?",
-          "answer": "No price includes flights to and from China. 12 of the 41 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
+          "answer": "No price includes flights to and from China. 13 of the 43 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
         },
         {
           "question": "Can I get a price for a different group size?",
@@ -551,19 +565,19 @@ const body = {
           "label": "Homeground private tours: every route and its published price",
           "url": "https://homegroundchina.com/tours/",
           "publisher": "Homeground China",
-          "reviewedAt": "2026-10-11"
+          "reviewedAt": "2026-10-13"
         },
         {
           "label": "Shantou, Nan'ao & Chaozhou: 5-Day Private Tour",
           "url": "https://homegroundchina.com/tours/chaozhou-shantou-nanao-5-day-private-tour/",
           "publisher": "Homeground China",
-          "reviewedAt": "2026-10-11"
+          "reviewedAt": "2026-10-13"
         },
         {
           "label": "Beijing, Xi'an & Yunnan: 14-Day Private Tour",
           "url": "https://homegroundchina.com/tours/beijing-xian-yunnan-14-day-private-tour/",
           "publisher": "Homeground China",
-          "reviewedAt": "2026-10-11"
+          "reviewedAt": "2026-10-13"
         }
       ]
     }

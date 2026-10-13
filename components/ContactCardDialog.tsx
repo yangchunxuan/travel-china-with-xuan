@@ -8,13 +8,14 @@ import { homegroundMessengerUrl } from "../lib/homegroundSocial";
 import { getHomepagePlanningDeskCopy } from "../lib/homepagePlanningDesk";
 import { holdPageScroll, type ContactCardLayout, type ContactCardRequest } from "../lib/contactCard";
 import { contactCardCopy } from "../lib/contactCardCopy";
+import { contactCardContextKey, selectedContactCardTour } from "../lib/contactCardContext";
 import { homegroundWhatsAppHref, privateTourQuoteApiUrl, tourContactMessageText, tourWhatsAppHref, whatsAppHrefText } from "../lib/tourContact";
 import type { ContactEdition } from "../lib/contactEdition";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import {
   buildPrivateTourMailtoHref,
-  getPrivateTourInquiryContext,
   getPrivateTourInquirySubmissionContext,
+  privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
 import {
@@ -59,11 +60,11 @@ function chinaTime(locale: HomegroundLocale, editionLocale?: string) {
 }
 
 /** The page the card was opened on: a tour gives the itinerary, a guide its title. */
-function pageContext(locale: HomegroundLocale, edition?: ContactEdition) {
+function pageContext(locale: HomegroundLocale, edition?: ContactEdition, request?: ContactCardRequest) {
   const prefix = locale === "en" ? "" : `/${locale}`;
   const path = window.location.pathname;
   const tourSlug = edition ? edition.tourSlugFromPath(path) : path.match(new RegExp(`^${prefix}/tours/([a-z0-9-]+)/$`))?.[1];
-  const tour = tourSlug ? getPrivateTourInquiryContext(tourSlug, locale) : null;
+  const tour = selectedContactCardTour(tourSlug, locale, window.location.search, request?.tour);
   const isGuide = edition ? edition.isGuidePath(path) : new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(path);
   const guideTitle = !tour && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "";
   return { path, tour, guideTitle };
@@ -108,16 +109,20 @@ export function ContactCardDialog({
   const submittedRef = useRef(false);
   const [closing, setClosing] = useState(false);
   // Re-read on every open: the card outlives client-side navigation.
-  const [context, setContext] = useState(() => pageContext(locale, edition));
+  const [context, setContext] = useState(() => pageContext(locale, edition, request));
+  const [activeRequest, setActiveRequest] = useState(request);
   const [clock, setClock] = useState(() => chinaTime(locale, edition?.intlLocale));
   const [email, setEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<EmailStatus>("idle");
+  const statusRef = useRef<EmailStatus>("idle");
+  const updateStatus = (next: EmailStatus) => { statusRef.current = next; setStatus(next); };
   const [error, setError] = useState("");
   const [invalid, setInvalid] = useState(false);
   const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
 
   const tour: PrivateTourInquiryContext | null = context.tour;
+  const contextKey = contactCardContextKey(context);
   const apiUrl = privateTourQuoteApiUrl();
   const emailReady = Boolean(
     apiUrl &&
@@ -126,10 +131,10 @@ export function ContactCardDialog({
       process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true",
   );
   const directWhatsApp = process.env.NEXT_PUBLIC_HOMEGROUND_DIRECT_WHATSAPP_ENABLED !== "false";
-  const whatsappHref = request.whatsappHref ?? (directWhatsApp
+  const whatsappHref = activeRequest.whatsappHref ?? (directWhatsApp
     ? edition ? homegroundWhatsAppHref(edition.messageText(tour, context.path)) : tourWhatsAppHref(locale, tour, context.path)
     : "");
-  const mailtoHref = request.mailtoHref ?? (edition
+  const mailtoHref = activeRequest.mailtoHref ?? (edition
     ? edition.mailtoHref(tour, undefined, context.guideTitle ? { title: context.guideTitle, path: context.path } : undefined)
     : buildPrivateTourMailtoHref(homegroundBusiness.serviceEmail, locale, tour));
   const messengerHref = sheet ? homegroundMessengerUrl() : "";
@@ -150,16 +155,31 @@ export function ContactCardDialog({
     // From a mail link, start in the email field; otherwise at the title.
     const emailField = request.trigger === "email" ? emailRef.current : null;
     (emailField && !emailField.disabled ? emailField : titleRef.current)?.focus({ preventScroll: true });
-  }, [open, request, frameShownAt]);
+  }, [open, request, frameShownAt, contextKey]);
 
   // The page stops scrolling in the same moment, before the frame the card
   // replaces lets go of its own hold (see holdPageScroll).
   useLayoutEffect(() => (open ? holdPageScroll() : undefined), [open]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return;
-    const opened = pageContext(locale, edition);
-    setContext(opened);
+    const opened = pageContext(locale, edition, request);
+    // A pending request owns both its immutable retry body and what the card
+    // displays. Reopening from another page must not relabel that request.
+    if (!dispatchingRef.current && statusRef.current !== "uncertain") {
+      if (contactCardContextKey(opened) !== contextKey) {
+        snapshotRef.current = null;
+        submittedRef.current = false;
+        startedRef.current = false;
+        setReceipt(null);
+        setError("");
+        setInvalid(false);
+        updateStatus("idle");
+      }
+      // Same-request success keeps its receipt and inline email correction.
+      setContext(opened);
+      setActiveRequest(request);
+    }
     markNewsletterPromptHandled();
     setInquiryOpen(true);
     setClock(chinaTime(locale, edition?.intlLocale));
@@ -212,12 +232,14 @@ export function ContactCardDialog({
     if (recordAttempt) trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "homepage_email", contact_variant: contactVariant });
     if (!navigator.onLine) {
       recordOutcome("enquiry_submit_failed", "network");
-      setStatus("failed");
-      setError(desk.failed);
+      // Going offline does not prove the previous uncertain attempt was lost.
+      const uncertain = statusRef.current === "uncertain";
+      updateStatus(uncertain ? "uncertain" : "failed");
+      setError(uncertain ? desk.uncertain : desk.failed);
       return;
     }
     dispatchingRef.current = true;
-    setStatus("submitting");
+    updateStatus("submitting");
     setError("");
     setInvalid(false);
     const controller = new AbortController();
@@ -238,7 +260,7 @@ export function ContactCardDialog({
           setReceipt(saved && edition && tour && saved.productName
             ? relabelInquiryReceipt(saved, { productName: edition.tourName(tour), selectionLabel: edition.selectionLabel(tour) })
             : saved);
-          setStatus("success");
+          updateStatus("success");
           if (!submittedRef.current) {
             submittedRef.current = true;
             trackEnquirySubmitted({ page_language: locale, reply_channel: "email", submission_surface: "homepage_email", form_version: currentHomepageEmailFormVersion, contact_variant: contactVariant });
@@ -246,7 +268,7 @@ export function ContactCardDialog({
           return;
         }
         recordOutcome("enquiry_submit_uncertain", "unknown_response");
-        setStatus("uncertain");
+        updateStatus("uncertain");
         setError(desk.uncertain);
         return;
       }
@@ -254,7 +276,7 @@ export function ContactCardDialog({
       if (response.status === 422 && fieldErrors["contact.email"]) {
         recordOutcome("enquiry_submit_failed", "validation");
         snapshotRef.current = null;
-        setStatus("failed");
+        updateStatus("failed");
         setError(desk.emailInvalid);
         setInvalid(true);
         return;
@@ -262,22 +284,22 @@ export function ContactCardDialog({
       if (result?.error?.code === "idempotency_conflict") {
         recordOutcome("enquiry_submit_failed", "server_error");
         snapshotRef.current = null;
-        setStatus("failed");
+        updateStatus("failed");
         setError(desk.failed);
         return;
       }
       if (result?.error?.persistenceState === "not_persisted") {
         recordOutcome("enquiry_submit_failed", response.status === 429 ? "rate_limited" : response.status === 503 ? "service_unavailable" : "server_error");
-        setStatus("failed");
+        updateStatus("failed");
         setError(desk.failed);
         return;
       }
       recordOutcome("enquiry_submit_uncertain", "unknown_response");
-      setStatus("uncertain");
+      updateStatus("uncertain");
       setError(desk.uncertain);
     } catch {
       recordOutcome("enquiry_submit_uncertain", "network");
-      setStatus("uncertain");
+      updateStatus("uncertain");
       setError(desk.uncertain);
     } finally {
       window.clearTimeout(timeout);
@@ -287,12 +309,12 @@ export function ContactCardDialog({
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (dispatchingRef.current || !emailReady) return;
+    if (dispatchingRef.current || statusRef.current === "uncertain" || !emailReady) return;
     trackEvent("enquiry_submit_attempted", { page_language: locale, submission_surface: "homepage_email", contact_variant: contactVariant });
     if (!isValidEmail(email)) {
       recordOutcome("enquiry_submit_failed", "validation");
       snapshotRef.current = null;
-      setStatus("failed");
+      updateStatus("failed");
       setError(desk.emailInvalid);
       setInvalid(true);
       return;
@@ -304,7 +326,7 @@ export function ContactCardDialog({
         snapshot = { body, key: crypto.randomUUID() };
       } catch {
         recordOutcome("enquiry_submit_failed", "server_error");
-        setStatus("failed");
+        updateStatus("failed");
         setError(desk.failed);
         return;
       }
@@ -315,6 +337,7 @@ export function ContactCardDialog({
 
   const aboutLabel = tour ? copy.tourLabel : context.guideTitle ? copy.guideLabel : "";
   const aboutName = tour ? edition?.tourName(tour) ?? tour.name : context.guideTitle;
+  const aboutSelection = tour ? edition ? edition.selectionLabel(tour) : privateTourInquirySelectionLabel(tour, locale) : null;
   const openedApp = (channel: "whatsapp" | "messenger" | "kakao") => () =>
     trackEvent("contact_option_clicked", { channel, contact_variant: contactVariant, page_language: locale });
   // Korean pages: KakaoTalk copies the same prepared text the WhatsApp link carries.
@@ -367,21 +390,22 @@ export function ContactCardDialog({
             value={email}
             aria-invalid={invalid || undefined}
             aria-describedby={error ? `${id}-error` : undefined}
-            disabled={status === "submitting"}
+            disabled={status === "submitting" || status === "uncertain"}
             onFocus={() => {
               if (startedRef.current) return;
               startedRef.current = true;
               trackEvent("quick_email_started", { submission_surface: "homepage_email", contact_variant: contactVariant, page_language: locale });
             }}
             onChange={(event) => {
+              if (dispatchingRef.current || statusRef.current === "uncertain") return;
               setEmail(event.target.value);
               snapshotRef.current = null;
               setError("");
-              setStatus("idle");
+              updateStatus("idle");
               setInvalid(false);
             }}
           />
-          <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setInvalid(false); }} />
+          <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={status === "submitting" || status === "uncertain"} onAccept={(value) => { if (dispatchingRef.current || statusRef.current === "uncertain") return; setEmail(value); snapshotRef.current = null; setError(""); updateStatus("idle"); setInvalid(false); }} />
           <div className={styles.honeypot} aria-hidden="true">
             <label htmlFor={`${id}-company`}>Company website</label>
             <input id={`${id}-company`} name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" value={companyWebsite} onChange={(event) => setCompanyWebsite(event.target.value)} />
@@ -431,7 +455,7 @@ export function ContactCardDialog({
             {aboutName ? (
               <p className={styles.about}>
                 <span>{aboutLabel}</span>
-                <strong>{aboutName}</strong>
+                <strong title={[aboutSelection, aboutName].filter(Boolean).join(" · ")}>{aboutSelection ? `${aboutSelection} · ` : ""}{aboutName}</strong>
               </p>
             ) : null}
           </div>
@@ -473,7 +497,7 @@ export function ContactCardDialog({
             {mail}
           </div>
         ) : (
-          <div className={styles.columns} data-single={!whatsappHref || request.scanOnly || undefined}>
+          <div className={styles.columns} data-single={!whatsappHref || activeRequest.scanOnly || undefined}>
             {whatsappHref ? (
               <ContactCardScan locale={locale} localizedCopy={edition?.card} href={whatsappHref} headingId={`${id}-scan`} drawQrAfterPaint>
                 <a className={styles.webLink} href={whatsappHref} target="_blank" rel="noopener noreferrer">
@@ -484,12 +508,12 @@ export function ContactCardDialog({
             ) : null}
 
             {/* The divider keeps its grid column after success (the columns are placed by position); it is only hidden. */}
-            {whatsappHref && !request.scanOnly ? <span className={styles.or} aria-hidden="true" style={receipt ? { visibility: "hidden" } : undefined}><span>{copy.or}</span></span> : null}
+            {whatsappHref && !activeRequest.scanOnly ? <span className={styles.or} aria-hidden="true" style={receipt ? { visibility: "hidden" } : undefined}><span>{copy.or}</span></span> : null}
 
-            {whatsappHref && request.scanOnly ? null : mail}
+            {whatsappHref && activeRequest.scanOnly ? null : mail}
           </div>
         )}
-        {!sheet && !request.scanOnly ? kakao : null}
+        {!sheet && !activeRequest.scanOnly ? kakao : null}
       </div>
     </dialog>
   );

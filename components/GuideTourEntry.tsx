@@ -4,6 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { X } from "lucide-react";
 import { trackEvent } from "../lib/analytics";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import { getPriorityTicketGuideEntry } from "../lib/priorityTicketGuide";
 import {
   dismissGuideTourEntry,
   guideTourEntryBootstrap,
@@ -51,7 +52,8 @@ export function GuideTourEntry({ locale, guideId, menuOpen }: {
   guideId: string;
   menuOpen: boolean;
 }) {
-  const text = copy[locale];
+  const ticketEntry = getPriorityTicketGuideEntry(guideId, locale);
+  const text = ticketEntry ?? copy[locale];
   const [dismissed, setDismissed] = useState(false);
   const privacyManagerOpen = useSyncExternalStore(
     subscribePrivacyManager, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
@@ -81,7 +83,7 @@ export function GuideTourEntry({ locale, guideId, menuOpen }: {
               onClick={() => trackEvent("navigation_clicked", {
                 guide_id: guideId,
                 page_language: locale,
-                navigation_item: "tours",
+                navigation_item: ticketEntry ? "attraction-tickets" : "tours",
                 navigation_surface: "article-entry",
               })}
             >
