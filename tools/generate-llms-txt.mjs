@@ -48,7 +48,7 @@ function tourLine(tour) {
         : `from ${tour.startingPrice.formatted} per person for ${tour.startingPrice.travelers}`,
     );
   }
-  return `- [${tour.title}](${SITE}${tour.href}): ${parts.join(" · ")}. ${tour.comparison.fit}`;
+  return `- [${tour.title}](${SITE}${tour.href}): ${parts.join(" · ")}. ${tour.comparison.appeal} ${tour.comparison.pace} ${tour.comparison.fit}`;
 }
 
 // The English city pages that were exported (one folder per city under /destinations/).
@@ -63,7 +63,7 @@ const lines = [
   "",
   "Key facts:",
   `- ${describePublishedTourCatalog(tours)} Each price is confirmed for your dates in writing before you pay.`,
-  "- Prices are shown for 2 travellers and for the largest group size; private tours carry only your own group.",
+  "- Prices apply to the group sizes published on each route; private tours carry only your own group.",
   "- Attraction tickets (Forbidden City, Terracotta Warriors, museums) can be booked on their own on official systems in the traveller's name.",
   `- Contact: ${homegroundBusiness.serviceEmail}, or start a trip enquiry at ${SITE}/#planner-contact.`,
   "- Dietary needs (vegetarian, vegan, Jain, halal): any private tour can be booked with a meal plan, lunch and dinner at restaurants chosen for the traveller's standard, priced in the written quote. The standard is asked before quoting, and meals supplied by third parties, such as Yangtze cruise ships, are confirmed in writing before payment. Homeground does not certify food.",
