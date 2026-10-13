@@ -59,6 +59,12 @@ const body = {
           "Apr–May, Sep–Nov",
           "USD 3,580"
         ]
+      ],
+      "rowLinks": [
+        "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/tours/beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour/"
       ]
     },
     {

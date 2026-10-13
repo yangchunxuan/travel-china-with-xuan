@@ -563,6 +563,14 @@ const classicPrivate: PrivateTourProduct = {
       ),
     ),
     faq(
+      l("How is this different from the 13-day five-city private tour?", "和同五城的 13 天私家团有什么不同？", "같은 다섯 도시를 도는 13일 프라이빗 투어와 무엇이 다른가요?"),
+      l(
+        "Both private tours visit Beijing, Xi'an, Chengdu, Guilin and Shanghai. This 14-day route spends four nights in Beijing, one in Guilin and two in Yangshuo, with the Summer Palace and a Yulong River bamboo raft; lunches and dinners are extra. The 13-day route spends three nights in Beijing and three in Guilin, visits Yangshuo without staying overnight, and includes eight lunches. Compare written quotes for the same party size, room type and inclusions, rather than starting prices for different groups.",
+        "两条私家团都走北京、西安、成都、桂林和上海。这条 14 天线在北京住 4 晚、桂林住 1 晚、阳朔住 2 晚，含颐和园和一次遇龙河竹筏，午晚餐另计。13 天线在北京住 3 晚、桂林住 3 晚，阳朔只日游不过夜，含 8 顿午餐。请按相同人数、房型和包含项目比较书面报价，不能直接拿不同人数的起价作同规格比较。",
+        "두 프라이빗 일정 모두 베이징·시안·청두·계림·상하이를 방문합니다. 이 14일 일정은 베이징 4박, 계림 1박, 양삭 2박으로 이화원과 우룡하 대나무 뗏목 1회가 포함되며 중식·석식은 별도입니다. 13일 일정은 베이징 3박과 계림 3박이며 양삭은 당일 방문만 하고 숙박하지 않으며 점심 8회가 포함됩니다. 인원, 객실 유형과 포함 항목을 같게 맞춘 서면 견적을 비교하세요. 인원이 다른 시작가를 같은 조건의 요금으로 비교할 수는 없습니다.",
+      ),
+    ),
+    faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
         "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,720 each. The 2027 small group is USD 2,140 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",

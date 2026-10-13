@@ -100,7 +100,8 @@ const ui = {
     toursLabel: "Private tours",
     toursTitle: (city: string) => `Private tours that include ${city}`,
     allTours: "All private tours",
-    toursBody: "Ready-made routes with their itinerary and price on each page. Just your group, on your dates.",
+    quoteTourAction: "Itinerary & quote",
+    toursBody: "Ready-made routes with itineraries and published prices or quote options on each page. Just your group, on your dates.",
     bandTitle: "Hand us the whole trip, or just part of it.",
     bandTitleTrip: "Hand us the whole trip.",
     bandBodyTrip: "A real person replies, working from your dates and group size.",
@@ -141,7 +142,8 @@ const ui = {
     toursLabel: "私家团",
     toursTitle: (city: string) => `包含${city}的私家团`,
     allTours: "全部私家团",
-    toursBody: "现成路线，行程和价格写在各自的路线页上；只接待你们一行人，出发日期你们定。",
+    quoteTourAction: "看行程与询价",
+    toursBody: "现成路线，可在各自的路线页查看行程、公开价格或询价方式；只接待你们一行人，出发日期你们定。",
     bandTitle: "整趟交给我们，或只交一部分。",
     bandTitleTrip: "把整趟旅行交给我们。",
     bandBodyTrip: "真人回复，按你们的日期和人数来安排。",
@@ -183,7 +185,8 @@ const ui = {
     // "프라이빗 투어" stays on one line.
     toursTitle: (city: string) => `${koObject(city)} 포함한 프라이빗${String.fromCharCode(0xa0)}투어`,
     allTours: "프라이빗 투어 전체 보기",
-    toursBody: "일정과 가격을 공개한 코스입니다. 우리 일행만, 원하는 날짜에 다닙니다.",
+    quoteTourAction: "일정·견적 보기",
+    toursBody: "각 코스 페이지에서 일정과 공개 가격 또는 견적 문의 방법을 확인하세요. 우리 일행만, 원하는 날짜에 다닙니다.",
     bandTitle: "전체 여행도, 일부만도 맡기실 수 있습니다.",
     bandTitleTrip: "전체 여행을 맡겨 주세요.",
     bandBodyTrip: "실제 담당자가 날짜와 인원에 맞춰 답해 드립니다.",
@@ -617,7 +620,7 @@ export function DestinationHubPage({
                   <p><KeepWords locale={locale} text={copy.toursBody} /></p>
                 </div>
                 <ul className={inspirationStyles.tours}>
-                  {cityTours.map((tour, index) => <TourCard index={index} key={tour.slug} locale={locale} tour={tour} />)}
+                  {cityTours.map((tour, index) => <TourCard actionLabel={tour.startingPrice ? undefined : copy.quoteTourAction} index={index} key={tour.slug} locale={locale} tour={tour} />)}
                   {/* A row the city's tours do not fill ends with the way to a trip planned around you. */}
                   <PlanTile count={cityTours.length} locale={locale} />
                 </ul>

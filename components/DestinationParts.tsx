@@ -147,12 +147,13 @@ type TourCardPriceCopy = Pick<PrivateTourHubCopy,
   "startingPriceLabel" | "quoteOnlyLabel" | "quoteOnlyBody" | "partySize" | "perPersonPriceNote"
 >;
 
-export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel }: {
+export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel, actionLabel }: {
   tour: PublishedPrivateTourCatalogItem;
   locale: HomegroundLocale;
   index: number;
   priceCopy?: TourCardPriceCopy;
   priceSeasonLabel?: string;
+  actionLabel?: string;
 }) {
   const copy = getTravelInspirationCopy(locale);
   return (
@@ -199,7 +200,7 @@ export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel }: {
           <span className={styles.route}><KeepStops route={tour.comparison.route} /></span>
           <span className={styles.fit}><KeepWords locale={locale} text={tour.comparison.fit} /></span>
         </span>
-        <span className={styles.cardAction}>{copy.theme.tourAction}<ArrowRight aria-hidden="true" size={15} /></span>
+        <span className={styles.cardAction}>{actionLabel ?? copy.theme.tourAction}<ArrowRight aria-hidden="true" size={15} /></span>
       </Link>
     </li>
   );

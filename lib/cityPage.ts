@@ -13,6 +13,7 @@ export const cityPageV2: Partial<Record<DestinationHubId, { readonly tourSlugs: 
       "beijing-highlights-5-day-private-tour",
       "beijing-xian-shanghai-8-day-private-tour",
       "beijing-xian-shanghai-12-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
     ],
   },
   shanghai: {
@@ -20,6 +21,8 @@ export const cityPageV2: Partial<Record<DestinationHubId, { readonly tourSlugs: 
       "shanghai-suzhou-5-day-private-tour",
       "shanghai-suzhou-hangzhou-6-day-private-tour",
       "shanghai-disneyland-5-day-private-tour",
+      "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
     ],
   },
   xian: {
@@ -27,6 +30,7 @@ export const cityPageV2: Partial<Record<DestinationHubId, { readonly tourSlugs: 
       "xian-terracotta-warriors-5-day-private-tour",
       "beijing-xian-shanghai-8-day-private-tour",
       "beijing-xian-silk-road-15-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
     ],
   },
   chengdu: {
@@ -34,6 +38,7 @@ export const cityPageV2: Partial<Record<DestinationHubId, { readonly tourSlugs: 
       "chengdu-pandas-sanxingdui-5-day-private-tour",
       "chengdu-jiuzhaigou-huanglong-6-day-private-tour",
       "chengdu-chongqing-8-day-private-tour",
+      "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
     ],
   },
   // Guangzhou has one published route; the row ends with the way to a trip planned around you.
@@ -45,6 +50,7 @@ export const cityPageV2: Partial<Record<DestinationHubId, { readonly tourSlugs: 
       "shanghai-suzhou-hangzhou-6-day-private-tour",
       "beijing-hangzhou-suzhou-shanghai-11-day-private-tour",
       "beijing-xian-huangshan-hangzhou-shanghai-14-day-private-tour",
+      "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
     ],
   },
   zhangjiajie: {

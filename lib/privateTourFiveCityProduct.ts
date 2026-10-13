@@ -580,6 +580,14 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
       ),
     },
     {
+      question: l("How is this different from the 14-day five-city private tour?", "和同五城的 14 天私家团有什么不同？", "같은 다섯 도시를 도는 14일 프라이빗 투어와 무엇이 다른가요?"),
+      answer: l(
+        "Both private tours visit Beijing, Xi'an, Chengdu, Guilin and Shanghai. This 13-day route spends three nights in Beijing and three in Guilin, visits Yangshuo without staying overnight, and includes eight lunches. The 14-day route spends four nights in Beijing, one in Guilin and two in Yangshuo, with the Summer Palace and a Yulong River bamboo raft; lunches and dinners are extra. Compare written quotes for the same party size, room type and inclusions, rather than starting prices for different groups.",
+        "两条私家团都走北京、西安、成都、桂林和上海。这条 13 天线在北京住 3 晚、桂林住 3 晚，阳朔只日游不过夜，含 8 顿午餐。14 天线在北京住 4 晚、桂林住 1 晚、阳朔住 2 晚，含颐和园和一次遇龙河竹筏，午晚餐另计。请按相同人数、房型和包含项目比较书面报价，不能直接拿不同人数的起价作同规格比较。",
+        "두 프라이빗 일정 모두 베이징·시안·청두·계림·상하이를 방문합니다. 이 13일 일정은 베이징 3박과 계림 3박이며 양삭은 당일 방문만 하고 숙박하지 않으며 점심 8회가 포함됩니다. 14일 일정은 베이징 4박, 계림 1박, 양삭 2박으로 이화원과 우룡하 대나무 뗏목 1회가 포함되며 중식·석식은 별도입니다. 인원, 객실 유형과 포함 항목을 같게 맞춘 서면 견적을 비교하세요. 인원이 다른 시작가를 같은 조건의 요금으로 비교할 수는 없습니다.",
+      ),
+    },
+    {
       question: l("Which meals and tickets are included?", "具体包含哪几顿饭和哪些门票？", "어떤 식사와 입장권이 포함되나요?"),
       answer: l(
         "Lunch is included on Days 2, 3, 4, 5, 7, 9, 10 and 12; Day 9 lunch is on the Li River boat. The named admissions include Mutianyu with return cable car and shuttle, Forbidden City, Temple of Heaven, Xi'an City Wall, Terracotta Warriors with shuttle and headsets, Big Wild Goose Pagoda grounds, Panda Base with shuttle, Li River cruise, Reed Flute Cave and Yu Garden. Moon Hill is viewed from a distance, from the vehicle or the roadside outside the scenic area. Sun and Moon Pagodas are seen from outside; dinners and other lunches are separate.",
