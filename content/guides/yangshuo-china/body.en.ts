@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "Yangshuo (阳朔) is a small county town among karst peaks on the Li River, south of Guilin, where the Li River cruise ends. West Street, the Yulong River valley and the old town of Xingping are free to walk. You pay for bamboo rafts, the night show Impression Sanjie Liu and viewpoints such as Xianggong Hill. The railway station named Yangshuo is in Xingping, not in town. Stay two nights: one day for the Yulong River countryside and one for Xingping and the Li River."
+      "text": "Yangshuo (阳朔) is a small county town among karst peaks on the Li River, south of Guilin, where the Li River cruise ends. West Street, the Yulong River valley and the old town of Xingping are free to walk. You pay for bamboo rafts, the night show Impression Sanjie Liu and viewpoints such as Xianggong Hill. The railway station named Yangshuo is in Xingping, not in town. If you arrive on the Li River cruise, plan two nights for the arrival evening and one full Yulong River countryside day. Add a third night for a separate full day around Xingping and Xianggong Hill."
     },
     {
       "id": "what-heading",
@@ -187,8 +187,8 @@ const body = {
       "items": [
         "Arrival day: come in on the Li River cruise, check in, and walk West Street in the evening.",
         "Full day one: the Yulong River countryside by bicycle or raft, at an easy pace.",
-        "Full day two, if you have it: Xingping and the RMB 20 view, with Xianggong Hill early for the light. The night show fits either evening.",
-        "Two nights is the minimum that makes the trip from Guilin worthwhile. One night leaves only an evening."
+        "With a third night: a second full day for Xingping and the RMB 20 view, with Xianggong Hill early for the light. The night show fits either evening.",
+        "In this cruise-arrival outline, two nights leave one full day between arrival and departure."
       ]
     },
     {
@@ -197,9 +197,14 @@ const body = {
       "title": "Plan Yangshuo",
       "items": [
         {
+          "label": "Guilin, Li River & Yangshuo 4-day private tour",
+          "href": "/tours/guilin-li-river-yangshuo-4-day-private-tour/",
+          "description": "A shorter option: one Guilin night, two in Yangshuo, a shared Li River cruise and one full guided countryside day. Day 4 is for departure."
+        },
+        {
           "label": "Guilin & Yangshuo 5-day private tour",
           "href": "/tours/guilin-yangshuo-5-day-private-tour/",
-          "description": "The Li River cruise into Yangshuo, two nights there with a Yulong River countryside day, and luggage moved by road on cruise day."
+          "description": "A Guilin night before the cruise and another after two Yangshuo nights. Includes a countryside day and one confirmed visit to Reed Flute Cave or Elephant Trunk Hill on the return day; cruise-day luggage travels by road."
         },
         {
           "label": "Where to stay in Yangshuo: town or the Yulong River",
@@ -234,7 +239,7 @@ const body = {
         },
         {
           "question": "How many days do I need in Yangshuo?",
-          "answer": "Two nights: one full day for the Yulong River countryside, plus the evening you arrive. Add a third night for Xingping and Xianggong Hill."
+          "answer": "For a Li River cruise arrival, plan two nights: the arrival evening and one full Yulong River countryside day. Add a third night if you want a separate full day for Xingping and Xianggong Hill."
         },
         {
           "question": "Is West Street free to visit?",

@@ -19,3 +19,9 @@
 - No distance or driving time from Guilin; no train times; no Xianggong Hill price; no show times; no cruise price (the cruise guide owns that).
 - The tour's Yulong River day is described as countryside time, not as a raft trip, because the product page does not promise a raft.
 - The photographs are from the owner's library and are captioned by what they show, without naming an exact bridge or bend.
+
+## Editorial clarity update — 13 October 2026 (KST)
+
+- Aligned the introduction, stay-length outline and FAQ: for a cruise arrival, two Yangshuo nights leave the arrival evening and one full countryside day; a separate full Xingping / Xianggong Hill day uses a third night in this outline. This is a planning recommendation, not a minimum-stay rule.
+- Added the already published four-day route from `lib/privateTourGuilinFourDayProduct.ts`: one Guilin night, two Yangshuo nights, shared Li River cruise, a guided countryside day and departure transfers on Day 4. Kept the five-day option and made its extra Guilin night and one confirmed Reed Flute Cave / Elephant Trunk Hill visit clear from `lib/privateTourProducts.ts`.
+- Product prices stay on product pages. No attraction price or operating-rule recheck is claimed; `sourceReviewedDate` remains 2026-10-10. The modification date records this editorial change.
