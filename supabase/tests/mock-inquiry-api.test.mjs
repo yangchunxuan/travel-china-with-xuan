@@ -220,7 +220,7 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
       "Content-Type": "application/json",
       "Idempotency-Key": idempotencyKey,
     },
-    body: JSON.stringify({ ...payload(), trafficSessionToken: null }),
+    body: JSON.stringify({ ...payload(), trafficSessionToken: null, adAttribution: null }),
   });
   assert.equal(first.status, 201);
   const firstBody = await first.json();
@@ -235,7 +235,12 @@ test("development mock enforces CORS and idempotent POST behavior", async (t) =>
       "Content-Type": "application/json",
       "Idempotency-Key": idempotencyKey,
     },
-    body: JSON.stringify(payload()),
+    body: JSON.stringify({ ...payload(), adAttribution: {
+      version: "homeground-ad-attribution.v1", clickIdType: "gclid", clickId: "LocalMockClick_123",
+      capturedAt: new Date().toISOString(), landingPath: "/", consent: "granted",
+      consentVersion: "2026-10-13.1", consentUpdatedAt: new Date(Date.now() - 1000).toISOString(),
+      revocationToken: "90a15e21-cf80-49b7-91d0-7b968d34cacf",
+    } }),
   });
   assert.equal(replay.status, 200);
   const replayBody = await replay.json();

@@ -26,6 +26,7 @@ import {
 } from "../lib/inquiryVersions";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
+import { readGoogleAdsAttribution } from "../lib/googleAdsAttribution";
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { setInquiryOpen } from "../lib/siteOverlayState";
 import { ContactCardScan, CopyButton } from "./ContactCardScan";
@@ -210,6 +211,7 @@ export function ContactCardDialog({
 
   const payload = () => ({
     // An edition's pages mint no traffic session; never attach another language's.
+    adAttribution: edition ? null : readGoogleAdsAttribution(),
     trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null,
     schemaVersion: homepageEmailInquirySchemaVersion,
     formVersion: currentHomepageEmailFormVersion,

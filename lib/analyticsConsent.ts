@@ -1,5 +1,8 @@
-export const analyticsConsentVersion = "2026-09-05.1";
+import { googleAdsAttributionStorageKey, queueGoogleAdsAttributionWithdrawal } from "./googleAdsAttributionRevocation.ts";
+
+export const analyticsConsentVersion = "2026-10-13.1";
 export const analyticsConsentStorageKey = "homeground-consent.v1";
+export { googleAdsAttributionStorageKey };
 /**
  * First visit page and source for the prepared-message reference line
  * (lib/visitRef.ts). Kept only in notice regions; refusing analytics deletes it.
@@ -116,9 +119,16 @@ export function clearAnalyticsCookies() {
 }
 
 export function clearMarketingCookies() {
+  queueGoogleAdsAttributionWithdrawal();
   browserCookieNames()
-    .filter((name) => name === "_fbp" || name === "_fbc")
+    .filter((name) => name === "_fbp" || name === "_fbc" || name.startsWith("_gcl_"))
     .forEach(expireCookie);
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(googleAdsAttributionStorageKey);
+  } catch {
+    // A blocked storage API must not prevent consent withdrawal.
+  }
 }
 
 export function saveAnalyticsConsent({

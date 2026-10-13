@@ -306,12 +306,13 @@ const server = createServer(async (request, response) => {
     return;
   }
 
-  // Match the production intake envelope: this optional attribution token is
-  // not an inquiry answer and never affects the semantic idempotency hash.
+  // Match the production intake envelope: these optional attribution fields
+  // are not inquiry answers and never affect the semantic idempotency hash.
   // The development mock has no traffic collector or attribution persistence.
   if (rawPayload && typeof rawPayload === "object" && !Array.isArray(rawPayload)) {
     rawPayload = { ...rawPayload };
     delete rawPayload.trafficSessionToken;
+    delete rawPayload.adAttribution;
   }
   const validation = validateAndNormalizeInquiry(rawPayload, {
     allowedFormVersions: [

@@ -135,7 +135,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "A traveller can answer the trip-brief questions and submit one enquiry with either an email address or a WhatsApp number. It is for a human reply to that active request, not for automatic booking or unrelated marketing.",
       reviewedLabel: "Last reviewed",
-      reviewedValue: "2 October 2026",
+      reviewedValue: "13 October 2026",
     },
     currentFlow: {
       title: "From the website to a human reply",
@@ -148,6 +148,7 @@ export const homegroundPrivacyCopy: Record<
         "If the visitor allows analytics, Homeground creates a temporary anonymous browser-session token. The event service first issues a short-lived signed credential; bare or expired event requests are rejected. A limited first-touch source is recorded only when the landing link contains Homeground-signed UTM source, medium, campaign and content codes. Unsigned, altered or unrecognised UTM values remain Unknown. The website-event record does not store a full referrer URL, raw IP address, user-agent string, click identifier, contact detail or free-text answer.",
         "With analytics permission, Homeground records page views and fixed actions: viewing contact options, choosing a channel, opening a contact link, starting the email form, changing a published tour option, and attempting to submit an enquiry. The first-party service may also receive the published product code, service option and the group-size choice displayed on that product page. These product-choice fields are not sent to Google Analytics or Meta Pixel. A click means only that an option was opened; it does not prove that a message was sent or a booking was made. Definite submission failures and results the browser cannot confirm are recorded separately; saved enquiries are counted from server records. Temporary retries keep the same event identifier and are cleared when analytics permission is withdrawn.",
         "When the same browser later submits an enquiry, the saved first-touch labels may be attached to that enquiry so Homeground can understand which page or post led to it. The enquiry still succeeds when no session or source is available, and an unknown source is never guessed.",
+        "With separate marketing permission, Homeground stores a Google ad click identifier (gclid, gbraid or wbraid), its capture time, the landing-page path and the permission record in this browser and links them to a saved enquiry. If Google Ads conversion reporting is configured, Google receives the click identifier, event time and a unique event ID for that saved enquiry and for the first actual payment confirmed by authorised staff. The payment event also includes the amount received and currency. Names, email addresses, phone numbers, questionnaire answers and messages are not sent for ad matching. Opening a contact link is not a saved enquiry or a sale.",
         "Authorised staff may view restricted aggregate counts and, only after the 30-day window contains at least five eligible anonymous sessions that are not linked to enquiries, a day-level recent-session summary without per-session click or event timelines. Contact details, trip-questionnaire answers and message text are kept out of analytics and are not sent to Google Analytics or Meta Pixel.",
         "Resend sends an internal notification to Homeground’s monitored email inbox. Authorised staff use the submitted contact to answer the request; internal notification instructions are not intended for the traveller. For a WhatsApp enquiry, staff receive a link to start the requested conversation from the studio’s account.",
         "When enquiry acknowledgements are enabled, Resend also sends an automatic confirmation to the submitted email address. It contains the enquiry reference and available structured enquiry details, such as the published tour, requested date and selected option. It does not repeat free-text notes. Replies go to hello@homegroundchina.com. The confirmation is a receipt, not a personal reply, a booking or a requirement to reply before we handle the enquiry. It is separate from marketing consent.",
@@ -310,9 +311,9 @@ export const homegroundPrivacyCopy: Record<
         {
           label: "Website measurement",
           value:
-            "Supabase first-party events · Google Analytics · Meta Pixel (optional)",
+            "Supabase first-party events · Google Analytics · Google Ads · Meta Pixel (optional)",
           detail:
-            "None of these optional destinations receives a website event before the visitor grants the relevant choice. Analytics permission enables limited first-party events and Google Analytics; marketing permission separately enables Meta Pixel. Homeground does not send contact details, trip answers or message text to those tools. AI chat is not used.",
+            "None of these optional destinations receives a website event before the visitor grants the relevant choice. Analytics permission enables limited first-party events and Google Analytics; marketing permission separately enables Google Ads attribution and Meta Pixel. Homeground does not send contact details, trip answers or message text to those tools. AI chat is not used.",
         },
       ],
     },
@@ -359,6 +360,12 @@ export const homegroundPrivacyCopy: Record<
           value: "Raw events and anonymous sessions · 30-day rolling window",
           detail:
             "The browser token is stored only in session storage after analytics permission. The server stores only a secret-keyed session hash. Raw events, anonymous sessions and reversible session links expire at the 30-day point and are removed by an hourly cleanup, normally within the following hour. A first-touch source snapshot attached to a submitted enquiry follows that enquiry’s retention period.",
+        },
+        {
+          label: "Google ad attribution",
+          value: "Click identifiers expire 90 days after capture",
+          detail:
+            "The browser stops using an expired identifier and removes it on its next check. The server stops using it after 90 days and removes it in the next daily cleanup, normally within 24 hours. Conversion records without the click identifier follow the linked website enquiry’s retention period. Turning marketing measurement off deletes local identifiers and requests deletion of linked identifiers and cancellation of unsent conversions. Failed withdrawal requests retain only a random token for retry; the server keeps a withdrawal-token hash for up to 90 days to reject late submissions. This does not automatically erase records already processed by Google; contact hello@homegroundchina.com for an access or deletion request.",
         },
         {
           label: "Access, correction and deletion",
@@ -432,7 +439,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "访客可以先回答旅行简报问题，再用邮箱或 WhatsApp 号码中的一种提交咨询。该表单只用于人工回复当前请求，不代表自动预订，也不等于同意无关营销。",
       reviewedLabel: "最近复核",
-      reviewedValue: "2026 年 10 月 2 日",
+      reviewedValue: "2026 年 10 月 13 日",
     },
     currentFlow: {
       title: "从网站到人工回复",
@@ -445,6 +452,7 @@ export const homegroundPrivacyCopy: Record<
         "访客允许分析统计后，Homeground 会创建临时匿名浏览器会话令牌；事件服务会先签发短时有效的签名凭据，没有凭据或凭据过期的事件请求会被拒绝。只有进入链接带有 Homeground 签名的 UTM 来源、媒介、活动和内容代码时，才会记录有限的首次来源；未签名、被修改或无法识别的 UTM 一律保留为“未知”。网站事件记录不保存完整来源网址、原始 IP、User-Agent、广告点击标识、联系方式或旅行自由文本。",
         "获得分析许可后，Homeground 可记录页面浏览及固定动作：看到联系选项、选择联系方式、打开联系链接、开始填写邮箱、主动更改公开产品选项，以及尝试提交咨询。第一方事件服务还可接收公开产品编号、服务版本和产品页面显示的同行人数选项；这些产品选择字段不会发送给 Google Analytics 或 Meta Pixel。点击只说明相应入口被打开，不证明消息已经发出，也不代表已经预订。明确提交失败和浏览器无法确认的提交结果分别记录；已保存咨询以服务器记录为准。临时重试使用同一事件编号，撤回分析许可后会清空待发送记录。",
         "同一浏览器随后提交咨询时，已保存的首次来源标签可附在该咨询上，以判断哪一页或哪条外部内容带来咨询。没有会话或来源时，咨询仍会正常保存；未知来源不会被猜测或分摊。",
+        "经单独允许营销衡量后，Homeground 会在此浏览器保存 Google 广告点击标识（gclid、gbraid 或 wbraid）、取得时间、进入页面路径和许可记录，并关联已保存的咨询。Google Ads 转化回传配置完成后，Google 会收到该点击标识、事件时间及唯一事件编号，用于记录已保存咨询和工作人员确认的首次实际收款；收款事件另含实收金额与币种。姓名、邮箱、电话号码、问卷答案和消息不会用于广告匹配。打开联系链接不等于咨询已保存或成交。",
         "获授权的工作人员可查看受限汇总计数；只有当 30 天窗口至少包含 5 个符合展示边界且未关联询盘的匿名会话时，后台才会显示精确到天、且不含逐会话点击或事件时间线的近期会话摘要。联系方式、旅行问卷答案与消息内容不会进入分析事件，也不会发送给 Google Analytics 或 Meta Pixel。",
         "Resend 会向 Homeground 持续查看的邮箱发送内部通知。获授权的工作人员使用所填联系方式回复当前请求，内部通知中的操作说明不用于发送给访客。WhatsApp 咨询会为工作人员提供从工作室账号发起本次对话的入口。",
         "咨询确认信功能启用时，Resend 还会向所填邮箱发送一封自动确认信，包含咨询编号以及已记录的结构化信息，例如公开产品、希望出发日期和所选方案，不回显自由备注。回复这封确认信会发往 hello@homegroundchina.com。确认信是收件凭证，不是人工答复或预订确认；访客无需先回复确认信，我们也会处理咨询。该信与营销许可相互独立。",
@@ -593,9 +601,9 @@ export const homegroundPrivacyCopy: Record<
         {
           label: "网站衡量",
           value:
-            "Supabase 第一方事件 · Google Analytics · Meta Pixel（均为可选）",
+            "Supabase 第一方事件 · Google Analytics · Google Ads · Meta Pixel（均为可选）",
           detail:
-            "访客允许相应选项前，任何可选平台都不会收到网站事件。分析许可启用有限的第一方事件和 Google Analytics；营销许可另行启用 Meta Pixel。联系方式、旅行答案与消息不会发送给这些工具。网站不使用 AI 聊天。",
+            "访客允许相应选项前，任何可选平台都不会收到网站事件。分析许可启用有限的第一方事件和 Google Analytics；营销许可另行启用 Google Ads 归因和 Meta Pixel。联系方式、旅行答案与消息不会发送给这些工具。网站不使用 AI 聊天。",
         },
       ],
     },
@@ -641,6 +649,12 @@ export const homegroundPrivacyCopy: Record<
           value: "原始事件与匿名会话 · 30 天滚动窗口",
           detail:
             "浏览器令牌只会在访客允许分析后保存在会话存储中；服务器只保存使用秘密密钥生成的会话哈希。原始事件、匿名会话和可还原的会话关联会在满 30 天时过期，并由每小时清理任务删除，通常在随后一小时内完成。随已提交咨询保存的首次来源快照适用该咨询的保留期。",
+        },
+        {
+          label: "Google 广告归因",
+          value: "点击标识在取得 90 天后失效",
+          detail:
+            "浏览器不再使用过期标识，并在下一次检查时删除。服务器在 90 天后停止使用，并在下一次每日清理时删除，通常不超过随后 24 小时。不含点击标识的转化记录随关联的网站咨询一起到期。关闭营销衡量会删除本机标识，并请求删除关联标识、取消尚未发送的转化；撤回失败时只保留随机令牌以便重试。服务器最多保留撤回令牌的哈希 90 天，用于拒绝迟到的提交。这不会自动删除 Google 已处理的记录；访问或删除请求可发至 hello@homegroundchina.com。",
         },
         {
           label: "查询、更正与删除",
@@ -715,7 +729,7 @@ export const homegroundPrivacyCopy: Record<
       intro:
         "여행 브리프 질문에 답한 뒤 이메일 주소 또는 WhatsApp 번호 중 하나로 문의를 제출할 수 있습니다. 이 양식은 현재 요청에 사람이 답하기 위한 것이며 자동 예약이나 관련 없는 마케팅 동의를 의미하지 않습니다.",
       reviewedLabel: "최근 검토일",
-      reviewedValue: "2026년 10월 2일",
+      reviewedValue: "2026년 10월 13일",
     },
     currentFlow: {
       title: "웹사이트에서 사람의 답장까지",
@@ -728,6 +742,7 @@ export const homegroundPrivacyCopy: Record<
         "방문자가 분석을 허용하면 Homeground는 임시 익명 브라우저 세션 토큰을 만듭니다. 이벤트 서비스는 먼저 짧은 유효기간의 서명된 자격 증명을 발급하며 자격 증명이 없거나 만료된 이벤트 요청은 거부합니다. 첫 유입 링크에 Homeground가 서명한 UTM 소스·매체·캠페인·콘텐츠 코드가 있을 때만 제한된 유입 정보를 기록하고, 서명이 없거나 변경되었거나 인식되지 않는 UTM 값은 ‘알 수 없음’으로 둡니다. 웹사이트 이벤트에는 전체 리퍼러 URL, 원본 IP, User-Agent, 광고 클릭 식별자, 연락처 또는 자유 입력 여행 답변을 저장하지 않습니다.",
         "분석을 허용하면 페이지 조회와 연락 옵션 보기, 연락 수단 선택, 연락 링크 열기, 이메일 입력 시작, 공개 상품 옵션 변경, 문의 제출 시도 등 정해진 동작을 기록할 수 있습니다. 자체 이벤트 서비스에는 공개 상품 코드, 서비스 유형, 상품 페이지에서 선택한 인원도 전송할 수 있으며, 이 상품 선택 항목은 Google Analytics나 Meta Pixel로 보내지 않습니다. 클릭은 해당 옵션을 열었다는 뜻일 뿐 메시지 전송이나 예약 완료를 증명하지 않습니다. 명확한 제출 실패와 브라우저가 결과를 확인하지 못한 경우는 구분하며, 저장된 문의는 서버 기록을 기준으로 집계합니다. 임시 재시도는 같은 이벤트 식별자를 사용하고 분석 동의를 철회하면 전송 대기 기록을 지웁니다.",
         "같은 브라우저에서 나중에 문의를 제출하면 저장된 첫 유입 표지를 문의에 연결해 어떤 페이지나 외부 게시물이 문의로 이어졌는지 확인할 수 있습니다. 세션이나 유입 정보가 없어도 문의는 정상 저장되며 알 수 없는 유입은 추정하거나 배분하지 않습니다.",
+        "마케팅 측정을 별도로 허용하면 Homeground는 Google 광고 클릭 식별자(gclid, gbraid 또는 wbraid), 수집 시각, 첫 방문 페이지 경로와 동의 기록을 이 브라우저에 저장하고 저장된 문의에 연결합니다. Google Ads 전환 보고가 설정되면 저장된 문의와 담당자가 확인한 최초 실제 입금에 대해 클릭 식별자, 이벤트 시각과 고유 이벤트 ID를 Google에 보냅니다. 입금 이벤트에는 실제 받은 금액과 통화도 포함됩니다. 이름, 이메일 주소, 전화번호, 설문 답변과 메시지는 광고 매칭에 보내지 않습니다. 연락 링크를 여는 것은 문의 저장이나 거래 성립을 의미하지 않습니다.",
         "권한 있는 담당자는 제한된 집계 수치를 볼 수 있습니다. 최근 30일 창에 표시 기준을 충족하고 문의와 연결되지 않은 익명 세션이 5개 이상 있을 때만 날짜 단위의 최근 세션 요약이 표시되며 세션별 클릭 또는 이벤트 타임라인은 포함하지 않습니다. 연락처, 여행 설문 답변 및 메시지 내용은 분석 이벤트에 포함하지 않고 Google Analytics 또는 Meta Pixel로 보내지 않습니다.",
         "Resend는 Homeground가 확인하는 이메일 수신함으로 내부 알림을 보냅니다. 권한이 있는 담당자가 입력된 연락처로 현재 문의에 답하며, 내부 알림의 업무 안내는 여행자에게 보내기 위한 내용이 아닙니다. WhatsApp 문의에는 스튜디오 계정으로 요청된 대화를 시작할 수 있는 링크를 제공합니다.",
         "문의 확인 메일 기능이 활성화된 경우 Resend는 입력한 이메일 주소로 자동 확인 메일도 보냅니다. 문의 번호와 저장된 구조화 정보(공개 상품, 희망 여행일, 선택한 옵션 등)를 포함하며 자유 입력 메모는 반복하지 않습니다. 확인 메일의 회신 주소는 hello@homegroundchina.com입니다. 확인 메일은 접수 안내이며 개인 답변이나 예약 확정이 아닙니다. 확인 메일에 회신하지 않아도 문의를 처리하며, 이 메일은 마케팅 동의와 별개입니다.",
@@ -882,9 +897,9 @@ export const homegroundPrivacyCopy: Record<
         {
           label: "웹사이트 측정",
           value:
-            "Supabase 퍼스트파티 이벤트 · Google Analytics · Meta Pixel(선택)",
+            "Supabase 퍼스트파티 이벤트 · Google Analytics · Google Ads · Meta Pixel(선택)",
           detail:
-            "방문자가 해당 선택을 허용하기 전에는 어떤 선택적 서비스에도 웹사이트 이벤트를 보내지 않습니다. 분석 허용은 제한된 퍼스트파티 이벤트와 Google Analytics를, 마케팅 허용은 별도로 Meta Pixel을 사용합니다. 연락처, 여행 답변 및 메시지는 이 도구들로 보내지 않으며 AI 채팅도 사용하지 않습니다.",
+            "방문자가 해당 선택을 허용하기 전에는 어떤 선택적 서비스에도 웹사이트 이벤트를 보내지 않습니다. 분석 허용은 제한된 퍼스트파티 이벤트와 Google Analytics를, 마케팅 허용은 별도로 Google Ads 유입 연결과 Meta Pixel을 사용합니다. 연락처, 여행 답변 및 메시지는 이 도구들로 보내지 않으며 AI 채팅도 사용하지 않습니다.",
         },
       ],
     },
@@ -930,6 +945,12 @@ export const homegroundPrivacyCopy: Record<
           value: "원본 이벤트와 익명 세션 · 30일 이동식 보관 기간",
           detail:
             "브라우저 토큰은 분석을 허용한 뒤 세션 저장소에만 보관하며 서버에는 비밀 키로 만든 세션 해시만 저장합니다. 원본 이벤트, 익명 세션 및 되돌릴 수 있는 세션 연결은 30일 시점에 만료되며 매시간 실행되는 정리 작업으로 일반적으로 그다음 한 시간 안에 삭제됩니다. 제출된 문의에 붙은 첫 유입 스냅샷은 문의 보관 기간을 따릅니다.",
+        },
+        {
+          label: "Google 광고 유입 연결",
+          value: "클릭 식별자는 수집 90일 후 만료",
+          detail:
+            "브라우저는 만료된 식별자를 사용하지 않고 다음 확인 때 삭제합니다. 서버는 90일 후 사용을 중단하고 다음 일일 정리 작업에서 삭제하며 보통 이후 24시간 이내에 처리합니다. 클릭 식별자가 없는 전환 기록은 연결된 웹사이트 문의의 보관 기간을 따릅니다. 마케팅 측정을 끄면 기기의 식별자를 지우고 연결된 식별자 삭제와 미전송 전환 취소를 요청합니다. 철회 요청이 실패하면 재시도에 필요한 임의 토큰만 남기며 서버는 늦게 도착한 제출을 거부하기 위해 철회 토큰 해시를 최대 90일 보관합니다. Google이 이미 처리한 기록이 자동으로 지워지는 것은 아닙니다. 열람이나 삭제 요청은 hello@homegroundchina.com으로 보내 주세요.",
         },
         {
           label: "열람·수정·삭제",
