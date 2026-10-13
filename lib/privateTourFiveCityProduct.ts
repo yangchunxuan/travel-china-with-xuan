@@ -387,7 +387,7 @@ export const fiveCityPrivateTour: PrivateTourProduct = {
     "중국 13일 프라이빗 투어｜베이징·시안·청두·계림·상하이",
   ),
   metadataDescription: l(
-    "13-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. USD 2,580 per person for 4, 2,090 for 8; 4-star hotels and flights included.",
+    "13-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai. USD 2,580 each for 4, 2,090 for 8; 4-star hotels, domestic flights included.",
     "13 天私家团：长城、兵马俑、大熊猫、漓江与上海。每人价格：4 人同行 ¥16,770，8 人同行 ¥13,580；含四星酒店、国内航班与高铁。",
     "13일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이. 1인 요금 4명 ₩3,610,000, 8명 ₩2,920,000. 4성급 호텔·국내선·고속철도 포함.",
   ),
