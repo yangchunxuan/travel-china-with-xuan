@@ -20,7 +20,7 @@ import { privateTourProducts, localizePrivateTourProduct, formatPrivateTourPrice
 import { privateTourLongHaulSlugs } from "../../lib/privateTourLongHaulProducts.ts";
 import { tourContactCopy, tourWhatsAppHref } from "../../lib/tourContact.ts";
 import { isJiangnanTour } from "../../lib/tourContactDraft.ts";
-import { privateTourPublishedPriceNote } from "../../lib/privateTourCurrencyNote.ts";
+import { privateTourPublishedPriceNote, smallGroupPublishedPriceNote } from "../../lib/privateTourCurrencyNote.ts";
 import * as privateTourMedia from "../../lib/privateTourMedia.ts";
 import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
@@ -44,7 +44,7 @@ async function loadComponent(path, overrides = {}, window) {
     "react/jsx-runtime": require("react/jsx-runtime"),
     "../lib/privateTourInquiryContext": inquiry,
     "../lib/tourContactDraft": { isJiangnanTour },
-    "../lib/privateTourCurrencyNote": { privateTourPublishedPriceNote },
+    "../lib/privateTourCurrencyNote": { privateTourPublishedPriceNote, smallGroupPublishedPriceNote },
     "../lib/privateTourMedia": privateTourMedia,
     "../lib/analytics": { trackEvent() {} },
     // KeepWords splits Japanese headings into phrases.
@@ -684,6 +684,33 @@ test("the selected-price line names the tour type once and the currency note sit
       assert.equal(text(note), privateTourPublishedPriceNote[locale]);
       // The note must say the figure is a starting price and that the written quote decides.
       assert.match(text(note), { en: /starting price.*written quote/u, zh: /每人起价.*书面报价为准/u, ko: /시작가.*서면 견적/u }[locale]);
+    }
+  }
+});
+
+test("small-group price consoles describe a twin-share departure place instead of a private party-size tier", async () => {
+  const selection = await loadComponent("components/PrivateTourSelection.tsx");
+  const priceScope = await loadComponent("components/TourPriceScope.tsx");
+  const interactive = await loadComponent("components/ShanghaiJiangnanImagineInteractive.tsx", {
+    "./PrivateTourSelection": selection, "./TourPriceScope": priceScope,
+  });
+  const groups = privateTourProducts.filter((product) => product.tourFormat === "small-group");
+  assert.ok(groups.length > 0);
+  for (const source of groups) {
+    for (const locale of locales) {
+      const product = localizePrivateTourProduct(source, locale);
+      const html = renderToStaticMarkup(React.createElement(selection.PrivateTourSelectionProvider,
+        { slug: source.slug, initialSelection: getPrivateTourEntrySelection(product) },
+        React.createElement(interactive.ShanghaiJiangnanPriceConsole, { product, inquiryHref: `/?tour=${source.slug}` })));
+      const note = nodes(parse(html)).find((node) => attr(node, "class") === "currencyNote");
+      const wording = text(note);
+      assert.equal(wording, smallGroupPublishedPriceNote[locale], `${locale}:${source.slug}`);
+      assert.notEqual(wording, privateTourPublishedPriceNote[locale]);
+      assert.match(wording, {
+        en: /twin-share place.*minimum-group.*written quote/u,
+        zh: /双人同住名额.*成团条件.*书面报价为准/u,
+        ko: /2인 1실.*최소 출발 인원.*서면 견적/u,
+      }[locale]);
     }
   }
 });
