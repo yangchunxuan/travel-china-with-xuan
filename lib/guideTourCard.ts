@@ -24,6 +24,16 @@ type CuratedCardCopy = { readonly label: string; readonly note: string; readonly
 
 /** Make the difference visible when a published tour extends a planning example. */
 const curatedCardCopy: Partial<Record<GuideId, Record<HomegroundLocale, CuratedCardCopy>>> = {
+  "great-wall-section-selector-from-beijing": {
+    en: { label: "Badaling in a five-day Beijing private tour", note: "Pair Badaling Great Wall with Beijing’s imperial sights on our five-day private tour. Prefer Mutianyu as part of a longer China trip? The Beijing–Xi’an–Shanghai eight-day route linked below visits that section.", action: "View Beijing & Badaling tour" },
+    zh: { label: "北京 5 天私家团，游览八达岭", note: "用 5 天游览北京古都景点与八达岭长城。如果想把慕田峪放进多城市中国行程，下方的北京—西安—上海 8 天路线安排了这一段长城。", action: "查看北京与八达岭行程" },
+    ko: { label: "팔달령을 방문하는 베이징 5일 투어", note: "베이징의 고궁 명소와 팔달령 만리장성을 5일 프라이빗 투어로 둘러보세요. 여러 도시를 여행하며 무톈위에 가고 싶다면 아래 베이징·시안·상하이 8일 일정을 확인해 보세요.", action: "베이징·팔달령 일정 보기" },
+  },
+  "beijing-to-mutianyu-great-wall-transfer": {
+    en: { label: "Mutianyu within an eight-day China private tour", note: "Include Mutianyu Great Wall in a private journey through Beijing, Xi’an and Shanghai. This is an eight-day, three-city itinerary; for a standalone Mutianyu day, use the private-car enquiry on this page to request a separate quote.", action: "View the 8-day private tour" },
+    zh: { label: "中国 8 天三城私家团，游览慕田峪", note: "把慕田峪长城放进北京—西安—上海私家团。这是 8 天三城行程；若只需要慕田峪当天用车，可通过本页包车询价入口单独报价。", action: "查看 8 天三城私家团" },
+    ko: { label: "무톈위를 포함한 중국 3도시 8일 투어", note: "베이징·시안·상하이 프라이빗 여행에서 무톈위 만리장성을 방문하세요. 8일간 세 도시를 잇는 일정입니다. 무톈위 하루 차량만 필요하다면 이 페이지의 전용차 문의로 별도 견적을 요청해 주세요.", action: "8일 프라이빗 투어 보기" },
+  },
   "mutianyu-great-wall-tickets": {
     en: { label: "Beijing’s imperial sights and Badaling", note: "Explore Beijing on our five-day private tour, including Badaling Great Wall. Mutianyu is not on this route; ask us for a separate quote if that is your choice.", action: "View 5-day tour" },
     zh: { label: "北京古都与八达岭长城", note: "这条 5 天私家团走北京主要景点和八达岭，不含慕田峪。想去慕田峪，可以按你的日期另行询价。", action: "查看北京 5 天私家团" },
