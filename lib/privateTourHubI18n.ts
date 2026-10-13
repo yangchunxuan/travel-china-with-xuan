@@ -226,7 +226,7 @@ export type PrivateTourHubCopy = ReturnType<typeof getPrivateTourHubCopy>;
 
 export const englishMarketPlanning = {
   eyebrow: "Before you book",
-  title: "Looking for a private China tour package from Singapore, Malaysia or Australia?",
+  title: "Planning a private China tour from overseas?",
   introduction:
     "Homeground arranges private land journeys beginning in China. Choose a published route first; before you book, we confirm its meeting point and transfer scope in writing for your dates and group.",
   questions: [
@@ -249,6 +249,8 @@ export const englishMarketPlanning = {
   ],
   preparationLabel: "Useful before choosing flights",
   links: [
+    { href: "/guides/do-us-citizens-need-visa-china-2026/", label: "China entry guidance for US passport holders" },
+    { href: "/guides/china-visa-free-canadian-citizens-2026/", label: "China entry guidance for Canadian passport holders" },
     { href: "/guides/zhangjiajie-from-malaysia/", label: "Planning Zhangjiajie from Malaysia" },
     { href: "/guides/do-singaporeans-need-visa-china/", label: "China entry guidance for Singaporeans" },
     { href: "/guides/china-entry-requirements/", label: "Check entry requirements for your passport" },
