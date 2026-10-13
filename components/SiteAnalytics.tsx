@@ -9,13 +9,16 @@ import {
   captureEntryAttribution,
   clearAnalyticsSessionState,
   disableGoogleAnalytics,
+  disableGoogleAds,
   disableMetaPixel,
   initializeGoogleAnalytics,
+  initializeGoogleAds,
   initializeMetaPixel,
   removeAttributionParametersFromAddressBar,
   trackPageView,
 } from "../lib/analytics";
 import {
+  clearMarketingCookies,
   readAnalyticsConsent,
   subscribeAnalyticsConsent,
   type AnalyticsConsentPreferences,
@@ -38,6 +41,8 @@ import { analyticsRuntimeIsAllowed, subscribeAnalyticsRuntime } from "../lib/ana
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundWhatsAppNumber } from "../lib/tourContact";
 import { startVisitRef } from "../lib/visitRef";
+import { GOOGLE_ADS_ID, captureGoogleAdsAttribution, clearGoogleAdsAttribution } from "../lib/googleAdsAttribution";
+import { flushGoogleAdsAttributionWithdrawals } from "../lib/googleAdsAttributionRevocation";
 
 const googleScriptId = "homeground-ga4-script";
 const metaScriptId = "homeground-meta-pixel-script";
@@ -71,6 +76,17 @@ export function SiteAnalytics({
   const [runtimeAllowed, setRuntimeAllowed] = useState(false);
   const pageViewsRef = useRef(createAnalyticsPageViewState());
 
+  useEffect(() => {
+    const flush = () => { void flushGoogleAdsAttributionWithdrawals(); };
+    flush();
+    window.addEventListener("online", flush);
+    window.addEventListener("focus", flush);
+    return () => {
+      window.removeEventListener("online", flush);
+      window.removeEventListener("focus", flush);
+    };
+  }, []);
+
   // Ref line on prepared contact messages (notice regions only; see
   // lib/visitRef.ts). Independent of analytics consent: it stores nothing.
   useEffect(() => {
@@ -85,6 +101,7 @@ export function SiteAnalytics({
       const allowed = analyticsRuntimeIsAllowed();
       if (!allowed) {
         disableGoogleAnalytics();
+        disableGoogleAds();
         disableMetaPixel();
         clearAnalyticsSessionState();
         removeExternalScript(googleScriptId);
@@ -107,11 +124,14 @@ export function SiteAnalytics({
       if (!next?.analytics) {
         disableGoogleAnalytics();
         clearAnalyticsSessionState();
-        removeExternalScript(googleScriptId);
+        if (!next?.marketing || !GOOGLE_ADS_ID) removeExternalScript(googleScriptId);
         resetAnalyticsPageView(pageViewsRef.current, "first_party");
         resetAnalyticsPageView(pageViewsRef.current, "google");
       }
       if (!next?.marketing) {
+        disableGoogleAds();
+        clearMarketingCookies();
+        if (!next?.analytics || !GA_MEASUREMENT_ID) removeExternalScript(googleScriptId);
         disableMetaPixel();
         removeExternalScript(metaScriptId);
         resetAnalyticsPageView(pageViewsRef.current, "meta");
@@ -127,6 +147,7 @@ export function SiteAnalytics({
     const disableThirdPartyBeforeUnsafeLocation = (nextHref: string) => {
       if (!googleMeasurementLocationIsSafe(nextHref)) {
         disableGoogleAnalytics();
+        disableGoogleAds();
         removeExternalScript(googleScriptId);
       }
       if (!metaMeasurementLocationIsSafe(nextHref)) {
@@ -156,29 +177,32 @@ export function SiteAnalytics({
       return;
     }
 
-    if (preferences?.analytics) {
-      captureEntryAttribution();
-      removeAttributionParametersFromAddressBar();
-      if (
-        googleMeasurementLocationIsSafe() &&
-        initializeGoogleAnalytics()
-      ) {
-        loadExternalScript(
-          googleScriptId,
-          `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
-            GA_MEASUREMENT_ID,
-          )}`,
-        );
-      } else {
-        disableGoogleAnalytics();
-        removeExternalScript(googleScriptId);
-      }
-    } else {
+    // Persist the consented click before the existing privacy cleanup removes it.
+    if (preferences?.marketing) captureGoogleAdsAttribution();
+    else clearGoogleAdsAttribution();
+    if (preferences?.analytics) captureEntryAttribution();
+    if (preferences?.analytics || preferences?.marketing) removeAttributionParametersFromAddressBar();
+
+    const googleAnalyticsReady = Boolean(preferences?.analytics && initializeGoogleAnalytics());
+    if (!googleAnalyticsReady) {
       disableGoogleAnalytics();
-      clearAnalyticsSessionState();
+      if (!preferences?.analytics) {
+        clearAnalyticsSessionState();
+        resetAnalyticsPageView(pageViewsRef.current, "first_party");
+        resetAnalyticsPageView(pageViewsRef.current, "google");
+      }
+    }
+    const googleAdsReady = Boolean(preferences?.marketing && initializeGoogleAds());
+    if (!googleAdsReady) disableGoogleAds();
+    if (googleAnalyticsReady || googleAdsReady) {
+      loadExternalScript(
+        googleScriptId,
+        `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+          googleAnalyticsReady ? GA_MEASUREMENT_ID : GOOGLE_ADS_ID,
+        )}`,
+      );
+    } else {
       removeExternalScript(googleScriptId);
-      resetAnalyticsPageView(pageViewsRef.current, "first_party");
-      resetAnalyticsPageView(pageViewsRef.current, "google");
     }
 
     if (preferences?.marketing) {

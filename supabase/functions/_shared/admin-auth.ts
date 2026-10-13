@@ -70,11 +70,11 @@ function adminAllowedOrigin(): string {
   return value;
 }
 
-function adminCorsHeaders(origin: string): HeadersInit {
+function adminCorsHeaders(origin: string, allowPost = false): HeadersInit {
   return {
     "Access-Control-Allow-Headers":
-      "authorization, apikey, x-client-info",
-    "Access-Control-Allow-Methods": "GET, OPTIONS",
+      `authorization, apikey, x-client-info${allowPost ? ", content-type" : ""}`,
+    "Access-Control-Allow-Methods": allowPost ? "GET, POST, OPTIONS" : "GET, OPTIONS",
     "Access-Control-Allow-Origin": origin,
     "Access-Control-Max-Age": "600",
     "Cache-Control": "no-store",
@@ -315,7 +315,7 @@ async function verifyAdmin(
   return { ok: true, admin: { userId: subject } };
 }
 
-function validPreflight(request: Request): boolean {
+function validPreflight(request: Request, allowPost = false): boolean {
   const requestedMethod =
     request.headers.get("access-control-request-method")?.toUpperCase();
   const requestedHeaders = (
@@ -324,14 +324,15 @@ function validPreflight(request: Request): boolean {
     .split(",")
     .map((value) => value.trim().toLowerCase())
     .filter(Boolean);
-  return requestedMethod === "GET" &&
+  return (requestedMethod === "GET" || (allowPost && requestedMethod === "POST")) &&
     requestedHeaders.every((header) =>
-      permittedRequestHeaders.has(header)
+      permittedRequestHeaders.has(header) || (allowPost && header === "content-type")
     );
 }
 
 export async function authorizeAdminRequest(
   request: Request,
+  options: { allowPost?: boolean } = {},
 ): Promise<AdminRequestResult> {
   const requestId = safeRequestId();
   let allowedOrigin: string;
@@ -365,10 +366,10 @@ export async function authorizeAdminRequest(
       admin: null,
     };
   }
-  const headers = adminCorsHeaders(origin);
+  const headers = adminCorsHeaders(origin, options.allowPost);
 
   if (request.method === "OPTIONS") {
-    if (!validPreflight(request)) {
+    if (!validPreflight(request, options.allowPost)) {
       return {
         response: adminErrorResponse(
           403,
@@ -389,7 +390,7 @@ export async function authorizeAdminRequest(
     };
   }
 
-  if (request.method !== "GET") {
+  if (request.method !== "GET" && !(options.allowPost && request.method === "POST")) {
     return {
       response: adminErrorResponse(
         405,

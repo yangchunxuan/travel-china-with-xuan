@@ -24,6 +24,7 @@ import {
   trackEvent,
 } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
+import { readGoogleAdsAttribution } from "../lib/googleAdsAttribution";
 import { trustedMessengerUrl } from "../lib/homegroundSocial";
 import {
   currentHomepageEmailFormVersion,
@@ -293,6 +294,7 @@ export function HomepageQuickContact({
   }, [desktopCard, locale]);
 
   const buildPayload = () => ({
+    adAttribution: readGoogleAdsAttribution(),
     trafficSessionToken: getTrafficSessionToken() ?? null,
     schemaVersion: homepageEmailInquirySchemaVersion,
     formVersion: currentHomepageEmailFormVersion,

@@ -13,6 +13,8 @@ __pycache__/
 *.py[cod]
 .env*
 !.env.example
+# This reviewed production file contains public browser settings only.
+!.env.production
 /supabase/.temp/
 /路线介绍ui设计.mp4
 DESIGN-BRIEF-*.md

@@ -26,7 +26,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   en: {
     bannerTitle: "Your privacy choices",
     bannerBody:
-      "Necessary storage keeps the planner working. In some regions we also remember your first page and referral source for 30 days; “Necessary only” turns this off. You can also allow analytics and Meta marketing measurement.",
+      "Necessary storage keeps the planner working. In some regions we also remember your first page and referral source for 30 days; “Necessary only” turns this off. You can also allow analytics and Google Ads and Meta marketing measurement.",
     acceptAll: "Allow all",
     necessaryOnly: "Necessary only",
     manage: "Manage choices",
@@ -34,7 +34,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     dialogBody:
       "Choose the optional tools Homeground may use in this browser. You can change this choice at any time from the footer.",
     dialogDetails:
-      "Necessary storage keeps the trip planner working. With your permission, analytics helps us understand which pages and buttons are useful, while marketing measurement helps us assess Meta campaigns. We never send trip-questionnaire answers, contact details or messages to these tools.",
+      "Necessary storage keeps the trip planner working. With your permission, analytics helps us understand which pages and buttons are useful, while marketing measurement helps us assess Google Ads and Meta campaigns. We never send trip-questionnaire answers, contact details or messages to these tools.",
     necessaryTitle: "Necessary",
     necessaryBody:
       "Keeps core website and trip-planner features working and remembers this choice.",
@@ -44,7 +44,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
       "Measures anonymous page and button activity with Google Analytics and Homeground’s first-party event service. Published product, service and group-size choices are recorded only by Homeground’s service, not Google Analytics or Meta. In some regions it also covers the 30-day first-visit source shown in prepared messages; saving with analytics off deletes it.",
     marketingTitle: "Marketing measurement",
     marketingBody:
-      "Allows Meta Pixel to measure visits and confirmed enquiries from Facebook or Instagram campaigns.",
+      "Allows Meta Pixel measurement and Google Ads attribution. With your permission, we keep a Google ad click identifier for up to 90 days and link it to a saved enquiry and a confirmed first payment. Google receives the click identifier, event time and unique event ID; a payment event also includes the amount received and currency. We do not send your name, email, phone number or messages for ad matching. Turning this off clears local ad identifiers and requests cancellation of unsent conversions.",
     optional: "Optional",
     save: "Save choices",
     close: "Close",
@@ -53,7 +53,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   zh: {
     bannerTitle: "你的隐私选择",
     bannerBody:
-      "必要存储用于维持旅行规划功能。部分地区会记住你首次进入的页面和来源 30 天，选“仅使用必要功能”即可关闭。你也可以允许分析统计和 Meta 营销衡量。",
+      "必要存储用于维持旅行规划功能。部分地区会记住你首次进入的页面和来源 30 天，选“仅使用必要功能”即可关闭。你也可以允许分析统计和 Google Ads、Meta 营销衡量。",
     acceptAll: "全部允许",
     necessaryOnly: "仅使用必要功能",
     manage: "管理选择",
@@ -61,7 +61,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     dialogBody:
       "选择 Homeground 可以在此浏览器中使用的可选工具。你随时可以从页脚重新更改。",
     dialogDetails:
-      "必要存储用于维持旅行规划功能。经你同意后，分析统计可帮助我们了解哪些页面和按钮更有用；营销衡量则用于评估 Meta 活动效果。我们不会把旅行问卷答案、联系方式或消息发送给这些工具。",
+      "必要存储用于维持旅行规划功能。经你同意后，分析统计可帮助我们了解哪些页面和按钮更有用；营销衡量则用于评估 Google Ads 和 Meta 活动效果。我们不会把旅行问卷答案、联系方式或消息发送给这些工具。",
     necessaryTitle: "必要功能",
     necessaryBody: "用于网站和旅行规划器的核心功能，并记住本次选择。",
     alwaysOn: "始终启用",
@@ -70,7 +70,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
       "通过 Google Analytics 和 Homeground 第一方事件服务统计匿名页面与按钮活动。公开产品、服务版本和人数选项只进入 Homeground 第一方服务，不发送给 Google Analytics 或 Meta。在部分地区，这一项也包括预填消息里使用的 30 天首次来源；关闭分析统计并保存即会删除。",
     marketingTitle: "营销衡量",
     marketingBody:
-      "允许 Meta Pixel 衡量来自 Facebook 或 Instagram 活动的访问与已确认咨询。",
+      "允许 Meta Pixel 衡量和 Google Ads 广告归因。经你同意后，我们会保留 Google 广告点击标识最多 90 天，关联已保存的咨询和已确认的首次收款。Google 会收到点击标识、事件时间和唯一事件编号；收款事件另含实收金额及币种。姓名、邮箱、电话和消息不会用于广告匹配。关闭此项会清除本机广告标识，并请求取消尚未回传的转化。",
     optional: "可选",
     save: "保存选择",
     close: "关闭",
@@ -79,7 +79,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
   ko: {
     bannerTitle: "개인정보 선택",
     bannerBody:
-      "필수 저장 기능은 여행 플래너를 작동하게 합니다. 일부 지역에서는 처음 방문한 페이지와 유입 경로를 30일간 기억하며, ‘필수 기능만’을 누르면 꺼집니다. 분석과 Meta 마케팅 측정도 허용할 수 있습니다.",
+      "필수 저장 기능은 여행 플래너를 작동하게 합니다. 일부 지역에서는 처음 방문한 페이지와 유입 경로를 30일간 기억하며, ‘필수 기능만’을 누르면 꺼집니다. 분석과 Google Ads·Meta 마케팅 측정도 허용할 수 있습니다.",
     acceptAll: "모두 허용",
     necessaryOnly: "필수 기능만",
     manage: "선택 관리",
@@ -87,7 +87,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
     dialogBody:
       "Homeground가 이 브라우저에서 사용할 수 있는 선택 기능을 정하세요. 바닥글에서 언제든 변경할 수 있습니다.",
     dialogDetails:
-      "필수 저장 기능은 여행 플래너가 작동하는 데 사용됩니다. 동의하면 분석을 통해 유용한 페이지와 버튼을 파악하고, 마케팅 측정으로 Meta 캠페인의 효과를 확인할 수 있습니다. 여행 설문 답변, 연락처 또는 메시지는 이러한 도구로 보내지 않습니다.",
+      "필수 저장 기능은 여행 플래너가 작동하는 데 사용됩니다. 동의하면 분석을 통해 유용한 페이지와 버튼을 파악하고, 마케팅 측정으로 Google Ads와 Meta 캠페인의 효과를 확인할 수 있습니다. 여행 설문 답변, 연락처 또는 메시지는 이러한 도구로 보내지 않습니다.",
     necessaryTitle: "필수 기능",
     necessaryBody:
       "웹사이트와 여행 플래너의 핵심 기능을 유지하고 이 선택을 기억합니다.",
@@ -97,7 +97,7 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
       "Google Analytics와 Homeground의 자체 이벤트 서비스로 익명 페이지 및 버튼 활동을 측정합니다. 공개 상품, 서비스 유형, 인원 선택은 Homeground 자체 서비스에만 기록하며 Google Analytics나 Meta로 보내지 않습니다. 일부 지역에서는 미리 작성된 메시지에 쓰이는 30일 첫 방문 경로도 포함하며, 분석을 끄고 저장하면 삭제됩니다.",
     marketingTitle: "마케팅 측정",
     marketingBody:
-      "Meta Pixel이 Facebook 또는 Instagram 캠페인에서 발생한 방문과 확인된 문의를 측정하도록 허용합니다.",
+      "Meta Pixel 측정과 Google Ads 광고 기여도 측정을 허용합니다. 동의하면 Google 광고 클릭 식별자를 최대 90일간 보관하고 저장된 문의 및 확인된 최초 입금과 연결합니다. Google에는 클릭 식별자, 발생 시각, 고유 이벤트 번호를 보내며, 입금 이벤트에는 실제 받은 금액과 통화도 포함됩니다. 이름, 이메일, 전화번호, 메시지는 광고 매칭에 보내지 않습니다. 이 항목을 끄면 브라우저의 광고 식별자를 지우고 아직 전송하지 않은 전환의 취소를 요청합니다.",
     optional: "선택",
     save: "선택 저장",
     close: "닫기",

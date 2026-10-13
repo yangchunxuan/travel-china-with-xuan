@@ -57,3 +57,15 @@ verify_jwt = true
 [functions.v1-inquiry-email-corrections]
 # Original browser bearer key, short correction window, strict Origin and idempotency.
 verify_jwt = false
+
+[functions.admin-conversions]
+# Existing admin MFA, exact Origin, fixed allowlist; mutation contract is explicit.
+verify_jwt = true
+
+[functions.v1-ad-attribution-consent]
+# Random withdrawal bearer token; hashes only in storage, bounded exact-Origin intake.
+verify_jwt = false
+
+[functions.upload-ad-conversions]
+# Server-only worker secret, default-off upload, no browser access.
+verify_jwt = false

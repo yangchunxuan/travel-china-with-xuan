@@ -11,6 +11,7 @@ import type { ContactEdition } from "../lib/contactEdition";
 import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
 import { getTrafficSessionToken, trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
+import { readGoogleAdsAttribution } from "../lib/googleAdsAttribution";
 import { privateTourQuoteSchemaVersion, currentPrivateTourQuoteFormVersion, travellerAckPrivacyNoticeVersion } from "../lib/inquiryVersions";
 import {
   getNavigationMenuOpen, getPrivacyManagerOpen, getServerPrivacyManagerOpen,
@@ -249,7 +250,7 @@ export function TourContactPanel({ locale, edition }: {
       travelDate: draft.travelDate, note: [noteMarker, tourContactNote(note, draft.referralSource, requestedTravelers, stayPreference)].filter(Boolean).join("\n\n") || null, privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
       attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
       // An edition's pages mint no traffic session; never attach another language's.
-      experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null });
+      adAttribution: edition ? null : readGoogleAdsAttribution(), experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null });
     snapshotRef.current = { body, key: crypto.randomUUID(), requestedTravelers };
     void send(snapshotRef.current);
   }

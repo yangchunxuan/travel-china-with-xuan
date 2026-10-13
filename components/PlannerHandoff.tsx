@@ -42,6 +42,7 @@ import {
   trackEvent,
 } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
+import { readGoogleAdsAttribution } from "../lib/googleAdsAttribution";
 import type { RouteServiceInterest } from "../lib/routeServiceInterest";
 import type { RouteJourney } from "./RouteFinder";
 import { useVisibleAnalyticsEvent } from "./useAnalyticsEvent";
@@ -822,6 +823,7 @@ export function PlannerHandoff({
 
   const buildPayload = () => {
     return {
+      adAttribution: readGoogleAdsAttribution(),
       trafficSessionToken: getTrafficSessionToken() ?? null,
       schemaVersion: destinationInquirySchemaVersion,
       formVersion: currentDestinationInquiryFormVersion,

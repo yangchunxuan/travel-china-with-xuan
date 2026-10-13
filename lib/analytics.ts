@@ -1,6 +1,7 @@
 import { analyticsRuntimeIsAllowed, subscribeAnalyticsRuntime } from "./analyticsRuntime";
+import { GOOGLE_ADS_ID, googleAdsRuntimeIsAllowed } from "./googleAdsAttribution";
 import {
-  analyticsConsentVersion,
+  clearMarketingCookies,
   hasAnalyticsConsent,
   hasMarketingConsent,
   readAnalyticsConsent,
@@ -33,6 +34,9 @@ export const GA_MEASUREMENT_ID = gaMeasurementIdPattern.test(
 export const META_PIXEL_ID = metaPixelIdPattern.test(configuredMetaPixelId)
   ? configuredMetaPixelId
   : "";
+// This collector contract still describes the unchanged analytics purpose.
+// The current marketing notice is independently required by adAttributionContract.
+export const trafficAnalyticsNoticeVersion = "2026-09-05.1" as const;
 export const webEventsContract = "homeground-traffic-events.v2" as const;
 const trafficSessionStartRequestType = "start_session" as const;
 const trafficEventBatchRequestType = "events" as const;
@@ -125,6 +129,10 @@ type AnalyticsWindow = Window & {
   fbq?: MetaPixel;
   _fbq?: MetaPixel;
   homegroundGaInitialized?: boolean;
+  homegroundAdsInitialized?: boolean;
+  homegroundGoogleInitialized?: boolean;
+  homegroundGaActive?: boolean;
+  homegroundAdsActive?: boolean;
   homegroundMetaInitialized?: boolean;
 };
 
@@ -503,6 +511,7 @@ function ensureAnalyticsConsentObserver() {
       analyticsConsentGeneration += 1;
       clearAnalyticsSessionState();
       disableGoogleAnalytics();
+      disableGoogleAds();
       disableMetaPixel();
     }
   });
@@ -513,6 +522,12 @@ function ensureAnalyticsConsentObserver() {
     if (!preferences?.analytics) {
       analyticsConsentGeneration += 1;
       clearAnalyticsSessionState();
+      disableGoogleAnalytics();
+    }
+    if (!preferences?.marketing) {
+      clearMarketingCookies();
+      disableGoogleAds();
+      disableMetaPixel();
     }
   });
 }
@@ -651,6 +666,41 @@ function ensureGtagQueue() {
   return analyticsWindow.gtag;
 }
 
+function initializeGoogleContext() {
+  const analyticsWindow = window as AnalyticsWindow;
+  const gtag = ensureGtagQueue();
+  if (!analyticsWindow.homegroundGoogleInitialized) {
+    gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+    gtag("set", "ads_data_redaction", true);
+    gtag("set", "url_passthrough", false);
+    gtag("js", new Date());
+    analyticsWindow.homegroundGoogleInitialized = true;
+  }
+  // Apply before either destination can inherit query or referrer metadata.
+  gtag("set", googleEventParameters({}));
+  return gtag;
+}
+
+function updateGoogleConsent() {
+  if (typeof window === "undefined") return;
+  const analyticsWindow = window as AnalyticsWindow;
+  const allowed = ANALYTICS_ENABLED && analyticsRuntimeIsAllowed() && googleMeasurementLocationIsSafe();
+  const analyticsAllowed = allowed && analyticsWindow.homegroundGaActive && hasAnalyticsConsent();
+  const marketingAllowed = allowed && analyticsWindow.homegroundAdsActive && hasMarketingConsent();
+  analyticsWindow.gtag?.("consent", "update", {
+    analytics_storage: analyticsAllowed ? "granted" : "denied",
+    ad_storage: marketingAllowed ? "granted" : "denied",
+    ad_user_data: marketingAllowed ? "granted" : "denied",
+    // Attribution does not enable remarketing or personalized advertising.
+    ad_personalization: "denied",
+  });
+}
+
 export function initializeGoogleAnalytics() {
   ensureAnalyticsConsentObserver();
   if (
@@ -660,63 +710,66 @@ export function initializeGoogleAnalytics() {
     !hasAnalyticsConsent() ||
     !googleMeasurementLocationIsSafe() ||
     typeof window === "undefined"
-  ) {
-    return false;
-  }
+  ) return false;
 
   const analyticsWindow = window as AnalyticsWindow;
-  (
-    analyticsWindow as unknown as Record<string, unknown>
-  )[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
-  const gtag = ensureGtagQueue();
-  // Also override vendor defaults before initialization/restoration so
-  // automatic events cannot inherit navigation queries or referrer text.
-  gtag("set", googleEventParameters({}));
-  if (analyticsWindow.homegroundGaInitialized) {
-    gtag("consent", "update", {
-      analytics_storage: "granted",
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
+  (analyticsWindow as unknown as Record<string, unknown>)[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+  const gtag = initializeGoogleContext();
+  analyticsWindow.homegroundGaActive = true;
+  updateGoogleConsent();
+  if (!analyticsWindow.homegroundGaInitialized) {
+    gtag("config", GA_MEASUREMENT_ID, {
+      send_page_view: false,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      ...googleCampaignConfiguration(),
     });
-    return true;
+    analyticsWindow.homegroundGaInitialized = true;
   }
+  return true;
+}
 
-  gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  });
-  gtag("consent", "update", {
-    analytics_storage: "granted",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  });
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID, {
-    send_page_view: false,
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false,
-    ...googleCampaignConfiguration(),
-  });
-  analyticsWindow.homegroundGaInitialized = true;
+/** Only the offline pipeline emits Ads conversions; this config emits no lead/purchase event. */
+export function initializeGoogleAds() {
+  ensureAnalyticsConsentObserver();
+  if (
+    !ANALYTICS_ENABLED ||
+    !googleAdsRuntimeIsAllowed() ||
+    !GOOGLE_ADS_ID ||
+    !hasMarketingConsent() ||
+    !googleMeasurementLocationIsSafe() ||
+    typeof window === "undefined"
+  ) return false;
+
+  const analyticsWindow = window as AnalyticsWindow;
+  const gtag = initializeGoogleContext();
+  analyticsWindow.homegroundAdsActive = true;
+  updateGoogleConsent();
+  if (!analyticsWindow.homegroundAdsInitialized) {
+    gtag("config", GOOGLE_ADS_ID, {
+      send_page_view: false,
+      allow_enhanced_conversions: false,
+      allow_ad_personalization_signals: false,
+    });
+    analyticsWindow.homegroundAdsInitialized = true;
+  }
   return true;
 }
 
 export function disableGoogleAnalytics() {
-  if (typeof window === "undefined" || !GA_MEASUREMENT_ID) return;
+  if (typeof window === "undefined") return;
   const analyticsWindow = window as AnalyticsWindow;
-  (
-    analyticsWindow as unknown as Record<string, unknown>
-  )[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
-  analyticsWindow.gtag?.("consent", "update", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  });
+  analyticsWindow.homegroundGaActive = false;
+  if (GA_MEASUREMENT_ID) {
+    (analyticsWindow as unknown as Record<string, unknown>)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+  }
+  updateGoogleConsent();
+}
+
+export function disableGoogleAds() {
+  if (typeof window === "undefined") return;
+  (window as AnalyticsWindow).homegroundAdsActive = false;
+  updateGoogleConsent();
 }
 
 function ensureMetaQueue() {
@@ -986,7 +1039,7 @@ async function requestTrafficSessionCredential({
     response = await fetchTraffic({
       requestType: trafficSessionStartRequestType,
       contractVersion: webEventsContract,
-      noticeVersion: analyticsConsentVersion,
+      noticeVersion: trafficAnalyticsNoticeVersion,
       sessionToken,
       locale,
       entryPath,
@@ -1211,7 +1264,7 @@ async function flushTrafficQueue() {
           outcome = await sendTrafficEventBatch({ consentState, payload: {
             requestType: trafficEventBatchRequestType,
             contractVersion: webEventsContract,
-            noticeVersion: analyticsConsentVersion,
+            noticeVersion: trafficAnalyticsNoticeVersion,
             sessionToken,
             sessionCredential: credential.credential,
             locale, entryPath,
@@ -1343,7 +1396,7 @@ export function trackEvent(
       initializeGoogleAnalytics()
     ) {
       const gtag = ensureGtagQueue();
-      gtag("event", name, googleEventParameters(sanitized));
+      gtag("event", name, { ...googleEventParameters(sanitized), send_to: GA_MEASUREMENT_ID });
       dispatched.push("google");
     }
     if (targets.includes("first_party") && WEB_EVENTS_URL && firstPartyEvent(name, sanitized)) {
@@ -1430,7 +1483,7 @@ export function trackPageView({
     ensureGtagQueue()(
       "event",
       "page_view",
-      googleEventParameters(parameters),
+      { ...googleEventParameters(parameters), send_to: GA_MEASUREMENT_ID },
     );
     return;
   }

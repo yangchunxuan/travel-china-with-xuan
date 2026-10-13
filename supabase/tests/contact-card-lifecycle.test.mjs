@@ -155,7 +155,11 @@ for (const locale of ["en", "zh", "ko"]) test(`${locale}: selected option surviv
   f.setEmail("traveller@example.invalid"); await f.send();
   const payload = JSON.parse(f.calls[0].body);
   assert.deepEqual(payload.productInterest.selection, selected);
+  assert.equal(payload.adAttribution, null, "a form without marketing consent carries no ad identifiers");
+  // These auxiliary fields are removed by the real Edge intake before the
+  // unchanged inquiry-answer validator and semantic idempotency hash.
   delete payload.trafficSessionToken;
+  delete payload.adAttribution;
   const validation = validateAndNormalizeInquiry(payload, { allowedFormVersions: [currentHomepageEmailFormVersion], allowedPrivacyNoticeVersions: [travellerAckPrivacyNoticeVersion], whatsappEnabled: false });
   assert.equal(validation.ok, true, JSON.stringify(validation.fieldErrors));
   assert.equal(f.receipt().requestedTravelers, null, "price tier is not a newly reported actual passenger count");

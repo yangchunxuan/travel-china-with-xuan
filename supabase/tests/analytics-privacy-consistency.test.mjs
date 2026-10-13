@@ -33,8 +33,8 @@ test("optional measurement is fail-closed and consent gated", async () => {
   );
   assert.match(
     siteAnalytics,
-    /if \(preferences\?\.analytics\)/,
-    "Google's script may load only in the analytics-consent branch",
+    /preferences\?\.analytics && initializeGoogleAnalytics\(\)/,
+    "GA initialization remains conditional on analytics consent",
   );
   assert.match(
     siteAnalytics,
