@@ -76,7 +76,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "2026년 공개 습지 관광지와 교육 상품", url: "https://www.yancheng.gov.cn/art/2026/4/26/art_34154_4420721.html", publisher: "옌청시 인민정부", reviewedAt: "2026-08-13"},
     {label: "티아오쯔니 번식 서식지 보전 현황", url: "https://wap.yancheng.gov.cn/art/2026/5/9/art_45136_4424125.html", publisher: "옌청시 인민정부", reviewedAt: "2026-08-13"},
     {label: "옌청 황해습지 보호 조례", url: "https://www.yancheng.gov.cn/art/2019/10/25/art_13184_3279209.html", publisher: "옌청시 인민정부", reviewedAt: "2026-08-13"},
-    {label: "대표 이미지: zhangshen이 2021년 9월 8일 촬영한 옌청 연안 염습지와 멀리 보이는 사불상", url: "https://commons.wikimedia.org/wiki/File:P%C3%A8_David%27s_Deer_imported_from_iNaturalist_photo_162354434_on_24_January_2024.jpg", publisher: "Wikimedia Commons / zhangshen", reviewedAt: "2026-08-13"},
+    {label: "대표 이미지: zhangshen이 2021년 9월 8일 촬영한 옌청 연안 염습지와 멀리 보이는 사불상", url: "https://commons.wikimedia.org/wiki/File:P%C3%A8re_David%27s_Deer_imported_from_iNaturalist_photo_162354434_on_24_January_2024.jpg", publisher: "Wikimedia Commons / zhangshen", reviewedAt: "2026-08-13"},
     {label: "대표 이미지 라이선스: 크리에이티브 커먼즈 저작자표시 4.0", url: "https://creativecommons.org/licenses/by/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};
