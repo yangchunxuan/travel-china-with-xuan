@@ -99,13 +99,13 @@ test("homepage metadata, visible identity and social cards reinforce Homeground 
   assert.doesNotMatch(homepage, /editorialPersonSchema/u);
 });
 
-test("the shared graph has one TravelAgency identity and one website name", async () => {
+test("the shared graph has one Organization identity and one website name", async () => {
   const [identity, social] = await Promise.all([
     source("lib/editorialIdentity.ts"),
     source("lib/homegroundSocial.ts"),
   ]);
 
-  assert.match(identity, /"@type": "TravelAgency"/u);
+  assert.match(identity, /"@type": "Organization"/u);
   assert.match(identity, /"@id": EDITORIAL_ORGANIZATION_ID/u);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/u);
   assert.match(identity, /slogan: HOMEGROUND_BRAND_SLOGAN/u);

@@ -179,7 +179,7 @@ test("active business identity remains available after the sales page becomes a 
     source("components/ChinaItineraryReviewPage.tsx"),
   ]);
 
-  assert.match(identity, /"@type": "TravelAgency"/);
+  assert.match(identity, /"@type": "Organization"/);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
   assert.match(homepage, /legalName: homegroundBusiness\.registeredName/);
   assert.match(homepage, /Travel Agency Licence No\./);
