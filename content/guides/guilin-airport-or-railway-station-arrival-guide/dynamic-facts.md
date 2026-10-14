@@ -26,10 +26,14 @@ The durable rule is to obey the exact gateway on the live booking and compare th
 - Yangshuo Station is not a central Guilin city terminal. Its usefulness depends on the traveller's actual train, final address and last legal connection.
 - A road estimate from a map is not a connection time. The chain also includes immigration or station exit, baggage, queue, waiting, walking, transfer buffer and hotel check-in.
 
+## Targeted English addition — 15 October 2026
+
+The English guide now includes the three station addresses from the 12306 passenger-station address table and two explicitly dated examples of current city-bus stops from the airport operator. The examples illustrate how to match a bus stop to a hotel; they are not a permanent route list or sole terminus. Before publishing this addition, reopen both sources. Remove a stop example if the operator no longer lists it, and retain the exact-hotel selection method. The older three-language baseline above has not been represented as a complete fresh review.
+
 ## Never freeze in this page
 
 - train numbers, train patterns, seat inventory, frequency, first or last trains;
-- airport-bus or intercity-bus departure times, stops, fares or guaranteed connections;
+- airport-bus or intercity-bus departure times, permanent stop lists, fares or guaranteed connections (the explicitly dated English stop examples above require live rechecking);
 - taxi, ride-hailing or private-transfer prices and journey times;
 - a permanent platform, exit, taxi rank, bus bay, pickup zone, lift or storage counter;
 - a universal luggage-service station list, booking window or eligibility rule;
