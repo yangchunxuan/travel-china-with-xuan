@@ -1346,15 +1346,23 @@
 }
 
 /* Until a privacy choice is stored, the consent banner covers the bottom of the window. */
-@media (min-height: 46rem) {
+@media (min-height: 46rem) and (min-width: 56.0625rem) {
   :global(html:not([data-homeground-consent-stored])) .enquiryAside {
     max-height: calc(100dvh - 16.5rem);
   }
 }
 
-/* A window too short for the sticky summary gets it in the page flow. */
-@media (max-height: 40rem) {
+/* Leave room for the short-notice reminder without clipping the fee or tickets. */
+@media (max-height: 50rem) {
   .enquiryAside {
+    max-height: none;
+    position: static;
+  }
+}
+
+/* The privacy banner reduces that space further until a choice is stored. */
+@media (max-height: 64rem) {
+  :global(html:not([data-homeground-consent-stored])) .enquiryAside {
     max-height: none;
     position: static;
   }
