@@ -131,7 +131,7 @@ export interface TourGuideDecisionCopy {
 
 const SOURCE_URLS = {
   railway: "https://www.12306.cn/en/faq.html?item=1",
-  palaceMuseum: "https://intl.dpm.org.cn/ticket_details.html",
+  palaceMuseum: "https://web.archive.org/web/20260411020859/https://intl.dpm.org.cn/ticket_details.html",
   tourismLaw:
     "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_55b4bbc9a30547a9912e7ed61ffa7e20.html",
   shanghaiTravel:
