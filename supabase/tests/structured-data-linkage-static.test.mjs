@@ -44,7 +44,7 @@ test("the shared identity graph uses stable website, organization and person ids
     identity,
     /editorialPersonSchema\(locale:[\s\S]*?worksFor:\s*\{\s*"@id":\s*EDITORIAL_ORGANIZATION_ID\s*\}/,
   );
-  assert.match(identity, /"@type": "TravelAgency"/);
+  assert.match(identity, /"@type": "Organization"/);
   assert.match(identity, /name: HOMEGROUND_BRAND_NAME/);
   assert.match(identity, /slogan: HOMEGROUND_BRAND_SLOGAN/);
   assert.match(identity, /alternateName: \["Homeground China Journeys", "homegroundchina\.com"\]/);

@@ -2,7 +2,7 @@
 
 Status: current implementation baseline
 
-Updated: 22 August 2026
+Updated: 14 October 2026 (company schema draft; not a deployment record)
 
 Owner-confirmed business category: **travel agency**
 
@@ -23,7 +23,7 @@ two URLs. The complete production, measurement and hold record is
 ## Canonical identity
 
 - Brand name: `Homeground China`
-- Schema type: `TravelAgency`
+- Corporate schema type: `Organization`
 - Global English slogan: `China, your way. We’ve got your back.`
 - Organization ID: `https://homegroundchina.com/#organization`
 - Website ID: `https://homegroundchina.com/#website`
@@ -52,10 +52,10 @@ and `x-default` alternates.
 
 ## Structured-data rules
 
-- One shared `TravelAgency` node owns the brand name, slogan, logo and verified
+- One shared `Organization` node owns the brand name, slogan, logo and verified
   social profiles.
 - One shared `WebSite` node is named `Homeground China` and points to the
-  `TravelAgency` as publisher.
+  `Organization` as publisher.
 - Hubs and services reuse those shared nodes; they do not create a second
   `WebSite` called `Homeground` or a partial Organization.
 - Editorial people remain on author and article surfaces. They are not placed
@@ -65,6 +65,35 @@ and `x-default` alternates.
   added only after their exact profile URLs are confirmed.
 - No licence or permit number is inferred. Formal identifiers continue to come
   only from the verified business-data source.
+
+### Corporate identity and registered address
+
+The 14 October Semrush audit reported missing `address` on the shared
+`TravelAgency` markup. `TravelAgency` inherits `LocalBusiness`; Google's
+[LocalBusiness requirements](https://developers.google.com/search/docs/appearance/structured-data/local-business)
+require the physical location of the business. The published address in
+`homegroundBusiness` is a cluster registration address. It has not been
+confirmed as a physical operating or visitor location.
+
+Use `Organization` for the corporate entity, including `hiringOrganization`
+on careers. This preserves the existing organization ID, legal name, licence,
+registration code, logo, social profiles and publisher/provider references.
+The visible business category remains **travel agency**. Do not invent a
+physical location, map coordinates or opening hours to satisfy an audit.
+The company AboutPage retains its existing registered postal address; this
+does not establish a local storefront.
+
+Google's [Organization guidance](https://developers.google.com/search/docs/appearance/structured-data/organization)
+supports administrative identity with applicable, verified properties and
+has no universally required properties. If a physical business location is
+later verified, reassess the most specific applicable subtype and its required
+fields. Do not use `additionalType: TravelAgency` to reintroduce a location
+claim under the same ID.
+
+Before publishing, inspect generated JSON-LD across the export for consistent
+types, IDs and identifiers. After publishing, rerun the Semrush audit to check
+this error class; local validation does not establish that all 893 reported
+items have cleared or that search traffic has increased.
 
 ## Public-copy rules
 
@@ -87,7 +116,7 @@ Before merge:
   audit and export build;
 - inspect `/`, `/zh/` and `/ko/` at desktop and 390 px;
 - confirm title, one H1, visible full brand name, canonical and hreflang;
-- inspect the rendered JSON-LD for one website name and one travel-agency ID.
+- inspect the rendered JSON-LD for one website name and one corporate ID.
 
 After deployment:
 
