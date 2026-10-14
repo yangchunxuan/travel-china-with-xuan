@@ -165,7 +165,7 @@ const body = {
         {"label": "Traditional handicrafts of making Xuan paper", "url": "https://ich.unesco.org/en/RL/traditional-handicrafts-of-making-xuan-paper-00201", "publisher": "UNESCO Intangible Cultural Heritage", "reviewedAt": "2026-08-13"},
         {"label": "Xuan paper traditional craft project overview", "url": "https://www.ihchina.cn/page_special.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13"},
         {"label": "Xuan paper craft process", "url": "https://www.ihchina.cn/technology.html", "publisher": "China Intangible Cultural Heritage Network", "reviewedAt": "2026-08-13"},
-        {"label": "Xuan Paper Culture Park", "url": "https://www.ahjx.gov.cn/About/show/33534.html", "publisher": "Jing County People’s Government", "reviewedAt": "2026-08-13"},
+        {"label": "Xuan Paper Culture Park", "url": "https://www.ahjx.gov.cn/Content/show/1561353.html", "publisher": "Jing County People’s Government", "reviewedAt": "2026-08-13"},
         {"label": "Xuan paper cultural ecology protection plan", "url": "https://www.xuancheng.gov.cn/OpennessContent/show/3017793.html", "publisher": "Xuancheng People’s Government", "reviewedAt": "2026-08-13"},
         {"label": "2026 venue notices and visitor information", "url": "https://bwg.hongxingxuanpaper.com.cn/", "publisher": "China Xuan Paper Museum", "reviewedAt": "2026-08-13"},
         { label: "Hero photograph: Jingxian Railway Station, N509FZ (CC BY-SA 4.0)", url: "https://commons.wikimedia.org/wiki/File:Jingxian_Railway_Station_(20150807144034).JPG", publisher: "Wikimedia Commons", reviewedAt: "2026-08-13" }
