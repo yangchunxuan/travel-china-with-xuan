@@ -90,6 +90,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { question: "Can we count on using a stroller in Chinese stations?", answer: "Check each one rather than assuming. Confirm the exact station entrances, lifts or accessibility assistance with the operator when they matter, and keep a carrying or alternate-transport fallback. Station facilities and temporary access routes can change, and one station that worked tells you nothing about stroller access nationwide." },
   ] },
   { id: "more-planning", type: "internal-links", title: "Continue planning", items: [
+    { label: "China family private tours: routes and child pricing", href: "/guides/china-family-private-tours/", description: "Compare published routes and child-pricing arrangements after choosing a pace that works for your family." },
     { label: "Prepare for a first high-speed train", href: "/guides/china-high-speed-train-first-time-guide/", description: "Handle passports, tickets and stations after choosing the route." },
     { label: "Choose a hotel near useful transport", href: "/guides/china-hotel-near-metro/", description: "Reduce daily walking and transfers, not just map distance." },
     { label: "Check the usable sightseeing days", href: "/guides/is-your-china-itinerary-too-rushed/", description: "Count arrival, transfer and recovery time honestly." },

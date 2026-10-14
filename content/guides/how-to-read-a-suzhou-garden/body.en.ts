@@ -432,6 +432,11 @@ const body: StructuredPageBody = {
       title: "Keep planning the visit",
       items: [
         {
+          label: "Humble Administrator's Garden tickets and entry",
+          href: "/guides/humble-administrators-garden-tickets-entry/",
+          description: "Check booking channels, seasonal ticket prices and passport requirements for this garden.",
+        },
+        {
           label: "Explore China by destination",
           href: "/explore/",
           description: "Place Suzhou within a wider route without treating every city as the same kind of stop.",

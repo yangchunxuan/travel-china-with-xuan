@@ -40,6 +40,7 @@ const body = {
       { question: "How many hotels are in the five-day Guilin–Yangshuo route?", answer: "Four nights are split Guilin 1, Yangshuo 2 and Guilin 1. That is two hotel changes. The second Yangshuo night keeps the countryside day free of packing, and the final Guilin night protects the departure transfer." },
     ] },
     { id: "links", type: "internal-links", title: "Build the route from the real decisions", items: [
+      { label: "China family tours: compare longer routes", href: "/guides/china-family-private-tours/", description: "Compare published route lengths, city-by-city guide arrangements and how children are quoted." },
       { label: "Guilin–Yangshuo five-day private tour", href: "/tours/guilin-yangshuo-5-day-private-tour/", description: "See the exact day-by-day route, included cruise, guide days, rooms and exclusions." },
       { label: "Li River cruise booking and piers", href: "/guides/li-river-cruise-tickets-piers-booking/", description: "Check the boat, booking channel and Guilin-to-Yangshuo luggage chain." },
       { label: "Yangshuo town or Yulong River: where to stay", href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/", description: "Choose a hotel area by door access, evenings and the group's need to rest." },
