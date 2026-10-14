@@ -72,7 +72,7 @@ export function SpanishHomePage() {
               <h2 id="es-home-tours-title">Rutas privadas, con el precio a la vista.</h2>
             </div>
             <div className={styles.priceContext}>
-              <p>El guía y el vehículo son solo para su grupo, y no hay paradas de compras. {spanishGuideLanguageNote}</p>
+              <p>El vehículo es solo para su grupo y no hay paradas de compras. Cuando elige una opción con guía, este también es exclusivo para su grupo. {spanishGuideLanguageNote}</p>
             </div>
           </div>
           <ul className={`${styles.quickList} ${spanishStyles.tourList}`}>

@@ -3,6 +3,8 @@ import type { ContactEdition } from "./contactEdition";
 import { homegroundBusiness } from "./homegroundBusiness.ts";
 import type { PrivateTourInquiryContext } from "./privateTourInquiryContext";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { spanishGuideDraftLine } from "./spanishGuideCopy.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { homegroundWhatsAppHref } from "./tourContact.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { referralSources, type TourContactDraft } from "./tourContactDraft.ts";
@@ -35,7 +37,6 @@ export const spanishContactPackageLabels: Readonly<Record<string, string>> = {
 
 const tourPathPattern = /^\/es\/tours\/([a-z0-9-]+)\/$/u;
 const guidePathPattern = /^\/es\/guias\/[a-z0-9-]+\/$/u;
-const guideLanguageLine = "Idioma del guía (inglés, o español con suplemento):";
 
 function tourName(context: PrivateTourInquiryContext) {
   return spanishContactTourNames[context.slug] ?? context.name;
@@ -77,7 +78,7 @@ function messageText(context: PrivateTourInquiryContext | null, path?: string, d
     context ? selectionLabel(context) : null,
     pageUrl(context, path),
     draftText(draft),
-    guideLanguageLine,
+    spanishGuideDraftLine(context?.selection?.packageId),
   ].filter(Boolean).join("\n");
 }
 
@@ -98,7 +99,7 @@ function mailtoHref(
         guide?.title,
         guide ? pageUrl(null, guide.path) : null,
       ].filter(Boolean).join("\n");
-  const completeBody = [body, draftText(draft), guideLanguageLine].filter(Boolean).join("\n\n");
+  const completeBody = [body, draftText(draft), spanishGuideDraftLine(context?.selection?.packageId)].filter(Boolean).join("\n\n");
   return `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(completeBody.replace(/\r?\n/g, "\r\n"))}`;
 }
 
@@ -191,7 +192,7 @@ export const spanishContactEdition: ContactEdition = {
     undecided: "Aún no tengo fechas",
     note: "¿Algo que debamos saber?",
     optional: "Opcional",
-    placeholder: "Su grupo, sus intereses, el idioma del guía o un cambio en este itinerario…",
+    placeholder: "Su grupo, sus intereses, la opción de servicio o un cambio en este itinerario…",
     submit: "Pedir mi presupuesto",
     sending: "Enviando…",
     privacy: "Aviso de privacidad (en inglés)",

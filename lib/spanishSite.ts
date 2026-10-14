@@ -1,4 +1,6 @@
 import { homegroundBusiness } from "./homegroundBusiness";
+import { spanishGuideDraftLine } from "./spanishGuideCopy";
+export { spanishGuideDraftLine, spanishGuideLanguageBadge, spanishGuideLanguageNote } from "./spanishGuideCopy";
 
 /**
  * Spanish edition: a small set of tour pages and the guides that lead to
@@ -91,12 +93,6 @@ export function withSpanishAlternate<
   };
 }
 
-/** The published price includes an English-speaking guide; a Spanish-speaking one costs more. */
-export const spanishGuideLanguageNote =
-  "El precio publicado incluye guía de habla inglesa. Podemos organizar un guía de habla hispana con suplemento; la disponibilidad y el precio se confirman en el presupuesto.";
-
-export const spanishGuideLanguageBadge = "Guía en inglés · en español con suplemento";
-
 /** Says the contact buttons open a draft that the traveller sends. */
 export const spanishDraftNote =
   "WhatsApp y el correo abren un borrador: no se envía nada hasta que usted lo envíe.";
@@ -132,7 +128,7 @@ export function spanishGeneralContactHrefs(sourcePath: string) {
     "Lugares o viaje que me interesan:",
     "Fechas aproximadas:",
     "Número de viajeros:",
-    "Idioma del guía (inglés, o español con suplemento):",
+    spanishGuideDraftLine(),
     `Página de referencia: https://homegroundchina.com${sourcePath}`,
   ].join("\n");
   return {

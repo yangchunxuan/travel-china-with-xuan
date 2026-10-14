@@ -1,7 +1,9 @@
 import type { LocalizedPrivateTourProduct } from "./privateTourProducts";
+import { getPrivateTourStartingPrice } from "./privateTourStartingPrice";
 import {
   spanishTourContactNote,
   spanishEmailHref,
+  spanishGuideDraftLine,
   spanishGuideLanguageNote,
   spanishPublishedPriceNote,
   spanishSite,
@@ -20,6 +22,7 @@ export function spanishTourPageCopy(product: LocalizedPrivateTourProduct) {
     : publishedGroups.join("");
   const duration = `${product.days} días · ${product.nights} noches`;
   const fixedRoute = product.slug === "zhangjiajie-forest-4-day-private-tour";
+  const startsWithoutGuide = getPrivateTourStartingPrice(product)?.selection.packageId === "no-guide";
   return {
     htmlLang: "es",
     skipLink: "Ir a los detalles del viaje",
@@ -30,7 +33,9 @@ export function spanishTourPageCopy(product: LocalizedPrivateTourProduct) {
     heroPromise: product.eyebrow,
     facts: [
       { label: "Duración", value: duration },
-      { label: "Guía", value: "De habla inglesa; en español con suplemento" },
+      { label: "Guía", value: startsWithoutGuide
+        ? "Sin guía presencial o con guía en inglés, según la opción elegida"
+        : "De habla inglesa; en español con suplemento" },
       { label: "Alojamiento", value: `${product.nights} noches · detalle confirmado por escrito` },
       {
         label: "Precio",
@@ -158,14 +163,14 @@ export function spanishTourContactHrefs(product: LocalizedPrivateTourProduct) {
   const url = `https://homegroundchina.com${product.path}`;
   const whatsapp: Record<string, string> = {};
   const email: Record<string, string> = {};
-  const add = (key: string, packageLabel?: string, travelers?: number) => {
+  const add = (key: string, packageLabel?: string, travelers?: number, packageId?: string) => {
     const message = [
       "Hola. Me gustaría consultar este viaje.",
       `Viaje: ${product.title}`,
       ...(packageLabel && product.packages.length > 1 ? [`Opción: ${packageLabel}`] : []),
       `Número de viajeros: ${travelers ?? ""}`,
       "Fechas aproximadas:",
-      "Idioma del guía (inglés, o español con suplemento):",
+      spanishGuideDraftLine(packageId),
       `Página de referencia: ${url}`,
     ].join("\n");
     whatsapp[key] = spanishWhatsAppHref(message);
@@ -174,7 +179,7 @@ export function spanishTourContactHrefs(product: LocalizedPrivateTourProduct) {
   add("other");
   for (const tourPackage of product.packages) {
     for (const row of tourPackage.rows) {
-      add(`${tourPackage.id}:${row.travelers}`, tourPackage.label, row.travelers);
+      add(`${tourPackage.id}:${row.travelers}`, tourPackage.label, row.travelers, tourPackage.id);
     }
   }
   return { whatsapp, email };

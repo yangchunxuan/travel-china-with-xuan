@@ -1,8 +1,14 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
+import vm from "node:vm";
+
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import ts from "typescript";
 
 import { getGuideLanguagePaths, guideRegistry } from "../../lib/guideRegistry.ts";
 import { validateAndNormalizeInquiry } from "../../lib/inquiryContract.ts";
@@ -26,6 +32,12 @@ import { tourContactNote, tourContactNoteMaxLength } from "../../lib/tourContact
 import { localizeSpanishPrivateTourProduct } from "../../lib/localizeSpanishPrivateTourProduct.ts";
 import { getPrivateTourProduct, localizePrivateTourProduct } from "../../lib/privateTourProducts.ts";
 import {
+  getPrivateTourEntrySelection,
+  getPrivateTourStartingPrice,
+  getPrivateTourTwoTravellerPrice,
+} from "../../lib/privateTourStartingPrice.ts";
+import * as spanishGuideCopy from "../../lib/spanishGuideCopy.ts";
+import {
   spanishGuidePathBySourceId,
   spanishTourPagePath,
   spanishTourPageSlugs,
@@ -34,6 +46,45 @@ import { spanishGuidePath, spanishGuides } from "../../lib/spanishGuides.ts";
 import { getSpanishTourCopy, spanishTourPath, spanishTourSlugs } from "../../lib/spanishTourCopy.ts";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const require = createRequire(import.meta.url);
+
+function loadSpanishModule(path, dependencies) {
+  const code = ts.transpileModule(readFileSync(resolve(root, path), "utf8"), {
+    compilerOptions: {
+      module: ts.ModuleKind.CommonJS,
+      target: ts.ScriptTarget.ES2022,
+      jsx: ts.JsxEmit.ReactJSX,
+      esModuleInterop: true,
+    },
+  }).outputText;
+  const module = { exports: {} };
+  vm.runInNewContext(code, {
+    module,
+    exports: module.exports,
+    URL,
+    URLSearchParams,
+    process: { env: {} },
+    require(id) {
+      if (id.endsWith(".module.css")) {
+        return { __esModule: true, default: new Proxy({}, { get: (_, key) => key }) };
+      }
+      if (!(id in dependencies)) throw new Error(`${path}: unexpected dependency ${id}`);
+      return dependencies[id];
+    },
+  }, { filename: path });
+  return module.exports;
+}
+
+const spanishSiteModule = loadSpanishModule("lib/spanishSite.ts", {
+  "./homegroundBusiness": { homegroundBusiness: { serviceEmail: "hello@homegroundchina.com" } },
+  "./spanishGuideCopy": spanishGuideCopy,
+});
+const spanishTourPresentation = loadSpanishModule("lib/spanishTourPresentation.ts", {
+  "./spanishSite": spanishSiteModule,
+  "./privateTourStartingPrice": { getPrivateTourStartingPrice },
+  "./spanishTourCopy": { getSpanishTourCopy: () => null, spanishTourPath: () => "", spanishTourSlugs: [] },
+  "./spanishGuides": { spanishGuidesForTour: () => [] },
+});
 
 function spanishTour(slug) {
   const product = getPrivateTourProduct(slug);
@@ -80,6 +131,99 @@ test("every Spanish tour keeps the source days, photographs, options and publish
     );
     for (const row of spanish.packages.flatMap((item) => item.rows)) {
       assert.match(row.formatted, /^\d{1,3}(?:\.\d{3})* USD$/, `${slug}: ${row.formatted}`);
+    }
+  }
+});
+
+test("Beijing's six Spanish prices, card and product guide facts name the same services", () => {
+  const { spanish } = spanishTour("beijing-highlights-5-day-private-tour");
+  const expected = [
+    ["english-guided", "Con guía en inglés", [[2, 839], [4, 669], [6, 640]]],
+    ["no-guide", "Sin guía presencial", [[2, 770], [4, 620], [6, 590]]],
+  ];
+  assert.deepEqual(
+    spanish.packages.map((tourPackage) => [
+      tourPackage.id,
+      tourPackage.label,
+      tourPackage.rows.map((row) => [row.travelers, row.amount]),
+    ]),
+    expected,
+  );
+
+  const starting = getPrivateTourStartingPrice(spanish);
+  const twoTravellers = getPrivateTourTwoTravellerPrice(spanish);
+  assert.deepEqual(starting.selection, { packageId: "no-guide", travelers: 6 });
+  assert.equal(starting.amount, 590);
+  assert.equal(starting.serviceLabel, "Sin guía presencial");
+  assert.equal(twoTravellers.amount, 770);
+  assert.deepEqual(getPrivateTourEntrySelection(spanish), { packageId: "no-guide", travelers: 2 });
+
+  const { SpanishTourQuickCard } = loadSpanishModule("components/SpanishTourQuickCard.tsx", {
+    "react/jsx-runtime": require("react/jsx-runtime"),
+    "next/link": ({ children, href, ...props }) => React.createElement("a", { ...props, href }, children),
+    "../lib/spanishSite": spanishSiteModule,
+    "../lib/privateTourStartingPrice": {
+      getPrivateTourStartingPrice,
+      getPrivateTourTwoTravellerPrice,
+    },
+  });
+  const card = renderToStaticMarkup(React.createElement(SpanishTourQuickCard, { tour: spanish }));
+  assert.match(card, /2 viajeros<\/span> <strong>770 USD<\/strong>/);
+  assert.match(card, /6 viajeros<\/span> <strong>590 USD<\/strong>/);
+  assert.match(card, /data-guide-language="">Sin guía presencial<\/span>/);
+  assert.match(card, /Con guía en inglés: 839 USD por persona \(2 viajeros\)/);
+  for (const path of ["components/SpanishHomePage.tsx", "components/SpanishToursHubPage.tsx"]) {
+    assert.match(readFileSync(resolve(root, path), "utf8"), /<SpanishTourQuickCard key=\{tour.slug\} tour=\{tour\} \/>/);
+  }
+
+  const productCopy = spanishTourPresentation.spanishTourPageCopy(spanish);
+  const guideFact = productCopy.facts.find((fact) => fact.label === "Guía")?.value;
+  assert.match(guideFact, /sin guía presencial/i);
+  assert.match(guideFact, /guía en inglés/i);
+  assert.doesNotMatch(productCopy.serviceBody, /El precio publicado incluye guía de habla inglesa/);
+  assert.doesNotMatch(spanishGuideCopy.spanishGuideLanguageNote, /El precio publicado incluye guía de habla inglesa/);
+});
+
+test("Beijing consultation drafts preserve the chosen guide service and party size", () => {
+  const slug = "beijing-highlights-5-day-private-tour";
+  const { spanish } = spanishTour(slug);
+  const fallback = spanishTourPresentation.spanishTourContactHrefs(spanish);
+  for (const tourPackage of spanish.packages) {
+    for (const row of tourPackage.rows) {
+      const key = `${tourPackage.id}:${row.travelers}`;
+      const context = getPrivateTourInquiryContext(slug, "en", {
+        packageId: tourPackage.id,
+        travelers: row.travelers,
+      });
+      assert.ok(context, key);
+      assert.equal(spanishContactEdition.selectionLabel(context), `${tourPackage.label} · ${row.travelers} viajeros`);
+      const drafts = [
+        spanishContactEdition.messageText(context),
+        new URL(spanishContactEdition.mailtoHref(context)).searchParams.get("body"),
+        new URL(fallback.whatsapp[key]).searchParams.get("text"),
+        new URL(fallback.email[key]).searchParams.get("body"),
+      ];
+      for (const draft of drafts) {
+        assert.match(draft, new RegExp(tourPackage.label, "i"), key);
+        assert.match(draft, new RegExp(`(?:${row.travelers} viajeros|Número de viajeros: ${row.travelers})`), key);
+        assert.match(draft, new RegExp(`homegroundchina\\.com/es/tours/${slug}/`), key);
+        if (tourPackage.id === "no-guide") {
+          assert.match(draft, /Sin guía presencial ni interpretación/i, key);
+          assert.doesNotMatch(draft, /Idioma del guía/, key);
+        } else {
+          assert.match(draft, /Idioma del guía.*inglés/i, key);
+          assert.doesNotMatch(draft, /Sin guía presencial ni interpretación/i, key);
+        }
+      }
+    }
+  }
+  for (const path of ["/es/", "/es/tours/"]) {
+    const generic = spanishSiteModule.spanishGeneralContactHrefs(path);
+    for (const href of [generic.whatsapp, generic.email]) {
+      const draft = new URL(href).searchParams.get(href.startsWith("mailto:") ? "body" : "text");
+      assert.match(draft, /sin guía presencial/i);
+      assert.match(draft, /inglés/i);
+      assert.doesNotMatch(draft, /El precio publicado incluye guía/i);
     }
   }
 });
