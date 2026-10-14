@@ -252,7 +252,10 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
               <div className={styles.enquiryIntro}>
                 <p className={styles.eyebrow}>{copy.enquiry.eyebrow}</p>
                 <h2 id="reservation-enquiry-title">{copy.enquiry.title}</h2>
-                <p>{copy.enquiry.intro}</p>
+                <p className={styles.enquiryIntroLead}>{copy.enquiry.intro}</p>
+                <p className={styles.shortNotice}>
+                  <strong>{copy.enquiry.shortNoticeTitle}</strong>{" "}{copy.enquiry.shortNoticeBody}
+                </p>
               </div>
             }
             locale={locale}

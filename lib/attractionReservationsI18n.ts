@@ -46,6 +46,8 @@ export interface AttractionReservationEnquiryCopy {
   eyebrow: string;
   title: string;
   intro: string;
+  shortNoticeTitle: string;
+  shortNoticeBody: string;
   attractions: string;
   attractionsHint: string;
   /** A guide referral starts with its already-selected attraction; the full list opens from "add". */
@@ -311,6 +313,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       eyebrow: "Reservation request",
       title: "Tell us what to reserve",
       intro: `Nothing is sent until you press send in WhatsApp or email. Request and pay at least ${days} days before your first visit for a guaranteed booking, except at an attraction marked “best effort”.`,
+      shortNoticeTitle: `Visiting in less than ${days} days?`,
+      shortNoticeBody: "You can still send a request. We’ll check availability, but booking is not guaranteed.",
       attractions: "Attractions",
       attractionsHint: "Choose as many as you like; you will pick a date for each one below.",
       selectedAttractions: "Your tickets",
@@ -487,6 +491,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       eyebrow: "代预约需求",
       title: "告诉我们要预约什么",
       intro: `在 WhatsApp 或邮件里按下发送之前，什么都不会发出。在第一个参观日前至少 ${days} 天发送并付款，即享预约保证（标注“尽力预约”的景点除外）。`,
+      shortNoticeTitle: `距离参观不足${days}天？`,
+      shortNoticeBody: "仍可提交需求。我们会核查可订情况，但不保证预约成功。",
       attractions: "景点",
       attractionsHint: "可多选。选好后，在下方为每个景点选日期。",
       selectedAttractions: "已选门票",
@@ -663,6 +669,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       eyebrow: "예약 요청",
       title: "예약할 내용을 알려 주세요",
       intro: `카카오톡, WhatsApp, 이메일에서 보내기를 누르기 전에는 아무것도 전송되지 않습니다. 첫 방문일 최소 ${days}일 전까지 보내고 결제하시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외).`,
+      shortNoticeTitle: `방문까지 ${days}일도 남지 않았나요?`,
+      shortNoticeBody: "요청하셔도 괜찮습니다. 예약 가능 여부를 확인해 드리지만, 예약을 보장하지는 않습니다.",
       attractions: "관광지",
       attractionsHint: "여러 곳을 고를 수 있어요. 고른 뒤 아래에서 관광지마다 날짜를 정해 주세요.",
       selectedAttractions: "선택한 입장권",

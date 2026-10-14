@@ -667,7 +667,7 @@
   max-width: 48rem;
 }
 
-.enquiryIntro p:last-child {
+.enquiryIntroLead {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
@@ -677,6 +677,22 @@
 
 .enquiryIntro h2 {
   margin-top: 0.75rem;
+}
+
+.shortNotice {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  max-width: 40rem;
+}
+
+.shortNotice strong {
+  font-weight: 600;
+}
+
+.enquiryIntro .shortNotice {
+  margin: 0.75rem 0 0;
 }
 
 .enquiryForm {
