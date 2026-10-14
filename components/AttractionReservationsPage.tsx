@@ -280,7 +280,15 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
         <section className={styles.twoColumn} aria-labelledby="reservation-limits-title">
           <div>
             <h2 id="reservation-limits-title">{copy.limitsTitle}</h2>
-            <ul className={styles.plainList}>{copy.limits.map((item) => <li key={item}>{item}</li>)}</ul>
+            {/* One row per stage, in the order a request moves through them. */}
+            <dl className={styles.stageList}>
+              {copy.limits.map((item) => (
+                <div key={item.title}>
+                  <dt>{item.title}</dt>
+                  <dd>{item.body}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div className={styles.tile}>
             <h2 id="reservation-compliance-title">{copy.complianceTitle}</h2>
