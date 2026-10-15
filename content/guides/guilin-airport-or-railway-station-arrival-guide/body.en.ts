@@ -16,6 +16,33 @@ const body = {
       body: "For a central Guilin hotel, test a workable train at Guilin Railway Station first; it often removes a longer city transfer. Use Guilin North or Guilin West when the better live train and the full onward journey justify them. Use KWL when the flight is the right intercity product. If the first bed is in Yangshuo or a rural property, compare the gateway-to-property chain before buying—do not route through central Guilin automatically.",
     },
     {
+      id: "arrival-location-heading",
+      type: "heading",
+      level: 2,
+      text: "Guilin station locations and the airport bus to the city",
+    },
+    {
+      id: "station-addresses",
+      type: "table",
+      caption: "Three separate stations — match the Chinese name on your ticket",
+      columns: ["Railway station", "Location listed by China Railway 12306"],
+      rows: [
+        ["Guilin Railway Station / 桂林站", "39 Zhongshan South Road, Guilin / 中山南路39号"],
+        ["Guilin North Railway Station / 桂林北站", "6 Zhanqian Road, Diecai District / 叠彩区站前路6号"],
+        ["Guilin West Railway Station / 桂林西站", "Zhuangshang Village, Dingjiang Town, Lingchuan County / 灵川县定江镇庄上村"],
+      ],
+    },
+    {
+      id: "station-location-answer",
+      type: "paragraph",
+      text: "Guilin West is in Dingjiang, Lingchuan County; it is not another exit of Guilin Station or Yangshuo's West Street. North and West are separate passenger stations. Match the exact name on your ticket before arranging transport, then check the route from that station to your hotel.",
+    },
+    {
+      id: "airport-city-answer",
+      type: "paragraph",
+      text: "From Guilin Airport (KWL) to the city, compare the airport bus, taxi and app-based ride-hail options. At our 15 October 2026 check, the airport operator listed city-bus stops including 锦江都城酒店 near Guilin Railway Station and Minhang Dasha (民航大厦), plus further city stops. Check the current stop list and travel-day ticket sale to choose the stop for your exact hotel, then plan the final local journey. For a taxi or ride-hail, follow the airport's current pickup signs and app instructions.",
+    },
+    {
       id: "scope-boundary",
       type: "callout",
       title: "What this guide owns",
@@ -377,6 +404,8 @@ const body = {
       type: "sources",
       title: "Official sources and image credit",
       items: [
+        { label: "Guilin, Guilin North and Guilin West station addresses", url: "https://kyfw.12306.cn/mormhweb/kyyyz/nanning/201001/t20100124_1186.html", publisher: "China Railway 12306", reviewedAt: "2026-10-15" },
+        { label: "Airport operator's current Guilin city-bus stops; check the travel-day ticket sale", url: "https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73", publisher: "Guilin Liangjiang International Airport / Guangxi Airport Management Group", reviewedAt: "2026-10-15" },
         { label: "Current Guilin city airport-bus channels, including central Guilin, Guilin North and Guilin West", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Current airport intercity transport page, including Yangshuo channels", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Official international-arrival and ground-transport choices", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
