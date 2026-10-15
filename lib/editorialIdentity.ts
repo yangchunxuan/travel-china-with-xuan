@@ -121,7 +121,9 @@ export function editorialPersonSchema(locale: HomegroundLocale) {
 
 export function editorialOrganizationSchema() {
   return {
-    "@type": "TravelAgency",
+    // Corporate identity: the verified cluster registration address is not a
+    // confirmed physical business location for LocalBusiness rich results.
+    "@type": "Organization",
     "@id": EDITORIAL_ORGANIZATION_ID,
     name: HOMEGROUND_BRAND_NAME,
     // The one operating entity, the same on every page (lib/homegroundBusiness.ts).

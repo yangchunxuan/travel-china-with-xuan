@@ -76,7 +76,7 @@ const body: StructuredPageBody = {schemaVersion: "1.0.0", blocks: [
     {label: "2026 年公众湿地景区与科普产品", url: "https://www.yancheng.gov.cn/art/2026/4/26/art_34154_4420721.html", publisher: "盐城市人民政府", reviewedAt: "2026-08-13"},
     {label: "条子泥繁殖栖息地保护动态", url: "https://wap.yancheng.gov.cn/art/2026/5/9/art_45136_4424125.html", publisher: "盐城市人民政府", reviewedAt: "2026-08-13"},
     {label: "盐城市黄海湿地保护条例", url: "https://www.yancheng.gov.cn/art/2019/10/25/art_13184_3279209.html", publisher: "盐城市人民政府", reviewedAt: "2026-08-13"},
-    {label: "首图：zhangshen 于 2021 年 9 月 8 日拍摄的盐城滨海盐沼与远处麋鹿", url: "https://commons.wikimedia.org/wiki/File:P%C3%A8_David%27s_Deer_imported_from_iNaturalist_photo_162354434_on_24_January_2024.jpg", publisher: "Wikimedia Commons / zhangshen", reviewedAt: "2026-08-13"},
+    {label: "首图：zhangshen 于 2021 年 9 月 8 日拍摄的盐城滨海盐沼与远处麋鹿", url: "https://commons.wikimedia.org/wiki/File:P%C3%A8re_David%27s_Deer_imported_from_iNaturalist_photo_162354434_on_24_January_2024.jpg", publisher: "Wikimedia Commons / zhangshen", reviewedAt: "2026-08-13"},
     {label: "首图许可：知识共享署名 4.0", url: "https://creativecommons.org/licenses/by/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-13"}
   ]}
 ]};

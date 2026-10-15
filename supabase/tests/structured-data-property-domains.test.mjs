@@ -37,7 +37,7 @@ test("reviewedBy is attached only to WebPage, never to Article", async () => {
 });
 
 test("homepage organization does not claim a content language; WebSite retains its languages", async () => {
-  // https://schema.org/inLanguage applies to CreativeWork, not TravelAgency.
+  // https://schema.org/inLanguage applies to CreativeWork, not Organization.
   const homepage = await source("components/HomegroundHomePage.tsx");
   const organization = descendants(homepage).find((node) =>
     ts.isVariableDeclaration(node) && node.name.getText(homepage) === "organizationSchema",
@@ -50,6 +50,32 @@ test("homepage organization does not claim a content language; WebSite retains i
     ts.isObjectLiteralExpression(node) && schemaType(node) === "WebSite",
   );
   assert.deepEqual(properties(website).get("inLanguage").elements.map((node) => node.text), ["en", "zh-Hans", "ko"]);
+});
+
+test("the corporate identity never becomes a physical LocalBusiness on another surface", async () => {
+  const paths = (await Promise.all(["lib/", "components/"].map(async (directory) =>
+    (await readdir(new URL(directory, root), { recursive: true }))
+      .filter((path) => /\.tsx?$/u.test(path))
+      .map((path) => `${directory}${path}`),
+  ))).flat();
+  const declarations = [];
+  for (const path of paths) {
+    const tree = await source(path);
+    for (const object of descendants(tree).filter(ts.isObjectLiteralExpression)) {
+      const fields = properties(object);
+      const id = fields.get("@id");
+      if (!id || (id.getText(tree) !== "EDITORIAL_ORGANIZATION_ID"
+        && id.text !== "https://homegroundchina.com/#organization")) continue;
+      if (!fields.has("@type")) continue; // Publisher/provider references have no type.
+      declarations.push(path);
+      assert.equal(schemaType(object), "Organization", `${path}: keep one corporate type for the same entity`);
+      for (const field of ["geo", "openingHours", "openingHoursSpecification", "hasMap"]) {
+        assert.equal(fields.has(field), false, `${path}: no unverified physical premises data`);
+      }
+    }
+  }
+  assert.ok(declarations.includes("lib/editorialIdentity.ts"));
+  assert.ok(declarations.includes("components/HomegroundCareersPage.tsx"));
 });
 
 test("reviewer stays linked to each localized canonical page through a valid WebPage value", async () => {

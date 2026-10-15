@@ -8,6 +8,15 @@ Status: **READY — THREE-LANGUAGE COPY, SOURCES AND LICENSED ASSET COMPLETE**
 
 `checked_at`: **2026-08-21 (Asia/Shanghai)**
 
+## English direct-answer addition — checked 15 October 2026
+
+The exact-page Search Console report for 15 September–12 October 2026 returned 179 impressions, zero clicks and average position 14.35. Visible query rows included `guilin west railway station` (15 impressions) and `guilin airport to city` (9). These incomplete query samples support a small orientation addition, not a claim of buying demand or proven CTR failure. The title, H1, choice framework, product facts, internal links and inquiry presentation remain unchanged.
+
+- [China Railway 12306 passenger-station address table](https://kyfw.12306.cn/mormhweb/kyyyz/nanning/201001/t20100124_1186.html): Guilin at Zhongshan South Road 39; North at Diecai District, Zhanqian Road 6; West at Zhuangshang Village, Dingjiang Town, Lingchuan County. Use for station identity and addresses, not current stopping patterns or transfer duration. No explicit table update date was established.
+- [Airport operator's current city-bus page](https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73): current examples include 锦江都城酒店 near Guilin Station and 民航大厦, with further city stops. The travel-day sale controls availability. Ordinary HTTPS retrieval returned 200 with valid TLS on 15 October. The English addition dates these examples explicitly and does not designate a sole fixed terminus, timetable, fare or guaranteed flight connection.
+
+This is a targeted English addition. The original three-language source baseline below remains dated 21 August; other old claims are not represented as freshly reviewed. After release, compare complete post-release query/page windows and retain the limited query coverage caveat.
+
 ## Editorial conclusion
 
 The useful decision is not “Which Guilin terminal is best?” in isolation. A traveller should first obey the exact airport or station printed on the live booking, then compare the complete chain from that gateway to the exact hotel or onward base. The durable inputs are the correct Chinese place name and map pin, luggage, group mobility, arrival time, and a legal fallback that still works if the preferred connection disappears.

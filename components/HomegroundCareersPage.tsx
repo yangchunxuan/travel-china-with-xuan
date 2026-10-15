@@ -39,7 +39,7 @@ export function HomegroundCareersPage() {
       ].join(""),
       datePosted: ROLES_POSTED,
       hiringOrganization: {
-        "@type": "TravelAgency",
+        "@type": "Organization",
         "@id": EDITORIAL_ORGANIZATION_ID,
         name: homegroundBusiness.brand,
         legalName: homegroundBusiness.registeredName,
