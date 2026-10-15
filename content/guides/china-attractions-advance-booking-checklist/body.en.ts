@@ -205,8 +205,8 @@ const body: StructuredPageBody = {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "Reservation support in eight cities",
-      "body": "Our reservation service covers selected attractions in Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang: USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "title": "Reservation support for selected attractions",
+      "body": "Our reservation service covers the selected attractions listed on our current reservation service page: USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
       "link": {
         "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
         "label": "See attractions, fees and terms"
@@ -225,7 +225,7 @@ const body: StructuredPageBody = {
         {
           "label": "Zhangjiajie private guide",
           "href": "/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "Tianmen Mountain and Forest Park are outside the eight-city reservation service: plan them with a Zhangjiajie private tour or guide. Guide-only service quotes transport and tickets separately."
+          "description": "Tianmen Mountain and Forest Park are outside our attraction reservation service: plan them with a Zhangjiajie private tour or guide. Guide-only service quotes transport and tickets separately."
         }
       ]
     },
@@ -248,7 +248,7 @@ const body: StructuredPageBody = {
         },
         {
           "question": "Can Homeground book attractions for me?",
-          "answer": "For selected attractions in eight cities, yes: the reservation service costs USD 7 per person per attraction plus the official ticket price, and we confirm the scope and channel in writing before you pay. Attractions in a Homeground private-tour itinerary are reserved at no extra service fee. For Tianmen Mountain and Zhangjiajie Forest Park, choose a Zhangjiajie private tour or our private guide service; guide-only bookings quote tickets and transport separately."
+          "answer": "For the selected attractions listed on our current reservation service page, yes: the reservation service costs USD 7 per person per attraction plus the official ticket price, and we confirm the scope and channel in writing before you pay. Attractions in a Homeground private-tour itinerary are reserved at no extra service fee. For Tianmen Mountain and Zhangjiajie Forest Park, choose a Zhangjiajie private tour or our private guide service; guide-only bookings quote tickets and transport separately."
         }
       ]
     },

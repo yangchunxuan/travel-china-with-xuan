@@ -145,7 +145,7 @@ const body: StructuredPageBody = {
       "type": "callout",
       "tone": "decision",
       "title": "When a channel or group booking gets stuck",
-      "body": "Our reservation service covers selected attractions in eight cities for USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "body": "Our reservation service covers the selected attractions listed on our current reservation service page, for USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
       "link": {
         "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
         "label": "See the service and terms"
@@ -164,7 +164,7 @@ const body: StructuredPageBody = {
         {
           "label": "Zhangjiajie private guide",
           "href": "/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "Tianmen Mountain and Forest Park are outside the eight-city reservation service: plan them with a Zhangjiajie private tour or guide. A guide's fee does not include transport or admission."
+          "description": "Tianmen Mountain and Forest Park are outside our attraction reservation service: plan them with a Zhangjiajie private tour or guide. A guide's fee does not include transport or admission."
         }
       ]
     },
