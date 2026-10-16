@@ -20,6 +20,7 @@ export const japaneseLegacyZhangjiajieMetadata: Metadata = {
       ko: `/ko/tours/${slug}/`,
       ja: path,
       fr: `/fr/tours/${slug}/`,
+      es: `/es/tours/${slug}/`,
       "x-default": `/tours/${slug}/`,
     },
   },

@@ -39,7 +39,7 @@ export function SpanishContactPanel({
       </div>
       <p className={styles.note}>{spanishDraftNote}</p>
       <p className={styles.note}>
-        Puede escribirnos en español a{" "}
+        Puedes escribirnos en español a{" "}
         <a href={`mailto:${homegroundBusiness.serviceEmail}`}>{homegroundBusiness.serviceEmail}</a>.
         La consulta es gratuita: solo se paga después de recibir y aceptar por escrito el contenido y el precio del viaje.
       </p>

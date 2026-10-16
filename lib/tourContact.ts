@@ -97,12 +97,12 @@ export function openTourContactFromLink(event: ContactLinkEvent, href: string, l
   const context = getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
   if (!context) return false;
   const sourcePath = `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`;
-  // French uses the English intake contract. Its same-page custom-group link
+  // French and Spanish use the English intake contract. A same-page custom-group link
   // must open now: a query-only Next Link navigation preserves the contact host.
-  const frenchCustomGroup = locale === "en" && context.customGroup
-    && window.location.pathname === `/fr/tours/${context.slug}/`
+  const editionCustomGroup = locale === "en" && context.customGroup
+    && ["fr", "es"].some(language => window.location.pathname === `/${language}/tours/${context.slug}/`)
     && url.pathname === window.location.pathname;
-  if (window.location.pathname !== sourcePath && !frenchCustomGroup) return false;
+  if (window.location.pathname !== sourcePath && !editionCustomGroup) return false;
   return openTourContactForContext(event, context, returnFocus);
 }
 

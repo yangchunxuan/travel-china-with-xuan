@@ -142,6 +142,7 @@ export function getHomegroundLegalLanguagePaths(
     ko: getHomegroundLegalPath(pageId, "ko"),
     ja: `/ja/${pageId}/`,
     fr: `/fr/${pageId}/`,
+    es: `/es/${pageId}/`,
     "x-default": getHomegroundLegalPath(pageId, "en"),
   };
 }

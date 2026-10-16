@@ -18,7 +18,7 @@ const hubContentModifiedAt: Record<TourHubLocale, string> = {
   zh: "2026-10-11",
   ko: "2026-10-11",
   ja: "2026-09-27",
-  es: "2026-10-11",
+  es: "2026-10-16",
   fr: "2026-10-16",
 };
 

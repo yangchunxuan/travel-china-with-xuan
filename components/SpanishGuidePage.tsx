@@ -178,7 +178,7 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
           <aside className={styles.relatedDestinations}>
             <div>
               <p>Viajes publicados</p>
-              <h2>Llévelo a un itinerario real.</h2>
+              <h2>Convierte la idea en un viaje.</h2>
             </div>
             <ul>
               {tours.map((tour) => (
@@ -193,10 +193,10 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
         <aside className={styles.cta} data-similarity-ignore id="contact">
           <div>
             <p className={styles.ctaLabel}>Organizarlo con un equipo local</p>
-            <h2>Cuéntenos el viaje que tiene en mente.</h2>
+            <h2>Cuéntanos el viaje que tienes en mente.</h2>
             <p>
-              Díganos las fechas, cuántos viajan y un presupuesto aproximado. Puede escribirnos en español por WhatsApp o{" "}
-              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>; no se envía nada hasta que usted lo envíe.
+              Dinos las fechas, cuántas personas viajan y un presupuesto aproximado. Puedes escribirnos en español por WhatsApp o{" "}
+              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>; debes enviar el borrador desde la aplicación para que nos llegue.
             </p>
           </div>
           <a href={contact.whatsapp} rel="noopener noreferrer" target="_blank">
