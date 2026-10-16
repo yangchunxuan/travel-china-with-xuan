@@ -145,7 +145,7 @@ const body: StructuredPageBody = {
       "type": "callout",
       "tone": "decision",
       "title": "渠道或全组预约卡住时",
-      "body": "我们的代预约服务覆盖八个城市的部分景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
+      "body": "我们的代预约服务覆盖当前预约服务页列出的指定景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
       "link": {
         "href": "https://homegroundchina.com/zh/services/china-attraction-reservations/#reservation-enquiry",
         "label": "查看代预约服务与预约条款"
@@ -164,7 +164,7 @@ const body: StructuredPageBody = {
         {
           "label": "张家界私人导游",
           "href": "/zh/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "天门山和森林公园不在八城代预约服务内，可通过张家界私家团或导游来安排。只付导游费不包含交通和门票。"
+          "description": "天门山和森林公园不在景点代预约服务范围内，可通过张家界私家团或导游来安排。只付导游费不包含交通和门票。"
         }
       ]
     },

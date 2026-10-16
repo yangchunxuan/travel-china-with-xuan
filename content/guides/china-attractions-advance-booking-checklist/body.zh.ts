@@ -205,8 +205,8 @@ const body: StructuredPageBody = {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "八个城市的景点代预约",
-      "body": "我们的代预约服务覆盖北京、上海、苏州、杭州、西安、成都、桂林和丽江的部分景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
+      "title": "指定景点代预约",
+      "body": "我们的代预约服务覆盖当前预约服务页列出的指定景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
       "link": {
         "href": "https://homegroundchina.com/zh/services/china-attraction-reservations/#reservation-enquiry",
         "label": "查看景点范围、费用与预约条款"
@@ -225,7 +225,7 @@ const body: StructuredPageBody = {
         {
           "label": "张家界私人导游",
           "href": "/zh/services/private-english-speaking-guides/#zhangjiajie",
-          "description": "天门山和森林公园不在八城代预约服务内，可通过张家界私家团或导游来安排；仅导游服务时，交通和门票另行报价。"
+          "description": "天门山和森林公园不在景点代预约服务范围内，可通过张家界私家团或导游来安排；仅导游服务时，交通和门票另行报价。"
         }
       ]
     },
@@ -248,7 +248,7 @@ const body: StructuredPageBody = {
         },
         {
           "question": "Homeground能帮我预约景点吗？",
-          "answer": "八个城市的部分景点可以：代预约服务费为每人每景点45元，门票按官方价格另付，付款前我们会书面确认范围和渠道。Homeground私家团行程内的景点预约不另收服务费。天门山和张家界国家森林公园，请选择张家界私家团或私人导游服务；仅导游服务时，门票和交通另行报价。"
+          "answer": "当前预约服务页列出的指定景点可以：代预约服务费为每人每景点45元，门票按官方价格另付，付款前我们会书面确认范围和渠道。Homeground私家团行程内的景点预约不另收服务费。天门山和张家界国家森林公园，请选择张家界私家团或私人导游服务；仅导游服务时，门票和交通另行报价。"
         }
       ]
     },
