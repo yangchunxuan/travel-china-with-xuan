@@ -7,7 +7,7 @@
     "guide:check": "node tools/generate-guide-registry.mjs --check",
     "guide:check-parallel-merge": "node tools/check-parallel-guide-merge.mjs",
     "postinstall": "npm run guide:generate",
-    "predev": "npm run guide:generate",
+    "predev": "npm run guide:generate && npm run generate:french-contact-names",
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
@@ -33,11 +33,13 @@
     "test:homepage-search": "node --test supabase/tests/homepage-guide-search-static.test.mjs",
     "typecheck": "npm run guide:generate && tsc --noEmit",
     "generate:image-variants": "node tools/generate-image-variants.mjs",
-    "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants",
+    "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants && npm run generate:french-contact-names",
     "build": "next build",
     "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && node --experimental-strip-types --no-warnings tools/generate-llms-txt.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:ja-pilot-export && npm run check:guide-sales-card-export && npm run check:private-car-export && node tools/generate-inquiry-contract.mjs",
     "start": "next start",
-    "check:private-car-export": "node tools/check-private-car-export.mjs"
+    "check:private-car-export": "node tools/check-private-car-export.mjs",
+    "generate:french-contact-names": "node --experimental-strip-types --no-warnings tools/generate-french-contact-names.mjs",
+    "check:french-export": "node tools/check-french-export.mjs"
   },
   "dependencies": {
     "@daypicker/react": "10.0.1",

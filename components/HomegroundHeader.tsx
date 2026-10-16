@@ -74,7 +74,7 @@ export type HomegroundPageContext =
   | "careers"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr";
 type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
 
 interface HomegroundHeaderProps {
@@ -587,7 +587,7 @@ export function HomegroundHeader({
   };
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetLocale: HomegroundLocale | "ja" | "es",
+    targetLocale: HomegroundLocale | "ja" | "es" | "fr",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -609,7 +609,7 @@ export function HomegroundHeader({
     if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
       // The Japanese and Spanish pages have no newsletter or planner form to receive state.
-      if (targetLocale !== "ja" && targetLocale !== "es") {
+      if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr") {
         requestNewsletterLanguageTransfer(event.currentTarget.pathname);
         if ((locale === "en") !== (targetLocale === "en")) {
           markHomegroundInternalReload(event.currentTarget.href);
@@ -690,6 +690,11 @@ export function HomegroundHeader({
       <span className={styles.languageChoiceShort}>ES</span>
       <span className={styles.languageChoiceEndonym}>Español</span>
     </a>
+  ) : null;
+
+  const frenchLanguageHref = languagePaths?.fr;
+  const renderFrenchLanguageChoice = () => frenchLanguageHref ? (
+    <a href={frenchLanguageHref} hrefLang="fr" lang="fr" onClick={(event) => handleLanguageChange(event, "fr")}><span className={styles.languageChoiceShort}>FR</span><span className={styles.languageChoiceEndonym}>Français</span></a>
   ) : null;
 
   const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
@@ -897,6 +902,7 @@ export function HomegroundHeader({
             {availableLanguageLocales.map(renderLanguageChoice)}
             {renderJapaneseLanguageChoice()}
             {renderSpanishLanguageChoice()}
+            {renderFrenchLanguageChoice()}
           </nav>
           <Link
             className={styles.headerCta}
@@ -1026,6 +1032,7 @@ export function HomegroundHeader({
               {availableLanguageLocales.map(renderLanguageChoice)}
               {renderJapaneseLanguageChoice()}
               {renderSpanishLanguageChoice()}
+            {renderFrenchLanguageChoice()}
             </div>
           </div>
         </nav>

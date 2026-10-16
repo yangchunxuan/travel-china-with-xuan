@@ -497,7 +497,7 @@ export function HomegroundHomePage({
       </a>
       <HomegroundHeader
         locale={locale}
-        languagePaths={{ en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: "/es/" }}
+        languagePaths={{ en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: "/es/", fr: "/fr/" }}
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
         handoffDirty={handoffDirty || starterNoteDirty}

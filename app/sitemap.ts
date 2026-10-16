@@ -22,6 +22,7 @@ import { spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
 import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides";
 import { spanishSite } from "../lib/spanishSite";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy";
+import { frenchSitePagePathByEnglishPath } from "../lib/frenchEditionIndex";
 import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
 import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
@@ -124,8 +125,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "zh-Hans": "/zh/tours/zhangjiajie-4-day-private-tour/",
     ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
     ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
+    fr: "/fr/tours/zhangjiajie-4-day-private-tour/",
     "x-default": "/tours/zhangjiajie-4-day-private-tour/",
   };
+  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
   const legacyPaths = new Set<string>(Object.values(legacyAlternates));
   // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
   const japaneseSitePages = [
@@ -160,7 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               ? absoluteJaPilotAlternates(legacyAlternates)
               : japaneseSiteAlternatesByPath.has(entry.canonicalPath)
                 ? absoluteJaPilotAlternates(japaneseSiteAlternatesByPath.get(entry.canonicalPath)!)
-        : absoluteManifestAlternates(entry);
+        : Object.values(halfDayAlternates).includes(entry.canonicalPath) ? absoluteJaPilotAlternates(halfDayAlternates) : absoluteManifestAlternates(entry);
 
     return {
       url: `${base}${entry.canonicalPath}`,
@@ -283,5 +286,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries];
+  const frenchEntries: MetadataRoute.Sitemap = [
+    ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.fr}`, lastModified: "2026-10-16", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
+    ...Object.entries(frenchSitePagePathByEnglishPath).map(([en,path]) => ({
+      url: `${base}${path}`, lastModified: "2026-10-16", changeFrequency: "monthly" as const, priority: path === "/fr/" ? 0.8 : 0.6,
+      alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
+    })),
+    { url: `${base}/fr/contact/`, lastModified: "2026-10-16", changeFrequency: "monthly", priority: 0.5 },
+    ...privateTourProducts.map(product => ({
+      url: `${base}/fr/tours/${product.slug}/`, lastModified: product.dateModified > "2026-10-16" ? product.dateModified : "2026-10-16", changeFrequency: "monthly" as const, priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
+    })),
+  ];
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries];
 }

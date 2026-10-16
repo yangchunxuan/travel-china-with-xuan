@@ -23,6 +23,7 @@ export const metadata: Metadata = {
       ko: "/ko/privacy/",
       "zh-Hans": "/zh/privacy/",
       ja: "/ja/privacy/",
+      fr: "/fr/privacy/",
       "x-default": "/privacy/",
     },
   },

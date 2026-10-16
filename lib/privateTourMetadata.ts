@@ -62,6 +62,7 @@ export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
       : `/ja/tours/${product.slug}/`,
     // Only tours with a Spanish page get the Spanish hreflang link.
     ...(es ? { es } : {}),
+    fr: `/fr/tours/${product.slug}/`,
     "x-default": paths.en,
   } as const;
 }

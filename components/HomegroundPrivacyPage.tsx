@@ -18,6 +18,7 @@ export function HomegroundPrivacyPage({
     zh: getHomegroundPrivacyCopy("zh").pagePath,
     ko: getHomegroundPrivacyCopy("ko").pagePath,
     ja: "/ja/privacy/",
+    fr: "/fr/privacy/",
   };
 
   return (

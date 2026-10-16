@@ -1041,6 +1041,10 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+  .mobileLanguageNav:has(> a:nth-child(6)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .mobileLanguageNav a {
     align-items: center;
     border: 0;

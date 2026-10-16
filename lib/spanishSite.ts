@@ -1,3 +1,4 @@
+import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
 import { homegroundBusiness } from "./homegroundBusiness";
 
 /**
@@ -72,6 +73,7 @@ export function spanishAlternates(
     ko: overrides.ko ?? `/ko/${suffix}`,
     ...(overrides.ja ? { ja: overrides.ja } : {}),
     es: esPath,
+    ...(frenchSitePagePathByEnglishPath[enPath] ? { fr: frenchSitePagePathByEnglishPath[enPath] } : {}),
     "x-default": enPath,
   } as const;
 }

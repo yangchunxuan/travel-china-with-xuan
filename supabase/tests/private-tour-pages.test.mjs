@@ -1047,9 +1047,14 @@ test("manifest distinguishes one tours hub from every registry product and detai
     },
   );
   for (const hubEntry of hubEntries) {
-    // The manifest covers English, Chinese and Korean; Japanese and Spanish pages add their links in the page head.
-    const { ja: _ja, es: _es, ...manifestLanguages } = getPrivateTourHubLanguagePaths();
-    assert.deepEqual(hubEntry.alternates, manifestLanguages);
+    // The manifest covers English, Chinese and Korean. Japanese, Spanish and
+    // French routes are added by their editions; page heads expose all editions.
+    assert.deepEqual(hubEntry.alternates, {
+      en: privateTourHubPaths.en,
+      "zh-Hans": privateTourHubPaths.zh,
+      ko: privateTourHubPaths.ko,
+      "x-default": privateTourHubPaths.en,
+    });
   }
 
   for (const product of privateTourProducts) {
@@ -1061,6 +1066,7 @@ test("manifest distinguishes one tours hub from every registry product and detai
       ja: `/ja/tours/${product.slug}/`,
       // Only the tours with a Spanish page link one.
       ...(spanishTourPageSlugs.includes(product.slug) ? { es: `/es/tours/${product.slug}/` } : {}),
+      fr: `/fr/tours/${product.slug}/`,
       "x-default": `/tours/${product.slug}/`,
     });
 
@@ -1090,10 +1096,14 @@ test("manifest distinguishes one tours hub from every registry product and detai
       );
       assert.ok(manifestEntry, `${product.slug}/${locale} manifest entry`);
       assert.equal(manifestEntry.canonicalPath, localized.path);
-      // Japanese and Spanish tours are added to route metadata and sitemap
+      // Japanese, Spanish and French tours are added to route metadata and sitemap
       // separately; the three-language content-node schema remains unchanged.
-      const { ja: _japanesePath, es: _spanishPath, ...manifestLanguages } = languages;
-      assert.deepEqual(manifestEntry.alternates, manifestLanguages);
+      assert.deepEqual(manifestEntry.alternates, {
+        en: `/tours/${product.slug}/`,
+        "zh-Hans": `/zh/tours/${product.slug}/`,
+        ko: `/ko/tours/${product.slug}/`,
+        "x-default": `/tours/${product.slug}/`,
+      });
     }
   }
 
