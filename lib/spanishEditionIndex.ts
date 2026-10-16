@@ -1,20 +1,11 @@
+// @ts-ignore Node source tests use explicit TypeScript extensions.
+import { privateTourInquiryIndex } from './privateTourInquiryIndex.ts';
 /**
  * Which tours and guides have a Spanish page. Kept apart from the Spanish
  * text so the modules that only need the hreflang link stay small; a test
  * holds this index to the Spanish copy and guide registries.
  */
-export const spanishTourPageSlugs: readonly string[] = Object.freeze([
-  "beijing-xian-shanghai-8-day-private-tour",
-  "beijing-xian-guilin-shanghai-10-day-private-tour",
-  "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-  "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-  "zhangjiajie-forest-4-day-private-tour",
-  "zhangjiajie-furong-fenghuang-7-day-private-tour",
-  "guilin-yangshuo-5-day-private-tour",
-  "beijing-highlights-5-day-private-tour",
-  "xian-terracotta-warriors-5-day-private-tour",
-  "chengdu-pandas-sanxingdui-5-day-private-tour",
-]);
+export const spanishTourPageSlugs: readonly string[] = Object.freeze(privateTourInquiryIndex.filter(product => product.visibility !== 'preview').map(product => product.slug));
 
 /** English guide id → its Spanish page. */
 export const spanishGuidePathBySourceId: Readonly<Record<string, string>> = Object.freeze({
@@ -32,8 +23,10 @@ export const spanishSitePagePathByEnglishPath: Readonly<Record<string, string>> 
   "/": "/es/",
   "/tours/": "/es/tours/",
   "/guides/": "/es/guias/",
+  "/services/": "/es/services/", "/studio/": "/es/studio/", "/business-information/": "/es/business-information/",
+  "/terms/": "/es/terms/", "/privacy/": "/es/privacy/", "/refund-delivery/": "/es/refund-delivery/",
 });
 
 export function spanishTourPagePath(slug: string): string | undefined {
-  return spanishTourPageSlugs.includes(slug) ? `/es/tours/${slug}/` : undefined;
+  return (spanishTourPageSlugs.includes(slug) || slug === "zhangjiajie-4-day-private-tour" || slug === "xian-terracotta-warriors-half-day-private-tour") ? `/es/tours/${slug}/` : undefined;
 }

@@ -1,182 +1,61 @@
+import type { Metadata } from 'next';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
-import { homegroundBusiness } from "./homegroundBusiness";
+import { homegroundBusiness } from './homegroundBusiness';
 
-/**
- * Spanish edition: a small set of tour pages and the guides that lead to
- * them. It has its own routes and chrome, like the Japanese pages, and does
- * not go through the English, Chinese and Korean locale system.
- */
-export const spanishSite = {
-  home: "/es/",
-  tours: "/es/tours/",
-  guides: "/es/guias/",
-  // The same link the main site uses for "talk to a planner": the contact card
-  // answers it on every Spanish page, and without JavaScript it lands on the
-  // home page's contact section.
-  contact: "/es/#planner-contact",
-} as const;
-
-export interface SpanishNavLink {
-  readonly href: string;
-  readonly label: string;
-  readonly description: string;
-}
-
+export const spanishSite = { home: '/es/', tours: '/es/tours/', guides: '/es/guias/', services: '/es/services/', studio: '/es/studio/', contact: '/es/#planner-contact' } as const;
+export interface SpanishNavLink { readonly href: string; readonly label: string; readonly description: string; }
 export const spanishPrimaryLinks: readonly SpanishNavLink[] = [
-  { href: spanishSite.home, label: "Inicio", description: "Viajes a China en español" },
-  { href: spanishSite.tours, label: "Viajes", description: "Rutas privadas con precio publicado" },
-  { href: spanishSite.guides, label: "Guías", description: "Qué ver, cuántos días y cómo organizarlo" },
+  { href: spanishSite.home, label: 'Inicio', description: 'Tu viaje a China empieza aquí' },
+  { href: spanishSite.tours, label: 'Viajes', description: 'Itinerarios y precios publicados' },
+  { href: spanishSite.services, label: 'Servicios', description: 'La ayuda que necesitas en China' },
+  { href: spanishSite.guides, label: 'Guías prácticas', description: 'Qué ver y cómo organizarlo' },
+  { href: spanishSite.studio, label: 'Nuestro equipo', description: 'Conoce a Homeground' },
 ];
-
-/** The legal pages exist in English only; the label says so. */
-export const spanishLegalLinks: readonly { href: string; label: string }[] = [
-  { href: "/business-information/", label: "Información de la empresa (en inglés)" },
-  { href: "/terms/", label: "Condiciones (en inglés)" },
-  { href: "/privacy/", label: "Privacidad (en inglés)" },
-  { href: "/refund-delivery/", label: "Reembolsos (en inglés)" },
+export const spanishLegalLinks = [
+  { href: '/es/business-information/', label: 'Información de la empresa' },
+  { href: '/es/terms/', label: 'Condiciones de servicio' },
+  { href: '/es/privacy/', label: 'Privacidad' },
+  { href: '/es/refund-delivery/', label: 'Cancelaciones y reembolsos' },
 ];
-
-export interface SpanishLanguagePath {
-  readonly label: "ES" | "EN" | "中文" | "한국어";
-  readonly lang: "es" | "en" | "zh-Hans" | "ko";
-  readonly path: string;
-}
-
-/**
- * Language switcher targets for a Spanish page whose English page is
- * `enPath`. Chinese and Korean use the usual prefixes unless overridden.
- */
-export function spanishLanguagePaths(
-  enPath: string,
-  esPath: string,
-  overrides: Partial<Record<"zh" | "ko", string>> = {},
-): readonly SpanishLanguagePath[] {
-  const suffix = enPath.replace(/^\//, "");
+export interface SpanishLanguagePath { readonly label: string; readonly lang: string; readonly path: string; }
+export function spanishLanguagePaths(enPath: string, esPath: string, overrides: Partial<Record<'zh'|'ko'|'ja'|'fr', string>> = {}): readonly SpanishLanguagePath[] {
+  const slug = /^\/tours\/([^/]+)\/$/.exec(enPath)?.[1];
+  const fr = overrides.fr ?? (slug ? `/fr${enPath}` : frenchSitePagePathByEnglishPath[enPath]);
+  const ja = overrides.ja ?? (slug === 'xian-terracotta-warriors-half-day-private-tour' || /\/guides\/.+/.test(enPath) ? undefined : `/ja${enPath}`);
   return [
-    { label: "ES", lang: "es", path: esPath },
-    { label: "EN", lang: "en", path: enPath },
-    { label: "中文", lang: "zh-Hans", path: overrides.zh ?? `/zh/${suffix}` },
-    { label: "한국어", lang: "ko", path: overrides.ko ?? `/ko/${suffix}` },
+    { label: 'ES', lang: 'es', path: esPath }, { label: 'EN', lang: 'en', path: enPath },
+    { label: '中文', lang: 'zh-Hans', path: overrides.zh ?? `/zh${enPath}` },
+    { label: '한국어', lang: 'ko', path: overrides.ko ?? `/ko${enPath}` },
+    ...(ja ? [{ label: '日本語', lang: 'ja', path: ja }] : []),
+    ...(fr ? [{ label: 'FR', lang: 'fr', path: fr }] : []),
   ];
 }
-
-/** hreflang map for a Spanish page's metadata. */
-export function spanishAlternates(
-  enPath: string,
-  esPath: string,
-  overrides: Partial<Record<"zh" | "ko" | "ja", string>> = {},
-) {
-  const suffix = enPath.replace(/^\//, "");
-  return {
-    en: enPath,
-    "zh-Hans": overrides.zh ?? `/zh/${suffix}`,
-    ko: overrides.ko ?? `/ko/${suffix}`,
-    ...(overrides.ja ? { ja: overrides.ja } : {}),
-    es: esPath,
-    ...(frenchSitePagePathByEnglishPath[enPath] ? { fr: frenchSitePagePathByEnglishPath[enPath] } : {}),
-    "x-default": enPath,
-  } as const;
+export function spanishAlternates(enPath: string, esPath: string, overrides: Partial<Record<'zh'|'ko'|'ja'|'fr', string>> = {}) {
+  return { ...Object.fromEntries(spanishLanguagePaths(enPath, esPath, overrides).map(item => [item.lang, item.path])), 'x-default': enPath };
 }
-
-/**
- * Adds the Spanish page to another language's hreflang set (head only; the
- * visible language switcher on those pages is unchanged).
- */
-export function withSpanishAlternate<
-  T extends { alternates?: { languages?: object | null } | null },
->(metadata: T, esPath: string | undefined): T {
+export function withSpanishAlternate<T extends { alternates?: { languages?: object | null } | null }>(metadata: T, esPath: string | undefined): T {
   if (!esPath) return metadata;
   const alternates = metadata.alternates ?? {};
-  return {
-    ...metadata,
-    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), es: esPath } },
-  };
+  return { ...metadata, alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), es: esPath } } };
 }
-
-/** The published price includes an English-speaking guide; a Spanish-speaking one costs more. */
-export const spanishGuideLanguageNote =
-  "El precio publicado incluye guía de habla inglesa. Podemos organizar un guía de habla hispana con suplemento; la disponibilidad y el precio se confirman en el presupuesto.";
-
-export const spanishGuideLanguageBadge = "Guía en inglés · en español con suplemento";
-
-/** Says the contact buttons open a draft that the traveller sends. */
-export const spanishDraftNote =
-  "WhatsApp y el correo abren un borrador: no se envía nada hasta que usted lo envíe.";
-
-/** Tour pages also open the on-site quote form, which says on screen when it has saved. */
-export const spanishTourContactNote =
-  "El formulario del sitio confirma en pantalla cuando su consulta queda guardada. WhatsApp y el correo solo abren un borrador que usted mismo envía.";
-
-/** Spanish wording of the price note the owner approved for the tour pages. */
-export const spanishPublishedPriceNote =
-  "Precio por persona desde, para el número de viajeros indicado. Los festivos, el tamaño del grupo y el tipo de habitación lo modifican; el precio final es el del presupuesto por escrito, antes de pagar. Los importes en USD son orientativos; el presupuesto también confirma la moneda y el tipo de cambio.";
-
-function whatsappNumber() {
-  const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
-  return /^\d{7,15}$/.test(configured) ? configured : "8613174215999";
-}
-
+export const spanishGuideLanguageNote = 'Los precios publicados corresponden a los servicios descritos en cada viaje. El guía de habla española no está incluido: se presupuesta aparte según las ciudades, las fechas y la disponibilidad. Confirmamos el suplemento antes de reservar.';
+export const spanishGuideLanguageBadge = 'Guía en español: suplemento a consultar';
+export const spanishDraftNote = 'WhatsApp y el correo abren un borrador. El mensaje no se envía hasta que lo envíes desde la aplicación.';
+export const spanishTourContactNote = 'El formulario confirma en pantalla que tu consulta se ha guardado. WhatsApp y el correo abren un borrador que debes enviar desde la aplicación.';
+export const spanishPublishedPriceNote = 'Precios por persona para la opción, el número de viajeros y la temporada indicados, en la moneda mostrada. No son importes en euros. Se mantienen las condiciones de temporada, habitaciones y servicios de cada viaje. El total final y las condiciones de pago se confirman por escrito antes de pagar.';
 export function spanishWhatsAppHref(message: string) {
-  return `https://wa.me/${whatsappNumber()}?text=${encodeURIComponent(message)}`;
+  const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || '8613174215999';
+  const number = /^\d{7,15}$/.test(configured) ? configured : '8613174215999';
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
-
-export function spanishEmailHref(subject: string, message: string) {
-  return `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-}
-
-/**
- * General Spanish enquiry (no tour chosen yet). The message is a draft the
- * traveller edits and sends; opening it sends nothing and stores nothing.
- */
+export function spanishEmailHref(subject: string, message: string) { return `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`; }
 export function spanishGeneralContactHrefs(sourcePath: string) {
-  const message = [
-    "Hola. Me gustaría consultar un viaje a China.",
-    "Lugares o viaje que me interesan:",
-    "Fechas aproximadas:",
-    "Número de viajeros:",
-    "Idioma del guía (inglés, o español con suplemento):",
-    `Página de referencia: https://homegroundchina.com${sourcePath}`,
-  ].join("\n");
-  return {
-    whatsapp: spanishWhatsAppHref(message),
-    email: spanishEmailHref("Consulta en español: viaje a China", message),
-  } as const;
+  const message = ['Hola. Me gustaría organizar un viaje a China.', 'Lugares o viaje que me interesan:', 'Fechas aproximadas:', 'Número de viajeros:', 'Guía en español (con suplemento):', `Página de referencia: https://homegroundchina.com${sourcePath}`].join('\n');
+  return { whatsapp: spanishWhatsAppHref(message), email: spanishEmailHref('Consulta en español: viaje a China', message) };
 }
-
-/** Open Graph and Twitter fields for Spanish pages. */
-export function buildSpanishSocialMetadata({
-  title,
-  description,
-  url,
-  type = "website",
-  image = {
-    url: "https://homegroundchina.com/images/home/beijing-hero-2400.jpg",
-    width: 2400,
-    height: 1600,
-    alt: "Torre de esquina de la Ciudad Prohibida de Pekín reflejada en el foso",
-  },
-}: {
-  title: string;
-  description: string;
-  url: string;
-  type?: "website" | "article";
-  image?: { url: string; width: number; height: number; alt: string };
-}) {
-  return {
-    openGraph: {
-      siteName: "Homeground China",
-      title,
-      description,
-      type,
-      locale: "es_ES",
-      url,
-      images: [image],
-    },
-    twitter: {
-      card: "summary_large_image" as const,
-      title,
-      description,
-      images: [{ url: image.url, alt: image.alt }],
-    },
-  };
+export function buildSpanishSocialMetadata({ title, description, url, type = 'website', image = { url: 'https://homegroundchina.com/images/home/beijing-hero-2400.jpg', width: 2400, height: 1600, alt: 'Torre de esquina de la Ciudad Prohibida de Pekín reflejada en el foso' } }: { title: string; description: string; url: string; type?: 'website'|'article'; image?: { url: string; width: number; height: number; alt: string } }) {
+  return { openGraph: { siteName: 'Homeground China', title, description, type, locale: 'es_ES', url, images: [image] }, twitter: { card: 'summary_large_image' as const, title, description, images: [{ url: image.url, alt: image.alt }] } };
+}
+export function buildSpanishMetadata(title: string, description: string, path: string, languages?: Record<string,string>): Metadata {
+  return { title: { absolute: `${title} | Homeground China` }, description, alternates: { canonical: path, ...(languages ? { languages } : {}) }, robots: { index: true, follow: true }, ...buildSpanishSocialMetadata({ title, description, url: path }) };
 }

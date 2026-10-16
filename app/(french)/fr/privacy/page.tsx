@@ -4,6 +4,6 @@ import { buildFrenchMetadata } from "../../../../lib/frenchSite";
 
 const copy = getFrenchLegalCopy("privacy");
 export const metadata = buildFrenchMetadata(copy.metadata.title, copy.metadata.description, copy.pagePath, {
-  en: "/privacy/", "zh-Hans": "/zh/privacy/", ko: "/ko/privacy/", ja: "/ja/privacy/", fr: copy.pagePath, "x-default": "/privacy/",
+  en: "/privacy/", "zh-Hans": "/zh/privacy/", ko: "/ko/privacy/", ja: "/ja/privacy/", fr: copy.pagePath, es: copy.pagePath.replace("/fr/", "/es/"), "x-default": "/privacy/",
 });
 export default function FrenchPrivacyPage() { return <FrenchLegalPage pageId="privacy" />; }

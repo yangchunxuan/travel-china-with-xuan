@@ -51,7 +51,7 @@ import { JapaneseTourContactLink, type JapaneseContactHrefs } from "./JapaneseJi
 import jaStyles from "./JapaneseJiangnanPage.module.css";
 import { localizeSpanishPrivateTourProduct } from "../lib/localizeSpanishPrivateTourProduct";
 import { spanishTourPagePath } from "../lib/spanishEditionIndex";
-import { spanishSite, spanishTourContactNote } from "../lib/spanishSite";
+import { spanishSite, spanishTourContactNote, spanishDraftNote, spanishGuideLanguageNote } from "../lib/spanishSite";
 import {
   spanishBeforeYouChooseTitle,
   spanishCommercialCopy,
@@ -975,6 +975,7 @@ export function ShanghaiJiangnanImaginePage({
   const spanish = locale === "es";
   const french = locale === "fr";
   const frenchContactNote = isNortheastWinterTour(product.slug) ? frenchDraftNote : frenchTourContactNote;
+  const spanishContactNote = isNortheastWinterTour(product.slug) ? spanishDraftNote : spanishTourContactNote;
   // Japanese and Spanish pages bring their own chrome, copy and contact links,
   // and take prices, photographs and structure from the English source.
   const edition = japanese || spanish || french;
@@ -1090,7 +1091,9 @@ export function ShanghaiJiangnanImaginePage({
     emailLabel: jaPresentation.emailLabel,
     draftNote: japaneseDraftNote,
     currencyNote: japaneseCurrencyNote,
-  } : spanish ? spanishPriceCopy : french ? {
+  } : spanish ? { ...spanishPriceCopy, draftNote: spanishContactNote,
+    ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: spanishGuideLanguageNote } : {}),
+  } : french ? {
     ...frenchPriceCopy,
     draftNote: frenchContactNote,
     ...(localized.packages.every(option => option.rows.length === 0) ? {
@@ -1181,6 +1184,7 @@ export function ShanghaiJiangnanImaginePage({
                     price: row.amount,
                     priceCurrency: row.currency,
                     ...(french ? { description: `${tourPackage.summary} ${frenchGuideLanguageNote}` } : {}),
+                    ...(spanish ? { description: `${tourPackage.summary} ${spanishGuideLanguageNote}` } : {}),
                     ...(localized.tourFormat === "small-group"
                       ? {}
                       : {
@@ -1575,7 +1579,7 @@ export function ShanghaiJiangnanImaginePage({
                 <JapaneseTourContactLink channel="email" className={styles.finalEmail} hrefs={japaneseContactHrefs!}>
                   <Mail aria-hidden="true" size={16} />{copy.email}
                 </JapaneseTourContactLink>
-                <p className={styles.draftNote}>{spanish ? spanishTourContactNote : french ? frenchContactNote : japaneseDraftNote}</p>
+                <p className={styles.draftNote}>{spanish ? spanishContactNote : french ? frenchContactNote : japaneseDraftNote}</p>
               </> : <>
               <SelectedPrivateTourCta
                 className={styles.finalPrimary}

@@ -73,9 +73,10 @@ export function withJapaneseAlternate<
   T extends { alternates?: { languages?: object | null } | null },
 >(metadata: T, jaPath: string): T {
   const alternates = metadata.alternates ?? {};
+  const es = spanishSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"];
   return {
     ...metadata,
-    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
+    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(es ? { es } : {}), ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
   };
 }
 

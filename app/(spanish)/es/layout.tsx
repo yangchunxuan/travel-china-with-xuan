@@ -10,8 +10,7 @@ export const metadata: Metadata = {
   openGraph: { siteName: "Homeground China", type: "website" },
 };
 
-// Spanish pages use the main site's contact flow (SpanishContactHost). They
-// carry no analytics, consent banner or newsletter prompt.
+// Spanish pages use the shared contact flow and privacy preferences, with localized copy.
 export default function SpanishLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>

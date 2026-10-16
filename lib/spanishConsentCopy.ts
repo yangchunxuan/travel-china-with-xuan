@@ -1,0 +1,12 @@
+import type { AnalyticsConsentCopy } from './analyticsConsentI18n';
+export const spanishConsentCopy: AnalyticsConsentCopy = {
+  bannerTitle:'Tus preferencias de privacidad',
+  bannerBody:'El almacenamiento necesario permite preparar tu viaje. En algunas regiones también guardamos durante 30 días la primera página visitada y la procedencia de la visita; «Solo lo necesario» desactiva esta función. Puedes autorizar además las estadísticas y la medición de campañas de Google Ads y Meta.',
+  acceptAll:'Aceptar todo',necessaryOnly:'Solo lo necesario',manage:'Elegir preferencias',dialogTitle:'Preferencias de privacidad',
+  dialogBody:'Elige las herramientas opcionales que Homeground puede utilizar en este navegador. Puedes cambiar tu elección cuando quieras desde el pie de página.',
+  dialogDetails:'El almacenamiento necesario permite que el sitio funcione. Si lo autorizas, las estadísticas nos ayudan a entender qué páginas y botones resultan útiles, y la medición publicitaria evalúa nuestras campañas de Google Ads y Meta. No enviamos a estas herramientas tus respuestas al cuestionario, datos de contacto ni mensajes.',
+  necessaryTitle:'Funciones necesarias',necessaryBody:'Permiten que el sitio y la planificación del viaje funcionen y recuerdan tus preferencias.',alwaysOn:'Siempre activas',
+  analyticsTitle:'Estadísticas',analyticsBody:'Miden de forma anónima las visitas y los clics mediante Google Analytics y el servicio interno de Homeground. Solo Homeground registra las opciones de viaje, servicio y número de viajeros. En algunas regiones, esta opción también incluye la procedencia de la primera visita, que se conserva durante 30 días y aparece en los mensajes preparados. Al desactivar las estadísticas y guardar, se elimina esta información.',
+  marketingTitle:'Medición publicitaria',marketingBody:'Permite usar Meta Pixel y la atribución de Google Ads. Con tu consentimiento, conservamos un identificador de clic de Google durante un máximo de 90 días y lo vinculamos a una consulta guardada y al primer pago confirmado. Google recibe ese identificador, la hora y una referencia única del evento; en el caso de un pago, también recibe el importe y la moneda. No se usan tu nombre, correo, teléfono ni mensajes para esta vinculación. Desactivar esta opción borra los identificadores publicitarios locales y solicita la cancelación de las conversiones que aún no se hayan enviado.',
+  optional:'Opcional',save:'Guardar mis preferencias',close:'Cerrar',privacyNotice:'Leer el aviso de privacidad',
+};

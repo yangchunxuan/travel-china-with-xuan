@@ -42,6 +42,7 @@ test("each language is an indexable page with its canonical and all published la
       "zh-Hans": terracottaHalfDayPaths.zh,
       ko: terracottaHalfDayPaths.ko,
       fr: `/fr/tours/${terracottaHalfDaySlug}/`,
+      es: `/es/tours/${terracottaHalfDaySlug}/`,
       "x-default": terracottaHalfDayPaths.en,
     });
   }

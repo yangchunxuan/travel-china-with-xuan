@@ -82,11 +82,11 @@ export function SpanishGuidesHubPage() {
             <div className={styles.ctaGrid}>
               <div>
                 <h2 id="guide-contact-title">También organizamos el viaje.</h2>
-                <p>Si ya tiene fechas y una idea de la ruta, díganos cuántos viajan.</p>
+                <p>Si ya tienes fechas y una idea de la ruta, dinos cuántas personas viajan.</p>
                 <Link className={styles.ctaAction} href={spanishSite.tours}>Ver los viajes en español <span aria-hidden="true">→</span></Link>
               </div>
               <SpanishContactPanel
-                body="Puede escribirnos aunque todavía no haya decidido las fechas ni la ruta."
+                body="Puedes escribirnos aunque todavía no hayas decidido las fechas ni la ruta."
                 emailHref={contact.email}
                 headingId="es-guides-contact-panel-title"
                 title="Consultar en español"

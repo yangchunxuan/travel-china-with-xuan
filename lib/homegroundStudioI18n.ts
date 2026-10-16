@@ -669,6 +669,7 @@ export function getStudioLanguagePaths() {
     ko: "/ko/studio/",
     ja: "/ja/studio/",
     fr: "/fr/studio/",
+    es: "/es/studio/",
     "x-default": "/studio/",
   };
 }

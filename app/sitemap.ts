@@ -18,7 +18,7 @@ import {
   jaPilotTourAlternates,
 } from "../lib/jaPilot";
 import { japaneseAlternates } from "../lib/japaneseSite";
-import { spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
+import { spanishGuidePathBySourceId, spanishSitePagePathByEnglishPath } from "../lib/spanishEditionIndex";
 import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides";
 import { spanishSite } from "../lib/spanishSite";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy";
@@ -126,9 +126,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
     ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
     fr: "/fr/tours/zhangjiajie-4-day-private-tour/",
+    es: "/es/tours/zhangjiajie-4-day-private-tour/",
     "x-default": "/tours/zhangjiajie-4-day-private-tour/",
   };
-  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
+  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", es: "/es/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
   const legacyPaths = new Set<string>(Object.values(legacyAlternates));
   // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
   const japaneseSitePages = [
@@ -238,54 +239,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // The Spanish pages went up on this date; a tour edited later carries its own date.
-  const spanishPublished = "2026-10-11";
-  const spanishSiteAlternates = (enPath: string) =>
-    absoluteJaPilotAlternates(japaneseSiteAlternatesByPath.get(enPath)!);
+  const spanishModified = "2026-10-16";
   const spanishEntries: MetadataRoute.Sitemap = [
-    {
-      url: `${base}${spanishSite.home}`,
-      lastModified: spanishPublished,
-      changeFrequency: "weekly",
-      priority: 0.8,
-      alternates: { languages: spanishSiteAlternates("/") },
-    },
-    {
-      url: `${base}${spanishSite.tours}`,
-      lastModified: getPrivateTourHubLastModified("es"),
-      changeFrequency: "weekly",
-      priority: 0.7,
-      alternates: { languages: absoluteJaPilotAlternates(hubAlternates) },
-    },
-    {
-      url: `${base}${spanishSite.guides}`,
-      lastModified: spanishPublished,
-      changeFrequency: "weekly",
-      priority: 0.7,
-      alternates: { languages: spanishSiteAlternates("/guides/") },
-    },
-    ...spanishTourSlugs.map((slug) => {
-      const product = privateTourProducts.find((candidate) => candidate.slug === slug)!;
-      return {
-        url: `${base}${spanishTourPath(slug)}`,
-        lastModified: product.dateModified > spanishPublished ? product.dateModified : spanishPublished,
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-        alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
-      };
+    ...Object.entries(spanishSitePagePathByEnglishPath).map(([en,path]) => ({
+      url: `${base}${path}`, lastModified: en === "/tours/" ? getPrivateTourHubLastModified("es") : spanishModified,
+      changeFrequency: "monthly" as const, priority: path === "/es/" ? 0.8 : 0.6,
+      alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
+    })),
+    { url: `${base}/es/contact/`, lastModified: spanishModified, changeFrequency: "monthly", priority: 0.5 },
+    ...[legacyAlternates,halfDayAlternates].map(alternates => ({
+      url: `${base}${alternates.es}`, lastModified: spanishModified, changeFrequency: "monthly" as const, priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(alternates) },
+    })),
+    ...spanishTourSlugs.map(slug => {
+      const product = privateTourProducts.find(candidate => candidate.slug === slug)!;
+      return { url: `${base}${spanishTourPath(slug)}`, lastModified: product.dateModified > spanishModified ? product.dateModified : spanishModified,
+        changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) } };
     }),
-    ...spanishGuides.map((guide) => ({
-      url: `${base}${spanishGuidePath(guide.slug)}`,
-      lastModified: guide.dateModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.65,
-      // A guide written only in Spanish has no other-language versions.
-      ...(guide.sourceGuideId
-        ? { alternates: { languages: absoluteJaPilotAlternates(getGuideLanguagePaths(guide.sourceGuideId as GuideId)) } }
-        : {}),
+    ...spanishGuides.map(guide => ({
+      url: `${base}${spanishGuidePath(guide.slug)}`, lastModified: guide.dateModified, changeFrequency: "monthly" as const, priority: 0.65,
+      ...(guide.sourceGuideId ? { alternates: { languages: absoluteJaPilotAlternates(getGuideLanguagePaths(guide.sourceGuideId as GuideId)) } } : {}),
     })),
   ];
-
   const frenchEntries: MetadataRoute.Sitemap = [
     ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.fr}`, lastModified: "2026-10-16", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
     ...Object.entries(frenchSitePagePathByEnglishPath).map(([en,path]) => ({

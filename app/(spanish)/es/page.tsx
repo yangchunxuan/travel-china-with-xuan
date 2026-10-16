@@ -1,26 +1,4 @@
-import type { Metadata } from "next";
-import {
-  SpanishHomePage,
-  spanishHomeDescription,
-  spanishHomeTitle,
-} from "../../../components/SpanishHomePage";
-import { buildSpanishSocialMetadata, spanishSite } from "../../../lib/spanishSite";
-
-export const metadata: Metadata = {
-  title: spanishHomeTitle,
-  description: spanishHomeDescription,
-  alternates: {
-    canonical: spanishSite.home,
-    languages: { en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: spanishSite.home, fr: "/fr/", "x-default": "/" },
-  },
-  robots: { index: true, follow: true },
-  ...buildSpanishSocialMetadata({
-    title: spanishHomeTitle,
-    description: spanishHomeDescription,
-    url: spanishSite.home,
-  }),
-};
-
-export default function SpanishHomeRoute() {
-  return <SpanishHomePage />;
-}
+import { SpanishHomePage, spanishHomeTitle, spanishHomeDescription } from '../../../components/SpanishCorePages';
+import { buildSpanishMetadata } from '../../../lib/spanishSite';
+export const metadata=buildSpanishMetadata(spanishHomeTitle,spanishHomeDescription,'/es/',{en:'/', 'zh-Hans':'/zh/',ko:'/ko/',ja:'/ja/',es:'/es/',fr:'/fr/','x-default':'/'});
+export default function Page() { return <SpanishHomePage/>; }
