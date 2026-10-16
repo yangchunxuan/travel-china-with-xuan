@@ -46,13 +46,14 @@ const scope = {
   },
 } as const;
 
-export function TourPriceScope({ route, locale, detailsHref }: {
+export function TourPriceScope({ route, locale, detailsHref, edition }: {
   route: keyof typeof scope;
   locale: HomegroundLocale;
   detailsHref: string;
+  edition?: {copy: typeof labels.en;content:{included:string;separate:string;confirm:string}};
 }) {
-  const copy = labels[locale];
-  const content = scope[route][locale];
+  const copy = edition?.copy ?? labels[locale];
+  const content = edition?.content ?? scope[route][locale];
   return (
     <div className={styles.scope}>
       <dl aria-label={copy.title}>

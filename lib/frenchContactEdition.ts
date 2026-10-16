@@ -4,23 +4,32 @@ import type { TourContactDraft } from './tourContactDraft.ts';
 import { homegroundBusiness } from './homegroundBusiness.ts';
 import { homegroundWhatsAppHref } from './tourContact.ts';
 import { frenchContactTourNames, frenchContactPackageLabels } from './frenchContactNames.ts';
+import { frenchLegacyZhangjiajieContactTitle, frenchLegacyStayNames, frenchLegacyDraftStayName } from './frenchLegacyContactCopy.ts';
 
 const pattern = /^\/fr\/tours\/([a-z0-9-]+)\/$/u;
-function tourName(context: PrivateTourInquiryContext) { return frenchContactTourNames[context.slug] ?? context.name; }
+function tourName(context: PrivateTourInquiryContext) {
+  return context.slug === 'zhangjiajie-4-day-private-tour'
+    ? frenchLegacyZhangjiajieContactTitle
+    : frenchContactTourNames[context.slug] ?? context.name;
+}
 function travellersLabel(count: number) { return `${count} ${count === 1 ? 'voyageur' : 'voyageurs'}`; }
 function selectionLabel(context: PrivateTourInquiryContext) {
   const selected = context.selection;
   if (!selected) return null;
-  const label = frenchContactPackageLabels[`${context.slug}:${selected.packageId}`];
+  const label = context.slug === 'zhangjiajie-4-day-private-tour'
+    ? frenchLegacyStayNames[selected.packageId as keyof typeof frenchLegacyStayNames]
+    : frenchContactPackageLabels[`${context.slug}:${selected.packageId}`];
   return label ? `${label} · ${travellersLabel(selected.travelers)}` : null;
 }
 function draftText(draft?: TourContactDraft) {
   if (!draft) return '';
-  return [`Arrivée prévue : ${draft.travelDate || 'dates à définir'}`, draft.requestedTravelers != null ? `Voyageurs : ${draft.requestedTravelers}` : '', draft.note.trim() ? `Votre projet : ${draft.note.trim()}` : '', draft.referralSource ? `Comment vous nous avez connus : ${draft.referralSource === 'friend' ? 'Recommandation d’un proche' : draft.referralSource === 'other' ? 'Autre' : draft.referralSource}` : ''].filter(Boolean).join('\n');
+  const stay = frenchLegacyDraftStayName(draft.stayPreference);
+  return [`Arrivée prévue : ${draft.travelDate || 'dates à définir'}`, draft.requestedTravelers != null ? `Voyageurs : ${draft.requestedTravelers}` : '', stay ? `Hébergement souhaité (à confirmer) : ${stay}` : '', draft.note.trim() ? `Votre projet : ${draft.note.trim()}` : '', draft.referralSource ? `Comment vous nous avez connus : ${draft.referralSource === 'friend' ? 'Recommandation d’un proche' : draft.referralSource === 'other' ? 'Autre' : draft.referralSource}` : ''].filter(Boolean).join('\n');
 }
 function messageText(context: PrivateTourInquiryContext | null, path?: string, draft?: TourContactDraft) {
   const page = context ? `/fr/tours/${context.slug}/` : path;
-  return ['Bonjour, je souhaite préparer un voyage en Chine.', context ? tourName(context) : '', context ? selectionLabel(context) : '', page?.startsWith('/fr/') ? `Page : https://homegroundchina.com${page}` : '', draftText(draft), 'Guide francophone souhaité (supplément sur devis) :'].filter(Boolean).join('\n');
+  const preferredStay = context?.customGroup?.stayId ? frenchLegacyStayNames[context.customGroup.stayId] : null;
+  return ['Bonjour, je souhaite préparer un voyage en Chine.', context ? tourName(context) : '', context ? selectionLabel(context) : '', preferredStay && !draft?.stayPreference ? `Hébergement souhaité (à confirmer) : ${preferredStay}` : '', page?.startsWith('/fr/') ? `Page : https://homegroundchina.com${page}` : '', draftText(draft), 'Guide francophone souhaité (supplément sur devis) :'].filter(Boolean).join('\n');
 }
 export function frenchContactWhatsAppHref(context: PrivateTourInquiryContext | null, path?: string) { return homegroundWhatsAppHref(messageText(context,path)); }
 
@@ -32,6 +41,7 @@ export const frenchContactEdition: ContactEdition = {
   tourPath: slug => `/fr/tours/${slug}/`, tourSlugFromPath: path => pattern.exec(path)?.[1] ?? null,
   isGuidePath: path => /^\/fr\/guides\/(?:[a-z0-9-]+\/)?$/u.test(path),
   tourName, travellersLabel, selectionLabel, messageText,
+  stayPreferenceLabel: context => context.customGroup?.stayId ? frenchLegacyStayNames[context.customGroup.stayId] : null,
   mailtoHref: (context, draft, guide) => `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(context ? `Demande de devis : ${tourName(context)}` : 'Mon projet de voyage en Chine')}&body=${encodeURIComponent(messageText(context,guide?.path,draft).replace(/\r?\n/g,'\r\n'))}`,
   noteMarker: path => `[Sent from the French page https://homegroundchina.com${path}; the traveller read it in French. French-speaking guide is quoted separately.]`,
   noteTooLong: limit => `Votre message ne doit pas dépasser ${limit} caractères.`,

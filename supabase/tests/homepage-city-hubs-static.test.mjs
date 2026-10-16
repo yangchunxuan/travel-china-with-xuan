@@ -70,7 +70,7 @@ test("the homepage footer consumes the complete published hub registry", async (
   // light mirror in lib/footerDestinationLinks.ts (checked below).
   assert.match(
     footer,
-    /destinationHubItems\.length > 0\s*\? destinationHubItems\s*: footerDestinationLinks\[locale\]/,
+    /destinationHubItems\.length > 0\s*\? destinationHubItems\s*: edition\?\.cityLinks \?\? footerDestinationLinks\[locale\]/,
   );
   assert.match(footer, /cityLinks\.map\(\(city\) =>/);
   assert.match(footer, /<Link href=\{city\.href\}>\{city\.label\}<\/Link>/);

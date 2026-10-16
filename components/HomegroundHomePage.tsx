@@ -7,6 +7,8 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  type ReactNode,
+  type ComponentProps,
 } from "react";
 import {
   ArrowRight,
@@ -87,6 +89,20 @@ const planningIntentStorageKey = "homeground-planning-intent-v1";
 const planningStarterIntentStorageKey =
   "homeground-planning-starter-intent-v1";
 
+/** Presentation adapter for editions outside the established enquiry locales. */
+export interface HomepageEdition {
+  language: string;
+  copy: ReturnType<typeof getHomegroundCopy>;
+  showcase: ReturnType<typeof getHomepageShowcaseCopy>;
+  paths: { tours: string; guides: string; destinations: string; studio: string };
+  products: NonNullable<ComponentProps<typeof HomepageProductShowcase>["edition"]>;
+  guideSearch: NonNullable<ComponentProps<typeof HomepageGuideSearch>["edition"]>;
+  planningScope: NonNullable<ComponentProps<typeof PlanningScopeSection>["edition"]>;
+  header: ReactNode;
+  footer: ReactNode;
+  contactPanel: ReactNode;
+}
+
 export function HomegroundHomePage({
   destinationHubItems,
   guideChapters,
@@ -95,6 +111,7 @@ export function HomegroundHomePage({
   privateTourItems,
   searchDemos,
   teamFaces = [],
+  edition,
 }: {
   destinationHubItems: readonly HomepageDestinationHubItem[];
   guideChapters: readonly HomepageGuideChapter[];
@@ -104,6 +121,7 @@ export function HomegroundHomePage({
   searchDemos: readonly HomepageSearchDemo[];
   /** The planners' faces beside "Meet the team" (wide screens only). */
   teamFaces?: readonly { id: string; src: string }[];
+  edition?: HomepageEdition;
 }) {
   const [playHomepageIntro, setPlayHomepageIntro] = useState(
     () => !hasMountedHomegroundRoute(),
@@ -133,16 +151,16 @@ export function HomegroundHomePage({
   const [serviceContextRevision, setServiceContextRevision] = useState(0);
   const [retainedRouteServiceInterest, setRetainedRouteServiceInterest] =
     useState<RouteServiceInterest | null>(null);
-  const copy = getHomegroundCopy(locale);
-  const showcase = getHomepageShowcaseCopy(locale);
+  const copy = edition?.copy ?? getHomegroundCopy(locale);
+  const showcase = edition?.showcase ?? getHomepageShowcaseCopy(locale);
   const guidesIndexPath =
-    locale === "en" ? "/guides/" : `/${locale}/guides/`;
+    edition?.paths.guides ?? (locale === "en" ? "/guides/" : `/${locale}/guides/`);
   const destinationsIndexPath =
-    locale === "en" ? "/explore/" : `/${locale}/explore/`;
+    edition?.paths.destinations ?? (locale === "en" ? "/explore/" : `/${locale}/explore/`);
   const studioPath =
-    locale === "en" ? "/studio/" : `/${locale}/studio/`;
+    edition?.paths.studio ?? (locale === "en" ? "/studio/" : `/${locale}/studio/`);
   const plannerTarget =
-    plannerStatus === "result" && routeMatch
+    edition ? "#planner-contact" : plannerStatus === "result" && routeMatch
       ? "#planner-handoff"
       : plannerStatus === "in-progress"
         ? "#route-finder"
@@ -483,7 +501,7 @@ export function HomegroundHomePage({
     <div
       className={`${styles.localeRoot} ${showcaseStyles.root}`}
       lang={copy.htmlLang}
-      data-homeground-locale={locale}
+      data-homeground-locale={edition?.language ?? locale}
       data-homeground-home-intro={playHomepageIntro ? "play" : "settled"}
     >
       <a
@@ -495,13 +513,13 @@ export function HomegroundHomePage({
       >
         {copy.skipLink}
       </a>
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         locale={locale}
         languagePaths={{ en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: "/es/", fr: "/fr/" }}
         plannerStatus={plannerStatus}
         handoffStatus={handoffStatus}
         handoffDirty={handoffDirty || starterNoteDirty}
-      />
+      />}
 
       <main id="main-content" tabIndex={-1}>
         <section
@@ -533,7 +551,7 @@ export function HomegroundHomePage({
               <div className={showcaseStyles.heroActions}>
                 <Link
                   className={showcaseStyles.primaryAction}
-                  href={privateTourHubPaths[locale]}
+                  href={edition?.paths.tours ?? privateTourHubPaths[locale]}
                 >
                   {showcase.heroPrimary}
                   <ArrowRight aria-hidden="true" size={16} />
@@ -562,6 +580,7 @@ export function HomegroundHomePage({
         {privateTourItems.length > 0 ? (
           <HomepageProductShowcase
             locale={locale}
+            edition={edition?.products}
             onItemClick={(item, position) => {
               trackEvent("homepage_product_card_clicked", {
                 content_kind: item.kind,
@@ -584,6 +603,7 @@ export function HomegroundHomePage({
               demos={searchDemos}
               guidePaths={showcase.guidePaths}
               locale={locale}
+              edition={edition?.guideSearch}
               onGuideClick={(guide) => {
                 trackEvent("homepage_guide_card_clicked", {
                   content_category: guide.category,
@@ -599,7 +619,7 @@ export function HomegroundHomePage({
         </div>
 
         {planningSection === "scope-v2" ? (
-          <PlanningScopeSection locale={locale} />
+          <PlanningScopeSection locale={locale} edition={edition?.planningScope} />
         ) : (
         <section className={styles.proofSection} id="planning-proof" aria-labelledby="planning-proof-title">
           <div className={styles.sectionIntro}>
@@ -713,7 +733,7 @@ export function HomegroundHomePage({
             </div>
 
             <div className={showcaseStyles.planningPanel}>
-              <RouteFinder
+              {edition?.contactPanel ?? <RouteFinder
                 id="route-finder"
                 locale={locale}
                 variant="hero"
@@ -759,7 +779,7 @@ export function HomegroundHomePage({
                 onRouteCleared={handleRouteCleared}
                 onRouteFound={handleRouteFound}
                 onStatusChange={setPlannerStatus}
-              />
+              />}
             </div>
           </div>
         </section>
@@ -799,11 +819,11 @@ export function HomegroundHomePage({
 
       </main>
 
-      <HomegroundFooter
+      {edition?.footer ?? <HomegroundFooter
         destinationHubItems={destinationHubItems}
         locale={locale}
         variant="homepage"
-      />
+      />}
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(identitySchema) }} />
     </div>

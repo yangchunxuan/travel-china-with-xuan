@@ -42,13 +42,15 @@ function SoftBreaks({ line }: { line: string }) {
 export function PlanningScopeSection({
   locale = "en",
   japanese,
+  edition,
 }: {
   locale?: HomegroundLocale;
   /** Japanese pages pass their own copy and contact target; other locales use the defaults. */
   japanese?: { copy: PlanningScopeCopy; ctaHref: string };
+  edition?: { language: string; copy: PlanningScopeCopy; ctaHref: string };
 }) {
-  const copy = japanese?.copy ?? getPlanningScopeCopy(locale);
-  const ctaHref = japanese?.ctaHref ?? "#planner-contact";
+  const copy = edition?.copy ?? japanese?.copy ?? getPlanningScopeCopy(locale);
+  const ctaHref = edition?.ctaHref ?? japanese?.ctaHref ?? "#planner-contact";
   const visualRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoInViewRef = useRef(false);
@@ -165,7 +167,7 @@ export function PlanningScopeSection({
     <section
       aria-labelledby="planning-proof-title"
       className={styles.scope}
-      data-homeground-locale={japanese ? "ja" : locale}
+      data-homeground-locale={edition?.language ?? (japanese ? "ja" : locale)}
       id="planning-proof"
       lang={copy.htmlLang}
     >

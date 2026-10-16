@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { destinationHubRegistry, type DestinationHubId } from "../lib/destinationHubs";
 import {
@@ -28,6 +28,18 @@ import styles from "./HomegroundStudioPage.module.css";
 
 type StudioPhoto =
   ReturnType<typeof getHomegroundStudioCopy>["members"][number]["image"];
+
+export interface HomegroundStudioEdition {
+  language: string;
+  copy: ReturnType<typeof getHomegroundStudioCopy>;
+  skipLink: string;
+  header: ReactNode;
+  footer: ReactNode;
+  plannerHref: string;
+  planningServicesHref: string;
+  proof: readonly { value: number; label: string }[];
+  memberStoryLinks: Readonly<Record<string, { href: string; label: string }>>;
+}
 
 const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w640.webp");
 
@@ -70,9 +82,11 @@ const memberStoryGuideIds = {
 function MemberStoryLink({
   memberId,
   locale,
+  override,
 }: {
   memberId: string;
   locale: HomegroundLocale;
+  override?: { href: string; label: string };
 }) {
   const guideId =
     memberStoryGuideIds[memberId as keyof typeof memberStoryGuideIds];
@@ -82,8 +96,8 @@ function MemberStoryLink({
   const guide = getGuideEntry(guideId, locale);
 
   return (
-    <Link className={styles.memberStoryLink} href={guide.canonicalPath}>
-      {guide.featuredLinkLabel}
+    <Link className={styles.memberStoryLink} href={override?.href ?? guide.canonicalPath}>
+      {override?.label ?? guide.featuredLinkLabel}
       <ArrowRight aria-hidden="true" size={17} />
     </Link>
   );
@@ -114,18 +128,20 @@ const placeTiles: readonly { id: DestinationHubId; x: number; y: number; z: numb
 
 export function HomegroundStudioPage({
   locale = "en",
+  edition,
 }: {
   locale?: HomegroundLocale;
+  edition?: HomegroundStudioEdition;
 }) {
   const homeCopy = getHomegroundCopy(locale);
-  const copy = getHomegroundStudioCopy(locale);
-  const plannerHref = `${homeCopy.path}#planner-contact`;
-  const isEnglish = locale === "en";
-  const planningServicesHref = isEnglish
+  const copy = edition?.copy ?? getHomegroundStudioCopy(locale);
+  const plannerHref = edition?.plannerHref ?? `${homeCopy.path}#planner-contact`;
+  const isEnglish = locale === "en" && !edition;
+  const planningServicesHref = edition?.planningServicesHref ?? (isEnglish
     ? "/services/"
-    : `/${locale}/services/`;
-  const heroId = `studio-hero-${locale}`;
-  const proof = [
+    : `/${locale}/services/`);
+  const heroId = `studio-hero-${edition?.language ?? locale}`;
+  const proof = edition?.proof ?? [
     { value: HOMEGROUND_TEAM_SIZE, label: copy.proof.people },
     { value: getAllGuides(locale).length, label: copy.proof.guides },
     { value: getPublishedPrivateTourCatalog(locale).length, label: copy.proof.tours },
@@ -146,13 +162,13 @@ export function HomegroundStudioPage({
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.studioPage}`}
-      data-homeground-locale={locale}
-      lang={homeCopy.htmlLang}
+      data-homeground-locale={edition?.language ?? locale}
+      lang={edition?.language ?? homeCopy.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#studio-main">
-        {homeCopy.skipLink}
+        {edition?.skipLink ?? homeCopy.skipLink}
       </a>
-      <HomegroundHeader locale={locale} pageContext="studio" languagePaths={getStudioLanguagePaths()} />
+      {edition?.header ?? <HomegroundHeader locale={locale} pageContext="studio" languagePaths={getStudioLanguagePaths()} />}
 
       <main id="studio-main" tabIndex={-1}>
         <section
@@ -364,7 +380,7 @@ export function HomegroundStudioPage({
                         ))}
                       </ul>
                     </details>
-                    <MemberStoryLink memberId={member.id} locale={locale} />
+                    <MemberStoryLink memberId={member.id} locale={locale} override={edition?.memberStoryLinks[member.id]} />
                   </div>
                 </article>
               </li>
@@ -413,7 +429,7 @@ export function HomegroundStudioPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="studio" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="studio" />}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

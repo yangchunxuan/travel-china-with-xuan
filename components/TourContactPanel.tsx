@@ -109,7 +109,7 @@ export function TourContactPanel({ locale, edition }: {
   const contactLinkReady = !customGroup || requestedTravelers !== null;
   // Every product quote may carry the traveller's self-reported source; guides have no quote form.
   const stayPreference = context ? privateTourInquiryStayPreference(context, "en") as ZhangjiajieStayPreference | null : null;
-  const stayLabel = context ? privateTourInquiryStayPreference(context, locale) : null;
+  const stayLabel = context ? edition?.stayPreferenceLabel?.(context) ?? privateTourInquiryStayPreference(context, locale) : null;
   // An edition's saved quote starts with a line naming its page, which shares the note's limit.
   const noteMarker = edition && isTour && pathname ? edition.noteMarker(pathname) : "";
   const noteMaxLength = (context?.customGroup ? customTourContactNoteMaxLength : tourContactNoteMaxLength) - (noteMarker ? noteMarker.length + 2 : 0);

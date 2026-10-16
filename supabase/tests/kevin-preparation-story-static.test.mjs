@@ -74,7 +74,8 @@ test("Kevin story images exist and Studio links Kevin through the member-story m
   assert.match(copy, /Kevin/);
   assert.match(studio, /const memberStoryGuideIds = \{/);
   assert.match(studio, /kevin: "kevin-before-the-hotel-pickup"/);
-  assert.match(studio, /<MemberStoryLink memberId=\{member\.id\} locale=\{locale\} \/>/);
+  assert.match(studio, /<MemberStoryLink memberId=\{member\.id\} locale=\{locale\} override=\{edition\?\.memberStoryLinks\[member\.id\]\} \/>/);
+  assert.match(studio, /override\?\.href \?\? guide\.canonicalPath/);
 
   for (const file of [
     "public/images/guides/kevin-preparation/kevin-hero-og-1200.jpg",

@@ -758,7 +758,8 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
   );
   assert.match(quickContact, /buildPrivateTourMailtoHref/u);
   assert.match(quickContact, /href=\{directMailto\}/u);
-  assert.match(quickContact, /contactCardCopy\[locale\]\.directEmailAction/u);
+  assert.match(quickContact, /const cardCopy = edition\?\.card \?\? contactCardCopy\[locale\];/u);
+  assert.match(quickContact, /cardCopy\.directEmailAction/u);
   assert.match(
     quickContact,
     /const buildPayload = \(\) => \(\{[\s\S]{0,500}entryPath: "homepage_email"[\s\S]{0,500}contact:\s*\{\s*channel: "email",\s*email: email\.trim\(\)/u,

@@ -10,7 +10,7 @@ import {
   subscribeAnalyticsConsent,
   type AnalyticsConsentPreferences,
 } from "../lib/analyticsConsent";
-import { getAnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
+import { getAnalyticsConsentCopy, type AnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   getPrivacyManagerOpen, getInquiryOpen, subscribeInquiry, setConsentBannerPending,
@@ -58,10 +58,12 @@ const focusableSelector = [
 
 export function AnalyticsConsent({
   locale,
+  edition,
 }: {
   locale: HomegroundLocale;
+  edition?: { copy: AnalyticsConsentCopy; privacyHref: string };
 }) {
-  const copy = getAnalyticsConsentCopy(locale);
+  const copy = edition?.copy ?? getAnalyticsConsentCopy(locale);
   const titleId = useId();
   const bodyId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -185,7 +187,7 @@ export function AnalyticsConsent({
             <h2 id={`${titleId}-banner`}>{copy.bannerTitle}</h2>
             <p>{copy.bannerBody}</p>
             <span className={styles.bannerLinks}>
-              <a href={privacyPath(locale)}>{copy.privacyNotice}</a>
+              <a href={edition?.privacyHref ?? privacyPath(locale)}>{copy.privacyNotice}</a>
               <button
                 className={styles.textButton}
                 type="button"
@@ -290,7 +292,7 @@ export function AnalyticsConsent({
             </div>
 
             <div className={styles.dialogActions}>
-              <a href={privacyPath(locale)}>{copy.privacyNotice}</a>
+              <a href={edition?.privacyHref ?? privacyPath(locale)}>{copy.privacyNotice}</a>
               <button
                 className={styles.primaryButton}
                 type="button"

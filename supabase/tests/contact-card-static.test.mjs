@@ -133,7 +133,8 @@ test("the homepage contact panel shows the card's scan block on desktop and keep
   assert.match(panel, /\{desktopCard && \([\s\S]*?<ContactCardInlineScan[\s\S]*?href=\{whatsappUrl\}/);
   // The same link, href and analytics as before; on desktop it opens WhatsApp itself.
   assert.match(panel, /href=\{whatsappUrl\}[\s\S]*?data-contact-card-direct=\{desktopCard \? "" : undefined\}[\s\S]*?trackEvent\("contact_option_clicked", \{\s*channel: "whatsapp",/);
-  assert.match(panel, /\{desktopCard\s*\? contactCardCopy\[locale\]\.useHere\s*: contactCopy\.whatsappAction\}/);
+  assert.match(panel, /const cardCopy = edition\?\.card \?\? contactCardCopy\[locale\];/);
+  assert.match(panel, /\{desktopCard\s*\? cardCopy\.useHere\s*: contactCopy\.whatsappAction\}/);
   // The QR code's code loads only when the desktop panel renders it.
   assert.match(inline, /lazy\(\(\) =>\s*import\("\.\/ContactCardScan"\)/);
   assert.match(inline, /window\.matchMedia\(contactCardDesktopQuery\)/);

@@ -101,6 +101,16 @@ interface HomegroundHeaderProps {
    * exposed to assistive technology as a location rather than the section root.
    */
   navigationIsExact?: boolean;
+  edition?: HomegroundHeaderEdition;
+}
+
+/** Optional language-edition copy; all menu structure and behaviour stay shared. */
+export interface HomegroundHeaderEdition {
+  language: string;
+  copy: Pick<HomegroundCopy, "path" | "businessDescriptor" | "navigation">;
+  navigation: ReturnType<typeof getHomegroundNavigationModel>;
+  servicesOverview: string;
+  onPlannerClick?: (event: ReactMouseEvent<HTMLAnchorElement>, returnFocus?: HTMLElement | null) => void;
 }
 
 const allowedHeaderHashes = new Set([
@@ -196,6 +206,7 @@ export function HomegroundHeader({
   plannerTracking,
   languagePaths,
   navigationIsExact = false,
+  edition,
 }: HomegroundHeaderProps) {
   const pathname = usePathname();
   const articleId = guideTourEntryId(pathname);
@@ -213,7 +224,8 @@ export function HomegroundHeader({
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const mobileNavRef = useRef<HTMLElement | null>(null);
   const mobileMenuScrollRef = useRef<HTMLDivElement | null>(null);
-  const copy = getHomegroundCopy(locale);
+  const copy = { ...getHomegroundCopy(locale), ...edition?.copy };
+  const currentLanguage = edition?.language ?? locale;
   const plannerCta = resolvePlannerCta(
     copy,
     plannerStatus,
@@ -234,7 +246,7 @@ export function HomegroundHeader({
       : `${copy.path}#planner-contact`
   );
   const faqHref = pageContext === "home" ? "#faq" : `${copy.path}#faq`;
-  const primaryNavigation = getHomegroundNavigationModel(locale, copy.path);
+  const primaryNavigation = edition?.navigation ?? getHomegroundNavigationModel(locale, copy.path);
   const plannerCtaAccessibleLabel =
     plannerStatus === "new"
       ? plannerCta
@@ -574,14 +586,14 @@ export function HomegroundHeader({
     trackEvent("navigation_clicked", {
       navigation_item: item,
       navigation_surface: surface,
-      page_language: locale,
+      page_language: currentLanguage,
     });
   };
   const trackPlannerClick = () => {
     if (!plannerTracking) return;
     trackEvent("guide_cta_clicked", {
       guide_id: plannerTracking.guideId,
-      page_language: locale,
+      page_language: currentLanguage,
       cta_position: plannerTracking.position ?? "header",
     });
   };
@@ -597,7 +609,7 @@ export function HomegroundHeader({
       event.altKey;
 
     if (
-      targetLocale !== locale &&
+      targetLocale !== currentLanguage &&
       handoffDirty &&
       !opensSeparateContext &&
       !window.confirm(copy.navigation.languageChangeWarning)
@@ -606,7 +618,7 @@ export function HomegroundHeader({
       return;
     }
 
-    if (targetLocale !== locale && !opensSeparateContext && !event.defaultPrevented &&
+    if (!edition && targetLocale !== currentLanguage && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
       // The Japanese and Spanish pages have no newsletter or planner form to receive state.
       if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr") {
@@ -622,12 +634,12 @@ export function HomegroundHeader({
     const target = getHomegroundCopy(targetLocale);
     const languageHref = languageHrefFor(targetLocale);
     const ariaCurrent =
-      targetLocale === locale
+      targetLocale === currentLanguage
         ? pageContext === "home"
           ? "page"
           : "true"
         : undefined;
-    const crossesRootLayout =
+    const crossesRootLayout = Boolean(edition) ||
       (locale === "en") !== (targetLocale === "en");
     const handleClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
       handleLanguageChange(event, targetLocale);
@@ -692,9 +704,11 @@ export function HomegroundHeader({
     </a>
   ) : null;
 
-  const frenchLanguageHref = languagePaths?.fr;
+  const frenchLanguageHref = edition && languagePaths?.fr && pageContext === "tour" && tourSelection
+    ? buildPrivateTourDetailHref(languagePaths.fr, tourSelection.slug, tourSelection.selection)
+    : languagePaths?.fr;
   const renderFrenchLanguageChoice = () => frenchLanguageHref ? (
-    <a href={frenchLanguageHref} hrefLang="fr" lang="fr" onClick={(event) => handleLanguageChange(event, "fr")}><span className={styles.languageChoiceShort}>FR</span><span className={styles.languageChoiceEndonym}>Français</span></a>
+    <a aria-current={currentLanguage === "fr" ? "page" : undefined} href={frenchLanguageHref} hrefLang="fr" lang="fr" onClick={(event) => handleLanguageChange(event, "fr")}><span className={styles.languageChoiceShort}>FR</span><span className={styles.languageChoiceEndonym}>Français</span></a>
   ) : null;
 
   const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
@@ -768,7 +782,7 @@ export function HomegroundHeader({
                       close();
                     }}
                   >
-                    <span className={styles.mobileEntryLabel}>{getTravelServicesHubCopy(locale).overview}</span>
+                    <span className={styles.mobileEntryLabel}>{edition?.servicesOverview ?? getTravelServicesHubCopy(locale).overview}</span>
                     <span className={styles.mobileEntryDescription}>{item.description}</span>
                   </MenuLink>
                 </li>
@@ -811,7 +825,7 @@ export function HomegroundHeader({
     <header
       className={styles.siteHeader}
       data-homeground-header-context={pageContext}
-      data-homeground-header-locale={locale}
+      data-homeground-header-locale={currentLanguage}
       data-menu-open={open ? "true" : "false"}
       {...brandFold}
     >
@@ -911,7 +925,8 @@ export function HomegroundHeader({
             aria-label={plannerCtaAccessibleLabel}
             onClick={(event) => {
               trackPlannerClick();
-              openTourContactFromLink(event, plannerHref, locale);
+              if (edition?.onPlannerClick) edition.onPlannerClick(event);
+              else openTourContactFromLink(event, plannerHref, locale);
               if (pageContext === "home") {
                 handleHomegroundHashClick(event, plannerTarget);
               }
@@ -1012,7 +1027,8 @@ export function HomegroundHeader({
               href={plannerHref}
               onClick={(event) => {
                 trackPlannerClick();
-                openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
+                if (edition?.onPlannerClick) edition.onPlannerClick(event, menuButtonRef.current);
+                else openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
                 close();
                 if (pageContext === "home") {
                   handleHomegroundHashClick(event, plannerTarget);

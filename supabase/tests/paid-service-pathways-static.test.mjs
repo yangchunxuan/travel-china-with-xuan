@@ -90,7 +90,7 @@ test("English Studio keeps its service comparison and uses the unified planner c
   assert.match(page, /\/services\//);
   assert.match(
     page,
-    /const plannerHref = `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
+    /const plannerHref = edition\?\.plannerHref \?\? `\$\{(?:homeCopy|copy)\.path\}#planner-contact`/,
   );
   assert.match(page, /const isEnglish = locale === "en"/);
   assert.match(page, /View all services/);
@@ -124,8 +124,8 @@ test("global navigation puts service pages under the Services item, beside the p
   assert.doesNotMatch(header, /"#build-my-route"/);
   assert.match(header, /"#full-trip-support"/);
 
-  assert.match(footer, /servicesOverviewPath = `\$\{copy.path\}services\//);
-  assert.match(footer, /fullTripSupportPath = `\$\{copy.path\}services\/full-trip-support\//);
+  assert.match(footer, /servicesOverviewPath = edition\?\.paths.services \?\? `\$\{copy.path\}services\//);
+  assert.match(footer, /fullTripSupportPath = edition\?\.paths.fullTripSupport \?\? `\$\{copy.path\}services\/full-trip-support\//);
   assert.match(footer, /href=\{fullTripSupportPath\}/);
   assert.match(footer, /href=\{servicesOverviewPath\}/);
   assert.match(footer, /services: "All services"/);

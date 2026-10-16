@@ -57,6 +57,8 @@ export interface ContactEdition {
   /** The tour's name as the edition's own page shows it. */
   tourName(context: PrivateTourInquiryContext): string;
   selectionLabel(context: PrivateTourInquiryContext): string | null;
+  /** Optional display name for an unpriced stay preference; the intake value remains unchanged. */
+  stayPreferenceLabel?(context: PrivateTourInquiryContext): string | null;
   travellersLabel(count: number): string;
   /** The draft a WhatsApp link carries. */
   messageText(context: PrivateTourInquiryContext | null, path?: string, draft?: TourContactDraft): string;

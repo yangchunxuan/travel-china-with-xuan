@@ -2,6 +2,7 @@ import pricing from '../content/product-previews/zhangjiajie-4-day-private-tour/
 import { formatPrivateTourPrice } from './privateTourProducts';
 import { productPreviewCopy } from './zhangjiajiePrivateTourPreview';
 import { terracottaHalfDayImage, type TerracottaHalfDayCopy } from './terracottaHalfDayTour';
+import { frenchLegacyZhangjiajieContactTitle, frenchLegacyStayNames } from './frenchLegacyContactCopy';
 
 export const frenchLegacyZhangjiajieSlug='zhangjiajie-4-day-private-tour';
 export const frenchHalfDaySlug='xian-terracotta-warriors-half-day-private-tour';
@@ -9,9 +10,9 @@ export const frenchLegacyZhangjiajiePath=`/fr/tours/${frenchLegacyZhangjiajieSlu
 export const frenchHalfDayPath=`/fr/tours/${frenchHalfDaySlug}/`;
 const usd=(cny:number)=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'USD',currencyDisplay:'code',maximumFractionDigits:0}).format(formatPrivateTourPrice(cny,'en').amount);
 const tiers={
- 'selected-city-stay':{name:'Hôtel en ville',description:'Un pied-à-terre pratique, choisi parmi les hôtels et les chambres disponibles à vos dates.'},
- 'spacious-premium-stay':{name:'Hébergement supérieur, plus spacieux',description:'Des chambres plus généreuses et davantage d’espace pour vous retrouver. Nous confirmons l’établissement et la répartition des chambres pour vos dates.'},
- 'distinctive-mountain-stay':{name:'Hébergement de caractère en montagne',description:'Un lieu choisi pour son atmosphère et son cadre, afin de prolonger le plaisir des paysages après les visites. L’établissement et la chambre sont confirmés avant paiement.'},
+ 'selected-city-stay':{name:frenchLegacyStayNames['selected-city-stay'],description:'Un pied-à-terre pratique, choisi parmi les hôtels et les chambres disponibles à vos dates.'},
+ 'spacious-premium-stay':{name:frenchLegacyStayNames['spacious-premium-stay'],description:'Des chambres plus généreuses et davantage d’espace pour vous retrouver. Nous confirmons l’établissement et la répartition des chambres pour vos dates.'},
+ 'distinctive-mountain-stay':{name:frenchLegacyStayNames['distinctive-mountain-stay'],description:'Un lieu choisi pour son atmosphère et son cadre, afin de prolonger le plaisir des paysages après les visites. L’établissement et la chambre sont confirmés avant paiement.'},
 };
 export const frenchLegacyPricing={
  validFrom:pricing.valid_from,validUntil:pricing.valid_until,
@@ -23,7 +24,7 @@ export const frenchLegacyPricing={
  })),
 };
 export const frenchLegacyZhangjiajie={
- title:'Zhangjiajie en 4 jours : pics de grès, pont de verre et mont Tianmen',
+ title:frenchLegacyZhangjiajieContactTitle,
  description:'Circuit privé de 4 jours et 3 nuits à Zhangjiajie : parc forestier, pont de verre du Grand Canyon et mont Tianmen. Trois catégories d’hébergement, guide anglophone les jours 2 et 3.',
  lede:'Une arrivée tranquille, puis trois journées aux paysages bien distincts : les pics du parc forestier, le Grand Canyon et Tianmen. Avant de réserver, nous vérifions que la visite de Tianmen le dernier jour laisse assez de temps pour votre train ou votre vol.',
  itinerary:[

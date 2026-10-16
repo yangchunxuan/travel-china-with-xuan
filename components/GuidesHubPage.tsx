@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { getAllGuides } from "../lib/guideRegistry";
 import {
   getGuidesHubPageLanguagePaths,
@@ -39,14 +40,33 @@ import styles from "./GuidesHubPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 const GUIDE_LIST_FRAGMENT = "#guide-list";
 type HubGuide = ReturnType<typeof getAllGuides>[number];
+export interface GuidesHubEdition {
+  language: string;
+  dateLocale: string;
+  skipLink: string;
+  header: ReactNode;
+  footer: ReactNode;
+  copy: ReturnType<typeof getGuidesHubCopy>;
+  guideCopy: Readonly<Record<string, Pick<HubGuide, "headline" | "description" | "cardImageAlt" | "cardTags">>>;
+  sectionLabels: Readonly<Record<string, string>>;
+  sectionHref: (section: string) => string;
+  exploreHref: string;
+  entryHref: string;
+  paginationHref: (page: number) => string;
+  plannerHref: string;
+  searchTitle: string;
+  searchExamples: readonly string[];
+  searchForm?: ReactNode;
+  schema: unknown;
+}
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
   zh: "zh-CN",
   ko: "ko-KR",
 };
 
-function formatGuideDate(value: string, locale: HomegroundLocale) {
-  return new Intl.DateTimeFormat(dateLocales[locale], {
+function formatGuideDate(value: string, locale: HomegroundLocale, dateLocale?: string) {
+  return new Intl.DateTimeFormat(dateLocale ?? dateLocales[locale], {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -190,15 +210,17 @@ function GuideCard({
   locale,
   labels,
   slot,
+  edition,
 }: {
   guide: HubGuide;
   index: number;
   locale: HomegroundLocale;
   labels: ReturnType<typeof getGuidesHubCopy>;
   slot: GuideSlot;
+  edition?: GuidesHubEdition;
 }) {
   const sectionLabel = guide.search
-    ? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
+    ? edition?.sectionLabels[guide.search.section] ?? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
     : labels.formatLabels[guide.format] ?? guide.format.replaceAll("-", " ");
   const cardTags =
     guide.cardTags ??
@@ -239,7 +261,7 @@ function GuideCard({
               <span>
                 {labels.updatedLabel}{" "}
                 <time dateTime={guide.dateModified}>
-                  {formatGuideDate(guide.dateModified, locale)}
+                  {formatGuideDate(guide.dateModified, locale, edition?.dateLocale)}
                 </time>
               </span>
             </div>
@@ -271,20 +293,24 @@ function GuideCard({
 export function GuidesHubPage({
   locale = "en",
   page = 1,
+  edition,
 }: {
   locale?: HomegroundLocale;
   page?: number;
+  edition?: GuidesHubEdition;
 }) {
   const home = getHomegroundCopy(locale);
-  const copy = getGuidesHubCopy(locale);
+  const copy = edition?.copy ?? getGuidesHubCopy(locale);
   const guideSearchCopy = getGuideSearchCopy(locale);
   const searchCopy = getSearchPlatformCopy(locale);
   const guideSearchDocuments = getGuideSearchDocuments(locale);
-  const { guides, pageCount, pageGuides } = getGuidesHubPagination(
+  const { guides, pageCount, pageGuides: sourcePageGuides } = getGuidesHubPagination(
     locale,
     page,
   );
-  const schema = jsonLdForHub(locale, page);
+  const pageGuides = sourcePageGuides.map(guide => edition?.guideCopy[guide.id] ? { ...guide, ...edition.guideCopy[guide.id] } : guide);
+  const schema = edition?.schema ?? jsonLdForHub(locale, page);
+  const paginationHref = (pageNumber: number) => edition?.paginationHref(pageNumber) ?? getGuidesHubPaginationHref(locale, pageNumber);
   const hasSpotlight =
     page === 1 && pageGuides.length > SPOTLIGHT_CARD_COUNT + 1;
   const slotFor = (index: number): GuideSlot =>
@@ -300,18 +326,18 @@ export function GuidesHubPage({
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.guidesPage}`}
-      data-homeground-locale={locale}
-      lang={home.htmlLang}
+      data-homeground-locale={edition?.language ?? locale}
+      lang={edition?.language ?? home.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#guides-main">
-        {home.skipLink}
+        {edition?.skipLink ?? home.skipLink}
       </a>
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         languagePaths={getGuidesHubPageLanguagePaths(page)}
         locale={locale}
         navigationIsExact={page === 1}
         pageContext="guides"
-      />
+      />}
 
       <main id="guides-main" tabIndex={-1}>
         <PointerSpotlight />
@@ -333,15 +359,15 @@ export function GuidesHubPage({
         >
           <div className={styles.searchBandInner}>
             <div className={styles.searchBandCopy}>
-              <h2 id="guide-search-title"><KeepWords locale={locale} text={guideSearchCopy.title} /></h2>
+              <h2 id="guide-search-title"><KeepWords locale={locale} text={edition?.searchTitle ?? guideSearchCopy.title} /></h2>
             </div>
             <div className={styles.searchFormCompact}>
-              <GuideSearchForm
+              {edition?.searchForm ?? <GuideSearchForm
                 documents={guideSearchDocuments}
                 locale={locale}
-                rotatingPlaceholders={guideSearchCopy.examples}
+                rotatingPlaceholders={edition?.searchExamples ?? guideSearchCopy.examples}
                 surface="guides_hub"
-              />
+              />}
             </div>
           </div>
         </section>
@@ -358,7 +384,7 @@ export function GuidesHubPage({
                 <h2 id="china-travel-guide-title"><KeepWords locale={locale} text={copy.countryGuide.title} /></h2>
               </div>
               <div className={styles.countryGuideContext}>
-                <Link href={getSearchSectionPath("explore", locale)}>
+                <Link href={edition?.exploreHref ?? getSearchSectionPath("explore", locale)}>
                   {copy.destinationAction}
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -372,7 +398,7 @@ export function GuidesHubPage({
 
                 return (
                   <li key={section}>
-                    <Link data-spotlight href={getSearchSectionPath(section, locale)}>
+                    <Link data-spotlight href={edition?.sectionHref(section) ?? getSearchSectionPath(section, locale)}>
                       <span className={styles.decisionNumber} aria-hidden="true">
                         <span>{String(index + 1).padStart(2, "0")}</span>
                       </span>
@@ -381,7 +407,7 @@ export function GuidesHubPage({
                       </span>
                       <span className={styles.decisionAction}>
                         <span className={styles.decisionActionLabel}>
-                          {sectionCopy.navLabel}
+                          {edition?.sectionLabels[section] ?? sectionCopy.navLabel}
                         </span>
                         <span aria-hidden="true">→</span>
                       </span>
@@ -395,9 +421,9 @@ export function GuidesHubPage({
               className={styles.entryHandoff}
               data-spotlight
               href={
-                locale === "en"
+                edition?.entryHref ?? (locale === "en"
                   ? "/guides/china-entry-requirements/"
-                  : getSearchSectionPath("essentials", locale)
+                  : getSearchSectionPath("essentials", locale))
               }
             >
               <span>
@@ -440,6 +466,7 @@ export function GuidesHubPage({
                 labels={copy}
                 locale={locale}
                 slot={slotFor(index)}
+                edition={edition}
               />
             ))}
           </ol>
@@ -450,7 +477,7 @@ export function GuidesHubPage({
               {page > 1 ? (
                 <Link
                   className={styles.paginationStep}
-                  href={getGuidesHubPaginationHref(locale, page - 1)}
+                  href={paginationHref(page - 1)}
                   rel="prev"
                 >
                   <span aria-hidden="true">←</span>
@@ -474,7 +501,7 @@ export function GuidesHubPage({
                         {copy.pagination.page(pageNumber)}
                       </span>
                     ) : (
-                      <Link href={getGuidesHubPaginationHref(locale, pageNumber)}>
+                      <Link href={paginationHref(pageNumber)}>
                         {copy.pagination.page(pageNumber)}
                       </Link>
                     )}
@@ -485,7 +512,7 @@ export function GuidesHubPage({
               {page < pageCount ? (
                 <Link
                   className={styles.paginationStep}
-                  href={getGuidesHubPaginationHref(locale, page + 1)}
+                  href={paginationHref(page + 1)}
                   rel="next"
                 >
                   {copy.pagination.next}
@@ -513,7 +540,7 @@ export function GuidesHubPage({
                 <p>{copy.cta.body}</p>
                 <a
                   className={styles.ctaAction}
-                  href={getGuidesHubPlannerHref(locale)}
+                  href={edition?.plannerHref ?? getGuidesHubPlannerHref(locale)}
                 >
                   {copy.cta.action}
                   <span aria-hidden="true">→</span>
@@ -524,7 +551,7 @@ export function GuidesHubPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="guides" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="guides" />}
 
       <script
         type="application/ld+json"

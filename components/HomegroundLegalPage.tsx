@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import {
   getHomegroundLegalCopy,
@@ -6,6 +7,7 @@ import {
   getHomegroundLegalPath,
   homegroundLegalPageIds,
   type HomegroundLegalPageId,
+  type HomegroundLegalCopy,
 } from "../lib/homegroundLegalI18n";
 import {
   type HomegroundLocale,
@@ -37,13 +39,23 @@ const businessHeroLabels: Record<
 export function HomegroundLegalPage({
   locale = "en",
   pageId,
+  edition,
 }: {
   locale?: HomegroundLocale;
   pageId: HomegroundLegalPageId;
+  edition?: {
+    copy: HomegroundLegalCopy;
+    header: ReactNode;
+    footer: ReactNode;
+    privacyPath: string;
+    relatedPath: (pageId: HomegroundLegalPageId) => string;
+    businessHeroLabels: { entity: string; code: string };
+  };
 }) {
-  const copy = getHomegroundLegalCopy(pageId, locale);
+  const copy = edition?.copy ?? getHomegroundLegalCopy(pageId, locale);
   const privacyPath =
-    locale === "en" ? "/privacy/" : `/${locale}/privacy/`;
+    edition?.privacyPath ?? (locale === "en" ? "/privacy/" : `/${locale}/privacy/`);
+  const heroLabels = edition?.businessHeroLabels ?? businessHeroLabels[locale];
   const languagePaths = getHomegroundLegalLanguagePaths(pageId);
   const schema = {
     "@context": "https://schema.org",
@@ -65,18 +77,18 @@ export function HomegroundLegalPage({
   return (
     <div
       className={styles.localeRoot}
-      data-legal-locale={locale}
+      data-legal-locale={edition ? copy.htmlLang : locale}
       lang={copy.htmlLang}
     >
       <a className={styles.skipLink} href="#legal-content">
         {copy.skipLink}
       </a>
 
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         languagePaths={languagePaths}
         locale={locale}
         pageContext="content"
-      />
+      />}
 
       <main id="legal-content">
         <section className={styles.hero} aria-labelledby="legal-title">
@@ -87,13 +99,13 @@ export function HomegroundLegalPage({
             {pageId === "business-information" ? (
               <dl className={styles.heroIdentity}>
                 <div>
-                  <dt>{businessHeroLabels[locale].entity}</dt>
+                  <dt>{heroLabels.entity}</dt>
                   <dd lang="zh-Hans">
                     {homegroundBusiness.registeredName}
                   </dd>
                 </div>
                 <div>
-                  <dt>{businessHeroLabels[locale].code}</dt>
+                  <dt>{heroLabels.code}</dt>
                   <dd>{homegroundBusiness.unifiedSocialCreditCode}</dd>
                 </div>
               </dl>
@@ -208,7 +220,7 @@ export function HomegroundLegalPage({
                   </span>
                 ) : (
                   <Link
-                    href={getHomegroundLegalPath(targetPageId, locale)}
+                    href={edition?.relatedPath(targetPageId) ?? getHomegroundLegalPath(targetPageId, locale)}
                     key={targetPageId}
                   >
                     {label}
@@ -224,7 +236,7 @@ export function HomegroundLegalPage({
         </article>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="content" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="content" />}
 
       <script
         type="application/ld+json"

@@ -144,7 +144,7 @@ test("public guide remains available to search, citation and training crawlers",
   assert.match(homeEditorial, /href: guide\.canonicalPath/);
   assert.match(homeEditorial, /linkLabel: guide\.featuredLinkLabel/);
   assert.match(homeGuides, /href=\{guide\.href\}/);
-  assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
+  assert.match(footer, /const guideHubPath = edition\?\.paths.guides \?\? `\$\{copy\.path\}guides\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.match(header, /getGuidePath\(guideId, targetLocale\)/);
 });

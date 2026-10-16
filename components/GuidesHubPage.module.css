@@ -1269,6 +1269,27 @@ a.paginationStep > span {
   }
 }
 
+/* French pagination keeps both controls within the phone's content width. */
+@media (max-width: 48rem) {
+  .guidesPage[data-homeground-locale="fr"] .paginationControls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+  }
+
+  .guidesPage[data-homeground-locale="fr"] .paginationPages {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .guidesPage[data-homeground-locale="fr"] .paginationStep {
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 @media (max-width: 42.5rem) {
   .guidesPage {
     --guides-gutter: 1rem;

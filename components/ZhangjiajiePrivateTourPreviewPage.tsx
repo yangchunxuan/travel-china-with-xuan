@@ -1,5 +1,7 @@
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
 import { spanishSite } from "../lib/spanishSite";
+import type { ReactNode } from "react";
+import type { PresentationCopy } from "../lib/presentationOverrides";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, Check, CircleAlert } from "lucide-react";
@@ -55,30 +57,51 @@ const photoCreditCopy = {
   },
 } as const;
 
+export interface ZhangjiajieTourEdition {
+  language: string;
+  copy: PresentationCopy<(typeof productPreviewCopy)["en"]>;
+  pricing: PresentationCopy<ReturnType<typeof getZhangjiajiePrivateTourPublicPricing>>;
+  commercialCopy: PresentationCopy<Pick<ReturnType<typeof getExistingContentCommercialCopy>, 'productLabel'|'productTitle'|'productBody'|'destinations'|'guides'|'related'>>;
+  planningContext: ReturnType<typeof getProductPlanningContext>;
+  header: ReactNode;
+  footer: ReactNode;
+  whatsAppLink: ReactNode;
+  priceScope: ReactNode;
+  comparison: ReactNode;
+  homePath: string;
+  canonicalPath: string;
+  dayTitles: readonly string[];
+  routePhotos: Readonly<Record<number,{alt:string;caption:string}>>;
+  photoCopy: {title:string;local:string};
+  ui: {tourHub:string;checkPrices:string;heroAlt:string;dayPrefix:string;creditPrefix:string;cropped:string;accommodationReference:string;touristType:string;groupStayInquiry:string};
+}
+
 export function ZhangjiajiePrivateTourPreviewPage({
   locale,
   published = false,
+  edition,
 }: {
   locale: ProductPreviewLocale;
   published?: boolean;
+  edition?: ZhangjiajieTourEdition;
 }) {
-  const copy = productPreviewCopy[locale];
-  const commercialCopy = getExistingContentCommercialCopy(locale);
-  const planningContext = getProductPlanningContext(
+  const copy = edition?.copy ?? productPreviewCopy[locale];
+  const commercialCopy = edition?.commercialCopy ?? getExistingContentCommercialCopy(locale);
+  const planningContext = edition?.planningContext ?? getProductPlanningContext(
     "zhangjiajie-4-day-private-tour",
     locale,
   );
-  const photoCopy = photoCreditCopy[locale];
+  const photoCopy = edition?.photoCopy ?? photoCreditCopy[locale];
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
   const isKo = locale === "ko";
-  const homePath = locale === "en" ? "/" : `/${locale}/`;
+  const homePath = edition?.homePath ?? (locale === "en" ? "/" : `/${locale}/`);
   const tourHubPath = `${homePath}tours/`;
-  const tourHubLabel = isZh
+  const tourHubLabel = edition?.ui.tourHub ?? (isZh
     ? "私家团"
     : isKo
       ? "프라이빗 투어"
-      : "Private tours";
+      : "Private tours");
   const languagePaths = published
     ? zhangjiajiePrivateTourPaths
     : zhangjiajiePrivateTourPreviewPaths;
@@ -94,7 +117,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
     inquiryContext.slug,
     published ? "private_tour" : "product_preview",
   );
-  const publishedPricing = getZhangjiajiePrivateTourPublicPricing(locale);
+  const publishedPricing = edition?.pricing ?? getZhangjiajiePrivateTourPublicPricing(locale);
   const publicPricing = {
     ...publishedPricing,
     tiers: publishedPricing.tiers.map((tier) => ({
@@ -124,8 +147,9 @@ export function ZhangjiajiePrivateTourPreviewPage({
     sixPersonInquiryLabel: copy.sixPersonInquiryLabel,
     exactStayNote: copy.exactStayNote,
     validThrough: copy.validThrough,
+    groupInquiryLabel: edition?.ui.groupStayInquiry,
   };
-  const canonicalPath = languagePaths[locale];
+  const canonicalPath = edition?.canonicalPath ?? languagePaths[locale];
   const pageUrl = `https://homegroundchina.com${canonicalPath}`;
   const lifecycle = getLegacySystemContentLifecycle(
     "zhangjiajie-4-day-private-tour",
@@ -154,11 +178,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
             url: pageUrl,
             image:
               "https://homegroundchina.com/product-previews/zhangjiajie-4-day-private-tour/hero/forest-pillars-og-1200.jpg",
-            touristType: isZh
+            touristType: edition?.ui.touristType ?? (isZh
               ? "张家界首次到访旅客"
               : isKo
                 ? "장가계를 처음 찾는 여행자"
-                : "First-time Zhangjiajie visitors",
+                : "First-time Zhangjiajie visitors"),
             provider: {
               "@id": EDITORIAL_ORGANIZATION_ID,
             },
@@ -168,7 +192,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
               itemListElement: product.route.map((day, index) => ({
                 "@type": "ListItem",
                 position: index + 1,
-                name: isZh ? day.title_zh : isKo ? day.title_ko : day.title_en,
+                name: edition?.dayTitles[index] ?? (isZh ? day.title_zh : isKo ? day.title_ko : day.title_en),
                 description: copy.daySummaries[index],
               })),
             },
@@ -315,7 +339,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
       images: option.images.filter((photo) =>
         safeAccommodationImages.has(photo.src),
       ),
-      summary:
+      summary: edition ? option.summary :
         accommodationSummaries[locale][
           option.id as keyof (typeof accommodationSummaries)[typeof locale]
         ] ?? option.summary,
@@ -325,7 +349,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${editorialStyles.pageRoot} ${styles.previewRoot}`}
-      data-homeground-locale={locale}
+      data-homeground-locale={edition?.language ?? locale}
       lang={copy.htmlLang}
     >
       <a className={editorialStyles.skipLink} href="#tour-details">
@@ -337,13 +361,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
           <span>{copy.previewLabel}</span>
         </div>
       ) : null}
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         // Published: Spanish readers get the Spanish tour list from the language switch.
         languagePaths={published ? { ...languagePaths, es: spanishSite.tours } : languagePaths}
         locale={locale}
         pageContext={published ? "tour" : "guide"}
         plannerHrefOverride={published ? inquiryHref : undefined}
-      />
+      />}
 
       <main id="tour-details">
         <section
@@ -389,11 +413,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
               <div>
                 {published ? (
                   <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="header">
-                    {isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates"}
+                    {edition?.ui.checkPrices ?? (isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates")}
                     <ArrowRight aria-hidden="true" size={18} />
                   </GuideCtaLink>
                 ) : null}
-                {published ? <TourWhatsAppLink locale={locale} slug="zhangjiajie-4-day-private-tour" /> : null}
+                {published ? edition?.whatsAppLink ?? <TourWhatsAppLink locale={locale} slug="zhangjiajie-4-day-private-tour" /> : null}
                 <a className={styles.priceJump} href="#prices-title">
                   {copy.pricesTitle}
                   <ArrowDown aria-hidden="true" size={18} />
@@ -414,11 +438,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                   ~548px wide), so it is drawn about 1.9x the box width. */}
               <Image
                 alt={
-                  isZh
+                  edition?.ui.heroAlt ?? (isZh
                     ? "阳光照亮张家界国家森林公园的砂岩峰柱与深谷"
                     : isKo
                       ? "햇빛을 받은 장가계 국가삼림공원의 사암 봉우리와 깊은 숲속 계곡"
-                      : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park"
+                      : "Sunlit sandstone pillars and deep forested ravines in Zhangjiajie National Forest Park")
                 }
                 fetchPriority="high"
                 fill
@@ -463,12 +487,13 @@ export function ZhangjiajiePrivateTourPreviewPage({
             </div>
             <ol className={styles.routeList}>
               {product.route.map((day, index) => {
-                const routePhoto = routePhotos[day.day];
+                const originalPhoto = routePhotos[day.day];
+                const routePhoto = originalPhoto ? {...originalPhoto,...edition?.routePhotos[day.day]} : undefined;
 
                 return (
                   <li key={day.day}>
                     <div className={styles.dayMarker}>
-                      {isKo ? null : <span>{isZh ? "第" : "Day"}</span>}
+                      {isKo ? null : <span>{edition?.ui.dayPrefix ?? (isZh ? "第" : "Day")}</span>}
                       <strong>{day.day}</strong>
                       {isZh ? (
                         <span>天</span>
@@ -483,11 +508,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                     >
                       <div>
                         <h3>
-                          {isZh
+                          {edition?.dayTitles[index] ?? (isZh
                             ? day.title_zh
                             : isKo
                               ? day.title_ko
-                              : day.title_en}
+                              : day.title_en)}
                         </h3>
                         <span className={styles.dayStatus}>
                           {day.guide_planned
@@ -512,7 +537,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
                             <span>{routePhoto.caption}</span>
                             {routePhoto.credit ? (
                               <span className={styles.dayFigureCredit}>
-                                {isZh ? "图片：" : isKo ? "사진: " : "Photo: "}
+                                {edition?.ui.creditPrefix ?? (isZh ? "图片：" : isKo ? "사진: " : "Photo: ")}
                                 <a href={routePhoto.credit.sourceHref}>
                                   {routePhoto.credit.author}
                                 </a>
@@ -523,11 +548,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                                 >
                                   {routePhoto.credit.license}
                                 </a>
-                                {isZh
+                                {edition?.ui.cropped ?? (isZh
                                   ? " · 已裁切"
                                   : isKo
                                     ? " · 일부 잘라냄"
-                                    : " · cropped"}
+                                    : " · cropped")}
                               </span>
                             ) : null}
                           </figcaption>
@@ -579,11 +604,11 @@ export function ZhangjiajiePrivateTourPreviewPage({
                           width={photo.width}
                         />
                         <figcaption>
-                          {locale === "zh"
+                          {edition?.ui.accommodationReference ?? (locale === "zh"
                             ? "住宿参考照片"
                             : locale === "ko"
                               ? "숙소 참고 사진"
-                              : "Accommodation reference"}
+                              : "Accommodation reference")}
                           {" · "}
                           {photo.caption}
                         </figcaption>
@@ -609,10 +634,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
               locale={locale}
               pricing={publicPricing}
             />
-            <TourPriceScope route="zhangjiajie" locale={locale} detailsHref="#scope-title" />
+            {edition?.priceScope ?? <TourPriceScope route="zhangjiajie" locale={locale} detailsHref="#scope-title" />}
             {published ? (
               <GuideCtaLink className={styles.inquiryAction} guideId="zhangjiajie-4-day-private-tour" href={inquiryHref} locale={locale} position="inline">
-                {isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates"}
+                {edition?.ui.checkPrices ?? (isZh ? "查询我出行日期的价格" : isKo ? "내 여행 날짜로 요금 확인하기" : "Check prices for my dates")}
                 <ArrowRight aria-hidden="true" size={18} />
               </GuideCtaLink>
             ) : null}
@@ -672,7 +697,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
               {copy.confirmationNote}
             </p>
             {published ? (
-              <ZhangjiajieTourComparisonLink
+              edition?.comparison ?? <ZhangjiajieTourComparisonLink
                 currentRoute="classic"
                 locale={locale}
               />
@@ -805,10 +830,10 @@ export function ZhangjiajiePrivateTourPreviewPage({
         </aside>
       </main>
 
-      <HomegroundFooter
+      {edition?.footer ?? <HomegroundFooter
         locale={locale}
         pageContext={published ? "tour" : "content"}
-      />
+      />}
       {structuredData ? (
         <script
           dangerouslySetInnerHTML={{

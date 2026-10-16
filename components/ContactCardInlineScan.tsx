@@ -3,6 +3,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { contactCardDesktopQuery } from "../lib/contactCard";
+import type { ContactCardScanCopy } from "./ContactCardScan";
 
 const ContactCardScan = lazy(() =>
   import("./ContactCardScan").then((module) => ({ default: module.ContactCardScan })),
@@ -31,15 +32,17 @@ export function ContactCardInlineScan({
   href,
   headingId,
   app = "whatsapp",
+  localizedCopy,
 }: {
   locale: HomegroundLocale;
   href: string;
   headingId: string;
   app?: "whatsapp" | "messenger";
+  localizedCopy?: ContactCardScanCopy;
 }) {
   return (
     <Suspense fallback={null}>
-      <ContactCardScan locale={locale} href={href} headingId={headingId} app={app} inline />
+      <ContactCardScan locale={locale} localizedCopy={localizedCopy} href={href} headingId={headingId} app={app} inline />
     </Suspense>
   );
 }

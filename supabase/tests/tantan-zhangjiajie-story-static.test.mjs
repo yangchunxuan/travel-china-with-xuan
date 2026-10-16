@@ -94,8 +94,9 @@ test("Tantan story uses a verified attraction hero and privacy-edited field phot
   );
   assert.match(
     studio,
-    /<MemberStoryLink memberId=\{member\.id\} locale=\{locale\} \/>/,
+    /<MemberStoryLink memberId=\{member\.id\} locale=\{locale\} override=\{edition\?\.memberStoryLinks\[member\.id\]\} \/>/,
   );
+  assert.match(studio, /override\?\.label \?\? guide\.featuredLinkLabel/);
   assert.match(
     zhangjiajie,
     /getGuideEntry\(\s*"zhangjiajie-glass-bridge-vs-skywalk"/,

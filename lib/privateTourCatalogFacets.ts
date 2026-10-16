@@ -68,6 +68,7 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "guangzhou-shunde-foshan-5-day-private-tour": "south",
   "beijing-highlights-5-day-private-tour": "north",
   "xian-terracotta-warriors-5-day-private-tour": "north",
+  "xian-terracotta-warriors-half-day-private-tour": "north",
   "harbin-winter-5-day-private-tour": "northeast",
   "changbaishan-yanji-winter-6-day-private-tour": "northeast",
   "harbin-yabuli-snow-town-6-day-private-tour": "northeast",

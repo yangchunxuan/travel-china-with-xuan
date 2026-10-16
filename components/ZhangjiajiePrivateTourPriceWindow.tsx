@@ -50,6 +50,7 @@ interface PriceCopy {
   sixPersonInquiryLabel: string;
   exactStayNote: string;
   validThrough: string;
+  groupInquiryLabel?: string;
 }
 
 export function ZhangjiajiePrivateTourPriceWindow({
@@ -198,7 +199,7 @@ export function ZhangjiajiePrivateTourPriceWindow({
                   href={tier.groupInquiryHref}
                   locale={locale}
                   position="inline"
-                >{locale === "zh" ? "按我的人数询问这档住宿" : locale === "ko" ? "우리 인원으로 이 숙소 문의" : "Ask for this stay with my group"}<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7" /></svg></GuideCtaLink> : null}
+                >{copy.groupInquiryLabel ?? (locale === "zh" ? "按我的人数询问这档住宿" : locale === "ko" ? "우리 인원으로 이 숙소 문의" : "Ask for this stay with my group")}<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16"><path d="M5 12h14M12 5l7 7-7 7" /></svg></GuideCtaLink> : null}
               </div>
               <p className={styles.confirmationLine}>{copy.exactStayNote}</p>
             </article>

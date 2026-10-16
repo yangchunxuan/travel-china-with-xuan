@@ -20,7 +20,8 @@ test("global navigation records only controlled anonymous dimensions", async () 
   assert.match(header, /trackEvent\("navigation_clicked", \{/);
   assert.match(header, /navigation_item: item/);
   assert.match(header, /navigation_surface: surface/);
-  assert.match(header, /page_language: locale/);
+  assert.match(header, /page_language: currentLanguage/);
+  assert.match(header, /const currentLanguage = edition\?\.language \?\? locale/);
   assert.match(header, /trackNavigationClick\(item\.id, "desktop-primary"\)/);
   assert.match(header, /trackNavigationClick\("faq", "desktop-utility"\)/);
   assert.match(header, /trackNavigationClick\(item\.id, "mobile-primary"\)/);

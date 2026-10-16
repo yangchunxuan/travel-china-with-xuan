@@ -3,7 +3,9 @@ import {
   getHomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import type { PresentationCopy } from "../lib/presentationOverrides";
+import type { PrivateTourFacets } from "../lib/privateTourCatalogFacets";
 import {
   getPrivateTourFacetItem,
   getPrivateTourFacets,
@@ -38,10 +40,25 @@ import styles from "./PrivateToursHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
-export function buildPrivateToursHubJsonLd(locale: HomegroundLocale) {
-  const products = getPublishedPrivateTourCatalog(locale);
-  const copy = getPrivateTourHubCopy(locale, products.length);
-  const home = getHomegroundCopy(locale);
+export interface PrivateToursHubEdition {
+  language: string;
+  products: readonly PublishedPrivateTourCatalogItem[];
+  copy: PresentationCopy<ReturnType<typeof getPrivateTourHubCopy>>;
+  home: { path: string; skipLink: string };
+  header: ReactNode;
+  footer: ReactNode;
+  facets: PrivateTourFacets;
+  priorityCopy: PresentationCopy<(typeof privateTourPriorityCopy)["en"]>;
+  priorityReasons: Readonly<Record<string, string>>;
+  arrivalPlanning: PresentationCopy<typeof englishMarketPlanning>;
+  plannerPath: string;
+  originalImageSlugs?: readonly string[];
+}
+
+export function buildPrivateToursHubJsonLd(locale: HomegroundLocale, edition?: PrivateToursHubEdition) {
+  const products = edition?.products ?? getPublishedPrivateTourCatalog(locale);
+  const copy = edition?.copy ?? getPrivateTourHubCopy(locale, products.length);
+  const home = edition?.home ?? getHomegroundCopy(locale);
   const canonicalUrl = `${SITE_URL}${copy.path}`;
   const breadcrumbId = `${canonicalUrl}#breadcrumb`;
   const itemListId = `${canonicalUrl}#tour-list`;
@@ -118,13 +135,15 @@ function CompactTourComparison({
   index,
   locale,
   publishedTourCount,
+  edition,
 }: {
   product: PublishedPrivateTourCatalogItem;
   index: number;
   locale: HomegroundLocale;
   publishedTourCount: number;
+  edition?: PrivateToursHubEdition;
 }) {
-  const copy = getPrivateTourHubCopy(locale, publishedTourCount);
+  const copy = edition?.copy ?? getPrivateTourHubCopy(locale, publishedTourCount);
   const facet = getPrivateTourFacetItem(product, locale);
 
   return (
@@ -143,6 +162,7 @@ function CompactTourComparison({
         locale={locale}
         position={index + 1}
         productSlug={product.slug}
+        displayLanguage={edition?.language}
       >
         <figure className={styles.quickImage}>
           <img
@@ -151,8 +171,8 @@ function CompactTourComparison({
             height={product.image.height}
             loading="lazy"
             sizes="(max-width: 48rem) 6.5rem, (max-width: 64rem) calc((100vw - 2.75rem) / 2), 25rem"
-            src={privateTourCardImageSource(product.id, 960)}
-            srcSet={privateTourCardImageSrcSet(product.id)}
+            src={edition?.originalImageSlugs?.includes(product.slug) ? product.image.src : privateTourCardImageSource(product.id, 960)}
+            srcSet={edition?.originalImageSlugs?.includes(product.slug) ? undefined : privateTourCardImageSrcSet(product.id)}
             style={{ objectPosition: product.image.objectPosition }}
             width={product.image.width}
           />
@@ -241,32 +261,35 @@ function CompactTourComparison({
 
 export function PrivateToursHubPage({
   locale = "en",
+  edition,
 }: {
   locale?: HomegroundLocale;
+  edition?: PrivateToursHubEdition;
 }) {
-  const products = getPublishedPrivateTourCatalog(locale);
-  const copy = getPrivateTourHubCopy(locale, products.length);
-  const home = getHomegroundCopy(locale);
-  const schema = buildPrivateToursHubJsonLd(locale);
-  const facets = getPrivateTourFacets(products, locale, copy.quoteOnlyLabel);
+  const products = edition?.products ?? getPublishedPrivateTourCatalog(locale);
+  const copy = edition?.copy ?? getPrivateTourHubCopy(locale, products.length);
+  const home = edition?.home ?? getHomegroundCopy(locale);
+  const schema = buildPrivateToursHubJsonLd(locale, edition);
+  const facets = edition?.facets ?? getPrivateTourFacets(products, locale, copy.quoteOnlyLabel);
   const stats = getPrivateTourHubStats(products);
-  const priorityEntrances = getPrivateTourPriorityEntrances(products, locale);
-  const priorityCopy = privateTourPriorityCopy[locale];
+  const priorityEntrances = getPrivateTourPriorityEntrances(products, locale).map(entry => ({...entry,reason:edition?.priorityReasons[entry.product.slug] ?? entry.reason}));
+  const priorityCopy = edition?.priorityCopy ?? privateTourPriorityCopy[locale];
+  const arrivalPlanning = edition?.arrivalPlanning ?? englishMarketPlanning;
 
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.toursPage}`}
-      data-homeground-locale={locale}
+      data-homeground-locale={edition?.language ?? locale}
       lang={copy.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#private-tours-main">
         {home.skipLink}
       </a>
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         locale={locale}
         pageContext="tours"
         languagePaths={getPrivateTourHubLanguagePaths()}
-      />
+      />}
 
       <main id="private-tours-main" tabIndex={-1}>
         <header className={styles.hero}>
@@ -304,7 +327,7 @@ export function PrivateToursHubPage({
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>
-              <dd><RollingNumber value={`${stats.shortestDays}–${stats.longestDays}`} /></dd>
+              <dd><RollingNumber value={edition ? `${new Intl.NumberFormat(edition.language).format(stats.shortestDays)}–${new Intl.NumberFormat(edition.language).format(stats.longestDays)}` : `${stats.shortestDays}–${stats.longestDays}`} /></dd>
             </div>
             <div>
               <dt>{copy.statsShopping}</dt>
@@ -326,6 +349,7 @@ export function PrivateToursHubPage({
                   locale={locale}
                   position={catalogPosition}
                   productSlug={product.slug}
+                  displayLanguage={edition?.language}
                   className={styles.priorityLink}
                   ariaLabelledBy={`priority-tour-${product.slug}`}
                 >
@@ -370,30 +394,31 @@ export function PrivateToursHubPage({
                 index={index}
                 locale={locale}
                 publishedTourCount={products.length}
+                edition={edition}
               />
             ))}
           </PrivateTourCatalogFilter>
         </section>
 
-        {locale === "en" && (
+        {(edition || locale === "en") && (
           <section className={styles.arrivalPlanning} aria-labelledby="tour-arrival-title">
             <header>
-              <p className={styles.eyebrow}>{englishMarketPlanning.eyebrow}</p>
-              <h2 id="tour-arrival-title">{englishMarketPlanning.title}</h2>
-              <p><KeepWords locale="en" text={englishMarketPlanning.introduction} /></p>
+              <p className={styles.eyebrow}>{arrivalPlanning.eyebrow}</p>
+              <h2 id="tour-arrival-title">{arrivalPlanning.title}</h2>
+              <p><KeepWords locale="en" text={arrivalPlanning.introduction} /></p>
             </header>
             <div className={styles.arrivalQuestions}>
-              {englishMarketPlanning.questions.map((item) => (
+              {arrivalPlanning.questions.map((item) => (
                 <div key={item.title}>
                   <h3>{item.title}</h3>
                   <p><KeepWords locale="en" text={item.body} /></p>
                 </div>
               ))}
             </div>
-            <nav aria-label={englishMarketPlanning.preparationLabel} className={styles.arrivalLinks}>
-              <p>{englishMarketPlanning.preparationLabel}</p>
+            <nav aria-label={arrivalPlanning.preparationLabel} className={styles.arrivalLinks}>
+              <p>{arrivalPlanning.preparationLabel}</p>
               <ul>
-                {englishMarketPlanning.links.map((item) => (
+                {arrivalPlanning.links.map((item) => (
                   <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
                 ))}
               </ul>
@@ -409,7 +434,7 @@ export function PrivateToursHubPage({
             </div>
             <div>
               <p><KeepWords locale={locale} text={copy.finalBody} /></p>
-              <Link className={styles.finalAction} href={getPrivateTourHubPlannerPath(locale)}>
+              <Link className={styles.finalAction} href={edition?.plannerPath ?? getPrivateTourHubPlannerPath(locale)}>
                 {copy.finalAction}
                 <span aria-hidden="true">→</span>
               </Link>
@@ -418,7 +443,7 @@ export function PrivateToursHubPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="tours" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="tours" />}
 
       <script
         type="application/ld+json"
