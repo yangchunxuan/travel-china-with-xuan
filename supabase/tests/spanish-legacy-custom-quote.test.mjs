@@ -151,4 +151,3 @@ test('a direct Spanish custom-group URL still opens on mount, and EN/ZH/KO click
     assert.equal(events[0].detail.selection, undefined);
   }
 });
-
