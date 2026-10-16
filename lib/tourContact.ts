@@ -95,12 +95,15 @@ export function openTourContactFromLink(event: ContactLinkEvent, href: string, l
   const url = new URL(href, window.location.origin);
   if (url.origin !== window.location.origin) return false;
   const context = getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
-  if (!context || window.location.pathname !== `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`) return false;
-  if (!document.querySelector('[data-homeground-contact-ready="true"]')) return false;
-  event.preventDefault();
-  returnFocusTarget = returnFocus ?? (typeof HTMLElement !== "undefined" && event.currentTarget instanceof HTMLElement ? event.currentTarget : null);
-  window.dispatchEvent(new CustomEvent(tourContactOpenEvent, { detail: context }));
-  return true;
+  if (!context) return false;
+  const sourcePath = `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`;
+  // French uses the English intake contract. Its same-page custom-group link
+  // must open now: a query-only Next Link navigation preserves the contact host.
+  const frenchCustomGroup = locale === "en" && context.customGroup
+    && window.location.pathname === `/fr/tours/${context.slug}/`
+    && url.pathname === window.location.pathname;
+  if (window.location.pathname !== sourcePath && !frenchCustomGroup) return false;
+  return openTourContactForContext(event, context, returnFocus);
 }
 
 /**
