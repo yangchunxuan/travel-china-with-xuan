@@ -3,9 +3,10 @@
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   getHomegroundCopy,
+  type HomegroundCopy,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
@@ -132,40 +133,51 @@ export function HomegroundFooter({
   pageContext = "home",
   variant = "default",
   destinationHubItems = [],
+  edition,
 }: {
   locale?: HomegroundLocale;
   pageContext?: HomegroundPageContext;
   variant?: "default" | "homepage";
   destinationHubItems?: readonly HomepageDestinationHubItem[];
+  edition?: {
+    copy: HomegroundCopy;
+    sectionLabels: (typeof footerSections)['en'];
+    related: ReturnType<typeof getHomegroundLegalCopy>['related'];
+    company: { path: string; navLabel: string };
+    manageConsent: string;
+    newsletter?: ReactNode;
+    cityLinks: readonly { id: string; href: string; label: string }[];
+    paths: { privacy: string; business: string; terms: string; refund: string; services: string; fullTripSupport: string; reservations: string; guides: string; tours: string; destinations: string; studio: string };
+  };
 }) {
-  const copy = getHomegroundCopy(locale);
+  const copy = edition?.copy ?? getHomegroundCopy(locale);
   const pathname = usePathname();
   const currentPath = pathname?.replace(/\/?$/, "/");
   const privacyPath =
-    locale === "en" ? "/privacy/" : `${copy.path}privacy/`;
-  const businessPath = getHomegroundLegalPath(
+    edition?.paths.privacy ?? (locale === "en" ? "/privacy/" : `${copy.path}privacy/`);
+  const businessPath = edition?.paths.business ?? getHomegroundLegalPath(
     "business-information",
     locale,
   );
-  const termsPath = getHomegroundLegalPath("terms", locale);
-  const refundPath = getHomegroundLegalPath(
+  const termsPath = edition?.paths.terms ?? getHomegroundLegalPath("terms", locale);
+  const refundPath = edition?.paths.refund ?? getHomegroundLegalPath(
     "refund-delivery",
     locale,
   );
-  const legalCopy = getHomegroundLegalCopy(
+  const legalCopy = edition ? { related: edition.related } : getHomegroundLegalCopy(
     "business-information",
     locale,
   );
-  const servicesOverviewPath = `${copy.path}services/`;
-  const fullTripSupportPath = `${copy.path}services/full-trip-support/`;
-  const attractionReservationsPath = `${copy.path}services/china-attraction-reservations/`;
-  const guideHubPath = `${copy.path}guides/`;
-  const tourHubPath = `${copy.path}tours/`;
-  const destinationsHubPath = `${copy.path}explore/`;
-  const sectionLabels = footerSections[locale];
-  const consentCopy = getAnalyticsConsentCopy(locale);
-  const studioPath = `${copy.path}studio/`;
-  const companyCopy = getHomegroundCompanyCopy(locale);
+  const servicesOverviewPath = edition?.paths.services ?? `${copy.path}services/`;
+  const fullTripSupportPath = edition?.paths.fullTripSupport ?? `${copy.path}services/full-trip-support/`;
+  const attractionReservationsPath = edition?.paths.reservations ?? `${copy.path}services/china-attraction-reservations/`;
+  const guideHubPath = edition?.paths.guides ?? `${copy.path}guides/`;
+  const tourHubPath = edition?.paths.tours ?? `${copy.path}tours/`;
+  const destinationsHubPath = edition?.paths.destinations ?? `${copy.path}explore/`;
+  const sectionLabels = edition?.sectionLabels ?? footerSections[locale];
+  const consentCopy = edition ? { manage: edition.manageConsent } : getAnalyticsConsentCopy(locale);
+  const studioPath = edition?.paths.studio ?? `${copy.path}studio/`;
+  const companyCopy = edition?.company ?? getHomegroundCompanyCopy(locale);
   const socialProfiles = getHomegroundSocialProfiles().filter(
     (profile) => Boolean(profile.url),
   );
@@ -208,7 +220,7 @@ export function HomegroundFooter({
   const cityLinks =
     destinationHubItems.length > 0
       ? destinationHubItems
-      : footerDestinationLinks[locale];
+      : edition?.cityLinks ?? footerDestinationLinks[locale];
 
   return (
       <footer
@@ -365,7 +377,7 @@ export function HomegroundFooter({
                 <li>
                   <Link href={privacyPath}>{legalCopy.related.privacy}</Link>
                 </li>
-                {getNewsletterConfig() ? <li><NewsletterFooterLink locale={locale} /></li> : null}
+                {getNewsletterConfig() ? (edition ? edition.newsletter : <li><NewsletterFooterLink locale={locale} /></li>) : null}
                 <li>
                   <button
                     type="button"

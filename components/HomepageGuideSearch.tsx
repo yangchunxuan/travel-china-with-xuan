@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import {
   getGuideSearchCopy,
   getGuideSearchIndexPath,
+  type GuideSearchCopy,
 } from "../lib/guideSearchI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import type {
@@ -37,6 +38,7 @@ export function HomepageGuideSearch({
   onGuideClick,
   viewAllHref,
   viewAllLabel,
+  edition,
 }: {
   chapters: readonly HomepageGuideChapter[];
   demos: readonly HomepageSearchDemo[];
@@ -51,8 +53,13 @@ export function HomepageGuideSearch({
   onGuideClick?: (guide: HomepageGuideRailItem) => void;
   viewAllHref: string;
   viewAllLabel: string;
+  edition?: {
+    copy: GuideSearchCopy;
+    topicPaths: Record<HomepageGuidePathId, string>;
+    documentsUrl?: string;
+  };
 }) {
-  const copy = getGuideSearchCopy(locale);
+  const copy = edition?.copy ?? getGuideSearchCopy(locale);
 
   return (
     <section
@@ -67,7 +74,8 @@ export function HomepageGuideSearch({
       </div>
       <div className={styles.formArea}>
         <GuideSearchForm
-          documentsUrl={getGuideSearchIndexPath(locale)}
+          documentsUrl={edition?.documentsUrl ?? getGuideSearchIndexPath(locale)}
+          copyOverride={edition?.copy}
           locale={locale}
           rotatingPlaceholders={demos.map(({ query }) => query)}
           showExamples={false}
@@ -79,7 +87,7 @@ export function HomepageGuideSearch({
           {chapters.map((chapter, index) => {
             const path = guidePaths.items.find((item) => item.id === chapter.id);
             if (!path) return null;
-            const topicHref = getHomepageGuidePath(locale, chapter.id);
+            const topicHref = edition?.topicPaths[chapter.id] ?? getHomepageGuidePath(locale, chapter.id);
             return (
               <li className={styles.chapter} key={chapter.id}>
                 {/* The photo repeats the chapter link below it. */}

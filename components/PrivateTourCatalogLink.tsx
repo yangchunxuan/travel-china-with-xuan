@@ -13,6 +13,7 @@ export function PrivateTourCatalogLink({
   locale,
   position,
   productSlug,
+  displayLanguage,
 }: {
   /** Short accessible name (title + price) instead of the whole card text. */
   ariaLabelledBy?: string;
@@ -22,6 +23,7 @@ export function PrivateTourCatalogLink({
   locale: HomegroundLocale;
   position: number;
   productSlug: string;
+  displayLanguage?: string;
 }) {
   return (
     <Link
@@ -32,7 +34,7 @@ export function PrivateTourCatalogLink({
       data-tour-product-id={productSlug}
       onClick={() => {
         trackEvent("tour_catalog_product_clicked", {
-          page_language: locale,
+          page_language: displayLanguage ?? locale,
           product_position: position,
           product_slug: productSlug,
           search_surface: "tours-hub",

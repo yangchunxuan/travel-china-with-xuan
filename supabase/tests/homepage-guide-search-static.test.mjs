@@ -15,7 +15,7 @@ test("homepage guide search leads the guide chapters, before the planning sectio
   const finderPosition = homepage.indexOf(
     "<HomepageGuideSearch",
   );
-  const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} />");
+  const planningScope = homepage.indexOf("<PlanningScopeSection locale={locale} edition={edition?.planningScope} />");
 
   assert.ok(finderPosition >= 0, "the guide finder must remain present");
   assert.ok(
@@ -56,7 +56,7 @@ test("homepage finder lazy-loads one same-language static index", async () => {
     ),
   ]);
 
-  assert.match(finder, /documentsUrl=\{getGuideSearchIndexPath\(locale\)\}/);
+  assert.match(finder, /documentsUrl=\{edition\?\.documentsUrl \?\? getGuideSearchIndexPath\(locale\)\}/);
   assert.match(finder, /surface="homepage"/);
   assert.match(i18n, /\/guides\/guide-search-index\.json/);
   assert.match(i18n, /`\/\$\{locale\}\/guides\/guide-search-index\.json`/);

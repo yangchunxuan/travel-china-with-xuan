@@ -40,6 +40,7 @@ export async function generateMetadata({
         "zh-Hans": "/zh/",
         ja: "/ja/",
         es: "/es/",
+      fr: "/fr/",
         "x-default": "/",
       },
     },

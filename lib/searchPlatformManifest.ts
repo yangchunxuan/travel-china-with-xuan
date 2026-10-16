@@ -250,9 +250,10 @@ export function getSearchHubLanguagePaths(section: SearchSectionId) {
     getManifestEntriesByNodeId(searchPlatformManifest, `hub-${section}`).map(
       (entry) => [entry.locale, entry.path],
     ),
-  ) as Partial<Record<HomegroundLocale | "ja", string>>;
+  ) as Partial<Record<HomegroundLocale | "ja" | "fr", string>>;
   if (section === "explore" || section === "services") {
     paths.ja = `/ja/${section}/`;
+    if (section === "services") paths.fr = "/fr/services/";
   }
   return paths;
 }

@@ -94,7 +94,7 @@ test("the homepage separates tour conversion, destination discovery and three pa
 
   assert.match(
     homepage,
-    /const destinationsIndexPath =\s*locale === "en" \? "\/explore\/" : `\/\$\{locale\}\/explore\/`/,
+    /const destinationsIndexPath =\s*edition\?\.paths\.destinations \?\? \(locale === "en" \? "\/explore\/" : `\/\$\{locale\}\/explore\/`\)/,
   );
   assert.match(
     homepage,
@@ -223,8 +223,8 @@ test("the white homepage flows from guidance to one structured dark footer", asy
     );
   }
   assert.match(productShowcase, /data-homepage-offer-kind="tour"/);
-  // The Japanese homepage passes its own hub link; every other locale uses privateTourHubPaths.
-  assert.match(productShowcase, /href=\{(?:japanese\?\.hubHref \?\? )?privateTourHubPaths\[locale\]\}/);
+  // Independent editions supply a hub; all original locales retain their existing paths.
+  assert.match(productShowcase, /href=\{edition\?\.hubHref \?\? japanese\?\.hubHref \?\? privateTourHubPaths\[locale\]\}/);
   assert.match(productShowcase, /\{copy\.hubActionLabel\}/);
   assert.doesNotMatch(productShowcase, /availabilityNote/);
   assert.doesNotMatch(productShowcase, /data-homepage-offer-kind="guide"/);
@@ -663,7 +663,7 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
     page,
     /className=\{`\$\{styles\.heroLead\} \$\{showcaseStyles\.heroLead\}`\}/,
   );
-  assert.match(page, /href=\{privateTourHubPaths\[locale\]\}/);
+  assert.match(page, /href=\{edition\?\.paths\.tours \?\? privateTourHubPaths\[locale\]\}/);
   assert.match(page, /className=\{showcaseStyles\.heroDestinationPrompt\}/);
   assert.doesNotMatch(page, /aria-label=\{showcase\.hero(?:Primary|Secondary)\}/);
   assert.match(
@@ -732,7 +732,7 @@ test("homepage guide chapters are parallel, numbered and remain ordinary discove
     finder,
     /<nav className=\{styles\.chapters\} aria-label=\{guidePaths\.listLabel\}>\s*<ol>[\s\S]*?<li className=\{styles\.chapter\} key=\{chapter\.id\}>/,
   );
-  assert.match(finder, /const topicHref = getHomepageGuidePath\(locale, chapter\.id\);/);
+  assert.match(finder, /const topicHref = edition\?\.topicPaths\[chapter\.id\] \?\? getHomepageGuidePath\(locale, chapter\.id\);/);
   assert.match(finder, /<Link href=\{topicHref\}>\s*\{path\.title\}/);
   assert.match(finder, /<Link href=\{guide\.href\} onClick=\{\(\) => onGuideClick\?\.\(guide\)\}>\s*<span>\{guide\.title\}<\/span>/);
   assert.match(finder, /String\(index \+ 1\)\.padStart\(2, "0"\)/);

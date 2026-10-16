@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
-import { terracottaHalfDayCopy, terracottaHalfDayEnquiryAnchor, terracottaHalfDayImage, terracottaHalfDayPaths, terracottaHalfDayReadHref } from "../lib/terracottaHalfDayTour";
+import { terracottaHalfDayCopy, terracottaHalfDayEnquiryAnchor, terracottaHalfDayImage, terracottaHalfDayPaths, terracottaHalfDayReadHref, type TerracottaHalfDayCopy } from "../lib/terracottaHalfDayTour";
 import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import localeStyles from "./LocaleRoot.module.css";
@@ -23,18 +24,18 @@ function AttractionHeading({ text }: { text: string }) {
  * marked by a thin arrow. Nothing is boxed, filled, pilled or given an icon.
  * Each section is a heading with a plain list beside it.
  */
-export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) {
-  const copy = terracottaHalfDayCopy[locale];
+export function TerracottaHalfDayPage({ locale, edition }: { locale: HomegroundLocale; edition?: { language: string; copy: TerracottaHalfDayCopy; header: ReactNode; footer: ReactNode; send: ReactNode; homePath: string; guideNote: string } }) {
+  const copy = edition?.copy ?? terracottaHalfDayCopy[locale];
   return (
-    <div className={`${styles.page} ${localeStyles.root} hg-locale-root`} data-homeground-locale={locale}>
+    <div className={`${styles.page} ${localeStyles.root} hg-locale-root`} data-homeground-locale={edition?.language ?? locale}>
       <a className={styles.skip} href="#terracotta-main">{copy.skip}</a>
-      <HomegroundHeader locale={locale} pageContext="tour" languagePaths={terracottaHalfDayPaths} />
+      {edition?.header ?? <HomegroundHeader locale={locale} pageContext="tour" languagePaths={terracottaHalfDayPaths} />}
       <main className={styles.main} id="terracotta-main">
         {/* The photograph sits beside the headline on a wide screen and under it on a phone, never wider than the words. */}
         <section className={styles.hero} aria-labelledby="terracotta-title">
           <div className={styles.heroCopy}>
             <nav className={styles.breadcrumb} aria-label={copy.home}>
-              <Link href={locale === "en" ? "/" : `/${locale}/`}>{copy.home}</Link><span aria-hidden="true">/</span><span>{copy.eyebrow}</span>
+              <Link href={edition?.homePath ?? (locale === "en" ? "/" : `/${locale}/`)}>{copy.home}</Link><span aria-hidden="true">/</span><span>{copy.eyebrow}</span>
             </nav>
             <h1 id="terracotta-title"><AttractionHeading text={copy.title} /></h1>
             <p className={styles.promise}>{copy.promise}</p>
@@ -85,6 +86,7 @@ export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) 
               </div>
             </div>
             <div className={styles.small}>
+              {edition?.guideNote ? <p>{edition.guideNote}</p> : null}
               <p><strong>{copy.bookingTitle}</strong> {copy.bookingBody}</p>
               <a className={styles.textLink} href="https://www.bmy.com.cn/guide/">{copy.officialLink}</a>
             </div>
@@ -96,6 +98,7 @@ export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) 
           <div className={styles.blockHead}>
             <h2 id="price-title">{copy.priceTitle}</h2>
             <p>{copy.priceBody}</p>
+            {edition?.guideNote ? <p>{edition.guideNote}</p> : null}
           </div>
           <div>
             <ol className={styles.asks}>
@@ -106,7 +109,7 @@ export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) 
                 </li>
               ))}
             </ol>
-            <TerracottaHalfDaySend locale={locale} />
+            {edition?.send ?? <TerracottaHalfDaySend locale={locale} />}
             <p className={styles.small}>{copy.enquiryNote}</p>
           </div>
         </section>
@@ -127,7 +130,7 @@ export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) 
           <ul className={styles.read}>
             {copy.readLinks.map((link) => (
               <li key={link.path}>
-                <Link className={styles.readLink} href={terracottaHalfDayReadHref(link.path, locale)} prefetch={false}>{link.title}</Link>
+                <Link className={styles.readLink} href={edition ? link.path : terracottaHalfDayReadHref(link.path, locale)} prefetch={false}>{link.title}</Link>
                 <p>{link.body}</p>
               </li>
             ))}
@@ -136,7 +139,7 @@ export function TerracottaHalfDayPage({ locale }: { locale: HomegroundLocale }) 
 
         <p className={styles.credit}><a href={terracottaHalfDayImage.sourceUrl}>{copy.photoCredit}</a> · {terracottaHalfDayImage.author} · <a href={terracottaHalfDayImage.licenseUrl}>{terracottaHalfDayImage.license}</a></p>
       </main>
-      <HomegroundFooter locale={locale} pageContext="tour" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="tour" />}
     </div>
   );
 }

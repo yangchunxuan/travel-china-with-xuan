@@ -106,7 +106,7 @@ test("homepage keeps destination discovery distinct from private tours", async (
   assert.match(homePage, /const destinationsIndexPath =/);
   assert.match(
     homePage,
-    /className=\{showcaseStyles\.primaryAction\}[\s\S]{0,100}href=\{privateTourHubPaths\[locale\]\}/,
+    /className=\{showcaseStyles\.primaryAction\}[\s\S]{0,100}href=\{edition\?\.paths.tours \?\? privateTourHubPaths\[locale\]\}/,
   );
   assert.match(
     homePage,

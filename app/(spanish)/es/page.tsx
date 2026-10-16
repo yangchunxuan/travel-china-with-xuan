@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: spanishHomeDescription,
   alternates: {
     canonical: spanishSite.home,
-    languages: { en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: spanishSite.home, "x-default": "/" },
+    languages: { en: "/", "zh-Hans": "/zh/", ko: "/ko/", ja: "/ja/", es: spanishSite.home, fr: "/fr/", "x-default": "/" },
   },
   robots: { index: true, follow: true },
   ...buildSpanishSocialMetadata({

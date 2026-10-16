@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
 import { absoluteManifestAlternates, getSearchHubEntry, getSearchHubLanguagePaths } from "../lib/searchPlatformManifest";
@@ -17,6 +18,22 @@ import { KeepWords } from "./text/KeepWords";
 import styles from "./TravelServicesHubPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
+
+export interface TravelServicesHubEdition {
+  language: string;
+  homePath: string;
+  homeLabel: string;
+  skipLink: string;
+  header: ReactNode;
+  footer: ReactNode;
+  copy: { [Key in Exclude<keyof ReturnType<typeof getTravelServicesHubCopy>, "cards">]: string } & { cards: readonly TravelServiceCardCopy[] };
+  section: ReturnType<typeof getSearchPlatformCopy>["sections"]["services"];
+  serviceHref: (id: TravelServiceCardCopy["id"]) => string;
+  planningHref: string;
+  guidesHref: string;
+  feeLabel: string;
+  schema: unknown;
+}
 
 function serviceHref(
   id: TravelServiceCardCopy["id"],
@@ -83,30 +100,30 @@ function schemaForServices(locale: HomegroundLocale) {
   };
 }
 
-export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLocale }) {
+export function TravelServicesHubPage({ locale = "en", edition }: { locale?: HomegroundLocale; edition?: TravelServicesHubEdition }) {
   const home = getHomegroundCopy(locale);
   const navigation = getHomegroundNavigationModel(locale, home.path);
   const planning = navigation.items.find((item) => item.id === "studio");
   if (!planning) throw new Error("Missing studio navigation item.");
-  const section = getSearchPlatformCopy(locale).sections.services;
-  const copy = getTravelServicesHubCopy(locale);
-  const schema = schemaForServices(locale);
+  const section = edition?.section ?? getSearchPlatformCopy(locale).sections.services;
+  const copy = edition?.copy ?? getTravelServicesHubCopy(locale);
+  const schema = edition?.schema ?? schemaForServices(locale);
   // Chinese title: break only between its three phrases (kept from #206).
   const zhTitleParts = locale === "zh"
     ? section.title.match(/^(只在真正改变)(旅行体验的地方)(加入本地协助。)$/)?.slice(1)
     : null;
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#services-main">{home.skipLink}</a>
-      <HomegroundHeader locale={locale} pageContext="services" languagePaths={getSearchHubLanguagePaths("services")} />
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={edition?.language ?? locale} lang={edition?.language ?? home.htmlLang}>
+      <a className={localeStyles.skipLink} href="#services-main">{edition?.skipLink ?? home.skipLink}</a>
+      {edition?.header ?? <HomegroundHeader locale={locale} pageContext="services" languagePaths={getSearchHubLanguagePaths("services")} />}
       <main id="services-main" tabIndex={-1}>
         <PointerSpotlight />
         <header className={styles.hero}>
           <div className={styles.heroInner}>
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
               <ol>
-                <li><Link href={home.path}>{home.navigation.homeLabel}</Link></li>
+                <li><Link href={edition?.homePath ?? home.path}>{edition?.homeLabel ?? home.navigation.homeLabel}</Link></li>
                 <li aria-current="page"><span aria-hidden="true">/</span>{copy.overview}</li>
               </ol>
             </nav>
@@ -137,7 +154,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
               const image = serviceImage(card.id);
               return (
                 <li key={card.id}>
-                  <Link data-spotlight href={serviceHref(card.id, locale)}>
+                  <Link data-spotlight href={edition?.serviceHref(card.id) ?? serviceHref(card.id, locale)}>
                     <figure className={styles.cardImage}>
                       <Image
                         alt={image.alt}
@@ -152,7 +169,7 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
                     <div className={styles.cardBody}>
                       <p className={styles.cardEyebrow}>{card.eyebrow}</p>
                       <h3><KeepWords locale={locale} text={card.title} /></h3>
-                      <p className={styles.cardText}>{card.body.replace("{fee}", formatAttractionReservationFee(attractionReservationServiceFeeCny, locale))}</p>
+                      <p className={styles.cardText}>{card.body.replace("{fee}", edition?.feeLabel ?? formatAttractionReservationFee(attractionReservationServiceFeeCny, locale))}</p>
                       <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
                     </div>
                   </Link>
@@ -170,13 +187,13 @@ export function TravelServicesHubPage({ locale = "en" }: { locale?: HomegroundLo
           <div>
             <p>{copy.methodBody}</p>
             <div className={styles.methodLinks}>
-              <Link href={planning.href}>{copy.methodAction}<span aria-hidden="true">→</span></Link>
-              <Link href={`${home.path}guides/`}>{copy.adviceAction}</Link>
+              <Link href={edition?.planningHref ?? planning.href}>{copy.methodAction}<span aria-hidden="true">→</span></Link>
+              <Link href={edition?.guidesHref ?? `${home.path}guides/`}>{copy.adviceAction}</Link>
             </div>
           </div>
         </section>
       </main>
-      <HomegroundFooter locale={locale} pageContext="services" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="services" />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     </div>
   );

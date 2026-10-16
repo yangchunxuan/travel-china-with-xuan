@@ -14,6 +14,7 @@ import type { ContactEdition } from "../lib/contactEdition";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import {
   buildPrivateTourMailtoHref,
+  getPrivateTourInquiryContextFromSearchParams,
   getPrivateTourInquirySubmissionContext,
   privateTourInquirySelectionLabel,
   type PrivateTourInquiryContext,
@@ -65,7 +66,10 @@ function pageContext(locale: HomegroundLocale, edition?: ContactEdition, request
   const prefix = locale === "en" ? "" : `/${locale}`;
   const path = window.location.pathname;
   const tourSlug = edition ? edition.tourSlugFromPath(path) : path.match(new RegExp(`^${prefix}/tours/([a-z0-9-]+)/$`))?.[1];
-  const tour = selectedContactCardTour(tourSlug, locale, window.location.search, request?.tour);
+  const tour = selectedContactCardTour(tourSlug, locale, window.location.search, request?.tour)
+    ?? (edition?.language === "fr" && path === edition.homePath
+      ? getPrivateTourInquiryContextFromSearchParams(new URLSearchParams(window.location.search), locale)
+      : null);
   const isGuide = edition ? edition.isGuidePath(path) : new RegExp(`^${prefix}/guides/[a-z0-9-]+/$`).test(path);
   const guideTitle = !tour && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "";
   return { path, tour, guideTitle };

@@ -282,6 +282,7 @@ test("hub copy and language ownership are complete and self-consistent", () => {
     ko: "/ko/tours/",
     ja: "/ja/tours/",
     es: "/es/tours/",
+    fr: "/fr/tours/",
     "x-default": "/tours/",
   });
 

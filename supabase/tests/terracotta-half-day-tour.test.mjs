@@ -32,7 +32,7 @@ test("the half-day tour is quoted on request, with no price and no draft wording
   }
 });
 
-test("each language is an indexable page with its canonical and the other two languages", () => {
+test("each language is an indexable page with its canonical and all published language alternates", () => {
   for (const locale of locales) {
     const metadata = terracottaHalfDayMetadata(locale);
     assert.equal(metadata.robots.index, true);
@@ -41,6 +41,7 @@ test("each language is an indexable page with its canonical and the other two la
       en: terracottaHalfDayPaths.en,
       "zh-Hans": terracottaHalfDayPaths.zh,
       ko: terracottaHalfDayPaths.ko,
+      fr: `/fr/tours/${terracottaHalfDaySlug}/`,
       "x-default": terracottaHalfDayPaths.en,
     });
   }

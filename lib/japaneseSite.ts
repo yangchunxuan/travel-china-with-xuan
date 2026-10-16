@@ -1,4 +1,5 @@
 import { homegroundBusiness } from "./homegroundBusiness";
+import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
 import { spanishSitePagePathByEnglishPath } from "./spanishEditionIndex";
 
 /** Japanese site routes outside the article system. */
@@ -74,7 +75,7 @@ export function withJapaneseAlternate<
   const alternates = metadata.alternates ?? {};
   return {
     ...metadata,
-    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath } },
+    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
   };
 }
 
@@ -91,12 +92,14 @@ export function japaneseAlternates(
   const [en, zh, ko, ja] = japaneseLanguagePaths(enPath, jaPath, overrides);
   // The home and guides pages also have a Spanish page; hreflang only.
   const es = spanishSitePagePathByEnglishPath[enPath];
+  const fr = frenchSitePagePathByEnglishPath[enPath];
   return {
     en: en.path,
     "zh-Hans": zh.path,
     ko: ko.path,
     ja: ja.path,
     ...(es ? { es } : {}),
+    ...(fr ? { fr } : {}),
     "x-default": en.path,
   } as const;
 }

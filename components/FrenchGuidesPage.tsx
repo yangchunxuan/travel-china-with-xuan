@@ -1,0 +1,46 @@
+import { GuidesHubPage, type GuidesHubEdition } from './GuidesHubPage';
+import { FrenchGuideSearchForm } from './FrenchGuideSearchForm';
+import { FrenchSiteFooter, FrenchSiteHeader } from './FrenchChrome';
+import { frenchLanguagePaths } from '../lib/frenchSite';
+import { frenchGuideCardCopy, frenchGuideSectionLabels, frenchGuidesHubCopy } from '../lib/frenchGuidesHubCopy';
+import { getGuideSearchDocuments } from '../lib/guideSearchRuntime';
+import { getGuidesHubPagination } from '../lib/guidesHubPagination';
+import { getSearchSectionPath, type SearchSectionId } from '../lib/searchPlatformI18n';
+import { EDITORIAL_WEBSITE_ID, editorialOrganizationSchema, editorialWebsiteSchema } from '../lib/editorialIdentity';
+
+export function FrenchGuidesPage() {
+  const path = '/fr/guides/';
+  const url = `https://homegroundchina.com${path}`;
+  const { pageGuides } = getGuidesHubPagination('en', 1);
+  const edition: GuidesHubEdition = {
+    language: 'fr', dateLocale: 'fr-FR', skipLink: 'Aller au contenu',
+    header: <FrenchSiteHeader currentPath={path} languagePaths={frenchLanguagePaths('/guides/', path)} />,
+    footer: <FrenchSiteFooter currentPath={path} />,
+    copy: frenchGuidesHubCopy, guideCopy: frenchGuideCardCopy,
+    sectionLabels: frenchGuideSectionLabels,
+    sectionHref: (section) => getSearchSectionPath(section as SearchSectionId, 'en'),
+    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/guides/china-entry-requirements/',
+    paginationHref: (page) => page === 1 ? `${path}#guide-list` : `/guides/page/${page}/#guide-list`,
+    plannerHref: '/fr/#planner-contact',
+    searchTitle: 'Une question précise ? Recherchez en anglais.',
+    searchExamples: ['Where to stay in Zhangjiajie', 'Beijing South Station to the airport', 'China with older parents'],
+    searchForm: <FrenchGuideSearchForm documents={getGuideSearchDocuments('en')} />,
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: frenchGuidesHubCopy.metadata.openGraphTitle,
+          description: frenchGuidesHubCopy.metadata.description, inLanguage: 'fr', isPartOf: { '@id': EDITORIAL_WEBSITE_ID }, mainEntity: { '@id': `${url}#item-list` } },
+        editorialWebsiteSchema(), editorialOrganizationSchema(),
+        { '@type': 'ItemList', '@id': `${url}#item-list`, numberOfItems: pageGuides.length,
+          itemListOrder: 'https://schema.org/ItemListOrderDescending',
+          itemListElement: pageGuides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1,
+            name: frenchGuideCardCopy[guide.id]?.headline ?? guide.headline, url: guide.canonicalUrl })) },
+        { '@type': 'BreadcrumbList', itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://homegroundchina.com/fr/' },
+          { '@type': 'ListItem', position: 2, name: frenchGuidesHubCopy.title, item: url },
+        ] },
+      ],
+    },
+  };
+  return <GuidesHubPage locale="en" edition={edition} />;
+}

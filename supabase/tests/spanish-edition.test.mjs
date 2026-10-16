@@ -278,7 +278,8 @@ test("Spanish pages mount the main contact flow and their buttons open it", () =
   // On a tour page the buttons open that tour's quote dialog; "another group
   // size" on the Zhangjiajie tours asks for the group, as on the main pages.
   const links = read("components/JapaneseJiangnanInteraction.tsx");
-  assert.match(links, /startsWith\("\/es\/"\)\) \{[\s\S]*?openTourContactForContext\(event, getPrivateTourInquiryContext\(/);
+  assert.ok(links.includes('/^\\/(?:es|fr)\\//.test(window.location.pathname)'));
+  assert.match(links, /openTourContactForContext\(event, getPrivateTourInquiryContext\(/);
   assert.match(links, /const customGroup = otherGroup && isZhangjiajieCustomGroupTour\(slug\);/);
 
   // Drafts are written in Spanish and point at the Spanish page.

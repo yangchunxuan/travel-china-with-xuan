@@ -74,7 +74,7 @@ test("homepage guide chapters draw on the complete localized guide catalog", asy
   }
 
   const guidesSectionIndex = homepage.indexOf("<HomepageGuideSearch");
-  const proofSectionIndex = homepage.indexOf("<PlanningScopeSection locale={locale} />");
+  const proofSectionIndex = homepage.indexOf("<PlanningScopeSection locale={locale} edition={edition?.planningScope} />");
   assert.ok(
     guidesSectionIndex >= 0 && guidesSectionIndex < proofSectionIndex,
     "the travel-guide chapters must appear before the planning-proof section",
@@ -223,7 +223,7 @@ test("hub has direct planner contact and stays usable from 320px to wide screens
   const copy = await source("app/(default)/guides/guidesHubI18n.ts");
   const css = await source("components/GuidesHubPage.module.css");
 
-  assert.match(hub, /href=\{getGuidesHubPlannerHref\(locale\)\}/);
+  assert.match(hub, /href=\{edition\?\.plannerHref \?\? getGuidesHubPlannerHref\(locale\)\}/);
   assert.match(copy, /utm_campaign: "trip-conversation"/);
   assert.match(copy, /#planner-contact/);
   assert.match(copy, /action: "Talk to a China trip planner"/);

@@ -30,6 +30,12 @@ interface HomepageProductShowcaseProps {
     readonly copy: HomepageProductShowcaseTemplateCopy;
     readonly hubHref: string;
   };
+  /** A front-end edition changes copy and links, without widening intake locales. */
+  readonly edition?: {
+    readonly language: string;
+    readonly copy: HomepageProductShowcaseTemplateCopy;
+    readonly hubHref: string;
+  };
 }
 
 /**
@@ -72,8 +78,10 @@ export function HomepageProductShowcase({
   products,
   onItemClick,
   japanese,
+  edition,
 }: HomepageProductShowcaseProps) {
-  const copy = japanese ? fromTemplateCopy(japanese.copy) : getHomepageProductShowcaseCopy(locale);
+  const localized = edition ?? japanese;
+  const copy = localized ? fromTemplateCopy(localized.copy) : getHomepageProductShowcaseCopy(locale);
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
   // Rows dim only once the scroll watcher runs, so without it every route
@@ -152,7 +160,7 @@ export function HomepageProductShowcase({
     <section
       aria-labelledby="homepage-products-title"
       className={styles.section}
-      data-homeground-locale={japanese ? "ja" : locale}
+      data-homeground-locale={edition?.language ?? (japanese ? "ja" : locale)}
       data-homepage-product-count={products.length}
       data-homepage-product-showcase="true"
       id="travel-products"
@@ -341,7 +349,7 @@ export function HomepageProductShowcase({
         <div className={styles.showcaseFooter}>
           <Link
             className={styles.hubLink}
-            href={japanese?.hubHref ?? privateTourHubPaths[locale]}
+            href={edition?.hubHref ?? japanese?.hubHref ?? privateTourHubPaths[locale]}
           >
             {copy.hubActionLabel}
             <ArrowRight aria-hidden="true" size={16} />

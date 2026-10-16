@@ -51,6 +51,7 @@ import { InquiryReceipt } from "./InquiryReceipt";
 import { EmailTypoHint } from "./EmailTypoHint";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import { kakaoTalkCopy } from "../lib/tourContact";
+import type { ContactEdition } from "../lib/contactEdition";
 
 const homegroundInquiryApiHostname =
   "xbymvlxethfzqcgyoieb.supabase.co";
@@ -191,13 +192,17 @@ export function HomepageQuickContact({
   copy,
   onCancel,
   variant = "default",
+  edition,
 }: {
   locale: HomegroundLocale;
   copy: HomepagePlanningDeskCopy;
   onCancel?: () => void;
   variant?: "default" | "hero";
+  /** Front-end words and drafts only; locale continues to identify the intake contract. */
+  edition?: ContactEdition;
 }) {
   const contactCopy = copy.contactStart;
+  const cardCopy = edition?.card ?? contactCardCopy[locale];
   const emailId = useId();
   const errorId = `${emailId}-error`;
   const liveStatusId = `${emailId}-live-status`;
@@ -243,14 +248,14 @@ export function HomepageQuickContact({
   const whatsappUrl =
     directWhatsAppEnabled && whatsappNumber
       ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          whatsappMessage(locale, privateTourInterest),
+          edition?.messageText(privateTourInterest, edition.homePath) ?? whatsappMessage(locale, privateTourInterest),
         )}`
       : "";
   const messengerUrl = trustedMessengerUrl(
     process.env.NEXT_PUBLIC_HOMEGROUND_MESSENGER_URL?.trim() ||
       defaultMessengerUrl,
   );
-  const directMailto = buildPrivateTourMailtoHref(
+  const directMailto = edition?.mailtoHref(privateTourInterest) ?? buildPrivateTourMailtoHref(
     homegroundBusiness.serviceEmail,
     locale,
     privateTourInterest,
@@ -481,9 +486,9 @@ export function HomepageQuickContact({
     ...(kakaoEnabled ? ["kakao" as const] : []),
   ];
   const boardLabels: Record<BoardTab, string> = {
-    whatsapp: contactCardCopy[locale].tabWhatsApp,
-    email: contactCardCopy[locale].tabEmail,
-    messenger: contactCardCopy[locale].tabMessenger,
+    whatsapp: cardCopy.tabWhatsApp,
+    email: cardCopy.tabEmail,
+    messenger: cardCopy.tabMessenger,
     kakao: kakaoTalkCopy.tab,
   };
   const kakaoContact = kakaoEnabled ? (
@@ -582,12 +587,12 @@ export function HomepageQuickContact({
       {privateTourInterest && status !== "success" && (
         <aside
           className={styles.quickContactProductInterest}
-          aria-label={privateTourInquiryContactCopy[locale].surfaceLabel}
+          aria-label={edition?.card.tourLabel ?? privateTourInquiryContactCopy[locale].surfaceLabel}
         >
-          <span>{privateTourInquiryContactCopy[locale].surfaceLabel}</span>
-          <strong>{privateTourInterest.name}</strong>
-          {privateTourInquirySelectionLabel(privateTourInterest, locale) && (
-            <p>{privateTourInquirySelectionLabel(privateTourInterest, locale)}</p>
+          <span>{edition?.card.tourLabel ?? privateTourInquiryContactCopy[locale].surfaceLabel}</span>
+          <strong>{edition?.tourName(privateTourInterest) ?? privateTourInterest.name}</strong>
+          {(edition?.selectionLabel(privateTourInterest) ?? privateTourInquirySelectionLabel(privateTourInterest, locale)) && (
+            <p>{edition?.selectionLabel(privateTourInterest) ?? privateTourInquirySelectionLabel(privateTourInterest, locale)}</p>
           )}
         </aside>
       )}
@@ -596,7 +601,7 @@ export function HomepageQuickContact({
           <div
             className={styles.boardTabs}
             role="tablist"
-            aria-label={contactCardCopy[locale].tabsLabel}
+            aria-label={cardCopy.tabsLabel}
             style={{ "--board-tab": boardTabs.indexOf(boardTab), "--board-tabs": boardTabs.length } as CSSProperties}
           >
             {boardTabs.map((tab) => (
@@ -622,12 +627,12 @@ export function HomepageQuickContact({
             data-contact-card-direct=""
             onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
           >
-            {contactCardCopy[locale].directEmailAction}
+            {cardCopy.directEmailAction}
             <ArrowUpRight aria-hidden="true" size={16} />
           </a> : null}
           {clock && (
             <p className={styles.boardClock}>
-              {contactCardCopy[locale].chinaTime} <time>{clock}</time>
+              {cardCopy.chinaTime} <time>{clock}</time>
             </p>
           )}
         </div>
@@ -653,6 +658,7 @@ export function HomepageQuickContact({
                 <div className={styles.quickContactScan}>
                   <ContactCardInlineScan
                     locale={locale}
+                    localizedCopy={edition?.card}
                     href={whatsappUrl}
                     headingId={`${emailId}-scan`}
                   />
@@ -679,7 +685,7 @@ export function HomepageQuickContact({
                 }}
               >
                 {desktopCard
-                  ? contactCardCopy[locale].useHere
+                  ? cardCopy.useHere
                   : contactCopy.whatsappAction}
                 <ArrowUpRight aria-hidden="true" size={18} />
               </a>
@@ -734,7 +740,7 @@ export function HomepageQuickContact({
                 data-contact-card-direct=""
                 onClick={() => trackEvent("contact_option_clicked", { channel: "email", contact_variant: variant, page_language: locale })}
               >
-                {contactCardCopy[locale].directEmailAction}
+                {cardCopy.directEmailAction}
                 <ArrowUpRight aria-hidden="true" size={18} />
               </a>
               <span>{homegroundBusiness.serviceEmail}</span>
@@ -743,7 +749,7 @@ export function HomepageQuickContact({
           <h3>{contactCopy.emailTitle}</h3>
           {board && (
             <p className={styles.boardReplyFrom}>
-              {contactCardCopy[locale].replyFrom}{" "}
+              {cardCopy.replyFrom}{" "}
               <strong>{homegroundBusiness.serviceEmail}</strong>
             </p>
           )}
@@ -756,7 +762,7 @@ export function HomepageQuickContact({
               </p>
             </div>
           ) : status === "success" && receipt ? (
-            <InquiryReceipt receipt={receipt} locale={locale} containerRef={successRef} />
+            <InquiryReceipt receipt={receipt} locale={locale} localizedCopy={edition?.receipt} dateLocale={edition?.intlLocale} containerRef={successRef} />
           ) : (
             <form
               className={styles.quickContactEmailForm}
@@ -822,7 +828,7 @@ export function HomepageQuickContact({
                   )}
                 </button>
               </div>
-              <EmailTypoHint email={email} locale={locale} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setEmailValidationError(false); setShowRetry(false); }} />
+              <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={status === "submitting"} onAccept={(value) => { setEmail(value); snapshotRef.current = null; setError(""); setStatus("idle"); setEmailValidationError(false); setShowRetry(false); }} />
               <div className={styles.quickContactHoneypot} aria-hidden="true">
                 <label htmlFor={`${emailId}-company`}>Company website</label>
                 <input
@@ -858,7 +864,7 @@ export function HomepageQuickContact({
               )}
               <small className={styles.quickContactEmailUse}>
                 {contactCopy.emailUse} {contactCopy.privacyLead}{" "}
-                <a href={privacyPath(locale)}>
+                <a href={edition?.privacyHref ?? privacyPath(locale)}>
                   {contactCopy.privacyAction}
                 </a>
               </small>
@@ -883,6 +889,7 @@ export function HomepageQuickContact({
             <div className={styles.quickContactScan}>
               <ContactCardInlineScan
                 locale={locale}
+                localizedCopy={edition?.card}
                 href={messengerUrl}
                 headingId={`${emailId}-messenger-scan`}
                 app="messenger"

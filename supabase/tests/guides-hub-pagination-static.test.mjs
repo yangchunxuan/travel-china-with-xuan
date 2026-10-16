@@ -134,15 +134,16 @@ test("every guide batch is crawlable through real static links, indexable routes
   assert.match(styles, /\.catalog\s*\{[\s\S]*?scroll-margin-top:\s*6\.5rem/);
   assert.match(
     page,
-    /href=\{getGuidesHubPaginationHref\(locale, pageNumber\)\}/,
+    /href=\{paginationHref\(pageNumber\)\}/,
+  );
+  assert.match(page, /edition\?\.paginationHref\(pageNumber\) \?\? getGuidesHubPaginationHref\(locale, pageNumber\)/);
+  assert.match(
+    page,
+    /href=\{paginationHref\(page - 1\)\}/,
   );
   assert.match(
     page,
-    /href=\{getGuidesHubPaginationHref\(locale, page - 1\)\}/,
-  );
-  assert.match(
-    page,
-    /href=\{getGuidesHubPaginationHref\(locale, page \+ 1\)\}/,
+    /href=\{paginationHref\(page \+ 1\)\}/,
   );
   assert.match(page, /rel="prev"/);
   assert.match(page, /rel="next"/);

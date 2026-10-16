@@ -101,8 +101,8 @@ test("global navigation keeps one distinct five-item information architecture", 
     header,
     /pageContext === "home" \? "#faq" : `\$\{copy\.path\}#faq`/,
   );
-  assert.match(footer, /const guideHubPath = `\$\{copy\.path\}guides\/`/);
-  assert.match(footer, /const tourHubPath = `\$\{copy\.path\}tours\/`/);
+  assert.match(footer, /const guideHubPath = edition\?\.paths.guides \?\? `\$\{copy\.path\}guides\/`/);
+  assert.match(footer, /const tourHubPath = edition\?\.paths.tours \?\? `\$\{copy\.path\}tours\/`/);
   assert.match(footer, /href=\{guideHubPath\}/);
   assert.match(footer, /href=\{tourHubPath\}/);
   assert.doesNotMatch(footer, /guideId|getGuideEntry/);

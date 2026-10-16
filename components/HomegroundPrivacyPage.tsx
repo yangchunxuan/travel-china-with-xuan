@@ -1,7 +1,9 @@
 import {
   getHomegroundPrivacyCopy,
   type HomegroundPrivacyLocale,
+  type HomegroundPrivacyCopy,
 } from "../lib/homegroundPrivacyI18n";
+import type { ReactNode } from "react";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./HomegroundPrivacyPage.module.css";
@@ -9,32 +11,40 @@ import { NewsletterPrivacyNotice } from "./NewsletterPrivacyNotice";
 
 export function HomegroundPrivacyPage({
   locale = "en",
+  edition,
 }: {
   locale?: HomegroundPrivacyLocale;
+  edition?: {
+    copy: HomegroundPrivacyCopy;
+    header: ReactNode;
+    footer: ReactNode;
+    newsletter: ReactNode;
+  };
 }) {
-  const copy = getHomegroundPrivacyCopy(locale);
+  const copy = edition?.copy ?? getHomegroundPrivacyCopy(locale);
   const languagePaths = {
     en: getHomegroundPrivacyCopy("en").pagePath,
     zh: getHomegroundPrivacyCopy("zh").pagePath,
     ko: getHomegroundPrivacyCopy("ko").pagePath,
     ja: "/ja/privacy/",
+    fr: "/fr/privacy/",
   };
 
   return (
     <div
       className={styles.localeRoot}
-      data-privacy-locale={locale}
+      data-privacy-locale={edition ? copy.htmlLang : locale}
       lang={copy.htmlLang}
     >
       <a className={styles.skipLink} href="#privacy-content">
         {copy.skipLink}
       </a>
 
-      <HomegroundHeader
+      {edition?.header ?? <HomegroundHeader
         languagePaths={languagePaths}
         locale={locale}
         pageContext="content"
-      />
+      />}
 
       <main id="privacy-content">
         <section className={styles.hero} aria-labelledby="privacy-title">
@@ -62,7 +72,7 @@ export function HomegroundPrivacyPage({
         </section>
 
         <article className={styles.notice}>
-          <NewsletterPrivacyNotice locale={locale} />
+          {edition ? edition.newsletter : <NewsletterPrivacyNotice locale={locale} />}
           <section
             className={styles.currentFlow}
             aria-labelledby="current-flow-title"
@@ -200,7 +210,7 @@ export function HomegroundPrivacyPage({
         </article>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="content" />
+      {edition?.footer ?? <HomegroundFooter locale={locale} pageContext="content" />}
     </div>
   );
 }

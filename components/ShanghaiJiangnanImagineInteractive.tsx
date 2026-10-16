@@ -147,10 +147,11 @@ type PhotoCopy = Readonly<{
   /** Languages that put the word first ("Día 3") set this instead of `dayUnit`. */
   dayPrefix?: string;
   /** Which photo-control labels to use; Japanese when not set. */
-  controls?: "ja" | "es";
+  controls?: "ja" | "es" | "fr";
 }>;
 
 const mediaControlCopy = {
+  fr: { previous: 'Photo précédente', next: 'Photo suivante', pause: 'Mettre le diaporama en pause', play: 'Lancer le diaporama', unavailable: 'Photo indisponible', count: 'Photographies du voyage' },
   en: { previous: "Previous photo", next: "Next photo", pause: "Pause slideshow", play: "Play slideshow", unavailable: "Photo unavailable", count: "Journey photographs" },
   zh: { previous: "上一张照片", next: "下一张照片", pause: "暂停轮播", play: "播放轮播", unavailable: "照片暂时无法显示", count: "行程照片" },
   ko: { previous: "이전 사진", next: "다음 사진", pause: "슬라이드쇼 일시 정지", play: "슬라이드쇼 재생", unavailable: "사진을 표시할 수 없습니다", count: "여행 사진" },
@@ -341,6 +342,7 @@ export function ShanghaiJiangnanPriceConsole({
         <div className={styles.priceResult}>
           <span>{japaneseCopy?.quoteOnlyTitle ?? interactionCopy[product.locale].quoteOnlyTitle}</span>
           <p>{japaneseCopy?.quoteOnlyBody ?? interactionCopy[product.locale].quoteOnlyBody}</p>
+          {japaneseCopy?.currencyNote ? <p className={styles.draftNote}>{japaneseCopy.currencyNote}</p> : null}
         </div>
         <div className={styles.priceConsoleActions}>
           {japaneseCopy && japaneseContactHrefs ? <JapaneseTourContactLink

@@ -1,18 +1,18 @@
 "use client";
 
 import { DayPicker } from "@daypicker/react";
-import { enGB, es, zhCN, ko } from "@daypicker/react/locale";
+import { enGB, es, fr, zhCN, ko } from "@daypicker/react/locale";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { dateFromIso, tourDateCopy } from "../lib/tourDate";
 import "@daypicker/react/style.css";
 import styles from "./TourDateField.module.css";
 
-const calendarLocales = { en: enGB, zh: zhCN, ko, es };
+const calendarLocales = { en: enGB, zh: zhCN, ko, es, fr };
 
 export interface TourCalendarProps {
   locale: HomegroundLocale;
   /** A language edition's calendar language and title, in place of the locale's. */
-  language?: "es";
+  language?: "es" | "fr";
   title?: string;
   value: string;
   month: Date;

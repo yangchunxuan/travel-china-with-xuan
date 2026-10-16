@@ -19,7 +19,7 @@ import {
   searchGuideDocuments,
   type GuideSearchDocument,
 } from "../lib/guideSearch";
-import { getGuideSearchCopy } from "../lib/guideSearchI18n";
+import { getGuideSearchCopy, type GuideSearchCopy } from "../lib/guideSearchI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { trackEvent } from "../lib/analytics";
 import styles from "./GuideSearchForm.module.css";
@@ -75,6 +75,7 @@ export function GuideSearchForm({
   compact = false,
   rotatingPlaceholders = emptyPlaceholders,
   showExamples = true,
+  copyOverride,
 }: {
   documents?: readonly GuideSearchDocument[];
   documentsUrl?: string;
@@ -84,8 +85,9 @@ export function GuideSearchForm({
   compact?: boolean;
   rotatingPlaceholders?: readonly string[];
   showExamples?: boolean;
+  copyOverride?: GuideSearchCopy;
 }) {
-  const copy = getGuideSearchCopy(locale);
+  const copy = copyOverride ?? getGuideSearchCopy(locale);
   const inputId = useId();
   const errorId = useId();
   const suggestionsId = useId();
