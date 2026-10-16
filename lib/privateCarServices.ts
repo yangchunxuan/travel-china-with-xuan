@@ -17,9 +17,10 @@ export function buildPrivateCarServiceStructuredData(
   locale: HomegroundLocale,
   copy: PrivateCarServiceCopy,
   htmlLang = locale === "zh" ? "zh-CN" : locale,
+  edition?: { path: string; homePath: string; countryName: string },
 ) {
-  const url = SITE_URL + privateCarServicePath[locale];
-  const home = SITE_URL + (locale === "en" ? "/" : "/" + locale + "/");
+  const url = SITE_URL + (edition?.path ?? privateCarServicePath[locale]);
+  const home = SITE_URL + (edition?.homePath ?? (locale === "en" ? "/" : "/" + locale + "/"));
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -35,7 +36,7 @@ export function buildPrivateCarServiceStructuredData(
         "@type": "Service", "@id": url + "#service", url,
         name: copy.name, serviceType: copy.name, description: copy.lede,
         provider: { "@id": SITE_URL + "/#organization" },
-        areaServed: { "@type": "Country", name: "China" },
+        areaServed: { "@type": "Country", name: edition?.countryName ?? "China" },
       },
       {
         "@type": "BreadcrumbList", "@id": url + "#breadcrumb",

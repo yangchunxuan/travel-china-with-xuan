@@ -7,9 +7,9 @@ const path = '/fr/services/';
 const origin = 'https://homegroundchina.com';
 const hrefs = {
   tours: '/fr/tours/',
-  guides: '/services/private-english-speaking-guides/',
-  reservations: '/services/china-attraction-reservations/',
-  support: '/services/full-trip-support/',
+  guides: '/fr/services/private-english-speaking-guides/',
+  reservations: '/fr/services/china-attraction-reservations/',
+  support: '/fr/services/full-trip-support/',
 } as const;
 
 export const frenchServicesHubCopy: TravelServicesHubEdition['copy'] = {
@@ -20,9 +20,9 @@ export const frenchServicesHubCopy: TravelServicesHubEdition['copy'] = {
   choicesBody: 'Comparez nos circuits privés, ou indiquez-nous vos dates, le nombre de voyageurs et les services dont vous avez besoin. Nous confirmons les services possibles et le devis avant toute réservation.',
   cards: [
     { id: 'tours', eyebrow: 'Nos itinéraires publiés', title: 'Comparer les circuits privés', body: 'Découvrez les programmes jour après jour, les tarifs de départ, les prestations incluses et les conditions de réservation.', action: 'Comparer les circuits' },
-    { id: 'guides', eyebrow: 'Un guide quand il fait la différence', title: 'Guides privés anglophones', body: 'Shanghai, Pékin, Xi’an et Zhangjiajie : comparez les tarifs d’un guide anglophone pour une journée de 8 heures. Le nombre de voyageurs, le parcours et les transports sont confirmés séparément. Un guide francophone fait l’objet d’un supplément sur devis.', action: 'Services et tarifs des guides (en anglais)' },
-    { id: 'reservations', eyebrow: 'Billets nominatifs et horaires réservés', title: 'Réserver vos visites', body: 'Pékin, Shanghai, Suzhou, Hangzhou, Xi’an, Chengdu, Guilin et Lijiang : nous réservons par les canaux officiels, au nom inscrit sur votre passeport. Frais de service : {fee} par personne et par site, auxquels s’ajoute le prix du billet.', action: 'Modalités de réservation (en anglais)' },
-    { id: 'support', eyebrow: 'De la préparation au séjour sur place', title: 'Organiser l’ensemble du voyage', body: 'Un itinéraire cohérent, puis les hôtels, les billets, les transferts et la coordination sur place nécessaires pour le réaliser.', action: 'Découvrir l’accompagnement complet (en anglais)' },
+    { id: 'guides', eyebrow: 'Un guide quand il fait la différence', title: 'Guides privés anglophones', body: 'Shanghai, Pékin, Xi’an et Zhangjiajie : comparez les tarifs d’un guide anglophone pour une journée de 8 heures. Le nombre de voyageurs, le parcours et les transports sont confirmés séparément. Un guide francophone fait l’objet d’un supplément sur devis.', action: 'Services et tarifs des guides' },
+    { id: 'reservations', eyebrow: 'Billets nominatifs et horaires réservés', title: 'Réserver vos visites', body: 'Pékin, Shanghai, Suzhou, Hangzhou, Xi’an, Chengdu, Guilin et Lijiang : nous réservons par les canaux officiels, au nom inscrit sur votre passeport. Frais de service : {fee} par personne et par site, auxquels s’ajoute le prix du billet.', action: 'Modalités de réservation' },
+    { id: 'support', eyebrow: 'De la préparation au séjour sur place', title: 'Organiser l’ensemble du voyage', body: 'Un itinéraire cohérent, puis les hôtels, les billets, les transferts et la coordination sur place nécessaires pour le réaliser.', action: 'Découvrir l’accompagnement complet' },
   ],
   methodEyebrow: 'Notre manière de travailler',
   methodTitle: 'Comprendre notre méthode avant de nous confier votre voyage.',

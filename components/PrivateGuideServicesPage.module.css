@@ -15,9 +15,9 @@
 .breadcrumb a { text-underline-offset: 0.25em; }
 .heroGrid { display: grid; gap: 3rem; grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.7fr); align-items: end; }
 .eyebrow { color: var(--muted); font-size: 0.875rem; font-weight: 500; line-height: 1.5; margin: 0; }
-.page h1, .page h2, .cityHeading h3 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
-.page h1 { font-size: clamp(2.75rem, 5.5vw, 4.75rem); line-height: 1.05; margin: 1rem 0 0; max-width: 17ch; }
-.page h2 { font-size: clamp(2rem, 3.6vw, 2.75rem); line-height: 1.1; margin: 0; }
+.page :where(main) h1, .page :where(main) h2, .cityHeading h3 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
+.page :where(main) h1 { font-size: clamp(2.75rem, 5.5vw, 4.75rem); line-height: 1.05; margin: 1rem 0 0; max-width: 17ch; }
+.page :where(main) h2 { font-size: clamp(2rem, 3.6vw, 2.75rem); line-height: 1.1; margin: 0; }
 .lede { color: var(--muted); font-size: 1.0625rem; line-height: 1.65; max-width: 36rem; margin: 1.5rem 0; text-wrap: pretty; }
 .primaryButton, .secondaryButton { align-items: center; border: 1px solid transparent; border-radius: 999px; display: inline-flex; font-size: 0.875rem; font-weight: 500; gap: 0.75rem; justify-content: center; min-height: 2.75rem; padding: 0.7rem 1.25rem; text-decoration: none; text-align: center; }
 .primaryButton { background: var(--ink); color: #fff; }
@@ -68,7 +68,7 @@
 .checkboxRow input { accent-color: var(--accent); height: 1.1rem; width: 1.1rem; }
 .muted { color: var(--muted); font-size: 0.8125rem; margin-left: 0.5rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
-.page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .page input:focus-visible, .page select:focus-visible, .page textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.page :where(main) a:focus-visible, .page :where(main) button:focus-visible, .page :where(main) summary:focus-visible, .page :where(main) input:focus-visible, .page :where(main) select:focus-visible, .page :where(main) textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 70rem) { .cityGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 48rem) {
   .page main { padding-inline: 1rem; padding-bottom: 4rem; }

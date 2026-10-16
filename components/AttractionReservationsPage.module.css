@@ -32,36 +32,36 @@
   padding-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
 }
 
-.page h1,
-.page h2 {
+.page :where(main) h1,
+.page :where(main) h2 {
   font-family: var(--hg-editorial);
   font-weight: 400;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-.page h2 {
+.page :where(main) h2 {
   font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   line-height: 1.1;
   margin: 0 0 1rem;
 }
 
-.page h3 {
+.page :where(main) h3 {
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.35;
   margin: 0;
 }
 
-.page p,
-.page li {
+.page :where(main) p,
+.page :where(main) li {
   text-wrap: pretty;
 }
 
-.page a:focus-visible,
-.page summary:focus-visible,
-.page input:focus-visible,
-.page textarea:focus-visible,
+.page :where(main) a:focus-visible,
+.page :where(main) summary:focus-visible,
+.page :where(main) input:focus-visible,
+.page :where(main) textarea:focus-visible,
 .tableScroll:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;

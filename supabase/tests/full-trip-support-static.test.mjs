@@ -128,7 +128,7 @@ test("the brief is one sentence with blanks: an entry, not a filter, and never a
   // The hero has one order: the headline and one sentence, then the brief. Nothing else.
   const page = sources[2];
   const hero = page.slice(page.indexOf("</nav>", page.indexOf("<header")), page.indexOf("</header>"));
-  assert.match(hero, /<h1>[\s\S]*styles\.lede[\s\S]*<FullTripSupportEnquiry locale=\{locale\} \/>\s*$/u);
+  assert.match(hero, /<h1>[\s\S]*styles\.lede[\s\S]*<FullTripSupportEnquiry locale=\{locale\}(?: editionLocale=\{editionLocale\})? \/>\s*$/u);
   assert.doesNotMatch(hero, /heroFacts|eyebrow|<dl|<ul|<ol(?! )/u);
   // The whole trip is ours to arrange: the page never offers to take only parts of it at the top,
   // and carries no icons, cards or spotlight.

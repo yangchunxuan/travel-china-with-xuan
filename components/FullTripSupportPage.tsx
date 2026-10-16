@@ -3,14 +3,17 @@ import type { CSSProperties } from "react";
 import { attractionReservationPath } from "../lib/attractionReservations";
 import { fullTripSupportEnquiryAnchor, fullTripSupportNeeds, fullTripSupportPath } from "../lib/fullTripSupport";
 import { fillFullTripSupportCopy, getFullTripSupportCopy } from "../lib/fullTripSupportI18n";
+import { getFullTripSupportEditionCopy } from "../lib/fullTripSupportEditions";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { privateCarServicePath } from "../lib/privateCarServices";
 import { getPrivateCarServiceCopy } from "../lib/privateCarServicesI18n";
 import { privateGuideServicePath } from "../lib/privateGuideServices";
+import { serviceDetailLanguagePaths, serviceEditionLabels, serviceEditionPaths, type ServiceEditionLocale } from "../lib/serviceEdition";
 import { FullTripSupportEnquiry } from "./FullTripSupportEnquiry";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { ServiceEditionFooter, ServiceEditionHeader } from "./ServiceEditionChrome";
 import localeStyles from "./LocaleRoot.module.css";
 import { RevealOnce } from "./motion/RevealOnce";
 import { KeepWords } from "./text/KeepWords";
@@ -18,27 +21,31 @@ import styles from "./FullTripSupportPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
-function structuredData(locale: HomegroundLocale) {
-  const copy = getFullTripSupportCopy(locale);
+function structuredData(locale: HomegroundLocale, editionLocale?: ServiceEditionLocale) {
+  const copy = editionLocale ? getFullTripSupportEditionCopy(editionLocale) : getFullTripSupportCopy(locale);
   const home = getHomegroundCopy(locale);
-  const url = `${SITE_URL}${fullTripSupportPath[locale]}`;
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const homePath = paths?.home ?? home.path;
+  const url = `${SITE_URL}${paths?.support ?? fullTripSupportPath[locale]}`;
+  const language = editionLocale ?? home.htmlLang;
+  const operator = editionLocale ? `${homegroundBusiness.englishName} (${homegroundBusiness.publicName})` : homegroundBusiness.publicName;
   const provider = { "@id": `${SITE_URL}/#organization` };
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: copy.metadata.title, description: copy.metadata.description, inLanguage: home.htmlLang,
+      { "@type": "WebPage", "@id": `${url}#webpage`, url, name: copy.metadata.title, description: copy.metadata.description, inLanguage: language,
         isPartOf: { "@id": `${SITE_URL}/#website` }, about: { "@id": `${url}#service` }, breadcrumb: { "@id": `${url}#breadcrumb` } },
       // Custom quote: the Service names what the trip covers, never a price.
       { "@type": "Service", "@id": `${url}#service`, name: copy.name, serviceType: copy.name, description: copy.lede, url, provider, areaServed: { "@type": "Country", name: "China" },
         hasOfferCatalog: { "@type": "OfferCatalog", name: copy.handlesTitle,
           itemListElement: fullTripSupportNeeds.map((need) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: copy.needs[need].title, description: copy.needs[need].body, provider } })) } },
       { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [
-        { "@type": "ListItem", position: 1, name: copy.home, item: `${SITE_URL}${home.path}` },
-        { "@type": "ListItem", position: 2, name: copy.services, item: `${SITE_URL}${home.path}services/` },
+        { "@type": "ListItem", position: 1, name: copy.home, item: `${SITE_URL}${homePath}` },
+        { "@type": "ListItem", position: 2, name: copy.services, item: `${SITE_URL}${paths?.services ?? `${home.path}services/`}` },
         { "@type": "ListItem", position: 3, name: copy.name, item: url },
       ] },
-      { "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: copy.faq.map((item) => ({ "@type": "Question", name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: fillFullTripSupportCopy(item.answer, homegroundBusiness.publicName) } })) },
+      { "@type": "FAQPage", "@id": `${url}#faq`, inLanguage: language, mainEntity: copy.faq.map((item) => ({ "@type": "Question", name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: fillFullTripSupportCopy(item.answer, operator) } })) },
     ],
   };
 }
@@ -55,23 +62,29 @@ function structuredData(locale: HomegroundLocale) {
  * page takes any budget and shows no price. Sections below the fold reveal
  * once (RevealOnce); reduced motion shows everything as it is.
  */
-export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLocale }) {
-  const copy = getFullTripSupportCopy(locale);
+export function FullTripSupportPage({ locale = "en", editionLocale }: { locale?: HomegroundLocale; editionLocale?: ServiceEditionLocale }) {
+  const copy = editionLocale ? getFullTripSupportEditionCopy(editionLocale) : getFullTripSupportCopy(locale);
   const home = getHomegroundCopy(locale);
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const homePath = paths?.home ?? home.path;
+  const operator = editionLocale ? `${homegroundBusiness.englishName} (${homegroundBusiness.publicName})` : homegroundBusiness.publicName;
+  const carLabel = editionLocale === "fr" ? "Voiture privée avec chauffeur" : editionLocale === "es" ? "Coche privado con conductor" : getPrivateCarServiceCopy(locale).name;
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#full-trip-main">{home.skipLink}</a>
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
+      <a className={localeStyles.skipLink} href="#full-trip-main">{editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink}</a>
       {/* The header's planner button opens this page's own trip brief, keeping the full-trip context. */}
-      <HomegroundHeader languagePaths={fullTripSupportPath} locale={locale} pageContext="services" plannerHrefOverride={`#${fullTripSupportEnquiryAnchor}`} />
+      {editionLocale
+        ? <ServiceEditionHeader language={editionLocale} slug="full-trip-support" plannerHrefOverride={`#${fullTripSupportEnquiryAnchor}`} />
+        : <HomegroundHeader languagePaths={Object.fromEntries(serviceDetailLanguagePaths("full-trip-support").map((item) => [item.lang, item.path]))} locale={locale} pageContext="services" plannerHrefOverride={`#${fullTripSupportEnquiryAnchor}`} />}
       <main className={styles.main} id="full-trip-main" tabIndex={-1}>
         <RevealOnce />
 
         <header className={styles.hero}>
           <nav aria-label={copy.breadcrumb} className={styles.breadcrumb}>
             <ol>
-              <li><Link href={home.path}>{copy.home}</Link></li>
-              <li><span aria-hidden="true">/</span><Link href={`${home.path}services/`}>{copy.services}</Link></li>
+              <li><Link href={homePath}>{copy.home}</Link></li>
+              <li><span aria-hidden="true">/</span><Link href={paths?.services ?? `${home.path}services/`}>{copy.services}</Link></li>
               <li aria-current="page"><span aria-hidden="true">/</span>{copy.name}</li>
             </ol>
           </nav>
@@ -79,7 +92,7 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
           <h1>{copy.h1Lines.map((line) => <span key={line}>{line}</span>)}</h1>
           <p className={styles.lede}>{copy.lede}</p>
           {/* No reveal here: this is the page's first action and must be there at once. */}
-          <FullTripSupportEnquiry locale={locale} />
+          <FullTripSupportEnquiry locale={locale} editionLocale={editionLocale} />
         </header>
 
         <section aria-labelledby="full-trip-covers-title" className={styles.block} data-reveal="">
@@ -88,7 +101,7 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
             {fullTripSupportNeeds.map((need, index) => (
               <li key={need} style={{ "--i": index } as CSSProperties}>
                 <h3>{copy.needs[need].title}</h3>
-                <p><KeepWords locale={locale} text={copy.needs[need].body} /></p>
+                <p>{editionLocale ? copy.needs[need].body : <KeepWords locale={locale} text={copy.needs[need].body} />}</p>
               </li>
             ))}
           </ul>
@@ -128,7 +141,7 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
             {copy.faq.map((item) => (
               <details key={item.question} name="full-trip-faq">
                 <summary><h3><span>{item.question}</span></h3></summary>
-                <p>{fillFullTripSupportCopy(item.answer, homegroundBusiness.publicName)}</p>
+                <p>{fillFullTripSupportCopy(item.answer, operator)}</p>
               </details>
             ))}
           </div>
@@ -142,23 +155,23 @@ export function FullTripSupportPage({ locale = "en" }: { locale?: HomegroundLoca
               <h3>{copy.compare.tours.title}</h3>
               <p>{copy.compare.tours.body}</p>
               <p className={styles.links}>
-                <Link className={styles.textLink} href={`${home.path}tours/`}>{copy.compare.tours.action}</Link>
+                <Link className={styles.textLink} href={paths?.tours ?? `${home.path}tours/`}>{copy.compare.tours.action}</Link>
               </p>
             </li>
             <li>
               <h3>{copy.compare.single.title}</h3>
               <p>{copy.compare.single.body}</p>
               <p className={styles.links}>
-                <Link className={styles.textLink} href={attractionReservationPath[locale]}>{copy.compare.single.tickets}</Link>
-                <Link className={styles.textLink} href={privateGuideServicePath[locale]}>{copy.compare.single.guides}</Link>
-                <Link className={styles.textLink} href={privateCarServicePath[locale]}>{getPrivateCarServiceCopy(locale).name}</Link>
+                <Link className={styles.textLink} href={paths?.reservations ?? attractionReservationPath[locale]}>{copy.compare.single.tickets}</Link>
+                <Link className={styles.textLink} href={paths?.guide ?? privateGuideServicePath[locale]}>{copy.compare.single.guides}</Link>
+                <Link className={styles.textLink} href={paths?.car ?? privateCarServicePath[locale]}>{carLabel}</Link>
               </p>
             </li>
           </ul>
         </section>
       </main>
-      <HomegroundFooter locale={locale} pageContext="services" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(locale)).replace(/</g, "\\u003c") }} />
+      {editionLocale ? <ServiceEditionFooter language={editionLocale} slug="full-trip-support" /> : <HomegroundFooter locale={locale} pageContext="services" />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(locale, editionLocale)).replace(/</g, "\\u003c") }} />
     </div>
   );
 }

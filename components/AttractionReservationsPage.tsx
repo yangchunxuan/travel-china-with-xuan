@@ -11,11 +11,14 @@ import {
   attractionReservationRules,
   attractionReservationServiceFeeCny,
   formatAttractionFaceValue,
-  formatAttractionReservationFee,
   getBookableAttractionReservationRules,
   type AttractionReservationRule,
 } from "../lib/attractionReservations";
 import { fillReservationCopy, getAttractionReservationCopy } from "../lib/attractionReservationsI18n";
+import { attractionReservationEditionHeroAlt, formatAttractionReservationEditionMoney, getAttractionReservationEditionCopy, getAttractionReservationEditionRule, type AttractionReservationEditionLocale } from "../lib/attractionReservationEditions";
+import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "../lib/attractionReservationFeeFormat";
+import { serviceEditionPaths, serviceEditionPath, serviceDetailLanguagePaths } from "../lib/serviceEdition";
+import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChrome";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
@@ -30,6 +33,7 @@ import styles from "./AttractionReservationsPage.module.css";
 const SITE_URL = "https://homegroundchina.com";
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const SERVICE_SLUG = "china-attraction-reservations";
 
 /*
  * The headline leads with the Forbidden City, so the hero shows it: the
@@ -62,42 +66,43 @@ function koreanHeadline(text: string) {
 }
 
 export function attractionReservationLanguagePaths() {
-  return {
-    en: attractionReservationPath.en,
-    zh: attractionReservationPath.zh,
-    ko: attractionReservationPath.ko,
-  };
+  return Object.fromEntries(serviceDetailLanguagePaths(SERVICE_SLUG).map((item) => [item.lang, item.path]));
 }
 
-function formatDate(value: string, locale: HomegroundLocale) {
+function formatDate(value: string, locale: HomegroundLocale, editionLocale?: AttractionReservationEditionLocale) {
   return new Intl.DateTimeFormat(
-    locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
+    editionLocale === "fr" ? "fr-FR" : editionLocale === "es" ? "es-ES" : locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
     { dateStyle: "medium", timeZone: "UTC" },
   ).format(new Date(`${value}T00:00:00.000Z`));
 }
 
-function priceText(rule: AttractionReservationRule, locale: HomegroundLocale) {
-  const copy = getAttractionReservationCopy(locale);
+function priceText(rule: AttractionReservationRule, locale: HomegroundLocale, editionLocale?: AttractionReservationEditionLocale) {
+  const copy = editionLocale ? getAttractionReservationEditionCopy(editionLocale) : getAttractionReservationCopy(locale);
   if (!rule.price) return null;
   if (rule.price.kind === "free-reservation") return copy.free;
   if (rule.price.kind === "free-walk-in") return copy.freeWalkIn;
-  return `${formatAttractionFaceValue(rule.price.amount, locale)} · ${rule.price.basis[locale]}`;
+  return editionLocale
+    ? `${formatAttractionReservationEditionMoney(rule.price.amount, editionLocale)} · ${getAttractionReservationEditionRule(rule, editionLocale).basis}`
+    : `${formatAttractionFaceValue(rule.price.amount, locale)} · ${rule.price.basis[locale]}`;
 }
 
-function booleanText(value: boolean | null, locale: HomegroundLocale) {
-  const copy = getAttractionReservationCopy(locale);
+function booleanText(value: boolean | null, locale: HomegroundLocale, editionLocale?: AttractionReservationEditionLocale) {
+  const copy = editionLocale ? getAttractionReservationEditionCopy(editionLocale) : getAttractionReservationCopy(locale);
   if (value === null) return null;
   return value ? copy.yes : copy.no;
 }
 
-function structuredData(locale: HomegroundLocale, fee: string) {
-  const copy = getAttractionReservationCopy(locale);
+function structuredData(locale: HomegroundLocale, fee: string, editionLocale?: AttractionReservationEditionLocale) {
+  const copy = editionLocale ? getAttractionReservationEditionCopy(editionLocale) : getAttractionReservationCopy(locale);
   const home = getHomegroundCopy(locale);
-  const canonicalUrl = `${SITE_URL}${attractionReservationPath[locale]}`;
-  const servicesUrl = `${SITE_URL}${home.path}services/`;
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const homePath = paths?.home ?? home.path;
+  const language = editionLocale ?? home.htmlLang;
+  const canonicalUrl = `${SITE_URL}${editionLocale ? serviceEditionPath(editionLocale, SERVICE_SLUG) : attractionReservationPath[locale]}`;
+  const servicesUrl = `${SITE_URL}${paths?.services ?? `${home.path}services/`}`;
   const fill = (text: string) => fillReservationCopy(text, { fee });
   // The offer is priced in CNY, so its words name the CNY fee, not the page's display currency.
-  const cnyFee = formatAttractionFaceValue(attractionReservationServiceFeeCny, locale);
+  const cnyFee = editionLocale ? formatAttractionReservationEditionMoney(attractionReservationServiceFeeCny, editionLocale) : formatAttractionFaceValue(attractionReservationServiceFeeCny, locale);
   const unitText = fillReservationCopy(copy.heroFacts[0].value, { fee: cnyFee });
   return {
     "@context": "https://schema.org",
@@ -108,7 +113,7 @@ function structuredData(locale: HomegroundLocale, fee: string) {
         url: canonicalUrl,
         name: copy.h1,
         description: fill(copy.metadata.description),
-        inLanguage: home.htmlLang,
+        inLanguage: language,
         isPartOf: { "@id": WEBSITE_ID },
         about: { "@id": `${canonicalUrl}#service` },
         breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
@@ -120,7 +125,7 @@ function structuredData(locale: HomegroundLocale, fee: string) {
         serviceType: copy.navLabel,
         description: `${copy.lede}${locale === "zh" ? "" : " "}${copy.guarantee}`,
         url: canonicalUrl,
-        inLanguage: home.htmlLang,
+        inLanguage: language,
         provider: { "@id": ORGANIZATION_ID },
         areaServed: attractionReservationCityIds.map((cityId) => ({
           "@type": "City",
@@ -146,7 +151,7 @@ function structuredData(locale: HomegroundLocale, fee: string) {
         "@type": "FAQPage",
         "@id": `${canonicalUrl}#faq`,
         url: canonicalUrl,
-        inLanguage: home.htmlLang,
+        inLanguage: language,
         isPartOf: { "@id": `${canonicalUrl}#webpage` },
         mainEntity: copy.faqs.map((item) => ({
           "@type": "Question",
@@ -158,7 +163,7 @@ function structuredData(locale: HomegroundLocale, fee: string) {
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: copy.home, item: `${SITE_URL}${home.path}` },
+          { "@type": "ListItem", position: 1, name: copy.home, item: `${SITE_URL}${homePath}` },
           { "@type": "ListItem", position: 2, name: copy.services, item: servicesUrl },
           { "@type": "ListItem", position: 3, name: copy.navLabel, item: canonicalUrl },
         ],
@@ -167,20 +172,27 @@ function structuredData(locale: HomegroundLocale, fee: string) {
   };
 }
 
-export function AttractionReservationsPage({ locale }: { locale: HomegroundLocale }) {
-  const copy = getAttractionReservationCopy(locale);
+export function AttractionReservationsPage({ locale, editionLocale }: { locale: HomegroundLocale; editionLocale?: AttractionReservationEditionLocale }) {
+  const copy = editionLocale ? getAttractionReservationEditionCopy(editionLocale) : getAttractionReservationCopy(locale);
   const home = getHomegroundCopy(locale);
-  const fee = formatAttractionReservationFee(attractionReservationServiceFeeCny, locale);
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const homePath = paths?.home ?? home.path;
+  const pagePath = editionLocale ? serviceEditionPath(editionLocale, SERVICE_SLUG) : attractionReservationPath[locale];
+  const feeDisplay: AttractionReservationFeeDisplay = editionLocale
+    ? { amount: attractionReservationServiceFeeCny, currency: "CNY", numberLocale: editionLocale === "fr" ? "fr-FR" : "es-ES", currencyDisplay: "code" }
+    : attractionReservationFeeDisplay(attractionReservationServiceFeeCny, locale);
+  const fee = formatAttractionReservationFeeDisplay(feeDisplay);
   const fill = (text: string) => fillReservationCopy(text, { fee });
-  const localePath = locale === "en" ? "" : `/${locale}`;
-  const privacyHref = `${localePath}/privacy/`;
-  const schema = structuredData(locale, fee);
-  const enquiryAttractions = getBookableAttractionReservationRules().map((rule) => ({
-    id: rule.id,
-    city: rule.city,
-    // A best-effort attraction says so on its chip and in the message we receive.
-    label: rule.bestEffort ? `${rule.name[locale]} · ${copy.bestEffortTag}` : rule.name[locale],
-  }));
+  const localePath = editionLocale ? `/${editionLocale}` : locale === "en" ? "" : `/${locale}`;
+  const privacyHref = paths?.privacy ?? `${localePath}/privacy/`;
+  const schema = structuredData(locale, fee, editionLocale);
+  const enquiryAttractions = getBookableAttractionReservationRules().map((rule) => {
+    const name = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale).name : rule.name[locale];
+    return { id: rule.id, city: rule.city,
+      // A best-effort attraction says so on its chip and in the message we receive.
+      label: rule.bestEffort ? `${name} · ${copy.bestEffortTag}` : name,
+    };
+  });
   const enquiryCities = attractionReservationCityIds.map((cityId) => ({ id: cityId, label: copy.cities[cityId] }));
   const bookableIds = new Set(enquiryAttractions.map((attraction) => attraction.id));
   // "Request this attraction" lands on the picker and summary, not the section intro above them.
@@ -190,15 +202,15 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
   const listSeparator = locale === "zh" ? "、" : ", ";
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#reservations-main">{home.skipLink}</a>
-      <HomegroundHeader languagePaths={attractionReservationLanguagePaths()} locale={locale} pageContext="reservations" />
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
+      <a className={localeStyles.skipLink} href="#reservations-main">{editionLocale === "fr" ? "Aller au contenu" : editionLocale === "es" ? "Ir al contenido" : home.skipLink}</a>
+      {editionLocale ? <ServiceEditionHeader language={editionLocale} slug={SERVICE_SLUG} /> : <HomegroundHeader languagePaths={attractionReservationLanguagePaths()} locale={locale} pageContext="reservations" />}
       <main id="reservations-main" tabIndex={-1}>
         <header className={styles.hero}>
           <nav aria-label={copy.breadcrumb} className={styles.breadcrumb}>
             <ol>
-              <li><Link href={home.path}>{copy.home}</Link></li>
-              <li><span aria-hidden="true">/</span><Link href={`${home.path}services/`}>{copy.services}</Link></li>
+              <li><Link href={homePath}>{copy.home}</Link></li>
+              <li><span aria-hidden="true">/</span><Link href={paths?.services ?? `${home.path}services/`}>{copy.services}</Link></li>
               <li aria-current="page"><span aria-hidden="true">/</span>{copy.navLabel}</li>
             </ol>
           </nav>
@@ -223,7 +235,7 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
             </div>
             <figure className={styles.heroFigure}>
               {/* The photo is cropped to the text column's height, so it draws far wider than its box: ask for the large file. */}
-              <Image alt={heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 1280px" src={heroImage.src} width={heroImage.width} />
+              <Image alt={editionLocale ? attractionReservationEditionHeroAlt[editionLocale] : heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 1280px" src={heroImage.src} width={heroImage.width} />
             </figure>
           </div>
         </header>
@@ -246,17 +258,19 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
             cities={enquiryCities}
             copy={copy.enquiry}
             email={homegroundBusiness.serviceEmail}
-            fee={attractionReservationFeeDisplay(attractionReservationServiceFeeCny, locale)}
+            fee={feeDisplay}
             formId={reservationFormAnchor}
             intro={
-              <div className={styles.enquiryIntro}>
+              <div className={styles.enquiryIntro} key="reservation-intro">
                 <p className={styles.eyebrow}>{copy.enquiry.eyebrow}</p>
                 <h2 id="reservation-enquiry-title">{copy.enquiry.title}</h2>
                 <p>{copy.enquiry.intro}</p>
               </div>
             }
             locale={locale}
-            pageUrl={`${SITE_URL}${attractionReservationPath[locale]}`}
+            editionLocale={editionLocale}
+            lateRequestNote={editionLocale ? copy.guaranteeLate : undefined}
+            pageUrl={`${SITE_URL}${pagePath}`}
             privacyHref={privacyHref}
             queryKey={attractionReservationQueryKey}
             tickets={copy.heroFacts[1]}
@@ -347,6 +361,9 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                       <tbody>
                         {rules.map((rule) => {
                           const guide = rule.source ? getGuideEntry(rule.source, locale) : null;
+                          const translated = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale) : null;
+                          const ruleName = translated?.name ?? rule.name[locale];
+                          const rulePrice = priceText(rule, locale, editionLocale);
                           // A free walk-in has no booking channel or release to confirm, so its
                           // empty fields say "not applicable" instead of inviting an enquiry.
                           // Other empty fields show a dash (explained above the cities); the
@@ -372,12 +389,12 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                               {/* Every row we book reads "we can book" from the section; only a
                                   different status (a free walk-in) is tagged. */}
                               <th scope="row">
-                                {rule.name[locale]}
+                                {ruleName}
                                 {rule.status !== "offered" ? <span className={styles.status} data-status={rule.status}>{copy.status[rule.status]}</span> : null}
                                 {rule.bestEffort ? <span className={styles.status} data-status="best-effort">{copy.bestEffortTag}</span> : null}
                                 {/* Back to the form with this attraction ticked (AttractionReservationEnquiry listens). */}
                                 {bookableIds.has(rule.id)
-                                  ? <a className={styles.reserveLink} data-reserve-attraction={rule.id} href={`#${reservationFormAnchor}`}>{copy.reserveThis}<span className={styles.visuallyHidden}>{colon}{rule.name[locale]}</span><ArrowRight aria-hidden="true" size={14} /></a>
+                                  ? <a className={styles.reserveLink} data-reserve-attraction={rule.id} href={`#${reservationFormAnchor}`}>{copy.reserveThis}<span className={styles.visuallyHidden}>{colon}{ruleName}</span><ArrowRight aria-hidden="true" size={14} /></a>
                                   : null}
                               </th>
                               {cell(copy.columns.channel, rule.channels
@@ -386,22 +403,22 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
                                   <Fragment key={channel}><span className={styles.nowrap}>{copy.channel[channel]}{index < all.length - 1 ? " ·" : null}</span>{index < all.length - 1 ? " " : null}</Fragment>
                                 ))
                                 : null)}
-                              {cell(copy.columns.passport, booleanText(rule.passportAccepted, locale))}
-                              {cell(copy.columns.release, rule.release ? rule.release[locale] : null)}
-                              {cell(copy.columns.realName, booleanText(rule.realName, locale))}
-                              {cell(copy.columns.price, priceText(rule, locale) === null ? null : <KeepWords locale={locale} text={priceText(rule, locale) as string} />)}
+                              {cell(copy.columns.passport, booleanText(rule.passportAccepted, locale, editionLocale))}
+                              {cell(copy.columns.release, rule.release ? translated?.release ?? rule.release[locale] : null)}
+                              {cell(copy.columns.realName, booleanText(rule.realName, locale, editionLocale))}
+                              {cell(copy.columns.price, rulePrice === null ? null : <KeepWords locale={locale} text={rulePrice} />)}
                               <td data-label={copy.columns.notes}>
-                                {rule.notes[locale]}
-                                {guide ? <> <Link className={styles.sourceLink} href={guide.canonicalPath}>{copy.sourceLabel}{colon}{guide.navTitle}</Link></> : null}
+                                {translated?.notes ?? rule.notes[locale]}
+                                {guide ? <> <Link className={styles.sourceLink} href={guide.canonicalPath}>{copy.sourceLabel}{colon}{editionLocale ? ruleName : guide.navTitle}</Link></> : null}
                               </td>
                               <td data-label={copy.columns.verified}>
                                 {rule.verifiedAt
-                                  ? <time dateTime={rule.verifiedAt}>{formatDate(rule.verifiedAt, locale)}</time>
+                                  ? <time dateTime={rule.verifiedAt}>{formatDate(rule.verifiedAt, locale, editionLocale)}</time>
                                   : <span className={styles.unknown}>{copy.notChecked}</span>}
                               </td>
                               {/* Phones: one muted footer with the checked date and the fields confirmed on enquiry. */}
                               <td className={styles.cardFooter}>
-                                {rule.verifiedAt ? `${copy.columns.verified} ${formatDate(rule.verifiedAt, locale)}` : copy.notChecked}
+                                {rule.verifiedAt ? `${copy.columns.verified} ${formatDate(rule.verifiedAt, locale, editionLocale)}` : copy.notChecked}
                                 {pending.length ? <span className={styles.pendingFields}>{copy.unknown}{colon}{pending.join(listSeparator)}</span> : null}
                               </td>
                             </tr>
@@ -428,7 +445,7 @@ export function AttractionReservationsPage({ locale }: { locale: HomegroundLocal
           </div>
         </section>
       </main>
-      <HomegroundFooter locale={locale} pageContext="content" />
+      {editionLocale ? <ServiceEditionFooter language={editionLocale} slug={SERVICE_SLUG} /> : <HomegroundFooter locale={locale} pageContext="content" />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     </div>
   );

@@ -2,6 +2,9 @@
 
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
+import type { AttractionReservationEditionLocale } from "../lib/attractionReservationEditions";
+import { frenchContactEdition } from "../lib/frenchContactEdition";
+import { spanishContactEdition } from "../lib/spanishContactEdition";
 import type { AttractionReservationEnquiryCopy } from "../lib/attractionReservationsI18n";
 import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "../lib/attractionReservationFeeFormat";
 import { attractionReservationMailtoHref, attractionReservationMessageText, attractionReservationNoteMaxLength } from "../lib/attractionReservationMessage";
@@ -22,9 +25,12 @@ const serviceInterest = "attraction_reservation";
  * The reservation request on /services/china-attraction-reservations/.
  * It reuses the site's direct channels rather than a new server form: the
  * choices are written into the WhatsApp text, the email draft and (Korean)
- * the KakaoTalk copy. On a desktop the site-wide contact card answers the
- * WhatsApp and email links with the same prepared message. Nothing leaves the
- * browser until the traveller opens one of those channels.
+ * the KakaoTalk copy. The French and Spanish WhatsApp cards show only the
+ * QR code for this prepared request; their email links open the exact mailto
+ * draft directly. This prevents the generic contact card's email form from
+ * discarding the selected attractions and visit dates. Other editions keep
+ * their existing contact-card behaviour. Nothing leaves the browser until
+ * the traveller opens one of those channels.
  *
  * Layout: the intro across the top, then the form on the left and, beside
  * it, a summary of the request with the estimated service fee and the send
@@ -34,6 +40,8 @@ const serviceInterest = "attraction_reservation";
  */
 export function AttractionReservationEnquiry({
   locale,
+  editionLocale,
+  lateRequestNote,
   copy,
   cities,
   attractions,
@@ -47,6 +55,8 @@ export function AttractionReservationEnquiry({
   intro,
 }: {
   locale: HomegroundLocale;
+  editionLocale?: AttractionReservationEditionLocale;
+  lateRequestNote?: string;
   copy: AttractionReservationEnquiryCopy;
   cities: readonly ReservationEnquiryCity[];
   attractions: readonly ReservationEnquiryAttraction[];
@@ -63,6 +73,7 @@ export function AttractionReservationEnquiry({
   intro: ReactNode;
 }) {
   const id = useId();
+  const dateEdition = editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
   const [compactReferral, setCompactReferral] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -77,7 +88,7 @@ export function AttractionReservationEnquiry({
   // Set by a rule's link; a new object each time, so a second click on the same attraction scrolls again.
   const [revealRequest, setRevealRequest] = useState<{ attractionId: string } | null>(null);
   const started = useRef(false);
-  const eventParameters = { page_language: locale, submission_surface: serviceInterest, service_interest: serviceInterest };
+  const eventParameters = { page_language: editionLocale ?? locale, submission_surface: serviceInterest, service_interest: serviceInterest };
   const visibleRef = useVisibleAnalyticsEvent<HTMLDivElement>("contact_options_viewed", eventParameters, true, { firstPartyContext: { surface: "contact_options" } });
 
   // A guide's "we can book this" link preselects one attraction by id.
@@ -273,7 +284,7 @@ export function AttractionReservationEnquiry({
               chosen.length ? (
                 <div className={styles.fieldRow}>
                   {chosen.map((attraction) => (
-                    <TourDateField active appearance="line" disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
+                    <TourDateField active appearance="line" disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} edition={dateEdition} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
                   ))}
                 </div>
               ) : null
@@ -340,14 +351,15 @@ export function AttractionReservationEnquiry({
 
         <div className={styles.send} aria-labelledby={`${id}-send`} ref={visibleRef} role="group">
           <p className={styles.visuallyHidden} id={`${id}-send`}>{copy.send}</p>
+          {lateRequestNote ? <p className={styles.summaryNote} data-reservation-late-request>{lateRequestNote}</p> : null}
           {/* The one way to send, as on the full-trip page: words, then a thin arrow.
               Korean visitors use KakaoTalk first; WhatsApp and email then follow as small words. */}
           <div className={styles.sendButtons} data-kakao-first={kakao ? "" : undefined}>
             {kakao}
-            <a aria-label={kakao && copy.whatsappShort ? copy.whatsapp : undefined} className={kakao ? styles.secondaryButton : styles.primaryButton} data-reservation-channel="whatsapp" href={whatsappHref} onClick={() => trackChannel("whatsapp")} rel="noopener noreferrer" target="_blank">
+            <a aria-label={kakao && copy.whatsappShort ? copy.whatsapp : undefined} className={kakao ? styles.secondaryButton : styles.primaryButton} data-contact-card-scan-only={editionLocale ? true : undefined} data-reservation-channel="whatsapp" href={whatsappHref} onClick={() => trackChannel("whatsapp")} rel="noopener noreferrer" target="_blank">
               {kakao ? copy.whatsappShort ?? copy.whatsapp : copy.whatsapp}
             </a>
-            <a aria-label={kakao && copy.emailShort ? copy.email : undefined} className={styles.secondaryButton} data-reservation-channel="email" href={mailtoHref} onClick={() => trackChannel("email")}>
+            <a aria-label={kakao && copy.emailShort ? copy.email : undefined} className={styles.secondaryButton} data-contact-card-direct={editionLocale ? true : undefined} data-reservation-channel="email" href={mailtoHref} onClick={() => trackChannel("email")}>
               {kakao ? copy.emailShort ?? copy.email : copy.email}
             </a>
           </div>

@@ -14,10 +14,10 @@
 .breadcrumb li + li::before { content: "/"; margin-right: 0.65rem; }
 .breadcrumb a, .legalLinks a, .note a { text-underline-offset: 0.2em; }
 .eyebrow { color: var(--muted); font-size: 0.875rem; line-height: 1.5; margin: 0; }
-.page h1, .page h2 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
-.page h1 { font-size: clamp(2.5rem, 5.3vw, 4.5rem); line-height: 1.08; max-width: 20ch; margin: 1rem 0 0; }
-.page h2 { font-size: clamp(1.9rem, 3.3vw, 2.7rem); line-height: 1.15; margin: 0; }
-.page h3 { font-size: 1.1rem; font-weight: 500; line-height: 1.4; margin: 0 0 0.75rem; }
+.page :where(main) h1, .page :where(main) h2 { font-family: var(--hg-editorial); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
+.page :where(main) h1 { font-size: clamp(2.5rem, 5.3vw, 4.5rem); line-height: 1.08; max-width: 20ch; margin: 1rem 0 0; }
+.page :where(main) h2 { font-size: clamp(1.9rem, 3.3vw, 2.7rem); line-height: 1.15; margin: 0; }
+.page :where(main) h3 { font-size: 1.1rem; font-weight: 500; line-height: 1.4; margin: 0 0 0.75rem; }
 .lede { font-size: 1.0625rem; line-height: 1.7; color: var(--muted); max-width: 43rem; margin: 1.5rem 0; text-wrap: pretty; }
 .primaryButton, .secondaryButton { align-items: center; border: 1px solid transparent; border-radius: 999px; display: inline-flex; font-size: 0.875rem; font-weight: 500; gap: 0.7rem; justify-content: center; min-height: 2.875rem; padding: 0.7rem 1.15rem; text-align: center; text-decoration: none; }
 .primaryButton { background: var(--ink); color: #fff; }
@@ -63,7 +63,7 @@
 .checkboxRow { display: flex; align-items: center; gap: 0.65rem; min-height: 2.875rem; font-size: 0.9375rem; line-height: 1.5; }
 .checkboxRow input { accent-color: var(--accent); width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
-.page a:focus-visible, .page button:focus-visible, .page summary:focus-visible, .page input:focus-visible, .page select:focus-visible, .page textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.page :where(main) a:focus-visible, .page :where(main) button:focus-visible, .page :where(main) summary:focus-visible, .page :where(main) input:focus-visible, .page :where(main) select:focus-visible, .page :where(main) textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 55rem) {
   .kindGrid { grid-template-columns: 1fr; }
   .sectionIntro, .quoteSection, .faq, .enquirySection { grid-template-columns: 1fr; gap: 1.5rem; }
