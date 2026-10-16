@@ -4,7 +4,7 @@ import type { FrenchTourCopy } from "../frenchTourCopyTypes";
 export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     "metadataTitle": "Pékin, Xi’an et la Route de la soie : circuit de 15 jours en petit groupe",
-    "bookingNote": "Le tarif de départ de 2 470 USD correspond à une place sur un départ fixe, en chambre pour deux personnes. Il faut 8 inscrits pour partir, avec un maximum de 12. À 45 jours du départ, si ce minimum n’est pas atteint, nous proposons par écrit un circuit privé adapté à votre groupe réel ; vous pouvez l’accepter aux mêmes dates ou récupérer toutes les sommes que vous nous avez versées. Un groupe constitué de 8 à 12 personnes peut choisir ses dates au tarif petit groupe ; à partir de 13, demandez un devis distinct. Les billets de Mogao sont limités et datés : si seul le billet d’urgence pour quatre grottes est disponible, nous vous l’indiquons avant paiement. Le groupe de septembre sera à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027, période plus fréquentée à l’Armée de terre cuite. Hôtels, vols et montant total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le tarif de départ de 2 470 USD correspond à une place sur un départ fixe, en chambre à deux lits. Il faut 8 inscrits pour partir, avec un maximum de 12. À 45 jours du départ, si ce minimum n’est pas atteint, nous proposons par écrit un circuit privé adapté à votre nombre de participants ; vous pouvez l’accepter aux mêmes dates ou récupérer toutes les sommes que vous nous avez versées. Un groupe constitué de 8 à 12 personnes peut choisir ses dates au tarif petit groupe ; à partir de 13, demandez un devis distinct. Les billets de Mogao sont limités et datés : si seul le billet d’urgence pour quatre grottes est disponible, nous vous l’indiquons avant paiement. Le groupe de septembre sera à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027, période plus fréquentée à l’Armée de terre cuite. Hôtels, vols et montant total sont confirmés par écrit avant paiement.",
     "packages": [
       {
         "id": "small-group-departure",
@@ -13,10 +13,10 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "title": "Pékin, Xi’an et la Route de la soie : circuit de 15 jours en petit groupe",
-    "metadataDescription": "Route de la soie en petit groupe en 2027 : 15 jours, 8 à 12 voyageurs, 2 470 USD par personne en chambre pour deux personnes. Départs les 12 juin et 11 septembre.",
+    "metadataDescription": "Route de la soie en petit groupe en 2027 : 15 jours, 8 à 12 voyageurs, 2 470 USD par personne en chambre à deux lits. Départs les 12 juin et 11 septembre.",
     "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
-    "lede": "Ce circuit de 15 jours de Pékin à la Route de la soie via Xi’an coûte 2 470 USD par personne en chambre pour deux personnes, hors vols internationaux. Départs le 12 juin ou le 11 septembre 2027, avec 8 à 12 voyageurs. Les trajets vers l’ouest, en train et à travers le désert, sont longs ; l’accès aux grottes de Mogao dépend aussi de la mise en vente de billets datés en nombre limité.",
-    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre pour deux personnes coûte 2 470 USD. Le départ est confirmé dès 8 inscrits et limité à 12. Si le groupe compte moins de 8 inscrits à 45 jours du départ, nous vous proposons par écrit un circuit privé adapté à votre nombre réel de participants. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes que vous nous avez versées.",
+    "lede": "Ce circuit de 15 jours de Pékin à la Route de la soie via Xi’an coûte 2 470 USD par personne en chambre à deux lits, hors vols internationaux. Départs le 12 juin ou le 11 septembre 2027, avec 8 à 12 voyageurs. Les trajets vers l’ouest, en train et à travers le désert, sont longs ; l’accès aux grottes de Mogao dépend aussi de la mise en vente de billets datés en nombre limité.",
+    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre à deux lits coûte 2 470 USD. Le départ est confirmé dès 8 inscrits et limité à 12. Si le groupe compte moins de 8 inscrits à 45 jours du départ, nous vous proposons par écrit un circuit privé adapté à votre nombre réel de participants. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes que vous nous avez versées.",
     "highlights": [
       "Départs les 12 juin et 11 septembre 2027",
       "Départ à partir de 8 voyageurs, 12 au maximum",
@@ -26,7 +26,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "itinerary": [
       {
         "title": "Arrivée à Pékin",
-        "description": "Le jour d’arrivée prévu pour votre départ, nous vous accueillons à l’aéroport de Pékin-Capitale ou de Daxing. Le soir, retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation du voyage."
+        "description": "Au premier jour du circuit, nous vous accueillons à l’aéroport de Pékin-Capitale ou de Daxing. Le soir, retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation du voyage."
       },
       {
         "title": "Tian’anmen et la Cité interdite",
@@ -85,7 +85,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Le jour du départ, le tarif du groupe inclut un transfert vers l’aéroport de Pékin-Capitale ou de Daxing. Si vous souhaitez prolonger votre séjour à Pékin, nous l’organisons séparément."
       }
     ],
-    "hotelNote": "Une chambre individuelle entraîne un supplément à partir de 690 USD ; le tarif de 2 470 USD par personne suppose une chambre pour deux personnes. Les 14 nuits incluent le petit-déjeuner : Pékin 3 ; Xi’an, Dunhuang, Turpan et Urumqi 2 chacune ; Zhangye et Jiayuguan 1 chacune ; puis 1 près de l’aéroport de Pékin-Capitale. Nous retenons un niveau quatre étoiles (4 diamants Trip.com/Ctrip) lorsqu’il est disponible, et les options locales les mieux notées à Zhangye, Jiayuguan et Turpan. Les hôtels figurent sur votre confirmation de réservation.",
+    "hotelNote": "Une chambre individuelle entraîne un supplément à partir de 690 USD ; le tarif de 2 470 USD par personne suppose une chambre à deux lits. Les 14 nuits incluent le petit-déjeuner : Pékin 3 ; Xi’an, Dunhuang, Turpan et Urumqi 2 chacune ; Zhangye et Jiayuguan 1 chacune ; puis 1 près de l’aéroport de Pékin-Capitale. Nous retenons un niveau quatre étoiles (4 diamants Trip.com/Ctrip) lorsqu’il est disponible, et les options locales les mieux notées à Zhangye, Jiayuguan et Turpan. Les hôtels figurent sur votre confirmation de réservation.",
     "serviceNote": "Quatre trajets en seconde classe relient Pékin–Xi’an–Zhangye, Liuyuan Sud–Turpan et Turpan–Urumqi. Zhangye–Jiayuguan et Jiayuguan–Dunhuang se font en train ou en véhicule pour le groupe. Le vol Urumqi–Pékin en classe économique est inclus, ainsi que les entrées indiquées au programme, notamment Mogao, la forteresse de Jiayuguan et la navette du lac Céleste. Un transfert d’arrivée et un transfert de départ à Pékin sont compris aux dates du groupe. Les journées de visite se font avec des guides locaux anglophones et un véhicule partagé par le groupe. Au Xinjiang, gardez votre pièce d’identité pour les contrôles dans les hôtels, gares et certains sites.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
@@ -100,7 +100,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 voyageurs ?",
-        "answer": "Pour ce circuit de 15 jours Pékin–Xi’an–Route de la soie, nous vérifions les inscriptions 45 jours avant le départ. Si moins de 8 personnes sont inscrites, nous vous remettons un devis de circuit privé correspondant à votre groupe réel. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Le tarif privé pour deux est de 4 370 USD chacun, contre 2 470 USD pour une place en petit groupe. Tant que le départ n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Pour ce circuit de 15 jours Pékin–Xi’an–Route de la soie, nous vérifions les inscriptions 45 jours avant le départ. Si moins de 8 personnes sont inscrites, nous vous remettons un devis de circuit privé correspondant à votre nombre de participants. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Le tarif privé pour deux est de 4 370 USD chacun, contre 2 470 USD pour une place en petit groupe. Tant que le départ n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Puis-je m’inscrire seul ?",
@@ -112,7 +112,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quelle différence avec le circuit privé ?",
-        "answer": "Le circuit de 15 jours en petit groupe coûte 2 470 USD par personne, sur les départs fixes de 2027 réunissant 8 à 12 voyageurs. Le retour aérien à Pékin a lieu au jour 14. Hôtels, parcours et inclusions correspondent à la version privée. Celle-ci permet de choisir vos dates et de disposer de votre propre guide et véhicule, à partir de 4 370 USD par personne à deux ou de 2 730 USD à six."
+        "answer": "Le circuit de 15 jours en petit groupe coûte 2 470 USD par personne, sur les départs fixes de 2027 réunissant 8 à 12 voyageurs. Le retour aérien à Pékin a lieu au jour 14. Hôtels, parcours et prestations incluses correspondent à la version privée. Celle-ci permet de choisir vos dates et de disposer de votre propre guide et véhicule, à partir de 4 370 USD par personne à deux ou de 2 730 USD à six."
       },
       {
         "question": "Un accompagnateur suit-il le groupe pendant tout le voyage ?",
@@ -236,7 +236,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Extérieur des grottes de Mogao",
             "alt": "Extérieur des grottes de Mogao",
-            "caption": "Extérieur des grottes de Mogao sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Extérieur des grottes de Mogao sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Extérieur des grottes de Mogao",
@@ -326,7 +326,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "Circuit privé de 14 jours : Pékin, Xi’an, Dali, Lijiang, gorges du Saut du Tigre et Shangri-La. Par personne : 4 110 USD à deux, 2 640 USD à six.",
     "eyebrow": "Des vieilles villes à l’altitude de Shangri-La",
     "lede": "De Pékin et Xi’an aux vieilles villes du Yunnan, ce voyage privé de 14 jours est proposé à 4 110 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux. Après les anciennes capitales, Dali et Lijiang ouvrent la voie aux gorges du Saut du Tigre et à Shangri-La, à environ 3 300 mètres. L’altitude fait pleinement partie du voyage.",
-    "summary": "Les 13 nuits d’hôtel incluent le petit-déjeuner. Le prix couvre guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, quatre trajets en train, route par les gorges du Saut du Tigre et deux vols économiques. À la montagne enneigée du Dragon de Jade, le téléphérique d’altitude dépend du quota de billets et de la météo.",
+    "summary": "Les 13 nuits d’hôtel incluent le petit-déjeuner. Le prix couvre guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, quatre trajets en train, route par les gorges du Saut du Tigre et deux vols en classe économique. À la montagne enneigée du Dragon de Jade, le téléphérique d’altitude dépend du quota de billets et de la météo.",
     "highlights": [
       "Les piliers calcaires de la Forêt de pierre",
       "Le lac Erhai et le village bai de Xizhou",
@@ -384,7 +384,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Shanghai via Lijiang",
-        "description": "Journée de transport : le train réservé pour revenir à Lijiang prend environ 1 h 30, puis le vol économique vers Shanghai environ 3 h 30. Nuit à Shanghai avant votre départ international du lendemain."
+        "description": "Journée de transport : le train réservé pour revenir à Lijiang prend environ 1 h 30, puis le vol en classe économique vers Shanghai environ 3 h 30. Nuit à Shanghai avant votre départ international du lendemain."
       },
       {
         "title": "Départ de Shanghai",
@@ -392,7 +392,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Les 13 nuits se font en chambre à deux lits avec petit-déjeuner, dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2, Kunming 1, Dali 2, Lijiang 2, Shangri-La 2 et Shanghai 1. Les noms des hôtels et types de chambre figurent dans la confirmation avant paiement.",
-    "serviceNote": "Dans chaque ville, un guide local anglophone et un véhicule sont réservés à votre groupe les jours de visite. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : la Forêt de pierre, la montagne du Dragon de Jade avec un téléphérique, Songzanlin et Pudacuo. Sont inclus les trains en seconde classe Pékin–Xi’an, Kunming–Dali–Lijiang et Shangri-La–Lijiang, le trajet privé par les gorges du Saut du Tigre, ainsi que les vols économiques Xi’an–Kunming et Lijiang–Shanghai. Les guides changent selon les villes ; les jours de transport, un chauffeur vous conduit à la gare ou à l’aéroport et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
+    "serviceNote": "Dans chaque ville, un guide local anglophone et un véhicule sont réservés à votre groupe les jours de visite. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : la Forêt de pierre, la montagne du Dragon de Jade avec un téléphérique, Songzanlin et Pudacuo. Sont inclus les trains en seconde classe Pékin–Xi’an, Kunming–Dali–Lijiang et Shangri-La–Lijiang, le trajet privé par les gorges du Saut du Tigre, ainsi que les vols en classe économique Xi’an–Kunming et Lijiang–Shanghai. Les guides changent selon les villes ; les jours de transport, un chauffeur vous conduit à la gare ou à l’aéroport et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -556,7 +556,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Montagne enneigée du Dragon de Jade",
             "alt": "Montagne enneigée du Dragon de Jade",
-            "caption": "Montagne enneigée du Dragon de Jade sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Montagne enneigée du Dragon de Jade sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           }
         ]
       },
@@ -621,7 +621,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       "Une journée entière sur les hauteurs de Huangshan",
       "Hongcun, village du Huizhou autour d’un étang en croissant",
       "Le lac de l’Ouest et un village de thé Longjing",
-      "Les jardins de Suzhou et une ville d’eau"
+      "Les jardins de Suzhou et une ville de canaux"
     ],
     "itinerary": [
       {
@@ -646,7 +646,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "De Xi’an à Huangshan",
-        "description": "Consacrez l’essentiel de la journée au trajet : le train à grande vitesse réservé prend environ 7 à 7 h 30. Un vol d’environ 2 h 30 circule à peu près une fois par semaine et n’est possible que si vos dates correspondent. Depuis Huangshan, encore une heure de route jusqu’à Tangkou, au pied de la montagne. Nuit à Tangkou."
+        "description": "Consacrez l’essentiel de la journée au trajet : le train à grande vitesse réservé prend environ 7 à 7 h 30. Une liaison aérienne d’environ 2 h 30 est assurée à peu près une fois par semaine ; elle n’est envisageable que si vos dates correspondent. Depuis Huangshan, encore une heure de route jusqu’à Tangkou, au pied de la montagne. Nuit à Tangkou."
       },
       {
         "title": "Une journée sur Huangshan",
@@ -658,15 +658,15 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Lac de l’Ouest et thé Longjing",
-        "description": "Journée autour du lac de l’Ouest : sortie en bateau et promenade sur une partie de la digue Su. Prenez ensuite le thé dans un village Longjing sur les collines, ou remplacez cette étape par le temple Lingyin si un créneau est disponible. Nuit à Hangzhou."
+        "description": "Journée autour du lac de l’Ouest : sortie en bateau et promenade sur une partie de la digue Su. Prenez ensuite le thé dans un village où l’on cultive le thé Longjing, sur les collines, ou remplacez cette étape par le temple Lingyin si un créneau est disponible. Nuit à Hangzhou."
       },
       {
         "title": "Les jardins de Suzhou",
         "description": "Le train pour Suzhou prend environ 40 minutes à 1 h 30. Visitez un jardin, comme celui de l’Humble Administrateur, puis promenez-vous sur Pingjiang Road en fin de journée. Nuit à Suzhou."
       },
       {
-        "title": "Une ville d’eau, puis Shanghai",
-        "description": "Faites étape à Tongli ou dans une autre ville d’eau confirmée, pour marcher au bord des canaux et des maisons anciennes. Shanghai est à environ 1 h 30 de route supplémentaire. Vous pouvez découvrir le Bund librement le soir."
+        "title": "Une ville de canaux, puis Shanghai",
+        "description": "Faites étape à Tongli ou dans une autre ville de canaux retenue pour votre voyage, pour marcher au bord des canaux et des maisons anciennes. Shanghai est à environ 1 h 30 de route supplémentaire. Vous pouvez découvrir le Bund librement le soir."
       },
       {
         "title": "Le Bund et le jardin Yu",
@@ -682,7 +682,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Treize nuits en chambre à deux lits avec petit-déjeuner dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2, Tangkou 2, Hangzhou 2, Suzhou 1 et Shanghai 3. Les deux nuits de la région de Huangshan se passent à Tangkou, au pied de la montagne. Hôtels et chambres exacts sont confirmés avant paiement.",
-    "serviceNote": "Les jours de visite, votre groupe dispose dans chaque ville d’un guide local anglophone et d’un véhicule. Tous les transferts et billets d’entrée principaux indiqués au programme sont inclus : Huangshan avec téléphériques aller-retour, Hongcun, bateau sur le lac de l’Ouest et un jardin à Suzhou. Les trains en seconde classe couvrent Pékin–Xi’an, Huangshan Nord–Hangzhou et Hangzhou–Suzhou. Xi’an–Huangshan se fait en train à grande vitesse ou en vol économique lorsque la liaison hebdomadaire correspond à vos dates. Les guides changent selon les villes ; les chauffeurs assurent les transferts des journées de transport. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
+    "serviceNote": "Les jours de visite, votre groupe dispose dans chaque ville d’un guide local anglophone et d’un véhicule. Tous les transferts et billets d’entrée principaux indiqués au programme sont inclus : Huangshan avec téléphériques aller-retour, Hongcun, bateau sur le lac de l’Ouest et un jardin à Suzhou. Les trains en seconde classe couvrent Pékin–Xi’an, Huangshan Nord–Hangzhou et Hangzhou–Suzhou. Xi’an–Huangshan se fait en train à grande vitesse ou en vol en classe économique lorsque la liaison hebdomadaire correspond à vos dates. Les guides changent selon les villes ; les chauffeurs assurent les transferts des journées de transport. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -821,7 +821,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Village de Hongcun",
             "alt": "Village de Hongcun",
-            "caption": "Village de Hongcun sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Village de Hongcun sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Lac de l’Ouest",
@@ -1020,7 +1020,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Sur les 20 nuits, 17 se passent à l’hôtel de niveau quatre étoiles (4 diamants Trip.com/Ctrip), en chambre à deux lits avec petit-déjeuner : Pékin 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2, Wulingyuan 2, ville de Zhangjiajie 1, Chongqing 1 et Shanghai 2. Trois nuits supplémentaires se passent dans une cabine standard avec balcon sur un bateau du Yangtsé classé cinq étoiles, généralement Gold Cruises. Sur le pont le plus bas accueillant des cabines, le balcon peut être vitré. Hôtels, bateau et cabine sont confirmés avant paiement.",
-    "serviceNote": "Un guide local anglophone et un véhicule sont réservés à votre groupe les jours de visite à terre. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : le parc forestier de Zhangjiajie, l’ascenseur Bailong et le téléphérique de Tianmen. Le transport des bagages est séparé pendant la croisière sur la Li ; un trajet en radeau sur la Yulong est inclus. Trains en seconde classe Pékin–Xi’an–Chengdu, Guilin–Zhangjiajie et Zhangjiajie–Chongqing ; vol économique Chengdu–Guilin, puis Yichang–Shanghai si vous choisissez l’avion plutôt que le train, également inclus comme alternative. La croisière comprend la cabine, les repas du dîner d’embarquement au petit-déjeuner du dernier matin, et trois excursions, généralement Fengdu, les Petites Trois Gorges et le barrage des Trois Gorges. Les guides changent selon les villes ; les chauffeurs assurent les transferts des journées de transport. Les guides coréanophones à terre sont au même tarif lorsqu’ils sont disponibles.",
+    "serviceNote": "Un guide local anglophone et un véhicule sont réservés à votre groupe les jours de visite à terre. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : le parc forestier de Zhangjiajie, l’ascenseur Bailong et le téléphérique de Tianmen. Le transport des bagages est séparé pendant la croisière sur la Li ; un trajet en radeau sur la Yulong est inclus. Trains en seconde classe Pékin–Xi’an–Chengdu, Guilin–Zhangjiajie et Zhangjiajie–Chongqing ; vol en classe économique Chengdu–Guilin, puis Yichang–Shanghai si vous choisissez l’avion plutôt que le train, également inclus comme alternative. La croisière comprend la cabine, les repas du dîner d’embarquement au petit-déjeuner du dernier matin, et trois excursions, généralement Fengdu, les Petites Trois Gorges et le barrage des Trois Gorges. Les guides changent selon les villes ; les chauffeurs assurent les transferts des journées de transport. Les guides coréanophones à terre sont au même tarif lorsqu’ils sont disponibles.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons à terre (petits-déjeuners d’hôtel et repas de croisière inclus)",
@@ -1207,7 +1207,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Pics de grès de Wulingyuan",
             "alt": "Pics de grès de Wulingyuan",
-            "caption": "Pics de grès de Wulingyuan sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Pics de grès de Wulingyuan sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Montagne Tianzi",
@@ -1342,7 +1342,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "Circuit privé de 10 jours : Grande Muraille, Armée de terre cuite, rivière Li et Shanghai. 2 510 USD par personne à deux ; vols intérieurs inclus.",
     "eyebrow": "Dix jours pour Pékin, Xi’an, la rivière Li et Shanghai",
     "lede": "Pékin, Xi’an, Guilin et Shanghai en 10 jours : un circuit privé à partir de 2 510 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux. La Grande Muraille, l’Armée de terre cuite et la rivière Li ont chacune leur journée. Le rythme reste soutenu, avec des changements d’étape fréquents.",
-    "summary": "Neuf nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, croisière sur la Li, un train en seconde classe et deux vols économiques sont inclus. Pour une journée de repos supplémentaire, le parcours de 14 jours laisse davantage de marge.",
+    "summary": "Neuf nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, croisière sur la Li, un train en seconde classe et deux vols en classe économique sont inclus. Pour une journée de repos supplémentaire, le parcours de 14 jours laisse davantage de marge.",
     "highlights": [
       "La Grande Muraille à Mutianyu",
       "Une journée consacrée à l’Armée de terre cuite",
@@ -1372,7 +1372,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Guilin",
-        "description": "Le vol économique de Xi’an à Guilin dure environ deux heures. Un chauffeur local vous accueille à l’aéroport et vous conduit à l’hôtel. Soirée libre et nuit à Guilin avant la croisière."
+        "description": "Le vol en classe économique de Xi’an à Guilin dure environ deux heures. Un chauffeur local vous accueille à l’aéroport et vous conduit à l’hôtel. Soirée libre et nuit à Guilin avant la croisière."
       },
       {
         "title": "Rivière Li et campagne de Yangshuo",
@@ -1380,7 +1380,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Shanghai",
-        "description": "Comptez d’abord environ 1 h 30 de route jusqu’à l’aéroport de Guilin, puis environ deux heures pour le vol économique confirmé vers Shanghai. Un chauffeur vous y accueille. Si vous avez encore de l’énergie, le Bund s’illumine après la tombée de la nuit."
+        "description": "Comptez d’abord environ 1 h 30 de route jusqu’à l’aéroport de Guilin, puis environ deux heures pour le vol en classe économique confirmé vers Shanghai. Un chauffeur vous y accueille. Si vous avez encore de l’énergie, le Bund s’illumine après la tombée de la nuit."
       },
       {
         "title": "Shanghai ou Suzhou",
@@ -1392,7 +1392,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Neuf nuits en chambre à deux lits avec petit-déjeuner dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2, Guilin 1, Yangshuo 1 et Shanghai 2. Les hôtels et types de chambre sont confirmés avant paiement.",
-    "serviceNote": "Un guide local anglophone et un véhicule sont réservés à votre groupe uniquement les jours de visite. Les transferts, les billets d’entrée principaux indiqués au programme et la croisière sur la Li sont inclus ; vos bagages rejoignent Yangshuo séparément par la route. Les trajets entre les villes comprennent le train Pékin–Xi’an en seconde classe et les vols économiques Xi’an–Guilin et Guilin–Shanghai. Les guides changent selon les villes. Un chauffeur vous conduit à la gare ou à l’aéroport de départ et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
+    "serviceNote": "Un guide local anglophone et un véhicule sont réservés à votre groupe uniquement les jours de visite. Les transferts, les billets d’entrée principaux indiqués au programme et la croisière sur la Li sont inclus ; vos bagages rejoignent Yangshuo séparément par la route. Les trajets entre les villes comprennent le train Pékin–Xi’an en seconde classe et les vols en classe économique Xi’an–Guilin et Guilin–Shanghai. Les guides changent selon les villes. Un chauffeur vous conduit à la gare ou à l’aéroport de départ et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -1405,7 +1405,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Combien coûte un circuit privé de 10 jours en Chine ?",
-        "answer": "Ce parcours Pékin–Xi’an–Guilin–Shanghai coûte 2 510 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 020 USD pour le couple. À quatre, le prix est de 1 820 USD par personne ; à six, 1 670 USD. Neuf nuits avec petit-déjeuner, guides et véhicules locaux les jours de visite, entrées, bateau sur la Li, un train à grande vitesse et deux vols intérieurs sont inclus. Vols internationaux, déjeuners et dîners sont en supplément. Pour un autre nombre de voyageurs, demandez-nous un devis."
+        "answer": "Ce parcours Pékin–Xi’an–Guilin–Shanghai coûte 2 510 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 020 USD pour deux personnes. À quatre, le prix est de 1 820 USD par personne ; à six, 1 670 USD. Neuf nuits avec petit-déjeuner, guides et véhicules locaux les jours de visite, entrées, bateau sur la Li, un train à grande vitesse et deux vols intérieurs sont inclus. Vols internationaux, déjeuners et dîners sont en supplément. Pour un autre nombre de voyageurs, demandez-nous un devis."
       },
       {
         "question": "Dix jours suffisent-ils pour découvrir la Chine ?",
@@ -1584,9 +1584,9 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "title": "Pékin, Hangzhou, Suzhou et Shanghai : circuit privé de 11 jours",
-    "metadataDescription": "11 jours en circuit privé sans vol intérieur : Pékin, lac de l’Ouest, Suzhou, ville d’eau et Shanghai. Par personne : 2 670 USD à deux, 1 540 USD à six.",
+    "metadataDescription": "11 jours en circuit privé sans vol intérieur : Pékin, lac de l’Ouest, Suzhou, ville de canaux et Shanghai. Par personne : 2 670 USD à deux, 1 540 USD à six.",
     "eyebrow": "Pékin, puis le Jiangnan en train, sans vol intérieur",
-    "lede": "11 jours pour relier Pékin, Hangzhou, Suzhou et Shanghai, sans vol intérieur. Après la longue journée de train depuis Pékin, le rythme s’adoucit entre le lac de l’Ouest, les jardins de Suzhou et les canaux d’une ville d’eau. Ce circuit privé est proposé à partir de 2 670 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux.",
+    "lede": "11 jours pour relier Pékin, Hangzhou, Suzhou et Shanghai, sans vol intérieur. Après la longue journée de train depuis Pékin, le rythme s’adoucit entre le lac de l’Ouest, les jardins de Suzhou et les canaux d’une ville de canaux. Ce circuit privé est proposé à partir de 2 670 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux.",
     "summary": "Les dix nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, bateau sur le lac de l’Ouest et deux trajets en train en seconde classe sont inclus. Après Pékin, le parcours reste dans l’Est de la Chine et ne passe pas par Xi’an.",
     "highlights": [
       "Quatre nuits à Pékin et la Grande Muraille",
@@ -1617,15 +1617,15 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Lac de l’Ouest et thé Longjing",
-        "description": "Journée autour du lac de l’Ouest : sortie en bateau et promenade sur une partie de la digue Su. Prenez ensuite le thé dans un village Longjing sur les collines, ou remplacez cette étape par le temple Lingyin si un créneau est disponible. Nuit à Hangzhou."
+        "description": "Journée autour du lac de l’Ouest : sortie en bateau et promenade sur une partie de la digue Su. Prenez ensuite le thé dans un village où l’on cultive le thé Longjing, sur les collines, ou remplacez cette étape par le temple Lingyin si un créneau est disponible. Nuit à Hangzhou."
       },
       {
         "title": "Les jardins de Suzhou",
         "description": "Le train pour Suzhou prend environ 40 minutes à 1 h 30. Visitez un jardin, comme celui de l’Humble Administrateur, puis promenez-vous sur Pingjiang Road en fin de journée. Nuit à Suzhou."
       },
       {
-        "title": "Une ville d’eau, puis Shanghai",
-        "description": "Faites étape à Tongli ou dans une autre ville d’eau confirmée, pour marcher au bord des canaux et des maisons anciennes. Shanghai est à environ 1 h 30 de route supplémentaire. Vous pouvez découvrir le Bund librement le soir."
+        "title": "Une ville de canaux, puis Shanghai",
+        "description": "Faites étape à Tongli ou dans une autre ville de canaux retenue pour votre voyage, pour marcher au bord des canaux et des maisons anciennes. Shanghai est à environ 1 h 30 de route supplémentaire. Vous pouvez découvrir le Bund librement le soir."
       },
       {
         "title": "Le Bund et le jardin Yu",
@@ -1641,7 +1641,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Les dix nuits sont en chambre à deux lits avec petit-déjeuner, dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 4, Hangzhou 2, Suzhou 1 et Shanghai 3. Hôtels et chambres exacts sont confirmés avant paiement.",
-    "serviceNote": "Les jours de visite, un guide local anglophone et un véhicule sont réservés à votre groupe dans chaque ville. Tous les transferts et billets d’entrée principaux indiqués au programme sont inclus, notamment la sortie en bateau sur le lac de l’Ouest, un jardin de Suzhou et la ville d’eau. Les trains Pékin–Hangzhou et Hangzhou–Suzhou sont en seconde classe ; Suzhou–Shanghai se fait en véhicule privé. Les guides changent d’une ville à l’autre. Un chauffeur vous conduit à la gare de départ et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
+    "serviceNote": "Les jours de visite, un guide local anglophone et un véhicule sont réservés à votre groupe dans chaque ville. Tous les transferts et billets d’entrée principaux indiqués au programme sont inclus, notamment la sortie en bateau sur le lac de l’Ouest, un jardin de Suzhou et la ville de canaux. Les trains Pékin–Hangzhou et Hangzhou–Suzhou sont en seconde classe ; Suzhou–Shanghai se fait en véhicule privé. Les guides changent d’une ville à l’autre. Un chauffeur vous conduit à la gare de départ et un autre vous accueille à l’arrivée. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -1652,7 +1652,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Combien coûte ce circuit de 11 jours ?",
-        "answer": "Ce circuit privé coûte 2 670 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 340 USD pour le couple. Le prix par personne est de 1 760 USD à quatre et de 1 540 USD à six. Il comprend dix nuits avec petit-déjeuner, guides locaux et véhicules privés les jours de visite, entrées, bateau sur le lac de l’Ouest et deux trains à grande vitesse. Aucun vol intérieur. Vols internationaux, déjeuners et dîners sont en supplément ; un devis écrit est établi pour les autres tailles de groupe."
+        "answer": "Ce circuit privé coûte 2 670 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 340 USD pour deux personnes. Le prix par personne est de 1 760 USD à quatre et de 1 540 USD à six. Il comprend dix nuits avec petit-déjeuner, guides locaux et véhicules privés les jours de visite, entrées, bateau sur le lac de l’Ouest et deux trains à grande vitesse. Aucun vol intérieur. Vols internationaux, déjeuners et dîners sont en supplément ; un devis écrit est établi pour les autres tailles de groupe."
       },
       {
         "question": "Pourquoi ce parcours ne passe-t-il pas par Xi’an ?",
@@ -1740,7 +1740,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Pont Brisé sur le lac de l’Ouest à Hangzhou",
             "alt": "Pont Brisé sur le lac de l’Ouest à Hangzhou",
-            "caption": "Pont Brisé sur le lac de l’Ouest à Hangzhou, sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Pont Brisé sur le lac de l’Ouest à Hangzhou, sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Lac de l’Ouest",
@@ -1840,7 +1840,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "Circuit privé de 13 jours depuis Shanghai : Zhangjiajie, Fenghuang, rizières de Longji et rivière Li. Par personne : 3 300 USD à deux, 2 120 USD à six.",
     "eyebrow": "De Shanghai à Zhangjiajie, Fenghuang et la rivière Li",
     "lede": "Au départ de Shanghai, ce circuit privé de 13 jours privilégie le Sud : Zhangjiajie, Fenghuang, les rizières de Longji et la rivière Li, plutôt que les capitales du Nord. À partir de 3 300 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux. Il faut prévoir environ six heures de train pour la seule étape Fenghuang–Guilin.",
-    "summary": "Douze nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme dont Tianmen, croisière sur la Li, deux trains en seconde classe et deux vols économiques sont inclus. Les journées à Zhangjiajie comportent de longues marches : prévenez-nous tôt si les escaliers sont difficiles pour vous.",
+    "summary": "Douze nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme dont Tianmen, croisière sur la Li, deux trains en seconde classe et deux vols en classe économique sont inclus. Les journées à Zhangjiajie comportent de longues marches : prévenez-nous tôt si les escaliers sont difficiles pour vous.",
     "highlights": [
       "Parc forestier de Zhangjiajie et montagne Tianmen",
       "Deux nuits à Fenghuang, au bord de la rivière",
@@ -1858,7 +1858,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Zhangjiajie",
-        "description": "Le vol économique réservé depuis Shanghai dure environ 2 h 30. Votre chauffeur vous conduit de l’aéroport à un hôtel proche des entrées de Wulingyuan. Aucune visite n’est fixée ce jour-là."
+        "description": "Le vol en classe économique réservé depuis Shanghai dure environ 2 h 30. Votre chauffeur vous conduit de l’aéroport à un hôtel proche des entrées de Wulingyuan. Aucune visite n’est fixée ce jour-là."
       },
       {
         "title": "Parc national forestier de Zhangjiajie",
@@ -1894,7 +1894,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Shanghai",
-        "description": "Comptez d’abord environ 1 h 30 de route jusqu’à l’aéroport de Guilin, puis environ deux heures pour le vol économique confirmé vers Shanghai. Un chauffeur vous y accueille. Si vous avez encore de l’énergie, le Bund s’illumine après la tombée de la nuit."
+        "description": "Comptez d’abord environ 1 h 30 de route jusqu’à l’aéroport de Guilin, puis environ deux heures pour le vol en classe économique confirmé vers Shanghai. Un chauffeur vous y accueille. Si vous avez encore de l’énergie, le Bund s’illumine après la tombée de la nuit."
       },
       {
         "title": "Départ de Shanghai",
@@ -1902,7 +1902,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Douze nuits avec petit-déjeuner en chambre à deux lits : Shanghai 2, Wulingyuan 2, ville de Zhangjiajie 1, Fenghuang 2, Guilin 2, Yangshuo 2 et une dernière nuit à Shanghai. Les hôtels sont de niveau quatre étoiles (4 diamants Trip.com/Ctrip) lorsque cette catégorie est disponible. À Fenghuang, nous confirmons avant paiement l’hôtel le mieux noté au bord de la rivière.",
-    "serviceNote": "Les jours de visite, votre groupe dispose de son guide local anglophone et de son véhicule. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : le parc forestier de Zhangjiajie, l’ascenseur Bailong, le téléphérique de Tianmen et Longji. Sont également inclus le bateau sur la Li avec acheminement séparé des bagages par la route, et un radeau sur la Yulong. Trains à grande vitesse Zhangjiajie–Fenghuang et Fenghuang–Guilin ; vols économiques Shanghai–Zhangjiajie et Guilin–Shanghai. Les guides changent selon les villes ; les chauffeurs assurent les transferts en gare et à l’aéroport. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
+    "serviceNote": "Les jours de visite, votre groupe dispose de son guide local anglophone et de son véhicule. Les transferts sont inclus, ainsi que les billets d’entrée principaux indiqués au programme : le parc forestier de Zhangjiajie, l’ascenseur Bailong, le téléphérique de Tianmen et Longji. Sont également inclus le bateau sur la Li avec acheminement séparé des bagages par la route, et un radeau sur la Yulong. Trains à grande vitesse Zhangjiajie–Fenghuang et Fenghuang–Guilin ; vols en classe économique Shanghai–Zhangjiajie et Guilin–Shanghai. Les guides changent selon les villes ; les chauffeurs assurent les transferts en gare et à l’aéroport. Un guide coréanophone est au même tarif, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -2027,7 +2027,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Entrée de Hongqiao dans la vieille ville de Fenghuang",
             "alt": "Entrée de Hongqiao dans la vieille ville de Fenghuang",
-            "caption": "Entrée de Hongqiao dans la vieille ville de Fenghuang sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Entrée de Hongqiao dans la vieille ville de Fenghuang sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Vieille ville de Fenghuang",
@@ -2117,7 +2117,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "8 jours en circuit privé : Grande Muraille, Armée de terre cuite et Shanghai. 1 840 USD par personne à deux ; vol Xi’an–Shanghai inclus.",
     "eyebrow": "Pékin, Xi’an et Shanghai en huit jours",
     "lede": "Notre parcours le plus court entre Pékin, Xi’an et Shanghai : huit jours, avec trois nuits à Pékin, deux à Xi’an et deux à Shanghai. Un vol remplace les six heures de train de la dernière liaison. À partir de 1 840 USD par personne pour deux voyageurs partageant une chambre à deux lits, hors vols internationaux.",
-    "summary": "Sept nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, train à grande vitesse Pékin–Xi’an et vol économique Xi’an–Shanghai sont compris. Le temple du Ciel, le palais d’Été et une journée de repos n’entrent pas dans ce programme ; la version de douze jours leur laisse de la place.",
+    "summary": "Sept nuits d’hôtel incluent le petit-déjeuner. Guides locaux et véhicules privés les jours de visite, transferts, entrées indiquées au programme, train à grande vitesse Pékin–Xi’an et vol en classe économique Xi’an–Shanghai sont compris. Le temple du Ciel, le palais d’Été et une journée de repos n’entrent pas dans ce programme ; la version de douze jours leur laisse de la place.",
     "highlights": [
       "La Cité interdite à la date de votre billet",
       "Grande Muraille à Mutianyu et promenade dans les hutongs",
@@ -2147,7 +2147,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Shanghai",
-        "description": "Si votre vol part après le déjeuner, la matinée laisse du temps pour la place autour de la Grande Pagode de l’Oie sauvage. L’aéroport de Xi’an est à environ une heure de la ville ; le vol économique pour Shanghai dure un peu plus de deux heures. Un chauffeur vous accueille à Shanghai, et le Bund s’illumine le soir."
+        "description": "Si votre vol part après le déjeuner, la matinée laisse du temps pour la place autour de la Grande Pagode de l’Oie sauvage. L’aéroport de Xi’an est à environ une heure de la ville ; le vol en classe économique pour Shanghai dure un peu plus de deux heures. Un chauffeur vous accueille à Shanghai, et le Bund s’illumine le soir."
       },
       {
         "title": "Shanghai ou Suzhou",
@@ -2159,7 +2159,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Sept nuits avec petit-déjeuner en chambre à deux lits dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2 et Shanghai 2. Noms des hôtels et types de chambre sont confirmés avant paiement.",
-    "serviceNote": "Sont inclus un guide local anglophone et un véhicule réservés à votre groupe dans chaque ville les jours de visite, tous les transferts, billets d’entrée principaux indiqués au programme, train Pékin–Xi’an en seconde classe et vol Xi’an–Shanghai en classe économique. Les guides travaillent ville par ville : les jours de train ou de vol, un chauffeur vous accompagne au départ et un autre vous accueille à l’arrivée. Des guides coréanophones peuvent être organisés au même tarif, sous réserve de disponibilité dans chaque ville.",
+    "serviceNote": "Sont inclus un guide local anglophone et un véhicule réservés à votre groupe dans chaque ville les jours de visite, tous les transferts, billets d’entrée principaux indiqués au programme, train Pékin–Xi’an en seconde classe et vol Xi’an–Shanghai en classe économique. Vous retrouvez un guide local à chaque étape : les jours de train ou de vol, un chauffeur vous accompagne au départ et un autre vous accueille à l’arrivée. Nous pouvons prévoir des guides coréanophones au même tarif, sous réserve de disponibilité dans chaque ville.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -2172,7 +2172,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Combien coûte le circuit privé Pékin, Xi’an et Shanghai de huit jours ?",
-        "answer": "Il coûte 1 840 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 3 680 USD pour le couple. Le prix est de 1 310 USD par personne à quatre et de 1 190 USD à six. Sept nuits avec petit-déjeuner, guides et véhicules réservés dans chaque ville pour les jours de visite, entrées, train Pékin–Xi’an et vol Xi’an–Shanghai sont compris. Vols internationaux, déjeuners et dîners ne le sont pas. Pour un autre nombre de voyageurs, demandez-nous un devis."
+        "answer": "Il coûte 1 840 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 3 680 USD pour deux personnes. Le prix est de 1 310 USD par personne à quatre et de 1 190 USD à six. Sept nuits avec petit-déjeuner, guides et véhicules réservés dans chaque ville pour les jours de visite, entrées, train Pékin–Xi’an et vol Xi’an–Shanghai sont compris. Vols internationaux, déjeuners et dîners ne le sont pas. Pour un autre nombre de voyageurs, demandez-nous un devis."
       },
       {
         "question": "Huit jours suffisent-ils pour ces trois villes ?",
@@ -2214,7 +2214,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "La Cité interdite vue depuis Jingshan",
             "alt": "La Cité interdite vue depuis Jingshan",
-            "caption": "La Cité interdite vue depuis Jingshan sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "La Cité interdite vue depuis Jingshan sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Cité interdite",
@@ -2354,7 +2354,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Guilin",
-        "description": "Le vol économique de Xi’an à Guilin dure environ deux heures. Un chauffeur local vous accueille à l’aéroport et vous conduit à l’hôtel. Soirée libre et nuit à Guilin avant la croisière."
+        "description": "Le vol en classe économique de Xi’an à Guilin dure environ deux heures. Un chauffeur local vous accueille à l’aéroport et vous conduit à l’hôtel. Soirée libre et nuit à Guilin avant la croisière."
       },
       {
         "title": "Croisière sur la rivière Li jusqu’à Yangshuo",
@@ -2374,7 +2374,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Neuf nuits en chambre à deux lits avec petit-déjeuner dans des hôtels de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2, Guilin 1, Yangshuo 2 et Hong Kong 1. À catégorie équivalente, les chambres de Hong Kong sont généralement plus petites que celles du continent. Hôtels et types de chambre sont confirmés avant paiement.",
-    "serviceNote": "Sont inclus un guide local anglophone et un véhicule privés dans chaque ville continentale les jours de visite, tous les transferts, dont West Kowloon–hôtel à Hong Kong puis hôtel–aéroport, les billets d’entrée principaux indiqués au programme, la croisière sur la Li avec transport séparé des bagages, les trains Pékin–Xi’an et Guilin–Hong Kong en seconde classe, et le vol économique Xi’an–Guilin. Les guides changent selon les villes ; les chauffeurs assurent les transferts avant et après chaque trajet en train ou en avion. Des guides coréanophones peuvent être organisés au même tarif dans les villes continentales, sous réserve de disponibilité.",
+    "serviceNote": "Sont inclus un guide local anglophone et un véhicule privés dans chaque ville continentale les jours de visite, tous les transferts, dont West Kowloon–hôtel à Hong Kong puis hôtel–aéroport, les billets d’entrée principaux indiqués au programme, la croisière sur la Li avec transport séparé des bagages, les trains Pékin–Xi’an et Guilin–Hong Kong en seconde classe, et le vol en classe économique Xi’an–Guilin. Les guides changent selon les villes ; les chauffeurs assurent les transferts avant et après chaque trajet en train ou en avion. Nous pouvons prévoir des guides coréanophones au même tarif dans les villes continentales, sous réserve de disponibilité.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons (le petit-déjeuner est inclus dans chaque hôtel)",
@@ -2387,7 +2387,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Combien coûte ce circuit privé de dix jours de Pékin à Hong Kong ?",
-        "answer": "Il coûte 2 610 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 220 USD pour le couple. Le prix est de 1 880 USD par personne à quatre et de 1 720 USD à six. Neuf nuits avec petit-déjeuner, guides et véhicules en Chine continentale les jours de visite, entrées, bateau sur la Li, deux trains à grande vitesse, un vol intérieur et transferts à Hong Kong sont inclus. Vols internationaux, déjeuners et dîners ne le sont pas."
+        "answer": "Il coûte 2 610 USD par personne sur la base de deux voyageurs partageant une chambre à deux lits, soit 5 220 USD pour deux personnes. Le prix est de 1 880 USD par personne à quatre et de 1 720 USD à six. Neuf nuits avec petit-déjeuner, guides et véhicules en Chine continentale les jours de visite, entrées, bateau sur la Li, deux trains à grande vitesse, un vol intérieur et transferts à Hong Kong sont inclus. Vols internationaux, déjeuners et dîners ne le sont pas."
       },
       {
         "question": "Peut-on faire ce circuit sans visa chinois ?",
@@ -2579,7 +2579,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Vol pour Chongqing et embarquement",
-        "description": "Prenez le vol économique du matin depuis Xi’an, environ 1 h 30. Les bagages restent dans le véhicule pendant les arrêts de l’après-midi à la station de monorail de Liziba et à Hongyadong. L’embarquement à Chaotianmen ouvre vers 18 h ; dîner à bord et départ vers 21 h. Si le niveau de l’eau déplace l’embarquement, la compagnie organise un transfert depuis le centre de Chongqing."
+        "description": "Prenez le vol en classe économique du matin depuis Xi’an, environ 1 h 30. Les bagages restent dans le véhicule pendant les arrêts de l’après-midi à la station de monorail de Liziba et à Hongyadong. L’embarquement à Chaotianmen ouvre vers 18 h ; dîner à bord et départ vers 21 h. Si le niveau de l’eau déplace l’embarquement, la compagnie organise un transfert depuis le centre de Chongqing."
       },
       {
         "title": "Sur le Yangtsé",
@@ -2599,7 +2599,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Excursion dans les jardins de Suzhou",
-        "description": "Le train à grande vitesse relie Shanghai à Suzhou en environ 30 minutes. Visitez un jardin confirmé pour la date, promenez-vous dans les ruelles de canaux de Pingjiang Road, puis revenez à Shanghai."
+        "description": "Le train à grande vitesse relie Shanghai à Suzhou en environ 30 minutes. Visitez un jardin confirmé pour la date, promenez-vous dans les ruelles qui bordent les canaux de Pingjiang Road, puis revenez à Shanghai."
       },
       {
         "title": "Départ de Shanghai",
@@ -2607,7 +2607,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Sur onze nuits, huit se passent à l’hôtel avec petit-déjeuner, de niveau quatre étoiles (4 diamants Trip.com/Ctrip) : Pékin 3, Xi’an 2 et Shanghai 3. Les trois autres se passent en cabine standard avec balcon sur un bateau du Yangtsé classé cinq étoiles, généralement Gold Cruises. Sur le pont le plus bas accueillant des cabines, le balcon peut être vitré ; une cabine sur un pont supérieur entraîne un petit supplément. Les chambres d’hôtel sont partagées à deux ; bateau, pont et cabine sont fixés pour la date de navigation.",
-    "serviceNote": "Sont inclus un guide local anglophone et un véhicule privés dans chaque ville les jours de visite à terre, tous les transferts, billets d’entrée principaux indiqués au programme, train Pékin–Xi’an en seconde classe, vol économique Xi’an–Chongqing, cabine de croisière avec repas du dîner d’embarquement au petit-déjeuner final et trois excursions, généralement Fengdu, les Petites Trois Gorges et le barrage des Trois Gorges, train ou vol économique Yichang–Shanghai, et train aller-retour Shanghai–Suzhou. À bord, les commentaires sont proposés dans les langues prévues par la compagnie de croisière. Les guides changent selon les villes ; les chauffeurs assurent les transferts avant et après chaque trajet en train ou en avion. Un guide coréanophone à terre est au même tarif sous réserve de disponibilité dans chaque ville.",
+    "serviceNote": "Sont inclus un guide local anglophone et un véhicule privés dans chaque ville les jours de visite à terre, tous les transferts, billets d’entrée principaux indiqués au programme, train Pékin–Xi’an en seconde classe, vol en classe économique Xi’an–Chongqing, cabine de croisière avec repas du dîner d’embarquement au petit-déjeuner final et trois excursions, généralement Fengdu, les Petites Trois Gorges et le barrage des Trois Gorges, train ou vol en classe économique Yichang–Shanghai, et train aller-retour Shanghai–Suzhou. À bord, les commentaires sont proposés dans les langues prévues par la compagnie de croisière. Les guides changent selon les villes ; les chauffeurs assurent les transferts avant et après chaque trajet en train ou en avion. Un guide coréanophone à terre est au même tarif sous réserve de disponibilité dans chaque ville.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Déjeuners, dîners et boissons à terre (petits-déjeuners d’hôtel et repas de croisière inclus)",
@@ -2742,7 +2742,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Gorge de Qutang sur le Yangtsé",
             "alt": "Gorge de Qutang sur le Yangtsé",
-            "caption": "Gorge de Qutang sur le Yangtsé sur ce parcours. La photo illustre le lieu ; accès, météo et ordre final des journées sont confirmés pour vos dates."
+            "caption": "Gorge de Qutang sur le Yangtsé sur ce parcours. La photo illustre le lieu ; les conditions d’accès, la météo et l’ordre des visites sont vérifiés pour vos dates."
           },
           {
             "label": "Gorge de Qutang",
@@ -2815,12 +2815,12 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   },
   "harbin-yabuli-snow-town-6-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli et Snow Town : circuit privé hivernal de 6 jours",
-    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre pour deux personnes, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
+    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre à deux lits, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
     "packages": [
       {
         "id": "low-season",
         "label": "Basse saison · 10 nov.–19 déc. / 15 fév.–10 mars",
-        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre pour deux personnes et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
+        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre à deux lits et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
       },
       {
         "id": "peak-season",
@@ -2866,7 +2866,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Cinq nuits d’hôtel, sans train de nuit : deux à Harbin, une à Yabuli, une dans le secteur de Snow Town, puis une autre à Harbin. Les tarifs sont calculés sur la base des hébergements prévus, avec deux adultes partageant une chambre. Les établissements figurent dans votre confirmation écrite ; les chambres individuelles sont chiffrées séparément.",
-    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre pour deux personnes ; les billets d’Ice and Snow World à Harbin et de Snow Town, ainsi que le forfait de ski à Yabuli (durée, matériel et éventuels cours indiqués dans la confirmation écrite) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
+    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre à deux lits ; les billets d’Ice and Snow World à Harbin et de Snow Town, ainsi que le forfait de ski à Yabuli (durée, matériel et éventuels cours indiqués dans la confirmation écrite) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
     "exclusions": [
       "Repas, transferts d’arrivée et de départ, transports jusqu’à la ville de départ et après la ville d’arrivée : prestations et prix à confirmer dans le devis écrit",
       "Toute entrée ou activité facultative au-delà des prestations indiquées comme incluses : à confirmer dans le devis écrit",
@@ -2896,7 +2896,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
-        "answer": "Les entrées indiquées au programme dans la rubrique prestations sont incluses. Les repas, les transferts vers l’aéroport ou la gare, les billets supplémentaires et les conditions d’annulation sont précisés par écrit avant paiement."
+        "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
       }
     ],
     "facts": [
@@ -2997,12 +2997,12 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   },
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town, mont Changbai et Yanji : circuit privé hivernal de 8 jours",
-    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre pour deux personnes, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
+    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre à deux lits, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
     "packages": [
       {
         "id": "low-season",
         "label": "Basse saison · 10 nov.–19 déc. / 15 fév.–10 mars",
-        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre pour deux personnes et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
+        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre à deux lits et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
       },
       {
         "id": "peak-season",
@@ -3056,7 +3056,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Sept nuits d’hôtel et aucun train de nuit : deux à Harbin, une à Yabuli, une dans le secteur de Snow Town, deux à Erdaobaihe et une à Yanji. Les prix sont calculés sur la base des hébergements prévus, à deux adultes par chambre. Les hôtels exacts figurent dans votre confirmation écrite ; chambres individuelles sur devis séparé.",
-    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre pour deux personnes ; les billets pour Ice and Snow World à Harbin, Snow Town, le versant nord du mont Changbai et Xueling, ainsi que le forfait de ski à Yabuli (durée, matériel et éventuels cours précisés dans la confirmation écrite) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
+    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre à deux lits ; les billets pour Ice and Snow World à Harbin, Snow Town, le versant nord du mont Changbai et Xueling, ainsi que le forfait de ski à Yabuli (durée, matériel et éventuels cours précisés dans la confirmation écrite) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
     "exclusions": [
       "Repas, transferts d’arrivée et de départ, transports jusqu’à la ville de départ et après la ville d’arrivée : prestations et prix à confirmer dans le devis écrit",
       "Toute entrée ou activité facultative au-delà des prestations indiquées comme incluses : à confirmer dans le devis écrit",
@@ -3091,7 +3091,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
-        "answer": "Les entrées indiquées au programme dans la rubrique prestations sont incluses. Les repas, les transferts vers l’aéroport ou la gare, les billets supplémentaires et les conditions d’annulation sont précisés par écrit avant paiement."
+        "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
       }
     ],
     "facts": [
@@ -3207,12 +3207,12 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   },
   "harbin-mohe-arctic-village-7-day-private-tour": {
     "metadataTitle": "Harbin, Mohe, Beihong et Village arctique : circuit privé hivernal de 7 jours",
-    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre pour deux personnes, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
+    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre à deux lits, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
     "packages": [
       {
         "id": "low-season",
         "label": "Basse saison · 10 nov.–19 déc. / 15 fév.–10 mars",
-        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre pour deux personnes et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
+        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre à deux lits et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
       },
       {
         "id": "peak-season",
@@ -3263,7 +3263,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Quatre nuits d’hôtel et deux nuits en train-couchettes : Harbin aux jours 1 et 2, hôtels de l’extrême nord aux jours 4 et 5, nommés sur votre confirmation. Les nuits des jours 3 et 6 se font en train Harbin–Mohe, en couchettes dures attribuées aléatoirement. Les prix d’hôtel supposent deux adultes par chambre ; chambres individuelles sur devis séparé.",
-    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre pour deux personnes ; les billets aller-retour Harbin–Mohe en couchettes dures attribuées aléatoirement ; les entrées d’Ice and Snow World, du premier méandre du Heilongjiang, du parc des rennes, du Village de Noël et du Village arctique ; une séance de ski pour débutants avec bâtons, skis et chaussures, dont la durée est confirmée par écrit ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
+    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre à deux lits ; les billets aller-retour Harbin–Mohe en couchettes dures attribuées aléatoirement ; les entrées d’Ice and Snow World, du premier méandre du Heilongjiang, du parc des rennes, du Village de Noël et du Village arctique ; une séance de ski pour débutants avec bâtons, skis et chaussures, dont la durée est confirmée par écrit ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
     "exclusions": [
       "Repas, transferts d’arrivée et de départ, transports jusqu’à la ville de départ et après la ville d’arrivée : prestations et prix à confirmer dans le devis écrit",
       "Toute entrée ou activité facultative au-delà des prestations indiquées comme incluses : à confirmer dans le devis écrit",
@@ -3297,7 +3297,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
-        "answer": "Les entrées indiquées au programme dans la rubrique prestations sont incluses. Les repas, les transferts vers l’aéroport ou la gare, les billets supplémentaires et les conditions d’annulation sont précisés par écrit avant paiement."
+        "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
       }
     ],
     "facts": [
@@ -3403,12 +3403,12 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   },
   "harbin-snow-town-mohe-9-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town et Mohe : circuit privé hivernal de 9 jours",
-    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre pour deux personnes, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
+    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre à deux lits, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
     "packages": [
       {
         "id": "low-season",
         "label": "Basse saison · 10 nov.–19 déc. / 15 fév.–10 mars",
-        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre pour deux personnes et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
+        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre à deux lits et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
       },
       {
         "id": "peak-season",
@@ -3417,7 +3417,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "title": "Harbin, Yabuli, Snow Town et Mohe : circuit privé hivernal de 9 jours",
-    "metadataDescription": "9 jours en hiver : Harbin, Yabuli, Snow Town, Mohe et Village arctique. Six nuits d’hôtel et deux nuits en train-couchettes dures.",
+    "metadataDescription": "9 jours en hiver : Harbin, Yabuli, Snow Town, Mohe et Village arctique. Six nuits d’hôtel et deux nuits en train, en couchettes dures.",
     "eyebrow": "Le parcours hivernal le plus complet du Nord-Est, et le plus long",
     "lede": "Les décors de glace de Harbin, une journée de ski à Yabuli et Snow Town, puis un train de nuit vers Mohe, Beihong et le Village arctique. L’hébergement comprend six nuits d’hôtel et deux nuits en couchettes dures, attribuées aléatoirement.",
     "summary": "Neuf jours pour le plus étendu de nos cinq parcours du Nord-Est. Vous passez six nuits à l’hôtel : à Harbin, Yabuli, dans le secteur de Snow Town, puis deux dans l’extrême nord. Deux autres nuits se passent à bord des trains Harbin–Mohe, en couchettes de catégorie « dure » attribuées aléatoirement. C’est aussi le plus long de ces cinq parcours.",
@@ -3466,7 +3466,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Six nuits d’hôtel et deux nuits en train-couchettes : Harbin aux jours 1 et 2, Yabuli au jour 3, secteur de Snow Town au jour 4, puis hôtels de l’extrême nord aux jours 6 et 7, nommés dans votre confirmation. Les jours 5 et 8 se passent à bord des trains de nuit Harbin–Mohe en couchettes dures attribuées aléatoirement. Tarifs d’hôtel sur la base de deux adultes par chambre ; chambres individuelles sur devis séparé.",
-    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre pour deux personnes ; les billets aller-retour Harbin–Mohe en couchettes dures attribuées aléatoirement ; les entrées d’Ice and Snow World, de Snow Town, du premier méandre du Heilongjiang, du parc des rennes, du Village de Noël et du Village arctique ; le forfait de ski de Yabuli et une séance de ski pour débutants avec bâtons, skis et chaussures (durées confirmées par écrit) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
+    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre à deux lits ; les billets aller-retour Harbin–Mohe en couchettes dures attribuées aléatoirement ; les entrées d’Ice and Snow World, de Snow Town, du premier méandre du Heilongjiang, du parc des rennes, du Village de Noël et du Village arctique ; le forfait de ski de Yabuli et une séance de ski pour débutants avec bâtons, skis et chaussures (durées confirmées par écrit) ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
     "exclusions": [
       "Repas, transferts d’arrivée et de départ, transports jusqu’à la ville de départ et après la ville d’arrivée : prestations et prix à confirmer dans le devis écrit",
       "Toute entrée ou activité facultative au-delà des prestations indiquées comme incluses : à confirmer dans le devis écrit",
@@ -3501,7 +3501,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
-        "answer": "Les entrées indiquées au programme dans la rubrique prestations sont incluses. Les repas, les transferts vers l’aéroport ou la gare, les billets supplémentaires et les conditions d’annulation sont précisés par écrit avant paiement."
+        "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
       }
     ],
     "facts": [
@@ -3529,7 +3529,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "gallery": [
       {
         "alt": "Visiteurs dans une rue enneigée de China Snow Town la nuit",
-        "caption": "China Snow Town en décembre 2023. Boutiques et affluence représentées ne font pas partie des prestations du circuit."
+        "caption": "China Snow Town en décembre 2023. Cette photo d’ambiance ne décrit pas les prestations du circuit ; les commerces visibles et la fréquentation peuvent différer lors de votre séjour."
       }
     ],
     "routeMedia": [
@@ -3627,12 +3627,12 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   },
   "yanji-changbaishan-wanda-6-day-private-tour": {
     "metadataTitle": "Yanji, mont Changbai et Wanda Resort : circuit privé hivernal de 6 jours",
-    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre pour deux personnes, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
+    "bookingNote": "Dans le Nord-Est chinois, les températures hivernales peuvent descendre sous −20 °C : prévoyez des vêtements techniques grand froid, bottes de neige isolantes, gants et protection du visage. Neige, fermetures de routes et décisions des exploitants peuvent raccourcir ou réorganiser les arrêts extérieurs. Les tarifs de départ indiqués sont par personne pour 2, 4, 6 ou 8 voyageurs en chambre à deux lits, uniquement pour les départs du 10 novembre 2026 au 10 mars 2027. Attractions de glace, stations de ski et activités sensibles à la météo sont vérifiées pour vos dates avant paiement. Pour les autres tailles de groupe, les enfants ou une chambre individuelle, les tarifs sont précisés dans le devis écrit, avec les conditions d’annulation.",
     "packages": [
       {
         "id": "low-season",
         "label": "Basse saison · 10 nov.–19 déc. / 15 fév.–10 mars",
-        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre pour deux personnes et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
+        "summary": "Départs du 10 novembre au 19 décembre 2026 ou du 15 février au 10 mars 2027. Véhicule et chauffeur privés, hébergements prévus en chambre à deux lits et prestations détaillées sur cette page. Pistes et attractions de neige sont vérifiées pour vos dates avant paiement."
       },
       {
         "id": "peak-season",
@@ -3643,13 +3643,13 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "title": "Yanji, mont Changbai et Wanda Resort : circuit privé hivernal de 6 jours",
     "metadataDescription": "Circuit privé de 6 jours depuis Yanji, via Xueling et le mont Changbai jusqu’à Wanda Resort. Cinq nuits d’hôtel ; ski sous conditions d’ouverture.",
     "eyebrow": "Paysages enneigés, mont Changbai et séjour en station de ski",
-    "lede": "Au départ de Yanji, traversez Xueling enneigé vers Erdaobaihe, visitez le versant nord du mont Changbai si les conditions le permettent, puis passez deux nuits près de Wanda Resort. L’expérience de ski offerte dépend de l’ouverture de la station et est confirmée avant paiement.",
+    "lede": "Au départ de Yanji, traversez Xueling enneigé vers Erdaobaihe, visitez le versant nord du mont Changbai si les conditions le permettent, puis passez deux nuits près de Wanda Resort. La séance de ski offerte dépend de l’ouverture de la station et est confirmée avant paiement.",
     "summary": "Six jours et cinq nuits d’hôtel : une à Yanji, deux à Erdaobaihe et deux près de Wanda Resort. Les billets d’entrée de Xueling et du versant nord du mont Changbai sont inclus. La visite en montagne dépend de la météo ; l’activité de ski, de l’enneigement et de l’ouverture de la station.",
     "highlights": [
       "Xueling entre Yanji et Erdaobaihe",
       "Versant nord du mont Changbai, selon la météo",
       "Deux nuits dans le secteur de Wanda Resort",
-      "Une expérience de ski offerte lorsque la station fonctionne"
+      "Une séance de ski offerte lorsque la station est ouverte"
     ],
     "itinerary": [
       {
@@ -3669,20 +3669,20 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Trajet d’Erdaobaihe au secteur de Wanda Resort, puis installation dans l’hôtel confirmé. Les éventuelles activités de l’après-midi figurent dans votre programme écrit. Nuit près de la station."
       },
       {
-        "title": "Expérience de ski à Wanda",
-        "description": "Journée dans le secteur de Wanda Resort. Une expérience de ski offerte est prévue, sous réserve de fonctionnement de la station et d’enneigement adapté. Durée et équipement sont confirmés par écrit avant paiement. Nuit près de la station."
+        "title": "Séance de ski à Wanda",
+        "description": "Journée dans le secteur de Wanda Resort. Une séance de ski offerte est prévue, sous réserve d’ouverture de la station et d’enneigement adapté. Durée et équipement sont confirmés par écrit avant paiement. Nuit près de la station."
       },
       {
         "title": "Retour à Yanji et départ",
         "description": "Retour par la route à Yanji pour la suite de votre voyage. Prévoyez une marge suffisante entre le transfert et le départ de votre vol ou de votre train. Le devis précise les billets pour la suite du trajet ainsi que la dépose à l’aéroport ou à la gare."
       }
     ],
-    "hotelNote": "Cinq nuits en chambre pour deux personnes : Yanji au jour 1, Erdaobaihe aux jours 2 et 3, secteur de Wanda Resort aux jours 4 et 5. Plusieurs hébergements sont envisagés pour ce parcours ; noms des hôtels et type de chambre sont fixés dans votre confirmation écrite. Chambres individuelles sur devis séparé.",
-    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre pour deux personnes ; les billets d’entrée de Xueling et du versant nord du mont Changbai ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
+    "hotelNote": "Cinq nuits en chambre à deux lits : Yanji au jour 1, Erdaobaihe aux jours 2 et 3, secteur de Wanda Resort aux jours 4 et 5. Plusieurs hébergements sont envisagés pour ce parcours ; noms des hôtels et type de chambre sont fixés dans votre confirmation écrite. Chambres individuelles sur devis séparé.",
+    "serviceNote": "Sont inclus : un véhicule privé adapté au groupe (SUV 5 places pour 2, monospace 7 places pour 4, ou véhicule 9 places pour 6 à 8) ; un chauffeur anglophone chargé de la logistique, qui n’est pas guide agréé et n’assure pas les visites commentées à l’intérieur des sites ; les hébergements prévus en chambre à deux lits ; les billets d’entrée de Xueling et du versant nord du mont Changbai ; et une assurance accidents de voyage dont la couverture annoncée est de 800 000 CNY. Les frais de repas et d’hébergement du chauffeur sont compris. Le devis écrit précise séparément les repas des voyageurs, les transferts vers l’aéroport ou la gare, et les entrées qui ne figurent pas dans cette liste.",
     "exclusions": [
       "Repas, transferts d’arrivée et de départ, transports jusqu’à la ville de départ et après la ville d’arrivée : prestations et prix à confirmer dans le devis écrit",
       "Toute entrée ou activité facultative au-delà des prestations indiquées comme incluses : à confirmer dans le devis écrit",
-      "Expérience de ski offerte à Wanda et éventuels temps, matériel ou cours supplémentaires : disponibilité et prestations à confirmer par écrit avant paiement",
+      "Séance de ski offerte à Wanda et éventuels temps, matériel ou cours supplémentaires : disponibilité et prestations à confirmer par écrit avant paiement",
       "Tarifs enfants, suppléments chambre individuelle et conditions d’annulation : précisés séparément avant paiement"
     ],
     "faq": [
@@ -3691,7 +3691,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "answer": "Votre chauffeur parle anglais et vous aide pour les horaires, transferts et arrêts en ville. Il n’est pas guide touristique agréé et n’assure pas les visites commentées à l’intérieur des sites. Vous visitez les principaux sites librement, puis retrouvez le chauffeur. Les cours de ski, s’ils font partie du forfait confirmé, sont assurés par les moniteurs de la station."
       },
       {
-        "question": "L’expérience de ski à Wanda est-elle incluse ?",
+        "question": "La séance de ski à Wanda est-elle incluse ?",
         "answer": "Elle est proposée comme activité offerte, sous réserve d’ouverture de la station à vos dates et d’enneigement adapté. Nous confirmons durée, matériel et éventuelle alternative par écrit avant paiement."
       },
       {
@@ -3704,7 +3704,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
-        "answer": "Les entrées indiquées au programme dans la rubrique prestations sont incluses. Les repas, les transferts vers l’aéroport ou la gare, les billets supplémentaires et les conditions d’annulation sont précisés par écrit avant paiement."
+        "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
       }
     ],
     "facts": [
@@ -3782,7 +3782,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Pistes de ski de Wanda",
             "alt": "Départ des remontées et pistes à Changbaishan Wanda Resort",
-            "caption": "Domaine de Wanda Resort en décembre 2013. Expérience de ski offerte et fonctionnement des remontées sont confirmés avant paiement."
+            "caption": "Domaine de Wanda Resort en décembre 2013. Séance de ski offerte et fonctionnement des remontées sont confirmés avant paiement."
           }
         ]
       },
@@ -3805,19 +3805,19 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "id": "private-guided",
         "label": "Voyage privé guidé · sur devis",
-        "summary": "Onze nuits avec petit-déjeuner, guide local anglophone dans chaque ville pendant huit journées complètes et une demi-journée à Tongli, voiture privée et chauffeur, train rapide Hangzhou–Shanghai, toutes les entrées et sorties en bateau du programme, et deux dîners. Devis selon vos dates."
+        "summary": "Onze nuits avec petit-déjeuner, guide local anglophone dans chaque ville pendant huit journées complètes et une demi-journée à Tongli, voiture privée et chauffeur, train rapide Hangzhou–Shanghai, les billets d’entrée et les promenades en bateau prévus au programme, et deux dîners. Devis selon vos dates."
       }
     ],
     "title": "Jiangnan, l’art de vivre : 12 jours à Suzhou, Tongli, Hangzhou et Shanghai",
     "metadataDescription": "Voyage privé de 12 jours dans le Jiangnan : jardins de Suzhou à l’ouverture, nuit à Tongli, lac de l’Ouest, thé et cinq nuits à Shanghai. Sur devis.",
-    "eyebrow": "Jardins de lettrés, nuit dans une ville d’eau, collines de thé, puis Shanghai",
-    "lede": "À Suzhou, entrez dans le jardin de l’Humble Administrateur dès l’ouverture, avant les groupes. À Tongli, restez quand les visiteurs repartent : les canaux retrouvent leur calme au crépuscule, puis dans la lumière du matin. À Hangzhou, rejoignez le pont Brisé à 7 h 30, avant que les rives du lac de l’Ouest ne s’animent. Shanghai viendra ensuite donner un autre visage à ces héritages.",
+    "eyebrow": "Jardins de lettrés, nuit dans une ville de canaux, collines de thé, puis Shanghai",
+    "lede": "À Suzhou, entrez dans le jardin de l’Humble Administrateur dès l’ouverture, avant les groupes. À Tongli, restez quand les visiteurs repartent : les canaux retrouvent leur calme au crépuscule, puis dans la lumière du matin. À Hangzhou, rejoignez le pont Brisé à 7 h 30, avant que les rives du lac de l’Ouest ne s’animent. Puis Shanghai révèle comment cet héritage s’est transformé au fil du temps.",
     "summary": "Un voyage privé de 12 jours et 11 nuits, sans revenir sur vos pas : Suzhou 3 nuits, Tongli 1, Hangzhou 2 et Shanghai 5. Un guide local anglophone vous accompagne dans chaque ville pendant huit journées complètes, auxquelles s’ajoute une demi-journée à Tongli. Voiture privée avec chauffeur pour les transferts et les journées guidées. À Shanghai, vous gardez une journée entièrement libre, sans guide ni voiture. Aucun arrêt commercial. Le devis est établi selon vos dates et le nombre de voyageurs.",
     "highlights": [
       "Le jardin de l’Humble Administrateur dès l’ouverture",
       "Une nuit à Tongli, lorsque les visiteurs de la journée sont repartis",
       "Le lac de l’Ouest à 7 h 30, puis les collines de thé",
-      "Shanghai de l’intérieur : salons du Bund, ruelles lilong et Hongkou"
+      "Shanghai de l’intérieur : halls historiques du Bund, ruelles lilong et Hongkou"
     ],
     "itinerary": [
       {
@@ -3826,19 +3826,19 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Prendre le temps de lire un jardin",
-        "description": "Entrez dans le jardin de l’Humble Administrateur dès l’ouverture, avant les groupes. Un fonctionnaire des Ming le fit aménager après avoir quitté ses fonctions ; son nom évoque, avec une modestie affichée, le simple travail du jardinier. Votre guide vous apprend à regarder : une fenêtre découpant quelques bambous, un chemin dont le détour révèle soudain une autre perspective. Juste à côté, les murs blancs et le verre du musée de Suzhou témoignent du dialogue d’I. M. Pei avec les jardins anciens ; à l’intérieur, découvrez les peintures de l’école de Wu. L’après-midi, marchez dans les ruelles de Pingjiang, faites halte dans une maison de thé fréquentée par les habitants et, si vous le souhaitez, prenez un bateau pour un court trajet sur le canal. Le soir, une représentation de kunqu et de pingtan dans les pavillons du jardin du Maître des Filets peut être ajoutée au programme."
+        "description": "Entrez dans le jardin de l’Humble Administrateur dès l’ouverture, avant les groupes. Un fonctionnaire des Ming le fit aménager après avoir quitté ses fonctions ; son nom évoque, avec une modestie affichée, le simple travail du jardinier. Votre guide vous apprend à regarder : une fenêtre qui encadre une touffe de bambous, un détour qui révèle soudain une autre perspective. Juste à côté, les murs blancs et le verre du musée de Suzhou témoignent du dialogue d’I. M. Pei avec les jardins anciens ; à l’intérieur, découvrez les peintures de l’école de Wu. L’après-midi, marchez dans les ruelles de Pingjiang, faites halte dans une maison de thé fréquentée par les habitants et, si vous le souhaitez, prenez un bateau pour un court trajet sur le canal. Le soir, une représentation de kunqu et de pingtan dans les pavillons du jardin du Maître des Filets peut être ajoutée au programme."
       },
       {
         "title": "Yipu, à l’échelle de la vie quotidienne",
-        "description": "Aujourd’hui, Suzhou se découvre à une échelle plus intime. Au bout d’une ruelle sans apparat, Yipu est un jardin des Ming où les habitants viennent boire le thé, dans un pavillon au bord de l’eau. Prenez place parmi eux. Puis choisissez avec votre guide, le jour même, le pavillon Canglang ou Shantang Street. L’après-midi, les petits musées du kunqu et du pingtan, à quelques ruelles de Pingjiang Road, font entendre les voix de Suzhou. Terminez par Guanqian Street et le temple Xuanmiao : un quartier où l’on vient aussi bien faire ses courses que prier."
+        "description": "Aujourd’hui, Suzhou se découvre à une échelle plus intime. Au bout d’une ruelle discrète, Yipu est un jardin des Ming où les habitants viennent boire le thé, dans un pavillon au bord de l’eau. Prenez place parmi eux. Puis choisissez avec votre guide, le jour même, le pavillon Canglang ou Shantang Street. L’après-midi, les petits musées du kunqu et du pingtan, à quelques ruelles de Pingjiang Road, font entendre les voix de Suzhou. Terminez par Guanqian Street et le temple Xuanmiao : un quartier où l’on vient aussi bien faire ses courses que prier."
       },
       {
-        "title": "Tongli : une nuit dans la ville d’eau",
-        "description": "Après quarante minutes de voiture, vous arrivez à Tongli. Les véhicules restent hors de la vieille ville ; vos bagages sont portés jusqu’à l’hébergement. Pendant une demi-journée, un guide local vous fait découvrir Tuisi, le jardin du Retrait et de la Réflexion, créé par un fonctionnaire démis de ses fonctions ; les trois ponts que les cortèges de mariage traversent encore pour porter bonheur ; puis une ancienne demeure de marchand. Une promenade en bateau révèle enfin les canaux pour ce qu’ils sont : les rues d’une ville. Le guide vous quitte en début d’après-midi. Vous restez ensuite pour le soir et le matin, lorsque les visiteurs venus pour la journée sont repartis. Dîner en ville inclus."
+        "title": "Tongli : une nuit dans la ville de canaux",
+        "description": "Après quarante minutes de voiture, vous arrivez à Tongli. Les véhicules restent hors de la vieille ville ; vos bagages sont portés jusqu’à l’hébergement. Pendant une demi-journée, un guide local vous fait découvrir Tuisi, le jardin du Retrait et de la Réflexion, créé par un fonctionnaire démis de ses fonctions ; les trois ponts que les cortèges de mariage traversent encore pour porter bonheur ; puis une ancienne demeure de marchand. Une promenade en bateau permet ensuite de voir les canaux comme les rues de la ville, où circule la vie quotidienne. La visite guidée s’achève en début d’après-midi. Vous restez sur place pour profiter du soir et du lendemain matin, lorsque les visiteurs venus pour la journée sont repartis. Dîner en ville inclus."
       },
       {
         "title": "Hangzhou : au fil du Grand Canal",
-        "description": "Deux heures de route avec le même chauffeur que depuis Hongqiao, vos bagages toujours dans la voiture, et vous arrivez à Hangzhou en fin de matinée. L’après-midi se déroule autour du pont Gongchen, de Qiaoxi et de Xiaohe Street : entrepôts, maisons de bateliers et boutiques qui approvisionnaient autrefois les barges. Aujourd’hui, l’eau raconte le travail et les échanges. Demain, elle ouvre sur le paysage."
+        "description": "Le chauffeur qui vous a accueillis à Hongqiao vous conduit à Hangzhou en environ deux heures, sans changer de voiture ni déplacer les bagages. Vous arrivez en fin de matinée. L’après-midi se déroule autour du pont Gongchen, de Qiaoxi et de Xiaohe Street : entrepôts, maisons de bateliers et boutiques qui approvisionnaient autrefois les barges. Aujourd’hui, l’eau raconte le travail et les échanges. Demain, elle ouvre sur le paysage."
       },
       {
         "title": "Le lac de l’Ouest à 7 h 30, puis les collines de thé",
@@ -3857,8 +3857,8 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Commencez par le musée des Réfugiés juifs de Shanghai, dans l’ancienne synagogue Ohel Moshe. Il raconte comment des familles juives fuyant l’Europe dans les années 1930 et 1940 trouvèrent refuge ici. Parcourez ensuite les rues évoquées dans le musée : Zhoushan Road, le parc Huoshan, Tilanqiao. Le quartier reste habité ; c’est aussi ce qui donne son sens à cette promenade. L’après-midi, consacrez quatre-vingt-dix minutes au musée d’Histoire de Shanghai pour replacer ces histoires dans le contexte politique et économique de la ville."
       },
       {
-        "title": "Musée de Shanghai Est, Pudong et Bund nocturne",
-        "description": "Consacrez deux heures au musée de Shanghai Est, parmi les céramiques, les peintures et l’artisanat du Jiangnan : les étapes de Suzhou et de Hangzhou trouvent ici un nouvel écho. Découvrez ensuite la transformation de Pudong : ce qui se trouvait là en 1990, et les décisions qui ont dessiné le quartier actuel. Si le ciel est dégagé, vous pouvez ajouter Top of Shanghai au crépuscule. Après la tombée de la nuit, retrouvez le Bund à pied pour clore les visites guidées."
+        "title": "Musée de Shanghai (site Est), Pudong et Bund nocturne",
+        "description": "Consacrez deux heures au musée de Shanghai (site Est), parmi les céramiques, les peintures et l’artisanat du Jiangnan : les étapes de Suzhou et de Hangzhou trouvent ici un nouvel écho. Découvrez ensuite la transformation de Pudong : ce qui se trouvait là en 1990, et les décisions qui ont dessiné le quartier actuel. Si le ciel est dégagé, vous pouvez ajouter Top of Shanghai au crépuscule. Après la tombée de la nuit, retrouvez le Bund à pied pour clore les visites guidées."
       },
       {
         "title": "Une journée libre à Shanghai",
@@ -3869,7 +3869,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Votre chauffeur vous conduit de l’hôtel à l’aéroport de Pudong, en prévoyant le temps nécessaire avant votre vol. Aucune visite n’est programmée aujourd’hui, pour vous laisser partir sereinement."
       }
     ],
-    "hotelNote": "À Suzhou et Tongli, nous privilégions des maisons anciennes au cœur de la vieille ville ; à Hangzhou et Shanghai, des hôtels modernes, pratiques et confortables. À Suzhou, 3 nuits à Yihe Songmaoju : une demeure centenaire avec jardin, à quelques pas de Pingjiang Road. À Tongli, 1 nuit à Yinlu Tongli House : quelques chambres autour d’une cour ancienne, avec une personne attentive au bon déroulement de votre séjour. À Hangzhou, 2 nuits au Canopy by Hilton Hangzhou West Lake, près de la station Longxiangqiao et à environ dix minutes à pied du lac. À Shanghai, 5 nuits à l’Atour S Hotel, Pudong Avenue, Lujiazui, un quatre-étoiles côté Pudong. Petit-déjeuner chaque matin ; chambre individuelle ou partagée selon votre préférence. Ces hôtels constituent nos premiers choix : nous vérifions leurs disponibilités pour vos dates et vous soumettons, si nécessaire, un établissement de même niveau avant paiement.",
+    "hotelNote": "À Suzhou et Tongli, nous privilégions des maisons anciennes au cœur de la vieille ville ; à Hangzhou et Shanghai, des hôtels modernes, pratiques et confortables. À Suzhou, 3 nuits à Yihe Songmaoju : une demeure centenaire avec jardin, à quelques pas de Pingjiang Road. À Tongli, 1 nuit à Yinlu Tongli House : quelques chambres autour d’une cour ancienne, avec un hôte qui vous accueille et veille sur votre séjour. À Hangzhou, 2 nuits au Canopy by Hilton Hangzhou West Lake, près de la station Longxiangqiao et à environ dix minutes à pied du lac. À Shanghai, 5 nuits à l’Atour S Hotel, Pudong Avenue, Lujiazui, un quatre-étoiles côté Pudong. Petit-déjeuner chaque matin ; chambre individuelle ou partagée selon votre préférence. Ces hôtels constituent nos premiers choix : nous vérifions leurs disponibilités pour vos dates et vous soumettons, si nécessaire, un établissement de même niveau avant paiement.",
     "serviceNote": "Un guide local anglophone dans chaque ville : à Suzhou, pour lire les jardins ; à Hangzhou, pour les poèmes du lac et les villages de thé ; à Shanghai, pour l’architecture et l’histoire de Hongkou. Huit journées complètes, plus une demi-journée à Tongli. Voiture privée et chauffeur pour chaque transfert et journée de visite, carburant, péages et stationnement inclus ; le même chauffeur de Hongqiao à Hangzhou pour que les bagages restent dans la voiture, puis un second à Shanghai. Train rapide Hangzhou–Shanghai. Toutes les entrées et les promenades en bateau prévues au programme sont réservées aux noms figurant sur vos passeports. Dîners à Tongli et Hangzhou. Notre assistance sur WhatsApp pendant tout le voyage. Aucun arrêt commercial ; personne sur ce parcours n’est rémunéré pour vous conduire dans une boutique.",
     "exclusions": [
       "Vols, visa chinois et assurance voyage",
@@ -3897,7 +3897,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Qu’est-ce qui dépend du jour ou de la saison ?",
-        "answer": "Nous vérifions les jours de fermeture des musées pour vos dates et ajustons l’ordre des visites. Bateaux, maisons de thé et spectacle du jardin du Maître des Filets ont leurs propres horaires. L’accès aux intérieurs du Bund dépend également du jour. Au musée de Shanghai Est, les visites commentées dans les galeries nécessitent l’accord du musée : vous les découvrez donc librement ou avec un guide autorisé par l’établissement. Bugaoli reste habité et se visite depuis la rue. Top of Shanghai se prête surtout à une soirée dégagée. Le thé de printemps Longjing le plus recherché est principalement récolté en mars et en avril ; la rencontre avec un producteur dépend de sa disponibilité et doit figurer dans le programme écrit. À d’autres périodes, il reste possible de marcher entre les terrasses, sans garantie de participer à la cueillette ni de goûter un thé issu d’une parcelle précise."
+        "answer": "Nous vérifions les jours de fermeture des musées pour vos dates et ajustons l’ordre des visites. Bateaux, maisons de thé et spectacle du jardin du Maître des Filets ont leurs propres horaires. L’accès aux intérieurs du Bund dépend également du jour. Au musée de Shanghai (site Est), les visites commentées dans les galeries nécessitent l’accord du musée : vous les découvrez donc librement ou avec un guide autorisé par l’établissement. Bugaoli reste habité et se visite depuis la rue. Top of Shanghai se prête surtout à une soirée dégagée. Le thé de printemps Longjing le plus recherché est principalement récolté en mars et en avril ; la rencontre avec un producteur dépend de sa disponibilité et doit figurer dans le programme écrit. À d’autres périodes, il reste possible de marcher entre les terrasses, sans garantie de participer à la cueillette ni de goûter un thé issu d’une parcelle précise."
       },
       {
         "question": "Comment le prix est-il établi ?",
@@ -3911,7 +3911,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "gallery": [
       {
         "alt": "Tours modernes de Pudong à Shanghai au crépuscule",
-        "caption": "Shanghai arrive en dernier, et prend ainsi tout son sens."
+        "caption": "Après Suzhou, Tongli et Hangzhou, Shanghai se découvre sous un autre jour."
       }
     ],
     "routeMedia": [
@@ -3921,7 +3921,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Pingjiang Road",
             "alt": "Pont de pierre, canal et maisons aux murs blancs sur Pingjiang Road, Suzhou",
-            "caption": "Pingjiang Road se découvre au mieux dans la dernière heure du jour."
+            "caption": "Découvrez Pingjiang Road dans la dernière heure du jour, lorsque la lumière s’adoucit."
           }
         ]
       },
@@ -3945,7 +3945,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "variants": [
           {
             "label": "Yipu",
-            "alt": "Le bassin de Yipu à Suzhou, avec une longue galerie au bord de l’eau en face",
+            "alt": "Le bassin de Yipu à Suzhou, face à une longue galerie qui borde l’eau",
             "caption": "Yipu est petit et calme ; les habitants viennent y boire le thé."
           }
         ]
@@ -4004,9 +4004,9 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "day": 8,
         "variants": [
           {
-            "label": "Rues de platanes",
+            "label": "Rues bordées de platanes",
             "alt": "Platanes et maisons anciennes sur Yanqing Road dans l’ancienne concession française de Shanghai, photographiés en 2013",
-            "caption": "La matinée est une promenade lente sous les platanes."
+            "caption": "Le matin, prenez le temps de flâner sous les platanes."
           },
           {
             "label": "Le Bund",
@@ -4029,8 +4029,8 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
         "day": 10,
         "variants": [
           {
-            "label": "Musée de Shanghai Est",
-            "alt": "Façade blanche du musée de Shanghai Est à Pudong",
+            "label": "Musée de Shanghai (site Est)",
+            "alt": "Façade blanche du musée de Shanghai (site Est) à Pudong",
             "caption": "Deux heures parmi céramiques, peintures et artisanat du Jiangnan."
           },
           {
@@ -4076,7 +4076,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "13 jours en privé : Grande Muraille, Armée de terre cuite, pandas, Li et Shanghai. 2 580 USD à quatre, 2 090 USD à huit, par personne ; vols intérieurs inclus.",
     "eyebrow": "Cinq villes en treize jours, de la Grande Muraille au Bund",
     "lede": "Rejoignez la Grande Muraille à Mutianyu en téléphérique. À Xi’an, découvrez l’armée du premier empereur depuis les galeries qui surplombent les fosses. Arrivez tôt à la base des pandas, avant leur sieste. Naviguez quatre heures sur la Li, entre les collines qui figurent sur le billet de 20 yuans, puis terminez le voyage sur le Bund. Douze nuits en hôtels quatre étoiles, avec petit-déjeuner.",
-    "summary": "Trois nuits à Pékin, deux à Xi’an, deux à Chengdu, trois à Guilin et deux à Shanghai. Deux trains à grande vitesse en seconde classe et deux vols économiques avec un bagage en soute, guide local anglophone chaque jour de visite, véhicule privé, entrées indiquées au programme et huit déjeuners. Hôtels quatre étoiles et petits-déjeuners inclus ; montant total confirmé par écrit avant paiement.",
+    "summary": "Trois nuits à Pékin, deux à Xi’an, deux à Chengdu, trois à Guilin et deux à Shanghai. Deux trains à grande vitesse en seconde classe et deux vols en classe économique avec un bagage en soute, guide local anglophone chaque jour de visite, véhicule privé, entrées indiquées au programme et huit déjeuners. Hôtels quatre étoiles et petits-déjeuners inclus ; montant total confirmé par écrit avant paiement.",
     "highlights": [
       "Grande Muraille à Mutianyu, téléphérique aller-retour",
       "Armée de terre cuite, puis Grande Pagode de l’Oie sauvage",
@@ -4114,7 +4114,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Centre de Chengdu, puis vol pour Guilin",
-        "description": "Matinée tranquille au centre : Taikoo Li, l’ancien temple Daci juste à côté, puis le panda géant accroché à l’immeuble IFS sur Chunxi Road. L’après-midi, transfert à l’aéroport pour le vol économique vers Guilin, environ une heure et demie. Un chauffeur vous accueille à l’arrivée."
+        "description": "Matinée tranquille au centre : Taikoo Li, l’ancien temple Daci juste à côté, puis le panda géant accroché à l’immeuble IFS sur Chunxi Road. L’après-midi, transfert à l’aéroport pour le vol en classe économique vers Guilin, environ une heure et demie. Un chauffeur vous accueille à l’arrivée."
       },
       {
         "title": "La rivière Li jusqu’à Yangshuo",
@@ -4138,7 +4138,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       }
     ],
     "hotelNote": "Douze nuits dans des hôtels centraux quatre étoiles (4 diamants Trip.com), avec petit-déjeuner chaque matin : trois dans le centre de Pékin, deux à l’intérieur des remparts de Xi’an, deux dans le centre de Chengdu, trois dans celui de Guilin et deux dans celui de Shanghai. Noms des hôtels et types de chambre vous sont soumis avant le versement d’un acompte.",
-    "serviceNote": "Un véhicule privé adapté à votre groupe dans chaque ville, un guide local anglophone chaque jour de visite, et un chauffeur pour les trajets limités au transfert. Deux trains à grande vitesse en seconde classe et deux vols économiques avec un bagage en soute, réservés par nos soins aux noms des passeports. Toutes les entrées du programme, huit déjeuners aux jours 2, 3, 4, 5, 7, 9, 10 et 12, une assurance accidents de voyage pendant les visites en Chine, et un contact WhatsApp avant et pendant le séjour. Aucun arrêt commercial : ni visite d’usine ni présentation commerciale sur le parcours. Un accompagnateur voyageant avec vous de Pékin à Shanghai peut être ajouté en supplément.",
+    "serviceNote": "Un véhicule privé adapté à votre groupe dans chaque ville, un guide local anglophone chaque jour de visite, et un chauffeur pour les trajets limités au transfert. Deux trains à grande vitesse en seconde classe et deux vols en classe économique avec un bagage en soute, réservés par nos soins aux noms des passeports. Toutes les entrées du programme, huit déjeuners aux jours 2, 3, 4, 5, 7, 9, 10 et 12, une assurance accidents de voyage pendant les visites en Chine, et un contact WhatsApp avant et pendant le séjour. Aucun arrêt commercial : ni visite d’usine ni présentation commerciale sur le parcours. Un accompagnateur voyageant avec vous de Pékin à Shanghai peut être ajouté en supplément.",
     "exclusions": [
       "Vols internationaux aller-retour vers la Chine",
       "Dîners, boissons et déjeuners autres que les huit jours précisés",
@@ -4153,7 +4153,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quelle différence avec le circuit privé de 14 jours dans les cinq villes ?",
-        "answer": "Les deux visitent Pékin, Xi’an, Chengdu, Guilin et Shanghai. Celui de 13 jours prévoit trois nuits à Pékin et trois à Guilin, visite Yangshuo sans y dormir et inclut huit déjeuners. Le parcours de 14 jours prévoit quatre nuits à Pékin, une à Guilin et deux à Yangshuo, avec palais d’Été et radeau sur la Yulong ; déjeuners et dîners y sont en supplément. Comparez les devis écrits pour le même nombre de voyageurs, les mêmes chambres et prestations, plutôt que les tarifs de départ de groupes différents."
+        "answer": "Les deux circuits passent par Pékin, Xi’an, Chengdu, Guilin et Shanghai. Celui de 13 jours prévoit trois nuits à Pékin et trois à Guilin, visite Yangshuo sans y dormir et inclut huit déjeuners. Le parcours de 14 jours prévoit quatre nuits à Pékin, une à Guilin et deux à Yangshuo, avec palais d’Été et radeau sur la Yulong ; déjeuners et dîners y sont en supplément. Comparez les devis écrits pour le même nombre de voyageurs, les mêmes chambres et prestations, plutôt que les tarifs de départ de groupes différents."
       },
       {
         "question": "Quels repas et billets sont inclus ?",

@@ -17,10 +17,10 @@ export const frenchServicesHubCopy: TravelServicesHubEdition['copy'] = {
   overview: 'Tous nos services',
   choicesEyebrow: 'Partons de ce que vous avez déjà préparé',
   choicesTitle: 'Choisissez l’aide dont vous avez vraiment besoin.',
-  choicesBody: 'Comparez nos circuits privés, ou partagez vos dates, le nombre de voyageurs et les arrangements souhaités. Nous confirmons les services possibles et le devis avant toute réservation.',
+  choicesBody: 'Comparez nos circuits privés, ou indiquez-nous vos dates, le nombre de voyageurs et les services dont vous avez besoin. Nous confirmons les services possibles et le devis avant toute réservation.',
   cards: [
     { id: 'tours', eyebrow: 'Nos itinéraires publiés', title: 'Comparer les circuits privés', body: 'Découvrez les programmes jour après jour, les tarifs de départ, les prestations incluses et les conditions de réservation.', action: 'Comparer les circuits' },
-    { id: 'guides', eyebrow: 'Un guide les jours où il compte', title: 'Guides privés anglophones', body: 'Shanghai, Pékin, Xi’an et Zhangjiajie : comparez les tarifs d’un guide anglophone pour une journée de 8 heures. Le nombre de voyageurs, le parcours et les transports sont confirmés séparément. Un guide francophone fait l’objet d’un supplément sur devis.', action: 'Services et tarifs des guides (en anglais)' },
+    { id: 'guides', eyebrow: 'Un guide quand il fait la différence', title: 'Guides privés anglophones', body: 'Shanghai, Pékin, Xi’an et Zhangjiajie : comparez les tarifs d’un guide anglophone pour une journée de 8 heures. Le nombre de voyageurs, le parcours et les transports sont confirmés séparément. Un guide francophone fait l’objet d’un supplément sur devis.', action: 'Services et tarifs des guides (en anglais)' },
     { id: 'reservations', eyebrow: 'Billets nominatifs et horaires réservés', title: 'Réserver vos visites', body: 'Pékin, Shanghai, Suzhou, Hangzhou, Xi’an, Chengdu, Guilin et Lijiang : nous réservons par les canaux officiels, au nom inscrit sur votre passeport. Frais de service : {fee} par personne et par site, auxquels s’ajoute le prix du billet.', action: 'Modalités de réservation (en anglais)' },
     { id: 'support', eyebrow: 'De la préparation au séjour sur place', title: 'Organiser l’ensemble du voyage', body: 'Un itinéraire cohérent, puis les hôtels, les billets, les transferts et la coordination sur place nécessaires pour le réaliser.', action: 'Découvrir l’accompagnement complet (en anglais)' },
   ],
@@ -40,7 +40,7 @@ export function FrenchServicesPage() {
     copy: frenchServicesHubCopy,
     section: {
       navLabel: 'Services', shortLabel: 'Services', eyebrow: 'Guides · transferts · accompagnement',
-      title: 'Une aide locale là où elle change votre voyage.',
+      title: 'Un accompagnement local qui fait la différence.',
       description: 'Guide privé, transferts, choix des hôtels, itinéraire ou coordination du séjour : nous adaptons notre accompagnement après avoir compris votre projet.',
       scopeTitle: 'Où une aide locale vous serait-elle utile ?',
       scope: ['Un guide privé pour une journée plus complexe ?', 'Une aide pour les transferts, les hôtels ou les réservations ?', 'Un interlocuteur pour coordonner l’ensemble du parcours ?'],

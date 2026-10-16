@@ -24,7 +24,7 @@ const members: Record<string, Omit<HomegroundStudioCopy['members'][number], 'ima
   kevin: {
     id: 'kevin', name: 'Kevin', role: 'Conception des voyages et organisation sur place',
     value: 'Repérer les problèmes de coordination avant qu’ils ne perturbent une journée de voyage.',
-    bio: 'Kevin a étudié l’anglais et commencé à travailler comme guide local et dans l’organisation de voyages pendant ses études. Il a ainsi acquis environ quatre ans d’expérience pratique. De l’arrivée aux transferts en ville, de la communication avec les voyageurs au déroulement du séjour, il connaît les différentes étapes. Il repère les passages de relais fragiles et veille à ce qu’un programme séduisant reste réalisable à l’arrivée.',
+    bio: 'Kevin a étudié l’anglais et commencé à travailler comme guide local et dans l’organisation de voyages pendant ses études. Il a ainsi acquis environ quatre ans d’expérience pratique. De l’arrivée aux transferts en ville, de la communication avec les voyageurs au déroulement du séjour, il connaît les différentes étapes. Il repère les étapes où la coordination entre les intervenants demande une attention particulière et veille à ce qu’un programme séduisant reste réalisable à l’arrivée.',
     tags: ['Assistance en anglais', 'Organisation locale', 'Suivi des opérations', 'Vérification du déroulement'], alt: 'Kevin devant la mosquée Putra lors d’un voyage en Malaisie',
   },
   vivi: {
@@ -40,16 +40,16 @@ export const frenchStudioCopy: HomegroundStudioCopy = {
   metadata: { title: 'Comment Homeground prépare votre voyage en Chine', description: 'Vos dates, vos envies et vos réservations deviennent un itinéraire cohérent, avec des prestations définies par écrit et une équipe locale à vos côtés.', openGraphTitle: 'Comment Homeground prépare un voyage en Chine' },
   eyebrow: 'Comment nous préparons votre voyage',
   title: 'De votre projet à un voyage qui tient la route.',
-  intro: 'Dites-nous ce qui est déjà fixé, ce qui compte pour vous et ce qui reste à décider. Un conseiller principal construit un itinéraire cohérent, le confronte aux conditions réelles du voyage et précise le travail à réaliser avant toute prestation payante.',
+  intro: 'Dites-nous ce qui est déjà fixé, ce qui compte pour vous et ce qui reste à décider. Un conseiller principal construit un itinéraire cohérent, vérifie qu’il fonctionne sur place et précise le travail à réaliser avant toute prestation payante.',
   overview: {
     title: 'Du premier échange au programme écrit',
     stages: [
       { label: '01 / Votre projet', title: 'Partir de votre situation', detail: 'Dates, voyageurs, incontournables, rythme, mobilité, réservations déjà faites et questions encore ouvertes.' },
       { label: '02 / Notre travail', title: 'Écouter, vérifier, puis préciser par écrit', detail: 'Un conseiller vérifie ce qui s’enchaîne bien, ce qui pose problème et les décisions à prendre en premier.' },
-      { label: '03 / Votre programme', title: 'Des prestations et des arrangements précis', detail: 'Vous recevez le document convenu pour votre voyage, avec les services définis ensemble, plutôt qu’une liste générale de lieux à voir.' },
+      { label: '03 / Votre programme', title: 'Une organisation et des prestations précises', detail: 'Vous recevez le document convenu pour votre voyage, avec les services définis ensemble, plutôt qu’une liste générale de lieux à voir.' },
     ],
     termsLabel: '04 / Le calendrier', termsTitle: 'Convenir du délai avant de commencer une prestation payante',
-    terms: [{ label: 'Délai', value: 'Date de remise du travail confirmée avant paiement' }],
+    terms: [{ label: 'Délai', value: 'Date de remise du document convenu confirmée avant paiement' }],
   },
   collageLabel: 'Cinq membres de l’équipe Homeground China', peopleEyebrow: 'Qui s’occupe de quoi',
   peopleTitle: 'Des expériences différentes, un voyage construit ensemble.',
@@ -62,9 +62,9 @@ export const frenchStudioCopy: HomegroundStudioCopy = {
   }),
   trust: {
     eyebrow: 'Notre méthode', title: 'Ce qui se passe après votre premier message.',
-    body: 'Vous gardez un interlocuteur principal qui connaît l’ensemble du voyage. L’accord de voyage précise les arrangements pris en charge par Homeground et l’assistance incluse pendant le séjour.',
+    body: 'Vous gardez un interlocuteur principal qui connaît l’ensemble du voyage. Votre confirmation de voyage précise ce que Homeground organise et l’assistance incluse pendant le séjour.',
     inputsTitle: 'Ce que vous nous envoyez',
-    inputs: ['Les dates et les lieux d’arrivée et de départ', 'Les voyageurs, le rythme souhaité, les besoins de mobilité et de chambres', 'Les lieux incontournables et les étapes auxquelles vous pourriez renoncer', 'Les réservations déjà faites, une indication de budget et les décisions à prendre avant une date précise'],
+    inputs: ['Les dates et les lieux d’arrivée et de départ', 'Les voyageurs, le rythme souhaité, les besoins liés à la mobilité et à la répartition des chambres', 'Les lieux incontournables et les étapes auxquelles vous pourriez renoncer', 'Les réservations déjà faites, une indication de budget et les décisions à prendre avant une date précise'],
     stepsTitle: 'Ce que nous faisons',
     points: [
       { title: 'Comprendre votre projet', detail: 'Nous distinguons ce qui est fixé, ce qui reste flexible et les informations manquantes qui peuvent changer le parcours.' },
@@ -73,7 +73,7 @@ export const frenchStudioCopy: HomegroundStudioCopy = {
     ],
     deliverablesTitle: 'Ce que vous recevez',
     deliverables: ['Pour un accompagnement complet : un document propre à votre voyage, précisant la préparation, les réservations et l’assistance sur place', 'Les hypothèses retenues, les compromis à envisager et les prochaines décisions pour le service convenu'],
-    boundary: `La première demande de circuit privé est gratuite. Nous confirmons les arrangements, les prestations incluses et le devis pour vos dates et votre groupe avant réservation. ${frenchGuideLanguageNote}`,
+    boundary: `La première demande de circuit privé est gratuite. Nous confirmons l’organisation du voyage, les prestations incluses et le devis pour vos dates et votre groupe avant réservation. ${frenchGuideLanguageNote}`,
   },
   cta: { label: 'La prochaine étape', title: 'Quels lieux ne voulez-vous surtout pas manquer ?', body: 'Écrivez-nous sur WhatsApp ou laissez votre adresse e-mail. Un conseiller vous aide à préciser les points encore ouverts et la prochaine étape. Les prestations payantes ne commencent qu’après accord sur leur contenu, leur prix et leur délai.', button: 'Parler de mon voyage avec un conseiller', secondaryButton: 'Découvrir tous les services' },
   homeLink: 'Rencontrer l’équipe qui prépare votre voyage',

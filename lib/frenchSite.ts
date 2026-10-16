@@ -25,7 +25,7 @@ export function frenchLanguagePaths(enPath: string, frPath: string): readonly Fr
     ...(es ? [{label:'ES',lang:'es',path:es}] : []),
   ];
 }
-export const frenchGuideLanguageNote = 'Les tarifs publiés restent ceux de la formule indiquée. Un guide francophone n’est pas inclus : son intervention fait l’objet d’un supplément, chiffré séparément selon les villes, les dates et les disponibilités, avant toute réservation.';
+export const frenchGuideLanguageNote = 'Les prix affichés correspondent à la formule décrite. Un guide francophone n’est pas inclus : il est proposé en supplément, sur devis, selon les villes, vos dates et les disponibilités. Ce supplément est confirmé avant toute réservation.';
 export const frenchGuideLanguageBadge = 'Guide francophone : supplément sur devis';
 export const frenchDraftNote = 'WhatsApp et votre messagerie ouvrent un brouillon. Aucun message n’est envoyé tant que vous ne l’avez pas envoyé vous-même.';
 export const frenchTourContactNote = 'Le formulaire confirme à l’écran l’enregistrement de votre demande. WhatsApp et votre messagerie ouvrent un brouillon que vous envoyez vous-même.';

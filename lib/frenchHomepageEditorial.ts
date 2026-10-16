@@ -12,7 +12,7 @@ const tourAppeals: Readonly<Record<string, { appeal: string; alt: string }>> = {
     alt: 'L’axe impérial et les monuments historiques de Pékin',
   },
   'suzhou-tongli-hangzhou-shanghai-12-day-private-tour': {
-    appeal: 'Les jardins de Suzhou, une nuit dans la ville d’eau de Tongli, le lac de l’Ouest et les plantations de thé, puis cinq nuits pour explorer les quartiers et les musées de Shanghai.',
+    appeal: 'Les jardins de Suzhou, une nuit dans le bourg de Tongli traversé de canaux, le lac de l’Ouest et les plantations de thé, puis cinq nuits pour explorer les quartiers et les musées de Shanghai.',
     alt: 'Le lac de l’Ouest et les collines boisées de Hangzhou',
   },
   'chengdu-pandas-sanxingdui-5-day-private-tour': {

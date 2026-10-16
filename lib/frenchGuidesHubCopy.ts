@@ -12,7 +12,7 @@ export const frenchGuidesHubCopy: GuidesHubCopy = {
   introduction: 'Formalités d’entrée, paiements, téléphone, transports, hôtels ou rythme du voyage : partez de votre prochaine question. Cette sélection vous oriente en français vers nos articles détaillés en anglais.',
   languageLabel: 'Langue des guides', destinationAction: 'Choisir une destination (en anglais)',
   catalogEyebrow: 'Parcourir les guides', catalogTitle: 'Prévoir une journée, pas seulement une visite.',
-  catalogIntroduction: 'Que peut-on vraiment faire dans une journée ? Combien coûte le trajet ? Quel détail change la suite du voyage ? Nos articles répondent à ces choix concrets. Les articles et les pages suivantes de la bibliothèque sont en anglais.',
+  catalogIntroduction: 'Que peut-on vraiment faire dans une journée ? Combien coûte le trajet ? Quel détail change la suite du voyage ? Nos articles vous aident à trancher ces questions concrètes. Les articles et les pages suivantes de la bibliothèque sont en anglais.',
   guideCount: (count) => `${count} guides en anglais`,
   pagination: {
     label: 'Pages de la bibliothèque de guides en anglais',
@@ -44,7 +44,7 @@ export const frenchGuidesHubCopy: GuidesHubCopy = {
   destinationLabels: { china: 'Chine', beijing: 'Pékin', xian: 'Xi’an', zhangjiajie: 'Zhangjiajie', shanghai: 'Shanghai' },
   cta: {
     eyebrow: 'Besoin d’un regard local ?', title: 'Parlons du voyage que vous préparez.',
-    body: 'Envoyez-nous vos dates, le nombre de voyageurs et vos questions par WhatsApp ou par e-mail. Nous préciserons l’aide utile, son périmètre et son prix avant toute prestation payante.',
+    body: 'Envoyez-nous vos dates, le nombre de voyageurs et vos questions par WhatsApp ou par e-mail. Nous préciserons les services utiles, ce qu’ils comprennent et leur prix avant toute prestation payante.',
     action: 'Parler de mon voyage',
   },
 };

@@ -1437,6 +1437,13 @@
   }
 }
 
+/* Long French place names must wrap beside the mobile card thumbnail. */
+@media (max-width: 48rem) {
+  .toursPage[data-homeground-locale="fr"] .quickIdentity > p:first-child span {
+    white-space: normal;
+  }
+}
+
 /* ---------- Japanese ---------- */
 
 .toursPage[data-homeground-locale="ja"] :is(.hero h1, .quickIntro h2, .quickIdentity h3, .finalInner h2) {

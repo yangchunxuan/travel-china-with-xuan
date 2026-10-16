@@ -61,7 +61,7 @@ export const frenchHomepageShowcaseCopy: ReturnType<typeof getHomepageShowcaseCo
   heroBody: 'Choisissez un itinéraire qui vous ressemble, puis adaptons-le à vos dates.',
   heroHeadline: {
     fixedLines: ['La Chine, à votre façon.'], joiner: ' ',
-    phrases: ['À vos côtés.', 'Des étapes bien reliées.', 'Du temps pour voyager.', 'On s’occupe du reste.'],
+    phrases: ['À vos côtés.', 'Un voyage bien pensé.', 'Du temps pour voyager.', 'On s’occupe du reste.'],
   },
   heroPrimary: 'Comparer les circuits privés', heroSecondary: 'Parler de mon voyage',
   heroDestinationPrompt: 'Vous hésitez encore sur les étapes ?', heroDestinationAction: 'Découvrir les destinations (en anglais)',

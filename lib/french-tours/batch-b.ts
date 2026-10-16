@@ -163,7 +163,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "Six jours en privé à Changbaishan et Yanji, avec 5 nuits et petits-déjeuners, activités de neige et transports équipés pour l’hiver. Devis selon vos dates.",
     "eyebrow": "Un itinéraire d’hiver avec une solution de repli prévue",
     "lede": "Une première journée sur les pistes, les paysages du versant nord de Changbaishan lorsque la météo le permet, puis les marchés et les quartiers de Yanji : six jours pour découvrir cette région en hiver. Nous précisons avant réservation les activités retenues, les jours de présence du guide et la langue des cours de ski.",
-    "summary": "Six jours de voyage privé hivernal à Changbaishan et Yanji, avec cinq nuits et petits-déjeuners, des activités de neige et des transferts routiers équipés pour l’hiver.",
+    "summary": "Six jours de voyage privé hivernal à Changbaishan et Yanji, avec cinq nuits et petits-déjeuners, des activités de neige et des transferts routiers en véhicule équipé pour l’hiver.",
     "highlights": [
       "Une initiation au ski",
       "Une journée sur le versant nord, si la météo le permet",
@@ -177,7 +177,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Initiation au ski et temps libre dans la neige",
-        "description": "Prenez un cours débutant adapté à l’âge des participants, puis profitez de la neige au rythme de votre famille. La confirmation détaille séparément forfait de remontées, matériel de ski ou de snowboard, casque, langue du moniteur, durée et âges admis."
+        "description": "Prenez un cours débutant adapté à l’âge des participants, puis profitez de la neige au rythme de votre famille. Votre confirmation détaille le forfait de remontées mécaniques, le matériel de ski ou de snowboard, le casque, la langue du moniteur, la durée du cours et les âges admis."
       },
       {
         "title": "Versant nord et possibilité de voir Tianchi",
@@ -198,7 +198,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "hotelNote": "Cinq nuits avec petit-déjeuner, sur la base de deux personnes par chambre : deux dans la station de Changbaishan, une près du versant nord ou à Erdaobaihe, puis deux à Yanji. Nous précisons par écrit le nom de chaque hôtel, la chambre, le petit-déjeuner, les conditions d’accès aux sources chaudes et le supplément éventuel pour une chambre individuelle.",
     "serviceNote": "Les journées de guide anglophone et la langue du moniteur de ski sont chiffrées une fois votre groupe confirmé. La confirmation énumère chaque poste : équipement de sécurité hivernal du véhicule, transfert aéroport, trajets station–versant nord–Yanji, entrée et navettes du versant nord, forfait, matériel, casque, cours, sources chaudes, activité sur l’eau ou dans la neige, et conditions d’annulation de chacun. La seule mention « ski illimité » ne signifie pas que ces prestations sont incluses.",
-    "bookingNote": "Le prix hivernal dépend des dates, des chambres, du nombre de voyageurs et des activités de neige confirmées. Ce circuit est uniquement sur devis. Envoyez aussi les informations d’arrivée et le nombre de bagages ; hôtels, transport, journées de guide, suppléments saisonniers et total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le prix de ce séjour d’hiver dépend des dates, des chambres, du nombre de voyageurs et des activités de neige confirmées. Ce circuit est uniquement sur devis. Envoyez aussi les informations d’arrivée et le nombre de bagages ; hôtels, transport, journées de guide, suppléments saisonniers et total sont confirmés par écrit avant paiement.",
     "exclusions": [
       "Vols internationaux et transports non mentionnés dans la confirmation écrite",
       "Déjeuners, dîners et boissons, sauf repas expressément indiqué",
@@ -218,7 +218,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
         "answer": "Le jour 2 prévoit une initiation adaptée à l’âge. Forfait, ski ou snowboard, casque, langue du moniteur, durée et âges admis sont énumérés dans la confirmation. Une prestation qui ne figure pas dans cette confirmation n’est pas incluse ; « ski illimité » ne suffit pas à les couvrir."
       },
       {
-        "question": "Et si le vent ou la neige ferme le versant nord ?",
+        "question": "Et si le versant nord ferme à cause du vent ou de la neige ?",
         "answer": "La visite du jour 3 n’a lieu que si les routes et le site sont ouverts ; la vue sur Tianchi dépend de la météo. En cas de fermeture, nous suivons le programme de remplacement convenu à l’avance. L’activité sur la rivière ou dans la neige du jour 4 dépend également de la saison et des conditions de sécurité."
       },
       {
@@ -325,12 +325,12 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       "Le même hôtel pendant quatre nuits",
       "Une journée entière à Shanghai Disneyland",
       "Le Bund et le jardin Yu sans se presser",
-      "Une journée de quartiers avec du temps libre"
+      "Une journée pour découvrir les quartiers et profiter de temps libre"
     ],
     "itinerary": [
       {
         "title": "Arrivée à Shanghai",
-        "description": "Retrouvez le chauffeur à l’aéroport ou à la gare convenus, puis rejoignez l’hôtel. Aucune visite n’est imposée ce jour-là afin d’absorber un éventuel retard du vol ou du train."
+        "description": "Retrouvez le chauffeur à l’aéroport ou à la gare convenus, puis rejoignez l’hôtel. Aucune visite n’est imposée ce jour-là pour garder une marge en cas de retard du vol ou du train."
       },
       {
         "title": "Le Bund, le jardin Yu et la vieille ville",
@@ -342,7 +342,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Ancienne concession française et après-midi libre",
-        "description": "Une promenade guidée tranquille vous mène dans un quartier confirmé de l’ancienne concession française. L’après-midi reste libre pour des achats personnels, un musée sur réservation ou du repos."
+        "description": "Une promenade guidée tranquille vous mène dans un quartier de l’ancienne concession française choisi à l’avance. L’après-midi reste libre pour des achats personnels, un musée sur réservation ou du repos."
       },
       {
         "title": "Départ de Shanghai",
@@ -476,7 +476,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Kaifeng et l’héritage des Song",
-        "description": "Rejoignez Kaifeng pour le parcours de vieille ville confirmé, comprenant la préfecture de Kaifeng ou le jardin paysager Qingming Riverside selon votre réservation écrite. Nuit à Kaifeng."
+        "description": "Rejoignez Kaifeng pour découvrir la vieille ville selon le programme convenu, avec la préfecture de Kaifeng ou le jardin paysager Qingming Riverside selon votre réservation écrite. Nuit à Kaifeng."
       },
       {
         "title": "Dengfeng et le temple Shaolin",
@@ -503,7 +503,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       "Déjeuners, dîners et boissons, sauf repas expressément indiqué",
       "Assurance voyage, visas, pourboires et dépenses personnelles",
       "Suppléments chambre individuelle, surclassements et suppléments de jours fériés",
-      "Spectacles et représentations nocturnes facultatifs, ainsi que surclassements en voiturette non mentionnés"
+      "Spectacles et représentations nocturnes facultatifs, ainsi que les options de transport en voiturette non mentionnées"
     ],
     "faq": [
       {
@@ -520,11 +520,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Combien de temps est prévu pour Longmen et Luoyang ?",
-        "answer": "Longmen occupe l’essentiel du jour 4, selon le parcours et les navettes du site, puis une marche en vieille ville est possible. Le jour 5 prévoit le temple du Cheval blanc et un musée ou site urbain confirmé, selon les réservations et fermetures."
+        "answer": "Longmen occupe l’essentiel du jour 4, selon le parcours et les navettes du site, puis une promenade dans la vieille ville est possible. Le jour 5 prévoit le temple du Cheval blanc et un musée ou site urbain confirmé, selon les réservations et fermetures."
       },
       {
         "question": "Peut-on arriver et repartir de Zhengzhou ?",
-        "answer": "Oui. Le jour 1 est une arrivée à Zhengzhou sans visite fixe. Le jour 6, vous repartez de la gare de Luoyang ou de l’aéroport de Zhengzhou. Ce dernier transfert, plus long, dépend de votre vol."
+        "answer": "Oui. Vous arrivez à Zhengzhou le jour 1, sans visite prévue ce jour-là. Le jour 6, vous repartez de la gare de Luoyang ou de l’aéroport de Zhengzhou. Ce dernier transfert, plus long, dépend de votre vol."
       },
       {
         "question": "Comment réserver ?",
@@ -631,7 +631,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Grottes de Yungang et vieille ville de Datong",
-        "description": "Passez la matinée à Yungang, puis découvrez les sites de vieille ville confirmés, comme le temple Huayan et le mur des Neuf Dragons. L’ordre suit les horaires d’ouverture et les conditions d’accès liées à l’affluence."
+        "description": "Passez la matinée à Yungang, puis découvrez les sites de la vieille ville retenus dans votre programme, comme le temple Huayan et le mur des Neuf Dragons. L’ordre suit les horaires d’ouverture et les conditions d’accès liées à l’affluence."
       },
       {
         "title": "Temple suspendu et Yingxian, puis Pingyao",
@@ -693,7 +693,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "gallery": [
       {
         "alt": "Vue aérienne de la cité ancienne de Pingyao",
-        "caption": "Deux nuits à Pingyao laissent le temps de vivre la vieille ville."
+        "caption": "Deux nuits à Pingyao laissent le temps de découvrir la vie de la cité ancienne."
       }
     ],
     "routeMedia": [
@@ -776,8 +776,8 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "highlights": [
       "Danxia de Zhangye à un horaire adapté à la lumière",
       "Le fort de Jiayuguan et la frontière occidentale",
-      "Mogao organisé selon les billets obtenus",
-      "Trois nuits à Dunhuang pour une fin plus posée"
+      "Une visite de Mogao adaptée aux billets obtenus",
+      "Trois nuits à Dunhuang pour terminer le voyage sans se presser"
     ],
     "itinerary": [
       {
@@ -786,7 +786,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Danxia de Zhangye et temple du Grand Bouddha",
-        "description": "Visitez le temple du Grand Bouddha et Danxia dans le créneau confirmé, en tenant compte de la lumière et de l’entrée. L’ordre des belvédères suit les navettes en service."
+        "description": "Visitez le temple du Grand Bouddha et Danxia au créneau réservé, choisi en fonction de la lumière et des horaires d’entrée. L’ordre des belvédères suit les navettes en service."
       },
       {
         "title": "Pingshanhu et route vers Jiayuguan",
@@ -817,7 +817,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       "Déjeuners, dîners et boissons, sauf repas expressément indiqué",
       "Assurance voyage, visas, pourboires et dépenses personnelles",
       "Suppléments chambre individuelle, surclassements et suppléments de jours fériés",
-      "Activités facultatives dans le désert, billets Mogao surclassés et grottes spéciales"
+      "Activités facultatives dans le désert, billets de catégorie supérieure à Mogao et accès aux grottes spéciales"
     ],
     "faq": [
       {
@@ -830,7 +830,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Comment fonctionne la visite de Mogao ?",
-        "answer": "Le jour 5 suit le billet officiel et le créneau confirmés. Les grottes et la langue de commentaire dépendent du billet émis. Grottes spéciales et surclassements coûtent un supplément ; trois nuits à Dunhuang laissent une marge si horaires ou météo changent."
+        "answer": "La visite de Mogao, le jour 5, dépend du billet officiel et du créneau réservés. Les grottes accessibles et la langue des commentaires dépendent du billet émis. L’accès aux grottes spéciales et les billets de catégorie supérieure sont en supplément ; trois nuits à Dunhuang laissent une marge si horaires ou météo changent."
       },
       {
         "question": "La balade à dos de chameau est-elle incluse ?",
@@ -838,11 +838,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "La météo peut-elle modifier le parcours ?",
-        "answer": "Oui. Pingshanhu le jour 3 dépend de son ouverture ; une alternative plus simple à Zhangye s’applique si nécessaire. Le jour 2, Danxia suit un créneau confirmé et le parcours de navettes en service."
+        "answer": "Oui. Pingshanhu le jour 3 dépend de son ouverture ; une visite plus simple à Zhangye est prévue si nécessaire. Le jour 2, la visite de Danxia se fait au créneau réservé, en suivant le parcours des navettes en service."
       },
       {
         "question": "Où commence et se termine le voyage ?",
-        "answer": "À Zhangye le jour 1, puis à l’aéroport ou à la gare de Dunhuang le jour 7, sans retour vers l’est. Dates, chambres, arrivée et bagages permettent de préparer la confirmation écrite avant paiement. Aucun arrêt commercial imposé."
+        "answer": "Le voyage commence à Zhangye le jour 1 et se termine à l’aéroport ou à la gare de Dunhuang le jour 7, sans retour vers l’est. Dates, chambres, arrivée et bagages permettent de préparer la confirmation écrite avant paiement. Aucun arrêt commercial imposé."
       }
     ],
     "heroImage": {
@@ -1111,8 +1111,8 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "highlights": [
       "Prendre le temps au bord du lac Sayram",
       "Yining et la vallée de l’Ili",
-      "Tekes ou une alternative de prairie confirmée",
-      "Nalati avec un plan pour les fermetures saisonnières"
+      "Tekes ou un autre site de prairie retenu dans le programme",
+      "Nalati, avec un itinéraire de remplacement en cas de fermeture saisonnière"
     ],
     "itinerary": [
       {
@@ -1121,7 +1121,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "D’Urumqi au lac Sayram",
-        "description": "Voyagez vers l’ouest selon le trajet routier ou train puis route confirmé. Nuit près de Sayram ou à Bole. Le mode de transport est fixé une fois les dates connues."
+        "description": "Partez vers l’ouest, par la route ou en combinant train et voiture, selon le trajet confirmé. Nuit près de Sayram ou à Bole. Le mode de transport est fixé une fois les dates connues."
       },
       {
         "title": "Lac Sayram et Yining",
@@ -1317,11 +1317,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Du village forestier à Heishantou",
-        "description": "Passez par un village forestier ou frontalier confirmé, puis gagnez Heishantou. Équipement et confort des hébergements ruraux et prise en charge des bagages sont vérifiées avant réservation."
+        "description": "Passez par un village forestier ou frontalier confirmé, puis gagnez Heishantou. Nous vérifions avant réservation l’équipement et le confort des hébergements ruraux, ainsi que la prise en charge des bagages."
       },
       {
         "title": "La route frontalière vers Manzhouli",
-        "description": "Suivez la route frontalière ouverte jusqu’à Manzhouli, avec des pauses pour profiter du paysage adaptés aux conditions du jour. Équitation, tir à l’arc et glisse sur herbe sont des options payantes."
+        "description": "Suivez la route frontalière ouverte jusqu’à Manzhouli, en adaptant les pauses au paysage et aux conditions du jour. Équitation, tir à l’arc et glisse sur herbe sont des options payantes."
       },
       {
         "title": "Lac Hulun et retour à Hailar",
@@ -1361,11 +1361,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "La météo peut-elle modifier l’itinéraire ?",
-        "answer": "Oui. Les belvédères dépendent des routes et des accès. Au jour 6, le lac Hulun peut être remplacé en cas de vent, travaux ou changement d’accès. Les conditions du lendemain sont vérifiées dès l’arrivée."
+        "answer": "Oui. Les belvédères dépendent des routes et des accès. Le jour 6, la visite du lac Hulun peut être remplacée en cas de vent, travaux ou changement d’accès. Les conditions du lendemain sont vérifiées dès l’arrivée."
       },
       {
         "question": "Qu’est-ce qui est exclu ?",
-        "answer": "Vols et transports non mentionnés dans le programme, déjeuners, dîners et boissons non indiqués, assurance, visas, pourboires, chambre individuelle et suppléments de jours fériés. Les activités facultatives de prairie restent séparées sauf mention expresse."
+        "answer": "Vols et transports non mentionnés dans le programme, déjeuners, dîners et boissons non indiqués, assurance, visas, pourboires, chambre individuelle et suppléments de jours fériés. Les activités facultatives dans les prairies restent à votre charge, sauf mention expresse."
       }
     ],
     "heroImage": {
@@ -1482,7 +1482,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "De Jianshui à Yuanyang",
-        "description": "Découvrez les sites de Jianshui confirmés, comme le jardin de la famille Zhu, le temple de Confucius ou le pont du Double Dragon. Rejoignez ensuite Yuanyang pour un premier moment devant les terrasses."
+        "description": "Découvrez les sites de Jianshui confirmés, comme le jardin de la famille Zhu, le temple de Confucius ou le pont du Double Dragon. Rejoignez ensuite Yuanyang pour découvrir les terrasses une première fois."
       },
       {
         "title": "Rizières de Yuanyang et villages hani",
@@ -1518,7 +1518,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quels frais restent à prévoir ?",
-        "answer": "Vols et transports non mentionnés dans le programme, repas et boissons non indiqués, assurance, visas, pourboires, chambre individuelle et jours fériés. Les autorisations photo, activités privées de village et transferts de lever de soleil non confirmés sont également en supplément."
+        "answer": "Vols et transports non mentionnés dans le programme, repas et boissons non indiqués, assurance, visas, pourboires, supplément pour chambre individuelle et suppléments de jours fériés. Les autorisations photo, activités privées dans les villages et transferts pour le lever du soleil non confirmés sont également en supplément."
       },
       {
         "question": "Verra-t-on un lever de soleil, des nuages ou des reflets ?",
@@ -1540,7 +1540,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "gallery": [
       {
         "alt": "Temple de Confucius à Jianshui",
-        "caption": "Jianshui apporte une étape culturelle entre Kunming et Yuanyang."
+        "caption": "Jianshui marque une étape culturelle entre Kunming et Yuanyang."
       }
     ],
     "routeMedia": [
@@ -1648,7 +1648,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Musée des sciences et technologies",
-        "description": "La réservation confirmée permet une visite de quatre à cinq heures adaptée aux enfants, pauses déjeuner et repos comprises. Le parcours privilégie certains étages plutôt que l’ensemble des expositions."
+        "description": "Prévoyez quatre à cinq heures de visite, selon la réservation confirmée, avec un parcours adapté aux enfants et des pauses pour déjeuner et se reposer. Le parcours privilégie certains étages plutôt que l’ensemble des expositions."
       },
       {
         "title": "Huaqiangbei et un après-midi au choix de la famille",
@@ -1686,7 +1686,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "gallery": [
       {
         "alt": "À l’intérieur du musée des sciences et technologies de Shenzhen",
-        "caption": "La journée au musée suit les réservations confirmées et l’âge des enfants."
+        "caption": "La journée au musée s’adapte à l’âge des enfants et aux réservations confirmées."
       }
     ],
     "routeMedia": [
@@ -1791,11 +1791,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Les quartiers de Shanghai",
-        "description": "Promenez-vous à un rythme mesuré dans un quartier confirmé de l’ancienne concession française, puis découvrez un musée ou une étape consacrée au design. Les réservations de musée sont vérifiées pour vos dates."
+        "description": "Promenez-vous tranquillement dans un quartier de l’ancienne concession française choisi à l’avance, puis découvrez un musée ou une étape consacrée au design. Les réservations de musée sont vérifiées pour vos dates."
       },
       {
         "title": "Une journée modulable à Shanghai",
-        "description": "Choisissez une option confirmée : village d’eau de Zhujiajiao, excursion à Suzhou ou temps libre à Shanghai. Transports et entrées ne sont inclus que pour l’option inscrite dans la réservation."
+        "description": "Choisissez une option confirmée : visite de Zhujiajiao et de ses canaux, excursion à Suzhou ou temps libre à Shanghai. Transports et entrées ne sont inclus que pour l’option inscrite dans la réservation."
       },
       {
         "title": "Départ de Shanghai",
@@ -1815,7 +1815,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Comment lire le prix par personne ?",
-        "answer": "Le tarif affiché s’applique à deux personnes partageant une chambre et varie selon le nombre de voyageurs. Guide et véhicule sont réservés à votre groupe, ce qui explique un prix individuel plus élevé pour les petits groupes. Chambre individuelle et jours fériés entraînent un supplément."
+        "answer": "Le tarif affiché est un prix par personne, calculé sur la base de deux personnes par chambre ; il varie selon le nombre de voyageurs. Guide et véhicule sont réservés à votre groupe, ce qui explique un prix individuel plus élevé pour les petits groupes. Chambre individuelle et jours fériés entraînent un supplément."
       },
       {
         "question": "Qu’est-ce qui est compris ou en supplément ?",
@@ -1840,7 +1840,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "heroImage": {
       "alt": "Cité interdite vue depuis Jingshan",
-      "caption": "Quatre nuits à Pékin laissent trois journées entières de visite et une arrivée légère."
+      "caption": "Quatre nuits à Pékin laissent trois journées entières de visite et du temps pour se reposer à l’arrivée."
     },
     "gallery": [
       {
@@ -1925,7 +1925,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Remparts de Xi’an",
             "alt": "Remparts de Xi’an",
-            "caption": "Remparts et vieille ville de Xi’an ; la distance à pied suit le rythme de votre groupe."
+            "caption": "Remparts et vieille ville de Xi’an ; la distance parcourue à pied s’adapte au rythme de votre groupe."
           },
           {
             "label": "Remparts de Xi’an",
@@ -2013,7 +2013,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataTitle": "Chine en 2 semaines : circuit privé, pandas, Guilin et Shanghai",
     "metadataDescription": "14 jours en privé : Grande Muraille, armée de terre cuite, pandas, rivière Li et Shanghai. Treize nuits, deux trains et deux vols intérieurs inclus.",
     "eyebrow": "De Pékin à Shanghai en 14 jours, avec les pandas et la rivière Li",
-    "lede": "Des palais de Pékin aux pandas de Chengdu, puis des paysages de la rivière Li à Shanghai, ce circuit privé de deux semaines fait découvrir plusieurs visages de la Chine. Deux trains et deux vols intérieurs relient les étapes pour préserver le temps de visite. Le tarif est indiqué par personne pour une chambre à deux ; les vols internationaux sont à prévoir séparément.",
+    "lede": "Des palais de Pékin aux pandas de Chengdu, puis des paysages de la rivière Li à Shanghai, ce circuit privé de deux semaines fait découvrir plusieurs visages de la Chine. Deux trains et deux vols intérieurs relient les étapes pour préserver le temps de visite. Le tarif est indiqué par personne, sur la base de deux personnes par chambre ; les vols internationaux sont à prévoir séparément.",
     "summary": "Treize nuits avec petit-déjeuner. Dans chaque ville, guide local et véhicule sont réservés à votre groupe les jours de visite. Billets d’entrée prévus au programme, transferts, deux trains en seconde classe et deux vols en classe économique sont inclus. Les jours de trajet, un chauffeur vous accompagne au départ et un autre vous accueille.",
     "highlights": [
       "Quatre nuits à Pékin et la Grande Muraille à Mutianyu",
@@ -2032,11 +2032,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un trajet en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
       },
       {
         "title": "Temple du Ciel et palais d’Été",
-        "description": "Le matin convient au temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
+        "description": "Le matin se prête bien à la visite du temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -2052,11 +2052,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Les pandas géants de Chengdu",
-        "description": "Rejoignez la base de recherche et d’élevage des pandas géants près de l’ouverture, lorsqu’ils sont généralement actifs. Avant réservation, choisissez l’après-midi : musée de Sanxingdui, à environ une heure de route dans chaque sens, ou promenade plus légère au monastère Wenshu."
+        "description": "Rejoignez la base de recherche et d’élevage des pandas géants vers l’heure d’ouverture, lorsqu’ils sont généralement actifs. Avant réservation, choisissez le programme de l’après-midi : musée de Sanxingdui, à environ une heure de route dans chaque sens, ou promenade plus légère au monastère Wenshu."
       },
       {
         "title": "Vol pour Guilin",
-        "description": "Le vol réservé en classe économique de Chengdu à Guilin dure environ 1 h 30. Des chauffeurs assurent les deux transferts aéroport. Le reste de la journée reste libre ; nuit à Guilin avant la croisière."
+        "description": "Le vol réservé en classe économique de Chengdu à Guilin dure environ 1 h 30. Des chauffeurs assurent les deux transferts aéroport. Le reste de la journée est libre ; nuit à Guilin avant la croisière."
       },
       {
         "title": "Croisière sur la rivière Li jusqu’à Yangshuo",
@@ -2094,7 +2094,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que comprend le prix de ce circuit privé de 14 jours ?",
-        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Il comprend 13 nuits avec petit-déjeuner, guides et véhicules privés les jours de visite, billets d’entrée prévus au programme, deux trains à grande vitesse et deux vols intérieurs. Vols internationaux, déjeuners et dîners restent séparés. À partir de 8 voyageurs ensemble, des dates de départ de votre choix sont possibles au tarif de groupe indiqué ; un autre nombre de voyageurs nécessite un devis écrit."
+        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Il comprend 13 nuits avec petit-déjeuner, guides et véhicules privés les jours de visite, billets d’entrée prévus au programme, deux trains à grande vitesse et deux vols intérieurs. Vols internationaux, déjeuners et dîners restent séparés. Pour un groupe constitué d’au moins 8 voyageurs, des dates de départ de votre choix sont possibles au tarif de groupe indiqué ; un autre nombre de voyageurs nécessite un devis écrit."
       },
       {
         "question": "Quelle différence avec le circuit privé de 13 jours dans cinq villes ?",
@@ -2106,11 +2106,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quel circuit de 14 jours choisir en Chine ?",
-        "answer": "Les quatre circuits privés de 14 jours commencent à Pékin et Xi’an. Choisissez Chengdu pour les pandas et la Li, Zhangjiajie pour les montagnes, le Yunnan pour les villes anciennes et Shangri-La vers 3 300 m, ou Huangshan pour la montagne, le lac de l’Ouest et Suzhou. Les prix propres à chaque route figurent sur leur page."
+        "answer": "Les quatre circuits privés de 14 jours commencent à Pékin et Xi’an. Choisissez Chengdu pour les pandas et la Li, Zhangjiajie pour les montagnes, le Yunnan pour les villes anciennes et Shangri-La vers 3 300 m, ou Huangshan pour la montagne, le lac de l’Ouest et Suzhou. Les prix de chaque circuit figurent sur sa page."
       },
       {
         "question": "Quelle période privilégier ?",
-        "answer": "Avril–mai et septembre–octobre offrent généralement le meilleur équilibre météo sur cette route. Juillet–août est chaud et humide à Xi’an et Guilin ; les pandas sont moins actifs. En hiver, les basses eaux peuvent raccourcir la croisière. Trains et sites sont très fréquentés pendant les premières semaines de mai et d’octobre."
+        "answer": "Avril–mai et septembre–octobre offrent généralement les conditions météo les plus agréables sur cet itinéraire. Juillet–août est chaud et humide à Xi’an et Guilin ; les pandas sont moins actifs. En hiver, les basses eaux peuvent raccourcir la croisière. Trains et sites sont très fréquentés pendant les premières semaines de mai et d’octobre."
       },
       {
         "question": "Peut-on modifier l’itinéraire ?",
@@ -2331,8 +2331,8 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataTitle": "Circuit Chine en petit groupe 2027 : 14 jours, 12 voyageurs maximum",
     "metadataDescription": "Circuit de 14 jours en Chine, 8 à 12 voyageurs : Pékin, Xi’an, pandas, Li et Shanghai. Départs les 10 avril, 8 mai, 11 septembre et 9 octobre 2027.",
     "eyebrow": "Quatre départs en 2027 ; 8 inscrits minimum, 12 maximum",
-    "lede": "Découvrez la Grande Muraille, l’armée de terre cuite, les pandas de Chengdu et la rivière Li avant de terminer à Shanghai. Ce voyage de deux semaines réunit au maximum 12 voyageurs, avec un guide local anglophone dans chaque ville et quatre départs en 2027. Le tarif s’entend par personne pour une chambre à deux, hors vols internationaux.",
-    "summary": "Départs du 10 au 23 avril, du 8 au 21 mai, du 11 au 24 septembre ou du 9 au 22 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis pour un circuit privé écrit pour le nombre de personnes de votre groupe aux mêmes dates ou le remboursement intégral des sommes versées à Homeground.",
+    "lede": "Découvrez la Grande Muraille, l’armée de terre cuite, les pandas de Chengdu et la rivière Li avant de terminer à Shanghai. Ce voyage de deux semaines réunit au maximum 12 voyageurs, avec un guide local anglophone dans chaque ville et quatre départs en 2027. Le tarif s’entend par personne, sur la base de deux personnes par chambre, hors vols internationaux.",
+    "summary": "Départs du 10 au 23 avril, du 8 au 21 mai, du 11 au 24 septembre ou du 9 au 22 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 10 avril, 8 mai, 11 septembre et 9 octobre 2027",
       "De 8 à 12 voyageurs",
@@ -2342,7 +2342,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "itinerary": [
       {
         "title": "Arrivée à Pékin",
-        "description": "La réservation à la date du groupe comprend un accueil à l’aéroport de Pékin-Capitale ou de Daxing. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
+        "description": "À la date d’arrivée prévue pour le groupe, un accueil à l’aéroport de Pékin-Capitale ou de Daxing est inclus. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
       },
       {
         "title": "Le secteur de Tian’anmen et la Cité interdite",
@@ -2350,11 +2350,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Mutianyu se trouve à environ 90 minutes de route de Pékin. Un trajet en téléphérique ou télésiège est inclus, puis chacun marche à son rythme sur la muraille restaurée. Au retour, courte promenade dans les hutong près de la tour du Tambour."
+        "description": "Mutianyu se trouve à environ 90 minutes de route de Pékin. Un aller simple en téléphérique ou télésiège est inclus, puis chacun marche à son rythme sur la muraille restaurée. Au retour, courte promenade dans les hutong près de la tour du Tambour."
       },
       {
         "title": "Temple du Ciel et palais d’Été",
-        "description": "Le matin convient au temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
+        "description": "Le matin se prête bien à la visite du temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -2370,11 +2370,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Les pandas géants de Chengdu",
-        "description": "Le groupe arrive à la base de recherche et d’élevage des pandas géants près de l’ouverture, lorsqu’ils sont généralement les plus actifs. Après le déjeuner, environ une heure de route mène aux masques de bronze de Sanxingdui, sous réserve d’obtenir les billets à créneau horaire."
+        "description": "Le groupe arrive à la base de recherche et d’élevage des pandas géants vers l’heure d’ouverture, lorsqu’ils sont généralement les plus actifs. Après le déjeuner, environ une heure de route mène aux masques de bronze de Sanxingdui, sous réserve d’obtenir les billets à créneau horaire."
       },
       {
         "title": "Vol pour Guilin",
-        "description": "Le vol réservé en classe économique de Chengdu à Guilin dure environ 1 h 30. Des chauffeurs assurent les deux transferts aéroport. Le reste de la journée reste libre ; nuit à Guilin avant la croisière."
+        "description": "Le vol réservé en classe économique de Chengdu à Guilin dure environ 1 h 30. Des chauffeurs assurent les deux transferts aéroport. Le reste de la journée est libre ; nuit à Guilin avant la croisière."
       },
       {
         "title": "Croisière sur la rivière Li jusqu’à Yangshuo",
@@ -2433,12 +2433,12 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "heroImage": {
       "alt": "Pics karstiques le long de la rivière Li",
-      "caption": "Le jour 10 descend la rivière Li jusqu’à Yangshuo."
+      "caption": "Le jour 10, vous descendez la rivière Li jusqu’à Yangshuo."
     },
     "gallery": [
       {
         "alt": "Pandas géants au repos sur une plateforme en bois",
-        "caption": "Un départ matinal permet d’atteindre la base des pandas près de l’ouverture."
+        "caption": "Un départ matinal permet d’atteindre la base des pandas vers l’heure d’ouverture."
       }
     ],
     "routeMedia": [
@@ -2660,7 +2660,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un trajet en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -2676,7 +2676,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Parc forestier national de Zhangjiajie",
-        "description": "Une journée entière est consacrée au parc. Le guide relie les piliers de grès de Yuanjiajie, l’ascenseur Bailong et une partie du ruisseau du Fouet d’or. L’ordre s’adapte à la météo et aux files d’attente."
+        "description": "Une journée entière est consacrée au parc. Avec votre guide, découvrez les piliers de grès de Yuanjiajie, empruntez l’ascenseur Bailong et parcourez une partie du sentier du ruisseau du Fouet d’or. L’ordre s’adapte à la météo et aux files d’attente."
       },
       {
         "title": "Mont Tianmen",
@@ -2722,11 +2722,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que comprend le prix de ces 14 jours ?",
-        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Il couvre treize nuits avec petit-déjeuner, guides locaux et véhicules privés les jours de visite, billets du parc forestier et de Tianmen, deux trains et deux vols intérieurs. Vols internationaux, déjeuners et dîners sont séparés. À partir de 8 voyageurs ensemble, des dates de départ de votre choix sont possibles au tarif de groupe indiqué ; pour un autre nombre de voyageurs, demandez un devis écrit."
+        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Il couvre treize nuits avec petit-déjeuner, guides locaux et véhicules privés les jours de visite, billets du parc forestier et de Tianmen, deux trains et deux vols intérieurs. Vols internationaux, déjeuners et dîners sont séparés. Pour un groupe constitué d’au moins 8 voyageurs, des dates de départ de votre choix sont possibles au tarif de groupe indiqué ; pour un autre nombre de voyageurs, demandez un devis écrit."
       },
       {
         "question": "Quelle différence avec le petit groupe ?",
-        "answer": "La route est la même. En privé, vous choisissez les dates et pouvez adapter le rythme et certaines étapes. Le petit groupe de 2027 accueille 8 à 12 voyageurs les 17 avril ou 16 octobre, avec le même programme pour tous. Les tarifs de chaque formule permettent de comparer."
+        "answer": "L’itinéraire est le même. En privé, vous choisissez les dates et pouvez adapter le rythme et certaines étapes. Le petit groupe de 2027 accueille 8 à 12 voyageurs les 17 avril ou 16 octobre, avec le même programme pour tous. Les tarifs de chaque formule permettent de comparer."
       },
       {
         "question": "Faut-il préférer Zhangjiajie à Chengdu ?",
@@ -2738,7 +2738,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quelle saison privilégier ?",
-        "answer": "Avril–mai ou septembre–octobre conviennent généralement à cette route. La brume autour des piliers de Zhangjiajie fait partie du paysage ; un ciel parfaitement dégagé n’est pas garanti. Les semaines fériées du début mai et du début octobre sont plus fréquentées."
+        "answer": "Avril–mai ou septembre–octobre conviennent généralement à cet itinéraire. La brume autour des piliers de Zhangjiajie fait partie du paysage ; un ciel parfaitement dégagé n’est pas garanti. Les semaines fériées du début mai et du début octobre sont plus fréquentées."
       }
     ],
     "heroImage": {
@@ -2946,8 +2946,8 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataTitle": "Zhangjiajie en petit groupe 2027 : circuit Chine de 14 jours",
     "metadataDescription": "Chine en petit groupe, 14 jours et 8 à 12 voyageurs : Pékin, Xi’an, Zhangjiajie, rivière Li et Shanghai. Départs les 17 avril et 16 octobre 2027.",
     "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
-    "lede": "Les palais de Pékin, l’armée de terre cuite, les montagnes de Zhangjiajie, la rivière Li et Shanghai : ce voyage de 14 jours réunit 8 à 12 voyageurs. Départs les 17 avril et 16 octobre 2027. Le trajet direct Zhangjiajie–Guilin dure environ sept heures et occupe presque toute une journée. Le tarif s’entend par personne pour une chambre à deux, hors vols internationaux.",
-    "summary": "Départs du 17 au 30 avril et du 16 au 29 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis pour un circuit privé écrit pour le nombre de personnes de votre groupe aux mêmes dates ou le remboursement intégral des sommes versées à Homeground.",
+    "lede": "Les palais de Pékin, l’armée de terre cuite, les montagnes de Zhangjiajie, la rivière Li et Shanghai : ce voyage de 14 jours réunit 8 à 12 voyageurs. Départs les 17 avril et 16 octobre 2027. Le trajet direct Zhangjiajie–Guilin dure environ sept heures et occupe presque toute une journée. Le tarif s’entend par personne, sur la base de deux personnes par chambre, hors vols internationaux.",
+    "summary": "Départs du 17 au 30 avril et du 16 au 29 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 17 avril et 16 octobre 2027",
       "De 8 à 12 voyageurs",
@@ -2957,7 +2957,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "itinerary": [
       {
         "title": "Arrivée à Pékin",
-        "description": "La réservation à la date du groupe comprend un accueil à l’aéroport de Pékin-Capitale ou de Daxing. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
+        "description": "À la date d’arrivée prévue pour le groupe, un accueil à l’aéroport de Pékin-Capitale ou de Daxing est inclus. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
       },
       {
         "title": "Le secteur de Tian’anmen et la Cité interdite",
@@ -2965,7 +2965,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Mutianyu se trouve à environ 90 minutes de route de Pékin. Un trajet en téléphérique ou télésiège est inclus, puis chacun marche à son rythme sur la muraille restaurée. Au retour, courte promenade dans les hutong près de la tour du Tambour."
+        "description": "Mutianyu se trouve à environ 90 minutes de route de Pékin. Un aller simple en téléphérique ou télésiège est inclus, puis chacun marche à son rythme sur la muraille restaurée. Au retour, courte promenade dans les hutong près de la tour du Tambour."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -2981,7 +2981,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Parc forestier national de Zhangjiajie",
-        "description": "Une journée entière est consacrée au parc. Le guide relie les piliers de grès de Yuanjiajie, l’ascenseur Bailong et une partie du ruisseau du Fouet d’or. L’ordre s’adapte à la météo et aux files d’attente."
+        "description": "Une journée entière est consacrée au parc. Avec votre guide, découvrez les piliers de grès de Yuanjiajie, empruntez l’ascenseur Bailong et parcourez une partie du sentier du ruisseau du Fouet d’or. L’ordre s’adapte à la météo et aux files d’attente."
       },
       {
         "title": "Mont Tianmen",
@@ -3074,7 +3074,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Pékin",
             "alt": "Porte Tian’anmen à Pékin",
-            "caption": "Le groupe entre à la Cité interdite avec les billets réservés."
+            "caption": "Le groupe entre dans la Cité interdite avec les billets réservés."
           },
           {
             "label": "Cité interdite",
@@ -3271,11 +3271,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un trajet en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
       },
       {
         "title": "Temple du Ciel et palais d’Été",
-        "description": "Le matin convient au temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
+        "description": "Le matin se prête bien à la visite du temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -3291,7 +3291,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Les pandas géants de Chengdu",
-        "description": "Rejoignez la base de recherche et d’élevage des pandas géants près de l’ouverture, lorsqu’ils sont généralement actifs. Avant réservation, choisissez l’après-midi : musée de Sanxingdui, à environ une heure de route dans chaque sens, ou promenade plus légère au monastère Wenshu."
+        "description": "Rejoignez la base de recherche et d’élevage des pandas géants vers l’heure d’ouverture, lorsqu’ils sont généralement actifs. Avant réservation, choisissez le programme de l’après-midi : musée de Sanxingdui, à environ une heure de route dans chaque sens, ou promenade plus légère au monastère Wenshu."
       },
       {
         "title": "Train à grande vitesse pour Chongqing",
@@ -3307,7 +3307,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Gorges de Qutang et de Wu",
-        "description": "Vers midi, le bateau traverse la gorge de Qutang. L’après-midi, une excursion incluse en bateau plus petit explore les Petites Trois Gorges, puis Wu se découvre depuis le pont. La cité de l’Empereur blanc le matin et les Mini Trois Gorges sont des options payantes."
+        "description": "Vers midi, le bateau traverse la gorge de Qutang. L’après-midi, une excursion incluse en bateau plus petit explore les Petites Trois Gorges, puis vous découvrez la gorge de Wu depuis le pont. La cité de l’Empereur blanc le matin et les Mini Trois Gorges sont des options payantes."
       },
       {
         "title": "Barrage des Trois Gorges, puis Shanghai",
@@ -3330,7 +3330,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Votre chauffeur vous conduit à l’aéroport ou à la gare de Shanghai confirmés. Aucune visite n’est prévue le jour du départ."
       }
     ],
-    "hotelNote": "Sur seize nuits, treize se passent en hôtels avec petit-déjeuner de standing quatre étoiles (4 diamants sur Trip.com/Ctrip) : Pékin 4, Xi’an 2, Chengdu 2, Chongqing 1 et Shanghai 4. Les trois autres sont en cabine standard avec balcon sur un bateau du Yangtsé classé cinq étoiles, généralement Gold Cruises. Au pont de cabines le plus bas, le balcon peut être vitré ; un pont supérieur coûte davantage. Chambres partagées à deux ; bateau, pont et cabine confirmés pour la date de navigation.",
+    "hotelNote": "Sur seize nuits, treize se passent dans des hôtels de standing quatre étoiles, avec petit-déjeuner (4 diamants sur Trip.com/Ctrip) : Pékin 4, Xi’an 2, Chengdu 2, Chongqing 1 et Shanghai 4. Les trois autres sont en cabine standard avec balcon sur un bateau du Yangtsé classé cinq étoiles, généralement Gold Cruises. Au pont de cabines le plus bas, le balcon peut être vitré ; un pont supérieur coûte davantage. Chambres partagées à deux ; bateau, pont et cabine confirmés pour la date de navigation.",
     "serviceNote": "Les jours de visite à terre, votre groupe dispose de son guide local anglophone et de son véhicule. Sont inclus transferts, billets d’entrée des principaux sites prévus au programme, trains en seconde classe Pékin–Xi’an–Chengdu–Chongqing et Shanghai–Suzhou aller-retour, ainsi que train ou vol en classe économique Yichang–Shanghai. Les trois nuits à bord comprennent la cabine, les repas du dîner d’embarquement au petit-déjeuner du dernier matin et trois excursions, généralement Fengdu, les Petites Trois Gorges en petit bateau et le barrage des Trois Gorges. Les commentaires suivent les langues proposées par le navire. Guides terrestres différents selon la ville, chauffeurs aux deux extrémités des trains et vols ; guides coréanophones au même tarif selon disponibilité.",
     "bookingNote": "Le prix de départ s’entend par personne pour le nombre de voyageurs indiqué, à deux par chambre et cabine standard avec balcon. Bateau et cabine, éventuel supplément de haute saison et total sont confirmés par écrit avant paiement. Les informations de passeport sont demandées avant l’ouverture des réservations de la Cité interdite et de l’armée de terre cuite.",
     "exclusions": [
@@ -3345,7 +3345,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que comprend le prix de ces 17 jours ?",
-        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre et par cabine standard. Sont compris treize nuits d’hôtel avec petit-déjeuner, trois nuits de croisière avec repas à bord et excursions incluses, guides et véhicules privés à terre, billets, trains et train ou vol Yichang–Shanghai. Repas à terre et vols internationaux sont séparés ; certaines dates de croisière augmentent le total. À partir de 8 voyageurs ensemble, des dates de départ de votre choix sont possibles au tarif de groupe indiqué."
+        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre et par cabine standard. Sont compris treize nuits d’hôtel avec petit-déjeuner, trois nuits de croisière avec repas à bord et excursions incluses, guides et véhicules privés à terre, billets, trains et train ou vol Yichang–Shanghai. Repas à terre et vols internationaux sont séparés ; certaines dates de croisière augmentent le total. Pour un groupe constitué d’au moins 8 voyageurs, des dates de départ de votre choix sont possibles au tarif de groupe indiqué."
       },
       {
         "question": "Quelle différence avec la version en petit groupe ?",
@@ -3365,7 +3365,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Un enfant ou une troisième personne peut-il partager la cabine ?",
-        "answer": "Oui : une cabine standard peut accueillir jusqu’à quatre personnes, enfants compris. La troisième personne ou l’enfant partageant la cabine bénéficie d’un tarif de croisière réduit ; les moins de 2 ans n’en paient qu’une faible part. Les chambres d’hôtel sont chiffrées séparément et le devis complet est écrit."
+        "answer": "Oui : une cabine standard peut accueillir jusqu’à quatre personnes, enfants compris. La troisième personne ou l’enfant partageant la cabine bénéficie d’un tarif de croisière réduit ; les moins de 2 ans n’en paient qu’une faible part. Les chambres d’hôtel sont chiffrées séparément et le devis complet vous est remis par écrit."
       }
     ],
     "heroImage": {
@@ -3619,7 +3619,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "metadataDescription": "Circuit Chine de 17 jours et 8 à 12 voyageurs : Pékin, Xi’an, Chengdu, croisière des Trois Gorges et Shanghai. Départs les 19 mai et 1er septembre 2027.",
     "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
     "lede": "De Pékin à Shanghai, associez les grandes visites, les pandas de Chengdu et trois nuits sur le Yangtsé. Ce circuit de 17 jours réunit 8 à 12 voyageurs, avec un départ le 19 mai ou le 1er septembre 2027. À bord, vous partagez le bateau et son programme avec d’autres passagers. Le tarif prévoit deux personnes par chambre et par cabine standard avec balcon, hors vols internationaux.",
-    "summary": "Départs du 19 mai au 4 juin et du 1er au 17 septembre 2027. Groupe confirmé à 8 inscrits, limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, vous choisissez entre un devis pour un circuit privé écrit pour le nombre de personnes de votre groupe aux mêmes dates ou le remboursement intégral des sommes versées à Homeground.",
+    "summary": "Départs du 19 mai au 4 juin et du 1er au 17 septembre 2027. Groupe confirmé à 8 inscrits, limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 19 mai et 1er septembre 2027",
       "De 8 à 12 voyageurs",
@@ -3629,7 +3629,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "itinerary": [
       {
         "title": "Arrivée à Pékin",
-        "description": "La réservation à la date du groupe comprend un accueil à l’aéroport de Pékin-Capitale ou de Daxing. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
+        "description": "À la date d’arrivée prévue pour le groupe, un accueil à l’aéroport de Pékin-Capitale ou de Daxing est inclus. Retrouvez le guide et les autres voyageurs à l’hôtel pour une courte présentation le soir."
       },
       {
         "title": "Le secteur de Tian’anmen et la Cité interdite",
@@ -3637,11 +3637,11 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un trajet en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
       },
       {
         "title": "Temple du Ciel et palais d’Été",
-        "description": "Le matin convient au temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
+        "description": "Le matin se prête bien à la visite du temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -3657,7 +3657,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Les pandas géants de Chengdu",
-        "description": "Le groupe arrive à la base de recherche et d’élevage des pandas géants près de l’ouverture, lorsqu’ils sont généralement les plus actifs. Après le déjeuner, environ une heure de route mène aux masques de bronze de Sanxingdui, sous réserve d’obtenir les billets à créneau horaire."
+        "description": "Le groupe arrive à la base de recherche et d’élevage des pandas géants vers l’heure d’ouverture, lorsqu’ils sont généralement les plus actifs. Après le déjeuner, environ une heure de route mène aux masques de bronze de Sanxingdui, sous réserve d’obtenir les billets à créneau horaire."
       },
       {
         "title": "Train à grande vitesse pour Chongqing",
@@ -3673,7 +3673,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Gorges de Qutang et de Wu",
-        "description": "Vers midi, le bateau traverse la gorge de Qutang. L’après-midi, une excursion incluse en bateau plus petit explore les Petites Trois Gorges, puis Wu se découvre depuis le pont. La cité de l’Empereur blanc le matin et les Mini Trois Gorges sont des options payantes."
+        "description": "Vers midi, le bateau traverse la gorge de Qutang. L’après-midi, une excursion incluse en bateau plus petit explore les Petites Trois Gorges, puis vous découvrez la gorge de Wu depuis le pont. La cité de l’Empereur blanc le matin et les Mini Trois Gorges sont des options payantes."
       },
       {
         "title": "Barrage des Trois Gorges, puis Shanghai",
@@ -3696,7 +3696,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Le dernier jour du groupe comprend un transfert à l’aéroport de Pudong ou de Hongqiao. Des nuits supplémentaires à Shanghai peuvent être organisées séparément."
       }
     ],
-    "hotelNote": "Le tarif affiché suppose deux personnes partageant chambre et cabine. L’usage individuel, pour toutes les nuits d’hôtel et les trois nuits de croisière, entraîne un supplément à partir de 1 090 USD. Trois des seize nuits se passent en cabine standard avec balcon sur un bateau classé cinq étoiles, généralement Gold Cruises. Les treize autres sont dans des hôtels avec petit-déjeuner de standing quatre étoiles, 4 diamants sur Trip.com/Ctrip : Pékin 4, Shanghai 4, Xi’an 2, Chengdu 2 et Chongqing 1. Les noms des hôtels figurent dans la confirmation.",
+    "hotelNote": "Le tarif affiché suppose deux personnes partageant chambre et cabine. Si vous souhaitez disposer seul de votre chambre et de votre cabine pour tout le séjour, le supplément est à partir de 1 090 USD. Trois des seize nuits se passent en cabine standard avec balcon sur un bateau classé cinq étoiles, généralement Gold Cruises. Les treize autres sont dans des hôtels de standing quatre étoiles, soit 4 diamants sur Trip.com/Ctrip, avec petit-déjeuner : Pékin 4, Shanghai 4, Xi’an 2, Chengdu 2 et Chongqing 1. Les noms des hôtels figurent dans la confirmation.",
     "serviceNote": "La croisière comprend cabine, repas du dîner d’embarquement au petit-déjeuner final et trois excursions, généralement Fengdu, Petites Trois Gorges et barrage. À terre : entrées des sites prévus au programme, trains en seconde classe Pékin–Xi’an–Chengdu–Chongqing et Shanghai–Suzhou aller-retour, puis train ou vol en classe économique Yichang–Shanghai. Un transfert d’arrivée à Pékin et un transfert de départ à Shanghai sont prévus aux dates du groupe. Guides locaux anglophones et véhicule du groupe assurent les journées de visite à terre.",
     "bookingNote": "Le prix affiché « à partir de » s’entend par personne, pour un départ à date fixe et deux personnes par chambre. Le groupe part à partir de 8 inscrits et reste limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, nous proposons par écrit un circuit privé pour le nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Les cabines et le départ de croisière ne sont pas encore réservés. Nous vérifions la disponibilité, indiquons par écrit le bateau et la catégorie de cabine, puis confirmons le total avant paiement. Les groupes prévus embarquent un vendredi ; itinéraire ou dates peuvent changer si le calendrier 2027 de la compagnie diffère. Un groupe constitué de 8 à 12 personnes choisissant ses dates a aussi besoin d’un départ de Chongqing au jour 10, vérifié en premier. Le groupe de septembre est à Shanghai pendant la fête de la Mi-Automne, le 15 septembre 2027, lorsque Bund et jardin Yu sont plus fréquentés. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement.",
     "exclusions": [
@@ -4000,7 +4000,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un trajet en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
@@ -4015,7 +4015,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Le train en seconde classe vers l’ouest, via Lanzhou, prend environ 5 h 30 à 6 h 30. Si l’arrivée le permet, comptez encore une heure de route vers Danxia pour voir les collines striées dans la lumière du soir. Les navettes du parc fixent l’ordre des belvédères. Nuit à Zhangye."
       },
       {
-        "title": "Le passage de Jiayuguan",
+        "title": "Le col de Jiayuguan",
         "description": "Depuis Zhangye, Jiayuguan se trouve à environ 1 h 30 de train ou trois heures de voiture vers l’ouest. Découvrez le fort à l’extrémité occidentale de la Grande Muraille Ming et la Grande Muraille suspendue voisine. Nuit à Jiayuguan."
       },
       {
@@ -4032,7 +4032,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "L’oasis de Turpan",
-        "description": "Les après-midi d’été sont très chauds à Turpan : les moments en plein air se placent tôt ou tard. La journée relie les ruines de Jiaohe, le musée du karez et le minaret Emin, en passant près des monts Flamboyants."
+        "description": "Les après-midi d’été sont très chauds à Turpan : les visites en plein air se font tôt le matin ou en fin de journée. La journée relie les ruines de Jiaohe, le musée du karez et le minaret Emin, en passant près des monts Flamboyants."
       },
       {
         "title": "Train à grande vitesse pour Urumqi",
@@ -4051,7 +4051,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
         "description": "Un chauffeur privé vous conduit à l’aéroport pour votre vol international. Aucune visite le jour du départ."
       }
     ],
-    "hotelNote": "Quatorze nuits avec petit-déjeuner en chambre pour deux personnes : Pékin 3, Xi’an 2, Zhangye 1, Jiayuguan 1, Dunhuang 2, Turpan 2, Urumqi 2 et une près de l’aéroport de départ. Nous utilisons un standing quatre étoiles, 4 diamants Trip.com/Ctrip, là où il est disponible. À Zhangye, Jiayuguan et Turpan, l’hébergement local le mieux adapté parmi les établissements évalués est confirmée avant paiement.",
+    "hotelNote": "Quatorze nuits avec petit-déjeuner en chambre pour deux personnes : Pékin 3, Xi’an 2, Zhangye 1, Jiayuguan 1, Dunhuang 2, Turpan 2, Urumqi 2 et une près de l’aéroport de départ. Les hôtels sont de standing quatre étoiles, soit 4 diamants sur Trip.com/Ctrip, là où cette catégorie est disponible. À Zhangye, Jiayuguan et Turpan, l’hébergement local le mieux adapté parmi les établissements évalués est confirmé avant paiement.",
     "serviceNote": "Le guide local et le véhicule sont réservés à votre groupe les jours de visite ; la langue du guide est vérifiée pour chaque ville. Tous les transferts et les billets d’entrée des principaux sites prévus au programme, dont Mogao, fort de Jiayuguan et navette du lac Céleste, sont inclus. Trains en seconde classe sur Pékin–Xi’an–Zhangye, Liuyuan Sud–Turpan et Turpan–Urumqi ; train ou véhicule privé pour Zhangye–Jiayuguan et Jiayuguan–Dunhuang. Le vol en classe économique d’Urumqi vers l’est est inclus. Les chauffeurs assurent les transferts aux gares et aéroports. Gardez votre pièce d’identité pour les contrôles dans les hôtels, gares et certains sites du Xinjiang.",
     "bookingNote": "Le prix de départ s’entend par personne pour le nombre de voyageurs indiqué, à deux par chambre. Mogao limite les billets datés : s’il ne reste que le billet d’urgence pour quatre grottes, nous le signalons avant paiement. Les informations de passeport sont nécessaires avant l’ouverture des réservations de la Cité interdite et de l’armée de terre cuite. Les trains, les vols, les hôtels et le montant total sont également confirmés par écrit avant paiement.",
     "exclusions": [
@@ -4066,7 +4066,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que comprend le tarif de la Route de la soie ?",
-        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Sont compris quatorze nuits avec petit-déjeuner, guides et véhicules privés les jours de visite, Mogao et autres entrées des sites prévus au programme, quatre tronçons de train à grande vitesse, traversées du Gobi en train ou véhicule privé et vol vers l’est depuis Urumqi. Vols internationaux, déjeuners et dîners sont séparés. Des dates propres au tarif de groupe indiqué sont possibles à partir de 8 voyageurs ; pour un autre nombre de voyageurs, demandez un devis écrit."
+        "answer": "Le tarif par personne dépend du nombre de voyageurs, sur la base de deux personnes par chambre. Sont compris quatorze nuits avec petit-déjeuner, guides et véhicules privés les jours de visite, Mogao et autres entrées des sites prévus au programme, quatre tronçons de train à grande vitesse, traversées du Gobi en train ou véhicule privé et vol vers l’est depuis Urumqi. Vols internationaux, déjeuners et dîners sont séparés. Un groupe constitué d’au moins 8 voyageurs peut choisir ses dates au tarif de groupe indiqué ; pour un autre nombre de voyageurs, demandez un devis écrit."
       },
       {
         "question": "Quelle différence avec le petit groupe ?",
@@ -4074,7 +4074,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "question": "Quelle est la meilleure période ?",
-        "answer": "Mai, juin, septembre et début octobre sont plus faciles à Dunhuang et Turpan. Juillet–août y est très chaud. L’hiver est froid et limite l’accès autour du lac Céleste."
+        "answer": "Mai, juin, septembre et début octobre offrent des conditions plus agréables à Dunhuang et Turpan. Il y fait très chaud en juillet et en août. L’hiver est froid et limite l’accès autour du lac Céleste."
       },
       {
         "question": "Les trajets sont-ils longs ?",
