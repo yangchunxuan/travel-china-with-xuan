@@ -625,9 +625,9 @@
   min-width: 9.5rem;
 }
 
-/* Columns: 1 name, 2 release, 3 channel, 4 passport, 5 real name, 6 price, 7 notes, 8 checked. */
-.table :is(th, td):nth-child(4),
-.table :is(th, td):nth-child(5) {
+/* Columns: 1 name, 2 release, 3 passport, 4 real name, 5 price, 6 notes, 7 checked. */
+.table :is(th, td):nth-child(3),
+.table :is(th, td):nth-child(4) {
   min-width: 4.5rem;
 }
 
@@ -635,12 +635,12 @@
   min-width: 11rem;
 }
 
-.table :is(th, td):nth-child(7) {
+.table :is(th, td):nth-child(6) {
   min-width: 15rem;
 }
 
-/* The checked date (column 8) stays on one line. */
-.table td:nth-child(8) {
+/* The checked date (column 7) stays on one line. */
+.table td:nth-child(7) {
   white-space: nowrap;
 }
 
@@ -1496,11 +1496,11 @@
     line-height: 1.6;
   }
 
-  .table td:nth-child(7) {
+  .table td:nth-child(6) {
     display: block;
   }
 
-  .table td:nth-child(7)::before {
+  .table td:nth-child(6)::before {
     display: block;
     margin-bottom: 0.125rem;
   }
@@ -1527,7 +1527,7 @@
   }
 
   /* The checked date moves into the footer line. */
-  .table td:nth-child(8) {
+  .table td:nth-child(7) {
     display: none;
   }
 
@@ -1567,7 +1567,7 @@
     min-width: 0;
   }
 
-  .table td:nth-child(8) {
+  .table td:nth-child(7) {
     white-space: normal;
   }
 }

@@ -1,5 +1,13 @@
 # Attraction reservation sales revision — owner review
 
+## Full-page customer focus — 18 October 2026
+
+All seven service editions now put the visitor's outcome first: leave the tickets to Homeground, send dates early, receive a written total before payment, and receive booking records with entry guidance. Benefits, three steps, museum FAQs, enquiry introductions, guide offers and attraction notes no longer repeat backstage systems or submission methods. The source/channel column is removed from the customer-facing table; source data and linked factual guides remain. Mobile table styles follow the new seven-column order.
+
+Booking fees, advance/late guarantees, full-refund promises, issued-ticket cancellation and passport handling are retained. Attraction release times, prices, identity checks, capacity limits and entry conditions stay factual. The production build and 53 focused tests pass. EN/ZH/KO phone checks at 390×844 have no horizontal overflow; three travellers at two attractions total USD 42 / CNY 270 / KRW 60,000. The known-price row, notes and checked-date footer render in their intended mobile positions. No enquiry was sent.
+
+[Latest seven-language full-page before/after review](review/attraction-reservations-sales-20261017/customer-focus-20261018/README.md) supersedes earlier screenshot wording. The established Arabic header RTL overflow remains visible in both baseline and revised captures; the revised page content does not claim to fix it.
+
 ## Owner revision — 18 October 2026
 
 The service-commitments block now keeps only three customer-facing promises: booking in each traveller's own name and passport, no resale or ticket markup, and face-value pricing with the attraction's real-name/cancellation rules. The owner removed the two implementation-method bullets. Titles and the three-point list are aligned in all seven editions; fees, policies and booking workflow are unchanged.

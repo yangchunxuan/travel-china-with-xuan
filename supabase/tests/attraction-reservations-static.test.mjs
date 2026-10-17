@@ -180,7 +180,7 @@ test("sales copy says what we do and neither quotes operator statements nor clai
     if (id === "forbidden-city") {
       for (const locale of locales) {
         assert.match(rule.notes[locale], /(?:do not resell tickets or add a mark-up|不转售、不加价|되팔거나 금액을 더하지 않으며)/u, `${locale}: no resale, no mark-up`);
-        assert.match(rule.notes[locale], /(?:official channel in the visitor's own passport name|官方渠道以每位游客本人的护照实名|공식 채널에서 방문자 본인의 여권 실명)/u, `${locale}: official system, own name`);
+        assert.match(rule.notes[locale], /(?:visitor's own passport name|本人.*护照实名|본인의 여권 실명)/u, `${locale}: each visitor's own passport identity`);
         assert.match(rule.disclosure[locale], /(?:face value|票面价|공식 가격 그대로)/u, `${locale}: tickets at face value`);
       }
     }
@@ -563,9 +563,9 @@ test("ticket release is the first rule after the attraction and stays prominent"
   ]);
   const tableHeader = page.match(/<thead>[\s\S]*?<\/thead>/u)?.[0] ?? "";
   const columns = [...tableHeader.matchAll(/\{copy\.columns\.(\w+)\}/gu)].map((match) => match[1]);
-  assert.deepEqual(columns, ["attraction", "release", "channel", "passport", "realName", "price", "notes", "verified"]);
+  assert.deepEqual(columns, ["attraction", "release", "passport", "realName", "price", "notes", "verified"]);
   const ruleCells = [...page.matchAll(/\{cell\(copy\.columns\.(\w+)/gu)].map((match) => match[1]);
-  assert.deepEqual(ruleCells, ["release", "channel", "passport", "realName", "price"], "body cells match header order");
+  assert.deepEqual(ruleCells, ["release", "passport", "realName", "price"], "body cells match header order");
   assert.match(tableHeader, /className=\{styles\.releaseColumn\}/u);
   assert.match(page, /label === copy\.columns\.release \? styles\.releaseColumn/u, "release values get the same emphasis");
   assert.match(styles, /\.table \.releaseColumn\s*\{[^}]*font-weight:\s*[6-9]00/u);

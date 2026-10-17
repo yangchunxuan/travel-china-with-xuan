@@ -1,4 +1,4 @@
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -365,7 +365,6 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                         <tr>
                           <th scope="col">{copy.columns.attraction}</th>
                           <th className={styles.releaseColumn} scope="col">{copy.columns.release}</th>
-                          <th scope="col">{copy.columns.channel}</th>
                           <th scope="col">{copy.columns.passport}</th>
                           <th scope="col">{copy.columns.realName}</th>
                           <th scope="col">{copy.columns.price}</th>
@@ -379,7 +378,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                           const translated = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale) : null;
                           const ruleName = translated?.name ?? rule.name[locale];
                           const rulePrice = priceText(rule, locale, editionLocale);
-                          // A free walk-in has no booking channel or release to confirm, so its
+                          // A free walk-in has no advance release to confirm, so its
                           // empty fields say "not applicable" instead of inviting an enquiry.
                           // Other empty fields show a dash (explained above the cities); the
                           // words stay for screen readers.
@@ -393,7 +392,6 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                           );
                           // Phones hide the dash cells; this line names them instead (hidden on wider screens).
                           const pending = rule.status === "not-needed" ? [] : [
-                            [copy.columns.channel, rule.channels],
                             [copy.columns.passport, rule.passportAccepted],
                             [copy.columns.release, rule.release],
                             [copy.columns.realName, rule.realName],
@@ -412,12 +410,6 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                                   : null}
                               </th>
                               {cell(copy.columns.release, rule.release ? translated?.release ?? rule.release[locale] : rule.status === "not-needed" ? copy.notApplicable : copy.notChecked)}
-                              {cell(copy.columns.channel, rule.channels
-                                ? rule.channels.map((channel, index, all) => (
-                                  // The dot stays with the name before it, so no line starts with "·".
-                                  <Fragment key={channel}><span className={styles.nowrap}>{copy.channel[channel]}{index < all.length - 1 ? " ·" : null}</span>{index < all.length - 1 ? " " : null}</Fragment>
-                                ))
-                                : null)}
                               {cell(copy.columns.passport, booleanText(rule.passportAccepted, locale, editionLocale))}
                               {cell(copy.columns.realName, booleanText(rule.realName, locale, editionLocale))}
                               {cell(copy.columns.price, rulePrice === null ? null : <KeepWords locale={locale} text={rulePrice} />)}

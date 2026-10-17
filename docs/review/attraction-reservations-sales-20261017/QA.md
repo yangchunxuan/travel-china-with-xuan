@@ -1,5 +1,7 @@
 # Browser and policy QA
 
+Latest full-page refinement (18 October): [seven-language captures](customer-focus-20261018/README.md) and the phone checks linked there supersede earlier wording. The public table now omits the channel column. EN/ZH/KO at 390×844 retain the correct fee totals and mobile notes/date layout without horizontal overflow. Policy tests and the production build pass after the refinement.
+
 The EN, ZH and KO summary views were checked at 390×844 and 1366×900 with the privacy banner visible and dismissed. Recorded measurements report no horizontal overflow; actual screenshots show fee totals and send controls without clipping or banner overlap.
 
 Initial hero text and CTAs can continue below the first fold or privacy banner. Vertical scrolling or dismissing the banner exposes lower content. Hero CTA visibility above the first fold is not an acceptance criterion.

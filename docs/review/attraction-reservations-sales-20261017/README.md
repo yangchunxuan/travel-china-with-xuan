@@ -1,5 +1,7 @@
 # Attraction reservation sales revision — visual review
 
+**Latest full-page refinement, 18 October:** [seven-language before/after review](customer-focus-20261018/README.md). The full page now emphasizes booking outcomes, early contact and service guarantees, with fewer backstage-method explanations. This latest set supersedes earlier copy shown below.
+
 **18 October owner revision:** the attraction-specific “best effort” exclusion has been removed from all service editions and current terms. [Review the updated screenshots and validation](owner-revision-20261018/README.md). The original 17 October gallery below is retained as dated review history; its exception wording is superseded.
 
 Browser captures of the baseline and revised local preview on 17 October 2026.
