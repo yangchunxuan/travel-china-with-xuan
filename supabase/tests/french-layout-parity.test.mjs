@@ -10,6 +10,8 @@ import { getPrivateTourFacets } from '../../lib/privateTourCatalogFacets.ts';
 import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
 import * as frenchSite from '../../lib/frenchSite.ts';
+import { getHomepagePrivateTourItems } from '../../lib/homepagePrivateTourCatalog.ts';
+import { getPrivateTourDetailSelectionFromSearchParams } from '../../lib/privateTourInquiryContext.ts';
 
 const require=createRequire(import.meta.url);
 const source=path=>readFile(new URL(`../../${path}`,import.meta.url),'utf8');
@@ -30,7 +32,31 @@ const legacyContactCopy=await load('lib/frenchLegacyContactCopy.ts');
 const legacy=await load('lib/frenchLegacyTours.ts',{'../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json':pricing,'./privateTourProducts':{formatPrivateTourPrice},'./zhangjiajiePrivateTourPreview':original,'./terracottaHalfDayTour':halfDay,'./frenchLegacyContactCopy':legacyContactCopy});
 const classic=await load('lib/frenchLegacyPresentation.ts',{'./zhangjiajiePrivateTourPreview':original,'./frenchLegacyTours':legacy,'./frenchSite':frenchSite});
 const hub=await load('components/FrenchToursHubPage.tsx',{'./PrivateToursHubPage':{PrivateToursHubPage:()=>null},'./FrenchChrome':{FrenchSiteHeader:()=>null,FrenchSiteFooter:()=>null},'../lib/frenchTourCatalog':{getFrenchTourCatalog},'../lib/publishedPrivateTourCatalog':{getPublishedPrivateTourCatalog},'../lib/privateTourCatalogFacets':{getPrivateTourFacets},'../lib/frenchSite':frenchSite,'../lib/frenchLegacyTours':legacy});
+const homepage=await load('lib/frenchHomepageEditorial.ts',{
+ './homepagePrivateTourCatalog':{getHomepagePrivateTourItems},
+ './homepageEditorial':{getHomepageGuideChapters:()=>{throw new Error('Guide chapters are not part of this product-price test');}},
+ './frenchTourCatalog':{getFrenchTourCatalog},
+});
 const normal=value=>JSON.parse(JSON.stringify(value));
+
+test('French homepage opens the 13-day route at the advertised eight-person price',()=>{
+ const en=getHomepagePrivateTourItems('en'),fr=homepage.getFrenchHomepageProducts();
+ for(const item of fr){
+  const source=en.find(product=>product.id===item.id);
+  assert.equal(item.href,`/fr${source.href}`,`${item.id}: localized homepage entry`);
+  assert.deepEqual(normal(item.startingPrice?.selection??null),normal(source.startingPrice?.selection??null));
+ }
+ const slug='beijing-xian-chengdu-guilin-shanghai-13-day-private-tour';
+ const item=fr.find(product=>product.id===slug),tour=getFrenchTourCatalog().find(product=>product.slug===slug);
+ const url=new URL(item.href,'https://homegroundchina.com');
+ const selection=getPrivateTourDetailSelectionFromSearchParams(slug,url.searchParams);
+ assert.equal(url.pathname,tour.path);
+ assert.deepEqual(selection,{packageId:'standard-guided',travelers:8});
+ const row=tour.packages.find(option=>option.id===selection.packageId).rows.find(row=>row.travelers===selection.travelers);
+ assert.equal(row.amount,2090);
+ assert.equal(row.currency,'USD');
+ assert.equal(item.startingPrice.formatted,row.formatted);
+});
 
 test('French original-layout hub includes all 57 routes without changing source price entries',async()=>{
  const en=getPublishedPrivateTourCatalog('en'),fr=hub.getFrenchPublishedTourCatalog();

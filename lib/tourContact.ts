@@ -2,6 +2,8 @@ import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { isFiveCitySmallGroup, smallGroupInquiryCopy } from "./smallGroupInquiry.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { getPrivateTourInquiryContextFromSearchParams, privateTourInquirySelectionLabel, type PrivateTourInquiryContext } from "./privateTourInquiryContext.ts";
 
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -43,7 +45,7 @@ export const tourContactCopy = {
 
 /** The prepared inquiry text shared by every direct chat channel (WhatsApp link, KakaoTalk copy). */
 export function tourContactMessageText(locale: HomegroundLocale, context: PrivateTourInquiryContext | null, path?: string, draft?: TourContactDraft) {
-  const opening = locale === "zh" ? "你好，我想咨询中国私人旅行。" : locale === "ko" ? "안녕하세요. 중국 프라이빗 여행을 문의하고 싶습니다." : "Hi, I’d like to plan a private trip to China.";
+  const opening = isFiveCitySmallGroup(context?.slug) ? smallGroupInquiryCopy[locale].opening : locale === "zh" ? "你好，我想咨询中国私人旅行。" : locale === "ko" ? "안녕하세요. 중국 프라이빗 여행을 문의하고 싶습니다." : "Hi, I’d like to plan a private trip to China.";
   const publicPath = context ? `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` : path;
   const safePath = publicPath && /^\/(?:zh\/|ko\/)?(?:guides|tours)\/[a-z0-9-]+\/$/.test(publicPath) ? publicPath : null;
   return [opening, context?.name, context ? privateTourInquirySelectionLabel(context, locale) : null,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JapaneseHomePage } from "../../../components/JapaneseHomePage";
 import { japaneseHomeCopy } from "../../../lib/japaneseHomeCopy";
 import { buildJapaneseSocialMetadata, japaneseAlternates, japaneseSite } from "../../../lib/japaneseSite";
-import { homepagePrivateTourSlugs, type HomepagePrivateTourItem } from "../../../lib/homepagePrivateTourCatalog";
+import { getHomepagePrivateTourEntryHref, homepagePrivateTourSlugs, type HomepagePrivateTourItem } from "../../../lib/homepagePrivateTourCatalog";
 import { getHomepageTeamFaces } from "../../../lib/homegroundStudioI18n";
 import { localizeJapanesePrivateTourProduct } from "../../../lib/localizeJapanesePrivateTourProduct";
 import { getPrivateTourProduct } from "../../../lib/privateTourProducts";
@@ -38,7 +38,7 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
       appeal: tour.lede,
       days: tour.days,
       nights: tour.nights,
-      href: japaneseTourEntryHref(tour),
+      href: getHomepagePrivateTourEntryHref(tour.slug, japaneseTourEntryHref(tour), starting?.selection),
       startingPrice: starting ? {
         formatted: starting.formatted,
         travelers: starting.travelers,

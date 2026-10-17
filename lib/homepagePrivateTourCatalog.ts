@@ -1,7 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: export checks execute this module via type stripping.
 import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
-import type { PrivateTourInquirySelection } from "./privateTourInquiryContext";
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { buildPrivateTourDetailHref, type PrivateTourInquirySelection } from "./privateTourInquiryContext.ts";
 
 export interface HomepagePrivateTourItem {
   readonly id: string;
@@ -48,6 +49,17 @@ const quoteOnlyHomepageSlugs = new Set<string>([
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
 ]);
 
+/** The 13-day homepage card opens the party size quoted by its single price. */
+export function getHomepagePrivateTourEntryHref(
+  slug: string,
+  href: string,
+  startingSelection?: PrivateTourInquirySelection,
+): string {
+  return slug === "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour" && startingSelection
+    ? buildPrivateTourDetailHref(href, slug, startingSelection)
+    : href;
+}
+
 /**
  * Backwards-compatible homepage projection of the single published catalog.
  * Comparison fields stay available to the hub without expanding homepage cards.
@@ -85,7 +97,11 @@ export function getHomepagePrivateTourItems(
           appeal: product.comparison.appeal,
           days: product.days,
           nights: product.nights,
-          href: product.startingPriceHref,
+          href: getHomepagePrivateTourEntryHref(
+            product.slug,
+            product.startingPriceHref,
+            product.startingPrice?.selection,
+          ),
           startingPrice: product.startingPrice ? {
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,

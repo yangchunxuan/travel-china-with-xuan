@@ -34,6 +34,8 @@ import { contactCardDesktopQuery, contactCardRequestForLink } from "../lib/conta
 import { ContactCardScan, type ContactCardScanCopy } from "./ContactCardScan";
 import cardStyles from "./ContactCard.module.css";
 import { isNortheastWinterTour } from "./northeastWinterTourSlugs";
+import { isFiveCitySmallGroup, smallGroupDeparture, smallGroupInquiryCopy, smallGroupInquiryNote, smallGroupInquiryText, type SmallGroupInquiryDetails } from "../lib/smallGroupInquiry";
+import { SmallGroupInquiryFields } from "./SmallGroupInquiryFields";
 
 const japaneseScanCopy = {
   scanTitle: "スマートフォンでスキャンして相談する",
@@ -65,6 +67,7 @@ export function JapaneseInquiryDialog() {
   const [datesUndecided, setDatesUndecided] = useState(true);
   const [note, setNote] = useState("");
   const [group, setGroup] = useState("");
+  const [smallGroupDetails, setSmallGroupDetails] = useState<SmallGroupInquiryDetails>({ departureDate: null, roomPreference: null });
   const [status, setStatus] = useState<Status>("idle");
   statusRef.current = status;
   const [receipt, setReceipt] = useState<InquiryReceiptData | null>(null);
@@ -78,7 +81,9 @@ export function JapaneseInquiryDialog() {
     ? getPrivateTourInquiryContext(request.slug, "ja", request.selection)
     : null;
   const customGroup = context && isJiangnanTour(context.slug) && !context.selection;
-  const requestedTravelers = customGroup ? parseRequestedTravelers(group) : null;
+  const smallGroup = isFiveCitySmallGroup(context?.slug);
+  const parsedTravelers = customGroup || smallGroup ? parseRequestedTravelers(group) : null;
+  const requestedTravelers = smallGroup && parsedTravelers !== null && parsedTravelers > 12 ? null : parsedTravelers;
   const winterDirectContact = isNortheastWinterTour(request?.slug);
   const apiUrl = privateTourQuoteApiUrl();
   const formEnabled = Boolean(apiUrl) &&
@@ -90,11 +95,11 @@ export function JapaneseInquiryDialog() {
       : process.env.NEXT_PUBLIC_HOMEGROUND_HOMEPAGE_EMAIL_ENABLED === "true");
   const directLinks = japaneseGeneralContactHrefs(pathname.startsWith("/ja/") ? pathname : "/ja/");
   const productMessage = context ? [
-    "こんにちは。日本語で旅行の相談をしたいです。",
+    smallGroup ? smallGroupInquiryCopy.ja.opening : "こんにちは。日本語で旅行の相談をしたいです。",
     `希望する旅行：${context.name}`,
-    context.selection ? `希望するプラン・人数：${privateTourInquirySelectionLabel(context, "ja")}` : "参加人数：",
+    context.selection ? `${smallGroup ? "希望するプラン" : "希望するプラン・人数"}：${privateTourInquirySelectionLabel(context, "ja")}` : smallGroup ? "" : "参加人数：",
     customGroup && requestedTravelers ? `参加人数：${requestedTravelers}名` : "",
-    `旅行予定の時期：${winterDirectContact ? "" : datesUndecided ? "未定" : date}`,
+    smallGroup ? smallGroupInquiryText("ja", smallGroupDetails, requestedTravelers) : `旅行予定の時期：${winterDirectContact ? "" : datesUndecided ? "未定" : date}`,
     note.trim() ? `ご希望：${note.trim()}` : "",
     `参照ページ：https://homegroundchina.com/ja/tours/${context.slug}/`,
   ].filter(Boolean).join("\n") : "";
@@ -104,7 +109,7 @@ export function JapaneseInquiryDialog() {
     ? `https://wa.me/${phone}?text=${encodeURIComponent(productMessage)}`
     : request?.whatsappHref ?? directLinks.whatsapp;
   const emailHref = context
-    ? `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(`日本語での旅行相談：${context.name}`)}&body=${encodeURIComponent(productMessage)}`
+    ? `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(`${smallGroup ? smallGroupInquiryCopy.ja.subject : "日本語での旅行相談"}：${context.name}`)}&body=${encodeURIComponent(productMessage)}`
     : request?.emailHref ?? directLinks.email;
   const busy = status === "sending" || status === "saved" || status === "uncertain";
 
@@ -128,6 +133,7 @@ export function JapaneseInquiryDialog() {
       setDatesUndecided(true);
       setNote("");
       setGroup("");
+      setSmallGroupDetails({ departureDate: null, roomPreference: null });
       snapshotRef.current = null;
       setOpen(true);
     };
@@ -215,6 +221,11 @@ export function JapaneseInquiryDialog() {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!formEnabled || busy || !email.trim() || (customGroup && requestedTravelers === null)) return;
+    if (smallGroup && note.length > 600) {
+      setError("ご希望・ご質問は600文字以内で入力してください。");
+      setStatus("failed");
+      return;
+    }
     const form = new FormData(event.currentTarget);
     const base = {
       locale: "ja" as const,
@@ -231,8 +242,8 @@ export function JapaneseInquiryDialog() {
       formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote",
       productInterest: getPrivateTourInquirySubmissionContext(context, "ja"),
-      travelDate: datesUndecided ? null : date,
-      note: tourContactNote(note, "", requestedTravelers),
+      travelDate: smallGroup ? smallGroupDeparture(smallGroupDetails.departureDate)?.start ?? null : datesUndecided ? null : date,
+      note: smallGroup ? smallGroupInquiryNote(tourContactNote(note, "", requestedTravelers) ?? "", smallGroupDetails) : tourContactNote(note, "", requestedTravelers),
       attribution: { landingPath: `/ja/tours/${context.slug}/` },
     } : {
       ...base,
@@ -285,15 +296,16 @@ export function JapaneseInquiryDialog() {
             <h2 id={`${id}-title`} tabIndex={-1}>日本語で旅を相談する</h2>
             <p className={styles.intro}>{winterDirectContact ? "ご希望の出発時期と人数を、WhatsApp またはメールでお知らせください。空き状況と最終料金を確認して返信します。" : context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
+            {smallGroup ? <SmallGroupInquiryFields id={`${id}-small-group`} language="ja" details={smallGroupDetails} onChange={value => { if (!busy) setSmallGroupDetails(value); }} travelers={group} onTravelersChange={value => { if (!busy) setGroup(value); }} disabled={busy} /> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
                 <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com" /></label>
                 <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={setEmail} />
                 {context ? <>
                   {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
-                  {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}
-                  <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => setDatesUndecided(event.target.checked)} />日程は未定</label>
-                  <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={900} value={note} onChange={event => setNote(event.target.value)} placeholder="宿泊、移動、歩くペースなど" /></label>
+                  {!smallGroup && !datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}
+                  {!smallGroup ? <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => setDatesUndecided(event.target.checked)} />日程は未定</label> : null}
+                  <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={smallGroup ? 600 : 900} value={note} onChange={event => setNote(event.target.value)} placeholder="宿泊、移動、歩くペースなど" /></label>
                 </> : null}
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>

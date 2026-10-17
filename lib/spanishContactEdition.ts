@@ -1,6 +1,7 @@
 import type { ContactEdition } from './contactEdition.ts';
 import type { PrivateTourInquiryContext } from './privateTourInquiryContext.ts';
 import type { TourContactDraft } from './tourContactDraft.ts';
+import { isFiveCitySmallGroup, smallGroupInquiryCopy, smallGroupInquiryText } from './smallGroupInquiry.ts';
 import { homegroundBusiness } from './homegroundBusiness.ts';
 import { homegroundWhatsAppHref } from './tourContact.ts';
 import { spanishContactTourNames, spanishContactPackageLabels } from './spanishContactNames.ts';
@@ -12,17 +13,17 @@ function travellersLabel(count:number){return `${count} ${count===1?'viajero':'v
 function selectionLabel(context:PrivateTourInquiryContext){
  const selected=context.selection;if(!selected)return null;
  const label=context.slug==='zhangjiajie-4-day-private-tour'?spanishLegacyStayNames[selected.packageId as keyof typeof spanishLegacyStayNames]:spanishContactPackageLabels[`${context.slug}:${selected.packageId}`];
- return label?`${label} · ${travellersLabel(selected.travelers)}`:null;
+ return label?`${label} · ${isFiveCitySmallGroup(context.slug) && selected.packageId === 'small-group-departure' ? 'precio con dos personas por habitación' : travellersLabel(selected.travelers)}`:null;
 }
 function draftText(draft?:TourContactDraft){
  if(!draft)return '';
  const stay=spanishLegacyDraftStayName(draft.stayPreference);
- return [`Llegada prevista: ${draft.travelDate||'fechas por decidir'}`,draft.requestedTravelers!=null?`Viajeros: ${draft.requestedTravelers}`:'',stay?`Alojamiento preferido (por confirmar): ${stay}`:'',draft.note.trim()?`Detalles del viaje: ${draft.note.trim()}`:'',draft.referralSource?`Cómo conocí Homeground: ${draft.referralSource==='friend'?'Recomendación de amigos o familia':draft.referralSource==='other'?'Otro':draft.referralSource}`:''].filter(Boolean).join('\n');
+ return [draft.smallGroup ? smallGroupInquiryText('es', draft.smallGroup, draft.requestedTravelers) : `Llegada prevista: ${draft.travelDate||'fechas por decidir'}`,!draft.smallGroup && draft.requestedTravelers!=null?`Viajeros: ${draft.requestedTravelers}`:'',stay?`Alojamiento preferido (por confirmar): ${stay}`:'',draft.note.trim()?`Detalles del viaje: ${draft.note.trim()}`:'',draft.referralSource?`Cómo conocí Homeground: ${draft.referralSource==='friend'?'Recomendación de amigos o familia':draft.referralSource==='other'?'Otro':draft.referralSource}`:''].filter(Boolean).join('\n');
 }
 function messageText(context:PrivateTourInquiryContext|null,path?:string,draft?:TourContactDraft){
  const page=context?`/es/tours/${context.slug}/`:path;
  const stay=context?.customGroup?.stayId?spanishLegacyStayNames[context.customGroup.stayId]:null;
- return ['Hola, me gustaría organizar un viaje a China.',context?tourName(context):'',context?selectionLabel(context):'',stay&&!draft?.stayPreference?`Alojamiento preferido (por confirmar): ${stay}`:'',page?.startsWith('/es/')?`Página: https://homegroundchina.com${page}`:'',draftText(draft),'Guía en español (con suplemento):'].filter(Boolean).join('\n');
+ return [isFiveCitySmallGroup(context?.slug) ? smallGroupInquiryCopy.es.opening : 'Hola, me gustaría organizar un viaje a China.',context?tourName(context):'',context?selectionLabel(context):'',stay&&!draft?.stayPreference?`Alojamiento preferido (por confirmar): ${stay}`:'',page?.startsWith('/es/')?`Página: https://homegroundchina.com${page}`:'',draftText(draft),'Guía en español (con suplemento):'].filter(Boolean).join('\n');
 }
 export function spanishContactWhatsAppHref(context:PrivateTourInquiryContext|null,path?:string){return homegroundWhatsAppHref(messageText(context,path));}
 /** Spanish UI; the existing English intake contract and server validation stay unchanged. */
@@ -31,7 +32,7 @@ export const spanishContactEdition:ContactEdition={
  tourPath:slug=>`/es/tours/${slug}/`,tourSlugFromPath:path=>pattern.exec(path)?.[1]??null,isGuidePath:path=>/^\/es\/guias\/(?:[a-z0-9-]+\/)?$/u.test(path),
  tourName,travellersLabel,selectionLabel,messageText,
  stayPreferenceLabel:context=>context.customGroup?.stayId?spanishLegacyStayNames[context.customGroup.stayId]:null,
- mailtoHref:(context,draft,guide)=>`mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(context?`Presupuesto: ${tourName(context)}`:'Mi viaje a China')}&body=${encodeURIComponent(messageText(context,guide?.path,draft).replace(/\r?\n/g,'\r\n'))}`,
+ mailtoHref:(context,draft,guide)=>`mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(context?`${isFiveCitySmallGroup(context.slug) ? smallGroupInquiryCopy.es.subject : 'Presupuesto'}: ${tourName(context)}`:'Mi viaje a China')}&body=${encodeURIComponent(messageText(context,guide?.path,draft).replace(/\r?\n/g,'\r\n'))}`,
  noteMarker:path=>`[Sent from the Spanish page https://homegroundchina.com${path}; the traveller read it in Spanish. Spanish-speaking guide is quoted separately.]`,
  noteTooLong:limit=>`El mensaje no puede superar los ${limit} caracteres.`,
  frame:{title:'Hablemos de tu viaje',close:'Cerrar'},

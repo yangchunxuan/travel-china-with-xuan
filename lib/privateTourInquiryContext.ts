@@ -7,6 +7,8 @@ import type { PrivateTourPriceTier } from "./privateTourProducts.ts";
 import { privateTourInquiryIndex } from "./privateTourInquiryIndex.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tourContactDraftText, type TourContactDraft } from "./tourContactDraft.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { isFiveCitySmallGroup, smallGroupInquiryCopy } from "./smallGroupInquiry.ts";
 
 export type PrivateTourInquiryLocale = HomegroundLocale | "ja";
 
@@ -752,11 +754,12 @@ export function buildPrivateTourMailtoHref(
   draft?: TourContactDraft,
 ): string {
   const copy = privateTourInquiryContactCopy[locale];
+  const smallGroupCopy = isFiveCitySmallGroup(context?.slug) ? smallGroupInquiryCopy[locale] : null;
   const subject = context
-    ? `${copy.emailSubject}: ${context.name}`
+    ? `${smallGroupCopy?.subject ?? copy.emailSubject}: ${context.name}`
     : copy.genericEmailSubject;
   const body = context
-    ? `${copy.emailBody}: ${context.name}\n${copy.referenceLabel}: ${context.slug}${privateTourInquirySelectionLabel(context, locale) ? `\n${privateTourInquirySelectionLabel(context, locale)}` : ""}`
+    ? `${smallGroupCopy?.body ?? copy.emailBody}: ${context.name}\n${copy.referenceLabel}: ${context.slug}${privateTourInquirySelectionLabel(context, locale) ? `\n${privateTourInquirySelectionLabel(context, locale)}` : ""}`
     : copy.genericEmailBody;
   const completeBody = [body, tourContactDraftText(locale, draft)].filter(Boolean).join("\n\n");
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(completeBody.replace(/\r?\n/g, "\r\n"))}`;

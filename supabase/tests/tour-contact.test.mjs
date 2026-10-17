@@ -3,6 +3,7 @@ import { afterEach, test } from "node:test";
 import { tourWhatsAppHref, openTourContactFromLink, openGuideContactFromLink, privateTourQuoteApiUrl, tourContactOpenEvent, guideContactOpenEvent } from "../../lib/tourContact.ts";
 import { buildPrivateTourInquiryHref, getPrivateTourInquiryContext, privateTourInquirySelectionLabel } from "../../lib/privateTourInquiryContext.ts";
 import { privateTourProducts } from "../../lib/privateTourProducts.ts";
+import { isFiveCitySmallGroup, smallGroupInquiryCopy } from "../../lib/smallGroupInquiry.ts";
 
 const locales = ["en", "zh", "ko"];
 const beijing = "beijing-highlights-5-day-private-tour";
@@ -44,7 +45,7 @@ test("WhatsApp carries every published product/service/group choice in EN/ZH/KO"
     assert.equal(url.origin, "https://wa.me"); assert.equal(url.pathname, "/12025550123");
     assert.deepEqual([...url.searchParams.keys()], ["text"]); assert.equal(url.hash, "");
     const message = url.searchParams.get("text");
-    assert.deepEqual(message.split("\n"), [openings[locale], context.name, privateTourInquirySelectionLabel(context, locale), `https://homegroundchina.com${pathFor(locale, product.slug)}`]);
+    assert.deepEqual(message.split("\n"), [isFiveCitySmallGroup(product.slug) ? smallGroupInquiryCopy[locale].opening : openings[locale], context.name, privateTourInquirySelectionLabel(context, locale), `https://homegroundchina.com${pathFor(locale, product.slug)}`]);
     assert.doesNotMatch(message, /private@example|secret-source|private-note|utm_source|email=/);
     assert.ok(
       Number.isInteger(context.selection.travelers) &&

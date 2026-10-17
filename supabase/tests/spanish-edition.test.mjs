@@ -152,7 +152,13 @@ test('contact labels equal each page, including package IDs reused by different 
         const context = getPrivateTourInquiryContext(slug, 'en', { packageId: pkg.id, travelers: row.travelers });
         assert.ok(context, `${slug}/${pkg.id}/${row.travelers}: valid published selection`);
         assert.equal(spanishContactEdition.tourName(context), spanish.title);
-        assert.equal(spanishContactEdition.selectionLabel(context), `${pkg.label} · ${row.travelers} viajeros`);
+        if (slug === 'beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour' && pkg.id === 'small-group-departure') {
+          assert.equal(row.travelers, 2, 'published tier remains the twin-share price basis');
+          assert.equal(spanishContactEdition.selectionLabel(context), `${pkg.label} · precio con dos personas por habitación`);
+          assert.doesNotMatch(spanishContactEdition.selectionLabel(context), /· 2 viajeros/, 'the price basis is not the actual travelling party');
+        } else {
+          assert.equal(spanishContactEdition.selectionLabel(context), `${pkg.label} · ${row.travelers} viajeros`);
+        }
       }
       if (!pkg.rows.length) assert.equal(getPrivateTourInquiryContext(slug, 'en', { packageId: pkg.id, travelers: 2 }), null, `${slug}: unpriced option cannot acquire a price selection`);
     }

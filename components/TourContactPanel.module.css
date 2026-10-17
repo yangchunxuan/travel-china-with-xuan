@@ -117,3 +117,9 @@
 @media (forced-colors: active) { .primary, .emailButton, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
 
 .form select { appearance: auto; }
+
+.departureFields { min-width: 0; margin: 0 0 21px; padding: 0; border: 0; }
+.departureFields label { display: block; margin-bottom: 13px; font-size: 12px; font-weight: 550; line-height: 1.5; }
+.departureFields select { display: block; box-sizing: border-box; width: 100%; min-width: 0; min-height: 46px; margin-top: 7px; padding: 11px 13px; font: 400 16px/1.4 var(--sans, system-ui, sans-serif); color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 10px; }
+.departureFields select:disabled { background: #f5f5f5; color: #767676; }
+.departureFields p { margin: 0; font-size: 12px; line-height: 1.5; color: #606060; }
