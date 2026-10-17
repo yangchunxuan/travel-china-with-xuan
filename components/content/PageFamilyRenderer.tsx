@@ -31,8 +31,17 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
       ) : (
         <h3 id={block.id}>{block.text}</h3>
       );
-    case "paragraph":
-      return <p>{block.text}</p>;
+    case "paragraph": {
+      if (!block.link) return <p>{block.text}</p>;
+      const start = block.text.indexOf(block.link.label);
+      return (
+        <p>
+          {block.text.slice(0, start)}
+          <Link href={block.link.href}>{block.link.label}</Link>
+          {block.text.slice(start + block.link.label.length)}
+        </p>
+      );
+    }
     case "figure":
       return (
         <figure className={styles.figure} id={block.id}>

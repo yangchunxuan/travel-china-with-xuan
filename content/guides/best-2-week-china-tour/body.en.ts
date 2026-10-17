@@ -132,7 +132,7 @@ const body = {
     {
       "id": "small-group",
       "type": "paragraph",
-      "text": "The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is USD 2,230 per person, twin share. Check the departure table before choosing a route; dates may settle the decision."
+      "text": "The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is USD 2,140 per person, twin share. Check the departure table before choosing a route; dates may settle the decision."
     },
     {
       "id": "faq",

@@ -34,6 +34,28 @@ test("structured page family body accepts supported semantic blocks", () => {
   assert.equal(assertStructuredPageBody(validBody).blocks.length, 5);
 });
 
+test("paragraph links preserve plain text and require a unique phrase and safe internal target", () => {
+  const paragraph = { id: "tour-option", type: "paragraph", text: "Compare the private half-day tour before deciding." };
+  const bodyWith = (block) => ({ schemaVersion: "1.0.0", blocks: [block] });
+  assert.doesNotThrow(() => assertStructuredPageBody(bodyWith(paragraph)));
+  const link = { label: "private half-day tour", href: "/tours/xian-terracotta-warriors-half-day-private-tour/" };
+  assert.equal(assertStructuredPageBody(bodyWith({ ...paragraph, link })).blocks[0].text, paragraph.text);
+  for (const invalidLink of [
+    null,
+    { ...link, label: "" },
+    { ...link, label: "absent phrase" },
+    { ...link, href: "javascript:alert(1)" },
+    { ...link, href: "https://example.com/tours/" },
+    { ...link, href: "//example.com/tours/" },
+    { ...link, href: "/\\example.com/tours/" },
+    { ...link, href: "/\n/example.com/tours/" },
+    { ...link, html: "<b>Tour</b>" },
+  ]) {
+    assert.throws(() => assertStructuredPageBody(bodyWith({ ...paragraph, link: invalidLink })), /unique link label/u);
+  }
+  assert.throws(() => assertStructuredPageBody(bodyWith({ ...paragraph, link, text: `${paragraph.text} ${paragraph.text}` })), /unique link label/u);
+});
+
 test("structured page family body rejects incomplete FAQ pairs", () => {
   const withoutAnswer = structuredClone(validBody);
   withoutAnswer.blocks[3].items = [{ question: "Only a question?" }];

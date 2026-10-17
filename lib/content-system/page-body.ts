@@ -14,6 +14,8 @@ export type PageBodyBlock =
       readonly id: string;
       readonly type: "paragraph";
       readonly text: string;
+      /** Link one unique phrase while keeping the full paragraph as plain text. */
+      readonly link?: { readonly label: string; readonly href: string };
     }
   | {
       readonly id: string;
@@ -162,7 +164,7 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
     const allowedBlockKeys: Record<string, readonly string[]> = {
       lead: ["id", "type", "text"],
       heading: ["id", "type", "level", "text"],
-      paragraph: ["id", "type", "text"],
+      paragraph: ["id", "type", "text", "link"],
       figure: ["id", "type", "src", "alt", "width", "height", "caption"],
       list: ["id", "type", "ordered", "items"],
       callout: ["id", "type", "title", "body", "tone", "link"],
@@ -179,8 +181,21 @@ export function assertStructuredPageBody(value: unknown): StructuredPageBody {
 
     switch (candidate.type) {
       case "lead":
+        if (!nonEmpty(candidate.text)) throw new Error(`${candidate.id} needs text.`);
+        break;
       case "paragraph":
         if (!nonEmpty(candidate.text)) throw new Error(`${candidate.id} needs text.`);
+        if (
+          candidate.link !== undefined &&
+          (!isRecord(candidate.link) ||
+            !hasOnlyKeys(candidate.link, ["label", "href"]) ||
+            !validInternalPath(candidate.link.href) ||
+            /[\\\s]/u.test(candidate.link.href) ||
+            !nonEmpty(candidate.link.label) ||
+            candidate.text.split(candidate.link.label).length !== 2)
+        ) {
+          throw new Error(`${candidate.id} needs one unique link label in its text and an internal path.`);
+        }
         break;
       case "figure":
         if (
