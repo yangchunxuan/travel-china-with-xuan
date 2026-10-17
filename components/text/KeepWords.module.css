@@ -9,3 +9,6 @@
   overflow-wrap: break-word;
   word-break: keep-all;
 }
+
+/* German route labels can be longer than a narrow card. */
+.keep:lang(de) { white-space: normal; }

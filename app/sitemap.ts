@@ -22,6 +22,7 @@ import { spanishGuidePathBySourceId, spanishSitePagePathByEnglishPath } from "..
 import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides";
 import { spanishSite } from "../lib/spanishSite";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy";
+import { germanSitePagePathByEnglishPath } from "../lib/germanEditionIndex";
 import { frenchSitePagePathByEnglishPath } from "../lib/frenchEditionIndex";
 import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
 import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
@@ -127,10 +128,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ko: "/ko/tours/zhangjiajie-4-day-private-tour/",
     ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
     fr: "/fr/tours/zhangjiajie-4-day-private-tour/",
+    de: "/de/tours/zhangjiajie-4-day-private-tour/",
     es: "/es/tours/zhangjiajie-4-day-private-tour/",
     "x-default": "/tours/zhangjiajie-4-day-private-tour/",
   };
-  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", es: "/es/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
+  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", de: "/de/tours/xian-terracotta-warriors-half-day-private-tour/", es: "/es/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
   const legacyPaths = new Set<string>(Object.values(legacyAlternates));
   // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
   const japaneseSitePages = [
@@ -275,9 +277,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
     })),
   ];
-  const serviceEditionEntries: MetadataRoute.Sitemap = (['fr', 'es'] as const).flatMap(language => serviceDetailSlugs.map(slug => ({
+  const germanEntries: MetadataRoute.Sitemap = [
+    ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.de}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
+    ...Object.entries(germanSitePagePathByEnglishPath).map(([en,path]) => ({
+      url: `${base}${path}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: path === "/de/" ? 0.8 : 0.6,
+      alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
+    })),
+    { url: `${base}/de/contact/`, lastModified: "2026-10-17", changeFrequency: "monthly", priority: 0.5 },
+    ...privateTourProducts.map(product => ({
+      url: `${base}/de/tours/${product.slug}/`, lastModified: product.dateModified > "2026-10-17" ? product.dateModified : "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7,
+      alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
+    })),
+  ];
+  const serviceEditionEntries: MetadataRoute.Sitemap = (['fr', 'es', 'de'] as const).flatMap(language => serviceDetailSlugs.map(slug => ({
     url: `${base}${serviceEditionPath(language, slug)}`, lastModified: '2026-10-17', changeFrequency: 'monthly' as const, priority: 0.67,
     alternates: { languages: absoluteJaPilotAlternates(serviceDetailAlternates(slug)) },
   })));
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...serviceEditionEntries];
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...serviceEditionEntries];
 }

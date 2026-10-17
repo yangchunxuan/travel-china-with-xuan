@@ -422,6 +422,7 @@ export function getGuidesHubLanguagePaths() {
     ja: "/ja/guides/",
     es: "/es/guias/",
     fr: "/fr/guides/",
+    de: "/de/guides/",
     "x-default": copies.en.path,
   } as const;
 }

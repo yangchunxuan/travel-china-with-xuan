@@ -1,4 +1,5 @@
 import { homegroundBusiness } from "./homegroundBusiness";
+import { germanSitePagePathByEnglishPath } from './germanEditionIndex';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
 import { spanishSitePagePathByEnglishPath } from "./spanishEditionIndex";
 
@@ -42,8 +43,8 @@ export const japaneseLegalLinks: readonly { href: string; label: string }[] = [
 ];
 
 export interface JapaneseLanguagePath {
-  readonly label: "EN" | "中文" | "한국어" | "日本語";
-  readonly lang: "en" | "zh-Hans" | "ko" | "ja";
+  readonly label: "EN" | "中文" | "한국어" | "日本語" | "DE";
+  readonly lang: "en" | "zh-Hans" | "ko" | "ja" | "de";
   readonly path: string;
 }
 
@@ -57,11 +58,13 @@ export function japaneseLanguagePaths(
   overrides: Partial<Record<"zh" | "ko", string>> = {},
 ): readonly JapaneseLanguagePath[] {
   const suffix = enPath.replace(/^\//, "");
+  const germanPath = germanSitePagePathByEnglishPath[enPath] ?? (/^\/tours\/[^/]+\/$/.test(enPath) ? `/de${enPath}` : undefined);
   return [
     { label: "EN", lang: "en", path: enPath },
     { label: "中文", lang: "zh-Hans", path: overrides.zh ?? `/zh/${suffix}` },
     { label: "한국어", lang: "ko", path: overrides.ko ?? `/ko/${suffix}` },
     { label: "日本語", lang: "ja", path: jaPath },
+    ...(germanPath ? [{ label: "DE" as const, lang: "de" as const, path: germanPath }] : []),
   ];
 }
 
@@ -76,7 +79,7 @@ export function withJapaneseAlternate<
   const es = spanishSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"];
   return {
     ...metadata,
-    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(es ? { es } : {}), ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
+    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { de: germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}), ...(es ? { es } : {}), ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
   };
 }
 
@@ -94,6 +97,7 @@ export function japaneseAlternates(
   // The home and guides pages also have a Spanish page; hreflang only.
   const es = spanishSitePagePathByEnglishPath[enPath];
   const fr = frenchSitePagePathByEnglishPath[enPath];
+  const de = germanSitePagePathByEnglishPath[enPath];
   return {
     en: en.path,
     "zh-Hans": zh.path,
@@ -101,6 +105,7 @@ export function japaneseAlternates(
     ja: ja.path,
     ...(es ? { es } : {}),
     ...(fr ? { fr } : {}),
+    ...(de ? { de } : {}),
     "x-default": en.path,
   } as const;
 }

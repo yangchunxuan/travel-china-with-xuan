@@ -105,9 +105,9 @@ const fullTripCopy = load('lib/fullTripSupportEditions.ts');
 const fullTripMessage = load('lib/fullTripSupportMessage.ts');
 const carCopy = load('lib/privateCarServiceEditions.ts');
 const carMessage = load('lib/privateCarServiceMessage.ts');
-const languages = ['fr', 'es'];
+const languages = ['fr', 'es', 'de'];
 
-test('eight real service routes generate their own canonical and reciprocal five-language alternates', async () => {
+test('twelve real service routes generate their own canonical and reciprocal six-language alternates', async () => {
   const pageStubs = Object.fromEntries([
     ['PrivateGuideServicesPage'], ['PrivateCarServicesPage'], ['AttractionReservationsPage'], ['FullTripSupportPage'],
   ].map(([name]) => [`components/${name}.tsx`, { [name]: function service() {} }]));
@@ -116,7 +116,7 @@ test('eight real service routes generate their own canonical and reciprocal five
   const componentNames = ['PrivateGuideServicesPage', 'PrivateCarServicesPage', 'AttractionReservationsPage', 'FullTripSupportPage'];
   assert.equal(paths.serviceDetailSlugs.length, 4);
   for (const language of languages) {
-    const folder = language === 'fr' ? 'french' : 'spanish';
+    const folder = language === 'de' ? 'german' : language === 'fr' ? 'french' : 'spanish';
     const route = routeLoad(`app/(${folder})/${language}/services/[service]/page.tsx`);
     assert.equal(route.dynamicParams, false);
     assert.deepEqual(plain(route.generateStaticParams()).map(item => item.service), plain(paths.serviceDetailSlugs));
@@ -126,8 +126,8 @@ test('eight real service routes generate their own canonical and reciprocal five
       const canonical = `/${language}/services/${slug}/`;
       assert.equal(metadata.alternates.canonical, canonical);
       assert.equal(metadata.openGraph.url, canonical);
-      assert.deepEqual(Object.keys(metadata.alternates.languages).sort(), ['en', 'es', 'fr', 'ko', 'x-default', 'zh-Hans'].sort());
-      for (const other of ['en', 'zh-Hans', 'ko', 'fr', 'es', 'x-default']) {
+      assert.deepEqual(Object.keys(metadata.alternates.languages).sort(), ['de', 'en', 'es', 'fr', 'ko', 'x-default', 'zh-Hans'].sort());
+      for (const other of ['en', 'zh-Hans', 'ko', 'fr', 'es', 'de', 'x-default']) {
         const prefix = other === 'en' || other === 'x-default' ? '' : `/${other === 'zh-Hans' ? 'zh' : other}`;
         assert.equal(metadata.alternates.languages[other], `${prefix}/services/${slug}/`);
       }
@@ -138,7 +138,7 @@ test('eight real service routes generate their own canonical and reciprocal five
       assert.equal(page.type, pageStubs[`components/${componentNames[index]}.tsx`][componentNames[index]]);
       assert.deepEqual(plain(page.props), { locale: 'en', editionLocale: language });
       const switcher = paths.serviceDetailLanguagePaths(slug);
-      assert.equal(switcher.length, 5);
+      assert.equal(switcher.length, 6);
       assert.equal(switcher.some(item => item.path.includes('/ja/')), false);
     }
     await assert.rejects(route.generateMetadata({ params: Promise.resolve({ service: 'invented-service' }) }), /NOT_FOUND/);
@@ -161,9 +161,9 @@ for (const language of languages) {
     body = new URL(href('whatsapp')).searchParams.get('text');
     const email = new URL(href('email'));
     assert.equal(email.searchParams.get('body'), body);
-    assert.match(email.searchParams.get('subject'), language === 'fr' ? /francophone/i : /española/i);
-    assert.match(body, language === 'fr' ? /francophone/ : /habla española/);
-    assert.match(body, language === 'fr' ? /devis séparé/ : /presupuesto aparte/);
+    assert.match(email.searchParams.get('subject'), language === 'de' ? /deutschsprachiger/i : language === 'fr' ? /francophone/i : /española/i);
+    assert.match(body, language === 'de' ? /deutschsprachiger/ : language === 'fr' ? /francophone/ : /habla española/);
+    assert.match(body, language === 'de' ? /Verfügbarkeit.*bestätigen/ : language === 'fr' ? /devis séparé/ : /presupuesto aparte/);
     assert.doesNotMatch(body, /CNY|USD|RMB/);
     assert.ok(body.endsWith(`https://homegroundchina.com/${language}/services/private-english-speaking-guides/`));
     for (const city of guideRates.privateGuideCities) {
@@ -190,8 +190,8 @@ for (const language of languages) {
     assert.equal(props.attractions.some(item => item.id === 'shanghai-museum-east'), false, 'walk-in attraction must not incur a reservation fee');
     assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
     assert.match(copy.guarantee, /8/);
-    assert.match(copy.guarantee, language === 'fr' ? /sauf.*sans garantie/ : /salvo.*sin garantía/);
-    assert.match(props.lateRequestNote, language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
+    assert.match(copy.guarantee, language === 'de' ? /außer.*nicht garantiert/ : language === 'fr' ? /sauf.*sans garantie/ : /salvo.*sin garantía/);
+    assert.match(props.lateRequestNote, language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
     const h = hooks(), uiLoad = loader({ react: h.react });
     const { AttractionReservationEnquiry } = uiLoad('components/AttractionReservationEnquiry.tsx');
     let tree = h.render(AttractionReservationEnquiry, props);
@@ -203,7 +203,7 @@ for (const language of languages) {
     }
     one(tree, node => node.props?.name === 'travellers', 'party size').props.onChange({ target: { value: '3' } });
     tree = h.render(AttractionReservationEnquiry, props);
-    const expected = new Intl.NumberFormat(language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(270);
+    const expected = new Intl.NumberFormat(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(270);
     assert.equal(fee(), expected, '45 × 3 travellers × 2 attractions');
     const whatsapp = one(tree, node => node.props?.['data-reservation-channel'] === 'whatsapp', 'WhatsApp draft');
     const email = one(tree, node => node.props?.['data-reservation-channel'] === 'email', 'email draft');

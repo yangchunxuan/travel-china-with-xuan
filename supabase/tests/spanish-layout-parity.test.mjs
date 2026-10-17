@@ -9,6 +9,7 @@ import { getPublishedPrivateTourCatalog } from '../../lib/publishedPrivateTourCa
 import { getPrivateTourFacets } from '../../lib/privateTourCatalogFacets.ts';
 import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
+import { germanSitePagePathByEnglishPath } from '../../lib/germanEditionIndex.ts';
 import { frenchSitePagePathByEnglishPath } from '../../lib/frenchEditionIndex.ts';
 import { homegroundBusiness } from '../../lib/homegroundBusiness.ts';
 import { spanishGuides, spanishGuidePath } from '../../lib/spanishGuides.ts';
@@ -44,7 +45,7 @@ const legacy = await load('lib/spanishLegacyTours.ts', {
   './privateTourProducts': { formatPrivateTourPrice }, './zhangjiajiePrivateTourPreview': original,
   './terracottaHalfDayTour': halfDay, './spanishLegacyContactCopy': legacyContact,
 });
-const spanishSite = await load('lib/spanishSite.ts', { './frenchEditionIndex': { frenchSitePagePathByEnglishPath }, './homegroundBusiness': { homegroundBusiness } });
+const spanishSite = await load('lib/spanishSite.ts', { './germanEditionIndex.ts': { germanSitePagePathByEnglishPath }, './frenchEditionIndex': { frenchSitePagePathByEnglishPath }, './homegroundBusiness': { homegroundBusiness } });
 const classic = await load('lib/spanishLegacyPresentation.ts', { './zhangjiajiePrivateTourPreview': original, './spanishLegacyTours': legacy, './spanishSite': spanishSite });
 const hub = await load('components/SpanishToursHubPage.tsx', {
   './PrivateToursHubPage': { PrivateToursHubPage: () => null }, './SpanishChrome': { SpanishSiteHeader: () => null, SpanishSiteFooter: () => null },

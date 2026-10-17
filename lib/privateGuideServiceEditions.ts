@@ -1,7 +1,9 @@
+import { germanPrivateGuideServiceCopy, germanPrivateGuideLanguageCopy } from './germanPrivateGuideServiceCopy.ts';
 import type { PrivateGuideServiceCopy } from './privateGuideServicesI18n';
 import type { ServiceEditionLocale } from './serviceEdition';
 
 const copies: Record<ServiceEditionLocale, PrivateGuideServiceCopy> = {
+  de: germanPrivateGuideServiceCopy,
   fr: {
     metadata: {
       title: 'Guide privé anglophone en Chine : tarifs pour une journée de 8 h',
@@ -99,6 +101,7 @@ export function getPrivateGuideServiceEditionCopy(language: ServiceEditionLocale
 }
 
 const languageCopy = {
+  de: germanPrivateGuideLanguageCopy,
   fr: {
     label: 'Langue souhaitée pour le guide',
     english: 'Anglais · tarifs indicatifs publiés',
@@ -124,5 +127,5 @@ export function getPrivateGuideServiceEditionLanguageCopy(language: ServiceEditi
 }
 
 export function formatPrivateGuideEditionPrice(amount: number, language: ServiceEditionLocale): string {
-  return new Intl.NumberFormat(language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
+  return new Intl.NumberFormat(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
 }

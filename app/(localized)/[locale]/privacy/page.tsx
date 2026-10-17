@@ -43,6 +43,7 @@ export async function generateMetadata({
         "zh-Hans": "/zh/privacy/",
         ja: "/ja/privacy/",
         fr: "/fr/privacy/",
+      de: "/de/privacy/",
         es: "/es/privacy/",
         "x-default": "/privacy/",
       },

@@ -1,0 +1,5 @@
+/* German compounds need natural wrapping within the existing page widths. */
+html[lang="de"] main {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}

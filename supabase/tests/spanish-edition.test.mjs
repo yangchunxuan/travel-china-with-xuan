@@ -240,7 +240,7 @@ test('Spanish pages use the original homepage, header and contact components wit
   assert.match(header, /openTourContactForContext\(event,\s*getPrivateTourInquiryContext\(tourSlug,\s*'en',\s*selected\?\.slug\s*===\s*tourSlug\s*\?\s*selected\.selection\s*:\s*undefined\)/);
   assert.match(header, /contactHref=\{`\$\{currentPath\}#contact`\}/);
   const links = read('components/JapaneseJiangnanInteraction.tsx');
-  assert.ok(links.includes('/^\\/(?:es|fr)\\//.test(window.location.pathname)'));
+  assert.ok(links.includes('/^\\/(?:es|fr|de)\\//.test(window.location.pathname)'));
   assert.match(links, /openTourContactForContext\(event, getPrivateTourInquiryContext\(/);
   assert.match(links, /const customGroup = otherGroup && isZhangjiajieCustomGroupTour\(slug\);/);
   const { sheetSteps, sheetHeights } = spanishContactEdition;

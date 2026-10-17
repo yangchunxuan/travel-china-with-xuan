@@ -1,3 +1,4 @@
+import { germanSitePagePathByEnglishPath } from './germanEditionIndex.ts';
 import type { Metadata } from 'next';
 import { homegroundBusiness } from './homegroundBusiness.ts';
 import { spanishTourPagePath, spanishSitePagePathByEnglishPath } from './spanishEditionIndex.ts';
@@ -19,10 +20,12 @@ export const frenchLegalLinks = [
 export interface FrenchLanguagePath { readonly label: string; readonly lang: string; readonly path: string; }
 export function frenchLanguagePaths(enPath: string, frPath: string): readonly FrenchLanguagePath[] {
   const slug = /^\/tours\/([^/]+)\/$/.exec(enPath)?.[1];
+  const de = slug ? `/de${enPath}` : germanSitePagePathByEnglishPath[enPath];
   const es = slug ? spanishTourPagePath(slug) : spanishSitePagePathByEnglishPath[enPath];
   return [{ label: 'FR', lang: 'fr', path: frPath }, { label: 'EN', lang: 'en', path: enPath }, { label: '中文', lang: 'zh-Hans', path: `/zh${enPath}` }, { label: '한국어', lang: 'ko', path: `/ko${enPath}` },
     ...(slug === 'xian-terracotta-warriors-half-day-private-tour' ? [] : [{label:'日本語',lang:'ja',path:`/ja${enPath}`}]),
     ...(es ? [{label:'ES',lang:'es',path:es}] : []),
+    ...(de ? [{ label: 'DE', lang: 'de', path: de }] : []),
   ];
 }
 export const frenchGuideLanguageNote = 'Les prix affichés correspondent à la formule décrite. Un guide francophone n’est pas inclus : il est proposé en supplément, sur devis, selon les villes, vos dates et les disponibilités. Ce supplément est confirmé avant toute réservation.';
