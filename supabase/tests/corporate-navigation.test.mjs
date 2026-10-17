@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import test from "node:test";
+import { getHomegroundNavigationModel } from "../../lib/homegroundNavigationModel.ts";
+
+test("English Services ends with the published company-travel entrance", () => {
+  const navigation = getHomegroundNavigationModel("en", "/");
+  const entries = navigation.menus.services.entries;
+  assert.deepEqual(entries.map((item) => item.id), [
+    "attraction-tickets", "english-guides", "private-car", "trip-support", "corporate-travel",
+  ]);
+  assert.equal(entries.at(-1).href, "/corporate-travel/");
+  assert.equal(entries.at(-1).label, "For Companies");
+  assert.equal(entries.at(-1).description, "Company trips, incentive travel and small meetings");
+});
+
+test("untranslated navigation does not invent localised company-travel pages", () => {
+  for (const locale of ["zh", "ko"]) {
+    const navigation = getHomegroundNavigationModel(locale, `/${locale}/`);
+    assert.equal(navigation.menus.services.entries.length, 4);
+    assert.ok(navigation.menus.services.entries.every((item) => item.id !== "corporate-travel"));
+    assert.ok(navigation.menus.services.entries.every((item) => item.href.startsWith(`/${locale}/services/`)));
+  }
+});
+
+test("translated editions can reuse the English model without English-only entrances", () => {
+  const navigation = getHomegroundNavigationModel("en", "/", { includeCorporateTravel: false });
+  assert.equal(navigation.menus.services.entries.length, 4);
+  assert.ok(navigation.menus.services.entries.every((item) => item.id !== "corporate-travel"));
+});
+
+test("French, Spanish and German header adapters opt out of English-only entrances", async () => {
+  for (const language of ["French", "Spanish", "German"]) {
+    const header = await readFile(new URL(`../../components/${language}Header.tsx`, import.meta.url), "utf8");
+    assert.match(header, /getHomegroundNavigationModel\('en', '\/', \{ includeCorporateTravel: false \}\)/);
+  }
+});

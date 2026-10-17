@@ -32,6 +32,7 @@ const menuIcons = {
   "english-guides": UserRound,
   "private-car": Car,
   "trip-support": Route,
+  "corporate-travel": Briefcase,
   company: Flag,
   planning: Users,
   credentials: BadgeCheck,
