@@ -317,6 +317,15 @@ export default {
       text: "A guide is not required to make the passport valid, unlock a special pit order or operate the museum shuttle. A driver provides transport; a guide provides interpretation and visitor support; a ticket channel issues the reservation. If you hire help, ask which roles are actually included, which language is confirmed, whether Lishan Garden is covered and where the return vehicle waits. The museum currently publishes separate ticket and explanation hotlines, but language availability and service times remain dynamic.",
     },
     {
+      id: "guided-half-day-option",
+      type: "paragraph",
+      text: "For a focused visit with hotel transfers and a private English-speaking guide, our Terracotta Warriors private half-day tour takes about 5–6 hours door to door. A guided visit to Lishan Garden is outside its base itinerary.",
+      link: {
+        label: "Terracotta Warriors private half-day tour",
+        href: "/tours/xian-terracotta-warriors-half-day-private-tour/",
+      },
+    },
+    {
       id: "parents-boundary",
       type: "callout",
       title: "With older parents, Lishan Garden is a same-day decision, not a compulsory endurance test",
