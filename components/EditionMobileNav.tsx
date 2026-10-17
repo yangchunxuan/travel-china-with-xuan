@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties, type MouseEvent, type RefObject } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type RefObject } from "react";
 import headerStyles from "./HomegroundHeader.module.css";
 
 export interface EditionMobileNavLink {
@@ -29,6 +29,7 @@ export function EditionMobileNav({
   navRef,
   primaryLinks,
   secondaryLinks = [],
+  disclosure,
   cta,
   languageLabel,
   languages,
@@ -41,6 +42,7 @@ export function EditionMobileNav({
   navRef: RefObject<HTMLElement | null>;
   primaryLinks: readonly EditionMobileNavLink[];
   secondaryLinks?: readonly EditionMobileNavLink[];
+  disclosure?: { href: string; label: string; description: string; entries: readonly { href: string; label: string; description: string }[] };
   cta: { href: string; label: string; onClick?: (event: MouseEvent<HTMLAnchorElement>) => void };
   languageLabel: string;
   languages: readonly EditionMobileNavLanguage[];
@@ -49,6 +51,16 @@ export function EditionMobileNav({
   onClose: () => void;
 }) {
   const [entered, setEntered] = useState(false);
+  const [disclosureOpen, setDisclosureOpen] = useState(false);
+  const disclosureRef = useRef<HTMLLIElement>(null);
+  useEffect(() => {
+    if (!open) setDisclosureOpen(false);
+  }, [open]);
+  useEffect(() => {
+    if (!open || !disclosureOpen) return;
+    const frame = window.requestAnimationFrame(() => disclosureRef.current?.scrollIntoView({ block: "nearest" }));
+    return () => window.cancelAnimationFrame(frame);
+  }, [open, disclosureOpen]);
 
   useEffect(() => {
     if (!open) {
@@ -92,19 +104,31 @@ export function EditionMobileNav({
       id={id}
       ref={navRef}
     >
-      <div className={headerStyles.mobileMenuScroll}>
+      <div className={headerStyles.mobileMenuScroll} data-has-open={disclosureOpen ? "true" : undefined}>
         <ul className={headerStyles.mobileSections} data-tier="primary">
           {primaryLinks.map(item)}
+          {disclosure && (
+            <li className={headerStyles.mobileSection} data-section="corporate" data-open={disclosureOpen ? "true" : undefined} ref={disclosureRef} style={{ "--menu-index": primaryLinks.length } as CSSProperties}>
+              <button className={headerStyles.mobileSectionToggle} type="button" aria-expanded={disclosureOpen} aria-controls={`${id}-corporate-panel`} id={`${id}-corporate-toggle`} onClick={() => setDisclosureOpen((value) => !value)}>
+                <span className={`${headerStyles.mobileSectionLabel}${labelClassName ? ` ${labelClassName}` : ""}`}>{disclosure.label}</span>
+              </button>
+              <div className={headerStyles.mobileSectionPanel} role="region" aria-labelledby={`${id}-corporate-toggle`} id={`${id}-corporate-panel`} inert={!disclosureOpen}>
+                <div><ul aria-label={disclosure.label} className={headerStyles.mobileSubmenu} data-menu="corporate">
+                  {[disclosure, ...disclosure.entries].map((entry, index) => <li key={entry.href} style={{ "--entry-index": index } as CSSProperties}><a href={entry.href} onClick={onClose}><span className={headerStyles.mobileEntryLabel}>{entry.label}</span><span className={headerStyles.mobileEntryDescription}>{entry.description}</span></a></li>)}
+                </ul></div>
+              </div>
+            </li>
+          )}
         </ul>
         {secondaryLinks.length > 0 ? (
           <ul className={headerStyles.mobileSections} data-tier="secondary">
-            {secondaryLinks.map((link, index) => item(link, primaryLinks.length + index))}
+            {secondaryLinks.map((link, index) => item(link, primaryLinks.length + (disclosure ? 1 : 0) + index))}
           </ul>
         ) : null}
       </div>
       <div
         className={headerStyles.mobileUtility}
-        style={{ "--menu-index": primaryLinks.length + secondaryLinks.length } as CSSProperties}
+        style={{ "--menu-index": primaryLinks.length + secondaryLinks.length + (disclosure ? 1 : 0) } as CSSProperties}
       >
         <a
           className={headerStyles.mobileCta}

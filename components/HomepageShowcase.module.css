@@ -273,14 +273,14 @@
 
 @keyframes homepage-title-reveal {
   from {
-    opacity: 0.18;
+    opacity: 1;
     transform: translateY(0.22em);
   }
 }
 
 @keyframes homepage-support-reveal {
   from {
-    opacity: 0.35;
+    opacity: 1;
     transform: translateY(8px);
   }
 }

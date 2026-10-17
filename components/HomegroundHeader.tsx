@@ -34,6 +34,7 @@ import {
   type HomegroundPrimaryNavigationItem,
   type HomegroundSubmenuId,
 } from "../lib/homegroundNavigationModel";
+import { getCorporateTravelNavigation } from "../lib/corporateTravelNavigation";
 import { getTravelServicesHubCopy } from "../lib/travelServicesHubI18n";
 import { routeServiceIds } from "../lib/routeServiceInterest";
 import {
@@ -77,7 +78,8 @@ export type HomegroundPageContext =
   | "content";
 
 type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr" | "de" | "ar";
-type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
+type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides"> | "corporate";
+type HeaderPrimaryItem = HomegroundPrimaryNavigationItem | ReturnType<typeof getCorporateTravelNavigation>["item"];
 
 interface HomegroundHeaderProps {
   locale?: HomegroundLocale;
@@ -270,6 +272,10 @@ export function HomegroundHeader({
   // Every /services/ page (hub, guides, itinerary review) and the
   // reservation page sit under the Services item.
   const corporateIsCurrent = Boolean(pathname?.startsWith("/corporate-travel/"));
+  const corporateNavigation = getCorporateTravelNavigation(currentLanguage);
+  const navigationItems: HeaderPrimaryItem[] = primaryNavigation.items.flatMap<HeaderPrimaryItem>((item) =>
+    item.id === "tours" ? [item, corporateNavigation.item] : [item],
+  );
   const servicesAreCurrent =
     !corporateIsCurrent && (pageContext === "services" || pageContext === "reservations");
   const planningIsCurrent = pageContext === "studio";
@@ -578,17 +584,17 @@ export function HomegroundHeader({
 
   const close = () => setOpen(false);
   const trackNavigationClick = (
-    item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq",
+    item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq" | "corporate",
     surface:
       | "desktop-primary"
-      | `desktop-${"destinations" | "tours" | "services" | "studio"}-menu`
+      | `desktop-${"destinations" | "tours" | "services" | "studio" | "corporate"}-menu`
       | "desktop-utility"
       | "mobile-primary"
-      | `mobile-${"destinations" | "tours" | "services" | "studio"}-menu`
+      | `mobile-${"destinations" | "tours" | "services" | "studio" | "corporate"}-menu`
       | "mobile-utility",
   ) => {
     trackEvent("navigation_clicked", {
-      navigation_item: item,
+      navigation_item: item === "corporate" ? "corporate-travel" : item,
       navigation_surface: surface,
       page_language: currentLanguage,
     });
@@ -723,10 +729,10 @@ export function HomegroundHeader({
     <a aria-current={currentLanguage === "ar" ? "page" : undefined} href={arabicLanguageHref} hrefLang="ar" lang="ar" onClick={(event) => handleLanguageChange(event, "ar")}><span className={styles.languageChoiceShort}>العربية</span><span className={styles.languageChoiceEndonym}>العربية</span></a>
   ) : null;
 
-  const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
-    const state = navItemState(item.id);
+  const renderMobileSection = (item: HeaderPrimaryItem, index: number) => {
+    const state = item.id === "corporate" ? { active: corporateIsCurrent, exact: pathname === item.href } : navItemState(item.id);
     const current = state.exact ? "page" : state.active ? "location" : undefined;
-    const menu = submenuFor(item.id);
+    const menu = item.id === "corporate" ? corporateNavigation.menu : submenuFor(item.id);
     if (!menu) {
       return (
         <li
@@ -784,17 +790,18 @@ export function HomegroundHeader({
         >
           <div>
             <ul aria-label={label} className={styles.mobileSubmenu} data-menu={menuId}>
-              {menuId === "services" && (
+              {(menuId === "services" || menuId === "corporate") && (
                 <li style={{ "--entry-index": 0 } as CSSProperties}>
                   <MenuLink
+                    native={menuId === "corporate" && currentLanguage !== "en"}
                     aria-current={pathname === item.href ? "page" : undefined}
                     href={item.href}
                     onClick={() => {
-                      trackNavigationClick(item.id, "mobile-services-menu");
+                      trackNavigationClick(item.id, `mobile-${menuId}-menu`);
                       close();
                     }}
                   >
-                    <span className={styles.mobileEntryLabel}>{edition?.servicesOverview ?? getTravelServicesHubCopy(locale).overview}</span>
+                    <span className={styles.mobileEntryLabel}>{menuId === "corporate" ? corporateNavigation.item.label : edition?.servicesOverview ?? getTravelServicesHubCopy(locale).overview}</span>
                     <span className={styles.mobileEntryDescription}>{item.description}</span>
                   </MenuLink>
                 </li>
@@ -802,11 +809,12 @@ export function HomegroundHeader({
               {menu.entries.map((entry, entryIndex) => (
                 <li
                   key={entry.id}
-                  style={{ "--entry-index": entryIndex + (menuId === "services" ? 1 : 0) } as CSSProperties}
+                  style={{ "--entry-index": entryIndex + (menuId === "services" || menuId === "corporate" ? 1 : 0) } as CSSProperties}
                 >
                   <MenuLink
+                    native={menuId === "corporate" && currentLanguage !== "en"}
                     aria-current={
-                      entry.href.includes("?")
+                      (entry.href.includes("?") || entry.href.includes("#"))
                         ? undefined
                         : entry.href.split(/[?#]/u)[0] === pathname
                           ? "page"
@@ -865,7 +873,19 @@ export function HomegroundHeader({
           className={styles.desktopNav}
           aria-label={copy.navigation.primaryLabel}
         >
-          {primaryNavigation.items.map((item) => {
+          {navigationItems.map((item) => {
+            if (item.id === "corporate") return (
+              <HeaderNavMenu
+                active={corporateIsCurrent}
+                ariaCurrent={corporateIsCurrent ? pathname === item.href ? "page" : "location" : undefined}
+                entries={corporateNavigation.menu.entries}
+                item={item}
+                key={item.id}
+                nativeNavigation={currentLanguage !== "en"}
+                onNavigate={(target) => trackNavigationClick(target ?? "corporate-travel", target ? "desktop-corporate-menu" : "desktop-primary")}
+                toggleLabel={corporateNavigation.menu.toggle}
+              />
+            );
             const state = navItemState(item.id);
             const current = state.exact ? "page" : state.active ? "location" : undefined;
             const menu = submenuFor(item.id);
@@ -899,16 +919,7 @@ export function HomegroundHeader({
               </Link>
             );
           })}
-          {currentLanguage === "en" && (
-            <Link
-              aria-current={corporateIsCurrent ? pathname === "/corporate-travel/" ? "page" : "location" : undefined}
-              data-active={corporateIsCurrent ? "true" : undefined}
-              href="/corporate-travel/"
-              onClick={() => trackNavigationClick("corporate-travel", "desktop-primary")}
-            >
-              For Companies
-            </Link>
-          )}
+
         </nav>
 
         <div className={styles.headerActions}>
@@ -1007,19 +1018,19 @@ export function HomegroundHeader({
             data-has-open={expandedSection ? "true" : undefined}
           >
             <ul className={styles.mobileSections} data-tier="primary">
-              {primaryNavigation.items
+              {navigationItems
                 .filter((item) => item.id !== "guides" && item.id !== "studio")
                 .map((item, index) => renderMobileSection(item, index))}
             </ul>
             <ul className={styles.mobileSections} data-tier="secondary">
               {primaryNavigation.items
                 .filter((item) => item.id === "guides" || item.id === "studio")
-                .map((item, index) => renderMobileSection(item, index + 3))}
+                .map((item, index) => renderMobileSection(item, index + 4))}
               <li
                 className={styles.mobileSection}
                 data-section="faq"
                 data-current={pageContext === "home" && activeHash === "#faq" ? "true" : undefined}
-                style={{ "--menu-index": 5 } as CSSProperties}
+                style={{ "--menu-index": 6 } as CSSProperties}
               >
                 <Link
                   aria-current={
@@ -1041,11 +1052,11 @@ export function HomegroundHeader({
                 </Link>
               </li>
             </ul>
-            <p className={styles.mobileTagline} style={{ "--menu-index": 6 } as CSSProperties}>
+            <p className={styles.mobileTagline} style={{ "--menu-index": 7 } as CSSProperties}>
               {copy.navigation.menuTagline}
             </p>
           </div>
-          <div className={styles.mobileUtility} style={{ "--menu-index": 7 } as CSSProperties}>
+          <div className={styles.mobileUtility} style={{ "--menu-index": 8 } as CSSProperties}>
             <Link
               className={styles.mobileCta}
               href={plannerHref}

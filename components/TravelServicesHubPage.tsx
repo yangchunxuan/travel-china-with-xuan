@@ -179,17 +179,6 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
           </ol>
         </section>
 
-        {(edition?.language ?? locale) === "en" && (
-          <section className={styles.corporate} aria-labelledby="services-companies-title">
-            <div>
-              <p className={styles.eyebrow}>For companies</p>
-              <h2 id="services-companies-title">Bringing your team to China?</h2>
-              <p>Company trips, incentive travel and small meetings, planned around your people, purpose and budget.</p>
-            </div>
-            <Link href="/corporate-travel/">Explore company trips<span aria-hidden="true">→</span></Link>
-          </section>
-        )}
-
         <section className={styles.method} aria-labelledby="service-method-title">
           <div>
             <p className={styles.eyebrow}>{copy.methodEyebrow}</p>

@@ -280,12 +280,15 @@ export function RotatingHeroTitle({
   useEffect(() => {
     if (!canRotate || effectivePaused) return;
 
+    // The narrow layout fades the whole phrase rather than staggering letters.
+    // Match its 260ms CSS exit so it does not wait invisibly for the desktop timer.
+    const exitPhaseMs = window.matchMedia("(max-width: 39.999rem)").matches ? 260 : EXIT_PHASE_MS;
     const delay =
       phase === "entering"
         ? ENTER_PHASE_MS
         : phase === "exiting"
-          ? EXIT_PHASE_MS
-          : HOLD_PHASE_MS;
+          ? exitPhaseMs
+          : HOLD_PHASE_MS + EXIT_PHASE_MS - exitPhaseMs;
     const timeout = window.setTimeout(() => {
       if (phase === "entering") {
         setPhase("holding");
