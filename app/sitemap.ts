@@ -1,3 +1,5 @@
+import { corporateAlternates, corporateLocales, corporatePath } from "../lib/corporateTravelLocalePaths";
+import { corporateTrips } from "../lib/corporateTravel";
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
 import type { MetadataRoute } from "next";
 import { getIndexableManifestEntries } from "../lib/content-system/manifest";
@@ -158,7 +160,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
     const serviceSlug = serviceDetailSlugFromPath(entry.canonicalPath);
-    const alternates = serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
+    const corporate = /^\/(?:zh\/|ko\/)?corporate-travel\/(?:([^/]+)\/)?$/.exec(entry.canonicalPath);
+    const alternates = corporate ? absoluteJaPilotAlternates(corporateAlternates(corporate[1])) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
       : structuredTour
         ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
@@ -307,5 +310,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${serviceEditionPath(language, slug)}`, lastModified: '2026-10-17', changeFrequency: 'monthly' as const, priority: 0.67,
     alternates: { languages: absoluteJaPilotAlternates(serviceDetailAlternates(slug)) },
   })));
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries];
+  const corporateEditionEntries: MetadataRoute.Sitemap = corporateLocales.filter(locale => !["en", "zh", "ko"].includes(locale)).flatMap(locale => [undefined, ...corporateTrips.map(trip => trip.slug)].map(slug => ({
+    url: `${base}${corporatePath(locale, slug)}`, changeFrequency: "monthly" as const, priority: 0.67,
+    alternates: { languages: absoluteJaPilotAlternates(corporateAlternates(slug)) },
+  })));
+  return [...corporateEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries];
 }

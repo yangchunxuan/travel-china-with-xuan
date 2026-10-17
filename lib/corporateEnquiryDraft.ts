@@ -26,7 +26,8 @@ export interface CorporateEnquiryDraft {
 function oneLine(value: string) { return value.replace(/[\r\n\t]+/g, " ").trim(); }
 
 /** Prepare a message only; never submit, send, book or calculate a price. */
-export function buildCorporateEnquiryDraft(draft: CorporateEnquiryDraft) {
+export function buildCorporateEnquiryDraft(draft: CorporateEnquiryDraft, options: { translate?: (source: string) => string; referencePath?: string } = {}) {
+  const t = options.translate ?? ((source: string) => source);
   const company = oneLine(draft.company);
   const people = oneLine(draft.people);
   if (!company) throw new Error("Please enter your company name.");
@@ -34,25 +35,25 @@ export function buildCorporateEnquiryDraft(draft: CorporateEnquiryDraft) {
   if (!oneLine(draft.timing)) throw new Error("Please share a month or say that your dates are still open.");
   if (!Object.prototype.hasOwnProperty.call(corporatePurposeLabels, draft.purpose)) throw new Error("Please choose the purpose of your trip.");
   if (draft.trip !== "undecided" && !Object.prototype.hasOwnProperty.call(corporateTripLabels, draft.trip)) throw new Error("Please choose a sample itinerary or ask us to suggest one.");
-  const selected = draft.trip === "undecided" ? "Open to suggestions" : corporateTripLabels[draft.trip];
+  const selected = t(draft.trip === "undecided" ? "Open to suggestions" : corporateTripLabels[draft.trip]);
   return [
-    "Hi Homeground, we’d like to discuss a company trip to China.",
+    t("Hi Homeground, we’d like to discuss a company trip to China."),
     "",
-    `Company: ${company}`,
-    draft.name.trim() ? `Contact: ${oneLine(draft.name)}` : "",
-    draft.email.trim() ? `Reply email: ${oneLine(draft.email)}` : "",
-    `Purpose: ${corporatePurposeLabels[draft.purpose]}`,
-    `Estimated group: ${Number(people)} people`,
-    `Dates / duration: ${oneLine(draft.timing)}`,
-    `Starting idea: ${selected}`,
-    draft.budget.trim() ? `Budget & currency: ${oneLine(draft.budget)}` : "",
-    draft.notes.trim() ? `Other arrangements: ${draft.notes.trim()}` : "",
+    `${t("Company")}: ${company}`,
+    draft.name.trim() ? `${t("Contact")}: ${oneLine(draft.name)}` : "",
+    draft.email.trim() ? `${t("Reply email")}: ${oneLine(draft.email)}` : "",
+    `${t("Purpose")}: ${t(corporatePurposeLabels[draft.purpose])}`,
+    `${t("Estimated group")}: ${Number(people)} ${t("people")}`,
+    `${t("Dates / duration")}: ${oneLine(draft.timing)}`,
+    `${t("Starting idea")}: ${selected}`,
+    draft.budget.trim() ? `${t("Budget & currency")}: ${oneLine(draft.budget)}` : "",
+    draft.notes.trim() ? `${t("Other arrangements")}: ${draft.notes.trim()}` : "",
     "",
-    "Please help us shape the programme and confirm the arrangements, availability and written quotation before we book.",
-    `Reference: https://homegroundchina.com/corporate-travel/${draft.trip === "undecided" ? "" : `${draft.trip}/`}`,
+    t("Please help us shape the programme and confirm the arrangements, availability and written quotation before we book."),
+    `${t("Reference")}: https://homegroundchina.com${options.referencePath ?? `/corporate-travel/${draft.trip === "undecided" ? "" : `${draft.trip}/`}`}`,
   ].filter((line, i, lines) => line !== "" || (i > 0 && lines[i - 1] !== "")).join("\n");
 }
 
-export function corporateEnquiryEmailHref(email: string, draft: CorporateEnquiryDraft, body: string) {
-  return `mailto:${email}?subject=${encodeURIComponent(`Company trip enquiry — ${oneLine(draft.company)}`)}&body=${encodeURIComponent(body)}`;
+export function corporateEnquiryEmailHref(email: string, draft: CorporateEnquiryDraft, body: string, translate: (source: string) => string = (source) => source) {
+  return `mailto:${email}?subject=${encodeURIComponent(translate("Company trip enquiry — {company}").replace("{company}", oneLine(draft.company)))}&body=${encodeURIComponent(body)}`;
 }

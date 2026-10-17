@@ -9,7 +9,7 @@ import { corporateHubPath, corporateTripPath } from "../../lib/corporateTravelTy
 
 const record = (data) => ({ schemaVersion: "1.0.0", recordType: "content-node", data });
 
-test("company pages register three English-only service routes with valid entity references", async () => {
+test("company pages register all nine core-locale service routes with valid entity references", async () => {
   const nodes = buildCorporateTravelContentNodes();
   const entityRecords = JSON.parse(await readFile(new URL("../../content/entities/core-places.json", import.meta.url), "utf8"));
   const servicesParent = {
@@ -18,13 +18,15 @@ test("company pages register three English-only service routes with valid entity
   };
   const manifest = buildContentManifest([...entityRecords, record(servicesParent), ...nodes.map(record)]);
   const entries = getIndexableManifestEntries(manifest).filter((entry) => entry.contentId.startsWith("corporate-travel"));
-  assert.deepEqual(entries.map((entry) => entry.path).sort(), [corporateHubPath, ...corporateTrips.map((trip) => corporateTripPath(trip.slug))].sort());
-  assert.equal(entries.length, 3);
+  const routes = [corporateHubPath, ...corporateTrips.map((trip) => corporateTripPath(trip.slug))];
+  assert.deepEqual(entries.map((entry) => entry.path).sort(), ["", "/zh", "/ko"].flatMap(prefix => routes.map(path => prefix + path)).sort());
+  assert.equal(entries.length, 9);
   for (const entry of entries) {
     assert.equal(entry.family, "service");
-    assert.equal(entry.locale, "en");
+    assert.ok(["en", "zh", "ko"].includes(entry.locale));
     assert.equal(entry.section, "services");
-    assert.deepEqual(entry.alternates, { en: entry.path, "x-default": entry.path });
+    const english = entry.path.replace(/^\/(?:zh|ko)\//, "/");
+    assert.deepEqual(entry.alternates, { en: english, "zh-Hans": `/zh${english}`, ko: `/ko${english}`, "x-default": english });
     assert.deepEqual(entry.dates, {});
   }
 });

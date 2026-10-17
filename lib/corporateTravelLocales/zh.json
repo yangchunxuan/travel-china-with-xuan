@@ -1,0 +1,601 @@
+{
+  "ui": {
+    "Skip to content": "跳至正文",
+    "Breadcrumb": "面包屑导航",
+    "Home": "首页",
+    "For companies": "企业旅行",
+    "A few practical questions": "几个实际问题",
+    "Photo credits": "图片来源",
+    "Destination photographs illustrate the places in the programme. Images have been resized and may be cropped for the layout.": "目的地照片展示行程中的地点。图片已调整尺寸，并可能因版式需要而裁切。",
+    "China, together": "一起，走进中国",
+    "Company Trips & Team Retreats in China": "中国企业旅行与团队相聚",
+    "Bring your team together.": "让团队聚在一起。",
+    "We’ll take care of the journey.": "旅途交给我们安排。",
+    "Company trips, incentive travel and small meetings, planned around your people, purpose and budget.": "围绕团队成员、出行目的和预算，安排公司旅行、奖励旅游及小型会议。",
+    "Tell us about your team": "告诉我们您的团队情况",
+    "Private programmes in China": "中国境内专属行程",
+    "For companies worldwide": "面向全球企业",
+    "Proposed for your dates and budget": "按您的日期和预算拟定方案",
+    "Three reasons to travel": "三种出行目的",
+    "Begin with the reason.": "先说出行的理由。",
+    "We’ll shape the journey.": "我们来安排旅程。",
+    "A good company trip has a clear purpose, and enough breathing room for people to enjoy being there. These are three ways we can help.": "一次好的公司旅行，既有清晰的目的，也留有让大家享受旅程的余地。我们可以从以下三个方向协助您。",
+    "Two places to start": "两条行程，作为起点",
+    "A change of scene.": "换个环境。",
+    "A shared experience.": "共享一段经历。",
+    "Two four-day sample programmes, each with a different rhythm. Use them to start a conversation; we’ll adapt the details to your team.": "两条节奏各异的四天示例行程，可作为沟通的起点；具体安排会根据您的团队调整。",
+    "Explore the sample programme": "查看示例行程",
+    "For the person organising it all": "为统筹整趟行程的人",
+    "One programme.": "一份行程。",
+    "The details connected.": "让各项安排衔接起来。",
+    "We bring the arrangements on the ground into a coherent plan, with responsibilities agreed before the trip.": "我们将当地各项安排整合为连贯的计划，并在出发前明确各方职责。",
+    "A sensible route and pace": "合理的路线与节奏",
+    "Balance travel time, shared activities, working sessions and time to yourselves. Include a practical alternative when weather affects the plan.": "平衡交通时间、集体活动、工作会议及自由时间，并为受天气影响的安排准备可行的替代方案。",
+    "Stays, transfers and meals": "住宿、接送与用餐",
+    "Work through rooming preferences, separate arrivals, luggage and dietary requirements, then check the appropriate options for your dates.": "了解分房偏好、分批抵达、行李及饮食需求，再根据您的日期核实合适的选择。",
+    "Space for your own programme": "为团队自己的安排留出空间",
+    "Coordinate a meeting room, group dinner or recognition evening where requested. Venue, equipment and catering requirements are quoted specifically.": "按需协调会议室、团队晚餐或表彰晚会。场地、设备及餐饮需求均单独核价。",
+    "Clear coordination on the ground": "清晰的当地协调安排",
+    "Set out the guide, transport and local support arrangements, together with who your organiser should contact during the programme.": "明确导游、交通及当地支持安排，以及行程中负责人应联系的对接人员。",
+    "A proposal you can share internally": "方便内部讨论的方案",
+    "Your people.": "您的团队。",
+    "Your dates.": "您的日期。",
+    "A clear quote.": "清晰的报价。",
+    "Single rooms or shared rooms? A quiet team dinner or an awards evening? The details make a difference to both the experience and the budget.": "单人入住还是双床合住？轻松的团队晚餐还是颁奖晚会？这些细节都会影响体验和预算。",
+    "We quote for the actual programme: headcount, rooming, hotel standard, transport, meals, activities and any meeting needs. Before booking, you receive the scope, total price, separate options and payment and cancellation conditions in writing.": "我们按实际行程报价，包括人数、分房、酒店标准、交通、餐饮、活动及会议需求。预订前，您会收到书面的服务范围、总价、单列选项，以及付款和取消条件。",
+    "The sample programmes are not fixed-price packages. Availability is checked for your dates; a proposal does not hold rooms or venues.": "示例行程并非固定价格套餐。我们会按您的日期核实可订情况；提供方案不代表已保留客房或场地。",
+    "Share your brief": "发送您的需求",
+    "From a brief to a journey": "从需求到成行",
+    "A few clear steps.": "几个清晰的步骤。",
+    "Enough structure for the organiser. Enough flexibility to make the trip your own.": "让组织者有章可循，也留出按团队需求调整行程的空间。",
+    "Tell us the purpose": "说明出行目的",
+    "Share your people, dates, budget and what you want the trip to achieve.": "告诉我们参与人员、日期、预算，以及希望通过这次旅行达成什么。",
+    "Shape the programme": "商定行程",
+    "Review a route, the proposed arrangements and the options that matter to you.": "一起审阅路线、拟议安排及您关心的选项。",
+    "Confirm the details": "确认细节",
+    "Agree availability, the written quote and booking conditions before payment.": "付款前，确认可订情况、书面报价和预订条件。",
+    "Bring the team": "带团队出发",
+    "Finalise rooming, arrival details and the practical information for everyone travelling.": "敲定分房、抵达信息及每位参与者需要了解的实用信息。",
+    "About Homeground": "关于 Homeground",
+    "Get to know the people and business behind your programme.": "了解为您安排行程的团队与企业。",
+    "How we plan": "我们的规划方式",
+    "Business information & licences": "企业信息与资质",
+    "Plan this for your team": "为您的团队规划这趟旅行",
+    "Duration": "时长",
+    "Suggested group": "建议人数",
+    "Base": "住宿基地",
+    "Programme": "行程形式",
+    "The idea behind the journey": "这趟旅程的想法",
+    "The sample programme": "示例行程",
+    "Four days, thoughtfully paced.": "四天，节奏从容。",
+    "A framework for your own trip. Dates, arrival times, weather and your team’s preferences will shape the final programme.": "这是一份供您定制的行程框架。最终安排会结合日期、抵达时间、天气及团队偏好确定。",
+    "Jump to a day": "跳至指定日期",
+    "Day": "天",
+    "Where everyone settles in": "让大家安顿下来",
+    "Make the scope clear": "明确服务范围",
+    "Know what you are planning.": "清楚了解正在规划的内容。",
+    "The following is the proposed scope to discuss. Your final written quote confirms exactly what is included, the agreed options and booking conditions.": "以下为待讨论的拟议范围。最终书面报价将明确包含的服务、商定的选项及预订条件。",
+    "Proposed arrangements": "拟议安排",
+    "Options to discuss": "可讨论的选项",
+    "Outside the sample scope": "示例范围以外",
+    "A few things to work through": "需要一起确认的事项",
+    "Designed around the people coming.": "围绕实际参与的人来安排。",
+    "Useful reading": "相关阅读",
+    "A little more local context": "多了解一点当地情况",
+    "← Explore company trips in China": "← 查看中国企业旅行",
+    "Start with your team": "从您的团队开始",
+    "What would you like this trip to bring together?": "希望这次旅行让团队收获什么？",
+    "A few details give us a useful starting point. Dates can still be open; an estimated group size is enough.": "几个基本信息就能帮助我们开始规划。日期可以尚未确定，人数提供估算即可。",
+    "Already have a brief? Email": "已有需求说明？请发邮件至",
+    "Company name": "公司名称",
+    "Your name": "您的姓名",
+    "(optional)": "（选填）",
+    "Reply email": "回复邮箱",
+    "Estimated group size": "预计人数",
+    "e.g. 18": "例如：18",
+    "When, and for how long?": "何时出行，计划几天？",
+    "e.g. May 2027, 4 days — or dates still open": "例如：2027年5月，4天；或日期尚未确定",
+    "Purpose of your trip": "出行目的",
+    "A starting idea": "初步想法",
+    "Help us choose": "请帮我们选择",
+    "Budget & currency": "预算与币种",
+    "e.g. USD 15,000 total, excluding international flights": "例如：总预算15,000美元，不含国际航班",
+    "Anything we should plan around?": "有哪些需要提前考虑的事项？",
+    "Single or shared rooms, meeting time, food preferences, different arrival flights…": "单人或双床合住、会议时间、饮食偏好、不同的抵达航班……",
+    "Prepare my enquiry": "准备咨询内容",
+    "Review your message, then choose email or WhatsApp to send it. Preparing a brief does not make a booking.": "检查消息后，选择电子邮件或 WhatsApp 发送。准备需求说明并不构成预订。",
+    "Privacy notice": "隐私说明",
+    "Your enquiry is ready to review": "咨询内容已准备好，请检查",
+    "It has not been sent. Open your preferred app and send it when you are ready.": "尚未发送。请打开您偏好的应用，准备好后自行发送。",
+    "Open email draft": "打开邮件草稿",
+    "Open WhatsApp draft": "打开 WhatsApp 草稿",
+    "Before you bring the team.": "带团队出发前。",
+    "Questions about this programme.": "关于这条行程的问题。",
+    "Explore {title}": "查看{title}",
+    "Day {day}": "第{day}天",
+    "Wulingyuan sandstone pillars": "武陵源砂岩峰林",
+    "Tianzi Mountain panorama": "天子山全景",
+    "Golden Whip Stream": "金鞭溪",
+    "Zhangjiajie Hehua Airport": "张家界荷花机场",
+    "Humble Administrator’s Garden": "拙政园",
+    "Please enter your company name.": "请输入公司名称。",
+    "Please enter an estimated group size between 1 and 9,999.": "请输入1至9,999之间的预计人数。",
+    "Please share a month or say that your dates are still open.": "请填写计划出行的月份，或注明日期尚未确定。",
+    "Please choose the purpose of your trip.": "请选择出行目的。",
+    "Please choose a sample itinerary or ask us to suggest one.": "请选择一条示例行程，或请我们推荐。",
+    "Please check your details.": "请检查您填写的信息。",
+    "Copy is unavailable here. You can select the message below, or open it in your email app.": "此处无法复制。您可以选中下方消息，或在邮件应用中打开。",
+    "Copied": "已复制",
+    "Copy enquiry": "复制咨询内容",
+    "Your enquiry has been copied. It has not been sent.": "咨询内容已复制，尚未发送。",
+    "Your email or WhatsApp message is the enquiry we receive.": "我们收到的咨询以您发送的电子邮件或 WhatsApp 消息为准。",
+    "Company trip & team building": "公司旅行与团建",
+    "Incentive travel": "奖励旅游",
+    "Small meeting & team retreat": "小型会议与团队相聚",
+    "Help us choose the right format": "请帮我们选择合适的形式",
+    "Zhangjiajie · 4 days / 3 nights": "张家界 · 4天3晚",
+    "Shanghai & Suzhou · 4 days / 3 nights": "上海与苏州 · 4天3晚",
+    "Company travel planning and ground arrangements in China": "中国企业旅行规划与当地服务安排",
+    "Sample programme, tailored quotation required.": "示例行程，需按具体需求报价。",
+    "Company teams": "企业团队",
+    "Incentive travel groups": "奖励旅游团队",
+    "Sample company trip programmes": "企业旅行示例行程",
+    "Hi Homeground, we’d like to discuss a company trip to China.": "您好，Homeground，我们想咨询一次前往中国的公司旅行。",
+    "Company": "公司",
+    "Contact": "联系人",
+    "Purpose": "出行目的",
+    "Estimated group": "预计团队人数",
+    "people": "人",
+    "Dates / duration": "日期／时长",
+    "Starting idea": "初步想法",
+    "Other arrangements": "其他安排",
+    "Open to suggestions": "欢迎推荐",
+    "Please help us shape the programme and confirm the arrangements, availability and written quotation before we book.": "请协助完善行程，并在我们预订前确认安排、可订情况及书面报价。",
+    "Reference": "参考行程",
+    "Company trip enquiry — {company}": "企业旅行咨询 — {company}"
+  },
+  "hub": {
+    "title": "中国企业旅行与团队相聚",
+    "description": "中国公司旅行、奖励旅游及小型团队相聚。查看张家界和上海—苏州四天示例行程，按团队需求安排当地旅行服务。",
+    "faqs": [
+      {
+        "question": "能否协助来自不同国家的团队？",
+        "answer": "可以。请提供各批人员的出发城市及预计抵达时间，以便我们评估分批接机和合适的统一集合地点。行程面向全球企业；除非书面报价另有说明，国际航班需另行安排。"
+      },
+      {
+        "question": "这些示例行程适合多少人？",
+        "answer": "张家界方案以约10–30人为规划起点，上海—苏州方案以约10–24人为起点。这些人数仅供规划参考，不是固定发团人数，也不是最低预订人数要求。请告诉我们预计人数，我们会核实适合的车辆、客房及活动安排。"
+      },
+      {
+        "question": "是否必须安排会议或有组织的团建游戏？",
+        "answer": "不必。公司旅行也可以只是让同事一起旅行、共享体验。如果需要内部会议，我们可以评估场地、设备及茶歇安排。会议内容由贵公司主导；专业会议引导或培训需另行约定。"
+      },
+      {
+        "question": "价格由哪些因素决定？",
+        "answer": "日期、最终人数、酒店标准、单人或双床合住、交通、导游语言、餐饮以及会议或特别活动安排，都会影响报价。示例行程没有固定公开售价。我们会先了解需求，再以书面形式列出拟议安排及总价。"
+      },
+      {
+        "question": "能否考虑清真、素食或不同步行能力的需求？",
+        "answer": "请一开始就说明具体需求。我们会核实餐厅选择及您所需的饮食保障程度，并在可行范围内调整步行安排。特定认证、食材、通行条件及替代活动均须在确认前核实。"
+      },
+      {
+        "question": "提交需求后会怎样？",
+        "answer": "我们会先明确出行目的、日期、人数、分房及预算，再提出可行的行程。预订前，以书面形式确认服务范围、供应商可订情况、最终报价及付款和变更条件。如果贵公司有供应商登记或特定付款文件要求，请尽早告知。"
+      }
+    ],
+    "purposes": [
+      {
+        "id": "company-trips",
+        "number": "01",
+        "title": "公司旅行与团建",
+        "body": "暂时走出日常工作。通过一起用餐、探索当地以及留有交谈余地的节奏，让同事相聚。",
+        "note": "适合年度员工旅行、团队聚会及员工关怀活动。"
+      },
+      {
+        "id": "incentive-travel",
+        "number": "02",
+        "title": "奖励旅游",
+        "body": "在值得记住的地方庆祝团队成绩。围绕您想感谢的人，用用心安排的住宿与体验组成旅程。",
+        "note": "适合员工表彰、销售激励及经销商奖励。"
+      },
+      {
+        "id": "meetings-retreats",
+        "number": "03",
+        "title": "小型会议与团队相聚",
+        "body": "留出认真交流的空间，再一起出门走走。将贵公司的工作会议与几天中国旅行结合起来。",
+        "note": "适合管理团队、部门规划及公司团队相聚。"
+      }
+    ]
+  },
+  "trips": [
+    {
+      "slug": "zhangjiajie-4-day-team-trip",
+      "title": "张家界：与团队相聚峰林之间",
+      "seoTitle": "张家界企业旅行｜4天3晚｜Homeground China",
+      "description": "适合10–30人的张家界企业旅行四天示例：武陵源连住三晚、森林公园风景、轻松的山谷步行及团队晚餐。按需报价。",
+      "eyebrow": "公司旅行 · 奖励旅游",
+      "lede": "给团队几天不同于日常的时光。在张家界砂岩群峰下步行，一天结束后围桌而坐，也为平时工作中难得展开的交谈留出时间。",
+      "duration": "4天3晚",
+      "groupSize": "建议：10–30人",
+      "base": "武陵源 · 同一酒店连住三晚",
+      "format": "企业专属旅行 · 示例行程",
+      "hero": {
+        "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+        "alt": "张家界武陵源的砂岩石柱与绿色森林",
+        "caption": "在湖南武陵源的山水间，换个环境一起相处。"
+      },
+      "storyTitle": "共享经历，也留有余地",
+      "story": "公司旅行中最好的时刻往往不在计划里：林间小路上的交谈、大家都想入镜的合照，或向值得表彰的同事举杯致意。这份四天示例行程为这些时刻留出了空间。武陵源同一酒店连住三晚、一天主要山地游览，以及一天峰林下较轻松的活动，让旅程节奏清晰。步行、餐饮及共同活动时间都会根据实际参与的人来安排。",
+      "highlights": [
+        {
+          "title": "三晚，一个住宿基地",
+          "text": "一起住在武陵源。酒店选择从分房名单、大巴通行条件和预算出发，让团队安顿下来，减少反复收拾行李。"
+        },
+        {
+          "title": "一起欣赏的风景",
+          "text": "在导游陪同下游览天子山和袁家界，在主要观景点之间安排合理休息。方案会说明景区交通及步行要求。"
+        },
+        {
+          "title": "一个表达感谢的夜晚",
+          "text": "最后一晚的团队晚餐为表彰出色工作留出空间。了解您的计划后，可考虑包间、致辞、颁奖及技术设备需求。"
+        }
+      ],
+      "days": [
+        {
+          "title": "抵达、安顿，找到旅程节奏",
+          "place": "张家界抵达地点 → 武陵源",
+          "summary": "与当地团队会合，前往武陵源酒店。首日围绕抵达安排；如团队到店时间允许，可安排欢迎晚餐。",
+          "details": [
+            "请先提供所有人的航班或火车信息，再规划接站。分批抵达可按额外接送分别核价，避免让整个团队一直等待。",
+            "入住同一酒店三晚。我们会按单人入住、双床合住或混合需求制定分房计划，具体以酒店实际房源为准。",
+            "下午留作休息。时间允许时，可集合做简短说明并按约定共进晚餐；晚到人员另作安排。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+            "alt": "张家界武陵源地区被森林覆盖的砂岩石柱",
+            "caption": "拟在武陵源住宿；具体酒店根据团队需求选择。"
+          }
+        },
+        {
+          "title": "在森林峰林间度过一天",
+          "place": "张家界国家森林公园 · 天子山与袁家界",
+          "summary": "主要游览日深入高处的砂岩峰林。沿计划路线游览天子山和袁家界，一起观景，安排午餐休息，也留些时间慢慢看看。",
+          "details": [
+            "早餐后随导游前往景区。预订前商定入园口、景区接驳车衔接、索道或电梯行程及门票费用。",
+            "游览天子山和袁家界的观景点。最终顺序根据门票安排、运营状况及团队步行节奏调整；这不是计时徒步挑战。",
+            "需预留上下台阶、排队及观景点之间步行的时间。我们会提前沟通行动需求，为无法轻松参与主路线的人制定合适的替代安排。",
+            "游览后返回酒店。晚上从容安排，晚餐可纳入餐饮计划，也可按与负责人的约定自由用餐。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
+            "alt": "天子山森林与砂岩石柱的开阔全景",
+            "caption": "天子山峰林景观；山间能见度随天气变化。"
+          }
+        },
+        {
+          "title": "走一段轻松的路，共度一个夜晚",
+          "place": "金鞭溪 → 酒店 → 团队晚餐",
+          "summary": "换个节奏，选走一段金鞭溪。随后返回酒店，度过从容的下午，再聚在一起享用属于团队的晚餐。",
+          "details": [
+            "选择合适的一段山谷步道，不要求所有人走完全程。距离、折返点及休息点会结合团队需求和当天状况商定。",
+            "午餐后返回酒店自由活动。下午可选择安排一次简短的内部会议，必要时相应缩短步行。",
+            "如需会议，议程及主持由贵公司负责。我们可寻找合适会议室，并对座位布局、设备及茶歇另行报价。",
+            "一起享用最后一晚的团队晚餐。提前确认菜单、饮食需求及座位；致辞或颁奖可在场地方同意的安排内进行。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp",
+            "alt": "张家界金鞭溪旁的绿色林地",
+            "caption": "金鞭溪让您从峰林下方欣赏另一种景致。"
+          }
+        },
+        {
+          "title": "早餐、道别，踏上下一程",
+          "place": "武陵源 → 张家界机场或火车站",
+          "summary": "早餐后按已预订的离程时间安排接送。为行李、退房及后续路程留出充裕余量。",
+          "details": [
+            "早餐后退房，根据最终航班或火车名单分批安排离程。",
+            "送站目的地会在方案中写明：张家界荷花机场、张家界西站，或其他明确指定的抵离地点。",
+            "较晚出发可能留有自由时间，但额外游览、延迟退房、增加车辆或加住一晚，都需先商定并核价。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+            "alt": "远山前的张家界荷花机场",
+            "caption": "离程接送按已确认的机场或火车站及时间安排。"
+          }
+        }
+      ],
+      "stay": {
+        "title": "一起住在武陵源",
+        "body": "我们建议在武陵源地区同一酒店住三晚。对企业团队而言，合适的整批房源与酒店照片同样重要：床型搭配、可靠的早餐安排、车辆通行条件，以及方便大家集合的空间。",
+        "details": [
+          "可比较单人入住与双床合住的方案，也可对混合分房报价。单人入住会改变人均费用。",
+          "酒店名称、房型、床型及客房数量均按您的日期核实，并在确认前写入方案。",
+          "同楼层房间、连通房、私人用餐空间或会议室，须单独提出需求并确认。"
+        ]
+      },
+      "scope": [
+        "武陵源同一酒店三晚住宿，含早餐，按所选单人入住或双床合住安排。",
+        "专属抵达和离程接送，以及为团队明确列出的用车时段及行李容量。",
+        "观光行程中的英语导游服务。",
+        "张家界国家森林公园门票，以及书面报价中明确列出的景区接驳车、电梯和索道行程。",
+        "商定的餐饮计划，包括抵达时间允许时的欢迎晚餐、游览日午餐及最后一晚的团队晚餐。",
+        "当地对接人员，现场协调安排在方案中列明。"
+      ],
+      "options": [
+        "第3天下午可选由贵公司主导的简短会议；会议室租赁、布局、设备及茶歇另行报价。",
+        "最后一晚晚餐的包间、颁奖布置、麦克风或其他商定的升级安排。",
+        "为部分行程安排摄影师，使用权及交付内容提前商定。",
+        "额外接机、加住、缩短步行路线或其他示例行程调整。"
+      ],
+      "notIncluded": [
+        "往返张家界的航班或火车，除非明确加入报价。",
+        "会议室、活动设备、摄影师及晚餐升级，除非已具体报价。",
+        "超出商定餐饮及服务计划的餐食、饮料、客房额外消费及个人开支。",
+        "旅行保险、签证安排，以及书面报价未列明的服务。"
+      ],
+      "planningNotes": [
+        {
+          "title": "四个日历日，两个主要活动日",
+          "body": "第1天和第4天为抵达及离程日。此示例并非四个完整游览日；航班时间可能需要加住一晚或调整路线。"
+        },
+        {
+          "title": "围绕参与人员安排",
+          "body": "请告知步行舒适度、无台阶通行需求，以及偏好安静一天的同事。景区交通无法免除所有台阶、排队或户外步行。"
+        },
+        {
+          "title": "为情况变化准备可行方案",
+          "body": "山间天气、能见度、景区运营及客流可能影响游览顺序。方案中会商定天气备用安排及可能产生的价差处理方式。"
+        },
+        {
+          "title": "方便负责人使用的方案",
+          "body": "请发送可出行日期范围、人数、分房偏好及预算。随后我们核实供应商，并提供分项方案、付款进度及取消条件供您审批。"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "这条张家界企业旅行适合哪些团队？",
+          "answer": "此四天示例以10–30名同事组成一个专属团队为基础设计，可用于年度员工旅行或较小团队的奖励旅游。其他人数也可评估，但可能需要调整车辆、人员配置或酒店方案。"
+        },
+        {
+          "question": "四天行程包含哪些内容？",
+          "answer": "拟议安排包括抵达张家界、武陵源三晚住宿、以天子山和袁家界为主的森林公园游览日、较短的金鞭溪步行、最后一晚团队晚餐及离程接送。第1天和第4天为交通日。天门山和玻璃桥不在此示例范围内。"
+        },
+        {
+          "question": "能否加入会议或颁奖晚餐？",
+          "answer": "可以。我们可为第3天的部分时间核实合适会议室，并考虑在最后一晚晚餐中安排致辞或颁奖。贵公司的会议由贵公司自行主导。场地租赁、设备、茶歇及活动布置均单独确认和报价；此示例不含专业会议引导或培训。"
+        },
+        {
+          "question": "张家界企业旅行费用是多少？",
+          "answer": "价格按您的日期、人数及分房名单核定。单人入住、双床合住、导游安排、景区交通、餐饮及会议需求都会影响总价。此示例没有固定公开套餐价；书面方案会列出贵团队的服务及付款条件。"
+        },
+        {
+          "question": "所有人都必须合住吗？",
+          "answer": "不必。我们可分别对单人入住、双床合住或混合安排报价。请告知各房型数量。酒店及实际可提供的整批房源须在确认前核实，不能默认安排在同一楼层。"
+        },
+        {
+          "question": "是否适合体能水平不同的同事？",
+          "answer": "可以调整，但主要景区游览日仍涉及户外步行、台阶及可能的排队。推荐路线前，我们需要了解行动需求。可考虑较短的山谷步行或其他安排并核价，而不是要求所有人保持相同节奏。"
+        },
+        {
+          "question": "能否安排素食、清真或考虑过敏需求的餐食？",
+          "answer": "咨询时请说明饮食要求，包括任何认证或过敏相关需求。确认餐饮计划前，我们会与供应商核实合适的餐厅、菜单及备餐方式。"
+        },
+        {
+          "question": "是否包含机票？景区是否包场？",
+          "answer": "除非书面加入，往返张家界的航班和火车均不包含。车辆及商定的导游服务专供贵公司，但国家森林公园、景区接驳车及观景点面向公众开放。专属服务不代表景区包场或免排队入园。"
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "label": "张家界市区与武陵源住宿怎么选"
+        },
+        {
+          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "label": "森林公园门票、入口与景区交通"
+        },
+        {
+          "href": "/guides/zhangjiajie-older-travellers/",
+          "label": "步行、台阶与更从容的张家界行程"
+        }
+      ]
+    },
+    {
+      "slug": "shanghai-suzhou-4-day-company-retreat",
+      "title": "上海与苏州：留给团队的时光",
+      "seoTitle": "上海与苏州企业团队旅行｜4天｜Homeground China",
+      "description": "适合10–24人的上海与苏州企业团队旅行四天示例：上海连住三晚、苏州一日游，可选半天会议。按需报价。",
+      "eyebrow": "公司旅行 · 小型会议与团队相聚",
+      "lede": "让大家聚到同一座城市，再留出一起发现它的时间。上海三晚、一天苏州园林与水巷，以及属于团队自己的交谈，让短途旅行也充实从容。",
+      "duration": "4天3晚",
+      "groupSize": "建议：10–24人",
+      "base": "上海市中心 · 同一酒店连住三晚",
+      "format": "企业专属团队旅行 · 示例行程",
+      "hero": {
+        "src": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+        "alt": "黄昏时分的外滩钟楼与上海现代天际线",
+        "caption": "以上海一处酒店为基地，安排一天苏州行，也在游览之间留出相处时间。"
+      },
+      "storyTitle": "城市的活力，园林的慢节奏",
+      "story": "上海给团队许多话题：江水、不断变化的天际线，以及仍可见城市过往的街道。到了苏州，尺度变了。一扇门框住一座园林，水与石构成小小天地。这份示例将两地连在一起，无须更换酒店。如有需要，也为团队自己的会议留出半天，让公司出行目的与旅行的乐趣各得其所。",
+      "highlights": [
+        {
+          "title": "一间酒店，连住三晚",
+          "text": "以上海市中心为基地，当天往返苏州。住同一酒店，便于管理入住、行李及分房名单。"
+        },
+        {
+          "title": "让会议融入行程",
+          "text": "可将第2天的部分时间留给公司自行组织的会议，也可用同一上午轻松游览城市。预订前确定这一选择。"
+        },
+        {
+          "title": "共享体验，也有自由时间",
+          "text": "外滩步行、一座苏州园林及团队晚餐将行程串联起来。未排满的时间，让同事按自己的方式享受城市。"
+        }
+      ],
+      "days": [
+        {
+          "title": "抵达上海，围桌相聚",
+          "place": "上海机场或火车站 → 上海市中心",
+          "summary": "在上海集合，入住接下来三晚的酒店。抵达时间允许时，以一顿轻松的欢迎晚餐开始行程。",
+          "details": [
+            "按团队实际抵达名单，安排从指定上海机场或火车站接站。浦东和虹桥抵达人员按需分别安排。",
+            "办理入住、整理行李，下午余下时间自由安排。只有抵达时间较从容时，才增加首日观光。",
+            "在约定餐厅共进欢迎晚餐，留些时间互相介绍，并简要了解接下来几天的安排。晚到人员可能需要另行安排用餐。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+            "alt": "暮色中的上海滨江天际线",
+            "caption": "上海是抵达城市，也是拟连住三晚的住宿基地。"
+          }
+        },
+        {
+          "title": "先交流，再看城市",
+          "place": "可选内部会议 → 外滩与上海市中心",
+          "summary": "上午可安排半天内部会议，或选择城市体验。下午在外滩会合，随导游探索周边街道。",
+          "details": [
+            "如选择会议，议程及讨论由贵公司主导。我们核实酒店内或附近合适的会议室，并对场地租赁、布局、设备及茶歇单独报价。",
+            "如偏好休闲旅行，上午可从容探索上海，路线根据团队兴趣选择。",
+            "午餐后随导游沿外滩及选定的市中心街道步行，留时间驻足、拍照，了解江畔不同风格的建筑。",
+            "结束后自由活动，或按约定安排晚餐。如有需要，江上游船、观景台或其他需购票的夜间活动可加入报价。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/shanghai-skyline-1600.webp",
+            "alt": "上海天际线中的上海中心大厦与环球金融中心",
+            "caption": "以上海天际线为背景；需购票的高楼参观属于可选项目。"
+          }
+        },
+        {
+          "title": "苏州，走进园林的小天地",
+          "place": "上海 → 苏州园林与平江路 → 上海",
+          "summary": "前往苏州，度过节奏从容的一天。游览一座古典园林、一起午餐，再走一段平江路，随后返回上海共进最后一晚的团队晚餐。",
+          "details": [
+            "乘坐与团队人数相适应的专属车辆。方案会写明交通安排，并为路况、休息及返回上海预留时间。",
+            "在门票可订的前提下游览拙政园，或提前商定另一座合适园林。一天专注一座园林，不赶着串游多座。",
+            "按约定午餐后，探索平江路一段临水街巷。在明确集合地点及离开安排的前提下留出自由时间；游船等活动仅在报价列明时包含。",
+            "返回上海原酒店。共进最后一晚团队晚餐，任何致辞、表彰或包间需求均提前安排。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+            "alt": "苏州拙政园的亭台、池塘与廊道",
+            "caption": "拟安排的苏州园林游览；具体园林在预订时确认。"
+          }
+        },
+        {
+          "title": "最后一个早晨，继续下一程",
+          "place": "上海市中心 → 您指定的机场或火车站",
+          "summary": "早餐后出发前往下一程。接送以最终离程名单为准，仅在时间允许时安排自由活动。",
+          "details": [
+            "根据分批离程时间协调退房及行李。同事从不同机场或在不同时段出发时，额外接送会逐项列明。",
+            "离程方案会为每批人员明确机场或车站，并按已预订的交通班次安排接送时间。",
+            "如部分同事因工作或休闲继续停留，我们可另行报价加住及接送。这些延长安排与企业主行程分别约定。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/departure-shanghai-1600.webp",
+            "alt": "面向上海天际线的滨江平台",
+            "caption": "上海一处安静景致；离程日安排依据您的交通预订确定。"
+          }
+        }
+      ],
+      "stay": {
+        "title": "为整趟行程选择上海住宿基地",
+        "body": "我们会从上海市中心开始寻找酒店，结合抵达地点、用餐计划及会议需求，考虑人民广场或静安等区域。合适的酒店应方便团队的整体行程，而不只是离知名景观最近。",
+        "details": [
+          "同一酒店连住三晚，苏州当天往返。示例行程不安排中途换酒店。",
+          "批准预算前，可比较单人入住与双床合住。方案会列明房型、床型、早餐及实际可提供的整批房源。",
+          "如需会议，应在选择场地时核实容纳人数、座位布局、私密性、设备及茶歇。"
+        ]
+      },
+      "scope": [
+        "上海同一酒店三晚住宿，含早餐，按所选单人入住或双床合住安排。",
+        "指定机场或车站的抵离接送，按商定接站批次安排。",
+        "计划游览期间的团队专属交通，包括苏州当天往返。",
+        "观光行程中的英语导游服务。",
+        "指定苏州园林门票，以及方案中明确列出的其他门票。",
+        "商定的餐饮计划，包括时间允许时的欢迎晚餐、游览日午餐及最后一晚团队晚餐。",
+        "当地对接人员，现场协调安排在方案中列明。"
+      ],
+      "options": [
+        "第2天可选由贵公司主导的半天会议；场地、设备及茶歇单独核价。",
+        "晚餐包间、麦克风、颁奖布置或其他商定的晚餐升级。",
+        "为团队选择的江上游船、观景台、摄影或其他体验。",
+        "增加接站批次、加住、分开离程或活动后的休闲延长行程。"
+      ],
+      "notIncluded": [
+        "往返上海的航班或火车，除非具体加入书面报价。",
+        "会议设施、活动技术制作、专业会议引导及口译，除非另有约定。",
+        "未列明的餐食、饮料、可选活动、客房额外消费及个人开支。",
+        "旅行保险、签证安排、工厂或商务参访，以及商定行程之外的服务。"
+      ],
+      "planningNotes": [
+        {
+          "title": "四天框架，并非四个完整游览日",
+          "body": "首尾两天按您的交通安排规划。此示例为三晚住宿、两个主要活动日，仅安排上海与苏州；增加其他城市需要延长或调整行程。"
+        },
+        {
+          "title": "让会议发挥作用",
+          "body": "请说明会议目的、参会人数、布局、私密性需求及设备。内容及会议主持由贵公司负责；专业会议引导或活动制作需另行提交需求，并确认供应商。"
+        },
+        {
+          "title": "让苏州一日安排切实可行",
+          "body": "示例使用专属车辆公路往返，游览一座园林及一段选定的临水步行路线。确定日程前，我们会评估日期、交通、门票可订情况及行动需求。"
+        },
+        {
+          "title": "一起确认实际细节",
+          "body": "最终方案会列明酒店、分房方式、餐饮计划、接送、导游及任何会议费用。您确认预订前，会核实供应商可订情况、付款日期及取消条款。"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "这条上海与苏州企业团队旅行适合谁？",
+          "answer": "此四天示例以10–24名同事为基础设计，适合希望共享城市体验、苏州一日游及相处时间的团队。可作为公司旅行，也可加入半天内部会议，作为小型团队相聚。不同人数需重新评估交通、客房及人员配置。"
+        },
+        {
+          "question": "会在苏州住一晚吗？",
+          "answer": "不会。示例在同一间上海酒店连住三晚，第3天乘专属车辆前往苏州。苏州安排以一座古典园林和一段选定的平江路为重点，随后返回上海。"
+        },
+        {
+          "question": "行程价格包含会议吗？",
+          "answer": "此示例没有固定公开售价。半天会议是第2天上午的可选安排，替代该时段的休闲活动。场地租赁、设备、茶歇及任何专业支持会单独核实，并列入报价。议程和会议主持由贵公司负责。"
+        },
+        {
+          "question": "能否同时提供单人入住及双床合住报价？",
+          "answer": "可以。我们可比较单人入住与双床合住，也可按混合分房名单安排。价格取决于实际房间数量、类别、日期及酒店可订情况。最终酒店及整批房源会书面确认；不能默认包下一整层或整间酒店。"
+        },
+        {
+          "question": "同事能否分别抵达浦东和虹桥？",
+          "answer": "可以，可规划分别接送。请提供每人的抵离机场或车站、航班或车次及时间。增加接站批次或不同抵达点，可能改变车辆安排及总费用。"
+        },
+        {
+          "question": "园林门票不可订或下雨怎么办？",
+          "answer": "确认苏州行程前，我们会核实门票安排，并在需要时商定合适替代方案。天气可能影响户外步行计划。方案应说明备用安排、交通变更及价差处理方式，不能默认所有替代项目价格相同。"
+        },
+        {
+          "question": "能否照顾饮食需求并安排颁奖晚餐？",
+          "answer": "我们可为团队核实餐厅、菜单及合适的晚餐空间。请告知素食或清真要求、过敏情况、酒精饮品偏好，以及致辞或颁奖计划。供应商是否适合、包间条件及设备均在确认前核实并报价。"
+        },
+        {
+          "question": "正式方案需要哪些信息？",
+          "answer": "请提供公司名称、偏好日期、预计人数、单人或双床合住偏好、总预算及出行目的，并补充会议需求及已知的抵达安排。我们据此核实供应商，准备列有总价、服务项目、付款进度及取消条款的方案。"
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "label": "选择方便出行的上海酒店区域"
+        },
+        {
+          "href": "/guides/shanghai-to-suzhou-day-trip/",
+          "label": "规划上海至苏州一日游"
+        },
+        {
+          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "label": "如何欣赏苏州古典园林"
+        },
+        {
+          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "label": "浦东还是虹桥：选择合适的抵达机场"
+        }
+      ]
+    }
+  ]
+}

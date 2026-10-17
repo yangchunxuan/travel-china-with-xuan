@@ -1,3 +1,5 @@
+import { corporateLocales, corporatePath } from "../lib/corporateTravelLocalePaths.ts";
+import { corporateTrips } from "../lib/corporateTravel.ts";
 // Writes out/llms.txt after the static export: a plain-text map of the site for
 // AI assistants and answer engines (https://llmstxt.org). Tours and prices come
 // from the published catalogue and page titles/descriptions from the exported
@@ -79,9 +81,7 @@ const lines = [
   "## Company trips and team retreats",
   "",
   "Company trips, incentive travel and small meetings are quoted individually for the dates, group size, rooming and meeting requirements. The sample itineraries do not confirm hotel, vehicle or venue availability.",
-  link("/corporate-travel/"),
-  link("/corporate-travel/zhangjiajie-4-day-team-trip/"),
-  link("/corporate-travel/shanghai-suzhou-4-day-company-retreat/"),
+  ...corporateLocales.flatMap(locale => [link(corporatePath(locale)), ...corporateTrips.map(trip => link(corporatePath(locale, trip.slug)))]),
   "",
   "## Services",
   "",

@@ -6,6 +6,9 @@ import { corporateHubTitle, corporateHubDescription } from "./corporateTravelHub
 // @ts-ignore TS5097: tests run the content adapters directly via Node type stripping.
 import { corporateHubPath, corporateTripPath } from "./corporateTravelTypes.ts";
 
+import { getCorporateEdition } from "./corporateTravelEditions.ts";
+import { corporatePath, corporateOgLocales } from "./corporateTravelLocalePaths.ts";
+
 const hubId = "corporate-travel";
 
 function corporateNode({
@@ -31,19 +34,21 @@ function corporateNode({
     parentContentId,
     status: "published",
     indexability: { index: true, follow: true },
-    locales: {
-      en: {
-        path,
-        title,
-        description,
-        h1,
+    locales: Object.fromEntries((["en", "zh", "ko"] as const).map(locale => {
+      const edition = getCorporateEdition(locale);
+      const trip = isHub ? undefined : edition.trips.find(item => `corporate-travel-${item.slug}` === id)!;
+      return [locale === "zh" ? "zh-Hans" : locale, {
+        path: corporatePath(locale, trip?.slug),
+        title: trip?.seoTitle ?? edition.hub.title,
+        description: trip?.description ?? edition.hub.description,
+        h1: trip?.title ?? edition.hub.title,
         bodyResource: `corporate-travel:${id}`,
-        searchTerms,
-        localizationStatus: "source",
-        openGraphLocale: "en_US",
+        searchTerms: locale === "en" ? searchTerms : [trip?.title ?? edition.hub.title, trip?.description ?? edition.hub.description],
+        localizationStatus: locale === "en" ? "source" : "localized",
+        openGraphLocale: corporateOgLocales[locale],
         ctaId: "corporate-brief",
-      },
-    },
+      }];
+    })),
     factIds: [],
     sourceIds: [],
     mediaIds: [],
@@ -59,7 +64,7 @@ function corporateNode({
   };
 }
 
-/** English-only service pages: metadata and URLs share the rendered copy's source. */
+/** Core manifest locales share the localized page copy; the other editions use equivalent standalone routes. */
 export function buildCorporateTravelContentNodes(): ContentNode[] {
   return [
     corporateNode({

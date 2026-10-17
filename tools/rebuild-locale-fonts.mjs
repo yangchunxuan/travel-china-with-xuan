@@ -56,7 +56,9 @@ const commonCharacters = Array.from(
 // 昨 also appears in DayPicker's bundled Chinese relative-date labels.
 // The other retained glyphs come from Japanese strings without kana in the
 // currently published export; keep them through source-only local rebuilds.
-const retainedPublishedChineseCharacters = "卷守履径遵昨別動報後業様約規覧許談";
+const retainedPublishedChineseCharacters = "卷守履径遵昨別動報後業様約規覧許談铅";
+// Preserve the published Hangul glyph through staged route-copy updates too.
+const retainedPublishedKoreanCharacters = "웡";
 
 function characterSet(text, pattern) {
   return [...new Set(`${commonCharacters}${text.match(pattern)?.join("") ?? ""}`)]
@@ -71,7 +73,7 @@ const chineseText = [
 ]
   .sort((left, right) => left.codePointAt(0) - right.codePointAt(0))
   .join("");
-const koreanText = characterSet(sourceText, /[\p{Script=Hangul}]/gu);
+const koreanText = characterSet(sourceText + retainedPublishedKoreanCharacters, /[\p{Script=Hangul}]/gu);
 const python = argumentsByName.python;
 const pythonPath = argumentsByName.fonttools;
 const fixedNoto = resolve(tmpdir(), "homeground-noto-serif-sc-500.ttf");
