@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { EditionMobileNav } from "./EditionMobileNav";
+import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
@@ -208,7 +209,7 @@ export function JapaneseSiteHeader({
             <a className={`${headerStyles.desktopUtilityLink} ${styles.faqUtilityLink}`} href={`${japaneseSite.home}#faq`}>
               よくある質問
             </a>
-            <nav aria-label="言語を選ぶ" className={headerStyles.languageNav}>
+            <HeaderLanguageMenu ariaLabel="言語を選ぶ" label="日本語" lang="ja">
               {languagePaths.map((item) => (
                 <a
                   aria-current={item.lang === "ja" ? "page" : undefined}
@@ -217,10 +218,10 @@ export function JapaneseSiteHeader({
                   key={item.lang}
                   lang={item.lang}
                 >
-                  {item.label}
+                  {languageEndonyms[item.lang] ?? item.label}
                 </a>
               ))}
-            </nav>
+            </HeaderLanguageMenu>
             <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref} onClick={openTourInquiry}>
               <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
