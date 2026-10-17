@@ -116,7 +116,7 @@ test("global navigation puts service pages under the Services item, beside the p
   assert.match(header, /getChinaItineraryReviewCopy\(targetLocale\)\.path/);
   // 2026-10-03: the owner approved a Services item (menu of standalone services);
   // /services/ pages light it instead of "How We Plan".
-  assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
+  assert.match(header, /const servicesAreCurrent =\s*!corporateIsCurrent && \(pageContext === "services" \|\| pageContext === "reservations"\);/);
   assert.doesNotMatch(header, /services: "Trip planning services"/);
   assert.match(header, /className=\{styles\.headerCta\}/);
   assert.match(header, /allowedServiceHashes/);

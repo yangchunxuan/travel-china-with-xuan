@@ -46,6 +46,7 @@
 .hero h1,
 .sectionIntro h2,
 .cardGrid h3,
+.corporate h2,
 .method h2 {
   font-family: var(--hg-editorial);
   font-weight: 400;
@@ -303,6 +304,50 @@
   padding: 1px;
 }
 
+/* ---------- A quiet entrance for company organisers ---------- */
+
+.corporate {
+  align-items: center;
+  border-block: 1px solid var(--rule);
+  display: flex;
+  gap: 1.5rem 3rem;
+  justify-content: space-between;
+  margin-block-start: var(--section);
+  margin-inline: max(var(--gutter), calc((100% - var(--content)) / 2));
+  padding-block: 2rem;
+}
+
+.corporate h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  margin: 0.75rem 0 0;
+}
+
+.corporate h2 + p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
+  max-width: 42rem;
+  text-wrap: pretty;
+}
+
+.corporate > a {
+  align-items: center;
+  background: var(--tile);
+  border-radius: 999px;
+  color: var(--ink);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.6rem;
+  min-height: var(--pill);
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
 /* ---------- Method: one tile ---------- */
 
 .method {
@@ -380,6 +425,10 @@
   .methodLinks a:not(:first-child):hover {
     background: var(--warm);
   }
+
+  .corporate > a:hover {
+    background: var(--warm);
+  }
 }
 
 .cardGrid a:active,
@@ -389,6 +438,7 @@
 
 .cardGrid a:focus-visible,
 .methodLinks a:focus-visible,
+.corporate > a:focus-visible,
 .breadcrumb a:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
@@ -583,6 +633,11 @@
 
   .cardBody {
     padding: 1.25rem 1rem 1rem;
+  }
+
+  .corporate {
+    align-items: start;
+    flex-direction: column;
   }
 
   .method {

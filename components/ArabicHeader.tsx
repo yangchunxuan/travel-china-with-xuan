@@ -7,7 +7,7 @@ import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
 const source=getHomegroundCopy('en');
-const navigationSource=getHomegroundNavigationModel('en','/');
+const navigationSource=getHomegroundNavigationModel('en','/', { includeCorporateTravel: false });
 const arabicItems={
  destinations:{label:'الوجهات بالإنجليزية',description:'المدن وأفكار السفر والمعالم؛ الأدلة بالإنجليزية',href:'/explore/'},
  tours:{label:'الرحلات',description:'قارن البرامج والأسعار المنشورة',href:'/ar/tours/'},

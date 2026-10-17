@@ -136,7 +136,7 @@ export function ChinaEntryGuidesPage() {
       <HomegroundHeader
         locale="en"
         pageContext="guides"
-        showLanguageNav={false}
+        languagePaths={{ en: PAGE_PATH }}
       />
 
       <main id="entry-guides-main" tabIndex={-1}>

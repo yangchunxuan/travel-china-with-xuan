@@ -130,10 +130,13 @@ test('Spanish guides link to existing pages and identify their sources', () => {
 test('shared headers offer the real Spanish pages on desktop and mobile', () => {
   const header = read('components/HomegroundHeader.tsx');
   assert.equal(header.match(/\{renderSpanishLanguageChoice\(\)\}/g)?.length, 2);
-  assert.match(header, /const spanishLanguageHref = languagePaths\?\.es;/);
+  assert.match(header, /languagePaths\?\.es/);
+  assert.match(header, /"\/es\/"/);
   assert.match(header, /hrefLang="es"\s+lang="es"/);
   assert.match(read('components/HomegroundHomePage.tsx'), /languagePaths=\{\{[^}]*es: "\/es\/"/);
-  assert.match(read('components/ShanghaiJiangnanImaginePage.tsx'), /es: spanishTourPagePath\(product\.slug\) \?\? spanishSite\.tours,/);
+  assert.match(read('components/ShanghaiJiangnanImaginePage.tsx'), /es: spanishTourPagePath\(product\.slug\) \?\? spanishSite\.home,/);
+  assert.match(read('components/ZhangjiajiePrivateTourPreviewPage.tsx'), /languagePaths=\{languagePaths\}/);
+  assert.match(read('components/SpanishGuidePage.tsx'), /if \(!guide\.sourceGuideId\) return \[\{ label: "ES", lang: "es", path \}\];/);
   assert.match(read('components/HomegroundHeader.module.css'), /\.mobileLanguageNav:has\(> a:nth-child\(6\)\)\s*\{\s*grid-template-columns: repeat\(3,/);
 });
 

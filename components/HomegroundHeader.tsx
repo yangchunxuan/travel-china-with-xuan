@@ -47,6 +47,8 @@ import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HeaderNavMenu, MenuLink } from "./HeaderNavMenu";
+import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
+import { isEquivalentTourLanguagePath } from "../lib/headerLanguagePaths";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
@@ -92,7 +94,8 @@ interface HomegroundHeaderProps {
   };
   /**
    * Actual published equivalents for content that is not backed by GuideId.
-   * Missing locales are omitted instead of linking to an unrelated homepage.
+   * The UI falls back to an edition's homepage when no equivalent is listed.
+   * These fallback links are not page-metadata hreflang alternates.
    */
   languagePaths?: Partial<Record<HomegroundLanguagePathKey, string>>;
   /**
@@ -266,8 +269,9 @@ export function HomegroundHeader({
   const toursAreExact = pageContext === "tours";
   // Every /services/ page (hub, guides, itinerary review) and the
   // reservation page sit under the Services item.
+  const corporateIsCurrent = Boolean(pathname?.startsWith("/corporate-travel/"));
   const servicesAreCurrent =
-    pageContext === "services" || pageContext === "reservations";
+    !corporateIsCurrent && (pageContext === "services" || pageContext === "reservations");
   const planningIsCurrent = pageContext === "studio";
   // About Us opens /company/; /studio/ and careers sit under it.
   const aboutIsCurrent =
@@ -305,26 +309,28 @@ export function HomegroundHeader({
   const overriddenLanguagePathFor = (targetLocale: HomegroundLocale) =>
     languagePaths?.[targetLocale] ??
     (targetLocale === "zh" ? languagePaths?.["zh-Hans"] : undefined);
-  const availableLanguageLocales = homegroundLocales.filter(
-    (targetLocale) =>
-      !languagePaths || Boolean(overriddenLanguagePathFor(targetLocale)),
-  );
+  const availableLanguageLocales = homegroundLocales;
   const homeLanguageHrefFor = (path: string) =>
     plannerStatus === "result" && !languageQuery
       ? `${path}?planner=result${languageHash}`
       : `${path}${languageQuery}${languageHash}`;
+  const selectedLanguageHrefFor = (path: string) => pageContext === "tour" && tourSelection
+    && isEquivalentTourLanguagePath(path, tourSelection.slug)
+      ? buildPrivateTourDetailHref(path, tourSelection.slug, tourSelection.selection)
+      : path;
   const languageHrefFor = (targetLocale: HomegroundLocale) => {
     const overriddenPath = overriddenLanguagePathFor(targetLocale);
     if (overriddenPath) {
       if (pageContext === "home") {
         return homeLanguageHrefFor(overriddenPath);
       }
-      return pageContext === "tour" && tourSelection
-        ? buildPrivateTourDetailHref(overriddenPath, tourSelection.slug, tourSelection.selection)
-        : overriddenPath;
+      return selectedLanguageHrefFor(overriddenPath);
     }
 
     const target = getHomegroundCopy(targetLocale);
+    // An explicit map is authoritative: absent means this edition has no
+    // equivalent, so do not invent a route or carry a tour selection home.
+    if (languagePaths) return target.path;
     return pageContext === "guide"
       ? getGuidePath(guideId, targetLocale)
       : pageContext === "guides"
@@ -339,9 +345,7 @@ export function HomegroundHeader({
                 ? `${target.path}studio/`
                 : homeLanguageHrefFor(target.path);
   };
-  const japaneseLanguageHref = languagePaths?.ja && pageContext === "tour" && tourSelection
-    ? buildPrivateTourDetailHref(languagePaths.ja, tourSelection.slug, tourSelection.selection)
-    : languagePaths?.ja;
+  const japaneseLanguageHref = selectedLanguageHrefFor(languagePaths?.ja ?? "/ja/");
 
   useEffect(() => {
     const syncLocation = () => {
@@ -621,7 +625,7 @@ export function HomegroundHeader({
     if (!edition && targetLocale !== currentLanguage && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
       // The Japanese and Spanish pages have no newsletter or planner form to receive state.
-      if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr" && targetLocale !== "de") {
+      if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr" && targetLocale !== "de" && targetLocale !== "ar") {
         requestNewsletterLanguageTransfer(event.currentTarget.pathname);
         if ((locale === "en") !== (targetLocale === "en")) {
           markHomegroundInternalReload(event.currentTarget.href);
@@ -689,11 +693,10 @@ export function HomegroundHeader({
       日本語
     </a>
   ) : null;
-  // Shown where the page passes a Spanish address: pages with a Spanish
-  // version, and tour pages, which fall back to the Spanish tour list.
-  const spanishLanguageHref = languagePaths?.es;
+  const spanishLanguageHref = selectedLanguageHrefFor(languagePaths?.es ?? "/es/");
   const renderSpanishLanguageChoice = () => spanishLanguageHref ? (
     <a
+      aria-current={currentLanguage === "es" ? "page" : undefined}
       href={spanishLanguageHref}
       hrefLang="es"
       lang="es"
@@ -704,24 +707,18 @@ export function HomegroundHeader({
     </a>
   ) : null;
 
-  const frenchLanguageHref = edition && languagePaths?.fr && pageContext === "tour" && tourSelection
-    ? buildPrivateTourDetailHref(languagePaths.fr, tourSelection.slug, tourSelection.selection)
-    : languagePaths?.fr;
+  const frenchLanguageHref = selectedLanguageHrefFor(languagePaths?.fr ?? "/fr/");
   const renderFrenchLanguageChoice = () => frenchLanguageHref ? (
     <a aria-current={currentLanguage === "fr" ? "page" : undefined} href={frenchLanguageHref} hrefLang="fr" lang="fr" onClick={(event) => handleLanguageChange(event, "fr")}><span className={styles.languageChoiceShort}>FR</span><span className={styles.languageChoiceEndonym}>Français</span></a>
   ) : null;
 
-  const germanLanguageHref = languagePaths?.de && pageContext === "tour" && tourSelection
-    ? buildPrivateTourDetailHref(languagePaths.de, tourSelection.slug, tourSelection.selection)
-    : languagePaths?.de;
+  const germanLanguageHref = selectedLanguageHrefFor(languagePaths?.de ?? "/de/");
   const renderGermanLanguageChoice = () => germanLanguageHref ? (
     <a aria-current={currentLanguage === "de" ? "page" : undefined} href={germanLanguageHref} hrefLang="de" lang="de" onClick={(event) => handleLanguageChange(event, "de")}><span className={styles.languageChoiceShort}>DE</span><span className={styles.languageChoiceEndonym}>Deutsch</span></a>
   ) : null;
 
-  const arabicBaseHref = languagePaths?.ar ?? (languagePaths?.de?.startsWith('/de/') ? languagePaths.de.replace(/^\/de/, '/ar') : undefined);
-  const arabicLanguageHref = arabicBaseHref && pageContext === "tour" && tourSelection
-    ? buildPrivateTourDetailHref(arabicBaseHref, tourSelection.slug, tourSelection.selection)
-    : arabicBaseHref;
+  const arabicBaseHref = languagePaths?.ar ?? (languagePaths?.de?.startsWith('/de/') ? languagePaths.de.replace(/^\/de/, '/ar') : '/ar/');
+  const arabicLanguageHref = selectedLanguageHrefFor(arabicBaseHref);
   const renderArabicLanguageChoice = () => arabicLanguageHref ? (
     <a aria-current={currentLanguage === "ar" ? "page" : undefined} href={arabicLanguageHref} hrefLang="ar" lang="ar" onClick={(event) => handleLanguageChange(event, "ar")}><span className={styles.languageChoiceShort}>العربية</span><span className={styles.languageChoiceEndonym}>العربية</span></a>
   ) : null;
@@ -902,6 +899,16 @@ export function HomegroundHeader({
               </Link>
             );
           })}
+          {currentLanguage === "en" && (
+            <Link
+              aria-current={corporateIsCurrent ? pathname === "/corporate-travel/" ? "page" : "location" : undefined}
+              data-active={corporateIsCurrent ? "true" : undefined}
+              href="/corporate-travel/"
+              onClick={() => trackNavigationClick("corporate-travel", "desktop-primary")}
+            >
+              For Companies
+            </Link>
+          )}
         </nav>
 
         <div className={styles.headerActions}>
@@ -922,11 +929,11 @@ export function HomegroundHeader({
           >
             {copy.navigation.faq}
           </Link>
-          <nav
-            className={styles.languageNav}
-            aria-label={copy.navigation.languageLabel}
+          <HeaderLanguageMenu
+            ariaLabel={copy.navigation.languageLabel}
             hidden={!showLanguageNav}
-            style={showLanguageNav ? undefined : { display: "none" }}
+            label={languageEndonyms[currentLanguage] ?? currentLanguage.toUpperCase()}
+            lang={edition ? currentLanguage : copy.htmlLang}
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
             {renderJapaneseLanguageChoice()}
@@ -934,7 +941,7 @@ export function HomegroundHeader({
             {renderFrenchLanguageChoice()}
             {renderGermanLanguageChoice()}
             {renderArabicLanguageChoice()}
-          </nav>
+          </HeaderLanguageMenu>
           <Link
             className={styles.headerCta}
             data-label-mode={plannerStatus === "new" ? "full" : "compact"}

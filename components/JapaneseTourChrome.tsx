@@ -5,6 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { EditionMobileNav } from "./EditionMobileNav";
+import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
+import { completeHeaderLanguagePaths, isEquivalentTourLanguagePath } from "../lib/headerLanguagePaths";
+import { spanishSitePagePathByEnglishPath, spanishTourPagePath, spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
+import { frenchSitePagePathByEnglishPath } from "../lib/frenchEditionIndex";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
@@ -64,6 +68,22 @@ export function JapaneseSiteHeader({
   selectionSlug?: string | null;
 }) {
   const selectedHref = useSelectedTourHref(selectionSlug);
+  const englishPath = languagePaths.find((item) => item.lang === "en")?.path ?? "/";
+  const englishTourSlug = /^\/tours\/([^/]+)\/$/.exec(englishPath)?.[1];
+  const englishGuideId = /^\/guides\/([^/]+)\/$/.exec(englishPath)?.[1];
+  const allLanguagePaths = completeHeaderLanguagePaths({
+    ...Object.fromEntries(languagePaths.map((item) => [item.lang, item.path])),
+    es: spanishSitePagePathByEnglishPath[englishPath]
+      ?? (englishTourSlug ? spanishTourPagePath(englishTourSlug) : undefined)
+      ?? (englishGuideId ? spanishGuidePathBySourceId[englishGuideId] : undefined),
+    fr: frenchSitePagePathByEnglishPath[englishPath]
+      ?? (englishTourSlug ? `/fr${englishPath}` : undefined),
+  });
+  // Preserve room/package choices on equivalent tour pages only; the
+  // fallback homepage has no matching product to receive that selection.
+  const selectedLanguageHref = (path: string) => selectionSlug
+    && isEquivalentTourLanguagePath(path, selectionSlug)
+      ? selectedHref(path) : path;
   const selectedTour = usePrivateTourSelection();
   const primaryLinks = japanesePrimaryLinks;
   const [open, setOpen] = useState(false);
@@ -208,19 +228,19 @@ export function JapaneseSiteHeader({
             <a className={`${headerStyles.desktopUtilityLink} ${styles.faqUtilityLink}`} href={`${japaneseSite.home}#faq`}>
               よくある質問
             </a>
-            <nav aria-label="言語を選ぶ" className={headerStyles.languageNav}>
-              {languagePaths.map((item) => (
+            <HeaderLanguageMenu ariaLabel="言語を選ぶ" label="日本語" lang="ja">
+              {allLanguagePaths.map((item) => (
                 <a
                   aria-current={item.lang === "ja" ? "page" : undefined}
-                  href={selectedHref(item.path)}
+                  href={selectedLanguageHref(item.path)}
                   hrefLang={item.lang}
                   key={item.lang}
                   lang={item.lang}
                 >
-                  {item.label}
+                  {languageEndonyms[item.lang] ?? item.label}
                 </a>
               ))}
-            </nav>
+            </HeaderLanguageMenu>
             <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref} onClick={openTourInquiry}>
               <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
               <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
@@ -245,10 +265,10 @@ export function JapaneseSiteHeader({
           label="モバイルメニュー"
           labelClassName={styles.mobileLabel}
           languageLabel="言語を選ぶ"
-          languages={languagePaths.map((item) => ({
+          languages={allLanguagePaths.map((item) => ({
             label: item.label,
             lang: item.lang,
-            path: selectedHref(item.path),
+            path: selectedLanguageHref(item.path),
             current: item.lang === "ja",
           }))}
           navRef={mobileNavRef}

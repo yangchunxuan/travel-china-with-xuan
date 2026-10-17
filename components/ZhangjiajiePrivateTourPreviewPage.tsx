@@ -1,5 +1,4 @@
 import { TourWhatsAppLink } from "./TourWhatsAppLink";
-import { spanishSite } from "../lib/spanishSite";
 import type { ReactNode } from "react";
 import type { PresentationCopy } from "../lib/presentationOverrides";
 import Image from "next/image";
@@ -362,8 +361,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
         </div>
       ) : null}
       {edition?.header ?? <HomegroundHeader
-        // Published: Spanish readers get the Spanish tour list from the language switch.
-        languagePaths={published ? { ...languagePaths, es: spanishSite.tours } : languagePaths}
+        languagePaths={languagePaths}
         locale={locale}
         pageContext={published ? "tour" : "guide"}
         plannerHrefOverride={published ? inquiryHref : undefined}

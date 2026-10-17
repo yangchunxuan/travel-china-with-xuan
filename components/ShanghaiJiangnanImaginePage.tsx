@@ -1299,15 +1299,14 @@ export function ShanghaiJiangnanImaginePage({
       </a>
       {edition ? editionChrome?.header : <HomegroundHeader
         languagePaths={localized.visibility === "preview"
-          // A preview has no Japanese page, so the switch offers no Japanese link.
+          // A preview has no translated edition page; the header supplies edition homes.
           ? localized.paths
           : {
             ...localized.paths,
             ja: product.slug === jaPilot.tourSlug
               ? jaPilot.tour
               : `/ja/tours/${product.slug}/`,
-            // A tour without a Spanish page sends Spanish readers to the Spanish tour list.
-            es: spanishTourPagePath(product.slug) ?? spanishSite.tours,
+            es: spanishTourPagePath(product.slug) ?? spanishSite.home,
             fr: `/fr/tours/${product.slug}/`,
             de: `/de/tours/${product.slug}/`,
           }}

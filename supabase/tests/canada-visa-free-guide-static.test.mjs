@@ -69,7 +69,7 @@ test("guide route, article schema, CTA and responsive visual assets are wired", 
   assert.match(page, /citation: CANADA_VISA_GUIDE_SOURCES\.map/);
   assert.match(page, /Talk to a trip planner/);
   assert.match(page, /utm_campaign=trip-conversation/);
-  assert.match(page, /showLanguageNav=\{false\}/);
+  assert.match(page, /languagePaths=\{\{ en: guide\.canonicalPath \}\}/);
   assert.match(styles, /@media \(max-width: 36rem\)/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /:focus-visible/);

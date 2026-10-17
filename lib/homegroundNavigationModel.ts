@@ -42,6 +42,7 @@ export type HomegroundAboutNavigationId = "company" | "planning" | "credentials"
 
 export type HomegroundSubmenuId =
   | HomegroundServiceNavigationId
+  | "corporate-travel"
   | HomegroundDestinationNavigationId
   | HomegroundTourNavigationId
   | HomegroundAboutNavigationId;
@@ -470,6 +471,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
 export function getHomegroundNavigationModel(
   locale: HomegroundLocale,
   localePath: string,
+  options: { includeCorporateTravel?: boolean } = {},
 ) {
   const copy = navigationCopy[locale];
   const entry = <Id extends HomegroundSubmenuId>(id: Id, item: HomegroundPrimaryNavigationItemCopy) => ({
@@ -487,7 +489,15 @@ export function getHomegroundNavigationModel(
       toggle: copy.toursToggle,
     },
     services: {
-      entries: homegroundServiceNavigationIds.map((id) => entry(id, copy.services[id])),
+      entries: [
+        ...homegroundServiceNavigationIds.map((id) => entry(id, copy.services[id])),
+        // The company-travel pages are initially published in English only.
+        ...(locale === "en" && options.includeCorporateTravel !== false ? [entry("corporate-travel", {
+          label: "For Companies",
+          description: "Company trips, incentive travel and small meetings",
+          pathSegment: "corporate-travel/",
+        })] : []),
+      ],
       toggle: copy.servicesToggle,
     },
     studio: {

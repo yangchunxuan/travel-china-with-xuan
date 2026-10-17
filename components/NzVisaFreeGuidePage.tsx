@@ -127,7 +127,7 @@ export function NzVisaFreeGuidePage() {
       <HomegroundHeader
         locale="en"
         pageContext="guides"
-        showLanguageNav={false}
+        languagePaths={{ en: guide.canonicalPath }}
       />
 
       <main id="nz-visa-main" tabIndex={-1}>
