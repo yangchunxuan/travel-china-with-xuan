@@ -1,18 +1,18 @@
 "use client";
 
 import { DayPicker } from "@daypicker/react";
-import { enGB, es, fr, de, zhCN, ko } from "@daypicker/react/locale";
+import { enGB, es, fr, de, arSA, zhCN, ko } from "@daypicker/react/locale";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { dateFromIso, tourDateCopy } from "../lib/tourDate";
 import "@daypicker/react/style.css";
 import styles from "./TourDateField.module.css";
 
-const calendarLocales = { en: enGB, zh: zhCN, ko, es, fr, de };
+const calendarLocales = { en: enGB, zh: zhCN, ko, es, fr, de, ar: arSA };
 
 export interface TourCalendarProps {
   locale: HomegroundLocale;
   /** A language edition's calendar language and title, in place of the locale's. */
-  language?: "es" | "fr" | "de";
+  language?: "es" | "fr" | "de" | "ar";
   title?: string;
   value: string;
   month: Date;
@@ -22,7 +22,7 @@ export interface TourCalendarProps {
 }
 
 export default function TourCalendar({ locale, language, title, value, month, onMonthChange, onSelect, disabled }: TourCalendarProps) {
-  return <DayPicker className={styles.days} mode="single" required locale={calendarLocales[language ?? locale]}
+  return <DayPicker className={styles.days} dir={language === "ar" ? "rtl" : undefined} mode="single" required locale={calendarLocales[language ?? locale]}
     selected={dateFromIso(value)} onSelect={onSelect} month={month} onMonthChange={onMonthChange}
     captionLayout="dropdown" navLayout="after"
     startMonth={dateFromIso(`${String(Math.min(2000, month.getFullYear())).padStart(4, "0")}-01-01`)}

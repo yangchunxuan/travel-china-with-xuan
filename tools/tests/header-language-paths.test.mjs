@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { completeHeaderLanguagePaths, headerLanguageEditions, isEquivalentTourLanguagePath } from "../../lib/headerLanguagePaths.ts";
 
-const languages = ["en", "zh-Hans", "ko", "ja", "es", "fr", "de"];
-const labels = ["English", "中文", "한국어", "日本語", "Español", "Français", "Deutsch"];
-const homes = ["/", "/zh/", "/ko/", "/ja/", "/es/", "/fr/", "/de/"];
+const languages = ["en", "zh-Hans", "ko", "ja", "es", "fr", "de", "ar"];
+const labels = ["English", "中文", "한국어", "日本語", "Español", "Français", "Deutsch", "العربية"];
+const homes = ["/", "/zh/", "/ko/", "/ja/", "/es/", "/fr/", "/de/", "/ar/"];
 
 test("tour choices transfer only to the same translated product, never edition homes or another trip", () => {
   const slug = "zhangjiajie-4-day-private-tour";
@@ -16,11 +16,11 @@ test("tour choices transfer only to the same translated product, never edition h
   }
 });
 
-test("every header gets seven editions in the approved order and endonyms", () => {
+test("every header gets eight editions in the approved order and endonyms", () => {
   const result = completeHeaderLanguagePaths({ de: "/de/services/", en: "/services/" });
   assert.deepEqual(result.map(({ lang }) => lang), languages);
   assert.deepEqual(result.map(({ label }) => label), labels);
-  assert.equal(new Set(result.map(({ lang }) => lang)).size, 7);
+  assert.equal(new Set(result.map(({ lang }) => lang)).size, 8);
 });
 
 test("an empty translation map points each edition to its own homepage", () => {
@@ -41,7 +41,7 @@ test("existing page destinations retain their exact query strings and fragments"
 test("only missing or empty destinations fall back to edition homepages", () => {
   const result = completeHeaderLanguagePaths({ en: "/corporate-travel/", ja: "", fr: "/fr/services/#contact" });
   assert.deepEqual(result.map(({ path }) => path), [
-    "/corporate-travel/", "/zh/", "/ko/", "/ja/", "/es/", "/fr/services/#contact", "/de/",
+    "/corporate-travel/", "/zh/", "/ko/", "/ja/", "/es/", "/fr/services/#contact", "/de/", "/ar/",
   ]);
 });
 

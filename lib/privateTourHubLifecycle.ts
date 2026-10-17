@@ -4,7 +4,7 @@ import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { spanishTourPageSlugs } from "./spanishEditionIndex.ts";
 
-type TourHubLocale = HomegroundLocale | "ja" | "es" | "fr" | "de";
+type TourHubLocale = HomegroundLocale | "ja" | "es" | "fr" | "de" | "ar";
 
 /**
  * Actual hub copy/publication events, independent of builds and fact reviews.
@@ -21,6 +21,7 @@ const hubContentModifiedAt: Record<TourHubLocale, string> = {
   es: "2026-10-16",
   fr: "2026-10-16",
   de: "2026-10-17",
+  ar: "2026-10-17",
 };
 
 export function latestTourHubChange(
@@ -35,7 +36,7 @@ export function latestTourHubChange(
 
 /** The hub changes when a card's published content changes, including prices. */
 export function getPrivateTourHubLastModified(locale: TourHubLocale = "en") {
-  const sourceLocale = locale === "ja" || locale === "es" || locale === "fr" || locale === "de" ? "en" : locale;
+  const sourceLocale = locale === "ja" || locale === "es" || locale === "fr" || locale === "de" || locale === "ar" ? "en" : locale;
   const catalog = getPublishedPrivateTourCatalog(sourceLocale);
   const tours = locale === "es"
     ? catalog.filter((tour) => spanishTourPageSlugs.includes(tour.slug))

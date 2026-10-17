@@ -1,4 +1,6 @@
 "use client";
+import { arabicContactEdition } from '../lib/arabicContactEdition';
+
 
 import { germanContactEdition } from '../lib/germanContactEdition';
 import { useEffect, useId, useMemo, useRef, useState, type ReactNode } from "react";
@@ -74,7 +76,7 @@ export function AttractionReservationEnquiry({
   intro: ReactNode;
 }) {
   const id = useId();
-  const dateEdition = editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
   const [compactReferral, setCompactReferral] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);

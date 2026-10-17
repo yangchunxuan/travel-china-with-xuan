@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Homeground Arabic';
+  src: url('/fonts/arabic/NotoSansArabic-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+html[lang='ar'] {
+  --hg-font-sans: 'Homeground Arabic', 'Geeza Pro', 'Segoe UI', sans-serif;
+  --hg-font-editorial: 'Homeground Arabic', 'Geeza Pro', 'Segoe UI', sans-serif;
+}
+html[lang='ar'] body { font-family:var(--hg-font-sans); line-height:1.8; }
+html[lang='ar'] main,
+html[lang='ar'] footer,
+html[lang='ar'] [role='dialog'] { text-align:start; }
+html[lang='ar'] :is(h1,h2,h3,h4,p,a,button,label,dt,dd,li,span) { letter-spacing:normal; }
+html[lang='ar'] :is(h1,h2,h3,h4) { line-height:1.45; }
+html[lang='ar'] :is(input[type='email'],input[type='tel'],input[type='url']) { direction:ltr; text-align:start; unicode-bidi:isolate; }
+html[lang='ar'] :is(input,textarea,select,button) { font-family:inherit; }
+html[lang='ar'] :is(p,li,dd,a) { overflow-wrap:break-word; }
+html[lang='ar'] :is(bdi,[data-bidi='ltr']) { direction:ltr; unicode-bidi:isolate; }
+html[lang='ar'] [class*='brand'],
+html[lang='ar'] [class*='Brand'],
+html[lang='ar'] [class*='wordmark'],
+html[lang='ar'] [class*='Wordmark'] { direction:ltr; unicode-bidi:isolate; }
+html[lang='ar'] [class*='languageChoice'],
+html[lang='ar'] [class*='LanguageNav'] { unicode-bidi:isolate; }
+html[lang='ar'] :is([class*='heroTitle'],[class*='HeroTitle'],[class*='sectionTitle']) { max-inline-size:100%; }
+@media (prefers-reduced-motion:reduce) {
+ html[lang='ar'] *,html[lang='ar'] *::before,html[lang='ar'] *::after { scroll-behavior:auto!important; }
+}
+
+html[lang="ar"] svg.lucide-arrow-right { transform: scaleX(-1); }

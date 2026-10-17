@@ -6,10 +6,12 @@ import { homegroundWhatsAppHref, tourContactCopy, tourWhatsAppHref } from "../li
 import { trackEvent } from "../lib/analytics";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import styles from "./TourContactPanel.module.css";
-export function TourWhatsAppLink({ locale, slug, edition }: { locale: HomegroundLocale; slug: string; edition?: {language:'fr'|'es'|'de';label:string;title:string;path:string;packageLabels:Readonly<Record<string,string>>;guideNote:string} }) {
+export function TourWhatsAppLink({ locale, slug, edition }: { locale: HomegroundLocale; slug: string; edition?: {language:'fr'|'es'|'de' | 'ar';label:string;title:string;path:string;packageLabels:Readonly<Record<string,string>>;guideNote:string} }) {
   const selected = usePrivateTourSelection();
   const context = getPrivateTourInquiryContext(slug, locale, selected?.slug === slug ? selected.selection : undefined);
-  const editionMessage = edition ? (edition.language === 'de'
+  const editionMessage = edition ? (edition.language === 'ar'
+    ? ['مرحبًا، أرغب في هذه الرحلة إلى الصين.', edition.title, context?.selection ? `${edition.packageLabels[context.selection.packageId] ?? context.selection.packageId} · ${context.selection.travelers} مسافرين` : '', 'مواعيد السفر التقريبية:', edition.guideNote, `الصفحة: https://homegroundchina.com${edition.path}`].filter(Boolean)
+    : edition.language === 'de'
     ? ['Guten Tag, ich interessiere mich für diese China-Reise.', edition.title, context?.selection ? `${edition.packageLabels[context.selection.packageId] ?? context.selection.packageId} · ${context.selection.travelers} Reisende` : '', edition.guideNote, `Seite: https://homegroundchina.com${edition.path}`].filter(Boolean)
     : edition.language === 'es'
     ? ['Hola, me interesa este viaje.',`Viaje: ${edition.title}`,`Opción: ${edition.packageLabels[context?.selection?.packageId ?? ''] ?? ''}`,`Número de viajeros: ${context?.selection?.travelers ?? ''}`,'Fechas aproximadas:',edition.guideNote,`Página: https://homegroundchina.com${edition.path}`]

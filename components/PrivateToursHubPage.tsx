@@ -327,7 +327,7 @@ export function PrivateToursHubPage({
             </div>
             <div>
               <dt>{copy.statsLengths}</dt>
-              <dd><RollingNumber value={edition ? `${new Intl.NumberFormat(edition.language).format(stats.shortestDays)}–${new Intl.NumberFormat(edition.language).format(stats.longestDays)}` : `${stats.shortestDays}–${stats.longestDays}`} /></dd>
+              <dd dir={edition?.language === "ar" ? "ltr" : undefined}><RollingNumber value={edition ? `${new Intl.NumberFormat(edition.language === "ar" ? "ar-SA-u-nu-latn" : edition.language).format(stats.shortestDays)}–${new Intl.NumberFormat(edition.language === "ar" ? "ar-SA-u-nu-latn" : edition.language).format(stats.longestDays)}` : `${stats.shortestDays}–${stats.longestDays}`} /></dd>
             </div>
             <div>
               <dt>{copy.statsShopping}</dt>

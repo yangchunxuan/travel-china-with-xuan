@@ -12,6 +12,7 @@ const editions = [
   { lang: "es", label: "Español" },
   { lang: "fr", label: "Français" },
   { lang: "de", label: "Deutsch" },
+  { lang: "ar", label: "العربية" },
 ];
 const origin = "https://homegroundchina.com";
 const output = resolve(process.argv[2] ?? "out");
@@ -122,7 +123,7 @@ for (const file of files) {
     for (const nav of navs) {
       check(!explicitlyHidden(nav, header), `${route}: desktop language nav must not be explicitly hidden`);
       const links = elements(nav, (node) => node.tagName === "a");
-      check(links.length === 7, `${route}: expected seven language choices, found ${links.length}`);
+      check(links.length === editions.length, `${route}: expected eight language choices, found ${links.length}`);
       const current = links.filter((node) => attr(node, "aria-current") !== undefined && attr(node, "aria-current") !== "false");
       check(current.length === 1, `${route}: expected one current language, found ${current.length}`);
       if (current.length === 1) check(normalizeLanguage(attr(current[0], "lang")) === htmlLanguage, `${route}: current language must be ${htmlLanguage}`);
@@ -153,5 +154,5 @@ if (errors.length) {
   console.error(`Header language export failed (${errors.length} issues across ${checkedPages} pages):\n${errors.slice(0, 40).join("\n")}${errors.length > 40 ? `\n... ${errors.length - 40} further issues` : ""}`);
   process.exitCode = 1;
 } else {
-  console.log(`Header language export: ${checkedPages} pages, ${checkedHeaders} rendered header candidates and ${checkedLinks} language links checked; all seven editions, current labels and exported destinations are valid.`);
+  console.log(`Header language export: ${checkedPages} pages, ${checkedHeaders} rendered header candidates and ${checkedLinks} language links checked; all eight editions, current labels and exported destinations are valid.`);
 }

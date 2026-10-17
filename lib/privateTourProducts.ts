@@ -185,7 +185,7 @@ export interface LocalizedPrivateTourProduct {
   title: string;
   metadataTitle: string;
   metadataDescription: string;
-  openGraphLocale: "en_US" | "zh_CN" | "ko_KR" | "fr_FR" | "es_ES" | "de_DE";
+  openGraphLocale: "en_US" | "zh_CN" | "ko_KR" | "fr_FR" | "es_ES" | "de_DE" | "ar_SA";
   eyebrow: string;
   lede: string;
   summary: string;

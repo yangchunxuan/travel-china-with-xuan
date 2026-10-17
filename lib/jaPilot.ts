@@ -27,7 +27,7 @@ export function jaPilotTourAlternates() {
     ko: `/ko/tours/${jaPilot.tourSlug}/`,
     ja: jaPilot.tour,
     fr: `/fr/tours/${jaPilot.tourSlug}/`,
-    de: `/de/tours/${jaPilot.tourSlug}/`,
+    de: `/de/tours/${jaPilot.tourSlug}/`, ar: `/ar/tours/${jaPilot.tourSlug}/`,
     es: `/es/tours/${jaPilot.tourSlug}/`,
     "x-default": `/tours/${jaPilot.tourSlug}/`,
   } as const;

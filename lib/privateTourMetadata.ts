@@ -64,6 +64,7 @@ export function getPrivateTourLanguagePaths(product: PrivateTourProduct) {
     ...(es ? { es } : {}),
     fr: `/fr/tours/${product.slug}/`,
     de: `/de/tours/${product.slug}/`,
+    ar: `/ar/tours/${product.slug}/`,
     "x-default": paths.en,
   } as const;
 }

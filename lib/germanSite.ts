@@ -1,3 +1,4 @@
+import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex.ts';
 import type { Metadata } from 'next';
 import { homegroundBusiness } from './homegroundBusiness.ts';
 import { spanishTourPagePath, spanishSitePagePathByEnglishPath } from './spanishEditionIndex.ts';
@@ -20,11 +21,12 @@ export const germanLegalLinks = [
 export interface GermanLanguagePath { readonly label: string; readonly lang: string; readonly path: string; }
 export function germanLanguagePaths(enPath: string, dePath: string): readonly GermanLanguagePath[] {
   const slug = /^\/tours\/([^/]+)\/$/.exec(enPath)?.[1];
+  const ar = slug ? `/ar${enPath}` : arabicSitePagePathByEnglishPath[enPath];
   const es = slug ? spanishTourPagePath(slug) : spanishSitePagePathByEnglishPath[enPath];
   const fr = slug ? `/fr${enPath}` : frenchSitePagePathByEnglishPath[enPath];
   return [{ label: 'DE', lang: 'de', path: dePath }, { label: 'EN', lang: 'en', path: enPath }, { label: '中文', lang: 'zh-Hans', path: `/zh${enPath}` }, { label: '한국어', lang: 'ko', path: `/ko${enPath}` },
     ...(slug === 'xian-terracotta-warriors-half-day-private-tour' ? [] : [{label:'日本語',lang:'ja',path:`/ja${enPath}`}]),
-    ...(fr ? [{label:'FR',lang:'fr',path:fr}] : []), ...(es ? [{label:'ES',lang:'es',path:es}] : []),
+    ...(ar ? [{label:'العربية',lang:'ar',path:ar}] : []), ...(fr ? [{label:'FR',lang:'fr',path:fr}] : []), ...(es ? [{label:'ES',lang:'es',path:es}] : []),
   ];
 }
 export const germanGuideLanguageNote = 'Es gelten die Leistungen und die Sprache der Reiseleitung der beschriebenen Variante. Deutschsprachige Reiseleitung ist nicht im veröffentlichten Preis enthalten. Falls Sie diese wünschen, müssen Verfügbarkeit und ein gesondertes Angebot vor der Buchung schriftlich bestätigt werden.';

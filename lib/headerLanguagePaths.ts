@@ -7,6 +7,7 @@ export const headerLanguageEditions = [
   { lang: "es", label: "Español", home: "/es/" },
   { lang: "fr", label: "Français", home: "/fr/" },
   { lang: "de", label: "Deutsch", home: "/de/" },
+  { lang: "ar", label: "العربية", home: "/ar/" },
 ] as const;
 
 export type HeaderLanguage = (typeof headerLanguageEditions)[number]["lang"];

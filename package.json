@@ -7,7 +7,7 @@
     "guide:check": "node tools/generate-guide-registry.mjs --check",
     "guide:check-parallel-merge": "node tools/check-parallel-guide-merge.mjs",
     "postinstall": "npm run guide:generate",
-    "predev": "npm run guide:generate && npm run generate:french-contact-names && npm run generate:spanish-contact-names && npm run generate:german-contact-names",
+    "predev": "npm run guide:generate && npm run generate:french-contact-names && npm run generate:spanish-contact-names && npm run generate:german-contact-names && npm run generate:arabic-contact-names",
     "dev": "next dev",
     "dev:inquiry-api": "node --experimental-strip-types tools/mock-inquiry-api.mjs",
     "check:font-coverage": "node tools/check-font-coverage.mjs",
@@ -33,9 +33,9 @@
     "test:homepage-search": "node --test supabase/tests/homepage-guide-search-static.test.mjs",
     "typecheck": "npm run guide:generate && tsc --noEmit",
     "generate:image-variants": "node tools/generate-image-variants.mjs",
-    "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants && npm run generate:french-contact-names && npm run generate:spanish-contact-names && npm run generate:german-contact-names",
+    "prebuild": "npm run guide:generate && npm run content:check && npm run generate:private-tour-inquiry-index && npm run check:font-coverage && npm run check:planning-scope-lines && npm run generate:image-variants && npm run generate:french-contact-names && npm run generate:spanish-contact-names && npm run generate:german-contact-names && npm run generate:arabic-contact-names",
     "build": "next build",
-    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && node --experimental-strip-types --no-warnings tools/generate-llms-txt.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:ja-pilot-export && npm run check:guide-sales-card-export && npm run check:private-car-export && npm run check:german-export && node tools/generate-inquiry-contract.mjs",
+    "postbuild": "node tools/promote-not-found-export.mjs && node tools/prune-production-export.mjs && node --experimental-strip-types --no-warnings tools/generate-llms-txt.mjs && npm run check:font-coverage:export && npm run check:search-platform-export && npm run check:ja-pilot-export && npm run check:guide-sales-card-export && npm run check:private-car-export && npm run check:german-export && npm run check:arabic-export && node tools/generate-inquiry-contract.mjs",
     "start": "next start",
     "check:private-car-export": "node tools/check-private-car-export.mjs",
     "generate:french-contact-names": "node --experimental-strip-types --no-warnings tools/generate-french-contact-names.mjs",
@@ -43,7 +43,9 @@
     "generate:spanish-contact-names": "node --experimental-strip-types --no-warnings tools/generate-spanish-contact-names.mjs",
     "check:spanish-export": "node tools/check-spanish-export.mjs",
     "generate:german-contact-names": "node --experimental-strip-types --no-warnings tools/generate-german-contact-names.mjs",
-    "check:german-export": "node tools/check-german-export.mjs"
+    "check:german-export": "node tools/check-german-export.mjs",
+    "generate:arabic-contact-names": "node --experimental-strip-types --no-warnings tools/generate-arabic-contact-names.mjs",
+    "check:arabic-export": "node tools/check-arabic-export.mjs"
   },
   "dependencies": {
     "@daypicker/react": "10.0.1",

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       ja: "/ja/guides/",
       es: spanishSite.guides,
       fr: "/fr/guides/",
-      de: "/de/guides/",
+      de: "/de/guides/", ar: "/ar/guides/",
       "x-default": "/guides/",
     },
   },

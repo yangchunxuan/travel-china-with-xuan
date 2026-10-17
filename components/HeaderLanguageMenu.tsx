@@ -24,6 +24,7 @@ export const languageEndonyms: Readonly<Record<string, string>> = {
   es: "Español",
   fr: "Français",
   de: "Deutsch",
+  ar: "العربية",
 };
 
 /**

@@ -68,7 +68,7 @@ export function FullTripSupportPage({ locale = "en", editionLocale }: { locale?:
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
   const homePath = paths?.home ?? home.path;
   const operator = editionLocale ? `${homegroundBusiness.englishName} (${homegroundBusiness.publicName})` : homegroundBusiness.publicName;
-  const carLabel = editionLocale === "de" ? "Privatwagen mit Fahrer" : editionLocale === "fr" ? "Voiture privée avec chauffeur" : editionLocale === "es" ? "Coche privado con conductor" : getPrivateCarServiceCopy(locale).name;
+  const carLabel = editionLocale === "ar" ? "سيارة خاصة مع سائق" : editionLocale === "de" ? "Privatwagen mit Fahrer" : editionLocale === "fr" ? "Voiture privée avec chauffeur" : editionLocale === "es" ? "Coche privado con conductor" : getPrivateCarServiceCopy(locale).name;
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>

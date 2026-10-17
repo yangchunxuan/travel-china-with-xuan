@@ -1,3 +1,5 @@
+import { arabicAttractionReservationCopy } from './arabicAttractionReservationCopy.ts';
+import { arabicAttractionReservationRules } from './arabicAttractionReservationRules.ts';
 import { germanAttractionReservationCopy } from './germanAttractionReservationCopy.ts';
 import { germanAttractionReservationRules } from './germanAttractionReservationRules.ts';
 import type { AttractionReservationCopy } from './attractionReservationsI18n';
@@ -7,10 +9,10 @@ import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS as days } from './attraction
 // @ts-ignore TS5097: focused checks use Node type stripping.
 import { attractionReservationServiceFeeCny } from './attractionReservations.ts';
 
-export type AttractionReservationEditionLocale = 'fr' | 'es' | 'de';
+export type AttractionReservationEditionLocale = 'fr' | 'es' | 'de' | 'ar';
 
 export function formatAttractionReservationEditionMoney(amount: number, language: AttractionReservationEditionLocale) {
-  return new Intl.NumberFormat(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
+  return new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
 }
 
 const guarantees = {
@@ -118,10 +120,11 @@ const spanish: AttractionReservationCopy = {
 };
 
 export function getAttractionReservationEditionCopy(language: AttractionReservationEditionLocale): AttractionReservationCopy {
-  return language === 'de' ? germanAttractionReservationCopy : language === 'fr' ? french : spanish;
+  return language === 'ar' ? arabicAttractionReservationCopy : language === 'de' ? germanAttractionReservationCopy : language === 'fr' ? french : spanish;
 }
 
 export const attractionReservationEditionHeroAlt = {
+  ar: "قاعة التناغم الأسمى وساحتها في المدينة المحرمة مع زوار في المشهد",
   de: 'Halle der Höchsten Harmonie und ihr Innenhof in der Verbotenen Stadt mit Besuchern',
   fr: 'Le pavillon de l’Harmonie suprême et sa cour dans la Cité interdite, avec des visiteurs',
   es: 'Salón de la Armonía Suprema y su patio en la Ciudad Prohibida, con visitantes',
@@ -136,6 +139,7 @@ const unchecked = {
 // Only translated words live here. Availability, fees, status, source and check dates
 // continue to come from attractionReservations; null policy fields remain null.
 const ruleCopy: Record<AttractionReservationEditionLocale, Record<string, RuleCopy>> = {
+  ar: arabicAttractionReservationRules,
   de: germanAttractionReservationRules,
   fr: {
     'national-museum-of-china': { name: 'Musée national de Chine', release: 'Jusqu’à 7 jours à l’avance ; nouvelles places chaque jour à 17 h, heure de Pékin ; trois créneaux d’entrée', notes: 'L’entrée de base est gratuite ; les expositions temporaires payantes sont en supplément. Fermé la plupart des lundis. Le musée met en garde contre les réservations non officielles : nous utilisons uniquement son propre système.' },

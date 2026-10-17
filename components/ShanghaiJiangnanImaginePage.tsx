@@ -1,3 +1,6 @@
+import { localizeArabicPrivateTourProduct } from '../lib/localizeArabicPrivateTourProduct';
+import { arabicTourContactNote, arabicGuideLanguageNote, arabicDraftNote } from '../lib/arabicSite';
+import { arabicTourPageCopy, arabicPriceCopy, arabicPhotoCopy, arabicPhotoCreditCopy, arabicCommercialCopy, arabicTourPlanningContext, arabicTourContactHrefs } from '../lib/arabicTourPresentation';
 import { localizeGermanPrivateTourProduct } from '../lib/localizeGermanPrivateTourProduct';
 import { germanTourContactNote, germanGuideLanguageNote, germanDraftNote } from '../lib/germanSite';
 import { germanTourPageCopy, germanPriceCopy, germanPhotoCopy, germanPhotoCreditCopy, germanCommercialCopy, germanTourPlanningContext, germanTourContactHrefs } from '../lib/germanTourPresentation';
@@ -870,17 +873,18 @@ function buildNortheastWinterPageCopy(
   };
 }
 
-function offerGroupLabel(locale: PrivateTourLocale | "ja" | "es" | "fr" | "de", travelers: number) {
+function offerGroupLabel(locale: PrivateTourLocale | "ja" | "es" | "fr" | "de" | "ar", travelers: number) {
   if (locale === "zh") return `${travelers} 人同行`;
   if (locale === "ko") return `${travelers}명 기준`;
   if (locale === "ja") return `${travelers}名で参加`;
   if (locale === "es") return `${travelers} viajeros`;
+  if (locale === "ar") return `${travelers} مسافرين`;
   if (locale === "de") return `${travelers} Reisende`;
   if (locale === "fr") return `${travelers} voyageurs`;
   return `${travelers} travellers`;
 }
 
-function schemaLanguage(locale: PrivateTourLocale | "ja" | "es" | "fr" | "de") {
+function schemaLanguage(locale: PrivateTourLocale | "ja" | "es" | "fr" | "de" | "ar") {
   return locale === "zh" ? "zh-Hans" : locale;
 }
 
@@ -968,37 +972,42 @@ export function ShanghaiJiangnanImaginePage({
   spanishChrome,
   frenchChrome,
   germanChrome,
+  arabicChrome,
 }: {
   product: PrivateTourProduct;
-  locale: PrivateTourLocale | "ja" | "es" | "fr" | "de";
+  locale: PrivateTourLocale | "ja" | "es" | "fr" | "de" | "ar";
   japaneseChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
   japaneseCopyOverride?: JapaneseTourCopy;
   spanishChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
   frenchChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
+  arabicChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
   germanChrome?: Readonly<{ header: ReactNode; footer: ReactNode }>;
 }) {
   const japanese = locale === "ja";
   const spanish = locale === "es";
   const french = locale === "fr";
   const german = locale === "de";
+  const arabic = locale === "ar";
+  const arabicContactNote = isNortheastWinterTour(product.slug) ? arabicDraftNote : arabicTourContactNote;
   const germanContactNote = isNortheastWinterTour(product.slug) ? germanDraftNote : germanTourContactNote;
   const frenchContactNote = isNortheastWinterTour(product.slug) ? frenchDraftNote : frenchTourContactNote;
   const spanishContactNote = isNortheastWinterTour(product.slug) ? spanishDraftNote : spanishTourContactNote;
   // Japanese and Spanish pages bring their own chrome, copy and contact links,
   // and take prices, photographs and structure from the English source.
-  const edition = japanese || spanish || french || german;
+  const edition = japanese || spanish || french || german || arabic;
   const japanesePilot = japanese && product.slug === jaPilot.tourSlug && !japaneseCopyOverride;
   if (japanese && !japaneseChrome) throw new Error("Japanese tour requires its localized site chrome");
   if (spanish && !spanishChrome) throw new Error("Spanish tour requires its localized site chrome");
+  if (arabic && !arabicChrome) throw new Error("Arabic tour requires its localized site chrome");
   if (german && !germanChrome) throw new Error("German tour requires its localized site chrome");
   if (french && !frenchChrome) throw new Error("French tour requires its localized site chrome");
-  const editionChrome = japanese ? japaneseChrome : spanish ? spanishChrome : french ? frenchChrome : german ? germanChrome : undefined;
+  const editionChrome = japanese ? japaneseChrome : spanish ? spanishChrome : french ? frenchChrome : german ? germanChrome : arabic ? arabicChrome : undefined;
   const sourceLocale = edition ? "en" : locale;
   const localized = japanese
     ? localizeJapanesePrivateTourProduct(product, japaneseCopyOverride)
     : spanish
       ? localizeSpanishPrivateTourProduct(product)
-      : german ? localizeGermanPrivateTourProduct(product)
+      : arabic ? localizeArabicPrivateTourProduct(product) : german ? localizeGermanPrivateTourProduct(product)
       : french ? localizeFrenchPrivateTourProduct(product)
       : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
@@ -1012,7 +1021,7 @@ export function ShanghaiJiangnanImaginePage({
         : genericJapanesePageCopy(localized)
     : spanish
       ? spanishTourPageCopy(localized)
-      : german ? germanTourPageCopy(localized)
+      : arabic ? arabicTourPageCopy(localized) : german ? germanTourPageCopy(localized)
       : french ? frenchTourPageCopy(localized)
       : getPageCopy(localized);
   const jaPresentation = jaPilotCopy.tour.presentation;
@@ -1021,9 +1030,9 @@ export function ShanghaiJiangnanImaginePage({
     intro: japanesePilot ? jaPresentation.photoCreditsIntro : "場所が確認できる外部写真の撮影者とライセンスを以下に記載しています。加えた変更は通常のトリミング、サイズ変更とWebP形式への変換のみです。CC BY-SA写真の変更版はリンク先と同じライセンスで公開します。",
     by: japanesePilot ? jaPresentation.photoCreditsBy : "撮影者：",
     localNote: japanesePilot ? "" : "その他の写真はHomegroundの素材ライブラリから選ばれ、サイト所有者がこのサイトでの使用を許可しています。",
-  } : spanish ? spanishPhotoCreditCopy : german ? germanPhotoCreditCopy : french ? frenchPhotoCreditCopy : privateTourPhotoCreditCopy[sourceLocale];
+  } : spanish ? spanishPhotoCreditCopy : arabic ? arabicPhotoCreditCopy : german ? germanPhotoCreditCopy : french ? frenchPhotoCreditCopy : privateTourPhotoCreditCopy[sourceLocale];
   const photoCredits = getLocalizedPrivateTourPhotoCredits(product.slug, sourceLocale)
-    .map((credit, index) => german ? { ...credit, subject: `Foto ${index + 1}` } : french ? { ...credit, subject: `Photographie ${index + 1}` } : spanish ? { ...credit, subject: `Fotografía ${index + 1}` } : japanese ? {
+    .map((credit, index) => arabic ? { ...credit, subject: `الصورة ${index + 1}` } : german ? { ...credit, subject: `Foto ${index + 1}` } : french ? { ...credit, subject: `Photographie ${index + 1}` } : spanish ? { ...credit, subject: `Fotografía ${index + 1}` } : japanese ? {
       ...credit,
       subject: japanesePilot
         ? jaPilotCopy.tour.photoCreditSubjects[index] ?? credit.subject
@@ -1044,7 +1053,7 @@ export function ShanghaiJiangnanImaginePage({
     guides: [],
     relatedProducts: [{ id: "ja-tour-hub", href: "/ja/tours/", label: "中国ツアー一覧を見る" }],
   } : spanish ? spanishTourPlanningContext(product.slug)
-  : german ? germanTourPlanningContext(product.slug)
+  : arabic ? arabicTourPlanningContext(product.slug) : german ? germanTourPlanningContext(product.slug)
   : french ? frenchTourPlanningContext(product.slug)
   : isNortheastWinterTour(product.slug)
     ? getNortheastWinterProductPlanningContext(sourceLocale, product.slug)
@@ -1069,7 +1078,7 @@ export function ShanghaiJiangnanImaginePage({
   } : spanish ? {
     ...getExistingContentCommercialCopy("en"),
     ...spanishCommercialCopy,
-  } : german ? { ...getExistingContentCommercialCopy("en"), ...germanCommercialCopy } : french ? { ...getExistingContentCommercialCopy("en"), ...frenchCommercialCopy } : getExistingContentCommercialCopy(sourceLocale);
+  } : arabic ? { ...getExistingContentCommercialCopy("en"), ...arabicCommercialCopy } : german ? { ...getExistingContentCommercialCopy("en"), ...germanCommercialCopy } : french ? { ...getExistingContentCommercialCopy("en"), ...frenchCommercialCopy } : getExistingContentCommercialCopy(sourceLocale);
   const homePath = locale === "en" ? "/" : `/${locale}/`;
   const tourHubPath = japanesePilot ? homePath : `${homePath}tours/`;
   const pageUrl = `https://homegroundchina.com${localized.path}`;
@@ -1105,7 +1114,7 @@ export function ShanghaiJiangnanImaginePage({
     currencyNote: japaneseCurrencyNote,
   } : spanish ? { ...spanishPriceCopy, draftNote: spanishContactNote,
     ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: spanishGuideLanguageNote } : {}),
-  } : german ? { ...germanPriceCopy, draftNote: germanContactNote, ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: germanGuideLanguageNote } : {})
+  } : arabic ? { ...arabicPriceCopy, draftNote: arabicContactNote, ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: arabicGuideLanguageNote } : {}) } : german ? { ...germanPriceCopy, draftNote: germanContactNote, ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: germanGuideLanguageNote } : {})
   } : french ? {
     ...frenchPriceCopy,
     draftNote: frenchContactNote,
@@ -1113,7 +1122,7 @@ export function ShanghaiJiangnanImaginePage({
       currencyNote: 'Un guide francophone peut être demandé en supplément. Nous vous confirmerons ses disponibilités et son tarif séparément, avant toute réservation.',
     } : {}),
   } : undefined;
-  const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : spanish ? spanishPhotoCopy : french ? frenchPhotoCopy : german ? germanPhotoCopy : undefined;
+  const jaPhotoCopy = japanese ? jaPilotCopy.tour.photoInteraction : spanish ? spanishPhotoCopy : french ? frenchPhotoCopy : german ? germanPhotoCopy : arabic ? arabicPhotoCopy : undefined;
   const japaneseContactHrefs: JapaneseContactHrefs | undefined = japanesePilot ? {
     whatsapp: {
       2: jaPilotWhatsAppHref("tour", 2),
@@ -1127,7 +1136,7 @@ export function ShanghaiJiangnanImaginePage({
       6: jaPilotEmailHref("tour", 6),
       other: jaPilotEmailHref("tour"),
     },
-  } : japanese ? japaneseTourContactHrefs(localized) : spanish ? spanishTourContactHrefs(localized) : french ? frenchTourContactHrefs(localized) : german ? germanTourContactHrefs(localized) : undefined;
+  } : japanese ? japaneseTourContactHrefs(localized) : spanish ? spanishTourContactHrefs(localized) : french ? frenchTourContactHrefs(localized) : german ? germanTourContactHrefs(localized) : arabic ? arabicTourContactHrefs(localized) : undefined;
   const rows = localized.packages.flatMap((tourPackage) => tourPackage.rows);
   const lowestRow = rows.length
     ? rows.reduce((lowest, row) =>
@@ -1196,6 +1205,7 @@ export function ShanghaiJiangnanImaginePage({
                         : `${tourPackage.label} · ${offerGroupLabel(locale, row.travelers)}`,
                     price: row.amount,
                     priceCurrency: row.currency,
+                    ...(arabic ? { description: `${tourPackage.summary} ${arabicGuideLanguageNote}` } : {}),
                     ...(german ? { description: `${tourPackage.summary} ${germanGuideLanguageNote}` } : {}),
                     ...(french ? { description: `${tourPackage.summary} ${frenchGuideLanguageNote}` } : {}),
                     ...(spanish ? { description: `${tourPackage.summary} ${spanishGuideLanguageNote}` } : {}),
@@ -1421,7 +1431,7 @@ export function ShanghaiJiangnanImaginePage({
           >
             <div className={styles.sectionInner}>
               <div className={`${styles.sectionHeading} ${styles.faqHeading}`}>
-                <h2 id="tour-choice-title">{japanese ? japanesePilot ? jaPresentation.beforeChooseTitle : "この旅を選ぶ前に" : spanish ? spanishBeforeYouChooseTitle : german ? "Bevor Sie diese Reise wählen" : french ? "Avant de choisir ce circuit" : beforeYouChooseTitle[sourceLocale]}</h2>
+                <h2 id="tour-choice-title">{japanese ? japanesePilot ? jaPresentation.beforeChooseTitle : "この旅を選ぶ前に" : spanish ? spanishBeforeYouChooseTitle : arabic ? "قبل اختيار هذه الرحلة" : german ? "Bevor Sie diese Reise wählen" : french ? "Avant de choisir ce circuit" : beforeYouChooseTitle[sourceLocale]}</h2>
               </div>
               <div className={`${styles.serviceGrid} ${styles.faqGrid}`}>
                 {localized.faq.map((item) => (
@@ -1593,7 +1603,7 @@ export function ShanghaiJiangnanImaginePage({
                 <JapaneseTourContactLink channel="email" className={styles.finalEmail} hrefs={japaneseContactHrefs!}>
                   <Mail aria-hidden="true" size={16} />{copy.email}
                 </JapaneseTourContactLink>
-                <p className={styles.draftNote}>{spanish ? spanishContactNote : french ? frenchContactNote : german ? germanContactNote : japaneseDraftNote}</p>
+                <p className={styles.draftNote}>{spanish ? spanishContactNote : french ? frenchContactNote : german ? germanContactNote : arabic ? arabicContactNote : japaneseDraftNote}</p>
               </> : <>
               <SelectedPrivateTourCta
                 className={styles.finalPrimary}
