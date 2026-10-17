@@ -16,7 +16,7 @@ export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
  * Every fact below is copied from a Homeground guide that already cites the
  * attraction's own official source; `source` names that guide and
  * `verifiedAt` is the date the guide recorded for the check. A row with no
- * source guide has `verifiedAt: null` and renders as "not yet checked"; it
+ * source guide has `verifiedAt: null` and prompts a date-specific rule check; it
  * never carries a date no guide recorded. A field the guide does not state
  * is `null` and renders as "confirmed when you enquire". Never fill a null
  * from memory, a reseller listing or a blog.
@@ -215,9 +215,9 @@ export const attractionReservationRules = [
     },
     price: null,
     notes: {
-      en: "We submit each reservation on the museum's own official channel in the visitor's own passport name. We do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply. You can also book it yourself with our travel article.",
-      zh: "我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。你也可以按我们的攻略自行预约。",
-      ko: "박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다. 실용 가이드 글을 보고 직접 예약하셔도 됩니다.",
+      en: "We submit each reservation on the museum's own official channel in the visitor's own passport name. We do not resell tickets or add a mark-up, and any ticket price we collect is paid to the museum at face value. The museum's real-name and cancellation rules apply.",
+      zh: "我们只在故宫官方渠道以每位游客本人的护照实名提交预约，不转售、不加价，代收的门票款按票面价支付给故宫。故宫的实名与退改规则照常适用。",
+      ko: "박물원 공식 채널에서 방문자 본인의 여권 실명으로 예약을 제출합니다. 표를 되팔거나 금액을 더하지 않으며, 받은 입장료는 공식 가격 그대로 박물원에 지불합니다. 박물원의 실명 확인과 취소 규칙이 그대로 적용됩니다.",
     },
     disclosure: {
       en: "We submit the reservation on the Palace Museum's own official channel in each visitor's own passport name. We do not resell tickets or add a mark-up: tickets are charged at face value, and the museum's real-name and cancellation rules apply.",
@@ -398,14 +398,14 @@ export const attractionReservationRules = [
     },
     price: { kind: "free-reservation" },
     notes: {
-      en: "We do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket, charged at face value. No-shows get a 180-day booking restriction. You can also book it yourself with our travel article.",
-      zh: "我们不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票，按票面价收取。爽约会被限制预约 180 天。你也可以按我们的攻略自行预约。",
-      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권이며 공식 가격 그대로 받습니다. 노쇼 시 180일 예약 제한. 실용 가이드 글을 보고 직접 예약하셔도 됩니다.",
+      en: "We do not resell tickets: basic admission stays free, our fee is for the reservation work, and we submit it on the museum's official WeChat system in your own passport name. The Tang mural gallery is a separate paid ticket, charged at face value. No-shows get a 180-day booking restriction.",
+      zh: "我们不转售门票：基本陈列仍然免费，服务费是预约工作的费用，我们在博物馆官方微信系统以你本人的护照实名提交预约。唐代壁画珍品馆另需购票，按票面价收取。爽约会被限制预约 180 天。",
+      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고 수수료는 예약 업무에 대한 것이며, 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약을 제출합니다. 당대 벽화관은 별도 유료 입장권이며 공식 가격 그대로 받습니다. 노쇼 시 180일 예약 제한.",
     },
     disclosure: {
-      en: "We do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name, and you can also book it yourself.",
-      zh: "我们不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用，你也可以自行预约。",
-      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것이며, 직접 예약하셔도 됩니다.",
+      en: "We do not resell tickets: basic admission stays free, the fee is for our reservation work on the museum's official WeChat system in your own passport name.",
+      zh: "我们不转售门票：基本陈列仍然免费，服务费是我们在博物馆官方微信系统以你本人护照实名预约的工作费用。",
+      ko: "표를 되팔지 않습니다. 기본 관람은 그대로 무료이고, 수수료는 박물관 공식 위챗 시스템에서 본인 여권 실명으로 예약하는 업무에 대한 것입니다.",
     },
     verifiedAt: "2026-08-12",
     source: "shaanxi-history-museum-booking-and-collection-plan",
@@ -714,9 +714,9 @@ export const attractionReservationRules = [
       },
     },
     notes: {
-      en: "Since 1 April 2026 only 2,475 climbing tickets are sold a day, 1,200 of them online, and on busy days they sell out within minutes. Since 2 June 2026 online booking asks each traveller to pass face verification, and the notices do not explain the foreign-passport steps; a 2024 special-groups window for foreign visitors is not mentioned in 2026 notices. We try through the official channels in your own name and tell you the result; we never buy from resellers.",
-      zh: "2026 年 4 月 1 日起每天只卖 2,475 张登临票，其中线上 1,200 张，热门日子几分钟就卖完。2026 年 6 月 2 日起线上购票要求每位游客人脸核验，公告没有说明外国护照怎么办；2024 年为外国游客设的特殊群体窗口，2026 年公告没有再提。我们通过官方渠道以你本人名义尽力预约并告知结果，绝不向黄牛购票。",
-      ko: "2026년 4월 1일부터 등반 티켓은 하루 2,475장만 팔리며 그중 온라인이 1,200장이고, 붐비는 날에는 몇 분 만에 매진됩니다. 2026년 6월 2일부터 온라인 예매는 여행자마다 얼굴 인증을 요구하며, 공지에는 외국 여권 절차가 나와 있지 않습니다. 2024년의 외국인 특별 창구는 2026년 공지에 언급이 없습니다. 공식 채널에서 본인 명의로 시도하고 결과를 알려 드리며, 되파는 표는 사지 않습니다.",
+      en: "Since 1 April 2026 only 2,475 climbing tickets are sold a day, 1,200 of them online. Since 2 June 2026 online booking asks each traveller to pass face verification, and the notices do not explain the foreign-passport steps; a 2024 special-groups window for foreign visitors is not mentioned in 2026 notices. We try through the official channels in your own name and tell you the result; we never buy from resellers.",
+      zh: "2026 年 4 月 1 日起每天只卖 2,475 张登临票，其中线上 1,200 张。2026 年 6 月 2 日起线上购票要求每位游客人脸核验，公告没有说明外国护照怎么办；2024 年为外国游客设的特殊群体窗口，2026 年公告没有再提。我们通过官方渠道以你本人名义尽力预约并告知结果，绝不向黄牛购票。",
+      ko: "2026년 4월 1일부터 등반 티켓은 하루 2,475장만 팔리며 그중 온라인이 1,200장입니다. 2026년 6월 2일부터 온라인 예매는 여행자마다 얼굴 인증을 요구하며, 공지에는 외국 여권 절차가 나와 있지 않습니다. 2024년의 외국인 특별 창구는 2026년 공지에 언급이 없습니다. 공식 채널에서 본인 명의로 시도하고 결과를 알려 드리며, 되파는 표는 사지 않습니다.",
     },
     disclosure: {
       en: "Best effort, not guaranteed: climbing tickets are capped at 2,475 a day and the official system asks each traveller to pass face verification. If we cannot secure yours, the service fee and ticket money are refunded in full. The CNY 15 entry ticket for the view from below needs no booking.",

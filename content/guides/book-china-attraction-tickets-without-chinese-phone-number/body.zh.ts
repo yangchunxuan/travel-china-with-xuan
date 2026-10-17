@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -133,22 +134,22 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "Homeground能怎样帮你"
+      "text": "想去的景点，和整天的安排一起订好"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "有时真正的难题是门票周围的那一天：博物馆的时段、酒店位置和离开的火车对不上。告诉我们出行日期、同行人员和想去的地方，我们会结合具体景点判断适用哪种服务，并在付款前书面确认服务范围、费用和备选方案。"
+      "text": "博物馆的时段、酒店和下一趟火车，要排在同一个可行的计划里。日期一定，就把同行人数和想去的地方一起发来。我们提前准备景点预约，付款前书面确认服务范围、费用和备选方案。"
     },
     {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "渠道或全组预约卡住时",
-      "body": "我们的代预约服务覆盖当前预约服务页列出的指定景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
+      "title": "想去的景点，门票交给我们",
+      "body": `别让预约打乱参观计划。服务页列出的景点，中文应用、护照实名预约交给我们，在景点自己的系统里办理。日期一定就发给我们，放票前先准备好。服务费每人每个景点 ${attractionReservationServiceFeeCny} 元，门票按票面原价另付。付款前，预约细节会书面确认。`,
       "link": {
         "href": "https://homegroundchina.com/zh/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "查看代预约服务与预约条款"
+        "label": "发来日期，安排订票"
       }
     },
     {

@@ -118,9 +118,9 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
       eyebrow: "How much help",
       title: "You decide how much help you need",
       tickets: {
-        title: "Just one ticket",
-        body: "For sights that need a real-name booking, like the Forbidden City or the Terracotta Warriors, we book them with your passport.",
-        link: "Attraction tickets",
+        title: "Your tickets, taken care of",
+        body: "Keep the Forbidden City or the Terracotta Warriors in your plans. We handle the passport-name booking. Send your dates as soon as they are set so we can prepare before tickets open.",
+        link: "Get your tickets booked",
       },
       guide: {
         title: "A guide by the day",
@@ -206,9 +206,9 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
       eyebrow: "你需要多少帮助",
       title: "要多少帮助，你来定",
       tickets: {
-        title: "只差一张票",
-        body: "故宫、兵马俑这类要实名预约的景点，用你的护照帮你约好。",
-        link: "景点代预约",
+        title: "想去的景点，门票交给我们",
+        body: "别让预约打乱故宫、兵马俑的计划。我们用你的护照实名代订。日期一定就发给我们，放票前先准备好。",
+        link: "把门票交给我们订",
       },
       guide: {
         title: "按天请一位导游",
@@ -293,9 +293,9 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
       eyebrow: "필요한 도움",
       title: "얼마나 도움을 받을지는 직접 정하세요",
       tickets: {
-        title: "입장권 한 장만",
-        body: "고궁, 병마용처럼 실명 예약이 필요한 명소를 여권 정보로 예약해 드립니다.",
-        link: "관광지 예약 대행",
+        title: "가고 싶은 명소의 티켓을 맡기세요",
+        body: "고궁과 병마용 방문 계획을 지키세요. 본인 여권 명의 예약은 저희가 처리합니다. 날짜가 정해지면 바로 보내 주세요. 티켓이 열리기 전에 준비합니다.",
+        link: "티켓 예약 맡기기",
       },
       guide: {
         title: "하루 단위 가이드",

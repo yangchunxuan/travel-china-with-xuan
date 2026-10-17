@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -184,12 +185,12 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "How Homeground can help"
+      "text": "Keep your visits and travel days working together"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "A popular reservation can pull the rest of the itinerary with it. Tell us your travel dates, who is travelling and the places you most want to see. We look at each attraction and the service that fits it, then help you coordinate the plan."
+      "text": "Keep the museum visit, hotel and onward train on one workable plan. Send your dates, group size and must-see places as soon as they are set. We prepare the attraction bookings early and confirm the service, fee and backup options in writing before you pay."
     },
     {
       "id": "support-list",
@@ -205,11 +206,11 @@ const body: StructuredPageBody = {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "Reservation support for selected attractions",
-      "body": "Our reservation service covers the selected attractions listed on our current reservation service page: USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "title": "Have your tickets ready for the trip you planned",
+      "body": `Send your dates as soon as they are set. For the attractions on our service page, we prepare before tickets open, then handle the Chinese apps and passport-name booking on each site’s own system. Waiting until the final week can mean the release for your date has already passed. The service costs CNY ${attractionReservationServiceFeeCny} per person per attraction, plus the face-value ticket. We confirm the booking details in writing before you pay.`,
       "link": {
         "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "See attractions, fees and terms"
+        "label": "Send your dates for booking"
       }
     },
     {
@@ -248,7 +249,7 @@ const body: StructuredPageBody = {
         },
         {
           "question": "Can Homeground book attractions for me?",
-          "answer": "For the selected attractions listed on our current reservation service page, yes: the reservation service costs USD 7 per person per attraction plus the official ticket price, and we confirm the scope and channel in writing before you pay. Attractions in a Homeground private-tour itinerary are reserved at no extra service fee. For Tianmen Mountain and Zhangjiajie Forest Park, choose a Zhangjiajie private tour or our private guide service; guide-only bookings quote tickets and transport separately."
+          "answer": `Yes. Send your dates as soon as they are set. We handle bookings for the selected attractions on our service page for CNY ${attractionReservationServiceFeeCny} per person per attraction, plus the face-value ticket. You receive the scope and booking channel in writing before you pay. Reservations within a confirmed Homeground private-tour itinerary carry no extra service fee. Tianmen Mountain and Zhangjiajie Forest Park need a Zhangjiajie private tour or guide service; guide-only bookings quote tickets and transport separately. Send us your dates to start.`
         }
       ]
     },

@@ -191,7 +191,13 @@ for (const language of languages) {
     assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
     assert.match(copy.guarantee, /8/);
     assert.match(copy.guarantee, language === 'ar' ? /باستثناء.*دون ضمان/ : language === 'de' ? /außer.*nicht garantiert/ : language === 'fr' ? /sauf.*sans garantie/ : /salvo.*sin garantía/);
-    assert.match(props.lateRequestNote, language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
+    assert.ok(copy.timingRows[2].body.includes(copy.guaranteeLate), 'the short-notice timing row retains the complete late policy');
+    const timing = one(page, node => 'data-reservation-timing' in (node.props ?? {}), 'when to contact us');
+    const timingRows = nodes(timing).filter(node => node.type === 'li');
+    assert.equal(timingRows.length, 3, 'three contact timings');
+    const latePolicy = text(one(timingRows[2], node => node.type === 'p', 'late request policy'));
+    assert.equal(latePolicy, copy.timingRows[2].body, 'the page renders the full short-notice timing row');
+    assert.match(latePolicy, language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
     const h = hooks(), uiLoad = loader({ react: h.react });
     const { AttractionReservationEnquiry } = uiLoad('components/AttractionReservationEnquiry.tsx');
     let tree = h.render(AttractionReservationEnquiry, props);
@@ -217,7 +223,7 @@ for (const language of languages) {
     assert.ok(body.includes(props.attractions.find(item => item.id === 'forbidden-city').label));
     assert.match(body, /: 3(?:\n|$)/);
     assert.ok(body.endsWith(props.pageUrl));
-    assert.equal(text(one(tree, node => 'data-reservation-late-request' in (node.props ?? {}), 'late request note beside actions')), props.lateRequestNote);
+    assert.equal(nodes(tree).some(node => 'data-reservation-late-request' in (node.props ?? {})), false, 'the complete late policy stays in the timing row rather than repeating beside the send controls');
     one(tree, node => node.props?.name === 'travellers', 'party size').props.onChange({ target: { value: '' } });
     tree = h.render(AttractionReservationEnquiry, props);
     assert.equal(fee(), '—', 'blank party size cannot silently become one or two');

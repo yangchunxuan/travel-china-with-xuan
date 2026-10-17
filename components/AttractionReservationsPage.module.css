@@ -1,9 +1,9 @@
 /*
  * /services/china-attraction-reservations/. Same system as /services/:
  * white page, #f9f8f6 tiles without outlines, ink #0a0a0a with muted ink at
- * 60%, 44px pills and Georgia headlines. Order: hero, steps, the request
- * form (with a summary that stays beside it), then price, guarantee and the
- * rules, which fold by city. The rules table scrolls inside its own
+ * 60%, simple text links and Georgia headlines. Order: outcome, booking
+ * friction, timing, guarantee, benefits, price, steps and the request form.
+ * Rules fold by city. The rules table scrolls inside its own
  * container at tablet widths and becomes one card per attraction on phones,
  * so the page itself never scrolls sideways.
  */
@@ -142,6 +142,23 @@
   max-width: 38rem;
 }
 
+.heroPain,
+.heroUrgency {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 1rem 0 0;
+  max-inline-size: 38rem;
+}
+
+.heroPain {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.heroUrgency {
+  color: var(--muted);
+}
+
 .heroFacts {
   display: grid;
   gap: 0.75rem;
@@ -167,19 +184,6 @@
   font-weight: 600;
   line-height: 1.35;
   margin: 0.375rem 0 0;
-}
-
-/* The booking guarantee under the hero facts: one sentence pair, never a badge. */
-.guarantee {
-  background: #e3efe8;
-  border-radius: 1rem;
-  color: #1f5a41;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  margin: 0.75rem 0 0;
-  max-width: 48rem;
-  overflow-wrap: break-word;
-  padding: 0.875rem 1.125rem;
 }
 
 .heroActions {
@@ -320,6 +324,70 @@
   line-height: 1.6;
   margin: 0;
   max-width: 48rem;
+}
+
+.storyCopy {
+  max-inline-size: 48rem;
+}
+
+.storyCopy p {
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin-block: 0 1rem;
+}
+
+.page .sectionCta {
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  margin-block-start: 1.25rem;
+}
+
+.timingRows,
+.benefits {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  max-inline-size: 62rem;
+  padding: 0;
+}
+
+.timingRows li {
+  border-block-start: 1px solid var(--rule);
+  display: grid;
+  gap: 0.75rem 2rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  padding-block: 1.5rem;
+}
+
+.timingRows p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.benefits li {
+  border-block-start: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  padding-block: 1rem;
+}
+
+.checkList {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.checkList li {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  padding-block: 0.5rem;
+}
+
+.table .releaseColumn {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .twoColumn {
@@ -557,13 +625,13 @@
   min-width: 9.5rem;
 }
 
-/* Columns: 1 name, 2 channel, 3 passport, 4 release, 5 real name, 6 price, 7 notes, 8 checked. */
-.table :is(th, td):nth-child(3),
+/* Columns: 1 name, 2 release, 3 channel, 4 passport, 5 real name, 6 price, 7 notes, 8 checked. */
+.table :is(th, td):nth-child(4),
 .table :is(th, td):nth-child(5) {
   min-width: 4.5rem;
 }
 
-.table :is(th, td):nth-child(4) {
+.table :is(th, td):nth-child(2) {
   min-width: 11rem;
 }
 
@@ -577,29 +645,24 @@
 }
 
 .status {
-  border-radius: 999px;
   display: block;
   margin-top: 0.375rem;
   width: fit-content;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.4;
-  padding: 0.25rem 0.625rem;
-  white-space: nowrap;
+  padding-block: 0.25rem;
 }
 
 .status[data-status="offered"] {
-  background: #e3efe8;
   color: #1f5a41;
 }
 
 .status[data-status="not-needed"] {
-  background: #eceae6;
   color: #3d3b37;
 }
 
 .status[data-status="best-effort"] {
-  background: #f6ead8;
   color: #6b4513;
 }
 
@@ -1347,7 +1410,8 @@
 @media (max-width: 56rem) {
   .heroGrid,
   .twoColumn,
-  .enquiryLayout {
+  .enquiryLayout,
+  .timingRows li {
     grid-template-columns: minmax(0, 1fr);
   }
 
