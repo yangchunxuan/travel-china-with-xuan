@@ -250,10 +250,10 @@ export function getSearchHubLanguagePaths(section: SearchSectionId) {
     getManifestEntriesByNodeId(searchPlatformManifest, `hub-${section}`).map(
       (entry) => [entry.locale, entry.path],
     ),
-  ) as Partial<Record<HomegroundLocale | "ja" | "fr" | "de", string>>;
+  ) as Partial<Record<HomegroundLocale | "ja" | "fr" | "de" | "ar", string>>;
   if (section === "explore" || section === "services") {
     paths.ja = `/ja/${section}/`;
-    if (section === "services") { paths.fr = "/fr/services/"; paths.de = "/de/services/"; }
+    if (section === "services") { paths.fr = "/fr/services/"; paths.de = "/de/services/"; paths.ar = "/ar/services/"; }
   }
   return paths;
 }

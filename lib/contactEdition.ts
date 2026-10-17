@@ -45,7 +45,7 @@ export interface ContactEditionDeskCopy {
  */
 export interface ContactEdition {
   /** The language of the page, for `lang` and for Intl formatting. */
-  readonly language: "es" | "fr" | "de";
+  readonly language: "es" | "fr" | "de" | "ar";
   readonly intlLocale: string;
   readonly toursPath: string;
   readonly privacyHref: string;

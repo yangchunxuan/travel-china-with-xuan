@@ -147,10 +147,11 @@ type PhotoCopy = Readonly<{
   /** Languages that put the word first ("Día 3") set this instead of `dayUnit`. */
   dayPrefix?: string;
   /** Which photo-control labels to use; Japanese when not set. */
-  controls?: "ja" | "es" | "fr" | "de";
+  controls?: "ja" | "es" | "fr" | "de" | "ar";
 }>;
 
 const mediaControlCopy = {
+  ar: { previous: "الصورة السابقة", next: "الصورة التالية", pause: "أوقف عرض الصور", play: "شغّل عرض الصور", unavailable: "الصورة غير متاحة", count: "صور الرحلة" },
   de: { previous: 'Vorheriges Foto', next: 'Nächstes Foto', pause: 'Diashow anhalten', play: 'Diashow starten', unavailable: 'Foto nicht verfügbar', count: 'Reisefotos' },
   fr: { previous: 'Photo précédente', next: 'Photo suivante', pause: 'Mettre le diaporama en pause', play: 'Lancer le diaporama', unavailable: 'Photo indisponible', count: 'Photographies du voyage' },
   en: { previous: "Previous photo", next: "Next photo", pause: "Pause slideshow", play: "Play slideshow", unavailable: "Photo unavailable", count: "Journey photographs" },

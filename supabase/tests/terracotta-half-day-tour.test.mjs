@@ -43,6 +43,7 @@ test("each language is an indexable page with its canonical and all published la
       ko: terracottaHalfDayPaths.ko,
       fr: `/fr/tours/${terracottaHalfDaySlug}/`,
       de: `/de/tours/${terracottaHalfDaySlug}/`,
+      ar: `/ar/tours/${terracottaHalfDaySlug}/`,
       es: `/es/tours/${terracottaHalfDaySlug}/`,
       "x-default": terracottaHalfDayPaths.en,
     });

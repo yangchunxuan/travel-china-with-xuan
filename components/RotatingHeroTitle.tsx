@@ -78,12 +78,17 @@ function segmentPhrase(phrase: string): PhraseSegment[] {
   return segments;
 }
 
+// Keep Arabic joining and combining marks inside a single text run.
+function animationUnits(text: string): string[] {
+  return /\p{Script=Arabic}/u.test(text) ? [text] : Array.from(text);
+}
+
 function AnimatedPhrase({ phrase }: { phrase: string }) {
   const segments = segmentPhrase(phrase);
   const letterCount = segments.reduce(
     (count, segment) =>
       segment.kind === "word"
-        ? count + Array.from(segment.text).length
+        ? count + animationUnits(segment.text).length
         : count,
     0,
   );
@@ -96,7 +101,7 @@ function AnimatedPhrase({ phrase }: { phrase: string }) {
 
     return (
       <span className={styles.word} key={`${segment.text}-${segmentIndex}`}>
-        {Array.from(segment.text).map((letter) => {
+        {animationUnits(segment.text).map((letter) => {
           const currentIndex = letterIndex;
           letterIndex += 1;
           const letterStyle: LetterStyle = {

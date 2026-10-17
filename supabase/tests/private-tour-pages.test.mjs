@@ -1068,6 +1068,7 @@ test("manifest distinguishes one tours hub from every registry product and detai
       ...(spanishTourPageSlugs.includes(product.slug) ? { es: `/es/tours/${product.slug}/` } : {}),
       fr: `/fr/tours/${product.slug}/`,
       de: `/de/tours/${product.slug}/`,
+      ar: `/ar/tours/${product.slug}/`,
       "x-default": `/tours/${product.slug}/`,
     });
 

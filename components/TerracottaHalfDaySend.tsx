@@ -16,7 +16,7 @@ const serviceInterest = "terracotta_half_day";
  * and hotel as lines to fill in; email and the privacy notice are small words
  * under it. Nothing leaves the browser until the traveller sends it.
  */
-export function TerracottaHalfDaySend({ locale, edition }: { locale: HomegroundLocale; edition?: { language: 'fr' | 'es' | 'de'; copy: Pick<TerracottaHalfDayCopy,'send'|'message'>; message: string; homePath: string } }) {
+export function TerracottaHalfDaySend({ locale, edition }: { locale: HomegroundLocale; edition?: { language: 'fr' | 'es' | 'de' | 'ar'; copy: Pick<TerracottaHalfDayCopy,'send'|'message'>; message: string; homePath: string } }) {
   const { send, message: messageCopy } = edition?.copy ?? terracottaHalfDayCopy[locale];
   const message = edition?.message ?? terracottaHalfDayMessage(locale, `https://homegroundchina.com${terracottaHalfDayPaths[locale]}`);
   const whatsappHref = homegroundWhatsAppHref(message);

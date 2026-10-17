@@ -10,7 +10,7 @@ export const terracottaHalfDayPaths = {
   zh: `/zh/tours/${terracottaHalfDaySlug}/`,
   ko: `/ko/tours/${terracottaHalfDaySlug}/`,
   fr: `/fr/tours/${terracottaHalfDaySlug}/`,
-  de: `/de/tours/${terracottaHalfDaySlug}/`,
+  de: `/de/tours/${terracottaHalfDaySlug}/`, ar: `/ar/tours/${terracottaHalfDaySlug}/`,
   es: `/es/tours/${terracottaHalfDaySlug}/`,
 } as const;
 export const terracottaHalfDayEnquiryAnchor = "half-day-enquiry";
@@ -240,6 +240,7 @@ export function terracottaHalfDayMetadata(locale: HomegroundLocale): Metadata {
         ko: terracottaHalfDayPaths.ko,
         fr: terracottaHalfDayPaths.fr,
         de: terracottaHalfDayPaths.de,
+        ar: terracottaHalfDayPaths.ar,
         es: terracottaHalfDayPaths.es,
         "x-default": terracottaHalfDayPaths.en,
       },

@@ -1,8 +1,10 @@
+import { arabicPrivateGuideServiceCopy, arabicPrivateGuideLanguageCopy } from './arabicPrivateGuideServiceCopy.ts';
 import { germanPrivateGuideServiceCopy, germanPrivateGuideLanguageCopy } from './germanPrivateGuideServiceCopy.ts';
 import type { PrivateGuideServiceCopy } from './privateGuideServicesI18n';
 import type { ServiceEditionLocale } from './serviceEdition';
 
 const copies: Record<ServiceEditionLocale, PrivateGuideServiceCopy> = {
+  ar: arabicPrivateGuideServiceCopy,
   de: germanPrivateGuideServiceCopy,
   fr: {
     metadata: {
@@ -101,6 +103,7 @@ export function getPrivateGuideServiceEditionCopy(language: ServiceEditionLocale
 }
 
 const languageCopy = {
+  ar: arabicPrivateGuideLanguageCopy,
   de: germanPrivateGuideLanguageCopy,
   fr: {
     label: 'Langue souhaitée pour le guide',
@@ -127,5 +130,5 @@ export function getPrivateGuideServiceEditionLanguageCopy(language: ServiceEditi
 }
 
 export function formatPrivateGuideEditionPrice(amount: number, language: ServiceEditionLocale): string {
-  return new Intl.NumberFormat(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
+  return new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
 }

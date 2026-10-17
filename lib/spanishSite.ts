@@ -1,3 +1,4 @@
+import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex.ts';
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex.ts';
 import type { Metadata } from 'next';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
@@ -21,6 +22,7 @@ export const spanishLegalLinks = [
 export interface SpanishLanguagePath { readonly label: string; readonly lang: string; readonly path: string; }
 export function spanishLanguagePaths(enPath: string, esPath: string, overrides: Partial<Record<'zh'|'ko'|'ja'|'fr', string>> = {}): readonly SpanishLanguagePath[] {
   const slug = /^\/tours\/([^/]+)\/$/.exec(enPath)?.[1];
+  const ar = slug ? `/ar${enPath}` : arabicSitePagePathByEnglishPath[enPath];
   const de = slug ? `/de${enPath}` : germanSitePagePathByEnglishPath[enPath];
   const fr = overrides.fr ?? (slug ? `/fr${enPath}` : frenchSitePagePathByEnglishPath[enPath]);
   const ja = overrides.ja ?? (slug === 'xian-terracotta-warriors-half-day-private-tour' || /\/guides\/.+/.test(enPath) ? undefined : `/ja${enPath}`);
@@ -31,6 +33,7 @@ export function spanishLanguagePaths(enPath: string, esPath: string, overrides: 
     ...(ja ? [{ label: '日本語', lang: 'ja', path: ja }] : []),
     ...(fr ? [{ label: 'FR', lang: 'fr', path: fr }] : []),
     ...(de ? [{ label: 'DE', lang: 'de', path: de }] : []),
+    ...(ar ? [{ label: 'العربية', lang: 'ar', path: ar }] : []),
   ];
 }
 export function spanishAlternates(enPath: string, esPath: string, overrides: Partial<Record<'zh'|'ko'|'ja'|'fr', string>> = {}) {

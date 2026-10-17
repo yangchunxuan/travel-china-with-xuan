@@ -1,3 +1,4 @@
+import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex';
 import { homegroundBusiness } from "./homegroundBusiness";
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
@@ -43,8 +44,8 @@ export const japaneseLegalLinks: readonly { href: string; label: string }[] = [
 ];
 
 export interface JapaneseLanguagePath {
-  readonly label: "EN" | "中文" | "한국어" | "日本語" | "DE";
-  readonly lang: "en" | "zh-Hans" | "ko" | "ja" | "de";
+  readonly label: "EN" | "中文" | "한국어" | "日本語" | "DE" | "العربية";
+  readonly lang: "en" | "zh-Hans" | "ko" | "ja" | "de" | "ar";
   readonly path: string;
 }
 
@@ -64,7 +65,7 @@ export function japaneseLanguagePaths(
     { label: "中文", lang: "zh-Hans", path: overrides.zh ?? `/zh/${suffix}` },
     { label: "한국어", lang: "ko", path: overrides.ko ?? `/ko/${suffix}` },
     { label: "日本語", lang: "ja", path: jaPath },
-    ...(germanPath ? [{ label: "DE" as const, lang: "de" as const, path: germanPath }] : []),
+    ...(germanPath ? [{ label: "DE" as const, lang: "de" as const, path: germanPath }, {label:"العربية" as const,lang:"ar" as const,path:germanPath.replace(/^\/de/,"/ar")}] : []),
   ];
 }
 
@@ -79,7 +80,7 @@ export function withJapaneseAlternate<
   const es = spanishSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"];
   return {
     ...metadata,
-    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { de: germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}), ...(es ? { es } : {}), ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
+    alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), ja: jaPath, ...(arabicSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? {ar:arabicSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"]} : {}), ...(germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { de: germanSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}), ...(es ? { es } : {}), ...(frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] ? { fr: frenchSitePagePathByEnglishPath[jaPath.replace(/^\/ja/, "") || "/"] } : {}) } },
   };
 }
 
@@ -98,6 +99,7 @@ export function japaneseAlternates(
   const es = spanishSitePagePathByEnglishPath[enPath];
   const fr = frenchSitePagePathByEnglishPath[enPath];
   const de = germanSitePagePathByEnglishPath[enPath];
+  const ar = arabicSitePagePathByEnglishPath[enPath];
   return {
     en: en.path,
     "zh-Hans": zh.path,
@@ -106,6 +108,7 @@ export function japaneseAlternates(
     ...(es ? { es } : {}),
     ...(fr ? { fr } : {}),
     ...(de ? { de } : {}),
+    ...(ar ? { ar } : {}),
     "x-default": en.path,
   } as const;
 }

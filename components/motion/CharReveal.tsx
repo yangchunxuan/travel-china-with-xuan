@@ -9,6 +9,11 @@ import styles from "./CharReveal.module.css";
  * CSS scroll-driven: without support, or with reduced motion, it is static.
  */
 export function CharReveal({ text }: { text: string }) {
+  // Intl Arabic currency strings carry an RTL mark. Keep their Latin amount/code
+  // together: separate animated glyphs would reverse them in an RTL parent.
+  if (/^[\u200e\u200f]/u.test(text)) {
+    return <bdi dir="ltr">{text.replace(/[\u200e\u200f]/gu, "")}</bdi>;
+  }
   return (
     <>
       {Array.from(text).map((char, index) =>

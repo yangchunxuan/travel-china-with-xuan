@@ -1,3 +1,4 @@
+import { buildArabicMetadata } from './arabicSite';
 import { buildGermanMetadata } from './germanSite';
 import type { Metadata } from 'next';
 import { serviceDetailAlternates, serviceEditionPath, type ServiceDetailSlug, type ServiceEditionLocale } from './serviceEdition';
@@ -15,8 +16,8 @@ export function buildServiceEditionMetadata(language: ServiceEditionLocale, slug
     : slug === 'private-car-and-driver' ? getPrivateCarServiceEditionCopy(language)
     : slug === 'china-attraction-reservations' ? getAttractionReservationEditionCopy(language)
     : getFullTripSupportEditionCopy(language);
-  const fee = new Intl.NumberFormat(language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(attractionReservationServiceFeeCny);
+  const fee = new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(attractionReservationServiceFeeCny);
   const description = fillReservationCopy(copy.metadata.description, { fee });
-  const build = language === 'de' ? buildGermanMetadata : language === 'fr' ? buildFrenchMetadata : buildSpanishMetadata;
+  const build = language === 'ar' ? buildArabicMetadata : language === 'de' ? buildGermanMetadata : language === 'fr' ? buildFrenchMetadata : buildSpanishMetadata;
   return build(copy.metadata.title, description, serviceEditionPath(language, slug), serviceDetailAlternates(slug));
 }

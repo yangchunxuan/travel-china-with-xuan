@@ -74,7 +74,7 @@ export type HomegroundPageContext =
   | "careers"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr" | "de";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr" | "de" | "ar";
 type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
 
 interface HomegroundHeaderProps {
@@ -599,7 +599,7 @@ export function HomegroundHeader({
   };
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetLocale: HomegroundLocale | "ja" | "es" | "fr" | "de",
+    targetLocale: HomegroundLocale | "ja" | "es" | "fr" | "de" | "ar",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -716,6 +716,14 @@ export function HomegroundHeader({
     : languagePaths?.de;
   const renderGermanLanguageChoice = () => germanLanguageHref ? (
     <a aria-current={currentLanguage === "de" ? "page" : undefined} href={germanLanguageHref} hrefLang="de" lang="de" onClick={(event) => handleLanguageChange(event, "de")}><span className={styles.languageChoiceShort}>DE</span><span className={styles.languageChoiceEndonym}>Deutsch</span></a>
+  ) : null;
+
+  const arabicBaseHref = languagePaths?.ar ?? (languagePaths?.de?.startsWith('/de/') ? languagePaths.de.replace(/^\/de/, '/ar') : undefined);
+  const arabicLanguageHref = arabicBaseHref && pageContext === "tour" && tourSelection
+    ? buildPrivateTourDetailHref(arabicBaseHref, tourSelection.slug, tourSelection.selection)
+    : arabicBaseHref;
+  const renderArabicLanguageChoice = () => arabicLanguageHref ? (
+    <a aria-current={currentLanguage === "ar" ? "page" : undefined} href={arabicLanguageHref} hrefLang="ar" lang="ar" onClick={(event) => handleLanguageChange(event, "ar")}><span className={styles.languageChoiceShort}>العربية</span><span className={styles.languageChoiceEndonym}>العربية</span></a>
   ) : null;
 
   const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
@@ -925,6 +933,7 @@ export function HomegroundHeader({
             {renderSpanishLanguageChoice()}
             {renderFrenchLanguageChoice()}
             {renderGermanLanguageChoice()}
+            {renderArabicLanguageChoice()}
           </nav>
           <Link
             className={styles.headerCta}
@@ -1058,6 +1067,7 @@ export function HomegroundHeader({
               {renderSpanishLanguageChoice()}
             {renderFrenchLanguageChoice()}
             {renderGermanLanguageChoice()}
+            {renderArabicLanguageChoice()}
             </div>
           </div>
         </nav>
