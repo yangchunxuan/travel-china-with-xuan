@@ -2,6 +2,8 @@
 
 ## Owner revision — 18 October 2026
 
+The service-commitments block now keeps only three customer-facing promises: booking in each traveller's own name and passport, no resale or ticket markup, and face-value pricing with the attraction's real-name/cancellation rules. The owner removed the two implementation-method bullets. Titles and the three-point list are aligned in all seven editions; fees, policies and booking workflow are unchanged.
+
 The owner has removed the attraction-specific “best effort” exclusion. All seven service editions, current terms/refund copy, attraction labels, enquiry drafts and guide CTAs now use the common advance-booking guarantee. This supersedes the exclusion retained in the initial 17 October revision. Historical accepted terms are unchanged. The eight-day request-and-payment cutoff, short-notice rule, fees, full refunds and source-backed attraction facts remain.
 
 The updated production build, TypeScript checks and 53 focused reservation/service-edition tests pass. The Chinese preview was refreshed and checked at 1366×900 and 390×844 without horizontal overflow. [Updated screenshots](review/attraction-reservations-sales-20261017/owner-revision-20261018/README.md) supersede the initial gallery for this condition.

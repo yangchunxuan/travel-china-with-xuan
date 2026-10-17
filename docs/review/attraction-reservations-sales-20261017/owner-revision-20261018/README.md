@@ -8,6 +8,12 @@ Validation: production build and TypeScript passed; 53 focused reservation and s
 
 The initial 17 October comparison gallery is historical. These images supersede its exception wording.
 
+## Service commitments — subsequent owner revision
+
+The owner also shortened the commitments block to three promises: each traveller's own name/passport, no resale or ticket markup, and face-value tickets with the attraction's real-name/cancellation rules. The official-channel and automation/account-management bullets are removed from this block in all seven editions. The section title now describes service commitments rather than booking methods. This is a copy-only change; the booking workflow and policies are unchanged. All 53 focused tests pass.
+
+![Three service commitments](zh-service-commitments.png)
+
 ## Desktop — 1366×900
 
 ![Updated Chinese hero](zh-desktop.png)
