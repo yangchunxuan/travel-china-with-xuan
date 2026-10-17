@@ -36,6 +36,7 @@ export function privateCarServiceMessage(
   copy: PrivateCarServiceCopy,
   locale: HomegroundLocale,
   draft: PrivateCarServiceDraft,
+  pagePath = privateCarServicePath[locale],
 ) {
   const message = copy.enquiry.message;
   const count = Number(draft.travellers);
@@ -57,6 +58,6 @@ export function privateCarServiceMessage(
     line(message.route, clean(draft.route, privateCarServiceTextMaxLength, true) || message.none),
     draft.note.trim() ? line(message.note, clean(draft.note, privateCarServiceTextMaxLength, true)) : null,
     message.confirmation,
-    "https://homegroundchina.com" + privateCarServicePath[locale],
+    "https://homegroundchina.com" + pagePath,
   ].filter(Boolean).join("\n");
 }

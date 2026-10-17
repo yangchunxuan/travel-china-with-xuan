@@ -4,6 +4,7 @@ import { fillReservationCopy, getAttractionReservationCopy } from "./attractionR
 import type { HomegroundLocale } from "./homegroundI18n";
 import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
+import { serviceDetailAlternates } from "./serviceEdition";
 
 export function buildAttractionReservationMetadata(locale: HomegroundLocale): Metadata {
   const copy = getAttractionReservationCopy(locale);
@@ -17,12 +18,7 @@ export function buildAttractionReservationMetadata(locale: HomegroundLocale): Me
     ...buildHomegroundSocialMetadata({ locale, title: copy.metadata.title, description, url: canonical }),
     alternates: {
       canonical,
-      languages: {
-        en: attractionReservationPath.en,
-        "zh-Hans": attractionReservationPath.zh,
-        ko: attractionReservationPath.ko,
-        "x-default": attractionReservationPath.en,
-      },
+      languages: serviceDetailAlternates('china-attraction-reservations'),
     },
     robots: { index: true, follow: true },
   };

@@ -27,6 +27,7 @@ import { getPrivateTourHubLanguagePaths } from "../lib/privateTourHubI18n";
 import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
+import { serviceDetailSlugs, serviceDetailSlugFromPath, serviceDetailAlternates, serviceEditionPath } from '../lib/serviceEdition';
 
 export const dynamic = "force-static";
 
@@ -152,7 +153,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
-    const alternates = japaneseGuideAlternatesByPath.has(entry.canonicalPath)
+    const serviceSlug = serviceDetailSlugFromPath(entry.canonicalPath);
+    const alternates = serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
       : structuredTour
         ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
@@ -273,5 +275,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
     })),
   ];
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries];
+  const serviceEditionEntries: MetadataRoute.Sitemap = (['fr', 'es'] as const).flatMap(language => serviceDetailSlugs.map(slug => ({
+    url: `${base}${serviceEditionPath(language, slug)}`, lastModified: '2026-10-17', changeFrequency: 'monthly' as const, priority: 0.67,
+    alternates: { languages: absoluteJaPilotAlternates(serviceDetailAlternates(slug)) },
+  })));
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...serviceEditionEntries];
 }

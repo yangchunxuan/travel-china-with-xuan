@@ -4,6 +4,7 @@ import { privateCarServicePath } from "./privateCarServices";
 import { getPrivateCarServiceCopy } from "./privateCarServicesI18n";
 import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
+import { serviceDetailAlternates } from "./serviceEdition";
 
 export function buildPrivateCarServiceMetadata(locale: HomegroundLocale): Metadata {
   const copy = getPrivateCarServiceCopy(locale);
@@ -13,10 +14,7 @@ export function buildPrivateCarServiceMetadata(locale: HomegroundLocale): Metada
     ...buildHomegroundSocialMetadata({ locale, ...copy.metadata, url: privateCarServicePath[locale] }),
     alternates: {
       canonical: privateCarServicePath[locale],
-      languages: {
-        en: privateCarServicePath.en, "zh-Hans": privateCarServicePath.zh,
-        ko: privateCarServicePath.ko, "x-default": privateCarServicePath.en,
-      },
+      languages: serviceDetailAlternates('private-car-and-driver'),
     },
     robots: { index: true, follow: true },
   };

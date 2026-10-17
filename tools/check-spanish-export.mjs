@@ -14,7 +14,7 @@ const pages=walk(path.join(out,'es')),cache=new Map();
 function docFor(file){if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);}
 function jsonLd(doc){return elements(doc,'script').filter(n=>attr(n,'type')==='application/ld+json').flatMap(n=>{const data=JSON.parse(text(n));return data['@graph']??[data];});}
 function priceRows(doc){return jsonLd(doc).filter(n=>n['@type']==='TouristTrip').flatMap(n=>n.offers?.offers??[]).map(n=>[n.price,n.priceCurrency,n.eligibleQuantity?.value??null,n.priceSpecification?.referenceQuantity?.value??null]);}
-check(pages.length===75,`Expected 57 tours, 10 core pages and 8 existing guides; found ${pages.length} pages`);
+check(pages.length===79,`Expected 57 tours, 10 core pages, 8 existing guides and 4 service details; found ${pages.length} pages`);
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,offers=0,faqs=0;
 for(const file of pages){

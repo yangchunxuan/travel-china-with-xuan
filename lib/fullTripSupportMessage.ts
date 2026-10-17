@@ -56,15 +56,15 @@ export function fullTripWords(value: string, maxLength: number) {
   return value.replace(/[\u0000-\u001f\u007f]+/gu, " ").replace(/\s+/gu, " ").trim().slice(0, maxLength);
 }
 
-/** Digits grouped in threes with ASCII commas, identical on server and browser. */
-export function groupFullTripBudgetDigits(digits: string) {
-  return digits.replace(/^0+(?=\d)/u, "").replace(/\B(?=(\d{3})+(?!\d))/gu, ",");
+/** Stable digit grouping on server and browser; existing pages retain commas. */
+export function groupFullTripBudgetDigits(digits: string, separator = ",") {
+  return digits.replace(/^0+(?=\d)/u, "").replace(/\B(?=(\d{3})+(?!\d))/gu, separator);
 }
 
 /** "USD 1,500", or "" when no number was given. Passed on exactly as typed. */
-export function fullTripBudgetText(draft: Pick<FullTripSupportDraft, "budget" | "currency">) {
+export function fullTripBudgetText(draft: Pick<FullTripSupportDraft, "budget" | "currency">, separator = ",") {
   const digits = fullTripDigits(draft.budget, fullTripBudgetMaxDigits);
-  return digits ? `${draft.currency} ${groupFullTripBudgetDigits(digits)}` : "";
+  return digits ? `${draft.currency} ${groupFullTripBudgetDigits(digits, separator)}` : "";
 }
 
 /**
@@ -75,14 +75,14 @@ export function fullTripBudgetText(draft: Pick<FullTripSupportDraft, "budget" | 
  * `whatsappQrCandidates`); what else they wanted to say follows on its own
  * line.
  */
-export function fullTripSupportMessage(copy: FullTripSupportCopy, draft: FullTripSupportDraft) {
+export function fullTripSupportMessage(copy: FullTripSupportCopy, draft: FullTripSupportDraft, budgetSeparator = ",") {
   const message = copy.enquiry.message;
   const travellers = fullTripDigits(draft.travellers, fullTripCountMaxDigits);
   const days = fullTripDigits(draft.days, fullTripCountMaxDigits);
   const month = fullTripWords(draft.month, fullTripMonthMaxLength);
   const cities = fullTripWords(draft.cities, fullTripCitiesMaxLength);
   const note = fullTripWords(draft.note, fullTripNoteMaxLength);
-  const budget = fullTripBudgetText(draft);
+  const budget = fullTripBudgetText(draft, budgetSeparator);
   const parts: string[] = [];
   if (travellers) parts.push(fill(travellers === "1" ? message.partyOne : message.party, { count: travellers }));
   if (days) parts.push(fill(message.length, { days }));

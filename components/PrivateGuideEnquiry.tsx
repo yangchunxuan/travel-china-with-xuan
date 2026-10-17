@@ -5,6 +5,10 @@ import { Mail, MessageCircle } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { privateGuideCities, privateGuideServicePath, type PrivateGuideCity } from "../lib/privateGuideServices";
 import { getPrivateGuideServiceCopy } from "../lib/privateGuideServicesI18n";
+import { getPrivateGuideServiceEditionCopy, getPrivateGuideServiceEditionLanguageCopy } from "../lib/privateGuideServiceEditions";
+import { serviceEditionPaths, type ServiceEditionLocale } from "../lib/serviceEdition";
+import { frenchContactEdition } from "../lib/frenchContactEdition";
+import { spanishContactEdition } from "../lib/spanishContactEdition";
 import { privateGuideNoteMaxLength, privateGuideServiceMessage } from "../lib/privateGuideServiceMessage";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundWhatsAppHref } from "../lib/tourContact";
@@ -14,27 +18,32 @@ import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./PrivateGuideServicesPage.module.css";
 
 /** Uses the existing direct contact channels; preparing a draft sends no enquiry. */
-export function PrivateGuideEnquiry({ locale }: { locale: HomegroundLocale }) {
+export function PrivateGuideEnquiry({ locale, editionLocale }: { locale: HomegroundLocale; editionLocale?: ServiceEditionLocale }) {
   const id = useId();
   const form = useRef<HTMLFormElement>(null);
-  const copy = getPrivateGuideServiceCopy(locale);
+  const copy = editionLocale ? getPrivateGuideServiceEditionCopy(editionLocale) : getPrivateGuideServiceCopy(locale);
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const dateEdition = editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const languageCopy = editionLocale ? getPrivateGuideServiceEditionLanguageCopy(editionLocale) : null;
   const enquiry = copy.enquiry;
   const [city, setCity] = useState<PrivateGuideCity | "">("");
   const [date, setDate] = useState("");
   const [undecided, setUndecided] = useState(false);
   const [travellers, setTravellers] = useState("2");
   const [note, setNote] = useState("");
+  const [guideLanguage, setGuideLanguage] = useState<"en" | ServiceEditionLocale>("en");
   const message = privateGuideServiceMessage(copy, locale, {
-    city, date: undecided ? "" : date, travellers, note,
-    pageUrl: `https://homegroundchina.com${privateGuideServicePath[locale]}`,
-  });
-  const emailHref = `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(enquiry.message.subject)}&body=${encodeURIComponent(message)}`;
-  const homePath = locale === "en" ? "/" : `/${locale}/`;
+    city, date: undecided ? "" : date, travellers, note, guideLanguage,
+    pageUrl: `https://homegroundchina.com${paths?.guide ?? privateGuideServicePath[locale]}`,
+  }, editionLocale);
+  const emailSubject = editionLocale && guideLanguage === editionLocale ? languageCopy!.subject : enquiry.message.subject;
+  const emailHref = `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(message)}`;
+  const homePath = paths?.home ?? (locale === "en" ? "/" : `/${locale}/`);
   function trackChannel(channel: "whatsapp" | "email" | "kakao") {
-    trackEvent("contact_option_clicked", { page_language: locale, channel, service_interest: "private_english_guide" }, { firstPartyContext: { surface: "contact_options" } });
+    trackEvent("contact_option_clicked", { page_language: editionLocale ?? locale, channel, service_interest: "private_english_guide" }, { firstPartyContext: { surface: "contact_options" } });
   }
   return (
-    <div className={styles.enquiryForm}>
+    <div className={styles.enquiryForm} lang={editionLocale}>
       <form ref={form} onSubmit={(event) => event.preventDefault()}>
         <div className={styles.fieldRow}>
           <label className={styles.field} htmlFor={`${id}-city`}>
@@ -49,10 +58,17 @@ export function PrivateGuideEnquiry({ locale }: { locale: HomegroundLocale }) {
             <input id={`${id}-travellers`} name="travellers" type="number" inputMode="numeric" min={1} step={1} required value={travellers} onChange={(event) => setTravellers(event.target.value)} />
           </label>
         </div>
+        {editionLocale && languageCopy ? <label className={styles.field} htmlFor={`${id}-language`}>
+          {languageCopy.label}
+          <select id={`${id}-language`} name="guideLanguage" value={guideLanguage} onChange={(event) => setGuideLanguage(event.target.value as "en" | ServiceEditionLocale)}>
+            <option value="en">{languageCopy.english}</option>
+            <option value={editionLocale}>{languageCopy.local}</option>
+          </select>
+        </label> : null}
         <label className={styles.checkboxRow}>
           <input type="checkbox" checked={undecided} onChange={(event) => setUndecided(event.target.checked)} />{enquiry.undecided}
         </label>
-        {!undecided ? <TourDateField id={`${id}-date`} label={enquiry.date} locale={locale} value={date} onChange={setDate} disabled={false} active /> : null}
+        {!undecided ? <TourDateField id={`${id}-date`} label={enquiry.date} locale={locale} edition={dateEdition} value={date} onChange={setDate} disabled={false} active /> : null}
         <label className={styles.field} htmlFor={`${id}-note`}>
           <span>{enquiry.route} <span className={styles.muted}>{enquiry.optional}</span></span>
           <textarea id={`${id}-note`} name="route" rows={3} maxLength={privateGuideNoteMaxLength} value={note} onChange={(event) => setNote(event.target.value)} placeholder={enquiry.placeholder} />

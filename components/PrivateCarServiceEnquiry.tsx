@@ -5,6 +5,10 @@ import { Mail, MessageCircle } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { privateCarServiceKinds, type PrivateCarServiceKind } from "../lib/privateCarServices";
 import { getPrivateCarServiceCopy } from "../lib/privateCarServicesI18n";
+import { getPrivateCarServiceEditionCopy } from "../lib/privateCarServiceEditions";
+import { serviceEditionPaths, type ServiceEditionLocale } from "../lib/serviceEdition";
+import { frenchContactEdition } from "../lib/frenchContactEdition";
+import { spanishContactEdition } from "../lib/spanishContactEdition";
 import {
   privateCarServiceMessage, privateCarServiceShortTextMaxLength, privateCarServiceTextMaxLength,
   type PrivateCarServiceDraft,
@@ -17,10 +21,12 @@ import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./PrivateCarServicesPage.module.css";
 
 /** Prepare the customer's own message; this form has no intake or booking request. */
-export function PrivateCarServiceEnquiry({ locale }: { locale: HomegroundLocale }) {
+export function PrivateCarServiceEnquiry({ locale, editionLocale }: { locale: HomegroundLocale; editionLocale?: ServiceEditionLocale }) {
   const id = useId();
   const form = useRef<HTMLFormElement>(null);
-  const copy = getPrivateCarServiceCopy(locale);
+  const copy = editionLocale ? getPrivateCarServiceEditionCopy(editionLocale) : getPrivateCarServiceCopy(locale);
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  const dateEdition = editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const enquiry = copy.enquiry;
   const [draft, setDraft] = useState<PrivateCarServiceDraft>({
     kind: "", cities: "", date: "", dateUndecided: false, travellers: "2",
@@ -29,19 +35,19 @@ export function PrivateCarServiceEnquiry({ locale }: { locale: HomegroundLocale 
   function update<K extends keyof PrivateCarServiceDraft>(field: K, value: PrivateCarServiceDraft[K]) {
     setDraft((previous) => ({ ...previous, [field]: value }));
   }
-  const message = privateCarServiceMessage(copy, locale, draft);
+  const message = privateCarServiceMessage(copy, locale, draft, paths?.car);
   const emailHref = "mailto:" + homegroundBusiness.serviceEmail
     + "?subject=" + encodeURIComponent(enquiry.message.subject) + "&body=" + encodeURIComponent(message);
-  const homePath = locale === "en" ? "/" : "/" + locale + "/";
+  const homePath = paths?.home ?? (locale === "en" ? "/" : "/" + locale + "/");
   const optional = <span className={styles.optional}>{enquiry.optional}</span>;
   function trackChannel(channel: "whatsapp" | "email" | "kakao") {
     trackEvent("contact_option_clicked", {
-      page_language: locale, channel, service_interest: "private_car_and_driver",
+      page_language: editionLocale ?? locale, channel, service_interest: "private_car_and_driver",
     }, { firstPartyContext: { surface: "contact_options" } });
   }
 
   return (
-    <div className={styles.enquiryForm}>
+    <div className={styles.enquiryForm} lang={editionLocale}>
       <p className={styles.requiredNotice} id={id + "-required"}>{enquiry.requiredNotice}</p>
       <form ref={form} aria-describedby={id + "-required"} onSubmit={(event) => event.preventDefault()}>
         <div className={styles.fieldRow}>
@@ -75,7 +81,7 @@ export function PrivateCarServiceEnquiry({ locale }: { locale: HomegroundLocale 
               onChange={(event) => update("dateUndecided", event.target.checked)} />
             {enquiry.undecided}
           </label>
-          {!draft.dateUndecided ? <TourDateField id={id + "-date"} label={enquiry.date} locale={locale}
+          {!draft.dateUndecided ? <TourDateField id={id + "-date"} label={enquiry.date} locale={locale} edition={dateEdition}
             value={draft.date} onChange={(date) => update("date", date)} disabled={false} active /> : null}
         </div>
         <label className={styles.field} htmlFor={id + "-luggage"}>

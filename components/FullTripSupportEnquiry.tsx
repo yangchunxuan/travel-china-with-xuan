@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode, type RefObject } from "react";
 import { fullTripSupportEnquiryAnchor, fullTripSupportPath } from "../lib/fullTripSupport";
 import { getFullTripSupportCopy } from "../lib/fullTripSupportI18n";
+import { getFullTripSupportEditionCopy } from "../lib/fullTripSupportEditions";
 import {
   fullTripBudgetBases, fullTripBudgetCurrencies, fullTripBudgetDefaultCurrency, fullTripBudgetMaxDigits, fullTripCitiesMaxLength, fullTripCountMaxDigits, fullTripDigits,
   fullTripMonthDigits, fullTripMonthMaxLength, fullTripNoteMaxLength, fullTripSupportMessage, groupFullTripBudgetDigits,
@@ -12,6 +13,7 @@ import { homegroundBusiness } from "../lib/homegroundBusiness";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import { homegroundWhatsAppHref } from "../lib/tourContact";
 import { trackEvent } from "../lib/analytics";
+import { serviceEditionPaths, type ServiceEditionLocale } from "../lib/serviceEdition";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./FullTripSupportPage.module.css";
 
@@ -127,12 +129,16 @@ function Tray<Value extends string>({ id, label, open, value, options, onPick, o
  * line opens a WhatsApp draft (KakaoTalk on Korean pages); email is a plain
  * link under it. Nothing leaves the browser until the traveller sends it.
  */
-export function FullTripSupportEnquiry({ locale }: { locale: HomegroundLocale }) {
-  const copy = getFullTripSupportCopy(locale);
+export function FullTripSupportEnquiry({ locale, editionLocale }: { locale: HomegroundLocale; editionLocale?: ServiceEditionLocale }) {
+  const copy = editionLocale ? getFullTripSupportEditionCopy(editionLocale) : getFullTripSupportCopy(locale);
   const brief = copy.brief;
   const enquiry = copy.enquiry;
+  const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
+  // A comma can be read as a decimal mark in French and Spanish. Keep the
+  // amount unchanged and group its digits with narrow non-breaking spaces.
+  const budgetSeparator = editionLocale ? "\u202f" : ",";
   const [budget, setBudget] = useState("");
-  const [currency, setCurrency] = useState<FullTripBudgetCurrency>(fullTripBudgetDefaultCurrency[locale]);
+  const [currency, setCurrency] = useState<FullTripBudgetCurrency>(fullTripBudgetDefaultCurrency[editionLocale ? "en" : locale]);
   const [basis, setBasis] = useState<FullTripBudgetBasis>("person");
   const [travellers, setTravellers] = useState("");
   const [days, setDays] = useState("");
@@ -157,12 +163,12 @@ export function FullTripSupportEnquiry({ locale }: { locale: HomegroundLocale })
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [choosing]);
-  const message = fullTripSupportMessage(copy, { budget, currency, basis, travellers, days, month, cities, note, pageUrl: `https://homegroundchina.com${fullTripSupportPath[locale]}` });
+  const message = fullTripSupportMessage(copy, { budget, currency, basis, travellers, days, month, cities, note, pageUrl: `https://homegroundchina.com${paths?.support ?? fullTripSupportPath[locale]}` }, budgetSeparator);
   const whatsappHref = homegroundWhatsAppHref(message);
   const emailHref = `mailto:${homegroundBusiness.serviceEmail}?subject=${encodeURIComponent(enquiry.message.subject)}&body=${encodeURIComponent(message)}`;
-  const homePath = locale === "en" ? "/" : `/${locale}/`;
+  const homePath = paths?.home ?? (locale === "en" ? "/" : `/${locale}/`);
   function trackChannel(channel: "whatsapp" | "email" | "kakao") {
-    trackEvent("contact_option_clicked", { page_language: locale, channel, service_interest: serviceInterest }, { firstPartyContext: { surface: "contact_options" } });
+    trackEvent("contact_option_clicked", { page_language: editionLocale ?? locale, channel, service_interest: serviceInterest }, { firstPartyContext: { surface: "contact_options" } });
   }
   // On a computer a WhatsApp link opens the site's scan-to-phone card with the
   // code only: the card's own email form could not carry the brief.
@@ -186,7 +192,7 @@ export function FullTripSupportEnquiry({ locale }: { locale: HomegroundLocale })
           slots={{
             basis: <Pick buttonRef={basisRef} controls={`${trayId}-basis`} label={brief.basisLabel} onToggle={() => setChoosing(choosing === "basis" ? null : "basis")} open={choosing === "basis"} text={brief.basis[basis]} />,
             currency: <Pick buttonRef={currencyRef} controls={`${trayId}-currency`} label={brief.currencyLabel} onToggle={() => setChoosing(choosing === "currency" ? null : "currency")} open={choosing === "currency"} text={currency} />,
-            amount: <Blank label={brief.amountLabel} name="budget" onType={(value) => setBudget(fullTripDigits(value, fullTripBudgetMaxDigits))} room="00,000" shown={groupFullTripBudgetDigits(budget)} />,
+            amount: <Blank label={brief.amountLabel} name="budget" onType={(value) => setBudget(fullTripDigits(value, fullTripBudgetMaxDigits))} room={`00${budgetSeparator}000`} shown={groupFullTripBudgetDigits(budget, budgetSeparator)} />,
           }}
           template={brief.clauses.budget}
         />
@@ -212,7 +218,7 @@ export function FullTripSupportEnquiry({ locale }: { locale: HomegroundLocale })
 
       {/* The one way to send, set like the menu's planner line: words, then a thin arrow. */}
       <div className={styles.sendRow}>
-        {locale === "ko"
+        {!editionLocale && locale === "ko"
           ? <KakaoTalkContact buttonClassName={styles.send} inquiry={() => message} key={message} label={enquiry.kakaoAction} onOpen={() => trackChannel("kakao")} />
           : whatsapp(styles.send)}
       </div>
@@ -221,9 +227,9 @@ export function FullTripSupportEnquiry({ locale }: { locale: HomegroundLocale })
       <p className={styles.fine}>
         <span>{brief.note}</span>
         <span>{enquiry.free}</span>
-        {locale === "ko" ? whatsapp(styles.textLink) : null}
+        {!editionLocale && locale === "ko" ? whatsapp(styles.textLink) : null}
         <a className={styles.textLink} data-contact-card-direct="" href={emailHref} onClick={() => trackChannel("email")}>{enquiry.email}</a>
-        <a className={styles.textLink} href={`${homePath}privacy/`}>{enquiry.privacy}</a>
+        <a className={styles.textLink} href={paths?.privacy ?? `${homePath}privacy/`}>{enquiry.privacy}</a>
       </p>
     </form>
   );

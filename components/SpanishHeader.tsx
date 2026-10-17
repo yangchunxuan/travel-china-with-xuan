@@ -24,10 +24,10 @@ const entries: Readonly<Record<string, { label: string; description: string; hre
   'multi-city': { label: 'Varias ciudades (en inglés)', description: 'Grandes etapas de China en un mismo viaje', href: '/tours/multi-city/' },
   regions: { label: 'Una región a fondo (en inglés)', description: 'El este, el suroeste, el sur y otras regiones de China', href: '/tours/regions/' },
   seasonal: { label: 'Viajes de temporada (en inglés)', description: 'Invierno en el noreste: Harbin y la montaña Changbai', href: '/tours/seasonal/' },
-  'attraction-tickets': { label: 'Entradas y reservas (en inglés)', description: 'Reserva de acceso con los datos de tu pasaporte', href: '/services/china-attraction-reservations/' },
-  'english-guides': { label: 'Guías privados en inglés', description: 'Guías por días en cuatro ciudades; el español tiene suplemento', href: '/services/private-english-speaking-guides/' },
-  'private-car': { label: 'Vehículo con conductor (en inglés)', description: 'Traslados de aeropuerto y recorridos en vehículo privado', href: '/services/private-car-and-driver/' },
-  'trip-support': { label: 'Organización del viaje (en inglés)', description: 'Hoteles, traslados y coordinación durante el viaje', href: '/services/full-trip-support/' },
+  'attraction-tickets': { label: 'Entradas y reservas', description: 'Reserva de acceso con los datos de tu pasaporte', href: '/es/services/china-attraction-reservations/' },
+  'english-guides': { label: 'Guías privados en inglés', description: 'Guías por días en cuatro ciudades; el español tiene suplemento', href: '/es/services/private-english-speaking-guides/' },
+  'private-car': { label: 'Vehículo con conductor', description: 'Traslados de aeropuerto y recorridos en vehículo privado', href: '/es/services/private-car-and-driver/' },
+  'trip-support': { label: 'Organización del viaje', description: 'Hoteles, traslados y coordinación durante el viaje', href: '/es/services/full-trip-support/' },
   company: { label: 'Nuestro compromiso (en inglés)', description: 'Por qué existe Homeground y qué puedes esperar de nosotros', href: '/company/' },
   planning: { label: 'Nuestro equipo y nuestra forma de trabajar', description: 'Cómo preparamos un viaje que funcione sobre el terreno', href: '/es/studio/' },
   credentials: { label: 'Licencias y registro', description: 'Información oficial que puedes comprobar', href: '/es/business-information/' },
@@ -50,7 +50,7 @@ const copy: HomegroundHeaderEdition['copy'] = {
 };
 export function SpanishSiteHeader({ contactHref = spanishSite.contact, currentPath, languagePaths, tourSlug }: { contactHref?: string; currentPath: string; languagePaths: readonly SpanishLanguagePath[]; tourSlug?: string }) {
   const selected = usePrivateTourSelection();
-  const pageContext: HomegroundPageContext = tourSlug ? 'tour' : currentPath === '/es/' ? 'home' : currentPath === '/es/tours/' ? 'tours' : currentPath === '/es/services/' ? 'services' : currentPath === '/es/guias/' ? 'guides' : currentPath === '/es/studio/' ? 'studio' : 'content';
+  const pageContext: HomegroundPageContext = tourSlug ? 'tour' : currentPath === '/es/' ? 'home' : currentPath === '/es/tours/' ? 'tours' : currentPath.startsWith('/es/services/') ? 'services' : currentPath === '/es/guias/' ? 'guides' : currentPath === '/es/studio/' ? 'studio' : 'content';
   return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact plannerHrefOverride={contactHref}
     languagePaths={Object.fromEntries(languagePaths.map(item => [item.lang, item.path]))}
     edition={{ language: 'es', copy, navigation, servicesOverview: 'Todos los servicios', onPlannerClick: (event, returnFocus) => {

@@ -468,7 +468,7 @@ test("the page is a public, indexable system identity with reciprocal alternates
     source("lib/legacySystemContentAdapter.ts"),
     source("app/sitemap.ts"),
   ]);
-  assert.match(metadata, /"zh-Hans": attractionReservationPath\.zh/u);
+  assert.match(metadata, /serviceDetailAlternates\(['"]china-attraction-reservations['"]\)/u);
   assert.match(metadata, /robots: \{ index: true, follow: true \}/u);
   assert.match(metadata, /resolvePageTitle/u);
   assert.match(route, /AttractionReservationsPage locale="en"/u);
@@ -579,7 +579,7 @@ test("a best-effort attraction is tagged everywhere it is sold and promises a re
   }
   const [page, cta] = await Promise.all([source("components/AttractionReservationsPage.tsx"), source("components/content/GuideReservationCta.tsx")]);
   assert.match(page, /rule\.bestEffort \? <span className=\{styles\.status\} data-status="best-effort">\{copy\.bestEffortTag\}<\/span>/u);
-  assert.match(page, /label: rule\.bestEffort \? `\$\{rule\.name\[locale\]\} · \$\{copy\.bestEffortTag\}`/u);
+  assert.match(page, /label: rule\.bestEffort \? `\$\{name\} · \$\{copy\.bestEffortTag\}`/u);
   assert.match(cta, /rule\.bestEffort \? copy\.bodyBestEffort/u);
 });
 
