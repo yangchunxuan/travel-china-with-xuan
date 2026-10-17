@@ -411,7 +411,15 @@ export function PrivateToursHubPage({
               {arrivalPlanning.questions.map((item) => (
                 <div key={item.title}>
                   <h3>{item.title}</h3>
-                  <p><KeepWords locale="en" text={item.body} /></p>
+                  <p>
+                    <KeepWords locale="en" text={item.body} />
+                    {!edition && locale === "en" && item.title === "Can we travel with children or older family members?" && (
+                      <>
+                        {" "}For route comparisons, children’s pricing and pace, see our{" "}
+                        <Link href="/guides/china-family-private-tours/">China family private tours guide</Link>.
+                      </>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>
