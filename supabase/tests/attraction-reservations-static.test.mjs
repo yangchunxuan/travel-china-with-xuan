@@ -251,7 +251,10 @@ test("the 8-day booking guarantee is stated once as data and repeated everywhere
     assert.match(copy.guaranteeLate, { en: /later than 8 days/u, zh: /不足 8 天/u, ko: /8일 전보다 늦게/u }[locale]);
     assert.match(copy.guaranteeLate, { en: /not guaranteed, but we still try/u, zh: /仍会尽力预约，但不作保证/u, ko: /시도하되 보장하지는 않습니다/u }[locale]);
     assert.match(copy.guaranteeLate, { en: /refunded in full, together with any ticket money not spent/u, zh: /全额退还该景点的服务费及未使用的门票款/u, ko: /수수료 전액과 사용하지 않은 입장료를 환불/u }[locale]);
-    assert.ok(copy.limits.includes(copy.guarantee) && copy.limits.includes(copy.guaranteeLate), `${locale}: refund list`);
+    const stages = copy.limits.map(({ body }) => body);
+    assert.ok(stages.includes(copy.guarantee) && stages.includes(copy.guaranteeLate), `${locale}: refund list`);
+    // The refund list follows the Refund & delivery stages, including cancelling before we book.
+    assert.match(stages.join(" "), { en: /cancel by email before we complete the reservation/u, zh: /在我们完成预约前，你可以通过邮件取消/u, ko: /예약을 완료하기 전이라면 이메일로 취소/u }[locale], `${locale}: cancel before booking`);
     check(copy.pricingLead, "pricing");
     check(copy.enquiry.intro.replace("first visit", "visit").replace("첫 방문일", "방문일").replace("第一个参观日", "参观日"), "enquiry");
     check(copy.rulesIntro.replace(/The 8-day booking guarantee/u, "at least 8 days before your visit").replace(/提前 8 天/u, "至少 8 天").replace(/8일 전 예약 보장/u, "최소 8일 전"), "rules intro");
