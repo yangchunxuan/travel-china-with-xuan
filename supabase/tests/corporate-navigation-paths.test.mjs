@@ -18,29 +18,29 @@ test("all eight languages expose an independent corporate item and the three pur
   });
 });
 
-test("every destination uses the real English hub and its existing purpose anchors", () => {
-  const hubSource = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
-  for (const id of purposeIds) assert.ok(hubSource.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
-  assert.match(hubSource, /id=\{purpose\.id\}/);
+test("every destination uses its equivalent localized hub and the unchanged purpose anchors", () => {
+  const source = JSON.parse(readFileSync(new URL("../../lib/corporateTravelLocales/en.json", import.meta.url), "utf8"));
+  assert.deepEqual(source.hub.purposes.map(purpose => purpose.id), purposeIds);
   for (const language of languages) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    assert.equal(item.href, "/corporate-travel/");
+    const expected = `${language === "en" ? "" : `/${language}`}/corporate-travel/`;
+    assert.equal(item.href, expected);
     assert.equal(item.pathSegment, "corporate-travel/");
     for (const entry of menu.entries) {
       const target = new URL(entry.href, "https://homegroundchina.com");
-      assert.equal(target.pathname, "/corporate-travel/", "do not invent translated corporate routes");
+      assert.equal(target.pathname, expected);
       assert.equal(target.hash, `#${entry.id}`);
       assert.equal(target.search, "");
-      assert.equal(`/${entry.pathSegment}`, entry.href);
+      assert.equal(`${language === "en" ? "" : `/${language}`}/${entry.pathSegment}`, entry.href);
     }
   }
 });
 
-test("each non-English description explicitly identifies the destination as an English page", () => {
+test("localized corporate entrances no longer describe their translated destinations as English-only", () => {
   const disclosures = { zh: "英语页面", ko: "영어 페이지", ja: "英語ページ", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
   for (const [language, disclosure] of Object.entries(disclosures)) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    for (const entry of [item, ...menu.entries]) assert.ok(entry.description.includes(disclosure), `${language}/${entry.id} must disclose the English destination`);
+    for (const entry of [item, ...menu.entries]) assert.ok(!entry.description.includes(disclosure), `${language}/${entry.id} now has a translated destination`);
   }
 });
 

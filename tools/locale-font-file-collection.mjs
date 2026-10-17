@@ -32,6 +32,7 @@ function isJapanesePilotSource(projectRoot, filePath) {
   const path = normalizedRelative(projectRoot, filePath);
   return (
     path.startsWith("app/(japanese)/") ||
+    path === "lib/corporateTravelLocales/ja.json" ||
     japanesePilotSourceFiles.has(path) ||
     japaneseOnlySourcePattern.test(path)
   );

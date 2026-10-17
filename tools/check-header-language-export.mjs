@@ -119,7 +119,7 @@ for (const file of files) {
   for (const header of headers) {
     checkedHeaders++;
     const desktopNav = elements(header, (node) => node.tagName === "nav" && hasClass(node, "desktopNav"))[0];
-    const corporateRoot = "/corporate-travel/";
+    const corporateRoot = `${htmlLanguage === "en" ? "" : `/${htmlLanguage === "zh-Hans" ? "zh" : htmlLanguage}`}/corporate-travel/`;
     const corporatePurposePaths = ["company-trips", "incentive-travel", "meetings-retreats"].map((id) => `${corporateRoot}#${id}`);
     const desktopCompanyLinks = elements(desktopNav, (node) => node.tagName === "a" && attr(node, "href") === corporateRoot);
     check(desktopCompanyLinks.length === 1, `${route}: one independent desktop company-travel entrance`);

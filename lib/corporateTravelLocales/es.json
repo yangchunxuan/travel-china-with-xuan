@@ -1,0 +1,601 @@
+{
+  "ui": {
+    "Skip to content": "Saltar al contenido",
+    "Breadcrumb": "Ruta de navegación",
+    "Home": "Inicio",
+    "For companies": "Para empresas",
+    "A few practical questions": "Algunas preguntas prácticas",
+    "Photo credits": "Créditos de las fotografías",
+    "Destination photographs illustrate the places in the programme. Images have been resized and may be cropped for the layout.": "Las fotografías de los destinos ilustran los lugares del programa. Se ha ajustado el tamaño de las imágenes y pueden haberse recortado para adaptarlas al diseño.",
+    "China, together": "China, juntos",
+    "Company Trips & Team Retreats in China": "Viajes de empresa y retiros de equipo en China",
+    "Bring your team together.": "Reúna a su equipo.",
+    "We’ll take care of the journey.": "Nos ocuparemos del viaje.",
+    "Company trips, incentive travel and small meetings, planned around your people, purpose and budget.": "Viajes de empresa, viajes de incentivo y pequeñas reuniones, planificados según su equipo, sus objetivos y su presupuesto.",
+    "Tell us about your team": "Háblenos de su equipo",
+    "Private programmes in China": "Programas privados en China",
+    "For companies worldwide": "Para empresas de todo el mundo",
+    "Proposed for your dates and budget": "Propuestas para sus fechas y su presupuesto",
+    "Three reasons to travel": "Tres motivos para viajar",
+    "Begin with the reason.": "Empiece por el objetivo.",
+    "We’ll shape the journey.": "Daremos forma al viaje.",
+    "A good company trip has a clear purpose, and enough breathing room for people to enjoy being there. These are three ways we can help.": "Un buen viaje de empresa tiene un propósito claro y suficiente tiempo libre para disfrutar de la experiencia. Estas son tres formas en las que podemos ayudarle.",
+    "Two places to start": "Dos destinos para empezar",
+    "A change of scene.": "Un cambio de entorno.",
+    "A shared experience.": "Una experiencia compartida.",
+    "Two four-day sample programmes, each with a different rhythm. Use them to start a conversation; we’ll adapt the details to your team.": "Dos programas de ejemplo de cuatro días, cada uno con un ritmo distinto. Úselos como punto de partida para conversar; adaptaremos los detalles a su equipo.",
+    "Explore the sample programme": "Ver el programa de ejemplo",
+    "For the person organising it all": "Para quien lo organiza todo",
+    "One programme.": "Un solo programa.",
+    "The details connected.": "Todos los detalles coordinados.",
+    "We bring the arrangements on the ground into a coherent plan, with responsibilities agreed before the trip.": "Integramos los servicios en destino en un plan coherente, con las responsabilidades acordadas antes del viaje.",
+    "A sensible route and pace": "Una ruta y un ritmo razonables",
+    "Balance travel time, shared activities, working sessions and time to yourselves. Include a practical alternative when weather affects the plan.": "Equilibrar desplazamientos, actividades compartidas, sesiones de trabajo y tiempo personal. Incluir una alternativa práctica cuando el tiempo afecte al plan.",
+    "Stays, transfers and meals": "Alojamiento, traslados y comidas",
+    "Work through rooming preferences, separate arrivals, luggage and dietary requirements, then check the appropriate options for your dates.": "Revisar la distribución de habitaciones, las llegadas por separado, el equipaje y las necesidades alimentarias, y después comprobar las opciones adecuadas para sus fechas.",
+    "Space for your own programme": "Espacio para su propio programa",
+    "Coordinate a meeting room, group dinner or recognition evening where requested. Venue, equipment and catering requirements are quoted specifically.": "Coordinar una sala de reuniones, una cena de grupo o una velada de reconocimiento cuando se solicite. El espacio, el equipo y la restauración se presupuestan específicamente.",
+    "Clear coordination on the ground": "Coordinación clara en destino",
+    "Set out the guide, transport and local support arrangements, together with who your organiser should contact during the programme.": "Detallar los servicios de guía, transporte y asistencia local, e indicar con quién debe contactar su organizador durante el programa.",
+    "A proposal you can share internally": "Una propuesta que puede compartir internamente",
+    "Your people.": "Su equipo.",
+    "Your dates.": "Sus fechas.",
+    "A clear quote.": "Un presupuesto claro.",
+    "Single rooms or shared rooms? A quiet team dinner or an awards evening? The details make a difference to both the experience and the budget.": "¿Habitaciones individuales o compartidas? ¿Una cena tranquila de equipo o una entrega de premios? Los detalles influyen tanto en la experiencia como en el presupuesto.",
+    "We quote for the actual programme: headcount, rooming, hotel standard, transport, meals, activities and any meeting needs. Before booking, you receive the scope, total price, separate options and payment and cancellation conditions in writing.": "Presupuestamos el programa real: número de personas, distribución de habitaciones, categoría del hotel, transporte, comidas, actividades y necesidades de reuniones. Antes de reservar, recibirá por escrito el alcance, el precio total, las opciones aparte y las condiciones de pago y cancelación.",
+    "The sample programmes are not fixed-price packages. Availability is checked for your dates; a proposal does not hold rooms or venues.": "Los programas de ejemplo no son paquetes de precio fijo. Se comprueba la disponibilidad para sus fechas; una propuesta no bloquea habitaciones ni espacios.",
+    "Share your brief": "Comparta sus necesidades",
+    "From a brief to a journey": "De sus necesidades al viaje",
+    "A few clear steps.": "Unos pasos claros.",
+    "Enough structure for the organiser. Enough flexibility to make the trip your own.": "Estructura suficiente para quien organiza. Flexibilidad suficiente para adaptar el viaje a su equipo.",
+    "Tell us the purpose": "Cuéntenos el objetivo",
+    "Share your people, dates, budget and what you want the trip to achieve.": "Indique quiénes viajan, las fechas, el presupuesto y qué desea conseguir con el viaje.",
+    "Shape the programme": "Dé forma al programa",
+    "Review a route, the proposed arrangements and the options that matter to you.": "Revise una ruta, los servicios propuestos y las opciones que le interesan.",
+    "Confirm the details": "Confirme los detalles",
+    "Agree availability, the written quote and booking conditions before payment.": "Acuerde la disponibilidad, el presupuesto escrito y las condiciones de reserva antes de pagar.",
+    "Bring the team": "Traiga a su equipo",
+    "Finalise rooming, arrival details and the practical information for everyone travelling.": "Ultime la distribución de habitaciones, los detalles de llegada y la información práctica para todas las personas que viajan.",
+    "About Homeground": "Sobre Homeground",
+    "Get to know the people and business behind your programme.": "Conozca a las personas y la empresa que hay detrás de su programa.",
+    "How we plan": "Cómo planificamos",
+    "Business information & licences": "Información de la empresa y licencias",
+    "Plan this for your team": "Planifique este viaje para su equipo",
+    "Duration": "Duración",
+    "Suggested group": "Grupo recomendado",
+    "Base": "Base",
+    "Programme": "Programa",
+    "The idea behind the journey": "La idea detrás del viaje",
+    "The sample programme": "El programa de ejemplo",
+    "Four days, thoughtfully paced.": "Cuatro días con un ritmo pensado al detalle.",
+    "A framework for your own trip. Dates, arrival times, weather and your team’s preferences will shape the final programme.": "Una base para su propio viaje. Las fechas, los horarios de llegada, el tiempo y las preferencias del equipo darán forma al programa final.",
+    "Jump to a day": "Ir a un día",
+    "Day": "Día",
+    "Where everyone settles in": "Dónde se alojará el grupo",
+    "Make the scope clear": "Aclare el alcance",
+    "Know what you are planning.": "Sepa qué está planificando.",
+    "The following is the proposed scope to discuss. Your final written quote confirms exactly what is included, the agreed options and booking conditions.": "Lo siguiente es el alcance propuesto para conversar. El presupuesto escrito definitivo confirma exactamente qué está incluido, las opciones acordadas y las condiciones de reserva.",
+    "Proposed arrangements": "Servicios propuestos",
+    "Options to discuss": "Opciones para comentar",
+    "Outside the sample scope": "Fuera del alcance del ejemplo",
+    "A few things to work through": "Algunos puntos por concretar",
+    "Designed around the people coming.": "Diseñado en torno a quienes viajan.",
+    "Useful reading": "Lecturas útiles",
+    "A little more local context": "Un poco más de contexto local",
+    "← Explore company trips in China": "← Ver viajes de empresa en China",
+    "Start with your team": "Empiece por su equipo",
+    "What would you like this trip to bring together?": "¿Qué le gustaría reunir con este viaje?",
+    "A few details give us a useful starting point. Dates can still be open; an estimated group size is enough.": "Unos pocos detalles nos dan un punto de partida útil. Las fechas pueden estar abiertas y basta con una estimación del tamaño del grupo.",
+    "Already have a brief? Email": "¿Ya tiene un documento de necesidades? Escriba a",
+    "Company name": "Nombre de la empresa",
+    "Your name": "Su nombre",
+    "(optional)": "(opcional)",
+    "Reply email": "Correo electrónico de respuesta",
+    "Estimated group size": "Tamaño estimado del grupo",
+    "e.g. 18": "p. ej., 18",
+    "When, and for how long?": "¿Cuándo y durante cuánto tiempo?",
+    "e.g. May 2027, 4 days — or dates still open": "p. ej., mayo de 2027, 4 días, o fechas por decidir",
+    "Purpose of your trip": "Objetivo del viaje",
+    "A starting idea": "Una idea inicial",
+    "Help us choose": "Ayúdenos a elegir",
+    "Budget & currency": "Presupuesto y moneda",
+    "e.g. USD 15,000 total, excluding international flights": "p. ej., USD 15.000 en total, sin vuelos internacionales",
+    "Anything we should plan around?": "¿Qué debemos tener en cuenta al planificar?",
+    "Single or shared rooms, meeting time, food preferences, different arrival flights…": "Habitaciones individuales o compartidas, tiempo para reuniones, preferencias alimentarias, vuelos de llegada distintos…",
+    "Prepare my enquiry": "Preparar mi consulta",
+    "Review your message, then choose email or WhatsApp to send it. Preparing a brief does not make a booking.": "Revise su mensaje y elija correo electrónico o WhatsApp para enviarlo. Preparar las necesidades del viaje no constituye una reserva.",
+    "Privacy notice": "Aviso de privacidad",
+    "Your enquiry is ready to review": "Su consulta está lista para revisar",
+    "It has not been sent. Open your preferred app and send it when you are ready.": "Todavía no se ha enviado. Abra la aplicación que prefiera y envíela cuando esté listo.",
+    "Open email draft": "Abrir borrador de correo",
+    "Open WhatsApp draft": "Abrir borrador de WhatsApp",
+    "Before you bring the team.": "Antes de traer a su equipo.",
+    "Questions about this programme.": "Preguntas sobre este programa.",
+    "Explore {title}": "Explorar {title}",
+    "Day {day}": "Día {day}",
+    "Wulingyuan sandstone pillars": "Pilares de arenisca de Wulingyuan",
+    "Tianzi Mountain panorama": "Panorámica de la montaña Tianzi",
+    "Golden Whip Stream": "Arroyo del Látigo Dorado",
+    "Zhangjiajie Hehua Airport": "Aeropuerto de Zhangjiajie Hehua",
+    "Humble Administrator’s Garden": "Jardín del Administrador Humilde",
+    "Please enter your company name.": "Introduzca el nombre de su empresa.",
+    "Please enter an estimated group size between 1 and 9,999.": "Introduzca un tamaño estimado del grupo entre 1 y 9.999 personas.",
+    "Please share a month or say that your dates are still open.": "Indique un mes o señale que las fechas están por decidir.",
+    "Please choose the purpose of your trip.": "Elija el objetivo de su viaje.",
+    "Please choose a sample itinerary or ask us to suggest one.": "Elija un itinerario de ejemplo o pídanos que le sugiramos uno.",
+    "Please check your details.": "Revise sus datos.",
+    "Copy is unavailable here. You can select the message below, or open it in your email app.": "No se puede copiar aquí. Puede seleccionar el mensaje de abajo o abrirlo en su aplicación de correo.",
+    "Copied": "Copiado",
+    "Copy enquiry": "Copiar consulta",
+    "Your enquiry has been copied. It has not been sent.": "Su consulta se ha copiado. No se ha enviado.",
+    "Your email or WhatsApp message is the enquiry we receive.": "La consulta que recibimos es el mensaje que envíe por correo electrónico o WhatsApp.",
+    "Company trip & team building": "Viaje de empresa y actividades de equipo",
+    "Incentive travel": "Viajes de incentivo",
+    "Small meeting & team retreat": "Pequeña reunión y retiro de equipo",
+    "Help us choose the right format": "Ayúdenos a elegir el formato adecuado",
+    "Zhangjiajie · 4 days / 3 nights": "Zhangjiajie · 4 días / 3 noches",
+    "Shanghai & Suzhou · 4 days / 3 nights": "Shanghái y Suzhou · 4 días / 3 noches",
+    "Company travel planning and ground arrangements in China": "Planificación de viajes de empresa y servicios en destino en China",
+    "Sample programme, tailored quotation required.": "Programa de ejemplo; requiere un presupuesto personalizado.",
+    "Company teams": "Equipos de empresa",
+    "Incentive travel groups": "Grupos de viajes de incentivo",
+    "Sample company trip programmes": "Programas de ejemplo para viajes de empresa",
+    "Hi Homeground, we’d like to discuss a company trip to China.": "Hola, Homeground. Nos gustaría hablar de un viaje de empresa a China.",
+    "Company": "Empresa",
+    "Contact": "Contacto",
+    "Purpose": "Objetivo",
+    "Estimated group": "Grupo estimado",
+    "people": "personas",
+    "Dates / duration": "Fechas / duración",
+    "Starting idea": "Idea inicial",
+    "Other arrangements": "Otros servicios",
+    "Open to suggestions": "Abiertos a sugerencias",
+    "Please help us shape the programme and confirm the arrangements, availability and written quotation before we book.": "Ayúdennos a dar forma al programa y a confirmar los servicios, la disponibilidad y el presupuesto escrito antes de reservar.",
+    "Reference": "Referencia",
+    "Company trip enquiry — {company}": "Consulta sobre viaje de empresa — {company}"
+  },
+  "hub": {
+    "title": "Viajes de empresa y retiros de equipo en China",
+    "description": "Viajes de empresa, viajes de incentivo y pequeños retiros de equipo en China. Descubra itinerarios de ejemplo de cuatro días en Zhangjiajie y Shanghái–Suzhou, con servicios locales adaptados a su equipo.",
+    "faqs": [
+      {
+        "question": "¿Pueden ayudar a equipos que viajan desde distintos países?",
+        "answer": "Sí. Indique la ciudad de salida y las horas previstas de llegada de cada grupo para que podamos valorar recogidas en aeropuertos por separado y un punto de inicio común práctico. Estos programas están abiertos a empresas de todo el mundo; los vuelos internacionales se organizan por separado, salvo que su presupuesto escrito indique lo contrario."
+      },
+      {
+        "question": "¿Para cuántas personas están diseñados estos viajes de ejemplo?",
+        "answer": "La propuesta de Zhangjiajie es un punto de partida para unas 10–30 personas, y la de Shanghái–Suzhou para unas 10–24. Son rangos de planificación, no salidas fijas ni compromisos de reserva mínima. Indíquenos su número estimado y comprobaremos los vehículos, las habitaciones y las actividades que encajan."
+      },
+      {
+        "question": "¿Es obligatorio incluir una reunión o juegos organizados de trabajo en equipo?",
+        "answer": "No. Un viaje de empresa puede dar simplemente a los compañeros tiempo para viajar y disfrutar de experiencias juntos. Si desean una reunión interna, podemos valorar el espacio, el equipo y los refrigerios. Su empresa dirige la conversación; la facilitación profesional o la formación requieren un acuerdo aparte."
+      },
+      {
+        "question": "¿Qué determina el precio?",
+        "answer": "Las fechas, el tamaño final del grupo, la categoría del hotel, las habitaciones individuales o compartidas, el transporte, el idioma del guía, las comidas y cualquier reunión o evento especial influyen en el presupuesto. Los ejemplos no tienen un precio fijo anunciado. Primero revisamos sus necesidades y después detallamos por escrito los servicios propuestos y el total."
+      },
+      {
+        "question": "¿Pueden planificar comidas halal, alimentación vegetariana o distintas preferencias de caminata?",
+        "answer": "Indique los requisitos concretos desde el principio. Comprobamos las opciones de restaurantes y el nivel de garantías alimentarias que necesita, y adaptamos las caminatas cuando resulta viable. Las certificaciones concretas, los ingredientes, la accesibilidad y las alternativas de actividad deben comprobarse antes de confirmar."
+      },
+      {
+        "question": "¿Qué ocurre después de enviar nuestras necesidades?",
+        "answer": "Aclaramos el objetivo, las fechas, el grupo, la distribución de habitaciones y el presupuesto, y después proponemos un programa viable. Antes de reservar, confirmamos por escrito el alcance del servicio, la disponibilidad de proveedores, el presupuesto final y las condiciones de pago y cambios. Si su empresa exige registro de proveedor o documentos de pago específicos, avísenos con antelación."
+      }
+    ],
+    "purposes": [
+      {
+        "id": "company-trips",
+        "number": "01",
+        "title": "Viajes de empresa y actividades de equipo",
+        "body": "Tiempo fuera de la rutina habitual. Reúna a los compañeros mediante comidas compartidas, descubrimientos locales y un ritmo que deje espacio para conversar.",
+        "note": "Para viajes anuales de empleados, encuentros de equipo y bienestar del personal."
+      },
+      {
+        "id": "incentive-travel",
+        "number": "02",
+        "title": "Viajes de incentivo",
+        "body": "Celebre los logros de su equipo en un lugar memorable. Dé forma al viaje en torno a las personas a las que quiere agradecer su trabajo, con alojamientos y experiencias cuidadosamente elegidos.",
+        "note": "Para reconocimiento de empleados, incentivos comerciales y recompensas a distribuidores."
+      },
+      {
+        "id": "meetings-retreats",
+        "number": "03",
+        "title": "Pequeñas reuniones y retiros de equipo",
+        "body": "Reserve espacio para conversaciones útiles y después salga a descubrir el entorno con su equipo. Combine sus propias sesiones de trabajo con unos días de viaje por China.",
+        "note": "Para equipos directivos, planificación departamental y retiros de empresa."
+      }
+    ]
+  },
+  "trips": [
+    {
+      "slug": "zhangjiajie-4-day-team-trip",
+      "title": "Zhangjiajie: juntos entre las cumbres",
+      "seoTitle": "Viaje de empresa a Zhangjiajie | 4 días, 3 noches | Homeground China",
+      "description": "Un viaje de empresa de ejemplo de 4 días a Zhangjiajie para 10–30 personas: tres noches en Wulingyuan, paisajes del parque forestal, un paseo suave por el valle y una cena de equipo. Presupuesto a petición.",
+      "eyebrow": "Viajes de empresa · Viajes de incentivo",
+      "lede": "Ofrezca a su equipo unos días fuera de lo habitual. Caminen bajo las cumbres de arenisca de Zhangjiajie, compartan mesa al final del día y dejen espacio para las conversaciones que rara vez surgen en el trabajo.",
+      "duration": "4 días / 3 noches",
+      "groupSize": "Recomendado: 10–30 personas",
+      "base": "Wulingyuan · un hotel durante tres noches",
+      "format": "Viaje de empresa privado · itinerario de ejemplo",
+      "hero": {
+        "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+        "alt": "Pilares de arenisca y bosque verde en Wulingyuan, Zhangjiajie",
+        "caption": "Un entorno diferente para compartir tiempo, en el paisaje de Wulingyuan, Hunan."
+      },
+      "storyTitle": "Una experiencia compartida, con espacio para respirar",
+      "story": "Los mejores momentos de un viaje de empresa suelen ser espontáneos: una conversación en un sendero del bosque, una foto en la que todos quieren salir o un brindis por alguien cuyo trabajo merece reconocimiento. Este ejemplo de cuatro días tiene presentes esos momentos. Un hotel en Wulingyuan, un día principal de montaña y otro más suave al pie de las cumbres dan al viaje un ritmo claro. Adaptamos las caminatas, las comidas y el tiempo compartido a las personas que vienen.",
+      "highlights": [
+        {
+          "title": "Tres noches, una sola base",
+          "text": "Alójense juntos en Wulingyuan. La selección del hotel parte de la distribución de habitaciones, el acceso del autocar y el presupuesto, para que el grupo se instale sin tener que hacer las maletas continuamente."
+        },
+        {
+          "title": "Paisajes para compartir",
+          "text": "Un día con guía por la montaña Tianzi y Yuanjiajie combina los principales miradores con descansos razonables. La propuesta explica el transporte dentro del parque y las exigencias de las caminatas."
+        },
+        {
+          "title": "Una noche para dar las gracias",
+          "text": "La cena final del equipo ofrece espacio para reconocer el buen trabajo. Cuando conozcamos sus planes, podremos valorar un salón privado, discursos, premios y equipo técnico."
+        }
+      ],
+      "days": [
+        {
+          "title": "Llegar, instalarse y encontrar el ritmo",
+          "place": "Punto de llegada a Zhangjiajie → Wulingyuan",
+          "summary": "Conozcan al equipo local y viajen a su hotel en Wulingyuan. El primer día gira en torno a las llegadas, con una cena de bienvenida si el grupo llega al hotel a tiempo.",
+          "details": [
+            "Comparta los vuelos o trenes de todos antes de planificar las recogidas. Las distintas tandas de llegada pueden presupuestarse como traslados adicionales, en vez de hacer esperar a todo el grupo.",
+            "Instálense en el mismo hotel durante tres noches. Preparamos una distribución de habitaciones individuales, dobles con dos camas compartidas o una combinación, sujeta a la disponibilidad real del hotel.",
+            "Dejen la tarde libre para descansar. Si el horario lo permite, reúnanse para una breve presentación de bienvenida y una cena de grupo acordada; las llegadas tardías se planifican aparte."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+            "alt": "Pilares de arenisca cubiertos de bosque en la zona de Wulingyuan, Zhangjiajie",
+            "caption": "Wulingyuan es la base de alojamiento propuesta; el hotel se selecciona para su grupo."
+          }
+        },
+        {
+          "title": "Un día entre las cumbres del bosque",
+          "place": "Parque Forestal Nacional de Zhangjiajie · montaña Tianzi y Yuanjiajie",
+          "summary": "Pasen el principal día de visitas en lo alto, entre los pilares de arenisca. Sigan una ruta planificada por la montaña Tianzi y Yuanjiajie, con miradores para disfrutar juntos, una pausa para almorzar y tiempo para observar el entorno.",
+          "details": [
+            "Después del desayuno, vayan al parque con su guía. Antes de reservar, acordamos la puerta de entrada, las conexiones de los autobuses internos, los trayectos en teleférico o ascensor y los costes de las entradas.",
+            "Visiten los miradores de la montaña Tianzi y Yuanjiajie. El orden final depende de las entradas, las condiciones de funcionamiento y el ritmo de caminata del grupo; no se trata de un reto de senderismo cronometrado.",
+            "Prevean escalones, colas y caminatas entre miradores. Hablamos de las necesidades de movilidad con antelación y planificamos una alternativa adecuada para quienes no puedan realizar cómodamente la ruta principal.",
+            "Regresen al hotel después del parque. Mantengan una noche tranquila, con la cena incluida en el plan de comidas o por cuenta propia, según lo acordado con su organizador."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
+            "alt": "Vista amplia del bosque y los pilares de arenisca de la montaña Tianzi",
+            "caption": "El paisaje de cumbres de la montaña Tianzi; la visibilidad varía según el tiempo."
+          }
+        },
+        {
+          "title": "Un camino más suave y una noche juntos",
+          "place": "Arroyo del Látigo Dorado → hotel → cena de equipo",
+          "summary": "Cambien de ritmo con un tramo seleccionado del arroyo del Látigo Dorado. Regresen para disfrutar de una tarde sin prisas y después reúnanse en una cena dedicada a su equipo.",
+          "details": [
+            "Recorran un tramo adecuado del sendero del valle, sin comprometer a todos a hacer la ruta completa. La distancia, el punto de regreso y las paradas de descanso se acuerdan según las necesidades del grupo y las condiciones del día.",
+            "Almuercen y después regresen al hotel para disponer de tiempo personal. Una breve reunión interna opcional puede ocupar parte de la tarde, acortando el paseo si es necesario.",
+            "Para una reunión, su empresa aporta el orden del día y dirige la sesión. Podemos buscar una sala adecuada y presupuestar por separado la distribución de asientos, el equipo y los refrigerios.",
+            "Reúnanse para la cena final del equipo. Confirmen con antelación los menús, las necesidades alimentarias y la distribución de asientos; los discursos o premios pueden planificarse dentro de las condiciones acordadas con el lugar."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp",
+            "alt": "Bosque verde junto al arroyo del Látigo Dorado, en Zhangjiajie",
+            "caption": "El arroyo del Látigo Dorado ofrece otra perspectiva desde el pie de las cumbres."
+          }
+        },
+        {
+          "title": "Desayuno, despedidas y próximos destinos",
+          "place": "Wulingyuan → aeropuerto o estación de tren de Zhangjiajie",
+          "summary": "Terminen con el desayuno y traslados ajustados a las salidas reservadas. Dejen un margen cómodo para el equipaje, la salida del hotel y el viaje siguiente.",
+          "details": [
+            "Salgan del hotel después del desayuno, con los grupos de traslado organizados según la lista definitiva de vuelos o trenes.",
+            "El destino del traslado se acuerda en la propuesta: aeropuerto de Zhangjiajie Hehua, estación de Zhangjiajie Oeste u otro punto de llegada o salida indicado expresamente.",
+            "Una salida tardía puede permitir tiempo libre, pero las visitas adicionales, la salida tardía del hotel, los vehículos extra o una noche más deben acordarse y presupuestarse antes."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+            "alt": "Aeropuerto de Zhangjiajie Hehua con las montañas al fondo",
+            "caption": "Los traslados de salida se ajustan al aeropuerto o estación y al horario confirmados."
+          }
+        }
+      ],
+      "stay": {
+        "title": "Alojarse juntos en Wulingyuan",
+        "body": "Proponemos tres noches en un solo hotel de la zona de Wulingyuan. Para un grupo de empresa, un bloque de habitaciones adecuado importa tanto como las fotografías: una combinación correcta de camas, un servicio de desayuno fiable, acceso para vehículos y un espacio útil para reunirse.",
+        "details": [
+          "Compare un plan de habitaciones individuales con otro de habitaciones dobles con dos camas compartidas, o presupueste una combinación. La ocupación individual cambia el coste por persona.",
+          "Los nombres de los hoteles, las categorías de habitación, los tipos de cama y el número de habitaciones se comprueban para sus fechas y se incluyen en la propuesta antes de confirmar.",
+          "Un bloque de habitaciones en la misma planta, habitaciones comunicadas, comedor privado o sala de reuniones deben solicitarse y confirmarse por separado."
+        ]
+      },
+      "scope": [
+        "Tres noches en un hotel de Wulingyuan, con desayuno y la distribución elegida de habitaciones individuales o dobles con dos camas.",
+        "Traslados privados de llegada y salida, además del plan de vehículos y la capacidad de equipaje especificados para su grupo.",
+        "Servicio de guía en inglés para las visitas turísticas.",
+        "Entrada al Parque Forestal Nacional de Zhangjiajie y los trayectos concretos en autobuses internos, ascensor y teleférico indicados en el presupuesto escrito.",
+        "Un plan de comidas acordado, con cena de bienvenida cuando lo permitan las llegadas, almuerzos de los días de visitas y cena final del equipo.",
+        "Una persona de contacto local, con la coordinación en destino detallada en la propuesta."
+      ],
+      "options": [
+        "Una breve reunión dirigida por la empresa el día 3, con alquiler de sala, distribución, equipo y pausas de té presupuestados por separado.",
+        "Un comedor privado, montaje para premios, micrófono u otras mejoras acordadas para la cena final.",
+        "Un fotógrafo para partes seleccionadas del viaje, con los derechos de uso y los entregables acordados de antemano.",
+        "Traslados adicionales al aeropuerto, noches extra, una ruta a pie más corta u otros cambios en el plan de ejemplo."
+      ],
+      "notIncluded": [
+        "Vuelos o trenes de ida y vuelta a Zhangjiajie, salvo que se añadan expresamente al presupuesto.",
+        "Salas de reuniones, equipo para eventos, fotógrafos y mejoras de la cena, salvo que se presupuesten específicamente.",
+        "Comidas, bebidas, extras de habitación y gastos personales fuera del plan de comidas y servicios acordado.",
+        "Seguro de viaje, trámites de visado y servicios no incluidos en el presupuesto escrito."
+      ],
+      "planningNotes": [
+        {
+          "title": "Cuatro días naturales y dos días principales de actividades",
+          "body": "Los días 1 y 4 son de llegada y salida. Este ejemplo no equivale a cuatro días completos de visitas; los horarios de vuelo pueden exigir una noche extra o una ruta modificada."
+        },
+        {
+          "title": "Pensado para las personas que vienen",
+          "body": "Indique cómo se sienten caminando, si necesitan recorridos sin escalones y si algún compañero prefiere un día más tranquilo. El transporte del parque no elimina todos los escalones, las colas ni las caminatas al aire libre."
+        },
+        {
+          "title": "Un plan práctico ante condiciones cambiantes",
+          "body": "El tiempo de montaña, la visibilidad, el funcionamiento del parque y la afluencia pueden afectar al orden de las visitas. En la propuesta acordamos una alternativa por mal tiempo y cómo se tratará cualquier diferencia de precio."
+        },
+        {
+          "title": "Una propuesta útil para su organizador",
+          "body": "Envíe el periodo de fechas, el número de personas, las preferencias de habitaciones y el presupuesto. Después comprobamos proveedores y presentamos una propuesta desglosada, un calendario de pagos y condiciones de cancelación para su aprobación."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Para quién está diseñado este viaje de empresa a Zhangjiajie?",
+          "answer": "Este ejemplo de cuatro días está pensado para unos 10–30 compañeros que viajan como un grupo privado. Puede encajar en un viaje anual de empleados o en un viaje de incentivo para un equipo más pequeño. Podemos estudiar otras cantidades de personas, aunque quizá requieran otros vehículos, personal u hoteles."
+        },
+        {
+          "question": "¿Qué abarca el itinerario de cuatro días?",
+          "answer": "Propone llegar a Zhangjiajie, pasar tres noches en Wulingyuan, un día principal en el parque forestal por la montaña Tianzi y Yuanjiajie, un paseo más corto por el arroyo del Látigo Dorado, una cena final de equipo y traslados de salida. Los días 1 y 4 son de viaje. La montaña Tianmen y el Puente de Cristal no forman parte de este ejemplo."
+        },
+        {
+          "question": "¿Podemos incluir una reunión o una cena de premios?",
+          "answer": "Sí, podemos comprobar una sala adecuada para parte del día 3 y valorar discursos o premios en la cena final. Su empresa dirige su propia reunión. El alquiler del espacio, el equipo, los refrigerios y cualquier montaje se confirman y presupuestan por separado; este ejemplo no incluye facilitación ni formación."
+        },
+        {
+          "question": "¿Cuánto cuesta un viaje de empresa a Zhangjiajie?",
+          "answer": "El precio se calcula para sus fechas, número de personas y distribución de habitaciones. Las habitaciones individuales o compartidas con dos camas, los servicios de guía, el transporte del parque, las comidas y las necesidades de reuniones influyen en el total. Este ejemplo no tiene un precio público fijo; la propuesta escrita detalla los servicios y las condiciones de pago para su grupo."
+        },
+        {
+          "question": "¿Todo el mundo tendrá que compartir habitación?",
+          "answer": "No. Podemos presupuestar ocupación individual, habitaciones compartidas con dos camas o una combinación. Indique cuántas habitaciones de cada tipo necesita. El hotel y el bloque real de habitaciones deben comprobarse antes de confirmar, y no puede darse por hecho que estarán en la misma planta."
+        },
+        {
+          "question": "¿Es adecuado para compañeros con distinta condición física?",
+          "answer": "Puede adaptarse, pero el día principal del parque sigue implicando caminatas al aire libre, escalones y posibles colas. Necesitamos conocer las necesidades de movilidad antes de recomendar la ruta. Se puede estudiar y presupuestar un paseo más corto por el valle u otra alternativa, en lugar de esperar que todos mantengan el mismo ritmo."
+        },
+        {
+          "question": "¿Pueden organizar comidas vegetarianas, halal o adaptadas a alergias?",
+          "answer": "Comparta las necesidades alimentarias al consultar, incluidas las relacionadas con certificaciones o alergias. Antes de confirmar el plan de comidas, comprobaremos con los proveedores los restaurantes, menús y prácticas de preparación adecuados."
+        },
+        {
+          "question": "¿Están incluidos los vuelos y es privado el parque?",
+          "answer": "Los vuelos y trenes a Zhangjiajie están excluidos salvo que se añadan por escrito. El vehículo y el servicio de guía acordado son para su empresa, pero el parque nacional, los autobuses internos y los miradores son públicos. Un servicio privado no significa acceso exclusivo al parque ni entrada sin colas."
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "label": "Elegir entre la ciudad de Zhangjiajie y Wulingyuan"
+        },
+        {
+          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "label": "Entradas, accesos y transporte del parque forestal"
+        },
+        {
+          "href": "/guides/zhangjiajie-older-travellers/",
+          "label": "Caminatas, escalones y un itinerario más suave en Zhangjiajie"
+        }
+      ]
+    },
+    {
+      "slug": "shanghai-suzhou-4-day-company-retreat",
+      "title": "Shanghái y Suzhou: tiempo para su equipo",
+      "seoTitle": "Retiro de empresa en Shanghái y Suzhou | 4 días | Homeground China",
+      "description": "Un retiro de empresa de ejemplo de 4 días en Shanghái y Suzhou para 10–24 personas, con tres noches en Shanghái, una excursión de un día a Suzhou y una reunión opcional de medio día. Presupuesto a petición.",
+      "eyebrow": "Viajes de empresa · Pequeñas reuniones y retiros de equipo",
+      "lede": "Reúna a todos en una ciudad y déles espacio para descubrirla juntos. Tres noches en Shanghái, un día entre los jardines y canales de Suzhou y tiempo para sus propias conversaciones hacen que un viaje corto se aproveche bien.",
+      "duration": "4 días / 3 noches",
+      "groupSize": "Recomendado: 10–24 personas",
+      "base": "Centro de Shanghái · un hotel durante tres noches",
+      "format": "Retiro de empresa privado · itinerario de ejemplo",
+      "hero": {
+        "src": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+        "alt": "La torre del reloj del Bund y el perfil moderno de Shanghái al anochecer",
+        "caption": "Una sola base en Shanghái, con un día en Suzhou y tiempo compartido entre visitas."
+      },
+      "storyTitle": "La energía de una ciudad y el ritmo tranquilo de un jardín",
+      "story": "Shanghái da a un equipo mucho de qué hablar: el río, un perfil urbano cambiante y calles donde aún se ven las vidas anteriores de la ciudad. Suzhou cambia la escala. Una puerta enmarca un jardín; el agua y la piedra crean un mundo más pequeño. Este ejemplo reúne ambos lugares sin cambiar de hotel. También reserva medio día para una reunión propia si la necesitan, para que el objetivo de la empresa y el placer de viajar tengan su espacio.",
+      "highlights": [
+        {
+          "title": "Un hotel, tres noches",
+          "text": "Tomen el centro de Shanghái como base y visiten Suzhou en una excursión de un día. Un solo hotel simplifica las entradas, el equipaje y la distribución de habitaciones."
+        },
+        {
+          "title": "Una reunión que encaja en el viaje",
+          "text": "Reserve parte del día 2 para una sesión dirigida por la empresa o use esa misma mañana para una visita tranquila a la ciudad. Esta elección se concreta antes de reservar."
+        },
+        {
+          "title": "Experiencias compartidas y también tiempo libre",
+          "text": "Un paseo por el Bund, un jardín de Suzhou y una cena de equipo dan al viaje un hilo común. El tiempo sin programar permite a los compañeros disfrutar de la ciudad a su manera."
+        }
+      ],
+      "days": [
+        {
+          "title": "Llegar a Shanghái y reunirse alrededor de la mesa",
+          "place": "Aeropuerto o estación de tren de Shanghái → centro de Shanghái",
+          "summary": "Reúnanse en Shanghái e instálense en el hotel que será su base durante las tres noches. Si los horarios de llegada lo permiten, empiecen con una cena de bienvenida tranquila.",
+          "details": [
+            "Planifiquen las recogidas en el aeropuerto o estación de Shanghái indicados utilizando la lista real de llegadas del grupo. Las llegadas a Pudong y Hongqiao se organizan por separado cuando es necesario.",
+            "Hagan el registro, deshagan las maletas y dejen libre el resto de la tarde. Solo se añade una visita el primer día si el horario de llegada permite hacerla cómodamente.",
+            "Reúnanse para una cena de bienvenida en un restaurante acordado, con tiempo para presentarse y repasar brevemente los próximos días. Las llegadas tardías pueden requerir comidas organizadas aparte."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+            "alt": "El perfil urbano de Shanghái junto al río a la luz del atardecer",
+            "caption": "Shanghái es la ciudad de llegada y la base propuesta para las tres noches."
+          }
+        },
+        {
+          "title": "Sus conversaciones, después la ciudad",
+          "place": "Reunión interna opcional → el Bund y el centro de Shanghái",
+          "summary": "Dediquen la mañana a una reunión interna de medio día o elijan una experiencia urbana en su lugar. Por la tarde, reúnanse junto al Bund y exploren las calles de alrededor con su guía.",
+          "details": [
+            "En la versión con reunión, su empresa establece el orden del día y dirige la conversación. Comprobamos una sala adecuada en el hotel o cerca de él y presupuestamos por separado el alquiler, la distribución, el equipo y los refrigerios.",
+            "Si prefieren un viaje de ocio, pasen la mañana explorando Shanghái a un ritmo tranquilo, con una ruta elegida según los intereses del equipo.",
+            "Después del almuerzo, hagan un paseo guiado por el Bund y algunas calles céntricas, con tiempo para detenerse, fotografiar y comprender los contrastes arquitectónicos de la ribera.",
+            "Terminen con tiempo libre o una cena acordada. Si lo desean, se puede añadir al presupuesto un crucero fluvial, un mirador u otra actividad nocturna con entrada."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/shanghai-skyline-1600.webp",
+            "alt": "La Torre de Shanghái y el Centro Financiero Mundial sobre el perfil urbano de la ciudad",
+            "caption": "El perfil urbano de Shanghái forma el entorno; las visitas a torres con entrada son opcionales."
+          }
+        },
+        {
+          "title": "Suzhou, a la escala de un jardín",
+          "place": "Shanghái → jardín de Suzhou y calle Pingjiang → Shanghái",
+          "summary": "Viajen a Suzhou para un día con un ritmo cuidado. Visiten un jardín clásico, compartan el almuerzo y recorran un tramo de la calle Pingjiang antes de volver a Shanghái para la cena final del equipo.",
+          "details": [
+            "Viajen en un vehículo privado adecuado al tamaño del grupo. La propuesta identifica el transporte y prevé el tráfico, los descansos y el regreso a Shanghái.",
+            "Visiten el Jardín del Administrador Humilde, sujeto a disponibilidad de entradas, o acuerden previamente otro jardín adecuado. Centren la visita en un solo jardín, en vez de intentar incluir varios en el día.",
+            "Después de un almuerzo acordado, exploren parte de las calles junto al canal de Pingjiang. Dejen tiempo personal con un punto de encuentro y un plan de salida claros; actividades como un paseo en barca solo se incluyen cuando figuran en el presupuesto.",
+            "Regresen al mismo hotel de Shanghái. Reúnanse para la cena final del equipo, con los discursos, reconocimientos o requisitos de salón privado organizados de antemano."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+            "alt": "Un pabellón, un estanque y galerías cubiertas en el Jardín del Administrador Humilde de Suzhou",
+            "caption": "La visita al jardín de Suzhou propuesta; el jardín concreto se confirma con su reserva."
+          }
+        },
+        {
+          "title": "Una última mañana y el siguiente destino",
+          "place": "Centro de Shanghái → aeropuerto o estación de tren indicados",
+          "summary": "Desayunen y salgan hacia su próximo destino. Los traslados siguen la lista definitiva de salidas, con tiempo libre solo cuando lo permite el horario.",
+          "details": [
+            "Coordinen la salida del hotel y el equipaje según las distintas tandas de salida del grupo. Los traslados adicionales se desglosan cuando los compañeros salen de aeropuertos distintos o a diferentes horas.",
+            "El plan de salida identifica el aeropuerto o estación de cada grupo y ajusta los horarios de traslado a sus viajes reservados.",
+            "Si algunos compañeros prolongan su estancia por negocios u ocio, podemos presupuestar noches y traslados adicionales por separado. Estas extensiones se acuerdan independientemente del programa de empresa."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/departure-shanghai-1600.webp",
+            "alt": "Una plataforma junto al río frente al perfil urbano de Shanghái",
+            "caption": "Una escena tranquila de Shanghái; el programa del día de salida sigue sus reservas de transporte."
+          }
+        }
+      ],
+      "stay": {
+        "title": "Una base en Shanghái elegida para todo el programa",
+        "body": "Empezamos la búsqueda de hotel en el centro de Shanghái, valorando zonas como la Plaza del Pueblo o Jing’an según los puntos de llegada, los planes de comidas y las necesidades de reuniones. La opción más útil es un hotel que funcione para todo el programa del grupo, no simplemente el más cercano a una vista famosa.",
+        "details": [
+          "Tres noches en un solo hotel; Suzhou es una excursión de ida y vuelta en el día. El programa de ejemplo no prevé cambios de hotel.",
+          "Comparen ocupación individual y habitaciones compartidas con dos camas antes de aprobar el presupuesto. La propuesta incluye las categorías de habitación, los tipos de cama, el desayuno y el bloque real de habitaciones.",
+          "Si se requiere una reunión, comprueben la capacidad, la distribución de asientos, la privacidad, el equipo y los refrigerios como parte de la selección del espacio."
+        ]
+      },
+      "scope": [
+        "Tres noches en un hotel de Shanghái, con desayuno y la distribución elegida de habitaciones individuales o dobles con dos camas.",
+        "Traslados de llegada y salida en los aeropuertos o estaciones indicados y para el número acordado de tandas de recogida.",
+        "Transporte privado para el grupo durante las visitas previstas, incluida la excursión de ida y vuelta a Suzhou.",
+        "Servicio de guía en inglés para las visitas turísticas.",
+        "Entrada al jardín de Suzhou indicado y otras entradas expresamente incluidas en la propuesta.",
+        "Un plan de comidas acordado que cubre la cena de bienvenida cuando lo permite el horario, los almuerzos de los días de visitas y la cena final del equipo.",
+        "Una persona de contacto local, con la coordinación en destino detallada en la propuesta."
+      ],
+      "options": [
+        "Una reunión de medio día dirigida por la empresa el día 2, con espacio, equipo y refrigerios presupuestados por separado.",
+        "Un comedor privado, micrófono, montaje para premios u otra mejora acordada de la cena.",
+        "Un crucero fluvial, un mirador, fotografía u otra experiencia elegida para el grupo.",
+        "Tandas de recogida adicionales, noches extra de hotel, salidas por separado o extensiones de ocio posteriores al evento."
+      ],
+      "notIncluded": [
+        "Vuelos o trenes de ida y vuelta a Shanghái, salvo que se añadan expresamente al presupuesto escrito.",
+        "Instalaciones para reuniones, producción técnica, facilitación e interpretación, salvo acuerdo aparte.",
+        "Comidas, bebidas, actividades opcionales, extras de habitación y gastos personales no indicados.",
+        "Seguro de viaje, trámites de visado, visitas a fábricas o empresas y servicios fuera del programa acordado."
+      ],
+      "planningNotes": [
+        {
+          "title": "Un esquema de cuatro días, no cuatro días completos de visitas",
+          "body": "El primer y el último día se ajustan a sus desplazamientos. Con tres noches y dos días principales de programa, este ejemplo se limita a Shanghái y Suzhou; añadir otra ciudad exigiría un itinerario más largo o modificado."
+        },
+        {
+          "title": "Una reunión útil",
+          "body": "Indique el objetivo, el número de asistentes, la distribución, las necesidades de privacidad y el equipo. Su empresa aporta el contenido y dirige la sesión; la facilitación especializada o la producción de eventos requieren una petición aparte y un proveedor confirmado."
+        },
+        {
+          "title": "Un día realista en Suzhou",
+          "body": "El ejemplo utiliza un traslado privado por carretera, un jardín y un paseo seleccionado junto al canal. Revisamos la fecha, el tráfico, la disponibilidad de entradas y las necesidades de movilidad antes de fijar el horario."
+        },
+        {
+          "title": "Aprobar juntos los detalles prácticos",
+          "body": "La propuesta final identifica el hotel, la distribución de habitaciones, el plan de comidas, los traslados, el servicio de guía y los costes de reuniones. La disponibilidad de proveedores, las fechas de pago y las condiciones de cancelación se confirman antes de que se comprometan."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Para quién es este retiro de empresa en Shanghái y Suzhou?",
+          "answer": "Este ejemplo de cuatro días está diseñado para unos 10–24 compañeros que quieren compartir experiencias urbanas, una excursión de un día a Suzhou y tiempo juntos. Puede funcionar como viaje de empresa o pequeño retiro con una reunión interna de medio día. Otros tamaños de grupo exigen revisar de nuevo transporte, habitaciones y personal."
+        },
+        {
+          "question": "¿Pasamos la noche en Suzhou?",
+          "answer": "No. El ejemplo mantiene las tres noches en un hotel de Shanghái y visita Suzhou en vehículo privado el día 3. El programa de Suzhou se centra en un jardín clásico y un tramo seleccionado de la calle Pingjiang antes de volver a Shanghái."
+        },
+        {
+          "question": "¿La reunión está incluida en el precio del itinerario?",
+          "answer": "Este ejemplo no tiene un precio público fijo. Una reunión de medio día es una opción para la mañana del día 2, en sustitución del programa de ocio de ese horario. El alquiler del espacio, el equipo, las pausas de té y cualquier asistencia especializada se comprueban por separado y figuran en el presupuesto. Su empresa aporta el orden del día y dirige la sesión."
+        },
+        {
+          "question": "¿Pueden presupuestar habitaciones individuales y compartidas con dos camas?",
+          "answer": "Sí. Podemos comparar ocupación individual y habitaciones compartidas con dos camas, o trabajar con una distribución mixta. El precio depende del número y la categoría reales de las habitaciones, las fechas y la disponibilidad del hotel. El hotel final y el bloque de habitaciones se confirman por escrito; no se da por hecha una planta completa ni el uso exclusivo del hotel."
+        },
+        {
+          "question": "¿Pueden los compañeros llegar por separado a Pudong y Hongqiao?",
+          "answer": "Sí, se pueden planificar traslados separados. Envíe el aeropuerto o estación de llegada y salida, el número de vuelo o tren y los horarios de cada persona. Las tandas adicionales de recogida o los distintos puntos de llegada pueden cambiar el plan de vehículos y el coste total."
+        },
+        {
+          "question": "¿Qué ocurre si no hay entradas para el jardín o llueve?",
+          "answer": "Comprobamos las entradas antes de confirmar el programa de Suzhou y acordamos una alternativa adecuada si hace falta. El tiempo puede cambiar las caminatas al aire libre. La propuesta debe identificar la alternativa, los cambios de transporte y cómo se tratará una diferencia de precio, sin suponer que todas las opciones cuestan lo mismo."
+        },
+        {
+          "question": "¿Pueden atender necesidades alimentarias y organizar una cena de premios?",
+          "answer": "Podemos comprobar restaurantes, menús y un salón adecuado para la cena del grupo. Indique los requisitos vegetarianos o halal, las alergias, las preferencias sobre alcohol y los discursos o premios previstos. La idoneidad del proveedor, las condiciones del salón privado y el equipo se verifican y presupuestan antes de confirmar."
+        },
+        {
+          "question": "¿Qué información necesitan para una propuesta formal?",
+          "answer": "Envíe el nombre de su empresa, las fechas preferidas, el número aproximado de personas, las preferencias de habitaciones individuales o con dos camas, el presupuesto total y el objetivo del viaje. Añada las necesidades de reuniones y los planes de llegada conocidos. Con esa información comprobamos proveedores y preparamos una propuesta con el total, los servicios detallados, el calendario de pagos y las condiciones de cancelación."
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "label": "Elegir una zona práctica para alojarse en Shanghái"
+        },
+        {
+          "href": "/guides/shanghai-to-suzhou-day-trip/",
+          "label": "Planificar una excursión de un día de Shanghái a Suzhou"
+        },
+        {
+          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "label": "Cómo observar un jardín clásico de Suzhou"
+        },
+        {
+          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "label": "Pudong o Hongqiao: elegir el aeropuerto de llegada adecuado"
+        }
+      ]
+    }
+  ]
+}

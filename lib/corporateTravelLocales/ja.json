@@ -1,0 +1,601 @@
+{
+  "ui": {
+    "Skip to content": "本文へスキップ",
+    "Breadcrumb": "パンくずリスト",
+    "Home": "ホーム",
+    "For companies": "法人のお客様へ",
+    "A few practical questions": "事前に知っておきたいこと",
+    "Photo credits": "写真クレジット",
+    "Destination photographs illustrate the places in the programme. Images have been resized and may be cropped for the layout.": "旅行先の写真は、プログラムで訪れる場所を紹介するものです。画像はサイズを調整しており、レイアウトに合わせて一部をトリミングしている場合があります。",
+    "China, together": "ともに、中国へ",
+    "Company Trips & Team Retreats in China": "中国の社員旅行・チーム合宿",
+    "Bring your team together.": "チームが集まる時間を。",
+    "We’ll take care of the journey.": "旅の手配は私たちに。",
+    "Company trips, incentive travel and small meetings, planned around your people, purpose and budget.": "参加者、目的、ご予算に合わせて計画する社員旅行、報奨旅行、少人数の会議。",
+    "Tell us about your team": "チームについてお聞かせください",
+    "Private programmes in China": "中国での専用プログラム",
+    "For companies worldwide": "世界各国の企業に対応",
+    "Proposed for your dates and budget": "日程とご予算に合わせてご提案",
+    "Three reasons to travel": "旅に出る、三つの目的",
+    "Begin with the reason.": "まずは、旅の目的から。",
+    "We’ll shape the journey.": "それに合う旅をつくります。",
+    "A good company trip has a clear purpose, and enough breathing room for people to enjoy being there. These are three ways we can help.": "良い社員旅行には、明確な目的と、その場を楽しむ余裕があります。次の三つの形でお手伝いします。",
+    "Two places to start": "出発点となる二つのプラン",
+    "A change of scene.": "いつもと違う景色。",
+    "A shared experience.": "一緒に過ごす体験。",
+    "Two four-day sample programmes, each with a different rhythm. Use them to start a conversation; we’ll adapt the details to your team.": "異なるペースで組んだ、二つの4日間モデルプランです。ご相談の出発点として、詳細はチームに合わせて調整します。",
+    "Explore the sample programme": "モデルプランを見る",
+    "For the person organising it all": "旅全体を準備するご担当者へ",
+    "One programme.": "一つのプログラムに。",
+    "The details connected.": "細かな手配も、つながるように。",
+    "We bring the arrangements on the ground into a coherent plan, with responsibilities agreed before the trip.": "現地での各種手配を一貫した計画にまとめ、出発前にそれぞれの役割を確認します。",
+    "A sensible route and pace": "無理のないルートとペース",
+    "Balance travel time, shared activities, working sessions and time to yourselves. Include a practical alternative when weather affects the plan.": "移動時間、共同の活動、仕事の打ち合わせ、自由時間のバランスを取ります。天候で予定が変わる場合に備え、実行可能な代案も用意します。",
+    "Stays, transfers and meals": "宿泊、送迎、食事",
+    "Work through rooming preferences, separate arrivals, luggage and dietary requirements, then check the appropriate options for your dates.": "部屋割りのご希望、別々の到着、荷物、食事の要望を確認し、ご希望の日程に合う選択肢を調べます。",
+    "Space for your own programme": "自社プログラムのための時間と場所",
+    "Coordinate a meeting room, group dinner or recognition evening where requested. Venue, equipment and catering requirements are quoted specifically.": "ご希望に応じて会議室、団体夕食、表彰の夕べを調整します。会場、設備、飲食の要件は個別にお見積もりします。",
+    "Clear coordination on the ground": "明確な現地連絡体制",
+    "Set out the guide, transport and local support arrangements, together with who your organiser should contact during the programme.": "ガイド、交通、現地サポートの内容と、プログラム中にご担当者が連絡する窓口を明確にします。",
+    "A proposal you can share internally": "社内で共有できる提案書",
+    "Your people.": "参加する皆様。",
+    "Your dates.": "ご希望の日程。",
+    "A clear quote.": "明確なお見積もり。",
+    "Single rooms or shared rooms? A quiet team dinner or an awards evening? The details make a difference to both the experience and the budget.": "1名1室か、ツインの相部屋か。落ち着いたチームの夕食か、表彰の夕べか。こうした詳細が、体験と予算の両方に影響します。",
+    "We quote for the actual programme: headcount, rooming, hotel standard, transport, meals, activities and any meeting needs. Before booking, you receive the scope, total price, separate options and payment and cancellation conditions in writing.": "人数、部屋割り、ホテルの水準、交通、食事、活動、会議の要件など、実際のプログラムに基づいてお見積もりします。予約前に、サービス範囲、総額、別途選択できる項目、支払い・キャンセル条件を書面でお渡しします。",
+    "The sample programmes are not fixed-price packages. Availability is checked for your dates; a proposal does not hold rooms or venues.": "モデルプランは定額パッケージではありません。ご希望の日程で空きを確認します。提案書の作成だけでは客室や会場は確保されません。",
+    "Share your brief": "ご要望をお知らせください",
+    "From a brief to a journey": "ご相談から出発まで",
+    "A few clear steps.": "いくつかの明確なステップで。",
+    "Enough structure for the organiser. Enough flexibility to make the trip your own.": "担当者が準備しやすい仕組みと、チームらしい旅にするための柔軟さを大切にします。",
+    "Tell us the purpose": "目的を伝える",
+    "Share your people, dates, budget and what you want the trip to achieve.": "参加者、日程、予算、今回の旅で実現したいことをお聞かせください。",
+    "Shape the programme": "プログラムを整える",
+    "Review a route, the proposed arrangements and the options that matter to you.": "ルート、ご提案する手配内容、重視する選択肢をご確認いただきます。",
+    "Confirm the details": "詳細を確定する",
+    "Agree availability, the written quote and booking conditions before payment.": "お支払い前に、空き状況、書面の見積もり、予約条件について合意します。",
+    "Bring the team": "チームで出発する",
+    "Finalise rooming, arrival details and the practical information for everyone travelling.": "部屋割り、到着情報、参加者全員に必要な実用情報を確定します。",
+    "About Homeground": "Homegroundについて",
+    "Get to know the people and business behind your programme.": "プログラムを準備するスタッフと会社をご紹介します。",
+    "How we plan": "私たちの計画の進め方",
+    "Business information & licences": "会社情報・許認可",
+    "Plan this for your team": "チーム向けにこの旅を計画する",
+    "Duration": "期間",
+    "Suggested group": "推奨人数",
+    "Base": "滞在拠点",
+    "Programme": "プログラム",
+    "The idea behind the journey": "この旅に込めた考え",
+    "The sample programme": "モデルプラン",
+    "Four days, thoughtfully paced.": "ペースを大切にした4日間。",
+    "A framework for your own trip. Dates, arrival times, weather and your team’s preferences will shape the final programme.": "チームの旅をつくるための基本案です。日程、到着時刻、天候、皆様のご希望に合わせて最終プログラムを決めます。",
+    "Jump to a day": "日別の予定へ移動",
+    "Day": "日目",
+    "Where everyone settles in": "皆様が落ち着いて過ごす宿",
+    "Make the scope clear": "サービス範囲を明確に",
+    "Know what you are planning.": "何を計画しているのか、わかりやすく。",
+    "The following is the proposed scope to discuss. Your final written quote confirms exactly what is included, the agreed options and booking conditions.": "以下はご相談のための提案範囲です。最終的な書面見積もりで、含まれるサービス、合意した選択項目、予約条件を正確に確認します。",
+    "Proposed arrangements": "ご提案する手配",
+    "Options to discuss": "ご相談できる追加項目",
+    "Outside the sample scope": "モデルプランの範囲外",
+    "A few things to work through": "事前に相談しておきたいこと",
+    "Designed around the people coming.": "参加される方々に合わせて。",
+    "Useful reading": "関連ガイド",
+    "A little more local context": "現地をもう少し知るために",
+    "← Explore company trips in China": "← 中国の企業向け旅行を見る",
+    "Start with your team": "チームのことから始めましょう",
+    "What would you like this trip to bring together?": "この旅で、チームは何を分かち合いたいですか？",
+    "A few details give us a useful starting point. Dates can still be open; an estimated group size is enough.": "いくつかの情報があれば、相談を始められます。日程は未定でも、人数は概算でも構いません。",
+    "Already have a brief? Email": "すでにご要望をまとめている場合は、メールで：",
+    "Company name": "会社名",
+    "Your name": "お名前",
+    "(optional)": "（任意）",
+    "Reply email": "返信先メールアドレス",
+    "Estimated group size": "予定人数",
+    "e.g. 18": "例：18",
+    "When, and for how long?": "いつ、何日間のご予定ですか？",
+    "e.g. May 2027, 4 days — or dates still open": "例：2027年5月、4日間、または日程未定",
+    "Purpose of your trip": "旅行の目的",
+    "A starting idea": "最初に考えているプラン",
+    "Help us choose": "提案を希望",
+    "Budget & currency": "予算・通貨",
+    "e.g. USD 15,000 total, excluding international flights": "例：総額 USD 15,000、国際線航空券を除く",
+    "Anything we should plan around?": "計画時に考慮すべきことはありますか？",
+    "Single or shared rooms, meeting time, food preferences, different arrival flights…": "1名1室・相部屋、会議の時間、食事の希望、別々の到着便など",
+    "Prepare my enquiry": "問い合わせ内容を準備",
+    "Review your message, then choose email or WhatsApp to send it. Preparing a brief does not make a booking.": "メッセージを確認し、メールまたはWhatsAppで送信してください。要望書を作成するだけでは予約にはなりません。",
+    "Privacy notice": "プライバシーに関するお知らせ",
+    "Your enquiry is ready to review": "問い合わせ内容をご確認ください",
+    "It has not been sent. Open your preferred app and send it when you are ready.": "まだ送信されていません。ご希望のアプリを開き、準備ができたらご自身で送信してください。",
+    "Open email draft": "メールの下書きを開く",
+    "Open WhatsApp draft": "WhatsAppの下書きを開く",
+    "Before you bring the team.": "チームで出発する前に。",
+    "Questions about this programme.": "このプログラムについての質問。",
+    "Explore {title}": "{title}を見る",
+    "Day {day}": "{day}日目",
+    "Wulingyuan sandstone pillars": "武陵源の砂岩の峰々",
+    "Tianzi Mountain panorama": "天子山の全景",
+    "Golden Whip Stream": "金鞭渓",
+    "Zhangjiajie Hehua Airport": "張家界荷花空港",
+    "Humble Administrator’s Garden": "拙政園",
+    "Please enter your company name.": "会社名を入力してください。",
+    "Please enter an estimated group size between 1 and 9,999.": "予定人数を1～9,999名の間で入力してください。",
+    "Please share a month or say that your dates are still open.": "希望する月を入力するか、日程未定とご記入ください。",
+    "Please choose the purpose of your trip.": "旅行の目的を選択してください。",
+    "Please choose a sample itinerary or ask us to suggest one.": "モデルプランを選ぶか、「提案を希望」をお選びください。",
+    "Please check your details.": "入力内容をご確認ください。",
+    "Copy is unavailable here. You can select the message below, or open it in your email app.": "ここではコピーできません。下のメッセージを選択するか、メールアプリで開いてください。",
+    "Copied": "コピーしました",
+    "Copy enquiry": "問い合わせ内容をコピー",
+    "Your enquiry has been copied. It has not been sent.": "問い合わせ内容をコピーしました。まだ送信されていません。",
+    "Your email or WhatsApp message is the enquiry we receive.": "メールまたはWhatsAppで送信されたメッセージが、当社に届くお問い合わせとなります。",
+    "Company trip & team building": "社員旅行・チームビルディング",
+    "Incentive travel": "報奨旅行",
+    "Small meeting & team retreat": "少人数の会議・チーム合宿",
+    "Help us choose the right format": "適した形式の提案を希望",
+    "Zhangjiajie · 4 days / 3 nights": "張家界 · 3泊4日",
+    "Shanghai & Suzhou · 4 days / 3 nights": "上海・蘇州 · 3泊4日",
+    "Company travel planning and ground arrangements in China": "中国の企業向け旅行計画と現地手配",
+    "Sample programme, tailored quotation required.": "モデルプランです。ご要望に応じた見積もりが必要です。",
+    "Company teams": "企業チーム",
+    "Incentive travel groups": "報奨旅行のグループ",
+    "Sample company trip programmes": "企業向け旅行のモデルプラン",
+    "Hi Homeground, we’d like to discuss a company trip to China.": "Homeground様、中国への社員旅行について相談したいと考えています。",
+    "Company": "会社",
+    "Contact": "担当者",
+    "Purpose": "目的",
+    "Estimated group": "予定人数",
+    "people": "名",
+    "Dates / duration": "日程・期間",
+    "Starting idea": "最初に考えているプラン",
+    "Other arrangements": "その他の手配",
+    "Open to suggestions": "提案を希望します",
+    "Please help us shape the programme and confirm the arrangements, availability and written quotation before we book.": "プログラムの具体化をお手伝いいただき、予約前に手配内容、空き状況、書面の見積もりをご確認ください。",
+    "Reference": "参考プラン",
+    "Company trip enquiry — {company}": "企業向け旅行のお問い合わせ — {company}"
+  },
+  "hub": {
+    "title": "中国の社員旅行・チーム合宿",
+    "description": "中国での社員旅行、報奨旅行、小規模なチーム合宿。張家界と上海・蘇州の4日間モデルプランを参考に、チームに合わせた現地手配をご相談いただけます。",
+    "faqs": [
+      {
+        "question": "複数の国から集まるチームにも対応できますか？",
+        "answer": "はい。各グループの出発都市と到着予定時刻をお知らせください。個別の空港送迎と、無理のない共通の集合地点を検討します。世界各国の企業が対象です。書面の見積もりに別段の記載がない限り、国際線航空券は別途手配となります。"
+      },
+      {
+        "question": "モデルプランは何名を想定していますか？",
+        "answer": "張家界は約10–30名、上海・蘇州は約10–24名を計画の目安としています。定期出発のツアーや最低予約人数の条件ではありません。予定人数をお知らせいただければ、適した車両、客室、活動の手配を確認します。"
+      },
+      {
+        "question": "会議や、進行役のいるチームビルディングのゲームは必須ですか？",
+        "answer": "いいえ。同僚同士で旅をし、体験を楽しむ時間だけでも構いません。社内会議をご希望の場合は、会場、設備、飲み物・軽食の手配を検討できます。議論は貴社で進めていただきます。専門的なファシリテーションや研修には別途合意が必要です。"
+      },
+      {
+        "question": "料金は何で決まりますか？",
+        "answer": "日程、最終人数、ホテルの水準、1名1室か相部屋か、交通、ガイドの言語、食事、会議や特別な催しの手配が見積もりに影響します。モデルプランに固定の公示価格はありません。まずご要望を確認し、手配案と総額を書面でご提示します。"
+      },
+      {
+        "question": "ハラール食、菜食、歩行ペースの違いにも配慮できますか？",
+        "answer": "最初に具体的な要件をお伝えください。飲食店の選択肢と必要な食事条件の保証水準を確認し、可能な範囲で徒歩行程を調整します。特定の認証、食材、アクセス条件、代替活動は確定前に確認する必要があります。"
+      },
+      {
+        "question": "要望書を送った後はどう進みますか？",
+        "answer": "目的、日程、人数、部屋割り、予算を確認し、実行可能なプログラムをご提案します。予約前に、サービス範囲、手配先の空き状況、最終見積もり、支払い・変更条件を書面で確認します。取引先登録や特定の支払書類が必要な場合は、お早めにお知らせください。"
+      }
+    ],
+    "purposes": [
+      {
+        "id": "company-trips",
+        "number": "01",
+        "title": "社員旅行・チームビルディング",
+        "body": "いつもの日常から少し離れて。食事や現地での発見を共有し、会話の余裕を残したペースで、同僚が集まる時間をつくります。",
+        "note": "年次の社員旅行、チームの集まり、従業員の心身の健康を目的とした旅行に。"
+      },
+      {
+        "id": "incentive-travel",
+        "number": "02",
+        "title": "報奨旅行",
+        "body": "記憶に残る場所で、チームの成果を祝いましょう。感謝を伝えたい方々を中心に、宿泊と体験を丁寧に組み立てます。",
+        "note": "従業員表彰、営業インセンティブ、販売代理店への報奨に。"
+      },
+      {
+        "id": "meetings-retreats",
+        "number": "03",
+        "title": "少人数の会議・チーム合宿",
+        "body": "有意義な対話の場をつくり、その後は一緒に外へ。自社の仕事の打ち合わせと、数日間の中国旅行を組み合わせます。",
+        "note": "経営陣の集まり、部門の計画会議、企業のチーム合宿に。"
+      }
+    ]
+  },
+  "trips": [
+    {
+      "slug": "zhangjiajie-4-day-team-trip",
+      "title": "張家界：峰々の間で過ごす、チームの時間",
+      "seoTitle": "張家界の社員旅行 | 3泊4日 | Homeground China",
+      "description": "10–30名向けの張家界4日間社員旅行モデルプラン。武陵源3泊、森林公園の景観、穏やかな渓谷散策、チームの夕食を組み合わせます。料金はお問い合わせください。",
+      "eyebrow": "社員旅行 · 報奨旅行",
+      "lede": "チームに、いつもと違う数日間を。張家界の砂岩の峰々の下を歩き、一日の終わりに食卓を囲み、職場ではなかなかできない会話のための余裕を残します。",
+      "duration": "3泊4日",
+      "groupSize": "推奨：10–30名",
+      "base": "武陵源 · 同じホテルで3泊",
+      "format": "企業専用の旅行 · モデルプラン",
+      "hero": {
+        "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+        "alt": "張家界・武陵源の砂岩の柱と緑豊かな森林",
+        "caption": "湖南省・武陵源の風景の中、違う環境で一緒に過ごす時間。"
+      },
+      "storyTitle": "体験を共有し、余白も大切に",
+      "story": "社員旅行の良い瞬間は、予定外に生まれることもあります。森の小道での会話、皆で写りたくなる一枚、成果を称えたい同僚への乾杯。この4日間のモデルプランは、そうした瞬間を大切にします。武陵源の一つのホテルを拠点に、主な山の観光を一日、峰々の下でゆったり過ごす一日を設け、明確なリズムをつくります。歩く距離、食事、一緒に過ごす時間は参加者に合わせて調整します。",
+      "highlights": [
+        {
+          "title": "3泊、一つの拠点",
+          "text": "武陵源で一緒に宿泊します。部屋割り、バスの進入条件、予算をもとにホテルを選び、何度も荷物をまとめずに落ち着いて過ごせるようにします。"
+        },
+        {
+          "title": "一緒に楽しめる景色",
+          "text": "ガイドと巡る天子山・袁家界の一日は、主要な展望地と適切な休憩を組み合わせます。公園内の交通と歩行の条件は提案書に記載します。"
+        },
+        {
+          "title": "感謝を伝える夜",
+          "text": "最後のチーム夕食は、良い仕事を称える場にもできます。ご計画を伺ったうえで、個室、スピーチ、表彰、技術機材を検討します。"
+        }
+      ],
+      "days": [
+        {
+          "title": "到着し、落ち着いて、旅のペースへ",
+          "place": "張家界の到着地点 → 武陵源",
+          "summary": "現地チームと合流し、武陵源のホテルへ向かいます。初日は到着予定に合わせて組み、ホテル到着が間に合えば歓迎の夕食を設けます。",
+          "details": [
+            "送迎を計画する前に、全員の航空便または列車の情報をお知らせください。到着が分かれる場合、全員を待たせる代わりに追加送迎として別途見積もりできます。",
+            "同じホテルに3泊します。実際の空室状況に応じて、1名1室、ツイン2名1室、またはその組み合わせで部屋割りを準備します。",
+            "午後は休息のために空けておきます。時間が許せば短い歓迎案内と合意した団体夕食を行い、遅い到着は別途計画します。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+            "alt": "張家界・武陵源地区の森林に覆われた砂岩の柱",
+            "caption": "武陵源を宿泊拠点としてご提案します。ホテルはグループに合わせて選びます。"
+          }
+        },
+        {
+          "title": "森の峰々を巡る一日",
+          "place": "張家界国家森林公園 · 天子山・袁家界",
+          "summary": "主な観光日は、砂岩の柱がそびえる高所へ。計画したルートで天子山と袁家界を巡り、皆で景色を眺め、昼食と休憩、ゆっくり見渡す時間を取ります。",
+          "details": [
+            "朝食後、ガイドと公園へ向かいます。入園ゲート、園内シャトルの接続、ロープウェイまたはエレベーターの利用区間、入場料は予約前に合意します。",
+            "天子山と袁家界の展望地を訪れます。最終的な順序はチケットの手配、運行状況、チームの歩くペースに合わせます。時間を競うハイキングではありません。",
+            "階段、待ち時間、展望地間の歩行を考慮します。移動に関する要件を事前に相談し、主なルートへの参加が難しい方には適切な代案を計画します。",
+            "公園の後はホテルに戻ります。夜はゆったりと過ごし、夕食は担当者との合意に応じて食事計画に含めるか、自由食とします。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
+            "alt": "天子山の森林と砂岩の柱を見渡す広い景色",
+            "caption": "天子山の峰々。山の見通しは天候によって変わります。"
+          }
+        },
+        {
+          "title": "穏やかな道、皆で過ごす夜",
+          "place": "金鞭渓 → ホテル → チームの夕食",
+          "summary": "金鞭渓の一部区間を歩いて、ペースを変えます。戻ってゆったりした午後を過ごし、チームのための夕食に集まります。",
+          "details": [
+            "全員が全区間を歩く前提にはせず、適した渓谷の小道を選びます。距離、折り返し地点、休憩場所は、グループの要望と当日の状況に合わせて決めます。",
+            "昼食後はホテルで自由時間を取ります。希望があれば午後の一部を短い社内会議に使い、必要に応じて散策を短くします。",
+            "会議の議題と進行は貴社にご用意いただきます。当社は適した会議室を探し、座席配置、設備、飲み物・軽食を別途お見積もりできます。",
+            "最後のチーム夕食に集まります。メニュー、食事の要件、座席を事前に確定し、スピーチや表彰は会場と合意した範囲で計画できます。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp",
+            "alt": "張家界・金鞭渓沿いの緑豊かな林",
+            "caption": "金鞭渓では、峰々を下から眺める別の景色が楽しめます。"
+          }
+        },
+        {
+          "title": "朝食、別れ、次の旅へ",
+          "place": "武陵源 → 張家界の空港または鉄道駅",
+          "summary": "朝食で旅を締めくくり、予約済みの出発時刻に合わせて送迎します。荷物、チェックアウト、その先の移動に十分な余裕を取ります。",
+          "details": [
+            "朝食後にチェックアウトし、最終の航空便・列車リストに基づいて出発グループを組みます。",
+            "送迎先は提案書で合意します。張家界荷花空港、張家界西駅、または別の明記された発着地点です。",
+            "遅い出発なら自由時間を取れる場合がありますが、追加観光、レイトチェックアウト、追加車両、延泊は先に合意して料金を確認する必要があります。"
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+            "alt": "山々を背にした張家界荷花空港",
+            "caption": "出発送迎は、確定した空港または鉄道駅と時刻に合わせます。"
+          }
+        }
+      ],
+      "stay": {
+        "title": "武陵源で一緒に滞在",
+        "body": "武陵源地区の一つのホテルで3泊をご提案します。企業グループでは、写真だけでなく必要な客室をまとめて確保できるかが大切です。ベッドの組み合わせ、円滑な朝食、車両のアクセス、集まりやすい場所を確認します。",
+        "details": [
+          "1名1室とツイン2名1室を比較するか、混合の部屋割りでお見積もりします。1名利用かどうかで一人当たりの料金が変わります。",
+          "ホテル名、客室カテゴリー、ベッドタイプ、部屋数をご希望の日程で確認し、確定前に提案書へ記載します。",
+          "同じ階の客室、コネクティングルーム、専用の食事スペース、会議室は、別途リクエストと確認が必要です。"
+        ]
+      },
+      "scope": [
+        "武陵源の一つのホテルに朝食付きで3泊。選択した1名1室またはツイン2名1室の部屋割り。",
+        "到着・出発時の専用送迎、およびグループ向けに明記した車両利用予定と荷物の積載量。",
+        "観光プログラム中の英語ガイド。",
+        "張家界国家森林公園の入場券と、書面見積もりに具体的に記載した園内シャトル、エレベーター、ロープウェイの利用区間。",
+        "到着時刻が許す場合の歓迎夕食、観光日の昼食、最後のチーム夕食を含む、合意済みの食事計画。",
+        "現地の連絡窓口と、提案書に記載する現場調整。"
+      ],
+      "options": [
+        "3日目の短い自社主導の会議。会議室利用料、配置、設備、ティーブレイクは別途見積もり。",
+        "最後の夕食の個室、表彰の設営、マイク、または合意したその他の追加手配。",
+        "旅の一部でのカメラマン手配。利用権と納品内容は事前に合意。",
+        "追加の空港送迎、延泊、短い徒歩ルート、その他のモデルプラン変更。"
+      ],
+      "notIncluded": [
+        "見積もりに明示的に追加しない限り、張家界への往復航空便・列車。",
+        "個別に見積もられていない会議室、イベント設備、カメラマン、夕食の追加手配。",
+        "合意した食事・サービス計画を超える食事、飲み物、客室の追加料金、個人支出。",
+        "旅行保険、ビザ手配、書面見積もりに記載されていないサービス。"
+      ],
+      "planningNotes": [
+        {
+          "title": "暦上の4日間、主な活動日は2日",
+          "body": "1日目と4日目は到着・出発日です。このモデルは丸4日間の観光ではありません。便の時刻によっては延泊やルート変更が必要になります。"
+        },
+        {
+          "title": "参加者に合わせて組み立てる",
+          "body": "歩行の負担、段差のない移動の必要性、静かに過ごしたい方についてお知らせください。園内交通を利用しても、すべての階段、行列、屋外歩行をなくせるわけではありません。"
+        },
+        {
+          "title": "状況の変化に備える実用的な計画",
+          "body": "山の天候、見通し、公園の運営、混雑により訪問順序が変わることがあります。天候への代案と差額が生じた際の扱いは提案書で合意します。"
+        },
+        {
+          "title": "担当者が使いやすい提案書",
+          "body": "候補日程、人数、部屋割りの希望、予算をお知らせください。手配先を確認したうえで、内訳付きの提案書、支払い日程、キャンセル条件を承認用にご用意します。"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "この張家界の社員旅行はどのようなチーム向けですか？",
+          "answer": "同僚10–30名が一つの専用グループで旅行することを想定した4日間モデルです。年次の社員旅行や小規模チームの報奨旅行に適しています。別の人数も検討できますが、車両、スタッフ、ホテルの計画変更が必要な場合があります。"
+        },
+        {
+          "question": "4日間で何を予定していますか？",
+          "answer": "張家界への到着、武陵源3泊、天子山・袁家界を中心とした森林公園の主な観光日、短めの金鞭渓散策、最後のチーム夕食、出発送迎を提案します。1日目と4日目は移動日です。天門山とガラス橋はこのモデルに含まれません。"
+        },
+        {
+          "question": "会議や表彰の夕食を追加できますか？",
+          "answer": "はい。3日目の一部に利用する会議室を確認し、最後の夕食でのスピーチや表彰も検討できます。会議は貴社が主導します。会場利用料、設備、飲み物・軽食、イベント設営は別途確認・見積もりとなり、専門的なファシリテーションや研修はこのモデルに含まれません。"
+        },
+        {
+          "question": "張家界の社員旅行はいくらですか？",
+          "answer": "日程、人数、部屋割り表に合わせてお見積もりします。1名1室、ツイン相部屋、ガイド、景区内交通、食事、会議要件が総額に影響します。このモデルに固定の公示パッケージ価格はなく、書面提案書でグループのサービスと支払い条件を示します。"
+        },
+        {
+          "question": "全員が相部屋にする必要がありますか？",
+          "answer": "いいえ。1名利用、ツイン2名利用、またはその組み合わせで見積もりできます。必要な各客室タイプの数をお知らせください。確定前にホテルと実際に確保できる客室群を確認する必要があり、同じ階への配室を前提にはできません。"
+        },
+        {
+          "question": "体力に差がある同僚も参加できますか？",
+          "answer": "調整は可能ですが、主な公園観光日には屋外歩行、階段、待ち時間があり得ます。ルートをご提案する前に、移動に関する要件を把握する必要があります。全員に同じペースを求めるのではなく、短い渓谷散策や代替手配を検討し、料金を提示できます。"
+        },
+        {
+          "question": "菜食、ハラール、アレルギーに配慮した食事は手配できますか？",
+          "answer": "お問い合わせ時に、認証やアレルギーに関する要件も含めてお知らせください。食事計画の確定前に、適切な飲食店、メニュー、調理方法を手配先と確認します。"
+        },
+        {
+          "question": "航空券は含まれますか？公園は貸し切りですか？",
+          "answer": "書面で追加しない限り、張家界への航空便・列車は含まれません。車両と合意したガイドサービスは貴社専用ですが、国家森林公園、園内シャトル、展望地は一般公開されています。専用サービスは、公園の貸切利用や並ばずに入場できることを意味しません。"
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "label": "張家界市街地と武陵源の宿泊拠点を選ぶ"
+        },
+        {
+          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "label": "森林公園のチケット、入口、園内交通"
+        },
+        {
+          "href": "/guides/zhangjiajie-older-travellers/",
+          "label": "歩行、階段、ゆったり巡る張家界の旅程"
+        }
+      ]
+    },
+    {
+      "slug": "shanghai-suzhou-4-day-company-retreat",
+      "title": "上海・蘇州：チームのための時間",
+      "seoTitle": "上海・蘇州の企業向けチーム旅行 | 4日間 | Homeground China",
+      "description": "10–24名向けの上海・蘇州4日間チーム旅行モデルプラン。上海3泊、蘇州日帰り、希望に応じた半日会議。料金はお問い合わせください。",
+      "eyebrow": "社員旅行 · 少人数の会議・チーム合宿",
+      "lede": "皆で一つの都市に集まり、一緒に見て回る余裕を。上海での3泊、蘇州の庭園と運河で過ごす一日、チーム自身の対話の時間が、短い旅を充実させます。",
+      "duration": "3泊4日",
+      "groupSize": "推奨：10–24名",
+      "base": "上海中心部 · 同じホテルで3泊",
+      "format": "企業専用のチーム旅行 · モデルプラン",
+      "hero": {
+        "src": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+        "alt": "夕暮れの外灘の時計塔と上海の現代的なスカイライン",
+        "caption": "上海の一つの拠点から蘇州へ日帰りし、見学の間にも一緒に過ごす時間を取ります。"
+      },
+      "storyTitle": "都市の活気、庭園の穏やかな時間",
+      "story": "上海にはチームで語り合う話題が豊富です。川、変化するスカイライン、街の過去が今も見える通り。蘇州ではその尺度が変わります。入口が庭を切り取り、水と石が小さな世界をつくります。このモデルはホテルを移らずに二つの場所を結びます。必要なら自社の会議に半日を確保し、会社の目的と旅の楽しさの両方を大切にします。",
+      "highlights": [
+        {
+          "title": "一つのホテル、3泊",
+          "text": "上海中心部を拠点に、蘇州は日帰りで訪れます。一つのホテルに滞在することで、チェックイン、荷物、部屋割りを管理しやすくします。"
+        },
+        {
+          "title": "旅に合う会議",
+          "text": "2日目の一部を自社主導の会議に充てるか、同じ午前をゆったりした市内観光に使えます。どちらにするかは予約前に決めます。"
+        },
+        {
+          "title": "共通の体験と、それぞれの時間",
+          "text": "外灘の散策、蘇州の庭園一か所、チームの夕食が旅をつなぎます。予定を入れない時間には、同僚がそれぞれの方法で街を楽しめます。"
+        }
+      ],
+      "days": [
+        {
+          "title": "上海に到着し、食卓で顔合わせ",
+          "place": "上海の空港または鉄道駅 → 上海中心部",
+          "summary": "上海に集合し、3泊すべての拠点となるホテルに落ち着きます。到着時刻が許せば、くつろいだ歓迎夕食で始めます。",
+          "details": [
+            "実際の到着リストを使い、指定された上海の空港または鉄道駅からの送迎を計画します。必要に応じて浦東と虹橋の到着を別々に手配します。",
+            "チェックインして荷物をほどき、午後の残りは自由に過ごします。初日の観光は、到着予定に無理がない場合のみ追加します。",
+            "合意したレストランで歓迎夕食を取り、自己紹介と数日間の予定の簡単な確認を行います。遅い到着には別の食事手配が必要な場合があります。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+            "alt": "夕方の光に包まれた上海の川沿いのスカイライン",
+            "caption": "上海を到着都市とし、3泊すべての宿泊拠点として提案します。"
+          }
+        },
+        {
+          "title": "対話の時間、その後は街へ",
+          "place": "任意の社内会議 → 外灘・上海中心部",
+          "summary": "午前は半日の社内会議、または都市体験を選べます。午後は外灘で合流し、ガイドと周辺の通りを巡ります。",
+          "details": [
+            "会議を選ぶ場合、議題と進行は貴社にご用意いただきます。ホテル内または近隣の適した会議室を確認し、会場利用料、配置、設備、飲み物・軽食を別途お見積もりします。",
+            "観光中心をご希望なら、チームの関心に合うルートで午前中の上海をゆったり巡ります。",
+            "昼食後はガイドと外灘および選んだ中心部の通りを歩きます。立ち止まり、写真を撮り、川沿いの対照的な建築を知る時間を設けます。",
+            "自由時間または合意した夕食で締めくくります。ご希望なら、リバークルーズ、展望台、その他の有料の夜の活動を見積もりに追加できます。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/shanghai-skyline-1600.webp",
+            "alt": "上海のスカイラインにそびえる上海タワーと上海環球金融中心",
+            "caption": "上海のスカイラインを背景に過ごします。有料の高層ビル見学は任意です。"
+          }
+        },
+        {
+          "title": "庭園の尺度で出会う蘇州",
+          "place": "上海 → 蘇州の庭園・平江路 → 上海",
+          "summary": "蘇州で、ペースを丁寧に整えた一日を過ごします。古典庭園を一か所見学し、昼食をともにして平江路の一部を歩いた後、上海に戻って最後のチーム夕食を楽しみます。",
+          "details": [
+            "人数に合う専用車で移動します。提案書に交通手配を明記し、道路状況、休憩、上海への帰路を考慮します。",
+            "チケットの空き状況に応じて拙政園を訪れるか、事前に別の適した庭園に合意します。複数を詰め込まず、一つの庭園に集中します。",
+            "合意した昼食後、平江路の運河沿いの通りを一部散策します。集合場所と出発予定を明確にして自由時間を設けます。舟遊びなどの活動は、見積もりに記載されている場合のみ含まれます。",
+            "同じ上海のホテルへ戻ります。最後のチーム夕食に集まり、スピーチ、表彰、個室の要望があれば事前に手配します。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+            "alt": "蘇州・拙政園の東屋、池、屋根付きの回廊",
+            "caption": "提案する蘇州の庭園見学。具体的な庭園は予約時に確定します。"
+          }
+        },
+        {
+          "title": "最後の朝、次の目的地へ",
+          "place": "上海中心部 → 指定の空港または鉄道駅",
+          "summary": "朝食を取り、次の旅に向けて出発します。送迎は最終出発リストに合わせ、時間に余裕がある場合のみ自由時間を設けます。",
+          "details": [
+            "出発時間帯に合わせてチェックアウトと荷物を調整します。別の空港や時刻で出発する方がいる場合、追加送迎を項目別に記載します。",
+            "各グループの空港または駅を出発計画に明記し、予約済みの交通便に合わせて送迎時刻を組みます。",
+            "一部の方が仕事や休暇で滞在を延長する場合、追加宿泊と送迎を別途お見積もりできます。延長分は企業プログラムとは独立して合意します。"
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/departure-shanghai-1600.webp",
+            "alt": "上海のスカイラインを望む川沿いのデッキ",
+            "caption": "静かな上海の風景。出発日の予定は交通機関の予約に合わせます。"
+          }
+        }
+      ],
+      "stay": {
+        "title": "プログラム全体に合う上海の宿泊拠点",
+        "body": "上海中心部からホテルを探し、到着地点、食事計画、会議要件に合わせて人民広場や静安などを検討します。有名な景色に最も近いだけでなく、グループの全日程に役立つホテルを選ぶことが大切です。",
+        "details": [
+          "一つのホテルに3泊し、蘇州は日帰り往復です。モデルプラン中のホテル移動は予定していません。",
+          "予算承認前に、1名利用とツイン2名利用を比較します。客室カテゴリー、ベッドタイプ、朝食、実際に確保する客室群を提案書に記載します。",
+          "会議が必要な場合、会場選びの一環として収容人数、座席配置、プライバシー、設備、飲み物・軽食を確認します。"
+        ]
+      },
+      "scope": [
+        "上海の一つのホテルに朝食付きで3泊。選択した1名1室またはツイン2名1室の部屋割り。",
+        "指定空港・駅での到着と出発の送迎、および合意した回数のピックアップ。",
+        "蘇州日帰り往復を含む、予定した観光のグループ専用交通。",
+        "観光プログラム中の英語ガイド。",
+        "指定した蘇州の庭園入場券と、提案書に明記したその他のチケット。",
+        "時間が許す場合の歓迎夕食、観光日の昼食、最後のチーム夕食を含む、合意済みの食事計画。",
+        "現地の連絡窓口と、提案書に記載する現場調整。"
+      ],
+      "options": [
+        "2日目の自社主導の半日会議。会場、設備、飲み物・軽食は別途料金。",
+        "夕食の個室、マイク、表彰の設営、または合意したその他の追加手配。",
+        "グループ向けに選ぶリバークルーズ、展望台、撮影、その他の体験。",
+        "追加のピックアップ、延泊、別々の出発、イベント後の観光延長。"
+      ],
+      "notIncluded": [
+        "書面見積もりに具体的に追加しない限り、上海への往復航空便・列車。",
+        "別途合意していない会議設備、技術制作、ファシリテーション、通訳。",
+        "記載されていない食事、飲み物、任意の活動、客室の追加料金、個人支出。",
+        "旅行保険、ビザ手配、工場・ビジネス訪問、合意したプログラム外のサービス。"
+      ],
+      "planningNotes": [
+        {
+          "title": "4日間の基本案であり、丸4日間の観光ではありません",
+          "body": "初日と最終日は交通手配に合わせます。3泊と主なプログラム2日で構成するこのモデルは上海と蘇州に滞在します。他都市の追加には延長または旅程変更が必要です。"
+        },
+        {
+          "title": "会議を有意義にするために",
+          "body": "目的、参加人数、レイアウト、プライバシーの要件、設備をお知らせください。内容と進行は貴社が担当します。専門的なファシリテーションやイベント制作には、別途の要望書と手配先の確定が必要です。"
+        },
+        {
+          "title": "無理のない蘇州の一日",
+          "body": "モデルでは専用車で道路移動し、庭園一か所と選んだ運河沿いの道を巡ります。日程の確定前に、日付、交通、チケットの空き状況、移動の要件を確認します。"
+        },
+        {
+          "title": "実務の詳細を一緒に確認",
+          "body": "最終提案書にはホテル、部屋割りの基準、食事計画、送迎、ガイド、会議費用を明記します。ご契約の前に、手配先の空き状況、支払日、キャンセル条件を確認します。"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "この上海・蘇州のチーム旅行はどのような方に向いていますか？",
+          "answer": "都市体験、蘇州日帰り、一緒に過ごす時間を求める同僚10–24名向けの4日間モデルです。社員旅行として、または半日の社内会議を含む小規模チーム合宿として利用できます。人数が変わる場合は、交通、客室、スタッフを改めて検討する必要があります。"
+        },
+        {
+          "question": "蘇州にも泊まりますか？",
+          "answer": "いいえ。モデルでは上海の一つのホテルに3泊すべて滞在し、3日目に専用車で蘇州へ行きます。蘇州では古典庭園一か所と平江路の選んだ区間を中心に巡り、その後上海へ戻ります。"
+        },
+        {
+          "question": "行程の料金に会議は含まれますか？",
+          "answer": "このモデルに固定の公示価格はありません。半日会議は2日目午前の選択肢で、その時間帯の観光・余暇プログラムに代わります。会場利用料、設備、ティーブレイク、専門サポートは別途確認し、見積もりに記載します。議題と進行は貴社でご用意いただきます。"
+        },
+        {
+          "question": "1名1室とツイン相部屋の両方を見積もれますか？",
+          "answer": "はい。1名利用とツイン2名利用の比較、または混合の部屋割りに対応できます。料金は実際の客室数とカテゴリー、日程、ホテルの空き状況によります。最終ホテルと客室群は書面で確定し、フロア全体やホテルの貸切利用を前提とはしません。"
+        },
+        {
+          "question": "浦東と虹橋に別々に到着しても大丈夫ですか？",
+          "answer": "はい。別々の送迎を計画できます。一人ずつの到着・出発空港または駅、便名・列車番号、時刻をお送りください。ピックアップ回数の追加や到着地点の違いで、車両予定と総費用が変わる場合があります。"
+        },
+        {
+          "question": "庭園のチケットが取れない場合や雨の場合は？",
+          "answer": "蘇州プログラムを確定する前にチケットを確認し、必要なら適切な代案に合意します。天候で屋外の徒歩計画が変わることもあります。すべての代案が同額と考えるのではなく、提案書に代案、交通の変更、差額の扱いを明記します。"
+        },
+        {
+          "question": "食事の要望や表彰の夕食に対応できますか？",
+          "answer": "グループに合うレストラン、メニュー、夕食会場を確認できます。菜食やハラールの要件、アレルギー、酒類の希望、スピーチや表彰についてお知らせください。手配先の適合性、個室の条件、設備を確定前に確認し、料金を提示します。"
+        },
+        {
+          "question": "正式な提案にはどのような情報が必要ですか？",
+          "answer": "会社名、希望日程、概算人数、1名1室またはツインの希望、全体予算、旅行目的をお送りください。会議要件と判明している到着予定も加えてください。その内容で手配先を確認し、総額、サービス一覧、支払い日程、キャンセル条件を含む提案書を作成します。"
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "label": "使いやすい上海のホテルエリアを選ぶ"
+        },
+        {
+          "href": "/guides/shanghai-to-suzhou-day-trip/",
+          "label": "上海から蘇州への日帰り旅行を計画する"
+        },
+        {
+          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "label": "蘇州の古典庭園の見方"
+        },
+        {
+          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "label": "浦東か虹橋か：到着空港の選び方"
+        }
+      ]
+    }
+  ]
+}

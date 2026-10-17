@@ -32,6 +32,15 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-18 (corporate travel editions): regenerated the existing Chinese and
+Korean subsets from the same three verified upstream hashes listed below.
+Added Chinese 彰/颁 and Korean 푼. Existing cmap entries and horizontal metrics
+are preserved, including 铅 and 웡 through the staged copy change. Japanese-only
+corporate copy uses the existing Japanese system-font stack, so its source JSON
+is excluded from the Chinese font corpus under the same rule as other
+Japanese-only modules. The Chinese slice plan and preload strategy stay unchanged; generated asset
+names and references are refreshed by the existing slicing tool.
+
 2026-10-10 (combined live guides and PR #320): rebuilt the Chinese serif
 subset and existing slice plan from the verified Noto Serif SC source below.
 The combined corpus covers 2,888 required Han characters; comparison against

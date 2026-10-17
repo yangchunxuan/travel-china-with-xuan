@@ -1,0 +1,601 @@
+{
+  "ui": {
+    "Skip to content": "본문으로 건너뛰기",
+    "Breadcrumb": "현재 위치",
+    "Home": "홈",
+    "For companies": "기업 여행",
+    "A few practical questions": "미리 알아둘 실용적인 질문",
+    "Photo credits": "사진 출처",
+    "Destination photographs illustrate the places in the programme. Images have been resized and may be cropped for the layout.": "여행지 사진은 일정에 포함된 장소를 보여줍니다. 사진은 크기가 조정되었으며 화면 구성에 따라 일부가 잘릴 수 있습니다.",
+    "China, together": "함께 만나는 중국",
+    "Company Trips & Team Retreats in China": "중국 기업 여행 및 팀 워크숍 여행",
+    "Bring your team together.": "팀이 함께하는 시간.",
+    "We’ll take care of the journey.": "여정은 저희가 준비합니다.",
+    "Company trips, incentive travel and small meetings, planned around your people, purpose and budget.": "참가자, 목적, 예산에 맞춰 계획하는 회사 여행, 포상 여행, 소규모 회의.",
+    "Tell us about your team": "팀에 대해 알려 주세요",
+    "Private programmes in China": "중국 내 단독 일정",
+    "For companies worldwide": "전 세계 기업을 위한 여행",
+    "Proposed for your dates and budget": "날짜와 예산에 맞춘 제안",
+    "Three reasons to travel": "여행을 떠나는 세 가지 이유",
+    "Begin with the reason.": "목적부터 들려주세요.",
+    "We’ll shape the journey.": "그에 맞는 여정을 만듭니다.",
+    "A good company trip has a clear purpose, and enough breathing room for people to enjoy being there. These are three ways we can help.": "좋은 회사 여행에는 분명한 목적과 함께, 그곳에서의 시간을 즐길 여유가 있습니다. 다음 세 가지 방향으로 도와드립니다.",
+    "Two places to start": "출발점이 될 두 가지 일정",
+    "A change of scene.": "일상과 다른 풍경.",
+    "A shared experience.": "함께 나누는 경험.",
+    "Two four-day sample programmes, each with a different rhythm. Use them to start a conversation; we’ll adapt the details to your team.": "서로 다른 리듬의 4일 예시 일정 두 가지입니다. 이를 바탕으로 이야기하며 세부 내용은 팀에 맞게 조정합니다.",
+    "Explore the sample programme": "예시 일정 살펴보기",
+    "For the person organising it all": "여행 전체를 준비하는 담당자를 위해",
+    "One programme.": "하나의 일정.",
+    "The details connected.": "서로 이어지는 세부 준비.",
+    "We bring the arrangements on the ground into a coherent plan, with responsibilities agreed before the trip.": "현지 준비 사항을 하나의 일관된 계획으로 연결하고, 여행 전에 각자의 역할을 합의합니다.",
+    "A sensible route and pace": "합리적인 동선과 속도",
+    "Balance travel time, shared activities, working sessions and time to yourselves. Include a practical alternative when weather affects the plan.": "이동 시간, 공동 활동, 업무 회의, 자유 시간의 균형을 맞춥니다. 날씨로 일정이 달라질 경우 실행 가능한 대안도 준비합니다.",
+    "Stays, transfers and meals": "숙박, 이동, 식사",
+    "Work through rooming preferences, separate arrivals, luggage and dietary requirements, then check the appropriate options for your dates.": "객실 배정 선호, 개별 도착, 짐, 식이 요구 사항을 확인한 뒤 여행 날짜에 맞는 선택지를 검토합니다.",
+    "Space for your own programme": "팀 자체 프로그램을 위한 공간",
+    "Coordinate a meeting room, group dinner or recognition evening where requested. Venue, equipment and catering requirements are quoted specifically.": "요청에 따라 회의실, 단체 저녁 식사, 시상 행사를 조율합니다. 장소, 장비, 식음료 요구 사항은 구체적으로 별도 견적을 냅니다.",
+    "Clear coordination on the ground": "명확한 현지 운영",
+    "Set out the guide, transport and local support arrangements, together with who your organiser should contact during the programme.": "가이드, 교통, 현지 지원 내용과 일정 중 담당자가 연락할 창구를 명확히 정합니다.",
+    "A proposal you can share internally": "사내에서 공유하기 쉬운 제안서",
+    "Your people.": "우리 팀.",
+    "Your dates.": "원하는 날짜.",
+    "A clear quote.": "명확한 견적.",
+    "Single rooms or shared rooms? A quiet team dinner or an awards evening? The details make a difference to both the experience and the budget.": "1인 1실인가요, 객실을 함께 쓰나요? 조용한 팀 저녁 식사인가요, 시상식이 있는 저녁인가요? 이런 세부 사항이 경험과 예산 모두에 영향을 줍니다.",
+    "We quote for the actual programme: headcount, rooming, hotel standard, transport, meals, activities and any meeting needs. Before booking, you receive the scope, total price, separate options and payment and cancellation conditions in writing.": "실제 일정에 맞춰 인원, 객실 배정, 호텔 등급, 교통, 식사, 활동, 회의 수요를 반영해 견적을 냅니다. 예약 전 서비스 범위, 총액, 별도 선택 사항, 결제 및 취소 조건을 서면으로 안내합니다.",
+    "The sample programmes are not fixed-price packages. Availability is checked for your dates; a proposal does not hold rooms or venues.": "예시 일정은 정액 패키지가 아닙니다. 해당 날짜의 예약 가능 여부를 확인하며, 제안서를 제공하는 것만으로 객실이나 장소가 확보되지는 않습니다.",
+    "Share your brief": "요청 사항 보내기",
+    "From a brief to a journey": "요청에서 출발까지",
+    "A few clear steps.": "몇 가지 명확한 단계.",
+    "Enough structure for the organiser. Enough flexibility to make the trip your own.": "담당자가 준비하기에 충분히 체계적이면서, 팀만의 여행으로 만들 여유를 남깁니다.",
+    "Tell us the purpose": "목적 알려주기",
+    "Share your people, dates, budget and what you want the trip to achieve.": "참가자, 날짜, 예산, 이번 여행에서 이루고 싶은 것을 알려 주세요.",
+    "Shape the programme": "일정 다듬기",
+    "Review a route, the proposed arrangements and the options that matter to you.": "동선, 제안된 준비 사항, 팀에 중요한 선택지를 검토합니다.",
+    "Confirm the details": "세부 사항 확정하기",
+    "Agree availability, the written quote and booking conditions before payment.": "결제 전에 예약 가능 여부, 서면 견적, 예약 조건에 합의합니다.",
+    "Bring the team": "팀과 함께 출발하기",
+    "Finalise rooming, arrival details and the practical information for everyone travelling.": "객실 배정, 도착 정보, 모든 참가자에게 필요한 실용 정보를 확정합니다.",
+    "About Homeground": "Homeground 소개",
+    "Get to know the people and business behind your programme.": "일정을 준비하는 사람들과 회사에 대해 알아보세요.",
+    "How we plan": "여행을 계획하는 방식",
+    "Business information & licences": "사업자 정보 및 허가",
+    "Plan this for your team": "우리 팀 일정으로 계획하기",
+    "Duration": "기간",
+    "Suggested group": "권장 인원",
+    "Base": "숙박 거점",
+    "Programme": "여행 형태",
+    "The idea behind the journey": "이 여정에 담긴 생각",
+    "The sample programme": "예시 일정",
+    "Four days, thoughtfully paced.": "속도를 세심하게 조절한 4일.",
+    "A framework for your own trip. Dates, arrival times, weather and your team’s preferences will shape the final programme.": "팀만의 여행을 만들기 위한 기본 틀입니다. 날짜, 도착 시간, 날씨, 팀의 선호에 따라 최종 일정이 정해집니다.",
+    "Jump to a day": "날짜별 일정으로 이동",
+    "Day": "일차",
+    "Where everyone settles in": "모두가 편히 머무는 곳",
+    "Make the scope clear": "서비스 범위 확인하기",
+    "Know what you are planning.": "무엇을 계획하는지 명확하게.",
+    "The following is the proposed scope to discuss. Your final written quote confirms exactly what is included, the agreed options and booking conditions.": "다음은 논의를 위한 제안 범위입니다. 최종 서면 견적에서 포함 서비스, 합의된 선택 사항, 예약 조건을 정확히 확정합니다.",
+    "Proposed arrangements": "제안된 준비 사항",
+    "Options to discuss": "논의할 선택 사항",
+    "Outside the sample scope": "예시 범위에 포함되지 않는 항목",
+    "A few things to work through": "함께 확인할 사항",
+    "Designed around the people coming.": "참가하는 사람들에게 맞춘 계획.",
+    "Useful reading": "함께 읽을 여행 정보",
+    "A little more local context": "현지에 대해 조금 더 알아보기",
+    "← Explore company trips in China": "← 중국 기업 여행 살펴보기",
+    "Start with your team": "팀 이야기부터 시작하세요",
+    "What would you like this trip to bring together?": "이번 여행을 통해 팀이 무엇을 함께 나누면 좋을까요?",
+    "A few details give us a useful starting point. Dates can still be open; an estimated group size is enough.": "몇 가지 정보가 있으면 계획을 시작할 수 있습니다. 날짜는 아직 미정이어도 되고, 인원은 예상치만 알려주셔도 됩니다.",
+    "Already have a brief? Email": "이미 요청서를 준비하셨나요? 이메일로 보내 주세요:",
+    "Company name": "회사명",
+    "Your name": "성함",
+    "(optional)": "(선택)",
+    "Reply email": "회신받을 이메일",
+    "Estimated group size": "예상 인원",
+    "e.g. 18": "예: 18",
+    "When, and for how long?": "언제, 며칠 동안 떠나시나요?",
+    "e.g. May 2027, 4 days — or dates still open": "예: 2027년 5월, 4일 또는 날짜 미정",
+    "Purpose of your trip": "여행 목적",
+    "A starting idea": "처음 생각한 일정",
+    "Help us choose": "추천받기",
+    "Budget & currency": "예산 및 통화",
+    "e.g. USD 15,000 total, excluding international flights": "예: 총 USD 15,000, 국제선 항공료 제외",
+    "Anything we should plan around?": "계획할 때 고려할 사항이 있나요?",
+    "Single or shared rooms, meeting time, food preferences, different arrival flights…": "1인 1실 또는 객실 공유, 회의 시간, 식사 선호, 서로 다른 도착 항공편 등",
+    "Prepare my enquiry": "문의 내용 준비하기",
+    "Review your message, then choose email or WhatsApp to send it. Preparing a brief does not make a booking.": "메시지를 검토한 뒤 이메일 또는 WhatsApp으로 보내세요. 요청서를 준비하는 것만으로 예약되지는 않습니다.",
+    "Privacy notice": "개인정보 안내",
+    "Your enquiry is ready to review": "문의 내용을 검토해 주세요",
+    "It has not been sent. Open your preferred app and send it when you are ready.": "아직 발송되지 않았습니다. 원하는 앱을 열고 준비가 되면 직접 보내 주세요.",
+    "Open email draft": "이메일 초안 열기",
+    "Open WhatsApp draft": "WhatsApp 초안 열기",
+    "Before you bring the team.": "팀과 출발하기 전에.",
+    "Questions about this programme.": "이 일정에 관한 질문.",
+    "Explore {title}": "{title} 살펴보기",
+    "Day {day}": "{day}일차",
+    "Wulingyuan sandstone pillars": "우링위안 사암 봉우리",
+    "Tianzi Mountain panorama": "톈쯔산 전경",
+    "Golden Whip Stream": "진볜시",
+    "Zhangjiajie Hehua Airport": "장자제 허화공항",
+    "Humble Administrator’s Garden": "졸정원",
+    "Please enter your company name.": "회사명을 입력해 주세요.",
+    "Please enter an estimated group size between 1 and 9,999.": "예상 인원을 1명부터 9,999명 사이로 입력해 주세요.",
+    "Please share a month or say that your dates are still open.": "희망 여행 월을 적거나 날짜 미정이라고 알려 주세요.",
+    "Please choose the purpose of your trip.": "여행 목적을 선택해 주세요.",
+    "Please choose a sample itinerary or ask us to suggest one.": "예시 일정을 선택하거나 추천을 요청해 주세요.",
+    "Please check your details.": "입력한 내용을 확인해 주세요.",
+    "Copy is unavailable here. You can select the message below, or open it in your email app.": "여기서는 복사할 수 없습니다. 아래 메시지를 선택하거나 이메일 앱에서 열 수 있습니다.",
+    "Copied": "복사됨",
+    "Copy enquiry": "문의 내용 복사",
+    "Your enquiry has been copied. It has not been sent.": "문의 내용이 복사되었습니다. 아직 발송되지 않았습니다.",
+    "Your email or WhatsApp message is the enquiry we receive.": "이메일 또는 WhatsApp으로 직접 보내신 메시지가 저희에게 접수되는 문의입니다.",
+    "Company trip & team building": "회사 여행 및 팀 빌딩",
+    "Incentive travel": "포상 여행",
+    "Small meeting & team retreat": "소규모 회의 및 팀 워크숍",
+    "Help us choose the right format": "적합한 형태 추천받기",
+    "Zhangjiajie · 4 days / 3 nights": "장자제 · 3박 4일",
+    "Shanghai & Suzhou · 4 days / 3 nights": "상하이·쑤저우 · 3박 4일",
+    "Company travel planning and ground arrangements in China": "중국 기업 여행 기획 및 현지 서비스 준비",
+    "Sample programme, tailored quotation required.": "예시 일정이며 맞춤 견적이 필요합니다.",
+    "Company teams": "기업 팀",
+    "Incentive travel groups": "포상 여행 단체",
+    "Sample company trip programmes": "기업 여행 예시 일정",
+    "Hi Homeground, we’d like to discuss a company trip to China.": "안녕하세요 Homeground, 중국 회사 여행에 대해 상담하고 싶습니다.",
+    "Company": "회사",
+    "Contact": "담당자",
+    "Purpose": "목적",
+    "Estimated group": "예상 인원",
+    "people": "명",
+    "Dates / duration": "날짜 / 기간",
+    "Starting idea": "처음 생각한 일정",
+    "Other arrangements": "기타 준비 사항",
+    "Open to suggestions": "추천을 받고 싶습니다",
+    "Please help us shape the programme and confirm the arrangements, availability and written quotation before we book.": "일정을 함께 구체화하고, 예약 전에 준비 사항과 예약 가능 여부 및 서면 견적을 확인해 주세요.",
+    "Reference": "참고 일정",
+    "Company trip enquiry — {company}": "기업 여행 문의 — {company}"
+  },
+  "hub": {
+    "title": "중국 기업 여행 및 팀 워크숍 여행",
+    "description": "중국 회사 여행, 포상 여행, 소규모 팀 워크숍 여행. 장자제와 상하이·쑤저우 4일 예시 일정을 살펴보고 팀에 맞는 현지 여행 서비스를 계획하세요.",
+    "faqs": [
+      {
+        "question": "여러 나라에서 출발하는 팀도 도와주실 수 있나요?",
+        "answer": "네. 각 그룹의 출발 도시와 예상 도착 시간을 알려주시면 개별 공항 픽업과 현실적인 공동 출발 지점을 검토합니다. 전 세계 기업을 대상으로 하며, 서면 견적에 달리 명시되지 않는 한 국제선 항공편은 별도로 준비합니다."
+      },
+      {
+        "question": "예시 일정은 몇 명을 기준으로 하나요?",
+        "answer": "장자제는 약 10–30명, 상하이·쑤저우는 약 10–24명을 계획의 출발점으로 삼습니다. 이는 기획을 위한 범위이며, 정기 출발 상품이나 최소 예약 인원 조건이 아닙니다. 예상 인원을 알려주시면 적합한 차량, 객실, 활동 준비 사항을 확인합니다."
+      },
+      {
+        "question": "회의나 진행자가 있는 팀 빌딩 게임을 꼭 넣어야 하나요?",
+        "answer": "아닙니다. 동료들이 함께 여행하고 경험을 나누는 것만으로도 충분합니다. 내부 회의를 원하시면 장소, 장비, 다과 준비를 검토할 수 있습니다. 토론은 회사에서 직접 진행하며, 전문 퍼실리테이션이나 교육은 별도 합의가 필요합니다."
+      },
+      {
+        "question": "가격은 무엇에 따라 달라지나요?",
+        "answer": "날짜, 최종 인원, 호텔 등급, 1인 1실 또는 객실 공유, 교통, 가이드 언어, 식사, 회의나 특별 행사 준비가 모두 견적에 영향을 줍니다. 예시 일정에는 고정 공시 가격이 없습니다. 먼저 요청을 확인한 뒤 준비 사항과 총액을 서면으로 제안합니다."
+      },
+      {
+        "question": "할랄식, 채식 또는 서로 다른 보행 선호를 고려할 수 있나요?",
+        "answer": "처음부터 구체적인 요구 사항을 알려 주세요. 식당 선택지와 필요한 식이 보장 수준을 확인하고, 가능한 범위에서 도보 일정을 조정합니다. 특정 인증, 식재료, 접근성, 대체 활동은 확정 전에 확인해야 합니다."
+      },
+      {
+        "question": "요청서를 보내면 어떻게 진행되나요?",
+        "answer": "목적, 날짜, 인원, 객실 배정, 예산을 확인한 뒤 실행 가능한 일정을 제안합니다. 예약 전에 서비스 범위, 공급업체 예약 가능 여부, 최종 견적, 결제 및 변경 조건을 서면으로 확정합니다. 회사에 공급업체 등록이나 특정 결제 서류가 필요하다면 미리 알려 주세요."
+      }
+    ],
+    "purposes": [
+      {
+        "id": "company-trips",
+        "number": "01",
+        "title": "회사 여행 및 팀 빌딩",
+        "body": "익숙한 일상에서 잠시 벗어나 보세요. 함께 먹는 식사, 현지에서의 발견, 대화할 여유가 있는 일정으로 동료들이 가까워집니다.",
+        "note": "연례 직원 여행, 팀 모임, 직원 복지 여행에 적합합니다."
+      },
+      {
+        "id": "incentive-travel",
+        "number": "02",
+        "title": "포상 여행",
+        "body": "오래 기억할 곳에서 팀의 성과를 축하하세요. 감사의 마음을 전하고 싶은 사람들을 중심으로 숙박과 경험을 세심하게 계획합니다.",
+        "note": "직원 포상, 영업 인센티브, 대리점 포상에 적합합니다."
+      },
+      {
+        "id": "meetings-retreats",
+        "number": "03",
+        "title": "소규모 회의 및 팀 워크숍",
+        "body": "의미 있는 대화를 나눌 공간을 마련한 뒤 함께 밖으로 나가 보세요. 자체 업무 회의와 며칠간의 중국 여행을 결합합니다.",
+        "note": "경영진 모임, 부서 계획 회의, 기업 팀 워크숍에 적합합니다."
+      }
+    ]
+  },
+  "trips": [
+    {
+      "slug": "zhangjiajie-4-day-team-trip",
+      "title": "장자제: 봉우리 사이에서 함께하는 시간",
+      "seoTitle": "장자제 기업 여행 | 3박 4일 | Homeground China",
+      "description": "10–30명을 위한 장자제 4일 기업 여행 예시. 우링위안 3박, 삼림공원 풍경, 여유로운 계곡 산책, 팀 저녁 식사로 구성하며 요청에 따라 견적을 드립니다.",
+      "eyebrow": "회사 여행 · 포상 여행",
+      "lede": "팀에게 익숙한 일상을 벗어나는 며칠을 선물하세요. 장자제의 사암 봉우리 아래를 걷고, 하루 끝에 함께 식탁에 앉으며, 직장에서 좀처럼 나누지 못했던 대화를 위한 시간을 남깁니다.",
+      "duration": "3박 4일",
+      "groupSize": "권장: 10–30명",
+      "base": "우링위안 · 한 호텔에서 3박",
+      "format": "단독 기업 여행 · 예시 일정",
+      "hero": {
+        "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+        "alt": "장자제 우링위안의 사암 기둥과 푸른 숲",
+        "caption": "후난성 우링위안의 풍경 속에서 다른 환경을 함께 경험합니다."
+      },
+      "storyTitle": "함께하는 경험, 여유를 남긴 일정",
+      "story": "회사 여행의 가장 좋은 순간은 계획 밖에서 생기곤 합니다. 숲길에서 나누는 대화, 모두 함께 찍고 싶은 사진, 성과를 인정받을 동료를 위한 건배처럼요. 이 4일 예시는 그런 순간을 위한 여유를 남깁니다. 우링위안의 한 호텔, 주요 산악 관광 하루, 봉우리 아래에서 보내는 보다 편안한 하루로 리듬을 잡았습니다. 걷기, 식사, 함께하는 시간은 참가자에게 맞춰 조정합니다.",
+      "highlights": [
+        {
+          "title": "3박, 하나의 거점",
+          "text": "우링위안에서 함께 머뭅니다. 객실 배정표, 버스 진입 가능 여부, 예산을 기준으로 호텔을 찾아, 계속 짐을 싸는 대신 편히 자리 잡을 수 있도록 합니다."
+        },
+        {
+          "title": "함께 감상하는 풍경",
+          "text": "가이드와 함께하는 톈쯔산·위안자제 일정은 주요 전망대와 적절한 휴식의 균형을 맞춥니다. 공원 내 교통과 보행 요구 사항은 제안서에 설명합니다."
+        },
+        {
+          "title": "감사를 전하는 저녁",
+          "text": "마지막 팀 저녁 식사에서 좋은 성과를 인정할 시간을 가질 수 있습니다. 계획을 알려주시면 별실, 연설, 시상, 기술 장비를 검토합니다."
+        }
+      ],
+      "days": [
+        {
+          "title": "도착하고 쉬며 여행의 리듬 찾기",
+          "place": "장자제 도착 지점 → 우링위안",
+          "summary": "현지 팀을 만나 우링위안 호텔로 이동합니다. 첫날은 도착 일정에 맞춰 구성하며, 팀이 제시간에 호텔에 도착하면 환영 만찬을 마련합니다.",
+          "details": [
+            "픽업을 계획하기 전에 모든 참가자의 항공편이나 열차 정보를 알려 주세요. 도착 시간이 나뉘는 경우 전체 팀을 기다리게 하는 대신 추가 이동편으로 별도 견적을 낼 수 있습니다.",
+            "같은 호텔에서 3박 합니다. 실제 호텔 객실 상황에 따라 1인 1실, 트윈룸 2인 1실 또는 혼합 배정 계획을 준비합니다.",
+            "오후는 휴식을 위해 비워 둡니다. 시간이 허락하면 짧은 환영 안내와 합의된 단체 저녁 식사를 진행하며, 늦게 도착하는 분은 별도로 계획합니다."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/wulingyuan-peaks-1600.webp",
+            "alt": "장자제 우링위안 지역의 숲으로 덮인 사암 기둥",
+            "caption": "우링위안을 숙박 거점으로 제안하며 호텔은 팀에 맞게 선정합니다."
+          }
+        },
+        {
+          "title": "숲과 봉우리 사이에서 보내는 하루",
+          "place": "장자제 국가삼림공원 · 톈쯔산과 위안자제",
+          "summary": "주요 관광일에는 사암 기둥이 솟은 높은 곳으로 향합니다. 톈쯔산과 위안자제를 계획된 동선으로 둘러보며 함께 전망을 감상하고 점심과 휴식, 주변을 살필 시간을 갖습니다.",
+          "details": [
+            "아침 식사 후 가이드와 공원으로 이동합니다. 예약 전에 입구, 공원 셔틀 연결, 케이블카 또는 엘리베이터 이동, 입장료를 합의합니다.",
+            "톈쯔산과 위안자제 전망대를 방문합니다. 최종 순서는 입장권 준비, 운영 상황, 팀의 걷는 속도를 따르며 시간을 재는 하이킹 도전이 아닙니다.",
+            "계단, 대기 줄, 전망대 사이의 걷는 시간을 고려합니다. 이동 지원 필요를 미리 의논하고, 주요 코스를 편하게 따라가기 어려운 분에게 적합한 대안을 계획합니다.",
+            "공원 관광 후 호텔로 돌아옵니다. 저녁은 여유롭게 보내며, 담당자와 합의한 대로 식사 계획에 저녁을 포함하거나 자유 식사로 둡니다."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/tianzi-mountain-panorama-1600.webp",
+            "alt": "톈쯔산의 숲과 사암 기둥이 펼쳐진 넓은 전경",
+            "caption": "톈쯔산 봉우리 풍경. 산의 가시거리는 날씨에 따라 달라집니다."
+          }
+        },
+        {
+          "title": "가벼운 산책, 함께하는 저녁",
+          "place": "진볜시 → 호텔 → 팀 저녁 식사",
+          "summary": "진볜시의 일부 구간을 걸으며 속도를 바꿔 봅니다. 호텔로 돌아와 여유로운 오후를 보내고 팀을 위한 저녁 식사에 모입니다.",
+          "details": [
+            "모두에게 전체 코스를 요구하지 않고 적합한 계곡길 구간을 걷습니다. 거리, 반환점, 휴식 지점은 팀의 필요와 당일 상황에 맞춰 합의합니다.",
+            "점심 후 호텔로 돌아와 개인 시간을 갖습니다. 원하면 오후 일부에 짧은 내부 회의를 넣고 필요한 경우 걷는 구간을 줄일 수 있습니다.",
+            "회의의 의제와 진행은 회사가 맡습니다. 저희는 적합한 공간을 찾아 좌석 배치, 장비, 다과 비용을 별도 견적으로 안내할 수 있습니다.",
+            "마지막 팀 저녁 식사에 모입니다. 메뉴, 식이 요구 사항, 좌석을 미리 확정하고, 연설이나 시상은 장소 측과 합의한 범위 안에서 계획할 수 있습니다."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/golden-whip-stream-1600.webp",
+            "alt": "장자제 진볜시 옆의 푸른 숲",
+            "caption": "진볜시에서는 봉우리 아래에서 다른 시선으로 경치를 감상할 수 있습니다."
+          }
+        },
+        {
+          "title": "아침 식사, 작별, 다음 여정",
+          "place": "우링위안 → 장자제 공항 또는 기차역",
+          "summary": "아침 식사 후 예약된 출발 시간에 맞춰 이동합니다. 짐, 체크아웃, 다음 여정을 위해 충분한 여유 시간을 둡니다.",
+          "details": [
+            "아침 식사 후 체크아웃하고 최종 항공편 또는 열차 명단에 따라 출발 그룹을 나눕니다.",
+            "이동 목적지는 장자제 허화공항, 장자제 서역 또는 지정된 다른 도착·출발 지점으로 제안서에서 합의합니다.",
+            "늦은 출발이라면 자유 시간이 생길 수 있지만, 추가 관광, 늦은 체크아웃, 추가 차량, 1박 연장은 먼저 합의하고 비용을 확인해야 합니다."
+          ],
+          "image": {
+            "src": "/images/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/zhangjiajie-hehua-airport-1600.webp",
+            "alt": "뒤로 산이 보이는 장자제 허화공항",
+            "caption": "출발 이동편은 확정된 공항 또는 기차역과 시간에 맞춰 운영합니다."
+          }
+        }
+      ],
+      "stay": {
+        "title": "우링위안에서 함께 머물기",
+        "body": "우링위안 지역의 한 호텔에서 3박을 제안합니다. 기업 단체에는 사진만큼 실제로 확보 가능한 객실 묶음이 중요합니다. 적절한 침대 구성, 원활한 조식, 차량 진입, 모이기 좋은 공간을 함께 살핍니다.",
+        "details": [
+          "1인 1실과 트윈룸 2인 1실을 비교하거나 혼합 배정으로 견적을 낼 수 있습니다. 1인 사용 여부에 따라 1인당 비용이 달라집니다.",
+          "날짜에 맞춰 호텔명, 객실 등급, 침대 유형, 객실 수를 확인하고 확정 전에 제안서에 명시합니다.",
+          "같은 층의 객실, 연결 객실, 전용 식사 공간, 회의실은 별도로 요청하고 확인해야 합니다."
+        ]
+      },
+      "scope": [
+        "우링위안의 한 호텔에서 조식을 포함한 3박, 선택한 1인 1실 또는 트윈룸 2인 1실 배정.",
+        "단독 도착·출발 이동편과 팀에 명시된 차량 일정 및 수하물 적재량.",
+        "관광 일정 중 영어 가이드 서비스.",
+        "장자제 국가삼림공원 입장권 및 서면 견적에 정확히 명시된 공원 셔틀, 엘리베이터, 케이블카 구간.",
+        "도착 시간이 허락할 경우의 환영 만찬, 관광일 점심, 마지막 팀 저녁 식사를 포함한 합의된 식사 계획.",
+        "현지 연락 담당자와 제안서에 명시된 현장 조율."
+      ],
+      "options": [
+        "3일차의 짧은 회사 자체 회의. 회의실 대여, 배치, 장비, 다과는 별도 견적.",
+        "마지막 저녁 식사를 위한 별실, 시상 준비, 마이크 또는 합의된 기타 추가 사항.",
+        "일부 일정의 사진 촬영 서비스. 사용 권한과 결과물은 사전에 합의.",
+        "추가 공항 이동편, 숙박 연장, 짧은 도보 코스 또는 예시 일정의 기타 변경."
+      ],
+      "notIncluded": [
+        "견적에 명시적으로 추가하지 않은 장자제 왕복 항공편 또는 열차.",
+        "구체적으로 견적에 명시하지 않은 회의실, 행사 장비, 사진 촬영, 저녁 식사 추가 사항.",
+        "합의된 식사·서비스 계획을 벗어난 식사, 음료, 객실 부대비용, 개인 경비.",
+        "여행 보험, 비자 준비 및 서면 견적에 기재되지 않은 서비스."
+      ],
+      "planningNotes": [
+        {
+          "title": "전체 4일, 주요 활동일은 2일",
+          "body": "1일차와 4일차는 도착·출발일입니다. 이 예시는 4일 내내 관광하는 일정이 아니며, 항공편 시간에 따라 1박 추가나 동선 변경이 필요할 수 있습니다."
+        },
+        {
+          "title": "참가자에 맞춘 구성",
+          "body": "걷기 편한 정도, 계단 없는 이동의 필요, 조용한 하루를 선호하는 동료에 대해 알려 주세요. 공원 내 교통수단을 이용해도 모든 계단, 대기 줄, 야외 걷기를 피할 수는 없습니다."
+        },
+        {
+          "title": "상황 변화에 대비한 현실적인 계획",
+          "body": "산악 날씨, 가시거리, 공원 운영, 혼잡도가 방문 순서에 영향을 줄 수 있습니다. 제안서에서 기상 대안과 발생할 수 있는 차액 처리 방식을 합의합니다."
+        },
+        {
+          "title": "담당자가 활용할 수 있는 제안서",
+          "body": "희망 날짜 범위, 인원, 객실 배정 선호, 예산을 보내 주세요. 공급업체를 확인한 뒤 항목별 제안서, 결제 일정, 취소 조건을 승인용으로 제공합니다."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "이 장자제 기업 여행은 어떤 팀을 위한 것인가요?",
+          "answer": "한 단독 그룹으로 여행하는 동료 10–30명을 기준으로 한 4일 예시입니다. 연례 직원 여행이나 소규모 팀의 포상 여행에 적합할 수 있습니다. 다른 인원도 검토할 수 있으나 차량, 인력 또는 호텔 계획을 바꿔야 할 수 있습니다."
+        },
+        {
+          "question": "4일 일정에는 무엇이 포함되나요?",
+          "answer": "장자제 도착, 우링위안 3박, 톈쯔산·위안자제를 중심으로 한 주요 삼림공원 관광일, 짧은 진볜시 산책, 마지막 팀 저녁 식사, 출발 이동편을 제안합니다. 1일차와 4일차는 이동일입니다. 톈먼산과 유리다리는 이 예시에 포함되지 않습니다."
+        },
+        {
+          "question": "회의나 시상 만찬을 넣을 수 있나요?",
+          "answer": "네. 3일차 일부 시간에 적합한 회의실을 확인하고 마지막 저녁 식사에 연설이나 시상을 검토할 수 있습니다. 회의는 회사가 직접 진행합니다. 장소 대여, 장비, 다과, 행사 설치는 별도로 확정하고 견적을 내며, 전문 퍼실리테이션이나 교육은 예시에 포함되지 않습니다."
+        },
+        {
+          "question": "장자제 기업 여행의 비용은 얼마인가요?",
+          "answer": "날짜, 인원, 객실 배정표에 맞춰 견적을 냅니다. 1인 1실, 트윈룸 공유, 가이드, 공원 교통, 식사, 회의 요구 사항이 모두 총액에 영향을 줍니다. 이 예시에는 고정 공시 패키지 가격이 없으며, 서면 제안서에 팀의 서비스와 결제 조건을 명시합니다."
+        },
+        {
+          "question": "모두 객실을 함께 써야 하나요?",
+          "answer": "아닙니다. 1인 사용, 트윈룸 2인 사용 또는 혼합 배정으로 견적을 낼 수 있습니다. 각 유형의 필요한 객실 수를 알려 주세요. 확정 전에 호텔과 실제 확보 가능한 객실을 확인해야 하며, 같은 층 배정이 당연히 제공되는 것은 아닙니다."
+        },
+        {
+          "question": "체력 수준이 다른 동료들도 참여할 수 있나요?",
+          "answer": "조정할 수 있지만 주요 공원 관광일에는 여전히 야외 걷기, 계단, 대기 줄이 있을 수 있습니다. 동선을 추천하기 전에 이동 지원 필요를 알아야 합니다. 모두에게 같은 속도를 요구하는 대신 짧은 계곡 산책이나 대체 일정을 검토하고 견적을 낼 수 있습니다."
+        },
+        {
+          "question": "채식, 할랄식 또는 알레르기를 고려한 식사를 준비할 수 있나요?",
+          "answer": "문의할 때 인증이나 알레르기 관련 필요를 포함한 식이 요구 사항을 알려 주세요. 식사 계획을 확정하기 전에 공급업체와 적합한 식당, 메뉴, 조리 방식을 확인합니다."
+        },
+        {
+          "question": "항공편이 포함되나요? 공원은 단독으로 이용하나요?",
+          "answer": "서면으로 추가하지 않은 장자제행 항공편과 열차는 제외됩니다. 차량과 합의된 가이드 서비스는 회사 전용이지만 국가삼림공원, 공원 셔틀, 전망대는 공용입니다. 단독 서비스는 공원 독점 이용이나 대기 없는 입장을 뜻하지 않습니다."
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/",
+          "label": "장자제 시내와 우링위안 숙박지 비교"
+        },
+        {
+          "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/",
+          "label": "삼림공원 입장권, 입구, 공원 내 교통"
+        },
+        {
+          "href": "/guides/zhangjiajie-older-travellers/",
+          "label": "걷기, 계단, 보다 여유로운 장자제 일정"
+        }
+      ]
+    },
+    {
+      "slug": "shanghai-suzhou-4-day-company-retreat",
+      "title": "상하이·쑤저우: 팀을 위한 시간",
+      "seoTitle": "상하이·쑤저우 기업 워크숍 여행 | 4일 | Homeground China",
+      "description": "10–24명을 위한 상하이·쑤저우 4일 기업 워크숍 여행 예시. 상하이 3박, 쑤저우 당일 여행, 선택 가능한 반일 회의. 요청에 따라 견적을 드립니다.",
+      "eyebrow": "회사 여행 · 소규모 회의 및 팀 워크숍",
+      "lede": "모두 한 도시에 모여 함께 둘러볼 여유를 가져보세요. 상하이 3박, 쑤저우 정원과 운하를 만나는 하루, 팀만의 대화 시간이 짧은 여행을 알차게 만듭니다.",
+      "duration": "3박 4일",
+      "groupSize": "권장: 10–24명",
+      "base": "상하이 도심 · 한 호텔에서 3박",
+      "format": "단독 기업 워크숍 여행 · 예시 일정",
+      "hero": {
+        "src": "/images/tours/shanghai-suzhou-5-day-private-tour/hero-shanghai-clocktower-1600.webp",
+        "alt": "해 질 무렵 와이탄 시계탑과 상하이의 현대적인 스카이라인",
+        "caption": "상하이를 한 거점으로 삼아 쑤저우에서 하루를 보내고 방문 사이에 함께할 시간을 둡니다."
+      },
+      "storyTitle": "도시의 활기, 정원의 느긋함",
+      "story": "상하이에는 팀이 나눌 이야기가 많습니다. 강, 변화하는 스카이라인, 과거의 흔적이 남은 거리까지. 쑤저우에 가면 규모가 달라집니다. 문 하나가 정원을 담고 물과 돌이 작은 세계를 만듭니다. 이 예시는 호텔을 옮기지 않고 두 곳을 연결합니다. 필요하면 자체 회의를 위한 반나절도 남겨 회사의 목적과 여행의 즐거움을 모두 담을 수 있습니다.",
+      "highlights": [
+        {
+          "title": "한 호텔에서 3박",
+          "text": "상하이 도심을 거점으로 쑤저우를 당일 방문합니다. 한 호텔에 머물면 체크인, 짐, 객실 배정표를 관리하기 쉽습니다."
+        },
+        {
+          "title": "여행에 어울리는 회의",
+          "text": "2일차 일부를 회사 자체 회의에 쓰거나 같은 오전에 여유로운 시내 관광을 할 수 있습니다. 어느 쪽인지는 예약 전에 정합니다."
+        },
+        {
+          "title": "공동 경험과 자유 시간",
+          "text": "와이탄 산책, 쑤저우 정원 한 곳, 팀 저녁 식사가 일정을 이어 줍니다. 비워 둔 시간에는 동료들이 각자의 방식으로 도시를 즐깁니다."
+        }
+      ],
+      "days": [
+        {
+          "title": "상하이 도착, 식탁에서의 만남",
+          "place": "상하이 공항 또는 기차역 → 상하이 도심",
+          "summary": "상하이에 모여 3박 내내 머물 호텔에 짐을 풉니다. 도착 시간이 허락하면 편안한 환영 만찬으로 시작합니다.",
+          "details": [
+            "실제 도착 명단을 바탕으로 지정된 상하이 공항 또는 기차역에서 픽업을 계획합니다. 필요한 경우 푸둥과 훙차오 도착편을 별도로 준비합니다.",
+            "체크인하고 짐을 푼 뒤 남은 오후는 비워 둡니다. 도착 일정에 충분한 여유가 있을 때만 첫날 관광을 추가합니다.",
+            "합의한 식당에서 환영 만찬을 하며 서로 소개하고 앞으로의 일정을 간단히 살펴봅니다. 늦게 도착하는 분은 별도 식사가 필요할 수 있습니다."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+            "alt": "저녁빛 속 상하이 강변 스카이라인",
+            "caption": "상하이는 도착 도시이자 3박 모두의 숙박 거점으로 제안됩니다."
+          }
+        },
+        {
+          "title": "우리의 대화, 그다음 도시",
+          "place": "선택 가능한 내부 회의 → 와이탄과 상하이 도심",
+          "summary": "오전에는 반일 내부 회의를 하거나 도시 체험을 선택합니다. 오후에는 와이탄에 모여 가이드와 주변 거리를 둘러봅니다.",
+          "details": [
+            "회의를 선택하면 회사가 의제를 정하고 토론을 진행합니다. 적합한 호텔 또는 인근 회의실을 확인하고 대여, 배치, 장비, 다과를 별도 견적으로 안내합니다.",
+            "휴식 위주의 여행을 원하면 팀의 관심사에 맞춘 동선으로 오전에 상하이를 여유롭게 둘러봅니다.",
+            "점심 후 가이드와 와이탄 및 선택한 도심 거리를 걷습니다. 잠시 쉬고 사진을 찍으며 강변의 대조적인 건축을 이해할 시간을 둡니다.",
+            "자유 시간 또는 합의된 저녁 식사로 마무리합니다. 원하면 강 유람선, 전망대, 기타 유료 야간 활동을 견적에 추가할 수 있습니다."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/shanghai-skyline-1600.webp",
+            "alt": "상하이 스카이라인 위로 솟은 상하이타워와 세계금융센터",
+            "caption": "상하이 스카이라인을 배경으로 둘러보며 유료 타워 방문은 선택 사항입니다."
+          }
+        },
+        {
+          "title": "정원의 눈높이로 만나는 쑤저우",
+          "place": "상하이 → 쑤저우 정원과 핑장루 → 상하이",
+          "summary": "쑤저우에서 속도를 세심하게 조절한 하루를 보냅니다. 고전 정원 한 곳을 보고 함께 점심을 먹은 뒤 핑장루 일부를 걷고, 상하이로 돌아와 마지막 팀 저녁 식사를 합니다.",
+          "details": [
+            "인원에 맞는 전용 차량으로 이동합니다. 제안서에 교통 준비를 명시하고 도로 상황, 휴식, 상하이 복귀 시간을 고려합니다.",
+            "입장권이 가능한 경우 졸정원을 방문하거나 사전에 다른 적합한 정원에 합의합니다. 하루에 여러 곳을 넣기보다 한 정원에 집중합니다.",
+            "합의된 점심 후 핑장루 운하 옆 거리 일부를 둘러봅니다. 집합 장소와 출발 계획을 명확히 한 상태에서 개인 시간을 주며, 배 타기 같은 활동은 견적에 기재된 경우에만 포함됩니다.",
+            "같은 상하이 호텔로 돌아옵니다. 마지막 팀 저녁 식사에 모이며 연설, 표창, 별실 요구 사항은 미리 준비합니다."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/suzhou-humble-garden-1600.webp",
+            "alt": "쑤저우 졸정원의 정자, 연못, 지붕 있는 회랑",
+            "caption": "제안된 쑤저우 정원 방문. 구체적인 정원은 예약과 함께 확정합니다."
+          }
+        },
+        {
+          "title": "마지막 아침, 다음 여정으로",
+          "place": "상하이 도심 → 지정된 공항 또는 기차역",
+          "summary": "아침 식사 후 다음 여정을 위해 출발합니다. 이동편은 최종 출발 명단에 따르며 일정이 허락하는 경우에만 자유 시간을 둡니다.",
+          "details": [
+            "팀의 출발 시간대에 맞춰 체크아웃과 짐을 조율합니다. 동료들이 다른 공항이나 다른 시간에 떠나면 추가 이동편을 항목별로 명시합니다.",
+            "출발 계획에 각 그룹의 공항 또는 역을 명시하고, 예약된 여정에 맞춰 이동 시간을 정합니다.",
+            "일부 동료가 출장이나 휴가로 더 머물면 추가 숙박과 이동편을 별도 견적으로 안내할 수 있습니다. 이러한 연장은 회사 본 일정과 별개로 합의합니다."
+          ],
+          "image": {
+            "src": "/images/tours/shanghai-suzhou-5-day-private-tour/departure-shanghai-1600.webp",
+            "alt": "상하이 스카이라인을 마주한 강변 데크",
+            "caption": "한적한 상하이 풍경. 출발일 일정은 예약된 교통편에 맞춥니다."
+          }
+        }
+      ],
+      "stay": {
+        "title": "전체 일정에 맞춰 고르는 상하이 숙소",
+        "body": "상하이 도심에서 호텔을 찾기 시작하며 도착 지점, 식사 계획, 회의 수요에 맞춰 인민광장이나 징안 같은 지역을 검토합니다. 유명한 전망에 가장 가까운 곳보다는 팀의 전체 일정에 잘 맞는 호텔을 선택합니다.",
+        "details": [
+          "한 호텔에서 3박 하며 쑤저우는 당일 왕복합니다. 예시 일정 중 호텔 이동은 계획하지 않습니다.",
+          "예산 승인 전에 1인 사용과 트윈룸 2인 사용을 비교합니다. 객실 등급, 침대 유형, 조식, 실제 확보 가능한 객실을 제안서에 명시합니다.",
+          "회의가 필요하면 장소 선정 과정에서 수용 인원, 좌석 배치, 독립성, 장비, 다과를 확인합니다."
+        ]
+      },
+      "scope": [
+        "상하이의 한 호텔에서 조식을 포함한 3박, 선택한 1인 1실 또는 트윈룸 2인 1실 배정.",
+        "지정된 공항 또는 역의 도착·출발 이동편과 합의된 픽업 횟수.",
+        "쑤저우 당일 왕복을 포함한 계획된 관광의 단체 전용 교통.",
+        "관광 일정 중 영어 가이드 서비스.",
+        "지정된 쑤저우 정원 입장권과 제안서에 명시적으로 기재한 기타 입장권.",
+        "시간이 허락할 경우의 환영 만찬, 관광일 점심, 마지막 팀 저녁 식사를 포함한 합의된 식사 계획.",
+        "현지 연락 담당자와 제안서에 명시된 현장 조율."
+      ],
+      "options": [
+        "2일차 회사 자체 반일 회의. 장소, 장비, 다과는 별도 가격.",
+        "별실, 마이크, 시상 준비 또는 합의된 다른 저녁 식사 추가 사항.",
+        "팀을 위해 선택한 강 유람선, 전망대, 사진 촬영 또는 기타 체험.",
+        "추가 픽업, 호텔 숙박 연장, 별도 출발 또는 행사 후 휴가 일정 연장."
+      ],
+      "notIncluded": [
+        "서면 견적에 구체적으로 추가하지 않은 상하이 왕복 항공편 또는 열차.",
+        "별도 합의하지 않은 회의 시설, 기술 제작, 전문 퍼실리테이션, 통역.",
+        "기재되지 않은 식사, 음료, 선택 활동, 객실 부대비용, 개인 경비.",
+        "여행 보험, 비자 준비, 공장 또는 비즈니스 방문, 합의된 일정 밖의 서비스."
+      ],
+      "planningNotes": [
+        {
+          "title": "4일의 틀이며 4일 모두 관광하는 일정은 아닙니다",
+          "body": "첫날과 마지막 날은 이동 계획에 맞춥니다. 3박과 주요 프로그램 2일로 구성된 이 예시는 상하이와 쑤저우에 머물며, 다른 도시를 추가하려면 기간 연장이나 일정 수정이 필요합니다."
+        },
+        {
+          "title": "회의를 알차게 준비하기",
+          "body": "목적, 참가 인원, 배치, 독립성 요구, 장비를 알려 주세요. 내용과 진행은 회사가 맡으며, 전문 퍼실리테이션이나 행사 제작은 별도 요청서와 확정된 공급업체가 필요합니다."
+        },
+        {
+          "title": "현실적인 쑤저우 하루 계획",
+          "body": "예시는 전용 차량 도로 이동, 정원 한 곳, 선택한 운하 옆 도보 구간으로 구성합니다. 일정을 확정하기 전에 날짜, 교통, 입장권 가능 여부, 이동 지원 필요를 검토합니다."
+        },
+        {
+          "title": "실무 세부 사항을 함께 승인하기",
+          "body": "최종 제안서에 호텔, 객실 배정 기준, 식사 계획, 이동편, 가이드, 회의 비용을 명시합니다. 예약을 확정하기 전에 공급업체 예약 가능 여부, 결제일, 취소 조건을 확인합니다."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "이 상하이·쑤저우 기업 워크숍 여행은 누구를 위한 것인가요?",
+          "answer": "도시에서의 공동 경험, 쑤저우 당일 여행, 함께할 시간을 원하는 동료 10–24명을 기준으로 한 4일 예시입니다. 회사 여행이나 반일 내부 회의를 포함한 소규모 팀 워크숍으로 활용할 수 있습니다. 인원이 달라지면 교통, 객실, 인력을 다시 검토해야 합니다."
+        },
+        {
+          "question": "쑤저우에서 숙박하나요?",
+          "answer": "아닙니다. 예시는 한 상하이 호텔에서 3박 모두 머물고 3일차에 전용 차량으로 쑤저우를 방문합니다. 쑤저우에서는 고전 정원 한 곳과 핑장루 일부 구간에 집중한 뒤 상하이로 돌아옵니다."
+        },
+        {
+          "question": "일정 가격에 회의가 포함되어 있나요?",
+          "answer": "이 예시에는 고정 공시 가격이 없습니다. 반일 회의는 2일차 오전의 선택 사항으로 그 시간대의 휴식·관광 일정을 대신합니다. 장소 대여, 장비, 다과, 전문 지원은 별도로 확인하여 견적에 표시합니다. 의제와 진행은 회사가 맡습니다."
+        },
+        {
+          "question": "1인실과 트윈룸 공유를 모두 견적받을 수 있나요?",
+          "answer": "네. 1인 사용과 트윈룸 2인 사용을 비교하거나 혼합 배정표에 맞출 수 있습니다. 가격은 실제 객실 수와 등급, 날짜, 호텔 예약 가능 여부에 따라 달라집니다. 최종 호텔과 확보 객실은 서면으로 확정하며, 한 층 전체나 호텔 독점 이용을 전제로 하지 않습니다."
+        },
+        {
+          "question": "동료들이 푸둥과 훙차오로 따로 도착해도 되나요?",
+          "answer": "네. 개별 이동편을 계획할 수 있습니다. 각 참가자의 도착·출발 공항 또는 역, 항공편이나 열차 번호, 시간을 보내 주세요. 추가 픽업이나 다른 도착 지점은 차량 일정과 총비용에 영향을 줄 수 있습니다."
+        },
+        {
+          "question": "정원 입장권을 구할 수 없거나 비가 오면 어떻게 하나요?",
+          "answer": "쑤저우 일정을 확정하기 전에 입장권을 확인하고 필요한 경우 적합한 대안에 합의합니다. 날씨에 따라 야외 도보 계획이 달라질 수 있습니다. 모든 대안의 비용이 같다고 가정하지 않고, 제안서에 대안, 교통 변경, 차액 처리 방식을 명시해야 합니다."
+        },
+        {
+          "question": "식이 요구 사항과 시상 만찬을 준비할 수 있나요?",
+          "answer": "팀에 맞는 식당, 메뉴, 저녁 식사 공간을 확인할 수 있습니다. 채식 또는 할랄 요구, 알레르기, 주류 선호, 연설이나 시상 계획을 알려 주세요. 공급업체 적합성, 별실 조건, 장비를 확정 전에 확인하고 견적을 냅니다."
+        },
+        {
+          "question": "정식 제안서에 어떤 정보가 필요한가요?",
+          "answer": "회사명, 희망 날짜, 대략적인 인원, 1인실 또는 트윈룸 선호, 전체 예산, 여행 목적을 보내 주세요. 회의 요구 사항과 알려진 도착 계획도 덧붙여 주세요. 이를 바탕으로 공급업체를 확인하고 총액, 서비스 목록, 결제 일정, 취소 조건을 포함한 제안서를 준비합니다."
+        }
+      ],
+      "relatedGuides": [
+        {
+          "href": "/guides/shanghai-where-to-stay-first-trip/",
+          "label": "이동이 편리한 상하이 호텔 지역 고르기"
+        },
+        {
+          "href": "/guides/shanghai-to-suzhou-day-trip/",
+          "label": "상하이에서 쑤저우 당일 여행 계획하기"
+        },
+        {
+          "href": "/guides/how-to-read-a-suzhou-garden/",
+          "label": "쑤저우 고전 정원 감상법"
+        },
+        {
+          "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+          "label": "푸둥과 훙차오: 알맞은 도착 공항 고르기"
+        }
+      ]
+    }
+  ]
+}
