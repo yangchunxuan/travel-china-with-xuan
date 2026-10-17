@@ -35,3 +35,10 @@ test("French, Spanish and German header adapters opt out of English-only entranc
     assert.match(header, /getHomegroundNavigationModel\('en', '\/', \{ includeCorporateTravel: false \}\)/);
   }
 });
+
+test("company travel is directly reachable from the English desktop header", async () => {
+  const header = await readFile(new URL("../../components/HomegroundHeader.tsx", import.meta.url), "utf8");
+  assert.match(header, /currentLanguage === "en" && \([\s\S]{0,420}href="\/corporate-travel\/"/);
+  assert.match(header, /corporateIsCurrent \? pathname === "\/corporate-travel\/" \? "page" : "location"/);
+  assert.match(header, /trackNavigationClick\("corporate-travel", "desktop-primary"\)/);
+});

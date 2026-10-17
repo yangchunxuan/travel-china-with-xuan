@@ -16,10 +16,10 @@ const purposes = [
   { id: "meetings-retreats", number: "03", title: "Small meetings & retreats", body: "Make space for useful conversations, then step outside together. Combine your own working sessions with a few days of travel in China.", note: "For leadership teams, department planning and company retreats." },
 ];
 
-function PageFrame({ children, mainId }: { children: ReactNode; mainId: string }) {
+function PageFrame({ children, mainId, path }: { children: ReactNode; mainId: string; path: string }) {
   return <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale="en" lang="en">
     <a className={localeStyles.skipLink} href={`#${mainId}`}>Skip to content</a>
-    <HomegroundHeader locale="en" pageContext="services" showLanguageNav={false} plannerHrefOverride="#corporate-enquiry" />
+    <HomegroundHeader locale="en" pageContext="services" languagePaths={{ en: path }} plannerHrefOverride="#corporate-enquiry" />
     <main id={mainId} tabIndex={-1}>{children}</main>
     <HomegroundFooter locale="en" pageContext="services" />
   </div>;
@@ -67,7 +67,7 @@ function EnquirySection({ trip }: { trip?: CorporateTrip }) {
 
 export function CorporateTravelHubPage() {
   const hero = corporateTrips[0].hero;
-  return <PageFrame mainId="corporate-main">
+  return <PageFrame mainId="corporate-main" path={corporateHubPath}>
     <header className={`${styles.container} ${styles.hero}`}>
       <Breadcrumb />
       <div className={styles.heroHeading}><div><p className={styles.eyebrow}>China, together</p><h1>Company Trips &amp; Team Retreats in China</h1></div><div className={styles.heroAside}><p className={styles.heroPromise}>Bring your team together.<br />We’ll take care of the journey.</p><p>Company trips, incentive travel and small meetings, planned around your people, purpose and budget.</p><a className={styles.primaryLink} href="#corporate-enquiry">Tell us about your team<span aria-hidden="true">↗</span></a></div></div>
@@ -118,7 +118,7 @@ export function CorporateTravelHubPage() {
 }
 
 export function CorporateTripPage({ trip }: { trip: CorporateTrip }) {
-  return <PageFrame mainId="corporate-trip-main">
+  return <PageFrame mainId="corporate-trip-main" path={corporateTripPath(trip.slug)}>
     <header className={`${styles.container} ${styles.hero} ${styles.detailHero}`}>
       <Breadcrumb current={trip.title} />
       <p className={styles.eyebrow}>{trip.eyebrow}</p><h1>{trip.title}</h1>

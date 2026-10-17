@@ -541,6 +541,7 @@
   gap: 0.2rem;
   letter-spacing: 0.02em;
   min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
   padding-inline: 0.5rem 0.25rem;
   transition: color 250ms cubic-bezier(.2, .7, .2, 1);
   white-space: nowrap;
@@ -622,6 +623,11 @@
   opacity: 1;
   transform: none;
   transition-delay: calc(var(--i, 0) * 25ms);
+}
+
+/* A primary nav menu took over: hide immediately instead of overlapping its panel. */
+.languageNav[data-replaced] :is(.languageMenuPanel, .languageMenuList, .languageMenuList li) {
+  transition: none;
 }
 
 /* Rows: every language in its own words, one size; the one in use is ink with the rust line. */
@@ -1412,6 +1418,11 @@
   .languageMenuList li,
   .languageNav[data-open] .languageMenuButton svg {
     transform: none;
+  }
+
+  /* Match the open-state specificity so the row stagger is removed too. */
+  .languageNav[data-open] .languageMenuList li {
+    transition-delay: 0s;
   }
 
 }

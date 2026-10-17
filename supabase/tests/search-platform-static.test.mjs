@@ -222,7 +222,10 @@ test("sitemap, language navigation and compatibility aliases consume platform da
   assert.match(header, /HomegroundLanguagePathKey = HomegroundLocale \| "zh-Hans"/);
   assert.match(header, /languagePaths\?: Partial<Record<HomegroundLanguagePathKey, string>>/);
   assert.match(header, /targetLocale === "zh" \? languagePaths\?\.\["zh-Hans"\]/);
-  assert.match(header, /Boolean\(overriddenLanguagePathFor\(targetLocale\)\)/);
+  // All editions remain discoverable; absence from the actual equivalents
+  // map now resolves to that edition's home, without inventing a page.
+  assert.match(header, /const availableLanguageLocales = homegroundLocales;/);
+  assert.match(header, /if \(languagePaths\) return target\.path;/);
   assert.match(aliases, /mode: "canonical-shell"/);
   assert.match(aliases, /china-visa-free-uk-canada/);
   assert.match(

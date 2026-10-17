@@ -52,13 +52,16 @@ export function HeaderLanguageMenu({
 }) {
   const panelId = useId();
   const [open, setOpen] = useState(false);
+  const [replaced, setReplaced] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const items = Children.toArray(children).filter(isValidElement);
 
   useEffect(() => {
     const onOtherMenu = (event: Event) => {
-      if ((event as CustomEvent<string>).detail !== panelId) setOpen(false);
+      if ((event as CustomEvent<string>).detail === panelId) return;
+      setReplaced(true);
+      setOpen(false);
     };
     window.addEventListener(menuOpenEvent, onOtherMenu);
     return () => window.removeEventListener(menuOpenEvent, onOtherMenu);
@@ -76,10 +79,15 @@ export function HeaderLanguageMenu({
       if (event.target instanceof Node && rootRef.current?.contains(event.target)) return;
       setOpen(false);
     };
+    const onResize = () => {
+      if (window.innerWidth < 1180) setOpen(false);
+    };
     window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
     document.addEventListener("pointerdown", onPointerDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
       document.removeEventListener("pointerdown", onPointerDown);
     };
   }, [open]);
@@ -89,6 +97,7 @@ export function HeaderLanguageMenu({
       aria-label={ariaLabel}
       className={styles.languageNav}
       data-open={open ? "true" : undefined}
+      data-replaced={replaced ? "true" : undefined}
       hidden={hidden}
       onBlur={(event) => {
         if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) setOpen(false);
@@ -105,7 +114,10 @@ export function HeaderLanguageMenu({
         className={styles.languageMenuButton}
         lang={lang}
         onClick={() => {
-          if (!open) window.dispatchEvent(new CustomEvent(menuOpenEvent, { detail: panelId }));
+          if (!open) {
+            setReplaced(false);
+            window.dispatchEvent(new CustomEvent(menuOpenEvent, { detail: panelId }));
+          }
           setOpen(!open);
         }}
         ref={buttonRef}
@@ -114,7 +126,7 @@ export function HeaderLanguageMenu({
         <span>{label}</span>
         <ChevronDown aria-hidden="true" size={14} strokeWidth={2.2} />
       </button>
-      <div className={styles.languageMenuPanel} id={panelId}>
+      <div className={styles.languageMenuPanel} id={panelId} inert={!open}>
         <ul className={styles.languageMenuList}>
           {items.map((item, index) => (
             <li key={item.key ?? index} style={{ "--i": index } as CSSProperties}>

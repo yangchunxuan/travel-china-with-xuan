@@ -11,6 +11,7 @@ import {
   VISA_FREE_ENTRY_DESCRIPTION,
   VISA_FREE_ENTRY_LAST_CHECKED,
   VISA_FREE_ENTRY_MODIFIED,
+  VISA_FREE_ENTRY_PATH,
   VISA_FREE_ENTRY_POLICY_END,
   VISA_FREE_ENTRY_POLICY_START,
   VISA_FREE_ENTRY_PUBLISHED,
@@ -122,7 +123,7 @@ export function VisaFreeEntryPage() {
       <a className={styles.skipLink} href="#visa-free-content">
         Skip to the policy summary
       </a>
-      <HomegroundHeader pageContext="content" showLanguageNav={false} />
+      <HomegroundHeader pageContext="content" languagePaths={{ en: VISA_FREE_ENTRY_PATH }} />
 
       <main id="visa-free-content" tabIndex={-1}>
         <article>
