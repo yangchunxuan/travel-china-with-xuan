@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type ComponentPropsWithoutRef,
   type FocusEvent as ReactFocusEvent,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
@@ -33,6 +34,9 @@ const menuIcons = {
   "private-car": Car,
   "trip-support": Route,
   "corporate-travel": Briefcase,
+  "company-trips": Users,
+  "incentive-travel": Flag,
+  "meetings-retreats": Briefcase,
   company: Flag,
   planning: Users,
   credentials: BadgeCheck,
@@ -55,16 +59,12 @@ export const menuOpenEvent = "homeground:nav-menu-open";
 let openMenuId: string | null = null;
 
 /** A menu link with a query (a homepage planner preset) needs a document load. */
-export function MenuLink({ href, children, ...props }: {
+export function MenuLink({ href, children, native = false, ...props }: ComponentPropsWithoutRef<"a"> & {
   href: string;
   children: ReactNode;
-  className?: string;
-  "aria-current"?: "page" | "location";
-  onClick?: () => void;
-  onFocus?: (event: ReactFocusEvent<HTMLAnchorElement>) => void;
-  onPointerEnter?: (event: ReactPointerEvent<HTMLAnchorElement>) => void;
+  native?: boolean;
 }) {
-  return href.includes("?")
+  return native || href.includes("?")
     ? <a href={href} {...props}>{children}</a>
     : <Link href={href} {...props}>{children}</Link>;
 }
@@ -90,12 +90,14 @@ export function HeaderNavMenu({
   ariaCurrent,
   active,
   onNavigate,
+  nativeNavigation = false,
 }: {
-  item: HomegroundPrimaryNavigationItem;
+  item: Omit<HomegroundPrimaryNavigationItem, "id"> & { id: HomegroundPrimaryNavigationItem["id"] | "corporate" };
   entries: readonly HomegroundSubmenuItem[];
   toggleLabel: string;
   ariaCurrent: "page" | "location" | undefined;
   active: boolean;
+  nativeNavigation?: boolean;
   /** The row chosen, or null for the item's own label. */
   onNavigate: (target: HomegroundSubmenuId | null) => void;
 }) {
@@ -194,7 +196,7 @@ export function HeaderNavMenu({
   // Inspiration) is its "location". The row for the item's own page is never
   // marked, as the item itself already is.
   const rowCurrent = (href: string) => {
-    if (href.includes("?") || href === item.href) return undefined;
+    if (href.includes("?") || href.includes("#") || href === item.href) return undefined;
     const path = entryPath(href);
     return path === pathname ? "page" : pathname?.startsWith(path) ? "location" : undefined;
   };
@@ -218,7 +220,8 @@ export function HeaderNavMenu({
       }}
       ref={groupRef}
     >
-      <Link
+      <MenuLink
+        native={nativeNavigation}
         aria-current={ariaCurrent}
         data-active={active ? "true" : undefined}
         href={item.href}
@@ -235,7 +238,7 @@ export function HeaderNavMenu({
         }}
       >
         {item.label}
-      </Link>
+      </MenuLink>
       <button
         aria-controls={panelId}
         aria-expanded={open}
@@ -273,6 +276,7 @@ export function HeaderNavMenu({
                 return (
                   <li key={entry.id} style={{ "--i": index } as CSSProperties}>
                     <MenuLink
+                      native={nativeNavigation}
                       aria-current={rowCurrent(entry.href)}
                       className={styles.menuItem}
                       href={entry.href}

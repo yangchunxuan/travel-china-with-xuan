@@ -17,7 +17,7 @@ const articleComponents = [
   "components/ChinaItineraryWithOlderParentsPage.tsx",
 ];
 
-test("global navigation keeps one distinct five-item information architecture", async () => {
+test("consumer navigation retains its categories alongside independent company travel", async () => {
   const [header, footer, css, model] = await Promise.all([
     source("components/HomegroundHeader.tsx"),
     source("components/HomegroundFooter.tsx"),
@@ -61,7 +61,7 @@ test("global navigation keeps one distinct five-item information architecture", 
   assert.match(header, /pageContext === "guide" \|\|/);
   assert.match(header, /const guidesAreExact =/);
   assert.match(header, /getHomegroundNavigationModel\(locale, copy\.path\)/);
-  assert.match(header, /primaryNavigation\.items\.map/);
+  assert.match(header, /navigationItems\.map/);
   assert.match(header, /pageContext === "plan"/);
   assert.match(
     header,
@@ -227,7 +227,7 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   // The primary link opens the overview; full-trip support stays in the service menu.
   assert.match(model, /services: \{\s*label: "服务",[\s\S]{0,120}pathSegment: "services\/"/);
   assert.match(model, /"trip-support": \{[\s\S]{0,180}pathSegment: "services\/full-trip-support\/"/);
-  assert.match(header, /menuId === "services" && \([\s\S]*?href=\{item\.href\}[\s\S]*?getTravelServicesHubCopy\(locale\)\.overview/);
+  assert.match(header, /menuId === "services" \|\| menuId === "corporate"[\s\S]*?href=\{item\.href\}[\s\S]*?getTravelServicesHubCopy\(locale\)\.overview/);
   assert.doesNotMatch(menu, /allServices|servicesAll/);
   // The highlight only glides once it is showing (no sweep in from the top).
   assert.match(css, /\.menuListWrap\[data-glide\] \.menuHighlight \{/);

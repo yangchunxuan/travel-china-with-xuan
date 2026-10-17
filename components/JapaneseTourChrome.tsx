@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { EditionMobileNav } from "./EditionMobileNav";
+import { HeaderNavMenu } from "./HeaderNavMenu";
+import { getCorporateTravelNavigation } from "../lib/corporateTravelNavigation";
 import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
 import { completeHeaderLanguagePaths, isEquivalentTourLanguagePath } from "../lib/headerLanguagePaths";
 import { spanishSitePagePathByEnglishPath, spanishTourPagePath, spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
@@ -68,6 +70,7 @@ export function JapaneseSiteHeader({
   selectionSlug?: string | null;
 }) {
   const selectedHref = useSelectedTourHref(selectionSlug);
+  const corporateNavigation = getCorporateTravelNavigation("ja");
   const englishPath = languagePaths.find((item) => item.lang === "en")?.path ?? "/";
   const englishTourSlug = /^\/tours\/([^/]+)\/$/.exec(englishPath)?.[1];
   const englishGuideId = /^\/guides\/([^/]+)\/$/.exec(englishPath)?.[1];
@@ -135,7 +138,7 @@ export function JapaneseSiteHeader({
       if (event.key !== "Tab" || !header) return;
       const focusable = Array.from(
         header.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
-      ).filter((element) => element.getClientRects().length > 0);
+      ).filter((element) => element.getClientRects().length > 0 && !element.closest("[inert]"));
       const first = focusable[0];
       const last = focusable.at(-1);
       if (!first || !last) return;
@@ -222,6 +225,15 @@ export function JapaneseSiteHeader({
                 {item.label}
               </a>
             ))}
+            <HeaderNavMenu
+              item={corporateNavigation.item}
+              entries={corporateNavigation.menu.entries}
+              toggleLabel={corporateNavigation.menu.toggle}
+              active={false}
+              ariaCurrent={undefined}
+              nativeNavigation
+              onNavigate={close}
+            />
           </nav>
 
           <div className={headerStyles.headerActions}>
@@ -261,6 +273,7 @@ export function JapaneseSiteHeader({
 
         <EditionMobileNav
           cta={{ href: ctaHref, label: "旅について相談する", onClick: openTourInquiry }}
+          disclosure={{ ...corporateNavigation.item, entries: corporateNavigation.menu.entries }}
           id="japanese-tour-mobile-navigation"
           label="モバイルメニュー"
           labelClassName={styles.mobileLabel}

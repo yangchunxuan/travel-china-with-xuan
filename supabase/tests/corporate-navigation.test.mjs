@@ -3,15 +3,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { getHomegroundNavigationModel } from "../../lib/homegroundNavigationModel.ts";
 
-test("English Services ends with the published company-travel entrance", () => {
-  const navigation = getHomegroundNavigationModel("en", "/");
-  const entries = navigation.menus.services.entries;
-  assert.deepEqual(entries.map((item) => item.id), [
-    "attraction-tickets", "english-guides", "private-car", "trip-support", "corporate-travel",
-  ]);
-  assert.equal(entries.at(-1).href, "/corporate-travel/");
-  assert.equal(entries.at(-1).label, "For Companies");
-  assert.equal(entries.at(-1).description, "Company trips, incentive travel and small meetings");
+test("company travel is independent of the four customer services", () => {
+  for (const locale of ["en", "zh", "ko"]) {
+    const navigation = getHomegroundNavigationModel(locale, locale === "en" ? "/" : `/${locale}/`);
+    assert.deepEqual(navigation.menus.services.entries.map((item) => item.id), [
+      "attraction-tickets", "english-guides", "private-car", "trip-support",
+    ]);
+  }
 });
 
 test("untranslated navigation does not invent localised company-travel pages", () => {
@@ -36,9 +34,13 @@ test("French, Spanish and German header adapters opt out of English-only entranc
   }
 });
 
-test("company travel is directly reachable from the English desktop header", async () => {
+test("company travel is a top-level desktop and mobile menu for every header edition", async () => {
   const header = await readFile(new URL("../../components/HomegroundHeader.tsx", import.meta.url), "utf8");
-  assert.match(header, /currentLanguage === "en" && \([\s\S]{0,420}href="\/corporate-travel\/"/);
-  assert.match(header, /corporateIsCurrent \? pathname === "\/corporate-travel\/" \? "page" : "location"/);
-  assert.match(header, /trackNavigationClick\("corporate-travel", "desktop-primary"\)/);
+  assert.match(header, /getCorporateTravelNavigation\(currentLanguage\)/);
+  assert.match(header, /item.id === "tours" \? \[item, corporateNavigation.item\]/);
+  assert.match(header, /entries=\{corporateNavigation.menu.entries\}/);
+  assert.doesNotMatch(header, /currentLanguage === "en" && \([\s\S]{0,420}href="\/corporate-travel\/"/);
+  const japanese = await readFile(new URL("../../components/JapaneseTourChrome.tsx", import.meta.url), "utf8");
+  assert.match(japanese, /getCorporateTravelNavigation\("ja"\)/);
+  assert.match(japanese, /disclosure=\{\{ \.\.\.corporateNavigation.item, entries: corporateNavigation.menu.entries \}\}/);
 });
