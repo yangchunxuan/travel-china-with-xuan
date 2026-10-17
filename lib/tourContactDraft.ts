@@ -1,4 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { smallGroupInquiryText, type SmallGroupInquiryDetails } from "./smallGroupInquiry.ts";
 
 export const jiangnanTourSlugs = [
   "shanghai-suzhou-5-day-private-tour",
@@ -35,6 +37,7 @@ export interface TourContactDraft {
   referralSource?: ReferralSource;
   requestedTravelers?: number | null;
   stayPreference?: ZhangjiajieStayPreference | null;
+  smallGroup?: SmallGroupInquiryDetails;
 }
 
 /** Unpriced group requests are kept separate from published 2/4-person price tiers. */
@@ -65,8 +68,8 @@ export function tourContactDraftText(locale: HomegroundLocale, draft?: TourConta
   const sourceLabel = source === "friend" || source === "other" ? jiangnanContactCopy[locale][source] : source;
   const stayIndex = zhangjiajieStayPreferences.findIndex(value => value === draft.stayPreference);
   return [
-    `${copy.date}: ${draft.travelDate || copy.undecided}`,
-    draft.requestedTravelers != null ? `${copy.group}: ${draft.requestedTravelers}` : "",
+    draft.smallGroup ? smallGroupInquiryText(locale, draft.smallGroup, draft.requestedTravelers) : `${copy.date}: ${draft.travelDate || copy.undecided}`,
+    !draft.smallGroup && draft.requestedTravelers != null ? `${copy.group}: ${draft.requestedTravelers}` : "",
     stayIndex >= 0 ? `${stayPreferenceCopy[locale].label}: ${stayPreferenceCopy[locale].names[stayIndex]}` : "",
     draft.note.trim() ? `${copy.note}: ${draft.note.trim()}` : "",
     sourceLabel ? `${copy.source}: ${sourceLabel}` : "",

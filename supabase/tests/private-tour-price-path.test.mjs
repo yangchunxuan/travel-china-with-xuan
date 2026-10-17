@@ -12,7 +12,7 @@ import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
 import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
-import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../../lib/homepagePrivateTourCatalog.ts";
+import { getHomepagePrivateTourEntryHref, getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../../lib/homepagePrivateTourCatalog.ts";
 import { getHomepageProductShowcaseCopy } from "../../lib/homepageProductShowcaseI18n.ts";
 import { privateTourHubPaths } from "../../lib/privateTourHubI18n.ts";
 import * as cardImages from "../../components/privateTourCardImages.ts";
@@ -26,6 +26,7 @@ import { splitJapanesePhrases } from "../../lib/japanesePhrases.ts";
 
 const locales = ["en", "zh", "ko"];
 const beijingSlug = "beijing-highlights-5-day-private-tour";
+const fiveCitySlug = "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour";
 const require = createRequire(import.meta.url);
 const readSource = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 const classicPricing = JSON.parse(await readSource("content/product-previews/zhangjiajie-4-day-private-tour/pricing.json"));
@@ -119,7 +120,18 @@ test("all three-language catalog cards quote the lowest row but open the smalles
         assert.equal(item.href, published.href, "quote-only tours open without a priced selection");
         continue;
       }
-      assert.equal(item.href, published.startingPriceHref);
+      const homepageSelection = inquiry.getPrivateTourDetailSelectionFromSearchParams(
+        item.id, new URL(item.href, "https://homegroundchina.com").searchParams,
+      );
+      if (item.id === fiveCitySlug) {
+        assert.deepEqual(homepageSelection, { packageId: "standard-guided", travelers: 8 });
+        assert.deepEqual(homepageSelection, item.startingPrice.selection);
+        const product = localizePrivateTourProduct(privateTourProducts.find((candidate) => candidate.slug === item.id), locale);
+        const selectedRow = product.packages.find((option) => option.id === homepageSelection.packageId).rows.find((row) => row.travelers === homepageSelection.travelers);
+        assert.equal(selectedRow.formatted, item.startingPrice.formatted, `${locale}: homepage and landing price match`);
+      } else {
+        assert.equal(item.href, published.startingPriceHref, `${locale}:${item.id} keeps its existing entry`);
+      }
       assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
       assert.deepEqual(item.startingPrice.selection, published.startingPrice.selection);
@@ -422,7 +434,7 @@ test("the actual Japanese homepage retains all six routes and renders the Jiangn
     } },
     "../../../lib/japaneseHomeCopy": { japaneseHomeCopy },
     "../../../lib/japaneseSite": { japaneseSite: { home: "/ja/" }, japaneseAlternates: () => ({}), buildJapaneseSocialMetadata: () => ({}) },
-    "../../../lib/homepagePrivateTourCatalog": { homepagePrivateTourSlugs },
+    "../../../lib/homepagePrivateTourCatalog": { getHomepagePrivateTourEntryHref, homepagePrivateTourSlugs },
     "../../../lib/homegroundStudioI18n": { getHomepageTeamFaces: () => [] },
     "../../../lib/localizeJapanesePrivateTourProduct": { localizeJapanesePrivateTourProduct: (product) => fixtures.get(product.slug).tour },
     "../../../lib/privateTourProducts": { getPrivateTourProduct: (slug) => privateTourProducts.find((product) => product.slug === slug) },
@@ -440,7 +452,19 @@ test("the actual Japanese homepage retains all six routes and renders the Jiangn
     const price = nodes(row).find((node) => attr(node, "class") === "cardPrice");
     assert.equal(product.title, fixture.tour.title);
     assert.equal(product.appeal, fixture.tour.lede);
-    assert.equal(attr(link, "href"), fixture.href);
+    if (product.id === fiveCitySlug) {
+      const address = new URL(attr(link, "href"), "https://homegroundchina.com");
+      const selected = inquiry.getPrivateTourDetailSelectionFromSearchParams(product.id, address.searchParams);
+      assert.deepEqual(selected, { packageId: "standard-guided", travelers: 8 });
+      assert.equal(address.pathname, fixture.tour.path);
+      assert.deepEqual(normalize(product.startingPrice.selection), selected);
+      const selectedRow = fixture.tour.packages.find((option) => option.id === selected.packageId).rows.find((row) => row.travelers === selected.travelers);
+      assert.equal(selectedRow.formatted, product.startingPrice.formatted, "Japanese homepage and landing price match");
+      assert.ok(text(price).includes(selectedRow.formatted));
+      assert.equal(new URL(fixture.href, "https://homegroundchina.com").searchParams.get("travelers"), "4", "Japanese catalog entry retains its existing selection");
+    } else {
+      assert.equal(attr(link, "href"), fixture.href, `${product.id}: Japanese homepage entry is unchanged`);
+    }
     assert.equal(product.image.src, fixture.tour.heroImage.src);
     if (!getPrivateTourStartingPrice(fixture.tour)) {
       assert.equal(product.startingPrice, null);

@@ -46,7 +46,13 @@ test('French contact labels agree with the catalogue, including winter and no-gu
         const context=getPrivateTourInquiryContext(product.slug,'en',{packageId:pkg.id,travelers:row.travelers});
         assert.ok(context,`${product.slug}/${pkg.id}/${row.travelers}`);
         assert.equal(frenchContactEdition.tourName(context),fr.title);
-        assert.equal(frenchContactEdition.selectionLabel(context),`${pkg.label} · ${row.travelers} voyageurs`);
+        if (product.slug === 'beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour' && pkg.id === 'small-group-departure') {
+          assert.equal(row.travelers, 2, 'published tier remains the twin-share price basis');
+          assert.equal(frenchContactEdition.selectionLabel(context), `${pkg.label} · tarif en chambre partagée à deux`);
+          assert.doesNotMatch(frenchContactEdition.selectionLabel(context), /· 2 voyageurs/, 'the price basis is not the actual travelling party');
+        } else {
+          assert.equal(frenchContactEdition.selectionLabel(context),`${pkg.label} · ${row.travelers} voyageurs`);
+        }
         const message=frenchContactEdition.messageText(context,undefined,{travelDate:'2027-04-03',note:'Guide francophone, si disponible'});
         assert.ok(message.includes(fr.path)); assert.match(message,/supplément sur devis/);
       }
