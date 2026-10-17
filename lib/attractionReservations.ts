@@ -37,9 +37,9 @@ export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
  * attraction, and never quotes operators' statements about third parties;
  * those facts stay in the source guides. A request sent and paid at least
  * ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS days before the visit is a
- * guaranteed booking at every offered attraction except one marked
- * `bestEffort` (owner decision, 2026-10-10): there Homeground tries but does
- * not guarantee, and refunds the fee and ticket money in full if it misses.
+ * guaranteed booking at every offered attraction. The owner removed the
+ * attraction-specific exclusion on 2026-10-18. If a booking fails,
+ * Homeground refunds the service fee and ticket money in full.
  */
 
 /**
@@ -99,13 +99,6 @@ export interface AttractionReservationRule {
    * beside every offer of it outside the rules table (the guide CTA).
    */
   readonly disclosure?: Localized;
-  /**
-   * Excluded from the booking guarantee: the official supply or its checks
-   * (a tight daily cap, per-traveller face verification) mean Homeground can
-   * only try. Tagged in the rules table, the form and the guide CTA; a miss
-   * refunds the service fee and ticket money in full.
-   */
-  readonly bestEffort?: true;
   /** The source guide's check date; null exactly when `source` is null. */
   readonly verifiedAt: string | null;
   readonly source: GuideId | null;
@@ -694,7 +687,6 @@ export const attractionReservationRules = [
     id: "hanging-temple",
     city: "datong",
     status: "offered",
-    bestEffort: true,
     name: { en: "Hanging Temple (climbing ticket)", zh: "悬空寺（登临票）", ko: "현공사(등반 티켓)" },
     channels: ["wechat-mini-program", "ticket-window"],
     passportAccepted: null,
@@ -719,9 +711,9 @@ export const attractionReservationRules = [
       ko: "2026년 4월 1일부터 등반 티켓은 하루 2,475장만 팔리며 그중 온라인이 1,200장입니다. 2026년 6월 2일부터 온라인 예매는 여행자마다 얼굴 인증을 요구하며, 공지에는 외국 여권 절차가 나와 있지 않습니다. 2024년의 외국인 특별 창구는 2026년 공지에 언급이 없습니다. 공식 채널에서 본인 명의로 시도하고 결과를 알려 드리며, 되파는 표는 사지 않습니다.",
     },
     disclosure: {
-      en: "Best effort, not guaranteed: climbing tickets are capped at 2,475 a day and the official system asks each traveller to pass face verification. If we cannot secure yours, the service fee and ticket money are refunded in full. The CNY 15 entry ticket for the view from below needs no booking.",
-      zh: "尽力预约，不作保证：登临票每天限 2,475 张，官方系统要求每位游客人脸核验。如未能约到，全额退还服务费和门票款。只在下面看的 15 元入园票无需预约。",
-      ko: "최선 시도, 보장하지 않음: 등반 티켓은 하루 2,475장으로 제한되고 공식 시스템이 여행자마다 얼굴 인증을 요구합니다. 예약하지 못하면 수수료와 입장료를 전액 환불합니다. 아래에서 보는 15위안 입장권은 예약이 필요 없습니다.",
+      en: "Climbing tickets are capped at 2,475 a day and the official system asks each traveller to pass face verification. If we cannot secure yours, the service fee and ticket money are refunded in full. The CNY 15 entry ticket for the view from below needs no booking.",
+      zh: "登临票每天限 2,475 张，官方系统要求每位游客人脸核验。如未能约到，全额退还服务费和门票款。只在下面看的 15 元入园票无需预约。",
+      ko: "등반 티켓은 하루 2,475장으로 제한되고 공식 시스템이 여행자마다 얼굴 인증을 요구합니다. 예약하지 못하면 수수료와 입장료를 전액 환불합니다. 아래에서 보는 15위안 입장권은 예약이 필요 없습니다.",
     },
     verifiedAt: "2026-10-10",
     source: "hanging-temple-datong",

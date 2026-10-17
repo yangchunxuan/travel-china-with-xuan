@@ -12,10 +12,10 @@ The screenshot cases include different input selections: phone summary views and
 
 The [policy regression tests](../../../supabase/tests/attraction-reservations-sales.test.mjs) check these requirements across all seven service editions:
 
-- The guarantee cutoff remains eight days and requires both the request and payment; best-effort attractions remain excluded.
+- The guarantee cutoff remains eight days and requires both the request and payment. The owner removed the attraction-specific exclusion on 18 October; all offered attractions use the same guarantee.
 - A failed guaranteed booking refunds the service fee and ticket money in full. A late request remains an attempt without a guarantee; failure refunds the service fee and ticket money not spent.
 - The base fee remains CNY 45 per traveller per attraction, with tickets at official face value and no markup; payment follows written confirmation.
-- Issued-ticket service fees retain their non-refundable condition. Best-effort failure retains the full refund of both amounts.
+- Issued-ticket service fees retain their non-refundable condition. Unsuccessful guaranteed reservations retain the full refund of both amounts.
 - Draft messages remain requests to book and retain selected attractions, visit dates, travellers and notes. Existing fields, tracking event names, current-draft CTA behavior and focus return are covered.
 
 See the pull request validation notes for executed test results.

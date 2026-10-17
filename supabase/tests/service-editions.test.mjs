@@ -176,7 +176,7 @@ for (const language of languages) {
     }
   });
 
-  test(`${language}: reservation selection charges CNY 45 per person per attraction and carries best-effort scope into the draft`, () => {
+  test(`${language}: reservation selection charges CNY 45 per person per attraction and keeps the common guarantee`, () => {
     const enquiryStub = function Enquiry() {};
     const pageLoad = loader({ 'components/AttractionReservationEnquiry.tsx': { AttractionReservationEnquiry: enquiryStub } });
     const { AttractionReservationsPage } = pageLoad('components/AttractionReservationsPage.tsx');
@@ -190,7 +190,8 @@ for (const language of languages) {
     assert.equal(props.attractions.some(item => item.id === 'shanghai-museum-east'), false, 'walk-in attraction must not incur a reservation fee');
     assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
     assert.match(copy.guarantee, /8/);
-    assert.match(copy.guarantee, language === 'ar' ? /باستثناء.*دون ضمان/ : language === 'de' ? /außer.*nicht garantiert/ : language === 'fr' ? /sauf.*sans garantie/ : /salvo.*sin garantía/);
+    const categoryException = language === 'ar' ? /باستثناء.*دون ضمان|خارج ضمان الحجز/ : language === 'de' ? /außer.*nicht garantiert|keine Reservierungsgarantie/ : language === 'fr' ? /sauf.*sans garantie|hors garantie/ : /salvo.*sin garantía|fuera de la garantía/;
+    assert.doesNotMatch(copy.guarantee, categoryException, 'no attraction category is excluded from the booking guarantee');
     assert.ok(copy.timingRows[2].body.includes(copy.guaranteeLate), 'the short-notice timing row retains the complete late policy');
     const timing = one(page, node => 'data-reservation-timing' in (node.props ?? {}), 'when to contact us');
     const timingRows = nodes(timing).filter(node => node.type === 'li');
@@ -218,8 +219,9 @@ for (const language of languages) {
     assert.equal(email.props['data-contact-card-direct'], true, 'email keeps the prepared reservation draft');
     assert.equal(new URL(email.props.href).searchParams.get('body'), body);
     const hanging = props.attractions.find(item => item.id === 'hanging-temple');
-    assert.ok(hanging.label.includes(copy.bestEffortTag));
-    assert.ok(body.includes(hanging.label), 'limited guarantee must survive the message handoff');
+    assert.equal(hanging.label, reservationCopy.getAttractionReservationEditionRule(reservations.getAttractionReservationRule('hanging-temple'), language).name, 'the attraction label has no separate no-guarantee tag');
+    assert.ok(body.includes(hanging.label), 'selected attraction must survive the message handoff');
+    assert.doesNotMatch(body, /محاولة حجز دون ضمان|Reservierungsversuch ohne Garantie|sans garantie de réservation|sin garantía de reserva/, 'draft adds no attraction-category exclusion');
     assert.ok(body.includes(props.attractions.find(item => item.id === 'forbidden-city').label));
     assert.match(body, /: 3(?:\n|$)/);
     assert.ok(body.endsWith(props.pageUrl));

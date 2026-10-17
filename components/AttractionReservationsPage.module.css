@@ -662,10 +662,6 @@
   color: #3d3b37;
 }
 
-.status[data-status="best-effort"] {
-  color: #6b4513;
-}
-
 .unknown {
   color: var(--muted);
 }

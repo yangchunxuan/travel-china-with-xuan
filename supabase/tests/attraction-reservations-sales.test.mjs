@@ -31,7 +31,6 @@ const policy = {
     unusedTicket: /ticket money not spent|unspent ticket money/iu,
     early: /at least/iu, late: /less than/iu, releasePassed: /release.*may have passed/iu, lateFullService: /service fee.*refunded in full|refund.*service fee.*in full/iu,
     faceValue: /face value.*no mark-up/isu,
-    bothAmounts: /both are refunded in full/iu,
     nonRefundable: /service fee.*not refundable/iu, writtenBeforePay: /pay only after.*written confirmation|paid.*after.*confirm in writing/iu,
     bookingIntent: /I'd like you to book/iu, noCompletedPurchase: /\bI(?:'ve| have) (?:already )?paid\b|my (?:booking|reservation) is confirmed/iu,
   },
@@ -40,7 +39,6 @@ const policy = {
     fullRefund: /全额退还/u, feeAndTicket: /服务费和门票款/u, try: /仍会尽力/u, noGuarantee: /不作保证/u,
     unusedTicket: /未使用的门票款/u, nonRefundable: /服务费不予退还/u, writtenBeforePay: /书面确认后才付款|书面确认后一起支付/u,
     early: /至少/u, late: /不足/u, releasePassed: /放票时间可能已过/u, lateFullService: /全额退还该景点的服务费/u, faceValue: /票面价.*不加价/su,
-    bothAmounts: /两(?:者|项费用)全额退还/u,
     bookingIntent: /想请你们安排/u, noCompletedPurchase: /我(?:已|已经)(?:经)?(?:付款|支付)|预约已确认/u,
   },
   ko: {
@@ -48,7 +46,6 @@ const policy = {
     fullRefund: /전액.*환불/u, feeAndTicket: /수수료와 입장료/u, try: /시도/u, noGuarantee: /보장하지/u,
     unusedTicket: /사용하지 않은 입장료/u, nonRefundable: /수수료는 환불되지/u, writtenBeforePay: /서면 확인.*뒤에만 결제|서면 확인 후.*결제/u,
     early: /최소/u, late: /미만/u, releasePassed: /예약 오픈이 이미 지났/u, lateFullService: /수수료 전액/u, faceValue: /공식 가격 그대로.*추가 금액 없음/su,
-    bothAmounts: /둘 다 전액 환불/u,
     bookingIntent: /입장권 예약을 부탁/u, noCompletedPurchase: /결제(?:를)? (?:완료했|했습니다)|예약이 확정되었/u,
   },
   fr: {
@@ -56,7 +53,6 @@ const policy = {
     fullRefund: /rembours.*intégralement|intégralement.*rembours/iu, feeAndTicket: /frais de service et le montant du billet/iu,
     try: /tentons|essayons/iu, noGuarantee: /sans.*garant/iu, unusedTicket: /billets?.*(?:non utilisé|pas été utilisé)/iu,
     early: /^au moins/iu, late: /^moins de/iu, releasePassed: /mise en vente.*déjà être passée/iu, lateFullService: /frais de service.*remboursés intégralement/iu, faceValue: /(?:tarif|prix) officiel.*sans majoration/isu,
-    bothAmounts: /deux montants.*intégralement|intégralement.*deux montants/iu,
     nonRefundable: /frais de service.*ne sont (?:alors )?(?:plus|pas) remboursables/iu,
     writtenBeforePay: /payez.*après.*confirmation écrite|payés.*après.*confirmation écrite/iu,
     bookingIntent: /souhaite.*réserv|voudrais.*réserv/iu, noCompletedPurchase: /j’ai déjà payé|ma réservation est confirmée/iu,
@@ -66,7 +62,6 @@ const policy = {
     fullRefund: /devolvemos.*íntegramente|reembols.*íntegramente/iu, feeAndTicket: /gastos de gestión y el importe de la entrada/iu,
     try: /intentamos/iu, noGuarantee: /sin.*garant|no.*garant/iu, unusedTicket: /entradas?.*no.*utilizad/iu,
     early: /^al menos/iu, late: /^menos de/iu, releasePassed: /venta.*puede haber abierto ya/iu, lateFullService: /devolvemos íntegramente los gastos de gestión/iu, faceValue: /precio oficial.*sin recargo/isu,
-    bothAmounts: /ambos importes.*íntegramente|íntegramente.*ambos importes/iu,
     nonRefundable: /gastos de gestión.*no (?:son|serán).*reembolsables/iu,
     writtenBeforePay: /pagas.*después.*confirmación escrita|pagan.*después.*confirmación escrita/iu,
     bookingIntent: /quiero.*reserv|gustaría.*reserv/iu, noCompletedPurchase: /ya he pagado|mi reserva está confirmada/iu,
@@ -76,7 +71,6 @@ const policy = {
     fullRefund: /erstatten.*vollständig/iu, feeAndTicket: /Servicegebühr und den Ticketbetrag/iu,
     try: /versuchen/iu, noGuarantee: /ohne Garantie/iu, unusedTicket: /nicht verwendete Ticketbeträge/iu,
     early: /^mindestens/iu, late: /^weniger als/iu, releasePassed: /bereits freigegeben worden sein/iu, lateFullService: /Servicegebühr.*vollständig/iu, faceValue: /offiziellen Preis.*ohne Aufschlag/isu,
-    bothAmounts: /beide Beträge.*vollständig|vollständig.*beide Beträge/iu,
     nonRefundable: /Servicegebühr.*nicht mehr erstattet/iu, writtenBeforePay: /zahlen.*nach.*schriftlichen Bestätigung|bezahlt.*nach.*schriftlichen Bestätigung/iu,
     bookingIntent: /möchte.*buch|möchte.*reserv/iu, noCompletedPurchase: /ich habe bereits bezahlt|meine Reservierung ist bestätigt/iu,
   },
@@ -85,7 +79,6 @@ const policy = {
     fullRefund: /نعيد.*بالكامل/u, feeAndTicket: /رسوم الخدمة وقيمة التذكرة/u,
     try: /نحاول/u, noGuarantee: /دون ضمان/u, unusedTicket: /تذاكر لم تُستخدم/u,
     early: /بما لا يقل عن/u, late: /بأقل من/u, releasePassed: /طرح التذاكر.*قد.*مضى/u, lateFullService: /رسوم الخدمة.*بالكامل/u, faceValue: /السعر الرسمي.*دون زيادة/su,
-    bothAmounts: /المبلغين بالكامل/u,
     nonRefundable: /لا تُسترد رسوم الخدمة/u, writtenBeforePay: /تدفع بعد التأكيد الكتابي|تُدفع.*بعد التأكيد الكتابي/u,
     bookingIntent: /أريد.*حجز/u, noCompletedPurchase: /لقد دفعت بالفعل|تم تأكيد حجزي/u,
   },
@@ -138,15 +131,18 @@ test("all seven editions sell an early booking with three clear timing choices a
     assert.match(copy.heroUrgency, /7(?!\d)/u, `${locale}: Forbidden City release is seven days`);
     assert.match(copy.heroUrgency, /20(?::00|\s*h)/u, `${locale}: Forbidden City release time`);
     assert.ok(copy.heroUrgency.includes(String(days)), `${locale}: urgency includes guarantee cutoff`);
-    assert.match(copy.heroUrgency, p.exception, `${locale}: hero guarantee excludes best-effort attractions`);
+    assert.doesNotMatch(copy.heroUrgency, p.exception, `${locale}: hero uses the common guarantee without attraction exclusions`);
     assert.equal(copy.timingRows.length, 3, `${locale}: three contact timings`);
     assert.match(copy.timingRows[0].title, p.asap, `${locale}: contact as soon as dates are fixed`);
     for (const index of [1, 2]) assert.ok(copy.timingRows[index].title.includes(String(days)), `${locale}: row ${index + 1} cutoff`);
     assert.match(copy.timingRows[1].title, p.early, `${locale}: request at or before the guarantee cutoff`);
     assert.match(copy.timingRows[2].title, p.late, `${locale}: shorter lead time is a separate choice`);
     const guaranteed = copy.timingRows[1].body;
-    for (const pattern of [p.requestAndPay, p.exception, p.fullRefund, p.feeAndTicket]) {
+    for (const pattern of [p.requestAndPay, p.fullRefund, p.feeAndTicket]) {
       assert.match(guaranteed, pattern, `${locale}: guaranteed row retains ${pattern}`);
+    }
+    for (const text of [guaranteed, copy.guarantee, copy.metadata.description]) {
+      assert.doesNotMatch(text, p.exception, `${locale}: no attraction category is excluded from the guarantee`);
     }
     const late = copy.timingRows[2].body;
     for (const pattern of [p.try, p.noGuarantee, p.lateFullService, p.unusedTicket, p.releasePassed]) {
@@ -200,17 +196,16 @@ test("changing the guarantee constant changes every edition's cutoff without cha
   }
 });
 
-test("sales copy keeps the CNY 45 fee, face-value tickets and full best-effort refunds", () => {
+test("sales copy keeps the CNY 45 fee, face-value tickets and full guaranteed-booking refunds", () => {
   assert.equal(attractionReservationServiceFeeCny, 45);
   for (const locale of locales) {
     const copy = copyFor(locale);
     assert.ok(copy.heroFacts[0].value.includes("{fee}"), `${locale}: fee stays data driven`);
     assert.ok(copy.pricing[0].title.includes("{fee}"), `${locale}: price uses the existing fee`);
-    assert.ok(copy.guideCta.bodyBestEffort.includes("{fee}"), `${locale}: best-effort fee unchanged`);
     assert.match([copy.heroFacts[1].value, copy.pricing[1].title, copy.pricing[1].body].join(" "), policy[locale].faceValue, `${locale}: tickets stay at face value with no mark-up`);
-    assert.match(copy.guideCta.bodyBestEffort, policy[locale].fullRefund, `${locale}: best-effort failure refunds both amounts in full`);
-    assert.match(copy.guideCta.bodyBestEffort, policy[locale].bothAmounts, `${locale}: both service fee and ticket money are refunded`);
-    assert.doesNotMatch(copy.guideCta.bodyBestEffort, policy[locale].unusedTicket, `${locale}: best-effort refund is not limited to unused tickets`);
+    assert.match(copy.guarantee, policy[locale].fullRefund, `${locale}: guaranteed failure refunds both amounts in full`);
+    assert.match(copy.guarantee, policy[locale].feeAndTicket, `${locale}: both service fee and ticket money are refunded`);
+    assert.doesNotMatch(copy.guarantee, policy[locale].unusedTicket, `${locale}: guaranteed refund is not limited to unused tickets`);
     if (!primaryLocales.has(locale)) assert.match(formatAttractionReservationEditionMoney(attractionReservationServiceFeeCny, locale), /45/u, `${locale}: same base fee`);
   }
 });

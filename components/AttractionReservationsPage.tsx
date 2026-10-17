@@ -192,8 +192,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
   const enquiryAttractions = getBookableAttractionReservationRules().map((rule) => {
     const name = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale).name : rule.name[locale];
     return { id: rule.id, city: rule.city,
-      // A best-effort attraction says so on its chip and in the message we receive.
-      label: rule.bestEffort ? `${name} · ${copy.bestEffortTag}` : name,
+      label: name,
     };
   });
   const enquiryCities = attractionReservationCityIds.map((cityId) => ({ id: cityId, label: copy.cities[cityId] }));
@@ -407,7 +406,6 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                               <th scope="row">
                                 {ruleName}
                                 {rule.status !== "offered" ? <span className={styles.status} data-status={rule.status}>{copy.status[rule.status]}</span> : null}
-                                {rule.bestEffort ? <span className={styles.status} data-status="best-effort">{copy.bestEffortTag}</span> : null}
                                 {/* Back to the form with this attraction ticked (AttractionReservationEnquiry listens). */}
                                 {bookableIds.has(rule.id)
                                   ? <a className={styles.reserveLink} data-reserve-attraction={rule.id} href={`#${reservationFormAnchor}`}>{copy.reserveThis}<span className={styles.visuallyHidden}>{colon}{ruleName}</span><ArrowRight aria-hidden="true" size={14} /></a>

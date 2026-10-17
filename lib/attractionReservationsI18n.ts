@@ -25,9 +25,9 @@ const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 
 /** The guarantee as published, one sentence pair per language. */
 const guarantee = {
-  en: `Guaranteed booking: send your request and payment at least ${days} days before your visit and we guarantee the reservation, except at an attraction marked “best effort”. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
-  zh: `预约保证：在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到（标注“尽力预约”的景点除外）；万一没约到，全额退还该景点的服务费和门票款。`,
-  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다(‘최선 시도’로 표시된 관광지는 제외). 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
+  en: `Guaranteed booking: send your request and payment at least ${days} days before your visit and we guarantee the reservation. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
+  zh: `预约保证：在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
+  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
 } as const satisfies Record<HomegroundLocale, string>;
 
 /** What happens to a request or payment made later than the guarantee lead time. */
@@ -154,8 +154,6 @@ export interface AttractionReservationCopy {
     verified: string;
   };
   status: Record<AttractionReservationStatus, string>;
-  /** Tag on an attraction outside the booking guarantee. */
-  bestEffortTag: string;
   channel: Record<AttractionReservationChannelType, string>;
   cities: Record<AttractionReservationCityId, string>;
   unknown: string;
@@ -187,8 +185,6 @@ export interface AttractionReservationCopy {
     body: string;
     /** For an attraction whose passport handling online is not confirmed. */
     bodyPassportUnchecked: string;
-    /** For an attraction outside the booking guarantee. */
-    bodyBestEffort: string;
     action: string;
   };
   hubLink: string;
@@ -210,7 +206,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "Keep your China itinerary on track. We book the Forbidden City, museums and other attractions in your own passport name.",
     heroPain: "No Chinese phone number, no WeChat, no racing the 20:00 release.",
-    heroUrgency: `Book as soon as your dates are set. The Forbidden City opens tickets only 7 days ahead, at 20:00 China time, and popular dates go fast. Contact us less than a week before and tickets for your day may already be gone. For our booking guarantee, request and pay at least ${days} days ahead; attractions marked “best effort” are excluded.`,
+    heroUrgency: `Book as soon as your dates are set. The Forbidden City opens tickets only 7 days ahead, at 20:00 China time, and popular dates go fast. Contact us less than a week before and tickets for your day may already be gone. For our booking guarantee, request and pay at least ${days} days ahead.`,
     heroFacts: [
       { label: "Service fee", value: "{fee} per person per attraction" },
       { label: "Tickets", value: "Official face value, no mark-up" },
@@ -292,7 +288,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "We can book",
       "not-needed": "No booking needed",
     },
-    bestEffortTag: "Best effort, not guaranteed",
     channel: {
       "official-website": "Official website",
       wechat: "Official WeChat account",
@@ -377,7 +372,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       feeUnit: "per person, plus the official ticket price",
       body: `Send your dates before tickets open. We book in your own passport name and confirm the details in writing before you pay. Request and pay at least ${days} days ahead for a guaranteed booking.`,
       bodyPassportUnchecked: `Send your dates early. We check passport acceptance and the booking rule, then confirm in writing before you pay. Request and pay at least ${days} days ahead for a guaranteed booking.`,
-      bodyBestEffort: `Send your dates early so we can check this best-effort booking. It is not guaranteed. You pay {fee} per person plus face-value tickets after written confirmation; we try in your own name through the attraction's channel. If we cannot book it, both are refunded in full.`,
       action: "Send us your dates",
     },
     hubLink: "Attraction reservations in {city}",
@@ -386,7 +380,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "外国游客代预约故宫、兵马俑与博物馆门票",
       description:
-        `中国难约的景点门票，Homeground 用你本人的护照实名预约。每人每个景点服务费 {fee}，另付票面价门票。在参观日前至少 ${days} 天提交需求并付款，即享预约保证，标注“尽力预约”的景点除外。`,
+        `中国难约的景点门票，Homeground 用你本人的护照实名预约。每人每个景点服务费 {fee}，另付票面价门票。在参观日前至少 ${days} 天提交需求并付款，即享预约保证。`,
     },
     breadcrumb: "当前位置",
     home: "首页",
@@ -397,7 +391,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "让中国行程按计划走。故宫、博物馆和其他景点，我们用你本人的护照实名预约。",
     heroPain: "不用中国手机号，不用微信，也不用守着 20:00 放票。",
-    heroUrgency: `日期一定就来订。故宫只提前 7 天、北京时间 20:00 放票，热门日期很快就没了。离参观不到一周才找我们，你那天的票可能已经没有了。想享受预约保证，请在参观日前至少 ${days} 天提交需求并完成付款，标注“尽力预约”的景点除外。`,
+    heroUrgency: `日期一定就来订。故宫只提前 7 天、北京时间 20:00 放票，热门日期很快就没了。离参观不到一周才找我们，你那天的票可能已经没有了。想享受预约保证，请在参观日前至少 ${days} 天提交需求并完成付款。`,
     heroFacts: [
       { label: "服务费", value: "每人每个景点 {fee}" },
       { label: "门票", value: "按官方票面价，不加价" },
@@ -479,7 +473,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "可代预约",
       "not-needed": "无需预约",
     },
-    bestEffortTag: "尽力预约，不作保证",
     channel: {
       "official-website": "官网",
       wechat: "官方微信公众号",
@@ -564,7 +557,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       feeUnit: "/人，另付官方票价",
       body: `放票前把日期发给我们。我们用你本人的护照实名预约，付款前书面确认。参观日前至少 ${days} 天提交需求并付款，保证约到。`,
       bodyPassportUnchecked: `尽早把日期发给我们。我们核实护照能否使用及预约规则，付款前书面确认。参观日前至少 ${days} 天提交需求并付款，保证约到。`,
-      bodyBestEffort: "尽早告诉我们日期，先核实这项尽力预约。此项不作保证，书面确认后支付每人 {fee} 服务费及票面价门票；我们通过景点自己的渠道，用你本人的姓名尝试预约。未能约到，两项费用全额退还。",
       action: "告诉我们参观日期",
     },
     hubLink: "{city}景点代预约",
@@ -573,7 +565,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "외국인 자금성·병마용·중국 박물관 예약 대행",
       description:
-        `예약하기 까다로운 중국 관광지 입장권을 본인 여권 실명으로 예약해 드립니다. 관광지당 1인 {fee}와 입장권 정가. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 최선 시도 관광지는 제외됩니다.`,
+        `예약하기 까다로운 중국 관광지 입장권을 본인 여권 실명으로 예약해 드립니다. 관광지당 1인 {fee}와 입장권 정가. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
     },
     breadcrumb: "현재 위치",
     home: "홈",
@@ -584,7 +576,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "중국 여행을 계획대로 즐기세요. 자금성, 박물관과 다른 관광지 입장권을 여행자 본인의 여권 실명으로 예약해 드립니다.",
     heroPain: "중국 전화번호도, 위챗도, 20:00 오픈 시간에 맞춰 기다릴 필요도 없습니다.",
-    heroUrgency: `날짜가 정해지면 바로 예약을 맡겨 주세요. 자금성은 방문 7일 전 중국 시간 20:00에 예약이 열리고, 인기 날짜는 빠르게 마감됩니다. 방문까지 일주일도 남지 않았을 때 연락하시면 그날 입장권이 이미 없을 수 있습니다. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 요청과 결제를 마쳐 주세요. ‘최선 시도’로 표시된 관광지는 제외됩니다.`,
+    heroUrgency: `날짜가 정해지면 바로 예약을 맡겨 주세요. 자금성은 방문 7일 전 중국 시간 20:00에 예약이 열리고, 인기 날짜는 빠르게 마감됩니다. 방문까지 일주일도 남지 않았을 때 연락하시면 그날 입장권이 이미 없을 수 있습니다. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 요청과 결제를 마쳐 주세요.`,
     heroFacts: [
       { label: "수수료", value: "관광지당 1인 {fee}" },
       { label: "입장료", value: "공식 가격 그대로, 추가 금액 없음" },
@@ -666,7 +658,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       offered: "예약 가능",
       "not-needed": "예약 불필요",
     },
-    bestEffortTag: "최선 시도, 보장 안 됨",
     channel: {
       "official-website": "공식 웹사이트",
       wechat: "공식 위챗 계정",
@@ -754,7 +745,6 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       feeUnit: "1인당 · 공식 입장료 별도",
       body: `예약이 열리기 전에 날짜를 보내 주세요. 본인 여권 실명으로 예약하며, 결제 전에 서면으로 확인합니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
       bodyPassportUnchecked: `날짜를 일찍 보내 주세요. 여권 사용 여부와 예약 규칙을 확인하고, 결제 전에 서면으로 안내합니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
-      bodyBestEffort: "날짜를 일찍 보내 주시면 이 최선 시도 예약을 확인합니다. 예약은 보장되지 않습니다. 서면 확인 후 1인 {fee} 수수료와 입장권 정가를 결제하며, 관광지 예약 채널에서 본인 이름으로 시도합니다. 예약하지 못하면 둘 다 전액 환불합니다.",
       action: "방문 날짜 보내기",
     },
     hubLink: "{city} 관광지 예약 대행",

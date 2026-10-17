@@ -1,5 +1,7 @@
 # Attraction reservation sales revision — visual review
 
+**18 October owner revision:** the attraction-specific “best effort” exclusion has been removed from all service editions and current terms. [Review the updated screenshots and validation](owner-revision-20261018/README.md). The original 17 October gallery below is retained as dated review history; its exception wording is superseded.
+
 Browser captures of the baseline and revised local preview on 17 October 2026.
 
 Revision: baseline: `aee6968f` · after: `6ec804b1` · navigation: `Main comparison pages: pre-integration. Revised menu overlays: integration 23ac0bd8.` · branch: `codex/attraction-reservations-sales-20261017`.

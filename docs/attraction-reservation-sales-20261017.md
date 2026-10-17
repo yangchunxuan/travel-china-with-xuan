@@ -1,5 +1,11 @@
 # Attraction reservation sales revision — owner review
 
+## Owner revision — 18 October 2026
+
+The owner has removed the attraction-specific “best effort” exclusion. All seven service editions, current terms/refund copy, attraction labels, enquiry drafts and guide CTAs now use the common advance-booking guarantee. This supersedes the exclusion retained in the initial 17 October revision. Historical accepted terms are unchanged. The eight-day request-and-payment cutoff, short-notice rule, fees, full refunds and source-backed attraction facts remain.
+
+The updated production build, TypeScript checks and 53 focused reservation/service-edition tests pass. The Chinese preview was refreshed and checked at 1366×900 and 390×844 without horizontal overflow. [Updated screenshots](review/attraction-reservations-sales-20261017/owner-revision-20261018/README.md) supersede the initial gallery for this condition.
+
 The reservation service now leads with the visit the traveller wants, the booking work Homeground handles, and the reason to contact us before tickets open. English, Chinese, Korean, Spanish, French, German and Arabic use the same commercial meaning in their existing local voices. The Japanese services hub explicitly links to the English reservation detail page.
 
 ## What changed
@@ -11,7 +17,7 @@ The reservation service now leads with the visit the traveller wants, the bookin
 
 ## Commercial rules retained
 
-The base service fee is CNY 45 per person per attraction, plus the ticket's face value. Existing USD and KRW display conversions remain. Payment follows written confirmation. The guarantee requires both the request and payment at least `ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS` before the relevant visit; the constant remains 8. Best-effort attractions remain excluded. Guaranteed failures, late-request refunds, issued-ticket cancellation rules and passport handling have not been changed.
+The base service fee is CNY 45 per person per attraction, plus the ticket's face value. Existing USD and KRW display conversions remain. Payment follows written confirmation. The guarantee requires both the request and payment at least `ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS` before the relevant visit; the constant remains 8. The owner removed the attraction-specific exclusion on 18 October. Guaranteed failures, late-request refunds, issued-ticket cancellation rules and passport handling have not been changed.
 
 The museum release facts remain separate from the guarantee cutoff: the Forbidden City opens 7 days ahead at 20:00 China time and has no same-day tickets; the National Museum releases inventory daily at 17:00 up to 7 days ahead; Shaanxi History Museum opens 5 days ahead at 17:00. Unknown rules remain unknown in the data and are confirmed for the traveller's date.
 

@@ -47,7 +47,7 @@ export function GuideReservationCta({
       <p className={styles.label}>{copy.label}</p>
       <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
       <p className={styles.fee}><span className={styles.feeAmount}>{values.fee}</span> <span className={styles.feeUnit}>{copy.feeUnit}</span></p>
-      <p className={styles.body}>{fillReservationCopy(rule.bestEffort ? copy.bodyBestEffort : rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
+      <p className={styles.body}>{fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position={position}>
         {copy.action}
       </GuideCtaLink>
