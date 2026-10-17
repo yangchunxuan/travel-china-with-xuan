@@ -25,7 +25,7 @@ const frenchEntries: Readonly<Record<string, { label: string; description: strin
   'multi-city': { label: 'D’une ville à l’autre (en anglais)', description: 'Plusieurs grandes étapes dans un même voyage', href: '/tours/multi-city/' },
   regions: { label: 'Une région à la fois (en anglais)', description: 'Chine de l’Est, du Sud-Ouest, du Sud et autres régions', href: '/tours/regions/' },
   seasonal: { label: 'Cette saison (en anglais)', description: 'L’hiver dans le Nord-Est : Harbin et le mont Changbai', href: '/tours/seasonal/' },
-  'attraction-tickets': { label: 'Billets et réservations', description: 'Un créneau d’entrée réservé au nom de votre passeport', href: '/fr/services/china-attraction-reservations/' },
+  'attraction-tickets': { label: 'Billets et réservations', description: 'Vos billets, sans les démarches. Contactez-nous dès vos dates fixées.', href: '/fr/services/china-attraction-reservations/' },
   'english-guides': { label: 'Guides anglophones privés', description: 'Un guide à la journée dans quatre villes ; guide francophone en supplément', href: '/fr/services/private-english-speaking-guides/' },
   'private-car': { label: 'Voiture avec chauffeur', description: 'Transferts aéroport et journées en véhicule privé', href: '/fr/services/private-car-and-driver/' },
   'trip-support': { label: 'Organisation du séjour', description: 'Hôtels, transferts et coordination sur place', href: '/fr/services/full-trip-support/' },

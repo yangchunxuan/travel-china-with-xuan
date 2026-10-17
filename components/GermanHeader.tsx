@@ -25,7 +25,7 @@ const germanEntries: Readonly<Record<string, { label: string; description: strin
   'multi-city': { label: 'Rundreisen (Englisch)', description: 'Mehrere große Reiseziele in einer Reise verbinden', href: '/tours/multi-city/' },
   regions: { label: 'Regionen (Englisch)', description: 'Ostchina, Südwestchina, Südchina und weitere Regionen', href: '/tours/regions/' },
   seasonal: { label: 'Saisonreisen (Englisch)', description: 'Winter im Nordosten: Harbin und das Changbai-Gebirge', href: '/tours/seasonal/' },
-  'attraction-tickets': { label: 'Tickets und Reservierungen', description: 'Einlassreservierungen mit Ihren Passangaben', href: '/de/services/china-attraction-reservations/' },
+  'attraction-tickets': { label: 'Tickets und Reservierungen', description: 'Wir buchen Ihre Tickets. Melden Sie sich, sobald Ihre Termine feststehen.', href: '/de/services/china-attraction-reservations/' },
   'english-guides': { label: 'Private englischsprachige Reiseleitung', description: 'Private Tagesführungen auf Englisch in vier Städten', href: '/de/services/private-english-speaking-guides/' },
   'private-car': { label: 'Privatwagen mit Fahrer', description: 'Flughafentransfers und Tagesfahrten im Privatwagen', href: '/de/services/private-car-and-driver/' },
   'trip-support': { label: 'Reiseorganisation', description: 'Hotels, Transfers und Koordination vor Ort', href: '/de/services/full-trip-support/' },

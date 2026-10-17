@@ -157,7 +157,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     services: {
       "attraction-tickets": {
         label: "Attraction Tickets",
-        description: "Timed entry, booked in your passport name",
+        description: "Your tickets booked for you. Send your dates early.",
         pathSegment: "services/china-attraction-reservations/",
       },
       "english-guides": {
@@ -269,7 +269,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     services: {
       "attraction-tickets": {
         label: "景点代预约",
-        description: "官方渠道，用你本人护照实名预约",
+        description: "门票交给我们，日期一定就来订",
         pathSegment: "services/china-attraction-reservations/",
       },
       "english-guides": {
@@ -386,7 +386,7 @@ const navigationCopy: Record<HomegroundLocale, HomegroundNavigationModelCopy> = 
     services: {
       "attraction-tickets": {
         label: "관광지 예약 대행",
-        description: "공식 채널에서 본인 여권 실명으로 예약",
+        description: "티켓 예약은 저희에게. 날짜가 정해지면 바로 연락하세요.",
         pathSegment: "services/china-attraction-reservations/",
       },
       "english-guides": {

@@ -13,9 +13,9 @@ export function getPriorityTicketGuideEntry(guideId: string, locale: HomegroundL
   if (!target) return null;
   return {
     ...target,
-    title: `Need help booking ${target.attraction} tickets?`,
-    detail: "Send your visit dates and group size for a written quote.",
-    action: "Request ticket booking",
+    title: `${target.attraction} tickets, booked for you`,
+    detail: "Send your dates as soon as they are set. We prepare your booking before tickets open and confirm the price in writing before you pay.",
+    action: "Send your dates for booking",
     label: `${target.attraction} booking assistance`,
     close: "Close booking suggestion",
     href: `/services/china-attraction-reservations/?attraction=${target.attractionId}#reservation-enquiry`,

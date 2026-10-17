@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -133,22 +134,22 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "How Homeground can help"
+      "text": "Keep your visits and travel days working together"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "Sometimes the real problem is the day around the ticket: the museum slot, the hotel location and the train out don't line up. Tell us your dates, who is travelling and the places you want to see. We check which of our services fits each attraction, then confirm the scope, fee and backup options in writing before you pay."
+      "text": "Keep the museum visit, hotel and onward train on one workable plan. Send your dates, group size and must-see places as soon as they are set. We prepare the attraction bookings early and confirm the service, fee and backup options in writing before you pay."
     },
     {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "When a channel or group booking gets stuck",
-      "body": "Our reservation service covers the selected attractions listed on our current reservation service page, for USD 7 per person per attraction, plus the official ticket price with no mark-up. For attractions with their own route for foreign visitors, such as the National Museum or Sanxingdui, we start there and confirm what we can do before you pay.",
+      "title": "Your tickets, without the booking scramble",
+      "body": `Keep your visit plans on track. For the attractions on our service page, we handle the Chinese apps and passport-name booking on each site’s own system. Send your dates as soon as they are set so we can prepare before tickets open. The service costs CNY ${attractionReservationServiceFeeCny} per person per attraction, plus the face-value ticket. We confirm the booking details in writing before you pay.`,
       "link": {
         "href": "https://homegroundchina.com/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "See the service and terms"
+        "label": "Send your dates for booking"
       }
     },
     {

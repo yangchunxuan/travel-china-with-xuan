@@ -91,7 +91,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Forbidden City tickets in advance?",
-          answer: "Yes. No tickets are sold on the day, and each visitor books in their own name with the passport they will bring to the gate. Summer and holiday dates sell out fast, so be ready the moment tickets for your date are released. The rules change from time to time, and we can check them for your date and book for you.",
+          answer: "Yes. No tickets are sold on the day, and each visitor books in their own name with the passport they will bring to the gate. Summer and holiday dates sell out fast, so be ready the moment tickets for your date are released. Send your date as soon as it is set. We check the current rules and handle the booking for you.",
         },
         {
           question: "What is the best time to visit the Forbidden City?",
@@ -139,7 +139,7 @@ export const sightStories: Stories = {
         },
         {
           question: "故宫门票要提前预约吗？",
-          answer: "一定要，故宫不卖当天的票。每个人都要用自己的护照实名预约，入宫时带上预约用的那本护照。暑假和节假日的票很快约满，放票的时候就要准备好。规则时常调整，我们可以按你的日期核实并代为预约。",
+          answer: "一定要，故宫不卖当天的票。每个人都要用自己的护照实名预约，入宫时带上预约用的那本护照。暑假和节假日的票很快约满，放票的时候就要准备好。日期一定就发来，我们核实规则并代为预约。",
         },
         {
           question: "什么时候去故宫最好？",
@@ -187,7 +187,7 @@ export const sightStories: Stories = {
         },
         {
           question: "자금성 입장권은 미리 예약해야 하나요?",
-          answer: "네, 반드시 예약해야 합니다. 당일 표는 팔지 않습니다. 방문자마다 본인 여권 실명으로 예약하고, 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학과 연휴 날짜는 금방 매진되니 해당 날짜의 표가 풀리는 시점에 맞춰 준비하세요. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "네, 반드시 예약해야 합니다. 당일 표는 팔지 않습니다. 방문자마다 본인 여권 실명으로 예약하고, 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학과 연휴 날짜는 금방 매진되니 해당 날짜의 표가 풀리는 시점에 맞춰 준비하세요. 날짜가 정해지면 바로 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
         {
           question: "자금성은 언제 가는 게 가장 좋나요?",
@@ -245,7 +245,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Great Wall tickets in advance?",
-          answer: "Booking ahead is wise: peak-season weekends and holidays can sell out. At Mutianyu, the entry ticket, the shuttle bus and the cable car are bought separately. The rules change from time to time, and we can check them for your date and book for you.",
+          answer: "Booking ahead is wise: peak-season weekends and holidays can sell out. At Mutianyu, the entry ticket, the shuttle bus and the cable car are bought separately. Send your date as soon as it is set. We check the current rules and handle the booking for you.",
         },
       ],
     },
@@ -293,7 +293,7 @@ export const sightStories: Stories = {
         },
         {
           question: "去长城要提前订票吗？",
-          answer: "建议提前订好，旺季的周末和节假日可能订满。慕田峪的门票、景区摆渡车和缆车是分开买的。规则时常调整，我们可以按你的日期核实并代为预订。",
+          answer: "建议提前订好，旺季的周末和节假日可能订满。慕田峪的门票、景区摆渡车和缆车是分开买的。日期一定就发来，我们核实规则并代为预订。",
         },
       ],
     },
@@ -341,7 +341,7 @@ export const sightStories: Stories = {
         },
         {
           question: "만리장성 입장권은 미리 예약해야 하나요?",
-          answer: "미리 예약하는 것이 좋습니다. 성수기 주말과 연휴에는 매진될 수 있습니다. 무톈위는 입장권, 셔틀버스, 케이블카를 따로 삽니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "미리 예약하는 것이 좋습니다. 성수기 주말과 연휴에는 매진될 수 있습니다. 무톈위는 입장권, 셔틀버스, 케이블카를 따로 삽니다. 날짜가 정해지면 바로 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
       ],
     },
@@ -387,7 +387,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Which Temple of Heaven ticket should I buy?",
-          answer: "Buy the combined ticket on a first visit. The park-only ticket gets you into the park but not into the Hall of Prayer, the Echo Wall or the Circular Mound, the three sights most people come for. Tickets are booked in each visitor's own name with a passport, and we can check the rules for your date and book for you.",
+          answer: "Buy the combined ticket on a first visit. The park-only ticket gets you into the park but not into the Hall of Prayer, the Echo Wall or the Circular Mound, the three sights most people come for. Tickets are booked in each visitor's own name with a passport. Send your date early; we check the rules and handle the booking for you.",
         },
         {
           question: "Temple of Heaven or Summer Palace: which should I choose?",
@@ -435,7 +435,7 @@ export const sightStories: Stories = {
         },
         {
           question: "天坛要买联票，还是只买公园门票？",
-          answer: "第一次来，买联票。只买公园门票，进得了园子，却进不了祈年殿、回音壁和圜丘，而这三处正是大多数人专程来看的。门票要用护照实名预约，我们可以按你的日期核实规则并代为预约。",
+          answer: "第一次来，买联票。只买公园门票，进得了园子，却进不了祈年殿、回音壁和圜丘，而这三处正是大多数人专程来看的。门票要用护照实名预约，日期一定就发来，我们核实规则并代为预约。",
         },
         {
           question: "天坛和颐和园，选哪个？",
@@ -483,7 +483,7 @@ export const sightStories: Stories = {
         },
         {
           question: "천단 입장권은 어떤 것을 사야 하나요?",
-          answer: "처음 간다면 통합권을 사세요. 공원 입장권만으로는 공원 안을 걸을 수는 있어도, 대부분의 여행자가 보러 오는 기년전, 회음벽, 원구단에는 들어갈 수 없습니다. 입장권은 여권으로 실명 예약하며, 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "처음 간다면 통합권을 사세요. 공원 입장권만으로는 공원 안을 걸을 수는 있어도, 대부분의 여행자가 보러 오는 기년전, 회음벽, 원구단에는 들어갈 수 없습니다. 입장권은 여권으로 실명 예약합니다. 날짜를 미리 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
         {
           question: "천단과 이화원 중 어디가 좋을까요?",
@@ -537,7 +537,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Summer Palace tickets in advance?",
-          answer: "Booking ahead is wise, especially at weekends and on holidays, and tickets are in each visitor's own name with a passport. The basic ticket covers the corridor, the lake shore and the bridges. A few places inside, such as the Tower of Buddhist Incense and Suzhou Street, have their own tickets, or you can buy the combined ticket that covers them all. We can check the rules for your date and book for you.",
+          answer: "Booking ahead is wise, especially at weekends and on holidays, and tickets are in each visitor's own name with a passport. The basic ticket covers the corridor, the lake shore and the bridges. A few places inside, such as the Tower of Buddhist Incense and Suzhou Street, have their own tickets, or you can buy the combined ticket that covers them all. Send your date early. We check the rules and handle the booking for you.",
         },
       ],
     },
@@ -585,7 +585,7 @@ export const sightStories: Stories = {
         },
         {
           question: "颐和园门票要提前预约吗？",
-          answer: "最好提前订，尤其是周末和节假日；门票用护照实名预约。普通门票就能逛长廊、湖边和各座桥；园里几处单独收费的地方，比如佛香阁、苏州街，可以一处处单买，也可以买一张全包的联票。规则时常调整，我们可以按你的日期核实并代为预约。",
+          answer: "最好提前订，尤其是周末和节假日；门票用护照实名预约。普通门票就能逛长廊、湖边和各座桥；园里几处单独收费的地方，比如佛香阁、苏州街，可以一处处单买，也可以买一张全包的联票。日期一定就发来，我们核实规则并代为预约。",
         },
       ],
     },
@@ -633,7 +633,7 @@ export const sightStories: Stories = {
         },
         {
           question: "이화원 입장권은 미리 예약해야 하나요?",
-          answer: "미리 예약하는 것이 좋고, 주말과 연휴에는 특히 그렇습니다. 입장권은 여권으로 실명 예약합니다. 기본 입장권으로 장랑, 호숫가, 다리를 모두 볼 수 있고, 불향각이나 소주가처럼 따로 요금을 받는 몇 곳은 입장권을 하나씩 따로 사도 되고, 모두 포함된 통합권을 사도 됩니다. 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "미리 예약하는 것이 좋고, 주말과 연휴에는 특히 그렇습니다. 입장권은 여권으로 실명 예약합니다. 기본 입장권으로 장랑, 호숫가, 다리를 모두 볼 수 있고, 불향각이나 소주가처럼 따로 요금을 받는 몇 곳은 입장권을 하나씩 따로 사도 되고, 모두 포함된 통합권을 사도 됩니다. 날짜를 미리 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
       ],
     },
@@ -671,7 +671,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Is the National Museum of China free, and do I need to book?",
-          answer: "Entry to the permanent galleries is free, but you must book a place ahead in your own passport name and bring that passport. In China's summer school holidays places are often gone days ahead, so book as soon as your date opens. Some special exhibitions charge separately, and we can check the rules for your date and book for you.",
+          answer: "Entry to the permanent galleries is free, but you must book a place ahead in your own passport name and bring that passport. In China's summer school holidays places are often gone days ahead, so book as soon as your date opens. Some special exhibitions charge separately. Send your date early; we check the rules and handle the booking for you.",
         },
         {
           question: "How long do you need at the National Museum of China?",
@@ -719,7 +719,7 @@ export const sightStories: Stories = {
         },
         {
           question: "国家博物馆免费吗？要预约吗？",
-          answer: "常设展览免费，但要用本人护照提前实名预约，入馆时带上同一本护照。暑假期间，名额常常提前几天就约满了，一放出你那天的名额就赶紧约；部分特展另外收费。规则时常调整，我们可以按你的日期核实并代为预约。",
+          answer: "常设展览免费，但要用本人护照提前实名预约，入馆时带上同一本护照。暑假期间，名额常常提前几天就约满了，一放出你那天的名额就赶紧约；部分特展另外收费。日期一定就发来，我们核实规则并代为预约。",
         },
         {
           question: "逛国家博物馆需要多长时间？",
@@ -767,7 +767,7 @@ export const sightStories: Stories = {
         },
         {
           question: "중국 국가박물관은 무료인가요? 예약이 필요한가요?",
-          answer: "상설 전시는 무료지만, 본인 여권으로 미리 실명 예약을 하고 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학에는 며칠 전에 자리가 다 차는 경우가 많으니, 원하는 날짜가 열리는 대로 바로 예약하세요. 일부 특별전은 따로 요금을 받습니다. 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "상설 전시는 무료지만, 본인 여권으로 미리 실명 예약을 하고 입장할 때 그 여권을 지참해야 합니다. 중국의 여름방학에는 며칠 전에 자리가 다 차는 경우가 많으니, 원하는 날짜가 열리는 대로 바로 예약하세요. 일부 특별전은 따로 요금을 받습니다. 날짜를 미리 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
         {
           question: "중국 국가박물관 관람에는 시간이 얼마나 걸리나요?",
@@ -821,7 +821,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Terracotta Warriors tickets in advance?",
-          answer: "Yes. Each visitor needs a real-name reservation made with the passport they will carry, and the original passport is checked at entry. One ticket covers the three pits, Lishan Garden and the shuttle between them. Around national holidays the day's tickets can sell out, so book once your date is fixed; we can check and book it for you.",
+          answer: "Yes. Each visitor needs a real-name reservation made with the passport they will carry, and the original passport is checked at entry. One ticket covers the three pits, Lishan Garden and the shuttle between them. Around national holidays the day's tickets can sell out, so book once your date is fixed. Send us your date early; we check the rules and handle the booking for you.",
         },
         {
           question: "Do I need a guide for the Terracotta Warriors?",
@@ -869,7 +869,7 @@ export const sightStories: Stories = {
         },
         {
           question: "兵马俑要提前预约吗？",
-          answer: "要。每位游客都要用本人当天要带的护照实名预约，入口会核验护照原件。一张门票包含三个俑坑、丽山园和两处之间的摆渡车。五一、国庆前后，当天的票可能售罄，日期一定下来就尽早订；我们也可以帮你查好、代为预订。",
+          answer: "要。每位游客都要用本人当天要带的护照实名预约，入口会核验护照原件。一张门票包含三个俑坑、丽山园和两处之间的摆渡车。五一、国庆前后，当天的票可能售罄。日期一定就发来，我们核实规则并代为预订。",
         },
         {
           question: "参观兵马俑需要请导游吗？",
@@ -917,7 +917,7 @@ export const sightStories: Stories = {
         },
         {
           question: "병마용은 미리 예약해야 하나요?",
-          answer: "네. 관람객마다 실제로 가져갈 여권으로 실명 예약을 해야 하고, 입장할 때 여권 원본을 확인합니다. 입장권 한 장에 갱 세 곳과 여산원, 두 구역 사이 셔틀이 모두 포함됩니다. 중국 연휴 무렵에는 당일 표가 매진될 수 있으니 날짜가 정해지면 바로 예약하세요. 저희가 확인하고 대신 예약해 드릴 수도 있습니다.",
+          answer: "네. 관람객마다 실제로 가져갈 여권으로 실명 예약을 해야 하고, 입장할 때 여권 원본을 확인합니다. 입장권 한 장에 갱 세 곳과 여산원, 두 구역 사이 셔틀이 모두 포함됩니다. 중국 연휴 무렵에는 당일 표가 매진될 수 있으니 날짜가 정해지면 바로 예약하세요. 날짜를 미리 보내 주세요. 저희가 확인하고 예약을 처리합니다.",
         },
         {
           question: "병마용에 가이드가 꼭 필요한가요?",
@@ -1113,7 +1113,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book the Shaanxi History Museum in advance?",
-          answer: "Yes. The main museum is free, but every visitor needs a real-name booking with the passport they will carry that day. Summer holidays and national holidays are the hardest to get, so book as soon as your date is fixed; we can also book it for you with your own passport.",
+          answer: "Yes. The main museum is free, but every visitor needs a real-name booking with the passport they will carry that day. Summer holidays and national holidays are the hardest to get, so book as soon as your date is fixed. Send us your date early and we handle the booking in your passport name.",
         },
         {
           question: "Is the Tang mural gallery worth the extra ticket?",
@@ -1161,7 +1161,7 @@ export const sightStories: Stories = {
         },
         {
           question: "陕西历史博物馆需要提前预约吗？",
-          answer: "需要。本馆免费，但每位游客都要用自己当天要带的护照实名预约，暑假和节假日最难约，日期一定就尽早约；我们也可以用你本人的护照帮你预约。",
+          answer: "需要。本馆免费，但每位游客都要用自己当天要带的护照实名预约，暑假和节假日最难约，日期一定就尽早约；早点把日期发来，我们用你本人的护照代为预约。",
         },
         {
           question: "唐代壁画馆值得另外买票吗？",
@@ -1209,7 +1209,7 @@ export const sightStories: Stories = {
         },
         {
           question: "산시역사박물관은 미리 예약해야 하나요?",
-          answer: "네. 본관은 무료지만, 관람객마다 당일 가져갈 본인 여권으로 실명 예약을 해야 합니다. 여름방학과 연휴에 가장 예약하기 어려우니 날짜가 정해지면 바로 예약하세요. 본인 여권으로 저희가 대신 예약해 드릴 수도 있습니다.",
+          answer: "네. 본관은 무료지만, 관람객마다 당일 가져갈 본인 여권으로 실명 예약을 해야 합니다. 여름방학과 연휴에 가장 예약하기 어려우니 날짜가 정해지면 바로 예약하세요. 날짜를 미리 보내 주시면 저희가 본인 여권 명의로 예약을 처리합니다.",
         },
         {
           question: "당대 벽화관은 따로 표를 살 만한가요?",
@@ -1413,7 +1413,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Shanghai Tower tickets in advance?",
-          answer: "Booking ahead is wise, especially for a sunset visit or a public holiday. Tickets are sold in each visitor's own name, so foreign visitors use their passport. The rules change from time to time, and we can check them for your date and book for you.",
+          answer: "Booking ahead is wise, especially for a sunset visit or a public holiday. Tickets are sold in each visitor's own name, so foreign visitors use their passport. Send your date as soon as it is set. We check the current rules and handle the booking for you.",
         },
       ],
     },
@@ -1461,7 +1461,7 @@ export const sightStories: Stories = {
         },
         {
           question: "上海中心观光厅要提前买票吗？",
-          answer: "建议提前买，尤其是想看日落或者赶上节假日。门票实名，外国游客用护照购票。规则时常调整，我们可以按你的日期核实并代为预订。",
+          answer: "建议提前买，尤其是想看日落或者赶上节假日。门票实名，外国游客用护照购票。日期一定就发来，我们核实规则并代为预订。",
         },
       ],
     },
@@ -1509,7 +1509,7 @@ export const sightStories: Stories = {
         },
         {
           question: "상하이 타워 입장권은 미리 예약해야 하나요?",
-          answer: "미리 사 두는 것이 좋습니다. 일몰 시간대나 공휴일이라면 더욱 그렇습니다. 입장권은 방문자 본인 실명으로 사며, 외국인은 여권을 씁니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "미리 사 두는 것이 좋습니다. 일몰 시간대나 공휴일이라면 더욱 그렇습니다. 입장권은 방문자 본인 실명으로 사며, 외국인은 여권을 씁니다. 날짜가 정해지면 바로 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
       ],
     },
@@ -1705,7 +1705,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book the Humble Administrator's Garden in advance?",
-          answer: "Yes. Tickets are real-name and timed, for a set date and entry slot, and can be booked one to seven days ahead through the official Suzhou Gardens service. Holiday dates can sell out. Booking with a passport is not always straightforward, and we can check the rules for your date and book for you.",
+          answer: "Yes. Tickets are real-name and timed, for a set date and entry slot, and can be booked one to seven days ahead through the official Suzhou Gardens service. Holiday dates can sell out. Booking with a passport is not always straightforward. Send your date early; we check the rules and handle the booking for you.",
         },
       ],
     },
@@ -1753,7 +1753,7 @@ export const sightStories: Stories = {
         },
         {
           question: "拙政园要提前预约吗？",
-          answer: "要。门票实名、分时段，对应日期和入园时段，可以提前一到七天在苏州园林官方渠道预约。节假日可能很快约满。用护照预约的步骤不一定顺利，我们可以按你的日期核实规则并代为预约。",
+          answer: "要。门票实名、分时段，对应日期和入园时段，可以提前一到七天在苏州园林官方渠道预约。节假日可能很快约满。用护照预约的步骤不一定顺利，日期一定就发来，我们核实规则并代为预约。",
         },
       ],
     },
@@ -1801,7 +1801,7 @@ export const sightStories: Stories = {
         },
         {
           question: "졸정원은 미리 예약해야 하나요?",
-          answer: "네. 입장권은 실명제이고 날짜와 입장 시간대가 정해지며, 쑤저우 정원 공식 서비스에서 방문 1~7일 전에 예약할 수 있습니다. 연휴 날짜는 금방 매진될 수 있습니다. 여권으로 예약하는 절차가 늘 순조롭지는 않으니, 저희가 날짜에 맞춰 규정을 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "네. 입장권은 실명제이고 날짜와 입장 시간대가 정해지며, 쑤저우 정원 공식 서비스에서 방문 1~7일 전에 예약할 수 있습니다. 연휴 날짜는 금방 매진될 수 있습니다. 여권으로 예약하는 절차가 늘 순조롭지는 않으니, 날짜를 미리 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
       ],
     },
@@ -1851,7 +1851,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Should I take a boat on West Lake?",
-          answer: "Yes, at least once: a boat is the most relaxing way to see the lake and the only way to reach the island of Three Pools Mirroring the Moon. You can stay on the island as long as you like, and a boat brings you back. For a quieter ride, take a small boat rowed by a boatman, which seats up to six. Queues build on holidays, and we can book a boat for your date.",
+          answer: "Yes, at least once: a boat is the most relaxing way to see the lake and the only way to reach the island of Three Pools Mirroring the Moon. You can stay on the island as long as you like, and a boat brings you back. For a quieter ride, take a small boat rowed by a boatman, which seats up to six. Queues build on holidays. Send us your date early to arrange the boat booking.",
         },
       ],
     },
@@ -1899,7 +1899,7 @@ export const sightStories: Stories = {
         },
         {
           question: "游西湖要坐船吗？",
-          answer: "值得坐一次。坐船看西湖最省力，也只有坐船才能上三潭印月的小岛；上了岛，想待多久都行，玩够了再坐船回来。想更安静，就坐船夫划的手划船，一条最多坐六人。节假日排队很长，我们可以按你的日期代订游船。",
+          answer: "值得坐一次。坐船看西湖最省力，也只有坐船才能上三潭印月的小岛；上了岛，想待多久都行，玩够了再坐船回来。想更安静，就坐船夫划的手划船，一条最多坐六人。节假日排队很长，早点把日期发来，我们按你的日期代订游船。",
         },
       ],
     },
@@ -1947,7 +1947,7 @@ export const sightStories: Stories = {
         },
         {
           question: "서호에서 배를 꼭 타 봐야 하나요?",
-          answer: "한 번은 타 볼 만합니다. 배를 타면 가장 편하게 호수를 둘러볼 수 있고, 삼담인월 섬에는 배로만 갈 수 있습니다. 섬에서는 원하는 만큼 머물다가 배로 돌아오면 됩니다. 더 조용히 즐기고 싶다면 뱃사공이 노를 젓는 6인승 작은 배를 타세요. 연휴에는 줄이 길어지니, 저희가 날짜에 맞춰 배를 예약해 드릴 수 있습니다.",
+          answer: "한 번은 타 볼 만합니다. 배를 타면 가장 편하게 호수를 둘러볼 수 있고, 삼담인월 섬에는 배로만 갈 수 있습니다. 섬에서는 원하는 만큼 머물다가 배로 돌아오면 됩니다. 더 조용히 즐기고 싶다면 뱃사공이 노를 젓는 6인승 작은 배를 타세요. 연휴에는 줄이 길어지니, 날짜를 미리 보내 주세요. 저희가 배 예약을 처리합니다.",
         },
       ],
     },
@@ -1985,7 +1985,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Lingyin Temple, and is it free?",
-          answer: "Yes, you need to book, and entry is currently free. Every visitor needs a booking in their own name for a morning or afternoon slot, made at least a day ahead, and a passport is accepted. One booking covers Feilai Peak, Lingyin Temple and the hillside temples of Yongfu and Taoguang. The rules change from time to time, and we can check them for your date and book for you.",
+          answer: "Yes, you need to book, and entry is currently free. Every visitor needs a booking in their own name for a morning or afternoon slot, made at least a day ahead, and a passport is accepted. One booking covers Feilai Peak, Lingyin Temple and the hillside temples of Yongfu and Taoguang. Send your date as soon as it is set. We check the current rules and handle the booking for you.",
         },
         {
           question: "How long do you need at Lingyin Temple and Feilai Peak?",
@@ -2033,7 +2033,7 @@ export const sightStories: Stories = {
         },
         {
           question: "灵隐寺要预约吗？要门票吗？",
-          answer: "要预约，目前不收门票。每位游客都要用本人证件实名预约上午场或下午场，至少提前一天，护照也可以用。一次预约就包括飞来峰、灵隐寺，以及山上的永福寺和韬光寺。规则时常调整，我们可以按你的日期核实并代为预约。",
+          answer: "要预约，目前不收门票。每位游客都要用本人证件实名预约上午场或下午场，至少提前一天，护照也可以用。一次预约就包括飞来峰、灵隐寺，以及山上的永福寺和韬光寺。日期一定就发来，我们核实规则并代为预约。",
         },
         {
           question: "逛灵隐寺和飞来峰要多长时间？",
@@ -2081,7 +2081,7 @@ export const sightStories: Stories = {
         },
         {
           question: "영은사는 예약해야 하나요? 입장료가 있나요?",
-          answer: "예약은 필요하고, 입장료는 현재 무료입니다. 방문자마다 본인 명의로 오전 또는 오후 시간대를 예약해야 하고, 예약은 적어도 하루 전까지 해야 합니다. 여권으로도 예약할 수 있습니다. 예약 한 번으로 비래봉, 영은사, 그리고 산 위의 영복사와 도광사까지 들어갈 수 있습니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "예약은 필요하고, 입장료는 현재 무료입니다. 방문자마다 본인 명의로 오전 또는 오후 시간대를 예약해야 하고, 예약은 적어도 하루 전까지 해야 합니다. 여권으로도 예약할 수 있습니다. 예약 한 번으로 비래봉, 영은사, 그리고 산 위의 영복사와 도광사까지 들어갈 수 있습니다. 날짜가 정해지면 바로 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
         {
           question: "영은사와 비래봉을 보려면 시간이 얼마나 걸리나요?",
@@ -2289,7 +2289,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Chengdu Panda Base tickets in advance?",
-          answer: "Yes. Tickets are booked online in each visitor's own name, and a passport is accepted; carry the same passport to the gate. Tickets on the day are sold only in special cases, and holiday dates go fast. The rules change from time to time, and we can check them for your date and book for you.",
+          answer: "Yes. Tickets are booked online in each visitor's own name, and a passport is accepted; carry the same passport to the gate. Tickets on the day are sold only in special cases, and holiday dates go fast. Send your date as soon as it is set. We check the current rules and handle the booking for you.",
         },
       ],
     },
@@ -2337,7 +2337,7 @@ export const sightStories: Stories = {
         },
         {
           question: "成都大熊猫基地要提前预约吗？",
-          answer: "要。门票在网上实名预约，护照也能用，入园时带上预约用的那本护照。当天现场售票只面向特殊情况，节假日的票很快约满。规则时常调整，我们可以按你的日期核实并代为预约。",
+          answer: "要。门票在网上实名预约，护照也能用，入园时带上预约用的那本护照。当天现场售票只面向特殊情况，节假日的票很快约满。日期一定就发来，我们核实规则并代为预约。",
         },
       ],
     },
@@ -2385,7 +2385,7 @@ export const sightStories: Stories = {
         },
         {
           question: "청두 판다기지는 미리 예약해야 하나요?",
-          answer: "네. 입장권은 온라인 실명 예약이고 여권으로도 예약할 수 있으며, 입장할 때 그 여권을 지참해야 합니다. 당일 현장 판매는 특별한 경우에만 하고, 연휴 날짜는 금방 매진됩니다. 규정이 종종 바뀌므로, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "네. 입장권은 온라인 실명 예약이고 여권으로도 예약할 수 있으며, 입장할 때 그 여권을 지참해야 합니다. 당일 현장 판매는 특별한 경우에만 하고, 연휴 날짜는 금방 매진됩니다. 날짜가 정해지면 바로 보내 주세요. 저희가 규정을 확인하고 예약을 처리합니다.",
         },
       ],
     },
@@ -2431,7 +2431,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book Sanxingdui Museum tickets in advance?",
-          answer: "Yes. Tickets are booked in each visitor's own name, and foreign visitors can book with a passport through the museum's own website, WeChat account or mini-program. Carry the same passport to the gate. The museum warns against unofficial sellers, and we can check the rules for your date and book for you.",
+          answer: "Yes. Tickets are booked in each visitor's own name, and foreign visitors can book with a passport through the museum's own website, WeChat account or mini-program. Carry the same passport to the gate. The museum warns against unofficial sellers. Send your date early; we check the rules and handle the booking for you.",
         },
         {
           question: "How old are the Sanxingdui bronzes?",
@@ -2479,7 +2479,7 @@ export const sightStories: Stories = {
         },
         {
           question: "三星堆博物馆要提前预约吗？",
-          answer: "要。门票实名预约，外国游客可以用护照，在博物馆官网、官方微信公众号或小程序上预约，入馆时带上那本护照。馆方提醒不要通过非官方渠道购票。我们可以按你的日期核实规则并代为预约。",
+          answer: "要。门票实名预约，外国游客可以用护照，在博物馆官网、官方微信公众号或小程序上预约，入馆时带上那本护照。馆方提醒不要通过非官方渠道购票。日期一定就发来，我们核实规则并代为预约。",
         },
         {
           question: "三星堆的青铜器有多少年了？",
@@ -2527,7 +2527,7 @@ export const sightStories: Stories = {
         },
         {
           question: "싼싱두이박물관은 미리 예약해야 하나요?",
-          answer: "네. 입장권은 실명 예약이고, 외국인은 박물관 공식 웹사이트, 공식 위챗 계정이나 미니 프로그램에서 여권으로 예약할 수 있습니다. 입장할 때 그 여권을 지참하세요. 박물관이 비공식 판매처를 경고하고 있으니, 저희가 날짜에 맞춰 규정을 확인하고 공식 채널로 대신 예약해 드릴 수 있습니다.",
+          answer: "네. 입장권은 실명 예약이고, 외국인은 박물관 공식 웹사이트, 공식 위챗 계정이나 미니 프로그램에서 여권으로 예약할 수 있습니다. 입장할 때 그 여권을 지참하세요. 박물관이 비공식 판매처를 경고하고 있으니, 날짜를 미리 보내 주세요. 저희가 규정을 확인하고 박물관 자체 시스템에서 예약을 처리합니다.",
         },
         {
           question: "싼싱두이 청동기는 얼마나 오래되었나요?",
@@ -3599,7 +3599,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Do I need to book the Li River cruise in advance?",
-          answer: "Yes. Tickets are sold by name for a dated boat, and holiday dates can sell out. The 3-star and 4-star boats leave from different piers near Guilin, so choose the boat before you arrange the drive. The official channel does not spell out the steps for foreign passports, and we can check them for your date and book for you.",
+          answer: "Yes. Tickets are sold by name for a dated boat, and holiday dates can sell out. The 3-star and 4-star boats leave from different piers near Guilin, so choose the boat before you arrange the drive. The official channel does not spell out the steps for foreign passports. Send your date early. We check the rules and handle the booking for you.",
         },
         {
           question: "Where is the 20-yuan note view on the Li River?",
@@ -3647,7 +3647,7 @@ export const sightStories: Stories = {
         },
         {
           question: "漓江游船要提前预订吗？",
-          answer: "要。船票实名销售，按日期订船，节假日可能订满。三星船和四星船在桂林这边的上船码头不同，先定好坐哪种船，再安排去码头的车。官方渠道没有写清外国护照怎么预订，我们可以按你的日期核实并代为预订。",
+          answer: "要。船票实名销售，按日期订船，节假日可能订满。三星船和四星船在桂林这边的上船码头不同，先定好坐哪种船，再安排去码头的车。官方渠道没有写清外国护照怎么预订，日期一定就发来，我们核实规则并代为预订。",
         },
         {
           question: "20元人民币背面的风景在漓江哪里？",
@@ -3695,7 +3695,7 @@ export const sightStories: Stories = {
         },
         {
           question: "이강 유람선은 미리 예약해야 하나요?",
-          answer: "네. 표는 실명으로 날짜를 정해 팔고, 연휴 날짜는 매진될 수 있습니다. 3성과 4성 유람선은 계림 쪽 승선 선착장이 서로 다르므로, 배 등급을 먼저 정한 뒤 차를 준비하세요. 공식 채널에 외국 여권 예약 절차가 나와 있지 않아, 저희가 날짜에 맞춰 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "네. 표는 실명으로 날짜를 정해 팔고, 연휴 날짜는 매진될 수 있습니다. 3성과 4성 유람선은 계림 쪽 승선 선착장이 서로 다르므로, 배 등급을 먼저 정한 뒤 차를 준비하세요. 공식 채널에 외국 여권 예약 절차가 나와 있지 않아, 날짜를 미리 보내 주세요. 저희가 확인하고 예약을 처리합니다.",
         },
         {
           question: "20위안 지폐 뒷면의 풍경은 이강 어디인가요?",
@@ -3737,7 +3737,7 @@ export const sightStories: Stories = {
         },
         {
           question: "Glacier Park or Spruce Meadow: which should I choose?",
-          answer: "Choose Glacier Park for ice and height: the cable car tops out at 4,506 metres and a boardwalk climbs on to 4,680. Choose Spruce Meadow for a gentler day in a clearing of old spruce at about 3,240 metres, below the peaks. Each needs its own cable-car ticket, and Glacier Park has the tighter quota, so book it as soon as your date opens. We can check and book for you.",
+          answer: "Choose Glacier Park for ice and height: the cable car tops out at 4,506 metres and a boardwalk climbs on to 4,680. Choose Spruce Meadow for a gentler day in a clearing of old spruce at about 3,240 metres, below the peaks. Each needs its own cable-car ticket, and Glacier Park has the tighter quota, so book it as soon as your date opens. Send your date early. We check the rules and handle the booking for you.",
         },
         {
           question: "How much time do you need at Jade Dragon Snow Mountain?",
@@ -3785,7 +3785,7 @@ export const sightStories: Stories = {
         },
         {
           question: "冰川公园和云杉坪，选哪个？",
-          answer: "想看冰川、上高处，选冰川公园：索道到海拔4506米，再走栈道到4680米。想轻松一点，选云杉坪：老云杉围着的一片草甸，海拔约3240米，雪峰就在上方。两条索道各要各的票，冰川公园名额更紧，你的日期一开放就要订；我们可以帮你核实并代订。",
+          answer: "想看冰川、上高处，选冰川公园：索道到海拔4506米，再走栈道到4680米。想轻松一点，选云杉坪：老云杉围着的一片草甸，海拔约3240米，雪峰就在上方。两条索道各要各的票，冰川公园名额更紧，你的日期一开放就要订；日期早点发来，我们核实规则并代订。",
         },
         {
           question: "玉龙雪山需要玩多久？",
@@ -3833,7 +3833,7 @@ export const sightStories: Stories = {
         },
         {
           question: "빙천공원과 윈산핑 중 어디가 좋을까요?",
-          answer: "빙하와 높이를 원한다면 빙천공원입니다. 케이블카로 해발 4,506m까지 오르고, 나무 데크 길로 4,680m까지 더 올라갑니다. 편안한 하루를 원한다면 윈산핑입니다. 해발 약 3,240m, 오래된 가문비나무에 둘러싸인 풀밭이고 봉우리가 바로 위에 있습니다. 케이블카 표는 각각 따로이고 빙천공원 쪽이 인원이 더 빠듯하니, 날짜가 열리자마자 예약하세요. 저희가 확인하고 대신 예약해 드릴 수 있습니다.",
+          answer: "빙하와 높이를 원한다면 빙천공원입니다. 케이블카로 해발 4,506m까지 오르고, 나무 데크 길로 4,680m까지 더 올라갑니다. 편안한 하루를 원한다면 윈산핑입니다. 해발 약 3,240m, 오래된 가문비나무에 둘러싸인 풀밭이고 봉우리가 바로 위에 있습니다. 케이블카 표는 각각 따로이고 빙천공원 쪽이 인원이 더 빠듯하니, 날짜가 열리자마자 예약하세요. 날짜를 미리 보내 주세요. 저희가 확인하고 예약을 처리합니다.",
         },
         {
           question: "옥룡설산은 시간이 얼마나 걸리나요?",

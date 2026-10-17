@@ -47,7 +47,12 @@ const authorisationWords = /authori[sz]|授权|승인/iu;
 const authorisationClaims = /(?:authori[sz]ed|official|appointed) (?:ticket )?(?:seller|agent|partner|reseller)|partner of|in partnership with|合作伙伴|官方代理|指定代理|官方合作|内部(?:票|渠道|关系)|공식 판매처|공식 대리점|제휴사|staff|工作人员|직원|inside contact|connections? (?:at|with) the/iu;
 
 /** Every mention of the booking guarantee, per language: the lead time and the full refund. */
-const guaranteeLead = { en: /at least 8 days before (?:your|the) visit/u, zh: /至少 8 天/u, ko: /최소 8일 전/u };
+const guaranteeDays = reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
+const guaranteeLead = {
+  en: new RegExp(`at least ${guaranteeDays} days (?:before (?:your|the) visit|ahead)`, "u"),
+  zh: new RegExp(`至少 ${guaranteeDays} 天`, "u"),
+  ko: new RegExp(`최소 ${guaranteeDays}일 전`, "u"),
+};
 const guaranteeRefund = { en: /full refund|refunded in full/u, zh: /全额退还/u, ko: /전액 환불/u };
 const retiredNoGuarantee =
   /cannot promise (?:availability|a slot)|Availability is never certain|What we cannot promise|cannot guarantee availability|不保证有余量|无法保证有余量|余量永远无法保证|无法承诺一定约到|我们无法承诺的事|잔여분은 (?:보장되지|확실하지)|약속할 수 (?:는 )?없|보장하지 않습니다\. 인기/u;
@@ -233,7 +238,7 @@ test("sales copy says what we do and neither quotes operator statements nor clai
   assert.match(legal, /티켓을 되팔거나 금액을 더하지 않으며, 입장료는 관광지 공식 가격 그대로 받습니다/u);
 });
 
-test("the 8-day booking guarantee is stated once as data and repeated everywhere the service is sold", async () => {
+test("the booking guarantee is data driven and stays clear at each guarantee promise", async () => {
   assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
   const guaranteeModule = await import("../../lib/attractionReservationGuarantee.ts");
   assert.equal(guaranteeModule.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
@@ -252,17 +257,17 @@ test("the 8-day booking guarantee is stated once as data and repeated everywhere
     assert.match(copy.guaranteeLate, { en: /not guaranteed, but we still try/u, zh: /仍会尽力预约，但不作保证/u, ko: /시도하되 보장하지는 않습니다/u }[locale]);
     assert.match(copy.guaranteeLate, { en: /refunded in full, together with any ticket money not spent/u, zh: /全额退还该景点的服务费及未使用的门票款/u, ko: /수수료 전액과 사용하지 않은 입장료를 환불/u }[locale]);
     assert.ok(copy.limits.includes(copy.guarantee) && copy.limits.includes(copy.guaranteeLate), `${locale}: refund list`);
-    check(copy.pricingLead, "pricing");
-    check(copy.enquiry.intro.replace("first visit", "visit").replace("첫 방문일", "방문일").replace("第一个参观日", "参观日"), "enquiry");
-    check(copy.rulesIntro.replace(/The 8-day booking guarantee/u, "at least 8 days before your visit").replace(/提前 8 天/u, "至少 8 天").replace(/8일 전 예약 보장/u, "최소 8일 전"), "rules intro");
-    // The hero shows the fee and ticket facts; the guarantee banner under them carries the lead time.
+    check(copy.heroUrgency, "hero urgency");
+    check(copy.timingRows[1].body, "guaranteed timing row");
+    // The hero shows the fee and ticket facts; timing rows state the full policy.
     assert.equal(copy.heroFacts.length, 2, `${locale}: hero facts`);
     assert.match(copy.guarantee, /8/u, `${locale}: hero guarantee`);
     const guaranteeFaq = copy.faqs.find((item) => guaranteeLead[locale].test(item.answer) && /guaranteed\?|有保证吗|보장되나요/u.test(item.question));
     assert.ok(guaranteeFaq, `${locale}: guarantee FAQ`);
     assert.match(guaranteeFaq.answer, guaranteeRefund[locale]);
     const forbiddenCityFaq = copy.faqs.find((item) => /Forbidden City|故宫|자금성/u.test(item.question));
-    check(forbiddenCityFaq.answer, "Forbidden City FAQ");
+    assert.match(forbiddenCityFaq.answer, /7|seven/u, `${locale}: Forbidden City release window`);
+    assert.match(forbiddenCityFaq.answer, /20:00/u, `${locale}: Forbidden City release time`);
     for (const body of [copy.guideCta.body, copy.guideCta.bodyPassportUnchecked]) {
       check(body.replace("{fee}", fee[locale]), "guide CTA");
     }
@@ -278,9 +283,11 @@ test("the 8-day booking guarantee is stated once as data and repeated everywhere
       }
     }
   }
-  // The page shows the guarantee in the hero and in the Offer JSON-LD.
+  // The full policy is shown in the guaranteed timing row and in JSON-LD.
   const page = await source("components/AttractionReservationsPage.tsx");
-  assert.match(page, /data-reservation-guarantee>\{copy\.guarantee\}/u);
+  assert.match(page, /data-reservation-guarantee=\{index === 1 \? "" : undefined\}>\{row\.body\}/u);
+  assert.match(page, /copy\.timingRows\.map/u);
+  assert.match(page, /copy\.limits\.slice\(2\)/u, "issued-ticket and entry conditions are not repeated with both timing policies");
   assert.match(page, /description: `\$\{unitText\}.*\$\{copy\.guarantee\}`/u);
   assert.match(page, /description: `\$\{copy\.lede\}.*\$\{copy\.guarantee\}`/u, "Service JSON-LD description");
   // The copy takes the lead time from the constant, never a typed-in 8.
@@ -433,7 +440,7 @@ test("public copy avoids checkout language", async () => {
 
 test("English search copy identifies the booking service; the Forbidden City answer, refund and privacy clauses stay", async () => {
   const lead = { en: /Forbidden City/u, zh: /故宫/u, ko: /자금성/u };
-  const yes = { en: /^Yes\./u, zh: /^可以。/u, ko: /^네\./u };
+  const yes = { en: /^Yes[.,]/u, zh: /^可以[。，]/u, ko: /^네\./u };
   for (const locale of locales) {
     const copy = copyModule.getAttractionReservationCopy(locale);
     assert.match(copy.metadata.title, locale === "en" ? /China Attraction Ticket Booking Service/u : lead[locale], `${locale}: title`);
@@ -441,8 +448,9 @@ test("English search copy identifies the booking service; the Forbidden City ans
       assert.ok(copy.metadata.title.length <= 60, "en: title fits a search result");
       assert.ok(copy.metadata.description.replace("{fee}", "USD 7").length <= 155, "en: description fits a search result");
     }
-    assert.match(copy.metadata.description, locale === "en" ? /selected China attractions.*\{fee\}.*official ticket price.*before payment/u : lead[locale], `${locale}: description`);
-    assert.match(copy.h1, lead[locale], `${locale}: h1`);
+    assert.match(copy.metadata.description, { en: /tickets.*\{fee\}.*face-value tickets.*confirmation before payment/u, zh: /景点门票.*护照实名.*\{fee\}/u, ko: /입장권.*여권 실명.*\{fee\}/u }[locale], `${locale}: description`);
+    assert.match(copy.h1, { en: /tickets.*booked for you/iu, zh: /门票.*我们/u, ko: /입장권.*예약/u }[locale], `${locale}: outcome headline`);
+    assert.match(copy.lede, lead[locale], `${locale}: lead still names the Forbidden City`);
     const forbiddenCityFaq = copy.faqs.find((item) => lead[locale].test(item.question));
     assert.ok(forbiddenCityFaq, `${locale}: Forbidden City FAQ`);
     assert.match(forbiddenCityFaq.answer, yes[locale], `${locale}: Forbidden City FAQ answers yes`);
@@ -477,14 +485,14 @@ test("the page is a public, indexable system identity with reciprocal alternates
   assert.match(sitemap, /system-attraction-reservations/u);
 });
 
-test("the request form comes right after the steps, with a summary and folded city rules", async () => {
+test("the page leads with the booking problem, contact timing and benefits before its request form", async () => {
   const [page, enquiry, opener] = await Promise.all([
     source("components/AttractionReservationsPage.tsx"),
     source("components/AttractionReservationEnquiry.tsx"),
     source("components/OpenDetailsForHash.tsx"),
   ]);
-  // Order: steps → form → price → guarantee → what we do → passport → rules → FAQ.
-  const order = ["reservation-steps-title", "reservation-enquiry-title", "reservation-price-title", "reservation-limits-title", "reservation-what-title", "reservation-passport-title", "reservation-rules-title", "reservation-faq-title"]
+  // Problem → timing → guarantee → benefits → price → steps → form → rules → FAQ.
+  const order = ["reservation-what-title", "reservation-timing-title", "reservation-limits-title", "reservation-for-title", "reservation-price-title", "reservation-steps-title", "reservation-enquiry-title", "reservation-passport-title", "reservation-rules-title", "reservation-faq-title"]
     .map((id) => page.indexOf(`aria-labelledby="${id}"`));
   assert.ok(order.every((index) => index > 0), "every section is present");
   assert.deepEqual([...order].sort((a, b) => a - b), order, "sections are in the new order");
@@ -548,6 +556,22 @@ test("the summary total is the displayed unit fee times people and attractions",
   }
 });
 
+test("ticket release is the first rule after the attraction and stays prominent", async () => {
+  const [page, styles] = await Promise.all([
+    source("components/AttractionReservationsPage.tsx"),
+    source("components/AttractionReservationsPage.module.css"),
+  ]);
+  const tableHeader = page.match(/<thead>[\s\S]*?<\/thead>/u)?.[0] ?? "";
+  const columns = [...tableHeader.matchAll(/\{copy\.columns\.(\w+)\}/gu)].map((match) => match[1]);
+  assert.deepEqual(columns, ["attraction", "release", "channel", "passport", "realName", "price", "notes", "verified"]);
+  const ruleCells = [...page.matchAll(/\{cell\(copy\.columns\.(\w+)/gu)].map((match) => match[1]);
+  assert.deepEqual(ruleCells, ["release", "channel", "passport", "realName", "price"], "body cells match header order");
+  assert.match(tableHeader, /className=\{styles\.releaseColumn\}/u);
+  assert.match(page, /label === copy\.columns\.release \? styles\.releaseColumn/u, "release values get the same emphasis");
+  assert.match(styles, /\.table \.releaseColumn\s*\{[^}]*font-weight:\s*[6-9]00/u);
+  assert.match(page, /rule\.release[^\n]*copy\.notChecked/u, "an unconfirmed release invites checking the travel date");
+});
+
 test("a best-effort attraction is tagged everywhere it is sold and promises a refund, not a booking", async () => {
   const bestEffort = reservations.attractionReservationRules.filter((rule) => rule.bestEffort);
   assert.deepEqual(bestEffort.map((rule) => rule.id), ["hanging-temple"]);
@@ -565,7 +589,7 @@ test("a best-effort attraction is tagged everywhere it is sold and promises a re
     assert.match(copy.guarantee, { en: /except at an attraction marked “best effort”/u, zh: /标注“尽力预约”的景点除外/u, ko: /‘최선 시도’로 표시된 관광지는 제외/u }[locale]);
     assert.ok(copy.bestEffortTag.trim(), `${locale}: tag`);
     assert.match(copy.guideCta.bodyBestEffort, guaranteeRefund[locale]);
-    assert.match(copy.guideCta.bodyBestEffort, { en: /both are refunded in full/u, zh: /两者全额退还/u, ko: /둘 다 전액 환불/u }[locale]);
+    assert.match(copy.guideCta.bodyBestEffort, { en: /both are refunded in full/u, zh: /两(?:者|项费用)全额退还/u, ko: /둘 다 전액 환불/u }[locale]);
     assert.doesNotMatch(copy.guideCta.bodyBestEffort, guaranteeLead[locale], `${locale}: no lead-time guarantee on a best-effort CTA`);
     const label = `${bestEffort[0].name[locale]} · ${copy.bestEffortTag}`;
     const message = messageModule.attractionReservationMessageText(copy.enquiry.message, {
@@ -585,7 +609,7 @@ test("a best-effort attraction is tagged everywhere it is sold and promises a re
 
 test("every generic guarantee entry point explicitly excludes best-effort attractions", () => {
   const exceptions = {
-    en: /except at an attraction marked “best effort”/u,
+    en: /except at an attraction marked “best effort”|attractions marked “best effort” are excluded/u,
     zh: /标注“尽力预约”的景点除外/u,
     ko: /‘최선 시도’로 표시된 관광지는 제외/u,
   };
@@ -594,21 +618,20 @@ test("every generic guarantee entry point explicitly excludes best-effort attrac
     const faq = copy.faqs.find(({ question }) => /guaranteed\?|有保证吗|보장되나요/u.test(question));
     assert.ok(faq, `${locale}: generic guarantee FAQ`);
     for (const [entry, text] of [
-      ["hero", copy.guarantee],
-      ["request step", copy.steps[0].body],
-      ["pricing lead", copy.pricingLead],
-      ["rules intro", copy.rulesIntro],
+      ["guarantee policy", copy.guarantee],
+      ["hero urgency", copy.heroUrgency],
+      ["guaranteed timing row", copy.timingRows[1].body],
       ["guarantee FAQ", faq.answer],
-      ["enquiry intro", copy.enquiry.intro],
     ]) {
       assert.match(text, exceptions[locale], `${locale} ${entry}: exception cannot be omitted`);
       assert.match(text, /8/u, `${locale} ${entry}: existing lead time is preserved`);
     }
     const forbiddenCityFaq = copy.faqs.find(({ question }) => /Forbidden City|故宫|자금성/u.test(question));
-    for (const unchanged of [forbiddenCityFaq.answer, copy.guideCta.body, copy.guideCta.bodyPassportUnchecked]) {
+    for (const unchanged of [copy.guideCta.body, copy.guideCta.bodyPassportUnchecked]) {
       assert.match(unchanged, guaranteeLead[locale], `${locale}: normal attraction guarantees remain`);
       assert.doesNotMatch(unchanged, exceptions[locale], `${locale}: no best-effort exception added to an ordinary attraction CTA`);
     }
+    assert.match(forbiddenCityFaq.answer, /7|seven/u, `${locale}: ordinary attraction release fact stays seven days`);
   }
 });
 
