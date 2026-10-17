@@ -8,7 +8,7 @@ import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
 
 const source = getHomegroundCopy('en');
-const navigationSource = getHomegroundNavigationModel('en', '/');
+const navigationSource = getHomegroundNavigationModel('en', '/', { includeCorporateTravel: false });
 const items = {
   destinations: { label: 'Destinos (en inglés)', description: 'Ciudades, ideas de viaje y lugares imprescindibles', href: '/explore/' },
   tours: { label: 'Viajes', description: 'Compara itinerarios y precios publicados', href: '/es/tours/' },

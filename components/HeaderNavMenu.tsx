@@ -32,6 +32,7 @@ const menuIcons = {
   "english-guides": UserRound,
   "private-car": Car,
   "trip-support": Route,
+  "corporate-travel": Briefcase,
   company: Flag,
   planning: Users,
   credentials: BadgeCheck,
@@ -50,7 +51,7 @@ const closeDelayMs = 150;
  * (no fade, so two panels never overlap), and moving from one open menu to
  * another skips the open delay, as Stripe and Vercel do.
  */
-const menuOpenEvent = "homeground:nav-menu-open";
+export const menuOpenEvent = "homeground:nav-menu-open";
 let openMenuId: string | null = null;
 
 /** A menu link with a query (a homepage planner preset) needs a document load. */

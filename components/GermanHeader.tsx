@@ -9,7 +9,7 @@ import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
 
 const source = getHomegroundCopy('en');
-const navigationSource = getHomegroundNavigationModel('en', '/');
+const navigationSource = getHomegroundNavigationModel('en', '/', { includeCorporateTravel: false });
 const germanItems = {
   destinations: { label: 'Reiseziele (Englisch)', description: 'Städte, Reiseideen und Sehenswürdigkeiten – Ratgeber auf Englisch', href: '/explore/' },
   tours: { label: 'Reisen', description: 'Routen und veröffentlichte Preise vergleichen', href: '/de/tours/' },

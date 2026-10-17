@@ -198,8 +198,9 @@ test("Destinations and Services open menus (x.ai's Products pattern)", async () 
   assert.match(header, /const menu = submenuFor\(item\.id\);\s*if \(menu\) \{[\s\S]*?<HeaderNavMenu/);
   assert.match(model, /homegroundDestinationNavigationIds = \[\s*"cities",\s*"inspiration",\s*"sights",\s*\]/);
   assert.match(model, /pathSegment: "inspiration\/"/);
-  // Every /services/ page and the reservation page sit under Services.
-  assert.match(header, /const servicesAreCurrent =\s*pageContext === "services" \|\| pageContext === "reservations";/);
+  // Service pages keep their section current; the English company-travel
+  // entrance has its own primary link and must not mark Services as well.
+  assert.match(header, /const servicesAreCurrent =\s*!corporateIsCurrent && \(pageContext === "services" \|\| pageContext === "reservations"\);/);
   assert.match(header, /const planningIsCurrent = pageContext === "studio";/);
   // Phones list every entry inside the section's collapsible panel.
   assert.match(header, /className=\{styles\.mobileSectionPanel\}[\s\S]*<ul aria-label=\{label\} className=\{styles\.mobileSubmenu\} data-menu=\{menuId\}>/);

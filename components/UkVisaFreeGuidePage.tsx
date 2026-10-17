@@ -127,7 +127,7 @@ export function UkVisaFreeGuidePage() {
       <HomegroundHeader
         locale="en"
         pageContext="guides"
-        showLanguageNav={false}
+        languagePaths={{ en: guide.canonicalPath }}
       />
 
       <main id="uk-visa-main" tabIndex={-1}>

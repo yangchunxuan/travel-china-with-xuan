@@ -127,7 +127,7 @@ export function CanadaVisaFreeGuidePage() {
       <HomegroundHeader
         locale="en"
         pageContext="guides"
-        showLanguageNav={false}
+        languagePaths={{ en: guide.canonicalPath }}
       />
 
       <main id="canada-visa-main" tabIndex={-1}>

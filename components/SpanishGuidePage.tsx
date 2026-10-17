@@ -28,14 +28,14 @@ import styles from "./content/EditorialGuidePage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
 
-/** The switcher goes to the same guide in English when one exists, else to the guides list. */
+/** The header supplies edition homes when this guide has no translated equivalent. */
 export function spanishGuideLanguagePaths(guide: SpanishGuide) {
   const path = spanishGuidePath(guide.slug);
-  if (!guide.sourceGuideId) return spanishLanguagePaths("/guides/", path);
+  if (!guide.sourceGuideId) return [{ label: "ES", lang: "es", path }];
   const source = getGuideLanguagePaths(guide.sourceGuideId as GuideId);
-  return spanishLanguagePaths(source.en ?? "/guides/", path, {
-    zh: source["zh-Hans"] ?? "/zh/guides/",
-    ko: source.ko ?? "/ko/guides/",
+  return spanishLanguagePaths(source.en ?? "/", path, {
+    zh: source["zh-Hans"] ?? "/zh/",
+    ko: source.ko ?? "/ko/",
   });
 }
 
