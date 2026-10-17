@@ -47,6 +47,7 @@ import type { HandoffStatus } from "./PlannerHandoff";
 import type { PlannerStatus } from "./RouteFinder";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
 import { HeaderNavMenu, MenuLink } from "./HeaderNavMenu";
+import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
 import { usePrivateTourSelection, useSelectedPrivateTourInquiryHref } from "./PrivateTourSelection";
 import { GuideTourEntry } from "./GuideTourEntry";
 import { guideTourEntryId } from "../lib/guideTourEntry";
@@ -694,6 +695,7 @@ export function HomegroundHeader({
   const spanishLanguageHref = languagePaths?.es;
   const renderSpanishLanguageChoice = () => spanishLanguageHref ? (
     <a
+      aria-current={currentLanguage === "es" ? "page" : undefined}
       href={spanishLanguageHref}
       hrefLang="es"
       lang="es"
@@ -914,18 +916,18 @@ export function HomegroundHeader({
           >
             {copy.navigation.faq}
           </Link>
-          <nav
-            className={styles.languageNav}
-            aria-label={copy.navigation.languageLabel}
+          <HeaderLanguageMenu
+            ariaLabel={copy.navigation.languageLabel}
             hidden={!showLanguageNav}
-            style={showLanguageNav ? undefined : { display: "none" }}
+            label={languageEndonyms[currentLanguage] ?? currentLanguage.toUpperCase()}
+            lang={edition ? currentLanguage : copy.htmlLang}
           >
             {availableLanguageLocales.map(renderLanguageChoice)}
             {renderJapaneseLanguageChoice()}
             {renderSpanishLanguageChoice()}
             {renderFrenchLanguageChoice()}
             {renderGermanLanguageChoice()}
-          </nav>
+          </HeaderLanguageMenu>
           <Link
             className={styles.headerCta}
             data-label-mode={plannerStatus === "new" ? "full" : "compact"}
