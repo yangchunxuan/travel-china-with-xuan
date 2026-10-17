@@ -32,6 +32,7 @@ function htmlFiles(directory) {
 
 function elements(node, predicate) {
   const matches = [];
+  if (!node) return matches;
   function visit(current) {
     if (predicate(current)) matches.push(current);
     for (const child of current.childNodes ?? []) visit(child);
@@ -117,6 +118,19 @@ for (const file of files) {
   }
   for (const header of headers) {
     checkedHeaders++;
+    const desktopNav = elements(header, (node) => node.tagName === "nav" && hasClass(node, "desktopNav"))[0];
+    const corporateRoot = "/corporate-travel/";
+    const corporatePurposePaths = ["company-trips", "incentive-travel", "meetings-retreats"].map((id) => `${corporateRoot}#${id}`);
+    const desktopCompanyLinks = elements(desktopNav, (node) => node.tagName === "a" && attr(node, "href") === corporateRoot);
+    check(desktopCompanyLinks.length === 1, `${route}: one independent desktop company-travel entrance`);
+    const desktopPurposes = elements(desktopNav, (node) => node.tagName === "a" && corporatePurposePaths.includes(attr(node, "href"))).map((node) => attr(node, "href"));
+    check(JSON.stringify(desktopPurposes) === JSON.stringify(corporatePurposePaths), `${route}: desktop company menu must list all three purposes in order`);
+    const mobileCompany = elements(header, (node) => attr(node, "data-section") === "corporate");
+    check(mobileCompany.length === 1, `${route}: one independent mobile company-travel section`);
+    const mobileCompanyLinks = mobileCompany.flatMap((section) => elements(section, (node) => node.tagName === "a").map((node) => attr(node, "href")));
+    check(JSON.stringify(mobileCompanyLinks) === JSON.stringify([corporateRoot, ...corporatePurposePaths]), `${route}: mobile company overview and three purposes`);
+    const mobileServices = elements(header, (node) => attr(node, "data-menu") === "services");
+    check(mobileServices.every((section) => elements(section, (node) => node.tagName === "a").every((node) => !attr(node, "href")?.startsWith(corporateRoot))), `${route}: company travel must not be nested inside services`);
     check(normalizeLanguage(attr(header, "data-homeground-header-locale")) === htmlLanguage, `${route}: header locale must match html language ${htmlLanguage}`);
     const navs = elements(header, (node) => node.tagName === "nav" && hasClass(node, "languageNav"));
     check(navs.length === 1, `${route}: expected one desktop language nav, found ${navs.length}`);
@@ -154,5 +168,5 @@ if (errors.length) {
   console.error(`Header language export failed (${errors.length} issues across ${checkedPages} pages):\n${errors.slice(0, 40).join("\n")}${errors.length > 40 ? `\n... ${errors.length - 40} further issues` : ""}`);
   process.exitCode = 1;
 } else {
-  console.log(`Header language export: ${checkedPages} pages, ${checkedHeaders} rendered header candidates and ${checkedLinks} language links checked; all eight editions, current labels and exported destinations are valid.`);
+  console.log(`Header language export: ${checkedPages} pages, ${checkedHeaders} rendered header candidates and ${checkedLinks} language links checked; all eight editions, current labels, exported destinations and independent company menus are valid.`);
 }
