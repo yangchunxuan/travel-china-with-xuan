@@ -44,6 +44,8 @@ site checks. Publication and live verification are separate from implementation.
 - Chrome checks of all 24 pages at 320, 390 and 1440 pixels found no horizontal
   overflow. All eight mobile corporate menus retain the overview and three
   purpose links plus eight equivalent language choices.
+- Arabic 10–30 / 10–24 group ranges use left-to-right isolation inside RTL
+  prose; a regression check covers all eight appearances without changing values.
 - Disposable local draft checks in all eight languages retain the headcount,
   currency and changed itinerary; preparation focuses the review and sends
   nothing. The Japanese header uses the corporate anchor instead of intercepting

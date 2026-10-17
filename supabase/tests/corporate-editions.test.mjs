@@ -49,6 +49,15 @@ test('every corporate edition has eight reciprocal equivalent routes and the Eng
     assert.equal(alternatives['x-default'], corporatePath('en', slug));
   }
 });
+test('Arabic group ranges retain left-to-right order inside right-to-left prose', () => {
+  const strings = value => typeof value === 'string' ? [value] : value && typeof value === 'object' ? Object.values(value).flatMap(strings) : [];
+  const ranges = strings(copies.ar).flatMap(value => [...value.matchAll(/10–(?:30|24)/gu)].map(match => ({ value, index: match.index, range: match[0] })));
+  assert.equal(ranges.length, 8, 'hub FAQ, two descriptions, two group sizes and two programme FAQs');
+  for (const { value, index, range } of ranges) {
+    assert.equal(value[index - 1], '\u2066', 'start the range with a left-to-right isolate');
+    assert.equal(value[index + range.length], '\u2069', 'close the range isolation');
+  }
+});
 test('each language prepares a local draft without changing group, itinerary, currency or sending it', () => {
   const draft = { company: 'Local QA & Co', name: '', email: '', people: '18', timing: 'May 2027, 4 days', purpose: 'meeting', trip: corporateTrips[1].slug, budget: 'USD 15,000', notes: '12 single / 3 twin' };
   for (const locale of corporateLocales) {
