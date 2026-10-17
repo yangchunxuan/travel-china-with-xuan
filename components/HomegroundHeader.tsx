@@ -74,7 +74,7 @@ export type HomegroundPageContext =
   | "careers"
   | "content";
 
-type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr";
+type HomegroundLanguagePathKey = HomegroundLocale | "zh-Hans" | "ja" | "es" | "fr" | "de";
 type MobileSectionId = Exclude<HomegroundPrimaryNavigationId, "guides">;
 
 interface HomegroundHeaderProps {
@@ -599,7 +599,7 @@ export function HomegroundHeader({
   };
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetLocale: HomegroundLocale | "ja" | "es" | "fr",
+    targetLocale: HomegroundLocale | "ja" | "es" | "fr" | "de",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -621,7 +621,7 @@ export function HomegroundHeader({
     if (!edition && targetLocale !== currentLanguage && !opensSeparateContext && !event.defaultPrevented &&
         event.currentTarget.origin === window.location.origin) {
       // The Japanese and Spanish pages have no newsletter or planner form to receive state.
-      if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr") {
+      if (targetLocale !== "ja" && targetLocale !== "es" && targetLocale !== "fr" && targetLocale !== "de") {
         requestNewsletterLanguageTransfer(event.currentTarget.pathname);
         if ((locale === "en") !== (targetLocale === "en")) {
           markHomegroundInternalReload(event.currentTarget.href);
@@ -709,6 +709,13 @@ export function HomegroundHeader({
     : languagePaths?.fr;
   const renderFrenchLanguageChoice = () => frenchLanguageHref ? (
     <a aria-current={currentLanguage === "fr" ? "page" : undefined} href={frenchLanguageHref} hrefLang="fr" lang="fr" onClick={(event) => handleLanguageChange(event, "fr")}><span className={styles.languageChoiceShort}>FR</span><span className={styles.languageChoiceEndonym}>Français</span></a>
+  ) : null;
+
+  const germanLanguageHref = languagePaths?.de && pageContext === "tour" && tourSelection
+    ? buildPrivateTourDetailHref(languagePaths.de, tourSelection.slug, tourSelection.selection)
+    : languagePaths?.de;
+  const renderGermanLanguageChoice = () => germanLanguageHref ? (
+    <a aria-current={currentLanguage === "de" ? "page" : undefined} href={germanLanguageHref} hrefLang="de" lang="de" onClick={(event) => handleLanguageChange(event, "de")}><span className={styles.languageChoiceShort}>DE</span><span className={styles.languageChoiceEndonym}>Deutsch</span></a>
   ) : null;
 
   const renderMobileSection = (item: HomegroundPrimaryNavigationItem, index: number) => {
@@ -917,6 +924,7 @@ export function HomegroundHeader({
             {renderJapaneseLanguageChoice()}
             {renderSpanishLanguageChoice()}
             {renderFrenchLanguageChoice()}
+            {renderGermanLanguageChoice()}
           </nav>
           <Link
             className={styles.headerCta}
@@ -1049,6 +1057,7 @@ export function HomegroundHeader({
               {renderJapaneseLanguageChoice()}
               {renderSpanishLanguageChoice()}
             {renderFrenchLanguageChoice()}
+            {renderGermanLanguageChoice()}
             </div>
           </div>
         </nav>

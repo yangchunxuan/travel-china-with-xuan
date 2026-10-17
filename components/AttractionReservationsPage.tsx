@@ -71,7 +71,7 @@ export function attractionReservationLanguagePaths() {
 
 function formatDate(value: string, locale: HomegroundLocale, editionLocale?: AttractionReservationEditionLocale) {
   return new Intl.DateTimeFormat(
-    editionLocale === "fr" ? "fr-FR" : editionLocale === "es" ? "es-ES" : locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
+    editionLocale === "de" ? "de-DE" : editionLocale === "fr" ? "fr-FR" : editionLocale === "es" ? "es-ES" : locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-GB",
     { dateStyle: "medium", timeZone: "UTC" },
   ).format(new Date(`${value}T00:00:00.000Z`));
 }
@@ -179,7 +179,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
   const homePath = paths?.home ?? home.path;
   const pagePath = editionLocale ? serviceEditionPath(editionLocale, SERVICE_SLUG) : attractionReservationPath[locale];
   const feeDisplay: AttractionReservationFeeDisplay = editionLocale
-    ? { amount: attractionReservationServiceFeeCny, currency: "CNY", numberLocale: editionLocale === "fr" ? "fr-FR" : "es-ES", currencyDisplay: "code" }
+    ? { amount: attractionReservationServiceFeeCny, currency: "CNY", numberLocale: editionLocale === "de" ? "de-DE" : editionLocale === "fr" ? "fr-FR" : "es-ES", currencyDisplay: "code" }
     : attractionReservationFeeDisplay(attractionReservationServiceFeeCny, locale);
   const fee = formatAttractionReservationFeeDisplay(feeDisplay);
   const fill = (text: string) => fillReservationCopy(text, { fee });
@@ -203,7 +203,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#reservations-main">{editionLocale === "fr" ? "Aller au contenu" : editionLocale === "es" ? "Ir al contenido" : home.skipLink}</a>
+      <a className={localeStyles.skipLink} href="#reservations-main">{editionLocale === "de" ? "Zum Inhalt" : editionLocale === "fr" ? "Aller au contenu" : editionLocale === "es" ? "Ir al contenido" : home.skipLink}</a>
       {editionLocale ? <ServiceEditionHeader language={editionLocale} slug={SERVICE_SLUG} /> : <HomegroundHeader languagePaths={attractionReservationLanguagePaths()} locale={locale} pageContext="reservations" />}
       <main id="reservations-main" tabIndex={-1}>
         <header className={styles.hero}>

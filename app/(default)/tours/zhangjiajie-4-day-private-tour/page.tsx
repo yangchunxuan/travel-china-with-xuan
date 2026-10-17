@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "zh-Hans": zhangjiajiePrivateTourPaths.zh,
       ko: zhangjiajiePrivateTourPaths.ko,
       ja: "/ja/tours/zhangjiajie-4-day-private-tour/",
-      fr: "/fr/tours/zhangjiajie-4-day-private-tour/",
+      fr: "/fr/tours/zhangjiajie-4-day-private-tour/", de: "/de/tours/zhangjiajie-4-day-private-tour/",
       es: "/es/tours/zhangjiajie-4-day-private-tour/",
       "x-default": zhangjiajiePrivateTourPaths.en,
     },

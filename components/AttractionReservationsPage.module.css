@@ -1638,3 +1638,6 @@
     transition: none;
   }
 }
+
+/* Translated official-channel labels must wrap on narrow German pages. */
+.nowrap:lang(de) { white-space: normal; }

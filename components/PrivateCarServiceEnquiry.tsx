@@ -1,5 +1,6 @@
 "use client";
 
+import { germanContactEdition } from '../lib/germanContactEdition';
 import { useId, useRef, useState } from "react";
 import { Mail, MessageCircle } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
@@ -26,7 +27,7 @@ export function PrivateCarServiceEnquiry({ locale, editionLocale }: { locale: Ho
   const form = useRef<HTMLFormElement>(null);
   const copy = editionLocale ? getPrivateCarServiceEditionCopy(editionLocale) : getPrivateCarServiceCopy(locale);
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
-  const dateEdition = editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const enquiry = copy.enquiry;
   const [draft, setDraft] = useState<PrivateCarServiceDraft>({
     kind: "", cities: "", date: "", dateUndecided: false, travellers: "2",

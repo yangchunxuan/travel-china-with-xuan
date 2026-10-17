@@ -147,10 +147,11 @@ type PhotoCopy = Readonly<{
   /** Languages that put the word first ("Día 3") set this instead of `dayUnit`. */
   dayPrefix?: string;
   /** Which photo-control labels to use; Japanese when not set. */
-  controls?: "ja" | "es" | "fr";
+  controls?: "ja" | "es" | "fr" | "de";
 }>;
 
 const mediaControlCopy = {
+  de: { previous: 'Vorheriges Foto', next: 'Nächstes Foto', pause: 'Diashow anhalten', play: 'Diashow starten', unavailable: 'Foto nicht verfügbar', count: 'Reisefotos' },
   fr: { previous: 'Photo précédente', next: 'Photo suivante', pause: 'Mettre le diaporama en pause', play: 'Lancer le diaporama', unavailable: 'Photo indisponible', count: 'Photographies du voyage' },
   en: { previous: "Previous photo", next: "Next photo", pause: "Pause slideshow", play: "Play slideshow", unavailable: "Photo unavailable", count: "Journey photographs" },
   zh: { previous: "上一张照片", next: "下一张照片", pause: "暂停轮播", play: "播放轮播", unavailable: "照片暂时无法显示", count: "行程照片" },

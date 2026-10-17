@@ -1,8 +1,10 @@
+import { germanFullTripSupportCopy } from './germanFullTripSupportCopy.ts';
 import type { FullTripSupportCopy } from "./fullTripSupportI18n";
 import type { ServiceEditionLocale } from "./serviceEdition";
 
 /** The same custom-quote service and optional brief, in French and Spanish. */
 const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
+  de: germanFullTripSupportCopy,
   fr: {
     metadata: {
       title: "Organisation de voyage en Chine et accompagnement sur place",

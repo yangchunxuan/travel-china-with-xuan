@@ -1,5 +1,6 @@
 "use client";
 
+import { germanContactEdition } from '../lib/germanContactEdition';
 import { useId, useRef, useState } from "react";
 import { Mail, MessageCircle } from "lucide-react";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
@@ -23,7 +24,7 @@ export function PrivateGuideEnquiry({ locale, editionLocale }: { locale: Homegro
   const form = useRef<HTMLFormElement>(null);
   const copy = editionLocale ? getPrivateGuideServiceEditionCopy(editionLocale) : getPrivateGuideServiceCopy(locale);
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
-  const dateEdition = editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const languageCopy = editionLocale ? getPrivateGuideServiceEditionLanguageCopy(editionLocale) : null;
   const enquiry = copy.enquiry;
   const [city, setCity] = useState<PrivateGuideCity | "">("");

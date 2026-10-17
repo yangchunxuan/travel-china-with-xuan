@@ -1,7 +1,9 @@
+import { germanPrivateCarServiceCopy } from './germanPrivateCarServiceCopy.ts';
 import type { PrivateCarServiceCopy } from './privateCarServicesI18n';
 import type { ServiceEditionLocale } from './serviceEdition';
 
 const copies: Record<ServiceEditionLocale, PrivateCarServiceCopy> = {
+  de: germanPrivateCarServiceCopy,
   fr: {
     metadata: { title: 'Voiture avec chauffeur en Chine : transferts et devis sur mesure', description: 'Transfert aéroport ou gare, visites ou trajet entre villes en Chine : Homeground vérifie votre itinéraire et précise le service dans un devis écrit.' },
     name: 'Voiture privée avec chauffeur en Chine',
