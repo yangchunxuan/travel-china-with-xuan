@@ -1,30 +1,59 @@
-.section { border-top: 1px solid rgb(10 10 10 / 12%); display: grid; gap: 3rem 5rem; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); margin: 6rem auto 0; max-width: 77rem; padding: 4rem 0 5rem; scroll-margin-top: 6.5rem; }
-.intro h2 { font-family: var(--hg-editorial, Georgia, serif); font-size: clamp(2rem, 3.5vw, 3.25rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.1; margin: 1rem 0 1.5rem; text-wrap: balance; }
-.intro p, .review p { color: rgb(10 10 10 / 65%); line-height: 1.65; }
-.eyebrow { color: #a74731 !important; font-size: .8125rem; font-weight: 500; margin: 0; }
-.aside { font-size: .9rem; margin-top: 2rem; }
-.aside a, .notice a { color: inherit; text-underline-offset: .2rem; }
+/*
+ * The company brief, set like the site's other forms: hairline blanks with a
+ * rust line drawn on focus, and the way forward as serif words with a thin
+ * arrow. No boxes, no pills.
+ */
+.section { --ink: #0a0a0a; --muted: rgb(10 10 10 / 64%); --blank: #c9c6bd; --rust: #a74731; border-top: 1px solid var(--ink); display: grid; gap: 3rem 5rem; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); margin: 7rem auto 0; max-width: 77rem; padding: 3.5rem 0 6rem; scroll-margin-top: 6.5rem; }
+.intro h2 { font-family: var(--hg-editorial, Georgia, serif); font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.1; margin: 1rem 0 1.5rem; text-wrap: balance; }
+.intro h2:is(:lang(zh), :lang(ko)) { letter-spacing: 0; line-height: 1.25; }
+.intro p, .review p { color: var(--muted); line-height: 1.7; }
+.eyebrow { color: var(--muted) !important; font-size: .8125rem; font-weight: 500; margin: 0; }
+.aside { font-size: .875rem; margin-top: 2rem; }
+.aside a, .notice a { color: var(--ink); text-decoration-color: var(--blank); text-underline-offset: .25rem; }
+.aside a:hover, .notice a:hover { text-decoration-color: currentColor; }
 .body, .form, .fields label { min-width: 0; }
-.fields { display: grid; gap: 1.5rem 1.25rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.fields label { color: #171716; display: flex; flex-direction: column; font-size: .875rem; gap: .45rem; }
-.fields label > span { color: #666560; font-size: .8rem; }
-.fields input, .fields select, .fields textarea { background: #f9f8f6; border: 1px solid transparent; border-bottom-color: #cbc9c3; border-radius: .25rem .25rem 0 0; color: #171716; font: inherit; line-height: 1.5; min-height: 3rem; padding: .75rem; width: 100%; }
-.fields textarea { resize: vertical; }
-.fields input::placeholder, .fields textarea::placeholder { color: #6d6c67; opacity: 1; }
-.fields :is(input, select, textarea):focus-visible { border-color: #a74731; outline: 2px solid #a74731; outline-offset: 3px; }
+.fields { display: grid; gap: 1.75rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fields label { color: var(--ink); display: flex; flex-direction: column; font-size: .875rem; font-weight: 500; gap: .25rem; }
+.labelRow { display: flex; flex-wrap: wrap; gap: 0 .5rem; align-items: baseline; }
+.labelRow > span { color: var(--muted); font-size: .8125rem; font-weight: 400; }
+.fields input, .fields select, .fields textarea {
+  appearance: none;
+  background: linear-gradient(var(--rust), var(--rust)) 0 100% / 0% 2px no-repeat, linear-gradient(var(--blank), var(--blank)) 0 100% / 100% 1px no-repeat;
+  border: 0; border-radius: 0; color: var(--ink); font-family: inherit; font-size: 1rem; font-weight: 400; line-height: 1.5; min-height: 2.875rem; padding: .5rem 0; transition: background-size 400ms cubic-bezier(.2, .7, .2, 1); width: 100%;
+}
+.fields select { background-image: linear-gradient(var(--rust), var(--rust)), linear-gradient(var(--blank), var(--blank)), linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: 0 100%, 0 100%, calc(100% - 9px) 55%, calc(100% - 4px) 55%; background-repeat: no-repeat; background-size: 0% 2px, 100% 1px, 5px 5px, 5px 5px; cursor: pointer; padding-inline-end: 1.5rem; }
+.fields input[type="number"] { -moz-appearance: textfield; }
+.fields input[type="number"]::-webkit-inner-spin-button, .fields input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.fields textarea { resize: none; }
+.fields input::placeholder, .fields textarea::placeholder { color: #8a8984; opacity: 1; }
+.fields :is(input, select, textarea):focus-visible { background-size: 100% 2px, 100% 1px; outline: none; }
+.fields select:focus-visible { background-size: 100% 2px, 100% 1px, 5px 5px, 5px 5px; }
 .wide { grid-column: 1 / -1; }
-.primary, .secondary { align-items: center; border: 1px solid transparent; border-radius: 99px; display: inline-flex; font: inherit; font-size: .875rem; gap: 1.5rem; justify-content: center; min-height: 2.75rem; padding: .7rem 1.25rem; text-align: center; text-decoration: none; }
-.primary { background: #171716; color: #fff; cursor: pointer; margin-top: 1.75rem; }
-.primary:hover { background: #a74731; }
-.secondary { background: #eae8e2; color: #171716; }
-.secondary:hover { background: #dedbd3; }
-.notice { color: #666560; font-size: .8125rem; line-height: 1.6; margin: 1rem 0 0; }
+.primary {
+  align-items: center; background: none; border: 0; color: var(--ink); cursor: pointer; display: inline-flex; font: 400 clamp(1.125rem, 1.7vw, 1.375rem)/1.3 var(--hg-editorial, Georgia, serif);
+  gap: 1.25rem; min-height: 3.25rem; padding: 0 1.25rem 0 0; position: relative; text-decoration: none;
+}
+.primary::after { background: currentColor; block-size: 1px; content: ""; inline-size: 2.625rem; transition: inline-size 300ms cubic-bezier(.2, .7, .2, 1); }
+.primary::before { block-size: 7px; border-block-start: 1px solid currentColor; border-inline-end: 1px solid currentColor; content: ""; inline-size: 7px; inset-block-start: calc(50% - 3.5px); inset-inline-end: 1.25rem; position: absolute; transform: rotate(45deg); }
+.primary:is(:hover, :focus-visible)::after { inline-size: 3.375rem; }
+.form > .primary { margin-top: 2rem; }
+.notice { color: var(--muted); font-size: .8125rem; line-height: 1.65; margin: 1rem 0 0; max-width: 46ch; }
 .error { color: #842a2a; font-size: .9rem; }
-.review { background: #f9f8f6; border-radius: 1rem; margin-top: 2.5rem; padding: 1.5rem; scroll-margin-top: 6rem; }
-.review pre { color: #292927; font-family: inherit; font-size: .9rem; line-height: 1.65; overflow-wrap: anywhere; white-space: pre-wrap; }
-.actions { align-items: center; display: flex; flex-wrap: wrap; gap: .75rem; }
-.actions .primary { margin-top: 0; }
-.copy { background: transparent; border: 0; color: #171716; cursor: pointer; font: inherit; font-size: .8125rem; min-height: 2.75rem; padding: .5rem; text-decoration: underline; text-underline-offset: .2rem; }
-.section :is(a, button):focus-visible, .review:focus-visible { outline: 2px solid #a74731; outline-offset: 4px; }
-@media (max-width: 55rem) { .section { gap: 2rem; grid-template-columns: 1fr; margin-top: 4rem; padding-top: 3rem; } .intro { max-width: 36rem; } }
-@media (max-width: 35rem) { .fields { grid-template-columns: 1fr; gap: 1.25rem; } .review { padding: 1rem; } .primary, .secondary { gap: .75rem; } .fields input, .fields select, .fields textarea { font-size: 1rem; } }
+.review { border-top: 1px solid var(--blank); margin-top: 2.5rem; padding-top: 1.75rem; scroll-margin-top: 6rem; }
+.review pre { border-inline-start: 2px solid var(--rust); color: #292927; font-family: inherit; font-size: .9rem; line-height: 1.7; margin: 1.25rem 0; overflow-wrap: anywhere; padding-inline-start: 1rem; white-space: pre-wrap; }
+.actions { align-items: center; display: flex; flex-wrap: wrap; gap: .5rem 2rem; }
+/* KakaoTalk (Korean only) set as the same serif words and thin arrow: no yellow pill, no icon. It leads on its own row, since Korean teams write on KakaoTalk first. */
+.kakao { flex: 1 1 100%; order: -1; }
+.kakao button.primary { background: none; border: 0; border-radius: 0; color: var(--ink); gap: 1.25rem; justify-self: start; font: 400 clamp(1.125rem, 1.7vw, 1.375rem)/1.3 var(--hg-editorial, Georgia, serif); justify-content: flex-start; min-height: 3.25rem; padding: 0 1.25rem 0 0; width: auto; }
+.kakao button.primary:hover { background: none; }
+.kakao button.primary svg { display: none; }
+.copy { background: transparent; border: 0; color: var(--ink); cursor: pointer; font: inherit; font-size: .875rem; min-height: 2.75rem; padding: .5rem 0; text-decoration: underline; text-decoration-color: var(--blank); text-underline-offset: .25rem; }
+.section :is(a, button):focus-visible, .review:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+@media (forced-colors: active) {
+  .fields input, .fields select, .fields textarea { border-bottom: 1px solid CanvasText; }
+  .fields :is(input, select, textarea):focus-visible { outline: 2px solid Highlight; outline-offset: 3px; }
+  .fields select { appearance: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .fields input, .fields select, .fields textarea, .primary::after { transition: none; } }
+@media (max-width: 55rem) { .section { gap: 2rem; grid-template-columns: 1fr; margin-top: 4.5rem; padding-top: 2.5rem; } .intro { max-width: 36rem; } }
+@media (max-width: 35rem) { .fields { gap: 1.5rem; grid-template-columns: 1fr; } }

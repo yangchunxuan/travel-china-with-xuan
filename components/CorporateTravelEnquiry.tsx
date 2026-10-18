@@ -4,11 +4,16 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundWhatsAppHref } from "../lib/tourContact";
-import { buildCorporateEnquiryDraft, corporateEnquiryEmailHref, corporatePurposeLabels, corporateTripLabels, type CorporateEnquiryDraft, type CorporatePurpose } from "../lib/corporateEnquiryDraft";
-import type { CorporateTripSlug } from "../lib/corporateTravelTypes";
+import { KakaoTalkContact } from "./KakaoTalkContact";
+import { buildCorporateEnquiryDraft, corporateEnquiryEmailHref, getCorporateEnquiryCopy, type CorporateEnquiryDraft, type CorporatePurpose } from "../lib/corporateEnquiryDraft";
+import type { CorporateLocale, CorporateTripSlug } from "../lib/corporateTravelTypes";
 import styles from "./CorporateTravelEnquiry.module.css";
 
-export function CorporateTravelEnquiry({ initialTrip }: { initialTrip?: CorporateTripSlug }) {
+const tripOrder: (CorporateTripSlug | "undecided")[] = ["undecided", "zhangjiajie-4-day-team-trip", "shanghai-suzhou-4-day-company-retreat"];
+const purposeOrder: CorporatePurpose[] = ["company-trip", "incentive", "meeting", "undecided"];
+
+export function CorporateTravelEnquiry({ initialTrip, locale = "en", privacyHref = "/privacy/" }: { initialTrip?: CorporateTripSlug; locale?: CorporateLocale; privacyHref?: string }) {
+  const copy = getCorporateEnquiryCopy(locale);
   const [draft, setDraft] = useState<CorporateEnquiryDraft>({ company: "", name: "", email: "", people: "", timing: "", purpose: "undecided", trip: initialTrip ?? "undecided", budget: "", notes: "" });
   const [review, setReview] = useState("");
   const [error, setError] = useState("");
@@ -20,48 +25,50 @@ export function CorporateTravelEnquiry({ initialTrip }: { initialTrip?: Corporat
   }
   function prepare(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    try { setReview(buildCorporateEnquiryDraft(draft)); setError(""); }
-    catch (failure) { setError(failure instanceof Error ? failure.message : "Please check your details."); }
+    try { setReview(buildCorporateEnquiryDraft(draft, locale)); setError(""); }
+    catch (failure) { setError(failure instanceof Error ? failure.message : copy.fallbackError); }
   }
   async function copyBrief() {
     try { await navigator.clipboard.writeText(review); setCopied(true); }
-    catch { setCopied(false); setError("Copy is unavailable here. You can select the message below, or open it in your email app."); }
+    catch { setCopied(false); setError(copy.copyFailed); }
   }
+  const label = (text: string, optional = false) => <span className={styles.labelRow}>{text}{optional && <span>{copy.optional}</span>}</span>;
   return (
     <section className={styles.section} id="corporate-enquiry" aria-labelledby="corporate-enquiry-title">
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>Start with your team</p>
-        <h2 id="corporate-enquiry-title">What would you like this trip to bring together?</h2>
-        <p>A few details give us a useful starting point. Dates can still be open; an estimated group size is enough.</p>
-        <p className={styles.aside}>Already have a brief? Email <a href={`mailto:${homegroundBusiness.serviceEmail}`}>{homegroundBusiness.serviceEmail}</a>.</p>
+        <p className={styles.eyebrow}>{copy.eyebrow}</p>
+        <h2 id="corporate-enquiry-title">{copy.title}</h2>
+        <p>{copy.intro}</p>
+        <p className={styles.aside}>{copy.emailAside} <a href={`mailto:${homegroundBusiness.serviceEmail}`}>{homegroundBusiness.serviceEmail}</a></p>
       </div>
       <div className={styles.body}>
         <form onSubmit={prepare} className={styles.form}>
           <div className={styles.fields}>
-            <label>Company name<input autoComplete="organization" maxLength={120} name="company" required value={draft.company} onChange={(e) => edit("company", e.target.value)} /></label>
-            <label>Your name <span>(optional)</span><input autoComplete="name" maxLength={100} name="contactName" value={draft.name} onChange={(e) => edit("name", e.target.value)} /></label>
-            <label>Reply email <span>(optional)</span><input autoComplete="email" maxLength={160} name="email" type="email" value={draft.email} onChange={(e) => edit("email", e.target.value)} /></label>
-            <label>Estimated group size<input inputMode="numeric" min={1} max={9999} name="people" placeholder="e.g. 18" required step={1} type="number" value={draft.people} onChange={(e) => edit("people", e.target.value)} /></label>
-            <label className={styles.wide}>When, and for how long?<input maxLength={160} name="timing" placeholder="e.g. May 2027, 4 days — or dates still open" required value={draft.timing} onChange={(e) => edit("timing", e.target.value)} /></label>
-            <label>Purpose of your trip<select name="purpose" value={draft.purpose} onChange={(e) => edit("purpose", e.target.value as CorporatePurpose)}>{Object.entries(corporatePurposeLabels).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label>
-            <label>A starting idea<select name="itinerary" value={draft.trip} onChange={(e) => edit("trip", e.target.value as CorporateEnquiryDraft["trip"])}><option value="undecided">Help us choose</option>{Object.entries(corporateTripLabels).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label>
-            <label className={styles.wide}>Budget &amp; currency <span>(optional)</span><input maxLength={160} name="budget" placeholder="e.g. USD 15,000 total, excluding international flights" value={draft.budget} onChange={(e) => edit("budget", e.target.value)} /></label>
-            <label className={styles.wide}>Anything we should plan around? <span>(optional)</span><textarea maxLength={1800} name="notes" placeholder="Single or shared rooms, meeting time, food preferences, different arrival flights…" rows={3} value={draft.notes} onChange={(e) => edit("notes", e.target.value)} /></label>
+            <label>{label(copy.labels.company)}<input autoComplete="organization" maxLength={120} name="company" required value={draft.company} onChange={(e) => edit("company", e.target.value)} /></label>
+            <label>{label(copy.labels.people)}<input inputMode="numeric" min={1} max={9999} name="people" placeholder={copy.placeholders.people} required step={1} type="number" value={draft.people} onChange={(e) => edit("people", e.target.value)} /></label>
+            <label>{label(copy.labels.name, true)}<input autoComplete="name" maxLength={100} name="contactName" value={draft.name} onChange={(e) => edit("name", e.target.value)} /></label>
+            <label>{label(copy.labels.email, true)}<input autoComplete="email" maxLength={160} name="email" type="email" value={draft.email} onChange={(e) => edit("email", e.target.value)} /></label>
+            <label className={styles.wide}>{label(copy.labels.timing)}<input maxLength={160} name="timing" placeholder={copy.placeholders.timing} required value={draft.timing} onChange={(e) => edit("timing", e.target.value)} /></label>
+            <label>{label(copy.labels.purpose)}<select name="purpose" value={draft.purpose} onChange={(e) => edit("purpose", e.target.value as CorporatePurpose)}>{purposeOrder.map((value) => <option value={value} key={value}>{copy.purposes[value]}</option>)}</select></label>
+            <label>{label(copy.labels.trip)}<select name="itinerary" value={draft.trip} onChange={(e) => edit("trip", e.target.value as CorporateEnquiryDraft["trip"])}>{tripOrder.map((value) => <option value={value} key={value}>{copy.trips[value]}</option>)}</select></label>
+            <label className={styles.wide}>{label(copy.labels.budget, true)}<input maxLength={160} name="budget" placeholder={copy.placeholders.budget} value={draft.budget} onChange={(e) => edit("budget", e.target.value)} /></label>
+            <label className={styles.wide}>{label(copy.labels.notes, true)}<textarea maxLength={1800} name="notes" placeholder={copy.placeholders.notes} rows={3} value={draft.notes} onChange={(e) => edit("notes", e.target.value)} /></label>
           </div>
-          <button className={styles.primary} type="submit">Prepare my enquiry <span aria-hidden="true">↗</span></button>
-          <p className={styles.notice}>Review your message, then choose email or WhatsApp to send it. Preparing a brief does not make a booking. <Link href="/privacy/">Privacy notice</Link></p>
+          <button className={styles.primary} type="submit">{copy.submit}</button>
+          <p className={styles.notice}>{copy.notice} <Link href={privacyHref}>{copy.privacy}</Link></p>
         </form>
         {error && <p className={styles.error} role="alert">{error}</p>}
         {review && <div aria-labelledby="corporate-review-title" className={styles.review} ref={reviewRef} tabIndex={-1}>
-          <p className={styles.eyebrow} id="corporate-review-title">Your enquiry is ready to review</p>
-          <p>It has not been sent. Open your preferred app and send it when you are ready.</p>
+          <p className={styles.eyebrow} id="corporate-review-title">{copy.reviewTitle}</p>
+          <p>{copy.reviewNotSent}</p>
           <pre>{review}</pre>
           <div className={styles.actions}>
-            <a className={styles.primary} href={corporateEnquiryEmailHref(homegroundBusiness.serviceEmail, draft, review)}>Open email draft <span aria-hidden="true">↗</span></a>
-            <a className={styles.secondary} href={homegroundWhatsAppHref(review)} rel="noopener noreferrer" target="_blank">Open WhatsApp draft <span aria-hidden="true">↗</span></a>
-            <button className={styles.copy} onClick={copyBrief} type="button">{copied ? "Copied" : "Copy enquiry"}</button>
+            <a className={styles.primary} href={corporateEnquiryEmailHref(homegroundBusiness.serviceEmail, draft, review, locale)}>{copy.openEmail}</a>
+            <a className={styles.primary} href={homegroundWhatsAppHref(review)} rel="noopener noreferrer" target="_blank">{copy.openWhatsApp}</a>
+            {locale === "ko" && copy.openKakao && <KakaoTalkContact buttonClassName={styles.primary} className={styles.kakao} inquiry={() => review} key={review} label={copy.openKakao} />}
+            <button className={styles.copy} onClick={copyBrief} type="button">{copied ? copy.copied : copy.copy}</button>
           </div>
-          <p className={styles.notice} role="status">{copied ? "Your enquiry has been copied. It has not been sent." : "Your email or WhatsApp message is the enquiry we receive."}</p>
+          <p className={styles.notice} role="status">{copied ? copy.copiedStatus : copy.readyStatus}</p>
         </div>}
       </div>
     </section>
