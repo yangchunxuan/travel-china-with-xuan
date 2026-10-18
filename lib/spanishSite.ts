@@ -25,7 +25,7 @@ export function spanishLanguagePaths(enPath: string, esPath: string, overrides: 
   const ar = slug ? `/ar${enPath}` : arabicSitePagePathByEnglishPath[enPath];
   const de = slug ? `/de${enPath}` : germanSitePagePathByEnglishPath[enPath];
   const fr = overrides.fr ?? (slug ? `/fr${enPath}` : frenchSitePagePathByEnglishPath[enPath]);
-  const ja = overrides.ja ?? (slug === 'xian-terracotta-warriors-half-day-private-tour' || /\/guides\/.+/.test(enPath) ? undefined : `/ja${enPath}`);
+  const ja = overrides.ja ?? (/\/guides\/.+/.test(enPath) ? undefined : `/ja${enPath}`);
   return [
     { label: 'ES', lang: 'es', path: esPath }, { label: 'EN', lang: 'en', path: enPath },
     { label: '中文', lang: 'zh-Hans', path: overrides.zh ?? `/zh${enPath}` },

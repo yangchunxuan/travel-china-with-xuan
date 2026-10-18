@@ -44,8 +44,8 @@ export const japaneseLegalLinks: readonly { href: string; label: string }[] = [
 ];
 
 export interface JapaneseLanguagePath {
-  readonly label: "EN" | "中文" | "한국어" | "日本語" | "DE" | "العربية";
-  readonly lang: "en" | "zh-Hans" | "ko" | "ja" | "de" | "ar";
+  readonly label: string;
+  readonly lang: "en" | "zh-Hans" | "ko" | "ja" | "de" | "ar" | "fr" | "es";
   readonly path: string;
 }
 

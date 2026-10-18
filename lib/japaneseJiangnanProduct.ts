@@ -3,6 +3,7 @@ import { jaPilotCopy } from "./jaPilotCopy";
 import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
 import { originalPrivateTourPhotoSource } from "./privateTourPhotoQuality";
 import { withJapanesePhotoQuality } from "./japanesePrivateTourPhotoQuality";
+import { getJapaneseCompletedFaq } from "./japaneseTourFaqCompletion";
 import {
   localizePrivateTourProduct,
   type LocalizedPrivateTourProduct,
@@ -47,7 +48,7 @@ export function localizeJapaneseJiangnanProduct(
     serviceNote: `${copy.guideNote} ${copy.included.slice(1).join(" ")}`,
     exclusions: [...copy.excluded],
     bookingNote: copy.priceNote,
-    faq: copy.notes.map((answer, index) => ({
+    faq: getJapaneseCompletedFaq(product) ?? copy.notes.map((answer, index) => ({
       question: copy.presentation.beforeChooseLabels[index],
       answer,
     })),

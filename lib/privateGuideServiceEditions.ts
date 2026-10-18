@@ -1,9 +1,11 @@
+import { japanesePrivateGuideServiceCopy, japanesePrivateGuideLanguageCopy } from './japanesePrivateGuideServiceCopy.ts';
 import { arabicPrivateGuideServiceCopy, arabicPrivateGuideLanguageCopy } from './arabicPrivateGuideServiceCopy.ts';
 import { germanPrivateGuideServiceCopy, germanPrivateGuideLanguageCopy } from './germanPrivateGuideServiceCopy.ts';
 import type { PrivateGuideServiceCopy } from './privateGuideServicesI18n';
 import type { ServiceEditionLocale } from './serviceEdition';
 
 const copies: Record<ServiceEditionLocale, PrivateGuideServiceCopy> = {
+  ja: japanesePrivateGuideServiceCopy,
   ar: arabicPrivateGuideServiceCopy,
   de: germanPrivateGuideServiceCopy,
   fr: {
@@ -103,6 +105,7 @@ export function getPrivateGuideServiceEditionCopy(language: ServiceEditionLocale
 }
 
 const languageCopy = {
+  ja: japanesePrivateGuideLanguageCopy,
   ar: arabicPrivateGuideLanguageCopy,
   de: germanPrivateGuideLanguageCopy,
   fr: {
@@ -130,5 +133,5 @@ export function getPrivateGuideServiceEditionLanguageCopy(language: ServiceEditi
 }
 
 export function formatPrivateGuideEditionPrice(amount: number, language: ServiceEditionLocale): string {
-  return new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
+  return new Intl.NumberFormat(language === 'ja' ? 'ja-JP' : language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
 }

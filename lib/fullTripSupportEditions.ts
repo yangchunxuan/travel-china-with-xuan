@@ -1,3 +1,4 @@
+import { japaneseFullTripSupportCopy } from './japaneseFullTripSupportCopy.ts';
 import { arabicFullTripSupportCopy } from './arabicFullTripSupportCopy.ts';
 import { germanFullTripSupportCopy } from './germanFullTripSupportCopy.ts';
 import type { FullTripSupportCopy } from "./fullTripSupportI18n";
@@ -5,6 +6,7 @@ import type { ServiceEditionLocale } from "./serviceEdition";
 
 /** The same custom-quote service and optional brief, in French and Spanish. */
 const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
+  ja: japaneseFullTripSupportCopy,
   ar: arabicFullTripSupportCopy,
   de: germanFullTripSupportCopy,
   fr: {

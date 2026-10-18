@@ -1,3 +1,5 @@
+import { japaneseAttractionReservationCopy } from './japaneseAttractionReservationCopy.ts';
+import { japaneseAttractionReservationRules } from './japaneseAttractionReservationRules.ts';
 import { arabicAttractionReservationCopy } from './arabicAttractionReservationCopy.ts';
 import { arabicAttractionReservationRules } from './arabicAttractionReservationRules.ts';
 import { germanAttractionReservationCopy } from './germanAttractionReservationCopy.ts';
@@ -9,10 +11,10 @@ import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS as days } from './attraction
 // @ts-ignore TS5097: focused checks use Node type stripping.
 import { attractionReservationServiceFeeCny } from './attractionReservations.ts';
 
-export type AttractionReservationEditionLocale = 'fr' | 'es' | 'de' | 'ar';
+export type AttractionReservationEditionLocale = 'fr' | 'es' | 'de' | 'ar' | 'ja';
 
 export function formatAttractionReservationEditionMoney(amount: number, language: AttractionReservationEditionLocale) {
-  return new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
+  return new Intl.NumberFormat(language === 'ja' ? 'ja-JP' : language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(amount);
 }
 
 const guarantees = {
@@ -138,10 +140,11 @@ const spanish: AttractionReservationCopy = {
 };
 
 export function getAttractionReservationEditionCopy(language: AttractionReservationEditionLocale): AttractionReservationCopy {
-  return language === 'ar' ? arabicAttractionReservationCopy : language === 'de' ? germanAttractionReservationCopy : language === 'fr' ? french : spanish;
+  return language === 'ja' ? japaneseAttractionReservationCopy : language === 'ar' ? arabicAttractionReservationCopy : language === 'de' ? germanAttractionReservationCopy : language === 'fr' ? french : spanish;
 }
 
 export const attractionReservationEditionHeroAlt = {
+  ja: "故宮博物院の太和殿と、訪問者が行き交う広場",
   ar: "قاعة التناغم الأسمى وساحتها في المدينة المحرمة مع زوار في المشهد",
   de: 'Halle der Höchsten Harmonie und ihr Innenhof in der Verbotenen Stadt mit Besuchern',
   fr: 'Le pavillon de l’Harmonie suprême et sa cour dans la Cité interdite, avec des visiteurs',
@@ -157,6 +160,7 @@ const unchecked = {
 // Only translated words live here. Availability, fees, status, source and check dates
 // continue to come from attractionReservations; null policy fields remain null.
 const ruleCopy: Record<AttractionReservationEditionLocale, Record<string, RuleCopy>> = {
+  ja: japaneseAttractionReservationRules,
   ar: arabicAttractionReservationRules,
   de: germanAttractionReservationRules,
   fr: {

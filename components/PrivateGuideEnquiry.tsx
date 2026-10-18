@@ -1,4 +1,5 @@
 "use client";
+import { japaneseServiceDateEdition } from "../lib/japaneseServiceDateEdition";
 import { arabicContactEdition } from '../lib/arabicContactEdition';
 
 
@@ -26,7 +27,7 @@ export function PrivateGuideEnquiry({ locale, editionLocale }: { locale: Homegro
   const form = useRef<HTMLFormElement>(null);
   const copy = editionLocale ? getPrivateGuideServiceEditionCopy(editionLocale) : getPrivateGuideServiceCopy(locale);
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
-  const dateEdition = editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "ja" ? japaneseServiceDateEdition : editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const languageCopy = editionLocale ? getPrivateGuideServiceEditionLanguageCopy(editionLocale) : null;
   const enquiry = copy.enquiry;
   const [city, setCity] = useState<PrivateGuideCity | "">("");

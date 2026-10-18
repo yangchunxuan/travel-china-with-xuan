@@ -105,9 +105,9 @@ const fullTripCopy = load('lib/fullTripSupportEditions.ts');
 const fullTripMessage = load('lib/fullTripSupportMessage.ts');
 const carCopy = load('lib/privateCarServiceEditions.ts');
 const carMessage = load('lib/privateCarServiceMessage.ts');
-const languages = ['fr', 'es', 'de', 'ar'];
+const languages = ['fr', 'es', 'de', 'ar', 'ja'];
 
-test('sixteen real service routes generate their own canonical and reciprocal seven-language alternates', async () => {
+test('twenty real service routes generate their own canonical and reciprocal eight-language alternates', async () => {
   const pageStubs = Object.fromEntries([
     ['PrivateGuideServicesPage'], ['PrivateCarServicesPage'], ['AttractionReservationsPage'], ['FullTripSupportPage'],
   ].map(([name]) => [`components/${name}.tsx`, { [name]: function service() {} }]));
@@ -116,7 +116,7 @@ test('sixteen real service routes generate their own canonical and reciprocal se
   const componentNames = ['PrivateGuideServicesPage', 'PrivateCarServicesPage', 'AttractionReservationsPage', 'FullTripSupportPage'];
   assert.equal(paths.serviceDetailSlugs.length, 4);
   for (const language of languages) {
-    const folder = language === 'ar' ? 'arabic' : language === 'de' ? 'german' : language === 'fr' ? 'french' : 'spanish';
+    const folder = language === 'ja' ? 'japanese' : language === 'ar' ? 'arabic' : language === 'de' ? 'german' : language === 'fr' ? 'french' : 'spanish';
     const route = routeLoad(`app/(${folder})/${language}/services/[service]/page.tsx`);
     assert.equal(route.dynamicParams, false);
     assert.deepEqual(plain(route.generateStaticParams()).map(item => item.service), plain(paths.serviceDetailSlugs));
@@ -125,9 +125,9 @@ test('sixteen real service routes generate their own canonical and reciprocal se
       const metadata = await route.generateMetadata({ params });
       const canonical = `/${language}/services/${slug}/`;
       assert.equal(metadata.alternates.canonical, canonical);
-      assert.equal(metadata.openGraph.url, canonical);
-      assert.deepEqual(Object.keys(metadata.alternates.languages).sort(), ['ar', 'de', 'en', 'es', 'fr', 'ko', 'x-default', 'zh-Hans'].sort());
-      for (const other of ['en', 'zh-Hans', 'ko', 'fr', 'es', 'de', 'ar', 'x-default']) {
+      assert.equal(new URL(metadata.openGraph.url, "https://homegroundchina.com").pathname, canonical);
+      assert.deepEqual(Object.keys(metadata.alternates.languages).sort(), ['ar', 'de', 'en', 'es', 'fr', 'ja', 'ko', 'x-default', 'zh-Hans'].sort());
+      for (const other of ['en', 'zh-Hans', 'ko', 'ja', 'fr', 'es', 'de', 'ar', 'x-default']) {
         const prefix = other === 'en' || other === 'x-default' ? '' : `/${other === 'zh-Hans' ? 'zh' : other}`;
         assert.equal(metadata.alternates.languages[other], `${prefix}/services/${slug}/`);
       }
@@ -138,8 +138,8 @@ test('sixteen real service routes generate their own canonical and reciprocal se
       assert.equal(page.type, pageStubs[`components/${componentNames[index]}.tsx`][componentNames[index]]);
       assert.deepEqual(plain(page.props), { locale: 'en', editionLocale: language });
       const switcher = paths.serviceDetailLanguagePaths(slug);
-      assert.equal(switcher.length, 7);
-      assert.equal(switcher.some(item => item.path.includes('/ja/')), false);
+      assert.equal(switcher.length, 8);
+      assert.equal(switcher.find(item => item.lang === 'ja').path, `/ja/services/${slug}/`);
     }
     await assert.rejects(route.generateMetadata({ params: Promise.resolve({ service: 'invented-service' }) }), /NOT_FOUND/);
   }
@@ -161,9 +161,9 @@ for (const language of languages) {
     body = new URL(href('whatsapp')).searchParams.get('text');
     const email = new URL(href('email'));
     assert.equal(email.searchParams.get('body'), body);
-    assert.match(email.searchParams.get('subject'), language === 'ar' ? /مرشد باللغة العربية/ : language === 'ar' ? /مرشد بالعربية/ : language === 'de' ? /deutschsprachiger/i : language === 'fr' ? /francophone/i : /española/i);
-    assert.match(body, language === 'ar' ? /مرشد بالعربية/ : language === 'de' ? /deutschsprachiger/ : language === 'fr' ? /francophone/ : /habla española/);
-    assert.match(body, language === 'ar' ? /تأكيد السعر.*قبل الحجز/ : language === 'de' ? /Verfügbarkeit.*bestätigen/ : language === 'fr' ? /devis séparé/ : /presupuesto aparte/);
+    assert.match(email.searchParams.get('subject'), language === 'ja' ? /日本語ガイド/ : language === 'ar' ? /مرشد باللغة العربية/ : language === 'ja' ? /日本語ガイド/ : language === 'ar' ? /مرشد بالعربية/ : language === 'de' ? /deutschsprachiger/i : language === 'fr' ? /francophone/i : /española/i);
+    assert.match(body, language === 'ja' ? /日本語ガイド/ : language === 'ar' ? /مرشد بالعربية/ : language === 'de' ? /deutschsprachiger/ : language === 'fr' ? /francophone/ : /habla española/);
+    assert.match(body, language === 'ja' ? /別途/ : language === 'ar' ? /تأكيد السعر.*قبل الحجز/ : language === 'de' ? /Verfügbarkeit.*bestätigen/ : language === 'fr' ? /devis séparé/ : /presupuesto aparte/);
     assert.doesNotMatch(body, /CNY|USD|RMB/);
     assert.ok(body.endsWith(`https://homegroundchina.com/${language}/services/private-english-speaking-guides/`));
     for (const city of guideRates.privateGuideCities) {
@@ -190,7 +190,7 @@ for (const language of languages) {
     assert.equal(props.attractions.some(item => item.id === 'shanghai-museum-east'), false, 'walk-in attraction must not incur a reservation fee');
     assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
     assert.match(copy.guarantee, /8/);
-    const categoryException = language === 'ar' ? /باستثناء.*دون ضمان|خارج ضمان الحجز/ : language === 'de' ? /außer.*nicht garantiert|keine Reservierungsgarantie/ : language === 'fr' ? /sauf.*sans garantie|hors garantie/ : /salvo.*sin garantía|fuera de la garantía/;
+    const categoryException = language === 'ja' ? /対象外|除外/ : language === 'ar' ? /باستثناء.*دون ضمان|خارج ضمان الحجز/ : language === 'de' ? /außer.*nicht garantiert|keine Reservierungsgarantie/ : language === 'fr' ? /sauf.*sans garantie|hors garantie/ : /salvo.*sin garantía|fuera de la garantía/;
     assert.doesNotMatch(copy.guarantee, categoryException, 'no attraction category is excluded from the booking guarantee');
     assert.ok(copy.timingRows[2].body.includes(copy.guaranteeLate), 'the short-notice timing row retains the complete late policy');
     const timing = one(page, node => 'data-reservation-timing' in (node.props ?? {}), 'when to contact us');
@@ -198,7 +198,7 @@ for (const language of languages) {
     assert.equal(timingRows.length, 3, 'three contact timings');
     const latePolicy = text(one(timingRows[2], node => node.type === 'p', 'late request policy'));
     assert.equal(latePolicy, copy.timingRows[2].body, 'the page renders the full short-notice timing row');
-    assert.match(latePolicy, language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
+    assert.match(latePolicy, language === 'ja' ? /8日.*(?:未満|切って).*相談/s : language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
     const h = hooks(), uiLoad = loader({ react: h.react });
     const { AttractionReservationEnquiry } = uiLoad('components/AttractionReservationEnquiry.tsx');
     let tree = h.render(AttractionReservationEnquiry, props);
@@ -210,7 +210,7 @@ for (const language of languages) {
     }
     one(tree, node => node.props?.name === 'travellers', 'party size').props.onChange({ target: { value: '3' } });
     tree = h.render(AttractionReservationEnquiry, props);
-    const expected = new Intl.NumberFormat(language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(270);
+    const expected = new Intl.NumberFormat(language === 'ja' ? 'ja-JP' : language === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : language === 'de' ? 'de-DE' : language === 'fr' ? 'fr-FR' : 'es-ES', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(270);
     assert.equal(fee(), expected, '45 × 3 travellers × 2 attractions');
     const whatsapp = one(tree, node => node.props?.['data-reservation-channel'] === 'whatsapp', 'WhatsApp draft');
     const email = one(tree, node => node.props?.['data-reservation-channel'] === 'email', 'email draft');

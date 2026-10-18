@@ -13,8 +13,8 @@ interface CorporateTravelNavigation {
     id: "corporate";
     label: string;
     description: string;
-    pathSegment: "corporate-travel/";
-    href: "/corporate-travel/";
+    pathSegment: "corporate-travel/" | "ja/corporate-travel/";
+    href: "/corporate-travel/" | "/ja/corporate-travel/";
   };
   menu: {
     toggle: string;
@@ -22,8 +22,8 @@ interface CorporateTravelNavigation {
       id: CorporatePurpose;
       label: string;
       description: string;
-      pathSegment: `corporate-travel/#${CorporatePurpose}`;
-      href: `/corporate-travel/#${CorporatePurpose}`;
+      pathSegment: `${"" | "ja/"}corporate-travel/#${CorporatePurpose}`;
+      href: `/${"" | "ja/"}corporate-travel/#${CorporatePurpose}`;
     }[];
   };
 }
@@ -63,12 +63,12 @@ const copyByLanguage: Record<CorporateLanguage, NavigationCopy> = {
   },
   ja: {
     label: "企業向け旅行",
-    description: "社員旅行、報奨旅行、少人数の会議をご案内（英語ページ）",
+    description: "社員旅行、報奨旅行、少人数の会議・チーム合宿",
     toggle: "企業向け旅行メニューを開く",
     purposes: {
-      "company-trips": { label: "社員旅行・チームビルディング", description: "同僚と体験を共有し、交流する旅（英語ページ）" },
-      "incentive-travel": { label: "インセンティブ旅行", description: "チームの成果を祝い、感謝を伝える旅（英語ページ）" },
-      "meetings-retreats": { label: "少人数の会議・リトリート", description: "自社で進める会議とチームの旅を組み合わせる（英語ページ）" },
+      "company-trips": { label: "社員旅行・チームビルディング", description: "同僚と体験を共有し、交流する旅" },
+      "incentive-travel": { label: "インセンティブ旅行", description: "チームの成果を祝い、感謝を伝える旅" },
+      "meetings-retreats": { label: "少人数の会議・チーム合宿", description: "自社で進める会議と、チームで過ごす旅" },
     },
   },
   es: {
@@ -113,21 +113,22 @@ const copyByLanguage: Record<CorporateLanguage, NavigationCopy> = {
   },
 };
 
-/** Navigation labels are localized; destinations remain the published English pages. */
+/** Link to a complete local edition; other languages disclose the English destination. */
 export function getCorporateTravelNavigation(language: string): CorporateTravelNavigation {
   const code = language.trim().toLowerCase().split(/[-_]/u)[0];
   const copy = copyByLanguage[Object.hasOwn(copyByLanguage, code) ? code as CorporateLanguage : "en"];
+  const prefix = code === "ja" ? "ja/" : "";
   return {
     item: {
       id: "corporate", label: copy.label, description: copy.description,
-      pathSegment: "corporate-travel/", href: "/corporate-travel/",
+      pathSegment: `${prefix}corporate-travel/`, href: `/${prefix}corporate-travel/`,
     },
     menu: {
       toggle: copy.toggle,
       entries: purposes.map(id => ({
         id, ...copy.purposes[id],
-        pathSegment: `corporate-travel/#${id}`,
-        href: `/corporate-travel/#${id}`,
+        pathSegment: `${prefix}corporate-travel/#${id}`,
+        href: `/${prefix}corporate-travel/#${id}`,
       })),
     },
   };

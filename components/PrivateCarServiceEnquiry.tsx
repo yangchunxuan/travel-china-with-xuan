@@ -1,4 +1,5 @@
 "use client";
+import { japaneseServiceDateEdition } from "../lib/japaneseServiceDateEdition";
 import { arabicContactEdition } from '../lib/arabicContactEdition';
 
 
@@ -29,7 +30,7 @@ export function PrivateCarServiceEnquiry({ locale, editionLocale }: { locale: Ho
   const form = useRef<HTMLFormElement>(null);
   const copy = editionLocale ? getPrivateCarServiceEditionCopy(editionLocale) : getPrivateCarServiceCopy(locale);
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
-  const dateEdition = editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "ja" ? japaneseServiceDateEdition : editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const enquiry = copy.enquiry;
   const [draft, setDraft] = useState<PrivateCarServiceDraft>({
     kind: "", cities: "", date: "", dateUndecided: false, travellers: "2",

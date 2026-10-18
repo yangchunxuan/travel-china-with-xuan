@@ -71,6 +71,13 @@ export function JapaneseToursHubPage() {
           </ul>
         </section>
 
+        <section className={styles.quickCompare} aria-labelledby="ja-halfday-title">
+          <div className={styles.quickIntro}>
+            <div><p className={styles.eyebrow}>一日から選べる旅</p><h2 id="ja-halfday-title">兵馬俑を、半日でじっくり。</h2></div>
+            <div className={styles.priceContext}><p>西安での滞在に組み込める、専用車とガイド付きの半日プラン。日程、人数、宿泊先に合わせてお見積もりします。日本語ガイドは別途確認・お見積もりとなります。</p><Link href="/ja/tours/xian-terracotta-warriors-half-day-private-tour/">兵馬俑の半日プライベートツアーを見る →</Link></div>
+          </div>
+        </section>
+
         <section className={styles.finalSection} id="contact">
           <div className={styles.finalInner}>
             <div>

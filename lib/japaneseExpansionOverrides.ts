@@ -93,7 +93,7 @@ export const japaneseExpansionOverrides: Readonly<Record<string, Partial<Japanes
   "chaozhou-shantou-nanao-5-day-private-tour": {
     title: "汕頭・南澳島・潮州 5日間（4泊）プライベートツアー",
     metadataTitle: "汕頭・南澳島・潮州 5日間プライベートツアー",
-    metadataDescription: "汕頭、南澳島、潮州を巡る5日間。4名以上は1名USD 280から。Ctripで4ダイヤ相当のホテル、専用車、記載の入場券を含み、食事代は別途です。",
+    metadataDescription: "汕頭、南澳島、潮州を巡る5日間。4名参加で1名CNY 1,820から。Ctripで4ダイヤ相当のホテル、専用車、記載の入場券を含み、食事代は別途です。",
     eyebrow: "島の海岸、騎楼の街並み、好みに合わせて選ぶ潮汕料理",
     lede: "南澳島と潮州にそれぞれ1泊。専用車で海岸、古城、汕頭の歴史ある港町を巡ります。食事のおすすめはご案内しますが、飲食代は各自負担です。",
     summary: "Ctripで4ダイヤ相当のホテルに朝食付きで4泊。1組につき専用車1台、記載の入場券と体験、飲料水、中国国内の基本的な旅行傷害保険を含みます。",
@@ -178,7 +178,7 @@ export const japaneseExpansionOverrides: Readonly<Record<string, Partial<Japanes
   "huangshan-hongcun-huizhou-5-day-private-tour": {
     title: "黄山・宏村・徽州 5日間（4泊）プライベートツアー",
     metadataTitle: "黄山・宏村・徽州 5日間プライベートツアー",
-    metadataDescription: "黄山の山上に1泊し、宏村と徽州の村々を巡る5日間。4名参加は1名USD 769から。英語ガイド、専用車、記載の入場券と2〜5日目の昼食を含みます。",
+    metadataDescription: "黄山の山上に1泊し、宏村と徽州の村々を巡る5日間。4名参加で1名CNY 4,998から。英語ガイド、専用車、記載の入場券と2〜5日目の昼食を含みます。",
     eyebrow: "黄山の山上に1泊し、村々はゆっくり歩く",
     lede: "黄山の山上で1泊した後、宏村へ下山。西逓、南屏、関麓、唐模、呈坎、棠樾牌坊群を専用車で巡ります。",
     summary: "黄山の麓と山上、宏村、唐模に各1泊、計4泊とも朝食付き。英語ガイド、専用車、記載の入場券、2〜5日目の昼食を含みます。",

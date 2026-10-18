@@ -1,4 +1,5 @@
 "use client";
+import { japaneseServiceDateEdition } from "../lib/japaneseServiceDateEdition";
 import { arabicContactEdition } from '../lib/arabicContactEdition';
 
 
@@ -76,7 +77,7 @@ export function AttractionReservationEnquiry({
   intro: ReactNode;
 }) {
   const id = useId();
-  const dateEdition = editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "ja" ? japaneseServiceDateEdition : editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
   const [compactReferral, setCompactReferral] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -202,7 +203,7 @@ export function AttractionReservationEnquiry({
     if (undecided) return <span className={styles.summaryDate}>{copy.message.datesUndecided}</span>;
     const date = dates[attractionId];
     return date
-      ? <span className={styles.summaryDate}>{formatTourDate(date, locale)}</span>
+      ? <span className={styles.summaryDate}>{formatTourDate(date, editionLocale === "ja" ? "zh" : locale)}</span>
       : <button className={styles.summaryPickDate} onClick={() => focusDateField(attractionId)} type="button">{copy.summaryPickDate}</button>;
   }
 

@@ -1,0 +1,112 @@
+[
+  {
+    "page": "guide",
+    "check": {
+      "date": "2027/04/04",
+      "email": "Homeground ご担当者様、プライベート日本語ガイドの手配について相談したいです。\n希望サービス: 日本語ガイドを希望（1日8時間まで。対応可否・時間・料金は要確認）\nガイドの希望言語: 日本語 · 対応可否と追加料金を別途確認\n都市: 上海\n希望日: 2027-04-04\n人数: 2\n訪問先・集合場所・その他の希望: 上海のホテルから外灘へ\n日本語ガイドの空き状況を確認し、料金、時間、人数に応じた手配、含まれるサービスを予約前にご案内ください。掲載の英語ガイド料金は、この依頼には適用されないことを了承しています。\nhttps://homegroundchina.com/ja/services/private-english-speaking-guides/",
+      "overflow": -15,
+      "wa": "Homeground ご担当者様、プライベート日本語ガイドの手配について相談したいです。\n希望サービス: 日本語ガイドを希望（1日8時間まで。対応可否・時間・料金は要確認）\nガイドの希望言語: 日本語 · 対応可否と追加料金を別途確認\n都市: 上海\n希望日: 2027-04-04\n人数: 2\n訪問先・集合場所・その他の希望: 上海のホテルから外灘へ\n日本語ガイドの空き状況を確認し、料金、時間、人数に応じた手配、含まれるサービスを予約前にご案内ください。掲載の英語ガイド料金は、この依頼には適用されないことを了承しています。\nhttps://homegroundchina.com/ja/services/private-english-speaking-guides/"
+    }
+  },
+  {
+    "page": "reservations",
+    "check": {
+      "draft": "Homeground ご担当者様、以下の中国の観光施設の予約をお願いします。お支払い前に、予約の可否、チケット代、サービス料、お支払い方法を書面でご案内ください。\n\n希望サービス: 観光チケット予約\n都市: 北京, 大同\n希望する施設:\n· 故宮博物院（紫禁城）: 2027-04-03\n· 懸空寺（楼閣への登楼券）: 2027-04-05\n人数: 3\n\nhttps://homegroundchina.com/ja/services/china-attraction-reservations/",
+      "fee": "ご相談内容\n故宮博物院（紫禁城）\n2027/04/03\n懸空寺（楼閣への登楼券）\n2027/04/05\n人数\n3\nサービス料の目安\nCNY 270\nCNY 45 × 3名 × 2施設\nチケット代\n施設の定価・上乗せなし\n\nお支払いは書面でのご案内を確認してから。当社のプライベートツアーに含まれる施設には、追加の予約サービス料はかかりません。\n\n問い合わせる\n\nWhatsAppのメッセージを作成\nメールを作成\n\n返信元メールアドレス hello@homegroundchina.com\n個人情報の取り扱い",
+      "overflow": -15,
+      "sameEmail": true
+    }
+  },
+  {
+    "page": "support",
+    "check": {
+      "draft": "Homeground ご担当者様、中国旅行のプランニングを相談したいです。希望は、4人での旅行、中国での滞在は12日間、4月出発予定、希望する都市：上海、蘇州、予算はグループ全体で JPY 800,000。\n予算は中国滞在中の費用で、国際線の航空券代は含みません。\nhttps://homegroundchina.com/ja/services/full-trip-support/",
+      "overflow": -15
+    }
+  },
+  {
+    "page": "car",
+    "check": {
+      "draft": "Homeground ご担当者様、専用車とドライバーの見積もりをお願いします。\n必要なサービス：都市間の移動\n都市：上海、蘇州\n利用開始日：2027-04-03\n人数：2\n荷物：スーツケース2個\n乗車場所：未定・要相談\n希望時刻・便名・列車番号：未定・要相談\nルート・立ち寄り先：上海のホテルから蘇州へ\nルートの可否を確認し、担当事業者、予定車両、サービス範囲、含まれる費用、総額、適用条件をお支払い前に書面でご案内ください。ガイドは車とドライバーの手配とは別のサービスとして確認したいです。日本語ガイドを希望する場合は、対応の可否と追加料金も別途ご案内ください。\nhttps://homegroundchina.com/ja/services/private-car-and-driver/",
+      "overflow": -15
+    }
+  },
+  {
+    "page": "corporate-hub",
+    "check": {
+      "overflow": -15,
+      "preview": "Homeground ご担当者さま\n中国への企業旅行について相談したいです。\n\n会社名：確認用サンプル企業\n\n目的：目的に合うかたちを相談したい\n予定人数：20名\n時期・日数：2027年4月、3泊4日\n検討中のプラン：上海・蘇州・3泊4日\n\nガイドの希望言語（日本語ガイドの対応可否・追加料金をご案内ください）：\n\nプラン、手配内容、空き状況、書面のお見積もりを確認してから予約を検討したいです。\n参照ページ：https://homegroundchina.com/ja/corporate-travel/shanghai-suzhou-4-day-company-retreat/"
+    }
+  },
+  {
+    "page": "/ja/corporate-travel/zhangjiajie-4-day-team-trip/",
+    "mobile": {
+      "forms": 1,
+      "h1": "張家界 — 峰々の間で、チームの時間を",
+      "overflow": -15
+    },
+    "desktop": {
+      "overflow": -15
+    }
+  },
+  {
+    "page": "/ja/corporate-travel/shanghai-suzhou-4-day-company-retreat/",
+    "mobile": {
+      "forms": 1,
+      "h1": "上海・蘇州 — チームで過ごす、街と庭園の4日間",
+      "overflow": -15
+    },
+    "desktop": {
+      "overflow": -15
+    }
+  },
+  {
+    "page": "halfday",
+    "check": {
+      "draft": "こんにちは。西安・兵馬俑の半日プライベートツアーを相談したいです。\n\n希望日・出発時間帯（午前／午後）：\n大人の人数・子どもの年齢：\n西安のホテル：\n希望するガイドの言語（日本語ガイドの対応可否・追加料金を確認したいです）：\n\n参照ページ：https://homegroundchina.com/ja/tours/xian-terracotta-warriors-half-day-private-tour/",
+      "hash": "#half-day-enquiry",
+      "overflow": -15
+    }
+  },
+  {
+    "page": "/ja/tours/suzhou-tongli-hangzhou-shanghai-12-day-private-tour/",
+    "mobile": {
+      "h1": "江南、暮らしの芸術｜蘇州・同里・杭州・上海12日間プライベートツアー",
+      "hasJapaneseGuideNote": true,
+      "overflow": -15
+    },
+    "desktop": {
+      "overflow": -15
+    }
+  },
+  {
+    "page": "/ja/tours/harbin-yabuli-snow-town-6-day-private-tour/",
+    "mobile": {
+      "h1": "ハルビン・亜布力・雪郷 6日間（5泊）冬季プライベートツアー",
+      "hasJapaneseGuideNote": true,
+      "overflow": -15
+    },
+    "desktop": {
+      "overflow": -15
+    }
+  },
+  {
+    "page": "/ja/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+    "mobile": {
+      "h1": "上海・蘇州・杭州 6日間プライベートツアー",
+      "hasJapaneseGuideNote": true,
+      "overflow": -15
+    },
+    "desktop": {
+      "overflow": -15
+    }
+  },
+  {
+    "page": "header-keyboard",
+    "check": {
+      "focus": "日本語",
+      "overflow": -15,
+      "width": 1180
+    }
+  }
+]

@@ -32,6 +32,22 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-18 (Japanese core-page completion): added 時 (U+6642), 貨 (U+8CA8)
+and 12 shared Japanese calendar characters (乗営専暦満現発紀車週運開) to the
+Chinese source subset, using the same verified Google Fonts
+Noto Serif SC 2.003 artifact below, instantiated at weight 500. The source
+SHA-256 is unchanged. All 3,049 earlier code points and all 3,481 earlier
+glyphs were preserved: comparison of resolved outline coordinates, contour
+endpoints, point flags and horizontal metrics found no changes. The source
+now has 3,063 code points and 3,495 glyphs. The existing slice plan is
+unchanged, so all 14 new characters join the on-demand extra slice, not the
+primary preload. All slices and their hashed references were regenerated
+with the shared subset options. Pretendard and MaruBuri files are untouched.
+Source coverage passes for all 2,912 required Han and 1,236 required Hangul
+characters; the production-export check runs again after the site build.
+The retained-character set in `tools/rebuild-locale-fonts.mjs` also records
+these shared labels so a later rebuild without a local export keeps them.
+
 2026-10-10 (combined live guides and PR #320): rebuilt the Chinese serif
 subset and existing slice plan from the verified Noto Serif SC source below.
 The combined corpus covers 2,888 required Han characters; comparison against

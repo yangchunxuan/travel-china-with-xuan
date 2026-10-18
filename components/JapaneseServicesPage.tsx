@@ -38,7 +38,7 @@ export const japaneseServicesCopy = {
   choices: {
     eyebrow: "わかっていることから始める",
     title: "サービスの名前ではなく、必要な手助けから選ぶ。",
-    body: "公開中のプライベートツアーを比べることも、旅行の時期や人数、必要な手配をお知らせいただくこともできます。ご提供できる内容と旅行のお見積もりは、ご予約の前に確定します。",
+    body: "公開中のプライベートツアーを比べることも、旅行の時期や人数、必要な手配をお知らせいただくこともできます。ご提供できる内容とお見積もりは、ご予約の前に確認します。",
   },
   cards: [
     {
@@ -50,20 +50,36 @@ export const japaneseServicesCopy = {
       href: japaneseSite.tours,
     },
     {
+      id: "guides",
+      eyebrow: "必要な一日だけ、現地の案内を",
+      title: "プライベートガイド",
+      body: "上海・北京・西安・張家界で、1日8時間までの英語ガイド料金をご案内しています。日本語ガイドをご希望の場合は、空き状況と追加料金を別途確認します。",
+      action: "ガイドのサービスと料金を見る",
+      href: "/ja/services/private-english-speaking-guides/",
+    },
+    {
+      id: "car",
+      eyebrow: "空港送迎から、観光の一日まで",
+      title: "専用車とドライバー",
+      body: "人数、荷物、出発地と訪問先に合わせて車を手配します。車種、利用時間、走行範囲、含まれる費用を事前に確認できます。",
+      action: "専用車・送迎サービスを見る",
+      href: "/ja/services/private-car-and-driver/",
+    },
+    {
       id: "reservations",
       eyebrow: "日程が決まったら、早めに予約を",
       title: "中国の取りにくい入場券は、私たちにお任せください",
-      body: `中国語のアプリや予約開始時刻への対応を、私たちが引き受けます。対象の観光地の予約システムで、パスポートのお名前で手配します。日程が決まったらすぐにお知らせください。受付開始前に準備を整えます。手配料はお一人・一施設につき ${attractionReservationServiceFeeCny} CNY、入場券は額面どおりの料金です。`,
-      action: "入場券の予約サービスを見る（英語）",
-      href: "/services/china-attraction-reservations/",
+      body: `故宮博物院や美術館など、旅で訪れたい場所の入場券をお任せください。早めにご相談いただければ、希望日の予約に向けて準備を進められます。手配料はお一人・一施設につき ${attractionReservationServiceFeeCny} CNY、入場券は額面どおりの料金です。`,
+      action: "入場券の予約サービスを見る",
+      href: "/ja/services/china-attraction-reservations/",
     },
     {
       id: "support",
       eyebrow: "現地での手配まで",
       title: "旅全体のサポート",
       body: "計画に合わせて、ホテル、入場券、送迎、現地での手配までをつなげます。私たちが担当する範囲は、始める前に書面でご案内します。",
-      action: "日本語で相談する",
-      href: japaneseSite.contact,
+      action: "旅全体のサポートを見る",
+      href: "/ja/services/full-trip-support/",
     },
   ],
   method: {
@@ -77,7 +93,9 @@ export const japaneseServicesCopy = {
   },
 } as const;
 
-function cardImage(id: "tours" | "reservations" | "support") {
+function cardImage(id: "tours" | "guides" | "car" | "reservations" | "support") {
+  if (id === "guides") return { src: "/images/services/hub/guides-1600.webp", width: 1600, height: 1000, alt: "", position: "50% 50%" };
+  if (id === "car") return { src: "/images/guides/beijing-zhangjiajie-shanghai-10-days/airport-transfer-1800.webp", width: 1800, height: 1200, alt: "", position: "50% 50%" };
   if (id === "reservations") {
     return {
       src: "/images/services/hub/reservations-1600.webp",

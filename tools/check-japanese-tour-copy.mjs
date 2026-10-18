@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 
 import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct.ts";
 import { privateTourProducts } from "../lib/privateTourProducts.ts";
+import { getJapaneseGuideLanguageLabel, getJapaneseGuidePriceNote } from "../lib/japaneseGuideLanguage.ts";
+import { getJapaneseCompletedFaq } from "../lib/japaneseTourFaqCompletion.ts";
 
 const pilot = "shanghai-suzhou-hangzhou-6-day-private-tour";
 const strings = (value) => {
@@ -22,10 +24,26 @@ for (const product of privateTourProducts) {
     assert.equal(page.highlights.length, product.highlights.zh.length, `${product.slug}: highlights`);
     assert.equal(page.itinerary.length, product.itinerary.length, `${product.slug}: itinerary`);
     assert.equal(page.exclusions.length, product.exclusions.zh.length, `${product.slug}: exclusions`);
-    assert.equal(page.faq?.length ?? 0, product.faq?.length ?? 0, `${product.slug}: FAQ`);
     assert.equal(page.gallery.length, product.gallery.length, `${product.slug}: gallery`);
     assert.equal(page.routeMedia.length, product.routeMedia?.length ?? 0, `${product.slug}: route media`);
     assert.deepEqual(page.packages.map((item) => item.id), product.packages.map((item) => item.id), `${product.slug}: package IDs`);
+  }
+
+  // Topic coverage includes the separately authored six-day offer too.
+  assert.equal(page.faq?.length ?? 0, product.faq?.length ?? 0, `${product.slug}: FAQ`);
+  for (const item of page.faq ?? []) {
+    assert.match(item.question, /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u, `${product.slug}: Japanese FAQ question`);
+    assert.match(item.answer, /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u, `${product.slug}: Japanese FAQ answer`);
+  }
+  const guideNote = getJapaneseGuidePriceNote(product.slug, product.tourFormat === "small-group");
+  if (product.slug === pilot) {
+    assert.equal(getJapaneseGuideLanguageLabel(product.slug), "日本語ガイド込み");
+    assert.match(page.serviceNote, /日本語ガイド/u);
+  } else {
+    assert.ok(page.serviceNote.includes(guideNote), `${product.slug}: separately priced Japanese guide notice`);
+    assert.match(guideNote, /追加料金/u);
+    assert.match(guideNote, /予約前/u);
+    if (product.tourFormat === "small-group") assert.match(guideNote, /プライベート旅行/u);
   }
 
   assert.deepEqual(page.itinerary.map((item) => item.day), product.itinerary.map((item) => item.day), `${product.slug}: itinerary days`);
@@ -62,4 +80,24 @@ for (const product of privateTourProducts) {
 }
 
 assert.equal(checked, privateTourProducts.length);
+
+// An FAQ must not keep stale prices when its product's approved CNY tier changes.
+const chongqing = privateTourProducts.find((product) => product.slug === "chongqing-wulong-5-day-private-tour");
+const revised = {
+  ...chongqing,
+  packages: chongqing.packages.map((item, index) => index === 0
+    ? { ...item, prices: item.prices.map((row, rowIndex) => rowIndex === 0 ? { ...row, cnyPerPerson: 12345 } : row) }
+    : item),
+};
+assert.match(getJapaneseCompletedFaq(revised)[0].answer, /CNY 12,345/u);
+assert.ok(!getJapaneseCompletedFaq(revised)[0].answer.includes("CNY 4,543"));
+
+const winter = privateTourProducts.filter((product) => /^(?:harbin-(?:yabuli-snow-town-6|snow-town-changbaishan-yanji-8|mohe-arctic-village-7|snow-town-mohe-9))-day-private-tour$/u.test(product.slug));
+assert.equal(winter.length, 4);
+for (const product of winter) {
+  const faq = localizeJapanesePrivateTourProduct(product).faq;
+  assert.ok(faq.some((item) => /開園/u.test(item.question) && /未確定/u.test(item.answer)), `${product.slug}: opening-date uncertainty`);
+  assert.ok(faq.some((item) => /ドライバー/u.test(item.question) && /有資格の観光ガイドではなく/u.test(item.answer)), `${product.slug}: actual driver service`);
+  assert.ok(faq.some((item) => /2026年11月10日～2027年3月10日/u.test(item.answer)), `${product.slug}: published season dates`);
+}
 console.log(`Rendered Japanese copy structure and source pricing passed for ${checked} tours; the authored pilot and all overrides were included.`);

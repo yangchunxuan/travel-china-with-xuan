@@ -16,13 +16,22 @@ import { appendVisitRefToContactHref } from "../../lib/visitRef.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const source = async (file) => (await readFile(path.join(projectRoot, file), "utf8")).replaceAll("\r\n", "\n");
-const locales = ["en", "zh", "ko", "fr", "es", "de", "ar"];
+const locales = ["en", "zh", "ko", "fr", "es", "de", "ar", "ja"];
 const primaryLocales = new Set(["en", "zh", "ko"]);
 const copyFor = (locale) => primaryLocales.has(locale) ? getAttractionReservationCopy(locale) : getAttractionReservationEditionCopy(locale);
 const textValues = (value) => typeof value === "string" ? [value] : value && typeof value === "object" ? Object.values(value).flatMap(textValues) : [];
 
 // Policy concepts are checked independently of the copy's sentence order.
 const policy = {
+  ja: {
+    asap: /日程.*決ま/u, requestAndPay: /ご依頼とお支払い/u, exception: /除外|対象外/u,
+    fullRefund: /全額(?:返金|と)|サービス料全額/u, feeAndTicket: /サービス料とチケット代/u,
+    try: /試み/u, noGuarantee: /確約.*できません/u, unusedTicket: /未使用のチケット代/u,
+    early: /日前まで/u, late: /日未満/u, releasePassed: /発売がすでに始まって/u, lateFullService: /サービス料全額/u,
+    faceValue: /定価.*上乗せ/su, nonRefundable: /サービス料は返金できません/u,
+    writtenBeforePay: /書面.*確認してから|サービス料と合わせてお支払い/u,
+    bookingIntent: /予約をお願いします/u, noCompletedPurchase: /支払い済み|予約済みです/u,
+  },
   en: {
     asap: /as soon as|dates are fixed/iu, requestAndPay: /request and (?:payment|pay)/iu,
     exception: /best effort.*excluded|except.*best effort/iu,
@@ -92,7 +101,7 @@ const policy = {
 async function copiesWithLeadDays(leadDays) {
   const copyModules = new Set([
     "lib/attractionReservationsI18n.ts", "lib/attractionReservationEditions.ts",
-    "lib/germanAttractionReservationCopy.ts", "lib/arabicAttractionReservationCopy.ts",
+    "lib/germanAttractionReservationCopy.ts", "lib/arabicAttractionReservationCopy.ts", "lib/japaneseAttractionReservationCopy.ts",
   ]);
   const cache = new Map();
   async function moduleUrl(file) {
@@ -119,7 +128,7 @@ async function copiesWithLeadDays(leadDays) {
   };
 }
 
-test("all seven editions sell an early booking with three clear timing choices and the existing policies", async (t) => {
+test("all eight editions sell an early booking with three clear timing choices and the existing policies", async (t) => {
   assert.equal(days, 8, "the published commercial cutoff remains eight days");
   for (const locale of locales) {
     await t.test(locale, () => {
@@ -129,7 +138,7 @@ test("all seven editions sell an early booking with three clear timing choices a
       assert.ok(copy[key]?.trim(), `${locale}: ${key}`);
     }
     assert.match(copy.heroUrgency, /7(?!\d)/u, `${locale}: Forbidden City release is seven days`);
-    assert.match(copy.heroUrgency, /20(?::00|\s*h)/u, `${locale}: Forbidden City release time`);
+    assert.match(copy.heroUrgency, /20(?::00|\s*h|時)/u, `${locale}: Forbidden City release time`);
     assert.ok(copy.heroUrgency.includes(String(days)), `${locale}: urgency includes guarantee cutoff`);
     assert.doesNotMatch(copy.heroUrgency, p.exception, `${locale}: hero uses the common guarantee without attraction exclusions`);
     assert.equal(copy.timingRows.length, 3, `${locale}: three contact timings`);
@@ -181,7 +190,7 @@ test("changing the guarantee constant changes every edition's cutoff without cha
     }
     assert.deepEqual(altered.timingRows[0], original.timingRows[0], `${locale}: contact immediately stays immediate`);
     for (const [id, releaseDays, releaseTime] of [
-      ["forbidden-city", 7, /20(?::00|\s*h)/u],
+      ["forbidden-city", 7, /20(?::00|\s*h|時)/u],
       ["national-museum-of-china", 7, /17(?::00|\s*h)/u],
       ["shaanxi-history-museum", 5, /17(?::00|\s*h)/u],
     ]) {

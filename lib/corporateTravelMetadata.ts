@@ -19,7 +19,7 @@ export function buildCorporateTravelMetadata(trip?: CorporateTrip): Metadata {
   const image = trip?.hero ?? corporateTrips[0].hero;
   return {
     title: { absolute: trip ? title : `${title} | Homeground China` }, description,
-    alternates: { canonical: path, languages: { en: path, "x-default": path } },
+    alternates: { canonical: path, languages: { en: path, ja: `/ja${path}`, "x-default": path } },
     openGraph: { title, description, url: absolute(path), type: "website", locale: "en_US", siteName: homegroundBusiness.brand, images: [{ url: absolute(image.src), alt: image.alt }] },
     twitter: { card: "summary_large_image", title, description, images: [absolute(image.src)] },
   };
