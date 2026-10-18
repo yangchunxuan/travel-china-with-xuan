@@ -7,6 +7,8 @@ import { guideTargets } from "../../lib/guideCommercialTargets.ts";
 import {
   loadGuideMetadata,
   loadHighIntentCtaOwnershipRegistry,
+  checkGuideReservationOfferAnchors,
+  validateGuideReservationOffers,
   validateHighIntentCtaOwnershipRegistry,
 } from "../../tools/check-high-intent-cta-ownership.mjs";
 
@@ -60,6 +62,67 @@ function mutateRegistry(mutator) {
   return copy;
 }
 
+test("reservation body offers record only the five authorized English placements", async () => {
+  assert.deepEqual(registry.guideReservationOffers.map((offer) => [
+    offer.contentId, offer.locale, offer.afterBlockId, offer.variant,
+  ]), [
+    ["food-plants-and-animal-products-into-china", "en", "before-list", "card"],
+    ["yangshuo-town-or-yulong-river-where-to-stay", "en", "scope-boundary", "card"],
+    ["shanghai-where-to-stay-first-trip", "en", "evenings-copy", "card"],
+    ["tianmen-mountain-tickets-and-routes", "en", "entry-copy", "card"],
+    ["forbidden-city-for-foreign-visitors", "en", "email-boundary", "line"],
+  ]);
+  assert.equal(validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id))), 5);
+  await checkGuideReservationOfferAnchors(registry.guideReservationOffers);
+
+  // Separate attraction offers do not authorize hotel/transport sales or change
+  // the original footer owner, including the existing Shanghai planning CTA.
+  for (const contentId of ["yangshuo-town-or-yulong-river-where-to-stay", "tianmen-mountain-tickets-and-routes"]) {
+    const entry = registry.entries.find((candidate) => candidate.contentId === contentId);
+    assert.equal(entry.targetServiceId, null);
+    assert.equal(entry.authorizationStatus, "blocked-pending-central-authorization");
+    assert.equal(entry.ctaPlacement, "specialized-cta-blocked-generic-footer-only");
+  }
+  const shanghai = registry.entries.find((entry) => entry.contentId === "shanghai-where-to-stay-first-trip");
+  assert.equal(shanghai.targetServiceId, "full-trip-support");
+  assert.equal(shanghai.ctaPlacement, "existing-guide-footer");
+});
+
+test("reservation offer registration rejects missing, duplicate, stale and expanded records", () => {
+  const cases = [
+    ["missing", (copy) => copy.guideReservationOffers.pop(), /UNREGISTERED_RESERVATION_OFFER/u],
+    ["duplicate", (copy) => copy.guideReservationOffers.push(structuredClone(copy.guideReservationOffers[0])), /DUPLICATE_RESERVATION_OFFER/u],
+    ["stale", (copy) => copy.guideReservationOffers.push({ ...copy.guideReservationOffers[0], afterBlockId: "another-block" }), /RESERVATION_OFFER_WITHOUT_IMPLEMENTATION/u],
+    ["locale", (copy) => { copy.guideReservationOffers[0].locale = "zh"; }, /RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED/u],
+    ["authorization", (copy) => { copy.guideReservationOffers[0].authorizationStatus = "blocked-pending-central-authorization"; }, /RESERVATION_OFFER_SCOPE_NOT_AUTHORIZED/u],
+    ["service", (copy) => { copy.guideReservationOffers[0].targetServiceId = "full-trip-support"; }, /RESERVATION_OFFER_SERVICE_INVALID/u],
+    ["target", (copy) => { copy.guideReservationOffers[0].targetHref = "/china-itinerary-review/"; }, /RESERVATION_OFFER_TARGET_INVALID/u],
+    ["anchor", (copy) => { copy.guideReservationOffers[0].afterBlockId = "lead"; }, /UNREGISTERED_RESERVATION_OFFER/u],
+    ["variant", (copy) => { copy.guideReservationOffers[0].variant = "line"; }, /RESERVATION_OFFER_IMPLEMENTATION_DRIFT/u],
+    ["unsupported attraction", (copy) => { copy.guideReservationOffers[0].attractionIds.push("tianmen-mountain"); }, /RESERVATION_OFFER_ATTRACTION_NOT_OFFERED/u],
+    ["expanded examples", (copy) => { copy.guideReservationOffers[0].attractionIds.push("summer-palace"); }, /RESERVATION_OFFER_IMPLEMENTATION_DRIFT/u],
+    ["different bookable target", (copy) => {
+      copy.guideReservationOffers[0].targetHref = "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry";
+    }, /RESERVATION_OFFER_IMPLEMENTATION_DRIFT/u],
+  ];
+  for (const [name, mutate, error] of cases) {
+    assert.throws(() => validateHighIntentCtaOwnershipRegistry(mutateRegistry(mutate), guides), error, name);
+  }
+});
+
+test("new implemented offers cannot bypass the registry and stale body anchors fail", async () => {
+  const implementations = registry.guideReservationOffers.map(({ authorizationStatus, scope, ...offer }) => offer);
+  const expanded = [...implementations, { ...implementations[0], afterBlockId: "unregistered-second-card" }];
+  assert.throws(
+    () => validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id)), expanded),
+    /UNREGISTERED_RESERVATION_OFFER/u,
+  );
+  await assert.rejects(
+    checkGuideReservationOfferAnchors([{ ...registry.guideReservationOffers[0], afterBlockId: "nonexistent-block" }]),
+    /RESERVATION_OFFER_BODY_ANCHOR_INVALID/u,
+  );
+});
+
 test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   const report = validateHighIntentCtaOwnershipRegistry(
     registry,
@@ -78,6 +141,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.equal(report.authorizedGenericConversation, 23);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 7);
+  assert.equal(report.guideReservationOffers, 5);
   assert.equal(report.blockedPendingAuthorization, 40);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);

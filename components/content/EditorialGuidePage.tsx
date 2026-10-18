@@ -28,6 +28,8 @@ import type { StructuredPageBody } from "../../lib/content-system/page-body";
 import { getGuideTourCard, guideContentEndIndex, guideFirstSectionEndIndex, guideTourCardBlockIndex } from "../../lib/guideTourCard.ts";
 import { GuideTourCard } from "./GuideTourCard";
 import { GuideReservationCta } from "./GuideReservationCta";
+import { GuideReservationOffer } from "./GuideReservationOffer";
+import { getGuideReservationOffers } from "../../lib/guideReservationOffers";
 import { GuideServiceCta } from "./GuideServiceCta";
 import { GuideCarServiceCta } from "./GuideCarServiceCta";
 import { getPrivateCarServiceCta } from "../../lib/privateCarServiceCta";
@@ -276,6 +278,12 @@ export function EditorialGuidePage({
   const reservationCtaIndex = getPriorityTicketGuideEntry(guide.id, locale) && leadIndex >= 0
     ? leadIndex
     : guideFirstSectionEndIndex(body);
+  // Reservation offers on guides that are not about one bookable attraction, each after a named block.
+  const reservationOffers = getGuideReservationOffers(guide.id, locale).map((offer) => {
+    const afterIndex = body.blocks.findIndex((block) => block.id === offer.afterBlockId);
+    if (afterIndex < 0) throw new Error(`${guide.id}: reservation offer anchor "${offer.afterBlockId}" is not in the ${locale} body`);
+    return { afterIndex, offer };
+  });
   const relatedDestinationCopy =
     locale === "zh"
       ? { label: "相关目的地", title: "把这个答案放回具体城市。" }
@@ -383,6 +391,10 @@ export function EditorialGuidePage({
                     node: <GuideReservationCta guideId={guide.id} locale={locale} position="inline" rule={reservationTarget} />,
                   }]
                 : []),
+              ...reservationOffers.map(({ afterIndex, offer }) => ({
+                afterIndex,
+                node: <GuideReservationOffer guideId={guide.id} locale={locale} offer={offer} />,
+              })),
               ...(tourCard
                 ? [{
                     afterIndex: guideTourCardBlockIndex(body),
