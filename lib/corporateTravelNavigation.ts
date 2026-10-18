@@ -14,7 +14,7 @@ interface CorporateTravelNavigation {
     label: string;
     description: string;
     pathSegment: "corporate-travel/";
-    href: "/corporate-travel/";
+    href: string;
   };
   menu: {
     toggle: string;
@@ -23,7 +23,7 @@ interface CorporateTravelNavigation {
       label: string;
       description: string;
       pathSegment: `corporate-travel/#${CorporatePurpose}`;
-      href: `/corporate-travel/#${CorporatePurpose}`;
+      href: string;
     }[];
   };
 }
@@ -43,22 +43,22 @@ const copyByLanguage: Record<CorporateLanguage, NavigationCopy> = {
   },
   zh: {
     label: "企业旅行",
-    description: "公司旅行、奖励旅游与小型会议；英语页面",
+    description: "公司旅游、奖励旅游与小型会议",
     toggle: "打开企业旅行菜单",
     purposes: {
-      "company-trips": { label: "公司旅行与团建", description: "员工出游、共同体验与团队相聚；英语页面" },
-      "incentive-travel": { label: "奖励旅游", description: "肯定成就，感谢团队；英语页面" },
-      "meetings-retreats": { label: "小型会议与团队相聚", description: "公司自行主持会议，并安排共同出游；英语页面" },
+      "company-trips": { label: "公司旅游与团建", description: "员工旅游、一起出游与团队相聚" },
+      "incentive-travel": { label: "奖励旅游", description: "奖励优秀员工，答谢团队" },
+      "meetings-retreats": { label: "小型会议与团队相聚", description: "开你们自己的会，再一起出游几天" },
     },
   },
   ko: {
     label: "기업 여행",
-    description: "회사 여행, 포상 여행, 소규모 회의 안내 · 영어 페이지",
+    description: "기업 단체여행, 포상여행, 소규모 워크숍",
     toggle: "기업 여행 메뉴 열기",
     purposes: {
-      "company-trips": { label: "회사 여행·팀 빌딩", description: "직원 여행과 함께하는 체험 · 영어 페이지" },
-      "incentive-travel": { label: "포상 여행", description: "팀의 성과를 인정하고 감사를 전하는 여행 · 영어 페이지" },
-      "meetings-retreats": { label: "소규모 회의·워크숍", description: "회사에서 진행하는 회의와 팀 여행 · 영어 페이지" },
+      "company-trips": { label: "기업 단체여행·팀 빌딩", description: "사원 여행과 함께하는 체험" },
+      "incentive-travel": { label: "포상여행", description: "성과를 인정하고 감사를 전하는 여행" },
+      "meetings-retreats": { label: "소규모 워크숍·회의", description: "회사 회의와 함께하는 며칠간의 여행" },
     },
   },
   ja: {
@@ -113,21 +113,26 @@ const copyByLanguage: Record<CorporateLanguage, NavigationCopy> = {
   },
 };
 
-/** Navigation labels are localized; destinations remain the published English pages. */
+// Chinese and Korean have their own company pages; the other editions link to the English hub.
+const translatedHubs: Partial<Record<CorporateLanguage, string>> = { zh: "/zh/corporate-travel/", ko: "/ko/corporate-travel/" };
+
+/** Navigation labels are localized; Chinese and Korean open their own pages, the rest the English one. */
 export function getCorporateTravelNavigation(language: string): CorporateTravelNavigation {
   const code = language.trim().toLowerCase().split(/[-_]/u)[0];
-  const copy = copyByLanguage[Object.hasOwn(copyByLanguage, code) ? code as CorporateLanguage : "en"];
+  const known = Object.hasOwn(copyByLanguage, code) ? code as CorporateLanguage : "en";
+  const copy = copyByLanguage[known];
+  const hub = translatedHubs[known] ?? "/corporate-travel/";
   return {
     item: {
       id: "corporate", label: copy.label, description: copy.description,
-      pathSegment: "corporate-travel/", href: "/corporate-travel/",
+      pathSegment: "corporate-travel/", href: hub,
     },
     menu: {
       toggle: copy.toggle,
       entries: purposes.map(id => ({
         id, ...copy.purposes[id],
         pathSegment: `corporate-travel/#${id}`,
-        href: `/corporate-travel/#${id}`,
+        href: `${hub}#${id}`,
       })),
     },
   };

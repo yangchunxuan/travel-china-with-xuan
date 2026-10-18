@@ -18,29 +18,35 @@ test("all eight languages expose an independent corporate item and the three pur
   });
 });
 
-test("every destination uses the real English hub and its existing purpose anchors", () => {
-  const hubSource = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
-  for (const id of purposeIds) assert.ok(hubSource.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
-  assert.match(hubSource, /id=\{purpose\.id\}/);
+test("Chinese and Korean open their own company pages; the other editions open the English hub", () => {
+  const hubCopy = readFileSync(new URL("../../lib/corporateTravelHub.ts", import.meta.url), "utf8");
+  for (const id of purposeIds) assert.ok(hubCopy.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
+  const pages = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
+  assert.match(pages, /id=\{purpose\.id\}/);
+  const hubs = { zh: "/zh/corporate-travel/", ko: "/ko/corporate-travel/" };
   for (const language of languages) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    assert.equal(item.href, "/corporate-travel/");
+    const hub = hubs[language] ?? "/corporate-travel/";
+    assert.equal(item.href, hub);
     assert.equal(item.pathSegment, "corporate-travel/");
     for (const entry of menu.entries) {
       const target = new URL(entry.href, "https://homegroundchina.com");
-      assert.equal(target.pathname, "/corporate-travel/", "do not invent translated corporate routes");
+      assert.equal(target.pathname, hub);
       assert.equal(target.hash, `#${entry.id}`);
       assert.equal(target.search, "");
-      assert.equal(`/${entry.pathSegment}`, entry.href);
     }
   }
 });
 
-test("each non-English description explicitly identifies the destination as an English page", () => {
-  const disclosures = { zh: "英语页面", ko: "영어 페이지", ja: "英語ページ", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
+test("only the editions without their own company page say the destination is in English", () => {
+  const disclosures = { ja: "英語ページ", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
   for (const [language, disclosure] of Object.entries(disclosures)) {
     const { item, menu } = getCorporateTravelNavigation(language);
     for (const entry of [item, ...menu.entries]) assert.ok(entry.description.includes(disclosure), `${language}/${entry.id} must disclose the English destination`);
+  }
+  for (const language of ["zh", "ko"]) {
+    const { item, menu } = getCorporateTravelNavigation(language);
+    for (const entry of [item, ...menu.entries]) assert.doesNotMatch(entry.description, /英语页面|영어 페이지/u);
   }
 });
 

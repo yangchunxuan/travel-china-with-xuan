@@ -30,3 +30,16 @@ test('an undecided destination stays open and does not silently select a package
   assert.ok(text.includes('Open to suggestions'));
   assert.ok(text.endsWith('https://homegroundchina.com/corporate-travel/'));
 });
+test('Chinese and Korean pages prepare the brief in their own language and point to their own pages', () => {
+  const zh = buildCorporateEnquiryDraft(brief, 'zh');
+  assert.ok(zh.includes('大概人数：18 人'));
+  assert.ok(zh.includes('公司：A & B Studio'));
+  assert.ok(zh.endsWith('https://homegroundchina.com/zh/corporate-travel/shanghai-suzhou-4-day-company-retreat/'));
+  const ko = buildCorporateEnquiryDraft({ ...brief, trip: 'undecided' }, 'ko');
+  assert.ok(ko.includes('예상 인원: 18명'));
+  assert.ok(ko.includes('추천 부탁드립니다'));
+  assert.ok(ko.endsWith('https://homegroundchina.com/ko/corporate-travel/'));
+  const url = new URL(corporateEnquiryEmailHref('hello@homegroundchina.com', brief, zh, 'zh'));
+  assert.equal(url.searchParams.get('subject'), '公司旅游咨询 — A & B Studio');
+  assert.throws(() => buildCorporateEnquiryDraft({ ...brief, company: ' ' }, 'ko'), /회사명/);
+});
