@@ -289,7 +289,7 @@ export function AttractionReservationEnquiry({
               chosen.length ? (
                 <div className={styles.fieldRow}>
                   {chosen.map((attraction) => (
-                    <TourDateField active disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} edition={dateEdition} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
+                    <TourDateField active appearance="line" disabled={false} id={`${id}-date-${attraction.id}`} key={attraction.id} label={attraction.label} locale={locale} edition={dateEdition} onChange={(value) => setDates((current) => ({ ...current, [attraction.id]: value }))} value={dates[attraction.id] ?? ""} />
                   ))}
                 </div>
               ) : null
@@ -360,8 +360,8 @@ export function AttractionReservationEnquiry({
         <div className={styles.send} aria-labelledby={`${id}-send`} ref={visibleRef} role="group">
           <p className={styles.visuallyHidden} id={`${id}-send`}>{copy.send}</p>
           {lateRequestNote ? <p className={styles.summaryNote} data-reservation-late-request>{lateRequestNote}</p> : null}
-          {/* Use the same clear contact actions as the homepage.
-              Korean visitors use KakaoTalk first; all channels preserve this request. */}
+          {/* The one way to send, as on the full-trip page: words, then a thin arrow.
+              Korean visitors use KakaoTalk first; WhatsApp and email then follow as small words. */}
           <div className={styles.sendButtons} data-kakao-first={kakao ? "" : undefined} onClickCapture={(event) => {
             // Validate only the party-size input; dates and other details may remain undecided.
             if (!travellersInput.current?.reportValidity()) { event.preventDefault(); event.stopPropagation(); }

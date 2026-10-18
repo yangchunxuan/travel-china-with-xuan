@@ -1,0 +1,90 @@
+[
+  {
+    "edition": "en",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "zh",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "ko",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "ja",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "es",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "fr",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "de",
+    "background": "rgb(255, 255, 255)",
+    "left": 197.6000061035156,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 359.20001220703125,
+    "viewport": 390
+  },
+  {
+    "edition": "ar",
+    "background": "rgb(255, 255, 255)",
+    "left": 16,
+    "minTarget": 44,
+    "options": 12,
+    "overflow": false,
+    "radius": "14px",
+    "right": 177.60000610351562,
+    "viewport": 390
+  }
+]

@@ -69,13 +69,8 @@
 .muted { color: var(--muted); font-size: 0.8125rem; margin-left: 0.5rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
 .page :where(main) a:focus-visible, .page :where(main) button:focus-visible, .page :where(main) summary:focus-visible, .page :where(main) input:focus-visible, .page :where(main) select:focus-visible, .page :where(main) textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-/* Japanese follows the homepage's phrase breaks and CJK-sized measure. */
-.page[data-homeground-locale="ja"] :where(main) h1 { font-size: clamp(2.5rem, 4.6vw, 4rem); letter-spacing: 0; line-height: 1.25; max-width: 11em; }
-.page[data-homeground-locale="ja"] :where(main) h2 { letter-spacing: 0; line-height: 1.35; max-width: 16em; }
-.page[data-homeground-locale="ja"] .cityHeading h3 { letter-spacing: 0; line-height: 1.35; }
 @media (max-width: 70rem) { .cityGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 48rem) {
-  .page[data-homeground-locale="ja"] :where(main) h1 { font-size: clamp(2.1rem, 9.4vw, 2.6rem); max-width: 100%; }
   .page main { padding-inline: 1rem; padding-bottom: 4rem; }
   .hero { padding-top: 1.5rem; }
   .breadcrumb ol { margin-bottom: 2rem; }

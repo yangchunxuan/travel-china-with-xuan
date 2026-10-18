@@ -654,7 +654,7 @@ test("terms and refund city lists include Datong without replacing the existing 
   }
 });
 
-test("a guide referral opens on its attraction in every language and preserves the prepared contact drafts", async () => {
+test("a guide referral opens on its attraction in every language, set like the full-trip page with no pill or icon", async () => {
   const [enquiry, cta, ctaStyles, pageStyles] = await Promise.all([
     source("components/AttractionReservationEnquiry.tsx"),
     source("components/content/GuideReservationCta.tsx"),
@@ -672,67 +672,37 @@ test("a guide referral opens on its attraction in every language and preserves t
     assert.match(copy.enquiry.removeAttraction, /\{name\}/u, `${locale}: the remove control names its attraction`);
     assert.ok(copy.guideCta.feeUnit.trim(), `${locale}: the fee line says what the fee covers`);
   }
-  // Keep the editorial guide CTA; the inquiry actions use the site's contact controls.
+  // No icon library and no pill on the guide card or in the send area.
   assert.doesNotMatch(cta, /lucide-react/u);
   assert.doesNotMatch(enquiry, /lucide-react/u);
   assert.doesNotMatch(ctaStyles, /border-radius:\s*999px|background:\s*var\(--hg-color-rust-soft/u);
   assert.match(cta, /<span className=\{styles\.feeAmount\}>\{values\.fee\}<\/span>/u);
-  // KakaoTalk still leads on Korean pages and receives the same full draft.
+  const primary = pageStyles.match(/\.page \.primaryButton \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(primary, /background: none;/u);
+  assert.match(primary, /border-radius: 0;/u);
+  assert.match(pageStyles, /\.page :is\(\.primaryButton, \.secondaryButton\) svg \{\s*display: none;/u);
+  // KakaoTalk leads on Korean pages as the same line of words and arrow.
   assert.match(enquiry, /<KakaoTalkContact buttonClassName=\{styles\.primaryButton\}/u);
-  assert.match(enquiry, /inquiry=\{\(\) => message\}/u);
-  const whatsapp = enquiry.split("\n").find((line) => line.includes('data-reservation-channel="whatsapp"')) ?? "";
-  const email = enquiry.split("\n").find((line) => line.includes('data-reservation-channel="email"')) ?? "";
-  assert.match(whatsapp, /data-contact-card-scan-only/u, "the QR opens the prepared request, not a generic contact form");
-  assert.match(whatsapp, /href=\{validTravellers \? whatsappHref :/u);
-  assert.match(email, /data-contact-card-direct/u, "email opens the complete prepared mail draft directly");
-  assert.match(email, /href=\{validTravellers \? mailtoHref :/u);
-  assert.match(enquiry, /const message = attractionReservationMessageText\(copy\.message, draft\)/u);
-  assert.match(enquiry, /const whatsappHref = homegroundWhatsAppHref\(message\)/u);
-  assert.match(enquiry, /const mailtoHref = attractionReservationMailtoHref\(email, copy\.message, draft\)/u);
-  assert.match(enquiry, /travellersInput\.current\?\.reportValidity\(\)/u, "contact actions retain party-size validation");
-  assert.match(pageStyles, /\.page \.enquiryAside \.primaryButton \{[^}]*background: var\(--ink\);[^}]*color: var\(--paper\);/u);
-  assert.match(pageStyles, /\.page \.enquiryAside \.secondaryButton \{[^}]*background: var\(--paper\);[^}]*border-color:/u);
 });
 
-test("reservation inputs share the product date control and expose visible fields and 44px choice targets", async () => {
-  const [enquiry, dateField, dateStyles, pageStyles, globalStyles, ...others] = await Promise.all([
+test("the reservation form's date and party fields are hairline blanks; other forms keep the boxed date field", async () => {
+  const [enquiry, dateField, dateStyles, pageStyles, ...others] = await Promise.all([
     source("components/AttractionReservationEnquiry.tsx"),
     source("components/TourDateField.tsx"),
     source("components/TourDateField.module.css"),
     source("components/AttractionReservationsPage.module.css"),
-    source("app/globals.css"),
     source("components/TourContactPanel.tsx"),
     source("components/PrivateGuideEnquiry.tsx"),
     source("components/PrivateCarServiceEnquiry.tsx"),
   ]);
-  assert.match(enquiry, /<TourDateField active/u);
-  assert.doesNotMatch(enquiry, /appearance="line"/u, "reservations use the same default date field as products");
+  assert.match(enquiry, /<TourDateField active appearance="line"/u);
   assert.match(dateField, /appearance = "box"/u, "the boxed field stays the default");
   for (const other of others) assert.doesNotMatch(other, /appearance="line"/u);
-  assert.match(dateField, /aria-haspopup="dialog" aria-expanded=\{calendarOpen\} aria-controls=/u);
-  assert.match(dateStyles, /\.row \{[^}]*border: 1px solid[^}]*border-radius: (?!0;)[^;]+;[^}]*background: #fff;/u);
-  const fields = pageStyles.match(/\.field input,\n\.field textarea,\n\.noteToggle textarea \{[\s\S]*?\n\}/u)?.[0] ?? "";
-  assert.match(fields, /background: var\(--paper\);/u);
-  assert.match(fields, /border: 1px solid/u, "field boundaries remain visible before focus");
-  assert.match(fields, /border-radius: (?!0;)[\d.]+(?:px|rem);/u);
-  assert.match(pageStyles, /\.page \.field input:focus-visible,[\s\S]*?box-shadow:[^}]*outline: none;/u, "normal focus has a visible ring");
-  assert.match(pageStyles, /forced-colors: active[\s\S]*?\.page \.field input:focus-visible,[\s\S]*?outline: 2px solid Highlight;/u, "high contrast keeps a real focus outline");
-  const controls = [
-    ["attraction choice", pageStyles.match(/\.attractionOption \{[\s\S]*?\n\}/u)?.[0]],
-    ["inquiry action", pageStyles.match(/\.page \.enquiryAside :is\(\.primaryButton, \.secondaryButton\) \{[\s\S]*?\n\}/u)?.[0]],
-    ["party field", fields],
-    ["calendar text field", dateStyles.match(/\.row input \{[^}]*\}/u)?.[0]],
-  ];
-  for (const [name, block] of controls) {
-    const declared = block?.match(/min-(?:height|block-size):\s*([^;]+);/u)?.[1];
-    assert.ok(declared, `${name}: an explicit minimum touch height`);
-    const token = declared.match(/^var\((--[\w-]+),\s*([^)]*)\)$/u);
-    const resolved = token ? globalStyles.match(new RegExp(`${token[1]}:\\s*([^;]+);`, "u"))?.[1] ?? token[2] : declared;
-    const height = resolved.match(/^([\d.]+)(px|rem)$/u);
-    assert.ok(height, `${name}: a numeric height or shared token with a numeric fallback`);
-    assert.ok(Number(height[1]) * (height[2] === "rem" ? 16 : 1) >= 44, `${name}: at least 44 CSS pixels`);
-  }
-  assert.match(enquiry, /<label className=\{styles\.attractionOption\}[\s\S]*?<input checked=\{selectedAttractions\.includes\(attraction\.id\)\}[^\n]*type="checkbox"/u, "visual chips remain labelled native multi-select controls");
-  assert.match(pageStyles, /\.attractionOption:has\(input:checked\) \{[^}]*background: var\(--ink\);[^}]*color: var\(--paper\);/u);
+  assert.match(dateStyles, /\.line \.row \{[^}]*border: 0;[^}]*border-radius: 0;/u);
+  assert.match(dateStyles, /\.line \.open svg \{ display: none; \}/u);
+  assert.match(dateStyles, /forced-colors: active\) \{ \.line \.row \{ border-bottom: 1px solid ButtonText; \}/u);
+  const blank = pageStyles.match(/\.field input,\n\.field textarea,\n\.noteToggle textarea \{[\s\S]*?\n\}/u)?.[0] ?? "";
+  assert.match(blank, /border: 0;/u);
+  assert.match(blank, /border-radius: 0;/u);
   assert.match(pageStyles, /input\[type="number"\]::-webkit-inner-spin-button/u);
 });

@@ -4,7 +4,6 @@ import { Mail, MessageCircle } from "lucide-react";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { openJapaneseContact, japaneseDirectWhatsAppEnabled } from "../lib/japaneseContactFlow";
 import { KeepWords } from "./text/KeepWords";
-import homepageStyles from "./HomepageShowcase.module.css";
 import styles from "./JapaneseContactPanel.module.css";
 
 /**
@@ -33,14 +32,14 @@ export function JapaneseContactPanel({
       </h3>
       <p className={styles.body}>{body}</p>
       <div className={styles.actions}>
-        <a className={`${homepageStyles.primaryAction} ${styles.primary}`} href={emailHref} onClick={event => {
+        <a className={styles.primary} href={emailHref} onClick={event => {
           if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
           if (openJapaneseContact({ whatsappHref, emailHref })) event.preventDefault();
         }}>
           <Mail aria-hidden="true" size={18} />
           <span>相談・見積もりを送る</span>
         </a>
-        {japaneseDirectWhatsAppEnabled() ? <a className={`${homepageStyles.secondaryAction} ${styles.secondary}`} href={whatsappHref} rel="noopener noreferrer" target="_blank">
+        {japaneseDirectWhatsAppEnabled() ? <a className={styles.secondary} href={whatsappHref} rel="noopener noreferrer" target="_blank">
           <MessageCircle aria-hidden="true" size={18} />
           <span>WhatsAppで相談する</span>
         </a> : null}

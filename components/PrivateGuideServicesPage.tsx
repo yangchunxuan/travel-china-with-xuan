@@ -10,7 +10,6 @@ import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChrome";
 import { PrivateGuideEnquiry } from "./PrivateGuideEnquiry";
-import { KeepWords } from "./text/KeepWords";
 import styles from "./PrivateGuideServicesPage.module.css";
 import localeStyles from "./LocaleRoot.module.css";
 
@@ -69,7 +68,6 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
   const skipLink = editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink;
   const { price, peak } = guidePriceFunctions(locale, editionLocale);
   const enquire = `#${privateGuideEnquiryAnchor}`;
-  const heading = (text: string) => editionLocale === "ja" ? <KeepWords locale="ja" text={text} /> : text;
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
       <a className={localeStyles.skipLink} href="#private-guide-main">{skipLink}</a>
@@ -80,7 +78,7 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
             <ol><li><Link href={homePath}>{homeLabel}</Link></li><li><Link href={paths?.services ?? `${home.path}services/`}>{copy.services}</Link></li><li aria-current="page">{copy.ask}</li></ol>
           </nav>
           <div className={styles.heroGrid}>
-            <div><p className={styles.eyebrow}>{copy.eyebrow}</p><h1>{heading(copy.h1)}</h1><p className={styles.lede}>{copy.lede}</p>
+            <div><p className={styles.eyebrow}>{copy.eyebrow}</p><h1>{copy.h1}</h1><p className={styles.lede}>{copy.lede}</p>
               <a className={styles.primaryButton} href={enquire}>{copy.ask}<ArrowRight aria-hidden="true" size={18} /></a>
             </div>
             <aside className={styles.dayCard} aria-label={copy.unit}>
@@ -91,7 +89,7 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
         </header>
 
         <section className={styles.section} aria-labelledby="guide-cities-title">
-          <div className={styles.sectionIntro}><h2 id="guide-cities-title">{heading(copy.citiesTitle)}</h2><p>{copy.citiesBody}</p></div>
+          <div className={styles.sectionIntro}><h2 id="guide-cities-title">{copy.citiesTitle}</h2><p>{copy.citiesBody}</p></div>
           <ol className={styles.cityGrid}>
             {privateGuideCities.map((city, index) => <li className={styles.cityCard} id={city} key={city}>
               <div className={styles.cityHeading}><span className={styles.eyebrow}>{String(index + 1).padStart(2, "0")}</span><h3>{copy.cities[city].name}</h3></div>
@@ -108,18 +106,18 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
         </section>
 
         <section className={styles.section} aria-labelledby="guide-scope-title">
-          <h2 id="guide-scope-title">{heading(copy.scopeTitle)}</h2>
+          <h2 id="guide-scope-title">{copy.scopeTitle}</h2>
           <div className={styles.scopeGrid}><div><h3>{copy.includedTitle}</h3><ul>{copy.included.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{copy.separateTitle}</h3><ul>{copy.separate.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
           <p className={styles.note}>{copy.scopeNote}</p>
         </section>
 
         <section className={`${styles.section} ${styles.faq}`} aria-labelledby="guide-faq-title">
-          <h2 id="guide-faq-title">{heading(copy.faqTitle)}</h2>
+          <h2 id="guide-faq-title">{copy.faqTitle}</h2>
           <div>{copy.faq.map((item) => <details key={item.question}><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div>
         </section>
 
         <section className={`${styles.section} ${styles.enquirySection}`} id={privateGuideEnquiryAnchor} aria-labelledby="guide-enquiry-title">
-          <div><p className={styles.eyebrow}>{copy.ask}</p><h2 id="guide-enquiry-title">{heading(copy.enquiry.title)}</h2><p className={styles.lede}>{copy.enquiry.body}</p></div>
+          <div><p className={styles.eyebrow}>{copy.ask}</p><h2 id="guide-enquiry-title">{copy.enquiry.title}</h2><p className={styles.lede}>{copy.enquiry.body}</p></div>
           <PrivateGuideEnquiry locale={locale} editionLocale={editionLocale} />
         </section>
       </main>

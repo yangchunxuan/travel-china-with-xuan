@@ -14,7 +14,6 @@ import { HomegroundHeader } from "./HomegroundHeader";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChrome";
 import { PrivateCarServiceEnquiry } from "./PrivateCarServiceEnquiry";
-import { KeepWords } from "./text/KeepWords";
 import localeStyles from "./LocaleRoot.module.css";
 import styles from "./PrivateCarServicesPage.module.css";
 
@@ -28,7 +27,6 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
   const htmlLang = editionLocale ?? home.htmlLang;
   const skipLink = editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink;
   const enquire = "#" + privateCarServiceEnquiryAnchor;
-  const heading = (text: string) => editionLocale === "ja" ? <KeepWords locale="ja" text={text} /> : text;
   return (
     <div className={[localeStyles.root, "hg-locale-root", styles.page].join(" ")}
       data-homeground-locale={editionLocale ?? locale} lang={htmlLang}>
@@ -45,7 +43,7 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
             </ol>
           </nav>
           <p className={styles.eyebrow}>{copy.eyebrow}</p>
-          <h1>{heading(copy.h1)}</h1>
+          <h1>{copy.h1}</h1>
           <p className={styles.lede}>{copy.lede}</p>
           <a className={styles.primaryButton} href={enquire}>
             {copy.ask}<ArrowRight aria-hidden="true" size={18} />
@@ -55,20 +53,20 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
 
         <section className={styles.section} aria-labelledby="car-kinds-title">
           <div className={styles.sectionIntro}>
-            <h2 id="car-kinds-title">{heading(copy.kindsTitle)}</h2><p>{copy.kindsBody}</p>
+            <h2 id="car-kinds-title">{copy.kindsTitle}</h2><p>{copy.kindsBody}</p>
           </div>
           <ol className={styles.kindGrid}>
             {privateCarServiceKinds.map((kind, index) => (
               <li className={styles.kindCard} key={kind}>
                 <span className={styles.eyebrow} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{heading(copy.kinds[kind].title)}</h3><p>{copy.kinds[kind].body}</p>
+                <h3>{copy.kinds[kind].title}</h3><p>{copy.kinds[kind].body}</p>
               </li>
             ))}
           </ol>
         </section>
 
         <section className={[styles.section, styles.quoteSection].join(" ")} aria-labelledby="car-quote-title">
-          <div><h2 id="car-quote-title">{heading(copy.quoteTitle)}</h2><p>{copy.quoteBody}</p></div>
+          <div><h2 id="car-quote-title">{copy.quoteTitle}</h2><p>{copy.quoteBody}</p></div>
           <div>
             <ul className={styles.written}>{copy.written.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className={styles.note}>{copy.quoteNote}</p>
@@ -80,16 +78,16 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
         </section>
 
         <section className={styles.section} aria-labelledby="car-related-title">
-          <h2 id="car-related-title">{heading(copy.relatedTitle)}</h2>
+          <h2 id="car-related-title">{copy.relatedTitle}</h2>
           <div className={styles.relatedGrid}>
             <article>
-              <h3>{heading(copy.guideTitle)}</h3><p>{copy.guideBody}</p>
+              <h3>{copy.guideTitle}</h3><p>{copy.guideBody}</p>
               <Link className={styles.textLink} href={paths?.guide ?? privateGuideServicePath[locale]}>
                 {copy.guideLink}<ArrowRight aria-hidden="true" size={17} />
               </Link>
             </article>
             <article>
-              <h3>{heading(copy.fullTripTitle)}</h3><p>{copy.fullTripBody}</p>
+              <h3>{copy.fullTripTitle}</h3><p>{copy.fullTripBody}</p>
               <Link className={styles.textLink} href={paths?.support ?? fullTripSupportPath[locale]}>
                 {copy.fullTripLink}<ArrowRight aria-hidden="true" size={17} />
               </Link>
@@ -98,7 +96,7 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
         </section>
 
         <section className={[styles.section, styles.faq].join(" ")} aria-labelledby="car-faq-title">
-          <h2 id="car-faq-title">{heading(copy.faqTitle)}</h2>
+          <h2 id="car-faq-title">{copy.faqTitle}</h2>
           <div>{copy.faq.map((item) => (
             <details key={item.question}>
               <summary>{item.question}<span aria-hidden="true">+</span></summary>
@@ -109,7 +107,7 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
 
         <section className={[styles.section, styles.enquirySection].join(" ")} id={privateCarServiceEnquiryAnchor}
           aria-labelledby="car-enquiry-title">
-          <div><p className={styles.eyebrow}>{copy.ask}</p><h2 id="car-enquiry-title">{heading(copy.enquiry.title)}</h2>
+          <div><p className={styles.eyebrow}>{copy.ask}</p><h2 id="car-enquiry-title">{copy.enquiry.title}</h2>
             <p>{copy.enquiry.body}</p>
           </div>
           <PrivateCarServiceEnquiry locale={locale} editionLocale={editionLocale} />
