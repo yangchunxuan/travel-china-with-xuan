@@ -2,9 +2,9 @@ export type CorporateTripSlug =
   | "zhangjiajie-4-day-team-trip"
   | "shanghai-suzhou-4-day-company-retreat";
 
-/** The company pages are written in English, Chinese and Korean. */
-export type CorporateLocale = "en" | "zh" | "ko";
-export const corporateLocales: readonly CorporateLocale[] = ["en", "zh", "ko"];
+/** Published company-page editions share the same two programmes. */
+export type CorporateLocale = "en" | "zh" | "ko" | "ja" | "es" | "fr" | "de" | "ar";
+export const corporateLocales: readonly CorporateLocale[] = ["en", "zh", "ko", "ja", "es", "fr", "de", "ar"];
 
 export interface CorporateImage {
   src: string;

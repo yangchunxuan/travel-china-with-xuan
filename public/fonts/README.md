@@ -32,6 +32,8 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-18 (five corporate-travel editions): added 奨 (U+5968), used by the Japanese incentive-trip label in a shared client chunk, from the same verified Noto Serif SC source SHA-256 below at weight 500. The previous code points, advance widths and decomposed outlines are all preserved; the slice plan and Korean fonts are unchanged. Japanese pages continue to use their Japanese system-font stack.
+
 2026-10-10 (combined live guides and PR #320): rebuilt the Chinese serif
 subset and existing slice plan from the verified Noto Serif SC source below.
 The combined corpus covers 2,888 required Han characters; comparison against

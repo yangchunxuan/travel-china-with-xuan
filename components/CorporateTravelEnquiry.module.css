@@ -49,6 +49,11 @@
 .kakao button.primary svg { display: none; }
 .copy { background: transparent; border: 0; color: var(--ink); cursor: pointer; font: inherit; font-size: .875rem; min-height: 2.75rem; padding: .5rem 0; text-decoration: underline; text-decoration-color: var(--blank); text-underline-offset: .25rem; }
 .section :is(a, button):focus-visible, .review:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+.section:lang(ar) .primary { padding: 0; padding-inline-end: 1.25rem; }
+.section:lang(ar) .primary::before { transform: rotate(-45deg); }
+.section:lang(ar) .fields select { background-position: 0 100%, 0 100%, 4px 55%, 9px 55%; }
+.section:lang(ar) .review pre { unicode-bidi: plaintext; text-align: start; }
+.section:lang(ar) .aside a[href^="mailto:"] { direction: ltr; unicode-bidi: isolate; }
 @media (forced-colors: active) {
   .fields input, .fields select, .fields textarea { border-bottom: 1px solid CanvasText; }
   .fields :is(input, select, textarea):focus-visible { outline: 2px solid Highlight; outline-offset: 3px; }

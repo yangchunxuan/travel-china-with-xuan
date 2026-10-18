@@ -2,21 +2,19 @@ import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { parse } from 'parse5';
+import { corporateLocales } from '../lib/corporateTravelTypes.ts';
+import { getCorporateHubCopy } from '../lib/corporateTravelHub.ts';
+import { getCorporateEnquiryCopy } from '../lib/corporateEnquiryDraft.ts';
 
 const englishRoutes = ['/corporate-travel/', '/corporate-travel/zhangjiajie-4-day-team-trip/', '/corporate-travel/shanghai-suzhou-4-day-company-retreat/'];
-// The same three pages in Chinese and Korean, each with its own form button and credits label.
-const editions = [
-  { prefix: '', submit: 'Prepare my enquiry', credits: 'Photo credits', lang: 'en' },
-  { prefix: '/zh', submit: '生成需求消息', credits: '图片来源', lang: 'zh-Hans' },
-  { prefix: '/ko', submit: '요청 메시지 만들기', credits: '사진 출처', lang: 'ko' },
-];
+const editions = corporateLocales.map(locale => ({ prefix: locale === 'en' ? '' : `/${locale}`, locale, submit: getCorporateEnquiryCopy(locale).submit, credits: getCorporateHubCopy(locale).ui.photoCredits, lang: locale === 'zh' ? 'zh-Hans' : locale }));
 const pages = editions.flatMap((edition) => englishRoutes.map((route) => ({ ...edition, route: `${edition.prefix}${route}`, englishRoute: route })));
 const routes = pages.map((page) => page.route);
 const root = path.resolve('out');
 function all(node, predicate, result = []) { if (predicate(node)) result.push(node); for (const child of node.childNodes ?? []) all(child, predicate, result); return result; }
 function attr(node, name) { return node.attrs?.find(a => a.name === name)?.value ?? ''; }
 function text(node) { return node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join(''); }
-for (const { route, submit, credits, lang, englishRoute } of pages) {
+for (const { route, submit, credits, lang, locale, englishRoute } of pages) {
   const html = await readFile(path.join(root, route, 'index.html'), 'utf8');
   const doc = parse(html), elements = all(doc, n => Boolean(n.tagName));
   const canonical = elements.find(n => n.tagName === 'link' && attr(n, 'rel') === 'canonical');
@@ -30,10 +28,14 @@ for (const { route, submit, credits, lang, englishRoute } of pages) {
   const pageText = text(doc);
   assert.ok(pageText.includes(submit), `${route}: form button`);
   assert.ok(pageText.includes(credits), `${route}: photo credits`);
-  for (const [hreflang, href] of [['en', englishRoute], ['zh-Hans', `/zh${englishRoute}`], ['ko', `/ko${englishRoute}`], ['x-default', englishRoute]]) {
+  const alternates = [...editions.map(e => [e.lang, `${e.prefix}${englishRoute}`]), ['x-default', englishRoute]];
+  assert.equal(elements.filter(n => n.tagName === 'link' && attr(n, 'rel') === 'alternate' && attr(n, 'hreflang')).length, 9, `${route}: eight languages plus x-default`);
+  for (const [hreflang, href] of alternates) {
     assert.ok(elements.some(n => n.tagName === 'link' && attr(n, 'rel') === 'alternate' && attr(n, 'hreflang') === hreflang && attr(n, 'href') === `https://homegroundchina.com${href}`), `${route}: ${hreflang} alternate`);
   }
   assert.ok(elements.some(n => attr(n, 'lang') === lang), `${route}: page language ${lang}`);
+  if (locale === 'ar') assert.ok(elements.some(n => attr(n, 'data-homeground-locale') === 'ar' && attr(n, 'dir') === 'rtl'), `${route}: RTL page root`);
+  for (const e of editions) assert.ok(elements.some(n => n.tagName === 'a' && attr(n, 'href') === `${e.prefix}${englishRoute}`), `${route}: equivalent ${e.lang} language link`);
   const graphs = elements.filter(n => n.tagName === 'script' && attr(n, 'type') === 'application/ld+json').map(n => JSON.parse(text(n)));
   const corporateGraph = graphs.find(g => g['@graph']?.some(n => n['@id'] === `https://homegroundchina.com${route}#webpage`));
   assert.ok(corporateGraph, `${route}: own structured data`);
@@ -59,6 +61,11 @@ for (const { route, submit, credits, lang, englishRoute } of pages) {
 }
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const llms = await readFile(path.join(root, 'llms.txt'), 'utf8');
-for (const route of routes) assert.ok(sitemap.includes(`https://homegroundchina.com${route}`), `${route} in sitemap`);
-for (const route of [...englishRoutes, '/zh/corporate-travel/', '/ko/corporate-travel/']) assert.ok(llms.includes(`https://homegroundchina.com${route}`), `${route} in llms.txt`);
-console.log('PASS all nine company pages in the sitemap, and the English pages and translated hubs in llms.txt');
+const sitemapRows = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/gu)].map(match => match[1]);
+for (const { route, englishRoute } of pages) {
+  const rows = sitemapRows.filter(row => row.includes(`<loc>https://homegroundchina.com${route}</loc>`));
+  assert.equal(rows.length, 1, `${route}: one sitemap entry`);
+  for (const e of editions) assert.ok(rows[0].includes(`href="https://homegroundchina.com${e.prefix}${englishRoute}"`), `${route}: sitemap equivalent ${e.lang}`);
+}
+for (const route of routes) assert.ok(llms.includes(`https://homegroundchina.com${route}`), `${route} in llms.txt`);
+console.log('PASS all 24 company pages in sitemap and llms.txt, with reciprocal equivalents');

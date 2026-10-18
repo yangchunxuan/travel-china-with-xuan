@@ -121,7 +121,7 @@ for (const file of files) {
     const desktopNav = elements(header, (node) => node.tagName === "nav" && hasClass(node, "desktopNav"))[0];
     // Chinese and Korean headers open their own company pages; every other edition opens the English hub.
     const headerLanguage = normalizeLanguage(attr(header, "data-homeground-header-locale"));
-    const corporateRoot = headerLanguage === "zh-Hans" ? "/zh/corporate-travel/" : headerLanguage === "ko" ? "/ko/corporate-travel/" : "/corporate-travel/";
+    const corporateRoot = headerLanguage === "en" ? "/corporate-travel/" : `/${headerLanguage === "zh-Hans" ? "zh" : headerLanguage}/corporate-travel/`;
     const corporatePurposePaths = ["company-trips", "incentive-travel", "meetings-retreats"].map((id) => `${corporateRoot}#${id}`);
     const desktopCompanyLinks = elements(desktopNav, (node) => node.tagName === "a" && attr(node, "href") === corporateRoot);
     check(desktopCompanyLinks.length === 1, `${route}: one independent desktop company-travel entrance`);

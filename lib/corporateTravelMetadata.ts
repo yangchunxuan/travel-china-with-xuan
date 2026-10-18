@@ -16,7 +16,7 @@ const provider = {
 export const corporateHreflang = (locale: CorporateLocale) => (locale === "zh" ? "zh-Hans" : locale);
 const pathFor = (locale: CorporateLocale, trip?: CorporateTrip) => (trip ? corporateTripPathFor(locale, trip.slug) : corporateHubPathFor(locale));
 
-/** Canonical, the three language alternates and social cards for the hub or one programme. */
+/** Canonical, equivalent language alternates and social cards for one page. */
 export function buildCorporateTravelMetadata(trip?: CorporateTrip, locale: CorporateLocale = "en"): Metadata {
   const copy = getCorporateHubCopy(locale);
   const path = pathFor(locale, trip);

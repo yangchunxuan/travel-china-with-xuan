@@ -1,3 +1,13 @@
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateHubJa } from "./corporateTravelHub.ja.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateHubEs } from "./corporateTravelHub.es.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateHubFr } from "./corporateTravelHub.fr.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateHubDe } from "./corporateTravelHub.de.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateHubAr } from "./corporateTravelHub.ar.ts";
 import type { CorporateFaq, CorporateLocale } from "./corporateTravelTypes";
 // @ts-ignore TS5097: tests run the content adapters directly via Node type stripping.
 import { corporateHubZh } from "./corporateTravelHub.zh.ts";
@@ -183,7 +193,7 @@ export const corporateHubEn: CorporateHubCopy = {
   },
 };
 
-const hubCopy: Record<CorporateLocale, CorporateHubCopy> = { en: corporateHubEn, zh: corporateHubZh, ko: corporateHubKo };
+const hubCopy: Record<CorporateLocale, CorporateHubCopy> = { en: corporateHubEn, zh: corporateHubZh, ko: corporateHubKo, ja: corporateHubJa, es: corporateHubEs, fr: corporateHubFr, de: corporateHubDe, ar: corporateHubAr };
 
 export function getCorporateHubCopy(locale: CorporateLocale): CorporateHubCopy {
   return hubCopy[locale];
