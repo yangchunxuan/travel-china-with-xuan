@@ -1,7 +1,8 @@
 /*
  * /services/china-attraction-reservations/. Same system as /services/:
- * white page, #f9f8f6 tiles without outlines, ink #0a0a0a with muted ink at
- * 60%, simple text links and Georgia headlines. Order: outcome, booking
+ * white page, hairline rows instead of tiles, ink #0a0a0a with muted ink at
+ * 60%, simple text links and Georgia headlines. Every hairline list runs the
+ * full content width, so the right edges line up down the page. Order: outcome, booking
  * friction, timing, guarantee, benefits, price, steps and the request form.
  * Rules fold by city. The rules table scrolls inside its own
  * container at tablet widths and becomes one card per attraction on phones,
@@ -107,30 +108,40 @@
 }
 
 .heroGrid {
-  align-items: stretch;
+  align-items: start;
   display: grid;
-  gap: 2rem clamp(2rem, 5vw, 4.5rem);
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 0 clamp(2rem, 5vw, 4.5rem);
+  grid-template-areas: "head figure" "body figure";
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-rows: auto 1fr;
 }
 
-.heroCopy h1 {
+.heroHead {
+  grid-area: head;
+}
+
+.heroBody {
+  grid-area: body;
+}
+
+.heroHead h1 {
   font-size: clamp(2.5rem, 5vw, 4.25rem);
   line-height: 1.03;
   margin: 1rem 0 0;
   max-width: 20ch;
 }
 
-.heroCopy h1:lang(en) {
+.heroHead h1:lang(en) {
   font-size: clamp(2.5rem, 4.2vw, 3.75rem);
 }
 
-.heroCopy h1:is(:lang(zh), :lang(ko)) {
+.heroHead h1:is(:lang(zh), :lang(ko)) {
   letter-spacing: 0;
   line-height: 1.18;
 }
 
-/* "ch" is a Latin width: 20ch is about ten Chinese characters, which keeps two balanced lines. */
-.heroCopy h1:lang(zh) {
+/* "ch" is a Latin width: 20ch is about ten Chinese characters; the phrases in the component decide where lines break. */
+.heroHead h1:lang(zh) {
   max-width: 10em;
 }
 
@@ -142,8 +153,7 @@
   max-width: 38rem;
 }
 
-.heroPain,
-.heroUrgency {
+.heroPain {
   font-size: 0.9375rem;
   line-height: 1.6;
   margin: 1rem 0 0;
@@ -155,22 +165,17 @@
   font-weight: 500;
 }
 
-.heroUrgency {
-  color: var(--muted);
-}
-
 .heroFacts {
+  border-top: 1px solid var(--rule);
   display: grid;
-  gap: 0.75rem;
+  gap: 0 2rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 2rem 0 0;
   max-width: 48rem;
 }
 
 .heroFacts > div {
-  background: var(--tile);
-  border-radius: 1rem;
-  padding: 1rem 1.125rem;
+  padding: 1rem 0 0;
 }
 
 .heroFacts dt {
@@ -293,19 +298,16 @@
   text-underline-offset: 0.25rem;
 }
 
-/* The photo fills the height of the text beside it instead of a short strip. */
+/* The photo keeps its own 16:10 and lines up with the headline; it is never cropped to the text beside it. */
 .heroFigure {
-  height: 100%;
-  margin: 0;
+  grid-area: figure;
+  margin: 2.375rem 0 0;
 }
 
 .heroFigure img {
   border-radius: 1rem;
   display: block;
-  height: 100%;
-  min-height: 24rem;
-  object-fit: cover;
-  object-position: 50% 55%;
+  height: auto;
   width: 100%;
 }
 
@@ -347,7 +349,6 @@
 .benefits {
   list-style: none;
   margin: 1.5rem 0 0;
-  max-inline-size: 62rem;
   padding: 0;
 }
 
@@ -380,9 +381,10 @@
 }
 
 .checkList li {
+  border-top: 1px solid var(--rule);
   font-size: 0.9375rem;
-  line-height: 1.65;
-  padding-block: 0.5rem;
+  line-height: 1.55;
+  padding-block: 0.75rem;
 }
 
 .table .releaseColumn {
@@ -395,6 +397,15 @@
   display: grid;
   gap: 2rem clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.page .twoColumn h2 {
+  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+  line-height: 1.08;
+}
+
+.twoColumn h3 {
+  margin-block: 0.5rem 1rem;
 }
 
 .twoColumn p {
@@ -432,15 +443,6 @@
 
 .checkList li {
   color: var(--ink);
-  padding-inline-start: 1.5rem;
-  position: relative;
-}
-
-.checkList li::before {
-  color: var(--accent);
-  content: "✓";
-  inset-inline-start: 0;
-  position: absolute;
 }
 
 .steps,
@@ -455,9 +457,8 @@
 
 .steps li,
 .priceGrid li {
-  background: var(--tile);
-  border-radius: 1rem;
-  padding: 1.5rem 1.25rem;
+  border-top: 1px solid var(--ink);
+  padding: 1.25rem 0 0;
 }
 
 .steps p,
@@ -1316,7 +1317,6 @@
 .faqList {
   border-top: 1px solid var(--rule);
   margin-top: 1rem;
-  max-width: 52rem;
 }
 
 .faqList details {
@@ -1411,10 +1411,13 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .heroFigure img {
-    aspect-ratio: 8 / 5;
-    height: auto;
-    min-height: 0;
+  .heroGrid {
+    grid-template-areas: "head" "figure" "body";
+    grid-template-rows: auto;
+  }
+
+  .heroFigure {
+    margin: 1.75rem 0 0;
   }
 
   /* On phones and tablets the summary follows the form instead of floating. */
@@ -1584,10 +1587,13 @@
 
   /* Cards share one inner padding so text edges line up. */
   .tile,
-  .steps li,
-  .priceGrid li,
   .table tbody tr {
     padding: 1.125rem;
+  }
+
+  .steps li,
+  .priceGrid li {
+    padding: 1.125rem 0 1.25rem;
   }
 
   /* The form and summary are unboxed: their words sit on the page's own edge. */
@@ -1596,19 +1602,14 @@
     padding: 1.25rem 0 0;
   }
 
-  /* The two facts share one tile as label/value rows. */
+  /* The two facts as label/value rows between hairlines. */
   .heroFacts {
-    background: var(--tile);
-    border-radius: 1rem;
     gap: 0;
     grid-template-columns: minmax(0, 1fr);
-    padding: 0.25rem 1.125rem;
   }
 
   .heroFacts > div {
     align-items: baseline;
-    background: none;
-    border-radius: 0;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
@@ -1629,7 +1630,7 @@
   }
 
   /* Korean headline: "중국 관광지" stays together at phone size. */
-  .heroCopy h1:lang(ko) {
+  .heroHead h1:lang(ko) {
     font-size: 2.25rem;
   }
 
@@ -1647,13 +1648,6 @@
     min-height: 2.75rem;
   }
 
-  /* Steps as a plain list instead of three tall tiles. */
-  .steps li {
-    background: none;
-    border-radius: 0;
-    border-top: 1px solid var(--rule);
-    padding-inline: 0;
-  }
 
   /*
    * Attractions as chips sized to their names; a chosen one fills with ink.
