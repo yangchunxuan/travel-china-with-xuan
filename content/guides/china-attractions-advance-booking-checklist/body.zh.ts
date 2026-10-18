@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -184,12 +185,12 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "Homeground能怎样帮你"
+      "text": "想去的景点，和整天的安排一起订好"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "热门景点的预约，可能会牵动整段行程。告诉我们你的出行日期、同行人数和希望参观的地方，我们会结合具体景点和服务范围，帮你协调这些安排。"
+      "text": "博物馆的时段、酒店和下一趟火车，要排在同一个可行的计划里。日期一定，就把同行人数和想去的地方一起发来。我们提前准备景点预约，付款前书面确认服务范围、费用和备选方案。"
     },
     {
       "id": "support-list",
@@ -205,11 +206,11 @@ const body: StructuredPageBody = {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "指定景点代预约",
-      "body": "我们的代预约服务覆盖当前预约服务页列出的指定景点：每人每景点45元，门票按官方票面价另付，不加价。国博、三星堆这类设有外籍游客官方渠道的景点，我们从官方渠道着手，付款前先确认能提供哪些协助。",
+      "title": "行程定好了，门票早点交给我们",
+      "body": `日期一定就发来。服务页列出的景点，我们在放票前做好准备，中文应用、护照实名预约，都在景点自己的系统里办理。等到参观前一周才联系，可能已经错过你那天的放票。服务费每人每个景点 ${attractionReservationServiceFeeCny} 元，门票按票面原价另付。付款前，预约细节会书面确认。`,
       "link": {
         "href": "https://homegroundchina.com/zh/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "查看景点范围、费用与预约条款"
+        "label": "发来日期，安排订票"
       }
     },
     {
@@ -248,7 +249,7 @@ const body: StructuredPageBody = {
         },
         {
           "question": "Homeground能帮我预约景点吗？",
-          "answer": "当前预约服务页列出的指定景点可以：代预约服务费为每人每景点45元，门票按官方价格另付，付款前我们会书面确认范围和渠道。Homeground私家团行程内的景点预约不另收服务费。天门山和张家界国家森林公园，请选择张家界私家团或私人导游服务；仅导游服务时，门票和交通另行报价。"
+          "answer": `可以。日期一定就发来。服务页列出的指定景点，我们处理预约，服务费每人每个景点 ${attractionReservationServiceFeeCny} 元，门票按票面原价另付。范围和预约渠道会在付款前书面确认。已确认的 Homeground 私家团行程内，景点预约不另收服务费。天门山和张家界国家森林公园需通过张家界私家团或私人导游服务安排；仅导游服务时，门票和交通另行报价。把日期发给我们，就能开始。`
         }
       ]
     },

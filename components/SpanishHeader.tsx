@@ -24,7 +24,7 @@ const entries: Readonly<Record<string, { label: string; description: string; hre
   'multi-city': { label: 'Varias ciudades (en inglés)', description: 'Grandes etapas de China en un mismo viaje', href: '/tours/multi-city/' },
   regions: { label: 'Una región a fondo (en inglés)', description: 'El este, el suroeste, el sur y otras regiones de China', href: '/tours/regions/' },
   seasonal: { label: 'Viajes de temporada (en inglés)', description: 'Invierno en el noreste: Harbin y la montaña Changbai', href: '/tours/seasonal/' },
-  'attraction-tickets': { label: 'Entradas y reservas', description: 'Reserva de acceso con los datos de tu pasaporte', href: '/es/services/china-attraction-reservations/' },
+  'attraction-tickets': { label: 'Entradas y reservas', description: 'Reservamos tus entradas. Escríbenos en cuanto tengas fechas.', href: '/es/services/china-attraction-reservations/' },
   'english-guides': { label: 'Guías privados en inglés', description: 'Guías por días en cuatro ciudades; el español tiene suplemento', href: '/es/services/private-english-speaking-guides/' },
   'private-car': { label: 'Vehículo con conductor', description: 'Traslados de aeropuerto y recorridos en vehículo privado', href: '/es/services/private-car-and-driver/' },
   'trip-support': { label: 'Organización del viaje', description: 'Hoteles, traslados y coordinación durante el viaje', href: '/es/services/full-trip-support/' },

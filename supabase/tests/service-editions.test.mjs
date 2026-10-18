@@ -176,7 +176,7 @@ for (const language of languages) {
     }
   });
 
-  test(`${language}: reservation selection charges CNY 45 per person per attraction and carries best-effort scope into the draft`, () => {
+  test(`${language}: reservation selection charges CNY 45 per person per attraction and keeps the common guarantee`, () => {
     const enquiryStub = function Enquiry() {};
     const pageLoad = loader({ 'components/AttractionReservationEnquiry.tsx': { AttractionReservationEnquiry: enquiryStub } });
     const { AttractionReservationsPage } = pageLoad('components/AttractionReservationsPage.tsx');
@@ -190,8 +190,15 @@ for (const language of languages) {
     assert.equal(props.attractions.some(item => item.id === 'shanghai-museum-east'), false, 'walk-in attraction must not incur a reservation fee');
     assert.equal(reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, 8);
     assert.match(copy.guarantee, /8/);
-    assert.match(copy.guarantee, language === 'ar' ? /باستثناء.*دون ضمان/ : language === 'de' ? /außer.*nicht garantiert/ : language === 'fr' ? /sauf.*sans garantie/ : /salvo.*sin garantía/);
-    assert.match(props.lateRequestNote, language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
+    const categoryException = language === 'ar' ? /باستثناء.*دون ضمان|خارج ضمان الحجز/ : language === 'de' ? /außer.*nicht garantiert|keine Reservierungsgarantie/ : language === 'fr' ? /sauf.*sans garantie|hors garantie/ : /salvo.*sin garantía|fuera de la garantía/;
+    assert.doesNotMatch(copy.guarantee, categoryException, 'no attraction category is excluded from the booking guarantee');
+    assert.ok(copy.timingRows[2].body.includes(copy.guaranteeLate), 'the short-notice timing row retains the complete late policy');
+    const timing = one(page, node => 'data-reservation-timing' in (node.props ?? {}), 'when to contact us');
+    const timingRows = nodes(timing).filter(node => node.type === 'li');
+    assert.equal(timingRows.length, 3, 'three contact timings');
+    const latePolicy = text(one(timingRows[2], node => node.type === 'p', 'late request policy'));
+    assert.equal(latePolicy, copy.timingRows[2].body, 'the page renders the full short-notice timing row');
+    assert.match(latePolicy, language === 'ar' ? /أقل من 8 أيام.*الاستفسار/ : language === 'de' ? /Weniger als 8 Tage.*anfragen/ : language === 'fr' ? /Moins de 8 jours.*contacter/ : /menos de 8 días.*consultarnos/s);
     const h = hooks(), uiLoad = loader({ react: h.react });
     const { AttractionReservationEnquiry } = uiLoad('components/AttractionReservationEnquiry.tsx');
     let tree = h.render(AttractionReservationEnquiry, props);
@@ -212,12 +219,13 @@ for (const language of languages) {
     assert.equal(email.props['data-contact-card-direct'], true, 'email keeps the prepared reservation draft');
     assert.equal(new URL(email.props.href).searchParams.get('body'), body);
     const hanging = props.attractions.find(item => item.id === 'hanging-temple');
-    assert.ok(hanging.label.includes(copy.bestEffortTag));
-    assert.ok(body.includes(hanging.label), 'limited guarantee must survive the message handoff');
+    assert.equal(hanging.label, reservationCopy.getAttractionReservationEditionRule(reservations.getAttractionReservationRule('hanging-temple'), language).name, 'the attraction label has no separate no-guarantee tag');
+    assert.ok(body.includes(hanging.label), 'selected attraction must survive the message handoff');
+    assert.doesNotMatch(body, /محاولة حجز دون ضمان|Reservierungsversuch ohne Garantie|sans garantie de réservation|sin garantía de reserva/, 'draft adds no attraction-category exclusion');
     assert.ok(body.includes(props.attractions.find(item => item.id === 'forbidden-city').label));
     assert.match(body, /: 3(?:\n|$)/);
     assert.ok(body.endsWith(props.pageUrl));
-    assert.equal(text(one(tree, node => 'data-reservation-late-request' in (node.props ?? {}), 'late request note beside actions')), props.lateRequestNote);
+    assert.equal(nodes(tree).some(node => 'data-reservation-late-request' in (node.props ?? {})), false, 'the complete late policy stays in the timing row rather than repeating beside the send controls');
     one(tree, node => node.props?.name === 'travellers', 'party size').props.onChange({ target: { value: '' } });
     tree = h.render(AttractionReservationEnquiry, props);
     assert.equal(fee(), '—', 'blank party size cannot silently become one or two');

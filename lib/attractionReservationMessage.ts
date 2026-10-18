@@ -35,6 +35,7 @@ export function attractionReservationMessageText(copy: AttractionReservationEnqu
   const travellers = draft.travellers && Number.isInteger(draft.travellers) && draft.travellers > 0 ? String(draft.travellers) : copy.none;
   return [
     copy.opening,
+    "",
     `${copy.service}: ${copy.serviceValue}`,
     `${copy.city}: ${draft.cities.length ? draft.cities.join(", ") : copy.none}`,
     ...(draft.visits.length
@@ -42,8 +43,9 @@ export function attractionReservationMessageText(copy: AttractionReservationEnqu
       : [`${copy.attractions}: ${copy.none}`]),
     `${copy.travellers}: ${travellers}`,
     note ? `${copy.note}: ${note}` : null,
+    "",
     draft.pageUrl,
-  ].filter(Boolean).join("\n");
+  ].filter((line) => line !== null).join("\n");
 }
 
 export function attractionReservationMailtoHref(email: string, copy: AttractionReservationEnquiryCopy["message"], draft: AttractionReservationDraft) {
