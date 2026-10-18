@@ -5,6 +5,7 @@ import {
   type AttractionReservationRule,
 } from "../../lib/attractionReservations";
 import { fillReservationCopy, getAttractionReservationCopy } from "../../lib/attractionReservationsI18n";
+import { getGuideReservationCtaWording } from "../../lib/guideReservationOffers";
 import type { HomegroundLocale } from "../../lib/homegroundI18n";
 import { GuideCtaLink } from "../GuideCtaLink";
 import styles from "./GuideReservationCta.module.css";
@@ -42,14 +43,16 @@ export function GuideReservationCta({
     attraction: rule.name[locale],
     fee: formatAttractionReservationFee(attractionReservationServiceFeeCny, locale),
   };
+  // A few English guides word the same offer for their own readers; the fee, link and small print stay shared.
+  const wording = getGuideReservationCtaWording(guideId, locale, rule);
   return (
     <aside aria-label={copy.label} className={styles.card} data-guide-reservation-cta={rule.id} data-similarity-ignore>
       <p className={styles.label}>{copy.label}</p>
-      <p className={styles.title}>{fillReservationCopy(copy.title, values)}</p>
-      <p className={styles.fee}><span className={styles.feeAmount}>{values.fee}</span> <span className={styles.feeUnit}>{copy.feeUnit}</span></p>
-      <p className={styles.body}>{fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
+      <p className={styles.title}>{wording?.title ?? fillReservationCopy(copy.title, values)}</p>
+      <p className={styles.fee}><span className={styles.feeAmount}>{values.fee}</span> <span className={styles.feeUnit}>{wording?.feeUnit ?? copy.feeUnit}</span></p>
+      <p className={styles.body}>{wording?.body ?? fillReservationCopy(rule.passportAccepted === true ? copy.body : copy.bodyPassportUnchecked, values)}</p>
       <GuideCtaLink className={styles.action} guideId={guideId} href={attractionReservationHref(locale, rule.id)} locale={locale} position={position}>
-        {copy.action}
+        {wording?.action ?? copy.action}
       </GuideCtaLink>
       {rule.disclosure ? <p className={styles.disclosure}>{rule.disclosure[locale]}</p> : null}
     </aside>
