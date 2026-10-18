@@ -1,3 +1,4 @@
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths.ts";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -154,11 +155,12 @@ const guidesHub = await page("/ja/guides/");
 assert.match(guidesHub.match(/<h1[^>]*>[\s\S]*?<\/h1>/u)?.[0].replace(/<[^>]+>/gu, "") ?? "", /中国旅行の実用ガイド/u);
 hasTag(guidesHub, `href="${jaPilot.guide}"`);
 hasTag(guidesHub, 'href="/ja/guides/how-much-does-a-china-trip-cost/"');
-assert.match(guidesHub, /公開中：2本/u);
+assert.match(guidesHub, /移動・費用：2本/u);
+assert.match(guidesHub, /"numberOfItems":8/u);
 assert.deepEqual(
   [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].sort(),
-  [`href="${jaPilot.guide}"`, 'href="/ja/guides/how-much-does-a-china-trip-cost/"'].sort(),
-  "Japanese guides hub should list both published Japanese articles",
+  [`href="${jaPilot.guide}"`, 'href="/ja/guides/how-much-does-a-china-trip-cost/"', ...reservationGuideEditionSlugs.map(slug => `href="${reservationGuideEditionPath("ja", slug)}"`)].sort(),
+  "Japanese guides hub should list all eight published Japanese articles",
 );
 assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);

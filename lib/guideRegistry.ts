@@ -1,3 +1,5 @@
+// @ts-ignore Focused source tests use explicit TypeScript extensions.
+import { reservationGuideEditionAlternates } from "./reservationGuideEditionPaths.ts";
 // @ts-ignore TS5097: focused Node tests execute the registry via type stripping.
 import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n.ts";
 import type {
@@ -1307,6 +1309,7 @@ export function getGuideLanguagePaths(id: GuideId) {
   };
   if (spanishGuidePaths[id]) paths.es = spanishGuidePaths[id];
 
+  Object.assign(paths, reservationGuideEditionAlternates(id));
   return paths;
 }
 

@@ -1,0 +1,429 @@
+{
+  "slug": "tianmen-mountain-tickets-and-routes",
+  "title": "Tickets für den Tianmen-Berg: aktuelle Routen, Preise und Buchung",
+  "headline": "Tickets für den Tianmen-Berg: geöffnete Routen, Preise und Eingang",
+  "description": "Seit 13. Oktober 2026 wird am Tianmen-Berg nur Route C verkauft. Ticket- und Seilbahnpreise, Sperrungen, Startpunkt und Buchungsprüfung mit ausländischem Reisepass.",
+  "navTitle": "Tickets für den Tianmen-Berg",
+  "heroAlt": "Steintreppen führen zwischen steilen Bergwänden zur Tianmen-Höhle hinauf",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Seit 13. Oktober 2026 verkauft der Tianmen-Berg nur eine Route: C, mit der Expressseilbahn ab dem Bergtor hinauf und zurück. A und B werden nicht verkauft, weil die Seilbahn aus Zhangjiajies Stadtzentrum auf ihrer gesamten Länge wegen Umbauarbeiten schließt. Vom 8. bis 12. Oktober ist es umgekehrt: Die Expressseilbahn ist wegen Wartung geschlossen, und nur A fährt. Ordnen Sie Ihren Besuch dem richtigen Zeitraum zu, vergleichen Sie den vollständigen Paketpreis und speichern Sie dann die Hinweise zu Reisepass und Eingang. Möchten Sie die Mitteilungen nicht selbst verfolgen? Der Tianmen-Berg ist Tag 4 unserer 4-tägigen Zhangjiajie-Privatreise ab USD 530 pro Person; das Ticket buchen wir für Sie."
+      },
+      {
+        "id": "status-table",
+        "type": "table",
+        "caption": "Welche Tianmen-Routen je nach Besuchsdatum verkauft werden",
+        "columns": [
+          "Besuchsdatum",
+          "Verkaufte Routen",
+          "Startpunkt",
+          "Geschlossen"
+        ],
+        "rows": [
+          [
+            "Bis 7. Oktober 2026",
+            "A, B und C",
+            "A: Talstation der Stadtseilbahn. B und C: Bergtor",
+            "Oberer Abschnitt der Stadtseilbahn von der Mittelstation zum Gipfel, seit 6. November 2025 geschlossen"
+          ],
+          [
+            "8.–12. Oktober 2026",
+            "Nur A, mit vorübergehendem Verlauf",
+            "Talstation der Stadtseilbahn",
+            "Expressseilbahn wegen Wartung; oberer Abschnitt der Stadtseilbahn"
+          ],
+          [
+            "Ab 13. Oktober 2026",
+            "Nur C",
+            "Bergtor",
+            "Die gesamte Stadtseilbahn. Kein Wiedereröffnungstermin veröffentlicht"
+          ]
+        ]
+      },
+      {
+        "id": "status-source",
+        "type": "paragraph",
+        "text": "Die Regelung vom 8. bis 12. Oktober stammt aus der Mitteilung des Landschaftsgebiets vom 6. Oktober 2026. Die Regelung ab 13. Oktober steht in dem auf Tongchengs Tianmen-Ticketseite angezeigten Hinweis, gelesen am 11. Oktober 2026. Als Gründe werden der Seilbahnausbau und Bauarbeiten an der Talstation genannt; ein Enddatum fehlt. Die einfachen Routen 1 und 2 bleiben während des gesamten Zeitraums außer Verkauf."
+      },
+      {
+        "id": "reservation-pretrip-reminder",
+        "type": "callout",
+        "title": "Das Tianmen-Ticket bestimmt auch den Tagesablauf",
+        "body": "Datum, Einlasszeitfenster und Starttor bestimmen Abholung und Rückweg. Prüfen Sie vor der übrigen Tagesplanung, was an Ihrem Termin verkauft wird. Planen Sie am Besuchstag auch mit bestätigtem Ticket Wartezeit an der Seilbahn ein.",
+        "tone": "decision",
+        "link": {
+          "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+          "label": "Was Sie vor Ihrer China-Reise organisieren sollten"
+        }
+      },
+      {
+        "id": "price-heading",
+        "type": "comparison",
+        "title": "Was kosten Tickets für den Tianmen-Berg?",
+        "columns": [
+          {
+            "heading": "RMB 72: Eintritt",
+            "body": "Der staatlich vorgegebene Richtpreis für den Eintritt, gültig seit 1. August 2025.",
+            "items": [
+              "Der Preisbescheid Hunans legt den Eintrittsanteil fest. Er ist kein Gesamtpreis für die Fahrt mit Seilbahnen und Rolltreppen."
+            ]
+          },
+          {
+            "heading": "RMB 285: veröffentlichtes Erwachsenenpaket",
+            "body": "Der Hinweis auf Tongchengs Ticketseite nennt diesen Erwachsenenpreis für A, B und C. Für zwei Ermäßigungskategorien nennt er RMB 149 und RMB 113; Kinder unter 14 Jahren sind kostenlos.",
+            "items": [
+              "Referenz geprüft am 11. Oktober 2026. Bestätigen Sie das Angebot für Ihren Termin, Zusatzleistungen und den endgültigen Zahlbetrag beim Verkäufer."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "price-copy",
+        "type": "paragraph",
+        "text": "Ein Onlineangebot kann einen anderen Verkaufs- oder Aktionsgesamtpreis haben. Vergleichen Sie gleiche Termine, Alterskategorien und enthaltene Leistungen, statt die niedrigste hervorgehobene Zahl zu wählen. Nehmen Sie nicht an, dass ermäßigter Eintritt auch kostenlosen Transport bedeutet. Fragen Sie bei Kindern, älteren Reisenden oder Studierenden vor der Buchung, welche Kategorie und welche Nachweise für das konkrete Angebot gelten."
+      },
+      {
+        "id": "component-prices",
+        "type": "table",
+        "caption": "Veröffentlichte Preise der einzelnen Besuchsbestandteile",
+        "columns": [
+          "Leistung",
+          "Veröffentlichter Preis",
+          "Ab 13. Oktober 2026"
+        ],
+        "rows": [
+          [
+            "Eintritt",
+            "RMB 72",
+            "Für jede Route erforderlich"
+          ],
+          [
+            "Expressseilbahn vom Bergtor zur Tianmen-Höhle, einfache Fahrt",
+            "RMB 76",
+            "In Betrieb; auf Route C für Hin- und Rückfahrt genutzt"
+          ],
+          [
+            "Siebenstufige Rolltreppen durch den Berg von der Höhle zum Gipfel, einfache Fahrt",
+            "RMB 42",
+            "In Betrieb; auf Route C in beiden Richtungen genutzt"
+          ],
+          [
+            "Stadtseilbahn, einfache Fahrt",
+            "RMB 108; RMB 54 nur für den unteren Abschnitt während der Sperrung des oberen",
+            "Geschlossen"
+          ],
+          [
+            "Aussichtsbus auf der Bergstraße von der Mittelstation zur Tianmen-Höhle, einfache Fahrt",
+            "RMB 33; RMB 16 während der Sperrung des oberen Abschnitts",
+            "Nicht Teil von Route C"
+          ],
+          [
+            "Untere Dengtianmen-Rolltreppen, Abwärtsfahrt",
+            "RMB 32, bei den Paketen A und B kostenlos enthalten",
+            "Im Hinweis nicht erneut erläutert; vor Ort nachfragen"
+          ]
+        ]
+      },
+      {
+        "id": "component-copy",
+        "type": "paragraph",
+        "text": "Diese Preise stehen im von Tongcheng veröffentlichten Hinweis. Das Paket kostet weniger als die Summe der Einzelteile. Wer eine einzelne Leistung kaufen möchte, soll sich laut Hinweis an die Service- oder Ticketschalter des Landschaftsgebiets wenden."
+      },
+      {
+        "id": "handoff-options",
+        "type": "comparison",
+        "title": "Möchten Sie die Organisation abgeben?",
+        "columns": [
+          {
+            "heading": "Die 4-tägige Privatreise: ab USD 530 pro Person",
+            "body": "Der Tianmen-Berg steht an Tag 4 an. Wir buchen das Ticket für die an diesem Tag verkaufte Route und bringen Sie im privaten Fahrzeug hin sowie anschließend zum Flughafen oder Bahnhof.",
+            "items": [
+              "Ebenfalls enthalten: Zhangjiajie-Nationalwaldpark und Glasbrücke im Grand Canyon mit englischsprachiger Reiseleitung, drei Hotelnächte und private Transfers.",
+              "Veröffentlichter Preis für zwei bis vier Erwachsene bei Reisen vom 6. September bis 30. Dezember 2026. Gesamtpreis und genaue Leistungen erhalten Sie vor der Zahlung schriftlich."
+            ]
+          },
+          {
+            "heading": "Reiseleitung für einen Tag: CNY 900",
+            "body": "Private, lizenzierte englischsprachige Reiseleitung für bis zu 8 Stunden in Zhangjiajie. Der Preis gilt pro Guide, nicht pro Person; an Spitzenterminen CNY 1.100.",
+            "items": [
+              "Ihr Guide trifft Sie, bringt Sie zum richtigen Eingang für die an diesem Tag angebotene Route und bleibt auf dem Berg bei Ihrer Gruppe.",
+              "Transport, Ihre Tickets und Mahlzeiten werden gesondert angeboten."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "included-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Was enthält das Paket für Route C?"
+      },
+      {
+        "id": "included-copy",
+        "type": "paragraph",
+        "text": "Route C umfasst laut Hinweis den Eintritt, die Expressseilbahn vom Bergtor zur Tianmen-Höhle, die siebenstufigen Rolltreppen hinter der Höhle zum Gipfel und zurück sowie die Expressseilbahn zurück zum Bergtor. Bis 12. Oktober kombinierten die Pakete A und B stattdessen den unteren Abschnitt der Stadtseilbahn, den Aussichtsbus zwischen Mittelstation und Höhle, die Rolltreppen und eine Fahrt mit der Expressseilbahn."
+      },
+      {
+        "id": "escalator-callout",
+        "type": "callout",
+        "tone": "neutral",
+        "title": "Es gibt zwei verschiedene Rolltreppenabschnitte",
+        "body": "Die siebenstufigen Rolltreppen verbinden die Rückseite der Tianmen-Höhle mit dem Gipfel und sind in beiden Richtungen im Paket enthalten. Die unteren Dengtianmen-Rolltreppen verlaufen neben dem Aufstieg mit 999 Stufen zur Höhle. Die veröffentlichte Paketaufstellung nennt die Abwärtsfahrt als kostenlos enthalten; laut Mitteilung des Landschaftsgebiets vom 6. Oktober ist die Aufwärtsfahrt nicht enthalten. Rechnen Sie damit, die Stufen hinaufzugehen oder die Auffahrt extra zu bezahlen. Prüfen Sie außerdem gesondert die Gebühren für optionalen Gipfelsessellift und Glassteg-Service."
+      },
+      {
+        "id": "routes-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "A, B oder C: Welche Routen fahren?"
+      },
+      {
+        "id": "routes-date",
+        "type": "paragraph",
+        "text": "Ab 13. Oktober 2026 wird nur C verkauft. Laut Hinweis stellt die Stadtseilbahn ab diesem Tag den Personenverkehr zwischen Tal- und Mittelstation ein, womit die gesamte Seilbahn außer Betrieb ist; die Pakete A und B werden zurückgezogen. Zuerst wird unten C beschrieben, anschließend A und B in ihrer bis 12. Oktober gültigen Form, falls Buchungsbestätigung, älterer Ratgeber oder Karte noch darauf verweisen."
+      },
+      {
+        "id": "tianmen-route-cards",
+        "type": "comparison",
+        "title": "Die drei Routen mit Hin- und Rückweg",
+        "columns": [
+          {
+            "heading": "C: einzige Route ab 13. Oktober",
+            "body": "Bergtor → Expressseilbahn hinauf zur Tianmen-Höhle.",
+            "items": [
+              "Mit den siebenstufigen Rolltreppen zum Gipfel und zurück zur Höhle.",
+              "Mit der Expressseilbahn zurück zum Bergtor. Die Route selbst ist unverändert; sie nutzte die Stadtseilbahn nie."
+            ]
+          },
+          {
+            "heading": "A: ab 13. Oktober nicht mehr im Verkauf",
+            "body": "Begann an der Talstation der Stadtseilbahn, wechselte an der Mittelstation in den Aussichtsbus und führte mit der Expressseilbahn hinunter.",
+            "items": [
+              "Vom 8. bis 12. Oktober gilt ein vorübergehender Verlauf: Stadtseilbahn zur Mittelstation, Bus zur Tianmen-Höhle, Rolltreppen zum Gipfel und auf demselben Weg zurück.",
+              "Sie benötigt den unteren Abschnitt der Stadtseilbahn, der am 13. Oktober schließt."
+            ]
+          },
+          {
+            "heading": "B: ab 8. Oktober nicht mehr im Verkauf",
+            "body": "Begann am Bergtor mit der Expressseilbahn und führte per Aussichtsbus sowie unterem Stadtseilbahnabschnitt hinunter.",
+            "items": [
+              "Während der Wartung vom 8. bis 12. Oktober nicht verkauft und ab 13. Oktober zusammen mit A zurückgezogen."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "route-choice",
+        "type": "paragraph",
+        "text": "Ab 13. Oktober müssen Sie keine Route mehr auswählen, sondern nur Datum und Zeitfenster. Praktisch ändert sich vor allem der Startpunkt: C beginnt am Bergtor, 天门山国家森林公园山门, nicht an der Stadtseilbahnstation, auf die ältere Ratgeber, Karten und Hotelanweisungen noch verweisen. Laut Hinweis fährt der Shuttle zwischen Talstation der Stadtseilbahn und Bergtor weiter; auch Ticket- und Serviceschalter an der Talstation bleiben erhalten."
+      },
+      {
+        "id": "route-change",
+        "type": "paragraph",
+        "text": "Frühere Mitteilungen verlegten A und B auf den Verlauf von C, wenn Eis, Nebel oder Starkregen die Bergstraße sperrten. C nutzt diese Straße nicht. Sie ist jedoch in beiden Richtungen auf die Expressseilbahn angewiesen, die vom 8. bis 12. Oktober wegen Wartung geschlossen war. Laut Hinweis können sich Routen und Zeiten durch Wetter, Wartung, Veranstaltungen oder Andrang kurzfristig ändern. Lesen Sie deshalb vor dem Verlassen des Hotels die aktuelle Mitteilung."
+      },
+      {
+        "id": "office-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Welchen Ticketschalter oder Eingang brauchen Sie?"
+      },
+      {
+        "id": "office-copy",
+        "type": "paragraph",
+        "text": "Gehen Sie ab 13. Oktober für C zum Bergtor, 天门山国家森林公园山门. Bis 12. Oktober startet A an 天门山索道下站, der Talstation der Stadtseilbahn. Der Verkäufer kann vor dem Einlass einen anderen Abhol- oder Treffpunkt nennen; speichern Sie bei Bedarf beide Hinweise. Die Adresse eines Ticketschalters ist nicht automatisch der Ort Ihrer ersten Seilbahnwarteschlange. Zeigen Sie bei der Fahrtorganisation den chinesischen Eingangsnamen."
+      },
+      {
+        "id": "hours-copy",
+        "type": "paragraph",
+        "text": "Ab 13. Oktober nennt der Hinweis Betriebsbeginn 8:00 und letzte Ticketkontrolle 16:00. Vom 8. bis 12. Oktober nennt die Mitteilung des Landschaftsgebiets Ticketverkauf von 6:30 bis 16:00 und Betrieb ab 7:00. Kommen Sie zu Ihrem gebuchten Zeitfenster. Diese Zeiten garantieren keinen sofortigen Einstieg, und 16:00 bedeutet nicht, dass Ihr gesamter Besuch dann beendet sein wird. Planen Sie keinen knapp anschließenden Zug oder Flug nach dem Bergbesuch."
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Kann man mit einem ausländischen Reisepass vorab online buchen?"
+      },
+      {
+        "id": "booking-copy",
+        "type": "paragraph",
+        "text": "Onlineverkäufer bieten datierte Routentickets für den Tianmen-Berg an, doch die Reisepassabwicklung hängt vom Kanal und Angebot ab. Prüfen Sie verfügbares Datum und Zeitfenster und bestätigen Sie vor der Zahlung die folgenden Punkte. Eine allgemeine Schaltfläche „Jetzt buchen“ belegt nicht, dass der Verkäufer Ihr Dokument oder eine ausländische Telefonnummer akzeptiert."
+      },
+      {
+        "id": "booking-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Wählen Sie Tianmen Mountain / 天门山国家森林公园, das richtige Datum, die an diesem Tag verkaufte Route (ab 13. Oktober C) und das Zeitfenster. Zhangjiajie-Nationalwaldpark und Glasbrücke im Grand Canyon benötigen eigene Tickets.",
+          "Bestätigen Sie die Reisepassoption und die Eingabe von Familienname, Vornamen und Passnummer jeder Person. Klären Sie abgelehnte Eingaben mit dem Verkäufer; verwenden Sie weder eine chinesische Ausweisnummer noch Angaben einer anderen Person als Ersatz.",
+          "Prüfen Sie Ländervorwahl, Zustellung der Bestätigung und akzeptierte Zahlungsmethode. Sie müssen das eigentliche Ticket oder den Einlasscode abrufen können, nicht nur den Zahlungsbeleg.",
+          "Lesen Sie Gesamtpreis, optionale Zusätze und Erstattungsregeln für Ihren Termin. Tongcheng nennt beispielsweise: Reisende oder Datum einer Bestellung können nicht geändert werden, Teilerstattungen sind nicht möglich und nach 17:00 am Besuchstag erfolgt keine Erstattung. Kaufen Sie kein zweites Ticket, bevor der Status der ersten Bestellung geklärt ist."
+        ]
+      },
+      {
+        "id": "entry-copy",
+        "type": "paragraph",
+        "text": "Bringen Sie den für die Reservierung verwendeten Originalreisepass mit und speichern Sie Ihr Ticket offline. Tongchengs veröffentlichter Hinweis führt Reisepässe unter den Dokumenten auf, die zusammen mit elektronischem oder Papierticket manuell kontrolliert werden. Folgen Sie den Abhol- und Einlasshinweisen Ihrer eigenen Bestellung. Bestätigen Sie gegebenenfalls die Umtauschstelle vor der Ankunft, statt anzunehmen, jede Buchung mit ausländischem Pass nutze denselben Schalter."
+      },
+      {
+        "id": "timeline-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Was hat sich seit Beginn des Seilbahnumbaus geändert?"
+      },
+      {
+        "id": "timeline",
+        "type": "table",
+        "caption": "Änderungen an den Tianmen-Seilbahnen von November 2025 bis Oktober 2026",
+        "columns": [
+          "Datum",
+          "Änderung",
+          "Verkaufte Routen"
+        ],
+        "rows": [
+          [
+            "6. November 2025",
+            "Der obere Abschnitt der Stadtseilbahn von der Mittelstation zum Gipfel schloss für den Ausbau. A und B wurden über die Mittelstation umgeleitet.",
+            "A, B und C; einfache Routen 1 und 2 ausgesetzt"
+          ],
+          [
+            "20. März 2026",
+            "Die Expressseilbahn nahm nach einer Wartungssperre den Betrieb wieder auf.",
+            "A, B und C"
+          ],
+          [
+            "31. August 2026",
+            "Ticketverkauf auf 7:30–16:00 festgelegt, Betrieb ab 8:00.",
+            "A, B und C"
+          ],
+          [
+            "8.–12. Oktober 2026",
+            "Die Expressseilbahn schloss wegen Wartung.",
+            "Nur A, mit vorübergehendem Verlauf"
+          ],
+          [
+            "13. Oktober 2026",
+            "Auch der untere Stadtseilbahnabschnitt schloss; damit ging die gesamte Seilbahn außer Betrieb.",
+            "Nur C"
+          ]
+        ]
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Häufige Fragen vor der Buchung",
+        "items": [
+          {
+            "question": "Welche Tianmen-Routen sind nach der Wartung im Oktober 2026 geöffnet?",
+            "answer": "Nur C. Seit 13. Oktober 2026 befördert die Stadtseilbahn auf ihrer gesamten Länge keine Fahrgäste mehr. Deshalb werden A und B zurückgezogen; die einfachen Routen 1 und 2 bleiben außer Verkauf. C führt vom Bergtor mit der Expressseilbahn zur Tianmen-Höhle, mit den siebenstufigen Rolltreppen zum Gipfel und zurück und per Expressseilbahn wieder hinunter. So steht es im Hinweis auf Tongchengs Ticketseite, gelesen am 11. Oktober 2026; ein Wiedereröffnungstermin für die Stadtseilbahn wird nicht genannt."
+          },
+          {
+            "question": "Kann jemand die Tianmen-Tickets für mich organisieren?",
+            "answer": "Homeground verkauft Tianmen-Tickets nicht einzeln. Wir buchen das Ticket als Teil von Tag 4 unserer 4-tägigen Zhangjiajie-Privatreise ab USD 530 pro Person für zwei bis vier Erwachsene gemäß den veröffentlichten Preisen für Reisen bis 30. Dezember 2026. Eine private englischsprachige Tagesreiseleitung in Zhangjiajie kostet CNY 900 für bis zu 8 Stunden; Transport und Tickets werden gesondert angeboten."
+          },
+          {
+            "question": "Kann ich mit der Seilbahn direkt aus der Stadt zum Gipfel fahren?",
+            "answer": "Nein. Der obere Abschnitt der Stadtseilbahn ist seit 6. November 2025 geschlossen, seit 13. Oktober 2026 auch der untere. Sie nutzen nun die Expressseilbahn vom Bergtor zur Tianmen-Höhle; von dort führen Rolltreppen zum Gipfel. Laut Hinweis verbindet weiterhin ein Shuttle die Talstation der Stadtseilbahn mit dem Bergtor."
+          },
+          {
+            "question": "Ist die Tianmen-Seilbahn vom 8. bis 12. Oktober 2026 geschlossen?",
+            "answer": "Die Expressseilbahn ja. Laut Mitteilung des Landschaftsgebiets vom 6. Oktober schließt sie an diesen fünf Tagen wegen Wartung, und nur A wird verkauft: Stadtseilbahn zur Mittelstation, Aussichtsbus zur Tianmen-Höhle, Rolltreppen zum Gipfel und auf demselben Weg zurück. Ticketverkauf ist von 6:30–16:00, Betriebsbeginn 7:00. B, C und die einfachen Routen werden an diesen Tagen nicht verkauft."
+          },
+          {
+            "question": "Sind die Rolltreppen im Ticket enthalten?",
+            "answer": "Nur einer der beiden Abschnitte. Die siebenstufigen Rolltreppen durch den Berg zwischen Höhlenrückseite und Gipfel sind in beiden Richtungen enthalten. Die unteren Dengtianmen-Rolltreppen neben dem Aufstieg mit 999 Stufen sind gesondert: Laut veröffentlichter Paketaufstellung ist die Abwärtsfahrt kostenlos enthalten; die Mitteilung des Landschaftsgebiets vom 6. Oktober schließt die Aufwärtsfahrt aus. Gebühren für Gipfelsessellift und Glassteg-Service kommen nochmals gesondert hinzu."
+          },
+          {
+            "question": "Was kosten Seilbahn und Rolltreppen am Tianmen-Berg einzeln?",
+            "answer": "Der bei Tongcheng angezeigte Hinweis nennt RMB 76 pro einfacher Fahrt mit der Expressseilbahn und RMB 42 pro einfacher Fahrt mit den siebenstufigen Rolltreppen, zusätzlich zum Eintritt von RMB 72. Das Erwachsenenpaket kostet RMB 285. Für einzelne Leistungen statt des Pakets verweist der Hinweis an die Service- oder Ticketschalter des Landschaftsgebiets."
+          },
+          {
+            "question": "Wann endet der Einlass am Tianmen-Berg?",
+            "answer": "Um 16:00. Ab 13. Oktober 2026 nennt der Hinweis Betrieb ab 8:00 und letzte Ticketkontrolle um 16:00; vom 8. bis 12. Oktober gilt Ticketverkauf von 6:30–16:00 bei Betriebsbeginn 7:00. Kommen Sie zum gebuchten Zeitfenster. Eine Buchung bedeutet keinen sofortigen Einstieg, und 16:00 ist nicht das Ende Ihres Besuchs. Vermeiden Sie daher einen knapp anschließenden Zug oder Flug am selben Tag."
+          },
+          {
+            "question": "Was muss ich am Eingang bei einer Buchung mit Reisepass vorzeigen?",
+            "answer": "Den Originalreisepass der Buchung und das Ticket selbst. Der bei Tongcheng veröffentlichte Hinweis nennt den Reisepass als Dokument für die manuelle Kontrolle zusammen mit elektronischem oder Papierticket. Speichern Sie das Ticket deshalb offline. Folgen Sie den Abhol- und Einlasshinweisen Ihrer eigenen Bestellung; ist ein Umtausch nötig, ermitteln Sie den Ort vorher, statt für alle Passbuchungen denselben Schalter anzunehmen."
+          },
+          {
+            "question": "Sind RMB 72 der Gesamtpreis für den Tianmen-Berg?",
+            "answer": "Das ist nur der Eintritt. RMB 72 ist der seit 1. August 2025 geltende staatlich vorgegebene Eintrittsrichtpreis. Hunans Preisbescheid regelt nur diesen Bestandteil, nicht Seilbahn- und Rolltreppenfahrten. Der Hinweis auf Tongchengs Ticketseite nennt RMB 285 als Erwachsenenpaketpreis für A, B und C; diese Referenz wurde am 11. Oktober 2026 geprüft."
+          },
+          {
+            "question": "Gilt das Ticket auch für den Zhangjiajie-Nationalwaldpark oder die Glasbrücke?",
+            "answer": "Nein. Zhangjiajie-Nationalwaldpark und Glasbrücke im Grand Canyon benötigen eigene Tickets. Prüfen Sie bei der Buchung, ob das Angebot den Tianmen Mountain National Forest Park mit richtigem Datum, Route und Einlasszeitfenster betrifft. Stellen Sie sicher, dass Sie danach das eigentliche Ticket oder den Einlasscode öffnen können, nicht nur den Zahlungsbeleg."
+          }
+        ]
+      },
+      {
+        "id": "next-links",
+        "type": "internal-links",
+        "title": "Den Tianmen-Berg in Ihre Zhangjiajie-Reise einbauen",
+        "items": [
+          {
+            "label": "Die Besichtigungstage in Zhangjiajie wählen",
+            "href": "/guides/zhangjiajie-itinerary/"
+          },
+          {
+            "label": "Tickets und Eingänge des Waldparks",
+            "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
+          },
+          {
+            "label": "Tickets und Routen für die Glasbrücke",
+            "href": "/guides/zhangjiajie-glass-bridge-tickets/"
+          },
+          {
+            "label": "In Zhangjiajie-Stadt oder Wulingyuan übernachten?",
+            "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/"
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Preis- und Routenquellen",
+        "items": [
+          {
+            "label": "Preisbescheid zum Tianmen-Eintritt, gültig seit 1. August 2025",
+            "url": "https://fgw.hunan.gov.cn/fgw/xxgk_70899/tzgg/202508/t20250825_33782047.html",
+            "publisher": "Entwicklungs- und Reformkommission Hunan",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Paketpreise, Einlassregeln und Hinweis für die Zeit ab 13. Oktober 2026",
+            "url": "https://www.ly.com/scenery/BookSceneryTicket_922.html",
+            "publisher": "Tongcheng Travel",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Volltext des Wartungshinweises zur Expressseilbahn vom 8.–12. Oktober 2026",
+            "url": "https://i.ifeng.com/c/8x1RVAwbJWG",
+            "publisher": "Ifeng; Quelle: Landschaftsgebiet Tianmen-Berg",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Routen- und Betriebshinweis des Landschaftsgebiets vom 31. August 2026",
+            "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+            "publisher": "Rednet; Quelle: Landschaftsgebiet Tianmen-Berg",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Expressseilbahn seit 20. März 2026 wieder in Betrieb",
+            "url": "https://m.voc.com.cn/rmt/article/16078535.html",
+            "publisher": "Xinhunan; Quelle: Landschaftsgebiet Tianmen-Berg",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Oberer Abschnitt der Stadtseilbahn seit 6. November 2025 geschlossen",
+            "url": "https://m.voc.com.cn/xhn/news/202511/30841914.html",
+            "publisher": "Hunan Daily",
+            "reviewedAt": "2026-10-11"
+          }
+        ]
+      }
+    ]
+  }
+}

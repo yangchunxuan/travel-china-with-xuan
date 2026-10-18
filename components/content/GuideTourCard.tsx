@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import type { HomegroundLocale } from "../../lib/homegroundI18n";
+import type { GuideReservationLocale } from "../../lib/guideReservationOffers";
 import type { GuideTourCardData } from "../../lib/guideTourCard";
 import { GuideCtaLink } from "../GuideCtaLink";
 import styles from "./GuideTourCard.module.css";
@@ -12,7 +12,7 @@ export function GuideTourCard({
 }: {
   card: GuideTourCardData;
   guideId: string;
-  locale: HomegroundLocale;
+  locale: GuideReservationLocale;
   /** "grok" is the redesigned guide template's tile; hand-built guides omit it. */
   variant?: "grok";
 }) {

@@ -1,3 +1,6 @@
+import { ReservationGuideEditionCollection } from "./ReservationGuideEditionCollection";
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths";
+import { getReservationGuideEdition, reservationGuideEditionUi } from "../lib/reservationGuideEditions";
 import { GuidesHubPage, type GuidesHubEdition } from './GuidesHubPage';
 import { ArabicGuideSearchForm } from './ArabicGuideSearchForm';
 import { ArabicSiteFooter, ArabicSiteHeader } from './ArabicChrome';
@@ -12,6 +15,19 @@ export function ArabicGuidesPage() {
   const path = '/ar/guides/';
   const url = `https://homegroundchina.com${path}`;
   const { pageGuides } = getGuidesHubPagination('en', 1);
+  const guidePaths: Record<string, string> = Object.fromEntries(
+    reservationGuideEditionSlugs.map(slug => [slug, reservationGuideEditionPath('ar', slug)]),
+  );
+  const listedGuides = [
+    ...reservationGuideEditionSlugs.map(slug => ({
+      name: getReservationGuideEdition('ar', slug)!.headline,
+      url: `https://homegroundchina.com${guidePaths[slug]}`,
+    })),
+    ...pageGuides.map(guide => ({
+      name: arabicGuideCardCopy[guide.id]?.headline ?? guide.headline,
+      url: guidePaths[guide.id] ? `https://homegroundchina.com${guidePaths[guide.id]}` : guide.canonicalUrl,
+    })),
+  ];
   const edition: GuidesHubEdition = {
     language: 'ar', dateLocale: 'ar-SA-u-ca-gregory-nu-latn', skipLink: 'انتقل إلى المحتوى',
     header: <ArabicSiteHeader currentPath={path} languagePaths={arabicLanguagePaths('/guides/', path)} />,
@@ -31,10 +47,10 @@ export function ArabicGuidesPage() {
         { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: arabicGuidesHubCopy.metadata.openGraphTitle,
           description: arabicGuidesHubCopy.metadata.description, inLanguage: 'ar', isPartOf: { '@id': EDITORIAL_WEBSITE_ID }, mainEntity: { '@id': `${url}#item-list` } },
         editorialWebsiteSchema(), editorialOrganizationSchema(),
-        { '@type': 'ItemList', '@id': `${url}#item-list`, numberOfItems: pageGuides.length,
+        { '@type': 'ItemList', '@id': `${url}#item-list`, numberOfItems: listedGuides.length,
           itemListOrder: 'https://schema.org/ItemListOrderDescending',
-          itemListElement: pageGuides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1,
-            name: arabicGuideCardCopy[guide.id]?.headline ?? guide.headline, url: guide.canonicalUrl })) },
+          itemListElement: listedGuides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1,
+            name: guide.name, url: guide.url })) },
         { '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://homegroundchina.com/ar/' },
           { '@type': 'ListItem', position: 2, name: arabicGuidesHubCopy.title, item: url },
@@ -42,5 +58,10 @@ export function ArabicGuidesPage() {
       ],
     },
   };
-  return <GuidesHubPage locale="en" edition={edition} />;
+  return <GuidesHubPage locale="en" edition={{
+    ...edition,
+    translatedGuides: <ReservationGuideEditionCollection language="ar" />,
+    guidePaths,
+    guideReadLabels: Object.fromEntries(reservationGuideEditionSlugs.map(slug => [slug, reservationGuideEditionUi.ar.read])),
+  }} />;
 }

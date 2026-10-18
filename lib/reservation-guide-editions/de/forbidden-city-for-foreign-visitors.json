@@ -1,0 +1,753 @@
+{
+  "slug": "forbidden-city-for-foreign-visitors",
+  "title": "Tickets für die Verbotene Stadt mit ausländischem Reisepass: Buchung und Einlass",
+  "headline": "Die Verbotene Stadt für ausländische Besucher: Tickets und Einlass",
+  "description": "Buchen Sie Tickets für die Verbotene Stadt mit Ihrem Reisepass über das offizielle englische Portal. Informationen zur Freigabe 7 Tage vorher, zum Einlass und zum Zugang zum Tian’anmen-Platz.",
+  "navTitle": "Verbotene Stadt für ausländische Besucher",
+  "heroAlt": "Halle der Höchsten Harmonie mit ihrem Hof in der Verbotenen Stadt, auf dem Besucher zu sehen sind",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "direct-answer",
+        "type": "lead",
+        "text": "Buchen Sie für den Besuch der Verbotenen Stadt vorab ein Ticket des Palastmuseums mit den Reisepassdaten jeder reisenden Person und bringen Sie die für die Reservierung verwendeten Originaldokumente mit. Der Einlass erfolgt im Süden durch das Mittagstor (Wumen); anschließend erkunden Sie die Anlage Richtung Nordausgang. Möchten Sie auch den Tian’anmen-Platz besuchen, prüfen Sie dessen Zugangsregeln gesondert. Dieser Ratgeber erklärt Buchung, Weg zum Eingang und Vorgehen bei einer unbestätigten Reservierung."
+      },
+      {
+        "id": "reservation-pretrip-reminder",
+        "type": "callout",
+        "title": "Den Tag in der Verbotenen Stadt absichern, bevor Sie das übrige Peking verplanen",
+        "body": "Das Palastmuseum verkauft keine Tickets für denselben Tag. Wenn Sie diesen Besuch keinesfalls verpassen möchten, notieren Sie die Buchungsfreigabe und halten Sie den Tag flexibel, bis alle Reisenden bestätigt sind. Museumsticket, Zugang zum Tian’anmen-Platz und Sicherheitskontrollen sind getrennte Teile der Planung.",
+        "tone": "decision",
+        "link": {
+          "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+          "label": "Was Sie vor Ihrer China-Reise organisieren sollten"
+        }
+      },
+      {
+        "id": "execution-summary",
+        "type": "callout",
+        "title": "Der Besuch in sieben Entscheidungen",
+        "body": "1. Prüfen Sie den Besuchstag anhand des Kalenders und der aktuellen Mitteilungen des Palastmuseums. 2. Reservieren Sie über einen offiziellen Kanal mit dem Dokument, das jede Person mitführen wird. 3. Entscheiden Sie gesondert über den Tian’anmen-Platz und prüfen Sie dessen aktuelle Zugangsregel. 4. Wählen Sie den Weg über den Platz oder entlang des östlichen beziehungsweise westlichen Tongzihe. 5. Planen Sie Fußwege und Sicherheitskontrollen vor dem Mittagstor ein. 6. Folgen Sie der Mittelachse mit höchstens einem seitlichen Schwerpunkt. 7. Verlassen Sie die Anlage über einen geplanten Ausgang mit geklärter Weiterfahrt. Lassen Sie weder ein unbestätigtes Ticket noch einen ungenauen Kartenpunkt oder eine improvisierte Abholung den Tag bestimmen.",
+        "tone": "decision"
+      },
+      {
+        "id": "square-rostrum-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Tian’anmen-Platz, Tortribüne und Verbotene Stadt: Welche Reservierung gilt?"
+      },
+      {
+        "id": "square-rostrum-answer",
+        "type": "paragraph",
+        "text": "Die Reservierung für den Tian’anmen-Platz betrifft den offenen Platz, nicht den Aufstieg auf die Tian’anmen-Tortribüne (天安门城楼). Die offizielle Plattform des Platzes verweist Besucher der Tribüne ausdrücklich auf das separate WeChat-Konto „天安门城楼参观预约“. Für die Verbotene Stadt buchen Sie das Palastmuseum gesondert. Notieren Sie vor der Buchung, welche der drei Stätten Sie besuchen möchten, und prüfen Sie dann jeden offiziellen Kanal samt bestätigter Zeit. Der Zugang zum Platz schließt weder Tribüne noch Museum automatisch ein. Separate Kanäle bedeuten nicht immer drei Buchungen: Im Abschnitt zum Platzzugang unten finden Sie die veröffentlichte Ausnahme für eine gültige Palastmuseumsreservierung am selben Tag und die Prüfung aktueller Beschränkungen."
+      },
+      {
+        "id": "square-rostrum-official",
+        "type": "sources",
+        "title": "Offizielle Reservierungskanäle",
+        "items": [
+          {
+            "label": "Offizielle Reservierungsplattform des Tian’anmen-Platzes",
+            "url": "https://yuyue2026.tamgw.beijing.gov.cn/web/"
+          },
+          {
+            "label": "Stadtregierung Peking: offizielle Reservierungskanäle der Tortribüne",
+            "url": "https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html"
+          }
+        ]
+      },
+      {
+        "id": "official-check-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Buchungs- und Einlassregeln des Palastmuseums"
+      },
+      {
+        "id": "official-check-table",
+        "type": "table",
+        "caption": "Reguläre Regeln des Palastmuseums, geprüft am 22. August 2026",
+        "columns": [
+          "Entscheidung",
+          "Offizielle Regel",
+          "Was Reisende tun sollten"
+        ],
+        "rows": [
+          [
+            "Vorausbuchung",
+            "Keine Tickets für denselben Tag; die Freigabe erfolgt normalerweise sieben Tage vor dem Besuch um 20:00 chinesischer Zeit",
+            "Freigabe in chinesischer Zeit vormerken und keinen Peking-Tag um ein unbestätigtes Ticket planen"
+          ],
+          [
+            "Ausländische Dokumente",
+            "Reisepässe und mehrere andere akzeptierte Dokumente außerhalb Festlandchinas sind für personalisierte Buchung und Kontrolle zulässig",
+            "Jede Dokumentennummer sorgfältig eingeben und das verwendete Original mitbringen"
+          ],
+          [
+            "Buchungsidentität",
+            "Pro Ausweisdokument ist ein Ticket je Besuchstag möglich; Ticket, Datum, Zeitabschnitt und Besucher können nach dem Kauf nicht geändert werden",
+            "Vor Zahlung die ganze Gruppe prüfen; nur innerhalb der aktuellen Erstattungsregeln und bei verfügbaren Ersatztickets stornieren und neu buchen"
+          ],
+          [
+            "Eingang",
+            "Das Mittagstor an der Südseite ist der einzige Besuchereingang",
+            "Für die morgendliche Ankunft nicht zum Nordtor navigieren"
+          ],
+          [
+            "Ausgang",
+            "Besucher verlassen die Anlage durch das Tor der Göttlichen Stärke im Norden oder das Östliche Blütentor",
+            "Für diese Route den Nordausgang vor dem Eintritt einplanen"
+          ],
+          [
+            "Wöchentlicher Ruhetag",
+            "Montags geschlossen, außer an gesetzlichen Feiertagen; Sondermitteilungen können den regulären Kalender ändern",
+            "Die datierten Öffnungshinweise kurz vor dem Besuch erneut prüfen"
+          ]
+        ]
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 1: das Palastmuseum buchen, kein beliebiges Angebot zur Verbotenen Stadt"
+      },
+      {
+        "id": "booking-rules",
+        "type": "paragraph",
+        "text": "Beginnen Sie bei einer Buchung mit ausländischem Reisepass auf der offiziellen englischen Besuchsseite des Palastmuseums und folgen Sie „Book Tickets“ zum eigenen Onlineportal des Museums. Bei der Prüfung am 8. Oktober 2026 zeigte das Portal eine englische Anmeldung und Registrierung mit E-Mail-Bestätigung sowie die Buchungsfreigabe sieben Tage vor dem Besuch um 20:00 chinesischer Zeit. Die Adresse bookingticket@dpm.org.cn wird derzeit für Ticketfragen veröffentlicht, nicht als regulärer Weg zur Einreichung einer Buchung. Folgen Sie den aktuellen Portalhinweisen zu Besucher, Dokument, Datum und Zeitabschnitt und bewahren Sie die abgeschlossene Reservierung auf. Das Museum hat keine Drittanbieter für Einzeltickets oder Ausstellungsreservierungen autorisiert. Behandeln Sie ein Angebot eines Wiederverkäufers oder Schwarzhändlers als unbestätigt, bis eine abgeschlossene Museumsreservierung auf den eigenen Namen des Besuchers vorliegt."
+      },
+      {
+        "id": "booking-paths",
+        "type": "table",
+        "caption": "Aktuelle offizielle Buchungs- und Anfragekanäle, geprüft am 8. Oktober 2026",
+        "columns": [
+          "Offizieller Weg",
+          "Aktuelle Angabe",
+          "Grenze"
+        ],
+        "rows": [
+          [
+            "Offizielle englische Besuchsseite → „Book Tickets“",
+            "Das Museum verlinkt sein Onlinebuchungsportal; der englische Ablauf zeigt E-Mail-Bestätigung und akzeptiert ausländische Reisepassangaben",
+            "Den aktuellen Eingabeaufforderungen folgen und die abgeschlossene Buchung jeder Person speichern; ein Konto allein reserviert keinen Platz"
+          ],
+          [
+            "Offizielles Ticketportal / Mini-Programm des Palastmuseums",
+            "Die offiziellen Ticketregeln nennen die Freigabe sieben Tage vorher um 20:00 chinesischer Zeit und keine Tickets für denselben Tag",
+            "Verfügbarkeit, Dokumentenkategorie und reservierter Zeitabschnitt bestimmen weiterhin den tatsächlichen Besuch"
+          ],
+          [
+            "Offizielle E-Mail für Ticketfragen",
+            "bookingticket@dpm.org.cn wird für Ticketfragen veröffentlicht",
+            "Eine Anfrage oder Antwort ist kein Ticket; archivierte E-Mail-Buchungsanleitungen nicht als heutigen Standard verwenden"
+          ]
+        ]
+      },
+      {
+        "id": "email-boundary",
+        "type": "callout",
+        "title": "Ein Konto oder eine Anfrage ist noch kein bestätigtes Museumsticket",
+        "body": "Bewahren Sie die abgeschlossene Museumsreservierung auf und prüfen Sie Besucher, gebuchte Dokumente, Datum und Zeitabschnitt, bevor Sie den Tag als gesichert betrachten. Übermitteln Sie bei eigener Buchung Reisepassdaten nur über den aktuellen offiziellen Museumsweg. Nutzen Sie bei unklarem Status die veröffentlichten Kontaktdaten und zahlen Sie nicht erneut, bevor der Status der ersten Bestellung geklärt ist.",
+        "tone": "warning"
+      },
+      {
+        "id": "family-booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Eine Familie mit unterschiedlichen Pässen oder Ausweisen buchen"
+      },
+      {
+        "id": "family-booking-checklist",
+        "type": "list",
+        "items": [
+          "Gleichen Sie vollständigen Namen, Dokumentenart und Nummer jeder Person mit dem mitgeführten Original ab – auch bei einem Kind mit ausländischem Reisepass und einem Elternteil mit chinesischem Ausweis.",
+          "Prüfen Sie Alter am Besuchstag und Ermäßigungsberechtigung gesondert. Die aktuelle chinesische Regel begrenzt den kostenlosen Eintritt für unter 18-Jährige auf chinesische Staatsangehörige einschließlich Einwohnern von Hongkong, Macau und Taiwan sowie ausländische Staatsangehörige mit chinesischem Daueraufenthaltsstatus.",
+          "Ein ausländischer Reisepass und Schulbesuch allein belegen keine bestimmte Ticketkategorie. Ist das Buchungsformular unklar, lassen Sie vor der Zahlung vom Museum bestätigen, welche Kategorie für Ihr Kind gilt.",
+          "Bestätigen Sie eine Reservierung für jede Person, auch für kostenlos eingelassene Kinder. Begleitende Eltern benötigen eigene gültige Reservierungen; die Ermäßigung eines Kindes gewährt Erwachsenen weder kostenlosen Eintritt noch Zugang.",
+          "Speichern Sie bestätigtes Datum, Zeitabschnitt und Buchungsnachweis jeder Person und bringen Sie passende Originaldokumente sowie erforderliche Ermäßigungsnachweise mit. Klären Sie fehlende Reservierungen vor dem Besuch, statt auf Tageskarten zu setzen."
+        ]
+      },
+      {
+        "id": "no-same-day",
+        "type": "callout",
+        "title": "Die Reservierung vor dem Besuch bestätigen",
+        "body": "Das Palastmuseum verkauft keine Tickets für denselben Tag. Bestätigen Sie die Reservierung jeder Person, bevor Sie zum Eingang fahren. Ist Ihre Buchung unvollständig oder unklar, kontaktieren Sie das Museum vor der Anfahrt über seine offiziellen Kanäle.",
+        "tone": "warning"
+      },
+      {
+        "id": "timeslot-analysis",
+        "type": "paragraph",
+        "text": "Die aktuellen Regeln unterscheiden Vormittags- und Nachmittagsbesuche. Eine Vormittagsreservierung muss bis 12:00 kontrolliert sein; eine Nachmittagsreservierung kann nicht vor 11:00 kontrolliert werden. Das sind Kontrollgrenzen, keine empfohlenen Ankunftszeiten. Sicherheitskontrollen, Veranstaltungsregelungen und der letzte Fußweg zum Mittagstor liegen vor dem Einlass; eine garantierte Wartezeit an der Sicherheitskontrolle veröffentlicht das Museum nicht. Folgen Sie dem Zeitabschnitt der aktuellen Bestellung und planen Sie einen flexiblen Puffer statt einer festen Zeit vom Hotel bis zum Tor."
+      },
+      {
+        "id": "booking-recovery-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Wenn die Buchung scheitert, zuerst den Fehler klären, bevor Sie etwas anderes kaufen"
+      },
+      {
+        "id": "booking-recovery-table",
+        "type": "table",
+        "caption": "Ticketprobleme und der risikoärmste nächste Schritt",
+        "columns": [
+          "Was ist passiert?",
+          "Was bedeutet das?",
+          "Lösung"
+        ],
+        "rows": [
+          [
+            "Der Tag ist ausverkauft",
+            "Auf offizielle Tageskarten vor Ort können Sie nicht setzen",
+            "Verschieben Sie das Palastmuseum auf einen anderen verfügbaren Peking-Tag, nutzen Sie gegebenenfalls wieder freigegebene offizielle Stornotickets oder ersetzen Sie es durch eine andere bestätigte Sehenswürdigkeit; richten Sie den Reiseplan nicht an einer inoffiziellen Zusage aus"
+          ],
+          [
+            "Verifizierung, Zahlung oder Kontaktablauf scheitert",
+            "Konto, Zahlungsmitteilung oder Fehlermeldung sind keine bestätigte Reservierung",
+            "Speichern Sie Bildschirmfotos mit verdeckten sensiblen Angaben, versuchen Sie es nur über den aktuellen offiziellen Weg erneut und nutzen Sie bei weiter unklarem Status die Museumskontaktdaten oder Peking 12345"
+          ],
+          [
+            "Name oder Reisepassnummer ist falsch",
+            "Die Besucheridentität lässt sich nach dem Kauf nicht einfach bearbeiten",
+            "Lesen Sie vor dem Handeln die aktuelle Stornoregel. Eine korrigierte Neubuchung braucht freie Tickets; stornieren Sie eine knappe gültige Buchung nie, ohne die Folgen zu verstehen"
+          ],
+          [
+            "Für eine Person fehlt ein bestätigter Nachweis",
+            "Der personalisierte Einlass gilt für jede Person einzeln",
+            "Behandeln Sie diese Person als nicht gebucht und planen Sie den Gruppentag neu, statt anzunehmen, Begleitpersonen könnten am Tor hinzugefügt werden"
+          ],
+          [
+            "Ein Wiederverkäufer behauptet, das Ticket sei enthalten",
+            "Das Angebot des Wiederverkäufers belegt keine Ausstellung durch das Museum",
+            "Verlangen Sie Museumsbuchungsnachweis, Besuchstag, Zeitabschnitt und passende Dokumentenangaben, bevor Sie den Besuch als gesichert betrachten"
+          ]
+        ]
+      },
+      {
+        "id": "tiananmen-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 2: die Regel des Tian’anmen-Platzes gesondert prüfen"
+      },
+      {
+        "id": "tiananmen-separate",
+        "type": "paragraph",
+        "text": "Palastmuseum und Tian’anmen-Platz haben unterschiedliche Zuständigkeiten, Buchungskanäle und Zugangskontrollen. Eine Platzreservierung ersetzt niemals ein Museumsticket. Nach den derzeit öffentlich verfügbaren Tian’anmen-Regeln dürfen Besucher mit gültiger Palastmuseumsreservierung für denselben Tag den Platz ohne gesonderte Platzreservierung betreten; zeigen Sie den gültigen Nachweis bei der Kontrolle vor Ort. Diese Ausnahme hebt Sicherheitskontrollen, Besucherlenkung und vorübergehende Beschränkungen nicht auf. Prüfen Sie vor Großveranstaltungen und besonderen Kontrolltagen erneut die amtlichen Hinweise. Ist nur das Museum Ihr Ziel, bleibt der Weg entlang des östlichen oder westlichen Tongzihe eine nützliche Alternative ohne Überquerung des Platzes."
+      },
+      {
+        "id": "approach-options",
+        "type": "comparison",
+        "title": "Den südlichen Zugang vor dem Morgen auswählen",
+        "columns": [
+          {
+            "heading": "Nur Palastmuseum",
+            "body": "Nutzen Sie den aktuell zugänglichen östlichen oder westlichen Tongzihe-Weg zum Mittagstor. Setzen Sie das Kartenziel auf die richtige Palastseite und rechnen Sie mit einem letzten Fußweg; Donghuamen und Xihuamen sind Orientierungspunkte für den Zugang, keine Besuchereingänge."
+          },
+          {
+            "heading": "Tian’anmen-Platz und Palastmuseum",
+            "body": "Führen Sie für die Platzkontrolle die gültige Museumsreservierung desselben Tages mit; wurde zusätzlich eine Platzreservierung ausgestellt, nehmen Sie beide mit. Planen Sie Sicherheitskontrollen ein und folgen Sie dem süd-nördlichen Besucherfluss vom Platz über Duanmen zum Mittagstor. Verwenden Sie eine Platzreservierung nicht als Nachweis für Museumseintritt."
+          }
+        ]
+      },
+      {
+        "id": "entrance-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 3: mit dem richtigen Dokument am Mittagstor ankommen"
+      },
+      {
+        "id": "entrance-reality",
+        "type": "paragraph",
+        "text": "Die Museumsadresse, ein Kartenpunkt „Verbotene Stadt“ und das nächstgelegene sichtbare Tor reichen nicht aus. Besuchereinlass erfolgt ausschließlich am Mittagstor. Das Tor der Göttlichen Stärke und das Östliche Blütentor sind Ausgänge; das Westliche Blütentor ist normalerweise ein Personalzugang. Ausländische Besucher müssen bei der Kontrolle den gültigen Originalreisepass oder das andere akzeptierte Dokument ihrer Reservierung vorzeigen. Ein Bildschirmfoto des Passes ist nicht das gebuchte Originaldokument."
+      },
+      {
+        "id": "arrival-budget",
+        "type": "table",
+        "caption": "Was vor der dreistündigen Museumsroute liegt",
+        "columns": [
+          "Etappe",
+          "Einzuplanen",
+          "Nicht voraussetzen"
+        ],
+        "rows": [
+          [
+            "Hotel bis zum kontrollierten Bereich",
+            "Übliche Stadtfahrt mit Puffer für Stau und richtigen Ausstiegspunkt",
+            "Ein Auto kann am nächstgelegenen sichtbaren Tor halten"
+          ],
+          [
+            "Tian’anmen-Zugang, falls gewählt",
+            "Aktueller Reservierungsnachweis, Identitäts- und Sicherheitskontrolle sowie Veranstaltungsregelungen",
+            "Das Palastticket erledigt automatisch jede Kontrolle des Platzes"
+          ],
+          [
+            "Letzter Zugang",
+            "Ein erheblicher Fußweg auf der gewählten Südroute",
+            "U-Bahn-Ausgang oder Taxipunkt ist der Museumseingang"
+          ],
+          [
+            "Kontrolle am Mittagstor",
+            "Gebuchtes Originaldokument, Bestellnachweis und angegebener Zeitabschnitt",
+            "Ein Passfoto, anderer Pass oder Nachweis einer Begleitperson genügt als Ersatz"
+          ]
+        ]
+      },
+      {
+        "id": "morning-checklist",
+        "type": "list",
+        "items": [
+          "Bringen Sie den Originalreisepass jeder Reservierung mit; prüfen Sie erneuerte Pässe und Zahlendreher vor dem Tag der Ticketfreigabe.",
+          "Halten Sie bestätigtes Datum, Zeitabschnitt und Bestellnachweis bereit, aber beachten Sie, dass das Identitätsdokument für die Kontrolle entscheidend ist.",
+          "Öffnen Sie am Vorabend die offizielle Mitteilungsseite und prüfen Sie vorübergehende Schließungen, Sonderöffnungstage und Änderungen einzelner Ausstellungsräume.",
+          "Planen Sie die Route zum Zugang des Mittagstors, nicht zu Shenwumen, Donghuamen oder einem allgemeinen Kartenpunkt der Verbotenen Stadt.",
+          "Vereinbaren Sie, was entfällt, falls Zugang oder Sicherheitskontrolle länger dauern als erwartet."
+        ]
+      },
+      {
+        "id": "security-recovery",
+        "type": "callout",
+        "title": "Eine Warteschlange hebt die Sicherheitsregeln nicht auf",
+        "body": "Alle Personen müssen die geltenden Sicherheitskontrollen passieren. Prüfen Sie vor Verlassen des Hotels die offizielle Liste verbotener Gegenstände. Beanstandet das Personal einen Gegenstand, befolgen Sie dessen Anweisungen zu Entsorgung, Aufbewahrung oder Rücknahme; eine zeitgebundene Buchung befreit nicht von Kontrollen. Die Besucherregeln beschreiben begrenzte Abwicklungsmöglichkeiten und mögliche Erstattungshilfe in berechtigten Fällen, garantieren aber weder Einlass noch Aufbewahrung oder Ersatzticket. Am sichersten ist es, den Gegenstand gar nicht erst mitzunehmen.",
+        "tone": "warning"
+      },
+      {
+        "id": "luggage-plan",
+        "type": "callout",
+        "title": "Das Palastmuseum nicht mit dem Gepäck eines Transfertags besuchen",
+        "body": "Koffer sind im Museum verboten. Das Palastmuseum bietet derzeit für geeignetes Gepäck Aufbewahrung und kostenlosen Transport: Abgabe im Besucherzentrum westlich des Duanmen-Platzes, Abholung außerhalb des Nord- oder Ostausgangs. Der Dienst hat saisonale Zeiten und Aufbewahrungsbedingungen. Meist ist es einfacher, das Gepäck im Hotel zu lassen. Ist Aufbewahrung nötig, prüfen Sie die aktuelle Regel und wählen Sie den Abholausgang vor der Gepäckabgabe.",
+        "tone": "warning"
+      },
+      {
+        "id": "day-of-recovery-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Lösungen am Besuchstag: die Reise schützen, nicht den ursprünglichen Ablauf"
+      },
+      {
+        "id": "day-of-recovery-table",
+        "type": "table",
+        "caption": "Wenn der Morgen vom Plan abweicht",
+        "columns": [
+          "Problem",
+          "Sofortmaßnahme",
+          "Alternative"
+        ],
+        "rows": [
+          [
+            "Sie stehen am Shenwumen oder einem anderen falschen Tor",
+            "Nicht weiter zu einem allgemeinen Kartenpunkt der Verbotenen Stadt navigieren, sondern auf den aktuellen Zugang zum Mittagstor umstellen",
+            "Ist die gebuchte Kontrollfrist nicht mehr realistisch, die offizielle Servicestelle kontaktieren; keinen Einlass durch einen Ausgang erwarten"
+          ],
+          [
+            "Der gebuchte Originalreisepass fehlt",
+            "Zurückholen, falls es zeitlich noch reicht",
+            "Foto oder anderes Identitätsdokument sind kein verlässlicher Ersatz; einen anderen Besuch planen, wenn der Einlass nicht bestätigt werden kann"
+          ],
+          [
+            "Sicherheitskontrolle oder Fußweg verbrauchen den Puffer",
+            "Gebuchten Kontrollzeitraum schützen und Tian’anmen-Besichtigung oder optionalen Palast-Seitenbereich streichen",
+            "Im Museum die offizielle Zweistundenroute nutzen"
+          ],
+          [
+            "Ein verbotener Gegenstand verhindert das Weitergehen",
+            "Nur die aktuell vom Personal zugelassene Abwicklung nutzen",
+            "Kontrollbereich verlassen oder aktuelles Erstattungsverfahren befolgen, wenn der Gegenstand nicht akzeptiert wird; Aufbewahrung und Erstattung sind nicht garantiert"
+          ],
+          [
+            "Museum oder gewünschte Halle schließt vorübergehend",
+            "Datierten Museumshinweis und Personalanweisungen lesen",
+            "Bei geöffnetem Museum die Mittelroute beibehalten; fällt der ganze Besuch aus, offiziellen Erstattungshinweis nutzen und zu einer vorab gewählten Peking-Alternative wechseln"
+          ]
+        ]
+      },
+      {
+        "id": "route-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 4: drei Stunden für die Mittelroute und einen bewusst gewählten Abstecher nutzen"
+      },
+      {
+        "id": "route-definition",
+        "type": "paragraph",
+        "text": "Das Palastmuseum veröffentlicht Besuchsrouten für zwei Stunden, einen halben und einen ganzen Tag. Der folgende Plan ist Homegrounds dreistündige Variante zwischen den ersten beiden offiziellen Längen: Er bewahrt die süd-nördliche Mittelachse, lässt Raum für ein seitliches Interesse und endet am Nordtor. Die drei Stunden beginnen nach der Passkontrolle am Mittagstor. Hotelanfahrt, Sicherheitskontrollen im Tian’anmen-Bereich, Ticketprobleme und Weiterfahrt nach dem Ausgang sind nicht enthalten."
+      },
+      {
+        "id": "taihemen-route-notice",
+        "type": "callout",
+        "title": "Den offenen Weg rund um Taihemen prüfen",
+        "body": "Eine Museumsmitteilung vom 31. Juli 2026 kündigte die Schließung des Tors der Höchsten Harmonie (Taihemen) ab 3. August für Konservierungsarbeiten an, ohne Wiedereröffnungstermin. Die Mitteilung betrifft Taihemen; sie kündigt keine Schließung des Mittagstors als Eingang an. Prüfen Sie spätere Hinweise für Ihren Besuchstag und folgen Sie dem ausgeschilderten offenen Weg um gesperrte Bereiche.",
+        "tone": "warning"
+      },
+      {
+        "id": "route-table",
+        "type": "table",
+        "caption": "Eine realistische Dreistundenroute vom Mittagstor zum Nordausgang",
+        "columns": [
+          "Verstrichene Zeit",
+          "Route",
+          "Entscheidungsregel"
+        ],
+        "rows": [
+          [
+            "0:00–0:20",
+            "Mittagstor → Innere Goldwasserbrücken → Bereich Taihemen auf dem geöffneten Besucherweg",
+            "Aktuellen Schildern um gesperrte Abschnitte folgen und bei Umwegen die Zeitplanung anpassen"
+          ],
+          [
+            "0:20–1:05",
+            "Halle der Höchsten Harmonie → Halle der Mittleren Harmonie → Halle der Bewahrung der Harmonie",
+            "Bei einem ersten Besuch diese zentrale Abfolge des Äußeren Hofs erhalten"
+          ],
+          [
+            "1:05–1:45",
+            "Einen Seitenweg an seiner tatsächlichen Abzweigung nehmen: eine östliche Galerie nach der Halle der Bewahrung der Harmonie oder einen offenen Palastkomplex rund um das Tor der Himmlischen Reinheit",
+            "Einen Zweig wählen und zur Mittelroute zurückkehren; nicht alle Abstecher bis zum äußersten Norden aufschieben"
+          ],
+          [
+            "1:45–2:15",
+            "Tor der Himmlischen Reinheit → Palast der Himmlischen Reinheit → Halle der Vereinigung → Palast der Irdischen Ruhe",
+            "Nach dem gewählten Abstecher die Mittelachse des Inneren Hofs fortsetzen"
+          ],
+          [
+            "2:15–2:45",
+            "Kaiserlicher Garten",
+            "Genügend Zeit für den Garten lassen, ohne den Ausgangsplan zu gefährden"
+          ],
+          [
+            "2:45–3:00",
+            "Zum Tor der Göttlichen Stärke gehen und die Anlage nach Norden verlassen",
+            "Die Route abschließen, statt für einen verpassten Nebenraum zurückzugehen"
+          ]
+        ]
+      },
+      {
+        "id": "side-choice",
+        "type": "callout",
+        "title": "Den Seitenbereich vor dem Einlass auswählen",
+        "body": "Wenn Ausstellungsobjekte am wichtigsten sind, reservieren oder wählen Sie eine nachweislich geöffnete Galerie und zweigen Sie dort ab, wo die offizielle Karte tatsächlich nach Osten führt – meist nach der Halle der Bewahrung der Harmonie. Interessieren Sie eher Palastinnenräume und räumliche Anordnung, wählen Sie einen offenen östlichen oder westlichen Komplex rund um das Tor der Himmlischen Reinheit. Hat eine aktuelle Ausstellung Vorrang, richten Sie sich nach ihrem angegebenen Ort und ersetzen Sie damit den Seitenbereich, statt sie zusätzlich anzuhängen. Manche Galerien benötigen ein eigenes Ticket oder eine Reservierung; vorübergehende Schließungen können die nutzbare Route verändern.",
+        "tone": "decision"
+      },
+      {
+        "id": "three-hour-limit",
+        "type": "paragraph",
+        "text": "Drei Stunden reichen für eine zusammenhängende erste Route, nicht für das gesamte Palastmuseum. Warteschlangen im Inneren, Fotografieren, Pausen, Wetter und Galeriekapazitäten können den Zeitpuffer für den Seitenbereich aufbrauchen. Dauert schon die Mittelachse länger, streichen Sie den Abstecher und bewahren Sie Kaiserlichen Garten und Nordausgang. Eine gelungene Route erhält Kraft und Richtung; sie muss nicht jede genannte Halle abhaken."
+      },
+      {
+        "id": "parents-callout",
+        "type": "callout",
+        "title": "Mit Eltern oder langsam Gehenden zuerst kürzen, nicht beschleunigen",
+        "body": "Machen Sie das Palastmuseum zum Hauptfußwegblock des Tages. Nutzen Sie die offizielle Zweistundenroute als Alternative, ergänzen Sie Sitzpausen und setzen Sie Jingshan nicht automatisch hinter den Nordausgang. Aus drei Stunden im Museum kann mit südlichem Zugang und Weiterweg ab Shenwumen ein deutlich längerer Ausflug von Tür zu Tür werden.",
+        "tone": "neutral"
+      },
+      {
+        "id": "route-cuts-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Was bei Zeitverlust bleiben und was entfallen sollte"
+      },
+      {
+        "id": "route-cuts",
+        "type": "comparison",
+        "columns": [
+          {
+            "heading": "Beibehalten",
+            "items": [
+              "Gebuchter Kontrollzeitraum und Originalreisepass",
+              "Mittagstor als Eingang",
+              "Die zentrale Abfolge von Süden nach Norden",
+              "Einen geordneten Abschluss am gewählten Ausgang"
+            ]
+          },
+          {
+            "heading": "Zuerst streichen",
+            "items": [
+              "Eine zweite kostenpflichtige Galerie",
+              "Wechsel zwischen östlichen und westlichen Palasträumen",
+              "Eine Sonderausstellung, die nicht der Hauptgrund der Buchung war",
+              "Einen automatischen Aufstieg auf den Jingshan nach dem Palast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "closures-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 5: den Kalender auch nach dem Ticketkauf erneut prüfen"
+      },
+      {
+        "id": "closures-analysis",
+        "type": "paragraph",
+        "text": "Der reguläre Kalender ist saisonabhängig und schließt Montage gewöhnlich aus. Gesetzliche Feiertage und datierte Mitteilungen können jedoch Öffnungstage, Zugangswege oder einzelne Gebäude verändern. Eine besondere Montagsöffnung begründet keine allgemeine Montagsregel, und ein geöffnetes Museum bedeutet nicht, dass jede Galerie offen ist. Buchungsnachweis, aktuelle Besuchsseite und jüngste datierte Mitteilung müssen zusammenpassen, bevor die Route endgültig feststeht."
+      },
+      {
+        "id": "hours-table",
+        "type": "table",
+        "caption": "Reguläre Öffnungszeiten des Palastmuseums bei der Prüfung am 22. August 2026",
+        "columns": [
+          "Saison",
+          "Öffnung",
+          "Letzter Einlass",
+          "Schließung"
+        ],
+        "rows": [
+          [
+            "1. April–31. Oktober",
+            "08:30",
+            "16:00",
+            "17:00"
+          ],
+          [
+            "1. November–31. März",
+            "08:30",
+            "15:30",
+            "16:30"
+          ]
+        ]
+      },
+      {
+        "id": "hours-boundary",
+        "type": "callout",
+        "title": "Diese Zeiten sind eine Prüfbasis, keine Garantie",
+        "body": "Das Palastmuseum weist darauf hin, dass Feiertage und besondere Umstände die Öffnung verlängern, verkürzen oder aussetzen können. Einzelne Hallen, Schatzgalerie, Uhrengalerie und aktuelle Ausstellungen können eigene Hinweise zum letzten Einlass oder zur Schließung haben. Prüfen Sie die aktuellen offiziellen Seiten bei der Buchung und erneut vor der Anfahrt.",
+        "tone": "warning"
+      },
+      {
+        "id": "closure-checklist",
+        "type": "callout",
+        "title": "An besonders unsicheren Terminen dreimal aktuell prüfen",
+        "body": "Prüfen Sie bei der Buchung, nochmals 24–48 Stunden vor dem Besuch und erneut vor Verlassen des Hotels. Lesen Sie an gesetzlichen Feiertagen, Großveranstaltungstagen oder bei Unwetter den neuesten Museumshinweis und aktuelle Tian’anmen-Anweisungen, statt die Route von gestern zu übernehmen. Halten Sie eine flexible Alternative wie Himmelstempel, Sommerpalast oder einen Tag im Viertel bereit, bestätigen Sie davor aber deren eigene Ticket- und Öffnungsregeln.",
+        "tone": "decision"
+      },
+      {
+        "id": "exit-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schritt 6: Shenwumen mit bereits geplanter Fortsetzung verlassen"
+      },
+      {
+        "id": "north-exit",
+        "type": "paragraph",
+        "text": "Das Tor der Göttlichen Stärke ist der Nordausgang des Palastmuseums und liegt dem Jingshan-Park auf der anderen Straßenseite gegenüber. Es ist kein morgendlicher Eingang und führt nicht zum südlichen Ausgangspunkt zurück. Die Verkehrsseite des Museums nennt Bushaltestellen bei Shenwumen und Jingshan East Gate, weist auf das Fehlen eines eigenen Museumsparkplatzes hin und empfiehlt öffentliche Verkehrsmittel. Buslinien und Straßenregelungen sind Betriebsdetails; prüfen Sie sie am Besuchstag in einer aktuellen Karte."
+      },
+      {
+        "id": "exit-options",
+        "type": "table",
+        "caption": "Nach dem Nordausgang",
+        "columns": [
+          "Nächster Plan",
+          "Beste Vorbereitung",
+          "Häufiger Fehler"
+        ],
+        "rows": [
+          [
+            "Besichtigungen beenden",
+            "Bestätigte Bushaltestelle oder zulässigen Abholpunkt nutzen und ins Hotelviertel zurückkehren",
+            "Annehmen, direkt unter dem Tor warte ein Taxi"
+          ],
+          [
+            "Weiter nach Jingshan",
+            "Nur über den aktuellen Fußgängerweg queren und den Aufstieg als eigene Kraftentscheidung behandeln",
+            "Den Hügel automatisch ergänzen, weil er direkt nebenan wirkt"
+          ],
+          [
+            "Weiter in die nördliche Altstadt",
+            "Genauen Fußweg, Bus- oder Autoweg zum benannten nächsten Ort prüfen",
+            "„Hutongs“ oder „Shichahai“ als ungenaues Ziel verwenden"
+          ],
+          [
+            "Eingelagertes Gepäck abholen",
+            "Den bei der Abgabe gewählten Ausgang nutzen und Abholzeiten prüfen",
+            "Durch das andere Tor hinausgehen und eine zusätzliche Rückholfahrt verursachen"
+          ],
+          [
+            "Östliches Blütentor nutzen",
+            "Prüfen, ob der Ausgang offen ist, und die Weiterfahrt von der Ostseite planen",
+            "Annehmen, Ost- und Nordausgang hätten denselben Weiterfahrtsplan"
+          ]
+        ]
+      },
+      {
+        "id": "pickup-plan",
+        "type": "callout",
+        "title": "Eine Abholung am Nordtor braucht einen Kartenpunkt, nicht nur eine Zusage",
+        "body": "Fragen Sie Fahrer, Guide oder Hotel nach dem genauen zulässigen Abholpunkt auf Chinesisch und speichern Sie ihn vor dem Einlass. Mobilfunksignal, Verkehrsregelungen und Halteverbote können den praktisch nutzbaren Treffpunkt verändern. „Am Ausgang der Verbotenen Stadt treffen“ ist nicht genau genug, wenn das Museum zwei Besucherausgänge hat und gegenüber dem Nordtor eine weitere stark besuchte Sehenswürdigkeit liegt.",
+        "tone": "decision"
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Fragen, die den Besuch scheitern lassen können",
+        "items": [
+          {
+            "id": "faq-north-entry",
+            "question": "Kann ich am Nordtor hinein?",
+            "answer": "Nein. Das Tor der Göttlichen Stärke ist ein Ausgang. Besuchereinlass erfolgt am Mittagstor im Süden."
+          },
+          {
+            "id": "faq-tiananmen",
+            "question": "Brauche ich eine gesonderte Reservierung für den Tian’anmen-Platz?",
+            "answer": "Nach den aktuell veröffentlichten Tian’anmen-Regeln ist bei einer gültigen Palastmuseumsreservierung für denselben Tag keine separate Platzreservierung nötig; zeigen Sie den Nachweis bei der Kontrolle vor Ort. Prüfen Sie vor Großveranstaltungen oder vorübergehenden Beschränkungen erneut die amtlichen Hinweise. Umgekehrt gilt dies nicht: Eine Platzreservierung ersetzt niemals das Museumsticket."
+          },
+          {
+            "id": "faq-sold-out",
+            "question": "Was tun, wenn die Verbotene Stadt ausverkauft ist?",
+            "answer": "Fahren Sie nicht in Erwartung einer Ausnahme für Ausländer zum Tor. Prüfen Sie nur offizielle Verfügbarkeit, verschieben Sie das Museum auf einen anderen verfügbaren Peking-Tag oder nutzen Sie einen bestätigten Ersatz und behalten Sie den übrigen Stadtplan bei. Ein Wiederverkäufer kann umfassendere Leistungen anbieten, muss aber dennoch für jeden Besucher einen gültigen Museumsbuchungsnachweis liefern."
+          },
+          {
+            "id": "faq-passport",
+            "question": "Reicht ein Foto des Reisepasses?",
+            "answer": "Nein. Das Palastmuseum verlangt das gültige Originaldokument der Buchung. Eine digitale Kopie ist als allgemeine Reisereserve sinnvoll, ersetzt bei der Kontrolle aber nicht das gebuchte Original."
+          },
+          {
+            "id": "faq-three-hours",
+            "question": "Reichen drei Stunden wirklich?",
+            "answer": "Sie reichen bei gleichmäßigem Tempo für Mittelachse, einen begrenzten seitlichen Schwerpunkt, Kaiserlichen Garten und Nordausgang. Für einen vollständigen Museumsüberblick, mehrere Galerien, lange Erläuterungspausen sowie östliche und westliche Palastkomplexe reichen sie nicht."
+          }
+        ]
+      },
+      {
+        "id": "fact-label",
+        "type": "callout",
+        "title": "Offizielle Fakten und Homegrounds Planungseinschätzung",
+        "body": "Ticketfreigabe, akzeptierte Ausweise, Originaldokumentpflicht, Zeitabschnitte, Montagsschließung, Saisonzeiten, gerichteter Besuchereingang und Ausgänge, veröffentlichte Besuchsrouten, Gepäckservice und Verkehrshinweise stammen aus den unten genannten amtlichen Quellen. Die genaue Dreistundeneinteilung, die Beschränkung auf einen Seitenbereich, der Nordausgang als Standard und die Abholstrategie sind darauf aufbauende Planungseinschätzungen von Homeground.",
+        "tone": "neutral"
+      },
+      {
+        "id": "prepublish-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Letzte Prüfung vor der Anfahrt"
+      },
+      {
+        "id": "prepublish-list",
+        "type": "list",
+        "items": [
+          "Die Ticketseite des Palastmuseums nennt weiterhin dasselbe Freigabefenster, dieselben akzeptierten ausländischen Dokumente und Kontrollzeitabschnitte.",
+          "Die aktuelle offizielle englische oder chinesische Kanalanleitung entspricht weiterhin der genutzten Methode, und für jede Person liegt eine abgeschlossene Reservierung vor.",
+          "Der neueste Hinweis ändert weder Montagskalender noch Tageszeiten oder gewählten Besuchstag.",
+          "Das Mittagstor bleibt Eingang, und Shenwumen ist weiterhin als vorgesehener Ausgang verfügbar.",
+          "Die gewählte Seitengalerie oder Ausstellung ist geöffnet und eine gegebenenfalls nötige Zusatzreservierung gesichert.",
+          "Die aktuelle Tian’anmen-Regel wurde gesondert geprüft, einschließlich der Frage, ob eine gültige Museumsreservierung weiterhin die zweite Reservierung ersetzt.",
+          "Jede Person besitzt einen bestätigten Nachweis, der zum mitgeführten Originaldokument passt; niemand verlässt sich auf die Buchung einer Begleitperson.",
+          "Die Liste verbotener Gegenstände wurde geprüft, und der Zugangspuffer umfasst Fußweg und Sicherheitskontrolle statt einer zugesagten Wartezeit.",
+          "Bus, Abholung oder Gepäckabholung am Nordtor sind für den Tag bestätigt."
+        ]
+      },
+      {
+        "id": "related-guides",
+        "type": "internal-links",
+        "title": "Peking weiterplanen",
+        "items": [
+          {
+            "label": "Wo beim ersten Peking-Besuch übernachten?",
+            "href": "/guides/beijing-where-to-stay-first-trip/",
+            "description": "Wangfujing, Qianmen, Sanlitun und nördliche Hutongs anhand von Palasteingang und Nordausgang vergleichen."
+          },
+          {
+            "label": "China mit älteren Eltern",
+            "href": "/guides/china-itinerary-with-older-parents/",
+            "description": "Den Besuch nach Gehfähigkeit, Erholungszeit und vorab gewähltem Ausgang planen."
+          },
+          {
+            "label": "Ist Ihr China-Reiseplan zu dicht?",
+            "href": "/guides/is-your-china-itinerary-too-rushed/",
+            "description": "Prüfen, ob nach dem Palasttag realistisch noch genug Kraft für das übrige Peking bleibt."
+          },
+          {
+            "label": "Ein Attraktionsticket in China prüfen",
+            "href": "/guides/official-or-reseller-china-tickets/",
+            "description": "Zuständige Ticketstelle ermitteln, Unterstützung und Bedingungen von Wiederverkäufern vergleichen und den Buchungsstatus prüfen, bevor Sie einem Attraktionsticket vertrauen."
+          },
+          {
+            "label": "Eingang und Route für den Sommerpalast wählen",
+            "href": "/guides/summer-palace-gates-route-and-boat-plan/",
+            "description": "Ost-, Nord- oder Neues Palasttor auf Ihre Prioritäten abstimmen, Eintritts- und Kombiticket unterscheiden und eine Route planen, die auch ohne Bootsverkehr funktioniert."
+          },
+          {
+            "label": "Einen Besuch im Himmelstempel planen",
+            "href": "/guides/temple-of-heaven-gates-and-ritual-sequence/",
+            "description": "Für eine weitere bedeutende historische Stätte Pekings einen eigenen Eingangs-, Ticket- und Rundgangsplan in ritueller Reihenfolge nutzen."
+          },
+          {
+            "label": "Chinesisches Nationalmuseum: Buchung und gezielter Rundgang",
+            "href": "/guides/national-museum-of-china-booking-and-route/",
+            "description": "Das Museum gegenüber dem Platz mit demselben Reisepass buchen und anschließend einen kurzen Rundgang statt des ganzen Gebäudes wählen."
+          }
+        ]
+      },
+      {
+        "id": "official-sources",
+        "type": "sources",
+        "title": "Geprüfte amtliche Quellen",
+        "items": [
+          {
+            "label": "Aktuelle englische Besuchsseite des Palastmuseums und Onlinebuchungslink",
+            "url": "https://intl.dpm.org.cn/visit.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-10-08"
+          },
+          {
+            "label": "Offizieller Ticketservice-Link des Palastmuseums",
+            "url": "https://bookingticket.dpm.org.cn/",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-10-08"
+          },
+          {
+            "label": "Ticket- und Identitätsdokumentregeln des Palastmuseums",
+            "url": "https://www.dpm.org.cn/subject_booking/",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Aktuelle chinesische Ticketregelung und Ermäßigungsberechtigung des Palastmuseums",
+            "url": "https://www.dpm.org.cn/singles_detail/257830.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-09-08"
+          },
+          {
+            "label": "Konservierungshinweis zu Taihemen vom 31. Juli 2026",
+            "url": "https://www.dpm.org.cn/announce_detail/379422.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-09-08"
+          },
+          {
+            "label": "Öffnungszeiten, Besuchsrouten, Tore und Verkehrsinformationen des Palastmuseums",
+            "url": "https://www.dpm.org.cn/Visit.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Besucher-, Sicherheits- und Gepäckregeln des Palastmuseums",
+            "url": "https://www.dpm.org.cn/singles_detail/259831.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Liste verbotener Gegenstände des Palastmuseums",
+            "url": "https://www.dpm.org.cn/singles_detail/259832.html",
+            "publisher": "Palastmuseum",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Hinweise von Peking 12345 zur Museumsbuchung mit ausländischem Reisepass",
+            "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+            "publisher": "Volksregierung der Stadt Peking",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Vorläufige Reservierungsregeln des Tian’anmen-Platzes und Ausnahme für das Palastmuseum",
+            "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+            "publisher": "Verwaltungskomitee des Tian’anmen-Gebiets",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Aktuelle offizielle Reservierungskanäle des Tian’anmen-Platzes",
+            "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
+            "publisher": "Volksregierung der Stadt Peking",
+            "reviewedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  }
+}

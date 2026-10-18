@@ -1,0 +1,229 @@
+{
+  "slug": "li-river-cruise-tickets-piers-booking",
+  "title": "Billetes para el río Li: barcos de 3 y 4 estrellas y muelles",
+  "headline": "Reserva el barco adecuado en el río Li y acude al muelle correcto",
+  "description": "Compara las tarifas publicadas de 3 y 4 estrellas, el canal oficial de reserva y los muelles de Guilin. Comprueba las condiciones de tu fecha antes de pagar.",
+  "navTitle": "Billetes para el crucero por el río Li",
+  "heroAlt": "Un barco de pasajeros navegando entre colinas kársticas en el río Li",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "answer-first",
+        "type": "lead",
+        "text": "Para el crucero por el río Li de Guilin a Yangshuo, empieza por la cuenta oficial de servicio de WeChat del recinto, 漓江售票处. Su lista de agosto de 2026 fija la tarifa adulta en RMB 215 para barcos de 3 estrellas y RMB 360 para los de 4; la guía del operador les asigna muelles distintos en Guilin, así que elige el barco antes de organizar la recogida. No se ha verificado una hora universal de apertura de ventas fuera de festivos."
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Decide el barco y el muelle conjuntamente"
+      },
+      {
+        "id": "booking-rules",
+        "type": "table",
+        "caption": "Tarifas adultas y muelles publicados, comprobados el 26 de septiembre de 2026",
+        "columns": [
+          "Barco",
+          "Tarifa adulta publicada",
+          "Muelle de embarque en Guilin",
+          "Llegada a Yangshuo"
+        ],
+        "rows": [
+          [
+            "3 estrellas",
+            "RMB 215",
+            "Puerto de pasajeros de Mopanshan (磨盘山客运港)",
+            "Muelle de Longtoushan (龙头山码头)"
+          ],
+          [
+            "4 estrellas",
+            "RMB 360",
+            "Muelle de Zhujiang (竹江码头)",
+            "Muelle de Longtoushan (龙头山码头)"
+          ]
+        ]
+      },
+      {
+        "id": "release",
+        "type": "paragraph",
+        "text": "El aviso oficial de la Fiesta Nacional de 2026 abre estos recorridos completos con 15 días de antelación e indica que las plazas restantes se actualizan a las 11:00 y las 16:00. Son reglas de vacaciones y actualizaciones de disponibilidad, no una promesa de apertura habitual 15 días antes a esas horas. Consulta el aviso de tu fecha antes de poner una alarma o pagar a un revendedor."
+      },
+      {
+        "id": "mistakes",
+        "type": "callout",
+        "tone": "warning",
+        "title": "Tres errores fáciles de cometer",
+        "body": "Una confirmación de 3 estrellas no te lleva al muelle de 4 estrellas. Una actualización de plazas a las 11:00 o las 16:00 no es una hora universal de apertura de ventas. Y una compra a un tercero no permite retirar automáticamente el billete en los quioscos oficiales del muelle; sigue las instrucciones del vendedor que utilizaste."
+      },
+      {
+        "id": "options-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Compensa pagar más por el barco de 4 estrellas?"
+      },
+      {
+        "id": "options",
+        "type": "comparison",
+        "title": "Compara prestaciones equivalentes",
+        "columns": [
+          {
+            "heading": "3 estrellas: RMB 215",
+            "body": "La tarifa publicada más baja para la navegación completa Guilin–Yangshuo. Según la guía del operador, embarca en Mopanshan. Consulta el producto fechado para conocer los servicios y las comidas exactos a bordo."
+          },
+          {
+            "heading": "4 estrellas: RMB 360",
+            "body": "Otra categoría de barco y el muelle de Zhujiang, no otra ciudad de llegada en Yangshuo. Compara camarote, asientos y comidas anunciados para tu fecha antes de decidir si los RMB 145 adicionales compensan a tu grupo."
+          }
+        ]
+      },
+      {
+        "id": "route-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Organiza un día de ida, no un viaje de vuelta a Guilin"
+      },
+      {
+        "id": "route-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Confirma la categoría exacta del barco, la fecha y el muelle en la compra pagada. Los dos muelles de Guilin no son intercambiables.",
+          "Organiza el traslado a ese muelle con margen para el control nominativo y la seguridad. El operador describe unas cuatro horas de navegación, pero la salida real es la indicada en tu compra.",
+          "Desembarca en Yangshuo en el muelle de tu confirmación y continúa al hotel de Yangshuo. No dejes equipaje ni una recogida para ese mismo día esperando en el muelle de Guilin.",
+          "Mantén una alternativa por meteorología y nivel del agua. El recinto anunció suspensiones con poca antelación durante las crecidas de 2026."
+        ]
+      },
+      {
+        "id": "hours-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿A qué hora debes estar en el muelle?"
+      },
+      {
+        "id": "hours",
+        "type": "paragraph",
+        "text": "Utiliza la hora de embarque y el método de retirada de la compra vigente; la web oficial no publica un horario único fiable para todos los barcos y fechas. Cuenta con la carretera desde Guilin, los controles documentales y los cambios que anuncie el operador. El viaje también es un traslado entre Guilin y Yangshuo, además de una visita: reserva margen para el resto del día."
+      },
+      {
+        "id": "practical-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Si reservas con un pasaporte extranjero"
+      },
+      {
+        "id": "practical",
+        "type": "list",
+        "items": [
+          "El aviso oficial exige una reserva nominativa y correspondencia entre viajero, billete y documento. Introduce los datos de cada persona exactamente como los acepte el canal de reserva.",
+          "Las instrucciones oficiales publicadas no explican el proceso de pasaportes extranjeros en la cuenta de WeChat. Confirma que aceptan tu pasaporte y cómo se retira el billete antes de pagar.",
+          "Lleva el documento original utilizado en la reserva confirmada y guarda la compra sin conexión. Una captura del pago no sustituye al billete emitido.",
+          "Una reducción de la parte de entrada al recinto no demuestra que toda la tarifa del barco esté rebajada. Comprueba el descuento frente al producto concreto y los documentos."
+        ]
+      },
+      {
+        "id": "final-check",
+        "type": "callout",
+        "tone": "decision",
+        "title": "Antes de salir del hotel",
+        "body": "Lee conjuntamente la fecha confirmada, la categoría del barco, el muelle, la salida y las instrucciones de retirada. Pregunta al operador por avisos meteorológicos y comunica al conductor el nombre chino del muelle que figura en la compra, no solo «crucero por el río Li»."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Preguntas sobre la reserva del crucero",
+        "items": [
+          {
+            "question": "¿Dónde reservo un billete oficial para el río Li?",
+            "answer": "El aviso de septiembre de 2026 del recinto del río Li identifica la cuenta de servicio de WeChat 漓江售票处 como su canal oficial. Reserva para un viajero identificado y una fecha concreta, y revisa el muelle y la retirada en la confirmación."
+          },
+          {
+            "question": "¿Los billetes del río Li siempre salen cinco días antes a las 09:00?",
+            "answer": "La web oficial no confirma esa regla general. El aviso de la Fiesta Nacional de 2026 utilizaba 15 días para los recorridos completos Guilin–Yangshuo; las 11:00 y las 16:00 son actualizaciones de plazas restantes. Otros festivos han empleado plazos diferentes, así que consulta el aviso vigente para tus fechas."
+          },
+          {
+            "question": "¿Qué diferencia hay entre los barcos de 3 y 4 estrellas?",
+            "answer": "Las tarifas adultas oficiales de agosto de 2026 son RMB 215 y RMB 360. La guía del operador sitúa los de 3 estrellas en Mopanshan y los de 4 en Zhujiang, ambos con llegada a Yangshuo. Compara los servicios y comidas de la fecha en vez de suponer que el precio superior incluye todos los extras."
+          },
+          {
+            "question": "¿Qué muelle se utiliza para el crucero de Guilin a Yangshuo?",
+            "answer": "Según la guía publicada por el operador del río Li, los barcos de 3 estrellas salen del puerto de pasajeros de Mopanshan y los de 4 del muelle de Zhujiang. La compra confirmada determina el punto definitivo; compruébalo antes de reservar un coche desde Guilin."
+          },
+          {
+            "question": "¿Puedo reservar el crucero con un pasaporte extranjero?",
+            "answer": "La documentación oficial confirma la reserva nominativa, pero no publica una explicación clara del proceso para pasaportes extranjeros en 漓江售票处. Antes de pagar, pregunta al vendedor oficial si acepta tu pasaporte y cómo recogerás el billete. Lleva el original utilizado en la compra confirmada."
+          },
+          {
+            "question": "¿El barco vuelve a Guilin después del crucero?",
+            "answer": "El recorrido completo estándar descrito aquí va de un muelle del lado de Guilin a Yangshuo. Organiza hotel y equipaje en función de esa llegada; no supongas que el mismo barco regresa a Guilin. Los productos de vuelta separados, si existen para tu fecha, necesitan su propia reserva."
+          }
+        ]
+      },
+      {
+        "id": "internal-links",
+        "type": "internal-links",
+        "title": "Integra el barco en un viaje a Guilin",
+        "items": [
+          {
+            "label": "Viaje privado de cinco días a Guilin y Yangshuo",
+            "href": "/tours/guilin-yangshuo-5-day-private-tour/",
+            "description": "Descubre cómo encaja el día de río con los hoteles y el conductor."
+          },
+          {
+            "label": "De Guilin a Yangshuo: ¿barco, coche o tren?",
+            "href": "/guides/guilin-yangshuo-transport-route/",
+            "description": "Elige el trayecto antes de reservar la recogida en el muelle."
+          },
+          {
+            "label": "Dónde alojarse en Yangshuo",
+            "href": "/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+            "description": "Decide la base hotelera para después del desembarque."
+          },
+          {
+            "label": "Yangshuo: qué ver, balsas del Yulong y cuántos días",
+            "href": "/guides/yangshuo-china/",
+            "description": "Qué es gratuito, cuánto cuestan las balsas y el espectáculo nocturno, y cómo distribuir dos días."
+          }
+        ]
+      },
+      {
+        "id": "consultation",
+        "type": "callout",
+        "tone": "neutral",
+        "title": "¿Quieres integrar el crucero en todo el viaje?",
+        "body": "Homeground puede organizar la recogida en Guilin, la categoría de barco confirmada y el trayecto posterior en Yangshuo como una sola ruta. Comparte tu fecha y el tamaño del grupo; comprobaremos disponibilidad real y servicios incluidos por escrito antes de presupuestar."
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Referencias oficiales del río Li",
+        "items": [
+          {
+            "label": "Aviso de reserva anticipada para la Fiesta Nacional de 2026",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/264",
+            "publisher": "Área turística del río Li de Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Tarifas publicadas de los barcos",
+            "url": "https://www.liriver.com.cn/page/article/lyfw.pwxx",
+            "publisher": "Área turística del río Li de Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Guía de muelles y recorridos",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/130",
+            "publisher": "Área turística del río Li de Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Retirada de billetes y compras a terceros",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/128",
+            "publisher": "Área turística del río Li de Guilin",
+            "reviewedAt": "2026-09-26"
+          }
+        ]
+      }
+    ]
+  }
+}

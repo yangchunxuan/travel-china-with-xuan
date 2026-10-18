@@ -5,7 +5,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { historicalRouteServiceIds as routeServiceIds } from "../lib/routeServiceInterest.ts";
-import { getGuideReservationOffers, guideReservationOfferGuideIds } from "../lib/guideReservationOffers.ts";
+import { getGuideReservationOffers, guideReservationOfferGuideIds, localizedReservationHref } from "../lib/guideReservationOffers.ts";
 import { attractionReservationHref, attractionReservationPath, getAttractionReservationRule } from "../lib/attractionReservations.ts";
 import { CONSULTATION_INTENTS } from "./internal/consultation-intake-contract.mjs";
 
@@ -135,7 +135,7 @@ function sorted(values) {
 
 function implementedReservationOffers() {
   return guideReservationOfferGuideIds.flatMap((contentId) =>
-    ["en", "zh", "ko"].flatMap((locale) =>
+    ["en", "zh", "ko", "ja", "fr", "es", "de", "ar"].flatMap((locale) =>
       getGuideReservationOffers(contentId, locale).map((offer) => ({
         contentId,
         locale,
@@ -163,7 +163,7 @@ export function validateGuideReservationOffers(registry, knownGuideIds, implemen
     const key = keyFor(offer);
     invariant(knownGuideIds.has(offer.contentId), `UNKNOWN_RESERVATION_GUIDE: ${offer.contentId}`);
     invariant(!registered.has(key), `DUPLICATE_RESERVATION_OFFER: ${key}`);
-    invariant(offer.locale === "en", `RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED: ${key}`);
+    invariant(["en", "zh", "ko", "ja", "fr", "es", "de", "ar"].includes(offer.locale), `RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED: ${key}`);
     invariant(offer.authorizationStatus === "authorized-existing-service"
       && offer.scope === "existing-offered-attractions-only", `RESERVATION_OFFER_SCOPE_NOT_AUTHORIZED: ${key}`);
     invariant(offer.placement === "guide-inline" && ["card", "line"].includes(offer.variant)
@@ -176,8 +176,8 @@ export function validateGuideReservationOffers(registry, knownGuideIds, implemen
       invariant(getAttractionReservationRule(attractionId)?.status === "offered",
         `RESERVATION_OFFER_ATTRACTION_NOT_OFFERED: ${key} -> ${attractionId}`);
     }
-    invariant(offer.targetHref === attractionReservationPath.en
-      || offer.attractionIds.some((id) => offer.targetHref === attractionReservationHref("en", id)),
+    invariant(offer.targetHref === localizedReservationHref(offer.locale)
+      || offer.attractionIds.some((id) => offer.targetHref === localizedReservationHref(offer.locale, id)),
     `RESERVATION_OFFER_TARGET_INVALID: ${key}`);
     registered.set(key, offer);
   }
@@ -202,9 +202,9 @@ export function validateGuideReservationOffers(registry, knownGuideIds, implemen
 
 export async function checkGuideReservationOfferAnchors(offers) {
   await Promise.all(offers.map(async (offer) => {
-    const { default: body } = await import(pathToFileURL(
-      resolve(guidesRoot, offer.contentId, `body.${offer.locale}.ts`),
-    ).href);
+    const body = ["en", "zh", "ko"].includes(offer.locale)
+      ? (await import(pathToFileURL(resolve(guidesRoot, offer.contentId, `body.${offer.locale}.ts`)).href)).default
+      : JSON.parse(await readFile(resolve(repoRoot, "lib/reservation-guide-editions", offer.locale, `${offer.contentId}.json`), "utf8")).body;
     invariant(body.blocks.filter((block) => block.id === offer.afterBlockId).length === 1,
       `RESERVATION_OFFER_BODY_ANCHOR_INVALID: ${offer.contentId}/${offer.afterBlockId}`);
   }));

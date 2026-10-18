@@ -77,13 +77,14 @@ const guideTitles: Readonly<Record<string, string>> = {
   'yangshuo-town-or-yulong-river-where-to-stay': 'Yangshuo : séjourner près du centre ou dans la campagne de la Yulong ?',
 };
 
-/** Articles remain in English, disclosed beside the search; never invent French article URLs. */
+/** Untranslated articles remain in English; only use an existing French equivalent. */
 export function getFrenchHomepageGuideChapters(): readonly HomepageGuideChapter[] {
   return getHomepageGuideChapters('en').map(chapter => ({
     ...chapter,
     guides: chapter.guides.map(guide => {
       const title = guideTitles[guide.id];
       if (!title) throw new Error(`Missing French homepage guide label: ${guide.id}`);
+      if (guide.id === 'yangshuo-town-or-yulong-river-where-to-stay') return { ...guide, title, eyebrow: 'Conseils pratiques', href: '/fr/guides/yangshuo-town-or-yulong-river-where-to-stay/', linkLabel: 'Lire l’article en français' };
       return { ...guide, title, eyebrow: 'Conseils pratiques', linkLabel: 'Lire l’article en anglais' };
     }),
   }));

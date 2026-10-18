@@ -80,13 +80,14 @@ const guideTitles: Readonly<Record<string, string>> = {
   'yangshuo-town-or-yulong-river-where-to-stay': 'يانغشو: الإقامة قرب المركز أم في ريف نهر يولونغ؟',
 };
 
-/** Articles remain in English, disclosed beside the search; never invent Arabic article URLs. */
+/** Untranslated articles remain in English; only use an existing Arabic equivalent. */
 export function getArabicHomepageGuideChapters(): readonly HomepageGuideChapter[] {
   return getHomepageGuideChapters('en').map(chapter => ({
     ...chapter,
     guides: chapter.guides.map(guide => {
       const title = guideTitles[guide.id];
       if (!title) throw new Error(`Missing Arabic homepage guide label: ${guide.id}`);
+      if (guide.id === 'yangshuo-town-or-yulong-river-where-to-stay') return { ...guide, title, eyebrow: 'نصائح سفر عملية', href: '/ar/guides/yangshuo-town-or-yulong-river-where-to-stay/', linkLabel: 'اقرأ المقال بالعربية' };
       return { ...guide, title, eyebrow: 'نصائح سفر عملية', linkLabel: 'اقرأ المقال بالإنجليزية' };
     }),
   }));

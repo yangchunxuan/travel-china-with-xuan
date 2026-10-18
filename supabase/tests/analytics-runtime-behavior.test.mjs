@@ -614,11 +614,11 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
   await context.test("guide CTA targets distinguish public products from planning without forwarding links", () => {
     installBrowser();
     const { analytics, location } = loadCompiledModules(outputDirectory);
-    for (const prefix of ["/", "/zh/", "/ko/"]) {
+    for (const prefix of ["/", "/zh/", "/ko/", "/ja/", "/fr/", "/es/", "/de/", "/ar/"]) {
       assert.equal(location.guideCtaTarget(`${prefix}tours/`), "private_tour");
       assert.equal(location.guideCtaTarget(`${prefix}tours/beijing-highlights-5-day-private-tour/?private=PRIVATEQUESTION`), "private_tour");
-      assert.equal(location.guideCtaTarget(`${prefix}?utm_campaign=article#planner-contact`), "planner");
-      assert.equal(location.guideCtaTarget(`${prefix}?planner=destinations#route-finder`), "planner");
+      if (["/", "/zh/", "/ko/"].includes(prefix)) assert.equal(location.guideCtaTarget(`${prefix}?utm_campaign=article#planner-contact`), "planner");
+      if (["/", "/zh/", "/ko/"].includes(prefix)) assert.equal(location.guideCtaTarget(`${prefix}?planner=destinations#route-finder`), "planner");
       assert.equal(location.guideCtaTarget(`${prefix}tours/unknown-private-text/`), "other");
       assert.equal(location.guideCtaTarget(`${prefix}guides/`), "other");
       assert.equal(location.guideCtaTarget(`${prefix}services/private-car-and-driver/`), "service");
@@ -643,7 +643,7 @@ test("analytics runtime honors consent, query privacy and vendor queue contracts
     installBrowser();
     const { analytics, location } = loadCompiledModules(outputDirectory);
     const { privateTourInquirySlugs } = require(join(outputDirectory, "privateTourInquiryContext.js"));
-    for (const prefix of ["/", "/zh/", "/ko/"]) {
+    for (const prefix of ["/", "/zh/", "/ko/", "/ja/", "/fr/", "/es/", "/de/", "/ar/"]) {
       for (const slug of privateTourInquirySlugs) {
         for (const href of [
           `${prefix}tours/${slug}/`,

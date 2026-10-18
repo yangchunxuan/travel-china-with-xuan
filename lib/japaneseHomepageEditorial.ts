@@ -14,6 +14,7 @@ export function getJapaneseHomepageGuideChapters(): readonly HomepageGuideChapte
     if (chapter.id === "transport" && index === 0) return { ...guide, id: "shanghai-hangzhou-transport-route", title: "上海から杭州へ。列車はどの駅を選ぶ？", href: "/ja/guides/shanghai-hangzhou-transport-route/", linkLabel: "日本語で読む" };
     const title = englishTitles[guide.id];
     if (!title) throw new Error(`Missing Japanese homepage guide label: ${guide.id}`);
+    if (guide.id === "yangshuo-town-or-yulong-river-where-to-stay") return { ...guide, title, href: "/ja/guides/yangshuo-town-or-yulong-river-where-to-stay/", linkLabel: "日本語で読む" };
     return { ...guide, title: `${title}（英語）`, linkLabel: "英語で読む" };
   }) }));
 }

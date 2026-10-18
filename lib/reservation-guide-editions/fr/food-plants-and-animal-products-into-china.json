@@ -1,0 +1,388 @@
+{
+  "slug": "food-plants-and-animal-products-into-china",
+  "title": "Aliments autorisés et interdits à l’entrée en Chine : liste douanière 2026",
+  "headline": "Aliments, végétaux et produits animaux en Chine : les vérifications avant de faire sa valise",
+  "description": "La viande, les laitages d’origine animale, les œufs et les fruits frais sont généralement interdits dans les bagages. Le sous-vide ne constitue pas une dérogation : vérifiez les ingrédients des snacks composés.",
+  "navTitle": "Aliments et végétaux à l’entrée en Chine",
+  "heroAlt": "Illustration d’une valise ouverte d’où dépassent une pomme, une feuille et une saucisse.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Certains aliments peuvent être admis en Chine continentale, mais aucune autorisation générale ne s’applique aux aliments dans les bagages personnels. La viande, les laitages d’origine animale, les œufs et les fruits frais figurent parmi les catégories interdites. Commencez par vérifier la composition et le mode de transformation : emballage fermé, cuisson, mise sous vide, petite quantité ou mention « cadeau » ne créent pas de dérogation. Vérifiez le produit avant de le mettre dans votre valise ; le déclarer ne vous autorise pas à faire entrer un produit interdit."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "La règle la plus prudente pour vos bagages",
+        "tone": "decision",
+        "body": "Laissez chez vous les produits frais, la viande, les laitages, les œufs, les graines, les plantes vivantes et la terre, sauf si vous avez vérifié une dérogation légale précise et obtenu les autorisations et certificats requis avant le voyage. Pour un snack transformé, lisez la liste complète des ingrédients plutôt que la seule face avant de l’emballage. Si vous ne pouvez pas identifier son contenu ou justifier une dérogation, ne l’emportez pas."
+      },
+      {
+        "id": "screen-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Passez chaque produit incertain au crible de cette grille"
+      },
+      {
+        "id": "screen-table",
+        "type": "table",
+        "caption": "Le nom du produit n’est qu’un point de départ",
+        "columns": [
+          "Ce qu’il contient",
+          "Décision à prendre par défaut",
+          "Pourquoi il faut vérifier"
+        ],
+        "rows": [
+          [
+            "Viande crue ou cuite, abats ou garniture à base de viande",
+            "Ne pas l’emporter",
+            "La liste officielle couvre la viande et ses produits, crus comme cuits"
+          ],
+          [
+            "Lait, crème, beurre, fromage, yaourt ou lait concentré d’origine animale",
+            "Ne pas l’emporter, sauf dérogation expressément applicable",
+            "Les produits laitiers figurent parmi les catégories interdites"
+          ],
+          [
+            "Œuf, œuf salé ou conservé, œuf liquide, coquille d’œuf ou mayonnaise",
+            "Ne pas l’emporter, sauf dérogation expressément applicable",
+            "La liste officielle mentionne les œufs et les produits qui en sont issus"
+          ],
+          [
+            "Fruits frais, légumes frais ou fleurs coupées",
+            "Ne pas les mettre dans la valise",
+            "Ces catégories sont expressément soumises aux restrictions phytosanitaires"
+          ],
+          [
+            "Graines, plants, boutures, bulbes ou autres matériels de multiplication",
+            "Ne pas les emporter sans avoir suivi au préalable la procédure requise",
+            "Même un petit souvenir peut se reproduire ou transporter des organismes nuisibles"
+          ],
+          [
+            "Terre ou substrat de culture organique",
+            "Ne pas les mettre dans la valise",
+            "La terre et les matières connexes soumises à quarantaine font l’objet de contrôles spécifiques"
+          ],
+          [
+            "Snack végétal conditionné dans le commerce",
+            "Vérifier chaque ingrédient et les règles en vigueur",
+            "L’emballage seul ne révèle ni un ingrédient animal ni une restriction liée à l’origine"
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Peut-on apporter du fromage, du bœuf séché, des fruits ou des conserves en Chine ?"
+      },
+      {
+        "id": "food-questions-table",
+        "type": "table",
+        "caption": "Aliments courants : la réponse dépend du contenu, pas de l’emballage",
+        "columns": [
+          "Aliment ou question",
+          "Décision pour les bagages",
+          "Ce qui compte"
+        ],
+        "rows": [
+          [
+            "Fromage, y compris fromage à pâte dure ou labneh",
+            "N’emportez pas de fromage d’origine animale ni d’autres laitages, sauf dérogation légale vérifiée.",
+            "Les formes dures, molles, réfrigérées ou sous vide ne créent aucune dérogation générale pour les laitages. Le labneh fabriqué avec du lait animal appartient à cette catégorie."
+          ],
+          [
+            "Viande, bœuf séché, salami ou viande effilochée séchée",
+            "Ne les emportez pas comme de simples souvenirs alimentaires.",
+            "L’interdiction couvre la viande crue ou cuite et les produits carnés. Le séchage, la salaison ou l’emballage commercial ne créent aucune dérogation générale."
+          ],
+          [
+            "Aliments en conserve",
+            "Vérifiez le contenu : la conserve n’est pas une catégorie autorisée en soi.",
+            "La viande en conserve reste un produit carné, et le lait animal en conserve reste un produit laitier. La dérogation ci-dessous visant les nids d’hirondelle en conserve commercialement stériles ne s’étend pas à toutes les conserves."
+          ],
+          [
+            "Aliments sous vide en soute ou en cabine",
+            "La mise sous vide ne change pas la catégorie sanitaire du produit.",
+            "Ces règles s’appliquent aux bagages accompagnés comme aux bagages transportés séparément. Changer de bagage ne rend pas la viande, le fromage ou les fruits frais admissibles."
+          ],
+          [
+            "Fruits frais, y compris ceux servis dans l’avion",
+            "Ne leur faites pas franchir la frontière.",
+            "Les fruits et légumes frais sont expressément mentionnés. Consommez-les avant l’arrivée ou remettez-les selon la procédure de collecte indiquée par la compagnie aérienne."
+          ],
+          [
+            "Fruits secs, prunes conservées ou pâte de goyave (goiabada)",
+            "Identifiez précisément le produit transformé ; les seuls mots « fruit » ou « séché » ne suffisent pas.",
+            "Ces noms ne désignent pas automatiquement des fruits frais, mais il faut tout de même vérifier la transformation, les éventuelles graines viables, les ingrédients animaux ajoutés et les restrictions d’origine. La règle sur les fruits frais n’établit aucune autorisation générale pour tous les fruits séchés ou conservés."
+          ],
+          [
+            "Sambal et autres sauces",
+            "Vérifiez la présence de viande, de crevettes, de poisson ou de laitages, et identifiez la forme du produit fini.",
+            "Le nom d’une sauce n’en établit pas la composition. Pour les ingrédients aquatiques, consultez la formulation restrictive sur les sauces dans la liste officielle ci-dessous au lieu de supposer que toutes les sauces aux produits de la mer sont admises."
+          ],
+          [
+            "Lait vendu sous une marque telle que Leche Gloria",
+            "Lisez le type de produit et les ingrédients, pas seulement la marque.",
+            "Le lait d’origine animale, le lait stérilisé et le lait concentré sont des produits laitiers figurant sur la liste. Une brique ou une boîte fermée ne constitue pas une dérogation générale ; une même marque peut vendre différentes formulations."
+          ],
+          [
+            "Sauce en poudre, bretzels au beurre de cacahuète, biscuits ou snacks composés",
+            "Lisez tous les ingrédients et déterminez la catégorie du produit fini.",
+            "Une sauce en poudre à base de viande diffère d’une poudre végétale. Les bretzels et biscuits peuvent contenir du lait, du beurre ou des œufs. Ne classez pas toutes les sauces en poudre comme de la viande ni tous les snacks emballés comme autorisés ; interrogez les douanes sur un produit composé incertain."
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-list",
+        "type": "list",
+        "items": [
+          "Gâteaux de lune, petits pains, chocolat, préparations au café et plats instantanés nécessitent la même vérification : garnitures, lait en poudre et arômes d’origine animale peuvent compter, même si l’emballage indique seulement « snack ».",
+          "Fleurs séchées, graines dans des bijoux, mélanges de plantes, céréales non transformées et objets artisanaux naturels exigent une identification précise des matières ; la mention « décoratif » ne supprime pas le risque sanitaire.",
+          "Pour un produit incertain, photographiez l’étiquette complète et contactez les douanes en précisant les ingrédients, le procédé de transformation, l’origine, la quantité et le point d’arrivée. Une traduction de l’étiquette facilite la demande, mais ne vaut pas autorisation."
+        ]
+      },
+      {
+        "id": "official-list-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "La liste officielle comporte des précisions et des dérogations limitées"
+      },
+      {
+        "id": "official-list-table",
+        "type": "table",
+        "caption": "Exemples tirés de l’avis n° 470",
+        "columns": [
+          "Catégorie de la liste",
+          "Précision importante",
+          "Conséquence pour votre préparation"
+        ],
+        "rows": [
+          [
+            "Produits d’animaux aquatiques",
+            "La liste prévoit une dérogation pour les produits de sauce comestibles séchés, cuits ou fermentés",
+            "Cette formulation n’exempte pas tous les snacks aux produits de la mer ; identifiez la forme exacte"
+          ],
+          [
+            "Nids d’hirondelle",
+            "Les nids d’hirondelle en conserve commercialement stériles sont exclus de l’interdiction mentionnée",
+            "Les nids en vrac, séchés ou emballés de façon informelle ne bénéficient pas de cette dérogation"
+          ],
+          [
+            "Peaux, os, cornes et coquilles d’origine animale",
+            "Certains objets artisanaux transformés, sans sang, muscle ni graisse, sont exclus",
+            "Même un souvenir d’apparence propre doit être accompagné d’informations suffisantes sur sa matière et sa transformation"
+          ],
+          [
+            "Chiens et chats",
+            "La catégorie des animaux vivants prévoit une dérogation distincte, soumise à ses propres exigences",
+            "L’entrée d’un animal domestique relève d’une procédure formelle, pas d’une simple autorisation de bagage"
+          ],
+          [
+            "Marchandises soumises à quarantaine et dûment autorisées",
+            "Une note permet de soustraire aux restrictions de la liste les marchandises disposant de l’autorisation compétente et d’un certificat sanitaire officiel du pays exportateur",
+            "L’autorisation et le certificat doivent être obtenus avant le voyage ; une explication à l’aéroport ne les remplace pas"
+          ]
+        ]
+      },
+      {
+        "id": "exception-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Une dérogation doit correspondre au produit exact et à ses documents"
+      },
+      {
+        "id": "exception-copy",
+        "type": "paragraph",
+        "text": "Traitez une dérogation comme une liste de conditions, pas comme une simple ressemblance. Faites correspondre l’identité scientifique ou commerciale, les ingrédients, le traitement, l’emballage, le pays ou la région d’origine, la quantité, le mode d’entrée du voyageur et les documents requis. Une autorisation pour une espèce, un lot ou un circuit d’importation ne couvre pas automatiquement un souvenir similaire dans les bagages personnels. Lorsqu’une autorisation et un certificat sanitaire de l’autorité exportatrice sont exigés, obtenez les deux par la procédure compétente avant le départ et emportez les originaux ou le format demandé par les douanes."
+      },
+      {
+        "id": "exception-warning",
+        "type": "callout",
+        "title": "Déclarer ne signifie pas être autorisé",
+        "tone": "warning",
+        "body": "Les règles de déclaration des bagages de 2025 imposent aux voyageurs arrivant avec des animaux, des plantes, leurs produits ou d’autres objets soumis à quarantaine de les déclarer et d’accepter leur inspection. Le circuit rouge est la bonne procédure pour les articles à déclarer ou incertains, mais les douanes peuvent malgré tout refuser leur entrée, imposer un traitement, un renvoi ou une destruction selon les règles applicables. N’emportez pas un article interdit en supposant que votre honnêteté garantit son admission."
+      },
+      {
+        "id": "before-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Une méthode avant le départ pour éviter les discussions à l’aéroport"
+      },
+      {
+        "id": "before-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Rassemblez tous les aliments, végétaux, cadeaux en matières naturelles et articles d’origine animale pour les vérifier avant de les placer en soute ou en cabine.",
+          "Photographiez le produit entier, ses ingrédients, son origine et les coordonnées du fabricant. Ouvrez les cadeaux sans étiquette et demandez à la personne qui les offre la composition de chaque garniture.",
+          "Comparez la catégorie exacte avec la liste en vigueur de l’avis n° 470 et tout avis de risque douanier plus récent concernant le pays d’origine ou le produit.",
+          "Si vous invoquez une dérogation, conservez la clause exacte et obtenez tous les documents d’autorisation et de quarantaine avant le voyage. Un message du vendeur ne vaut pas autorisation gouvernementale.",
+          "Retirez les articles qui restent ambigus. Ne les répartissez pas entre plusieurs bagages ou compagnons pour les rendre moins visibles.",
+          "Gardez les articles qui semblent admissibles dans leur emballage d’origine étiqueté et accessibles pour inspection ; placez les certificats avec le produit, pas dans une autre valise en soute."
+        ]
+      },
+      {
+        "id": "arrival-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Que faire dans l’avion et à l’arrivée ?"
+      },
+      {
+        "id": "arrival-table",
+        "type": "table",
+        "caption": "Levez les doutes avant le circuit vert",
+        "columns": [
+          "Moment",
+          "Action",
+          "À éviter"
+        ],
+        "rows": [
+          [
+            "Avant l’atterrissage",
+            "Consommer ou remettre les fruits de l’avion et autres aliments incertains uniquement selon la procédure de collecte indiquée par la compagnie",
+            "Les mettre dans une poche pour s’en occuper plus tard"
+          ],
+          [
+            "Avant de choisir un circuit",
+            "Vérifier tous les bagages de cabine et de soute, y compris les cadeaux préparés par quelqu’un d’autre",
+            "Supposer que les bagages en soute relèvent d’autres règles sanitaires"
+          ],
+          [
+            "Article soumis à contrôle ou incertain",
+            "Remplir la déclaration papier ou électronique requise et emprunter le circuit rouge",
+            "Choisir le vert parce que la quantité est faible"
+          ],
+          [
+            "Demande d’inspection par un agent",
+            "Présenter honnêtement le produit, l’étiquette, l’autorisation et le certificat",
+            "Ouvrir des bagages scellés par les douanes ou dissimuler une partie du produit"
+          ],
+          [
+            "Entrée refusée",
+            "Suivre les consignes officielles de renvoi, de traitement ou de destruction et conserver les documents remis",
+            "Donner l’article à un autre voyageur ou le sortir de la zone contrôlée"
+          ]
+        ]
+      },
+      {
+        "id": "special-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Articles relevant d’une autre autorité ou procédure"
+      },
+      {
+        "id": "special-list",
+        "type": "list",
+        "items": [
+          "Les préparations pour nourrissons, la nutrition médicale et les aliments pour régimes particuliers peuvent relever de conditions limitées. Vérifiez la disposition et la quantité actuellement applicables ; un besoin médical ne crée pas de dérogation implicite.",
+          "Les médicaments et remèdes traditionnels peuvent contenir des ingrédients animaux, végétaux, issus d’espèces menacées ou des substances médicamenteuses réglementées. La quarantaine n’est qu’un volet : les règles sur les médicaments et la faune sauvage peuvent aussi s’appliquer.",
+          "Les chiens et chats de compagnie relèvent d’une procédure d’entrée spécifique avec des documents sanitaires et d’autres conditions. Ne vous fiez pas à cette grille sur les aliments et souvenirs pour voyager avec un animal.",
+          "Le courrier, les envois express et le commerce électronique transfrontalier entrent dans le champ de l’avis n° 470. Expédier un produit interdit au lieu de le transporter n’est pas une solution de contournement.",
+          "Les échantillons commerciaux, les stocks destinés à la vente et les grandes quantités ne relèvent pas des simples bagages personnels et nécessitent une procédure d’importation adaptée."
+        ]
+      },
+      {
+        "id": "failure",
+        "type": "callout",
+        "title": "Si vous découvrez un article douteux après avoir fait votre valise",
+        "tone": "warning",
+        "body": "Avant le départ, retirez-le et contactez les douanes par un canal officiel avec le nom exact, les ingrédients, l’origine et l’itinéraire prévu. À l’arrivée, ne l’abandonnez pas dans des toilettes ou une poubelle ordinaire et ne demandez pas à un autre passager de le transporter. Déclarez-le et suivez les instructions de l’agent. Conservez toute preuve de saisie, de renvoi ou de destruction si l’assurance ou l’expéditeur en a besoin."
+      },
+      {
+        "id": "scope",
+        "type": "callout",
+        "title": "Portée de ce guide et règles en vigueur",
+        "tone": "neutral",
+        "body": "Cette grille aide les passagers à préparer leurs bagages et leur déclaration ; elle ne constitue pas un certificat de dédouanement. L’avis n° 470 précise que la liste peut être ajustée selon l’évaluation des risques, et les contrôles liés aux maladies ou à l’origine peuvent évoluer. Revérifiez la liste et les avis douaniers pertinents peu avant le voyage. Les douanes décident des inspections et de l’admission ; Homeground ne peut pas déterminer l’admissibilité à partir d’une photo ou d’une étiquette commerciale."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Questions à se poser avant de faire sa valise",
+        "items": [
+          {
+            "question": "Puis-je apporter du bœuf séché, de la viande effilochée séchée ou du salami en Chine ?",
+            "answer": "Non. La viande crue ou cuite et les produits carnés figurent sur la liste des interdictions, quel que soit l’emballage ; ne les emportez donc pas comme souvenirs alimentaires."
+          },
+          {
+            "question": "Puis-je apporter du fromage, du lait ou d’autres laitages ?",
+            "answer": "Le lait, la crème, le beurre, le fromage, le yaourt et le lait concentré d’origine animale figurent parmi les produits laitiers de la liste. Ne les emportez pas, sauf si une dérogation expresse s’applique clairement au produit exact."
+          },
+          {
+            "question": "Puis-je faire franchir la frontière à des fruits frais servis dans l’avion ?",
+            "answer": "Non. Les fruits et légumes frais sont expressément mentionnés parmi les catégories phytosanitaires interdites. Consommez-les ou débarrassez-vous-en avant l’arrivée."
+          },
+          {
+            "question": "Les aliments en conserve ou sous vide sont-ils autorisés ?",
+            "answer": "L’emballage ne change pas la catégorie : la viande en conserve reste de la viande et le lait animal en conserve reste un produit laitier. Les snacks végétaux conditionnés dans le commerce passent généralement, mais vérifiez d’abord chaque ingrédient."
+          },
+          {
+            "question": "Dois-je déclarer un article en cas de doute ?",
+            "answer": "Oui. Déclarer ne rend pas un article interdit autorisé, mais le circuit rouge est la bonne procédure pour les articles à déclarer ou incertains ; les douanes décident ensuite d’un refus, d’un traitement, d’un renvoi ou d’une destruction."
+          }
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Terminer les vérifications d’arrivée",
+        "items": [
+          {
+            "label": "Circuits rouge et vert des douanes chinoises",
+            "href": "/guides/china-customs-red-green-channels/",
+            "description": "Choisissez le bon circuit à l’arrivée après avoir vérifié chaque bagage."
+          },
+          {
+            "label": "Conditions d’entrée en Chine",
+            "href": "/guides/china-entry-requirements/",
+            "description": "Distinguez les documents d’immigration des formalités douanières et sanitaires."
+          },
+          {
+            "label": "Batteries externes dans les avions et les trains",
+            "href": "/guides/china-power-bank-rules-flights-trains/",
+            "description": "Terminez l’autre vérification délicate concernant vos bagages."
+          },
+          {
+            "label": "Carte d’arrivée en ligne pour la Chine",
+            "href": "/guides/china-online-arrival-card/",
+            "description": "Préremplissez le formulaire officiel gratuit avant d’atterrir et connaissez l’alternative papier."
+          },
+          {
+            "label": "Manger végétarien ou végétalien en Chine",
+            "href": "/guides/vegetarian-vegan-china-travel/",
+            "description": "Ingrédients cachés, carte à montrer en cuisine et organisation des repas."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Sources officielles consultées",
+        "items": [
+          {
+            "label": "Avis n° 470 et liste des articles interdits soumis à quarantaine",
+            "url": "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm",
+            "publisher": "Ministère de l’Agriculture et des Affaires rurales / Administration générale des douanes",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Liste des interdictions de l’avis n° 470 sur le portail de déclaration des passagers",
+            "url": "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html",
+            "publisher": "Port électronique de Chine / Administration générale des douanes",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Avis douanier n° 43 de 2025 sur la déclaration des bagages",
+            "url": "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html",
+            "publisher": "Administration générale des douanes",
+            "reviewedAt": "2026-09-09"
+          }
+        ]
+      }
+    ]
+  }
+}

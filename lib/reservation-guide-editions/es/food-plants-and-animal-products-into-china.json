@@ -1,0 +1,388 @@
+{
+  "slug": "food-plants-and-animal-products-into-china",
+  "title": "Alimentos permitidos y prohibidos al entrar en China: lista aduanera 2026",
+  "headline": "Alimentos, plantas y productos animales en China: revisa antes de hacer la maleta",
+  "description": "La carne, los lácteos de origen animal, los huevos y la fruta fresca suelen estar prohibidos en el equipaje. El vacío no exime: revisa los ingredientes de los aperitivos mixtos.",
+  "navTitle": "Alimentos y plantas al entrar en China",
+  "heroAlt": "Ilustración de una maleta abierta de la que sobresalen una manzana, una hoja y una salchicha.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Algunos alimentos pueden ser admisibles en China continental, pero no existe un permiso general para llevar comida en el equipaje personal. La carne, los lácteos de origen animal, los huevos y la fruta fresca figuran entre las categorías prohibidas. Empieza por la composición y el procesado: un envase cerrado, la cocción, el vacío, una pequeña cantidad o la etiqueta de regalo no crean una excepción. Comprueba el producto antes de guardarlo; declararlo no autoriza la entrada de un producto prohibido."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "La regla más prudente para preparar el equipaje",
+        "tone": "decision",
+        "body": "Deja en casa los productos frescos, la carne, los lácteos, los huevos, las semillas, las plantas vivas y la tierra, salvo que hayas verificado una excepción legal concreta y obtenido las autorizaciones y certificados exigidos antes del viaje. Para un aperitivo procesado, lee todos los ingredientes en vez de fiarte del frontal del envase. Si no puedes identificar el contenido o acreditar una excepción, no lo lleves."
+      },
+      {
+        "id": "screen-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Revisa cada producto dudoso con esta tabla"
+      },
+      {
+        "id": "screen-table",
+        "type": "table",
+        "caption": "El nombre del producto es solo el principio",
+        "columns": [
+          "Qué contiene",
+          "Decisión de viaje por defecto",
+          "Por qué requiere atención"
+        ],
+        "rows": [
+          [
+            "Carne cruda o cocinada, vísceras o relleno derivado de carne",
+            "No llevar",
+            "La lista oficial abarca la carne y sus productos, tanto crudos como cocinados"
+          ],
+          [
+            "Leche, nata, mantequilla, queso, yogur o leche condensada de origen animal",
+            "No llevar salvo que una excepción expresa se aplique claramente",
+            "Los lácteos figuran como categoría prohibida"
+          ],
+          [
+            "Huevo, huevo salado o conservado, huevo líquido, cáscara o mayonesa",
+            "No llevar salvo que una excepción expresa se aplique claramente",
+            "La lista oficial menciona huevos y productos derivados"
+          ],
+          [
+            "Fruta fresca, verduras frescas o flores cortadas",
+            "No meter en la maleta",
+            "Son categorías expresamente incluidas en las restricciones fitosanitarias"
+          ],
+          [
+            "Semillas, plantones, esquejes, bulbos u otro material de propagación",
+            "No llevar sin completar antes el procedimiento requerido",
+            "Incluso un pequeño recuerdo puede reproducirse o transportar plagas"
+          ],
+          [
+            "Tierra o sustrato orgánico de cultivo",
+            "No meter en la maleta",
+            "La tierra y otros materiales relacionados sujetos a cuarentena están regulados específicamente"
+          ],
+          [
+            "Aperitivo vegetal envasado comercialmente",
+            "Comprobar cada ingrediente y la norma vigente",
+            "El envase por sí solo no revela ingredientes animales ni restricciones por origen"
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Puedo llevar queso, carne seca, fruta o conservas a China?"
+      },
+      {
+        "id": "food-questions-table",
+        "type": "table",
+        "caption": "Alimentos habituales: importa el contenido, no el envase",
+        "columns": [
+          "Alimento o pregunta",
+          "Decisión para la maleta",
+          "Qué importa"
+        ],
+        "rows": [
+          [
+            "Queso, incluido queso curado o labneh",
+            "No lleves queso de origen animal ni otros lácteos salvo que se aplique una excepción legal verificada.",
+            "Las versiones duras, blandas, refrigeradas o al vacío no crean una excepción general para los lácteos. El labneh de leche animal pertenece a esta categoría."
+          ],
+          [
+            "Carne, cecina de vacuno, salami o carne deshilachada seca",
+            "No los lleves como simples recuerdos gastronómicos.",
+            "La prohibición incluye carne cruda o cocinada y productos cárnicos. El secado, el curado o el envasado comercial no crean una excepción general."
+          ],
+          [
+            "Conservas",
+            "Comprueba el contenido; una lata no es una categoría autorizada.",
+            "La carne en conserva sigue siendo un producto cárnico y la leche animal enlatada sigue siendo un lácteo. La excepción indicada abajo para nidos de ave en conserva comercialmente estériles no se extiende a todas las conservas."
+          ],
+          [
+            "Comida al vacío en equipaje facturado o de cabina",
+            "El vacío no cambia la categoría sanitaria del producto.",
+            "Estas reglas se aplican tanto al equipaje acompañado como al transportado por separado. Cambiar de maleta no hace admisibles la carne, el queso ni la fruta fresca."
+          ],
+          [
+            "Fruta fresca, incluida la servida en el vuelo",
+            "No la pases por la frontera.",
+            "La fruta y la verdura frescas están expresamente incluidas. Consúmelas antes de llegar o utiliza el sistema de recogida indicado por la aerolínea."
+          ],
+          [
+            "Fruta desecada, ciruelas en conserva o pasta de guayaba (goiabada)",
+            "Identifica el producto procesado exacto; las palabras «fruta» o «seco» no resuelven por sí solas la cuestión.",
+            "Esos nombres no significan automáticamente fruta fresca, pero hay que comprobar el procesado, las posibles semillas viables, los ingredientes animales añadidos y las restricciones por origen. La norma sobre fruta fresca no establece un permiso general para toda fruta desecada o conservada."
+          ],
+          [
+            "Sambal y otras salsas",
+            "Comprueba si contiene carne, gambas, pescado o lácteos e identifica la forma del producto terminado.",
+            "El nombre de una salsa no determina sus ingredientes. Para ingredientes acuáticos, consulta la redacción limitada sobre salsas de la lista oficial siguiente en vez de asumir que cualquier salsa de productos del mar cumple los requisitos."
+          ],
+          [
+            "Leche de una marca como Leche Gloria",
+            "Lee el tipo de producto y los ingredientes, no solo la marca.",
+            "La leche de origen animal, la esterilizada y la condensada figuran como productos lácteos. Un cartón o una lata cerrados no constituyen una excepción general; una marca puede vender fórmulas distintas."
+          ],
+          [
+            "Salsa en polvo, pretzels con mantequilla de cacahuete, galletas o aperitivos mixtos",
+            "Lee todos los ingredientes e identifica la categoría del alimento terminado.",
+            "Una salsa en polvo de carne no equivale a un polvo vegetal. Los pretzels y las galletas pueden contener leche, mantequilla o huevo. No clasifiques toda salsa en polvo como carne ni todo aperitivo envasado como permitido; consulta con Aduanas los productos mixtos dudosos."
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-list",
+        "type": "list",
+        "items": [
+          "Los pasteles de luna, bollos, chocolate, preparados de café y comidas instantáneas necesitan la misma revisión: los rellenos, la leche en polvo y los aromas animales pueden importar aunque el frontal diga solo «aperitivo».",
+          "Las flores secas, semillas en joyas, mezclas de hierbas, cereales sin procesar y artesanía natural requieren identificar los materiales exactos; «decorativo» no elimina el riesgo sanitario.",
+          "Si un producto es dudoso, fotografía la etiqueta completa y consulta a Aduanas indicando ingredientes, procesado, origen, cantidad y punto de llegada. Una traducción de la etiqueta ayuda a consultar, pero no constituye una autorización."
+        ]
+      },
+      {
+        "id": "official-list-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "La lista oficial contiene detalles y excepciones limitadas"
+      },
+      {
+        "id": "official-list-table",
+        "type": "table",
+        "caption": "Ejemplos del Aviso n.º 470",
+        "columns": [
+          "Categoría de la lista",
+          "Detalle importante",
+          "Consecuencia para la preparación"
+        ],
+        "rows": [
+          [
+            "Productos de animales acuáticos",
+            "La lista establece una excepción para productos de salsa comestibles secos, cocinados o fermentados",
+            "Esa redacción no exime todos los aperitivos de productos del mar; identifica la forma exacta"
+          ],
+          [
+            "Nidos de ave comestibles",
+            "Los nidos de ave en conserva comercialmente estériles quedan excluidos de la prohibición indicada",
+            "Los nidos a granel, secos o envasados informalmente no obtienen esa excepción"
+          ],
+          [
+            "Pieles, huesos, cuernos y conchas de origen animal",
+            "Se excluyen ciertos objetos artesanales procesados sin sangre, músculo ni grasa",
+            "Un recuerdo que parezca limpio sigue necesitando pruebas suficientes de sus materiales y tratamiento"
+          ],
+          [
+            "Perros y gatos",
+            "La categoría de animales vivos recoge una excepción separada sujeta a sus propios requisitos",
+            "La entrada de mascotas es un trámite formal, no un permiso de equipaje ordinario"
+          ],
+          [
+            "Mercancías sujetas a cuarentena y autorizadas",
+            "Una nota permite excluir de las restricciones de la lista mercancías con autorización competente y certificado sanitario oficial del país exportador",
+            "La autorización y el certificado deben existir antes del viaje; una explicación en el aeropuerto no los sustituye"
+          ]
+        ]
+      },
+      {
+        "id": "exception-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "La excepción debe corresponder al producto y los documentos exactos"
+      },
+      {
+        "id": "exception-copy",
+        "type": "paragraph",
+        "text": "Trata una excepción como una lista de requisitos, no como un parecido. Deben coincidir la identidad científica o comercial, ingredientes, tratamiento, envase, país o región de origen, cantidad, vía de entrada del viajero y documentos exigidos. Un permiso para una especie, lote o vía de importación no cubre automáticamente un recuerdo parecido en el equipaje personal. Cuando se exijan autorización y certificado sanitario de la autoridad exportadora, obtén ambos mediante el procedimiento competente antes de salir y lleva los originales o el formato que indique Aduanas."
+      },
+      {
+        "id": "exception-warning",
+        "type": "callout",
+        "title": "Declarar no equivale a tener permiso",
+        "tone": "warning",
+        "body": "Las normas de declaración de equipajes de 2025 obligan a quienes llegan con animales, plantas, sus productos u otros objetos sujetos a cuarentena a declararlos y aceptar la inspección. El canal rojo es el procedimiento correcto para artículos declarables o dudosos, pero Aduanas puede rechazar la entrada, ordenar un tratamiento, devolución o eliminación conforme a la norma aplicable. No lleves un producto prohibido suponiendo que la sinceridad garantiza su admisión."
+      },
+      {
+        "id": "before-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Un proceso antes del viaje para evitar discusiones en el aeropuerto"
+      },
+      {
+        "id": "before-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Reúne todos los alimentos, plantas, regalos de materiales naturales y artículos de origen animal para revisarlos antes de guardarlos en equipaje facturado o de cabina.",
+          "Fotografía el producto completo, los ingredientes, la etiqueta de origen y los datos del fabricante. Abre las cajas de regalo sin etiqueta y pregunta qué contiene cada relleno.",
+          "Compara la categoría exacta con la lista vigente del Aviso n.º 470 y los avisos de riesgo aduanero más recientes para ese país de origen o producto.",
+          "Si te acoges a una excepción, guarda la cláusula exacta y consigue todos los permisos y certificados de cuarentena antes de viajar. Un mensaje del vendedor no es una autorización gubernamental.",
+          "Retira los artículos que sigan siendo ambiguos. No los repartas entre maletas o acompañantes para hacerlos menos visibles.",
+          "Mantén los artículos aparentemente admisibles en su envase original etiquetado y accesibles para inspección; lleva los certificados con el producto, no en otra maleta facturada."
+        ]
+      },
+      {
+        "id": "arrival-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Qué hacer en el avión y al llegar"
+      },
+      {
+        "id": "arrival-table",
+        "type": "table",
+        "caption": "Resuelve las dudas antes del canal verde",
+        "columns": [
+          "Momento",
+          "Acción",
+          "Qué no hacer"
+        ],
+        "rows": [
+          [
+            "Antes de aterrizar",
+            "Consumir o entregar la fruta del avión y otros alimentos dudosos solo por el sistema de recogida indicado por la compañía",
+            "Guardarlos en un bolsillo para decidir después"
+          ],
+          [
+            "Antes de elegir canal",
+            "Revisar todo el equipaje de cabina y facturado, incluidos regalos preparados por otra persona",
+            "Suponer que el equipaje facturado sigue otras normas sanitarias"
+          ],
+          [
+            "Artículo regulado o dudoso",
+            "Completar la declaración requerida en papel o electrónica y utilizar el canal rojo",
+            "Elegir el verde porque la cantidad sea pequeña"
+          ],
+          [
+            "Un agente solicita inspeccionarlo",
+            "Presentar con veracidad el producto, etiqueta, permiso y certificado",
+            "Abrir equipaje precintado por Aduanas u ocultar parte del producto"
+          ],
+          [
+            "Entrada rechazada",
+            "Seguir las instrucciones oficiales de devolución, tratamiento o eliminación y guardar el justificante entregado",
+            "Dárselo a otro viajero o sacarlo de la zona controlada"
+          ]
+        ]
+      },
+      {
+        "id": "special-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Artículos sujetos a otra autoridad o procedimiento"
+      },
+      {
+        "id": "special-list",
+        "type": "list",
+        "items": [
+          "La fórmula infantil, la nutrición médica y los alimentos para dietas especiales pueden tener condiciones limitadas. Verifica la disposición y cantidad vigentes; una necesidad médica no crea una exención implícita.",
+          "Los medicamentos y remedios tradicionales pueden contener ingredientes animales, vegetales, de especies amenazadas o sustancias farmacológicas controladas. La cuarentena es solo una capa; también pueden aplicarse normas sobre medicamentos y fauna silvestre.",
+          "Los perros y gatos de compañía siguen un procedimiento específico con documentación sanitaria y otros requisitos. No utilices esta revisión de alimentos y recuerdos para organizar la entrada de una mascota.",
+          "El correo, la mensajería y el comercio electrónico transfronterizo entran en el ámbito del Aviso n.º 470. Enviar un producto prohibido en vez de llevarlo no es una alternativa válida.",
+          "Las muestras comerciales, las existencias para vender y las grandes cantidades exceden el supuesto de equipaje personal ordinario y requieren una vía de importación adecuada."
+        ]
+      },
+      {
+        "id": "failure",
+        "type": "callout",
+        "title": "Si descubres un artículo dudoso después de hacer la maleta",
+        "tone": "warning",
+        "body": "Antes de salir, retíralo y contacta con Aduanas por un canal oficial con el nombre exacto, ingredientes, origen y ruta prevista. Al llegar, no lo abandones en un aseo ni en una papelera normal y no pidas a otro pasajero que lo lleve. Decláralo y sigue las instrucciones del agente. Conserva cualquier justificante de incautación, devolución o eliminación por si el seguro o el remitente necesitan pruebas."
+      },
+      {
+        "id": "scope",
+        "type": "callout",
+        "title": "Alcance y límite de las normas vigentes",
+        "tone": "neutral",
+        "body": "Esta es una revisión para preparar equipaje y declaraciones, no un certificado de despacho aduanero. El Aviso n.º 470 permite ajustar la lista según la evaluación de riesgos, y los controles por enfermedades u origen pueden cambiar. Revisa la lista y los avisos pertinentes poco antes de viajar. Aduanas decide la inspección y admisión; Homeground no puede determinar la admisibilidad a partir de una foto o etiqueta comercial."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Preguntas antes de hacer la maleta",
+        "items": [
+          {
+            "question": "¿Puedo llevar cecina de vacuno, carne deshilachada seca o salami a China?",
+            "answer": "No. La carne cruda o cocinada y sus productos están prohibidos cualquiera que sea el envase; no los lleves como recuerdos gastronómicos."
+          },
+          {
+            "question": "¿Puedo llevar queso, leche u otros lácteos?",
+            "answer": "La leche, nata, mantequilla, queso, yogur y leche condensada de origen animal figuran como productos lácteos en la lista. No los lleves salvo que una excepción expresa se aplique claramente al artículo exacto."
+          },
+          {
+            "question": "¿Puedo pasar la frontera con fruta fresca del vuelo?",
+            "answer": "No. La fruta y la verdura frescas figuran expresamente como categorías fitosanitarias prohibidas. Consúmelas o deséchalas antes de llegar."
+          },
+          {
+            "question": "¿Se permiten alimentos en conserva o al vacío?",
+            "answer": "El envase no cambia la categoría: la carne en conserva sigue siendo carne y la leche animal enlatada sigue siendo un lácteo. Los aperitivos vegetales envasados comercialmente suelen pasar, pero comprueba antes cada ingrediente."
+          },
+          {
+            "question": "¿Debo declarar un artículo si tengo dudas?",
+            "answer": "Sí. Declarar no convierte en permitido un artículo prohibido, pero el canal rojo es la vía correcta para artículos declarables o dudosos; Aduanas decide después si se rechazan, tratan, devuelven o eliminan."
+          }
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Completa la revisión de llegada",
+        "items": [
+          {
+            "label": "Canales rojo y verde de las aduanas chinas",
+            "href": "/guides/china-customs-red-green-channels/",
+            "description": "Elige el canal correcto tras revisar todas las maletas."
+          },
+          {
+            "label": "Requisitos de entrada en China",
+            "href": "/guides/china-entry-requirements/",
+            "description": "Separa los documentos de inmigración de las gestiones aduaneras y de cuarentena."
+          },
+          {
+            "label": "Baterías externas en aviones y trenes",
+            "href": "/guides/china-power-bank-rules-flights-trains/",
+            "description": "Completa la otra revisión del equipaje que suele causar problemas."
+          },
+          {
+            "label": "Tarjeta de llegada a China en línea",
+            "href": "/guides/china-online-arrival-card/",
+            "description": "Rellena previamente el formulario oficial gratuito y conoce la alternativa en papel."
+          },
+          {
+            "label": "Comer vegetariano o vegano en China",
+            "href": "/guides/vegetarian-vegan-china-travel/",
+            "description": "Ingredientes ocultos, una tarjeta para enseñar en cocina y cómo se organizan las comidas."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Fuentes oficiales consultadas",
+        "items": [
+          {
+            "label": "Aviso n.º 470 y lista de artículos prohibidos sujetos a cuarentena",
+            "url": "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm",
+            "publisher": "Ministerio de Agricultura y Asuntos Rurales / Administración General de Aduanas",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Lista de prohibiciones del Aviso n.º 470 en el portal de declaración de pasajeros",
+            "url": "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html",
+            "publisher": "Puerto Electrónico de China / Administración General de Aduanas",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Aviso aduanero n.º 43 de 2025 sobre declaración de equipajes",
+            "url": "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html",
+            "publisher": "Administración General de Aduanas",
+            "reviewedAt": "2026-09-09"
+          }
+        ]
+      }
+    ]
+  }
+}

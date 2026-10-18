@@ -1,0 +1,753 @@
+{
+  "slug": "forbidden-city-for-foreign-visitors",
+  "title": "Entradas a la Ciudad Prohibida para extranjeros: reserva y acceso",
+  "headline": "Ciudad Prohibida para visitantes extranjeros: entradas y acceso",
+  "description": "Reserva entradas a la Ciudad Prohibida en el portal oficial en inglés con tu pasaporte. Consulta la apertura de reservas con 7 días de antelación, las normas de acceso y la plaza de Tiananmén.",
+  "navTitle": "Ciudad Prohibida para visitantes extranjeros",
+  "heroAlt": "El Salón de la Armonía Suprema y su patio en la Ciudad Prohibida, con visitantes a la vista.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "direct-answer",
+        "type": "lead",
+        "text": "Para visitar la Ciudad Prohibida, reserva con antelación una entrada al Museo del Palacio con los datos del pasaporte de cada viajero y lleva los documentos originales usados en la reserva. Entra por la Puerta del Meridiano (Wumen), en el lado sur, y continúa la visita hacia la salida norte. Si también quieres visitar la plaza de Tiananmén, comprueba por separado sus condiciones de acceso. Esta guía explica cómo reservar, cómo llegar a la entrada y qué hacer si tu reserva no está confirmada."
+      },
+      {
+        "id": "reservation-pretrip-reminder",
+        "type": "callout",
+        "title": "Asegura el día de la Ciudad Prohibida antes de completar el resto de Pekín",
+        "body": "El Museo del Palacio no vende entradas para el mismo día. Si no quieres perderte esta visita, anota cuándo se abre la reserva y mantén el día flexible hasta confirmar a todos los viajeros. Las entradas al museo, el acceso a la plaza de Tiananmén y los controles de seguridad son partes distintas del plan.",
+        "tone": "decision",
+        "link": {
+          "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+          "label": "Qué organizar antes de viajar a China"
+        }
+      },
+      {
+        "id": "execution-summary",
+        "type": "callout",
+        "title": "La visita en siete decisiones",
+        "body": "1. Comprueba la fecha de visita en el calendario y los últimos avisos del Museo del Palacio. 2. Reserva el museo por un canal oficial con el documento que llevará cada persona. 3. Trata la plaza de Tiananmén como una decisión de acceso independiente y verifica su norma actual. 4. Elige el recorrido por la plaza o el acceso por Tongzihe este u oeste. 5. Prevé tiempo para caminar y pasar los controles antes de la Puerta del Meridiano. 6. Recorre el eje central con, como máximo, una visita lateral. 7. Sal por una puerta y una conexión previstas. No dejes que una entrada sin confirmar, una ubicación genérica del mapa o una recogida improvisada controlen el día.",
+        "tone": "decision"
+      },
+      {
+        "id": "square-rostrum-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Plaza de Tiananmén, Tribuna y Ciudad Prohibida: ¿qué reserva corresponde?"
+      },
+      {
+        "id": "square-rostrum-answer",
+        "type": "paragraph",
+        "text": "La reserva de la plaza de Tiananmén es para el espacio abierto de la plaza, no una entrada para subir a la Tribuna de Tiananmén (天安门城楼). La plataforma oficial de la plaza dirige expresamente a quienes quieran visitar la tribuna a la cuenta de WeChat independiente «天安门城楼参观预约». Para la Ciudad Prohibida, reserva por separado el Museo del Palacio. Antes de reservar, anota cuál de los tres lugares quieres visitar y comprueba cada canal oficial y horario confirmado. No supongas que entrar en la plaza incluye la tribuna o el museo. Los canales separados no siempre implican tres reservas: consulta más abajo el apartado de acceso a la plaza para la excepción publicada sobre una reserva válida del Museo del Palacio para ese mismo día y las comprobaciones de restricciones actuales."
+      },
+      {
+        "id": "square-rostrum-official",
+        "type": "sources",
+        "title": "Canales oficiales de reserva",
+        "items": [
+          {
+            "label": "Plataforma oficial de reservas de la plaza de Tiananmén",
+            "url": "https://yuyue2026.tamgw.beijing.gov.cn/web/"
+          },
+          {
+            "label": "Gobierno de Pekín: canales oficiales de reserva de la Tribuna",
+            "url": "https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html"
+          }
+        ]
+      },
+      {
+        "id": "official-check-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Normas de reserva y acceso al Museo del Palacio"
+      },
+      {
+        "id": "official-check-table",
+        "type": "table",
+        "caption": "Normas habituales del Museo del Palacio revisadas el 22 de agosto de 2026",
+        "columns": [
+          "Decisión",
+          "Norma oficial",
+          "Qué debe hacer el viajero"
+        ],
+        "rows": [
+          [
+            "Reserva anticipada",
+            "No hay entradas para el mismo día; normalmente se ponen a la venta a las 20:00, hora de China, siete días antes de la visita",
+            "Anota la hora de apertura en horario de China y no organices un día en Pekín en torno a una entrada sin confirmar"
+          ],
+          [
+            "Documentos extranjeros",
+            "El pasaporte y otros documentos aceptados de fuera de China continental sirven para la reserva nominativa y el control",
+            "Introduce con cuidado cada número de documento y lleva el original utilizado"
+          ],
+          [
+            "Identidad de la reserva",
+            "Un documento de identidad puede tener una entrada para una fecha de visita; después de comprar no se pueden cambiar la entrada, la fecha, la franja ni el visitante",
+            "Comprueba todos los integrantes antes de pagar; cancela y vuelve a reservar solo dentro de las normas de reembolso vigentes y si quedan entradas de sustitución"
+          ],
+          [
+            "Entrada",
+            "La Puerta del Meridiano, en el lado sur, es la única entrada para visitantes",
+            "No te dirijas a la puerta norte para llegar por la mañana"
+          ],
+          [
+            "Salida",
+            "Los visitantes salen por la Puerta de la Divina Proeza, al norte, o por la Puerta de la Prosperidad Oriental",
+            "Para este recorrido, planifica la salida norte antes de entrar"
+          ],
+          [
+            "Cierre semanal",
+            "Cierra los lunes excepto festivos oficiales; los avisos especiales pueden prevalecer sobre el calendario habitual",
+            "Vuelve a consultar los anuncios de apertura para la fecha poco antes de la visita"
+          ]
+        ]
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 1: reserva el Museo del Palacio, no un producto genérico de la Ciudad Prohibida"
+      },
+      {
+        "id": "booking-rules",
+        "type": "paragraph",
+        "text": "Para reservar con pasaporte extranjero, empieza en la página oficial en inglés Visit del Museo del Palacio y sigue Book Tickets hasta su propio portal de reservas. En la revisión del 8 de octubre de 2026, ese portal mostraba un proceso de acceso y registro en inglés con verificación por correo electrónico e indicaba que las reservas se abren a las 20:00, hora de China, siete días antes de la visita. El correo bookingticket@dpm.org.cn se publica actualmente para consultas sobre entradas, no como forma predeterminada de solicitar una reserva. Sigue las instrucciones del portal vigente sobre visitante, documento, fecha y franja y guarda el registro de la reserva completada. El museo no ha autorizado agentes externos para entradas individuales ni reservas de exposiciones. Considera una entrada ofrecida por un revendedor o intermediario como no verificada hasta disponer de la reserva completada del museo a nombre del propio visitante."
+      },
+      {
+        "id": "booking-paths",
+        "type": "table",
+        "caption": "Canales oficiales actuales de reserva y consulta revisados el 8 de octubre de 2026",
+        "columns": [
+          "Canal oficial",
+          "Qué indica actualmente",
+          "Límite"
+        ],
+        "rows": [
+          [
+            "Página oficial en inglés Visit → Book Tickets",
+            "El museo enlaza con su portal de reservas; el proceso en inglés muestra verificación por correo electrónico y acepta datos de pasaportes extranjeros",
+            "Sigue las indicaciones actuales y guarda la reserva completada de cada visitante; una cuenta por sí sola no reserva una plaza"
+          ],
+          [
+            "Portal oficial de entradas / miniprograma del Museo del Palacio",
+            "Las normas oficiales establecen la apertura a las 20:00, hora de China, siete días antes de la visita, y que no hay entradas para el mismo día",
+            "La disponibilidad, las categorías de documento y la franja reservada siguen determinando la visita real"
+          ],
+          [
+            "Correo oficial de consultas sobre entradas",
+            "bookingticket@dpm.org.cn se publica para consultas sobre entradas",
+            "Una consulta o respuesta no es una entrada; no uses instrucciones antiguas de reserva por correo como procedimiento actual predeterminado"
+          ]
+        ]
+      },
+      {
+        "id": "email-boundary",
+        "type": "callout",
+        "title": "Una cuenta o consulta no es una entrada confirmada al museo",
+        "body": "Guarda la reserva completada del museo y comprueba visitantes, documentos, fecha y franja antes de dar el día por asegurado. Si reservas por tu cuenta, envía los datos del pasaporte solo mediante el canal oficial actual del museo. Usa sus contactos publicados si el estado no está claro; no hagas un segundo pago hasta conocer el estado del primer pedido.",
+        "tone": "warning"
+      },
+      {
+        "id": "family-booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Reservar para una familia con pasaportes o documentos distintos"
+      },
+      {
+        "id": "family-booking-checklist",
+        "type": "list",
+        "items": [
+          "Haz coincidir el nombre completo, tipo y número de documento de cada persona con el original que llevará, incluido un menor con pasaporte extranjero que viaje con un progenitor con documento chino.",
+          "Comprueba por separado la edad en la fecha de visita y el derecho a tarifas reducidas. La política china actual limita la entrada gratuita de menores de 18 años a ciudadanos chinos, incluidos residentes de Hong Kong, Macao y Taiwán, y extranjeros con residencia permanente china.",
+          "Un pasaporte extranjero y la escolarización no determinan por sí solos la categoría de entrada. Si el formulario no es claro, contacta con el museo antes de pagar para confirmar la categoría aplicable a tu hijo.",
+          "Confirma una reserva para cada persona, incluidos los menores con entrada gratuita. Los progenitores acompañantes necesitan sus propias reservas válidas; la reducción de un menor no da entrada gratuita ni acceso a un adulto.",
+          "Guarda cada fecha, franja y registro de reserva confirmados y lleva los originales correspondientes, además de los justificantes de reducción exigidos. Resuelve las reservas que falten antes de la visita, sin depender de entradas para el mismo día."
+        ]
+      },
+      {
+        "id": "no-same-day",
+        "type": "callout",
+        "title": "Confirma tu reserva antes de visitar",
+        "body": "El Museo del Palacio no vende entradas para el mismo día. Confirma la reserva de cada visitante antes de desplazarte a la entrada. Si está incompleta o no es clara, contacta con el museo por sus canales oficiales antes de ir.",
+        "tone": "warning"
+      },
+      {
+        "id": "timeslot-analysis",
+        "type": "paragraph",
+        "text": "Las normas actuales dividen las visitas en mañana y tarde. Una reserva de mañana debe pasar el control como máximo a las 12:00; una de tarde no puede pasar antes de las 11:00. Son límites de control, no horas de llegada recomendadas. La seguridad, las restricciones por eventos y el último tramo a pie hasta la Puerta del Meridiano ocurren antes del acceso, y el museo no publica una duración de espera garantizada para seguridad. Sigue la franja del pedido vigente y deja un margen flexible en vez de darte por seguro un tiempo fijo de la puerta del hotel a la del museo."
+      },
+      {
+        "id": "booking-recovery-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Si falla la reserva, identifica el problema antes de comprar otra cosa"
+      },
+      {
+        "id": "booking-recovery-table",
+        "type": "table",
+        "caption": "Problemas de entradas y el siguiente paso menos arriesgado",
+        "columns": [
+          "Qué ocurrió",
+          "Qué significa",
+          "Cómo resolverlo"
+        ],
+        "rows": [
+          [
+            "La fecha está agotada",
+            "No hay disponibilidad oficial de entradas para comprar presencialmente ese mismo día en la que puedas confiar",
+            "Mueve el Museo del Palacio a otro día disponible en Pekín, usa entradas devueltas al canal oficial si reaparecen o sustitúyelo por otra visita confirmada; no bases el itinerario en una promesa no oficial"
+          ],
+          [
+            "Falla la verificación, el pago o el contacto",
+            "Una cuenta, un aviso de pago o una pantalla de error no son una reserva confirmada",
+            "Guarda capturas que oculten los datos sensibles, reintenta solo por el canal oficial actual y usa los contactos del Museo del Palacio o Pekín 12345 si el estado sigue sin aclararse"
+          ],
+          [
+            "Un nombre o número de pasaporte es incorrecto",
+            "La identidad del visitante no se puede editar simplemente después de comprar",
+            "Lee la norma de cancelación vigente antes de actuar. Reservar de nuevo con los datos corregidos requiere disponibilidad; no canceles un pedido válido y escaso sin entender las consecuencias"
+          ],
+          [
+            "Un viajero no tiene registro confirmado",
+            "El acceso nominativo se aplica persona por persona",
+            "Considera que ese viajero no tiene reserva y reorganiza el día del grupo, sin suponer que el personal puede añadir un acompañante en la puerta"
+          ],
+          [
+            "Un revendedor dice que la entrada está incluida",
+            "El producto del revendedor no demuestra que el museo haya emitido la entrada",
+            "Pide el registro de reserva del Museo del Palacio, la fecha, la franja y la coincidencia del documento antes de dar la visita por asegurada"
+          ]
+        ]
+      },
+      {
+        "id": "tiananmen-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 2: comprueba por separado la norma de la plaza de Tiananmén"
+      },
+      {
+        "id": "tiananmen-separate",
+        "type": "paragraph",
+        "text": "El Museo del Palacio y la plaza de Tiananmén tienen gestores, canales de reserva y controles de acceso distintos. Una reserva de la plaza nunca sustituye una entrada al Museo del Palacio. Según las medidas actuales de Tiananmén disponibles públicamente, quien tenga una reserva válida del Museo del Palacio para ese mismo día puede entrar en la plaza sin hacer una reserva separada de la plaza; debe mostrar ese registro válido en el control presencial. La exención no elimina seguridad, controles de afluencia ni restricciones temporales, así que vuelve a consultar los avisos oficiales antes de grandes eventos y fechas de control especial. Si solo quieres ir al museo, el acceso por Tongzihe este u oeste sigue siendo útil y no depende de atravesar la plaza."
+      },
+      {
+        "id": "approach-options",
+        "type": "comparison",
+        "title": "Elige el acceso sur antes de esa mañana",
+        "columns": [
+          {
+            "heading": "Solo Museo del Palacio",
+            "body": "Usa el acceso actual por Tongzihe este u oeste hasta la Puerta del Meridiano. Fija el destino del mapa en el lado correcto del palacio y prevé un último tramo a pie; Donghuamen y Xihuamen son referencias para aproximarse, no entradas para visitantes."
+          },
+          {
+            "heading": "Plaza de Tiananmén más Museo del Palacio",
+            "body": "Lleva la reserva válida del Museo del Palacio para ese mismo día al control de la plaza; si también se emitió un registro separado de la plaza, lleva ambos. Prevé los controles de seguridad y sigue el flujo de sur a norte desde la plaza hacia Duanmen y la Puerta del Meridiano. No uses una reserva de la plaza como prueba de entrada al palacio."
+          }
+        ]
+      },
+      {
+        "id": "entrance-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 3: llega a la Puerta del Meridiano con el documento correcto"
+      },
+      {
+        "id": "entrance-reality",
+        "type": "paragraph",
+        "text": "La dirección del Museo del Palacio, una ubicación de la Ciudad Prohibida en el mapa y la puerta visible más cercana no bastan. Los visitantes solo entran por la Puerta del Meridiano. La Puerta de la Divina Proeza es una salida, la Puerta de la Prosperidad Oriental es una salida y la Puerta de la Prosperidad Occidental suele ser un paso del personal. En el control, el visitante extranjero debe presentar el pasaporte original válido u otro documento aceptado usado para reservar. Una captura del pasaporte no es el documento original de la reserva."
+      },
+      {
+        "id": "arrival-budget",
+        "type": "table",
+        "caption": "Qué ocurre antes del recorrido de tres horas por el museo",
+        "columns": [
+          "Etapa",
+          "Qué prever",
+          "Qué no dar por hecho"
+        ],
+        "rows": [
+          [
+            "Del hotel a la zona controlada",
+            "Desplazamiento urbano normal, con margen para el tráfico y el punto correcto de bajada",
+            "Que un coche puede parar en la puerta visible más cercana"
+          ],
+          [
+            "Acceso a Tiananmén, si lo eliges",
+            "Su registro de reserva vigente, control de identidad, seguridad y restricciones por eventos",
+            "Que la entrada del palacio permite superar automáticamente todos los controles de la plaza"
+          ],
+          [
+            "Tramo final de aproximación",
+            "Un tramo peatonal considerable por el recorrido elegido del lado sur",
+            "Que la salida del metro o la ubicación del taxi son la entrada al museo"
+          ],
+          [
+            "Control en la Puerta del Meridiano",
+            "Documento original reservado, registro del pedido y franja indicada",
+            "Que bastan una foto del pasaporte, otro pasaporte o el registro de un acompañante"
+          ]
+        ]
+      },
+      {
+        "id": "morning-checklist",
+        "type": "list",
+        "items": [
+          "Lleva el pasaporte original usado para cada reserva; comprueba los pasaportes renovados y los números con dígitos intercambiados antes del día de apertura de la venta.",
+          "Ten a mano la fecha, la franja y el registro del pedido confirmados, pero recuerda que el documento de identidad es esencial para el control.",
+          "Abre la página de avisos oficiales la noche anterior para comprobar cierres temporales, días especiales de apertura y cambios en salas concretas.",
+          "Fija el recorrido hacia el acceso a la Puerta del Meridiano, no hacia Shenwumen, Donghuamen ni una ubicación genérica de la Ciudad Prohibida.",
+          "Acordad qué quitar si el acceso o los controles de seguridad tardan más de lo previsto."
+        ]
+      },
+      {
+        "id": "security-recovery",
+        "type": "callout",
+        "title": "La cola de seguridad no crea una excepción para la entrada",
+        "body": "Todos deben superar los controles de seguridad aplicables. Revisa la lista oficial de objetos prohibidos antes de salir del hotel. Si el personal detecta un objeto, sigue sus instrucciones para desecharlo, guardarlo o llevártelo de vuelta; no argumentes que una reserva horaria exime de seguridad. Las normas de visita describen opciones limitadas de gestión y posible ayuda con el reembolso en ciertos casos, pero no garantizan acceso, consigna ni una entrada de sustitución. Dejar ese objeto fuera del plan del día es la prevención más segura.",
+        "tone": "warning"
+      },
+      {
+        "id": "luggage-plan",
+        "type": "callout",
+        "title": "No visites el Museo del Palacio con el equipaje de un día de traslado",
+        "body": "Las maletas están prohibidas dentro. Actualmente, el Museo del Palacio ofrece consigna y traslado gratuito para el equipaje que cumpla las condiciones, con depósito en el centro de atención al visitante al oeste de la plaza de Duanmen y recogida fuera de la salida norte u oriental. El servicio tiene horarios estacionales y condiciones de almacenamiento. Dejar el equipaje en el hotel suele ser más sencillo; si necesitas consigna, comprueba la norma actual y elige la salida de recogida antes de entregar la maleta.",
+        "tone": "warning"
+      },
+      {
+        "id": "day-of-recovery-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Resolver imprevistos ese día: protege el viaje, no el guion original"
+      },
+      {
+        "id": "day-of-recovery-table",
+        "type": "table",
+        "caption": "Cuando la mañana no coincide con el plan",
+        "columns": [
+          "Problema",
+          "Acción inmediata",
+          "Alternativa"
+        ],
+        "rows": [
+          [
+            "Has llegado a Shenwumen o a otra puerta equivocada",
+            "Deja de dirigirte a una ubicación genérica de la Ciudad Prohibida y cambia al acceso actual a la Puerta del Meridiano",
+            "Si ya no es realista llegar antes del límite de control reservado, contacta con el punto de atención oficial; no esperes entrar por una salida"
+          ],
+          [
+            "Falta el pasaporte original reservado",
+            "Recupéralo si aún hay tiempo",
+            "Una foto o un documento de identidad distinto no son sustitutos seguros; reorganiza el día alrededor de otra visita si no se puede verificar el acceso"
+          ],
+          [
+            "Los controles o la caminata consumen el margen",
+            "Protege la franja de control reservada y elimina la visita a Tiananmén o la sección lateral opcional del palacio",
+            "Una vez dentro, usa el recorrido oficial de dos horas"
+          ],
+          [
+            "Un objeto prohibido impide continuar",
+            "Usa únicamente la opción de gestión que autorice el personal en ese momento",
+            "Sal de la zona controlada o sigue el procedimiento de reembolso vigente si no pueden aceptar el objeto; ni la consigna ni el reembolso están garantizados"
+          ],
+          [
+            "El museo o la sala elegida cierran temporalmente",
+            "Lee el aviso del Museo del Palacio para la fecha y las instrucciones del personal",
+            "Mantén el recorrido central si el museo está abierto; si no puede realizarse la visita completa, sigue el aviso oficial de reembolso y cambia a una alternativa de Pekín previamente elegida"
+          ]
+        ]
+      },
+      {
+        "id": "route-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 4: dedica tres horas al recorrido central y un único desvío elegido"
+      },
+      {
+        "id": "route-definition",
+        "type": "paragraph",
+        "text": "El Museo del Palacio publica recorridos de dos horas, medio día y un día. El plan siguiente es la opción de tres horas de Homeground, situada entre las dos primeras duraciones oficiales: conserva la secuencia central de sur a norte, deja espacio para un interés lateral y termina en la puerta norte. Las tres horas comienzan después del control del pasaporte en la Puerta del Meridiano. No incluyen el traslado desde el hotel, la seguridad de la zona de Tiananmén, la resolución de problemas de entradas ni el transporte tras salir."
+      },
+      {
+        "id": "taihemen-route-notice",
+        "type": "callout",
+        "title": "Comprueba el recorrido abierto alrededor de Taihemen",
+        "body": "Un aviso del Museo del Palacio del 31 de julio de 2026 anunció el cierre de la Puerta de la Armonía Suprema (Taihemen) por conservación desde el 3 de agosto, sin fecha de reapertura. El aviso se refiere a Taihemen; no anuncia el cierre de la entrada por la Puerta del Meridiano. Comprueba los avisos posteriores para tu fecha y sigue el recorrido abierto señalizado alrededor de cualquier zona restringida.",
+        "tone": "warning"
+      },
+      {
+        "id": "route-table",
+        "type": "table",
+        "caption": "Un recorrido realista de tres horas desde la Puerta del Meridiano hasta la salida norte",
+        "columns": [
+          "Tiempo transcurrido",
+          "Recorrido",
+          "Criterio de decisión"
+        ],
+        "rows": [
+          [
+            "0:00–0:20",
+            "Puerta del Meridiano → puentes interiores del Agua Dorada → zona de Taihemen, por el recorrido abierto a visitantes",
+            "Sigue la señalización actual alrededor de cualquier tramo restringido y ajusta el tiempo si hace falta un desvío"
+          ],
+          [
+            "0:20–1:05",
+            "Salón de la Armonía Suprema → Salón de la Armonía Central → Salón de la Armonía Preservada",
+            "Prioriza esta secuencia central del Patio Exterior en una primera visita"
+          ],
+          [
+            "1:05–1:45",
+            "Toma un único desvío en su cruce real: una galería del lado este después del Salón de la Armonía Preservada, o un conjunto de palacios abierto alrededor de la Puerta de la Pureza Celestial",
+            "Elige una rama y vuelve al recorrido central; no dejes todos los desvíos para el extremo norte"
+          ],
+          [
+            "1:45–2:15",
+            "Puerta de la Pureza Celestial → Palacio de la Pureza Celestial → Salón de la Unión → Palacio de la Tranquilidad Terrestre",
+            "Retoma el eje central del Patio Interior después del desvío elegido"
+          ],
+          [
+            "2:15–2:45",
+            "Jardín Imperial",
+            "Deja tiempo para disfrutar del jardín sin poner en riesgo el plan de salida"
+          ],
+          [
+            "2:45–3:00",
+            "Camina hasta la Puerta de la Divina Proeza y sal por el norte",
+            "Termina el recorrido en lugar de retroceder por una sala lateral que no hayas visto"
+          ]
+        ]
+      },
+      {
+        "id": "side-choice",
+        "type": "callout",
+        "title": "Elige la sección lateral antes de entrar",
+        "body": "Si te interesan sobre todo los objetos, reserva o elige una galería cuya apertura esté confirmada y desvíate hacia ella donde el mapa oficial gira realmente al este, normalmente después del Salón de la Armonía Preservada. Si te interesan más los interiores palaciegos y la distribución espacial, elige un conjunto abierto al este o al oeste de la Puerta de la Pureza Celestial. Si una exposición temporal es prioritaria, sigue su ubicación indicada y deja que sustituya la sección lateral en vez de añadirla. Algunas galerías requieren entrada o reserva aparte y los cierres temporales pueden cambiar el recorrido viable.",
+        "tone": "decision"
+      },
+      {
+        "id": "three-hour-limit",
+        "type": "paragraph",
+        "text": "Tres horas bastan para un primer recorrido coherente, no para todo el Museo del Palacio. Las colas interiores, las fotos, los descansos, el tiempo y el aforo de las galerías pueden consumir el margen de la sección lateral. Si el eje central ya lleva más tiempo, elimina el desvío y conserva el Jardín Imperial y la salida norte. El recorrido funciona cuando mantiene la energía y la dirección, no cuando se marca cada salón de una lista."
+      },
+      {
+        "id": "parents-callout",
+        "type": "callout",
+        "title": "Con padres o personas que caminan más despacio, acorta antes de acelerar",
+        "body": "Haz del Museo del Palacio el principal bloque de caminata del día. Usa el recorrido oficial de dos horas como alternativa, añade pausas sentadas y no programes automáticamente Jingshan después de salir por el norte. Un bloque de tres horas dentro puede convertirse en una salida mucho más larga de puerta a puerta al sumar la aproximación sur y el trayecto desde Shenwumen.",
+        "tone": "neutral"
+      },
+      {
+        "id": "route-cuts-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Qué conservar y qué quitar cuando falta tiempo"
+      },
+      {
+        "id": "route-cuts",
+        "type": "comparison",
+        "columns": [
+          {
+            "heading": "Conserva",
+            "items": [
+              "La franja de control reservada y el pasaporte original",
+              "La entrada por la Puerta del Meridiano",
+              "La secuencia principal de sur a norte",
+              "Un final organizado por la salida elegida"
+            ]
+          },
+          {
+            "heading": "Quita primero",
+            "items": [
+              "Una segunda galería de pago",
+              "Cruzar de las salas del este a las del oeste",
+              "Una exposición temporal que no fuera el motivo principal de la reserva",
+              "Subir automáticamente a Jingshan después del palacio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "closures-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 5: vuelve a comprobar el calendario incluso después de comprar"
+      },
+      {
+        "id": "closures-analysis",
+        "type": "paragraph",
+        "text": "El calendario habitual es estacional y normalmente excluye los lunes, pero los festivos oficiales y los anuncios para fechas concretas pueden cambiar los días de apertura, los accesos o los edificios individuales. Una apertura especial en lunes no establece una norma general para los lunes, y un museo abierto no demuestra que todas sus galerías lo estén. La reserva, la página Visit actual y el último aviso fechado deben coincidir antes de cerrar el recorrido."
+      },
+      {
+        "id": "hours-table",
+        "type": "table",
+        "caption": "Horarios habituales del Museo del Palacio en la revisión del 22 de agosto de 2026",
+        "columns": [
+          "Temporada",
+          "Apertura",
+          "Último acceso",
+          "Cierre del museo"
+        ],
+        "rows": [
+          [
+            "1 de abril–31 de octubre",
+            "08:30",
+            "16:00",
+            "17:00"
+          ],
+          [
+            "1 de noviembre–31 de marzo",
+            "08:30",
+            "15:30",
+            "16:30"
+          ]
+        ]
+      },
+      {
+        "id": "hours-boundary",
+        "type": "callout",
+        "title": "Estos horarios sirven para comprobar, no como garantía",
+        "body": "El Museo del Palacio indica que los festivos y las circunstancias especiales pueden ampliar, reducir o suspender la apertura. Los salones individuales, la Galería de los Tesoros, la Galería de los Relojes y las exposiciones actuales pueden tener avisos propios de último acceso o cierre. Consulta las páginas oficiales vigentes al reservar y de nuevo antes de salir hacia el museo.",
+        "tone": "warning"
+      },
+      {
+        "id": "closure-checklist",
+        "type": "callout",
+        "title": "Haz tres comprobaciones actuales para una fecha con más riesgo",
+        "body": "Comprueba al reservar, de nuevo 24–48 horas antes de la visita y otra vez antes de salir del hotel. En festivos oficiales, fechas de grandes eventos o días de mal tiempo intenso, lee el último aviso del Museo del Palacio y las indicaciones actuales de Tiananmén en vez de copiar el recorrido de ayer. Guarda una alternativa flexible, como el Templo del Cielo, el Palacio de Verano o un día de barrio, pero confirma sus propias normas de entradas y horarios antes de usarla.",
+        "tone": "decision"
+      },
+      {
+        "id": "exit-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Paso 6: sal por Shenwumen con el siguiente paso ya elegido"
+      },
+      {
+        "id": "north-exit",
+        "type": "paragraph",
+        "text": "La Puerta de la Divina Proeza es la salida norte del Museo del Palacio y queda frente al parque Jingshan, al otro lado de la calle. No es una entrada para llegar por la mañana ni te devuelve al punto inicial del sur. La página de transporte del museo enumera paradas de autobús en Shenwumen y la puerta este de Jingshan, indica que no hay aparcamiento específico del Museo del Palacio y recomienda el transporte público. Las líneas de autobús y restricciones de tráfico son detalles operativos: compruébalos en un mapa actualizado ese día."
+      },
+      {
+        "id": "exit-options",
+        "type": "table",
+        "caption": "Qué hacer después de salir por la puerta norte",
+        "columns": [
+          "Siguiente plan",
+          "Mejor preparación",
+          "Error habitual"
+        ],
+        "rows": [
+          [
+            "Terminar las visitas",
+            "Usa una parada de autobús confirmada o un punto legal de recogida y vuelve a la zona del hotel",
+            "Suponer que habrá un taxi esperando justo debajo de la puerta"
+          ],
+          [
+            "Continuar a Jingshan",
+            "Cruza solo por el paso peatonal vigente y decide la subida por separado según la energía disponible",
+            "Añadir la colina automáticamente porque parece estar al lado"
+          ],
+          [
+            "Continuar hacia la ciudad antigua del norte",
+            "Comprueba la conexión exacta a pie, en autobús o en coche hasta el siguiente lugar con nombre concreto",
+            "Usar «hutongs» o «Shichahai» como destino impreciso"
+          ],
+          [
+            "Recoger equipaje en consigna",
+            "Usa la salida elegida al dejar la maleta y comprueba los horarios de recogida",
+            "Salir por la otra puerta y provocar un desplazamiento adicional"
+          ],
+          [
+            "Usar la Puerta de la Prosperidad Oriental",
+            "Confirma que la salida está abierta y organiza la conexión desde el lado este",
+            "Suponer que las salidas este y norte llevan al mismo plan de transporte"
+          ]
+        ]
+      },
+      {
+        "id": "pickup-plan",
+        "type": "callout",
+        "title": "Una recogida en la puerta norte necesita una ubicación, no una promesa",
+        "body": "Pide al conductor, guía u hotel el punto legal exacto de recogida en chino y guárdalo antes de entrar. La cobertura móvil, las restricciones de tráfico y las normas de parada pueden cambiar el lugar práctico de encuentro. «Nos vemos a la salida de la Ciudad Prohibida» no es suficientemente concreto cuando el museo tiene dos salidas para visitantes y la puerta norte da a otra atracción concurrida.",
+        "tone": "decision"
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Preguntas que pueden desorganizar la visita",
+        "items": [
+          {
+            "id": "faq-north-entry",
+            "question": "¿Puedo entrar por la puerta norte?",
+            "answer": "No. La Puerta de la Divina Proeza es una salida. Los visitantes entran por la Puerta del Meridiano, en el lado sur."
+          },
+          {
+            "id": "faq-tiananmen",
+            "question": "¿Necesito una reserva separada para la plaza de Tiananmén?",
+            "answer": "Según las medidas de Tiananmén actualmente publicadas, no hace falta una reserva separada de la plaza si tienes una reserva válida del Museo del Palacio para ese mismo día; muestra ese registro en el control presencial. Vuelve a consultar los avisos oficiales antes de grandes eventos o restricciones temporales. La relación inversa no se cumple: una reserva de la plaza nunca sustituye la entrada al Museo del Palacio."
+          },
+          {
+            "id": "faq-sold-out",
+            "question": "¿Qué hago si se han agotado las entradas a la Ciudad Prohibida?",
+            "answer": "No vayas a la puerta esperando una excepción para extranjeros. Comprueba solo la disponibilidad oficial, mueve el museo a otro día disponible en Pekín o usa una alternativa confirmada y mantén el resto del plan de la ciudad. Un revendedor puede prestar un servicio más amplio, pero debe aportar igualmente un registro válido de reserva del Museo del Palacio para cada visitante."
+          },
+          {
+            "id": "faq-passport",
+            "question": "¿Basta con una foto del pasaporte?",
+            "answer": "No. El Museo del Palacio exige el documento original válido usado para reservar. Guarda una copia digital como respaldo general del viaje, pero no la uses en sustitución del original reservado durante el control."
+          },
+          {
+            "id": "faq-three-hours",
+            "question": "¿Bastan realmente tres horas?",
+            "answer": "Bastan para recorrer a un ritmo constante el eje central, una sección lateral limitada, el Jardín Imperial y salir por la puerta norte. No bastan para una visita completa del museo, varias galerías, explicaciones largas y los conjuntos palaciegos tanto del este como del oeste."
+          }
+        ]
+      },
+      {
+        "id": "fact-label",
+        "type": "callout",
+        "title": "Hechos oficiales y criterios de planificación de Homeground",
+        "body": "La apertura de la venta, los documentos de identidad aceptados, la exigencia del original, las franjas horarias, el cierre de los lunes, los horarios estacionales, la entrada y salidas en sentido único, los recorridos publicados, la consigna y la información de transporte proceden de las fuentes oficiales siguientes. La distribución exacta de tres horas, la indicación de elegir una sola sección lateral, la salida norte predeterminada y la estrategia de recogida son criterios de planificación de Homeground basados en esos hechos.",
+        "tone": "neutral"
+      },
+      {
+        "id": "prepublish-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Últimas comprobaciones antes de salir hacia la visita"
+      },
+      {
+        "id": "prepublish-list",
+        "type": "list",
+        "items": [
+          "La página de entradas del Museo del Palacio sigue mostrando la misma apertura de reservas, los documentos extranjeros aceptados y las franjas de control.",
+          "Las instrucciones actuales del canal oficial en inglés o chino siguen correspondiendo al método usado, y cada visitante tiene una reserva completada.",
+          "El último aviso no cambia el calendario de los lunes, los horarios diarios ni la fecha de visita elegida.",
+          "La Puerta del Meridiano sigue siendo la entrada y Shenwumen sigue disponible como salida prevista.",
+          "La galería o exposición lateral elegida está abierta y se ha obtenido cualquier reserva adicional necesaria.",
+          "Se ha comprobado por separado la norma actual de la plaza de Tiananmén, incluido si un registro válido del Museo del Palacio sigue evitando una segunda reserva.",
+          "Cada viajero tiene un registro confirmado que coincide con el documento original que llevará; nadie depende de la reserva de un acompañante.",
+          "Se ha revisado la lista de objetos prohibidos y el tiempo de aproximación incluye caminar y pasar seguridad, sin una duración de cola prometida.",
+          "Se ha confirmado para ese día el plan de autobús, recogida o retirada de equipaje en la puerta norte."
+        ]
+      },
+      {
+        "id": "related-guides",
+        "type": "internal-links",
+        "title": "Sigue planificando Pekín",
+        "items": [
+          {
+            "label": "Dónde alojarse en Pekín en una primera visita",
+            "href": "/guides/beijing-where-to-stay-first-trip/",
+            "description": "Compara Wangfujing, Qianmen, Sanlitun y los hutongs del norte teniendo en cuenta tanto la entrada del palacio como la salida norte."
+          },
+          {
+            "label": "China con padres mayores",
+            "href": "/guides/china-itinerary-with-older-parents/",
+            "description": "Organiza la visita según la tolerancia a caminar, el tiempo de recuperación y una salida elegida de antemano."
+          },
+          {
+            "label": "¿Tu itinerario por China es demasiado apresurado?",
+            "href": "/guides/is-your-china-itinerary-too-rushed/",
+            "description": "Comprueba si el día del palacio deja una cantidad de energía realista para el resto de Pekín."
+          },
+          {
+            "label": "Verificar una entrada a una atracción de China",
+            "href": "/guides/official-or-reseller-china-tickets/",
+            "description": "Identifica al responsable de las entradas de la atracción, compara la asistencia y condiciones del revendedor y comprueba el estado de la reserva antes de confiar en una entrada a una atracción china."
+          },
+          {
+            "label": "Elegir puerta y recorrido en el Palacio de Verano",
+            "href": "/guides/summer-palace-gates-route-and-boat-plan/",
+            "description": "Relaciona las puertas Este, Norte o del Palacio Nuevo con tus prioridades, distingue la entrada básica de la combinada y crea un recorrido que siga funcionando si se suspenden los barcos."
+          },
+          {
+            "label": "Planificar una visita al Templo del Cielo",
+            "href": "/guides/temple-of-heaven-gates-and-ritual-sequence/",
+            "description": "Prepara un plan propio de puerta, entrada y secuencia ritual para otro gran conjunto patrimonial de Pekín."
+          },
+          {
+            "label": "Museo Nacional de China: reserva y un recorrido selectivo",
+            "href": "/guides/national-museum-of-china-booking-and-route/",
+            "description": "Reserva el museo al otro lado de la plaza con el mismo pasaporte y recorre una selección breve en lugar de todo el edificio."
+          }
+        ]
+      },
+      {
+        "id": "official-sources",
+        "type": "sources",
+        "title": "Fuentes oficiales consultadas",
+        "items": [
+          {
+            "label": "Página Visit actual del Museo del Palacio en inglés y enlace de reserva en línea",
+            "url": "https://intl.dpm.org.cn/visit.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-10-08"
+          },
+          {
+            "label": "Enlace oficial al servicio de entradas del Museo del Palacio",
+            "url": "https://bookingticket.dpm.org.cn/",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-10-08"
+          },
+          {
+            "label": "Normas de entradas y documentos de identidad del Museo del Palacio",
+            "url": "https://www.dpm.org.cn/subject_booking/",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Política actual de entradas en chino y requisitos para tarifas reducidas del Museo del Palacio",
+            "url": "https://www.dpm.org.cn/singles_detail/257830.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-09-08"
+          },
+          {
+            "label": "Aviso de conservación de Taihemen del Museo del Palacio, del 31 de julio de 2026",
+            "url": "https://www.dpm.org.cn/announce_detail/379422.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-09-08"
+          },
+          {
+            "label": "Horarios, recorridos, puertas y transporte del Museo del Palacio",
+            "url": "https://www.dpm.org.cn/Visit.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Normas de visita, seguridad y equipaje del Museo del Palacio",
+            "url": "https://www.dpm.org.cn/singles_detail/259831.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Lista de objetos prohibidos del Museo del Palacio",
+            "url": "https://www.dpm.org.cn/singles_detail/259832.html",
+            "publisher": "Museo del Palacio",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Orientación de Pekín 12345 para reservar el Museo del Palacio con pasaporte extranjero",
+            "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+            "publisher": "Gobierno Popular del Municipio de Pekín",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Medidas de reserva en prueba de la plaza de Tiananmén y exención del Museo del Palacio",
+            "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
+            "publisher": "Comité de Gestión de la Zona de Tiananmén",
+            "reviewedAt": "2026-08-22"
+          },
+          {
+            "label": "Canales oficiales actuales de reserva de la plaza de Tiananmén",
+            "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
+            "publisher": "Gobierno Popular del Municipio de Pekín",
+            "reviewedAt": "2026-08-22"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import type { GuideReservationOffer as Offer } from "../../lib/guideReservationOffers";
-import type { HomegroundLocale } from "../../lib/homegroundI18n";
+import type { GuideReservationLocale } from "../../lib/guideReservationOffers";
 import { GuideCtaLink } from "../GuideCtaLink";
 import cardStyles from "./GuideReservationCta.module.css";
 import styles from "./GuideReservationOffer.module.css";
@@ -14,12 +14,12 @@ import styles from "./GuideReservationOffer.module.css";
  * attraction ticked. "line" is a single sentence and link for a second,
  * contextual mention on a guide that already carries the booking card.
  */
-export function GuideReservationOffer({ guideId, locale, offer }: { guideId: string; locale: HomegroundLocale; offer: Offer }) {
+export function GuideReservationOffer({ guideId, locale, offer }: { guideId: string; locale: GuideReservationLocale; offer: Offer }) {
   if (offer.variant === "line") {
     return (
       <aside aria-label={offer.label} className={styles.line} data-guide-reservation-offer={guideId} data-similarity-ignore>
         <p className={styles.lineText}>
-          <strong>{offer.title}</strong> {offer.body} <span className={styles.lineFee}>{offer.fee} {offer.feeUnit}.</span>
+          <strong>{offer.title}</strong> {offer.body} <span className={styles.lineFee}><bdi>{offer.fee}</bdi> {offer.feeUnit}.</span>
         </p>
         <GuideCtaLink className={styles.lineAction} guideId={guideId} href={offer.href} locale={locale} position="inline">
           {offer.action}
@@ -31,11 +31,11 @@ export function GuideReservationOffer({ guideId, locale, offer }: { guideId: str
     <aside aria-label={offer.label} className={cardStyles.card} data-guide-reservation-offer={guideId} data-similarity-ignore>
       <p className={cardStyles.label}>{offer.label}</p>
       <p className={cardStyles.title}>{offer.title}</p>
-      <p className={cardStyles.fee}><span className={cardStyles.feeAmount}>{offer.fee}</span> <span className={cardStyles.feeUnit}>{offer.feeUnit}</span></p>
+      <p className={cardStyles.fee}><bdi className={cardStyles.feeAmount}>{offer.fee}</bdi> <span className={cardStyles.feeUnit}>{offer.feeUnit}</span></p>
       <p className={cardStyles.body}>{offer.body}</p>
       {offer.examples.length ? (
         <p className={styles.examples}>
-          <span className={styles.examplesLabel}>Attractions we can book</span>{" "}
+          <span className={styles.examplesLabel}>{offer.examplesLabel}</span>{" "}
           {/* The dot stays with the name before it, so no line starts with "·". */}
           {offer.examples.map((example, index, all) => (
             <Fragment key={example.attractionId}>

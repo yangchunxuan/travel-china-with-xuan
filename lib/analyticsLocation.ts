@@ -187,7 +187,7 @@ export function guideCtaProductSlug(
     }
     // Only an allowlisted product path can identify the product. Ignore all
     // query and fragment text, including a tour parameter on a collection.
-    const slug = url.pathname.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u)?.[1];
+    const slug = url.pathname.match(/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?tours\/([^/]+)\/$/u)?.[1];
     return isPrivateTourInquirySlug(slug) ? slug : undefined;
   } catch {
     return undefined;
@@ -205,11 +205,11 @@ export function guideCtaTarget(href: string): GuideCtaTarget {
     ) {
       return "other";
     }
-    const tourPath = url.pathname.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u);
+    const tourPath = url.pathname.match(/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?tours\/([^/]+)\/$/u);
     if (tourPath && isPrivateTourInquirySlug(tourPath[1])) return "private_tour";
-    if (/^\/(?:zh\/|ko\/)?tours\/$/u.test(url.pathname)) return "private_tour";
+    if (/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?tours\/$/u.test(url.pathname)) return "private_tour";
     // Explicit public service paths; never classify arbitrary URL input as a service.
-    if (/^\/(?:zh\/|ko\/)?services\/(?:private-english-speaking-guides|china-attraction-reservations|private-car-and-driver)\/$/u.test(url.pathname)) return "service";
+    if (/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?services\/(?:private-english-speaking-guides|china-attraction-reservations|private-car-and-driver)\/$/u.test(url.pathname)) return "service";
     if (
       publicHomePaths.has(url.pathname) &&
       ((url.hash !== "" && publicHomeFragments.has(url.hash)) ||

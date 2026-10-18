@@ -1,3 +1,6 @@
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths";
+import { getReservationGuideEdition } from "../lib/reservationGuideEditions";
+import { ReservationGuideEditionCollection } from "./ReservationGuideEditionCollection";
 import Link from "next/link";
 import { SpanishSiteFooter, SpanishSiteHeader } from "./SpanishChrome";
 import { SpanishContactPanel } from "./SpanishContactPanel";
@@ -31,13 +34,13 @@ export function SpanishGuidesHubPage() {
     inLanguage: "es",
     mainEntity: {
       "@type": "ItemList",
-      numberOfItems: spanishGuides.length,
-      itemListElement: spanishGuides.map((guide, index) => ({
+      numberOfItems: spanishGuides.length + reservationGuideEditionSlugs.length,
+      itemListElement: [...spanishGuides.map((guide, index) => ({
         "@type": "ListItem",
         position: index + 1,
         name: guide.headline,
         url: `${site}${spanishGuidePath(guide.slug)}`,
-      })),
+      })), ...reservationGuideEditionSlugs.map((slug, index) => ({ "@type": "ListItem", position: index + spanishGuides.length + 1, name: getReservationGuideEdition("es", slug)!.headline, url: `${site}${reservationGuideEditionPath("es", slug)}` }))],
     },
   };
 
@@ -67,7 +70,7 @@ export function SpanishGuidesHubPage() {
             </div>
             <div className={styles.catalogSummary}>
               <p>Primero lo práctico: el visado, los pagos y la tarjeta de llegada. Después, los lugares: la Gran Muralla, los Guerreros de Terracota, los pandas, Zhangjiajie y Yangshuo.</p>
-              <p className={styles.guideCount}>Publicadas: {spanishGuides.length}</p>
+              <p className={styles.guideCount}>En esta selección: {spanishGuides.length}</p>
             </div>
           </div>
           <SpanishGuideCards guides={spanishGuides} />
@@ -76,6 +79,7 @@ export function SpanishGuidesHubPage() {
           </p>
         </section>
 
+        <ReservationGuideEditionCollection language="es"/>
         <section className={styles.cta} id="contact" aria-labelledby="guide-contact-title">
           <div className={styles.ctaInner}>
             <p className={styles.ctaEyebrow}>Después de leer</p>

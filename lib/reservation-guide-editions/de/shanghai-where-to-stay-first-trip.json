@@ -1,0 +1,385 @@
+{
+  "slug": "shanghai-where-to-stay-first-trip",
+  "title": "Wo beim ersten Shanghai-Besuch übernachten? 3 gute Gegenden im Vergleich",
+  "headline": "Den ersten Standort in Shanghai nach den tatsächlichen Tageswegen wählen",
+  "description": "People’s Square für die Verkehrsanbindung, der Bund für die Skyline vor der Tür, die ehemalige Französische Konzession für Abende im Viertel. Was zu Ihrer Reise passt.",
+  "navTitle": "Gegenden für den ersten Shanghai-Besuch",
+  "heroAlt": "Die nachts beleuchtete East Nanjing Road im Zentrum Shanghais.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "People’s Square, der Bund mit der East Nanjing Road und das gemeinhin als ehemalige Französische Konzession bezeichnete Gebiet eignen sich alle für einen ersten Aufenthalt in Shanghai. Sie erleichtern jedoch unterschiedliche Tagesabläufe. Die Wahl lautet nicht „zentral oder charmant“. Entscheidend ist, ob das Hotel die Wege vereinfachen, eine bestimmte Sehenswürdigkeit vor die Tür bringen oder gewöhnliche Morgen und Abende zum Mittelpunkt des Aufenthalts machen soll."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "Die kurze Entscheidungshilfe",
+        "tone": "decision",
+        "body": "Wählen Sie People’s Square als ausgewogenen Ausgangspunkt mit guter Verkehrsanbindung für eine Mischung aus Sehenswürdigkeiten. Bund oder East Nanjing Road passen, wenn Spaziergänge an der Skyline und das lebhafte touristische Stadtzentrum an mehreren Tagen wichtig sind und Sie Menschenmengen sowie einen möglicherweise umständlichen letzten Fußweg akzeptieren. Wählen Sie eine konkrete Adresse im Gebiet der ehemaligen Französischen Konzession, wenn baumbestandene Straßen, Cafés und Abende im Viertel wichtiger sind als die Nähe zum Bund – aber erst nach Prüfung der tatsächlichen Station und Anreise."
+      },
+      {
+        "id": "boundary",
+        "type": "paragraph",
+        "text": "Diese Seite vergleicht drei größere Standortbereiche; sie bewertet keine Hotels und behauptet nicht, die gesamte ehemalige Französische Konzession bilde einen einzigen Bezirk. Diese Reisebezeichnung umfasst zahlreiche Straßen und mehrere U-Bahn-Stationen. Ein Hotel bei Changshu Road funktioniert anders als eines bei Xintiandi oder Jiaotong University. Prüfen Sie deshalb immer den Weg bis zur konkreten Hotellobby."
+      },
+      {
+        "id": "matrix",
+        "type": "table",
+        "caption": "Drei gute Standorte mit unterschiedlichen Vorteilen",
+        "columns": [
+          "Standort",
+          "Was er erleichtert",
+          "Was Sie dafür in Kauf nehmen",
+          "Zu prüfen"
+        ],
+        "rows": [
+          [
+            "People’s Square",
+            "Ausgewogener Zugang zu den Linien 1, 2 und 8 und flexible Wege im Zentrum",
+            "Weniger besonderes Umfeld direkt vor der Tür als am Fluss oder in den Gassenvierteln",
+            "Richtiger Stationsausgang, Straßenquerungen und Fußweg zur Lobby"
+          ],
+          [
+            "Bund / East Nanjing Road",
+            "Wiederholte Skyline-Spaziergänge, Fußgängerzone und Abende im lebhaften touristische Stadtzentrum",
+            "Menschenmengen, Lärm sowie Verkehrs- und Fußgängerregelungen zu Stoßzeiten",
+            "Ausstiegspunkt fürs Auto, Gepäckweg und Zimmer zur ruhigen Seite"
+          ],
+          [
+            "Gebiet der ehemaligen Französischen Konzession",
+            "Spaziergänge im Viertel, Cafés und ruhigere Morgen und Abende",
+            "Die weite Gebietsbezeichnung kann zusätzliche Umstiege verbergen",
+            "Tatsächlich nützliche Station, nächtlicher Rückweg und Flughafen- oder Bahnhofstransfer"
+          ]
+        ]
+      },
+      {
+        "id": "trip-fit",
+        "type": "table",
+        "caption": "Den Hotelstandort nach wiederkehrenden Wegen wählen",
+        "columns": [
+          "Reiseablauf",
+          "Zuerst zu prüfender Standort",
+          "Entscheidende Prüfung"
+        ],
+        "rows": [
+          [
+            "Drei oder vier Nächte, erster Besuch, verschiedene klassische Sehenswürdigkeiten",
+            "People’s Square",
+            "Das Hotel liegt wirklich nahe an einem nutzbaren Eingang der Linien 1/2/8"
+          ],
+          [
+            "Sonnenauf- oder -untergang am Bund und East Nanjing Road an mehreren Tagen",
+            "Bund / East Nanjing Road",
+            "Zimmer und Eingang eignen sich auch bei Andrang und Lärm"
+          ],
+          [
+            "Essen, Design, Cafés und Spaziergänge im Viertel stehen im Mittelpunkt",
+            "Konkrete Adresse in der ehemaligen Französischen Konzession",
+            "Straße und Station passen zu den übrigen fest geplanten Tagen"
+          ],
+          [
+            "Ältere Eltern, Kinderwagen oder mehrere Koffer",
+            "Hotel mit dem einfachsten Weg vom Straßenrand zum Zimmer",
+            "Die Gebietsbezeichnung darf stufenlosen Zugang nicht verdrängen"
+          ],
+          [
+            "Späte Ankunft oder frühe Abreise",
+            "Hotel, das diesen Transfer erleichtert",
+            "Verbindung zu den tatsächlichen Betriebszeiten und besetzte Rezeption bei Ankunft"
+          ]
+        ]
+      },
+      {
+        "id": "regional-stay-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Suzhou oder Hangzhou besuchen: Zimmer behalten oder umziehen?"
+      },
+      {
+        "id": "regional-stay-choice",
+        "type": "paragraph",
+        "text": "Für einen gezielten Tagesausflug nach Suzhou erspart ein weiterhin gebuchtes Zimmer in Shanghai das Umpacken und einen weiteren Check-in. Die 5-tägige Shanghai–Suzhou-Reise von Homeground nutzt für alle vier Nächte dasselbe Hotel in Shanghai und führt per Hochgeschwindigkeitszug aus Suzhou zurück. Wenn Westsee, Tee und Tempelbesuche in Hangzhou wichtig sind, sieht die 6-tägige Route stattdessen 2 Nächte Shanghai, 1 Nacht Suzhou und 2 Nächte Hangzhou vor. Das schafft Zeit vor Ort in jeder Stadt, bedeutet aber zwei Hotelwechsel. Beide Reisen enthalten Frühstück und Hotels mit einer Ctrip-Bewertung von 4 Diamanten; diese Bewertung ist keine internationale Vier-Sterne-Zertifizierung. Hotel, Zimmer und Lage werden vor der Buchung bestätigt. Eine Adresse am Bund oder Aussicht darauf ist damit nicht zugesagt."
+      },
+      {
+        "id": "regional-stay-products",
+        "type": "internal-links",
+        "title": "Zuerst die Hotelaufteilung wählen",
+        "items": [
+          {
+            "label": "5-tägige Privatreise Shanghai–Suzhou",
+            "href": "/tours/shanghai-suzhou-5-day-private-tour/",
+            "description": "Vier Nächte in einem Hotel in Shanghai, mit einem Tagesausflug nach Suzhou."
+          },
+          {
+            "label": "6-tägige Privatreise Shanghai–Suzhou–Hangzhou",
+            "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+            "description": "Zwei Nächte in Shanghai, danach weiter über Suzhou nach Hangzhou."
+          }
+        ]
+      },
+      {
+        "id": "peoples-square",
+        "type": "heading",
+        "level": 2,
+        "text": "People’s Square: die ausgewogene Lösung für kurze Verkehrswege"
+      },
+      {
+        "id": "peoples-square-copy",
+        "type": "paragraph",
+        "text": "Die Besucherinformationen der Stadt Shanghai nennen für die Station People’s Square die Linien 1, 2 und 8. Laut offiziellen U-Bahn-Berichten zählt sie zu den meistgenutzten Stationen des Netzes. Diese Kombination ist für eine erste Reise hilfreich. Eine große Station kann aber lange Wege im Inneren bedeuten, und die Gebietsbezeichnung reicht über einen einzelnen Eingang hinaus. Fragen Sie nach dem passenden Ausgang für das Hotel, ob dieser für Ihre Reisegruppe zugänglich ist und wie viele Straßenquerungen danach bleiben."
+      },
+      {
+        "id": "bund",
+        "type": "heading",
+        "level": 2,
+        "text": "Bund und East Nanjing Road: das Erlebnis wählen, den Andrang einplanen"
+      },
+      {
+        "id": "bund-copy",
+        "type": "paragraph",
+        "text": "Dieser Standort lohnt seinen Preis, wenn Sie Flusspromenade und East Nanjing Road früh, spät oder mehrfach nutzen. Offizielle Berichte aus Shanghai zeigen, dass die East Nanjing Road an Wochenenden sehr hohe Fahrgastzahlen erreichen kann; Feiertagshinweise ändern gelegentlich den Stationsbetrieb. Das macht die Gegend nicht ungeeignet. Es bedeutet, dass Lobbyeingang, Abholung an der Straße und Rückweg genauso sorgfältig geprüft werden sollten wie die Aussicht."
+      },
+      {
+        "id": "bund-warning",
+        "type": "callout",
+        "title": "„Bund-Blick“ und „zu Fuß zum Bund“ sind unterschiedliche Angebote",
+        "tone": "warning",
+        "body": "Ein Zimmer kann zur Skyline blicken, aber hinter einer großen Straße oder mehrere Häuserblöcke vom Ufer entfernt liegen. Ein anderes Hotel bietet vielleicht keine Aussicht, dafür einen direkten Fußweg. Entscheiden Sie, ob Ihnen der Zimmerblick oder wiederholter Zugang zu den Straßen wichtiger ist, und prüfen Sie dies vom tatsächlichen Eingang aus. Bezahlen Sie nicht gedanklich für beides."
+      },
+      {
+        "id": "ffc",
+        "type": "heading",
+        "level": 2,
+        "text": "Ehemalige Französische Konzession: die weite Bezeichnung konkret machen"
+      },
+      {
+        "id": "ffc-copy",
+        "type": "paragraph",
+        "text": "Der Reiz liegt in einem anderen Rhythmus Shanghais: Wohnstraßen, Cafés, kleine Läden und Abende, für die Sie nicht erst zur Flusspromenade gelangen müssen. Buchungsportale verwenden den Begriff jedoch weit gefasst. Markieren Sie die drei Orte, die Sie dort voraussichtlich besuchen, und wählen Sie ein Hotel bei einer nützlichen Station statt im geografischen Mittelpunkt des bezeichneten Gebiets. Prüfen Sie Beleuchtung bei Nacht, Gehwege, Abholung an der Straße und ob das gewünschte Viertelleben auch nach der Rückkehr von Besichtigungen noch nah ist."
+      },
+      {
+        "id": "arrival",
+        "type": "heading",
+        "level": 2,
+        "text": "Flughafen oder Bahnhof bei der ersten und letzten Nacht berücksichtigen"
+      },
+      {
+        "id": "arrival-copy",
+        "type": "paragraph",
+        "text": "Verwenden Sie den vollständigen Namen von Terminal oder Bahnhof und die tatsächliche Uhrzeit, zu der Sie dort losfahren. People’s Square bietet für manche Wege eine direkte Linie. Gepäck, lange Stationsgänge und Betriebszeiten können einen Straßentransfer dennoch einfacher machen. Bei Hotels am Bund kann ein letzter Fußweg hinzukommen, bei Hotels in Gassenvierteln ein weiterer Umstieg. Vergleichen Sie die ganze Strecke vom Terminal bis zur Lobby, nicht den Ruf des Viertels."
+      },
+      {
+        "id": "last-mile",
+        "type": "list",
+        "items": [
+          "Besorgen Sie den Kartenpunkt der Lobby und die chinesische Adresse des Straßeneingangs, nicht nur den Hotelnamen.",
+          "Bestätigen Sie den nutzbaren U-Bahn-Ausgang und ob die gesamte Strecke stufenlos ist.",
+          "Fragen Sie, ob Fußgängerzone, Absperrung oder Hotelturm den Haltepunkt des Taxis verändern.",
+          "Prüfen Sie, ob ein Einkaufszentrum oder Innenweg vor Ihrer Rückkehr schließt.",
+          "Halten Sie bei viel Gepäck einen Straßentransfer als Alternative bereit, selbst bei direkter U-Bahn-Verbindung."
+        ]
+      },
+      {
+        "id": "evenings",
+        "type": "heading",
+        "level": 2,
+        "text": "Wählen Sie den Ort, an dem ein gewöhnlicher Abend endet"
+      },
+      {
+        "id": "evenings-copy",
+        "type": "paragraph",
+        "text": "Ein Abend am Bund erfordert keine vier Übernachtungen daneben, und ein Morgen im Café keinen Umzug nach Westen. Notieren Sie das wahrscheinliche Ende jedes Abends. Wenn die meisten Abende nach zentralen Besichtigungen enden, können People’s Square oder die Hotels rund um den Bund Wege erleichtern. Besteht der Abend selbst aus Essen und Spaziergängen im Viertel, hat ein Standort in den Gassen seine Berechtigung. Entscheidend ist, was Sie wiederholt tun, nicht die fotogenste Stunde."
+      },
+      {
+        "id": "room",
+        "type": "table",
+        "caption": "Hotelprüfung je nach Standort",
+        "columns": [
+          "Standort",
+          "Nachfragen",
+          "Verstecktes Problem"
+        ],
+        "rows": [
+          [
+            "People’s Square",
+            "Genauer Ausgang, Weg mit Aufzug und Ausrichtung des Zimmers",
+            "„Stationsnah“, aber langer Untergrundweg oder aufwendige Straßenquerung"
+          ],
+          [
+            "Bund / East Nanjing Road",
+            "Ruhige Seite, Eingang bei Andrang und Haltepunkt für Fahrzeuge",
+            "Zimmer mit Aussicht, aber starkem Verkehrs- oder Nachtlebenlärm"
+          ],
+          [
+            "Ehemalige Französische Konzession",
+            "Genaue Station, Aufzug, Zugang durch die Gasse und aktuelle Bauarbeiten",
+            "Charmante Adresse mit schwierigen Gepäckwegen und täglichen Verkehrswegen"
+          ],
+          [
+            "Jeder Standort",
+            "Besetzter Check-in mit Reisepass zur tatsächlichen Ankunftszeit",
+            "Gute Lage, aber niemand vor Ort, der die Reisegruppe einchecken darf"
+          ]
+        ]
+      },
+      {
+        "id": "failure",
+        "type": "table",
+        "caption": "Wenn Shanghai voller ist als erwartet",
+        "columns": [
+          "Problem",
+          "Sofortmaßnahme",
+          "Bessere Planung"
+        ],
+        "rows": [
+          [
+            "Stationsausgang oder Betrieb ändern sich",
+            "Offiziellen Betreiberhinweis beachten und einen anderen besetzten Ausgang nutzen",
+            "Straßentransfer bis zur Lobby"
+          ],
+          [
+            "Menschenmengen verhindern die übliche Abholung",
+            "Nur zum mit dem Hotel vereinbarten zulässigen Treffpunkt gehen",
+            "Eindeutige Abholung außerhalb der Fußgängerbeschränkungen vorab buchen"
+          ],
+          [
+            "Zimmer ist zu laut",
+            "Ein nachweislich zur ruhigen Seite liegendes Zimmer verlangen",
+            "Nach einer Nacht umziehen, wenn wiederholter Schlafmangel droht"
+          ],
+          [
+            "Gassenweg ist mit Gepäck schwierig",
+            "Straßeneingang oder Gepäckhilfe nutzen",
+            "Erste und letzte Nacht an einem gut zugänglichen Standort verbringen"
+          ],
+          [
+            "Standort verursacht täglich zusätzliche Umstiege",
+            "Besichtigungen nach Stadtseiten neu bündeln",
+            "Bei mehreren verbleibenden Tagen einmal tagsüber das Hotel wechseln"
+          ]
+        ]
+      },
+      {
+        "id": "registration",
+        "type": "paragraph",
+        "text": "Hotels registrieren ausländische Gäste. Lassen Sie das konkrete Hotel Personalbesetzung und Reisepassabwicklung zu Ihrer tatsächlichen Ankunftszeit bestätigen; eine bekannte Gegend garantiert keinen problemlosen späten Check-in."
+      },
+      {
+        "id": "dynamic",
+        "type": "paragraph",
+        "text": "Die städtischen U-Bahn- und Besucherinformationen Shanghais wurden am 12. August 2026 geprüft. Fahrgastregelungen, Stationsbetrieb und Hotelzugänge können sich bei Feiertagen oder Veranstaltungen ändern. Prüfen Sie kurz vor Ankunft erneut den Kanal von Shanghai Metro und fragen Sie beim Hotel nach; hier wird weder eine feste Sperrung noch ein bestimmter Andrang vorausgesetzt."
+      },
+      {
+        "id": "stay-quote-handoff",
+        "type": "callout",
+        "title": "Die Eignung eines Hotels persönlich besprechen",
+        "tone": "neutral",
+        "body": "Nutzen Sie den allgemeinen Reiseplaner nur zur ersten Kontaktaufnahme. Teilen Sie im ersten Formular Reisedaten, Stadt oder verglichene Gegenden, Zahl der Reisenden und Zimmer sowie gegebenenfalls ein ungefähres Unterkunftsbudget mit. Sie können erwähnen, dass Sie Familienbedürfnisse oder Barrierefreiheit später besprechen möchten. Übermitteln Sie aber keine Altersangaben von Kindern, Mobilitäts-, Gesundheits- oder Barrierefreiheitsdetails, Reisepass- oder andere Dokumentenangaben, Buchungs- oder Zahlungsunterlagen oder identifizierbares Material für ein Hotel, eine lokale Zielgebietsagentur oder einen anderen Anbieter. Ein Reiseplaner kann ein gesondertes persönliches Folgegespräch organisieren; solche Angaben werden nur bei Bedarf und mit geeigneter Einwilligung besprochen. Ohne gesonderte, zweckgebundene Einwilligung wird nichts an Anbieter weitergegeben. Dies ist keine Live-Verfügbarkeitsabfrage und keine Garantie für Preis, Verfügbarkeit, Aufnahme von Gästen, Zimmerkategorie oder Barrierefreiheit."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Fragen zum Aufenthalt in Shanghai",
+        "items": [
+          {
+            "question": "Wo sollten Erstbesucher in Shanghai übernachten?",
+            "answer": "People’s Square ist der ausgewogenste Standort mit guter Verkehrsanbindung für verschiedene Besichtigungen bei einer ersten Reise. Wählen Sie Bund oder East Nanjing Road, wenn Skyline-Spaziergänge und das lebhafte touristische Stadtzentrum wiederholt wichtig sind und Sie Menschenmengen akzeptieren. Eine konkrete Adresse im Gebiet der ehemaligen Französischen Konzession passt, wenn baumbestandene Straßen, Cafés und Morgen im Viertel den Aufenthalt prägen sollen."
+          },
+          {
+            "question": "Ist der Bund eine gute Gegend zum Übernachten?",
+            "answer": "Ja, wenn Sie die Flusspromenade und East Nanjing Road früh, spät oder mehrfach nutzen. Offizielle Berichte aus Shanghai zeigen dort sehr hohe Fahrgastzahlen an Wochenenden. Prüfen Sie daher Ausstiegspunkt fürs Auto, Gepäckweg und ein Zimmer zur ruhigen Seite. Ein Zimmer mit „Bund-Blick“ und ein Hotel „fußläufig zum Bund“ sind unterschiedliche Angebote."
+          },
+          {
+            "question": "Ist die ehemalige Französische Konzession ein einzelner Bezirk?",
+            "answer": "Nein. Buchungsportale verwenden diese Bezeichnung für zahlreiche Straßen und mehrere U-Bahn-Stationen. Ein Hotel bei Changshu Road funktioniert anders als eines bei Xintiandi oder Jiaotong University. Markieren Sie Ihre drei voraussichtlichen Ziele dort und wählen Sie dann ein Hotel mit einer konkret nützlichen Station."
+          },
+          {
+            "question": "Welche U-Bahn-Linien halten am People’s Square?",
+            "answer": "Die Besucherinformationen der Stadt Shanghai nennen die Linien 1, 2 und 8 für People’s Square. Offizielle U-Bahn-Berichte zählen die Station zu den meistgenutzten im Netz. Fragen Sie nach dem passenden Ausgang zum Hotel, ob dieser für Ihre Reisegruppe stufenlos ist und wie viele Straßenquerungen danach bleiben."
+          },
+          {
+            "question": "Registrieren Hotels in Shanghai ausländische Gäste?",
+            "answer": "Ja, Hotels registrieren ausländische Gäste. Lassen Sie das konkrete Hotel Personalbesetzung und Reisepassabwicklung zu Ihrer tatsächlichen Ankunftszeit bestätigen; eine bekannte Gegend allein macht einen späten Check-in nicht automatisch einfach."
+          }
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Weiterplanen",
+        "items": [
+          {
+            "label": "Reisezielübersicht Shanghai",
+            "href": "/destinations/shanghai/",
+            "description": "Planen Sie ganze Tage, die passende Flussseite und den Anreiseort, bevor Sie dieses Detail festlegen."
+          },
+          {
+            "label": "Was „nahe an der U-Bahn“ bedeuten sollte",
+            "href": "/guides/china-hotel-near-metro/",
+            "description": "Prüfen Sie den konkreten Stationsausgang und den Fußweg zur Lobby."
+          },
+          {
+            "label": "Ein barrierefreies Hotelzimmer prüfen",
+            "href": "/guides/china-accessible-hotel-room-verification/",
+            "description": "Prüfen Sie den gesamten Weg vom Straßenrand zum Zimmer, statt sich auf eine Kennzeichnung als barrierefrei zu verlassen."
+          },
+          {
+            "label": "Können Ausländer in China in jedem Hotel übernachten?",
+            "href": "/guides/foreigners-china-hotel/",
+            "description": "Unterscheiden Sie gesetzliche Regeln, Portalangaben und den tatsächlichen Check-in-Betrieb des Hotels."
+          },
+          {
+            "label": "Den passenden Flughafen in Shanghai wählen",
+            "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+            "description": "Stimmen Sie das Hotel auf den richtigen Flughafentransfer ab."
+          },
+          {
+            "label": "Die letzte Nacht in China vor dem internationalen Flug",
+            "href": "/guides/china-last-night-before-international-flight/",
+            "description": "Sichern Sie die Nacht vor dem Abflug ab, ohne einen ganzen Tag zu verschenken."
+          },
+          {
+            "label": "Einen 24 Stunden geöffneten Park in Shanghai prüfen",
+            "href": "/guides/shanghai-24-hour-parks-reality-check/",
+            "description": "Planen Sie einen späten Aufenthalt im öffentlichen Raum erst nach Prüfung von genauem Bereich, Eingang, Ausstattung und Rückweg."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Amtliche Quellen und Bildnachweis",
+        "items": [
+          {
+            "label": "Bericht von Shanghai Metro zum Fahrgastaufkommen",
+            "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240910/db6a0546907e44409a328e389d2ef969.html",
+            "publisher": "Stadtregierung Shanghai",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Offizielle Angabe zu den Linien 1, 2 und 8 am People’s Square",
+            "url": "https://english.shanghai.gov.cn/en-MuseumsGalleries/20240527/3937ac13043a44f39c2a27506a3d7539.html",
+            "publisher": "Stadtregierung Shanghai",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Offizielles Beispiel für Stationsänderungen während einer Veranstaltung",
+            "url": "https://english.shanghai.gov.cn/en-LatestNews/20251231/1b54690a4747486caee0b9d845156187.html",
+            "publisher": "Stadtregierung Shanghai",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Titelbild: East Nanjing Road bei Nacht von EditQ, CC BY-SA 4.0; zugeschnitten und konvertiert",
+            "url": "https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg",
+            "publisher": "Wikimedia Commons",
+            "reviewedAt": "2026-08-12"
+          }
+        ]
+      }
+    ]
+  }
+}

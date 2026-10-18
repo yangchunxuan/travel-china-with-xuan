@@ -1,3 +1,4 @@
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from '../../lib/reservationGuideEditionPaths.ts';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -41,7 +42,7 @@ test('Spanish covers all 55 structured products without promoting previews', () 
   assert.equal(spanishTourPagePath('nonexistent-private-tour'), undefined);
   assert.deepEqual({ ...spanishGuidePathBySourceId }, Object.fromEntries(spanishGuides.filter(guide => guide.sourceGuideId).map(guide => [guide.sourceGuideId, spanishGuidePath(guide.slug)])));
   const registryLinks = Object.fromEntries([...new Set(guideRegistry.map(guide => guide.id))].map(id => [id, getGuideLanguagePaths(id).es]).filter(([, path]) => path));
-  assert.deepEqual(registryLinks, { ...spanishGuidePathBySourceId });
+  assert.deepEqual(registryLinks, { ...spanishGuidePathBySourceId, ...Object.fromEntries(reservationGuideEditionSlugs.map(slug => [slug, reservationGuideEditionPath("es", slug)])) });
   for (const [en, es] of Object.entries(spanishSitePagePathByEnglishPath)) assert.equal(es, en === '/guides/' ? '/es/guias/' : `/es${en}`);
 });
 
